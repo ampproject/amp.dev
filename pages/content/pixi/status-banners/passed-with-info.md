@@ -1,5 +1,5 @@
 ---
-$title: Wow! Your AMP page has a great page experience, but we think you can do better.
+$title: Wow! Your AMP page has a great page experience.
 type: success
 ---
 This page passes the criteria for a great 

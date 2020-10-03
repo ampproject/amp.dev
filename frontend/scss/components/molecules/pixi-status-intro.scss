@@ -19,12 +19,12 @@
 
     @media (min-width: 768px) {
       margin-top: 50px;
-      padding: 0 0 0 25px;
+      padding: 0 25px 0 25px;
     }
 
     @media (min-width: 1024px) {
       margin-top: 30px;
-      padding: 0 0 0 35px;
+      padding: 0 35px 0 35px;
     }
 
     a,
@@ -70,10 +70,20 @@
       background-repeat: no-repeat;
       background-position-x: center;
 
+      &[dir='rtl'] {
+        margin-left: 14px;
+        margin-right: initial;
+      }
+
       @media (min-width: 1024px) {
         width: 70px;
         max-width: 70px;
         margin-right: 28px;
+
+        &[dir='rtl'] {
+          margin-left: 28px;
+          margin-right: initial;
+        }
       }
     }
 

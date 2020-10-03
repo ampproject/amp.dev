@@ -22,10 +22,18 @@
     border-radius: 4px;
     border-bottom: 0;
     box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.87);
+
+    &[dir='rtl'] {
+      padding: 25px 25px 25px 15px;
+    }
   }
 
   @media (min-width: 1024px) {
     padding: 25px 25px 25px 35px;
+
+    &[dir='rtl'] {
+      padding: 25px 35px 25px 25px;
+    }
   }
 
   &-title {

@@ -4,6 +4,7 @@ $order: 10
 tags:
 - lcp
 - fid
+highlight: true
 ---
 AMP pages are not always served from an AMP Cache. Instead, a website may send
 AMP pages from its own servers. In these cases, it's important to make sure

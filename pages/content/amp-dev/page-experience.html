@@ -28,6 +28,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
     'title': node.title,
     'order': node.order,
     'tags': node.tags if node.tags else [],
+    'highlight': node.highlight if node.highlight else False,
     'body': node.body|markdown
   } %}
   {% set x=recommendations.__setitem__(node.base, nodeDict) %}
@@ -43,8 +44,54 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
   {% set x=info_texts.__setitem__(node.base, nodeDict) %}
 {% endfor %}
 
+{% set analyticsConfig = {
+  'vars': {
+    'gtag_id': podspec.gaTrackingId,
+    'config': {
+      podspec.gaTrackingId: {
+        'groups': 'default'
+      }
+    }
+  },
+  'triggers': {
+    'viewFieldData': {
+      'selector': '#primary-checks-field-data',
+      'on': 'visible',
+      'vars': {
+        'event_name': 'pixi-field-data',
+        'event_label': 'pixi-field-data',
+        'event_category': 'pixi',
+        'event_action': 'view',
+      }
+    },
+    'viewLabData': {
+      'selector': '#primary-checks-lab-data',
+      'on': 'visible',
+      'vars': {
+        'event_name': 'pixi-lab-data',
+        'event_label': 'pixi-lab-data',
+        'event_category': 'pixi',
+        'event_action': 'view'
+      }
+    },
+    'viewRecommendations': {
+      'selector': '#recommendations',
+      'on': 'visible',
+      'vars': {
+        'event_name': 'pixi-recommendations',
+        'event_label': 'pixi-recommendations',
+        'event_category': 'pixi',
+        'event_action': 'view'
+      },
+      'visibilitySpec': {
+        'visiblePercentageMin': 0,
+        'repeat': true
+      }
+    }
+  }
+} %}
 
-<main class="ap--main ap-t-pixi">
+<main class="ap--main ap-t-pixi" dir="{{ doc.locale.text_direction }}">
   <section class="ap-t-pixi-stage">
     <h1>{{ pixi.title }}</h1>
     {% do doc.icons.useIcon('icons/page-experience.svg') %}
@@ -133,9 +180,15 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
         {% do doc.styles.addCssFile('css/components/atoms/scroll-to-top.css') %}
         <a href="#pixi-checks" class="ap-a-scroll-to-top" aria-label="{{ pixi.staticText.scrollToTop }}"></a>
 
+        <amp-analytics id="pixi-visibility-analytics" type="gtag" data-credentials="include" data-block-on-consent>
+          <script type="application/json">
+            {{ analyticsConfig|tojson }}
+          </script>
+        </amp-analytics>
+        
         <section class="ap-t-pixi-checks-reports">
           <div class="ap-t-pixi-checks-reports-title">
-            <h2 id="core-web-vitals-checks">{{ pixi.staticText.coreWebVitals.headline }}</h2>
+            <h2 id="core-web-vitals-checks" dir="{{ doc.locale.text_direction }}">{{ pixi.staticText.coreWebVitals.headline }}</h2>
             {% with tooltip = {
               'id': 'core-web-vitals',
               'invert': false

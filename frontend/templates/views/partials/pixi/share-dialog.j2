@@ -28,7 +28,7 @@
           layout="fixed"
           sandbox="allow-scripts"
           src="{{ base_url }}/shared/copy-pixi-url/"
-          [src]="'{{ base_url }}/shared/copy-pixi-url/#' + pixi.shareUrlQuery">
+          [src]="'{{ base_url }}/shared/copy-pixi-url/#' + '{{ (doc.url|string + '?url=')|urlencode }}' + pixi.shareUrlQuery">
         <div placeholder></div>
       </amp-iframe>
     </div>

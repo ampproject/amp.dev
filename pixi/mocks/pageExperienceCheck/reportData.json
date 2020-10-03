@@ -97,6 +97,6 @@
 	"usesAppropriatelySizedImages": false,
 	"usesOptimizedImages": false,
 	"usesWebpImages": false,
-	"fastFontDisplay": true,
+	"fastFontDisplay": false,
 	"minifiedCss": true
 }

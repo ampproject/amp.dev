@@ -182,6 +182,30 @@
       'event_action': 'analyze'
     }
 }}) %}
+{# Track when "Investigate" button is clicked #}
+{% do config['triggers'].update({'investigateButton': 
+    {
+    'selector': '#investigate-button',
+    'on': 'click',
+    'vars': {
+      'event_name': 'pixi-investigate',
+      'event_label': 'pixi-investigate',
+      'event_category': 'pixi',
+      'event_action': 'api-failure'
+    }
+}}) %}
+{# Track when "Fix it now" button is clicked #}
+{% do config['triggers'].update({'fixItButton': 
+    {
+    'selector': '#fix-it-button',
+    'on': 'click',
+    'vars': {
+      'event_name': 'pixi-fix-it',
+      'event_label': 'pixi-fix-it',
+      'event_category': 'pixi',
+      'event_action': 'fix-it'
+    }
+}}) %}
 {# Track when "Share" button is pressed #}
 {% do config['triggers'].update({'shareButton': {
     'selector': '#share-button',
@@ -194,13 +218,13 @@
     }
 }}) %}
 {# Track when "# recommendations" link is clicked #}
-{% do config['triggers'].update({'viewRecommendations': 
+{% do config['triggers'].update({'recommendationsCta': 
     {
     'selector': 'a[href][target="_top"].ap-m-pixi-primary-metric-recommendations',
     'on': 'click',
     'vars': {
-      'event_name': 'pixi-view-recommendations',
-      'event_label': 'pixi-view-recommendations',
+      'event_name': 'pixi-recommendations-cta',
+      'event_label': 'pixi-recommendations-cta',
       'event_category': 'pixi',
       'event_action': 'link'
     }
@@ -227,6 +251,66 @@
       'event_label': 'pixi-tooltip-open',
       'event_category': 'pixi',
       'event_action': 'tooltip'
+    }
+}}) %}
+{# Track when field data tab is opened #}
+{% do config['triggers'].update({'openFieldData': 
+    {
+    'selector': '#field-data-tab',
+    'on': 'click',
+    'vars': {
+      'event_name': 'pixi-field-data-open',
+      'event_label': 'pixi-field-data-open',
+      'event_category': 'pixi',
+      'event_action': 'view-field-data'
+    }
+}}) %}
+{# Track when lab data tab is opened #}
+{% do config['triggers'].update({'openLabData': 
+    {
+    'selector': '#lab-data-tab',
+    'on': 'click',
+    'vars': {
+      'event_name': 'pixi-lab-data-open',
+      'event_label': 'pixi-lab-data-open',
+      'event_category': 'pixi',
+      'event_action': 'view-lab-data'
+    }
+}}) %}
+{# Track when recommendations are filtered #}
+{% do config['triggers'].update({'filterRecommendations': 
+    {
+    'selector': 'button.ap-a-pill[aria-pressed="false"]',
+    'on': 'click',
+    'vars': {
+      'event_name': 'pixi-filter-recommendations',
+      'event_label': 'pixi-filter-recommendations',
+      'event_category': 'pixi',
+      'event_action': 'filter'
+    }
+}}) %}
+{# Track when recommendations are expanded #}
+{% do config['triggers'].update({'expandRecommendation': 
+    {
+    'selector': 'button.ap-m-pixi-recommendations-item-header[aria-expanded="false"]',
+    'on': 'click',
+    'vars': {
+      'event_name': 'pixi-expand-recommendation',
+      'event_label': 'pixi-expand-recommendation',
+      'event_category': 'pixi',
+      'event_action': 'expand'
+    }
+}}) %}
+{# Track when "Next advice" is clicked #}
+{% do config['triggers'].update({'nextRecommendation': 
+    {
+    'selector': 'a.ap-m-pixi-recommendations-item-next-advice',
+    'on': 'click',
+    'vars': {
+      'event_name': 'pixi-next-recommendation',
+      'event_label': 'pixi-next-recommendation',
+      'event_category': 'pixi',
+      'event_action': 'next-advice'
     }
 }}) %}
 {% endif %}
