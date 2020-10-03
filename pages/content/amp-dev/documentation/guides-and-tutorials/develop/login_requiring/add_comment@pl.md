@@ -10,7 +10,7 @@ W tym momencie użytkownik może dodać komentarz za pomocą bilioteki składnik
 
 [sourcecode:html]
 
-<form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top"> [/sourcecode] </form>
+<form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">[/kod źródłowy]</form>
 
 Określamy metodę POST i działanie XHR, ponieważ działania inne niż XHR są niedozwolone w przypadku metod POST w AMP. Ponieważ jest to demo, nie będą to trwałe komentarze, więc można dodać tylko jeden komentarz naraz; za każdym razem, gdy dodawany jest komentarz, serwer AMPByExample odpowiada, zwracając odpowiedź JSON zawierającą wprowadzony tekst z pewnymi dodatkami, takimi jak sygnatura czasowa, awatar i nazwa użytkownika.
 
