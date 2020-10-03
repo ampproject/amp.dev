@@ -1,7 +1,7 @@
 ---
 $title: Creazione di un annuncio con immagini
 $order: 1
-description: Our ad is a simple image with a hyperlink to the advertised site.  We''ll display the image using the amp-img tag. Here''s the code: ...
+description: "Il nostro annuncio è una semplice immagine contenente un collegamento ipertestuale al sito pubblicizzato. Visualizzeremo l''immagine utilizzando il tag amp-img. Ecco il codice: ..."
 ---
 
 All'interno della sezione `<body>` del documento con l'annuncio AMPHTML, si possono includere tag HTML e AMP; tuttavia, non tutti i tag sono consentiti. Consultare le [specifiche degli annunci AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#allowed-amp-extensions-and-builtins) per un elenco dei tag consentiti.
