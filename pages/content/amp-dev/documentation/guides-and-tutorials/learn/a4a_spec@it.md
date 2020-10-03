@@ -260,17 +260,17 @@ I tag SVG non si trovano nello spazio dei nomi HTML5. Sono elencati di seguito s
 
 `<svg>`
 `<g>`
-`<path>`
-`<glyph>`
+`<percorso>`
+`<glifo>`
 `<glyphref>`
 `<marker>`
 `<view>`
-`<circle>`
+`<circolo>`
 `<line>`
-`<polygon>`
+`<poligono>`
 `<polyline>`
 `<rect>`
-`<text>`
+`<testo>`
 `<textpath>`
 `<tref>`
 `<tspan>`
@@ -279,12 +279,12 @@ I tag SVG non si trovano nello spazio dei nomi HTML5. Sono elencati di seguito s
 `<lineargradient>`
 `<radialgradient>`
 `<mask>`
-`<pattern>`
+`<modello>`
 `<vkern>`
 `<hkern>`
 `<defs>`
 `<use>`
-`<symbol>`
+`<simbolo>`
 `<desc>`
 `<title>`
 
