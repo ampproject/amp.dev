@@ -1,7 +1,7 @@
 ---
-$title: Analytics: the basics
+$title: "Analityka: podstawy"
 $order: 0
-description: AMP provides two components to meet your analytics and measurement needs: amp-pixel and amp-analytics. Both options send analytics data to a defined endpoint.
+description: "AMP oferuje dwa składniki spełniające potrzeby analityczne i pomiarowe: amp-pixel i amp-analytics. Obie opcje wysyłają dane analityczne do zdefiniowanego punktu końcowego."
 formats:
 - websites
 - stories
