@@ -11,6 +11,6 @@ Większości znaczników HTML można używać bezpośrednio w AMP HTML, ale niek
 
 Oto kod wymagany do osadzenia obrazu na stronie, pokazujący jak mogą wyglądać dodatkowe znaczniki:
 
-[sourcecode:html] <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img> [/sourcecode]
+[sourcecode:html] {amp-img0}{/amp-img0} [/sourcecode]
 
 [tip type="read-on"] **CZYTAJ DALEJ —** aby dowiedzieć się, dlaczego zastępujemy znaczniki takie jak `<img>` znacznikiem [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) i ile ich jest dostępnych, odwiedź stronę [Dodawanie obrazów i filmów](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md). [/tip]
