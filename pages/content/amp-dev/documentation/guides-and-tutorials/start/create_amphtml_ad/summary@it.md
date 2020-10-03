@@ -1,7 +1,7 @@
 ---
 $title: Congratulazioni!
 $order: 4
-description: You''ve successfully created an AMPHTML ad that can be served on AMP and non-AMP pages! In this tutorial, you learned to: Create a valid AMPHTML ad according to ...
+description: "Sei riuscito a creare un annuncio AMPHTML, che può essere pubblicato su pagine AMP e non! In questa esercitazione, hai imparato a: creare un annuncio AMPHTML valido in base a ..."
 ---
 
 Sei riuscito a creare un annuncio AMPHTML, che può essere pubblicato su pagine AMP e non!
