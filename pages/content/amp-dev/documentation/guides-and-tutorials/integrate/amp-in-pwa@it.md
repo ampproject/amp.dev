@@ -25,7 +25,7 @@ Includere Shadow AMP nell'intestazione della pagina, nel seguente modo:
 
 <!-- Asynchronously load the AMP-with-Shadow-DOM runtime library. -->
 
-<script async="" src="https://cdn.ampproject.org/shadow-v0.js"></script>
+<!-- Asynchronously load the AMP-with-Shadow-DOM runtime library. --><br><script async src="https://cdn.ampproject.org/shadow-v0.js"></script>
 
 [/sourcecode]
 
