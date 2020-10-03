@@ -64,25 +64,25 @@ Obiekt konfiguracji JSON należy określić w składniku [`amp-story-auto-ads`](
 - Jako `"type"` należy podać `"doubleclick"`
 - Element `"data-slot"` musi być dopasowany do jednostki reklamy
 
-[sourcecode:html] <amp-story> <amp-story-auto-ads> <script data-md-type="raw_html" type="application/json">
+[sourcecode:html] {amp-story0} {amp-story-auto-ads1} <script data-md-type="raw_html" type="application/json">
 {
-&quot;ad-attributes&quot;: {
-&quot;type&quot;: &quot;doubleclick&quot;,
-&quot;data-slot&quot;: &quot;/30497360/a4a/amp_story_dfp_example&quot;
+&amp;quot;ad-attributes&amp;quot;: {
+&amp;quot;type&amp;quot;: &amp;quot;doubleclick&amp;quot;,
+&amp;quot;data-slot&amp;quot;: &amp;quot;/30497360/a4a/amp_story_dfp_example&amp;quot;
 }
 }
-</script> </amp-story-auto-ads> <amp-story-page> ... </amp-story-page></amp-story> [/sourcecode]
+</script> {/amp-story-auto-ads1} {amp-story-page3} ... {/amp-story-page3}{/amp-story0} [/sourcecode]
 
 Te kluczowe pary wartości są kopiowane do elementu [`amp-ad`](../../../documentation/components/reference/amp-ad.md) wygenerowanego dla relacji. Zamiast kolumny `additional_data` można dodać dodatkowe informacje potrzebne do elementu, takie jak `targeting`.
 
-[sourcecode:html] <amp-story> <amp-story-auto-ads> <script data-md-type="raw_html" type="application/json">
+[sourcecode:html] {amp-story0} {amp-story-auto-ads1} <script data-md-type="raw_html" type="application/json">
 {
-&quot;ad-attributes&quot;: {
-&quot;type&quot;: &quot;doubleclick&quot;,
-&quot;data-slot&quot;: &quot;/30497360/a4a/amp_story_dfp_example&quot;,
-&quot;additional_data&quot;: &quot;additional_data_information&quot;
+&amp;quot;ad-attributes&amp;quot;: {
+&amp;quot;type&amp;quot;: &amp;quot;doubleclick&amp;quot;,
+&amp;quot;data-slot&amp;quot;: &amp;quot;/30497360/a4a/amp_story_dfp_example&amp;quot;,
+&amp;quot;additional_data&amp;quot;: &amp;quot;additional_data_information&amp;quot;
 }
 }
-</script> </amp-story-auto-ads> <amp-story-page> ... </amp-story-page></amp-story> [/sourcecode]
+</script> {/amp-story-auto-ads1} {amp-story-page3} ... {/amp-story-page3}{/amp-story0} [/sourcecode]
 
 [tip type="note"] W celu uzyskania informacji o przesyłaniu reklam do Google Ad Manager przeczytaj artykuł [Kreacje niestandardowe w relacjach internetowych](https://support.google.com/admanager/answer/9038178) i sprawdź nasz przewodnik [Najlepsze metody tworzenia reklam w formacie AMP Story](story_ads_best_practices.md).
