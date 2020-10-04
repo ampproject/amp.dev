@@ -201,7 +201,7 @@ limitations under the License.
 - **`single`** (默认): 用户可以选择一个日期。
 - **`range`**: 用户可以选择一个日期。
 
-### input-selector
+### input-selector <a name="input-selector"></a>
 
 用于单个日期选择器输入的查询选择器。如果省略此选项，则日期选择器会自动生成一个隐藏的输入字段，并为其指定名称 `date` 或 `${id}-date` 使用日期选择器的ID。如果这些冲突中的任何一个与表单中的现有元素冲突，都会发出错误。
 
@@ -350,7 +350,7 @@ limitations under the License.
 如果存在，则此属性允许用户选择一个包含阻止日期的范围。
 默认情况下，此属性不存在。
 
-### src
+### src <a name="src"></a>
 
 如果存在，`amp-date-picker`会请求JSON数据来动态填充某些属性，以及匹配日期列表和模板`id`来呈现日历中的日期。
 
@@ -667,7 +667,7 @@ For a date range picker:
 
 ## Styling
 
-### Templates
+### Templates <a name="templates"></a>
 
 `amp-date-picker` 提供一种标记API，以呈现某些日期的模板以及日历视图下方的其他信息区域。
 

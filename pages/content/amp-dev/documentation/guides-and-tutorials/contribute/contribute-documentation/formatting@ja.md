@@ -1,13 +1,6 @@
 ---
-$title: 書式設定ガイドとチュートリアル
-$order: 3
-description: amp.dev のファイルの書式設定要件
-formats:
-- ウェブサイト
-- ストーリー
-- 広告
-- メール
-author: CrystalOnScript
+$title: "書式設定ガイドとチュートリアル"
+description: "amp.dev のファイルの書式設定要件"
 ---
 
 ガイドとチュートリアルは、追加の Frontmatter とショートコードの書式設定とともに [Markdown](https://www.markdownguide.org/) に提出します。
@@ -174,7 +167,7 @@ Python-Markdown にはいくつかの制限があります。リストにコー�
   <pre>  &lsqb;example preview="default: none|inline|top-frame"<br>          playground="default: true|false"<br>          imports="<custom-element-1>,<custom-element-2>,..."           template="<custom-template>"]   ```html     // code sample   ```   &lsqb;/example]   </custom-template></custom-element-2></custom-element-1></pre>
 </div>
 
-注意: プレビューは、Playground で開くと、現在選択されている形式に自動的に変換されます 🤯！
+注意: プレビューは、Playground で開くと、現在選択されている形式に自動的に変換されます！
 
 プレビューがどのように生成されるかを定義するには、`preview` 属性を使用します。
 
