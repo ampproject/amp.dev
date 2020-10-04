@@ -113,7 +113,7 @@ amp.dev は AMP で作られています！そのため、画像は [`amp-img`](
 以下のショートコードでテキストを囲むことで、ヒントとコールアウトを追加できます。
 
 <div class="ap-m-code-snippet">
-<pre>&lsqb;tip type="default"]<br>Default tip<br>[/tip]</pre>
+<pre>&lsqb;tip type="default"]<br>Default tip<br>&lsqb;/tip]</pre>
 </div>
 
 [tip type="important"] 重要 [/tip]
@@ -188,7 +188,7 @@ Python-Markdown にはいくつかの制限があります。リストにコー�
 以下は、単純な埋め込みのインラインサンプルです。インラインスタイルで CSS を定義できます。
 
 <div class="ap-m-code-snippet">
-<pre>  [example preview="inline" playground="true"]<br>    ```html<br>    <div style="background: red; width: 200px; height: 200px;">Hello World</div><br>    ```<br>  [/example]<br>  [/example]</pre>
+<pre>  [example preview="inline" playground="true"]<br>    ```html<br>    <div style="background: red; width: 200px; height: 200px;">Hello World</div><br>    ```<br>  [/example]<br></pre>
 </div>
 
 これは次のように表示されます。
