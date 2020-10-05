@@ -265,16 +265,16 @@ The amp-script components lets you implement complex domain logic that would cau
   </style>
 </head>
 <body>
-<amp-script width="200" height="100" script="hello-world" [class]="scriptStyle">
-  <button>Hello amp-script!</button>
-</amp-script>
-<script id="hello-world" type="text/plain" target="amp-script">
-  const btn = document.querySelector('button');
-  btn.addEventListener('click', () => {
-    document.body.textContent = 'Hello World!';
-    AMP.setState({ scriptStyle: "clickedButton" })
-  });
-</script>
+  <amp-script width="200" height="100" script="hello-world" [class]="scriptStyle">
+    <button>Hello amp-script!</button>
+  </amp-script>
+  <script id="hello-world" type="text/plain" target="amp-script">
+    const btn = document.querySelector('button');
+    btn.addEventListener('click', () => {
+      document.body.textContent = 'Hello World!';
+      AMP.setState({ scriptStyle: "clickedButton" })
+    });
+  </script>
 </body>
 ```
 [/example]
