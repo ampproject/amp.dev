@@ -1,10 +1,7 @@
 ---
-$title: CSS 애니메이션 및 트랜지션 트리거
+$title: "CSS 애니메이션 및 트랜지션 트리거"
 $order: 1
-description: 페이지의 CSS 애니메이션 트리거는 JavaScript로 지원되는 클래스 추가 및 제거에 의존합니다. toggleClass 액션을 사용하여 AMP 페이지의 동일한 동작을 수행할 수도 있습니다...
-formats:
-- 웹사이트
-- 광고
+description: "페이지의 CSS 애니메이션 트리거는 JavaScript로 지원되는 클래스 추가 및 제거에 의존합니다. toggleClass 액션을 사용하여 AMP 페이지의 동일한 동작을 수행할 수도 있습니다..."
 ---
 
 CSS 애니메이션은 웹 요소가 하나의 CSS 스타일 구성에서 다른 구성으로 전환하는 트랜지션을 지원합니다. 브라우저는 로드 시 정의된 애니메이션을 시작할 수 있지만 CSS 애니메이션을 트리거한 이벤트는 [클래스 추가 및 제거에 의존합니다](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations). AMP는 두 가지 애니메이션 유형을 모두 지원합니다.
