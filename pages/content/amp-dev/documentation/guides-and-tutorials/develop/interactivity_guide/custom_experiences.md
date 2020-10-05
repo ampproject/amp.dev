@@ -197,7 +197,7 @@ Expressions can become hard to maintain quickly. Make sure to keep it simple and
 
 ### Define expression macros
 
-You may reuse an amp-bind expression fragment by defining an [amp-bind-macro](../../../components/reference/amp-bind.md#defining-macros-with-amp-bind-macro). The `amp-bind-macro` element allows an expression that takes zero or more arguments and references the current state. Invoke amp-bind-macros like a function, referencing the `id` attribute value from anywhere in the document.
+You may reuse an amp-bind expression fragment by defining an [amp-bind-macro](../../../components/reference/amp-bind.md#defining-macros-with-amp-bind-macro). The `amp-bind-macro` element allows an expression that takes zero or more arguments and references the current state. Invoke `amp-bind-macro` like a function, referencing the `id` attribute value from anywhere in the document.
 
 [example preview="top-frame" playground="true" imports="amp-bind"]
 ```html
