@@ -94,7 +94,7 @@ Here is an example in which we combine `amp-selector` with an SVG to create an i
 
 # Simple interactivity and data binding with amp-bind
 
-User's expect the modern web to react to their interactions and reflect changes they've made. The `amp-bind` component enables state setting, reading, UI changes, and can process user inputs and simple logic.
+Users expect the modern web to react to their interactions and reflect changes they've made. The `amp-bind` component enables state setting, reading, UI changes, and can process user inputs and simple logic.
 
 [example preview="top-frame" playground="true" imports="amp-bind"]
 ```html
