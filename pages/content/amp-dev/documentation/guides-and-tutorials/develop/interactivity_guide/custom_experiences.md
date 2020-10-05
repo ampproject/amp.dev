@@ -121,7 +121,7 @@ Instead it waits until a user triggers an action that interacts with amp-bind. T
 
 ## Bindings
 
-Bindings are special attributes that bring it all together by linking an element’s proper to an expression. A binding is a special attribute in the form `[property]` . This  links an element’s property to a state. Use bindings to update text, change an image’s size, or allow users to specify appearances.
+Bindings are special attributes that bring it all together by linking an element’s property to an expression. A binding is a special attribute in the form `[property]` . This links an element’s property to a state. Use bindings to update text, change an image’s size, or allow users to specify appearances.
 
 Read more about [bindings here](../../../components/reference/amp-bind.md#bindings) and see a full list of bindable attributes for [AMP components](../../../components/reference/amp-bind.md#amp-component-specific-attributes) and [HTML elements](../../../components/reference/amp-bind.md#html-attributes).
 
