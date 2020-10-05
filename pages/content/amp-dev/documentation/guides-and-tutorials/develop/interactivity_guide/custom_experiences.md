@@ -13,7 +13,7 @@ This guide outlines highly customizable interactivity options to integrate into 
 
 # Selection state management with amp-selector
 
-Many common web experiences include presenting user’s with options and responding to their selections. With the [`amp-selector`](../../../components/reference/amp-selector.md) component, you can build menus of options, specify form input behaviors, and implement tabs.
+Many common web experiences include presenting users with options and responding to their selections. With the [`amp-selector`](../../../components/reference/amp-selector.md) component, you can build menus of options, specify form input behaviors, and implement tabs.
 
 amp-selector offers two core features:
 
