@@ -100,114 +100,82 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
     </svg>
   </section>
 
-  {% if podspec.env.name == 'production' %}
-    <section class="ap-t-pixi-intro ap-t-pixi-coming-soon">
-      <p class="ap-t-pixi-intro-text">
-        Coming soon! Read more about how AMP helps achieve a great page experience
-        in our <a href="https://blog.amp.dev/2020/05/28/amp-page-experience/">blog post</a>.
-      </p>
-      <br>
-      <div class="ap-t-pixi-ctas">
-        <a href="https://web.dev/vitals/" class="ap-m-lnk ap-m-lnk-square" target="_blank" rel="noopener">
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/external.svg') %}
-            <svg>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use>
-            </svg>
-          </div>
-          <span class="ap-m-lnk-text">{{ _('Learn about Web Vitals') }}</span>
-        </a>
-        <a href="https://developers.google.com/search/docs/guides/page-experience" class="ap-m-lnk ap-m-lnk-square" target="_blank" rel="noopener">
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/external.svg') %}
-            <svg>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use>
-            </svg>
-          </div>
-          <span class="ap-m-lnk-text">{{ _('Learn about page experience') }}</span>
-        </a>
-      </div>
-    </section>
-  {% else %}
-    <amp-state id="pixiRecommendations">
-      <script type="application/json">
-      {{recommendations|jsonify|safe}}
-    </script>
-    </amp-state>
+  <amp-state id="pixiRecommendations">
+    <script type="application/json">
+    {{recommendations|jsonify|safe}}
+  </script>
+  </amp-state>
 
-    <amp-state id="pixiStatusBanners">
-      <script type="application/json">
-      {{status_banners|jsonify|safe}}
-    </script>
-    </amp-state>
+  <amp-state id="pixiStatusBanners">
+    <script type="application/json">
+    {{status_banners|jsonify|safe}}
+  </script>
+  </amp-state>
 
-    <amp-state id="pixiInfoTexts">
-      <script type="application/json">
-      {{info_texts|jsonify|safe}}
-    </script>
-    </amp-state>
+  <amp-state id="pixiInfoTexts">
+    <script type="application/json">
+    {{info_texts|jsonify|safe}}
+  </script>
+  </amp-state>
 
-    <amp-state id="pixi">
-      <script type="application/json">
-        {
-          "baseUrl": "{{ podspec.base_urls.platform }}{{ doc.url.path }}",
-          "pageUrl": "[= query.url =]",
-          "i18n": {
-            "language": "{{ doc.locale }}",
-            "scriptText": {{pixi.scriptText|jsonify|safe}}
-          }
+  <amp-state id="pixi">
+    <script type="application/json">
+      {
+        "baseUrl": "{{ podspec.base_urls.platform }}{{ doc.url.path }}",
+        "pageUrl": "[= query.url =]",
+        "i18n": {
+          "language": "{{ doc.locale }}",
+          "scriptText": {{pixi.scriptText|jsonify|safe}}
         }
-      </script>
-    </amp-state>
+      }
+    </script>
+  </amp-state>
 
-    {% import '/views/partials/pixi/webpack.j2' as webpack %}
-    <amp-script id="pixi-checks"
-        class="ap-t-pixi-checks"
-        src="{{ podspec.base_urls.platform }}{{ webpack.src }}"
-        layout="container"
-        sandbox="allow-forms" {% if podspec.env.name == 'development' %}data-ampdevmode{% endif %}>
+  {% import '/views/partials/pixi/webpack.j2' as webpack %}
+  <amp-script id="pixi-checks"
+      class="ap-t-pixi-checks"
+      src="{{ podspec.base_urls.platform }}{{ webpack.src }}"
+      layout="container"
+      sandbox="allow-forms" {% if podspec.env.name == 'development' %}data-ampdevmode{% endif %}>
 
-      <div class="ap-t-pixi-checks-input">
-        {% include 'views/partials/pixi/input-bar.j2' %}
-        {% include 'views/partials/pixi/status-intro.j2' %}
+    <div class="ap-t-pixi-checks-input">
+      {% include 'views/partials/pixi/input-bar.j2' %}
+      {% include 'views/partials/pixi/status-intro.j2' %}
 
-        {% do doc.styles.addCssFile('css/components/atoms/pixi-stripes.css') %}
-        {% do doc.icons.useIcon('icons/pixi-stripes.svg') %}
-        <aside class="ap-a-pixi-stripes"></aside>
-      </div>
+      {% do doc.styles.addCssFile('css/components/atoms/pixi-stripes.css') %}
+      {% do doc.icons.useIcon('icons/pixi-stripes.svg') %}
+      <aside class="ap-a-pixi-stripes"></aside>
+    </div>
 
-      <div id="reports" class="pristine">
-        {% do doc.styles.addCssFile('css/components/atoms/scroll-to-top.css') %}
-        <a href="#pixi-checks" class="ap-a-scroll-to-top" aria-label="{{ pixi.staticText.scrollToTop }}"></a>
+    <div id="reports" class="pristine">
+      {% do doc.styles.addCssFile('css/components/atoms/scroll-to-top.css') %}
+      <a href="#pixi-checks" class="ap-a-scroll-to-top" aria-label="{{ pixi.staticText.scrollToTop }}"></a>
 
-        <amp-analytics id="pixi-visibility-analytics" type="gtag" data-credentials="include" data-block-on-consent>
-          <script type="application/json">
-            {{ analyticsConfig|tojson }}
-          </script>
-        </amp-analytics>
-        
-        <section class="ap-t-pixi-checks-reports">
-          <div class="ap-t-pixi-checks-reports-title">
-            <h2 id="core-web-vitals-checks" dir="{{ doc.locale.text_direction }}">{{ pixi.staticText.coreWebVitals.headline }}</h2>
-            {% with tooltip = {
-              'id': 'core-web-vitals',
-              'invert': false
-            } %}
-            {% include 'views/partials/pixi/tooltip.j2' %}
-            {% endwith %}
-          </div>
+      <amp-analytics id="pixi-visibility-analytics" type="gtag" data-credentials="include" data-block-on-consent>
+        <script type="application/json">
+          {{ analyticsConfig|tojson }}
+        </script>
+      </amp-analytics>
+      
+      <section class="ap-t-pixi-checks-reports">
+        <div class="ap-t-pixi-checks-reports-title">
+          <h2 id="core-web-vitals-checks" dir="{{ doc.locale.text_direction }}">{{ pixi.staticText.coreWebVitals.headline }}</h2>
+          {% with tooltip = {
+            'id': 'core-web-vitals',
+            'invert': false
+          } %}
+          {% include 'views/partials/pixi/tooltip.j2' %}
+          {% endwith %}
+        </div>
 
-          {% include 'views/partials/pixi/primary-checks.j2' %}
+        {% include 'views/partials/pixi/primary-checks.j2' %}
 
-          <h2 id="additional-checks">{{ pixi.staticText.additionalChecks.headline }}</h2>
-          {% include 'views/partials/pixi/basic-checks.j2' %}
-        </section>
+        <h2 id="additional-checks">{{ pixi.staticText.additionalChecks.headline }}</h2>
+        {% include 'views/partials/pixi/basic-checks.j2' %}
+      </section>
 
-        {% include 'views/partials/pixi/recommendations.j2' %}
-      </div>
-    </amp-script>
-
-    {% include 'views/partials/pixi/share-dialog.j2' %}
-
-  {% endif %}
+      {% include 'views/partials/pixi/recommendations.j2' %}
+    </div>
+  </amp-script>
+  {% include 'views/partials/pixi/share-dialog.j2' %}
 </main>
