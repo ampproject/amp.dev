@@ -120,7 +120,7 @@ amp.dev는 AMP로 작성되었습니다! 그렇기에 이미지는 [`amp-img`](.
 다음 숏코드에 텍스트를 래핑하여 팁과 콜아웃을 추가할 수 있습니다.
 
 <div class="ap-m-code-snippet">
-<pre>&lsqb;tip type="default"]<br>Default tip<br>[/tip]</pre>
+<pre>&lsqb;tip type="default"]<br>Default tip<br>&lsqb;/tip]</pre>
 </div>
 
 [tip type="important"] 중요 [/tip]
