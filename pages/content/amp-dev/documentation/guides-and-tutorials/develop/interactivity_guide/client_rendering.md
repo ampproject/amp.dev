@@ -15,7 +15,7 @@ This guide outlines client-side rendering possibilities in AMP. By default, AMP 
 
 Although its name may be misleading, [`amp-list`](../../../components/reference/amp-list.md) is the go-to solution for client-side rendering in AMP. The amp-list component works in a wide range of client-side rendering needs. It can render a single item or provide infinite scrolling and pagination. It allows dynamic content rendering on page load and can [update that content after a user interacts with the page](#rendering-after-user-interaction). Use the default loading indicator, or [build your own](https://amp.dev/documentation/examples/multimedia-animations/custom_loading_indicators/), for the best UX, especially when fetching from a remote endpoint.
 
-The amp-list component uses a remote JSON endpoint, or a local amp-state element, to render dynamic content on page load. Default use of amp-list requires each JSON to have an items array.
+The amp-list component uses a remote JSON endpoint, a local amp-state element, or a local amp-script element, to render dynamic content on page load. Default use of amp-list requires each JSON to have an items array.
 
 [example preview="top-frame" playground="true" imports="amp-bind, amp-list" template="amp-mustache"]
 ```html
