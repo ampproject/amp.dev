@@ -32,7 +32,7 @@ on="eventName:targetId.actionName"
 
 *   Registration of the listening event. Always `on` in AMP.
 *   The event name, followed by a colon. The example above uses [`tap`](../../learn/amp-actions-and-events.md#---all-elements).
-*   The id of the target element, or a [special target](../../learn/amp-actions-and-events.md#special-targets), to perform the action on, followed by a period. The example above specifies `helloHeading`, the id of the `<h1>` element.
+*   The id of the target element, or a [special target](../../learn/amp-actions-and-events.md#special-targets), to perform the action on, followed by a period. The example above specifies `helloWorld`, the id of the `<h1>` element.
 *   The desired action name. The example above uses [`hide`](../../learn/amp-actions-and-events.md#-all-elements).
 *   You may define multiple events on a single element. The AMP event section below outlines this syntax.
 *   You may define multiple actions in response to a single action. The AMP actions section below outlines this syntax.
