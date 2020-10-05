@@ -45,11 +45,11 @@ You may register none, one, or many events on a single element. Register multipl
 
 [example preview="inline" playground="true"]
 ```html
- <input on="tap:hiddenInstructions.show;change:hiddenInstructions.hide" tabindex=0 role="textbox" type="text">
- <input type="submit" value="Submit">
-  <p hidden id="hiddenInstructions">
-    Type your name!
-  </p>
+<input on="tap:hiddenInstructions.show;change:hiddenInstructions.hide" tabindex=0 role="textbox" type="text">
+<input type="submit" value="Submit">
+<p hidden id="hiddenInstructions">
+  Type your name!
+</p>
 ```
 [/example]
 
