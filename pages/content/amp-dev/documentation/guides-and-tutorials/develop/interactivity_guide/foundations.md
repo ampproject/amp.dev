@@ -180,15 +180,15 @@ The `toggleClass()` action allows for an optional additional argument `force`. T
 </head>
 <body>
  <h1 id="togleHeading">Hello AMP World!</h1>
-  <button on="tap:togleHeading.toggleClass(class='red'),togleHeading.toggleClass(class='green', force=false)">
-    Toggle Red
-  </button>
-  <button on="tap:togleHeading.toggleClass(class='green'),togleHeading.toggleClass(class='red', force=false)">
-    Toggle Green
-  </button>
-  <button on="tap:togleHeading.toggleClass(class='border')">
-    Toggle Border
-  </button>
+<button on="tap:togleHeading.toggleClass(class='red'),togleHeading.toggleClass(class='green', force=false)">
+  Toggle Red
+</button>
+<button on="tap:togleHeading.toggleClass(class='green'),togleHeading.toggleClass(class='red', force=false)">
+  Toggle Green
+</button>
+<button on="tap:togleHeading.toggleClass(class='border')">
+  Toggle Border
+</button>
 </body>  
 ```
 [/example]
