@@ -102,7 +102,7 @@ If using multiple `amp-list` implementations, a best practice is to use a single
 
 ## Render from a JSON endpoint
 
-When rendering from a JSON endpoint, and not a local amp-state element, include the <code>[binding](../../../components/reference/amp-list.md#binding-(optional))</code> attribute and set it to no.
+When rendering from a JSON endpoint, and not a local amp-state element, include the <code>[binding](../../../components/reference/amp-list.md#binding-(optional))</code> attribute and set it to `no`.
 
 [example preview="top-frame" playground="true" imports="amp-list" template="amp-mustache"]
 ```html
