@@ -18,9 +18,9 @@ AMP installs event listeners on elements via the [`on` attribute](../../learn/am
 [example preview="inline" playground="true"]
 ```html
  <h1 id="helloWorld">Hello AMP World!</h1>
-  <button on="tap:helloWorld.hide">
-    Goodbye World
-  </button>
+<button on="tap:helloWorld.hide">
+  Goodbye World
+</button>
 ```
 [/example]
 
