@@ -1,7 +1,7 @@
 ---
 $title: AMP for Email - メールプロバイダの統合
 $order: 5
-desccription: AMP との統合に関するメールクライアントとプロバイダ向けの情報。
+description: AMP との統合に関するメールクライアントとプロバイダ向けの情報。
 formats:
 - メール
 ---
