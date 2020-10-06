@@ -1,10 +1,5 @@
 ---
 $title: Zarządzanie stanem użytkownika nieuwierzytelnionego za pomocą AMP
-order: 2
-formats:
-- websites
-teaser:
-  text: **Spis treści**
 ---
 
 <!--
