@@ -43,22 +43,22 @@ The name of the Web Story publisher.
 
 ### `publisher-logo-src`
 
-A URL to the Web Story publisher's logo image. The logo image should be larger than or equal to 96px by 96px and maintain a 1:1 aspect ratio. This logo appears in the right corner on the top of the poster image on platforms currently (October 2020) supporting Web Stories.
+A URL to the Web Story publisher's logo image. The logo image should be larger than or equal to 96x96px and maintain a 1:1 aspect ratio. This logo appears in the right corner on the top of the poster image on platforms currently (October 2020) supporting Web Stories.
 
 ### `poster-portrait-src`
 
-A URL to an image used as the [Web Story poster](https://amp.dev/documentation/components/amp-story/#poster-guidelines-(for-poster-portrait-src,-poster-landscape-src,-and-poster-square-src)). Used as the cover for the Web Story and should be representative of the story. Do not embed or burn-in the Web Story title on it. Should be 853px by 640px and maintain a 3:4 aspect ratio.
+A URL to an image used as the [Web Story poster](https://amp.dev/documentation/components/amp-story/#poster-guidelines-(for-poster-portrait-src,-poster-landscape-src,-and-poster-square-src)). Used as the cover for the Web Story and should be representative of the story. Do not embed or burn-in the Web Story title on it. Should be at least 640x853px and maintain a 3:4 aspect ratio.
 
 
 ## Recommended <amp-story> attributes
 
 ### `poster-landscape-src`
 
-A URL to an image used as the [Web Story poster](https://amp.dev/documentation/components/amp-story/#poster-guidelines-(for-poster-portrait-src,-poster-landscape-src,-and-poster-square-src)) in landscape format. Used as the cover for the Web Story and should be representative of the story. Do not embed or burn-in the Web Story title on it. Should be 640 px by 853 px and maintain a 4:3 aspect ratio.
+A URL to an image used as the [Web Story poster](https://amp.dev/documentation/components/amp-story/#poster-guidelines-(for-poster-portrait-src,-poster-landscape-src,-and-poster-square-src)) in landscape format. Used as the cover for the Web Story and should be representative of the story. Do not embed or burn-in the Web Story title on it. Should be at least 853x640px and maintain a 4:3 aspect ratio.
 
 ### `poster-square-src`
 
-A URL to an image used as the [Web Story poster](https://amp.dev/documentation/components/amp-story/#poster-guidelines-(for-poster-portrait-src,-poster-landscape-src,-and-poster-square-src)). Used as the cover for the Web Story and should be representative of the story. Do not embed or burn-in the Web Story title on it. Should be 640 px by 640 px and maintain a 1:1 aspect ratio.
+A URL to an image used as the [Web Story poster](https://amp.dev/documentation/components/amp-story/#poster-guidelines-(for-poster-portrait-src,-poster-landscape-src,-and-poster-square-src)). Used as the cover for the Web Story and should be representative of the story. Do not embed or burn-in the Web Story title on it. Should be at least 640x640px and maintain a 1:1 aspect ratio.
 
 # Metadata
 
