@@ -166,7 +166,7 @@
       }
 
       [dir='rtl']:hover > & {
-        transform: scaleX(-1) translate(10px) !important;
+        transform: scaleX(-1) translate(10px);
       }
     }
 
@@ -222,7 +222,7 @@
 
         &-text pre {
           white-space: pre-wrap;
-          line-height: 1.5em
+          line-height: 1.5em;
         }
       }
     }
