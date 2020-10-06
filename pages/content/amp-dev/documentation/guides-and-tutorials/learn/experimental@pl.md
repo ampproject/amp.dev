@@ -2,10 +2,6 @@
 $title: Włączanie funkcji eksperymentalnych
 $order: 3
 description: Eksperymentalne składniki AMP to wydane funkcje, które nie są jeszcze gotowe do powszechnego stosowania, więc są chronione przez status eksperymentalny.
-formats:
-- websites
-- stories
-- ads
 ---
 
 [Eksperymentalne składniki AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments) to wydane funkcje, które nie są jeszcze gotowe do powszechnego stosowania, więc są chronione przez status **eksperymentalny**.
@@ -83,7 +79,7 @@ Próby źródła dają możliwość wdrożenia i skorzystania z nowej funkcji, z
 {% set trial_components = g.docs('/content/amp-dev/documentation/components/reference')|selectattr('origin_trial')|list %} {% if trial_components|length %} W ramach próby źródła można obecnie testować składniki z poniższej listy:
 
 
-<ul> {% for component in trial_components %}   <li><a href="%7B%7B%20component.url.path%20%7D%7D">{{ component.title }}</a></li> {% endfor %} </ul> {% endif %}
+<ul> {% for component in trial_components %}   <li><a href="{{ component.url.path }}">{{ component.title }}</a></li> {% endfor %} </ul> {% endif %}
 
 ### Włączanie próby źródła
 
