@@ -8,5 +8,5 @@ tags:
 Ressourcenhinweise wie `preconnect` sind Funktionen, die von modernen Browsern unterstützt werden, um die Leistung der Website zu steigern und die Ladezeit zu verkürzen. <br><br> Verwende sie manuell, indem du deiner Seite Folgendes hinzufügst:
 
 ```
-<link href=https://fonts.gstatic.com rel="dns-prefetch preconnect" crossorigin>
+&lt;link href=https://fonts.gstatic.com rel="dns-prefetch preconnect" crossorigin&gt;
 ```
