@@ -1,5 +1,5 @@
 ---
-$title: ¿Por qué AMP es diferente? (Por definir)
+$title: “¿Por qué AMP es diferente? (Por definir)”
 $order: 0
 formats:
 - websites
