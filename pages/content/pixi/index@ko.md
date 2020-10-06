@@ -49,7 +49,7 @@ staticText:
     headline: 조치 취하기. AMP 사이트 개선.
     nextAdvice: 다음 팁
   tags:
-    all: All
+    all: 모두
 scriptText:
   inputBar:
     fieldError: 유효한 URL을 입력하십시오
