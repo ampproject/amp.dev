@@ -1,7 +1,7 @@
 ---
 $title: AMP dla poczty e-mail — integracja dostawców poczty elektronicznej
 $order: 5
-desccription: Informacje dotyczące integracji programów pocztowych i dostawców usług poczty elektronicznej z AMP.
+description: Informacje dotyczące integracji programów pocztowych i dostawców usług poczty elektronicznej z AMP.
 formats:
 - email
 ---

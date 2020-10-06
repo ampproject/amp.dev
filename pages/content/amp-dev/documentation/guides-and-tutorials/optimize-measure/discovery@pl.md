@@ -1,12 +1,8 @@
 ---
-formats:
-- websites
-- stories
 $title: Spraw, by Twoje strony można było odnaleźć
 $titles:
   teaser: Spraw, by Twoje strony można było odnaleźć
-$order: 5
-description: W niektórych przypadkach można serwować zarówno wersję tej samej strony bez AMP jak i z AMP, na przykład artykuł informacyjny. Rozważ to: jeśli wyszukiwarka Google...
+description: "W niektórych przypadkach można serwować zarówno wersję tej samej strony bez AMP jak i z AMP, na przykład artykuł informacyjny. Rozważ to: jeśli wyszukiwarka Google..."
 teaser:
   icon: odnajdź
   text: Dowiedz się, jak wyszukiwarki internetowe dowiadują się, że istnieje wersja AMP witryny.

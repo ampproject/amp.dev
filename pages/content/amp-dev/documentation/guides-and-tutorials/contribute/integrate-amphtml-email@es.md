@@ -1,7 +1,7 @@
 ---
 $title: AMP for Email - Integración con el proveedor del correo electrónico
 $order: 5
-desccription: Información para que los clientes y proveedores de correo electrónico puedan integrarse con AMP.
+description: Información para que los clientes y proveedores de correo electrónico puedan integrarse con AMP.
 formats:
 - email
 ---

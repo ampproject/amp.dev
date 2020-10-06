@@ -1,7 +1,7 @@
 ---
 $title: 이메일용 AMP - 이메일 공급 업체 통합
 $order: 5
-desccription: 이메일 클라이언트 및 공급 업체를 위한 AMP 통합 정보.
+description: 이메일 클라이언트 및 공급 업체를 위한 AMP 통합 정보.
 formats:
 - 이메일
 ---

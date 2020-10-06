@@ -1,11 +1,7 @@
 ---
 $title: Obsługiwane składniki AMP dla poczty e-mail
-order: 3
-formats:
-- email
 teaser:
-  text: Poniżej znajduje się lista składników AMP, które są obecnie obsługiwane w wiadomościach e-mail AMP. Składniki te są pogrupowane w następujące kategorie:
-toc: true
+  text: "Poniżej znajduje się lista składników AMP, które są obecnie obsługiwane w wiadomościach e-mail AMP. Składniki te są pogrupowane w następujące kategorie:"
 ---
 
 <!--
