@@ -84,11 +84,18 @@ Give your Web Story document a title by including a <code>[<title>](https://deve
 
 ## Image alt-text
 
-Maximize accessibility and indexability by including [meaningful alt-text for images](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Accessibility_concerns). 
+Maximize accessibility and indexability by including [meaningful alt-text for images](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Accessibility_concerns).
+
+## Video subtitles and captions
+
+Maximize accessibility and indexability by including [video subtitles and/or captions](https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video).
+
+## Page attachments
+Use [page attachments](https://amp.dev/documentation/components/amp-story-page-attachment/) to present additional information in “classic article form” alongside your Web Story. This can be useful to provide extra detail, deep dives, or onward journeys for the content presented in your Story.
 
 ## Schema.org metadata
 
-Including [schema.org](https://schema.org/) structured data vocabulary defines important information about your Web Story that allows third-party platforms, such as search engines, to display and index them. 
+Including [schema.org](https://schema.org/) structured data vocabulary defines important information about your Web Story that allows third-party platforms, such as search engines, to display and index them.
 
 [tip type="default"]
 Validate your schema.org data using Google's [AMP Test](https://search.google.com/test/amp).
