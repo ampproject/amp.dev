@@ -3,7 +3,7 @@ formats:
   - websites
 $title: Interactivity foundations
 $order: 1
-description: "This guide outlines interactivity foundations in AMP."
+description: This guide outlines interactivity foundations in AMP.
 author: CrystalOnScript
 contributors:
   - sbenz
@@ -27,7 +27,7 @@ AMP installs event listeners on elements via the [`on` attribute](../../learn/am
 Event listeners and actions follow a specific syntax in AMP:
 
 ```html
-on="eventName:targetId.actionName"
+on="eventName:targetId.actionName(optionalParam='foo')"
 ```
 
 *   Registration of the listening event. Always `on` in AMP.
@@ -101,13 +101,15 @@ AMP provides three globally-available actions that change element visibility. Th
            layout="responsive"
            width="300"
            height="200"
-           src="https://amp.dev/static/samples/img/image3.jpg"></amp-img>
+           src="https://amp.dev/static/samples/img/image3.jpg"
+           alt="Photo of savory sushi"></amp-img>
   <amp-img 
            id="sweetImage" 
            layout="responsive"
            width="300"
            height="200"
-           src="https://amp.dev/static/samples/img/image2.jpg"></amp-img>
+           src="https://amp.dev/static/samples/img/image2.jpg"
+           alt="Photo of a sweet cupcakes"></amp-img>
 ```
 [/example]
 

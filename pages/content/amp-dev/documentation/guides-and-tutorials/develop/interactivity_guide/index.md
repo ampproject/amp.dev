@@ -3,14 +3,14 @@ formats:
   - websites
 $title: Interactivity in AMP introduction
 $order: 0
-description: "Read this guide to learn how to build interactivity in AMP."
+description: Read this guide to learn how to build interactivity in AMP.
 $hidden: true
 author: CrystalOnScript
 ---
 
 These guides outline how to create interactive AMP pages. Interactivity is essential to the modern web. Building unique and delightful experiences engages users, keeping them on your site. AMP provides out-of-the box solutions to common interactivity needs while also affording highly customizable and flexible solutions.
 
-Building interactive experiences in AMP may feel untraditional, and it is! But that doesn’t mean it’s more difficult. Many interactive experiences are very easy to build with AMP once you’re introduced to concepts and understand the syntax.
+Building interactive experiences may not feel traditional, and it's not! But that doesn’t mean it’s more difficult. Many interactive experiences are very easy to build with AMP once you’re introduced to concepts and understand the syntax.
 
 There are several levels of interactivity in AMP. You can apply one, multiple, all, or none to an AMP page. Read the sections of this guide to learn how to build interactivity in AMP.
 
@@ -48,7 +48,7 @@ One of AMP’s greatest strengths is its extensive library of ready-to-go compon
       </section>
       <section expanded>
         <h2>Section 3</h2>
-        <amp-img src="/static/inline-examples/images/squirrel.jpg" width="320" height="256"></amp-img>
+        <amp-img src="/static/inline-examples/images/squirrel.jpg" width="320" height="256" alt="Photo of a squirrel"></amp-img>
       </section>
     </amp-accordion>
     <button on="tap:sidebar.close">Close sidebar</button>
@@ -63,7 +63,7 @@ One of AMP’s greatest strengths is its extensive library of ready-to-go compon
 
 # Building custom interactive experiences
 
-While AMP provides solutions to common web widgets and interactivity, each website has its own needs. AMP embraces highly customizable experiences with three components: [`amp-selector`](../../../components/reference/amp-selector.md), [`amp-bind`](../../../components/reference/amp-bind.md), and [`amp-script`](../../../components/reference/amp-bind.md).
+While AMP provides solutions to common web widgets and interactivity, each website has its own needs. AMP embraces highly customizable experiences with three components: [`amp-selector`](../../../components/reference/amp-selector.md), [`amp-bind`](../../../components/reference/amp-bind.md), and [`amp-script`](../../../components/reference/amp-bind.md). These three components don't have a default UI. Instead, they're used to create selection-based interfaces and build dynamic pages that respond to user interaction.
 
 [example preview="top-frame" playground="true" imports="amp-bind, amp-script"]
 ```html
@@ -99,6 +99,8 @@ Use [this guide](custom_experiences.md) as an introduction to the differences be
 
 This guide outlines client-side rendering possibilities in AMP. By default, AMP pages are server-side rendered. However, in certain cases it's necessary to dynamically render data on the client, such as a list of articles or items in a user’s shopping cart.
 
-Example (?)
+[tip type="read-on"]
+Check out the [Client-side filtering](../../../examples/documentation/client-side_filtering.html) example.
+[/tip]
 
 Read [Client-side rendering](client_rendering.md) to get started with AMP components and concepts that enable rendering on the client-side.

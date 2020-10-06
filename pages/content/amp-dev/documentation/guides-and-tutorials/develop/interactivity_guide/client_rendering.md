@@ -3,7 +3,7 @@ formats:
   - websites
 $title: Client-side rendering in AMP
 $order: 4
-description: "This guide outlines client-side rendering possibilities in AMP."
+description: This guide outlines client-side rendering possibilities in AMP.
 author: CrystalOnScript
 contributors:
   - sbenz
@@ -137,7 +137,8 @@ Using amp-list enables state rendering from amp-bind on page load. You can rende
             "length": "9.3 Miles",
             "hikeUrl": "/coast",
             "credit": "Photo by Joseph Barrientos",
-            "imageUrl": "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+            "imageUrl": "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+            "altDescription": "Photo of the Golden Gate Bridge."
           },
           {
             "title": "Through the Park",
@@ -145,7 +146,8 @@ Using amp-list enables state rendering from amp-bind on page load. You can rende
             "length": "5 Miles",
             "hikeUrl": "/park",
             "credit": "Photo by Claudia Lorusso",
-            "imageUrl": "https://images.unsplash.com/photo-1565086565717-351194b2488b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
+            "imageUrl": "https://images.unsplash.com/photo-1565086565717-351194b2488b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+            "altDescription": "Photo of the Academy of Sciences in Golden Gate Park."
           },
           {
             "title": "Historic Brownstones",
@@ -153,7 +155,8 @@ Using amp-list enables state rendering from amp-bind on page load. You can rende
             "length": "1.2 Miles",
             "hikeUrl": "#",
             "credit": "Photo by Rachel Martin",
-            "imageUrl": "https://images.unsplash.com/photo-1542042238232-3a0b14425b71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
+            "imageUrl": "https://images.unsplash.com/photo-1542042238232-3a0b14425b71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+            "altDescription": "Photo of Brownstone building in New York City."
           },
           {
             "title": "Big Apple, Big Bites",
@@ -161,7 +164,8 @@ Using amp-list enables state rendering from amp-bind on page load. You can rende
             "length": "3.2 Miles",
             "hikeUrl": "#",
             "credit": "Photo by Peter Bond",
-            "imageUrl": "https://images.unsplash.com/photo-1515711127392-4c62a99c3393?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2854&q=80"
+            "imageUrl": "https://images.unsplash.com/photo-1515711127392-4c62a99c3393?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2854&q=80",
+            "altDescription": "Photo of a diner."
           }
         ]
       }
@@ -178,7 +182,7 @@ Using amp-list enables state rendering from amp-bind on page load. You can rende
     {% raw %}
     <template type="amp-mustache">
       <div class="hike-display">
-        <amp-img src="{{imageUrl}}" width="300" height="225"></amp-img>
+        <amp-img src="{{imageUrl}}" width="300" height="225" alt="{{altDescription}}"></amp-img>
         <br />
         <span class="image-credit">{{credit}}</span>
         <br />

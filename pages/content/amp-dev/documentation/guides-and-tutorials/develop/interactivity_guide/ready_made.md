@@ -3,13 +3,13 @@ formats:
   - websites
 $title: Ready-made interactivity with AMP components
 $order: 2
-description: "Read this guide to learn how to build interactivity in AMP."
+description: This guide outlines interactive possibilities available in the AMP component library.
 author: CrystalOnScript
 contributors:
   - sbenz
 ---
 
-This guide outlines interactive possibilities available in the  [AMP component library](../../../components/index.html). The library provides ready-made elements that meet common and uncommon user interface needs. You are able to customize these components, and how they interact with users, to meet specific needs. Read-on to learn how to harness this to decrease initial build costs without losing adaptability.
+This guide outlines interactive possibilities available in the [AMP component library](../../../components/index.html). The library provides ready-made elements that meet common and uncommon user interface needs. You are able to customize these components, and how they interact with users, to meet specific needs. Read-on to learn how to harness this to decrease initial build costs without losing adaptability.
 
 # Ready-made interactive components
 
@@ -18,6 +18,7 @@ Many of the available components fulfill a single purpose of interactivity. Most
 AMP offers the following ready-made interactive components:
 
 *   [**amp-accordion**](../../../components/reference/amp-accordion.md): a stacked list of headers that collapse or expand content sections with user interaction.
+*   [**amp-app-banner**](../../../components/reference/amp-app-banner.md): A wrapper and minimal UI for a cross-platform, fixed-position banner showing a call-to-action to install an app.
 *   [**amp-autocomplete**](../../..//components/reference/amp-autocomplete.md): suggests completed results corresponding to the user input as they type.
 *   [**amp-base-carousel**](../../../components/reference/amp-base-carousel.md): displays multiple similar pieces of content along a horizontal axis or vertical axis.
 *   [**amp-carousel**](../../../components/reference/amp-carousel.md): displays multiple pieces of content along a horizontal axis that users can tap through.
@@ -25,6 +26,8 @@ AMP offers the following ready-made interactive components:
 *   [**amp-date-picker**](../../../components/reference/amp-date-picker.md): a widget to select dates.
 *   [**amp-form**](../../../components/reference/amp-form.md): creates forms, but with AMP powers.
 *   [**amp-lightbox-gallery**](../../../components/reference/amp-lightbox-gallery.md): displays images in a lightbox gallery.
+*   [**amp-image-lightbox**](../../../components/reference/amp-image-lightbox.md): Provides a lightbox effect for a specified image.
+*   [**amp-image-slider**](../../../components/reference/amp-image-slider.md): A slider to compare two images.
 *   [**amp-inline-gallery**](../../../components/reference/amp-inline-gallery.md): displays multiple images along a horizontal axis that users can tap through.
 *   [**amp-inputmask**](../../../components/reference/amp-inputmask.md): provides input masking capabilities to inputs in AMP forms.
 *   [**amp-lightbox**](../../../components/reference/amp-lightbox.md): displays elements in a full-viewport “lightbox” modal.
@@ -32,7 +35,10 @@ AMP offers the following ready-made interactive components:
 *   [**amp-nested-menu**](../../../components/reference/amp-nested-menu.md): Displays a drilldown menu with arbitrary levels of nested submenus.
 *   [**amp-recaptcha-input**](../../../components/reference/amp-recaptcha-input.md): appends a reCAPTCHA v3 token to AMP form submissions.
 *   [**amp-sidebar**](../../../components/reference/amp-sidebar.md): a way to display meta content intended for temporary access such as navigation, links, buttons, menus.
+*   [**amp-truncate-text**](../../../components/reference/amp-truncate-text.md): Truncates text with an ellipsis, optionally showing an overflow element.
 *   [**amp-user-notification**](../../../components/reference/amp-user-notification.md): Displays a dismissable notification to the user.
+*   [**amp-video**](../../../components/reference/amp-video.md): Replaces the HTML5 video tag.
+*   [**amp-video-docking**](../../../components/reference/amp-video-docking.md): unctionality for videos that minimize ("dock") to a corner or a custom position on scroll.
 
 # Implementation patterns
 
@@ -65,6 +71,7 @@ Some attributes will change a small behavior. In the example below, the [`amp-ac
       src="/static/inline-examples/images/squirrel.jpg"
       width="320"
       height="256"
+      alt="Photo of a squirrel"
     ></amp-img>
   </section>
 </amp-accordion>
@@ -119,7 +126,7 @@ As outlined in [Interactivity foundations](foundations.md), AMP exposes globally
   <label>Postal code: <input name="code" mask="L0L_0L0" placeholder="A1A 1A1"></label>
   <input type="submit">
   <div submit-success>
-    <amp-img src="/static/inline-examples/images/squirrel.jpg" width="320" height="256" lightbox id="squirrel"></amp-img>
+    <amp-img src="/static/inline-examples/images/squirrel.jpg" width="320" height="256" lightbox id="squirrel" alt="Photo of a squirrel"></amp-img>
   </div>
 </form>
 ```

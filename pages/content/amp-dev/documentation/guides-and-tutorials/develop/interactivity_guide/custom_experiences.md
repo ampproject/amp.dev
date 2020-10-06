@@ -3,13 +3,13 @@ formats:
   - websites
 $title: Building custom interactive experiences
 $order: 3
-description: "This guide outlines highly customizable interactivity options to integrate into AMP pages."
+description: This guide outlines highly customizable interactivity options to integrate into AMP pages.
 author: CrystalOnScript
 contributors:
   - sbenz
 ---
 
-This guide outlines highly customizable interactivity options to integrate into AMP pages.  Like snowflakes and variable names, each website is unique and AMP's ready-made component library may not meet all your needs. Instead, AMP provides adaptable components that enable personalized solutions to complex interactivity needs. Use these components to build selection interfaces, widget, and the ability to process custom logic.
+This guide outlines highly customizable interactivity options to integrate into AMP pages.  Like snowflakes and variable names, each website is unique and AMP's ready-made component library may not meet all your needs. Instead, AMP provides adaptable components that enable personalized solutions to complex interactivity needs. Use these components to build selection interfaces, display widgets, and process custom logic.
 
 # Selection state management with amp-selector
 
@@ -30,21 +30,25 @@ Define how elements behave when users make selections by allowing single or mult
   <amp-img src="/static/samples/img/landscape_sea_300x199.jpg"
     width="90"
     height="60"
-    option="1"></amp-img>
+    option="1"
+    alt="Photo of a sea landscape"></amp-img>
   <amp-img src="/static/samples/img/landscape_desert_300x200.jpg"
     width="90"
     height="60"
     option="2"
-    selected></amp-img>
+    selected
+    alt="Photo of a desert landscape"></amp-img>
   <amp-img src="/static/samples/img/landscape_ship_300x200.jpg"
     width="90"
     height="60"
-    option="3"></amp-img>
+    option="3"
+    alt="Photo of a water landscape with ship"></amp-img>
   <amp-img src="/static/samples/img/landscape_village_300x200.jpg"
     width="90"
     height="60"
     option="4"
-    disabled></amp-img>
+    disabled
+    alt="Photo of a village landscape"></amp-img>
 </amp-selector>
 ```
 [/example]
@@ -113,7 +117,9 @@ Users expect the modern web to react to their interactions and reflect changes t
 
 The `amp-bind` component performs no evaluations on page load, with the exception of combining with amp-list.
 
-Read on: Read more on evaluating state on page load with amp-list in Client-side rendering in AMP.
+[tip type="read-on"]
+Read more on evaluating state on page load with amp-list in [Client-side rendering in AMP](client_rendering.md).
+[/tip]
 
 Instead it waits until a user triggers an action that interacts with amp-bind. This supports Core Web Vitals by not performing calculations that would slow down page load, and disallows page layout shifts, increasing speed to first user interaction.
 
@@ -189,7 +195,7 @@ The `amp-bind` component uses JavaScript-like expressions to perform operations 
 ```
 [/example]
 
-These expressions have an [allow-list of supported functions](../../../components/reference/amp-bind.md#allowed-listed-functions) with slight [differences and limitations](../../../components/reference/amp-bind.md#differences-from-javascript) from classic JavaScript. Read more on [expressions here](../../../components/reference/amp-bind.md#expressions).
+These expressions have an [allowlist of supported functions](../../../components/reference/amp-bind.md#allowed-listed-functions) with slight [differences and limitations](../../../components/reference/amp-bind.md#differences-from-javascript) from classic JavaScript. Read more on [expressions here](../../../components/reference/amp-bind.md#expressions).
 
 [tip type="note"]
 Expressions can become hard to maintain quickly. Make sure to keep it simple and use amp-bind-macro and amp-action-macro to encapsulate common logic.
@@ -229,9 +235,9 @@ A macro can also call other macros defined before itself. A macro cannot call it
 
 Some experiences require highly complex solutions with custom logic. In these cases, use the `amp-script` component to embed features into your AMP pag. You can write vanilla JavaScript, or import a library such as Preact, all without sacrificing performance. Use it to manipulate the DOM or import personalized widgets.
 
-`amp-script` has a [limit of 150 kilobytes](../../../components/reference/amp-script.md#size-of-javascript-code) of custom JavaScript on each page, shared between each instance of `<amp-script>`. It has an [allow-list of APIs](../../../components/reference/amp-script.md#allowed-apis) and some [security features](../../../components/reference/amp-script.md#security-features) to be aware of.
+`amp-script` has a [limit of 150 kilobytes](../../../components/reference/amp-script.md#size-of-javascript-code) of custom JavaScript on each page, shared between each instance of `<amp-script>`. It has an [allowlist of APIs](../../../components/reference/amp-script.md#allowed-apis) and some [security features](../../../components/reference/amp-script.md#security-features) to be aware of.
 
-## Building Custom widgets
+## Building custom widgets
 
 We believe the web should be delightful, immersive and unique. Unique websites will require functionality and style that’s personal to their brand. With amp-script, you can import custom widgets anywhere in your page. Use these widgets to create beautiful interfaces that run on complex logic written in vanilla JavaScript, Preact, or whatever you need. View the [Worker DOM Preact demo here](https://github.com/ampproject/worker-dom/tree/main/demo/preact-todomvc).
 
@@ -242,8 +248,6 @@ You may need to perform complex calculations or retrieve and process information
 ### Implement all interactivity in amp-script
 
 In some cases, wrapping an entire page in `<amp-script>` is the best way to create highly interactive experiences with AMP.
-
-EXAMPLE
 
 While this solution gives you absolute control over the page, it does remove some of the benefits AMP provides. Such as creating new AMP components. The amp-script component can add any HTML element to the page DOM, but is limited to [`amp-layout`](../../../components/reference/amp-layout.md) and [`amp-img`](../../../components/reference/amp-img.md) components.
 
