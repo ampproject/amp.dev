@@ -1,10 +1,6 @@
 ---
 $title: Tworzenie strony AMP HTML
-$order: 1
-description: Użyj protokołu HTTPS: podczas tworzenia stron i treści AMP należy zdecydowanie rozważyć użycie protokołu HTTPS (zamiast HTTP). Chociaż protokół HTTPS nie jest wymagany dla samego dokumentu AMP...
-author: pbakaus
-contributors:
-- bpaduch
+description: "Użyj protokołu HTTPS: podczas tworzenia stron i treści AMP należy zdecydowanie rozważyć użycie protokołu HTTPS (zamiast HTTP). Chociaż protokół HTTPS nie jest wymagany dla samego dokumentu AMP..."
 ---
 
 Poniższy kod ze znacznikami to przyzwoity punkt startowy lub kod standardowy. Skopiuj go i zapisz w pliku z rozszerzeniem .html.

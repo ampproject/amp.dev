@@ -1,10 +1,6 @@
 ---
 $title: Przygotowywanie strony do odnajdywania i dystrybucji
-$order: 4
-description: W niektórych przypadkach można serwować zarówno wersję tej samej strony bez AMP jak i z AMP, na przykład artykuł informacyjny. Rozważ to: jeśli wyszukiwarka Google...
-author: pbakaus
-contributors:
-- bpaduch
+description: "W niektórych przypadkach można serwować zarówno wersję tej samej strony bez AMP jak i z AMP, na przykład artykuł informacyjny. Rozważ to: jeśli wyszukiwarka Google..."
 ---
 
 W niektórych przypadkach można serwować zarówno wersję tej samej strony bez AMP jak i z AMP, na przykład artykuł informacyjny. Rozważ to: jeśli wyszukiwarka Google znajdzie wersję tej strony bez AMP, *skąd ma wiedzieć, że istnieje wersja AMP*?

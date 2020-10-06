@@ -1,13 +1,7 @@
 ---
 $title: Harmonogram wydawania AMP
-order: 10
-formats:
-- websites
-- email
-- stories
-- ads
 teaser:
-  text: - Kanały wydawania
+  text: "Kanały wydawania"
 ---
 
 <!--
