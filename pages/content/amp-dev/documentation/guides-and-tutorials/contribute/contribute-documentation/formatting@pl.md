@@ -1,13 +1,6 @@
 ---
 $title: Przewodniki i samouczki dotyczące formatowania
-$order: 3
 description: Wymagania amp.dev dotyczące formatowania plików
-formats:
-- websites
-- stories
-- ads
-- email
-author: CrystalOnScript
 ---
 
 Przewodniki i samouczki należy przesyłać w formacie [Markdown](https://www.markdownguide.org/), z dodatkowym formatowaniem sekcji frontmatter i szortkodów.
@@ -120,7 +113,7 @@ Niektóre dokumenty mogą dotyczyć wielu formatów AMP, natomiast niektóre for
 Możesz dodawać porady i objaśnienia, opakowując tekst w następujący szortkod:
 
 <div class="ap-m-code-snippet">
-<pre>&lsqb;tip type="default"]<br>Default tip<br>[/tip]</pre>
+<pre>&lsqb;tip type="default"]<br>Default tip<br>&lsqb;/tip]</pre>
 </div>
 
 [tip type="important"] Ważne [/tip]
