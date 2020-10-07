@@ -1,5 +1,5 @@
 ---
-$title: Ensure text remains visible during font load
+$title: Убедитесь, что текст остается видимым во время загрузки шрифта
 $order: 130
 tags:
 - lcp
