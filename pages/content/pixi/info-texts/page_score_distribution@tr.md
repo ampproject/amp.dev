@@ -1,0 +1,1 @@
+Sayfa puanı dağılım grafiği, İyi, İyileştirilmesi Gerekiyor ve Kötü eşikleri içinde kalan puanlara sahip sayfaların yüzdesini gösterir. Temel Web Hayati Değerlerini geçmek için sayfanızın ziyaretlerin %75'inden fazlasının İyi eşiği içinde olması gerekir.

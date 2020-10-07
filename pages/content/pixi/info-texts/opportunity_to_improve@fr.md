@@ -1,0 +1,1 @@
+C'est la différence entre les scores de la page fournie à l'origine et sa version en cache AMP s'il en existe une. Un état "Aucun" est signalé si la page d'origine fonctionne déjà de manière comparable à la version mise en cache, tandis qu'un état "---" est signalé s'il n'y a pas de données disponibles sur la page mise en cache.

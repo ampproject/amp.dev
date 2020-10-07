@@ -1,7 +1,7 @@
 ---
 $title: Integrasi Penyedia Email - AMP untuk Email
 $order: 5
-desccription: Informasi untuk penyedia dan klien email untuk integrasi dengan AMP.
+description: Informasi untuk penyedia dan klien email untuk integrasi dengan AMP.
 formats:
 - email
 ---
