@@ -1,9 +1,6 @@
 ---
 $title: amp-lightbox
 $category@: layout
-formats:
-- websites
-- ads
 teaser:
   text: Öğeleri tam görüntü alanı "lightbox" kalıcı iletişim kutusunda görüntüler.
 ---

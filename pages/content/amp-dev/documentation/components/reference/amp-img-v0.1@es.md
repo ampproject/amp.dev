@@ -1,11 +1,6 @@
 ---
 $title: amp-img
 $category@: media
-formats:
-- websites
-- email
-- ads
-- stories
 teaser:
   text: Sustituye la etiqueta `img` de HTML5.
 ---

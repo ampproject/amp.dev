@@ -1,8 +1,6 @@
 ---
 $title: amp-auto-ads
 $category@: ads-analytics
-formats:
-- websites
 teaser:
   text: Inserisce in modo dinamico gli annunci in una pagina AMP utilizzando un file di configurazione gestito in remoto.
 ---

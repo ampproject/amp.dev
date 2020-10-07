@@ -1,8 +1,6 @@
 ---
 $title: amp-3d-gltf
 $category@: media
-formats:
-- websites
 teaser:
   text: GL Transmission Format（glTF）の 3D モデルを表示します。
 ---

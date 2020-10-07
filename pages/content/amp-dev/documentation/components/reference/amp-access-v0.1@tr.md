@@ -1,8 +1,6 @@
 ---
 $title: amp-access
 $category@: dynamic-content
-formats:
-- websites
 teaser:
   text: AMP ödeme duvarı ve abonelik desteği sağlar.
 ---

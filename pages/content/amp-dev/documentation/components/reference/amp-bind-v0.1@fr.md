@@ -1,10 +1,6 @@
 ---
 $title: amp-bind
 $category@: dynamic-content
-formats:
-- websites
-- email
-- ads
 teaser:
   text: Autoriser la mutation des éléments en réponse aux actions de l'utilisateur ou à des modifications de données au moyen de la liaison de données et de simples expressions de type JS.
 ---

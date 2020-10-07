@@ -1,9 +1,6 @@
 ---
 $title: El código reutilizable en AMP
 order: 9
-formats:
-- websites
-- stories
 teaser:
   text:  head > style[amp-boilerplate] y noscript > style[amp-boilerplate]
 ---

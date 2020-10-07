@@ -3,8 +3,6 @@ $title: Menguji email AMP
 $order: 2
 $category: Kembangkan
 description: Pastikan pengalaman pengguna yang sangat baik dengan menguji email AMP Anda sebelum mengirimkannya kepada audiens yang lebih banyak.
-formats:
-- email
 author: fstanis
 ---
 

@@ -1,10 +1,6 @@
 ---
 $title: amp-accordion
 $category@: layout
-formats:
-- websites
-- email
-- ads
 teaser:
   text: 조회 사용자가 콘텐츠의 개요를 한눈에 파악하고 원하는 섹션으로 자유롭게 이동할 수 있습니다.
 ---

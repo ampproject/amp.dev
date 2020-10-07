@@ -1,10 +1,6 @@
 ---
 $title: Debug masalah Cache AMP
 order: 8
-formats:
-- situs web
-- cerita
-- iklan
 teaser:
   text: Mengapa dokumen saya rusak di cache AMP?
 ---

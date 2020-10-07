@@ -3,11 +3,6 @@ $title: المساهمة في المستندات
 $order: 0
 $hidden: صواب
 description: بدء المساهمة في المستندات الخاصة بـ amp.dev
-formats:
-- مواقع الويب
-- القصص
-- الإعلانات
-- الرسائل الإلكترونية
 author: CrystalOnScript
 ---
 

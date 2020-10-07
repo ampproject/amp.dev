@@ -1,8 +1,6 @@
 ---
 $title: AMP 이메일의 구조 및 렌더링
 order: 2
-formats:
-- 이메일
 teaser:
   text: 이메일은 MIME 트리로 구조화되어 있습니다. MIME 트리는 메시지 본문과 해당 이메일의 모든 첨부 파일을 포함합니다.
 toc: true

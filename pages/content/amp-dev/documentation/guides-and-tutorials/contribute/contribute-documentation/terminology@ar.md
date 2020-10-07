@@ -2,11 +2,6 @@
 $title: مصطلحات AMP
 $order: 2
 description: أدلة مصطلحات AMP
-formats:
-- مواقع الويب
-- القصص
-- الإعلانات
-- الرسائل الإلكترونية
 author: CrystalOnScript
 ---
 

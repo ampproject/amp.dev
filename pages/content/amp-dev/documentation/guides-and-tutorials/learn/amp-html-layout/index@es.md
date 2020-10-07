@@ -1,11 +1,6 @@
 ---
 $title: Sistema de diseño AMPHTML
 order: 1
-formats:
-- websites
-- email
-- stories
-- ads
 teaser:
   text: Información general
 ---

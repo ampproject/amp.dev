@@ -1,9 +1,6 @@
 ---
 $title: amp-lightbox
 $category@: layout
-formats:
-- websites
-- ads
 teaser:
   text: 以完整视口“灯箱”模式显示元素。
 ---

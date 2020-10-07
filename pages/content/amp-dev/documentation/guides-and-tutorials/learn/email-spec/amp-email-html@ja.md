@@ -1,10 +1,8 @@
 ---
 $title: AMP for Email 対応 HTML
 order: 4
-formats:
-- メール
 teaser:
-  text: 注意: このリストは非規範的であり、参考のみを目的としています。AMP Validator  ルールを信頼できます
+  text: "注意: このリストは非規範的であり、参考のみを目的としています。AMP Validator  ルールを信頼できます"
 toc: true
 ---
 

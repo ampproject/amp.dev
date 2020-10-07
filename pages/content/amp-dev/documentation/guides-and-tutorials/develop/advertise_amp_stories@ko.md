@@ -2,8 +2,6 @@
 $title: 웹 스토리 광고
 $order: 3
 description: 웹 스토리는 독자가 콘텐츠에 몰입하도록 유도하는 탭 가능한 전면 경험입니다. AMP 스토리 광고를 활용한 광고는 원활하고 주의를 분산시키지 않는...
-formats:
-- 스토리
 author: CrystalOnScript
 ---
 

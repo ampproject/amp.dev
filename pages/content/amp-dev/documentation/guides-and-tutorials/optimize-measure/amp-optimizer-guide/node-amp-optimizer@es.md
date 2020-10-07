@@ -2,9 +2,6 @@
 $title: Guía para utilizar el Optimizador de AMP Node.js
 $order: 2
 description: En esta guía se explica cómo configurar y utilizar la versión Node.js del optimizador de AMP.
-formats:
-- websites
-- stories
 author: sebastianbenz
 ---
 

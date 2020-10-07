@@ -2,9 +2,6 @@
 $title: Pengantar untuk animasi kompleks
 $order: 2
 description: Untuk animasi yang tidak dapat digerakkan dengan menambahkan dan menghapus kelas, AMP menawarkan beberapa komponen yang spesifik untuk animasi. Komponen-komponen ini menerapkan prinsip-prinsip AMP pada animasi ....
-formats:
-- websites
-- ads
 author: CrystalOnScript
 ---
 

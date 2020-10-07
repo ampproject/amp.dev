@@ -1,9 +1,6 @@
 ---
 $title: 分析ツールと AMP の統合
 order: 1
-formats:
-- ウェブサイト
-- ストーリー
 teaser:
   text:  概要
 toc: true

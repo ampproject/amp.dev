@@ -1,9 +1,6 @@
 ---
 $title: amp-selector
 $category@: dynamic-content
-formats:
-- websites
-- email
 teaser:
   text: Représente une commande qui affiche un menu d'options et permet à l'utilisateur d'y effectuer une sélection.
 ---

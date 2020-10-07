@@ -2,8 +2,6 @@
 $title: サードパーティ攻撃からの保護
 $order: 7
 description: ウェブに存在するセキュリティの脆弱性から AMP ページとユーザーを保護する対策を講じましょう
-formats:
-- ウェブサイト
 author: CrystalOnScript
 ---
 

@@ -1,8 +1,6 @@
 ---
 $title: Cómo crear un anuncio AMP HTML
 description: En este tutorial, aprenderá cómo crear un anuncio AMP HTML desde cero, que pueda publicarse en las páginas AMP y sin AMP.
-formats:
-- ads
 ---
 
 {{ image('/static/img/docs/ads/amp-ad-framed-final.png', 597, 1240, align='right third', caption='Completed AMPHTML image ad') }}

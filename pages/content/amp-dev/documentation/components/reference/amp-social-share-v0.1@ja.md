@@ -1,8 +1,6 @@
 ---
 $title: amp-social-share
 $category@: ads-analytics
-formats:
-- websites
 teaser:
   text: 共有トラッキング機能を開発中です。
 ---

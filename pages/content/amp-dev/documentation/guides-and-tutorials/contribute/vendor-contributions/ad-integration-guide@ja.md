@@ -1,8 +1,6 @@
 ---
 $title: AMP への広告テクノロジーの統合
 order: 3
-formats:
-- 広告
 teaser:
   text: AMP HTML の統合を検討中の広告テクノロジープロバイダーは、以下のガイドラインをお読みください。
 toc: true

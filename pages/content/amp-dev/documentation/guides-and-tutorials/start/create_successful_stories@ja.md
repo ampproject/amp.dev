@@ -3,8 +3,6 @@ $title: 優れたウェブストーリーを作成するためのベストプラ
 $order: 1
 description: 優れたウェブストーリーを作成するためのベストプラクティス
 $category: スタート
-formats:
-- ストーリー
 author: CrystalOnScript
 ---
 

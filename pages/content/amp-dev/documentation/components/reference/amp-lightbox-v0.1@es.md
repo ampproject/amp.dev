@@ -1,9 +1,6 @@
 ---
 $title: amp-lightbox
 $category@: layout
-formats:
-- websites
-- ads
 teaser:
   text: Muestra elementos en modo lightbox con viewport completo.
 ---

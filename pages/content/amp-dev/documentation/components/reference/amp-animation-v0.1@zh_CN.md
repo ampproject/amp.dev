@@ -1,9 +1,6 @@
 ---
 $title: amp-animation
 $category@: presentation
-formats:
-- websites
-- ads
 teaser:
   text: 定义和显示动画。
 ---

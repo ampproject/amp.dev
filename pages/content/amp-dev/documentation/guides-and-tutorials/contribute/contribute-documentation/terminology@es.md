@@ -2,11 +2,6 @@
 $title: Terminología de AMP
 $order: 2
 description: Recomendaciones sobre la terminología que debe seguirse en AMP
-formats:
-- websites
-- stories
-- ads
-- email
 author: CrystalOnScript
 ---
 

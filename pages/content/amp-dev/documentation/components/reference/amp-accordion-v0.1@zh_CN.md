@@ -1,10 +1,6 @@
 ---
 $title: amp-accordion
 $category@: layout
-formats:
-- websites
-- email
-- ads
 teaser:
   text: 提供一种方式，让观看者可以大致了解网页内容并随意跳至想查看的部分。
 ---

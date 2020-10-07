@@ -1,10 +1,6 @@
 ---
-$title: CSS アニメーションとトランジションのトリガ
-$order: 1
-description: ページ上の CSS アニメーションのトリガは、JavaScript を使ってクラスを追加または削除することで行われます。AMP ページでは、toggleClass アクションを使用して、同じ動作を達成できます。
-formats:
-- ウェブサイト
-- 広告
+$title: "CSS アニメーションとトランジションのトリガ"
+description: "ページ上の CSS アニメーションのトリガは、JavaScript を使ってクラスを追加または削除することで行われます。AMP ページでは、toggleClass アクションを使用して、同じ動作を達成できます。"
 ---
 
 CSS アニメーションは、ウェブ要素をある CSS スタイル構成から別の構成にトランジションすることができます。ブラウザは、定義済みのアニメーションを読み込み時に開始できますが、イベントでトリガされる CSS アニメーションは、[クラスの追加と削除によって行われます](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)。AMP では、これら両方の種類のアニメーションをサポートしています。

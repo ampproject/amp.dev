@@ -1,9 +1,7 @@
 ---
 $title: Integrasi Penyedia Email - AMP untuk Email
 $order: 5
-desccription: Informasi untuk penyedia dan klien email untuk integrasi dengan AMP.
-formats:
-- email
+description: Informasi untuk penyedia dan klien email untuk integrasi dengan AMP.
 ---
 
 Saat ini, kami sedang berupaya menuliskan panduan yang komprehensif tentang mengintegrasikan AMP untuk Email.

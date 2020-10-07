@@ -1,13 +1,6 @@
 ---
-$title: 書式設定ガイドとチュートリアル
-$order: 3
-description: amp.dev のファイルの書式設定要件
-formats:
-- ウェブサイト
-- ストーリー
-- 広告
-- メール
-author: CrystalOnScript
+$title: "書式設定ガイドとチュートリアル"
+description: "amp.dev のファイルの書式設定要件"
 ---
 
 ガイドとチュートリアルは、追加の Frontmatter とショートコードの書式設定とともに [Markdown](https://www.markdownguide.org/) に提出します。
@@ -120,7 +113,7 @@ amp.dev は AMP で作られています！そのため、画像は [`amp-img`](
 以下のショートコードでテキストを囲むことで、ヒントとコールアウトを追加できます。
 
 <div class="ap-m-code-snippet">
-<pre>&lsqb;tip type="default"]<br>Default tip<br>[/tip]</pre>
+<pre>&lsqb;tip type="default"]<br>Default tip<br>&lsqb;/tip]</pre>
 </div>
 
 [tip type="important"] 重要 [/tip]
@@ -174,7 +167,7 @@ Python-Markdown にはいくつかの制限があります。リストにコー�
   <pre>  &lsqb;example preview="default: none|inline|top-frame"<br>          playground="default: true|false"<br>          imports="<custom-element-1>,<custom-element-2>,..."           template="<custom-template>"]   ```html     // code sample   ```   &lsqb;/example]   </custom-template></custom-element-2></custom-element-1></pre>
 </div>
 
-注意: プレビューは、Playground で開くと、現在選択されている形式に自動的に変換されます 🤯！
+注意: プレビューは、Playground で開くと、現在選択されている形式に自動的に変換されます！
 
 プレビューがどのように生成されるかを定義するには、`preview` 属性を使用します。
 
@@ -195,7 +188,7 @@ Python-Markdown にはいくつかの制限があります。リストにコー�
 以下は、単純な埋め込みのインラインサンプルです。インラインスタイルで CSS を定義できます。
 
 <div class="ap-m-code-snippet">
-<pre>  [example preview="inline" playground="true"]<br>    ```html<br>    <div style="background: red; width: 200px; height: 200px;">Hello World</div><br>    ```<br>  [/example]<br>  [/example]</pre>
+<pre>  [example preview="inline" playground="true"]<br>    ```html<br>    <div style="background: red; width: 200px; height: 200px;">Hello World</div><br>    ```<br>  [/example]<br></pre>
 </div>
 
 これは次のように表示されます。

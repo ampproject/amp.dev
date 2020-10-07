@@ -1,8 +1,6 @@
 ---
 $title: amp-ad
 $category@: ads-analytics
-formats:
-- websites
 teaser:
   text: Representa un contenedor que puede mostrar un anuncio.
 ---

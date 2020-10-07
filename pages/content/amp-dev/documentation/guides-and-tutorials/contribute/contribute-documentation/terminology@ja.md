@@ -2,11 +2,6 @@
 $title: AMP 用語
 $order: 2
 description: AMP 用語に関するガイドライン
-formats:
-- ウェブサイト
-- ストーリー
-- 広告
-- メール
 author: CrystalOnScript
 ---
 

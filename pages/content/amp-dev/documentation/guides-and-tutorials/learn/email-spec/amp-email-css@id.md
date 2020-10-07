@@ -1,8 +1,6 @@
 ---
 $title: CSS yang Didukung AMP untuk Email
 order: 5
-formats:
-- email
 teaser:
   text: Dokumen ini menguraikan fitur-fitur CSS yang saat ini didukung di dalam email AMP.
 toc: true

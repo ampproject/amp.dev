@@ -1,8 +1,6 @@
 ---
 $title: amp-ad
 $category@: ads-analytics
-formats:
-- websites
 teaser:
   text: A container to display an ad.
 ---
