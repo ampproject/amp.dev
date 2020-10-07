@@ -1,12 +1,6 @@
 ---
 $title: Semplice accesso offline e miglioramento delle prestazioni
-$order: 11
 description: Un processo di lavoro dei servizi è un proxy lato client che si trova tra la tua pagina e il tuo server e permette di realizzare fantastiche esperienze offline, ottenere caricamenti rapidi ...
-formats:
-- siti web
-author: CrystalOnScript
-contributors:
-- pbakaus
 ---
 
 [I processi di lavoro dei servizi](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) consentono di realizzare esperienze d'uso offline eccellenti e coerenti, utilizzando diversi punti di forza della rete. Memorizzando nella cache le risorse all'interno del browser, un'app web è in grado di fornire dati, risorse e pagine offline che mantengono gli utenti interessati e informati.
@@ -39,7 +33,7 @@ In caso gli utenti raggiungono le tue pagine AMP sulla tua origine (diversamente
 
 Se sei arrivato a leggere queste pagine, stai realizzando pagine con contenuti AMP. Il team AMP mette sempre gli utenti al primo posto, allo scopo di offrire loro un'esperienza web di primissima qualità. Per realizzare questi obiettivi, il team AMP ha creato un processo di lavoro dei servizi appositamente per AMP!
 
-[tip type = "default"] **SUGGERIMENTO:** Segui la nostra esercitazione per imparare a utilizzare i [processi di lavoro dei servizi AMP nelle tue app web progressive (PWA)](/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp_to_pwa.md). [/tip]
+[tip type="default"] **SUGGERIMENTO:** Segui la nostra esercitazione per imparare a utilizzare i [processi di lavoro dei servizi AMP nelle tue app web progressive (PWA)](/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp_to_pwa.md). [/tip]
 
 ### Installazione del processo di lavoro dei servizi AMP
 

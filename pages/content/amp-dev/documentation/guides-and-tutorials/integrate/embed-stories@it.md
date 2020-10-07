@@ -1,10 +1,6 @@
 ---
 $title: Incorporare storie nelle pagine web
-$order: 3
 description: AMP Story Player permette di incorporare nelle pagine web delle storie che gli utenti potranno sfogliare, toccando o cliccando le loro pagine. Questa procedura guidata insegna come fare.
-formats:
-- siti web
-- storie
 ---
 
 Le storie sono coinvolgenti esperienze a schermo intero in cui gli utenti possono immergersi. Sono ospitate sul web aperto con il loro URL, per cui sono facilmente condivisibili. Ma come fare se si desidera integrare le storie nel proprio sito, ad esempio all'interno di un blog, una descrizione di prodotto o in un articolo di notizie?

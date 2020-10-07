@@ -1,9 +1,6 @@
 ---
 $title: Introduzione agli annunci AMPHTML
-$order: 1
 description: Gli annunci AMPHTML offrono uno strumento più veloce, leggero e sicuro per fare pubblicità su web. Sebbene le pagine AMP supportino gli annunci HTML tradizionali, questi annunci possono essere lenti da caricare.
-formats:
-- annunci
 ---
 
 ## Cos'è un annuncio AMPHTML?
@@ -97,7 +94,7 @@ Dopo aver creato annunci AMPHTML, occorre verificare che utilizzino la sintassi 
 - Utilizzare lo strumento [AMP validator](https://validator.ampproject.org/) per i test una-tantum.
 - Diventare partner di [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) e utilizzare il loro endpoint di convalida pubblico.
 
-[tip type = "note"] **NOTA:** Per visualizzare rapidamente gli annunci AMPHTML nelle pagine AMP (ad esempio, utilizzando il rendering preferenziale offerto da Fast Fetch), la sintassi deve essere corretta. Se la sintassi non è valida, l'annuncio verrà comunque visualizzato, ma non altrettanto rapidamente. [/tip]
+[tip type="note"] **NOTA:** Per visualizzare rapidamente gli annunci AMPHTML nelle pagine AMP (ad esempio, utilizzando il rendering preferenziale offerto da Fast Fetch), la sintassi deve essere corretta. Se la sintassi non è valida, l'annuncio verrà comunque visualizzato, ma non altrettanto rapidamente. [/tip]
 
 ## Supporto di annunci AMPHTML in RTB
 

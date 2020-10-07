@@ -1,11 +1,6 @@
 ---
 $title: Introduzione alle animazioni complesse
-$order: 2
 description: AMP offre diversi componenti specifici per le animazioni che non possono essere gestite aggiungendo e rimuovendo classi. Tali componenti applicano i principi dei contenuti AMP alle animazioni ...
-formats:
-- siti web
-- annunci
-author: CrystalOnScript
 ---
 
 AMP offre diversi componenti specifici per le animazioni che non possono essere gestite [aggiungendo e rimuovendo classi](triggering_css_animations.md). Tali componenti applicano i principi dei contenuti AMP alle animazioni: sono veloci, efficienti e privilegiano la qualità dell'esperienza utente. AMP limita le proprietà CSS consentite all'interno dei fotogrammi principali, ma garantisce vantaggi quali controllo fine, animazioni senza interruzioni e compatibilità su numerosi browser senza necessità di adattamenti aggiuntivi.
@@ -53,7 +48,7 @@ Nessuna proprietà di temporizzazione è obbligatoria, ma un'animazione potrebbe
 
 Così come gli oggetti CSS permettono di definire il passaggio da uno stato all'altro delle animazioni tramite transizioni, in AMP occorre dichiarare le proprietà dell'animazione sotto forma di fotogrammi principali da implementare con [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) (in modo analogo alle [animazioni CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)). Per garantire una riproduzione scorrevole e la compatibilità tra più browser, [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) [restringe le proprietà dei fotogrammi principali](../../../../documentation/components/reference/amp-animation.md#allow-listed-properties-for-keyframes) utilizzabili alle proprietà accelerate GPU che non richiedono una ridefinizione dei layout e sono in grado di effettuare animazioni sul [thread del programma di composizione](https://dev.chromium.org/developers/design-documents/compositor-thread-architecture). In tal modo le animazioni non interferiranno con i componenti AMP e con il [processo di rendering](https://developers.google.com/web/updates/2018/09/inside-browser-part3#javascript_can_block_the_parsing) del browser.
 
-[tip type = "note"] I fotogrammi principali vengono definiti direttamente in [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) o referenziati da [`<amp style-keyframe>`](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#keyframes-stylesheet) purché rispettino le limitazioni sulle proprietà utilizzabili. Maggiori informazioni sui [fotogrammi principali in `amp-animation`sono disponibili qui](../../../../documentation/components/reference/amp-animation.md#keyframes). [/tip]
+[tip type="note"] I fotogrammi principali vengono definiti direttamente in [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) o referenziati da [`<amp style-keyframe>`](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#keyframes-stylesheet) purché rispettino le limitazioni sulle proprietà utilizzabili. Maggiori informazioni sui [fotogrammi principali in `amp-animation`sono disponibili qui](../../../../documentation/components/reference/amp-animation.md#keyframes). [/tip]
 
 ### Trigger
 
@@ -339,7 +334,7 @@ Le animazioni possono comprendere attributi [`conditions`](../../../../documenta
     }
   </script>
 </amp-animation>
-    
+
   <div class="rain">
     <div class="drop"></div>
     <div class="drop right"></div>

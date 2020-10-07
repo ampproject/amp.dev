@@ -1,18 +1,6 @@
 ---
 $title: Creazione di pagine AMP veloci
-$order: 5
 description: Il segreto per la progettazione di siti web veloci sta nella creazione di pagine web fluide che rispondano alle esigenze degli utenti. Ad esempio, pagine che si adattano alle dimensioni e all'orientamento dello schermo dei dispositivi. L'uso di AMP ...
-formats:
-- siti web
-- e-mail
-- annunci
-- storie
-components:
-- iframe
-- youtube
-author: bpaduch
-contributors:
-- pbakaus
 ---
 
 ## Introduzione
@@ -29,7 +17,7 @@ In questa guida mostreremo come implementare facilmente questi fondamentali elem
 
 ## Controllo della finestra di visualizzazione<a name="controlling-the-viewport"></a>
 
-[filtri formats="siti web, annunci, storie"] Per ottimizzare le pagine web in modo che il contenuto si ridimensioni e si adatti alla finestra del browser in qualsiasi dispositivo, occorre indicare un elemento finestra di visualizzazione `meta`. L'elemento indica al browser come ridimensionare l'area visibile (finestra di visualizzazione) della pagina web.
+[filter formats="websites, stories, ads"] Per ottimizzare le pagine web in modo che il contenuto si ridimensioni e si adatti alla finestra del browser in qualsiasi dispositivo, occorre indicare un elemento finestra di visualizzazione `meta`. L'elemento indica al browser come ridimensionare l'area visibile (finestra di visualizzazione) della pagina web.
 
 Ma quali valori usare? Ebbene, in AMP questa informazione è già disponibile. Nell'ambito del [markup obbligatorio](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) per le pagine AMP, occorre specificare la seguente finestra di visualizzazione:
 

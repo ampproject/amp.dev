@@ -1,13 +1,6 @@
 ---
 $title: Formattazione di guide ed esercitazioni
-$order: 3
 description: Requisiti di formattazione dei file per amp.dev
-formats:
-- siti web
-- storie
-- annunci
-- e-mail
-author: CrystalOnScript
 ---
 
 Guide ed esercitazioni possono essere inviate sul sito [Markdown](https://www.markdownguide.org/), con una formattazione aggiuntiva per frontmatter e codici brevi.
@@ -95,7 +88,7 @@ Un elenco dei codici brevi e alcune informazioni sul loro uso sono disponibili a
 amp.dev è realizzato con AMP! Perciò le nostre immagini devono rispettare i criteri di [`amp-img`](../../../../documentation/components/reference/amp-img.md). Il processo di building fa uso della seguente sintassi per convertire le immagini nel corretto formato `amp-img`.
 
 <div class="ap-m-code-snippet">
-<pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Immagine dell'app di avvio dell'esercitazione per script amp di base') }}</pre>
+<pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Immagine dell\'app di avvio dell'esercitazione per script amp di base') }}</pre>
 </div>
 
 ## Filtro delle sezioni
