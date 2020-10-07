@@ -10,6 +10,17 @@ creation:
       height: 506
     formats:
       - ads
+  - name: BEE
+    url: https://beefree.io/bee-plugin/
+    type: Embeddable Email Builder
+    description: Add beautiful, effective email creation into your SaaS application, including interactive content powered by AMP.
+    image:
+      src: /static/img/tools/bee.png
+      width: 440
+      height: 209
+      fit: contain
+    formats:
+      - email
   - name: Stripo Email Editor
     url: https://stripo.email/amp-support/
     type: Email Templates Editor
