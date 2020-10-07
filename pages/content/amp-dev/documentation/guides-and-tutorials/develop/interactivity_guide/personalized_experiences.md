@@ -1,15 +1,15 @@
 ---
 formats:
   - websites
-$title: Building custom interactive experiences
+$title: Building personalized interactive experiences
 $order: 3
-description: This guide outlines highly customizable interactivity options to integrate into AMP pages.
+description: This guide outlines highly personalized interactivity options to integrate into AMP pages.
 author: CrystalOnScript
 contributors:
   - sbenz
 ---
 
-This guide outlines highly customizable interactivity options to integrate into AMP pages.  Like snowflakes and variable names, each website is unique and AMP's ready-made component library may not meet all your needs. Instead, AMP provides adaptable components that enable personalized solutions to complex interactivity needs. Use these components to build selection interfaces, display widgets, and process custom logic.
+This guide outlines highly personalized interactivity options to integrate into AMP pages.  Like snowflakes and variable names, each website is unique and AMP's ready-made component library may not meet all your needs. Instead, AMP provides adaptable components that enable personalized solutions to complex interactivity needs. Use these components to build selection interfaces, display widgets, and process custom logic.
 
 # Selection state management with amp-selector
 

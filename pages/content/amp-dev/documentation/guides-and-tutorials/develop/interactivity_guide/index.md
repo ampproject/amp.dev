@@ -61,9 +61,9 @@ One of AMP’s greatest strengths is its extensive library of ready-to-go compon
 
 [This guide](ready_made.md) introduces the most common interactive components and outlines implementation patterns.
 
-# Building custom interactive experiences
+# Building personalized interactive experiences
 
-While AMP provides solutions to common web widgets and interactivity, each website has its own needs. AMP embraces highly customizable experiences with three components: [`amp-selector`](../../../components/reference/amp-selector.md), [`amp-bind`](../../../components/reference/amp-bind.md), and [`amp-script`](../../../components/reference/amp-bind.md). These three components don't have a default UI. Instead, they're used to create selection-based interfaces and build dynamic pages that respond to user interaction.
+While AMP provides solutions to common web widgets and interactivity, each website has its own needs. AMP embraces highly personalized experiences with three components: [`amp-selector`](../../../components/reference/amp-selector.md), [`amp-bind`](../../../components/reference/amp-bind.md), and [`amp-script`](../../../components/reference/amp-bind.md). These three components don't have a default UI. Instead, they're used to create selection-based interfaces and build dynamic pages that respond to user interaction.
 
 [example preview="top-frame" playground="true" imports="amp-bind, amp-script"]
 ```html
@@ -93,7 +93,7 @@ While AMP provides solutions to common web widgets and interactivity, each websi
 ```
 [/example]
 
-Use [this guide](custom_experiences.md) as an introduction to the differences between the three, learn if and how to combine them with each other and use with page elements.
+Use [this guide](personalized_experiences.md) as an introduction to the differences between the three, learn if and how to combine them with each other and use with page elements.
 
 # Client-side rendering
 
