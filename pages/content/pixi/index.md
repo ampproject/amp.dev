@@ -36,7 +36,7 @@ staticText:
       scorePercentile: Score at 75th percentile
       score: Score
       opportunity: Opportunity to improve
-      pagesPassing: Pages passing
+      pagesPassing: Visits passing
       action: Take action
   additionalChecks:
     headline: Additional checks
