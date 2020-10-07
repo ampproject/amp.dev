@@ -1,15 +1,13 @@
 ---
 $title: Procedure consigliate per la creazione di annunci in storie AMP
-$order: 16
 description: Le storie AMP sono una coinvolgente esperienza a schermo intero, con contenuti abilitati per il tocco, che immerge gli utenti nella lettura dei contenuti. Gli annunci che appaiono nelle storie AMP devono avere una struttura coerente con l'interfaccia utente delle storie AMP.
-formats:
-- annunci
-- storie
 ---
 
 Le storie AMP sono una coinvolgente esperienza a schermo intero, con contenuti abilitati per il tocco, che immerge gli utenti nella lettura dei contenuti. Gli annunci che appaiono nelle storie AMP devono avere una struttura coerente con l'interfaccia utente delle storie AMP. Questo garantisce un'esperienza di utilizzo affidabile e senza interruzioni. La presente guida indica come creare annunci per storie AMP.
 
-##Principi degli annunci per storie AMP: gli attuali formati di annunci, come banner e caselle, non si integrano bene con il formato delle storie AMP. Gli annunci classici sono lenti, fuori posto e tendono a interrompere l'esperienza delle storie.
+##Principi degli annunci per storie AMP:
+
+gli attuali formati di annunci, come banner e caselle, non si integrano bene con il formato delle storie AMP. Gli annunci classici sono lenti, fuori posto e tendono a interrompere l'esperienza delle storie.
 
 Gli annunci delle storie AMP devono rispettare i seguenti principi:
 
@@ -21,7 +19,9 @@ Gli annunci delle storie AMP devono rispettare i seguenti principi:
 
 Per rispettare questi principi, il sistema di runtime delle storie AMP determina il corretto posizionamento di una pagina di annunci all'interno della storia AMP. Maggiori informazioni sui meccanismi di posizionamento degli annunci sono disponibili nel documento [Annunci nelle storie AMP](advertise_amp_stories.md).
 
-##Esempi di annunci per storie: gli annunci delle storie AMP sono annunci AMPHTML, che richiedono i dati del tag Meta e supportano le specifiche definite per i layout e i necessari elementi dell'interfaccia utente. Gli annunci nelle storie AMP comprendono sempre un pulsante di Invito all'azione (CTA) e un'etichetta dell'annuncio visualizzata come testo disclaimer nella parte superiore della pagina.
+##Esempi di annunci per storie:
+
+gli annunci delle storie AMP sono annunci AMPHTML, che richiedono i dati del tag Meta e supportano le specifiche definite per i layout e i necessari elementi dell'interfaccia utente. Gli annunci nelle storie AMP comprendono sempre un pulsante di Invito all'azione (CTA) e un'etichetta dell'annuncio visualizzata come testo disclaimer nella parte superiore della pagina.
 
 {{ image('/static/img/docs/stampads/stamp_ad.png', 425, 800, layout='intrinsic', alt='Esempio di annuncio in una storia AMP', caption='Esempio di annuncio in una storia AMP', align='' ) }}
 
@@ -36,7 +36,7 @@ I dati del tag Meta indicano che l'annuncio rispetta il formato delle storie AMP
 [sourcecode:html]
 
 
-  
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
@@ -58,10 +58,10 @@ I dati del tag Meta indicano che l'annuncio rispetta il formato delle storie AMP
 <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
 ```
 
-  
-  
+
+
     <amp-img src="%%FILE:JPG1%%" layout="responsive" height="1280" width="720"></amp-img>
-  
+
 
 
 Si consiglia di scegliere il tag amp-cta-type tra le [opzioni di testo disponibili per il pulsante CTA](#call-to-action-button-text-enum). AMP localizzerà automaticamente le opzioni predefinite se necessario.
@@ -98,30 +98,40 @@ Il pulsante di invito all'azione può essere configurato scegliendo tra una seri
 
 Se si ritiene necessario disporre di altre opzione di enumerazione testi per il pulsante CTA, è possibile aprire una [segnalazione GitHub](https://github.com/ampproject/amphtml/issues/new).
 
-##Pagina di destinazione annunci: è possibile specificare una di tre opzioni per la pagina di destinazione di un annuncio in storie AMP.
+##Pagina di destinazione annunci:
+
+è possibile specificare una di tre opzioni per la pagina di destinazione di un annuncio in storie AMP.
 
 - `STORY`: la pagina di destinazione è una [storia sponsorizzata](story_ads_best_practices.md#sponsored-story).
 - `AMP`: la pagina di destinazione è una pagina AMP valida.
 - `NONAMP`: la destinazione è una pagina web di qualunque altro tipo.
 
-##Layout: le storie AMP sono disposte orizzontalmente e a schermo intero. Gli annunci nelle storie devono conformarsi a questo formato per fornire un'esperienza di utilizzo omogenea.
+##Layout:
 
-##Dimensioni di sovrimpressione: l'etichetta dell'annuncio appare in sovrimpressione su una barra di sfumatura scura per tutta la larghezza dell'annuncio e si estende dalla cima verso il basso per 46 pixel.
+le storie AMP sono disposte orizzontalmente e a schermo intero. Gli annunci nelle storie devono conformarsi a questo formato per fornire un'esperienza di utilizzo omogenea.
 
-{{ image('/static/img/docs/stampads/ad_overlay.png', 515, 520, layout='intrinsic', alt='Esempio di sovrimpressione annuncio', caption='L'annuncio in sovrimpressione inizia in cima', align='' ) }}
+##Dimensioni di sovrimpressione:
+
+l'etichetta dell'annuncio appare in sovrimpressione su una barra di sfumatura scura per tutta la larghezza dell'annuncio e si estende dalla cima verso il basso per 46 pixel.
+
+{{ image('/static/img/docs/stampads/ad_overlay.png', 515, 520, layout='intrinsic', alt='Esempio di sovrimpressione annuncio', caption='L\'annuncio in sovrimpressione inizia in cima', align='' ) }}
 
 Il pulsante CTA si trova a 32 pixel dal fondo ed è centrato orizzontalmente. Occupa un'area di 120 per 36 pixel.
 
 {{ image('/static/img/docs/stampads/cta_button.png', 515, 520, layout='intrinsic', alt='Esempio del pulsante CTA', caption='Il pulsante CTA si trova in fondo alla pagina', align='' ) }}
 
-##Immagini e video: le immagini e i video inclusi in annunci per storie AMP devono essere in formato standard 4:3 a schermo intero. Gli annunci che includono video devono utilizzare un [poster](../../../documentation/components/reference/amp-video.md#poster). Le dimensioni consigliate per l'immagine del poster sono 720p (720 largh. x 1280 alt.).
+##Immagini e video:
+
+le immagini e i video inclusi in annunci per storie AMP devono essere in formato standard 4:3 a schermo intero. Gli annunci che includono video devono utilizzare un [poster](../../../documentation/components/reference/amp-video.md#poster). Le dimensioni consigliate per l'immagine del poster sono 720p (720 largh. x 1280 alt.).
 
 [sourcecode:html] <amp-video controls="" width="720" height="1280" layout="responsive" poster="images/kitten-playing.png"></amp-video>
 
 <source src="videos/kitten-playing.webm" type="video/webm"> <source src="videos/kitten-playing.mp4" type="video/mp4"><div fallback=""> <p>Questo browser non supporta elementi video.</p>
 </div> [/sourcecode]</source></source>
 
-###Immagini: le immagini di sfondo possono essere ridimensionate a schermo intero. Il seguente CSS è uno strumento efficace per ritagliare e centrare video e immagini.
+###Immagini:
+
+le immagini di sfondo possono essere ridimensionate a schermo intero. Il seguente CSS è uno strumento efficace per ritagliare e centrare video e immagini.
 
 [sourcecode:html]
 
@@ -140,9 +150,13 @@ Esempio: indicazione di più file di origine
   <source src="https://amp-example.com/media/movie.m3u8" type="application/vnd.apple.mpegurl">   <source src="https://amp-example.com/media/movie.mp4" type="video/mp4">  [/sourcecode]</source></source>
 
 
-####Dimensioni e lunghezza dei video: per prestazioni ottimali, occorre fornire video di dimensioni non superiori a 4 MB. File di dimensioni inferiori consentono un download più veloce, quindi è conveniente adottare oggetti dalle minime dimensioni possibili.
+####Dimensioni e lunghezza dei video:
 
-####Formati video: se è possibile fornire un solo formato video, utilizzare **MP4**. Tuttavia, ove possibile, utilizzare il video di tipo **HLS** e specificare MP4 come fallback per i browser che non supportano video HLS. HLS esegue lo streaming con bitrate adattivo, che permette di modificare la qualità del video per adattarla dinamicamente alla connessione di rete dell'utente.
+per prestazioni ottimali, occorre fornire video di dimensioni non superiori a 4 MB. File di dimensioni inferiori consentono un download più veloce, quindi è conveniente adottare oggetti dalle minime dimensioni possibili.
+
+####Formati video:
+
+se è possibile fornire un solo formato video, utilizzare **MP4**. Tuttavia, ove possibile, utilizzare il video di tipo **HLS** e specificare MP4 come fallback per i browser che non supportano video HLS. HLS esegue lo streaming con bitrate adattivo, che permette di modificare la qualità del video per adattarla dinamicamente alla connessione di rete dell'utente.
 
 [tip type="note"] **NOTA:** il formato video HLS non è supportato nel browser Chrome for Desktop (nemmeno tramite emulazione), pertanto è necessario specificare un fallback MP4 per qualsiasi traffico di tipo desktop sulla pagina. Per eseguire il debug dei video HLS, è necessario utilizzare un dispositivo mobile reale con debugging USB. [/tip]
 

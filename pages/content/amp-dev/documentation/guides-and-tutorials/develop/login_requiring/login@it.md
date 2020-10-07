@@ -1,6 +1,5 @@
 ---
 $title: Accesso
-$order: 1
 description: La prima volta che si giunge alla pagina, si potranno vedere 2 commenti e un pulsante di accesso. Cercando il pulsante di accesso nel codice, sarà possibile trovare ...
 ---
 
@@ -48,4 +47,4 @@ Un breve riepilogo:
 - Il sistema runtime AMP chiude la pagina di accesso e reindirizza alla pagina specificata dal parametro URL di ritorno
 - Il server deve fornire la risposta dopo che l'utente fa clic sul pulsante di accesso
 
-[tip type = "tip"] **SUGGERIMENTO:** Una spiegazione più dettagliata di questo flusso si trova anche in [`amp-access`](../../../../documentation/components/reference/amp-access.md). [/tip]
+[tip type="tip"] **SUGGERIMENTO:** Una spiegazione più dettagliata di questo flusso si trova anche in [`amp-access`](../../../../documentation/components/reference/amp-access.md). [/tip]

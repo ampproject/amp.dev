@@ -62,7 +62,7 @@ Gli errori precedenti possono essere risolti semplicemente aggiungendo l'attribu
 
 Ora ricaricando la pagina, entrambi gli errori saranno scomparsi.
 
-[tip type = "note"] Anche se l'indicazione dell'attributo `⚡` è l'approccio consigliato, è anche possibile utilizzare l'attributo `amp` al posto di `⚡`, come di seguito indicato:
+[tip type="note"] Anche se l'indicazione dell'attributo `⚡` è l'approccio consigliato, è anche possibile utilizzare l'attributo `amp` al posto di `⚡`, come di seguito indicato:
 
 ```html
 <html amp lang="en">

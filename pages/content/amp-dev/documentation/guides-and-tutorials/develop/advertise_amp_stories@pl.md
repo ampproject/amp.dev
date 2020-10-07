@@ -1,15 +1,12 @@
 ---
 $title: Reklama w relacjach internetowych
-$order: 3
 description: Relacje internetowe to interaktywne pełnoekranowe materiały, angażujące czytelników w treść. Reklama przy użyciu relacji AMP pozwala na bezproblemową i niezakłóconą...
-formats:
-- stories
-author: CrystalOnScript
 ---
 
 Relacje internetowe to interaktywne pełnoekranowe materiały, angażujące czytelników w treść. Reklama przy użyciu relacji AMP pozwala na bezproblemową i niezakłóconą integrację ze sposobem przeglądania witryn przez użytkownika, dzięki czemu użytkownik pozostaje zaangażowany i zachwycony platformą.
 
-##Rozmieszczenie reklam W odróżnieniu od stron internetowych AMP, na których ilość i umiejscowienie reklam projektuje się przez umieszczenie wielu składników [`amp-ad`](../../../documentation/components/reference/amp-ad.md), w przypadku relacji internetowych wystarczy jeden składnik [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md), aby zadecydować o ilości i rozmieszczeniu reklam.
+##Rozmieszczenie reklam
+W odróżnieniu od stron internetowych AMP, na których ilość i umiejscowienie reklam projektuje się przez umieszczenie wielu składników [`amp-ad`](../../../documentation/components/reference/amp-ad.md), w przypadku relacji internetowych wystarczy jeden składnik [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md), aby zadecydować o ilości i rozmieszczeniu reklam.
 
 Rozszerzenie [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) jest otoką składnika [`amp-ad`](../../../documentation/components/reference/amp-ad.md), dynamicznie wstawiającą jedną lub kilka reklam, gdy użytkownik konsumuje treść relacji. Aby zapewnić użytkownikowi najlepsze wrażenia:
 
@@ -26,7 +23,8 @@ Rozszerzenie [`amp-story-auto-ads`](../../../documentation/components/reference/
 
 [tip type="note"] **UWAGA —** dłuższa relacja AMP stwarza więcej możliwości zamieszczania reklam. Dokładne umiejscowienie algorytmu reklamy będzie z czasem nadal optymalizowane. [/tip]
 
-##Interakcja z użytkownikiem Użytkownicy mogą przechodzić między reklamami w taki sam sposób, jak w przypadku zwykłych stron relacji, dotykając dwóch trzecich ekranu po prawej stronie.
+##Interakcja z użytkownikiem
+Użytkownicy mogą przechodzić między reklamami w taki sam sposób, jak w przypadku zwykłych stron relacji, dotykając dwóch trzecich ekranu po prawej stronie.
 
 {{ image('/static/img/docs/stampads/story_ad_ui.png', 304, 512, layout='intrinsic', alt='Obraz pokazujący obszar, który użytkownicy mogą dotknąć, aby pominąć reklamę', caption='Użytkownicy mogą przechodzić między reklamami, dotykając dwóch trzecich ekranu po prawej stronie.', align='' ) }}
 
@@ -39,13 +37,17 @@ Użytkownicy mogą wchodzić w bezpośrednią interakcję z reklamą, dotykając
 
 {{ image('/static/img/docs/stampads/sponsored_story.png', 1600, 597, layout='intrinsic', alt='Obrazek pokazujący, że użytkownicy są przekierowywani do miejsca docelowego reklamy, ale mogą wrócić do relacji..', caption='Użytkownicy są przekierowywani do miejsca docelowego reklamy, ale mogą wrócić do relacji.', align='' ) }}
 
-##Konfigurowanie Relacje internetowe nie mogą obsługiwać składnika [`amp-ad`](../../../documentation/components/reference/amp-ad.md) bezpośrednio na stronie. Zamiast tego, wszystkie reklamy są pobierane i wyświetlane przez rozszerzenie [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md). Składnik [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) musi zostać umieszczony jako bezpośredni element podrzędny składnika [`amp-story`](../../../documentation/components/reference/amp-story.md).
+##Konfigurowanie
+
+Relacje internetowe nie mogą obsługiwać składnika [`amp-ad`](../../../documentation/components/reference/amp-ad.md) bezpośrednio na stronie. Zamiast tego, wszystkie reklamy są pobierane i wyświetlane przez rozszerzenie [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md). Składnik [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) musi zostać umieszczony jako bezpośredni element podrzędny składnika [`amp-story`](../../../documentation/components/reference/amp-story.md).
 
 [sourcecode:html] <amp-story> <amp-story-auto-ads> <script data-md-type="raw_html" type="application/json"><br>{<br>&quot;ad-attributes&quot;: {<br>// ad server configuration<br>}<br>}<br></script> </amp-story-auto-ads> <amp-story-page> ... </amp-story-page></amp-story> [/sourcecode]
 
 W przeciwieństwie do zwykłego składnika [`amp-ad`](../../../documentation/components/reference/amp-ad.md), nie jest wymagany żaden element `<fallback>` ani `<placeholder>`, ponieważ reklamy w formacie AMP Story będą wyświetlane dopiero po wyrenderowaniu w całości.
 
-##Integracja obsługi serwera reklam Najprostszym sposobem dodania reklam do relacji AMP jest serwowanie reklam z obsługiwanego serwera reklamowego.
+##Integracja obsługi serwera reklam
+
+Najprostszym sposobem dodania reklam do relacji AMP jest serwowanie reklam z obsługiwanego serwera reklamowego.
 
 Serwery reklam, które obecnie obsługują reklamy w formacie AMP Story:
 
@@ -85,4 +87,4 @@ Te kluczowe pary wartości są kopiowane do elementu [`amp-ad`](../../../documen
 }
 </script> {/amp-story-auto-ads1} {amp-story-page3} ... {/amp-story-page3}{/amp-story0} [/sourcecode]
 
-[tip type="note"] W celu uzyskania informacji o przesyłaniu reklam do Google Ad Manager przeczytaj artykuł [Kreacje niestandardowe w relacjach internetowych](https://support.google.com/admanager/answer/9038178) i sprawdź nasz przewodnik [Najlepsze metody tworzenia reklam w formacie AMP Story](story_ads_best_practices.md).
+[tip type="note"] W celu uzyskania informacji o przesyłaniu reklam do Google Ad Manager przeczytaj artykuł [Kreacje niestandardowe w relacjach internetowych](https://support.google.com/admanager/answer/9038178) i sprawdź nasz przewodnik [Najlepsze metody tworzenia reklam w formacie AMP Story](story_ads_best_practices.md).[/tip]

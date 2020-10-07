@@ -43,4 +43,4 @@ Una delle caratteristiche principali delle pagine AMP è che possono essere inco
 
 Gli editori che stanno creando un'app web progressiva, possono sfruttare gli stessi vantaggi e ridurre drasticamente la complessità delle soluzioni backend e client **riutilizzando le proprie pagine AMP come origine dati per le app PWA**.
 
-[tip type = "read-on"] **CONTINUA A LEGGERE:** Scopri come utilizzare le [pagine AMP all'interno di un'app PWA](../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md). [/tip]
+[tip type="read-on"] **CONTINUA A LEGGERE:** Scopri come utilizzare le [pagine AMP all'interno di un'app PWA](../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md). [/tip]

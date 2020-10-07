@@ -1,10 +1,6 @@
 ---
 $title: Attivazione di animazioni e transizioni CSS
-$order: 1
 description: L'attivazione delle animazioni CSS sulle pagine si basa sull'aggiunta e la rimozione di classi, eseguita tramite JavaScript. Lo stesso risultato può essere ottenuto sulle pagine AMP utilizzando l'azione toggleClass ...
-formats:
-- siti web
-- annunci
 ---
 
 Le animazioni CSS consentono agli elementi web di passare da una configurazione di stile CSS all'altra. Il browser può avviare animazioni definite al caricamento, ma le animazioni CSS attivate da eventi si [basano sull'aggiunta e sulla rimozione di classi](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations). AMP supporta entrambi i tipi di animazione.
