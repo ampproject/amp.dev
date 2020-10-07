@@ -60,6 +60,7 @@ author: mszylkowski
         ## Overview
 
   We will create an interactive experience that calculates what animal you are. The `option-{1/2/3/4}-results-category` attribute links each poll option to a result category, so pay special attention to it. 
+  
         ## Define the polls
         
         To add a poll, we have to specify some attributes:
@@ -161,7 +162,7 @@ author: mszylkowski
         ## Link to the results
         We have specified `option-{1/2/3/4}-results-category` on all the polls without any immediate effect, but here is where they come into play.
 
-        When users select the options in the polls previously created, an internal state saves those options and checks what `results-category` each option selected had. This element reads the state from all the polls, and counts how many selected options correspond to each of the states configured in the amp-story-interactive-results. Then it shows the category, description and image of the calculated state.
+        An internal state saves the user's poll selections. The `amp-story-interactive-results` element reads each polls state and calculates the results. It then displays the category, description and image of the calculated state.
 
         If you go back to the other pages and answer to the poll (in the story below), you'll see how the results change state to another animal when you go back to the results page.
 
