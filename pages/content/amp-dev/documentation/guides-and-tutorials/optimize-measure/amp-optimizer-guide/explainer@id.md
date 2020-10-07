@@ -2,9 +2,6 @@
 $title: Cara kerja Pengoptimal AMP
 $order: 1
 description: Sebuah Pengoptimal AMP mengambil dokumen AMPHTML yang valid sebagai input dan mengubahnya menjadi versi yang dioptimalkan dengan menerapkan pengoptimalan tambahan yang akan terlalu repot jika dilakukan “secara manual”. Panduan ini menjelaskan secara terperinci cara kerja Pengoptimal AMP.
-formats:
-- websites
-- stories
 author: sebastianbenz
 ---
 

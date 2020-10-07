@@ -2,8 +2,6 @@
 $title: Dodawanie ramek iframe
 $order: 10
 description: Dowiedz się, jak wyświetlać zawartość multimedialną na swoich stronach i jak używać ramek iframe do wyświetlania zaawansowanej zawartości poza ograniczeniami AMP.
-formats:
-- websites
 components:
 - iframe
 author: pbakaus

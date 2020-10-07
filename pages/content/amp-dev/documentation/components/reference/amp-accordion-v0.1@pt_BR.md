@@ -1,10 +1,6 @@
 ---
 $title: amp-accordion
 $category@: layout
-formats:
-- websites
-- email
-- ads
 teaser:
   text: Oferece aos usuários uma visualização rápida do conteúdo e permite pular para a seção desejada.
 ---

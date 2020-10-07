@@ -2,8 +2,6 @@
 $title: Łatwy dostęp offline i lepsza wydajność
 $order: 11
 description: Usługowy proces roboczy Service Worker to bufor po stronie klienta, który znajduje się między stroną a serwerem i jest używany do budowania fantastycznych wrażeń offline, szybkiego ładowania...
-formats:
-- websites
 author: CrystalOnScript
 contributors:
 - pbakaus

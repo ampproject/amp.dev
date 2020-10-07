@@ -1,11 +1,6 @@
 ---
 $title: System układu AMPHTML
 order: 1
-formats:
-- websites
-- email
-- stories
-- ads
 teaser:
   text:  Omówienie
 ---

@@ -1,9 +1,6 @@
 ---
 $title: AMP를 활용한 분석 도구 통합
 order: 1
-formats:
-- 웹사이트
-- 스토리
 teaser:
   text:  개요
 toc: true

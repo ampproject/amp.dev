@@ -1,9 +1,6 @@
 ---
 $title: Kod standardowy AMP
 order: 9
-formats:
-- websites
-- stories
 teaser:
   text:  head > style[amp-boilerplate] i noscript > style[amp-boilerplate]
 ---

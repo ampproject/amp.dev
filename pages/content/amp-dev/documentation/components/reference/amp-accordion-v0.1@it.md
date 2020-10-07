@@ -1,10 +1,6 @@
 ---
 $title: amp-accordion
 $category@: layout
-formats:
-- websites
-- email
-- ads
 teaser:
   text: Permette ai visualizzatori di dare un'occhiata alla struttura dei contenuti e passare a una sezione a loro scelta.
 ---

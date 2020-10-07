@@ -3,11 +3,6 @@ $title: Tworzenie dokumentacji
 $order: 0
 $hidden: true
 description: Zacznij dostarczać dokumentację do amp.dev
-formats:
-- websites
-- stories
-- ads
-- email
 author: CrystalOnScript
 ---
 

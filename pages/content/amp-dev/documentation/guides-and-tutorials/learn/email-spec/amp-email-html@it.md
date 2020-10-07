@@ -1,8 +1,6 @@
 ---
 $title: Elementi HTML supportati da AMP per e-mail
 order: 4
-formats:
-- e-mail
 teaser:
   text: "Nota: questo elenco non è dettato da norme ed è riportato a solo scopo informativo. Le regole dello strumento di convalida AMP sono autorevoli"
 toc: true

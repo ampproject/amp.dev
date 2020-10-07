@@ -1,10 +1,6 @@
 ---
 $title: amp-pixel
 $category@: ads-analytics
-formats:
-- websites
-- ads
-- stories
 teaser:
   text: 一种跟踪像素，用于统计网页浏览量。
 ---

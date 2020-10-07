@@ -1,8 +1,6 @@
 ---
 $title: amp-3d-gltf
 $category@: media
-formats:
-- websites
 teaser:
   text: Exibe modelos 3D no formato GL Transmission Format (glTF).
 ---

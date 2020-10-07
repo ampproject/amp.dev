@@ -2,8 +2,6 @@
 $title: Zwiększanie zaangażowania użytkownika
 $order: 6
 description: Oto kilka szybkich porad, pozwalających zwiększyć zaangażowanie użytkownika za pomocą AMP. Pomóż czytelnikom identyfikować Cię dzięki jednolitemu oznakowaniu markowemu i bogatej treści na stronach AMP i bez AMP.
-formats:
-- websites
 ---
 
 Oto kilka szybkich porad, pozwalających zwiększyć zaangażowanie użytkownika za pomocą AMP.

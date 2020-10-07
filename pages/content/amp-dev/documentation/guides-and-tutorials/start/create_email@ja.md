@@ -3,8 +3,6 @@ $title: 初めての AMP メールを作成する
 $order: 0
 description: 最初のメールを作成して、AMP メールでは何が異なるのかを学習します。
 tutorial: true
-formats:
-- メール
 author: CrystalOnScript
 ---
 

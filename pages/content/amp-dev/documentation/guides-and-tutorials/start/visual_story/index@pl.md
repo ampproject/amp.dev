@@ -3,8 +3,6 @@ $title: Tworzenie pierwszej relacji internetowej
 $order: 0
 description: W tym samouczku przedstawimy Ci składnik amp-story, którego możesz używać do tworzenia ciekawych wizualnie relacji internetowych za pomocą AMP. Pod koniec tego samouczka, będziesz...
 $hidden: true
-formats:
-- stories
 author: bpaduch
 ---
 

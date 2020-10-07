@@ -3,8 +3,6 @@ $title: Cómo crear un mapa de asientos
 $order: 104
 description: Los mapas de asientos son una parte importante de las aplicaciones web para emitir boletos, pero puede ser complicado implementarlos en AMP. Continúe leyendo para saber cómo implementar un mapa de asientos en AMP.
 tutorial: true
-formats:
-- websites
 author: kul3r4
 contributors:
 - pbakaus

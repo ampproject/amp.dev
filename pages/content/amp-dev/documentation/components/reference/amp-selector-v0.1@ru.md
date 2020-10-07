@@ -1,9 +1,6 @@
 ---
 $title: amp-selector
 $category@: dynamic-content
-formats:
-- websites
-- email
 teaser:
   text: Элемент управления, который представляет пользователю меню с вариантами для выбора.
 ---

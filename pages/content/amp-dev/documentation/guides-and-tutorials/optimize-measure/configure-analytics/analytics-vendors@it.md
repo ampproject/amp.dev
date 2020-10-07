@@ -1,10 +1,6 @@
 ---
 $title: Fornitori di strumenti di analisi
 order: 3
-formats:
-- siti web
-- storie
-- annunci
 teaser:
   text: Questo documento elenca i fornitori di strumenti di analisi che dispongono di configurazioni integrate da utilizzare con il componente amp-analytics.
 ---

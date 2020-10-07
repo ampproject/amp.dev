@@ -3,10 +3,6 @@ $title: Cómo configurar análisis básicos para sus páginas de AMP
 $order: 100
 description: Las plataformas de análisis generalmente se integran en los sitios web mediante fragmentos de JavaScript para estilos integrados en el código y llamadas de funciones, los cuales activan eventos que se regresan al sistema de análisis.
 tutorial: true
-formats:
-- websites
-- stories
-- ads
 ---
 
 Las plataformas de análisis generalmente se integran en los sitios web mediante fragmentos de JavaScript para estilos integrados en el código y llamadas de funciones, los cuales activan eventos que se regresan al sistema de análisis. AMP proporciona una configuración flexible para la sintaxis de JSON, con la finalidad de que varios de los socios que participan en el análisis puedan replicar este proceso.

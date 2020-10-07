@@ -2,9 +2,6 @@
 $title: Memicu transisi & animasi CSS
 $order: 1
 description: Memicu animasi CSS pada halaman mengandalkan penambahan dan penghapusan kelas, dilakukan melalui JavaScript. Anda bisa mendapatkan perilaku yang sama pada halaman AMP dengan menggunakan tindakan toggleClass ....
-formats:
-- websites
-- ads
 ---
 
 Animasi CSS memungkinkan elemen web untuk bertransisi dari satu konfigurasi gaya CSS ke yang lain. Browser dapat memulai animasi yang telah ditentukan saat dimuat, namun animasi CSS yang dipicu peristiwa [bergantung pada penambahan dan penghapusan kelas](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations). AMP mendukung kedua jenis animasi.

@@ -1,8 +1,6 @@
 ---
 $title: Struktur dan perenderan email AMP
 order: 2
-formats:
-- email
 teaser:
   text: Struktur email sama dengan pohon MIME. Pohon MIME ini berisi badan pesan dan lampiran apa pun pada email.
 toc: true

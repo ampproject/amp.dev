@@ -3,8 +3,6 @@ $title: Mendaftar untuk distribusi pengirim
 $order: 1
 description: Mendaftar untuk distribusi pengirim email AMP
 $category: Awal
-formats:
-- email
 author: CrystalOnScript
 ---
 

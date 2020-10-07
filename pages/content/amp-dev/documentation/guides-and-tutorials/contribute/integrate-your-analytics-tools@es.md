@@ -1,9 +1,6 @@
 ---
 $title: Integre sus herramientas analíticas con AMP
 order: 1
-formats:
-- websites
-- stories
 teaser:
   text: Overview
 toc: true

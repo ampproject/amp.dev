@@ -2,11 +2,6 @@
 $title: 문서 유형
 $order: 1
 description: amp.dev에서 허용되는 문서 기여 유형
-formats:
-- 웹사이트
-- 스토리
-- 광고
-- 이메일
 author: CrystalOnScript
 toc: false
 ---

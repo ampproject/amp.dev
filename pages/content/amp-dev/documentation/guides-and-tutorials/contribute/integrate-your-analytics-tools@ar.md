@@ -1,9 +1,6 @@
 ---
 $title: تكامل أداة التحليلات لديك مع AMP
 order: 1
-formats:
-- مواقع الويب
-- القصص
 teaser:
   text: نظرة عامة
 toc: true

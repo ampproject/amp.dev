@@ -1,8 +1,6 @@
 ---
 $title: Specifica per annunci AMP
 order: 3
-formats:
-- annunci
 teaser:
   text: _Se desideri proporre modifiche allo standard, inserisci un commento alla [Dichiarazione
 toc: true

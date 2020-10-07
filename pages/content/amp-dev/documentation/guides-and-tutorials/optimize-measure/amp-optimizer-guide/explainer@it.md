@@ -2,9 +2,6 @@
 $title: Come funziona un ottimizzatore AMP
 $order: 1
 description: Un ottimizzatore AMP prende in input un documento AMPHTML valido e lo trasforma in una versione migliorata, applicando ulteriori ottimizzazioni che sarebbero scomode da eseguire manualmente. Questa guida spiega in dettaglio il funzionamento dell'ottimizzatore AMP.
-formats:
-- siti web
-- storie
 author: sebastianbenz
 ---
 

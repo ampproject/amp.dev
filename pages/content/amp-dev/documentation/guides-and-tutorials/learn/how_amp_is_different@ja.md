@@ -1,11 +1,6 @@
 ---
 $title: AMP の特徴（仮）
 $order: 0
-formats:
-- ウェブサイト
-- メール
-- ストーリー
-- 広告
 author: pbakaus
 draft: true
 ---

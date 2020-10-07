@@ -1,8 +1,6 @@
 ---
 $title: Specyfikacja AMP dla reklam
 order: 3
-formats:
-- ads
 teaser:
   text: _Jeśli chcesz zaproponować zmiany w standardzie, umieść komentarz na [Intent
 toc: true

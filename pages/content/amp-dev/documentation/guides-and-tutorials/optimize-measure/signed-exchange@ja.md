@@ -1,8 +1,6 @@
 ---
 $title: Signed Exchange を使った AMP の配信
 $order: 4
-formats:
-- ウェブサイト
 author: CrystalOnScript
 ---
 

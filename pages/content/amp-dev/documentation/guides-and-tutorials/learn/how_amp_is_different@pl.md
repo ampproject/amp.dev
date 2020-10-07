@@ -1,11 +1,6 @@
 ---
 $title: Czym różni się AMP (do ustalenia)
 $order: 0
-formats:
-- websites
-- email
-- stories
-- ads
 author: pbakaus
 draft: true
 ---

@@ -2,9 +2,6 @@
 $title: Praktik terbaik untuk membuat iklan Cerita AMP
 $order: 16
 description: Cerita AMP adalah pengalaman layar penuh yang dapat diketuk sehingga isinya dapat menghanyutkan para pembaca. Iklan yang muncul di Cerita AMP harus mempunyai desain yang konsisten dan terpadu dengan UX Cerita AMP.
-formats:
-- ads
-- stories
 ---
 
 Cerita AMP adalah pengalaman layar penuh yang dapat diketuk sehingga isinya dapat menghanyutkan para pembaca. Iklan yang muncul di Cerita AMP harus mempunyai desain yang konsisten dan terpadu dengan UX Cerita AMP. Ini mencegah pengalaman pengguna terganggu atau tersela. Panduan ini menunjukkan cara membuat sebuah iklan untuk Cerita AMP.

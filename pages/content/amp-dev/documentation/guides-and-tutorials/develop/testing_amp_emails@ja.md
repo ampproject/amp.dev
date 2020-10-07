@@ -3,8 +3,6 @@ $title: AMP メールのテスト
 $order: 2
 $category: 開発
 description: 大勢のオーディエンスに AMP メールを送信する前にテストすることで、優れたユーザーエクスペリエンスを確保できます。
-formats:
-- メール
 author: fstanis
 ---
 

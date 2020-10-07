@@ -1,6 +1,4 @@
 ---
-formats:
-- websites
 $title: Proteja el contenido de su suscripción mediante el cifrado del lado del cliente
 $titles:
   teaser: Proteja el contenido de su suscripción mediante el cifrado del lado del cliente.

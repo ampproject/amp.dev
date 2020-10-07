@@ -2,9 +2,6 @@
 $title: Node.js AMP Optimizer 가이드
 $order: 2
 description: 이 가이드에서는 AMP Optimizer의 Node.js 버전을 설정하고 사용하는 방법을 설명합니다.
-formats:
-- 웹사이트
-- 스토리
 author: sebastianbenz
 ---
 

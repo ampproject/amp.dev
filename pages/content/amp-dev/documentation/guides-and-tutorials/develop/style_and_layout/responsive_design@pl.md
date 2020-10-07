@@ -2,11 +2,6 @@
 $title: Tworzenie responsywnych stron AMP
 $order: 5
 description: Projektowanie responsywnych stron internetowych polega na budowaniu płynnie działających stron internetowych, które reagują na potrzeby użytkownika — stron dopasowanych do wielkości i orientacji ekranu urządzenia. Możesz osiągnąć...
-formats:
-- websites
-- email
-- ads
-- stories
 components:
 - iframe
 - youtube

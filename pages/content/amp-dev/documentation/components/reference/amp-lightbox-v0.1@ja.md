@@ -1,9 +1,6 @@
 ---
 $title: amp-lightbox
 $category@: layout
-formats:
-- websites
-- ads
 teaser:
   text: フルビューポートの「ライトボックス」モーダル内に要素を表示します。
 ---

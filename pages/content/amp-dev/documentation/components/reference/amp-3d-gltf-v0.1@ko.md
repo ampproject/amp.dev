@@ -1,8 +1,6 @@
 ---
 $title: amp-3d-gltf
 $category@: media
-formats:
-- websites
 teaser:
   text: GL 전송 양식(glTF) 3D 모델을 표시합니다
 ---

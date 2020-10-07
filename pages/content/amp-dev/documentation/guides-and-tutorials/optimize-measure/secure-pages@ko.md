@@ -2,8 +2,6 @@
 $title: 타사 공격 보안
 $order: 7
 description: 웹의 보안 취약성으로부터 AMP 페이지 및 사용자를 보호하는 조치를 취합니다
-formats:
-- 웹사이트
 author: CrystalOnScript
 ---
 

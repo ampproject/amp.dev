@@ -3,10 +3,6 @@ $title: Configurazione di strumenti base di analisi per le pagine AMP
 $order: 100
 description: Le piattaforme di analisi sono comunemente integrate nei siti web tramite frammenti JavaScript inline e chiamate a funzioni, che attivano eventi poi reinviati al sistema di analisi.
 tutorial: true
-formats:
-- siti web
-- storie
-- annunci
 ---
 
 Le piattaforme di analisi sono comunemente integrate nei siti web tramite frammenti JavaScript inline e chiamate a funzioni, che attivano eventi poi reinviati al sistema di analisi. AMP fornisce una sintassi di configurazione JSON flessibile per replicare questo processo su diverse piattaforme di analisi.

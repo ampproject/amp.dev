@@ -2,11 +2,6 @@
 $title: Terminologi AMP
 $order: 2
 description: Panduan terminologi AMP
-formats:
-- websites
-- stories
-- ads
-- email
 author: CrystalOnScript
 ---
 

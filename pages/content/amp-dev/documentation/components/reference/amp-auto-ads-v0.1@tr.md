@@ -1,8 +1,6 @@
 ---
 $title: amp-auto-ads
 $category@: ads-analytics
-formats:
-- websites
 teaser:
   text: Uzaktan sunulan bir yapılandırma dosyası kullanarak reklamları bir AMP sayfasına dinamik şekilde yerleştirir.
 ---

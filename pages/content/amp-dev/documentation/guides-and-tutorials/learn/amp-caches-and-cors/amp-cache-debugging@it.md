@@ -1,10 +1,6 @@
 ---
 $title: Eseguire il debug dei problemi della cache AMP
 order: 8
-formats:
-- siti web
-- storie
-- annunci
 teaser:
   text: Perché il mio documento su una cache AMP è danneggiato?
 ---

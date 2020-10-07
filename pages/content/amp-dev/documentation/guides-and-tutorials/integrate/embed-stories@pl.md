@@ -2,9 +2,6 @@
 $title: Osadzanie relacji w stronach internetowych
 $order: 3
 description: AMP Story Player umożliwia osadzanie w stronie internetowej relacji, które użytkownicy mogą dotykać lub klikać. Postępuj zgodnie z tym poradnikiem krok po kroku, aby dowiedzieć się jak to zrobić.
-formats:
-- websites
-- stories
 ---
 
 Relacje są pełnoekranowymi, wciągającymi materiałami. Są umieszczane na otwartej stronie internetowej z własnym adresem URL, dzięki czemu można je z łatwością udostępniać. Co jednak zrobić, jeśli chcesz zintegrować relacje z własną witryną, na przykład w blogu, opisie produktu lub artykule informacyjnym?

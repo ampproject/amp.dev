@@ -3,8 +3,6 @@ $title: Najlepsze praktyki tworzenia udanych relacji internetowych
 $order: 1
 description: Najlepsze praktyki tworzenia udanych relacji internetowych
 $category: Początek
-formats:
-- stories
 author: CrystalOnScript
 ---
 

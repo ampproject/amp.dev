@@ -1,10 +1,6 @@
 ---
 $title: amp-accordion
 $category@: layout
-formats:
-- websites
-- email
-- ads
 teaser:
   text: Аккордеон позволяет зрителям ознакомиться с контентом и перейти к интересующему их разделу.
 ---

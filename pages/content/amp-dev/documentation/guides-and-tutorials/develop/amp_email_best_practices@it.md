@@ -2,8 +2,6 @@
 $title: Procedure consigliate per le e-mail AMP
 $order: 1
 $category: Sviluppo
-formats:
-- e-mail
 ---
 
 Il sistema AMP consente l'impiego di nuovi tipi di contenuti coinvolgenti e interessanti nelle e-mail! Durante la progettazione di e-mail, può essere utile tenere presente le seguenti procedure consigliate per garantire le massime prestazioni e affidabilità di tali contenuti su tutte le piattaforme e il loro funzionamento secondo le aspettative degli utenti.

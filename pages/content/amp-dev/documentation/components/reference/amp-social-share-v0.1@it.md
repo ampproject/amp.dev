@@ -1,8 +1,6 @@
 ---
 $title: amp-social-share
 $category@: ads-analytics
-formats:
-- websites
 teaser:
   text: La funzione di monitoraggio della condivisione è in fase di sviluppo.
 ---

@@ -2,8 +2,6 @@
 $title: Utilizzo di AMP Viewer per il rendering di e-mail
 $order: 5
 author: alabiaga
-formats:
-- e-mail
 ---
 
 I client di posta elettronica che intendono supportare AMP per e-mail devono utilizzare [AMP Viewer](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) per ospitare le e-mail AMP dei propri mittenti. Un visualizzatore creato con la [libreria AMP Viewer](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration) incapsula un documento AMP e abilita delle [funzionalità](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/CAPABILITIES.md) che consentono la comunicazione bidirezionale con il documento AMP tramite postMessage. Queste funzionalità includono il controllo della visibilità delle e-mail, l'inoltro delle metriche dell'utente e la fornitura di strumenti che garantiscono la sicurezza delle richieste XHR fatte dall'e-mail.

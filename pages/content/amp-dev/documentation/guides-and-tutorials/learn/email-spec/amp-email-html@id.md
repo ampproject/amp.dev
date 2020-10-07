@@ -1,8 +1,6 @@
 ---
 $title: HTML yang Didukung AMP untuk Email
 order: 4
-formats:
-- email
 teaser:
   text: "Catatan: Daftar ini tidak baku dan hanya untuk keperluan rujukan. Aturan Validator AMP yang berlaku"
 toc: true

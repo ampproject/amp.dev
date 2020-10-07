@@ -2,11 +2,6 @@
 $title: Terminologia AMP
 $order: 2
 description: Linee guida sulla terminologia AMP
-formats:
-- siti web
-- storie
-- annunci
-- e-mail
 author: CrystalOnScript
 ---
 

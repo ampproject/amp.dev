@@ -2,9 +2,6 @@
 $title: Głębokie zanurzenie w analitykę AMP
 $order: 1
 description: Ten przewodnik zanurza się głęboko w składnik amp-analytics, rozkładając jego przykładową konfigurację na kluczowe elementy konstrukcyjne.
-formats:
-- websites
-- stories
 ---
 
 Ten przewodnik zanurza się głęboko w składnik [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), rozkładając jego przykładową konfigurację na kluczowe elementy konstrukcyjne.[](../../../../documentation/components/reference/amp-analytics.md)``

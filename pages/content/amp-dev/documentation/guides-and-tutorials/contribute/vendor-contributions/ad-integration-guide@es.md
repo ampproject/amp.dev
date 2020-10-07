@@ -1,8 +1,6 @@
 ---
 $title: Cómo integrar sus tecnologías para crear anuncios en AMP
 order: 3
-formats:
-- ads
 teaser:
   text: Si usted es un proveedor de tecnología publicitaria y busca integrarse con AMP HTML, consulte las siguientes recomendaciones.
 toc: true

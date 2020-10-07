@@ -3,10 +3,6 @@ $title: Jak skonfigurować podstawową analitykę dla stron AMP
 $order: 100
 description: Platformy analityczne są powszechnie integrowane z witrynami internetowymi za pomocą fragmentów kodu JavaScript inline i wywołań funkcji, które wywołują zdarzenia odsyłane do systemu analitycznego.
 tutorial: true
-formats:
-- websites
-- stories
-- ads
 ---
 
 Platformy analityczne są powszechnie integrowane z witrynami internetowymi za pomocą fragmentów kodu JavaScript inline i wywołań funkcji, które wywołują zdarzenia odsyłane do systemu analitycznego. AMP zapewnia elastyczną składnię konfiguracji JSON, która pozwala na powielanie tego procesu dla kilku partnerów analitycznych.

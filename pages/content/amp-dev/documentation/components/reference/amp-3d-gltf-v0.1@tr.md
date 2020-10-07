@@ -1,8 +1,6 @@
 ---
 $title: amp-3d-gltf
 $category@: media
-formats:
-- websites
 teaser:
   text: GL İletim Biçimi (glTF) 3D modellerini görüntüler.
 ---

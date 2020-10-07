@@ -1,8 +1,6 @@
 ---
 $title: Menyajikan AMP dengan menggunakan komunikasi bertanda tangan
 $order: 4
-formats:
-- websites
 author: CrystalOnScript
 ---
 
