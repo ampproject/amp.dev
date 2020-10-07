@@ -6,9 +6,9 @@ author: mszylkowski
 <!--
   ## Introduction
 
-  The [amp-story-interactive](/documentation/components/amp-story-interactive/?format=stories) component provides immersive quizzes and polls for stories with extensive styling options.
+  The [`amp-story-interactive`](/documentation/components/amp-story-interactive/?format=stories) component provides customizable immersive quizzes and polls for Web Stories.
   
-  In this guide we will be creating a story with polls, that will report the answers to a results element to show different categories based on the answers from the polls.
+  In this guide we build a Web Story with polls that reports the answers to a result element. The result element shows different categories based off a user's poll answers. 
 -->
 
 <!-- -->
@@ -59,21 +59,18 @@ author: mszylkowski
       <!-- 
         ## Overview
 
-        We will create an interactive experience that calculates what animal are you
+  We will create an interactive experience that calculates what animal you are. The `option-{1/2/3/4}-results-category` attribute links each poll option to a result category, so pay special attention to it. 
+        ## Define the polls
         
-        In order to link the poll options to each result state, we will use the attribute `option-{1/2/3/4}-results-category`, so pay special attention to it.
+        To add a poll, we have to specify some attributes:
 
-        ## Adding the polls
-        
-        In order to add a poll, we have to specify some attributes:
+        - `option-{1/2/3/4}-text` passes the options to the poll.
+        - `option-{1/2/3/4}-confetti` passes the emojis that explode when selecting an option. Give it a try by selecting an option!
+        - `prompt-text` and `prompt-size` determine the content and size of the question. We'll make it large sine the content is short.
+        - `theme` and `chip-style` change the way the poll looks.
+        - `option-{1/2/3/4}-results-category` helps calculate the state of the amp-story-interactive-results element, more info below.
 
-        - `option-{1/2/3/4}-text` will be used to pass the options to the poll
-        - `option-{1/2/3/4}-confetti` will be used to pass the emojis that will explode when the option is selected. Give it a try and select an option!
-        - `prompt-text` and `prompt-size` will determine the content and size of the question. We'll make it large sine the content is short.
-        - `theme` and `chip-style` will change the way the poll looks.
-        - `option-{1/2/3/4}-results-category` is used to calculate the state of the amp-story-interactive-results element, more info below.
-
-        In this case, we added a dark transparent poll with orange prompt text, and we linked each option to a results-category.
+        In this case, we added a dark transparent poll with orange prompt text, and we linked each option to a `option-{1/2/3/4}-results-category`.
       
       -->
 
@@ -126,14 +123,14 @@ author: mszylkowski
         </amp-story-grid-layer>
       </amp-story-page>
 
-      <!-- And let's make a third one just to train muscle memory
+      <!-- And let's make a third one just to train muscle memory.
       
       There's multiple attributes and CSS variables exposed for creators to adapt the style to fit the story design.
       Adding gradients to the prompt-background is a great way to enhance the visuals of your elements, for instance.
       
       `--interactive-prompt-background: linear-gradient(120deg, var(--color-1), var(--color-2));`
 
-      [tip type="note"]If you want to see all the available styles, check the [documentation](/documentation/components/amp-story-interactive?format=stories) or [example story](/documentation/examples/components/amp-story-interactive/story).[/tip]
+      [tip type="read-on"]If you want to see all the available styles, check the [documentation](/documentation/components/amp-story-interactive?format=stories) or [example story](/documentation/examples/components/amp-story-interactive/story).[/tip]
       
       -->
       <amp-story-page id="page-poll-3">
@@ -161,7 +158,7 @@ author: mszylkowski
       </amp-story-page>
 
       <!-- 
-        ## Adding the results
+        ## Link to the results
         We have specified `option-{1/2/3/4}-results-category` on all the polls without any immediate effect, but here is where they come into play.
 
         When users select the options in the polls previously created, an internal state saves those options and checks what `results-category` each option selected had. This element reads the state from all the polls, and counts how many selected options correspond to each of the states configured in the amp-story-interactive-results. Then it shows the category, description and image of the calculated state.
