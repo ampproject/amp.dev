@@ -1,5 +1,5 @@
 ---
-$title: Ensure your site is mobile-friendly
+$title: Убедитесь, что ваш сайт оптимизирован для мобильных устройств
 $order: 500
 tags:
 - mobileFriendliness
