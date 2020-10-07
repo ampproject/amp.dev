@@ -19,20 +19,16 @@ const log = require('@lib/utils/log')('Localized Documents Cleaner');
 const gulp = require('gulp');
 const through = require('through2');
 const path = require('path');
-const fs = require('fs');
 
 // Where to look for existing documents
 const POD_BASE_PATH = path.join(__dirname, '../../../pages/');
 
 // Which documents to check for broken references
 // eslint-disable-next-line max-len
-const PAGES_SRC =
-  POD_BASE_PATH +
-  'content/amp-dev/**/*@*.md';
+const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/**/*@*.md';
 
 class LocalizedDocumentsCleaner {
-  constructor() {
-  }
+  constructor() {}
 
   async start() {
     log.start(`Inspecting documents in ${PAGES_SRC} ...`);
