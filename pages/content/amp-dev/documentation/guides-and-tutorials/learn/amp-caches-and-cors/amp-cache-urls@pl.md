@@ -2,10 +2,6 @@
 $title: Format adresu URL serwera buforującego AMP i obsługa żądań
 $order: 9
 toc: false
-formats:
-- websites
-- stories
-- ads
 author: Gregable
 contributors:
 - sebastianbenz

@@ -1,10 +1,6 @@
 ---
 $title: amp-analytics
 $category@: ads-analytics
-formats:
-- websites
-- email
-- ads
 teaser:
   text: AMP 문서에서 애널리틱스 데이터를 캡처합니다.
 ---

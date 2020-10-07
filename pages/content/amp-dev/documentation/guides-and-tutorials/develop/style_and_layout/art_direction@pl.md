@@ -2,11 +2,6 @@
 $title: Responsywne obrazy z atrybutem srcset, rozmiary i wysokości
 $order: 4
 description: Użyj atrybutu srcset do kontroli zasobów elementu na podstawie różnych wyrażeń medialnych. W szczególności, użyj go do wszystkich znaczników amp-img, aby określić, które...
-formats:
-- websites
-- email
-- ads
-- stories
 components:
 - iframe
 author: pbakaus

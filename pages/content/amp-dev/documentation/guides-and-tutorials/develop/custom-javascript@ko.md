@@ -1,8 +1,6 @@
 ---
 $title: AMP 페이지에서 사용자 지정 JavaScript 활용하기
 $order: 7
-formats:
-- 웹사이트
 author: CrystalOnScript
 contributors:
 - fstanis

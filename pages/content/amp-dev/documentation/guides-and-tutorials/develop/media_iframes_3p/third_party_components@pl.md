@@ -2,8 +2,6 @@
 $title: Dodawanie zawartości stron trzecich
 $order: 9
 description: Dowiedz się jak dodać składniki stron trzecich do swoich stron internetowych...
-formats:
-- websites
 components:
 - iframe
 - facebook

@@ -1,8 +1,6 @@
 ---
 $title: Uso di codice JavaScript personalizzato nelle pagine AMP
 $order: 7
-formats:
-- siti web
 author: CrystalOnScript
 contributors:
 - fstanis

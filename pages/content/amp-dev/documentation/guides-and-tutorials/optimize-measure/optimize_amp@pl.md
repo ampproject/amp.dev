@@ -2,9 +2,6 @@
 $title: Optymalizacja hostowanych stron AMP
 $order: 20
 description: Środowisko uruchomieniowe AMP jest zoptymalizowane pod względem szybkości, jeśli więc strony AMP są serwowane przez serwer buforujący AMP, są one w pełni zoptymalizowane i oferują najwyższą wydajność ładowania ...
-formats:
-- websites
-- stories
 author: sebastianbenz
 ---
 

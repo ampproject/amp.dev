@@ -3,8 +3,6 @@ $title: Registrazione per la distribuzione da parte dei mittenti
 $order: 1
 description: Registrazione per la distribuzione da parte del mittente delle email AMP
 $category: Inizio
-formats:
-- e-mail
 author: CrystalOnScript
 ---
 

@@ -3,8 +3,6 @@ $title: Buat seatmap
 $order: 104
 description: Seatmap merupakan bagian penting aplikasi web pengurus tiket (ticketer), namun penerapan di AMP bisa jadi sulit. Lanjutkan membaca untuk mempelajari cara menerapkan seatmap di AMP dengan
 tutorial: true
-formats:
-- websites
 author: kul3r4
 contributors:
 - pbakaus

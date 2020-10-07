@@ -2,9 +2,6 @@
 $title: Wprowadzenie do złożonych animacji
 $order: 2
 description: W przypadku animacji, które nie mogą być obsługiwane przez dodawanie i usuwanie klas, AMP oferuje kilka specjalnych składników. Składniki te stosują zasady AMP do animacji...
-formats:
-- websites
-- ads
 author: CrystalOnScript
 ---
 

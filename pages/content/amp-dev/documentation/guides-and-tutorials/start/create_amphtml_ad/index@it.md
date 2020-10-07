@@ -1,8 +1,6 @@
 ---
 $title: Creazione di un annuncio AMPHTML
 description: In questa esercitazione imparerai a creare dall'inizio un annuncio AMPHTML che può essere pubblicato su pagine AMP e non.
-formats:
-- annunci
 ---
 
 {{ image('/static/img/docs/ads/amp-ad-framed-final.png', 597, 1240, align='right third', caption='Completed AMPHTML image ad') }}

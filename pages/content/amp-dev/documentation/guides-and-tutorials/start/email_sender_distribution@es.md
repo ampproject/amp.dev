@@ -3,8 +3,6 @@ $title: Cómo generar el registro para la distribución de los remitentes
 $order: 1
 description: Cómo generar el registro para la distribución de los correos electrónicos de AMP
 $category: Comenzar
-formats:
-- email
 author: CrystalOnScript
 ---
 

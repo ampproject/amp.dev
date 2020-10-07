@@ -2,10 +2,6 @@
 $title: Memorizzazione nella cache delle pagine AMP
 $order: 0
 description: In questo documento impareremo a conoscere il ruolo della cache AMP nell'ecosistema AMP e in che modo le pagine AMP sono memorizzate nella cache.
-formats:
-- siti web
-- storie
-- annunci
 ---
 
 In questo documento impareremo a conoscere il ruolo della cache AMP nell'ecosistema AMP e in che modo le pagine AMP sono memorizzate nella cache.

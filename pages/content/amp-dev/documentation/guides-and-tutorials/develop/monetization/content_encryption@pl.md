@@ -1,6 +1,4 @@
 ---
-formats:
-- websites
 $title: Ochrona subskrybowanych treści za pomocą szyfrowania po stronie klienta
 $titles:
   teaser: Ochrona subskrybowanych treści za pomocą szyfrowania po stronie klienta

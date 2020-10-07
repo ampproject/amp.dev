@@ -1,10 +1,6 @@
 ---
 $title: AMP 캐시 이슈 디버그
 order: 8
-formats:
-- 웹사이트
-- 스토리
-- 광고
 teaser:
   text: 문서의 AMP 캐시 오류 발생 원인은?
 ---

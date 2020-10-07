@@ -2,8 +2,6 @@
 $title: AMP dla poczty e-mail — najlepsze praktyki
 $order: 1
 $category: Programowanie
-formats:
-- email
 ---
 
 AMP umożliwia stosowanie nowych, ekscytujących i angażujących treści w poczcie elektronicznej! Projektując pocztę elektroniczną, należy pamiętać o następujących najlepszych praktykach, aby zapewnić jej wydajność, niezawodność na różnych platformach i działanie zgodną z oczekiwaniami użytkowników.

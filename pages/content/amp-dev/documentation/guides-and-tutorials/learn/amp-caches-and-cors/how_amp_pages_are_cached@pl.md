@@ -2,10 +2,6 @@
 $title: Jak są buforowane strony AMP
 $order: 0
 description: W tym dokumencie opisano rolę serwerów buforujących AMP w ekosystemie AMP oraz sposób buforowania strony AMP.
-formats:
-- websites
-- stories
-- ads
 ---
 
 W tym dokumencie opisano rolę serwerów buforujących AMP w ekosystemie AMP oraz sposób buforowania strony AMP.

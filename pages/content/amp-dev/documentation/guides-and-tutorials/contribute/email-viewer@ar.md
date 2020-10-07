@@ -2,8 +2,6 @@
 $title: استخدام عارض AMP لعرض رسائل البريد الإلكتروني
 $order: 5
 author: alabiaga
-formats:
-- البريد الإلكتروني
 ---
 
 يجب على عملاء البريد الإلكتروني الذين يتطلعون إلى دعم AMP للبريد الإلكتروني استخدام [عارض AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) لاستضافة رسائل AMP الإلكترونية للمرسل. إذ يقوم العارض الذي تم إنشاؤه باستخدام [مكتبة عارض AMP](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration) بتغليف مستند AMP وتمكين [الإمكانات](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/CAPABILITIES.md) التي تسمح بالاتصال ثنائي الاتجاه مع مستند AMP عبر postMessage. وتتضمن هذه الإمكانات منح التحكم في رؤية البريد الإلكتروني، وترحيل مقاييس المستخدم، وتوفير وسائل لضمان سلامة طلبات XHR المقدمة من البريد الإلكتروني.

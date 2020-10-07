@@ -1,10 +1,6 @@
 ---
 $title: amp-accordion
 $category@: layout
-formats:
-- websites
-- email
-- ads
 teaser:
   text: 閲覧者がコンテンツの概要を一目で把握し、選択した任意のセクションにジャンプできるようにします。
 ---

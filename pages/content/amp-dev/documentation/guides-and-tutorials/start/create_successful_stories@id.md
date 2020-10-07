@@ -3,8 +3,6 @@ $title: Praktik terbaik untuk membuat Cerita Web yang sukses
 $order: 1
 description: Praktik terbaik untuk membuat Cerita Web yang sukses
 $category: Awal
-formats:
-- cerita
 author: CrystalOnScript
 ---
 

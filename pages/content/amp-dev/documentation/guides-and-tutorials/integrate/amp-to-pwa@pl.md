@@ -2,8 +2,6 @@
 $title: Wstępne ładowanie PWA ze stron AMP
 $order: 1
 description: Dobrą strategią jest uczynienie strony AMP punktem wejścia do witryny, a następnie rozgrzanie PWA za kulisami i przełączenie na...
-formats:
-- websites
 author: pbakaus
 ---
 

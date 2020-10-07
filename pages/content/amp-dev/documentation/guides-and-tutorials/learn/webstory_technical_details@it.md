@@ -3,8 +3,6 @@ $title: Dettagli tecnici delle storie web
 $order: 1
 description: Dettagli tecnici delle storie web
 $category: Sviluppo
-formats:
-- storie
 author: CrystalOnScript
 ---
 

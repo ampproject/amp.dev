@@ -1,10 +1,6 @@
 ---
 $title: amp-analytics
 $category@: ads-analytics
-formats:
-- websites
-- email
-- ads
 teaser:
   text: Acquisisce i dati di analisi da un documento AMP.
 ---

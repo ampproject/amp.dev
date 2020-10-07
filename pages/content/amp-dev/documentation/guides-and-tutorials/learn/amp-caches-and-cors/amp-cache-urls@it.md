@@ -2,10 +2,6 @@
 $title: Formato URL della cache AMP e gestione delle richieste
 $order: 9
 toc: false
-formats:
-- siti web
-- storie
-- annunci
 author: Gregable
 contributors:
 - sebastianbenz

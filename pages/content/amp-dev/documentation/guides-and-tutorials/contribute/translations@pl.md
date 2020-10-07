@@ -2,11 +2,6 @@
 $title: Wkład w tłumaczenia
 $order: 2
 description: Misją AMP jest uczynienie z sieci miejsca przyjaznego i dostępnego dla wszystkich, a nie jesteśmy w stanie osiągnąć tego celu bez zlokalizowanej dokumentacji. Tłumaczenie dokumentacji AMP jest niezbędnym procesem, który pomaga społeczności AMP w osiągnięciu sukcesu i zdrowia.
-formats:
-- websites
-- stories
-- ads
-- email
 ---
 
 Zapraszamy do inicjatywy tłumaczenia AMP!

@@ -1,10 +1,6 @@
 ---
 $title: amp-bind
 $category@: dynamic-content
-formats:
-- websites
-- email
-- ads
 teaser:
   text: Consente agli elementi di cambiare in base alle azioni dell'utente o alle modifiche dei dati per mezzo di associazione di dati ed espressioni semplici simili a JavaScript.
 ---

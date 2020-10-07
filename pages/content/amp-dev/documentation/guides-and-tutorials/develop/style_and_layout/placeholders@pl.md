@@ -2,11 +2,6 @@
 $title: Elementy zastępcze i zasoby rezerwowe
 $order: 3
 descriptions: Zgodnie z duchem postrzeganej wydajności i stopniowego doskonalenia, najlepszą praktyką w AMP jest zapewnianie tam, gdzie to możliwe elementów zastępczych i zasobów rezerwowych.
-formats:
-- websites
-- email
-- ads
-- stories
 components:
 - iframe
 author: pbakaus

@@ -1,8 +1,6 @@
 ---
 $title: Serwowanie AMP za pomocą podpisanych wymian
 $order: 4
-formats:
-- websites
 author: CrystalOnScript
 ---
 

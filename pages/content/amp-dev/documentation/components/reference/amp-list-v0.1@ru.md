@@ -1,10 +1,6 @@
 ---
 $title: amp-list
 $category@: dynamic-content
-formats:
-- websites
-- email
-- stories
 teaser:
   text: Использование шаблонов для динамической загрузки данных и создания элементов списков
 ---

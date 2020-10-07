@@ -3,8 +3,6 @@ $title: 좌석 맵 제작하기
 $order: 104
 description: 티켓 발권 웹 앱에서 좌석 맵은 중요한 부분이지만 AMP 구현은 까다로울 수 있습니다. 이 글을 읽고 AMP에서 좌석 맵을 구현하는 방법을 알아보세요.
 tutorial: true
-formats:
-- 웹사이트
 author: kul3r4
 contributors:
 - pbakaus

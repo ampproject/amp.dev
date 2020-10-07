@@ -2,10 +2,6 @@
 $title: Administración de las solicitudes y el formato URL para el caché de AMP
 $order: 9
 toc: false
-formats:
-- websites
-- stories
-- ads
 author: Gregable
 contributors:
 - sebastianbenz

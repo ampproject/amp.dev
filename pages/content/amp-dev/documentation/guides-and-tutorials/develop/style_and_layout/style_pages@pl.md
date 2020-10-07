@@ -1,11 +1,6 @@
 ---
 $title: Obsługiwane CSS
 description: Jak wszystkie strony internetowe, strony AMP są stylizowane za pomocą CSS, ale nie można odwoływać się do zewnętrznych arkuszy stylów, z wyjątkiem czcionek niestandardowych. Niedozwolone są również niektóre style...
-formats:
-- websites
-- email
-- ads
-- stories
 author: Meggin
 contributors:
 - pbakaus

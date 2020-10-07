@@ -1,8 +1,6 @@
 ---
 $title: Tworzenie widżetu UI z użyciem własnego kodu JavaScript
 $order: 101
-formats:
-- websites
 tutorial: true
 author:
 - morsssss

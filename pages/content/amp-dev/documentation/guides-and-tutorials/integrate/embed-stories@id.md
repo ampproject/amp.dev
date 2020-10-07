@@ -2,9 +2,6 @@
 $title: Menyematkan cerita di halaman web
 $order: 3
 description: Pemutar Cerita AMP memungkinkan Anda untuk menyematkan cerita yang dapat diketuk atau diklik pengguna di dalam sebuah halaman web. Ikutilah panduan langkah demi langkah ini untuk mempelajari caranya.
-formats:
-- websites
-- stories
 ---
 
 Cerita merupakan pengalaman layar penuh yang menghanyutkan. Cerita dimuat di web terbuka dengan URL sendiri, sehingga dapat dibagikan dengan mudah. Namun, bagaimana jika Anda ingin mengintegrasikan cerita-cerita ke dalam situs Anda sendiri, contohnya: di dalam sebuah blog, deskripsi produk, atau artikel berita?

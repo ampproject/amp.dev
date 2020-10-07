@@ -3,11 +3,6 @@ $title: Integrazione di tecnologie in AMP
 $order: 0
 $hidden: true
 description: Se sei un fornitore di tecnologie per editori o inserzionisti su web, ti suggeriamo di iniziare a supportare contenuti AMP in modo che i tuoi clienti possano continuare a sfruttare la tua tecnologia e ...
-formats:
-- siti web
-- annunci
-- storie
-- e-mail
 ---
 
 Ti ringraziamo per il tuo interesse a contribuire al progetto AMP! Apprezziamo la tua partecipazione al tentativo di rendere il web una piattaforma utente all'avanguardia.

@@ -1,8 +1,6 @@
 ---
 $title: AMP メールの構造とレンダリング
 order: 2
-formats:
-- メール
 teaser:
   text: メールは MIME ツリーとして構造化されています。この MIME ツリーにはメッセージ本文とメールの添付ファイルが含まれます。
 toc: true

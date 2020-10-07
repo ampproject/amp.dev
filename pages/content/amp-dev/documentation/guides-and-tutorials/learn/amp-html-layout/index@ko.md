@@ -1,11 +1,6 @@
 ---
 $title: AMPHTML 레이아웃 시스템
 order: 1
-formats:
-- 웹사이트
-- 이메일
-- 스토리
-- 광고
 teaser:
   text:  개요
 ---

@@ -2,8 +2,6 @@
 $title: Mengamankan dari serangan pihak ketiga
 $order: 7
 description: Ambil langkah-langkah untuk melindungi halaman AMP dan pengguna Anda dari kerentanan keamanan di web
-formats:
-- websites
 author: CrystalOnScript
 ---
 

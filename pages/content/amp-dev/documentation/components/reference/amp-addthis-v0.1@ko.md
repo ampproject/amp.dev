@@ -1,8 +1,6 @@
 ---
 $title: amp-addthis
 $category@: social
-formats:
-- websites
 teaser:
   text: AddThis 웹사이트 도구 삽입을 표시합니다.
 ---

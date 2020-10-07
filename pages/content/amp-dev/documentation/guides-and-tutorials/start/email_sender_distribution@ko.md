@@ -3,8 +3,6 @@ $title: 발신자 메일 등록
 $order: 1
 description: AMP 이메일의 발신자 메일 등록
 $category: 시작
-formats:
-- 이메일
 author: CrystalOnScript
 ---
 

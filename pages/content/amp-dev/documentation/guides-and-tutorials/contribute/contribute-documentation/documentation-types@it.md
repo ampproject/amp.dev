@@ -2,11 +2,6 @@
 $title: Tipi di documentazione
 $order: 1
 description: Tipi di contributi alla documentazione accettati su amp.dev
-formats:
-- siti web
-- storie
-- annunci
-- e-mail
 author: CrystalOnScript
 toc: false
 ---

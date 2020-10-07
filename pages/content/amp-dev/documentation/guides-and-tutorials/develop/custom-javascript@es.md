@@ -1,8 +1,6 @@
 ---
 $title: Cómo utilizar JavaScript de manera personalizada en las páginas de AMP
 $order: 7
-formats:
-- websites
 author: CrystalOnScript
 contributors:
 - fstanis

@@ -1,10 +1,6 @@
 ---
 $title: Depuración de problemas en el caché de AMP
 order: 8
-formats:
-- websites
-- stories
-- ads
 teaser:
   text:  ¿Por qué mi documento se dañó en un caché de AMP?
 ---

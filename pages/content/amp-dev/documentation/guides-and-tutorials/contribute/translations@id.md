@@ -2,11 +2,6 @@
 $title: Kontribusikan terjemahan
 $order: 2
 description: Salah satu misi AMP adalah menjadikan web tempat yang ramah dan dapat diakses oleh siapa pun. Tujuan ini tidak dapat dicapai tanpa dokumentasi yang dilokalkan. Menerjemahkan dokumentasi AMP merupakan suatu proses penting yang membantu kesuksesan dan keberlangsungan komunitas AMP.
-formats:
-- websites
-- stories
-- ads
-- email
 ---
 
 Selamat datang di Inisiatif Penerjemahan AMP!

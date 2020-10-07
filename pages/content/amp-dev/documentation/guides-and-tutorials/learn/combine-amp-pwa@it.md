@@ -2,8 +2,6 @@
 $title: Rapporti tra contenuti AMP e PWA
 $order: 7
 description: Le app web progressive (PWA) e le pagine AMP funzionano perfettamente insieme. In effetti, in molti casi, si completano a vicenda in un modo o nell'altro. Ora impareremo a ...
-formats:
-- siti web
 components:
 - youtube
 author: pbakaus

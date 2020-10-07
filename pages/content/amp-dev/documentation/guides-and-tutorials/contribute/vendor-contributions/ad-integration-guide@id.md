@@ -1,8 +1,6 @@
 ---
 $title: Integrasikan teknologi iklan Anda ke dalam AMP
 order: 3
-formats:
-- ads
 teaser:
   text: Jika Anda adalah penyedia teknologi iklan yang ingin berintegrasi dengan HTML AMP, silakan baca panduan di bawah ini.
 toc: true

@@ -2,8 +2,6 @@
 $title: Używanie środowiska AMP Viewer do renderowania wiadomości e-mail
 $order: 5
 author: alabiaga
-formats:
-- email
 ---
 
 Programy pocztowe w celu obsługi AMP dla poczty e-mail powinny używać środowiska [AMP Viewer](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) do hostowania wiadomości e-mail AMP nadawcy. Przeglądarka utworzona przy użyciu [biblioteki AMP Viewer](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration) hermetyzuje dokument AMP i zapewnia [funkcje](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/CAPABILITIES.md) umożliwiające dwukierunkową komunikację z dokumentem AMP za pomocą metody postMessage. Funkcje te umożliwiają kontrolę widoczności poczty elektronicznej, przekazywanie metryk użytkownika oraz zapewnienie środków chroniących bezpieczeństwo żądań XHR wysyłanych z poczty elektronicznej.

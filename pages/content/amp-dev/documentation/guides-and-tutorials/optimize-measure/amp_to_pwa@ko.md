@@ -3,8 +3,6 @@ $title: AMP 사이트를 PWA로 전환하기
 $order: 10
 description: PWA는 브라우저 내의 리소스를 캐싱하여 사용자에게 데이터, 애셋 및 오프라인 페이지를 제공하며 참여를 유도하고 정보를 전달합니다.
 tutorial: true
-formats:
-- 웹사이트
 author: crystalonscript
 ---
 

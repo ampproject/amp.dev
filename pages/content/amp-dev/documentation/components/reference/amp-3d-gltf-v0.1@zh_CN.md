@@ -1,8 +1,6 @@
 ---
 $title: amp-3d-gltf
 $category@: media
-formats:
-- websites
 teaser:
   text: 显示 GL 传输格式 (glTF) 的 3D 模型。
 ---

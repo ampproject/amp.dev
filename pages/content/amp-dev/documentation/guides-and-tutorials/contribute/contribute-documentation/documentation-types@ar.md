@@ -2,11 +2,6 @@
 $title: أنواع المستندات
 $order: 1
 description: أنواع مساهمات المستندات المقبولة على amp.dev
-formats:
-- مواقع الويب
-- القصص
-- الإعلانات
-- الرسائل الإلكترونية
 author: CrystalOnScript
 toc: خطأ
 ---

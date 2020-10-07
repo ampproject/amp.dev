@@ -1,8 +1,6 @@
 ---
 $title: Offerta di contenuti AMP utilizzando scambi firmati
 $order: 4
-formats:
-- siti web
 author: CrystalOnScript
 ---
 

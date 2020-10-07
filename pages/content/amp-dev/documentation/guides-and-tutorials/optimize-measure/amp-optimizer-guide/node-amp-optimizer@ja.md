@@ -2,9 +2,6 @@
 $title: Node.js AMP オプティマイザガイド
 $order: 2
 description: このガイドでは、Node.js バージョンの AMP オプティマイザをセットアップして使用する方法を説明します。
-formats:
-- ウェブサイト
-- ストーリー
 author: sebastianbenz
 ---
 

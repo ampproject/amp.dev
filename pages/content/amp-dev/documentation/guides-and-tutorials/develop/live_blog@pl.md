@@ -3,8 +3,6 @@ $title: Tworzenie bloga na żywo
 $order: 102
 description: Blogi na żywo to strony internetowe, które są często aktualizowane podczas trwającego wydarzenia, np. zawodów sportowych lub wyborów. W AMP można wdrożyć blog na żywo za pomocą ...
 tutorial: true
-formats:
-- websites
 author: kul3r4
 contributors:
 - bpaduch

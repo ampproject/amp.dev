@@ -2,11 +2,6 @@
 $title: 서식 지정 가이드 & 튜토리얼
 $order: 3
 description: amp.dev 파일 서식 지정 요구 사항
-formats:
-- websites
-- stories
-- ads
-- email
 author: CrystalOnScript
 ---
 

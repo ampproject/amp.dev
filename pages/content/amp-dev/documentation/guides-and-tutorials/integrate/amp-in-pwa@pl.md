@@ -2,8 +2,6 @@
 $title: Używanie AMP jako źródła danych PWA
 $order: 1
 description: Jeśli inwestujesz w AMP, ale nie masz jeszcze progresywnej aplikacji webowej, Twoje strony AMP mogą znacznie uprościć jej opracowanie.
-formats:
-- websites
 author: pbakaus
 ---
 

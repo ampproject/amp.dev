@@ -2,8 +2,6 @@
 $title: Menambahkan AMP ke email yang sudah ada
 $order: 1
 author: CrystalOnScript
-formats:
-- email
 ---
 
 Format AMP untuk Email disematkan sebagai bagian MIME yang baru. Jika email Anda dikirimkan ke penyedia yang mendukung AMP untuk Email, email tersebut akan ditampilkan - jika tidak, tak perlu cemas! Penyedia akan menampilkan HTML Anda atau standar (fallback) teks polos. Gunakan panduan ini untuk menyertakan AMP di dalam email Anda.

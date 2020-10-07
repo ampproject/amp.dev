@@ -2,8 +2,6 @@
 $title: Pre-caricamento di contenuti PWA dalle pagine AMP
 $order: 1
 description: Una buona strategia è quella di trasformare il punto di ingresso nel tuo sito in una pagina AMP, quindi preparare il contenuto PWA dietro le quinte e passare a ...
-formats:
-- siti web
 author: pbakaus
 ---
 

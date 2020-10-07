@@ -1,9 +1,6 @@
 ---
 $title: AMP 상용구 코드
 order: 9
-formats:
-- 웹사이트
-- 스토리
 teaser:
   text:  head > style[amp-boilerplate] 및 noscript > style[amp-boilerplate]
 ---

@@ -1,8 +1,6 @@
 ---
 $title: amp-access-laterpay
 $category@: dynamic-content
-formats:
-- websites
 teaser:
   text: Yayıncıların LaterPay mikro ödeme platformuna kolayca entegre olmasına olanak tanır.
 ---

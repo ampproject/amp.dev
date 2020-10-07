@@ -2,8 +2,6 @@
 $title: Inclusione di iframe
 $order: 10
 description: Scopri come visualizzare e includere contenuti multimediali nelle tue pagine e come utilizzare iframe per visualizzare contenuti avanzati superando le limitazioni di AMP.
-formats:
-- siti web
 components:
 - iframe
 author: pbakaus

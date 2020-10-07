@@ -1,8 +1,6 @@
 ---
 $title: Zintegruj swoje technologie reklamowe z AMP
 order: 3
-formats:
-- ads
 teaser:
   text: Jeśli jesteś dostawcą technologii reklamowych i chcesz zintegrować je z AMP HTML, zapoznaj się z poniższymi wytycznymi.
 toc: true

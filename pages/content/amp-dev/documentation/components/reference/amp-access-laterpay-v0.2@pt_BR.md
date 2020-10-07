@@ -1,8 +1,6 @@
 ---
 $title: amp-access-laterpay
 $category@: dynamic-content
-formats:
-- websites
 teaser:
   text: Permite que os editores se integrem facilmente com a plataforma de micropagamentos LaterPay.
 ---

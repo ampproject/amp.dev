@@ -2,8 +2,6 @@
 $title: Integrazione di AMP nelle app
 $order: 2
 description: Questa guida si rivolge agli sviluppatori di app mobili e per web, che desiderano fare uso e fornire collegamenti a pagine AMP. Ad esempio, consideriamo un'app di chat per dispositivi mobili ...
-formats:
-- siti web
 ---
 
 Questa guida si rivolge agli sviluppatori di app mobili e per web, che desiderano fare uso e fornire collegamenti a pagine AMP. Ad esempio, consideriamo un'app di chat per dispositivi mobili che carica la versione AMP di un URL condiviso per garantire agli utenti un'esperienza d'uso più veloce.

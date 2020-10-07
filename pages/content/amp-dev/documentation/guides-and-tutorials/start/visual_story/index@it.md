@@ -3,8 +3,6 @@ $title: Crea la tua prima storia web
 $order: 0
 description: In questa esercitazione, ti presenteremo il componente amp-story, che puoi utilizzare per creare storie web AMP visivamente accattivanti. Alla fine di questa esercitazione, ...
 $hidden: true
-formats:
-- storie
 author: bpaduch
 ---
 

@@ -1,8 +1,6 @@
 ---
 $title: AMP for Email es compatible con las CSS
 order: 5
-formats:
-- email
 teaser:
   text: En este documento se describen las funciones de las CSS que actualmente son compatibles con los correos electrónicos de AMP.
 toc: true

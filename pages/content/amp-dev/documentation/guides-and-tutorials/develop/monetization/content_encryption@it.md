@@ -1,6 +1,4 @@
 ---
-formats:
-- siti web
 $title: Protezione dei contenuti degli utenti con la crittografia lato client
 $titles:
   teaser: Protezione dei contenuti degli utenti con la crittografia lato client.

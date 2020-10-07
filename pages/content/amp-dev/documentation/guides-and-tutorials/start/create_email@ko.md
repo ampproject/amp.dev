@@ -3,8 +3,6 @@ $title: 첫 AMP 이메일 작성
 $order: 0
 description: 첫 이메일을 작성하며 AMP 이메일의 차별점을 알아보세요.
 tutorial: true
-formats:
-- 이메일
 author: CrystalOnScript
 ---
 

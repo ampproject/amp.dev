@@ -1,8 +1,6 @@
 ---
 $title: Gunakan JavaScript kustom di halaman AMP
 $order: 7
-formats:
-- websites
 author: CrystalOnScript
 contributors:
 - fstanis

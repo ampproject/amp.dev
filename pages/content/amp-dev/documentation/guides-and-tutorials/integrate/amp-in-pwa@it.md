@@ -2,8 +2,6 @@
 $title: Uso di AMP come fonte di dati per i contenuti PWA
 $order: 1
 description: Se hai investito in AMP ma non hai ancora realizzato un'App Web progressiva, le tue pagine AMP possono semplificare notevolmente lo sviluppo della tua App Web progressiva.
-formats:
-- siti web
 author: pbakaus
 ---
 

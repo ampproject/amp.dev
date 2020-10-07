@@ -3,8 +3,6 @@ $title: Procedure consigliate per la creazione di storie web di successo
 $order: 1
 description: Procedure consigliate per la creazione di storie web di successo
 $category: Inizio
-formats:
-- storie
 author: CrystalOnScript
 ---
 

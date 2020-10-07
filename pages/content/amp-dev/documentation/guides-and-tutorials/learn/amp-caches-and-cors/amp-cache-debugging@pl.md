@@ -1,10 +1,6 @@
 ---
 $title: Debugowanie problemów z usługą buforowania AMP
 order: 8
-formats:
-- websites
-- stories
-- ads
 teaser:
   text:  Dlaczego mój dokument jest uszkadzany na serwerze buforującym AMP?
 ---
