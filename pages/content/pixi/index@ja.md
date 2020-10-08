@@ -61,7 +61,7 @@ scriptText:
     passed: 合格
     passedAddition: 合格
     none: なし
-    nothingToDo: 対応は不要です！
+    nothingToDo: 対応は不要です！&#x1F389;
     fileAnIssue: AMP の課題を提出
     recommendation: 推奨事項
     recommendations: 推奨事項

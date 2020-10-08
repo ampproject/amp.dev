@@ -52,7 +52,7 @@ scriptText:
     passed: Bestanden
     passedAddition: bestanden
     none: Keins
-    nothingToDo: Nichts zu tun
+    nothingToDo: Nichts zu tun &#x1F389;
     fileAnIssue: Melde ein Problem bei AMP
     recommendation: Empfehlung
     recommendations: Empfehlungen
@@ -86,6 +86,6 @@ damit unser Team dir helfen kann, deine AMP Seiten
 zu verbessern.
 
 Wir nutzen öffentlich verfügbare APIs wie
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?hl=de),
+[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?dl=de),
 [Safe Browsing](https://developers.google.com/safe-browsing/v4/lookup-api?hl=de),
 und [Mobile-friendliness Test](https://search.google.com/test/mobile-friendly?hl=de).

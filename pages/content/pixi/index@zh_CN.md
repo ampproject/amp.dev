@@ -61,7 +61,7 @@ scriptText:
     passed: 通过
     passedAddition: 通过
     none: 无
-    nothingToDo: 无需任何操作！
+    nothingToDo: 无需任何操作！&#x1F389;
     fileAnIssue: 提交 AMP 问题
     recommendation: 建议
     recommendations: 建议

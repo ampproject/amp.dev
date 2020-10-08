@@ -166,7 +166,7 @@ class CoreWebVitalView {
 
     if (!count) {
       if (this.performanceCategory === CATEGORIES.fast) {
-        this.recommendations.textContent = i18n.getText('status.nothingToDo');
+        this.recommendations.innerHTML = i18n.getText('status.nothingToDo');
         return;
       }
       this.recommendations.setAttribute('href', issueUrl);
