@@ -86,6 +86,6 @@ damit unser Team dir helfen kann, deine AMP Seiten
 zu verbessern.
 
 Wir nutzen öffentlich verfügbare APIs wie
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/),
-[Safe Browsing](https://developers.google.com/safe-browsing/v4/lookup-api),
-und [Mobile-friendliness Test](https://search.google.com/test/mobile-friendly).
+[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?hl=de),
+[Safe Browsing](https://developers.google.com/safe-browsing/v4/lookup-api?hl=de),
+und [Mobile-friendliness Test](https://search.google.com/test/mobile-friendly?hl=de).

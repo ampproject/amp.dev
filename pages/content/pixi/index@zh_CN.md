@@ -84,4 +84,4 @@ scriptText:
     intrusiveInterstitials: 侵扰性插页式广告
 ---
 
-AMP 网页体验指南作为一种工具，可以让 AMP 开发者了解，根据 Google 搜索页面体验排名信号其 AMP 网页的表现情况，并且可以就网页的改进方式提供切实可行的反馈。如果我们无法为您提供切实可行的见解，请使用相应的提示[在 GitHub 上提交议题](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue)，以便我们的团队可以帮助您了解如何改进您的 AMP 网页。我们使用公开的 API，例如 [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)、[安全浏览](https://developers.google.com/safe-browsing/v4/lookup-api)和[移动设备适合性测试](https://search.google.com/test/mobile-friendly)。
+AMP 网页体验指南作为一种工具，可以让 AMP 开发者了解，根据 Google 搜索页面体验排名信号其 AMP 网页的表现情况，并且可以就网页的改进方式提供切实可行的反馈。如果我们无法为您提供切实可行的见解，请使用相应的提示[在 GitHub 上提交议题](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue)，以便我们的团队可以帮助您了解如何改进您的 AMP 网页。我们使用公开的 API，例如 [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?hl=zh_CN)、[安全浏览](https://developers.google.com/safe-browsing/v4/lookup-api?hl=zh_CN)和[移动设备适合性测试](https://search.google.com/test/mobile-friendly?hl=zh_CN)。
