@@ -8,7 +8,6 @@ const FileManagerPlugin = require('filemanager-webpack-plugin');
 const config = require('./config.js');
 const {calculateHash} = require('@ampproject/toolbox-script-csp');
 
-
 module.exports = (env, argv) => {
   const mode = argv.mode || 'production';
 
@@ -33,16 +32,16 @@ module.exports = (env, argv) => {
         templateParameters: (compilation, assets, assetTags, options) => {
           const js = Object.values(compilation.assets)[0].source();
 
-           return {
-             compilation,
-             webpackConfig: compilation.options,
-             htmlWebpackPlugin: {
-               files: assets,
-               options
-             },
-             cspHash: calculateHash(js)
-           };
-         }
+          return {
+            compilation,
+            webpackConfig: compilation.options,
+            htmlWebpackPlugin: {
+              files: assets,
+              options,
+            },
+            cspHash: calculateHash(js),
+          };
+        },
       }),
       new webpack.DefinePlugin({
         IS_DEVELOPMENT: mode == 'development',
