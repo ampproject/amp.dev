@@ -1,5 +1,5 @@
 ---
-$title: AMP page experience Guide
+$title: AMP page experience guide
 staticText:
   inputBar:
     headline: Analyze your AMP page
