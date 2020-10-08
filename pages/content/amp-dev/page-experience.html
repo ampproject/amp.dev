@@ -1,14 +1,8 @@
 ---
 $title: AMP Page Experience Guide
-$view: /views/custom.j2
+$view: /views/pixi.j2
 description: Coming soon - analyze and learn how to optimize your AMP pages for Google's Page Experience ranking signal.
 ---
-{% import '/views/partials/pixi/webpack.j2' as webpack %}
-
-{% block head %}
-{{ super() }}
-<meta name="amp-script-src" content="{{ webpack.cspHash }}">
-{% endblock %}
 
 {% do doc.styles.addCssFile('css/components/templates/pixi.css') %}
 
@@ -137,6 +131,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
     </script>
   </amp-state>
 
+  {% import '/views/partials/pixi/webpack.j2' as webpack %}
   <amp-script id="pixi-checks"
       class="ap-t-pixi-checks"
       src="{{ podspec.base_urls.platform }}{{ webpack.src }}"
