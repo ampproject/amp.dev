@@ -5,4 +5,4 @@ tags:
 - mobileFriendliness
 ---
 
-Web'e mobil cihazlardan erişim giderek daha da artıyor. Web sitelerinizi mobil uyumlu olacak şekilde tasarlamak, sayfalarınızın tüm cihazlarda iyi performans göstermesini sağlar.<br><br> Sayfanızın mobil uyumluluğunu nasıl artırabileceğinizi öğrenmek için, [buradan](https://developers.google.com/search/mobile-sites) tavsiyelere göz atın.
+Web'e mobil cihazlardan erişim giderek daha da artıyor. Web sitelerinizi mobil uyumlu olacak şekilde tasarlamak, sayfalarınızın tüm cihazlarda iyi performans göstermesini sağlar.<br><br> Sayfanızın mobil uyumluluğunu nasıl artırabileceğinizi öğrenmek için, [buradan](https://developers.google.com/search/mobile-sites?hl=tr) tavsiyelere göz atın.
