@@ -1,9 +1,4 @@
 ---
-formats:
-- websites
-- email
-- ads
-- stories
 $path: /documentation/guides-and-tutorials/develop/style_and_layout/index.html
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/develop/style_and_layout/index.html

@@ -3,8 +3,6 @@ $title: Tworzenie mapy miejsc
 $order: 104
 description: Mapy miejsc są ważną częścią aplikacji internetowych automatów biletowych, ale ich implementacja w AMP może być trudna. Czytaj dalej, aby dowiedzieć się jak zaimplementować mapę miejsc w AMP
 tutorial: true
-formats:
-- websites
 author: kul3r4
 contributors:
 - pbakaus

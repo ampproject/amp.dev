@@ -1,8 +1,6 @@
 ---
 $title: Specyfikacja AMP HTML
 order: 8
-formats:
-- websites
 teaser:
   text: AMP HTML jest podzbiorem języka HTML, służącym do tworzenia stron z treścią, takich jak artykuły informacyjne, w sposób gwarantujący pewne podstawowe cechy wydajnościowe.
 ---

@@ -2,11 +2,6 @@
 $title: Inclusione di immagini e video
 $order: 8
 description: Come in una normale pagina HTML, AMP ti consente di incorporare immagini, video e contenuti audio. Scopri le differenze negli equivalenti elementi AMP e scopri come ...
-formats:
-- siti web
-- storie
-- e-mail
-- annunci
 components:
 - iframe
 author: pbakaus

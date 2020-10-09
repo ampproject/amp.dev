@@ -1,8 +1,6 @@
 ---
 $title: amp-access
 $category@: dynamic-content
-formats:
-- websites
 teaser:
   text: AMP 페이월 및 구독 지원을 제공합니다.
 ---

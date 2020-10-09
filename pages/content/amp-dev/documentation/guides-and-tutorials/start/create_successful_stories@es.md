@@ -3,8 +3,6 @@ $title: Las mejores prácticas recomendadas para crear una historia web exitosa
 $order: 1
 description: Las mejores prácticas recomendadas para crear una historia web exitosa
 $category: Comenzar
-formats:
-- stories
 author: CrystalOnScript
 ---
 

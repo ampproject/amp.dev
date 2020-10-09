@@ -1,8 +1,6 @@
 ---
 $title: Cómo obtener los servicios de AMP mediante intercambios firmados
 $order: 4
-formats:
-- websites
 author: CrystalOnScript
 ---
 

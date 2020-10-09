@@ -2,9 +2,6 @@
 $title: Ottimizzazione delle pagine AMP ospitate
 $order: 20
 description: Il sistema di runtime AMP è in grado di ottimizzare la velocità delle pagine e se le pagine AMP sono fornite da una cache AMP, esse sono completamente ottimizzate per offrire le massime prestazioni di caricamento ...
-formats:
-- siti web
-- storie
 author: sebastianbenz
 ---
 

@@ -1,10 +1,6 @@
 ---
 $title: amp-pixel
 $category@: ads-analytics
-formats:
-- websites
-- ads
-- stories
 teaser:
   text: Sayfa görüntülemelerini saymak için bir izleme pikseli.
 ---

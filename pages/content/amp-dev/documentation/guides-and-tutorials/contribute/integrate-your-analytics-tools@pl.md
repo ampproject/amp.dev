@@ -1,9 +1,6 @@
 ---
 $title: Zintegruj swoje narzędzie analityczne z AMP
 order: 1
-formats:
-- websites
-- stories
 teaser:
   text:  Omówienie
 toc: true

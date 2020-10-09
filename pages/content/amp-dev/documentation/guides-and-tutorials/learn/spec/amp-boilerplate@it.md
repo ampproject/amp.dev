@@ -1,9 +1,6 @@
 ---
 $title: Codice Boilerplate AMP
 order: 9
-formats:
-- siti web
-- storie
 teaser:
   text:  head > style[amp-boilerplate] e noscript > style[amp-boilerplate]
 ---

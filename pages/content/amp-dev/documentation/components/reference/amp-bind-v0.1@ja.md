@@ -1,10 +1,6 @@
 ---
 $title: amp-bind
 $category@: dynamic-content
-formats:
-- websites
-- email
-- ads
 teaser:
   text: データ バインディングや JS に似た単純な式を使用して、ユーザーの操作やデータの変更に応じた要素の変更を可能にします。
 ---

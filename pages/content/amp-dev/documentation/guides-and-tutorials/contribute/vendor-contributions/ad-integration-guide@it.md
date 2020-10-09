@@ -1,8 +1,6 @@
 ---
 $title: Integrazione delle tecnologie per annunci in AMP
 order: 3
-formats:
-- annunci
 teaser:
   text: Se sei un fornitore di tecnologie per annunci che intende integrare i propri contenuti in AMP HTML, consulta le seguenti linee guida.
 toc: true

@@ -71,6 +71,12 @@ describe('Routes', () => {
       });
     });
   });
+  it('serves Pixi', async () => {
+    const response = await fetch('/page-experience/');
+    expect(response.status).toBe(200);
+    const body = await response.text();
+    expect(await validate(body)).toBe(true);
+  });
   function fetch(path) {
     return nodeFetch(new URL(path, config.hosts.platform.base));
   }

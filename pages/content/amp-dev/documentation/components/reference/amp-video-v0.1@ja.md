@@ -1,10 +1,6 @@
 ---
 $title: amp-video
 $category@: media
-formats:
-- websites
-- ads
-- stories
 teaser:
   text: HTML5 video タグの代替機能です。
 ---

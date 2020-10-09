@@ -4,8 +4,6 @@ $order: 0
 description: Alcune interazioni dell'utente con una pagina, come l'aggiunta di un commento, potrebbero richiedere un flusso di accesso. Per implementare un flusso di accesso ...
 numbered: 1
 $hidden: true
-formats:
-- siti web
 ---
 
 Alcune interazioni dell'utente con una pagina, come l'aggiunta di un commento, potrebbero richiedere un flusso di accesso. Per implementare un flusso di accesso, si può usare il componente [`amp-access`](../../../../documentation/components/reference/amp-access.md) insieme al componente [`amp-form`](../../../../documentation/components/reference/amp-form.md).

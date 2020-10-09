@@ -2,11 +2,6 @@
 $title: ドキュメントの種類
 $order: 1
 description: amp.dev で貢献が許可されるドキュメントの種類
-formats:
-- ウェブサイト
-- ストーリー
-- 広告
-- メール
 author: CrystalOnScript
 toc: false
 ---

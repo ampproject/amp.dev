@@ -1,8 +1,6 @@
 ---
 $title: amp-access
 $category@: dynamic-content
-formats:
-- websites
 teaser:
   text: AMP ペイウォールとサブスクリプションのサポートを提供します。
 ---

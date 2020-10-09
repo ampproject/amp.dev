@@ -1,9 +1,6 @@
 ---
 $title: Integrazione di strumenti di analisi in AMP
 order: 1
-formats:
-- siti web
-- storie
 teaser:
   text: Informazioni generali
 toc: true

@@ -1,8 +1,6 @@
 ---
 $title: Struktura i renderowanie wiadomości e-mail AMP
 order: 2
-formats:
-- email
 teaser:
   text: Wiadomości e-mail nadawana jest struktura drzewa MIME. To drzewo MIME zawiera treść wiadomości i wszelkie załączniki do wiadomości e-mail.
 toc: true

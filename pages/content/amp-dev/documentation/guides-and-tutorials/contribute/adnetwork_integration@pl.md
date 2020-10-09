@@ -2,8 +2,6 @@
 $title: Integracja z AMP w celu obsługi reklam wizualnych
 $order: 5
 description: Ten przewodnik jest przeznaczony dla sieci reklamowych, które chcą zintegrować się z AMP, aby serwować reklamy wizualne na stronach AMP.
-formats:
-- ads
 ---
 
 Ten przewodnik jest przeznaczony dla sieci reklamowych, które chcą zintegrować się z AMP, aby serwować reklamy wizualne na stronach AMP.

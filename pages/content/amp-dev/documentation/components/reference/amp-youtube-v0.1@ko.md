@@ -1,9 +1,6 @@
 ---
 $title: amp-youtube
 $category@: media
-formats:
-- websites
-- ads
 teaser:
     text: YouTube 동영상을 표시합니다.
 ---

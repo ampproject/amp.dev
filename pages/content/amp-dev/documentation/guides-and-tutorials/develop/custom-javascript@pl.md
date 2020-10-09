@@ -1,8 +1,6 @@
 ---
 $title: Stosowanie niestandardowego kodu JavaScript na stronach AMP
 $order: 7
-formats:
-- websites
 author: CrystalOnScript
 contributors:
 - fstanis

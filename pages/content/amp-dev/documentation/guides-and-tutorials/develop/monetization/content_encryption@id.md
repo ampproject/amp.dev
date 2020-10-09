@@ -1,6 +1,4 @@
 ---
-formats:
-- websites
 $title: Melindungi konten langganan Anda dengan enkripsi pihak klien
 $titles:
   teaser: Melindungi konten langganan Anda dengan enkripsi pihak klien.

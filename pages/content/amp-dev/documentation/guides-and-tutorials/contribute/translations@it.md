@@ -2,11 +2,6 @@
 $title: Contributi alle traduzioni
 $order: 2
 description: L'obiettivo del Progetto AMP è quello di rendere il web un luogo più accogliente e accessibile a tutti. Questo obiettivo non può essere raggiunto senza un'adeguata localizzazione della documentazione. La traduzione della documentazione AMP è un processo essenziale che contribuisce al successo della comunità AMP.
-formats:
-- siti web
-- storie
-- annunci
-- e-mail
 ---
 
 Benvenuti all'iniziativa per la traduzione dei documenti AMP!

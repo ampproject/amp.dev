@@ -1,8 +1,6 @@
 ---
 $title: amp-analytics
 $category@: ads-analytics
-formats:
-- websites
 teaser:
   text: Inserta de forma dinámica anuncios en una página AMP mediante un archivo de configuración servido de forma remota.
 ---

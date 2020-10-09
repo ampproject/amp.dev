@@ -1,9 +1,6 @@
 ---
 $title: amp-youtube
 $category@: media
-formats:
-- websites
-- ads
 teaser:
   text: Mostra un video di YouTube.
 ---

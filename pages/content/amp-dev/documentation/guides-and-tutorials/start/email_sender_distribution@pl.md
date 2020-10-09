@@ -3,8 +3,6 @@ $title: Rejestr nadawców
 $order: 1
 description: Rejestr nadawców wiadomości e-mail AMP
 $category: Początek
-formats:
-- email
 author: CrystalOnScript
 ---
 

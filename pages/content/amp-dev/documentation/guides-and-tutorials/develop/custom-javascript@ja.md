@@ -1,8 +1,6 @@
 ---
 $title: AMP ページでのカスタム JavaScript の使用
 $order: 7
-formats:
-- ウェブサイト
 author: CrystalOnScript
 contributors:
 - fstanis

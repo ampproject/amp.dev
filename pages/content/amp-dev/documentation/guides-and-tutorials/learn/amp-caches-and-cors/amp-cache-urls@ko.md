@@ -2,10 +2,6 @@
 $title: AMP 캐시 URL 형식 및 요청 처리
 $order: 9
 toc: false
-formats:
-- 웹사이트
-- 스토리
-- 광고
 author: Gregable
 contributors:
 - sebastianbenz

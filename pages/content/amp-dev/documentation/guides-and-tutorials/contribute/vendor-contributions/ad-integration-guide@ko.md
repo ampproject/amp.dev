@@ -1,8 +1,6 @@
 ---
 $title: 광고 기술을 AMP에 통합하기
 order: 3
-formats:
-- 광고
 teaser:
   text: AMP HTML 통합을 고려하는 광고 기술 제공업체라면 아래 가이드라인을 확인해 보세요
 toc: true

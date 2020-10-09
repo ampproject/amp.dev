@@ -1,8 +1,6 @@
 ---
 $title: Struttura e rendering delle e-mail AMP
 order: 2
-formats:
-- e-mail
 teaser:
   text: Le e-mail hanno la struttura di un albero MIME. Questo albero MIME contiene il corpo del messaggio e gli eventuali allegati all'e-mail.
 toc: true

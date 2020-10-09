@@ -2,10 +2,6 @@
 $title: Penanganan Permintaan dan Format URL Cache AMP
 $order: 9
 toc: false
-formats:
-- situs web
-- cerita
-- iklan
 author: Gregable
 contributors:
 - sebastianbenz

@@ -1,9 +1,6 @@
 ---
 $title: Mengintegrasikan alat analitis Anda dengan AMP
 order: 1
-formats:
-- websites
-- stories
 teaser:
   text: Gambaran Umum
 toc: true

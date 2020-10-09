@@ -2,9 +2,6 @@
 $title: Introducción a las animaciones complejas
 $order: 2
 description: Para las animaciones que no pueden basarse en integrar y eliminar clases, AMP ofrece varios componentes específicos para generar animaciones. Estos componentes implementan los principios de AMP para las animaciones ...
-formats:
-- websites
-- ads
 author: CrystalOnScript
 ---
 

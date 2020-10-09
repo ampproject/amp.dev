@@ -2,9 +2,6 @@
 $title: Najlepsze praktyki tworzenia reklam fabularnych AMP
 $order: 16
 description: Relacje AMP to interaktywne, pełnoekranowe materiały, angażujące czytelników w treść. Reklamy wyświetlane w relacjach AMP powinny być spójne z relacjami AMP.
-formats:
-- ads
-- stories
 ---
 
 Relacje AMP to interaktywne, pełnoekranowe materiały, angażujące czytelników w treść. Reklamy wyświetlane w relacjach AMP powinny być spójne z relacjami AMP. Zapobiega to irytowaniu użytkowników lub zakłócaniu ich wrażeń. Ten przewodnik pokazuje, jak stworzyć reklamę fabularną AMP.

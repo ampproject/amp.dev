@@ -2,11 +2,6 @@
 $title: Segnaposti e fallback
 $order: 3
 descriptions: Per garantire prestazioni adeguate e continui miglioramenti, AMP prevede nelle sue procedure consigliate l'utilizzo di segnaposti e fallback ove possibile.
-formats:
-- siti web
-- e-mail
-- annunci
-- storie
 components:
 - iframe
 author: pbakaus

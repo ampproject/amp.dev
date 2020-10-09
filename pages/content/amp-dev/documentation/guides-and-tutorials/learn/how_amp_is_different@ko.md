@@ -1,11 +1,6 @@
 ---
 $title: AMP만의 차별점(TBD)
 $order: 0
-formats:
-- 웹사이트
-- 이메일
-- 스토리
-- 광고
 author: pbakaus
 draft: true
 ---

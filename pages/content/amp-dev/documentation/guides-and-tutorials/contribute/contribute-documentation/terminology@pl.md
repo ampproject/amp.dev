@@ -2,11 +2,6 @@
 $title: Terminologia AMP
 $order: 2
 description: Wytyczne terminologiczne AMP
-formats:
-- websites
-- stories
-- ads
-- email
 author: CrystalOnScript
 ---
 

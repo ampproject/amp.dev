@@ -1,8 +1,6 @@
 ---
 $title: amp-addthis
 $category@: social
-formats:
-- websites
 teaser:
   text: 显示嵌入的 AddThis 网站工具。
 ---

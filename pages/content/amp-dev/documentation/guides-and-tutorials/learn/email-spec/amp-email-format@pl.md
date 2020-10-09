@@ -1,8 +1,6 @@
 ---
 $title: Format AMP dla poczty e-mail
 order: 1
-formats:
-- email
 teaser:
   text: Wymagane znaczniki
 toc: true

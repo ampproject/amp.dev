@@ -2,11 +2,6 @@
 $title: Colabore con sus traducciones
 $order: 2
 description: La misión de AMP incluye hacer de la web un lugar agradable y de fácil acceso para todos, y no podemos alcanzar este objetivo sin la localización de documentos. Traducir la documentación de AMP es un proceso sumamente importante que ayuda al prestigio y al éxito de la comunidad de AMP.
-formats:
-- websites
-- stories
-- ads
-- email
 ---
 
 ¡Bienvenido al proyecto de traducción de AMP!

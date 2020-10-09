@@ -2,8 +2,6 @@
 $title: Utilizar el visor de AMP para renderizar correos electrónicos
 $order: 5
 author: alabiaga
-formats:
-- email
 ---
 
 Los clientes de correo electrónico que busquen apoyar a AMP for Email deben utilizar el [visor de AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) para alojar los correos electrónicos de AMP de sus emisores. Un visor desarrollado con la [biblioteca del visor de AMP](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration) resume un documento de AMP y habilita [funciones](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/CAPABILITIES.md) que permiten la comunicación bidireccional con el documento AMP mediante postMessage. Estas funciones incluyen autorizar el control en la visibilidad del correo electrónico, retransmitir las métricas del usuario y facilitar los medios para garantizar la seguridad de las solicitudes XHR realizadas desde el correo electrónico.

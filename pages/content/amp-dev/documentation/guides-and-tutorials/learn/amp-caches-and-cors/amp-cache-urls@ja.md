@@ -2,10 +2,6 @@
 $title: AMP キャッシュ URL 形式とリクエスト処理
 $order: 9
 toc: false
-formats:
-- ウェブサイト
-- ストーリー
-- 広告
 author: Gregable
 contributors:
 - sebastianbenz

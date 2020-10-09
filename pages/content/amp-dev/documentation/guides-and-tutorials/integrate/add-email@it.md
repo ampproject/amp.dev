@@ -2,8 +2,6 @@
 $title: Aggiunta di contenuti AMP a e-mail esistenti
 $order: 1
 author: CrystalOnScript
-formats:
-- e-mail
 ---
 
 Il formato AMP per e-mail è integrato come una nuova parte MIME. Se la tua e-mail viene inviata a un fonitore che supporta contenuti AMP per e-mail, verrà visualizzata correttamente. In caso contrario, non ti preoccupare! Il fornitore visualizzerà il relativo codice HTML o il formato in testo semplice. Usa questa guida per includere contenuti AMP nelle tue e-mail.

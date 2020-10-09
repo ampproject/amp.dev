@@ -2,10 +2,6 @@
 $title: Dodawanie czcionek niestandardowych
 $order: 6
 description: Strony AMP nie mogą zawierać zewnętrznych arkuszy stylów, z wyjątkiem czcionek niestandardowych. Czcionki niestandardowe można osadzać na stronie na dwa sposoby...
-formats:
-- websites
-- ads
-- stories
 author: pbakaus
 ---
 

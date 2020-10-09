@@ -3,8 +3,6 @@ $title: 送信者配布への登録
 $order: 1
 description: AMP メールの送信者配布への登録
 $category: スタート
-formats:
-- メール
 author: CrystalOnScript
 ---
 

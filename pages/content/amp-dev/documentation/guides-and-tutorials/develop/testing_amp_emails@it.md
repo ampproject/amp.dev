@@ -3,8 +3,6 @@ $title: Test delle e-mail AMP
 $order: 2
 $category: Sviluppo
 description: Testando le e-mail AMP prima di inviarle a un vasto pubblico, è possibile garantire la migliore esperienza agli utenti.
-formats:
-- e-mail
 author: fstanis
 ---
 

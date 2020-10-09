@@ -1,9 +1,6 @@
 ---
 $title: amp-selector
 $category@: dynamic-content
-formats:
-- websites
-- email
 teaser:
   text: 表示一种控件，可显示选项菜单并让用户从中选择。
 ---

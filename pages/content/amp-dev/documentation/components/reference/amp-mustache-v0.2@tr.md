@@ -1,10 +1,6 @@
 ---
 $title: amp-mustache
 $category@: dynamic-content
-formats:
-- websites
-- email
-- ads
 teaser:
   text: Mustache.js şablonlarının oluşturulmasına izin verir.
 ---

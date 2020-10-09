@@ -1,11 +1,6 @@
 ---
 $title: Sistem Tata Letak HTML AMP
 order: 1
-formats:
-- situs web
-- email
-- cerita
-- iklan
 teaser:
   text: Gambaran Umum
 ---

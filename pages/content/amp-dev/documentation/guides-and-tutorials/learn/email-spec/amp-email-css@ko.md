@@ -1,8 +1,6 @@
 ---
 $title: 이메일용 AMP 지원 CSS
 order: 5
-formats:
-- 이메일
 teaser:
   text: 이 문서는 현재 AMP 이메일에서 지원되는 CSS 기능을 간략하게 설명합니다.
 toc: true

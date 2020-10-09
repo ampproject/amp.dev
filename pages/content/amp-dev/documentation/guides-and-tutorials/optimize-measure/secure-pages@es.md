@@ -2,8 +2,6 @@
 $title: Cómo protegerse contra los ataques de terceros
 $order: 7
 description: Adopte las medidas que sean necesarias para proteger sus páginas AMP y a sus usuarios de las vulnerabilidades de seguridad que se encuentran en la web.
-formats:
-- websites
 author: CrystalOnScript
 ---
 

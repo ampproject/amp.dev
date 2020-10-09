@@ -1,8 +1,6 @@
 ---
 $title: Estructura y renderización en los correos electrónicos de AMP
 order: 2
-formats:
-- email
 teaser:
   text: El correo electrónico está estructurado como un árbol MIME. En este árbol MIME se incluyen tanto el cuerpo del mensaje como los archivos adjuntos del correo electrónico.
 toc: true
