@@ -8,7 +8,6 @@ ampconf: !g.yaml /shared/data/amp-fest.yaml
 
 section_links:
   - Featured Talks
-  - Speakers
   - FAQ
 ---
 {% do doc.styles.addCssFile('css/components/templates/events.css') %}
@@ -71,7 +70,7 @@ section_links:
 
   <div class="ap--content-default">
     <h1>Featured Talks</h1>
-  <p>AMP Fest talks will premiere both here and on the official AMP YouTube channel at 9AM PT. All talks will be pre-recorded and available for rewatching after their premiere. See below for a list of the talks featured during the event. Stay tuned as we’ll be adding more details about talks and speakers in the coming weeks!</p>
+  <p>AMP Fest talks will premiere both here and on the official AMP YouTube channel at 9AM PT. All talks will be pre-recorded and available for rewatching after their premiere. See below for a list of the talks featured during the event</p>
   </div>
 
   <div class="ap--content-x-wide">
@@ -91,6 +90,10 @@ section_links:
 
           {% endfor %}
 
+                  {% if agenda_item.description %}
+                    <div class="ap-m-agenda-item-description-text">{{ agenda_item.description }}</div>
+                  {% endif %}
+
             </li>
           {% endfor %}
         </ul>
@@ -99,13 +102,6 @@ section_links:
   </div>
 </section>
 
-
-<section class="ap--container" id="speakers">
-  <div class="ap--content-default" id="Speakers">
-    <h1>Speakers</h1>
-    <p>More info coming soon!</p>
-  </div>
-  </section>
 
 <section class="ap--container" id="FAQ">
   {% do doc.styles.addCssFile('css/components/molecules/faq.css') %}
