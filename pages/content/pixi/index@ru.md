@@ -17,7 +17,7 @@ staticText:
   statusIntro:
     headline: Пожалуйста, подождите...
     headline2: Идет анализ вашей страницы
-    loadingCopy: Выполнено проверок: ${finishedChecks} из ${totalChecks}
+    loadingCopy: "Выполнено проверок: ${finishedChecks} из ${totalChecks}"
     buttonShare: Поделиться
     buttonInvestigate: Исследовать
   coreWebVitals:
