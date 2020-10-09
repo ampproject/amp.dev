@@ -182,7 +182,7 @@
     grid-area: 3 / 7 / 3 / 12;
     width: 100%;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       width: auto;
     }
 
@@ -191,7 +191,7 @@
   .countdown-container {
     @include box-shadow;
     border-radius: 2rem;
-    grid-area: 1 / 14 / 4 / 24;
+    grid-area: 1 / 14 / 4 / 26;
     padding: 2rem 2rem 0;
     text-align: center;
     max-width: 100%;
