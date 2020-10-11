@@ -3,4 +3,4 @@ $title: تحتاج صفحة AMP الخاصة بك إلى تحسين (إلى تح
 type: خطأ
 ---
 
-للأسف، تحتوي هذه الصفحة على [تجربة صفحة](https://developers.google.com/search/docs/guides/page-experience) سيئة. لا تقلق، لدينا بعض التوصيات لمساعدتك في التحسين!
+للأسف، تحتوي هذه الصفحة على [تجربة صفحة](https://developers.google.com/search/docs/guides/page-experience?hl=ar) سيئة. لا تقلق، لدينا بعض التوصيات لمساعدتك في التحسين!
