@@ -61,7 +61,7 @@ scriptText:
     passed: Lulus
     passedAddition: lulus
     none: Tidak ada
-    nothingToDo: Tidak perlu tindakan apa pun!
+    nothingToDo: Tidak perlu tindakan apa pun! &#x1F389;
     fileAnIssue: Ajukan masalah dengan AMP
     recommendation: rekomendasi
     recommendations: rekomendasi

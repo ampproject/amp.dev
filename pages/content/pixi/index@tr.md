@@ -61,7 +61,7 @@ scriptText:
     passed: Başarılı
     passedAddition: başarılı
     none: Yok
-    nothingToDo: Gerekli eylem yok
+    nothingToDo: Gerekli eylem yok &#x1F389;
     fileAnIssue: AMP ile sorun bildir
     recommendation: öneri
     recommendations: öneriler

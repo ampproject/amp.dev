@@ -61,7 +61,7 @@ scriptText:
     passed: Zaliczono
     passedAddition: zaliczono
     none: Brak
-    nothingToDo: Nie potrzeba żadnych działań!
+    nothingToDo: Nie potrzeba żadnych działań! &#x1F389;
     fileAnIssue: Zgłoś problem z AMP
     recommendation: zalecenie
     recommendations: zalecenia

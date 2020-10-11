@@ -61,7 +61,7 @@ scriptText:
     passed: نجاح
     passedAddition: نجاح
     none: لا يوجد
-    nothingToDo: لا يوجد إجراء مطلوب
+    nothingToDo: لا يوجد إجراء مطلوب &#x1F389;
     fileAnIssue: الإبلاغ عن مشكلة في AMP
     recommendation: توصية
     recommendations: توصيات

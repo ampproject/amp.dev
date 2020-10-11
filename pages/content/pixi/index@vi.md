@@ -61,7 +61,7 @@ scriptText:
     passed: Đã đạt
     passedAddition: đã đạt
     none: Không có
-    nothingToDo: Không cần hành động!
+    nothingToDo: Không cần hành động! &#x1F389;
     fileAnIssue: Báo cáo vấn đề với AMP
     recommendation: khuyến nghị
     recommendations: khuyến nghị
