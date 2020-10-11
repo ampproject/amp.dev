@@ -64,7 +64,7 @@
     "@ampproject/toolbox-cors": "2.6.0",
     "@ampproject/toolbox-linter": "2.7.0-alpha.3",
     "@ampproject/toolbox-optimizer": "2.6.0",
-    "@google-cloud/datastore": "6.1.1",
+    "@google-cloud/datastore": "6.2.0",
     "acorn": "8.0.4",
     "casual": "1.6.2",
     "cheerio": "1.0.0-rc.3",
