@@ -20,6 +20,7 @@ const {series} = require('gulp');
 const {join} = require('path');
 const {sh} = require('@lib/utils/sh.js');
 const mri = require('mri');
+const {existsSync} = require('fs');
 const {ROOT, THUMBOR_ROOT} = require('@lib/utils/project').paths;
 
 const PREFIX = 'amp-dev';
@@ -291,6 +292,17 @@ function packagerInstanceTemplateCreate() {
  * Builds and uploads the packager docker image to Google Cloud Container Registry.
  */
 function packagerImageUpload() {
+  if (
+    !existsSync('./packager/certs/cert.pem') ||
+    !existsSync('./packager/certs/cert.pem.enc') ||
+    !existsSync('./packager/privkeys/privkey.pem') ||
+    !existsSync('./packager/privkeys/privkey.pem.enc')
+  ) {
+    throw new Error(
+      'You need to include cert.pem AND privkey.pem inside of packager/certs ' +
+        'in order submit a new release'
+    );
+  }
   return sh(
     `gcloud builds submit --tag ${config.packager.image.current} .`,
     config.packager.opts
@@ -317,6 +329,23 @@ async function packagerUpdateStart() {
   await Promise.all(updates);
 
   console.log('Rolling update started, this can take a few minutes...');
+}
+
+/**
+ * Fetch and print the updated packagerId
+ */
+async function packagerFetchId() {
+  const instanceInfo = await sh(`gcloud compute instances list`, {quiet: true});
+
+  const instanceHash = instanceInfo.match(/^.*-packager-([^ ]+)/m);
+
+  if (instanceHash) {
+    return console.log(`update the packager host field in production.json to\
+      "ig-amp-dev-packager-${instanceHash[1]}.c.amp-dev-230314.internal"
+      `);
+  }
+
+  return;
 }
 
 /* Thumbor */
@@ -383,7 +412,8 @@ exports.instanceTemplatesClean = instanceTemplatesClean;
 exports.packagerDeploy = series(
   packagerImageUpload,
   packagerInstanceTemplateCreate,
-  packagerUpdateStart
+  packagerUpdateStart,
+  packagerFetchId
 );
 exports.packagerImageUpload = packagerImageUpload;
 exports.packagerInstanceTemplateCreate = packagerInstanceTemplateCreate;
