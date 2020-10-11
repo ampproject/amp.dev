@@ -64,6 +64,14 @@
     "us-east1": {
       "host": "10.64.29.227",
       "port": "6379"
+    },
+    "asia-northeast1": {
+      "host": "10.232.55.123",
+      "port": "6379"
+    },
+    "southamerica-east1": {
+      "host": "",
+      "port": "6379"
     }
   }
 }
