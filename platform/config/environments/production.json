@@ -69,8 +69,8 @@
       "host": "10.232.55.123",
       "port": "6379"
     },
-    "southamerica-east1": {
-      "host": "",
+    "us-west3": {
+      "host": "10.171.90.147",
       "port": "6379"
     }
   }

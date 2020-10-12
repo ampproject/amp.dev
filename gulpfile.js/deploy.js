@@ -65,8 +65,8 @@ const config = {
         zone: 'asia-northeast1-b',
       },
       {
-        name: `ig-${PREFIX}-latam`,
-        zone: 'southamerica-east1-b',
+        name: `ig-${PREFIX}-us-west`,
+        zone: 'us-west3-a',
       },
     ],
     template: `it-${PREFIX}-${TAG}`,
