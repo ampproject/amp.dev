@@ -60,6 +60,14 @@ const config = {
         name: `ig-${PREFIX}-zone2`,
         zone: 'us-east1-b',
       },
+      {
+        name: `ig-${PREFIX}-asia`,
+        zone: 'asia-northeast1-b',
+      },
+      {
+        name: `ig-${PREFIX}-us-west`,
+        zone: 'us-west3-a',
+      },
     ],
     template: `it-${PREFIX}-${TAG}`,
     count: 2,
