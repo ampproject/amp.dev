@@ -4,4 +4,4 @@ type: error
 hide_share: true
 ---
 
-Spiacenti, questo strumento è progettato solo per pagine AMP. Utilizza strumenti come [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) per pagine non AMP.
+Spiacenti, questo strumento è progettato solo per pagine AMP. Utilizza strumenti come [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?hl=it) per pagine non AMP.

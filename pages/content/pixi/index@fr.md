@@ -61,7 +61,7 @@ scriptText:
     passed: Réussi
     passedAddition: réussi
     none: Aucune
-    nothingToDo: Pas d'action requise!
+    nothingToDo: Pas d'action requise! &#x1F389;
     fileAnIssue: Signaler un problème avec AMP
     recommendation: recommandation
     recommendations: recommandations

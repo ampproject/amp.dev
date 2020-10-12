@@ -61,7 +61,7 @@ scriptText:
     passed: 통과
     passedAddition: 통과
     none: 없음
-    nothingToDo: 필요한 조치가 없습니다!
+    nothingToDo: 필요한 조치가 없습니다! &#x1F389;
     fileAnIssue: AMP로 이슈 보고하기
     recommendation: 추천
     recommendations: 추천
