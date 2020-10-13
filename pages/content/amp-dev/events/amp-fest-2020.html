@@ -27,35 +27,15 @@ section_links:
 
 </section>
 
-<section class="ap--container amp-fest-header">
-
-  <p class="teaser">Join us and the AMP community on Oct 13 for a digital event as we shine light on the future of AMP!</p>
-  <div class="register">
-    <a class="ap-m-lnk ap-m-lnk-square ap--newsletter-double" href="https://events.withgoogle.com/amp-fest/registrations/new/">
-      <div class="ap-a-ico ap-m-lnk-icon">
-        {% do doc.icons.useIcon('icons/external.svg') %}
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
-      </div>
-      <span class="ap-m-lnk-text">{{ _('Register Now') }}</span>
-    </a>
+<section class="ap--container main-video">
+  {% do doc.styles.addCssFile('css/components/molecules/amp-fest-video.css') %}
+  <div class="ap-m-roadshow-video">
+    <div class="ap-m-roadshow-video-block  ">
+      <amp-youtube data-videoid="XPdmigsP0Sw" layout="responsive" height="9" width="16"></amp-youtube>
+    </div>
   </div>
-
- <div class="countdown-container">
-   <div class="preamble">Countdown to AMP Fest</div>
-   <amp-date-countdown id="countdown" end-date="2020-10-13T09:00:00-07:00" height="200" width="400" when-ended="stop" locale="en" >
-     <template type="amp-mustache">
-       <div>
-         <div class="fest-countdown"><span>{{'{{dd}}'}}</span> : <span>{{'{{hh}}'}}</span> : <span>{{'{{mm}}'}}</span></div>
-         <div class="fest-countdown-label"><span>Days</span><span>Hours</span><span>Minutes</span></div>
-       </div>
-     </template>
-   </amp-date-countdown>
- </div>
 </section>
 
-<section class="ap--container join-quote">
-  <p>Join us right here on <b>Oct 13th</b> as we celebrate 5 years of AMP and learn about the latest ways the AMP community is working to make the web better for everyone - publishers, platforms, advertisers, creators, and of course, users.</p>
-</section>
 
 <section class="ap--container">
   {% with text=_(' ') %}
