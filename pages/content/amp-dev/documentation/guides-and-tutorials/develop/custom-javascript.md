@@ -24,7 +24,7 @@ Excessive JavaScript can make websites slow and unresponsive. In order to contro
 
 Workers don't come with access to the DOM. To fill this gap, the AMP team created an open-source library called [WorkerDOM](https://github.com/ampproject/worker-dom/). WorkerDOM copies the DOM to a virtual DOM and makes the copy available to a worker. WorkerDOM also recreates a subset of the standard DOM API. When the worker makes changes to the virtual DOM, WorkerDOM recreates those changes in the real DOM. This lets the worker manipulate the DOM and make changes on the page using standard techniques. The DOM synchronization only goes in one direction. If the main thread modifies the DOM, no mechanism exists to let the worker know.
 
-`amp-script` is essentially a wrapper around WorkerDOM that makes WorkerDOM usable in AMP. WorkerDOM provides the core of `amp-script`'s functionality.
+`amp-script` is a wrapper around WorkerDOM that makes WorkerDOM usable in AMP, providing connections to AMP features, establishing the developer API, and introducing restrictions that protect the user experience. WorkerDOM provides the core of `amp-script`'s functionality.
 
 
 ## Overview of `amp-script`
@@ -68,7 +68,7 @@ If you use `amp-script` to create an interaction that might be of interest to ot
 
 When your logic doesn't fit neatly into a compact expression, `amp-script` is the best choice. `amp-bind` allows you to introduce logic into user interactions, but your JavaScript needs to fit into a single expression. Because the code is encapsulated in an HTML attribute, it won't get the benefit of syntax highlighting in your IDE, you can't set breakpoints, and debugging may be a challenge. In such cases, `amp-script` allows you to follow best programming practices.
 
-### Enhance AMP components
+### Enhance AMP components <a name="enhance-amp-components"></a>
 
 `amp-script` has access to AMP state variables and the `AMP.getState()` and `AMP.setState()` methods. This provides a path to enhance existing AMP components with your own logic. It also makes it possible to affect the DOM outside of the `<amp-script>` component itself. See [here](https://amp.dev/documentation/examples/components/amp-script/#interacting-with-%3Camp-state%3E) and [here](https://amp.dev/documentation/examples/components/amp-script/#interacting-with-amp-components) for examples.
 
@@ -84,7 +84,7 @@ AMP allows you to retrieve server data using `amp-list` and to format it using [
 
 You can use `amp-script` to leverage areas of the Web API and DOM API that aren't currently accessible to AMP components, or to use these APIs in ways that AMP components don't support. For example, `amp-script` supports `WebSockets` ([example](https://amp.dev/documentation/examples/components/amp-script/#using-a-websocket-for-live-updates)), `localStorage`, and `Canvas`. It supports a wide variety of browser events, so you can listen for events beyond [those that AMP passes to traditional components](https://amp.dev/documentation/guides-and-tutorials/learn/amp-actions-and-events/). And since `amp-script` provides access to the `navigator` object, you can retrieve information about [the user's browser](https://amp.dev/documentation/examples/components/amp-script/#detecting-the-operating-system) or [preferred language](https://amp.dev/documentation/examples/components/amp-script/#personalization).
 
-## When to replace amp-bind and amp-list
+## When to replace amp-bind and amp-list <a name="when-to-replace-amp-bind-and-amp-list"></a>
 
 For a new AMP developer who's comfortable with JavaScript, it may seem easier to always use `amp-script` than to learn `amp-bind` and `amp-list`. However, in some cases, `amp-bind` and `amp-list` are a better fit.
 
