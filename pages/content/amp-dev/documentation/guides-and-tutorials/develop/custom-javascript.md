@@ -11,9 +11,7 @@ contributors:
 description: A guide to using amp-script, an AMP component that allows you to write custom JavaScript
 ---
 
-## Introduction
-
-`amp-script` lets you write and run your own JavaScript in a way that maintains AMP's performance guarantees. Most AMP components enable common web interactions through their own logic, letting you build your page quickly without writing code or importing third-party libraries. By using `amp-script`, you can embrace custom logic for specific use cases or unique needs without losing AMP's benefits.
+`amp-script` lets you write and run your own JavaScript in a way that maintains AMP's performance guarantees. Most AMP components enable common web interactions through their own logic, letting you build your page quickly without writing JavaScript or importing third-party libraries. By using `amp-script`, you can embrace custom logic for specific use cases or unique needs without losing AMP's benefits.
 
 This guide provides background on this component and best practices for its use.
 
@@ -24,14 +22,14 @@ Excessive JavaScript can make websites slow and unresponsive. In order to contro
 
 [Web workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) present a way to run JavaScript more safely. Normally all JavaScript [runs in a single thread](https://www.youtube.com/watch?v=cCOL7MC4Pl0), but each worker runs in a thread of its own. This is possible because they lack access to the DOM or the `window` object, and each worker runs in its own global scope. Thus they can't interfere with each other's work or with mutations caused by code in the main thread. They can only communicate with the main thread and with one another via [messages containing objects](https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/postMessage). Workers offer a path to a multithreaded Web, a way to encapsulate JavaScript in a sandbox where it can't block the UI.
 
-Workers don't come with access to the DOM. To fill this gap, the AMP team created an open-source library called [WorkerDOM](https://github.com/ampproject/worker-dom/). WorkerDOM copies the DOM to a virtual DOM and makes the copy available to a worker. WorkerDOM also recreates a subset of the standard DOM API. When the worker makes changes to the virtual DOM, WorkerDOM recreates those changes in the real DOM. This lets the worker manipulate the DOM and make changes on the page using standard techniques. The DOM synchronization only goes in one direction. If the main thread modifies the DOM, nothing will let the worker know.
+Workers don't come with access to the DOM. To fill this gap, the AMP team created an open-source library called [WorkerDOM](https://github.com/ampproject/worker-dom/). WorkerDOM copies the DOM to a virtual DOM and makes the copy available to a worker. WorkerDOM also recreates a subset of the standard DOM API. When the worker makes changes to the virtual DOM, WorkerDOM recreates those changes in the real DOM. This lets the worker manipulate the DOM and make changes on the page using standard techniques. The DOM synchronization only goes in one direction. If the main thread modifies the DOM, no mechanism exists to let the worker know.
 
 `amp-script` is essentially a wrapper around WorkerDOM that makes WorkerDOM usable in AMP. WorkerDOM provides the core of `amp-script`'s functionality.
 
 
-## What `amp-script` can do
+## Overview of `amp-script`
 
-The JavaScript language is the same in a worker as it is elsewhere in the browser. Thus, in `amp-script`, you can use JavaScript in the way that you're used to. WorkerDOM also recreates many commonly used DOM APIs and makes them available for your use. It supports common Web APIs like `Fetch` and `Canvas`, and it gives you to selected global objects like `navigator` and `localStorage`. You can assign handlers for browser events in the usual way.
+The JavaScript language is the same in a worker as it is elsewhere in the browser. Thus, in `amp-script`, you can use all the usual constructs that JavaScript provides. WorkerDOM also recreates many commonly used DOM APIs and makes them available for your use. It supports common Web APIs like `Fetch` and `Canvas`, and it gives you to selected global objects like `navigator` and `localStorage`. You can assign handlers for browser events in the usual way.
 
 However, `amp-script` does not support the entire DOM API or Web API, as this would make its own JavaScript too large and cumbersome. See [the documentation](../../../documentation/components/reference/amp-script.md#supported-apis) for details, and refer to [these samples](https://amp.dev/documentation/examples/components/amp-script/) to see `amp-script` in use.
 
@@ -134,7 +132,7 @@ However, on pages that involve more complex state variables or multiple interact
 ></amp-selector>
 ```
 
-This site was created before `amp-script` was released. But this sort of logic would be easier to write and debug in JavaScript. For pages with more business logic, using `amp-script` will allow you to avoid confusion and to follow better programming practices.
+This demo was created before `amp-script` was released. But this sort of logic would be easier to write and debug in JavaScript. For pages with more business logic, using `amp-script` will allow you to avoid confusion and to follow better programming practices.
 
 In many cases, you'll want to use both `amp-script` and `amp-bind` on the same page. Deploy `amp-bind` for simpler interactions, turning to `amp-script` when you need more logic or structure. Furthermore, although `amp-script` can only make mutations to its DOM chilrden, [as noted above](#enhance-amp-components), it can affect the rest of the page by mutating state variables. `amp-bind` does the rest, as in [this example](https://amp.dev/documentation/examples/components/amp-script/#interacting-with-%3Camp-state%3E).
 
