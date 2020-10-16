@@ -136,7 +136,8 @@ async function getMetaForWorkigGroup(workingGroup) {
     meta = yaml.safeLoad(meta);
   } catch (e) {
     log.error(
-      `.. ${workingGroup.name} - Failed loading ${DEFAULT_ORGANISATION}/${workingGroup.name}/METADATA.yaml`,
+      `.. ${workingGroup.name} - Failed loading ${DEFAULT_ORGANISATION}` +
+        `/${workingGroup.name}/METADATA.yaml`,
       e
     );
   }
@@ -229,8 +230,8 @@ async function importRoadmap() {
   );
 
   log.success(
-    `Successfully imported ${roadmap.issues.length} roadmap status-update issues
-    from ${workingGroups.length} working-groups`
+    `Successfully imported ${roadmap.issues.length} roadmap status-update` +
+      `issues from ${workingGroups.length} working-groups`
   );
 }
 
