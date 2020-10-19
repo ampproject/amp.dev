@@ -267,7 +267,8 @@ HTML 태그는 AMP HTML에서 변경없이 사용할 수 있습니다. 특정 �
   </tr>
   <tr>
     <td width="30%">입력 요소</td>
-    <td>Mostly allowed with <a href="https://amp.dev/documentation/components/amp-form#inputs-and-fields">exception of some input types</a>, namely, <code><input type="button"></code>, <code><button type="image"></button></code> are invalid. Related tags are also allowed: <code><fieldset></fieldset></code>, <code><label></label></code> </td>
+    <td>Mostly allowed with <a href="https://amp.dev/documentation/components/amp-form#inputs-and-fields">exception of some input types</a>, namely, <code><input type="button"></code>, <code><button type="image"></button></code> are invalid. Related tags are also allowed: <code><fieldset></fieldset></code>, <code><label></label></code>
+</td>
   </tr>
   <tr>
     <td width="30%">단추</td>
