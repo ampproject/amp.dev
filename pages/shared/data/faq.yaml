@@ -593,10 +593,10 @@ email:
         url: https://postmaster.mail.ru/amp
         image:
           src: /static/img/email-clients/mailru.png
-      - label: Outlook.com
-        url: https://docs.microsoft.com/en-us/outlook/amphtml/
+      - label: Yahoo Mail
+        url: https://developer.verizonmedia.com/mail/amp-for-email/
         image:
-          src: /static/img/email-clients/outlook.png
+          src: /static/img/email-clients/yahoo-mail.png
   partners:
     - title: Email Platforms and Service Providers (ESPs)
       id: esp
