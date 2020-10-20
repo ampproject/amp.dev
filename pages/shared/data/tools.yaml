@@ -284,7 +284,7 @@ developer:
   - name: AMP Page Experience Guide
     official: true
     type: Optimization
-    description: Analyze and learn how to optimize your AMP pages for Google\'s Page Experience ranking signal
+    description: Analyze and learn how to optimize your AMP pages for Google\'s page experience ranking signal
     url: /page-experience/
     image:
       src: /static/img/tools/page-experience-guide.jpg
