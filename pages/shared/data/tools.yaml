@@ -281,6 +281,17 @@ developer:
       height: 527
     formats:
       - websites
+  - name: AMP Page Experience Guide
+    official: true
+    type: Optimization
+    description: Analyze and learn how to optimize your AMP pages for Google\'s Page Experience ranking signal
+    url: /page-experience/
+    image:
+      src: /static/img/tools/page-experience-guide.jpg
+      width: 800
+      height: 400
+    formats:
+      - websites
   - name: AMP Bench
     official: true
     type: Debugging
