@@ -39,6 +39,17 @@ roadmap: !g.json /shared/data/roadmap.json
     </div>
   </section>
 
+
+  <div class="">
+    [% set roadmap = []|importRoadmap %]
+    [% for item in roadmap %]
+    <p>[= item.meta.title =]</p>
+      [% for issue in item.issues %]
+      <p>[= issue.number =]</p>
+      [% endfor %]
+    [% endfor %]
+  </div>
+
   <section class="ap-t-roadmap-filter" id="status-updates">
     {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
     {% do doc.styles.addCssFile('css/components/atoms/pill.css', -200) %}

@@ -25,6 +25,7 @@ const {
   SUPPORTED_FORMATS,
 } = require('../amp/formatHelper.js');
 const {SupportedFormatsExtension} = require('./SupportedFormatsExtension.js');
+const {importRoadmap} = require('./ImportRoadmapFilter.js');
 const {importBlog} = require('./ImportBlogFilter.js');
 const {importYouTubeChannel} = require('./ImportYouTubeChannel.js');
 
@@ -100,6 +101,7 @@ class Templates {
       new SupportedFormatsExtension()
     );
 
+    this.nunjucksEnv_.addFilter('importRoadmap', importRoadmap, true);
     this.nunjucksEnv_.addFilter('importBlog', importBlog, true);
     this.nunjucksEnv_.addFilter(
       'importYouTubeChannel',
