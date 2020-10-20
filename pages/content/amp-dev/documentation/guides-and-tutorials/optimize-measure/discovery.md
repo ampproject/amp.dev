@@ -1,7 +1,6 @@
 ---
 formats:
   - websites
-  - stories
 $title: Make your pages discoverable
 $titles:
   teaser: Make your pages discoverable
