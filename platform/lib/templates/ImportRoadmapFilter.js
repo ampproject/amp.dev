@@ -19,11 +19,7 @@
 require('module-alias/register');
 
 const utils = require('@lib/utils');
-const fs = require('fs');
 const yaml = require('js-yaml');
-const {
-  promisify
-} = require('util');
 const {
   GitHubImporter,
   DEFAULT_ORGANISATION,
@@ -32,9 +28,6 @@ const config = require(utils.project.absolute(
   'platform/config/imports/roadmap.json'
 ));
 const log = require('@lib/utils/log')('Import Roadmap');
-
-/* Path where the roadmap data gets imported to */
-const ROADMAP_DIRECTORY_PATH = utils.project.absolute('pages/shared/data');
 
 const ALLOWED_ISSUE_TYPES = ['Type: Status Update', 'Status Update'];
 
@@ -53,6 +46,44 @@ let client = null;
  * Import status-update issues and relevant working-group data from
  * working-group repositories on GitHub
  */
+ function structureDataForRoadmap(workingGroups) {
+   const roadmap = {
+     workingGroups: [],
+     quarters: {},
+     issues: [],
+   };
+
+   for (const workingGroup of workingGroups) {
+     if (workingGroup.issues.length) {
+       roadmap.workingGroups.push({
+         slug: workingGroup.meta.slug,
+         title: workingGroup.meta.title,
+         color: workingGroup.meta.color,
+       });
+     }
+     roadmap.issues.push(...workingGroup.issues);
+   }
+   roadmap.issues = roadmap.issues.sort((a, b) => {
+     return new Date(b.status_update) - new Date(a.status_update);
+   });
+
+   const quarters = {'ordered': [], 'working_groups': {}};
+   for (const issue of roadmap.issues) {
+     if (!quarters.ordered.includes(issue.quarter)) {
+       quarters.ordered.push(issue.quarter);
+     }
+     quarters.working_groups[issue.quarter] =
+       quarters.working_groups[issue.quarter] || [];
+
+     if (!quarters.working_groups[issue.quarter].includes(issue.wg_slug)) {
+       quarters.working_groups[issue.quarter].push(issue.wg_slug);
+     }
+   }
+   roadmap.quarters = quarters;
+
+   return roadmap;
+ }
+
 async function importRoadmap(value, callback) {
   log.start('Start importing Roadmap data for ..');
 
@@ -85,6 +116,13 @@ async function importRoadmap(value, callback) {
           `.. Failed loading ${DEFAULT_ORGANISATION}/${workingGroup.name}/METADATA.yaml`,
           e
         );
+      }
+
+      meta = {
+        slug: workingGroupSlug,
+        name: workingGroup.name,
+        title: meta.title,
+        color: config.colors[workingGroupSlug] || config.fallbackColor,
       }
 
       // Get status-update issues per working-group
@@ -125,8 +163,6 @@ async function importRoadmap(value, callback) {
         let body = issue.body.replace(AMP_COMPONENT_REGEX, ' `$1`');
         body = body.trim().match(TEXT_BLOCK_REGEX);
 
-        log.success('Issue Found', issues);
-
         issues.push({
           wg_slug: workingGroupSlug,
           wg_title: meta.title,
@@ -146,7 +182,9 @@ async function importRoadmap(value, callback) {
     })
   );
 
-  callback(null, workingGroups);
+  const roadmap = structureDataForRoadmap(workingGroups);
+
+  callback(null, roadmap);
 }
 
 module.exports = {
