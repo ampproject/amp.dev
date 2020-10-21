@@ -4,10 +4,10 @@ $order: 3
 description: 'The AMP Story Player enables you to embed stories that users are able to tap or click through, inside of a web page. Follow this step-by-step guide to learn how.'
 formats:
   - websites
-  - stories 
+  - stories
 ---
 
-Stories are a full-screen immersive experience. They’re hosted on the open web with their own URL, making them easily shareable. But, what if you want to integrate stories into your own site, for example, within a blog, product description or news article? 
+Stories are a full-screen immersive experience. They’re hosted on the open web with their own URL, making them easily shareable. But, what if you want to integrate stories into your own site, for example, within a blog, product description or news article?
 
 The [AMP Story Player](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md) enables you to embed stories that users are able to tap or click through, inside of a web page. Follow this step-by-step guide to learn how.
 
@@ -57,7 +57,6 @@ You can embed AMP stories inside a non-AMP page, allowing users to tap or click 
         <amp-story-player style="width: 360px; height: 600px;">
           <a
           href="https://preview.amp.dev/documentation/examples/introduction/stories_in_amp/"
-          style="--story-player-poster: url('https://amp.dev/static/samples/img/story_dog2_portrait.jpg')"
           >
             Stories in AMP - Hello World
           </a>
@@ -72,7 +71,7 @@ You can embed AMP stories inside a non-AMP page, allowing users to tap or click 
 
 ## Embed AMP story player
 
-Displaying an AMP story in a non-AMP page requires the use of the [`amp-story-player`](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md) element. 
+Displaying an AMP story in a non-AMP page requires the use of the [`amp-story-player`](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md) element.
 
 ### Import scripts
 
@@ -83,7 +82,7 @@ Include the two required scripts in the head of your document:
 <link href="https://cdn.ampproject.org/amp-story-player-v0.css" rel="stylesheet" type="text/css">
 ```
 
-The first script imports the logic for the player and the second one sets the default styling.  
+The first script imports the logic for the player and the second one sets the default styling.
 
 ### Specify a story
 
@@ -112,7 +111,7 @@ You may define the story player's `width`, `height`, and other styles inline or 
 </body>
 ```
 
-We recommend maintaining a 3:5 aspect ratio for the best user experience, but you may define any width and height. 
+We recommend maintaining a 3:5 aspect ratio for the best user experience, but you may define any width and height.
 
 #### Responsive sizing
 
@@ -126,20 +125,18 @@ The story player's responsiveness works as any other block element. Use CSS to m
 
 ### Provide a placeholder
 
-Include a representative poster image by adding `style="--story-player-poster: url('...');"` to the story’s `<a>` tag, or by using the `--story-player-poster` CSS variable. The AMP story player displays this image while loading the full story. 
+Include a representative poster image by adding an `<img>` tag as a child of the story's `<a>` tag with the following configuration. The AMP story player displays this image while loading the full story.
 
 ```html
 <amp-story-player style="width: 50vw; height: 83.35vw;">
-  <a
-    href="https://www.example.com/story.html"
-    style="--story-player-poster: url('https://www.example.com/assets/cover1.html');"
-  >
+  <a href="https://www.example.com/story.html">
+    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
     A title that describes this story.
   </a>
 </amp-story-player>
 ```
 
-For the best user experience, we strongly recommend including a poster image. If you do not include a poster image the story player will display a loader spinner with a grey background. 
+For the best user experience, we strongly recommend including a poster image. If you do not include a poster image the story player will display a loader spinner with a grey background.
 
 ## Embed multiple stories
 
@@ -147,37 +144,29 @@ You may add multiple stories in the same `<amp-story-player>` element by definin
 
 ```html
 <amp-story-player style="width: 360px; height: 600px;">
-  <a
-    href="https://www.example.com/story1.html"
-    style="--story-player-poster: url('https://www.example.com/assets/cover1.html');"
-  >
+  <a href="https://www.example.com/story1.html">
+    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
     A title that describes story 1.
   </a>
-  <a
-    href="https://www.example.com/story2.html"
-    style="--story-player-poster: url('https://www.example.com/assets/cover2.html');"
-  >
+  <a href="https://www.example.com/story2.html">
+    <img src="https://www.example.com/assets/cover2.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
     A title that describes story 2.
   </a>
 </amp-story-player>
 ```
 
-You can embed as many instances of `<amp-story-player>` as desired. They display as individual viewers. 
+You can embed as many instances of `<amp-story-player>` as desired. They display as individual viewers.
 
 ```html
 <amp-story-player style="width: 360px; height: 600px;">
-  <a
-    href="https://www.example.com/story1.html"
-    style="--story-player-poster: url('https://www.example.com/assets/cover1.html');"
-  >
+  <a href="https://www.example.com/story1.html">
+    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
     A title that describes story 1.
   </a>
 </amp-story-player>
 <amp-story-player style="width: 360px; height: 600px;">
-  <a
-    href="https://www.example.com/story2.html"
-    style="--story-player-poster: url('https://www.example.com/assets/cover2.html');"
-  >
+  <a href="https://www.example.com/story2.html">
+    <img src="https://www.example.com/assets/cover2.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
     A title that describes story 2.
   </a>
 </amp-story-player>
@@ -185,4 +174,4 @@ You can embed as many instances of `<amp-story-player>` as desired. They display
 
 # Display stories in an AMP page
 
-Currently, using the `<amp-story-player>` component in an AMP page invalidates it. We are currently working to support this component in AMP page! Follow our [progress on the roadmap](https://github.com/ampproject/amphtml/issues/26308)!
+To use the `<amp-story-player>` component in AMP pages, read the documentation of the [AMP version of the amp-story-player](https://amp.dev/documentation/components/amp-story-player/?format=stories).
