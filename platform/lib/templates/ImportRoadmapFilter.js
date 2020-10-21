@@ -28,6 +28,7 @@ const config = require(utils.project.absolute(
   'platform/config/imports/roadmap.json'
 ));
 const log = require('@lib/utils/log')('Import Roadmap');
+const SlugGenerator = require('@lib/utils/slugGenerator');
 
 const ALLOWED_ISSUE_TYPES = ['Type: Status Update', 'Status Update'];
 
@@ -69,7 +70,7 @@ let client = null;
 
    const quarters = {'ordered': [], 'working_groups': {}};
    for (const issue of roadmap.issues) {
-     if (!quarters.ordered.includes(issue.quarter)) {
+     if (!quarters.ordered.some(item => item.slug === issue.quarter.slug)) {
        quarters.ordered.push(issue.quarter);
      }
      quarters.working_groups[issue.quarter] =
@@ -168,7 +169,10 @@ async function importRoadmap(value, callback) {
           wg_title: meta.title,
           wg_color: meta.color,
           status_update: statusUpdate,
-          quarter: quarter,
+          quarter: {
+            slug: SlugGenerator.sluggify(quarter),
+            title: quarter
+          },
           number: issue.number,
           html_url: issue.html_url,
           body: body,
