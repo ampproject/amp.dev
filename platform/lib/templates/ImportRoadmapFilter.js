@@ -27,8 +27,9 @@ const {
 const config = require(utils.project.absolute(
   'platform/config/imports/roadmap.json'
 ));
-const log = require('@lib/utils/log')('Import Roadmap');
 const SlugGenerator = require('@lib/utils/slugGenerator');
+const marked = require('marked');
+const log = require('@lib/utils/log')('Import Roadmap');
 
 const ALLOWED_ISSUE_TYPES = ['Type: Status Update', 'Status Update'];
 
@@ -167,6 +168,7 @@ async function importRoadmap(value, callback) {
          */
         let body = issue.body.replace(AMP_COMPONENT_REGEX, ' `$1`');
         body = body.trim().match(TEXT_BLOCK_REGEX);
+        body = body.map(p => marked(p))
 
         issues.push({
           wg_slug: workingGroupSlug,
