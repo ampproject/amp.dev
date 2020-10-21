@@ -47,43 +47,47 @@ let client = null;
  * Import status-update issues and relevant working-group data from
  * working-group repositories on GitHub
  */
- function structureDataForRoadmap(workingGroups) {
-   const roadmap = {
-     workingGroups: [],
-     quarters: {},
-     issues: [],
-   };
+function structureDataForRoadmap(workingGroups) {
+  const roadmap = {
+    workingGroups: [],
+    quarters: {},
+    issues: [],
+  };
 
-   for (const workingGroup of workingGroups) {
-     if (workingGroup.issues.length) {
-       roadmap.workingGroups.push({
-         slug: workingGroup.meta.slug,
-         title: workingGroup.meta.title,
-         color: workingGroup.meta.color,
-       });
-     }
-     roadmap.issues.push(...workingGroup.issues);
-   }
-   roadmap.issues = roadmap.issues.sort((a, b) => {
-     return new Date(b.status_update) - new Date(a.status_update);
-   });
+  for (const workingGroup of workingGroups) {
+    if (workingGroup.issues.length) {
+      roadmap.workingGroups.push({
+        slug: workingGroup.meta.slug,
+        title: workingGroup.meta.title,
+        color: workingGroup.meta.color,
+      });
+    }
+    roadmap.issues.push(...workingGroup.issues);
+  }
+  roadmap.issues = roadmap.issues.sort((a, b) => {
+    return new Date(b.status_update) - new Date(a.status_update);
+  });
 
-   const quarters = {'ordered': [], 'working_groups': {}};
-   for (const issue of roadmap.issues) {
-     if (!quarters.ordered.some(item => item.slug === issue.quarter.slug)) {
-       quarters.ordered.push(issue.quarter);
-     }
-     quarters.working_groups[issue.quarter] =
-       quarters.working_groups[issue.quarter] || [];
+  const quarters = {
+    'ordered': [],
+    'working_groups': {}
+  };
 
-     if (!quarters.working_groups[issue.quarter].includes(issue.wg_slug)) {
-       quarters.working_groups[issue.quarter].push(issue.wg_slug);
-     }
-   }
-   roadmap.quarters = quarters;
+  for (const issue of roadmap.issues) {
+    if (!quarters.ordered.some(item => item.slug === issue.quarter.slug)) {
+      quarters.ordered.push(issue.quarter);
+    }
 
-   return roadmap;
- }
+    quarters.working_groups[issue.quarter.slug] =
+      quarters.working_groups[issue.quarter.slug] || [];
+
+    if (!quarters.working_groups[issue.quarter.slug].includes(issue.wg_slug)) {
+      quarters.working_groups[issue.quarter.slug].push(issue.wg_slug);
+    }
+  }
+  roadmap.quarters = quarters;
+  return roadmap;
+}
 
 async function importRoadmap(value, callback) {
   log.start('Start importing Roadmap data for ..');
