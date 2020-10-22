@@ -40,8 +40,6 @@ roadmap: !g.json /shared/data/roadmap.json
   </section>
 
   [% set roadmap = []|importRoadmap %]
-
-
   <section class="ap-t-roadmap-filter" id="status-updates">
     {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
     {% do doc.styles.addCssFile('css/components/atoms/pill.css', -200) %}
@@ -54,13 +52,13 @@ roadmap: !g.json /shared/data/roadmap.json
           style="color: #005AF0;">
         <span class="ap-a-pill-text">{{ _('All') }}</span>
       </a>
-      {% for group in doc.roadmap.working_groups %}
-      <a class="ap-a-pill {{ group.slug }} [% if category == '{{ group.slug }}' %]active[% endif %]"
-          href="{{ doc.url.path }}?category={{ group.slug }}#status-updates"
-          style="color: {{ group.color }}">
-        <span class="ap-a-pill-text">{{ group.title }}</span>
+      [% for group in roadmap.workingGroups %]
+      <a class="ap-a-pill [= group.slug =] [% if category == group.slug %]active[% endif %]"
+          href="{{ doc.url.path }}?category=[= group.slug =]#status-updates"
+          style="color: [= group.color =]">
+        <span class="ap-a-pill-text">[= group.title =]</span>
       </a>
-      {% endfor %}
+      [% endfor %]
     </div>
   </section>
 
@@ -117,7 +115,6 @@ roadmap: !g.json /shared/data/roadmap.json
           </span>
         </button>
         [% endif %]
-
         [% endfor %]
       </div>
     </div>
@@ -128,21 +125,20 @@ roadmap: !g.json /shared/data/roadmap.json
       [% set quarters = roadmap.quarters.working_groups %]
       [% set currenQuarter = 'undefined' %]
 
-
       [% for issue in roadmap.issues %]
       [% if not category or category == issue.wg_slug %]
-
       <div class="ap-t-roadmap-list-item"
-        [% if currenQuarter != '{{ issue.quarter }}' %]
-        [% if not category or quarters['{{ issue.quarter }}'].includes(category) %]
-        [% set currenQuarter = '{{ issue.quarter }}' %]
+          id="[= issue.wg_slug =]-[= issue.number =]">
+        [% if currenQuarter != issue.quarter.slug %]
+        [% if not category or quarters[issue.quarter.slug].includes(category) %]
+        [% set currenQuarter = issue.quarter.slug %]
         <amp-position-observer intersection-ratios=".95"
-            target="{{ issue.quarter|slug }}"
-            on="enter:anim-{{ issue.quarter|slug }}.start"
+            target="[= issue.quarter.slug =]"
+            on="enter:anim-[= issue.quarter.slug =].start"
             layout="nodisplay">
         </amp-position-observer>
-        <aside class="ap-t-roadmap-list-item-quarter" id="{{ issue.quarter|slug }}">
-          <h3>{{ issue.quarter }}</h3>
+        <aside class="ap-t-roadmap-list-item-quarter" id="[= issue.quarter.slug =]">
+          <h3>[= issue.quarter.title =]</h3>
         </aside>
         [% endif %]
         [% endif %]
@@ -150,9 +146,9 @@ roadmap: !g.json /shared/data/roadmap.json
         <aside class="ap-t-roadmap-list-item-scroll-spacer"
             id="scroll-[= issue.wg_slug =]-[= issue.number =]">
         </aside>
-        {% if not loop.last %}
+        [% if not loop.last %]
         <span class="ap-t-roadmap-list-item-timeline ap-t-roadmap-list-item-timeline--vertical"></span>
-        {% endif %}
+        [% endif %]
 
         <span class="ap-t-roadmap-list-item-timeline ap-t-roadmap-list-item-timeline--horizontal">
           <span class="ap-t-roadmap-list-item-timeline-dot"></span>
