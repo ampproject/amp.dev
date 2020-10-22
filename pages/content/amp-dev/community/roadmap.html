@@ -105,7 +105,7 @@ roadmap: !g.json /shared/data/roadmap.json
           </script>
         </amp-animation>
         <button class="ap-t-roadmap-navigation-list-item"
-            on="tap:[= 'status-updates' if loop.first else quarter =].scrollTo(duration=500)">
+            on="tap:[= 'status-updates' if loop.first else quarter.slug =].scrollTo(duration=500)">
           <h3 class="ap-t-roadmap-navigation-list-item-title nav-item-title"
               id="nav-item-[= quarter.slug =]">
             [= quarter.title =]
