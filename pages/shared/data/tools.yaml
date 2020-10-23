@@ -124,8 +124,8 @@ creation:
     formats:
       - stories
   - name: Join Stories
-    description: Create Stories for the web. Rapid. Immersive. Responsive.
-    url: https://join-stories.com/
+    description: Long Story Short, Join Stories is the fastest and easiest Story creation tool.
+    url: https://www.join-stories.com/
     type:  WYSIWYG Editor
     image:
       src: /static/img/tools/joinstories.jpg
