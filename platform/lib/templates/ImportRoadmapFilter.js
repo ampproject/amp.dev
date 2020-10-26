@@ -43,7 +43,6 @@ const TEXT_BLOCK_REGEX = /^#{1,3} (?:.(?!^#))*/gms;
 // Holds the lazily initlaized GitHub client for all functions to share
 let client = null;
 
-
 /**
  * Import status-update issues and relevant working-group data from
  * working-group repositories on GitHub
@@ -71,11 +70,11 @@ function structureDataForRoadmap(workingGroups) {
 
   const quarters = {
     'ordered': [],
-    'working_groups': {}
+    'working_groups': {},
   };
 
   for (const issue of roadmap.issues) {
-    if (!quarters.ordered.some(item => item.slug === issue.quarter.slug)) {
+    if (!quarters.ordered.some((item) => item.slug === issue.quarter.slug)) {
       quarters.ordered.push(issue.quarter);
     }
 
@@ -116,12 +115,12 @@ async function getMetaForWorkigGroup(workingGroup) {
     );
   }
 
-  return meta = {
+  return (meta = {
     slug: workingGroupSlug,
     name: workingGroup.name,
     title: meta.title,
     color: config.colors[workingGroupSlug] || config.fallbackColor,
-  }
+  });
 }
 
 /**
@@ -133,10 +132,10 @@ async function getIssuesForWorkingGroup(meta) {
   const issues = [];
   const issuesImport = (
     await client._github
-    .repo(`${DEFAULT_ORGANISATION}/${meta.name}`)
-    .issuesAsync({
-      state: 'all',
-    })
+      .repo(`${DEFAULT_ORGANISATION}/${meta.name}`)
+      .issuesAsync({
+        state: 'all',
+      })
   )[0];
 
   for (const issue of issuesImport) {
@@ -166,7 +165,7 @@ async function getIssuesForWorkingGroup(meta) {
      */
     let body = issue.body.replace(AMP_COMPONENT_REGEX, ' `$1`');
     body = body.trim().match(TEXT_BLOCK_REGEX);
-    body = body.map(p => marked(p))
+    body = body.map((p) => marked(p));
 
     issues.push({
       wg_slug: meta.workingGroupSlug,
@@ -175,7 +174,7 @@ async function getIssuesForWorkingGroup(meta) {
       status_update: statusUpdate,
       quarter: {
         slug: SlugGenerator.sluggify(quarter),
-        title: quarter
+        title: quarter,
       },
       number: issue.number,
       html_url: issue.html_url,
