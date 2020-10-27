@@ -33,7 +33,7 @@
 
       &.loading {
         font-size: 0;
-        background: color('mercury');
+        background: color('iron');
 
         @extend %loading-indicator;
         &:after {
