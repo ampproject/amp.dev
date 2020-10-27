@@ -82,18 +82,6 @@ box-shadow: 0 25px 50px 0 rgba(0,0,0,0.21);
   box-shadow: 0 10px 25px 0 rgba(0,0,0,0.2);
 }
 
-@mixin turbo-pizazz {
-	background: linear-gradient(45deg, color('clementine'), color('school-bus'));
-}
-
-@mixin emerald-doger {
-	background: linear-gradient(45deg, color('japan-laurel'), color('robins-egg'));
-}
-
-@mixin river-ebony {
-	background: linear-gradient(45deg, color('river-bed'), color('charade'));
-}
-
 @mixin heroEnterAnimation {
 	@keyframes growDown {
 		from {
