@@ -135,8 +135,8 @@ section.#{utility('tools')} {
       }
 
       &.stories {
-        @include gradient-stories; color: color('ultramarine');
-        .#{atom('ico')} { fill: color('ultramarine'); }
+        @include gradient-stories; color: color('electric-violet');
+        .#{atom('ico')} { fill: color('electric-violet'); }
       }
 
       &.ads {
@@ -145,8 +145,8 @@ section.#{utility('tools')} {
       }
 
       &.email {
-        @include gradient-e-mails; color: color('ultramarine');
-        .#{atom('ico')} { fill: color('ultramarine'); }
+        @include gradient-e-mails; color: color('electric-violet');
+        .#{atom('ico')} { fill: color('electric-violet'); }
       }
     }
 

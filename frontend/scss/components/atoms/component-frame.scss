@@ -84,7 +84,7 @@ format modifiers for differen color rendering (e.g. websites -> blue border, ads
 }
 
 @mixin component-frame-ads {
-  &:before { border-color: color('lavender-magenta'); }
+  &:before { border-color: color('lav-magenta'); }
   &:after { @include gradient-ads; }
 }
 
