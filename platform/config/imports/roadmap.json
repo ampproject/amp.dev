@@ -1,6 +1,6 @@
 {
   "colors": {
-    "ui-and-a11y": "#48525C",
+    "components": "#48525C",
     "amp4email": "#A6E22E",
     "infra": "#00DCC0",
     "outreach": "#E1EB64",
