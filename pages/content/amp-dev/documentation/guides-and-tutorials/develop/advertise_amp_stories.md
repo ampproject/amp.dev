@@ -59,7 +59,7 @@ Web Stories cannot support an [`amp-ad`](../../../documentation/components/refer
 
 Unlike a normal [`amp-ad`](../../../documentation/components/reference/amp-ad.md), no `<fallback>` or `<placeholder>` is required, as Web Story ads are only displayed once fully rendered.
 
-##Getting started with Story Ads
+## Getting started with Story Ads
 The easiest way to include ads in your AMP Story is by serving ads from a supported ad server.
 
 Ad platforms that currently support AMP Story ads:
