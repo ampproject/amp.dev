@@ -107,19 +107,6 @@ describe('getRecommendationIds', () => {
     expect(ids).toContainEqual({id: 'use-amp-optimizer'});
   });
 
-  it('returns enable-js-module-runtime', async () => {
-    const ids = await getRecommendations(
-      Promise.resolve({}),
-      Promise.resolve({}),
-      Promise.resolve({
-        moduleRuntimeIsUsed: false,
-      }),
-      Promise.resolve({})
-    );
-    expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContainEqual({id: 'enable-js-module-runtime'});
-  });
-
   it('returns hero-images', async () => {
     const ids = await getRecommendations(
       Promise.resolve({}),
