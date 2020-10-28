@@ -12,7 +12,7 @@
 }
 
 .CodeMirror-error-markers, .CodeMirror-linenumbers {
-  background: color('ebony-clay');
+  background: color('charade');
 }
 
 .CodeMirror-error-markers {
@@ -33,7 +33,7 @@
 .cm-s-monokai.CodeMirror {
   font-size: 14px;
   height: 100%;
-  background: color('ebony-clay');
+  background: color('charade');
   pre {
     @include txt-mono;
     line-height: 1.25em;

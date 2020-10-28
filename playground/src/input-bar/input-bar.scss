@@ -42,7 +42,7 @@
 
       &.loading {
         font-size: 0;
-        background: color('mercury');
+        background: color('iron');
 
         @extend %loading-indicator;
         &:after {
@@ -58,7 +58,7 @@
       @include txt;
       @include txt-2;
       display: block;
-      color: color('red');
+      color: color('guardsman-red');
       opacity: 0;
       transition: transform .3s ease, opacity .2s ease;
 
@@ -92,7 +92,7 @@
         width: 100%;
         padding: 15px 15px 15px 25px;
         white-space: nowrap;
-        border-bottom: 1px solid color('silver');
+        border-bottom: 1px solid color('iron');
 
         h4 {
           margin: 0;

@@ -101,8 +101,8 @@
       position: absolute;
       left: 0;
       top: 0;
-      background: color('ebony-clay');
-      background: linear-gradient(225deg, color('ebony-clay') 0%, color('river-bed') 75%);
+      background: color('charade');
+      background: linear-gradient(225deg, color('charade') 0%, color('river-bed') 75%);
       z-index: 2;
 
       .#{atom('ico')} {
@@ -137,7 +137,7 @@
       padding: 1em 20px;
       text-align: left;
       border: none;
-      border-top: solid 1px color('silver');
+      border-top: solid 1px color('iron');
       cursor: pointer;
       transition: transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
 
@@ -201,7 +201,7 @@
       @include txt-2;
       @include txt-strong;
       padding: 10px 20px;
-      color: color('mine-shaft');
+      color: color('charade');
     }
 
     &-link {

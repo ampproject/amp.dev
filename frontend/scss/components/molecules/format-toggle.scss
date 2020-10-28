@@ -86,8 +86,8 @@
 
     &-link-stories {
       &:hover, &.#{molecule('format-toggle')}-selected {
-        @include gradient-stories; color: color('ultramarine');
-        .#{atom('ico')} { fill: color('ultramarine'); }
+        @include gradient-stories; color: color('electric-violet');
+        .#{atom('ico')} { fill: color('electric-violet'); }
       }
     }
 
@@ -101,8 +101,8 @@
     &-link-email {
 
       &:hover, &.#{molecule('format-toggle')}-selected {
-        @include gradient-e-mails; color: color('ultramarine');
-        .#{atom('ico')} { fill: color('ultramarine'); }
+        @include gradient-e-mails; color: color('electric-violet');
+        .#{atom('ico')} { fill: color('electric-violet'); }
       }
     }
 
