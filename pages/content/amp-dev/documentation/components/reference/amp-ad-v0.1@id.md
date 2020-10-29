@@ -289,6 +289,7 @@ Lihat [aturan amp-ad](https://github.com/ampproject/amphtml/blob/master/extensio
 * [Dot and Media](https://github.com/ampproject/amphtml/blob/master/ads/dotandads.md)
 * [Doubleclick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 * [eADV](https://github.com/ampproject/amphtml/blob/master/ads/eadv.md)
+* [Epeex](https://github.com/ampproject/amphtml/blob/master/ads/epeex.md)
 * [E-Planning](https://github.com/ampproject/amphtml/blob/master/ads/eplanning.md)
 * [Ezoic](https://github.com/ampproject/amphtml/blob/master/ads/ezoic.md)
 * [Felmat](https://github.com/ampproject/amphtml/blob/master/ads/felmat.md)

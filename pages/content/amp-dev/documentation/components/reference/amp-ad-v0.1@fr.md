@@ -289,6 +289,7 @@ Consultez les [règles relatives à amp-ad](https://github.com/ampproject/amphtm
 * [Dot and Media](https://github.com/ampproject/amphtml/blob/master/ads/dotandads.md)
 * [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 * [eADV](https://github.com/ampproject/amphtml/blob/master/ads/eadv.md)
+* [Epeex](https://github.com/ampproject/amphtml/blob/master/ads/epeex.md)
 * [E-Planning](https://github.com/ampproject/amphtml/blob/master/ads/eplanning.md)
 * [Ezoic](https://github.com/ampproject/amphtml/blob/master/ads/ezoic.md)
 * [Felmat](https://github.com/ampproject/amphtml/blob/master/ads/felmat.md)
