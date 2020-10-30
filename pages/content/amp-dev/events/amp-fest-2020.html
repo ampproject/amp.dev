@@ -2,6 +2,7 @@
 $title: AMP Fest 2020
 $order: 1
 $view: /views/overview/events.j2
+description: If you weren't able to catch AMP Fest live, check out all the talks here. From AMP and page experience, to Web Stories and WordPress, we shared a ton of exciting news!
 
 ampconf: !g.yaml /shared/data/amp-fest.yaml
 
@@ -15,7 +16,7 @@ section_links:
 <section class="ap--stage ap--container-fluid">
     {% do doc.styles.addCssFile('css/components/organisms/stage-amp-fest.css') %}
 
-    <div class="ap-o-stage ap-o-stage-amp-fest all city-{{ ['ams', 'del', 'nyc', 'rio','sfo','tyo'] | random }}">
+    <div class="ap-o-stage ap-o-stage-amp-fest all city-{{ ['ams', 'del', 'nyc', 'rio', 'sfo', 'tyo'] | random }}">
       <div class="ap--container-fluid">
         <div class="ap-o-stage-content">
           <amp-img class="logo" alt="AMP Fest" src="/static/img/amp-fest/logo.png" layout="intrinsic" width="800px" height="177px"></amp-img>
@@ -26,14 +27,16 @@ section_links:
 </section>
 
 <section class="ap--container">
-  <div class="ap--content-x-wide">
-    <h1>Featured Talks</h1>
+  <div class="ap--content-default">
+    <p>Thank you to everyone who joined us during the premiere of AMP Fest! From AMP and page experience, to Web Stories and WordPress, we shared a ton of exciting news during the event. And we learned from developers around the world who are using AMP to help succeed on the web.</p>
+    <p>If you weren’t able to catch it live, check out all the awesome talks from our event below.</p>
   </div>
 </section>
 
 {% do doc.styles.addCssFile('/css/components/organisms/video-slider.css') %}
 <section class="ap--container">
   <div class="ap--content-x-wide">
+    <h1>Featured Talks</h1>
     <h2 class="ap-o-video-slider-text">Keynote</h2>
     <amp-youtube data-videoid="FsvY5p3YDJ8"
       width="391"

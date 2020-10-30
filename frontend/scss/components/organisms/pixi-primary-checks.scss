@@ -31,7 +31,7 @@
       padding: 14px 20px;
       @include txt-font-accent;
       font-size: 18px;
-      background-color: color('alto');
+      background-color: color('iron');
       transition: color 0.2s ease, background-color 0.2s ease;
       cursor: pointer;
 
@@ -62,7 +62,7 @@
       }
 
       &.active {
-        color: color('mirage');
+        color: color('charade');
         background-color: color('white');
       }
     }
@@ -91,7 +91,7 @@
     &-note {
       font-size: 14px;
       font-weight: bold;
-      border-top: solid 2px color('mercury');
+      border-top: solid 2px color('iron');
       padding: 10px 20px;
 
       @media (min-width: 768px) {

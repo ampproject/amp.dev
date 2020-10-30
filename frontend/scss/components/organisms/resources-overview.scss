@@ -47,7 +47,7 @@
       @include gradient-stories;
 
       .#{organism('resources-grid')} h2 {
-        color: color('ultramarine');
+        color: color('electric-violet');
       }
     }
 
@@ -63,7 +63,7 @@
       @include gradient-e-mails;
 
       .#{organism('resources-grid')} h2 {
-        color: color('ultramarine');
+        color: color('electric-violet');
       }
     }
   }
@@ -77,7 +77,7 @@
   &-email .#{organism('resources-grid')} h2,
   &-stories .#{organism('resources-grid')} h2 {
     transition: color 0.3s cubic-bezier(.25, .1, .25, 1);
-    color: color('ultramarine');
+    color: color('electric-violet');
   }
 
   .ap-format-content {
@@ -168,10 +168,10 @@
           &-stories.active,
           &-stories:hover {
             @include gradient-stories;
-            color: color('ultramarine');
+            color: color('electric-violet');
 
             .#{atom('ico')} {
-              fill: color('ultramarine');
+              fill: color('electric-violet');
             }
           }
 
@@ -188,10 +188,10 @@
           &-email.active,
           &-email:hover {
             @include gradient-e-mails;
-            color: color('ultramarine');
+            color: color('electric-violet');
 
             .#{atom('ico')} {
-              fill: color('ultramarine');
+              fill: color('electric-violet');
             }
           }
         }

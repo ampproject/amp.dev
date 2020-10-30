@@ -116,7 +116,7 @@
       margin-bottom: 20px;
       padding: 4px 10px;
       border-radius: 12px;
-      background-color: color('concrete');
+      background-color: color('athens-gray');
 
       &-icon {
         fill: color('blue-ribbon');
@@ -158,7 +158,7 @@
 
     &-highlighted {
       box-shadow: none;
-      border: 1px solid color('mercury');
+      border: 1px solid color('iron');
 
       &:hover {
         transform: none;

@@ -12,7 +12,7 @@
   &-box {
     padding: 30px 18px;
     border-radius: 8px;
-    border: solid 2px color('mercury');
+    border: solid 2px color('iron');
 
     @media (min-width: 768px) {
       padding: 23px;
@@ -123,7 +123,7 @@
 
     tr + tr,
     thead + tr {
-      border-top: 1px solid color('mercury');
+      border-top: 1px solid color('iron');
     }
 
     td,
@@ -183,7 +183,7 @@
 
   &-tags {
     padding-top: 20px;
-    border-top: solid 2px color('mercury');
+    border-top: solid 2px color('iron');
 
     span {
       height: 30px;

@@ -6,7 +6,7 @@
   width: 100%;
   padding: 7px 15px 7px 25px;
   border: 0;
-  border-bottom: 1px solid color('silver');
+  border-bottom: 1px solid color('iron');
   background: transparent;
   @include txt;
   @include txt-2;
@@ -23,6 +23,6 @@
   }
 
   &:focus {
-    background: color('wild-sand');
+    background: color('athens-gray');
   }
 }

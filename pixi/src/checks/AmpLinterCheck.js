@@ -23,7 +23,6 @@ const directMapping = {
   googlefontpreconnect: 'googleFontPreconnect',
   istransformedamp: 'isTransformedAmp',
   boilerplateisremoved: 'boilerplateIsRemoved',
-  moduleruntimeused: 'moduleRuntimeIsUsed',
   heroimageisdefined: 'heroImageIsDefined',
 };
 
