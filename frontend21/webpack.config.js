@@ -1,7 +1,6 @@
 const path = require('path');
 
 const webpack = require('webpack');
-const ClosureCompilerPlugin = require('closure-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -23,9 +22,7 @@ module.exports = (env, argv) => {
       publicPath: isDevelopment ? 'http://localhost:8090/' : '/',
     },
     optimization: {
-      minimizer: isDevelopment
-        ? []
-        : [new OptimizeCSSAssetsPlugin({})],
+      minimizer: isDevelopment ? [] : [new OptimizeCSSAssetsPlugin({})],
       splitChunks: {
         cacheGroups: {
           main: {
@@ -66,8 +63,7 @@ module.exports = (env, argv) => {
           svgo: {
             plugins: [
               {
-                removeAttrs: {
-                },
+                removeAttrs: {},
               },
             ],
           },
@@ -79,7 +75,8 @@ module.exports = (env, argv) => {
           'static/frontend/' +
           (isDevelopment ? '[name].css' : '[name].[contenthash].css'),
         chunkFilename:
-          'static/frontend/' + (isDevelopment ? '[id].css' : '[name].[contenthash].css'),
+          'static/frontend/' +
+          (isDevelopment ? '[id].css' : '[name].[contenthash].css'),
         publicPath: 'static/frontend/',
       }),
       new FileManagerPlugin({
@@ -111,10 +108,7 @@ module.exports = (env, argv) => {
       }),
       new WebpackBuildNotifierPlugin({
         title: 'amp.dev Frontend',
-        logo: path.join(
-          process.cwd(),
-          '/static/img/favicon-128x128.png'
-        ),
+        logo: path.join(process.cwd(), '/static/img/favicon-128x128.png'),
       }),
     ],
     module: {
