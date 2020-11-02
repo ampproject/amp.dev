@@ -62,7 +62,11 @@ Adds support for AFS Analytics. Additionally, the `websiteid` and `server` varia
 
 Type attribute value: `alexametrics`
 
+<!-- markdown-link-check-disable -->
+
 Adds support for Alexa Certified Site Metrics. The `atrk_acct` and `domain` variables must be specified. More information can be found at [Alexa’s Certified Metrics FAQ](https://support.alexa.com/hc/en-us/sections/200063374-Certified-Site-Metrics).
+
+<!-- markdown-link-check-enable -->
 
 ### Amplitude <a name="amplitude"></a>
 
@@ -248,7 +252,11 @@ Adds support for Kenshoo. More information and configuration details can be foun
 
 Type attribute value: `krux`
 
+<!-- markdown-link-check-disable -->
+
 Adds support for Krux. Configuration details can be found at [help.krux.com](https://konsole.zendesk.com/hc/en-us/articles/216596608).
+
+<!-- markdown-link-check-enable -->
 
 ### Linkpulse <a name="linkpulse"></a>
 
@@ -260,7 +268,7 @@ Adds support for Linkpulse. Configuration details can be found at [docs.linkpuls
 
 Type attribute value: `lotame`
 
-Adds support for Lotame. More information and configuration details can be found at [mylotame.force.com](https://mylotame.force.com/s/article/Google-AMP).
+Adds support for Lotame. More information and configuration details can be found at [my.lotame.com](https://my.lotame.com/t/83h37h9/overview-1st-party-data-collection-in-google-amp).
 
 ### Mapp Intelligence <a name="mapp-intelligence"></a>
 
@@ -386,7 +394,7 @@ Type attribute value: `piStats`
 
 Type attribute value: `piano`
 
-Adds support for Piano. Configuration details can be found at [vx.piano.io](http://vx.piano.io/javascript-tracking-amp).
+Adds support for Piano. Configuration details can be found at `http://vx.piano.io/javascript-tracking-amp`
 
 ### Pinpoll <a name="pinpoll"></a>
 
@@ -404,7 +412,11 @@ Adds support for Pressboard. Configuration details can be found at [help.pressbo
 
 Type attribute value: `quantcast`
 
+<!-- markdown-link-check-disable -->
+
 Adds support for Quantcast Measurement. More details for adding Quantcast Measurement can be found at [quantcast.com](https://www.quantcast.com/help/guides/)
+
+<!-- markdown-link-check-enable -->
 
 ### Rakam <a name="rakam"></a>
 
@@ -423,7 +435,7 @@ Type attribute value: `retargetly`
 Type attribute value: `rudderstack`
 
 Adds support for RudderStack page views and events.
-Find out more on the implementation check our [documentation](https://docs.rudderstack.com/sdk-integration-guide/getting-started-with-javascript-sdk/amp-analytics).
+Find out more on the implementation check our documentation at `https://docs.rudderstack.com/sdk-integration-guide/getting-started-with-javascript-sdk/amp-analytics`.
 
 ### Segment <a name="segment"></a>
 
@@ -454,6 +466,12 @@ Type attribute value: `snowplow`, `snowplow_v2`
 
 Adds support for Snowplow Analytics. More details for adding Snowplow Analytics support can be found at [github.com/snowplow/snowplow/wiki](https://github.com/snowplow/snowplow/wiki/Google-AMP-Tracker).
 
+### Tail <a name="tail"></a>
+
+Type attribute value: `tail`
+
+Adds support for Tail. More details for adding Tail support can be found at [tail.digital](https://tail.digital).
+
 ### Rambler/TOP-100 <a name="ramblertop-100"></a>
 
 Type attribute value: `top100`
@@ -482,7 +500,7 @@ Adds support for Top.Mail.Ru. Configuration details can be found at [Top.Mail.Ru
 
 Type attribute value: `treasuredata`
 
-Adds support for Treasure Data. Configuration details can be found at [treasuredata.com](https://docs.treasuredata.com/articles/javascript-sdk-google-amp).
+Adds support for Treasure Data. Configuration details can be found at `https://docs.treasuredata.com/articles/javascript-sdk-google-amp`.
 
 ### Umeng+ Analytics <a name="umeng-analytics"></a>
 
