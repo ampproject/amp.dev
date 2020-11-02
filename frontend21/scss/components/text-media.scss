@@ -1,3 +1,28 @@
+@import '../frontend/scss/components/atoms/_text.scss';
+
 .#{prefix(null, 'text-media')} {
-  background-color: cyan;
+
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
+
+  &.--reverse {
+    flex-direction: row-reverse;
+  }
+
+  & > div {
+    @media (min-width: 768px) {
+      width: 50%;
+      max-width: 50%;
+
+      &:last-child {
+        margin-left: 30px;
+      }
+    }
+  }
+
+  caption {
+
+  }
 }

@@ -1,5 +1,19 @@
 @import '../frontend/scss/_functions.scss';
 @import '../frontend/scss/_mixins.scss';
 @import '../frontend/scss/_variables.scss';
+@import '../frontend/scss/components/atoms/_text.scss';
 
 @import 'components/text-media.scss';
+
+
+section {
+  margin: auto;
+
+  &.--content-width {
+    max-width: 970px;
+  }
+
+  &.--fullscreen {
+
+  }
+}
