@@ -1,19 +1,14 @@
 .#{prefix(null, 'text-media')} {
+  $text-media: &;
   display: flex;
   flex-direction: column;
 
-  &.--reverse {
-    flex-direction: column-reverse;
-  }
-
-  &.--center {
-    align-items: center;
-  }
-
   @media (min-width: 768px) {
     flex-direction: row;
+  }
 
-    & > div {
+  &-col {
+    @media (min-width: 768px) {
       width: 50%;
 
       &:last-child {
@@ -24,11 +19,27 @@
         margin: 0;
       }
     }
+  }
 
-    &.--reverse {
+  &.--thirds {
+    #{$text-media}-col {
+      &:first-child {
+        width: 40%;
+      }
+
+      &:last-child {
+        width: 60%;
+      }
+    }
+  }
+
+  &.--reverse {
+    flex-direction: column-reverse;
+
+    @media (min-width: 768px) {
       flex-direction: row-reverse;
 
-      & > div {
+      #{$text-media}-col {
         &:first-child {
           margin: 0 0 0 30px;
         }
@@ -38,5 +49,9 @@
         }
       }
     }
+  }
+
+  &.--center {
+    align-items: center;
   }
 }
