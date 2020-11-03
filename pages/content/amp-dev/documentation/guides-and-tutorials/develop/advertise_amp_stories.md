@@ -60,13 +60,13 @@ Web Stories cannot support an [`amp-ad`](../../../documentation/components/refer
 Unlike a normal [`amp-ad`](../../../documentation/components/reference/amp-ad.md), no `<fallback>` or `<placeholder>` is required, as Web Story ads are only displayed once fully rendered.
 
 ## Getting started with Story Ads
-The easiest way to include ads in your AMP Story is by serving ads from a supported ad server.
+The easiest way to include ads in your Web Story is by serving ads from a supported ad server.
 
-Ad platforms that currently support AMP Story ads:
+Ad platforms that currently support Web Story ads:
 
 * Google Ad Manager
-  * [Direct sold ads](https://support.google.com/admanager/answer/9038178)
-  * [Programmatic ads](https://support.google.com/admanager/answer/9416436)
+    * [Direct sold ads](https://support.google.com/admanager/answer/9038178)
+    * [Programmatic ads](https://support.google.com/admanager/answer/9416436)
 * Google AdSense coming soon
 * Other ad platforms can integrate (contact us for [details via Github](https://github.com/ampproject/amphtml/issues/30769))
 
