@@ -114,7 +114,7 @@
     }
 
     &-button {
-      color: color('electric-violet');
+      @include color-ads;
       background-color: color('white');
       margin-top: 20px;
     }

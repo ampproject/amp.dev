@@ -65,7 +65,7 @@
       left: 0;
       bottom: calc(100% + 1em);
       padding: 0.5em;
-      border: 1px solid color('electric-violet');
+      border: 1px solid color('charade');
       border-radius: 50%;
 
       @media (min-width: 768px) {
@@ -88,7 +88,7 @@
     &-headline {
       @include hl;
       @include hl-xlrg;
-      @include color-stories;
+      @include color-e-mails;
       margin: 0;
 
       br {
@@ -101,7 +101,7 @@
     &-subline {
       @include txt;
       @include txt-1;
-      @include color-stories;
+      @include color-e-mails;
       margin-top: 0;
 
       @media (min-width: 768px) {
@@ -114,7 +114,7 @@
     }
 
     &-button {
-      background-color: color('electric-violet');
+      background-color: color('charade');
       margin-top: 20px;
     }
   }

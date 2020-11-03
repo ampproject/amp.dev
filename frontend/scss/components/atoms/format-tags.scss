@@ -19,7 +19,7 @@
 
   &-stories {
     @include gradient-stories;
-    color: color('electric-violet');
+    @include color-stories;
   }
 
   &-ads {
@@ -28,6 +28,6 @@
 
   &-email {
     @include gradient-e-mails;
-    color: color('electric-violet');
+    @include color-e-mails;
   }
 }
