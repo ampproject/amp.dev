@@ -36,6 +36,12 @@ $view: /views/2021/base.html
   </div>
 </section>
 
+<section class="section --fullwidth">
+  {% do doc.styles.addCssFile('css/components/atoms/pixi-stripes.css') %}
+  {% do doc.icons.useIcon('icons/pixi-stripes.svg') %}
+  <aside class="ap-a-pixi-stripes --block"></aside>
+</section>
+
 <section class="section --content-width">
   <div class="ap-text-media --reverse">
     <div>
