@@ -1,28 +1,35 @@
-@import '../frontend/scss/components/atoms/_text.scss';
-
 .#{prefix(null, 'text-media')} {
-
-  @media (min-width: 768px) {
-    display: flex;
-    align-items: center;
-  }
+  display: flex;
+  flex-direction: column;
 
   &.--reverse {
-    flex-direction: row-reverse;
+    flex-direction: column-reverse;
   }
 
-  & > div {
-    @media (min-width: 768px) {
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+
+    & > div {
       width: 50%;
-      max-width: 50%;
 
       &:last-child {
-        margin-left: 30px;
+        margin: 0 0 0 30px;
       }
     }
-  }
 
-  caption {
+    &.--reverse {
+      flex-direction: row-reverse;
 
+      & > div {
+        &:first-child {
+          margin: 0 0 0 30px;
+        }
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
   }
 }
