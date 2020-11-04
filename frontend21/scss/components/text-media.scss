@@ -12,7 +12,7 @@
       width: 50%;
 
       &:last-child {
-        margin: 0 0 0 30px;
+        margin: 0 0 0 8%;
       }
 
       &:only-child {
@@ -24,11 +24,11 @@
   &.--thirds {
     #{$text-media}-col {
       &:first-child {
-        width: 40%;
+        width: 30%;
       }
 
       &:last-child {
-        width: 60%;
+        width: 62%;
       }
     }
   }
@@ -41,7 +41,7 @@
 
       #{$text-media}-col {
         &:first-child {
-          margin: 0 0 0 30px;
+          margin: 0 0 0 8%;
         }
 
         &:last-child {
