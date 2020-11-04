@@ -1,9 +1,10 @@
 .#{prefix(null, 'pie-chart')} {
   position: relative;
-  width: 220px;
-  height: 220px;
+  width: 290px;
+  height: 290px;
+  margin-left: auto;
   border-radius: 50%;
-  background-color: color('iron');
+  background: color('iron');
   background-image: linear-gradient(to right, transparent 50%, currentColor 0);
   color: color('blue-ribbon');
 
@@ -17,7 +18,6 @@
     transform-origin: left;
     background: currentColor;
     transform: rotate(0turn);
-    animation: spin 0.75s cubic-bezier(.58,.25,.43,1.32) forwards;
   }
 
   &-overlay {
@@ -47,18 +47,41 @@
       }
     }
   }
-}
 
-@keyframes spin {
-  /* 0.25turn = 75%
-   * 0.4turn = 90% */
-  to {
-    transform: rotate(0.12turn);
+
+  &:nth-child(even) {
+    width: 245px;
+    height: 245px;
+    margin-top: -30px;
+    margin-left: 0;
+  }
+
+  &.--percent-12 {
+    margin-left: 0;
+    background: color('black');
+    background-image: linear-gradient(to right, transparent 50%, currentColor 0);
+
+    &:before {
+      background: color('iron');
+      animation: spin12 0.75s cubic-bezier(.58,.25,.43,1.32) forwards;
+    }
+  }
+
+  &.--percent-60 {
+    &:before {
+      animation: spin60 0.75s cubic-bezier(.58,.25,.43,1.32) forwards;
+    }
   }
 }
 
-@keyframes bg {
-  50% {
-    background: currentColor;
+@keyframes spin12 {
+  to {
+    transform: rotate(-0.12turn);
+  }
+}
+
+@keyframes spin60 {
+  to {
+    transform: rotate(0.12turn);
   }
 }

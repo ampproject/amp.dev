@@ -14,17 +14,28 @@ $view: /views/2021/base.html
   </section>
 
   <section class="ap-section --col-5-19">
-    <div class="ap-text-media --thirds">
+    <div class="ap-text-media">
 
       <div class="ap-text-media-col">
-        <div class="ap-pie-chart">
-          <div class="ap-pie-chart-overlay">
-            <div class="ap-pie-chart-overlay-description">
-              <span>60%</span>
-              <aside>AMP<br>domains</aside>
+        <figure class="ap-pie-chart-container">
+          <div class="ap-pie-chart --percent-60">
+            <div class="ap-pie-chart-overlay">
+              <div class="ap-pie-chart-overlay-description">
+                <span>60%</span>
+                <aside>AMP<br>domains</aside>
+              </div>
             </div>
           </div>
-        </div>
+          <div class="ap-pie-chart --percent-12">
+            <div class="ap-pie-chart-overlay">
+              <div class="ap-pie-chart-overlay-description">
+                <span>12%</span>
+                <aside>non-AMP<br>domains</aside>
+              </div>
+            </div>
+          </div>
+          <figcaption>Domains built with AMP are 5 times more likely to pass* Core Web Vitals metrics than non-AMP!<br><span>*where „passing“ means 75% of pages in the domain passed</span></figcaption>
+        </figure>
       </div>
 
       <div class="ap-text-media-col">
