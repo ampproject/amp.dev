@@ -1,11 +1,16 @@
 .#{prefix(null, 'pie-charts')} {
 
   &-chart {
-    --size: 360px;
+    &:nth-child(odd) {
+      --size: 200px;
+      @media (min-width: 768px) { --size: 360px; }
+    }
 
     &:nth-child(even) {
-      --size: 240px;
       margin-left: 0;
+      margin-top: -10%;
+      --size: 160px;
+      @media (min-width: 768px) { --size: 240px; }
     }
 
     position: relative;
@@ -53,14 +58,18 @@
       box-shadow: shadows('center');
       transform: translateX(-50%) translateY(-50%);
 
-      font-size: 16px;
+      font-size: 12px;
       text-align: center;
       line-height: 1.1;
       font-weight: bold;
       color: color('charade');
 
       span {
-        font-size: 65px;
+        font-size: 45px;
+
+        @media (min-width: 768px) {
+          font-size: 65px;
+        }
       }
     }
   }
