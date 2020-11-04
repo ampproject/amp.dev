@@ -152,7 +152,7 @@
     "js-base64": "3.5.2",
     "js-beautify": "1.13.0",
     "keymaster": "1.6.2",
-    "marked": "1.2.2",
+    "marked": "1.2.3",
     "mini-css-extract-plugin": "1.2.1",
     "mini-svg-data-uri": "1.2.3",
     "node-sass": "4.14.1",
