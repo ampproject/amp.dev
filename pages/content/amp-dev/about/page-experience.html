@@ -5,7 +5,7 @@ $view: /views/2021/base.html
 ---
 
 <main>
-  <section class="section" style="grid-column: 6/15;">
+  <section class="section --col-6-15">
     <div class="ap-text-block">
       <h1>Page experience success with AMP</h1>
       <p>Page experience is a set of signals from Google that measure how users perceive their experience interacting with a web page beyond its pure information value. Google's internal studies and industry research found that users prefer sites with a great page experience. A high page experience score helps your content surface to users in places like the top stories feature, and encourages them to return to your site.</p>
@@ -13,7 +13,7 @@ $view: /views/2021/base.html
     <a href="/page-experience" class="ap-button">{{ _('Check your page') }}</a>
   </section>
 
-  <section class="section" style="grid-column: 5/19;">
+  <section class="section --col-5-19">
     <div class="ap-text-media --thirds">
 
       <div class="ap-text-media-col">
@@ -40,13 +40,13 @@ $view: /views/2021/base.html
     </div>
   </section>
 
-  <section class="section" style="grid-column: 1/-1;">
+  <section class="section --fullscreen">
     {% do doc.styles.addCssFile('css/components/atoms/pixi-stripes.css') %}
     {% do doc.icons.useIcon('icons/pixi-stripes.svg') %}
     <aside class="ap-a-pixi-stripes --block"></aside>
   </section>
 
-  <section class="section" style="grid-column: 6/20;">
+  <section class="section --col-6-20">
     <div class="ap-text-media --thirds">
       <div class="ap-text-media-col">
         <div class="ap-text-block">
