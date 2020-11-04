@@ -1,0 +1,35 @@
+.#{prefix(null, 'section')} {
+  width: 100%;
+  margin-top: 100px;
+  padding: 0 15px;
+
+  &:first-child {
+    margin-top: 140px;
+  }
+
+  &.--col-6-15 {
+    @media (min-width: 768px) {
+      grid-column: 6 / 15;
+    }
+  }
+
+  &.--col-5-19 {
+    @media (min-width: 768px) {
+      grid-column: 5 / 19;
+    }
+  }
+
+  &.--col-6-20 {
+    @media (min-width: 768px) {
+      grid-column: 6 / 20;
+    }
+  }
+
+  &.--fullscreen {
+    padding: 0;
+
+    @media (min-width: 768px) {
+      grid-column: 1 / -1;
+    }
+  }
+}
