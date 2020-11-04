@@ -1,24 +1,24 @@
 .#{prefix(null, 'pie-charts')} {
 
   &-chart {
-    &:nth-child(odd) {
-      --size: 200px;
-      @media (min-width: 768px) { --size: 360px; }
-    }
-
-    &:nth-child(even) {
-      margin-left: 0;
-      margin-top: -10%;
-      --size: 160px;
-      @media (min-width: 768px) { --size: 240px; }
-    }
-
     position: relative;
     width: var(--size);
     height: var(--size);
     margin-left: auto;
     border-radius: 50%;
     background: color('iron');
+
+    &:nth-child(odd) {
+      --size: 200px;
+      @media (min-width: 768px) { --size: 340px; }
+    }
+
+    &:nth-child(even) {
+      margin-left: 0;
+      margin-top: -5%;
+      --size: 160px;
+      @media (min-width: 768px) { --size: 240px; }
+    }
 
     &-clip {
       position: absolute;
@@ -38,10 +38,6 @@
       @include gradient-websites;
     }
 
-    &-clip:last-child, &-part {
-      animation: fill 1s ease-in-out 0s both;
-    }
-
     &-overlay {
       position: absolute;
       top: 50%;
@@ -57,8 +53,6 @@
       background: color('white');
       box-shadow: shadows('center');
       transform: translateX(-50%) translateY(-50%);
-
-      font-size: 12px;
       text-align: center;
       line-height: 1.1;
       font-weight: bold;
@@ -71,6 +65,10 @@
           font-size: 65px;
         }
       }
+    }
+
+    &-clip:last-child, &-part {
+      animation: fill 1s ease-in-out 0s both;
     }
   }
 }
