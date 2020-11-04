@@ -10,16 +10,26 @@
 @import 'components/button.scss';
 @import 'components/pie-chart.scss';
 
+main {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(24, minmax(0, 1fr));
+  padding: 0;
+  max-width: 1920px;
+  margin: auto;
+}
 
 section {
-  margin: 100px auto;
+  margin-top: 100px;
 
-  &.--content-width {
-    max-width: 970px;
+  &:first-child {
+    margin-top: 140px;
   }
+}
 
-  &.--fullscreen {
-
+h1 {
+  @media (min-width: 768px) {
+    font-size: 52px;
   }
 }
 
