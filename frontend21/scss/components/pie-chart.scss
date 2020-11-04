@@ -9,15 +9,19 @@
     background: color('iron');
 
     &:nth-child(odd) {
-      --size: 200px;
+      --size: 180px;
       @media (min-width: 768px) { --size: 340px; }
     }
 
     &:nth-child(even) {
       margin-left: 0;
-      margin-top: -5%;
+      margin-top: -25%;
       --size: 160px;
-      @media (min-width: 768px) { --size: 240px; }
+
+      @media (min-width: 768px) {
+        margin-top: -5%;
+        --size: 240px;
+      }
     }
 
     &-clip {
