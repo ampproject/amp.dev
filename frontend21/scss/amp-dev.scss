@@ -39,11 +39,14 @@ figure {
 }
 
 figcaption {
-  max-width: 80%;
   margin-top: 20px;
   margin-left: auto;
   font-size: 14px;
   line-height: 1.71;
+
+  @media (min-width: 768px) {
+    max-width: 80%;
+  }
 
   span {
     margin-top: 10px;
