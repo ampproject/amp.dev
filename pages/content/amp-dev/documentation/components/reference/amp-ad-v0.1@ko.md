@@ -265,6 +265,7 @@ AMP 유효성 검사기 사양의 [amp-ad 규칙](https://github.com/ampproject/
 * [AdvertServe](https://github.com/ampproject/amphtml/blob/master/ads/advertserve.md)
 * [Adyoulike](https://github.com/ampproject/amphtml/blob/master/ads/adyoulike.md)
 * [Affiliate-B](https://github.com/ampproject/amphtml/blob/master/ads/affiliateb.md)
+* [AJA](https://github.com/ampproject/amphtml/blob/master/ads/aja.md)
 * [AMoAd](https://github.com/ampproject/amphtml/blob/master/ads/amoad.md)
 * [AppNexus](https://github.com/ampproject/amphtml/blob/master/ads/appnexus.md)
 * [AppVador](https://github.com/ampproject/amphtml/blob/master/ads/appvador.md)
@@ -414,7 +415,6 @@ AMP 유효성 검사기 사양의 [amp-ad 규칙](https://github.com/ampproject/
 ## 지원되는 삽입 유형 <a name="supported-embed-types"></a>
 
 * [24smi](https://github.com/ampproject/amphtml/blob/master/ads/24smi.md)
-* [AJA](https://github.com/ampproject/amphtml/blob/master/ads/aja.md)
 * [Bringhub](https://github.com/ampproject/amphtml/blob/master/ads/bringhub.md)
 * [Dable](https://github.com/ampproject/amphtml/blob/master/ads/dable.md)
 * [Engageya](https://github.com/ampproject/amphtml/blob/master/ads/engageya.md)
