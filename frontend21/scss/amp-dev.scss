@@ -11,19 +11,51 @@
 @import 'components/pie-chart.scss';
 
 main {
-  display: grid;
-  grid-gap: 30px;
-  grid-template-columns: repeat(24, minmax(0, 1fr));
   padding: 0;
+  width: 100%;
   max-width: 1920px;
   margin: auto;
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(24, minmax(0, 1fr));
+  }
 }
 
 section {
+  width: 100%;
   margin-top: 100px;
+  padding: 0 15px;
 
   &:first-child {
     margin-top: 140px;
+  }
+
+  &.--col-6-15 {
+    @media (min-width: 768px) {
+      grid-column: 6 / 15;
+    }
+  }
+
+  &.--col-5-19 {
+    @media (min-width: 768px) {
+      grid-column: 5 / 19;
+    }
+  }
+
+  &.--col-6-20 {
+    @media (min-width: 768px) {
+      grid-column: 6 / 20;
+    }
+  }
+
+  &.--fullscreen {
+    padding: 0;
+    
+    @media (min-width: 768px) {
+      grid-column: 1 / -1;
+    }
   }
 }
 
