@@ -96,10 +96,21 @@ section.#{utility('tools')} {
           font-size: 19px;
         }
 
-        &-websites { fill: color('white'); }
-        &-stories { fill: color('electric-violet'); }
-        &-ads { fill: color('white'); }
-        &-email { fill: color('electric-violet'); }
+        &-websites {
+          @include fill-websites;
+        }
+
+        &-stories {
+          @include fill-stories;
+        }
+
+        &-ads {
+          @include fill-ads;
+        }
+
+        &-email {
+          @include fill-e-mails;
+        }
       }
 
       .#{molecule('teaser')}:hover {

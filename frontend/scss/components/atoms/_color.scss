@@ -24,15 +24,15 @@ It has multiple size modifiers (more could be added below).
 @mixin color-white { color: color('white'); }
 
 @mixin color-websites { color: color('white'); }
-@mixin color-stories { color: color('electric-violet'); }
+@mixin color-stories { color: color('charade'); }
 @mixin color-ads { color: color('white'); }
-@mixin color-e-mails { color: color('electric-violet'); }
+@mixin color-e-mails { color: color('charade'); }
 @mixin color-overview { color: color('charade'); }
 
 @mixin fill-websites { fill: color('white'); }
-@mixin fill-stories { fill: color('electric-violet'); }
+@mixin fill-stories { fill: color('charade'); }
 @mixin fill-ads { fill: color('white'); }
-@mixin fill-e-mails { fill: color('electric-violet'); }
+@mixin fill-e-mails { fill: color('charade'); }
 @mixin fill-overview { fill: color('charade'); }
 
 @mixin gradient-dark { background: linear-gradient(45deg, color('river-bed'), color('charade')); }
