@@ -23,12 +23,14 @@
 
   &.--thirds {
     #{$text-media}-col {
-      &:first-child {
-        width: 30%;
-      }
+      @media (min-width: 768px) {
+        &:first-child {
+          width: 30%;
+        }
 
-      &:last-child {
-        width: 62%;
+        &:last-child {
+          width: 62%;
+        }
       }
     }
   }
