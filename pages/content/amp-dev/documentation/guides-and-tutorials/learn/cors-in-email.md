@@ -212,6 +212,7 @@ else
     raise PermissionDenied
 ```
 ## SSJS
+
 ```
 <script runat="server" language="JavaScript">
 
@@ -227,7 +228,7 @@ if (Platform.Request.GetRequestHeader("AMP-Email-Sender")) {
 } else if (Platform.Request.GetRequestHeader("Origin")) {
   var requestOrigin = Platform.Request.GetRequestHeader("Origin")
 
-  if (Platform.Request.GetQueryStringParameter("__amp_source_origin");) {
+  if (Platform.Request.GetQueryStringParameter("__amp_source_origin")) {
     var senderEmail = Platform.Request.GetQueryStringParameter("__amp_source_origin");
 
     if (isValidSender(senderEmail)) {
@@ -246,6 +247,7 @@ if (Platform.Request.GetRequestHeader("AMP-Email-Sender")) {
 }
 </script>
 ```
+Visit [Salesforce Developer Documentation](https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-programmatic-content.meta/mc-programmatic-content/ssjs_serverSideJavaScript.htm) to learn more about SSJS.
 
 ## Node.js
 
