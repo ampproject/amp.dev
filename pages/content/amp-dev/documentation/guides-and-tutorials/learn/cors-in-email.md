@@ -211,6 +211,41 @@ elif request.META.HTTP_ORIGIN:
 else
     raise PermissionDenied
 ```
+## SSJS
+```
+<script runat="server" language="JavaScript">
+
+Platform.Load("core", "1");
+
+if (Platform.Request.GetRequestHeader("AMP-Email-Sender")) {
+  var senderEmail = Platform.Request.GetRequestHeader("AMP-Email-Sender")
+  if (isValidSender(senderEmail)) {
+    HTTPHeader.SetValue("AMP-Email-Allow-Sender", senderEmail)
+  } else {
+    Platform.Function.RaiseError("Sender Not Allowed",true,"statusCode","3");
+  }
+} else if (Platform.Request.GetRequestHeader("Origin")) {
+  var requestOrigin = Platform.Request.GetRequestHeader("Origin")
+
+  if (Platform.Request.GetQueryStringParameter("__amp_source_origin");) {
+    var senderEmail = Platform.Request.GetQueryStringParameter("__amp_source_origin");
+
+    if (isValidSender(senderEmail)) {
+      HTTPHeader.SetValue("Access-Control-Allow-Origin", requestOrigin);
+      HTTPHeader.SetValue("Access-Control-Expose-Headers", "AMP-Access-Control-Allow-Source-Origin");
+      HTTPHeader.SetValue("AMP-Access-Control-Allow-Source-Origin", senderEmail);
+    } else {
+      Platform.Function.RaiseError("Invalid Source Origin",true,"statusCode","3");
+    }
+
+  } else {
+    Platform.Function.RaiseError("Source Origin Not Present",true,"statusCode","3");
+  }
+} else {
+  Platform.Function.RaiseError("Origin and Sender Not Present",true,"statusCode","3");
+}
+</script>
+```
 
 ## Node.js
 
