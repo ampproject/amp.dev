@@ -1,0 +1,64 @@
+.#{prefix(null, 'pie-chart')} {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background-color: color('iron');
+  background-image: linear-gradient(to right, transparent 50%, currentColor 0);
+  color: color('blue-ribbon');
+
+  &:before {
+    content: '';
+    display: block;
+    height: 100%;
+    margin-left: 50%;
+    border-radius: 0 100% 100% 0 / 50%;
+    background-color: inherit;
+    transform-origin: left;
+    background: currentColor;
+    transform: rotate(0turn);
+    animation: spin 0.75s cubic-bezier(.58,.25,.43,1.32) forwards;
+  }
+
+  &-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    color: currentColor;
+    background: color('white');
+    box-shadow: shadows('center');
+    transform: translateX(-50%) translateY(-50%);
+
+    &-description {
+      text-align: center;
+      line-height: 1.1;
+      font-weight: bold;
+      color: color('charade');
+
+      span {
+        font-size: 3.75rem;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  /* 0.25turn = 75%
+   * 0.4turn = 90% */
+  to {
+    transform: rotate(0.12turn);
+  }
+}
+
+@keyframes bg {
+  50% {
+    background: currentColor;
+  }
+}

@@ -1,11 +1,14 @@
-@import '../frontend/scss/_functions.scss';
-@import '../frontend/scss/_mixins.scss';
-@import '../frontend/scss/_variables.scss';
-@import '../frontend/scss/components/atoms/_text.scss';
+@import '../../frontend/scss/_functions.scss';
+@import '../../frontend/scss/_mixins.scss';
+@import '../../frontend/scss/_variables.scss';
+@import '../../frontend/scss/components/atoms/_text.scss';
+@import '../../frontend/scss/components/atoms/_color.scss';
+
 
 @import 'components/text-media.scss';
 @import 'components/text-block.scss';
 @import 'components/button.scss';
+@import 'components/pie-chart.scss';
 
 
 section {
