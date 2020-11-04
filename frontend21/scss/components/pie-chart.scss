@@ -1,87 +1,74 @@
-.#{prefix(null, 'pie-chart')} {
-  position: relative;
-  width: 290px;
-  height: 290px;
-  margin-left: auto;
-  border-radius: 50%;
-  background: color('iron');
-  background-image: linear-gradient(to right, transparent 50%, currentColor 0);
-  color: color('blue-ribbon');
+.#{prefix(null, 'pie-charts')} {
 
-  &:before {
-    content: '';
-    display: block;
-    height: 100%;
-    margin-left: 50%;
-    border-radius: 0 100% 100% 0 / 50%;
-    background-color: inherit;
-    transform-origin: left;
-    background: currentColor;
-    transform: rotate(0turn);
-  }
+  &-chart {
+    --size: 360px;
 
-  &-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 70%;
-    height: 70%;
+    &:nth-child(even) {
+      --size: 240px;
+      margin-left: 0;
+    }
+
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    margin-left: auto;
     border-radius: 50%;
-    color: currentColor;
-    background: color('white');
-    box-shadow: shadows('center');
-    transform: translateX(-50%) translateY(-50%);
+    background: color('iron');
 
-    &-description {
+    &-clip {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: var(--size);
+      height: var(--size);
+      clip: rect(0, calc(var(--size)/2), var(--size), 0);
+    }
+
+    &-part {
+      position: absolute;
+      width: var(--size);
+      height: var(--size);
+      clip: rect(0, var(--size), var(--size), calc(var(--size)/2));
+      border-radius: 50%;
+      @include gradient-websites;
+    }
+
+    &-clip:last-child, &-part {
+      animation: fill 1s ease-in-out 0s both;
+    }
+
+    &-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 70%;
+      height: 70%;
+      border-radius: 50%;
+      color: currentColor;
+      background: color('white');
+      box-shadow: shadows('center');
+      transform: translateX(-50%) translateY(-50%);
+
+      font-size: 16px;
       text-align: center;
       line-height: 1.1;
       font-weight: bold;
       color: color('charade');
 
       span {
-        font-size: 3.75rem;
+        font-size: 65px;
       }
     }
   }
-
-
-  &:nth-child(even) {
-    width: 245px;
-    height: 245px;
-    margin-top: -30px;
-    margin-left: 0;
-  }
-
-  &.--percent-12 {
-    margin-left: 0;
-    background: color('black');
-    background-image: linear-gradient(to right, transparent 50%, currentColor 0);
-
-    &:before {
-      background: color('iron');
-      animation: spin12 0.75s cubic-bezier(.58,.25,.43,1.32) forwards;
-    }
-  }
-
-  &.--percent-60 {
-    &:before {
-      animation: spin60 0.75s cubic-bezier(.58,.25,.43,1.32) forwards;
-    }
-  }
 }
 
-@keyframes spin12 {
-  to {
-    transform: rotate(-0.12turn);
-  }
-}
 
-@keyframes spin60 {
+@keyframes fill {
   to {
-    transform: rotate(0.12turn);
+    transform: rotate(var(--fill));
   }
 }
