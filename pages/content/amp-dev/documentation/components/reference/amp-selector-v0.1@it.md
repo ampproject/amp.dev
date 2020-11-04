@@ -1,9 +1,6 @@
 ---
 $title: amp-selector
 $category@: dynamic-content
-formats:
-- websites
-- email
 teaser:
   text: Rappresenta un controllo che apre un menu di opzioni e permette all'utente di scegliere quelle più adeguate.
 ---

@@ -1,0 +1,55 @@
+{% do doc.styles.addCssFile('css/components/molecules/pixi-primary-metric.css') %}
+
+<div id="{{ primary_metric.id }}" class="ap-m-pixi-primary-metric {{ doc.locale.text_direction }}">
+  <div class="ap-m-pixi-primary-metric-header">
+    <h3 class="ap-m-pixi-primary-metric-header-title">
+      <div class="ap-m-pixi-primary-metric-header-title-full">
+        {{ primary_metric.title.full }}
+      </div>
+      <div class="ap-m-pixi-primary-metric-header-title-id">
+        {{ primary_metric.title.id }}:
+      </div>
+      <label class="ap-m-pixi-primary-metric-header-title-status">
+        <span class="ap-m-pixi-primary-metric-category">{{ pixi.scriptText.status.analyzing }}</span>
+        {% include 'views/partials/pixi/analyzing-dots.j2' %}
+      </label>
+    </h3>
+
+    {% with tooltip = {
+      'id': primary_metric.title.id|lower,
+      'type': primary_metric.type
+    } %}
+    {% include 'views/partials/pixi/tooltip.j2' %}
+    {% endwith %}
+  </div>
+
+  <div class="ap-m-pixi-primary-metric-body">
+    <div class="ap-m-pixi-primary-metric-body-result">
+      <div>
+        <strong>{{ pixi.staticText.coreWebVitals.resultLabels.score if primary_metric.scale == 'weighted' else pixi.staticText.coreWebVitals.resultLabels.scorePercentile }}:</strong>
+        <span class="ap-m-pixi-primary-metric-score">{{ pixi.scriptText.status.calculating }}</span>
+        {% include 'views/partials/pixi/analyzing-dots.j2' %}
+      </div>
+
+      <div>
+        <strong>{{ pixi.staticText.coreWebVitals.resultLabels.opportunity if primary_metric.scale == 'weighted' else pixi.staticText.coreWebVitals.resultLabels.pagesPassing }}:</strong>
+        <span class="ap-m-pixi-primary-metric-secondary-score">{{ pixi.scriptText.status.calculating }}</span>
+        {% include 'views/partials/pixi/analyzing-dots.j2' %}
+      </div>
+
+      <div class="loading">
+        <strong>{{ pixi.staticText.coreWebVitals.resultLabels.action }}:</strong>
+        <a href="#recommendations" class="ap-m-pixi-primary-metric-recommendations">{{ pixi.scriptText.status.analyzing }}</a>
+        {% include 'views/partials/pixi/analyzing-dots.j2' %}
+        {% do doc.icons.useIcon('icons/arrow-down.svg') %}
+        <svg>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down"></use>
+        </svg>
+      </div>
+    </div>
+
+    {% with scale = primary_metric.scale %}
+    {% include 'views/partials/pixi/scale.j2' %}
+    {% endwith %}
+  </div>
+</div>

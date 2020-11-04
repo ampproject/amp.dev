@@ -1,0 +1,69 @@
+$view: /layouts/blank.j2
+$sitemap:
+  enabled: false
+---
+<!doctype html>
+{% set pixi = g.doc('/content/pixi/index.md', locale=doc.locale) %}
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="robot" content="noindex,nofollow">
+  <style>
+    body {
+      height: 70px;
+      overflow: hidden;
+    }
+    button {
+      font-size: 1em;
+      display: inline-block;
+      width: 200px;
+      height: auto;
+      padding: 0.75em 1.75em;
+      margin: 0;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 3px;
+      color: white;
+      background-color: #005AF0;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+      &:hover {
+        transform: translateY(-0.125em);
+        box-shadow: 0 25px 20px -15px rgba(0, 0, 0, 0.15);
+      }
+      @media (min-width: 768px) {
+        padding: 1em 2em;
+      }
+    }
+    input { opacity: 0; pointer-events: none; }
+  </style>
+</head>
+<body>
+  <button type="button" name="button">{{ pixi.staticText.shareDialog.copyToClipboard }}</button>
+  <input id="script-tag">
+  <script>
+    const animationDuration = 1200;
+    const button = document.querySelector('button');
+    const scriptTag = document.getElementById('script-tag');
+    const stringToCopy = decodeURIComponent(window.location.hash.substr(1));
+
+    scriptTag.value = stringToCopy;
+
+    document.addEventListener('click', () => {
+      scriptTag.select();
+      scriptTag.setSelectionRange(0, 99999);
+      document.execCommand('copy');
+
+      button.textContent = "{{ pixi.staticText.shareDialog.success }}";
+      setTimeout(function() {
+        button.textContent = "{{ pixi.staticText.shareDialog.copyToClipboard }}";
+      }, animationDuration);
+    });
+  </script>
+</body>
+</html>

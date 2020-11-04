@@ -24,7 +24,7 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
   padding: 0 1em;
   color: color('white');
   line-height: 1.3em;
-  background: color('ebony-clay');
+  background: color('charade');
   font-size: 0.9em;
 
   &::after {
@@ -35,17 +35,10 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
     user-select: none;
   }
 
-  &::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
-  }
+  @include scrollbar;
 
   &::-webkit-scrollbar-thumb {
-    background-color: color('oslo-gray');
-  }
-
-  &::-webkit-scrollbar-corner {
-    background-color: transparent;
+    border-radius: 0;
   }
 
   @media (min-width: 768px) {

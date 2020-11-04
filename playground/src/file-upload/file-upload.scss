@@ -1,0 +1,85 @@
+@import '_variables.scss';
+@import '_functions.scss';
+@import 'components/atoms/_text.scss';
+
+.file-upload {
+  &-dropzone {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    padding: 40px;
+    border: 2px dashed color('iron');
+    border-radius: 4px;
+    cursor: pointer;
+
+    @include txt;
+    @include txt-2;
+
+    &.dz-drag-hover {
+      background: transparentize(color('iron'), 0.8);
+    }
+
+    .dz-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 24px;
+        margin: 0 auto 7px auto;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2348525C' viewBox='0 0 24 24'%3E%3Cpath d='M11 .6v12.2L5.4 7.2 4 8.6l8 8 8-8-1.4-1.4-5.6 5.6V.6z'/%3E%3Cpath class='st0' d='M.7 15.9v7.5l22.6-.1v-7.4h-2v5.5H2.7v-5.5z'/%3E%3C/svg%3E");
+      }
+    }
+
+    .dz-preview {
+      width: 100%;
+
+      .dz-filename {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        text-align: center;
+
+        &:before {
+          content: '';
+          display: block;
+          width: 30px;
+          height: 30px;
+          margin: auto;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='30' width='30' viewBox='0 0 100 100'%3E%3Cpath style='text-indent:0;text-transform:none;block-progression:tb' d='M13 22c-2.753 0-5 2.247-5 5v46c0 2.753 2.247 5 5 5h74c2.753 0 5-2.247 5-5V27c0-2.753-2.247-5-5-5H13zm0 2h74c.43 0 .852.093 1.219.25L52.406 57.125c-1.236 1.135-3.576 1.135-4.812 0L11.78 24.25c.367-.157.79-.25 1.219-.25zm-2.688 1.656l26.376 24.157-26.376 24.53A3.03 3.03 0 0110 73V27c0-.493.11-.937.313-1.344zm79.376 0c.203.407.312.851.312 1.344v46c0 .486-.114.94-.313 1.344L63.314 49.813l26.374-24.157zm-51.5 25.532l8.062 7.406c2.075 1.904 5.425 1.904 7.5 0l8.063-7.406L88.25 75.75c-.377.168-.805.25-1.25.25H13c-.445 0-.873-.082-1.25-.25l26.438-24.562z' overflow='visible' color='%23000'/%3E%3C/svg%3E");
+        }
+      }
+    }
+
+    &.dz-max-files-reached {
+      .dz-info,
+      .dz-success-mark,
+      .dz-error-mark,
+      span[data-dz-size] {
+        display: none;
+      }
+    }
+  }
+
+  &-label {
+    @include txt;
+    @include txt-2;
+    display: block;
+    color: color('guardsman-red');
+    opacity: 0;
+    transition: transform .3s ease, opacity .2s ease;
+
+    &.show {
+      opacity: 1;
+      transform: translate3d(0, 10px, 0);
+    }
+  }
+}

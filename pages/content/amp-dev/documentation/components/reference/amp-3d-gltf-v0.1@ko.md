@@ -1,10 +1,8 @@
 ---
 $title: amp-3d-gltf
 $category@: media
-formats:
-- websites
 teaser:
-  text: GL 전송 양식(gITF) 3D 모델을 표시합니다
+  text: GL 전송 양식(glTF) 3D 모델을 표시합니다
 ---
 
 <!--
@@ -25,7 +23,7 @@ limitations under the License.
 
 
 
-GL 전송 양식(gITF) 3D 모델을 표시합니다.
+GL 전송 양식(glTF) 3D 모델을 표시합니다.
 
 <table>
   <tr>
@@ -44,7 +42,7 @@ GL 전송 양식(gITF) 3D 모델을 표시합니다.
 
 ## 사용 <a name="usage"></a>
 
-`amp-3d-gltf` 구성요소는 gITF 형식의 3D 모델을 표시합니다.
+`amp-3d-gltf` 구성요소는 glTF 형식의 3D 모델을 표시합니다.
 
 **참고**: 이 모델을 표시하려면 WebGL이 지원되는 브라우저가 필요합니다.
 

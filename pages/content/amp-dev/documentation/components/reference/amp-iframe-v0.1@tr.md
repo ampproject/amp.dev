@@ -1,8 +1,6 @@
 ---
 $title: amp-iframe
 $category@: layout
-formats:
-- websites
 teaser:
   text: Bir iframe görüntüler.
 ---

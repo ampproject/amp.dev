@@ -1,10 +1,8 @@
 ---
 $title: amp-3d-gltf
 $category@: media
-formats:
-  - websites
 teaser:
-  text: Displays GL Transmission Format (gITF) 3D models.
+  text: Displays GL Transmission Format (glTF) 3D models.
 ---
 
 <!--
@@ -25,7 +23,7 @@ limitations under the License.
 
 
 
-يعرض نماذج GL Transmission Format (gITF) ثلاثية الأبعاد.
+يعرض نماذج GL Transmission Format (glTF) ثلاثية الأبعاد.
 
 <table>
   <tr>
@@ -44,7 +42,7 @@ limitations under the License.
 
 ## الاستخدام <a name="usage"></a>
 
-يعرض المكوِّن `amp-3d-gltf` نماذج ثلاثية الأبعاد بالتنسيق gITF.
+يعرض المكوِّن `amp-3d-gltf` نماذج ثلاثية الأبعاد بالتنسيق glTF.
 
 **ملاحظة**: يجب استخدام متصفح متوافق مع WebGL لعرض هذه النماذج.
 

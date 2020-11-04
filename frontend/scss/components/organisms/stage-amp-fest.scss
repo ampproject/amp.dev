@@ -1,0 +1,173 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_color.scss';
+@import '../atoms/_icon.scss';
+@import '../atoms/_headline.scss';
+@import '../atoms/_text.scss';
+
+.#{utility('stage')} {
+  overflow: hidden;
+
+  .#{organism('stage')} {
+    grid-column: 1 / -1;
+    position: relative;
+    width: 100%;
+    margin-left: 30px;
+    border-bottom-left-radius: 4em;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2em), 4em 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2em), 4em 100%, 0% 100%);
+    background-size: cover;
+    background-position: center left;
+    background-repeat: no-repeat;
+
+    @media (min-width: 768px) {
+      margin-left: 64px;
+      border-bottom-left-radius: 6.250em;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3em), 6.250em 100%, 0% 100%);
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3em), 6.250em 100%, 0% 100%);
+    }
+
+    &.city-ams {
+      background-image: url('/static/img/amp-fest/ams.webp');
+    }
+    &.city-del {
+      background-image: url('/static/img/amp-fest/del.webp');
+    }
+    &.city-nyc {
+      background-image: url('/static/img/amp-fest/nyc.webp');
+    }
+    &.city-rio {
+      background-image: url('/static/img/amp-fest/rio.webp');
+    }
+    &.city-sfo {
+      background-image: url('/static/img/amp-fest/sfo.webp');
+    }
+    &.city-tyo {
+      background-image: url('/static/img/amp-fest/tok.webp');
+    }
+
+    .logo {
+      filter: drop-shadow(10px 5px 5px rgba(35,40,46,0.5));
+      max-width: 80%;
+    }
+
+    div.#{utility('container-fluid')} {
+      background-image: url('/static/img/amp-fest/foreground.webp');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 10%;
+
+      @media (min-width: 768px) {
+        padding: 0 2.5em;
+        margin-left: -64px;
+        background-size: contain;
+        background-position: bottom right;
+      }
+
+      .#{organism('stage')} {
+
+        &-content {
+          position: relative;
+          margin: 5em 0 9em;
+          text-align: center;
+
+
+          @media (min-width: 768px) {
+            grid-column: 1 / 18;
+            margin: 7vw 0 11vw 3em;
+          }
+
+          @media (min-width: 1024px) {
+            grid-column: 3 / 19;
+            margin-left: 5em;
+          }
+
+          @media (min-width: 1280px) {
+            grid-column: 3 / 16;
+          }
+
+          &-icon {
+            @include ico;
+            @include ico-2;
+            position: absolute;
+            left: 0;
+            bottom: calc(100% + 1em);
+            padding: 0.5em;
+            border: 1px solid color('white');
+            border-radius: 50%;
+
+            @media (min-width: 768px) {
+              left: auto;
+              bottom: auto;
+              right: calc(100% + 0.75em);
+              top: -0.6em;
+            }
+
+            @media (min-width: 1024px) {
+              width: 3em;
+              height: 3em;
+              right: calc(100% + 1em);
+              top: -1.5em;
+              padding: 1em;
+              border-width: 2px;
+            }
+          }
+
+          &-headline {
+            @include hl;
+            @include hl-xlrg;
+            @include color-white;
+            margin: 0;
+
+            br {
+              @media (min-width: 768px) {
+                display: none;
+              }
+            }
+          }
+
+          &-subline {
+            color: #23282e;
+            margin-top: 0;
+            @include txt-2;
+
+
+            @media (min-width: 768px) {
+              @include txt-lrg;
+            }
+
+            @media (min-width: 1024px) {
+              font-size: 3rem;
+            }
+          }
+
+          &-button {
+            background: color('white');
+            color: color('river-bed');
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+
+
+  }
+
+}
+
+
+.join-quote p {
+  grid-column: 4 / 22
+}
+
+.talks-quote p {
+  margin: -50px auto 0;
+  grid-column: 4 / 22
+}
+
+.ap-t-events .main-video {
+    display: grid
+}

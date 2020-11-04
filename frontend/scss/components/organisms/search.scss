@@ -177,7 +177,7 @@
     }
 
     &[disabled] {
-      background-color: color('silver');
+      background-color: color('iron');
       transform: none;
     }
   }
@@ -204,12 +204,10 @@
       max-height: calc(100vh - 108px);
       margin-right: 30px;
 
-      &::-webkit-scrollbar {
-        width: 4px;
-      }
+      @include scrollbar;
 
       &::-webkit-scrollbar-thumb {
-        background: color('gallery');
+        background: color('iron');
       }
     }
 

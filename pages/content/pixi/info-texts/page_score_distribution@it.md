@@ -1,0 +1,1 @@
+Il grafico della distribuzione del punteggio di pagina mostra la percentuale di pagine con punteggi che rientrano nelle soglie Buono, Miglioramento Richiesto e Scadente, rispettivamente. Per superare i risultati richiesti dai Core Web Vitals, la pagina dovrebbe avere almeno il 75% delle visite che raggiungono il valore della soglia Buono.

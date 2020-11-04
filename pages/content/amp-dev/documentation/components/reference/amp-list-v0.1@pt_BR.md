@@ -1,10 +1,6 @@
 ---
 $title: amp-list
 $category@: dynamic-content
-formats:
-- websites
-- email
-- stories
 teaser:
   text: Faz o download de dados dinamicamente e cria itens para listas usando um modelo.
 ---

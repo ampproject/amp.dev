@@ -11,7 +11,7 @@ As you have seen in this course, there are AMP components for most modern websit
 During this course, you also learned how to find and use AMP components to build simple user interfaces. You were introduced to the power and simplicity of AMP and the tools it offers. Finally, you learned about the AMP Validator and the important role it plays in enabling the AMP cache.
 In our next course, we’ll learn how to handle user input and events, how to invoke actions on an AMP component to change its state or appearance, and how to combine multiple AMP components to make more elaborate user interfaces. We will continue to expand on Chico’s Cheese Bikes shop to give Chico’s the chance to continue to impress potential cheese-loving cyclists.
 
-[Here](https://aquamarine-baritone.glitch.me/) is a finished version of what we built today.
+<a href="https://aquamarine-baritone.glitch.me/" target="_blank">Here</a> is a finished version of what we built today.
 
 The following are some additional topics and links to explore:
 

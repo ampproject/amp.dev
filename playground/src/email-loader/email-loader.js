@@ -12,40 +12,47 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import events from '../events/events.js';
+import {EventBus} from '../events/events.js';
+import * as Editor from '../editor/editor.js';
 import * as quotedPrintable from 'quoted-printable';
 
-export function createEmailLoader(editor) {
-  return new EmailLoader(editor);
+export const EVENT_LOAD_EMAIL_ERROR = 'event-file-uploaded-error';
+
+export function createEmailLoader() {
+  return new EmailLoader();
 }
 
 class EmailLoader {
-  constructor(editor) {
-    this.editor = editor;
+  constructor() {
+    this.eventBus = new EventBus();
   }
 
-  async loadEmailFromFile() {
-    const files = await new Promise((resolve) => {
-      const dialog = document.createElement('input');
-      dialog.setAttribute('type', 'file');
-      dialog.setAttribute('accept', '.eml');
-      dialog.addEventListener('change', () => resolve(dialog.files));
-      dialog.click();
-    });
-    if (files.length !== 1) {
-      throw new Error('You must select a file');
+  async loadEmailContent(file) {
+    const data = await file.text();
+    try {
+      this.loadEmail(data);
+    } catch (error) {
+      this.eventBus.publish(EVENT_LOAD_EMAIL_ERROR, error);
     }
-    const data = await files[0].text();
-    this._loadEmail(data);
   }
 
-  _loadEmail(emailCode) {
+  subscribe(channel, observer) {
+    this.eventBus.subscribe(channel, observer);
+  }
+
+  publish(channel, data) {
+    this.eventBus.publish(channel, data);
+  }
+
+  loadEmail(emailCode) {
     emailCode = emailCode.replace(/\r\n/g, '\n');
     const [head, body] = twoSplit(emailCode, '\n\n');
     if (!body) {
       throw new Error('No body found in email');
     }
 
-    const {parts, contentType} = this._parseMultipart(head, body);
+    const {parts, contentType} = this.parseMultipart(head, body);
     if (contentType !== 'multipart/alternative') {
       throw new Error('Email is not multipart/alternative');
     }
@@ -56,22 +63,23 @@ class EmailLoader {
     if (!ampPart) {
       throw new Error('No AMP part found in multipart/alternative');
     }
-    this.editor.setSource(ampPart.body);
+    events.publish(Editor.EVENT_UPDATE_EDITOR_CONTENT, ampPart.body);
+    return ampPart.body;
   }
 
-  _parseMultipart(head, body) {
-    const headers = this._parseHeaders(head);
-    const {contentType, boundary} = this._parseMultipartContentType(
+  parseMultipart(head, body) {
+    const headers = this.parseHeaders(head);
+    const {contentType, boundary} = this.parseMultipartContentType(
       headers.get('content-type')
     );
-    const parts = this._parseMultipartBody(body, boundary);
+    const parts = this.parseMultipartBody(body, boundary);
     return {
       contentType,
       parts,
     };
   }
 
-  _parseHeaders(head) {
+  parseHeaders(head) {
     const lines = head.split('\n');
     let current = 0;
     for (let i = 0; i < lines.length; i++) {
@@ -94,7 +102,7 @@ class EmailLoader {
     );
   }
 
-  _parseMultipartBody(body, boundary) {
+  parseMultipartBody(body, boundary) {
     const rawParts = body.split('--' + boundary);
     if (
       rawParts[0].trim() !== '' ||
@@ -109,7 +117,7 @@ class EmailLoader {
       if (!body) {
         throw new Error('No body found in email part');
       }
-      const headers = this._parseHeaders(head);
+      const headers = this.parseHeaders(head);
       const encoding = headers.get('content-transfer-encoding');
       switch (encoding) {
         case 'base64':
@@ -126,7 +134,7 @@ class EmailLoader {
     });
   }
 
-  _parseMultipartContentType(contentTypeHeader) {
+  parseMultipartContentType(contentTypeHeader) {
     const parts = (contentTypeHeader || '').split(/\s*;\s*/);
     const contentType = parts[0].trim();
     if (!contentType.startsWith('multipart/')) {

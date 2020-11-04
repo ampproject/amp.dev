@@ -123,6 +123,70 @@ The dynamic, visual, and interactivity features of AMP components is what takes 
 The full [list of supported components in AMP for Email](/content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-components.md)
 is available as part of the AMP for Email spec.
 
+## Authenticating requests
+
+Dynamic personalized email content often requires authenticating the user. However, to protect user data all HTTP requests made from inside AMP emails may be proxied and stripped of cookies.
+
+To authenticate requests made from AMP emails, you may use access tokens.
+
+### Access tokens
+
+You can use access tokens to authenticate the user. Access tokens are supplied and checked by the email sender. The sender uses the tokens to ensure that only those with access to the AMP email can make the requests contained within that email. Access tokens must be cryptographically secure and time- and scope-limited. They are included within the URL of the request.
+
+This example demonstrates using `<amp-list>` to display authenticated data:
+
+```html
+<amp-list
+  src="https://example.com/endpoint?token=REPLACE_WITH_YOUR_ACCESS_TOKEN"
+  height="300"
+>
+  <template type="amp-mustache">
+    ...
+  </template>
+</amp-list>
+```
+
+Similarly when using `<amp-form>`, place your access token in the `action-xhr` URL.
+
+```html
+<form
+  action-xhr="https://example.com/endpoint?token=REPLACE_WITH_YOUR_ACCESS_TOKEN"
+  method="post"
+>
+  <input type="text" name="data" />
+  <input type="submit" value="Send" />
+</form>
+```
+
+#### Example
+
+The following example considers a hypothetical note-taking service that lets logged-in users to add notes to their account and view them later. The service wants to send an email to a user, `jane@example.com`, that includes a list of notes they previously took. The list of the current user's notes is available at the endpoint `https://example.com/personal-notes` in JSON format.
+
+Before sending the email, the service generates a cryptographically secure limited-use access token for `jane@example.com: A3a4roX9x`. The access token is included in the field name `exampletoken` inside the URL query:
+
+```html
+<amp-list
+  src="https://example.com/personal-notes?exampletoken=A3a4roX9x"
+  height="300"
+>
+  <template type="amp-mustache">
+    <p>{{note}}</p>
+  </template>
+</amp-list>
+```
+
+The endpoint `https://example.com/personal-notes` is responsible for validating the exampletoken parameter and finding the user associated with the token.
+
+### Limited Use Access Tokens
+
+Limited-Use Access Tokens provide protection from request spoofing and [replay attacks](https://en.wikipedia.org/wiki/Replay_attack), ensuring that the action is performed by the user the message was sent to. Protection is achieved by adding a unique token parameter to the request parameters and verifying it when the action is invoked.
+
+The token parameter should be generated as a key that can only be used for a specific action and a specific user. Before the requested action is performed, you should check that the token is valid and matches the one you generated for the user. If the token matches then the action can be performed and the token becomes invalid for future requests.
+
+Access tokens should be sent to the user as part of the url property of the HttpActionHandler. For instance, if your application handles approval requests at `http://www.example.com/approve?requestId=123`, you should consider including an additional `accessToken` parameter to it and listen to requests sent to `http://www.example.com/approve?requestId=123&accessToken=xyz`.
+
+The combination `requestId=123` and `accessToken=xyz` is the one that you have to generate in advance, making sure that the `accessToken` cannot be deduced from the `requestId`. Any approval request with `requestId=123` and no `accessToken` or with a `accessToken` not equal to `xyz` should be rejected. Once this request gets through, any future request with the same id and access token should be rejected too.
+
 ## Testing in different email clients
 
 Email clients that support AMP for Email provide their own documentation and testing tools to help you with your integration.

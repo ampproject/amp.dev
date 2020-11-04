@@ -1,10 +1,6 @@
 ---
 $title: amp-pixel
 $category@: ads-analytics
-formats:
-- websites
-- ads
-- stories
 teaser:
   text: Un pixel di monitoraggio per il conteggio delle visualizzazioni di pagina.
 ---

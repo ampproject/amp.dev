@@ -1,0 +1,30 @@
+{% do doc.styles.addCssFile('css/components/molecules/pixi-recommendations-item.css') %}
+
+<div class="ap-m-pixi-recommendations-item" style="display: none;">
+  <div dir="{{ doc.locale.text_direction }}" class="ap-m-pixi-recommendations-item-box">
+    <button class="ap-m-pixi-recommendations-item-header" aria-expanded="false">
+      <div class="ap-m-pixi-recommendations-item-header-title"></div>
+      <div dir="{{ doc.locale.text_direction }}" class="ap-m-pixi-recommendations-item-header-toggle">
+      </div>
+    </button>
+
+    <div class="ap-m-pixi-recommendations-item-body" role="region">
+      <div class="ap-m-pixi-recommendations-item-body-text">
+      </div>
+      <div class="ap-m-pixi-recommendations-item-details">
+        <div class="ap-m-pixi-recommendations-item-details-title"></div>
+        <table class="ap-m-pixi-recommendations-item-details-table">
+        </table>
+      </div>
+
+      <a class="ap-m-pixi-recommendations-item-next-advice ap-m-lnk ap-m-lnk-square" dir="{{ doc.locale.text_direction }}">
+        <div class="ap-m-pixi-recommendations-item-next-advice-icon ap-a-ico ap-m-lnk-icon"></div>
+        <span class="ap-m-pixi-recommendations-item-next-advice-text ap-m-lnk-text">{{ pixi.staticText.recommendations.nextAdvice }}</span>
+      </a>
+    </div>
+
+    <footer class="ap-m-pixi-recommendations-item-tags">
+      <span></span>
+    </footer>
+  </div>
+</div>

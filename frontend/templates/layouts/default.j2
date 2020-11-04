@@ -72,11 +72,6 @@
 
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
 
-    <link rel="preload" href="/static/fonts/noto-sans-v7-latin-regular.woff2" as="font" crossorigin>
-    <link rel="preload" href="/static/fonts/noto-sans-v7-latin-700.woff2" as="font" crossorigin>
-    <link rel="preload" href="/static/fonts/poppins-v5-latin-700.woff2" as="font" crossorigin>
-    <link rel="preload" href="/static/fonts/fira-mono-v7-latin-500.woff2" as="font" crossorigin>
-
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
     <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     {% endblock %}
@@ -130,7 +125,7 @@
     {% if not '@' in doc.pod_path and not doc.locale == podspec.default_locale and doc.pod_path.startswith('/content/amp-dev/documentation') %}
     {% do doc.styles.addCssFile('/css/components/organisms/translation-hint.css') %}
     <aside class="ap-o-translation-hint">
-      <p class="ap-o-translation-hint-wrapper">{{ _('Sadly this page isn\'t translated yet, but we could use some help doing so. See the <a href="/documentation/guides-and-tutorials/contribute/translations\">translation guide</a> on how you can contribute.') }}</p>
+      <p class="ap-o-translation-hint-wrapper">{{ _('Sadly this page isn\'t translated yet, but will be shortly - check back soon!') }}</p>
     </aside>
     {% endif %}
 

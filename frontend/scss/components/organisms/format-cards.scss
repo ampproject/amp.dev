@@ -101,11 +101,11 @@
     &-stories {
       #{$format-card}-copy,
       #{$format-card}-headline {
-        color: color('ultramarine');
+        @include color-stories;
       }
 
       #{$format-card}-icon {
-        fill: color('ultramarine');
+        @include fill-stories;
       }
     }
 

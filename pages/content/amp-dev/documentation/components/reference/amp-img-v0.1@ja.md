@@ -1,11 +1,6 @@
 ---
 $title: amp-img
 $category@: media
-formats:
-- websites
-- email
-- ads
-- stories
 teaser:
   text: HTML5 の img タグを置き換えます。
 ---

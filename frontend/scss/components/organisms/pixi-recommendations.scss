@@ -1,0 +1,21 @@
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+.#{organism('pixi-recommendations')} {
+  padding: 80px 15px 0px;
+
+  @media (min-width: 1024px) {
+    padding: 80px 35px 0 35px;
+  }
+
+  @media (min-width: 1280px) {
+    padding: 80px 0 0 0;
+  }
+
+  &-filter {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+  }
+}

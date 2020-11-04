@@ -1,10 +1,8 @@
 ---
 $title: amp-3d-gltf
 $category@: media
-formats:
-- websites
 teaser:
-  text: Displays GL Transmission Format (gITF) 3D models.
+  text: Displays GL Transmission Format (glTF) 3D models.
 ---
 <!--
 Copyright 2018 The AMP HTML Authors. All Rights Reserved.
@@ -24,7 +22,7 @@ limitations under the License.
 
 
 
-Menampilkan model 3D GL Transmission Format (gITF).
+Menampilkan model 3D GL Transmission Format (glTF).
 
 <table>
   <tr>
@@ -43,7 +41,7 @@ Menampilkan model 3D GL Transmission Format (gITF).
 
 ## Penggunaan <a name="usage"></a>
 
-Komponen `amp-3d-gltf` menampilkan model 3D dalam format gITF.
+Komponen `amp-3d-gltf` menampilkan model 3D dalam format glTF.
 
 **Catatan**: Browser berkemampuan WebGL diperlukan untuk menampilkan model ini.
 

@@ -13,7 +13,7 @@
 // limitations under the License.
 
 import events from '../events/events.js';
-import * as ImportURL from '../import-url/import-url.js';
+import * as Importer from '../importer/importer.js';
 
 const ROOT = '/document/';
 export const EVENT_DOCUMENT_STATE_CHANGED = 'playground-document-state-changed';
@@ -34,7 +34,7 @@ class PlaygroundDocument {
     this.docId = '';
 
     events.subscribe(
-      ImportURL.EVENT_REQUEST_URL_CONTENT,
+      Importer.EVENT_REQUEST_URL_CONTENT,
       this.fetchUrl.bind(this)
     );
   }

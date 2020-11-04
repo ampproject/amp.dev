@@ -54,7 +54,7 @@
     flex: 1 0 auto;
     padding: 15px 10px;
     margin: 0 15px;
-    background-color: color('wild-sand');
+    background-color: color('athens-gray');
 
     #{$self}-iframe & {
       flex-grow: 0;
@@ -80,7 +80,7 @@
     @include txt-font-accent;
 
     &-name {
-      color: color('alto');
+      color: color('iron');
 
       &.active {
         color: color('blue-ribbon');

@@ -1,10 +1,6 @@
 ---
 $title: amp-mustache
 $category@: dynamic-content
-formats:
-- websites
-- email
-- ads
 teaser:
   text: Allows rendering of Mustache.js templates.
 ---

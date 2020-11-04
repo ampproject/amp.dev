@@ -1,10 +1,8 @@
 ---
 $title: amp-3d-gltf
 $category@: media
-formats:
-- websites
 teaser:
-  text: GL İletim Biçimi (gITF) 3D modellerini görüntüler.
+  text: GL İletim Biçimi (glTF) 3D modellerini görüntüler.
 ---
 
 <!--
@@ -25,7 +23,7 @@ limitations under the License.
 
 
 
-GL İletim Biçimi (gITF) 3D modellerini görüntüler.
+GL İletim Biçimi (glTF) 3D modellerini görüntüler.
 
 <table>
   <tr>
@@ -44,7 +42,7 @@ GL İletim Biçimi (gITF) 3D modellerini görüntüler.
 
 ## Kullanım <a name="usage"></a>
 
-`amp-3d-gltf` bileşeni, gITF biçimindeki 3D modelleri görüntüler.
+`amp-3d-gltf` bileşeni, glTF biçimindeki 3D modelleri görüntüler.
 
 **Not**: Bu modelleri görüntülemek için WebGL özellikli bir tarayıcı gerekir.
 

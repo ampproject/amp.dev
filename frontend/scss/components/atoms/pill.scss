@@ -16,7 +16,7 @@
   @include txt-2;
   @include txt-strong;
   @include filter-bubble-shadow-regular;
-  color: color('oslo-gray');
+  color: safeColor('light-gray');
   font-family: 'Noto Sans', sans-serif;
   transition: background-color .2s ease-in, color .2s ease-in, box-shadow .25s ease-in;
   cursor: pointer;
@@ -33,12 +33,12 @@
 
   &:hover, &.filtered {
     @include filter-bubble-shadow-selected;
-    background: color('blue-ribbon');
-    color: color('white');
+    background: safeColor('blue');
+    color: safeColor('white');
   }
 
   &-link {
-    color: color('blue-ribbon');
+    color: safeColor('blue');
   }
 
   &-small {
@@ -47,13 +47,13 @@
 
   &-flat {
     box-shadow: none;
-    background-color: color('wild-sand');
+    background-color: color('athens-gray');
   }
 
   &-meta {
     box-shadow: none;
-    background-color: color('bright-gray');
-    color: color('white');
+    background-color: color('river-bed');
+    color: safeColor('white');
     pointer-events: none;
   }
 }

@@ -54,7 +54,7 @@
           line-height: 1;
           word-break: break-all;
           pointer-events: auto;
-          color: color('alto');
+          color: color('iron');
 
           /* Used to hide empty letter lists */
           &:only-child:not(a) {
@@ -73,11 +73,11 @@
         }
 
         &.active > .nav-link {
-          color: color('gray-chateau');
+          color: color('oslo-gray');
         }
 
         &:hover > .nav-link {
-          color: color('gray-chateau');
+          color: color('oslo-gray');
         }
       }
 

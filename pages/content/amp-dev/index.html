@@ -69,9 +69,7 @@ success_stories:
       {"src": "/static/img/case-band-image-1.png", "width": "131", "height": "152"},
       {"src": "/static/img/case-band-image-5.jpg", "width": "180", "height": "115"},
       {"src": "/static/img/case-band-image-4.jpg", "width": "144", "height": "214"},
-      {"src": "/static/img/case-band-image-3.jpg", "width": "162", "height": "104"},
-      {"src": "/static/img/case-band-image-6.jpg", "width": "123", "height": "101"},
-      {"src": "/static/img/case-band-image-7.jpg", "width": "116", "height": "179"}
+      {"src": "/static/img/case-band-image-3.jpg", "width": "162", "height": "104"}
       ]
     %}
     {% include 'views/partials/case-band.j2' %}
@@ -250,19 +248,18 @@ success_stories:
     {% do doc.styles.addCssFile('css/components/organisms/sampler.css') %}
     {% set playground_url = doc.pod.podspec.base_urls.playground %}
 
-    {# Can't use |tojson filter here since URLs need to be built #}
+    {% set sampler = [] %}
+    {% for sample in doc.sampler %}
+      {% do sampler.append({
+        'title': sample.title,
+        'url': sample.url,
+        'embedUrl': playground_url + '/embed?mode=responsive&url=' + (playground_url + sample.url)|urlencode + '&line=' + sample.line,
+        'standaloneUrl': playground_url + '/?url=' + (playground_url + sample.url)|urlencode + '&line=' + sample.line,
+      }) %}
+    {% endfor %}
     <amp-state id="sampler">
       <script type="application/json">
-      [{% for sample in doc.sampler %}
-        {% set embed_url = playground_url + '/embed?mode=responsive&line=' + sample.line + '&url=' + sample.url %}
-        {% set standalone_url = playground_url + '/?url=' + sample.url %}
-        {
-          "title": "{{ sample.title }}",
-          "url": "{{ sample.url|safe }}",
-          "embedUrl": "{{ embed_url|safe }}",
-          "standaloneUrl": "{{ standalone_url|safe }}"
-        }{{ "," if not loop.last }}
-      {% endfor %}]
+        {{ sampler|tojson }}
       </script>
     </amp-state>
     <amp-state id="activeSample">

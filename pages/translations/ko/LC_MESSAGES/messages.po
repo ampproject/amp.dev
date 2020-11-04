@@ -1065,8 +1065,8 @@ msgid "…while trying to load the search results."
 msgstr "... 검색 결과를 로딩하는 중 발생."
 
 #: frontend/templates/layouts/default.j2:129
-msgid "Sadly this page isn't translated yet, but we could use some help doing so. See the <a href=\"/documentation/guides-and-tutorials/contribute/translations\">translation guide</a> on how you can contribute."
-msgstr "죄송하지만 이 페이지는 아직 번역되지 않았습니다. 페이지 번역을 지원하고 싶다면 참여해 주세요. <a href=\"/documentation/guides-and-tutorials/contribute/translations\">번역 가이드</a>를 통해 참여 방법을 확인하실 수 있습니다."
+msgid "Sadly this page isn\'t translated yet, but will be shortly - check back soon!"
+msgstr "죄송하지만 이 페이지는 아직 번역되지 않았습니다. 곧 번역이 지원될 예정이니 다음에 다시 확인해 주세요."
 
 #: frontend/templates/views/examples/documentation.j2:206
 msgid "If the explanations on this page don't cover all of your questions feel free to reach out to other AMP users to discuss your exact use case."
@@ -1591,8 +1591,8 @@ msgstr "일관성 및 확장성"
 msgid "AMP pages load near instantly, enabling you to offer a consistently fast experience across all devices and platforms."
 msgstr "AMP 페이지는 거의 즉시 로딩되어 모든 기기와 플랫폼에서 일관적이고 빠른 경험을 선사합니다."
 
-msgid "You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal."
-msgstr "수일 내에 전체 아카이브의 전환이 가능합니다. 특히 Wordpress나 Drupal과 같은 인기 CMS는 그 과정이 더욱 간편합니다."
+msgid "You can often convert your entire archive in days especially if you use a popular CMS such as WordPress or Drupal."
+msgstr "수일 내에 전체 아카이브의 전환이 가능합니다. 특히 WordPress나 Drupal과 같은 인기 CMS는 그 과정이 더욱 간편합니다."
 
 msgid "Used by popular and global platforms like Google, Bing and Twitter, AMP allows you to ensure users from all these surfaces get an unparalleled, often instantaneous and native-feeling experience by defaulting to AMP pages when available."
 msgstr "AMP는 Google, Bing 및 Twitter 등의 유명 글로벌 플랫폼에서 사용됩니다. 따라서 가능한 곳에 AMP 페이지를 기본값으로 설정하면 어떤 경로를 통해 유입된 사용자라도 즉각적이고 네이티브 앱과 같은 최고의 경험을 누릴 수 있습니다."
@@ -2062,7 +2062,7 @@ msgstr ""
 msgid "AMP pages load near instantly, enabling you to offer a consistently fast experience across all devices and platforms."
 msgstr ""
 
-msgid "You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal."
+msgid "You can often convert your entire archive in days especially if you use a popular CMS such as WordPress or Drupal."
 msgstr ""
 
 msgid "Used by popular and global platforms like Google, Bing and Twitter, AMP allows you to ensure users from all these surfaces get an unparalleled, often instantaneous and native-feeling experience by defaulting to AMP pages when available."
@@ -3285,8 +3285,8 @@ msgstr "사용자 입력"
 msgid "Validator"
 msgstr "검사기"
 
-msgid "You can often convert your entire archive in days – especially when using common CMS like Wordpress or Drupal."
-msgstr "수일 내에 전체 아카이브 전환이 가능합니다. 특히 Wordpress나 Drupal처럼 자주 사용되는 CMS는 그 과정이 더욱 간편합니다."
+msgid "You can often convert your entire archive in days – especially when using common CMS like WordPress or Drupal."
+msgstr "수일 내에 전체 아카이브 전환이 가능합니다. 특히 WordPress나 Drupal처럼 자주 사용되는 CMS는 그 과정이 더욱 간편합니다."
 
 msgid "All"
 msgstr "전체"

@@ -13,6 +13,15 @@
   @return null;
 }
 
+@function safeColor($name) {
+  @if map-has-key($safeColors, $name) {
+    @return map-get($safeColors, $name);
+  }
+
+  @warn "Unknown `#{$name}` in $safeColors.";
+  @return null;
+}
+
 /**
 /// Prefixes a given string with the $projectPrefix and a category prefix out
 /// of $categoryPrefixes by the key $category
@@ -25,8 +34,7 @@
       @return #{$projectPrefix}-#{map-get($categoryPrefixes, $category)}-#{$selector};
     }
 
-    @warn "There is no component category `#{$category}`.";
-    @return null;
+    @return #{$projectPrefix}-#{$selector};
 }
 
 @function utility($selector) {

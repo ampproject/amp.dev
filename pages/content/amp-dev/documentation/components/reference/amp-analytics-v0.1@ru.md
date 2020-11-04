@@ -1,10 +1,6 @@
 ---
 $title: amp-analytics
 $category@: ads-analytics
-formats:
-- websites
-- email
-- ads
 teaser:
   text: Получение статистических данных из документа AMP
 ---

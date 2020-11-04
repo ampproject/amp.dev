@@ -1,8 +1,6 @@
 ---
 $title: amp-access
 $category@: dynamic-content
-formats:
-- websites
 teaser:
   text: Provides an AMP paywall and subscription support.
 ---

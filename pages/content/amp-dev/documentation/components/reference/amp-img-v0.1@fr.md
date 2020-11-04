@@ -1,11 +1,6 @@
 ---
 $title: amp-img
 $category@: media
-formats:
-- websites
-- email
-- ads
-- stories
 teaser:
   text: Remplacer la balise d'image HTML5.
 ---

@@ -1,5 +1,5 @@
 /**
- * Copyright 2019 The AMPHTML Authors
+ * Copyright 2020 The AMPHTML Authors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,48 +15,48 @@
  */
 
 const express = require('express');
-const fetch = require('node-fetch');
-const URL = require('url').URL;
-const config = require('@lib/config.js');
 const {setMaxAge} = require('@lib/utils/cacheHelpers.js');
 const log = require('@lib/utils/log')('Playground API');
-// eslint-disable-next-line new-cap
-const api = express.Router();
+const RateLimitedFetch = require('@lib/utils/rateLimitedFetch');
+const FetchError = require('@lib/utils/fetchError');
 
-const ONE_HOUR = 60 * 60;
-const host = config.hosts.platform.base;
-
-api.get('/fetch', async (request, response) => {
-  const url = request.query.url;
-  try {
-    const doc = await fetchDocument(url, host);
-    setMaxAge(response, ONE_HOUR);
-    response.send(doc);
-  } catch (error) {
-    log.error('Could not fetch URL', error);
-    response.status(400).send('Could not fetch URL');
-  }
+const rateLimitedFetch = new RateLimitedFetch({
+  requestHeaders: {
+    'x-requested-by': 'playground',
+    'Referer': 'https://amp.dev/playground',
+  },
 });
 
-async function fetchDocument(urlString, host) {
-  const url = new URL(urlString, host);
-  return doFetch(url.toString());
-}
+/**
+ * Time a fetched document is cached on the requesting client in minutes.
+ * One hour.
+ * @type {Number}
+ */
+const MAX_AGE = 60 * 60;
 
-async function doFetch(url) {
-  const response = await fetch(url, {
-    compress: true,
-    headers: {
-      'Accept': 'text/html',
-      'x-requested-by': 'playground',
-      'User-Agent':
-        'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MTC19V) ' +
-        'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.81 Mobile ' +
-        'Safari/537.36 (compatible; amp.dev/playground)',
-      'Referer': 'https://amp.dev/playground',
-    },
-  });
-  return response.text();
-}
+const errorIdMap = {
+  [FetchError.INVALID_URL]: 400,
+  [FetchError.TOO_MANY_REQUESTS]: 429,
+  [FetchError.NO_SUCCESS_RESPONSE]: 502,
+  [FetchError.UNSUPPORTED_CONTENT_TYPE]: 502,
+  [FetchError.OTHER]: 502,
+};
+
+// eslint-disable-next-line new-cap
+const api = express.Router();
+api.get('/fetch', async (request, response) => {
+  try {
+    const doc = await rateLimitedFetch.fetchHtmlDocument(request.query.url);
+    setMaxAge(response, MAX_AGE);
+    response.send(doc);
+  } catch (error) {
+    log.error('Could not fetch URL', request.query.url, error);
+    if (error.errorId) {
+      response.status(errorIdMap[error.errorId] || 502).send(error.message);
+    } else {
+      response.status(500).send(`Internal error fetching ${request.query.url}`);
+    }
+  }
+});
 
 module.exports = api;

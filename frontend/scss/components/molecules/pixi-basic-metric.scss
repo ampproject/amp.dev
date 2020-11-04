@@ -1,0 +1,59 @@
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+.#{molecule('pixi-basic-metric')} {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  font-size: 16px;
+  background: safeColor('white');
+  border-bottom: solid 2px color('iron');
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    width: 24%;
+    padding: 25px 15px 25px 25px;
+    border-radius: 4px;
+    border-bottom: 0;
+    box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.87);
+
+    &[dir='rtl'] {
+      padding: 25px 25px 25px 15px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding: 25px 25px 25px 35px;
+
+    &[dir='rtl'] {
+      padding: 25px 35px 25px 25px;
+    }
+  }
+
+  &-title {
+    margin: 0;
+    font-size: 18px;
+  }
+
+  &-status {
+    color: safeColor('light-gray');
+  }
+
+  &.passed {
+    label {
+      color: safeColor('green');
+    }
+  }
+
+  &.failed {
+    label {
+      color: safeColor('dark-red');
+    }
+  }
+}

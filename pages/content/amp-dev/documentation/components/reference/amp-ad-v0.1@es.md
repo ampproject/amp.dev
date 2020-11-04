@@ -1,8 +1,6 @@
 ---
 $title: amp-ad
 $category@: ads-analytics
-formats:
-- websites
 teaser:
   text: Representa un contenedor que puede mostrar un anuncio.
 ---
@@ -267,6 +265,7 @@ Consulta las [reglas de amp-ad](https://github.com/ampproject/amphtml/blob/maste
 * [AdvertServe](https://github.com/ampproject/amphtml/blob/master/ads/advertserve.md)
 * [Adyoulike](https://github.com/ampproject/amphtml/blob/master/ads/adyoulike.md)
 * [Affiliate-B](https://github.com/ampproject/amphtml/blob/master/ads/affiliateb.md)
+* [AJA](https://github.com/ampproject/amphtml/blob/master/ads/aja.md)
 * [AMoAd](https://github.com/ampproject/amphtml/blob/master/ads/amoad.md)
 * [AppNexus](https://github.com/ampproject/amphtml/blob/master/ads/appnexus.md)
 * [AppVador](https://github.com/ampproject/amphtml/blob/master/ads/appvador.md)
@@ -292,6 +291,7 @@ Consulta las [reglas de amp-ad](https://github.com/ampproject/amphtml/blob/maste
 * [Dot and Media](https://github.com/ampproject/amphtml/blob/master/ads/dotandads.md)
 * [Doubleclick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 * [eADV](https://github.com/ampproject/amphtml/blob/master/ads/eadv.md)
+* [Epeex](https://github.com/ampproject/amphtml/blob/master/ads/epeex.md)
 * [E-Planning](https://github.com/ampproject/amphtml/blob/master/ads/eplanning.md)
 * [Ezoic](https://github.com/ampproject/amphtml/blob/master/ads/ezoic.md)
 * [Felmat](https://github.com/ampproject/amphtml/blob/master/ads/felmat.md)
@@ -415,7 +415,6 @@ Consulta las [reglas de amp-ad](https://github.com/ampproject/amphtml/blob/maste
 ## Tipos de inserción admitidos <a name="supported-embed-types"></a>
 
 * [24smi](https://github.com/ampproject/amphtml/blob/master/ads/24smi.md)
-* [AJA](https://github.com/ampproject/amphtml/blob/master/ads/aja.md)
 * [Bringhub](https://github.com/ampproject/amphtml/blob/master/ads/bringhub.md)
 * [Dable](https://github.com/ampproject/amphtml/blob/master/ads/dable.md)
 * [Engageya](https://github.com/ampproject/amphtml/blob/master/ads/engageya.md)

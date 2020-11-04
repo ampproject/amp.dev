@@ -11,9 +11,9 @@ The starter code provides a pretty bare user experience. There are a couple ways
 
 Prior to the introduction of the [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) component, adding features like these weren't possible. Let's get a hands-on experience with [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) and add these new features to our sample code!
 
-## Install the `amp-bind` extension
+## Install the `amp-bind` component
 
-[`amp-bind`](../../../../documentation/components/reference/amp-bind.md) is a new AMP component that affords custom interactivity via data binding and JS-like expressions. To use [`amp-bind`](../../../../documentation/components/reference/amp-bind.md), you must install it in the page.
+[`amp-bind`](../../../../documentation/components/reference/amp-bind.md) is an AMP component that affords custom interactivity via data binding and JS-like expressions. To use [`amp-bind`](../../../../documentation/components/reference/amp-bind.md), you must install it in the page.
 
 Open the [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html) file, and add the following script to the list of AMP components in the `<head>` section of the page:
 

@@ -42,6 +42,12 @@
     @media (min-width: 1000px) {
       padding: 55px;
     }
+
+    @media (min-width: 1920px) {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 55px 150px;
+    }
   }
 
   h1 {
@@ -60,7 +66,7 @@
     display: none!important;
   }
 
-  #import-url-view {
+  #import-view {
     margin-bottom: 40px;
   }
 }

@@ -26,11 +26,12 @@ import Fab from './fab/fab.js';
 
 import * as AutoImporter from './auto-importer/auto-importer.js';
 import * as ComponentsProvider from './components-provider/components-provider.js';
-import * as EmailLoader from './email-loader/email-loader.js';
 import * as CspHashCalculator from './csp-hash-calculator/csp-hash-calculator.js';
 import * as ErrorList from './error-list/error-list.js';
 import * as StateView from './state-view/state-view.js';
-import * as ImportURL from './import-url/import-url.js';
+import * as Importer from './importer/importer.js';
+import * as Experiments from './experiments/experiments.js';
+import * as ShareView from './share-view/share-view.js';
 import * as ValidationResult from './validation-result/validation-result.js';
 import * as Validator from './validator/validator.js';
 import * as Editor from './editor/editor.js';
@@ -40,7 +41,6 @@ import * as Menu from './menu/base.js';
 
 import createSelector from './selector/selector.js';
 import createTemplateDialog from './template-dialog/base.js';
-import createShareAction from './share/';
 import params from './params/base.js';
 import events from './events/events.js';
 import modes from './modes/index.js';
@@ -60,8 +60,6 @@ const editor = Editor.createEditor(document.getElementById('source'), window);
 const preview = Preview.createPreview(document.getElementById('preview'));
 addSplitPaneBehavior(document.querySelector('main'));
 
-ImportURL.createURLImport();
-
 // configure state list behavior
 const stateIndicator = document.getElementById('preview-header-state');
 const stateListContainer = document.getElementById('state-view');
@@ -69,6 +67,9 @@ StateView.createStateView(stateListContainer, stateIndicator);
 
 ErrorList.createErrorList();
 ValidationResult.createValidationResult();
+
+Importer.createImport();
+Experiments.createExperimentsView();
 
 const validator = Validator.createValidator();
 
@@ -79,8 +80,6 @@ const autoImporter = AutoImporter.createAutoImporter(
   componentsProvider,
   editor
 );
-
-const emailLoader = EmailLoader.createEmailLoader(editor);
 
 const cspHashCalculator = CspHashCalculator.createCspHashCalculator(editor);
 
@@ -125,11 +124,6 @@ events.subscribe(EVENT_SET_RUNTIME, (newRuntime) => {
   }
   validator.validate(editor.getSource());
   activeRuntime = newRuntime;
-
-  const emailButton = document.getElementById('import-email');
-  if (emailButton) {
-    emailButton.classList.toggle('hidden', activeRuntime.id !== 'amp4email');
-  }
 });
 
 runtimes.init();
@@ -229,11 +223,8 @@ if (document.getElementById('document-title')) {
   });
 }
 
-// create the share action
-const shareDialog = createShareAction(editor);
-Button.from(document.getElementById('share'), () => {
-  shareDialog.open();
-});
+// create the share fly-in
+ShareView.createShareView(editor);
 
 // configure menu
 const menu = Menu.create();
@@ -248,11 +239,3 @@ const formatSource = () => {
 };
 Button.from(document.getElementById('format-source'), formatSource);
 Button.from(document.getElementById('menu-format-source'), formatSource);
-
-const loadEmail = () => {
-  emailLoader
-    .loadEmailFromFile()
-    .then(formatSource)
-    .catch((error) => alert(`Error loading email: ${error.message}`));
-};
-Button.from(document.getElementById('import-email'), loadEmail);

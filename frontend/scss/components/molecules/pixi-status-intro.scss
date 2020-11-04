@@ -1,0 +1,175 @@
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+.#{molecule('pixi-status-intro')} {
+  $status-intro: &;
+  position: relative;
+  display: flex;
+  z-index: 10;
+
+  &-text {
+    max-width: 720px;
+    min-height: 220px;
+    margin-top: 20px;
+    padding: 0 15px;
+    color: safeColor('white');
+    line-height: 1.625;
+
+    @media (min-width: 768px) {
+      margin-top: 50px;
+      padding: 0 25px 0 25px;
+    }
+
+    @media (min-width: 1024px) {
+      margin-top: 30px;
+      padding: 0 35px 0 35px;
+    }
+
+    a,
+    h3,
+    p {
+      font-size: 16px;
+      line-height: 1.625;
+      color: safeColor('white');
+    }
+  }
+
+  &-banner {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    display: flex;
+    width: calc(100% - 30px);
+    min-height: 100%;
+    padding: 30px 15px;
+    border-radius: 4px;
+    background-repeat: no-repeat;
+    background-position: 60px 50px;
+    background-color: safeColor('white');
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out;
+
+    @media (min-width: 768px) {
+      left: 0;
+      width: 100%;
+      padding: 40px 25px;
+    }
+
+    @media (min-width: 1024px) {
+      padding: 60px 35px;
+    }
+
+    &-icon {
+      flex: 1 0 auto;
+      width: 40px;
+      max-width: 40px;
+      margin-right: 14px;
+      background-repeat: no-repeat;
+      background-position-x: center;
+
+      &[dir='rtl'] {
+        margin-left: 14px;
+        margin-right: initial;
+      }
+
+      @media (min-width: 1024px) {
+        width: 70px;
+        max-width: 70px;
+        margin-right: 28px;
+
+        &[dir='rtl'] {
+          margin-left: 28px;
+          margin-right: initial;
+        }
+      }
+    }
+
+    &-content {
+      max-width: 720px;
+
+      h3 {
+        margin-top: 0;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.625;
+      }
+    }
+
+    &-ctas {
+      display: none;
+      margin-top: 15px;
+    }
+
+    .#{atom('btn')} {
+      margin-top: 15px;
+      margin-right: 15px;
+
+      &-light {
+        color: safeColor('blue');
+        border: solid 1px color('athens-gray');
+        background-color: safeColor('white');
+      }
+    }
+  }
+
+  &.fail,
+  &.loading,
+  &.pass {
+    #{$status-intro} {
+      &-text {
+        visibility: hidden;
+      }
+
+      &-banner {
+        pointer-events: all;
+        visibility: visible;
+        transform: translateY(-6px);
+        box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.7);
+      }
+    }
+  }
+
+  &.loading {
+    h3,
+    p {
+      color: safeColor('light-gray');
+    }
+  }
+
+  &.fail,
+  &.pass {
+    h3,
+    p {
+      color: safeColor('black');
+    }
+
+    #{$status-intro} {
+      &-banner {
+        &-ctas {
+          display: flex;
+
+          @media (max-width: 480px) {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+
+  &.pass {
+    #{$status-intro}-banner-icon {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'%3E%3Cpath fill='%2309A600' fill-rule='evenodd' d='M26 0c14.36 0 26 11.64 26 26S40.36 52 26 52 0 40.36 0 26 11.64 0 26 0zm10.424 17.469c-.979-.783-2.447-.783-3.262.156L22.233 29.83l-3.915-4.381c-.815-.939-2.283-1.095-3.262-.157-.979.783-.979 2.348-.163 3.286l5.546 6.26c.326.469.978.782 1.63.782l.196-.01c.586-.054 1.159-.35 1.6-.772l12.722-14.083c.816-.94.816-2.348-.163-3.286z'/%3E%3C/svg%3E");
+    }
+  }
+
+  &.fail {
+    #{$status-intro}-banner-icon {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'%3E%3Cpath fill='%23C80000' fill-rule='evenodd' d='M7.615 7.615c10.154-10.153 26.616-10.153 36.77 0 10.153 10.154 10.153 26.616 0 36.77-10.154 10.153-26.616 10.153-36.77 0-10.153-10.154-10.153-26.616 0-36.77zm27.577 5.745L26 22.552l-9.191-9.192-3.448 3.448 9.192 9.191-9.192 9.193 3.448 3.448L26 29.446l9.193 9.194 3.448-3.448L29.447 26l9.193-9.192-3.448-3.448z'/%3E%3C/svg%3E");
+    }
+  }
+}

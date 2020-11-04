@@ -1,8 +1,6 @@
 ---
 $title: amp-ad
 $category@: ads-analytics
-formats:
-- websites
 teaser:
   text: 광고를 표시하는 컨테이너입니다.
 ---
@@ -267,6 +265,7 @@ AMP 유효성 검사기 사양의 [amp-ad 규칙](https://github.com/ampproject/
 * [AdvertServe](https://github.com/ampproject/amphtml/blob/master/ads/advertserve.md)
 * [Adyoulike](https://github.com/ampproject/amphtml/blob/master/ads/adyoulike.md)
 * [Affiliate-B](https://github.com/ampproject/amphtml/blob/master/ads/affiliateb.md)
+* [AJA](https://github.com/ampproject/amphtml/blob/master/ads/aja.md)
 * [AMoAd](https://github.com/ampproject/amphtml/blob/master/ads/amoad.md)
 * [AppNexus](https://github.com/ampproject/amphtml/blob/master/ads/appnexus.md)
 * [AppVador](https://github.com/ampproject/amphtml/blob/master/ads/appvador.md)
@@ -292,6 +291,7 @@ AMP 유효성 검사기 사양의 [amp-ad 규칙](https://github.com/ampproject/
 * [Dot and Media](https://github.com/ampproject/amphtml/blob/master/ads/dotandads.md)
 * [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 * [eADV](https://github.com/ampproject/amphtml/blob/master/ads/eadv.md)
+* [Epeex](https://github.com/ampproject/amphtml/blob/master/ads/epeex.md)
 * [E-Planning](https://github.com/ampproject/amphtml/blob/master/ads/eplanning.md)
 * [Ezoic](https://github.com/ampproject/amphtml/blob/master/ads/ezoic.md)
 * [Felmat](https://github.com/ampproject/amphtml/blob/master/ads/felmat.md)
@@ -415,7 +415,6 @@ AMP 유효성 검사기 사양의 [amp-ad 규칙](https://github.com/ampproject/
 ## 지원되는 삽입 유형 <a name="supported-embed-types"></a>
 
 * [24smi](https://github.com/ampproject/amphtml/blob/master/ads/24smi.md)
-* [AJA](https://github.com/ampproject/amphtml/blob/master/ads/aja.md)
 * [Bringhub](https://github.com/ampproject/amphtml/blob/master/ads/bringhub.md)
 * [Dable](https://github.com/ampproject/amphtml/blob/master/ads/dable.md)
 * [Engageya](https://github.com/ampproject/amphtml/blob/master/ads/engageya.md)

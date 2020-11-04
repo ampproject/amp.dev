@@ -1,0 +1,1 @@
+Esta é a diferença nas pontuações para a página fornecida na origem e sua contraparte AMP em cache, se houver. Um status "None" é relatado se a página de origem já estiver apresentando um desempenho comparável ao de sua contraparte em cache, enquanto um status "---" é relatado se não houver dados disponíveis sobre a página em cache.

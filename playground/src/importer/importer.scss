@@ -1,0 +1,10 @@
+@import 'mixins.scss';
+@import 'components/atoms/_text.scss';
+
+.import-container {
+  p {
+    @include txt;
+    @include txt-2;
+    margin-bottom: 30px;
+  }
+}

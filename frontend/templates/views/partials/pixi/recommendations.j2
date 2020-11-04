@@ -1,0 +1,13 @@
+{% do doc.styles.addCssFile('css/components/organisms/pixi-recommendations.css') %}
+{% do doc.styles.addCssFile('css/components/atoms/pill.css') %}
+
+<section id="recommendations" class="ap-o-pixi-recommendations pristine">
+  <h2>{{ pixi.staticText.recommendations.headline }}</h2>
+  <div class="ap-o-pixi-recommendations-filter">
+    <button class="ap-a-pill">
+      <span class="ap-a-pill-text" aria-pressed="true">{{ pixi.staticText.tags.all }}</span>
+    </button>
+  </div>
+
+  {% include 'views/partials/pixi/recommendations-item.j2' %}
+</section>

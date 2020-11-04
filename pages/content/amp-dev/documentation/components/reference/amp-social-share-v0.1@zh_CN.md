@@ -1,8 +1,6 @@
 ---
 $title: amp-social-share
 $category@: ads-analytics
-formats:
-- websites
 teaser:
   text: 分享跟踪功能正在开发中。
 ---

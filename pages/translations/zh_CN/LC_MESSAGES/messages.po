@@ -1021,8 +1021,8 @@ msgid "…while trying to load the search results."
 msgstr "...同时尝试加载搜索结果"
 
 #: frontend/templates/layouts/default.j2:129
-msgid "Sadly this page isn't translated yet, but we could use some help doing so. See the <a href=\"/documentation/guides-and-tutorials/contribute/translations\">translation guide</a> on how you can contribute."
-msgstr "很遗憾，此页面尚未翻译，我们可能需要一些帮助。敬请参阅 <a href="/documentation/guides-and-tutorials/contribute/translations">翻译指南</a> ，了解您能如何做出贡献。"
+msgid "Sadly this page isn\'t translated yet, but will be shortly - check back soon!"
+msgstr "很遗憾，此页面尚未翻译，不过我们很快将对其进行翻译 - 请稍后再回来查看！"
 
 #: frontend/templates/views/examples/documentation.j2:206
 msgid "If the explanations on this page don't cover all of your questions feel free to reach out to other AMP users to discuss your exact use case."
@@ -1974,7 +1974,7 @@ msgstr ""
 msgid "AMP pages load near instantly, enabling you to offer a consistently fast experience across all devices and platforms."
 msgstr ""
 
-msgid "You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal."
+msgid "You can often convert your entire archive in days especially if you use a popular CMS such as WordPress or Drupal."
 msgstr ""
 
 msgid "Used by popular and global platforms like Google, Bing and Twitter, AMP allows you to ensure users from all these surfaces get an unparalleled, often instantaneous and native-feeling experience by defaulting to AMP pages when available."
@@ -2960,8 +2960,8 @@ msgstr "用户输入"
 msgid "Validator"
 msgstr "验证器"
 
-msgid "You can often convert your entire archive in days – especially when using common CMS like Wordpress or Drupal."
-msgstr "您通常可以几天内转换完整个存档 - 特别是当使用常见的 CMS （例如 Wordpress 或 Drupal ）时。"
+msgid "You can often convert your entire archive in days – especially when using common CMS like WordPress or Drupal."
+msgstr "您通常可以几天内转换完整个存档 - 特别是当使用常见的 CMS （例如 WordPress 或 Drupal ）时。"
 
 msgid "All"
 msgstr "全部"

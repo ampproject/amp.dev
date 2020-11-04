@@ -61,7 +61,7 @@ const BEAUTIFY_OPTIONS = {
   indent_size: 2,
   "wrap_attributes": "force",
   //"wrap_attributes_indent_size": 4,
-  unformatted: ['noscript', 'style', 'head'],
+  unformatted: ['noscript', 'style', 'head', 'script'],
   'indent-char': ' ',
   'no-preserve-newlines': '',
   'extra_liners': []
