@@ -192,6 +192,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/google/doubleclick.md
       - label: eADV
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/eadv.md
+      - label: Epeex
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/epeex.md
       - label: E-Planning
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/eplanning.md
       - label: Ezoic
