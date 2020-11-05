@@ -4,12 +4,21 @@
   margin-top: 100px;
 
   &:first-child {
-    margin-top: 90px;
+    margin-top: 80px;
 
     @media (min-width: 1280px) {
       margin-top: 140px;
     }
   }
+
+  &:last-child {
+    margin-bottom: 100px;
+
+    @media (min-width: 1280px) {
+      margin-bottom: 150px;
+    }
+  }
+
 
   &.--col-4-15 {
     @media (min-width: 768px) {
