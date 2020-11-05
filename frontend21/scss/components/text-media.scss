@@ -8,8 +8,11 @@
   }
 
   &-col {
+    margin-bottom: 20px;
+
     @media (min-width: 768px) {
       width: 50%;
+      min-width: 300px;
 
       &:last-child {
         margin: 0 0 0 8%;
@@ -50,6 +53,14 @@
           margin: 0;
         }
       }
+    }
+  }
+
+  &.--mobile-reverse {
+    flex-direction: column-reverse;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
     }
   }
 
