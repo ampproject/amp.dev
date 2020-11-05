@@ -141,8 +141,10 @@ function icons() {
  * Runs all tasks needed to build the frontend
  * @return {undefined}
  */
-function buildFrontend(done) {
-  return gulp.parallel(sass, templates, icons)(done);
+async function buildFrontend(done) {
+  return gulp.parallel(sass, templates, icons, async () => {
+    await sh('npm run build:frontend');
+  })(done);
 }
 
 /**
