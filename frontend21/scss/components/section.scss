@@ -1,44 +1,41 @@
 .#{prefix(null, 'section')} {
+  grid-column: 2 / 12;
   width: 100%;
   margin-top: 100px;
-  padding: 0 15px;
 
   &:first-child {
-    margin-top: 140px;
+    margin-top: 90px;
+
+    @media (min-width: 1280px) {
+      margin-top: 140px;
+    }
   }
 
   &.--col-4-15 {
     @media (min-width: 768px) {
-      grid-column: 2 / 20;
+      grid-column: 2 / 10;
     }
     @media (min-width: 1280px) {
-      grid-column: 4 / 15;
+      grid-column: 3 / 10;
     }
   }
 
   &.--col-3-22 {
-    @media (min-width: 768px) {
-      grid-column: 2 / 24;
-    }
     @media (min-width: 1280px) {
-      grid-column: 3 / 22;
+      grid-column: 2 / 11;
     }
   }
 
   &.--col-4-23 {
     @media (min-width: 768px) {
-      grid-column: 2 / 24;
+      grid-column: 2 / 12;
     }
     @media (min-width: 1280px) {
-      grid-column: 4 / 23;
+      grid-column: 3 / 12;
     }
   }
 
   &.--fullscreen {
-    padding: 0;
-
-    @media (min-width: 768px) {
-      grid-column: 1 / -1;
-    }
+    grid-column: 1 / -1;
   }
 }

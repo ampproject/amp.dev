@@ -11,15 +11,16 @@
 @import 'components/pie-chart.scss';
 
 main {
-  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 15px;
   width: 100%;
   max-width: 1920px;
   margin: auto;
+  padding: 0;
 
   @media (min-width: 768px) {
-    display: grid;
     grid-gap: 30px;
-    grid-template-columns: repeat(24, minmax(0, 1fr));
   }
 }
 
