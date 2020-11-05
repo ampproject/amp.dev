@@ -68,16 +68,5 @@
         }
       }
     }
-
-    &-clip:nth-child(2), &-part {
-      animation: fill 1s ease-in-out 0s both;
-    }
-  }
-}
-
-@keyframes fill {
-  to {
-    /* Value will be doubled. Eg. for a full rotation set --fill to 180deg */
-    transform: rotate(var(--fill));
   }
 }
