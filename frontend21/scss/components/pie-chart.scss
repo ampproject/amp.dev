@@ -1,4 +1,5 @@
 .#{prefix(null, 'pie-charts')} {
+  margin-bottom: 50px;
 
   &-chart {
     position: relative;
@@ -15,7 +16,7 @@
 
     &:nth-child(even) {
       margin-left: 0;
-      margin-top: -25%;
+      margin-top: -10%;
       --size: 160px;
 
       @media (min-width: 768px) {
