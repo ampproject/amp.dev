@@ -65,6 +65,8 @@
   }
 
   &.--center {
-    align-items: center;
+    @media (min-width: 768px) {
+      align-items: center;
+    }
   }
 }
