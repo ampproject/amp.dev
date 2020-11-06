@@ -96,7 +96,7 @@ $view: /views/2021/base.html
           <h2>{{ _('Get started with AMP') }}</h2>
           <p>AMP is open-source! This means it's already supported on many CMS', such as <a href="https://amp-wp.org/">WordPress,</a> and integrated with framework favorites like <a href="https://blog.amp.dev/2020/07/28/introducing-the-eleventy-amp-plugin/">Eleventy</a> and <a href="https://nextjs.org/docs/api-reference/next/amp">Next.js</a>.<br><br>If you're working with a custom solution, use <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-optimizer-guide/index.md', locale=doc.locale).url.path}}?format=websites">AMP optimizers</a> on your build-system, server, or hosting environment.</p>
         </div>
-        <a href="{{g.doc('content/amp-dev/documentation/index.html', locale=doc.locale).url.path}}" class="ap-m-lnk ap-m-lnk-square">
+        <a href="{{g.doc('/content/amp-dev/documentation/index.html', locale=doc.locale).url.path}}" class="ap-m-lnk ap-m-lnk-square">
           <div class="ap-a-ico ap-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
