@@ -1,3 +1,72 @@
 .#{prefix(null, 'text-media')} {
-  background-color: cyan;
+  $text-media: &;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  &-col {
+    margin-bottom: 20px;
+
+    @media (min-width: 768px) {
+      width: 50%;
+      min-width: 300px;
+
+      &:last-child {
+        margin: 0 0 0 8%;
+      }
+
+      &:only-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &.--thirds {
+    #{$text-media}-col {
+      @media (min-width: 768px) {
+        &:first-child {
+          width: 30%;
+        }
+
+        &:last-child {
+          width: 62%;
+        }
+      }
+    }
+  }
+
+  &.--reverse {
+    flex-direction: column-reverse;
+
+    @media (min-width: 768px) {
+      flex-direction: row-reverse;
+
+      #{$text-media}-col {
+        &:first-child {
+          margin: 0 0 0 8%;
+        }
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &.--mobile-reverse {
+    flex-direction: column-reverse;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  &.--center {
+    @media (min-width: 768px) {
+      align-items: center;
+    }
+  }
 }
