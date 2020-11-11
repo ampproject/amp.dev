@@ -1,0 +1,56 @@
+$title: VOGSY
+$category: finance
+$date: 2020-11-03
+description: 'VOGSY Improves Services Firms’ Quote-to-Cash Speed by 80% with AMP-powered dynamic emails'
+formats:
+  - email
+
+teaser:
+  image:
+    src: '/static/img/success-stories/vogsy/vogsy-teaser.jpg'
+    width: 1
+    height: 1
+    alt: VOGSY product image
+  logo:
+    src: '/static/img/success-stories/vogsy/vogsy-logo.png'
+    width: 180
+    height: 40
+    alt: VOGSY
+  text: 'VOGSY Improves Services Firms’ Quote-to-Cash Speed by 80% with AMP-powered dynamic emails'
+
+stage:
+  headline: 'VOGSY Improves Services Firms’ Quote-to-Cash Speed by 80% with AMP-powered dynamic emails'
+  subline: NOV 3, 2020
+  layout: mobile
+  devices:
+    - image_src: "/static/img/success-stories/vogsy/vogsy-1.jpg"
+      width: 750
+      height: 1217
+      type: mobile
+      alt: VOGSY product image
+
+contents:
+  - layout: text
+    text: "VOGSY, the only Professional Services Automation (PSA) solution built on Google Workspace (formerly G Suite), streamlines services firms’ business operations from quote to cash. Designed to prevent handoff delays between Sales, Project Delivery and Accounting teams, VOGSY offers a single source of engagement to efficiently manage projects, resources, tasks, timesheets and billing.<br><br>Serving organizations in diverse sectors, including marketing, consulting, engineering and IT, VOGSY is continuously innovating ways to improve professional services organizations’ workflows so they can focus on running a profitable business."
+  - layout: text
+    headline: Problem
+    text: "It’s truer in today’s fast-paced industries than ever: Clients of services businesses expect immediate results. But in the relay race to deliver, services firms are leaving cash on the table due to disconnected data. With department silos blocking visibility and slowing service delivery, productivity goes down and non-billable tasks, billing cycles and invoice disputes go up.<br><br>By connecting teams inside of one efficient end-to-end solution, VOGSY provides the infrastructure needed to combat these issues. Seeing an opportunity to ensure the quote-to-cash baton would never be dropped, VOGSY adopted AMP For Email to send actionable workflow emails directly to its users’ inboxes."
+  - layout: text
+    headline: Solution
+    text: "Busy services professionals live in their inbox. With its new dynamic email feature built on AMP For Email, VOGSY sends timely project updates and workflows to its users in Gmail, where they will be seen immediately and put into action. As a result, baton handovers are now expertly executed at the critical moment.<br><br>Among over 60 workflows and notifications that VOGSY now delivers in AMP emails, invoice and timesheet approvals are among the most time-sensitive for preventing cash drainage. Within these dynamic emails, VOGSY presents the timesheets and invoices along with the associated project information and buttons to approve or reject. Approvers can review for accuracy and complete the approvals, or interact with team members, all within the email itself. Any decision and comment is automatically logged to the appropriate client project in VOGSY."
+  - layout: quote
+    quote: "With the right information presented at the right time, services firms can avoid making costly mistakes like overlooking missing hours that will never be billed to the client. AMP For Email is helping us connect the dots for our users."
+    image_src: '/static/img/success-stories/vogsy/vogsy-logo.png'
+    width: 180
+    height: 40
+    alt: VOGSY
+    author: Mark van Leeuwen, CEO of VOGSY
+  - layout: text
+    headline: Solution
+    text: "Launching clients using VOGSY’s dynamic email feature to speed up the quote-to-cash cycle have seen approval completion times go from 24 hours to just four. The 80 percent increase in approval speed for invoices, timesheets, quotes and expenses has dramatically improved cash flow for VOGSY’s clients.<br><br>Grow Corp, a marketing and consulting agency that switched to VOGSY in large part for the benefit of receiving workflows in email on mobile devices, found the combination of VOGSY and AMP emails to be powerful for its profitability. “Our invoices are going out sooner, so we’re seeing payments come in quicker,” said Jacob Greenblatt, founder and Managing Director of Grow Corp. “We have more confidence that we’re getting paid for all the work done since dynamic email is ensuring that our project managers aren’t forgetting time that should have been billed.”<br><br>Accuracy of invoices and timesheets means that services businesses are equipped to solve the cash drainage issues. Accurate and timely billing reduces the risk of conflicts with clients as the work is fresh in everyone’s mind. Moreover, approvals aren't rushed—or overlooked entirely—causing billable time to be missed.<br><br>A big part of the success of AMP For Email for VOGSY users results from the improvements in coordination between teams—the smooth passing of the baton—further reducing time spent on administrative work and internal follow-ups."
+  - layout: quote
+    quote: "We expect dynamic email to help us reach or exceed our billability targets in the coming months, which is exciting for us,"
+    author: Jan van Wijngaarden, Managing Director of online ERP software platform AllSolutions
+  - layout: text
+    headline: Solution
+    text: "Launching clients using VOGSY’s dynamic email feature to speed up the quote-to-cash cycle have seen approval completion times go from 24 hours to just four. The 80 percent increase in approval speed for invoices, timesheets, quotes and expenses has dramatically improved cash flow for VOGSY’s clients.<br><br>Grow Corp, a marketing and consulting agency that switched to VOGSY in large part for the benefit of receiving workflows in email on mobile devices, found the combination of VOGSY and AMP emails to be powerful for its profitability. “Our invoices are going out sooner, so we’re seeing payments come in quicker,” said Jacob Greenblatt, founder and Managing Director of Grow Corp. “We have more confidence that we’re getting paid for all the work done since dynamic email is ensuring that our project managers aren’t forgetting time that should have been billed.”<br><br>Accuracy of invoices and timesheets means that services businesses are equipped to solve the cash drainage issues. Accurate and timely billing reduces the risk of conflicts with clients as the work is fresh in everyone’s mind. Moreover, approvals aren't rushed—or overlooked entirely—causing billable time to be missed.<br><br>A big part of the success of AMP For Email for VOGSY users results from the improvements in coordination between teams—the smooth passing of the baton—further reducing time spent on administrative work and internal follow-ups. With AMP For Email, VOGSY is continuing to push the boundaries of what PSA software can do for services firms’ efficiency and profitability."
