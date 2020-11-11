@@ -104,7 +104,12 @@ success_stories:
     </div>
 
     <div class="ap-o-news">
-      <div class="ap-o-news-list">
+      <amp-carousel class="ap-o-news-list"
+          height="460"
+          layout="fixed-height"
+          type="carousel"
+          role="region"
+          aria-label="{{ _('News') }}">
         [% for post in posts %]
         <a class="ap-o-news-item" href="[= post.url =]">
           <div class="ap-o-news-card">
@@ -112,11 +117,11 @@ success_stories:
             <div class="ap-o-news-image">
               [% if post.image and post.image != '' and not post.image.includes('AMP_Blog_Square') %]
               <amp-img class="ap--media"
-                src="[= post.image =]"
-                layout="responsive"
-                width="160"
-                height="90"
-                alt="[= post.title =]">
+                  src="[= post.image =]"
+                  layout="responsive"
+                  width="160"
+                  height="90"
+                  alt="[= post.title =]">
               </amp-img>
               [% else %]
               <div class="ap-o-news-icon">
@@ -132,7 +137,7 @@ success_stories:
           </div>
         </a>
         [% endfor %]
-      </div>
+      </amp-carousel>
     </div>
     [% endif %]
   </section>
