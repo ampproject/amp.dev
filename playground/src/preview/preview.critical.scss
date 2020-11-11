@@ -46,7 +46,7 @@
   width: 48px;
   margin: 0 8px;
   text-align: center;
-  background: color('red');
+  background: color('guardsman-red');
 }
 
 @media (max-width: 767px) {
@@ -69,7 +69,7 @@
     width: 100%;
     margin-left: 0;
     padding-left: 0;
-    border-bottom: 2px solid color('mercury');
+    border-bottom: 2px solid color('iron');
   }
   #preview-header-close {
     display: flex;
@@ -84,7 +84,7 @@
     user-select: none;
   }
   #preview-header-close:active {
-    background-color: color('silver');
+    background-color: color('iron');
   }
   #preview-header-close:focus,
   #preview-header-close:active {

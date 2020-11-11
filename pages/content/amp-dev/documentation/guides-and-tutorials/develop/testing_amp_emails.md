@@ -32,7 +32,3 @@ Gmail users can use the [Gmail AMP for Email Playground](https://amp.gmail.dev/p
 [Mail.ru AMP emails](https://postmaster.mail.ru/amp) provides information on how to enable testing in your Mail.ru account.
 
 Mail.ru users can use the [Mail.ru AMP Playground](https://postmaster.mail.ru/amp/playground.html) to send an email to themselves for testing.
-
-### Outlook.com
-
-Outlook.com documentation has a [Get Started with AMP for Email](https://docs.microsoft.com/en-us/outlook/amphtml/get-started) guide that explains how to author and test AMP emails.

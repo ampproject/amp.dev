@@ -10,6 +10,17 @@ creation:
       height: 506
     formats:
       - ads
+  - name: BEE
+    url: https://beefree.io/bee-plugin/
+    type: Embeddable Email Builder
+    description: Add beautiful, effective email creation into your SaaS application, including interactive content powered by AMP.
+    image:
+      src: /static/img/tools/bee.png
+      width: 440
+      height: 209
+      fit: contain
+    formats:
+      - email      
   - name: Stripo Email Editor
     url: https://stripo.email/amp-support/
     type: Email Templates Editor
@@ -121,6 +132,16 @@ creation:
       src: /static/img/tools/productstories.png
       width: 5
       height: 3
+    formats:
+      - stories
+  - name: Join Stories
+    description: Long Story short, Join Stories is the fastest and easiest Story creation tool.
+    url: https://www.join-stories.com/
+    type:  WYSIWYG Editor
+    image:
+      src: /static/img/tools/joinstories.jpg
+      width: 800
+      height: 400
     formats:
       - stories
   - name: Web Stories for WordPress
@@ -279,6 +300,17 @@ developer:
       src: /static/img/tools/amp_toolbox.jpg
       width: 700
       height: 527
+    formats:
+      - websites
+  - name: AMP Page Experience Guide
+    official: true
+    type: Optimization
+    description: Analyze and learn how to optimize your AMP pages for Google\'s page experience ranking signal
+    url: /page-experience/
+    image:
+      src: /static/img/tools/page-experience-guide.jpg
+      width: 800
+      height: 400
     formats:
       - websites
   - name: AMP Bench

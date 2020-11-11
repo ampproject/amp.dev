@@ -1,0 +1,50 @@
+.#{prefix(null, 'section')} {
+  grid-column: 2 / 12;
+  width: 100%;
+  margin-top: 100px;
+
+  &:first-child {
+    margin-top: 80px;
+
+    @media (min-width: 1280px) {
+      margin-top: 140px;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 100px;
+
+    @media (min-width: 1280px) {
+      margin-bottom: 150px;
+    }
+  }
+
+  &.--col-4-15 {
+    @media (min-width: 768px) {
+      grid-column: 2 / 10;
+    }
+    @media (min-width: 1280px) {
+      grid-column: 3 / 10;
+    }
+  }
+
+  &.--col-3-22 {
+    @media (min-width: 1280px) {
+      grid-column: 2 / 11;
+    }
+  }
+
+  &.--col-4-23 {
+    @media (min-width: 768px) {
+      grid-column: 2 / 12;
+    }
+    @media (min-width: 1280px) {
+      grid-column: 3 / 12;
+    }
+  }
+
+  &.--fullscreen {
+    margin: 0;
+    grid-column: 1 / -1;
+  }
+}

@@ -177,7 +177,7 @@
     }
 
     &[disabled] {
-      background-color: color('silver');
+      background-color: color('iron');
       transform: none;
     }
   }
@@ -207,7 +207,7 @@
       @include scrollbar;
 
       &::-webkit-scrollbar-thumb {
-        background: color('gallery');
+        background: color('iron');
       }
     }
 

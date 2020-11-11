@@ -2,13 +2,13 @@
 $title: AMP Fest 2020
 $order: 1
 $view: /views/overview/events.j2
+description: If you weren't able to catch AMP Fest live, check out all the talks here. From AMP and page experience, to Web Stories and WordPress, we shared a ton of exciting news!
 
 ampconf: !g.yaml /shared/data/amp-fest.yaml
 
 
 section_links:
   - Featured Talks
-  - Speakers
   - FAQ
 ---
 {% do doc.styles.addCssFile('css/components/templates/events.css') %}
@@ -16,116 +16,94 @@ section_links:
 <section class="ap--stage ap--container-fluid">
     {% do doc.styles.addCssFile('css/components/organisms/stage-amp-fest.css') %}
 
-    <div class="ap-o-stage ap-o-stage-amp-fest all city-{{ ['ams', 'del', 'nyc', 'rio','sfo','tyo'] | random }}">
+    <div class="ap-o-stage ap-o-stage-amp-fest all city-{{ ['ams', 'del', 'nyc', 'rio', 'sfo', 'tyo'] | random }}">
       <div class="ap--container-fluid">
         <div class="ap-o-stage-content">
           <amp-img class="logo" alt="AMP Fest" src="/static/img/amp-fest/logo.png" layout="intrinsic" width="800px" height="177px"></amp-img>
-
-            <h2 class="ap-o-stage-content-subline">October 13</h2>
+            <h1>Rewatch the talks</h1>
         </div>
       </div>
     </div>
-
-</section>
-
-<section class="ap--container amp-fest-header">
-
-  <p class="teaser">Join us and the AMP community on Oct 13 for a digital event as we shine light on the future of AMP!</p>
-  <div class="register">
-    <a class="ap-m-lnk ap-m-lnk-square ap--newsletter-double" href="https://events.withgoogle.com/amp-fest/registrations/new/">
-      <div class="ap-a-ico ap-m-lnk-icon">
-        {% do doc.icons.useIcon('icons/external.svg') %}
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
-      </div>
-      <span class="ap-m-lnk-text">{{ _('Register Now') }}</span>
-    </a>
-  </div>
-
- <div class="countdown-container">
-   <div class="preamble">Countdown to AMP Fest</div>
-   <amp-date-countdown id="countdown" end-date="2020-10-13T09:00:00-07:00" height="200" width="400" when-ended="stop" locale="en" >
-     <template type="amp-mustache">
-       <div>
-         <div class="fest-countdown"><span>{{'{{dd}}'}}</span> : <span>{{'{{hh}}'}}</span> : <span>{{'{{mm}}'}}</span></div>
-         <div class="fest-countdown-label"><span>Days</span><span>Hours</span><span>Minutes</span></div>
-       </div>
-     </template>
-   </amp-date-countdown>
- </div>
-</section>
-
-<section class="ap--container join-quote">
-  <p>Join us right here on <b>Oct 13th</b> as we celebrate 5 years of AMP and learn about the latest ways the AMP community is working to make the web better for everyone - publishers, platforms, advertisers, creators, and of course, users.</p>
 </section>
 
 <section class="ap--container">
-  {% with text=_(' ') %}
-  {% include '/views/partials/jumpto.j2' %}
-  {% endwith %}
-</section>
-
-
-<section class="ap--container" id="Featured Talks">
-  {% do doc.styles.addCssFile('css/components/organisms/agenda.css') %}
-  {% do doc.styles.addCssFile('css/components/molecules/fest-agenda-item.css') %}
-
   <div class="ap--content-default">
-    <h1>Featured Talks</h1>
-  <p>AMP Fest talks will premiere both here and on the official AMP YouTube channel at 9AM PT. All talks will be pre-recorded and available for rewatching after their premiere. See below for a list of the talks featured during the event. Stay tuned as we’ll be adding more details about talks and speakers in the coming weeks!</p>
-  </div>
-
-  <div class="ap--content-x-wide">
-
-    <div class="ap-o-agenda">
-      <div class="ap--container ampconf-agenda">
-        <ul class="ap-o-agenda-content-list conf">
-          {% for agenda_item in doc.ampconf.agenda.day_1 %}
-
-            <li class="ap-m-agenda-item">
-
-              <div class="ap-m-agenda-item-time">{{ agenda_item.time }}</div>
-              <div class="ap-m-agenda-item-description  {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">
-                <div class="ap-m-agenda-item-description-title  {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">{{ agenda_item.title }}</div>
-                {% for speaker in agenda_item.speakers %}
-                  <div class="ap-m-agenda-item-description-speaker">{{ speaker }}</div>
-
-          {% endfor %}
-
-            </li>
-          {% endfor %}
-        </ul>
-              </div>
-      </div>
+    <p>Thank you to everyone who joined us during the premiere of AMP Fest! From AMP and page experience, to Web Stories and WordPress, we shared a ton of exciting news during the event. And we learned from developers around the world who are using AMP to help succeed on the web.</p>
+    <p>If you weren’t able to catch it live, check out all the awesome talks from our event below.</p>
   </div>
 </section>
 
-
-<section class="ap--container" id="speakers">
-  <div class="ap--content-default" id="Speakers">
-    <h1>Speakers</h1>
-    <p>More info coming soon!</p>
+{% do doc.styles.addCssFile('/css/components/organisms/video-slider.css') %}
+<section class="ap--container">
+  <div class="ap--content-x-wide">
+    <h1>Featured Talks</h1>
+    <h2 class="ap-o-video-slider-text">Keynote</h2>
+    <amp-youtube data-videoid="FsvY5p3YDJ8"
+      width="391"
+      height="220"
+      layout="fixed">
+    </amp-youtube>
   </div>
-  </section>
+</section>
 
-<section class="ap--container" id="FAQ">
-  {% do doc.styles.addCssFile('css/components/molecules/faq.css') %}
-    <div class="ap-m-faq ampconf">
-      <h2>Frequently Asked Questions</h2>
-      <div class="ap-m-faq-content">
-        <p class="ap-m-faq-content-question">When is AMP Fest?</p>
-        <p class="ap-m-faq-content-answer">AMP Fest talks will all premiere Oct 13th at 9AM PT.</p>
-        <p class="ap-m-faq-content-question">How can I watch the event?</p>
-        <p class="ap-m-faq-content-answer"> The event will premiere on both the AMP YouTube Channel, as well as right here on this page. All talks will also be available for rewatching after they premiere. Register today and we’ll remind you to tune in!  </p>
-        <p class="ap-m-faq-content-question">Does it cost anything?</p>
-        <p class="ap-m-faq-content-answer">No - registration is free and everyone is welcome to tune in!  </p>
-        <p class="ap-m-faq-content-question">What language will the talks be in?</p>
-        <p class="ap-m-faq-content-answer">All talks will be streamed in English, and localized captions will be available on each video in the weeks following the event. 
-        </p>
-        <p class="ap-m-faq-content-question">Who is the event for?</p>
-        <p class="ap-m-faq-content-answer">This event is for anyone looking to create great page experiences on the web. Whether you are a web developer, site owner, designer, publisher, or email marketer, AMP Fest is for you! 
-        </p>
-        <p class="ap-m-faq-content-question">How can I have my questions answered?</p>
-        <p class="ap-m-faq-content-answer">We will be hosting a live AMA with the AMP Technical Steering Committee the same week as this event, so stay tuned for more info on that soon! We’ll also have live chat functionality during the event and will be sharding details on how you can participate as we get closer to the event. </p>
-      </div>
-    </div>
+<section class="ap--container">
+  <div class="ap--content-x-wide">
+    <h2 class="ap-o-video-slider-text">AMP for websites</h2>
+    {% with %}
+    {% set youtube_video_ids = [
+      'x7vPl0BjdDA',
+      'gDifXr5XsSg',
+      'nij2WXbi92w',
+      'uywcCcxchOs',
+      'ScwE5_LQ_ok'
+      ]
+    %}
+    {% include '/views/partials/video-carousel.j2' %}
+    {% endwith %}
+  </div>
+</section>
+
+<section class="ap--container">
+  <div class="ap--content-x-wide">
+    <h2 class="ap-o-video-slider-text">Industry experts and AMP success stories</h2>
+    {% with %}
+    {% set youtube_video_ids = [
+      '-m4E50kJnfM',
+      'S_UttIYzKtM',
+      'OkTGDTsp4aE',
+      '0CXINrKhX7w',
+      'ky9JmaRxh3s'
+      ]
+    %}
+    {% include '/views/partials/video-carousel.j2' %}
+    {% endwith %}
+  </div>
+</section>
+
+<section class="ap--container">
+  <div class="ap--content-x-wide">
+    <h2 class="ap-o-video-slider-text">Web Stories</h2>
+    {% with %}
+    {% set youtube_video_ids = [
+      '-Dc6vj97jLM',
+      'UbhtA71GEPU'
+      ]
+    %}
+    {% include '/views/partials/video-carousel.j2' %}
+    {% endwith %}
+  </div>
+</section>
+
+<section class="ap--container">
+  <div class="ap--content-x-wide">
+    <h2 class="ap-o-video-slider-text">AMP for Email</h2>
+    {% with %}
+    {% set youtube_video_ids = [
+      'rhZIDT3ydKQ',
+      'xjUvQHzFahM'
+      ]
+    %}
+    {% include '/views/partials/video-carousel.j2' %}
+    {% endwith %}
+  </div>
 </section>

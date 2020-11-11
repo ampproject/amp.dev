@@ -1,6 +1,6 @@
 ---
 $title: Optimize your hosted AMP pages
-$order: 20
+$order: 7
 description: 'The AMP runtime is optimized for speed and if your AMP pages are served by an AMP cache, they are fully optimized and offer the highest loading performance ...'
 
 formats:

@@ -142,7 +142,7 @@
     code {
       @include txt-mono;
       padding: 2px 4px;
-      background-color: color('gallery');
+      background-color: color('iron');
     }
 
     &-gh-label {
@@ -320,7 +320,7 @@
       margin-bottom: 1em;
       padding: 1em;
       border-radius: 4px;
-      background: color('gallery');
+      background: color('iron');
       transition: transform 0.2s cubic-bezier(.25,.1,.25,1), box-shadow 0.3s cubic-bezier(.25,.1,.25,1);
       @media (min-width: 768px) {
         padding: 1.5em;
@@ -340,7 +340,7 @@
         width: 30px;
         margin-right: 12px;
         border-radius: 50%;
-        background: color('malachite');
+        background: color('japan-laurel');
 
         .#{atom('ico')} {
           height: 100%;
@@ -372,7 +372,7 @@
       flex-direction: row;
       align-items: center;
       width: 100%;
-      background: color('gallery');
+      background: color('iron');
       border-radius: 4px;
       margin-bottom: 1em;
       padding: 1em;
@@ -400,7 +400,7 @@
       }
 
       &.active {
-        background: color('ebony-clay');
+        background: color('charade');
 
         h4 {
           color: color('white');
@@ -422,7 +422,7 @@
     }
 
     &-channel {
-      background: color('wild-sand');
+      background: color('athens-gray');
       margin-bottom: 1em;
       padding: 1.5em 1em;
       border-radius: 4px;

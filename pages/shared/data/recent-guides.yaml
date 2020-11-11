@@ -1,3 +1,15 @@
+- path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery_web_stories.md
+  date: '2020-10-15 14:29:25 -0600'
+- path: /content/amp-dev/documentation/guides-and-tutorials/develop/interactivity_guide/client_rendering.md
+  date: '2020-10-11 13:13:19 -0700'
+- path: /content/amp-dev/documentation/guides-and-tutorials/develop/interactivity_guide/foundations.md
+  date: '2020-10-11 13:13:19 -0700'
+- path: /content/amp-dev/documentation/guides-and-tutorials/develop/interactivity_guide/index.md
+  date: '2020-10-11 13:13:19 -0700'
+- path: /content/amp-dev/documentation/guides-and-tutorials/develop/interactivity_guide/personalized_experiences.md
+  date: '2020-10-11 13:13:19 -0700'
+- path: /content/amp-dev/documentation/guides-and-tutorials/develop/interactivity_guide/ready_made.md
+  date: '2020-10-11 13:13:19 -0700'
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/cors-in-email.md
   date: '2020-09-15 17:04:24 +0100'
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-optimizer-guide/explainer.md
@@ -133,10 +145,6 @@
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/animations/introduction_to_animations.md
   date: '2019-01-29 17:38:27 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/animations/triggering_css_animations.md
-  date: '2019-01-29 17:38:27 -0800'
-- path: /content/amp-dev/documentation/guides-and-tutorials/develop/interactivity_data/dealing_with_data.md
-  date: '2019-01-29 17:38:27 -0800'
-- path: /content/amp-dev/documentation/guides-and-tutorials/develop/interactivity_data/state_binding.md
   date: '2019-01-29 17:38:27 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/iframes.md
   date: '2019-01-29 17:38:27 -0800'

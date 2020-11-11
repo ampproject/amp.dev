@@ -47,7 +47,7 @@
     },
     "packager": {
       "scheme": "http",
-      "host": "ig-amp-dev-packager-8g83.c.amp-dev-230314.internal",
+      "host": "ig-amp-dev-packager-594k.c.amp-dev-230314.internal",
       "port": "8080"
     },
     "thumbor": {
@@ -63,6 +63,14 @@
     },
     "us-east1": {
       "host": "10.64.29.227",
+      "port": "6379"
+    },
+    "asia-northeast1": {
+      "host": "10.232.55.123",
+      "port": "6379"
+    },
+    "us-west3": {
+      "host": "10.171.90.147",
       "port": "6379"
     }
   }

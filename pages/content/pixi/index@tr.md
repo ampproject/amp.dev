@@ -61,7 +61,7 @@ scriptText:
     passed: Başarılı
     passedAddition: başarılı
     none: Yok
-    nothingToDo: Gerekli eylem yok
+    nothingToDo: Gerekli eylem yok &#x1F389;
     fileAnIssue: AMP ile sorun bildir
     recommendation: öneri
     recommendations: öneriler
@@ -84,4 +84,4 @@ scriptText:
     intrusiveInterstitials: Araya Giren Geçiş Reklamları
 ---
 
-AMP sayfa deneyim kılavuzu, AMP geliştiricilerine AMP sayfalarının Google Arama sayfası deneyimi sıralama sinyaline göre nasıl performans sergilediğini gösteren ve nasıl iyileştirilebilecekleri konusunda işlem yapılabilir geri bildirimler sağlayan bir araçtır. Size işlem yapılabilir içgörüler sağlayamıyorsak, lütfen mevcut bilgi istemlerini kullanarak [GitHub'da bir sorun bildirin](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue) böylece ekibimiz AMP sayfalarınızın nasıl iyileştirilebileceğini anlamanıza yardımcı olabilir. [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/), [Güvenli Gezinti](https://developers.google.com/safe-browsing/v4/lookup-api) ve [Mobil Uyumluluk Testi](https://search.google.com/test/mobile-friendly) gibi herkese açık API'leri kullanıyoruz.
+AMP sayfa deneyim kılavuzu, AMP geliştiricilerine AMP sayfalarının Google Arama sayfası deneyimi sıralama sinyaline göre nasıl performans sergilediğini gösteren ve nasıl iyileştirilebilecekleri konusunda işlem yapılabilir geri bildirimler sağlayan bir araçtır. Size işlem yapılabilir içgörüler sağlayamıyorsak, lütfen mevcut bilgi istemlerini kullanarak [GitHub'da bir sorun bildirin](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue) böylece ekibimiz AMP sayfalarınızın nasıl iyileştirilebileceğini anlamanıza yardımcı olabilir. [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?hl=tr), [Güvenli Gezinti](https://developers.google.com/safe-browsing/v4/lookup-api?hl=tr) ve [Mobil Uyumluluk Testi](https://search.google.com/test/mobile-friendly?hl=tr) gibi herkese açık API'leri kullanıyoruz.

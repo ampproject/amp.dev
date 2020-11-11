@@ -61,7 +61,7 @@ scriptText:
     passed: Passed
     passedAddition: passed
     none: None
-    nothingToDo: No action needed!
+    nothingToDo: No action needed! &#x1F389;
     fileAnIssue: File an issue with AMP
     recommendation: recommendation
     recommendations: recommendations

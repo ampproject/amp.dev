@@ -61,7 +61,7 @@ scriptText:
     passed: نجاح
     passedAddition: نجاح
     none: لا يوجد
-    nothingToDo: لا يوجد إجراء مطلوب
+    nothingToDo: لا يوجد إجراء مطلوب &#x1F389;
     fileAnIssue: الإبلاغ عن مشكلة في AMP
     recommendation: توصية
     recommendations: توصيات
@@ -84,4 +84,4 @@ scriptText:
     intrusiveInterstitials: صفحات بينية متدخلة
 ---
 
-إن دليل تجربة صفحة AMP أداة توضح لمطوري AMP طريقة أداء صفحات AMP الخاصة بهم في ضوء إشارة تصنيف تجربة صفحة بحث Google، كما يوفر تعليقات عملية حول طريقة تحسينها. إذا لم نتمكن من تزويدك بإحصاءات قابلة للتنفيذ، فيرجى استخدام رسائل التوجيه المتاحة [للإبلاغ عن مشكلة على GitHub](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue) حتى يتمكن فريقنا من مساعدتك في فهم طريقة تحسين صفحات AMP الخاصة بك. وإننا نستخدم واجهات برمجة التطبيقات المتاحة للجمهور مثل [رؤى سرعة الصفحة](https://developers.google.com/speed/pagespeed/insights/) و[التصفح الآمن](https://developers.google.com/safe-browsing/v4/lookup-api) و[اختبار التوافق مع الهاتف المحمول](https://search.google.com/test/mobile-friendly).
+إن دليل تجربة صفحة AMP أداة توضح لمطوري AMP طريقة أداء صفحات AMP الخاصة بهم في ضوء إشارة تصنيف تجربة صفحة بحث Google، كما يوفر تعليقات عملية حول طريقة تحسينها. إذا لم نتمكن من تزويدك بإحصاءات قابلة للتنفيذ، فيرجى استخدام رسائل التوجيه المتاحة [للإبلاغ عن مشكلة على GitHub](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue) حتى يتمكن فريقنا من مساعدتك في فهم طريقة تحسين صفحات AMP الخاصة بك. وإننا نستخدم واجهات برمجة التطبيقات المتاحة للجمهور مثل [رؤى سرعة الصفحة](https://developers.google.com/speed/pagespeed/insights/?hl=ar) و[التصفح الآمن](https://developers.google.com/safe-browsing/v4/lookup-api?hl=ar) و[اختبار التوافق مع الهاتف المحمول](https://search.google.com/test/mobile-friendly?hl=ar).
