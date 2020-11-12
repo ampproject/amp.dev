@@ -1588,7 +1588,6 @@ msgstr "Thống nhất và có khả năng mở rộng"
 msgid "AMP pages load near instantly, enabling you to offer a consistently fast experience across all devices and platforms."
 msgstr "Các trang AMP được tải gần như tức thì, cho phép bạn cung cấp một trải nghiệm nhanh trên tất cả các thiết bị và nền tảng."
 
-<<<<<<< HEAD
 msgid "You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal."
 msgstr "Bạn có thể chuyển đổi toàn bộ kho lưu trữ của mình chỉ trong vài ngày, đặc biệt nếu bạn sử dụng các CMS phổ biến như Wordpress hoặc Drupal."
 
