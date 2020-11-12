@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+const FetchError = require('../../../platform/lib/utils/fetchError.js')
+
 const API_ENDPOINT = API_ENDPOINT_LINTER;
 
 const directMapping = {
@@ -48,6 +50,10 @@ export default class AmpLinterCheck {
 
   parseApiResult(apiResult) {
     if (apiResult.status !== 'ok') {
+      if (apiResult.errorId == FetchError.UNSUPPORTED_CONTENT_TYPE) {
+        return {data: {hasUnsupportedContentType: true}};
+      }
+
       return {data: {isLoaded: false}};
     }
 

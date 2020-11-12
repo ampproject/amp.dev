@@ -20,6 +20,9 @@ async function getStatusId(checkPromises, recommendationsPromise) {
     if (linter.error) {
       return 'generic-error';
     }
+    if (linter.hasUnsupportedContentType) {
+      return 'invalid-content-type';
+    }
     if (!linter.isLoaded) {
       return 'invalid-url';
     }
