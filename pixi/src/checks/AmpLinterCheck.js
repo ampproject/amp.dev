@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-const FetchError = require('../../../platform/lib/utils/fetchError.js')
+const FetchError = require('../../../platform/lib/utils/fetchError.js');
 
 const API_ENDPOINT = API_ENDPOINT_LINTER;
 
