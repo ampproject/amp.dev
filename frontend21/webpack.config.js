@@ -106,10 +106,12 @@ module.exports = (env, argv) => {
           path.resolve(process.cwd(), '../dist/static/frontend/**/*'),
         ],
       }),
-      new WebpackBuildNotifierPlugin({
-        title: 'amp.dev Frontend',
-        logo: path.join(process.cwd(), '/static/img/favicon-128x128.png'),
-      }),
+      isDevelopment
+        ? new WebpackBuildNotifierPlugin({
+            title: 'amp.dev Frontend',
+            logo: path.join(process.cwd(), '/static/img/favicon-128x128.png'),
+          })
+        : () => {},
     ],
     module: {
       rules: [
