@@ -97,7 +97,6 @@ export default class PageExperienceCheck {
         result.data[resultName] = !details.items.length;
         result.details[resultName] = details;
       }
-
     }
   }
 
