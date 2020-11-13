@@ -147,9 +147,7 @@ module.exports = (env, argv) => {
           use: [
             {
               loader: MiniCssExtractPlugin.loader,
-              options: {
-                hmr: isDevelopment ? true : false,
-              },
+              options: {},
             },
             {
               loader: 'css-loader',
