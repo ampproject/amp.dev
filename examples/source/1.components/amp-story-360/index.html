@@ -1,0 +1,115 @@
+<!---
+author: philipbell
+--->
+
+<!--
+  ## Introduction
+
+  The [`amp-story-360`](/documentation/components/amp-story-360/?format=stories) component embeds 360 images and videos, explorable by gyroscope or animatable between points.
+  
+  In this guide we build a Web Story with a 360 image and 360 video.
+-->
+
+<!-- -->
+<!doctype html>
+<html ⚡ lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="description" content="This is an immersive story with 360 content.">
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0/amp-story-1.0.js">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+    <!-- To begin, import `amp-story-360` along with your other stories imports. -->
+    <script async custom-element="amp-story-360" src="https://cdn.ampproject.org/v0/amp-story-360-0.1.js"></script>
+    <!-- We also import `amp-video` since we are using video. -->
+    <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+    <style amp-custom>
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <link rel="canonical" href=".">
+    <title>amp-story-360</title>
+  </head>
+  <body>
+    <amp-story standalone
+      publisher="Stories Format"
+      title="amp-story-360"
+      poster-portrait-src="img/amp-story-360-video-cover.jpg"
+      publisher-logo-src="https://amp.dev/static/img/icons/icon-512x512.png">
+      <!-- 
+        ## Overview
+
+        We will create a 360 experience that animates between two points. We will also use the optional `controls="gyroscope"` attribute to explore the 360 media.
+  
+        ## Define the 360 experience
+        
+        To add a 360 component, we specify animation attributes and a child element:
+
+        Lets specify the animation attributes:  
+        - `heading-start` The heading (horizontal angle in degrees) at the beginning of an animation.  
+        - `pitch-start` The pitch (vertical angle in degrees) at the beginning of an animation.  
+        - `zoom-start` The zoom at the beginning of an animation.  
+        - `heading-end` The heading of a complete animation.  
+        - `pitch-end` The pitch of a complete animation.  
+        - `zoom-end` The zoom of a complete animation.  
+        - `duration` How many seconds (s) or milliseconds (ms) an animation takes to complete.  
+        - `controls` Specifies using the device’s gyroscope sensor to set orientation. If the device requires permission for the sensor an `activate-360` button will display. If the gyroscope sensor is not available, it will default to animating.
+
+        Lets add the media.  
+        The `amp-story-360` component accepts 1 descendant, an [`amp-img`](https://amp.dev/documentation/components/amp-img/?format=stories) or [`amp-video`](https://amp.dev/documentation/components/amp-video/?format=stories).  
+        On this page, we are using an [`amp-img`](https://amp.dev/documentation/components/amp-img/?format=stories).  
+        Photo credit: [NASA / JPL / MSSS / Seán Doran](https://informal.jpl.nasa.gov/museum/360-video).  
+      -->
+
+      <amp-story-page id="360-image-1">
+        <amp-story-grid-layer template="fill">
+          <amp-story-360 layout="fill"
+            heading-start="115"
+            pitch-start="10"
+            zoom-start=".9"
+            heading-end="50"
+            pitch-end="-5"
+            zoom-end="1.33"
+            duration="3s"
+            controls="gyroscope">
+            <amp-img
+              src="/static/samples/img/amp-story-360.jpg" width="4300" height="2150">
+            </amp-img>
+          </amp-story-360>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <!--
+        Now we can create another 360 component with the same attributes.  
+        For this page, we will use an [`amp-video`](https://amp.dev/documentation/components/amp-video/?format=stories).  
+        Video credit: [NASA](https://commons.wikimedia.org/wiki/File:NASA_VR-360_Astronaut_Training-_Space_Walk.webm).  
+      -->
+  
+      <amp-story-page id="360-video-1">
+        <amp-story-grid-layer template="fill">
+          <amp-story-360 layout="fill"
+            heading-start="30" 
+            pitch-start="20" 
+            zoom-start=".9"
+            heading-end="-20" 
+            pitch-end="10" 
+            zoom-end="1.33"
+            duration="3s"
+            controls="gyroscope">
+            <amp-video poster="img/amp-story-360-video-cover.jpg" autoplay layout="fill" loop>
+              <source src="/static/samples/video/amp-story-360.mp4" type="video/mp4" />
+            </amp-video>
+          </amp-story-360>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+    </amp-story>
+  </body>
+</html>
+
+<!--
+        # More resources
+
+        If you want to learn more about 360 content for Web Stories, head over to the [documentation](/documentation/components/amp-story-360?format=stories).
+      -->
