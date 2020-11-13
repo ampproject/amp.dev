@@ -17,6 +17,7 @@ import {addTargetBlankToLinks, cleanCodeForInnerHtml} from '../../utils/texts';
 
 const VALUE_TYPE_BYTES = 'bytes';
 const VALUE_TYPE_MS = 'ms';
+const VALUE_TYPE_TIMESPAN_MS = 'timespanMs';
 const VALUE_TYPE_THUMBNAIL = 'thumbnail';
 const VALUE_TYPE_URL = 'url';
 
@@ -135,7 +136,10 @@ export default class RecommendationItem {
           }" layout="fill"></amp-img>`;
         } else if (column.type == VALUE_TYPE_BYTES) {
           value = `${(item[column.key] / 1000).toFixed(2)}KB`;
-        } else if (column.type == VALUE_TYPE_MS) {
+        } else if (
+          column.type == VALUE_TYPE_MS ||
+          column.type == VALUE_TYPE_TIMESPAN_MS
+        ) {
           value = `${item[column.key].toFixed(2)}ms`;
         } else if (column.type == VALUE_TYPE_URL) {
           value = `<a href="${

@@ -89,10 +89,12 @@ export default class PageExperienceCheck {
   addScoreCheck(result, resultName, audits, testName) {
     if (audits && audits[testName] && !Number.isNaN(audits[testName].score)) {
       result.data[resultName] = audits[testName].score === 1;
-
       result.descriptions[resultName] = audits[testName].description;
       const details = audits[testName].details;
       if (details) {
+        // If a check has additional details although it identifies as passing
+        // show the recommendation anyway
+        result.data[resultName] = !details.items.length;
         result.details[resultName] = details;
       }
     }
