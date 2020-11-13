@@ -77,7 +77,6 @@ module.exports = (env, argv) => {
         chunkFilename:
           'static/frontend/' +
           (isDevelopment ? '[id].css' : '[name].[contenthash].css'),
-        publicPath: 'static/frontend/',
       }),
       new FileManagerPlugin({
         onEnd: {
@@ -106,10 +105,12 @@ module.exports = (env, argv) => {
           path.resolve(process.cwd(), '../dist/static/frontend/**/*'),
         ],
       }),
-      new WebpackBuildNotifierPlugin({
-        title: 'amp.dev Frontend',
-        logo: path.join(process.cwd(), '/static/img/favicon-128x128.png'),
-      }),
+      isDevelopment
+        ? new WebpackBuildNotifierPlugin({
+            title: 'amp.dev Frontend',
+            logo: path.join(process.cwd(), '/static/img/favicon-128x128.png'),
+          })
+        : () => {},
     ],
     module: {
       rules: [
@@ -146,9 +147,7 @@ module.exports = (env, argv) => {
           use: [
             {
               loader: MiniCssExtractPlugin.loader,
-              options: {
-                hmr: isDevelopment ? true : false,
-              },
+              options: {},
             },
             {
               loader: 'css-loader',

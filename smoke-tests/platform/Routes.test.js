@@ -42,14 +42,14 @@ describe('Routes', () => {
     const response = await fetch(config.hosts.playground.base);
     expect(response.status).toBe(200);
   });
-  it('serves logs', async () => {
-    const sampleLogUrl = new URL(
-      '?v=012005151844001&id=2y&s[]=amp-video&s[]=amp-video',
-      config.hosts.log.base
-    );
-    const response = await fetch(sampleLogUrl);
-    expect(response.status).toBe(200);
-  });
+  // it('serves logs', async () => {
+  //   const sampleLogUrl = new URL(
+  //     '?v=012005151844001&id=2y&s[]=amp-video&s[]=amp-video',
+  //     config.hosts.log.base
+  //   );
+  //   const response = await fetch(sampleLogUrl);
+  //   expect(response.status).toBe(200);
+  // });
   it('serves health check', async () => {
     const response = await fetch(HEALTH_CHECK_PATH);
     expect(response.status).toBe(200);
@@ -71,7 +71,7 @@ describe('Routes', () => {
       });
     });
   });
-  it('serves Pixi', async () => {
+  it('serves pixi', async () => {
     const response = await fetch('/page-experience/');
     expect(response.status).toBe(200);
     const body = await response.text();

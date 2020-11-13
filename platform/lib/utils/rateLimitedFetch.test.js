@@ -62,6 +62,25 @@ test('Fetch error unsupported content type', () => {
   });
 });
 
+test('Fetch error no content type header', () => {
+  fetch.mockReturnValue(
+    Promise.resolve(
+      new Response('{}', {
+        status: 200,
+        headers: {
+          'content-type': null,
+        },
+      })
+    )
+  );
+  const result = remoteFetch.fetchHtmlDocument('http://www.test');
+  expect.assertions(2);
+  return result.catch((e) => {
+    expect(e.errorId).toEqual(RemoteFetchError.UNSUPPORTED_CONTENT_TYPE);
+    expect(e.message).toEqual('http://www.test is no HTML document.');
+  });
+});
+
 test('Fetch error empty url', () => {
   const result = remoteFetch.fetchHtmlDocument('');
   expect.assertions(2);

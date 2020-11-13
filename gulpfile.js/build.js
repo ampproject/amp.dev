@@ -137,14 +137,16 @@ function icons() {
     .pipe(gulp.dest(`${project.paths.GROW_POD}/icons`));
 }
 
+function buildFrontend21() {
+  return sh('npm run build:frontend');
+}
+
 /**
  * Runs all tasks needed to build the frontend
  * @return {undefined}
  */
-async function buildFrontend(done) {
-  return gulp.parallel(sass, templates, icons, async () => {
-    await sh('npm run build:frontend');
-  })(done);
+function buildFrontend(done) {
+  return gulp.parallel(sass, templates, icons, buildFrontend21)(done);
 }
 
 /**
