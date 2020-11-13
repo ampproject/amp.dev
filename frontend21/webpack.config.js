@@ -77,7 +77,6 @@ module.exports = (env, argv) => {
         chunkFilename:
           'static/frontend/' +
           (isDevelopment ? '[id].css' : '[name].[contenthash].css'),
-        publicPath: 'static/frontend/',
       }),
       new FileManagerPlugin({
         onEnd: {
