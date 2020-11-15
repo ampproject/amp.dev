@@ -47,11 +47,10 @@ Aprender AMP es una gran forma de aprender el desarrollo web ya que los sitios A
 
 - no dependientes en especial de herramientas o software para construir o publicar en línea.
 
-Adquirirás habilidades mientras construyes páginas AMP
+Adquirirás habilidades mientras construyes páginas AMP que se puedan transferir a sitios web construidos en otros formatos o frameworks. Como muchos frameworks populares, AMP es un enfoque basado en componentes para diseñar y crear sitios web con las mejores prácticas reconocidas. Aprenderás a construir sitios web con dichas prácticas, inicia pensando en componentes, y evitando malos habitos que dañen la experiencia del usuario. Estas habilidades universales pueden ser aplicadas en toda la web.
 
-You’ll acquire skills while building AMP pages that can be transferred to building websites in other formats or frameworks. Like many popular frameworks, AMP is a component-based approach to designing and building websites. You will learn to build websites with recognized best practices, start thinking in components, and avoid bad habits that harm user experience. These universal skills can be applied across the web.
+AMP aborda el rendimiento, la accesibilidad y el diseño responsivo para que puedas concentrarte en la funcionalidad. Sin embargo, si deseas perfeccionar tus habilidades, aprendiendo AMP puedo ayudarte a descubrir cómo es que AMP trabaja. Podrás continuar aprendiendo y madurando como desarrollador, incluso mientras tus usuarios disfrutan las experiencias que AMP te ayudó a crear.
 
-AMP addresses performance, accessibility, and responsive design so that you can focus on the features. However, if you want to hone your skills, learning AMP can also help you discover exactly how AMP addresses these concerns. You will continue to learn and mature as a developer, even while your users enjoy the experiences that AMP helped you to build.
 [/filter]
 [filter level="advanced"]
 AMP es una librería de componentes web, un conjunto de buenas prácticas y un esquema de caché. Juntos, estos pueden ayudar a desarrolladores a crear sitios web interactivos y con rendimiento rápidamente.
