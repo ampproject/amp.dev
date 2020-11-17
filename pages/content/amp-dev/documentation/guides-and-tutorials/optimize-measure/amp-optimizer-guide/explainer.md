@@ -11,7 +11,7 @@ author: sebastianbenz
 An AMP Optimizer takes a valid AMPHTML document as input and transforms it into an optimized version by applying additional optimizations that would be cumbersome to do “by hand”. You can recognize the resulting “**transformed AMP**” in the `html` element via the `transformed` attribute:
 
 ```
-<html ⚡ i-amphtml-layout i-amphtml-no-boilerplate transformed="self">
+<html ⚡ i-amphtml-layout i-amphtml-no-boilerplate transformed="self;v=1">
 ```
 
 Note: AMP caches use a different transformed flag, for example, the Google AMP caches adds `transformed=google;v=1`.
