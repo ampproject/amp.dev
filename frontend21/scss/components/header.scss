@@ -7,7 +7,6 @@
   max-width: 2020px;
   margin: 0 auto;
   background: color('white');
-
   /* Add a shadow to simulate that the flyouts are under the header */
   &:after {
     content: "";
@@ -94,9 +93,11 @@
     &-item {
       position: relative;
       display: flex;
-      align-items: center;
+      flex-direction: column;
 
       @media (min-width: 1024px) {
+        flex-direction: row;
+        align-items: center;
         height: 100%;
         margin: 0 18px;
       }
@@ -118,6 +119,7 @@
   }
 
   &-burger {
+
     @media (min-width: 1024px) {
       display: none;
     }
@@ -131,6 +133,7 @@
   &-flyout:hover,
   &-nav-link:focus ~ &-flyout,
   &-nav-link:hover ~ &-flyout {
+    display: block;
     opacity: 1;
     pointer-events: all;
     transition: opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -143,24 +146,31 @@
   }
 
   &-flyout {
-    @include flyout;
-    position: absolute;
-    top: 100%;
-    left: 0;
+    display: none;
     margin: 0;
-    padding: 0 0 10px;
-    pointer-events: none;
-    opacity: 0;
+    padding: 10px;
     border-radius: 0 0 4px 4px;
     list-style: none;
     background: color('white');
     transition: opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
 
+    @media (min-width: 1024px) {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      opacity: 0;
+      pointer-events: none;
+      box-shadow: 0 10px 25px 0 rgba(0,0,0,0.2);
+    }
+
     &-item {
-      &-secondary {
-        margin: 20px 0;
+      &.secondary {
         white-space: nowrap;
         min-width: 200px;
+
+        & + & {
+          margin-top: 20px;
+        }
 
         a:hover {
           color: color('blue-ribbon');
@@ -168,18 +178,25 @@
       }
 
       &-title {
-        // font-family: 'Poppins', sans-serif;
         font-weight: bold;
         color: color('river-bed');
 
-        &.secondary {
-          padding: 0 15px;
+        .secondary & {
+          @media (min-width: 1024px) {
+            padding-left: 15px;
+            background: red;
+          }
         }
       }
 
       &-description {
+        display: none;
         opacity: 0.75;
         line-height: 1.25;
+
+        @media (min-width: 1024px) {
+          display: block;
+        }
       }
     }
 
@@ -188,7 +205,6 @@
       width: 300px;
 
       &:hover &-link {
-        @include flyout;
         background-color: color('blue-ribbon');
 
         &-info > * {
@@ -248,17 +264,26 @@
         display: flex;
         align-items: center;
         border-radius: 4px;
-        padding: 10px;
-        margin: 0 5px;
+        padding: 10px 0;
 
-        &-info {
-          margin: 0 20px 0 15px;
+        @media (min-width: 1024px) {
+          padding: 10px;
+          margin: 0 5px;
+
+          &-info {
+            margin: 0 20px 0 15px;
+          }
         }
 
         &-icon {
           @include ico;
+          display: none;
           width: 2em;
           height: 2em;
+
+          @media (min-width: 1024px) {
+            display: block;
+          }
 
           &.websites {
             fill: url("#gradient-websites") color('black');

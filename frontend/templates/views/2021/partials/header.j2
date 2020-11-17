@@ -73,8 +73,8 @@ to provide its state to other components #}
             </a>
           </li>
           {% else %}
-          <li class="ap-header-flyout-item-secondary">
-            <a class="ap-header-flyout-item-title secondary" href="{{ flyout_doc.url.path }}">{{_(flyout_doc.titles('navigation'))}}</a>
+          <li class="ap-header-flyout-item secondary">
+            <a class="ap-header-flyout-item-title" href="{{ flyout_doc.url.path }}">{{_(flyout_doc.titles('navigation'))}}</a>
           </li>
           {% endif %}
           {% endfor %}
