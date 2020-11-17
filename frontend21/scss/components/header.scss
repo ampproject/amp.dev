@@ -94,11 +94,13 @@
       position: relative;
       display: flex;
       flex-direction: column;
+      margin-bottom: 16px;
 
       @media (min-width: 1024px) {
         flex-direction: row;
         align-items: center;
         height: 100%;
+        margin-bottom: 0;
       }
     }
 
@@ -126,7 +128,7 @@
     display: none;
     min-width: 300px;
     margin: 0;
-    padding: 15px;
+    padding: 15px 5px;
     border-radius: 0 0 4px 4px;
     list-style: none;
     background: color('white');
@@ -148,11 +150,19 @@
 
       &.primary {
         border-radius: 4px;
+
+        @media (min-width: 1024px) {
+          margin-top: 0;
+        }
       }
 
       &:hover {
         &.primary {
-          background: blue;
+          background: color('blue-ribbon');
+
+          * {
+            color: color('white');
+          }
         }
 
         &.websites {
@@ -219,14 +229,22 @@
       }
 
       &-title {
-        font-weight: bold;
+        font-size: 14px;
+        font-weight: 400;
         color: color('river-bed');
+
+        @media (min-width: 1024px) {
+          font-weight: 700;
+          color: color('black');
+        }
       }
 
       &-description {
         display: none;
-        opacity: 0.75;
-        line-height: 1.25;
+        font-size: 13px;
+        font-weight: 400;
+        color: color('river-bed');
+
         @media (min-width: 1024px) {
           display: block;
         }
