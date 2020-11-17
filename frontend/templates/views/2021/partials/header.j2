@@ -84,18 +84,16 @@ to provide its state to other components #}
       {% endfor %}
     </nav>
 
-    <label class="ap-o-header-burger"
+    <button class="ap-header-burger"
         on="tap:AMP.setState({mainmenuopen: !mainmenuopen, noScrollState: !noScrollState})"
-        [class]="'ap-o-header-burger ' + (mainmenuopen ? 'mainmenuopen ' : '')"
-        for="burger-menu"
+        [class]="'ap-header-burger ' + (mainmenuopen ? 'mainmenuopen ' : '')"
         tabindex="0"
-        role="button"
         aria-label="{{ _('Burger Menu') }}">
-      <div class="ap-a-ico ap-o-burger-menu-icon">
+      <div class="ap-a-ico ap-header-burger-icon">
         {% do doc.icons.useIcon('/icons/menu.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg>
       </div>
-    </label>
+    </button>
 
   </div>
 </header>
