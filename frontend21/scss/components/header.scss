@@ -1,0 +1,309 @@
+/*
+
+#############################
+### ORGANISM: header ########
+#############################
+
+*/
+
+
+.#{utility('header')} {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  width: 100%;
+  max-width: 2020px;
+  margin: 0 auto;
+  background: color('white');
+
+  /* Add a shadow to simulate that the flyouts are under the header */
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 8px;
+    margin-bottom: 10px;
+    background: linear-gradient(to bottom, fade_out(color('black'), 0.93) 0%, fade_out(color('white'), 0.93) 100%);
+  }
+}
+
+.#{organism('header')} {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  height: 55px;
+  max-width: 1460px;
+  padding: 0 20px;
+  margin: 0 auto;
+
+  @media (min-width: 1024px) {
+    display: flex;
+    padding-left: 30px;
+  }
+
+  &-home {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10px;
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+
+    &-logo {
+      height: 30px;
+      margin-right: 6px;
+      width: 30px;
+    }
+
+    &-sub-title,
+    &-title {
+      margin-left: 4px;
+      font-weight: bold;
+      font-size: 18px;
+      color: color('blue-ribbon');
+
+      @media (min-width: 1024px) {
+        font-size: 24px;
+      }
+    }
+
+    &-sub-title {
+      color: color('black');
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+
+  &-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 100%);
+    padding: 30px;
+    background: color('white');
+    transform: translateX(100%);
+    transition: transform 0.2s cubic-bezier(.25,.1,.25,1);
+
+    .mainmenuopen & {
+      transform: translateX(0);
+    }
+
+    @media (min-width: 1024px) {
+      position: relative;
+      top: 0;
+      display: flex;
+      align-items: center;
+      flex: 1 1 auto;
+      height: 100%;
+      padding: 0 30px;
+      transform: translateX(0);
+    }
+
+    &-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      @media (min-width: 1024px) {
+        height: 100%;
+        margin: 0 18px;
+      }
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      border: 0;
+      background: none;
+
+      &-icon {
+        font-size: 8px;
+        margin-left: 5px;
+        transform: rotate(0deg);
+        transition: transform 0.2s cubic-bezier(.25,.1,.25,1);
+      }
+    }
+  }
+
+  &-burger {
+    @media (min-width: 1024px) {
+      display: none;
+    }
+  }
+
+
+  &-flyout:hover,
+  &-main-link:focus ~ &-flyout,
+  &-main-link:hover ~ &-flyout {
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  &-flyout:focus-within {
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  &-flyout {
+    @include flyout;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0 0 10px;
+    pointer-events: none;
+    opacity: 0;
+    border-radius: 0 0 4px 4px;
+    list-style: none;
+    background: color('white');
+    transition: opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+    &-item {
+      &-secondary {
+        margin: 20px 0;
+        white-space: nowrap;
+        min-width: 200px;
+
+        a:hover {
+          color: color('blue-ribbon');
+        }
+      }
+
+      &-title {
+        // font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+        color: color('river-bed');
+
+        // @include txt;
+        // @include txt-2;
+        // @include txt-strong;
+        // @include txt-font-accent;
+        // @include color-black;
+        // line-height: 1.4em;
+
+        &.secondary {
+          padding: 0 15px;
+        }
+      }
+
+      &-description {
+        // @include txt;
+        // @include txt-3;
+        opacity: 0.75;
+        line-height: 1.25em;
+      }
+    }
+
+    &-primary-item {
+      position: relative;
+      width: 300px;
+
+      &:hover &-link {
+        @include flyout;
+        background-color: color('blue-ribbon');
+
+        &-info > * {
+          @include color-white;
+        }
+
+        &-info-stories {
+          .#{organism('header')}-flyout-item-title {
+            @include color-stories;
+          }
+
+          .#{organism('header')}-flyout-item-description {
+            @include color-stories;
+          }
+        }
+
+        &-info-email {
+          .#{organism('header')}-flyout-item-title {
+            @include color-e-mails;
+          }
+
+          .#{organism('header')}-flyout-item-description {
+            @include color-e-mails;
+          }
+        }
+
+        &-icon {
+          @include fill-websites;
+
+          &.stories {
+            @include fill-stories;
+          }
+
+          &.email {
+            @include fill-e-mails;
+          }
+        }
+
+        &.websites {
+          @include gradient-websites;
+        }
+
+        &.stories {
+          @include gradient-stories;
+        }
+
+        &.ads {
+          @include gradient-ads;
+        }
+
+        &.email {
+          @include gradient-e-mails;
+        }
+      }
+
+      &-link {
+        display: flex;
+        align-items: center;
+        border-radius: 4px;
+        padding: 10px;
+        margin: 0 5px;
+
+        &-info {
+          margin: 0 20px 0 15px;
+        }
+
+        &-icon {
+          @include ico;
+          width: 2em;
+          height: 2em;
+
+          &.websites {
+            fill: url("#gradient-websites") color('black');
+          }
+
+          &.stories {
+            fill: url("#gradient-stories") color('black');
+          }
+
+          &.ads {
+            fill: url("#gradient-ads") color('black');
+          }
+
+          &.email {
+            fill: url("#gradient-email") color('black');
+          }
+        }
+      }
+    }
+  }
+}
+
+#blm-banner {
+  background: #111;
+  color: #eee;
+  display: block;
+  text-align: center;
+  padding: 0.5em;
+}

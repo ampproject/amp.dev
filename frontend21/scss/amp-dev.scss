@@ -1,7 +1,7 @@
 @import '../../frontend/scss/_functions.scss';
 @import '../../frontend/scss/_mixins.scss';
 @import '../../frontend/scss/_variables.scss';
-@import '../../frontend/scss/components/atoms/_text.scss';
+@import '../../frontend/scss/components/atoms/_icon.scss';
 @import '../../frontend/scss/components/atoms/_color.scss';
 
 @import 'components/section.scss';
@@ -10,6 +10,7 @@
 @import 'components/button.scss';
 @import 'components/pie-chart.scss';
 @import 'components/highlight-stripes.scss';
+@import 'components/header.scss';
 
 main {
   display: grid;
