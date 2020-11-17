@@ -129,8 +129,8 @@
   }
 
   &-flyout:hover,
-  &-main-link:focus ~ &-flyout,
-  &-main-link:hover ~ &-flyout {
+  &-nav-link:focus ~ &-flyout,
+  &-nav-link:hover ~ &-flyout {
     opacity: 1;
     pointer-events: all;
     transition: opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
