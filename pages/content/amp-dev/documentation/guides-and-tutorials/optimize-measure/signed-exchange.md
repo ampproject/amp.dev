@@ -207,7 +207,7 @@ Within the DevTools console, under the `network` tab, you will be able to see `s
 
 Here is a list of CDNs and hosting providers offering out-of-the-box support for signed exchanges. Using one of these is the easiest way to get started with signed exchanges:
 
-- [AMP Packager on the Google Cloud Marketplace](TODO LINK TO BLOG)
-  [AMP Packager](https://github.com/ampproject/amppackager#amp-packager) is a tool to improve AMP URLs by serving AMP using Signed Exchanges. Follow [our guide to deploy AMP Packager](https://github.com/ampproject/amppackager/tree/releases/deploy/gcloud#amp-packager-google-cloud-deployment) using unix shell scripts and Docker containers.
+- [AMP Packager Google Cloud Click-to-Deploy Installer](https://console.cloud.google.com/marketplace/details/google/amp-packager?filter=solution-type:k8s)
+  [AMP Packager](https://github.com/ampproject/amppackager#amp-packager) is a tool to improve AMP URLs by serving AMP using Signed Exchanges. Read more in [AMP Blog](TODO LINK TO BLOG).
 - [Cloudflare AMP Real URL](https://www.cloudflare.com/website-optimization/amp-real-url/).
   [Cloudflare](https://www.cloudflare.com/) is one of the world’s largest networks. Today, businesses, non-profits, bloggers, and anyone with an Internet presence boast faster, more secure websites and apps thanks to Cloudflare.
