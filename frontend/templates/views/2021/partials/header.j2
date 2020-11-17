@@ -60,13 +60,13 @@ to provide its state to other components #}
 
           {# If the flyout has an icon and a description its a primary item #}
           {% if flyout.icon and flyout.description %}
-          <li class="ap-header-flyout-primary-item">
-            <a class="ap-header-flyout-primary-item-link {{ flyout.format }}" href="{{ flyout_doc.url.path }}">
-              <div class="ap-header-flyout-primary-item-link-icon {{ flyout.format }}">
+          <li class="ap-header-flyout-item primary {{ flyout.format }}">
+            <a class="ap-header-flyout-item-link" href="{{ flyout_doc.url.path }}">
+              <div class="ap-header-flyout-item-link-icon">
                   <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ flyout.icon }}"></use></svg>
               </div>
 
-              <div class="ap-header-flyout-primary-item-link-info{% if flyout.format %} ap-header-flyout-primary-item-link-info-{{ flyout.format }}{% endif %}">
+              <div class="ap-header-flyout-item-link-info">
                 <div class="ap-header-flyout-item-title">{{_(flyout_doc.titles('navigation'))}}</div>
                 <div class="ap-header-flyout-item-description">{{_(flyout.description)}}</div>
               </div>

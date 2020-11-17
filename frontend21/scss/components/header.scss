@@ -10,6 +10,7 @@
   /* Add a shadow to simulate that the flyouts are under the header */
   &:after {
     content: "";
+    pointer-events: none;
     display: block;
     position: absolute;
     top: 100%;
@@ -50,7 +51,6 @@
       font-weight: bold;
       font-size: 18px;
       color: color('blue-ribbon');
-
       @media (min-width: 1024px) {
         font-size: 24px;
       }
@@ -99,15 +99,19 @@
         flex-direction: row;
         align-items: center;
         height: 100%;
-        margin: 0 18px;
       }
     }
 
     &-link {
       display: flex;
       align-items: center;
+      height: 100%;
       border: 0;
       background: none;
+
+      @media (min-width: 1024px) {
+        padding: 0 18px;
+      }
 
       &-icon {
         font-size: 8px;
@@ -118,37 +122,11 @@
     }
   }
 
-  &-burger {
-
-    @media (min-width: 1024px) {
-      display: none;
-    }
-
-    &-icon {
-      width: 30px;
-      height: 30px;
-    }
-  }
-
-  &-flyout:hover,
-  &-nav-link:focus ~ &-flyout,
-  &-nav-link:hover ~ &-flyout {
-    display: block;
-    opacity: 1;
-    pointer-events: all;
-    transition: opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
-  }
-
-  &-flyout:focus-within {
-    opacity: 1;
-    pointer-events: all;
-    transition: opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
-  }
-
   &-flyout {
     display: none;
+    min-width: 300px;
     margin: 0;
-    padding: 10px;
+    padding: 15px;
     border-radius: 0 0 4px 4px;
     list-style: none;
     background: color('white');
@@ -164,83 +142,17 @@
     }
 
     &-item {
-      &.secondary {
-        white-space: nowrap;
-        min-width: 200px;
-
-        & + & {
-          margin-top: 20px;
-        }
-
-        a:hover {
-          color: color('blue-ribbon');
-        }
+      & + & {
+        margin-top: 10px;
       }
 
-      &-title {
-        font-weight: bold;
-        color: color('river-bed');
-
-        .secondary & {
-          @media (min-width: 1024px) {
-            padding-left: 15px;
-            background: red;
-          }
-        }
+      &.primary {
+        border-radius: 4px;
       }
 
-      &-description {
-        display: none;
-        opacity: 0.75;
-        line-height: 1.25;
-
-        @media (min-width: 1024px) {
-          display: block;
-        }
-      }
-    }
-
-    &-primary-item {
-      position: relative;
-      width: 300px;
-
-      &:hover &-link {
-        background-color: color('blue-ribbon');
-
-        &-info > * {
-          @include color-white;
-        }
-
-        &-info-stories {
-          .#{organism('header')}-flyout-item-title {
-            @include color-stories;
-          }
-
-          .#{organism('header')}-flyout-item-description {
-            @include color-stories;
-          }
-        }
-
-        &-info-email {
-          .#{organism('header')}-flyout-item-title {
-            @include color-e-mails;
-          }
-
-          .#{organism('header')}-flyout-item-description {
-            @include color-e-mails;
-          }
-        }
-
-        &-icon {
-          @include fill-websites;
-
-          &.stories {
-            @include fill-stories;
-          }
-
-          &.email {
-            @include fill-e-mails;
-          }
+      &:hover {
+        &.primary {
+          background: blue;
         }
 
         &.websites {
@@ -264,22 +176,17 @@
         display: flex;
         align-items: center;
         border-radius: 4px;
-        padding: 10px 0;
 
         @media (min-width: 1024px) {
           padding: 10px;
           margin: 0 5px;
-
-          &-info {
-            margin: 0 20px 0 15px;
-          }
         }
 
         &-icon {
           @include ico;
           display: none;
-          width: 2em;
-          height: 2em;
+          width: 32px;
+          height: 32px;
 
           @media (min-width: 1024px) {
             display: block;
@@ -301,15 +208,53 @@
             fill: url("#gradient-email") color('black');
           }
         }
+
+        &-info {
+          @media (min-width: 1024px) {
+            &-info {
+              margin: 0 20px 0 15px;
+            }
+          }
+        }
+      }
+
+      &-title {
+        font-weight: bold;
+        color: color('river-bed');
+      }
+
+      &-description {
+        display: none;
+        opacity: 0.75;
+        line-height: 1.25;
+        @media (min-width: 1024px) {
+          display: block;
+        }
       }
     }
   }
-}
 
-#blm-banner {
-  background: #111;
-  color: #eee;
-  display: block;
-  text-align: center;
-  padding: 0.5em;
+  &-flyout:hover,
+  &-nav-link:focus ~ &-flyout,
+  &-nav-link:hover ~ &-flyout {
+    display: block;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &-flyout:focus-within {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &-burger {
+    @media (min-width: 1024px) {
+      display: none;
+    }
+
+    &-icon {
+      width: 30px;
+      height: 30px;
+    }
+  }
 }
