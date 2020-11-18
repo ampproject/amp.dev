@@ -139,12 +139,12 @@
       left: 18px;
       opacity: 0;
       pointer-events: none;
-      box-shadow: 0 10px 25px 0 rgba(0,0,0,0.2);
+      box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.8);
     }
 
     &-item {
       min-width: 200px;
-      
+
       & + & {
         margin-top: 10px;
       }
