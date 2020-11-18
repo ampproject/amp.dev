@@ -158,6 +158,12 @@
         }
       }
 
+      &.secondary {
+        @media (min-width: 1024px) {
+          padding: 0 15px;
+        }
+      }
+
       &:hover {
         &.primary {
           background: color('blue-ribbon');
