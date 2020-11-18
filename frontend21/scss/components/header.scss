@@ -126,7 +126,6 @@
 
   &-flyout {
     display: none;
-    min-width: 300px;
     margin: 0;
     padding: 15px 5px;
     border-radius: 0 0 4px 4px;
@@ -137,18 +136,21 @@
     @media (min-width: 1024px) {
       position: absolute;
       top: 100%;
-      left: 0;
+      left: 18px;
       opacity: 0;
       pointer-events: none;
       box-shadow: 0 10px 25px 0 rgba(0,0,0,0.2);
     }
 
     &-item {
+      min-width: 200px;
+      
       & + & {
         margin-top: 10px;
       }
 
       &.primary {
+        width: 300px;
         border-radius: 4px;
 
         @media (min-width: 1024px) {
@@ -221,9 +223,7 @@
 
         &-info {
           @media (min-width: 1024px) {
-            &-info {
-              margin: 0 20px 0 15px;
-            }
+            margin: 0 20px 0 15px;
           }
         }
       }
@@ -243,6 +243,7 @@
         display: none;
         font-size: 13px;
         font-weight: 400;
+        line-height: 1.25;
         color: color('river-bed');
 
         @media (min-width: 1024px) {
