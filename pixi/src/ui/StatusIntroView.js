@@ -18,6 +18,7 @@ import {addTargetBlankToLinks, cleanCodeForInnerHtml} from '../utils/texts';
 
 /* Status IDs for which it doesn't make sense to show the Fix now button */
 const UNFIXABLE_ERROR_IDS = [
+  'invalid-content-type',
   'invalid-url',
   'no-amp',
   'amp-cache-url',
