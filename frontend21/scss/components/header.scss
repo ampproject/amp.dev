@@ -1,4 +1,5 @@
 .#{prefix(null, 'header')} {
+  $header: &;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -51,6 +52,7 @@
       font-weight: bold;
       font-size: 18px;
       color: color('blue-ribbon');
+
       @media (min-width: 1024px) {
         font-size: 24px;
       }
@@ -131,7 +133,7 @@
     border-radius: 0 0 4px 4px;
     list-style: none;
     background: color('white');
-    transition: opacity 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: opacity 0.2s scubic-bezier(0.25, 0.1, 0.25, 1);
 
     @media (min-width: 1024px) {
       position: absolute;
@@ -146,48 +148,7 @@
       min-width: 200px;
 
       & + & {
-        margin-top: 10px;
-      }
-
-      &.primary {
-        width: 300px;
-        border-radius: 4px;
-
-        @media (min-width: 1024px) {
-          margin-top: 0;
-        }
-      }
-
-      &.secondary {
-        @media (min-width: 1024px) {
-          padding: 0 15px;
-        }
-      }
-
-      &:hover {
-        &.primary {
-          background: color('blue-ribbon');
-
-          * {
-            color: color('white');
-          }
-        }
-
-        &.websites {
-          @include gradient-websites;
-        }
-
-        &.stories {
-          @include gradient-stories;
-        }
-
-        &.ads {
-          @include gradient-ads;
-        }
-
-        &.email {
-          @include gradient-e-mails;
-        }
+        margin-top: 16px;
       }
 
       &-link {
@@ -210,20 +171,25 @@
             display: block;
           }
 
-          &.websites {
-            fill: url("#gradient-websites") color('black');
-          }
+          svg {
+            width: 100%;
+            height: 100%;
 
-          &.stories {
-            fill: url("#gradient-stories") color('black');
-          }
+            .websites & {
+              fill: url(#gradient-websites) #000;
+            }
 
-          &.ads {
-            fill: url("#gradient-ads") color('black');
-          }
+            .stories & {
+              fill: url(#gradient-stories) #000;
+            }
 
-          &.email {
-            fill: url("#gradient-email") color('black');
+            .ads & {
+              fill: url(#gradient-ads) #000;
+            }
+
+            .email & {
+              fill: url(#gradient-email) #000;
+            }
           }
         }
 
@@ -235,11 +201,12 @@
       }
 
       &-title {
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 400;
         color: color('river-bed');
 
         @media (min-width: 1024px) {
+          font-size: 14px;
           font-weight: 700;
           color: color('black');
         }
@@ -254,6 +221,74 @@
 
         @media (min-width: 1024px) {
           display: block;
+        }
+      }
+
+      &.--secondary {
+        @media (min-width: 1024px) {
+          padding: 0 15px;
+        }
+      }
+
+      &.--primary {
+        width: 300px;
+        border-radius: 4px;
+
+        @media (min-width: 1024px) {
+          margin-top: 0;
+        }
+      }
+
+      &:hover {
+        &.--secondary a {
+          color: color('blue-ribbon');
+        }
+
+        &.--primary {
+          background: color('blue-ribbon');
+
+          #{$header}-flyout-item-description,
+          #{$header}-flyout-item-title {
+            color: color('white');
+          }
+
+          svg {
+            fill: color('white');
+          }
+        }
+
+        &.websites {
+          @include gradient-websites;
+        }
+
+        &.stories {
+          @include gradient-stories;
+
+          #{$header}-flyout-item-description,
+          #{$header}-flyout-item-title {
+            color: color('charade');
+          }
+
+          svg {
+            fill: color('charade');
+          }
+        }
+
+        &.ads {
+          @include gradient-ads;
+        }
+
+        &.email {
+          @include gradient-e-mails;
+
+          #{$header}-flyout-item-description,
+          #{$header}-flyout-item-title {
+            color: color('charade');
+          }
+
+          svg {
+            fill: color('charade');
+          }
         }
       }
     }

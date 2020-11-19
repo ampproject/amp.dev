@@ -22,6 +22,11 @@ to provide its state to other components #}
     {% do doc.icons.useIcon('/icons/logo.svg') %}
     {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
 
+    {% set flyout_icons = ['amp-websites', 'amp-stories', 'amp-ads', 'amp-email', 'start', 'guides-documents', 'components-flyout', 'examples-flyout', 'learn', 'template', 'wrench'] %}
+    {% for icon in flyout_icons %}
+    {% do doc.icons.useIcon('/icons/' + icon + '.svg') %}
+    {% endfor %}
+
     <a class="ap-header-home" href="{{g.doc('/content/amp-dev/index.html', locale=doc.locale).url.path}}">
       <svg class="ap-header-home-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
       <span class="ap-header-home-title">AMP</span>
@@ -59,7 +64,7 @@ to provide its state to other components #}
 
           {# If the flyout has an icon and a description its a primary item #}
           {% if flyout.icon and flyout.description %}
-          <li class="ap-header-flyout-item primary {{ flyout.format }}">
+          <li class="ap-header-flyout-item --primary {{ flyout.format }}">
             <a class="ap-header-flyout-item-link" href="{{ flyout_doc.url.path }}">
               <div class="ap-header-flyout-item-link-icon">
                   <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ flyout.icon }}"></use></svg>
@@ -72,7 +77,7 @@ to provide its state to other components #}
             </a>
           </li>
           {% else %}
-          <li class="ap-header-flyout-item secondary">
+          <li class="ap-header-flyout-item --secondary">
             <a class="ap-header-flyout-item-title" href="{{ flyout_doc.url.path }}">{{_(flyout_doc.titles('navigation'))}}</a>
           </li>
           {% endif %}
