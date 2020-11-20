@@ -1,0 +1,52 @@
+.#{prefix(null, 'language-selector')} {
+  position: relative;
+  display: none;
+  height: 100%;
+  margin-right: 20px;
+
+  @media (min-width: 1024px) {
+    display: flex;
+    margin-right: 0;
+  }
+
+  &-toggle {
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    border: none;
+    background: none;
+
+    &:hover {
+      color: color('blue-ribbon');
+    }
+  }
+
+  &-icon {
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+  }
+
+  &-list {
+    list-style: none;
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 15%;
+    margin: 0;
+    padding: 2px 8px;
+    background: color('white');
+    box-shadow: 0 1px 15px 0 transparentize(color('black'), 0.8);
+  }
+
+  /* For when the selector is active */
+  &-list:hover,
+  &-toggle:hover ~ &-list,
+  &.languageselectoropen &-list {
+    display: block;
+  }
+
+  .mainmenuopen & {
+    display: flex;
+  }
+}
