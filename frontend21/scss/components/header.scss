@@ -26,9 +26,9 @@
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    height: 55px;
+    height: 50px;
     max-width: 1460px;
-    padding: 0 20px;
+    padding: 0 30px;
     margin: 0 auto;
   }
 
@@ -46,23 +46,16 @@
       width: 30px;
     }
 
-    &-sub-title,
     &-title {
       margin-left: 4px;
-      font-weight: bold;
+      font-family: Poppins, sans-serif;
+      font-weight: 700;
       font-size: 18px;
       color: color('blue-ribbon');
 
       @media (min-width: 1024px) {
-        font-size: 24px;
+        font-size: 18px;
       }
-    }
-
-    &-sub-title {
-      color: color('black');
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
     }
   }
 
