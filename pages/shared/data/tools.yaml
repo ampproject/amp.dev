@@ -159,7 +159,7 @@ platforms:
       height: 691
     formats:
       - email
-- name: 8b Website Builder
+  - name: 8b Website Builder
     type: Website Builder
     description: Easy-to-use online AMP website builder to create lightning-fast web pages in a visual way.
     url: https://8b.com/
