@@ -51,7 +51,7 @@
       margin-left: 4px;
       font-family: Poppins, sans-serif;
       font-weight: 700;
-      font-size: 18px;
+      font-size: 24px;
       color: color('blue-ribbon');
 
       @media (min-width: 1024px) {
@@ -110,6 +110,8 @@
       }
 
       &-icon {
+        width: 8px;
+        height: 8px;
         margin-left: 5px;
         transform: rotate(0deg);
         transition: transform 0.2s cubic-bezier(.25,.1,.25,1);
@@ -117,7 +119,7 @@
 
       &:hover {
         .#{prefix(null, 'header')}-nav-link-icon {
-          transform: translateY(1px);
+          transform: translateY(2px);
         }
       }
     }
