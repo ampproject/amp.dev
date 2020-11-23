@@ -119,6 +119,12 @@
         transform: rotate(0deg);
         transition: transform 0.2s cubic-bezier(.25,.1,.25,1);
       }
+      &:hover {
+        .#{prefix(null, 'header')}-nav-link-icon {
+          transform: translateY(1px);
+        }
+      }
+    }
     }
   }
 
