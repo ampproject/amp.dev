@@ -1,0 +1,46 @@
+.#{prefix(null, 'search-trigger')} {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0 0 0 20px;
+  padding: 5px 0;
+  cursor: pointer;
+
+  &-close {
+    position: fixed;
+    left: calc(90vw - 18px);
+    top: 35px;
+    padding: 12px;
+    margin: 0;
+    fill: #fff;
+    background: color('blue-ribbon');
+    border-radius: 50%;
+    box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.14);
+    z-index: 3;
+
+    @media (min-width: 1024px) {
+      position: absolute;
+      left: auto;
+      right: 10px;
+      top: 52px;
+    }
+
+    @media (min-width: 1280px) {
+      right: 52px;
+    }
+
+    @media (min-width: 1440px) {
+      right: 87px;
+    }
+  }
+
+  &-close &-icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  &-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
