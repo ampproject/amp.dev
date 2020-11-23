@@ -46,13 +46,13 @@ to provide its state to other components #}
       {% for section, homepage in sections %}
       <div class="ap-header-nav-item">
         {% if section == 'external' %}
-        <a class="ap-header-nav-link ap-m-nav-link" href="{{ homepage[1] }}">{{ homepage[0] }}</a>
+        <a class="ap-header-nav-link ap-nav-link" href="{{ homepage[1] }}">{{ homepage[0] }}</a>
         {% elif not section %}
-        <a class="ap-header-nav-link ap-m-nav-link [% if homepage.url.path == '{{ doc.url.path }}' %]active[% endif %]" href="{{ homepage.url.path }}">{{_(homepage.titles('navigation'))}}</a>
+        <a class="ap-header-nav-link ap-nav-link [% if homepage.url.path == '{{ doc.url.path }}' %]active[% endif %]" href="{{ homepage.url.path }}">{{_(homepage.titles('navigation'))}}</a>
         {% else %}
-        <button class="ap-header-nav-link ap-m-nav-link [% if requestPath.startsWith('{{ section.pod_path.replace('/content/amp-dev/', '/') }}') %]active[% endif %]">
+        <button class="ap-header-nav-link ap-nav-link [% if requestPath.startsWith('{{ section.pod_path.replace('/content/amp-dev/', '/') }}') %]active[% endif %]">
           {{_(section.title)}}
-          <div class="ap-a-ico ap-header-nav-link-icon">
+          <div class="ap-icon ap-header-nav-link-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
           </div>
         </button>
@@ -118,7 +118,7 @@ to provide its state to other components #}
         role="button"
         aria-label="{{ _('Search') }}"
         tabindex="0">
-      <div class="ap-a-ico ap-search-trigger-icon">
+      <div class="ap-icon ap-search-trigger-icon">
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#magnifier"></use></svg>
       </div>
     </div>
@@ -128,7 +128,7 @@ to provide its state to other components #}
         [class]="'ap-header-burger ' + (mainmenuopen ? 'mainmenuopen ' : '')"
         tabindex="0"
         aria-label="{{ _('Burger Menu') }}">
-      <div class="ap-a-ico ap-header-burger-icon">
+      <div class="ap-icon ap-header-burger-icon">
         {% do doc.icons.useIcon('/icons/menu.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg>
       </div>
