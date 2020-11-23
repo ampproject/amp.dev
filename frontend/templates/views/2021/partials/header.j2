@@ -91,23 +91,14 @@ to provide its state to other components #}
     {# blog.amp.dev shares the header with amp.dev but isn't localized.
        Therefore it's nice to have a way to turn off the language selector #}
     {% if language_selector != False %}
-    <div id="language-selector" class="ap-language-selector">
-      <button class="ap-language-selector-toggle ap-nav-link"
-          aria-label="{{ _('Select a language') }}"
-          on="tap:language-selector.toggleClass(class=languageselectoropen)">
-        <span class="ap-nav-link">{{ doc.locale.language|upper }}</span>
-        <div class="ap-icon ap-language-selector-icon">
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
-        </div>
-      </button>
-
-      <div class="ap-language-selector-list" role="list">
-        {% for locale in doc.locales if not locale == doc.locale  %}
-        {% set localized_doc = doc.localize(locale) %}
-        <a class="ap-nav-link" href="{{ localized_doc.url.path }}" role="listitem">{{ locale.get_language_name()|capitalize }}</a>
-        {% endfor %}
-      </div>
-    </div>
+    <select class="ap-language-selector" on="change:AMP.navigateTo(url=event.value)">
+      {% for locale in doc.locales %}
+      {% set localized_doc = doc.localize(locale) %}
+      <option value="{{ localized_doc.url.path }}" {% if locale == doc.locale %}selected="selected"{% endif %}>
+        {{ locale.language|upper }}
+      </option>
+      {% endfor %}
+    </select>
     {% endif %}
 
     {% do doc.styles.addCssFile('/css/components/molecules/search-trigger.css') %}
