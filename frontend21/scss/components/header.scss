@@ -301,6 +301,8 @@
   }
 
   &-burger {
+    margin-left: 20px;
+
     @media (min-width: 1024px) {
       display: none;
     }

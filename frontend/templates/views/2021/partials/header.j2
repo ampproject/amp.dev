@@ -112,8 +112,13 @@ to provide its state to other components #}
 
     {% do doc.styles.addCssFile('/css/components/molecules/search-trigger.css') %}
     {% do doc.icons.useIcon('/icons/magnifier.svg') %}
-    <div id="searchTriggerOpen" class="ap-m-search-trigger" on="tap:searchLightbox" role="button" aria-label="{{ _('Search') }}"  tabindex="0">
-      <div class="ap-a-ico ap-m-search-trigger-icon">
+    <div id="searchTriggerOpen"
+        class="ap-search-trigger"
+        on="tap:searchLightbox"
+        role="button"
+        aria-label="{{ _('Search') }}"
+        tabindex="0">
+      <div class="ap-a-ico ap-search-trigger-icon">
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#magnifier"></use></svg>
       </div>
     </div>
