@@ -72,11 +72,6 @@
     pointer-events: none;
     transition: opacity 0.2s cubic-bezier(.25,.1,.25,1);
 
-    .mainmenuopen & {
-      opacity: 1;
-      pointer-events: all;
-    }
-
     @media (min-width: 1024px) {
       position: relative;
       top: 0;
@@ -85,7 +80,8 @@
       flex: 1 1 auto;
       height: 100%;
       padding: 0 30px;
-      transform: translateX(0);
+      opacity: 1;
+      pointer-events: all;
     }
 
     &-item {
@@ -119,12 +115,17 @@
         transform: rotate(0deg);
         transition: transform 0.2s cubic-bezier(.25,.1,.25,1);
       }
+
       &:hover {
         .#{prefix(null, 'header')}-nav-link-icon {
           transform: translateY(1px);
         }
       }
     }
+
+    .mainmenuopen & {
+      opacity: 1;
+      pointer-events: all;
     }
   }
 
