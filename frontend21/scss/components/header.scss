@@ -8,6 +8,7 @@
   max-width: 2020px;
   margin: 0 auto;
   background: color('white');
+
   /* Add a shadow to simulate that the flyouts are under the header */
   &:after {
     content: "";
@@ -67,11 +68,13 @@
     height: calc(100vh - 100%);
     padding: 30px;
     background: color('white');
-    transform: translateX(100%);
-    transition: transform 0.2s cubic-bezier(.25,.1,.25,1);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s cubic-bezier(.25,.1,.25,1);
 
     .mainmenuopen & {
-      transform: translateX(0);
+      opacity: 1;
+      pointer-events: all;
     }
 
     @media (min-width: 1024px) {
