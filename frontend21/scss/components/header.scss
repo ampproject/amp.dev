@@ -66,7 +66,7 @@
     background: color('white');
     opacity: 0;
     pointer-events: none;
-    transition: opacity .2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
 
     @include respond-to('medium') {
       position: relative;
@@ -110,7 +110,7 @@
         height: 8px;
         margin-left: 5px;
         transform: rotate(0deg);
-        transition: transform .2s ease-in-out;
+        transition: transform 0.2s ease-in-out;
       }
 
       &:hover {
@@ -133,7 +133,7 @@
     border-radius: 0 0 4px 4px;
     list-style: none;
     background: color('white');
-    transition: opacity .2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
 
     @include respond-to('medium') {
       position: absolute;
@@ -176,19 +176,19 @@
             height: 100%;
 
             .websites & {
-              fill: url(#gradient-websites) #000;
+              fill: url("#gradient-websites") color('black');
             }
 
             .stories & {
-              fill: url(#gradient-stories) #000;
+              fill: url("#gradient-stories") color('black');
             }
 
             .ads & {
-              fill: url(#gradient-ads) #000;
+              fill: url("#gradient-ads") color('black');
             }
 
             .email & {
-              fill: url(#gradient-email) #000;
+              fill: url("#gradient-email") color('black');
             }
           }
         }

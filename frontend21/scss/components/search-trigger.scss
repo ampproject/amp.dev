@@ -14,7 +14,7 @@
     fill: color('white');
     background: color('blue-ribbon');
     border-radius: 50%;
-    box-shadow: 0px 6px 10px 0px transparentize(color('black'), 0.86);
+    box-shadow: 0 6px 10px 0 transparentize(color('black'), 0.86);
     z-index: 3;
 
     @include respond-to('medium') {
