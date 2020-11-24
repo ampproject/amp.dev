@@ -13,6 +13,7 @@
 @import 'components/pie-chart.scss';
 @import 'components/highlight-stripes.scss';
 @import 'components/header.scss';
+@import 'components/banner.scss';
 @import 'components/language-selector.scss';
 @import 'components/search-trigger.scss';
 @import 'components/nav-link.scss';
@@ -69,7 +70,7 @@ figcaption {
   font-size: 14px;
   line-height: 1.71;
 
-  @media (min-width: 1024px) {
+  @include respond-to('medium') {
     max-width: 80%;
   }
 
@@ -77,4 +78,9 @@ figcaption {
     margin-top: 10px;
     font-size: 12px;
   }
+}
+
+svg {
+  max-width: 100%;
+  max-height: 100%;
 }
