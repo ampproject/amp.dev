@@ -46,6 +46,13 @@ button {
   background: transparent;
   box-shadow: none;
   border: none;
+  -webkit-appearance: none;
+}
+
+select {
+  border: none;
+  background: transparent;
+  -webkit-appearance: none;
 }
 
 figure {

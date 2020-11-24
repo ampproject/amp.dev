@@ -91,14 +91,16 @@ to provide its state to other components #}
     {# blog.amp.dev shares the header with amp.dev but isn't localized.
        Therefore it's nice to have a way to turn off the language selector #}
     {% if language_selector != False %}
-    <select class="ap-language-selector" on="change:AMP.navigateTo(url=event.value)">
-      {% for locale in doc.locales %}
-      {% set localized_doc = doc.localize(locale) %}
-      <option value="{{ localized_doc.url.path }}" {% if locale == doc.locale %}selected="selected"{% endif %}>
-        {{ locale.language|upper }}
-      </option>
-      {% endfor %}
-    </select>
+    <div class="ap-language-selector">
+      <select on="change:AMP.navigateTo(url=event.value)">
+        {% for locale in doc.locales %}
+        {% set localized_doc = doc.localize(locale) %}
+        <option value="{{ localized_doc.url.path }}" {% if locale == doc.locale %}selected="selected"{% endif %}>
+          {{ locale.language|upper }}
+        </option>
+        {% endfor %}
+      </select>
+    </div>
     {% endif %}
 
     {% do doc.styles.addCssFile('/css/components/molecules/search-trigger.css') %}
