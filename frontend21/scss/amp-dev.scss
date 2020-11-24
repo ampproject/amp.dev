@@ -1,8 +1,9 @@
 @import '../../frontend/scss/_functions.scss';
 @import '../../frontend/scss/_mixins.scss';
-@import '../../frontend/scss/_variables.scss';
 @import '../../frontend/scss/components/atoms/_icon.scss';
 @import '../../frontend/scss/components/atoms/_color.scss';
+
+@import 'variables.scss';
 
 @import 'components/section.scss';
 @import 'components/text-media.scss';
@@ -15,6 +16,7 @@
 @import 'components/search-trigger.scss';
 @import 'components/nav-link.scss';
 @import 'components/icon.scss';
+
 
 main {
   display: grid;
@@ -42,6 +44,7 @@ p {
 }
 
 button {
+  cursor: pointer;
   padding: 0;
   background: transparent;
   box-shadow: none;

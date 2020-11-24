@@ -1,5 +1,5 @@
 .#{prefix(null, 'nav-link')} {
-  font-family: 'Poppins', sans-serif;
+  font-family: $fontFamilyRegular;
   font-size: 24px;
   font-weight: bold;
   color: color('black');
@@ -10,21 +10,6 @@
 
   .#{prefix(null, 'icon')} {
     font-size: 8px;
-  }
-
-  &-2 {
-    font-size: 16px;
-    line-height: 1.6;
-    font-weight: normal;
-    color: color('river-bed');
-
-    @media (min-width: 1024px) {
-      font-size: 14px;
-    }
-
-    &.active {
-      text-decoration: underline;
-    }
   }
 
   &:hover {

@@ -1,10 +1,8 @@
 .#{prefix(null, 'header')} {
   $header: &;
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1001;
-  width: 100%;
   max-width: 2020px;
   margin: 0 auto;
   background: color('white');
@@ -24,7 +22,6 @@
 
   &-main {
     display: flex;
-    flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     height: 50px;
@@ -34,7 +31,6 @@
   }
 
   &-home {
-    position: -webkit-sticky;
     position: sticky;
     top: 10px;
     display: flex;
@@ -49,7 +45,7 @@
 
     &-title {
       margin-left: 4px;
-      font-family: Poppins, sans-serif;
+      font-family: $fontFamilyRegular;
       font-weight: 700;
       font-size: 24px;
       color: color('blue-ribbon');
@@ -70,7 +66,7 @@
     background: color('white');
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.2s cubic-bezier(.25,.1,.25,1);
+    transition: opacity .2s ease-in-out;
 
     @media (min-width: 1024px) {
       position: relative;
@@ -114,11 +110,11 @@
         height: 8px;
         margin-left: 5px;
         transform: rotate(0deg);
-        transition: transform 0.2s cubic-bezier(.25,.1,.25,1);
+        transition: transform .2s ease-in-out;
       }
 
       &:hover {
-        .#{prefix(null, 'header')}-nav-link-icon {
+        #{$header}-nav-link-icon {
           transform: translateY(2px);
         }
       }
@@ -137,7 +133,7 @@
     border-radius: 0 0 4px 4px;
     list-style: none;
     background: color('white');
-    transition: opacity 0.2s scubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: opacity .2s ease-in-out;
 
     @media (min-width: 1024px) {
       position: absolute;
