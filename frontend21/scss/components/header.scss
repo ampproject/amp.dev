@@ -50,7 +50,7 @@
       font-size: 24px;
       color: color('blue-ribbon');
 
-      @media (min-width: 1024px) {
+      @include respond-to('medium') {
         font-size: 18px;
       }
     }
@@ -68,7 +68,7 @@
     pointer-events: none;
     transition: opacity .2s ease-in-out;
 
-    @media (min-width: 1024px) {
+    @include respond-to('medium') {
       position: relative;
       top: 0;
       display: flex;
@@ -86,7 +86,7 @@
       flex-direction: column;
       margin-bottom: 16px;
 
-      @media (min-width: 1024px) {
+      @include respond-to('medium') {
         flex-direction: row;
         align-items: center;
         height: 100%;
@@ -101,7 +101,7 @@
       border: 0;
       background: none;
 
-      @media (min-width: 1024px) {
+      @include respond-to('medium') {
         padding: 0 18px;
       }
 
@@ -135,7 +135,7 @@
     background: color('white');
     transition: opacity .2s ease-in-out;
 
-    @media (min-width: 1024px) {
+    @include respond-to('medium') {
       position: absolute;
       top: 100%;
       left: 18px;
@@ -156,7 +156,7 @@
         align-items: center;
         border-radius: 4px;
 
-        @media (min-width: 1024px) {
+        @include respond-to('medium') {
           padding: 10px;
           margin: 0 5px;
         }
@@ -167,7 +167,7 @@
           width: 32px;
           height: 32px;
 
-          @media (min-width: 1024px) {
+          @include respond-to('medium') {
             display: block;
           }
 
@@ -194,7 +194,7 @@
         }
 
         &-info {
-          @media (min-width: 1024px) {
+          @include respond-to('medium') {
             margin: 0 20px 0 15px;
           }
         }
@@ -205,7 +205,7 @@
         font-weight: 400;
         color: color('river-bed');
 
-        @media (min-width: 1024px) {
+        @include respond-to('medium') {
           font-size: 14px;
           font-weight: 700;
           color: color('black');
@@ -219,13 +219,13 @@
         line-height: 1.25;
         color: color('river-bed');
 
-        @media (min-width: 1024px) {
+        @include respond-to('medium') {
           display: block;
         }
       }
 
       &.--secondary {
-        @media (min-width: 1024px) {
+        @include respond-to('medium') {
           padding: 0 15px;
         }
       }
@@ -234,7 +234,7 @@
         width: 300px;
         border-radius: 4px;
 
-        @media (min-width: 1024px) {
+        @include respond-to('medium') {
           margin-top: 0;
         }
       }
@@ -310,7 +310,7 @@
   &-burger {
     margin-left: 20px;
 
-    @media (min-width: 1024px) {
+    @include respond-to('medium') {
       display: none;
     }
 

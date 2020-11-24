@@ -17,18 +17,18 @@
     box-shadow: 0px 6px 10px 0px transparentize(color('black'), 0.86);
     z-index: 3;
 
-    @media (min-width: 1024px) {
+    @include respond-to('medium') {
       position: absolute;
       left: auto;
       right: 10px;
       top: 52px;
     }
 
-    @media (min-width: 1280px) {
+    @include respond-to('large') {
       right: 52px;
     }
 
-    @media (min-width: 1440px) {
+    @include respond-to('max') {
       right: 87px;
     }
   }
