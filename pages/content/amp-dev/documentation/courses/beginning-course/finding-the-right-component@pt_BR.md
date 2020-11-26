@@ -27,7 +27,7 @@ Quando observamos para a [documentação]({{g.doc('/content/amp-dev/documentatio
 
 - Quais layouts este componente suporta?
 
-{{ image('/static/img/courses/beginner/image25.png', 512, 386, caption='Página de documentação de AMP para `<amp-carousel>`.') }}
+{{ image('/static/img/courses/beginner/image25.png', 512, 386, caption='Página de documentação de AMP para <amp‑carousel>.') }}
 
 Veja os seguintes itens na [documentação]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) do `<amp-carousel>`:
 
@@ -196,7 +196,7 @@ Quando olhamos para a [documentação]({{g.doc('/content/amp-dev/documentation/c
 
 - Quais layouts este componente suporta?
 
-{{ image('/static/img/courses/beginner/image25.png', 512, 386, caption='Página de documentação de AMP para `<amp-carousel>`.') }}
+{{ image('/static/img/courses/beginner/image25.png', 512, 386, caption='Página de documentação de AMP para <amp‑carousel>.') }}
 
 Veja os seguintes itens na [documentação]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) do `<amp-carousel>`:
 
@@ -302,7 +302,7 @@ Lembre-se de incluir o script `<amp-carousel>` no `<head>`:
 
 Podemos ainda ter dúvidas sobre como o componente atuaria em nosso site, ou podemos não estar certos sobre como usar o componente de maneiras mais complexas. A sessão [AMP por exemplo]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) em amp.dev tem páginas que mostram muitos componentes AMP, mostrando uma variedade de maneiras de configurar esses componentes para atender a casos de uso comuns em sites modernos. Ele também possui playgrounds de codificação, onde você pode executar seus próprios experimentos.
 
-{{ image('/static/img/courses/beginner/image7.webp', 1024, 699, caption='Página AMP por exemplo para o componente`<amp-carousel>`.') }}
+{{ image('/static/img/courses/beginner/image7.webp', 1024, 699, caption='Página AMP por exemplo para o componente <amp‑carousel>.') }}
 
 ## Exercício 6: Adicionando Links de Compartilhamento Social
 
