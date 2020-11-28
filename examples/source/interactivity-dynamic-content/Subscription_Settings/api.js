@@ -40,8 +40,17 @@ examples.get('/subscription', upload.none(), (request, response) => {
   });
 });
 
-examples.post('/subscription', upload.none(), (request, response) => {
+examples.post('/subscription', upload.none(), async (request, response) => {
   setMaxAge(response, 0);
+
+  // Simulate a modest delay so that the UI's "submitting" state is discernible
+  await new Promise(resolve => setTimeout(resolve, 500));
+
+  if (request.query.fail) {
+    response.status(500).send()
+    return
+  }
+
   writeSubscription(response, (request.body || {}).nextSubscription);
   response.json({});
 });

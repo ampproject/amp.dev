@@ -22,10 +22,27 @@ formats:
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <style amp4email-boilerplate>body{visibility:hidden}</style>
 
+    <!-- ## Setup -->
+
+    <!--
+      We need an [`amp-list`](/documentation/components/amp-list) to query the server for the user's current subscription settings on email or page load.
+    -->
     <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+
+    <!--
+      We'll use [`amp-mustache`](/documentation/components/amp-mustache) to render the icon dropdown in its initial state, which should be based on the server's response.
+    -->
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
-    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+
+    <!--
+      We'll also need [`amp-form`](/documentation/components/amp-form) to update the user's subscription settings on the server when they select a new setting from the icon dropdown.
+    -->
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+
+    <!--
+      Lastly, we need [`amp-bind`](/documentation/components/amp-bind) to update the dropdown's state in response to events.
+    -->
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 
     <style amp-custom>
       .relative {
@@ -45,8 +62,22 @@ formats:
         height: 30px;
       }
 
+      .hidden {
+        display: none;
+      }
+
       #icon > * {
         visibility: hidden;
+      }
+
+      #form {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      #form > * + * {
+        margin-left: 5px;
       }
 
       #icon.watching > .watching,
@@ -55,9 +86,23 @@ formats:
         visibility: visible;
       }
 
+      .disabled {
+        opacity: 0.3;
+      }
+
       #select {
         opacity: 0;
         cursor: pointer;
+      }
+
+      .disabled #select {
+        cursor: progress;
+      }
+
+      amp-list {
+        min-height: 30px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.875em;
       }
     </style>
   </head>
@@ -67,13 +112,14 @@ formats:
     -->
     <amp-list
       src="<% base_path %>/subscription" binding="refresh"
-      items="." single-item
-      layout="fixed-height" width="30" height="30">
+      items="." single-item layout="responsive">
       <template type="amp-mustache">
         <form
           id="form" action-xhr="<% base_path %>/subscription" method="post"
-          on="submit-success: AMP.setState({ subscription: { current: subscription.next } });">
-          <div id="icon-button" class="relative icon-sized">
+          on="submitting: AMP.setState({ subscription: { error: false } });
+              submit-success: AMP.setState({ subscription: { current: subscription.next, next: null } });
+              submit-error: AMP.setState({ subscription: { next: null, error: true } });">
+          <div id="icon-button" class="relative icon-sized" [class]="(subscription.next ? 'disabled' : '') + ' relative icon-sized'">
             <div
               id="icon" class="{{currentSubscription}} relative icon-sized"
               [class]="(subscription.current || '{{currentSubscription}}') + ' relative icon-sized'">
@@ -83,7 +129,8 @@ formats:
             </div>
             <select
               id="select" name="nextSubscription" class="absolute icon-sized"
-              on="change: AMP.setState({ subscription: { next: event.value } }), form.submit;">
+              on="change: AMP.setState({ subscription: { next: event.value } }), form.submit;"
+              [disabled]="!!subscription.next">
               {{#watching}}<option selected value="watching">Watching</option>{{/watching}}
               {{^watching}}<option value="watching">Watching</option>{{/watching}}
 
@@ -93,6 +140,9 @@ formats:
               {{#ignoring}}<option selected value="ignoring">Ignoring</option>{{/ignoring}}
               {{^ignoring}}<option value="ignoring">Ignoring</option>{{/ignoring}}
             </select>
+          </div>
+          <div id="error-message" class="hidden" [class]="subscription.error ? '' : 'hidden'">
+            Something went wrong. Please try again
           </div>
         </form>
       </template>
