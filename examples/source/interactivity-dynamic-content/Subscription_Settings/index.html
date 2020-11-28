@@ -45,6 +45,12 @@ formats:
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 
     <style amp-custom>
+      amp-list {
+        min-height: 30px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.875em;
+      }
+
       .relative {
         position: relative;
       }
@@ -66,8 +72,8 @@ formats:
         display: none;
       }
 
-      #icon > * {
-        visibility: hidden;
+      .disabled {
+        opacity: 0.3;
       }
 
       #form {
@@ -80,14 +86,14 @@ formats:
         margin-left: 5px;
       }
 
+      #icon > * {
+        visibility: hidden;
+      }
+
       #icon.watching > .watching,
       #icon.only-mentions > .only-mentions,
       #icon.ignoring > .ignoring {
         visibility: visible;
-      }
-
-      .disabled {
-        opacity: 0.3;
       }
 
       #select {
@@ -97,12 +103,6 @@ formats:
 
       .disabled #select {
         cursor: progress;
-      }
-
-      amp-list {
-        min-height: 30px;
-        font-family: 'Roboto', sans-serif;
-        font-size: 0.875em;
       }
     </style>
   </head>
