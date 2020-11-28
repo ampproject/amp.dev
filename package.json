@@ -35,7 +35,7 @@
     "test:platform": "APP_ENV=test jest --testPathPattern platform --testPathIgnorePatterns smoke-tests",
     "test:playground": "APP_ENV=test jest --testPathPattern playground",
     "test:pixi": "APP_ENV=test jest --testPathPattern pixi",
-    "test:grow-extensions": "cd pages/extensions && if which grow; then python -m unittest discover -p \"*_test.py\"; else echo grow not installed with pip. skip tests; fi"
+    "test:grow-extensions": "cd pages/extensions && if which grow; then ../../scripts/python2.sh -m unittest discover -p \"*_test.py\"; else echo grow not installed with pip. skip tests; fi"
   },
   "husky": {
     "hooks": {
