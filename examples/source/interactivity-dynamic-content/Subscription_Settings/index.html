@@ -73,7 +73,6 @@ formats:
         <form
           id="form" action-xhr="<% base_path %>/subscription" method="post"
           on="submit-success: AMP.setState({ subscription: { current: subscription.next } });">
-          <input type="hidden" name="nextSubscription" [value]="subscription.next">
           <div id="icon-button" class="relative icon-sized">
             <div
               id="icon" class="{{currentSubscription}} relative icon-sized"
@@ -83,7 +82,7 @@ formats:
               <amp-img class="ignoring absolute" width="30" height="30" src="/static/samples/img/ignoring.png"></amp-img>
             </div>
             <select
-              id="select" class="absolute icon-sized"
+              id="select" name="nextSubscription" class="absolute icon-sized"
               on="change: AMP.setState({ subscription: { next: event.value } }), form.submit;">
               {{#watching}}<option selected value="watching">Watching</option>{{/watching}}
               {{^watching}}<option value="watching">Watching</option>{{/watching}}
