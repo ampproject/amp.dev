@@ -22,8 +22,81 @@ formats:
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <style amp4email-boilerplate>body{visibility:hidden}</style>
 
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+
+    <style amp-custom>
+      .relative {
+        position: relative;
+      }
+
+      .absolute {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      .icon-sized {
+        width: 30px;
+        height: 30px;
+      }
+
+      #icon > * {
+        visibility: hidden;
+      }
+
+      #icon.watching > .watching,
+      #icon.only-mentions > .only-mentions,
+      #icon.ignoring > .ignoring {
+        visibility: visible;
+      }
+
+      #select {
+        opacity: 0;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
+    <!--
+    ## Final
+    -->
+    <amp-list
+      src="<% base_path %>/subscription" binding="refresh"
+      items="." single-item
+      layout="fixed-height" width="30" height="30">
+      <template type="amp-mustache">
+        <form
+          id="form" action-xhr="<% base_path %>/subscription" method="post"
+          on="submit-success: AMP.setState({ subscription: { current: subscription.next } });">
+          <input type="hidden" name="nextSubscription" [value]="subscription.next">
+          <div id="icon-button" class="relative icon-sized">
+            <div
+              id="icon" class="{{currentSubscription}} relative icon-sized"
+              [class]="(subscription.current || '{{currentSubscription}}') + ' relative icon-sized'">
+              <amp-img class="watching absolute" width="30" height="30" src="/static/samples/img/watching.png"></amp-img>
+              <amp-img class="only-mentions absolute" width="30" height="30" src="/static/samples/img/only-mentions.png"></amp-img>
+              <amp-img class="ignoring absolute" width="30" height="30" src="/static/samples/img/ignoring.png"></amp-img>
+            </div>
+            <select
+              id="select" class="absolute icon-sized"
+              on="change: AMP.setState({ subscription: { next: event.value } }), form.submit;">
+              {{#watching}}<option selected value="watching">Watching</option>{{/watching}}
+              {{^watching}}<option value="watching">Watching</option>{{/watching}}
+
+              {{#only-mentions}}<option selected value="only-mentions">Only mentions</option>{{/only-mentions}}
+              {{^only-mentions}}<option value="only-mentions">Only mentions</option>{{/only-mentions}}
+
+              {{#ignoring}}<option selected value="ignoring">Ignoring</option>{{/ignoring}}
+              {{^ignoring}}<option value="ignoring">Ignoring</option>{{/ignoring}}
+            </select>
+          </div>
+        </form>
+      </template>
+    </amp-list>
   </body>
 </html>

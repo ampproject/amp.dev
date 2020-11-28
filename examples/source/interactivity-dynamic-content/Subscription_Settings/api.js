@@ -16,12 +16,50 @@
 'use strict';
 
 const express = require('express');
+const cookieParser = require('cookie-parser');
+const multer = require('multer');
+const upload = multer();
+const {setMaxAge} = require('@lib/utils/cacheHelpers');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
+examples.use(cookieParser());
 
-examples.get('/echo', (request, response) => {
-  response.json(request.query);
+const COOKIE_NAME = 'amp-subscription-settings';
+const COOKIE_EXPIRATION_DATE = 365 * 24 * 60 * 60 * 1000; // 365 days in ms
+const COOKIE_VALUES = new Set(['watching', 'only-mentions', 'ignoring']);
+const COOKIE_DEFAULT = 'watching';
+
+examples.get('/subscription', upload.none(), (request, response) => {
+  setMaxAge(response, 0);
+
+  const currentSubscription = readSubscription(request);
+  response.json({
+    currentSubscription,
+    [currentSubscription]: true,
+  });
 });
+
+examples.post('/subscription', upload.none(), (request, response) => {
+  setMaxAge(response, 0);
+  writeSubscription(response, (request.body || {}).nextSubscription);
+  response.json({});
+});
+
+function readSubscription(request) {
+  return parseSubscription((request.cookies[COOKIE_NAME] || {}).value);
+}
+
+function writeSubscription(response, value) {
+  response.cookie(
+    COOKIE_NAME,
+    {value: parseSubscription(value)},
+    {maxAge: COOKIE_EXPIRATION_DATE}
+  );
+}
+
+function parseSubscription(value) {
+  return COOKIE_VALUES.has(value) ? value : COOKIE_DEFAULT;
+}
 
 module.exports = examples;
