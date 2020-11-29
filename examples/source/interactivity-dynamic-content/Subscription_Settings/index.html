@@ -46,7 +46,6 @@ formats:
 
     <style amp-custom>
       amp-list {
-        min-height: 30px;
         font-family: 'Roboto', sans-serif;
         font-size: 0.875em;
       }
@@ -86,13 +85,13 @@ formats:
         margin-left: 5px;
       }
 
-      #icon > * {
+      .icon > * {
         visibility: hidden;
       }
 
-      #icon.watching > .watching,
-      #icon.only-mentions > .only-mentions,
-      #icon.ignoring > .ignoring {
+      .icon.watching > .watching,
+      .icon.only-mentions > .only-mentions,
+      .icon.ignoring > .ignoring {
         visibility: visible;
       }
 
@@ -107,6 +106,68 @@ formats:
     </style>
   </head>
   <body>
+    <!-- ## Implementation -->
+    <!--
+      ### Server
+
+      The server responds to [GET](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET) and [POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST) requests at `<% base_path %>/subscription`.
+
+      It responds to GET requests with one of the following JSON objects (depending on the user's current subscription settings):
+      ```json
+      {
+        "currentSubscription": "watching",
+        "watching": true
+      }
+      ```
+      ```json
+      {
+        "currentSubscription": "only-mentions",
+        "only-mentions": true
+      }
+      ```
+      ```json
+      {
+        "currentSubscription": "ignoring",
+        "ignoring": true
+      }
+      ```
+      The purpose of the second property, which may seem unnecessary, is explained in a later section.
+
+      The server expects POST requests to specify one of the subscription settings above (e.g. `ignoring`) for a `nextSubscription` field in its form data, and will update the user's current subscription setting to the specified value.
+    -->
+
+    <!--
+      ### AMP
+
+      We start with a native [`select`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select) element for our dropdown and fill it with our supported subscription settings. The `select` element is a great choice because it is highly accessible on all platforms.
+    -->
+    <select>
+      <option value="watching">Watching</option>
+      <option value="only-mentions">Only mentions</option>
+      <option value="ignoring">Ignoring</option>
+    </select>
+
+    <!--
+      To query the server for the user's current subscription settings on email or page load and pre-select the user's current setting in the dropdown, we wrap the `select` element in an `amp-list` and set its `src` appropriately.
+
+      We use an `amp-mustache` template to render the `select` element with the `option` corresponding to the user's subscription setting having a `selected` attribute. To understand why the code is duplicative, consider that the `selected` attribute is a [boolean attribute](https://www.w3.org/TR/2011/WD-html5-author-20110809/common-microsyntaxes.html#boolean-attribute) and review the [`amp-mustache` restrictions](https://amp.dev/documentation/components/amp-mustache/#restrictions).
+    -->
+    <amp-list src="<% base_path %>/subscription" binding="refresh" items="." single-item layout="intrinsic">
+      <template type="amp-mustache">
+        <select>
+          {{#watching}}<option selected value="watching">Watching</option>{{/watching}}
+          {{^watching}}<option value="watching">Watching</option>{{/watching}}
+
+          {{#only-mentions}}<option selected value="only-mentions">Only mentions</option>{{/only-mentions}}
+          {{^only-mentions}}<option value="only-mentions">Only mentions</option>{{/only-mentions}}
+
+          {{#ignoring}}<option selected value="ignoring">Ignoring</option>{{/ignoring}}
+          {{^ignoring}}<option value="ignoring">Ignoring</option>{{/ignoring}}
+        </select>
+      </template>
+    </amp-list>
+
+
     <!--
     ## Final
     -->
@@ -121,8 +182,8 @@ formats:
               submit-error: AMP.setState({ subscription: { next: null, error: true } });">
           <div id="icon-button" class="relative icon-sized" [class]="(subscription.next ? 'disabled' : '') + ' relative icon-sized'">
             <div
-              id="icon" class="{{currentSubscription}} relative icon-sized"
-              [class]="(subscription.current || '{{currentSubscription}}') + ' relative icon-sized'">
+              class="{{currentSubscription}} icon relative icon-sized"
+              [class]="(subscription.current || '{{currentSubscription}}') + ' icon relative icon-sized'">
               <amp-img class="watching absolute" width="30" height="30" src="/static/samples/img/watching.png"></amp-img>
               <amp-img class="only-mentions absolute" width="30" height="30" src="/static/samples/img/only-mentions.png"></amp-img>
               <amp-img class="ignoring absolute" width="30" height="30" src="/static/samples/img/ignoring.png"></amp-img>
