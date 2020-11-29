@@ -46,6 +46,7 @@ formats:
 
     <style amp-custom>
       amp-list {
+        min-height: 30px;
         font-family: 'Roboto', sans-serif;
         font-size: 0.875em;
       }
@@ -180,7 +181,7 @@ formats:
           on="submitting: AMP.setState({ subscription: { error: false } });
               submit-success: AMP.setState({ subscription: { current: subscription.next, next: null } });
               submit-error: AMP.setState({ subscription: { next: null, error: true } });">
-          <div id="icon-button" class="relative icon-sized" [class]="(subscription.next ? 'disabled' : '') + ' relative icon-sized'">
+          <div class="relative icon-sized" [class]="(subscription.next ? 'disabled' : '') + ' relative icon-sized'">
             <div
               class="{{currentSubscription}} icon relative icon-sized"
               [class]="(subscription.current || '{{currentSubscription}}') + ' icon relative icon-sized'">
