@@ -114,7 +114,9 @@
 
     {% include 'views/partials/search.j2' %}
 
+    {% block main %}
     {{ doc.html|render|safe }}
+    {% endblock %}
 
     {% block footer %}
     {% include 'views/partials/footer.j2' %}
