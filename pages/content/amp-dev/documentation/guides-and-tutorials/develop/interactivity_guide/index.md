@@ -65,7 +65,7 @@ One of AMP’s greatest strengths is its extensive library of ready-to-go compon
 
 While AMP provides solutions to common web widgets and interactivity, each website has its own needs. AMP embraces highly personalized experiences with three components: [`amp-selector`](../../../components/reference/amp-selector.md), [`amp-bind`](../../../components/reference/amp-bind.md), and [`amp-script`](../../../components/reference/amp-bind.md). These three components don't have a default UI. Instead, they're used to create selection-based interfaces and build dynamic pages that respond to user interaction.
 
-[example preview="top-frame" playground="true" imports="amp-bind, amp-script"]
+[example preview="top-frame" playground="true" imports="amp-bind"]
 ```html
 <head>
   <meta
