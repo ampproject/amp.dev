@@ -117,7 +117,7 @@ class RateLimitedFetch {
     }
 
     const contentType = response.headers.get('content-type');
-    if (!contentType.includes('text/html')) {
+    if (!contentType || !contentType.includes('text/html')) {
       throw new FetchError(
         FetchError.UNSUPPORTED_CONTENT_TYPE,
         `${urlString} is no HTML document.`

@@ -92,11 +92,11 @@
 		},
 		"source": "fieldData"
 	},
-	"textCompression": false,
-	"fastServerResponse": false,
+	"textCompression": true,
+	"fastServerResponse": true,
 	"usesAppropriatelySizedImages": false,
 	"usesOptimizedImages": false,
 	"usesWebpImages": false,
 	"fastFontDisplay": false,
-	"minifiedCss": false
+	"minifiedCss": true
 }

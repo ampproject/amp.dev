@@ -38,7 +38,6 @@ describe('Linter check', () => {
     expect(report.data.fastGoogleFontsDisplay).toBe(true);
     expect(report.data.googleFontPreconnect).toBe(true);
     expect(report.data.isTransformedAmp).toBe(true);
-    expect(report.data.moduleRuntimeIsUsed).toBe(true);
     expect(report.data.heroImageIsDefined).toBe(true);
     expect(report.data.boilerplateIsRemoved).toBe(true);
     expect(report.data.updateOptimizerForBoilerplateRemoval).not.toBe(true);
@@ -63,7 +62,6 @@ describe('Linter check', () => {
     expect(report.data.fastGoogleFontsDisplay).toBe(false);
     expect(report.data.googleFontPreconnect).toBe(false);
     expect(report.data.isTransformedAmp).toBe(false);
-    expect(report.data.moduleRuntimeIsUsed).toBe(false);
     expect(report.data.heroImageIsDefined).toBe(false);
     expect(report.data.boilerplateIsRemoved).toBe(false);
     expect(report.data.updateOptimizerForBoilerplateRemoval).toBe(true);

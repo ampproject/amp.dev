@@ -1,0 +1,57 @@
+@import '../../frontend/scss/_functions.scss';
+@import '../../frontend/scss/_mixins.scss';
+@import '../../frontend/scss/_variables.scss';
+@import '../../frontend/scss/components/atoms/_text.scss';
+@import '../../frontend/scss/components/atoms/_color.scss';
+
+@import 'components/section.scss';
+@import 'components/text-media.scss';
+@import 'components/text-block.scss';
+@import 'components/button.scss';
+@import 'components/pie-chart.scss';
+@import 'components/highlight-stripes.scss';
+
+main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 15px;
+  width: 100%;
+  max-width: 1920px;
+  margin: auto;
+  padding: 0;
+
+  @media (min-width: 768px) {
+    grid-gap: 30px;
+  }
+}
+
+h1 {
+  @media (min-width: 768px) {
+    font-size: 52px;
+  }
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.63;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  margin-top: 20px;
+  margin-left: auto;
+  font-size: 14px;
+  line-height: 1.71;
+
+  @media (min-width: 1024px) {
+    max-width: 80%;
+  }
+
+  span {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+}

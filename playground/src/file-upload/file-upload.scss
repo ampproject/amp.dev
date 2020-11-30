@@ -11,7 +11,7 @@
     justify-content: center;
     height: 250px;
     padding: 40px;
-    border: 2px dashed color('silver');
+    border: 2px dashed color('iron');
     border-radius: 4px;
     cursor: pointer;
 
@@ -19,7 +19,7 @@
     @include txt-2;
 
     &.dz-drag-hover {
-      background: transparentize(color('silver'), 0.8);
+      background: transparentize(color('iron'), 0.8);
     }
 
     .dz-info {
@@ -73,7 +73,7 @@
     @include txt;
     @include txt-2;
     display: block;
-    color: color('red');
+    color: color('guardsman-red');
     opacity: 0;
     transition: transform .3s ease, opacity .2s ease;
 

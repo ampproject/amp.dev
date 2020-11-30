@@ -25,7 +25,6 @@ const directLinterRecommendations = {
   fastGoogleFontsDisplay: 'fast-font-display',
   googleFontPreconnect: 'preconnect-google-fonts',
   isTransformedAmp: 'use-amp-optimizer',
-  moduleRuntimeIsUsed: 'enable-js-module-runtime',
   heroImageIsDefined: 'hero-images',
   noRenderBlockingExtension: 'prevent-render-blocking-extensions',
 };
