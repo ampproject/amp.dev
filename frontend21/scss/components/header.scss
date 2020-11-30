@@ -237,55 +237,57 @@
         }
       }
 
-      &:hover {
-        &.--secondary a {
-          color: color('blue-ribbon');
-        }
-
-        &.--primary {
-          background: color('blue-ribbon');
-
-          #{$header}-flyout-item-description,
-          #{$header}-flyout-item-title {
-            color: color('white');
+      @include respond-to('pointer-fine') {
+        &:hover {
+          &.--secondary a {
+            color: color('blue-ribbon');
           }
 
-          svg {
-            fill: color('white');
-          }
-        }
+          &.--primary {
+            background: color('blue-ribbon');
 
-        &.websites {
-          @include gradient-websites;
-        }
+            #{$header}-flyout-item-description,
+            #{$header}-flyout-item-title {
+              color: color('white');
+            }
 
-        &.stories {
-          @include gradient-stories;
-
-          #{$header}-flyout-item-description,
-          #{$header}-flyout-item-title {
-            color: color('charade');
+            svg {
+              fill: color('white');
+            }
           }
 
-          svg {
-            fill: color('charade');
-          }
-        }
-
-        &.ads {
-          @include gradient-ads;
-        }
-
-        &.email {
-          @include gradient-e-mails;
-
-          #{$header}-flyout-item-description,
-          #{$header}-flyout-item-title {
-            color: color('charade');
+          &.websites {
+            @include gradient-websites;
           }
 
-          svg {
-            fill: color('charade');
+          &.stories {
+            @include gradient-stories;
+
+            #{$header}-flyout-item-description,
+            #{$header}-flyout-item-title {
+              color: color('charade');
+            }
+
+            svg {
+              fill: color('charade');
+            }
+          }
+
+          &.ads {
+            @include gradient-ads;
+          }
+
+          &.email {
+            @include gradient-e-mails;
+
+            #{$header}-flyout-item-description,
+            #{$header}-flyout-item-title {
+              color: color('charade');
+            }
+
+            svg {
+              fill: color('charade');
+            }
           }
         }
       }
