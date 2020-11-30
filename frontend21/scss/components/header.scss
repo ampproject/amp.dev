@@ -75,7 +75,7 @@
       height: 100%;
       padding: 0 30px;
       opacity: 1;
-      pointer-events: all;
+      pointer-events: auto;
     }
 
     &-item {
@@ -118,9 +118,9 @@
       }
     }
 
-    .mainmenuopen & {
+    .--mainmenuopen & {
       opacity: 1;
-      pointer-events: all;
+      pointer-events: auto;
     }
   }
 
@@ -174,19 +174,19 @@
             height: 100%;
 
             .websites & {
-              fill: url("#gradient-websites") color('black');
+              fill: url('#gradient-websites') color('black');
             }
 
             .stories & {
-              fill: url("#gradient-stories") color('black');
+              fill: url('#gradient-stories') color('black');
             }
 
             .ads & {
-              fill: url("#gradient-ads") color('black');
+              fill: url('#gradient-ads') color('black');
             }
 
             .email & {
-              fill: url("#gradient-email") color('black');
+              fill: url('#gradient-email') color('black');
             }
           }
         }
@@ -297,12 +297,12 @@
   &-nav-link:hover ~ &-flyout {
     display: block;
     opacity: 1;
-    pointer-events: all;
+    pointer-events: auto;
   }
 
   &-flyout:focus-within {
     opacity: 1;
-    pointer-events: all;
+    pointer-events: auto;
   }
 
   &-burger {

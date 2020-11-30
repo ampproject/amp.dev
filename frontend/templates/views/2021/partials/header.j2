@@ -9,7 +9,7 @@ to provide its state to other components #}
 {% include '/views/2021/partials/banner.j2' %}
 {% endif %}
 
-<header class="ap-header" [class]="'ap-header' + (mainmenuopen ? ' mainmenuopen' : '')">
+<header class="ap-header" [class]="'ap-header' + (mainmenuopen ? ' --mainmenuopen' : '')">
   <div class="ap-header-main">
     {# Resources need to be added outside the cached partial #}
     {% do doc.styles.addCssFile('/css/components/organisms/header.css') %}
@@ -103,7 +103,7 @@ to provide its state to other components #}
 
     <button class="ap-header-burger"
         on="tap:AMP.setState({mainmenuopen: !mainmenuopen, noScrollState: !noScrollState})"
-        [class]="'ap-header-burger ' + (mainmenuopen ? 'mainmenuopen ' : '')"
+        [class]="'ap-header-burger ' + (mainmenuopen ? '--mainmenuopen ' : '')"
         tabindex="0"
         aria-label="{{ _('Burger Menu') }}">
       <div class="ap-icon ap-header-burger-icon">
