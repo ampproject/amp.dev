@@ -1,0 +1,23 @@
+.#{prefix(null, 'nav-link')} {
+  font-family: $fontFamilyRegular;
+  font-size: 24px;
+  font-weight: bold;
+  color: color('black');
+
+  @include respond-to('medium') {
+    font-size: 16px;
+  }
+
+  .#{prefix(null, 'icon')} {
+    font-size: 8px;
+  }
+
+  &:hover {
+    color: color('blue-ribbon');
+  }
+
+  &.active {
+    font-weight: bold;
+    color: color('blue-ribbon');
+  }
+}

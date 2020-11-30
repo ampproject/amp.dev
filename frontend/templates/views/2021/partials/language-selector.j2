@@ -1,0 +1,10 @@
+<div class="ap-language-selector">
+  <select on="change:AMP.navigateTo(url=event.value)">
+    {% for locale in doc.locales %}
+    {% set localized_doc = doc.localize(locale) %}
+    <option value="{{ localized_doc.url.path }}" {% if locale == doc.locale %}selected{% endif %}>
+      {{ locale.language|upper }}
+    </option>
+    {% endfor %}
+  </select>
+</div>

@@ -1,8 +1,10 @@
 @import '../../frontend/scss/_functions.scss';
 @import '../../frontend/scss/_mixins.scss';
-@import '../../frontend/scss/_variables.scss';
-@import '../../frontend/scss/components/atoms/_text.scss';
+@import '../../frontend/scss/components/atoms/_icon.scss';
 @import '../../frontend/scss/components/atoms/_color.scss';
+
+@import 'variables.scss';
+@import 'mixins.scss';
 
 @import 'components/section.scss';
 @import 'components/text-media.scss';
@@ -10,6 +12,13 @@
 @import 'components/button.scss';
 @import 'components/pie-chart.scss';
 @import 'components/highlight-stripes.scss';
+@import 'components/header.scss';
+@import 'components/banner.scss';
+@import 'components/language-selector.scss';
+@import 'components/search-trigger.scss';
+@import 'components/nav-link.scss';
+@import 'components/icon.scss';
+
 
 main {
   display: grid;
@@ -36,6 +45,21 @@ p {
   line-height: 1.63;
 }
 
+button {
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  -webkit-appearance: none;
+}
+
+select {
+  border: none;
+  background: transparent;
+  -webkit-appearance: none;
+}
+
 figure {
   margin: 0;
 }
@@ -46,7 +70,7 @@ figcaption {
   font-size: 14px;
   line-height: 1.71;
 
-  @media (min-width: 1024px) {
+  @include respond-to('medium') {
     max-width: 80%;
   }
 
@@ -54,4 +78,9 @@ figcaption {
     margin-top: 10px;
     font-size: 12px;
   }
+}
+
+svg {
+  max-width: 100%;
+  max-height: 100%;
 }

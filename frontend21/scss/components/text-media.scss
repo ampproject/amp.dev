@@ -3,14 +3,14 @@
   display: flex;
   flex-direction: column;
 
-  @media (min-width: 768px) {
+  @include respond-to('small') {
     flex-direction: row;
   }
 
   &-col {
     margin-bottom: 20px;
 
-    @media (min-width: 768px) {
+    @include respond-to('small') {
       width: 50%;
       min-width: 300px;
 
@@ -26,7 +26,7 @@
 
   &.--thirds {
     #{$text-media}-col {
-      @media (min-width: 768px) {
+      @include respond-to('small') {
         &:first-child {
           width: 30%;
         }
@@ -41,7 +41,7 @@
   &.--reverse {
     flex-direction: column-reverse;
 
-    @media (min-width: 768px) {
+    @include respond-to('small') {
       flex-direction: row-reverse;
 
       #{$text-media}-col {
@@ -59,13 +59,13 @@
   &.--mobile-reverse {
     flex-direction: column-reverse;
 
-    @media (min-width: 768px) {
+    @include respond-to('small') {
       flex-direction: row;
     }
   }
 
   &.--center {
-    @media (min-width: 768px) {
+    @include respond-to('small') {
       align-items: center;
     }
   }

@@ -1,0 +1,16 @@
+/**
+ * Print a media query based on the value
+ * @param {String} $breakpoint - Breakpoint
+ * @require $breakpoints
+ */
+@mixin respond-to($key) {
+  @if map-has-key($breakpoints, $key) {
+    @media #{inspect(map-get($breakpoints, $key))} {
+      @content;
+    }
+  }
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$key}`. "
+    + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}

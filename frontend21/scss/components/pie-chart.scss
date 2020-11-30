@@ -11,7 +11,7 @@
 
     &:nth-child(odd) {
       --size: 180px;
-      @media (min-width: 1024px) { --size: 340px; }
+      @include respond-to('medium') { --size: 340px; }
     }
 
     &:nth-child(even) {
@@ -19,7 +19,7 @@
       margin-top: -10%;
       --size: 160px;
 
-      @media (min-width: 1024px) {
+      @include respond-to('medium') {
         margin-top: -5%;
         --size: 240px;
       }
@@ -63,7 +63,7 @@
       span {
         font-size: 45px;
 
-        @media (min-width: 1024px) {
+        @include respond-to('medium') {
           font-size: 65px;
         }
       }
