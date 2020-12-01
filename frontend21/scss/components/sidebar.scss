@@ -3,6 +3,28 @@
   position: relative;
   margin-top: 50px;
 
+  &-toggle {
+    position: absolute;
+    left: 100%;
+    display: flex;
+    align-items: center;
+    height: 35px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-family: $fontFamilyHeadline;
+    font-size: 12px;
+    font-weight: bold;
+    color: color('white');
+    background: color('blue-ribbon');
+
+    svg {
+      width: 1.2em;
+      height: 1.2em;
+      fill: currentColor;
+      margin-right: 0.5em;
+    }
+  }
+
   &-nav-list {
     display: flex;
     flex-direction: column;

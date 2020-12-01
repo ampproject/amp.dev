@@ -1,4 +1,10 @@
 <span id="ap-sidebar-toolbar" class="ap-sidebar">
+
+  {% do doc.icons.useIcon('/icons/sidebar-toggle.svg') %}
+  <button class="ap-sidebar-toggle">
+    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sidebar-toggle"></use></svg>
+    <span>{{ _('Toggle Sidebar') }}</span>
+  </button>
 </span>
 
 <amp-sidebar id="sidebar" layout="nodisplay" side="left">
