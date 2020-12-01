@@ -1,0 +1,32 @@
+.#{prefix(null, 'sidebar')} {
+  grid-column: 2/5;
+  position: relative;
+  margin-top: 50px;
+
+  &-nav-list {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 50px - 32px);
+
+    &-section-title {
+      margin-top: 20px;
+      font-family: $fontFamilyHeadline;
+      font-size: 28px;
+      line-height: 1;
+      font-weight: bold;
+      color: color('iron');
+    }
+
+    &-link {
+      padding: 3px 25px 3px 0;
+      font-size: 14px;
+      line-height: 1.4;
+      font-weight: normal;
+      color: color('river-bed');
+
+      &:hover {
+        color: color('blue-ribbon');
+      }
+    }
+  }
+}
