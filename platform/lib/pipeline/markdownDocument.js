@@ -332,6 +332,9 @@ class MarkdownDocument {
    * @return {String}          The rewritten content
    */
   static rewriteCodeBlocks(contents) {
+    // Ensure valid quotation marks are used in code blocks
+    contents = contents.replace(/[“”„‟]/g, `"`);
+
     // Rewrite code blocks in fence syntax
     contents = contents.replace(
       /(```)(([A-z-]*)\n)(((?!```)[\s\S])+)(```[\t ]*\n)/gm,
