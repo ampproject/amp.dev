@@ -101,7 +101,6 @@ module.exports = (env, argv) => {
         dry: false,
         dangerouslyAllowCleanPatternsOutsideProject: true,
         cleanAfterEveryBuildPatterns: [
-          path.resolve(process.cwd(), '../pages/views/2021/**/*'),
           path.resolve(process.cwd(), '../dist/static/frontend/**/*'),
         ],
       }),

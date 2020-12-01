@@ -20,7 +20,7 @@
     box-shadow: 0 25px 20px -15px rgba(0, 0, 0, 0.15);
   }
 
-  @media (min-width: 768px) {
+  @include respond-to('small') {
     padding: 1em 2em;
   }
 }
