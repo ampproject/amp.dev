@@ -1,7 +1,7 @@
 ---
-"$title": Use AMP as a data source for your PWA
+"$title": Использование AMP в качестве источника данных для вашего PWA
 "$order": '1'
-description: "If you've invested in AMP but haven't built a Progressive Web App yet, your AMP Pages can dramatically simplify your development of your Progressive Web App."
+description: Если вы уже пользуетесь AMP, но еще не создали прогрессивное веб-приложение (PWA), ваши AMP-страницы могут значительно упростить его разработку.
 formats:
 - websites
 author: pbakaus
@@ -28,9 +28,9 @@ PWA, в своем наиболее распространенном сцена�
 
 ### Как узнать, что API Shadow AMP готов к использованию?
 
-We recommend you load the Shadow AMP library with the `async` attribute in place. That means, however, that you need to use a certain approach to understand when the library is fully loaded and ready to be used.
+Мы рекомендуем загружать библиотеку Shadow AMP с атрибутом `async`. Однако в этом случае, чтобы определить, что библиотека полностью загружена и готова к использованию, необходим определенный подход.
 
-The right signal to observe is the availability of the global `AMP` variable, and Shadow AMP uses a “[asynchronous function loading approach](http://mrcoles.com/blog/google-analytics-asynchronous-tracking-how-it-work/)” to help with that. Consider this code:
+Лучший маркер готовности — это глобальная переменная `AMP`, и Shadow AMP использует [методику асинхронной загрузки функций](http://mrcoles.com/blog/google-analytics-asynchronous-tracking-how-it-work/), чтобы задействовать ее в этой роли. Рассмотрим данный подход на примере следующего кода:
 
 [sourcecode:javascript]
 (window.AMP = window.AMP || []).push(function(AMP) {
@@ -45,9 +45,9 @@ The right signal to observe is the availability of the global `AMP` variable, an
 1. «Если элемента window.AMP не существует, создает на его месте пустой массив»
 2. «Вставить в массив функцию обратного вызова, которая должна быть выполнена при готовности AMP»
 
-It works because the Shadow AMP library, upon actual load, will realize there's already an array of callbacks under `window.AMP`, then process the entire queue. If you later execute the same function again, it will still work, as Shadow AMP replaces `window.AMP` with itself and a custom `push` method that simply fires the callback right away.
+Код работает, поскольку после своей фактической загрузки библиотека Shadow AMP определит, что под `window.AMP` уже существует массив с обратными вызовами, и обработает всю очередь вызовов. Если вы позже снова вызовете ту же самую функцию, она все равно будет работать, так как библиотека Shadow AMP заменяет `window.AMP` собой и индивидуальным методом `push`, который выполняет обратные вызовы незамедлительно.
 
-[tip type="tip"] **TIP –** To make the above code sample practical, we recommend that you wrap it into a Promise, then always use said Promise before working with the AMP API. Look at our [React demo code](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20) for an example. [/tip]
+[tip type="tip"] **СОВЕТ.** Чтобы сделать приведенный выше пример кода практичным, рекомендуем обернуть его в Обещание, после чего всегда использовать это обещание, прежде чем работать с API AMP. Пример такого подхода вы можете увидеть в нашем [демонстрационном коде на React](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20). [/tip]
 
 ## Создание навигации по вашему прогрессивному веб-приложению
 
@@ -79,9 +79,9 @@ function fetchDocument(url) {
 }
 [/sourcecode]
 
-[tip type="important"] **IMPORTANT –** To simplify the above code example, we skipped over error handling. You should always make sure to catch and handle errors gracefully. [/tip]
+[tip type="important"] **ВАЖНО!** Чтобы упростить приведенный выше пример кода, мы опустили обработку ошибок. Не забывайте всегда включать код обработки ошибок. [/tip]
 
-Now that we have our ready-to-use `Document` object, it's time to let AMP take over and render it. Get a reference to the DOM element that serves as container for the AMP document, then call `AMP.attachShadowDoc()`, like so:
+Теперь, когда у нас есть готовый к использованию объект `Document`, пришло время передать его библиотеке AMP для рендеринга. Получите ссылку на элемент DOM, который служит контейнером для AMP-документа, затем выполните `AMP.attachShadowDoc()`, например, так:
 
 [sourcecode:javascript]
 // This can be any DOM element
@@ -97,7 +97,7 @@ fetchDocument(url).then(function(doc) {
 });
 [/sourcecode]
 
-[tip type="tip"] **TIP –** Before you actually hand the document over to AMP, it's the perfect time to remove page elements that make sense when displaying the AMP page standalone, but not in embedded mode: For example, footers and headers. [/tip]
+[tip type="tip"] **СОВЕТ.** Прежде чем вы передадите документ библиотеке AMP, советуем удалить элементы страницы, которые используются при отображении страницы AMP в автономном режиме, но не нужны во встраиваемом режиме: например, нижние и верхние колонтитулы. [/tip]
 
 На этом все! Ваша AMP-страница отображается как дочерний элемент вашего прогрессивного веб-приложения.
 
@@ -116,13 +116,13 @@ ampedDoc.close();
 
 [video src="/static/img/docs/pwamp_react_demo.mp4" width="620" height="1100" loop="true", controls="true"]
 
-You can see the "AMP in PWA" pattern in action in the [React sample](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa) we've built. It demonstrates smooth transitions during navigation and comes with a simple React component that wraps the above steps. It's the best of both worlds – flexible, custom JavaScript in the Progressive Web App, and AMP to drive the content.
+Увидеть паттерн «AMP в PWA» в действии можно в [созданном нами примере на React](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa). Он демонстрирует плавные переходы во время навигации и поставляется с простым компонентом React, в который включены описанные выше шаги. То, что вы увидите, является объединением лучших особенностей обеих технологий — гибкий, настраиваемый JavaScript в прогрессивном веб-приложении и AMP для предоставления контента.
 
-- Grab the source code here: [https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)
-- Use the React component standalone via npm: [https://www.npmjs.com/package/react-amp-document](https://www.npmjs.com/package/react-amp-document)
-- See it in action here: [https://choumx.github.io/amp-pwa/](https://choumx.github.io/amp-pwa/) (best on your phone or mobile emulation)
+- Получить исходный код можно здесь: [https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)
+- В автономном режиме компонент React можно использовать через npm: [https://www.npmjs.com/package/react-amp-document](https://www.npmjs.com/package/react-amp-document)
+- Посмотреть его в действии можно здесь: [https://choumx.github.io/amp-pwa/](https://choumx.github.io/amp-pwa/) (рекомендуем запускать на мобильном телефоне или эмуляторе)
 
-You can also see a sample of PWA and AMP using Polymer framework. The sample uses [amp-viewer](https://github.com/PolymerLabs/amp-viewer/) to embed AMP pages.
+Вы также можете ознакомиться с примером совместной работы PWA и AMP на базе Polymer Framework. В этом примере для встраивания AMP-страниц используется [amp-viewer](https://github.com/PolymerLabs/amp-viewer/).
 
-- Grab the code here: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp)
-- See it in action here: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/)
+- Код можно получить здесь: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp)
+- А увидеть его в работе — здесь: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/)
