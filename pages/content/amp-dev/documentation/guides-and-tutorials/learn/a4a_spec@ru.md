@@ -48,7 +48,7 @@ limitations under the License.
 </tr></thead>
 <tbody>
 <tr>
-<td>Must use <code><html ⚡4ads></code> or <code><html amp4ads></code> as its enclosing tags.</td>
+<td>Должны использовать <code><html ⚡4ads></code> или <code><html amp4ads></code> в качестве закрывающих тегов.</td>
 <td>Позволяет валидаторам идентифицировать документ креатива либо как AMP-документ общей направленности, либо как документ рекламы AMPHTML с ограниченным доступом), и обрабатывать его соответствующим образом.</td>
 </tr>
 <tr>
@@ -61,7 +61,7 @@ limitations under the License.
 </tr>
 <tr>
 <td>Может содержать в HTML-элементе head опциональные теги meta, используемые в качестве идентификаторов, в формате <code><meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code>. Такие теги следует размещать перед скриптом <code>amp4ads-v0.js</code>. Значения  <code>vendor</code> и <code>id</code> — строки, содержащие только символы [0-9a-zA-Z_-]. Значение <code>type</code> либо <code>creative-id</code>, либо <code>impression-id</code>.</td>
-<td>Those custom identifiers can be used to identify the impression or the creative. They can be helpful for reporting and debugging.<br><br><p>Example:</p>
+<td>Эти специальные идентификаторы можно использовать для идентификации показа или креатива. Они могут быть полезны для создания отчетов и отладки.<br><br><p>Пример:</p>
 <pre>
 <meta name="amp4ads-id"
   content="vendor=adsense,type=creative-id,id=1283474">
@@ -71,7 +71,7 @@ limitations under the License.
 </tr>
 <tr>
 <td>Механизм отслеживания видимости с помощью <code><amp-analytics></amp-analytics></code> может использовать только селектор, обозначающий все рекламное объявление ( <code>"visibilitySpec": { "selector": "amp-ad" }</code>), как определено в <a href="https://github.com/ampproject/amphtml/issues/4018">Issue #4018</a> и <a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a>. Соответственно, он не может использовать селекторы каких-либо элементов, расположенных внутри креатива рекламы.</td>
-<td>In some cases, AMPHTML ads may choose to render an ad creative in an iframe.In those cases, host page analytics can only target the entire iframe anyway, and won’t have access to any finer-grained selectors.<br><br> <p>Example:</p> <pre>
+<td>Иногда реклама AMPHTML может выполнять рендеринг креатива в элементе iframe. В таких случаях аналитические функции хост-страницы могут выбирать целью только iframe целиком, не имея доступа к более детальным селекторам.<br><br> <p>Пример:</p> <pre>
 <amp-analytics id="nestedAnalytics">
   <script type="application/json">
   {
@@ -88,7 +88,8 @@ limitations under the License.
   }
   </script>
 </amp-analytics>
-</pre> <p>This configuration sends a request to the <code>https://example.com/nestedAmpAnalytics</code> URL when 50% of the enclosing ad has been continuously visible on the screen for 1 second.</p> </td>
+</pre> <p>Эта конфигурация отправляет запрос на URL <code>https://example.com/nestedAmpAnalytics</code>, после того как 50% площади родительской рекламы непрерывно находилось в видимой области экрана в течение 1 секунды.</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -314,11 +315,11 @@ transition: background-color 2s;
 
 `<svg>``<g>``<path>``<glyph>``<glyphref>``<marker>``<view>``<circle>``<line>``<polygon>``<polyline>``<rect>``<text>``<textpath>``<tref>``<tspan>``<clippath>``<filter>``<lineargradient>``<radialgradient>``<mask>``<pattern>``<vkern>``<hkern>``<defs>``<use>``<symbol>``<desc>``<title>`
 
-#### 4.9 Tabular data <a name="49-tabular-data"></a>
+#### 4.9 Табличные данные<a name="49-tabular-data"></a>
 
 4.9.1 `<table>` 4.9.2 `<caption>` 4.9.3 `<colgroup>` 4.9.4 `<col>` 4.9.5 `<tbody>` 4.9.6 `<thead>` 4.9.7 `<tfoot>` 4.9.8 `<tr>` 4.9.9 `<td>` 4.9.10 `<th>`
 
-#### 4.10 Forms <a name="410-forms"></a>
+#### 4.10 Формы<a name="410-forms"></a>
 
 4.10.8 `<button>`
 
