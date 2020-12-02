@@ -1,24 +1,24 @@
 ---
-"$title": Congratulations!
+"$title": Поздравляем!
 "$order": '9'
-description: 'You have successfully completed your first AMP story! In this tutorial, you learned to: - Create a multi-page story by using the amp-story component'
+description: 'Вы успешно создали свою первую веб-историю на AMP! В этом уроке вы научились: - Создавать многостраничную историю с помощью компонента amp-story.'
 author: bpaduch
 ---
 
-You have successfully completed your first Web Story using AMP!
+Вы успешно создали свою первую веб-историю на AMP!
 
 В этом уроке вы научились:
 
-- Create a multi-page Web Story by using the [`amp-story`](../../../../documentation/components/reference/amp-story.md) component
-- Create visual effects with multiple layers in a page
-- Lay out elements in a page by using layer templates
-- Add audio that plays while a page is viewed
-- Animate elements on a page
-- Keep readers engaged with your content by adding related links to the end of the story
+- Создавать многостраничную веб-историю с помощью компонента [`amp-story`](../../../../documentation/components/reference/amp-story.md)
+- Создавать визуальные эффекты с применением нескольких слоев на странице
+- Размещать элементы на странице с помощью шаблонов слоев
+- Добавлять звуковое сопровождение, которое воспроизводится при просмотре страницы
+- Анимировать элементы страницы
+- Поддерживать интерес читателей к вашему контенту, добавляя тематические ссылки в конец истории
 
 ## Следующие шаги
 
-Learn more about Web Stories and AMP from these resources:
+Дополнительную. информацию о веб-историях и AMP можно получить в следующих статьях:
 
 - [`amp-story`](../../../../documentation/components/reference/amp-story.md)
-- [AMP story best practices](../../../../documentation/guides-and-tutorials/start/create_successful_stories.md)
+- [Лучшие практики по созданию успешной веб-истории](../../../../documentation/guides-and-tutorials/start/create_successful_stories.md)
