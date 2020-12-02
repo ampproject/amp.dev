@@ -1,11 +1,11 @@
 ---
-"$title": AMP Boilerplate Code
+"$title": Шаблонный код AMP
 order: '9'
 formats:
 - websites
 - stories
 teaser:
-  text: " head > style[amp-boilerplate] and noscript > style[amp-boilerplate]"
+  text: " head > style[amp-boilerplate] и noscript > style[amp-boilerplate]"
 ---
 
 <!--
@@ -33,10 +33,10 @@ limitations under the License.
 
 ## `head > style[amp-boilerplate]` и `noscript > style[amp-boilerplate]` <a name="head--styleamp-boilerplate-and-noscript--styleamp-boilerplate"></a>
 
-AMP HTML documents must contain the following boilerplate in their `head` tag. Validation is currently done with regular expressions, so it's important to keep mutations as minimal as possible. Currently, the allowed mutations are:
+В разделе `head` AMP HTML-документов должен содержаться шаблонный код, приведенный ниже. В настоящее время валидация выполняется с помощью регулярных выражений, поэтому важно, чтобы изменения кода были минимальными. На данный момент разрешены следующие изменения:
 
-1. Inserting arbitrary whitespace immediately after the `style` tag opens, and immediately before it closes
-2. Replacing any space in the snippet below with arbitrary whitespace.
+1. Вставка произвольных пробелов сразу после открывающего тега `style` и непосредственно перед закрывающим.
+2. Замена любого пробела в приведенном ниже фрагменте любым пробельным символом.
 
 <!-- prettier-ignore-start -->
 
@@ -46,4 +46,4 @@ AMP HTML documents must contain the following boilerplate in their `head` tag. V
 
 <!-- prettier-ignore-end -->
 
-[tip] You can use the [boilerplate generator](https://amp.dev/boilerplate) to quickly setup a basic skeleton for your AMP page. It also provides snippets for structured data, to create a PWA and more! [/tip]
+[tip] Вы можете использовать [генератор шаблонов](https://amp.dev/boilerplate) для быстрой настройки базового каркаса вашей AMP-страницы. Генератор также предоставляет фрагменты структурированных данных, полезные для создания PWA и многого другого. [/tip]
