@@ -9,11 +9,11 @@ formats:
 
 CSS-анимация позволяет веб-элементам переходить от одной конфигурации стиля CSS к другой. Браузер может запускать определенные анимации при загрузке, но запускаемые событиями CSS-анимации [зависят от добавления и удаления классов](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations). AMP поддерживает оба типа анимации.
 
-Use CSS when you have a smaller, contained animation that doesn't need to be precisely timed.
+Используйте CSS, когда у вас есть небольшая циклическая анимация, которая не требует точной синхронизации по времени.
 
-## Defining CSS and keyframes
+## Добавление CSS и ключевых кадров
 
-You can define CSS in AMP in the following ways:
+Размещать код CSS в AMP-ресурсах можно следующими способами:
 
 [filter formats="websites, stories"]
 
@@ -62,7 +62,7 @@ You can define CSS in AMP in the following ways:
 </body>
 ```
 
-## Adding, removing, and toggling classes
+## Добавление и удаление классов
 
 Действие AMP `toggleClass` позволяет добавлять к определенным элементам классы или удалять их.
 
@@ -70,7 +70,7 @@ You can define CSS in AMP in the following ways:
 elementName.toggleClass(class="className")
 ```
 
-You can toggle a class on the same element you'd like users to interact with, such as an animated hamburger menu.
+Вы можете переключать класс в том же элементе, с которым взаимодействует пользователь, например с анимированным меню гамбургеров.
 
 ```html
  <div id="hamburger" tabindex=1 role=button on="tap:hamburger.toggleClass(class='close')">
@@ -90,7 +90,7 @@ You can toggle a class on the same element you'd like users to interact with, su
 
 Если вам нужно удалить класс и запретить его повторное добавление, добавьте атрибут `force` со значением `false`. Если вам нужно добавить класс и запретить удаление, добавьте `force` со значением `true`.
 
-## Animate with CSS and state
+## Анимация с помощью CSS и состояния
 
 Используйте [`amp-bind`](../../../../documentation/components/reference/amp-bind.md), чтобы добавлять и удалять любое количество CSS-классов с состояниями.
 
@@ -201,13 +201,13 @@ You can toggle a class on the same element you'd like users to interact with, su
 </amp-state>
 ```
 
-And link the element with the classes:
+После чего свяжите элемент с классами:
 
 ```html
   <div [class]="magicBox[animateBox].className"> </div>
 ```
 
-The states change from a linked AMP action or event. The following example changes the state from user interaction:
+Изменение состояний выполняется связанным действием или событием AMP. В примере ниже состояние меняется в результате действий пользователя:
 
 ```html
 <button on="tap:AMP.setState({animateBox: 'invisibleBox'})">
