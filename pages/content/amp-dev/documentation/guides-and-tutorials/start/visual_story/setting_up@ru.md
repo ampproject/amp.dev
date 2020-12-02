@@ -37,6 +37,6 @@ author: bpaduch
 http://localhost:8000/pets-completed.html
 ```
 
-[tip type="important"] **IMPORTANT –** Make sure the URL serves from `localhost` otherwise the Web Story might not load correctly, and you may encounter errors like `"source" "must start with "https://" or "//" or be relative and served from either https or from localhost.` [/tip]
+[tip type="important"] **ВАЖНО! ** Убедитесь, что URL-адрес выдается с `localhost`; в противном случае веб-история может загружаться неправильно, и вы можете столкнуться с ошибками, например с такими, как: `"source" "must start with "https://" or "//" or be relative and served from either https or from localhost.` [/tip]
 
 Просмотрите готовую историю, чтобы получить представление о том, что мы будем создавать.
