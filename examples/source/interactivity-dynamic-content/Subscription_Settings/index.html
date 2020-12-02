@@ -189,11 +189,10 @@ formats:
               <amp-img class="only-mentions absolute" width="30" height="30" src="/static/samples/img/only-mentions.png"></amp-img>
               <amp-img class="ignoring absolute" width="30" height="30" src="/static/samples/img/ignoring.png"></amp-img>
             </div>
-            <input type="hidden" name="nextSubscription" [value]="subscription.next" />
             <select
+              name="nextSubscription"
               id="select" class="absolute icon-sized"
-              on="change: AMP.setState({ subscription: { next: event.value } }), form.submit;"
-              [disabled]="!!subscription.next">
+              on="change: AMP.setState({ subscription: { next: event.value } }), form.submit;">
               {{#watching}}<option selected value="watching">Watching</option>{{/watching}}
               {{^watching}}<option value="watching">Watching</option>{{/watching}}
 
