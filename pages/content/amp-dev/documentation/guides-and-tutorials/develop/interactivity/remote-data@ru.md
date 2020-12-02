@@ -19,7 +19,7 @@ toc: 'true'
 
 Давайте воспользуемся возможностью извлечения удаленных данных, чтобы получить цены вариантов товаров, представленных в нашей выборке. Наш сервер разработки Express.js в `app.js` уже имеет конечную точку `/shirts/sizesAndPrices?shirt=<sku>` которая, учитывая варианты рубашки, возвращает доступные размеры и цену для каждого размера. Он отправляет ответ с искусственной задержкой в одну секунду для имитации задержки в сети.
 
-Request | Ответ
+Запрос | Ответ
 --- | ---
 `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}`
 
@@ -71,7 +71,7 @@ Request | Ответ
 
 Теперь перезагрузите страницу и попробуйте ее в работе. Выбор нового варианта товара (цвета рубашки) приведет к вычеркиванию отсутствующих размеров (после небольшой задержки).
 
-### Specify initial states
+### Укажите начальные состояния
 
 Есть небольшая проблема — что делать с рубашкой черного цвета, т. е. цвета, выбранного по умолчанию? Нам нужно будет добавить данные о размерах и цене черной рубашки в `amp-state#shirts`, поскольку [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) запускается только в ответ на явные действия пользователя:
 
@@ -125,9 +125,9 @@ Request | Ответ
 
 [tip type="note"] **ПРИМЕЧАНИЕ.** [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) не запускается при загрузке страницы — только в ответ на явные действия пользователя. Это гарантирует, что начальная загрузка будет одинаково быстрой на всех страницах независимо от использования [`amp-bind`](../../../../documentation/components/reference/amp-bind.md). [/tip]
 
-## Variable shirt prices
+## Переменные цены на рубашки
 
-Now that we correctly display the available sizes, let's make sure the correct price also displays.
+Теперь, когда мы правильно отображаем доступные размеры, давайте удостоверимся, что отображается правильная цена.
 
 Наш магазин AMPPAREL отличается тем, что цена на рубашку зависит от цвета и размера. Это означает, что нам нужна новая переменная для отслеживания выбранного пользователем размера. Добавьте новое действие к нашему элементу размера [`amp-selector`](../../../../documentation/components/reference/amp-selector.md):
 
@@ -142,7 +142,7 @@ Now that we correctly display the available sizes, let's make sure the correct p
 
 [tip type="tip"] **TIP –** `AMP.setState()` can be used for defining new variables in addition to modifying exist ones. Expressions will evaluate undefined variables to `null`. [/tip]
 
-Add a new `<span>` element wrapping the price label and change the default text to "---" since there's no default size selection.
+Добавьте новый элемент `<span>` обертывающий ценовую метку, и измените текст по умолчанию на «---», поскольку размер по умолчанию не выбран.
 
 ```html
 <h6>PRICE :
@@ -152,11 +152,11 @@ Add a new `<span>` element wrapping the price label and change the default text 
 </h6>
 ```
 
-And we have correct prices! Try it out.
+И у нас правильные цены! Попробуйте это.
 
-## Conditionally-enabled button
+## Условно-активная кнопка
 
-We're almost done! Let's disable the "Add to cart" button when the selected size is unavailable:
+Мы почти закончили! Давайте отключим кнопку «Добавить в корзину», когда выбранный размер недоступен:
 
 ```html
 <!-- Disable the "ADD TO CART" button when:
