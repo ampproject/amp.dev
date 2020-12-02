@@ -148,9 +148,9 @@ limitations under the License.
 
 #### CSS-анимация и переходы <a name="css-animations-and-transitions"></a>
 
-##### Selectors <a name="selectors"></a>
+##### Селекторы<a name="selectors"></a>
 
-The `transition` and `animation` properties are only allowed on selectors that:
+Свойства `transition` и `animation` разрешены только для селекторов, которые:
 
 - Содержат только свойства `transition`, `animation`, `transform`, `visibility` или `opacity`.
 
@@ -167,7 +167,7 @@ The `transition` and `animation` properties are only allowed on selectors that:
 
 **Плохо**
 
-Property not allowed in CSS class.
+Свойство запрещено в классе CSS.
 
 [sourcecode:css]
 .box {
@@ -177,7 +177,7 @@ Property not allowed in CSS class.
 }
 [/sourcecode]
 
-##### Transitionable and animatable properties <a name="transitionable-and-animatable-properties"></a>
+##### Переходные и анимируемые свойства<a name="transitionable-and-animatable-properties"></a>
 
 Единственными свойствами, которые можно использовать в переходах, являются opacity и transform. ([Обоснование](http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/))
 
@@ -261,19 +261,19 @@ transition: background-color 2s;
 
 *Пример:* `<amp-lightbox>` еще не включен, потому что даже рекламные креативы AMPHTML могут отображаться в iframe, а механизма расширения рекламы за пределы iframe пока не существует. Поддержка данного тега может быть добавлена в будущем, если она наберет достаточно сторонников.
 
-### HTML tags <a name="html-tags"></a>
+### HTML-теги <a name="html-tags"></a>
 
 Ниже перечислены *разрешенные* теги для рекламы AMPHTML. Теги, которые явно не разрешены, запрещены. Этот список является подмножеством общего [списка разрешенных в AMP тегов](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md). Подобно ему, данный список упорядочен в соответствии с  4-м разделом спецификации HTML5 («[Элементы HTML](http://www.w3.org/TR/html5/single-page.html#html-elements)»).
 
 Большинство отсутствующих тегов опущены либо для обеспечения нужной производительности, либо потому, что эти теги не соответствуют стандарту HTML5. Например, `<noscript>` опущен, потому что реклама AMPHTML работает только со включенным JavaScript; таким образом блок `<noscript>` не будет выполняться никогда и, следовательно, будет только увеличивать размер креатива, что приведет к увеличению сетевой задержки и ненужному расходованию пропускной способности сети. `<acronym>` , `<big>` и другие подобные теги запрещены, потому что они не совместимы с HTML5.
 
-#### 4.1 The root element <a name="41-the-root-element"></a>
+#### 4.1 Корневой элемент <a name="41-the-root-element"></a>
 
 4.1.1 `<html>`
 
-- Must use types `<html ⚡4ads>` or `<html amp4ads>`
+- Должны использовать `<html ⚡4ads>` или `<html amp4ads>`
 
-#### 4.2 Document metadata <a name="42-document-metadata"></a>
+#### 4.2 Метаданные документа <a name="42-document-metadata"></a>
 
 4.2.1 `<head>`
 
@@ -287,11 +287,11 @@ transition: background-color 2s;
 
     4.2.5 `<style>` 4.2.6 `<meta>`
 
-#### 4.3 Sections <a name="43-sections"></a>
+#### 4.3 Разделы <a name="43-sections"></a>
 
 4.3.1 `<body>` 4.3.2 `<article>` 4.3.3 `<section>` 4.3.4 `<nav>` 4.3.5 `<aside>` 4.3.6 `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>` и `<h6>` 4.3.7 `<header>` 4.3.8 `<footer>` 4.3.9 `<address>`
 
-#### 4.4 Grouping Content <a name="44-grouping-content"></a>
+#### 4.4 Группировка контента <a name="44-grouping-content"></a>
 
 4.4.1 `<p>` 4.4.2 `<hr>` 4.4.3 `<pre>` 4.4.4 `<blockquote>` 4.4.5 `<ol>` 4.4.6 `<ul>` 4.4.7 `<li>` 4.4.8 `<dl>` 4.4.9 `<dt>` 4.4.10 `<dd>` 4.4.11 `<figure>` 4.4.12 `<figcaption>` 4.4.13 `<div>` 4.4.14 `<main>`
 
@@ -299,7 +299,7 @@ transition: background-color 2s;
 
 4.5.1 `<a>` 4.5.2 `<em>` 4.5.3 `<strong>` 4.5.4 `<small>` 4.5.5 `<s>` 4.5.6 `<cite>` 4.5.7 `<q>` 4.5.8 `<dfn>` 4.5.9 `<abbr>` 4.5.10 `<data>` 4.5.11 `<time>` 4.5.12 `<code>` 4.5.13 `<var>` 4.5.14 `<samp>` 4.5.15 `<kbd >` 4.5.16 `<sub>` and `<sup>` 4.5.17 `<i>` 4.5.18 `<b>` 4.5.19 `<u>` 4.5.20 `<mark>` 4.5.21 `<ruby>` 4.5.22 `<rb>` 4.5.23 `<rt>` 4.5.24 `<rtc>` 4.5.25 `<rp>` 4.5.26 `<bdi>` 4.5.27 `<bdo>` 4.5.28 `<span>` 4.5.29 `<br>` 4.5.30 `<wbr>`
 
-#### 4.6 Edits <a name="46-edits"></a>
+#### 4.6 Правки <a name="46-edits"></a>
 
 4.6.1 `<ins>` 4.6.2 `<del>`
 
