@@ -1,10 +1,10 @@
 ---
-"$title": Tracking engagement with analytics
+"$title": Отслеживание вовлечения с помощью функций аналитики
 "$order": '4'
 description: Для интеграции сайтов с платформами аналитики обычно используются встраиваемые фрагменты кода JavaScript и вызовы функций, которые отправляют в систему аналитики данные о происходящих событиях.
 ---
 
-Analytics platforms are commonly integrated into websites through inline JavaScript snippets and function calls, which trigger events that are sent back to the analytics system. AMP provides a flexible JSON configuration syntax to replicate this process for several analytics partners.
+Платформы аналитики обычно интегрируются в сайты с помощью встроенных сниппетов JavaScript-кода и вызовов функций. Эти элементы инициируют события, которые отправляются обратно в систему аналитики. AMP предоставляет гибкий синтаксис JSON-конфигураций, позволяющий использовать этот подход для интеграции с рядом партнеров по аналитике.
 
 Ниже приведен пример традиционной JavaScript-реализации отслеживания с помощью Google Analytics. Мы перепишем его в формате JSON для [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), но сначала давайте взглянем на традиционный подход:
 
