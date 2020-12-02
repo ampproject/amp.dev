@@ -1,7 +1,7 @@
 ---
-"$title": Documentation types
+"$title": Типы документации
 "$order": '1'
-description: Types of documentation contributions accepted on amp.dev
+description: Типы документации, принимаемые на amp.dev
 formats:
 - websites
 - stories
@@ -158,7 +158,7 @@ toc: 'false'
   </tr>
   <tr>
    <td>Визуализировать информацию, например с помощью диаграмм и скриншотов.</td>
-   <td>Overthink this, you can request help for visual aids from the [outreach working group](https://github.com/ampproject/wg-outreach).    </td>
+   <td>Уделять визуализации слишком много внимания; за помощью в подборе визуальных материалов можно обратиться в [общественную группу поддержки](https://github.com/ampproject/wg-outreach).</td>
   </tr>
   <tr>
    <td>Предоставлять образцы кода и ссылки на другие руководства.</td>
