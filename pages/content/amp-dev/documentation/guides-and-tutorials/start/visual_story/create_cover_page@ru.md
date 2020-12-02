@@ -22,16 +22,16 @@ author: bpaduch
 
 Теперь у нас есть оболочка для нашей титульной страницы. Однако наша история все еще не является корректно сформированной. На странице нужно указать хотя бы один **слой**. {{ image('/static/img/docs/tutorials/amp_story/cover_layers.png', 416, 679, alt='титульная страница состоит из двух слоев', align='right third' ) }}
 
-## Layers in a page
+## Слои на странице
 
 Вы можете использовать слои на страницах AMP-истории для создания визуальных эффектов, подобно слоям в графических редакторах. Слои накладываются друг на друга, поэтому первый слой является нижним, следующий отображается поверх него и так далее.
 
-Our cover page is actually comprised of two layers:
+Наша титульная страница состоит из двух слоев:
 
 - **Слой 1.** Изображение, выполняющее функции фона
 - **Слой 2**. Название статьи и ее автор
 
-### Creating layer 1
+### Создание слоя 1
 
 Давайте добавим первый слой на нашу титульную страницу. Слой содержит изображение, заполняющее экран.
 
@@ -54,7 +54,7 @@ Our cover page is actually comprised of two layers:
 
 {{ image('/static/img/docs/tutorials/amp_story/pg0_layer1.jpg', 720, 1280, align='center third' ) }}
 
-### Creating layer 2
+### Создание слоя 2
 
 Итак, у нас есть фон, но теперь нам нужен второй слой, который размещается поверх фона и содержит наш заголовок и имя автора. Чтобы добавить второй слой, давайте выполним те же задачи, что и для слоя 1, но вместо использования шаблона `fill` мы будем использовать шаблон **`vertical`**. Однако, прежде чем идти дальше, давайте подробнее изучим шаблоны и то, как мы можем упорядочить элементы AMP и HTML внутри элемента `<amp-story-grid-layer>`.
 
@@ -88,7 +88,7 @@ Our cover page is actually comprised of two layers:
     <td> {{ image('/static/img/docs/tutorials/amp_story/layer-horizontal.png', 216, 341) }}</td>
 </tr>
 <tr>
-    <td colspan="2"><h5 id="thirds">Template: Thirds</h5></td>
+    <td colspan="2"><h5 id="thirds">Шаблон: Thirds</h5></td>
 </tr>
 <tr>
 <td width="65%">Шаблон <strong>thirds</strong> делит экран на три равных горизонтальных части и позволяет вам вставлять контент в каждую из них. Вы также можете использовать именованный элемент <code>grid-area</code>, чтобы указать, какую треть вы хотите использовать для контента: верхнюю (<code>upper-third</code>), среднюю (<code>middle-third</code>) или нижнюю (<code>lower-third</code>). Именованные элементы grid-area полезны для изменения стандартного порядка размещения элементов. Например, если в вашем слое два элемента, вы можете заставить первый отображаться в верхней трети (<code>grid-area="upper-third"</code>), а второй — в нижней (<code>grid-area="lower-third"</code>). <code class="nopad"><pre><amp-story-grid-layer template="thirds">   <h1 grid-area="upper-third">element 1</h1>   <p grid-area="lower-third">element 2</p> </amp-story-grid-layer> </pre></code>
@@ -97,7 +97,7 @@ Our cover page is actually comprised of two layers:
 </tr>
 </table>
 
-### Completing our cover page
+### Завершение нашей титульной страницы
 
 Теперь, когда вы освоили шаблоны слоев, давайте завершим наш второй слой для титульной страницы.
 
