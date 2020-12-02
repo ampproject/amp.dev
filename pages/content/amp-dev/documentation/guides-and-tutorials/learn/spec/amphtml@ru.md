@@ -369,7 +369,7 @@ AMP HTML использует ряд специальных элементов (
 
 В следующих примерах свойство `<property>` должно быть в вышеуказанном белом списке.
 
-- `transition <property>` (also -vendorPrefix-transition)
+- `transition <property>` (также -vendorPrefix-transition)
 - `@keyframes name { from: {<property>: value} to {<property: value>} }` (также `@-vendorPrefix-keyframes`)
 
 #### Максимальный размер <a name="maximum-size"></a>
