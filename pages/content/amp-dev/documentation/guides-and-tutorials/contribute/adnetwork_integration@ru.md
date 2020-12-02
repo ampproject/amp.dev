@@ -8,26 +8,26 @@ formats:
 
 Это руководство предназначено для рекламных сетей, которые хотят интегрироваться с AMP для показа медийной рекламы на AMP-страницах.
 
-## Overview
+## Обзор
 
-As an ad server, you can integrate with AMP to serve traditional HTML ads to AMP pages, as well as serving [AMPHTML](../../../documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md) ads.
+Рекламные серверы могут выполнять интеграцию с AMP для показа традиционной HTML-рекламы на AMP-страницах, а также для показа рекламы [AMPHTML](../../../documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md).
 
-##### Want to serve traditional HTML ads?
+##### Хотите показывать традиционную HTML-рекламу?
 
 1. [`amp-ad`](../../../documentation/components/reference/amp-ad.md)
 
-##### Want to serve AMPHTML ads?
+##### Хотите показывать рекламу на AMPHTML?
 
-1. [`amp-ad`](../../../documentation/components/reference/amp-ad.md) (i.e., if you haven't already created one to serve traditional HTML ads).
-2. [Create a Fast Fetch integration to serve AMPHTML ads](#creating-a-fast-fetch-integration).
+1. [`amp-ad`](../../../documentation/components/reference/amp-ad.md) (т. е. если вы еще не создали его для показа традиционной HTML-рекламы).
+2. [Создайте интеграцию Fast Fetch для показа рекламы AMPHTML](#creating-a-fast-fetch-integration).
 
 ## Создание `amp-ad` <a name="creating-an-amp-ad"></a>
 
-As an ad server, publishers you support include a JavaScript library provided by you and place various "ad snippets" that rely on the JavaScript library to fetch ads and render them on the publisher's website. Because AMP doesn't allow publishers to execute arbitrary JavaScript, you will need to contribute to the AMP open-source code to allow the [`amp-ad`](../../../documentation/components/reference/amp-ad.md)  tag to request ads from your ad server.
+Поддерживаемые вами издатели включают в свои страницы предоставленную вами библиотеку JavaScript и размещают на страницах различные «рекламные сниппеты», которые используют эту библиотеку для загрузки рекламы и отображения ее на сайте издателя. Так как AMP не позволяет издателям выполнять произвольный JavaScript, вам потребуется внести правки в открытый код компонента [`amp-ad`](../../../documentation/components/reference/amp-ad.md), чтобы позволить ему выполнять запрос рекламы с вашего рекламного сервера.
 
-[tip type="note"] **NOTE –** You can use this [`amp-ad`](../../../documentation/components/reference/amp-ad.md) implementation to display traditional HTML ads **and** AMPHTML ads. [/tip]
+[tip type="note"] **Примечание.** Вы можете использовать эту реализацию [`amp-ad`](../../../documentation/components/reference/amp-ad.md) для отображения традиционной HTML-рекламы **и** AMPHTML-рекламы. [/tip]
 
-For example, the Amazon A9 server can be invoked by using following syntax:
+Например, запрос на сервер Amazon A9 можно выполнить с помощью следующего синтаксиса:
 
 ```html
 <amp-ad width="300" height="250"
@@ -38,25 +38,25 @@ For example, the Amazon A9 server can be invoked by using following syntax:
 </amp-ad>
 ```
 
-In the above code, the `type` attribute specifies the ad network, which in this case is A9. The `data-*` attributes are dependent on the parameters that the Amazon's A9 server expects to deliver an ad. The [`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) file shows you how the parameters are mapped to making a JavaScript call to the A9 server's URL. The corresponding parameters passed by the [`amp-ad`](../../../documentation/components/reference/amp-ad.md) tag are appended to the URL to return an ad.
+В приведенном выше коде с помощью атрибута `type` указывается рекламная сеть, которой в данном случае является A9. Атрибуты `data-*` используются для передачи обязательных параметров сервера Amazon A9. В файле [`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) показано, как параметры сопоставляются с вызовом JavaScript на URL сервера A9. Параметры, передаваемые тегом [`amp-ad`](../../../documentation/components/reference/amp-ad.md), добавляются к URL-адресу для возврата рекламного объявления.
 
-For instructions on creating an [`amp-ad`](../../../documentation/components/reference/amp-ad.md) integration, see [Integrating ad networks into AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+Инструкции по созданию интеграции [`amp-ad`](../../../documentation/components/reference/amp-ad.md) см. в разделе [Интеграция рекламных сетей в AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
 
 ## Создание интеграции Fast Fetch <a name="creating-a-fast-fetch-integration"></a>
 
-[Fast Fetch](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/) is an AMP mechanism that separates the ad request from the ad response, allowing ad requests to occur earlier in the page lifecycle, and rendering ads only when they are likely to be viewed by users. Fast Fetch provides preferential treatment to verified AMPHTML ads over traditional HTML ads. Within Fast Fetch, if an ad fails validation, that ad is wrapped in a cross-domain iframe to sandbox it from the rest of the AMP document. Conversely, an AMPHTML ad passing validation is written directly into the page. Fast Fetch handles both AMP and non-AMP ads; no additional ad requests are required for ads that fail validation.
+[Fast Fetch](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/) — это механизм AMP, который отделяет запрос рекламы от ответа рекламы, что позволяет запросам рекламы выполняться на более раннем этапе жизненного цикла страницы и отображать рекламу только тогда, когда она может быть просмотрена пользователями. Fast Fetch обеспечивает приоритет в обработке проверенной рекламы AMPHTML по сравнению с традиционной HTML-рекламой. В Fast Fetch, если реклама не проходит проверку, она помещается в междоменный iframe, чтобы изолировать ее от остальной части документа AMP. И наоборот, реклама AMPHTML, прошедшая проверку, записывается прямо в код страницы. Fast Fetch обрабатывает как AMP-, так и не-AMP-рекламу; для рекламы, не прошедшей проверку, дополнительных запросов рекламы не требуется.
 
 {{ image('/static/img/docs/ads/amphtml-ad-flow.svg', 843, 699, alt='Fast Fetch Integration flow', caption='Fast Fetch Integration flow' ) }}
 
-To serve AMPHTML ads from your ad server, you must provide a Fast Fetch integration that includes:
+Чтобы показывать AMPHTML-рекламу с вашего рекламного сервера, вы должны обеспечить интеграцию Fast Fetch, которая включает в себя:
 
-1. Supporting SSL network communication.
-2. Providing JavaScript to build the ad request (example implementations: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) & [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
-3. Validating and signing the creative through a validation service. [Cloudflare](https://blog.cloudflare.com/firebolt/) provides an AMP ad verification service, enabling any independent ad provider to deliver faster, lighter, and more engaging ads.
+1. Поддержку SSL.
+2. Код JavaScript для создания запроса рекламы (примеры реализации: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) и [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
+3. Проверку и подписание креатива через службу проверки рекламы — например, сервис от [Cloudflare](https://blog.cloudflare.com/firebolt/), позволяющий любому независимому рекламному провайдеру показывать более быструю, «легкую» и увлекательную рекламу.
 
-For instructions on creating a Fast Fetch integration, see the [Fast Fetch Network Implementation Guide](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).
+Инструкции по созданию интеграции Fast Fetch см. в [Руководстве по сетевому внедрению Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).
 
-## Related resources
+## Ресурсы по теме
 
 - [`amp-ad`](../../../documentation/components/reference/amp-ad.md)
 - [Список поддерживаемых поставщиков рекламы](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md)
