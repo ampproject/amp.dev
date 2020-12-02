@@ -82,7 +82,7 @@ amp-fit-text {
 </amp-carousel>
 ```
 
-**Refresh** the page and you should see something like this:
+**Обновите** страницу, и вы должны увидеть что-то вроде этого:
 
 {{ image('/static/img/docs/tutorials/tut-advanced-carousel-complex.gif', 412, 403, align='center half', caption='A carousel of mixed content') }}
 
