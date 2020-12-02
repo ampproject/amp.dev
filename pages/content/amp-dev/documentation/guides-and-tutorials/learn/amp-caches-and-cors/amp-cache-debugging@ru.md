@@ -25,14 +25,14 @@ have a look and request a pull request there.
 1. Откройте в браузере консоль инструментов разработчика/отладки ошибок и устраните все возникающие ошибки или предупреждения.
 2. Загрузите документ в [AMPBench](https://ampbench.appspot.com/) и устраните все непредвиденные ошибки или предупреждения.
 
-If you still have a problem after following these steps, check the table below.
+Если после выполнения этих действий проблема не исчезнет, проверьте таблицу ниже.
 
 <table>
 <table>
   <thead>
     <tr>
-      <th width="30%">Symptom</th>
-      <th width="30%">Issue</th>
+      <th width="30%">Симптом</th>
+      <th width="30%">Проблема</th>
       <th width="40%">Solution</th>
     </tr>
   </thead>
@@ -59,7 +59,7 @@ If you still have a problem after following these steps, check the table below.
     </tr>
     <tr>
       <td>Динамические элементы, такие как <code><amp-form></amp-form></code>, <code><amp-list></amp-list></code>, демонстрируют некорректное поведение.</td>
-      <td>Broken or missing CORS headers.</td>
+      <td>Заголовки CORS повреждены или отсутствуют.</td>
       <td>Эти компоненты отправляют кроссдоменные запросы из AMP-кеша в ваш источник. По умолчанию браузеры блокируют такие запросы. Чтобы разрешить их, передавайте <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">заголовки CORS</a>, которые вносят <a href="https://amp.dev/documentation/guides-and-tutorials/amp-cors-requests.html">все кеши</a> в список разрешенных.</td>
     </tr>
     <tr>
