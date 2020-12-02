@@ -1,5 +1,5 @@
 ---
-"$title": Limitations of AMPHTML Email (TBD)
+"$title": Ограничения писем AMPHTML (TBD)
 "$order": '2'
 formats:
 - email
