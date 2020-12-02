@@ -33,13 +33,13 @@ limitations under the License.
 
 Ниже приводится список [компонентов AMP](https://amp.dev/documentation/components/?format=email), которые на данный момент поддерживаются в AMP-письмах. Компоненты сгруппированы по следующим категориям:
 
-- [Dynamic Content](#dynamic-content)
-- [Layout](#layout)
+- [Динамический контент](#dynamic-content)
+- [Макет](#layout)
 - [Мультимедиа](#media)
 
-## Dynamic Content <a name="dynamic-content"></a>
+## Динамический контент <a name="dynamic-content"></a>
 
-Element | Description
+Элемент | Описание
 --- | ---
 [`<amp-form>`](https://amp.dev/documentation/components/amp-form) | Элемент формы. Вместо обычного атрибута действия должен использоваться атрибут action-xhr. Может использоваться вместе с `<template type="amp-mustache">` для отображения ответа. <br><br>**Примечание.** [Перенаправление после отправки формы](https://amp.dev/documentation/components/amp-form/#redirecting-after-a-submission) не допускается.
 [`<amp-selector>`](https://amp.dev/documentation/components/amp-selector) | Виджет-селектор для форм, допускающий выбор нескольких вариантов.
@@ -48,21 +48,21 @@ Element | Description
 [`<amp-list>`](https://amp.dev/documentation/components/amp-list) | Выполняет загрузку удаленных данных JSON, которые будут отображаться с помощью [`<amp-mustache>`](https://amp.dev/documentation/components/amp-mustache).<br><br>**Примечание.** Привязка к атрибуту `[src]` не допускается. Также не разрешается добавлять учетные данные пользователя с помощью `credentials="include"`.
 [`<template type="amp-mustache">`](https://amp.dev/documentation/components/amp-mustache) | Разметка шаблона Mustache для отображения результатов вызова `amp-list`.
 
-## Layout <a name="layout"></a>
+## Макет <a name="layout"></a>
 
-Element | Description
+Элемент | Описание
 --- | ---
-[layout attributes](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/#layout-attributes) | Атрибуты макета определяют его поведение.
+[атрибуты макета](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/#layout-attributes) | Атрибуты макета определяют его поведение.
 [`<amp-accordion>`](https://amp.dev/documentation/components/amp-accordion) | Элемент пользовательского интерфейса, упрощающий отображение или скрытие различных разделов.
 [`<amp-carousel>`](https://amp.dev/documentation/components/amp-carousel) | Компонент для создания кольцевой галереи.
 [`<amp-fit-text>`](https://amp.dev/documentation/components/amp-fit-text) | Вспомогательный компонент для адаптивного размещения текста в определенной области.
 [`<amp-layout>`](https://amp.dev/documentation/components/amp-layout) | Контейнер для адаптивных макетов,  использующих фиксированное соотношение сторон.
 [`<amp-sidebar>`](https://amp.dev/documentation/components/amp-sidebar) | Боковая панель для функций навигации.
-[`<amp-timeago>`](https://amp.dev/documentation/components/amp-timeago) | Provides a convenient way of rendering timestamps.
+[`<amp-timeago>`](https://amp.dev/documentation/components/amp-timeago) | Предоставляет удобный способ отображения меток времени.
 
 ## Мультимедиа <a name="media"></a>
 
-Element | Description
+Элемент | Описание
 --- | ---
 [`<amp-img>`](https://amp.dev/documentation/components/amp-img) | AMP-компонент, заменяющий `<img>`. <br><br>**Примечание.** Привязка к `[src]` не допускается.
 [`<amp-anim>`](https://amp.dev/documentation/components/amp-anim) | Встраивает файлы GIF. <br><br>**Примечание.** Привязка к `[src]` не допускается.
