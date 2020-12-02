@@ -1,7 +1,7 @@
 ---
 "$title": Добавление расширенных компонентов AMP
 "$order": '2'
-description: 'AMP’s component system allows you to quickly build efficient and responsive features into your articles with minimal effort. The AMP HTML library has three classifications for AMP components: ...'
+description: '"Система компонентов AMP позволяет быстро и с минимальными усилиями встраивать в статьи эффективные и отзывчивые функции. Библиотека AMP HTML классифицирует компоненты AMP по трем видам: ..."'
 ---
 
 Система компонентов AMP позволяет быстро и с минимальными усилиями встраивать в статьи эффективные и отзывчивые функции. Библиотека AMP HTML классифицирует компоненты AMP по трем видам:
