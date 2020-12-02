@@ -9,7 +9,7 @@ description: 'Чтобы завершить этот урок, вам понад
 
 Чтобы завершить этот урок, вам понадобятся:
 
-- A basic knowledge of HTML, CSS, and JavaScript
+- Базовые знания HTML, CSS и JavaScript
 - Браузер (на ваш выбор)
 - Текстовый редактор (на ваш выбор)
 - Установленные на компьютере [Node.js и NPM](https://docs.npmjs.com/getting-started/installing-node)
@@ -24,7 +24,7 @@ description: 'Чтобы завершить этот урок, вам понад
 git clone https://github.com/googlecodelabs/advanced-interactivity-in-amp.git
 ```
 
-### Step 2. Install the dependencies
+### Шаг 2. Установите зависимости
 
 Разархивируйте файл архива (при необходимости) и перейдите в каталог. Установите зависимости, запустив команду `npm install`.
 
@@ -33,9 +33,9 @@ cd advanced-interactivity-in-amp
 npm install
 ```
 
-### Step 3. Run the development server
+### Шаг 3. Запустите сервер разработки
 
-Start the development server with node.js:
+Запустите сервер разработки с помощью node.js:
 
 ```shell
 node app.js
