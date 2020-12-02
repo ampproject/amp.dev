@@ -1,5 +1,5 @@
 ---
-"$title": CORS in AMP
+"$title": CORS в AMP
 order: '12'
 formats:
 - websites
@@ -42,7 +42,7 @@ limitations under the License.
 </li>
 <li data-md-type="list_item" data-md-list-type="unordered"><a href="#utilizing-cookies-for-cors-requests" data-md-type="link">Использование файлов cookie в CORS-запросах</a></li>
 <li data-md-type="list_item" data-md-list-type="unordered">
-<p data-md-type="paragraph"><a href="#cors-security-in-amp" data-md-type="link">CORS security in AMP</a></p>
+<p data-md-type="paragraph"><a href="#cors-security-in-amp" data-md-type="link">Безопасность CORS в AMP</a></p>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true"><li data-md-type="list_item" data-md-list-type="unordered">
 <p data-md-type="paragraph"><a href="#verify-cors-requests" data-md-type="link">Проверка  CORS-запросов</a></p>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true">
@@ -59,8 +59,8 @@ limitations under the License.
 <li data-md-type="list_item" data-md-list-type="unordered"><a href="#processing-state-changing-requests" data-md-type="link">Обработка запросов, меняющих состояние</a></li>
 </ul>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true">
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#example-walkthrough-handing-cors-requests-and-responses" data-md-type="link">Example walkthrough: Handing CORS requests and responses</a></li>
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#testing-cors-in-amp" data-md-type="link">Testing CORS in AMP</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#example-walkthrough-handing-cors-requests-and-responses" data-md-type="link">Примеры обработки CORS-запросов и CORS-ответов</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#testing-cors-in-amp" data-md-type="link">Тестирование CORS в AMP</a></li>
 </ul>
 </li>
 </ul>
@@ -83,7 +83,7 @@ limitations under the License.
 <amp-img alt="CORS and Cache" layout="responsive" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png" width="809" height="391">
   <noscript><img alt="CORS и кэш" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png"></noscript></amp-img>
 
-**Okay, what should I do?**
+**Хорошо, что мне делать?**
 
 1. Для AMP-страниц, загружающих динамические данные, — убедитесь, что вы протестировали кешированную версию страницы; *не ограничивайтесь тестированием на своем собственном домене* (см. раздел [Тестирование CORS в AMP](#testing-cors-in-amp) ниже).
 2. Следуйте приведенным в данном документе инструкциям по обработке CORS-запросов и CORS-ответов.
@@ -92,7 +92,7 @@ limitations under the License.
 
 Большинство компонентов AMP, которые используют CORS-запросы, либо автоматически устанавливают [режим учетных данных,](https://fetch.spec.whatwg.org/#concept-request-credentials-mode) либо позволяют автору при желании включить его. Например, компонент [`amp-list`](https://amp.dev/documentation/components/amp-list) получает динамическое содержимое из конечной точки CORS JSON и позволяет автору устанавливать режим учетных данных с помощью атрибута `credentials`.
 
-*Example: Including personalized content in an amp-list via cookies*
+*Пример: включение персонализированного контента в amp-list с помощью файлов cookie*
 
 [sourcecode:html]
 <amp-list
@@ -111,7 +111,7 @@ limitations under the License.
 
 Ограничения сторонних файлов cookie, указанные в браузере, также применяются к CORS-запросам с учетными данными в AMP. Эти ограничения зависят от браузера и платформы, но в некоторых браузерах источник может устанавливать файлы cookie только в том случае, если пользователь ранее посещал источник в основном (верхнем) окне. Или, другими словами, только после того, как пользователь напрямую посетил сам исходный сайт. Исходя из этого, сервис, доступ к которому осуществляется через CORS, не может рассчитывать на возможность устанавливать файлы cookie по умолчанию.
 
-## CORS security in AMP <a name="cors-security-in-amp"></a>
+## Безопасность CORS в AMP <a name="cors-security-in-amp"></a>
 
 Чтобы обеспечить корректность и безопасность запросов с ваших AMP-страниц и ответов на них, вы должны:
 
@@ -133,7 +133,7 @@ limitations under the License.
 
 Конечные точки CORS получают источник запроса посредством HTTP-заголовка `Origin`. Конечные точки должны разрешать запросы только от: (1) собственного источника издателя; и (2) всех источников `cacheDomain`, указанных в файле [https://cdn.ampproject.org/caches.json](https://cdn.ampproject.org/caches.json).
 
-For example, endpoints should allow requests from:
+Например, конечные точки должны разрешать запросы от:
 
 - Поддомена Google AMP Cache: `https://<домен издателя>.cdn.ampproject.org` <br> (например, `https://nytimes-com.cdn.ampproject.org`)
 
@@ -180,14 +180,14 @@ AMP-Same-Origin: true
 
     где `*` обозначает совпадение с подстановочным знаком, а не сам символ звездочки (*).
 
-2. Otherwise, process the request.
+2. В противном случае обработайте запрос.
 
 **Если заголовок `Origin` НЕ установлен**:
 
 1. Убедитесь, что запрос содержит заголовок `AMP-Same-Origin: true`. Если запрос не содержит этого заголовка, остановитесь и верните ответ с ошибкой.
-2. Otherwise, process the request.
+2. В противном случае обработайте запрос.
 
-## Example walkthrough: Handing CORS requests and responses <a name="example-walkthrough-handing-cors-requests-and-responses"></a>
+## Примеры обработки CORS-запросов и CORS-ответов <a name="example-walkthrough-handing-cors-requests-and-responses"></a>
 
 Есть два сценария поступления CORS-запросов к вашей конечной точке:
 
@@ -203,7 +203,7 @@ AMP-Same-Origin: true
 
 Основываясь на том, что мы знаем о CORS и AMP (из раздела [Проверка CORS-запросов](#verify-cors-requests) выше), в нашем примере мы разрешим запросы из следующих доменов:
 
-- `example.com` --- Publisher's domain
+- `example.com` --- домен издателя
 - `example-com.cdn.ampproject.org` --- поддомен Google AMP Cache
 
 ### Заголовки ответов на разрешенные запросы <a name="response-headers-for-allowed-requests"></a>
@@ -240,7 +240,7 @@ ELSE
       deny request
 [/sourcecode]
 
-#### CORS sample code <a name="cors-sample-code"></a>
+#### Пример кода CORS <a name="cors-sample-code"></a>
 
 Ниже представлен пример функции JavaScript, которую мы могли бы использовать для обработки CORS-запросов и CORS-ответов:
 
@@ -324,7 +324,7 @@ Access-Control-Allow-Credentials: true
 Access-Control-Allow-Origin: https://example-com.cdn.ampproject.org
 [/sourcecode]
 
-## Working with cached fonts <a name="working-with-cached-fonts"></a>
+## Работа с кешированными шрифтами <a name="working-with-cached-fonts"></a>
 
 Google AMP Cache кеширует документы AMP HTML, изображения и шрифты для оптимизации скорости AMP-страницы. Хотя это желаемый результат, нам также следует предпринимать меры по обеспечению безопасности кешированных ресурсов. Мы вносим изменения в механизм выдачи кешированных ресурсов из AMP-кеша (как правило, это шрифты), так чтобы он использовал полученное из источника значение `Access-Control-Allow-Origin`.
 
@@ -335,7 +335,7 @@ Google AMP Cache кеширует документы AMP HTML, изображе�
 - URL `https://example-com.cdn.ampproject.org/r/s/example.com/some/font.tff`
 - Access-Control-Allow-Origin: *
 
-### New behavior (October 2019 and after) <a name="new-behavior-october-2019-and-after"></a>
+### Новое поведение (октябрь 2019 г. и позже) <a name="new-behavior-october-2019-and-after"></a>
 
 Предыдущая реализация являлась пермиссивной, что могло приводить к непредвиденному использованию шрифтов со сторонних источников. Благодаря внесенным изменениям AMP-кеш теперь отвечает тем же значением `Access-Control-Allow-Origin`, что и исходный сервер. Чтобы правильно загружать шрифты из кешированного документа AMP, вам нужно принимать AMP-кеш в качестве одного из допустимых источников в заголовке.
 
@@ -376,13 +376,13 @@ function assertFontCors(req, res, opt_validMethods, opt_exposeHeaders) {
 
 Следите за соответствующей [задачей здесь.](https://github.com/ampproject/amphtml/issues/24834)
 
-## Testing CORS in AMP <a name="testing-cors-in-amp"></a>
+## Тестирование CORS в AMP <a name="testing-cors-in-amp"></a>
 
 Когда вы тестируете свои AMP-страницы, не забывайте также тестировать их кешированные версии.
 
 ### Проверяйте страницу через URL-адрес кеша <a name="verify-the-page-via-the-cache-url"></a>
 
-To ensure your cached AMP page renders and functions correctly:
+Чтобы обеспечить правильное отображение и работу кэшированной AMP-страницы:
 
 1. В браузере откройте URL-адрес, который будет использовать AMP-кеш для доступа к вашей AMP-странице. Формат URL-адреса кеша можно определить с помощью этого [инструмента из курса AMP By Example](https://amp.dev/documentation/examples/guides/using_the_google_amp_cache/).
 
@@ -397,7 +397,7 @@ To ensure your cached AMP page renders and functions correctly:
 
 Вы можете использовать команду `curl`, чтобы убедиться, что ваш сервер отправляет правильные заголовки HTTP-ответа. В команде `curl` укажите URL запроса и все специальные заголовки, которые хотите добавить.
 
-**Syntax**: `curl <request-url> -H <custom-header> - I`
+**Синтаксис**: `curl <request-url> -H <custom-header> - I`
 
 #### Протестируйте запрос из того же источника <a name="test-request-from-same-origin"></a>
 
