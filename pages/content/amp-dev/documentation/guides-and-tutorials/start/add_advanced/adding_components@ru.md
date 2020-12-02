@@ -1,5 +1,5 @@
 ---
-"$title": Adding extended AMP components
+"$title": Добавление расширенных компонентов AMP
 "$order": '2'
 description: 'AMP’s component system allows you to quickly build efficient and responsive features into your articles with minimal effort. The AMP HTML library has three classifications for AMP components: ...'
 ---
@@ -48,7 +48,7 @@ AMP-реклама создается с помощью компонента [`a
 
 Помните, что не все компоненты включены в JavaScript-файл главной библиотеки AMP. Нам придется добавить дополнительный запрос JavaScript для компонента рекламы.
 
-**Add** the following script to the `<head>` tag:
+**Добавьте** в тег `<head>` следующий скрипт:
 
 ```html
 <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
@@ -95,7 +95,7 @@ AMP-реклама создается с помощью компонента [`a
 Давайте сделаем наш AMP-документ более продвинутым, добавив в него встраивание контента, который обычно встречается в новостных статьях, например, такого как:
 
 - Видео с YouTube
-- Tweets
+- Твиты
 - Цитаты из статей
 
 ## Встраивание видео с YouTube
@@ -122,7 +122,7 @@ AMP-реклама создается с помощью компонента [`a
 
 [tip type="note"] **ПРИМЕЧАНИЕ.**  Если ваша консоль разработчика все еще открыта и в вашем URL есть строка `#development=1`, на этом этапе вы увидите ошибку AMP-валидатора, которая предложит добавить JavaScript-код [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) и отобразит ссылку на документацию, где сообщается, какой тег `script` нужно добавить. [/tip]
 
-**Add** the following script to the `<head>` tag:
+**Добавьте** в тег `<head>` следующий скрипт:
 
 ```html
 <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
