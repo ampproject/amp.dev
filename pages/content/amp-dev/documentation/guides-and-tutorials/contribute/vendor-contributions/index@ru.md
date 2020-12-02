@@ -1,8 +1,8 @@
 ---
-"$title": Integrate your technology with AMP
+"$title": Интеграция вашей технологии с AMP
 "$order": '0'
 "$hidden": 'true'
-description: If you are a technology provider for publishers or advertisers on the web, we invite you to add support to AMP so your customers can continue to leverage your technology and ...
+description: Если вы — провайдер технологий для интернет-издателей и рекламодателей, приглашаем вас добавить поддержку своих технологий в AMP, — это позволит вашим клиентам продолжать пользоваться вашей технологией, при этом...
 formats:
 - websites
 - ads
