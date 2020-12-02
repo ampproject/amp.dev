@@ -33,7 +33,7 @@ have a look and request a pull request there.
     <tr>
       <th width="30%">Симптом</th>
       <th width="30%">Проблема</th>
-      <th width="40%">Solution</th>
+      <th width="40%">Решение</th>
     </tr>
   </thead>
   <tbody>
