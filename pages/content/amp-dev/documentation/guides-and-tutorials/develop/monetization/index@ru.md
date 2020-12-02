@@ -1,14 +1,14 @@
 ---
-"$title": Monetizing your AMP page with ads
+"$title": Монетизация AMP-страницы с помощью рекламы
 "$order": '0'
 description: В этом руководстве представлены инструкции и передовые методы показа рекламы на ваших AMP-страницах. Итак, чтобы отображать рекламу в AMP-контексте, вам нужно добавить на свою AMP-страницу...
 formats:
 - websites
 ---
 
-This guide provides instructions and best practices for displaying ads on your AMP pages.
+В этом руководстве представлены инструкции и передовые методы показа рекламы на ваших AMP-страницах.
 
-## Adding ads to your page
+## Добавление рекламы на вашу страницу
 
 In non-AMP pages (traditional HTML), if you want to display ads on your page, you'd include a snippet of JavaScript to serve ads from your ad network.  For performance and security reasons, you cannot include third-party JavaScript in AMP pages.  So, to display ads in AMP, you need to add the custom [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component to your AMP page.
 
@@ -24,18 +24,18 @@ The [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) compone
 <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
 ```
 
-### Step 2: Add the amp-ad tag to your AMP page
+### Шаг 2. Добавьте тег amp-ad на свою AMP-страницу
 
 Over 100+ [ad servers and networks](ads_vendors.md) provide built-in integrations with AMP.  To add an ad for a given ad network, add the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) tag, and specify the network in the `type` attribute.
 
-In this example, we are adding an ad slot to serve ads from the a9 network:
+В этом примере мы добавляем рекламное место для показа рекламы из сети a9:
 
 ```html
 <amp-ad type="a9">
 </amp-ad>
 ```
 
-### Step 3: Specify the size of the ad unit
+### Шаг 3. Укажите размер рекламного блока
 
 Add the `width` and `height` attributes to the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)  tag.  This specifies the size of the ad on your AMP page:
 
@@ -45,7 +45,7 @@ Add the `width` and `height` attributes to the [`amp-ad`](../../../../documentat
 </amp-ad>
 ```
 
-### Step 4: Set ad network parameters
+### Шаг 4. Настройте параметры рекламной сети
 
 Each network has specific data attributes they require to serve ads.  Refer to the ad network's [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) documentation and add the attributes that are needed In the following example,  the a9 network requires additional parameters to specify the size of the ad, and other details:
 
@@ -107,16 +107,16 @@ The [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) compone
 
 ## Рекомендуемые методы
 
-Here are some tips to maximize the effectiveness of ads on your AMP pages:
+Вот несколько советов, как повысить эффективность рекламы на ваших AMP-страницах:
 
-### Placement & controls: optimize your ad placements
+### Размещение и элементы управления: оптимизируйте места размещения рекламы
 
 - **Place the same number of ads** on AMP Pages as your non-AMP pages to generate maximum revenue per page.
 - **Place the first ad immediately below the first viewport** ("below the fold") to provide an optimal user experience.
 - Unless you're using advanced CSS or media queries, **ensure your ad units are centered on the page** to provide your users with an optimal mobile web experience.
 - Enable [multi-size ad requests](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests) on your AMP inventory to increase ad auction pressure and drive revenue.
 
-### Demand & pricing: get the right price for your ads
+### Спрос и цены: получайте правильную цену за свою рекламу
 
 - **Sell ad units on your AMP pages across all sales channels**, including direct and indirect to maximize competition for your inventory on AMP pages.
 - **Price your ad inventory on AMP pages** similar to your inventory on non-AMP pages. Monitor performance and adjust pricing accordingly.
@@ -132,12 +132,12 @@ Here are some tips to maximize the effectiveness of ads on your AMP pages:
 
 ### Инновации: предлагайте наиболее привлекательные рекламные продукты
 
-- **Implement ads on ancillary AMP pages** to generate incremental revenue:
-    - [Ads in a carousel](../../../../documentation/examples/documentation/Carousel_Ad.html)
-    - [Ads in a lightbox](../../../../documentation/examples/documentation/Lightbox_Ad.html)
+- **Размещайте рекламу на дополнительных AMP-страницах,** чтобы получать дополнительный доход:
+    - [Реклама в карусели](../../../../documentation/examples/documentation/Carousel_Ad.html)
+    - [Реклама в лайтбоксе](../../../../documentation/examples/documentation/Lightbox_Ad.html)
     - ... and [more](../../../../documentation/examples/index.html)
 - **Implement new formats for direct sold ads** to equip your sales team with high-impact, innovative ad products:
-    - [Sticky Ads](../../../../documentation/examples/documentation/amp-sticky-ad.html)
+    - [Прикрепленная реклама](../../../../documentation/examples/documentation/amp-sticky-ad.html)
     - [Flying Carpet](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
 
 ## Дополнительные ресурсы
