@@ -39,7 +39,7 @@ limitations under the License.
 
 Дополнительную информацию о подтипе `multipart/alternative` см. в [RFC 1521, раздел 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
-## Additional information <a name="additional-information"></a>
+## Дополнительная информация <a name="additional-information"></a>
 
 Блок `text/x-amp-html` должен быть вложен в узел `multipart/alternative`. В электронном письме не может быть более одного блока `text/x-amp-html` внутри узла `multipart/alternative`.
 
@@ -55,7 +55,7 @@ limitations under the License.
 
 Почтовый клиент может перестать отображать AMP-блок электронного письма по истечении заданного периода времени, например 30 дней. В этом случае при просмотре электронного письма будет показан блок `text/html` или `text/plain`.
 
-## Example <a name="example"></a>
+## Пример <a name="example"></a>
 
 <!-- prettier-ignore-start -->
 
