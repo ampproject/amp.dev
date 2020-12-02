@@ -10,15 +10,15 @@ formats:
 
 ## Добавление рекламы на вашу страницу
 
-In non-AMP pages (traditional HTML), if you want to display ads on your page, you'd include a snippet of JavaScript to serve ads from your ad network.  For performance and security reasons, you cannot include third-party JavaScript in AMP pages.  So, to display ads in AMP, you need to add the custom [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component to your AMP page.
+Если вы хотите показывать рекламу на традиционных HTML-страницах (без AMP), в них следует включить специальный сниппет кода JavaScript, который будет загружать рекламу из вашей рекламной сети. Из соображений производительности и безопасности мы не разрешаем включать сторонний JavaScript на AMP-страницы. Поэтому, чтобы отображать рекламу в AMP-контексте, вам нужно добавить на свою AMP-страницу специальный компонент [`amp-ad`](../../../../documentation/components/reference/amp-ad.md).
 
-[tip type="tip"] **TIP –** See [AMP By Example for a live demo](../../../../documentation/components/reference/amp-ad.md) that demonstrates adding an amp-ad tag to an AMP page. [/tip]
+[tip type="tip"] **СОВЕТ.** Посмотреть, как добавить тег amp-ad на AMP-страницу, можно в [демонстрации из курса AMP By Example](../../../../documentation/components/reference/amp-ad.md). [/tip]
 
 Давайте рассмотрим, какие действия надо выполнить, чтобы добавить компонент, который позволит вам отображать рекламу на своей AMP-странице.
 
 ### Шаг 1: включение скрипта {code0}amp-analytics{/code0}
 
-The [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component is a custom ad extension to the AMP library. Under the hood of [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) is custom JavaScript that's carefully designed to optimize performance. To run the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component, you must add the required JavaScript for this component in the `head` section of your AMP page:
+Компонент [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) — это настраиваемое рекламное расширение для библиотеки AMP. В основе [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) лежит специальный код JavaScript, который тщательно спроектирован под оптимальную производительность. Для запуска компонента [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) необходимо добавить нужный этому компоненту код JavaScript в раздел `head` вашей AMP-страницы:
 
 ```html
 <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
@@ -26,7 +26,7 @@ The [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) compone
 
 ### Шаг 2. Добавьте тег amp-ad на свою AMP-страницу
 
-Over 100+ [ad servers and networks](ads_vendors.md) provide built-in integrations with AMP.  To add an ad for a given ad network, add the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) tag, and specify the network in the `type` attribute.
+Более 100 [рекламных серверов и сетей](ads_vendors.md) предлагают встроенную интеграцию с AMP. Чтобы добавить рекламу из определенной рекламной сети, добавьте тег [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) и укажите сеть в атрибуте `type`.
 
 В этом примере мы добавляем рекламное место для показа рекламы из сети a9:
 
@@ -37,7 +37,7 @@ Over 100+ [ad servers and networks](ads_vendors.md) provide built-in integration
 
 ### Шаг 3. Укажите размер рекламного блока
 
-Add the `width` and `height` attributes to the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)  tag.  This specifies the size of the ad on your AMP page:
+Добавьте в тег <a><code data-md-type="codespan">amp-ad</code></a> атрибуты <code>width</code> и `height`. Это определит размер данной рекламы на вашей AMP-странице:
 
 ```html
 <amp-ad type="a9">
@@ -47,7 +47,7 @@ Add the `width` and `height` attributes to the [`amp-ad`](../../../../documentat
 
 ### Шаг 4. Настройте параметры рекламной сети
 
-Each network has specific data attributes they require to serve ads.  Refer to the ad network's [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) documentation and add the attributes that are needed In the following example,  the a9 network requires additional parameters to specify the size of the ad, and other details:
+В каждой сети имеются определенные атрибуты данных, необходимые для показа рекламы. Ознакомьтесь с документацией рекламной сети по использованию [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) и добавьте необходимые атрибуты. В приведенном ниже примере для сети a9 требуются дополнительные параметры для указания размера рекламы и еще кое-какие сведения:
 
 ```html
 <amp-ad type="a9"
@@ -60,7 +60,7 @@ Each network has specific data attributes they require to serve ads.  Refer to t
 
 ### Шаг 5. Укажите заполнитель (необязательно)
 
-Depending on the ad network, you can choose to show a placeholder until the ad is available for viewing. This provides a better user experience by preventing a blank space.  To specify a placeholder, add a child element with the `placeholder` attribute. Learn more in [Placeholders & fallbacks](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
+Некоторые рекламные сети позволяют использовать заполнитель, который будет отображен до тех пор, пока реклама не станет доступна для просмотра. Это улучшает визуальное восприятие страницы, предотвращая появление «прорех» при ее загрузке. Чтобы указать заполнитель, добавьте дочерний элемент с атрибутом `placeholder`. Дополнительные сведения см. в разделе [Заполнители и резервные элементы](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ```html
 <amp-ad type="a9"
@@ -74,7 +74,7 @@ Depending on the ad network, you can choose to show a placeholder until the ad i
 
 ### Шаг 6. Укажите резервный элемент (необязательно)
 
-Depending on the ad network, you can choose to show a fallback element if no ad is available to serve. To specify a fallback, add a child element with the `fallback` attribute. Learn more in [Placeholders & fallbacks](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
+Некоторые рекламные сети позволяют использовать резервный элемент, который будет показан, если реклама недоступна. Чтобы указать резервный элемент, добавьте дочерний элемент с атрибутом `fallback`. Дополнительные сведения см. в разделе [Заполнители и резервные элементы](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ```html
 <amp-ad type="a9"
@@ -90,7 +90,7 @@ Depending on the ad network, you can choose to show a fallback element if no ad 
 
 ## Показ рекламы AMPHTML, продаваемой напрямую
 
-The [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component serves ads from the network you specify.  Those ads can be standard HTML ads or AMPHTML ads, provided that the ad network supports AMPHTML ads. To serve your direct-sold ads as AMPHTML ads, create the ad in AMP HTML according to the [AMPHTML ad spec](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) requirements and use an [ad server that serves AMPHTML ads](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
+Компонент [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) показывает рекламу из указанной вами сети. Эта реклама может быть как стандартной рекламой HTML, так и рекламой AMPHTML, если рекламная сеть ее поддерживает. Чтобы показывать напрямую продаваемую рекламу в формате рекламы AMPHTML, создайте рекламу в соответствии с требованиями [спецификации AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) и используйте [рекламный сервер, поддерживающий рекламу AMPHTML](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
 
 ## Дополнение данных таргетинга в составе запросов рекламы
 
@@ -102,8 +102,8 @@ The [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) compone
 
 Дополнительную информацию можно также получить из следующих ресурсов, посвященных RTC:
 
-- [AMP RTC publisher implementation guide](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
-- [AMP Real Time Config](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
+- [Руководство по внедрению AMP RTC для издателей](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
+- [Технология AMP Real Time Config](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
 
 ## Рекомендуемые методы
 
@@ -111,36 +111,36 @@ The [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) compone
 
 ### Размещение и элементы управления: оптимизируйте места размещения рекламы
 
-- **Place the same number of ads** on AMP Pages as your non-AMP pages to generate maximum revenue per page.
+- **Размещайте одинаковое число рекламных объявлений** как на AMP-страницах, так и на традиционных (не-AMP) страницах, чтобы получать максимальную выручку со страницы.
 - **Place the first ad immediately below the first viewport** ("below the fold") to provide an optimal user experience.
-- Unless you're using advanced CSS or media queries, **ensure your ad units are centered on the page** to provide your users with an optimal mobile web experience.
-- Enable [multi-size ad requests](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests) on your AMP inventory to increase ad auction pressure and drive revenue.
+- Если вы не используете расширенный CSS или медиа-запросы, **убедитесь, что ваши рекламные блоки размещены по центру страницы**, чтобы пользователям было удобно работать с мобильным сайтом.
+- Реализуйте [мультиразмерные запросы рекламы](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests) в своем AMP-инвентаре, чтобы усилить конкуренцию на аукционе рекламы и увеличить свой доход.
 
 ### Спрос и цены: получайте правильную цену за свою рекламу
 
-- **Sell ad units on your AMP pages across all sales channels**, including direct and indirect to maximize competition for your inventory on AMP pages.
-- **Price your ad inventory on AMP pages** similar to your inventory on non-AMP pages. Monitor performance and adjust pricing accordingly.
-- **Ensure all ad demand channels are competing** for ad inventory on your AMP pages to drive up competition.
+- **Продавайте рекламные блоки на своих AMP-страницах по всем каналам продаж**, включая прямые и косвенные, чтобы добиться максимальной конкуренции за ваш инвентарь на AMP-страницах.
+- **Устанавливайте за рекламный инвентарь на AMP-страницах те же** расценки, что и за ваш инвентарь на не-AMP-страницах. Следите за эффективностью рекламы и соответствующим образом корректируйте цены.
+- **Убедитесь, что соревнование за рекламный инвентарь на ваших AMP-страницах идет по всем каналам спроса**, чтобы повышать конкуренцию.
 
 ### Типы рекламы: показывайте самую лучшую рекламу
 
-- **Avoid heavy creatives** per [IAB guidelines](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf).
-- **Avoid interstitials** or other ad formats that cause the content to reflow on ad load.
-- **Optimize for viewability** by setting the data-loading-strategy to prefer-viewability-over-views.
-- **Place ads in your video content** via [supported players](../../../../documentation/components/index.html#media) or [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) to enable revenue on all types of content.
-- **Implement native ads** to compete with display ads using multi-sized ad requests, adding demand pressure while providing your readers with a premium user experience.
+- **Избегайте «тяжелых» креативов** в соответствии с [рекомендациями IAB](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf).
+- **Избегайте межстраничных** объявлений или других форматов рекламы, которые вызывают перекомпоновку (reflow) контента при загрузке рекламы.
+- **Оптимизируйте видимость**, устанавливая атрибуту data-loading-strategy значение prefer-viewability-over-views.
+- **Размещайте рекламу в своем видеоконтенте** с помощью [поддерживаемых проигрывателей](../../../../documentation/components/index.html#media) или [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md), чтобы получать доход от всех типов контента.
+- **Внедряйте нативную рекламу** для создания конкуренции с медийной рекламой, используя мультиразмерные запросы рекламы, — тем самым вы будете повышать спрос на рекламу и одновременно предоставлять своим читателям наилучший опыт взаимодействия.
 
 ### Инновации: предлагайте наиболее привлекательные рекламные продукты
 
 - **Размещайте рекламу на дополнительных AMP-страницах,** чтобы получать дополнительный доход:
     - [Реклама в карусели](../../../../documentation/examples/documentation/Carousel_Ad.html)
     - [Реклама в лайтбоксе](../../../../documentation/examples/documentation/Lightbox_Ad.html)
-    - ... and [more](../../../../documentation/examples/index.html)
-- **Implement new formats for direct sold ads** to equip your sales team with high-impact, innovative ad products:
+    - ... и [другое](../../../../documentation/examples/index.html)
+- **Внедряйте новые форматы для напрямую продаваемой рекламы**, чтобы снабдить вашу команду продаж высокоэффективными инновационными рекламными продуктами:
     - [Прикрепленная реклама](../../../../documentation/examples/documentation/amp-sticky-ad.html)
-    - [Flying Carpet](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
+    - [Ковер-самолет](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
 
 ## Дополнительные ресурсы
 
-- [AMPHTML ad templates](../../../../documentation/examples/index.html)
-- [Demo: Shows how to add `amp-ad` to your AMP page](../../../../documentation/components/reference/amp-ad.md)
+- [Шаблоны рекламы AMPHTML](../../../../documentation/examples/index.html)
+- [Демонстрация: как добавить `amp-ad` на AMP-страницу](../../../../documentation/components/reference/amp-ad.md)
