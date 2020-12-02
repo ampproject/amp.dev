@@ -18,17 +18,17 @@ contributors:
 
 По методам стилизации и компоновки страницы AMP HTML очень схожи с обычными HTML-страницами: в обоих случаях используется CSS.
 
-For performance and usability reasons, AMP [limits some CSS styles](style_pages.md) and total bytes to 75,000 per page. However, AMP expands responsive design capabilities with features like [placeholders & fallbacks](placeholders.md), [advanced art direction via srcset](art_direction.md) and the [layout attribute](control_layout.md) for better control over how your elements display.
+Чтобы обеспечить оптимальную производительность и удобство для пользователя, AMP [накладывает ограничения на использование некоторых стилей CSS](style_pages.md), а общий объем стилей на странице не должен превышать 75 000 байт. При этом AMP обеспечивает новые возможности для адаптивного дизайна, такие как [заполнители и резервные элементы](placeholders.md), [расширенная художественная обработка при помощи srcset](art_direction.md) и [атрибут layout](control_layout.md), предоставляя более высокий уровень контроля над отображением элементов.
 
-[tip type="tip"] **TIP –** It is super easy to make elements responsive in AMP. Just put `layout="responsive"` on them. To learn more about Responsive Design in AMP, head to [Create Responsive AMP Pages](responsive_design.md). [/tip]
+[tip type="tip"] **СОВЕТ.** В AMP очень легко сделать элемент адаптивным: просто добавьте к нему атрибут `layout="responsive"`. Подробнее об адаптивном дизайне в AMP см. в статье [Создание адаптивных AMP-страниц](responsive_design.md). [/tip]
 
 ## Как добавить стили на страницу
 
-Each AMP page has a 75,000 byte CSS limit. Styles defined in the head of the document and inline count towards this limit.
+Объем CSS-стилей на каждой AMP-странице не должен превышать 75 000 байт. Это ограничение распространяется как на стили, определенные в разделе head документа, так и на встроенные стили.
 
-### Define styles in head
+### Определение стилей в разделе head
 
-Define CSS within the `<style amp-custom>` tag inside the head of the document. There is only one `<style amp-custom>` tag allowed on each AMP page.
+Для определения стилей CSS используйте тег `<style amp-custom>` в разделе head документа. В коде каждой  AMP-страницы может быть только один тег `<style amp-custom>`.
 
 [sourcecode:html]
 <!doctype html>
@@ -51,7 +51,7 @@ Define CSS within the `<style amp-custom>` tag inside the head of the document. 
   </head>
 [/sourcecode]
 
-Style AMP components and HTML elements with class or selectors using common CSS properties:
+Для стилизации компонентов AMP и элементов HTML используйте классы и селекторы в сочетании с обычными CSS-свойствами:
 
 [sourcecode:html]
 <body>
@@ -68,9 +68,9 @@ Style AMP components and HTML elements with class or selectors using common CSS 
 </body>
 [/sourcecode]
 
-### Define inline styles
+### Определение встроенных стилей
 
-AMP allows inline styles:
+AMP допускает использование встроенных стилей:
 
 [sourcecode:html]
 <body>
@@ -78,36 +78,36 @@ AMP allows inline styles:
 </body>
 [/sourcecode]
 
-Each instance of an inline style has a 1,000 byte limit. Inline styles count toward the total 75,000 byte limit.
+Размер каждого встроенного стиля не должен превышать 1000 байт. Встроенные стили засчитываются в общее ограничение в 75 000 байт.
 
-## Layout elements responsively
+## Элементы с адаптивным макетом
 
-Specify the size and position for all visible AMP elements by providing a `width` and `height` attribute. These attributes imply the aspect ratio of the element, which can then scale with the container.
+Чтобы указывать размер и положение для видимых элементов AMP, используйте атрибуты `width` и `height`. Эти атрибуты определяют соотношение сторон элемента, размеры которого могут пропорционально меняться в соответствии с размером контейнера.
 
-Set the layout to responsive. This sizes the element to the width of its container element and resizes its height automatically to the aspect ratio given by width and height attributes.
+Если установить атрибуту «layout» значение «responsive», то ширина элемента будет определяться шириной элемента-контейнера, а высота будет задаваться автоматически на основании соотношения сторон, определяемого атрибутами «width» и «height».
 
-[tip type="read-on"] **READ ON –** Learn more about [supported layouts in AMP](control_layout.md) [/tip]
+[tip type="read-on"] **ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ.** Подробнее о поддерживаемых макетах в AMP вы можете прочитать [здесь](control_layout.md) [/tip]
 
-## Provide placeholders & fallbacks
+## Указание заполнителей и резервных элементов
 
-The built-in support for placeholders and fallbacks means your users never have to stare at a blank screen again.
+Благодаря встроенной поддержке заполнителей и резервных элементов вашим пользователям больше никогда не придется смотреть на пустой экран.
 
-[tip type="read-on"] **READ ON –** Learn more about [Placeholders and fallbacks](placeholders.md) [/tip]
+[tip type="read-on"] **ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ.** Подробнее о заполнителях и резервных элементах вы можете прочитать [здесь](placeholders.md) [/tip]
 
-## Art direct your images
+## Художественная обработка изображений
 
-AMP supports both `srcset` and `sizes` attributes to give you fine grained control, of which images to load in which scenario.
+AMP поддерживает атрибуты `srcset` и `sizes`, дающий точный контроль над загрузкой изображений в различных сценариях.
 
-[tip type="read-on"] **READ ON –** Learn more about [art direction with srcset and sizes](art_direction.md) [/tip]
+[tip type="read-on"] **ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ.** Подробнее о художественной обработке при помощи srcset и sizes вы можете прочитать [здесь](art_direction.md) [/tip]
 
-## Validate your styles and layout
+## Как проверить стили и макет
 
-Use the AMP validator to test your page's CSS and layout values.
+Для проверки значений CSS и макета страницы используйте AMP-валидатор.
 
-The validator confirms that your page’s CSS doesn’t exceed 75,000 bytes limit, checks for disallowed styles, and ensures that the page's layout is supported and correctly formatted. See also this complete list of [Style and layout errors](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md#style-and-layout-errors).
+Валидатор подтверждает, что объем CSS на вашей странице не превышает ограничение в 75 000 байт, проверяет наличие запрещенных стилей и гарантирует, что макет страницы поддерживается и правильно отформатирован. См. также полный список [ошибок, затрагивающих к стили и макеты](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md#style-and-layout-errors).
 
-Example error in console for page with CSS that exceeds the 75,000 bytes limit:
+Пример ошибки в консоли на странице со стилями CSS, чей объем превышает лимит в 75 000 байт:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-[tip type="read-on"] **READ ON –** Learn more about how to [validate and fix your AMP pages](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) [/tip]
+[tip type="read-on"] **ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ.** Подробнее о валидации и исправлении AMP-страниц вы можете прочитать [здесь](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) [/tip]
