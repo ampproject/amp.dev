@@ -36,7 +36,7 @@ Learn how to display include media content in your pages, and how to use iframes
   src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 [/sourcecode]
 
-### Write the markup
+### Напишите разметку
 
 В следующем примере мы создаем адаптивный элемент [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) для Google Карты, которая будет встроена с помощью [Google Maps Embed API](https://developers.google.com/maps/documentation/embed/guide):
 
@@ -48,13 +48,13 @@ Learn how to display include media content in your pages, and how to use iframes
 </amp-iframe>
 ```
 
-## Using placeholders <a name="using-placeholders"></a>
+## Использование заполнителей<a name="using-placeholders"></a>
 
 [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) можно отображать в верхней части документа, если [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) содержит элемент с атрибутом `placeholder` (например, элемент [`amp-img`](../../../../documentation/components/reference/amp-img.md)), который будет показан в виде заполнителя, пока iframe не будет готов к отображению.
 
 [tip type="read-on"] **ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ**: больше о заполнителях можно узнать в разделе [iframe с заполнителями](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder). [/tip]
 
-Example with placeholder:
+Пример с заполнителем:
 
 ```html
 <amp-iframe width="400" height="225"
@@ -66,7 +66,7 @@ Example with placeholder:
 </amp-iframe>
 ```
 
-Renders as:
+Отображается как:
 
 <amp-iframe width="400" height="225" sandbox="allow-scripts allow-same-origin" layout="responsive" src="https://giphy.com/embed/OWabwoEn7ezug"><amp-img placeholder layout="fill" src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"></amp-img></amp-iframe>
 
