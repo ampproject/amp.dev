@@ -1,8 +1,8 @@
 ---
-"$title": Testing AMP emails
+"$title": Тестирование AMP-писем
 "$order": '2'
 "$category": Develop
-description: Ensure great user experience by testing your AMP emails before sending to a large audience.
+description: Тестирование AMP-писем перед их рассылкой большой аудитории позволяет обеспечить оптимальный опыт взаимодействия.
 formats:
 - email
 author: fstanis
