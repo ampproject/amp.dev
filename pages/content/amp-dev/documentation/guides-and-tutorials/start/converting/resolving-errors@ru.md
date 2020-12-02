@@ -10,8 +10,7 @@ description: В этом разделе мы просмотрим и устра�
 
 Для начала мы исправим следующую ошибку:
 
-<pre class="error-text">The mandatory tag 'meta charset=utf-8' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'meta charset=utf-8' is missing or incorrect.</pre>
 
 При создании AMP-страницы всегда указывайте кодировку, чтобы обеспечить корректное отображение текста. Тег meta с информацией о кодировке должен быть первым дочерним элементом тега `<head>`. Это нужно для того, чтобы избежать повторной интерпретации контента, добавленного до meta-тега кодировки.
 
@@ -27,8 +26,7 @@ description: В этом разделе мы просмотрим и устра�
 
 Теперь рассмотрим следующую ошибку:
 
-<pre class="error-text">The mandatory tag 'link rel=canonical' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'link rel=canonical' is missing or incorrect.</pre>
 
 В каждом документе AMP должна присутствовать ссылка, указывающая на его «каноническую» версию. Подробнее о том, что такое каноническая страница, и о различных подходах к указанию канонических ссылок читайте в разделе [Обеспечение обнаружения страницы](discoverable.md) данного урока.
 
@@ -54,9 +52,7 @@ description: В этом разделе мы просмотрим и устра�
 
 Для того чтобы пометить страницу как AMP-документ, спецификация AMP требует добавить в ее корневой элемент `<html>` специальный атрибут.
 
-<pre class="error-text">The mandatory attribute '⚡' is missing in tag 'html ⚡ for top-level html'
-The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory attribute '⚡' is missing in tag 'html ⚡ for top-level html'<br>The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.</pre>
 
 Ошибки, приведенные выше, можно устранить, добавив в тег `<html>` атрибут `⚡`:
 
@@ -78,8 +74,7 @@ The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 
 Теперь займемся следующей ошибкой:
 
-<pre class="error-text">The mandatory tag 'meta name=viewport' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'meta name=viewport' is missing or incorrect.</pre>
 
 Спецификация AMP требует указания для области просмотра атрибутов `width` и `minimum-scale`. Их значения должны быть равны `device-width` и `1` соответственно. Область просмотра обозначается в коде HTML-страницы при помощи распространенного meta-тега viewport в разделе `<head>`.
 
@@ -97,8 +92,7 @@ The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 
 Ошибка, приведенная ниже, связана с использованием таблиц стилей:
 
-<pre class="error-text">The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invalid value 'base.css'.
-</pre>
+<pre class="error-text">The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invalid value 'base.css'.</pre>
 
 Если конкретнее, она сообщает о недопустимости использования внутри тега `<head>` следующей ссылки на таблицу стилей:
 
@@ -131,8 +125,7 @@ The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 
 Проблемы с таблицами стилей можно сравнительно легко решить путем встраивания CSS-кода, однако с JavaScript ситуация иная:
 
-<pre class="error-text">The tag 'script' is disallowed except in specific forms.
-</pre>
+<pre class="error-text">The tag 'script' is disallowed except in specific forms.</pre>
 
 Скрипты в AMP, как правило, разрешены только в том случае, если они соответствуют двум основным требованиям:
 
@@ -173,10 +166,7 @@ use of external JavaScript files.
 
 Следующие ошибки сообщают об отсутствии шаблонного кода:
 
-<pre class="error-text">The mandatory tag 'noscript enclosure for boilerplate' is missing or incorrect.
-The mandatory tag 'head > style : boilerplate' is missing or incorrect.
-The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'noscript enclosure for boilerplate' is missing or incorrect.<br>The mandatory tag 'head > style : boilerplate' is missing or incorrect.<br>The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.</pre>
 
 В каждом документе AMP обязательно должен присутствовать следующий шаблонный код:
 
@@ -192,8 +182,7 @@ The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.
 
 AMP не поддерживает стандартные HTML-элементы для отображения мультимедийного контента, что и объясняет следующую ошибку:
 
-<pre class="error-text">The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
-</pre>
+<pre class="error-text">The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?</pre>
 
 Существует веб-компонент AMP, специально разработанный в качестве замены тега `<img>`, — это тег [`<amp-img>`](../../../../documentation/components/reference/amp-img.md):
 
@@ -203,9 +192,7 @@ AMP не поддерживает стандартные HTML-элементы �
 
 **Замените** тег `<img>` тегом [`<amp-img>`](../../../../documentation/components/reference/amp-img.md), приведенным выше, и запустите валидатор снова. Вы увидите несколько новых ошибок:
 
-<pre class="error-text">Layout not supported: container
-The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
-</pre>
+<pre class="error-text">Layout not supported: container<br>The implied layout 'CONTAINER' is not supported by tag 'amp-img'.</pre>
 
 Почему тег [`amp-img`](../../../../documentation/components/reference/amp-img.md) вызвал еще одну ошибку? Потому что [`amp-img`](../../../../documentation/components/reference/amp-img.md) не является прямой заменой традиционного HTML-тега img. При использовании [`amp-img`](../../../../documentation/components/reference/amp-img.md) необходимо соблюдать дополнительные требования.
 
@@ -313,8 +300,7 @@ The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 
 Обновите страницу и проверьте вывод консоли. Вы должны увидеть следующее сообщение:
 
-<pre class="success-text">AMP validation successful.
-</pre>
+<pre class="success-text">AMP validation successful.</pre>
 
 ### Часто задаваемые вопросы
 
