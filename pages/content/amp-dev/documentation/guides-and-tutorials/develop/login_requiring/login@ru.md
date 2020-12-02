@@ -8,7 +8,7 @@ description: При первом заходе на страницу вы уви�
 
 <amp-img src="/static/img/login-button.jpg" alt="Login button" height="290" width="300"></amp-img>
 
-If you look for the login button in the code, you will find:
+Вот как выглядит код кнопки входа на странице:
 
 [sourcecode:html]
 <span amp-access="NOT loggedIn" role="button" tabindex="0" amp-access-hide>
@@ -59,12 +59,12 @@ If you look for the login button in the code, you will find:
 
 Получив POST-запрос со страницы входа и удостоверившись в правильности логина и пароля, сервер AMPByExample перенаправляет запрос на адрес `returnURL`, о котором говорилось ранее, добавляя к нему параметр `#success=true`. Теперь среда выполнения AMP может авторизовать страницу и наконец разрешить вам добавление комментариев.
 
-It’s important to understand what the AMP runtime does and what the server should be doing, as the implementation of the server is the responsibility of the publisher of the page.
+Важно понимать, за какие задачи отвечает среда выполнения AMP, а какие должен выполнять сервер, так как реализация сервера является обязанностью издателя страницы.
 
-As a quick recap:
+Итак, резюмируя:
 
-- The AMP runtime automatically adds the return parameter to the sign-in request specified inside the login JSON object
-- The AMP runtime closes the login page and redirects to the page specified by the return URL parameter
-- The server should orchestrate the response once the user clicks on the login button
+- Среда выполнения AMP автоматически добавляет параметр return к запросу для входа, передаваемому в JSON-объекте login
+- Среда выполнения AMP закрывает страницу входа и выполняет перенаправление на страницу, указанную в параметре URL-адреса возврата
+- Как только пользователь нажимает на кнопку входа, сервер генерирует ответ
 
 [tip type="tip"] **СОВЕТ.** Более подробное описание этого процесса можно найти в документации к компоненту [`amp-access`](../../../../documentation/components/reference/amp-access.md). [/tip]
