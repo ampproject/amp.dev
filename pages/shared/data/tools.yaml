@@ -294,6 +294,26 @@ platforms:
       height: 407
     formats:
       - stories
+  - name: Mail.ru AMP Playground
+    type: Testing
+    description: Draft AMP emails, see a live preview, and have your emails sent to your Mail.ru account.
+    url: https://postmaster.mail.ru/amp/
+    image:
+      src: /static/img/tools/mailru_playground.png
+      width: 1000
+      height: 691
+    formats:
+      - email
+  - name: 8b Website Builder
+    type: Website Builder
+    description: Easy-to-use online AMP website builder to create lightning-fast web pages in a visual way.
+    url: https://8b.com/
+    image:
+      src: /static/img/tools/8b.jpg
+      width: 800
+      height: 400
+    formats:
+      - websites
 developer:
   - name: AMP Validator
     official: true
