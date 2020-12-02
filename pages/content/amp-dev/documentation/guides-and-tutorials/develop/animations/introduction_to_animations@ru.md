@@ -14,13 +14,13 @@ AMP предлагает несколько компонентов, предна
 
 ## Создание базовой AMP-анимации
 
-The [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) component enables use of the [Web Animation API](https://www.w3.org/TR/web-animations/) in AMP.
+Компонент [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) позволяет использовать [API веб-анимации](https://www.w3.org/TR/web-animations/) в AMP.
 
 Базовый [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) — это объект JSON, состоящий из следующих ключевых частей:
 
 - Элемент, который анимируется компонентом, или `selector`.
 - [Свойства воспроизведения](../../../../documentation/components/reference/amp-animation.md#timing-properties)
-- [Keyframes](../../../../documentation/components/reference/amp-animation.md#keyframes)
+- [Ключевые кадры](../../../../documentation/components/reference/amp-animation.md#keyframes)
 - [Триггер](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
 
 ```
@@ -206,7 +206,7 @@ The [`amp-animation`](../../../../documentation/components/reference/amp-animati
 </amp-animation>
 ```
 
-### Animating an unknown amount of elements
+### Анимация неизвестного количества элементов
 
 Используя [выражения `var()` и `calc()`](../../../../documentation/components/reference/amp-animation.md) вместе с [расширениями CSS](../../../../documentation/components/reference/amp-animation.md#css-extensions), вы можете создавать сложные и синхронизированные анимации, работающие с любым количеством элементов. Это позволяет легко и плавно анимировать динамические и созданные пользователем данные.
 
@@ -265,9 +265,9 @@ The [`amp-animation`](../../../../documentation/components/reference/amp-animati
 - Вычисляет задержку, применяемую ко всем элементам, соответствующим стилю `.card` селектора.
     1. Расширение [`length()`](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) вычисляет, сколько элементов `.card` было выбрано
     2. После этого length вычитает <a>index()</a> каждого элемента <code>.card</code>
-    3. The resulting value is multiplied by the var `--duration`
+    3. Полученное значение умножается на `--duration`
     4. Окончательная сумма задается как значение задержки данного элемента в секундах
-- The animation is applied to each element individually so that the cards are shuffled one after another instead of all at the same time.
+- Анимация применяется к каждому элементу индивидуально, так что карты перемешиваются одна за другой, а не все одновременно.
 
 Откройте анимацию в песочнице AMP и добавьте дополнительные элементы [`amp-img`](../../../../documentation/components/reference/amp-img), чтобы протестировать это поведение.
 
