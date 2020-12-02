@@ -62,7 +62,7 @@ author: CrystalOnScript
 
 После установки AMP Service Worker автоматически кеширует [AMP-скрипты](https://github.com/ampproject/amp-sw/tree/master/src/modules/amp-caching) и [документы](https://github.com/ampproject/amp-sw/tree/master/src/modules/document-caching) по мере того, как пользователь запрашивает их. Начнем с добавления базового AMP Service Worker.
 
-## Create the service worker file
+## Создайте файл сервис-воркера
 
 Создайте файл с именем `sw.js` и добавьте в него следующий код:
 
