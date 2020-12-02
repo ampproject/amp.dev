@@ -117,8 +117,8 @@ The length of any one label is limited to between 1 and 63 octets.  A full domai
    </td>
   </tr>
   <tr>
-   <td> <code>xn--57hw060o.com</code> (⚡😊.com)    </td>
-   <td> <code>xn---com-p33b41770a</code> (⚡😊-com)    </td>
+   <td> <code>xn--57hw060o.com</code> (⚡😊.com)</td>
+   <td> <code>xn---com-p33b41770a</code> (⚡😊-com)</td>
   </tr>
   <tr>
    <td>
