@@ -16,7 +16,7 @@ author: CrystalOnScript
 
 - Передавать с адресом отправителя [SPF/DKIM/DMARC](https://support.google.com/a/answer/33786?hl=en) с совпадающим доменом верхнего уровня
 - Содержать MIME-блок «text/html», служащий резервным способом отображения письма
-- Comply with all client sender requirements
+- Соблюдать все требования клиента к отправителю
 
 Отправьте готовое к работе AMP-письмо по следующим адресам:
 
@@ -28,13 +28,13 @@ author: CrystalOnScript
 
 Вы должны заполнить форму [AMP для писем: форма регистрации отправителя](https://docs.google.com/forms/d/e/1FAIpQLSdso95e7UDLk_R-bnpzsAmuUMDQEMUgTErcfGGItBDkghHU2A/viewform?gxids=7628). Это единственная форма, которую вам нужно заполнить, чтобы получить разрешение на отправку AMP-писем со всех совместимых почтовых клиентов.
 
-# Follow privacy policies
+# Соблюдайте политику конфиденциальности
 
-You must follow each client's privacy policy.
+Вы должны соблюдать политику конфиденциальности каждого клиента.
 
 **Gmail**
 
-[GooglePrivacy & Terms](https://policies.google.com/privacy)
+[Политика конфиденциальности и Условия использования Google](https://policies.google.com/privacy)
 
 **Mail.ru**
 
@@ -43,14 +43,14 @@ You must follow each client's privacy policy.
 
 **Microsoft**
 
-[Microsoft Privacy Statement](https://privacy.microsoft.com/en-us/privacystatement)
+[Заявление о конфиденциальности Microsoft](https://privacy.microsoft.com/en-us/privacystatement)
 
 **Verizon Media (Yahoo Mail)**
 
 - [Политика конфиденциальности Verizon Media — США](https://www.verizonmedia.com/policies/us/en/verizonmedia/privacy/index.html)
 - Другие страны: перейдите [по этой ссылке](https://www.verizonmedia.com/policies/).
 
-# Confirmation
+# Подтверждение
 
 Каждый почтовый клиент уведомит вас о статусе вашей заявки по электронной почте. Если у вас возникли проблемы, обратитесь в рабочую группу AMP для писем через [GitHub](https://github.com/ampproject/wg-amp4email).
 
