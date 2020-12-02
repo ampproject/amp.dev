@@ -1,11 +1,11 @@
 ---
-"$title": Validating your AMP HTML
+"$title": Валидация кода AMP HTML
 "$order": '8'
-description: Whenever you create an AMP page, you should always validate that your AMP HTML is correct. There are [several methods that you can use to validate your AMP pages ...
+description: Валидацию кода AMP HTML следует выполнять во всех создаваемых AMP-cтраницах. Есть несколько методов, которые можно использовать для валидации AMP-страниц...
 author: bpaduch
 ---
 
-Because Web Stories are built with AMP, you should always validate that your AMP HTML is correct. There are [several methods that you can use to validate AMP pages](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md). In this tutorial, we'll enable the AMP Validator by turning on the developer mode.  To turn on the developer mode, add the following fragment identifier to your URL and reload the page:
+Поскольку веб-истории пишутся на AMP, вы всегда должны проверять правильность кода AMP HTML. Есть [несколько методов, которые можно применять для валидации AMP-страниц](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md). В данном уроке мы активируем AMP-валидатор, включив режим разработчика. Чтобы включить режим разработчика, добавьте к своему URL-адресу следующий фрагментный идентификатор (после чего перезагрузите страницу):
 
 ```text
 #development=1
@@ -17,7 +17,7 @@ Because Web Stories are built with AMP, you should always validate that your AMP
 http://localhost:8000/pets.html#development=1
 ```
 
-Open the [Developer Console](https://developer.chrome.com/devtools/docs/console) in Chrome (or your preferred browser), and verify there are no AMP errors. You might need to refresh your browser to see validation messages. If your page is free of errors, you should see the message:
+Откройте [консоль разработчика](https://developer.chrome.com/devtools/docs/console) в Chrome (или в предпочитаемом вами браузере) и убедитесь, что ошибки AMP отсутствуют. Возможно, чтобы увидеть сообщения валидации, вам потребуется обновить страницу в браузере. Если на вашей странице ошибок нет, должно отобразиться следующее сообщение:
 
 ```text
  AMP validation successful.
