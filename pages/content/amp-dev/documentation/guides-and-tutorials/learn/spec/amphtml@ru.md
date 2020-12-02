@@ -1,14 +1,10 @@
 ---
-"$title": AMP HTML Specification
+"$title": Спецификация AMP HTML
 order: '8'
 formats:
 - websites
 teaser:
-  text: |2-
-
-    AMP HTML is a subset of HTML for authoring content pages such as news
-    articles in a way that guarantees certain baseline performance
-    characteristics.
+  text: AMP HTML — это подмножество стандарта HTML для создания контентных страниц (например, новостных статей), позволяющее гарантировать определенные базовые характеристики производительности.
 ---
 
 <!--
@@ -34,31 +30,31 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-AMP HTML is a subset of HTML for authoring content pages such as news articles in a way that guarantees certain baseline performance characteristics.
+AMP HTML — это подмножество стандарта HTML для создания контентных страниц (например, новостных статей), позволяющее гарантировать определенные базовые характеристики производительности.
 
-Being a subset of HTML, it puts some restrictions on the full set of tags and functionality available through HTML but it does not require the development of new rendering engines: existing user agents can render AMP HTML just like all other HTML.
+Будучи подмножеством HTML, оно накладывает некоторые ограничения на набор доступных HTML-тегов и функций, однако не требует разработки новых механизмов рендеринга: существующие пользовательские агенты могут отображать AMP HTML так же, как и любой другой код HTML.
 
-[tip type="read-on"] If you're primarily interested in what's allowed in AMP and what isn't, watch our [primer video on AMP's limitations](https://www.youtube.com/watch?v=Gv8A4CktajQ). [/tip]
+[tip type="read-on"] Если вас в первую очередь интересует, что разрешено и что запрещено в AMP, посмотрите наше [обучающее видео об ограничениях AMP](https://www.youtube.com/watch?v=Gv8A4CktajQ). [/tip]
 
-Also, AMP HTML documents can be uploaded to a web server and served just like any other HTML document; no special configuration for the server is necessary. However, they are also designed to be optionally served through specialized AMP serving systems that proxy AMP documents. These documents serve them from their own origin and are allowed to apply transformations to the document that provide additional performance benefits. An incomplete list of optimizations such a serving system might do is:
+AMP HTML-документы можно загружать на веб-сервер и выдавать так же, как и любой другой HTML-документ; никакой специальной конфигурации сервера не требуется. Однако AMP-документы могут также выдаваться посредством специализированных систем AMP, выполняющих их проксирование. Эти системы выдают AMP-документы с собственного домена и могут дополнительно преобразовывать документ для повышения его производительности. Вот неполный список оптимизаций, которые может выполнять такая система:
 
-- Replace image references with images sized to the viewer’s viewport.
-- Inline images that are visible above the fold.
-- Inline CSS variables.
-- Preload extended components.
-- Minify HTML and CSS.
+- Замена ссылок на изображения — подстановка изображений, размер которых соответствует используемой клиентом области просмотра.
+- Встраивание изображений, отображаемых в изначально видимой области.
+- Встраивание переменных CSS.
+- Предварительная загрузка расширенных компонентов.
+- Минификация HTML и CSS.
 
-AMP HTML uses a set of contributed but centrally managed and hosted custom elements to implement advanced functionality such as image galleries that might be found in an AMP HTML document. While it does allow styling the document using custom CSS, it does not allow author written JavaScript beyond what is provided through the custom elements to reach its performance goals.
+AMP HTML использует ряд специальных элементов (коллективно разрабатываемых, однако централизованно управляемых и размещенных) для реализации расширенных возможностей, таких как галереи изображений для документов AMP HTML. Несмотря на то, что это позволяет задействовать в документе свои стили с помощью пользовательского CSS, это не позволяет использовать авторский JavaScript, помимо предлагаемого посредством специальных элементов для достижения целей производительности.
 
-By using the AMP format, content producers are making the content in AMP files available to be crawled (subject to robots.txt restrictions), cached, and displayed by third parties.
+Используя формат AMP, производители контента делают контент в файлах AMP доступным для индексирования (с учетом ограничений robots.txt), кеширования и отображения третьими сторонами.
 
 ## Производительность <a name="performance"></a>
 
-Predictable performance is a key design goal for AMP HTML. Primarily we are aiming at reducing the time until the content of a page can be consumed / used by the user. In concrete terms this means that:
+Предсказуемая производительность — ключевая цель разработки AMP HTML. В первую очередь мы стремимся сократить задержку перед тем, как содержимое страницы становится доступно пользователю. В более конкретных терминах это означает, что:
 
-- HTTP requests necessary to render and fully layout the document should be minimized.
+- Должны быть сведены к минимуму HTTP-запросы, необходимые для рендеринга и полной компоновки документа.
 - Такие ресурсы, как изображения или реклама, следует загружать только в том случае, если они могут быть просмотрены пользователем.
-- Browsers should be able to calculate the space needed by every resource on the page without fetching that resource.
+- Браузеры должны иметь возможность вычислять пространство, необходимое каждому ресурсу на странице, без загрузки этого ресурса.
 
 ## Формат AMP HTML <a name="the-amp-html-format"></a>
 
@@ -178,7 +174,7 @@ Predictable performance is a key design goal for AMP HTML. Primarily we are aimi
 </html>
 [/sourcecode]
 
-### Required markup <a name="required-markup"></a>
+### Обязательная разметка <a name="required-markup"></a>
 
 AMP HTML documents MUST
 
@@ -323,7 +319,7 @@ Consult [AMP documentation](https://github.com/ampproject/amphtml/blob/master/sp
 
 All other authored class names are allowed in AMP HTML markup.
 
-### IDs <a name="ids"></a>
+### Идентификаторы <a name="ids"></a>
 
 Certain ID names are disallowed in AMP HTML, such as IDs prefixed with `-amp-` and `i-amp-` that may conflict with internal AMP IDs.
 
@@ -339,7 +335,7 @@ The `javascript:` schema is disallowed.
 
 Major semantic tags and the AMP custom elements come with default styles to make authoring a responsive document reasonably easy. An option to opt out of default styles may be added in the future.
 
-#### @-rules <a name="-rules"></a>
+#### @-правила <a name="-rules"></a>
 
 The following @-rules are allowed in stylesheets:
 
@@ -363,7 +359,7 @@ Class names, IDs, tag names and attributes, in author stylesheets, may not start
 
 To prevent usage of attribute selectors to circumvent class name limitations it is generally not allowed for CSS selectors to contain tokens and strings starting with `-amp-` and `i-amp-`.
 
-#### Important <a name="important"></a>
+#### Важно! <a name="important"></a>
 
 Usage of the `!important` qualifier is not allowed. This is a necessary requirement to enable AMP to enforce its element sizing invariants.
 
@@ -371,7 +367,7 @@ Usage of the `!important` qualifier is not allowed. This is a necessary requirem
 
 AMP only allows transitions and animations of properties that can be GPU accelerated in common browsers. We currently white list: `opacity`, `transform` (also `-vendorPrefix-transform`).
 
-In the following examples `<property>` needs to be in the white list above.
+В AMP разрешены переходы и анимации только тех свойств, которые могут задействовать аппаратное ускорение в распространенных браузерах. В настоящее время в нашем белом списке `opacity`, `transform` (также `-vendorPrefix-transform`).
 
 - `transition <property>` (also -vendorPrefix-transition)
 - `@keyframes name { from: {<property>: value} to {<property: value>} }` (также `@-vendorPrefix-keyframes`)
@@ -557,7 +553,7 @@ The `id` attribute is optional. Individual AMP elements discover their own templ
 
 The syntax within the template element depends on the specific template language. However, the template language could be restricted within AMP. For instance, in accordance with the "template" element, all productions have to be over a valid well-formed DOM. All of the template outputs are also subject to sanitizing to ensure AMP-valid output.
 
-To learn about the syntax and restrictions for an template, visit the [template's documentation](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md#templates).
+Подробную информацию о поддерживаемых шаблонах см. в [спецификации шаблонов AMP](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md).
 
 ##### URL <a name="url-1"></a>
 
