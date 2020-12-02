@@ -52,7 +52,7 @@ AMPHTML-рекламе требуется собственная версия с
 
 [tip type="note"] **ПРИМЕЧАНИЕ.** В AMPHTML-рекламе максимальный размер встроенной таблицы стилей составляет *20 килобайт*. Дополнительные сведения о [требованиях к CSS см. в спецификации AMPHTML-рекламы](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#css). [/tip]
 
-Here's the complete code for your HTML file:
+Вот полный код вашего HTML-файла:
 
 ```html
 <!doctype html>
