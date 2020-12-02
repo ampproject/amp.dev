@@ -1,7 +1,7 @@
 ---
-"$title": Add advanced AMP features
+"$title": Добавление расширенных функций AMP
 "$order": '0'
-description: "In this tutorial, you'll build on your understanding of AMP foundations and learn how AMP handles advertising, analytics, embedded videos, social media integration, carousels, and more."
+description: В этом уроке вы приобретете понимание основ AMP и узнаете, как AMP обрабатывает рекламу, функции аналитики, встроенные видео, интеграцию с социальными сетями, кольцевые галереи и многое другое.
 "$hidden": 'true'
 formats:
 - websites
@@ -9,19 +9,19 @@ formats:
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='Completed news article') }}
 
-In this tutorial, you'll build on your understanding of AMP foundations and learn how AMP handles advertising, analytics, embedded videos, social media integration, carousels, and more. By the end of this tutorial, you'll have created a mobile news article that includes these features.
+В этом уроке вы приобретете понимание основ AMP и узнаете, как AMP обрабатывает рекламу, функции аналитики, встроенные видео, интеграцию с социальными сетями, кольцевые галереи и многое другое. К концу этого урока вы создадите новостную статью для мобильных устройств, в которой используются все перечисленные выше функции.
 
 ## You’ll learn to:
 
 - Display ads by using [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)
-- Embed YouTube videos, Twitter cards and responsive text elements
-- Build carousels with images and combinations of content by using [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)
-- Track simple patterns with [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
-- Add site navigation to your page with [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md)
-- Use custom fonts in AMP
+- Встраивать видео с YouTube, карточки Twitter и адаптивные текстовые элементы
+- Создавать кольцевые галереи с изображениями и комбинированным контентом с помощью [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)
+- Отслеживать простые паттерны с помощью [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
+- Добавлять навигацию по сайту на свою страницу с помощью [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md)
+- Использовать внешние шрифты в AMP
 
-## You'll build:
+## Что у вас получится в итоге:
 
-A news article page that conforms to AMP specifications and incorporates advertising, analytics, embedded video, embedded social media, carousels, and a site navigation menu.
+Страница новостной статьи, которая соответствует спецификациям AMP и содержит рекламу, функции аналитики, встроенное видео, встроенные социальные сети, кольцевые галереи и меню навигации по сайту.
 
-[tip type="note"] **NOTE –**  This tutorial is a continuation of the concepts introduced in the ["Convert your HTML to AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md) tutorial. If you don't already have a basic understanding of AMP’s core concepts, please try out the ["Convert your HTML to AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md) tutorial. [/tip]
+[tip type="note"] **ПРИМЕЧАНИЕ.** В этом уроке мы продолжаем рассмотрение концепций, представленных в уроке [Преобразование HTML в AMP](../../../../documentation/guides-and-tutorials/start/converting/index.md). Если у вас еще нет базового представления об основных концепциях AMP, пройдите урок [Преобразование HTML в AMP](../../../../documentation/guides-and-tutorials/start/converting/index.md). [/tip]
