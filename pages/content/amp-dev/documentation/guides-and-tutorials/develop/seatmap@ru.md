@@ -1,7 +1,7 @@
 ---
 "$title": Create a seatmap
 "$order": '104'
-description: Seatmaps are important parts of ticketers web apps, but the implementation in AMP can be difficult. Read on to learn how to implement a seatmap in AMP by
+description: Схемы посадочных мест — важная часть веб-приложений по продаже билетов, но реализовать их средствами AMP может быть сложно. В этой статье рассказывается, как реализовать схему посадочных мест в AMP
 tutorial: 'true'
 formats:
 - websites
@@ -10,29 +10,29 @@ contributors:
 - pbakaus
 ---
 
-Seatmaps are important parts of ticketers' web apps, but the implementation in AMP can be difficult. Read on to learn how to implement a seatmap in AMP by using a combination of available AMP components.
+Схемы посадочных мест — важная часть веб-приложений по продаже билетов, но реализовать их средствами AMP может быть сложно. В этой статье рассказывается, как создать схему посадочных мест в AMP, используя комбинацию доступных AMP-компонентов.
 
-[tip] A live sample implementing the practices described below is available [here](../../../documentation/examples/documentation/SeatMap.html). [/tip]
+[tip] Интерактивный пример, использующий описанные ниже механизмы, доступен [здесь](../../../documentation/examples/documentation/SeatMap.html). [/tip]
 
-## AMP Components needed
+## Требуемые AMP-компоненты
 
-Let's start by reviewing the components needed:
+Для начала ознакомимся со списком необходимых нам компонентов:
 
 ### amp-pan-zoom
 
-[`amp-pan-zoom`](../../../documentation/components/reference/amp-pan-zoom.md) allows to zoom and pan the content via double tap and pinching. This component serves as base for the seatmap implementation.
+[`amp-pan-zoom`](../../../documentation/components/reference/amp-pan-zoom.md) позволяет позиционировать контент и изменять его масштаб с помощью двойного касания и разведения пальцев. Этот компонент служит основой для реализации схемы посадочных мест.
 
 ### amp-list
 
-[`amp-list`](../../../documentation/components/reference/amp-list.md) fetches content dynamically from a CORS JSON endpoint and renders it using a supplied template. Used to fetch current seatmap availability, so that users always get the latest data.
+[`amp-list`](../../../documentation/components/reference/amp-list.md) динамически загружает контент из конечной точки CORS JSON и производит его рендеринг с использованием заданного шаблона. Используется для загрузки данных о доступности мест в реальном времени, чтобы пользователи всегда видели актуальную информацию.
 
 ### amp-bind
 
-[`amp-bind`](../../../documentation/components/reference/amp-bind.md) adds interactivity to the page. Needed here to keep track of how many seats have been selected.
+[`amp-bind`](../../../documentation/components/reference/amp-bind.md) добавляет на страницу интерактивные возможности. Нужен для отслеживания количества выбранных мест.
 
 ### amp-selector
 
-[`amp-selector`](../../../documentation/components/reference/amp-selector.md) represents a control that presents a menu of options and lets the user choose from it. The entire seatmap can be considered a menu of options where each seat is an option. It makes styling the selected state for seats much easier by allowing you to use CSS expressions. For example, the following expression fills a seat with an orange color once selected.
+[`amp-selector`](../../../documentation/components/reference/amp-selector.md) — это элемент управления, отображающий меню и позволяющий пользователю выбрать один или несколько его пунктов. Можно представить всю схему посадочных мест в виде меню, где каждому месту соответствует один пункт. Таким образом становится гораздо проще задать стиль для выделения места, выбранного пользователем, при помощи CSS-выражений. Например, представленное ниже выражение окрашивает место, выбранное пользователем, в оранжевый цвет.
 
 ```css
 rect[selected].seat {
@@ -42,13 +42,13 @@ rect[selected].seat {
 
 ## Требования
 
-1. To draw a seatmap as an SVG where each seat is represented by a `rect` element, you need information on each seat: position `x` and `y`, `width` and `height` and possibly `rx` and `ry` to round the corners of the rectangles.
-2. A unique identifier for very seat that can be used to make the booking.
-3. A measure of the entire width and height of the seatmap to be used in the `viewbox` attribute.
+1. Чтобы отрисовать схему посадочных мест в виде SVG-изображения, где каждому месту соответствует элемент `rect` необходима информация о каждом месте: координаты `x` и `y`, размеры `width` и `height` и, опционально, `rx` и `ry` для скругления углов прямоугольников.
+2. Уникальные идентификаторы для каждого места, необходимые для их бронирования.
+3. Размер (ширина и высота) всей схемы посадочных мест для использования в качестве значения атрибута `viewbox`.
 
-## Drawing the seatmap
+## Отрисовка схемы посадочных мест
 
-The seatmap is rendered via [`amp-list`](../../../documentation/components/reference/amp-list.md) and [`amp-mustache`](../../../documentation/components/reference/amp-mustache.md). After receiving the data from the [`amp-list`](../../../documentation/components/reference/amp-list.md) call, you can use said data to iterate through the seats:
+Для рендеринга схемы используются компоненты [`amp-list`](../../../documentation/components/reference/amp-list.md) и [`amp-mustache`](../../../documentation/components/reference/amp-mustache.md). После получения данных при помощи вызова [`amp-list`](../../../documentation/components/reference/amp-list.md) их можно использовать для обхода списка мест:
 
 [sourcecode:html]
 {% raw %}<svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
@@ -58,11 +58,11 @@ The seatmap is rendered via [`amp-list`](../../../documentation/components/refer
 </svg>{% endraw %}
 [/sourcecode]
 
-## Styling unavailable seats
+## Стилизация недоступных мест
 
-In the above example, `{% raw %}{{unavailable}}{% endraw %}` is the value of a field returned by the JSON endpoint and used to style an unavailable seat. This approach doesn’t allow you to remove attributes like `option="{{id}}"` in case a seat is unavailable, as the template cannot wrap the entire pages' `<html>` element.
+В вышеприведенном примере на место `{% raw %}{{unavailable}}{% endraw %}` подставляется значение поля, возвращаемого конечной точкой JSON, благодаря чему к недоступным местам применяется соответствующий стиль. Такой подход не позволяет убирать атрибуты, такие как `option="{{id}}"`, в случае, если место недоступно, поскольку шаблон нельзя применить к корневому элементу `<html>` страницы.
 
-An alternative, more verbose approach is to repeat the tags as following:
+Другой, более развернутый подход состоит в том, чтобы продублировать теги:
 
 [sourcecode:html]
 {% raw %}{{#available }}{% endraw %}
@@ -71,38 +71,38 @@ An alternative, more verbose approach is to repeat the tags as following:
 {% raw %}{{^available}}{% endraw %}<rect role="button" tabindex="0" class="seat unavailable" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"/>{% raw %}{{/available }}{% endraw %}
 [/sourcecode]
 
-## Sizing your seatmap
+## Определение размера схемы посадочных мест
 
-Unless your seatmap's size is fixed, it's difficult to size the [`amp-list`](../../../documentation/components/reference/amp-list.md) containing the seatmap. [`amp-list`](../../../documentation/components/reference/amp-list.md) needs either fixed dimensions or use `layout="fill"` (to use the available space of the parent container). There are two ways to address this problem:
+Если схема посадочных мест не имеет фиксированного размера, определение размеров компонента [`amp-list`](../../../documentation/components/reference/amp-list.md), содержащего схему, — нетривиальная задача. Для работы компонента [`amp-list`](../../../documentation/components/reference/amp-list.md) требуется либо задать ему фиксированные размеры, либо использовать `layout="fill"` (чтобы использовать все доступное пространство родительского контейнера). Решить эту проблему можно двумя способами:
 
-1. Calculate the available space on the page once you know the space used by other components like headers and footers. This calculation can be done in CSS by using the `calc` expression and assigning it as the `min-height` of a parent div of the [`amp-list`](../../../documentation/components/reference/amp-list.md).
-2. Use a flex layout when knowing the height of the page layout.
+1. Рассчитать доступное пространство на странице с учетом уже известных данных о том, сколько пространства используют другие компоненты, такие как верхний и нижний колонтитулы. Сделать это можно посредством CSS, вычислив значение при помощи выражения `calc` и присвоив его атрибуту `min-height` элемента div, внутри которого расположен компонент [`amp-list`](../../../documentation/components/reference/amp-list.md) .
+2. Использовать flex-макет, если известна высота макета страницы.
 
-## Styling amp-pan-zoom
+## Стилизация компонента amp-pan-zoom
 
-If using the approach described in the previous section, [`amp-pan-zoom`](../../../documentation/components/reference/amp-pan-zoom.md) needs to use `layout="fill"` as well.
+При использовании подхода, описанного в предыдущем разделе, для компонента [`amp-pan-zoom`](../../../documentation/components/reference/amp-pan-zoom.md) также необходимо использовать `layout="fill"`.
 
 [tip type="tip"] **TIP –** To keep some white space around the seatmap and still make it part of the pinch and zooming area:
 
-- Add a wrapping div for the svg
-- Add padding
+- Оберните SVG-изображение в элемент div
+- Добавьте внутренний отступ
 
-If you don’t have a wrapping div and add margin to the SVG instead, it won't make the margins part of the pinch and zooming area. [/tip]
+Если вместо того, чтобы обернуть SVG-изображение в элемент div, вы просто добавите к изображению внешний отступ, тогда этот отступ не станет частью области, внутри которой работают жесты изменения масштаба. [/tip]
 
-## Handling state
+## Хранение состояния
 
-When users click on different seats, it’s possible to keep track of the selected seat `id`s in a variable by using `amp-state`, either by:
+Идентификаторы (`id`) мест, выбранных пользователем, можно хранить в переменной при помощи компонента `amp-state`, используя один из следующих способов:
 
-- Adding an [`amp-bind`](../../../documentation/components/reference/amp-bind.md) expression for every seat to add the selected seat to a list
-- Or using [`amp-selector`](../../../documentation/components/reference/amp-selector.md) with the action `on="select:AMP.setState({selectedSeats: event.selectedOptions})"` so that all the selected seats are added to a list
+- Путем добавления к каждому месту выражения [`amp-bind`](../../../documentation/components/reference/amp-bind.md), которое будет добавлять места, выбираемые пользователем, в список
+- Путем использования компонента [`amp-selector`](../../../documentation/components/reference/amp-selector.md) с действием `on="select:AMP.setState({selectedSeats: event.selectedOptions})"`, чтобы все выбираемые места добавлялись в список
 
-While the first approach doesn’t require the additional component [`amp-selector`](../../../documentation/components/reference/amp-selector.md), it can make the seatmap very slow because every [`amp-bind`](../../../documentation/components/reference/amp-bind.md) expression will be evaluated at every seat selection/deselection.
+Для первого способа не требуется дополнительный компонент [`amp-selector`](../../../documentation/components/reference/amp-selector.md), однако из-за того, что при выборе или отмене выбора места все выражения [`amp-bind`](../../../documentation/components/reference/amp-bind.md) будут пересчитываться заново, схема посадочных мест может работать очень медленно.
 
-The second approach also allows you to reduce the duplication of the [`amp-bind`](../../../documentation/components/reference/amp-bind.md) expression for every seat that will be rendered by the template.
+Второй способ также позволяет избежать дублирования выражений [`amp-bind`](../../../documentation/components/reference/amp-bind.md) для каждого места, отображаемого при помощи шаблона.
 
-## Final HTML structure
+## Окончательная структура HTML
 
-For reference, here's the final HTML for the seatmap:
+Ниже можно ознакомиться с окончательным HTML-кодом схемы посадочных мест:
 
 [sourcecode:html]
 {% raw %}<div class="seatmap-container">
