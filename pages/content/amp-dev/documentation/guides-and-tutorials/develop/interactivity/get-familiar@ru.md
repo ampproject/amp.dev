@@ -1,14 +1,14 @@
 ---
 "$title": Getting familiar with the starter code
 "$order": '1'
-description: An AMP page is an HTML page with some restrictions for reliable performance. AMP pages have a bit of special markup that identifies it as an AMP page.
+description: AMP-страница — это HTML-страница, имеющая некоторые ограничения для обеспечения надежной работы. AMP-страницы имеют специальную разметку, которая идентифицирует их.
 ---
 
 ## Шаблон AMP
 
-An AMP page is an HTML page with some restrictions for reliable performance. AMP pages have a bit of special markup that identifies it as an AMP page.
+AMP-страница — это HTML-страница, имеющая некоторые ограничения для обеспечения стабильно высокой производительности. AMP-страницы имеют специальную разметку, которая идентифицирует их.
 
-A bare bones AMP page looks like this:
+Простейшая AMP-страница выглядит так:
 
 ```html
 <!doctype html>
@@ -24,11 +24,11 @@ A bare bones AMP page looks like this:
 </html>
 ```
 
-[tip] You can use the [boilerplate generator](https://amp.dev/boilerplate) to quickly setup a basic skeleton for your AMP page. It also provides snippets for structured data, to create a PWA and more! [/tip]
+[tip] Вы можете использовать [генератор шаблонов](https://amp.dev/boilerplate) для быстрой настройки базового каркаса вашей AMP-страницы. Генератор также предоставляет фрагменты структурированных данных, полезные для создания PWA и многого другого. [/tip]
 
-## AMP components
+## AMP-компоненты
 
-The tutorial's starter code ([`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html)) builds off the bare bones AMP page with its page content (images, text, etc.) as well as including a few AMP components:
+Стартовый код урока ( [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html)) создается на основе базовой AMP-страницы с ее содержимым (изображения, текст и т. д.), а также несколькими AMP-компонентами:
 
 ```html
 <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
@@ -37,18 +37,18 @@ The tutorial's starter code ([`static/index.html`](https://github.com/googlecode
 <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
 ```
 
-AMP components offer additional functionality and UI components that add rich interactivity to AMP pages. The starter code uses the following AMP components:
+Компоненты AMP предлагают дополнительную функциональность и компоненты пользовательского интерфейса, которые добавляют в AMP-страницы богатую интерактивность. В стартовом коде используются следующие компоненты AMP:
 
-- [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md): An image carousel that displays multiple views of the product.
-- [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md): A templating system for rendering server responses from amp-form.
-- [`amp-form`](../../../../documentation/components/reference/amp-form.md): Adds special functionality for `<form>` elements that are necessary for AMP pages.
-- [`amp-selector`](../../../../documentation/components/reference/amp-selector.md): Offers a semantic way to select one or many elements of a group of elements. Can be used as an input source to amp-form.
+- [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md): карусель изображений, которая отображает разные снимки продукта.
+- [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md): система шаблонов для рендеринга ответов сервера на данные, полученные из amp-form.
+- [`amp-form`](../../../../documentation/components/reference/amp-form.md): добавляет специальные функции для элементов `<form>`, которые необходимы AMP-страницам.
+- [`amp-selector`](../../../../documentation/components/reference/amp-selector.md): предлагает семантический способ выбора одного или нескольких элементов из группы элементов. Может использоваться в качестве источника входных данных для amp-form.
 
-## Basic interactivity
+## Базовая интерактивность
 
-The starter code offers some basic interactivity:
+Стартовый код предлагает ряд простых возможностей интерактивности:
 
-- The image carousel (an [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)) displays multiple views of the product.
-- The product can be added to the user's cart (via [`amp-form`](../../../../documentation/components/reference/amp-form.md)) by tapping the "Add to cart" button on the bottom of the page.
+- Карусель изображений ( [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) ) отображает разные снимки продукта.
+- Товар можно добавить в корзину пользователя (посредством [`amp-form`](../../../../documentation/components/reference/amp-form.md)), нажав кнопку «Добавить в корзину» внизу страницы.
 
-**Try it out**: Swipe the image carousel and tap the "Add to cart" button.
+**Попробуйте в действии**: пролистайте карусель пальцем и нажмите кнопку «Добавить в корзину».
