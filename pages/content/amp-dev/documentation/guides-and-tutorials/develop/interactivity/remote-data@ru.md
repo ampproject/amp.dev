@@ -1,5 +1,5 @@
 ---
-"$title": Working with remote data
+"$title": Работа с удаленными данными
 "$order": '3'
 description: What if your bindable data is too large or complex to retrieve at page load? Or what if each SKU has a price that takes a ...
 toc: 'true'
@@ -140,7 +140,7 @@ toc: 'true'
 
 Обратите внимание, что мы не инициализируем значение `selectedSize` через элемент `amp-state#selected`. Это потому, что мы намеренно не предоставляем выбранный размер по умолчанию и вместо этого хотим заставить пользователя выбирать размер.
 
-[tip type="tip"] **TIP –** `AMP.setState()` can be used for defining new variables in addition to modifying exist ones. Expressions will evaluate undefined variables to `null`. [/tip]
+[tip type="tip"] **TIP -** `AMP.setState()` может использоваться для определения новых переменных в дополнение к изменению существующих. Выражения оценят неопределенные переменные в `null`. [/tip]
 
 Добавьте новый элемент `<span>` обертывающий ценовую метку, и измените текст по умолчанию на «---», поскольку размер по умолчанию не выбран.
 
