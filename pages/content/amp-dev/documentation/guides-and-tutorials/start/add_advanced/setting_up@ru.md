@@ -1,7 +1,7 @@
 ---
 "$title": Подготовка
 "$order": '0'
-description: 'Before starting this tutorial, you''ll need the following: - A basic knowledge of HTML, CSS, and JavaScript - A basic understanding of AMP’s core concepts see ...'
+description: 'Чтобы завершить этот урок, вам понадобятся: - Базовые знания HTML, CSS и JavaScript - Базовое понимание основных концепций AMP, см...'
 "$parent": "/content/docs/fundamentals/add_advanced.md"
 ---
 
