@@ -106,7 +106,7 @@ description: 'Прежде чем мы начнем добавлять код, �
 #development=1
 ```
 
-For example:
+Например:
 
 ```text
 http://localhost:8000/article.amp.html#development=1
@@ -116,8 +116,8 @@ http://localhost:8000/article.amp.html#development=1
 
 [tip] Вы можете использовать ряд других инструментов для валидации своей AMP-страницы, например, таких как:
 
-- The [AMP Validator extension for Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc)
-- The [AMP Validator extension for Opera](https://addons.opera.com/en-gb/extensions/details/amp-validator/)
+- Расширение [AMP Validator для Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc)
+- Расширение [AMP Validator для Opera](https://addons.opera.com/en-gb/extensions/details/amp-validator/)
 - [Веб-интерфейс AMP-валидатора](https://validator.ampproject.org/)
 - ... и многие другие
 
@@ -125,8 +125,8 @@ http://localhost:8000/article.amp.html#development=1
 
 {{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='Simulated on a Nexus 5X device') }}
 
-## Simulating the mobile experience
+## Имитация мобильного опыта
 
 Мы разрабатываем страницу для мобильного устройства, поэтому давайте **смоделируем работу** с мобильным устройством в инструментах разработчика вашего браузера. Например, в Chrome DevTools щелкните значок мобильного телефона и выберите мобильное устройство в меню.
 
-Now, we can start working on the page itself. Let’s add some AMP components to our page.
+Теперь мы можем приступить к работе над самой страницей. Давайте добавим на нашу страницу несколько компонентов AMP.
