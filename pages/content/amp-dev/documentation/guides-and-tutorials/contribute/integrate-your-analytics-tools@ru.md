@@ -1,11 +1,11 @@
 ---
-"$title": Integrate your analytics tool with AMP
+"$title": Интеграция вашего инструмента аналитики с AMP
 order: '1'
 formats:
 - websites
 - stories
 teaser:
-  text: " Overview"
+  text: Обзор
 toc: 'true'
 ---
 
