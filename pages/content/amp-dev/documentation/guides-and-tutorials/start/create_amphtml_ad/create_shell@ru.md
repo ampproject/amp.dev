@@ -1,7 +1,7 @@
 ---
 "$title": Создание оболочки для рекламы
 "$order": '0'
-description: 'Using your favorite text editor, create an HTML file named my-amphtml-ad.html. Copy the following HTML markup into that file: ...'
+description: '"Используя свой любимый текстовый редактор, создайте HTML-файл с именем my-amphtml-ad.html. Скопируйте в этот файл следующую разметку HTML: ..."'
 ---
 
 [Обязательный HTML-код для рекламы AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) является вариантом [обязательного AMPHTML-кода для AMP-страницы](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md). Давайте познакомимся с обязательным кодом, создав оболочку нашей AMPHTML-рекламы.
