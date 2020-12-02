@@ -10,9 +10,9 @@ author: CrystalOnScript
 
 AMP предлагает несколько компонентов, предназначенных специально для анимации, — это позволяет использовать анимацию, которая не может управляться [добавлением и удалением классов](triggering_css_animations.md). В работе с анимацией эти компоненты применяют принципы AMP: они быстрые, эффективные и с фокусом на пользователя. AMP ограничивает разрешенные свойства CSS внутри ключевых кадров, но предоставляет такие преимущества, как детальное управление, плавная (бесшовная) анимация и кросс-браузерная совместимость, без дополнительных действий.
 
-Use amp-animation if you need to tightly control playback, as well as have precise timing with multiple elements animating at the same time.
+Используйте компонент amp-animation, если вам нужен жесткий контроль над воспроизведением, а также точная синхронизация нескольких анимируемых элементов.
 
-## Creating a basic AMP animation
+## Создание базовой AMP-анимации
 
 The [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) component enables use of the [Web Animation API](https://www.w3.org/TR/web-animations/) in AMP.
 
@@ -43,7 +43,7 @@ The [`amp-animation`](../../../../documentation/components/reference/amp-animati
 
 Подобно CSS, компонент [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) связывает свойства анимации с элементом, объявляя имя тега, класс или идентификатор элемента в поле `"selector"`. Компонент анимирует все элементы с объявленным типом тега или именем класса. Если важно анимировать только один элемент, используйте атрибут id.
 
-### Timing properties
+### Cвойства воспроизведения
 
 [Свойства воспроизведения](../../../../documentation/components/reference/amp-animation.md#timing-properties) определяют, сколько времени длится анимация, сколько раз она воспроизводится и в каком направлении выполняются ключевые кадры.
 
@@ -78,13 +78,13 @@ The [`amp-animation`](../../../../documentation/components/reference/amp-animati
 <button on="tap:exampleAnimation.start">
 ```
 
-## Building complex animations
+## Создание сложных анимаций
 
 Создание анимации в [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) позволяет осуществлять детальный контроль, выходящий за рамки запуска и остановки анимации: приостанавливать, воспроизводить в обратную сторону и «перескакивать» к определенной точке. Вы можете даже создавать последовательность из нескольких анимаций и анимировать элементы один за другим.
 
-### Subtargets
+### Подцели
 
-Elements of the same tag or class can have specified timing properties and override the values of variables defined in the top level animation.
+Элементы одного тега или класса могут определять свои свойства воспроизведения, тем самым переопределяя значения переменных, определенных в анимации верхнего уровня.
 
 [example preview="top-frame" playground="true" imports="amp-animation"]
 ```html
@@ -121,7 +121,7 @@ Elements of the same tag or class can have specified timing properties and overr
 ```
 [/example]
 
-### Chained animations
+### Последовательности анимаций
 
 Несколько анимаций можно соединять вместе, формируя длинную последовательность. Путем записи анимаций в массив `animations` внутри компонента [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) вы можете создавать согласованные со временем воспроизведения эффекты, такие как эффекты наложения на видео.
 
@@ -158,7 +158,7 @@ Elements of the same tag or class can have specified timing properties and overr
 
 ```
 
-This setup plays each animation for 3 seconds in a sequence.
+Данный код воспроизводит каждую анимацию в течение 3 секунд в последовательном порядке.
 
 Для создания больших анимаций расположенные внутри массива `animations` анимации могут ссылаться на другие компоненты [`amp-animation`](../../../../documentation/components/reference/amp-animation.md).
 
@@ -266,12 +266,12 @@ This setup plays each animation for 3 seconds in a sequence.
     1. Расширение [`length()`](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) вычисляет, сколько элементов `.card` было выбрано
     2. После этого length вычитает <a>index()</a> каждого элемента <code>.card</code>
     3. The resulting value is multiplied by the var `--duration`
-    4. The final total is applied in seconds to that element's delay
+    4. Окончательная сумма задается как значение задержки данного элемента в секундах
 - The animation is applied to each element individually so that the cards are shuffled one after another instead of all at the same time.
 
 Откройте анимацию в песочнице AMP и добавьте дополнительные элементы [`amp-img`](../../../../documentation/components/reference/amp-img), чтобы протестировать это поведение.
 
-### Look great, everywhere
+### Как обеспечить лучший вид
 
 Для индивидуальной настройки анимаций в них можно включать специальные [`условия`](../../../../documentation/components/reference/amp-animation.md#conditions). Адаптируйте анимацию к любому размеру экрана с помощью [условия `media`](../../../../documentation/components/reference/amp-animation.md#media-query) и поддерживайте обратную совместимость с браузерами, включая [условия `supports`](../../../../documentation/components/reference/amp-animation.md#supports-condition) в оператор [`switch`](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement).
 
