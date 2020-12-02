@@ -1,7 +1,7 @@
 ---
-"$title": Create a login-requiring AMP page
+"$title": Создание AMP-страницы с требованием входа
 "$order": '0'
-description: Some user interactions with a page, such as leaving a comment, could be conditioned by a login flow. You can implement a login flow ...
+description: Некоторые взаимодействия пользователя со страницей, такие как написание комментария, могут быть доступными только после выполнения входа. Реализовать процесс входа...
 numbered: '1'
 "$hidden": 'true'
 formats:
