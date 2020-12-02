@@ -6,9 +6,9 @@ description: Вы завершили урок «Добавление расши�
 
 Вы завершили урок «Добавление расширенных функций AMP» и научились работать со многими расширенными компонентами AMP!
 
-In this tutorial, you learned to:
+В этом уроке вы научились:
 
-- Display ads by using [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)
+- Показывать рекламу с помощью [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)
 - Встраивать видео с YouTube с помощью [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md)
 - Встраивать карточки Twitter с помощью [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md)
 - Добавлять адаптивные текстовые элементы с помощью [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md)
@@ -17,7 +17,7 @@ In this tutorial, you learned to:
 - Добавлять навигацию по сайту с помощью [`amp-img`](../../../../documentation/components/reference/amp-img.md) и [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md)
 - Использовать внешние шрифты в AMP
 
-## Next steps
+## Следующие шаги
 
 Чтобы продолжить расширять свои знания по AMP, ознакомьтесь со следующими ресурсами:
 
