@@ -8,7 +8,7 @@ description: '"Система компонентов AMP позволяет бы
 
 - **встроенные**: это компоненты, которые включены в базовую библиотеку JavaScript AMP (указываемую в `<head>`), например [`amp-img`](../../../../documentation/components/reference/amp-img.md) и [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md). Эти компоненты можно сразу же использовать в документе AMP.
 
-- **extended**: These are extensions to the base library that must be explicitly included in the document as custom elements.  Custom elements require specific scripts that are added to the `<head>` section (e.g., `<script async custom-element="`[`amp-video`](../../../../documentation/components/reference/amp-video.md)`...`).
+- **расширенные**: это расширения базовой библиотеки, которые должны быть явно включены в документ как специальные элементы. Для специальных элементов требуются определенные скрипты, которые добавляются в раздел `<head>` (например, `<script async custom-element="`[`amp-video`](../../../../documentation/components/reference/amp-video.md)`...`).
 
 - **экспериментальные**: это компоненты, которые выпущены, но еще не готовы к широкому использованию. Разработчики могут начать пользоваться этими функциями до того, как они будут выпущены официально. Дополнительные сведения см. в разделе [Экспериментальные функции](../../../../documentation/guides-and-tutorials/learn/experimental.md).
 
