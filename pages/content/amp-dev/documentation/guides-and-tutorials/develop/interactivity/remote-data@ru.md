@@ -1,7 +1,7 @@
 ---
 "$title": Работа с удаленными данными
 "$order": '3'
-description: What if your bindable data is too large or complex to retrieve at page load? Or what if each SKU has a price that takes a ...
+description: Ваши привязываемые данные слишком велики или сложны для извлечения при загрузке страницы? У каждого варианта товара есть цена, на поиск которой...
 toc: 'true'
 ---
 
