@@ -1,5 +1,5 @@
 ---
-"$title": AMP for Email best practices
+"$title": Советы по работе с AMP для писем
 "$order": '1'
 "$category": Develop
 formats:
