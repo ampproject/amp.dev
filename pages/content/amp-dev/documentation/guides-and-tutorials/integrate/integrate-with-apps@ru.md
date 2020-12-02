@@ -1,5 +1,5 @@
 ---
-"$title": Integrate AMP with your app
+"$title": Интеграция AMP с вашим приложением
 "$order": '2'
 description: Это руководство поможет разработчикам мобильных и веб-приложений реализовать интеграцию с AMP-страницами и возможность ссылаться на них. Примером такого приложения может быть мобильное приложение-мессенджер...
 formats:
@@ -21,7 +21,7 @@ This is a message with links to an <a href="http://www.example.org/a">
 article with AMP version</a> and an <a href="http://www.example.org/b"> article without AMP version</a>.
 ```
 
-Transformed message:
+Преобразованное сообщение:
 
 ```text
 This is a message with links to an <a href="https://www-example-org.cdn.ampproject.org/c/www.example.org/a">
@@ -30,7 +30,7 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 
 [tip type="tip"] **СОВЕТ.** Рекомендуется дать пользователям возможность просматривать обычные (не-AMP) версии страниц, добавив в приложение соответствующую настройку. [/tip]
 
-### Ways to transform links
+### Способы преобразования ссылок
 
 Есть три способа программной реализации преобразования ссылок:
 
@@ -76,7 +76,7 @@ Google предоставляет интерфейс AMP URL API, принима
 
 [tip type="note"] **ПРИМЕЧАНИЕ.** AMP URL API не может извлекать адреса кешированных AMP-страницах из сторонних AMP-кешей. Тем не менее URL-адрес кешированной страницы легко можно сконструировать на основе полученной AMP-версии URL (ampURL). [/tip]
 
-## Using AMP Caches
+## Использование AMP-кешей
 
 [AMP-кеш](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md) — это основанная на проксировании сеть доставки контента (CDN), предоставляющая доступ к корректно сформированным AMP-документам.<br>AMP-кеши рассчитаны на то, чтобы:
 
