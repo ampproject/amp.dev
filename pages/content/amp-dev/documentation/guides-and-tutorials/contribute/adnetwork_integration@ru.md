@@ -1,7 +1,7 @@
 ---
-"$title": Integrating with AMP to serve display ads
+"$title": Интеграция с AMP для показа медийной рекламы
 "$order": '5'
-description: This guide is for ad networks that want to integrate with AMP to serve display ads to AMP pages.
+description: Это руководство предназначено для рекламных сетей, которые хотят интегрироваться с AMP для показа медийной рекламы на AMP-страницах.
 formats:
 - ads
 ---
