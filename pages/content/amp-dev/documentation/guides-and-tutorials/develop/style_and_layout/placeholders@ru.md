@@ -1,5 +1,5 @@
 ---
-"$title": Placeholders & fallbacks
+"$title": Заполнители и резервные элементы
 "$order": '3'
 descriptions: "In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible."
 formats:
@@ -16,11 +16,11 @@ contributors:
 
 Чтобы придерживаться стандартов ощущаемой производительности и концепции прогрессивного улучшения, при создании AMP-ресурсов рекомендуется указывать заполнители и резервные элементы везде, где это возможно.
 
-Some elements will even reward you for doing it by relaxing restrictions – for example, if you provide a placeholder for [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder), it can be used near the top of the page (which won't work without).
+Некоторые элементы даже вознаграждают вас за это путем ослабления ограничений, — например, если указать заполнитель для элемента [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder), этот элемент можно будет использовать в верхней части страницы (в противном случае это невозможно).
 
-## Placeholders
+## Заполнители
 
-The element marked with the `placeholder` attribute acts as a placeholder for the parent AMP element. If specified, a `placeholder` element must be a direct child of the AMP element. An element marked as a `placeholder` will always `fill` the parent AMP element.
+Элемент, помеченный атрибутом `placeholder`, действует как заполнитель для своего родительского элемента AMP. Элемент `placeholder` должен всегда быть прямым потомком элемента AMP. Элемент, помеченный как `placeholder`, будет всегда заполнять (`fill`) родительский элемент AMP.
 
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
 ```html
@@ -38,21 +38,21 @@ The element marked with the `placeholder` attribute acts as a placeholder for th
 
 По умолчанию заполнитель элемента AMP отображается немедленно, даже если ресурсы элемента AMP не были загружены или инициализированы. Когда элемент AMP будет готов, он, как правило, скрывает заполнитель и показывает свое содержимое.
 
-[tip type="note"] **NOTE –**  The placeholder doesn’t have to be an AMP element; any HTML element can act as the placeholder. [/tip]
+[tip type="note"] **ПРИМЕЧАНИЕ**. Заполнитель не обязательно должен быть элементом AMP; в качестве заполнителя может выступать любой элемент HTML. [/tip]
 
-## Fallbacks <a name="fallbacks"></a>
+## Резервные элементы <a name="fallbacks"></a>
 
-You can specify the `fallback` attribute on an element to indicate the fallback behavior:
+Вы можете добавить в элемент атрибут `fallback`, чтобы указать резервное поведение:
 
 - для любого элемента, который не поддерживается браузером
 - если контент не удалось загрузить (например, твит был удален)
 - если тип изображения не поддерживается (например, WebP поддерживается не во всех браузерах)
 
-You can set the `fallback` attribute on *any* HTML element, not just AMP elements. If specified, the `fallback` element must be a direct child of the AMP element.
+Вы можете установить атрибут `fallback` для *любого* элемента HTML, а не только для элементов AMP. Элемент `fallback` должен быть прямым потомком элемента AMP.
 
 ##### Example: Unsupported feature
 
-In the following example, we use the `fallback` attribute to communicate to the user that the browser doesn’t support a particular feature:
+В следующем примере мы используем атрибут `fallback`, чтобы сообщить пользователю, что браузер не поддерживает определенную функцию:
 
 [example preview="inline" playground="true" imports="amp-video:0.1"]
 ```html
@@ -70,7 +70,7 @@ In the following example, we use the `fallback` attribute to communicate to the 
 
 ##### Пример: выдача изображений разных форматов
 
-In the following example, we use the `fallback` attribute to tell the browser to use the JPEG file if the WebP format is unsupported.
+В следующем примере мы используем атрибут `fallback`, чтобы дать браузеру инструкцию использовать файл JPEG, если формат WebP не поддерживается.
 
 [example preview="inline" playground="true"]
 ```html
@@ -91,14 +91,18 @@ In the following example, we use the `fallback` attribute to tell the browser to
 
 ## Взаимодействие заполнителей и резервных элементов
 
-For AMP components that rely on dynamic content (e.g., [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md), [`amp-list`](../../../../documentation/components/reference/amp-list.md)), the interaction of fallbacks and placeholders operates as follows:
+Для компонентов AMP, которые используют динамический контент (например, [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md), [`amp-list`](../../../../documentation/components/reference/amp-list.md)), взаимодействие резервных элементов и заполнителей работает следующим образом:
 
 <ol>
   <li>Заполнитель отображается во время загрузки контента.</li>
   <li>Если содержимое загружается успешно, заполнитель скрывается и отображается контент.</li>
-  <li>If the content fails to load:     <ol>       <li>If there's a fallback element, display the fallback.</li>       <li>Otherwise, continue displaying the placeholder.</li>     </ol>   </li>
+  <li>Если контент не загружается: <ol>
+<li> Если есть резервный элемент, он отображается. </li>
+<li> В противном случае продолжает отображаться заполнитель. </li>
+</ol>
+</li>
 </ol>
 
 ## Hiding loading indicators
 
-Many AMP elements are allowlisted to show a "loading indicator", which is a basic animation that shows that the element has not yet fully loaded. Elements can opt out of this behavior by adding the `noloading` attribute.
+Во многих элементах AMP включен показ «индикатора загрузки» — простой анимации, которая показывает, что элемент еще не полностью загружен. Чтобы отключить это поведение, добавьте в элемент атрибут `noloading`.
