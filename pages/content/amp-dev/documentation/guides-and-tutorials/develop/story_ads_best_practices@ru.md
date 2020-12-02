@@ -16,10 +16,10 @@ Web-истории — полноэкранные, пролистываемые
 Реклама в Web-историях соответствует следующим принципам:
 
 - Корректно сформированная реклама на AMPHTML: следует тем же техническим спецификациям, что и классическая [реклама на AMPHTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md).
-- Visual first: Inviting, bold, context-driven invitation state.
-- Native: The ad page has the same dimensions as an organic story page.
-- Same interaction model: User can continue to the next screen just like they would with an organic story page.
-- Fast: The ad never appears to a user in a half-loaded state.
+- С упором на визуальную составляющую: смелая, контекстуальная и вовлекающая с первого кадра.
+- Нативная: размер страницы рекламы совпадает с размером органической страницы истории.
+- Единая модель взаимодействия: пользователь переходит на следующую страницу так же, как с обычной страницы истории.
+- Быстрая: реклама никогда не отображается в полузагруженном состоянии.
 
 Для обеспечения согласованности с этими принципами среда выполнения Web-историй определяет подходящее размещение рекламной страницы в пределах Web-истории. Подробнее о принципах размещения рекламы читайте в статье [Размещение рекламы в Web-историях](advertise_amp_stories.md).
 
@@ -35,7 +35,7 @@ Web-истории — полноэкранные, пролистываемые
 
 ## Данные в тегах meta
 
-Meta tag data specifies that the ad meets the Web Story format, sets the CTA button text enum, directs where the button will send the user and what type of page it is.
+Данные в тегах meta информируют, что реклама соответствует формату AMP-историй, устанавливают перечисляемый тип (enum), содержащий тексты для кнопки CTA, указывают, куда кнопка рекламы перенаправляет пользователя, а также каким типом страницы является документ.
 
 [sourcecode:html]
 
@@ -68,11 +68,11 @@ Meta tag data specifies that the ad meets the Web Story format, sets the CTA but
 
 При выборе [доступных вариантов кнопки CTA](#call-to-action-button-text-enum) рекомендуем использовать тег `amp-cta-type`. В нужный момент AMP автоматически выполняет локализацию предопределенных вариантов.
 
-Custom text is allowed, but you will need to implement your own localization.
+Пользовательский текст разрешен, однако его локализацию вам придется выполнить самостоятельно.
 
 ## Перечисляемый тип (enum) с текстами для кнопки призыва к действию <a name="call-to-action-button-text-enum"></a>
 
-The call to action button can be configured from a predefined set of choices:
+Кнопку призыва к действию можно выбрать из готового списка вариантов:
 
 - `APPLY_NOW`: «Подать заявку»
 - `BOOK_NOW`: «Забронировать»
@@ -118,7 +118,7 @@ AMP-истории являются горизонтальными и отобр
 
 {{ image('/static/img/docs/stampads/ad_overlay.png', 515, 520, layout='intrinsic', alt='Demonstration of ad overlay', caption='The ad overlay sits at the top', align='' ) }}
 
-The CTA sits 32px from the bottom and is centered horizontally. It is 120px by 36px.
+Расположение CTA — 32px снизу, центровка по горизонтали; размер CTA — 120px на 36px.
 
 {{ image('/static/img/docs/stampads/cta_button.png', 515, 520, layout='intrinsic', alt='Demonstration of the CTA Button', caption='The CTA Button sits near the bottom', align='' ) }}
 
@@ -143,7 +143,7 @@ The CTA sits 32px from the bottom and is centered horizontally. It is 120px by 3
 </amp-video>
 [/sourcecode]
 
-### Images
+### Изображения
 
 Фоновые изображения можно масштабировать на весь экран. Приведенный ниже код CSS позволяет обрезать и центрировать видео и изображения.
 
@@ -169,7 +169,7 @@ The CTA sits 32px from the bottom and is centered horizontally. It is 120px by 3
 
 When specifying the source for an [`amp-video`](../../../documentation/components/reference/amp-video.md)
 
-Example: Specifying multiple source files
+Пример: указание файлов с несколькими источниками
 
 [sourcecode:html]
 <amp-video id="video-page1" autoplay loop
@@ -199,17 +199,17 @@ Example: Specifying multiple source files
 <table>
   <thead>
     <tr>
-     <th>Video streaming type</th>
-     <th>Resolution</th>
+     <th>Тип потокового видео</th>
+     <th>Разрешение</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-     <td>Non-adaptive</td>
+     <td>Неадаптивное</td>
      <td>720 x 1280 px</td>
     </tr>
     <tr>
-     <td>Adaptive</td>
+     <td>Адаптивное</td>
      <td>720 x 1280 px<br>540 x 960 px<br>360 x 480 px</td>
     </tr>
   </tbody>
@@ -217,23 +217,23 @@ Example: Specifying multiple source files
 
 [tip type="note"] **ПРИМЕЧАНИЕ.** На мобильных устройствах, соотношение сторон экрана которых отличается от 16:9, видео может быть обрезано по горизонтали или по вертикали, чтобы соответствовать размерам viewport. [/tip]
 
-#### Video codec
+#### Кодек видео
 
 1. Для MP4 используйте `H.264`.
 2. Для WEBM используйте `VP9`.
 3. Для HLS или DASH используйте `H.264`.
 
-#### Video quality
+#### Качество видео
 
-##### Transcoding optimizations
+##### Оптимизация транскодирования
 
-There are various tools you can use to encode videos and adjust the quality of the video during encoding. Here are just a few:
+Существуют различные утилиты для кодирования видео и регулировки его качества в процессе кодирования. Вот несколько из них:
 
 <table>
   <thead>
     <tr>
-     <th>Tool</th>
-     <th>Notes</th>
+     <th>Утилита</th>
+     <th>Примечания</th>
     </tr>
   </thead>
   <tbody>
@@ -249,22 +249,22 @@ There are various tools you can use to encode videos and adjust the quality of t
     </tr>
     <tr>
      <td><a href="https://github.com/google/shaka-packager">Shaka Packager</a></td>
-     <td>An encoder that can also output the HLS format including the playlist.      </td>
+     <td>Кодер, который также может выводить формат HLS со списком воспроизведения.</td>
     </tr>
   </tbody>
 </table>
 
-##### HLS segment size
+##### Размер сегмента HLS
 
-Ensure the size of your HLS segments are typically no more than 10 seconds in duration.
+Старайтесь, чтобы размер сегментов HLS не превышал 10 секунд.
 
-## Animation
+## Анимация
 
-Animations have a few caveats in stories, such as the concept of what is "visible". For instance, in our "3 panel" desktop view your creative may be visible on the page but not yet the center focus. This can be problematic if the desired effect is to start animations when a page becomes the main focal point.
+Работая с анимациями в историях, нужно учитывать кое-какие нюансы — например, такие как понятие «видимого». Пример: в «3-панельном» режиме просмотра рабочего стола креатив может быть виден на странице, но при этом еще не быть в точке сосредоточения внимания. Это может быть проблемой, если желаемый эффект — запускать анимацию только тогда, когда страница становится центральным объектом внимания.
 
 Чтобы помочь решить подобные проблемы, AMP добавляет в тело вашего креатива специальный атрибут `amp-story-visible`, когда креатив становится центральным объектом внимания во всех возможных вариантах отображения. Запуск анимаций рекомендуется инициировать на основании именно этого сигнала.
 
-Example: this animation will fire when the page comes into focus, and restart if a user clicks to another page in the story and returns.
+Пример: данная анимация запустится, когда страница станет центральным объектом внимания, и перезапустится, если пользователь кликнет на другую страницу истории, но вернется.
 
 [sourcecode:html]
 
@@ -278,7 +278,7 @@ Example: this animation will fire when the page comes into focus, and restart if
 
 ## Рекламная история <a name="sponsored-story"></a>
 
-A Sponsored Story exists as a URL on the web, enabling the drive of user traffic to a Sponsored Story from the call to action button on an AMP Story ad. A Sponsored Story is an AMP Story, but with focus on an immersive and expansive ad experience.
+Рекламная история существует в виде сетевого URL, на который поступает пользовательский трафик с кнопки призыва к действию, размещенной в рекламе в AMP-истории. Рекламная история — это тоже AMP-история, однако целиком посвященная рекламе.
 
 {{ image('/static/img/docs/stampads/sponsored_story_full.png', 1600, 900, layout='intrinsic', alt='CTA button directs to a Sponsored Story', caption='CTA button directs to a Sponsored Story', align='' ) }}
 
