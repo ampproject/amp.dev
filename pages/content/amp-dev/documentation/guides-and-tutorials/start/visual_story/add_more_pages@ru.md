@@ -17,9 +17,7 @@ author: bpaduch
   <tr>
     <td width="60%">
       <ul>
-        <li>Contains 1 layer:       <ul>         <li>Implements the <a href="create_cover_page.md#vertical"><code>vertical</code></a> template.</li>         <li>Contains 3 elements:           <ul>             <li>An <code><h1></code> element with the title: <em>Cats</em>
-</li>             <li>A responsive <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> (<code class="filename">cat.jpg</code>, 720 x 1280px)</li>             <li>A <code><q></code> element for the following quotation: <em>Dogs come when they're called. Cats take a message and get back to you. --Mary Bly</em>
-</li>           </ul>         </li>       </ul>
+        <li>Содержит 1 слой: <ul> <li>Реализует шаблон <a href="create_cover_page.md#vertical"><code>vertical</code></a>.</li> <li>Содержит 3 элемента: <ul> <li>Элемент  <code> <h1> </code>с заголовком <em>Cats</em> </li> <li>Адаптивный элемент <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> (<code class="filename">cat.jpg</code>, 720 x 1280px)</li> <li>Элемент <code><q></code> со следующим текстом: <em>Dogs come when they're called. Cats take a message and get back to you. --Mary Bly</em> </li> </ul> </li> </ul>
 </li>
 </ul>
     </td>
@@ -35,11 +33,16 @@ author: bpaduch
   <tr>
     <td width="60%">
       <ul>
-        <li>Contains 2 layers:       <ul>         <li>
-<b>Layer 1</b>: Implements the <a href="create_cover_page.md#fill"><code>fill</code></a> template, and contains a responsive <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> (<code class="filename">dog.jpg</code>, 720 x 1280px).</li>         <li>
-<b>Layer 2</b>:  Implements the <a href="create_cover_page.md#thirds"><code>thirds</code></a> template and contains 2 elements:           <ul>             <li>An <code><h1></code> element with the title: <em>Dogs</em>
-</li>             <li>A <code><p></code> element that specifies a <a href="create_cover_page.md#thirds"><code>grid-area</code></a> that occupies the <a href="create_cover_page.md#thirds"><code>lower-third</code></a> and contains the following text: <em>Dogs were probably the first tame animals. They have accompanied humans for some 10,000 years. Some scientists assert that all dogs, domestic and wild, share a common ancestor in the small South Asian wolf.</em>
-</li>           </ul>         </li>       </ul>
+        <li>Состоит из двух слоев: <ul> <li> <b> Слой 1</b>: реализует шаблон <a href="create_cover_page.md#fill"> <code>fill</code></a> и содержит адаптивный элемент <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a>(<code class="filename">dog.jpg</code>, 720 x 1280px).</li>
+<li>
+<b>Слой 2</b>: реализует шаблон <a href="create_cover_page.md#thirds"><code> thirds </code></a> и содержит 2 элемента: <ul>
+<li> Элемент <code><h1></code> с заголовком: <em>Dogs</em>
+</li>
+<li>Элемент<code><p></code>, указывающий <a href="create_cover_page.md#thirds"><code>grid-area</code></a>, занимающий <a href="create_cover_page.md#thirds"><code>lower-third</code></a> (нижнюю треть экрана) и содержит следующий текст: <em>Dogs were probably the first tame animals. They have accompanied humans for some 10,000 years. Some scientists assert that all dogs, domestic and wild, share a common ancestor in the small South Asian wolf.</em>
+</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
     </td>
