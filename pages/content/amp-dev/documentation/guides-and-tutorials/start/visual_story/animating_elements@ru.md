@@ -12,8 +12,8 @@ author: bpaduch
 <table>
 <thead><tr>
   <th width="50%">Пресет анимации</th>
-  <th width="25%">Default duration (ms)</th>
-  <th width="25%">Default delay (ms)</th>
+  <th width="25%">Продолжительность по умолчанию (мс)</th>
+  <th width="25%">Задержка по умолчанию (мс)</th>
 </tr></thead>
 <tbody>
 <tr>
@@ -121,7 +121,7 @@ author: bpaduch
 
 [tip type="note"] Опробуйте различные эффекты анимации, добавляя атрибут `animate-in="<animation preset>"` в элементы на страницах истории. [/tip]
 
-## Animation timing
+## Время анимации
 
 Каждый пресет анимации имеет встроенное значение по умолчанию для следующих параметров:
 
@@ -142,7 +142,7 @@ author: bpaduch
 </amp-story-page>
 ```
 
-## Animating our last page
+## Анимируем нашу последнюю страницу
 
 Последняя страница нашей веб-истории состоит из двух слоев: первый слой представляет собой коллаж из изображений животных, а второй содержит текст баннера. Чтобы создать эту страницу, **добавьте** следующий код сразу после предыдущей страницы истории:
 
@@ -247,7 +247,7 @@ Pets can lower your stress levels!</p>
 
 ```
 
-Refresh and reload your story.  Your last page should look like this:
+Обновите и перезагрузите свою историю. Ваша последняя страница должна выглядеть так:
 
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Page 5 collage', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 
