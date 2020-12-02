@@ -44,7 +44,6 @@ Content-Type: text/html; charset="UTF-8"
 
 <span>Hello World in HTML!</span>
 --001a114634ac3555ae05525685ae
-
 ```
 
 [tip type="important"] Некоторые почтовые клиенты отображают только последний MIME-блок. Чтобы гарантировать рендеринг письма, поместите MIME-блок `text/x-amp-html` _перед_ MIME-блоком `text/html`. [/tip]
