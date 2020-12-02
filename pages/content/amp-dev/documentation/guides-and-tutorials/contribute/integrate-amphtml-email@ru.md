@@ -1,7 +1,7 @@
 ---
 "$title": AMP для писем — интеграция с провайдерами электронной почты
 "$order": '5'
-description: Information for email clients and providers for integrating with AMP.
+description: Информация по интеграции с AMP для клиентов и провайдеров электронной почты.
 formats:
 - email
 ---
