@@ -11,9 +11,9 @@ formats:
 
 В этом уроке вы приобретете понимание основ AMP и узнаете, как AMP обрабатывает рекламу, функции аналитики, встроенные видео, интеграцию с социальными сетями, кольцевые галереи и многое другое. К концу этого урока вы создадите новостную статью для мобильных устройств, в которой используются все перечисленные выше функции.
 
-## You’ll learn to:
+## Вы научитесь:
 
-- Display ads by using [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)
+- Показывать рекламу с помощью [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)
 - Встраивать видео с YouTube, карточки Twitter и адаптивные текстовые элементы
 - Создавать кольцевые галереи с изображениями и комбинированным контентом с помощью [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)
 - Отслеживать простые паттерны с помощью [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
