@@ -1,7 +1,7 @@
 ---
 formats:
 - websites
-"$title": Protect your subscription content with client-side encryption
+"$title": Защитите содержимое подписки с помощью шифрования на стороне клиента
 "$titles":
   teaser: Protect your subscription content with client-side encryption.
 "$order": '10'
@@ -19,7 +19,7 @@ author: CrystalOnScript
 
 Чтобы решить обе этих проблемы, реализуйте проверку платных подписчиков и расшифровку контента на стороне клиента. Благодаря такому решению пользователи с платным доступом смогут расшифровывать контент, не загружая новую страницу и не ожидая ответа от бэкенда.
 
-# Setup overview
+# Обзор установки
 
 Чтобы реализовать дешифровку на стороне клиента, нам потребуется совмещать криптографию с симметричным ключом с криптографией с открытым ключом. Это делается следующим образом:
 
@@ -30,7 +30,7 @@ author: CrystalOnScript
 
 Документ AMP сохраняет зашифрованный ключ в самом себе — это предотвращает отделение зашифрованного документа от ключа, который его дешифрует.
 
-# How does it work?
+# Как это работает?
 
 1. AMP извлекает ключ из зашифрованного содержимого документа, на который переходит пользователь. {{ image('/static/img/docs/guides/cse/cse7.jpg', 115, 94, align='', layout='intrinsic', alt='The public and symmetric key encryptions.') }}
 2. При выдаче платного контента AMP отправляет авторизатору полученный из документа зашифрованный симметричный ключ в рамках процесса получения разрешений пользователя. {{ image('/static/img/docs/guides/cse/cse8.jpg', 150, 251, align='', layout='intrinsic', alt='AMP sends the encrypted symmetric key from the document to the authorizer as a part of the user’s entitlements fetch.') }}
@@ -41,7 +41,7 @@ author: CrystalOnScript
 
 Чтобы интегрировать обработку шифрования AMP с вашим внутренним сервером разрешений, выполните следующие действия.
 
-## Step 1: Create a public/private key pair
+## Шаг 1. Создайте пару открытого и закрытого ключей
 
 Для шифрования симметричного ключа документа вам необходима собственная пара из открытого и закрытого ключей. Шифрование открытым ключом представляет собой [гибридную криптосистему](https://en.wikipedia.org/wiki/Hybrid_cryptosystem), а именно сочетание метода асимметричного шифрования по схеме ECIES ([с использованием эллиптической кривой P-256](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves))) с методом симметричного шифрования [AES-GCM](https://tools.ietf.org/html/rfc5288) (с использованием 128-битного ключа).
 
@@ -55,17 +55,17 @@ author: CrystalOnScript
 Чтобы помочь вам приступить к созданию асимметричных ключей, мы создали [специальный скрипт](https://github.com/subscriptions-project/encryption/tree/master/golang/cmd/gcp_key_gen). Он делает следующее:
 
 1. Создает новую схему ECIES с ключом AEAD.
-2. Outputs the public key in plaintext to an output file.
-3. Outputs the private key to another output file.
+2. Выводит открытый ключ в виде открытого текста в выходной файл.
+3. Выводит закрытый ключ в другой выходной файл.
 4. Шифрует сгенерированный закрытый ключ с помощью ключа, размещенного в Google Cloud (GCP), перед записью в выходной файл (обычно такая процедура называется [шифрованием методом конвертов](https://cloud.google.com/kms/docs/envelope-encryption)).
 
 Ваш общедоступный [набор ключей Tink](https://github.com/google/tink/blob/2f3e0a64258060d4f7501aa6460fdefbf6c9ba2b/proto/tink.proto#L131) должен храниться и публиковаться в [формате JSON](https://github.com/google/tink/blob/2f3e0a64258060d4f7501aa6460fdefbf6c9ba2b/go/keyset/json_io.go) — это требуется для корректной работы других инструментов AMP. Наш скрипт уже использует этот формат при выводе открытого ключа.
 
-## Step 2: Encrypt articles
+## Шаг 2. Зашифруйте статьи
 
 Решите, будете ли вы шифровать платный контент вручную или автоматически.
 
-### Manually Encrypt
+### Шифрование вручную
 
 Для шифрования платного контента должен использоваться симметричный метод [AES-GCM 128](https://en.wikipedia.org/wiki/Galois/Counter_Mode) с применением библиотеки Tink. Симметричный ключ документа, используемый для шифрования платного контента, должен быть уникальным для каждого документа. Добавьте ключ документа в объект JSON, который содержит ключ (в виде открытого текста в кодировке base64) и коды ресурсов, необходимые для доступа к зашифрованному содержимому документа.
 
@@ -103,11 +103,11 @@ author: CrystalOnScript
 
 Для дальнейшего чтения: [ознакомьтесь с рабочим образцом зашифрованного документа AMP](https://github.com/subscriptions-project/scenic-demo/blob/master/app/views/article-amp.html).
 
-### Auto Encrypt
+### Автоматическое шифрование
 
 Зашифруйте документ с помощью нашего [скрипта](https://github.com/subscriptions-project/encryption/tree/master/golang/cmd/encrypt). Скрипт принимает HTML-документ и шифрует все содержимое внутри тегов `<section subscriptions-section="content" encrypted>`. Скрипт шифрует ключ документа, созданный скриптом, используя открытые ключи, размещенные по переданным ему URL-адресам. Применение этого скрипта гарантирует корректную кодировку и форматирование контента для выдачи. Дополнительные инструкции по использованию этого скрипта см. [по этой ссылке](https://github.com/subscriptions-project/encryption/blob/master/golang/cmd/encrypt/README.md).
 
-## Step 3: Integrate authorizer
+## Шаг 3. Интегрируйте авторизатор
 
 Вам необходимо внести нужные изменения в свой авторизатор, чтобы он выполнял дешифровку ключей документов при наличии у пользователя нужных разрешений. Компонент amp-subscriptions автоматически отправляет зашифрованный ключ документа `"local"`-авторизатору в параметре URL-адреса ["crypt="](https://github.com/ampproject/amphtml/blob/4ebe3df7afb0a6d054bccfd6800421a149a20d55/extensions/amp-subscriptions/0.1/local-subscription-platform-remote.js#L70). Он выполняет:
 
@@ -120,7 +120,7 @@ author: CrystalOnScript
 
 У Tink есть обширная [документация](https://github.com/google/tink/tree/master/docs) и [примеры](https://github.com/google/tink/tree/master/examples) на C++, Java, Go и JavaScript, которые помогут вам приступить к реализации серверной части.
 
-### Request management
+### Управление запросами
 
 Когда к вашему авторизатору поступает запрос:
 
@@ -198,6 +198,6 @@ JsonResponse getEntitlements(string requestUri) {
 
 Все вспомогательные скрипты находятся в [репозитории Github subscriptions-project/encryption](https://github.com/subscriptions-project/encryption).
 
-# Further support
+# Дальнейшая поддержка
 
 Чтобы задать вопрос, оставить комментарий или сообщить о проблеме, создайте [задачу на Github](https://github.com/subscriptions-project/encryption/issues).
