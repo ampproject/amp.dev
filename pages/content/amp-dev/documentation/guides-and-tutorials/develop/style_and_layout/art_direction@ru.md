@@ -1,5 +1,5 @@
 ---
-"$title": Responsive images with srcset, sizes & heights
+"$title": Адаптивные изображения с набором параметров, размерами и высотой
 "$order": '4'
 description: Use the srcset attribute to control an element’s assets based on varying media expressions. In particular, use it for all amp-img tags to specify which ...
 formats:
@@ -18,7 +18,7 @@ contributors:
 
 Use the `srcset` attribute to control an element’s assets based on varying media expressions. In particular, use it for all [`amp-img`](../../../../documentation/components/reference/amp-img.md) tags to specify which image assets to use based on varying screen sizes. AMP will autogenerate a `sizes` attribute, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img" data-md-type="link">that meets the HTML5 definition of `sizes`</a>, for all underlying `<img>` tags of `<amp-img>` if the `<amp-img>` has a `srcset` attribute but no `sizes`.
 
-In this simple example, `srcset` specifies which image to use based on the screen width. The `w` descriptor tells the browser the width of each image in the list:
+В этом простом примере `srcset` указывает, какое изображение использовать в зависимости от ширины экрана. Дескриптор `w` сообщает браузеру ширину каждого изображения в списке:
 
 [example preview="top-frame" playground="true"]
 ```html
@@ -41,7 +41,7 @@ Learn more about creating responsive images using `srcset` in [Using Responsive 
 
 You can also use the optional AMP `sizes` attribute along with `srcset`. The AMP `sizes` attribute describes how to calculate the element size based on any media expression. <strong data-md-type="raw_html">Defining `sizes` on any AMP Element will cause AMP to set an inline style for width on that element according to the matched media query.</strong> Based on the element’s calculated size, the user agent selects the most relative source supplied by the `srcset` attribute.
 
-Consider the following example:
+Рассмотрим следующий пример:
 
 [example preview="top-frame" playground="true"]
 ```html
@@ -71,7 +71,7 @@ All AMP custom elements that allow `responsive` layout, also support the `height
 
 When the `heights` attribute is specified along with `width` and `height`, the `layout` is defaulted to `responsive`.
 
-An example:
+Пример:
 
 [example preview="top-frame" playground="true"]
 ```html
