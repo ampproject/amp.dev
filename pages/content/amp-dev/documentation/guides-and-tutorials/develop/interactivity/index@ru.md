@@ -1,5 +1,5 @@
 ---
-"$title": Create interactive AMP pages
+"$title": Создание интерактивных AMP-страниц
 "$path": "/documentation/guides-and-tutorials/develop/interactivity/index.html"
 "$order": '0'
 description: В этом уроке вы узнаете, как использовать выражения и привязку данных для создания удивительных интерактивных AMP-страниц с помощью amp-bind ...
