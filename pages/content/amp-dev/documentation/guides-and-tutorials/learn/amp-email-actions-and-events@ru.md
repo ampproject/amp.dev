@@ -45,7 +45,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
   <tr>
     <th width="30%">Синтаксис</th>
     <th width="18%">Обязательно?</th>
-    <th width="42%">Description</th>
+    <th width="42%">Описание</th>
   </tr>
   <tr>
     <td><code>eventName</code></td>
@@ -119,7 +119,7 @@ AMP также определяет глобальные действия `hide`
 <table>
   <tr>
     <th>Событие</th>
-    <th>Description</th>
+    <th>Описание</th>
   </tr>
   <tr>
     <td><code>tap</code></td>
@@ -132,8 +132,8 @@ AMP также определяет глобальные действия `hide`
 <table>
   <tr>
     <th width="20%">Событие</th>
-    <th width="30%">Description</th>
-    <th width="40%">Elements</th>
+    <th width="30%">Описание</th>
+    <th width="40%">Элементы</th>
     <th>Данные</th>
   </tr>
   <tr>
@@ -179,7 +179,7 @@ event.value</pre>
 <table>
   <tr>
     <th width="25%">Событие</th>
-    <th width="35%">Description</th>
+    <th width="35%">Описание</th>
     <th width="40%">Данные</th>
   </tr>
   <tr>
@@ -199,7 +199,7 @@ event.value</pre>
 <table>
   <tr>
     <th width="25%">Событие</th>
-    <th width="35%">Description</th>
+    <th width="35%">Описание</th>
     <th width="40%">Данные</th>
   </tr>
   <tr>
@@ -214,7 +214,7 @@ event.value</pre>
 <table>
   <tr>
     <th width="25%">Событие</th>
-    <th width="35%">Description</th>
+    <th width="35%">Описание</th>
     <th width="40%">Данные</th>
   </tr>
   <tr>
@@ -234,7 +234,7 @@ event.value</pre>
 <table>
   <tr>
     <th width="25%">Событие</th>
-    <th width="35%">Description</th>
+    <th width="35%">Описание</th>
     <th width="40%">Данные</th>
   </tr>
   <tr>
@@ -250,7 +250,7 @@ event.value</pre>
 <table>
   <tr>
     <th width="25%">Событие</th>
-    <th width="35%">Description</th>
+    <th width="35%">Описание</th>
     <th width="40%">Данные</th>
   </tr>
   <tr>
@@ -265,7 +265,7 @@ event.value</pre>
 <table>
   <tr>
     <th width="25%">Событие</th>
-    <th width="35%">Description</th>
+    <th width="35%">Описание</th>
     <th width="40%">Данные</th>
   </tr>
   <tr>
@@ -285,7 +285,7 @@ event.value</pre>
 <table>
   <tr>
     <th width="25%">Событие</th>
-    <th width="35%">Description</th>
+    <th width="35%">Описание</th>
     <th width="40%">Данные</th>
   </tr>
   <tr>
@@ -301,7 +301,7 @@ event.value</pre>
 <table>
   <tr>
     <th width="25%">Событие</th>
-    <th width="35%">Description</th>
+    <th width="35%">Описание</th>
     <th width="40%">Данные</th>
   </tr>
   <tr>
@@ -338,7 +338,7 @@ event.value</pre>
 <table>
   <tr>
     <th width="40%">Действие</th>
-    <th>Description</th>
+    <th>Описание</th>
   </tr>
   <tr>
     <td><code>hide</code></td>
@@ -367,7 +367,7 @@ event.value</pre>
 <table>
   <tr>
     <th>Действие</th>
-    <th>Description</th>
+    <th>Описание</th>
   </tr>
   <tr>
     <td><code>toggle(section=STRING)</code></td>
@@ -388,7 +388,7 @@ event.value</pre>
 <table>
   <tr>
     <th>Действие</th>
-    <th>Description</th>
+    <th>Описание</th>
   </tr>
   <tr>
     <td><code>goToSlide(index=INTEGER)</code></td>
@@ -401,7 +401,7 @@ event.value</pre>
 <table>
   <tr>
     <th width="40%">Действие</th>
-    <th>Description</th>
+    <th>Описание</th>
   </tr>
   <tr>
     <td><code>open (default)</code></td>
@@ -414,7 +414,7 @@ event.value</pre>
 <table>
   <tr>
     <th>Действие</th>
-    <th>Description</th>
+    <th>Описание</th>
   </tr>
   <tr>
     <td><code>open (default)</code></td>
@@ -431,7 +431,7 @@ event.value</pre>
 <table>
   <tr>
     <th width="25%">Событие</th>
-    <th width="35%">Description</th>
+    <th width="35%">Описание</th>
     <th width="40%">Данные</th>
   </tr>
   <tr>
@@ -451,7 +451,7 @@ event.value</pre>
 <table>
   <tr>
     <th>Действие</th>
-    <th>Description</th>
+    <th>Описание</th>
   </tr>
   <tr>
     <td><code>clear</code></td>
@@ -476,7 +476,7 @@ event.value</pre>
 <table>
   <tr>
     <th>Действие</th>
-    <th>Description</th>
+    <th>Описание</th>
   </tr>
   <tr>
     <td><code>open (default)</code></td>
@@ -497,7 +497,7 @@ event.value</pre>
 <table>
   <tr>
     <th>Действие</th>
-    <th>Description</th>
+    <th>Описание</th>
   </tr>
   <tr>
     <td><code>clear</code></td>
@@ -520,7 +520,7 @@ event.value</pre>
 <table>
   <tr>
     <th width="40%">Действие</th>
-    <th>Description</th>
+    <th>Описание</th>
   </tr>
   <tr>
     <td>
