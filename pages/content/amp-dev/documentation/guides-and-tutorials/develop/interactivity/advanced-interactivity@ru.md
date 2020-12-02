@@ -11,7 +11,7 @@ description: 'Стартовый код обеспечивает лишь мин
 
 До появления компонента [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) реализовать такую функциональность было невозможно. Давайте получим практический опыт работы с [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) и добавим эти новые функции в наш образец кода.
 
-## Install the `amp-bind` component
+## Установите компонент `amp-bind`
 
 [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) — это AMP-компонент, который позволяет создавать индивидуальные интерактивные возможности, используя JS-подобные выражения и привязки данных. Чтобы использовать [`amp-bind`](../../../../documentation/components/reference/amp-bind.md), следует установить его на странице.
 
