@@ -101,7 +101,7 @@ AMP также определяет глобальные действия `hide`
 
 Элемент может быть показан («show») только в том случае, если он ранее был скрыт действием `hide` или `toggleVisibility`, или атрибутом [`hidden`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden). Действие `show` несовместимо с элементами, скрытыми с помощью CSS: `display:none` или AMP: `layout=nodisplay`.
 
-For example, the following is possible in AMP:
+Например, в AMP возможно следующее:
 
 [sourcecode:html]
 
@@ -219,12 +219,12 @@ event.value</pre>
   </tr>
   <tr>
     <td><code>lightboxOpen</code></td>
-    <td>Fired when lightbox is fully visible.</td>
+    <td>Срабатывает, когда лайтбокс полностью виден.</td>
     <td>Нет</td>
   </tr>
   <tr>
     <td><code>lightboxClose</code></td>
-    <td>Fired when lightbox is fully closed.</td>
+    <td>Срабатывает, когда лайтбокс полностью закрыт.</td>
     <td>Нет</td>
   </tr>
 </table>
@@ -342,7 +342,7 @@ event.value</pre>
   </tr>
   <tr>
     <td><code>hide</code></td>
-    <td>Hides the target element.</td>
+    <td>Скрывает целевой элемент.</td>
   </tr>
   <tr>
     <td><code>show</code></td>
@@ -480,15 +480,15 @@ event.value</pre>
   </tr>
   <tr>
     <td><code>open (default)</code></td>
-    <td>Opens the sidebar.</td>
+    <td>Открывает боковую панель.</td>
   </tr>
   <tr>
     <td><code>close</code></td>
-    <td>Closes the sidebar.</td>
+    <td>Закрывает боковую панель.</td>
   </tr>
   <tr>
     <td><code>toggle</code></td>
-    <td>Toggles the state of the sidebar.</td>
+    <td>Переключает состояние боковой панели.</td>
   </tr>
 </table>
 
@@ -505,7 +505,7 @@ event.value</pre>
   </tr>
   <tr>
     <td><code>submit</code></td>
-    <td>Submits the form.</td>
+    <td>Отправляет форму.</td>
   </tr>
 </table>
 
@@ -513,7 +513,7 @@ event.value</pre>
 
 Система AMP предоставляет ряд целей, предъявляющих особые требования:
 
-### Target: AMP <a name="target-amp"></a>
+### Цель: AMP <a name="target-amp"></a>
 
 Цель `AMP` обеспечивается средой выполнения AMP; в ней реализованы действия верхнего уровня, которые применяются ко всему документу.
 
