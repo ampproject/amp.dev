@@ -9,7 +9,7 @@ formats:
 
 Истории — это полноэкранные повествования с эффектом глубокого погружения. Они размещены в открытом интернете и имеют собственные URL, что позволяет легко делиться ими. Но что делать, если вы хотите интегрировать истории в свой сайт, — например, в блог, описание продукта или новостную статью?
 
-The [AMP Story Player](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md) enables you to embed stories that users are able to tap or click through, inside of a web page. Follow this step-by-step guide to learn how.
+Компонент AMP Story Player позволяет встраивать в веб-страницы истории, которые пользователи могут пролистывать касанием или кликом. Следуйте этому пошаговому руководству, чтобы узнать, как это делается.
 
 # Показ историй на не-AMP странице
 
@@ -71,7 +71,7 @@ The [AMP Story Player](https://github.com/ampproject/amphtml/blob/master/spec/am
 
 ## Встраивание AMP Story Player
 
-Displaying an AMP story in a non-AMP page requires the use of the [`amp-story-player`](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md) element.
+Для отображения AMP-историй на традиционной (не-AMP) странице необходимо использовать элемент [`amp-story-player`](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md).
 
 ### Импорт скриптов
 
@@ -86,7 +86,7 @@ Displaying an AMP story in a non-AMP page requires the use of the [`amp-story-pl
 
 ### Указание истории
 
-Include the `<amp-story-player>` element inside the document `body`. Then specify the desired story by placing an `<a>` tag inside of the `<amp-story-player>` element. Point the `href` to the story’s location. The `href` may point to the URL of a hosted story or a relative path. Place the title of the story within the `<a>` tags.
+Включите элемент `<amp-story-player>` в `body` документа. Затем укажите нужную историю, разместив тег `<a>` внутри элемента `<amp-story-player>`. Укажите в `href` место размещения истории. `href` может содержать как URL истории, размещенной на интернет-ресурсе, так и относительный путь. Поместите название истории в теги `<a>`.
 
 ```html
  <amp-story-player style="width: 360px; height: 600px;">
@@ -99,7 +99,7 @@ Include the `<amp-story-player>` element inside the document `body`. Then specif
 
 ### Размер проигрывателя
 
-You may define the story player's `width`, `height`, and other styles inline or as you would any other element's style.
+Вы можете указать атрибуты `width`, `height` и другие стилистические параметры проигрывателя в виде встроенных стилей, как для любого другого элемента.
 
 ```html
 <body>
@@ -125,7 +125,7 @@ You may define the story player's `width`, `height`, and other styles inline or 
 
 ### Добавление обложки
 
-Include a representative poster image by adding an `<img>` tag as a child of the story's `<a>` tag with the following configuration. The AMP story player displays this image while loading the full story.
+Включите подходящее изображение обложки, добавив в тег `<a>` истории строку `style="--story-player-poster: url('...');"`, или с помощью CSS-переменной <code>--story-player-poster</code>. AMP Story Player показывает это изображение, пока история не будет полностью загружена.
 
 ```html
 <amp-story-player style="width: 50vw; height: 83.35vw;">
@@ -140,7 +140,7 @@ Include a representative poster image by adding an `<img>` tag as a child of the
 
 ## Встраивание нескольких историй
 
-You may add multiple stories in the same `<amp-story-player>` element by defining multiple `<a>` tags. The player presents the second story’s cover page after user’s tap through the first.
+Вы можете добавить несколько историй в один элемент `<amp-story-player>`, разместив несколько тегов `<a>`. Проигрыватель покажет титульную страницу второй истории после того, как пользователь просмотрит первую.
 
 ```html
 <amp-story-player style="width: 360px; height: 600px;">
@@ -155,7 +155,7 @@ You may add multiple stories in the same `<amp-story-player>` element by definin
 </amp-story-player>
 ```
 
-You can embed as many instances of `<amp-story-player>` as desired. They display as individual viewers.
+Вы можете вставлять сколько угодно экземпляров `<amp-story-player>`. Они отображаются как отдельные проигрыватели.
 
 ```html
 <amp-story-player style="width: 360px; height: 600px;">
