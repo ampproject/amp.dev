@@ -12,9 +12,9 @@ description: Теперь пользователь может добавить �
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
 [/sourcecode]
 
-We specify a POST method and a XHR action, as non XHR actions are not allowed with POST methods in AMP. Because this is a demo, we are not persisting comments, so it’s only possible to add one comment at the time; whenever a comment is added, the AMPByExample server replies with a JSON response containing the entered text with some additions, like a timestamp, an avatar and a name for the user.
+Мы задаем метод POST и действие XHR, так как в AMP не разрешены POST-запросы с действиями, отличными от XHR. Поскольку это лишь демонстрация, комментарии не сохраняются, а значит, добавить можно только один комментарий; при добавлении комментария сервер AMPByExample возвращает JSON, содержащий введенный текст и дополнительную информацию, такую как временная отметка, аватар и имя пользователя.
 
-Here's an example of JSON response:
+Вот пример JSON-ответа:
 
 [sourcecode:json]
 {"Datetime":"09:34:21",
@@ -39,7 +39,7 @@ Here's an example of JSON response:
 </div>
 [/sourcecode]
 
-In this example, we are only checking if the value of the comment is not empty; if the value is empty, we return an error that causes the following code to execute
+В этом примере мы лишь проверяем, что комментарий не является пустым. Если комментарий пуст, мы возвращаем ошибку, которая приводит к выполнению следующего кода
 
 [sourcecode:html]
 <div submit-error>
@@ -57,6 +57,6 @@ In this example, we are only checking if the value of the comment is not empty; 
 <input type="text" class="data-input" name="text" placeholder="Your comment..." required>
 [/sourcecode]
 
-When you add a comment and click the submit button, you should now see something similar to the following screenshot:
+Теперь, если вы добавите комментарий и нажмете кнопку отправки, вы увидите что-то похожее на скриншот ниже:
 
 <amp-img src="/static/img/logout-button.png" alt="Comment added" height="352" width="300"></amp-img>
