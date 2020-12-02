@@ -1,5 +1,5 @@
 ---
-"$title": Setting up
+"$title": Первоначальная настройка
 "$order": '0'
 description: 'Чтобы завершить этот урок, вам понадобятся: - базовые знания HTML, CSS и JavaScript - браузер (на ваш выбор) - текстовый редактор ...'
 "$parent": "/content/docs/interaction_dynamic/interactivity.md"
