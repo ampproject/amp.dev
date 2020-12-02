@@ -35,7 +35,7 @@ author: bpaduch
 
 - Название истории, представляемое атрибутом `title` (например, «Домашние питомцы»).
 - Имя издателя, представляемое атрибутом `publisher` (например, «Уроки по AMP»).
-- The publisher's logo, represented by the `publisher-logo-src` attribute.  This is a URL for a logo image, in square format with a 1x1 aspect ratio.
+- Логотип издателя, представленный атрибутом `publisher-logo-src` . Это URL-адрес изображения логотипа в квадратном формате с соотношением сторон 1x1.
 - Обложка истории, представленная атрибутом `poster-portrait-src`. Это URL-адрес обложки; само изображение должно быть в портретном формате с соотношением сторон 3x4.
 
 Давайте добавим эти атрибуты в наш тег [`amp-story`](../../../../documentation/components/reference/amp-story.md):
