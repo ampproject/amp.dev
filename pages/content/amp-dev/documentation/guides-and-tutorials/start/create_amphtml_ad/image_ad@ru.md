@@ -18,7 +18,7 @@ description: "Наша реклама представляет собой про
 </body>
 ```
 
-If you open your html file in your browser, you should see the following image:
+Если вы откроете свой html-файл в браузере, вы должны увидеть следующее изображение:
 
 {{ image('/static/img/docs/ads/amp-300x250.png', 300, 250, align='center third', alt='learn about AMP ad') }}
 
