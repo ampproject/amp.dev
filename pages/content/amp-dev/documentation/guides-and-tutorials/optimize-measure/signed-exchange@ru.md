@@ -30,11 +30,11 @@ AMP может работать быстрее заявленных возмож
     - `cdn.ampproject.org` для получения текущей версии AMP
 - Постоянное общее хранилище (файловая система), доступное всем экземплярам `amppackager`, работающим в одном центре обработки данных.
 
-# Implementing signed exchanges
+# Реализация подписанных обменов
 
 Ниже приведен предлагаемый порядок действий для реализации поддержки подписанных обменов в ваших документах AMP.
 
-## Acquire a supported TLS certificate
+## Получите поддерживаемый сертификат TLS
 
 Для создания подписанных обменов необходим сертификат TLS с расширением `CanSignHttpExchanges`. По состоянию на апрель 2019 года единственным поставщиком этого расширения является [DigiCert](https://www.digicert.com/) ([подробнее](https://docs.digicert.com/manage-certificates/certificate-profile-options/get-your-signed-http-exchange-certificate/)).
 
@@ -121,7 +121,7 @@ Ea8/B6hPatJ0ES8q/HO3X8IVQwVs1n3aAr0im0/T+Xc=
 $ curl -si -H 'amp-cache-transform: google;v="1..100"' -H 'accept: application/signed-exchange;v=b3;q=0.9,*/*;q=0.8' https://staging.example.com/ | less
 ```
 
-The output must include this line:
+Вывод должен включать эту строку:
 
 ```txt
 content-type: application/signed-exchange;v=b3
@@ -179,7 +179,7 @@ vary: Accept,AMP-Cache-Transform
 
 На вкладке `Network` нажмите на имя своего домена и убедитесь, что в разделе `Preview` отображается `Signed HTTP exchange`.
 
-#### With the Google AMP Cache
+#### С помощью Google AMP Cache
 
 Убедитесь, что подписанные обмены совместимы с Google AMP Cache. От этого зависит возможность их обнаружения в поисковых системах, таких как Поиск Google.
 
