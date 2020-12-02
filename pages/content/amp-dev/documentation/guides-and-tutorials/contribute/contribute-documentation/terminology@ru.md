@@ -13,68 +13,68 @@ author: CrystalOnScript
 <table>
   <tr>
    <td>
-<strong>Term</strong>
+<strong>Термин</strong>
    </td>
    <td>
-<strong>Definition</strong>
+<strong>Определение</strong>
    </td>
    <td>
-<strong>Example </strong>
+<strong>Пример</strong>
    </td>
   </tr>
   <tr>
-   <td>AMP    </td>
-   <td>Official name of the open-source web component framework. Accelerated Mobile Pages was the expansion of AMP. The deprecated term is too narrow of a definition for AMP: AMP doesn’t just power pages anymore – you can now build ads, emails and stories with it.    </td>
+   <td>AMP</td>
+   <td>Официальное наименование фреймворка веб-компонентов с открытым исходным кодом. Изначально AMP именовался Accelerated Mobile Pages (Ускоренные страницы для мобильных устройств). Эта расшифровка больше не используется, так как AMP вышел за ее пределы: AMP уже не ограничивается одними страницами — теперь с его помощью можно создавать рекламу, письма и истории.</td>
    <td>
 <ul>
-      <li>AMP controls all resource downloads.       </li>
-<li>Twitter supports AMP.</li>
+      <li>AMP контролирует загрузку всех ресурсов.</li>
+<li>Twitter поддерживает AMP.</li>
       </ul>
    </td>
   </tr>
   <tr>
-   <td>AMP Project    </td>
-   <td>Refers to the open-source initiative to make the web better for all by building a performance-focused ecosystem comprising of publishers and technology providers. Use “AMP Project” when talking about the ecosystem or collaborative effort across multiple partners.  Do not use "AMP Project" to refer to the actual technology, instead use AMP.        Note: "Project" is capitalized.    </td>
+   <td>AMP Project</td>
+   <td>Проект с открытым исходным кодом, в рамках которого создается экосистема издателей и поставщиков интернет-технологий, ориентированная на повышение производительности интернет-ресурсов. Говоря об экосистеме или работе, ведущейся совместными усилиями нескольких партнеров, используйте «AMP Project». Не используйте «AMP Project» для обозначения самой технологии, в этом случае используйте «AMP».       Примечание: «Project» пишется с заглавной буквы.</td>
    <td>
 <ul>
-      <li>The AMP Project is a collaborative and open source effort.       </li>
-<li>By participating in the AMP Project, consumption platforms ensure that the open web thrives.</li>
+      <li>AMP Project — совместно разрабатываемый проект с открытым исходным кодом.</li>
+<li>Участие в AMP Project дает платформам потребления возможность внести свой вклад в развитие открытого интернета.</li>
 </ul>
    </td>
   </tr>
   <tr>
-   <td>AMP website(s)    </td>
-   <td>A website, or websites, built using the AMP framework.     </td>
+   <td>AMP-сайт(-ы)</td>
+   <td>Сайт или сайты, созданные с помощью AMP Framework.</td>
    <td>
 <ul>
-      <li>AMP websites are fast, dynamic, and put user’s first.       </li>
-<li>Building an AMP website is easy and intuitive. </li>
+      <li>AMP-сайты — быстрые, динамические и с фокусом на пользователя.</li>
+<li>Создавать AMP-сайты легко и понятно на интуитивном уровне.</li>
 </ul>
    </td>
   </tr>
   <tr>
-   <td>AMP components    </td>
-   <td>Refers to a particular feature (“web component”) that works only* when used on an AMP-powered page, and comes with their own HTML notation. Examples include: amp-form, amp-img, amp-video, ect.    </td>
+   <td>AMP-компоненты</td>
+   <td>Определенные функции («веб-компоненты»), которые работают только на странице, созданной с помощью AMP, и используют собственную нотацию HTML. Примеры: amp-form, amp-img, amp-video и т. д.</td>
    <td>
 <ul>
-      <li>The built-in AMP components, such as amp-img, amp-video, and amp-pixel are included in the base library.       </li>
-<li>The amp-analytics component can be used to measure activity on an AMP document.</li>
+      <li>Встроенные компоненты AMP, такие как amp-img, amp-video и amp-pixel, включены в базовую библиотеку.</li>
+<li>Компонент amp-analytics можно использовать для измерения активности в AMP-документе.</li>
 </ul>
    </td>
   </tr>
   <tr>
-   <td>AMP cache    </td>
-   <td>A cache that supports AMP.     </td>
+   <td>AMP-кеш</td>
+   <td>Кеш, поддерживающий AMP.</td>
    <td>
 <ul>
-      <li>When an AMP cache serves your page, it isn’t loaded from your site’s origin.        </li>
-<li>Google and Bing both have AMP caches. </li>
+      <li>AMP-кеш может служить источником загрузки вашей страницы; в таком случае ее не придется загружать из оригинального источника (вашего сайта).</li>
+<li>AMP-кеш есть как в Google, так и в Bing.</li>
 </ul>
    </td>
   </tr>
   <tr>
    <td>Web-история / Web-истории</td>
-   <td>A story web experience built with AMP.     </td>
+   <td>Иллюстрированная история, созданная с помощью AMP.</td>
    <td>
 <ul>
       <li>Формат Web-историй бесплатен и является частью концепции открытого интернета.</li>
@@ -83,38 +83,38 @@ author: CrystalOnScript
    </td>
   </tr>
   <tr>
-   <td>AMP ads    </td>
-   <td>An ad built using the AMPHTML ad spec.     </td>
+   <td>AMP-реклама</td>
+   <td>Реклама, созданная по спецификации рекламы AMPHTML.</td>
    <td>
 <ul>
-      <li>AMP ads greatly improve the mobile web through their intelligent design and pre-loading features.</li>
+      <li>AMP-реклама существенно повышает удобство пользования мобильным интернетом благодаря использованию интеллектуального дизайна и функций предварительной загрузки.</li>
 </ul>
    </td>
   </tr>
   <tr>
-   <td>AMPHTML ads    </td>
-   <td>The spec used to build AMP ads.     </td>
+   <td>Реклама на AMPHTML</td>
+   <td>Спецификация, используемая для создания AMP-рекламы.</td>
    <td>
 <ul>
-      <li>AMP ads are written in AMP, according to the AMPHTML ad spec. </li>
+      <li>AMP-реклама пишется на AMP в соответствии со спецификацией рекламы AMPHTML.</li>
 </ul>
    </td>
   </tr>
   <tr>
-   <td>AMP email    </td>
-   <td>An email build using the AMPHTML email spec.    </td>
+   <td>AMP-письмо</td>
+   <td>Письмо, созданное по спецификации писем на AMPHTML.</td>
    <td>
 <ul>
-      <li>Recipients of an AMP email can interact dynamically with content directly in the message. </li>
+      <li>Получатели AMP-писем могут динамически взаимодействовать с контентом непосредственно в сообщении.</li>
 </ul>
    </td>
   </tr>
   <tr>
-   <td>AMPHTML email    </td>
-   <td>The spec used to build AMP emails.     </td>
+   <td>Письма на AMPHTML</td>
+   <td>Спецификация, используемая для создания AMP-писем.</td>
    <td>
 <ul>
-      <li>The AMPHTML email spec provides a subset of AMP components that you can use in email messages. </li>
+      <li>Спецификация электронных писем AMPHTML предоставляет специальный набор AMP-компонентов, который вы можете использовать в сообщениях электронной почты.</li>
 </ul>
    </td>
   </tr>
