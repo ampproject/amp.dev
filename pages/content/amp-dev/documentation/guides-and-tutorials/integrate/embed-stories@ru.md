@@ -174,4 +174,4 @@ formats:
 
 # Показ историй на AMP-cтраницах
 
-To use the `<amp-story-player>` component in AMP pages, read the documentation of the [AMP version of the amp-story-player](https://amp.dev/documentation/components/amp-story-player/?format=stories).
+Чтобы использовать компонент `<amp-story-player>` на страницах AMP, прочтите документацию [AMP-версии amp-story-player](https://amp.dev/documentation/components/amp-story-player/?format=stories) .
