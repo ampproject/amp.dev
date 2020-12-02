@@ -33,17 +33,17 @@ limitations under the License.
 
 В данном документе дается описание функций CSS, которые на данный момент поддерживаются в AMP-письмах.
 
-## Applying CSS <a name="applying-css"></a>
+## Применение CSS <a name="applying-css"></a>
 
-### Internal stylesheet <a name="internal-stylesheet"></a>
+### Внутренняя таблица стилей <a name="internal-stylesheet"></a>
 
 При использовании внутренней таблицы стилей CSS-код добавляется внутрь одного тега `<style amp-custom>`, расположенного в теге `<head>` сообщения электронной почты.
 
-### Inline styles <a name="inline-styles"></a>
+### Встроенные стили <a name="inline-styles"></a>
 
 В дополнение к внутренней таблице стилей можно использовать [атрибут `style`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-style) для указания встроенного стиля в любом элементе.
 
-### External stylesheet <a name="external-stylesheet"></a>
+### Внешняя таблица стилей <a name="external-stylesheet"></a>
 
 AMP для писем **не** поддерживает внешние таблицы стилей.
 
@@ -51,22 +51,22 @@ AMP для писем **не** поддерживает внешние табл�
 
 ## Поддерживаемые CSS-селекторы <a name="supported-css-selectors"></a>
 
-### Simple selectors <a name="simple-selectors"></a>
+### Простые селекторы <a name="simple-selectors"></a>
 
 - [Селектор по типу](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) `elementname`
 - [Селектор по классу](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) `.classname`
 - [Селектор по ID](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) `#idname`
-- [Universal selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) `*`
+- [Универсальный селектор](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) `*`
 - [Селектор по атрибуту](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) `[attr=value]`
 
-### Combinators <a name="combinators"></a>
+### Комбинаторы <a name="combinators"></a>
 
-- [Adjacent sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator) `A + B`
-- [General sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator) `A ~ B`
+- [Смежный родственный комбинатор](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator) `A + B`
+- [Общий родственный комбинатор](https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator) `A ~ B`
 - [Child combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator) `A > B`
-- [Descendant combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator) `A B`
+- [Комбинатор потомков](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator) `A B`
 
-### Pseudo-classes <a name="pseudo-classes"></a>
+### Псевдоклассы <a name="pseudo-classes"></a>
 
 - [`:active`](https://developer.mozilla.org/en-US/docs/Web/CSS/:active)
 - [`:checked`](https://developer.mozilla.org/en-US/docs/Web/CSS/:checked)
@@ -323,17 +323,17 @@ AMP для писем **не** поддерживает внешние табл�
 - [`writing-mode`](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode)
 - [`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)
 
-### Additional restrictions <a name="additional-restrictions"></a>
+### Дополнительные ограничения <a name="additional-restrictions"></a>
 
 В некоторых CSS-свойствах имеются дополнительные ограничения:
 
-Property | Restrictions
+Свойство | Ограничения
 --- | ---
 [`cursor`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor) | Единственно допустимые значения — `pointer` и `initial`.
-[`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) | `url()` is not allowed.
+[`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) | `url()` не допускается.
 [`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) | Анимировать можно только `opacity` , `transform`, `visibility` и `offset-distance`.
 [`visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) | Единственно допустимые значения: `hidden`, `visible` и `initial`.
-[`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index) | Only values between -100 and 100 are allowed.
+[`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index) | Допускаются только значения от -100 до 100.
 
 ## At-правила <a name="at-rules"></a>
 
