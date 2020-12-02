@@ -1,5 +1,5 @@
 ---
-"$title": Ads vendors
+"$title": Поставщики рекламы
 "$order": '1'
 formats:
 - websites
