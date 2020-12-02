@@ -19,13 +19,13 @@ have a look and request a pull request there.
 
 ## Рекламный сервер <a name="ad-server"></a>
 
-*Examples : DFP, A9*
+*Примеры: DFP, A9*
 
-As an ad server, publishers you support include a JavaScript library provided by you and place various "ad snippets" that rely on the JavaScript library to fetch ads and render them on the publisher’s website.
+Рекламный сервер предоставляет издателям специальную библиотеку JavaScript; издатели вставляют в свой код различные «рекламные сниппеты», которые задействуют JavaScript-библиотеку для загрузки рекламы и отображения ее на сайте издателя.
 
 Поскольку AMP не разрешает издателям выполнять произвольный код JavaScript, вам потребуется внести дополнения в открытый исходный код AMP, чтобы разрешить тегу `amp-ad` запрашивать рекламу с вашего рекламного сервера.
 
-For example : Amazon A9 server can be invoked by using following syntax:
+Например, запрос на сервер Amazon A9 можно выполнить с помощью следующего синтаксиса:
 
 [sourcecode:html]
 <amp-ad
@@ -45,27 +45,27 @@ For example : Amazon A9 server can be invoked by using following syntax:
 
 ## Система продажи рекламных площадей (SSP) или рекламная биржа <a name="supply-side-platform-ssp-or-an-ad-exchange"></a>
 
-*Examples : Rubicon, Criteo OR Appnexus, Ad-Exchange*
+*Примеры: Rubicon, Criteo ИЛИ Appnexus, Ad-Exchange*
 
 Если ваша SSP хочет получать запросы непосредственно с веб-страницы издателя, следуйте описанной выше процедуре по интеграции с рекламным сервером. Добавление собственного значения `type` в тег amp-ad позволяет вам напрямую передавать тег издателю для непосредственного использования ваших тегов в AMP-страницах издателя.
 
-More commonly, SSPs work with the publisher to traffick the SSP’s ad tags in their ad server. In this case, ensure that all assets being loaded by your script in the ad server’s creative are being made over HTTPS. There are some restrictions around some ad formats like expandables, so we recommend that you test out the most commonly delivered creative formats with your publishers.
+Более распространена ситуация, когда SSP передает свои рекламные теги на рекламный сервер издателя. В этой ситуации убедитесь, что все ассеты, загружаемые вашим скриптом в креативе рекламного сервера, используют HTTPS. Существуют кое-какие ограничения в отношении некоторых рекламных форматов (таких, как expandables), поэтому мы рекомендуем проводить с вашими издателями совместное тестирование наиболее часто используемых форматов креатива.
 
 ## Рекламное агентство <a name="ad-agency"></a>
 
-*Examples : Essence, Omnicom*
+*Примеры: Essence, Omnicom*
 
-Work with your publisher to ensure that the creatives you develop are AMP-compliant. Since all creatives are served into iframes whose size is determined when the ad is called, ensure that your creative doesn't try to modify the size of the iframe.
+Совместно с издателем следите за тем, чтобы ваши креативы были совместимы с AMP. Поскольку все креативы загружаются в элементы iframe, размер которых определяется при вызове рекламного объявления, также следите за тем, чтобы ваш креатив не пытался менять размер iframe.
 
-Ensure that all assets that are part of the creative are requested using HTTPS. Some ad formats are not fully supported at the moment and we recommend testing the creatives in an AMP environment. Some examples are : Rich Media Expandables, Interstitials, Page Level Ads.
+Следите, чтобы все ассеты креатива запрашивались по HTTPS. Некоторые рекламные форматы еще не полностью поддерживаются, поэтому рекомендуем тестировать креативы в среде AMP. Примеры: Rich Media Expandables, Interstitials, Page Level Ads.
 
 ## Видеопроигрыватель <a name="video-player"></a>
 
-*Examples : Brightcove, Ooyala*
+*Примеры: Brightcove, Ooyala*
 
 Видеопроигрыватель, который работает на обычных HTML-страницах, не будет работать с AMP; требуется тег, позволяющий среде выполнения AMP загружать ваш проигрыватель. Компания Brightcove создала специальный тег [amp-brightcove](https://github.com/ampproject/amphtml/blob/master/extensions/amp-brightcove/amp-brightcove.md), который позволяет воспроизводить медиаконтент и рекламу на AMP-страницах.
 
-A Brightcove player can be invoked by the following:
+Проигрыватель Brightcove можно вызвать при помощи следующего кода:
 
 [sourcecode:html]
 <amp-brightcove
@@ -83,26 +83,26 @@ A Brightcove player can be invoked by the following:
 
 ## Сеть видеорекламы <a name="video-ad-network"></a>
 
-*Examples : Tremor, Brightroll*
+*Примеры: Tremor, Brightroll*
 
-If you are a video ad network, please work with your publisher to ensure that:
+Если вы представляете сеть видеорекламы, согласуйте со своим издателем следующие требования:
 
-- All video assets are served over HTTPS
-- The publisher’s video player has AMP support
+- Все видеоассеты должны загружаться по HTTPS
+- Видеопроигрыватель издателя должен обладать поддержкой AMP
 
 ## Платформа управления данными (DMP) <a name="data-management-platform-dmp"></a>
 
-*Examples : KRUX, Bluekai*
+*Примеры: KRUX, Bluekai*
 
 См. раздел [Как оптимизировать пользовательскую конфигурацию рекламы](https://amp.dev/documentation/components/amp-ad#enhance-incoming-ad-configuration).
 
-You can use a similar approach to enrich the ad call by passing in audience segments that you get from the user cookie into the ad call.
+Вы можете использовать схожий подход по оптимизации запросов рекламного объявления, включая в эти запросы аудиторные сегменты, полученные из пользовательского файла cookie.
 
 ## Провайдер данных о видимости <a name="viewability-provider"></a>
 
-*Examples : MOAT, Integral Ad Science*
+*Примеры: MOAT, Integral Ad Science*
 
-Viewability providers typically integrate with publishers via the ad server’s creative wrappers. If that is the case, ensure that the creative wrapper loads all assets over HTTPS.
+Как правило, провайдеры данных о видимости выполняют интеграцию с издателями посредством оберток креативов на рекламном сервере. Если это так, убедитесь, что обертка креатива загружает все ассеты по HTTPS.
 
 На примере MOAT: убедитесь, что адрес `http://js.moatads.com` заменен на `https://z.moatads.com`
 
@@ -110,6 +110,6 @@ Viewability providers typically integrate with publishers via the ad server’s 
 
 ## Платформа рекомендации контента <a name="content-recommendation-platform"></a>
 
-*Examples : Taboola, Outbrain*
+*Примеры: Taboola, Outbrain*
 
 Как правило, работа платформ рекомендаций контента осуществляется через встроенный блок JavaScript на сайте издателя, однако такой подход не будет работать на AMP-страницах. Чтобы рекомендовать контент на AMP-страницах, советуем использовать [расширение `amp-embed`](https://amp.dev/documentation/components/amp-ad) для запроса сведений о контенте (см. пример [Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md)).
