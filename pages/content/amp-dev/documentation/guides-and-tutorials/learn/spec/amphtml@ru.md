@@ -176,7 +176,7 @@ AMP HTML использует ряд специальных элементов (
 
 ### Обязательная разметка <a name="required-markup"></a>
 
-AMP HTML documents MUST
+Документы AMP HTML ДОЛЖНЫ:
 
 - <a name="dctp"></a> начинаться с элемента `<!doctype html>`. [🔗](#dctp)
 - <a name="ampd"></a> содержать тег верхнего уровня `<html ⚡>` (также допускается `<html amp>`). [🔗](#ampd)
@@ -189,18 +189,18 @@ AMP HTML documents MUST
 
 ### Метаданные <a name="metadata"></a>
 
-It is encouraged that AMP HTML documents are annotated with standardized metadata: [Open Graph Protocol](http://ogp.me/), [Twitter Cards](https://dev.twitter.com/cards/overview), etc.
+Рекомендуется аннотировать AMP HTML-документы с помощью стандартных метаданных: <a>Open Graph Protocol</a>, <a>Twitter Cards</a> и т. д.
 
-We also recommend that AMP HTML documents are marked up with [schema.org/CreativeWork](https://schema.org/CreativeWork) or any of its more specific types such as [schema.org/NewsArticle](https://schema.org/NewsArticle) or [schema.org/BlogPosting](https://schema.org/BlogPosting).
+Мы также рекомендуем размечать AMP HTML-документы по схеме [schema.org/CreativeWork](http://ogp.me/) или любого из ее более специализированных типов, таких как [schema.org/NewsArticle](https://dev.twitter.com/cards/overview) или <a>schema.org/BlogPosting</a>.
 
 ### HTML-теги <a name="html-tags"></a>
 
-HTML tags can be used unchanged in AMP HTML. Certain tags have equivalent custom tags (such as `<img>` and `<amp-img>`) and other tags are outright prohibited:
+В AMP HTML обычные HTML-теги можно использовать без изменений. Некоторые теги имеют специальные эквивалентные теги (например, <code><img></code> и <code><amp-img></code>), а другие теги категорически запрещены:
 
 <table>
   <tr>
-    <th width="30%">Tag</th>
-    <th>Status in AMP HTML</th>
+    <th width="30%">Тег</th>
+    <th>Статус в AMP HTML</th>
   </tr>
   <tr>
     <td width="30%">script</td>
@@ -293,102 +293,102 @@ HTML tags can be used unchanged in AMP HTML. Certain tags have equivalent custom
   </tr>
   <tr>
     <td width="30%">svg</td>
-    <td>Most SVG elements are allowed.</td>
+    <td>Разрешено большинство элементов SVG.</td>
   </tr>
 </table>
 
-Validator implementations should use a white list based on the HTML5 specification with the above tags removed. See [AMP Tag Addendum](https://github.com/ampproject/amphtml/blob/master/spec/amp-tag-addendum.md).
+В реализациях валидатора должен использоваться белый список, созданный на основании спецификации HTML5 с удалением вышеуказанных тегов. См. <a>Справочник по тегам AMP</a>.
 
 ### Комментарии <a name="comments"></a>
 
-Conditional HTML comments are not allowed.
+Условные комментарии HTML не допускаются.
 
 ### HTML-атрибуты <a name="html-attributes"></a>
 
-Attribute names starting with `on` (such as `onclick` or `onmouseover`) are disallowed in AMP HTML. The attribute with the literal name `on` (no suffix) is allowed.
+В AMP HTML запрещены имена атрибутов, начинающиеся с <code>on</code> (например, <code>onclick</code> или <code>onmouseover</code>). Атрибут с буквальным именем <code>on</code> (без суффикса) является допустимым.
 
-XML-related attributes, such as xmlns, xml:lang, xml:base, and xml:space are disallowed in AMP HTML.
+Атрибуты, связанные с XML, такие как xmlns, xml:lang, xml:base и xml:space, запрещены в AMP HTML.
 
-Internal AMP attributes prefixed with `i-amp-` are disallowed in AMP HTML.
+Внутренние атрибуты AMP с префиксом <code>i-amp-</code> запрещены в AMP HTML.
 
 ### Классы <a name="classes"></a>
 
-Internal AMP class names prefixed with `-amp-` and `i-amp-` are disallowed in AMP HTML.
+Имена внутренних классов AMP с префиксом `-amp-` и <code>i-amp-</code> запрещены в AMP HTML.
 
-Consult [AMP documentation](https://github.com/ampproject/amphtml/blob/master/spec/amp-css-classes.md) for meaning of class names prefixed with `amp-`. The use of these classes is allowed and meant to allow customization of some features of AMP runtime and extensions.
+Обратитесь к <a>документации AMP</a>, чтобы узнать значение имен классов с префиксом `amp-`. Такие классы предназначены для настройки некоторых функций среды выполнения AMP и расширений.
 
-All other authored class names are allowed in AMP HTML markup.
+Остальные пользовательские имена классов разрешены.
 
 ### Идентификаторы <a name="ids"></a>
 
-Certain ID names are disallowed in AMP HTML, such as IDs prefixed with `-amp-` and `i-amp-` that may conflict with internal AMP IDs.
+Некоторые имена идентификаторов запрещены в AMP HTML, например идентификаторы с префиксами <code>-amp-</code> и <code>i-amp-</code>, которые могут конфликтовать с внутренними идентификаторами AMP.
 
-Consult the AMP documentation for specific extensions before using `amp-` and `AMP` IDs to avoid conflict with the features provided by these extensions, such as `amp-access`.
+Перед использованием идентификаторов `amp-` и `AMP` изучите соответствующие расширения, описанные в документации AMP, — это позволит вам избежать конфликта с функциями, предоставляемыми этими расширениями (такими, как <code>amp-access</code>).
 
-View the full list of disallowed ID names by searching for `mandatory-id-attr` [here](https://github.com/ampproject/amphtml/blob/master/spec/../validator/validator-main.protoascii).
+Чтобы увидеть полный список запрещенных наименований идентификаторов, пройдите по <a>этой ссылке</a> и введите в поиске `mandatory-id-attr`.
 
 ### Ссылки <a name="links"></a>
 
-The `javascript:` schema is disallowed.
+Схема <code>javascript:</code> запрещена.
 
 ### Таблицы стилей <a name="stylesheets"></a>
 
-Major semantic tags and the AMP custom elements come with default styles to make authoring a responsive document reasonably easy. An option to opt out of default styles may be added in the future.
+Основные семантические теги и специальные элементы AMP поставляются со стилями по умолчанию, что упрощает процесс создания адаптивного документа. Возможность отказа от стилей по умолчанию может быть добавлена в будущем.
 
 #### @-правила <a name="-rules"></a>
 
-The following @-rules are allowed in stylesheets:
+В таблицах стилей разрешены следующие @-правила:
 
-`@font-face`, `@keyframes`, `@media`, `@page`, `@supports`.
+<code>@font-face</code>, <code>@keyframes</code>, <code>@media</code>, <code>@page</code>, <code>@supports</code>.
 
-`@import` will not be allowed. Others may be added in the future.
+Правило `@import` запрещено. Другие правила могут быть добавлены в будущем.
 
 #### Авторские таблицы стилей <a name="author-stylesheets"></a>
 
-Authors may add custom styles to a document using a single `<style amp-custom>` tag in the head of the document or inline styles.
+Авторы могут добавлять в документ собственные стили с помощью одного тега `<style amp-custom>` внутри head или с помощью встроенных стилей.
 
-`@keyframes` rules are allowed in the `<style amp-custom>`. However, if they are too many of them, it's recommended to place them in the additional `<style amp-keyframes>` tag, which must be located at the end of the AMP document. For details, see the [Keyframes stylesheet](#keyframes-stylesheet) section of this document.
+Правила `@keyframes` разрешено использовать внутри <code><style amp-custom></code>. Однако, если их слишком много, рекомендуется поместить их в дополнительный тег <code><style amp-keyframes></code>, который должен находиться в конце документа AMP. Дополнительные сведения см. в разделе <a>Таблица стилей ключевых кадров</a> в этом документе.
 
 #### Селекторы <a name="selectors"></a>
 
-The following restrictions apply to selectors in author style sheets:
+К селекторам в авторских таблицах стилей применяются следующие ограничения:
 
 ##### Имена классов и тегов <a name="class-and-tag-names"></a>
 
-Class names, IDs, tag names and attributes, in author stylesheets, may not start with the string `-amp-` and `i-amp-`. These are reserved for internal use by the AMP runtime. It follows, that the user's stylesheet may not reference CSS selectors for `-amp-` classes, `i-amp-` IDs and `i-amp-` tags and attributes. These classes, IDs and tag/attribute names are not meant to be customized by authors. Authors, however, can override styles of `amp-` classes and tags for any CSS properties not explicitly forbidden by these components' spec.
+Имена классов, идентификаторов, тегов и атрибутов не могут начинаться с <code>-amp-</code> и <code>i-amp-</code>. Эти наименования зарезервированы для внутреннего использования средой выполнения AMP. Соответственно, пользовательская таблица стилей не может ссылаться на CSS-селекторы классов <code>-amp-</code>, идентификаторов <code>i-amp-</code> и тегов/атрибутов <code>i-amp-</code>. Имена таких классов, идентификаторов и тегов/атрибутов не могут изменяться авторами, однако авторы могут переопределять стили классов и тегов <code>amp-</code> для любых CSS-свойств, которые явно не запрещены спецификацией этих компонентов.
 
-To prevent usage of attribute selectors to circumvent class name limitations it is generally not allowed for CSS selectors to contain tokens and strings starting with `-amp-` and `i-amp-`.
+Чтобы предотвратить использование селекторов атрибутов для обхода ограничений в отношении наименований классов, в CSS-селекторы обычно не разрешается включать токены и строки, начинающиеся с `-amp-` и `i-amp-`.
 
 #### Важно! <a name="important"></a>
 
-Usage of the `!important` qualifier is not allowed. This is a necessary requirement to enable AMP to enforce its element sizing invariants.
+Использование квалификатора `!important` не допускается. Данное требование обусловлено тем, как AMP реализует инварианты размера элементов.
 
 #### Свойства <a name="properties"></a>
 
-AMP only allows transitions and animations of properties that can be GPU accelerated in common browsers. We currently white list: `opacity`, `transform` (also `-vendorPrefix-transform`).
+В AMP разрешены переходы и анимации только тех свойств, которые могут задействовать аппаратное ускорение в распространенных браузерах. В настоящее время в нашем белом списке находятся `opacity`, <code>transform</code> (также <code>-vendorPrefix-transform</code>).
 
-В AMP разрешены переходы и анимации только тех свойств, которые могут задействовать аппаратное ускорение в распространенных браузерах. В настоящее время в нашем белом списке `opacity`, `transform` (также `-vendorPrefix-transform`).
+В следующих примерах свойство `<property>` должно быть в вышеуказанном белом списке.
 
 - `transition <property>` (also -vendorPrefix-transition)
 - `@keyframes name { from: {<property>: value} to {<property: value>} }` (также `@-vendorPrefix-keyframes`)
 
 #### Максимальный размер <a name="maximum-size"></a>
 
-It is a validation error if the author stylesheet or inline styles together are larger than 75,000 bytes.
+Размер авторской таблицы стилей или совокупный размер встроенных стилей не должен превышать 75 000 байт, в противном случае вы получите ошибку валидации.
 
 ### Таблица стилей ключевых кадров <a name="keyframes-stylesheet"></a>
 
-In addition to the `<style amp-custom>`, authors may also add the `<style amp-keyframes>` tag, which is allowed specifically for keyframes animations.
+В дополнение к <code><style amp-custom></code> авторы могут также добавить тег <code><style amp-keyframes></code>, который разрешен специально для анимации по ключевым кадрам.
 
-The following restrictions apply to the `<style amp-keyframes>` tag:
+К тегу `<style amp-keyframes>` применяются следующие ограничения:
 
 1. Может быть размещен только как последний дочерний элемент элемента `<body>`.
 2. Может содержать только `@keyframes`, `@media`, `@supports` и их комбинации.
 3. Его объем не может превышать 500 000 байт.
 
-The reason the `<style amp-keyframes>` tag exists is because keyframes rules are often bulky even for moderately complicated animations, which leads to slow CSS parsing and first contentful paint. But such rules often exceed the size limit imposed on `<style amp-custom>`. Putting such keyframes declarations at the bottom of the document in the `<style amp-keyframes>` allows them to exceed size limitations. And since keyframes are not render-blocking, it also avoids blocking first contentful paint to parse them.
+Тег `<style amp-keyframes>` был создан с целью решить проблему, которая заключается в том, что правила ключевых кадров часто являются громоздкими даже для умеренно сложных анимаций, что приводит к замедлению синтаксического анализа CSS и задержке первой отрисовки контента (FCP). Такие правила часто превышают ограничение на размер, установленное для <code><style amp-custom></code>, поэтому, чтобы обходить ограничения по размеру, объявления ключевых кадров следует размещать в <code><style amp-keyframes></code> в нижней части документа. А поскольку ключевые кадры не блокируют рендеринг, первая отрисовка контента может выполняться раньше завершения их анализа.
 
-Example:
+Пример:
 
 [sourcecode:html]
 <style amp-keyframes>
@@ -403,9 +403,9 @@ Example:
 
 ### Пользовательские шрифты <a name="custom-fonts"></a>
 
-Authors may include stylesheets for custom fonts. The 2 supported methods are link tags pointing to white listed font providers and `@font-face` inclusion.
+Авторы могут использовать таблицы стилей, добавляющие пользовательские шрифты. Это можно делать двумя способами: либо с помощью тегов ссылок на поставщиков шрифтов из белого списка, либо с помощью <code>@font-face</code>.
 
-Example:
+Пример:
 
 [sourcecode:html]
 <link
@@ -414,86 +414,86 @@ Example:
 />
 [/sourcecode]
 
-Font providers can be white listed if they support CSS-only integrations and serve over HTTPS. The following origins are currently allowed for font serving via link tags:
+Поставщики шрифтов могут быть добавлены в белый список, если они поддерживают интеграцию посредством чистого CSS-кода и работают по HTTPS. На текущий момент для загрузки шрифтов с помощью тегов ссылок разрешены следующие источники:
 
 - Fonts.com: `https://fast.fonts.net`
 - Google Fonts: `https://fonts.googleapis.com`
 - Font Awesome: `https://maxcdn.bootstrapcdn.com, https://use.fontawesome.com`
 - [Typekit](https://helpx.adobe.com/typekit/using/google-amp.html): `https://use.typekit.net/kitId.css` (замените `kitId` соответствующим образом)
 
-IMPLEMENTERS NOTE: Adding to this list requires a change to the AMP Cache CSP rule.
+ПРИМЕЧАНИЕ ДЛЯ ИСПОЛНИТЕЛЕЙ. Для добавления провайдера в этот список требуется изменить правило CSP-политики AMP-кеша.
 
-Authors are free to include all custom fonts via an `@font-face` CSS instruction via their custom CSS. Fonts included via `@font-face` must be fetched via the HTTP or HTTPS scheme.
+Авторы могут свободно добавлять любые пользовательские шрифты с помощью инструкции <code>@font-face</code> в своем коде CSS. Шрифты, добавленные через <code>@font-face</code>, должны загружаться по HTTP или HTTPS.
 
 ## Среда выполнения AMP <a name="amp-runtime"></a>
 
-The AMP runtime is a piece of JavaScript that runs inside every AMP document. It provides implementations for AMP custom elements, manages resource loading and prioritization and optionally includes a runtime validator for AMP HTML for use during development.
+Среда выполнения AMP — это специальный код JavaScript, который выполняется внутри любого документа AMP. Он реализует функциональность специальных элементов AMP, управляет загрузкой ресурсов и установкой приоритетов и позволяет задействовать runtime-валидатор AMP HTML на этапе разработки.
 
-The AMP runtime is loaded via the mandatory <code><script src="https://cdn.ampproject.org/v0.js"></script></code> tag in the AMP document <code></code>.
+Загрузка среды выполнения AMP осуществляется с помощью обязательной строки <code><script src="https://cdn.ampproject.org/v0.js"></script></code>, расположенной в разделе <code><head></code> документа AMP.
 
-The AMP runtime can be placed into a development mode for any page. Development mode will trigger AMP validation on the embedded page, which will emit the validation status and any errors to the JavaScript developer console. Development mode may be triggered by appending `#development=1` to the URL of the page.
+Среду выполнения AMP можно переключить в режим разработки на любой странице. В этом режиме на встроенной странице запускается механизм валидации AMP, который выводит статус валидации и все ошибки в консоль разработчика JavaScript. Чтобы запустить режим разработки, добавьте к URL страницы `#development=1`.
 
 ## Ресурсы <a name="resources"></a>
 
-Resources such as images, videos, audio files or ads must be included into an AMP HTML file through custom elements such as `<amp-img>`. We call them “managed resources” because whether and when they will be loaded and displayed to the user is decided by the AMP runtime.
+Ресурсы, такие как изображения, видео, аудиофайлы или реклама, должны размещаться в AMP HTML-файле с помощью специальных элементов (например, <code><amp-img></code>). Мы называем их «управляемыми ресурсами», потому что их загрузкой (временем загрузки, необходимостью загрузки) управляет среда выполнения AMP.
 
-There are no particular guarantees as to the loading behavior of the AMP runtime, but it should generally strive to load resources quickly enough, so that they are loaded by the time the user would like to see them if possible. The runtime should prioritize resources currently in the viewport and attempt to predict changes to the viewport and preload resources accordingly.
+Каких-либо гарантий в отношении загрузки, осуществляемой средой выполнения AMP, не предусмотрено — как правило, среда пытается загружать ресурсы достаточно быстро, чтобы они были готовы к тому моменту, когда пользователь захочет их увидеть. Среда выполнения выделяет наивысший приоритет ресурсам, находящимся в текущей области просмотра; при этом она пытается предугадать изменение области просмотра и выполняет предварительную загрузку соответствующих ресурсов.
 
-The AMP runtime may at any time decide to unload resources that are not currently in viewport or reuse the resource containers such as iframes to reduce overall RAM consumption.
+Среда выполнения AMP может в любой момент выгружать ресурсы, которые в данный момент не находятся в области просмотра, а также переназначать контейнеры ресурсов, такие как iframe, для уменьшения общего потребления ОЗУ.
 
 ## Компоненты AMP <a name="amp-components"></a>
 
-AMP HTML uses custom elements called “AMP components” to substitute built-in resource-loading tags such as `<img>` and `<video>` and to implement features with complex interactions such as image lightboxes or carousels.
+AMP HTML использует специальные элементы (т. н. «компоненты AMP») для замены встроенных тегов загрузки ресурсов, таких как `<img>` и <code><video></code>. Эти элементы также используются для реализации функций, выполняющих сложные взаимодействия, таких как кольцевые галереи и лайтбоксы с изображениями.
 
-See the [AMP component spec](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-components.md) for details about supported components.
+Подробную информацию о поддерживаемых компонентах см. в <a>спецификации компонентов AMP</a>.
 
-There are 2 types of supported AMP components:
+Есть 2 типа поддерживаемых компонентов AMP:
 
 1. Встроенные
 2. Расширенные
 
-Built-in components are always available in an AMP document and have a dedicated custom element such as `<amp-img>`. Extended components must be explicitly included into the document.
+Встроенные компоненты постоянно доступны в документе AMP и имеют специальный выделенный элемент, например `<amp-img>`. С другой стороны, расширенные компоненты должны быть явным образом добавлены в документ.
 
 ### Общие атрибуты <a name="common-attributes"></a>
 
 #### `layout`, `width`, `height`, `media`, `placeholder`, `fallback` <a name="layout-width-height-media-placeholder-fallback"></a>
 
-These attributes define the layout of an element. The key goal here is to ensure that the element can be displayed and its space can be properly reserved before any of the JavaScript or remote resources have been downloaded.
+Эти атрибуты определяют макет элемента. Их главная цель — гарантировать возможность отображения элемента и резервирования пространства под него до загрузки каких-либо удаленных ресурсов или кода JavaScript.
 
-See the [AMP Layout System](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-layout.md) for details about the layout system.
+Подробнее о системе макетов читайте в статье <a>Система макетов AMP</a>.
 
 #### `on` <a name="on"></a>
 
-The `on` attribute is used to install event handlers on elements. The events that are supported depend on the element.
+Атрибут `on` используется для установки на элементы обработчиков событий. То, какие события поддерживаются, зависит от элемента.
 
-The value for the syntax is a simple domain specific language of the form:
+Синтаксис представляет собой простой предметно-ориентированный язык следующего вида:
 
 [sourcecode:javascript]
 eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 [/sourcecode]
 
-Example: `on="tap:fooId.showLightbox"`
+Пример: <code>on="tap:fooId.showLightbox"</code>
 
-If `methodName` is omitted the default method is executed if defined for the element. Example: `on="tap:fooId"`
+Если не указан параметр `methodName`, выполняется метод по умолчанию (если он определен для элемента). Пример: <code>on="tap:fooId"</code>
 
-Some actions, if documented, may accept arguments. The arguments are defined between parentheses in `key=value` notation. The accepted values are:
+Некоторые действия могут принимать аргументы. Аргументы указываются в круглых скобках в нотации <code>key=value</code> . Допустимые значения:
 
 - простые строки без кавычек: `simple-value`;
 - строки в кавычках: `"string value"` или `'string value'`;
 - логические значения: `true` или `false`;
 - числа: `11` или `1.1`.
 
-You can listen to multiple events on an element by separating the two events with a semicolon `;`.
+Чтобы элемент «слушал» несколько событий, разделяйте события точкой с запятой <code>;</code>.
 
-Example: `on="submit-success:lightbox1;submit-error:lightbox2"`
+Пример: `on="submit-success:lightbox1;submit-error:lightbox2"`
 
-Read more about [AMP Actions and Events](https://github.com/ampproject/amphtml/blob/master/spec/./amp-actions-and-events.md).
+Подробнее о <a>действиях и событиях AMP можно узнать здесь</a>.
 
 ### Расширенные компоненты <a name="extended-components"></a>
 
-Extended components are components that do not necessarily ship with the AMP runtime. Instead they must be explicitly included into the document.
+Расширенные компоненты — это компоненты, которые по умолчанию не включены в среду выполнения AMP. Их следует явным образом добавлять в документ.
 
-Extended components are loaded by including a `<script>` tag in the head of the document like this:
+Расширенные компоненты загружаются путем включения тега `<script>` в раздел head документа следующим образом:
 
 [sourcecode:html]
 <script
@@ -503,15 +503,15 @@ Extended components are loaded by including a `<script>` tag in the head of the 
 ></script>
 [/sourcecode]
 
-The `<script>` tag must have an `async` attribute and must have a `custom-element` attribute referencing the name of the element.
+Тег `<script>` должен иметь атрибут <code>async</code>, а также атрибут <code>custom-element</code>, ссылающийся на имя элемента.
 
-Runtime implementations may use the name to render placeholders for these elements.
+В рамках реализаций в среде выполнения имя может использоваться для отображения заполнителей для этих элементов.
 
-The script URL must start with `https://cdn.ampproject.org` and must follow a very strict pattern of `/v\d+/[a-z-]+-(latest|\d+|\d+\.\d+)\.js`.
+URL-адрес скрипта должен начинаться с <code>https://cdn.ampproject.org</code> и обязан соответствовать очень строгому паттерну <code>/v\d+/[az-]+-(latest|\d+|\d+\.\d+)\.js</code>.
 
 ##### URL <a name="url"></a>
 
-The URL for extended components is of the form:
+URL расширенных компонентов имеют следующий вид:
 
 [sourcecode:http]
 https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
@@ -519,15 +519,15 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 
 ##### Управление версиями <a name="versioning"></a>
 
-See the [AMP versioning policy](https://github.com/ampproject/amphtml/blob/master/spec/amp-versioning-policy.md).
+См. <a>Политику управления версиями AMP</a>.
 
 ### Шаблоны <a name="templates"></a>
 
-Templates render HTML content based on the language-specific template and provided JSON data.
+Шаблоны отображают HTML-контент на основании шаблона, предусмотренного для конкретного языка, а также предоставленных данных JSON.
 
-See the [AMP template spec](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md) for details about supported templates.
+Подробную информацию о поддерживаемых шаблонах см. в <a>спецификации шаблонов AMP</a>.
 
-Templates are not shipped with the AMP runtime and have to be downloaded just as with extended elements. Extended components are loaded by including a `<script>` tag in the head of the document like this:
+Шаблоны не поставляются со средой выполнения AMP и должны быть загружены так же, как и расширенные элементы. Расширенные компоненты загружаются путем добавления тега <code><script></code> в тег head документа:
 
 [sourcecode:html]
 <script
@@ -537,9 +537,9 @@ Templates are not shipped with the AMP runtime and have to be downloaded just as
 ></script>
 [/sourcecode]
 
-The `<script>` tag must have an `async` attribute and must have a `custom-template` attribute referencing the type of the template. The script URL must start with `https://cdn.ampproject.org` and must follow a very strict pattern of `/v\d+/[a-z-]+-(latest|\d+|\d+\.\d+)\.js`.
+Тег `<script>` должен иметь атрибут `async` и атрибут <code>custom-template</code>, указывающий на тип шаблона. URL-адрес скрипта должен начинаться с <code>https://cdn.ampproject.org</code> и обязан соответствовать очень строгому паттерну <code>/v\d+/[az-]+-(latest|\d+|\d+\.\d+)\.js</code>.
 
-The templates are declared in the document as following:
+Шаблоны объявляются в документе следующим образом:
 
 [sourcecode:html]
 <template type="amp-mustache" id="template1">
@@ -547,17 +547,17 @@ The templates are declared in the document as following:
 </template>
 [/sourcecode]
 
-The `type` attribute is required and must reference a declared `custom-template` script.
+Атрибут <code>type</code> является обязательным и должен ссылаться на объявленный скрипт <code>custom-template</code>.
 
-The `id` attribute is optional. Individual AMP elements discover their own templates. Typical scenarios would involve an AMP element looking for a `<template>` either among its children or referenced by ID.
+Атрибут <code>id</code> является обязательным. Отдельные элементы AMP используют свои собственные шаблоны. Как правило, элемент AMP ищет <code><template></code> либо среди своих дочерних элементов, либо ссылается на него по идентификатору.
 
-The syntax within the template element depends on the specific template language. However, the template language could be restricted within AMP. For instance, in accordance with the "template" element, all productions have to be over a valid well-formed DOM. All of the template outputs are also subject to sanitizing to ensure AMP-valid output.
+Синтаксис в составе элемента шаблона зависит от языка шаблона. В среде AMP на язык шаблона могут накладываться ограничения. Например, в соответствии с элементом «template», все операции должны выполняться на корректно сформированном дереве DOM. Все выходные данные шаблона также подлежат санитизации, чтобы гарантировать валидный для AMP формат данных.
 
 Подробную информацию о поддерживаемых шаблонах см. в [спецификации шаблонов AMP](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md).
 
 ##### URL <a name="url-1"></a>
 
-The URL for extended components is of the form:
+URL расширенных компонентов имеют следующий вид:
 
 [sourcecode:http]
 https://cdn.ampproject.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
@@ -565,19 +565,19 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
 
 ##### Управление версиями <a name="versioning-1"></a>
 
-See versioning of custom elements for more details.
+Дополнительные сведения см. в разделе «Управление версиями специальных элементов».
 
 ## Безопасность <a name="security"></a>
 
-AMP HTML documents must not trigger errors when served with a Content Security Policy that does not include the keywords `unsafe-inline` and `unsafe-eval`.
+AMP HTML-документы не должны вызывать ошибок при использовании политики безопасности контента, которая не включает ключевые слова <code>unsafe-inline</code> и <code>unsafe-eval</code>.
 
-The AMP HTML format is designed so that is always the case.
+Формат AMP HTML разработан таким образом, чтобы это условие всегда соблюдалось.
 
-All AMP template elements must go through AMP security review before they can be submitted into AMP repository.
+Все элементы шаблонов AMP должны проходить проверку безопасности AMP перед отправкой в репозиторий AMP.
 
 ## SVG <a name="svg"></a>
 
-Currently, the following SVG elements are allowed:
+В настоящее время разрешены следующие элементы SVG:
 
 - базовые: "g", "glyph", "glyphRef", "image", "marker", "metadata", "path", "solidcolor", "svg", "switch", "view"
 - формы: "circle", "ellipse", "line", "polygon", "polyline", "rect"
@@ -587,26 +587,26 @@ Currently, the following SVG elements are allowed:
 - фильтр: "feColorMatrix", "feComposite", "feGaussianBlur", "feMerge", "feMergeNode", "feOffset", "foreignObject"
 - ARIA: "desc", "title"
 
-As well as these attributes:
+А также следующие атрибуты:
 
-- "xlink:href": only URIs starting with "#" are allowed
+- "xlink:href": разрешены только URI, начинающиеся с "#"
 - "style"
 
 ## Обнаружение документов AMP <a name="amp-document-discovery"></a>
 
-The mechanism described below provides a standardized way for software to discover whether an AMP version exists for a canonical document.
+Ниже приводится стандартный способ, с помощью которого программное обеспечение может определять наличие у канонического документа AMP-версии.
 
-If an AMP document exists that is an alternative representation of a canonical document, then the canonical document should point to the AMP document via a `link` tag with the [relation "amphtml"](http://microformats.org/wiki/existing-rel-values#HTML5_link_type_extensions).
+Если существует документ AMP, который является альтернативной версией канонического документа, то канонический документ должен указывать на документ AMP с помощью тега <code>link</code> с <a>отношением «amphtml»</a>.
 
-Example:
+Пример:
 
 [sourcecode:html]
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html" />
 [/sourcecode]
 
-The AMP document itself is expected to point back to its canonical document via a `link` tag with the relation "canonical".
+Ожидается, что документ AMP будет самостоятельно указывать свою каноническую версию тегом <code>link</code> с отношением «canonical».
 
-Example:
+Пример:
 
 [sourcecode:html]
 <link
@@ -615,6 +615,6 @@ Example:
 />
 [/sourcecode]
 
-(If a single resource is simultaneously the AMP *and* the canonical document, the canonical relation should point to itself--no "amphtml" relation is required.)
+(Если один ресурс является одновременно AMP <em>и</em> каноническим документом, каноническое отношение должно указывать само на себя — указывать отношение «amphtml» не требуется.)
 
-Note that for widest compatibility with AMP-consuming systems, it should be possible to read the "amphtml" relation without executing JavaScript. (That is, the tag should be present in the raw HTML, and not injected via JavaScript.)
+Обратите внимание, что для максимальной совместимости с системами, потребляющими AMP, необходимо обеспечить возможность считать отношение «amphtml» без выполнения JavaScript — то есть тег должен присутствовать в необработанном HTML, а не внедряться посредством JavaScript.
