@@ -1,7 +1,7 @@
 ---
-"$title": Include iframes
+"$title": Размещение элементов iframe
 "$order": '10'
-description: "Learn how to display include media content in your pages, and how to use iframes to display advanced content outside of AMP's limitations."
+description: Узнайте, как отображать на ваших страницах медийный контент и как использовать элементы iframe для отображения сложного контента, выходящего за рамки ограничений AMP.
 formats:
 - websites
 components:
@@ -14,22 +14,22 @@ contributors:
 
 Learn how to display include media content in your pages, and how to use iframes to display advanced content outside of AMP's limitations.
 
-## The basics
+## Основы
 
-You can display an iframe in your page by using the [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) element.
+Отобразить iframe на странице можно с помощью элемента [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md).
 
 Элементы iframe особенно полезны в AMP для отображения содержимого, которое не поддерживается в контексте основной страницы, например контента, использующего пользовательский код JavaScript.
 
-### Requirements for `amp-iframe`
+### Требования к элементам `amp-iframe`
 
-- Must be at least **600px** or **75%** of the first viewport away from the top (except for iframes that use a [`placeholder`](#using-placeholders)).
+- Должны обладать размером не менее **600px** или **75%** от области видимости, следующей сразу за исходной областью видимости открываемой страницы (за исключением элементов iframe, которые используют атрибут [`placeholder`](#using-placeholders)).
 - Могут запрашивать ресурсы только по HTTPS и не должны находиться в том же домене, что и контейнер, если только они не используют режим allow-same-origin.
 
-[tip type="read-on"] **READ ON –** Learn more at the [full specification for `amp-iframe`](../../../../documentation/components/reference/amp-iframe.md). [/tip]
+[tip type="read-on"] **ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ. ** Чтобы узнать больше, обратитесь к [полной спецификации `amp-iframe`](../../../../documentation/components/reference/amp-iframe.md). [/tip]
 
 ### Включите скрипт
 
-To include an [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) in your page, first include the following script to the `<head>`, which loads the additional code for the extended component:
+Чтобы включить [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) на свою страницу, сначала включите в `<head>` следующий скрипт, который загружает дополнительный код расширенного компонента:
 
 [sourcecode:html]
 <script async custom-element="amp-iframe"
@@ -38,7 +38,7 @@ To include an [`amp-iframe`](../../../../documentation/components/reference/amp-
 
 ### Write the markup
 
-In the following example, we created a responsive [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) to embed a Google Map via the [Google Maps Embed API](https://developers.google.com/maps/documentation/embed/guide):
+В следующем примере мы создаем адаптивный элемент [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) для Google Карты, которая будет встроена с помощью [Google Maps Embed API](https://developers.google.com/maps/documentation/embed/guide):
 
 ```html
 <amp-iframe width="200" height="100"
@@ -50,9 +50,9 @@ In the following example, we created a responsive [`amp-iframe`](../../../../doc
 
 ## Using placeholders <a name="using-placeholders"></a>
 
-You can display an [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) at the top of a document, provided the [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) contains an element with the `placeholder` attribute, (for example, an [`amp-img`](../../../../documentation/components/reference/amp-img.md) element) which would be rendered as a placeholder until the iframe is ready to be displayed.
+[`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) можно отображать в верхней части документа, если [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) содержит элемент с атрибутом `placeholder` (например, элемент [`amp-img`](../../../../documentation/components/reference/amp-img.md)), который будет показан в виде заполнителя, пока iframe не будет готов к отображению.
 
-[tip type="read-on"] **READ ON –**: Learn more about placeholders in [Iframe with placeholder](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder). [/tip]
+[tip type="read-on"] **ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ**: больше о заполнителях можно узнать в разделе [iframe с заполнителями](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder). [/tip]
 
 Example with placeholder:
 
@@ -72,4 +72,4 @@ Renders as:
 
 ## {a0}Примеры{/a0}
 
-You can find more advanced [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) examples in [AMP By Example](../../../../documentation/examples/documentation/amp-iframe.html).
+Более сложные примеры использования [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) можно найти в составе курса [AMP By Example](../../../../documentation/examples/documentation/amp-iframe.html).
