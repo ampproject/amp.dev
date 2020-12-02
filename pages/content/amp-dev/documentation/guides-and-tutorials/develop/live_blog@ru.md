@@ -1,7 +1,7 @@
 ---
-"$title": Create a live blog
+"$title": Создание живого блога
 "$order": '102'
-description: Live blogs are web pages that are updated frequently throughout an on-going event, such as a sporting event or an election. In AMP, you can implement a live blog by using ...
+description: Живые блоги — это веб-страницы, которые часто обновляются в ходе текущих событий, таких как спортивные мероприятия или выборы. С помощью AMP вы можете создать живой блог, используя...
 tutorial: 'true'
 formats:
 - websites
