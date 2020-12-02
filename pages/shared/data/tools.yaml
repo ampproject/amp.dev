@@ -159,6 +159,16 @@ platforms:
       height: 691
     formats:
       - email
+  - name: 8b Website Builder
+    type: Website Builder
+    description: Easy-to-use online AMP website builder to create lightning-fast web pages in a visual way.
+    url: https://8b.com/
+    image:
+      src: /static/img/tools/8b.jpg
+      width: 800
+      height: 400
+    formats:
+      - websites
 developer:
   - name: AMP Validator
     official: true
