@@ -35,7 +35,7 @@ limitations under the License.
 
 Помимо [поддерживаемых компонентов AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md), в AMP для писем разрешены следующие теги HTML.
 
-## Supported tags <a name="supported-tags"></a>
+## Поддерживаемые теги <a name="supported-tags"></a>
 
 - [`a`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
 - [`abbr`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr)
