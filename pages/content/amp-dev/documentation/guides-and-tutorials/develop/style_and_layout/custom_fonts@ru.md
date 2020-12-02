@@ -1,7 +1,7 @@
 ---
 "$title": Add custom fonts
 "$order": '6'
-description: "AMP pages can't include external stylesheets, with the exception of custom fonts. You can embed custom fonts into your page in two ways ..."
+description: AMP-страницы не могут включать внешние таблицы стилей, за исключением внешних шрифтов. Вы можете встроить внешние шрифты на свою страницу двумя способами...
 formats:
 - websites
 - ads
@@ -14,9 +14,9 @@ AMP-страницы не могут включать внешние табли�
 1. Through a `<link>` tag (allow-listed font providers only)
 2. Via `@font-face` (no restrictions, all fonts allowed)
 
-### 1. Using `<link>`
+### 1. Использование `<link>`
 
-Use a `<link>` tag (usually in the head of your page), like so:
+Используйте `<link>` (обычно в теге head страницы), например так:
 
 [sourcecode:html]
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
@@ -28,7 +28,7 @@ Use a `<link>` tag (usually in the head of your page), like so:
 - Fonts.com: **https://fast.fonts.net**
 - Google Fonts: **https://fonts.googleapis.com**
 - Typekit: **https://use.typekit.net**
-- Font Awesome: **https://maxcdn.bootstrapcdn.com**, **https://use.fontawesome.com**
+- Font Awesome: **https://maxcdn.bootstrapcdn.com**, **https://use.fontawesome.com.**
 
 ### 2. Using `@font-face`
 
@@ -47,4 +47,4 @@ Alternatively, you can use [`@font-face`](https://developer.mozilla.org/en-US/do
 </style>
 [/sourcecode]
 
-[tip type="note"] **NOTE –**  Fonts included via `@font-face` must be fetched via the HTTP or HTTPS scheme. [/tip]
+[tip type="note"] **ПРИМЕЧАНИЕ.** Шрифты, добавленные посредством `@font-face`, должны загружаться по схеме HTTP или HTTPS. [/tip]
