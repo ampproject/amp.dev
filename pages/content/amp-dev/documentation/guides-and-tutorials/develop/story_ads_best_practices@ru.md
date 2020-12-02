@@ -165,9 +165,9 @@ AMP-истории являются горизонтальными и отобр
 
 ### Видео
 
-#### Specify `<source>` vs `src`
+#### Укажите `<source>` vs `src`
 
-When specifying the source for an [`amp-video`](../../../documentation/components/reference/amp-video.md)
+При указании источника для [`amp-video`](../../../documentation/components/reference/amp-video.md)
 
 Пример: указание файлов с несколькими источниками
 
