@@ -1,29 +1,29 @@
 ---
-"$title": Create an AMPHTML ad
-description: "In this tutorial, you'll learn how to create an AMPHTML ad from scratch that can be served to AMP and non-AMP pages."
+"$title": Создание AMPHTML-рекламы
+description: В рамках данного урока вы узнаете, как с нуля создать AMPHTML-рекламу, которую можно показывать как на AMP-, так и на традиционных (не-AMP) страницах.
 formats:
 - ads
 ---
 
 {{ image('/static/img/docs/ads/amp-ad-framed-final.png', 597, 1240, align='right third', caption='Completed AMPHTML image ad') }}
 
-In this tutorial, you'll learn how to create an [AMPHTML ad](../../../../documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md) from scratch that can be served to AMP and non-AMP pages. The ad format used in this tutorial is a simple image ad.
+В рамках данного урока вы узнаете, как с нуля создать [AMPHTML-рекламу](../../../../documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md), которую можно показывать как на AMP-, так и на традиционных (не-AMP) страницах. В данном уроке рассматривается формат простой графической рекламы.
 
-AMPHTML ads are similar to traditional HTML ads, but instead of coding them in traditional HTML, they are coded in AMPHTML, according to the [AMPHTML ad spec](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md). By creating the ads in AMPHTML, the ads take advantage of the same optimizations and performance utilized in AMP pages, making them a faster, lighter and a more secure way to advertise on the web. Most of all, these ads can be delivered anywhere on the web, *not just on AMP pages*.
+Реклама AMPHTML похожа на традиционную рекламу HTML, но вместо языка HTML такая реклама пишется на AMPHTML в соответствии со [спецификацией рекламы AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md). Технологические преимущества, делающие AMP-страницы быстрыми и оптимизированными, также действуют в отношении AMPHTML-рекламы, благодаря чему ее можно считать более быстрым, легким и безопасным способом размещения рекламы в Интернете. Что самое важное, эта реклама может быть размещена на любом интернет-ресурсе (а *не только на AMP-страницах*).
 
 ## You will learn to:
 
-- Create a valid AMPHTML ad according to the [AMPHTML ad spec](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md)
-- Track ad views by using the [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) component
-- Verify the AMPHTML ad syntax by using the [AMP validator](https://validator.ampproject.org/#htmlFormat=AMP4ADS)
+- Создавать корректно сформированную рекламу AMPHTML в соответствии со [спецификацией рекламы AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md)
+- Отслеживать просмотры рекламы с помощью компонента [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)
+- Проверять синтаксис рекламы AMPHTML с помощью [AMP-валидатора](https://validator.ampproject.org/#htmlFormat=AMP4ADS)
 
-## Prerequisites:
+## Предварительные требования:
 
-- A basic knowledge of HTML, CSS, and JavaScript
-- A browser and text editor of your choice
+- Базовые знания HTML, CSS и JavaScript
+- Браузер и текстовый редактор на ваш выбор
 
-[tip] *Don't want to create an ad from scratch?*  Use one of the following tools to create your AMPHTML ad:
+[tip] *Не хотите создавать рекламу с нуля?* Используйте один из следующих инструментов для создания рекламы AMPHTML:
 
-- [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
+- [Celtra Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*coming soon*) [/tip]
+- Adobe Animate (*скоро*) [/tip]
