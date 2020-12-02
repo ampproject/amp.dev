@@ -21,7 +21,7 @@ AMP по умолчанию предоставляет множество пре
 - [AMP-валидатор](https://validator.ampproject.org/)
 - [Проверка AMP-страниц от Google](https://search.google.com/test/amp)
 - [AMP Linter](https://github.com/ampproject/amp-toolbox/tree/master/packages/linter)
-- [AMP Tools](../../../documentation/tools.html?format=websites)
+- [Инструменты AMP](../../../documentation/tools.html?format=websites)
 
 # Предоставляйте кешированным AMP-страницам доступ к серверу
 
@@ -30,7 +30,7 @@ AMP по умолчанию предоставляет множество пре
 Подробнее о предоставлении доступа к серверу:
 
 - [Как кешируются AMP-страницы](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md?format=websites)
-- [CORS in AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md?format=websites)
+- [CORS в AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md?format=websites)
 - [Промежуточное ПО AMP CORS](https://github.com/ampproject/amp-toolbox/tree/master/packages/cors) для Node.js
 
 # Используйте подписанные обмены для безопасной передачи контента
@@ -40,7 +40,7 @@ AMP по умолчанию предоставляет множество пре
 Подробнее о реализации подписанных обменов:
 
 - [Выдача контента AMP с использованием подписанных обменов](signed-exchange.md?format=websites)
-- [Signed HTTP Exchanges](https://developers.google.com/web/updates/2018/11/signed-exchanges)
+- [Подписанные HTTP-обмены](https://developers.google.com/web/updates/2018/11/signed-exchanges)
 - [Cloudflare AMP Real URL](https://www.cloudflare.com/website-optimization/amp-real-url/)
 - [Отображение исходных URL-адресов AMP-страниц и упрощение аналитики при помощи подписанных обменов (AMP Conf '19)](https://www.youtube.com/watch?v=KrjBYzPUGnw&list=PLXTOW_XMsIDSY0USlzgoaIkRyPcHklrEl&index=22)
 
@@ -52,15 +52,15 @@ AMP-кеши хранят изображения, шрифты и содержи
 
 - изображения
 - видео
-- amp-analytics endpoints
-- amp-pixel endpoints
+- конечные точки amp-analytics
+- конечные точки amp-pixel
 - загружаемые шрифты
 - элементы iframe
 
 Подробнее об AMP-кешах:
 
-- [Using the Google AMP Cache](../../../documentation/examples/documentation/Using_the_Google_AMP_Cache.html?format=websites)
-- [AMP on Google, Google AMP Cache](https://developers.google.com/amp/cache/overview)
+- [Использование Google AMP Cache](../../../documentation/examples/documentation/Using_the_Google_AMP_Cache.html?format=websites)
+- [AMP в Google, Google AMP Cache](https://developers.google.com/amp/cache/overview)
 - [Устранение проблем при работе с AMP-кешем](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-debugging.md?format=websites)
 - [AMP-кеш: формат URL-адресов и обработка запросов](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-urls.md?format=websites)
 
@@ -100,7 +100,7 @@ X-Robots-Tag: noindex                      <= don't!
 
 - [Как сделать страницу доступной для поиска ](discovery.md?format=websites)
 - [Robots.txt](http://www.robotstxt.org/)
-- [Robots meta tag and X-Robots-Tag HTTP header specifications](https://developers.google.com/search/reference/robots_meta_tag)
+- [Спецификации метатега robots и HTTP-заголовка X-Robots-Tag](https://developers.google.com/search/reference/robots_meta_tag)
 - [Часто задаваемые вопросы об индексировании AMP-страниц](https://productforums.google.com/forum/?hl=en#!category-topic/webmasters/Vrgj-a-gtm0)
 
 # Измерение пользовательского трафика и переходов
