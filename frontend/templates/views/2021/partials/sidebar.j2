@@ -22,12 +22,14 @@
         {% set initial = component.title[4] %}
         {% if scope.initial != initial and loop.nextitem or loop.first %}
         {% set scope.initial = initial %}
-        <li>
+        <li class="ap-sidebar-nav-list-section">
           <ul>
-            <span class="ap-sidebar-nav-list-section-title">{{ initial }}</span>
+            <div class="ap-sidebar-nav-list-section-title">{{ initial }}</div>
         {% endif %}
 
-            <li>{{ component.title }}</li>
+            <li>
+              <a class="ap-sidebar-nav-list-link" href="{{ component.url.path }}">{{ component.title }}</a>
+            </li>
 
         {% if loop.nextitem and scope.initial != loop.nextitem.title[4] or loop.last %}
           </ul>

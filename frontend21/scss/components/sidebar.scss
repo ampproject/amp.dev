@@ -11,14 +11,12 @@
   &-format-toggle {
     width: calc(100% - 44px);
     height: 44px;
-    outline: 1px solid;
   }
 
   &-scroll-container {
     height: 100vh;
     max-height: calc(100vh - 150px);
     overflow-y: scroll;
-    outline: 1px solid;
   }
 
   &-toggle {
@@ -69,17 +67,21 @@
       width: 100%;
     }
 
-    &-section-title {
-      display: block;
-      position: sticky;
-      top: 0;
-      margin-top: 20px;
-      font-family: $fontFamilyHeadline;
-      font-size: 28px;
-      line-height: 1;
-      font-weight: bold;
-      color: color('iron');
-      background: white;
+    &-section {
+      & + & {
+        margin-top: 20px;
+      }
+
+      &-title {
+        position: sticky;
+        top: 0;
+        font-family: $fontFamilyHeadline;
+        font-size: 28px;
+        line-height: 1;
+        font-weight: bold;
+        color: color('iron');
+        background: color('white');
+      }
     }
 
     &-link {
