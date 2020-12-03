@@ -18,7 +18,6 @@
     text-align: left;
     border-radius: 4px;
     color: color('black');
-    background: red;
     transition: opacity 0.2s ease;
     box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.25);
 
@@ -30,53 +29,37 @@
     // }
   }
 
+  &-link:hover,
+  &-selected {
+    &.--websites {
+      @include ci-websites;
+    }
+  }
+
+  &-link:hover,
+  &-selected {
+    &.--stories {
+      @include ci-stories;
+    }
+  }
+
+  &-link:hover,
+  &-selected {
+    &.--ads {
+      @include ci-ads;
+    }
+  }
+
+  &-link:hover,
+  &-selected {
+    &.--email {
+      @include ci-e-mails;
+    }
+  }
+
   &-link {
     color: color('black');
     background: color('athens-gray');
-
-    .#{atom('ico')} {
-      fill: color('black');
-    }
-  }
-
-  &-link-websites {
-    &.#{molecule('format-toggle')}-selected,
-    &:hover {
-      // @include gradient-websites; color: color('white');
-      .#{atom('ico')} {
-        fill: color('white');
-      }
-    }
-  }
-
-  &-link-stories {
-    &.#{molecule('format-toggle')}-selected,
-    &:hover {
-      // @include gradient-stories; color: color('charade');
-      .#{atom('ico')} {
-        fill: color('charade');
-      }
-    }
-  }
-
-  &-link-ads {
-    &.#{molecule('format-toggle')}-selected,
-    &:hover {
-      // @include gradient-ads; color: color('white');
-      .#{atom('ico')} {
-        fill: color('white');
-      }
-    }
-  }
-
-  &-link-email {
-    &.#{molecule('format-toggle')}-selected,
-    &:hover {
-      // @include gradient-e-mails; color: color('charade');
-      .#{atom('ico')} {
-        fill: color('charade');
-      }
-    }
   }
 
   &-angle {
