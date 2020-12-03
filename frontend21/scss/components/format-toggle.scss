@@ -1,0 +1,106 @@
+.#{prefix(null, 'format-toggle')} {
+  position: sticky;
+  top: 0;
+  width: calc(100% - 44px);
+  z-index: 12;
+
+  &-link,
+  &-selected {
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 34px;
+    overflow: hidden;
+    // @include txt;
+    // @include txt-font-accent;
+    font-size: 12px;
+    text-align: left;
+    border-radius: 4px;
+    color: color('black');
+    background: red;
+    transition: opacity 0.2s ease;
+    box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.25);
+
+    // .#{prefix(null, 'icon')} {
+    //   width: 14px;
+    //   height: 14px;
+    //   margin-right: 8px;
+    //   fill: color('black');
+    // }
+  }
+
+  &-link {
+    color: color('black');
+    background: color('athens-gray');
+
+    .#{atom('ico')} {
+      fill: color('black');
+    }
+  }
+
+  &-link-websites {
+    &.#{molecule('format-toggle')}-selected,
+    &:hover {
+      // @include gradient-websites; color: color('white');
+      .#{atom('ico')} {
+        fill: color('white');
+      }
+    }
+  }
+
+  &-link-stories {
+    &.#{molecule('format-toggle')}-selected,
+    &:hover {
+      // @include gradient-stories; color: color('charade');
+      .#{atom('ico')} {
+        fill: color('charade');
+      }
+    }
+  }
+
+  &-link-ads {
+    &.#{molecule('format-toggle')}-selected,
+    &:hover {
+      // @include gradient-ads; color: color('white');
+      .#{atom('ico')} {
+        fill: color('white');
+      }
+    }
+  }
+
+  &-link-email {
+    &.#{molecule('format-toggle')}-selected,
+    &:hover {
+      // @include gradient-e-mails; color: color('charade');
+      .#{atom('ico')} {
+        fill: color('charade');
+      }
+    }
+  }
+
+  &-angle {
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  &-formats {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.2s ease;
+    transition-delay: 0.05s;
+
+    .ap-format-toggle-selected:focus + &,
+    .ap-format-toggle-selected:hover + &,
+    &:focus-within,
+    &:hover {
+      pointer-events: auto;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
