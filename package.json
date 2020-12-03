@@ -103,7 +103,7 @@
   },
   "devDependencies": {
     "@ampproject/toolbox-cache-url": "2.7.1",
-    "@ampproject/toolbox-validator-rules": "2.5.4",
+    "@ampproject/toolbox-validator-rules": "2.7.1",
     "@babel/cli": "7.12.8",
     "@babel/core": "7.12.9",
     "@babel/node": "7.12.6",
