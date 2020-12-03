@@ -154,8 +154,7 @@ Like all embedded external resources in an AMP page,
 the element loads the audio resource specified by the `src` attribute lazily,
 at a time determined by AMP.
 
-Include a placeholder before the audio starts, and a fallback,
-if the browser doesn't support HTML5 audio, for example:
+Include a fallback, if the browser doesn't support HTML5 audio, for example:
 
 [example preview="inline" playground="true" imports="amp-audio:0.1"]
 ```html
