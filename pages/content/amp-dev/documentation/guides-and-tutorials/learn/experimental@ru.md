@@ -16,7 +16,7 @@ formats:
 
 {% set experimental_components = g.docs('/content/amp-dev/documentation/components/reference')|selectattr('experimental')|list %} {% if experimental_components|length %} Ниже приводится список компонентов, которые в настоящее время находятся в экспериментальном статусе и готовы к тестированию разработчиками для получения первых отзывов пользователей:
 
-<ul><br>{% for component in experimental_components %}<br>  <li><a href="{{ component.url.path }}">{{ component.title }}</a></li><br>{% endfor %}<br></ul><br>{% endif %}
+<ul>{% for component in experimental_components %}<li><a href="{{ component.url.path }}">{{ component.title }}</a></li>{% endfor %}</ul>{% endif %}
 
 ## Подключитесь к каналу разработки AMP
 
@@ -82,7 +82,7 @@ AMP.toggleExperiment('experiment')
 
 {% set trial_components = g.docs ('/content/amp-dev/documentation/components/reference') | selectattr ('origin_trial') | list%} {% if trial_components | length%} В настоящее время испытание на домене разработчика можно выполнять для следующих компонентов:
 
-<ul><br>{% for component in trial_components %}<br>  <li><a href="{{ component.url.path }}">{{ component.title }}</a></li><br>{% endfor %}<br></ul><br>{% endif %}
+<ul>{% for component in trial_components %}<li><a href="{{ component.url.path }}">{{ component.title }}</a></li>{% endfor %}</ul>{% endif %}
 
 ### Как начать испытание на домене разработчика
 
