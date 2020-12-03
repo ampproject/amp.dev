@@ -73,6 +73,7 @@
       }
 
       &-title {
+        cursor: default;
         position: sticky;
         top: 0;
         font-family: $fontFamilyHeadline;
