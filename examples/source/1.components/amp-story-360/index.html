@@ -21,6 +21,8 @@ author: philipbell
     <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
     <!-- To begin, import `amp-story-360` along with your other stories imports. -->
     <script async custom-element="amp-story-360" src="https://cdn.ampproject.org/v0/amp-story-360-0.1.js"></script>
+    <!-- We also import `amp-video` since we will use a 360 video. -->
+    <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
     <style amp-custom>
     </style>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -120,16 +122,10 @@ author: philipbell
       </amp-story-page>
 
       <!-- 
-        ## 360 video
+        ## amp-video
 
-        Lets create another 360 component using a [`amp-video`](https://amp.dev/documentation/components/amp-video/?format=stories).
-        Be sure to import `amp-video` in the header with your other stories imports. 
-      -->
+        We use the same attributes for this component but pass an `amp-video` child.
 
-        <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>        
-        
-      <!-- We use the same attributes for this component but pass an `amp-video` child.
-        
         Video credit: [NASA](https://commons.wikimedia.org/wiki/File:NASA_VR-360_Astronaut_Training-_Space_Walk.webm).  
       -->
   
