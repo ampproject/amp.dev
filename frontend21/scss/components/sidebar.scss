@@ -60,16 +60,26 @@
   }
 
   &-nav-list {
+    position: relative;
     padding: 0;
     list-style: none;
 
+    ul {
+      padding: 0;
+      width: 100%;
+    }
+
     &-section-title {
+      display: block;
+      position: sticky;
+      top: 0;
       margin-top: 20px;
       font-family: $fontFamilyHeadline;
       font-size: 28px;
       line-height: 1;
       font-weight: bold;
       color: color('iron');
+      background: white;
     }
 
     &-link {

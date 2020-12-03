@@ -19,20 +19,21 @@
       <ul class="ap-sidebar-nav-list --level-1">
         {% for component in components %}
 
-          {% set initial = component.title[4] %}
-          {% if scope.initial != initial %}
-          {% set scope.initial = initial %}
-          <li>
-            <div class="ap-sidebar-nav-list-section-title">{{ initial|upper }}</div>
-          </li>
-          {% endif %}
+        {% set initial = component.title[4] %}
+        {% if scope.initial != initial and loop.nextitem or loop.first %}
+        {% set scope.initial = initial %}
+        <li>
+          <ul>
+            <span class="ap-sidebar-nav-list-section-title">{{ initial }}</span>
+        {% endif %}
 
-          <li>
-            <a class="ap-sidebar-nav-list-link"
-                href="{{ component.url.path }}">
-              {{ component.title }}
-            </a>
-          </li>
+            <li>{{ component.title }}</li>
+
+        {% if loop.nextitem and scope.initial != loop.nextitem.title[4] or loop.last %}
+          </ul>
+        </li>
+        {% endif %}
+
         {% endfor %}
       </ul>
     </div>
