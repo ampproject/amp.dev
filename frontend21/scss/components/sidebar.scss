@@ -1,11 +1,24 @@
 .#{prefix(null, 'sidebar')} {
-  grid-column: 2/5;
+  grid-column: 2/4;
   position: relative;
-  margin-top: 50px;
+  margin-top: 25px;
   width: 0;
 
   &.--sidebaropen {
     width: auto;
+  }
+
+  &-format-toggle {
+    width: calc(100% - 44px);
+    height: 44px;
+    outline: 1px solid;
+  }
+
+  &-scroll-container {
+    height: 100vh;
+    max-height: calc(100vh - 150px);
+    overflow-y: scroll;
+    outline: 1px solid;
   }
 
   &-toggle {
@@ -36,7 +49,7 @@
     }
 
     .--sidebaropen & {
-      left: 100%;
+      left: calc(100% - 34px);
       flex-direction: row;
       transform: rotate(0);
 
@@ -47,9 +60,8 @@
   }
 
   &-nav-list {
-    display: flex;
-    flex-direction: column;
-    max-height: calc(100vh - 50px - 32px);
+    padding: 0;
+    list-style: none;
 
     &-section-title {
       margin-top: 20px;
