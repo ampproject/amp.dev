@@ -10,8 +10,7 @@ W tej sekcji przeanalizujemy i rozwiążemy błędy walidacji naszej strony AMP.
 
 Zaczniemy od naprawienia następującego błędu:
 
-<pre class="error-text">The mandatory tag 'meta charset=utf-8' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'meta charset=utf-8' is missing or incorrect.</pre>
 
 Aby poprawnie wyświetlać tekst, AMP wymaga określenia zestawu znaków strony. Informacja meta o zestawie znaków musi być również pierwszym elementem podrzędnym znacznika `<head> `. Powodem, dla którego ten znacznik musi być pierwszy, jest uniknięcie ponownego interpretowania treści dodanej przed znacznikiem meta zestawu znaków.
 
@@ -27,8 +26,7 @@ Aby poprawnie wyświetlać tekst, AMP wymaga określenia zestawu znaków strony.
 
 Spójrzmy teraz na następujący błąd:
 
-<pre class="error-text">The mandatory tag 'link rel=canonical' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'link rel=canonical' is missing or incorrect.</pre>
 
 Każdy dokument AMP musi zawierać link odwołujący się do „kanonicznej” wersji tegoż dokumentu. Dowiemy się więcej o tym, czym są strony kanoniczne i jakie są różne podejścia do linkowania kanonicznego w kroku [Sprawianie, aby można było odnaleźć stronę](discoverable.md)[ w tym samouczku.](discoverable.md)
 
@@ -54,9 +52,7 @@ W tym samouczku użyjemy oryginalnego artykułu HTML, który przekonwertujemy na
 
 AMP wymaga podania atrybutu w głównym elemencie `<html>` strony, w celu zadeklarowania strony jako dokumentu AMP.
 
-<pre class="error-text">The mandatory attribute '⚡' is missing in tag 'html ⚡ for top-level html'
-The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory attribute '⚡' is missing in tag 'html ⚡ for top-level html'<br>The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.</pre>
 
 Powyższe błędy można rozwiązać poprzez proste dodanie atrybutu `⚡ `do sekcji `<html>` w następujący sposób:
 
@@ -78,8 +74,7 @@ Załaduj ponownie stronę i sprawdź, czy oba błędy zniknęły.
 
 Następnie zajmijmy się tym błędem:
 
-<pre class="error-text">The mandatory tag 'meta name=viewport' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'meta name=viewport' is missing or incorrect.</pre>
 
 AMP wymaga definicji atrybutów `width` i `minimum-scale` okienka na ekranie. Należy podać odpowiednio wartości `device-width` i `1`. Okienko na ekranie definiuje się za pomocą zwykłego znacznika w sekcji `<head>` strony HTML.
 
@@ -97,8 +92,7 @@ Tak jak wcześniej, **ponownie załaduj** stronę i sprawdź, czy błąd znikną
 
 Poniższy błąd jest związany z naszym użyciem arkuszy stylów:
 
-<pre class="error-text">The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invalid value 'base.css'.
-</pre>
+<pre class="error-text">The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invalid value 'base.css'.</pre>
 
 W szczególności błąd ten polega dotyczy następującego znacznika linku arkusza stylów w naszej sekcji `<head>`:
 
@@ -131,8 +125,7 @@ Rozwiążmy ten błąd:
 
 Arkusze stylów można stosunkowo łatwo przerabiać za pomocą AMP poprzez wprowadzenie kodu CSS inline, ale w przypadku JavaScriptu jest inaczej.
 
-<pre class="error-text">The tag 'script' is disallowed except in specific forms.
-</pre>
+<pre class="error-text">The tag 'script' is disallowed except in specific forms.</pre>
 
 Ogólnie rzecz biorąc, skrypty w AMP są dozwolone tylko wtedy, gdy spełniają dwa główne wymagania:
 
@@ -173,10 +166,7 @@ Biorąc pod uwagę, że ten zewnętrzny plik JavaScript nie jest składnikiem fu
 
 Następujące błędy odnoszą się do brakującego kodu standardowego:
 
-<pre class="error-text">The mandatory tag 'noscript enclosure for boilerplate' is missing or incorrect.
-The mandatory tag 'head > style : boilerplate' is missing or incorrect.
-The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'noscript enclosure for boilerplate' is missing or incorrect.<br>The mandatory tag 'head > style : boilerplate' is missing or incorrect.<br>The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.</pre>
 
 Każdy dokument AMP musi zawierać następujący kod standardowy AMP:
 
@@ -192,8 +182,7 @@ Znacznik `<style amp-boilerplate>` początkowo ukrywa zawartość sekcji body do
 
 AMP nie obsługuje w celu wyświetlania multimediów domyślnych odpowiedników HTML, co wyjaśnia następujący błąd:
 
-<pre class="error-text">The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
-</pre>
+<pre class="error-text">The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?</pre>
 
 Dostępny jest składnik internetowy AMP, zaprojektowany specjalnie do zastąpienia znacznika `<img>`, a mianowicie znacznik [`<amp-img>`](../../../../documentation/components/reference/amp-img.md):
 
@@ -203,9 +192,7 @@ Dostępny jest składnik internetowy AMP, zaprojektowany specjalnie do zastąpie
 
 **Zastąp** znacznik `<img>` powyższym znacznikiem [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) i ponownie uruchom walidator. Wyświetlonych zostanie kilka nowych błędów:
 
-<pre class="error-text">Layout not supported: container
-The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
-</pre>
+<pre class="error-text">Layout not supported: container<br>The implied layout 'CONTAINER' is not supported by tag 'amp-img'.</pre>
 
 Dlaczego element [`amp-img`](../../../../documentation/components/reference/amp-img.md) wywołał kolejny błąd? Ponieważ [`amp-img`](../../../../documentation/components/reference/amp-img.md) nie jest bezpośrednim substytutem tradycyjnego znacznika HTML img. Używania elementu [`amp-img`](../../../../documentation/components/reference/amp-img.md) dotyczą dodatkowe wymagania.
 
@@ -313,8 +300,7 @@ Teraz dokument AMP powinien wyglądać tak:
 
 Odśwież stronę i sprawdź dane wyjściowe konsoli. Powinien Cię powitać następujący komunikat:
 
-<pre class="success-text">AMP validation successful.
-</pre>
+<pre class="success-text">AMP validation successful.</pre>
 
 ### Często zadawane pytania
 
