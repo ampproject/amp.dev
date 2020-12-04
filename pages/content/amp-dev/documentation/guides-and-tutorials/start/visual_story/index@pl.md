@@ -1,7 +1,7 @@
 ---
-"$title": Create your first Web Story
+"$title": Tworzenie pierwszej relacji internetowej
 "$order": '0'
-description: "In this tutorial, we'll introduce you to the amp-story component, which you can use to create visually engaging Web Stories with AMP. By the end of this tutorial, you'll ..."
+description: W tym samouczku przedstawimy Ci składnik amp-story, którego możesz używać do tworzenia ciekawych wizualnie relacji internetowych za pomocą AMP. Pod koniec tego samouczka, będziesz...
 "$hidden": 'true'
 formats:
 - stories
@@ -10,13 +10,13 @@ author: bpaduch
 
 [video src="/static/video/tut_pets-story-complete.mp4" caption="Completed AMP story." poster="/static/img/docs/tutorials/amp_story/story_poster.png"]
 
-In this tutorial, we'll introduce you to the [`amp-story`](../../../../documentation/components/reference/amp-story.md) component, which you can use to create visually engaging Web Stories with AMP. By the end of this tutorial, you'll have created a story about "The Joy of Pets" that provides bite-sized information and visuals to entertain and engage readers.
+W tym samouczku przedstawimy Ci składnik [`amp-story`](../../../../documentation/components/reference/amp-story.md), którego możesz używać do tworzenia ciekawych wizualnie relacji internetowych za pomocą AMP. Pod koniec tego samouczka będziesz mieć utworzoną relację „The Joy of Pets”, zawierającą malutkie informacje i elementy graficzne zapewniające rozrywkę i angażujące czytelników.
 
-## You will learn to:
+## Nauczysz się, jak:
 
-- Create a multi-page story by using the [`amp-story`](../../../../documentation/components/reference/amp-story.md) component
-- Create visual effects with multiple layers in a page
-- Lay out elements in a page by using layer templates
-- Add audio that plays while a page is viewed
-- Animate elements on a page
-- Keep readers engaged with your content by adding related links to the end of the story
+- Utworzyć wielostronicową relację za pomocą składnika [`amp-story`](../../../../documentation/components/reference/amp-story.md)
+- Utworzyć efekty wizualne za pomocą wielu warstw na stronie
+- Rozmieścić elementy na stronie za pomocą szablonów warstw
+- Dodać dźwięk, który jest odtwarzany podczas przeglądania strony
+- Animować elementy na stronie
+- Zachęcić czytelników do zapoznania się z treścią, dodając linki na końcu relacji
