@@ -17,7 +17,7 @@ contributors:
 
 Podobnie jak na zwykłej stronie HTML, AMP pozwala na osadzanie **obrazów**, **filmów** i treści **audio**. Dowiedz się, czym różnią się odpowiedniki AMP i jak umieszczać je w swoich stronach.
 
-## Why not <img>, <video> and <audio>?</audio></video>
+## Dlaczego nie `<img>`, `<video>` i `<audio>`?
 
 AMP nie obsługuje w celu wyświetlania multimediów domyślnych odpowiedników HTML, takich jak `<img>`. Zapewniamy równoważne składniki z następujących powodów:
 
