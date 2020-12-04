@@ -1,86 +1,117 @@
 ---
-$title: Wstępne ładowanie PWA ze stron AMP
-$order: 1
-description: Dobrą strategią jest uczynienie strony AMP punktem wejścia do witryny, a następnie rozgrzanie PWA za kulisami i przełączenie na...
+"$title": Preload your PWA from your AMP pages
+"$order": '1'
+description: A good strategy is to make the entry point into your site an AMP page, then warm up the PWA behind the scenes and switch to ...
+formats:
+- websites
 author: pbakaus
 ---
 
-Dobrą strategią jest uczynienie **strony AMP punktem wejścia do witryny**, a następnie **przygotowanie PWA za kulisami** i przełączenie się na nią:
+A good strategy is to make the **entry point into your site an AMP page**, then **warm up the PWA behind the scenes** and switch to it for the onward journey:
 
-- Wszystkie strony „liście” (mające określoną treść, a nie strony ogólne) są publikowane jako strony AMP w celu zapewnienia niemal natychmiastowego ładowania.
-- Te strony AMP używają specjalnego elementu AMP [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) do przygotowania serwera buforującego i powłoki PWA podczas gdy użytkownik korzysta z treści.
-- Gdy użytkownik kliknie inny link w witrynie internetowej (na przykład, wezwanie do działania na dole w razie obsługi bardziej zbliżonej do aplikacji), usługowy proces roboczy service worker przechwytuje żądanie, przejmuje stronę i zamiast tego ładuje powłokę PWA.
+- All content “leaf” pages (those that have specific content, not overview pages) are published as AMPs for that nearly instant loading experience.
+- These AMPs use AMP’s special element [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) to warm up a cache and the PWA shell while the user is enjoying your content.
+- When the user clicks another link on your website (for example, the call to action at the bottom for a more app-like experience), the service worker intercepts the request, takes over the page and loads the PWA shell instead.
 
-Czytaj dalej, aby dowiedzieć się, dlaczego i jak korzystać z tego wzorca programowania.
+Read on to learn why, and how to use this development pattern.
 
-## Usprawnienie obsługi użytkownika poprzez podłączenie do PWA
+## Improve the user journey by connecting to a PWA
 
-### AMP do wstępnego pozyskania użytkownika
+### AMP for initial user acquisition
 
-AMP jest idealnym rozwiązaniem w przypadku tak zwanych **stron liści**, czyli stron z treścią, które użytkownicy odkrywają organicznie za pomocą wyszukiwarki, linku udostępnionego przez znajomą osobę lub linku w innej witrynie. Ze względu na [specjalizację AMP w renederowaniu wstępnym](../../../about/how-amp-works.html), strony AMP ładują się niezwykle szybko, co z kolei oznacza znacznie mniej porzuceń (ostatnie badanie [DoubleClick ](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/) pokazuje, że **ponad 53% wszystkich użytkowników porzuca stronę po 3 sekundach**).
+AMP is an ideal solution for so-called **leaf pages**, content pages that your users discover organically through a search engine, a shared link by a friend or through a link on another site. Because of AMP's [specialized pre-rendering](../../../about/how-amp-works.html), AMP pages load extremely fast, which in return means much less drop off (the latest [DoubleClick study](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/) shows that **more than 53% of all users will drop off after 3 seconds**).
 
-### PWA dla bogatej interaktywności i zaangażowania
+### PWA for rich interactivity and engagement
 
-Progresywne apllkacje webowe umożliwiają z kolei znacznie większą interaktywność i zaangażowanie, ale nie mają *cechy błyskawicznego pierwszego ładowania* jak strony AMP. U ich podstaw leży technologia o nazwie Service Worker, serwer proxy po stronie klienta, która pozwala na buforowanie wszystkich rodzajów zasobów stron, ale wspomniany proces Service Worker aktywowany jest dopiero *po* pierwszym załadowaniu.
+Progressive Web Apps, on the other hand, allow for much greater interactivity and engagement, but do not have the *instant first-load characteristics* of an AMP page. At their core is a technology called Service Worker, a client-side proxy that allows you to cache all sorts of assets for your pages, but said Service Worker only activates *after* the first load.
 
-{{ image('/static/img/docs/pwamp_comparison.png', 977, 549, align='', caption='Wady i zalety AMP w porównaniu do PWA.') }}
+{{ image('/static/img/docs/pwamp_comparison.png', 977, 549, align='', caption='The pros and cons of AMP vs. PWA.') }}
 
-## Przygotowanie PWA za pomocą elementu `amp-install-serviceworker`
+## Warm up your PWA with `amp-install-serviceworker`
 
-AMP ma możliwość zainstalowania składnika Service Worker progresywnej aplikacji webowej ze strony AMP — tak, nawet jeśli ta strona AMP jest serwowana z serwera AMP Cache! Jeśli zrobione jest to poprawnie, link prowadzący do PWA (z jednej ze stron AMP) będzie działać prawie natychmiast, podobnie jak pierwszy przeskok do strony AMP.
+AMP has the ability to install the Service Worker of your Progressive Web App from within an AMP page – yes, even if that AMP page is served from an AMP Cache! If done correctly, a link that leads to your PWA (from one of your AMP pages) will feel almost instant, similar to the first hop to the AMP page.
 
-[tip type="tip"] **PORADA —** jeśli nie znasz jeszcze technologii Service Worker, gorąco polecam kurs Jake'a Archibalda na temat [Udacity](https://www.udacity.com/course/offline-web-applications--ud899). [/tip]
+[tip type="tip"] **TIP –** If you're not familiar with Service Worker yet, I greatly recommend Jake Archibald’s [Udacity course](https://www.udacity.com/course/offline-web-applications--ud899). [/tip]
 
-Najpierw zainstaluj Service Worker na wszystkich stronach AMP, używając składnika [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) i najpierw włączając go poprzez jego skrypt w sekcji `<head>` swojej strony:
+First, install the service worker on all of your AMP Pages using [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md), by first including the component via its script in the `<head>` of your page:
 
 [sourcecode:html]
-
-<script async="" custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
-
+<script async custom-element="amp-install-serviceworker"
+  src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 [/sourcecode]
 
-Następnie dodaj następujące elementy gdzieś w sekcji `<body>` (zmień tak, aby wskazywały na rzeczywisty skrypt Service Worker):
+Then add the following somewhere within your `<body>` (modify to point to your actual Service Worker):
 
-[sourcecode:html] {amp-install-serviceworker0} {/amp-install-serviceworker0} [/sourcecode]
+[sourcecode:html]
+<amp-install-serviceworker
+      src="https://www.your-domain.com/serviceworker.js"
+      layout="nodisplay">
+</amp-install-serviceworker>
+[/sourcecode]
 
-Ostatecznie, na etapie instalacji skryptu Service Worker, należy zadbać o zbuforowanie wszystkich zasobów, których będzie wymagać PWA:
+Ultimately, in the service worker’s installation step, cache any resources that the PWA will need:
 
-[sourcecode:javascript] var CACHE_NAME = 'my-site-cache-v1'; var urlsToCache = [ '/', '/styles/main.css', '/script/main.js' ];
+[sourcecode:javascript]
+var CACHE_NAME = 'my-site-cache-v1';
+var urlsToCache = [
+  '/',
+  '/styles/main.css',
+  '/script/main.js'
+];
 
-self.addEventListener('install', function(event) { // Perform install steps event.waitUntil( caches.open(CACHE_NAME) .then(function(cache) { console.log('Opened cache'); return cache.addAll(urlsToCache); }) ); }); [/sourcecode]
+self.addEventListener('install', function(event) {
+  // Perform install steps
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(function(cache) {
+        console.log('Opened cache');
+        return cache.addAll(urlsToCache);
+      })
+  );
+});
+[/sourcecode]
 
-[tip type="tip"] **PORADA —** są łatwiejsze sposoby obsługi mechanizmu Service Worker. Zapoznaj esię z [bibliotekami programów obsługi mechanizmu Service Worker](https://github.com/GoogleChrome/sw-helpers). [/tip]
+[tip type="tip"] **TIP –** There are easier ways to deal with a Service Worker. Take a look at the [Service Worker helper libraries](https://github.com/GoogleChrome/sw-helpers). [/tip]
 
-## Ustawianie wszystkich linków na stronie AMP jako nawigacji do PWA
+## Make all links on an AMP Page navigate to the PWA
 
-Większość linków na stronach AMP może prowadzi do stron z treścią. Są dwie strategie mające na celu upewnienie się, że kolejne kliknięcia linków skutkują „przejściem” do aplikacji PWA, [w zależności od sposobu używania AMP](../../../documentation/guides-and-tutorials/optimize-measure/discovery.md):
+Chances are that most links on your AMP pages lead to more content pages. There are two strategies to make sure that subsequent link clicks result in an "upgrade" to the Progressive Web App, [depending on the way you use AMP](../../../documentation/guides-and-tutorials/optimize-measure/discovery.md):
 
-### 1. Jeśli sparujesz swoje strony kanoniczne ze stronami AMP
+### 1. If you pair your canonical pages with AMP pages
 
-W tym przypadku masz kanoniczną witrynę internetową (bez AMP) i generujesz strony AMP, które są powiązane linkami z tymi stronami kanonicznymi. Jest to obecnie najpopularniejszy sposób korzystania z AMP, co znaczy, że linki na stronach AMP będą prawdopodobnie prowadzić do kanonicznej wersji Twojej witryny. **Dobra wiadomość: jeśli Twoja witryna kanoniczna jest aplikacją PWA, wszystko jest gotowe**.
+In this case you have a canonical website (non-AMP) and generate AMP pages that are linked to these canonical pages. This is currently the most common way AMP is used, and it means that the links on your AMP pages will likely link to the canonical version of your site. **Good news: If your canonical site is your PWA, you're all set**.
 
-### 2. Jeśli Twoja witryna kanoniczna jest wykonana w technologii AMP
+### 2. If your canonical site is AMP
 
-W tym przypadku Twoje strony kanoniczne *są* stronami AMP: Tworzysz całą swoją witrynę internetową za pomocą AMP i używasz AMP po prostu jako biblioteki (zabawny fakt: witryna, w której to czytasz, jest zbudowana w ten sposób). **W tym scenariuszu większość linków na stronach AMP będzie prowadzić do innych stron AMP.**
+In this case your canonical pages *are* your AMP pages: You're building your entire website with AMP, and simply use AMP as a library (fun fact: the very site you're reading this on is built this way). **In this scenario, most links on your AMP pages will lead to other AMP pages.**
 
-Teraz możesz wdrożyć swoją PWA na osobnej ścieżce, takiej jak `your-domain.com/pwa` i użyć już uruchomionego procesu Service Worker, aby <strong>przechwytywać nawigację przeglądarki, gdy ktoś kliknie link na stronie AMP</strong>:
+You can now deploy your PWA on a separate path like `your-domain.com/pwa` and use the Service Worker that's already running to **intercept the browser navigation when someone clicks on a link on the AMP Page**:
 
-[sourcecode:javascript] self.addEventListener('fetch', event => { if (event.request.mode === 'navigate') { event.respondWith(fetch('/pwa'));
+[sourcecode:javascript]
+self.addEventListener('fetch', event => {
+    if (event.request.mode === 'navigate') {
+      event.respondWith(fetch('/pwa'));
 
-```
-  // Immediately start downloading the actual resource.
-  fetch(event.request.url);
-}
-```
+      // Immediately start downloading the actual resource.
+      fetch(event.request.url);
+    }
 
-}); [/sourcecode]
+});
+[/sourcecode]
 
-Co jest szczególnie interesujące w tej technice, to fakt, że obecnie używasz progresywnych ulepszeń, aby przejść z AMP do PWA. Znaczy to jednak również, że przeglądarki, które nie obsługują jeszcze usługowych procesów service worker, będą przeskakiwać z AMP do AMP i nigdy nie będą w rzeczywistości przechodzić do PWA.
+What’s especially interesting about this technique is that you are now using progressive enhancement to go from AMP to PWA. However, this also means that, as is, browsers that don’t yet support service workers will jump from AMP to AMP and will never actually navigate to the PWA.
 
-AMP rozwiązuje to za pomocą czegoś, co nazywa się [przepisywaniem adresów URL powłoki](../../../documentation/components/reference/amp-install-serviceworker.md#shell-url-rewrite). Dodając do znacznika [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) wzorzec rezerwowego adresu URL, instruujesz AMP, że ma przepisać wszystkie pasujące linki na danej stronie, aby zamiast tego przejść do innego starszego adresu URL powłoki, jeśli nie wykryto obsługi mechanizmu Service Worker:
+AMP solves this with something called [shell URL rewriting](../../../documentation/components/reference/amp-install-serviceworker.md#shell-url-rewrite). By adding a fallback URL pattern to the [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) tag, you are instructing AMP to rewrite all matching links on a given page to go to another legacy shell URL instead, if no service worker support has been detected:
 
-[sourcecode:html] {amp-install-serviceworker0} {/amp-install-serviceworker0} [/sourcecode]
+[sourcecode:html]
+<amp-install-serviceworker
+      src="https://www.your-domain.com/serviceworker.js"
+      layout="nodisplay"
+      data-no-service-worker-fallback-url-match=".*"
+      data-no-service-worker-fallback-shell-url="https://www.your-domain.com/pwa">
+</amp-install-serviceworker>
+[/sourcecode]
 
-Po wprowadzeniu tych atrybutów wszystkie następne kliknięcia w AMP trafią do PWA, bez względu na obsługę mechanizmu Service Worker.
+With these attributes in place, all subsequent clicks on an AMP will go to your PWA, regardless of any service worker.
 
-[tip type="read-on"] **CZYTAJ DALEJ —** jesteś już bardzo daleko — dlaczego więc nie wykorzystać ponownie swoich istniejących stron AMP do utworzenia PWA? [Oto sposób](amp-in-pwa.md). [/tip]
+[tip type="read-on"] **READ ON –** You've already come so far – why not reuse your existing AMP pages to build your PWA? [Here's how](amp-in-pwa.md). [/tip]
