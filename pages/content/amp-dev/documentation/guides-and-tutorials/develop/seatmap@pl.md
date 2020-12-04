@@ -1,7 +1,7 @@
 ---
-"$title": Create a seatmap
+"$title": Tworzenie mapy miejsc
 "$order": '104'
-description: Seatmaps are important parts of ticketers web apps, but the implementation in AMP can be difficult. Read on to learn how to implement a seatmap in AMP by
+description: Mapy miejsc są ważną częścią aplikacji internetowych automatów biletowych, ale ich implementacja w AMP może być trudna. Czytaj dalej, aby dowiedzieć się jak zaimplementować mapę miejsc w AMP
 tutorial: 'true'
 formats:
 - websites
@@ -10,29 +10,29 @@ contributors:
 - pbakaus
 ---
 
-Seatmaps are important parts of ticketers' web apps, but the implementation in AMP can be difficult. Read on to learn how to implement a seatmap in AMP by using a combination of available AMP components.
+Mapy miejsc są ważną częścią aplikacji internetowych automatów biletowych, ale ich implementacja w AMP może być trudna. Czytaj dalej, aby dowiedzieć się jak zaimplementować mapę miejsc w AMP, wykorzystując kombinację dostępnych składników AMP.
 
-[tip] A live sample implementing the practices described below is available [here](../../../documentation/examples/documentation/SeatMap.html). [/tip]
+[tip] Rzeczywisty przykład zastosowania opisanych poniżej praktyk dostępny jest [tutaj](../../../documentation/examples/documentation/SeatMap.html). [/tip]
 
-## AMP Components needed
+## Niezbędne składniki AMP
 
-Let's start by reviewing the components needed:
+Zacznijmy od przeglądu niezbędnych składników:
 
 ### amp-pan-zoom
 
-[`amp-pan-zoom`](../../../documentation/components/reference/amp-pan-zoom.md) allows to zoom and pan the content via double tap and pinching. This component serves as base for the seatmap implementation.
+[`amp-pan-zoom`](../../../documentation/components/reference/amp-pan-zoom.md) umożliwia powiększanie i przesuwanie zawartości za pomocą podwójnego dotknięcia i gestu szczypania. Ten składnik służy jako podstawa do implementacji mapy miejsc.
 
 ### amp-list
 
-[`amp-list`](../../../documentation/components/reference/amp-list.md) fetches content dynamically from a CORS JSON endpoint and renders it using a supplied template. Used to fetch current seatmap availability, so that users always get the latest data.
+Składnik [`amp-list`](../../../documentation/components/reference/amp-list.md) dynamicznie pobiera zawartość z punktu końcowego mechanizmu CORS JSON i renderuje ją za pomocą dostarczonego szablonu. Służy do pobierania bieżącej dostępności miejsc na mapie, dzięki czemu użytkownicy zawsze otrzymują najnowsze dane.
 
 ### amp-bind
 
-[`amp-bind`](../../../documentation/components/reference/amp-bind.md) adds interactivity to the page. Needed here to keep track of how many seats have been selected.
+Składnik [`amp-bind`](../../../documentation/components/reference/amp-bind.md) dodaje do strony interaktywność. Tutaj jest niezbędny do śledzenie liczby zajętych miejsc.
 
 ### amp-selector
 
-[`amp-selector`](../../../documentation/components/reference/amp-selector.md) represents a control that presents a menu of options and lets the user choose from it. The entire seatmap can be considered a menu of options where each seat is an option. It makes styling the selected state for seats much easier by allowing you to use CSS expressions. For example, the following expression fills a seat with an orange color once selected.
+Składnik [`amp-selector`](../../../documentation/components/reference/amp-selector.md) reprezentuje kontrolkę, która prezentuje menu opcji i pozwala użytkownikowi na wybór z tego menu. Cała mapa miejsc może być traktowana jako menu opcji, w którym każde miejsce jest opcją. Znacznie ułatwia to stylizację stanu zajętości miejsc, umożliwiając użycie wyrażeń CSS. Na przykład następujące wyrażenie po zajęciu miejsca wypełnia je kolorem pomarańczowym.
 
 ```css
 rect[selected].seat {
@@ -40,15 +40,15 @@ rect[selected].seat {
 }
 ```
 
-## Requirements
+## Wymagania
 
-1. To draw a seatmap as an SVG where each seat is represented by a `rect` element, you need information on each seat: position `x` and `y`, `width` and `height` and possibly `rx` and `ry` to round the corners of the rectangles.
-2. A unique identifier for very seat that can be used to make the booking.
-3. A measure of the entire width and height of the seatmap to be used in the `viewbox` attribute.
+1. Aby rysować mapę miejsc jako SVG, w którym każde miejsce jest reprezentowane przez element <codr>rect, niezbędne są następujące informacje o każdym miejscu: pozycja <code data-md-type="codespan">x</code> i <code data-md-type="codespan">y</code>, <code data-md-type="codespan">width</code> (szerokość) i <code data-md-type="codespan">height</code> (wysokość) oraz, ewentualnie, promienie <code data-md-type="codespan">rx</code> i <code data-md-type="codespan">ry</code> w celu zaokrąglenia narożników prostokątów.</codr>
+2. Niepowtarzalny identyfikator każdego miejsca, którego można użyć do dokonania rezerwacji.
+3. Miara całkowitej szerokości i wysokości mapy miejsc, która zostanie użyta w atrybucie `viewbox`.
 
-## Drawing the seatmap
+## Rysowanie mapy miejsc
 
-The seatmap is rendered via [`amp-list`](../../../documentation/components/reference/amp-list.md) and [`amp-mustache`](../../../documentation/components/reference/amp-mustache.md). After receiving the data from the [`amp-list`](../../../documentation/components/reference/amp-list.md) call, you can use said data to iterate through the seats:
+Mapa miejsc jest renderowana za pomocą składników [`amp-list`](../../../documentation/components/reference/amp-list.md) oraz [`amp-mustache`](../../../documentation/components/reference/amp-mustache.md). Po otrzymaniu danych z wywołania [`amp-list`](../../../documentation/components/reference/amp-list.md) można użyć owych danych do iteracji przez miejsca:
 
 [sourcecode:html]
 {% raw %}<svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
@@ -58,11 +58,11 @@ The seatmap is rendered via [`amp-list`](../../../documentation/components/refer
 </svg>{% endraw %}
 [/sourcecode]
 
-## Styling unavailable seats
+## Stylizacja niedostępnych miejsc
 
-In the above example, `{% raw %}{{unavailable}}{% endraw %}` is the value of a field returned by the JSON endpoint and used to style an unavailable seat. This approach doesn’t allow you to remove attributes like `option="{{id}}"` in case a seat is unavailable, as the template cannot wrap the entire pages' `<html>` element.
+W powyższym przykładzie `{% raw %}{{unavailable}}{% endraw %}` jest wartością pola zwróconą przez punkt końcowy JSON i używaną do stylizacji niedostępnego miejsca. Takie podejście nie pozwala na usunięcie atrybutów takich jak `option="{{id}}"` w przypadku, gdy miejsce jest niedostępne, ponieważ szablon nie może otoczyć elementu całych stron <code><html></code>.
 
-An alternative, more verbose approach is to repeat the tags as following:
+Alternatywnym, bardziej szczegółowym podejściem jest powtarzanie znaczników w następujący sposób:
 
 [sourcecode:html]
 {% raw %}{{#available }}{% endraw %}
@@ -71,38 +71,38 @@ An alternative, more verbose approach is to repeat the tags as following:
 {% raw %}{{^available}}{% endraw %}<rect role="button" tabindex="0" class="seat unavailable" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"/>{% raw %}{{/available }}{% endraw %}
 [/sourcecode]
 
-## Sizing your seatmap
+## Ustawianie rozmiaru mapy miejsc
 
-Unless your seatmap's size is fixed, it's difficult to size the [`amp-list`](../../../documentation/components/reference/amp-list.md) containing the seatmap. [`amp-list`](../../../documentation/components/reference/amp-list.md) needs either fixed dimensions or use `layout="fill"` (to use the available space of the parent container). There are two ways to address this problem:
+Jeśli rozmiar mapy miejsc nie jest ustalony, trudno jest ustawiać rozmiar składnika [`amp-list`](../../../documentation/components/reference/amp-list.md) zawierającego mapę miejsc. Składnik [`amp-list`](../../../documentation/components/reference/amp-list.md) wymaga albo podania ustalonych wymiarów, albo użycia właściwości `layout="fill"` (w celu wykorzystania dostępnego miejsca w kontenerze nadrzędnym). Ten problem można rozwiązać na dwa sposoby:
 
-1. Calculate the available space on the page once you know the space used by other components like headers and footers. This calculation can be done in CSS by using the `calc` expression and assigning it as the `min-height` of a parent div of the [`amp-list`](../../../documentation/components/reference/amp-list.md).
-2. Use a flex layout when knowing the height of the page layout.
+1. Oblicz dostępne miejsce na stronie, gdy poznasz miejsce zajmowane przez inne składniki, takie jak nagłówki i stopki. Obliczenie to można wykonać w CSS, używając wyrażenia `calc` i przypisując je jako `min-height` nadrzędnego elementu div składnika [`amp-list`](../../../documentation/components/reference/amp-list.md).
+2. Znając wysokość układu strony, użyj układu flex.
 
-## Styling amp-pan-zoom
+## Stylizacja składnika amp-pan-zoom
 
-If using the approach described in the previous section, [`amp-pan-zoom`](../../../documentation/components/reference/amp-pan-zoom.md) needs to use `layout="fill"` as well.
+W przypadku podejścia opisanego w poprzedniej sekcji w składniku [`amp-pan-zoom`](../../../documentation/components/reference/amp-pan-zoom.md) również należy zastosować właściwość `layout="fill"`.
 
-[tip type="tip"] **TIP –** To keep some white space around the seatmap and still make it part of the pinch and zooming area:
+[tip type="tip"] **PORADA —** aby zachować trochę białej przestrzeni wokół mapy miejsc, nadal czyniąc ją częścią obszaru szczypania i powiększania:
 
-- Add a wrapping div for the svg
-- Add padding
+- Dodaj otokę div do svg
+- Dodaj wypełnienie
 
-If you don’t have a wrapping div and add margin to the SVG instead, it won't make the margins part of the pinch and zooming area. [/tip]
+Jeśli nie masz otoki div i zamiast tego dodasz do SVG margines, marginesy nie staną się częścią obszaru szczypania i powiększania. [/tip]
 
-## Handling state
+## Obsługa stanu
 
-When users click on different seats, it’s possible to keep track of the selected seat `id`s in a variable by using `amp-state`, either by:
+Gdy użytkownicy klikają różne miejsca, śledzenie `id` wybranych miejsc w zmiennej za pomocą składnika `amp-state` jest możliwe na następujące sposoby:
 
-- Adding an [`amp-bind`](../../../documentation/components/reference/amp-bind.md) expression for every seat to add the selected seat to a list
-- Or using [`amp-selector`](../../../documentation/components/reference/amp-selector.md) with the action `on="select:AMP.setState({selectedSeats: event.selectedOptions})"` so that all the selected seats are added to a list
+- Poprzez dodanie do każdego miejsca wyrażenia [`amp-bind`](../../../documentation/components/reference/amp-bind.md) w celu dodawania wybranych miejsc do listy
+- Można też użyć kontrolki [`amp-selector`](../../../documentation/components/reference/amp-selector.md) z działaniem <code>on="select:AMP.setState({selectedSeats: event.selectedOptions})"</code> w celu dodawania wszystkich wybranych miejsc do listy
 
-While the first approach doesn’t require the additional component [`amp-selector`](../../../documentation/components/reference/amp-selector.md), it can make the seatmap very slow because every [`amp-bind`](../../../documentation/components/reference/amp-bind.md) expression will be evaluated at every seat selection/deselection.
+Pierwsze podejście nie wymaga dodatkowego składnika [`amp-selektor`](../../../documentation/components/reference/amp-selector.md), ale może bardzo spowolnić mapę miejsc, ponieważ po każdym zajęciu/zwolnieniu miejsca obliczane będzie każde wyrażenie [`amp-bind`](../../../documentation/components/reference/amp-bind.md).
 
-The second approach also allows you to reduce the duplication of the [`amp-bind`](../../../documentation/components/reference/amp-bind.md) expression for every seat that will be rendered by the template.
+Drugie podejście pozwala również ograniczyć dublowanie wyrażenia [`amp-bind`](../../../documentation/components/reference/amp-bind.md) dla każdego miejsca, które będzie renderowane przez szablon.
 
-## Final HTML structure
+## Końcowa struktura HTML
 
-For reference, here's the final HTML for the seatmap:
+Oto ostateczny poglądowy kod HTML mapy miejsc:
 
 [sourcecode:html]
 {% raw %}<div class="seatmap-container">
