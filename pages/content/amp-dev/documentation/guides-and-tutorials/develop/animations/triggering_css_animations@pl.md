@@ -1,41 +1,41 @@
 ---
-"$title": Triggering CSS animations & transitions
+"$title": Wyzwalanie animacji CSS i przejść
 "$order": '1'
-description: Triggering CSS animations on pages relies on adding and removing classes, done via JavaScript. You can achieve the same behavior on AMP pages by using the toggleClass action ...
+description: Wyzwalanie animacji CSS na stronach polega na dodawaniu i usuwaniu klas za pomocą kodu JavaScript. Ten sam sposób działania można osiągnąć na stronach AMP za pomocą działania toggleClass...
 formats:
 - websites
 - ads
 ---
 
-CSS animations enable web elements to transition from one CSS style configuration to another. The browser can start defined animations on load, but event triggered CSS animations [rely on adding and removing classes](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations). AMP supports both animation types.
+Animacje CSS umożliwiają przejście elementów internetowych z jednej konfiguracji stylu CSS do innej. Przeglądarka może uruchamiać zdefiniowane animacje podczas ładowania, ale animacje CSS wyzwalane zdarzeniami [polegają na dodawaniu i usuwaniu klas](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations). AMP obsługuje oba typy animacji.
 
-Use CSS when you have a smaller, contained animation that doesn't need to be precisely timed.
+CSS stosuj wówczas, gdy masz mniejszą, zamkniętą animację, która nie musi być precyzyjnie ustawiona w czasie.
 
-## Defining CSS and keyframes
+## Definiowanie CSS i ramek kluczowych
 
-You can define CSS in AMP in the following ways:
+CSS można zdefiniować w AMP w następujący sposób:
 
 [filter formats="websites, stories"]
 
-- Within the `<style amp-custom>` tag inside the head of the document. 75,000 byte limit.
-- Inline styles. Each instance of an inline style has a 1,000 byte limit. Inline styles count towards the 75,000 byte `<style amp-custom>` limit.
-- Within the `<style amp-keyframes>` tag inside the head of the document. 500,000 byte limit. Restricted to keyframe properties.
+- W znaczniku `<style amp-custom>` w sekcji nagłówka dokumentu. Limit wynosi 75 000 bajtów.
+- Stylami inline. Każde wystąpienie stylu inline ma limit 1000 bajtów. Style inline liczą się do limitu 75 000 bajtów znacznika `<style amp-custom>`.
+- W znaczniku `<style amp-keyframes>` w sekcji nagłówka dokumentu. Limit wynosi 500 000 bajtów. Ograniczony do właściwości ramek kluczowych.
 
 [/filter]
 
 [filter formats="ads"]
 
-- Within the `<style amp-custom>` tag inside the head of the document. 20,000 byte limit.
-- Inline styles. Each instance of an inline style has a 1,000 byte limit. Inline styles count towards the 20,000 byte `<style amp-custom>` limit.
-- Within the `<style amp-keyframes>` tag inside the head of the document. 500,000 byte limit. Restricted to keyframe properties.
+- W znaczniku `<style amp-custom>` w sekcji nagłówka dokumentu. Limit wynosi 20 000 bajtów.
+- Stylami inline. Każde wystąpienie stylu inline ma limit 1000 bajtów. Style inline liczą się do limitu 20 000 bajtów znacznika `<style amp-custom>`.
+- W znaczniku `<style amp-keyframes>` w sekcji nagłówka dokumentu. Limit wynosi 500 000 bajtów. Ograniczony do właściwości ramek kluczowych.
 
 [/filter]
 
-[tip type="read-on"] Read more in [Style & layout](../style_and_layout/index.md) about using CSS in AMP. [/tip]
+[tip type="read-on"] Więcej informacji o stosowaniu CSS w AMP zawiera artykuł [Styl i układ](../style_and_layout/index.md). [/tip]
 
-[filter formats="websites, stories"] To keep your pages lean and speedy, AMP has enforced a 75,000 byte CSS limit in the `<amp style-custom>` tag. While you can use this to define animation styles, the 500,000 bye limit inside of `<amp style-keyframes>` tag allows for more verbose animations that won't take away precious site style resources. [/filter]
+[filter formats="websites, stories"] Aby strony były lekkie i szybkie, AMP narzuca limit 75 000 bajtów kodu CSS w znaczniku `<amp style-custom>`. Można go użyć do zdefiniowania stylów animacji, ale limit 500 000 bajtów wewnątrz znacznika `<amp style-keyframes>` zezwala na bardziej skomplikowane animacje, które nie przeciążą cennych zasobów stylu strony. [/filter]
 
-[filter formats="ads"] To keep your ads lean and speedy, AMP has enforced a 20,000 byte CSS limit in the `<amp style-custom>` tag. While you can use this to define animation styles,the 500,000 bye limit inside of `<amp style-keyframes>` tag allows for more verbose animations that won't take away precious site style resources. [/filter]
+[filter formats="ads"] Aby strony były lekkie i szybkie, AMP narzuca limit 20 000 bajtów kodu CSS w znaczniku `<amp style-custom>`. Można go użyć do zdefiniowania stylów animacji, ale limit 500 000 bajtów wewnątrz znacznika `<amp style-keyframes>` zezwala na bardziej skomplikowane animacje, które nie przeciążą cennych zasobów stylu strony. [/filter]
 
 ```html
   <style amp-custom>
@@ -62,21 +62,21 @@ You can define CSS in AMP in the following ways:
 </body>
 ```
 
-## Adding, removing, and toggling classes
+## Dodawanie, usuwanie i przełączanie klas
 
-The AMP action, `toggleClass` enables the addition and removal of classes to defined elements.
+Działanie AMP `toggleClass` umożliwia dodawanie i usuwanie klas do i ze zdefiniowanych elementów.
 
 ```js
 elementName.toggleClass(class="className")
 ```
 
-You can toggle a class on the same element you'd like users to interact with, such as an animated hamburger menu.
+Możesz przełączyć klasę w tym samym elemencie, z którym użytkownicy mają wchodzić w interakcję, np. animowanym menu hamburger.
 
 ```html
  <div id="hamburger" tabindex=1 role=button on="tap:hamburger.toggleClass(class='close')">
 ```
 
-The `toggleClass` action can apply to other elements as well and toggle between two classes by adding the `force` attribute.
+Działanie `toggleClass` można stosować również do innych elementów, a dzięki dodaniu atrybutu `force` można przełączać się między dwiema klasami.
 
 ```html
 <button on="tap:magicBox.toggleClass(class='invisible', force=true),magicBox.toggleClass(class='visible', force=false)">
@@ -87,11 +87,11 @@ The `toggleClass` action can apply to other elements as well and toggle between 
 </button>
 ```
 
-If you need to remove a class and disallow reapplication, add the `force` attribute with a value of `false`. If you need to addd a class and disallow removal, add `force` with a value of `true`.
+Jeśli musisz usunąć klasę i uniemożliwić jej ponowne zastosowanie, dodaj atrybut `force` z wartością `false`. Jeśli chcesz dodać klasę i uniemożliwić jej usunięcie, dodaj atrybut `force` o wartości `true`.
 
-## Animate with CSS and state
+## Animacja przy użyciu CSS i stanów
 
-You can add and remove any number of CSS classes with states using [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
+Można dodawać i usuwać dowolną liczbę klas CSS przy użyciu stanów i składnika [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
 
 [example preview="top-frame" playground="true"]
 ```html
@@ -160,7 +160,7 @@ You can add and remove any number of CSS classes with states using [`amp-bind`](
 ```
 [/example]
 
-Define multiple class animations by first adding a list of CSS classes within the `<style amp-custom>` tag in the `head` of the document:
+Zdefiniuj animacje wielu klas, dodając najpierw listę klas CSS w znaczniku `<style amp-custom>` w sekcji `head`:
 
 ```css
     .visible {
@@ -177,7 +177,7 @@ Define multiple class animations by first adding a list of CSS classes within th
     }
 ```
 
-Then pair each class with a state:
+Następnie sparuj każdą klasę ze stanem:
 
 ```html
 <amp-state id="magicBox">
@@ -200,13 +200,13 @@ Then pair each class with a state:
 </amp-state>
 ```
 
-And link the element with the classes:
+Następnie powiąż element z klasami:
 
 ```html
   <div [class]="magicBox[animateBox].className"> </div>
 ```
 
-The states change from a linked AMP action or event. The following example changes the state from user interaction:
+Stany zmieniają się w wyniku powiązanego działania lub zdarzenia AMP. W poniższym przykładzie stan zmienia się wskutek interakcji z użytkownikiem:
 
 ```html
 <button on="tap:AMP.setState({animateBox: 'invisibleBox'})">
@@ -223,4 +223,4 @@ The states change from a linked AMP action or event. The following example chang
 </button>
 ```
 
-Using [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) in this way set the class explicitly to the defined class. You will not have to tell it to remove other classes.
+Użycie składnika [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) w ten sposób jawnie ustawia zdefiniowaną klasę. Nie trzeba stosować instrukcji usunięcia innych klas.
