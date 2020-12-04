@@ -376,7 +376,7 @@ Na przykład w AMP możliwe jest:
   </tr>
   <tr>
     <td><code>scrollTo(duration=INTEGER, position=STRING)</code></td>
-    <td>Scrolls an element into view with a smooth animation.<br>     <code>duration</code> is optional. Specifies the length of the animation in milliseconds. If unspecified, an amount relative to scroll difference     under or equal to 500 milliseconds is used.<br>     <code>position</code> is optional. One of <code>top</code>, <code>center</code>     or <code>bottom</code> (default <code>top</code>).     Specifies the position of the element relative to the viewport after     scrolling.<br>     As an accessibility best practice, pair this with a call to <code>focus()</code> to focus on the element being scrolled to.</td>
+    <td>Przewija element do widoku z płynną animacją.<br>Parametr <code>duration</code> jest opcjonalny. Określa długość animacji w milisekundach. Jeśli nie jest określony, używana jest wartość względna różnicy przewijania, równa 500 milisekundom lub mniejsza.<br>Atrybut <code>position</code> jest opcjonalny. Jeden z następujących: <code>top</code>, <code>center</code> lub <code>bottom</code>. (domyślnie <code>top</code>)). Określa pozycję elementu po przewinięciu względem okienka ekranu.</td>
   </tr>
   <tr>
     <td><code>focus</code></td>
