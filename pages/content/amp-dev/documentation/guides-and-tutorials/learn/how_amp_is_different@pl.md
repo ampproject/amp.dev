@@ -1,8 +1,13 @@
 ---
-$title: Czym różni się AMP (do ustalenia)
-$order: 0
+"$title": How AMP is different (TBD)
+"$order": '0'
+formats:
+- websites
+- email
+- stories
+- ads
 author: pbakaus
-draft: true
+draft: 'true'
 ---
 
 Strony AMP mogą korzystać z wielu funkcji PWA samodzielnie, pod warunkiem, że są serwowane z Twojego źródła pochodzenia (domeny Twojej witryny), a nie z serwerów buforujących AMP Cache. To znaczy, że funkcje PWA nie będą działać w razie pobrania strony AMP z platform takich, jak Google czy Bing, ale będą działać po przejściu dalej lub gdy użytkownicy będą przechodzić bezpośrednio do stron AMP.
@@ -15,31 +20,32 @@ Atrybut `on` służy do instalowania programów obsługi zdarzeń w elementach. 
 
 Wartość do składni jest prostym, zależnym od domeny językiem formularza:
 
-[sourcecode:javascript] eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
+[sourcecode:javascript]
+eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
 
-Opisy poszczególnych części składni znajdują się w poniższej tabeli.
+See the table below for descriptions of each part of the syntax.
 
-[tip type="note"] **Typ: uwaga**
+[tip type="note"] **Type: Note**
 
 Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. [/tip]
 
-Wydanie z kanału AMP Dev **&nbsp;może być mniej stabilne** i może zawierać funkcje niedostępne dla wszystkich użytkowników. Wybierz je, jeśli chcesz pomóc w testowaniu nowych wersji AMP, zgłaszaniu błędów lub tworzeniu dokumentów wymagających nowej funkcji, która nie jest jeszcze dostępna dla wszystkich.
+The AMP Dev Channel release **may be less stable** and it may contain features not available to all users. Opt into this option if you'd like to help test new versions of AMP, report bugs or build documents that require a new feature that is not yet available to everyone.
 
-Dev Channel to świetny wybór:
+Opting into Dev Channel is great to:
 
-- do testowania i zabawy nowymi funkcjami, które nie są jeszcze dostępne dla wszystkich użytkowników.
-- do stosowania w zapewnieniu jakości (QA) w celu zapewnienia, że witryna jest zgodna z następną wersją AMP.
+- test and play with new features not yet available to all users.
+- use in quality assurance (QA) to ensure that your site is compatible with the next version of AMP.
 
-[tip type="important"] **Typ: ważne**
+[tip type="important"] **Type: Important**
 
 Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est. [/tip]
 
-Ten przewodnik wyjaśnia wszystkie szczegóły techniczne i najlepsze praktyki, które należy znać, aby z powodzeniem tworzyć relacje internetowe za pomocą AMP.
+This guide explains all the technical details and best practice you should know to successfully create Web Stories with AMP.
 
 ## Prawidłowy AMP
 
-Relacja internetowa to pod względem technicznym pojedyncza strona utworzona przy użyciu AMP i zgodna ze specyfikacją AMP:
+A Web Story is technically a single web page built with AMP and adheres to AMP specifications:
 
-[tip type="read-on"] **Typ: czytaj dalej**
+[tip type="read-on"] **Type: Read on**
 
 Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. At vero eos et accusam et justo duo dolores et ea rebum. [/tip]
