@@ -1,5 +1,5 @@
 ---
-"$title": How AMP is different (TBD)
+"$title": Czym różni się AMP (do ustalenia)
 "$order": '0'
 formats:
 - websites
@@ -23,29 +23,29 @@ Wartość do składni jest prostym, zależnym od domeny językiem formularza:
 [sourcecode:javascript]
 eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
 
-See the table below for descriptions of each part of the syntax.
+Opisy poszczególnych części składni znajdują się w poniższej tabeli.
 
-[tip type="note"] **Type: Note**
+[tip type="note"] Uwaga [/tip]
 
 Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. [/tip]
 
-The AMP Dev Channel release **may be less stable** and it may contain features not available to all users. Opt into this option if you'd like to help test new versions of AMP, report bugs or build documents that require a new feature that is not yet available to everyone.
+Wydanie z kanału AMP Dev <strong>&nbsp;może być mniej stabilne</strong> i może zawierać funkcje niedostępne dla wszystkich użytkowników. Wybierz je, jeśli chcesz pomóc w testowaniu nowych wersji AMP, zgłaszaniu błędów lub tworzeniu dokumentów wymagających nowej funkcji, która nie jest jeszcze dostępna dla wszystkich.
 
-Opting into Dev Channel is great to:
+Dev Channel to świetny wybór:
 
-- test and play with new features not yet available to all users.
-- use in quality assurance (QA) to ensure that your site is compatible with the next version of AMP.
+- do testowania i zabawy nowymi funkcjami, które nie są jeszcze dostępne dla wszystkich użytkowników.
+- do stosowania w zapewnieniu jakości (QA) w celu zapewnienia, że witryna jest zgodna z następną wersją AMP.
 
-[tip type="important"] **Type: Important**
+[tip type="important"] Ważne [/tip]
 
 Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est. [/tip]
 
-This guide explains all the technical details and best practice you should know to successfully create Web Stories with AMP.
+Ten przewodnik wyjaśnia wszystkie szczegóły techniczne i najlepsze praktyki, które należy znać, aby z powodzeniem tworzyć relacje internetowe za pomocą AMP.
 
 ## Prawidłowy AMP
 
-A Web Story is technically a single web page built with AMP and adheres to AMP specifications:
+Relacja internetowa to pod względem technicznym pojedyncza strona utworzona przy użyciu AMP i zgodna ze specyfikacją AMP:
 
-[tip type="read-on"] **Type: Read on**
+[tip type="read-on"] Czytaj dalej [/tip]
 
 Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. At vero eos et accusam et justo duo dolores et ea rebum. [/tip]
