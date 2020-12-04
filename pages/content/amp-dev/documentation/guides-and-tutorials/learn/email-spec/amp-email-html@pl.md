@@ -1,9 +1,11 @@
 ---
-$title: Kod HTML obsługiwany przez AMP dla poczty e-mail
-order: 4
+"$title": Kod HTML obsługiwany przez AMP dla poczty e-mail
+order: '4'
+formats:
+- email
 teaser:
-  text: "Uwaga: niniejszy wykaz nie ma charakteru normatywnego i służy wyłącznie do celów informacyjnych. Miarodajne są reguły narzędzia AMP Validator"
-toc: true
+  text: 'Note: This list is non-normative and is for reference purposes only. The AMP Validator rules are authoritative'
+toc: 'true'
 ---
 
 <!--
