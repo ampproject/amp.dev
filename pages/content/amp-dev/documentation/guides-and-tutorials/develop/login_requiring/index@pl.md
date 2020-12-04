@@ -1,9 +1,11 @@
 ---
-$title: Tworzenie strony AMP wymagającej zalogowania
-$order: 0
+"$title": Tworzenie strony AMP wymagającej zalogowania
+"$order": '0'
 description: Niektóre interakcje użytkownika z daną stroną, takie jak pozostawienie komentarza, mogą być uwarunkowane przez przepływ logowania. Możesz zaimplementować przepływ logowania...
-numbered: 1
-$hidden: true
+numbered: '1'
+"$hidden": 'true'
+formats:
+- websites
 ---
 
 Niektóre interakcje użytkownika z daną stroną, takie jak pozostawienie komentarza, mogą być uwarunkowane przez przepływ logowania. Możesz zaimplementować przepływ logowania za pomocą AMP, stosując składnik [`amp-access`](../../../../documentation/components/reference/amp-access.md) w połączeniu ze składnikiem [`amp-form`](../../../../documentation/components/reference/amp-form.md).
