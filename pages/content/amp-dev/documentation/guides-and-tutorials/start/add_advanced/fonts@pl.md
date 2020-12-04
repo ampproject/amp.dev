@@ -1,7 +1,7 @@
 ---
-$title: Dodawanie czcionek
-$order: 6
-description: "Niestandardowe czcionki można osadzić w stronie AMP na dwa sposoby: 1. Za pomocą znacznika <link>: tylko czcionki z listy dozwolonych dostawców czcionek. 2. Poprzez użycie ..."
+"$title": Dodawanie czcionek
+"$order": '6'
+description: 'Niestandardowe czcionki można osadzić w stronie AMP na dwa sposoby: 1. Za pomocą znacznika <link>: tylko czcionki z listy dozwolonych dostawców czcionek. 2. Poprzez użycie ...'
 ---
 
 W AMP, aby maksymalnie skrócić czas ładowania dokumentów, nie można dołączać zewnętrznych arkuszy stylów. Jest jednak jeden wyjątek od tej reguły — **czcionki**.
