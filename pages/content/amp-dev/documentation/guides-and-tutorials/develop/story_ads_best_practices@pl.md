@@ -238,16 +238,12 @@ Do kodowania filmów i dostosowywania jakości wideo podczas kodowania można u�
   </thead>
   <tbody>
     <tr>
-     <td>
-<a href="https://www.ffmpeg.org/about.html">FFmpeg</a>
-     </td>
+     <td><a href="https://www.ffmpeg.org/about.html">FFmpeg</a></td>
      <td>Zalecane optymalizacje:       <ul>         <li>Do MP4 używaj <code>-crf 23</code>.</li>         <li>Do WEBM używaj <code>-b:v 1M</code>.</li>       </ul>
 </td>
     </tr>
     <tr>
-     <td>
-<a href="https://libav.org/avconv.html">avconv</a>
-     </td>
+     <td><a href="https://libav.org/avconv.html">avconv</a></td>
      <td>Zalecane optymalizacje:       <ul>         <li>Do MP4 używaj <code>-crf 23</code>.</li>         <li>Do WEBM używaj <code>-b:v 1M</code>.</li>       </ul>
 </td>
     </tr>
