@@ -1,9 +1,14 @@
 ---
-$title: Typy dokumentacji
-$order: 1
+"$title": Typy dokumentacji
+"$order": '1'
 description: Typy dokumentacji akceptowane na amp.dev
+formats:
+- websites
+- stories
+- ads
+- email
 author: CrystalOnScript
-toc: false
+toc: 'false'
 ---
 
 Poniżej znajduje się krótki opis typów dokumentacji akceptowanych na amp.dev:
@@ -100,10 +105,10 @@ Przykłady amp.dev:
 <table>
   <tr>
    <td>
-<strong>Dobrze</strong>
+<strong>Do</strong>
    </td>
    <td>
-<strong>Źle</strong>
+<strong>Don’t</strong>
    </td>
   </tr>
   <tr>
@@ -137,10 +142,10 @@ Przykłady amp.dev:
 <table>
   <tr>
    <td>
-<strong>Dobrze</strong>
+<strong>Do</strong>
    </td>
    <td>
-<strong>Źle</strong>
+<strong>Don’t</strong>
    </td>
   </tr>
   <tr>
@@ -172,10 +177,10 @@ Dokumenty referencyjne amp.dev znajdują się w [katalogu składników AMP](../.
 <table>
   <tr>
    <td>
-<strong>Dobrze</strong>
+<strong>Do</strong>
    </td>
    <td>
-<strong>Źle</strong>
+<strong>Don’t</strong>
    </td>
   </tr>
   <tr>
