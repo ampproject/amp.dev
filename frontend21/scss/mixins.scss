@@ -26,7 +26,7 @@
 
 @mixin ci-stories {
   background: linear-gradient(225deg, color('clementine') 0%, color('school-bus') 75%);
-  color: color('river-bed');
+  color: color('charade');
 
   svg {
     fill: currentColor;
@@ -44,7 +44,7 @@
 
 @mixin ci-e-mails {
   background: linear-gradient(225deg, color('japan-laurel') 0%, color('confetti') 75%);
-  color: color('river-bed');
+  color: color('charade');
 
   svg {
     fill: currentColor;
