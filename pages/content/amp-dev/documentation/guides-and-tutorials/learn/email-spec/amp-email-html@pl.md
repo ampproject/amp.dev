@@ -4,7 +4,7 @@ order: '4'
 formats:
 - email
 teaser:
-  text: 'Note: This list is non-normative and is for reference purposes only. The AMP Validator rules are authoritative'
+  text: '"Uwaga: niniejszy wykaz nie ma charakteru normatywnego i służy wyłącznie do celów informacyjnych. Miarodajne są reguły narzędzia AMP Validator"'
 toc: 'true'
 ---
 
