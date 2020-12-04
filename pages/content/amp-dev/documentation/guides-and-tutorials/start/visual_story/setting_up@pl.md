@@ -1,6 +1,6 @@
 ---
-$title: Konfigurowanie
-$order: 1
+"$title": Konfigurowanie
+"$order": '1'
 description: Skonfiguruj swoje środowisko programistyczne Krok 1. Pobierz kod. Pobierz przykładowy kod samouczka w postaci pliku ZIP lub poprzez git...
 author: bpaduch
 ---
