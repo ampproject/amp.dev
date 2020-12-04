@@ -1,6 +1,6 @@
 ---
-$title: Tworzenie powłoki dla reklamy
-$order: 0
+"$title": Tworzenie powłoki dla reklamy
+"$order": '0'
 description: Za pomocą swojego ulubionego edytora tekstów utwórz plik HTML o nazwie my-amphtml-ad.html. Skopiuj do tego pliku następujący znacznik HTML...
 ---
 
