@@ -1,7 +1,10 @@
 ---
-$title: "Analityka: podstawy"
-$order: 0
-description: "AMP oferuje dwa składniki spełniające potrzeby analityczne i pomiarowe: amp-pixel i amp-analytics. Obie opcje wysyłają dane analityczne do zdefiniowanego punktu końcowego."
+"$title": 'Analityka: podstawy'
+"$order": '0'
+description: 'AMP oferuje dwa składniki spełniające potrzeby analityczne i pomiarowe: amp-pixel i amp-analytics. Obie opcje wysyłają dane analityczne do zdefiniowanego punktu końcowego.'
+formats:
+- websites
+- stories
 ---
 
 Zacznij tutaj, aby poznać podstawy analityki AMP.
