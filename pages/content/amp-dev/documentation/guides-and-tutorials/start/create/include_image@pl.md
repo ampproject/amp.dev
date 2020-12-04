@@ -15,4 +15,4 @@ Oto kod wymagany do osadzenia obrazu na stronie, pokazujący jak mogą wygląda�
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-[tip type="read-on"] **READ ON –** To learn why we’re replacing tags like `<img>` with [`<amp-img>`](../../../../documentation/components/reference/amp-img.md), and how many are available, visit [Include Images & Video](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md). [/tip]
+[tip type="read-on"] <strong>CZYTAJ DALEJ —</strong> aby dowiedzieć się, dlaczego zastępujemy znaczniki takie jak <code><img></code> znacznikiem <a><code><amp-img></code></a> i ile ich jest dostępnych, odwiedź stronę <a>Dodawanie obrazów i filmów</a>. [/tip]
