@@ -1,6 +1,6 @@
 ---
-$title: Sprawianie, by Twoje strony można było odnaleźć
-$order: 3
+"$title": Sprawianie, by Twoje strony można było odnaleźć
+"$order": '3'
 description: Skonfigurowanie tego dwukierunkowego powiązania jest konieczne, aby wyszukiwarki mogły zrozumieć związek między naszym zwykłym kanonicznym dokumentem HTML, a dokumentem AMP.
 ---
 
