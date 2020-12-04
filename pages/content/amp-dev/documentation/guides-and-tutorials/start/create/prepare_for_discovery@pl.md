@@ -1,36 +1,36 @@
 ---
-"$title": Prepare your page for discovery and distribution
+"$title": Przygotowywanie strony do odnajdywania i dystrybucji
 "$order": '4'
-description: 'In some cases, you might want to have both a non-AMP and an AMP version of the same page, for example, a news article. Consider this: If Google Search ...'
+description: 'W niektórych przypadkach można serwować zarówno wersję tej samej strony bez AMP jak i z AMP, na przykład artykuł informacyjny. Rozważ to: jeśli wyszukiwarka Google...'
 author: pbakaus
 contributors:
 - bpaduch
 ---
 
-In some cases, you might want to have both a non-AMP and an AMP version of the same page, for example, a news article. Consider this: If Google Search finds the non-AMP version of that page, *how does it know there’s a "paired" AMP version of it*?
+W niektórych przypadkach można serwować zarówno wersję tej samej strony bez AMP jak i z AMP, na przykład artykuł informacyjny. Rozważ to: jeśli wyszukiwarka Google znajdzie wersję tej strony bez AMP, *skąd ma wiedzieć, że istnieje wersja AMP*?
 
-## Linking pages with `<link>`
+## Powiązywanie stron znacznikami `<link>`
 
-To establish that a non-AMP page and an AMP page should be treated as being "paired" together, we add information about the AMP page to the non-AMP page and vice versa, in the form of `<link>` tags in the `<head>`.
+Aby wskazać, że strona bez AMP i strona AMP powinny być traktowane jako „sparowane”, dodajemy informację o stronie AMP do strony bez AMP i odwrotnie za pomocą znaczników `<link>` w sekcji `<head>`.
 
-Add the following to the non-AMP page:
+Do strony bez AMP dodaj:
 
 [sourcecode:html]
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-And this to the AMP page:
+Do strony AMP dodaj to:
 
 [sourcecode:html]
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
-## What if I only have one page?
+## Co zrobić, jeśli mam tylko jedną stronę?
 
-If you only have one page, and that page is an AMP page, you must still add the canonical link to it, which will then simply point to itself:
+Jeśli masz tylko jedną stronę i jest to strona AMP, musisz dodać do niej link kanoniczny, wskazujący na nią samą:
 
 [sourcecode:html]
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-[tip type="read-on"] **READ ON –** Learn more about how Google finds AMP pages in [Google Search guidelines for AMP pages](https://support.google.com/webmasters/answer/6340290). [/tip]
+[tip type="read-on"] **CZYTAJ DALEJ —** dowiedz się więcej o tym, jak Google znajduje strony AMP w [wytycznych wyszukiwarki Google dotyczących stron AMP)](https://support.google.com/webmasters/answer/6340290). [/tip]
