@@ -1,15 +1,15 @@
 ---
-"$title": Modify presentation and layout
+"$title": Modyfikacja prezentacji i układu
 "$order": '3'
-description: "AMP pages are web pages; any styling to the page and its elements is done using common CSS properties. Style elements using class or element selectors ..."
+description: "Strony AMP są stronami internetowymi; dowolna stylizacja strony i jej elementów odbywa się za pomocą wspólnych właściwości CSS. Do stylizowania elementów służą selektory klas lub elementów..."
 author: pbakaus
 contributors:
 - bpaduch
 ---
 
-## Modify the presentation
+## Modyfikowanie prezentacji
 
-AMP pages are web pages; any styling to the page and its elements is done using common CSS properties. Style elements using class or element selectors in an embedded stylesheet in the `<head>`, called `<style amp-custom>`:
+Strony AMP są stronami internetowymi; dowolna stylizacja strony i jej elementów odbywa się za pomocą wspólnych właściwości CSS. Do stylizowania elementów służą selektory klas lub elementów w arkuszu stylów osadzonym w sekcji `<head>`, o nazwie `<style amp-custom>`:
 
 [sourcecode:html]
 <style amp-custom>
@@ -24,10 +24,10 @@ AMP pages are web pages; any styling to the page and its elements is done using 
 </style>
 [/sourcecode]
 
-Every AMP page can only have a single embedded stylesheet and inline styles, but there are certain selectors you’re not allowed to use. [Learn all about styling](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).
+Każda strona AMP może mieć tylko jeden wbudowany arkusz stylów i style inline, ale niektórych selektorów nie wolno używać. [Dowiedz się wszystkiego o stylizacji](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).
 
-## Control the layout
+## Sterowanie układem
 
-AMP follows stricter rules when laying out elements on the page. On a normal HTML page, you almost exclusively use CSS to lay out elements. But for performance reasons, AMP requires all elements to have an explicit size set from the get-go.
+Przy układaniu elementów na stronie AMP stosowane są bardziej rygorystyczne zasady. Na zwykłej stronie HTML do rozmieszczania elementów używasz prawie wyłącznie CSS. Ze względu na wydajność AMP wymaga natomiast, aby wszystkie elementy miały od początku jawnie określony rozmiar.
 
-[tip type="read-on"] **READ ON –** Learn all about how AMP renders and layouts a page and how you can modify the layout in [Layout & Media queries](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md). [/tip]
+[tip type="read-on"] **CZYTAJ DALEJ —** dowiedz się wszystkiego o sposobie, w jaki AMP renderuje stronę i generuje jej układ oraz o możliwościach modyfikowania układu z artykułu [Zapytania o układ i media](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md). [/tip]
