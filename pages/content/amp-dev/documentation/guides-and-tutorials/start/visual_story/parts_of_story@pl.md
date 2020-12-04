@@ -1,18 +1,18 @@
 ---
-$title: Opis części relacji AMP
-$order: 2
-description: Relacja internetowa to pełnoekranowy storytelling wizualny, przekazujące informacje za pomocą obrazów, filmów, grafiki, dźwięku i innych elementów. Jest to idealne rozwiązanie dla użytkowników...
+"$title": Understanding the parts of an AMP story
+"$order": '2'
+description: "A Web Story is a full-screen visual storytelling experience that conveys information with images, videos, graphics, audio, and more. It's perfect for users ..."
 author: bpaduch
 ---
 
-Relacja internetowa to pełnoekranowy storytelling wizualny, przekazujące informacje za pomocą obrazów, filmów, grafiki, dźwięku i innych elementów. Jest to idealne rozwiązanie dla użytkowników chcących serwować małe, lecz bogate wizualnie kąski treści.
+A Web Story is a full-screen visual storytelling experience that conveys information with images, videos, graphics, audio, and more. It's perfect for users who want bite-sized, visually-rich content.
 
-Podstawowymi składnikami relacji internetowych są pojedyncze **strony**. Strony te z kolei składają się z pojedynczych **warstw**, zawierających podstawowe **elementy** HTML i AMP.
+The basic ingredients that go into an Web Story are individual **pages**. These pages, in turn, are composed of individual **layers** that contain basic HTML and AMP **elements**.
 
 {{ image('/static/img/docs/tutorials/amp_story/story_parts.png', 1047, 452, align='center ninety') }}
 
-Każdy z tych składników jest tłumaczony na składniki AMP: relację reprezentuje składnik [`amp-story`](../../../../documentation/components/reference/amp-story.md), stronę reprezentuje składnik `amp-story-page`, a warstwy reprezentuje składnik `amp-story-grid-layer`.
+Each of those ingredients are translated into AMP components, where the story is represented by [`amp-story`](../../../../documentation/components/reference/amp-story.md), the page is represented by `amp-story-page`, and the layers are represented by `amp-story-grid-layer`.
 
 {{ image('/static/img/docs/amp-story-tag-hierarchy.png', 557, 355, align='center seventyfive' ) }}
 
-Zacznijmy tworzyć naszą relację internetową od kontenera [`amp-story`](../../../../documentation/components/reference/amp-story.md).
+Let's start creating our Web Story with the [`amp-story`](../../../../documentation/components/reference/amp-story.md) container.
