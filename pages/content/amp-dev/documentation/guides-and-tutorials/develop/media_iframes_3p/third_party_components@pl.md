@@ -1,7 +1,7 @@
 ---
-"$title": Include third-party content
+"$title": Dodawanie zawartości stron trzecich
 "$order": '9'
-description: Learn how to include third-party components in your pages ...
+description: Dowiedz się jak dodać składniki stron trzecich do swoich stron internetowych...
 formats:
 - websites
 components:
@@ -13,20 +13,20 @@ contributors:
 - bpaduch
 ---
 
-Learn how to include third-party components in your pages.
+Dowiedz się, jak dodać składniki stron trzecich do swoich stron internetowych.
 
-## Embed a Tweet
+## Osadzanie tweeta
 
-Embed a  Tweet from Twitter in your page by using the [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) element.
+Aby osadzić tweet z Twittera w swojej stronie, użyj elementu [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md).
 
-To embed a tweet in your page, first include the following script in the `<head>`:
+Aby osadzić tweet w swojej stronie, należy najpierw umieścić następujący skrypt w sekcji `<head>`:
 
 [sourcecode:html]
 <script async custom-element="amp-twitter"
   src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
 [/sourcecode]
 
-Currently, tweets are automatically proportionally scaled to fit the provided size, but this may yield less than the ideal appearance. Manually tweak the provided width and height or use the media attribute to select the aspect ratio based on screen width.
+Obecnie tweety są automatycznie skalowane proporcjonalnie, aby dopasować je do podanego rozmiaru, ale może to skutkować wyglądem mniej niż idealnym. Ręcznie dostosuj dostarczoną szerokość i wysokość lub użyj atrybutu media, aby wybrać proporcje zależne od szerokości ekranu.
 
 [example preview="inline" playground="true" imports="amp-twitter:0.1"]
 ```html
@@ -38,20 +38,20 @@ Currently, tweets are automatically proportionally scaled to fit the provided si
 ```
 [/example]
 
-[tip type="tip"] **TIP –** See more [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) examples at [AMP By Example](../../../../documentation/examples/documentation/amp-twitter.html). [/tip]
+[tip type="tip"] **PORADA —** więcej przykładów użycia składnika [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) znajdziesz w sekcji [AMP By Example](../../../../documentation/examples/documentation/amp-twitter.html). [/tip]
 
-## Embed an Instagram
+## Osadzanie Instagrama
 
-Embed an Instagram in your page by using the [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) element.
+Aby osadzić Instagram w swojej stronie, użyj elementu [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md).
 
-To embed an Instagram, first include the following script in the `<head>`:
+Aby osadzić Instagram, należy najpierw umieścić następujący skrypt w sekcji `<head>`:
 
 [sourcecode:html]
 <script async custom-element="amp-instagram"
   src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
 [/sourcecode]
 
-Include the Instagram data-shortcode found in the Instagram photo URL. For example, in `https://instagram.com/p/fBwFP`, `fBwFP` is the data-shortcode. Also, Instagram uses a fixed aspect ratio for responsive layouts, so the value for width and height should be universal.
+Dodaj szortkod danych Instagrama, znajdujący się w adresie URL zdjęcia z Instagrama. Na przykład w adresie `https://instagram.com/p/fBwFP`, szortkodem danych jest `fBwFP`. Ponadto Instagram stosuje stały współczynnik proporcji dla układów responsywnych, więc wartość szerokości i wysokości powinna być uniwersalna.
 
 [example preview="inline" playground="true" imports="amp-instagram:0.1"]
 ```html
@@ -63,22 +63,22 @@ Include the Instagram data-shortcode found in the Instagram photo URL. For examp
 ```
 [/example]
 
-[tip type="tip"] **TIP –** See more [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) examples at [AMP By Example](../../../../documentation/examples/documentation/amp-instagram.html). [/tip]
+[tip type="tip"] **PORADA —** więcej przykładów użycia składnika [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) znajdziesz w sekcji [AMP By Example](../../../../documentation/examples/documentation/amp-instagram.html). [/tip]
 
-## Display a Facebook post or video
+## Wyświetlanie wpisu lub filmu z Facebooka
 
-Display a Facebook post or video in your page by using the [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) element.
+Aby wyświetlić na swojej stronie wpis lub film z Facebooka, użyj elementu [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md).
 
-You must include the following script in the `<head>`:
+Najpierw musisz umieścić następujący skrypt w sekcji `<head>`:
 
 [sourcecode:html]
 <script async custom-element="amp-facebook"
   src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
 [/sourcecode]
 
-##### Example: Embedding a post
+##### Przykład: osadzanie wpisu
 
-Source:
+Źródło:
 
 ```html
 <amp-facebook width="486" height="657"
@@ -87,11 +87,11 @@ Source:
 </amp-facebook>
 ```
 
-Preview: <amp-facebook width="486" height="657" layout="responsive" data-href="https://www.facebook.com/zuck/posts/10102593740125791"> </amp-facebook>
+Podgląd: {amp-facebook0} {/amp-facebook0}
 
-##### Example: Embedding a video
+##### Przykład: osadzanie filmu
 
-Source:
+Źródło:
 
 ```html
 <amp-facebook width="476" height="316"
@@ -101,24 +101,24 @@ Source:
 </amp-facebook>
 ```
 
-Preview: <amp-facebook width="476" height="316" layout="responsive" data-embed-as="video" data-href="https://www.facebook.com/nasaearth/videos/10155187938052139"> </amp-facebook>
+Podgląd: {amp-facebook0} {/amp-facebook0}
 
-[tip type="tip"] **TIP –** See more [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) examples at [AMP By Example](../../../../documentation/examples/documentation/amp-facebook.html). [/tip]
+[tip type="tip"] **PORADA —** więcej przykładów użycia składnika [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) znajdziesz w sekcji [AMP By Example](../../../../documentation/examples/documentation/amp-facebook.html). [/tip]
 
-## Embed a YouTube video
+## Osadzanie filmu z YouTube
 
-Embed a YouTube video in your page by using the [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) element.
+Aby osadzić film z YouTube w swojej stronie, użyj elementu [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md).
 
-You must include the following script in the `<head>`:
+Najpierw musisz umieścić następujący skrypt w sekcji `<head>`:
 
 [sourcecode:html]
 <script async custom-element="amp-youtube"
   src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 [/sourcecode]
 
-The YouTube `data-videoid` can be found in every YouTube video page URL. For example, in `https://www.youtube.com/watch?v=Z1q71gFeRqM`, `Z1q71gFeRqM` is the video id.
+Identyfikator `data-videoid` YouTube jest zawarty w każdym adresie URL filmu na YouTube. Na przykład w adresie `https://www.youtube.com/watch?v=Z1q71gFeRqM` identyfikatorem filmu jest ciąg `Z1q71gFeRqM`.
 
-Use `layout="responsive"` to yield correct layouts for 16:9 aspect ratio videos:
+Użyj atrybutu `layout="responsive"` aby uzyskać poprawne układy dla filmów o współczynniku proporcji 16:9:
 
 [example preview="inline" playground="true" imports="amp-youtube:0.1"]
 ```html
@@ -130,15 +130,15 @@ Use `layout="responsive"` to yield correct layouts for 16:9 aspect ratio videos:
 ```
 [/example]
 
-[tip type="tip"] **TIP –** See more [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) examples at [AMP By Example](../../../../documentation/examples/documentation/amp-youtube.html). [/tip]
+[tip type="tip"] **PORADA —** więcej przykładów użycia składnika [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) znajdziesz w sekcji [AMP By Example](../../../../documentation/examples/documentation/amp-youtube.html). [/tip]
 
-## Display an ad
+## Wyświetlanie reklamy
 
-Display an ad in your page by using the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) element. Only ads served via HTTPS are supported.
+Aby wyświetlać na stronie reklamę, użyj elementu [`amp-ad`](../../../../documentation/components/reference/amp-ad.md). Obsługiwane są tylko reklamy serwowane za pomocą protokołu HTTPS.
 
-No ad network-provided JavaScript is allowed to run inside the AMP document. Instead, the AMP runtime loads an iframe from a different origin (via iframe sandbox) and executes the ad network’s JS inside that iframe sandbox.
+Uruchamianie wewnątrz dokumentu AMP kodu JavaScript dostarczonego przez sieć reklamową jest niedozwolone. Zamiast tego, środowisko uruchomieniowe AMP ładuje ramkę iframe z innego źródła (poprzez piaskownicę iframe) i wykonuje JS sieci reklamowej w tej piaskownicy iframe.
 
-You must specify the ad width and height, and the ad network type. The `type` identifies the ad network's template. Different ad types require different `data-*` attributes.
+Musisz określić szerokość i wysokość reklamy oraz typ sieci reklamowej. Element `type` identyfikuje szablon sieci reklamowej. Różne typy reklam wymagają różnych atrybutów `data-*`.
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
@@ -153,7 +153,7 @@ You must specify the ad width and height, and the ad network type. The `type` id
 ```
 [/example]
 
-If supported by the ad network, include a `placeholder` to be shown if no ad is available:
+Jeśli jest to obsługiwane przez sieć, należy dodać `placeholder`, aby wyświetlać element zastępczy, jeśli reklama jest niedostępna:
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
@@ -169,6 +169,6 @@ If supported by the ad network, include a `placeholder` to be shown if no ad is 
 ```
 [/example]
 
-AMP supports a wide range of ad networks. See the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)  for a full list.
+AMP obsługuje szeroką gamę sieci reklamowych. Pełna lista — patrz składnik [`amp-ad`](../../../../documentation/components/reference/amp-ad.md).
 
-[tip type="read-on"] **READ ON –** Learn more about ads in the [Serving Ads on AMP](../../../../documentation/guides-and-tutorials/develop/monetization/index.md) guide. [/tip]
+[tip type="read-on"] **CZYTAJ DALEJ —** dowiedz się więcej o reklamach z przewodnika [Serwowanie reklam na stronach AMP](../../../../documentation/guides-and-tutorials/develop/monetization/index.md). [/tip]
