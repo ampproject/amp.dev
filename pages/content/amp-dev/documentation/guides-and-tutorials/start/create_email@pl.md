@@ -1,8 +1,10 @@
 ---
-$title: Utwórz swoją pierwszą wiadomość e-mail AMP
-$order: 0
+"$title": Utwórz swoją pierwszą wiadomość e-mail AMP
+"$order": '0'
 description: Dowiedz się, co odróżnia wiadomości e-mail AMP, tworząc swoją pierwszą wiadomość.
-tutorial: true
+tutorial: 'true'
+formats:
+- email
 author: CrystalOnScript
 ---
 
