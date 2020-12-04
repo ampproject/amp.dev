@@ -1,7 +1,7 @@
 ---
-"$title": Layout & media queries
+"$title": Zapytania o układ i media
 "$order": '1'
-description: "AMP supports both media queries & element queries, plus comes with a powerful, built-in way to control the layout of individual elements. The layout attribute makes working with ..."
+description: AMP obsługuje zarówno zapytania o media, jak i o elementy, a do tego ma wbudowany, wydajny sposób kontroli układu poszczególnych elementów. Atrybut layout sprawia, że praca...
 formats:
 - websites
 - email
@@ -12,11 +12,11 @@ contributors:
 - pbakaus
 ---
 
-AMP supports both **media queries** & **element queries**, plus comes with a powerful, built-in way to control the **layout** of individual elements. The `layout` attribute makes working with and creating fully responsive design much easier than if you'd use CSS alone.
+AMP obsługuje zarówno **zapytania o media**, jak i **o elementy**, a do tego ma wbudowany, wydajny sposób kontroli **układu** poszczególnych elementów. Atrybut `layout` sprawia, że praca i tworzenie w pełni responsywnego projektu są o wiele łatwiejsze, niż gdyby używać samego CSS.
 
-## Responsive images, made easy
+## Obrazy responsywne, łatwe do wykonania
 
-Create responsive images by specifying the `width` and `height`, setting layout to `responsive`, and indicating with [`srcset`](art_direction.md) which image asset to use based on varying screen sizes:
+Twórz responsywne obrazy poprzez określenie atrybutów `width` i `height`, ustawienie układu na `responsive` i wskazanie zasobu obrazu do użycia za pomocą atrybutu [`srcset`](art_direction.md) w zależności od różnych rozmiarów ekranu:
 
 [sourcecode:html]
 <amp-img
@@ -30,126 +30,127 @@ Create responsive images by specifying the `width` and `height`, setting layout 
 </amp-img>
 [/sourcecode]
 
-This [`amp-img`](../../../../documentation/components/reference/amp-img.md) element automatically fits the width of its container element, and its height is automatically set to the aspect ratio determined by the given width and height. Try it out by resizing this browser window:
+Ten element [`amp-img`](../../../../documentation/components/reference/amp-img.md) automatycznie dopasowuje się do szerokości elementu jego kontenera, a jego wysokość jest automatycznie ustawiana na współczynnik proporcji wyznaczony przez daną szerokość i wysokość. Wypróbuj go, zmieniając rozmiar tego okna przeglądarki:
 
 <amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
 
 [tip type="tip"] **TIP –** See our side-by-side live demos of [`amp-img`](../../../../documentation/components/reference/amp-img.md): [Live Demos on AMP By Example](../../../../documentation/examples/documentation/amp-img.html?format=websites). [/tip]
 
-## The layout attribute <a name="the-layout-attribute"></a>
+## Atrybut layout <a name="the-layout-attribute"></a>
 
-The `layout` attribute gives you easy, per-element control over how your element should render on screen. Many of these things are possible with pure CSS – but they're much harder, and require a myriad of hacks. Use the `layout` attribute instead.
+Atrybut <code>layout</code> daje Ci łatwą kontrolę nad sposobem renderowania elementu na ekranie. Wiele z tych rzeczy jest możliwych dzięki czystemu CSS — jest to jednak znacznie trudniejsze i wymaga niezliczonych hacków. Lepiej zamiast tego użyć atrybutu <code>layout</code>.
 
-### Supported values for  the `layout` attribute
+### Obsługiwane wartości atrybutu `layout`
 
 The following values can be used in the `layout` attribute:
 
 <table>
   <thead>
     <tr>
-      <th data-th="Layout type" class="col-thirty">Layout type</th>
-      <th data-th="Width/height required" class="col-twenty">Width/<br>height required</th>
-      <th data-th="Behavior">Behavior</th>
+      <th data-th="Layout type" class="col-thirty">Typ atrybutu layout</th>
+      <th data-th="Width/height required" class="col-twenty">Szerokość / wysokość<br> wymagana</th>
+      <th data-th="Behavior">Sposób działania</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td data-th="Layout type"><code>nodisplay</code></td>
-      <td data-th="Description">No</td>
-      <td data-th="Behavior">Element not displayed. This layout can be applied to every AMP element. The component takes up zero space on the screen as if its display style was none. It’s assumed that the element can display itself on user action, for example, <a href="../../../../documentation/components/reference/amp-lightbox.md"><code>amp-lightbox</code></a>.</td>
+      <td data-th="Description">Nie</td>
+      <td data-th="Behavior">Element nie jest wyświetlany. Ten układ można zastosować do każdego elementu AMP. Element zajmuje zero miejsca na ekranie, tak jakby miał styl wyświetlania none. Zakłada się, że element może się wyświetlać wskutek działania użytkownika, na przykład <a href="../../../../documentation/components/reference/amp-lightbox.md"><code>amp-lightbox</code></a>.</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fixed</code></td>
-      <td data-th="Description">Yes</td>
-      <td data-th="Behavior">Element has a fixed width and height with no responsiveness supported. The only exceptions are <a href="../../../../documentation/components/reference/amp-pixel.md"><code>amp-pixel</code></a> and <a href="../../../../documentation/components/reference/amp-audio.md"><code>amp-audio</code></a> elements.</td>
+      <td data-th="Description">Tak</td>
+      <td data-th="Behavior">Element ma stałą szerokość i wysokość, bez obsługi responsywności. Jedynymi wyjątkami są elementy <a href="../../../../documentation/components/reference/amp-pixel.md"><code>amp-pixel</code></a> oraz <a href="../../../../documentation/components/reference/amp-audio.md"><code>amp-audio</code></a>.</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>responsive</code></td>
-      <td data-th="Description">Yes</td>
-      <td data-th="Behavior">Element sized to the width of its container element and resizes its height automatically to the aspect ratio given by width and height attributes. This layout works very well for most of AMP elements, including <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a>, <a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a>. Available space depends on the parent element and can also be customized using <code>max-width</code> CSS.<p><strong>Note</strong>: Elements with <code>"layout=responsive"</code> have no intrinsic size. The size of the element is determined from its container element. To ensure your AMP element displays, you must specify a width and height for the  containing element. Do not specify <code>"display:table"</code> on the containing element as this overrides the display of the AMP element, rendering the AMP element invisible.</p>
+      <td data-th="Description">Tak</td>
+      <td data-th="Behavior">Rozmiary elementu są ustawiane na szerokość elementu kontenera i automatycznie zmieniana jest wysokość elementu wg proporcji podanych przez atrybuty width i height. Układ ten działa bardzo dobrze w przypadku większości elementów AMP, w tym <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> i <a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a>. Dostępne miejsce zależy od elementu nadrzędnego i można je również dostosować za pomocą CSS <cod>max-width.<p><strong>Uwaga</strong>: elementy z atrybutem {code 7}"layout=responsive" nie mają własnego rozmiaru. Rozmiar elementu jest określany na podstawie elementu jego kontenera. Aby zapewnić wyświetlanie elementu AMP, należy określić szerokość i wysokość elementu zawierającego. Nie należy określać <code>"display:table"</code> w elemencie zawierającym, ponieważ unieważnia to wyświetlanie elementu AMP, czyniąc element AMP niewidocznym.</p></cod>
 </td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fixed-height</code></td>
-      <td data-th="Description">Height only</td>
-      <td data-th="Behavior">Element takes the space available to it but keeps the height unchanged. This layout works well for elements such as <a href="../../../../documentation/components/reference/amp-carousel.md"><code>amp-carousel</code></a> that involves content positioned horizontally. The <code>width</code> attribute must not be present or must be equal to <code>auto</code>.</td>
+      <td data-th="Description">Tylko wysokość</td>
+      <td data-th="Behavior">Element zajmuje dostępne dla niego miejsce, ale utrzymuje wysokość bez zmian. Ten układ działa dobrze w przypadku elementów takich jak <a href="../../../../documentation/components/reference/amp-carousel.md"><code>amp-carousel</code></a>, które zawierają treści rozmieszczone poziomo. Atrybut <code>width</code> nie może być obecny lub musi mieć wartość <code>auto</code>.</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fill</code></td>
-      <td data-th="Description">No</td>
-      <td data-th="Behavior">Element takes the space available to it, both width and height. In other words, the layout of a fill element matches its parent. For an element to fill its parent container, ensure the parent container specifies `position:relative` or `position:absolute`.</td>
+      <td data-th="Description">Nie</td>
+      <td data-th="Behavior">Element zajmuje dostępne miejsce, zarówno na szerokość jak i wysokość. Innymi słowy, układ elementu wypełniającego odpowiada jego elementowi nadrzędnemu. Aby element wypełnił swój kontener nadrzędny, kontener ten musi mieć właściwość `position:relative` albo `position:absolute`.</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>container</code></td>
-      <td data-th="Description">No</td>
-      <td data-th="Behavior">Element lets its children define its size, much like a normal HTML <code>div</code>. The component is assumed to not have specific layout itself but only act as a container. Its children are rendered immediately.</td>
+      <td data-th="Description">Nie</td>
+      <td data-th="Behavior">Element pozwala swoim elementom podrzędnym określić jego rozmiar, podobnie jak zwykły <code>div</code> w HTML. Zakłada się, że składnik sam w sobie nie ma określonego układu, a jedynie działa jako kontener. Jego elementy podrzędne są renderowane natychmiast.</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>flex-item</code></td>
-      <td data-th="Description">No</td>
-      <td data-th="Behavior">Element and other elements in its parent take the parent container's remaining space when the parent is a flexible container (i.e., <code>display:flex</code>). The element size is determined by the parent element and the number of other elements inside the parent according to the <code>display:flex</code> CSS layout.</td>
+      <td data-th="Description">Nie</td>
+      <td data-th="Behavior">Dany element i inne elementy w elemencie nadrzędnym zajmują pozostałe miejsce w kontenerze nadrzędnym, gdy jest to kontener elastyczny (tzn. <code>display:flex</code>). Rozmiar elementu jest określany przez element nadrzędny i liczbę innych elementów wewnątrz elementu nadrzędnego, zgodnie z właściwością CSS układu <code>display:flex</code>.</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>intrinsic</code></td>
-      <td data-th="Description">Yes</td>
-      <td data-th="Behavior">The element takes the space available to it and resizes its height automatically to the aspect ratio given by the <code>width</code> and <code>height</code> attributes <em>until</em> it reaches the element's natural size or reaches a CSS constraint (e.g., max-width). The width and height attributes must be present. This layout works very well for most AMP elements, including <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a>, <a href="../../../../documentation/components/reference/amp-carousel.md"><code>amp-carousel</code></a>, etc. The available space depends on the parent element and can also be customized using <code>max-width</code> CSS. This layout differs from <code>responsive</code> by having an intrinsic height and width. This is most apparent inside a floated element where a <code>responsive</code> layout will render 0x0 and an <code>intrinsic</code> layout will inflate to the smaller of its natural size or any CSS constraint. </td>
+      <td data-th="Description">Tak</td>
+      <td data-th="Behavior">Element zajmuje dostępne dla niego miejsce i automatycznie zmienia wysokość wg współczynnika proporcji obrazu podanego przez atrybuty <cod>width i <code>height</code> <em>aż do</em> osiągnięcia naturalnego rozmiaru elementu albo osiągnięcia ograniczenia CSS (tj. max-width). Muszą być obecne atrybuty width i height. Układ ten działa bardzo dobrze w przypadku większości elementów AMP, w tym <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a>, <a href="../../../../documentation/components/reference/amp-carousel.md"><code>amp-carousel</code></a>, itd. Dostępne miejsce zależy od elementu nadrzędnego i można ją również dostosować za pomocą właściwości CSS <code>max-width</code>. Ten układ różni się od układu <code>responsive</code>, gdyż ma własną wysokość i szerokość. Jest to najbardziej widoczne w elemencie przestawianym, w którym układ <code>responsive</code> będzie renderować 0x0, a układ <code>intrinsic</code> będzie powiększany do osiągnięcia mniejszego z jego naturalnych rozmiarów lub ograniczenia CSS.</cod>
+</td>
     </tr>
   </tbody>
 </table>
 
 [tip type="tip"] **TIP –** Visit the [Demonstrating AMP layouts](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html) page to see how the various layouts respond to screen resizing. [/tip]
 
-### What if width and height are undefined? <a name="what-if-width-and-height-are-undefined"></a>
+### Co jeśli szerokość i wysokość są nieokreślone? <a name="what-if-width-and-height-are-undefined"></a>
 
 In a few cases if `width` or `height` are not specified, the AMP runtime can default these values as the following:
 
-- [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): Both width and height are defaulted to 0.
-- [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): The default width and height are inferred from browser.
+- [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): zarówno szerokość jak i wysokość są domyślnie ustawiane na 0.
+- [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): domyślna szerokość i wysokość są podawane z przeglądarki.
 
-### What if the <code>layout</code> attribute isn’t specified? <a name="what-if-the-layout-attribute-isnt-specified"></a>
+### Co jeśli atrybut <code>layout</code> jest nieokreślony? <a name="what-if-the-layout-attribute-isnt-specified"></a>
 
 If the <code>layout</code> attribute isn't specified, AMP tries to infer or guess the appropriate value:
 
 <table>
   <thead>
     <tr>
-      <th data-th="Rule">Rule</th>
-      <th data-th="Inferred layout" class="col-thirty">Inferred layout</th>
+      <th data-th="Rule">Zasada</th>
+      <th data-th="Inferred layout" class="col-thirty">Wywnioskowany układ</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td data-th="Rule">
-<code>height</code> is present and <code>width</code> is absent or equals to <code>auto</code>
+      <td data-th="Rule">Atrybut <code>height</code> jest obecny, a atrybut <code>width</code> nie lub ma wartość <code>auto</code>
 </td>
       <td data-th="Inferred layout"><code>fixed-height</code></td>
     </tr>
     <tr>
-      <td data-th="Rule">
-<code>width</code> or <code>height</code> attributes are present along with the <code>sizes</code> attribute</td>
+      <td data-th="Rule">Atrybuty <code>width</code> lub <code>height</code> są obecne wraz z atrybutem <code>sizes</code>
+</td>
       <td data-th="Inferred layout"><code>responsive</code></td>
     </tr>
     <tr>
-      <td data-th="Rule">Both <code>width</code> and <code>height</code> attributes are present</td>
+      <td data-th="Rule">Obecny jest zarówno atrybut <code>width</code>, jak i <code>height</code>
+</td>
       <td data-th="Inferred layout"><code>fixed</code></td>
     </tr>
     <tr>
-      <td data-th="Rule">
-<code>width</code> and <code>height</code> are not present</td>
+      <td data-th="Rule">Nie ma ani atrybutu <code>width</code>, ani <code>height</code>
+</td>
       <td data-th="Inferred layout"><code>container</code></td>
     </tr>
   </tbody>
 </table>
 
-## Using media queries
+## Stosowanie zapytań o media
 
-### CSS media queries
+### Kwerendy medialne CSS
 
 Use [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) to control how the page layout looks and behaves, as you would do on any other website. When the browser window changes size or orientation, the media queries are re-evaluated and elements are hidden and shown based on the new results.
 
 [tip type="read-on"] **READ ON –** Learn more about controlling layout by applying media queries in [Use CSS media queries for responsiveness](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en). [/tip]
 
-### Element media queries <a name="element-media-queries"></a>
+### Kwerendy elementu media <a name="element-media-queries"></a>
 
 One extra feature for responsive design available in AMP is the `media` attribute. This attribute can be used on every AMP element; it works similar to media queries in your global stylesheet, but only impacts the specific element on a single page.
 
