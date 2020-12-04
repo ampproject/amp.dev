@@ -57,8 +57,9 @@ Opisy poszczególnych części składni znajdują się w poniższej tabeli.
   <tr>
     <td><code>targetId</code></td>
     <td>tak</td>
-    <td>This is the DOM id for the element, or a predefined <a href="#special-targets">special target</a> you'd like to execute an action on  in response to the event. In the following example, the <code>targetId</code> is the DOM id of the <code>amp-lightbox</code> target, <code>photo-slides</code>.     <pre><amp-lightbox id="photo-slides"></amp-lightbox>
-<button on="tap:photo-slides">Show Images</button></pre>     </td>
+    <td>Jest to identyfikator modelu DOM elementu lub predefiniowany <a href="#special-targets">cel specjalny</a>, ktorego ma dotyczyc dzialanie wykonywane w odpowiedzi na zdarzenie. W nastepujacym przykladzie, <code>targetId</code> to identyfikator modelu DOM docelowego elementu skladnika <code>amp-lightbox</code>, <code>photo-slides</code>.   <pre>&lt;amp-lightbox id="photo-slides">&lt;/amp-lightbox>
+&lt;button on="tap:photo-slides">Show Images&lt;/button></pre>
+</td>
   </tr>
   <tr>
     <td><code>methodName</code></td>
@@ -393,11 +394,11 @@ Na przykład w AMP możliwe jest:
   </tr>
   <tr>
     <td><code>play</code></td>
-    <td>Plays the audio. Is a no-op if the <code><amp-audio></code> element is a descendant of <code><amp-story></code>.</td>
+    <td>Odtwarza dźwięk. Jest pusta, jeśli element <code>&lt;amp-audio></code> jest elementem potomnym elementu <code>&lt;amp-story></code>.</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
-    <td>Pauses the audio. Is a no-op if the <code><amp-audio></code> element is a descendant of <code><amp-story></code>.</td>
+    <td>Wstrzymuje dźwięk. Jest pusta, jeśli element <code>&lt;amp-audio></code> jest elementem potomnym elementu <code>&lt;amp-story></code>.</td>
   </tr>
 </table>
 
@@ -675,14 +676,14 @@ Cel `AMP` jest dostarczany przez środowisko uruchomieniowe AMP i implementuje d
     <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
       <p>Kieruje bieżące okno do podanego adresu URL, do opcjonalnie podanego celu (aktualnie obsługiwane są tylko <code>_top</code> oraz <code>_blank </code>). Opcjonalny parametr <code>opener</code> można określić podczas używania celu <code>_blank</code>, aby umożliwić nowo otwartej stronie dostęp do <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener</code></a>. Obsługuje <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md"> standardowe podstawienia adresów URL</a>.</p>
-      <p><strong>Caveat:</strong> Using normal <code><a></code> links is recommended wherever possible since <code>AMP.navigateTo</code> is not recognized by web crawlers.</p>
+      <p><strong>Zastrzeżenie:</strong> w miarę możliwości zalecane jest używanie zwykłych linków <code>&lt;a></code>, ponieważ element <code>AMP.navigateTo</code> nie jest rozpoznawany przez internetowe roboty indeksujące.</p>
     </td>
   </tr>
   <tr>
     <td><code>closeOrNavigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
       <p>Próbuje zamknąć okno, jeśli jest to dozwolone, w przeciwnym razie nawiguje podobnie jak działanie <code>navigateTo</code>. Przydatne w przypadkach, gdy przycisk Wstecz może wymagać zamknięcia okna, jeśli zostało ono otwarte w nowym oknie z poprzedniej strony lub nawigacji, jeśli nie zostało ono otwarte.</p>
-      <p><strong>Caveat:</strong> Using normal <code><a></code> links is recommended wherever possible since <code>AMP.closeOrNavigateTo</code> is not recognized by web crawlers.</p>
+      <p><strong>Zastrzeżenie:</strong> w miarę możliwości zalecane jest używanie zwykłych linków <code>&lt;a></code>, ponieważ element <code>AMP.navigateTo</code> nie jest rozpoznawany przez internetowe roboty indeksujące.</p>
     </td>
   </tr>
   <tr>
