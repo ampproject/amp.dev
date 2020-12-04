@@ -1,10 +1,10 @@
 ---
-"$title": Tracking engagement with analytics
+"$title": Śledzenie zaangażowania za pomocą analityki
 "$order": '4'
 description: Platformy analityczne są powszechnie integrowane z witrynami internetowymi za pomocą fragmentów kodu JavaScript inline i wywołań funkcji, które wywołują zdarzenia odsyłane do systemu analitycznego.
 ---
 
-Analytics platforms are commonly integrated into websites through inline JavaScript snippets and function calls, which trigger events that are sent back to the analytics system. AMP provides a flexible JSON configuration syntax to replicate this process for several analytics partners.
+Platformy analityczne są powszechnie integrowane z witrynami internetowymi za pomocą fragmentów kodu JavaScript inline i wywołań funkcji, które wywołują zdarzenia odsyłane do systemu analitycznego. AMP zapewnia elastyczną składnię konfiguracji JSON, która pozwala na powielanie tego procesu dla kilku partnerów analitycznych.
 
 Poniżej widnieje przykład tradycyjnego kodu śledzenia Google Analytics w języku JavaScript. Przepiszemy go na format JSON [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), ale najpierw spójrzmy na tradycyjne podejście:
 
