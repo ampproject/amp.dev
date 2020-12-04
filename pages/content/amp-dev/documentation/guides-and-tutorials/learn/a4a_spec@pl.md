@@ -133,13 +133,24 @@ Właściwości `transition` i `animation` są dozwolone tylko w selektorach, kt�
 
 **Dobrze**
 
-[sourcecode:css] .box { transform: rotate(180deg); transition: transform 2s; } [/sourcecode]
+[sourcecode:css]
+.box {
+  transform: rotate(180deg);
+  transition: transform 2s;
+}
+[/sourcecode]
 
 **Źle**
 
 Właściwość niedozwolona w klasie CSS.
 
-[sourcecode:css] .box { color: red; // non-animation property not allowed in animation selector transform: rotate(180deg); transition: transform 2s; } [/sourcecode]
+[sourcecode:css]
+.box {
+  color: red; // non-animation property not allowed in animation selector
+  transform: rotate(180deg);
+  transition: transform 2s;
+}
+[/sourcecode]
 
 ##### Właściwości podlegające przejściu i i animacji <a name="transitionable-and-animatable-properties"></a>
 
@@ -147,11 +158,15 @@ Jedynymi właściwościami, które podlegają przejściu są opacity i transform
 
 **Dobrze**
 
-[sourcecode:css] transition: transform 2s; [/sourcecode]
+[sourcecode:css]
+transition: transform 2s;
+[/sourcecode]
 
 **Źle**
 
-[sourcecode:css] transition: background-color 2s; [/sourcecode]
+[sourcecode:css]
+transition: background-color 2s;
+[/sourcecode]
 
 **Dobrze**
 
@@ -161,9 +176,19 @@ to { transform: rotate(90deg); } } [/sourcecode]
 
 **Źle**
 
-[sourcecode:css] @keyframes slidein { from { margin-left: 100%; width: 300%; }
+[sourcecode:css]
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
 
-to { margin-left: 0%; width: 100%; } } [/sourcecode]
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+[/sourcecode]
 
 ### Dozwolone rozszerzenia i wbudowane obiekty AMP <a name="allowed-amp-extensions-and-builtins"></a>
 
