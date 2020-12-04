@@ -1,13 +1,10 @@
 ---
-"$title": Integrate your ad technologies into AMP
+"$title": Zintegruj swoje technologie reklamowe z AMP
 order: '3'
 formats:
 - ads
 teaser:
-  text: |2-
-
-    If you are an ad technology provider looking to integrate with AMP HTML,
-    please see the guidelines below.
+  text: Jeśli jesteś dostawcą technologii reklamowych i chcesz zintegrować je z AMP HTML, zapoznaj się z poniższymi wytycznymi.
 toc: 'true'
 ---
 
@@ -18,17 +15,17 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-If you are an ad technology provider looking to integrate with AMP HTML, please see the guidelines below. To ensure minimum latency and quality, please follow the instructions listed [here](https://github.com/ampproject/amphtml/blob/master/ads/../3p/README.md#ads) before submitting a pull request to the AMP open-source project. For general guidance on how to get started with contributing to AMP, please see [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/ads/../CONTRIBUTING.md).
+Jeśli jesteś dostawcą technologii reklamowych i chcesz zintegrować je z AMP HTML, zapoznaj się z poniższymi wytycznymi. Aby zapewnić minimalne opóźnienia i wysoką jakość, przed przesłaniem żądania ściągnięcia do projektu open-source AMP wykonaj instrukcje podane [tutaj](https://github.com/ampproject/amphtml/blob/master/ads/../3p/README.md#ads). Ogólne wskazówki na temat wnoszenia wkładu do AMP zawiera strona [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/ads/../CONTRIBUTING.md).
 
-## Ad Server <a name="ad-server"></a>
+## Serwer reklam <a name="ad-server"></a>
 
-*Examples : DFP, A9*
+*Przykłady: DFP, A9*
 
-As an ad server, publishers you support include a JavaScript library provided by you and place various "ad snippets" that rely on the JavaScript library to fetch ads and render them on the publisher’s website.
+Wydawcy, których obsługujesz jako serwer reklam dodają dostarczoną przez Ciebie bibliotekę JavaScript i umieszczają różne opate na bibliotece JavaScript „fragmenty kodu reklam” w celu pobierania reklam i renderowania ich na stronie internetowej wydawcy.
 
-Because AMP doesn’t allow publishers to execute arbitrary JavaScript, you will need to contribute to the AMP open-source code to allow the `amp-ad` tag to request ads from your ad server.
+Jako że AMP nie zezwala wydawcom na wykonywanie dowolnego kodu JavaScript, należy dodać własny wkład do otwartego kodu AMP, aby umożliwić tagowi `amp-ad` żądanie reklam z Twojego serwera reklam.
 
-For example : Amazon A9 server can be invoked by using following syntax:
+Przykład: serwer Amazon A9 można wywołać przy użyciu następującej składni:
 
 [sourcecode:html]
 <amp-ad
@@ -42,33 +39,33 @@ For example : Amazon A9 server can be invoked by using following syntax:
 </amp-ad>
 [/sourcecode]
 
-Note that each of the attributes that follow `type` are dependent on the parameters that the Amazon’s A9 server expects in order to deliver an ad. The [a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) file shows you how the parameters are mapped to making a JavaScript call which invokes the A9 server via the `https://c.amazon-adsystem.com/aax2/assoc.js` URL. The corresponding parameters passed by the AMP ad tag are appended to the URL to return an ad.
+Zauważ, że każdy z atrybutów następujących po właściwości `type` jest zależny od parametrów, których oczekuje serwer Amazon A9 w celu dostarczenia reklamy. Plik [a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) pokazuje jak są mapowane parametry w celu wykonania wywołania skryptu JavaScript, który wywołuje serwer A9 poprzez adres URL `https://c.amazon-adsystem.com/aax2/assoc.js`. W celu zwrócenia reklamy do adresu URL są dołączane odpowiednie parametry przekazywane przez znacznik reklamy AMP.
 
-For details on how to integrate your ad network with AMP, see [Integrating ad networks into AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+Szczegółowe informacje na temat integrowania sieci reklamowej z AMP znajdziesz w artykule [Integrowanie sieci reklamowych z AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
 
-## Supply Side Platform (SSP) or an Ad Exchange <a name="supply-side-platform-ssp-or-an-ad-exchange"></a>
+## System Supply Side Platform (SSP) lub Ad Exchange <a name="supply-side-platform-ssp-or-an-ad-exchange"></a>
 
-*Examples : Rubicon, Criteo OR Appnexus, Ad-Exchange*
+*Przykłady: Rubicon, Criteo, AppNexus, Ad-Exchange*
 
-If you are a sell-side platform that wants to get called directly from a publisher’s webpage, you will need to follow the same directions as listed above for integrating with an Ad Server. Adding your own `type` value to the amp-ad tag allows you to distribute your tag directly to the publisher, so they can insert your tags directly into their AMP pages.
+Jeśli prowadzisz platformę sprzedaży, która ma być wywoływana bezpośrednio ze strony internetowej wydawcy, musisz postępować zgodnie z tymi samymi powyższymi wskazówkami integracji, dotyczącymi serwera reklam. Dodanie własnej wartości `type` do znacznika amp-ad pozwala na przesłanie Twojego znacznika bezpośrednio do wydawcy, dzięki czemu może on wstawić ten znacznik bezpośrednio do swoich stron AMP.
 
-More commonly, SSPs work with the publisher to traffick the SSP’s ad tags in their ad server. In this case, ensure that all assets being loaded by your script in the ad server’s creative are being made over HTTPS. There are some restrictions around some ad formats like expandables, so we recommend that you test out the most commonly delivered creative formats with your publishers.
+System SSP coraz częściej współpracuje z wydawcami w celu przesyłania znaczników reklam SSP do ich serwerów reklam. W tym przypadku upewnij się, że wszystkie zasoby ładowane przez Twój skrypt w kreacji na serwerze reklam są wykonywane za pomocą protokołu HTTPS. Niektórych formatów reklam, takich jak reklamy rozszerzalne, dotyczą pewne ograniczenia, dlatego zalecamy przetestowanie najczęściej dostarczanych formatów kreacji u wydawców.
 
-## Ad Agency <a name="ad-agency"></a>
+## Agencja reklamowa <a name="ad-agency"></a>
 
-*Examples : Essence, Omnicom*
+*Przykłady: Essence, Omnicom*
 
-Work with your publisher to ensure that the creatives you develop are AMP-compliant. Since all creatives are served into iframes whose size is determined when the ad is called, ensure that your creative doesn't try to modify the size of the iframe.
+Współpracuj z wydawcą, aby upewnić się, że tworzone przez Ciebie kreacje są zgodne z AMP. Wszystkie kreacje są serwowane do ramek iframe, których rozmiar jest określany w chwili wywołania reklamy, upewnij się więc, że Twoja kreacja nie próbuje modyfikować rozmiaru ramki iframe.
 
-Ensure that all assets that are part of the creative are requested using HTTPS. Some ad formats are not fully supported at the moment and we recommend testing the creatives in an AMP environment. Some examples are : Rich Media Expandables, Interstitials, Page Level Ads.
+Upewnij się, że wszystkie zasoby będące częścią kreacji są żądane za pomocą protokołu HTTPS. Niektóre formaty reklam nie są obecnie w pełni obsługiwane i zalecamy testowanie kreacji w środowisku AMP. Niektóre przykłady to: reklamy rozszerzalne rich media, interstitial, page-level.
 
-## Video Player <a name="video-player"></a>
+## Odtwarzacz wideo <a name="video-player"></a>
 
-*Examples : Brightcove, Ooyala*
+*Przykłady: Brightcove, Ooyala*
 
-A video player that works in regular HTML pages will not work in AMP and therefore a specific tag must be created that allows the AMP Runtime to load your player. Brightcove has created a custom [amp-brightcove](https://github.com/ampproject/amphtml/blob/master/extensions/amp-brightcove/amp-brightcove.md) tag that allows media and ads to be played in AMP pages.
+Odtwarzacz wideo, który działa na zwykłych stronach HTML, nie będzie działać w AMP, dlatego też należy utworzyć specjalny znacznik, który pozwoli środowisku uruchomieniowemu AMP na załadowanie odtwarzacza. Firma Brightcove stworzyła niestandardowy znacznik [amp-brightcove](https://github.com/ampproject/amphtml/blob/master/extensions/amp-brightcove/amp-brightcove.md), umożliwiający odtwarzanie multimediów i reklam na stronach AMP.
 
-A Brightcove player can be invoked by the following:
+Odtwarzacz Brightcove można wywołać w następujący sposób:
 
 [sourcecode:html]
 <amp-brightcove
@@ -82,37 +79,37 @@ A Brightcove player can be invoked by the following:
 </amp-brightcove>
 [/sourcecode]
 
-For instructions on how to develop an amp tag like Brightcove, see [this pull request](https://github.com/ampproject/amphtml/pull/1052).
+Instrukcje dotyczące opracowania znacznika AMP takiego jak znacznik Brightcove znajdują się w [tym żądaniu ściągnięcia ](https://github.com/ampproject/amphtml/pull/1052).
 
-## Video Ad Network <a name="video-ad-network"></a>
+## Sieć reklam wideo <a name="video-ad-network"></a>
 
-*Examples : Tremor, Brightroll*
+*Przykłady: Tremor, Brightroll*
 
-If you are a video ad network, please work with your publisher to ensure that:
+Jeśli prowadzisz sieć reklam wideo, we współpracy z wydawcą musisz upewnić się, że:
 
-- All video assets are served over HTTPS
-- The publisher’s video player has AMP support
+- Wszystkie zasoby wideo są obsługiwane za pomocą protokołu HTTPS
+- Odtwarzacz wideo wydawcy obsługuje AMP
 
 ## Data Management Platform (DMP) <a name="data-management-platform-dmp"></a>
 
-*Examples : KRUX, Bluekai*
+*Przykłady: KRUX, Bluekai*
 
-See [how to enhance custom ad configuration](https://amp.dev/documentation/components/amp-ad#enhance-incoming-ad-configuration).
+Zobacz [jak poprawić niestandardową konfigurację reklam](https://amp.dev/documentation/components/amp-ad#enhance-incoming-ad-configuration).
 
-You can use a similar approach to enrich the ad call by passing in audience segments that you get from the user cookie into the ad call.
+Podobne podejście można zastosować w celu wzbogacenia wywołania reklamy poprzez przekazanie segmentów grupy docelowej otrzymanych z pliku cookie użytkownika do wywołania reklamy.
 
-## Viewability Provider <a name="viewability-provider"></a>
+## Dostawca widoczności <a name="viewability-provider"></a>
 
-*Examples : MOAT, Integral Ad Science*
+*Przykłady: MOAT, Integral Ad Science*
 
-Viewability providers typically integrate with publishers via the ad server’s creative wrappers. If that is the case, ensure that the creative wrapper loads all assets over HTTPS.
+Dostawcy widoczności integrują się zazwyczaj z wydawcami za pomocą otok kreacji serwera reklam. W takim przypadku należy upewnić się, że otoka kreacji ładuje wszystkie zasoby za pomocą protokołu HTTPS.
 
-For e.g. for MOAT, make sure `http://js.moatads.com` is switched to `https://z.moatads.com`
+W przypadku np. MOAT adres `http://js.moatads.com` musi być zmieniany na `https://z.moatads.com`
 
-Also, see the approach to using the [intersection observer pattern](https://github.com/ampproject/amphtml/blob/master/ads/README.md#ad-viewability).
+Sprawdź też podejście polegające na stosowaniu [wzorca IntersectionObserver](https://github.com/ampproject/amphtml/blob/master/ads/README.md#ad-viewability).
 
-## Content-Recommendation Platform <a name="content-recommendation-platform"></a>
+## Platforma rekomendacji treści <a name="content-recommendation-platform"></a>
 
-*Examples : Taboola, Outbrain*
+*Przykłady: Taboola, Outbrain*
 
-Useful if you have some piece of JavaScript embeded on the publisher website today but the approach will not work in AMP pages. If you would like to recommend content on an AMP page, we suggest that you use the [`amp-embed` extension](https://amp.dev/documentation/components/amp-ad) to request the content details. Please see the [Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md) example.
+Przydatne, jeśli musisz dzisiaj osadzić jakiś kod JavaScript w witrynie internetowej wydawcy, ale podejście to nie będzie działać na stronach AMP. Aby polecać treść na stronie AMP, sugerujemy użycie rozszerzenia [`amp-embed`](https://amp.dev/documentation/components/amp-ad) do żądania szczegółów treści. Sprawdź przykład [Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md).
