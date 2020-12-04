@@ -1,23 +1,18 @@
 .#{prefix(null, 'sidebar')} {
   grid-column: 2/4;
-  position: relative;
-  margin-top: 25px;
+  position: sticky;
+  top: 80px;
   width: 0;
-  outline: 1px solid;
+  max-height: calc(100vh - 150px);
+  margin-top: 25px;
 
   &.--sidebaropen {
     width: auto;
   }
 
-  &-format-toggle {
-    width: calc(100% - 44px);
-    height: 44px;
-  }
-
   &-scroll-container {
-    height: 100vh;
-    max-height: calc(100vh - 150px);
     overflow-y: scroll;
+    max-height: calc(100vh - 150px - 44px);
   }
 
   &-toggle {
@@ -27,7 +22,7 @@
     flex-direction: row-reverse;
     align-items: center;
     width: 135px;
-    height: 35px;
+    height: 34px;
     padding: 5px 10px;
     border-radius: 4px;
     font-family: $fontFamilyHeadline;
@@ -36,6 +31,7 @@
     white-space: nowrap;
     color: color('white');
     background: color('blue-ribbon');
+    box-shadow: 0 5px 15px -5px transparentize(color('black'), 0.75);
     transform-origin: left;
     transform: rotate(-90deg) translate(-120px, 17px);
 
@@ -43,8 +39,11 @@
       width: 1.2em;
       height: 1.2em;
       fill: currentColor;
-      margin: 0 0.5em;
       transform: rotate(-90deg);
+    }
+
+    span {
+      margin-left: 7px;
     }
 
     .--sidebaropen & {
