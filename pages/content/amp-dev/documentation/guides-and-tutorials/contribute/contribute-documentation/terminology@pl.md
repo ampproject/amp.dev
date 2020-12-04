@@ -1,7 +1,12 @@
 ---
-$title: Terminologia AMP
-$order: 2
+"$title": Terminologia AMP
+"$order": '2'
 description: Wytyczne terminologiczne AMP
+formats:
+- websites
+- stories
+- ads
+- email
 author: CrystalOnScript
 ---
 
@@ -11,7 +16,7 @@ author: CrystalOnScript
 <strong>Pojęcie</strong>
    </td>
    <td>
-<strong>Definition</strong>
+<strong>Definicja</strong>
    </td>
    <td>
 <strong>Przykład</strong>
@@ -68,12 +73,12 @@ author: CrystalOnScript
    </td>
   </tr>
   <tr>
-   <td>Relacja AMP / relacje AMP</td>
+   <td>Relacja Web / relacje Web</td>
    <td>Relacje internetowe tworzone przy użyciu AMP.</td>
    <td>
 <ul>
-      <li>Format relacji AMP jest bezpłatny i stanowi część otwartej sieci.</li>
-<li>Relacje AMP zapewniają czytelnikom szybko ładowane, pełnoekranowe wrażenia.</li>
+      <li>Format relacji Web jest bezpłatny i stanowi część otwartej sieci.</li>
+<li>Relacje Web zapewniają czytelnikom szybko ładowane, pełnoekranowe wrażenia.</li>
 </ul>
    </td>
   </tr>
