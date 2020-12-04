@@ -1,7 +1,9 @@
 ---
-$title: Używanie środowiska AMP Viewer do renderowania wiadomości e-mail
-$order: 5
+"$title": Używanie środowiska AMP Viewer do renderowania wiadomości e-mail
+"$order": '5'
 author: alabiaga
+formats:
+- email
 ---
 
 Programy pocztowe w celu obsługi AMP dla poczty e-mail powinny używać środowiska [AMP Viewer](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) do hostowania wiadomości e-mail AMP nadawcy. Przeglądarka utworzona przy użyciu [biblioteki AMP Viewer](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration) hermetyzuje dokument AMP i zapewnia [funkcje](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/CAPABILITIES.md) umożliwiające dwukierunkową komunikację z dokumentem AMP za pomocą metody postMessage. Funkcje te umożliwiają kontrolę widoczności poczty elektronicznej, przekazywanie metryk użytkownika oraz zapewnienie środków chroniących bezpieczeństwo żądań XHR wysyłanych z poczty elektronicznej.
@@ -64,8 +66,7 @@ Jest to prosty przykład, w którym nie ma zależności od biblioteki [mustache]
 
 Poniższa tabela przedstawia bardziej praktyczny przykład tego, jak dokument AMP w przeglądarce programu pocztowego z funkcją `viewerRenderTemplate` mógłby obsłużyć renderowanie szablonu [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email).
 
-<amp-img alt="Viewer render template diagram" layout="responsive" width="372" height="279" src="/static/img/docs/viewer_render_template_diagram.png">
-</amp-img>
+<amp-img alt="Viewer render template diagram" layout="responsive" width="372" height="279" src="/static/img/docs/viewer_render_template_diagram.png"></amp-img>
 
 Środowisko uruchomieniowe AMP buforuje żądanie pobrania danych składnika [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email) do przeglądarki, która z kolei przekaże to żądanie do serwera programu pocztowego. Serwer przekaże ten adres URL i wyniki pobrania danych z adresu URL poprzez różne usługi, prawdopodobnie sprawdzając poprawność adresu URL, zawartość danych zwróconych z tego adresu i wyrenderuje szablony [mustache](https://mustache.github.io/) przy użyciu tych danych. Następnie zwróci ów wyrenderowany szablon i prześle go z powrotem do przeglądarki w następującym formacie odpowiedzi JSON.
 
