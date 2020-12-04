@@ -1,6 +1,6 @@
 ---
-$title: Tworzenie strony tytułowej
-$order: 4
+"$title": Tworzenie strony tytułowej
+"$order": '4'
 description: Aby utworzyć stronę, dodaj element <amp-story-page> jako element podrzędny składnika amp-story. Przypisz stronie unikalny identyfikator. Do naszej pierwszej strony, która jest stroną tytułową, przypiszmy unikalny identyfikator cover...
 author: bpaduch
 ---
