@@ -81,6 +81,7 @@ function initGoLinks(config) {
       });
     } else {
       simple[key] = value.url;
+      simple[`${key}/`] = value.url;
     }
   }
   return {
