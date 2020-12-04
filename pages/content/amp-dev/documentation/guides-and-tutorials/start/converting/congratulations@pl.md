@@ -1,7 +1,7 @@
 ---
-$title: Gratulacje!
-$order: 4
-description: "Masz za sobą samouczek i przekonwertowanie dokumentu HTML na dokument AMP. Dzięki temu samouczkowi umiesz: - Rozpoznawać różnice pomiędzy AMP i ..."
+"$title": Gratulacje!
+"$order": '4'
+description: 'You’ve finished the tutorial and successfully converted an HTML document to an AMP document. In this tutorial, you learned to: - Recognize the differences between AMP and ...'
 ---
 
 Masz za sobą samouczek i przekonwertowanie dokumentu HTML na dokument AMP.
