@@ -30,35 +30,35 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-AMP HTML is a subset of HTML for authoring content pages such as news articles in a way that guarantees certain baseline performance characteristics.
+AMP HTML jest podzbiorem języka HTML, służącym do tworzenia stron z treścią, takich jak artykuły informacyjne, w sposób gwarantujący pewne podstawowe cechy wydajnościowe.
 
-Being a subset of HTML, it puts some restrictions on the full set of tags and functionality available through HTML but it does not require the development of new rendering engines: existing user agents can render AMP HTML just like all other HTML.
+W tym podzbiorze języka HTML stosowane są pewne ograniczenia zestawu dostępnych znaczników i funkcji, ale nie wymaga on tworzenia nowych mechanizmów renderujących: istniejące programy użytkownika mogą renderować AMP HTML tak samo, jak każdy inny kod HTML.
 
-[tip type="read-on"] If you're primarily interested in what's allowed in AMP and what isn't, watch our [primer video on AMP's limitations](https://www.youtube.com/watch?v=Gv8A4CktajQ). [/tip]
+[tip type="read-on"] Jeśli interesuje Cię przede wszystkim to, co jest dozwolone w AMP, a co nie, obejrzyj nasz [film wprowadzający na temat ograniczeń AMP](https://www.youtube.com/watch?v=Gv8A4CktajQ). [/tip]
 
-Also, AMP HTML documents can be uploaded to a web server and served just like any other HTML document; no special configuration for the server is necessary. However, they are also designed to be optionally served through specialized AMP serving systems that proxy AMP documents. These documents serve them from their own origin and are allowed to apply transformations to the document that provide additional performance benefits. An incomplete list of optimizations such a serving system might do is:
+Ponadto dokumenty AMP HTML można przesyłać na serwer WWW i serwować tak, jak każdy inny dokument HTML; nie jest wymagana żadna specjalna konfiguracja serwera. Są one jednak zaprojektowane również do opcjonalnego serwowania przez wyspecjalizowane systemy buforujące, które pośredniczą w przesyłaniu dokumentów AMP. Serwery te serwują dokumenty z własnego źródła i mają możliwość stosowania do nich przekształceń, zapewniających dodatkowe korzyści pod względem wydajności. Oto niekompletna lista optymalizacji, jakie może przeprowadzić taki system serwujący:
 
-- Replace image references with images sized to the viewer’s viewport.
-- Inline images that are visible above the fold.
-- Inline CSS variables.
-- Preload extended components.
-- Minify HTML and CSS.
+- Zastąpienie odsyłaczy do obrazów obrazami o rozmiarach dostosowanych do okienka na ekranie przeglądarki.
+- Obrazy inline, które są widoczne nad treścią.
+- Zmienne CSS inline.
+- Wstępne ładowanie składników rozszerzonych.
+- Minimalizacja kodu HTML i CSS.
 
-AMP HTML uses a set of contributed but centrally managed and hosted custom elements to implement advanced functionality such as image galleries that might be found in an AMP HTML document. While it does allow styling the document using custom CSS, it does not allow author written JavaScript beyond what is provided through the custom elements to reach its performance goals.
+AMP HTML wykorzystuje zestaw centralnie zarządzanych i przechowywanych elementów niestandardowych różnych autorów, służących do implementacji funkcji zaawansowanych, takich jak galerie obrazów, które można znaleźć w dokumencie AMP HTML. Zezwala autorowi na stylizowanie dokumentu przy użyciu własnego CSS, ale nie na kod JavaScript, poza kodem dostarczanym przy użyciu elementów niestandardowych w celu osiągnięcia celów wydajnościowych.
 
-By using the AMP format, content producers are making the content in AMP files available to be crawled (subject to robots.txt restrictions), cached, and displayed by third parties.
+Korzystając z formatu AMP, producenci treści udostępniają ją w plikach AMP do indeksowania (z zastrzeżeniem ograniczeń podanych w pliku robot.txt), buforowania i wyświetlania przez podmioty trzecie.
 
-## Performance <a name="performance"></a>
+## Wydajność <a name="performance"></a>
 
-Predictable performance is a key design goal for AMP HTML. Primarily we are aiming at reducing the time until the content of a page can be consumed / used by the user. In concrete terms this means that:
+Przewidywalna wydajność jest kluczowym celem projektowania AMP HTML. Dążymy przede wszystkim do skrócenia czasu, po którym użytkownik może korzystać z zawartości strony. Konkretnie znaczy to, że:
 
-- HTTP requests necessary to render and fully layout the document should be minimized.
-- Resources such as images or ads should only be downloaded if they are likely to be seen by the user.
-- Browsers should be able to calculate the space needed by every resource on the page without fetching that resource.
+- Należy minimalizować liczbę żądań HTTP niezbędną do wyrenderowania i wygenerowania pełnego układu dokumentu.
+- Zasoby takie jak obrazy lub reklamy należy pobierać tylko wtedy, gdy prawdopodobnie zobaczy je użytkownik.
+- Przeglądarki powinny być w stanie obliczyć miejsce wymagane przez poszczególne zasoby na stronie bez pobierania tych zasobów.
 
-## The AMP HTML format <a name="the-amp-html-format"></a>
+## Format AMP HTML <a name="the-amp-html-format"></a>
 
-### Sample document <a name="sample-document"></a>
+### Przykładowy dokument <a name="sample-document"></a>
 
 [sourcecode:html]
 <!DOCTYPE html>
@@ -174,7 +174,7 @@ Predictable performance is a key design goal for AMP HTML. Primarily we are aimi
 </html>
 [/sourcecode]
 
-### Required markup <a name="required-markup"></a>
+### Wymagane znaczniki <a name="required-markup"></a>
 
 Dokumenty AMP HTML muszą:
 
@@ -187,13 +187,13 @@ Dokumenty AMP HTML muszą:
 - <a name="scrpt"></a>Zawierać znacznik `<script async src="https://cdn.ampproject.org/v0.js"></script>` w sekcji head. [🔗](#scrpt)
 - <a name="boilerplate"></a>Zawierać [kod standardowy AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md) (`head > style[amp-boilerplate]` i `noscript > style[amp-boilerplate]`) w sekcji head. [🔗](#boilerplate)
 
-### Metadata <a name="metadata"></a>
+### Metadane <a name="metadata"></a>
 
 Zalecane jest opatrywanie dokumentów AMP HTML adnotacjami zawierającymi znormalizowane metadane: [Open Graph Protocol](http://ogp.me/), [Twitter Cards](https://dev.twitter.com/cards/overview), itd.
 
-We also recommend that AMP HTML documents are marked up with [schema.org/CreativeWork](https://schema.org/CreativeWork) or any of its more specific types such as [schema.org/NewsArticle](https://schema.org/NewsArticle) or [schema.org/BlogPosting](https://schema.org/BlogPosting).
+Zalecane jest opatrywanie dokumentów AMP HTML adnotacjami zawierającymi znormalizowane metadane: [Open Graph Protocol](http://ogp.me/), [Twitter Cards](https://dev.twitter.com/cards/overview), itd.
 
-### HTML Tags <a name="html-tags"></a>
+### Znaczniki HTML <a name="html-tags"></a>
 
 Znaczników HTML można używać w AMP HTML bez żadnych zmian. Niektóre znaczniki mają swoje odpowiedniki niestandardowe (takie jak `<img>` i `<amp-img>`), a inne są całkowicie zabronione:
 
@@ -296,13 +296,13 @@ Znaczników HTML można używać w AMP HTML bez żadnych zmian. Niektóre znaczn
   </tr>
 </table>
 
-Validator implementations should use a white list based on the HTML5 specification with the above tags removed. See [AMP Tag Addendum](https://github.com/ampproject/amphtml/blob/master/spec/amp-tag-addendum.md).
+Znaczników HTML można używać w AMP HTML bez żadnych zmian. Niektóre znaczniki mają swoje odpowiedniki niestandardowe (takie jak `<img>` i `<amp-img>`), a inne są całkowicie zabronione:
 
-### Comments <a name="comments"></a>
+### Komentarze <a name="comments"></a>
 
 Warunkowe komentarze HTML są niedozwolone.
 
-### HTML attributes <a name="html-attributes"></a>
+### Atrybuty HTML <a name="html-attributes"></a>
 
 Nazwy atrybutów zaczynające się od <code>on</code> (takie jak <code>onclick</code> lub <code>onmouseover</code>) są niedozwolone w AMP HTML. Atrybut o nazwie literału <code>on</code> (bez przyrostka) jest dozwolony.
 
@@ -310,7 +310,7 @@ Atrybuty związane z XML, takie jak xmlns, xml:lang, xml:base i xml:space są ni
 
 Wewnętrzne atrybuty AMP z prefiksem <code>i-amp-</code> są niedozwolone w AMP HTML.
 
-### Classes <a name="classes"></a>
+### Klasy <a name="classes"></a>
 
 Wewnętrzne nazwy klas AMP z prefiksami `-amp-` i <code>i-amp-</code> są niedozwolone w AMP HTML.
 
@@ -318,7 +318,7 @@ Wewnętrzne nazwy klas AMP z prefiksami `-amp-` i <code>i-amp-</code> są niedoz
 
 Wszystkie inne autorskie nazwy klas są dozwolone w znaczniku AMP HTML.
 
-### IDs <a name="ids"></a>
+### Identyfikatory <a name="ids"></a>
 
 Niektóre nazwy identyfikatorów są niedozwolone w AMP HTML, na przykład identyfikatory z prefiksem <code>-amp-</code> i <code>i-amp-</code>, które mogą powodować konflikty z wewnętrznymi identyfikatorami AMP.
 
@@ -326,15 +326,15 @@ Przed użyciem identyfikatorów `amp-` i `AMP` należy zapoznać się z dokument
 
 Pełną listę niedozwolonych nazw identyfikatorów można wyświetlić, wyszukując hasło `mandatory-id-attr` [tutaj](https://github.com/ampproject/amphtml/blob/master/spec/../validator/validator-main.protoascii).
 
-### Links <a name="links"></a>
+### Linki <a name="links"></a>
 
 Schemat `javascript:` jest niedozwolony.
 
-### Stylesheets <a name="stylesheets"></a>
+### Arkusze stylów <a name="stylesheets"></a>
 
 Główne znaczniki semantyczne i niestandardowe elementy AMP mają style domyślne, dzięki czemu opracowanie responsywnego dokumentu jest stosunkowo łatwe. Opcja rezygnacji ze stylów domyślnych być może zostanie dodana w przyszłości.
 
-#### @-rules <a name="-rules"></a>
+#### Reguły at-rules <a name="-rules"></a>
 
 W arkuszach stylów dozwolone są następujące reguły at-rules:
 
@@ -342,27 +342,27 @@ W arkuszach stylów dozwolone są następujące reguły at-rules:
 
 Reguła `@import` jest niedozwolona. Inne mogą zostać dodane w przyszłości.
 
-#### Author stylesheets <a name="author-stylesheets"></a>
+#### Autorskie arkusze stylów <a name="author-stylesheets"></a>
 
 Autorzy mogą dodawać niestandardowe style do dokumentu za pomocą jednego znacznika `<style amp-custom>` w sekcji head dokumentu lub za pomocą stylów inline.
 
 Reguły `@keyframes` są dozwolone w sekcji `<style amp-custom>`. Jeśli jednak jest ich zbyt wiele, zalecane jest ich umieszczenie w dodatkowym znaczniku `<style amp-keyframes>`, który musi znajdować się na końcu dokumentu AMP. Szczegółowe informacje znajdują się w sekcji [Arkusz stylów keyframes](#keyframes-stylesheet) w tym dokumencie.
 
-#### Selectors <a name="selectors"></a>
+#### Selektory <a name="selectors"></a>
 
 Do selektorów w autorskich arkuszach stylów mają zastosowanie następujące ograniczenia:
 
-##### Class and tag names <a name="class-and-tag-names"></a>
+##### Nazwy klas i znaczników <a name="class-and-tag-names"></a>
 
 Nazwy klas, identyfikatory, nazwy znaczników i atrybuty w autorskich arkuszach stylów nie mogą zaczynać się od ciągu znaków `-amp-` ani `i-amp-`. Są one zarezerwowane do użytku wewnętrznego przez środowisko uruchomieniowe AMP. Wynika z tego, że arkusz stylów użytkownika nie może odwoływać się do selektorów CSS w przypadku klas `-amp-`, identyfikatorów `i-amp-` ani znaczników lub atrybutów `i-amp-`. Te nazwy klas, identyfikatorów i znaczników/atrybutów nie są przeznaczone do dostosowywania przez autorów. Autorzy mogą jednak pominąć style klas i znaczników `amp-` dowolnych właściwości CSS, które nie są jawnie zabronione przez specyfikację tych składników.
 
 Aby zapobiec stosowaniu selektorów atrybutów do obchodzenia ograniczeń nazw klas, generalnie niedozwolone jest, aby selektory CSS zawierały tokeny lub ciągi znaków rozpoczynające się od `-amp-` i `i-amp-`.
 
-#### Important <a name="important"></a>
+#### Ważne <a name="important"></a>
 
 Używanie kwalifikatora `!important` jest niedozwolone. Jest to wymóg niezbędny do tego, by AMP mógł wymuszać swoje niezmienniki przekształcenia rozmiarów elementów.
 
-#### Properties <a name="properties"></a>
+#### Właściwości <a name="properties"></a>
 
 AMP zezwala tylko na przejścia i animacje właściwości, które mogą być akcelerowane przez GPU w popularnych przeglądarkach. Obecnie mamy następującą białą listę: `opacity`, <code>transform</code> (również <code>-vendorPrefix-transform</code>).
 
@@ -371,11 +371,11 @@ W poniższych przykładach znacznik właściwości `<property>` musi znajdować 
 - `transition <property>` (również -vendorPrefix-transition)
 - `@keyframes name { from: {<property>: value} to {<property: value>} }` (również `@-vendorPrefix-keyframes`)
 
-#### Maximum size <a name="maximum-size"></a>
+#### Rozmiar maksymalny <a name="maximum-size"></a>
 
 Łączny rozmiar autorskiego arkusza stylów i stylów inline przekraczający 75 000 bajtów danych skutkuje błędem walidacji.
 
-### Keyframes stylesheet <a name="keyframes-stylesheet"></a>
+### Arkusz stylów keyframes<a name="keyframes-stylesheet"></a>
 
 Oprócz znacznika <code><style amp-custom></code>, autorzy mogą również dodawać znacznik <code><style amp-keyframes></code>, dozwolony specjalnie w przypadku animacji klatek kluczowych.
 
@@ -400,7 +400,7 @@ Przykład:
 </body>
 [/sourcecode]
 
-### Custom fonts <a name="custom-fonts"></a>
+### Czcionki niestandardowe <a name="custom-fonts"></a>
 
 Autorzy mogą dołączyć arkusze stylów czcionek niestandardowych. Dwie obsługiwane metody to znaczniki linków wskazujące dozwolonych dostawców czcionek oraz dodanie reguły `@font-face`.
 
@@ -424,7 +424,7 @@ UWAGA DO IMPLEMENTUJĄCYCH: dodanie do tej listy wymaga zmiany reguły AMP Cache
 
 Autorzy mogą dołączać wszystkie czcionki niestandardowe za pomocą reguły <code>@font-face</code> w niestandardowym kodzie CSS. Czcionki dołączone za pomocą reguły <code>@font-face</code> muszą być pobierane za pomocą schematu HTTP lub HTTPS.
 
-## AMP runtime <a name="amp-runtime"></a>
+## Środowisko uruchomieniowe AMP <a name="amp-runtime"></a>
 
 Środowisko uruchomieniowe AMP to JavaScript, który działa wewnątrz każdego dokumentu AMP. Zapewnia on implementacje niestandardowych elementów AMP, zarządza ładowaniem zasobów i nadawaniem priorytetów oraz opcjonalnie zawiera walidatora środowiska uruchomieniowego AMP HTML do użytku podczas tworzenia.
 
@@ -432,7 +432,7 @@ Autorzy mogą dołączać wszystkie czcionki niestandardowe za pomocą reguły <
 
 Środowisko uruchomieniowe AMP można umieszczać w każdej stronie w trybie programistycznym. Tryb programistyczny wyzwoli walidację AMP w osadzonej stronie, co spowoduje wyświetlenie statusu walidacji i ewentualnych błędów w konsoli programistycznej JavaScript. Tryb programistyczny można wywoływać poprzez dołączenie parametru `#development=1` do adresu URL strony.
 
-## Resources <a name="resources"></a>
+## Zasoby <a name="resources"></a>
 
 Zasoby takie jak obrazy, filmy, pliki audio lub reklamy muszą być włączane do pliku AMP HTML za pomocą elementów niestandardowych, takich jak <code><amp-img></code>. Nazywamy je „zasobami zarządzanymi”, ponieważ o tym, czy i kiedy zostaną załadowane i wyświetlone użytkownikowi, decyduje środowisko uruchomieniowe AMP.
 
@@ -440,7 +440,7 @@ Nie ma żadnych szczególnych gwarancji co do sposobu działania ładowania śro
 
 Środowisko uruchomieniowe AMP może w dowolnym momencie podjąć decyzję o zwolnieniu z pamięci zasobów, które nie znajdują się obecnie w okienku na ekranie albo ponownie użyć kontenerów zasobów, takich jak ramki iframe, w celu zmniejszenia ogólnego obciążenia pamięci RAM.
 
-## AMP Components <a name="amp-components"></a>
+## Składniki AMP <a name="amp-components"></a>
 
 W AMP HTML używane są elementy niestandardowe, zwane „składnikami AMP”, służące do zastępowania wbudowanych znaczników ładowania zasobów, takich jak `<img>` i `<video>` oraz do implementacji funkcji o złożonych interakcjah, takich jak lightboxy czy karuzele.
 
@@ -453,7 +453,7 @@ Obsługiwane są 2 typy składników AMP:
 
 Wbudowane składniki są zawsze dostępne w dokumencie AMP i mają dedykowany element niestandardowy, taki jak `<amp-img>`. Składniki rozszerzone muszą być jawnie dołączone do dokumentu.
 
-### Common attributes <a name="common-attributes"></a>
+### Wspólne atrybuty <a name="common-attributes"></a>
 
 #### `layout`, `width`, `height`, `media`, `placeholder`, `fallback` <a name="layout-width-height-media-placeholder-fallback"></a>
 
@@ -488,11 +488,11 @@ Przykład: `on="submit-success:lightbox1;submit-error:lightbox2"`
 
 Dowiedz się więcej o [działaniach i zdarzeniach AMP](https://github.com/ampproject/amphtml/blob/master/spec/./amp-actions-and-events.md).
 
-### Extended components <a name="extended-components"></a>
+### Składniki rozszerzone <a name="extended-components"></a>
 
 Składniki rozszerzone nie muszą być dostarczane ze środowiskiem uruchomieniowym AMP. Muszą one natomiast zostać jawnie włączone do dokumentu.
 
-Extended components are loaded by including a `<script>` tag in the head of the document like this:
+W jednym elemencie można nasłuchiwać wielu zdarzeń, rozdzielając zdarzenia średnikiem `;`.
 
 [sourcecode:html]
 <script
@@ -508,7 +508,7 @@ Implementacje środowiska uruchomieniowego mogą używać nazwy do renderowania 
 
 Adres URL skryptu musi zaczynać się od <code>https://cdn.ampproject.org</code> i musi być zgodny z bardzo ścisłym wzorcem <code>/v\d+/[a-z-]+-(latest|\d+|\d+\.\d+)\.js</code>.
 
-##### URL <a name="url"></a>
+##### Adres URL <a name="url"></a>
 
 Adres URL składników rozszerzonych ma postać:
 
@@ -516,11 +516,11 @@ Adres URL składników rozszerzonych ma postać:
 https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 [/sourcecode]
 
-##### Versioning <a name="versioning"></a>
+##### Przechowywanie wersji <a name="versioning"></a>
 
 Patrz [zasady przechowywania wersji AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-versioning-policy.md).
 
-### Templates <a name="templates"></a>
+### Szablony <a name="templates"></a>
 
 Szablony renderują zawartość HTML w oparciu o szablon zależny od języka i dostarczone dane JSON.
 
@@ -554,7 +554,7 @@ Składnia w elemencie szablonu zależy od języka szablonu. Język szablonu moż
 
 Aby dowiedzieć się więcej o składni i ograniczeniach dotyczących szablonu, odwiedź [dokumentację szablonu](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md#templates)<a>.</a>
 
-##### URL <a name="url-1"></a>
+##### Adres URL <a name="url-1"></a>
 
 Adres URL składników rozszerzonych ma postać:
 
@@ -562,11 +562,11 @@ Adres URL składników rozszerzonych ma postać:
 https://cdn.ampproject.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
 [/sourcecode]
 
-##### Versioning <a name="versioning-1"></a>
+##### Przechowywanie wersji <a name="versioning-1"></a>
 
 Więcej szczegółów można znaleźć w części dotyczącej przechowywania wersji elementów niestandardowych.
 
-## Security <a name="security"></a>
+## Zabezpieczenia <a name="security"></a>
 
 Dokumenty AMP HTML nie mogą wyzwalać błędów, gdy są serwowane zgodnie z zasadami zabezpieczeń zawartości, które nie obejmują słów kluczowych `unsafe-inline` ani `unsafe-eval`.
 
@@ -591,7 +591,7 @@ Jak również te atrybuty:
 - "xlink:href": only URIs starting with "#" are allowed
 - "style"
 
-## AMP document discovery <a name="amp-document-discovery"></a>
+## Odnajdywanie dokumentu AMP <a name="amp-document-discovery"></a>
 
 Opisany poniżej mechanizm zapewnia standardowy sposób, w jaki oprogramowanie sprawdza, czy istnieje wersja AMP dokumentu kanonicznego.
 
