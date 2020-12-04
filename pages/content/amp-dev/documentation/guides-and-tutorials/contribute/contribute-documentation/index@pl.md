@@ -23,7 +23,7 @@ Dołącz do [grupy roboczej ds. współpracy zewnętrznej](https://github.com/am
 
 Dokumentację można dostarczyć do amp.dev na kilka sposobów. Na początek przedstawiliśmy kilka z nich. Jeśli chcesz przyczynić się w inny sposób, [skontaktuj się z nami](https://github.com/ampproject/wg-outreach) i zapytaj, czy możemy to zaakceptować!
 
-## Good first issues
+## Dobre pierwsze kwestie
 
 Nasz malutki (acz potężny) zespół jest zajęty wyławianiem naszych problemów dużych i małych. Jeśli chcesz wnieść swój wkład, ale nie wiesz, od czego zacząć, sprawdź nasze problemy i przefiltruj je według [etykiety `good first issues`](https://github.com/ampproject/amp.dev/labels/good%20first%20issue). Są to proste poprawki, które pozwolą Ci zaznajomić się z amp.dev i procesem zespołowego tworzenia.
 
