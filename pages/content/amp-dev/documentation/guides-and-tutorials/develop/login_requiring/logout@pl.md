@@ -1,15 +1,24 @@
 ---
-$title: Wylogowanie
-$order: 3
-description: Podobnie jak w przypadku przycisku logowania, obecność przycisku wylogowania jest warunkowo zależna od stanu składnika amp-access...
+"$title": Logout
+"$order": '3'
+description: Similar to the login button, the presence of the logout button is conditionally dependent on the state of the amp-access component ...
 ---
 
-Podobnie jak w przypadku przycisku logowania, obecność przycisku wylogowania jest warunkowo zależna od stanu składnika [`amp-access`](../../../../documentation/components/reference/amp-access.md):
+Similar to the login button, the presence of the logout button is conditionally dependent on the state of the [`amp-access`](../../../../documentation/components/reference/amp-access.md) component:
 
-[sourcecode:html] <button amp-access="loggedIn" amp-access-hide="" tabindex="0" on="tap:amp-access.login-sign-out" class="button-primary comment-button">Logout</button> [/sourcecode]
+[sourcecode:html]
+<button amp-access="loggedIn" amp-access-hide tabindex="0" on="tap:amp-access.login-sign-out" class="button-primary comment-button">Logout</button>
+[/sourcecode]
 
-Po kliknięciu przycisku wylogowania nastąpi przekierowanie do adresu URL podanego w konfiguracji JSON składnika [`amp-access`](../../../../documentation/components/reference/amp-access.md) jako część obiektu logowania:
+When you click the Logout button, you are directed to the URL that you specified in the [`amp-access`](../../../../documentation/components/reference/amp-access.md) JSON configuration, as part of the login object:
 
-[sourcecode:json] { "login": { "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL", "sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout" } } [/sourcecode]
+[sourcecode:json]
+{
+"login": {
+  "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
+  "sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
+  }
+}
+[/sourcecode]
 
-Podobnie jak w przypadku logowania, gdy serwer AMPByExample otrzymuje żądanie wylogowania, używa parametru zapytania zwrotnego adresu URL, dodawanego automatycznie przez bibliotekę AMP i przekierowuje do niego, dodając parametr `#success=true`. W tym czasie jesteś już z powrotem na stronie początkowej; plik cookie AMPByExample utworzony wcześniej dla strony logowania (o nazwie `ABE_LOGGED_IN`) zostaje w tym momencie usunięty.
+Similar to the login, when the AMPByExample server receives a logout request, it uses the return URL query parameter automatically added by the AMP library and redirects to it, adding `#success=true`. By this time, you are back on the initial page; the AMPByExample cookie previously created for the login page (called `ABE_LOGGED_IN`) would be cleared at this point.
