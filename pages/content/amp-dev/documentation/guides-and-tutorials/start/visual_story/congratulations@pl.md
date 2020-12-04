@@ -1,7 +1,7 @@
 ---
 "$title": Gratulacje!
 "$order": '9'
-description: 'You have successfully completed your first AMP story! In this tutorial, you learned to: - Create a multi-page story by using the amp-story component'
+description: '"Twoja pierwsza relacja AMP jest gotowa! Dzięki temu samouczkowi wiesz już jak: - Utworzyć wielostronicową relację za pomocą składnika amp-story"'
 author: bpaduch
 ---
 
