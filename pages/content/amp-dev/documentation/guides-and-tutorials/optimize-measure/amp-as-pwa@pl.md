@@ -1,91 +1,129 @@
 ---
-$title: Łatwy dostęp offline i lepsza wydajność
-$order: 11
-description: Usługowy proces roboczy Service Worker to bufor po stronie klienta, który znajduje się między stroną a serwerem i jest używany do budowania fantastycznych wrażeń offline, szybkiego ładowania...
+"$title": Easy offline access and improved performance
+"$order": '11'
+description: A Service Worker is a client-side proxy that sits between your page and your server, and is used to build fantastic offline experiences, fast-loading ...
+formats:
+- websites
 author: CrystalOnScript
 contributors:
 - pbakaus
 ---
 
-Procesy [service worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) umożliwiają zapewnianie bogatych treści offline i spójnych wrażeń użytkowników mimo różnych mocy sieci. Dzięki buforowaniu zasobów w przeglądarce aplikacja internetowa jest w stanie dostarczyć użytkownikowi dane, zasoby i strony offline, aby go zaangażować i poinformować.
+[Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) enable rich offline experiences and consistent user experiences across varying network strengths. By caching resources within the browser, a web app is able to provide data, assets, and offline pages to the user to keep them engaged and informed.
 
-Pamiętaj: Service Worker nie będzie mógł wchodzić w interakcję z wersją strony buforowaną przez AMP. Użyj go do dalszych podróży do źródła.
+Remember: The Service Worker won't be able to interact with the AMP-cached version of your page. Use it for onward journeys to your origin.
 
-## Instalacja skryptu Service Worker
+## Install a Service Worker
 
-Usługowy proces roboczy Service Worker to bufor po stronie klienta, który znajduje się między stroną a serwerem i jest używany do budowania fantastycznych wrażeń offline, scenariuszy szybkiego ładowania powłoki aplikacji i wysyłania powiadomień push.
+A Service Worker is a client-side proxy that sits between your page and your server, and is used to build fantastic offline experiences, fast-loading app shell scenarios, and send push notifications.
 
-[tip type="note"] **UWAGA —** jeśli koncepcja mechanizmu Service Worker jest dla Ciebie nowością, przeczytaj [wprowadzenie na WebFundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers). [/tip]
+[tip type="note"] **NOTE –** If the concept of Service Workers is new to you, read the [introduction at WebFundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers). [/tip]
 
-Skrypt Service Worker musi być zarejestrowany na danej stronie, w przeciwnym razie przeglądarka go nie znajdzie ani nie uruchomi. Domyślnie robi się to za pomocą [odrobiny JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). Na stronach AMP służy do tego składnik [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md).
+Your Service Worker needs to be registered on a given page, or the browser won't find or run it. By default, this is done with the help of a [little bit of JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). On AMP Pages, you use the [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) component to achieve the same.
 
-W tym celu najpierw dodaj składnik [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) za pomocą jego skryptu w sekcji `<head>` strony:
+For that, first include the [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) component via its script in the `<head>` of your page:
 
 [sourcecode:html]
 
-<script async="" custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+<script async custom-element="amp-install-serviceworker"
+  src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 
 [/sourcecode]
 
-Następnie dodaj następujące elementy gdzieś w sekcji `<body>` (zmień tak, aby wskazywały na rzeczywisty skrypt Service Worker):
+Then add the following somewhere within your `<body>` (modify to point to your actual Service Worker):
 
-[sourcecode:html] {amp-install-serviceworker0} {/amp-install-serviceworker0} [/sourcecode]
+[sourcecode:html]
+<amp-install-serviceworker
+      src="https://www.your-domain.com/serviceworker.js"
+      layout="nodisplay">
+</amp-install-serviceworker>
+[/sourcecode]
 
-Gdy użytkownik przejdzie do stron AMP w źródle (w przeciwieństwie do pierwszego kliknięcia, które zwykle jest serwowane z serwera buforującego AMP), Service Worker przejmuje kontrolę i może zrobić [mnóstwo fajnych rzeczy](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux).
+If the user navigates to your AMP pages on your origin (as opposed to the first click, which is usually served from an AMP Cache), the Service Worker will take over and can do a [myriad of cool things](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux).
 
-##Service Worker AMP
+## The AMP Service Worker
 
-Jeśli tu jesteś, to tworzysz strony z AMP. Zespołowi AMP bardzo zależy na tym, aby stawiać użytkownika na pierwszym miejscu i zapewniać mu światowej klasy doświadczenie w Internecie. Aby zapewnić spójność tych wrażeń, zespół AMP stworzył skrypt Service Worker specjalnie do AMP!
+If you're here, you're building pages with AMP. The AMP team cares immensely about putting the user first and giving them a world class web experience. To keep these experiences consistent the AMP team has created a service worker specifically for AMP!
 
-[tip type="default"] **PORADA —** skorzystaj z naszego samouczka, aby nauczyć się używać skryptu [AMP Service Worker w aplikacji PWA](/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp_to_pwa.md). [/tip]
+[tip type="default"] **TIP –** Follow our tutorial to learn to use the [AMP Service Worker in your PWA](/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp_to_pwa.md). [/tip]
 
-### Instalowanie skryptu AMP Service Worker
+### Installing the AMP Service Worker
 
-Zainstaluj skrypt AMP Service Worker, wykonując te kroki:
+Install the AMP Service Worker with minimal steps:
 
-- Zaimportuj kod AMP Service Worker do swojego pliku service worker. [sourcecode:js] importScripts('https://cdn.ampproject.org/sw/amp-sw.js'); [/sourcecode]
+- Import the AMP Service Worker code into your service worker file.
 
-- Zainstaluj skrypt service worker z następującym kodem. [sourcecode:js] AMP_SW.init(); [/sourcecode]
+[sourcecode:js]
+  importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+  [/sourcecode]
 
-- Gotowe.
+- Install the service worker with the following code.
 
-### Zautomatyzowane buforowanie
+[sourcecode:js]
+  AMP_SW.init();
+  [/sourcecode]
 
-AMP Service Worker automatycznie buforuje pliki skryptów AMP i dokumenty AMP. Dzięki buforowaniu pliki skryptów AMP są natychmiast dostępne dla przeglądarki użytkownika, co pozwala na korzystanie z funkcjonalności offline i szybsze renderowanie stron w słabych sieciach.
+- Done.
 
-Jeśli aplikacja wymaga określonych typów buforowania dokumentów, AMP Service Worker pozwala na ich dostosowanie, np. dodanie listy odrzucania dokumentów, które zawsze powinny być żądane z sieci. W poniższym przykładzie należy zastąpić `Array<RegExp>` tablicą wyrażeń regularnych reprezentujących dokumenty, których buforowania chcemy uniknąć.
+### Automated Caching
 
-[sourcecode:js] AMP_SW.init( documentCachingOptions: { denyList?: Array<regexp>; } ); [/sourcecode]</regexp>
+The AMP Service Worker automatically caches AMP script files and AMP documents. By caching AMP script files, they are instantly available to the users browser allowing for offline functionality and speedier pages on flaky networks.
 
-Dowiedz się więcej o [dostosowywaniu buforowania dokumentów tutaj](https://github.com/ampproject/amp-sw/tree/master/src/modules/document-caching).
+If your app requires specific types of document caching, the AMP Service Worker allows for customization. Such as adding a deny list for documents that should always be requested from the network. In the following example, replace `Array<RegExp>` with an array of regular expressions representing documents you want to avoid caching.
 
-### Optymalizowanie skryptu AMP Service Worker
+[sourcecode:js]
+AMP_SW.init(
+documentCachingOptions: {
+denyList?: Array<RegExp>;
+}
+);
+[/sourcecode]
 
-Aby w pełni wykorzystać możliwości skryptu AMP Service Worker, opcjonalne pola powinny być skonfigurowane do buforowania niezbędnych zasobów i wstępnego pobierania linków.
+Read more about [customizing document caching here](https://github.com/ampproject/amp-sw/tree/master/src/modules/document-caching).
 
-Zasoby, które napędzają wizytę użytkownika na stronie, takie jak wideo, ważne obrazy lub plik PDF do pobrania powinny być buforowane, aby można było do nich ponownie uzyskać dostęp, gdy użytkownik będzie w trybie offline.
+### Optimizing the AMP Service Worker
 
-[sourcecode:js] AMP_SW.init( assetCachingOptions: [{ regexp: /.(png|jpg)/, cachingStrategy: 'CACHE_FIRST' }], ); [/sourcecode]
+To use the AMP Service Worker to its full capabilities, the optional fields should be configured to cache necessary assets and prefetch links.
 
-Można dostosować strategię buforowania i zdefiniować listę odrzuceń.
+Assets that drive the user's visit to a page, such as a video, important images, or a downloadable PDF, should be cached so that they can be accessed again if the user is offline.
 
-Linki do stron, które użytkownicy mogą chcieć odwiedzić, można wstępnie pobrać, aby umożliwić dostęp do nich w trybie offline. W tym celu wystarczy dodać atrybut `data-prefetch` do znacznika linku.
+[sourcecode:js]
+AMP_SW.init(
+assetCachingOptions: [{
+regexp: /\.(png|jpg)/,
+cachingStrategy: 'CACHE_FIRST'
+}],
+);
+[/sourcecode]
 
-[sourcecode:html] <a href="...." data-rel="prefetch"></a> [/sourcecode]
+You are able to customize the caching strategy and define a deny list.
 
-### Obsługa w trybie offline
+Links to pages your users may need to visit can be prefetched, allowing them to be accessed while offline. This is done by adding a `data-prefetch` attribute to the link tag.
 
-Dodaj stronę trybu offline informującą użytkownika, że przeszedł w tryb offline i powinien spróbować ponownie załadować stronę po powrocie do trybu online. AMP Service Worker może buforować zarówno stronę, jak i jej zasoby.
+[sourcecode:html]
+<a href='....' data-rel='prefetch' />
+[/sourcecode]
 
-[sourcecode:js] AMP_SW.init({ offlinePageOptions: { url: '/offline.html'; assets: ['/images/offline-header.jpg']; } }) [/sourcecode]
+### Offline Experience
 
-Udana strona trybu offline wygląda tak, jakby była częścią witryny dzięki interfejsowi użytkownika spójnemu z resztą aplikacji.
+Communicate to user's that they have gone offline, and should try reloading the site when back online, by including an offline page. The AMP Service Worker can cache both the page and its assets.
 
-### Wymuszanie aktualizacji
+[sourcecode:js]
+AMP_SW.init({
+offlinePageOptions: {
+url: '/offline.html';
+assets: ['/images/offline-header.jpg'];
+}
+})
+[/sourcecode]
 
-Zespół pracuje nad wdrożeniem funkcji wymuszonej aktualizacji / usunięcia, gdy AMP Service Worker musi zostać wyłączony lub zmieniony, jeśli instalacja u użytkowników nie powiedzie się.
+A successful offline page looks like it's a part of your site by having a consistent UI with the rest of the application.
 
-Aby efektywnie zarządzać mechanizmem Service Worker, należy zrozumieć jak [standardowe buforowanie HTTP wpływa na sposób aktualizowania kodu JavaScript skryptu service worker](https://developers.google.com/web/updates/2018/06/fresher-sw). Skrypty service worker serwowane za pomocą odpowiednich instrukcji buforowania HTTP mogą rozwiązywać małe problemy poprzez wprowadzanie odpowiednich zmian i ponowną instalację skryptów service worker w środowisku hostingowym. Jeśli musisz usunąć skrypt service worker, warto mieć pod ręką prosty, [pusty](https://en.wikipedia.org/wiki/NOP) plik service worker, taki jak ten:
+### Force Update
+
+The team is working to implement a force update/remove feature if your AMP Service Worker needs to be disabled or changed if a deployment to users has gone wrong.
+
+To effectively manage a server worker, you should understand how [standard HTTP caching affects the way your service worker's JavaScript is kept up to date](https://developers.google.com/web/updates/2018/06/fresher-sw). Service workers served with appropriate HTTP caching directives can resolve small bug fixes by making the appropriate changes and redeploying your service worker to your hosting environment. If you need to remove a service worker, it's a good idea to keep a simple, [no-op](https://en.wikipedia.org/wiki/NOP) service worker file handy, like the following:
 
 ```js
 self.addEventListener('install', () => {
@@ -96,26 +134,34 @@ self.addEventListener('install', () => {
 });
 ```
 
-[tip type="read-on"] [Dowiedz się więcej](https://stackoverflow.com/questions/33986976/how-can-i-remove-a-buggy-service-worker-or-implement-a-kill-switch/38980776#38980776) o zarządzaniu zainstalowanymi skryptami service worker. [/tip]
+[tip type="read-on"] [Read more](https://stackoverflow.com/questions/33986976/how-can-i-remove-a-buggy-service-worker-or-implement-a-kill-switch/38980776#38980776) about managing deployed service workers. [/tip]
 
-## Pisanie niestandardowego skryptu service worker
+## Write a Custom Service Worker
 
-Możesz skorzystać z powyższej techniki, aby włączyć dostęp offline do swojej witryny AMP, jak również rozszerzać swoje strony, **gdy tylko zostaną zaserwowane z źródła**. W ten sposób możesz modyfikować odpowiedź za pomocą zdarzenia procesu service worker `fetch` i zwracać dowolną odpowiedź:
+You can use the above technique to enable offline access to your AMP website, as well as extend your pages **as soon as they’re served from the origin**. That's because you can modify the response via the Service Worker’s `fetch` event, and return any response you want:
 
-[sourcecode:js] self.addEventListener('fetch', function(event) { event.respondWith( caches.open('mysite').then(function(cache) { return cache.match(event.request).then(function(response) { var fetchPromise = fetch(event.request).then(function(networkResponse) { cache.put(event.request, networkResponse.clone()); return networkResponse; })
-
-```
-    // Modify the response here before it goes out..
-    ...
-
-    return response || fetchPromise;
-  })
+[sourcecode:js]
+self.addEventListener('fetch', function(event) {
+event.respondWith(
+caches.open('mysite').then(function(cache) {
+return cache.match(event.request).then(function(response) {
+var fetchPromise = fetch(event.request).then(function(networkResponse) {
+cache.put(event.request, networkResponse.clone());
+return networkResponse;
 })
-```
 
-); }); [/sourcecode]
+        // Modify the response here before it goes out..
+        ...
 
-Używając tej techniki, możesz zmieniać stronę AMP, aby dodawać wszelkiego rodzaju dodatkowe funkcje, które w innym przypadku na przykład nie przejdą [walidacji AMP](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md):
+        return response || fetchPromise;
+      })
+    })
 
-- Funkcje dynamiczne, które wymagają niestandardowego JS.
-- Składniki dostosowane / odpowiednie wyłącznie do danej witryny.
+);
+});
+[/sourcecode]
+
+Using this technique, you can amend your AMP Page will all sorts of additional functionality that would otherwise fail [AMP validation](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md), for example:
+
+- Dynamic features that require custom JS.
+- Components that are customized/only relevant for your site.
