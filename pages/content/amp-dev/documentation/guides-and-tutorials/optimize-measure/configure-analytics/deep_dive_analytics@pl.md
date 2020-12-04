@@ -1,7 +1,10 @@
 ---
-$title: Głębokie zanurzenie w analitykę AMP
-$order: 1
+"$title": Głębokie zanurzenie w analitykę AMP
+"$order": '1'
 description: Ten przewodnik zanurza się głęboko w składnik amp-analytics, rozkładając jego przykładową konfigurację na kluczowe elementy konstrukcyjne.
+formats:
+- websites
+- stories
 ---
 
 Ten przewodnik zanurza się głęboko w składnik [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), rozkładając jego przykładową konfigurację na kluczowe elementy konstrukcyjne.[](../../../../documentation/components/reference/amp-analytics.md)``
@@ -51,18 +54,18 @@ Powyższy przykładowy kod ma pomóc w nauce, ale w żadnym wypadku nie jest to 
 
 ## Dokąd mają być wysyłane dane analityczne: atrybut type
 
-AMP jest przeznaczony do obsługi dwóch popularnych wzorców gromadzenia danych:
+AMP is designed to support two common patterns of data collection:
 
 - Przyjęcie przez należący do wydawcy punkt końcowy wewnętrznych systemów analitycznych.
-- Przyjęcie przez należący do dostawcy punkt końcowy na potrzeby współdziałania z rozwiązaniem dostawcy (np. [Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html), [Chartbeat](http://support.chartbeat.com/docs/), [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)).
+- Ingestion by a vendor-owned endpoint for interoperability with a vendor solution (for example, [Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html), [Chartbeat](http://support.chartbeat.com/docs/), [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)).
 
-Aby wysyłać dane analityczne do dostawcy usług analityki, należy dodać atrybut `type` do znacznika [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) i ustawić jego wartość na odpowiedniego dostawcę, zgodnie z definicją na liście [Dostawcy usług analityki](analytics-vendors.md).
+To send analytics data to an analytics provider, include the `type` attribute in the [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) tag and set its value to the appropriate vendor, as defind in the [Analytics Vendors](analytics-vendors.md) list.
 
-Przykład: znacznik `<amp-analytics type="googleanalytics">` wysyła dane analityczne do zewnętrznego dostawcy usług analityki, Google Analytics. Aby wysłać dane do punktu końcowego należącego do wydawcy, po prostu nie dodawaj atrybutu `type`; dane analityczne będą wysyłane do punktów końcowych zdefiniowanych dla danego [żądania](deep_dive_analytics.md).
+For example: `<amp-analytics type="googleanalytics">` sends analytics data to the third-party analytics provider, Google Analytics. To send data to a publisher-owned endpoint, simply don’t include the `type` attribute; the analytics data is sent to the defined endpoints for each [request](deep_dive_analytics.md).
 
-Konfiguracje dostawców usług analityki to szybki sposób na rozpoczęcie pracy ze składnikiem [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). W celu uzyskania dalszych wskazówek należy zapoznać się z dokumentacją dostawcy i zasobami pomocy. Jak już wcześniej wspomniano, lista dostawców, którzy już zintegrowali się z AMP, jak również linki do ich dokumentacji znajdują się na liście [Dostawcy usług analityki](analytics-vendors.md).
+Analytics vendor configurations are a quick way to get started with [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). You should consult your vendor’s documentation and help resources for further guidance. As previously mentioned, the list of vendors who’ve already integrated with AMP, as well as links to their specific documentation can be found in the [Analytics Vendors](analytics-vendors.md) list.
 
-Jeśli jesteś dostawcą rozwiązań analitycznych, dowiedz się więcej o [integrowaniu własnej konfiguracji analityki z AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+If you’re an analytics vendor, learn more about [integrating your own analytics configuration into AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
 
 ## Ładowanie konfiguracji zdalnej: atrybut config
 
@@ -276,7 +279,7 @@ Ten przykład zawiera konfigurację zdalną, zmienne zdefiniowane na najwyższym
 </amp-analytics>
 ```
 
-Gdy ta sama zmienna `var` jest zdefiniowana w wielu miejscach, kolejność pierwszeństwa raz ustawia wartość zmiennej. Tak więc, jeśli konfiguracja zdalna zdefiniowała `account` jako UA-XXXXX-Y w powyższym przykładzie, wartości różnych zmiennych będą następujące:
+When the same `var` is defined in multiple locations, the variable order of precedence sets its value once. Thus, if the remote configuration defined `account` as UA-XXXXX-Y in the example above, the values of various vars will be as follows:
 
 <table>
   <thead>
