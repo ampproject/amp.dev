@@ -1,25 +1,28 @@
 ---
-$title: Dodawanie czcionek niestandardowych
-$order: 6
-description: Strony AMP nie mogą zawierać zewnętrznych arkuszy stylów, z wyjątkiem czcionek niestandardowych. Czcionki niestandardowe można osadzać na stronie na dwa sposoby...
+"$title": Add custom fonts
+"$order": '6'
+description: "AMP pages can't include external stylesheets, with the exception of custom fonts. You can embed custom fonts into your page in two ways ..."
+formats:
+- websites
+- ads
+- stories
 author: pbakaus
 ---
 
-Strony AMP nie mogą zawierać zewnętrznych arkuszy stylów, z wyjątkiem czcionek niestandardowych. Czcionki niestandardowe można osadzać na stronie na dwa sposoby:
+AMP pages can’t include external stylesheets, with the exception of custom fonts. You can embed custom fonts into your page in two ways:
 
-1. Za pomocą znacznika `<link>` (tylko dostawcy czcionek z listy dozwolonych)
-2. Za pomocą reguły `@font-face` (bez ograniczeń, dozwolone są wszystkie czcionki)
+1. Through a `<link>` tag (allow-listed font providers only)
+2. Via `@font-face` (no restrictions, all fonts allowed)
 
-### 1. Stosowanie znacznika `<link>`
+### 1. Using `<link>`
 
-Użyj znacznika `<link>` (zwykle w nagłówku strony):
+Use a `<link>` tag (usually in the head of your page), like so:
 
 [sourcecode:html]
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+[/sourcecode]
 
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine"> [/sourcecode]
-
-Następujące źródła czcionek są na liście dozwolonych i dozwolone jest pobieranie z nich czcionek za pomocą znaczników link:
+The following origins are allowlisted and allowed for font serving via link tags:
 
 - Typography.com: **https://cloud.typography.com**
 - Fonts.com: **https://fast.fonts.net**
@@ -27,14 +30,21 @@ Następujące źródła czcionek są na liście dozwolonych i dozwolone jest pob
 - Typekit: **https://use.typekit.net**
 - Font Awesome: **https://maxcdn.bootstrapcdn.com**, **https://use.fontawesome.com**
 
-### 2. Stosowanie reguły `@font-face`
+### 2. Using `@font-face`
 
-Można również użyć reguły [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) w arkuszu stylów AMP:
+Alternatively, you can use [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) within your AMP stylesheet:
 
 [sourcecode:html]
+<style amp-custom>
+  @font-face {
+    font-family: "Bitstream Vera Serif Bold";
+    src: url("https://somedomain.org/VeraSeBd.ttf");
+  }
 
-<style amp-custom=""><br>  @font-face {<br>    font-family: "Bitstream Vera Serif Bold";<br>    src: url("https://somedomain.org/VeraSeBd.ttf");<br>  }<br><br>  body {<br>    font-family: "Bitstream Vera Serif Bold", serif;<br>  }<br></style>
-
+  body {
+    font-family: "Bitstream Vera Serif Bold", serif;
+  }
+</style>
 [/sourcecode]
 
-[tip type="note"] **UWAGA —** czcionki dołączane za pomocą reguły `@font-face` muszą być pobierane przy użyciu schematu HTTP lub HTTPS. [/tip]
+[tip type="note"] **NOTE –**  Fonts included via `@font-face` must be fetched via the HTTP or HTTPS scheme. [/tip]
