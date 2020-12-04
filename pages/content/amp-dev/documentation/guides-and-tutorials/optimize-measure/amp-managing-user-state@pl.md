@@ -1,5 +1,10 @@
 ---
-$title: Zarządzanie stanem użytkownika nieuwierzytelnionego za pomocą AMP
+"$title": Manage non-authenticated user state with AMP
+order: '2'
+formats:
+- websites
+teaser:
+  text: "**Table of contents**"
 ---
 
 <!--
@@ -25,296 +30,305 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-**Spis treści**
+**Table of contents**
 
-- [Informacje ogólne](#background)
-- [Przewodnik po implementacji](#implementation-guide)
-    - [Przed rozpoczęciem](#before-getting-started)
-    - [Zadanie 1: dla stron bez AMP w źródle wydawcy ustaw identyfikator i wyślij analityczne pakiety ping](#task1)
-    - [Zadanie 2: dla stron AMP ustaw identyfikator i wysyłaj analityczne pakiety ping, dodając zastępczy identyfikator klienta w pakietach ping składnika amp-analytics](#task2)
-    - [Zadanie 3: przetwórz analityczne pakiety ping ze stron w źródle wydawcy](#task3)
-    - [Zadanie 4: przetwórz analityczne pakiety ping z serwera buforującego AMP lub kontekstów wyświetlania przeglądarki AMP i określ mapowanie identyfikatorów (w razie potrzeby)](#task4)
-    - [Zadanie 5: stosowanie identyfikatora klienta podczas tworzenia linków i przesyłania formularza](#task5)
-- [Zdecydowanie zalecane praktyki](#strongly-recommended-practices)
+- [Background](#background)
+- [Implementation guide](#implementation-guide)
+    - [Before getting started](#before-getting-started)
+    - [Task 1: For non-AMP pages on the publisher origin, set up an identifier and send analytics pings](#task1)
+    - [Task 2: For AMP pages, set up an identifier and send analytics pings by including Client ID replacement in amp-analytics pings](#task2)
+    - [Task 3: Process analytics pings from pages on the publisher origin](#task3)
+    - [Task 4: Process analytics pings from AMP cache or AMP viewer display contexts and establish identifier mappings (if needed)](#task4)
+    - [Task 5: Using Client ID in linking and form submission](#task5)
+- [Strongly recommended practices](#strongly-recommended-practices)
 
-Stan użytkownika jest ważną koncepcją w dzisiejszej sieci. Weź pod uwagę następujące przypadki użycia, które umożliwia zarządzanie stanem użytkownika:
+User state is an important concept on today’s web. Consider the following use cases that are enabled by managing user state:
 
-- Sprzedawca tworzy użyteczny **koszyk na zakupy**, który podczas drugiej wizyty pokazuje użytkownikowi przedmioty dodane przezeń do koszyka wiele tygodni temu. Takie postępowanie zwiększa prawdopodobieństwo, że użytkownik kupi owe przedmioty dzięki przypomnieniu, że rozważał ich zakup w przeszłości.
-- Wydawca wiadomości, który może dostosować **artykuły polecane czytelnikowi** na podstawie wielokrotnych wizyt czytelnika w artykułach wydawcy — ułatwia to utrzymanie zaangażowania czytelnika i zachęca do odkrywania dalszych treści.
-- Twórca witryny internetowej zbierającej **dane analityczne**, który może stwierdzić, czy dwie odsłony należą do tej samej osoby, która widziała dwie strony, czy też do dwóch różnych osób, z których każda widziała jedną stronę. Takie informacje pozwalają zrozumieć jak dobrze strona spełnia swoje zadanie i co w razie potrzeby poprawić.
+- A merchant builds a useful **shopping cart** that shows a user the same items during their second visit that they had added to the cart during their first visit many weeks ago. Such an experience increases the chance of the user buying that item by making sure they remain aware of the item they considered buying in the past.
+- A news publisher who can tailor **recommended articles** to a reader based on the reader’s repeated visits to the publisher’s articles, which helps keep the reader engaged and discovering more content.
+- A website developer running any type of site collects **analytics** that can tell if two pageviews belong to the same person who saw two pages or to two different people who each saw a single page. Having this insight helps to know how the site is performing, and, ultimately, how to improve it.
 
-Ten artykuł ma pomóc Ci odnieść większy sukces w **zarządzaniu stanem użytkownika nieuwierzytelnionego w AMP**, które stanowi sposób zapewnienia bezproblemowej obsługi użytkownika, nawet jeśli użytkownik nie podjął działania w celu podanie swojej tożsamości, takiego jak zalogowanie się. Po zapoznaniu się z niektórymi wyzwaniami i kwestiami dotyczącymi podejścia do tego tematu, niniejszy przewodnik przedstawia sposoby obsługi stanu użytkownika przez AMP oraz zalecenia dotyczące podejścia do implementacji technicznej.
+This article is designed to help you be more successful in **managing non-authenticated user state in AMP**, a way of providing a seamless user journey even if the user hasn’t taken an action to provide their identity, like signing in. After reviewing some of the challenges and considerations in approaching this topic, this guide outlines the ways in which user state is supported by AMP and offers recommendations on how you can approach a technical implementation.
 
-## Informacje ogólne <a name="background"></a>
+## Background <a name="background"></a>
 
-Temat stanu użytkownika zasługuje na szczególną uwagę w AMP, ponieważ strony AMP mogą być wyświetlane w wielu kontekstach, takich jak witryna internetowa, wyszukiwarka Google lub aplikacja strony trzeciej. Wprowadza to wyzwania w zarządzaniu stanem użytkownika, gdy użytkownicy przemieszczają się między kontekstami.
+The topic of user state deserves special attention in AMP because AMP pages can display in multiple contexts such as on your website, in Google Search or a third party app. This introduces challenges in managing user state when users travel between these.
 
-### Konteksty wyświetlania stron AMP <a name="display-contexts-for-amp-pages"></a>
+### Display contexts for AMP pages <a name="display-contexts-for-amp-pages"></a>
 
-Można myśleć o AMP jako o przenośnym formacie zawartości, który umożliwia jej szybkie ładowanie w dowolnym miejscu. Dokumenty AMP można wyświetlać w trzech kontekstach:
+You can think of AMP as a portable content format that enables content to be loaded fast anywhere. AMP documents can be displayed via three noteworthy contexts:
 
-- Źródło wydawcy
-- Serwer buforujący AMP
-- Przeglądarka AMP
+- The publisher's origin
+- An AMP cache
+- An AMP viewer
 
 <table>
   <tr>
-    <th width="20%">Kontekst</th>
-    <th width="20%">Czy można stąd serwować strony bez AMP?</th>
-    <th width="20%">Czy można stąd serwować strony AMP?</th>
-    <th>Przykład adresu URL</th>
+    <th width="20%">Context</th>
+    <th width="20%">Can non-AMP pages be served from here?</th>
+    <th width="20%">Can AMP pages be served from here?</th>
+    <th>Sample URL</th>
   </tr>
   <tr>
-    <td>Źródło wydawcy</td>
-    <td>Tak</td>
-    <td>Tak</td>
+    <td>Publisher’s origin</td>
+    <td>Yes</td>
+    <td>Yes</td>
     <td><code>https://example.com/article.amp.html</code></td>
   </tr>
    <tr>
-    <td>Serwer buforujący AMP</td>
-    <td>Nie</td>
-    <td>Tak</td>
+    <td>AMP cache</td>
+    <td>No</td>
+    <td>Yes</td>
     <td><code>https://example-com.cdn.ampproject.org/s/example.com/article.amp.html</code></td>
   </tr>
    <tr>
-    <td>Przeglądarka AMP</td>
-    <td>Nie</td>
-    <td>Tak</td>
+    <td>AMP viewer</td>
+    <td>No</td>
+    <td>Yes</td>
     <td><code>https://google.com/amp/s/example.com/article.amp.html</code></td>
   </tr>
 </table>
 
-Przyjrzyjmy się bliżej każdej z tych sytuacji.
+Let’s examine each of these situations more closely.
 
-**Kontekst nr 1: źródło wydawcy.** Strony AMP są rozmieszczone w taki sposób, że są one pierwotnie przechowywane i dostępne w witrynie wydawcy, np. w witrynie `https://example.com` moze znajdować się strona `https://example.com/article.amp.html`.
+**Context #1: the publisher’s origin.** AMP pages are deployed so that they are originally hosted from and accessible via the publisher’s site, e.g. on `https://example.com` one might find `https://example.com/article.amp.html`.
 
-Wydawcy mogą zdecydować się na publikację wyłącznie w formacie AMP albo na publikację dwóch wersji treści (czyli treści AMP „sparowanych” z treściami bez AMP). Model „sparowany” wymaga pewnych [szczególnych kroków](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/discovery) w celu zapewnienia, że wersje AMP stron są wykrywalne dla wyszukiwarek, portali społecznościowych i innych platform. Oba podejścia do publikowania są w pełni obsługiwane; do wydawcy należy decyzja, które podejście wybrać.
+Publishers can choose to publish exclusively in AMP, or to publish two versions of content (that is, AMP content “paired” with non-AMP content). The “paired” model requires some [particular steps](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/discovery) to ensure the AMP versions of pages are discoverable to search engines, social media sites, and other platforms. Both publishing approaches are fully supported; it's up to the publisher to decide on which approach to take.
 
-> **UWAGA:**
-> Ze względu na właśnie opisany „parowany” model wydawniczy źródło wydawcy (w powyższym przykładzie `https://example.com`) jest kontekstem, w którym można uzyskać dostęp do **zarówno do treści AMP, jak i bez AMP**. W rzeczywistości jest to jedyny kontekst, w którym może się to zdarzyć, ponieważ serwery buforujące AMP i przeglądarki AMP opisane poniżej dostarczają tylko prawidłową zawartość AMP.
+> **NOTE:**
+> Due to the “paired” publishing model just described, the publisher’s origin (in the example above, `https://example.com`) is a context in which **both AMP and non-AMP content can be accessed**. Indeed, it’s the only context in which this can happen because AMP caches and AMP viewers, described below, only deliver valid AMP content.
 
-**Kontekst nr 2: serwer buforujący AMP.** Pliki AMP mogą być buforowane w chmurze przez serwer buforujący strony trzeciej w celu skrócenia czasu dotarcia treści na urządzenie mobilne użytkownika.
+**Context #2: an AMP cache.** AMP files can be cached in the cloud by a third-party cache to reduce the time content takes to get to a user’s mobile device.
 
-Korzystając z formatu AMP, producenci treści udostępniają je w plikach AMP do buforowania przez strony trzecie. W przypadku frameworku tego typu wydawcy nadal kontrolują swoje treści (publikując je w ich źródle, co opisano powyżej), ale platformy mogą buforować lub dublować treści w celu zapewnienia optymalnej szybkości dostarczania ich użytkownikom.
+By using the AMP format, content producers are making the content in AMP files available to be cached by third parties. Under this type of framework, publishers continue to control their content (by publishing to their origin as detailed above), but platforms can cache or mirror the content for optimal delivery speed to users.
 
-Treści serwowane w ten sposób tradycyjnie pochodzą z innej domeny. Usługa [Google AMP Cache](https://developers.google.com/amp/cache/overview) na przykład do dostarczania treści używa domeny `https://cdn.ampproject.org`, np. `https://example-com.cdn.ampproject.org/s/example.com/article.amp.html`.
+Traditionally, content served in this way originates from a different domain. For example, the [Google AMP Cache](https://developers.google.com/amp/cache/overview) uses `https://cdn.ampproject.org` to deliver content, e.g. `https://example-com.cdn.ampproject.org/s/example.com/article.amp.html`.
 
-**Kontekst nr 3: przeglądarka AMP.** Format AMP jest zbudowany do obsługi osadzania w przeglądarkach AMP stron trzecich. Umożliwia to wysoki stopień współpracy między plikiem AMP a użytkownikiem, co zapewnia korzyści takie jak: inteligentne i bezpieczne wstępne ładowanie i wstępne renderowanie zawartości oraz nowatorskie rozwiązania, takie jak przechodzenie przeciąganiem między całymi stronami AMP.
+**Context #3: an AMP viewer.** The AMP format is built to support embedding within third-party AMP viewers. This enables a high degree of cooperation between the AMP file and the viewer experience, benefits of which include: smart and secure preloading and pre-rendering of content and innovative affordances like swiping between full AMP pages.
 
-Podobnie jak w przypadku serwera buforującego AMP, domena przeglądarki AMP również będzie inna niż źródło wydawcy. Host przeglądarki wyszukiwarki Google na przykład ma domenę `https://google.com` i osadza element iframe, który żąda zawartości wydawcy z usługi Google AMP Cache.
+Just like the AMP cache case, expect the domain for an AMP viewer to also be different from the publisher origin. For example, the viewer for Google Search is hosted on `https://google.com` and embeds an iframe that requests the publisher content from the Google AMP Cache.
 
-### Wiele kontekstów wymaga zarządzania wieloma stanami <a name="multiple-contexts-means-multiple-state-management"></a>
+### Multiple contexts means multiple state management <a name="multiple-contexts-means-multiple-state-management"></a>
 
-Wydawcy muszą być przygotowani do zarządzania stanem użytkownika oddzielnie w każdym kontekście wyświetlania. Funkcja AMP [Client ID](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#client-id), która do podtrzymania stanu wykorzystuje pliki cookie lub magazyn lokalny, zapewnia niezbędną obsługę stron AMP, aby mieć stabilny i pseudonimiczny identyfikator użytkownika. Z punktu widzenia implementacji wykorzystywane są albo pliki cookie, albo magazyn lokalny, a AMP podejmuje decyzję, którego z nich użyć w zależności od kontekstu wyświetlania. Na ten wybór ma wpływ techniczna możliwość zarządzania tym stanem, skalowana do setek lub tysięcy wydawców.
+Publishers must be prepared to manage the user state for each display context separately. AMP’s [Client ID](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#client-id) feature, which takes advantage of cookies or local storage to persist state, provides the necessary support for AMP pages to have a stable and pseudonymous identifier for the user. From an implementation point of view, either cookies or local storage are used, and AMP makes the decision which to use depending on the display context. This choice is influenced by the technical feasibility of managing this state scaled to hundreds or thousands of publishers.
 
-Wydawcy stron AMP mogą jednak łatwo skończyć (nieświadomie), projektując obsługę użytkowników, wymagającą wielu kontekstów. Powróćmy do naszego wcześniej opisanego przykładu koszyka zakupów i dodajmy więcej szczegółów, aby tworzyć pełną **historię użytkownika**:
+However, publishers of AMP pages can easily end up (unwittingly) designing user journeys that involve multiple contexts. Let’s revisit our earlier look at the shopping cart use case and add some more detail to it to make a full **user story**:
 
-> *W dniu 1 użytkownik znajduje stronę AMP firmy Example Inc. za pomocą wyszukiwarki Google. Wyszukiwarka Google ładuje strony AMP w przeglądarce AMP. Podczas przeglądania strony użytkownik dodaje cztery pozycje do koszyka, ale nie przechodzi do kasy. Dwa tygodnie później, w dniu 15, użytkownik przypomina sobie cztery przedmioty, których zakup rozważał i decyduje, że przyszedł czas na ich kupienie. Uzyskuje dostęp do strony głównej Example Inc. pod adresem `https://example.com` bezpośrednio (jest to strona główna bez AMP) i stwierdza, że owe cztery przedmioty są nadal zapisane w koszyku.*
+> *On day 1, the user discovers an AMP page from Example Inc. via Google Search. Google Search loads AMP pages in an AMP viewer. While viewing the page, the user adds four items to their shopping cart but doesn't check out. Two weeks later, on day 15, the user remembers the four items they were considering to purchase and decides now is the time to buy. They access Example Inc.’s homepage at `https://example.com` directly (it is a non-AMP homepage) and finds their four items are still saved in the shopping cart.*
 
-W tym scenariuszu użytkownik otrzymuje spójną obsługę koszyka, mimo że przeszedł z kontekstu przeglądarki AMP do kontekstu źródła wydawcy — a między tymi zdarzeniami upływa pewien czas. Taki sposób obsługi jest bardzo rozsądny i jeśli projektujesz obsługę zakupów, chcesz go zastosować, jak więc to zrobić?
+In this scenario, the user receives a consistent shopping cart experience even though she has traversed from an AMP viewer context to a publisher origin context—and with some time passing between these events. This experience is very reasonable and, if you’re designing a shopping experience, you should expect to support it, so how do you make it happen?
 
-**Aby umożliwić tę i każdą inną obsługę zależną od stanu użytkownika, wszystkie konteksty, przez które przechodzą użytkownicy, muszą udostępniać sobie nawzajem swój indywidualnie utrzymywany stan.**. Powiesz „Doskonale!”, mając na myśli pomysł udostępniania wartości plików cookie z identyfikatorami użytkowników ponad tymi granicami kontekstowymi. Jest pewien drobiazg: mimo że każdy z tych kontekstów wyświetla treści kontrolowane przez tego samego wydawcę, każdy z nich postrzega drugi kontekst jako stronę trzecią, ponieważ każdy z kontekstów znajduje się w innej domenie.
+**To enable this and any experience involving user state, all contexts the user traverses must share their individually-maintained state with each other.** “Perfect!”, you say, with the idea to share the cookie values with user identifiers across these contextual boundaries. One wrinkle: even though each of these contexts displays content controlled by the same publisher, they each see the other as a third-party because each context lives on different domains.
 
 <amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png" width="1030" height="868">
-  <noscript><img alt="Możliwość wyświetlania AMP w wielu kontekstach oznacza, że każdy z tych kontekstów ma własną pamięć na identyfikatory" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png"></noscript>
-</amp-img>
+  <noscript>     <img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png">   </noscript></amp-img>
 
-Jak zobaczysz w poniższym omówieniu, działanie z pozycji strony trzeciej podczas interakcji z plikami cookie może stanowić wyzwanie, w zależności od tego, jak skonfigurowane są ustawienia przeglądarki użytkownika. W szczególności, jeśli pliki cookie stron trzecich zostaną zablokowane w określonej sytuacji, uniemożliwi to udostępnianie informacji między różnymi kontekstami. Z drugiej strony, jeśli operacje z plikami cookie stron trzecich są dozwolone, informacje można udostępniać.
+As you'll see in the following discussion, being in a third-party position when interacting with cookies may present challenges, depending on how the user’s browser settings are configured. In particular, if third party cookies are blocked in a particular situation, then it will prevent the ability for information to be shared across the contexts. On the other hand, if third-party cookie operations are allowed, then information can be shared.
 
-## Przewodnik po implementacji <a name="implementation-guide"></a>
+## Implementation guide <a name="implementation-guide"></a>
 
-Ta sekcja zawiera zalecenia dotyczące zarządzania stanem użytkownika. Poniższe zadania przedstawione są jako progresja, ale w większości można je obejrzeć w dwóch fragmentach:
+This section provides recommendations for managing user state. The tasks below are presented as a progression, but can largely be viewed in two chunks:
 
-**Fragment nr 1: implementacja podstawowa:** zadania 1–4 są niezbędne, aby podstawy zaczęły działać. Polegają one na minimalnym zestawie funkcji potrzebnych do częściowego wykonania pracy: zastąpienia identyfikatora klienta AMP, odczytu i zapisania plików cookie oraz utrzymania tablicy mapowania zaplecza. Dlaczego „częściowego”? Jako że kroki przestawione w tych zadaniach polegają na odczycie i zapisie plików cookie, a ustawienia obsługi plików cookie w przeglądarce mogą to w pewnych okolicznościach uniemożliwić, ten zestaw zadań prawdopodobnie nie będzie wystarczający do pełnego zarządzania stanem użytkownika we wszystkich scenariuszach.
+**Chunk #1: Fundamental implementation:** Tasks 1-4 are essential toward getting the basics working. They rely on a minimal set of features needed to get the job partially done: AMP’s Client ID substitution, reading and writing of cookies, and maintaining a backend mapping table. Why “partially”? Because the steps conveyed in these tasks rely on reading and writing cookies and because the browser’s cookie settings may prevent this in certain circumstances, this set of tasks is likely to be insufficient for fully managing user state in all scenarios.
 
-Po ułożeniu fundamentów odwiedzimy temat o węższym zakresie zastosowań, ale oferujący kompletne rozwiązanie dla tych przypadków użycia.
+After laying the foundation, we then visit a topic with a narrower range of use cases but that offers a complete solution for those use cases.
 
-**Fragment nr 2: użycie Client ID w tworzeniu linków i przesyłaniu formularza:** w zadaniu 5 poznasz korzyści płynące z przechodzenia linków i/lub przesyłania formularza w celu przekazania informacji o identyfikatorze klienta AMP przez granice kontekstów, gdy użytkownik przechodzi z jednej strony bezpośrednio do drugiej.
+**Chunk #2: Using Client ID in linking and form submission:** In Task 5, you'll learn to advantage of link traversal and/or form submission to pass AMP Client ID information across contextual boundaries where the user is traversing from one page directly to another.
 
-> **PRZESTROGA:**
-> Poniższy przewodnik po implementacji zaleca stosowanie plików cookie i pracę z nimi. Należy zapoznać się z sekcją [Zdecydowanie zalecane praktyki](#strongly-recommended-practices), zawierającą istotne sugestie, które należy wziąć pod uwagę.
+> **CAUTION:**
+> The following implementation guide advises usage of and working with cookies. Be sure to consult the [Strongly recommended practices](#strongly-recommended-practices) section for important suggestions to keep in mind.
 
-### Przed rozpoczęciem <a name="before-getting-started"></a>
+### Before getting started <a name="before-getting-started"></a>
 
-Przechodząc przez poniższe wskazówki techniczne, załóżmy, że będziesz wiązać **stan użytkownika** ze stabilnym **identyfikatorem**, reprezentującym użytkownika. Identyfikator może wyglądać na przykład tak: `n34ic982n2386n30`. Po stronie serwera należy wówczas powiązać identyfikator `n34ic982n2386n30` z dowolnym zestawem informacji o stanie użytkownika, takim jak zawartość koszyka, lista wcześniej przeczytanych artykułów lub inne dane zależne od przypadku użycia.
+In walking through the technical guidance below, let's assume that you’ll be binding **user state** to a stable **identifier** that represents the user. For example, the identifier might look like `n34ic982n2386n30`. On the server side you then associate `n34ic982n2386n30` to any set of user state information, such as shopping cart content, a list of previously read articles, or other data depending on the use case.
 
 <amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
-  <noscript><img alt="Pojedynczy identyfikator może służyć do zarządzania stanem użytkownika w wielu przypadkach użycia" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png"></noscript>
-</amp-img>
+  <noscript>     <img alt="A single identifier could be used to manage user state for many use cases" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png">   </noscript></amp-img>
 
-Dla przejrzystości w pozostałej części tego dokumentu będziemy nazywać różne ciągi znaków, będące identyfikatorami, stosując bardziej zrozumiałe nazwy poprzedzone znakiem dolara (`$`):
+For clarity throughout the rest of this document, we’ll call various strings of characters that are identifiers by more readable names preceded by a dollar sign (`$`):
 
-[sourcecode:text] n34ic982n2386n30 ⇒ $sample_id [/sourcecode]
+[sourcecode:text]
+n34ic982n2386n30 ⇒ $sample_id
+[/sourcecode]
 
-**Nasz przypadek użycia:** w całym tym przewodniku będziemy pracować nad przykładem zaprojektowanym w celu uzyskania prostego śledzenia odsłon (tj. analityki), w którym chcemy uzyskać jak najdokładniejsze zliczanie użytkowników. To znaczy, że nawet jeśli użytkownik uzyskuje dostęp do treści danego wydawcy z różnych kontekstów (w tym przechodząc między stronami AMP i bez AMP), chcemy, aby te wizyty były zliczane w taki sam sposób, jakby użytkownik przeglądał tylko tradycyjne strony (bez AMP) tego wydawcy.
+**Our use case:** Throughout this guide we will work on an example designed to achieve simple pageview tracking (i.e., analytics) in which we want to produce the most accurate user counting possible. This means that even if the user is accessing a particular publisher’s content from different contexts (including crossing between AMP and non-AMP pages), we want these visits to be counted toward a singular understanding of the user that is the same as if the user were browsing only on such publisher’s traditional non-AMP pages.
 
-**Założenie o dostępności stabilnych wartości plików cookie:** zakładamy również, że użytkownik korzysta z tego samego urządzenia, przeglądarki i przeglądania nieprywatnego / nie incognito, aby zapewnić, że wartości plików cookie są zachowane i dostępne przez cały czas trwania sesji użytkownika. Jeśli tak nie jest, nie należy oczekiwać, że te techniki zadziałają. Jeśli jest to wymagane, należy dążyć do zarządzania stanem użytkownika na podstawie jego uwierzytelnionej (tj. zalogowanej) tożsamości.
+**Assumption about availability of stable cookie values:** We also assume that the user is using the same device, browser, and non-private/incognito browsing, in order to assure that cookie values are preserved and available across the user’s sessions over time. If this is not the case, these techniques should not be expected to work. If this is required, look to manage user state based on the user’s authenticated (i.e. signed-in) identity.
 
-**Koncepcje przedstawione poniżej można rozciągnąć na inne przypadki użycia:** chociaż koncentrujemy się tylko na przypadku użycia analitycznego, przedstawione poniżej koncepcje mogą zostać przerobione na inne przypadki użycia, wymagające zarządzania stanem użytkownika w różnych kontekstach.
+**The concepts presented below can be extended to other use cases:** Although we focus just on the analytics use case, the concepts conveyed below can be reworked for other use cases requiring user state management across contexts.
 
 <a id="task1"></a>
 
-### Zadanie 1: dla stron bez AMP w źródle wydawcy ustaw identyfikator i wyślij analityczne pakiety ping <a name="task-1-for-non-amp-pages-on-the-publisher-origin-set-up-an-identifier-and-send-analytics-pings"></a>
+### Task 1: For non-AMP pages on the publisher origin, set up an identifier and send analytics pings <a name="task-1-for-non-amp-pages-on-the-publisher-origin-set-up-an-identifier-and-send-analytics-pings"></a>
 
-Zacznijmy od konfiguracji analityki dla stron bez AMP serwowanych z pominięciem źródła wydawcy. Można to osiągnąć na wiele sposobów, w tym za pomocą pakietu analitycznego, takiego jak Google Analytics lub Adobe Analytics, lub poprzez napisanie własnej implementacji.
+Let’s begin by configuring analytics for non-AMP pages served off of the publisher origin. This can be achieved in many ways, including using an analytics package like Google Analytics or Adobe Analytics, or by writing a custom implementation.
 
-Jeśli używasz pakietu analitycznego od dostawcy, prawdopodobnie pakiet ten zajmuje się zarówno konfigurowaniem plików cookie, jak i przesyłaniem pakietów ping za pomocą swojego kodu konfiguracyjnego i interfejsu API. Jeśli tak jest, przeczytaj poniższe kroki, aby upewnić się, że są one zgodne z Twoim podejściem analitycznym, ale oczekuj, że nie trzeba będzie wprowadzać żadnych zmian w ramach wykonywania tego zadania.
+If you’re using an analytics package from a vendor, it’s likely that package takes care of both setting up cookies and transmitting pings via its configuration code and APIs. If this is the case, you should read through the steps below to ensure they align with your analytics approach but expect that you won’t need to make any changes as part of completing this task.
 
-Pozostała część tego zadania oferuje wskazówki przydatne, jeśli chcesz skonfigurować własną analitykę.
+The rest of this task offers guidance if you are looking to set up your own analytics.
 
-##### Konfigurowanie identyfikatora za pomocą plików cookie strony pierwszej <a name="set-up-an-identifier-using-first-party-cookies"></a>
+##### Set up an identifier using first-party cookies <a name="set-up-an-identifier-using-first-party-cookies"></a>
 
-Jeśli masz strony bez AMP, serwowane z Twojego źródła wydawcy, ustaw stały i stabilny identyfikator, który będzie używany na tych stronach. Zazwyczaj jest on [implementowany za pomocą plików cookie strony pierwszej](https://en.wikipedia.org/wiki/HTTP_cookie#Tracking)[.](https://en.wikipedia.org/wiki/HTTP_cookie#Tracking)
+If you have non-AMP pages being served from your publisher origin, set up a persistent and stable identifier to be used on these pages. This is typically [implemented with first-party cookies](https://en.wikipedia.org/wiki/HTTP_cookie#Tracking).
 
-Na potrzeby naszego przykładu powiedzmy, że ustawisz plik cookie o nazwie `uid` (jak „użytkownika identyfikator”), który będzie tworzony podczas pierwszej wizyty użytkownika. Jeśli nie jest to pierwsza wizyta użytkownika, należy odczytać wartość, która została wcześniej ustawiona podczas pierwszej wizyty.
+For the purposes of our example, let’s say you’ve set a cookie called `uid` (“user identifier”) that will be created on a user’s first visit. If it’s not the user’s first visit, then read the value that was previously set on the first visit.
 
-To znaczy, że są dwa przypadki stanu stron bez AMP w źródle wydawcy:
+This means there are two cases for the state of non-AMP pages on the publisher origin:
 
-**Przypadek nr 1: pierwsze odwiedziny.** Przy pierwszym wylądowaniu na stronie bez AMP nie ma żadnego pliku cookie. Jeśli obecność pliku cookie sprawdzona została przed jego ustawieniem, w pliku cookie odpowiadającym  `uid` nie zobaczysz żadnych ustawionych wartości:
-
-[sourcecode:bash]
-
-> document.cookie "" [/sourcecode]
-
-Plik cookie należy ustawiać w trakcie pierwszego ładowania strony, aby po załadowaniu strony widać było, że wartość została ustawiona:
+**Case #1: Initial visit.** Upon first landing on the non-AMP page, there will be no cookie. If you checked for the cookie before one was set, you’d see no values set in the cookie corresponding to the `uid`:
 
 [sourcecode:bash]
+> document.cookie
+  ""
+[/sourcecode]
 
-> document.cookie "uid=$publisher_origin_identifier" [/sourcecode]
-
-**Przypadek nr 2: drugie i następne odwiedziny.** Plik cookie będzie ustawiony. Jeśli więc otworzysz konsolę programistyczną na stronie, zobaczysz:
+Sometime in the initial load, the cookie should be set, so that if you do this once the page is loaded, you will see a value has been set:
 
 [sourcecode:bash]
+> document.cookie
+  "uid=$publisher_origin_identifier"
+[/sourcecode]
 
-> document.cookie "uid=$publisher_origin_identifier" [/sourcecode]
+**Case #2: Non-initial visit.** There will be a cookie set. Thus, if you open the developer console on the page, you’d see:
 
-##### Wysyłanie analitycznych pakietów ping <a name="send-analytics-pings"></a>
+[sourcecode:bash]
+> document.cookie
+  "uid=$publisher_origin_identifier"
+[/sourcecode]
 
-Po ustawieniu identyfikatora można go dołączać do analitycznych pakietów ping, aby rozpocząć śledzenie odsłon.
+##### Send analytics pings <a name="send-analytics-pings"></a>
 
-Konkretna implementacja będzie zależeć od żądanej konfiguracji, ale zazwyczaj należy wysyłać do serwera usług analityki pakiety ping (żądania), które zawierają przydatne dane w adresie URL samego żądania. Oto przykład, który również wskazuje, w jaki sposób umieścić wartość pliku cookie w żądaniu:
+Once you’ve set up an identifier, you can now incorporate it in analytics pings to begin tracking pageviews.
 
-[sourcecode:http] https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_identifier [/sourcecode]
+The specific implementation will depend on your desired configuration, but generally you’ll be looking to send pings (requests) to your analytics server, which include useful data within the URL of the request itself. Here’s an example, which also indicates how you’d include your cookie value inside of the request:
 
-Należy pamiętać, że w powyższym przykładzie identyfikator użytkownika jest wskazywany przez oddzielny parametr zapytania, `user_id`:
+[sourcecode:http]
+https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_identifier
+[/sourcecode]
 
-[sourcecode:text] user_id=$publisher_origin_identifier [/sourcecode]
+Note that in the above example the identifier for the user is indicated by a specific query param, `user_id`:
 
-Użycie tutaj parametru „`user_id`” powinno być określone na podstawie tego, czego oczekuje serwer usług analityki i nie należy go specjalnie wiązać z tym, co nazywasz plikiem cookie przechowującym identyfikator lokalnie.
+[sourcecode:text]
+user_id=$publisher_origin_identifier
+[/sourcecode]
+
+The use of “`user_id`” here should be determined by what your analytics server expects to process and is not specifically tied to what you call the cookie that stores the identifier locally.
 
 <a id="task2"></a>
 
-### Zadanie 2: dla stron AMP ustaw identyfikator i wysyłaj analityczne pakiety ping, dodając zastępczy identyfikator klienta w pakietach ping składnika amp-analytics <a name="task-2-for-amp-pages-set-up-an-identifier-and-send-analytics-pings-by-including-client-id-replacement-in-amp-analytics-pings"></a>
+### Task 2: For AMP pages, set up an identifier and send analytics pings by including Client ID replacement in amp-analytics pings <a name="task-2-for-amp-pages-set-up-an-identifier-and-send-analytics-pings-by-including-client-id-replacement-in-amp-analytics-pings"></a>
 
-Przechodząc teraz do stron AMP, przyjrzyjmy się jak można ustalić i przesłać identyfikator do usługi analityki. Będzie to miało zastosowanie niezależnie od kontekstu, w jakim strona AMP jest prezentowana, a więc dotyczy to każdej strony AMP ze źródła wydawcy, serwowanej przez serwer buforujący AMP lub wyświetlanej w przeglądarce AMP.
+Turning now to AMP pages, let's look at how you can establish and transmit an identifier for analytics. This will be applicable regardless of the context the AMP page is presented in, so this covers any AMP page on the publisher origin, served via an AMP cache, or displayed in AMP viewer.
 
-Dzięki wykorzystaniu funkcji, które wymagają Client ID, AMP wykona pracę „pod maską”, aby wygenerować i zapisać wartości identyfikatorów klientów i skierować je do funkcji, które ich wymagają. Jedną z głównych funkcji, które mogą korzystać z Client ID strony AMP, jest składnik [amp-analytics](https://amp.dev/documentation/components/amp-analytics), który jest dokładnie tym, czego będziemy potrzebować, aby zaimplementować nasz przykład użycia analityki.
+Through usage of features that require Client ID, AMP will do the “under the hood” work to generate and store client ID values and surface them to the features that require them. One of the principal features that can use AMP’s Client ID is [amp-analytics](https://amp.dev/documentation/components/amp-analytics), which happens to be exactly what we’ll need to implement our analytics use case example.
 
-Na stronach AMP skonstruuj pakiet ping składnika amp-analytics, zawierający Client ID:
+On AMP pages, construct an amp-analytics ping containing the Client ID:
 
 <table>
   <tr>
-    <td width="40%"><strong>Przykładowa konfiguracja amp-analytics:</strong></td>
+    <td width="40%"><strong>amp-analytics configuration looks like:</strong></td>
     <td width="60%"><code>https://analytics.example.com/ping?type=pageview&user_id=${clientId(uid)}</code></td>
   </tr>
   <tr>
-    <td><strong>To, co idzie przez sieć:</strong></td>
+    <td><strong>What goes over the network looks like:</strong></td>
     <td>
-<code>https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id</code><p><em>W tym przypadku <code>${clientId(uid)}</code> jest zastępowany rzeczywistą wartością, którą AMP albo wygeneruje w tym momencie albo zostanie zwrócona na podstawie danych zapisanych już lokalnie przez przeglądarkę użytkownika.</em></p>
+<code>https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id</code><p><em>In this case, <code>${clientId(uid)}</code> is replaced by an actual value that AMP either generates at that moment or will be returned based on what the user’s browser has already stored locally</em></p>
 </td>
   </tr>
 </table>
 
-Należy zwrócić uwagę na fakt, że parametr przekazywany do podstawienia identyfikatora klienta, `${clientId(uid)`, to `uid`. Był to świadomy wybór, który dopasowuje nazwę pliku cookie użytego w źródle jak opisano w [Zadaniu 1](#task1). Aby zapewnić bezproblemową integrację, należy zastosować tę samą technikę.
+Take note of the fact that the parameter passed into the Client ID substitution, `${clientId(uid)`, is `uid`. This was a deliberate choice that matches the same cookie name used on the publisher origin as described in [Task 1](#task1). For the most seamless integration, you should apply the same technique.
 
-Jeśli chodzi o resztę implementacji składnika amp-analytics, zapoznaj się z dokumentacją [konfiguracji składnika amp-analytics](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/), aby dowiedzieć się więcej o tym, jak skonfigurować żądania amp-analytics lub zmodyfikować te od dostawcy usług analityki. Pakiet ping można dodatkowo modyfikować w celu transportowania dodatkowych danych, które można zdefiniować bezpośrednio lub skorzystać z innych [podstawień AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
+Concerning the rest of the amp-analytics implementation, see the documentation for [amp-analytics configuration](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) for more detail on how to set up amp-analytics requests or to modify those of your analytics vendor. The ping can be further modified to transport additional data that you either directly define or by taking advantage of other [AMP substitutions](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
 
-> **Warto wiedzieć:**
-> Dlaczego użyliśmy nazwy `uid` dla parametru przekazywanego do funkcji Client ID? Parametr, który przyjmuje podstawienie `clientId(...)` służy do określenia zakresu. Właściwie można używać funkcji Client ID w wielu przypadkach użycia i w rezultacie generować wiele identyfikatorów klienta. Parametr rozróżnia te przypadki użycia i dlatego używasz go do określenia przypadku użycia, do którego potrzebujesz identyfikatora klienta. Możesz na przykład wysyłać różne identyfikatory do stron trzecich, takich jak reklamodawcy i używać parametru „scope”, aby to osiągnąć.
+> **Good to know:**
+> Why did we use of the name `uid` for the parameter passed to the Client ID feature? The parameter that the `clientId(...)` substitution takes is used to define scope. You can actually use the Client ID feature for many use cases and, as a result, generate many client IDs. The parameter differentiates between these use cases and so you use it to specify which use case you would like a Client ID for. For instance, you might want to send different identifiers to third parties like an advertiser and you could use the “scope” parameter to achieve this.
 
-Jeśli chodzi o źródło wydawcy, najłatwiej jest myśleć o parametrze „scope” jako o tym, co nazywasz plikiem cookie. Zalecając wartość `uid` dla parametru Client ID w [Zadaniu 2](#task2), dostosowujemy się do wyboru użycia pliku cookie o nazwie `uid` w [Zadaniu 1](#task1).
+On the publisher origin, it’s easiest to think of “scope” as what you call the cookie. By recommending a value of `uid` for the Client ID parameter here in [Task 2](#task2), we align with the choice to use a cookie called `uid` in [Task 1](#task1).
 
 <a id="task3"></a>
 
-### Zadanie 3: przetwórz analityczne pakiety ping ze stron w źródle wydawcy <a name="task-3-process-analytics-pings-from-pages-on-the-publisher-origin"></a>
+### Task 3: Process analytics pings from pages on the publisher origin <a name="task-3-process-analytics-pings-from-pages-on-the-publisher-origin"></a>
 
-Ze względu na konfigurację wykonaną w zadaniach 1 i 2, gdy ktoś uzyska dostęp do wersji AMP (z dowolnego kontekstu) lub wersji bez AMP ze źródła wydawcy, analityczny pakiet ping będzie używać tego samego identyfikatora. Postępując zgodnie z instrukcją w [Zadaniu 2](#task2), aby wybrać Client ID „scope” taki sam, jak nazwa pliku cookie użytego w [Zadaniu 1](#task1), AMP ponownie użyje tego samego pliku cookie.
+Because of the setup performed in Tasks 1 and 2, when someone accesses the AMP version (from any context) or the non-AMP version on the publisher origin the analytics ping will use the same identifier. By following the guidance in [Task 2](#task2) to choose a Client ID "scope" that was the same name as the name of the cookie you used in [Task 1](#task1), AMP reuses the same cookie.
 
-Ilustruje to poniższa tabela:
+This is illustrated in the table below:
 
 <table>
   <tr>
-    <td width="40%">Analityczny pakiet ping pochodzący ze strony <strong>bez AMP w źródle wydawcy</strong> wygląda jak</td>
+    <td width="40%">An analytics ping coming from a <strong>non-AMP page on the publisher origin</strong> looks like</td>
     <td width="60%"><code>https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_identifier</code></td>
   </tr>
   <tr>
-    <td>Analityczny pakiet ping pochodzący ze strony <strong>AMP w źródle wydawcy</strong> wygląda jak</td>
+    <td>An analytics ping coming from an <strong>AMP page on the publisher origin</strong> looks like</td>
     <td>
-<code>https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_identifier</code><br><em>W tym przypadku jest taki sam! Wybierając wartość zakresu <code>uid</code> wykorzystuje się wartość bazową pliku cookie <code>uid</code>, którą jest <code>$publisher_origin_identifier</code>.</em>
+<code>https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_identifier</code><br><em>In this case, it's the same! By choosing a scope value of <code>uid</code> the underlying value of the <code>uid</code> cookie, which is <code>$publisher_origin_identifier</code>, gets used.</em>
 </td>
   </tr>
 </table>
 
 <a id="task4"></a>
 
-### Zadanie 4: przetwórz analityczne pakiety ping z serwera buforującego AMP lub kontekstów wyświetlania przeglądarki AMP i określ mapowanie identyfikatorów (w razie potrzeby) <a name="task-4-process-analytics-pings-from-amp-cache-or-amp-viewer-display-contexts-and-establish-identifier-mappings-if-needed"></a>
+### Task 4: Process analytics pings from AMP cache or AMP viewer display contexts and establish identifier mappings (if needed) <a name="task-4-process-analytics-pings-from-amp-cache-or-amp-viewer-display-contexts-and-establish-identifier-mappings-if-needed"></a>
 
-Gdy ustawiliśmy analityczny pakiet ping w [Zadaniu 2](#task2) w celu przesyłania danych ze stron AMP wyświetlanych na serwerze buforującym AMP lub w przeglądarce AMP, stworzyliśmy również problem. Jak wspomniano wcześniej, konteksty serwera buforującego AMP i przeglądarki AMP różnią się od kontekstu źródła wydawcy, a wraz z tym przychodzi inny sposób utrzymywania identyfikatorów. Aby przetworzyć te pakiety ping w celu uniknięcia problemów takich, jak zliczanie nadmiernej liczby użytkowników, wykonamy kilka [kroków](#implementation-steps), aby spróbować jak najczęściej uzgadniać identyfikatory.
+When we set up analytics pings in [Task 2](#task2) to transmit data from AMP pages displayed within an AMP cache or AMP viewer, we also created a problem. As discussed previously, AMP cache and AMP viewer contexts are different from the publisher origin context, and along with this comes as different way of maintaining identifiers. To process these pings to avoid problems like overcounting users, we’ll take some [steps](#implementation-steps) to try and reconcile identifiers as often as we can.
 
-Aby pomóc w wyjaśnieniu kroków, które podejmujemy, warto najpierw dokładnie przemyśleć, jak powstaje problem ze zliczaniem nadmiernej liczby użytkowników.
+To help explain the steps we’re taking, it’s helpful to first reconsider exactly how the overcounting problem arises.
 
-#### Analiza problemu <a name="reviewing-the-problem"></a>
+#### Reviewing the problem <a name="reviewing-the-problem"></a>
 
-Rozważmy następujący przepływ:
+Consider the following flow:
 
-1. Użytkownik odwiedza **stronę AMP w kontekście wyświetlania przeglądarki AMP**, np. `https://google.com/amp/s/example.com/article.amp.html`. Jako że przeglądarka AMP nie ma dostępu do pliku cookie `uid` w źródle wydawcy, w celu identyfikacji użytkownika generowana jest losowa wartość `$amp_client_id`.
-2. Ten sam użytkownik odwiedza następnie **stronę w źródle wydawcy`https://example.com`**. Jak opisano w [Zadaniu 3](#task3), użytkownik jest identyfikowany za pomocą wartości `$publisher_origin_identifier`.
+1. A user visits the **AMP page in an AMP viewer display context**, such as `https://google.com/amp/s/example.com/article.amp.html`. Since the AMP viewer does not have access to the `uid` cookie on the publisher origin, a random value of `$amp_client_id` is generated to identify the user.
+2. The same user then visits **a page on the publisher origin `https://example.com`**. As described in [Task 3](#task3), the user is identified with `$publisher_origin_identifier`.
 
-Tutaj (1) i (2) zdarzają się w różnych źródłach (lub kontekstach). Z tego powodu nie ma wspólnego stanu i wartość `$amp_client_id` różni się od wartości `$publisher_origin_identifier`. Jaki to ma wpływ? (1) jest to sesja jednej odsłony strony, wyglądająca jak jeden użytkownik, a (2) to inna sesja jednej odsłony strony, która wygląda jakby pochodziła od innego użytkownika. **Zasadniczo, mimo że użytkownik pozostawał zaangażowany w treść strony `https://example.com`, zliczamy zbyt wielu użytkowników, a użytkownik w (1) wygląda jak odbicie (wizyta na jednej stronie).**
+Here (1) and (2) happen on different origins (or contexts). Because of this, there’s no shared state and `$amp_client_id` is different from `$publisher_origin_identifier`. So, what’s the impact? (1) is a single pageview session that looks like one user and (2) is another single pageview session that looks like it’s coming from another user. **Basically, even though the user has stayed engaged with `https://example.com` content, we overcount users and the user in (1) looks like a bounce (a single page visit).**
 
-#### Strategia rozwiązania <a name="solution-strategy"></a>
+#### Solution strategy <a name="solution-strategy"></a>
 
-Aby rozwiązać problem zliczania nadmiernej liczby użytkowników, należy zastosować następującą strategię, której skuteczność zależy od tego, czy dozwolony jest odczyt, czy zapis plików cookie stron trzecich:
+To address the problem of overcounting, you should employ the following strategy, the potency of which depends on whether reading or writing of third-party cookies is permitted:
 
-- **Natychmiastowe uzgodnienie identyfikatora: jeśli można uzyskać dostęp do plików cookie w źródle wydawcy lub je zmieniać**, użyj lub utwórz identyfikator źródła wydawcy i zignoruj każdy identyfikator w żądaniu usługi analityki. Będziesz w stanie z powodzeniem powiązać działania między tymi dwoma kontekstami.
-- **Opóźnione uzgodnienie identyfikatora: jeśli nie można uzyskać dostępu lub zmienić identyfikatora w źródle wydawcy (tj. plików cookie)**, wówczas należy wrócić do identyfikatora klienta AMP, który znajduje się w samym żądaniu usługi analityki. Użyj tego identyfikatora jako „**aliasu**”, zamiast używać lub tworzyć nowy identyfikator źródła wydawcy (plik cookie), czego nie możesz zrobić (z powodu blokowania plików cookie stron trzecich), a następnie dodaj alias do  **tabeli mapowania **. Natychmiastowe powiązanie działań między tymi dwoma kontekstami nie powiedzie się, ale za pomocą tabeli mapowania można powiązać wartość AMP Client ID z identyfikatorem źródła wydawcy przy następnych odwiedzinach użytkownika. Gdy to nastąpi, będziesz mieć potrzebne informacje, aby powiązać działania i uzgodnić odwiedziny strony w różnych kontekstach pochodzące od tego samego użytkownika. Zadanie 5 opisuje, jak osiągnąć kompletne rozwiązanie w konkretnych scenariuszach, w których użytkownik przechodzi od razu z jednej strony do drugiej.
+- **Immediate identifier reconciliation: If you can access or change the publisher origin cookies**, use or create the publisher origin identifier and ignore any identifier within the analytics request. You will be able to successfully link activity between the two contexts.
+- **Delayed identifier reconciliation: If you cannot access or change the publisher origin identifier (i.e. the cookies)**, then fall back to the AMP Client ID that comes within the analytics request itself. Use this identifier as an “**alias**”, rather than using or creating a new publisher origin identifier (cookie), which you cannot do (because of third party cookie blocking), and add the alias to a **mapping table**. You will be unsuccessful in immediately linking activity between the two contexts, but by using a mapping table you may be able to link the AMP Client ID value with the publisher origin identifier on a future visit by the user. When this happens, you will have the needed information to link the activity and reconcile that the page visits in the different contexts came from the same user. Task 5 describes how to achieve a complete solution in specific scenarios where the user traverses from one page immediately to another.
 
-#### Kroki implementacji <a name="implementation-steps"></a>
+#### Implementation steps <a name="implementation-steps"></a>
 
-Na serwerze sprawdź, czy istnieje identyfikator źródła wydawcy
+On the server check for an existing publisher origin identifier
 
-Odczytaj pliki cookie przesłane w ramach żądania usługi analityki. W naszym przykładzie będzie to sprawdzenie obecności pliku cookie `uid` z domeny example.com.
+Read the cookies sent as part of the analytics request. In our example, this means checking for the `uid` cookie from example.com.
 
-- Jeżeli wartość `uid` zostanie odczytana, należy jej użyć do rejestrowania danych analitycznych (**identyfikatora rekordu analityki**). Z [Zadania 1](#task1) wiemy, że wartość tego identyfikatora to `$publisher_origin_identifier`. Po ustaleniu identyfikatora rekordu analityki możemy przejść do sekcji [Przechowywanie danych](#data-storage).
-- Jeśli wartość `uid` nie zostanie odczytana, należy wykonać poniższe kroki, wymagające tabeli mapowania.
+- If the `uid` value is successfully read, use it to record analytics data (**analytics record identifier**). Because of [Task 1](#task1), we know this identifier’s value is `$publisher_origin_identifier`. With an analytics record identifier established, we can skip ahead to the [Data storage](#data-storage) section.
+- If the `uid` value is not successfully read, proceed with the steps below involving the mapping table.
 
-##### Tabela mapowania <a name="mapping-table"></a>
+##### Mapping table <a name="mapping-table"></a>
 
-W naszej tabeli mapowania wartości AMP Client ID, które są widoczne w analitycznych pakietach ping, są powiązane z identyfikatorami źródła wydawcy w następujący sposób:
+Our mapping table will associate AMP Client ID values that are seen in the analytics pings to publisher origin identifiers as follows:
 
 <table>
   <tr>
-    <th width="50%"><strong>Identyfikator użytkownika w źródle wydawcy</strong></th>
-    <th width="50%"><strong>Identyfikator użytkownika na stronie AMP, która NIE znajduje się w źródle wydawcy („alias”)</strong></th>
+    <th width="50%"><strong>User ID on publisher origin</strong></th>
+    <th width="50%"><strong>User ID on AMP page that’s NOT on publisher origin (“alias”)</strong></th>
   </tr>
   <tr>
-    <td>Pochodzi z identyfikatora źródła wydawcy lub jest generowany jako wartość potencjalna, jeśli nie można uzyskać dostępu do identyfikatora źródła wydawcy.</td>
-    <td>Pochodzi z Client ID AMP</td>
+    <td>Comes from publisher origin identifier or generated as a prospective value if the publisher origin identifier cannot be accessed.</td>
+    <td>Comes from AMP Client ID</td>
   </tr>
 </table>
 
-Natychmiast po stwierdzeniu, że nie udało się odczytać identyfikatora źródła wydawcy należy sprawdzić, czy Client ID AMP zawarty w analitycznym pakiecie ping jest już użyty w mapowaniu. W tym celu należy najpierw skonsultować się z przychodzącym żądaniem składnika amp-analytics, aby uzyskać wartość Client ID. Na przykład na podstawie tego żądania:
+Immediately after determining that you were unsuccessful in reading the publisher origin identifier, check if the AMP Client ID contained within the analytics ping is already used in a mapping. To do this, first consult the incoming amp-analytics request to get the Client ID value. For example, from this request:
 
-[sourcecode:http] https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id [/sourcecode]
+[sourcecode:http]
+https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id
+[/sourcecode]
 
-wyodrębniamy pogrubioną część odpowiadającą Client ID AMP: `$amp_client_id`.
+we extract out the bolded portion corresponding to the AMP Client ID: `$amp_client_id`.
 
-Następnie sprawdź tabelę mapowania, aby spróbować znaleźć tę samą wartość w kolumnie „alias”:
+Next, examine the mapping table to try and find the same value in the “alias” column:
 
 <table>
   <tr>
-    <th width="50%"><strong>Identyfikator użytkownika w źródle wydawcy</strong></th>
-    <th width="50%"><strong>Identyfikator użytkownika na stronie AMP, która NIE znajduje się w źródle wydawcy („alias”)</strong></th>
+    <th width="50%"><strong>User ID on publisher origin</strong></th>
+    <th width="50%"><strong>User ID on AMP page that’s NOT on publisher origin (“alias”)</strong></th>
   </tr>
   <tr>
     <td><code>$existing_publisher_origin_identifier</code></td>
@@ -322,251 +336,278 @@ Następnie sprawdź tabelę mapowania, aby spróbować znaleźć tę samą warto
   </tr>
 </table>
 
-W powyższym przykładzie znajdujemy rekord, który już istnieje. Znaleziona wartość sparowana z Client ID AMP staje się identyfikatorem rekordu analitycznego. Tutaj jest to `$existing_publisher_origin_identifier`. Po ustaleniu identyfikatora rekordu analitycznego możemy przejść do sekcji [Przechowywanie danych ](#data-storage).
+In the example above, we find a record that already exists. The value we find that’s paired with the AMP Client ID becomes the analytics record identifier. Here, that is `$existing_publisher_origin_identifier`. With an analytics record identifier established, we can skip ahead to the [Data storage](#data-storage) section.
 
-W przeciwnym razie, jeśli identyfikator klienta AMP nie znajduje się w mapowaniu, musimy utworzyć mapowanie:
+Otherwise, if the AMP Client ID is not found in a mapping, we need to create a mapping:
 
-1. Wygeneruj **potencjalny identyfikator źródła wydawcy**. Nazwijmy go `$prospective_identifier` w poniższych przykładach. Wartość tę należy utworzyć zgodnie z ustawieniem wartości w źródle wydawcy, opisanym w [Zadaniu 1](#task1) powyżej.
-2. Następnie spróbuj [ustawić](https://en.wikipedia.org/wiki/HTTP_cookie#Setting_a_cookie) potencjalny identyfikator źródła wydawcy jako plik cookie w źródle wydawcy. Powiedzie się to, jeśli można zapisywać pliki cookie stron trzecich, w przeciwnym razie nie powiedzie się.
-3. Następnie zapisz parę {potencjalny identyfikator źródła wydawcy, Client ID AMP}.
+1. Generate a **prospective publisher origin identifier**. Let’s call this `$prospective_identifier` in the examples to follow. This value should be created in accordance with how you set up the value on the publisher origin, as described in [Task 1](#task1) above.
+2. Next, attempt to [set](https://en.wikipedia.org/wiki/HTTP_cookie#Setting_a_cookie) the prospective publisher origin identifier as a cookie on the publisher origin. This will succeed if third-party cookies can be written, and otherwise it will fail.
+3. Then, store the {prospective publisher origin identifier, AMP Client ID} pair.
 
-Utworzone mapowanie wygląda tak:
+The mapping we’ve created ends up looking like this:
 
 <table>
   <tr>
-    <th><strong>Identyfikator użytkownika w źródle wydawcy</strong></th>
-    <th><strong>Identyfikator użytkownika na stronie AMP, która NIE znajduje się w źródle wydawcy („alias”)</strong></th>
+    <th><strong>User ID on publisher origin</strong></th>
+    <th><strong>User ID on AMP page that’s NOT on publisher origin (“alias”)</strong></th>
   </tr>
   <tr>
-    <td> <code>$prospective_identifier</code>(generowany po otrzymaniu analitycznych pakietów ping)</td>
-    <td> <code>$amp_client_id</code> (z analitycznego pakietu ping)</td>
+    <td>
+<code>$prospective_identifier</code>(generated just-in-time when analytics ping is received)</td>
+    <td>
+<code>$amp_client_id</code> (came from analytics ping)</td>
   </tr>
 </table>
 
-Jako identyfikatora rekordu analitycznego użyjemy potencjalnego identyfikatora źródła wydawcy, ponieważ jest to wartość związana ze stanem w źródle wydawcy. W tym przypadku jest to `$prospective_identifier`, który wejdzie do gry w sekcji [Przechowywanie danych](#data-storage) poniżej.
+We’ll use the prospective publisher origin identifier as the analytics record identifier since that’s the value associated with the state on the publisher origin. In this case that’s `$prospective_identifier`, which will come into play in the [Data storage](#data-storage) section that follows.
 
-##### Przechowywanie danych <a name="data-storage"></a>
+##### Data storage <a name="data-storage"></a>
 
-Teraz, po ustaleniu identyfikatora rekordu analitycznego, można rzeczywiście zapisać informacje o stanie użytkownika (w tym przypadku dane analityczne), kluczowane przez ten identyfikator:
+Now that you've figured out the analytics record identifier you can actually store the user state information (analytics data in this case) keyed by that identifier:
 
-[sourcecode:text] {analytics record identifier, analytics data ...} [/sourcecode]
+[sourcecode:text]
+{analytics record identifier, analytics data ...}
+[/sourcecode]
 
 <a id="task5"></a>
 
-### Zadanie 5: stosowanie identyfikatora klienta podczas tworzenia linków i przesyłania formularza <a name="task-5-using-client-id-in-linking-and-form-submission"></a>
+### Task 5: Using Client ID in linking and form submission <a name="task-5-using-client-id-in-linking-and-form-submission"></a>
 
-Gdy odczytywanie i zapisywanie plików cookie stron trzecich jest niedozwolone, zazwyczaj wystąpią sytuacje, w których zarządzanie stanem użytkownika będzie niemożliwe do wykonania z pełną skutecznością. Kroki podjęte przez nas w zadaniach 1–4 przydają się na dwa sposoby: (1) zapewniają całkowicie skuteczne rozwiązanie w przypadku, gdy odczyt i zapis plików cookie stron trzecich jest dozwolony oraz (2) ustawiają nasz system w taki sposób, aby wykorzystać każdą ewentualną możliwość uzgodnienia identyfikatorów z różnych kontekstów, jeśli natychmiastowe uzgodnienie nie jest możliwe ze względu na ustawienia plików cookie w przeglądarce.
+In general, when reading and writing third-party cookies is disallowed, there will be situations where managing user state is impossible to do with complete effectiveness. In Tasks 1-4, the steps we’ve taken help in two ways: (1) They provide a completely effective solution for when reading and writing third-party cookies is allowed, and (2) they set our system up to take advantage of any eventual opportunity to reconcile cross-context identifiers if immediate reconciliation is impossible due to the browser’s cookie settings.
 
-W tym zadaniu zajmiemy się dodatkową optymalizacją, która pozwala użytkownikowi przechodzić między kontekstami z jednej strony na drugą **za pomocą linków lub wysyłania formularzy**. W tych sytuacjach oraz dzięki opisanej poniżej implementacji możliwe jest utworzenie w pełni efektywnego schematu zarządzania stanem użytkownika w różnych kontekstach.
+In this task, we’ll cover an additional optimization that helps when the user is navigating across contexts from one page to another page either **via linking or form submissions**. In these situations, and with the implementation work described below, it is possible to set up a fully effective scheme for managing user state across contexts.
 
 <amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
-  <noscript><img alt="Łącza mogą służyć do przekazywania informacji identyfikujących jeden kontekst do innego (połączonego) kontekstu" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png"></noscript>
-</amp-img>
+  <noscript>     <img alt="Links can be used to pass the identifier information of one context into another (linked) context" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png">   </noscript></amp-img>
 
-##### Stosowanie funkcji podstawiania <a name="using-substitution-features"></a>
+##### Using substitution features <a name="using-substitution-features"></a>
 
-W naszym podejściu wykorzystamy dwa typy [podstawień zmiennych AMP](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md).
+Our approach will take advantage of two types of [AMP variable substitutions](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md).
 
-**Aby zaktualizować linki wychodzące w celu użycia zastępczego identyfikatora Client ID:** zdefiniuj nowy parametr zapytania, `ref_id` (identyfikator skierowania), który znajdzie się w adresie URL i wskaże **identyfikator kontekstu źródłowego** użytkownika. Ustaw ten parametr zapytania na wartość równą wartości podstawienia Client ID AMP:
+**To update outgoing links to use a Client ID substitution:** Define a new query parameter, `ref_id` (“referrer ID”), which will appear within the URL and indicate the **originating context’s identifier** for the user. Set this query parameter to equal the value of AMP’s Client ID substitution:
 
-[sourcecode:html] <a href="https://example.com/step2.html?ref_id=CLIENT_ID(uid)" data-amp-replace="CLIENT_ID"
-
->
->
-
+[sourcecode:html]
+<a
+  href="https://example.com/step2.html?ref_id=CLIENT_ID(uid)"
+  data-amp-replace="CLIENT_ID"
+></a>
 [/sourcecode]
 
-**Alternatywne rozwiązanie przekazywania Client ID do linków wychodzących:** zdefiniuj nowy parametr zapytania `ref_id` jako część atrybutu danych `data-amp-addparams`, a w przypadku zapytań wymagających podstawienia parametru podaj te dane jako część `data-amp-replace`. Przy takim podejściu adres URL będzie wyglądał czysto, a parametry określone w `data-amp-addparams` będą dodawane dynamicznie.
+**Alternative solution for passing Client ID to the outgoing links:** Define the new query parameter `ref_id` as part of the data attribute `data-amp-addparams` and for queries that needs parameter substitution provide those details as part of `data-amp-replace`. With this approach the URL would look clean and the parameters specified on `data-amp-addparams` will be dynamically added
 
-[sourcecode:html] <a href="https://example.com/step2.html" data-amp-addparams="ref_id=CLIENT_ID(uid)" data-amp-replace="CLIENT_ID"
-
->
->
-
+[sourcecode:html]
+<a
+  href="https://example.com/step2.html"
+  data-amp-addparams="ref_id=CLIENT_ID(uid)"
+  data-amp-replace="CLIENT_ID"
+></a>
 [/sourcecode]
 
-W razie przekazywania wielu parametrów zapytania przez `data-amp-addparams` są one rozdzielane znakami `&`
+For passing multiple query parameters through `data-amp-addparams` have those `&` separated like
 
-[sourcecode:html] <a href="https://example.com/step2.html" data-amp-addparams="ref_id=CLIENT_ID(uid)&pageid=p123" data-amp-replace="CLIENT_ID"
-
->
->
-
+[sourcecode:html]
+<a
+  href="https://example.com/step2.html"
+  data-amp-addparams="ref_id=CLIENT_ID(uid)&pageid=p123"
+  data-amp-replace="CLIENT_ID"
+></a>
 [/sourcecode]
 
-**Aby zaktualizować dane wejściowe w formularzu, należy użyć podstawienia Client ID:** zdefiniuj nazwę pola wprowadzania danych, np. `orig_user_id`. Określ wartość `default-value` pola formularza, która ma być wartością podstawienia Client ID AMP:
+**To update form inputs to use a Client ID substitution:** Define a name for the input field, such as `orig_user_id`. Specify the `default-value` of the form field to be the value of AMP’s Client ID substitution:
 
-[sourcecode:html] <input name="ref_id" type="hidden" value="CLIENT_ID(uid)" data-amp-replace="CLIENT_ID"> [/sourcecode]
+[sourcecode:html]
+<input
+  name="ref_id"
+  type="hidden"
+  value="CLIENT_ID(uid)"
+  data-amp-replace="CLIENT_ID"
+/>
+[/sourcecode]
 
-Dzięki podjęciu tych kroków Client ID jest dostępny dla serwera docelowego i/lub jako parametr adresu URL na stronie, na której ląduje użytkownik po kliknięciu linku lub wysłaniu formularza (w **kontekście docelowym**). Nazwa (czyli „klucz”) będzie miała postać `ref_id`, ponieważ tak ją zdefiniowaliśmy w powyższych implementacjach i będzie miała powiązaną wartość równą wartości Client ID. Na przykład, klikając zdefiniowany powyżej link (znacznik `<a>`), użytkownik przejdzie do tego adresu URL:
+By taking these steps, the Client ID is available to the target server and/or as a URL parameter on the page the user lands on after the link click or form submission (the **destination context**). The name (or “key”) will be `ref_id` because that’s how we’ve defined it in the above implementations and will have an associated value equal to the Client ID. For instance, by following the link (`<a>` tag) defined above, the user will navigate to this URL:
 
-[sourcecode:http] https://example.com/step2.html?ref_id=$amp_client_id [/sourcecode]
+[sourcecode:http]
+https://example.com/step2.html?ref_id=$amp_client_id
+[/sourcecode]
 
 <amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
-  <noscript><img alt="Przykład tego, jak identyfikator w kontekście przeglądarki AMP można przekazać za pośrednictwem linku do kontekstu źródła wydawcy" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png"></noscript>
-</amp-img>
+  <noscript>     <img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png">   </noscript></amp-img>
 
-Gdy użytkownik wyląduje na stronie zawierającej wartość `ref_id` w postaci parametru adresu URL lub w nagłówku, mamy możliwość wspólnego przetwarzania identyfikatora `ref_id` wraz z identyfikatorem wyeksponowanym za pomocą samej strony (czyli wartością pliku cookie). Dzięki zawarciu obu tych wartości w analitycznym pakiecie ping Twój serwer analityki może pracować z obiema wartościami jednocześnie, a wiedząc, że są one powiązane, odzwierciedlać tę zależność w Twoim zapleczu. W następnym kroku podano szczegóły wykonania.
+When the user lands on a page containing containing an `ref_id` value either as a URL parameter or in the header, we have the opportunity to co-process the `ref_id` identifier along with the identifier exposed via the page itself (i.e. a cookie value). By including both in an analytics ping, your analytics server can work with both values simultaneously, and, knowing they are related, reflect this relationship in your backend. The next step provides details on how to do this.
 
-##### Wyodrębnianie parametrów zapytania adresu URL <a name="extracting-url-query-parameters"></a>
+##### Extracting URL query parameters <a name="extracting-url-query-parameters"></a>
 
-Używając funkcji zastąpień, tworzymy przepływ nawigacyjny linków lub przepływ wysyłanych formularzy, który eksponuje informacje, w szczególności Client ID, na serwerze docelowym i/lub jako parametr adresu URL, który może być odczytany na kliencie po zakończeniu nawigacji przez użytkownika.
+By using substitution features, we set up a link navigation flow or form submission flow that exposes information, specifically the Client ID, to the target server and/or as a URL parameter that can be read on the client once the user completes the navigation.
 
-Jeśli informacje zostały wyeksponowane tylko na serwerze, np. za pomocą formularza POST, można przystąpić do ich przetworzenia i wyrenderowania wynikowej strony. Podczas przetwarzania takich danych należy zwrócić uwagę na kroki [walidacji parametrów](#parameter-validation) opisane poniżej.
+If the information was exposed just to the server, e.g. via a form POST, then you can proceed to process the information and render the resulting page. When processing such data, please take note of the steps regarding [Parameter validation](#parameter-validation) that are detailed below.
 
-Jeśli informacje są dostępne poprzez adres URL i chcesz je przetwarzać, możesz użyć kilku podejść:
+If the information is available via URL and you wish to process it, there are a couple of approaches you can use:
 
-- Przetwarzanie podczas przekierowania (obsługa po stronie serwera)
-- Przetwarzanie na stronie docelowej (obsługa po stronie klienta)
+- Process during redirect (server-side handling)
+- Process on the landing page (client-side handling)
 
-**Przetwarzanie podczas przekierowania (obsługa po stronie serwera)**
+**Process during redirect (server-side handling)**
 
-Aby przetwarzać żądanie podczas przekierowania, należy obsłużyć je na serwerze i wyodrębnić odpowiednie parametry. Zwróć uwagę na kroki [walidacji parametrów](#parameter-validation) wyszczególnione poniżej. Przetwarzaj dane w połączeniu z wartościami plików cookie zawierających inne odpowiednie identyfikatory, a następnie wykonaj przekierowanie na adres URL, który nie zawiera tych parametrów.
+To process during redirect, handle the request on the server and extract the relevant parameter(s). Please take note of the steps regarding [Parameter validation](#parameter-validation) that are detailed below. Process the data, combined with cookie values containing other relevant identifiers, and then redirect to a URL that does not contain the parameters.
 
-**Przetwarzanie na stronie docelowej (obsługa po stronie klienta)**
+**Process on the landing page (client-side handling)**
 
-W przypadku przetwarzania żądania na stronie docelowej podejście będzie się różnić w zależności od tego, czy strona ta jest stroną AMP, czy bez AMP.
+To process on the landing page, the approach will vary depending on whether that page is an AMP page or a non-AMP page.
 
 <amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
-  <noscript><img alt="Przykład tworzenia analitycznego polecenia ping, które zawiera identyfikator z poprzedniego kontekstu podany za pośrednictwem adresu URL i identyfikator z bieżącego kontekstu" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png"></noscript>
-</amp-img>
+  <noscript>     <img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png">   </noscript></amp-img>
 
-*Aktualizacje strony AMP:* w konfiguracji składnika amp-analytics użyj funkcji podstawiania parametru zapytania, aby uzyskać wartość identyfikatora `ref_id` w adresie URL. Funkcja parametru zapytania pobiera parametr, który wskazuje „klucz” żądanej pary klucz-wartość w adresie URL i zwraca odpowiednią wartość. Użyj funkcji Client ID, tak jak to robiliśmy, aby uzyskać identyfikator do kontekstu strony AMP.
+*Updates to AMP page:* Use the Query Parameter substitution feature in your amp-analytics configuration to obtain the `ref_id` identifier value within the URL. The Query Parameter feature takes a parameter that indicates the “key” of the desired key-value pair in the URL and returns the corresponding value. Use the Client ID feature as we have been doing to get the identifier for the AMP page context.
 
-[sourcecode:http] https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)} [/sourcecode]
+[sourcecode:http]
+https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}
+[/sourcecode]
 
-Po przesłaniu przez sieć zostaną zastąpione rzeczywiste wartości:
+When this gets transmitted across the network, actual values will be replaced:
 
-[sourcecode:http] https://analytics.example.com/ping?type=pageview&orig_user_id=$referrer_page_identifier&user_id=$current_page_identifier [/sourcecode]
+[sourcecode:http]
+https://analytics.example.com/ping?type=pageview&orig_user_id=$referrer_page_identifier&user_id=$current_page_identifier
+[/sourcecode]
 
-Podążając za naszymi powyższymi przykładami, otrzymamy:
+Following through our examples above, we have:
 
-[sourcecode:text] $referrer_page_identifier is $amp_client_id $current_page_identifier is $publisher_origin_id [/sourcecode]
+[sourcecode:text]
+$referrer_page_identifier is $amp_client_id
+$current_page_identifier is $publisher_origin_id
+[/sourcecode]
 
-czyli faktyczny pakiet ping to:
+so the ping is actually:
 
-[sourcecode:http] https://analytics.example.com/ping?type=pageview&orig_user_id=$amp_client_id&user_id=$publisher_origin_id [/sourcecode]
+[sourcecode:http]
+https://analytics.example.com/ping?type=pageview&orig_user_id=$amp_client_id&user_id=$publisher_origin_id
+[/sourcecode]
 
-Zalecamy sprawdzanie autentyczności wartości parametrów zapytania za pomocą kroków przedstawionych w poniższej sekcji [Walidacja parametrów](#parameter-validation).
+We recommend validating the authenticity of query parameter values by using the steps outlined in the [Parameter validation](#parameter-validation) section below.
 
-*Aktualizacje strony bez AMP page:* podobnie, na stronie bez AMP serwowanej z Twojego źródła wydawcy wyodrębnij i przekaż wartość `ref_id` zawartą w adresie URL. Sprawdź autentyczność wartości, wykonując czynności opisane w sekcji [Walidacja parametrów](#parameter-validation) poniżej. Następnie skonstruuj analityczny pakiet ping, który będzie zawierać zarówno `orig_user_id` wyprowadzony z `ref_id` oraz `user_id`, oparty na wartości identyfikatora pliku cookie strony pierwszej.
+*Updates to non-AMP page:* Similarly, on a non-AMP page served from your publisher origin, extract and transmit `ref_id` value contained within the URL. Validate the authenticity of the value by following the steps outlined in the [Parameter validation](#parameter-validation) section below. Then, construct analytics pings that will include both an `orig_user_id` derived from `ref_id` and a `user_id` based on the value of the first-party cookie identifier.
 
 <blockquote>
-<p><strong>WAŻNE:</strong></p>
-<p>Jeśli zdecydujesz się na przetwarzanie parametrów po stronie klienta na stronie docelowej, strona docelowa powinna usuwać informacje o identyfikatorze z adresów URL, gdy tylko zdoła przechwycić identyfikator.</p>
-<p>Przed usunięciem parametrów należy upewnić się, że ma je też inny kod, który trzeba wykonać, aby je odczytać:</p>
+<p><strong>IMPORTANT:</strong></p>
+<p>If you choose to process the parameters client-side on the landing page, the landing page should remove identifier information from URLs as soon as the identifier can be captured.</p>
+<p>Before removing the parameters, be sure that other code that needs to run to read them has either:</p>
 <ul>
-  <li>Zostanie wykonany, zanim dojdzie do usunięcia; lub</li>
-  <li>Może uzyskać dostęp do miejsca, w którym zapisał dane kod, który odczytał i usunął parametry</li>
+  <li>Run before the removal happens; or</li>
+  <li>Can access a place where the code that read and removed the parameters has stored the data</li>
 </ul>
-<p>Aby zrobić to na stronie bez AMP, dołącz następujący kod JavaScript, który usunie wszystkie parametry zapytania z adresu URL:</p>
-<pre>var href = location.href.replace(/\?[^{{'[% raw %]'}}#]{{'{% endraw %}'}}+/, '');<br>history.replaceState(null, null, href);</pre>
-<p>Dostosuj go w razie potrzeby, aby usuwać mniej parametrów zapytania.</p>
+<p>To do this on your non-AMP page, include the following JavaScript, which will remove all query parameters from the URL:</p>
+<pre>var href = location.href.replace(/\?[^{{'[% raw %]'}}#]{{'{% endraw %}'}}+/, '');
+history.replaceState(null, null, href);
+</pre>
+<p>Adapt this as needed to remove fewer query parameters.</p>
 </blockquote>
 
-##### Przetwarzanie wielu identyfikatorów w analitycznym pakiecie ping <a name="processing-multiple-identifiers-in-an-analytics-ping"></a>
+##### Processing multiple identifiers in an analytics ping <a name="processing-multiple-identifiers-in-an-analytics-ping"></a>
 
-W przeciwieństwie do [Zadania 4](#task4), w którym skonfigurowaliśmy analityczny pakiet ping tak, aby zawierał tylko jedną wartość identyfikatora, po wykonaniu dotychczasowych kroków w Zadaniu 5 mamy dwa identyfikatory — `orig_user_id` i `user_id`. Dalej opiszemy, w jaki sposób przetwarzać te dwa identyfikatory, które są częścią przychodzącego analitycznego pakietu ping.
+Unlike in [Task 4](#task4) where we configured the analytics ping to contain just one identifier value, with the steps we’ve taken so far in Task 5 we now have two — `orig_user_id` and `user_id`. We will next cover how to process these two identifiers that are part of the inbound analytics ping.
 
-Zanim przejdziemy dalej, zwróć uwagę na kroki opisane w sekcji [Walidacja parametrów](#parameter-validation) poniżej i upewnij się, że można ufać obu wartościom wskazanym przez `orig_user_id` oraz `user_id`.
+Before we proceed, be sure to take note of the steps described in [Parameter validation](#parameter-validation) below and ensure that you are willing to trust both of the values indicated by `orig_user_id` and `user_id`.
 
-Sprawdź, czy któraś z odpowiadających im wartości jest obecna w Twojej tabeli mapowania. W naszym powyższym przykładzie pierwsza odsłona strony odbywa się na stronie AMP, która NIE znajduje się w źródle wydawcy, po czym następuje druga odsłona strony, w źródle wydawcy. W rezultacie wartości parametrów zapytania analitycznego pakietu ping będą wyglądały tak:
+Check if either of the values corresponding to is present in your mapping table. In our example above, the first pageview happens on an AMP page that’s NOT on the publisher origin followed by the second pageview that happens on the publisher origin. As a result, the values for the analytics ping query parameters will look like this:
 
-**Przypadek nr 1: identyfikatory w razie wysyłania analitycznych pakietów ping ze strony w źródle wydawcy**
+**Case #1: Identifier arrangement when analytics ping is sent from page on publisher origin**
 
 <table>
   <tr>
     <th width="20%"></th>
-    <th width="40%"><strong>Identyfikator użytkownika w źródle wydawcy</strong></th>
-    <th width="40%"><strong>Identyfikator użytkownika na stronie AMP, która NIE znajduje się w źródle wydawcy („alias”)</strong></th>
+    <th width="40%"><strong>User ID on publisher origin</strong></th>
+    <th width="40%"><strong>User ID on AMP page that’s NOT on publisher origin (“alias”)</strong></th>
   </tr>
   <tr>
-    <td><strong>Jak wyrażony w analitycznym pakiecie ping</strong></td>
+    <td><strong>How it’s expressed in analytics ping</strong></td>
     <td><code>user_id=$publisher_origin_id</code></td>
     <td><code>orig_user_id=$amp_client_id</code></td>
   </tr>
   <tr>
-    <td><strong>Klucz parametru</strong></td>
+    <td><strong>Parameter key</strong></td>
     <td><code>user_id</code></td>
     <td><code>orig_user_id</code></td>
   </tr>
   <tr>
-    <td><strong>Wartość parametru</strong></td>
+    <td><strong>Parameter value</strong></td>
     <td><code>$publisher_origin_id</code></td>
     <td><code>$amp_client_id</code></td>
   </tr>
 </table>
 
-Zauważ, że identyfikator pochodzący z pierwszej odsłony strony odpowiada prawej kolumnie, a identyfikator pochodzący z drugiej odsłony strony znajduje się w środkowej kolumnie, zgodnie z tym jak został skonstruowany nasz przykład powyżej.
+Please notice that the identifier coming from the first pageview corresponds to the rightmost column and the identifier coming from the second pageview is in the middle column, in accordance with how our example flow above was constructed.
 
-Jeśli zamiast tego użytkownik zacznie na stronie serwowanej ze źródła wydawcy, a następnie przejdzie na stronę AMP, która NIE znajduje się w źródle wydawcy, klucze parametrów zostaną odwrócone, ale odpowiedni sposób, w jaki odnosimy się do tych wartości nie będzie odwrócony (tj. `$amp_client_id` zawsze odnosi się do identyfikatora zapisanego na stronie AMP, która NIE znajduje się w źródle wydawcy):
+If instead the user starts on a page served from the publisher origin and subsequently navigates to an AMP page that’s NOT on the publisher origin, then the keys of the parameters will be reversed, but the corresponding way that we reference the values will not be (i.e. `$amp_client_id` always refers to an identifier stored on an AMP page that’s NOT on the publisher origin):
 
-**Przypadek nr 2: identyfikatory w razie wysyłania analitycznych pakietów ping ze strony AMP NIE znajdującej się w źródle wydawcy**
+**Case #2: Identifier arrangement when analytics ping is sent from an AMP page that’s NOT on the publisher origin**
 
 <table>
   <tr>
     <th width="20%"> </th>
-    <th width="40%"><strong>Identyfikator użytkownika w źródle wydawcy</strong></th>
-    <th width="40%"><strong>Identyfikator użytkownika na stronie AMP, która NIE znajduje się w źródle wydawcy („alias”)</strong></th>
+    <th width="40%"><strong>User ID on publisher origin</strong></th>
+    <th width="40%"><strong>User ID on AMP page that’s NOT on publisher origin (“alias”)</strong></th>
   </tr>
   <tr>
-    <td><strong>Jak wyrażony w analitycznym pakiecie ping</strong></td>
+    <td><strong>How it’s expressed in analytics ping</strong></td>
     <td><code>orig_user_id=$publisher_origin_id</code></td>
     <td><code>user_id=$amp_client_id</code></td>
   </tr>
   <tr>
-    <td><strong>Klucz parametru</strong></td>
+    <td><strong>Parameter key</strong></td>
     <td><code>orig_user_id</code></td>
     <td><code>user_id</code></td>
   </tr>
   <tr>
-    <td><strong>Wartość parametru</strong></td>
+    <td><strong>Parameter value</strong></td>
     <td><code>$publisher_origin_id</code></td>
     <td><code>$amp_client_id</code></td>
   </tr>
 </table>
 
-Wyszukując w tabeli mapowania zwróć uwagę, która sytuacja ma zastosowanie i wyszukaj wartości w kolumnach tabeli mapowania, w których spodziewasz się ich wystąpienia. Jeśli na przykład analityczny pakiet ping jest wysyłany ze strony w źródle wydawcy (przypadek nr 1), sprawdź czy wartości oznaczone kluczem `user_id` znajdują się w kolumnie „Identyfikator użytkownika w źródle wydawcy, a w kolumnie „Identyfikator użytkownika na stronie AMP NIE znajdującej się w źródle wydawcy (alias)” znajdują się wartości oznaczone kluczem `orig_user_id`.
+When you are searching the mapping table, take note of which situation applies and search for values within the columns of the mapping table where you expect them to appear. For instance, if the analytics ping is being sent from a page on the publisher origin (Case #1), then check for values keyed by `user_id` in the mapping table column “User ID on publisher origin” and check for values keyed by `orig_user_id` in the column “User ID on AMP page that’s NOT on publisher origin (‘alias’)”.
 
-Jeśli w tabeli mapowania nie możesz znaleźć żadnej z używanych wartości identyfikatorów, utwórz nowe mapowanie:
+If you cannot locate either identifier value being used in your mapping table, establish a new mapping:
 
-- Jeśli żądanie usługi analityki pochodzi ze strony w źródle wydawcy, jako identyfikator rekordu analitycznego należy wybrać wartość odpowiadającą `uid`; wartość `orig_uid` wybierz jako „alias”.
-- Jeśli żądanie usługi analityki nie pochodzi od strony w źródle wydawcy, należy wybrać wartość odpowiadającą `uid` jako wartość „alias” w tabeli mapowania. Następnie postępuj zgodnie z pozostałymi instrukcjami w [Zadaniu 4](#task4), aby utworzyć potencjalny identyfikator źródła wydawcy i spróbować ustawić tę wartość jako plik cookie w źródle.
+- If the analytics request comes from a page on your publisher origin, then you should choose the value corresponding to `uid` to be the analytics record identifier; choose the value of `orig_uid` to be the “alias”.
+- If the analytics request does not come from a page on your publisher origin, then you should choose the value corresponding to `uid` to be an “alias” value in the mapping table. Then, proceed with the remaining instructions in [Task 4](#task4) to create a prospective publisher origin identifier and attempt to set this value as a cookie on the origin.
 
-##### Walidacja parametrów <a name="parameter-validation"></a>
+##### Parameter validation <a name="parameter-validation"></a>
 
-Wartości zawarte w adresie URL mogą być złośliwie zmieniane, zniekształcane lub w inny sposób różnić się od wartości, które spodziewasz się tam znaleźć. Jest to czasami zwane fałszerstwem żądania międzywitrynowego. Tak jak ważne jest, aby upewniać się, że analityczne pakiety ping, otrzymywane przez Twój serwer analityki pochodzą ze stron, które mają wysyłać analityczne pakiety ping, również podczas „przesyłania dalej” wartości, które były częścią adresu URL należy wykonywać walidację strony odsyłającej, aby móc ufać tym wartościom.
+Values contained in a URL can be maliciously changed, malformed, or somehow otherwise not be the values that you expect to be there. This is sometimes called cross site request forgery. Just as it is important to ensure that the analytics pings that your analytics server receives are coming from pages that you expect to be sending analytics pings, when you are “forwarding” on values that were part of the URL, be sure to validate the referrer to ensure you can trust these values.
 
-Na przykład w powyższych krokach skonstruowaliśmy następujący adres URL, przeznaczony do kliknięcia przez użytkownika w celu przejścia do odpowiedniej strony:
+For instance, in the steps above, we constructed the following URL, intended for the user to click on and navigate to the corresponding page:
 
-[sourcecode:http] https://example.com/step2.html?orig_user_id=$amp_client_id [/sourcecode]
+[sourcecode:http]
+https://example.com/step2.html?orig_user_id=$amp_client_id
+[/sourcecode]
 
-Jest jednak równie możliwe, że użytkownik lub jakiś napastnik zmieni ten adres URL:
+However, it’s just as possible that the user or some attacker change this URL to be:
 
-[sourcecode:http] https://example.com/step2.html?orig_user_id=$malicious_value [/sourcecode]
+[sourcecode:http]
+https://example.com/step2.html?orig_user_id=$malicious_value
+[/sourcecode]
 
-Chcesz mieć pewność, że przetwarzasz tylko wystąpienia `$amp_client_id` i unikasz używania wystąpień `$malicious_value`.
+You want to ensure that you process only instances of `$amp_client_id` and avoid using instances of `$malicious_value`.
 
-**Sugerowane kroki walidacji wartości otrzymanych za pomocą parametrów zapytania URL:** upewnij się, że strona odsyłająca do strony docelowej jest zgodny z adresem URL, którego się spodziewasz. Zazwyczaj powinien to być adres zawierający wcześniej widzianą wartość identyfikatora w prawidłowym żądaniu CORS. Zalecamy akceptowanie tylko takich znanych identyfikatorów.
+**Suggested steps for validating values received via URL query parameters:** Confirm that the referrer of the landing page matches a URL you’d expect to see. This should typically be one you’ve seen carrying a previously seen identifier value in a valid CORS request. We recommend that you only accept such known identifiers.
 
-Na stronie bez AMP sprawdź `document.referrer` bezpośrednio po stronie klienta lub przekaż wartość w ramach analitycznych pakietów ping, aby móc wykonać walidację po stronie serwera. Jeśli możesz zaufać wartości strony odsyłającej, możesz zaakceptować i przetworzyć wartości pochodzące z adresu URL strony docelowej, takie jak `orig_user_id` w powyższym przykładzie.
+On a non-AMP page, check `document.referrer` directly on the client side or pass the value on as part of the analytics ping to be able to validate on the server side. If the referrer value is one you can trust, then you can accept and process values that originated from the URL of the landing page, such as `orig_user_id` in the example above.
 
-Na stronie AMP użyj podstawianej zmiennej [strony odsyłającej dokumentu](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#document-referrer), aby przekazać wartość strony odsyłającej jako część analitycznego pakietu ping. Przetwarzanie po stronie serwera jest jedyną dostępną opcją. Dla ilustracji, oto analityczny pakiet ping, który strona docelowa może wysłać, zawierający (1) wartość Client ID bieżącej strony, (2) wartość przekazywaną przez adres URL, ustawioną jako wartość Client ID na stronie odsyłającej, oraz (3) samą informację o stronie odsyłającej, aby zweryfikować wartość (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
+On an AMP page, use the [Document Referrer](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#document-referrer) substitution variable to pass along the referrer value as part of the analytics ping. Server side processing is the only available option. To illustrate, here’s an analytics ping that the landing page can send that contains (1) the Client ID value of the current page, (2) a value passed via URL that we’ve set up to be the Client ID value in the referring page, and (3) the referrer information itself to validate the value of (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
 
-Jeśli nie możesz ufać stronie odsyłającej, odrzuć wszelkie wartości podane za pomocą parametrów adresu URL i nie używaj ich.
+If you cannot trust the referrer, then reject any values provided via URL parameters and do not use them.
 
-## Zdecydowanie zalecane praktyki <a name="strongly-recommended-practices"></a>
+## Strongly recommended practices <a name="strongly-recommended-practices"></a>
 
-### Zachowaj tylko jedno powiązanie <a name="keep-just-one-association"></a>
+### Keep just one association <a name="keep-just-one-association"></a>
 
-**Należy zachować tylko jedno powiązanie między identyfikatorami z dwóch dowolnych kontekstów.** Jeżeli Client ID AMP, który wcześniej został skojarzony z plikiem cookie lub innym identyfikatorem użytkownika wydanym przez Ciebie, jest widoczny wraz z nowym plikiem cookie lub wydanym przez Ciebie identyfikatorem użytkownika, należy usunąć wszystkie zachowane stany poprzedniego pliku cookie i identyfikatora użytkownika.
+**Only one association between identifiers from any two contexts should be maintained.** If an AMP Client ID that you have previously associated with a cookie or other user identifier issued by you is seen together with a new cookie or user identifier that you issue, you should delete all state you held against the previous cookie and user identifier.
 
-Kroki te pozwolą zapewnić zgodność z oczekiwaniami użytkowników dotyczącymi prywatności. Jak wyszczególniono w poprzednich sekcjach, zarządzanie stanem użytkownika w AMP często będzie wymagało przechowywania i powiązywania różnych identyfikatorów w wielu kontekstach, w których wyświetlana jest zawartość AMP. **Tej sytuacji nie należy nigdy nadużywać w celu odtwarzania danych lub śledzenia, którego użytkownik nie spodziewa się lub którego nie ujawniono użytkownikowi, np. po usunięciu przezeń plików cookie Twoich witryn.**
+These steps will help ensure alignment with users’ expectations of privacy. As detailed in the preceding sections, managing user state in AMP will often involve storing and associating different identifiers across multiple contexts where AMP content is displayed. **This situation should never be abused to reconstitute data or perform tracking that the user would not expect or that you have not clearly disclosed to the user, such as, for example, after the user has deleted his or her cookies for your sites.**
 
-### Poszanowanie usunięcia plików cookie i danych z magazynu lokalnego <a name="respect-cookie-and-local-storage-deletions"></a>
+### Respect cookie and local storage deletions <a name="respect-cookie-and-local-storage-deletions"></a>
 
-**Należy przestrzegać wszystkich obowiązujących środków kontroli prywatności, które są dostępne dla użytkownika, włącznie z środkami kontroli umożliwiającymi usunięcie wszystkich plików cookie i danych z magazynu lokalnego.** W żadnym momencie nie należy używać Client ID AMP ani infrastruktury AMP [do odtwarzania usuniętego identyfikatora](https://en.wikipedia.org/wiki/Zombie_cookie), gdy użytkownik jawnie usunie jedną ze stron relacji identyfikatora.
+**You should respect all applicable privacy controls that are made available to the user, including any such controls creating the ability to delete all cookies and local storage.** At no time should the AMP Client ID or AMP infrastructure be [used to reconstitute a deleted identifier](https://en.wikipedia.org/wiki/Zombie_cookie) after a user expressly deletes one side of an identifier relationship.
 
-### Przestrzeganie lokalnych przepisów ustawowych i wykonawczych <a name="comply-with-local-laws-and-regulations"></a>
+### Comply with local laws and regulations <a name="comply-with-local-laws-and-regulations"></a>
 
-**Powiązywanie plików cookie i/lub identyfikatorów z dwóch lub więcej domen może wymagać zaktualizowania polityki prywatności, zapewnienia dodatkowych informacji użytkownikom lub uzyskania zgody użytkownika końcowego w niektórych jurysdykcjach.** Użycie funkcji Client ID AMP, która wykorzystuje pliki cookie lub magazyn lokalny jako sposób trwałego przechowywania w celu zapewnienia stabilnego identyfikatora powinno być analizowane przez każdego wydawcę z uwzględnieniem wszystkich obowiązujących przepisów ustawowych i wykonawczych dotyczących zbierania, przechowywania i przetwarzania danych oraz informowania użytkowników.
+**Associating cookies and/or identifiers from two or more domains might require updating your privacy policy, providing additional user disclosures, or obtaining end user consent in some jurisdictions.** The usage of the AMP Client ID, which uses cookies or local storage as a means of persistent storage to offer a stable identifier, should be analyzed by each publisher with regard to all applicable laws and regulations regarding data collection, storage, processing, and user notice.
