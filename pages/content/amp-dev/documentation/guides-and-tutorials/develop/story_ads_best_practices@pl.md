@@ -1,14 +1,19 @@
 ---
-$title: Najlepsze praktyki tworzenia reklam fabularnych AMP
-$order: 16
-description: Relacje AMP to interaktywne, pełnoekranowe materiały, angażujące czytelników w treść. Reklamy wyświetlane w relacjach AMP powinny być spójne z relacjami AMP.
+"$title": Best practices for creating a Web Story ad
+"$order": '16'
+description: Web Stories are a full-screen tappable experience that immerses readers in the content. Ads that appears in Web Stories should have a consistent and cohesive design with the Web Stories UX.
+formats:
+- ads
+- stories
 ---
 
-Relacje AMP to interaktywne, pełnoekranowe materiały, angażujące czytelników w treść. Reklamy wyświetlane w relacjach AMP powinny być spójne z relacjami AMP. Zapobiega to irytowaniu użytkowników lub zakłócaniu ich wrażeń. Ten przewodnik pokazuje, jak stworzyć reklamę fabularną AMP.
+Web Stories are a full-screen tappable experience that immerses readers in the content. Ads that appears in Web Stories should have a consistent and cohesive design with the Web Stories UX. This prevents a jarring or interruptive user experience. This guide demonstrates how to build an ad for Web Stories.
 
-##Zasady dotyczące reklam fabularnych AMP Obecnie stosowane formaty reklam, takie jak banery i boksy, nie integrują się dobrze z formatem AMP Story. Klasyczne reklamy są w relacjach powolne, irytujące i nie na miejscu.
+## Web Story ad principles
 
-Reklamy fabularne AMP muszą być zgodne z następującymi zasadami:
+Current ad formats, such as banners and boxes, do not integrate well with the AMP Story format. Classic ads are slow, interruptive, and feel out of place within the Story experience.
+
+Web Story ads conform to the following principles:
 
 - Prawidłowa reklama AMPHTML: zgodna z tą samą specyfikacją techniczną, co klasyczna reklama [AMPHTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md).
 - Po pierwsze grafika: zachęcająca, śmiała, zależna od kontekstu.
@@ -16,50 +21,50 @@ Reklamy fabularne AMP muszą być zgodne z następującymi zasadami:
 - Ten sam model interakcji: użytkownik może przejść do następnego ekranu tak, jak z organicznej strony relacji.
 - Szybka: reklama nigdy nie jest wyświetlana użytkownikowi załadowana do połowy.
 
-Aby zachować zgodność z tymi zasadami, środowisko uruchomieniowe relacji AMP określa właściwe umieszczenie strony z reklamą w relacji AMP. Więcej informacji o mechanice umieszczania reklam zawiera artykuł [Reklama w relacjach internetowych](advertise_amp_stories.md).
+To be consistent with these principles, the Web Story runtime determines the right placement of an ad page amidst the Web Story. Read more about ad placement mechanics in [Advertise in Web Stories](advertise_amp_stories.md).
 
-##Przekładowa reklama fabularna Reklamy fabularne AMP są reklamami AMPHTML, ale mają wymagane tagi meta, spełniają wymogi określonych specyfikacji układu i mają wymagane elementy UI. Reklama fabularna AMP zawsze będzie zawierać przycisk wezwania do działania (CTA) oraz etykietę reklamy, wyświetlaną jako zastrzeżenie tekstowe u góry strony.
+## Sample Web Story ad
+
+Web Story ads are AMPHTML ads, but have required meta tag data, meet defined layout specifications and required UI elements. A Web Story ad will always include a call to action(CTA) button and an ad label displayed as a text disclaimer at the top of the page.
 
 {{ image('/static/img/docs/stampads/stamp_ad.png', 425, 800, layout='intrinsic', alt='Przykład reklamy fabularnej AMP', caption='Przykład reklamy fabularnej AMP', align='' ) }}
 
-Aby zapewnić spójność wrażeń użytkowników, za renderowanie etykiety reklamy i przycisku CTA odpowiada środowisko uruchomieniowe relacji AMP.
+To keep the user experience consistent, the Web Story runtime is responsible for rendering the ad label and the CTA button.
 
-[tip type="important"] **WAŻNE — ** w reklamie fabularnej AMP można kliknąć tylko przycisk CTA, więc pamiętaj o tym podczas tworzenia swojej kreacji. [/tip]
+[tip type="important"] **IMPORTANT –** Only the CTA button is clickable in an Web Story ad, so keep this in mind when developing your creative. [/tip]
 
-##Dane tagów meta
+## Meta tag data
 
-Dane tagów meta określają, że reklama ma format AMP Story, ustawiają wyliczenie tekstów przycisku CTA, określają stronę docelową przycisku i jej typ.
+Meta tag data specifies that the ad meets the Web Story format, sets the CTA button text enum, directs where the button will send the user and what type of page it is.
 
 [sourcecode:html]
 
-
-  
+<html amp4ads>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
+    <!-- Specifies where the user is directed -->
+    <meta name="amp-cta-url" content="%%CLICK_URL_UNESC%%%%DEST_URL%%">
 
-```
-<!-- Specifies where the user is directed -->
-<meta name="amp-cta-url" content="%%CLICK_URL_UNESC%%%%DEST_URL%%">
+    <!-- Specifies the call to action button text enum -->
+    <meta name="amp-cta-type" content="EXPLORE">
 
-<!-- Specifies the call to action button text enum -->
-<meta name="amp-cta-type" content="EXPLORE">
+    <!-- Specifies what type of landing page the user is direct to -->
+    <meta name="amp-cta-landing-page-type" content="NONAMP">
 
-<!-- Specifies what type of landing page the user is direct to -->
-<meta name="amp-cta-landing-page-type" content="NONAMP">
+    <style amp4ads-boilerplate>body{visibility:hidden}</style>
+    <style amp-custom>
+     amp-img {height: 100vh}
+    </style>
+    <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
 
-<style amp4ads-boilerplate>body{visibility:hidden}</style>
-<style amp-custom>
- amp-img {height: 100vh}
-</style>
-<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
-```
-
-  
-  
-    <amp-img src="%%FILE:JPG1%%" layout="responsive" height="1280" width="720"></amp-img>
-  
-
+  </head>
+  <body>
+    <amp-img src=%%FILE:JPG1%% layout="responsive" height="1280" width="720"></amp-img>
+  </body>
+</html>
+[/sourcecode]
 
 Zalecane jest wybranie z dostępnych opcji tekstu przycisku CTA tagu amp-cta-type. W razie potrzeby AMP automatycznie zlokalizuje predefiniowane opcje.
 
@@ -95,15 +100,21 @@ Przycisk wezwania do działania można skonfigurować przy użyciu predefiniowan
 
 Jeśli potrzebna jest pomoc dotycząca wyliczania tekstów nowego przycisku CTA, otwórz [problem na GitHub](https://github.com/ampproject/amphtml/issues/new).
 
-##Strona docelowa reklamy Można określić jedną z trzech opcji strony docelowej reklamy fabularnej AMP.
+## Ad landing page
+
+You can specify one of three options for an Web Story ad landing page.
 
 - `STORY`: strona docelowa to [relacja sponsorowana](story_ads_best_practices.md#sponsored-story).
 - `AMP`: strona docelowa to prawidłowa strona AMP.
 - `NONAMP`: każdy inny typ strony internetowej
 
-##Układ Relacje AMP są poziome i pełnoekranowe. Reklamy fabularne muszą być dopasowane do tego formatu, aby zapewnić spójne wrażenia użytkownika.
+## Layout
 
-##Wymiary nakładki Etykieta reklamy nakładana jest na pasek z ciemnym gradientem na całej szerokości reklamy i rozciąga się od góry do 46 px w dół.
+AMP Stories are horizontal and full-screen. Story ads are required to match this format to provide a consistent user experience.
+
+## Overlay dimensions
+
+The ad label overlays a dark gradient bar across the entire width of the ad and will stretch from the top to 46px down.
 
 {{ image('/static/img/docs/stampads/ad_overlay.png', 515, 520, layout='intrinsic', alt='Demonstracja nakładki reklamowej', caption='Nakładka reklamy znajduje się na górze', align='' ) }}
 
@@ -111,41 +122,79 @@ Przycisk CTA znajduje się 32 px od dołu i jest wyśrodkowany w poziomie. Ma wy
 
 {{ image('/static/img/docs/stampads/cta_button.png', 515, 520, layout='intrinsic', alt='Demonstracja przycisku CTA', caption='Przycisk CTA znajduje się blisko dołu', align='' ) }}
 
-##Obrazy i filmy Obrazy i filmy zawarte w reklamie fabularnej AMP powinny być w standardzie pełnoekranowym 4:3. Reklamy zawierające filmy powinny mieć [plakat](https://gitlocalize.com/repo/4863/pl/pages/content/amp-dev/documentation/components/reference/amp-video.md#poster). Zalecane wymiary obrazu plakatu to 720p (720 szer. x 1280 wys.) .
+## Images and video
 
-[sourcecode:html] {amp-video0}{/amp-video0}
+Images and video included in an AMP Story ad should be 4:3 standard full-screen. Ads that include video should use a [poster](../../../documentation/components/reference/amp-video.md#poster) The recommended dimensions for a poster image are 720p (720w x 1280h) .
 
-  <source src="videos/kitten-playing.webm" type="video/webm">   <source src="videos/kitten-playing.mp4" type="video/mp4">   <div fallback="">     <p>Ta przeglądarka nie obsługuje elementu wideo.</p>   </div>  [/sourcecode]</source></source>
+[sourcecode:html]
+<amp-video controls
+  width="720"
+  height="1280"
+  layout="responsive"
+  poster="images/kitten-playing.png">
 
+  <source src="videos/kitten-playing.webm"
+    type="video/webm" />
+  <source src="videos/kitten-playing.mp4"
+    type="video/mp4" />
+  <div fallback>
+    <p>This browser does not support the video element.</p>
+  </div>
+</amp-video>
+[/sourcecode]
 
-###Obrazy Obrazy tła można skalować do pełnego ekranu. Poniższy CSS to skuteczna metoda kadrowania i środkowania filmów oraz obrazów.
+### Images
+
+Background images can be scaled to full screen. The following CSS is a successful way to crop and center videos and images.
 
 [sourcecode:html]
 
-<style amp-custom=""> amp-img, amp-video { height: 100vh; } amp-video video { object-fit: cover; } amp-img img{ object-fit: cover; } </style>
+<style amp-custom>
+    amp-img, amp-video {
+        height: 100vh;
+    }
+    amp-video video {
+        object-fit: cover;
+    }
+    amp-img img{
+        object-fit: cover;
+    }
+</style>
 
 [/sourcecode]
 
-###Filmy
+### Video
 
-####Stosowanie `<source>` i `src` Podczas określania źródła składnika [`amp-video`](../../../documentation/components/reference/amp-video.md)
+#### Specify `<source>` vs `src`
+
+When specifying the source for an [`amp-video`](../../../documentation/components/reference/amp-video.md)
 
 Przykład: określanie wielu plików źródłowych
 
-[sourcecode:html] {amp-video0}{/amp-video0}
+[sourcecode:html]
+<amp-video id="video-page1" autoplay loop
+  layout="fill" poster="https://example.com/media/poster.jpg">
 
-  <source src="https://amp-example.com/media/movie.m3u8" type="application/vnd.apple.mpegurl">   <source src="https://amp-example.com/media/movie.mp4" type="video/mp4">  [/sourcecode]</source></source>
+  <source src="https://amp-example.com/media/movie.m3u8"
+    type="application/vnd.apple.mpegurl" />
+  <source src="https://amp-example.com/media/movie.mp4"
+    type="video/mp4" />
+</amp-video>
+[/sourcecode]
 
+#### Size & length of video
 
-####Rozmiar i długość filmu W celu zapewnienia optymalnej wydajności należy dążyć do stosowania filmów o rozmiarze nie większym niż 4 MB. Mniejsze rozmiary plików pozwalają na szybsze pobieranie, więc należy stosować jak najmniejsze rozmiary.
+For optimal performance, you should aim to provide videos that are no larger than 4 MB. Smaller file sizes allow for faster downloading, so keep things as small as possible.
 
-####Formaty wideo Jeśli możesz podać tylko jeden format wideo, użyj formatu **MP4**. Jeśli jednak jest to możliwe, należy użyć protokołu **HLS** i określić MP4 jako ustawienie rezerwowe dla przeglądarek, które nie obsługują jeszcze protokołu HLS. Serwer HLS wykonuje transmisje strumieniowe z adaptacyjną szybkością transmisji bitów, w których jakość sygnału wideo można zmienić, aby jak najlepiej odpowiadała połączeniu sieciowemu użytkownika.
+#### Video formats
+
+If you can only provide a single video format, provide **MP4**. However, where possible, use **HLS** video and specify MP4 as a fallback for browsers that do not yet support HLS video. HLS performs adaptive bitrate streaming, where the quality of the video can be altered to best suit the user's network connection.
 
 [tip type="note"] **UWAGA —** format wideo HLS nie jest obsługiwany w przeglądarce Chrome dla komputerów (nawet poprzez emulację), dlatego też dla ruchu z komputerów na stronie wymagane jest podanie rezerwowego formatu MP4. Aby debugować filmy HLS, należy użyć rzeczywistego urządzenia przenośnego i funkcji debugowania przez USB. [/tip]
 
-####Rozdzielczość wideo
+#### Video resolution
 
-Filmy w relacjach AMP są zawsze wyświetlane w widoku pionowym, z oczekiwanym współczynnikiem proporcji 16:9. Należy stosować rozdzielczość zalecaną dla danego typu strumieniowej transmisji wideo:
+Web Story videos are always vertical (i.e., portrait view), with an expected aspect ratio of 16:9. Use the recommended resolution for the video streaming type:
 
 <table>
   <thead>
@@ -189,12 +238,16 @@ Do kodowania filmów i dostosowywania jakości wideo podczas kodowania można u�
   </thead>
   <tbody>
     <tr>
-     <td><a href="https://www.ffmpeg.org/about.html">FFmpeg</a></td>
+     <td>
+<a href="https://www.ffmpeg.org/about.html">FFmpeg</a>
+     </td>
      <td>Zalecane optymalizacje:       <ul>         <li>Do MP4 używaj <code>-crf 23</code>.</li>         <li>Do WEBM używaj <code>-b:v 1M</code>.</li>       </ul>
 </td>
     </tr>
     <tr>
-     <td><a href="https://libav.org/avconv.html">avconv</a></td>
+     <td>
+<a href="https://libav.org/avconv.html">avconv</a>
+     </td>
      <td>Zalecane optymalizacje:       <ul>         <li>Do MP4 używaj <code>-crf 23</code>.</li>         <li>Do WEBM używaj <code>-b:v 1M</code>.</li>       </ul>
 </td>
     </tr>
@@ -219,7 +272,11 @@ Przykład: animacja ta zostanie uruchomiona, gdy strona uzyska fokus, a następn
 
 [sourcecode:html]
 
-<style amp-custom="">&lt;br&gt;    body[amp-story-visible] .my-animation-class {&lt;br&gt;      animation: 2s my-animation-name;&lt;br&gt;    }&lt;br&gt;</style>
+<style amp-custom>
+    body[amp-story-visible] .my-animation-class {
+      animation: 2s my-animation-name;
+    }
+</style>
 
 [/sourcecode]
 
@@ -229,4 +286,4 @@ Relacja sponsorowana istnieje jako adres URL w Internecie, umożliwiający kiero
 
 {{ image('/static/img/docs/stampads/sponsored_story_full.png', 1600, 900, layout='intrinsic', alt='Przycisk CTA kieruje do relacji sponsorowanej', caption='Przycisk CTA kieruje do relacji sponsorowanej', align='' ) }}
 
-Dowiedz się więcej o tworzeniu [relacji AMP tutaj](../start/create_successful_stories.md).
+Read more about creating an [Web Story here](../start/create_successful_stories.md).
