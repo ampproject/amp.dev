@@ -1,7 +1,9 @@
 ---
-$title: Wprowadzenie do reklam AMPHTML
-$order: 1
+"$title": Wprowadzenie do reklam AMPHTML
+"$order": '1'
 description: Reklamy AMPHTML to szybszy, wymagający przesyłania mniejszej ilości danych i bezpieczniejszy sposób serwowania reklam w sieci. Chociaż strony AMP obsługują tradycyjne reklamy HTML, ładowanie tych reklam może być powolne.
+formats:
+- ads
 ---
 
 ## Co to jest reklama AMPHTML?
