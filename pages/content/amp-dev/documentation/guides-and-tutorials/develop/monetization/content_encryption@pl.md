@@ -1,8 +1,10 @@
 ---
-$title: Ochrona subskrybowanych treści za pomocą szyfrowania po stronie klienta
-$titles:
-  teaser: Ochrona subskrybowanych treści za pomocą szyfrowania po stronie klienta
-$order: 10
+formats:
+- websites
+"$title": Ochrona subskrybowanych treści za pomocą szyfrowania po stronie klienta
+"$titles":
+  teaser: Protect your subscription content with client-side encryption.
+"$order": '10'
 description: Rozwiązywanie problemów z szyfrowaniem treści poprzez wdrożenie walidacji subskrybentów premium i deszyfrowania treści po stronie klienta. Dzięki temu rozwiązaniu użytkownicy z dostępem premium będą mogli odszyfrować treść bez konieczności ładowania nowej strony ani czekania na odpowiedź zaplecza!
 author: CrystalOnScript
 ---
