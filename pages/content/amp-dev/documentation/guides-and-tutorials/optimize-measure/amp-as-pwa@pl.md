@@ -41,7 +41,7 @@ Następnie dodaj następujące elementy gdzieś w sekcji `<body>` (zmień tak, a
 
 Gdy użytkownik przejdzie do stron AMP w źródle (w przeciwieństwie do pierwszego kliknięcia, które zwykle jest serwowane z serwera buforującego AMP), Service Worker przejmuje kontrolę i może zrobić [mnóstwo fajnych rzeczy](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux).
 
-## The AMP Service Worker
+## Service Worker AMP
 
 Jeśli tu jesteś, to tworzysz strony z AMP. Zespołowi AMP bardzo zależy na tym, aby stawiać użytkownika na pierwszym miejscu i zapewniać mu światowej klasy doświadczenie w Internecie. Aby zapewnić spójność tych wrażeń, zespół AMP stworzył skrypt Service Worker specjalnie do AMP!
 
@@ -51,13 +51,13 @@ Jeśli tu jesteś, to tworzysz strony z AMP. Zespołowi AMP bardzo zależy na ty
 
 Zainstaluj skrypt AMP Service Worker, wykonując te kroki:
 
-- Import the AMP Service Worker code into your service worker file.
+- Zaimportuj kod AMP Service Worker do pliku Service Worker.
 
 [sourcecode:js]
   importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
   [/sourcecode]
 
-- Install the service worker with the following code.
+- Zainstaluj program Service Worker za pomocą następującego kodu.
 
 [sourcecode:js]
   AMP_SW.init();
