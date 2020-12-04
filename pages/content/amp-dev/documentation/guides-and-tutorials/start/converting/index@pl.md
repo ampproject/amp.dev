@@ -1,28 +1,30 @@
 ---
-$title: Konwertowanie HTML na AMP
-$titles:
-  teaser: Konwertowanie HTML na AMP
-$order: 0
-description: W tym samouczku poznasz kluczowe pojęcia AMP oraz dowiesz się, czym różnią się dokumenty AMP od tradycyjnych dokumentów HTML. Na koniec tego samouczka
-$hidden: true
+"$title": Convert HTML to AMP
+formats:
+- websites
+"$titles":
+  teaser: Convert HTML to AMP
+"$order": '0'
+description: In this tutorial, you’ll learn the key concepts of AMP and how AMP documents differ from traditional HTML documents. By the end of this tutorial
+"$hidden": 'true'
 teaser:
-  icon: konwertuj
-  text: Z tego samouczka krok po kroku dowiesz się jak przekonwertować HTML na AMP.
-  label: Dowiedz się więcej
+  icon: convert
+  text: Learn how to convert HTML to AMP in this step by step tutorial.
+  label: Learn more
 ---
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-end-product.png', 452, 918, align='right third', caption='Completed news article') }}
 
-W tym samouczku poznasz kluczowe pojęcia AMP oraz dowiesz się, czym różnią się dokumenty AMP od tradycyjnych dokumentów HTML. Na koniec tego samouczka utworzysz stronę AMP z istniejącej strony HTML.
+In this tutorial, you’ll learn the key concepts of AMP and how AMP documents differ from traditional HTML documents.  By the end of this tutorial, you'll have built an AMP page from an existing HTML page.
 
-## Dzięki ukończeniu samouczka:
+## You'll learn to:
 
-- Poznasz podstawowe informacje o witrynie AMP
-- Nauczysz się rozpoznawać różnice pomiędzy AMP a tradycyjnymi stronami HTML
-- Nauczysz się konwertować tradycyjną stronę HTML na AMP HTML
-- Będziesz umieć wykonać walidację strony AMP
-- Przygotujesz treść AMP do odnajdywania
+- Master the foundations of an AMP site
+- Recognize the differences between AMP pages and traditional HTML pages
+- Convert a traditional HTML page to AMP HTML
+- Validate an AMP page
+- Prepare your AMP content for discoverability
 
-## Utworzysz:
+## You'll build:
 
-Prostą stronę artykułu informacyjnego, zgodną ze specyfikacją AMP i zawierającą typowe funkcje spotykane w mobilnych witrynach informacyjnych.
+A simple news article page that conforms to AMP specifications and incorporates common features found on mobile news sites.
