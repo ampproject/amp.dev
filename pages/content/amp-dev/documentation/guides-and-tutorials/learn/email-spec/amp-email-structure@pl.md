@@ -1,13 +1,10 @@
 ---
-"$title": Structure and rendering of AMP emails
+"$title": 'Struktura i renderowanie wiadomości e-mail AMP '
 order: '2'
 formats:
 - email
 teaser:
-  text: |2-
-
-    Email is structured as a MIME tree. This MIME tree contains the message body
-    and any attachments to the email.
+  text: Wiadomości e-mail nadawana jest struktura drzewa MIME. To drzewo MIME zawiera treść wiadomości i wszelkie załączniki do wiadomości e-mail.
 toc: 'true'
 ---
 
@@ -34,31 +31,31 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Email is structured as a [MIME tree](https://en.wikipedia.org/wiki/MIME). This MIME tree contains the message body and any attachments to the email.
+Wiadomości e-mail nadawana jest struktura drzewa MIME. To drzewo MIME zawiera treść wiadomości i wszelkie załączniki do wiadomości e-mail.
 
-To embed AMP within an email, add a new MIME part with a content type of `text/x-amp-html` as a descendant of `multipart/alternative`. It should live alongside the existing `text/html` or `text/plain` parts. This ensures that the email message works on all clients.
+Aby móc osadzić AMP w wiadomości e-mail, należy dodać nową część MIME z typem zawartości `text/x-amp-html` jako elementem potomnym wezła `multipart/alternative`. Powinna ona znajdować się obok istniejących części `text/html` lub `text/plain`. To zapewni działanie wiadomości e-mail na wszystkich klientach.
 
 <amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/master/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"> <img data-md-type="raw_html" alt="AMP for Email MIME Parts Diagram" src="../img/amp-email-mime-parts.png"> </noscript></amp-img>
 
-For more information about the `multipart/alternative` subtype, refer to [RFC 1521, section 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
+Więcej informacji o podtypie `multipart/alternative` zawiera [dokument RFC 1521, sekcja 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
-## Additional information <a name="additional-information"></a>
+## Dodatkowe informacje <a name="additional-information"></a>
 
-The `text/x-amp-html` part must be nested under a `multipart/alternative` node. An email cannot have more than one `text/x-amp-html` part inside a `multipart/alternative` node.
+Część `text/x-amp-html` musi być zagnieżdżona pod węzłem `multipart/alternative`. Wiadomość e-mail może mieć nie więcej niż jedną część `text/x-amp-html` wewnątrz węzła `multipart/alternative`.
 
-The `multipart/alternative` must contain at least one non-AMP (`text/plain` or `text/html`) node in addition to the `text/x-amp-html` node. This will be displayed to users whose email clients don't support AMP or who opted out via their email provider's settings.
+Część `multipart/alternative` musi zawierać co najmniej jeden węzeł bez AMP (`text/plain` albo `text/html`) oprócz węzła `text/x-amp-html`. Będzie on wyświetlany użytkownikom, których programy pocztowe nie obsługują AMP lub którzy zrezygnowali z tego za pomocą ustawień swojego dostawcy poczty elektronicznej.
 
-Note: Some email clients[[1]](https://openradar.appspot.com/radar?id=6054696888303616) will only render the last MIME part, so we recommend placing the `text/x-amp-html` MIME part *before* the `text/html` MIME part.
+Uwaga: niektóre programy pocztowe[[1]](https://openradar.appspot.com/radar?id=6054696888303616) będą renderować tylko ostatnią część MIME, więc zalecamy umieszczenie części MIME `text/x-amp-html` *przed* częścią MIME `text/html`.
 
-### Replying/forwarding semantics <a name="replyingforwarding-semantics"></a>
+### Semantyka odpowiadania / przesyłania dalej <a name="replyingforwarding-semantics"></a>
 
-The email client strips out the `text/x-amp-html` part of the MIME tree when a user replies to or forwards an AMP email message.
+Program pocztowy usuwa część `text/x-amp-html` drzewa MIME, gdy użytkownik odpowiada na wiadomość e-mail AMP lub ją przesyła dalej.
 
-### Expiry <a name="expiry"></a>
+### Wygaśnięcie <a name="expiry"></a>
 
-The email client may stop displaying the AMP part of an email after a set period of time, e.g. 30 days. In this case, emails will display the `text/html` or `text/plain` part.
+Program pocztowy może przestać wyświetlać część AMP wiadomości e-mail po upływie określonego czasu, np. 30 dni. W takim przypadku wiadomości e-mail będą wyświetlać część `text/html` lub `text/plain`.
 
-## Example <a name="example"></a>
+## Przykład <a name="example"></a>
 
 <!-- prettier-ignore-start -->
 
