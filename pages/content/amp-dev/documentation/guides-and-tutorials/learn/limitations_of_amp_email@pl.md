@@ -1,7 +1,9 @@
 ---
-$title: Ograniczenia poczty elektronicznej AMPHTML (do ustalenia)
-$order: 2
-draft: true
+"$title": Ograniczenia poczty elektronicznej AMPHTML (do ustalenia)
+"$order": '2'
+formats:
+- email
+draft: 'true'
 ---
 
 Do ustalenia
