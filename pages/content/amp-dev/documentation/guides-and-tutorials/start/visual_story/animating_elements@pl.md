@@ -244,7 +244,6 @@ Opóźnijmy wejście pierwszego obrazu tak, aby zbliżył się do momentu, gdy s
     animate-in="fade-in"
     animate-in-delay="1s">
 </amp-img>
-
 ```
 
 Odśwież i załaduj ponownie relację. Twoja ostatnia strona powinna wyglądać tak:
