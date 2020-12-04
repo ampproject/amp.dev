@@ -42,7 +42,7 @@ Atrybut <code>layout</code> daje Ci łatwą kontrolę nad sposobem renderowania 
 
 ### Obsługiwane wartości atrybutu `layout`
 
-The following values can be used in the `layout` attribute:
+W atrybucie `layout` można stosować następujące wartości:
 
 <table>
   <thead>
@@ -98,18 +98,18 @@ The following values can be used in the `layout` attribute:
   </tbody>
 </table>
 
-[tip type="tip"] **TIP –** Visit the [Demonstrating AMP layouts](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html) page to see how the various layouts respond to screen resizing. [/tip]
+[tip type="tip"] **&nbsp;PORADA –** przejdź na stronę [Demonstrowanie układów AMP](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html), aby zobaczyć jak różne układy reagują na zmianę rozmiaru ekranu. [/tip]
 
 ### Co jeśli szerokość i wysokość są nieokreślone? <a name="what-if-width-and-height-are-undefined"></a>
 
-In a few cases if `width` or `height` are not specified, the AMP runtime can default these values as the following:
+W kilku przypadkach, jeśli atrybuty <code>width</code> lub <code>height</code> nie są określone, środowisko uruchomieniowe AMP może domyślnie ustawić następujące ich wartości:
 
 - [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): zarówno szerokość jak i wysokość są domyślnie ustawiane na 0.
 - [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): domyślna szerokość i wysokość są podawane z przeglądarki.
 
 ### Co jeśli atrybut <code>layout</code> jest nieokreślony? <a name="what-if-the-layout-attribute-isnt-specified"></a>
 
-If the <code>layout</code> attribute isn't specified, AMP tries to infer or guess the appropriate value:
+Jeśli atrybut `layout` nie jest określony, AMP próbuje wyprowadzić lub odgadnąć odpowiednią wartość:
 
 <table>
   <thead>
@@ -146,15 +146,15 @@ If the <code>layout</code> attribute isn't specified, AMP tries to infer or gues
 
 ### Kwerendy medialne CSS
 
-Use [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) to control how the page layout looks and behaves, as you would do on any other website. When the browser window changes size or orientation, the media queries are re-evaluated and elements are hidden and shown based on the new results.
+Użyj reguły [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media), aby kontrolować wygląd i sposób działania układu strony, tak jak w przypadku każdej innej witryny. Gdy okno przeglądarki zmieni rozmiar lub orientację, zapytania o media są ponownie oceniane, a elementy są ukrywane i wyświetlane w zależności od nowych wyników.
 
-[tip type="read-on"] **READ ON –** Learn more about controlling layout by applying media queries in [Use CSS media queries for responsiveness](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en). [/tip]
+[tip type="read-on"] **CZYTAJ DALEJ –** dowiedz się więcej na temat kontrolowania układu poprzez stosowanie kwerend medialnych z artykułu [Używanie zapytań CSS o media w celu uzyskania responsywności](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en). [/tip]
 
 ### Kwerendy elementu media <a name="element-media-queries"></a>
 
-One extra feature for responsive design available in AMP is the `media` attribute. This attribute can be used on every AMP element; it works similar to media queries in your global stylesheet, but only impacts the specific element on a single page.
+Jedną z dodatkowych funkcji w AMP jest atrybut <code>media</code>. Atrybut ten może być używany w każdym elemencie AMP; działa on podobnie do zapytań o media w globalnym arkuszu stylów, ale wpływa tylko na określony element na jednej stronie.
 
-For example, here we have 2 images with mutually exclusive media queries.
+Tutaj na przykład mamy 2 zdjęcia z wzajemnie wykluczającymi się zapytaniami o media.
 
 [sourcecode:html]
 <amp-img
@@ -166,7 +166,7 @@ For example, here we have 2 images with mutually exclusive media queries.
 </amp-img>
 [/sourcecode]
 
-Depending on the screen width, one or the other will be fetched and rendered.
+W zależności od szerokości ekranu, pobierane i renderowane będzie albo jedno, albo drugie.
 
 [sourcecode:html]
 <amp-img
