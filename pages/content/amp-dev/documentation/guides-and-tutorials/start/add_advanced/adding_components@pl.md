@@ -1,6 +1,6 @@
 ---
-$title: Dodawanie rozszerzonych składników AMP
-$order: 2
+"$title": Dodawanie rozszerzonych składników AMP
+"$order": '2'
 description: System składników AMP pozwala na szybkie tworzenie wydajnych i elastycznych funkcji w artykułach przy minimalnym nakładzie pracy. Biblioteka AMP HTML ma trzy klasyfikacje składników AMP...
 ---
 
@@ -8,7 +8,7 @@ System składników AMP pozwala na szybkie tworzenie wydajnych i elastycznych fu
 
 - **wbudowane**: są to składniki zawarte w podstawowej bibliotece JavaScript AMP (określonej w sekcji `<head>`), takie jak [`amp-img`](../../../../documentation/components/reference/amp-img.md) i [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md). Tych składników można natychmiast używać w dokumencie AMP.
 
-- **rozszerzone**: są to rozszerzenia biblioteki podstawowej, które muszą być jawnie dodane do dokumentu jako elementy niestandardowe. Elementy niestandardowe wymagają specjalnych skryptów, dodawanych do sekcji `<head>` (np., `<script async custom-element="`[`amp-video`](../../../../documentation/components/reference/amp-video.md)`...`).
+- **rozszerzone**: są to rozszerzenia biblioteki podstawowej, które muszą być jawnie dodane do dokumentu jako elementy niestandardowe. Elementy niestandardowe wymagają specjalnych skryptów, dodawanych do sekcji `<head>` (np., `<script async custom-element="[`[`amp-video`](../../../../documentation/components/reference/amp-video.md)`...`).
 
 - **eksperymentalne**: są to składniki, które zostały dopuszczone do użytku, ale nie są jeszcze gotowe do szerokiego zastosowania. Programiści mogą zdecydować się na stosowanie tych funkcji, zanim zostaną one w pełni wydane.  Dowiedz się więcej z artykułu [Funkcje eksperymentalne](../../../../documentation/guides-and-tutorials/learn/experimental.md).
 
