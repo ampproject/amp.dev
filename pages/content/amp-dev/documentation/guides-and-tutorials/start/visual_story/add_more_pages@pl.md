@@ -17,9 +17,7 @@ Prezentuje sposób wyświetlania obrazu i tekstu w jednej warstwie.
   <tr>
     <td width="60%">
       <ul>
-        <li>Contains 1 layer:       <ul>         <li>Implements the <a href="create_cover_page.md#vertical"><code>vertical</code></a> template.</li>         <li>Contains 3 elements:           <ul>             <li>An <code><h1></code> element with the title: <em>Cats</em>
-</li>             <li>A responsive <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> (<code class="filename">cat.jpg</code>, 720 x 1280px)</li>             <li>A <code><q></code> element for the following quotation: <em>Dogs come when they're called. Cats take a message and get back to you. --Mary Bly</em>
-</li>           </ul>         </li>       </ul>
+        <li>Zawiera 1 warstwę:       <ul>         <li>Implementuje szablon <a href="create_cover_page.md#vertical"><code>vertical</code></a>.</li>         <li>Zawiera 3 elementy:           <ul>             <li>Element <code><h1></code> z tytułem: <em>Cats</em> </li>             <li>Responsywny element <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> (<code class="filename">cat.jpg</code>, 720 x 1280px)</li>             <li>Element <code><q></code> na następujący cytat: <em>Dogs come when they're called. Cats take a message and get back to you. --Mary Bly</em> </li>           </ul>         </li>       </ul>
 </li>
 </ul>
     </td>
@@ -35,11 +33,7 @@ Prezentuje sposób rozmieszczania tekstu i wyświetlania obrazu wypełniającego
   <tr>
     <td width="60%">
       <ul>
-        <li>Contains 2 layers:       <ul>         <li>
-<b>Layer 1</b>: Implements the <a href="create_cover_page.md#fill"><code>fill</code></a> template, and contains a responsive <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> (<code class="filename">dog.jpg</code>, 720 x 1280px).</li>         <li>
-<b>Layer 2</b>:  Implements the <a href="create_cover_page.md#thirds"><code>thirds</code></a> template and contains 2 elements:           <ul>             <li>An <code><h1></code> element with the title: <em>Dogs</em>
-</li>             <li>A <code><p></code> element that specifies a <a href="create_cover_page.md#thirds"><code>grid-area</code></a> that occupies the <a href="create_cover_page.md#thirds"><code>lower-third</code></a> and contains the following text: <em>Dogs were probably the first tame animals. They have accompanied humans for some 10,000 years. Some scientists assert that all dogs, domestic and wild, share a common ancestor in the small South Asian wolf.</em>
-</li>           </ul>         </li>       </ul>
+        <li>Zawiera 2 warstwy:       <ul>         <li> <b>Warstwa 1</b>: implementuje szablon <a href="create_cover_page.md#fill"><code>fill</code></a> i zawiera responsywny element <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> (<code class="filename">dog.jpg</code>, 720 x 1280px).</li>         <li> <b>Warstwa 2</b>:  implementuje szablon <a href="create_cover_page.md#thirds"><code>thirds</code></a> i zawiera 2 elementy:           <ul>             <li>Element <code><h1></code> z tytułem: <em>Dogs</em> </li>             <li>Element <code><p></code> określający obszar <a href="create_cover_page.md#thirds"><code>grid-area</code></a> zajmowany przez element <a href="create_cover_page.md#thirds"><code>lower-third</code></a> i zawierający następujący tekst: <em>Dogs were probably the first tame animals. They have accompanied humans for some 10,000 years. Some scientists assert that all dogs, domestic and wild, share a common ancestor in the small South Asian wolf.</em> </li>           </ul>         </li>       </ul>
 </li>
 </ul>
     </td>
@@ -55,14 +49,9 @@ Prezentuje sposób rozmieszczania tekstu, wyświetlania obrazu wypełniającego 
   <tr>
     <td width="60%">
       <ul>
-      <li>Contains 3 layers:       <ul>         <li>
-<b>Layer 1</b>: Implements the <a href="create_cover_page.md#fill"><code>fill</code></a> template, and contains a responsive <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> (<code class="filename">bird.jpg</code>, 720 x 1280px).</li>         <li>
-<b>Layer 2</b>  Implements the <a href="create_cover_page.md#vertical"><code>vertical</code></a> template and contains one element:           <ul>             <li>An <code><h1></code> element with the title: <em>Birds</em>
-</li>           </ul>         </li>         <li>
-<b>Layer 3</b>:  Implements the <a href="create_cover_page.md#vertical"><code>vertical</code></a> template and contains one element:           <ul>             <li>A <code><q></code> element for the following quotation: <em>A bird is three things: Feathers, flight and song, And feathers are the least of these.--Marjorie Allen Seiffert</em>
-</li>             <li>This third layer specifies <code>class="bottom"</code> to align the child elements to the bottom of screen.</li>           </ul>         </li>       </ul>
+      <li>Zawiera 3 warstwy:       <ul>         <li> <b>Warstwa 1</b>: implementuje szablon <a href="create_cover_page.md#fill"><code>fill</code></a> i zawiera responsywny element <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> (<code class="filename">bird.jpg</code>, 720 x 1280px).</li>         <li> <b>Warstwa 2</b>  implementuje szablon <a href="create_cover_page.md#vertical"><code>vertical</code></a> i zawiera jeden element:           <ul>             <li>Element <code><h1></code> z tytułem: <em>Birds</em> </li>           </ul>         </li>         <li> <b>Warstwa 3</b>:  implementuje szablon <a href="create_cover_page.md#vertical"><code>vertical</code></a> i zawiera jeden element:           <ul>             <li>Element  <code><q></code> na następujący cytat: <em>A bird is three things: Feathers, flight and song, And feathers are the least of these.--Marjorie Allen Seiffert</em> </li>             <li>Ta trzecia warstwa określa atrybut <code>class="bottom"</code> w celu wyrównania elementów podrzędnych z dołem ekranu.</li>           </ul>         </li>       </ul>
 </li>
-      <li>Plays an audio file in the background while the page is displayed. You can play audio in the background for the whole story or for a single page.  To play audio for a page, add the <code>background-audio="assets/bird-singing.mp3"</code> attribute to the <code><amp-story-page></code> element.</li>
+      <li>Odtwarza plik audio w tle, gdy strona jest wyświetlana. Możesz odtwarzać dźwięk w tle całej relacji lub pojedynczej strony. Aby odtworzyć dźwięk dla strony, dodaj atrybut <code>background-audio="assets/bird-singing.mp3"</code> do elementu <code><amp-story-page></code>.</li>
       </ul>
     </td>
     <td>{{ image('/static/img/docs/tutorials/amp_story/pg3-birds.png', 720, 1280, alt='Page 3 - Birds' ) }}</td>
@@ -77,13 +66,7 @@ Prezentuje sposób rozmieszczania tekstu i wyświetlania filmu wypełniającego 
   <tr>
     <td width="60%">
       <ul>
-      <li>Contains 3 layers:       <ul>         <li>
-<b>Layer 1</b>: Implements the <code>fill</code> template, and contains a responsive <a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a> (<code class="filename">rabbit.mp4</code>).           <ul>             <li>Remember to add the <strong>required script</strong> for the <a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a> component in your <code><head></code> section so the video appears.</li>             <li>Specify a <code>poster</code> image (<code class="filename">rabbit.jpg</code>). This attribute is <strong>required</strong> for valid AMP stories.</li>             <li>Set the video to play automatically with the <code>autoplay</code> attribute. This attribute is <strong>required</strong> for valid AMP stories.</li>             <li>Set the video to automatically loop back with the <code>loop</code> attribute.</li>             <li>Set the dimensions to <code>width="720"</code> <code>height="1280"</code> and <code>layout="responsive"</code>.</li>           </ul>
-</li>         <li>
-<b>Layer 2</b>  Implements the <code>vertical</code> template and contains one element:           <ul>             <li>An <code><h1></code> element with the title: <em>Rabbits</em>
-</li>           </ul>         </li>         <li>
-<b>Layer 3</b>:  Implements the <code>vertical</code> template and contains one element:           <ul>             <li>A <code><p></code> element that contains the following text: <em>Rabbits can learn to follow simple voice commands and come when called by name, and are curious and playful</em>.</li>             <li>Apply the <code>bottom</code> CSS class to the layer to align the child elements to the bottom of screen.</li>           </ul>         </li>
-</ul>
+      <li>Zawiera 3 warstwy:       <ul>         <li> <b>Warstwa 1</b>: implementuje szablon <code>fill</code> i zawiera responsywny element <a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a> (<code class="filename">rabbit.mp4</code>).           <ul>             <li>Pamiętaj o dodaniu <strong>skryptu wymaganego</strong> przez składnik <a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a> w jego sekcji <code></code> do wyświetlenia filmu.</li>             <li>Określ obraz <code>poster</code> (<code class="filename">rabbit.jpg</code>). Ten atrybut jest <strong>wymagany</strong> do prawidłowości relacji AMP.</li>             <li>Ustaw automatyczne odtwarzanie filmu za pomocą atrybutu <code>autoplay</code>. Ten atrybut jest <strong>wymagany</strong> do prawidłowości relacji AMP.</li>             <li>Ustaw automatyczne odtwarzanie filmu w pętli za pomocą atrybutu <code>loop</code>.</li>             <li>Ustaw wymiary <code>width="720"</code> <code>height="1280"</code> i <code>layout="responsive"</code>.</li>           </ul> </li>         <li> <b>Warstwa 2</b>  implementuje szablon <code>vertical</code> i zawiera jeden element:           <ul>             <li>Element <code><h1></code> z tytułem: <em>Rabbits</em> </li>           </ul>         </li>         <li> <b>Warstwa 3</b>:  implementuje szablon <code>vertical</code> i zawiera jeden element:           <ul>             <li>Element <code><p></code> zawierający następujący tekst: <em>Rabbits can learn to follow simple voice commands and come when called by name, and are curious and playful</em>.</li>             <li>Zastosuj klasę CSS <code>bottom</code> do warstwy, aby wyrównać elementy podrzędne z dołem ekranu.</li>           </ul>         </li> </ul>
 </li>
       </ul>
     </td>
