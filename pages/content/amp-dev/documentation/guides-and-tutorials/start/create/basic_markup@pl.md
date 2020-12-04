@@ -1,44 +1,72 @@
 ---
-$title: Tworzenie strony AMP HTML
-description: "Użyj protokołu HTTPS: podczas tworzenia stron i treści AMP należy zdecydowanie rozważyć użycie protokołu HTTPS (zamiast HTTP). Chociaż protokół HTTPS nie jest wymagany dla samego dokumentu AMP..."
+"$title": Create your AMP HTML page
+"$order": '1'
+description: 'Use HTTPS: When creating AMP pages and content, you should strongly consider using the HTTPS protocol (vs. HTTP). Although, HTTPS is not required for the AMP document itself or ...'
+author: pbakaus
+contributors:
+- bpaduch
 ---
 
-Poniższy kod ze znacznikami to przyzwoity punkt startowy lub kod standardowy. Skopiuj go i zapisz w pliku z rozszerzeniem .html.
+The following markup is a decent starting point or boilerplate. Copy this and save it to a file with a .html extension.
 
-[sourcecode:html] <!doctype html>
+[sourcecode:html]
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>Hello, AMPs</title>
+    <link rel="canonical" href="{{doc.url}}">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "headline": "Open-source framework for publishing content",
+        "datePublished": "2015-10-07T12:02:41Z",
+        "image": [
+          "logo.jpg"
+        ]
+      }
+    </script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  </head>
+  <body>
+    <h1>Welcome to the mobile web</h1>
+  </body>
+</html>
+[/sourcecode]
 
-<meta charset="utf-8"> <script async="" src="https://cdn.ampproject.org/v0.js"></script> <title>Hello, AMPs</title> <link rel="canonical" href="%7B%7Bdoc.url%7D%7D"> <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"> <script type="application/ld+json"> { "@context": "http://schema.org", "@type": "NewsArticle", "headline": "Open-source framework for publishing content", "datePublished": "2015-10-07T12:02:41Z", "image": [ "logo.jpg" ] } </script> <style amp-boilerplate="">body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate="">body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript> <h1>Welcome to the mobile web</h1> [/sourcecode]
+The content in the body, so far, is pretty straightforward. But there’s a lot of additional code in the head of the page that might not be immediately obvious. Let’s deconstruct the required mark-up.
 
-Zawartość w sekcji body jak na razie jest dość prosta. W sekcji head strony znajduje się jednak sporo dodatkowego kodu, który może nie być od razu oczywisty. Zdekonstruujmy wymagane znaczniki.
+Use HTTPS: When creating AMP pages and content, you should strongly consider using the HTTPS protocol (vs. HTTP). Although, HTTPS is not required for the AMP document itself or for images and fonts, there are many AMP features that require HTTPS (e.g., video, iframes, and more). To ensure your AMP pages take full advantage of all AMP features, use the HTTPS protocol.  You can learn more about HTTPS in ["Why HTTPS Matters"](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
 
-Użyj protokołu HTTPS: podczas tworzenia stron i treści AMP należy zdecydowanie rozważyć użycie protokołu HTTPS (zamiast HTTP). Chociaż protokół HTTPS nie jest wymagany dla samego dokumentu AMP ani obrazów i czcionek, wiele funkcji AMP wymaga protokołu HTTPS (np. wideo, ramki iframe itd.). Aby strony AMP w pełni wykorzystywały wszystkie funkcje AMP, należy użyć protokołu HTTPS. Więcej o protokole HTTPS można dowiedzieć się z artykułu [Why HTTPS Matters](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
+[tip type="tip"] Use the [AMP Boilerplate Generator](/boilerplate) to quickly get started with creating new AMP pages. [/tip]
 
-[tip type="tip"] Użyj [generatora kodu standardowego AMP](/boilerplate), aby szybko zacząć tworzyć nowe strony AMP. [/tip]
+## Required mark-up
 
-## Wymagane znaczniki
+AMP HTML documents MUST:
 
-Dokumenty AMP HTML muszą:
-
-Zasada | Opis
+Rule | Description
 --- | ---
-Zaczynać się od deklaracji `<!doctype html>`. | Standard w przypadku HTML.
-Zawierać znacznik najwyższego poziomu `<html ⚡>` <br>(albo `<html amp>`). | Identyfikuje stronę jako treść AMP.
-Zawierać znaczniki `<head>` i `<body>`. | Opcjonalnie w HTML, ale nie w AMP.
-Zawierać znacznik `<meta charset="utf-8>` jako pierwszy element podrzędny znacznika `<head>`. | Identyfikuje kodowanie strony.
-Zawierać znacznik `<script async src="https://cdn.ampproject.org/v0.js"></script>` w sekcji `<head>`. Zgodnie z najlepszą praktyką należy dodać skrypt jak najwcześniej w sekcji `<head>`. | Zawiera i ładuje bibliotekę JS AMP.
-Zawierać znacznik `<link rel="canonical" href="$SOME_URL">` w sekcji `<head>`. | Wskazuje na zwykłą wersję HTML dokumentu AMP HTML lub na samą siebie, jeśli taka wersja HTML nie istnieje. Dowiedz się więcej z artykułu [Spraw, by Twoje strony można było odnaleźć](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md).
-Zawierać znacznik `<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">` w sekcji `<head>`. Zalecane jest dodanie również właściwości `initial-scale=1`. | Określa responsywne okienko na ekranie. Dowiedz się więcej z artykułu [Tworzenie responsywnych stron AMP](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).
-Zawierać [kod standardowy AMP](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) w sekcji `<head>`. | Kod standardowy CSS początkowo ma ukrywać zawartość do momentu załadowania JS AMP.
+Start with the `<!doctype html>` doctype. | Standard for HTML.
+Contain a top-level `<html ⚡>` tag <br>(`<html amp>` is accepted as well). | Identifies the page as AMP content.
+Contain `<head>` and `<body>` tags. | Optional in HTML but not in AMP.
+Contain a `<meta charset="utf-8">` tag as the first child of their `<head>` tag. | Identifies the encoding for the page.
+Contain a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside their `<head>` tag. As a best practice, you should include the script as early as possible in the `<head>`. | Includes and loads the AMP JS library.
+Contain a `<link rel="canonical" href="$SOME_URL">` tag inside their `<head>`. | Points to the regular HTML version of the AMP HTML document or to itself if no such HTML version exists. Learn more in [Make Your Page Discoverable](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md).
+Contain a `<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">` tag inside their `<head>` tag. It's also recommended to include `initial-scale=1`. | Specifies a responsive viewport. Learn more in [Create Responsive AMP Pages](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).
+Contain the [AMP boilerplate code](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) in their `<head>` tag. | CSS boilerplate to initially hide the content until AMP JS is loaded.
 
-## Opcjonalne metadane
+## Optional metadata
 
-Oprócz wymaganego kodu nasza próbka zawiera w sekcji head również definicję Schema.org, która nie jest ścisłym wymogiem w przypadku AMP, ale jest niezbędna, aby treści mogły być dystrybuowane w niektórych miejscach (na przykład w karuzeli Top Stories wyszukiwarki Google).
+In addition to the bare requirements, our sample also includes a Schema.org definition in the head, which isn’t a strict requirement for AMP, but it is a requirement to get your content distributed in certain places (for example, in the Google Search top stories carousel).
 
-[tip type="read-on"] Odwiedź te zasoby, aby uzyskać więcej informacji:
+[tip type="read-on"]Visit these resources to learn more:
 
-- [Rozpoczęcie pracy z AMP w wyszukiwarce Google](https://developers.google.com/amp/docs) — naucz się przygotowywać strony AMP do wyszukiwania w Google.
-- [Próbki metadanych](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) — dowiedz się więcej o wszystkich metadanych, których będziesz potrzebować w różnych innych miejscach (takich jak Twitter). [/tip]
+- [Getting Started with AMP on Google Search](https://developers.google.com/amp/docs) - learn to prepare your AMP pages for Google Search.
+- [Metadata samples](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) - learn more about all the metadata you’ll need in various other places (e.g., Twitter). [/tip]
 
 <hr>
 
-Dobre wieści! To już wszystko, czego potrzebujemy, aby utworzyć naszą pierwszą stronę AMP, ale oczywiście w sekcji body nie dzieje się jeszcze zbyt wiele. W następnej części zajmiemy się tym, jak dodać podstawowe elementy, takie jak obrazy, niestandardowe elementy AMP, jak stylizować stronę i opracować układ responsywny.
+Good news! That’s all we need to create our first AMP page, but of course, there’s not a lot going on in the body yet. In the next section, we’ll cover how to add basics like images, custom AMP elements, how to style your page and work out a responsive layout.
