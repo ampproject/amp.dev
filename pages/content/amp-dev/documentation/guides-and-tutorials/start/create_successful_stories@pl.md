@@ -1,8 +1,10 @@
 ---
-$title: Najlepsze praktyki tworzenia udanych relacji internetowych
-$order: 1
+"$title": Najlepsze praktyki tworzenia udanych relacji internetowych
+"$order": '1'
 description: Najlepsze praktyki tworzenia udanych relacji internetowych
-$category: Początek
+"$category": Start
+formats:
+- stories
 author: CrystalOnScript
 ---
 
@@ -97,7 +99,7 @@ Upewnij się, że treść jest dostępna. Zmień rozmiar filmów tak, aby na dol
 
 <table>
   <tr>
-    <th>DOBRZE</th>
+    <th>DO</th>
     <th>ŹLE</th>
   </tr>
   <tr>
@@ -133,8 +135,7 @@ Używaj pełnoekranowych, pionowych obrazów o dobrej rozdzielczości (828 x 179
   <amp-video layout="responsive" poster="/static/img/docs/guides/storiesbp/do-background-still.jpg" width="1440" height="630" loop autoplay noaudio>
     <source src="/static/img/docs/guides/storiesbp/do-background.webm" type="video/webm"></source>
     <source src="/static/img/docs/guides/storiesbp/do-background.mp4" type="video/mp4"></source>
-  </amp-video>
-</figure>
+  </amp-video></figure>
 
 Unikaj skadrowanych w poziomie zdjęć.
 
