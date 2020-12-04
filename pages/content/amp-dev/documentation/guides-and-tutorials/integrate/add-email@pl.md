@@ -1,7 +1,9 @@
 ---
-$title: Dodawanie AMP do istniejących wiadomości e-mail
-$order: 1
+"$title": Dodawanie AMP do istniejących wiadomości e-mail
+"$order": '1'
 author: CrystalOnScript
+formats:
+- email
 ---
 
 Format AMP dla poczty e-mail jest osadzany jako nowa część MIME. Jeśli wiadomość e-mail zostanie wysłana do usługodawcy, który obsługuje AMP dla poczty e-mail, zostanie ona wyświetlona — a jeśli nie, to nie martw się! Usługodawca wyświetli Twój kod HTML lub rezerwowy zwykły tekst. Użyj tego przewodnika, aby włączyć AMP do swoich wiadomości e-mail.
@@ -42,6 +44,7 @@ Content-Type: text/html; charset="UTF-8"
 
 <span>Hello World in HTML!</span>
 --001a114634ac3555ae05525685ae
+
 ```
 
 [tip type="important"] Niektóre programy pocztowe będą renderować tylko ostatnią część MIME. Aby zapewnić renderowanie waidomości e-mail, umieść część MIME `text/x-amp-html` przed częścią MIME `text/html`. [/tip]
