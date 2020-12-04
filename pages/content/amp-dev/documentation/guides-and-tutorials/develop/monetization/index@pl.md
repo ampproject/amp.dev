@@ -77,22 +77,17 @@ Depending on the ad network, you can choose to show a placeholder until the ad i
 Depending on the ad network, you can choose to show a fallback element if no ad is available to serve. To specify a fallback, add a child element with the `fallback` attribute. Learn more in [Placeholders & fallbacks](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ```html
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-   <amp-img fallback src="fallback-image.jpg"></amp-img>
-</amp-ad>
+<amp-ad type="a9" width="300" height="250" data-aax_size="300x250" data-aax_pubname="test123" data-aax_src="302">
+   <amp-img fallback="" src="fallback-image.jpg"></amp-img></amp-ad>
 ```
 
 Congratulations! You are now serving ads on your AMP page!
 
 ## Serwowanie sprzedawanych bezpośrednio reklam AMPHTML
 
-The [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component serves ads from the network you specify.  Those ads can be standard HTML ads or AMPHTML ads, provided that the ad network supports AMPHTML ads. To serve your direct-sold ads as AMPHTML ads, create the ad in AMP HTML according to the [AMPHTML ad spec](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) requirements and use an [ad server that serves AMPHTML ads](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
+Składnik [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) serwuje reklamy z określonej przez Ciebie sieci. Mogą to być standardowe reklamy HTML lub reklamy AMPHTML, o ile sieć reklamowa obsługuje reklamy AMPHTML. Aby serwować reklamy sprzedawane bezpośrednio jako reklamy AMPHTML, należy utworzyć reklamę w AMP HTML, zgodnie z wymaganiami [specyfikacji reklam AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) i użyć [serwera reklam, który obsługuje reklamy AMPHTML](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
 
-## Augmenting targeting data on ad requests
+## Rozszerzenie danych dotyczących targetowania w żądaniach reklam
 
 As part of the Fast Fetch serving mechanism, the Real-Time Config (RTC) feature allows publishers to augment ad requests with first-party and third-party targeting information that's retrieved at runtime. RTC allows up to 5 callouts to targeting servers for each individual ad slot, the results of which are appended to the ad request.  To use RTC on your ads, the ad network you use must support RTC and Fast Fetch.
 
@@ -102,45 +97,45 @@ You can learn more about RTC from this YouTube video:
 
 Or, learn more from these RTC resources:
 
-- [AMP RTC publisher implementation guide](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
-- [AMP Real Time Config](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
+- [AMP RTC — przewodnik implementacji dla wydawców](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
+- [Funkcja AMP Real Time Config](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
 
-## Best practices
+## Najlepsze praktyki
 
 Here are some tips to maximize the effectiveness of ads on your AMP pages:
 
-### Placement & controls: optimize your ad placements
+### Umiejscowienie i sterowanie: zoptymalizuj umiejscowienie reklam
 
-- **Place the same number of ads** on AMP Pages as your non-AMP pages to generate maximum revenue per page.
-- **Place the first ad immediately below the first viewport** ("below the fold") to provide an optimal user experience.
-- Unless you're using advanced CSS or media queries, **ensure your ad units are centered on the page** to provide your users with an optimal mobile web experience.
-- Enable [multi-size ad requests](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests) on your AMP inventory to increase ad auction pressure and drive revenue.
+- Aby uzyskać maksymalny przychód na jedną stronę, **umieść na stronach AMP taką samą liczbę reklam**, jak na stronach bez AMP.
+- **Umieść pierwsze ogłoszenie bezpośrednio pod pierwszym okienkiem na stronie** („pod treścią”), aby zapewnić optymalne wrażenia użytkownikowi.
+- O ile nie stosujesz zaawansowanego kodu CSS lub zapytań o media, upewnij się, że Twoje jednostki reklamowe są wyśrodkowane na stronie, aby zapewnić użytkownikom optymalne wrażenia na mobilnych stronach internetowych.
+- Aby zwiększyć presję podczas aukcji reklamowych i zwiększyć przychody z aukcji, włącz [żądania reklam o wielu rozmiarach](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests).
 
-### Demand & pricing: get the right price for your ads
+### Popyt i ceny: uzyskaj właściwą cenę za reklamy
 
-- **Sell ad units on your AMP pages across all sales channels**, including direct and indirect to maximize competition for your inventory on AMP pages.
-- **Price your ad inventory on AMP pages** similar to your inventory on non-AMP pages. Monitor performance and adjust pricing accordingly.
-- **Ensure all ad demand channels are competing** for ad inventory on your AMP pages to drive up competition.
+- **Sprzedawaj jednostki reklamowe na stronach AMP we wszystkich kanałach sprzedaży**, w tym bezpośrednich i pośrednich, aby zmaksymalizować rywalizację o miejsce na Twoich stronach AMP.
+- **Wyceniaj swoje miejsce na reklamę na stronach AMP** podobnie jak miejsce na stronach bez AMP. Monitoruj wyniki i odpowiednio dostosowuj ceny.
+- **Zadbaj, by wszystkie kanały popytu na reklamę rywalizowały** o miejsce na reklamę na Twoich stronach AMP, aby podsycać konkurencję.
 
-### Ad types: Serve the best types of ads
+### Typy reklam: wyświetlaj najlepsze typy reklam
 
-- **Avoid heavy creatives** per [IAB guidelines](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf).
-- **Avoid interstitials** or other ad formats that cause the content to reflow on ad load.
-- **Optimize for viewability** by setting the data-loading-strategy to prefer-viewability-over-views.
-- **Place ads in your video content** via [supported players](../../../../documentation/components/index.html#media) or [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) to enable revenue on all types of content.
-- **Implement native ads** to compete with display ads using multi-sized ad requests, adding demand pressure while providing your readers with a premium user experience.
+- **Unikaj ciężkich kreacji** zgodnie z [wytycznymi IAB](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf).
+- **Unikaj reklam międzysegmentowych** lub innych formatów reklam, które powodują zmianę układu treści podczas ładowania reklam.
+- **Optymalizuj widoczność**, ustawiając strategię ładowania danych tak, aby preferować widoczność, a nie wyświetlenia.
+- **Umieszczaj reklamy w swojej treści wideo** za pomocą [obsługiwanych odtwarzaczy](../../../../documentation/components/index.html#media) lub składnika [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md), aby umożliwić osiąganie przychodów ze wszystkich typów treści.
+- **Zaimplementuj natywne reklamy**, aby konkurować z reklamami wyświetlanymi za pomocą żądań reklam o wielu rozmiarach, zwiększając presję na popyt, a jednocześnie zapewniając swoim czytelnikom komfort użytkowania na najwyższym poziomie.
 
 ### Innowacja: oferuj najbardziej angażujące produkty reklamowe
 
-- **Implement ads on ancillary AMP pages** to generate incremental revenue:
+- **Zaimplementuj reklamy na dodatkowych stronach AMP** w celu generowania dodatkowych dochodów:
     - [Reklamy w karuzeli](../../../../documentation/examples/documentation/Carousel_Ad.html)
     - [Reklamy w lightboksie](../../../../documentation/examples/documentation/Lightbox_Ad.html)
     - ...i [więcej](../../../../documentation/examples/index.html)
-- **Implement new formats for direct sold ads** to equip your sales team with high-impact, innovative ad products:
-    - [Sticky Ads](../../../../documentation/examples/documentation/amp-sticky-ad.html)
-    - [Flying Carpet](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
+- **Implementuj nowe formaty reklam sprzedawanych bezpośrednio<strong>, aby wyposażyć swój zespół sprzedaży w innowacyjne produkty reklamowe o silnym oddziaływaniu:</strong>**
+    - [Reklamy sticky ads](../../../../documentation/examples/documentation/amp-sticky-ad.html)
+    - [Reklamy flying carpet](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
 
 ## Dodatkowe zasoby
 
-- [AMPHTML ad templates](../../../../documentation/examples/index.html)
-- [Demo: Shows how to add `amp-ad` to your AMP page](../../../../documentation/components/reference/amp-ad.md)
+- [Szablony reklam AMPHTML](../../../../documentation/examples/index.html)
+- [Demo: pokazuje dodawanie składnika `amp-ad` do strony AMP](../../../../documentation/components/reference/amp-ad.md)
