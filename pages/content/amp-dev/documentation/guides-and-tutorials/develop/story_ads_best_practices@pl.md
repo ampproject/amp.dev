@@ -1,19 +1,19 @@
 ---
-"$title": Best practices for creating a Web Story ad
+"$title": Najlepsze praktyki tworzenia reklam fabularnych Web
 "$order": '16'
-description: Web Stories are a full-screen tappable experience that immerses readers in the content. Ads that appears in Web Stories should have a consistent and cohesive design with the Web Stories UX.
+description: Relacje Web to interaktywne, pełnoekranowe materiały, angażujące czytelników w treść. Reklamy wyświetlane w relacjach Web powinny być spójne z relacjami Web.
 formats:
 - ads
 - stories
 ---
 
-Web Stories are a full-screen tappable experience that immerses readers in the content. Ads that appears in Web Stories should have a consistent and cohesive design with the Web Stories UX. This prevents a jarring or interruptive user experience. This guide demonstrates how to build an ad for Web Stories.
+Relacje Web to interaktywne, pełnoekranowe materiały, angażujące czytelników w treść. Reklamy wyświetlane w relacjach Web powinny być spójne z relacjami Web. Zapobiega to irytowaniu użytkowników lub zakłócaniu ich wrażeń. Ten przewodnik pokazuje, jak stworzyć reklamę fabularną Web.
 
-## Web Story ad principles
+## Zasady dotyczące reklam fabularnych
 
-Current ad formats, such as banners and boxes, do not integrate well with the AMP Story format. Classic ads are slow, interruptive, and feel out of place within the Story experience.
+AMP Obecnie stosowane formaty reklam, takie jak banery i boksy, nie integrują się dobrze z formatem AMP Story. Klasyczne reklamy są w relacjach powolne, irytujące i nie na miejscu.
 
-Web Story ads conform to the following principles:
+Reklamy fabularne Web muszą być zgodne z następującymi zasadami:
 
 - Prawidłowa reklama AMPHTML: zgodna z tą samą specyfikacją techniczną, co klasyczna reklama [AMPHTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md).
 - Po pierwsze grafika: zachęcająca, śmiała, zależna od kontekstu.
@@ -21,21 +21,21 @@ Web Story ads conform to the following principles:
 - Ten sam model interakcji: użytkownik może przejść do następnego ekranu tak, jak z organicznej strony relacji.
 - Szybka: reklama nigdy nie jest wyświetlana użytkownikowi załadowana do połowy.
 
-To be consistent with these principles, the Web Story runtime determines the right placement of an ad page amidst the Web Story. Read more about ad placement mechanics in [Advertise in Web Stories](advertise_amp_stories.md).
+Aby zachować zgodność z tymi zasadami, środowisko uruchomieniowe relacji Web określa właściwe umieszczenie strony z reklamą w relacji Web. Więcej informacji o mechanice umieszczania reklam zawiera artykuł [Reklama w relacjach internetowych](advertise_amp_stories.md).
 
-## Sample Web Story ad
+## Przekładowa reklama fabularna
 
-Web Story ads are AMPHTML ads, but have required meta tag data, meet defined layout specifications and required UI elements. A Web Story ad will always include a call to action(CTA) button and an ad label displayed as a text disclaimer at the top of the page.
+Reklamy fabularne AMP są reklamami AMPHTML, ale mają wymagane tagi meta, spełniają wymogi określonych specyfikacji układu i mają wymagane elementy UI. Reklama fabularna Web zawsze będzie zawierać przycisk wezwania do działania (CTA) oraz etykietę reklamy, wyświetlaną jako zastrzeżenie tekstowe u góry strony.
 
 {{ image('/static/img/docs/stampads/stamp_ad.png', 425, 800, layout='intrinsic', alt='Przykład reklamy fabularnej AMP', caption='Przykład reklamy fabularnej AMP', align='' ) }}
 
-To keep the user experience consistent, the Web Story runtime is responsible for rendering the ad label and the CTA button.
+Aby zapewnić spójność wrażeń użytkowników, za renderowanie etykiety reklamy i przycisku CTA odpowiada środowisko uruchomieniowe relacji Web.
 
-[tip type="important"] **IMPORTANT –** Only the CTA button is clickable in an Web Story ad, so keep this in mind when developing your creative. [/tip]
+[tip type="important"] **WAŻNE — ** w reklamie fabularnej Web można kliknąć tylko przycisk CTA, więc pamiętaj o tym podczas tworzenia swojej kreacji. [/tip]
 
-## Meta tag data
+## Dane tagów meta
 
-Meta tag data specifies that the ad meets the Web Story format, sets the CTA button text enum, directs where the button will send the user and what type of page it is.
+Dane tagów meta określają, że reklama ma format Web Story, ustawiają wyliczenie tekstów przycisku CTA, określają stronę docelową przycisku i jej typ.
 
 [sourcecode:html]
 
@@ -100,21 +100,21 @@ Przycisk wezwania do działania można skonfigurować przy użyciu predefiniowan
 
 Jeśli potrzebna jest pomoc dotycząca wyliczania tekstów nowego przycisku CTA, otwórz [problem na GitHub](https://github.com/ampproject/amphtml/issues/new).
 
-## Ad landing page
+## Strona docelowa reklamy
 
-You can specify one of three options for an Web Story ad landing page.
+Można określić jedną z trzech opcji strony docelowej reklamy fabularnej Web.
 
 - `STORY`: strona docelowa to [relacja sponsorowana](story_ads_best_practices.md#sponsored-story).
 - `AMP`: strona docelowa to prawidłowa strona AMP.
 - `NONAMP`: każdy inny typ strony internetowej
 
-## Layout
+## Układ
 
-AMP Stories are horizontal and full-screen. Story ads are required to match this format to provide a consistent user experience.
+Relacje AMP są poziome i pełnoekranowe. Reklamy fabularne muszą być dopasowane do tego formatu, aby zapewnić spójne wrażenia użytkownika.
 
-## Overlay dimensions
+## Wymiary nakładki
 
-The ad label overlays a dark gradient bar across the entire width of the ad and will stretch from the top to 46px down.
+Etykieta reklamy nakładana jest na pasek z ciemnym gradientem na całej szerokości reklamy i rozciąga się od góry do 46 px w dół.
 
 {{ image('/static/img/docs/stampads/ad_overlay.png', 515, 520, layout='intrinsic', alt='Demonstracja nakładki reklamowej', caption='Nakładka reklamy znajduje się na górze', align='' ) }}
 
@@ -122,9 +122,9 @@ Przycisk CTA znajduje się 32 px od dołu i jest wyśrodkowany w poziomie. Ma wy
 
 {{ image('/static/img/docs/stampads/cta_button.png', 515, 520, layout='intrinsic', alt='Demonstracja przycisku CTA', caption='Przycisk CTA znajduje się blisko dołu', align='' ) }}
 
-## Images and video
+## Obrazy i filmy
 
-Images and video included in an AMP Story ad should be 4:3 standard full-screen. Ads that include video should use a [poster](../../../documentation/components/reference/amp-video.md#poster) The recommended dimensions for a poster image are 720p (720w x 1280h) .
+Obrazy i filmy zawarte w reklamie fabularnej AMP powinny być w standardzie pełnoekranowym 4:3. Reklamy zawierające filmy powinny mieć [plakat](../../../documentation/components/reference/amp-video.md#poster). Zalecane wymiary obrazu plakatu to 720p (720 szer. x 1280 wys.) .
 
 [sourcecode:html]
 <amp-video controls
@@ -143,9 +143,9 @@ Images and video included in an AMP Story ad should be 4:3 standard full-screen.
 </amp-video>
 [/sourcecode]
 
-### Images
+### Obrazy
 
-Background images can be scaled to full screen. The following CSS is a successful way to crop and center videos and images.
+Obrazy tła można skalować do pełnego ekranu. Poniższy CSS to skuteczna metoda kadrowania i środkowania filmów oraz obrazów.
 
 [sourcecode:html]
 
@@ -163,11 +163,11 @@ Background images can be scaled to full screen. The following CSS is a successfu
 
 [/sourcecode]
 
-### Video
+### Wideo
 
-#### Specify `<source>` vs `src`
+#### Określ `<source>` vs `src`
 
-When specifying the source for an [`amp-video`](../../../documentation/components/reference/amp-video.md)
+Podczas określania źródła dla [`amp-video`](../../../documentation/components/reference/amp-video.md)
 
 Przykład: określanie wielu plików źródłowych
 
@@ -182,19 +182,19 @@ Przykład: określanie wielu plików źródłowych
 </amp-video>
 [/sourcecode]
 
-#### Size & length of video
+#### Rozmiar i długość filmu
 
-For optimal performance, you should aim to provide videos that are no larger than 4 MB. Smaller file sizes allow for faster downloading, so keep things as small as possible.
+W celu zapewnienia optymalnej wydajności należy dążyć do stosowania filmów o rozmiarze nie większym niż 4 MB. Mniejsze rozmiary plików pozwalają na szybsze pobieranie, więc należy stosować jak najmniejsze rozmiary.
 
-#### Video formats
+#### Formaty wideo
 
-If you can only provide a single video format, provide **MP4**. However, where possible, use **HLS** video and specify MP4 as a fallback for browsers that do not yet support HLS video. HLS performs adaptive bitrate streaming, where the quality of the video can be altered to best suit the user's network connection.
+Jeśli możesz podać tylko jeden format wideo, użyj formatu **MP4**. Jeśli jednak jest to możliwe, należy użyć protokołu **HLS** i określić MP4 jako ustawienie rezerwowe dla przeglądarek, które nie obsługują jeszcze protokołu HLS. Serwer HLS wykonuje transmisje strumieniowe z adaptacyjną szybkością transmisji bitów, w których jakość sygnału wideo można zmienić, aby jak najlepiej odpowiadała połączeniu sieciowemu użytkownika.
 
 [tip type="note"] **UWAGA —** format wideo HLS nie jest obsługiwany w przeglądarce Chrome dla komputerów (nawet poprzez emulację), dlatego też dla ruchu z komputerów na stronie wymagane jest podanie rezerwowego formatu MP4. Aby debugować filmy HLS, należy użyć rzeczywistego urządzenia przenośnego i funkcji debugowania przez USB. [/tip]
 
-#### Video resolution
+#### Rozdzielczość wideo
 
-Web Story videos are always vertical (i.e., portrait view), with an expected aspect ratio of 16:9. Use the recommended resolution for the video streaming type:
+Filmy w relacjach Web są zawsze wyświetlane w widoku pionowym, z oczekiwanym współczynnikiem proporcji 16:9. Należy stosować rozdzielczość zalecaną dla danego typu strumieniowej transmisji wideo:
 
 <table>
   <thead>
@@ -282,4 +282,4 @@ Relacja sponsorowana istnieje jako adres URL w Internecie, umożliwiający kiero
 
 {{ image('/static/img/docs/stampads/sponsored_story_full.png', 1600, 900, layout='intrinsic', alt='Przycisk CTA kieruje do relacji sponsorowanej', caption='Przycisk CTA kieruje do relacji sponsorowanej', align='' ) }}
 
-Read more about creating an [Web Story here](../start/create_successful_stories.md).
+Dowiedz się więcej o tworzeniu [relacji Web tutaj](../start/create_successful_stories.md).
