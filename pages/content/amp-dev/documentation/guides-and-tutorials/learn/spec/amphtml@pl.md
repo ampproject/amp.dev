@@ -204,7 +204,7 @@ Znaczników HTML można używać w AMP HTML bez żadnych zmian. Niektóre znaczn
   </tr>
   <tr>
     <td width="30%">script</td>
-    <td>Prohibited unless the type is <code>application/ld+json</code>, <code>application/json</code>, or <code>text/plain</code>. (Other non-executable values may be added as needed.) Exception is the mandatory script tag to load the AMP runtime and the script tags to load extended components.</td>
+    <td>Zabroniony, chyba że typ to <code>application/ld+json</code>, <code>application/json</code> lub <code>text/plain</code>. (W razie potrzeby można dodać inne wartości niewykonywalne). Wyjątek stanowi obowiązkowy znacznik script służący do ładowania środowiska uruchomieniowego AMP i znaczniki script służące do ładowania składników rozszerzonych.</td>
   </tr>
   <tr>
     <td width="30%">noscript</td>
@@ -212,7 +212,7 @@ Znaczników HTML można używać w AMP HTML bez żadnych zmian. Niektóre znaczn
   </tr>
   <tr>
     <td width="30%">base</td>
-    <td>Prohibited.</td>
+    <td>Zabroniony.</td>
   </tr>
   <tr>
     <td width="30%">img</td>
@@ -224,52 +224,52 @@ Znaczników HTML można używać w AMP HTML bez żadnych zmian. Niektóre znaczn
   </tr>
   <tr>
     <td width="30%">video</td>
-    <td>Replaced with <code>amp-video</code>.</td>
+    <td>Zastąpiony przez <code>amp-video</code>.</td>
   </tr>
   <tr>
     <td width="30%">audio</td>
-    <td>Replaced with <code>amp-audio</code>.</td>
+    <td>Zastąpiony przez <code>amp-audio</code>.</td>
   </tr>
   <tr>
     <td width="30%">iframe</td>
-    <td>Replaced with <code>amp-iframe</code>.</td>
+    <td>Zastąpiony przez <code>amp-iframe</code>.</td>
   </tr>
     <tr>
     <td width="30%">frame</td>
-    <td>Prohibited.</td>
+    <td>Zabroniony.</td>
   </tr>
   <tr>
     <td width="30%">frameset</td>
-    <td>Prohibited.</td>
+    <td>Zabroniony.</td>
   </tr>
   <tr>
     <td width="30%">object</td>
-    <td>Prohibited.</td>
+    <td>Zabroniony.</td>
   </tr>
   <tr>
     <td width="30%">param</td>
-    <td>Prohibited.</td>
+    <td>Zabroniony.</td>
   </tr>
   <tr>
     <td width="30%">applet</td>
-    <td>Prohibited.</td>
+    <td>Zabroniony.</td>
   </tr>
   <tr>
     <td width="30%">embed</td>
-    <td>Prohibited.</td>
+    <td>Zabroniony.</td>
   </tr>
   <tr>
     <td width="30%">form</td>
-    <td>Allowed. Require including <a href="https://amp.dev/documentation/components/amp-form">amp-form</a> extension.</td>
+    <td>Dozwolony. Wymaga dodania rozszerzenia <a href="https://amp.dev/documentation/components/amp-form">amp-form</a>.</td>
   </tr>
   <tr>
-    <td width="30%">input elements</td>
+    <td width="30%">elementy input</td>
     <td>W większości dozwolone z <a href="https://amp.dev/documentation/components/amp-form#inputs-and-fields">wyjątkiem niektórych typów</a>, nieprawidłowe są mianowicie typy <code><input type="button"></code>, <code><button type="image"></code>. Dozwolone są również znaczniki pokrewne: <code><fieldset></code>, <code><label></code>
 </td>
   </tr>
   <tr>
     <td width="30%">button</td>
-    <td>Allowed.</td>
+    <td>Dozwolony.</td>
   </tr>
   <tr>
     <td width="30%"><code><a name="cust"></a>style</code></td>
@@ -278,21 +278,20 @@ Znaczników HTML można używać w AMP HTML bez żadnych zmian. Niektóre znaczn
   </tr>
   <tr>
     <td width="30%">link</td>
-    <td>
-<code>rel</code> values registered on <a href="http://microformats.org/wiki/existing-rel-values">microformats.org</a> are allowed. If a <code>rel</code> value is missing from our white list, <a href="https://github.com/ampproject/amphtml/issues/new">please submit an issue</a>. <code>stylesheet</code> and other values like <code>preconnect</code>, <code>prerender</code> and <code>prefetch</code> that have side effects in the browser are disallowed. There is a special case for fetching stylesheets from white listed font providers.</td>
+    <td> Dozwolone są wartości <code>rel</code> zarejestrowane w <a href="http://microformats.org/wiki/existing-rel-values">microformats.org</a>. Jeśli na naszej białej liście brakuje wartości <code>rel</code>, <a href="https://github.com/ampproject/amphtml/issues/new">prześlij zgłoszenie</a>. Niedozwolona jest wartość <code>stylesheet</code> i inne wartości, takie jak <code>preconnect</code>, <code>prerender</code> i <code>prefetch</code>, które mają skutki uboczne w przeglądarce. Szczególny przypadek stanowi pobieranie arkuszy stylów od dostawców czcionek z białej listy.</td>
   </tr>
   <tr>
     <td width="30%">meta</td>
-    <td>The <code>http-equiv</code> attribute may be used for specific allowable values; see the <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP validator specification</a> for details.</td>
+    <td>Atrybutu <code>http-equiv</code> można użyć w przypadku określonych dozwolonych wartości; szczegółowe informacje zawiera <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">specyfikacja walidatora AMP</a>.</td>
   </tr>
   <tr>
     <td width="30%"><code><a name="ancr"></a>a</code></td>
-    <td>The <code>href</code> attribute value must not begin with <code>javascript:</code>. If set, the <code>target</code> attribute value must be <code>_blank</code>. Otherwise allowed. <a href="#ancr">🔗</a>
+    <td>Wartość atrybutu <code>href</code> nie może zaczynać się od <code>javascript:</code>. Jeśli jest ustawiony, atrybut <code>target</code> musi mieć wartość <code>_blank</code>. W przeciwnym razie dozwolony. <a href="#ancr">🔗</a>
 </td>
   </tr>
   <tr>
     <td width="30%">svg</td>
-    <td>Most SVG elements are allowed.</td>
+    <td>Dozwolona jest większość elementów SVG.</td>
   </tr>
 </table>
 
@@ -579,16 +578,16 @@ Wszystkie elementy szablonu AMP muszą przejść przez kontrolę zabezpieczeń A
 Obecnie dozwolone są następujące elementy SVG:
 
 - podstawowe: "g", "glyph", "glyphRef", "image", "marker", "metadata", "path", "solidcolor", "svg", "switch", "view"
-- shapes: "circle", "ellipse", "line", "polygon", "polyline", "rect"
-- text: "text", "textPath", "tref", "tspan"
-- rendering: "clipPath", "filter", "hkern", "linearGradient", "mask", "pattern", "radialGradient", "vkern"
-- special: "defs" (all children above are allowed here), "symbol", "use"
-- filter: "feColorMatrix", "feComposite", "feGaussianBlur", "feMerge", "feMergeNode", "feOffset", "foreignObject"
+- kształty: "circle", "ellipse", "line", "polygon", "polyline", "rect"
+- tekst: "text", "textPath", "tref", "tspan"
+- renderowanie: "clipPath", "filter", "hkern", "linearGradient", "mask", "pattern", "radialGradient", "vkern"
+- specjalne: "defs" (dozwolone są tu wszystkie powyższe elementy podrzędne), "symbol", "use"
+- filtr: "feColorMatrix", "feComposite", "feGaussianBlur", "feMerge", "feMergeNode", "feOffset", "foreignObject"
 - ARIA: "desc", "title"
 
 Jak również te atrybuty:
 
-- "xlink:href": only URIs starting with "#" are allowed
+- "xlink:href": dozwolone są tylko identyfikatory URI zaczynające się znakiem „#”
 - "style"
 
 ## Odnajdywanie dokumentu AMP <a name="amp-document-discovery"></a>
