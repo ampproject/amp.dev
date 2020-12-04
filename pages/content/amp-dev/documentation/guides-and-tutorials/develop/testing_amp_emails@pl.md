@@ -1,8 +1,10 @@
 ---
-$title: Testowanie wiadomości e-mail AMP
-$order: 2
-$category: Programowanie
+"$title": Testowanie wiadomości e-mail AMP
+"$order": '2'
+"$category": Develop
 description: Zapewnij doskonałe wrażenia użytkownika, testując swoje wiadomości e-mail AMP przed wysłaniem ich do dużej grupy odbiorców.
+formats:
+- email
 author: fstanis
 ---
 
