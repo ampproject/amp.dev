@@ -16,7 +16,7 @@ Programiści i użytkownicy mogą zdecydować się na korzystanie z tych funkcji
 
 {% set experimental_components = g.docs('/content/amp-dev/documentation/components/reference')|selectattr('experimental')|list %} {% if experimental_components|length %} Jest to lista składników, które mają obecnie status eksperymentalny i są gotowe do testowania przez programistów w celu uzyskania pierwszych informacji zwrotnych od użytkowników:
 
-<ul> {% for component in experimental_components %}   <li><a href="%7B%7B%20component.url.path%20%7D%7D">{{ component.title }}</a></li> {% endfor %} </ul> {% endif %}
+<ul>{% for component in experimental_components %}  <li><a href="{{ component.url.path }}">{{ component.title }}</a></li>{% endfor %}</ul>{% endif %}
 
 ## Wybierz kanał AMP Dev
 
@@ -82,7 +82,7 @@ Próby źródła dają możliwość wdrożenia i skorzystania z nowej funkcji, z
 
 {% set trial_components = g.docs('/content/amp-dev/documentation/components/reference')|selectattr('origin_trial')|list %} {% if trial_components|length %} W ramach próby źródła można obecnie testować składniki z poniższej listy:
 
-<ul> {% for component in trial_components %}   <li><a href="%7B%7B%20component.url.path%20%7D%7D">{{ component.title }}</a></li> {% endfor %} </ul> {% endif %}
+<ul>{% for component in trial_components %}  <li><a href="{{ component.url.path }}">{{ component.title }}</a></li>{% endfor %}</ul>{% endif %}
 
 ### Włączanie próby źródła
 
