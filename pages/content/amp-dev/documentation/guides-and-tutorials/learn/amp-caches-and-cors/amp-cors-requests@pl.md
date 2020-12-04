@@ -163,7 +163,7 @@ Nagłówek ten jest wymogiem <a href="https://www.w3.org/TR/cors/">specyfikacji 
 
 Chociaż specyfikacja CORS W3 zezwala na zwrócenie w odpowiedzi wartości <code>*</code>, dla większego bezpieczeństwa należy:
 
-- If the `Origin` header is present, validate and echo the value of the <code><code data-md-type="codespan">Origin</code> header.
+- Jeśli nagłówek `Origin` jest obecny, zatwierdzić i powtórzyć wartość nagłówka <code>Origin</code>.
 
 ### Przetwarzanie żądań zmiany stanu <a name="processing-state-changing-requests"></a>
 
