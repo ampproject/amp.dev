@@ -32,8 +32,8 @@ const go = express.Router();
 const goLinks = initGoLinks(yaml.safeLoad(readFileSync(GO_LINKS_DEFINITION)));
 
 go.use((request, response, next) => {
+  const requestPath = request.path.replace(/\/?$/, '');
   let target;
-  let requestPath = request.path.replace(/\/?$/, '');
 
   if (goLinks.simple[requestPath]) {
     target = goLinks.simple[requestPath];
