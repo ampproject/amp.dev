@@ -1,59 +1,59 @@
 ---
 formats:
 - websites
-"$title": Make your pages discoverable
+"$title": Spraw, by Twoje strony można było odnaleźć
 "$titles":
   teaser: Make your pages discoverable
 "$order": '5'
-description: 'In some cases, you might want to have both a non-AMP and an AMP version of the same page, for example, a news article. Consider this: If Google Search ...'
+description: 'W niektórych przypadkach można serwować zarówno wersję tej samej strony bez AMP jak i z AMP, na przykład artykuł informacyjny. Rozważ to: jeśli wyszukiwarka Google...'
 teaser:
-  icon: discover
-  text: Learn how search engines find out that there is an AMP version of your site.
-  label: Learn more
+  icon: odnajdź
+  text: Dowiedz się, jak wyszukiwarki internetowe dowiadują się, że istnieje wersja AMP witryny.
+  label: Dowiedz się więcej
 ---
 
-In some cases, you might want to have both a non-AMP and an AMP version of the same page, for example, a news article. Consider this: If Google Search finds the non-AMP version of that page, how does it know there’s an AMP version of it?
+W niektórych przypadkach można serwować zarówno wersję tej samej strony bez AMP jak i z AMP, na przykład artykuł informacyjny. Rozważ to: jeśli wyszukiwarka Google znajdzie wersję tej strony bez AMP, skąd ma wiedzieć, że istnieje wersja AMP?
 
-### Linking pages with <link>
+### Powiązywanie stron znacznikami <link>
 
-In order to solve this problem, we add information about the AMP page to the non-AMP page and vice versa, in the form of `<link>` tags in the `<head>`.
+Aby rozwiązać ten problem, dodajemy informację o stronie AMP do strony bez AMP i odwrotnie za pomocą znaczników `<link>` w sekcji `<head>`.
 
-Add the following to the non-AMP page:
+Do strony bez AMP dodaj:
 
 [sourcecode:html]
 
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-And this to the AMP page:
+Do strony AMP dodaj to:
 
 [sourcecode:html]
 
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
-### What if I only have one page?
+### Co zrobić, jeśli mam tylko jedną stronę?
 
-If you only have one page, and that page is an AMP page, you must still add the canonical link to it, which will then simply point to itself:
+Jeśli masz tylko jedną stronę i jest to strona AMP, musisz dodać do niej link kanoniczny, wskazujący sam na siebie:
 
 [sourcecode:html]
 
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-[tip type="read-on"] **READ ON –** Learn more about how Google finds AMP pages in [Google Search guidelines for AMP pages](https://support.google.com/webmasters/answer/6340290). [/tip]
+[tip type="read-on"] **CZYTAJ DALEJ —** dowiedz się więcej o tym, jak Google znajduje strony AMP w [wytycznych wyszukiwarki Google dotyczących stron AMP)](https://support.google.com/webmasters/answer/6340290). [/tip]
 
-## Integrate with third-party platforms through additional metadata <a name="integrate-with-third-party-platforms-through-additional-metadata"></a>
+## Integracja z platformami stron trzecich poprzez dodatkowe metadane <a name="integrate-with-third-party-platforms-through-additional-metadata"></a>
 
-Sometimes a third-party site (that embeds your AMP page or includes links to it) needs to know more about your page other than the fact that it is an AMP page. The questions a platform might ask about your page are things like “Are you a news article?”, “Or a video?”, or “Do you have a screenshot and short description?”.
+Czasami witryna strony trzeciej (która osadza Twoją stronę AMP lub zawiera linki do niej) musi wiedzieć o Twojej stronie więcej niż tylko to, że jest to strona AMP. Pytania, które platforma może zadać na temat Twojej strony, to na przykład: „czy jesteś artykułem informacyjnym?", „czy masz zrzut ekranu i krótki opis?”.
 
-This isn’t just relevant for AMP pages but for all web pages. For some platforms, this metadata is additional, for others it is a requirement, meaning they **won’t show links to your content if you didn’t include the right metadata**. Make sure you include the right metadata for the platforms you want your content to appear on.
+Dotyczy to nie tylko stron AMP, ale wszystkich stron internetowych. Dla niektórych platform są to dodatkowe metadane, dla innych jest to wymóg, co znaczy, że **nie pokażą one linków do Twojej zawartości, jeśli nie dodasz odpowiednich metadanych**. Dodawaj właściwe metadane dla platform, na których ma być wyświetlana Twoja treść.
 
-### Use Schema.org for most search engines
+### Używanie Schema.org dla większości wyszukiwarek
 
-[Schema.org](http://schema.org/) offers open vocabularies to add meta data to all sorts of things. In the case of AMP, the properties that make sense in context include the specific type of content (i.e. ‘news article’), the headline, the published date and associated preview images.
+[Schema.org](http://schema.org/) oferuje otwarte słowniki, umożliwiające dodawanie metadanych do wszystkiego. W przypadku AMP właściwości, które mają sens w kontekście, obejmują określony typ treści (np. „news article”), nagłówek, datę publikacji i powiązane obrazy podglądu.
 
-Example:
+Przykład:
 
 [sourcecode:html]
 
@@ -91,13 +91,13 @@ Example:
 
 [/sourcecode]
 
-More examples can be found in the [ampproject examples folder](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), including the alternative HTML attribute syntax).
+Więcej przykładów można znaleźć w [folderze ampproject examples](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), włącznie z alternatywną składnią atrybutu HTML).
 
-[tip type="read-on"] Visit these resources for more information on structured data:
+[tip type="read-on"] Odwiedź te zasoby, aby uzyskać więcej informacji na temat danych strukturalnych:
 
-- Learn how to [Structure your content to appear in Google Search rich results](https://developers.google.com/search/docs/guides/mark-up-content) (e.g., top stories carousel, recipe cards, etc.).
-- Test your structured data with the [Google Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/). [/tip]
+- Dowiedz się, jak [uporządkować swoją zawartość tak, aby pojawiła się w bogatych wynikach wyszukiwania Google](https://developers.google.com/search/docs/guides/mark-up-content) (np. karuzela z najważniejszymi relacjami, karty z przepisami, itd.).
+- Przetestuj swoje dane strukturalne za pomocą [narzędzia Google do testowania danych uporządkowanych](https://developers.google.com/structured-data/testing-tool/). [/tip]
 
-### Other metadata for even more platforms
+### Inne metadane dla jeszcze większej liczby platform
 
-Head to the [Social Discovery guide at Web Fundamentals](https://developers.google.com/web/fundamentals/discovery-and-monetization/social-discovery/) to learn about all the other different ways of preparing your content for discovery and distribution.
+Udaj się do [przewodnika Social Discovery w Web Fundamentals](https://developers.google.com/web/fundamentals/discovery-and-monetization/social-discovery/), aby dowiedzieć się więcej o wszystkich innych sposobach przygotowania zawartości do odnajdywania i rozpowszechniania.
