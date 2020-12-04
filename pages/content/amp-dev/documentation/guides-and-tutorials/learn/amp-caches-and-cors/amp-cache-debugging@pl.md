@@ -1,8 +1,12 @@
 ---
-$title: Debugowanie problemów z usługą buforowania AMP
-order: 8
+"$title": Debugowanie problemów z usługą buforowania AMP
+order: '8'
+formats:
+- websites
+- stories
+- ads
 teaser:
-  text:  Dlaczego mój dokument jest uszkadzany na serwerze buforującym AMP?
+  text: " Dlaczego mój dokument jest uszkadzany na serwerze buforującym AMP?"
 ---
 
 <!--
@@ -65,4 +69,5 @@ Jeśli po wykonaniu tych czynności problem nie ustąpi, sprawdź poniższą tab
     </tr>
 </tbody>
 </table>
+
 </table>
