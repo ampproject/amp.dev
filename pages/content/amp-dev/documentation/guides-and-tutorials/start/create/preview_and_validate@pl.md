@@ -1,7 +1,7 @@
 ---
 "$title": Podgląd i walidacja
 "$order": '5'
-description: 'Preview the AMP page just as you would preview any other static HTML site. There’s no build step or preprocessing required. You can choose to: ...'
+description: '"Podgląd strony AMP wyświetla się tak samo, jak podgląd każdej innej statycznej strony HTML. Nie jest wymagany żaden krok tworzenia ani przetwarzanie wstępne. Możesz: ..."'
 author: pbakaus
 contributors:
 - bpaduch
