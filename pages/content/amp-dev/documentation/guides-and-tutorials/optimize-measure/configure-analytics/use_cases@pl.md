@@ -1,7 +1,7 @@
 ---
 "$title": Przypadki użycia
 "$order": '2'
-description: 'This guide provides a set of common use cases for tracking user engagement: NOTE – Want to add a use case? Let us know.'
+description: '"Niniejszy przewodnik zawiera zestaw typowych przypadków użycia śledzenia zaangażowania użytkowników: UWAGA — chcesz dodać przypadek użycia? Daj nam znać."'
 formats:
 - websites
 ---
