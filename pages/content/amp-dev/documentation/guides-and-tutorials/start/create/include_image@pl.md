@@ -1,6 +1,6 @@
 ---
-$title: Dołączanie obrazu
-$order: 2
+"$title": Dołączanie obrazu
+"$order": '2'
 description: Większości znaczników HTML można używać bezpośrednio w AMP HTML, ale niektóre znaczniki, takie jak <img>, są zastępowane równoważnymi lub nieco ulepszonymi znacznikami niestandardowymi AMP HTML.
 author: pbakaus
 contributors:
@@ -11,6 +11,8 @@ Większości znaczników HTML można używać bezpośrednio w AMP HTML, ale niek
 
 Oto kod wymagany do osadzenia obrazu na stronie, pokazujący jak mogą wyglądać dodatkowe znaczniki:
 
-[sourcecode:html] {amp-img0}{/amp-img0} [/sourcecode]
+[sourcecode:html]
+<amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
+[/sourcecode]
 
-[tip type="read-on"] **CZYTAJ DALEJ —** aby dowiedzieć się, dlaczego zastępujemy znaczniki takie jak `<img>` znacznikiem [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) i ile ich jest dostępnych, odwiedź stronę [Dodawanie obrazów i filmów](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md). [/tip]
+[tip type="read-on"] **READ ON –** To learn why we’re replacing tags like `<img>` with [`<amp-img>`](../../../../documentation/components/reference/amp-img.md), and how many are available, visit [Include Images & Video](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md). [/tip]
