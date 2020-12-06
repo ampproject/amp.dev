@@ -20,7 +20,7 @@ Gerekli bileşenleri gözden geçirerek başlayalım:
 
 ### amp-pan-zoom
 
-[`amp-pan-zoom`](../../../documentation/components/reference/amp-pan-zoom.md) allows to zoom and pan the content via double tap and pinching. This component serves as base for the seatmap implementation.
+[`amp-pan-zoom`](../../../documentation/components/reference/amp-pan-zoom.md), içeriği çift dokunma ve sıkıştırma yoluyla yakınlaştırmaya ve kaydırmaya izin verir. Bu bileşen, koltuk planının uygulaması için temel görevi görür.
 
 ### amp-list
 
@@ -44,7 +44,7 @@ rect[selected].seat {
 
 1. SVG olarak, her koltuğun bir `rect` elemanı ile temsil edildiği bir yerleşim planı çizmek için, her koltuk hakkında bilgiye ihtiyacınız vardır: `x` ve `y` konumu, `width` ve `height` ve muhtemelen dikdörtgenlerin köşelerini yuvarlamak için `rx` ve `ry`.
 2. Rezervasyon yapmak için kullanılabilecek her koltuk için benzersiz bir tanımlayıcı.
-3. A measure of the entire width and height of the seatmap to be used in the `viewbox` attribute.
+3. `viewbox` özniteliğinde kullanılacak koltuk planının tüm genişliğinin ve yüksekliğinin bir ölçüsü.
 
 ## Koltuk planının çizilmesi
 
@@ -76,18 +76,18 @@ Alternatif ve daha ayrıntılı bir yaklaşım, etiketleri aşağıdaki gibi tek
 Koltuk planınızın boyutu sabitlenmedikçe, koltuk haritasını içeren [`amp-list`](../../../documentation/components/reference/amp-list.md) boyutlandırmak zordur. [`amp-list`](../../../documentation/components/reference/amp-list.md), ya sabit boyutlara ihtiyaç duyar ya da `layout="fill"` (ana kapsayıcının kullanılabilir alanını kullanmak için) kullanır. Bu sorunu çözmenin iki yolu vardır:
 
 1. Üstbilgi ve altbilgi gibi diğer bileşenlerin kullandığı alanı öğrendikten sonra sayfadaki kullanılabilir alanı hesaplayın. Bu hesaplama, CSS'de `calc` ifadesini kullanarak ve [`amp-list`](../../../documentation/components/reference/amp-list.md) bir ana div öğesine `min-height` atayarak yapılabilir.
-2. Use a flex layout when knowing the height of the page layout.
+2. Sayfa yerleşiminin yüksekliğini bildiğinizde esnek bir yerleşim kullanın.
 
 ## amp-pan-zoom biçimlendirme
 
-If using the approach described in the previous section, [`amp-pan-zoom`](../../../documentation/components/reference/amp-pan-zoom.md) needs to use `layout="fill"` as well.
+Önceki bölümde açıklanan yaklaşımı kullanıyorsanız, [`amp-pan-zoom`](../../../documentation/components/reference/amp-pan-zoom.md) da `layout="fill"` kullanmalıdır.
 
 [tip type="tip"] **İPUCU –** Koltuk planının çevresinde biraz beyaz boşluk bırakmak ve yine de onu sıkıştırma ve yakınlaştırma alanının bir parçası yapmak için:
 
 - Svg için saracak bir div ekleyin
 - padding ekleyin
 
-If you don’t have a wrapping div and add margin to the SVG instead, it won't make the margins part of the pinch and zooming area. [/tip]
+Bir saracak div öğeniz yoksa ve bunun yerine SVG'ye kenar boşluğu eklerseniz, bu kenar boşluklarını sıkıştırma ve yakınlaştırma alanının parçası yapmaz. [/tip]
 
 ## İşleme durumu
 
