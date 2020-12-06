@@ -1,5 +1,5 @@
 ---
-"$title": How AMP is different (TBD)
+"$title": "AMP'nin farkı (Yakında)"
 "$order": '0'
 formats:
 - websites
@@ -23,29 +23,29 @@ Sözdiziminin değeri, formun etki alanına özgü basit bir dilidir:
 [sourcecode:javascript]
 eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
 
-See the table below for descriptions of each part of the syntax.
+Sözdiziminin her bölümünün açıklamaları için aşağıdaki tabloya bakın.
 
-[tip type="note"] **Type: Note**
+[tip type="note"] Tür: Not
 
 Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. [/tip]
 
-The AMP Dev Channel release **may be less stable** and it may contain features not available to all users. Opt into this option if you'd like to help test new versions of AMP, report bugs or build documents that require a new feature that is not yet available to everyone.
+AMP Geliştirme Kanalı sürümü <strong>daha az kararlı</strong> olabilir ve tüm kullanıcılar tarafından kullanılamayan özellikler içerebilir. AMP'nin yeni sürümlerinin test edilmesine yardımcı olmak, hataları bildirmek veya henüz herkesin kullanımına sunulmayan yeni bir özellik gerektiren belgeler oluşturmak istiyorsanız bu seçeneği etkinleştirin.
 
-Opting into Dev Channel is great to:
+Geliştirme Kanalı'nı seçmek aşağıdaki nedenlerle harikadır:
 
-- test and play with new features not yet available to all users.
-- use in quality assurance (QA) to ensure that your site is compatible with the next version of AMP.
+- henüz tüm kullanıcılar için mevcut olmayan yeni özellikleri test etme ve onlarla oynama
+- sitenizin bir sonraki AMP sürümüyle uyumlu olmasını sağlamak için Kalite Güvencesi (QA) kullanma
 
-[tip type="important"] **Type: Important**
+[tip type="important"] <strong>Türü: Önemli </strong>
 
 Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est. [/tip]
 
-This guide explains all the technical details and best practice you should know to successfully create Web Stories with AMP.
+Bu kılavuz, AMP ile başarılı bir şekilde Web Hikayeleri oluşturmak için bilmeniz gereken tüm teknik ayrıntıları ve en iyi uygulamaları açıklamaktadır.
 
 ## AMP Onaylı
 
-A Web Story is technically a single web page built with AMP and adheres to AMP specifications:
+Web Hikayesi, teknik olarak AMP ile oluşturulmuş tek bir web sayfasıdır ve AMP spesifikasyonlarına uygundur:
 
-[tip type="read-on"] **Type: Read on**
+[tip type="read-on"] <strong>Türü: Okumaya devam edin</strong>
 
 Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. At vero eos et accusam et justo duo dolores et ea rebum. [/tip]
