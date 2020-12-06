@@ -50,6 +50,6 @@ Bu öznitellikleri [`amp-story`](../../../../documentation/components/reference/
 
 Bu gerekli özniteliklere ek olarak, uygulayabileceğiniz başka öznitelikler de vardır. Daha fazla bilgi edinmek için [<code>amp-story</code>](../../../../documentation/components/reference/amp-story.md#attributes) referans belgelerinin <a>öznitelikler</a> bölümüne bakın.
 
-[tip type="note"] **NOTE –**  These metadata attributes supplement and do not replace any Structured Data (e.g. JSON-LD) on the page. To ensure your Web Stories are discovered across all platforms, you should add [Structured Data](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md#integrate-with-third-party-platforms-through-additional-metadata) to all your AMP pages, including AMP stories. [/tip]
+[tip type="note"] **NOT -** Bu meta veri öznitelikleri sayfadaki Yapılandırılmış Verileri (örneğin JSON-LD) tamamlar ve bunların yerini almaz. Web Hikayelerinizin tüm platformlarda keşfedildiğinden emin olmak için AMP hikayeleri dahil tüm AMP sayfalarınıza [Yapılandırılmış Veriler](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md#integrate-with-third-party-platforms-through-additional-metadata) eklemelisiniz. [/tip]
 
 Bu noktada, içeriği olmayan bir hikaye kabuğuna sahibiz. Şimdi bu sayfayı oluşturalım.
