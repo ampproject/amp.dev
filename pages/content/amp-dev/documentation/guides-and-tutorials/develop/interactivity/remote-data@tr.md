@@ -39,7 +39,7 @@ Bağlanabilir verileriniz sayfa yüklendiğinde almak için çok büyük veya ka
 <amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
 ```
 
-### Indicate unavailable sizes
+### Mevcut olmayan bedenleri belirtme
 
 Ardından, belirli bir SKU için mevcut olmayan boyutları açıkça işaretleyelim. `"unavailable"` CSS sınıfı, bir öğe aracılığıyla diyagonal bir çizgi ekler. Bunu, kullanılamayan boyutlara karşılık gelen [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) içindeki öğelere ekleyebiliriz:
 
@@ -156,7 +156,7 @@ Ve doğru fiyatlarımız var! Deneyin.
 
 ## Koşullu olarak etkinleştirilmiş düğme
 
-We're almost done! Let's disable the "Add to cart" button when the selected size is unavailable:
+İşimiz neredeyse bitti! Seçilen beden mevcut olmadığında "Sepete ekle" düğmesini devre dışı bırakalım:
 
 ```html
 <!-- Disable the "ADD TO CART" button when:
@@ -168,4 +168,4 @@ We're almost done! Let's disable the "Add to cart" button when the selected size
     [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]">
 ```
 
-**Try it out**:  If you select a size that's unavailable, you can't add it to the cart.
+**Deneyin**:  Stokta olmayan bir beden seçerseniz, sepete ekleyemezsiniz.
