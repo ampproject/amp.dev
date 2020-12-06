@@ -1,7 +1,7 @@
 ---
-"$title": Add custom fonts
+"$title": Özel yazı tipleri ekleme
 "$order": '6'
-description: "AMP pages can't include external stylesheets, with the exception of custom fonts. You can embed custom fonts into your page in two ways ..."
+description: AMP sayfaları, özel yazı tipleri dışında harici stil sayfaları içeremez. Özel yazı tiplerini sayfanıza iki şekilde gömebilirsiniz...
 formats:
 - websites
 - ads
@@ -9,20 +9,20 @@ formats:
 author: pbakaus
 ---
 
-AMP pages can’t include external stylesheets, with the exception of custom fonts. You can embed custom fonts into your page in two ways:
+AMP sayfaları, özel yazı tipleri dışında harici stil sayfaları içeremez. Özel yazı tiplerini sayfanıza iki şekilde gömebilirsiniz:
 
-1. Through a `<link>` tag (allow-listed font providers only)
-2. Via `@font-face` (no restrictions, all fonts allowed)
+1. Bir `<link>` etiketi aracılığıyla (yalnızca izin verilen listelenen yazı tipi sağlayıcıları)
+2. `@font-face` aracılığıyla (kısıtlama yoktur, tüm yazı tiplerine izin verilir)
 
-### 1. Using `<link>`
+### 1. `<link>` kullanma
 
-Use a `<link>` tag (usually in the head of your page), like so:
+Aşağıdaki gibi bir `<link>` etiketi (genellikle sayfanızın başında) kullanın:
 
 [sourcecode:html]
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 [/sourcecode]
 
-The following origins are allowlisted and allowed for font serving via link tags:
+Aşağıdaki kaynakların listesine izin verilir ve bağlantı etiketleri aracılığıyla yazı tipi sunmalarına olanak verilir:
 
 - Typography.com: **https://cloud.typography.com**
 - Fonts.com: **https://fast.fonts.net**
@@ -30,9 +30,9 @@ The following origins are allowlisted and allowed for font serving via link tags
 - Typekit: **https://use.typekit.net**
 - Font Awesome: **https://maxcdn.bootstrapcdn.com**, **https://use.fontawesome.com**
 
-### 2. Using `@font-face`
+### 2. `@font-face` kullanma
 
-Alternatively, you can use [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) within your AMP stylesheet:
+Alternatif olarak, AMP stil sayfanızda [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) kullanabilirsiniz:
 
 [sourcecode:html]
 <style amp-custom>
@@ -47,4 +47,4 @@ Alternatively, you can use [`@font-face`](https://developer.mozilla.org/en-US/do
 </style>
 [/sourcecode]
 
-[tip type="note"] **NOTE –**  Fonts included via `@font-face` must be fetched via the HTTP or HTTPS scheme. [/tip]
+[tip type="note"] **NOT –**  `@font-face` yoluyla dahil edilen yazı tipleri HTTP veya HTTPS şeması yoluyla getirilmelidir. [/tip]
