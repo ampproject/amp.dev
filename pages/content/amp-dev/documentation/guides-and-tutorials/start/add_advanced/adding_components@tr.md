@@ -6,11 +6,11 @@ description: AMP bileşen sistemi, makalelerinize en az çaba ile hızlı bir ş
 
 AMP bileşen sistemi, makalelerinize en az çaba ile hızlı bir şekilde verimli ve duyarlı özellikler oluşturmanıza olanak tanır. AMP HTML kütüphanesi, AMP bileşenleri için üç sınıflandırmaya sahiptir:
 
-- **built-in**: These are components that are included in the base AMP JavaScript library (specified in the `<head>` tag), such as [`amp-img`](../../../../documentation/components/reference/amp-img.md) and [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md).  These components can be used immediately in an AMP document.
+- **kurulu**: Bunlar, [`amp-img`](../../../../documentation/components/reference/amp-img.md) ve [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) gibi temel AMP JavaScript kitaplığında (`<head>` etiketinde belirtilen) bulunan bileşenlerdir. Bu bileşenler bir AMP belgesinde hemen kullanılabilir.
 
 - **extended**: These are extensions to the base library that must be explicitly included in the document as custom elements.  Custom elements require specific scripts that are added to the `<head>` section (e.g., `<script async custom-element="`[`amp-video`](../../../../documentation/components/reference/amp-video.md)`...`).
 
-- **experimental**: These are components that are released but are not yet ready for wide use. Developers can choose to opt-in to use these features before they are fully released.  Learn more in [Experimental features](../../../../documentation/guides-and-tutorials/learn/experimental.md).
+- **deneysel**: Bunlar, serbest bırakılan ancak henüz geniş kullanıma hazır olmayan bileşenlerdir. Geliştiriciler, tamamen piyasaya sürülmeden önce bu özellikleri kullanmayı seçebilirler. [Deneysel özellikler](../../../../documentation/guides-and-tutorials/learn/experimental.md) hakkında daha fazla bilgi edinin.
 
 Örneğimiz zaten yerleşik bir bileşen olan [`amp-img`](../../../../documentation/components/reference/amp-img.md)'yi kullanıyor ve bu bileşenin ["HTML'nizi AMP'ye dönüştürün"](../../../../documentation/guides-and-tutorials/start/converting/index.md) öğreticisinde AMP yerleşim sistemi ile nasıl ilişkili olduğunu keşfettik. Şimdi, haber makalemize yaygın olarak kullanılan bazı **genişletilmiş** AMP bileşenlerini ekleyelim.
 
