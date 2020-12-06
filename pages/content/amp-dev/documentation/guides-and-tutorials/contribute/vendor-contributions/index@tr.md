@@ -1,8 +1,8 @@
 ---
-"$title": Integrate your technology with AMP
+"$title": "AMP'yi teknolojinize entegre etme"
 "$order": '0'
 "$hidden": 'true'
-description: If you are a technology provider for publishers or advertisers on the web, we invite you to add support to AMP so your customers can continue to leverage your technology and ...
+description: "Web'te reklamcılar veya yayıncılar için teknoloji sağlayan bir şirketseniz, sizi AMP'ye destek koymaya davet ediyoruz! Müşterileriniz teknolojinizden yararlanmayı sürdürürken..."
 formats:
 - websites
 - ads
@@ -10,103 +10,103 @@ formats:
 - email
 ---
 
-Thanks for your interest in contributing to AMP! We appreciate your participation in making the web a user forward platform.
+AMP'ye katkıda bulunmak istediğiniz için teşekkür ederiz! Web'i kullanıcı öncelikli bir platforma dönüştürme sürecine katıldığınız için şükranlarımızı sunuyoruz.
 
-Publishers have created over 1.4 billion AMP documents, hosted on over 750 thousand unique domains. Such growth is only possible through the support of over 100 third party tech companies, already integrated with AMP.
+Yayıncılar 750 binden fazla benzersiz alan adında barındırılan 1,4 milyardan fazla AMP belgesi yarattılar. Böyle bir büyüme, AMP'yi halihazırda entegre etmiş olan 100'den fazla üçüncü taraf teknoloji şirketinin desteğiyle mümkün olmaktadır.
 
-If you are a technology provider for publishers or advertisers on the web, we invite you to add support to AMP! Your customers can continue to leverage your technology while working to achieve our vision of building a better web.
+Web'te reklamcılar veya yayıncılar için teknoloji sağlayan bir şirketseniz, sizi AMP destek koymaya davet ediyoruz! Müşterileriniz teknolojinizden yararlanmayı sürdürürken daha iyi bir web oluşturma vizyonumuzu başarmak konusunda çalışabilirsiniz.
 
-This document outlines AMP third party expectations and defines contribution levels.
+Bu belge, AMP üçüncü taraf beklentilerini özetler ve katkı seviyelerini tanımlar.
 
-# Contributing guidelines
+# Katkıda bulunma kılavuzları
 
-All general contributions are subject to the [AMPHTML universal guidelines in CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). We expect the third party to test, maintain, and update their contribution to various degrees.
+Tüm genel katkılar [CONTRIBUTING.md içindeki AMPHTML kılavuzlarına](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md) dayalıdır. Üçüncü tarafların katkılarını çeşitli derecelerde test etmelerini, devam ettirmelerini ve güncellemelerini bekliyoruz.
 
-To qualify for inclusion, all contribution levels must:
+Tüm katkı seviyelerinin dahil edilme hakkı kazanması için şunları karşılaması gerekir:
 
-- Meet the [notability requirements of the English Wikipedia](https://en.wikipedia.org/wiki/Wikipedia:Notability).
-- Maintain or improve the same type of service level as AMP promises to both publishers and users.
-- Be created in good quality.
-- Create a troubleshooting channel for their customers.
-- Provide good integration test coverage to against AMP’s production and canary releases.
-- Fulfill a purpose that does not exist.
+- [İngilizce Wikipedia kayda değerlik gerekliliklerini](https://en.wikipedia.org/wiki/Wikipedia:Notability) karşılamak.
+- AMP'nin yayıncılara ve kullanıcılara söz verdiğiyle aynı hizmet seviyesi türünü devam ettirmek veya geliştirmek.
+- İyi kaliteye sahip olmak.
+- Müşteriler için sorun giderme kanalı oluşturmak.
+- AMP'nin üretim ve kanarya sürümleri karşısında iyi entegrasyonlu test kapsamı sunmak.
+- Var olmayan bir amacı yerine getirmek.
 
-There are 3 third party contribution levels. Levels are dependent on the amount of added logic:
+3 adet üçüncü taraf katkı seviyesi vardır. Seviyeler eklenen mantığın miktarına bağlıdır:
 
-- Component logic: Code that dictates the core features and functionality of the AMP component.
-- Third party logic: Code that is specific to the third party. This logic enables the component to leverage the third party service.
+- Bileşen mantığı: AMP bileşeninin temel özelliklerini ve işlevselliğini belirleyen kod.
+- Üçüncü taraf mantığı: Üçüncü tarafa özgü kod. Bu mantık, bileşenin üçüncü taraf hizmetinden yararlanmasını sağlar.
 
-The more logic added to the AMP repository, especially third party specific logic, increases the contribution level. A high contribution level requires more commitment from the third party.
+AMP bilgi havuzuna ne kadar çok mantık eklenirse (özellikle üçüncü taraf özgün mantığı), katkı seviyesi o kadar artar. Yüksek katkı seviyesi, üçüncü tarafın daha fazla bağlılığını gerektirir.
 
-Level 1 and level 2 contributions share components between third parties. If there is a component fulfills a purpose similar to your business, consider reusing that component. This requires much less effort and is more long-term maintainable.
+Seviye 1 ve seviye 2 katkıları, bileşenleri üçüncü taraflar arasında paylaşır. İşletmenizinkine benzer bir amacı yerine getiren bir bileşen varsa, bileşeni yeniden kullanmayı düşünün. Bu çok daha az çaba gerektirir ve uzun süreli devam ettirilmesi daha kolaydır.
 
-After deciding what level of contribution meets your use case, open a [GitHub issue](https://github.com/ampproject/amphtml/issues/new) to start.
+Hangi katkının kullanım durumunuzu karşıladığına karar verdikten sonra, başlamak için bir [GitHub konusu](https://github.com/ampproject/amphtml/issues/new) açın.
 
-## Level 1 contribution
+## Seviye 1 katkısı
 
-Level 1 contributions leverage the feature logic of existing components. They load third party specific logic as custom JavaScript in a cross origin iframe. For example, many ad networks provide ads through the [`amp-ad`](../../../components/reference/amp-ad.md) component, but control how the rendering of ads through their own logic.
+Seviye 1 katkıları mevcut bileşenlerin özellik mantığından yararlanır. Üçüncü tarafa özgü mantığı, çapraz kökenli iframe'de özel JavaScript olarak yüklerler. Örneğin, birçok reklam ağı [`amp-ad`](../../../components/reference/amp-ad.md) bileşeni aracılığıyla reklamlar sağlar, ancak reklamların nasıl oluşturulduğunu kendi mantıklarıyla kontrol eder.
 
-Third parties add configurations or features to existing extensions, using provided APIs, to implement their functionalities. If such a component does not exist they may propose a new one.
+Üçüncü taraflar, işlevlerini uygulamak için sağlanan API'leri kullanarak mevcut uzantılara yapılandırmalar veya özellikler eklerler. Eğer böyle bir bileşen mevcut değilse, yeni bir bileşen önerebilirler.
 
-The only third party specific logic checked into the AMP repository is a third party configuration. Adding a new third party to an existing level 1 contribution typically does not need a design review. Third parties can follow the integration documentation of the component, such as [Integrating ad networks into AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+AMP bilgi havuzunda kontrol edilen tek üçüncü tarafa özgü mantık, bir üçüncü taraf yapılandırmasıdır. Var olan bir 1. seviye katkısına yeni bir üçüncü taraf eklemek genellikle bir tasarım incelemesine ihtiyaç duymaz. Üçüncü taraflar, [Reklam ağlarını AMP'ye entegre etme](https://github.com/ampproject/amphtml/blob/master/ads/README.md) gibi bileşen entegrasyon belgelerini izleyebilir.
 
-### Expectations for third parties
+### Üçüncü taraftan beklentiler
 
-- Maintain and serve vendor’s custom JavaScript independently.
-- Provide tests for their configuration and respond to issues.
-- Provide a troubleshooting channel for developers.
-- Respond to any and all bug filings related to their service.
+- Tedarikçi özel JavaScript'ini bağımsız olarak sürdürmek ve sunmak.
+- Yapılandırmaları için testler sunmak ve sorunlara yanıt vermek.
+- Geliştiriciler için sorun giderme kanalı sunmak.
+- Hizmetle ilişkili her türlü hata belgelemesine yanıt vermek.
 
-### Level 1 example
+### Seviye 1 örneği
 
 [**amp-ad**](../../../components/reference/amp-ad.md)
 
-Ad providers should read the [development overview](https://github.com/ampproject/amphtml/tree/master/ads#overview) and the [developer instructions](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) for adding your support to [`amp-ad`](../../../components/reference/amp-ad.md). Depending on the ad technology your company provides, you might find [these integration instructions ](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads)useful.
+Reklam sağlayıcıları, [<code>amp-ad</code>](https://github.com/ampproject/amphtml/tree/master/ads#overview) adına destek eklemek için [geliştirmeye genel bakış](../../../components/reference/amp-ad.md) ve <a>geliştirici talimatları</a> belgelerini okumalıdır. Şirketinizin sunduğu reklam teknolojisine bağlı olarak [bu entegrasyon talimatlarını ](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads) faydalı bulabilirsiniz.
 
-There are many ad providers who have added support for advertising related features like amp-ad. Here is a [sample pull request](https://github.com/ampproject/amphtml/pull/2299) from the ad network [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
+Birçok reklam sağlayıcısı amp-ad gibi reklamla alakalı özellikler için destek eklemiştir. Burada reklam ağı [Criteo](https://github.com/ampproject/amphtml/pull/2299) tarafından gerçekleştirilen [örnek çekme isteğini](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md) görebilirsiniz.
 
-## Level 2 contribution
+## Seviye 2 katkısı
 
-Level 2 contributions leverage the feature logic of existing components. All logic is checked into the AMP repository, and no custom Javascript can be loaded into an iframe. For example, analytics providers add their configurations to the [`amp-analytics`](../../../components/reference/amp-analytics.md) component but including the endpoint to track data, such as user clicks.
+Seviye 2 katkıları mevcut bileşenlerin özellik mantığından yararlanır. Tüm mantık, AMP bilgi havuzundan kontrol edilir ve iframe'e özel hiçbir Javascript eklenemez. Örneğin, analiz sağlayıcıları yapılandırmalarını [`amp-analytics`](../../../components/reference/amp-analytics.md) bileşenine eklerler ama son noktayı kullanıcı tıklamaları gibi takip edilen verilere dahil ederler.
 
-Third parties add configurations or features, such as new APIs, to existing components to implement their functionalities. If such a component does not exist they may propose a new one.
+Üçüncü taraflar, işlevlerini uygulamak için mevcut bileşenlere yeni API'ler gibi yapılandırmalar veya özellikler eklerler. Eğer böyle bir bileşen mevcut değilse, yeni bir bileşen önerebilirler.
 
-All business logic is checked into AMP repository, but the only third party specific logic checked in is a third party configuration. If the component works with a third party provided config file, no design review is needed. If the third party configuration implements a new feature or new component it will need to pass AMP’s design review.
+Tüm iş mantığı AMP bilgi havuzunda kontrol edilir, ancak kontrol edilen üçüncü tarafa özgü tek mantık, üçüncü taraf yapılandırmasıdır. Bileşen, üçüncü tarafça sağlanan bir yapılandırma dosyasıyla çalışıyorsa, tasarım incelemesi gerekmez. Üçüncü taraf yapılandırması yeni bir özellik veya yeni bileşen uygularsa, AMP'nin tasarım incelemesinden geçmesi gerekir.
 
-### Expectations of third parties
+### Üçüncü tarafların beklentileri
 
-- Adding new third party service to an existing level 2 contribution typically does not need a design review. The third party can follow the documentation of that component.
-- Proposing a new component for level 2 contribution will need to have feature logic that is shareable by other third party services.
+- Var olan bir 2. seviye katkısına yeni bir üçüncü taraf hizmeti eklemek genellikle bir tasarım incelemesine ihtiyaç duymaz. Üçüncü taraf, söz konusu bileşenin belgelerini takip edebilir.
+- Seviye 2 katkısına yeni bir bileşen önermek için, diğer üçüncü taraf hizmetleri tarafından paylaşılabilen özellik mantığına sahip olmak gerekecektir.
 
-### Level 2 examples
+### Seviye 2 örnekleri
 
 [**amp-analytics**](../../../components/reference/amp-analytics.md)
 
-AMP analytics allows you to send events back to your server based on triggers configured by you. We have written an [analytics integration guide ](../../optimize-measure/configure-analytics/index.md)to get you started.
+AMP analizi, sizin yapılandırdığınız tetikleyicilere göre etkinlikleri sunucunuza geri göndermenizi sağlar. Başlamanızı sağlamak için bir [analiz entegrasyon kılavuzu](../../optimize-measure/configure-analytics/index.md) hazırladık.
 
-If you only need to add a tracking pixel with dynamic parameters to your tracking URL, check out [`amp-pixel`](../../../components/reference/amp-pixel.md). Be sure to document usage on your support pages for developers that may want to use your technology with AMP.
+İzleme URL'nize yalnızca dinamik parametrelere sahip bir izleme pikseli eklemeniz gerekiyorsa [`amp-pixel`](../../../components/reference/amp-pixel.md) bileşenine göz atın. Teknolojinizi AMP ile kullanmak isteyebilecek geliştiriciler için destek sayfalarınızda kullanımı belgelediğinizden emin olun.
 
-There are analytics providers who have added support to amp-analytics. Here is a [sample pull request](https://github.com/ampproject/amphtml/pull/1595) from the analytics provider [Parse.ly](https://www.parsely.com/help/integration/google-amp/).
+Amp-analytics için destek eklemiş olan analiz sağlayıcıları vardır. Analiz sağlayıcısı [Parse.ly](https://github.com/ampproject/amphtml/pull/1595) tarafından gerçekleştirilen [örnek çekme isteğini](https://www.parsely.com/help/integration/google-amp/) burada görebilirsiniz.
 
 [**amp-call-tracking**](../../../components/reference/amp-call-tracking.md)
 
-If you provide call tracking measurement services, your use case may be supported with [`amp-call-tracking`](../../../components/reference/amp-call-tracking.md). This component dynamically replaces a phone number in a hyperlink to enable call tracking, by executing a CORS request to substitute the number.
+Çağrı izleme ölçüm hizmetleri sağlıyorsanız, kullanım durumunuz [`amp-call-tracking`](../../../components/reference/amp-call-tracking.md) ile desteklenebilir. Bu bileşen, numara yerine bir CORS isteği yürüterek çağrı izlemeyi etkinleştirmek için köprü adresindeki bir telefon numarasını dinamik olarak değiştirir.
 
-To learn more about how this component might work for you, please see the [reference documentation](../../../components/reference/amp-call-tracking.md).
+Bu bileşenin sizin için nasıl çalışabileceği hakkında daha fazla bilgi edinmek için lütfen [referans belgelerine](../../../components/reference/amp-call-tracking.md) bakın.
 
-## Level 3 contribution
+## Seviye 3 katkısı
 
-A level 3 contribution introduces a new third party-specific component. This is only applicable if third parties are unable to:
+Seviye 3 katkısı, üçüncü bir tarafa özgü yeni bir bileşen sunar. Bu bileşen sadece üçüncü taraf şunları yapamadığında geçerlidir:
 
-- Find a component that exists for their use case.
-- Request feature improvements to meet their use case.
-- Propose a component that applies to other third party services.
+- Kullanım durumu için var olan bileşeni bulmak.
+- Kendi kullanım durumunu karşılamak için özellik geliştirmesi istemek.
+- Diğer üçüncü taraf hizmetleri için geçerli bir bileşen teklif etmek.
 
-### Expectations of third parties
+### Üçüncü tarafların beklentileri
 
-- Write and propose a design review.
-- Tests must be able to catch breakage.
-- Fix, or request help, if the component breaks.
+- Bir tasarım incelemesi yazın ve önerin
+- Testler çökmeyi yakalayabilmelidir
+- Bileşen çökerse, düzeltin veya yardım isteyin.
 - Provide thorough documentation with code samples.
-- Maintain and update documentation.
-- Provide a troubleshooting channel for AMP developers to request assistance.
+- Belgelemeyi devam ettirin ve güncelleyin.
+- AMP geliştiricilerinin yardım isteyebilmesi için sorun giderme kanalı sunun
