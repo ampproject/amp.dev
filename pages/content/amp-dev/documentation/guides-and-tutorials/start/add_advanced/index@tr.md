@@ -1,7 +1,7 @@
 ---
-"$title": Add advanced AMP features
+"$title": Gelişmiş AMP özellikleri ekleyin
 "$order": '0'
-description: "In this tutorial, you'll build on your understanding of AMP foundations and learn how AMP handles advertising, analytics, embedded videos, social media integration, carousels, and more."
+description: "Bu öğretici ile AMP'nin temellerini daha iyi anlayacak ve AMP'nin reklamları, analizleri, gömülü videoları, sosyal medya entegrasyonunu, döngüleri ve daha fazlasını nasıl işlediğini öğreneceksiniz."
 "$hidden": 'true'
 formats:
 - websites
@@ -9,19 +9,19 @@ formats:
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='Completed news article') }}
 
-In this tutorial, you'll build on your understanding of AMP foundations and learn how AMP handles advertising, analytics, embedded videos, social media integration, carousels, and more. By the end of this tutorial, you'll have created a mobile news article that includes these features.
+Bu öğretici ile AMP'nin temellerini daha iyi anlayacak ve AMP'nin reklamları, analizleri, gömülü videoları, sosyal medya entegrasyonunu, döngüleri ve daha fazlasını nasıl işlediğini öğreneceksiniz. Bu eğitimin sonunda, bu özellikleri içeren bir mobil haber makalesi oluşturmuş olacaksınız.
 
-## You’ll learn to:
+## Şunları öğreneceksiniz:
 
-- Display ads by using [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)
-- Embed YouTube videos, Twitter cards and responsive text elements
-- Build carousels with images and combinations of content by using [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)
-- Track simple patterns with [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
-- Add site navigation to your page with [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md)
-- Use custom fonts in AMP
+- [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) kullanarak reklamları görüntüleyin
+- YouTube videolarını, Twitter kartlarını ve duyarlı metin öğelerini yerleştirin
+- [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) kullanarak resimler ve içerik kombinasyonlarıyla döngü oluşturun
+- [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) ile basit kalıpları izleyin
+- [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) ile sayfanıza site gezinme menüsü ekleyin
+- AMP'de özel yazı tiplerini kullanın
 
-## You'll build:
+## Şunları yapacaksınız:
 
-A news article page that conforms to AMP specifications and incorporates advertising, analytics, embedded video, embedded social media, carousels, and a site navigation menu.
+AMP spesifikasyonlarına uyan ve reklam, analiz, gömülü video, yerleşik sosyal medya, resim döngüsü ve bir site gezinme menüsünü içeren bir haber makalesi sayfası.
 
-[tip type="note"] **NOTE –**  This tutorial is a continuation of the concepts introduced in the ["Convert your HTML to AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md) tutorial. If you don't already have a basic understanding of AMP’s core concepts, please try out the ["Convert your HTML to AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md) tutorial. [/tip]
+[tip type="note"] **NOT –**  Bu öğretici ["HTML'nizi AMP'ye dönüştürme"](../../../../documentation/guides-and-tutorials/start/converting/index.md) öğreticisinde tanıtılan kavramların devamıdır. AMP'nin temel kavramları hakkında henüz temel bir anlayışa sahip değilseniz, lütfen ["HTML'nizi AMP'ye dönüştürün"](../../../../documentation/guides-and-tutorials/start/converting/index.md) öğreticisini deneyin. [/tip]
