@@ -1,5 +1,5 @@
 ---
-"$title": AMPHTML Layout System
+"$title": AMPHTML Yerleşim Sistemi
 order: '1'
 formats:
 - websites
@@ -7,7 +7,7 @@ formats:
 - stories
 - ads
 teaser:
-  text: " Overview"
+  text: 'Genel bakış '
 ---
 
 <!--
@@ -33,38 +33,38 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-## Overview <a name="overview"></a>
+## Genel bakış
 
-The main goal of the layout system is to ensure that AMP elements can express their layout so that the runtime is able to infer sizing of elements before any remote resources, such as JavaScript and data calls, have been completed. This is important since this significantly reduces rendering and scrolling jank.
+Düzen sisteminin temel amacı, AMP öğelerinin düzenlerini ifade edebilmelerini sağlamaktır. Böylece çalışma zamanı, JavaScript ve veri çağrıları gibi herhangi bir uzak kaynak tamamlanmadan önce öğelerin boyutlandırılmasını sağlayabilir. Bu, jank'ın oluşturulmasını ve kaydırılmasını önemli ölçüde azalttığı için önemlidir.
 
-With this in mind, the AMP Layout System is designed to support few but flexible layouts that provide good performance guarantees. This system relies on a set of attributes such as `layout`, `width`, `height`, `sizes` and `heights` to express the element's layout and sizing needs.
+Bu düşünceyle, AMP Yerleşim Sisteminin iyi performans garantisi sunan birkaç ama esnek yerleşim desteklemek için tasarlanmıştır. Bu sistem, öğenin düzenini ve boyutlandırma ihtiyaçlarını ifade etmek için {`layout`, `width`, `height`, `sizes` ve `heights` gibi bir dizi özniteliğe dayanır.
 
-## Behavior <a name="behavior"></a>
+## Davranış <a name="behavior"></a>
 
-A non-container AMP element (i.e., `layout != container`) starts up in the unresolved/unbuilt mode in which all of its children are hidden except for a placeholder (see `placeholder` attribute). The JavaScript and data payload necessary to fully construct the element may still be downloading and initializing, but the AMP runtime already knows how to size and lay out the element only relying on CSS classes and `layout`, `width`, `height` and `media` attributes. In most cases, a `placeholder`, if specified, is sized and positioned to take all of the element's space.
+Kapsayıcı olmayan bir AMP öğesi (yani, `layout != container`), bir yer tutucu haricinde tüm alt öğelerinin gizlendiği çözümlenmemiş/oluşturulmamış modda başlar (`yer tutucu` özelliğine bakın). Öğeyi tam olarak oluşturmak için gereken JavaScript ve veri yükü hâlâ indiriliyor ve başlatılıyor olabilir, ancak AMP çalışma zamanı yalnızca CSS sınıflarına ve `layout`, `width`, `height` ve `media` özelliklerine dayanarak öğenin nasıl boyutlandırılacağını ve yerleştirileceğini zaten biliyor. Çoğu durumda, bir `placeholder`, belirtilmişse, öğenin tüm alanını alacak şekilde boyutlandırılır ve konumlandırılır.
 
-The `placeholder` is hidden as soon as the element is built and its first layout complete. At this point, the element is expected to have all of its children properly built and positioned and ready to be displayed and to accept a reader's input. This is the default behavior. Each element can override to, e.g., hide `placeholder` faster or keep it around longer.
+`placeholder`, öğe oluşturulur ve ilk düzeni tamamlanır tamamlanmaz gizlenir. Bu noktada, öğenin tüm alt öğelerinin uygun şekilde inşa edilmesi ve konumlandırılması ve görüntülenmeye ve okuyucunun girişini kabul etmeye hazır olması beklenir. Bu, varsayılan davranıştır. Her öğe, örneğin `placeholder` daha hızlı gizlemek veya daha uzun süre tutmak için geçersiz kılabilir.
 
-The element is sized and displayed based on the `layout`, `width`, `height` and `media` attributes by the runtime. All of the layout rules are implemented via CSS internally. The element is said to "define size" if its size is inferable via CSS styles and does not change based on its children: available immediately or inserted dynamically. This does not mean that this element's size cannot change. The layout could be fully responsive as is the case with `responsive`, `fixed-height`, `fill` and `flex-item` layouts. It simply means that the size does not change without an explicit user action, e.g. during rendering or scrolling or post download.
+Öğe, çalışma zamanına göre `layout` , `width` , `height` ve `media` niteliklerine göre boyutlandırılır ve görüntülenir. Tüm yerleşim kuralları, CSS aracılığıyla dahili olarak uygulanır. Boyutu CSS stilleri aracılığıyla anlaşılabiliyorsa ve alt öğelerine göre değişmiyorsa öğenin "boyutu tanımladığı" söylenir: hemen kullanılabilir veya dinamik olarak eklenir. Bu, bu öğenin boyutunun değişemeyeceği anlamına gelmez. Yerleşim; `responsive` , `fixed-height` , `fill` ve `flex-item` öğe yerleşimlerinde olduğu gibi tamamen duyarlı olabilir. Bu sadece boyutun açık bir kullanıcı eylemi olmadan değişmediği anlamına gelir, örneğin işleme, kaydırma veya indirme işlemi sırasında.
 
-If the element has been configured incorrectly, in PROD it will not be rendered at all and in DEV mode the runtime will render the element in the error state. Possible errors include invalid or unsupported values of `layout`, `width` and `height` attributes.
+Öğe yanlış yapılandırılmışsa, PROD'da hiç oluşturulmaz ve DEV modunda çalışma zamanı öğeyi hata durumunda oluşturur. Olası hatalar, `layout`, `width` ve `height` özniteliklerinin geçersiz veya desteklenmeyen değerlerini içerir.
 
-## Layout Attributes <a name="layout-attributes"></a>
+## Yerleşim Öznitelikleri <a name="layout-attributes"></a>
 
-### `width` and `height` <a name="width-and-height"></a>
+### `width` ve `height` <a name="width-and-height"></a>
 
-Depending on the value of the `layout` attribute, AMP component elements must have a `width` and `height` attribute that contains an integer pixel value. Actual layout behavior is determined by the `layout` attribute as described below.
+`layout` özniteliğinin değerine bağlı olarak, amp bileşen öğelerinin bir tamsayı piksel değeri içeren bir `width` ve `height` özniteliğine sahip olması gerekir. Gerçek yerleşim davranışı, aşağıda açıklandığı gibi `layout` özniteliği tarafından belirlenir.
 
-In a few cases, if `width` or `height` are not specified, the AMP runtime can default these values as follows:
+Bazı durumlarda, `width` veya `height` belirtilmemişse, AMP çalışma zamanı bu değerleri aşağıdaki gibi varsayılan olarak ayarlayabilir:
 
-- `amp-pixel`: Both `width` and `height` are defaulted to 0.
-- `amp-audio`: The default `width` and `height` are inferred from browser.
+- `amp-pixel`: Hem `width` hem de `height` varsayılan olarak 0'dır.
+- `amp-audio`: Varsayılan `width` ve `height` tarayıcıdan çıkarılır.
 
 ### `layout` <a name="layout"></a>
 
-AMP provides a set of layouts that specify how an AMP component behaves in the document layout. You can specify a layout for a component by adding the `layout` attribute with one of the values specified in the table below.
+AMP, bir AMP bileşeninin belge düzeninde nasıl davrandığını belirten bir dizi yerleşim sağlar. Aşağıdaki tabloda belirtilen değerlerden biriyle `layout` niteliği ekleyerek bir bileşen için bir yerleşim belirtebilirsiniz.
 
-**Example**: A simple responsive image, where width and height are used to determine the aspect ratio.
+**Örnek**: En boy oranını belirlemek için genişlik ve yüksekliğin kullanıldığı basit, duyarlı bir resim.
 
 [sourcecode:html]
 <amp-img
@@ -76,51 +76,56 @@ AMP provides a set of layouts that specify how an AMP component behaves in the d
 ></amp-img>
 [/sourcecode]
 
-Supported values for the `layout` attribute:
+`layout` özelliği için desteklenen değerler:
 
 <table>
   <thead>
     <tr>
-      <th width="30%">Value</th>
-      <th>Behavior  and  Requirements</th>
+      <th width="30%">Değer</th>
+      <th>Davranış ve Gereksinimler</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Not present</td>
-      <td>If no value is specified, the layout for the component is inferred as follows:         <ul>           <li>If <code>height</code> is present and <code>width</code> is absent or is set to <code>auto</code>, a <code>fixed-height</code> layout is assumed.</li>           <li>If <code>width</code> and <code>height</code> are present along with a <code>sizes</code> or <code>heights</code> attribute, a <code>responsive</code> layout is assumed.</li>           <li>If <code>width</code> and <code>height</code> are present, a  <code>fixed</code> layout is assumed.</li>           <li> if <code>width</code> and <code>height</code> are absent, a <code>container</code> layout is assumed.</li>         </ul>       </td>
+      <td>Mevcut değil</td>
+      <td>Değer belirtilmezse, bileşenin yerleşimi şu şekilde çıkarılır:<br><ul>           <li>
+<code>height</code> mevcutsa ve <code>width</code> yoksa veya <code>auto</code>, otomatik olarak ayarlanmışsa,<code>fixed-height</code> yerleşimi varsayılır.</li>   <li> <code>sizes</code> veya <code>heights</code> özellikleriyle birlikte <code>width</code> ve <code>height</code> mevcutsa, <code>responsive</code> yerleşim varsayılır.</li>
+<br><li>
+<code>width</code> ve <code>height</code> varsa, <code>fixed</code> yerleşim varsayılır.</li>    <li> <code>width</code> ve <code>height</code> yoksa, <code>container</code> yerleşimi varsayılır.</li>         </ul>
+</td>
     </tr>
     <tr>
       <td><code>container</code></td>
-      <td>The element lets its children define its size, much like a normal HTML <code>div</code>. The component is assumed to not have specific layout itself but only act as a container; its children are rendered immediately.</td>
+      <td>Öğe, normal bir HTML <code>div</code> gibi alt öğelerinin boyutunu tanımlamasına izin verir. Bileşenin belirli bir yerleşime sahip olmadığı, yalnızca bir kapsayıcı görevi gördüğü varsayılır; altındakiler hemen işlenir.</td>
     </tr>
     <tr>
       <td><code>fill</code></td>
-      <td>The element takes the space available to it—both width and height. In other words, the layout and size of a <code>fill</code> element matches its parent. For an element to fill its parent container, specify the "fill" layout, and ensure the parent container specifies <code>position:relative</code> or <code>position:absolute</code>. </td>
+      <td>Öğe, hem genişlik hem de yükseklik olarak kullanabileceği alanı kaplar. Başka bir deyişle, bir <code>fill</code> öğesinin düzeni ve boyutu, üst öğesiyle eşleşir. Bir öğenin üst kabını doldurması için, "doldurma" yerleşimini belirtin ve ana kapsayıcının <code>position:relative</code> veya <code>position:absolute</code> değerini belirttiğinden emin olun.</td>
     </tr>
     <tr>
       <td><code>fixed</code></td>
-      <td>The element has a fixed width and height with no responsiveness supported. The <code>width</code> and <code>height</code> attributes must be present. The only exceptions are the <code>amp-pixel</code> and <code>amp-audio</code> components. </td>
+      <td>Öğe, yanıt verme desteklenmeyen sabit bir genişliğe ve yüksekliğe sahiptir. <code>width</code> ve <code>height</code> özellikleri mevcut olmalıdır. Tek istisna, <code>amp-pixel</code> ve <code>amp-audio</code> bileşenleridir.</td>
     </tr>
     <tr>
       <td><code>fixed-height</code></td>
-      <td>The element takes the space available to it but keeps the height unchanged. This layout works well for elements such as <code>amp-carousel</code> that involves content positioned horizontally. The <code>height</code> attribute must be present. The <code>width</code> attribute must not be present or must be equal to <code>auto</code>. </td>
+      <td>Öğe, kullanabileceği alanı alır ancak yüksekliği değiştirmeden tutar. Bu yerleşim, yatay olarak konumlandırılmış içeriği içeren <code>amp-carousel</code> gibi öğeler için iyi çalışır. <code>height</code> özelliği mevcut olmalıdır. <code>width</code> özelliği mevcut olmamalı veya <code>auto</code> ile eşit olmalıdır.</td>
     </tr>
     <tr>
       <td><code>flex-item</code></td>
-      <td>The element and other elements in its parent with layout type <code>flex-item</code> take the parent container's remaining space when the parent is a flexible container (i.e., <code>display: flex</code>). The <code>width</code> and <code>height</code> attributes are not required.</td>
+      <td>
+<code>flex-item</code> yerleşim türüne sahip üst öğesindeki öğe ve diğer öğeler, ana esnek bir kapsayıcı olduğunda (yani, <code>display: flex</code>) üst kapsayıcının kalan alanını alır. <code>width</code> ve <code>height</code> nitelikleri gerekli değildir.</td>
     </tr>
     <tr>
       <td><code>intrinsic</code></td>
-      <td>The element takes the space available to it and resizes its height automatically to the aspect ratio given by the <code>width</code> and <code>height</code> attributes <em>until</em> it reaches the element's size defined by the `width` and `height` attributes passed to the <code>amp-img</code>, or reaches a CSS constraint, such as `max-width`. The width and height attributes must be present. This layout works very well for most AMP elements, including <code>amp-img</code>, <code>amp-carousel</code>, etc. The available space depends on the parent element and can also be customized using <code>max-width</code> CSS. This layout differs from <code>responsive</code> by having an intrinsic height and width. This is most apparent inside a floated element where a <code>responsive</code> layout will render 0x0 and an <code>intrinsic</code> layout will inflate to the smaller of its natural size or any CSS constraint.</td>
+      <td>Öğe, kullanabileceği alanı alır ve <code>amp-img</code>'ye aktarılan <code>width</code> ve <code>height</code> özellikleriyle tanımlanan öğenin boyutuna ulaşana veya erişene <em>kadar</em> yüksekliğini `width` ve `height` özelliklerinin verdiği en boy oranına otomatik olarak yeniden boyutlandırır. `max-width` gibi bir CSS kısıtlaması. Genişlik ve yükseklik özellikleri mevcut olmalıdır. Bu düzen, <code>amp-img</code>, <code>amp-carousel</code> vb. dahil çoğu AMP öğesi için çok iyi çalışır. Kullanılabilir alan ana öğeye bağlıdır ve ayrıca <code>max-width</code> CSS kullanılarak özelleştirilebilir. Bu yerleşim, kendine özgü bir yükseklik ve genişliğe sahip olmasıyla <code>responsive</code>'dan farklıdır. Bu, <code>responsive</code> yerleşimin 0x0 oluşturacağı ve <code>intrinsic</code> yerleşimin doğal boyutunun veya herhangi bir CSS kısıtlamasının daha küçük olmasına neden olacağı yüzen bir öğenin içinde en belirgindir.</td>
     </tr>
     <tr>
       <td><code>nodisplay</code></td>
-      <td>The element isn't displayed, and takes up zero space on the screen as if its display style was <code>none</code>. This layout can be applied to every AMP element.  It’s assumed that the element can display itself on user action (e.g., <code>amp-lightbox</code>). The <code>width</code> and <code>height</code> attributes are not required.</td>
+      <td>Öğe görüntülenmez ve ekran stili <code>none</code> gibi ekranda sıfır yer kaplar. Bu düzen her AMP elemanına uygulanabilir. Öğenin kendisini kullanıcı eyleminde gösterebileceği varsayılmaktadır (örneğin, <code>amp-lightbox</code>). <code>width</code> ve <code>height</code> öznitelikleri gerekli değildir.</td>
     </tr>
     <tr>
       <td><code>responsive</code></td>
-      <td>The element takes the space available to it and resizes its height automatically to the aspect ratio given by the <code>width</code> and <code>height</code> attributes. This layout works very well for most AMP elements, including <code>amp-img</code>, <code>amp-video</code>, etc.  The available space depends on the parent element and can also be customized using <code>max-width</code> CSS. The <code>width</code> and <code>height</code> attributes must be present.<p><strong>Note</strong>: Elements with <code>"layout=responsive"</code> have no intrinsic size. The size of the element is determined from its container element. To ensure your AMP element displays, you must specify a width and height for the  containing element. Do not specify <code>"display:table"</code> on the containing element as this overrides the display of the AMP element, rendering the AMP element invisible.</p>
+      <td>Öğe, kullanabileceği alanı alır ve yüksekliğini otomatik olarak <code>width</code> ve <code>height</code> özelliklerinin verdiği en boy oranına yeniden boyutlandırır. Bu düzen, <code>amp-img</code>, <code>amp-video</code> vb. dahil çoğu AMP öğesi için çok iyi çalışır. Kullanılabilir alan ana öğeye bağlıdır ve ayrıca <code>max-width</code> CSS kullanılarak özelleştirilebilir. <code>width</code> ve <code>height</code> özellikleri mevcut olmalıdır.<br><br><p><strong>Not</strong>: <code>"layout=responsive"</code> özelliğine sahip öğelerin gerçek boyutu yoktur. Elemanın boyutu, kapsayıcı elemanı ile belirlenir. AMP öğenizin görüntülendiğinden emin olmak için, içeren öğe için bir genişlik ve yükseklik belirtmelisiniz. AMP öğesinin görünümünü geçersiz kılarak AMP öğesini görünmez hale getireceğinden, içeren öğede <code>"display:table"</code> belirtmeyin.</p>
 </td>
     </tr>
   </tbody>
@@ -128,13 +133,13 @@ Supported values for the `layout` attribute:
 
 ### `sizes` <a name="sizes"></a>
 
-All AMP elements that support the `responsive` layout, also support the `sizes` attribute. The value of this attribute is a sizes expression as described in the [img sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), but extended to all elements, not just images. In short, the `sizes` attribute describes how the width of the element is calculated depending on the media conditions.
+`responsive` yerleşimi destekleyen tüm AMP öğeleri, aynı zamanda `sizes` özelliğini de destekler. Bu özniteliğin değeri, [img sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)'da açıklandığı gibi bir boyut ifadesidir. Ancak yalnızca resimleri değil tüm öğeleri kapsar. Kısacası, `sizes` özelliği, ortam koşullarına bağlı olarak öğenin genişliğinin nasıl hesaplandığını açıklar.
 
-When the `sizes` attribute is specified along with `width` and `height`, the `layout` is defaulted to `responsive`.
+`sizes` özelliği `width` ve `height` ile birlikte belirtildiğinde, `layout` varsayılan olarak `responsive` olacak şekilde ayarlanır.
 
-**Example**: Using the `sizes` attribute
+**Örnek**: `sizes` özniteliğini kullanma
 
-In the following example, if the viewport is wider than `320px`, the image will be 320px wide, otherwise, it will be 100vw wide (100% of the viewport width).
+Aşağıdaki örnekte, görüntü alanı `320px`'den daha genişse, görüntü 320 piksel genişliğinde olacaktır, aksi takdirde 100vw genişliğinde olacaktır (görüntü alanı genişliğinin %100'ü).
 
 [sourcecode:html]
 <amp-img
@@ -149,11 +154,11 @@ In the following example, if the viewport is wider than `320px`, the image will 
 
 ### `disable-inline-width` <a name="disable-inline-width"></a>
 
-The `sizes` attribute on its own will set an inline `width` style on the element. When pairing `disable-inline-width` with `sizes`, the AMP element will propagate the value of `sizes` to the element's underlying tag, as with the `img` nested inside an `amp-img`, **without** setting the inline `width` as `sizes` typically does on its own in AMP.
+`sizes` özelliği kendi başına öğede satır içi `width` stilini ayarlar. `disable-inline-width` ile `sizes` eşleştirirken, AMP öğesi, `sizes` değerini, bir `amp-img` içinde yuvalanmış `img`'de olduğu gibi, <code>sizes</code> değerini genellikle AMP'de kendi başına yaptığı şekilde satır içi `width` <strong>ayarlamadan</strong> öğenin temelindeki etikete yayar.
 
-**Example**: Using the `disable-inline-width` attribute
+**Örnek**: `disable-inline-width` özniteliğini kullanma
 
-In the following example, the width of the `<amp-img>` element is unaffected, and `sizes` is only used to select one of the sources from the `srcset`.
+Aşağıdaki örnekte, `<amp-img>` öğesinin genişliği etkilenmez ve `sizes` yalnızca `srcset` kaynaklarından birini seçmek için kullanılır.
 
 [sourcecode:html]
 <amp-img
@@ -169,16 +174,16 @@ In the following example, the width of the `<amp-img>` element is unaffected, an
 
 ### `heights` <a name="heights"></a>
 
-All AMP elements that support the `responsive` layout, also support the `heights` attribute. The value of this attribute is a sizes expression based on media expressions as similar to the [img sizes attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), but with two key differences:
+`responsive` yerleşimi destekleyen tüm AMP öğeleri, aynı zamanda `heights` özelliğini de destekler. Bu özelliğin değeri, [img sizes özelliğine](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) benzer şekilde medya ifadelerine dayalı, ancak iki temel farkla birlikte bir boyut ifadesidir:
 
-1. It applies to the height, not the width of the element.
-2. Percent values are allowed, e.g. `86%`. If a percent value is used, it indicates the percentage of the element's width.
+1. Öğenin genişliğine değil, yüksekliğine uygulanır.
+2. Yüzde değerlerine izin verilir, ör. `86%`. Yüzde değeri kullanılıyorsa, öğenin genişliğinin yüzdesini gösterir.
 
-When the `heights` attribute is specified along with `width` and `height`, the `layout` is defaulted to `responsive`.
+`heights` özelliği `width` ve `height` ile birlikte belirtildiğinde, `layout` varsayılan olarak `responsive` ayarlanır.
 
-**Example**: Using the `heights` attribute
+**Örnek**: `heights` özniteliğini kullanma
 
-In the following example, the height of the image will default to 80% of the width, but if the viewport is wider than `500px`, the height is capped at `200px`. Because the `heights` attribute is specified along with `width` and `height`, the layout defaults to `responsive`.
+Aşağıdaki örnekte, görüntünün yüksekliği varsayılan olarak genişliğin %80'i kadardır, ancak görüntü alanı `500px`'den daha genişse, yükseklik `200px` ile sınırlandırılır. `heights` özelliği `width` ve `height` ile birlikte belirtildiğinden, yerleşim varsayılan olarak `responsive` olur.
 
 [sourcecode:html]
 <amp-img
@@ -192,11 +197,11 @@ In the following example, the height of the image will default to 80% of the wid
 
 ### `media` <a name="media"></a>
 
-Most AMP elements support the `media` attribute. The value of `media` is a media query. If the query does not match, the element is not rendered at all and its resources and potentially its child resources will not be fetched. If the browser window changes size or orientation, the media queries are re-evaluated and elements are hidden and shown based on the new results.
+Çoğu AMP öğesi, `media` özelliğini destekler. `media` değeri bir medya sorgusudur. Sorgu eşleşmezse, öğe hiç oluşturulmaz hem kaynaklar hem de potansiyel olarak alt kaynaklar getirilmez. Tarayıcı penceresinin boyutu veya yönü değişirse, medya sorguları yeniden değerlendirilir ve öğeler gizlenir ve yeni sonuçlara göre gösterilir.
 
-**Example**: Using the `media` attribute
+**Örnek**: `media` özniteliğini kullanma
 
-In the following example, we have 2 images with mutually exclusive media queries. Depending on the screen width, one of the two images will be fetched and rendered. The `media` attribute is available on all AMP elements, so it can be used with non-image elements, such as ads.
+Aşağıdaki örnekte, birbirini dışlayan medya sorguları içeren 2 resmimiz var. Ekran genişliğine bağlı olarak, iki görüntüden biri alınacak ve işlenecektir. `media` özelliği tüm AMP öğelerinde mevcuttur, bu nedenle reklamlar gibi resim olmayan öğelerle kullanılabilir.
 
 [sourcecode:html]
 <amp-img
@@ -217,7 +222,7 @@ In the following example, we have 2 images with mutually exclusive media queries
 
 ### `placeholder` <a name="placeholder"></a>
 
-The `placeholder` attribute can be set on any HTML element, not just AMP elements. The `placeholder` attribute indicates that the element marked with this attribute acts as a placeholder for the parent AMP element. If specified, a placeholder element must be a direct child of the AMP element. By default, the placeholder is immediately shown for the AMP element, even if the AMP element's resources have not been downloaded or initialized. Once ready, the AMP element typically hides its placeholder and shows the content. The exact behavior with respect to the placeholder is up to the element's implementation.
+`placeholder` özelliği, yalnızca AMP öğelerinde değil, herhangi bir HTML öğesinde de ayarlanabilir. `placeholder` özelliği, bu öznitelikle işaretlenen öğenin ana AMP öğesi için bir yer tutucu görevi gördüğünü belirtir. Belirtilirse, bir yer tutucu öğe, AMP öğesinin doğrudan alt öğesi olmalıdır. Varsayılan olarak placeholder, AMP öğesinin kaynakları indirilmemiş veya başlatılmamış olsa bile, AMP öğesi için hemen gösterilir. AMP öğesi hazır olduğunda genellikle placeholder'ı gizler ve içeriği gösterir. placeholder'a göre tam davranış, öğenin uygulanmasına bağlıdır.
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
@@ -227,7 +232,7 @@ The `placeholder` attribute can be set on any HTML element, not just AMP element
 
 ### `fallback` <a name="fallback"></a>
 
-The `fallback` attribute can be set on any HTML element, not just AMP elements. A fallback is a convention that allows the element to communicate to the reader that the browser does not support the element. If specified, a fallback element must be a direct child of the AMP element. The exact behavior with respect to the fallback is up to the element's implementation.
+`fallback` özniteliği, yalnızca AMP öğelerinde değil, herhangi bir HTML öğesinde de ayarlanabilir. Geri dönüş, öğenin okuyucuya tarayıcının öğeyi desteklemediğini bildirmesine olanak tanıyan bir kuraldır. Belirtilirse, yedek öğe, AMP öğesinin doğrudan alt öğesi olmalıdır. Geri dönüşle ilgili kesin davranış, öğenin uygulanmasına bağlıdır.
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
@@ -237,83 +242,80 @@ The `fallback` attribute can be set on any HTML element, not just AMP elements. 
 
 ### `noloading` <a name="noloading"></a>
 
-The `noloading` attribute indicates whether the "loading indicator" should be turned off for this element. Many AMP elements are allow-listed to show a "loading indicator", which is a basic animation that shows that the element has not yet fully loaded. The elements can opt out of this behavior by adding this attribute.
+`noloading` özelliği, bu öğe için "yükleme göstergesinin" kapatılıp kapatılmayacağını belirtir. Çoğu AMP öğesinin, öğenin henüz tam olarak yüklenmediğini gösteren temel bir animasyon olan bir "yükleme göstergesi" göstermesine izin verilir. Öğeler, bu özelliği ekleyerek bu davranışı devre dışı bırakabilir.
 
-## (tl;dr) Summary of Layout Requirements & Behaviors <a name="tldr-summary-of-layout-requirements--behaviors"></a>
+## (tl;dr) Yerleşim Gereksinimlerinin ve Davranışlarının Özeti <a name="tldr-summary-of-layout-requirements--behaviors"></a>
 
-The following table describes the acceptable parameters, CSS classes, and styles used for the `layout` attribute. Note that:
+Aşağıdaki tablo, `layout` niteliği için kullanılan kabul edilebilir parametreleri, CSS sınıflarını ve stilleri açıklamaktadır. Bunları unutmayın:
 
-1. Any CSS class marked prefixed with `-amp-` and elements prefixed with `i-amp-` are considered to be internal to AMP and their use in user stylesheets is not allowed. They are shown here simply for informational purposes.
-2. Even though `width` and `height` are specified in the table as required, the default rules may apply as is the case with `amp-pixel` and `amp-audio`.
+1. Öneki `-amp-` ile işaretlenmiş tüm CSS sınıfları ve ön eki `i-amp-` olan öğeler, AMP'ye dahil olarak kabul edilir ve bunların kullanıcı stil sayfalarında kullanımına izin verilmez. Burada sadece bilgi amaçlı gösterilmektedir.
+2. Tabloda gerektiği gibi `width` ve `height` belirtilmiş olsa da, varsayılan kurallar `amp-pixel` ve `amp-audio`'da olduğu gibi geçerli olabilir.
 
 <table>
   <thead>
     <tr>
-      <th width="21%">Layout</th>
-      <th width="20%">Width/<br>Height Required?</th>
-      <th width="20%">Defines Size?</th>
-      <th width="20%">Additional Elements</th>
+      <th width="21%">Yerleşim</th>
+      <th width="20%">Genişlik/<br>Yükseklik gerekli mi?</th>
+      <th width="20%">Boyut tanımlanır mı?</th>
+      <th width="20%">Ek Öğeler</th>
       <th width="19%">CSS "display"</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><code>container</code></td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
+      <td>Hayır</td>
+      <td>Hayır</td>
+      <td>Hayır</td>
       <td><code>block</code></td>
     </tr>
     <tr>
       <td><code>fill</code></td>
-      <td>No</td>
-      <td>Yes, parent's size.</td>
-      <td>No</td>
+      <td>Hayır</td>
+      <td>Evet, ana öğenin boyutu.</td>
+      <td>Hayır</td>
       <td><code>block</code></td>
     </tr>
     <tr>
       <td><code>fixed</code></td>
-      <td>Yes</td>
-      <td>Yes, specified by <code>width</code> and <code>height</code>.</td>
-      <td>No</td>
+      <td>Evet</td>
+      <td>Evet, <code>width</code> ve <code>height</code> ile belirtilmiştir.</td>
+      <td>Hayır</td>
       <td><code>inline-block</code></td>
     </tr>
     <tr>
       <td><code>fixed-height</code></td>
-      <td>
-<code>height</code> only; <code>width</code> can be <code>auto</code>
-</td>
-      <td>Yes, specified by the parent container and <code>height</code>.</td>
-      <td>No</td>
+      <td>sadece <code>height</code>; <code>width</code>  <code>auto</code> olabilir</td>
+      <td>Evet, ana kapsayıcı ve <code>height</code> tarafından belirtilir.</td>
+      <td>Hayır</td>
       <td><code>block</code></td>
     </tr>
     <tr>
       <td><code>flex-item</code></td>
-      <td>No</td>
-      <td>No</td>
-      <td>Yes, based on parent container.</td>
+      <td>Hayır</td>
+      <td>Hayır</td>
+      <td>Evet, ana kapsayıcıya göre.</td>
       <td><code>block</code></td>
     </tr>
     <tr>
       <td><code>intrinsic</code></td>
-      <td>Yes</td>
-      <td>Yes, based on parent container and aspect ratio of <code>width:height</code>.</td>
-      <td>Yes, <code>i-amphtml-sizer</code>.</td>
-      <td>
-<code>block</code> (behaves like a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element" rel="nofollow">replaced element</a>)</td>
+      <td>Evet</td>
+      <td>Evet, ana kapsayıcıya ve <code>width:height</code> en boy oranına bağlıdır.</td>
+      <td>Evet, <code>i-amphtml-sizer</code>.</td>
+      <td> <code>block</code> (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element" rel="nofollow">değiştirilmiş öğe</a> gibi davranır)</td>
     </tr>
     <tr>
       <td><code>nodisplay</code></td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
+      <td>Hayır</td>
+      <td>Hayır</td>
+      <td>Hayır</td>
       <td><code>none</code></td>
     </tr>
     <tr>
       <td><code>responsive</code></td>
-      <td>Yes</td>
-      <td>Yes, based on parent container and aspect ratio of <code>width:height</code>.</td>
-      <td>Yes, <code>i-amphtml-sizer</code>.</td>
+      <td>Evet</td>
+      <td>Evet, ana kapsayıcıya ve <code>width:height</code> en boy oranına bağlıdır.</td>
+      <td>Evet, <code>i-amphtml-sizer</code>.</td>
       <td><code>block</code></td>
     </tr>
   </tbody>
