@@ -1,7 +1,7 @@
 ---
-"$title": Easy offline access and improved performance
+"$title": Kolay çevrimdışı erişim ve iyileştirilmiş performans
 "$order": '11'
-description: A Service Worker is a client-side proxy that sits between your page and your server, and is used to build fantastic offline experiences, fast-loading ...
+description: Hizmet Çalışanı, sayfanız ile sunucunuz arasında yer alan ve harika çevrimdışı deneyimler ve hızlı yüklenen uygulama kabuğu senaryoları oluşturmak ve anlık bildirimler göndermek için kullanılan...
 formats:
 - websites
 author: CrystalOnScript
@@ -9,19 +9,19 @@ contributors:
 - pbakaus
 ---
 
-[Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) enable rich offline experiences and consistent user experiences across varying network strengths. By caching resources within the browser, a web app is able to provide data, assets, and offline pages to the user to keep them engaged and informed.
+[Hizmet çalışanları](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API), çeşitli ağ güçlerinde zengin çevrimdışı deneyimler ve tutarlı kullanıcı deneyimleri sağlar. Bir web uygulaması, tarayıcı içindeki kaynakları önbelleğe alarak, kullanıcıların etkileşimlerini devam ettirmek ve bilgiler sunmak için veriler, varlıklar ve çevrimdışı sayfalar sağlayabilir.
 
-Remember: The Service Worker won't be able to interact with the AMP-cached version of your page. Use it for onward journeys to your origin.
+Unutmayın: Hizmet Çalışanı, sayfanızın AMP önbelleğe alınmış sürümüyle etkileşim kuramaz. Çıkış noktanızdan ileriye doğru olan yolculuklar için kullanın.
 
-## Install a Service Worker
+## Hizmet Çalışanı Kurma
 
-A Service Worker is a client-side proxy that sits between your page and your server, and is used to build fantastic offline experiences, fast-loading app shell scenarios, and send push notifications.
+Hizmet Çalışanı, sayfanız ile sunucunuz arasında yer alan ve harika çevrimdışı deneyimler ve hızlı yüklenen uygulama kabuğu senaryoları oluşturmak ve anlık bildirimler göndermek için kullanılan bir istemci tarafı bir proxy'sidir.
 
-[tip type="note"] **NOTE –** If the concept of Service Workers is new to you, read the [introduction at WebFundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers). [/tip]
+[tip type="note"] **NOT -** Hizmet Çalışanları kavramı sizin için yeniyse, [WebFundamentals'daki giriş](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) bölümünü okuyun. [/tip]
 
-Your Service Worker needs to be registered on a given page, or the browser won't find or run it. By default, this is done with the help of a [little bit of JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). On AMP Pages, you use the [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) component to achieve the same.
+Hizmet Çalışanınızın belirli bir sayfada kayıtlı olması gerekir, aksi takdirde tarayıcı onu bulamaz veya çalıştırmaz. Varsayılan olarak, bu işlem [biraz JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration) yardımı ile yapılır. AMP Sayfalarında, aynı işlemi yapmak için [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) bileşeni kullanılır.
 
-For that, first include the [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) component via its script in the `<head>` of your page:
+Bunun için sayfanızın `<head>` bölümüne [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) bileşenini betiği yoluyla ekleyin:
 
 [sourcecode:html]
 
@@ -30,7 +30,7 @@ For that, first include the [`amp-install-serviceworker`](../../../documentation
 
 [/sourcecode]
 
-Then add the following somewhere within your `<body>` (modify to point to your actual Service Worker):
+Ardından `<body>` içinde bir yere aşağıdakileri ekleyin (gerçek Hizmet Çalışanınızı gösterecek şekilde değiştirin):
 
 [sourcecode:html]
 <amp-install-serviceworker
@@ -39,17 +39,17 @@ Then add the following somewhere within your `<body>` (modify to point to your a
 </amp-install-serviceworker>
 [/sourcecode]
 
-If the user navigates to your AMP pages on your origin (as opposed to the first click, which is usually served from an AMP Cache), the Service Worker will take over and can do a [myriad of cool things](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux).
+Kullanıcı, kaynağınızdaki AMP sayfalarınıza giderse (genellikle bir AMP Önbelleğinden sunulan ilk tıklamanın aksine), Hizmet Çalışanı görevi devralır ve [sayısız harika şey yapabilir](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux) .
 
 ## The AMP Service Worker
 
-If you're here, you're building pages with AMP. The AMP team cares immensely about putting the user first and giving them a world class web experience. To keep these experiences consistent the AMP team has created a service worker specifically for AMP!
+Buradaysanız, AMP ile sayfalar oluşturuyorsunuz demektir. AMP ekibi, kullanıcıyı birinci sıraya koymaya ve onlara birinci sınıf bir web deneyimi sunmaya son derece önem veriyor. Bu deneyimleri tutarlı kılmak için AMP ekibi, özellikle AMP için bir hizmet çalışanı oluşturdu!
 
-[tip type="default"] **TIP –** Follow our tutorial to learn to use the [AMP Service Worker in your PWA](/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp_to_pwa.md). [/tip]
+[tip type="default"] **İPUCU -** [PWA'nızda AMP Hizmet Çalışanı](/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp_to_pwa.md) kullanmayı öğrenmek için öğreticimizi izleyin. [/tip]
 
-### Installing the AMP Service Worker
+### AMP Hizmet Çalışanını Yükleme
 
-Install the AMP Service Worker with minimal steps:
+AMP Hizmet Çalışanını minimum sayıda adımla kurun:
 
 - [sourcecode:js]  importScripts('https://cdn.ampproject.org/sw/amp-sw.js');  [/sourcecode]
 
@@ -57,13 +57,13 @@ Install the AMP Service Worker with minimal steps:
       AMP_SW.init();
       [/sourcecode]
 
-- Done.
+- Bitti.
 
-### Automated Caching
+### Otomatik Önbelleğe Alma
 
-The AMP Service Worker automatically caches AMP script files and AMP documents. By caching AMP script files, they are instantly available to the users browser allowing for offline functionality and speedier pages on flaky networks.
+AMP Hizmet Çalışanı, AMP betiklerini ve AMP belgelerini otomatik olarak önbelleğe alır. Önbelleğe alınan AMP betik dosyaları, kullanıcı tarayıcısında anında kullanılabilir hale gelir ve kesintili ağlarda çevrimdışı işlevlere ve daha hızlı sayfalara olanak tanırlar.
 
-If your app requires specific types of document caching, the AMP Service Worker allows for customization. Such as adding a deny list for documents that should always be requested from the network. In the following example, replace `Array<RegExp>` with an array of regular expressions representing documents you want to avoid caching.
+Uygulamanız belirli türde belgeleri önbelleğe almayı gerektiriyorsa, AMP Hizmet Çalışanı özelleştirmeye izin verir. Ağdan her zaman talep edilmesi gereken belgeler için bir reddetme listesi eklemek gibi. Aşağıdaki örnekte, `Array<RegExp>` içeriğini, önbelleğe almaktan kaçınmak istediğiniz belgeleri içeren bir dizi normal ifadeyle değiştirin.
 
 [sourcecode:js]
 AMP_SW.init(
@@ -73,13 +73,13 @@ denyList?: Array<RegExp>;
 );
 [/sourcecode]
 
-Read more about [customizing document caching here](https://github.com/ampproject/amp-sw/tree/master/src/modules/document-caching).
+[Belge önbelleğe alma işlemini özelleştirme hakkında daha fazlasını buradan](https://github.com/ampproject/amp-sw/tree/master/src/modules/document-caching) okuyun.
 
-### Optimizing the AMP Service Worker
+### AMP Hizmet Çalışanını Optimize Etme
 
-To use the AMP Service Worker to its full capabilities, the optional fields should be configured to cache necessary assets and prefetch links.
+AMP Hizmet Çalışanını tüm özellikleriyle kullanmak için, isteğe bağlı alanlar gerekli varlıkları önbelleğe alacak ve bağlantıları önceden getirecek şekilde yapılandırılmalıdır.
 
-Assets that drive the user's visit to a page, such as a video, important images, or a downloadable PDF, should be cached so that they can be accessed again if the user is offline.
+Video, önemli resimler veya indirilebilir PDF gibi kullanıcının bir sayfayı ziyaret etmesini sağlayan varlıklar, kullanıcı çevrimdışıysa tekrar erişilebilmeleri için önbelleğe alınmalıdır.
 
 [sourcecode:js]
 AMP_SW.init(
@@ -90,25 +90,25 @@ cachingStrategy: 'CACHE_FIRST'
 );
 [/sourcecode]
 
-You are able to customize the caching strategy and define a deny list.
+Önbelleğe alma stratejisini özelleştirebilir ve bir reddetme listesi tanımlayabilirsiniz.
 
-Links to pages your users may need to visit can be prefetched, allowing them to be accessed while offline. This is done by adding a `data-prefetch` attribute to the link tag.
+Kullanıcılarınızın ziyaret etmeleri gerekebilecek sayfaların bağlantıları önceden getirilerek, çevrimdışıyken erişmelerine izin verilebilir. Bu işlem, bağlantı etiketine bir `data-prefetch` özniteliği eklenerek yapılır.
 
 [sourcecode:html]
 <a href='....' data-rel='prefetch' />
 [/sourcecode]
 
-### Offline Experience
+### Çevrimdışı Deneyim
 
-Communicate to user's that they have gone offline, and should try reloading the site when back online, by including an offline page. The AMP Service Worker can cache both the page and its assets.
+Kullanıcılara çevrimdışı olduklarını ve çevrimdışı bir sayfa ekleyerek tekrar çevrimiçi olduklarında siteyi yeniden yüklemeyi denemeleri gerektiğini bildirin. AMP Hizmet Çalışanı, hem sayfayı hem de varlıklarını önbelleğe alabilir.
 
 [sourcecode:js] AMP_SW.init({ offlinePageOptions: { url: '/offline.html'; assets: ['/images/offline-header.jpg']; } }) [/sourcecode]
 
-A successful offline page looks like it's a part of your site by having a consistent UI with the rest of the application.
+Başarılı bir çevrimdışı sayfa, uygulamanın geri kalanıyla tutarlı bir kullanıcı arayüzüne sahip olduğu için sitenizin bir parçası gibi görünür.
 
-### Force Update
+### Zorunlu Güncelleme
 
-The team is working to implement a force update/remove feature if your AMP Service Worker needs to be disabled or changed if a deployment to users has gone wrong.
+Ekip, AMP Hizmet Çalışanınızın devre dışı bırakılması veya kullanıcılara yönelik bir dağıtımın yanlış çalışması durumunda değiştirilmesi gerekiyorsa, zorunlu güncelleme/kaldırma özelliği uygulamak için çalışıyor.
 
 To effectively manage a service worker, you should understand how [standard HTTP caching affects the way your service worker's JavaScript is kept up to date](https://developers.google.com/web/updates/2018/06/fresher-sw). Service workers served with appropriate HTTP caching directives can resolve small bug fixes by making the appropriate changes and redeploying your service worker to your hosting environment. If you need to remove a service worker, it's a good idea to keep a simple, [no-op](https://en.wikipedia.org/wiki/NOP) service worker file handy, like the following:
 
@@ -121,11 +121,11 @@ self.addEventListener('install', () => {
 });
 ```
 
-[tip type="read-on"] [Read more](https://stackoverflow.com/questions/33986976/how-can-i-remove-a-buggy-service-worker-or-implement-a-kill-switch/38980776#38980776) about managing deployed service workers. [/tip]
+[tip type="read-on"] Dağıtılmış hizmet çalışanlarını yönetmeye dair [daha fazlasını okuyun](https://stackoverflow.com/questions/33986976/how-can-i-remove-a-buggy-service-worker-or-implement-a-kill-switch/38980776#38980776). [/tip]
 
-## Write a Custom Service Worker
+## Özel Hizmet Çalışanı Yazma
 
-You can use the above technique to enable offline access to your AMP website, as well as extend your pages **as soon as they’re served from the origin**. That's because you can modify the response via the Service Worker’s `fetch` event, and return any response you want:
+AMP web sitenize çevrimdışı erişimi etkinleştirmek için yukarıdaki tekniği kullanabilir, ayrıca sayfalarınızı **başlangıç noktasından sunuldukları anda** genişletebilirsiniz. Bunun nedeni, yanıtı Hizmet Çalışanının `fetch` olayı aracılığıyla değiştirebilmeniz ve istediğiniz yanıtı verebilmenizdir:
 
 [sourcecode:js]
 self.addEventListener('fetch', function(event) {
@@ -148,7 +148,7 @@ return networkResponse;
 });
 [/sourcecode]
 
-Using this technique, you can amend your AMP Page will all sorts of additional functionality that would otherwise fail [AMP validation](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md), for example:
+Bu tekniği kullanarak AMP Sayfanızda, aksi halde [AMP doğrulamasından](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) geçemeyecek her türlü ek işlevselliği değiştirebilirsiniz, örneğin:
 
-- Dynamic features that require custom JS.
-- Components that are customized/only relevant for your site.
+- Özel JS gerektiren dinamik özellikler.
+- Özelleştirilmiş/yalnızca sitenizle alakalı bileşenler.
