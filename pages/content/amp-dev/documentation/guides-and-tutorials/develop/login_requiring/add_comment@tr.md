@@ -1,20 +1,20 @@
 ---
-"$title": Add a comment
+"$title": Yorum ekleme
 "$order": '2'
-description: At this point, the user can add a comment using the amp-form, library. Notice how the presence of the form is conditional, depending on the state of the amp-access component ...
+description: 'Bu noktada, kullanıcı amp-form kütüphanesini kullanarak bir yorum ekleyebilir. Formun varlığının, amp-access bileşeninin durumuna bağlı olarak nasıl koşullu olduğuna dikkat edin:'
 ---
 
 <amp-img src="/static/img/comment.png" alt="Add comment" height="325" width="300"></amp-img>
 
-At this point, the user can add a comment using the [`amp-form`](../../../../documentation/components/reference/amp-form.md) library. Notice how the presence of the form is conditional, depending on the state of the [`amp-access`](../../../../documentation/components/reference/amp-access.md) component:
+Bu noktada, kullanıcı [`amp-form`](../../../../documentation/components/reference/amp-form.md) kütüphanesini kullanarak bir yorum ekleyebilir. Formun varlığının, [`amp-access`](../../../../documentation/components/reference/amp-access.md) bileşeninin durumuna bağlı olarak nasıl koşullu olduğuna dikkat edin:
 
 [sourcecode:html]
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
 [/sourcecode]
 
-We specify a POST method and a XHR action, as non XHR actions are not allowed with POST methods in AMP. Because this is a demo, we are not persisting comments, so it’s only possible to add one comment at the time; whenever a comment is added, the AMPByExample server replies with a JSON response containing the entered text with some additions, like a timestamp, an avatar and a name for the user.
+AMP'de POST yöntemlerinde XHR olmayan eylemlere izin verilmediğinden, bir POST yöntemi ve bir XHR eylemi belirtiyoruz. Bu bir demo olduğu için yorumlarda ısrarcı değiliz, bu nedenle bir seferde sadece bir yorum eklemek mümkündür; bir yorum eklendiğinde, AMPByExample sunucusu, girilen metni içeren bir JSON yanıtıyla yanıt verir ve bir zaman damgası, bir avatar ve kullanıcı için bir ad gibi bazı eklemeler içerir.
 
-Here's an example of JSON response:
+JSON yanıtının bir örneğini burada bulabilirsiniz:
 
 [sourcecode:json]
 {"Datetime":"09:34:21",
@@ -23,7 +23,7 @@ Here's an example of JSON response:
 "UserImg":"/img/ic_account_box_black_48dp_1x.png"}
 [/sourcecode]
 
-The form component will simply display those values inside the page using the [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md) template:
+Form bileşeni, [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md) şablonunu kullanarak bu değerleri sayfanın içinde görüntüleyecektir:
 
 [sourcecode:html]
 <div submit-success>
@@ -39,7 +39,7 @@ The form component will simply display those values inside the page using the [`
 </div>
 [/sourcecode]
 
-In this example, we are only checking if the value of the comment is not empty; if the value is empty, we return an error that causes the following code to execute
+Bu örnekte, sadece yorumun değerinin boş olup olmadığını kontrol ediyoruz; değer boşsa, aşağıdaki kodun yürütülmesine neden olan bir hata ile yanıt veriyoruz
 
 [sourcecode:html]
 <div submit-error>
@@ -49,7 +49,7 @@ In this example, we are only checking if the value of the comment is not empty; 
 </div>
 [/sourcecode]
 
-As an extra touch, we add the `required` attribute to enforce the presence of comment text before submitting the comment:
+Fazladan bir dokunuş olarak, yorumu göndermeden önce yorum metninin varlığını zorunlu kılmak için `required` özelliği ekliyoruz:
 
 <amp-img src="/static/img/enforce-comment.png" alt="Enforce comment" height="325" width="300"></amp-img>
 
@@ -57,6 +57,6 @@ As an extra touch, we add the `required` attribute to enforce the presence of co
 <input type="text" class="data-input" name="text" placeholder="Your comment..." required>
 [/sourcecode]
 
-When you add a comment and click the submit button, you should now see something similar to the following screenshot:
+Bir yorum ekleyip gönder düğmesini tıkladığınızda, şimdi aşağıdaki ekran görüntüsüne benzer bir şey görmelisiniz:
 
 <amp-img src="/static/img/logout-button.png" alt="Comment added" height="352" width="300"></amp-img>
