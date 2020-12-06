@@ -1,14 +1,10 @@
 ---
-"$title": AMP HTML Specification
+"$title": AMP HTML Teknik Özellikleri
 order: '8'
 formats:
 - websites
 teaser:
-  text: |2-
-
-    AMP HTML is a subset of HTML for authoring content pages such as news
-    articles in a way that guarantees certain baseline performance
-    characteristics.
+  text: AMP HTML, belirli temel performans özelliklerini garanti edecek şekilde haber makaleleri gibi içerik sayfaları yazmayı sağlayan bir HTML alt kümesidir.
 ---
 
 <!--
@@ -180,30 +176,30 @@ Tahmin edilebilir performans, AMP HTML için temel bir tasarım hedefidir. Önce
 
 ### Gerekli işaretleme <a name="required-markup"></a>
 
-AMP HTML documents MUST
+AMP HTML belgelerinde şunlar ZORUNLUDUR:
 
-- <a name="dctp"></a>start with the doctype `<!doctype html>`. [🔗](#dctp)
-- <a name="ampd"></a>contain a top-level `<html ⚡>` tag (`<html amp>` is accepted as well). [🔗](#ampd)
-- <a name="crps"></a>contain `<head>` and `<body>` tags (They are optional in HTML). [🔗](#crps)
-- <a name="canon"></a>contain a `<link rel="canonical" href="$SOME_URL">` tag inside their head that points to the regular HTML version of the AMP HTML document or to itself if no such HTML version exists. [🔗](#canon)
-- <a name="chrs"></a>contain a `<meta charset="utf-8">` tag as the first child of their head tag. [🔗](#chrs)
-- <a name="vprt"></a>contain a `<meta name="viewport" content="width=device-width">` tag inside their head tag. It's also recommended to include `minimum-scale=1` and `initial-scale=1`. [🔗](#vprt)
-- <a name="scrpt"></a>contain a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside their head tag. [🔗](#scrpt)
-- <a name="boilerplate"></a>contain the [AMP boilerplate code](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md) (`head > style[amp-boilerplate]` and `noscript > style[amp-boilerplate]`) in their head tag. [🔗](#boilerplate)
+- <a name="dctp"></a>`<!doctype html>` belge türü ile başlamak. [🔗](#dctp)
+- <a name="ampd"></a> üst düzey bir `<html ⚡>` etiketi içermek ( `<html amp>` de kabul edilir). [🔗](#ampd)
+- <a name="crps"></a> `<head>` ve `<body>` etiketleri içermek (bunlar HTML'de isteğe bağlıdır). [🔗](#crps)
+- <a name="canon"></a> AMP HTML belgesinin normal HTML sürümüne veya böyle bir HTML sürümü yoksa kendi kendisine işaret eden bir `<link rel="canonical" href="$SOME_URL">` etiketi başlık (head) bölümünde içermek. [🔗](#canon)
+- <a name="chrs"></a>başlık (head) etiketinin ilk alt öğesi olarak bir `<meta charset="utf-8">` etiketi içermek. [🔗](#chrs)
+- <a name="vprt"></a> head (başlık) etiketlerinin içinde bir `<meta name="viewport" content="width=device-width">` etiketi içermek. Ayrıca `minimum-scale=1` ve `initial-scale=1` dahil edilmesi önerilir. [🔗](#vprt)
+- <a name="scrpt"></a> head (başlık) etiketlerinin içinde bir `<script async src="https://cdn.ampproject.org/v0.js"></script>` etiketi içermek. [🔗](#scrpt)
+- <a name="boilerplate"></a> head (başlık) etiketinde [AMP ortak metin kodunu](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md) ( `head > style[amp-boilerplate]` ve `noscript > style[amp-boilerplate]` ) içermek. [🔗](#boilerplate)
 
 ### Meta veriler <a name="metadata"></a>
 
-It is encouraged that AMP HTML documents are annotated with standardized metadata: [Open Graph Protocol](http://ogp.me/), [Twitter Cards](https://dev.twitter.com/cards/overview), etc.
+AMP HTML belgelerinin standartlaştırılmış meta verilerle açıklanması önerilir: <a class="" href="http://ogp.me/">Açık Grafik Protokolü</a>, <a class="" href="https://dev.twitter.com/cards/overview">Twitter Cards</a> vb.
 
-We also recommend that AMP HTML documents are marked up with [schema.org/CreativeWork](https://schema.org/CreativeWork) or any of its more specific types such as [schema.org/NewsArticle](https://schema.org/NewsArticle) or [schema.org/BlogPosting](https://schema.org/BlogPosting).
+Ayrıca, AMP HTML belgelerinin [schema.org/CreativeWork](https://schema.org/CreativeWork) veya [schema.org/NewsArticle](https://schema.org/NewsArticle) veya [schema.org/BlogPosting](https://schema.org/BlogPosting) gibi daha spesifik türlerinden herhangi biriyle işaretlenmesini öneririz.
 
 ### HTML Etiketleri <a name="html-tags"></a>
 
-HTML tags can be used unchanged in AMP HTML. Certain tags have equivalent custom tags (such as `<img>` and `<amp-img>`) and other tags are outright prohibited:
+HTML etiketleri, AMP HTML'de değiştirilmeden kullanılabilir. Bazı etiketlerin özel eşdeğer etiketleri varken ( `<img>` ve `<amp-img>` gibi) bazı etiketler tamamen yasaktır:
 
 <table>
   <tr>
-    <th width="30%">Tag</th>
+    <th width="30%">Etiket</th>
     <th>Status in AMP HTML</th>
   </tr>
   <tr>
@@ -212,7 +208,7 @@ HTML tags can be used unchanged in AMP HTML. Certain tags have equivalent custom
   </tr>
   <tr>
     <td width="30%">noscript</td>
-    <td>Allowed. Can be used anywhere in the document. If specified, the content inside the <code><noscript></code> element displays if JavaScript is disabled by the user.</td>
+    <td>İzin verilir. Belgenin herhangi bir yerinde kullanılabilir. Belirtilirse, JavaScript kullanıcı tarafından devre dışı bırakılmışsa <code>&lt;noscript></code> öğesinin içindeki içerik görüntülenir.</td>
   </tr>
   <tr>
     <td width="30%">base</td>
@@ -220,11 +216,12 @@ HTML tags can be used unchanged in AMP HTML. Certain tags have equivalent custom
   </tr>
   <tr>
     <td width="30%">img</td>
-    <td>Replaced with <code>amp-img</code>.<br>         Please note: <code><img></code> is a <a href="https://www.w3.org/TR/html5/syntax.html#void-elements">Void Element according to HTML5</a>, so it does not have an end tag. However, <code><amp-img></code> does have an end tag <code></amp-img></code>.</td>
+    <td>
+<code>amp-img</code> ile değiştirilir.<br>         Lütfen unutmayın: <code>&lt;img></code>, <a href="https://www.w3.org/TR/html5/syntax.html#void-elements">HTML5'e göre bir Boş Öğedir</a>, bu yüzden bir kapama etiketi yoktur. Ancak,<code>&lt;amp-img></code> bir kapatma etiketine sahiptir <code>&lt;/amp-img></code>.</td>
   </tr>
     <tr>
     <td width="30%">picture</td>
-    <td>Prohibited. Serve different image formats by using the <a href="https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders?format=websites">fallback</a> attribute or provide multiple <a href="https://amp.dev/documentation/components/amp-img#attributes"><code>srcset</code> on <code><amp-img></code></a>.</td>
+    <td>Yasaktır. <a href="https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders?format=websites">fallback</a> özniteliğini kullanarak farklı resim biçimleri sunun ya da <a href="https://amp.dev/documentation/components/amp-img#attributes"><code>&lt;amp-img></code> üzerinde çoklu <code>srcset</code></a> ekleyin.</td>
   </tr>
   <tr>
     <td width="30%">video</td>
@@ -268,7 +265,7 @@ HTML tags can be used unchanged in AMP HTML. Certain tags have equivalent custom
   </tr>
   <tr>
     <td width="30%">input elements</td>
-    <td>Mostly allowed with <a href="https://amp.dev/documentation/components/amp-form#inputs-and-fields">exception of some input types</a>, namely, <code><input type=button></code>, <code><button type=image></code> are invalid. Related tags are also allowed: <code><fieldset></code>, <code><label></code>
+    <td>Çoğunlukla izin verilir, ancak <a href="https://amp.dev/documentation/components/amp-form#inputs-and-fields">bazı giriş türlerinde istisnalar vardır</a>, yani <code>&lt;input type="button"></code>, <code>&lt;button type="image"></code> geçersizdir. İlgili bazı etiketlere de izin verilir: <code>&lt;fieldset></code>, <code>&lt;label></code>
 </td>
   </tr>
   <tr>
@@ -278,7 +275,7 @@ HTML tags can be used unchanged in AMP HTML. Certain tags have equivalent custom
   <tr>
     <td width="30%"><code><a name="cust"></a>style</code></td>
     <td>
-<a href="#boilerplate">Required style tag for amp-boilerplate</a>. One additional style tag is allowed in head tag for the purpose of custom styling. This style tag must have the attribute <code>amp-custom</code>. <a href="#cust">🔗</a>
+<a href="#boilerplate">amp-boilerplate için gerekli stil etiketi</a> . Özel stil oluşturmak amacıyla başlık (head) etiketinde ek bir stil etiketine izin verilir. Bu stil etiketi, <code>amp-custom</code> özniteliğine sahip olmalıdır. <a href="#cust">🔗</a>
 </td>
   </tr>
   <tr>
@@ -301,98 +298,98 @@ HTML tags can be used unchanged in AMP HTML. Certain tags have equivalent custom
   </tr>
 </table>
 
-Validator implementations should use a white list based on the HTML5 specification with the above tags removed. See [AMP Tag Addendum](https://github.com/ampproject/amphtml/blob/master/spec/amp-tag-addendum.md).
+Doğrulayıcı uygulamaları, yukarıdaki etiketler kaldırılarak HTML5 teknik özelliklerine dayalı bir beyaz liste kullanmalıdır. [AMP Etiketi Eki'ne](https://github.com/ampproject/amphtml/blob/master/spec/amp-tag-addendum.md) bakın.
 
 ### Yorumlar <a name="comments"></a>
 
-Conditional HTML comments are not allowed.
+Koşullu HTML yorumlarına izin verilmez.
 
 ### HTML öznitellikleri <a name="html-attributes"></a>
 
-Attribute names starting with `on` (such as `onclick` or `onmouseover`) are disallowed in AMP HTML. The attribute with the literal name `on` (no suffix) is allowed.
+`on` ile başlayan öznitelik isimlerine (örneğin `onclick` veya `onmouseover`) AMP HTML'de izin verilmez. Tek başına `on` isimli özniteliğe (hiçbir sonek olmadan) izin verilir.
 
-XML-related attributes, such as xmlns, xml:lang, xml:base, and xml:space are disallowed in AMP HTML.
+xmlns, xml:lang, xml:base ve xml:space gibi XML ile ilgili özniteliklere AMP HTML'de izin verilmez.
 
-Internal AMP attributes prefixed with `i-amp-` are disallowed in AMP HTML.
+AMP HTML'de `i-amp-` ön ekine sahip dahili AMP özniteliklerine izin verilmez.
 
 ### Sınıflar <a name="classes"></a>
 
-Internal AMP class names prefixed with `-amp-` and `i-amp-` are disallowed in AMP HTML.
+AMP HTML'de `-amp-` ve `i-amp-` ön ekine sahip dahili AMP sınıf adlarına izin verilmez.
 
-Consult [AMP documentation](https://github.com/ampproject/amphtml/blob/master/spec/amp-css-classes.md) for meaning of class names prefixed with `amp-`. The use of these classes is allowed and meant to allow customization of some features of AMP runtime and extensions.
+<code>amp-</code> ön ekine sahip sınıf adlarının anlamı için <a class="" href="https://github.com/ampproject/amphtml/blob/master/spec/amp-css-classes.md">AMP belgelerine</a> bakın. Bu sınıfların kullanımına izin verilir ve AMP çalışma zamanı ve uzantılarının bazı özelliklerinin özelleştirilmesine izin verilmesi amaçlanır.
 
-All other authored class names are allowed in AMP HTML markup.
+AMP HTML işaretlemesinde diğer tüm özel olarak oluşturulmuş sınıf adlarına izin verilir.
 
 ### Kimlikler <a name="ids"></a>
 
-Certain ID names are disallowed in AMP HTML, such as IDs prefixed with `-amp-` and `i-amp-` that may conflict with internal AMP IDs.
+AMP HTML'de `-amp-` ve `i-amp-` ön ekli kimlikler gibi, dahili AMP kimlikleriyle çakışabilecek belirli kimlik adlarına izin verilmez.
 
-Consult the AMP documentation for specific extensions before using `amp-` and `AMP` IDs to avoid conflict with the features provided by these extensions, such as `amp-access`.
+`amp-access` gibi uzantıların sunduğu özelliklerle çakışmayı önlemek için `amp-` ve `AMP` kimliklerini kullanmadan önce bu uzantılara dair AMP belgelerine göz atın.
 
-View the full list of disallowed ID names by searching for `mandatory-id-attr` [here](https://github.com/ampproject/amphtml/blob/master/spec/../validator/validator-main.protoascii).
+<a class="" href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">Burada</a> <code>mandatory-id-attr</code> araması yaparakizin verilmeyen kimlik adlarının tam listesini görüntüleyin.
 
 ### Bağlantılar <a></a>
 
-The `javascript:` schema is disallowed.
+`javascript:` şemaya izin verilmez.
 
 ### Stil sayfaları <a name="stylesheets"></a>
 
-Major semantic tags and the AMP custom elements come with default styles to make authoring a responsive document reasonably easy. An option to opt out of default styles may be added in the future.
+Büyük semantik etiketler ve AMP özel öğeleri, duyarlı bir belge oluşturmayı makul ölçüde kolaylaştırmak için varsayılan stillerle birlikte gelir. Varsayılan stilleri devre dışı bırakma seçeneği gelecekte eklenebilir.
 
 #### @ kuralları <a name="-rules"></a>
 
-The following @-rules are allowed in stylesheets:
+Aşağıdaki @ kurallarına stil sayfalarında izin verilir:
 
 `@font-face`, `@keyframes`, `@media`, `@page`, `@supports`.
 
-`@import` will not be allowed. Others may be added in the future.
+`@import` öğesine izin verilmez. Gelecekte diğerleri eklenebilir.
 
 #### Yazar stil sayfaları <a name="author-stylesheets"></a>
 
-Authors may add custom styles to a document using a single `<style amp-custom>` tag in the head of the document or inline styles.
+Yazarlar, belgenin başlığında veya satır içi stillerde tek bir `<style amp-custom>` etiketi kullanarak bir belgeye özel stiller ekleyebilir.
 
-`@keyframes` rules are allowed in the `<style amp-custom>`. However, if they are too many of them, it's recommended to place them in the additional `<style amp-keyframes>` tag, which must be located at the end of the AMP document. For details, see the [Keyframes stylesheet](#keyframes-stylesheet) section of this document.
+`@keyframes` kurallarına `<style amp-custom>` içinde izin verilir. Ancak, sayıları fazlaysa, bunların AMP belgesinin sonunda yer alması gereken ek `<style amp-keyframes>` etiketine yerleştirilmesi önerilir. Ayrıntılar için bu belgenin [Ana Kareler stil sayfası](#keyframes-stylesheet) bölümüne bakın.
 
 #### Seçiciler <a name="selectors"></a>
 
-The following restrictions apply to selectors in author style sheets:
+Yazar tarafından oluşturulan stil sayfalarındaki seçiciler için aşağıdaki kısıtlamalar geçerlidir:
 
 ##### Sınıf ve etiket adları <a name="class-and-tag-names"></a>
 
-Class names, IDs, tag names and attributes, in author stylesheets, may not start with the string `-amp-` and `i-amp-`. These are reserved for internal use by the AMP runtime. It follows, that the user's stylesheet may not reference CSS selectors for `-amp-` classes, `i-amp-` IDs and `i-amp-` tags and attributes. These classes, IDs and tag/attribute names are not meant to be customized by authors. Authors, however, can override styles of `amp-` classes and tags for any CSS properties not explicitly forbidden by these components' spec.
+Yazar tarafından oluşturulan stil sayfalarındaki sınıf adları, kimlikler, etiket adları ve öznitelikler `-amp-` ve `i-amp-` dizesiyle başlayamaz. Bunlar, AMP çalışma zamanı tarafından dahili kullanım için ayrılmıştır. Buna göre, kullanıcının stil sayfası `-amp-` sınıfları, `i-amp-` kimlikleri ve `i-amp-` etiketleri için CSS seçicilere ve özniteliklere başvuramaz. Bu sınıflar, kimlikler ve etiket/öznitelik adlarının yazarlar tarafından özelleştirilmesi amaçlanmamıştır. Ancak yazarlar, `amp-` sınıflarının stillerini ve bu bileşenlerin teknik şartları tarafından açıkça yasaklanmayan tüm CSS özellikleri için etiketlerini geçersiz kılabilir.
 
-To prevent usage of attribute selectors to circumvent class name limitations it is generally not allowed for CSS selectors to contain tokens and strings starting with `-amp-` and `i-amp-`.
+Özellik seçicilerin sınıf adı sınırlamalarını aşmak üzere kullanılmasını önlemek için CSS seçicilerinin `-amp-` ve `i-amp-` ile başlayan belirteçler ve dizeler içermesine genellikle izin verilmez.
 
 #### Önemli <a name="important"></a>
 
-Usage of the `!important` qualifier is not allowed. This is a necessary requirement to enable AMP to enforce its element sizing invariants.
+`!important` niteleyicisinin kullanımına izin verilmez. Bu, AMP'nin öğe boyutlandırma değişmezlerini uygulamasını sağlamak için zorunlu bir gerekliliktir.
 
 #### Özellikler <a name="properties"></a>
 
-AMP only allows transitions and animations of properties that can be GPU accelerated in common browsers. We currently white list: `opacity`, `transform` (also `-vendorPrefix-transform`).
+AMP yalnızca genel tarayıcılarda GPU ile hızlandırılabilen özelliklerin geçişlerine ve animasyonlarına izin verir. Şu anda aşağıdakileri beyaz listeye alıyoruz: `opacity`, `transform` (ayrıca `-vendorPrefix-transform`).
 
-In the following examples `<property>` needs to be in the white list above.
+Aşağıdaki örneklerde `<property>` yukarıdaki beyaz listede yer almalıdır.
 
-- `transition <property>` (also -vendorPrefix-transition)
-- `@keyframes name { from: {<property>: value} to {<property: value>} }` (also `@-vendorPrefix-keyframes`)
+- `transition <property>` (ayrıca -vendorPrefix-transition)
+- `@keyframes name { from: {<property>: value} to {<property: value>} }` (ayrıca `@-vendorPrefix-keyframes`)
 
 #### En büyük boyut <a name="maximum-size"></a>
 
-It is a validation error if the author stylesheet or inline styles together are larger than 75,000 bytes.
+Yazar stil sayfası veya satır içi stillerin birlikte 75.000 bayttan büyük olması bir doğrulama hatasıdır.
 
 ### Ana kareler stil sayfası <a name="keyframes-stylesheet"></a>
 
-In addition to the `<style amp-custom>`, authors may also add the `<style amp-keyframes>` tag, which is allowed specifically for keyframes animations.
+Yazarlar, `<style amp-custom>` etiketine ek olarak, özellikle ana kare animasyonları için izin verilen `<style amp-keyframes>` etiketini de ekleyebilir.
 
-The following restrictions apply to the `<style amp-keyframes>` tag:
+`<style amp-keyframes>` etiketi için aşağıdaki kısıtlamalar geçerlidir:
 
-1. May only be placed as the last child of the document's `<body>` element.
-2. May only contain `@keyframes`, `@media`, `@supports` rules and their combination.
-3. May not be larger than 500,000 bytes.
+1. Yalnızca belgenin `<body>` öğesinin son alt öğesi olarak yerleştirilebilir.
+2. Yalnızca `@keyframes` , `@media` , `@supports` kuralları ve bunların kombinasyonunu içerebilir.
+3. 500.000 bayttan büyük olamaz.
 
-The reason the `<style amp-keyframes>` tag exists is because keyframes rules are often bulky even for moderately complicated animations, which leads to slow CSS parsing and first contentful paint. But such rules often exceed the size limit imposed on `<style amp-custom>`. Putting such keyframes declarations at the bottom of the document in the `<style amp-keyframes>` allows them to exceed size limitations. And since keyframes are not render-blocking, it also avoids blocking first contentful paint to parse them.
+`<style amp-keyframes>` etiketinin var olmasının nedeni, animasyon karesi kurallarının orta derecede karmaşık animasyonlar için bile genellikle hantal olmasıdır, ki bu da yavaş CSS ayrıştırmasına ve ilk içerikli boyamaya neden olur. Ancak bu tür kurallar genellikle `<style amp-custom>` üzerinde uygulanan boyut sınırını aşar. Bu tür animasyon karesi bildirimlerini `<style amp-keyframes>` içinde belgenin altına koymak, boyut sınırlamalarını aşmalarına olanak tanır. Ve bunu yapmak, ana kareler sayfa oluşturmayı engellemediğinden, bunları ayrıştırmak için ilk içerikli boyamanın engellenmesini de önler.
 
-Example:
+Örnek:
 
 [sourcecode:html]
 <style amp-keyframes>
@@ -407,9 +404,9 @@ Example:
 
 ### Özel yazı tipleri <a name="custom-fonts"></a>
 
-Authors may include stylesheets for custom fonts. The 2 supported methods are link tags pointing to white listed font providers and `@font-face` inclusion.
+Yazarlar, özel yazı tipleri için stil sayfaları ekleyebilir. Desteklenen 2 yöntem, beyaz listedeki yazı tipi sağlayıcılarına bağlantı veren link etiketleri ve `@font-face` ekleme işlemedir.
 
-Example:
+Örnek:
 
 [sourcecode:html]
 <link
@@ -418,86 +415,86 @@ Example:
 />
 [/sourcecode]
 
-Font providers can be white listed if they support CSS-only integrations and serve over HTTPS. The following origins are currently allowed for font serving via link tags:
+Yazı tipi sağlayıcıları, yalnızca CSS entegrasyonlarını destekliyorsa ve HTTPS üzerinden hizmet veriyorsa beyaz listeye alınabilir. Aşağıdaki kaynaklara şu anda bağlantı etiketleri aracılığıyla yazı tipi sunulmasına izin verilmektedir:
 
 - Fonts.com: `https://fast.fonts.net`
 - Google Fonts: `https://fonts.googleapis.com`
 - Font Awesome: `https://maxcdn.bootstrapcdn.com, https://use.fontawesome.com`
-- [Typekit](https://helpx.adobe.com/typekit/using/google-amp.html): `https://use.typekit.net/kitId.css` (replace `kitId` accordingly)
+- [Typekit](https://helpx.adobe.com/typekit/using/google-amp.html): `https://use.typekit.net/kitId.css` (`kitId` öğesini uygun şekilde değiştirin)
 
-IMPLEMENTERS NOTE: Adding to this list requires a change to the AMP Cache CSP rule.
+UYGULAYICILAR NOT: Bu listeye ekleme yapmak, AMP Önbelleği CSP kuralında bir değişiklik gerektirir.
 
-Authors are free to include all custom fonts via an `@font-face` CSS instruction via their custom CSS. Fonts included via `@font-face` must be fetched via the HTTP or HTTPS scheme.
+Yazarlar, kendi özel CSS'leri yoluyla bir <code>@font-face</code> CSS talimatı aracılığıyla tüm özel yazı tiplerini eklemekte özgürdür. <code>@font-face</code> aracılığıyla eklenen yazı tipleri, HTTP veya HTTPS şeması aracılığıyla getirilmelidir.
 
 ## AMP çalışma zamanı <a name="amp-runtime"></a>
 
-The AMP runtime is a piece of JavaScript that runs inside every AMP document. It provides implementations for AMP custom elements, manages resource loading and prioritization and optionally includes a runtime validator for AMP HTML for use during development.
+AMP çalışma zamanı, her AMP belgesinin içinde çalışan bir JavaScript parçasıdır. AMP özel öğeleri için uygulamalar sağlar, kaynak yüklemesini ve önceliklendirmeyi yönetir ve isteğe bağlı olarak geliştirme sırasında kullanılmak üzere AMP HTML için bir çalışma zamanı doğrulayıcısı içerir.
 
-The AMP runtime is loaded via the mandatory <code><script src="https://cdn.ampproject.org/v0.js"></script></code> tag in the AMP document <code></code>.
+AMP çalışma zamanı, AMP belgesi `<head>` etiketindeki zorunlu `<script src="https://cdn.ampproject.org/v0.js"></script>` etiketi aracılığıyla yüklenir.
 
-The AMP runtime can be placed into a development mode for any page. Development mode will trigger AMP validation on the embedded page, which will emit the validation status and any errors to the JavaScript developer console. Development mode may be triggered by appending `#development=1` to the URL of the page.
+AMP çalışma zamanı, herhangi bir sayfa için bir geliştirme moduna yerleştirilebilir. Geliştirme modu, gömülü sayfada AMP doğrulamasını tetikler ve bu işlem, doğrulama durumunu ve JavaScript geliştirici konsoluna yönelik tüm hataları gösterir. Geliştirme modu, sayfanın URL'sine `#development=1` eklenerek tetiklenebilir.
 
 ## Kaynaklar <a name="resources"></a>
 
-Resources such as images, videos, audio files or ads must be included into an AMP HTML file through custom elements such as `<amp-img>`. We call them “managed resources” because whether and when they will be loaded and displayed to the user is decided by the AMP runtime.
+Resimler, videolar, ses dosyaları veya reklamlar gibi kaynaklar, `<amp-img>` gibi özel öğeler aracılığıyla bir AMP HTML dosyasına eklenmelidir. Bunlara "yönetilen kaynaklar" diyoruz çünkü bunların yüklenip yüklenmeyeceğine ve kullanıcıya ne zaman görüntüleneceğine AMP çalışma zamanı tarafından karar verilir.
 
-There are no particular guarantees as to the loading behavior of the AMP runtime, but it should generally strive to load resources quickly enough, so that they are loaded by the time the user would like to see them if possible. The runtime should prioritize resources currently in the viewport and attempt to predict changes to the viewport and preload resources accordingly.
+AMP çalışma zamanının yükleme davranışına ilişkin belirli bir garanti yoktur, ancak genellikle kaynakları yeterince hızlı yüklemeye çalışmalıdır, kullanıcı mümkünse bunları görmek istediği zaman, yüklenmiş  olmalıdırlar. Çalışma zamanı, şu anda görünüm alanında bulunan kaynaklara öncelik vermeli ve görünüm alanındaki değişiklikleri tahmin etmeye ve kaynakları buna göre önceden yüklemeye çalışmalıdır.
 
-The AMP runtime may at any time decide to unload resources that are not currently in viewport or reuse the resource containers such as iframes to reduce overall RAM consumption.
+AMP çalışma zamanı, herhangi bir zamanda, halihazırda görünüm alanında olmayan kaynakları kaldırmaya veya genel RAM tüketimini azaltmak için iframe'ler gibi kaynak kapsayıcılarını yeniden kullanmaya karar verebilir.
 
 ## AMP Bileşenleri <a name="amp-components"></a>
 
-AMP HTML uses custom elements called “AMP components” to substitute built-in resource-loading tags such as `<img>` and `<video>` and to implement features with complex interactions such as image lightboxes or carousels.
+AMP HTML, `<img>` ve `<video>` gibi yerleşik kaynak yükleme etiketlerini değiştirmek ve resim lightbox'ları veya döngüler gibi karmaşık etkileşimli özellikleri uygulamak için "AMP bileşenleri" adı verilen özel öğeler kullanır.
 
-See the [AMP component spec](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-components.md) for details about supported components.
+Desteklenen bileşenlerle ilgili ayrıntılar için [AMP bileşen teknik özelliklerine](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-components.md) bakın.
 
-There are 2 types of supported AMP components:
+Desteklenen 2 tür AMP bileşeni vardır:
 
-1. Built-in
-2. Extended
+1. Yerleşik
+2. Genişletilmiş
 
-Built-in components are always available in an AMP document and have a dedicated custom element such as `<amp-img>`. Extended components must be explicitly included into the document.
+Yerleşik bileşenler her zaman bir AMP belgesinde bulunur ve `<amp-img>` gibi özel bir öğeye sahiptir. Genişletilmiş bileşenler, belgeye açıkça dahil edilmelidir.
 
 ### Ortak öznitelikler <a name="common-attributes"></a>
 
 #### `layout`, `width`, `height`, `media`, `placeholder`, `fallback` <a name="layout-width-height-media-placeholder-fallback"></a>
 
-These attributes define the layout of an element. The key goal here is to ensure that the element can be displayed and its space can be properly reserved before any of the JavaScript or remote resources have been downloaded.
+Bu öznitelikler bir öğenin yerleşimini tanımlar. Buradaki temel amaç, herhangi bir JavaScript veya uzak kaynak indirilmeden önce alanının uygun şekilde rezerve edilebilmesini ve öğenin görüntülenebilmesini sağlamaktır.
 
-See the [AMP Layout System](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-layout.md) for details about the layout system.
+Yerleşim sistemi hakkında ayrıntılar için [AMP Yerleşim Sistemine](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-layout.md) göz atın.
 
 #### `on` <a name="on"></a>
 
-The `on` attribute is used to install event handlers on elements. The events that are supported depend on the element.
+`on` özniteliği, öğelerde olay işleyicisi yüklemek için kullanılır. Desteklenen olaylar, öğelere bağlıdır.
 
-The value for the syntax is a simple domain specific language of the form:
+Sözdiziminin değeri, formun etki alanına özgü basit bir dilidir:
 
 [sourcecode:javascript]
 eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 [/sourcecode]
 
-Example: `on="tap:fooId.showLightbox"`
+Örnek: `on="tap:fooId.showLightbox"`
 
-If `methodName` is omitted the default method is executed if defined for the element. Example: `on="tap:fooId"`
+`methodName` atlanırsa, varsayılan yöntem öğe için tanımlandığı takdirde çalıştırılır. Örnek: `on="tap:fooId"`
 
-Some actions, if documented, may accept arguments. The arguments are defined between parentheses in `key=value` notation. The accepted values are:
+Belgelendikleri takdirde bazı eylemler argümanlar kabul edebilir. Bağımsız değişkenler, <code>key=value</code> gösteriminde parantezler arasında tanımlanır. Kabul edilen değerler şunlardır:
 
-- simple unquoted strings: `simple-value`;
-- quoted strings: `"string value"` or `'string value'`;
-- boolean values: `true` or `false`;
-- numbers: `11` or `1.1`.
+- basit tırnak işaretsiz dizeler: `simple-value`;
+- tırnak işaretli dizeler: `"dize değeri"` veya `'dize değeri'`;
+- boole değerleri: `true` veya `false`;
+- sayılar: `11` veya `1.1` .
 
-You can listen to multiple events on an element by separating the two events with a semicolon `;`.
+İki olayı noktalı virgülle ayırarak bir öğedeki birden çok olayı dinleyebilirsiniz `;`.
 
-Example: `on="submit-success:lightbox1;submit-error:lightbox2"`
+Örnek: `on="submit-success:lightbox1;submit-error:lightbox2"`
 
-Read more about [AMP Actions and Events](https://github.com/ampproject/amphtml/blob/master/spec/./amp-actions-and-events.md).
+[AMP Eylemleri ve Olayları](https://github.com/ampproject/amphtml/blob/master/spec/./amp-actions-and-events.md) hakkında daha fazla bilgi edinin.
 
 ### Genişletilmiş bileşenler <a name="extended-components"></a>
 
-Extended components are components that do not necessarily ship with the AMP runtime. Instead they must be explicitly included into the document.
+Genişletilmiş bileşenler, AMP çalışma zamanıyla birlikte gönderilmesi gerekmeyen bileşenlerdir. Bunun yerine, belgeye açıkça dahil edilmelidirler.
 
-Extended components are loaded by including a `<script>` tag in the head of the document like this:
+Genişletilmiş bileşenler, aşağıdaki gibi belgenin başlığına bir `<script>` etiketi eklenerek yüklenirler:
 
 [sourcecode:html]
 <script
@@ -507,15 +504,15 @@ Extended components are loaded by including a `<script>` tag in the head of the 
 ></script>
 [/sourcecode]
 
-The `<script>` tag must have an `async` attribute and must have a `custom-element` attribute referencing the name of the element.
+`<script>` etiketi bir `async` özniteliğine ve öğe adına referans veren `custom-element` özniteliğine sahip olmalıdır.
 
-Runtime implementations may use the name to render placeholders for these elements.
+Çalışma zamanı uygulamaları, bu öğelere yer tutucular oluşturmak için adı kullanabilir.
 
-The script URL must start with `https://cdn.ampproject.org` and must follow a very strict pattern of `/v\d+/[a-z-]+-(latest|\d+|\d+\.\d+)\.js`.
+Betik URL'si `https://cdn.ampproject.org` ile başlamalı ve çok sıkı bir `/v\d+/[a-z-]+-(latest|\d+|\d+\.\d+)\.js` örüntüsü izlemelidir.
 
 ##### URL <a name="url"></a>
 
-The URL for extended components is of the form:
+Genişletilmiş bileşenlerin URL'si şu biçimdedir:
 
 [sourcecode:http]
 https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
@@ -523,15 +520,15 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 
 ##### Sürüm oluşturma <a name="versioning"></a>
 
-See the [AMP versioning policy](https://github.com/ampproject/amphtml/blob/master/spec/amp-versioning-policy.md).
+[AMP sürüm oluşturma politikasına](https://github.com/ampproject/amphtml/blob/master/spec/amp-versioning-policy.md) bakın.
 
 ### Şablonlar <a name="templates"></a>
 
-Templates render HTML content based on the language-specific template and provided JSON data.
+Şablonlar, dile özgü şablona ve sağlanan JSON verilerine göre HTML içeriğini oluşturur.
 
-See the [AMP template spec](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md) for details about supported templates.
+Desteklenen şablonlarla ilgili ayrıntılar için [AMP şablon teknik özelliklerine](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md) bakın.
 
-Templates are not shipped with the AMP runtime and have to be downloaded just as with extended elements. Extended components are loaded by including a `<script>` tag in the head of the document like this:
+Şablonlar, AMP çalışma zamanıyla birlikte gönderilmez ve genişletilmiş öğelerde olduğu gibi indirilmeleri gerekir. Genişletilmiş bileşenler, aşağıdaki gibi belgenin başlığına bir `<script>` etiketi eklenerek yüklenir:
 
 [sourcecode:html]
 <script
@@ -541,9 +538,9 @@ Templates are not shipped with the AMP runtime and have to be downloaded just as
 ></script>
 [/sourcecode]
 
-The `<script>` tag must have an `async` attribute and must have a `custom-template` attribute referencing the type of the template. The script URL must start with `https://cdn.ampproject.org` and must follow a very strict pattern of `/v\d+/[a-z-]+-(latest|\d+|\d+\.\d+)\.js`.
+`<script>` etiketi bir `async` özniteliği içermeli ve şablon türüne referans veren bir `custom-template` özniteliğine sahip olmalıdır. Betik URL'si `https://cdn.ampproject.org` ile başlamalı ve çok sıkı `/v\d+/[a-z-]+-(latest|\d+|\d+\.\d+)\.js` örüntüsünü izlemelidir.
 
-The templates are declared in the document as following:
+Şablonlar belgede şu şekilde bildirilir:
 
 [sourcecode:html]
 <template type="amp-mustache" id="template1">
@@ -551,17 +548,17 @@ The templates are declared in the document as following:
 </template>
 [/sourcecode]
 
-The `type` attribute is required and must reference a declared `custom-template` script.
+`type` özniteliği gereklidir ve bildirilmiş bir `custom-template` betiğe referans vermelidir.
 
-The `id` attribute is optional. Individual AMP elements discover their own templates. Typical scenarios would involve an AMP element looking for a `<template>` either among its children or referenced by ID.
+`id` özniteliği isteğe bağlıdır. Bağımsız AMP öğeleri kendi şablonlarını keşfeder. Tipik senaryolar, alt öğeleri arasında veya kimlik ile referans vererek `<template>` arayan bir AMP öğesini içerir.
 
-The syntax within the template element depends on the specific template language. However, the template language could be restricted within AMP. For instance, in accordance with the "template" element, all productions have to be over a valid well-formed DOM. All of the template outputs are also subject to sanitizing to ensure AMP-valid output.
+Şablon öğesi içindeki sözdizimi, belirli bir şablon diline bağlıdır. Bununla birlikte, şablon dili AMP içinde kısıtlanabilir. Örneğin, "template" öğesine göre, tüm oluşturmaların geçerli, iyi biçimlendirilmiş bir DOM üzerinde olması gerekir. Tüm şablon çıktıları, AMP için geçerli çıktı oluşturulduğundan emin olmak için temizlenir.
 
-To learn about the syntax and restrictions for an template, visit the [template's documentation](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md#templates).
+Bir şablonun sözdizimi ve kısıtlamaları hakkında bilgi edinmek için [şablonun belgelerine](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md#templates) bakın.
 
 ##### URL <a name="url-1"></a>
 
-The URL for extended components is of the form:
+Genişletilmiş bileşenlerin URL'si şu biçimdedir:
 
 [sourcecode:http]
 https://cdn.ampproject.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
@@ -569,21 +566,21 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
 
 ##### Sürüm oluşturma <a name="versioning-1"></a>
 
-See versioning of custom elements for more details.
+Daha fazla ayrıntı için özel öğelerin sürümlerine bakın.
 
 ## Güvenlik <a name="security"></a>
 
-AMP HTML documents must not trigger errors when served with a Content Security Policy that does not include the keywords `unsafe-inline` and `unsafe-eval`.
+AMP HTML belgeleri, `unsafe-inline` ve `unsafe-eval` anahtar kelimelerini içermeyen bir İçerik Güvenlik Politikası ile sunulduğunda hataları tetiklememelidir.
 
-The AMP HTML format is designed so that is always the case.
+AMP HTML biçimi, her zaman böyle olacak şekilde tasarlanmıştır.
 
-All AMP template elements must go through AMP security review before they can be submitted into AMP repository.
+Tüm AMP şablon öğeleri, AMP havuzuna gönderilmeden önce AMP güvenlik incelemesinden geçmelidir.
 
 ## SVG <a name="svg"></a>
 
-Currently, the following SVG elements are allowed:
+Şu anda aşağıdaki SVG öğelerine izin verilmektedir:
 
-- basics: "g", "glyph", "glyphRef", "image", "marker", "metadata", "path", "solidcolor", "svg", "switch", "view"
+- temel öğeler: "g", "glyph", "glyphRef", "image", "marker", "metadata", "path", "solidcolor", "svg", "switch", "view"
 - shapes: "circle", "ellipse", "line", "polygon", "polyline", "rect"
 - text: "text", "textPath", "tref", "tspan"
 - rendering: "clipPath", "filter", "hkern", "linearGradient", "mask", "pattern", "radialGradient", "vkern"
@@ -591,26 +588,26 @@ Currently, the following SVG elements are allowed:
 - filter: "feColorMatrix", "feComposite", "feGaussianBlur", "feMerge", "feMergeNode", "feOffset", "foreignObject"
 - ARIA: "desc", "title"
 
-As well as these attributes:
+Bu özniteliklerin yanı sıra:
 
 - "xlink:href": only URIs starting with "#" are allowed
 - "style"
 
 ## AMP belge keşfi <a name="amp-document-discovery"></a>
 
-The mechanism described below provides a standardized way for software to discover whether an AMP version exists for a canonical document.
+Aşağıda açıklanan mekanizma, standart bir belgenin AMP sürümünün var olup olmadığını yazılımın keşfetmesi için standartlaştırılmış bir yol sunar.
 
-If an AMP document exists that is an alternative representation of a canonical document, then the canonical document should point to the AMP document via a `link` tag with the [relation "amphtml"](http://microformats.org/wiki/existing-rel-values#HTML5_link_type_extensions).
+Standart bir belgenin alternatif bir temsili olan bir AMP belgesi mevcutsa, standart belge <a class="" href="http://microformats.org/wiki/existing-rel-values#HTML5_link_type_extensions">"amphtml" ilişkisine</a> sahip bir <code>link</code> etiketi aracılığıyla AMP belgesine referans vermelidir.
 
-Example:
+Örnek:
 
 [sourcecode:html]
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html" />
 [/sourcecode]
 
-The AMP document itself is expected to point back to its canonical document via a `link` tag with the relation "canonical".
+AMP belgesinin kendisinin, "standart" ilişkiye sahip bir `link` etiketi aracılığıyla kendi standart belgesine geri referans vermesi beklenir.
 
-Example:
+Örnek:
 
 [sourcecode:html]
 <link
@@ -619,6 +616,6 @@ Example:
 />
 [/sourcecode]
 
-(If a single resource is simultaneously the AMP *and* the canonical document, the canonical relation should point to itself--no "amphtml" relation is required.)
+(Tek bir kaynak aynı anda AMP *ve* standart belge ise, standart ilişki kendi kendisine işaret etmelidir - "amphtml" ilişkisi gerekmez.)
 
-Note that for widest compatibility with AMP-consuming systems, it should be possible to read the "amphtml" relation without executing JavaScript. (That is, the tag should be present in the raw HTML, and not injected via JavaScript.)
+AMP tüketen sistemlerle en geniş uyumluluk için, JavaScript'i çalıştırmadan "amphtml" ilişkisini okumanın mümkün olması gerektiğini unutmayın. (Diğer bir deyişle, etiket ham HTML'de bulunmalı ve JavaScript aracılığıyla enjekte edilmemelidir.)
