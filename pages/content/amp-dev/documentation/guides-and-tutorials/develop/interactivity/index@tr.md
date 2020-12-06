@@ -12,7 +12,7 @@ formats:
 
 Bu eğitimde, [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) ile harika, etkileşimli AMP sayfaları oluşturmak için veri bağlama ve ifadelerin nasıl kullanılacağını öğreneceksiniz.
 
-## What you'll build
+## Ne oluşturacaksınız?
 
 Bir e-ticaret ürün sayfası oluşturacaksınız:
 
