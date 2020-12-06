@@ -14,9 +14,9 @@ Bu öğreticiye başlamadan önce aşağıdakilere ihtiyacınız olacak:
 - Seçtiğiniz bir metin editörü
 - [Node.js ve NPM](https://docs.npmjs.com/getting-started/installing-node) makinenizde yüklü
 
-## Set up your development environment
+## Geliştirme ortamınızı ayarlama
 
-### Step 1. Download the code
+### 1. Adım. Kodu indirin
 
 Öğreticinin başlangıç kodunu [ZIP dosyası](https://github.com/googlecodelabs/advanced-interactivity-in-amp/archive/master.zip) olarak veya git aracılığıyla indirin:
 
@@ -24,7 +24,7 @@ Bu öğreticiye başlamadan önce aşağıdakilere ihtiyacınız olacak:
 git clone https://github.com/googlecodelabs/advanced-interactivity-in-amp.git
 ```
 
-### Step 2. Install the dependencies
+### 2. Adım Bağımlılıkları yükleyin
 
 Arşiv dosyasını açın (gerekirse) ve dizine gidin. Bağımlılıkları `npm install` çalıştırarak yükleyin.
 
@@ -33,7 +33,7 @@ cd advanced-interactivity-in-amp
 npm install
 ```
 
-### Step 3. Run the development server
+### 3. Adım Geliştirme sunucusunu çalıştırın
 
 Geliştirme sunucusunu node.js ile başlatın:
 
