@@ -8,7 +8,7 @@ AMP bileşen sistemi, makalelerinize en az çaba ile hızlı bir şekilde veriml
 
 - **kurulu**: Bunlar, [`amp-img`](../../../../documentation/components/reference/amp-img.md) ve [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) gibi temel AMP JavaScript kitaplığında (`<head>` etiketinde belirtilen) bulunan bileşenlerdir. Bu bileşenler bir AMP belgesinde hemen kullanılabilir.
 
-- **extended**: These are extensions to the base library that must be explicitly included in the document as custom elements.  Custom elements require specific scripts that are added to the `<head>` section (e.g., `<script async custom-element="`[`amp-video`](../../../../documentation/components/reference/amp-video.md)`...`).
+- **genişletilmiş**: Bunlar, belgeye özel öğeler olarak açıkça dahil edilmesi gereken temel kitaplığın eklentileridir. Özel öğeler, `<head>` bölümüne eklenen özel komut dosyaları gerektirir (örneğin, `<script async custom-element="`[`amp-video`](../../../../documentation/components/reference/amp-video.md) `...`).
 
 - **deneysel**: Bunlar, serbest bırakılan ancak henüz geniş kullanıma hazır olmayan bileşenlerdir. Geliştiriciler, tamamen piyasaya sürülmeden önce bu özellikleri kullanmayı seçebilirler. [Deneysel özellikler](../../../../documentation/guides-and-tutorials/learn/experimental.md) hakkında daha fazla bilgi edinin.
 
