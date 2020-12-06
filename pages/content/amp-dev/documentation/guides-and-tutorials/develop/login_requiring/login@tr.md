@@ -1,14 +1,14 @@
 ---
-"$title": Login
+"$title": Giriş yapma
 "$order": '1'
-description: The first time you land on the page, you can see 2 comments and a login button. If you look for the login button in the code, you will find ...
+description: Sayfaya ilk kez geldiğinizde, 2 yorum ve bir giriş düğmesi görebilirsiniz. Kodda giriş yapma düğmesini ararsanız, şunları bulacaksınız...
 ---
 
-The first time you land on the [page](../../../../documentation/examples/previews/Comment_Section.html), you can see 2 comments and a login button.
+[Sayfaya](../../../../documentation/examples/previews/Comment_Section.html) ilk kez geldiğinizde, 2 yorum ve bir giriş düğmesi görebilirsiniz.
 
 <amp-img src="/static/img/login-button.jpg" alt="Login button" height="290" width="300"></amp-img>
 
-If you look for the login button in the code, you will find:
+Kodda giriş yapma düğmesini ararsanız, şunları bulacaksınız:
 
 [sourcecode:html]
 <span amp-access="NOT loggedIn" role="button" tabindex="0" amp-access-hide>
@@ -17,7 +17,7 @@ If you look for the login button in the code, you will find:
 </span>
 [/sourcecode]
 
-The behaviour of [`amp-access`](../../../../documentation/components/reference/amp-access.md) related attributes are dependent on a page-wide configuration for [`amp-access`](../../../../documentation/components/reference/amp-access.md), in our case, this one:
+[`amp-access`](../../../../documentation/components/reference/amp-access.md) ilgili özniteliklerin davranışı, [`amp-access`](../../../../documentation/components/reference/amp-access.md) için sayfa genelindeki yapılandırmaya bağlıdır, bizim durumumuzda, şu şekildedir:
 
 [sourcecode:html]
 <script id="amp-access" type="application/json">
@@ -36,9 +36,9 @@ The behaviour of [`amp-access`](../../../../documentation/components/reference/a
 </script>
 [/sourcecode]
 
-The authorization endpoint is deployed as part of AMPByExample. It's the responsibility of the publisher of the page to provide this endpoint. In this sample case, for simplicity, we implemented basic logic so that when this request is received, the server reads the value of a cookie named `ABE_LOGGED_IN`. If the cookie is not there, we return a JSON response containing `loggedIn = false`. As a result, the first time a user lands on the page, this request will return `loggedIn = false` and the login button will be shown.
+Yetkilendirme uç noktası, AMPByExample'ın parçası olarak dağıtılır. Bu uç noktayı sağlamak sayfanın yayıncısının sorumluluğundadır. Bu örnek durumda, basit olması amacıyla, bu istek alındığında sunucunun `ABE_LOGGED_IN` adlı bir çerezin değerini okuyabilmesi için temel mantığı uyguladık. Çerez orada değilse, `loggedIn = false ` içeren bir JSON yanıtı döndürürüz. Sonuç olarak, bir kullanıcı sayfaya ilk kez geldiğinde, bu istek `loggedIn = false` yanıtı verir ve giriş düğmesi gösterilir.
 
-Looking again at the button's HTML code, by using `on="tap:amp-access.login-sign-in"`, we specify that once the user taps on the button, the URL specified in the JSON above should be used:
+Düğmenin HTML koduna tekrar baktığımızda, `on="tap: amp-access.login-sign-in"` kodunu kullanarak, kullanıcı düğmeye dokunduğunda, üstteki JSON'da belirtilen URL'nin kullanılması gerektiğini belirtiriz:
 
 [sourcecode:json]
 {
@@ -51,20 +51,20 @@ Looking again at the button's HTML code, by using `on="tap:amp-access.login-sign
 
 [tip type="note"] **NOTE –**  Notice that it’s possible to define different URLs inside the login node, in this case we are defining `sign-in`, and we will later define `sign-out`. [/tip]
 
-The login page is a non-AMP page in which we populate the login and password values for the sake of simplicity. Notice the usage of `returnURL` hidden input type, which is populated by the AMPByExample server via server-side templating. The server reads this value from a parameter called `return`, automatically added by the AMP library to the sign-in URL.
+Giriş sayfası, basitlik amacıyla giriş ve şifre değerlerini doldurduğumuz AMP olmayan bir sayfadır. AMPByExample sunucusu tarafından sunucu tarafı şablon oluşturması yoluyla doldurulan `returnURL` gizli giriş türünün kullanımına dikkat edin. Sunucu bu değeri, AMP kitaplığı tarafından giriş yapma URL'sine otomatik olarak eklenen `return` adlı bir parametreden okur.
 
-In the example below, the value for the `return` parameter is added to the request once you click the login button. You can explore this value by using the Chrome DevTools console and navigating to the Network tab.
+Aşağıdaki örnekte, `return` parametresinin değeri, giriş yapma düğmesine tıkladığınızda isteğe eklenir. Bu değeri, Chrome DevTools konsolunu kullanarak ve Ağ sekmesine giderek keşfedebilirsiniz.
 
 <amp-img src="/static/img/return-parameter.jpg" alt="Return parameter" height="150" width="600"></amp-img>
 
-Once the AMPByExample server receives the POST request from the login page and the login and password are correct, it redirects the request to the `returnURL` that we mentioned above, and appends the `#success=true` parameter. The AMP runtime can now authorize the page and finally allow you to add a comment.
+AMPByExample sunucusu, giriş sayfasından POST isteğini aldıktan ve giriş ve şifre doğru olduktan sonra, isteği yukarıda bahsettiğimiz `returnURL` koduna yönlendirir ve `#success=true` parametresini ekler. AMP çalışma zamanı artık sayfayı yetkilendirebilir ve sonunda bir yorum eklemenize izin verebilir.
 
-It’s important to understand what the AMP runtime does and what the server should be doing, as the implementation of the server is the responsibility of the publisher of the page.
+Sunucunun uygulanması sayfanın yayıncısının sorumluluğunda olduğundan, AMP çalışma zamanının ne yaptığını ve sunucunun ne yapması gerektiğini anlamak önemlidir.
 
-As a quick recap:
+Hızlı bir özet:
 
-- The AMP runtime automatically adds the return parameter to the sign-in request specified inside the login JSON object
-- The AMP runtime closes the login page and redirects to the page specified by the return URL parameter
-- The server should orchestrate the response once the user clicks on the login button
+- AMP çalışma zamanı, return parametresini giriş yapma JSON nesnesinde belirtilen giriş yapma isteğine otomatik olarak ekler
+- AMP çalışma zamanı, giriş sayfasını kapatır ve dönüş URL parametresi tarafından belirtilen sayfaya yönlendirir
+- Sunucu, kullanıcı giriş yapma düğmesine tıkladığında yanıtı düzenlemelidir
 
-[tip type="tip"] **TIP –** A more detailed explanation about this flow can also be found in the [`amp-access`](../../../../documentation/components/reference/amp-access.md). [/tip]
+[tip type="tip"] **İPUCU –** Bu akışa dair daha ayrıntılı açıklama [`amp-access`](../../../../documentation/components/reference/amp-access.md) bölümünde de bulunabilir. [/tip]
