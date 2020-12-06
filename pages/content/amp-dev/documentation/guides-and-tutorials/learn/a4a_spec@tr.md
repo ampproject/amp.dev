@@ -4,10 +4,7 @@ order: '3'
 formats:
 - ads
 teaser:
-  text: |2-
-
- "_If you'd like to propose changes to the standard, please comment on the"
-    [Intent
+  text: _Standard üzerinde herhangi bir değişiklik yapmayı teklif ederseniz, lütfen [Uygulama
 toc: 'true'
 ---
 
