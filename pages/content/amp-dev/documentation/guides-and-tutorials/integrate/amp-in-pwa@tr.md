@@ -1,36 +1,36 @@
 ---
-"$title": Use AMP as a data source for your PWA
+"$title": "AMP'yi PWA'nız için bir veri kaynağı olarak kullanma"
 "$order": '1'
-description: "If you've invested in AMP but haven't built a Progressive Web App yet, your AMP Pages can dramatically simplify your development of your Progressive Web App."
+description: "AMP'ye yatırım yaptıysanız ancak henüz Aşamalı Web Uygulaması (Progressive Web App) oluşturmadıysanız, AMP Sayfalarınız Aşamalı Web Uygulaması geliştirme sürecinizi önemli ölçüde basitleştirebilir."
 formats:
 - websites
 author: pbakaus
 ---
 
-If you've invested in AMP but haven't built a Progressive Web App yet, your AMP Pages can dramatically simplify your development of your Progressive Web App. In this guide you'll learn how to consume AMP within your Progressive Web App and use your existing AMP Pages as a data source.
+AMP'ye yatırım yaptıysanız ancak henüz Aşamalı Web Uygulaması (Progressive Web App) oluşturmadıysanız, AMP Sayfalarınız Aşamalı Web Uygulaması geliştirme sürecinizi önemli ölçüde basitleştirebilir. Bu kılavuzda Aşamalı Web Uygulamanızda AMP'yi nasıl kullanacağınızı ve mevcut AMP Sayfalarınızı veri kaynağı olarak nasıl kullanacağınızı öğreneceksiniz.
 
-## From JSON to AMP
+## JSON'dan AMP'ye
 
-In the most common scenario, a Progressive Web App is a single page application that connects to a JSON API via Ajax. This JSON API then returns sets of data to drive the navigation, and the actual content to render the articles.
+En yaygın senaryoda, Aşamalı Web Uygulaması Ajax üzerinden bir JSON API'sine bağlanan tek sayfalık bir uygulamadır. Bu JSON API'si, daha sonra gezinmeyi yönlendirmek için veri kümelerini ve makaleleri oluşturmak için gerçek içeriği karşınıza çıkarır.
 
-You would then proceed and convert the raw content into usable HTML and render it on the client. This process is costly and often hard to maintain. Instead, you can reuse your already existing AMP Pages as a content source. Best of all, AMP makes it trivial to do so in just a few lines of code.
+Daha sonra ham içeriği işleyebilir ve kullanılabilir HTML'e dönüştürebilir ve istemcide oluşturabilirsiniz. Bu işlem maliyetlidir ve sürdürmesi genelde zordur. Bunun yerine, mevcut AMP Sayfalarınızı içerik kaynağı olarak yeniden kullanabilirsiniz. En iyisi de AMP bunu sadece birkaç satır kodla kolay hale getirir.
 
-## Include "Shadow AMP" in your Progressive Web App
+## Aşamalı Web Uygulamanıza "Gölge AMP" ekleme
 
-The first step is to include a special version of AMP we call “Shadow AMP” in your Progressive Web App. Yes, that’s right – you load the AMP library in the top level page, but it won’t actually control the top level content. It will only “amplify” the portions of our page that you tell it to.
+İlk adım, Aşamalı Web Uygulamanıza “Gölge AMP” adını verdiğimiz özel bir AMP sürümünü eklemektir. Evet, bu doğru - AMP kütüphanesini üst düzey sayfaya yüklersiniz, ancak bu, üst düzey içeriği gerçekten kontrol etmez. Sadece sayfanızın istediğiniz bölümlerini “güçlendirir”.
 
-Include Shadow AMP in the head of your page, like so:
+Sayfanızın head bölümüne Gölge AMP'yi şu şekilde ekleyin:
 
 [sourcecode:html]
 <!-- Asynchronously load the AMP-with-Shadow-DOM runtime library. -->
 <script async src="https://cdn.ampproject.org/shadow-v0.js"></script>
 [/sourcecode]
 
-### How do you know when the Shadow AMP API is ready to use?
+### Gölge AMP'nin ne zaman kullanıma hazır olduğunu nasıl bilebilirsiniz?
 
-We recommend you load the Shadow AMP library with the `async` attribute in place. That means, however, that you need to use a certain approach to understand when the library is fully loaded and ready to be used.
+Gölge AMP kütüphanesini `async` özniteliği varken yüklemenizi tavsiye ediyoruz. Ancak, bu, kütüphanenin ne zaman tam olarak yüklendiğini ve kullanıma hazır olduğunu anlamak için belirli bir yaklaşım kullanmanız gerektiği anlamına gelir.
 
-The right signal to observe is the availability of the global `AMP` variable, and Shadow AMP uses a “[asynchronous function loading approach](http://mrcoles.com/blog/google-analytics-asynchronous-tracking-how-it-work/)” to help with that. Consider this code:
+Gözlemlenecek doğru sinyal, genel `AMP` değişkeninin mevcudiyetidir ve Gölge AMP, bu konuda yardımcı olmak için “[asenkron fonksiyon yükleme yaklaşımı](http://mrcoles.com/blog/google-analytics-asynchronous-tracking-how-it-work/)” kullanır. Şu kodu kullanmayı düşünün:
 
 [sourcecode:javascript]
 (window.AMP = window.AMP || []).push(function(AMP) {
@@ -38,26 +38,26 @@ The right signal to observe is the availability of the global `AMP` variable, an
 });
 [/sourcecode]
 
-This code will work, and any number of callbacks added this way will indeed fire when AMP is available, but why?
+Bu kod çalışır ve bu şekilde eklenen herhangi bir geri çağırma sayısı aslında AMP mevcut olduğunda tetiklenir, ama neden?
 
-This code translates to:
+Bu kod şu anlama gelir:
 
-1. “if window.AMP doesn't exist, create an empty array to take its position”
-2. "then push a callback function into the array that should be executed when AMP is ready"
+1. "window.AMP yoksa, bu konumu doldurmak için boş bir dizi oluştur"
+2. "daha sonra AMP hazır olduğunda yürütülmesi gereken diziye geri çağırma işlevini gönder"
 
-It works because the Shadow AMP library, upon actual load, will realize there's already an array of callbacks under `window.AMP`, then process the entire queue. If you later execute the same function again, it will still work, as Shadow AMP replaces `window.AMP` with itself and a custom `push` method that simply fires the callback right away.
+Bu kod çalışır çünkü Gölge AMP kütüphanesi, gerçek yükleme sonrasında, `window.AMP` altında zaten bir geri çağırma dizisi olduğunu fark ettiğinde, tüm kuyruğu işleme alır. Daha sonra aynı fonksiyonu tekrar yürütürseniz, yine çalışacaktır çünkü Gölge AMP, `window.AMP`'nin yerine kendini ve geri çağırmayı hemen tetikleyen özel bir `gönderme` yöntemini koyar.
 
-[tip type="tip"] **TIP –** To make the above code sample practical, we recommend that you wrap it into a Promise, then always use said Promise before working with the AMP API. Look at our [React demo code](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20) for an example. [/tip]
+[tip type="tip"] **İPUCU –** – Yukarıdaki kod örneğini pratik hale getirmek için, onu bir Promise ile sarmanızı, daha sonra AMP API'si ile çalışmadan önce her zaman ilgili Promise'i kullanmanızı tavsiye ediyoruz. Örnek olarak [React demo koduna](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20) göz atın. [/tip]
 
-## Handle navigation in your Progressive Web App
+## Aşamalı Web Uygulamanızda gezinmeyi halletme
 
-You’ll still need to implement this step manually. After all, it's up to you how you present links to content in your navigation concept. A number of lists? A bunch of cards?
+Bu adımı da manuel olarak uygulamanız gerekir. Sonuçta, gezinme konseptinizdeki içeriğe bağlantıları nasıl sunacağınız size kalmıştır. Birkaç liste mi? Birkaç kart mı?
 
-In a common scenario, you’d fetch some JSON that returns ordered URLs with some metadata. In the end, you should end up with a function callback that fires when the user clicks on one of the links, and said callback should include the URL of the requested AMP page. If you have that, you’re all set for the final step.
+Yaygın bir senaryoda, bazı üst verilerle sıralı URL'leri geri gönderen JSON dosyaları getirmeniz gerekir. Sonunda kullanıcı, bağlantılardan birine tıkladığında tetiklenen bir fonksiyon geri çağırması elde edeceksiniz; belirtilen geri çağırma, istenen AMP sayfasının URL'sini içermelidir. Bunlar varsa, son adım için hazırsınız.
 
-## Use the Shadow AMP API to render a page inline
+## Gölge AMP API'sini bir sayfayı satır içi olarak işlemek için kullanma
 
-Finally, when you want to display content after a user action, it's time to fetch the relevant AMP document and let Shadow AMP take over. First, implement a function to fetch the page, similar to this one:
+Son olarak, bir kullanıcı eyleminden sonra içerik göstermek istediğinizde, ilgili AMP belgesini getirme ve Gölge AMP'nin işi üstlenmesine izin verme zamanı gelir. Öncelikle, aşağıdaki örneğe benzer şekilde sayfayı getirmek için fonksiyonu uygulayın:
 
 [sourcecode:javascript]
 function fetchDocument(url) {
@@ -79,9 +79,9 @@ function fetchDocument(url) {
 }
 [/sourcecode]
 
-[tip type="important"] **IMPORTANT –** To simplify the above code example, we skipped over error handling. You should always make sure to catch and handle errors gracefully. [/tip]
+[tip type="important"] **ÖNEMLİ** – Yukarıdaki kod örneğini basitleştirmek için, hata işlemeyi geçiyoruz. Hataları yakalayıp uygun şekilde işlediğinizden her zaman emin olmalısınız. [/tip]
 
-Now that we have our ready-to-use `Document` object, it's time to let AMP take over and render it. Get a reference to the DOM element that serves as container for the AMP document, then call `AMP.attachShadowDoc()`, like so:
+Kullanıma hazır `Document` nesnesine sahip olduğumuza göre artık AMP'nin sorumluluğu üstlenme ve işlemi yapma zamanı gelmiştir. AMP belgesi için kapsayıcı görevi gören DOM öğesine referans verin, daha sonra `AMP.attachShadowDoc()` fonksiyonu şu şekilde çağırın:
 
 [sourcecode:javascript]
 // This can be any DOM element
@@ -97,32 +97,32 @@ fetchDocument(url).then(function(doc) {
 });
 [/sourcecode]
 
-[tip type="tip"] **TIP –** Before you actually hand the document over to AMP, it's the perfect time to remove page elements that make sense when displaying the AMP page standalone, but not in embedded mode: For example, footers and headers. [/tip]
+[tip type="tip"] **İPUCU –** – Belgeyi AMP'ye teslim etmeden önce, AMP sayfasını tek başına görüntülerken anlamlı olan, ancak gömülü modda olmayan sayfa öğelerini kaldırmanın tam zamanıdır: Örneğin, altbilgi ve üstbilgiler. [/tip]
 
-And that's it! Your AMP page renders as a child of your overall Progressive Web App.
+Hepsi bu kadar! AMP sayfanız, genel Aşamalı Web Uygulamanızın bir alt öğesi olarak oluşturulur.
 
-## Clean up after yourself
+## Arkanızı temizleyin
 
-Chances are your user will navigate from AMP to AMP within your Progressive Web App. When discarding the previous rendered AMP Page, always make sure to tell AMP about it, like so:
+Muhtemelen kullanıcınız Aşamalı Web Uygulamanızda AMP'den AMP'ye gezinecektir. Önceden oluşturulan AMP Sayfasını kaldırırken, AMP'ye bunu aşağıdaki gibi bildirmeyi asla unutmayın:
 
 [sourcecode:javascript]
 // ampedDoc is the reference returned from AMP.attachShadowDoc
 ampedDoc.close();
 [/sourcecode]
 
-This will tell AMP that you're not using this document any longer and will free up memory and CPU overhead.
+Bu kod, AMP'ye ilgili belgeyi artık kullanmadığınızı bildirir ve hafıza ve CPU yükünü boşaltır.
 
-## See it in action
+## Çalışırken görün
 
 [video src="/static/img/docs/pwamp_react_demo.mp4" width="620" height="1100" loop="true", controls="true"]
 
-You can see the "AMP in PWA" pattern in action in the [React sample](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa) we've built. It demonstrates smooth transitions during navigation and comes with a simple React component that wraps the above steps. It's the best of both worlds – flexible, custom JavaScript in the Progressive Web App, and AMP to drive the content.
+Oluşturduğumuz [React örneği](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa) içinde "PWA'da AMP" örüntüsünü çalışırken görebilirsiniz. Gezinme sırasında pürüzsüz geçişler gösteriyor ve yukarıdaki adımları sarmalayan basit bir React bileşeniyle birlikte geliyor. Bir taşla iki kuş vuruyorsunuz: Aşamalı Web Uygulamasında esnek, özel JavaScript ve içeriği yönlendirecek AMP.
 
-- Grab the source code here: [https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)
-- Use the React component standalone via npm: [https://www.npmjs.com/package/react-amp-document](https://www.npmjs.com/package/react-amp-document)
-- See it in action here: [https://choumx.github.io/amp-pwa/](https://choumx.github.io/amp-pwa/) (best on your phone or mobile emulation)
+- Kaynak kodu buradan alın: [https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)
+- Npm ile React bileşenini tek başına kullanın: [https://www.npmjs.com/package/react-amp-document](https://www.npmjs.com/package/react-amp-document)
+- Burada çalışırken görün: [https://choumx.github.io/amp-pwa/](https://choumx.github.io/amp-pwa/) (en iyi telefonunuzda veya mobil öykünmesinde çalışır)
 
-You can also see a sample of PWA and AMP using Polymer framework. The sample uses [amp-viewer](https://github.com/PolymerLabs/amp-viewer/) to embed AMP pages.
+Polymer çerçevesi kullanarak da PWA ve AMP'nin bir örneğini görebilirsiniz. Örnek, AMP sayfaları eklemek için [amp-viewer](https://github.com/PolymerLabs/amp-viewer/) kullanır.
 
-- Grab the code here: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp)
-- See it in action here: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/)
+- Kodu buradan alın: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp)
+- Burada çalışırken görün: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/)
