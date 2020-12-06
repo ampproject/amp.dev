@@ -38,7 +38,7 @@ Hatta bazı öğeler, kısıtlamaları gevşeterek bunu yaptığınız için siz
 
 Varsayılan olarak yer tutucu, AMP öğesinin kaynakları indirilmemiş veya başlatılmamış olsa bile AMP öğesi için hemen gösterilir. AMP öğesi hazır olduğunda genellikle yer tutucusunu gizler ve içeriği gösterir.
 
-[tip type="note"] **NOTE –**  The placeholder doesn’t have to be an AMP element; any HTML element can act as the placeholder. [/tip]
+[tip type="note"] **NOT -** Yer tutucunun bir AMP öğesi olması gerekmez; herhangi bir HTML öğesi yer tutucu görevi görebilir. [/tip]
 
 ## Yedekler <a name="fallbacks"></a>
 
