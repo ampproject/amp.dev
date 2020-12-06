@@ -1,43 +1,43 @@
 ---
-"$title": Monetizing your AMP page with ads
+"$title": AMP sayfanızdan reklamlarla para kazanma
 "$order": '0'
-description: This guide provides instructions and best practices for displaying ads on your AMP pages. So, to display ads in AMP, you need to add the custom amp-ad component...
+description: "Bu kılavuz, AMP sayfalarınızda reklam görüntülemeye yönelik talimatları ve en iyi uygulamaları sunuyor. Bu nedenle, AMP'de reklam görüntülemek için özel amp-ad bileşenini..."
 formats:
 - websites
 ---
 
-This guide provides instructions and best practices for displaying ads on your AMP pages.
+Bu kılavuz, AMP sayfalarınızda reklam görüntülemeye yönelik talimatları ve en iyi uygulamaları sunuyor.
 
-## Adding ads to your page
+## Sayfanıza reklam ekleme
 
-In non-AMP pages (traditional HTML), if you want to display ads on your page, you'd include a snippet of JavaScript to serve ads from your ad network.  For performance and security reasons, you cannot include third-party JavaScript in AMP pages.  So, to display ads in AMP, you need to add the custom [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component to your AMP page.
+AMP olmayan sayfalarda (geleneksel HTML), sayfanızda reklam görüntülemek isterseniz, reklam ağınızdan reklam sunmak için bir JavaScript kod parçacığı eklemeniz gerekir. Performans ve güvenlik nedenleriyle, AMP sayfalarına üçüncü taraf JavaScript ekleyemezsiniz. Bu nedenle, AMP'de reklam görüntülemek için özel [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) bileşenini AMP sayfanıza eklemeniz gerekir.
 
 [tip type="tip"] **TIP –** See [AMP By Example for a live demo](../../../../documentation/components/reference/amp-ad.md) that demonstrates adding an amp-ad tag to an AMP page. [/tip]
 
-Let's walk through the steps of adding the component so you can display ads on your AMP page.
+AMP sayfanızda reklam görüntüleyebilmek için bileşeni ekleme adımlarını birlikte inceleyelim.
 
-### Step 1: Add the amp-ad script
+### 1. Adım: amp-ad betiğini ekleme
 
-The [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component is a custom ad extension to the AMP library. Under the hood of [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) is custom JavaScript that's carefully designed to optimize performance. To run the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component, you must add the required JavaScript for this component in the `head` section of your AMP page:
+[`amp-ad`](../../../../documentation/components/reference/amp-ad.md) bileşeni, AMP kitaplığına özel bir reklam uzantısıdır. [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) altında, performansı optimize etmek için dikkatle tasarlanmış özel JavaScript bulunur. [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) bileşenini çalıştırmak için, AMP sayfanızın `head` bölümüne bu bileşen için gerekli JavaScript'i eklemeniz gerekir:
 
 ```html
 <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
 ```
 
-### Step 2: Add the amp-ad tag to your AMP page
+### 2. Adım: amp-ad etiketini AMP sayfanıza ekleme
 
-Over 100+ [ad servers and networks](ads_vendors.md) provide built-in integrations with AMP.  To add an ad for a given ad network, add the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) tag, and specify the network in the `type` attribute.
+100'den fazla [reklam sunucusu ve ağ](ads_vendors.md), AMP ile yerleşik entegrasyonlar sağlar. Belirli bir reklam ağına bir reklam eklemek için, [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) etiketini ekleyin ve `type` özniteliğinde ağı belirtin.
 
-In this example, we are adding an ad slot to serve ads from the a9 network:
+Bu örnekte, a9 ağından reklam sunmak için bir reklam alanı ekliyoruz:
 
 ```html
 <amp-ad type="a9">
 </amp-ad>
 ```
 
-### Step 3: Specify the size of the ad unit
+### 3. Adım: Reklam biriminin boyutunu belirtme
 
-Add the `width` and `height` attributes to the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)  tag.  This specifies the size of the ad on your AMP page:
+`width` ve `height` özniteliklerini [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) etiketine ekleyin. Bunlar, AMP sayfanızdaki reklamın boyutunu belirtir:
 
 ```html
 <amp-ad type="a9">
@@ -45,9 +45,9 @@ Add the `width` and `height` attributes to the [`amp-ad`](../../../../documentat
 </amp-ad>
 ```
 
-### Step 4: Set ad network parameters
+### 4. Adım: Reklam ağı parametrelerini ayarlama
 
-Each network has specific data attributes they require to serve ads.  Refer to the ad network's [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) documentation and add the attributes that are needed In the following example,  the a9 network requires additional parameters to specify the size of the ad, and other details:
+Her ağın, reklamları sunmak için ihtiyaç duyduğu belirli veri öznitelikleri vardır. Reklam ağının [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) belgelerine bakın ve gerekli öznitelikleri ekleyin. Aşağıdaki örnekte, a9 ağı, reklamın boyutunu ve diğer ayrıntıları belirtmek için ek parametreler gerektiriyor:
 
 ```html
 <amp-ad type="a9"
@@ -58,9 +58,9 @@ Each network has specific data attributes they require to serve ads.  Refer to t
 </amp-ad>
 ```
 
-### Step 5: (Optional) Specify a placeholder
+### 5. Adım: (İsteğe bağlı) Bir yer tutucu belirtme
 
-Depending on the ad network, you can choose to show a placeholder until the ad is available for viewing. This provides a better user experience by preventing a blank space.  To specify a placeholder, add a child element with the `placeholder` attribute. Learn more in [Placeholders & fallbacks](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
+Reklam ağına bağlı olarak, reklam görüntülenmeye hazır olana kadar bir yer tutucu göstermeyi tercih edebilirsiniz. Bu, boş bir alanın görünmesini önleyerek daha iyi bir kullanıcı deneyimi sağlar. Bir yer tutucu belirtmek için, `placeholder` özelliğine sahip bir alt öğe ekleyin. [Yer tutucular ve yedekler hakkında](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md) daha fazla bilgi edinin.
 
 ```html
 <amp-ad type="a9"
@@ -72,9 +72,9 @@ Depending on the ad network, you can choose to show a placeholder until the ad i
 </amp-ad>
 ```
 
-### Step 6: (Optional) Specify a fallback
+### 6. Adım: (İsteğe bağlı) Bir yedek belirtme
 
-Depending on the ad network, you can choose to show a fallback element if no ad is available to serve. To specify a fallback, add a child element with the `fallback` attribute. Learn more in [Placeholders & fallbacks](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
+Reklam ağına bağlı olarak, sunulacak reklam yoksa bir yedek öğe göstermeyi tercih edebilirsiniz. Bir yedek belirtmek için, `fallback` özelliğine sahip bir alt öğe ekleyin. [Yer tutucular ve yedekler hakkında](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md) daha fazla bilgi edinin.
 
 ```html
 <amp-ad type="a9"
@@ -86,61 +86,61 @@ Depending on the ad network, you can choose to show a fallback element if no ad 
 </amp-ad>
 ```
 
-Congratulations! You are now serving ads on your AMP page!
+Tebrikler! Artık AMP sayfanızda reklam sunuyorsunuz!
 
-## Serving direct-sold AMPHTML ads
+## Doğrudan satılan AMPHTML reklamları sunma
 
-The [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component serves ads from the network you specify.  Those ads can be standard HTML ads or AMPHTML ads, provided that the ad network supports AMPHTML ads. To serve your direct-sold ads as AMPHTML ads, create the ad in AMP HTML according to the [AMPHTML ad spec](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) requirements and use an [ad server that serves AMPHTML ads](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
+[`amp-ad`](../../../../documentation/components/reference/amp-ad.md) bileşeni, belirttiğiniz ağdaki reklamları sunar. Bu reklamlar, reklam ağının AMPHTML reklamları desteklemesi koşuluyla standart HTML reklamları veya AMPHTML reklamları olabilir. Doğrudan satılan reklamlarınızı AMPHTML reklamları olarak sunmak için, reklamı AMP HTML'de [AMPHTML reklam teknik özelliklerinin](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) gereksinimlerine göre oluşturun ve [AMPHTML reklamları sunan bir reklam sunucusu](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers) kullanın.
 
-## Augmenting targeting data on ad requests
+## Reklam isteklerine ilişkin hedefleme verilerini artırma
 
-As part of the Fast Fetch serving mechanism, the Real-Time Config (RTC) feature allows publishers to augment ad requests with first-party and third-party targeting information that's retrieved at runtime. RTC allows up to 5 callouts to targeting servers for each individual ad slot, the results of which are appended to the ad request.  To use RTC on your ads, the ad network you use must support RTC and Fast Fetch.
+Hızlı Getirme (Fast Fetch) sunum mekanizmasının bir parçası olarak, Gerçek Zamanlı Yapılandırma (RTC) özelliği, yayıncıların çalışma zamanında alınan birinci taraf ve üçüncü taraf hedefleme bilgileriyle reklam isteklerini artırmasına olanak tanır. RTC, her bir reklam alanı için sunucuları hedeflemek için en fazla 5 açıklama balonuna izin verir ve bunların sonuçları reklam isteğine eklenir. Reklamlarınızda RTC kullanmak için, kullandığınız reklam ağının RTC ve Hızlı Getirmeyi desteklemesi gerekir.
 
-You can learn more about RTC from this YouTube video:
+Bu YouTube videosundan RTC hakkında daha fazla bilgi edinebilirsiniz:
 
 [video src='https://www.youtube.com/watch?v=mvAmvKiWPfA' caption='Watch Effective AMP Monetization with Header Bidding.']
 
-Or, learn more from these RTC resources:
+Veya bu RTC kaynaklarından daha fazla bilgi edinin:
 
-- [AMP RTC publisher implementation guide](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
-- [AMP Real Time Config](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
+- [AMP RTC yayıncı uygulama kılavuzu](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
+- [AMP Gerçek Zamanlı Yapılandırması](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
 
-## Best practices
+## En iyi uygulamalar
 
-Here are some tips to maximize the effectiveness of ads on your AMP pages:
+AMP sayfalarınızdaki reklamların etkinliğini en üst düzeye çıkarmak için bazı ipuçları aşağıda verilmiştir:
 
-### Placement & controls: optimize your ad placements
+### Yerleşim ve kontroller: reklam yerleşimlerinizi optimize edin
 
-- **Place the same number of ads** on AMP Pages as your non-AMP pages to generate maximum revenue per page.
-- **Place the first ad immediately below the first viewport** ("below the fold") to provide an optimal user experience.
-- Unless you're using advanced CSS or media queries, **ensure your ad units are centered on the page** to provide your users with an optimal mobile web experience.
-- Enable [multi-size ad requests](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests) on your AMP inventory to increase ad auction pressure and drive revenue.
+- Sayfa başına maksimum gelir elde etmek için AMP sayfalarına AMP olmayan sayfalarınızla **aynı sayıda reklam yerleştirin.**
+- Optimum kullanıcı deneyimi sağlamak için **ilk reklamı ilk görüntü alanının hemen altına yerleştirin** ("ekranın alt kısmı").
+- Gelişmiş CSS veya medya sorguları kullanmıyorsanız, kullanıcılarınıza en iyi mobil web deneyimini **sağlamak için reklam birimlerinizin sayfada ortalandığından emin olun**.
+- Reklam açık artırma baskısını artırmak ve geliri artırmak için AMP envanterinizde [çok boyutlu reklam isteklerini](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests) etkinleştirin.
 
-### Demand & pricing: get the right price for your ads
+### Talep ve fiyatlandırma: Reklamlarınız için doğru fiyatı alma
 
-- **Sell ad units on your AMP pages across all sales channels**, including direct and indirect to maximize competition for your inventory on AMP pages.
-- **Price your ad inventory on AMP pages** similar to your inventory on non-AMP pages. Monitor performance and adjust pricing accordingly.
-- **Ensure all ad demand channels are competing** for ad inventory on your AMP pages to drive up competition.
+- AMP sayfalarındaki envanteriniz için rekabeti en üst düzeye çıkarmak için doğrudan ve dolaylı da dahil olmak üzere **AMP sayfalarınızda tüm satış kanallarında reklam birimleri satın**.
+- **Reklam envanterinizi AMP olmayan sayfalardaki envanterinize benzer AMP sayfalarında fiyatlandırın**. Performansı izleyin ve fiyatı buna göre ayarlayın.
+- Rekabeti artırmak amacıyla AMP sayfalarınızdaki reklam envanteri için **tüm reklam talebi kanallarının rekabet ettiğinden emin olun **.
 
-### Ad types: Serve the best types of ads
+### Reklam türleri: En iyi reklam türlerini sunma
 
-- **Avoid heavy creatives** per [IAB guidelines](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf).
-- **Avoid interstitials** or other ad formats that cause the content to reflow on ad load.
-- **Optimize for viewability** by setting the data-loading-strategy to prefer-viewability-over-views.
-- **Place ads in your video content** via [supported players](../../../../documentation/components/index.html#media) or [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) to enable revenue on all types of content.
-- **Implement native ads** to compete with display ads using multi-sized ad requests, adding demand pressure while providing your readers with a premium user experience.
+- <a>IAB yönergelerine göre</a><strong>ağır reklamlardan kaçının</strong>.
+- Reklam yüklenirken içeriğin yeniden akmasına neden olan **geçiş reklamlarından** veya diğer reklam biçimlerinden kaçının.
+- Veri yükleme stratejisini, görüntülenebilirlik tercihine göre ayarlayarak **görüntülenebilirliği optimize edin**.
+- Tüm içerik türlerinden gelir elde etmek için <a>desteklenen oynatıcılar</a> veya [<code>amp-iframe</code>](../../../../documentation/components/index.html#media) aracılığıyla <strong>&nbsp;video içeriğinize reklamlar yerleştirin</strong>.
+- Çok boyutlu reklam istekleri kullanarak görüntülü reklamlarla rekabet etmek için **yerel reklamları** uygulayın ve okuyucularınıza birinci sınıf bir kullanıcı deneyimi sağlarken talep baskısı ekleyin.
 
-### Innovation: Offer the most engaging ad products
+### Yenilik: En ilgi çekici reklam ürünlerini sunma
 
-- **Implement ads on ancillary AMP pages** to generate incremental revenue:
-    - [Ads in a carousel](../../../../documentation/examples/documentation/Carousel_Ad.html)
-    - [Ads in a lightbox](../../../../documentation/examples/documentation/Lightbox_Ad.html)
-    - ... and [more](../../../../documentation/examples/index.html)
-- **Implement new formats for direct sold ads** to equip your sales team with high-impact, innovative ad products:
-    - [Sticky Ads](../../../../documentation/examples/documentation/amp-sticky-ad.html)
-    - [Flying Carpet](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
+- Artımlı gelir elde etmek için **reklamları yardımcı AMP sayfalarına** uygulayın:
+    - [Döngüdeki reklamlar](../../../../documentation/examples/documentation/Carousel_Ad.html)
+    - [Lightbox'taki reklamlar](../../../../documentation/examples/documentation/Lightbox_Ad.html)
+    - ...ve [daha fazlası](../../../../documentation/examples/index.html)
+- Satış ekibinizi yüksek etkili, yenilikçi reklam ürünleriyle donatmak **&nbsp;adına doğrudan satılan reklamlar için yeni biçimler uygulayın** :
+    - [Yapışkan Reklamlar](../../../../documentation/examples/documentation/amp-sticky-ad.html)
+    - [Ucan Halı](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
 
-## Additional resources
+## Ek kaynaklar
 
-- [AMPHTML ad templates](../../../../documentation/examples/index.html)
-- [Demo: Shows how to add `amp-ad` to your AMP page](../../../../documentation/components/reference/amp-ad.md)
+- [AMPHTML reklam şablonları](../../../../documentation/examples/index.html)
+- [Demo: AMP sayfanıza nasıl `amp-ad` ekleyeceğinizi gösterir](../../../../documentation/components/reference/amp-ad.md)
