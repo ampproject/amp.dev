@@ -1,46 +1,46 @@
 ---
-"$title": Preload your PWA from your AMP pages
+"$title": "AMP sayfalarınızdan PWA'nızı önceden yükleme"
 "$order": '1'
-description: A good strategy is to make the entry point into your site an AMP page, then warm up the PWA behind the scenes and switch to ...
+description: "Web sitenize giriş noktasını bir AMP sayfası yapmak, daha sonra PWA'yı arka planda hazırlamak ve yolculuğun devamında..."
 formats:
 - websites
 author: pbakaus
 ---
 
-A good strategy is to make the **entry point into your site an AMP page**, then **warm up the PWA behind the scenes** and switch to it for the onward journey:
+**Web sitenize giriş noktasını bir AMP sayfası** yapmak, daha sonra **PWA'yı arka planda hazırlamak** ve yolculuğun devamında ona geçmek iyi bir stratejidir:
 
-- All content “leaf” pages (those that have specific content, not overview pages) are published as AMPs for that nearly instant loading experience.
-- These AMPs use AMP’s special element [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) to warm up a cache and the PWA shell while the user is enjoying your content.
-- When the user clicks another link on your website (for example, the call to action at the bottom for a more app-like experience), the service worker intercepts the request, takes over the page and loads the PWA shell instead.
+- Tüm içerik "yaprak" sayfaları (özet sayfalar değil, belirli bir içerik içerenler), neredeyse anında yükleme deneyimi için AMP sayfaları olarak yayınlanır.
+- Bu AMP'ler, kullanıcı içerikle etkileşime girerken önbelleği ve PWA kabuğunu hazırlamak için AMP'nin  [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) özel öğesini kullanır.
+- Kullanıcı web sitenizdeki başka bir bağlantıya tıkladığında (örneğin, daha çok uygulama tarzı bir deneyim için alttaki eylem çağrısı), hizmet çalışanı isteğe müdahale eder, sayfanın sorumluluğunu üstlenir ve bunun yerine PWA kabuğunu yükler.
 
-Read on to learn why, and how to use this development pattern.
+Bu geliştirici örüntüsünü neden ve nasıl kullanacağınızı öğrenmek için okumaya devam edin.
 
-## Improve the user journey by connecting to a PWA
+## PWA'ya bağlanırken kullanıcı yolculuğunu geliştirme
 
-### AMP for initial user acquisition
+### İlk kullanıcı edinimi için AMP
 
-AMP is an ideal solution for so-called **leaf pages**, content pages that your users discover organically through a search engine, a shared link by a friend or through a link on another site. Because of AMP's [specialized pre-rendering](../../../about/how-amp-works.html), AMP pages load extremely fast, which in return means much less drop off (the latest [DoubleClick study](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/) shows that **more than 53% of all users will drop off after 3 seconds**).
+AMP, kullanıcılarınızın bir arama motoru, bir arkadaşın gönderdiği paylaşılan bağlantı veya başka bir sitedeki bağlantı yoluyla organik olarak bulduğu **yaprak sayfalar** adı verilen sayfalar için ideal bir çözümdür. AMP'nin [özel önceden oluşturması](../../../about/how-amp-works.html) sayesinde AMP sayfaları oldukça hızlı yüklenir, bu daha az oturumu terk etme anlamına gelir (yakın zamanlı [DoubleClick çalışması](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/), 3 saniyeden sonra **kullanıcıların %53'ünden fazlasının oturumu terk edeceğini** gösteriyor).
 
-### PWA for rich interactivity and engagement
+### Zengin interaktiflik ve etkileşim
 
-Progressive Web Apps, on the other hand, allow for much greater interactivity and engagement, but do not have the *instant first-load characteristics* of an AMP page. At their core is a technology called Service Worker, a client-side proxy that allows you to cache all sorts of assets for your pages, but said Service Worker only activates *after* the first load.
+Aşamalı Web Uygulamaları, diğer yandan, daha fazla interaktifliğe ve etkileşime izin verir ancak bir AMP sayfasının *anında ilk yüklenme özelliklerine* sahip değildir. Merkezlerinde Hizmet Çalışanı adı verilen ve sayfanız için tüm varlık türlerini önbelleğe almaya izin veren bir istemci tarafı proxy teknolojisi vardır ancak bahsi geçen Hizmet Çalışanı, yalnızca ilk yüklemeden *sonra* etkinleşir.
 
 {{ image('/static/img/docs/pwamp_comparison.png', 977, 549, align='', caption='The pros and cons of AMP vs. PWA.') }}
 
-## Warm up your PWA with `amp-install-serviceworker`
+## `amp-install-serviceworker` ile PWA'nızı hazırlama
 
-AMP has the ability to install the Service Worker of your Progressive Web App from within an AMP page – yes, even if that AMP page is served from an AMP Cache! If done correctly, a link that leads to your PWA (from one of your AMP pages) will feel almost instant, similar to the first hop to the AMP page.
+AMP, Aşamalı Web Uygulamanızın Hizmet Çalışanını bir AMP sayfasından yükleyebilir - evet, bu AMP sayfası bir AMP Önbelleğinden sunulsa bile bunu yapabilir! Doğru şekilde yapılırsa, AMP sayfasına ilk sıçramaya benzer şekilde, PWA'nıza (AMP sayfalarınızdan birinden) giden bir bağlantı neredeyse anında olmuş gibi hissedilecektir.
 
-[tip type="tip"] **TIP –** If you're not familiar with Service Worker yet, I greatly recommend Jake Archibald’s [Udacity course](https://www.udacity.com/course/offline-web-applications--ud899). [/tip]
+[tip type="tip"] **İPUCU** – Henüz Hizmet Çalışanına aşina değilseniz,  Jake Archibald’ın [Udacity kursunu](https://www.udacity.com/course/offline-web-applications--ud899) almanızı kesinlikle tavsiye ediyorum. [/tip]
 
-First, install the service worker on all of your AMP Pages using [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md), by first including the component via its script in the `<head>` of your page:
+Öncelikle, sayfanızın `<head>` bölümündeki betik yoluyla bileşeni ekleyerek [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) kullanarak tüm AMP Sayfanızda hizmet çalışanını yükleyin.
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
   src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 [/sourcecode]
 
-Then add the following somewhere within your `<body>` (modify to point to your actual Service Worker):
+Daha sonra aşağıdaki kodu `<body>` öğenizin içinde bir yere ekleyin (gerçek Hizmet Çalışanınıza yönlendirmek için değiştirin):
 
 [sourcecode:html]
 <amp-install-serviceworker
@@ -49,7 +49,7 @@ Then add the following somewhere within your `<body>` (modify to point to your a
 </amp-install-serviceworker>
 [/sourcecode]
 
-Ultimately, in the service worker’s installation step, cache any resources that the PWA will need:
+Son olarak, hizmet çalışanının kurulum adımında PWA'nın ihtiyaç duyacağı kaynakları önbelleğe alın:
 
 [sourcecode:javascript]
 var CACHE_NAME = 'my-site-cache-v1';
@@ -71,21 +71,21 @@ self.addEventListener('install', function(event) {
 });
 [/sourcecode]
 
-[tip type="tip"] **TIP –** There are easier ways to deal with a Service Worker. Take a look at the [Service Worker helper libraries](https://github.com/GoogleChrome/sw-helpers). [/tip]
+[tip type="tip"] **İPUCU** – Hizmet Çalışanını kullanmanın daha kolay yolları vardır.  [Hizmet Çalışanı yardımcı kütüphanelerine](https://github.com/GoogleChrome/sw-helpers) bir göz atın. [/tip]
 
-## Make all links on an AMP Page navigate to the PWA
+## AMP Sayfasındaki tüm bağlantıların PWA'ya gitmesini sağlama
 
-Chances are that most links on your AMP pages lead to more content pages. There are two strategies to make sure that subsequent link clicks result in an "upgrade" to the Progressive Web App, [depending on the way you use AMP](../../../documentation/guides-and-tutorials/optimize-measure/discovery.md):
+Muhtemelen AMP sayfalarınızdaki çoğu bağlantı, daha fazla içerik sayfasına yönlendirme yapar. Sonraki bağlantı tıklamalarının Aşamalı Web Uygulamasında bir "yükseltmeye" neden olmasını sağlamak için [AMP'yi kullanma biçiminize bağlı olmak üzere](../../../documentation/guides-and-tutorials/optimize-measure/discovery.md) iki strateji vardır:
 
-### 1. If you pair your canonical pages with AMP pages
+### 1. Standart sayfalarınızı AMP sayfalarıyla eşlerseniz
 
-In this case you have a canonical website (non-AMP) and generate AMP pages that are linked to these canonical pages. This is currently the most common way AMP is used, and it means that the links on your AMP pages will likely link to the canonical version of your site. **Good news: If your canonical site is your PWA, you're all set**.
+Bu durumda standart bir web siteniz (AMP olmayan) vardır ve bu standart sayfalara bağlı AMP sayfaları oluşturursunuz. Bu, şu anda AMP'nin en yaygın kullanım şeklidir ve AMP sayfalarınızdaki bağlantıların büyük olasılıkla sitenizin standart sürümüne bağlanacağı anlamına gelir. **İyi haber: Standart siteniz PWA'nızsa, hazırsınız demektir**.
 
-### 2. If your canonical site is AMP
+### 2. Standart siteniz AMP ise
 
-In this case your canonical pages *are* your AMP pages: You're building your entire website with AMP, and simply use AMP as a library (fun fact: the very site you're reading this on is built this way). **In this scenario, most links on your AMP pages will lead to other AMP pages.**
+Bu durumda standart sayfalarınız *sizin* AMP sayfalarınızdır: Tüm web sitenizi AMP ile oluşturuyorsunuz ve AMP'yi bir kütüphane olarak kullanıyorsunuz (eğlenceli bilgi: bunu okuduğunuz site bu şekilde oluşturulmuştur). **Bu senaryoda, AMP sayfalarınızdaki çoğu bağlantı diğer AMP sayfalarına yönlendirir.**
 
-You can now deploy your PWA on a separate path like `your-domain.com/pwa` and use the Service Worker that's already running to **intercept the browser navigation when someone clicks on a link on the AMP Page**:
+Artık PWA'nızı `your-domain.com/pwa` gibi ayrı bir veri yoluna koyabilir ve bir kullanıcı **AMP Sayfasındaki bir bağlantıya tıkladığında tarayıcı gezinmesine müdahale etmek için çalışan** Hizmet Çalışanını kullanabilirsiniz:
 
 [sourcecode:javascript]
 self.addEventListener('fetch', event => {
@@ -99,9 +99,9 @@ self.addEventListener('fetch', event => {
 });
 [/sourcecode]
 
-What’s especially interesting about this technique is that you are now using progressive enhancement to go from AMP to PWA. However, this also means that, as is, browsers that don’t yet support service workers will jump from AMP to AMP and will never actually navigate to the PWA.
+Bu teknikle ilgili özellikle ilginç olan şey, artık AMP'den PWA'ya gitmek için aşamalı iyileştirme kullanmanızdır. Ancak, bu durum, henüz hizmet çalışanlarını desteklemeyen tarayıcıların PWA'ya asla gitmeden AMP'den AMP'ye sıçrayacakları anlamına da gelir.
 
-AMP solves this with something called [shell URL rewriting](../../../documentation/components/reference/amp-install-serviceworker.md#shell-url-rewrite). By adding a fallback URL pattern to the [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) tag, you are instructing AMP to rewrite all matching links on a given page to go to another legacy shell URL instead, if no service worker support has been detected:
+AMP bunu [kabuk URL yeniden yazımı](../../../documentation/components/reference/amp-install-serviceworker.md#shell-url-rewrite) adlı bir şeyle çözer.  [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) etiketine yedek bir URL örüntüsü ekleyerek, AMP'ye, hiçbir hizmet çalışanı desteği tespit edilmezse, başka bir eski kabuk bağlantısına gitmek için verili bir sayfadaki tüm bağlantıları yeniden yazma talimatı verirsiniz.
 
 [sourcecode:html]
 <amp-install-serviceworker
@@ -112,6 +112,6 @@ AMP solves this with something called [shell URL rewriting](../../../documentati
 </amp-install-serviceworker>
 [/sourcecode]
 
-With these attributes in place, all subsequent clicks on an AMP will go to your PWA, regardless of any service worker.
+Bu öznitelikler eklendiğinde, AMP'deki sonraki tüm tıklamalar herhangi bir hizmet çalışanına bakılmaksızın PWA'nıza gidecektir.
 
-[tip type="read-on"] **READ ON –** You've already come so far – why not reuse your existing AMP pages to build your PWA? [Here's how](amp-in-pwa.md). [/tip]
+[tip type="read-on"] **OKUMAYA DEVAM EDİN** – Şimdiden epey ilerlediniz. Var olan AMP sayfalarınızı yeniden kullanarak kendi PWA'nızı yapmaya ne dersiniz? [Şu şekilde yapabilirsiniz](amp-in-pwa.md). [/tip]
