@@ -1,7 +1,7 @@
 ---
 "$title": Çıkış yapma
 "$order": '3'
-description: Similar to the login button, the presence of the logout button is conditionally dependent on the state of the amp-access component ...
+description: '"Giriş düğmesine benzer şekilde, çıkış düğmesinin varlığı amp-access bileşeninin durumuna koşullu olarak bağlıdır:"'
 ---
 
 Giriş düğmesine benzer şekilde, çıkış düğmesinin varlığı [`amp-access`](../../../../documentation/components/reference/amp-access.md) bileşeninin durumuna koşullu olarak bağlıdır:
