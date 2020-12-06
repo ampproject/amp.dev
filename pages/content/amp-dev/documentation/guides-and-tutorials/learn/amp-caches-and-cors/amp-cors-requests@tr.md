@@ -81,7 +81,7 @@ Tamam, yani sayfa *etki alanımda* ve JSON'da *etki alanımda*. Ben bir sorun g�
 Peki, ama kullanıcınız AMP sayfanıza nasıl ulaştı? Eriştikleri önbelleğe alınmış bir sayfa mı? Kullanıcınız büyük olasılıkla AMP sayfanıza doğrudan erişmemiş, bunun yerine sayfanızı başka bir platform aracılığıyla keşfetmiştir. Örneğin, Google Araması, AMP sayfalarını hızlı bir şekilde oluşturmak için Google AMP önbelleğini kullanır; bunlar, *farklı* etki alanı olan Google AMP Önbelleğinden sunulan önbelleğe alınmış sayfalardır. Kullanıcınız sayfanızdaki fiyatları güncellemek için düğmeye tıkladığında, önbelleğe alınmış AMP sayfası, kaynaklar (önbellek -> kaynak etki alanı) arasında bir uyumsuzluk olan fiyatları almak için kaynak etki alanınıza bir istek gönderir. Bu tür çapraz kaynaklı isteklere izin vermek için CORS'u işlemeniz gerekir, aksi takdirde istek başarısız olur.
 
 <amp-img alt="CORS and Cache" layout="responsive" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png" width="809" height="391">
-  <noscript>     <img alt="CORS and Cache" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png">   </noscript></amp-img>
+  <noscript><img alt="CORS ve Önbellek" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png"></noscript></amp-img>
 
 **Peki, ne yapmalıyım?**
 
@@ -197,7 +197,7 @@ Uç noktanıza CORS isteklerini hesaba katmak için iki senaryo vardır:
 Bu senaryoları bir örnekle ele alalım. Örneğimizde, `article-amp.html.` adlı bir AMP sayfasını barındıran `example.com` sitesini yönetiyoruz. AMP sayfası, yine `example.com`'da barındırılan bir `data.json` dosyasından dinamik verileri almak için bir a`amp-list` içeriyor. AMP sayfamızdan gelen `data.json` dosyamıza gelen istekleri işlemek istiyoruz. Bu istekler, aynı kaynaktaki (önbelleğe alınmamış) AMP sayfasından veya farklı bir kaynaktaki (önbelleğe alınmış) AMP sayfasından olabilir.
 
 <amp-img alt="CORS example" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png" width="629" height="433">
-  <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png">   </noscript></amp-img>
+  <noscript><img alt="CORS örneği" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png"></noscript></amp-img>
 
 ### İzin verilen kaynaklar <a name="allowed-origins"></a>
 
@@ -281,7 +281,7 @@ function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
 Aşağıdaki senaryoda, `article-amp.html` sayfası `data.json` dosyasını ister; kaynaklar aynıdır.
 
 <amp-img alt="CORS example - scenario 1" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png" width="657" height="155">
-  <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png">   </noscript></amp-img>
+  <noscript><img alt="CORS örneği" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png"></noscript></amp-img>
 
 İsteği incelersek şunları bulacağız:
 
@@ -305,7 +305,7 @@ Access-Control-Allow-Origin: https://example.com
 Aşağıdaki senaryoda, Google AMP Önbelleğinde önbelleğe alınan `article-amp.html` sayfası `data.json` dosyasını ister; kaynaklar farklıdır.
 
 <amp-img alt="CORS example - scenario 2" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png" width="657" height="155">
-  <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png">   </noscript></amp-img>
+  <noscript><img alt="CORS örneği" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png"></noscript></amp-img>
 
 İsteği incelersek şunları bulacağız:
 
@@ -362,7 +362,7 @@ function assertFontCors(req, res, opt_validMethods, opt_exposeHeaders) {
 Örnek olarak, `https://example.com/amp.html`'de /some/font.ttf dosyasını yüklemek isterseniz, kaynak sunucu aşağıdaki gibi Access-Control-Allow-Origin başlığıyla yanıt vermelidir.
 
 <amp-img alt="CORS font example" layout="responsive" src="https://amp.dev/static/img/docs/cors-font.jpg" width="2268" height="1594">
-  <noscript>     <img alt="CORS font example" src="https://amp.dev/static/img/docs/cors-font.jpg">   </noscript></amp-img>
+  <noscript><img alt="CORS yazı tipi örneği" src="https://amp.dev/static/img/docs/cors-font.jpg"></noscript></amp-img>
 
 [tip type="note"] Yazı tipi dosyanıza herhangi bir kaynaktan erişilebiliyorsa, joker karakter `Access-Control-Allow-Origin` ile yanıt verebilirsiniz, AMP Önbelleği de bu değeri yansıtacaktır. Yani bu, `Access-Control-Allow-Origin: *` ile yanıt vereceği anlamına gelir. Zaten bu ayara sahipseniz, hiçbir şeyi değiştirmeye gerek yoktur. [/tip]
 
