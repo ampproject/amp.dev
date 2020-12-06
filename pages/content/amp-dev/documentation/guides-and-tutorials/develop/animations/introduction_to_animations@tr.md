@@ -259,9 +259,9 @@ Daha büyük animasyonlar için, `animations` dizisi içindeki animasyonlar diğ
 ```
 [/example]
 
-- Declaring a variable, `--duration`, and giving it the value of two seconds.
-- Setting the `duration` to the var `--duration`'s value.
-- Calculating the delay applied to each element with the class `.card`.
+- Bir değişkeni `--duration` olarak bildirir ve iki saniyelik bir değer verir.
+- `duration` değerini var `--duration` değerine ayarlar.
+- `.card` seçicisine karşılık gelen her öğeye uygulanan gecikmeyi hesaplar.
     1. [`length()` eklentisi](../../../../documentation/components/reference/amp-animation.md#css-length()-extension), kaç tane `.card` öğesinin seçildiğini hesaplar
     2. Uzunluk daha sonra her `.card`'in [index()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension) çıkarır
     3. Elde edilen değer var `--duration` ile çarpılır
