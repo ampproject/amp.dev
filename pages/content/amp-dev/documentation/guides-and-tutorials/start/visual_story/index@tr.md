@@ -1,7 +1,7 @@
 ---
-"$title": Create your first Web Story
+"$title": İlk Web Hikayenizi oluşturma
 "$order": '0'
-description: "In this tutorial, we'll introduce you to the amp-story component, which you can use to create visually engaging Web Stories with AMP. By the end of this tutorial, you'll ..."
+description: 'Bu öğreticide, AMP ile görsel olarak ilgi çekici Web Hikayeleri oluşturmak için kullanabileceğiniz '
 "$hidden": 'true'
 formats:
 - stories
@@ -10,13 +10,13 @@ author: bpaduch
 
 [video src="/static/video/tut_pets-story-complete.mp4" caption="Completed AMP story." poster="/static/img/docs/tutorials/amp_story/story_poster.png"]
 
-In this tutorial, we'll introduce you to the [`amp-story`](../../../../documentation/components/reference/amp-story.md) component, which you can use to create visually engaging Web Stories with AMP. By the end of this tutorial, you'll have created a story about "The Joy of Pets" that provides bite-sized information and visuals to entertain and engage readers.
+Bu öğreticide, AMP ile görsel olarak ilgi çekici Web Hikayeleri oluşturmak için kullanabileceğiniz [`amp-story`](../../../../documentation/components/reference/amp-story.md) bileşenini size tanıtacağız. Bu eğitimin sonunda, okuyuculara iyi vakit geçirtmek ve onları etkileşime teşvik etmek için küçük boyutlu bilgiler ve görseller sağlayan "The Joy of Pets" hakkında bir hikaye oluşturmuş olacaksınız.
 
-## You will learn to:
+## Şunları öğreneceksiniz:
 
-- Create a multi-page story by using the [`amp-story`](../../../../documentation/components/reference/amp-story.md) component
-- Create visual effects with multiple layers in a page
-- Lay out elements in a page by using layer templates
-- Add audio that plays while a page is viewed
-- Animate elements on a page
-- Keep readers engaged with your content by adding related links to the end of the story
+- [`amp-story`](../../../../documentation/components/reference/amp-story.md) bileşenini kullanarak çok sayfalı hikaye oluşturma
+- Tek sayfada birden çok katmanla görsel efektler oluşturma
+- Katman şablonları kullanarak bir sayfaya öğeleri yerleştirme
+- Bir sayfa görüntülenirken çalan ses ekleme
+- Bir sayfadaki öğeleri canlandırma
+- Hikayenin sonuna ilgili bağlantılar ekleyerek okuyucuların içeriğinizle etkileşimde kalmasını sağlama
