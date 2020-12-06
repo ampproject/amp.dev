@@ -57,8 +57,8 @@ Sözdiziminin her bir parçasının açıklamaları için aşağıdaki tabloya b
   <tr>
     <td><code>targetId</code></td>
     <td>evet</td>
-    <td>This is the DOM id for the element, or a predefined <a href="#special-targets">special target</a> you'd like to execute an action on  in response to the event. In the following example, the <code>targetId</code> is the DOM id of the <code>amp-lightbox</code> target, <code>photo-slides</code>.     <pre><amp-lightbox id="photo-slides"></amp-lightbox>
-<button on="tap:photo-slides">Show Images</button></pre>     </td>
+    <td>Bu, öğe için bir DOM kimliği ya da olaya yanıt olarak üzerinde bir eylem yürütmek isteyeceğiniz ön tanımlı <a href="#special-targets">özel hedeftir</a>. Aşağıdaki örnekte, <code>targetId</code> öğesi, <code>amp-lightbox</code> hedefi <code>photo-slides</code> için DOM kimliğidir. <pre>&lt;amp-lightbox id="photo-slides">&lt;/amp-lightbox> &lt;button on="tap:photo-slides">Resimleri Göster &lt;/button></pre>
+</td>
   </tr>
   <tr>
     <td><code>methodName</code></td>
@@ -382,7 +382,7 @@ Bir öğe ancak önceden `hide` veya `toggleVisibility` eylemiyle gizlenmişse y
   </tr>
   <tr>
     <td><code>scrollTo(duration=INTEGER, position=STRING)</code></td>
-    <td>Scrolls an element into view with a smooth animation.<br>     <code>duration</code> is optional. Specifies the length of the animation in milliseconds. If unspecified, an amount relative to scroll difference     under or equal to 500 milliseconds is used.<br>     <code>position</code> is optional. One of <code>top</code>, <code>center</code>     or <code>bottom</code> (default <code>top</code>).     Specifies the position of the element relative to the viewport after     scrolling.<br>     As an accessibility best practice, pair this with a call to <code>focus()</code> to focus on the element being scrolled to.</td>
+    <td>Bir öğeyi kaydırarak düzgün bir animasyonla görünür hale getirir. <br><code>duration</code> isteğe bağlıdır. Animasyon uzunluğu milisaniye olarak belirtilir. Belirtilmezse, 500 milisaniyenin altındaki veya ona eşit kaydırma farkına göre bir miktar kullanılır. <br> <code>position</code> isteğe bağlıdır. <code>top</code> , <code>center</code> veya <code>bottom</code> (varsayılan <code>top</code>). Kaydırma işleminden sonra öğenin görünüm penceresine göre konumunu belirtir.</td>
   </tr>
   <tr>
     <td><code>focus</code></td>
@@ -399,11 +399,11 @@ Bir öğe ancak önceden `hide` veya `toggleVisibility` eylemiyle gizlenmişse y
   </tr>
   <tr>
     <td><code>play</code></td>
-    <td>Plays the audio. Is a no-op if the <code><amp-audio></code> element is a descendant of <code><amp-story></code>.</td>
+    <td>Sesi oynatır. <code>&lt;amp-audio></code>  öğesi, <code>&lt;amp-story></code> alt öğesiyse işlem yapamaz.</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
-    <td>Pauses the audio. Is a no-op if the <code><amp-audio></code> element is a descendant of <code><amp-story></code>.</td>
+    <td>Sesi duraklatır. <code>&lt;amp-audio></code>  öğesi, <code>&lt;amp-story></code> alt öğesiyse işlem yapamaz.</td>
   </tr>
 </table>
 
@@ -684,14 +684,14 @@ Aşağıdakiler, AMP sistemi tarafından sağlanan ve özel gereksinimleri olan 
     <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
       <p>Navigates current window to given URL, to the optional specified target if given (currenly only supporting <code>_top</code> and <code>_blank </code>). The optional <code>opener</code> parameter can be specified when using a target of <code>_blank</code> to allow the newly opened page to access <a><code>window.opener</code></a>. Supports <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">standard URL substitutions</a>.</p>
-      <p><strong>Caveat:</strong> Using normal <code><a></code> links is recommended wherever possible since <code>AMP.navigateTo</code> is not recognized by web crawlers.</p>
+      <p><strong>Caveat:</strong> Using normal <code>&lt;a></code> links is recommended wherever possible since <code>AMP.navigateTo</code> is not recognized by web crawlers.</p>
     </td>
   </tr>
   <tr>
     <td><code>closeOrNavigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
       <p>İzin veriliyorsa pencereyi kapatmaya çalışır, aksi takdirde <code> navigateTo</code> eylemine benzer şekilde hareket eder. Bir "Geri" düğmesinin, önceki sayfadan yeni bir pencerede açıldıysa pencereyi kapatmasını veya açılmamışsa hareket etmesini gerekebilecek durumlarda kullanışlıdır.</p>
-      <p><strong>Caveat:</strong> Using normal <code><a></code> links is recommended wherever possible since <code>AMP.closeOrNavigateTo</code> is not recognized by web crawlers.</p>
+      <p><strong>Caveat:</strong> Using normal <code>&lt;a></code> links is recommended wherever possible since <code>AMP.closeOrNavigateTo</code> is not recognized by web crawlers.</p>
     </td>
   </tr>
   <tr>
