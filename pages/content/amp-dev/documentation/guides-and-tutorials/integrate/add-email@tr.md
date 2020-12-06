@@ -44,7 +44,6 @@ Content-Type: text/html; charset="UTF-8"
 
 <span>Hello World in HTML!</span>
 --001a114634ac3555ae05525685ae
-
 ```
 
 [tip type="important"] Bazı e-posta istemcileri sadece son MIME bölümünü işleyebilirler. Bir e-postanın işlendiğinden emin olmak için, `text/x-amp-html` MIME bölümünü `text/html` MIME bölümünden _önce_ yerleştirin. [/tip]
