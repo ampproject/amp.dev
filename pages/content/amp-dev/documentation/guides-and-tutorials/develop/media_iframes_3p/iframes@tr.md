@@ -25,7 +25,7 @@ Iframe'ler, AMP'de, kullanıcı tarafından yazılan JavaScript gerektiren içer
 - En az **600 piksel** veya en üstten uzak olarak ilk görüntü alanının **%75'i** kadar olmalıdır ([`placeholder`](#using-placeholders) kullanan iframe'ler hariç).
 - Kaynakları yalnızca HTTPS aracılığıyla talep edebilir ve aynı kök kaynağa izin vermeyi belirtmedikleri müddetçe kapsayıcıyla aynı başlangıç noktasında olmamalıdır.
 
-[tip type="read-on"] **READ ON –** Learn more at the [full specification for `amp-iframe`](../../../../documentation/components/reference/amp-iframe.md). [/tip]
+[tip type="read-on"] **OKUMAYA DEVAM EDİN -** [`amp-iframe` özelliklerinin tamamı hakkında](../../../../documentation/components/reference/amp-iframe.md) daha fazla bilgi edinin. [/tip]
 
 ### Betik ekleme
 
@@ -52,7 +52,7 @@ Aşağıdaki örnekte, [Google Maps Embed API](../../../../documentation/compone
 
 [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) , iframe hazır olana kadar yer tutucu olarak görüntülenecek `placeholder` özniteliğine sahip bir öğe (örneğin, bir [`amp-img`](../../../../documentation/components/reference/amp-img.md) öğesi) içermesi koşuluyla, bir belgenin üstünde bir [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) görüntüleyebilirsiniz.
 
-[tip type="read-on"] **READ ON –**: Learn more about placeholders in [Iframe with placeholder](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder). [/tip]
+[tip type="read-on"] **OKUMAYA DEVAM EDİN -**: [Yer tutuculu iframe'deki](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder) yer tutucular hakkında daha fazla bilgi edinin. [/tip]
 
 Yer tutuculu örnek:
 
