@@ -1,13 +1,10 @@
 ---
-"$title": Structure and rendering of AMP emails
+"$title": AMP e-postalarının yapısı ve oluşturulması
 order: '2'
 formats:
 - email
 teaser:
-  text: |2-
-
-    Email is structured as a MIME tree. This MIME tree contains the message body
-    and any attachments to the email.
+  text: 'E-posta bir '
 toc: 'true'
 ---
 
@@ -34,31 +31,31 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Email is structured as a [MIME tree](https://en.wikipedia.org/wiki/MIME). This MIME tree contains the message body and any attachments to the email.
+E-posta bir MIME ağacı olarak yapılandırılmıştır. Bu MIME ağacı, mesaj gövdesini ve e-postaya ekleri içerir.
 
-To embed AMP within an email, add a new MIME part with a content type of `text/x-amp-html` as a descendant of `multipart/alternative`. It should live alongside the existing `text/html` or `text/plain` parts. This ensures that the email message works on all clients.
+AMP'yi bir e-postaya yerleştirmek için, `multipart/alternative` alt öğesi olarak `text/x-amp-html` içerik türüne sahip yeni bir MIME bölümü ekleyin. Mevcut `text/html` veya `text/plain` bölümlerin yanında yaşamalıdır. Bu, e-posta mesajının tüm istemcilerde çalışmasını sağlar.
 
 <amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/master/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"> <img data-md-type="raw_html" alt="AMP for Email MIME Parts Diagram" src="../img/amp-email-mime-parts.png"> </noscript></amp-img>
 
-For more information about the `multipart/alternative` subtype, refer to [RFC 1521, section 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
+`multipart/alternative` alt türü hakkında daha fazla bilgi için bkz: [RFC 1521, bölüm 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
-## Additional information <a name="additional-information"></a>
+## Ek bilgi <a name="additional-information"></a>
 
-The `text/x-amp-html` part must be nested under a `multipart/alternative` node. An email cannot have more than one `text/x-amp-html` part inside a `multipart/alternative` node.
+`text/x-amp-html` kısmı `multipart/alternative` bir düğüm altında iç içe geçmiş olmalıdır. Bir e-posta, `multipart/alternative` bir düğüm içinde birden fazla `text/x-amp-html` parçasına sahip olamaz.
 
-The `multipart/alternative` must contain at least one non-AMP (`text/plain` or `text/html`) node in addition to the `text/x-amp-html` node. This will be displayed to users whose email clients don't support AMP or who opted out via their email provider's settings.
+`multipart/alternative`, `text/x-amp-html` düğümüne ek olarak en az bir AMP (`text/plain` veya `text/html`) düğümü içermelidir. Bu, e-posta istemcileri AMP'yi desteklemeyen veya e-posta sağlayıcısının ayarları aracılığıyla devre dışı bırakan kullanıcılara gösterilecektir.
 
-Note: Some email clients[[1]](https://openradar.appspot.com/radar?id=6054696888303616) will only render the last MIME part, so we recommend placing the `text/x-amp-html` MIME part *before* the `text/html` MIME part.
+Not: Bazı e-posta istemcileri [[1]](https://openradar.appspot.com/radar?id=6054696888303616) yalnızca son MIME bölümünü oluşturacaktır, bu nedenle `text/x-amp-html` MIME bölümünü `text/html` MIME bölümünden *önce* yerleştirmenizi öneririz.
 
-### Replying/forwarding semantics <a name="replyingforwarding-semantics"></a>
+### Yanıtlama/yönlendirme semantiği <a name="replyingforwarding-semantics"></a>
 
-The email client strips out the `text/x-amp-html` part of the MIME tree when a user replies to or forwards an AMP email message.
+E-posta istemcisi, bir kullanıcı AMP e-posta mesajını yanıtladığında veya ilettiğinde MIME ağacının `text/x-amp-html` bölümünü çıkarır.
 
-### Expiry <a name="expiry"></a>
+### Sona erme <a name="expiry"></a>
 
-The email client may stop displaying the AMP part of an email after a set period of time, e.g. 30 days. In this case, emails will display the `text/html` or `text/plain` part.
+E-posta istemcisi, bir e-postanın AMP bölümünü belirli bir süre sonra, örneğin 30 gün sonra görüntülemeyi durdurabilir. Bu durumda, e-postalar `text/html` veya `text/plain` kısmı gösterecektir.
 
-## Example <a name="example"></a>
+## Örnek <a name="example"></a>
 
 <!-- prettier-ignore-start -->
 
