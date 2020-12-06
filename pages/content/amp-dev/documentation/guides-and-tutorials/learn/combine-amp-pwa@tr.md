@@ -1,7 +1,7 @@
 ---
-"$title": How AMP and PWA relate to each other
+"$title": AMP ve PWA arasında nasıl bir ilişki vardır?
 "$order": '7'
-description: Progressive Web Apps and AMP pages work great together. In fact, in many cases, they complement each other in one way or another. Learn how to ...
+description: Aşamalı Web Uygulamaları ve AMP sayfaları birlikte harika çalışır. Aslında, çoğu durumda, birbirlerini şu ya da bu şekilde tamamlarlar. Aşağıdaki adımlarla şunları öğrenin...
 formats:
 - websites
 components:
@@ -11,36 +11,36 @@ author: pbakaus
 
 [video src='https://www.youtube.com/watch?v=Yllbfu3JE2Y' caption='Watch the intro to combining AMP and PWA.']
 
-Progressive Web Apps and AMP pages work great together. In fact, in many cases, they complement each other in one way or another. Learn how to:
+Aşamalı Web Uygulamaları ve AMP sayfaları birlikte harika çalışır. Aslında, çoğu durumda, birbirlerini şu ya da bu şekilde tamamlarlar. Aşağıdaki adımlarla şunları öğrenin:
 
-1. [Enable PWA features](../../../documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md) for your AMP pages
-2. Create a [compelling, super-fast user journey](../../../documentation/guides-and-tutorials/integrate/amp-to-pwa.md) from AMP to PWA
-3. [Simplify your PWA](../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md) by using the power of AMP
+1. AMP sayfalarınız için [PWA özelliklerini etkinleştirme](../../../documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md)
+2. AMP'den PWA'ya kadar [ilgi çekici, süper hızlı bir kullanıcı yolculuğu](../../../documentation/guides-and-tutorials/integrate/amp-to-pwa.md) oluşturma
+3. AMP'nin gücünü kullanarak [PWA'nızı sadeleştirme](../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md)
 
 [tip type="note"]
 
-Learn more about [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/) at Web Fundamentals.
+Web Temelleri'nde [Aşamalı Web Uygulamaları](https://developers.google.com/web/progressive-web-apps/) hakkında daha fazla bilgi edinin.
 
 [/tip]
 
-## AMP pages with PWA features
+## PWA özelliklerine sahip AMP sayfaları
 
-AMP Pages can use many PWA features on their own, as long as they're served from your origin (your site's domain) as opposed to an AMP Cache. This means that PWA features won't kick in when consuming an AMP Page within a platform like Google or Bing, but they will on the onward journey, or if users navigate to your AMP pages directly.
+AMP Sayfaları, AMP Önbelleği yerine kaynağınızdan (sitenizin alan adı) sunulduğu sürece birçok PWA özelliğini kendi başlarına kullanabilir. Bu, PWA özelliklerinin Google veya Bing gibi bir platformda bir AMP Sayfasını tüketirken devreye girmeyeceği, ancak ileriye dönük yolculukta veya kullanıcılar AMP sayfalarınıza doğrudan gittiğinde bu özelliklerin devreye gireceği anlamına gelir.
 
 [tip type="read-on"] **READ ON –** Learn how to [enable PWA features](../../../documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md) for your AMP Pages. [/tip]
 
-## AMP as entry point into your PWA
+## PWA'nıza giriş noktası olarak AMP
 
-AMP's unique selling point is the **almost-instant delivery**, a characteristic that makes AMP the perfect fit for the first user interaction with your site. *Progressive web apps* enable much **more interactivity and engagement-enabling features**, but their first load is hindered by the fact that the site's Service Worker, and therefore its assets and app shell, are only accelerating delivery on subsequent loads.
+AMP'yi benzersiz kılan özelliği, **neredeyse anında yüklenmesidir**; bu, AMP'yi sitenizle ilk kullanıcı etkileşimi için mükemmel hale getiren bir özelliktir. *Aşamalı web uygulamaları* çok **daha fazla etkileşim ve katılım sağlayan özellik sunar** , ancak sitenin Hizmet Çalışanı'nın ve dolayısıyla varlıklarının ve uygulama kabuğunun yalnızca sonraki yüklemelerde teslimatı hızlandırması nedeniyle ilk yüklemeleri engellenir.
 
-A good strategy is to make the entry point into your site an AMP page, then warm up the PWA behind the scenes and switch to it for the onward journey.
+Sitenize giriş noktasını bir AMP sayfası haline getirmek, ardından perde arkasında PWA'yı ısıtmak ve ileriye dönük yolculuk için ona geçmek iyi bir stratejidir.
 
-[tip type="read-on"] **READ ON –** Learn how to [connect AMP to a PWA](../../../documentation/guides-and-tutorials/integrate/amp-to-pwa.md) through [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md). [/tip]
+[tip type="read-on"] **OKUMAYA DEVAM EDİN –** [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) yoluyla [AMP'yi PWA'ya](../../../documentation/guides-and-tutorials/integrate/amp-to-pwa.md) nasıl bağlayabileceğinizi öğrenin. [/tip]
 
-## AMP as data source for your PWA
+## PWA'nız için veri kaynağı olarak AMP
 
-One of the core features of AMP Pages is that they're easy and safe to embed, which is why an ever-growing number of platforms are happy to distribute and serve them.
+AMP Sayfalarının temel özelliklerinden biri eklemesinin kolay ve güvenli olmasıdır; bu nedenle, gittikçe artan sayıda platform bunları memnuniyetle dağıtma ve sunmaktadır.
 
-If you're building a Progressive Web App, you can receive the same benefits and dramatically reduce your backend and client complexity by **re-using your AMP Pages as data-source for your PWA**.
+Bir Aşamalı Web Uygulaması **oluşturuyorsanız, AMP Sayfalarınızı PWA'nız için veri kaynağı olarak yeniden kullanarak** aynı avantajları elde edebilir ve arka uç ve istemci karmaşıklığınızı önemli ölçüde azaltabilirsiniz.
 
-[tip type="read-on"] **READ ON –** Learn how to [consume AMP pages within a PWA](../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md). [/tip]
+[tip type="read-on"] **OKUMAYA DEVAM EDİN –** [PWA içinde AMP sayfalarını nasıl tüketebileceğinizi](../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md) öğrenin. [/tip]
