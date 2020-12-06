@@ -1,7 +1,7 @@
 ---
-"$title": Responsive images with srcset, sizes & heights
+"$title": Srcset, boyutlar ve yüksekliklere sahip duyarlı resimler
 "$order": '4'
-description: Use the srcset attribute to control an element’s assets based on varying media expressions. In particular, use it for all amp-img tags to specify which ...
+description: Bir öğenin varlıklarını değişen medya ifadelerine göre kontrol etmek için srcset özniteliğini kullanın. Özellikle, bunu, değişen ekran boyutlarına göre...
 formats:
 - websites
 - email
@@ -16,9 +16,9 @@ contributors:
 
 ## srcset
 
-Use the `srcset` attribute to control an element’s assets based on varying media expressions. In particular, use it for all [`amp-img`](../../../../documentation/components/reference/amp-img.md) tags to specify which image assets to use based on varying screen sizes. AMP will autogenerate a `sizes` attribute, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img" data-md-type="link">that meets the HTML5 definition of `sizes`</a>, for all underlying `<img>` tags of `<amp-img>` if the `<amp-img>` has a `srcset` attribute but no `sizes`.
+Bir öğenin varlıklarını değişen medya ifadelerine göre kontrol etmek için `srcset` özniteliğini kullanın. Özellikle, bunu, değişen ekran boyutlarına göre hangi resim öğelerinin kullanılacağını belirtmek için tüm [`amp-img`](../../../../documentation/components/reference/amp-img.md) etiketlerinde kullanın. AMP, `<amp-img>` bir `srcset` içeriyor ancak `sizes` içermiyorsa, `<amp-img>` bileşeninde altta yatan tüm `<img>` etiketleri için <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img" data-md-type="link">HTML5 `sizes` tanımını karşılayan</a> bir  `sizes` özniteliğini otomatik olarak oluşturacaktır.
 
-In this simple example, `srcset` specifies which image to use based on the screen width. The `w` descriptor tells the browser the width of each image in the list:
+Bu basit örnekte `srcset` , ekran genişliğine bağlı olarak hangi görüntünün kullanılacağını belirtir. `w` tanımlayıcısı, tarayıcıya listedeki her görüntünün genişliğini söyler:
 
 [example preview="top-frame" playground="true"]
 ```html
@@ -35,13 +35,13 @@ In this simple example, `srcset` specifies which image to use based on the scree
 
 [tip type="note"] **NOTE –**  AMP supports srcset with the `w` descriptor across all browsers. [/tip]
 
-Learn more about creating responsive images using `srcset` in [Using Responsive Images (Now)](http://alistapart.com/article/using-responsive-images-now).
+<a>Duyarlı Görüntüleri Kullanma (Şimdi)</a> bölümünde <code>srcset</code> kullanarak duyarlı görüntüler oluşturma hakkında daha fazla bilgi edinin.
 
-## sizes
+## sizes (boyutlar)
 
-You can also use the optional AMP `sizes` attribute along with `srcset`. The AMP `sizes` attribute describes how to calculate the element size based on any media expression. <strong data-md-type="raw_html">Defining `sizes` on any AMP Element will cause AMP to set an inline style for width on that element according to the matched media query.</strong> Based on the element’s calculated size, the user agent selects the most relative source supplied by the `srcset` attribute.
+`srcset` ile birlikte isteğe bağlı AMP `sizes` özniteliğini de kullanabilirsiniz. AMP `sizes` özniteliği, herhangi bir medya ifadesine göre öğe boyutunun nasıl hesaplanacağını açıklar. <strong data-md-type="raw_html">Herhangi bir AMP Öğesinde `sizes` tanımlanması, AMP'nin, eşleşen medya sorgusuna göre bu öğedeki genişlik için bir satır içi stil ayarlamasını tetikler. </strong>Öğenin hesaplanan boyutuna bağlı olarak, kullanıcı aracısı `srcset` özniteliği tarafından sağlanan en göreli kaynağı seçer.
 
-Consider the following example:
+Aşağıdaki örneği düşünün:
 
 [example preview="top-frame" playground="true"]
 ```html
@@ -56,22 +56,22 @@ Consider the following example:
 ```
 [/example]
 
-The `sizes` attribute defines the element’s width to be 50% the size of the viewport when the viewport is 650px or more. For example, if the viewport is 800px, the element’s width is set to 400px. The browser then selects the `srcset` resource relative to 400px, assuming the device pixel ratio is 1, which in this instance is `hummingbird-narrow.jpg` (320px).
+`sizes` özniteliği, görüntü alanı 650 piksel veya daha fazla olduğunda öğenin genişliğini görüntü alanının boyutunun %50'si olacak şekilde tanımlar. Örneğin, görüntü alanı 800 piksel ise, öğenin genişliği 400 piksel olarak ayarlanır. Tarayıcı daha sonra, cihazın piksel oranının 1 olduğunu varsayarak 400px'e göre `srcset` kaynağını seçer, bu örnekte `hummingbird-dar.jpg` (320px).
 
 [tip type="important"] **IMPORTANT –** When sizes attribute is specified along with width and height, layout defaults to `responsive`. [/tip]
 
-Read more about the [AMP `sizes` attribute here](../../../../documentation/guides-and-tutorials/learn/common_attributes.md).
+[AMP `sizes` özniteliği hakkında daha fazlasını buradan okuyabilirsiniz](../../../../documentation/guides-and-tutorials/learn/common_attributes.md).
 
-## heights
+## heights (yükseklikler)
 
-All AMP custom elements that allow `responsive` layout, also support the `heights` attribute. The value of this attribute is a sizes expression based on media expressions as similar to the [img sizes attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), but with two key differences:
+`responsive` yerleşimine izin veren tüm AMP özel öğeleri, aynı zamanda `heights` özniteliğini de destekler. Bu özniteliğin değeri, [img sizes özniteliğine](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) benzer şekilde medya ifadelerine dayalı bir boyut ifadesidir, ancak iki temel fark vardır:
 
-1. It applies to the height and not width of the element.
-2. Percent values are allowed, e.g. `86%`. If a percent value is used, it indicates the percent of the element's width.
+1. Bu, öğenin genişliğine değil yüksekliğine uygulanır.
+2. Yüzde değerlerine izin verilir, örneğin `%86`. Yüzde değeri kullanılırsa, öğe genişliğinin yüzdesini gösterir.
 
-When the `heights` attribute is specified along with `width` and `height`, the `layout` is defaulted to `responsive`.
+`heights` özniteliği `width` ve `height` ile birlikte belirtildiğinde, `layout` varsayılan olarak `responsive` olarak ayarlanır.
 
-An example:
+Bir örnek:
 
 [example preview="top-frame" playground="true"]
 ```html
@@ -84,4 +84,4 @@ An example:
 ```
 [/example]
 
-In this example, the height of the element by default will be 80% of the width, but for the viewport wider than `500px` it will be capped at `200px`.
+Bu örnekte, öğenin yüksekliği varsayılan olarak genişliğin %80'i olacaktır, ancak `500px`'den daha geniş olan görüntü alanı için `200px` ile sınırlanacaktır.
