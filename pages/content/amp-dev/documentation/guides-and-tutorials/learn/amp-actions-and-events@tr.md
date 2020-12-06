@@ -138,10 +138,7 @@ Bir öğe ancak önceden `hide` veya `toggleVisibility` eylemiyle gizlenmişse y
 </td>
     <td><code>input</code></td>
     <td>
-      <pre>event.min
-event.max
-event.value
-event.valueAsNumber</pre>
+      <pre>event.min<br>event.max<br>event.value<br>event.valueAsNumber</pre>
     </td>
   </tr>
   <tr>
@@ -154,9 +151,7 @@ event.valueAsNumber</pre>
   <tr>
     <td><code>select</code></td>
     <td>
-      <pre>event.min
-event.max
-event.value</pre>
+      <pre>event.min<br>event.max<br>event.value</pre>
     </td>
   </tr>
   <!-- input-debounced -->
