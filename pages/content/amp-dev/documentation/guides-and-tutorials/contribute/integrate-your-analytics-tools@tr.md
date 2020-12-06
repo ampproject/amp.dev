@@ -1,11 +1,11 @@
 ---
-"$title": Integrate your analytics tool with AMP
+"$title": Analiz aracınızı AMP ile entegre etme
 order: '1'
 formats:
 - websites
 - stories
 teaser:
-  text: " Overview"
+  text: Genel bakış
 toc: 'true'
 ---
 
@@ -16,52 +16,52 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-## Overview <a name="overview"></a>
+## Genel bakış <a name="overview"></a>
 
-If you operate a software-as-a-service tool for publishers to better understand their traffic and visitors, you may want to integrate your service into `amp-analytics`. This will enable your customers to view traffic patterns for their AMP HTML pages.
+Yayıncıların trafiğini ve ziyaretçilerini daha iyi anlamaları için bir hizmet olarak yazılım aracı kullanıyorsanız, hizmetinizi `amp-analytics` ile entegre etmek isteyebilirsiniz. Bunu yapmanız, müşterilerinizin AMP HTML sayfalarına ilişkin trafik modellerini görüntülemesini sağlayacaktır.
 
-## Before you begin <a name="before-you-begin"></a>
+## Başlamadan önce <a name="before-you-begin"></a>
 
-Before you can add your analytics service to AMP HTML runtime, you may need to:
+Analiz hizmetinizi AMP HTML çalışma zamanına eklemeden önce şunları yapmanız gerekebilir:
 
-- Identify the kinds of [variables](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) and [requests](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-analytics.md#requests) you'll need in an AMP HTML document for your analytics service.
-- Determine if the batching plugin function is required to construct the final url if using requests with batching behavior.
-- Identify the triggers that result in analytics requests being sent from a page that would be relevant for your service.
-- Consider if and how you will [track users across](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md) first-party and third-party AMP contexts.
-- Determine how your analytics dashboard handles AMP traffic.
-- Identify any missing functionality in `amp-analytics`, and [file requests](https://github.com/ampproject/amphtml/issues/new) for needed features.
-- AMP Analytics sends its variables to a preconfigured endpoint. If you do not already have an existing endpoint, review [this sample](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample) for an overview on how to build one.
-    - For all transport types except `iframe`, variables are sent as query string parameters in a HTTPS request.
-    - For the `iframe` transport type, an iframe is created and variables are sent to it via `window.postMessage`. In this case, the message need not be a URL. This option is available only to MRC-accredited vendors.
-- Consider how integration with `amp-analytics` may impact any policies (particularly your privacy policy) or agreements you may have.
+- Analiz hizmetiniz için bir AMP HTML belgesinde ihtiyaç duyacağınız [değişken](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) ve [istek](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-analytics.md#requests) türlerini tanımlamak.
+- Toplu işlem davranışına sahip istekler kullanılıyorsa, nihai url'yi oluşturmak için işlem grubu oluşturma eklentisi fonksiyonunun gerekip gerekmediğini belirlemek.
+- Hizmetinizle ilgili olabilecek bir sayfadan analiz isteklerinin gönderilmesine neden olan tetikleyicileri belirlemek.
+- Birinci ve üçüncü taraf AMP bağlamları boyuna [kullanıcıları nasıl takip edeceğinizi veya takip edip etmeyeceğinizi](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md) hesaba katmak.
+- Analiz panelinizin AMP trafiğini nasıl işlediğini belirlemek.
+- `amp-analytics` içindeki eksik işlevleri belirlemek ve gerekli özellikler için [istekte bulunmak](https://github.com/ampproject/amphtml/issues/new).
+- AMP Analytics, değişkenlerini, önceden yapılandırılmış bir uç noktaya gönderir. Halihazırda mevcut bir uç noktanız yoksa, nasıl oluşturulacağına dair genel bir bakış için [bu örneği inceleyin](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample).
+    - `iframe` dışındaki tüm aktarım türleri için değişkenler, bir HTTPS isteğinde sorgu dizesi parametreleri olarak gönderilir.
+    - `iframe` aktarım türü için bir iframe oluşturulur ve değişkenler ona `window.postMessage` aracılığıyla gönderilir. Bu durumda mesajın bir URL olması gerekmez. Bu seçenek yalnızca MRC onaylı sağlayıcılar tarafından kullanılabilir.
+- `amp-analytics` ile entegrasyonun herhangi bir politikayı (özellikle gizlilik politikanızı) veya sahip olabileceğiniz sözleşmeleri nasıl etkileyebileceğini düşünün.
 
-## Adding your configuration to the AMP HTML runtime <a name="adding-your-configuration-to-the-amp-html-runtime"></a>
+## Yapılandırmanızı AMP HTML çalışma zamanına ekleme<a name="adding-your-configuration-to-the-amp-html-runtime"></a>
 
-1. Create an [Intent-To-Implement issue](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../CONTRIBUTING.md#contributing-features) stating that you'll be adding your analytics service's configuration to AMP HTML's runtime. Be sure to include **cc @ampproject/wg-analytics** in your description.
-2. Develop a patch that implements the following:
-    1. A new configuration json file `${vendorName}.json` in the vendors [folder](https://github.com/ampproject/amphtml/tree/master/extensions/amp-analytics/0.1/vendors) including any options above and beyond the default, such as:
-        1. `"vars": {}` for additional default variables.
-        2. `"requests": {}` for requests that your service will use.
-        3. `"optout":` if needed. We currently don't have a great opt-out system, so please reach out to help us design one that works well for you.
-        4. `"warningMessage":` if needed. Displays warning information from the vendor (such as deprecation or migration) in the console.
-    2. If you are using iframe transport, also add a new line to ANALYTICS_IFRAME_TRANSPORT_CONFIG in iframe-transport-vendors.js containing `"*vendor-name*": "*url*"`
-    3. An example in the [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html). reference.
-    4. A test in the [extensions/amp-analytics/0.1/test/vendor-requests.json ](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../extensions/amp-analytics/0.1/test/vendor-requests.json) file.
-    5. Add your analytics service to the supported vendors list in the [extensions/amp-analytics/0.1/analytics-vendors-list.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./analytics-vendors-list.md) file. Include the type, description, and link to your usage documentation.
-3. If a new batch plugin if required. Please refer to [Add Batch Plugin](#add-batch-plugin) for instructions.
-4. Test the new example you put in [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html) to ensure the hits from the example are working as expected. For example, the data needed is being collected and displayed in your analytics dashboard.
-5. Submit a Pull Request with this patch, referencing the Intent-To-Implement issue.
-6. Update your service's usage documentation and inform your customers.
-7. It's highly recommended to maintain [an integration test outside AMP repo](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../3p/README.md#adding-proper-integration-tests).
+1. Analiz hizmetinizin yapılandırmasını AMP HTML'nin çalışma zamanına ekleyeceğinizi belirten bir [Uygulama Amacı konusu](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../CONTRIBUTING.md#contributing-features) oluşturun. Açıklamanıza **cc @ampproject/wg-analytics**'i eklediğinizden emin olun.
+2. Aşağıdakileri uygulayan bir yama geliştirin:
+    1. A new configuration json file <code>${vendorName}.json</code> in the vendors <a>folder</a> including any options above and beyond the default, such as:
+        1. `"vars": {}` ek varsayılan değişkenler için.
+        2. `"requests": {}` hizmetinizin kullanacağı istekler için.
+        3. `"optout":` gerekirse. Şu anda harika bir devre dışı bırakma sistemimiz yok, bu nedenle lütfen size uygun bir sistem tasarlamamıza yardımcı olmak için bize ulaşın.
+        4. `"warningMessage":` gerekirse. Konsolda sağlayıcıdan gelen uyarı bilgilerini (kullanımdan kaldırma veya geçiş gibi) görüntüler.
+    2. iframe aktarımı kullanıyorsanız iframe-transport-vendors.js'de ANALYTICS_IFRAME_TRANSPORT_CONFIG'e `"*vendor-name*": "*url*"` içeren yeni bir satır da ekleyin
+    3. [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html). referansında bir örnek.
+    4. [extensions/amp-analytics/0.1/test/vendor-requests.json ](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../extensions/amp-analytics/0.1/test/vendor-requests.json) dosyasında bir test.
+    5. Analiz hizmetinizi, [extensions/amp-analytics/0.1/analytics-vendors-list.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./analytics-vendors-list.md) dosyasındaki desteklenen sağlayıcılar listesine ekleyin. Kullanım belgelerinizin türünü, açıklamasını ve bağlantısını ekleyin.
+3. Gerekirse yeni bir toplu eklenti varsa. Talimatlar için lütfen [Toplu Eklenti Ekleme](#add-batch-plugin) bölümüne bakın.
+4. Örnekteki isabetlerin beklendiği gibi çalıştığından emin olmak için [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html) içine koyduğunuz yeni örneği test edin. Örneğin, ihtiyaç duyulan veriler toplanıyor ve analiz panelinizde görüntüleniyor.
+5. Bu yama ile Uygulama Amacı konusuna atıfta bulunarak bir Çekme İsteği gönderin.
+6. Hizmetinizin kullanım belgelerini güncelleyin ve müşterilerinizi bilgilendirin.
+7. [AMP bilgi havuzu dışında bir entegrasyon testi](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../3p/README.md#adding-proper-integration-tests) barındırmanız şiddetle tavsiye edilir.
 
-## Tag Managers <a name="tag-managers"></a>
+## Etiket Yöneticileri<a name="tag-managers"></a>
 
-Tag management services have two options for integrating with AMP Analytics:
+Etiket yönetim hizmetlerinin AMP Analytics ile entegrasyon için iki seçeneği vardır:
 
-- **Endpoint approach:** Acting as the an additional endpoint for `amp-analytics`, and conducting marketing management in the backend.
-- **Config approach:** Conducting tag management via a dynamically generated JSON config file unique to each publisher.
+- **Uç nokta yaklaşımı:** `amp-analytics` için ek bir uç nokta olarak hareket etmek ve arka uçta pazarlama yönetimi yürütmek.
+- **Yapılandırma yaklaşımı:** Her yayıncıya özgü dinamik olarak oluşturulmuş bir JSON yapılandırma dosyası aracılığıyla etiket yönetimi yürütme.
 
-The endpoint approach is the same as the standard approach detailed in the previous section. The config approach consists of creating a unique configuration for amp-analytics that is specific to each publisher and includes all of their compatible analytics packages. A publisher would include the configuration using a syntax similar to this:
+Uç nokta yaklaşımı, önceki bölümde ayrıntılı olarak açıklanan standart yaklaşımla aynıdır. Yapılandırma yaklaşımı, her yayıncıya özgü ve tüm uyumlu analiz paketlerini içeren amp-analytics için benzersiz bir yapılandırma oluşturmayı içerir. Bir yayıncı, yapılandırmayı şuna benzer bir sözdizimi kullanarak ekler:
 
 [sourcecode:html]
 <amp-analytics
@@ -69,12 +69,12 @@ The endpoint approach is the same as the standard approach detailed in the previ
 ></amp-analytics>
 [/sourcecode]
 
-To take this approach, review the documentation for publishers' integration with AMP Analytics.
+Bu yaklaşımı benimsemek için, yayıncıların AMP Analytics ile entegrasyonuna ilişkin belgeleri inceleyin.
 
-## Further Resources <a name="further-resources"></a>
+## Diğer Kaynaklar<a name="further-resources"></a>
 
-- Deep Dive: [Why not just use an iframe?](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/why-not-iframe.md)
-- Deep Dive: [Managing non-authenticated user state with AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)
-- [amp-analytics sample](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
-- [amp-analytics](https://amp.dev/documentation/components/amp-analytics) reference documentation
-- [amp-analytics variables](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) reference documentation
+- Ayrıntılı İnceleme: [Neden sadece bir iframe kullanılmıyor?](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/why-not-iframe.md)
+- Ayrıntılı İnceleme: [Kimliği doğrulanmamış kullanıcı durumunu AMP ile yönetme](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)
+- [amp-analytics örneği](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
+- [amp-analytics](https://amp.dev/documentation/components/amp-analytics) referans belgeleri
+- [amp-analytics değişkenleri](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) referans belgeleri
