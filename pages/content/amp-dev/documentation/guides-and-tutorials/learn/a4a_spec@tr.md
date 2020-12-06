@@ -34,15 +34,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-*If you'd like to propose changes to the standard, please comment on the [Intent to Implement](https://github.com/ampproject/amphtml/issues/4264)*.
+*Standard üzerinde herhangi bir değişiklik yapmayı teklif ederseniz, lütfen [Uygulama Girişimi](https://github.com/ampproject/amphtml/issues/4264) üzerinde yorum yapın*.
 
-AMPHTML ads is a mechanism for rendering fast, performant ads in AMP pages. To ensure that AMPHTML ad documents ("AMP creatives") can be rendered quickly and smoothly in the browser and do not degrade user experience, AMP creatives must obey a set of validation rules. Similar in spirit to the [AMP format rules](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml), AMPHTML ads have access to a limited set of allowed tags, capabilities, and extensions.
+AMPHTML reklamları, AMP sayfalarında hızlı ve iyi performanslı reklamlar oluşturma mekanizmasıdır. AMPHTML reklam belgelerinin ("AMP reklam öğeleri") tarayıcıda hızlı ve sorunsuz bir şekilde oluşturulmasını ve kullanıcı deneyimini düşürmemesini sağlamak için AMP reklam öğelerinin bir dizi doğrulama kuralına uyması gerekir. [AMP biçim kurallarına](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml) benzer şekilde, AMPHTML reklamları  izin verilen sınırlı sayıda etiket, özellik ve uzantıya erişebilir.
 
-## AMPHTML ad format rules <a name="amphtml-ad-format-rules"></a>
+## AMPHTML reklamı biçim kuralları  <a name="amphtml-ad-format-rules"></a>
 
-Unless otherwise specified below, the creative must obey all rules given by the [AMP format rules](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml.html), included here by reference. For example, the AMPHTML ad [Boilerplate](#boilerplate) deviates from the AMP standard boilerplate.
+Aşağıda aksi belirtilmedikçe, reklam öğesinin buraya referans olarak dahil edilen [AMP biçim kuralları](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml.html) tarafından koyulan tüm kurallara uyması gerekir. Örneğin, AMPHTML reklam [Ortak Metni](#boilerplate) AMP standart ortak metninden sapar.
 
-In addition, creatives must obey the following rules:
+Ayrıca, reklam öğelerinin aşağıdaki kurallara uyması gerekir:
 
 <table>
 <thead><tr>
@@ -97,9 +97,9 @@ In addition, creatives must obey the following rules:
 </tbody>
 </table>
 
-### Boilerplate <a name="boilerplate"></a>
+### Ortak Metin <a name="boilerplate"></a>
 
-AMPHTML ad creatives require a different, and considerably simpler, boilerplate style line than [general AMP documents do](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md):
+AMPHTML reklam öğeleri [genel AMP belgelerindekinden](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md) farklı ve çok daha basit bir ortak metin stil satırı gerektirir:
 
 [sourcecode:html]
 <style amp4ads-boilerplate>
@@ -150,9 +150,9 @@ Note that the same rules about mutations to the boilerplate text apply as in the
 </tbody>
 </table>
 
-#### CSS animations and transitions <a name="css-animations-and-transitions"></a>
+#### CSS animasyonları ve geçişler <a name="css-animations-and-transitions"></a>
 
-##### Selectors <a name="selectors"></a>
+##### Seçiciler <a name="selectors"></a>
 
 The `transition` and `animation` properties are only allowed on selectors that:
 
