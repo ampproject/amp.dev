@@ -12,7 +12,7 @@ Bu kılavuz, AMP sayfalarınızda reklam görüntülemeye yönelik talimatları 
 
 AMP olmayan sayfalarda (geleneksel HTML), sayfanızda reklam görüntülemek isterseniz, reklam ağınızdan reklam sunmak için bir JavaScript kod parçacığı eklemeniz gerekir. Performans ve güvenlik nedenleriyle, AMP sayfalarına üçüncü taraf JavaScript ekleyemezsiniz. Bu nedenle, AMP'de reklam görüntülemek için özel [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) bileşenini AMP sayfanıza eklemeniz gerekir.
 
-[tip type="tip"] **TIP –** See [AMP By Example for a live demo](../../../../documentation/components/reference/amp-ad.md) that demonstrates adding an amp-ad tag to an AMP page. [/tip]
+[tip type="tip"] **İPUCU -** Bir AMP sayfasına amp-ad etiketi eklemeyi gösteren [canlı bir demo için AMP By Example](../../../../documentation/components/reference/amp-ad.md) bölümüne bakın. [/tip]
 
 AMP sayfanızda reklam görüntüleyebilmek için bileşeni ekleme adımlarını birlikte inceleyelim.
 
