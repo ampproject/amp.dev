@@ -67,7 +67,7 @@ Element `<amp-story-grid-layer>` układa swoje elementy podrzędne w siatce (na 
     <td colspan="2"><h5 id="fill">Szablon: fill</h5></td>
 </tr>
 <tr>
-    <td width="65%">Szablon <strong>fill</strong> wypełnia ekran pierwszym elementem podrzędnym w warstwie. W tej warstwie nie zostaną pokazane żadne inne elementy podrzędne. Szablon fill dobrze sprawdza się w przypadku tła, w tym obrazów i filmów.    <code class="nopad"><pre><amp-story-grid-layer template="fill">   <amp-img src="dog.png" width="720" height="1280" layout="responsive">   </amp-img> </amp-story-grid-layer></pre></code>
+    <td width="65%">Szablon <strong>fill</strong> wypełnia ekran pierwszym elementem podrzędnym w warstwie. W tej warstwie nie zostaną pokazane żadne inne elementy podrzędne. Szablon fill dobrze sprawdza się w przypadku tła, w tym obrazów i filmów.    <code class="nopad"><pre>&lt;amp-story-grid-layer template="fill">   &lt;amp-img src="dog.png" width="720" height="1280" layout="responsive">   &lt;/amp-img> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-fill.png', 216, 341) }}</td>
 </tr>
@@ -75,7 +75,7 @@ Element `<amp-story-grid-layer>` układa swoje elementy podrzędne w siatce (na 
     <td colspan="2"><h5 id="vertical">Szablon: vertical</h5></td>
 </tr>
 <tr>
-    <td width="65%">Szablon <strong>vertical</strong> układa elementy podrzędne wzdłuż osi Y. Elementy są wyrównywane do góry ekranu i zajmują cały ekran wzdłuż osi X. Szablon vertical jest przydatny, gdy chcesz układać elementy jeden nad drugim w pionie.    <code class="nopad"><pre><amp-story-grid-layer template="vertical">   <p>element 1</p>   <p>element 2</p>   <p>element 3</p> </amp-story-grid-layer></pre></code>
+    <td width="65%">Szablon <strong>vertical</strong> układa elementy podrzędne wzdłuż osi Y. Elementy są wyrównywane do góry ekranu i zajmują cały ekran wzdłuż osi X. Szablon vertical jest przydatny, gdy chcesz układać elementy jeden nad drugim w pionie.    <code class="nopad"><pre>&lt;amp-story-grid-layer template="vertical">   &lt;p>element 1&lt;/p>   &lt;p>element 2&lt;/p>   &lt;p>element 3&lt;/p> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>{{ image('/static/img/docs/tutorials/amp_story/layer-vertical.png', 216, 341) }}</td>
 </tr>
@@ -83,7 +83,7 @@ Element `<amp-story-grid-layer>` układa swoje elementy podrzędne w siatce (na 
     <td colspan="2"><h5 id="horizontal">Szablon: horizontal</h5></td>
 </tr>
 <tr>
-    <td width="65%">Szablon <strong>horizontal</strong> układa elementy podrzędne wzdłuż osi X.  Elementy są wyrównane do góry ekranu i zajmują cały ekran wzdłuż osi Y.     Szablon horizontal jest przydatny, gdy chcesz układać elementy jeden za drugim w poziomie.     <code class="nopad"><pre><amp-story-grid-layer template="horizontal">   <p>element 1</p>   <p>element 2</p>   <p>element 3</p> </amp-story-grid-layer></pre></code>
+    <td width="65%">Szablon <strong>horizontal</strong> układa elementy podrzędne wzdłuż osi X.  Elementy są wyrównane do góry ekranu i zajmują cały ekran wzdłuż osi Y.     Szablon horizontal jest przydatny, gdy chcesz układać elementy jeden za drugim w poziomie.     <code class="nopad"><pre>&lt;amp-story-grid-layer template="horizontal">   &lt;p>element 1&lt;/p>   &lt;p>element 2&lt;/p>   &lt;p>element 3&lt;/p> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-horizontal.png', 216, 341) }}</td>
 </tr>
@@ -91,7 +91,7 @@ Element `<amp-story-grid-layer>` układa swoje elementy podrzędne w siatce (na 
     <td colspan="2"><h5 id="thirds">Szablon: thirds</h5></td>
 </tr>
 <tr>
-<td width="65%">Szablon <strong>thirds</strong> dzieli ekran na trzy równe wiersze i pozwala na wstawienie zawartości do każdego z nich. Możesz również określić nazwany atrybut <code>grid-area</code>, aby wskazać jedną trzecią, w której ma się znaleźć treść — <code>upper-third</code>, <code>middle-third</code>, lub <code>lower-third</code>. Nazwane obszary siatki są przydatne do zmiany domyślnego sposobu działania elementów. Jeśli na przykład masz dwa elementy w warstwie, możesz określić pierwszy element, który ma się znaleźć w obszarze <code>grid-area="upper-third"</code> i drugi element, który ma się znaleźć w obszarze <code>grid-area="lower-third"</code>. <code class="nopad"><pre><amp-story-grid-layer template="thirds">   <h1 grid-area="upper-third">element 1</h1>   <p grid-area="lower-third">element 2</p> </amp-story-grid-layer> </pre></code>
+<td width="65%">Szablon <strong>thirds</strong> dzieli ekran na trzy równe wiersze i pozwala na wstawienie zawartości do każdego z nich. Możesz również określić nazwany atrybut <code>grid-area</code>, aby wskazać jedną trzecią, w której ma się znaleźć treść — <code>upper-third</code>, <code>middle-third</code>, lub <code>lower-third</code>. Nazwane obszary siatki są przydatne do zmiany domyślnego sposobu działania elementów. Jeśli na przykład masz dwa elementy w warstwie, możesz określić pierwszy element, który ma się znaleźć w obszarze <code>grid-area="upper-third"</code> i drugi element, który ma się znaleźć w obszarze <code>grid-area="lower-third"</code>. <code class="nopad"><pre>&lt;amp-story-grid-layer template="thirds">   &lt;h1 grid-area="upper-third">element 1&lt;/h1>   &lt;p grid-area="lower-third">element 2&lt;/p> &lt;/amp-story-grid-layer> </pre></code>
 </td>
 <td>{{ image('/static/img/docs/tutorials/amp_story/layer-thirds.png', 216, 341) }}</td>
 </tr>
