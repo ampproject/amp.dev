@@ -1,5 +1,5 @@
 ---
-"$title": Placeholders & fallbacks
+"$title": Yer tutucular ve yedekler
 "$order": '3'
 descriptions: "In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible."
 formats:
@@ -16,11 +16,11 @@ contributors:
 
 In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible.
 
-Some elements will even reward you for doing it by relaxing restrictions – for example, if you provide a placeholder for [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder), it can be used near the top of the page (which won't work without).
+Hatta bazı öğeler, kısıtlamaları gevşeterek bunu yaptığınız için sizi ödüllendirecektir - örneğin, [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder) için bir yer tutucu sağlarsanız, sayfanın üst kısmına yakın bir yerde kullanılabilir olacaktır (bu olmadan çalışmaz).
 
-## Placeholders
+## Yer tutucular
 
-The element marked with the `placeholder` attribute acts as a placeholder for the parent AMP element. If specified, a `placeholder` element must be a direct child of the AMP element. An element marked as a `placeholder` will always `fill` the parent AMP element.
+`placeholder` özniteliğiyle işaretlenen öğe, üst AMP öğesi için bir yer tutucu görevi görür. Bir `placeholder` öğesi, belirtildiği takdirde, AMP öğesinin doğrudan alt öğesi olmalıdır. `placeholder` olarak işaretlenen bir öğe, her zaman üst AMP öğesini `fill` eder (doldurur).
 
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
 ```html
@@ -36,23 +36,23 @@ The element marked with the `placeholder` attribute acts as a placeholder for th
 ```
 [/example]
 
-By default, the placeholder is immediately shown for the AMP element, even if the AMP element's resources have not been downloaded or initialized. Once ready, the AMP element typically hides its placeholder and shows the content.
+Varsayılan olarak yer tutucu, AMP öğesinin kaynakları indirilmemiş veya başlatılmamış olsa bile AMP öğesi için hemen gösterilir. AMP öğesi hazır olduğunda genellikle yer tutucusunu gizler ve içeriği gösterir.
 
 [tip type="note"] **NOTE –**  The placeholder doesn’t have to be an AMP element; any HTML element can act as the placeholder. [/tip]
 
-## Fallbacks <a name="fallbacks"></a>
+## Yedekler <a name="fallbacks"></a>
 
-You can specify the `fallback` attribute on an element to indicate the fallback behavior:
+Şu durumlarda yedekleme davranışını belirtmek için bir `fallback` özniteliği belirtebilirsiniz:
 
-- for any element the browser doesn’t support
-- if the content fails to load (e.g., Tweet deleted)
-- if the image type is unsupported (e.g., WebP isn't supported in all browsers)
+- tarayıcının desteklemediği herhangi bir öğe için
+- içerik yüklenemezse (örneğin, Tweet silinmişse)
+- görüntü türü desteklenmiyorsa (örneğin, WebP tüm tarayıcılarda desteklenmiyor)
 
-You can set the `fallback` attribute on *any* HTML element, not just AMP elements. If specified, the `fallback` element must be a direct child of the AMP element.
+`fallback` özniteliğini yalnızca AMP öğelerinde değil, *herhangi bir* HTML öğesinde de ayarlayabilirsiniz. `fallback` öğesi belirtilirse, AMP öğesinin doğrudan alt öğesi olmalıdır.
 
-##### Example: Unsupported feature
+##### Örnek: Desteklenmeyen özellik
 
-In the following example, we use the `fallback` attribute to communicate to the user that the browser doesn’t support a particular feature:
+Aşağıdaki örnekte, tarayıcının belirli bir özelliği desteklemediğini kullanıcıya bildirmek için `fallback` özniteliğini kullanıyoruz:
 
 [example preview="inline" playground="true" imports="amp-video:0.1"]
 ```html
@@ -68,9 +68,9 @@ In the following example, we use the `fallback` attribute to communicate to the 
 ```
 [/example]
 
-##### Example: Serve different image formats
+##### Örnek: Farklı görüntü biçimleri sunun
 
-In the following example, we use the `fallback` attribute to tell the browser to use the JPEG file if the WebP format is unsupported.
+Aşağıdaki örnekte, tarayıcıya WebP biçimi desteklenmiyorsa JPEG dosyasını kullanmasını söylemek için `fallback` özniteliğini kullanıyoruz.
 
 [example preview="inline" playground="true"]
 ```html
@@ -89,16 +89,20 @@ In the following example, we use the `fallback` attribute to tell the browser to
 ```
 [/example]
 
-## Interaction of placeholders and fallbacks
+## Yer tutucuların ve yedeklerin etkileşimi
 
-For AMP components that rely on dynamic content (e.g., [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md), [`amp-list`](../../../../documentation/components/reference/amp-list.md)), the interaction of fallbacks and placeholders operates as follows:
+Dinamik içeriğe (ör. [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) , [`amp-list`](../../../../documentation/components/reference/amp-list.md)) dayanan AMP bileşenleri için, yedeklerin ve yer tutucuların etkileşimi şu şekilde çalışır:
 
 <ol>
-  <li>Display the placeholder while the content is loading.</li>
-  <li>If the content loads successfully, hide the placeholder and display the content.</li>
-  <li>If the content fails to load:     <ol>       <li>If there's a fallback element, display the fallback.</li>       <li>Otherwise, continue displaying the placeholder.</li>     </ol>   </li>
+  <li>İçerik yüklenirken yer tutucuyu görüntüleyin.</li>
+  <li>İçerik başarıyla yüklenirse, yer tutucuyu gizleyin ve içeriği görüntüleyin.</li>
+  <li>İçerik yüklenemezse: <ol>
+<li> Bir yedek öğe varsa, yedeği görüntüleyin. </li>
+<li>Aksi takdirde, yer tutucuyu görüntülemeye devam edin.</li>
+</ol>
+</li>
 </ol>
 
-## Hiding loading indicators
+## Yükleme göstergelerini gizleme
 
-Many AMP elements are allowlisted to show a "loading indicator", which is a basic animation that shows that the element has not yet fully loaded. Elements can opt out of this behavior by adding the `noloading` attribute.
+Birçok AMP öğesinin, öğenin henüz tam olarak yüklenmediğini gösteren temel bir animasyon olan bir "yükleme göstergesi" göstermesine izin verilir. Öğeler, `noloading` özniteliği ekleyerek bu davranışı devre dışı bırakabilir.
