@@ -1,5 +1,5 @@
 ---
-"$title": Improving the interactivity
+"$title": Etkileşimi geliştirme
 "$order": '2'
 description: 'Başlangıç kodu oldukça basit bir kullanıcı deneyimi sağlar. Bunu iyileştirmenin birkaç yolu var\: - Geçerli slaydı ve toplam slayt sayısını gösteren bir gösterge ekleyin.'
 ---
@@ -24,7 +24,7 @@ Başlangıç kodu oldukça basit bir kullanıcı deneyimi sağlar. Bunu iyileşt
 
 ## Slayt göstergesi ekleme
 
-[`amp-bind`](../../../../documentation/components/reference/amp-bind.md) works by binding element attributes to custom expressions. These expressions can reference the "state" (mutable JSON data). We can initialize this state through the [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) component included with [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
+[`amp-bind`](../../../../documentation/components/reference/amp-bind.md), öğe özniteliklerini özel ifadelere bağlayarak çalışır. Bu ifadeler "duruma" (değiştirilebilir JSON verileri) referans verebilir. Bu durumu [`amp-bind`](../../../../documentation/components/reference/amp-bind.md)'in içerdiği [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) bileşeni aracılığıyla başlatabiliriz.
 
 ### Slayt durumunu başlatma
 
@@ -69,7 +69,7 @@ Ardından, kullanıcı mevcut [`amp-carousel`](../../../../documentation/compone
 
 [tip type="tip"] **İPUCU –** `AMP.setState()`, iç içe geçmiş nesne değişmezlerinin derin bir birleşimini gerçekleştirir. Daha fazla ayrıntı için [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) belgelerine bakın. [/tip]
 
-### Bind the indicator elements
+### Gösterge öğelerini bağlama
 
 Ardından, şu anda görüntülenen slaytı izleyen bu durum değişkenini kullanalım ve bir slayt göstergesi oluşturalım. Slayt göstergesi öğesini (`<!-- TODO: "Add a slide indicator" -->` için) bulun ve alt öğelerine aşağıdaki bağları ekleyin:
 
