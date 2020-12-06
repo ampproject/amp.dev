@@ -1,24 +1,24 @@
 ---
-"$title": Setting up
+"$title": Kurulum
 "$order": '0'
-description: 'Before starting this tutorial, you''ll need the following: - A basic knowledge of HTML, CSS, and JavaScript - A basic understanding of AMP’s core concepts see ...'
+description: 'Bu öğreticiye başlamadan önce aşağıdakilere ihtiyacınız olacak: - Temel HTML, CSS ve JavaScript bilgisi - AMP’nin temel kavramlarının temel bir anlayışı'
 "$parent": "/content/docs/fundamentals/add_advanced.md"
 ---
 
 ## Ön koşullar
 
-**Before starting** this tutorial, you'll need the following:
+Bu öğreticiye **başlamadan önce** aşağıdakilere ihtiyacınız olacak:
 
 - HTML, CSS ve JavaScript hakkında temel bilgi
-- A basic understanding of AMP’s core concepts (see ["Convert your HTML to AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md) tutorial)
-- A browser of your choice that can inspect the JavaScript console
+- AMP’nin temel kavramlarının temel bir anlayışı (["HTML’nizi AMP’ye dönüştürme"](../../../../documentation/guides-and-tutorials/start/converting/index.md) öğreticisine bakın)
+- JavaScript konsolunu inceleyebilen seçtiğiniz bir tarayıcı
 - Seçtiğiniz bir metin editörü
 
-## Set up your development environment
+## Geliştirme ortamınızı ayarlayın
 
-### Step 1. Download the code
+### 1. Adım: Kodu indirin
 
-Download the sample code for the tutorial either as a [ZIP file](https://github.com/googlecodelabs/accelerated-mobile-pages-advanced/archive/master.zip) or via git:
+Öğretici için örnek kodu bir [ZIP dosyası](https://github.com/googlecodelabs/accelerated-mobile-pages-advanced/archive/master.zip) olarak veya git aracılığıyla indirin:
 
 ```shell
 git clone https://github.com/googlecodelabs/accelerated-mobile-pages-advanced.git
@@ -30,20 +30,20 @@ Arşiv dosyasını dizine çıkarın (gerekirse) ve bilgisayarınızdaki komut s
 cd accelerated-mobile-pages-advanced
 ```
 
-The project directory contains several example resources files and the starting [`article.amp.html`](https://github.com/googlecodelabs/accelerated-mobile-pages-advanced/blob/master/article.amp.html) page.
+Proje dizini, birkaç örnek kaynak dosyası ve başlangıç ​​[`article.amp.html`](https://github.com/googlecodelabs/accelerated-mobile-pages-advanced/blob/master/article.amp.html) sayfasını içerir.
 
-### Step 2. Run the sample page
+### 2. Adım: Örnek sayfayı çalıştırın
 
-To test the sample AMP page, we need to access the files from a web server. There are several ways to create a temporary local web server for the purposes of testing.  Here are some options, choose the one that works best for you:
+Örnek AMP sayfasını test etmek için dosyalara bir web sunucusundan erişmemiz gerekiyor. Test amacıyla geçici bir yerel web sunucusu oluşturmanın birkaç yolu vardır. İşte bazı seçenekler, sizin için en uygun olanı seçin:
 
-- [“Web Server for Chrome” Google Chrome app](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
-- [A local HTTP Python server](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server#Running_a_simple_local_HTTP_server)
+- [“Chrome için Web Sunucusu” Google Chrome uygulaması](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
+- [Yerel bir HTTP Python sunucusu](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server#Running_a_simple_local_HTTP_server)<br>
 - [Apache](https://httpd.apache.org/docs/2.4/getting-started.html)
 - [nginx](http://nginx.org/)
 
-[tip type="note"] **NOTE –** It is strongly recommended that you use HTTPS in production environments. HTTPS has several benefits beyond just security including SEO. You can read more about this topic in this [Google Webmaster blog post](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html). [/tip]
+[tip type="note"] **NOT –** Üretim ortamlarında HTTPS kullanmanız kesinlikle önerilir. HTTPS, SEO dahil güvenliğin ötesinde birçok avantaja sahiptir. [Google Web Yöneticisi blog gönderisinden](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html) bu konu hakkında daha fazla bilgi edinebilirsiniz. [/tip]
 
-After setting up your local web server, access the sample article in your browser at [this URL](http://localhost:8000/article.amp.html):
+Yerel web sunucunuzu kurduktan sonra, tarayıcınız ile [bu URL](http://localhost:8000/article.amp.html)'den örnek makaleye erişin:
 
 ```text
 http://localhost:8000/article.amp.html
