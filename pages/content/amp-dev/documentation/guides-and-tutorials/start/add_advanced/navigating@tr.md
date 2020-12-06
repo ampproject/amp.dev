@@ -55,7 +55,7 @@ Bu bağlantı, kullanıcılarınızın mevcut web sitenizin gezinme menüsü ara
 
 Bu, mevcut web sitesi gezinme menüsünü kullanan en basit yaklaşımdır. Ardından, sitede gezinmek için popüler bir seçenek keşfedeceğiz.
 
-## Navigate with a sidebar
+## Bir kenar çubuğu ile gezinme
 
 Yaygın bir gezinme tekniği, tıklandığında bir dizi gezinme bağlantısını (sayfanın yanından) gösteren bir menü simgesi eklemektir. AMP'de, [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) bileşenini kullanarak böyle bir gezinme menüsü oluşturabiliriz.
 
