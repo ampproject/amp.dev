@@ -10,8 +10,7 @@ Bu bölümde, AMP sayfamızdaki AMP doğrulama hatalarını inceleyip çözeceğ
 
 Aşağıdaki hatayı düzelterek başlayacağız:
 
-<pre class="error-text">The mandatory tag 'meta charset=utf-8' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'meta charset=utf-8' is missing or incorrect.</pre>
 
 Metni doğru şekilde görüntülemek için AMP, sayfanın karakter kümesini belirtmenizi gerekli kılar. Meta karakter kümesi bilgisi ayrıca `<head>` etiketinin ilk alt öğesi olmalıdır. Bu etiketin ilk olmasının nedeni, meta karakter kümesi etiketinden önce eklenen içeriği yeniden yorumlamaktan kaçınmaktır.
 
@@ -27,8 +26,7 @@ Dosyayı **kaydedin** ve sayfayı yeniden yükleyin. Karakter kümesi hatasını
 
 Şimdi şu hataya bakalım:
 
-<pre class="error-text">The mandatory tag 'link rel=canonical' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'link rel=canonical' is missing or incorrect.</pre>
 
 Her AMP belgesinin, o belgenin "standart" sürümüne referans veren bir bağlantıya sahip olması gerekir. Bu öğreticinin [Sayfanızı keşfedilebilir hale getirme](discoverable.md) adımında, standart sayfaların ne olduğu ve standart bağlantıya farklı yaklaşımlar hakkında daha fazla bilgi edineceğiz.
 
@@ -54,9 +52,7 @@ Devam edin ve aşağıdaki kodu <code><meta charset="utf-8" /></code> etiketinin
 
 AMP, sayfayı AMP belgesi olarak bildirmek için sayfanın kök `<html>` öğesinde bir öznitelik gerektirir.
 
-<pre class="error-text">The mandatory attribute '⚡' is missing in tag 'html ⚡ for top-level html'
-The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory attribute '⚡' is missing in tag 'html ⚡ for top-level html'<br>The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.</pre>
 
 Yukarıdaki hatalar basitçe `⚡` özniteliğini `<html>` etiketine şu şekilde ekleyerek çözülebilir:
 
@@ -78,8 +74,7 @@ Yukarıdaki hatalar basitçe `⚡` özniteliğini `<html>` etiketine şu şekild
 
 Şimdi aşağıdaki hatayı ele alalım:
 
-<pre class="error-text">The mandatory tag 'meta name=viewport' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'meta name=viewport' is missing or incorrect.</pre>
 
 AMP, görüntü alanı için bir `width` ve `minimum-scale` tanımlanmasını gerektirir. Bu değerler sırasıyla `device-width` ve `1` olarak tanımlanmalıdır. Görüntü alanı, bir HTML sayfasının `<head>` kısmında bulunan ortak bir etikettir.
 
@@ -97,8 +92,7 @@ Daha önce olduğu gibi, sayfayı **yeniden yükleyin** ve hatanın kaybolup kay
 
 Aşağıdaki hata, stil sayfası kullanımımızla ilgilidir:
 
-<pre class="error-text">The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invalid value 'base.css'.
-</pre>
+<pre class="error-text">The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invalid value 'base.css'.</pre>
 
 Özel olarak, bu hata `<head>` etiketimizde bulunan aşağıdaki stil sayfası bağlantı etiketiyle ilgili şikayettir:
 
@@ -131,8 +125,7 @@ Bir kez daha, sayfayı **yeniden yükleyin** ve stil sayfaları hatasının kayb
 
 Stil sayfaları, CSS'yi satır içine alarak AMP ile nispeten kolay bir şekilde yeniden çalışılabilirken, aynısı JavaScript için geçerli değildir.
 
-<pre class="error-text">The tag 'script' is disallowed except in specific forms.
-</pre>
+<pre class="error-text">The tag 'script' is disallowed except in specific forms.</pre>
 
 Genel olarak, AMP'deki betikler yalnızca iki ana gereksinimi karşıladıklarında kullanılmalarına izin verilir:
 
@@ -173,10 +166,7 @@ Aşağıdaki harici JavaScript referansını belgenizden **kaldırın** :
 
 Aşağıdaki hatalar, eksik standart metin koduna işaret eder:
 
-<pre class="error-text">The mandatory tag 'noscript enclosure for boilerplate' is missing or incorrect.
-The mandatory tag 'head > style : boilerplate' is missing or incorrect.
-The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'noscript enclosure for boilerplate' is missing or incorrect.<br>The mandatory tag 'head > style : boilerplate' is missing or incorrect.<br>The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.</pre>
 
 Her AMP belgesi aşağıdaki AMP standart metin kodunu gerektirir:
 
@@ -192,8 +182,7 @@ Belgenizin `<head>` etiketinin altına standart metin kodunu **ekleyin**.
 
 AMP, medyayı görüntülemeye yönelik varsayılan HTML karşılıklarını desteklemez, bu da aşağıdaki hatayı açıklar:
 
-<pre class="error-text">The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
-</pre>
+<pre class="error-text">The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?</pre>
 
 AMP, `<img>` etiketinin yerini alacak şekilde özel olarak tasarlanmış bir web bileşenine sahiptir, bu etiket, [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) etiketidir:
 
@@ -203,9 +192,7 @@ AMP, `<img>` etiketinin yerini alacak şekilde özel olarak tasarlanmış bir we
 
 `<img>` etiketini yukarıdaki [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) etiketiyle **değiştirin** ve yine doğrulayıcıyı çalıştırın. Birkaç yeni hata almanız gerekir:
 
-<pre class="error-text">Layout not supported: container
-The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
-</pre>
+<pre class="error-text">Layout not supported: container<br>The implied layout 'CONTAINER' is not supported by tag 'amp-img'.</pre>
 
 [`amp-img`](../../../../documentation/components/reference/amp-img.md) neden başka bir hatayı tetikledi? Çünkü [`amp-img`](../../../../documentation/components/reference/amp-img.md) , geleneksel HTML img etiketinin doğrudan yerine geçmez. [`amp-img`](../../../../documentation/components/reference/amp-img.md) kullanırken ek gereksinimler vardır.
 
@@ -313,8 +300,7 @@ Artık AMP belgeniz şunun gibi görünmelidir:
 
 Sayfayı yenileyin ve konsol çıktısına bakın. Aşağıdaki mesajla karşılanmalısınız:
 
-<pre class="success-text">AMP validation successful.
-</pre>
+<pre class="success-text">AMP validation successful.</pre>
 
 ### Sıkça Sorulan Sorular
 
