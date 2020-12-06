@@ -20,7 +20,7 @@ Web sitesini önizlemek için yerel bir web sunucusu kullanın.
 
 [tip type="default"] **İPUCU -** Hızlı bir web sunucusu için `python -m SimpleHTTPServer`'ı çalıştırın. [/tip]
 
-You should be able to view the landing page for Lyrical Lyghtning, the Mobile Music Magic festival. It has one link on the homepage to view the schedule and which stage the bands are on.
+Mobile Music Magic festivali Lyrical Lightning'in açılış sayfasını görüntüleyebilmelisiniz. Ana sayfada programı ve grupların hangi sahnede olduğunu görmek için bir bağlantı vardır.
 
 {{ image('/static/img/docs/tutorials/tut-lyricallyghtning.png', 594, 558, alt='Image of PWA' ) }}
 
