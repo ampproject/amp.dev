@@ -337,7 +337,7 @@ Aşağıdaki CSS özelliklerinin ek kısıtlamaları vardır:
 
 ## Kurallar <a name="at-rules"></a>
 
-The only [at-rule](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule) currently supported is `@media`. See [Media features](#media-features) for more information.
+Şu anda desteklenen tek [kural](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule), `@media`'dır. Daha fazla bilgi için [medya özelliklerine](#media-features) bakın.
 
 ### Özel yazı tipleri (`@font-face`) <a name="custom-fonts-font-face"></a>
 
