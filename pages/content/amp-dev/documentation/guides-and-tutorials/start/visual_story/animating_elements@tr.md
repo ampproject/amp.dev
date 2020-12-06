@@ -244,7 +244,6 @@ Sayfayı yeniler ve yeniden yüklerseniz, görsellerin her biri belirerek gelir.
     animate-in="fade-in"
     animate-in-delay="1s">
 </amp-img>
-
 ```
 
 Hikayenizi yenileyin ve yeniden yükleyin. Son sayfanız şöyle görünmelidir:
