@@ -33,7 +33,7 @@ Bu basit örnekte `srcset` , ekran genişliğine bağlı olarak hangi görüntü
 ```
 [/example]
 
-[tip type="note"] **NOTE –**  AMP supports srcset with the `w` descriptor across all browsers. [/tip]
+[tip type="note"] **NOT -** AMP, tüm tarayıcılarda `w` tanımlayıcısı ile srcset'i destekler. [/tip]
 
 <a>Duyarlı Görüntüleri Kullanma (Şimdi)</a> bölümünde <code>srcset</code> kullanarak duyarlı görüntüler oluşturma hakkında daha fazla bilgi edinin.
 
@@ -58,7 +58,7 @@ Aşağıdaki örneği düşünün:
 
 `sizes` özniteliği, görüntü alanı 650 piksel veya daha fazla olduğunda öğenin genişliğini görüntü alanının boyutunun %50'si olacak şekilde tanımlar. Örneğin, görüntü alanı 800 piksel ise, öğenin genişliği 400 piksel olarak ayarlanır. Tarayıcı daha sonra, cihazın piksel oranının 1 olduğunu varsayarak 400px'e göre `srcset` kaynağını seçer, bu örnekte `hummingbird-dar.jpg` (320px).
 
-[tip type="important"] **IMPORTANT –** When sizes attribute is specified along with width and height, layout defaults to `responsive`. [/tip]
+[tip type="important"] **ÖNEMLİ -**Boyutlar özniteliği genişlik ve yükseklikle birlikte belirtildiğinde, yerleşim varsayılan olarak `responsive`. [/tip]
 
 [AMP `sizes` özniteliği hakkında daha fazlasını buradan okuyabilirsiniz](../../../../documentation/guides-and-tutorials/learn/common_attributes.md).
 
