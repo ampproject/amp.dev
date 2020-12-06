@@ -12,7 +12,7 @@ Bu belgede, AMP önbelleğinin AMP ekosistemindeki rolü ve AMP sayfanızın nas
 
 ## AMP Önbelleği nedir?
 
-An AMP Cache is a proxy-based content delivery network (CDN) for delivering valid AMP documents. AMP Caches are designed to:
+AMP Önbelleği, geçerli AMP belgelerini sunmayı amaçlayan proxy tabanlı bir içerik dağıtım ağıdır (CDN). AMP Önbellekleri şu amaçla tasarlanmıştır:
 
 1. Sadece geçerli AMP sayfalarını sunun.
 2. AMP sayfalarının verimli ve güvenli bir şekilde önceden yüklenmesine izin verin.
@@ -26,7 +26,7 @@ AMP Önbellekleri hakkında daha fazla bilgi için aşağıdaki YouTube videosun
 
 ## Hangi AMP Önbellekleri mevcuttur?
 
-Currently, there are two AMP Cache providers:
+Şu anda iki AMP Önbellek sağlayıcısı vardır:
 
 - [Google AMP Önbelleği](https://developers.google.com/amp/cache/)
 - [Bing AMP Önbelleği](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
@@ -47,7 +47,7 @@ Belgenizin önbelleğe alınmasını istemiyorsanız, bir seçenek HTML etiketin
 
 ## Önbelleğe alınmış AMP sayfalarını kim ister?
 
-Cached AMP pages are accessed by platforms (like Google Search, Google News, and Bing) and mobile apps. Mobile apps can link to cached AMP content via the URL (see Google's [AMP URL API](https://developers.google.com/amp/cache/use-amp-url)) or by cross-origin XHRs in  Progressive Web Apps (learn more in [Embed & use AMP as a data source](../../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md)).
+Önbelleğe alınmış AMP sayfalarına platformlar (Google Arama, Google Haberler ve Bing gibi) ve mobil uygulamalar tarafından erişilir. Mobil uygulamalar, önbelleğe alınmış AMP içeriğine URL aracılığıyla (Google'ın [AMP URL API](https://developers.google.com/amp/cache/use-amp-url)'sine bakın) veya Aşamalı Web Uygulamalarında çapraz kaynaklı XHRs aracılığıyla bağlanabilir (daha fazla bilgi için [AMP'yi veri kaynağı olarak yerleştirme ve kullanma](../../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md)).
 
 <amp-img src="/static/img/docs/platforms_accessing_cache.png" width="1054" height="356" layout="responsive" alt="platforms and mobile apps access cached AMP pages"></amp-img>
 
