@@ -1,5 +1,5 @@
 ---
-"$title": AMP Boilerplate Code
+"$title": AMP Standart Metin Kodu
 order: '9'
 formats:
 - websites
@@ -33,10 +33,10 @@ limitations under the License.
 
 ## `head > style[amp-boilerplate]` ve `noscript > style[amp-boilerplate]` <a name="head--styleamp-boilerplate-and-noscript--styleamp-boilerplate"></a>
 
-AMP HTML documents must contain the following boilerplate in their `head` tag. Validation is currently done with regular expressions, so it's important to keep mutations as minimal as possible. Currently, the allowed mutations are:
+AMP HTML belgeleri, `head` etiketlerinde aşağıdaki standart metni içermelidir. Doğrulama şu anda normal ifadelerle yapılmaktadır, bu nedenle değişiklikleri olabildiğince az tutmak önemlidir. Şu anda izin verilen değişiklikler şunlardır:
 
-1. Inserting arbitrary whitespace immediately after the `style` tag opens, and immediately before it closes
-2. Replacing any space in the snippet below with arbitrary whitespace.
+1. `style` etiketi açıldıktan hemen sonra ve kapanmadan hemen önce rasgele boşluk ekleme
+2. Aşağıdaki kod parçacığındaki herhangi bir boşluğu rastgele bir boşlukla değiştirme.
 
 <!-- prettier-ignore-start -->
 
@@ -46,4 +46,4 @@ AMP HTML documents must contain the following boilerplate in their `head` tag. V
 
 <!-- prettier-ignore-end -->
 
-[tip] You can use the [boilerplate generator](https://amp.dev/boilerplate) to quickly setup a basic skeleton for your AMP page. It also provides snippets for structured data, to create a PWA and more! [/tip]
+[tip] [Standart metin oluşturucuyu](https://amp.dev/boilerplate), AMP sayfanız için hızlı bir şekilde temel bir iskelet oluşturmak için kullanabilirsiniz. Ayrıca, bir PWA oluşturmak ve daha fazlasını yapmak adına yapılandırılmış veriler için kod parçacıkları sağlar! [/tip]
