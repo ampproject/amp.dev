@@ -110,7 +110,7 @@ Başarılı bir çevrimdışı sayfa, uygulamanın geri kalanıyla tutarlı bir 
 
 Ekip, AMP Hizmet Çalışanınızın devre dışı bırakılması veya kullanıcılara yönelik bir dağıtımın yanlış çalışması durumunda değiştirilmesi gerekiyorsa, zorunlu güncelleme/kaldırma özelliği uygulamak için çalışıyor.
 
-To effectively manage a service worker, you should understand how [standard HTTP caching affects the way your service worker's JavaScript is kept up to date](https://developers.google.com/web/updates/2018/06/fresher-sw). Service workers served with appropriate HTTP caching directives can resolve small bug fixes by making the appropriate changes and redeploying your service worker to your hosting environment. If you need to remove a service worker, it's a good idea to keep a simple, [no-op](https://en.wikipedia.org/wiki/NOP) service worker file handy, like the following:
+Bir sunucu çalışanını etkili şekilde yönetmek için, [standart HTTP önbelleğe almanın, hizmet çalışanınızın JavaScript'inin güncel tutulma biçimini nasıl etkilediğini](https://developers.google.com/web/updates/2018/06/fresher-sw) anlamanız gerekir. Uygun HTTP önbelleğe alma yönergeleriyle sunulan hizmet çalışanları, uygun değişiklikleri yaparak ve hizmet çalışanınızı barındırma ortamınıza yeniden dağıtarak küçük hata düzeltmelerini çözebilir. Bir hizmet çalışanını kaldırmanız gerekirse, aşağıdaki gibi basit, [işlemsiz](https://en.wikipedia.org/wiki/NOP) bir hizmet çalışanı dosyasını elinizin altında bulundurmanız iyi bir fikirdir:
 
 ```js
 self.addEventListener('install', () => {
