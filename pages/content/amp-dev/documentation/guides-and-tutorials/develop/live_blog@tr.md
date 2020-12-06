@@ -1,7 +1,7 @@
 ---
-"$title": Create a live blog
+"$title": Canlı blog oluşturma
 "$order": '102'
-description: Live blogs are web pages that are updated frequently throughout an on-going event, such as a sporting event or an election. In AMP, you can implement a live blog by using ...
+description: Canlı bloglar, bir spor etkinliği veya seçim gibi devam eden bir etkinlik boyunca sık sık güncellenen web sayfalarıdır.
 tutorial: 'true'
 formats:
 - websites
@@ -10,19 +10,19 @@ contributors:
 - bpaduch
 ---
 
-Live blogs are web pages that are updated frequently throughout an on-going event, such as a sporting event or an election. In AMP, you can implement a live blog by using the [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component.
+Canlı bloglar, bir spor etkinliği veya seçim gibi devam eden bir etkinlik boyunca sık sık güncellenen web sayfalarıdır. AMP'de, [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) bileşenini kullanarak canlı bir blog oluşturabilirsiniz.
 
-This tutorial provides a short overview of the [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component and focuses on some implementation details for live blogs, like [pagination](#pagination) and [deep linking](#deeplinking). We'll use AMP By Example's [live blog sample](live_blog.md) to illustrate implementing live blogs in AMP.
+Bu öğretici, [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) bileşenine kısa genel bir bakış sağlar ve [sayfalandırma](#pagination), [derin bağlantı](#deeplinking) gibi canlı bloglar için bazı uygulama ayrıntılarına odaklanır. AMP'de canlı blogların uygulanmasını göstermek için AMP By Examples'ın [canlı blog örneğini](live_blog.md) kullanacağız.
 
-[tip type="tip"] **TIP –** Use the [LiveBlogPosting](http://schema.org/LiveBlogPosting) metadata markup so your blog can be integrated with third-party platform features. [/tip]
+[tip type="tip"] **İPUCU –** Blogunuzun üçüncü taraf platform özellikleriyle entegre edilebilmesi için [LiveBlogPosting](http://schema.org/LiveBlogPosting) meta veri işaretlemesini kullanın.[/tip]
 
 {{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample.png', 700, 1441, align='right third') }}
 
-## Overview of `amp-live-list`
+## `amp-live-list` genel bakış
 
-The [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component regularly polls the host document for new content and updates the user's browser as new items become available. This means that each time a new blog post needs to be added, the host document should be updated by the CMS to include the update in both the body and the [metadata](../../../documentation/examples/documentation/Live_Blog.html#metadata) section of the page.
+The [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) bileşeni, ana belgeyi yeni içerik için düzenli olarak yoklar ve yeni öğeler kullanıma sunulduğunda kullanıcının tarayıcısını günceller. Bu, her yeni blog gönderisinin eklenmesi gerektiğinde, ana belgenin, güncellemeyi sayfanın hem gövde hem de [meta veri](../../../documentation/examples/documentation/Live_Blog.html#metadata) bölümüne dahil etmek için CMS tarafından güncellenmesi gerektiği anlamına gelir.
 
-This is what the initial code for the blog could look like:
+Blog için görünebilir ilk kod budur:
 
 ```html
 <amp-live-list id="my-live-list"
@@ -33,27 +33,27 @@ This is what the initial code for the blog could look like:
 </amp-live-list>
 ```
 
-Let's look at this code:
+Bu koda bakalım:
 
 Each [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component requires a unique id as there could be more than one on a page.  In this example, we specified `my-live-list` as the unique id.
 
-The `data-poll-interval` attribute specifies how often polls should occur; if the host document is updated, the update should be available to the user after the next time interval.
+`data-poll-interval` özniteliği, anketlerin ne sıklıkta gerçekleşmesi gerektiğini belirtir; ana belge güncellenirse, güncelleştirme bir sonraki zaman aralığından sonra kullanıcı tarafından kullanılabilir olmalıdır.
 
-Every time a new item is added to the host document, the `<button update on="tap:my-live-list.update">` element shows a "You have updates" button which, when clicked, triggers the page to show the latest posts.
+Ana belgeye her yeni öğe eklendiğinde, `<button update on="tap:my-live-list.update">` öğesi, tıklandığında sayfayı en son gönderileri göstermek için tetikleyen bir "güncellemeleriniz var" düğmesini gösterir.
 
-Live blogs can grow and make the page too long. You can use the `data-max-items-per-page` attribute to specify how many items can be added to the live blog. If the number of items after an update exceeds `data-max-items-per-page`, the oldest updates exceeding this number are removed. For example, if the page currently has 9 items and `data-max-items-per-page` is set to 10, and 3 new items arrive in the latest update, the two oldest items are removed from the page with the latest update.
+Canlı bloglar büyüyebilir ve sayfayı çok uzun yapabilir. Canlı bloga kaç öğe eklenebileceğini belirtmek için `data-max-items-per-page` özniteliğini kullanabilirsiniz.   Bir güncelleştirmeden sonraki öğe sayısı `data-max-items-per-page` değerini aşarsa, bu sayıyı aşan en eski güncelleştirmeler kaldırılır. Örneğin, sayfada şu anda 9 öğe varsa ve `data-max-items-per-page` özniteliği 10 olarak ayarlanmışsa ve en son güncellemede 3 yeni öğe varsa, en eski iki öğe son güncellemeyle sayfadan kaldırılır.
 
-All blog posts in the [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) must be children of `<div items></div>`. By referring to each post as an item, every item must have a unique `id` and a `data-sort-time`.
+[`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) içindeki tüm blog gönderileri `<div items></div>` öğesinin çocukları olmalıdır. Her gönderiye bir öğe olarak atıfta bulunulduğunda, her öğenin benzersiz bir `id` ve bir `data-sort-time` olması gerekir.
 
-## Implementation details
+## Uygulama ayrıntıları
 
-Now that you’re familiar with the [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component, let’s figure out how to implement a more complex live blog. Read on to learn more about how to implement pagination, and how deep linking works.
+Artık [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) bileşenine aşina olduğunuza göre, daha karmaşık bir canlı blogun nasıl uygulanacağını anlayalım. Sayfalandırmanın nasıl uygulanacağı ve derin bağlantının nasıl çalıştığı hakkında daha fazla bilgi edinmek için okumaya devam edin.
 
-### Pagination <a name="pagination"></a>
+### Sayfalandırma <a name="pagination"></a>
 
-Long blogs could use pagination to improve performance by limiting the number of blog items to display on a page. To implement pagination, in the [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component, add the `<div pagination></div>`, then insert any markup you need for pagination (for example, a page number or a link to the next and previous page).
+Uzun bloglar, bir sayfada görüntülenecek blog öğelerinin sayısını sınırlayarak performansı artırmak için sayfalandırmayı kullanabilir. Sayfalandırmayı uygulamak için, [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) bileşeninde `<div pagination></div>` ekleyin, ardından sayfalandırma için ihtiyacınız olan herhangi bir işaretlemeyi ekleyin (örneğin, bir sayfa numarası veya sonraki ve önceki sayfaya bağlantı).
 
-With pagination, the simple code we used earlier becomes:
+Sayfalandırma ile daha önce kullandığımız basit kod şu hale gelir:
 
 ```html
 <amp-live-list id="my-live-list"
@@ -74,22 +74,22 @@ With pagination, the simple code we used earlier becomes:
 
 {{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample_pg2.png', 700, 1441, align='right third') }}
 
-It’s your responsibility to populate the navigation items correctly by updating the hosted page. For example, in the [live blog sample](live_blog.md) we render the page via a server-side template and we use a query parameter to specify what the first blog item of the page should be. We limit the size of the page to 5 items, so if the server has generated more than 5 items, a user landing on the main page will see the "Next" element in the navigation area. Refer to [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) for details.
+Barındırılan sayfayı güncelleyerek gezinme öğelerini doğru şekilde doldurmak sizin sorumluluğunuzdadır. Örneğin, [canlı blog örneğinde](live_blog.md) sayfayı bir sunucu tarafı şablonu aracılığıyla oluşturuyoruz ve sayfanın ilk blog öğesinin ne olması gerektiğini belirtmek için bir sorgu parametresi kullanıyoruz. Sayfanın boyutunu 5 öğeyle sınırlıyoruz, bu nedenle sunucu 5'ten fazla öğe oluşturduysa, ana sayfaya gelen bir kullanıcı gezinme alanında "sonraki" öğesini görecektir. Ayrıntılar için [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) bölümüne bakın.
 
-After the size of blog posts has exceeded the maximum number of items specified by `data-max-items-per-page`, the older blog items are displayed in the “Next” pages, for example on page 2. Given that the [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) polls the server at intervals to see if there is any change in the items, there's no need to poll the server if the user isn't on the first page.
+Blog gönderilerinin boyutu `data-max-items-per-page` tarafından belirtilen maksimum öğe sayısını aştıktan sonra, eski blog öğeleri “Sonraki” sayfalarda, örneğin Sayfa 2'de görüntülenir. [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) öğelerde herhangi bir değişiklik olup olmadığını görmek için sunucuyu belirli aralıklarla sorguladığından, kullanıcı ilk sayfada değilse sunucuyu sorgulamaya gerek yoktur.
 
-You can add the disabled attribute to  the hosted page to prevent the polling mechanism. In the live blog sample, we perform this behavior in  a server-side template; when the requested page is not the first one, we add the disabled attribute to the [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component.
+Sorgulama mekanizmasını önlemek için barındırılan sayfaya disabled özniteliğini ekleyebilirsiniz. Canlı blog örneğinde, bu davranışı sunucu tarafı şablonunda gerçekleştiriyoruz: istenen sayfa ilk değilse, disabled özniteliğini [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) bileşenine ekleriz.
 
-### Deeplinking <a name="deeplinking"></a>
+### Derin bağlantı <a name="deeplinking"></a>
 
-When you publish a blog post, it’s important to be able to deep link to the post to enable features like sharing. With [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md), deep linking is possible by simply using the `id` of the blog item. For example, [https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3](../../../documentation/examples/previews/Live_Blog.html#post3) allows you to navigate directly to the blog post with the `post3` id.
+Bir blog gönderisini yayınladığınızda, paylaşım gibi özellikleri etkinleştirmek için gönderiye derin bağlantı verebilmeniz önemlidir. [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) ile blog öğesinin `id`'sini kullanarak derin bağlantı oluşturmak mümkündür. For example, [https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3](../../../documentation/examples/previews/Live_Blog.html#post3) allows you to navigate directly to the blog post with the `post3` id.
 
-AMP By Example uses a cookie to in the [live blog sample](live_blog.md) to generate fresh content, so if it’s the first time you are landing on the page, the post with id “post3” might not be available, in that case, you are redirected to the first post.
+AMP By Example yeni içerik oluşturmak için [canlı blog örneğinde](live_blog.md) bir çerez kullanır, bu nedenle sayfaya ilk kez girerseniz, “post3” kimliğine sahip bir gönderi mevcut olmayabilir, bu durumda ilk gönderiye yönlendirilirsiniz.
 
-## Resources
+## Kaynaklar
 
-Learn more from these resources:
+Bu kaynaklardan daha fazla bilgi edinin:
 
-- [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) reference documentation
+- [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) referans belgeleri
 - [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md)
-- [AMP BY Example's Live blog sample](live_blog.md)
+- [AMP BY Example'ın canlı blog örneği/a0}](live_blog.md)
