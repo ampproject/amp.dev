@@ -8,7 +8,7 @@ formats:
 author: CrystalOnScript
 ---
 
-For animations that can't be driven by [adding and removing classes](triggering_css_animations.md), AMP offers several animation specific components. These components apply AMP's principles to animations: they're fast, efficient, and user first. AMP restricts what CSS properties inside keyframes are allowed, but grants benefits such as fine-grain control, seamless animations, and cross browser compatibility with no extra work.
+[Sınıflar ekleyerek ve kaldırarak](triggering_css_animations.md) yönetilemeyen animasyonlar için AMP, animasyona özgü birkaç bileşen sunar. Bu bileşenler, AMP'nin ilkelerini animasyonlara uygular: bunlar hızlı, verimli ve kullanıcı önceliklidir. AMP, ana kareler içinde izin verilen CSS özelliklerine kısıtlama getirir, ancak ince ayar kontrolü, kusursuz animasyonlar ve fazladan çalışma gerektirmeden tarayıcılar arası uyumluluk gibi faydalar sağlar.
 
 Oynatmayı sıkı bir şekilde kontrol etmeniz gerekiyorsa amp-animation kullanın ve aynı anda birden fazla öğe animasyonuyla doğru zamanlamaya sahip olun.
 
@@ -272,7 +272,7 @@ AMP oyun alanında animasyonu açın ve bu davranışı test etmek için daha fa
 
 ### Her yerde harika görünme
 
-Animations can include [`conditions`](../../../../documentation/components/reference/amp-animation.md#conditions) that allow customized effects. Tailor animations to any screen size through the [`media` condition](../../../../documentation/components/reference/amp-animation.md#media-query) and supports backwards browser compatibility by enabling [`supports` conditions](../../../../documentation/components/reference/amp-animation.md#supports-condition) in a [`switch` statement](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement).
+Animasyonlar, özelleştirilmiş efektlere izin veren [`koşullar`](../../../../documentation/components/reference/amp-animation.md#conditions) içerebilir. Animasyonları [`media` koşulu](../../../../documentation/components/reference/amp-animation.md#media-query) aracılığıyla herhangi bir ekran boyutuna uyarlayın ve bir [`switch` ifadesindeki](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement) [`supports` koşullarını](../../../../documentation/components/reference/amp-animation.md#supports-condition) etkinleştirerek geriye dönük tarayıcı uyumluluğunu destekler.
 
 [example preview="top-frame" playground="true"]
 ```html
