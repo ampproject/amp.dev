@@ -55,7 +55,7 @@ Daha önce e-postalarla çalıştıysanız, bir e-postaya bir komut dosyası yer
 
 E-postalarda kullanılan HTML etiketlerinin çoğu AMP e-postalarında kullanılabilir. Bununla birlikte, `<img>` etiketi gibi bazı etiketler, AMP eşdeğeri  [`<amp-img>`](/content/amp-dev/documentation/components/reference/amp-img.md) ile değiştirilir.
 
-The `<amp-img>` tag requires the width and height of an image is defined and unlike `<img>`, `<amp-img>` has to be explicitly closed via `</amp-img>`.
+`<amp-img>` etiketi, görüntünün genişliğinin ve yüksekliğinin tanımlanmasını gerektirir. `<img>`'den farklı olarak `<amp-img>`, <code></amp-img></code> ile açıkça kapatılmalıdır.
 
 ```html
 <amp-img src="https://link/to/img.jpg"
