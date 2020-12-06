@@ -1,30 +1,30 @@
 ---
-"$title": Convert HTML to AMP
+"$title": "HTML'yi AMP'ye dönüştürme"
 formats:
 - websites
 "$titles":
   teaser: Convert HTML to AMP
 "$order": '0'
-description: In this tutorial, you’ll learn the key concepts of AMP and how AMP documents differ from traditional HTML documents. By the end of this tutorial
+description: "Bu öğreticide, AMP'nin temel kavramlarını ve AMP belgelerinin geleneksel HTML belgelerinden nasıl farklı olduğunu öğreneceksiniz. Bu öğreticinin sonunda..."
 "$hidden": 'true'
 teaser:
   icon: convert
-  text: Learn how to convert HTML to AMP in this step by step tutorial.
-  label: Learn more
+  text: "Bu adım adım öğreticide HTML'yi AMP'ye nasıl dönüştüreceğinizi öğrenin."
+  label: Daha fazlasını öğrenin
 ---
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-end-product.png', 452, 918, align='right third', caption='Completed news article') }}
 
-In this tutorial, you’ll learn the key concepts of AMP and how AMP documents differ from traditional HTML documents.  By the end of this tutorial, you'll have built an AMP page from an existing HTML page.
+Bu öğreticide, AMP'nin temel kavramlarını ve AMP belgelerinin geleneksel HTML belgelerinden nasıl farklı olduğunu öğreneceksiniz. Bu öğreticinin sonunda, var olan bir HTML sayfasından bir AMP sayfası oluşturmuş olacaksınız.
 
-## You'll learn to:
+## Şunları öğreneceksiniz:
 
-- Master the foundations of an AMP site
-- Recognize the differences between AMP pages and traditional HTML pages
-- Convert a traditional HTML page to AMP HTML
-- Validate an AMP page
-- Prepare your AMP content for discoverability
+- Bir AMP sitesinin temelleri konusunda ustalaşma
+- AMP sayfaları ile geleneksel HTML sayfaları arasındaki farkları anlama
+- Geleneksel bir HTML sayfasını AMP HTML'ye dönüştürme
+- Bir AMP sayfasını doğrulama
+- AMP içeriğinizi keşfedilebilirlik için hazırlama
 
-## You'll build:
+## Şunu oluşturacaksınız:
 
-A simple news article page that conforms to AMP specifications and incorporates common features found on mobile news sites.
+AMP teknik özelliklerine uyan ve mobil haber sitelerinde bulunan genel özellikleri içeren basit bir haber makalesi sayfası.
