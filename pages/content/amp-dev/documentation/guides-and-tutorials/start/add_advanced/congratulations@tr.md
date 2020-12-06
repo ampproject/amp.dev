@@ -6,7 +6,7 @@ description: '"Gelişmiş AMP özellikleri ekleyin" öğreticisini tamamladını
 
 "Gelişmiş AMP özellikleri ekleyin" öğreticisini tamamladınız ve AMP'nin birçok önemli gelişmiş bileşenini başarıyla keşfettiniz!
 
-In this tutorial, you learned to:
+Bu öğreticide, şunları öğrendiniz:
 
 - [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) kullanarak reklamları görüntüleyin
 - [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) kullanarak YouTube videolarını gömün
