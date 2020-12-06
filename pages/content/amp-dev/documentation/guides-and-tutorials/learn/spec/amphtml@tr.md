@@ -200,11 +200,11 @@ HTML etiketleri, AMP HTML'de değiştirilmeden kullanılabilir. Bazı etiketleri
 <table>
   <tr>
     <th width="30%">Etiket</th>
-    <th>Status in AMP HTML</th>
+    <th>AMP HTML'deki durum</th>
   </tr>
   <tr>
     <td width="30%">script</td>
-    <td>Prohibited unless the type is <code>application/ld+json</code>, <code>application/json</code>, or <code>text/plain</code>. (Other non-executable values may be added as needed.) Exception is the mandatory script tag to load the AMP runtime and the script tags to load extended components.</td>
+    <td>Tür <code>application/ld+json</code> , <code>application/json</code> veya <code>text/plain</code> olmadığı sürece yasaktır. (Gerektiğinde diğer yürütülebilir olmayan değerler eklenebilir.) Genişletilmiş bileşenleri yüklemek için AMP çalışma zamanını ve komut dosyası etiketlerini yüklemek için zorunlu komut dosyası etiketi bir istisnadır.</td>
   </tr>
   <tr>
     <td width="30%">noscript</td>
@@ -212,7 +212,7 @@ HTML etiketleri, AMP HTML'de değiştirilmeden kullanılabilir. Bazı etiketleri
   </tr>
   <tr>
     <td width="30%">base</td>
-    <td>Prohibited.</td>
+    <td>Yasaktır.</td>
   </tr>
   <tr>
     <td width="30%">img</td>
@@ -225,52 +225,55 @@ HTML etiketleri, AMP HTML'de değiştirilmeden kullanılabilir. Bazı etiketleri
   </tr>
   <tr>
     <td width="30%">video</td>
-    <td>Replaced with <code>amp-video</code>.</td>
+    <td>
+<code>amp-video</code> ile değiştirildi.</td>
   </tr>
   <tr>
     <td width="30%">audio</td>
-    <td>Replaced with <code>amp-audio</code>.</td>
+    <td>
+<code>amp-audio</code> ile değiştirildi.</td>
   </tr>
   <tr>
     <td width="30%">iframe</td>
-    <td>Replaced with <code>amp-iframe</code>.</td>
+    <td>
+<code>amp-iframe</code> ile değiştirildi.</td>
   </tr>
     <tr>
     <td width="30%">frame</td>
-    <td>Prohibited.</td>
+    <td>Yasaktır.</td>
   </tr>
   <tr>
     <td width="30%">frameset</td>
-    <td>Prohibited.</td>
+    <td>Yasaktır.</td>
   </tr>
   <tr>
     <td width="30%">object</td>
-    <td>Prohibited.</td>
+    <td>Yasaktır.</td>
   </tr>
   <tr>
     <td width="30%">param</td>
-    <td>Prohibited.</td>
+    <td>Yasaktır.</td>
   </tr>
   <tr>
     <td width="30%">applet</td>
-    <td>Prohibited.</td>
+    <td>Yasaktır.</td>
   </tr>
   <tr>
     <td width="30%">embed</td>
-    <td>Prohibited.</td>
+    <td>Yasaktır.</td>
   </tr>
   <tr>
     <td width="30%">form</td>
-    <td>Allowed. Require including <a href="https://amp.dev/documentation/components/amp-form">amp-form</a> extension.</td>
+    <td>İzin verilir. <a href="https://amp.dev/documentation/components/amp-form">amp-form</a> uzantısının dahil edilmesi gerekir.</td>
   </tr>
   <tr>
-    <td width="30%">input elements</td>
+    <td width="30%">giriş öğeleri</td>
     <td>Çoğunlukla izin verilir, ancak <a href="https://amp.dev/documentation/components/amp-form#inputs-and-fields">bazı giriş türlerinde istisnalar vardır</a>, yani <code>&lt;input type="button"></code>, <code>&lt;button type="image"></code> geçersizdir. İlgili bazı etiketlere de izin verilir: <code>&lt;fieldset></code>, <code>&lt;label></code>
 </td>
   </tr>
   <tr>
     <td width="30%">button</td>
-    <td>Allowed.</td>
+    <td>İzin verilir.</td>
   </tr>
   <tr>
     <td width="30%"><code><a name="cust"></a>style</code></td>
@@ -281,20 +284,22 @@ HTML etiketleri, AMP HTML'de değiştirilmeden kullanılabilir. Bazı etiketleri
   <tr>
     <td width="30%">link</td>
     <td>
-<code>rel</code> values registered on <a href="http://microformats.org/wiki/existing-rel-values">microformats.org</a> are allowed. If a <code>rel</code> value is missing from our white list, <a href="https://github.com/ampproject/amphtml/issues/new">please submit an issue</a>. <code>stylesheet</code> and other values like <code>preconnect</code>, <code>prerender</code> and <code>prefetch</code> that have side effects in the browser are disallowed. There is a special case for fetching stylesheets from white listed font providers.</td>
+<a>microformats.org'da</a> kayıtlı <code>rel</code> değerlerine izin verilir. Beyaz listemizde bir <code>rel</code> değeri eksikse, <a href="https://github.com/ampproject/amphtml/issues/new">lütfen bir sorun konusu gönderin</a> . <code>stylesheet</code> ve tarayıcıda yan etkileri olan <code>preconnect</code> , <code>prerender</code> ve <code>prefetch</code> gibi diğer değerlere izin verilmez. Beyaz listedeki yazı tipi sağlayıcılarından stil sayfalarını getirmek için özel bir durum eklenmiştir.</td>
   </tr>
   <tr>
     <td width="30%">meta</td>
-    <td>The <code>http-equiv</code> attribute may be used for specific allowable values; see the <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP validator specification</a> for details.</td>
+    <td>
+<code>http-equiv</code> özniteliği, izin verilen belirli değerler için kullanılabilir; ayrıntılar için <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP doğrulayıcı teknik özelliklerine</a> bakın.</td>
   </tr>
   <tr>
     <td width="30%"><code><a name="ancr"></a>a</code></td>
-    <td>The <code>href</code> attribute value must not begin with <code>javascript:</code>. If set, the <code>target</code> attribute value must be <code>_blank</code>. Otherwise allowed. <a href="#ancr">🔗</a>
+    <td>
+<code>href</code> öznitelik değeri <code>javascript:</code> ile başlamamalıdır. Ayarlandığı takdirde, <code>target</code> öznitelik değeri <code>_blank</code> olmalıdır. Aksi halde izin verilir. <a href="#ancr">🔗</a>
 </td>
   </tr>
   <tr>
     <td width="30%">svg</td>
-    <td>Most SVG elements are allowed.</td>
+    <td>Çoğu SVG öğesine izin verilir.</td>
   </tr>
 </table>
 
@@ -581,16 +586,16 @@ Tüm AMP şablon öğeleri, AMP havuzuna gönderilmeden önce AMP güvenlik ince
 Şu anda aşağıdaki SVG öğelerine izin verilmektedir:
 
 - temel öğeler: "g", "glyph", "glyphRef", "image", "marker", "metadata", "path", "solidcolor", "svg", "switch", "view"
-- shapes: "circle", "ellipse", "line", "polygon", "polyline", "rect"
-- text: "text", "textPath", "tref", "tspan"
-- rendering: "clipPath", "filter", "hkern", "linearGradient", "mask", "pattern", "radialGradient", "vkern"
-- special: "defs" (all children above are allowed here), "symbol", "use"
-- filter: "feColorMatrix", "feComposite", "feGaussianBlur", "feMerge", "feMergeNode", "feOffset", "foreignObject"
+- şekiller: "circle", "ellipse", "line", "polygon", "polyline", "rect"
+- metin: "text", "textPath", "tref", "tspan"
+- işleme: "clipPath", "filter", "hkern", "linearGradient", "mask", "pattern", "radialGradient", "vkern"
+- özel: "defs" (üstteki tüm alt öğelere burada izin verilir), "symbol", "use"
+- filtre: "feColorMatrix", "feComposite", "feGaussianBlur", "feMerge", "feMergeNode", "feOffset", "foreignObject"
 - ARIA: "desc", "title"
 
 Bu özniteliklerin yanı sıra:
 
-- "xlink:href": only URIs starting with "#" are allowed
+- "xlink:href": yalnızca "#" ile başlayan URI'lara izin verilir
 - "style"
 
 ## AMP belge keşfi <a name="amp-document-discovery"></a>
