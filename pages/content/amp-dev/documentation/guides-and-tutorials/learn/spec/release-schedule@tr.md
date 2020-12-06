@@ -35,7 +35,7 @@ AMP çalışma zamanı ve uzantıları, çeşitli farklı *yayın kanalları* ar
 
 Aşağıdaki yayın kanallarından herhangi birine PR dahil edilip edilmediğini belirlemek için şu GitHub etiketlerini arayın: *PR Use: In Canary*, *PR Use: In Production* veya *PR Use: In LTS* (daha fazla ayrıntı için [değişikliğinizin bir sürümde olup olmadığını belirleme ](#Determining-if-your-change-is-in-a-release) hakkındaki bölüme bakın).
 
-### Nightly <a name="nightly"></a>
+### Gecelik <a name="nightly"></a>
 
 **Gecelik** yayın kanalı, (adından da anlaşılacağı gibi) hafta içi her gece güncellenir. Bu süreç otomatiktir ve herhangi bir gecelik sürümün hata veya başka sorunlar içermediğinin garantisi yoktur. Her gece, gece yarısından (Pasifik Saati) sonra, günün son "yeşil" yürütmesi (commit), yayın sona erme noktası olarak seçilir. Yeşil bir derleme, tüm otomatik testlerin bu derlemede gerçekleştirildiğini gösterir.
 
