@@ -27,7 +27,7 @@ Web Temelleri'nde [Aşamalı Web Uygulamaları](https://developers.google.com/we
 
 AMP Sayfaları, AMP Önbelleği yerine kaynağınızdan (sitenizin alan adı) sunulduğu sürece birçok PWA özelliğini kendi başlarına kullanabilir. Bu, PWA özelliklerinin Google veya Bing gibi bir platformda bir AMP Sayfasını tüketirken devreye girmeyeceği, ancak ileriye dönük yolculukta veya kullanıcılar AMP sayfalarınıza doğrudan gittiğinde bu özelliklerin devreye gireceği anlamına gelir.
 
-[tip type="read-on"] **READ ON –** Learn how to [enable PWA features](../../../documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md) for your AMP Pages. [/tip]
+[tip type="read-on"] **OKUMAYA DEVAM EDİN - ** AMP Sayfalarınız için [PWA özelliklerini nasıl etkinleştireceğinizi](../../../documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md) öğrenin. [/tip]
 
 ## PWA'nıza giriş noktası olarak AMP
 
