@@ -1,5 +1,5 @@
 ---
-"$title": Introduction to complex animations
+"$title": Karmaşık animasyonlara giriş
 "$order": '2'
 description: "For animations that can't be driven by adding and removing classes, AMP offers several animation specific components. These components apply AMP's principles to animations ..."
 formats:
@@ -10,15 +10,15 @@ author: CrystalOnScript
 
 For animations that can't be driven by [adding and removing classes](triggering_css_animations.md), AMP offers several animation specific components. These components apply AMP's principles to animations: they're fast, efficient, and user first. AMP restricts what CSS properties inside keyframes are allowed, but grants benefits such as fine-grain control, seamless animations, and cross browser compatibility with no extra work.
 
-Use amp-animation if you need to tightly control playback, as well as have precise timing with multiple elements animating at the same time.
+Oynatmayı sıkı bir şekilde kontrol etmeniz gerekiyorsa amp-animation kullanın ve aynı anda birden fazla öğe animasyonuyla doğru zamanlamaya sahip olun.
 
-## Creating a basic AMP animation
+## Temel AMP animasyonu oluşturma
 
-The [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) component enables use of the [Web Animation API](https://www.w3.org/TR/web-animations/) in AMP.
+[`amp-animation`](../../../../documentation/components/reference/amp-animation.md) bileşeni, AMP'de [Web Animation API](https://www.w3.org/TR/web-animations/)'sinin kullanılmasına izin verir.
 
-A basic [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) is a JSON object made of the following key parts:
+Temel bir [`amp-animation`](../../../../documentation/components/reference/amp-animation.md), aşağıdaki önemli parçalardan oluşan bir JSON nesnesidir:
 
-- The element the component is animating, or `selector`.
+- Bileşenin animasyon uyguladığı öğe veya `selector`.
 - [Timing Properties](../../../../documentation/components/reference/amp-animation.md#timing-properties)
 - [Keyframes](../../../../documentation/components/reference/amp-animation.md#keyframes)
 - [Trigger](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
@@ -39,27 +39,27 @@ A basic [`amp-animation`](../../../../documentation/components/reference/amp-ani
 <button on="tap:exampleAnimation.start">
 ```
 
-### Selector
+### Seçici
 
-Much like CSS, the [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) component links the animation properties to the element by declaring the element's tag name, class, or id in the `"selector"` field. The component animates each element with the tag type or class name declared. Use an id to ensure you animate a single element.
+CSS'ye çok benzer şekilde, [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) bileşeni,  `"selector"` alanında öğenin etiket adını, sınıfını veya kimliğini bildirerek animasyon özelliklerini öğeye bağlar. Bileşen, bildirilen etiket türü veya sınıf adıyla her öğeyi canlandırır. Tek bir öğeyi canlandırdığınızdan emin olmak için bir kimlik kullanın.
 
-### Timing properties
+### Zamanlama özelliği
 
-The [timing properties](../../../../documentation/components/reference/amp-animation.md#timing-properties) control how long an animation takes, the amount of times it plays, and which direction keyframes execute.
+[Zamanlama özelliği](../../../../documentation/components/reference/amp-animation.md#timing-properties), bir animasyonun ne kadar süreceğini, kaç kere oynatılacağını ve anahtar karenin hangi yönde yürütüleceğini kontrol eder.
 
-No timing properties are required, but an animation might not run if properties related to time and display are missing, such as `duration` and `fill`.
+Zamanlama özelliği gerekli değildir, ancak `duration` ve `fill` gibi zaman ve görüntü ile ilgili özellikler eksikse animasyon çalışmayabilir.
 
-### Keyframes
+### Anahtar kareler
 
-While CSS allows you to morph from one state to another via transitions, you must declare animation properties as keyframes to implement [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) (similar to [CSS animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)). To ensure smooth playback and cross browser compatibility, [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) [restricts what keyframe properties](../../../../documentation/components/reference/amp-animation.md#allow-listed-properties-for-keyframes) are usable to GPU accelerated properties that do not cause a re-layout and can animate on the [compositor thread](https://dev.chromium.org/developers/design-documents/compositor-thread-architecture). This prevents animations from interfering with AMP and the browser's [render process](https://developers.google.com/web/updates/2018/09/inside-browser-part3#javascript_can_block_the_parsing).
+CSS, geçişler yoluyla bir durumdan diğerine geçiş yapmanıza izin verirken, [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) ([CSS animasyonlarına](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations) benzer) uygulamak için animasyon özelliklerini ana kareler olarak bildirmeniz gerekir. Sorunsuz oynatma ve tarayıcılar arası uyumluluk sağlamak için [`amp-animation`](../../../../documentation/components/reference/amp-animation.md), yeniden düzenlemeye neden olmayan ve [besteleyici dizesinde](../../../../documentation/components/reference/amp-animation.md#allow-listed-properties-for-keyframes) canlandırabilen GPU hızlandırmalı özelliklerle [hangi anahtar kare özelliklerinin kullanılabileceğini kısıtlar](https://dev.chromium.org/developers/design-documents/compositor-thread-architecture). Bu, animasyonların AMP'ye ve tarayıcının [oluşturma sürecine](https://developers.google.com/web/updates/2018/09/inside-browser-part3#javascript_can_block_the_parsing) müdahale etmesini önler.
 
-[tip type="note"] Keyframes are either defined directly in an [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) or referenced from [`<amp style-keyframe>`](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#keyframes-stylesheet) as long as they follow the property restrictions. Read more [here about keyframes in `amp-animation`](../../../../documentation/components/reference/amp-animation.md#keyframes). [/tip]
+[tip type="note"] Anahtar kareler, doğrudan bir [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) üzerinden tanımlanır veya özellik kısıtlamalarına uydukları sürece [`<amp style-keyframe>`](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#keyframes-stylesheet) üzerinden referans alınır. [`amp-animation` içindeki anahtar kareler hakkında daha fazlasını buradan](../../../../documentation/components/reference/amp-animation.md#keyframes) okuyun. [/tip]
 
-### Trigger
+### Tetikleyici
 
-The trigger starts the animation sequence. The [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) extension starts either when the `<body>` becomes visible on the page or by connecting it to an [AMP action or event](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)
+Tetikleyici animasyon sekansını başlatır. [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) eklentisi, `<body>` sayfada görünür hale geldiğinde veya onu bir [AMP eylemine veya olayına](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) bağlandığında başlar.
 
-Triggering on visibility of `<body>` is useful when the animation should run as soon as the page loads because it appears "above the fold", or within the first viewport of the page. Animations trigger through visibility by adding `trigger="visibility"` as an attribute to the component.
+`<body>` görünürlüğünün tetiklenmesi, animasyonun "ekranın üst kısmında" görünmesi nedeniyle sayfa yüklenir yüklenmez veya sayfanın ilk görünüm alanında çalışması gerektiğinde kullanışlıdır. Animasyonlar, bileşene bir öznitelik olarak `trigger="visibility"` ekleyerek görünürlük yoluyla tetiklenir.
 
 ```
 <amp-animation layout="nodisplay"
@@ -68,7 +68,7 @@ Triggering on visibility of `<body>` is useful when the animation should run as 
 </amp-animation>
 ```
 
-Animations connect to an action or event by assigning the [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) component an `id` and linking that `id` to the desired event trigger, such as tapping a button.
+Animasyon, [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) bileşenine bir `id` atayarak ve bu `id` bir düğmeye basmak gibi istenen olay tetikleyicisine bağlayarak bir eyleme veya olaya bağlanır.
 
 ```
 <amp-animation layout="nodisplay" id="exampleAnimation">
@@ -78,13 +78,13 @@ Animations connect to an action or event by assigning the [`amp-animation`](../.
 <button on="tap:exampleAnimation.start">
 ```
 
-## Building complex animations
+## Karmaşık animasyonlar oluşturma
 
-Building an animation in [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) allows for fine grained control that goes beyond starting and stopping an animation: it can also pause, reverse, and direct to a specific point. You can even chain multiple animations together and animate elements in a sequence.
+[`amp-animation`](../../../../documentation/components/reference/amp-animation.md) içinde bir animasyon oluşturmak, bir animasyonu başlatmanın ve durdurmanın ötesine geçen ayrıntılı kontrole olanak tanır: Ayrıca belirli bir noktayı duraklatabilir, tersine çevirebilir ve yönlendirebilir. Hatta birden fazla animasyonu birbirine bağlayabilir ve bir sekanstaki öğeleri canlandırabilirsiniz.
 
-### Subtargets
+### Alt hedefler
 
-Elements of the same tag or class can have specified timing properties and override the values of variables defined in the top level animation.
+Aynı etiketin veya sınıfın öğeleri belirli zamanlama özelliklerine sahip olabilir ve üst düzey animasyonda tanımlanan değişkenlerin değerlerini geçersiz kılabilir.
 
 [example preview="top-frame" playground="true" imports="amp-animation"]
 ```html
@@ -121,9 +121,9 @@ Elements of the same tag or class can have specified timing properties and overr
 ```
 [/example]
 
-### Chained animations
+### Zincirleme animasyonlar
 
-Multiple animations can connect together to form a large sequence. You can create timed effects, such as overlays on a video, by writing animations in the `animations` array within the [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) component.
+Birden fazla animasyon, büyük bir sekans oluşturmak için birbirine bağlanabilir. [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) bileşeni içindeki `animations` dizisine animasyonlar yazarak, bir videodaki kaplamalar gibi zamanlanmış efektler oluşturabilirsiniz.
 
 ```
 <amp-animation id="overlaysAnim" layout="nodisplay">
@@ -157,9 +157,9 @@ Multiple animations can connect together to form a large sequence. You can creat
 </amp-animation>
 ```
 
-This setup plays each animation for 3 seconds in a sequence.
+Bu kurulum, her animasyonu bir sırayla 3 saniye boyunca oynatır.
 
-For larger animations, animations inside the `animations` array are able to reference other [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) components.
+Daha büyük animasyonlar için, `animations` dizisi içindeki animasyonlar diğer [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) bileşenlerine başvurabilir.
 
 ```
 <amp-animation id="addEnergy" layout="nodisplay">
@@ -205,9 +205,9 @@ For larger animations, animations inside the `animations` array are able to refe
 </amp-animation>
 ```
 
-### Animating an unknown amount of elements
+### Bilinmeyen sayıda öğeyi canlandırma
 
-By using [`var()` and `calc()` expressions](../../../../documentation/components/reference/amp-animation.md) along with [CSS extensions](../../../../documentation/components/reference/amp-animation.md#css-extensions), you can write complex and timed animations that work with any number of elements. This allows for dynamic and user generated data to be animated with ease and fluidity.
+[CSS eklentileriyle](../../../../documentation/components/reference/amp-animation.md#css-extensions) birlikte [`var()` ve `calc()` eklentilerini](../../../../documentation/components/reference/amp-animation.md) kullanarak, herhangi bir sayıda öğeyle çalışan karmaşık ve zamanlanmış animasyonlar yazabilirsiniz. Bu, dinamik ve kullanıcı tarafından oluşturulan verilerin kolaylıkla ve akışkanlıkla canlandırılmasını sağlar.
 
 [example preview="top-frame" playground="true"]
 ```html
@@ -262,15 +262,15 @@ By using [`var()` and `calc()` expressions](../../../../documentation/components
 - Declaring a variable, `--duration`, and giving it the value of two seconds.
 - Setting the `duration` to the var `--duration`'s value.
 - Calculating the delay applied to each element with the class `.card`.
-    1. The [`length()` extension](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) calculates how many `.card` elements were selected
-    2. The length then subtracts each `.card`'s [index()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension)
-    3. The resulting value is multiplied by the var `--duration`
-    4. The final total is applied in seconds to that element's delay
-- The animation is applied to each element individually so that the cards are shuffled one after another instead of all at the same time.
+    1. [`length()` eklentisi](../../../../documentation/components/reference/amp-animation.md#css-length()-extension), kaç tane `.card` öğesinin seçildiğini hesaplar
+    2. Uzunluk daha sonra her `.card`'in [index()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension) çıkarır
+    3. Elde edilen değer var `--duration` ile çarpılır
+    4. Son toplam, bu öğenin gecikmesine saniyeler içinde uygulanır
+- Animasyon, her bir öğeye ayrı ayrı uygulanır. Böylece kartlar aynı anda değil, birbiri ardına karıştırılır.
 
-Open the animation in the AMP playground and add more [`amp-img`](../../../../documentation/components/reference/amp-img) elements to test this behavior.
+AMP oyun alanında animasyonu açın ve bu davranışı test etmek için daha fazla [`amp-img`](../../../../documentation/components/reference/amp-img) öğesi ekleyin.
 
-### Look great, everywhere
+### Her yerde harika görünme
 
 Animations can include [`conditions`](../../../../documentation/components/reference/amp-animation.md#conditions) that allow customized effects. Tailor animations to any screen size through the [`media` condition](../../../../documentation/components/reference/amp-animation.md#media-query) and supports backwards browser compatibility by enabling [`supports` conditions](../../../../documentation/components/reference/amp-animation.md#supports-condition) in a [`switch` statement](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement).
 
