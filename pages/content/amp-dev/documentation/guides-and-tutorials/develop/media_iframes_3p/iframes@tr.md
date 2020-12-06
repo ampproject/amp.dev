@@ -1,7 +1,7 @@
 ---
-"$title": Include iframes
+"$title": "iframe'leri ekleme"
 "$order": '10'
-description: "Learn how to display include media content in your pages, and how to use iframes to display advanced content outside of AMP's limitations."
+description: "Sayfalarınıza eklenen medya içeriğini nasıl görüntüleyeceğinizi ve gelişmiş içeriği AMP sınırlamalarının dışında görüntülemek için iframe'leri nasıl kullanacağınızı öğrenin."
 formats:
 - websites
 components:
@@ -14,31 +14,31 @@ contributors:
 
 Learn how to display include media content in your pages, and how to use iframes to display advanced content outside of AMP's limitations.
 
-## The basics
+## Temel bilgiler
 
-You can display an iframe in your page by using the [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) element.
+[`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) bileşenini kullanarak sayfanızda bir iframe görüntüleyebilirsiniz.
 
-Iframes are especially useful in AMP to display content not supported in the main page context, such as content requiring user-authored JavaScript.
+Iframe'ler, AMP'de, kullanıcı tarafından yazılan JavaScript gerektiren içerikler gibi ana sayfa bağlamında desteklenmeyen içerikleri görüntülemek için özellikle yararlıdır.
 
-### Requirements for `amp-iframe`
+### `amp-iframe` için gereklilikler
 
-- Must be at least **600px** or **75%** of the first viewport away from the top (except for iframes that use a [`placeholder`](#using-placeholders)).
-- Can only request resources via HTTPS, and they must not be in the same origin as the container, unless they do not specify allow-same-origin.
+- En az **600 piksel** veya en üstten uzak olarak ilk görüntü alanının **%75'i** kadar olmalıdır ([`placeholder`](#using-placeholders) kullanan iframe'ler hariç).
+- Kaynakları yalnızca HTTPS aracılığıyla talep edebilir ve aynı kök kaynağa izin vermeyi belirtmedikleri müddetçe kapsayıcıyla aynı başlangıç noktasında olmamalıdır.
 
 [tip type="read-on"] **READ ON –** Learn more at the [full specification for `amp-iframe`](../../../../documentation/components/reference/amp-iframe.md). [/tip]
 
-### Include the script
+### Betik ekleme
 
-To include an [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) in your page, first include the following script to the `<head>`, which loads the additional code for the extended component:
+Sayfanıza bir [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) eklemek için, önce aşağıdaki betiği `<head>` dahil edin; bu betik, genişletilmiş bileşen için ek kodu yükler:
 
 [sourcecode:html]
 <script async custom-element="amp-iframe"
   src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 [/sourcecode]
 
-### Write the markup
+### Biçimlendirme yazma
 
-In the following example, we created a responsive [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) to embed a Google Map via the [Google Maps Embed API](https://developers.google.com/maps/documentation/embed/guide):
+Aşağıdaki örnekte, [Google Maps Embed API](../../../../documentation/components/reference/amp-iframe.md) aracılığıyla bir Google Haritasını yerleştirmek için duyarlı bir <a><code>amp-iframe</code></a> oluşturduk:
 
 ```html
 <amp-iframe width="200" height="100"
@@ -48,13 +48,13 @@ In the following example, we created a responsive [`amp-iframe`](../../../../doc
 </amp-iframe>
 ```
 
-## Using placeholders <a name="using-placeholders"></a>
+## Yer tutucuları kullanma <a name="using-placeholders"></a>
 
-You can display an [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) at the top of a document, provided the [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) contains an element with the `placeholder` attribute, (for example, an [`amp-img`](../../../../documentation/components/reference/amp-img.md) element) which would be rendered as a placeholder until the iframe is ready to be displayed.
+[`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) , iframe hazır olana kadar yer tutucu olarak görüntülenecek `placeholder` özniteliğine sahip bir öğe (örneğin, bir [`amp-img`](../../../../documentation/components/reference/amp-img.md) öğesi) içermesi koşuluyla, bir belgenin üstünde bir [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) görüntüleyebilirsiniz.
 
 [tip type="read-on"] **READ ON –**: Learn more about placeholders in [Iframe with placeholder](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder). [/tip]
 
-Example with placeholder:
+Yer tutuculu örnek:
 
 ```html
 <amp-iframe width="400" height="225"
@@ -66,10 +66,10 @@ Example with placeholder:
 </amp-iframe>
 ```
 
-Renders as:
+Şu şekilde oluşturulur:
 
 <amp-iframe width="400" height="225" sandbox="allow-scripts allow-same-origin" layout="responsive" src="https://giphy.com/embed/OWabwoEn7ezug"><amp-img placeholder layout="fill" src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"></amp-img></amp-iframe>
 
-## Examples
+## Örnekler
 
-You can find more advanced [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) examples in [AMP By Example](../../../../documentation/examples/documentation/amp-iframe.html).
+Daha gelişmiş [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) örneklerini [AMP By Example](../../../../documentation/examples/documentation/amp-iframe.html) içinde bulabilirsiniz.
