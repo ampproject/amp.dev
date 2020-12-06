@@ -1,28 +1,28 @@
 ---
-"$title": Create an AMPHTML ad
-description: "In this tutorial, you'll learn how to create an AMPHTML ad from scratch that can be served to AMP and non-AMP pages."
+"$title": AMPHTML reklamı oluşturma
+description: Bu öğreticide, AMP ve AMP olmayan sayfalara sunulabilen sıfırdan bir AMPHTML reklamı oluşturmayı öğreneceksiniz.
 formats:
 - ads
 ---
 
 {{ image('/static/img/docs/ads/amp-ad-framed-final.png', 597, 1240, align='right third', caption='Completed AMPHTML image ad') }}
 
-In this tutorial, you'll learn how to create an [AMPHTML ad](../../../../documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md) from scratch that can be served to AMP and non-AMP pages. The ad format used in this tutorial is a simple image ad.
+Bu öğreticide, AMP ve AMP olmayan sayfalara sunulabilen sıfırdan bir [AMPHTML reklamı](../../../../documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md) oluşturmayı öğreneceksiniz. Bu öğreticide kullanılan reklam biçimi basit bir görüntü reklamdır.
 
-AMPHTML ads are similar to traditional HTML ads, but instead of coding them in traditional HTML, they are coded in AMPHTML, according to the [AMPHTML ad spec](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md). By creating the ads in AMPHTML, the ads take advantage of the same optimizations and performance utilized in AMP pages, making them a faster, lighter and a more secure way to advertise on the web. Most of all, these ads can be delivered anywhere on the web, *not just on AMP pages*.
+AMPHTML reklamları, geleneksel HTML reklamlarına benzer, ancak bunlar geleneksel HTML'de kodlanmak yerine [AMPHTML reklamı teknik özelliklerine](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) göre AMPHTML'de kodlanırlar. AMPHTML'de oluşturulan reklamlar, AMP sayfalarında sunulan optimizasyonlardan ve performanstan yararlanarak web'de reklam vermenin daha hızlı, daha hafif ve daha güvenli bir yolu haline geliyorlar. Hepsinden önemlisi, bu reklamlar *yalnızca AMP sayfalarında değil*, web'de herhangi bir yerde sunulabilir.
 
-## You will learn to:
+## Şunları öğreneceksiniz:
 
-- Create a valid AMPHTML ad according to the [AMPHTML ad spec](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md)
-- Track ad views by using the [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) component
-- Verify the AMPHTML ad syntax by using the [AMP validator](https://validator.ampproject.org/#htmlFormat=AMP4ADS)
+- [AMPHTML reklam teknik özelliklerine](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) göre geçerli bir AMPHTML reklamı oluşturma
+- [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) bileşenini kullanarak reklam görüntülemelerini takip etme
+- [AMP doğrulayıcı](https://validator.ampproject.org/#htmlFormat=AMP4ADS) kullanarak AMPHTML reklam sözdizimini doğrulama
 
-## Prerequisites:
+## Ön koşullar
 
-- A basic knowledge of HTML, CSS, and JavaScript
-- A browser and text editor of your choice
+- HTML, CSS ve JavaScript hakkında temel bilgi
+- Seçtiğiniz bir tarayıcı ve metin editörü
 
-[tip] *Don't want to create an ad from scratch?*  Use one of the following tools to create your AMPHTML ad:
+[tip] *Sıfırdan bir reklam oluşturmak istemiyor musunuz?* AMPHTML reklamınızı oluşturmak için aşağıdaki araçlardan birini kullanın:
 
 - [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
