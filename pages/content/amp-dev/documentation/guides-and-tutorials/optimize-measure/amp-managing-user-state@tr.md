@@ -1,10 +1,10 @@
 ---
-"$title": Manage non-authenticated user state with AMP
+"$title": Kimliği doğrulanmamış kullanıcı durumunu AMP ile yönetme
 order: '2'
 formats:
 - websites
 teaser:
-  text: "**Table of contents**"
+  text: "**İçindekiler**"
 ---
 
 <!--
@@ -30,305 +30,307 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-**Table of contents**
+**İçindekiler**
 
-- [Background](#background)
-- [Implementation guide](#implementation-guide)
-    - [Before getting started](#before-getting-started)
-    - [Task 1: For non-AMP pages on the publisher origin, set up an identifier and send analytics pings](#task1)
-    - [Task 2: For AMP pages, set up an identifier and send analytics pings by including Client ID replacement in amp-analytics pings](#task2)
-    - [Task 3: Process analytics pings from pages on the publisher origin](#task3)
-    - [Task 4: Process analytics pings from AMP cache or AMP viewer display contexts and establish identifier mappings (if needed)](#task4)
-    - [Task 5: Using Client ID in linking and form submission](#task5)
-- [Strongly recommended practices](#strongly-recommended-practices)
+- [Arka plan](#background)
+- [Uygulama kılavuzu](#implementation-guide)
+    - [Başlamadan önce](#before-getting-started)
+    - [1. Görev: Yayıncı kaynağındaki AMP olmayan sayfalar için bir tanımlayıcı belirleme ve analiz ping'leri gönderme](#task1)
+    - [2. Görev: AMP sayfaları için bir tanımlayıcı belirleme ve amp-analytics ping'lerine İstemci Kimliği değişimini ekleyerek analiz ping'leri gönderme](#task2)
+    - [3. Görev: Yayıncı kaynağındaki sayfalardan analiz ping'lerini işleme](#task3)
+    - [4. Görev: AMP önbelleğinden veya AMP görüntüleyici ekran bağlamlarından gelen analiz ping'lerini işleme ve tanımlayıcı eşleşmeleri oluşturma (gerekirse)](#task4)
+    - [5. Görev: Bağlantı vermede ve form gönderiminde İstemci Kimliği kullanma](#task5)
+- [Kesinlikle önerilen uygulamalar](#strongly-recommended-practices)
 
-User state is an important concept on today’s web. Consider the following use cases that are enabled by managing user state:
+Kullanıcı durumu, günümüz web dünyasında önemli bir kavramdır. Kullanıcı durumu yönetilerek etkinleştirilen aşağıdaki kullanım durumlarını göz önünde bulundurun:
 
-- A merchant builds a useful **shopping cart** that shows a user the same items during their second visit that they had added to the cart during their first visit many weeks ago. Such an experience increases the chance of the user buying that item by making sure they remain aware of the item they considered buying in the past.
-- A news publisher who can tailor **recommended articles** to a reader based on the reader’s repeated visits to the publisher’s articles, which helps keep the reader engaged and discovering more content.
-- A website developer running any type of site collects **analytics** that can tell if two pageviews belong to the same person who saw two pages or to two different people who each saw a single page. Having this insight helps to know how the site is performing, and, ultimately, how to improve it.
+- Bir satıcı, bir kullanıcıya, haftalar önce ilk ziyaretinde sepete eklediği ürünleri ikinci ziyaretinde gösteren yararlı bir **alışveriş sepeti** oluşturuyor. Böyle bir deneyim, kullanıcının geçmişte satın almayı düşündüğü öğenin farkında olmasını sağlayarak o öğeyi satın alma şansını artırır.
+- **Önerilen makaleleri** okuyucunun yayıncı makalelerine tekrar tekrar yaptığı ziyaretleri temel alarak okuyucuya özel olarak hazırlayan bir haber yayıncısı, okuyucunun ilgisini canlı tutmayı ve daha fazla içerik keşfetmesini sağlamayı başarır.
+- Herhangi bir siteyi işleten bir web sitesi geliştiricisi, iki sayfa görüntülemesinin iki sayfa gören tek bir kişiye mi, yoksa her biri tek bir sayfa gören iki farklı kişiye mi ait olduğunu anlayabilen **analizler** topluyor. Bu içgörüye sahip olmak, sitenin nasıl performans gösterdiğini ve nihayetinde nasıl iyileştirileceğini öğrenmenize yardımcı olur.
 
-This article is designed to help you be more successful in **managing non-authenticated user state in AMP**, a way of providing a seamless user journey even if the user hasn’t taken an action to provide their identity, like signing in. After reviewing some of the challenges and considerations in approaching this topic, this guide outlines the ways in which user state is supported by AMP and offers recommendations on how you can approach a technical implementation.
+Bu makale, **AMP'de kimliği doğrulanmamış kullanıcı durumunu yönetmede** daha başarılı olmanıza yardımcı olmak için tasarlanmıştır; bu, kullanıcı, oturum açma gibi bir amaçla kimliğini sağlamak için herhangi bir işlem yapmamış olsa bile sorunsuz bir kullanıcı yolculuğu sağlamanın bir yoludur. Bu kılavuz, bu konuyu ele alırken karşılaşılan zorlukları ve dikkate alınması gereken hususları gözden geçirdikten sonra, kullanıcı durumunun AMP tarafından nasıl desteklendiğini özetliyor ve teknik bir uygulamaya nasıl yaklaşabileceğinize dair öneriler sunuyor.
 
-## Background <a name="background"></a>
+## Arka plan <a name="background"></a>
 
-The topic of user state deserves special attention in AMP because AMP pages can display in multiple contexts such as on your website, in Google Search or a third party app. This introduces challenges in managing user state when users travel between these.
+AMP sayfaları, web sitenizde, Google Arama'da veya bir üçüncü taraf uygulamasında olduğu gibi birden çok bağlamda gösterilebildiğinden, kullanıcı durumu konusu AMP'de özel ilgiyi hak ediyor. Bu durum, kullanıcılar ilgili sayfalar arasında gezinirken kullanıcı durumunu yönetmede zorluklar ortaya çıkarır.
 
-### Display contexts for AMP pages <a name="display-contexts-for-amp-pages"></a>
+### AMP sayfaları için ekran bağlamları <a name="display-contexts-for-amp-pages"></a>
 
-You can think of AMP as a portable content format that enables content to be loaded fast anywhere. AMP documents can be displayed via three noteworthy contexts:
+AMP'yi, içeriğin her yerde hızlı bir şekilde yüklenmesini sağlayan taşınabilir bir içerik formatı olarak düşünebilirsiniz. AMP belgeleri üç önemli bağlamda görüntülenebilir:
 
-- The publisher's origin
-- An AMP cache
-- An AMP viewer
+- Yayıncı kaynağı
+- AMP önbelleği
+- AMP görüntüleyici
 
 <table>
   <tr>
-    <th width="20%">Context</th>
-    <th width="20%">Can non-AMP pages be served from here?</th>
-    <th width="20%">Can AMP pages be served from here?</th>
-    <th>Sample URL</th>
+    <th width="20%">Bağlam</th>
+    <th width="20%">AMP olmayan sayfalar buradan sunulabilir mi?</th>
+    <th width="20%">AMP sayfaları buradan sunulabilir mi?</th>
+    <th>Örnek URL</th>
   </tr>
   <tr>
-    <td>Publisher’s origin</td>
-    <td>Yes</td>
-    <td>Yes</td>
+    <td>Yayıncı kaynağı</td>
+    <td>Evet</td>
+    <td>Evet</td>
     <td><code>https://example.com/article.amp.html</code></td>
   </tr>
    <tr>
-    <td>AMP cache</td>
-    <td>No</td>
-    <td>Yes</td>
+    <td>AMP önbelleği</td>
+    <td>Hayır</td>
+    <td>Evet</td>
     <td><code>https://example-com.cdn.ampproject.org/s/example.com/article.amp.html</code></td>
   </tr>
    <tr>
-    <td>AMP viewer</td>
-    <td>No</td>
-    <td>Yes</td>
+    <td>AMP görüntüleyici</td>
+    <td>Hayır</td>
+    <td>Evet</td>
     <td><code>https://google.com/amp/s/example.com/article.amp.html</code></td>
   </tr>
 </table>
 
-Let’s examine each of these situations more closely.
+Bu durumların her birini daha yakından inceleyelim.
 
-**Context #1: the publisher’s origin.** AMP pages are deployed so that they are originally hosted from and accessible via the publisher’s site, e.g. on `https://example.com` one might find `https://example.com/article.amp.html`.
+**Bağlam #1: Yayıncı kaynağı.** AMP sayfaları, asıl olarak yayıncının sitesinde barındırılmaları ve bu siteden erişilebilmeleri için dağıtılır, örneğin `https://example.com` sitesinde `https://example.com/article.amp.html` sayfası bulunabilir.
 
-Publishers can choose to publish exclusively in AMP, or to publish two versions of content (that is, AMP content “paired” with non-AMP content). The “paired” model requires some [particular steps](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/discovery) to ensure the AMP versions of pages are discoverable to search engines, social media sites, and other platforms. Both publishing approaches are fully supported; it's up to the publisher to decide on which approach to take.
+Yayıncılar, yalnızca AMP'de yayın yapmayı veya içeriğin iki sürümünü (yani AMP içeriği ile "eşleştirilmiş" AMP olmayan içerik) yayınlamayı tercih edebilir. "Eşleştirilmiş" model, sayfaların AMP sürümlerinin arama motorları, sosyal medya siteleri ve diğer platformlar tarafından keşfedilebilir olmasını sağlamak için bazı [özel adımlar](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/discovery) gerektirir. Her iki yayın yaklaşımı da tam olarak desteklenmektedir; Hangi yaklaşımın uygulanacağına karar vermek yayıncıya bağlıdır.
 
-> **NOTE:**
-> Due to the “paired” publishing model just described, the publisher’s origin (in the example above, `https://example.com`) is a context in which **both AMP and non-AMP content can be accessed**. Indeed, it’s the only context in which this can happen because AMP caches and AMP viewers, described below, only deliver valid AMP content.
+> **NOT:**
+> Yukarıda açıklanan "eşleştirilmiş" yayınlama modeli nedeniyle, yayıncı kaynağı (yukarıdaki örnekte `https://example.com`), **hem AMP hem de AMP olmayan içeriğe erişilebilen** bir bağlamdır. Aslında, aşağıda açıklanan AMP önbellekleri ve AMP görüntüleyicileri yalnızca geçerli AMP içeriği sunduğu için bunun olabileceği tek bağlam budur.
 
-**Context #2: an AMP cache.** AMP files can be cached in the cloud by a third-party cache to reduce the time content takes to get to a user’s mobile device.
+**Bağlam #2: AMP önbelleği.** AMP dosyaları, içeriğin bir kullanıcının mobil cihazına ulaşma süresini azaltmak için üçüncü taraf bir önbellek tarafından bulutta önbelleğe alınabilir.
 
-By using the AMP format, content producers are making the content in AMP files available to be cached by third parties. Under this type of framework, publishers continue to control their content (by publishing to their origin as detailed above), but platforms can cache or mirror the content for optimal delivery speed to users.
+İçerik üreticileri AMP biçimini kullanarak AMP dosyalarındaki içeriği üçüncü taraflarca önbelleğe alınmak üzere kullanılabilir hale getiriyor. Bu tür bir çerçeve altında, yayıncılar içeriklerini kontrol etmeye devam eder (yukarıda ayrıntılı olarak belirtildiği gibi kaynaklarında yayın yaparak), ancak platformlar, kullanıcılara en uygun teslimat hızı için içeriği önbelleğe alabilir veya yansıtabilir.
 
-Traditionally, content served in this way originates from a different domain. For example, the [Google AMP Cache](https://developers.google.com/amp/cache/overview) uses `https://cdn.ampproject.org` to deliver content, e.g. `https://example-com.cdn.ampproject.org/s/example.com/article.amp.html`.
+Geleneksel olarak, bu şekilde sunulan içerik farklı bir etki alanından gelir. Örneğin, [Google AMP Önbelleği](https://developers.google.com/amp/cache/overview) içerik sunmak için `https://cdn.ampproject.org` kullanır, örneğin `https://example-com.cdn.ampproject.org/s/example.com/article.amp.html`.
 
-**Context #3: an AMP viewer.** The AMP format is built to support embedding within third-party AMP viewers. This enables a high degree of cooperation between the AMP file and the viewer experience, benefits of which include: smart and secure preloading and pre-rendering of content and innovative affordances like swiping between full AMP pages.
+**Bağlam #3: AMP görüntüleyici.** AMP biçimi, üçüncü taraf AMP görüntüleyicilerinin içine yerleştirmeyi desteklemek için oluşturulmuştur. Bu durum, AMP dosyası ile izleyici deneyimi arasında yüksek derecede işbirliğine olanak tanır; bunun faydaları arasında şunlar vardır: içeriğin akıllı ve güvenli bir şekilde önceden yüklenmesi ve önceden oluşturulması ve tam AMP sayfaları arasında kaydırma gibi yenilikçi olanaklar.
 
-Just like the AMP cache case, expect the domain for an AMP viewer to also be different from the publisher origin. For example, the viewer for Google Search is hosted on `https://google.com` and embeds an iframe that requests the publisher content from the Google AMP Cache.
+Tıpkı AMP önbellek durumu gibi, bir AMP görüntüleyicinin alan adının da yayıncı kaynağından farklı olması beklenir. Örneğin, Google Arama görüntüleyicisi `https://google.com` sitesinde barındırılır ve yayıncı içeriğini Google AMP Önbelleğinden isteyen bir iframe yerleştirir.
 
-### Multiple contexts means multiple state management <a name="multiple-contexts-means-multiple-state-management"></a>
+### Birden çok bağlam, birden çok durum yönetimi anlamına gelir <a name="multiple-contexts-means-multiple-state-management"></a>
 
-Publishers must be prepared to manage the user state for each display context separately. AMP’s [Client ID](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#client-id) feature, which takes advantage of cookies or local storage to persist state, provides the necessary support for AMP pages to have a stable and pseudonymous identifier for the user. From an implementation point of view, either cookies or local storage are used, and AMP makes the decision which to use depending on the display context. This choice is influenced by the technical feasibility of managing this state scaled to hundreds or thousands of publishers.
+Yayıncılar, her erkan bağlamı için kullanıcı durumunu ayrı ayrı yönetmeye hazırlıklı olmalıdır. Durumunu sürdürmek için çerezlerden veya yerel depolamadan yararlanan AMP'nin [İstemci Kimliği](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#client-id) özelliği, AMP sayfalarının kullanıcı için kararlı ve takma adlı bir tanımlayıcıya sahip olması için gerekli desteği sağlar. Uygulama açısından, çerezler veya yerel depolama kullanılır ve AMP, ekran bağlamına bağlı olarak hangisinin kullanılacağına karar verir. Bu seçim, yüzlerce veya binlerce yayıncıya ölçeklenmiş bu durumu yönetmenin teknik fizibilitesinden etkilenir.
 
-However, publishers of AMP pages can easily end up (unwittingly) designing user journeys that involve multiple contexts. Let’s revisit our earlier look at the shopping cart use case and add some more detail to it to make a full **user story**:
+Bununla birlikte, AMP sayfalarının yayıncıları, birden çok bağlamı içeren kullanıcı gezintilerini kolayca (farkında olmadan) tasarlayabilir. Alışveriş sepeti kullanım senaryosuna önceki bakışımızı tekrar gözden geçirelim ve tam bir **kullanıcı hikayesi** oluşturmak için ona biraz daha ayrıntı ekleyelim:
 
-> *On day 1, the user discovers an AMP page from Example Inc. via Google Search. Google Search loads AMP pages in an AMP viewer. While viewing the page, the user adds four items to their shopping cart but doesn't check out. Two weeks later, on day 15, the user remembers the four items they were considering to purchase and decides now is the time to buy. They access Example Inc.’s homepage at `https://example.com` directly (it is a non-AMP homepage) and finds their four items are still saved in the shopping cart.*
+> *1. günde, kullanıcı Google Arama aracılığıyla Example Inc.'e ait bir AMP sayfası keşfeder. Google Arama, AMP sayfalarını bir AMP görüntüleyicide yükler. Sayfayı görüntülerken, kullanıcı alışveriş sepetine dört ürün ekler ancak satın alma işlemini tamamlamaz. İki hafta sonra, 15. günde, kullanıcı satın almayı düşündüğü dört ürünü hatırlar ve şimdi satın alma zamanının geldiğine karar verir. Example Inc.'in ana sayfasına `https://example.com` doğrudan erişir (bu, AMP olmayan bir ana sayfadır) ve dört ürünün hala alışveriş sepetinde kayıtlı olduğunu görür.*
 
-In this scenario, the user receives a consistent shopping cart experience even though she has traversed from an AMP viewer context to a publisher origin context—and with some time passing between these events. This experience is very reasonable and, if you’re designing a shopping experience, you should expect to support it, so how do you make it happen?
+Bu senaryoda, kullanıcı, AMP görüntüleyici bağlamından yayıncı kaynak bağlamına geçmesine ve bu etkinlikler arasında bir süre geçmesine rağmen tutarlı bir alışveriş sepeti deneyimi yaşar. Bu deneyim çok makuldür ve eğer bir alışveriş deneyimi tasarlıyorsanız, böyle bir deneyimi desteklemeniz gerekir, peki bunu nasıl gerçekleştirebilirsiniz?
 
-**To enable this and any experience involving user state, all contexts the user traverses must share their individually-maintained state with each other.** “Perfect!”, you say, with the idea to share the cookie values with user identifiers across these contextual boundaries. One wrinkle: even though each of these contexts displays content controlled by the same publisher, they each see the other as a third-party because each context lives on different domains.
+**Bunu ve kullanıcı durumunu içeren herhangi bir deneyimi etkinleştirmek için, kullanıcının geçtiği tüm bağlamların ayrı ayrı tutulan durumlarını birbirleriyle paylaşması gerekir.** Çerez değerlerini bu bağlamsal sınırlar boyunca kullanıcı tanımlayıcılarla paylaşma fikrini düşünüp "Mükemmel!" diyeceksinizdir. Ama bir pürüz var: Bu bağlamların her biri aynı yayıncının kontrolündeki içeriği görüntülese de, her biri diğerini üçüncü taraf olarak görüyor çünkü her bağlam farklı etki alanında barındırılıyor.
 
 <amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png" width="1030" height="868">
   <noscript>     <img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png">   </noscript></amp-img>
 
-As you'll see in the following discussion, being in a third-party position when interacting with cookies may present challenges, depending on how the user’s browser settings are configured. In particular, if third party cookies are blocked in a particular situation, then it will prevent the ability for information to be shared across the contexts. On the other hand, if third-party cookie operations are allowed, then information can be shared.
+Aşağıdaki tartışmada göreceğiniz gibi, çerezlerle etkileşim kurarken üçüncü taraf konumunda olmak, kullanıcının tarayıcı ayarlarının nasıl yapılandırıldığına bağlı olarak zorluklara neden olabilir. Özellikle, üçüncü taraf çerezleri belirli bir durumda engellenirse, bilgiler bağlamlar arasında paylaşılamayacaktır. Öte yandan, üçüncü taraf çerez işlemlerine izin verilirse, bilgiler paylaşılabilecektir.
 
-## Implementation guide <a name="implementation-guide"></a>
+## Uygulama kılavuzu <a name="implementation-guide"></a>
 
-This section provides recommendations for managing user state. The tasks below are presented as a progression, but can largely be viewed in two chunks:
+Bu bölüm, kullanıcı durumunu yönetmeye yönelik öneriler sunuyor. Aşağıdaki görevler bir sıralı dizi olarak sunulmuştur, ancak büyük ölçüde iki öbek halinde görülebilir:
 
-**Chunk #1: Fundamental implementation:** Tasks 1-4 are essential toward getting the basics working. They rely on a minimal set of features needed to get the job partially done: AMP’s Client ID substitution, reading and writing of cookies, and maintaining a backend mapping table. Why “partially”? Because the steps conveyed in these tasks rely on reading and writing cookies and because the browser’s cookie settings may prevent this in certain circumstances, this set of tasks is likely to be insufficient for fully managing user state in all scenarios.
+**Öbek #1: Temel uygulama:** 1-4. Görevler, temel öğelerin çalışması için gereklidir. İşi kısmen halletmek için gereken minimum bir dizi özelliğe dayanırlar: AMP'nin İstemci Kimliği değişikliği, çerezleri okuma ve yazma ve bir arka uç eşleştirme tablosunu yönetme. Neden "kısmen"? Bu görevlerde iletilen adımlar çerezleri okuma ve yazmaya dayandığından ve tarayıcının çerez ayarları belirli durumlarda bunu engelleyebileceğinden, bu görevler kümesi tüm senaryolarda kullanıcı durumunu tam olarak yönetmek için muhtemelen yetersiz olacaktır.
 
-After laying the foundation, we then visit a topic with a narrower range of use cases but that offers a complete solution for those use cases.
+Temeli oluşturduktan sonra, daha dar bir kullanım alanı yelpazesine sahip ancak bu kullanım durumları için eksiksiz bir çözüm sunan bir konuyu ziyaret ediyoruz.
 
-**Chunk #2: Using Client ID in linking and form submission:** In Task 5, you'll learn to advantage of link traversal and/or form submission to pass AMP Client ID information across contextual boundaries where the user is traversing from one page directly to another.
+**Öbek #2: Bağlantı verme ve form göndermede İstemci Kimliğini kullanma:** 5. Görev'de, kullanıcının bir sayfadan doğrudan bir başkasına geçiş yaptığı bağlamsal sınırlar boyunca AMP İstemci Kimliği bilgilerini geçirmek için bağlantı geçişinden ve/veya form gönderiminden yararlanmayı öğreneceksiniz.
 
-> **CAUTION:**
-> The following implementation guide advises usage of and working with cookies. Be sure to consult the [Strongly recommended practices](#strongly-recommended-practices) section for important suggestions to keep in mind.
+> **DİKKAT:**
+> Aşağıdaki uygulama kılavuzu, çerezlerin kullanımını ve bunlarla çalışılmasını tavsiye eder. Unutulmaması gereken önemli öneriler için [kesinlikle önerilen uygulamalar](#strongly-recommended-practices) bölümüne başvurduğunuzdan emin olun.
 
-### Before getting started <a name="before-getting-started"></a>
+### Başlamadan önce <a name="before-getting-started"></a>
 
-In walking through the technical guidance below, let's assume that you’ll be binding **user state** to a stable **identifier** that represents the user. For example, the identifier might look like `n34ic982n2386n30`. On the server side you then associate `n34ic982n2386n30` to any set of user state information, such as shopping cart content, a list of previously read articles, or other data depending on the use case.
+Aşağıdaki teknik kılavuzu incelerken, **kullanıcı durumunu**, kullanıcıyı temsil eden kararlı bir **tanımlayıcıya** bağlayacağınızı varsayalım. Örneğin, tanımlayıcı `n34ic982n2386n30` şeklinde görünebilir. Ardından, sunucu tarafında, `n34ic982n2386n30` tanımlayıcısını alışveriş sepeti içeriği, önceden okunan makalelerin listesi veya kullanım durumuna bağlı olarak diğer veriler gibi herhangi bir kullanıcı durumu bilgisi kümesiyle ilişkilendirirsiniz.
 
 <amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
   <noscript>     <img alt="A single identifier could be used to manage user state for many use cases" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png">   </noscript></amp-img>
 
-For clarity throughout the rest of this document, we’ll call various strings of characters that are identifiers by more readable names preceded by a dollar sign (`$`):
+Bu belgenin geri kalanında netlik sağlamak için, önünde dolar işareti (`$`) bulunan, daha okunabilir adlara sahip tanımlayıcılardan oluşan çeşitli karakter dizilerini çağıracağız:
 
 [sourcecode:text]
 n34ic982n2386n30 ⇒ $sample_id
 [/sourcecode]
 
-**Our use case:** Throughout this guide we will work on an example designed to achieve simple pageview tracking (i.e., analytics) in which we want to produce the most accurate user counting possible. This means that even if the user is accessing a particular publisher’s content from different contexts (including crossing between AMP and non-AMP pages), we want these visits to be counted toward a singular understanding of the user that is the same as if the user were browsing only on such publisher’s traditional non-AMP pages.
+**Kullanım örneğimiz:** Bu kılavuz boyunca, mümkün olan en doğru kullanıcı sayımına ulaşmak istediğimiz basit sayfa görüntüleme takibi (yani analiz) elde etmek için tasarlanmış bir örnek üzerinde çalışacağız. Bu, kullanıcı belirli bir yayıncının içeriğine farklı bağlamlardan erişiyor olsa bile (AMP ve AMP olmayan sayfalar arasında geçişler dahil), bu ziyaretlerin, kullanıcı tıpkı ilgili yayıncının geleneksel AMP olmayan sayfalarında geziniyormuş gibi tek bir kullanıcı anlayışıyla sayılmasını istiyoruz.
 
-**Assumption about availability of stable cookie values:** We also assume that the user is using the same device, browser, and non-private/incognito browsing, in order to assure that cookie values are preserved and available across the user’s sessions over time. If this is not the case, these techniques should not be expected to work. If this is required, look to manage user state based on the user’s authenticated (i.e. signed-in) identity.
+**Kararlı çerez değerlerinin kullanılabilirliği hakkında varsayım:** Çerez değerlerinin korunmasını ve kullanıcının oturumları boyunca zaman içinde kullanılabilir kalmasını sağlamak için kullanıcının aynı cihazı, tarayıcıyı ve gizli/görünmez olmayan göz atmayı kullandığını da varsayıyoruz. Durum böyle değilse, bu tekniklerin işe yaraması beklenmemelidir. Bu gerekliyse, kullanıcı durumunu kullanıcının giriş yapmış (yani oturum açmış) kimliğine göre yönetmeye çalışın.
 
-**The concepts presented below can be extended to other use cases:** Although we focus just on the analytics use case, the concepts conveyed below can be reworked for other use cases requiring user state management across contexts.
+**Aşağıda sunulan kavramlar diğer kullanım durumlarına da uygulanabilir:** Yalnızca analiz amaçlı kullanım senaryosuna odaklanmamıza rağmen, aşağıda iletilen kavramlar, bağlamlar arasında kullanıcı durumu yönetimini gerektiren diğer kullanım durumları için de kullanılacak şekilde ayarlanabilir.
 
 <a id="task1"></a>
 
-### Task 1: For non-AMP pages on the publisher origin, set up an identifier and send analytics pings <a name="task-1-for-non-amp-pages-on-the-publisher-origin-set-up-an-identifier-and-send-analytics-pings"></a>
+### 1. Görev: Yayıncı kaynağındaki AMP olmayan sayfalar için bir tanımlayıcı belirleme ve analiz ping gönderme <a name="task-1-for-non-amp-pages-on-the-publisher-origin-set-up-an-identifier-and-send-analytics-pings"></a>
 
-Let’s begin by configuring analytics for non-AMP pages served off of the publisher origin. This can be achieved in many ways, including using an analytics package like Google Analytics or Adobe Analytics, or by writing a custom implementation.
+Yayıncı kaynağından sunulan AMP olmayan sayfalar için analizleri yapılandırarak başlayalım. Bu işlem, Google Analytics veya Adobe Analytics gibi bir analiz paketi kullanmak veya özel bir uygulama yazmak dahil olmak üzere birçok yolla başarılabilir.
 
-If you’re using an analytics package from a vendor, it’s likely that package takes care of both setting up cookies and transmitting pings via its configuration code and APIs. If this is the case, you should read through the steps below to ensure they align with your analytics approach but expect that you won’t need to make any changes as part of completing this task.
+Bir tedarikçiden bir analiz paketi kullanıyorsanız, bu paketin yapılandırma kodu ve API'leri aracılığıyla hem çerezlerin ayarlanmasıyla hem de ping'lerin iletmesiyle ilgileniyor olması muhtemeldir. Durum böyleyse, analitik yaklaşımınızla uyumlu olduklarından emin olmak için aşağıdaki adımları okumalısınız, ancak bu görevi tamamlamanın bir parçası olarak herhangi bir değişiklik yapmanız gerekmeyecektir.
 
-The rest of this task offers guidance if you are looking to set up your own analytics.
+Bu görevin geri kalanı, kendi analiz yaklaşımınızı ayarlamak istiyorsanız size kılavuzluk edecektir.
 
-##### Set up an identifier using first-party cookies <a name="set-up-an-identifier-using-first-party-cookies"></a>
+##### Birinci taraf çerezleri kullanarak bir tanımlayıcı oluşturma <a name="set-up-an-identifier-using-first-party-cookies"></a>
 
-If you have non-AMP pages being served from your publisher origin, set up a persistent and stable identifier to be used on these pages. This is typically [implemented with first-party cookies](https://en.wikipedia.org/wiki/HTTP_cookie#Tracking).
+Yayıncı kaynağınızdan sunulan AMP olmayan sayfalarınız varsa, bu sayfalarda kullanılmak üzere kalıcı ve kararlı bir tanımlayıcı ayarlayın. Bu genellikle [birinci taraf çerezleriyle uygulanır](https://en.wikipedia.org/wiki/HTTP_cookie#Tracking).
 
-For the purposes of our example, let’s say you’ve set a cookie called `uid` (“user identifier”) that will be created on a user’s first visit. If it’s not the user’s first visit, then read the value that was previously set on the first visit.
+Örneğimizin amaçları doğrultusunda, bir kullanıcının ilk ziyaretinde oluşturulacak `uid` ("kullanıcı tanımlayıcı") adında bir çerez ayarladığınızı varsayalım. Kullanıcının ilk ziyareti değilse, daha önce ilk ziyarette ayarlanmış olan değeri okuyun.
 
-This means there are two cases for the state of non-AMP pages on the publisher origin:
+Yani, yayıncı kaynağında AMP olmayan sayfaların durumuna ilişkin iki durum olur:
 
-**Case #1: Initial visit.** Upon first landing on the non-AMP page, there will be no cookie. If you checked for the cookie before one was set, you’d see no values set in the cookie corresponding to the `uid`:
+**Durum #1: İlk ziyaret.** AMP olmayan sayfaya ilk kez girildiğinde, çerez olmayacaktır. Çerezi içeriği ayarlanmadan önce kontrol ettiyseniz, içinde `uid` tanımlayıcısına karşılık gelen hiçbir değer ayarlanmadığını görürsünüz:
 
 [sourcecode:bash]
 > document.cookie
   ""
 [/sourcecode]
 
-Sometime in the initial load, the cookie should be set, so that if you do this once the page is loaded, you will see a value has been set:
+İlk yükleme içinde bir zamanda çerez ayarlanmalıdır; bunu, sayfa yüklendiği anda yaparsanız, bir değerin ayarlandığını göreceksiniz:
 
 [sourcecode:bash]
 > document.cookie
   "uid=$publisher_origin_identifier"
 [/sourcecode]
 
-**Case #2: Non-initial visit.** There will be a cookie set. Thus, if you open the developer console on the page, you’d see:
+**Durum #2: İlk ziyaret değil.** Ayarlı bir çerez olacaktır. Dolayısıyla, sayfada geliştirici konsolunu açarsanız şunu görürsünüz:
 
 [sourcecode:bash]
 > document.cookie
   "uid=$publisher_origin_identifier"
 [/sourcecode]
 
-##### Send analytics pings <a name="send-analytics-pings"></a>
+##### Analiz ping'leri gönderme <a name="send-analytics-pings"></a>
 
-Once you’ve set up an identifier, you can now incorporate it in analytics pings to begin tracking pageviews.
+Bir tanımlayıcı oluşturduktan sonra, onu artık sayfa görüntülemelerini izlemeye başlamak için analiz ping'lerine dahil edebilirsiniz.
 
-The specific implementation will depend on your desired configuration, but generally you’ll be looking to send pings (requests) to your analytics server, which include useful data within the URL of the request itself. Here’s an example, which also indicates how you’d include your cookie value inside of the request:
+Detaylı uygulama, istediğiniz yapılandırmaya bağlı olacaktır, ancak genellikle, analiz sunucunuza, isteğin kendi URL'sinde yararlı veriler içeren pingl'er (istekler) göndermek isteyeceksiniz. Çerez değerinizi isteğe nasıl dahil edeceğinizi de gösteren bir örnek aşağıda verilmiştir:
 
 [sourcecode:http]
 https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_identifier
 [/sourcecode]
 
-Note that in the above example the identifier for the user is indicated by a specific query param, `user_id`:
+Yukarıdaki örnekte, kullanıcı tanımlayıcısının belirli bir sorgu parametresi olan `user_id` belirtildiğini göz önünde bulundurun:
 
 [sourcecode:text]
 user_id=$publisher_origin_identifier
 [/sourcecode]
 
-The use of “`user_id`” here should be determined by what your analytics server expects to process and is not specifically tied to what you call the cookie that stores the identifier locally.
+Buradaki "`user_id`" kullanımı, analiz sunucunuzun işlemeyi beklediği içerikle belirlenmelidir ve tanımlayıcıyı yerel olarak depolayan çerez denen şeye özel olarak bağlı değildir.
 
 <a id="task2"></a>
 
-### Task 2: For AMP pages, set up an identifier and send analytics pings by including Client ID replacement in amp-analytics pings <a name="task-2-for-amp-pages-set-up-an-identifier-and-send-analytics-pings-by-including-client-id-replacement-in-amp-analytics-pings"></a>
+### 2. Görev: AMP sayfaları için bir tanımlayıcı belirleme ve amp-analytics ping'lerine İstemci Kimliği değişimini ekleyerek analiz ping'leri gönderme <a name="task-2-for-amp-pages-set-up-an-identifier-and-send-analytics-pings-by-including-client-id-replacement-in-amp-analytics-pings"></a>
 
-Turning now to AMP pages, let's look at how you can establish and transmit an identifier for analytics. This will be applicable regardless of the context the AMP page is presented in, so this covers any AMP page on the publisher origin, served via an AMP cache, or displayed in AMP viewer.
+Şimdi AMP sayfalarına dönersek, analiz için bir tanımlayıcıyı nasıl oluşturup iletebileceğinize bakalım. Bu işlem, AMP sayfasının sunulduğu bağlamdan bağımsız olarak geçerli olacaktır, dolayısıyla yayıncı kaynağındaki, bir AMP önbelleği aracılığıyla sunulan veya AMP görüntüleyicide görüntülenen herhangi bir AMP sayfasını kapsar.
 
-Through usage of features that require Client ID, AMP will do the “under the hood” work to generate and store client ID values and surface them to the features that require them. One of the principal features that can use AMP’s Client ID is [amp-analytics](https://amp.dev/documentation/components/amp-analytics), which happens to be exactly what we’ll need to implement our analytics use case example.
+İstemci Kimliği gerektiren özelliklerin kullanılması yoluyla, AMP, istemci kimliği değerlerini oluşturmak ve depolamak ve bunları gerektiren özelliklerde harekete geçirmek için "arka plan" çalışmasını yapacaktır. AMP'nin İstemci Kimliğini kullanabilen temel özelliklerden biri, analiz kullanım durumu örneğimizi uygulamak için tam olarak ihtiyaç duyduğumuz şey olan [amp-analytics'tir](https://amp.dev/documentation/components/amp-analytics) .
 
-On AMP pages, construct an amp-analytics ping containing the Client ID:
+AMP sayfalarında, İstemci Kimliğini içeren bir amp-analytics ping'i oluşturun:
 
 <table>
   <tr>
-    <td width="40%"><strong>amp-analytics configuration looks like:</strong></td>
+    <td width="40%"><strong>amp-analytics yapılandırması şuna benzer:</strong></td>
     <td width="60%"><code>https://analytics.example.com/ping?type=pageview&user_id=${clientId(uid)}</code></td>
   </tr>
   <tr>
-    <td><strong>What goes over the network looks like:</strong></td>
+    <td><strong>Ağ üzerinden giden şuna benzer:</strong></td>
     <td>
-<code>https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id</code><p><em>In this case, <code>${clientId(uid)}</code> is replaced by an actual value that AMP either generates at that moment or will be returned based on what the user’s browser has already stored locally</em></p>
+<code>https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id</code><p><em>Bu durumda, <code>${clientId(uid)}</code>, AMP'nin o anda ürettiği gerçek bir değerle değiştirilir veya kullanıcının tarayıcısının yerel olarak zaten depoladığı değere bağlı şekilde çıktı olarak döndürülür.</em></p>
 </td>
   </tr>
 </table>
 
-Take note of the fact that the parameter passed into the Client ID substitution, `${clientId(uid)`, is `uid`. This was a deliberate choice that matches the same cookie name used on the publisher origin as described in [Task 1](#task1). For the most seamless integration, you should apply the same technique.
+İstemci Kimliği değişikliğinde aktarılan parametrenin, `${clientId(uid)`, `uid` olduğuna dikkat edin. Bu [1. Görevde](#task1) açıklandığı gibi yayıncı kaynağında kullanılan çerez adının aynısıyla eşleşme sağlayan bilinçli bir seçimdi. En sorunsuz entegrasyon için aynı tekniği uygulamalısınız.
 
-Concerning the rest of the amp-analytics implementation, see the documentation for [amp-analytics configuration](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) for more detail on how to set up amp-analytics requests or to modify those of your analytics vendor. The ping can be further modified to transport additional data that you either directly define or by taking advantage of other [AMP substitutions](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
+amp-analytics uygulamasının geri kalanıyla ilgili olarak, amp-analytics isteklerini nasıl ayarlayacağınız veya analiz tedarikçilerinin istekleri üzerinde nasıl değişiklik yapabileceğiniz hakkında daha fazla ayrıntı için [amp-analytics yapılandırmasına](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) yönelik belgelere bakın. Ping, doğrudan veya diğer [AMP değişikliklerinden](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) yararlanarak tanımladığınız ek verileri taşımak için daha da değiştirilebilir.
 
-> **Good to know:**
-> Why did we use of the name `uid` for the parameter passed to the Client ID feature? The parameter that the `clientId(...)` substitution takes is used to define scope. You can actually use the Client ID feature for many use cases and, as a result, generate many client IDs. The parameter differentiates between these use cases and so you use it to specify which use case you would like a Client ID for. For instance, you might want to send different identifiers to third parties like an advertiser and you could use the “scope” parameter to achieve this.
+> **Faydalı bilgi:**
+> İstemci Kimliği özelliğine geçirilen parametre için neden `uid` adını kullandık? Kapsamı tanımlamak için `clientId(...)` değişikliğinin aldığı parametre kullanılır. İstemci Kimliği özelliği aslında birçok kullanım durumu için kullanabilir ve sonuç olarak birçok istemci kimliği oluşturabilirsiniz. Parametre, bu kullanım durumları arasında farklılık gösterir ve bu nedenle, onu İstemci Kimliğini hangi kullanım durumu için istediğinizi belirtmek için kullanırsınız. Örneğin, bir reklamveren gibi üçüncü taraflara farklı tanımlayıcılar göndermek isteyebilir ve bunu başarmak için "kapsam" parametresini kullanabilirsiniz.
 
-On the publisher origin, it’s easiest to think of “scope” as what you call the cookie. By recommending a value of `uid` for the Client ID parameter here in [Task 2](#task2), we align with the choice to use a cookie called `uid` in [Task 1](#task1).
+Yayıncı kaynağında, "kapsamı" çerez olarak adlandırdığınız şey olarak düşünmek en kolayıdır. Burada [2. Görevde](#task2) İstemci Kimliği parametresi için bir `uid` değeri önererek, [1. Görevdeki](#task1) `uid` adlı bir çerez kullanma seçimiyle uyumluyuz.
 
 <a id="task3"></a>
 
-### Task 3: Process analytics pings from pages on the publisher origin <a name="task-3-process-analytics-pings-from-pages-on-the-publisher-origin"></a>
+### 3. Görev: Yayıncı kaynağındaki sayfalardan analiz ping'lerini işleme <a name="task-3-process-analytics-pings-from-pages-on-the-publisher-origin"></a>
 
-Because of the setup performed in Tasks 1 and 2, when someone accesses the AMP version (from any context) or the non-AMP version on the publisher origin the analytics ping will use the same identifier. By following the guidance in [Task 2](#task2) to choose a Client ID "scope" that was the same name as the name of the cookie you used in [Task 1](#task1), AMP reuses the same cookie.
+1. ve 2. Görev'de gerçekleştirilen kurulum nedeniyle, bir kullanıcı yayıncı kaynağında AMP olmayan sürüme veya AMP sürümüne (herhangi bir bağlamdan) eriştiğinde, analiz ping'i aynı tanımlayıcıyı kullanacaktır. AMP, [1. Görev'de](#task2) kullandığınız çerezin adıyla aynı ada sahip bir İstemci Kimliği "kapsamı" seçmek için [2. Görevdeki](#task1) yönergeyi izleyerek, aynı çerezi yeniden kullanır.
 
-This is illustrated in the table below:
+Bu, aşağıdaki tabloda gösterilmektedir:
 
 <table>
   <tr>
-    <td width="40%">An analytics ping coming from a <strong>non-AMP page on the publisher origin</strong> looks like</td>
+    <td width="40%">
+<strong>Yayıncı kaynağındaki AMP olmayan bir sayfadan </strong> gelen bir analiz ping'i şuna benzer:</td>
     <td width="60%"><code>https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_identifier</code></td>
   </tr>
   <tr>
-    <td>An analytics ping coming from an <strong>AMP page on the publisher origin</strong> looks like</td>
     <td>
-<code>https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_identifier</code><br><em>In this case, it's the same! By choosing a scope value of <code>uid</code> the underlying value of the <code>uid</code> cookie, which is <code>$publisher_origin_identifier</code>, gets used.</em>
+<strong>Yayıncı kaynağındaki bir AMP sayfasından </strong> gelen bir analiz ping'i şuna benzer</td>
+    <td>
+<code>https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_identifier</code><br><em>Bu durumda aynıdır! Bir <code>uid</code> kapsam değeri seçilerek, <code>uid</code> çerezinin temel değeri olan <code>$publisher_origin_identifier</code> kullanılır.</em>
 </td>
   </tr>
 </table>
 
 <a id="task4"></a>
 
-### Task 4: Process analytics pings from AMP cache or AMP viewer display contexts and establish identifier mappings (if needed) <a name="task-4-process-analytics-pings-from-amp-cache-or-amp-viewer-display-contexts-and-establish-identifier-mappings-if-needed"></a>
+### 4. Görev: AMP önbelleğinden veya AMP görüntüleyici ekran bağlamlarından gelen analiz ping'lerini işleme ve tanımlayıcı eşleşmeleri oluşturma (gerekirse) <a name="task-4-process-analytics-pings-from-amp-cache-or-amp-viewer-display-contexts-and-establish-identifier-mappings-if-needed"></a>
 
-When we set up analytics pings in [Task 2](#task2) to transmit data from AMP pages displayed within an AMP cache or AMP viewer, we also created a problem. As discussed previously, AMP cache and AMP viewer contexts are different from the publisher origin context, and along with this comes as different way of maintaining identifiers. To process these pings to avoid problems like overcounting users, we’ll take some [steps](#implementation-steps) to try and reconcile identifiers as often as we can.
+AMP önbelleğinde veya AMP görüntüleyicide görüntülenen AMP sayfalarından veri iletmek için [2. Görevde](#task2) analiz ping'leri ayarladığımızda, ayrıca bir sorun yarattık. Daha önce tartışıldığı gibi, AMP önbelleği ve AMP görüntüleyici bağlamları, yayıncının kaynak bağlamından farklıdır ve bu da beraberinde, tanımlayıcıların çalışmaya devam etmesini sağlamak için farklı bir yolu gelir. Kullanıcıları fazla saymak gibi sorunları önleyecek şekilde bu ping'leri işlemek adına bazı [adımlar atacağız](#implementation-steps) ve tanımlayıcıları olabildiğince sık şekilde uzlaştırmayı deneyeceğiz.
 
-To help explain the steps we’re taking, it’s helpful to first reconsider exactly how the overcounting problem arises.
+Attığımız adımları açıklamaya yardımcı olmak için, önce fazla sayma sorununun tam olarak nasıl ortaya çıktığını yeniden düşünmek faydalı olacaktır.
 
-#### Reviewing the problem <a name="reviewing-the-problem"></a>
+#### Sorunu gözden geçirme <a name="reviewing-the-problem"></a>
 
-Consider the following flow:
+Aşağıdaki akışa göz atın:
 
-1. A user visits the **AMP page in an AMP viewer display context**, such as `https://google.com/amp/s/example.com/article.amp.html`. Since the AMP viewer does not have access to the `uid` cookie on the publisher origin, a random value of `$amp_client_id` is generated to identify the user.
-2. The same user then visits **a page on the publisher origin `https://example.com`**. As described in [Task 3](#task3), the user is identified with `$publisher_origin_identifier`.
+1. Bir kullanıcı, `https://google.com/amp/s/example.com/article.amp.html` gibi **AMP görüntüleyici ekran bağlamında AMP sayfasını** ziyaret eder. AMP görüntüleyicinin yayıncı kaynağındaki `uid` çerezine erişimi olmadığından, kullanıcıyı tanımlamak için rastgele bir `$amp_client_id` değeri oluşturulur.
+2. Daha sonra aynı kullanıcı, **yayıncı kaynağındaki bir sayfayı `https://example.com `** ziyaret eder. [3. Görevde](#task3) açıklandığı gibi, kullanıcı `$publisher_origin_identifier ` ile tanımlanır.
 
-Here (1) and (2) happen on different origins (or contexts). Because of this, there’s no shared state and `$amp_client_id` is different from `$publisher_origin_identifier`. So, what’s the impact? (1) is a single pageview session that looks like one user and (2) is another single pageview session that looks like it’s coming from another user. **Basically, even though the user has stayed engaged with `https://example.com` content, we overcount users and the user in (1) looks like a bounce (a single page visit).**
+Burada (1) ve (2) farklı kaynaklarda (veya bağlamlarda) gerçekleşir. Bu nedenle, paylaşılan bir durum yoktur ve `$amp_client_id`, `$publisher_origin_identifier` öğesinden farklıdır. Öyleyse, bunun etkisi nedir? (1) tek bir kullanıcıya benzeyen tek bir sayfa görüntüleme oturumu iken (2) başka bir kullanıcıdan geliyor gibi görünen başka bir tek sayfa görüntüleme oturumudur. **Temel olarak, kullanıcı `https://example.com` içeriğiyle ilgilenmiş olsa bile, kullanıcıları fazla sayarız ve (1)'deki kullanıcı bir hemen çıkma (tek bir sayfa ziyareti) gibi görünür.**
 
-#### Solution strategy <a name="solution-strategy"></a>
+#### Çözüm stratejisi <a name="solution-strategy"></a>
 
-To address the problem of overcounting, you should employ the following strategy, the potency of which depends on whether reading or writing of third-party cookies is permitted:
+Fazla sayma sorununu çözmek için, kuvveti, üçüncü taraf çerezlerinin okunmasına veya yazılmasına izin verilip verilmediğine bağlı olan aşağıdaki stratejiyi uygulamalısınız:
 
-- **Immediate identifier reconciliation: If you can access or change the publisher origin cookies**, use or create the publisher origin identifier and ignore any identifier within the analytics request. You will be able to successfully link activity between the two contexts.
-- **Delayed identifier reconciliation: If you cannot access or change the publisher origin identifier (i.e. the cookies)**, then fall back to the AMP Client ID that comes within the analytics request itself. Use this identifier as an “**alias**”, rather than using or creating a new publisher origin identifier (cookie), which you cannot do (because of third party cookie blocking), and add the alias to a **mapping table**. You will be unsuccessful in immediately linking activity between the two contexts, but by using a mapping table you may be able to link the AMP Client ID value with the publisher origin identifier on a future visit by the user. When this happens, you will have the needed information to link the activity and reconcile that the page visits in the different contexts came from the same user. Task 5 describes how to achieve a complete solution in specific scenarios where the user traverses from one page immediately to another.
+- **Anında tanımlayıcı uzlaşması: Yayıncının kaynak çerezlerine erişebilir veya bunları değiştirebilirseniz**, yayıncı kaynak tanımlayıcısını kullanın veya oluşturun ve analiz isteğindeki herhangi bir tanımlayıcıyı yok sayın. İki bağlam arasındaki etkinliği başarılı bir şekilde bağlayabileceksiniz.
+- **Gecikmeli tanımlayıcı uzlaşması: Yayıncı kaynak tanımlayıcısına (yani çerezlere) erişemez veya onu değiştiremezseniz**, analiz isteğiyle birlikte gelen AMP İstemci Kimliğine geri dönün. Bu tanımlayıcıyı, üçüncü taraf çerez engellemesi nedeniyle zaten yapamayacağınız yeni bir yayıncı kaynak tanımlayıcı (çerez) kullanma veya oluşturma yerine bir "**takma ad**" olarak kullanın ve takma adı bir **eşleştirme tablosuna** ekleyin. Etkinliği iki bağlam arasında anında bağlamada başarısız olursunuz, ancak bir eşleştirme tablosu kullanarak AMP İstemci Kimliği değerini, kullanıcının ilerideki bir ziyaretinde yayıncı kaynak tanımlayıcısına bağlayabilirsiniz. Bu gerçekleştiğinde, etkinliği bağlamak ve farklı bağlamlardaki sayfa ziyaretlerinin aynı kullanıcıdan geldiği konusunda uzlaşmak için gerekli bilgilere sahip olacaksınız. 5. Görev, kullanıcının hemen bir sayfadan diğerine geçtiği belirli senaryolarda eksiksiz bir çözüme nasıl ulaşılacağını açıklıyor.
 
-#### Implementation steps <a name="implementation-steps"></a>
+#### Uygulama adımları <a name="implementation-steps"></a>
 
-On the server check for an existing publisher origin identifier
+Sunucuda mevcut bir yayıncı kaynak tanımlayıcısı var mı diye kontrol edin
 
-Read the cookies sent as part of the analytics request. In our example, this means checking for the `uid` cookie from example.com.
+Analiz isteğinin bir parçası olarak gönderilen çerezleri okuyun. Örneğimizde bu, example.com'dan `uid` çerezini kontrol etmek anlamına geliyor.
 
-- If the `uid` value is successfully read, use it to record analytics data (**analytics record identifier**). Because of [Task 1](#task1), we know this identifier’s value is `$publisher_origin_identifier`. With an analytics record identifier established, we can skip ahead to the [Data storage](#data-storage) section.
-- If the `uid` value is not successfully read, proceed with the steps below involving the mapping table.
+- `uid` değeri başarıyla okunursa, bunu analiz verilerini kaydetmek için kullanın (**analiz kaydı tanımlayıcısı**). [1. Görev](#task1) sayesinde, bu tanımlayıcının değerinin `$publisher_origin_identifier` olduğunu biliyoruz. Bir analiz kaydı tanımlayıcısı belirlendikten sonra [Veri depolama](#data-storage) bölümüne atlayabiliriz.
+- `uid` değeri başarıyla okunmazsa, eşleştirme tablosunu içeren aşağıdaki adımlarla devam edin.
 
-##### Mapping table <a name="mapping-table"></a>
+##### Eşleştirme tablosu <a name="mapping-table"></a>
 
-Our mapping table will associate AMP Client ID values that are seen in the analytics pings to publisher origin identifiers as follows:
+Eşleştirme tablomuz, analiz ping'lerinde görülen AMP İstemci Kimliği değerlerini yayıncı kaynak tanımlayıcılarıyla aşağıdaki şekilde ilişkilendirir:
 
 <table>
   <tr>
-    <th width="50%"><strong>User ID on publisher origin</strong></th>
-    <th width="50%"><strong>User ID on AMP page that’s NOT on publisher origin (“alias”)</strong></th>
+    <th width="50%"><strong>Yayıncı kaynağındaki kullanıcı kimliği</strong></th>
+    <th width="50%"><strong>AMP sayfasındaki yayıncı kaynaklı olmayan kullanıcı kimliği ("takma ad")</strong></th>
   </tr>
   <tr>
-    <td>Comes from publisher origin identifier or generated as a prospective value if the publisher origin identifier cannot be accessed.</td>
-    <td>Comes from AMP Client ID</td>
+    <td>Yayıncı kaynak tanımlayıcısından gelir veya yayıncı kaynak tanımlayıcısına erişilemiyorsa olası bir değer olarak oluşturulur.</td>
+    <td>AMP İstemci Kimliğinden gelir</td>
   </tr>
 </table>
 
-Immediately after determining that you were unsuccessful in reading the publisher origin identifier, check if the AMP Client ID contained within the analytics ping is already used in a mapping. To do this, first consult the incoming amp-analytics request to get the Client ID value. For example, from this request:
+Yayıncı kaynak tanımlayıcısını okumada başarısız olduğunuzu belirledikten hemen sonra, analiz ping'inde yer alan AMP İstemci Kimliğinin bir eşleştirmede zaten kullanılıp kullanılmadığını kontrol edin. Bunu yapmak için önce İstemci Kimliği değerini almak üzere gelen amp-analytics isteğine başvurun. Örneğin, bu şu istekten:
 
 [sourcecode:http]
 https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id
 [/sourcecode]
 
-we extract out the bolded portion corresponding to the AMP Client ID: `$amp_client_id`.
+AMP İstemci Kimliğine karşılık gelen koyu renkli bölümü çıkarıyoruz: `$amp_client_id`.
 
-Next, examine the mapping table to try and find the same value in the “alias” column:
+Ardından, "takma ad" sütununda aynı değeri bulmaya çalışmak için eşleştirme tablosunu inceleyin:
 
 <table>
   <tr>
-    <th width="50%"><strong>User ID on publisher origin</strong></th>
-    <th width="50%"><strong>User ID on AMP page that’s NOT on publisher origin (“alias”)</strong></th>
+    <th width="50%"><strong>Yayıncı kaynağındaki kullanıcı kimliği</strong></th>
+    <th width="50%"><strong>AMP sayfasındaki yayıncı kaynaklı olmayan kullanıcı kimliği ("takma ad")</strong></th>
   </tr>
   <tr>
     <td><code>$existing_publisher_origin_identifier</code></td>
@@ -336,20 +338,20 @@ Next, examine the mapping table to try and find the same value in the “alias�
   </tr>
 </table>
 
-In the example above, we find a record that already exists. The value we find that’s paired with the AMP Client ID becomes the analytics record identifier. Here, that is `$existing_publisher_origin_identifier`. With an analytics record identifier established, we can skip ahead to the [Data storage](#data-storage) section.
+Yukarıdaki örnekte, zaten var olan bir kaydı bulduk. AMP İstemci Kimliği ile eşleştirilmiş bulduğumuz değer, analiz kaydı tanımlayıcısı olur. İşte bu, `$existing_publisher_origin_identifier`'dır. Bir analiz kaydı tanımlayıcısı oluşturulduktan sonra [Veri depolama](#data-storage) bölümüne geçebiliriz.
 
-Otherwise, if the AMP Client ID is not found in a mapping, we need to create a mapping:
+Aksi takdirde, AMP İstemci Kimliği bir eşleştirmede bulunmazsa, bir eşleştirme oluşturmamız gerekir:
 
-1. Generate a **prospective publisher origin identifier**. Let’s call this `$prospective_identifier` in the examples to follow. This value should be created in accordance with how you set up the value on the publisher origin, as described in [Task 1](#task1) above.
-2. Next, attempt to [set](https://en.wikipedia.org/wiki/HTTP_cookie#Setting_a_cookie) the prospective publisher origin identifier as a cookie on the publisher origin. This will succeed if third-party cookies can be written, and otherwise it will fail.
-3. Then, store the {prospective publisher origin identifier, AMP Client ID} pair.
+1. Potansiyel bir **yayıncı kaynak tanımlayıcısı oluşturun**. Aşağıdaki örneklerde bunu `$prospective_identifier` olarak adlandıralım. Bu değer, yukarıdaki [1. Görev'de](#task1) açıklandığı gibi, yayıncı kaynağında değeri ayarlama şeklinize göre oluşturulmalıdır.
+2. Ardından, muhtemel yayıncı kaynak tanımlayıcısını yayıncı kaynağı üzerinde bir çerez olarak [ayarlamayı](https://en.wikipedia.org/wiki/HTTP_cookie#Setting_a_cookie) deneyin. Bu işlem, üçüncü taraf tanımlama bilgileri yazılabilirse başarılı olur, aksi takdirde başarısız olur.
+3. Ardından, {olası yayıncı kaynak tanımlayıcısı, AMP İstemci Kimliği} çiftini kaydedin.
 
-The mapping we’ve created ends up looking like this:
+Oluşturduğumuz eşleştirme şu şekilde görünüyor:
 
 <table>
   <tr>
-    <th><strong>User ID on publisher origin</strong></th>
-    <th><strong>User ID on AMP page that’s NOT on publisher origin (“alias”)</strong></th>
+    <th><strong>Yayıncı kaynağındaki kullanıcı kimliği</strong></th>
+    <th><strong>AMP sayfasındaki yayıncı kaynaklı olmayan kullanıcı kimliği ("takma ad")</strong></th>
   </tr>
   <tr>
     <td>
@@ -358,11 +360,11 @@ The mapping we’ve created ends up looking like this:
   </tr>
 </table>
 
-We’ll use the prospective publisher origin identifier as the analytics record identifier since that’s the value associated with the state on the publisher origin. In this case that’s `$prospective_identifier`, which will come into play in the [Data storage](#data-storage) section that follows.
+Olası yayıncı kaynak tanımlayıcısını analiz kaydı tanımlayıcısı olarak kullanacağız çünkü bu, yayıncı kaynağındaki durumla ilişkili değerdir. Bu durumda, ilgili `$prospective_identifier`, aşağıdaki [Veri depolama](#data-storage) bölümünde devreye girecektir.
 
-##### Data storage <a name="data-storage"></a>
+##### Veri depolama <a name="data-storage"></a>
 
-Now that you've figured out the analytics record identifier you can actually store the user state information (analytics data in this case) keyed by that identifier:
+Artık analiz kaydı tanımlayıcısını anladığınıza göre, bu tanımlayıcı tarafından girilen kullanıcı durum bilgilerini (bu durumda analiz verileri) gerçek anlamda depolayabilirsiniz:
 
 [sourcecode:text]
 {analytics record identifier, analytics data ...}
@@ -370,20 +372,20 @@ Now that you've figured out the analytics record identifier you can actually sto
 
 <a id="task5"></a>
 
-### Task 5: Using Client ID in linking and form submission <a name="task-5-using-client-id-in-linking-and-form-submission"></a>
+### 5. Görev: Bağlantı vermede ve form gönderiminde İstemci Kimliği kullanma <a name="task-5-using-client-id-in-linking-and-form-submission"></a>
 
-In general, when reading and writing third-party cookies is disallowed, there will be situations where managing user state is impossible to do with complete effectiveness. In Tasks 1-4, the steps we’ve taken help in two ways: (1) They provide a completely effective solution for when reading and writing third-party cookies is allowed, and (2) they set our system up to take advantage of any eventual opportunity to reconcile cross-context identifiers if immediate reconciliation is impossible due to the browser’s cookie settings.
+Genel olarak, üçüncü taraf çerezlerinin okunmasına ve yazılmasına izin verilmediğinde, kullanıcı durumunu yönetmenin tam etkinlikle yapılmasının imkansız olduğu durumlar olacaktır. Görev 1-4'te, attığımız adımlar iki şekilde yardımcı olacaktır: (1) Üçüncü taraf çerezlerini okurken ve yazarken tamamen etkili bir çözüm sağlarlar ve (2) sistemimizi, tarayıcının çerez ayarları nedeniyle hemen uzlaşma imkansızsa, bağlamlar arası tanımlayıcıları uzlaştırmak için olası herhangi bir fırsattan yararlanacak şekilde ayarlarlar.
 
-In this task, we’ll cover an additional optimization that helps when the user is navigating across contexts from one page to another page either **via linking or form submissions**. In these situations, and with the implementation work described below, it is possible to set up a fully effective scheme for managing user state across contexts.
+Bu görevde, kullanıcı **bağlantı veya form gönderimleri yoluyla** bir sayfadan diğerine bağlamlar arasında gezinirken yardımcı olan ek bir optimizasyonu ele alacağız. Bu durumlarda ve aşağıda açıklanan uygulama çalışmasıyla, bağlamlar arasında kullanıcı durumunu yönetmek için tamamen etkili bir şema kurmak mümkündür.
 
 <amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
   <noscript>     <img alt="Links can be used to pass the identifier information of one context into another (linked) context" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png">   </noscript></amp-img>
 
-##### Using substitution features <a name="using-substitution-features"></a>
+##### Değiştirme özelliklerini kullanma <a name="using-substitution-features"></a>
 
-Our approach will take advantage of two types of [AMP variable substitutions](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md).
+Yaklaşımımız iki tür [AMP değişken değiştirmesinden](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md) yararlanacaktır.
 
-**To update outgoing links to use a Client ID substitution:** Define a new query parameter, `ref_id` (“referrer ID”), which will appear within the URL and indicate the **originating context’s identifier** for the user. Set this query parameter to equal the value of AMP’s Client ID substitution:
+**Giden bağlantıları bir İstemci Kimliği değiştirmesi kullanmak üzere güncellemek için:**URL içinde görünecek ve **kullanıcı için kaynak bağlam tanımlayıcısını belirtecek** yeni bir sorgu parametresi, `ref_id` ("yönlendiren kimliği") tanımlayın. Bu sorgu parametresini AMP’nin İstemci Kimliği değişikliğinin değerine eşit olacak şekilde ayarlayın:
 
 [sourcecode:html]
 <a
@@ -392,7 +394,7 @@ Our approach will take advantage of two types of [AMP variable substitutions](ht
 ></a>
 [/sourcecode]
 
-**Alternative solution for passing Client ID to the outgoing links:** Define the new query parameter `ref_id` as part of the data attribute `data-amp-addparams` and for queries that needs parameter substitution provide those details as part of `data-amp-replace`. With this approach the URL would look clean and the parameters specified on `data-amp-addparams` will be dynamically added
+**İstemci Kimliğini dışarı giden bağlantılara geçirmek için alternatif çözüm:**  `data-amp-addparams` veri özniteliğinin bir parçası olarak `ref_id` yeni sorgu parametresini tanımlayın ve parametre değişikliğine ihtiyaç duyan sorgular için bu ayrıntıları `data-amp-replace` parçası olarak sunun. Bu yaklaşımla, URL temiz görünür ve `data-amp-addparams` üzerinde belirtilen parametreler dinamik olarak eklenir
 
 [sourcecode:html]
 <a
@@ -402,7 +404,7 @@ Our approach will take advantage of two types of [AMP variable substitutions](ht
 ></a>
 [/sourcecode]
 
-For passing multiple query parameters through `data-amp-addparams` have those `&` separated like
+code0}data-amp-addparams yoluyla birden fazla sorgu parametresi geçirirken bunları şu şekilde `&` ile ayırın:
 
 [sourcecode:html]
 <a
@@ -412,7 +414,7 @@ For passing multiple query parameters through `data-amp-addparams` have those `&
 ></a>
 [/sourcecode]
 
-**To update form inputs to use a Client ID substitution:** Define a name for the input field, such as `orig_user_id`. Specify the `default-value` of the form field to be the value of AMP’s Client ID substitution:
+**İstemci Kimliği değişikliği kullanmak adına form girişlerini güncellemek için:** Giriş alanı için `orig_user_id` gibi bir ad tanımlayın. Form alanının `default-value` değerini, AMP İstemci Kimliği değişikliğinin değeri olacak şekilde belirtin:
 
 [sourcecode:html]
 <input
@@ -423,7 +425,7 @@ For passing multiple query parameters through `data-amp-addparams` have those `&
 />
 [/sourcecode]
 
-By taking these steps, the Client ID is available to the target server and/or as a URL parameter on the page the user lands on after the link click or form submission (the **destination context**). The name (or “key”) will be `ref_id` because that’s how we’ve defined it in the above implementations and will have an associated value equal to the Client ID. For instance, by following the link (`<a>` tag) defined above, the user will navigate to this URL:
+Bu adımları uygulayarak, İstemci Kimliği, hedef sunucu tarafından kullanılabilir ve/veya kullanıcının bağlantı tıklaması veya form gönderimi ( **hedef bağlam**) sonrasında girdiği sayfada bir URL parametresi olarak kullanılabilir. İsim (veya "anahtar") `ref_id` olacaktır çünkü yukarıdaki uygulamalarda onu böyle tanımlamıştık ve İstemci Kimliğine eşit bir ilişkili değere sahip olacaktır. Örneğin, yukarıda tanımlanan bağlantıyı (`<a>` etiketi) izleyerek, kullanıcı şu URL'ye gidecektir:
 
 [sourcecode:http]
 https://example.com/step2.html?ref_id=$amp_client_id
@@ -432,179 +434,179 @@ https://example.com/step2.html?ref_id=$amp_client_id
 <amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
   <noscript>     <img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png">   </noscript></amp-img>
 
-When the user lands on a page containing containing an `ref_id` value either as a URL parameter or in the header, we have the opportunity to co-process the `ref_id` identifier along with the identifier exposed via the page itself (i.e. a cookie value). By including both in an analytics ping, your analytics server can work with both values simultaneously, and, knowing they are related, reflect this relationship in your backend. The next step provides details on how to do this.
+Kullanıcı, URL parametresi olarak veya başlık içinde bir `ref_id` değeri bulunan bir sayfaya geldiğinde, `ref_id` tanımlayıcısını sayfa aracılığıyla gösterilen tanımlayıcı (yani bir çerez değeri) ile birlikte işleme şansımız olur. Analiz sunucunuz her ikisini de bir analiz ping'ine dahil ederek her iki değerle aynı anda çalışabilir ve birbirleriyle ilişkili olduklarını bilerek bu ilişkiyi arka ucunuza yansıtabilir. Bir sonraki adım, bunun nasıl yapılacağına dair ayrıntıları sunuyor.
 
-##### Extracting URL query parameters <a name="extracting-url-query-parameters"></a>
+##### URL sorgu parametrelerini çıkarma <a name="extracting-url-query-parameters"></a>
 
-By using substitution features, we set up a link navigation flow or form submission flow that exposes information, specifically the Client ID, to the target server and/or as a URL parameter that can be read on the client once the user completes the navigation.
+Değiştirme özelliklerini kullanarak, bilgileri, bilhassa İstemci Kimliğini hedef sunucuya gösteren ve/veya kullanıcı gezinmeyi tamamladığında istemcide okunabilen bir URL parametresi olarak yansıtan bir bağlantı gezinme akışı veya form gönderme akışı oluşturuyoruz.
 
-If the information was exposed just to the server, e.g. via a form POST, then you can proceed to process the information and render the resulting page. When processing such data, please take note of the steps regarding [Parameter validation](#parameter-validation) that are detailed below.
+Bilgi yalnızca sunucuya, örneğin bir POST formu aracılığıyla, gösterilmişse, bilgileri işlemeye ve sonuçta ortaya çıkan sayfayı oluşturmaya devam edebilirsiniz. Bu tür verileri işlerken, lütfen aşağıda ayrıntıları verilen [Parametre doğrulama](#parameter-validation) ile ilgili adımları göz önünde bulundurun.
 
-If the information is available via URL and you wish to process it, there are a couple of approaches you can use:
+Bilgiler URL aracılığıyla mevcutsa ve onları işlemek istiyorsanız, kullanabileceğiniz birkaç yaklaşım vardır:
 
-- Process during redirect (server-side handling)
-- Process on the landing page (client-side handling)
+- Yeniden yönlendirme sırasında işleme (sunucu tarafında işleme)
+- Açılış sayfasında işleme (istemci tarafında işleme)
 
-**Process during redirect (server-side handling)**
+**Yeniden yönlendirme sırasında işleme (sunucu tarafında işleme)**
 
-To process during redirect, handle the request on the server and extract the relevant parameter(s). Please take note of the steps regarding [Parameter validation](#parameter-validation) that are detailed below. Process the data, combined with cookie values containing other relevant identifiers, and then redirect to a URL that does not contain the parameters.
+Yeniden yönlendirme sırasında işlemek için, sunucudaki isteği gerçekleştirin ve ilgili parametreleri çıkartın. Lütfen aşağıda ayrıntıları verilen [Parametre doğrulama](#parameter-validation) ilgili ilgili adımları göz önünde bulundurun. Diğer ilgili tanımlayıcıları içeren çerez değerleriyle birlikte verileri işleyin ve ardından parametreleri içermeyen bir URL'ye yönlendirin.
 
-**Process on the landing page (client-side handling)**
+**Açılış sayfasında işleme (istemci tarafında işleme)**
 
-To process on the landing page, the approach will vary depending on whether that page is an AMP page or a non-AMP page.
+Açılış sayfasında işlemek için yaklaşım, söz konusu sayfanın bir AMP sayfası veya AMP olmayan bir sayfa olmasına bağlı olarak değişecektir.
 
 <amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
   <noscript>     <img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png">   </noscript></amp-img>
 
-*Updates to AMP page:* Use the Query Parameter substitution feature in your amp-analytics configuration to obtain the `ref_id` identifier value within the URL. The Query Parameter feature takes a parameter that indicates the “key” of the desired key-value pair in the URL and returns the corresponding value. Use the Client ID feature as we have been doing to get the identifier for the AMP page context.
+*AMP sayfasında yapılan güncellemeler:* URL içindeki `ref_id` tanımlayıcı değerini almak için amp-analytics yapılandırmanızdaki Sorgu Parametresi değiştirme özelliğini kullanın. Sorgu Parametresi özelliği, URL'de istenen anahtar/değer çiftinin "anahtarını" belirten bir parametre alır ve karşılık gelen değeri yanıt olarak döndürür. AMP sayfa bağlamı tanımlayıcısını almak için yaptığımız gibi İstemci Kimliği özelliğini kullanın.
 
 [sourcecode:http]
 https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}
 [/sourcecode]
 
-When this gets transmitted across the network, actual values will be replaced:
+Bu, ağ üzerinden iletildiğinde, gerçek değerler değiştirilecektir:
 
 [sourcecode:http]
 https://analytics.example.com/ping?type=pageview&orig_user_id=$referrer_page_identifier&user_id=$current_page_identifier
 [/sourcecode]
 
-Following through our examples above, we have:
+Yukarıdaki örneklerimizi takip edersek, elimizde şu var:
 
 [sourcecode:text]
 $referrer_page_identifier is $amp_client_id
 $current_page_identifier is $publisher_origin_id
 [/sourcecode]
 
-so the ping is actually:
+öyleyse ping aslında:
 
 [sourcecode:http]
 https://analytics.example.com/ping?type=pageview&orig_user_id=$amp_client_id&user_id=$publisher_origin_id
 [/sourcecode]
 
-We recommend validating the authenticity of query parameter values by using the steps outlined in the [Parameter validation](#parameter-validation) section below.
+Aşağıdaki [Parametre doğrulama](#parameter-validation) bölümünde açıklanan adımları kullanarak sorgu parametresi değerlerinin gerçekliğini doğrulamanızı öneririz.
 
-*Updates to non-AMP page:* Similarly, on a non-AMP page served from your publisher origin, extract and transmit `ref_id` value contained within the URL. Validate the authenticity of the value by following the steps outlined in the [Parameter validation](#parameter-validation) section below. Then, construct analytics pings that will include both an `orig_user_id` derived from `ref_id` and a `user_id` based on the value of the first-party cookie identifier.
+*AMP olmayan sayfada yapılan güncellemeler: * Benzer şekilde, yayıncınızın kaynağından sunulan AMP olmayan bir sayfada, URL'de bulunan `ref_id` değerini çıkarın ve iletin. Aşağıdaki [Parametre doğrulama](#parameter-validation) bölümünde belirtilen adımları izleyerek değerin gerçekliğini doğrulayın. Ardından, hem `ref_id`'den türetilen bir `orig_user_id` hem de birinci taraf çerez tanımlayıcısının değerine göre bir `user_id` içerecek analiz ping'leri oluşturun.
 
 <blockquote>
-<p><strong>IMPORTANT:</strong></p>
-<p>If you choose to process the parameters client-side on the landing page, the landing page should remove identifier information from URLs as soon as the identifier can be captured.</p>
-<p>Before removing the parameters, be sure that other code that needs to run to read them has either:</p>
+<p><strong>ÖNEMLİ:</strong></p>
+<p>Açılış sayfasında parametreleri istemci tarafında işlemeyi seçerseniz, açılış sayfası, tanımlayıcı yakalanabildiği anda tanımlayıcı bilgilerini URL'lerden kaldırmalıdır.</p>
+<p>Parametreleri kaldırmadan önce, onları okumak için çalıştırılması gereken diğer kodun şu durumda olduğundan emin olun:</p>
 <ul>
-  <li>Run before the removal happens; or</li>
-  <li>Can access a place where the code that read and removed the parameters has stored the data</li>
+  <li>Kaldırma işlemi gerçekleşmeden önce çalışıyor olmak; veya</li>
+  <li>Parametreleri okuyan ve kaldıran kodun verileri depoladığı bir yere erişebilmek</li>
 </ul>
-<p>To do this on your non-AMP page, include the following JavaScript, which will remove all query parameters from the URL:</p>
+<p>Bunu AMP olmayan sayfanızda yapmak için, tüm sorgu parametrelerini URL'den kaldıracak aşağıdaki JavaScript'i ekleyin:</p>
 <pre>var href = location.href.replace(/\?[^{{'[% raw %]'}}#]{{'{% endraw %}'}}+/, '');<br>history.replaceState(null, null, href);</pre>
-<p>Adapt this as needed to remove fewer query parameters.</p>
+<p>Daha az sorgu parametresini kaldırmak için bunu gerektiği şekilde uyarlayın.</p>
 </blockquote>
 
-##### Processing multiple identifiers in an analytics ping <a name="processing-multiple-identifiers-in-an-analytics-ping"></a>
+##### Bir analiz ping'inde birden çok tanımlayıcıyı işleme <a name="processing-multiple-identifiers-in-an-analytics-ping"></a>
 
-Unlike in [Task 4](#task4) where we configured the analytics ping to contain just one identifier value, with the steps we’ve taken so far in Task 5 we now have two — `orig_user_id` and `user_id`. We will next cover how to process these two identifiers that are part of the inbound analytics ping.
+Analiz ping'ini yalnızca bir tanımlayıcı değeri içerecek şekilde yapılandırdığımız [4. Görevden](#task4) farklı olarak, 5. Görevde şu ana kadar attığımız adımlar sayesinde artık iki tane tanımlayıcı var: `orig_user_id` ve `user_id`. Aşağıda, gelen analiz ping'inin parçası olan bu iki tanımlayıcının nasıl işleneceğini ele alacağız.
 
-Before we proceed, be sure to take note of the steps described in [Parameter validation](#parameter-validation) below and ensure that you are willing to trust both of the values indicated by `orig_user_id` and `user_id`.
+Devam etmeden önce, aşağıdaki [Parametre doğrulama](#parameter-validation) bölümünde açıklanan adımları hesaba kattığınızdan ve `orig_user_id` ve `user_id` ile belirtilen değerlerin her ikisine de güvenmeye hazır olduğunuzdan emin olun.
 
-Check if either of the values corresponding to is present in your mapping table. In our example above, the first pageview happens on an AMP page that’s NOT on the publisher origin followed by the second pageview that happens on the publisher origin. As a result, the values for the analytics ping query parameters will look like this:
+Eşleştirme tablonuzda, karşılık gelen değerlerden herhangi birinin olup olmadığını kontrol edin. Yukarıdaki örneğimizde, ilk sayfa görüntüleme, yayıncı kaynağında OLMAYAN bir AMP sayfasında gerçekleşir ve ardından, yayıncı kaynağında gerçekleşen ikinci sayfa görüntüleme gelir. Sonuç olarak, analiz ping sorgu parametrelerinin değerleri şöyle görünecektir:
 
-**Case #1: Identifier arrangement when analytics ping is sent from page on publisher origin**
+**Durum #1: Analiz ping'i yayıncı kaynağındaki sayfadan gönderildiğinde tanımlayıcı düzenlemesi**
 
 <table>
   <tr>
     <th width="20%"></th>
-    <th width="40%"><strong>User ID on publisher origin</strong></th>
-    <th width="40%"><strong>User ID on AMP page that’s NOT on publisher origin (“alias”)</strong></th>
+    <th width="40%"><strong>Yayıncı kaynağındaki kullanıcı kimliği</strong></th>
+    <th width="40%"><strong>AMP sayfasındaki yayıncı kaynaklı olmayan kullanıcı kimliği ("takma ad")</strong></th>
   </tr>
   <tr>
-    <td><strong>How it’s expressed in analytics ping</strong></td>
+    <td><strong>Analiz ping'inde ifade şekli</strong></td>
     <td><code>user_id=$publisher_origin_id</code></td>
     <td><code>orig_user_id=$amp_client_id</code></td>
   </tr>
   <tr>
-    <td><strong>Parameter key</strong></td>
+    <td><strong>Parametre anahtarı</strong></td>
     <td><code>user_id</code></td>
     <td><code>orig_user_id</code></td>
   </tr>
   <tr>
-    <td><strong>Parameter value</strong></td>
+    <td><strong>Parametre değeri</strong></td>
     <td><code>$publisher_origin_id</code></td>
     <td><code>$amp_client_id</code></td>
   </tr>
 </table>
 
-Please notice that the identifier coming from the first pageview corresponds to the rightmost column and the identifier coming from the second pageview is in the middle column, in accordance with how our example flow above was constructed.
+Yukarıdaki örnek akışımızın nasıl yapılandırıldığına göre, ilk sayfa görüntülemeden gelen tanımlayıcının en sağdaki sütunda ve ikinci sayfa görüntülemeden gelen tanımlayıcının orta sütunda olduğuna lütfen dikkat edin.
 
-If instead the user starts on a page served from the publisher origin and subsequently navigates to an AMP page that’s NOT on the publisher origin, then the keys of the parameters will be reversed, but the corresponding way that we reference the values will not be (i.e. `$amp_client_id` always refers to an identifier stored on an AMP page that’s NOT on the publisher origin):
+Bunun yerine, kullanıcı yayıncı kaynağından sunulan bir sayfada başlar ve daha sonra yayıncı kaynağında OLMAYAN bir AMP sayfasına giderse, bu durumda parametrelerin anahtarları tersine çevrilecektir, ancak değerlere referans verme yöntemimiz çevrilmeyecektir (yani, `$amp_client_id` her zaman, bir AMP sayfasında saklanan ve yayıncı kaynağında OLMAYAN bir tanımlayıcıya referans verecektir):
 
-**Case #2: Identifier arrangement when analytics ping is sent from an AMP page that’s NOT on the publisher origin**
+**Örnek #2: Analiz ping'i yayıncı kaynağında OLMAYAN bir AMP sayfasından gönderildiğinde tanımlayıcı düzenlemesi**
 
 <table>
   <tr>
     <th width="20%"> </th>
-    <th width="40%"><strong>User ID on publisher origin</strong></th>
-    <th width="40%"><strong>User ID on AMP page that’s NOT on publisher origin (“alias”)</strong></th>
+    <th width="40%"><strong>Yayıncı kaynağındaki kullanıcı kimliği</strong></th>
+    <th width="40%"><strong>AMP sayfasındaki yayıncı kaynaklı olmayan kullanıcı kimliği ("takma ad")</strong></th>
   </tr>
   <tr>
-    <td><strong>How it’s expressed in analytics ping</strong></td>
+    <td><strong>Analiz ping'inde ifade şekli</strong></td>
     <td><code>orig_user_id=$publisher_origin_id</code></td>
     <td><code>user_id=$amp_client_id</code></td>
   </tr>
   <tr>
-    <td><strong>Parameter key</strong></td>
+    <td><strong>Parametre anahtarı</strong></td>
     <td><code>orig_user_id</code></td>
     <td><code>user_id</code></td>
   </tr>
   <tr>
-    <td><strong>Parameter value</strong></td>
+    <td><strong>Parametre değeri</strong></td>
     <td><code>$publisher_origin_id</code></td>
     <td><code>$amp_client_id</code></td>
   </tr>
 </table>
 
-When you are searching the mapping table, take note of which situation applies and search for values within the columns of the mapping table where you expect them to appear. For instance, if the analytics ping is being sent from a page on the publisher origin (Case #1), then check for values keyed by `user_id` in the mapping table column “User ID on publisher origin” and check for values keyed by `orig_user_id` in the column “User ID on AMP page that’s NOT on publisher origin (‘alias’)”.
+Eşleştirme tablosunda arama yaparken, hangi durumun geçerli olduğuna dikkat edin ve görünmelerini beklediğiniz eşleştirme tablosu sütunlarında değerleri arayın. Örneğin, analiz ping'i yayıncı kaynağındaki bir sayfadan gönderiliyorsa (Durum #1), "Yayıncı kaynağında Kullanıcı Kimliği" eşleştirme tablosu sütununda `user_id` ile anahtarlanan değerleri ve "AMP sayfasındaki yayıncı kaynaklı OLMAYAN kullanıcı kimliği ('takma ad')" sütununda `orig_user_id` ile anahtarlanan değerleri kontrol edin.
 
-If you cannot locate either identifier value being used in your mapping table, establish a new mapping:
+Eşleştirme tablonuzda kullanılan tanımlayıcı değerlerinden herhangi birini bulamazsanız, yeni bir eşleştirme oluşturun:
 
-- If the analytics request comes from a page on your publisher origin, then you should choose the value corresponding to `uid` to be the analytics record identifier; choose the value of `orig_uid` to be the “alias”.
-- If the analytics request does not come from a page on your publisher origin, then you should choose the value corresponding to `uid` to be an “alias” value in the mapping table. Then, proceed with the remaining instructions in [Task 4](#task4) to create a prospective publisher origin identifier and attempt to set this value as a cookie on the origin.
+- Analiz isteği yayıncınızın kaynağındakş bir sayfadan geliyorsa, analiz kaydı tanımlayıcısı olarak `uid`'e karşılık gelen değeri seçmelisiniz; ayrıca `orig_uid` değerini "takma ad" olarak seçin.
+- Analiz isteği yayıncınızın kaynağındaki bir sayfadan gelmiyorsa, `uid`'e karşılık gelen değeri, eşleştirme tablosunda bir "takma ad" değeri olarak seçmelisiniz. Ardından, muhtemel bir yayıncı kaynağı tanımlayıcısı oluşturmak için [4. Görevdeki](#task4) kalan talimatlarla devam edin ve bu değeri kaynakta çerez olarak ayarlamayı deneyin.
 
-##### Parameter validation <a name="parameter-validation"></a>
+##### Parametre doğrulama <a name="parameter-validation"></a>
 
-Values contained in a URL can be maliciously changed, malformed, or somehow otherwise not be the values that you expect to be there. This is sometimes called cross site request forgery. Just as it is important to ensure that the analytics pings that your analytics server receives are coming from pages that you expect to be sending analytics pings, when you are “forwarding” on values that were part of the URL, be sure to validate the referrer to ensure you can trust these values.
+Bir URL'de bulunan değerler kötü niyetle değiştirilebilir, hatalı biçimlendirilebilir veya bunlar bir şekilde orada olmasını beklediğiniz değerler olmayabilir. Buna siteler arası istek sahteciliği adı verilir. Analiz sunucunuzun aldığı analiz ping'lerinin, analiz ping'leri göndermesini beklediğiniz sayfalardan gelmesini sağlamanın önemli olması gibi, URL'nin bir parçası olan değerleri "iletirken" bu değerlere güvenebilmenizi sağlamak için yönlendireni doğruladığınızdan emin olun.
 
-For instance, in the steps above, we constructed the following URL, intended for the user to click on and navigate to the corresponding page:
+Örneğin, yukarıdaki adımlarda, kullanıcının tıklayıp ilgili sayfaya gitmesi için aşağıdaki URL'yi oluşturduk:
 
 [sourcecode:http]
 https://example.com/step2.html?orig_user_id=$amp_client_id
 [/sourcecode]
 
-However, it’s just as possible that the user or some attacker change this URL to be:
+Ancak, kullanıcının veya bir saldırganın bu URL'yi şu şekilde değiştirmesi de mümkündür:
 
 [sourcecode:http]
 https://example.com/step2.html?orig_user_id=$malicious_value
 [/sourcecode]
 
-You want to ensure that you process only instances of `$amp_client_id` and avoid using instances of `$malicious_value`.
+Sadece `$amp_client_id` örneklerini işlediğinizden emin olmak `$malicious_value` örneklerini kullanmaktan kaçınmak isteyeceksinizdir.
 
-**Suggested steps for validating values received via URL query parameters:** Confirm that the referrer of the landing page matches a URL you’d expect to see. This should typically be one you’ve seen carrying a previously seen identifier value in a valid CORS request. We recommend that you only accept such known identifiers.
+**URL sorgu parametreleri aracılığıyla alınan değerleri doğrulamak için önerilen adımlar:** Açılış sayfasını yönlendirenin, görmeyi beklediğiniz bir URL ile eşleştiğini onaylayın. Bu tipik olarak, geçerli bir CORS isteğinde, önceden görülmüş bir tanımlayıcı değeri taşıdığını gördüğünüz bir değer olmalıdır. Yalnızca bu tür bilinen tanımlayıcıları kabul etmenizi öneririz.
 
-On a non-AMP page, check `document.referrer` directly on the client side or pass the value on as part of the analytics ping to be able to validate on the server side. If the referrer value is one you can trust, then you can accept and process values that originated from the URL of the landing page, such as `orig_user_id` in the example above.
+AMP olmayan bir sayfada, doğrudan istemci tarafında `document.referrer` öğesini kontrol edin veya sunucu tarafında doğrulama yapabilmek için, değeri analiz ping'inin bir parçası olarak iletin. Yönlendiren değeri güvenebileceğiniz bir değer ise, yukarıdaki örnekte `orig_user_id` gibi açılış sayfasının URL'sinden kaynaklanan değerleri kabul edebilir ve işleyebilirsiniz.
 
-On an AMP page, use the [Document Referrer](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#document-referrer) substitution variable to pass along the referrer value as part of the analytics ping. Server side processing is the only available option. To illustrate, here’s an analytics ping that the landing page can send that contains (1) the Client ID value of the current page, (2) a value passed via URL that we’ve set up to be the Client ID value in the referring page, and (3) the referrer information itself to validate the value of (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
+Bir AMP sayfasında, analiz ping'inin bir parçası olarak yönlendiren değerini iletmek için [Belge Yönlendirici](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#document-referrer) değişiklik değişkenini kullanın. Sunucu tarafı işleme, mevcut tek seçenektir. Örnek olarak, (1) geçerli sayfanın İstemci Kimliğini, (2) yönlendiren sayfada İstemci Kimliği olarak ayarladığımız URL yoluyla aktarılan bir değeri ve (3) (2)'deki değeri doğrulamak için yönlendirenin kendi bilgisini içeren ve açılış sayfasının gönderebileceği analiz ping'i burada verilmiştir: `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
 
-If you cannot trust the referrer, then reject any values provided via URL parameters and do not use them.
+Yönlendirene güvenemiyorsanız, URL parametreleri aracılığıyla sağlanan tüm değerleri reddedin ve kullanmayın.
 
-## Strongly recommended practices <a name="strongly-recommended-practices"></a>
+## Kesinlikle önerilen uygulamalar <a name="strongly-recommended-practices"></a>
 
-### Keep just one association <a name="keep-just-one-association"></a>
+### Yalnızca tek bir ilişkilendirme tutun <a name="keep-just-one-association"></a>
 
-**Only one association between identifiers from any two contexts should be maintained.** If an AMP Client ID that you have previously associated with a cookie or other user identifier issued by you is seen together with a new cookie or user identifier that you issue, you should delete all state you held against the previous cookie and user identifier.
+**Herhangi iki bağlamdan tanımlayıcılar arasında yalnızca bir ilişkilendirme tutulmalıdır.** Önceden sizin tarafınızdan verilen bir çerez veya diğer kullanıcı tanımlayıcısı ile ilişkilendirdiğiniz bir AMP İstemci Kimliği, çıkardığınız yeni bir çerez veya kullanıcı tanımlayıcısı ile birlikte görülürse, önceki çerez ve kullanıcı tanımlayıcısına karşı tuttuğunuz tüm durumu silmeniz gerekir.
 
-These steps will help ensure alignment with users’ expectations of privacy. As detailed in the preceding sections, managing user state in AMP will often involve storing and associating different identifiers across multiple contexts where AMP content is displayed. **This situation should never be abused to reconstitute data or perform tracking that the user would not expect or that you have not clearly disclosed to the user, such as, for example, after the user has deleted his or her cookies for your sites.**
+Bu adımlar, kullanıcıların gizlilik beklentileriyle uyumu sağlamaya yardımcı olacaktır. Önceki bölümlerde ayrıntılı olarak açıklandığı gibi, AMP'de kullanıcı durumunun yönetilmesi genellikle farklı tanımlayıcıların AMP içeriğinin görüntülendiği birden çok bağlamda depolanmasını ve ilişkilendirilmesini gerektirir. **Bu durum, örneğin kullanıcı sitelerinizin çerezlerini sildikten sonra, beklemediği veya ona açıkça açıklamadığınız şekilde, verileri yeniden oluşturmak veya izleme gerçekleştirmek için asla kötüye kullanılmamalıdır.**
 
-### Respect cookie and local storage deletions <a name="respect-cookie-and-local-storage-deletions"></a>
+### Çerezlere ve yerel depolamada silme işlemlerine saygı gösterin <a name="respect-cookie-and-local-storage-deletions"></a>
 
-**You should respect all applicable privacy controls that are made available to the user, including any such controls creating the ability to delete all cookies and local storage.** At no time should the AMP Client ID or AMP infrastructure be [used to reconstitute a deleted identifier](https://en.wikipedia.org/wiki/Zombie_cookie) after a user expressly deletes one side of an identifier relationship.
+**Tüm çerezleri ve yerel depolamayı silme olanağı oluşturan bu tür kontroller dahil olmak üzere, kullanıcının kullanımına sunulan tüm geçerli gizlilik kontrollerine saygı göstermelisiniz.**AMP İstemci Kimliği veya AMP altyapısı kullanıcı bir tanımlayıcı ilişkisinin bir tarafını açıkça sildikten sonra [silinmiş bir tanımlayıcıyı yeniden oluşturmak için](https://en.wikipedia.org/wiki/Zombie_cookie) hiçbir zaman kullanılmamalıdır.
 
-### Comply with local laws and regulations <a name="comply-with-local-laws-and-regulations"></a>
+### Yerel yasalara ve düzenlemelere uyun <a name="comply-with-local-laws-and-regulations"></a>
 
-**Associating cookies and/or identifiers from two or more domains might require updating your privacy policy, providing additional user disclosures, or obtaining end user consent in some jurisdictions.** The usage of the AMP Client ID, which uses cookies or local storage as a means of persistent storage to offer a stable identifier, should be analyzed by each publisher with regard to all applicable laws and regulations regarding data collection, storage, processing, and user notice.
+**İki veya daha fazla etki alanından çerezleri ve/veya tanımlayıcıları ilişkilendirmek, gizlilik politikanızı güncellemenizi, ek kullanıcı açıklamaları sunmanızı veya bazı yasal konularda son kullanıcı izni almanızı gerektirebilir.** Kararlı bir tanımlayıcı sunmak için kalıcı depolama aracı olarak çerezleri veya yerel depolamayı kullanan AMP İstemci Kimliğinin kullanımı veri toplama, depolama, işleme ve kullanıcıya bildirim hakkındaki tüm geçerli yasalar ve düzenlemeler açısından her yayıncı tarafından analiz edilmelidir.
