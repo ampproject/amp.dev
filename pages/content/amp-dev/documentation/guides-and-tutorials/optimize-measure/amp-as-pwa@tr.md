@@ -41,7 +41,7 @@ Ardından `<body>` içinde bir yere aşağıdakileri ekleyin (gerçek Hizmet Ça
 
 Kullanıcı, kaynağınızdaki AMP sayfalarınıza giderse (genellikle bir AMP Önbelleğinden sunulan ilk tıklamanın aksine), Hizmet Çalışanı görevi devralır ve [sayısız harika şey yapabilir](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux) .
 
-## The AMP Service Worker
+## AMP Hizmet Çalışanı
 
 Buradaysanız, AMP ile sayfalar oluşturuyorsunuz demektir. AMP ekibi, kullanıcıyı birinci sıraya koymaya ve onlara birinci sınıf bir web deneyimi sunmaya son derece önem veriyor. Bu deneyimleri tutarlı kılmak için AMP ekibi, özellikle AMP için bir hizmet çalışanı oluşturdu!
 
