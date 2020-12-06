@@ -30,12 +30,12 @@ Bir reklam sunucusu olarak desteklediğiniz yayıncılar, sizin tarafınızdan s
 Örneğin, Amazon A9 sunucusu aşağıdaki sözdizimi kullanılarak çağrılabilir:
 
 ```html
-<amp-ad width="300" height="250"
+&lt;amp-ad width="300" height="250"
     type="a9"
     data-aax_size="300x250"
     data-aax_pubname="test123"
-    data-aax_src="302">
-</amp-ad>
+    data-aax_src="302"&gt;
+&lt;/amp-ad&gt;
 ```
 
 Yukarıdaki kodda, `type` özniteliği, bu durumda A9 olan reklam ağını belirtir. `data-*` öznitelikleri, Amazon'un A9 sunucusunun bir reklam yayınlamayı beklediği parametrelere bağlıdır. [`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) dosyası, parametrelerin A9 sunucusunun URL'sine bir JavaScript çağrısı yapmak için nasıl eşlendiğini gösterir. [`amp-ad`](../../../documentation/components/reference/amp-ad.md) etiketi tarafından iletilen ilgili parametreler, bir reklam ile yanıt vermek için URL'ye eklenir.
