@@ -15,7 +15,7 @@ Bu belgede, AMP Önbellek URL biçimi ve istekleri nasıl işlediği hakkında b
 
 ## URL Biçimi
 
-When possible, the Google AMP Cache will create a subdomain for each AMP document's domain by first converting it from [IDN (punycode)](https://en.wikipedia.org/wiki/Punycode) to UTF-8. The caches replaces every `-` (dash) with `--` (2 dashes) and replace every `.` (dot) with `-` (dash). For example, `pub.com` will map to `pub-com.cdn.ampproject.org`.
+Mümkün olduğunda, Google AMP Önbelleği, önce [IDN'den (punycode)](https://en.wikipedia.org/wiki/Punycode) UTF-8'e dönüşüm yaparak her AMP belgesinin alan adı için bir alt alan adı oluşturur. Önbellekler her `-` (tireyi) `--` (2 tire) ile değiştirir ve her `.` (noktayı) `-` (tire) ile değiştirir. Örneğin, `pub.com`, `pub-com.cdn.ampproject.org` ile eşleşecektir.
 
 Bir URL'yi AMP önbellek sürümüne dönüştürmek için bu URL hesaplayıcısını kullanabilirsiniz:
 
@@ -55,7 +55,7 @@ Bu belge, örnek olarak `cdn.ampproject.org` içeren URL'leri kullanır, ancak d
 
 ## Etki Alanı Adı Öneki
 
-An AMP Cache serves documents on an altered URL, such as `example-com.cdn.ampproject.org`. The first dotted component of the original domain name in the example, `example.com`, becomes `example-com`. This document refers to this non-dotted string, `example-com`, as the “domain prefix”. See below for the algorithm that performs this transformation.
+AMP Önbelleği, `example-com.cdn.ampproject.org` gibi değiştirilmiş bir URL'deki belgeleri sunar. Orjinal etki alanı adının ilk noktalı bileşeni olan `example.com`, `example-com` olur. Bu belge, “etki alanı öneki” olarak bu noktalı olmayan dizeye, `example-com`'a başvurur. Bu dönüşümü gerçekleştiren algoritma için aşağıya bakın.
 
 https (TLS) sertifikalarının kısıtlanması nedeniyle bu önekde `example.com.cdn.ampproject.org` gibi birden çok noktalı bileşen kullanılmaz, [RFC 2818](https://tools.ietf.org/html/rfc2818#section-3.1):
 
@@ -140,7 +140,7 @@ Bir yayıncı etki alanını bir etki alanı önekine dönüştürmek için geri
 
 1. SHA256 kullanarak yayıncının etki alanını hash haline getirin.
 2. Base32 1.adımın çıktısından çıkar.
-3. Remove the last 4 characters from the output of step 2, which are always `=` (equals) characters.
+3. 2.adımın çıktısından son 4 karakteri kaldırın, bunlar her zaman `=` (equals) (eşittir) karakterleridir.
 
 Geri dönüş algoritması, `-` (tire) olmadan aşağıdaki gibi 52 karakterlik bir dize üretecektir:<br>`v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq`.
 
@@ -148,7 +148,7 @@ Geri dönüş algoritması, `-` (tire) olmadan aşağıdaki gibi 52 karakterlik 
 
 Kombine algoritma aşağıdaki gibidir:
 
-1. Run the Basic Algorithm. If the output is a valid DNS label, append the Cache domain suffix and return, for example `example-com.cdn.ampproject.org`. Otherwise continue to step 2.
+1. Temel algoritmayı çalıştırın. Çıktı geçerli bir DNS etiketi ise, Önbellek etki alanı sonekini ekleyin ve döndürün, örneğin `example-com.cdn.ampproject.org`. Aksi takdirde 2.adıma geçin.
 2. Geri dönüş algoritmasını çalıştırın. Önbellek etki alanı sonekini ekleyin ve döndürün, örneğin: `v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq.cdn.ampproject.org`
 
 ## URL Yolu
@@ -179,23 +179,23 @@ Bir AMP Önbellek Kaynağı başlık değeri aşağıdaki örneklerden biri gibi
 - `https://www-example-com.cdn.ampproject.org`
 - `https://v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq.cdn.ampproject.org`
 
-First, remove the protocol prefix (`https://`) and the AMP Cache domain suffix, such as `.cdn.ampproject.org`. The suffix may be from any one of the caches listed in [caches.json](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). The remaining string will be the “domain prefix”. In the case of the above two examples, the “domain prefix is:
+Öncelikle, protokol önekini (<code>https://</code>) ve <code>.cdn.ampproject.org</code> gibi AMP Önbellek alanı sonekini kaldırın. Sonek, <a>caches.json</a> dosyasında listelenen önbelleklerden herhangi birinden olabilir. Kalan dize “etki alanı öneki”olacaktır. Yukarıdaki iki örnek durumunda, "etki alanı öneki" şu şekildedir:
 
 - `www-example-com`
 - `v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq`
 
-Next, check to see if the “domain prefix” contains at least one ‘`-`’ (hyphen). Containing one or more hyphens is the most common case by far. If the “domain prefix” does not contain at least one ‘`-`’ (hyphen), the AMP Cache Origin cannot be reversed directly. Instead, if you know the set of possible publisher domains, you can create the set of AMP Cache Origins using the Domain Name algorithm further above in this document. You can then validate against the fixed set.
+Ardından, “etki alanı öneki”nin en az bir ‘`-`’ (kısa çizgi) içerip içermediğini kontrol edin. Bir veya daha fazla kısa çizgi içermesi en yaygın durumdur. "Etki alanı öneki" en az bir  ‘`-`’ (kısa çizgi) içermiyorsa, AMP Önbellek Kaynağı doğrudan tersine çevrilemez. Bunun yerine, olası yayıncı etki alanları kümesini biliyorsanız, bu belgede yukarıda belirtilen etki alanı adı algoritmasını kullanarak AMP Önbellek Kaynakları kümesini oluşturabilirsiniz. Daha sonra sabit kümeye karşı doğrulayabilirsiniz.
 
-The rest of the algorithm assumes that the “domain prefix” contains at least one ‘`-`’ (hyphen).
+Algoritmanın geri kalanı, “etki alanı öneki”nin en az bir ‘`-`’ (kısa çizgi) içerdiğini varsayar.
 
 1. Etki alanı öneki `xn--` ile başlarsa, punycode “etki alanı öneki” kodunu çözer. Örneğin, `xn---com-p33b41770a`, `⚡😊-com` olur. Punycode için bkz. [RFC 3492](https://tools.ietf.org/html/rfc3492)
 2. Etki alanı öneki "`0-`" ile başlar ve "`-0`" ile sona ererse, hem "`0-`" önekini hem de "-0" sonekini çıkarın.
 3. 2.adımda çıkarılan karakterleri sırayla tekrarlayın ve karşılaşıldığı gibi yayınlayın. Bir "`-`" (kısa çizgi) ile karşılaştığınızda, aşağıdaki karaktere bakın. Aşağıdaki karakter de bir "`-`" (kısa çizgi) ise, her iki karakteri de girdiden atlayın ve tek bir `-` "(kısa çizgi) verin. Aşağıdaki karakter başka bir karakter ise, yalnızca geçerli tek "`-`" (kısa çizgiyi) atlayın ve bir "`.`" (nokta) koyun. Örneğin, `a--b-example-com`, `a-b.example.com` olur.
 4. Punycode 3. adımın sonucunu kodlayın. Punycode için bkz. [RFC 3492](https://tools.ietf.org/html/rfc3492).
 
-The result of Step 4 will be the Publisher Domain. The protocol is unavailable from the domain itself, but is either `http` or `https`. The port is always the default for the protocol.
+4. Adımın sonucu Yayıncı Etki Alanı olacaktır. Protokol, etki alanının kendisinde kullanılamıyor, ancak ya `http` ya da `https`. Bağlantı noktası her zaman protokol için varsayılandır.
 
-## Redirect & Error Handling
+## Yönlendirme ve Hata İşleme
 
 AMP önbelleğinin yönlendirmeleri ve hataları nasıl ele aldığına dair bazı örnekler:
 
