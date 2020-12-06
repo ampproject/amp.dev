@@ -10,7 +10,7 @@ Giriş düğmesine benzer şekilde, çıkış düğmesinin varlığı [`amp-acce
 <button amp-access="loggedIn" amp-access-hide tabindex="0" on="tap:amp-access.login-sign-out" class="button-primary comment-button">Logout</button>
 [/sourcecode]
 
-When you click the Logout button, you are directed to the URL that you specified in the [`amp-access`](../../../../documentation/components/reference/amp-access.md) JSON configuration, as part of the login object:
+Çıkış düğmesini tıkladığınızda, giriş yapma nesnesinin bir parçası olarak [`amp-access`](../../../../documentation/components/reference/amp-access.md) JSON yapılandırmasında belirttiğiniz URL'ye yönlendirilirsiniz:
 
 [sourcecode:json]
 {
@@ -21,4 +21,4 @@ When you click the Logout button, you are directed to the URL that you specified
 }
 [/sourcecode]
 
-Similar to the login, when the AMPByExample server receives a logout request, it uses the return URL query parameter automatically added by the AMP library and redirects to it, adding `#success=true`. By this time, you are back on the initial page; the AMPByExample cookie previously created for the login page (called `ABE_LOGGED_IN`) would be cleared at this point.
+Girişe benzer şekilde, AMPByExample sunucusu bir çıkış isteği aldığında, AMP kitaplığı tarafından otomatik olarak eklenen dönüş URL'si sorgu parametresini kullanır ve buna yönlendirme yaparak <code>#success=true</code> kodunu ekler. Bu an itibarıyla ilk sayfaya geri dönersiniz; daha önce giriş sayfası için oluşturulan AMPByExample çerezi (`ABE_LOGGED_IN` olarak adlandırılır) bu noktada temizlenir.
