@@ -107,6 +107,6 @@ Seviye 3 katkısı, üçüncü bir tarafa özgü yeni bir bileşen sunar. Bu bil
 - Bir tasarım incelemesi yazın ve önerin
 - Testler çökmeyi yakalayabilmelidir
 - Bileşen çökerse, düzeltin veya yardım isteyin.
-- Provide thorough documentation with code samples.
+- Kod örnekleriyle belgeleme sunun.
 - Belgelemeyi devam ettirin ve güncelleyin.
 - AMP geliştiricilerinin yardım isteyebilmesi için sorun giderme kanalı sunun
