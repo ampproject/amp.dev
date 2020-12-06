@@ -6,7 +6,7 @@ description: Analytics platformları genellikle, analitik sistemine geri gönder
 
 Analytics platformları genellikle, analitik sistemine geri gönderilen olayları tetikleyen satır içi JavaScript parçacıkları ve işlev çağrıları aracılığıyla web sitelerine entegre edilir. AMP, bu işlemi birkaç analitik iş ortağı için çoğaltmak için esnek bir JSON yapılandırma sözdizimi sağlar.
 
-The following is an example of traditional JavaScript-driven Google Analytics tracking. We'll rewrite this into the [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) JSON format but first, let's look at the traditional approach:
+Aşağıda, geleneksel JavaScript tabanlı Google Analytics izlemenin bir örneği verilmiştir. Bunu [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) JSON biçimine yeniden yazacağız, ancak önce geleneksel yaklaşıma bakalım:
 
 ```html
 <script>
@@ -89,7 +89,7 @@ Yukarıdaki örneğe dayanarak, `"click on #header trigger"` adlı başka bir te
 </amp-analytics>
 ```
 
-As you can guess from the name of this new trigger it will fire when the element with the ID `"header"` is clicked (specified by `"on": "click"` and `"selector": "#header"`).  When this trigger fires, we'll send the `event` request to our analytics provider, specifying a couple of variables to include in the request.
+Bu yeni tetikleyicinin adından da tahmin edebileceğiniz gibi, <code>"header"</code> kimliğine sahip öğe tıklandığında tetiklenecektir (<code>"on": "click"</code> ve <code>"selector": "#header"</code>" ile belirtilir). Bu tetikleyici etkinleştiğinde, isteğe dahil edilecek birkaç değişkeni belirterek <code>event</code> isteğini analitik sağlayıcımıza göndereceğiz.
 
 Entegre etmek istediğiniz özel bir izleme platformunuz varsa, [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)'i kullanabilir ve izleme verilerini göndermek için kendi kişiselleştirilmiş URL uç noktalarınızı tanımlayabilirsiniz. [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) bileşen referans belgelerinden daha fazla bilgi edinin.
 
