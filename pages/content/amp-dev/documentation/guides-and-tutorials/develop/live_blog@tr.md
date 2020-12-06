@@ -35,7 +35,7 @@ Blog için görünebilir ilk kod budur:
 
 Bu koda bakalım:
 
-Each [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component requires a unique id as there could be more than one on a page.  In this example, we specified `my-live-list` as the unique id.
+Her [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) bileşeni, bir sayfada birden fazla olabileceğinden benzersiz bir kimlik gerektirir. Bu örnekte, benzersiz kimlik olarak `my-life-list` belirttik.
 
 `data-poll-interval` özniteliği, anketlerin ne sıklıkta gerçekleşmesi gerektiğini belirtir; ana belge güncellenirse, güncelleştirme bir sonraki zaman aralığından sonra kullanıcı tarafından kullanılabilir olmalıdır.
 
