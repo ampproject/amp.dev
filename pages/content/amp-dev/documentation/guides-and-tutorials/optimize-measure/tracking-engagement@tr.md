@@ -1,7 +1,7 @@
 ---
-"$title": How to configure basic analytics for your AMP pages
+"$title": AMP sayfalarınız için temel analiz nasıl yapılandırılır?
 "$order": '100'
-description: Analytics platforms are commonly integrated into websites through inline JavaScript snippets and function calls, which trigger events that are sent back to the analytics system.
+description: Analitik platformları, genellikle, analiz sistemine geri gönderilen olayları tetikleyen satır içi JavaScript parçacıkları ve işlev çağrıları aracılığıyla web sitelerine entegre edilir.
 tutorial: 'true'
 formats:
 - websites
@@ -11,11 +11,11 @@ formats:
 
 Analytics platformları, genellikle, analiz sistemine geri gönderilen olayları tetikleyen satır içi JavaScript parçacıkları ve işlev çağrıları aracılığıyla web sitelerine entegre edilir. AMP, bu süreci birkaç analiz iş ortağı için çoğaltmak için esnek bir JSON yapılandırma sözdizimi sağlar.
 
-[tip] **TIP –** If you're using Google Analytics as your analytics provider, learn [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md). [/tip]
+[tip] **İPUCU –** Google Analytics'i analitik sağlayıcınız olarak kullanıyorsanız, [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) öğrenin. [/tip]
 
-## For context: Analytics on non-AMP pages
+## Bağlam için: AMP olmayan sayfalarda analiz
 
-The following is an example of traditional JavaScript-driven Google Analytics tracking. We'll rewrite this into the [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) JSON format but first, let's look at the traditional approach:
+Aşağıda, geleneksel JavaScript tabanlı Google Analytics izleme örneği verilmiştir. Bunu [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) JSON biçiminde yeniden yazacağız, ancak önce geleneksel yaklaşıma bakalım:
 
 ```html
 <script>
@@ -29,19 +29,19 @@ ga('send', 'pageview');
 </script>
 ```
 
-This JavaScript is quite simple; it sends a notification to track the pageview event.
+Bu JavaScript oldukça basittir; pageview olayını izlemek için bir bildirim gönderir.
 
-## Step 1: Include `amp-analytics` script
+## 1. Adım: `amp-analytics` komut dosyasını dahil edin
 
-To replicate this functionality in AMP, we must first **include** the [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) component library in our document’s `<head>`:
+Bu işlevi AMP'de çoğaltmak için önce[`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) bileşen kitaplığını belgemizin `<head>` bölümüne **eklemeliyiz**:
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 ```
 
-## Step 2: Add configuration code
+## 2. Adım: Yapılandırma kodunu ekleyin
 
-Then, let's **add** the [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) component to the end of the `body` of the document:
+Ardından, [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) bileşenini belgenin `body` bölümünün sonuna **ekleyelim**:
 
 ```html
 <amp-analytics type="googleanalytics">
@@ -64,15 +64,15 @@ Then, let's **add** the [`amp-analytics`](../../../documentation/components/refe
 </amp-analytics>
 ```
 
-Just as with the JavaScript example at the top of this page, this [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) snippet will send a notification to Google Analytics indicating that a page has been viewed.
+Bu sayfanın üst kısmındaki JavaScript örneğinde olduğu gibi, bu [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) parçacığı, Google Analytics'e bir sayfanın görüntülendiğini belirten bir bildirim gönderecektir.
 
-To specify this, we've set the `type` to `googleanalytics` and then in the JSON we've created a trigger we've called "default pageview".  This trigger will fire when the page is visible (due to the `"on": "visible"`) and when it fires we'll send a `pageview` analytics request to Google Analytics with the `vars` we have specified.
+Bunu belirtmek için, `type` `googleanalytics` olarak ayarladık ve ardından JSON'da "default pageview" adını verdiğimiz bir tetikleyici oluşturduk. Bu tetikleyici, sayfa görünür olduğunda (`"on": "visible"` nedeniyle) tetiklenecek ve tetiklendiğinde, `vars` ile belirttiğimiz değişkenlerle Google Analytics'e bir`pageview` analizi isteği göndereceğiz.
 
-The JSON used to configure [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) is a very flexible format for describing what analytics data to send and when to send it.  The [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) has complete details on the format.
+[`amp-analytics`](../../../documentation/components/reference/amp-analytics.md)'i yapılandırmak için kullanılan JSON, hangi analitik verilerin gönderileceğini ve ne zaman gönderileceğini açıklamak için çok esnek bir formattır. [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md), formatla ilgili tüm ayrıntılara sahiptir.
 
-## Step 3: Adding more triggers
+## 3. Adım: Daha fazla tetikleyici ekleyin
 
-Building on the above example, we can **add** another trigger named `"click on #header trigger"`:
+Yukarıdaki örneğe dayanarak, `"click on #header trigger"` adlı başka bir tetikleyici **ekleyebiliriz**:
 
 ```html
 <amp-analytics type="googleanalytics">
@@ -104,10 +104,10 @@ Building on the above example, we can **add** another trigger named `"click on #
 </amp-analytics>
 ```
 
-As you can guess from the name of this new trigger it will fire when the element with the ID `"header"` is clicked (specified by `"on": "click"` and `"selector": "#header"`).  When this trigger fires, we'll send the `event` request to our analytics provider, specifying a couple of variables to include in the request.
+Bu yeni tetikleyicinin adından da tahmin edebileceğiniz gibi, `"header"` kimliğine sahip öğe tıklandığında tetiklenecektir (`"on": "click"` ve `"selector": "#header"`" ile belirtilir). Bu tetikleyici etkinleştiğinde, isteğe dahil edilecek birkaç değişkeni belirterek `event` isteğini analitik sağlayıcımıza göndereceğiz.
 
-If you have a custom tracking platform that you want to integrate with, you can still use [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) and define your own personalized URL endpoints to send tracking data to. Learn more in the [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) component reference documentation.
+Entegre etmek istediğiniz özel bir izleme platformunuz varsa, [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md)'i kullanabilir ve izleme verilerini göndermek için kendi kişiselleştirilmiş URL uç noktalarınızı tanımlayabilirsiniz. [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) bileşen referans belgelerinde daha fazla bilgi edinin.
 
-[tip type="note"] **NOTE –**  `“UA-YYYY-Y”` is an example Google Analytics account; it should be replaced with your own website’s Google Analytics tracking code if you are using this example on your site. [/tip]
+[tip type="note"] **NOT –**  `“UA-YYYY-Y”`, örnek bir Google Analytics hesabıdır. Sitenizde bu örneği kullanıyorsanız, kendi web sitenizin Google Analytics izleme koduyla değiştirilmelidir. [/tip]
 
 [tip type="tip"] <strong>İPUCU –</strong> Daha basit bir izleme sistemiyle ilgileniyorsanız, <a><code>amp-pixel</code></a>'e bir göz atmak isteyebilirsiniz. Yalnızca sayfa görüntülemelerini izlemeniz gerekiyorsa, <a><code>amp-pixel</code></a><a><code>amp-analytics</code></a>'ten daha hafif bir çözümdür, çünkü yalnızca geleneksel piksel izlemenin gereksinimlerini çözmeyi amaçlamaktadır. Analytics'te daha fazla bilgi edinin:<a>Analytics: temel bilgiler kılavuzu</a>. [/tip]
