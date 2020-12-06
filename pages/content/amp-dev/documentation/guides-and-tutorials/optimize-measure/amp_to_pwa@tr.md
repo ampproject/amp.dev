@@ -1,36 +1,36 @@
 ---
-"$title": Turn your AMP site into a PWA
+"$title": "AMP sitenizi PWA'ya dönüştürme"
 "$order": '10'
-description: By caching resources within the browser, a PWA is able to provide data, assets, and offline pages to the user to keep them engaged and informed.
+description: PWA, tarayıcı içindeki kaynakları önbelleğe alarak kullanıcıları etkileşim içinde tutmak ve bilgilendirmek için veriler, varlıklar ve çevrimdışı sayfalar sunabilir.
 tutorial: 'true'
 formats:
 - websites
 author: crystalonscript
 ---
 
-Progressive Web Apps harness the power of [service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) to enable rich offline abilities and consistent user experiences across varying network strengths. By caching resources within the browser, a PWA is able to provide data, assets, and offline pages to the user to keep them engaged and informed.
+Aşamalı Web Uygulamaları [hizmet çalışanlarının](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API), çeşitli ağ güçlerinde zengin çevrimdışı deneyimler ve tutarlı kullanıcı deneyimleri sağlama gücünden yararlanır. PWA, tarayıcı içindeki kaynakları önbelleğe alarak kullanıcıları etkileşim içinde tutmak ve bilgilendirmek için veriler, varlıklar ve çevrimdışı sayfalar sunabilir.
 
-This tutorial will teach you how to turn an AMP site into an installable PWA with offline capabilities by adding a Web Manifest and a Service Worker powered by the AMP Service Worker.
+Bu öğretici, bir AMP sitesini bir Web Sunumu ve AMP Hizmet Çalışanı tarafından desteklenen bir Hizmet Çalışanı ekleyerek çevrimdışı özelliklere sahip, kurulabilir bir PWA'ya nasıl dönüştüreceğinizi öğretecektir.
 
-# Download and run the starter code
+# Başlangıç kodunu indirme ve çalıştırma
 
-Download the [starter code here](/static/files/tutorials/amptopwa.zip).
+[Başlangıç kodunu buradan](/static/files/tutorials/amptopwa.zip) indirin.
 
-Use a local web server to preview the website.
+Web sitesini önizlemek için yerel bir web sunucusu kullanın.
 
-[tip type="default"] **TIP –** For a quick web server, run `python -m SimpleHTTPServer`. [/tip]
+[tip type="default"] **İPUCU -** Hızlı bir web sunucusu için `python -m SimpleHTTPServer`'ı çalıştırın. [/tip]
 
 You should be able to view the landing page for Lyrical Lyghtning, the Mobile Music Magic festival. It has one link on the homepage to view the schedule and which stage the bands are on.
 
 {{ image('/static/img/docs/tutorials/tut-lyricallyghtning.png', 594, 558, alt='Image of PWA' ) }}
 
-Users of our site may have spotty network connectivity at the event when they'll likely want to access the schedule. This makes a great candidate to turn it into a PWA that can be installed to our user's home screen, and provides all critical functionality even when offline.
+Sitemizin kullanıcıları, programa erişmek istediklerinde muhtemelen kesintili ağ bağlantısına sahip olacaklar. Bu durum, siteyi kullanıcımızın ana ekranına yüklenebilen bir PWA'ya dönüştürmek için harika bir aday yapar ve çevrimdışıyken bile tüm kritik işlevleri sunar.
 
-# Create a Web App Manifest
+# Web Uygulama Sunumu Oluşturma
 
-The [web app manifest ](https://developers.google.com/web/fundamentals/web-app-manifest/)is a simple JSON file that tells the browser about your web application and how it should behave when 'installed' on the user's mobile device or desktop. Having a manifest is required by many browsers to show the [Add to Home Screen prompt](https://developers.google.com/web/fundamentals/app-install-banners/).
+[Web uygulama sunumu](https://developers.google.com/web/fundamentals/web-app-manifest/), tarayıcıya web uygulamanız hakkında veri sunan ve kullanıcının mobil cihazına veya masaüstüne "yüklendiğinde" nasıl davranması gerektiğini söyleyen basit bir JSON dosyasıdır. Birçok tarayıcı [Ana Ekrana Ekle istemini](https://developers.google.com/web/fundamentals/app-install-banners/) göstermek için bir web sunumuna sahip olmayı gerekli kılar.
 
-Add a file titled `manifest.json` to your repository with the following code:
+Aşağıdaki kodla bilgi havuzunuza `manifest.json` adlı bir dosya ekleyin:
 
 [sourcecode:JSON]
 {
@@ -56,28 +56,28 @@ Add a file titled `manifest.json` to your repository with the following code:
 }
 [/sourcecode]
 
-# Add the AMP Service Worker
+# AMP Hizmet Çalışanı ekleme
 
-A service worker is a script that your browser runs in the background, separate from a web page, that extends the browsers features by caching requests to improve performance and providing offline functionality. Building a service worker from scratch is possible but time consuming. Libraries like Workbox help, but AMP goes one step further by offering the [AMP Service Worker](https://github.com/ampproject/amp-sw), in which AMP automates a lot of steps directly, including the caching of AMP Scripts, assets and documents as well as implementing common best practices such as [navigation preload](https://developers.google.com/web/updates/2017/02/navigation-preload).
+Hizmet çalışanı, tarayıcınızın bir web sayfasından ayrı olarak arka planda çalıştırdığı, performansı iyileştirmek ve çevrimdışı işlevler sağlamak için istekleri önbelleğe alarak tarayıcı özelliklerini genişleten bir betiktir. Sıfırdan bir hizmet çalışanı oluşturmak mümkündür ancak bu, çok zaman alır. Workbox gibi kütüphaneler bunun için yardımcı olur, ancak AMP bir adım ileri giderek [AMP Hizmet Çalışanı](https://github.com/ampproject/amp-sw) sunar; AMP bu şekilde AMP Betiklerinin, varlıkların ve belgelerin önbelleğe alınması ve  [gezinme önyüklemesi](https://developers.google.com/web/updates/2017/02/navigation-preload) gibi ortak en iyi uygulamaların ayarlanması dahil birçok adımı otomatikleştirir.
 
-The AMP Service Worker automatically [caches AMP scripts](https://github.com/ampproject/amp-sw/tree/master/src/modules/amp-caching) and [documents](https://github.com/ampproject/amp-sw/tree/master/src/modules/document-caching) as user requests them, after installing it. We'll start by adding the basic AMP Service Worker.
+AMP Hizmet Çalışanı [AMP betiklerini](https://github.com/ampproject/amp-sw/tree/master/src/modules/amp-caching) ve [belgeleri](https://github.com/ampproject/amp-sw/tree/master/src/modules/document-caching) kurulumdan sonra kullanıcı istedikçe otomatik olarak önbelleğe alır. Temel AMP Hizmet Çalışanını ekleyerek işe başlayacağız.
 
-## Create the service worker file
+## Hizmet çalışanı dosyası oluşturma
 
-Create a file called `sw.js` and add the following code:
+`sw.js` adlı bir dosya oluşturun ve aşağıdaki kodu ekleyin:
 
 [sourcecode:js]
 importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init();
 [/sourcecode]
 
-With just two lines of code, this imports the AMP Service Worker into your Service Worker and initializes it.
+Yalnızca iki satır kodla, bu işlem, AMP Hizmet Çalışanını Hizmet Çalışanınıza aktarır ve onu başlatır.
 
-## Auto-install your service worker on your AMP pages
+## Hizmet çalışanınızı AMP sayfalarınıza otomatik olarak yükleme
 
-AMP websites use the [`<amp-install-serviceworker>`](../../../documentation/components/reference/amp-install-serviceworker.md) component to install the service worker in the browser's background, while the user is enjoying your content.
+AMP web siteleri, kullanıcı içeriğinizin keyfini çıkarırken hizmet çalışanını tarayıcının arka planında yüklemek için [`<amp-install-serviceworker>`](../../../documentation/components/reference/amp-install-serviceworker.md) bileşenini kullanır.
 
-Place the required script tag in the head of `index.html` and the `<amp-install-serviceworker>` element inside the `<body>`:
+Gerekli betik etiketini `index.html` başlığına ve `<amp-install-serviceworker>` öğesini `<body>` içine yerleştirin:
 
 [sourcecode:html]
 …
@@ -94,9 +94,9 @@ Place the required script tag in the head of `index.html` and the `<amp-install-
 </body>
 [/sourcecode]
 
-[tip type="important"] **Important –** The service worker should be served from the root directory (`/sw.js`) to be able to cache all the content of your site. [/tip]
+[tip type="important"] **Önemli –** Sitenizin tüm içeriğini önbelleğe alabilmesi için hizmet çalışanı kök dizinden (`/sw.js`) sunulmalıdır. [/tip]
 
-The `<amp-install-serviceworker>` installs the service worker by creating an iframe and running the `data-iframe-src` file. Create the `install-sw.html` file and add the following code:
+`<amp-install-serviceworker>` , bir iframe oluşturarak ve `data-iframe-src` dosyasını çalıştırarak hizmet çalışanını yükler. `install-sw.html` dosyasını oluşturun ve aşağıdaki kodu ekleyin:
 
 [sourcecode:html]
 
@@ -109,17 +109,17 @@ The `<amp-install-serviceworker>` installs the service worker by creating an ifr
 </script>
 [/sourcecode]
 
-The iframe registers the AMP Service Worker file into the browser.
+iframe, AMP Hizmet Çalışanı dosyasını tarayıcıya kaydeder.
 
-# Customize what is cached
+# Önbelleğe alınanları özelleştirme
 
-The AMP Service Worker comes with built-in benefits while allowing optional fields that you can configure to optimize against your app's needs.
+AMP Hizmet Çalışanı, uygulamanızın ihtiyaçlarına göre optimize etmek için yapılandırabileceğiniz isteğe bağlı alanlara izin verirken kurulu avantajlarla birlikte gelir.
 
-Our music festival app will cache our image assets, prefetch the line up link, and specify an offline page.
+Müzik festivali uygulamamız görüntü varlıklarımızı önbelleğe alacak, sanatçı sıralaması bağlantısını önceden getirecek ve bir çevrimdışı sayfa belirleyecektir.
 
-## Cache Assets
+## Önbellek Varlıkları
 
-You can configure the AMP Service Worker to [cache assets](https://github.com/ampproject/amp-sw/tree/master/src/modules/asset-caching), such as images, videos and fonts. We'll use it to cache our background image and the AMP logo. Open the `sw.js` file and update it to the code below:
+AMP Hizmet Çalışanını görüntüler, videolar ve yazı tipleri gibi [varlıkları önbelleğe alacak](https://github.com/ampproject/amp-sw/tree/master/src/modules/asset-caching) şekilde yapılandırabilirsiniz. Biz onu arka plan resmimizi ve AMP logomuzu önbelleğe almak için kullanacağız. `sw.js` dosyasını açın ve aşağıdaki koda güncelleyin:
 
 [sourcecode:js]
 importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
@@ -131,11 +131,11 @@ cachingStrategy: 'CACHE_FIRST'
 });
 [/sourcecode]
 
-We've specified the caching strategy to be [cache first](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-falling-back-to-network). The means the app will try to serve images from cache first before requesting anything from the network. This is especially useful for this app since we won't be updating our background image or the AMP logo.
+Önbelleğe alma stratejisinin [önbellek öncelikli](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-falling-back-to-network) olmasını istedik. Bu, uygulamanın ağdan herhangi bir şey istemeden önce önbellekten resim sunmaya çalışacağı anlamına gelir. Bu özellikle arka plan resmimizi veya AMP logomuzu güncellemeyeceğimizden bu uygulama için kullanışlıdır.
 
-## Prefetch Links
+## Bağlantıları Önceden Getirme
 
-The AMP Service Worker prefetches links that have the `data-rel=prefetch` attribute. This enables users to view pages offline even if they haven't visited them yet. We'll add the attribute to our link tag for `lineup.html`.
+AMP Hizmet Çalışanı,`data-rel=prefetch` özniteliğine sahip bağlantıları önceden getirir. Bu işlem, kullanıcıların sayfaları henüz ziyaret etmemiş olsalar bile çevrimdışı görüntülemelerini sağlar. Özniteliği, `lineup.html` için bağlantı etiketimize ekleyeceğiz.
 
 [sourcecode:html]
 ...
@@ -143,9 +143,9 @@ The AMP Service Worker prefetches links that have the `data-rel=prefetch` attrib
 ...
 [/sourcecode]
 
-# Show an offline page
+# Çevrimdışı bir sayfa gösterme
 
-To deal with unexpected cases or clicks on links to pages that we didn't prefetch, we'll add an offline page to offer a consistent user experience that is "on brand", as opposed to showing the generic browser offline page. Download [`offline.html` here](/static/files/tutorials/offline.zip) and update `sw.js` to the following code:
+Beklenmedik durumlarla veya önceden getirmediğimiz sayfaların bağlantılarına yapılan tıklamalarla başa çıkmak için, genel tarayıcı çevrimdışı sayfasını göstermek yerine "markaya uygun" tutarlı bir kullanıcı deneyimi sunmak için bir çevrimdışı sayfa ekleyeceğiz. [`offline.html` sayfasını buradan](/static/files/tutorials/offline.zip) indirin ve `sw.js` kodunu aşağıdaki kodla güncelleyin:
 
 [sourcecode:js]
 importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
@@ -161,26 +161,26 @@ assets: []
 });
 [/sourcecode]
 
-# Test your PWA
+# PWA'nızı test edin
 
-You can test that your AMP Service Worker is caching necessary assets and providing an ideal offline solution through [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/progressive-web-apps).
+AMP Hizmet Çalışanınızın gerekli varlıkları önbelleğe aldığını ve [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/progressive-web-apps) aracılığıyla ideal bir çevrimdışı çözüm sağladığını test edebilirsiniz.
 
-We'll test Lyrical Lyghtning by opening the DevTools panel by hitting `Ctrl + Shift + I` on Windows or `Cmd + Opt + I` on Mac. You can also right click the page and select `inspect` from the menu. Then select `Application` to view your service worker registration.
+Windows'da `Ctrl + Shift + I` veya Mac'te `Cmd + Opt + I` tuşlarına basıp DevTools panelini açarak Lyrical Lyghtning'i test edeceğiz. Ayrıca sayfada sağ tıklayıp menüden `incele` seçeneğini de seçebilirsiniz. Ardından, hizmet çalışanı kaydınızı görüntülemek için `Uygulama` seçeneğini seçin.
 
 {{ image('/static/img/docs/tutorials/amp-sw-test.png', 1349, 954, alt='DevTools panel open on lyrical lyghtning PWA' ) }}
 
-Click the `offline` box to switch into offline mode. Click the `see full lineup` link and navigate to `offline.html` to check if they were properly cached and prefetched.
+Çevrimdışı moda geçmek için `çevrimdışı` kutusunu tıklayın. Düzgün bir şekilde önbelleğe alınıp alınmadıklarını kontrol etmek için `tüm sanatçı listesini göster` bağlantısını tıklayın ve ` offline.html` sayfasına gidin.
 
-[tip type="default"] **Tip –** For a thorough analysis of a Progressive Web App's features, run [Google's Lighhouse tool](https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool) to generate a report. [/tip]
+[tip type="default"] **İpucu –** Aşamalı Web Uygulamaları özelliklerinin kapsamlı bir analizi için [ Google'ın Lighthouse aracını](https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool) çalıştırın ve bir rapor oluşturun. [/tip]
 
-# Congratulations!
+# Tebrikler!
 
-You have successfully created an PWA with AMP! In this tutorial you learned to:
+AMP ile başarıyla bir PWA oluşturdunuz! Bu öğreticide şunları öğrendiniz:
 
-- Create a [Web App Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/)
-- Install a Service Worker in AMP using [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md)
-- Customize the [AMP Service Worker ](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html)
+- [Web Uygulama Sunumu Oluşturma](https://developers.google.com/web/fundamentals/web-app-manifest/)
+- [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) kullanarak AMP'de bir Hizmet Çalışanı yükleme
+- [AMP Hizmet Çalışanını](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html) özelleştirme
 - [Prefetch links ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
-- Create an offline page
+- Çevrimdışı bir sayfa oluşturma
 
-Read more about [Service Worker](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html)s and [offline UX considerations](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux). Learn to t[rack engagement with analytics ](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.html)and follow the tutorial on [how to configure basic analytics for your AMP pages](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/tracking-engagement.html).
+[Hizmet Çalışanları](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html) ve [çevrimdışı kullanıcı deneyimi konuları](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux) hakkında daha fazla bilgi edinin. [Analizlerle etkileşimi takip etmeyi](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.html) öğrenin ve [AMP sayfalarınız için temel analizi nasıl yapılandıracağınızla](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/tracking-engagement.html) ilgili öğreticiyi izleyin.
