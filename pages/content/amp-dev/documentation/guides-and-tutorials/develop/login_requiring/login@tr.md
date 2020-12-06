@@ -49,7 +49,7 @@ Düğmenin HTML koduna tekrar baktığımızda, `on="tap: amp-access.login-sign-
 
 [/sourcecode]
 
-[tip type="note"] **NOTE –**  Notice that it’s possible to define different URLs inside the login node, in this case we are defining `sign-in`, and we will later define `sign-out`. [/tip]
+[tip type="note"] **NOT -** Giriş düğümü içinde farklı URL'ler tanımlamanın mümkün olduğuna dikkat edin, bu durumda `sign-in` tanımlıyoruz ve daha sonra `sign-out` tanımlayacağız. [/tip]
 
 Giriş sayfası, basitlik amacıyla giriş ve şifre değerlerini doldurduğumuz AMP olmayan bir sayfadır. AMPByExample sunucusu tarafından sunucu tarafı şablon oluşturması yoluyla doldurulan `returnURL` gizli giriş türünün kullanımına dikkat edin. Sunucu bu değeri, AMP kitaplığı tarafından giriş yapma URL'sine otomatik olarak eklenen `return` adlı bir parametreden okur.
 
