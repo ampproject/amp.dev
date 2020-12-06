@@ -53,10 +53,10 @@ limitations under the License.
 Öğe | Açıklama
 --- | ---
 [yerleşim öznitelikleri](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/#layout-attributes) | Yerleşim davranışı yerleşim özniteliği tarafından belirlenir.
-[`<amp-accordion>`](https://amp.dev/documentation/components/amp-accordion) | A UI element that facilitates showing/hiding different sections.
-[`<amp-carousel>`](https://amp.dev/documentation/components/amp-carousel) | A carousel UI component.
+[`<amp-accordion>`](https://amp.dev/documentation/components/amp-accordion) | Farklı bölümleri göstermeyi/gizlemeyi kolaylaştıran bir kullanıcı arayüzü öğesi.
+[`<amp-carousel>`](https://amp.dev/documentation/components/amp-carousel) | Bir resim döngüsü kullanıcı arayüzü bileşeni.
 [`<amp-fit-text>`](https://amp.dev/documentation/components/amp-fit-text) | Belirli bir alana metin sığdırmak için yardımcı bir bileşen.
-[`<amp-layout>`](https://amp.dev/documentation/components/amp-layout) | A container that can have aspect-ratio based responsive layouts.
+[`<amp-layout>`](https://amp.dev/documentation/components/amp-layout) | En boy oranı tabanlı duyarlı yerleşimlere sahip olabilen bir kapsayıcı.
 [`<amp-sidebar>`](https://amp.dev/documentation/components/amp-sidebar) | Navigasyon amaçlı bir kenar çubuğu.
 [`<amp-timeago>`](https://amp.dev/documentation/components/amp-timeago) | Zaman damgalarını oluşturmanın uygun bir yolunu sağlar.
 
