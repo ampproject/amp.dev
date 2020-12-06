@@ -236,7 +236,7 @@ Voila! Resmimiz doğru en boy oranında ve ekran genişliğini duyarlı bir şek
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="Our image is now responsive!") }}
 
-[tip type="read-on"] **READ ON –** Learn more about the AMP Layout System in the [AMP Layout Specification](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md). [/tip]
+[tip type="read-on"] **OKUMAYA DEVAM EDİN -** [AMP Yerleşim Teknik Özelliklerinde](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md) AMP Yerleşim Sistemi hakkında daha fazla bilgi edinin. [/tip]
 
 ## Başarılı!
 
