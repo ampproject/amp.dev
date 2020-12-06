@@ -18,7 +18,7 @@ AMP ile kullanıcı etkileşimini geliştirmek için bazı hızlı ipuçları.
 
 ### Kullanıcı etkileşimi ve saklama için optimize edin
 
-- **Provide interactive experiences** on your AMP pages. Use components like [`amp-carousel`](../../../documentation/components/reference/amp-carousel.md) to create rich image carousels and [`amp-iframe`](../../../documentation/components/reference/amp-iframe.md) to incorporate interactive elements that AMP does not natively support.
+- AMP sayfalarınızda **etkileşimli deneyimler sağlayın**. Zengin resim döngüleri oluşturmak için [`amp-carousel`](../../../documentation/components/reference/amp-carousel.md) ve AMP'nin yerel olarak desteklemediği etkileşimli öğeleri dahil etmek için [`amp-iframe`](../../../documentation/components/reference/amp-iframe.md) gibi bileşenleri kullanın.
 
 - **Kişiselleştirilmiş kullanıcı yolculukları oluşturun.** Bir oturum açma düğmesi sunun ve içeriğiniz bir ödeme duvarının arkasında bulunuyorsa, [`amp-access`](../../../documentation/components/reference/amp-access.md) bileşenini kullanarak kurallarınızı ve tekliflerinizi uygulayın.
 
@@ -26,7 +26,7 @@ AMP ile kullanıcı etkileşimini geliştirmek için bazı hızlı ipuçları.
 
 - [`amp-list`](../../../documentation/components/reference/amp-list.md) aracılığıyla öneriler de dahil olmak üzere **içeriği kişiselleştirin**.
 
-- **Implement a menu** with [`amp-sidebar`](../../../documentation/components/reference/amp-sidebar.md) to encourage users to browse the rest of your site.
+- Kullanıcıları sitenizin geri kalanına göz atmaya teşvik etmek için <a><code data-md-type="codespan">amp-sidebar</code></a> içeren **bir menü uygulayın**.
 
 - [`amp-social-share`](../../../documentation/components/reference/amp-social-share.md) ve kendi paylaşım düğmelerinizle **okuyucuların içeriğinizi paylaşmasına yardımcı olun**.
 
@@ -36,7 +36,7 @@ AMP ile kullanıcı etkileşimini geliştirmek için bazı hızlı ipuçları.
 
 - **Uygulama indirme sayısını artırın.** [`amp-app-banner`](../../../documentation/components/reference/amp-app-banner.md) ile bir banner'a uygulama yükleme bağlantısı ekleyin.
 
-- **Ensure a fast transition** to your non-AMP Progressive Web App (PWA) site for readers. Use [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) to populate your cache.
+- Okuyucular için AMP Aşamalı Web Uygulaması (PWA) olmayan sitenize **hızlı bir geçiş sağlayın.** Önbelleğinizi doldurmak için [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) kullanın.
 
 ### Gelişimini şekillendirmeye yardımcı olmak için açık kaynaklı AMP projesine katılın
 
