@@ -11,7 +11,7 @@ contributors:
 
 Web sitenize en iyi AMP deneyimini sunmak için bu kontrol listesini takip edin!
 
-# Ensure AMP Specification Validation
+# AMP Teknik Özellik Doğrulamasını Sağlama
 
 AMP, AMP Önbelleklerinden içeriği önceden yükleyerek kullanıcı bekleme süresini azaltmak gibi bir ton yerleşik avantajla birlikte gelir. Bu avantajları elde etmek için sayfaların geçerli AMP belgeleri olması gerekir. AMP doğrulayıcı tarafından bildirilen hatalarla yayınlanan sayfalar, AMP Önbellekleri tarafından dizine eklenmez ve muhtemelen hata sayfaları olarak sunulur.
 
@@ -100,7 +100,7 @@ Sayfalarınızı nasıl keşfedilebilir hale getireceğinizi öğrenin:
 
 - [Sayfanızı bulunabilir hale getirin ](discovery.md?format=websites)
 - [Robots.txt](http://www.robotstxt.org/)
-- [Robots meta tag and X-Robots-Tag HTTP header specifications](https://developers.google.com/search/reference/robots_meta_tag)
+- [Robots meta etiketi ve X-Robots-Tag HTTP başlık teknik özellikleri](https://developers.google.com/search/reference/robots_meta_tag)
 - [AMP Dizinleme SSS'leri](https://productforums.google.com/forum/?hl=en#!category-topic/webmasters/Vrgj-a-gtm0)
 
 # Kullanıcı trafiğini ve yolculuklarını ölçme
