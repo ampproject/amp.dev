@@ -1,5 +1,5 @@
 ---
-"$title": Actions and events
+"$title": Eylemler ve olaylar
 order: '0'
 formats:
 - websites
@@ -32,72 +32,71 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-[tip type="note"] This documentation covers actions and events for AMP websites, stories and ads. Read [Actions and events in AMP email](https://github.com/ampproject/amphtml/blob/master/spec/amp-email-actions-and-events.md) for the AMP email format. [/tip]
+[tip type="note"] Bu belgeleme web siteleri, hikayeler ve reklamlar için eylemleri ve olayları kapsar. AMP e-posta biçimi için [AMP e-postasında eylemler ve olaylar](https://github.com/ampproject/amphtml/blob/master/spec/amp-email-actions-and-events.md) sayfasını okuyun. [/tip]
 
-The `on` attribute is used to install event handlers on elements. The events that are supported depend on the element.
+`on` özniteliği, öğelerde olay işleyicisi yüklemek için kullanılır. Desteklenen olaylar, öğelere bağlıdır.
 
-The value for the syntax is a simple domain-specific language of the form:
+Sözdiziminin değeri, formun etki alanına özgü basit bir dilidir:
 
 [sourcecode:javascript]
 eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
 
-See the table below for descriptions of each part of the syntax.
+Sözdiziminin her bir parçasının açıklamaları için aşağıdaki tabloya bakın.
 
 <table>
   <tr>
-    <th width="30%">Syntax</th>
-    <th width="18%">Required?</th>
-    <th width="42%">Description</th>
+    <th width="30%">Sözdizimi</th>
+    <th width="18%">Gerekli mi?</th>
+    <th width="42%">Açıklama</th>
   </tr>
   <tr>
     <td><code>eventName</code></td>
-    <td>yes</td>
-    <td>This is the name of the event that an element exposes.</td>
+    <td>evet</td>
+    <td>Bu, bir öğenin gösterdiği olayın adıdır.</td>
   </tr>
   <tr>
     <td><code>targetId</code></td>
-    <td>yes</td>
+    <td>evet</td>
     <td>This is the DOM id for the element, or a predefined <a href="#special-targets">special target</a> you'd like to execute an action on  in response to the event. In the following example, the <code>targetId</code> is the DOM id of the <code>amp-lightbox</code> target, <code>photo-slides</code>.     <pre><amp-lightbox id="photo-slides"></amp-lightbox>
 <button on="tap:photo-slides">Show Images</button></pre>     </td>
   </tr>
   <tr>
     <td><code>methodName</code></td>
-    <td>no</td>
-    <td>This is for elements with default actions.<p>This is the method that the target element (referenced by <code>targetId</code>) exposes and you'd like to execute when the event is triggered.</p>
-<p>AMP has a concept of a default action that elements can implement. So when omitting the <code>methodName</code> AMP will execute that default method.</p>
+    <td>hayır</td>
+    <td>Varsayılan eylemleri olan öğeler içindir.<p>Bu sözdizimi, hedef öğenin (<code>targetId</code> ile referansı verilen) gösterdiği ve bir olay tetiklendiğinde yürütmek isteyeceğiniz yöntemdir.</p> <p>AMP'nin öğelerin uygulayabileceği bir varsayılan konsepti vardır. Yani <code>methodName</code> çıkarıldığında, AMP bu varsayılan yöntemi uygulayacaktır.</p>
 </td>
   </tr>
   <tr>
     <td><code>arg=value</code></td>
-    <td>no</td>
+    <td>hayır</td>
     <td>Bazı eylemler belgelenmişlerse, argüman kabul edebilirler. Argümanlar, <code>key=value</code> gösterimde parantez için tanımlanır. Kabul edilen değerler: <ul> <li>tırnak içinde olmayan basit metin dizeleri: <code>simple-value</code> </li> <li>tırnak içindeki metin dizeleri: <code>"string value"</code> veya <code>'string value'</code> </li> <li>boole değerleri: <code>true</code> veya <code>false</code> </li> <li>numbers: <code>11</code> veya <code>1.1</code> </li> <li>olay verilerine dot-syntax referansı: <code>event.someDataVariableName</code> </li> </ul>
 </td>
   </tr>
 </table>
 
-## Handling multiple events <a name="handling-multiple-events"></a>
+## Birden fazla olayı işleme <a name="handling-multiple-events"></a>
 
-You can listen to multiple events on an element by separating the events with a semicolon `;`.
+Olayları noktalı virgül `;` ile ayırarak bir öğede birden fazla olayı dinleyebilirsiniz.
 
-Example: `on="submit-success:lightbox1;submit-error:lightbox2"`
+Örnek: `on="submit-success:lightbox1;submit-error:lightbox2"`
 
-## Multiple actions for one event <a name="multiple-actions-for-one-event"></a>
+## Tek olay için birden fazla eylem <a name="multiple-actions-for-one-event"></a>
 
-You can execute multiple actions in sequence for the same event by separating the actions with a comma ','.
+Eylemleri ',' virgül ile ayırarak aynı eylem için sıralı olarak birden fazla eylem yürütebilirsiniz.
 
-Example: `on="tap:target1.actionA,target2.actionB"`
+Örnek: `on="tap:target1.actionA,target2.actionB"`
 
-## Globally-defined events and actions <a name="globally-defined-events-and-actions"></a>
+## Genel olarak tanımlı etkinlikler ve eylemler <a name="globally-defined-events-and-actions"></a>
 
-AMP defines a `tap` event globally that you can listen to on any HTML element (including AMP elements).
+AMPher türlü HTML öğesinde (AMP öğeleri dahil) dinleyebileceğiniz bir `tap` olayını genel olarak tanımlar.
 
-AMP also defines the `hide`, `show` and `toggleVisibility` actions globally that you can trigger on any HTML element.
+AMP ayrıca herhangi bir HTML öğesinde tetikleyebileceğiniz `hide`, `show` ve `toggleVisibility` eylemlerini de genel olarak tanımlar.
 
 [tip type="note"]
 
-An element can only be shown if it was previously hidden by a `hide` or `toggleVisibility` action, or by using the [`hidden`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden) attribute. The `show` action does not support elements hidden by CSS `display:none` or AMP's `layout=nodisplay`.
+Bir öğe ancak önceden `hide` veya `toggleVisibility` eylemiyle gizlenmişse ya da [`hidden`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden) özniteliği kullanılmışsa gösterilebilir. `show` eylemi CSS `display:none` veya AMP'nin `layout=nodisplay` öğesi tarafından gizlenen öğeleri desteklemez.
 
-For example, the following is possible in AMP:
+Örneğin, aşağıdaki, AMP'de mümkündür:
 
 [sourcecode:html]
 
@@ -108,29 +107,29 @@ For example, the following is possible in AMP:
 
 [/tip]
 
-## Element-specific events <a name="element-specific-events"></a>
+## Öğeye özgü olaylar <a name="element-specific-events"></a>
 
-### * - all elements <a name="---all-elements"></a>
+### * - tüm öğeler <a name="---all-elements"></a>
 
 <table>
   <tr>
-    <th>Event</th>
-    <th>Description</th>
+    <th>Olay</th>
+    <th>Açıklama</th>
   </tr>
   <tr>
     <td><code>tap</code></td>
-    <td>Fired when the element is clicked/tapped.</td>
+    <td>Öğeye tıklandığında/dokunulduğunda tetiklenir.</td>
   </tr>
 </table>
 
-### Input elements <a name="input-elements"></a>
+### Giriş öğeleri <a name="input-elements"></a>
 
 <table>
   <tr>
-    <th width="20%">Event</th>
-    <th width="30%">Description</th>
-    <th width="40%">Elements</th>
-    <th>Data</th>
+    <th width="20%">Olay</th>
+    <th width="30%">Açıklama</th>
+    <th width="40%">Öğeler</th>
+    <th>Veri</th>
   </tr>
   <!-- change -->
   <tr>
@@ -163,144 +162,145 @@ event.value</pre>
   <!-- input-debounced -->
   <tr>
     <td><code>input-debounced</code></td>
-    <td>Fired when the value of the element is changed. This is similar to the standard <code>change</code> event, but it only fires when 300ms have passed after the value of the input has stopped changing.</td>
-    <td>Elements that fire <code>input</code> event.</td>
-    <td>Same as <code>change</code> event data.</td>
+    <td>Öğenin değeri değiştirildiğinde tetiklenir. Bu, standart <code>change</code> olayına benzer, ancak yalnızca giriş değerinin değişmesi durduktan sonra 300msn geçtiğinde tetiklenir.</td>
+    <td>
+<code>input</code> olayını tetikleyen öğeler.</td>
+    <td>
+<code>change</code> olayı verileriyle aynı.</td>
   </tr>
     <!-- input-throttled -->
   <tr>
     <td><code>input-throttled</code></td>
-    <td>Fired when the value of the element is changed. This is similar to the standard <code>change</code> event, but it is throttled to firing at most once every 100ms while the value of the input is changing.</td>
-    <td>Elements that fire <code>input</code> event.</td>
-    <td>Same as <code>change</code> event data.</td>
+    <td>Öğenin değeri değiştirildiğinde tetiklenir. Bu standart <code>change</code> olayına benzer, ancak girişin değeri değişirken en fazla 100msn'de bir kez tetiklenir.</td>
+    <td>
+<code>input</code> olayını tetikleyen öğeler.</td>
+    <td>
+<code>change</code> olayı verileriyle aynı.</td>
   </tr>
 </table>
 
-### amp-accordion > section <a name="amp-accordion"></a>
+### amp-accordion > bölüm <a name="amp-accordion"></a>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Olay</th>
+    <th width="35%">Açıklama</th>
+    <th width="40%">Veriler</th>
   </tr>
   <tr>
     <td><code>expand</code></td>
-    <td>Fired when an accordion section expands.</td>
-    <td>None.</td>
+    <td>Akordeon bölümü genişletildiğinde tetiklenir.</td>
+    <td>Yok.</td>
   </tr>
   <tr>
     <td><code>collapse</code></td>
-    <td>Fired when an accordion section collapses.</td>
-    <td>None.</td>
+    <td>Akordeon bölümü küçültüldüğünde tetiklenir.</td>
+    <td>Yok.</td>
   </tr>
 </table>
 
-### amp-carousel[type="slides"] <a name="amp-carouseltypeslides"></a>
+### amp-carousel[type="slides"] <a name="amp-carouseltypeslides-1"></a>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Olay</th>
+    <th width="35%">Açıklama</th>
+    <th width="40%">Veriler</th>
   </tr>
   <tr>
     <td><code>slideChange</code></td>
-    <td>Fired when the carousel's current slide changes.</td>
-    <td><pre>// Slide number.
-event.index</pre></td>
+    <td>Döngünün geçerli slaytı değiştiğinde tetiklenir.</td>
+    <td><pre>// Slide number.<br>event.index</pre></td>
   </tr>
 </table>
 
-### amp-lightbox <a name="amp-lightbox"></a>
+### amp-lightbox <a name="amp-lightbox-1"></a>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Olay</th>
+    <th width="35%">Açıklama</th>
+    <th width="40%">Veriler</th>
   </tr>
   <tr>
     <td><code>lightboxOpen</code></td>
-    <td>Fired when lightbox is fully visible.</td>
-    <td>None</td>
+    <td>lightbox tam görünür olduğunda tetiklenir.</td>
+    <td>Yok</td>
   </tr>
   <tr>
     <td><code>lightboxClose</code></td>
-    <td>Fired when lightbox is fully closed.</td>
-    <td>None</td>
+    <td>lightbox tam kapalı olduğunda tetiklenir.</td>
+    <td>Yok</td>
   </tr>
 </table>
 
-### amp-list <a name="amp-list"></a>
+### amp-list <a name="amp-list-1"></a>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Olay</th>
+    <th width="35%">Açıklama</th>
+    <th width="40%">Veriler</th>
   </tr>
   <tr>
     <td><code>changeToLayoutContainer</code></td>
-    <td>Update's <code>amp-list</code>'s layout to <code>layout="CONTAINTER"</code> to allow <a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">dynamic resizing</a>.</td>
+    <td>
+<a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">Dinamik yeniden boyutlandırmaya</a> izin vermek için <code>amp-list</code> yerleşimini <code>layout="CONTAINTER"</code> olarak günceller.</td>
   </tr>
   <tr>
     <td> <code>fetch-error</code>(düşük güven)</td>
-    <td>Fired when fetching data fails.</td>
-    <td>None</td>
+    <td>Veri getirilemediğinde tetiklenir.</td>
+    <td>Yok</td>
   </tr>
 </table>
 
-### amp-selector <a name="amp-selector"></a>
+### amp-selector <a name="amp-selector-1"></a>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Olay</th>
+    <th width="35%">Açıklama</th>
+    <th width="40%">Veriler</th>
   </tr>
   <tr>
     <td><code>select</code></td>
-    <td>Fired when an option is selected or deselected.</td>
-    <td><pre>// Target element's "option" attribute value.
-event.targetOption
-// Array of "option" attribute values of all selected elements.
-event.selectedOptions</pre></td>
+    <td>Bir seçenek seçildiğinde veya seçimi kaldırıldığında tetiklenir.</td>
+    <td><pre>// Target element's "option" attribute value.<br>event.targetOption<br>// Array of "option" attribute values of all selected elements.<br>event.selectedOptions</pre></td>
   </tr>
 </table>
 
-### amp-sidebar <a name="amp-sidebar"></a>
+### amp-sidebar <a name="amp-sidebar-1"></a>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Olay</th>
+    <th width="35%">Açıklama</th>
+    <th width="40%">Veriler</th>
   </tr>
   <tr>
     <td><code>sidebarOpen</code></td>
-    <td>Fired when sidebar is fully opened after transition has ended.</td>
-    <td>None</td>
+    <td>Geçiş sona erdikten sonra kenar çubuğu tamamen açıldığında tetiklenir.</td>
+    <td>Yok</td>
   </tr>
   <tr>
     <td><code>sidebarClose</code></td>
-    <td>Fired when sidebar is fully closed after transition has ended.</td>
-    <td>None</td>
+    <td>Geçiş sona erdikten sonra kenar çubuğu tamamen kapatıldığında tetiklenir.</td>
+    <td>Yok</td>
   </tr>
 </table>
 
-### amp-state <a name="amp-state"></a>
+### amp-state <a name="amp-state-1"></a>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Olay</th>
+    <th width="35%">Açıklama</th>
+    <th width="40%">Veriler</th>
   </tr>
   <tr>
     <td> <code>fetch-error</code>(düşük güven)</td>
-    <td>Fired when fetching data fails.</td>
-    <td>None</td>
+    <td>Veri getirilemediğinde tetiklenir.</td>
+    <td>Yok</td>
   </tr>
 </table>
 
@@ -308,18 +308,18 @@ event.selectedOptions</pre></td>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Olay</th>
+    <th width="35%">Açıklama</th>
+    <th width="40%">Veriler</th>
   </tr>
   <tr>
     <td> <code>firstPlay</code>(düşük güven)</td>
-    <td>Fired the first time the video is played by the user. On autoplay videos, this is fired as soon as the user interacts with the video. This event is low-trust which means it can not trigger most actions; only low-trust actions such as <code>amp-animation</code> actions can be run.</td>
+    <td>Video, kullanıcı tarafından ilk kez oynatıldığında tetiklenir. Otomatik oynatılan videolarda, bu olay, kullanıcı videoyla etkileşime girer girmez tetiklenir. Bu olay düşük güvene sahiptir, yani çoğu eylemi tetikleyemez; yalnızca <code>amp-animation</code> eylemleri gibi düşük güvene sahip eylemleri çalıştırılabilir.</td>
     <td></td>
   </tr>
   <tr>
     <td> <code>timeUpdate</code>(düşük güven)</td>
-    <td>Fired when the playing position of a video has changed. Frequency of the event is controlled by AMP and is currently set at 1 second intervals. This event is low-trust which means it can not trigger most actions; only low-trust actions such as <code>amp-animation</code> actions can be run.</td>
+    <td>Bir videonun oynatma konumu değiştiğinde kullanılır. Olayın sıklığı AMP tarafından kontrol edilir ve şu anda 1 saniyelik aralık şeklinde ayarlanmıştır. Bu olay düşük güvene sahiptir, yani çoğu eylemi tetikleyemez; yalnızca <code>amp-animation</code> eylemleri gibi düşük güven gerektiren eylemler çalıştırılabilir.</td>
     <td>
 <code>{time, percent}</code><code>time</code> geçerli zamanı saniye cinsinden gösterir, <code>percent</code> 0 ile 1 arasında bir sayıdır ve geçerli konumu toplam zamanın yüzdesi olarak gösterir.</td>
   </tr>
@@ -329,51 +329,49 @@ event.selectedOptions</pre></td>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Olay</th>
+    <th width="35%">Açıklama</th>
+    <th width="40%">Veriler</th>
   </tr>
   <tr>
     <td><code>submit</code></td>
-    <td>Fired when the form is submitted.</td>
+    <td>Form gönderildiğinde teslim edilir.</td>
     <td></td>
   </tr>
   <tr>
     <td><code>submit-success</code></td>
-    <td>Fired when the form submission response is success.</td>
-    <td><pre>// Response JSON.
-event.response</pre></td>
+    <td>Form gönderme yanıtı başarılı olduğunda tetiklenir.</td>
+    <td><pre>// Response JSON.<br>event.response</pre></td>
   </tr>
   <tr>
     <td><code>submit-error</code></td>
-    <td>Fired when the form submission response is an error.</td>
-    <td><pre>// Response JSON.
-event.response</pre></td>
+    <td>Form gönderme yanıtı bir hata verdiğinde tetiklenir.</td>
+    <td><pre>// Response JSON.<br>event.response</pre></td>
   </tr>
   <tr>
     <td><code>valid</code></td>
-    <td>Fired when the form is valid.</td>
+    <td>Form geçerli olduğunda tetiklenir.</td>
     <td></td>
   </tr>
   <tr>
     <td><code>invalid</code></td>
-    <td>Fired when the form is invalid.</td>
+    <td>Form geçersiz olduğunda tetiklenir.</td>
     <td></td>
   </tr>
 </table>
 
-## Element-specific actions <a name="element-specific-actions"></a>
+## Öğeye özgü eylemler <a name="element-specific-actions"></a>
 
-### * (all elements) <a name="-all-elements"></a>
+### * (tüm öğeler) <a name="-all-elements"></a>
 
 <table>
   <tr>
-    <th width="40%">Action</th>
-    <th>Description</th>
+    <th width="40%">Eylem</th>
+    <th>Açıklama</th>
   </tr>
   <tr>
     <td><code>hide</code></td>
-    <td>Hides the target element.</td>
+    <td>Hedef öğeyi gizler.</td>
   </tr>
   <tr>
     <td><code>show</code></td>
@@ -385,7 +383,7 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>toggleClass(class=STRING, force=BOOLEAN)</code></td>
-    <td>Toggles class of the target element. <code>force</code> is optional, and if defined, it ensures that class would only be added but not removed if set to <code>true</code>, and only removed but not added if set to <code>false</code>.</td>
+    <td>Hedef öğenin sınıfını değiştirir. <code>force</code> isteğe bağlıdır ve tanımlanırsa, sınıfın yalnızca <code>true</code> olarak ayarlandığında eklenmesini, ancak kaldırılmamasını ve yalnızca <code>false</code> olarak ayarlandığında kaldırılmasını sağlar.</td>
   </tr>
   <tr>
     <td><code>scrollTo(duration=INTEGER, position=STRING)</code></td>
@@ -401,8 +399,8 @@ event.response</pre></td>
 
 <table>
   <tr>
-    <th width="20%">Action</th>
-    <th>Description</th>
+    <th width="20%">Eylem</th>
+    <th>Açıklama</th>
   </tr>
   <tr>
     <td><code>play</code></td>
@@ -418,28 +416,28 @@ event.response</pre></td>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Eylem</th>
+    <th>Açıklama</th>
   </tr>
   <tr>
     <td><code>play</code></td>
-    <td>Plays the animation.</td>
+    <td>Animasyonu oynatır.</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
-    <td>Pauses the animation.</td>
+    <td>Animasyonu duraklatır.</td>
   </tr>
   <tr>
     <td><code>stop</code></td>
-    <td>Stops the animation.</td>
+    <td>Animasyonu durdurur.</td>
   </tr>
   <tr>
     <td><code>seekTo(time=INTEGER)</code></td>
-    <td>Sets the currentTime of the animation to the specified value and pauses animation. </td>
+    <td>Animasyonun currentTime değerini belirtilen değere ayarlar ve animasyonu duraklatır.</td>
   </tr>
   <tr>
     <td><code>seekTo(percent=[0,1])</code></td>
-    <td>Uses the given percentage value to determine the currentTime of the animation to the specified value and pauses animation. </td>
+    <td>Animasyonun currentTime değerini belirtilen değer olarak ayarlamak için verilen yüzde değerini kullanır ve animasyonu duraklatır.</td>
   </tr>
 </table>
 
@@ -447,8 +445,8 @@ event.response</pre></td>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Eylem</th>
+    <th>Açıklama</th>
   </tr>
   <tr>
     <td><code>toggle(section=STRING)</code></td>
@@ -458,28 +456,30 @@ event.response</pre></td>
 </tr>
   <tr>
     <td><code>expand(section=STRING)</code></td>
-    <td>Expands the sections of the accordion. If a section is already expanded, it stays expanded. When called with no arguments, it expands all sections of the accordion. Trigger on a specific section by providing the section id: <code>on="tap:myAccordion.expand(section='section-id')"</code>.</td>
+    <td>Akordeonun bölümlerini genişletir. Bir bölüm zaten genişletilmişse, genişletilmiş olarak kalır. Argüman olmadan çağrıldığında, akordeonun tüm bölümlerini genişletir. Id bölümünü belirterek belirli bir bölümü tetikler:<code>on="tap:myAccordion.expand(section='section-id')"</code>
+</td>
   </tr>
   <tr>
     <td><code>collapse(section=STRING)</code></td>
-    <td>Collapses the sections of the accordion. If a section is already collapsed, it stays collapsed. When called with no arguments, it collapses all sections of the accordion. Trigger on a specific section by providing the section id: <code>on="tap:myAccordion.collapse(section='section-id')"</code>.</td>
+    <td>Akordeonun bölümlerini daraltır. Bir bölüm zaten daraltılmışsa, daraltılmış olarak kalır. Argüman olmadan çağrıldığında, akordeonun tüm bölümlerini daraltır. Id bölümünü belirterek belirli bir bölümü tetikler: <code>on="tap:myAccordion.collapse(section='section-id')"</code>
+</td>
   </tr>
 </table>
 
-### amp-carousel[type="slides"] <a name="amp-carouseltypeslides-1"></a>
+### amp-carousel[type="slides"] <a name="amp-carouseltypeslides"></a>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Eylem</th>
+    <th>Açıklama</th>
   </tr>
   <tr>
     <td><code>goToSlide(index=INTEGER)</code></td>
-    <td>Advances the carousel to a specified slide index.</td>
+    <td>Döngüyü belirtilen bir slayt dizinine ilerletir.</td>
   </tr>
   <tr>
     <td><code>toggleAutoplay(toggleOn=true|false)</code></td>
-    <td>Toggle the carousel's autoplay status. <code>toggleOn</code> is optional.</td>
+    <td>Döngünün otomatik oynatma durumunu değiştirir. <code>toggleOn</code> isteğe bağlıdır.</td>
   </tr>
 </table>
 
@@ -487,29 +487,29 @@ event.response</pre></td>
 
 <table>
   <tr>
-    <th width="40%">Action</th>
-    <th>Description</th>
+    <th width="40%">Eylem</th>
+    <th>Açıklama</th>
   </tr>
   <tr>
     <td><code>open (default)</code></td>
-    <td>Opens the image lightbox with the source image being the one that triggered the action.</td>
+    <td>Kaynak görüntünün eylemi tetiklediği görüntü lightbox'ını açar.</td>
   </tr>
 </table>
 
-### amp-lightbox <a name="amp-lightbox-1"></a>
+### amp-lightbox <a name="amp-lightbox"></a>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Eylem</th>
+    <th>Açıklama</th>
   </tr>
   <tr>
     <td><code>open (default)</code></td>
-    <td>Opens the lightbox.</td>
+    <td>Lightbox'ı açar.</td>
   </tr>
   <tr>
     <td><code>close</code></td>
-    <td>Closes the lightbox.</td>
+    <td>Lightbox'ı kapatır.</td>
   </tr>
 </table>
 
@@ -517,25 +517,25 @@ event.response</pre></td>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Eylem</th>
+    <th>Açıklama</th>
   </tr>
   <tr>
     <td><code>open</code></td>
-    <td>Opens the lightbox-gallery. Can be triggered by tapping another element, if you specify the image id: `on="tap:amp-lightbox-gallery.open(id='image-id')"`.</td>
+    <td>Lightbox-gallery'yi açar. Göründü id belirtilmişse, başka bir öğeye dokunarak tetiklenebilir: `on="tap:amp-lightbox-gallery.open(id='image-id')"`.</td>
   </tr>
 </table>
 
-### amp-list <a name="amp-list-1"></a>
+### amp-list <a name="amp-list"></a>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Eylem</th>
+    <th>Açıklama</th>
   </tr>
   <tr>
     <td><code>refresh</code></td>
-    <td>Refreshes data from the <code>src</code> and re-renders the list.</td>
+    <td>Verileri <code>src</code> öğesinden yeniler ve listeyi yeniden işler.</td>
   </tr>
 </table>
 
@@ -543,33 +543,33 @@ event.response</pre></td>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Eylem</th>
+    <th>Açıklama</th>
   </tr>
   <tr>
     <td><code>update (default)</code></td>
-    <td>Updates the DOM items to show updated content.</td>
+    <td>Güncellenmiş içeriği göstermek için DOM öğelerini günceller.</td>
   </tr>
 </table>
 
-### amp-selector <a name="amp-selector-1"></a>
+### amp-selector <a name="amp-selector"></a>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Eylem</th>
+    <th>Açıklama</th>
   </tr>
   <tr>
     <td><code>clear</code></td>
-    <td>Clears all selections from a defined <code>amp-selector</code>.</td>
+    <td>Tanımlanmış bir <code>amp-selector</code> bileşeninden tüm seçimleri temizler.</td>
   </tr>
   <tr>
     <td><code>selectUp(delta=INTEGER)</code></td>
-    <td>Moves the selection up by the value of `delta`. The default `delta` is set to -1. If no options are selected, the selected state will become the value of the last option.</td>
+    <td>Seçimi `delta` değeri kadar yukarı taşır. Varsayılan `delta` -1 olarak ayarlanmıştır. Hiçbir seçenek seçilmezse, seçilen durum son seçeneğin değeri olur.</td>
   </tr>
   <tr>
     <td><code>selectDown(delta=INTEGER)</code></td>
-    <td>Moves the selection down by the value of `delta`. The default `delta` is set to 1. If no options are selected, the selected state will become the value of the first option.</td>
+    <td>Seçimi `delta` değeri kadar aşağı taşır. Varsayılan `delta` 1 olarak ayarlanır. Hiçbir seçenek seçilmezse, seçilen durum ilk seçeneğin değeri olur.</td>
   </tr>
   <tr>
     <td><code>toggle(index=INTEGER, value=BOOLEAN)</code></td>
@@ -577,37 +577,37 @@ event.response</pre></td>
   </tr>
 </table>
 
-### amp-sidebar <a name="amp-sidebar-1"></a>
+### amp-sidebar <a name="amp-sidebar"></a>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Eylem</th>
+    <th>Açıklama</th>
   </tr>
   <tr>
     <td><code>open (default)</code></td>
-    <td>Opens the sidebar.</td>
+    <td>Kenar çubuğunu açar.</td>
   </tr>
   <tr>
     <td><code>close</code></td>
-    <td>Closes the sidebar.</td>
+    <td>Kenar çubuğunu kapatır.</td>
   </tr>
   <tr>
     <td><code>toggle</code></td>
-    <td>Toggles the state of the sidebar.</td>
+    <td>Kenar çubuğu durumunu değiştirir.</td>
   </tr>
 </table>
 
-### amp-state <a name="amp-state-1"></a>
+### amp-state <a name="amp-state"></a>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Eylem</th>
+    <th>Açıklama</th>
   </tr>
   <tr>
     <td><code>refresh</code></td>
-    <td>Refetches data at the `src` attribute while ignoring browser cache.</td>
+    <td>Tarayıcı önbelleğini göz ardı ederken `src` özniteliğindeki verileri yeniden getirir.</td>
   </tr>
 </table>
 
@@ -615,43 +615,43 @@ event.response</pre></td>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Eylem</th>
+    <th>Açıklama</th>
   </tr>
   <tr>
     <td><code>dismiss (default)</code></td>
-    <td>Hides the referenced user notification element.</td>
+    <td>Başvurulan kullanıcı bildirim öğesini gizler.</td>
   </tr>
 </table>
 
-### Video elements <a name="video-elements"></a>
+### Video öğeleri <a name="video-elements"></a>
 
-The actions below are supported in the following AMP video elements: `amp-video`, `amp-youtube`, `amp-3q-player`, `amp-brid-player`, `amp-dailymotion`, `amp-delight-player`, `amp-ima-video`.
+Aşağıdaki eylemler, AMP video öğelerinde desteklenir: `amp-video`, `amp-youtube`, `amp-3q-player`, `amp-brid-player`, `amp-dailymotion`, `amp-delight-player`, `amp-ima-video`.
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Eylem</th>
+    <th>Açıklama</th>
   </tr>
   <tr>
     <td><code>play</code></td>
-    <td>Plays the video.</td>
+    <td>Videoyu oynatır.</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
-    <td>Pauses the video.</td>
+    <td>Videoyu duraklatır.</td>
   </tr>
   <tr>
     <td><code>mute</code></td>
-    <td>Mutes the video.</td>
+    <td>Videoyu sessize alır.</td>
   </tr>
   <tr>
     <td><code>unmute</code></td>
-    <td>Unmutes the video.</td>
+    <td>Videonun sesini açar.</td>
   </tr>
   <tr>
     <td><code>fullscreencenter</code></td>
-    <td>Takes the video to fullscreen.</td>
+    <td>Videoyu tam ekran yapar.</td>
   </tr>
 </table>
 
@@ -659,31 +659,31 @@ The actions below are supported in the following AMP video elements: `amp-video`
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Eylem</th>
+    <th>Açıklama</th>
   </tr>
   <tr>
     <td><code>clear</code></td>
-    <td>Clears any values in the form's inputs.</td>
+    <td>Formun girişlerindeki değerleri siler.</td>
   </tr>
   <tr>
     <td><code>submit</code></td>
-    <td>Submits the form.</td>
+    <td>Formu gönderir.</td>
   </tr>
 </table>
 
-## Special targets <a name="special-targets"></a>
+## Özel hedefler <a name="special-targets"></a>
 
-The following are targets provided by the AMP system that have special requirements:
+Aşağıdakiler, AMP sistemi tarafından sağlanan ve özel gereksinimleri olan hedeflerdir:
 
-### Target: AMP <a name="target-amp"></a>
+### Hedef: AMP <a name="target-amp"></a>
 
-The `AMP` target is provided by the AMP runtime and implements top-level actions that apply to the whole document.
+`AMP` hedefi AMP çalışma zamanı tarafından sağlanır ve belgenin tamamı için geçerli olan üst düzey eylemleri uygular.
 
 <table>
   <tr>
-    <th width="40%">Action</th>
-    <th>Description</th>
+    <th width="40%">Eylem</th>
+    <th>Açıklama</th>
   </tr>
   <tr>
     <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
@@ -695,33 +695,33 @@ The `AMP` target is provided by the AMP runtime and implements top-level actions
   <tr>
     <td><code>closeOrNavigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
-      <p>Tries to close the window if allowed, otherwise it navigates similar to <code>navigateTo</code> Action. Useful for use-cases where a "Back" button may need to close the window if it were opened in a new window from previous page or navigate if it wasn't opened.</p>
+      <p>İzin veriliyorsa pencereyi kapatmaya çalışır, aksi takdirde <code> navigateTo</code> eylemine benzer şekilde hareket eder. Bir "Geri" düğmesinin, önceki sayfadan yeni bir pencerede açıldıysa pencereyi kapatmasını veya açılmamışsa hareket etmesini gerekebilecek durumlarda kullanışlıdır.</p>
       <p><strong>Caveat:</strong> Using normal <code><a></code> links is recommended wherever possible since <code>AMP.closeOrNavigateTo</code> is not recognized by web crawlers.</p>
     </td>
   </tr>
   <tr>
     <td><code>goBack</code></td>
-    <td>Navigates back in history.</td>
+    <td>Geçmişte geri gider.</td>
   </tr>
   <tr>
     <td><code>print</code></td>
-    <td>Opens the Print Dialog to print the current page.</td>
+    <td>Geçerli sayfayı yazdırmak için Yazdır İletişim Kutusunu açar.</td>
   </tr>
   <tr>
     <td>scrollTo(id=STRING, duration=INTEGER, position=STRING)</td>
-    <td>Scrolls to the provided element ID on the current page.</td>
+    <td>Geçerli sayfada sağlanan öğe ID'sine ilerler.</td>
   </tr>
   <tr>
     <td>optoutOfCid</td>
-    <td>Opts out of Client ID generation for all scopes.</td>
+    <td>Tüm kapsamlar için İstemci ID oluşturmasından vazgeçer.</td>
   </tr>
   <tr>
     <td>
 <code>setState({foo: 'bar'})</code><sup>1</sup>
 </td>
     <td>
-      <p>Requires <a href="https://amp.dev/documentation/components/amp-bind.html#updating-state-with-ampsetstate">amp-bind</a>.</p>
-      <p>Merges an object literal into the bindable state.</p>
+      <p><a href="https://amp.dev/documentation/components/amp-bind.html#updating-state-with-ampsetstate">amp-bind</a> gerektirir.</p>
+      <p>Değişmez bir nesneyi bağlanabilir durumuna bağlar.</p>
       <p></p>
     </td>
   </tr>
@@ -730,21 +730,21 @@ The `AMP` target is provided by the AMP runtime and implements top-level actions
 <code>pushState({foo: 'bar'})</code><sup>1</sup>
 </td>
     <td>
-      <p>Requires <a href="https://amp.dev/documentation/components/amp-bind.html#modifying-history-with-amppushstate">amp-bind</a>.</p>
-      <p>Merges an object literal into the bindable state and pushes a new entry onto browser history stack. Popping the entry will restore the previous values of variables (in this example, <code>foo</code>).    </p>
+      <p><a href="https://amp.dev/documentation/components/amp-bind.html#modifying-history-with-amppushstate">amp-bind</a> gerektirir.</p>
+      <p>Değişmez bir nesneyi bağlanabilir durumuna bağlar ve yeni bir girişi tarayıcı geçmiş destesine gönderir. Girişi açmak, değişkenlerin önceki değerlerini geri getirecektir (bu örnekte, <code>foo</code>).</p>
 </td>
   </tr>
 </table>
 
-<sup>1</sup>When used with <a href="#multiple-actions-for-one-event">multiple actions</a>, subsequent actions will wait for <code>setState()</code> or <code>pushState()</code> to complete before invocation. Only a single <code>setState()</code> or <code>pushState()</code> is allowed per event.
+<sup>1</sup><a href="#multiple-actions-for-one-event">Çoklu eylemlerle</a> kullanıldığında, sonraki eylemler çağrı öncesinde tamamlanmak üzere <code>setState()</code> veya <code>pushState()</code> eylemini bekleyecektir. Olay başına sadece tek bir <code>setState()</code> veya <code>pushState()</code> eylemine izin verilir.
 
-### Target: amp-access <a name="target-amp-access"></a>
+### Hedef: amp-access <a name="target-amp-access"></a>
 
-The `amp-access` target is provided by the [amp-access](https://amp.dev/documentation/components/amp-access.html) component.
+`amp-access` hedef, [amp-access](https://amp.dev/documentation/components/amp-access.html) bileşeni tarafından sağlanır.
 
-The `amp-access` target is special for these reasons:
+`amp-access` hedefi üç nedenden dolayı özeldir:
 
-1. You can't give an arbitrary ID to this target. The target is always `amp-access`.
-2. The actions for `amp-access` are dynamic depending on the structure of the [AMP Access Configuration](https://amp.dev/documentation/components/amp-access#configuration).
+1. Bu hedefe rastgele bir ID veremezsiniz. Hedef her zaman `amp-access` şeklindedir.
+2. `amp-access` eylemleri [AMP Access Yapılandırması](https://amp.dev/documentation/components/amp-access#configuration) yapısına bağlı olarak dinamiktir.
 
-See [details](https://amp.dev/documentation/components/amp-access#login-link) about using the `amp-access` target.
+`amp-access` hedefinin kullanımına dair [ayrıntıları](https://amp.dev/documentation/components/amp-access#login-link) görüntüleyin.
