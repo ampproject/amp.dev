@@ -212,7 +212,7 @@ Cümleden daha uzun metin içeriğine sahip bir sayfa kaçınılmaz olabilir. Bu
 
 ### Animasyonlar
 
-Animations are appetizing when done with purpose, such as adding motion to static images. You can animate images and assets with fly-in, rotation, or fade-in effects.
+Animasyonlar, durağan görüntülere hareket eklemek gibi bir amaç ile yapıldığında iştah açıcıdır. Görüntüleri ve varlıkları uçarak girme, döndürme veya belirme efektleri ile canlandırabilirsiniz.
 
 <table>
   <tr>
