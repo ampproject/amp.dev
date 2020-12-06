@@ -37,7 +37,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Many AMP components and extensions take advantage of remote endpoints by using Cross-Origin Resource Sharing (CORS) requests. This document explains the key aspects of using CORS in AMP. To learn about CORS itself, see the [W3 CORS Spec](https://www.w3.org/TR/cors/).
+Birçok AMP bileşeni ve uzantısı, kökler arası kaynak paylaşımı (CORS) isteklerini kullanarak uzak uç noktalardan yararlanır. Bu belge, AMP'de CORS kullanmanın temel yönlerini açıklamaktadır. CORS hakkında bilgi edinmek için bkz: [W3 CORS Teknik Özellikleri](https://www.w3.org/TR/cors/).
 
 <div class="noshowtoc"></div>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true">
@@ -160,9 +160,9 @@ After verifying the CORS request, the resulting HTTP response must contain the f
 
 ##### Access-Control-Allow-Origin: <origin> </origin><a name="access-control-allow-origin-origin"></a>
 
-This header is a <a href="https://www.w3.org/TR/cors/">W3 CORS Spec</a> requirement, where <code>origin</code> refers to the requesting origin that was allowed via the CORS <code>Origin</code> request header (for example, <code>"https://<publisher's subdomain>.cdn.ampproject.org"</code>).
+Bu başlık, bir <a href="https://www.w3.org/TR/cors/">W3 CORS Teknik Özellikleri</a> gereksinimidir. Burada <code>origin</code>, CORS <code>Origin</code> istek başlığı aracılığıyla izin verilen talep kaynağı anlamına gelir. (Örneğin, <code>"https://<publisher's subdomain>.cdn.ampproject.org"</code>).
 
-Although the W3 CORS spec allows the value of <code>*</code> to be returned in the response, for improved security, you should:
+W3 CORS teknik özellikleri, yanıtta <code>*</code> değerinin döndürülmesine izin verse de, daha iyi güvenlik için şunları yapmalısınız:
 
 - If the `Origin` header is present, validate and echo the value of the <code><code data-md-type="codespan">Origin</code> header.
 
@@ -177,7 +177,7 @@ Before processing requests that could change the state of your system (for examp
 1. If the origin does not match one of the following values, stop and return an error response:
 
     - `<publisher's domain>.cdn.ampproject.org`
-    - the publisher's origin (aka yours)
+    - yayıncının kaynağı (yani sizinki)
 
     where `*` represents a wildcard match, and not an actual asterisk ( * ).
 
