@@ -163,7 +163,7 @@ Bu başlık, bir <a href="https://www.w3.org/TR/cors/">W3 CORS Teknik Özellikle
 
 W3 CORS teknik özellikleri, yanıtta <code>*</code> değerinin döndürülmesine izin verse de, daha iyi güvenlik için şunları yapmalısınız:
 
-- If the `Origin` header is present, validate and echo the value of the <code><code data-md-type="codespan">Origin</code> header.
+- `Origin` başlığı varsa, <code>Origin</code> başlığının değerini doğrulayın ve yineleyin.
 
 ### Durum değiştirme isteklerini işleme <a name="processing-state-changing-requests"></a>
 
