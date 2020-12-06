@@ -1,18 +1,18 @@
 ---
-"$title": Understanding the parts of an AMP story
+"$title": Bir AMP hikayesinin bölümlerini anlama
 "$order": '2'
-description: "A Web Story is a full-screen visual storytelling experience that conveys information with images, videos, graphics, audio, and more. It's perfect for users ..."
+description: Web Hikayesi, bilgileri görüntüler, videolar, grafikler, ses ve daha fazlasıyla aktaran tam ekran bir görsel hikaye anlatma deneyimidir. Küçük boyutlu, görsel açıdan zengin içerik isteyen...
 author: bpaduch
 ---
 
-A Web Story is a full-screen visual storytelling experience that conveys information with images, videos, graphics, audio, and more. It's perfect for users who want bite-sized, visually-rich content.
+Web Hikayesi, bilgileri görüntüler, videolar, grafikler, ses ve daha fazlasıyla aktaran tam ekran bir görsel hikaye anlatma deneyimidir. Küçük boyutlu, görsel açıdan zengin içerik isteyen kullanıcılar için mükemmeldir.
 
-The basic ingredients that go into an Web Story are individual **pages**. These pages, in turn, are composed of individual **layers** that contain basic HTML and AMP **elements**.
+Bir Web Hikayesinde bulunan temel bileşenler ayrı **sayfalardır**. Bu sayfalar da, temel HTML ve AMP **öğelerini** içeren ayrı **katmanlardan** oluşur.
 
 {{ image('/static/img/docs/tutorials/amp_story/story_parts.png', 1047, 452, align='center ninety') }}
 
-Each of those ingredients are translated into AMP components, where the story is represented by [`amp-story`](../../../../documentation/components/reference/amp-story.md), the page is represented by `amp-story-page`, and the layers are represented by `amp-story-grid-layer`.
+Bu bileşenlerin her biri, hikayenin [`amp-story`](../../../../documentation/components/reference/amp-story.md) ile temsil edildiği, sayfanın `amp-story-page` ile temsil edildiği ve katmanların `amp-story-grid-layer` ile temsil edildiği AMP bileşenlerine çevrilir.
 
 {{ image('/static/img/docs/amp-story-tag-hierarchy.png', 557, 355, align='center seventyfive' ) }}
 
-Let's start creating our Web Story with the [`amp-story`](../../../../documentation/components/reference/amp-story.md) container.
+Web Hikayemizi [`amp-story`](../../../../documentation/components/reference/amp-story.md) kapsayıcıyla oluşturmaya başlayalım.
