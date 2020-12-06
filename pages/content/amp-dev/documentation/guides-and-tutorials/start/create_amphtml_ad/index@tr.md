@@ -26,4 +26,4 @@ AMPHTML reklamları, geleneksel HTML reklamlarına benzer, ancak bunlar geleneks
 
 - [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*coming soon*) [/tip]
+- Adobe Animate (*çok yakında*) [/tip]
