@@ -1,7 +1,7 @@
 ---
 "$title": Configuration
 "$order": '0'
-description: 'Before starting this tutorial, you''ll need the following: - A basic knowledge of HTML, CSS, and JavaScript - A basic understanding of AMP’s core concepts see ...'
+description: 'Avant de commencer ce tutoriel, vous aurez besoin des éléments suivants : - Des bases en HTML, CSS et JavaScript - Une compréhension des concepts de base d''AMP, voir ...'
 "$parent": "/content/docs/fundamentals/add_advanced.md"
 ---
 
@@ -9,8 +9,8 @@ description: 'Before starting this tutorial, you''ll need the following: - A bas
 
 **Avant de commencer** ce didacticiel, vous aurez besoin des éléments suivants :
 
-- A basic knowledge of HTML, CSS, and JavaScript
-- A basic understanding of AMP’s core concepts (see ["Convert your HTML to AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md) tutorial)
+- Des bases en HTML, CSS et JavaScript
+- Une compréhension des concepts de base d'AMP (voir le tutoriel ["Convertir votre HTML en AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md))
 - Un navigateur de votre choix qui peut inspecter la console JavaScript
 - Un éditeur de texte de votre choix
 
@@ -18,13 +18,13 @@ description: 'Before starting this tutorial, you''ll need the following: - A bas
 
 ### Étape 1. Téléchargez le code
 
-Download the sample code for the tutorial either as a [ZIP file](https://github.com/googlecodelabs/accelerated-mobile-pages-advanced/archive/master.zip) or via git:
+Téléchargez l'exemple de code du tutoriel sous forme de [fichier ZIP](https://github.com/googlecodelabs/accelerated-mobile-pages-advanced/archive/master.zip) ou via git :
 
 ```shell
 git clone https://github.com/googlecodelabs/accelerated-mobile-pages-advanced.git
 ```
 
-Unzip the archive file (if necessary) and navigate to the project directory through the command line on your computer:
+Décompressez le fichier d'archive (si nécessaire) et accédez au répertoire du projet via cette ligne de commande sur votre ordinateur :
 
 ```shell
 cd accelerated-mobile-pages-advanced
@@ -36,7 +36,7 @@ Le répertoire du projet contient plusieurs exemples de fichiers de ressources e
 
 Pour tester l'exemple de page AMP, nous devons accéder aux fichiers à partir d'un serveur Web. Il existe plusieurs façons de créer un serveur Web local temporaire à des fins de test. Voici quelques options, choisissez celle qui vous convient le mieux :
 
-- [“Web Server for Chrome” Google Chrome app](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
+- [Application Google Chrome "Web Server for Chrome"](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
 - [Un serveur HTTP Python local](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server#Running_a_simple_local_HTTP_server)
 - [Apache](https://httpd.apache.org/docs/2.4/getting-started.html)
 - [nginx](http://nginx.org/)
