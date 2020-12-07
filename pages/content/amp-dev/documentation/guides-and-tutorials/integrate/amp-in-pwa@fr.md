@@ -47,7 +47,7 @@ Ce code se traduit par:
 
 Cela fonctionne parce que la bibliothèque Shadow AMP, lors du chargement, réalisera qu'il y a déjà un tableau de rappels sous `window.AMP`, et traitera donc toute la file d'attente. Si vous exécutez à nouveau la même fonction plus tard, cela fonctionnera toujours, car Shadow AMP remplace `window.AMP` par lui-même et une méthode `push` personnalisée qui déclenche simplement le rappel immédiatement.
 
-[tip type="tip"] **TIP –** To make the above code sample practical, we recommend that you wrap it into a Promise, then always use said Promise before working with the AMP API. Look at our [React demo code](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20) for an example. [/tip]
+[tip type="tip"] **CONSEIL -** Pour rendre l'exemple de code ci-dessus pratique, nous vous recommandons de l'envelopper dans une promesse, puis de toujours utiliser ladite promesse avant de travailler avec l'API AMP. Consultez notre [code de démonstration React](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20) à titre d'exemple. [/tip]
 
 ## Gérer la navigation dans votre application Web progressive
 
@@ -79,7 +79,7 @@ function fetchDocument(url) {
 }
 [/sourcecode]
 
-[tip type="important"] **IMPORTANT –** To simplify the above code example, we skipped over error handling. You should always make sure to catch and handle errors gracefully. [/tip]
+[tip type="important"] **IMPORTANT -** Pour simplifier l'exemple de code ci-dessus, nous avons ignoré la gestion des erreurs. Vous devez toujours vous assurer de détecter et de gérer les erreurs correctement. [/tip]
 
 Maintenant que nous avons notre objet `Document` prêt à l'emploi, il est temps de laisser AMP prendre le relais et l'afficher. Obtenez une référence à l'élément DOM qui sert de conteneur pour le document AMP, puis appelez `AMP.attachShadowDoc()`, comme ceci:
 
@@ -97,7 +97,7 @@ fetchDocument(url).then(function(doc) {
 });
 [/sourcecode]
 
-[tip type="tip"] **TIP –** Before you actually hand the document over to AMP, it's the perfect time to remove page elements that make sense when displaying the AMP page standalone, but not in embedded mode: For example, footers and headers. [/tip]
+[tip type="tip"] **CONSEIL -** Avant de remettre le document à AMP, c'est le moment idéal pour supprimer les éléments de page utiles lors de l'affichage de la page AMP en mode autonome, mais pas en mode intégré: par exemple, les pieds de page et les en-têtes. [/tip]
 
 Et c'est tout! Votre page AMP s'affiche en tant que page enfant de votre application Web progressive globale.
 
