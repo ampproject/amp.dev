@@ -1,5 +1,5 @@
 ---
-"$title": Placeholders & fallbacks
+"$title": Caractères de remplacement et solutions de secours
 "$order": '3'
 descriptions: "In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible."
 formats:
@@ -16,11 +16,11 @@ contributors:
 
 In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible.
 
-Some elements will even reward you for doing it by relaxing restrictions – for example, if you provide a placeholder for [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder), it can be used near the top of the page (which won't work without).
+Certains éléments vous récompenseront même si vous le faites en assouplissant les restrictions. Par exemple, si vous fournissez un caractère de remplacement pour [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder), il peut être utilisé en haut de la page (ce qui ne fonctionnera pas sans).
 
-## Placeholders
+## Caractères de remplacement
 
-The element marked with the `placeholder` attribute acts as a placeholder for the parent AMP element. If specified, a `placeholder` element must be a direct child of the AMP element. An element marked as a `placeholder` will always `fill` the parent AMP element.
+L'élément marqué par l'attribut `placeholder` agit comme un caractère de remplacement pour l'élément AMP parent. S'il est spécifié, un élément `placeholder` doit être un enfant direct de l'élément AMP. Un élément marqué comme `placeholder` sera toujours `fill` l'élément AMP parent.
 
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
 ```html
@@ -36,21 +36,21 @@ The element marked with the `placeholder` attribute acts as a placeholder for th
 ```
 [/example]
 
-By default, the placeholder is immediately shown for the AMP element, even if the AMP element's resources have not been downloaded or initialized. Once ready, the AMP element typically hides its placeholder and shows the content.
+Par défaut, le caractère de remplacement est immédiatement affiché pour l'élément AMP, même si les ressources de l'élément AMP n'ont pas été téléchargées ou initialisées. Une fois prêt, l'élément AMP masque généralement son caractère de remplacement et affiche le contenu.
 
 [tip type="note"] **NOTE –**  The placeholder doesn’t have to be an AMP element; any HTML element can act as the placeholder. [/tip]
 
-## Fallbacks <a name="fallbacks"></a>
+## Solutions de secours <a name="fallbacks"></a>
 
-You can specify the `fallback` attribute on an element to indicate the fallback behavior:
+Vous pouvez spécifier l'attribut `fallback` sur un élément pour indiquer le comportement de secours:
 
 - for any element the browser doesn’t support
 - if the content fails to load (e.g., Tweet deleted)
 - if the image type is unsupported (e.g., WebP isn't supported in all browsers)
 
-You can set the `fallback` attribute on *any* HTML element, not just AMP elements. If specified, the `fallback` element must be a direct child of the AMP element.
+Vous pouvez définir l'attribut `fallback` sur *n'importe quel* élément HTML, pas uniquement sur les éléments AMP. S'il est spécifié, l'élément `fallback` doit être un enfant direct de l'élément AMP.
 
-##### Example: Unsupported feature
+##### Exemple: fonctionnalité non prise en charge
 
 In the following example, we use the `fallback` attribute to communicate to the user that the browser doesn’t support a particular feature:
 
@@ -68,7 +68,7 @@ In the following example, we use the `fallback` attribute to communicate to the 
 ```
 [/example]
 
-##### Example: Serve different image formats
+##### Exemple: diffuser différents formats d'image
 
 In the following example, we use the `fallback` attribute to tell the browser to use the JPEG file if the WebP format is unsupported.
 
@@ -89,16 +89,20 @@ In the following example, we use the `fallback` attribute to tell the browser to
 ```
 [/example]
 
-## Interaction of placeholders and fallbacks
+## Interaction des caractères de remplacement et des solutions de secours
 
 For AMP components that rely on dynamic content (e.g., [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md), [`amp-list`](../../../../documentation/components/reference/amp-list.md)), the interaction of fallbacks and placeholders operates as follows:
 
 <ol>
-  <li>Display the placeholder while the content is loading.</li>
-  <li>If the content loads successfully, hide the placeholder and display the content.</li>
-  <li>If the content fails to load:     <ol>       <li>If there's a fallback element, display the fallback.</li>       <li>Otherwise, continue displaying the placeholder.</li>     </ol>   </li>
+  <li>Afficher le caractère de remplacement pendant le chargement du contenu.</li>
+  <li>Si le contenu se charge correctement, masquer le caractère de remplacement et afficher le contenu.</li>
+  <li>Si le contenu ne se charge pas: <ol>
+<li> S'il existe un élément de secours, afficher ce dernier. </li>
+<li> Sinon, continuer à afficher le caractère de remplacement. </li>
+</ol>
+</li>
 </ol>
 
-## Hiding loading indicators
+## Comment masquer les indicateurs de chargement
 
 Many AMP elements are allowlisted to show a "loading indicator", which is a basic animation that shows that the element has not yet fully loaded. Elements can opt out of this behavior by adding the `noloading` attribute.
