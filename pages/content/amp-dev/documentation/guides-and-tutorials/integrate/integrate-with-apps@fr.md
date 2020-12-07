@@ -38,7 +38,7 @@ Il existe trois façons de transformer des liens par programmation:
 2. **Heure de lecture côté serveur (certaines utilisations)**: récupérez l'URL AMP via l'API d'URL AMP de Google avant de transmettre le contenu à votre client. Comme mentionné ci-dessus, transmettez les deux URL (AMP et non AMP) au client car l'URL d'origine peut être nécessaire pour le partage. Cette méthode peut être utile pour les services à faible diffusion.
 3. **Côté client (si impossible côté serveur)**: récupérez l'URL AMP via l'API d'URL AMP de Google à partir du client. Utilisez cette approche si la transformation d'URL côté serveur n'est pas possible (par exemple, pour les applications de messagerie utilisant un chiffrement de bout en bout). Assurez-vous de déclencher la transformation d'URL dès que le contenu est disponible, avant toute interaction de l'utilisateur.
 
-[tip type="important"] **IMPORTANT –** Never request AMP URLs through the Google's AMP API as a result of a user interaction because that degrades the performance of your app as it introduces an additional network request. Instead, use one of the three approaches described above. [/tip]
+[tip type="important"] **IMPORTANT -** Ne demandez jamais d'URL AMP via l'API AMP de Google à la suite d'une interaction de l'utilisateur, car cela dégrade les performances de votre application en introduisant une requête réseau supplémentaire. Utilisez plutôt l'une des trois approches décrites ci-dessus. [/tip]
 
 #### API d'URL AMP de Google
 
@@ -74,7 +74,7 @@ Le corps de la réponse contient le mappage d'URL AMP au format JSON:
 }
 ```
 
-[tip type="note"] **NOTE –**  URLs for cached AMP pages on non-Google AMP Caches cannot be retrieved via the AMP URL API. However, you can easily derive the cached URL from the returned AMP URL (ampURL). [/tip]
+[tip type="note"] **REMARQUE -** les URL des pages AMP mises en cache sur des caches AMP non Google ne peuvent pas être récupérées via l'API d'URL AMP. Cependant, vous pouvez facilement dériver l'URL mise en cache à partir de l'URL AMP renvoyée (ampURL). [/tip]
 
 ## Utilisation des caches AMP
 
@@ -101,7 +101,7 @@ Nous vous recommandons d'utiliser le cache AMP pour les raisons suivantes:
 - Le fichier AMP d'origine peut ne plus être un fichier AMP valide, ce qui peut entraîner une mauvaise expérience utilisateur. Dans ce cas, le cache AMP sert la dernière version valide du fichier AMP.
 - Un éditeur peu intègre peut servir deux documents différents à un robot d'exploration de cache AMP et à vos utilisateurs. L'utilisation d'un cache AMP garantit que les utilisateurs voient toujours le même fichier AMP que le cache.
 
-[tip type="important"] **IMPORTANT –** When serving AMP pages through the AMP Cache, provide a viewer experience that clearly shows the AMP's origin and offers the possibility for users to share the canonical URL (see also the following two sections for more about this). [/tip]
+[tip type="important"] **IMPORTANT -** Lors de la diffusion de pages AMP via le cache AMP, offrez une expérience de visualisation qui montre clairement l'origine du fichier AMP et offre la possibilité aux utilisateurs de partager l'URL canonique (voir également les deux sections suivantes pour en savoir plus à ce sujet). [/tip]
 
 ## Implémentation d'une visionneuse AMP
 
