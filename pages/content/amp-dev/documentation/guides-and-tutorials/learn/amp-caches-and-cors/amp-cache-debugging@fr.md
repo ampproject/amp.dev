@@ -1,5 +1,5 @@
 ---
-"$title": Debug AMP Cache issues
+"$title": Déboguer les problèmes de cache AMP
 order: '8'
 formats:
 - websites
@@ -18,52 +18,52 @@ have a look and request a pull request there.
 
 ## Pourquoi mon document est-il cassé sur un cache AMP ? <a name="why-is-my-doc-broken-on-an-amp-cache"></a>
 
-Valid AMP documents typically appear and behave the same on AMP Caches as they do on the origin. However, there are some components and server configurations that can be problematic.
+Les documents AMP valides apparaissent et se comportent généralement de la même manière sur les caches AMP que sur l'origine. Cependant, certains composants et configurations de serveur peuvent poser problème.
 
 Si un document particulier apparaît et se comporte comme prévu sur votre origine, mais pas lorsqu'il est affiché via le cache ([comment cartographier les URL d'origine vers le cache AMP de Google](https://developers.google.com/amp/cache/overview#amp-cache-url-format)), essayez ce qui suit :
 
-1. Open your browser's developer/error tools console, and resolve any errors or warnings that appear.
-2. Run the document through [AMPBench](https://ampbench.appspot.com/) and resolve any unexpected errors or warnings.
+1. Ouvrez la console des outils de développement/d'erreur de votre navigateur et résolvez les erreurs ou les avertissements qui apparaissent.
+2. Exécutez le document via [AMPBench](https://ampbench.appspot.com/) et résolvez les erreurs ou avertissements inattendus.
 
-If you still have a problem after following these steps, check the table below.
+Si vous rencontrez toujours un problème après avoir suivi ces étapes, consultez le tableau ci-dessous.
 
 <table>
 <table>
   <thead>
     <tr>
-      <th width="30%">Symptom</th>
-      <th width="30%">Issue</th>
+      <th width="30%">Symptôme</th>
+      <th width="30%">Problème</th>
       <th width="40%">Solution</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Web fonts do not appear (fallback fonts are used)</td>
-      <td>The AMP Cache is not white listed by the font provider.</td>
-      <td>Contact the font provider and ask them to allowlist <a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">all caches</a>.</td>
+      <td>Les polices Web n'apparaissent pas (des polices de remplacement sont utilisées)</td>
+      <td>Le cache AMP n'est pas répertorié en blanc par le fournisseur de polices.</td>
+      <td>Contactez le fournisseur de polices et demandez-lui d'autoriser <a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">tous les caches</a> .</td>
     </tr>
     <tr>
-      <td>Assets (e.g., fonts and images) do not appear (<strong>HTTP origins only</strong>)</td>
-      <td>The document uses protocol-relative URLs.</td>
-      <td>Switch to absolute URLs (that is, <code>http://www.site.com/doc/amp</code>, not <code>//www.site.com/doc/amp</code>).</td>
+      <td>Les éléments (par exemple, les polices et les images) n'apparaissent pas (<strong>origines HTTP uniquement</strong>)</td>
+      <td>Le document utilise des URL relatives au protocole.</td>
+      <td>Passez aux URL absolues (c'est-à-dire <code>http://www.site.com/doc/amp</code>, et non <code>//www.site.com/doc/amp</code>).</td>
     </tr>
     <tr>
-      <td rowspan="2">Assets (e.g., fonts and images) do not appear</td>
-      <td>The assets are served with the incorrect MIME type.</td>
-      <td>Specify an <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">acceptable MIME type</a>.</td>
+      <td rowspan="2">Les éléments (par exemple, les polices et les images) n'apparaissent pas</td>
+      <td>Les éléments sont diffusés avec un type MIME incorrect.</td>
+      <td>Spécifiez un <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">type MIME acceptable</a> .</td>
     </tr>
     <tr>
-      <td>The AMP Cache cannot access the assets.</td>
-      <td>Ensure the AMP Cache can access your assets and that it is not blocked by an IP address, or a user agent, etc. (<a href="https://support.google.com/webmasters/answer/1061943?hl=en">List of user agents used by Google's crawler</a>).</td>
+      <td>Le cache AMP ne peut pas accéder aux éléments.</td>
+      <td>Assurez-vous que le cache AMP peut accéder à vos éléments et qu'il n'est pas bloqué par une adresse IP, ou un agent utilisateur, etc. (<a href="https://support.google.com/webmasters/answer/1061943?hl=en">Liste des agents utilisateurs utilisés par le robot d'exploration de Google</a>).</td>
     </tr>
     <tr>
-      <td>Dynamic elements such as <code><amp-form></code>, <code><amp-list></code>, do not behave as expected.</td>
-      <td>Broken or missing CORS headers.</td>
-      <td>These components make cross-origin requests from the AMP Cache to your origin. By default, browsers block these requests. To allow these requests, emit <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS headers</a> that allowlist <a href="https://amp.dev/documentation/guides-and-tutorials/amp-cors-requests.html">all caches</a>.</td>
+      <td>Les éléments dynamiques tels que <code><amp-form></amp-form></code>, <code><amp-list></amp-list></code>, ne se comportent pas comme prévu.</td>
+      <td>En-têtes CORS cassés ou manquants.</td>
+      <td>Ces composants effectuent des requêtes vers l'origine depuis le cache AMP. Par défaut, les navigateurs bloquent ces requêtes. Pour les autoriser, émettez des <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">en-têtes CORS</a> qui permettent le listing de <a href="https://amp.dev/documentation/guides-and-tutorials/amp-cors-requests.html">tous les caches</a>.</td>
     </tr>
     <tr>
-      <td>Content is being served that must be removed due to a legal takedown notice.</td>
-      <td>The AMP Cache has not yet picked up the removal.</td>
+      <td>Le contenu diffusé doit être supprimé en raison d'un avis légal de retrait.</td>
+      <td>Le cache AMP n'a pas encore pris en charge la suppression.</td>
       <td>Suivez les instructions pour chaque cache AMP afin d'actualiser le contenu. Pour Google AMP Cache, consultez la section <a href="https://developers.google.com/amp/cache/update-cache">Mettre à jour le contenu AMP</a> .</td>
     </tr>
 </tbody>
