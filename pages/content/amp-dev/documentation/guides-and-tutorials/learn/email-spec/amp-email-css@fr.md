@@ -1,5 +1,5 @@
 ---
-"$title": AMP for Email Supported CSS
+"$title": CSS pris en charge par AMP pour e-mail
 order: '5'
 formats:
 - email
@@ -35,9 +35,9 @@ Ce document décrit les fonctionnalités CSS actuellement prises en charge dans 
 
 ## Application du CSS <a name="applying-css"></a>
 
-### Internal stylesheet <a name="internal-stylesheet"></a>
+### Feuille de style intégrée <a name="internal-stylesheet"></a>
 
-When using an internal stylesheet, the CSS is specified inside a single `<style amp-custom>` tag located in the `<head>` tag of the email.
+Lors de l'utilisation d'une feuille de style intégrée, le CSS est spécifié dans une seule balise `<style amp-custom>` située dans la balise `<head>` de l'e-mail.
 
 ### Styles en ligne <a name="inline-styles"></a>
 
@@ -45,7 +45,7 @@ En plus d'une feuille de style interne, les styles en ligne peuvent être spéci
 
 ### Feuille de style externe <a name="external-stylesheet"></a>
 
-External stylesheets are **not** supported in AMP for Email.
+Les feuilles de style externes ne sont **pas** prises en charge dans AMP pour e-mail.
 
 L'utilisation de `<link rel="stylesheet" href="...">` n'est autorisée nulle part dans l'e-mail.
 
@@ -330,7 +330,7 @@ Les propriétés CSS suivantes ont des restrictions supplémentaires :
 Propriété | Restrictions
 --- | ---
 [`cursor`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor) | Les seules valeurs autorisées sont `pointer` et `initial`.
-[`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) | `url()` is not allowed.
+[`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) | `url()` n'est pas autorisée.
 [`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) | Seules `opacity`, `transform`, `visibility` et `offset-distance` peuvent être animées.
 [`visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) | Les seules valeurs autorisées sont `hidden`, `visible` et `initial`.
 [`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index) | Seules les valeurs comprises entre -100 et 100 sont autorisées.
@@ -341,7 +341,7 @@ La seule [règle at](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule) a
 
 ### Polices personnalisées (`@font-face`) <a name="custom-fonts-font-face"></a>
 
-Custom fonts are **not** supported in AMP for Email.
+Les polices personnalisées ne sont **pas** prises en charge dans AMP our e-mail.
 
 ## Fonctionnalités multimédias <a name="media-features"></a>
 
