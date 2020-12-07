@@ -353,9 +353,9 @@ The mapping we’ve created ends up looking like this:
   </tr>
   <tr>
     <td>
-<code>$prospective_identifier</code>(generated just-in-time when analytics ping is received)</td>
+<code>$prospective_identifier</code> (généré juste à temps lorsque le ping d</td>
     <td>
-<code>$amp_client_id</code> (came from analytics ping)</td>
+<code>$amp_client_id</code> (provient du ping d</td>
   </tr>
 </table>
 
@@ -492,9 +492,7 @@ We recommend validating the authenticity of query parameter values by using the 
   <li>Can access a place where the code that read and removed the parameters has stored the data</li>
 </ul>
 <p>To do this on your non-AMP page, include the following JavaScript, which will remove all query parameters from the URL:</p>
-<pre>var href = location.href.replace(/\?[^{{'[% raw %]'}}#]{{'{% endraw %}'}}+/, '');
-history.replaceState(null, null, href);
-</pre>
+<pre>var href = location.href.replace(/\?[^{{'[% raw %]'}}#]{{'{% endraw %}'}}+/, '');<br>history.replaceState(null, null, href);</pre>
 <p>Adapt this as needed to remove fewer query parameters.</p>
 </blockquote>
 
