@@ -1,5 +1,5 @@
 ---
-"$title": AMP for Email Supported HTML
+"$title": HTML pris en charge par AMP pour e-mail
 order: '4'
 formats:
 - email
@@ -33,7 +33,7 @@ limitations under the License.
 
 Remarque : cette liste n'est pas normative et est fournie à titre indicatif uniquement. Les règles du validateur AMP prévalent sur les balises et attributs HTML pris en charge.
 
-In addition to the [supported AMP components](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md), the following HTML tags are allowed in AMP for Email.
+Outre les [composants AMP pris en charge](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md), les balises HTML suivantes sont autorisées dans AMP pour e-mail.
 
 ## Balises prises en charge <a name="supported-tags"></a>
 
