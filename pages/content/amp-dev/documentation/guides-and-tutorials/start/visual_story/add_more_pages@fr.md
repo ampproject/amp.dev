@@ -17,9 +17,8 @@ Montre comment afficher une image et du texte dans une seule couche.
   <tr>
     <td width="60%">
       <ul>
-        <li>Contains 1 layer:       <ul>         <li>Implements the <a href="create_cover_page.md#vertical"><code>vertical</code></a> template.</li>         <li>Contains 3 elements:           <ul>             <li>An <code><h1></code> element with the title: <em>Cats</em>
-</li>             <li>A responsive <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> (<code class="filename">cat.jpg</code>, 720 x 1280px)</li>             <li>A <code><q></code> element for the following quotation: <em>Dogs come when they're called. Cats take a message and get back to you. --Mary Bly</em>
-</li>           </ul>         </li>       </ul>
+        <li>Contient 1 couche : <ul> <li>Implémente le modèle <a href="create_cover_page.md#vertical"><code>vertical</code></a>. </li> <li>Contient 3 éléments : <ul> <li>Un élément <code><h1></code> avec le titre : <em>Chats</em> </li> <li>Un <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> réactif (<code class="filename">cat.jpg</code> 720 x 1280px)</li>
+<li> Un élément <code><q></code> pour la citation suivante : <em>Les chiens viennent quand on les appelle. Les chats prennent le message et reviennent vers vous quand ça les arrange. --Mary Bly</em> </li> </ul> </li> </ul>
 </li>
 </ul>
     </td>
@@ -35,11 +34,7 @@ Montre comment organiser le texte et afficher une image de remplissage d'écran 
   <tr>
     <td width="60%">
       <ul>
-        <li>Contains 2 layers:       <ul>         <li>
-<b>Layer 1</b>: Implements the <a href="create_cover_page.md#fill"><code>fill</code></a> template, and contains a responsive <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> (<code class="filename">dog.jpg</code>, 720 x 1280px).</li>         <li>
-<b>Layer 2</b>:  Implements the <a href="create_cover_page.md#thirds"><code>thirds</code></a> template and contains 2 elements:           <ul>             <li>An <code><h1></code> element with the title: <em>Dogs</em>
-</li>             <li>A <code><p></code> element that specifies a <a href="create_cover_page.md#thirds"><code>grid-area</code></a> that occupies the <a href="create_cover_page.md#thirds"><code>lower-third</code></a> and contains the following text: <em>Dogs were probably the first tame animals. They have accompanied humans for some 10,000 years. Some scientists assert that all dogs, domestic and wild, share a common ancestor in the small South Asian wolf.</em>
-</li>           </ul>         </li>       </ul>
+        <li>Contient 2 couches: <ul> <li> <b>Couche1</b>: implémente le modèle <a href="create_cover_page.md#fill"><code>fill</code></a>, et contient un <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> interactif (<code class="filename">dog.jpg</code>, 720 x 1280px).</li> <li> <b>Couche 2</b>: implémente le modèle <a href="create_cover_page.md#thirds"><code>thirds</code></a> et contient 2 éléments: <ul> <li>un élément <code><h1></code> avec le titre: <em>Chiens</em> </li> <li>Un élément <code><p></code> qui spécifie une zone <a href="create_cover_page.md#thirds"><code>grid-area</code></a> qui occupe la zone<a><code>lower-third</code></a> et contient le texte suivant: <em>Les chiens sont probablement les premiers animaux que nous avons apprivoisés. Ils accompagnent les humains depuis près de 10 000 ans. Certains scientifiques affirment que tous les chiens, domestiques et sauvages, partagent comme ancêtre commun le loup d'Asie du Sud.</em> </li> </ul> </li> </ul>
 </li>
 </ul>
     </td>
@@ -55,14 +50,9 @@ Montre comment organiser le texte, afficher une image qui remplit l'écran et fo
   <tr>
     <td width="60%">
       <ul>
-      <li>Contains 3 layers:       <ul>         <li>
-<b>Layer 1</b>: Implements the <a href="create_cover_page.md#fill"><code>fill</code></a> template, and contains a responsive <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> (<code class="filename">bird.jpg</code>, 720 x 1280px).</li>         <li>
-<b>Layer 2</b>  Implements the <a href="create_cover_page.md#vertical"><code>vertical</code></a> template and contains one element:           <ul>             <li>An <code><h1></code> element with the title: <em>Birds</em>
-</li>           </ul>         </li>         <li>
-<b>Layer 3</b>:  Implements the <a href="create_cover_page.md#vertical"><code>vertical</code></a> template and contains one element:           <ul>             <li>A <code><q></code> element for the following quotation: <em>A bird is three things: Feathers, flight and song, And feathers are the least of these.--Marjorie Allen Seiffert</em>
-</li>             <li>This third layer specifies <code>class="bottom"</code> to align the child elements to the bottom of screen.</li>           </ul>         </li>       </ul>
+      <li>Contient 3 couches :       <ul>         <li> <b>Couche 1</b> : implémente le modèle <a href="create_cover_page.md#fill"><code>fill</code></a> et contient une image réactive <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> (<code class="filename">bird.jpg</code>, 720 x 1280px).</li>         <li> <b>Couche 2</b> : implémente le modèle <a href="create_cover_page.md#vertical"><code>vertical</code></a> et contient un élément :           <ul>             <li>Un élément <code><h1></code> avec le titre : <em>Oiseaux</em> </li>           </ul>         </li>         <li> <b>Couche 3</b> :  implémente le modèle <a href="create_cover_page.md#vertical"><code>vertical</code></a> et contient un élément :           <ul>             <li>Un élément <code><q></code> pour la citation suivante : <em>Un oiseau se résume en trois choses : les plumes, le vol et le chant. Et les plumes sont ce qu'il y a de moins important.--Marjorie Allen Seiffert</em> </li>             <li>Cette troisième couche spécifie <code>class="bottom"</code> pour aligner les éléments enfants au bas de l'écran.</li>           </ul>         </li>       </ul>
 </li>
-      <li>Plays an audio file in the background while the page is displayed. You can play audio in the background for the whole story or for a single page.  To play audio for a page, add the <code>background-audio="assets/bird-singing.mp3"</code> attribute to the <code><amp-story-page></code> element.</li>
+      <li>Joue un fichier audio en arrière-plan lorsque la page est affichée. Vous pouvez reproduire du son en arrière-plan pour toute l'histoire ou pour une seule page.  Pour reproduire du son pour une page, ajoutez l'attribut <code>background-audio="assets/bird-singing.mp3"</code> à l'élément <code><amp-story-page></code>.</li>
       </ul>
     </td>
     <td>{{ image('/static/img/docs/tutorials/amp_story/pg3-birds.png', 720, 1280, alt='Page 3 - Birds' ) }}</td>
@@ -77,13 +67,7 @@ Montre comment organiser le texte et afficher une vidéo de remplissage d'écran
   <tr>
     <td width="60%">
       <ul>
-      <li>Contains 3 layers:       <ul>         <li>
-<b>Layer 1</b>: Implements the <code>fill</code> template, and contains a responsive <a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a> (<code class="filename">rabbit.mp4</code>).           <ul>             <li>Remember to add the <strong>required script</strong> for the <a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a> component in your <code><head></code> section so the video appears.</li>             <li>Specify a <code>poster</code> image (<code class="filename">rabbit.jpg</code>). This attribute is <strong>required</strong> for valid AMP stories.</li>             <li>Set the video to play automatically with the <code>autoplay</code> attribute. This attribute is <strong>required</strong> for valid AMP stories.</li>             <li>Set the video to automatically loop back with the <code>loop</code> attribute.</li>             <li>Set the dimensions to <code>width="720"</code> <code>height="1280"</code> and <code>layout="responsive"</code>.</li>           </ul>
-</li>         <li>
-<b>Layer 2</b>  Implements the <code>vertical</code> template and contains one element:           <ul>             <li>An <code><h1></code> element with the title: <em>Rabbits</em>
-</li>           </ul>         </li>         <li>
-<b>Layer 3</b>:  Implements the <code>vertical</code> template and contains one element:           <ul>             <li>A <code><p></code> element that contains the following text: <em>Rabbits can learn to follow simple voice commands and come when called by name, and are curious and playful</em>.</li>             <li>Apply the <code>bottom</code> CSS class to the layer to align the child elements to the bottom of screen.</li>           </ul>         </li>
-</ul>
+      <li>Contient 3 couches :       <ul>         <li> <b>Couche 1</b> : Implémente le modèle <code>fill</code>, et contient une vidéo interactive <a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a> (<code class="filename">rabbit.mp4</code>).           <ul>             <li>Souvenez-vous d'ajouter le <strong>script requis</strong> pour le composant <a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a> dans votre section <code></code> pour que la vidéo apparaisse.</li>             <li>Spécifiez une image <code>poster</code> (<code class="filename">rabbit.jpg</code>). Cet attribut est <strong>requis</strong> pour les stories AMP valides.</li>             <li>Configurez la vidéo pour qu'elle se reproduise automatiquement avec l'attribut <code>autoplay</code>. Cet attribut est <strong>requis</strong> pour les stories AMP valides.</li>             <li>Configurez la vidéo pour qu'elle soit lue en boucle avec l'attribut <code>loop</code>.</li>             <li>Configurez les dimensions sur <code>width="720"</code> <code>height="1280"</code> et <code>layout="responsive"</code>.</li>           </ul> </li>         <li> <b>Couche 2</b> :  Implémente le modèle <code>vertical</code> et contient un élément :           <ul>             <li>Un élément <code><h1></code> avec le titre : <em>Lapins</em> </li>           </ul>         </li>         <li> <b>Couche 3</b> :  Implémente le modèle <code>vertical</code> et contient un élément :           <ul>             <li>A <code><p></code> qui contient le texte suivant : <em>Les lapins peuvent apprendre à suivre des ordres vocaux simples et viennent lorsqu'on les appelle par leur nom. Ils sont également curieux et joueurs</em>.</li>             <li>Appliquez la classe CSS <code>bottom</code> à la couche pour aligner les éléments enfants au bas de l'écran.</li>           </ul>         </li> </ul>
 </li>
       </ul>
     </td>
