@@ -529,18 +529,22 @@ function collectStatics(done) {
  * @return {undefined}
  */
 function persistBuildInfo(done) {
-  const buildInfo = {
-    'number': travis.build.number || null,
-    'at': new Date(),
-    'by': git.user,
-    'environment': config.environment,
-    'commit': {
-      'sha': git.version,
-      'message': git.message,
-    },
-  };
+  Promise.all([git.user, git.version, git.message])
+    .then(([user, version, message]) => {
+      const buildInfo = {
+        'number': travis.build.number || null,
+        'at': new Date(),
+        'by': user,
+        'environment': config.environment,
+        'commit': {
+          'sha': version,
+          'message': message,
+        },
+      };
 
-  fs.writeFile(project.paths.BUILD_INFO, yaml.safeDump(buildInfo), done);
+      fs.writeFile(project.paths.BUILD_INFO, yaml.safeDump(buildInfo), done);
+    })
+    .catch((error) => done(error));
 }
 
 exports.clean = clean;
