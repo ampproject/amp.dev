@@ -10,7 +10,7 @@ Comme pour le bouton de connexion, la présence du bouton de déconnexion est co
 <button amp-access="loggedIn" amp-access-hide tabindex="0" on="tap:amp-access.login-sign-out" class="button-primary comment-button">Logout</button>
 [/sourcecode]
 
-When you click the Logout button, you are directed to the URL that you specified in the [`amp-access`](../../../../documentation/components/reference/amp-access.md) JSON configuration, as part of the login object:
+Lorsque vous cliquez sur le bouton de déconnexion, vous êtes dirigé vers l'URL que vous avez spécifiée dans la configuration JSON <a><code>amp-access</code></a> , dans le cadre de l'objet de connexion:
 
 [sourcecode:json]
 {
@@ -21,4 +21,4 @@ When you click the Logout button, you are directed to the URL that you specified
 }
 [/sourcecode]
 
-Similar to the login, when the AMPByExample server receives a logout request, it uses the return URL query parameter automatically added by the AMP library and redirects to it, adding `#success=true`. By this time, you are back on the initial page; the AMPByExample cookie previously created for the login page (called `ABE_LOGGED_IN`) would be cleared at this point.
+Tout comme à la connexion, lorsque le serveur AMPByExample reçoit une demande de déconnexion, il utilise le paramètre de requête d'URL de retour ajouté automatiquement par la bibliothèque AMP et y redirige, en ajoutant <code>#success=true</code>. Là, vous retournez à la page initiale; le cookie AMPByExample précédemment créé pour la page de connexion (appelé `ABE_LOGGED_IN`) doit être effacé à ce stade.
