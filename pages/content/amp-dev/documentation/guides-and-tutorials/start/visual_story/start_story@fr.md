@@ -1,11 +1,11 @@
 ---
-"$title": Starting our story
+"$title": Démarrons notre story
 "$order": '3'
-description: An entire Web Story is represented by the amp-story component, which serves as a container for all the pages in a story. The amp-story component is also responsible for ...
+description: "Une story Web entière est représentée par le composant amp-story, qui sert de conteneur pour toutes les pages d'une story. Le composant amp-story est également responsable de ..."
 author: bpaduch
 ---
 
-An entire Web Story is represented by the [`amp-story`](../../../../documentation/components/reference/amp-story.md) component, which serves as a container for all the pages in a story.  The [`amp-story`](../../../../documentation/components/reference/amp-story.md) component is also responsible for creating the UI shell, including handling gestures and navigation.
+Une story Web entière est représentée par le composant [`amp-story`](../../../../documentation/components/reference/amp-story.md), qui sert de conteneur pour toutes les pages d'une story. Le composant [`amp-story`](../../../../documentation/components/reference/amp-story.md) est également responsable de la création du shell de l'interface utilisateur, y compris la gestion des gestes et de la navigation.
 
 Le composant [`amp-story`](../../../../documentation/components/reference/amp-story.md) est un composant AMP personnalisé et, comme tous les composants personnalisés, vous devez ajouter le script associé pour le composant au document AMP.
 
@@ -27,16 +27,16 @@ Le composant [`amp-story`](../../../../documentation/components/reference/amp-st
 </body>
 ```
 
-It's important to note that to have a valid AMP story, the `<body>` element must have only one child—the [`amp-story`](../../../../documentation/components/reference/amp-story.md) component; all other elements are contained in the [`amp-story`](../../../../documentation/components/reference/amp-story.md).
+Il est important de noter que pour avoir une story AMP valide, l'élément `<body>` ne doit avoir qu'un seul enfant : le composant [`amp-story`](../../../../documentation/components/reference/amp-story.md) ; tous les autres éléments sont contenus dans l'[`amp-story`](../../../../documentation/components/reference/amp-story.md).
 
 ## Fournir des méta-informations
 
-For stories to be discovered on the web, certain metadata is required to provide mini details of the story, like:
+Pour que les stories soient visibles sur le Web, certaines métadonnées sont nécessaires pour fournir des mini détails de la story, comme :
 
-- The title of the story, represented by the `title` attribute (e.g., "Joy of Pets").
-- The name of the publisher, represented by the `publisher` attribute (e.g., "AMP tutorials").
+- Le titre de la story, représenté par l'attribut `title` (par exemple, "Joie des animaux domestiques").
+- Le nom de l'éditeur, représenté par l'attribut `publisher` (par exemple, "Tutoriels AMP").
 - Le logo de l'éditeur, représenté par l'attribut `publisher-logo-src`.  Il s'agit d'une URL pour une image de logo, dans un format carré de rapport 1x1.
-- A poster image of the story, represented by the `poster-portrait-src` attribute. This is a URL for the poster, and the image must be in portrait format with a 3x4 aspect ratio.
+- Une image d'affiche de la story, représentée par l'attribut `poster-portrait-src`. Il s'agit d'une URL d'affiche et l'image doit être au format portrait avec des proportions de 3x4.
 
 Ajoutons ces attributs à notre balise [`amp-story`](../../../../documentation/components/reference/amp-story.md) :
 
@@ -50,6 +50,6 @@ Ajoutons ces attributs à notre balise [`amp-story`](../../../../documentation/c
 
 En plus de ces attributs obligatoires, vous pouvez appliquer d'autres attributs. Pour en savoir plus, consultez la section sur les [attributs](../../../../documentation/components/reference/amp-story.md#attributes) de la documentation de référence [`amp-story`](../../../../documentation/components/reference/amp-story.md).
 
-[tip type="note"] **NOTE –**  These metadata attributes supplement and do not replace any Structured Data (e.g. JSON-LD) on the page. To ensure your Web Stories are discovered across all platforms, you should add [Structured Data](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md#integrate-with-third-party-platforms-through-additional-metadata) to all your AMP pages, including AMP stories. [/tip]
+[tip type="note"] **REMARQUE -** Ces attributs de métadonnées complètent et ne remplacent aucune donnée structurée (par exemple JSON-LD) sur la page. Pour vous assurer que vos stories Web sont visibles sur toutes les plateformes, vous devez ajouter des [données structurées](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md#integrate-with-third-party-platforms-through-additional-metadata) à toutes vos pages AMP, y compris les stories AMP. [/tip]
 
-At this point, we have a shell of a story without any content. Let's create that page.
+À ce stade, nous avons le shell d'une story sans aucun contenu. Créons à présent la page.
