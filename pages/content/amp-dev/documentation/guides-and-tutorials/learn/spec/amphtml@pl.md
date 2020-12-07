@@ -208,7 +208,7 @@ Znaczników HTML można używać w AMP HTML bez żadnych zmian. Niektóre znaczn
   </tr>
   <tr>
     <td width="30%">noscript</td>
-    <td>Dozwolony. Może być używany w dowolnym miejscu w dokumencie. Jeśli określony, zawartość wewnątrz elementu <code><noscript></code> jest wyświetlana, gdy obsługa JavaScript jest wyłączona przez użytkownika.</td>
+    <td>Dozwolony. Może być używany w dowolnym miejscu w dokumencie. Jeśli określony, zawartość wewnątrz elementu <code>&lt;noscript></code> jest wyświetlana, gdy obsługa JavaScript jest wyłączona przez użytkownika.</td>
   </tr>
   <tr>
     <td width="30%">base</td>
@@ -216,11 +216,11 @@ Znaczników HTML można używać w AMP HTML bez żadnych zmian. Niektóre znaczn
   </tr>
   <tr>
     <td width="30%">img</td>
-    <td>Zastąpiony przez <code>amp-img</code>.<br> Uwaga: znacznik <code><img></code> jest <a href="https://www.w3.org/TR/html5/syntax.html#void-elements">elementem pustym według HTML5</a>, więc nie ma znacznika końca. Znacznik <code><amp-img></amp-img></code> ma natomiast znacznik końca <code></code>.</td>
+    <td>Zastąpiony przez <code>amp-img</code>.<br> Uwaga: znacznik <code>&lt;img></code> jest <a href="https://www.w3.org/TR/html5/syntax.html#void-elements">elementem pustym według HTML5</a>, więc nie ma znacznika końca. Znacznik <code>&lt;amp-img></code> ma natomiast znacznik końca <code>&lt;/amp-img></code>.</td>
   </tr>
     <tr>
     <td width="30%">picture</td>
-    <td>Prohibited. Serve different image formats by using the <a href="https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders?format=websites">fallback</a> attribute or provide multiple <a href="https://amp.dev/documentation/components/amp-img#attributes"><code>srcset</code> on <code><amp-img></code></a>.</td>
+    <td>Prohibited. Serve different image formats by using the <a href="https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders?format=websites">fallback</a> attribute or provide multiple <a href="https://amp.dev/documentation/components/amp-img#attributes"><code>srcset</code> on <code>&lt;amp-img></code></a>.</td>
   </tr>
   <tr>
     <td width="30%">video</td>
@@ -264,7 +264,7 @@ Znaczników HTML można używać w AMP HTML bez żadnych zmian. Niektóre znaczn
   </tr>
   <tr>
     <td width="30%">elementy input</td>
-    <td>W większości dozwolone z <a href="https://amp.dev/documentation/components/amp-form#inputs-and-fields">wyjątkiem niektórych typów</a>, nieprawidłowe są mianowicie typy <code><input type="button"></code>, <code><button type="image"></code>. Dozwolone są również znaczniki pokrewne: <code><fieldset></code>, <code><label></code>
+    <td>W większości dozwolone z <a href="https://amp.dev/documentation/components/amp-form#inputs-and-fields">wyjątkiem niektórych typów</a>, nieprawidłowe są mianowicie typy <code>&lt;input type="button"></code>, <code>&lt;button type="image"></code>. Dozwolone są również znaczniki pokrewne: <code>&lt;fieldset></code>, <code>&lt;label></code>
 </td>
   </tr>
   <tr>
@@ -376,7 +376,7 @@ W poniższych przykładach znacznik właściwości `<property>` musi znajdować 
 
 ### Arkusz stylów keyframes<a name="keyframes-stylesheet"></a>
 
-Oprócz znacznika <code><style amp-custom></code>, autorzy mogą również dodawać znacznik <code><style amp-keyframes></code>, dozwolony specjalnie w przypadku animacji klatek kluczowych.
+Oprócz znacznika `<style amp-custom>`, autorzy mogą również dodawać znacznik `<style amp-keyframes>`, dozwolony specjalnie w przypadku animacji klatek kluczowych.
 
 Do znacznika `<style amp-keyframes>` mają zastosowanie następujące ograniczenia:
 
@@ -384,7 +384,7 @@ Do znacznika `<style amp-keyframes>` mają zastosowanie następujące ograniczen
 2. Może zawierać tylko reguły `@keyframes`, `@media`, `@supports` i ich połączenia.
 3. Nie może być większy niż 500 000 bajtów.
 
-Powodem istnienia tagu `<style amp-keyframes>` jest fakt, że reguły klatek kluczowych są często nieporęczne nawet w przypadku umiarkowanie skomplikowanych animacji, co prowadzi do powolnej analizy składni kodu CSS i pierwszego generowania z treścią. Takie reguły często przekraczają jednak limit rozmiaru nałożony na znacznik <code><style-amp-custom></code>. Umieszczenie takich deklaracji keyframes na końcu dokumentu w sekcji <code><style amp-keyframes></code> pozwala na przekroczenie ograniczeń rozmiarów. Jako że klatki kluczowe nie blokują renderowania, unika się również blokowania pierwszego generowania zawartości w celu ich przeanalizowania.
+Powodem istnienia tagu `<style amp-keyframes>` jest fakt, że reguły klatek kluczowych są często nieporęczne nawet w przypadku umiarkowanie skomplikowanych animacji, co prowadzi do powolnej analizy składni kodu CSS i pierwszego generowania z treścią. Takie reguły często przekraczają jednak limit rozmiaru nałożony na znacznik `<style-amp-custom>`. Umieszczenie takich deklaracji keyframes na końcu dokumentu w sekcji `<style amp-keyframes>` pozwala na przekroczenie ograniczeń rozmiarów. Jako że klatki kluczowe nie blokują renderowania, unika się również blokowania pierwszego generowania zawartości w celu ich przeanalizowania.
 
 Przykład:
 
@@ -427,7 +427,7 @@ Autorzy mogą dołączać wszystkie czcionki niestandardowe za pomocą reguły <
 
 Środowisko uruchomieniowe AMP to JavaScript, który działa wewnątrz każdego dokumentu AMP. Zapewnia on implementacje niestandardowych elementów AMP, zarządza ładowaniem zasobów i nadawaniem priorytetów oraz opcjonalnie zawiera walidatora środowiska uruchomieniowego AMP HTML do użytku podczas tworzenia.
 
-Środowisko uruchomieniowe AMP jest ładowane za pomocą obowiązkowego znacznika <code><script src="https://cdn.ampproject.org/v0.js"></script></code> w sekcji <code><head></code> dokumentu AMP.
+Środowisko uruchomieniowe AMP jest ładowane za pomocą obowiązkowego znacznika `<script src="https://cdn.ampproject.org/v0.js"></script>` w sekcji <code><head></code> dokumentu AMP.
 
 Środowisko uruchomieniowe AMP można umieszczać w każdej stronie w trybie programistycznym. Tryb programistyczny wyzwoli walidację AMP w osadzonej stronie, co spowoduje wyświetlenie statusu walidacji i ewentualnych błędów w konsoli programistycznej JavaScript. Tryb programistyczny można wywoływać poprzez dołączenie parametru `#development=1` do adresu URL strony.
 
