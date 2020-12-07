@@ -12,10 +12,10 @@ Les clients de messagerie nécessitent l'enregistrement de l'expéditeur pour af
 
 # Créez et envoyez un e-mail AMP prêt pour la production
 
-You must demonstrate an understanding and compliance of the AMP email format. Emails must:
+Vous devez comprendre et vous conformer au format d'e-mail AMP. Les e-mails doivent :
 
 - Passer [SPF/DKIM/DMARC](https://support.google.com/a/answer/33786?hl=en) avec le TLD correspondant avec l’adresse "De :"
-- Have a fallback "text/html" MIME part
+- Avoir une partie MIME "text/html" de secours
 - Satisfaire toutes les exigences de l'expéditeur du client
 
 Envoyez un e-mail AMP prêt pour la production aux adresses suivantes :
@@ -26,7 +26,7 @@ Envoyez un e-mail AMP prêt pour la production aux adresses suivantes :
 
 # Remplissez le formulaire global
 
-You must fill out the [AMP for Email: Sender Registration form](https://docs.google.com/forms/d/e/1FAIpQLSdso95e7UDLk_R-bnpzsAmuUMDQEMUgTErcfGGItBDkghHU2A/viewform?gxids=7628). This is the only form you need to fill out to be allowlisted to send AMP emails for all supporting email clients.
+Vous devez remplir le formulaire [AMP pour e-mail: enregistrement de l'envoyeur](https://docs.google.com/forms/d/e/1FAIpQLSdso95e7UDLk_R-bnpzsAmuUMDQEMUgTErcfGGItBDkghHU2A/viewform?gxids=7628). C'est le seul formulaire que vous devez remplir pour être autorisé(e) à envoyer des e-mails AMP pour tous les clients de messagerie pris en charge.
 
 # Respectez les politiques de confidentialité
 
@@ -38,7 +38,7 @@ Vous devez respecter la politique de confidentialité de chaque client.
 
 **Mail.ru**
 
-- [Non-Russian based users](https://help.mail.ru/engmail-help/privacy)
+- [Utilisateurs basés hors de la Russie](https://help.mail.ru/engmail-help/privacy)
 - [Utilisateurs basés en Russie](https://agent.mail.ru/legal/privacypolicy/en)
 
 **Microsoft**
@@ -52,7 +52,7 @@ Vous devez respecter la politique de confidentialité de chaque client.
 
 # Confirmation
 
-Each email client will notify you of your allowlist status via email. If you have any issues please reach out to the AMP for Email Working Group via [GitHub](https://github.com/ampproject/wg-amp4email).
+Chaque client de messagerie vous informera de l'état de votre liste d'autorisation par e-mail. Si vous rencontrez des problèmes, veuillez contacter le groupe de travail AMP pour e-mail via [GitHub](https://github.com/ampproject/wg-amp4email).
 
 # Ajoutez le support de votre client
 
