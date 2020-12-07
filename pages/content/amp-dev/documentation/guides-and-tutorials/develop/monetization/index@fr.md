@@ -1,7 +1,7 @@
 ---
 "$title": Monetizing your AMP page with ads
 "$order": '0'
-description: This guide provides instructions and best practices for displaying ads on your AMP pages. So, to display ads in AMP, you need to add the custom amp-ad component...
+description: Ce guide fournit des instructions et des bonnes pratiques pour afficher des annonces sur vos pages AMP. Ainsi, pour afficher des publicités dans AMP, vous devez ajouter le composant amp-ad personnalisé...
 formats:
 - websites
 ---
@@ -37,7 +37,7 @@ In this example, we are adding an ad slot to serve ads from the a9 network:
 
 ### Step 3: Specify the size of the ad unit
 
-Add the `width` and `height` attributes to the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)  tag.  This specifies the size of the ad on your AMP page:
+Ajoutez les attributs `width` et `height` à la balise [`amp-ad`](../../../../documentation/components/reference/amp-ad.md). Cela spécifie la taille de l'annonce sur votre page AMP:
 
 ```html
 <amp-ad type="a9">
@@ -47,7 +47,7 @@ Add the `width` and `height` attributes to the [`amp-ad`](../../../../documentat
 
 ### Step 4: Set ad network parameters
 
-Each network has specific data attributes they require to serve ads.  Refer to the ad network's [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) documentation and add the attributes that are needed In the following example,  the a9 network requires additional parameters to specify the size of the ad, and other details:
+Chaque réseau possède des attributs de données spécifiques dont il a besoin pour diffuser des annonces. Consultez la documentation [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) du réseau publicitaire et ajoutez les attributs nécessaires. Dans l'exemple suivant, le réseau a9 demande des paramètres supplémentaires pour spécifier la taille de l'annonce et d'autres détails:
 
 ```html
 <amp-ad type="a9"
