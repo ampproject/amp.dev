@@ -97,7 +97,7 @@ Après avoir créé votre annonce AMPHTML, vous devez vous assurer que l'annonce
 - Utilisez le [validateur AMP](https://validator.ampproject.org/) pour des tests ponctuels.
 - Associez-vous à [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) et utilisez leur point de terminaison de validation public.
 
-[tip type="note"] **NOTE –**  To render AMPHTML ads quickly on AMP pages (i.e., using preferential rendering in Fast Fetch), the syntax must be correct.  If the syntax isn't valid, the ad will still render, just not as quickly. [/tip]
+[tip type="note"] **REMARQUE -** Pour afficher rapidement des annonces AMPHTML sur les pages AMP (c'est-à-dire en utilisant un rendu préférentiel dans Fast Fetch), la syntaxe doit être correcte. Si la syntaxe n'est pas valide, l'annonce sera diffusée, mais pas aussi rapidement. [/tip]
 
 ## Prise en charge des annonces AMPHTML dans RTB
 
