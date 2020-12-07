@@ -13,9 +13,9 @@ Les optimiseurs AMP sont des outils qui apportent des optimisations AMP Cache à
 
 ## AMP n'est-il pas déjà rapide ?
 
-You may be thinking: wait – isn’t AMP supposed to be fast out-of-the-box? And you would be right: the AMP runtime is optimized for speed and all valid AMP pages load fast. However, there are additional performance optimizations you can implement on your server to help the browser load AMP pages even faster.
+Vous vous dites peut-être : mais, AMP n'est-il pas censé être prêt à l'emploi ? Et vous pouvez avoir raison : le runtime AMP est optimisé pour la vitesse et toutes les pages AMP valides chargent rapidement. Cependant, il existe des optimisations de performances supplémentaires que vous pouvez implémenter sur votre serveur pour aider le navigateur à charger les pages AMP encore plus rapidement.
 
-In the beginning, AMP caches served the majority of AMP pages. These caches performed additional optimizations on pages to guarantee a strong user experience. But, over time, more surfaces started linking to AMP pages and developers began building entire websites with AMP. That's why the AMP team has started working on AMP Optimizers to allow everyone to serve AMP pages with AMP Cache like performance on their own origin.
+Au début, les caches AMP servaient la majorité des pages AMP. Ces caches effectuaient des optimisations supplémentaires sur les pages pour garantir une expérience utilisateur solide. Mais au fil du temps, de plus en plus de surfaces ont commencé à créer des liens vers des pages AMP et les développeurs ont commencé à créer des sites Web entiers avec AMP. C'est pourquoi l'équipe AMP a commencé à travailler sur les optimiseurs AMP afin de permettre à chacun de servir des pages AMP avec des performances similaires à celles d'AMP Cache sur sa propre origine.
 
 ## Intégrer un optimiseur AMP
 
@@ -44,8 +44,8 @@ Vous pouvez également intégrer vous-même un optimiseur AMP. Il existe plusieu
 
 Il existe différentes intégrations pour les pages rendues dynamiquement par votre serveur et les sites statiques :
 
-1. **Build-time**: for static sites, it’s best to optimize AMP pages as part of the build. This approach is ideal as optimizing AMP pages does not impact serving performance. Checkout [this sample for an AMP Optimizer + Gulp integration](https://github.com/ampproject/amp-toolbox/tree/main/packages/optimizer/demo/gulp).
-2. **Render-time**: if websites have a more dynamic nature or are not able to apply the transformations statically, optimization can be performed after AMP documents are rendered in the server. In that case, to ensure fast serving times, it's best to cache transformed pages for subsequent requests. Caching can take place on the CDN level, on the site's internal infrastructure (eg: Memcached), or even on the server itself, if the set of pages is small enough to fit into memory. To learn more about this approach, checkout [this demo integrating AMP Optimizer into Express.JS](https://github.com/ampproject/amp-toolbox/tree/main/packages/optimizer/demo/express).
+1. **Temps de création** : pour les sites statiques, il est préférable d'optimiser les pages AMP dans le cadre de la création. Cette approche est idéale car l'optimisation des pages AMP n'a pas d'impact sur les performances de diffusion. Consultez [cet exemple pour une intégration de l'optimiseur AMP + Gulp](https://github.com/ampproject/amp-toolbox/tree/main/packages/optimizer/demo/gulp).
+2. **Temps de diffusion** : si les sites Internet ont une nature plus dynamique ou ne sont pas capables d'appliquer les transformations de manière statique, l'optimisation peut être effectuée après la diffusion des documents AMP sur le serveur. Dans ce cas, pour garantir des délais de traitement rapides, il est préférable de mettre en cache les pages transformées pour les demandes suivantes. La mise en cache peut avoir lieu au niveau du CDN, sur l'infrastructure interne du site (ex. : Memcached), ou même sur le serveur lui-même, si l'ensemble des pages est suffisamment petit pour tenir en mémoire. Pour en savoir plus sur cette approche, consultez [cette démo d'intégration de l'optimiseur AMP dans Express.JS](https://github.com/ampproject/amp-toolbox/tree/main/packages/optimizer/demo/express).
 
 ### Intégrations des fournisseurs d'hébergement
 
