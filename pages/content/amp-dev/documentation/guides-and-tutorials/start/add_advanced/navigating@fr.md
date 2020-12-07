@@ -1,19 +1,19 @@
 ---
-"$title": Navigating your site
+"$title": Naviguer sur votre site
 "$order": '5'
 description: La plupart des sites Internet mobiles incluent un menu de navigation sur le site. Ces menus peuvent prendre de nombreuses formes différentes. Dans ce tutoriel, nous allons essayer les exemples suivants pour ...
 ---
 
 La plupart des sites Internet mobiles incluent un menu de navigation sur le site. Ces menus peuvent prendre de nombreuses formes différentes. Dans ce tutoriel, nous allons essayer les exemples suivants pour présenter la navigation dans les pages AMP :
 
-- A link back to your home page - the simplest option.
-- A side navigation bar by using the [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) component.
+- Un lien vers votre page d'accueil - l'option la plus simple.
+- Une barre de navigation latérale à l'aide du composant [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md).
 
-## Link back home
+## Lien vers la page d'accueil
 
-The simplest way to get your users to access your website’s regular navigation options is to just funnel them back to your homepage!
+Le moyen le plus simple d'amener vos utilisateurs à accéder aux options de navigation habituelles de votre site Web consiste simplement à les rediriger vers votre page d'accueil !
 
-Try **replacing** your `<header>` tag with this version that includes a link:
+Essayez de **remplacer** votre section `<header>` par cette version qui inclut un lien :
 
 ```html
 <header class="headerbar">
@@ -47,7 +47,7 @@ article {
 }
 ```
 
-Now **refresh** the page. You should see a link in the top-left corner of the page pointing to `homepage.html`.  If you click the home icon, you’ll quickly discover it doesn’t lead anywhere (because we don't have a `homepage.html` file).
+**Actualisez** maintenant la page. Vous devriez voir un lien dans le coin supérieur gauche de la page pointant vers `homepage.html`. Si vous cliquez sur l'icône d'accueil, vous découvrirez rapidement qu'elle ne mène nulle part (car nous n'avons pas de fichier `homepage.html`).
 
 {{ image('/static/img/docs/tutorials/tut-advanced-navigate-home.png', 412, 190, align='center half', caption='Home icon navigation') }}
 
@@ -55,11 +55,11 @@ Ce lien peut être remplacé par l'URL de la page d'accueil de votre site Intern
 
 Il s'agit de l'approche la plus simple qui exploite la navigation de votre site existant. Ensuite, nous explorerons une option populaire pour la navigation sur le site.
 
-## Navigate with a sidebar
+## Naviguer avec une barre latérale
 
-A common navigation technique is to add a menu icon that when clicked reveals a set of navigation links (from the side of the page). In AMP,  we can create such navigation with the [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) component.
+Une technique de navigation courante consiste à ajouter une icône de menu qui, lorsqu'elle est activée, révèle un ensemble de liens de navigation (sur le côté de la page). Dans AMP, nous pouvons créer une telle navigation avec le composant [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md).
 
-First, we must **add** the [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) component’s JavaScript to the `<head>` tag:
+Tout d'abord, nous devons **ajouter** le JavaScript du composant [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) à la section `<head>` :
 
 ```html
 <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
@@ -74,7 +74,7 @@ Ensuite, nous voulons afficher une icône de menu. Lorsque l'icône est activée
 </header>
 ```
 
-In the above code, we `toggle` the sidebar through the [`on`](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) action attribute on the [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) element, which is identified by the `sidebar1` ID.  Let's add the sidebar.
+Dans le code ci-dessus, nous activons/désactivons (`toggle`) la barre latérale via l'attribut d'action [`on`](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) sur l'élément [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md), qui est identifié par l'ID `sidebar1`. Ajoutons la barre latérale.
 
 **Ajoutez** le code HTML suivant juste après `</header>` :
 
@@ -118,4 +118,4 @@ Très bien, voyons notre barre latérale. **Actualisez** et rechargez votre page
 
 {{ image('/static/img/docs/tutorials/tut-advanced-navigate-sidebar.gif', 412, 384, align='center half', caption='Sidebar menu navigation') }}
 
-Our page is looking great!  Let's add one final touch—a custom font.
+Notre page est superbe ! Ajoutons une touche finale : une police personnalisée.
