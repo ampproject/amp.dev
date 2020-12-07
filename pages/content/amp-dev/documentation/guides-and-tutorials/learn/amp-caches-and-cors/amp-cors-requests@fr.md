@@ -163,7 +163,7 @@ Cet en-tête est une exigence <a href="https://www.w3.org/TR/cors/">W3 CORS Spec
 
 Bien que la spécification W3 CORS permette de renvoyer la valeur de <code>*</code> dans la réponse, pour une sécurité améliorée, vous devez :
 
-- If the `Origin` header is present, validate and echo the value of the <code><code data-md-type="codespan">Origin</code> header.
+- Si l'en-tête `Origin` est présent, valider et transmettre la valeur de l'en-tête <code>Origin</code>.
 
 ### Traitement des requêtes de changement d'état <a name="processing-state-changing-requests"></a>
 
