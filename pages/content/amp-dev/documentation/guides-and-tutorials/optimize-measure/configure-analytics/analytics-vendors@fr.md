@@ -34,7 +34,7 @@ limitations under the License.
 
 Ce document répertorie les fournisseurs d'analyse qui ont des configurations intégrées à utiliser avec le composant [`amp-analytics`](https://amp.dev/documentation/components/amp-analytics/).
 
-Vendors that wish to integrate their service with [`<amp-analytics>`](https://amp.dev/documentation/components/amp-analytics/) should refer to the details in [Integrate your analytics tools with AMP](https://amp.dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools).
+Les fournisseurs qui souhaitent intégrer leur service à [`<amp-analytics>`](https://amp.dev/documentation/components/amp-analytics/) doivent consulter les détails dans [Intégrer vos outils d'analyse dans AMP](https://amp.dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools).
 
 ### Acquia Lift <a name="acquia-lift"></a>
 
@@ -88,7 +88,7 @@ Valeur d'attribut de type : `browsi`
 
 Valeur d'attribut de type : `burt`
 
-Adds support for Burt. Additionally, the `trackingKey` variable must be specified. It's also possible to specify the optional variables `category` and `subCategory`. More details can be found at [burtcorp.com](http://burtcorp.com).
+Ajoute la prise en charge de Burt. En outre, la variable `trackingKey` doit être spécifiée. Il est également possible de spécifier les variables facultatives `category` et `subCategory`. Vous trouverez plus de détails sur [burtcorp.com](http://burtcorp.com).
 
 ### BySide <a name="byside"></a>
 
@@ -154,7 +154,7 @@ Ajoute la prise en charge de [Facebook Pixel](https://www.facebook.com/business/
 
 Valeur d'attribut de type : `gemius`
 
-Adds support for Gemius Audience/Prism analytics. Additionally, the gemius-provided `prefix` and `identifier` variables must be specified. It's also possible to specify the optional variable `extraparams` (key1=value1|key2=value2). More details can be found at [gemius.com](https://www.gemius.com).
+Ajoute la prise en charge de l'analyse Gemius Audience/Prism. De plus, les variables `prefix` et `identifier` fournies par Gemius doivent être spécifiées. Il est également possible de spécifier la variable facultative `extraparams` (key1=value1|key2=value2). Vous trouverez plus de détails sur [gemius.com](https://www.gemius.com).
 
 ### GfK Sensic <a name="gfk-sensic"></a>
 
@@ -197,7 +197,7 @@ De plus, les variables suivantes doivent être définies :
 - `st` : identifiant de l'offre
 - `co` : commentaire
 - `cp` : code
-- `url`: HTTPS location of `amp-analytics-infonline.html`
+- `url` : emplacement HTTPS de `amp-analytics-infonline.html`
 
 Vous trouverez plus de détails sur l'ajout de la prise en charge d'INFOnline/IVW sur [www.infonline.de](https://www.infonline.de/).
 
@@ -322,7 +322,7 @@ Ajoute la prise en charge de New Relic Browser pour mesurer le débit et les per
 
 Valeur d'attribut de type : `nielsen`
 
-Adds support for Nielsen DCR. Please contact your Nielsen representative to get set up with your `apid` as well as assist in defining the remaining parameters in the `vars` section. For more information, see [Nielsen's support documentation](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API).
+Ajoute la prise en charge de Nielsen DCR. Veuillez contacter votre représentant Nielsen pour installer votre `apid` et vous aider à définir les paramètres restants dans la section `vars`. Pour plus d'informations, consultez [la documentation d'assistance de Nielsen](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API).
 
 ### Nielsen Marketing Cloud <a name="nielsen-marketing-cloud"></a>
 
