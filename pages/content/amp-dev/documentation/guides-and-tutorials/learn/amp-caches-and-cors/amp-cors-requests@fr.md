@@ -1,5 +1,5 @@
 ---
-"$title": CORS in AMP
+"$title": CORS avec AMP
 order: '12'
 formats:
 - websites
@@ -7,10 +7,7 @@ formats:
 - stories
 - ads
 teaser:
-  text: |2-
-
-    Many AMP components and extensions take advantage of remote endpoints by
-    using
+  text: De nombreux composants et extensions AMP tirent parti des points de terminaison distants en utilisant
 toc: 'true'
 ---
 
@@ -37,63 +34,65 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Many AMP components and extensions take advantage of remote endpoints by using Cross-Origin Resource Sharing (CORS) requests. This document explains the key aspects of using CORS in AMP. To learn about CORS itself, see the [W3 CORS Spec](https://www.w3.org/TR/cors/).
+De nombreux composants et extensions AMP tirent parti des points de terminaison distants en utilisant des requêtes CORS (Cross-Origin Resource Sharing). Ce document explique les aspects clés de l'utilisation de CORS avec AMP. Pour en savoir plus sur CORS lui-même, consultez la [spécification W3 CORS](https://www.w3.org/TR/cors/) .
 
 <div class="noshowtoc"></div>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true">
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#why-do-i-need-cors-for-my-own-origin-" data-md-type="link">Why do I need CORS for my own origin?</a></li>
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#utilizing-cookies-for-cors-requests" data-md-type="link">Utilizing cookies for CORS requests</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#why-do-i-need-cors-for-my-own-origin-" data-md-type="link">Pourquoi ai-je besoin de CORS pour ma propre origine ?</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#utilizing-cookies-for-cors-requests" data-md-type="link">Utilisation de cookies pour les requêtes CORS</a></li>
 <li data-md-type="list_item" data-md-list-type="unordered">
-<p data-md-type="paragraph"><a href="#cors-security-in-amp" data-md-type="link">CORS security in AMP</a></p>
+<p data-md-type="paragraph"><a href="#cors-security-in-amp" data-md-type="link">Sécurité CORS dans AMP</a></p>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true"><li data-md-type="list_item" data-md-list-type="unordered">
-<p data-md-type="paragraph"><a href="#verify-cors-requests" data-md-type="link">Verify CORS requests</a></p>
+<p data-md-type="paragraph"><a href="#verify-cors-requests" data-md-type="link">Vérifier les requêtes CORS</a></p>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true">
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#1-allow-requests-for-specific-cors-origins" data-md-type="link">1) Allow requests for specific CORS origins</a></li>
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#2-allow-same-origin-requests" data-md-type="link">2) Allow same-origin requests</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#1-allow-requests-for-specific-cors-origins" data-md-type="link">1) Autoriser les requêtes pour des origines CORS spécifiques</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#2-allow-same-origin-requests" data-md-type="link">2) Autoriser les requêtes de même origine</a></li>
 </ul>
 </li></ul>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true">
 <li data-md-type="list_item" data-md-list-type="unordered">
-<p data-md-type="paragraph"><a href="#send-cors-response-headers" data-md-type="link">Send CORS response headers</a></p>
-<ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true"><li data-md-type="list_item" data-md-list-type="unordered"><a href="#access-control-allow-origin-origin" data-md-type="link">Access-Control-Allow-Origin: </a></li></ul>
+<p data-md-type="paragraph"><a href="#send-cors-response-headers" data-md-type="link">Envoyer des en-têtes de réponse CORS</a></p>
+<ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true"><li data-md-type="list_item" data-md-list-type="unordered">
+<a href="#access-control-allow-origin-origin" data-md-type="link">Access-Control-Allow-Origin: </a><origin data-md-type="raw_html"></origin>
+</li></ul>
 </li>
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#processing-state-changing-requests" data-md-type="link">Processing state changing requests</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#processing-state-changing-requests" data-md-type="link">Traitement des requêtes de changement d'état</a></li>
 </ul>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true">
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#example-walkthrough-handing-cors-requests-and-responses" data-md-type="link">Example walkthrough: Handing CORS requests and responses</a></li>
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#testing-cors-in-amp" data-md-type="link">Testing CORS in AMP</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#example-walkthrough-handing-cors-requests-and-responses" data-md-type="link">Exemple de procédure pas à pas : traitement des requêtes et réponses CORS</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#testing-cors-in-amp" data-md-type="link">Tester CORS dans AMP</a></li>
 </ul>
 </li>
 </ul>
 <div data-md-type="block_html"></div>
 
-## Why do I need CORS for my own origin? <a name="why-do-i-need-cors-for-my-own-origin"></a>
+## Pourquoi ai-je besoin de CORS pour ma propre origine ? <a name="why-do-i-need-cors-for-my-own-origin"></a>
 
-You might be confused as to why you'd need CORS for requests to your own origin, let's dig into that.
+Vous pourriez être confus(e) quant à la raison pour laquelle vous auriez besoin de CORS pour les requêtes vers votre propre origine, explorons cela.
 
-AMP components that fetch dynamic data (e.g., amp-form, amp-list, etc.) make CORS requests to remote endpoints to retrieve the data. If your AMP page includes such components, you'll need to handle CORS so that those requests do not fail.
+Les composants AMP qui récupèrent des données dynamiques (par exemple, amp-form, amp-list, etc.) adressent des requêtes CORS aux points de terminaison distants pour récupérer les données. Si votre page AMP inclut de tels composants, vous devrez gérer CORS pour que ces requêtes n'échouent pas.
 
-Let's illustrate this with an example:
+Illustrons cela avec un exemple :
 
-Let's say you have an AMP page that lists products with prices. To update the prices on the page, the user clicks a button, which retrieves the latest prices from a JSON endpoint (done via the amp-list component). The JSON is on your domain.
+Supposons que vous ayez une page AMP qui répertorie les produits avec des prix. Pour mettre à jour les prix sur la page, l'utilisateur clique sur un bouton, qui récupère les derniers prix à partir d'un point de terminaison JSON (via le composant amp-list). Le JSON est sur votre domaine.
 
-Okay, so the page is *on my domain* and the JSON is *on my domain*. I see no problem!
+D'accord, donc la page est *sur mon domaine* et le JSON est *sur mon domaine*. Je ne vois aucun problème !
 
 Ah, mais comment votre utilisateur est-il arrivé sur votre page AMP ? S'agit-il d'une page mise en cache à laquelle il accède ? Il est fort probable que votre utilisateur n'ait pas accédé directement à votre page AMP, mais qu'il ait découvert votre page via une autre plateforme. Par exemple, la recherche Google utilise le cache AMP Google pour afficher rapidement les pages AMP ; ce sont des pages mises en cache qui sont diffusées à partir du cache AMP Google, qui est un domaine *différent*. Lorsque votre utilisateur clique sur le bouton pour mettre à jour les prix sur votre page, la page AMP mise en cache envoie une requête à votre domaine d'origine pour obtenir les prix, ce qui crée une discordance entre les origines (cache -> domaine d'origine). Pour permettre de telles requêtes d'origine croisée, vous devez gérer CORS, sinon la requête échouera.
 
 <amp-img alt="CORS and Cache" layout="responsive" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png" width="809" height="391">
   <noscript>     <img alt="CORS and Cache" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png">   </noscript></amp-img>
 
-**Okay, what should I do?**
+**D'accord, que dois-je faire ?**
 
-1. For AMP pages that fetch dynamic data, make sure you test the cached version of those pages; *don't just test on your own domain*. (See [Testing CORS in AMP](#testing-cors-in-amp) section below)
-2. Follow the instructions in this document for handling CORS requests and responses.
+1. Pour les pages AMP qui récupèrent des données dynamiques, vérifiez que vous testez la version mise en cache de ces pages ; *ne vous contentez pas de tester sur votre propre domaine *. (Voir la section [Tester CORS avec AMP](#testing-cors-in-amp) ci-dessous)
+2. Suivez les instructions de ce document pour gérer les requêtes et réponses CORS.
 
-## Utilizing cookies for CORS requests <a name="utilizing-cookies-for-cors-requests"></a>
+## Utilisation de cookies pour les requêtes CORS <a name="utilizing-cookies-for-cors-requests"></a>
 
-Most AMP components that use CORS requests either automatically set the [credentials mode](https://fetch.spec.whatwg.org/#concept-request-credentials-mode) or allow the author to optionally enable it. For example, the [`amp-list`](https://amp.dev/documentation/components/amp-list) component fetches dynamic content from a CORS JSON endpoint, and allows the author to set the credential mode through the `credentials` attribute.
+La plupart des composants AMP qui utilisent des requêtes CORS définissent automatiquement le [mode des informations d'identification](https://fetch.spec.whatwg.org/#concept-request-credentials-mode) ou permettent à l'auteur de l'activer. Par exemple, le composant [`amp-list`](https://amp.dev/documentation/components/amp-list) récupère le contenu dynamique à partir d'un point de terminaison CORS JSON et permet à l'auteur de définir le mode d'authentification via l'attribut `données d'authentification` .
 
-*Example: Including personalized content in an amp-list via cookies*
+*Exemple : inclure du contenu personnalisé dans une amp-list via des cookies*
 
 [sourcecode:html]
 <amp-list
@@ -106,47 +105,47 @@ Most AMP components that use CORS requests either automatically set the [credent
 </amp-list>
 [/sourcecode]
 
-By specifying the credentials mode, the origin can include cookies in the CORS request and also set cookies in the response (subject to [third-party cookie restrictions](#third-party-cookie-restrictions)).
+En spécifiant le mode d'identification, l'origine peut inclure des cookies dans la requête CORS et également définir des cookies dans la réponse (sous réserve de [restrictions de cookies tiers](#third-party-cookie-restrictions)).
 
-### Third-party cookie restrictions <a name="third-party-cookie-restrictions"></a>
+### Restrictions relatives aux cookies tiers <a name="third-party-cookie-restrictions"></a>
 
-The same third-party cookie restrictions specified in the browser also apply to the credentialed CORS requests in AMP. These restrictions depend on the browser and the platform, but for some browsers, the origin can only set cookies if the user has previously visited the origin in a 1st-party (top) window. Or, in other words, only after the user has directly visited the origin website itself. Given this, a service accessed via CORS cannot assume that it will be able to set cookies by default.
+Les mêmes restrictions de cookies tiers spécifiées dans le navigateur s'appliquent également aux requêtes CORS authentifiées dans AMP. Ces restrictions dépendent du navigateur et de la plateforme, mais pour certains navigateurs, l'origine ne peut définir des cookies que si l'utilisateur a déjà visité l'origine dans une fenêtre tierce (supérieure). Ou, en d'autres termes, seulement après que l'utilisateur ait directement visité le site Web d'origine lui-même. Compte tenu de cela, un service accessible via CORS ne peut pas supposer qu'il sera en mesure de définir des cookies par défaut.
 
-## CORS security in AMP <a name="cors-security-in-amp"></a>
+## Sécurité CORS avec AMP <a name="cors-security-in-amp"></a>
 
-To ensure valid and secure requests and responses for your AMP pages, you must:
+Pour garantir des requêtes et des réponses valides et sécurisées pour vos pages AMP, vous devez :
 
-1. [Verify the request](#verify-cors-requests).
-2. [Send the appropriate response headers](#send-cors-response-headers).
+1. [Vérifier la requête](#verify-cors-requests) .
+2. [Envoyer les en-têtes de réponse appropriés](#send-cors-response-headers).
 
-If you're using Node in your backend, you can use the [AMP CORS middleware](https://www.npmjs.com/package/amp-toolbox-cors), which is part of the [AMP Toolbox](https://github.com/ampproject/amp-toolbox).
+Si vous utilisez Node dans votre backend, vous pouvez utiliser le [middleware AMP CORS](https://www.npmjs.com/package/amp-toolbox-cors), qui fait partie de la [boîte à outils AMP](https://github.com/ampproject/amp-toolbox).
 
-### Verify CORS requests <a name="verify-cors-requests"></a>
+### Vérifier les requêtes CORS <a name="verify-cors-requests"></a>
 
-When your endpoint receives a CORS request:
+Lorsque votre point de terminaison reçoit une requête CORS :
 
-1. [Verify that the CORS <code>Origin</code> header is an allowed origin (publisher's origin + AMP caches)](#verify-cors-header).
-2. [If there isn't an Origin header, check that the request is from the same origin (via `AMP-Same-Origin`)](#allow-same-origin-requests).
+1. [Vérifiez que l'en-tête CORS <code>Origin</code> est une origine autorisée (origine de l'éditeur + caches AMP)](#verify-cors-header).
+2. [S'il n'y a pas d'en-tête Origin, vérifiez que la requête provient de la même origine (via `AMP-Same-Origin`)](#allow-same-origin-requests).
 
-#### 1) Allow requests for specific CORS origins <a name="1-allow-requests-for-specific-cors-origins"></a>
+#### 1) Autoriser les requêtes pour des origines CORS spécifiques <a name="1-allow-requests-for-specific-cors-origins"></a>
 
 <span id="verify-cors-header"></span>
 
-CORS endpoints receive the requesting origin via the `Origin` HTTP header. Endpoints should only allow requests from: (1) the publisher's own origin; and (2) every `cacheDomain` origin listed in [https://cdn.ampproject.org/caches.json](https://cdn.ampproject.org/caches.json).
+Les points de terminaison CORS reçoivent l'origine de la requête via l'en-tête HTTP `Origin`. Les terminaux ne devraient autoriser que les requêtes provenant : (1) de la propre origine de l'éditeur ; et (2) de chaque origine `cacheDomain` répertoriée dans [https://cdn.ampproject.org/caches.json](https://cdn.ampproject.org/caches.json).
 
-For example, endpoints should allow requests from:
+Par exemple, les points de terminaison doivent autoriser les requêtes provenant de :
 
-- Google AMP Cache subdomain: `https://<publisher's domain>.cdn.ampproject.org` <br>(for example, `https://nytimes-com.cdn.ampproject.org`)
+- Sous-domaine de cache AMP Google : `https://<publisher's domain>.cdn.ampproject.org` <br>(par exemple, `https://nytimes-com.cdn.ampproject.org`)
 
 [tip type="read-on"] Pour plus d'informations sur les formats d'URL de cache AMP, consultez ces ressources :
 
-- [Google AMP Cache Overview](https://developers.google.com/amp/cache/overview) [/tip]
+- [Présentation du cache AMP Google](https://developers.google.com/amp/cache/overview) [/tip]
 
-#### 2) Allow same-origin requests <a name="2-allow-same-origin-requests"></a>
+#### 2) Autoriser les requêtes de même origine <a name="2-allow-same-origin-requests"></a>
 
 <span id="allow-same-origin-requests"></span>
 
-For same-origin requests where the `Origin` header is missing, AMP sets the following custom header:
+Pour les requêtes de même origine où l'en-tête `Origin` est manquant, AMP définit l'en-tête personnalisé suivant :
 
 [sourcecode:text]
 AMP-Same-Origin: true
@@ -154,68 +153,68 @@ AMP-Same-Origin: true
 
 Cet en-tête personnalisé est envoyé par le runtime AMP lorsqu'une requête XHR est effectuée sur la même origine (c'est-à-dire un document diffusé à partir d'une URL ne provenant pas du cache). Autorisez les requêtes qui contiennent l'en-tête `AMP-same-origin:true`.
 
-### Send CORS response headers <a name="send-cors-response-headers"></a>
+### Envoyer des en-têtes de réponse CORS <a name="send-cors-response-headers"></a>
 
-After verifying the CORS request, the resulting HTTP response must contain the following headers:
+Après avoir vérifié la requête CORS, la réponse HTTP résultante doit contenir les en-têtes suivants :
 
 ##### Access-Control-Allow-Origin: <origin> </origin><a name="access-control-allow-origin-origin"></a>
 
-This header is a <a href="https://www.w3.org/TR/cors/">W3 CORS Spec</a> requirement, where <code>origin</code> refers to the requesting origin that was allowed via the CORS <code>Origin</code> request header (for example, <code>"https://<publisher's subdomain>.cdn.ampproject.org"</code>).
+Cet en-tête est une exigence <a href="https://www.w3.org/TR/cors/">W3 CORS Spec</a>, où <code>origin</code> fait référence à l’origine de la requête autorisée via l’en-tête de requête CORS <code>Origin</code> (par exemple, <code>"https://<publisher’s subdomain>.cdn.ampproject.org"</code>).
 
-Although the W3 CORS spec allows the value of <code>*</code> to be returned in the response, for improved security, you should:
+Bien que la spécification W3 CORS permette de renvoyer la valeur de <code>*</code> dans la réponse, pour une sécurité améliorée, vous devez :
 
 - If the `Origin` header is present, validate and echo the value of the <code><code data-md-type="codespan">Origin</code> header.
 
-### Processing state changing requests <a name="processing-state-changing-requests"></a>
+### Traitement des requêtes de changement d'état <a name="processing-state-changing-requests"></a>
 
 [tip type="important"] Perform these validation checks *before* you process the request. This validation helps to provide protection against CSRF attacks, and avoids processing untrusted sources requests. [/tip]
 
-Before processing requests that could change the state of your system (for example, a user subscribes to or unsubscribes from a mailing list), check the following:
+Avant de traiter des requêtes susceptibles de modifier l'état de votre système (par exemple, un utilisateur s'abonne ou se désabonne d'une liste de diffusion), vérifiez les points suivants :
 
-**If the `Origin` header is set**:
+**Si l'en-tête `Origin` est défini** :
 
-1. If the origin does not match one of the following values, stop and return an error response:
+1. Si l'origine ne correspond pas à l'une des valeurs suivantes, arrêtez et renvoyez une réponse d'erreur :
 
     - `<publisher's domain>.cdn.ampproject.org`
-    - the publisher's origin (aka yours)
+    - l'origine de l'éditeur (c'est-à-dire la vôtre)
 
-    where `*` represents a wildcard match, and not an actual asterisk ( * ).
+    où `*` représente une correspondance générique et non un astérisque réel (*).
 
-2. Otherwise, process the request.
+2. Sinon, traitez la requête.
 
-**If the `Origin` header is NOT set**:
+**Si l'en-tête `Origin` n'est PAS défini** :
 
-1. Verify that the request contains the `AMP-Same-Origin: true` header. If the request does not contain this header, stop and return an error response.
-2. Otherwise, process the request.
+1. Vérifiez que la requête contient l'en-tête `AMP-Same-Origin: true`. Si la requête ne contient pas cet en-tête, arrêtez et renvoyez une réponse d'erreur.
+2. Sinon, traitez la requête.
 
-## Example walkthrough: Handing CORS requests and responses <a name="example-walkthrough-handing-cors-requests-and-responses"></a>
+## Exemple de procédure pas à pas : traitement des requêtes et des réponses CORS <a name="example-walkthrough-handing-cors-requests-and-responses"></a>
 
-There are two scenarios to account for in CORS requests to your endpoint:
+Il existe deux scénarios à prendre en compte dans les requêtes CORS adressées à votre point de terminaison :
 
-1. A request from the same origin.
-2. A request from a cached origin (from an AMP Cache).
+1. Une requête de la même origine.
+2. Une requête d'une origine mise en cache (à partir d'un cache AMP).
 
-Let's walk though these scenarios with an example. In our example, we manage the `example.com` site that hosts an AMP page named `article-amp.html.`The AMP page contains an `amp-list` to retrieve dynamic data from a `data.json` file that is also hosted on `example.com`. We want to process requests to our `data.json` file that come from our AMP page. These requests could be from the AMP page on the same origin (non-cached) or from the AMP page on a different origin (cached).
+Passons en revue ces scénarios avec un exemple. Dans notre exemple, nous gérons le site `example.com` qui héberge une page AMP nommée `article-amp.html.`. La page AMP contient une `amp-list` pour récupérer des données dynamiques à partir d'un fichier `data.json` également hébergé sur `example.com`. Nous souhaitons traiter les requêtes de notre fichier `data.json` provenant de notre page AMP. Ces requêtes peuvent provenir de la page AMP sur la même origine (non mise en cache) ou de la page AMP sur une origine différente (mise en cache).
 
 <amp-img alt="CORS example" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png" width="629" height="433">
   <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png">   </noscript></amp-img>
 
-### Allowed origins <a name="allowed-origins"></a>
+### Origines autorisées <a name="allowed-origins"></a>
 
-Based on what we know about CORS and AMP (from [Verify CORS requests](#verify-cors-requests) above), for our example we will allow requests from the following domains:
+Sur la base de ce que nous savons sur CORS et AMP (à partir des [requêtes Verify CORS](#verify-cors-requests) ci-dessus), dans notre exemple, nous autoriserons les requêtes provenant des domaines suivants :
 
-- `example.com` --- Publisher's domain
-- `example-com.cdn.ampproject.org` --- Google AMP Cache subdomain
+- `example.com` --- Domaine de l'éditeur
+- `example-com.cdn.ampproject.org` --- Sous-domaine du cache AMP Google
 
-### Response headers for allowed requests <a name="response-headers-for-allowed-requests"></a>
+### En-têtes de réponse pour les requêtes autorisées <a name="response-headers-for-allowed-requests"></a>
 
-For requests from the allowed origins, our response will contain the following headers:
+Pour les requêtes provenant des origines autorisées, notre réponse contiendra les en-têtes suivants :
 
 [sourcecode:text]
 Access-Control-Allow-Origin: <origin>
 [/sourcecode]
 
-These are additional response headers we might include in our CORS response:
+Voici des en-têtes de réponse supplémentaires que nous pourrions inclure dans notre réponse CORS :
 
 [sourcecode:text]
 Access-Control-Allow-Credentials: true
@@ -224,9 +223,9 @@ Access-Control-Max-Age: <delta-seconds>
 Cache-Control: private, no-cache
 [/sourcecode]
 
-### Pseudo CORS logic <a name="pseudo-cors-logic"></a>
+### Logique pseudo CORS <a name="pseudo-cors-logic"></a>
 
-Our logic for handling CORS requests and responses can be simplified into the following pseudo code:
+Notre logique de gestion des requêtes et réponses CORS peut être simplifiée dans le pseudo code suivant :
 
 [sourcecode:text]
 IF CORS header present
@@ -241,9 +240,9 @@ ELSE
       deny request
 [/sourcecode]
 
-#### CORS sample code <a name="cors-sample-code"></a>
+#### Exemple de code CORS <a name="cors-sample-code"></a>
 
-Here's a sample JavaScript function that we could use to handle CORS requests and responses:
+Voici un exemple de fonction JavaScript que nous pourrions utiliser pour gérer les requêtes et réponses CORS :
 
 [sourcecode:javascript]
 function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
@@ -275,16 +274,16 @@ function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
 }
 [/sourcecode]
 
-**Note**: For a working code sample, see [amp-cors.js](https://github.com/ampproject/amphtml/blob/master/build-system/server/amp-cors.js).
+**Remarque** : pour un exemple de code fonctionnel, consultez [amp-cors.js](https://github.com/ampproject/amphtml/blob/master/build-system/server/amp-cors.js).
 
-### Scenario 1: Get request from AMP page on same origin <a name="scenario-1-get-request-from-amp-page-on-same-origin"></a>
+### Scénario 1 : obtenir une requête de la page AMP sur la même origine <a name="scenario-1-get-request-from-amp-page-on-same-origin"></a>
 
-In the following scenario, the `article-amp.html` page requests the `data.json` file; the origins are the same.
+Dans le scénario suivant, la page `article-amp.html` demande le fichier `data.json` ; les origines sont les mêmes.
 
 <amp-img alt="CORS example - scenario 1" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png" width="657" height="155">
   <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png">   </noscript></amp-img>
 
-If we examine the request, we'll find:
+Si nous examinons la requête, nous trouverons :
 
 [sourcecode:text]
 Request URL: https://example.com/data.json
@@ -292,23 +291,23 @@ Request Method: GET
 AMP-Same-Origin: true
 [/sourcecode]
 
-As this request is from the same origin, there is no `Origin` header but the custom AMP request header of `AMP-Same-Origin: true` is present. We can allow this request as it's from the same origin (`https://example.com`).
+Comme cette requête provient de la même origine, il n'y a pas d'en-tête `Origin` mais l'en-tête de la requête AMP personnalisé de `AMP-Same-Origin: true` est présent. Nous pouvons autoriser cette requête car elle provient de la même origine (`https://example.com`).
 
-Our response headers would be:
+Nos en-têtes de réponse seraient :
 
 [sourcecode:text]
 Access-Control-Allow-Credentials: true
 Access-Control-Allow-Origin: https://example.com
 [/sourcecode]
 
-### Scenario 2: Get request from cached AMP page <a name="scenario-2-get-request-from-cached-amp-page"></a>
+### Scénario 2 : obtenir une requête de la page AMP en cache <a name="scenario-2-get-request-from-cached-amp-page"></a>
 
-In the following scenario, the `article-amp.html` page cached on the Google AMP Cache requests the `data.json` file; the origins differ.
+Dans le scénario suivant, la page `article-amp.html` mise en cache dans le cache AMP google demande le fichier `data.json` ; les origines diffèrent.
 
 <amp-img alt="CORS example - scenario 2" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png" width="657" height="155">
   <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png">   </noscript></amp-img>
 
-If we examine this request, we'll find:
+Si nous examinons cette requête, nous trouverons :
 
 [sourcecode:text]
 Request URL: https://example.com/data.json
@@ -316,31 +315,31 @@ Request Method: GET
 Origin: https://example-com.cdn.ampproject.org
 [/sourcecode]
 
-As this request contains an `Origin` header, we'll verify that it's from an allowed origin. We can allow this request as it's from an allowed origin.
+Comme cette requête contient un en-tête `Origin`, nous vérifierons qu'elle provient d'une origine autorisée. Nous pouvons autoriser cette requête car elle provient d'une origine autorisée.
 
-Our response headers would be:
+Nos en-têtes de réponse seraient :
 
 [sourcecode:text]
 Access-Control-Allow-Credentials: true
 Access-Control-Allow-Origin: https://example-com.cdn.ampproject.org
 [/sourcecode]
 
-## Working with cached fonts <a name="working-with-cached-fonts"></a>
+## Utilisation des polices mises en cache <a name="working-with-cached-fonts"></a>
 
-Google AMP Cache caches AMP HTML documents, images and fonts to optimize the speed of the AMP page. While making the AMP page fast, we also want to be careful in securing the cached resources. We will be making a change in how AMP cache responds it’s cached resources, typically for fonts, by respecting the origin’s `Access-Control-Allow-Origin` value.
+Google AMP Cache met en cache les documents, images et polices AMP HTML pour optimiser la vitesse de la page AMP. Tout en rendant la page AMP rapide, nous voulons également veiller à sécuriser les ressources mises en cache. Nous allons modifier la façon dont le cache AMP répond à ses ressources mises en cache, généralement pour les polices, en respectant la valeur `Access-Control-Allow-Origin`.
 
-### Past behavior (before October 2019) <a name="past-behavior-before-october-2019"></a>
+### Comportement passé (avant octobre 2019) <a name="past-behavior-before-october-2019"></a>
 
 Lorsqu'une page AMP chargeait `https://example.com/some/font.ttf` à partir de l'attribut `@font-face src`, AMP Cache mettait en cache le fichier de police et diffusait la ressource comme ci-dessous avec l'inconnue `Access-Control-Allow-Origin`.
 
 - URL `https://example-com.cdn.ampproject.org/r/s/example.com/some/font.tff`
-- Access-Control-Allow-Origin: *
+- Access-Control-Allow-Origin : *
 
-### New behavior (October 2019 and after) <a name="new-behavior-october-2019-and-after"></a>
+### Nouveau comportement (octobre 2019 et après) <a name="new-behavior-october-2019-and-after"></a>
 
-While the current implementation is permissive, this could lead to unexpected use of the fonts from cross-origin sites. In this change AMP Cache will start to respond with the exact same `Access-Control-Allow-Origin` value the origin server responds. To properly load the fonts from the cached AMP document, you will need to accept the AMP Cache origin via the header.
+Bien que l'implémentation actuelle soit permissive, cela pourrait conduire à une utilisation inattendue des polices de sites d'origine croisée. Dans ce changement, AMP Cache commencera à répondre avec exactement la même valeur `Access-Control-Allow-Origin` que le serveur d'origine. Pour charger correctement les polices du document AMP mis en cache, vous devrez accepter l'origine AMP Cache via l'en-tête.
 
-A sample implementation would be:
+Un exemple d'implémentation serait :
 
 [sourcecode:javascript]
 function assertFontCors(req, res, opt_validMethods, opt_exposeHeaders) {
@@ -360,57 +359,57 @@ function assertFontCors(req, res, opt_validMethods, opt_exposeHeaders) {
 }
 [/sourcecode]
 
-As an example, if you wanted to load /some/font.ttf in `https://example.com/amp.html`, the origin server should respond with the Access-Control-Allow-Origin header as below.
+Par exemple, si vous souhaitez charger /some/font.ttf dans `https://example.com/amp.html`, le serveur d'origine doit répondre avec l'en-tête Access-Control-Allow-Origin comme ci-dessous.
 
 <amp-img alt="CORS font example" layout="responsive" src="https://amp.dev/static/img/docs/cors-font.jpg" width="2268" height="1594">
   <noscript>     <img alt="CORS font example" src="https://amp.dev/static/img/docs/cors-font.jpg">   </noscript></amp-img>
 
 [tip type="note"] If your font file is okay to be accessible from any origin, you can respond with a wild card `Access-Control-Allow-Origin`, AMP cache will also echo that value meaning it will be responding with `Access-Control-Allow-Origin: *`. If you already have this setting, there is no need in changing anything. [/tip]
 
-We are planning to make this change around mid October 2019 and would expect every AMP publishers using self-hosted fonts to check if it’s affected.
+Nous prévoyons d'apporter ce changement vers la mi-octobre 2019 et nous attendons de tous les éditeurs AMP utilisant des polices auto-hébergées qu'ils vérifient si cela est affecté.
 
-#### Roll out plan <a name="roll-out-plan"></a>
+#### Plan de déploiement <a name="roll-out-plan"></a>
 
-- 2019-09-30: release contains more precise control over which domains this change applies to. This build should roll out over the course of this week.
-- 2019-10-07: test domains will be enabled for manual testing.
-- 2019-10-14: (but depending on how testing goes): the feature will be rolled out generally.
+- 30/09/2019 : la version contient un contrôle plus précis sur les domaines auxquels cette modification s'applique. Cette version devrait être déployée au cours de cette semaine.
+- 07/10/2019 : les domaines de test seront activés pour les tests manuels.
+- 14/10/2019 : (mais en fonction de la façon dont les tests se déroulent) : la fonctionnalité sera déployée de manière générale.
 
-Follow the related [issue here.](https://github.com/ampproject/amphtml/issues/24834)
+Suivez le [problème associé ici.](https://github.com/ampproject/amphtml/issues/24834)
 
-## Testing CORS in AMP <a name="testing-cors-in-amp"></a>
+## Tester CORS dans AMP <a name="testing-cors-in-amp"></a>
 
-When you are testing your AMP pages, make sure to include tests from the cached versions of your AMP pages.
+Lorsque vous testez vos pages AMP, assurez-vous d'inclure les tests des versions mises en cache de vos pages AMP.
 
-### Verify the page via the cache URL <a name="verify-the-page-via-the-cache-url"></a>
+### Vérifiez la page via l'URL du cache <a name="verify-the-page-via-the-cache-url"></a>
 
-To ensure your cached AMP page renders and functions correctly:
+Pour vous assurer que votre page AMP mise en cache s'affiche et fonctionne correctement :
 
-1. From your browser, open the URL that the AMP Cache would use to access your AMP page. You can determine the cache URL format from this [tool on AMP By Example](https://amp.dev/documentation/examples/guides/using_the_google_amp_cache/).
+1. Depuis votre navigateur, ouvrez l'URL que le cache AMP utiliserait pour accéder à votre page AMP. Vous pouvez déterminer le format d'URL de cache à partir de cet [outil sur AMP par exemple](https://amp.dev/documentation/examples/guides/using_the_google_amp_cache/) .
 
-    For example:
+    Par exemple :
 
-    - URL: `https://amp.dev/documentation/guides-and-tutorials/start/create/`
-    - AMP Cache URL format: `https://www-ampproject-org.cdn.ampproject.org/c/s/www.ampproject.org/docs/tutorials/create.html`
+    - URL : `https://amp.dev/documentation/guides-and-tutorials/start/create/`
+    - Format de l'URL AMP Cache : `https://www-ampproject-org.cdn.ampproject.org/c/s/www.ampproject.org/docs/tutorials/create.html`
 
-2. Open your browser's development tools and verify that there are no errors and that all resources loaded correctly.
+2. Ouvrez les outils de développement de votre navigateur et vérifiez qu'il n'y a pas d'erreurs et que toutes les ressources ont été chargées correctement.
 
-### Verify your server response headers <a name="verify-your-server-response-headers"></a>
+### Vérifiez les en-têtes de réponse de votre serveur <a name="verify-your-server-response-headers"></a>
 
-You can use the `curl` command to verify that your server is sending the correct HTTP response headers. In the `curl` command, provide the request URL and any custom headers you wish to add.
+Vous pouvez utiliser la commande `curl` pour vérifier que votre serveur envoie les en-têtes de réponse HTTP corrects. Dans la commande `curl`, indiquez l'URL de la requête et tous les en-têtes personnalisés que vous souhaitez ajouter.
 
-**Syntax**: `curl <request-url> -H <custom-header> - I`
+**Syntaxe** : `curl <request-url> -H <custom-header> - I`
 
-#### Test request from same origin <a name="test-request-from-same-origin"></a>
+#### Requête de test de la même origine <a name="test-request-from-same-origin"></a>
 
-In a same-origin request, the AMP system adds the custom `AMP-Same-Origin:true` header.
+Dans une requête de la même origine, le système AMP ajoute l'en-tête personnalisé `AMP-Same-Origin:true`.
 
-Here's our curl command for testing a request from `https://ampbyexample.com` to the `examples.json` file (on the same domain):
+Voici notre commande curl pour tester une requête de `https://ampbyexample.com` vers le fichier `examples.json` (sur le même domaine) :
 
 [sourcecode:shell]
 curl 'https://amp.dev/static/samples/json/examples.json' -H 'AMP-Same-Origin: true' -I
 [/sourcecode]
 
-The results from the command show the correct response headers (note: extra information was trimmed):
+Les résultats de la commande affichent les en-têtes de réponse corrects (remarque : les informations supplémentaires ont été coupées) :
 
 [sourcecode:http]
 HTTP/2 200
@@ -420,17 +419,17 @@ access-control-allow-origin: https://ampbyexample.com
 access-control-allow-methods: POST, GET, OPTIONS
 [/sourcecode]
 
-#### Test request from cached AMP page <a name="test-request-from-cached-amp-page"></a>
+#### Requête de test de la page AMP mise en cache <a name="test-request-from-cached-amp-page"></a>
 
 Dans une requête CORS ne provenant pas du même domaine (c'est-à-dire du cache), l'en-tête `origin` fait partie de la requête.
 
-Here's our curl command for testing a request from the cached AMP page on the Google AMP Cache to the `examples.json` file:
+Voici notre commande curl pour tester une requête de la page AMP mise en cache sur le cache Google AMP vers le fichier `examples.json` :
 
 [sourcecode:shell]
 curl 'https://amp.dev/static/samples/json/examples.json' -H 'origin: https://ampbyexample-com.cdn.ampproject.org' -I
 [/sourcecode]
 
-The results from the command show the correct response headers:
+Les résultats de la commande affichent les en-têtes de réponse corrects :
 
 ```http
 HTTP/2 200
