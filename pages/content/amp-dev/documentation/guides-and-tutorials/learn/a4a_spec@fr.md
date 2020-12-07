@@ -34,15 +34,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-*If you'd like to propose changes to the standard, please comment on the [Intent to Implement](https://github.com/ampproject/amphtml/issues/4264)*.
+*Si vous souhaitez proposer des modifications à la norme, veuillez laisser un commentaire dans [Intention de mise en œuvre](https://github.com/ampproject/amphtml/issues/4264)*.
 
-AMPHTML ads is a mechanism for rendering fast, performant ads in AMP pages. To ensure that AMPHTML ad documents ("AMP creatives") can be rendered quickly and smoothly in the browser and do not degrade user experience, AMP creatives must obey a set of validation rules. Similar in spirit to the [AMP format rules](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml), AMPHTML ads have access to a limited set of allowed tags, capabilities, and extensions.
+Les annonces AMPHTML sont un mécanisme permettant de diffuser des annonces rapides et performantes sur des pages AMP. Pour assurer la diffusion rapide et fluide des documents publicitaires AMPHTML (« publicités AMP ») dans le navigateur ainsi qu'une expérience utilisateur optimale, les publicités AMP doivent obéir à un ensemble de règles de validation. Dans le même esprit que les [règles du format AMP](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml), les annonces AMPHTML ont accès à un ensemble limité de balises, de capacités et d'extensions autorisées.
 
-## AMPHTML ad format rules <a name="amphtml-ad-format-rules"></a>
+## Règles de format d'annonce AMPHTML <a name="amphtml-ad-format-rules"></a>
 
-Unless otherwise specified below, the creative must obey all rules given by the [AMP format rules](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml.html), included here by reference. For example, the AMPHTML ad [Boilerplate](#boilerplate) deviates from the AMP standard boilerplate.
+Sauf indication contraire ci-dessous, la publicité doit obéir à toutes les règles données par les [règles du format AMP](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml.html), incluses ici en guise de référence. Par exemple, le [modèle](#boilerplate) de l'annonce AMPHTML est différent du modèle standard AMP.
 
-In addition, creatives must obey the following rules:
+En outre, les publicités doivent respecter les règles suivantes:
 
 <table>
 <thead><tr>
@@ -97,9 +97,9 @@ In addition, creatives must obey the following rules:
 </tbody>
 </table>
 
-### Boilerplate <a name="boilerplate"></a>
+### Modèle <a name="boilerplate"></a>
 
-AMPHTML ad creatives require a different, and considerably simpler, boilerplate style line than [general AMP documents do](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md):
+Les créations publicitaires AMP HTML nécessitent un modèle de style différent et considérablement plus simple que [les documents AMP généraux](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md):
 
 [sourcecode:html]
 <style amp4ads-boilerplate>
@@ -150,9 +150,9 @@ Note that the same rules about mutations to the boilerplate text apply as in the
 </tbody>
 </table>
 
-#### CSS animations and transitions <a name="css-animations-and-transitions"></a>
+#### Animations et transitions CSS <a name="css-animations-and-transitions"></a>
 
-##### Selectors <a name="selectors"></a>
+##### Sélecteurs <a name="selectors"></a>
 
 The `transition` and `animation` properties are only allowed on selectors that:
 
