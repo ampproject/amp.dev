@@ -8,7 +8,7 @@ Le système de composants AMP vous permet d'intégrer rapidement des fonctionnal
 
 - **intégré** : il s'agit de composants inclus dans la bibliothèque JavaScript AMP de base (spécifiée dans la section `<head>`), tels que [`amp-img`](../../../../documentation/components/reference/amp-img.md) et [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md). Ces composants peuvent être utilisés immédiatement dans un document AMP.
 
-- **extended**: These are extensions to the base library that must be explicitly included in the document as custom elements.  Custom elements require specific scripts that are added to the `<head>` section (e.g., `<script async custom-element="`[`amp-video`](../../../../documentation/components/reference/amp-video.md)`...`).
+- **étendu** : il s'agit d'extensions de la bibliothèque de base qui doivent être explicitement incluses dans le document en tant qu'éléments personnalisés. Les éléments personnalisés nécessitent des scripts spécifiques qui sont ajoutés à la section `<head>` (p.ex., `<script async custom-element="`[`amp-video`](../../../../documentation/components/reference/amp-video.md)`...`).
 
 - **expérimental** : ce sont des composants qui sont publiés mais qui ne sont pas encore prêts pour une large utilisation. Les développeurs peuvent choisir d'utiliser ces fonctionnalités avant qu'elles ne soient entièrement publiées. En savoir plus sur les [fonctionnalités expérimentales](../../../../documentation/guides-and-tutorials/learn/experimental.md).
 
