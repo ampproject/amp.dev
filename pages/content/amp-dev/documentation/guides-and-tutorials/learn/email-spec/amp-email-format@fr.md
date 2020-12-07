@@ -1,5 +1,5 @@
 ---
-"$title": AMP for Email Format
+"$title": Format AMP for Email
 order: '1'
 formats:
 - email
@@ -31,7 +31,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-AMP is a technology known for developing super fast web pages on mobile clients. AMP is a set of HTML tags backed by JavaScript that easily enables functionality with an added focus on performance and security. There are [AMP components](https://amp.dev/documentation/components/) for everything from carousels, to responsive form elements, to retrieving fresh content from remote endpoints.
+AMP est une technologie connue pour développer des pages Web ultra rapides sur les clients mobiles. AMP est un ensemble de balises HTML soutenues par JavaScript qui active facilement les fonctionnalités en donnant plus de priorité aux performances et à la sécurité. Il existe des [composants AMP](https://amp.dev/documentation/components/) pour tout, des carrousels aux éléments de formulaire réactifs, en passant par la récupération de contenu récent à partir de points de terminaison distants.
 
 The AMP for Email format provides [a subset of AMP components](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md) that you can use in email messages. Recipients of AMP emails can view and interact with the AMP components directly in the email.
 
@@ -90,7 +90,7 @@ AMP for Email relies on the standard `multipart/alternative` [MIME](https://en.w
 
 ### Specifying CSS in an AMP document <a name="specifying-css-in-an-amp-document"></a>
 
-All CSS in any AMP document must be included in a `<style amp-custom>` tag within the header or as inline `style` attributes.
+Tous les CSS de tout document AMP doivent être inclus dans une balise `<style amp-custom>` dans l'en-tête ou en tant qu'attributs `style` intégrés.
 
 [sourcecode:html]
 ...
@@ -120,7 +120,7 @@ Note: The entire `<style>` tag cannot exceed 50,000 bytes. The validator will ch
 
 ## Validation <a name="validation"></a>
 
-To ensure your email messages meet the strict criteria for the AMP for Email format, you can use AMP's existing validation tools.
+Pour vous assurer que vos e-mails répondent aux critères stricts du format AMP for Email, vous pouvez utiliser les outils de validation existants d'AMP.
 
 See [Validate AMP Email](https://amp.dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_emails/) for more information.
 
@@ -128,7 +128,7 @@ See [Validate AMP Email](https://amp.dev/documentation/guides-and-tutorials/lear
 
 ### Tracking email opens and interaction <a name="tracking-email-opens-and-interaction"></a>
 
-AMPHTML allows tracking email opens with pixel tracking techniques, same as regular HTML emails. Any user-initiated requests for data from external services will also indicate the user is interacting with the message. Email clients may offer their users the ability to disable loading remote images, and other external requests.
+AMPHTML permet de suivre les ouvertures d'e-mails avec des techniques de suivi des pixels, identiques aux e-mails HTML classiques. Toute demande de données initiée par l'utilisateur auprès de services externes indiquera également que l'utilisateur interagit avec le message. Les clients de messagerie peuvent offrir à leurs utilisateurs la possibilité de désactiver le chargement d'images distantes et d'autres demandes externes.
 
 ### AMP-specific analytics <a name="amp-specific-analytics"></a>
 
