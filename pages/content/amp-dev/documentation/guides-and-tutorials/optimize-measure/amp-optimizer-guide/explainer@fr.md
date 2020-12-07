@@ -1,7 +1,7 @@
 ---
 "$title": Comment fonctionne un optimiseur AMP
 "$order": '1'
-description: An AMP Optimizer takes a valid AMPHTML document as input and transforms it into an optimized version by applying additional optimizations that would be cumbersome to do “by hand”. This guides explains in details how AMP Optimizer work.
+description: "Un optimiseur AMP prend un document AMPHTML valide en entrée et le transforme en une version optimisée en appliquant des optimisations supplémentaires qu'il serait fastidieux de faire \"à la main\". Ce guide explique en détail le fonctionnement de l'optimiseur AMP."
 formats:
 - websites
 - stories
