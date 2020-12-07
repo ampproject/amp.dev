@@ -1,5 +1,5 @@
 ---
-"$title": Node.js AMP Optimizer Guide
+"$title": "Guide de l'optimisation AMP Node.js"
 "$order": '2'
 description: "Ce guide explique comment configurer et utiliser la version Node.js de l'optimiseur AMP."
 formats:
@@ -10,17 +10,17 @@ author: sebastianbenz
 
 Ce guide explique comment configurer et utiliser la version Node.js de l'optimiseur AMP.
 
-## Setup
+## Installation
 
-Install via NPM using:
+Installez via NPM en utilisant :
 
 ```shell
 npm install @ampproject/toolbox-optimizer
 ```
 
-## Usage
+## Utilisation
 
-The AMP Optimizer API takes an HTML string as input and returns an optimized version of the HTML string. The basic usage looks like this:
+L'API AMP Optimizer prend une chaîne HTML en entrée et renvoie une version optimisée de la chaîne HTML. L'utilisation de base ressemble à ceci :
 
 ```js
 const AmpOptimizer = require('@ampproject/toolbox-optimizer');
@@ -84,23 +84,23 @@ router.get('/', (req, res) => {
 module.exports = router;
 ```
 
-Important: Make sure to setup caching or a CDN when using AMP Optimizer on the server to avoid render delays.
+Important : assurez-vous de configurer la mise en cache ou un CDN lorsque vous utilisez l'optimiseur AMP sur le serveur pour éviter les retards de rendu.
 
 ## Configuration
 
 L'optimiseur AMP fournit une configuration par défaut raisonnable qui devrait bien fonctionner dans la plupart des cas. Cependant, les transformations peuvent être personnalisées pour des cas d'utilisation spécifiques. Vous pouvez trouver une liste de toutes les options disponibles [ici](https://github.com/ampproject/amp-toolbox/tree/main/packages/optimizer#options).
 
-A few notable options are:
+Quelques options notables sont :
 
-- `lts: true` for enabling [long-term stable URLs](https://github.com/ampproject/amphtml/blob/main/contributing/lts-release.md) for AMP runtime and components.
-- `verbose: true` for detailed debugging outputs. Especially good for identifying reasons why the AMP boilerplate could not be removed.
-- `imageOptimizer`: enable automated image srcset generation by providing a function for calculating srcset URLs for a given image src. The function should return a URL pointing to a version of the `src` image with the given width. If no image is available, it should return a falsy value. More about this in the next section.
+- `lts: true` pour l'activation d'[URL stables à long terme](https://github.com/ampproject/amphtml/blob/main/contributing/lts-release.md) pour l'environnement d'exécution et les composants AMP.
+- `verbose: true` pour les sorties de débogage détaillées. Particulièrement utile pour identifier les raisons pour lesquelles le passe-partout AMP n'a pas pu être retiré.
+- `imageOptimizer` : permet la génération automatique de srcset d'images en fournissant une fonction de calcul des URL srcset pour une image src donnée. La fonction doit renvoyer une URL pointant vers une version de l'image `src` avec la largeur donnée. Si aucune image n'est disponible, elle doit renvoyer une valeur erronée. Plus d'informations à ce sujet sont fournies dans la section suivante.
 
-### Image Optimization
+### Optimisation d'image
 
 L'optimiseur AMP peut générer des valeurs `srcset` pour un `amp-img` en fonction de sa définition de `layout`. Pour que cela fonctionne, vous devez fournir une fonction qui mappe le `src` et une `width` à une valeur source `srcset` redimensionnée. Le redimensionnement de l'image n'est pas effectué par l'optimiseur AMP et doit se produire soit au moment de la génération (par exemple pour les sites statiques), soit via un service d'hébergement d'images tel que [thumbor](https://github.com/thumbor/thumbor).
 
-Here is an example implementation that appends the image width to the `src`:
+Voici un exemple d'implémentation qui ajoute la largeur de l'image au `src` :
 
 ```js
 const ampOptimizer = AmpOptimizer.create({
@@ -119,7 +119,7 @@ const ampOptimizer = AmpOptimizer.create({
 })
 ```
 
-Using this implementation, AMP Optimizer will transform the following `amp-img` declarations:
+En utilisant cette implémentation, l'optimiseur AMP transformera les déclarations `amp-img` :
 
 ```html
 <!-- Injects srcset for responsive layout -->
@@ -137,7 +137,7 @@ Using this implementation, AMP Optimizer will transform the following `amp-img` 
 ></amp-img>
 ```
 
-into:
+en :
 
 ```html
 <!-- Injects srcset for responsive layout -->
@@ -156,4 +156,4 @@ into:
 ></amp-img>
 ```
 
-Tip: When using `layout=responsive` use the `width` and `height` attribute to specify the minimum image dimensions. For example, for a full-bleed hero image on mobile, specify the width as `width=320`.
+Conseil : lorsque vous utilisez `layout=responsive`, utilisez l'attribut `width` et `height` pour spécifier les dimensions minimales de l'image. Par exemple, pour une image de héros à fond perdu sur mobile, spécifiez la largeur comme `width=320`.
