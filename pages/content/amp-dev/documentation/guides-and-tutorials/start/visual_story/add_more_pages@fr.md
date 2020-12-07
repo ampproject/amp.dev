@@ -1,5 +1,5 @@
 ---
-"$title": Adding more pages
+"$title": Ajouter plus de pages
 "$order": '5'
 description: Now that you are familiar with adding a page to a Web Story, adding the next pages in our "The Joy of Pets" story is very similar.
 author: bpaduch
@@ -7,11 +7,11 @@ author: bpaduch
 
 Maintenant que vous êtes familiarisé(e) avec l'ajout d'une page à une story Web, l'ajout des pages suivantes dans notre histoire "La joie des animaux domestiques" est très similaire. Sur la base des informations fournies ci-dessous, **créez les pages restantes** en utilisant ce que vous avez appris jusqu'à présent. Si vous êtes bloqué(e), regardez le code complet (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>).
 
-[tip type="tip"] **TIP –** Remember that each page needs a unique "id" attribute (e.g., `id="page1"`). [/tip]
+[tip type="tip"] **CONSEIL -** N'oubliez pas que chaque page a besoin d'un attribut unique "id" (par exemple, `id="page1"`). [/tip]
 
-## Page 1: Cats
+## Page 1 : chats
 
-Demonstrates how to display an image and text in a single layer.
+Montre comment afficher une image et du texte dans une seule couche.
 
 <table class="noborder pages">
   <tr>
@@ -27,9 +27,9 @@ Demonstrates how to display an image and text in a single layer.
   </tr>
 </table>
 
-## Page 2: Dogs
+## Page 2 : chiens
 
-Demonstrates how to arrange text and display a screen-filling image with two layers.
+Montre comment organiser le texte et afficher une image de remplissage d'écran avec deux couches.
 
 <table class="noborder">
   <tr>
@@ -47,9 +47,9 @@ Demonstrates how to arrange text and display a screen-filling image with two lay
   </tr>
 </table>
 
-## Page 3: Birds
+## Page 3 : oiseaux
 
-Demonstrates how to arrange text, display a screen-filling image, and provide background audio for the page.
+Montre comment organiser le texte, afficher une image qui remplit l'écran et fournir un son d'arrière-plan pour la page.
 
 <table class="noborder">
   <tr>
@@ -69,9 +69,9 @@ Demonstrates how to arrange text, display a screen-filling image, and provide ba
   </tr>
 </table>
 
-## Page 4: Rabbits
+## Page 4 : lapins
 
-Demonstrates how to arrange text and display a screen-filling video for the page.
+Montre comment organiser le texte et afficher une vidéo de remplissage d'écran pour la page.
 
 <table class="noborder">
   <tr>
