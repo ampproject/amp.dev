@@ -12,11 +12,11 @@ author: bpaduch
 
 In this tutorial, we'll introduce you to the [`amp-story`](../../../../documentation/components/reference/amp-story.md) component, which you can use to create visually engaging Web Stories with AMP. By the end of this tutorial, you'll have created a story about "The Joy of Pets" that provides bite-sized information and visuals to entertain and engage readers.
 
-## You will learn to:
+## Vous apprendrez à :
 
 - Create a multi-page story by using the [`amp-story`](../../../../documentation/components/reference/amp-story.md) component
-- Create visual effects with multiple layers in a page
-- Lay out elements in a page by using layer templates
+- Créer des effets visuels avec plusieurs couches dans une page
+- Disposer des éléments dans une page à l'aide de modèles de couche
 - Add audio that plays while a page is viewed
-- Animate elements on a page
+- Animer des éléments sur une page
 - Keep readers engaged with your content by adding related links to the end of the story
