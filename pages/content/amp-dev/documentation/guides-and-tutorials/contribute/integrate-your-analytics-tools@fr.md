@@ -1,11 +1,11 @@
 ---
-"$title": Integrate your analytics tool with AMP
+"$title": "Comment intégrer votre outil d'analyse à AMP"
 order: '1'
 formats:
 - websites
 - stories
 teaser:
-  text: " Overview"
+  text: " Présentation"
 toc: 'true'
 ---
 
@@ -16,52 +16,52 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-## Overview <a name="overview"></a>
+## Présentation <a name="overview"></a>
 
-If you operate a software-as-a-service tool for publishers to better understand their traffic and visitors, you may want to integrate your service into `amp-analytics`. This will enable your customers to view traffic patterns for their AMP HTML pages.
+Si vous utilisez un outil logiciel en tant que service permettant aux éditeurs de mieux comprendre leur trafic et leurs visiteurs, vous serez peut-être intéressé à l'idée d'intégrer votre service dans `amp-analytics`. Cela permettra à vos clients de visualiser les modèles de trafic pour leurs pages HTML AMP.
 
-## Before you begin <a name="before-you-begin"></a>
+## Prérequis <a name="before-you-begin"></a>
 
-Before you can add your analytics service to AMP HTML runtime, you may need to:
+Avant de pouvoir ajouter votre service d'analyse au runtime HTML AMP, vous devrez:
 
-- Identify the kinds of [variables](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) and [requests](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-analytics.md#requests) you'll need in an AMP HTML document for your analytics service.
-- Determine if the batching plugin function is required to construct the final url if using requests with batching behavior.
-- Identify the triggers that result in analytics requests being sent from a page that would be relevant for your service.
-- Consider if and how you will [track users across](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md) first-party and third-party AMP contexts.
-- Determine how your analytics dashboard handles AMP traffic.
-- Identify any missing functionality in `amp-analytics`, and [file requests](https://github.com/ampproject/amphtml/issues/new) for needed features.
-- AMP Analytics sends its variables to a preconfigured endpoint. If you do not already have an existing endpoint, review [this sample](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample) for an overview on how to build one.
-    - For all transport types except `iframe`, variables are sent as query string parameters in a HTTPS request.
-    - For the `iframe` transport type, an iframe is created and variables are sent to it via `window.postMessage`. In this case, the message need not be a URL. This option is available only to MRC-accredited vendors.
-- Consider how integration with `amp-analytics` may impact any policies (particularly your privacy policy) or agreements you may have.
+- Identifier les types de [variables](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) et de [requêtes](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-analytics.md#requests) dont vous aurez besoin dans un document HTML AMP pour votre service d'analyse.
+- Déterminer si la fonction du plugin de traitement par lots est requise pour créer l'URL finale si vous utilisez des requêtes avec traitement par lots.
+- Identifier les déclencheurs qui entraînent l'envoi de requêtes d'analyse à partir d'une page potentiellement pertinente pour votre service.
+- Déterminer si et comment vous allez [suivre les utilisateurs](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md) dans des contextes AMP propriétaires et tiers.
+- Déterminer comment votre tableau de bord d'analyse gère le trafic AMP.
+- Identifier les fonctionnalités manquantes dans `amp-analytics` et [envoyer des requêtes](https://github.com/ampproject/amphtml/issues/new) pour les fonctionnalités nécessaires.
+- AMP Analytics envoie ses variables à un point de terminaison préconfiguré. Si vous ne disposez pas encore d'un point de terminaison existant, consultez [cet exemple](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample) pour savoir comment en créer un.
+    - Pour tous les types de transport, sauf `iframe`, les variables sont envoyées sous forme de paramètres de chaîne de requête dans une requête HTTPS.
+    - Pour le type de transport `iframe`, une iframe est créée et des variables lui sont envoyées via `window.postMessage`. Dans ce cas, le message n'a pas besoin d'être une URL. Cette option n'est disponible que pour les fournisseurs accrédités MRC.
+- Voyez dans quelle mesure l'intégration de `amp-analytics` peut avoir un impact sur vos éventuelles politiques (en particulier votre politique de confidentialité) et accords.
 
-## Adding your configuration to the AMP HTML runtime <a name="adding-your-configuration-to-the-amp-html-runtime"></a>
+## Comment ajouter votre configuration au runtime HTML AMP <a name="adding-your-configuration-to-the-amp-html-runtime"></a>
 
-1. Create an [Intent-To-Implement issue](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../CONTRIBUTING.md#contributing-features) stating that you'll be adding your analytics service's configuration to AMP HTML's runtime. Be sure to include **cc @ampproject/wg-analytics** in your description.
-2. Develop a patch that implements the following:
-    1. A new configuration json file `${vendorName}.json` in the vendors [folder](https://github.com/ampproject/amphtml/tree/master/extensions/amp-analytics/0.1/vendors) including any options above and beyond the default, such as:
-        1. `"vars": {}` for additional default variables.
-        2. `"requests": {}` for requests that your service will use.
-        3. `"optout":` if needed. We currently don't have a great opt-out system, so please reach out to help us design one that works well for you.
-        4. `"warningMessage":` if needed. Displays warning information from the vendor (such as deprecation or migration) in the console.
-    2. If you are using iframe transport, also add a new line to ANALYTICS_IFRAME_TRANSPORT_CONFIG in iframe-transport-vendors.js containing `"*vendor-name*": "*url*"`
-    3. An example in the [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html). reference.
-    4. A test in the [extensions/amp-analytics/0.1/test/vendor-requests.json ](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../extensions/amp-analytics/0.1/test/vendor-requests.json) file.
-    5. Add your analytics service to the supported vendors list in the [extensions/amp-analytics/0.1/analytics-vendors-list.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./analytics-vendors-list.md) file. Include the type, description, and link to your usage documentation.
-3. If a new batch plugin if required. Please refer to [Add Batch Plugin](#add-batch-plugin) for instructions.
-4. Test the new example you put in [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html) to ensure the hits from the example are working as expected. For example, the data needed is being collected and displayed in your analytics dashboard.
-5. Submit a Pull Request with this patch, referencing the Intent-To-Implement issue.
-6. Update your service's usage documentation and inform your customers.
-7. It's highly recommended to maintain [an integration test outside AMP repo](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../3p/README.md#adding-proper-integration-tests).
+1. Créez un [ticket d'intention d'implémentation](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../CONTRIBUTING.md#contributing-features) indiquant que vous allez ajouter la configuration de votre service d'analyse au runtime HTML AMP. Assurez-vous d'inclure **cc @ ampproject / wg-analytics** dans votre description.
+2. Développez un correctif qui implémente les éléments suivants:
+    1. Un nouveau fichier json de configuration `${nomdufournisseur}.json` dans [dossier](https://github.com/ampproject/amphtml/tree/master/extensions/amp-analytics/0.1/vendors) des fournisseurs comprenant toutes les options au-delà de la valeur par défaut, telles que:
+        1. `"vars": {}` pour des variables par défaut supplémentaires.
+        2. `"requests": {}` pour les requêtes que votre service utilisera.
+        3. `"optout":` si nécessaire. Nous n'avons actuellement pas un bon système de désinscription, alors n'hésitez pas à nous contacter afin d'en concevoir un qui fonctionne bien pour vous.
+        4. `"warningMessage":` si nécessaire. Affiche les informations d'avertissement du fournisseur (telles que l'abandon ou la migration) dans la console.
+    2. Si vous utilisez le transport iframe, ajoutez également une nouvelle ligne à ANALYTICS_IFRAME_TRANSPORT_CONFIG dans iframe-transport-vendors.js contenant `"*vendor-name*": "*url*"`
+    3. Un exemple dans la référence [exemples / analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html).
+    4. Un test dans le fichier [extensions / amp-analytics / 0.1 / test / vendor-requests.json](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../extensions/amp-analytics/0.1/test/vendor-requests.json).
+    5. Ajoutez votre service d'analyse à la liste des fournisseurs pris en charge dans le fichier [extensions / amp-analytics / 0.1 / analytics-vendors-list.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./analytics-vendors-list.md). Incluez le type, la description et le lien vers votre documentation d'utilisation.
+3. Un nouveau plugin de traitement par lot si nécessaire. Veuillez vous référer aux instructions de la section [Ajout d'un plugin de traitement par lot](#add-batch-plugin).
+4. Testez le nouvel exemple que vous avez mis dans [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html) pour vous assurer que les résultats de l'exemple fonctionnent comme prévu. Par exemple, que les données nécessaires sont collectées et affichées dans votre tableau de bord analytique.
+5. Envoyez une demande tirage avec ce correctif, en faisant référence ticket d'intention d'implémentation.
+6. Mettez à jour la documentation d'utilisation de votre service et informez vos clients.
+7. Il est fortement recommandé de maintenir [un test d'intégration en dehors du référentiel AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../3p/README.md#adding-proper-integration-tests).
 
-## Tag Managers <a name="tag-managers"></a>
+## Gestionnaires de balises <a name="tag-managers"></a>
 
-Tag management services have two options for integrating with AMP Analytics:
+Les services de gestion des balises proposent deux options pour intégrer AMP Analytics:
 
-- **Endpoint approach:** Acting as the an additional endpoint for `amp-analytics`, and conducting marketing management in the backend.
-- **Config approach:** Conducting tag management via a dynamically generated JSON config file unique to each publisher.
+- **Approche par point de terminaison:** en servant de point de terminaison supplémentaire à `amp-analytics`, et assurant la gestion du marketing en arrière-plan.
+- **Approche par configuration:** gestion des balises via un fichier de configuration JSON généré dynamiquement et unique pour chaque éditeur.
 
-The endpoint approach is the same as the standard approach detailed in the previous section. The config approach consists of creating a unique configuration for amp-analytics that is specific to each publisher and includes all of their compatible analytics packages. A publisher would include the configuration using a syntax similar to this:
+L'approche par point de terminaison est la même que l'approche standard détaillée dans la section précédente. L'approche par configuration consiste à créer une configuration unique pour amp-analytics qui est spécifique à chaque éditeur et inclut tous leurs packages d'analyse compatibles. Un éditeur peut inclure la configuration en utilisant une syntaxe similaire à celle-ci:
 
 [sourcecode:html]
 <amp-analytics
@@ -69,12 +69,12 @@ The endpoint approach is the same as the standard approach detailed in the previ
 ></amp-analytics>
 [/sourcecode]
 
-To take this approach, review the documentation for publishers' integration with AMP Analytics.
+Pour adopter cette approche, consultez la documentation sur l'intégration d'AMP Analytics par les éditeurs.
 
-## Further Resources <a name="further-resources"></a>
+## Autres ressources <a name="further-resources"></a>
 
-- Deep Dive: [Why not just use an iframe?](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/why-not-iframe.md)
-- Deep Dive: [Managing non-authenticated user state with AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)
-- [amp-analytics sample](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
-- [amp-analytics](https://amp.dev/documentation/components/amp-analytics) reference documentation
-- [amp-analytics variables](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) reference documentation
+- Approfondissement: [Pourquoi ne pas simplement utiliser une iframe?](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/why-not-iframe.md)
+- Approfondissement: [Gérer l'état des utilisateurs non authentifiés avec AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)
+- [modèle amp-analytics](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
+- documentation de référence [amp-analytics](https://amp.dev/documentation/components/amp-analytics)
+- documentation de référence sur les [variables amp-analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)
