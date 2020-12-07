@@ -167,7 +167,7 @@ Bien que la spécification W3 CORS permette de renvoyer la valeur de <code>*</co
 
 ### Traitement des requêtes de changement d'état <a name="processing-state-changing-requests"></a>
 
-[tip type="important"] Perform these validation checks *before* you process the request. This validation helps to provide protection against CSRF attacks, and avoids processing untrusted sources requests. [/tip]
+[tip type="important"] Effectuez ces vérifications de validation *avant de* traiter la requête. Cette validation permet de fournir une protection contre les attaques CSRF et évite de traiter les requêtes de sources non fiables. [/tip]
 
 Avant de traiter des requêtes susceptibles de modifier l'état de votre système (par exemple, un utilisateur s'abonne ou se désabonne d'une liste de diffusion), vérifiez les points suivants :
 
@@ -364,7 +364,7 @@ Par exemple, si vous souhaitez charger /some/font.ttf dans `https://example.com/
 <amp-img alt="CORS font example" layout="responsive" src="https://amp.dev/static/img/docs/cors-font.jpg" width="2268" height="1594">
   <noscript>     <img alt="CORS font example" src="https://amp.dev/static/img/docs/cors-font.jpg">   </noscript></amp-img>
 
-[tip type="note"] If your font file is okay to be accessible from any origin, you can respond with a wild card `Access-Control-Allow-Origin`, AMP cache will also echo that value meaning it will be responding with `Access-Control-Allow-Origin: *`. If you already have this setting, there is no need in changing anything. [/tip]
+[tip type="note"] Si votre fichier de police peut être accessible depuis n'importe quelle origine, vous pouvez répondre avec un joker `Access-Control-Allow-Origin`, le cache AMP fera également écho à cette valeur, ce qui signifie qu'il répondra avec `Access-Control-Allow-Origin: *` . Si vous disposez déjà de ce paramètre, il n'est pas nécessaire de modifier quoi que ce soit. [/tip]
 
 Nous prévoyons d'apporter ce changement vers la mi-octobre 2019 et nous attendons de tous les éditeurs AMP utilisant des polices auto-hébergées qu'ils vérifient si cela est affecté.
 
