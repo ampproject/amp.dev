@@ -3,7 +3,7 @@
   position: sticky;
   top: 80px;
   width: 0;
-  max-height: calc(100vh - 150px);
+  max-height: calc(100vh - 110px);
   margin-top: 25px;
 
   &.--sidebaropen {
@@ -12,7 +12,7 @@
 
   &-scroll-container {
     overflow-y: scroll;
-    max-height: calc(100vh - 150px - 44px);
+    max-height: calc(100vh - 110px - 44px);
   }
 
   &-toggle {

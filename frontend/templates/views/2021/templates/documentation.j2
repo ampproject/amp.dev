@@ -4,6 +4,8 @@
 <main>
   {% include 'views/2021/partials/sidebar.j2' %}
 
-  {% include 'views/2021/partials/content.j2' %}
+  <section class="ap-documentation-content">
+    {{ doc.body|render|safe }}
+  </section>
 </main>
 {% endblock %}
