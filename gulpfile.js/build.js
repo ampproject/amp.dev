@@ -529,7 +529,7 @@ function collectStatics(done) {
  * @return {undefined}
  */
 function persistBuildInfo(done) {
-  Promise.all([git.user, git.version, git.message])
+  Promise.all([git.user(), git.version(), git.message()])
     .then(([user, version, message]) => {
       const buildInfo = {
         'number': travis.build.number || null,
