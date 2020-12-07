@@ -1,7 +1,7 @@
 ---
-"$title": Create a seatmap
+"$title": Créer un plan de siège
 "$order": '104'
-description: Seatmaps are important parts of ticketers web apps, but the implementation in AMP can be difficult. Read on to learn how to implement a seatmap in AMP by
+description: Les plans de siège sont des éléments importants des applications Web de distributeurs de billets, mais la mise en œuvre dans AMP peut être difficile. Lisez la suite pour savoir comment implémenter un plan de siège dans AMP en
 tutorial: 'true'
 formats:
 - websites
@@ -10,29 +10,29 @@ contributors:
 - pbakaus
 ---
 
-Seatmaps are important parts of ticketers' web apps, but the implementation in AMP can be difficult. Read on to learn how to implement a seatmap in AMP by using a combination of available AMP components.
+Les plans de siège sont des éléments importants des applications Web des distributeurs de billets, mais la mise en œuvre dans AMP peut être difficile. Lisez la suite pour savoir comment implémenter un plan de siège dans AMP en utilisant une combinaison de composants AMP disponibles.
 
-[tip] A live sample implementing the practices described below is available [here](../../../documentation/examples/documentation/SeatMap.html). [/tip]
+[tip] Un exemple en direct mettant en œuvre les pratiques décrites ci-dessous est disponible [ici](../../../documentation/examples/documentation/SeatMap.html). [/tip]
 
-## AMP Components needed
+## Composants AMP nécessaires
 
-Let's start by reviewing the components needed:
+Commençons par passer en revue les composants nécessaires:
 
 ### amp-pan-zoom
 
-[`amp-pan-zoom`](../../../documentation/components/reference/amp-pan-zoom.md) allows to zoom and pan the content via double tap and pinching. This component serves as base for the seatmap implementation.
+[`amp-pan-zoom`](../../../documentation/components/reference/amp-pan-zoom.md) permet d'avoir une vue agrandie et panoramique du contenu en appuyant deux fois et en pinçant le contenu. Ce composant sert de base à l'implémentation du plan de siège.
 
 ### amp-list
 
-[`amp-list`](../../../documentation/components/reference/amp-list.md) fetches content dynamically from a CORS JSON endpoint and renders it using a supplied template. Used to fetch current seatmap availability, so that users always get the latest data.
+[`amp-list`](../../../documentation/components/reference/amp-list.md) récupère le contenu de manière dynamique à partir d'un point de terminaison CORS JSON et le diffuse à l'aide d'un modèle fourni. Il est utilisé pour récupérer la disponibilité actuelle du plan de siège, afin que les utilisateurs obtiennent toujours les dernières données.
 
 ### amp-bind
 
-[`amp-bind`](../../../documentation/components/reference/amp-bind.md) adds interactivity to the page. Needed here to keep track of how many seats have been selected.
+[`amp-bind`](../../../documentation/components/reference/amp-bind.md) ajoute de l'interactivité à la page. Il est nécessaire ici pour garder une trace du nombre de sièges sélectionnés.
 
 ### amp-selector
 
-[`amp-selector`](../../../documentation/components/reference/amp-selector.md) represents a control that presents a menu of options and lets the user choose from it. The entire seatmap can be considered a menu of options where each seat is an option. It makes styling the selected state for seats much easier by allowing you to use CSS expressions. For example, the following expression fills a seat with an orange color once selected.
+[`amp-selector`](../../../documentation/components/reference/amp-selector.md) représente un contrôle qui présente un menu d'options et permet à l'utilisateur de faire son choix. La carte de sièges entière peut être considérée comme un menu d'options où chaque siège est une option. Cela facilite considérablement le style à appliquer à l'état du siège sélectionné en vous permettant d'utiliser des expressions CSS. Par exemple, l'expression suivante applique une couleur orange à un siège une fois sélectionné.
 
 ```css
 rect[selected].seat {
@@ -40,15 +40,15 @@ rect[selected].seat {
 }
 ```
 
-## Requirements
+## Exigences
 
-1. To draw a seatmap as an SVG where each seat is represented by a `rect` element, you need information on each seat: position `x` and `y`, `width` and `height` and possibly `rx` and `ry` to round the corners of the rectangles.
-2. A unique identifier for very seat that can be used to make the booking.
-3. A measure of the entire width and height of the seatmap to be used in the `viewbox` attribute.
+1. Pour dessiner un plan de siège sous forme de SVG où chaque siège est représenté par un élément `rect`, vous avez besoin d'informations sur chaque siège: position `x` et `y`, largeur `width` et hauteur `height` et éventuellement `rx` et `ry` pour arrondir les coins des rectangles.
+2. Un identifiant unique pour chaque siège qui peut être utilisé pour effectuer la réservation.
+3. Une mesure de la largeur et de la hauteur entières du plan de siège à utiliser dans l'attribut `viewbox`.
 
-## Drawing the seatmap
+## Dessiner le plan de siège
 
-The seatmap is rendered via [`amp-list`](../../../documentation/components/reference/amp-list.md) and [`amp-mustache`](../../../documentation/components/reference/amp-mustache.md). After receiving the data from the [`amp-list`](../../../documentation/components/reference/amp-list.md) call, you can use said data to iterate through the seats:
+Le plan de siège est rendu via [`amp-list`](../../../documentation/components/reference/amp-list.md) et [`amp-mustache`](../../../documentation/components/reference/amp-mustache.md). Après avoir reçu les données de l'appel [`amp-list`](../../../documentation/components/reference/amp-list.md), vous pouvez utiliser ces données pour parcourir les sièges:
 
 [sourcecode:html]
 {% raw %}<svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
@@ -58,11 +58,11 @@ The seatmap is rendered via [`amp-list`](../../../documentation/components/refer
 </svg>{% endraw %}
 [/sourcecode]
 
-## Styling unavailable seats
+## Style des sièges indisponibles
 
-In the above example, `{% raw %}{{unavailable}}{% endraw %}` is the value of a field returned by the JSON endpoint and used to style an unavailable seat. This approach doesn’t allow you to remove attributes like `option="{{id}}"` in case a seat is unavailable, as the template cannot wrap the entire pages' `<html>` element.
+Dans l'exemple ci-dessus, `{% raw %}{{unavailable}}{% endraw %}` est la valeur d'un champ renvoyé par le point de terminaison JSON et utilisé pour styliser un siège indisponible. Cette approche ne vous permet pas de supprimer des attributs tels que `option="{{id}}"` au cas où un siège ne serait pas disponible, car le modèle ne peut pas envelopper l'élément `<html>` des pages entières.
 
-An alternative, more verbose approach is to repeat the tags as following:
+Une autre approche plus détaillée consiste à répéter les balises comme suit:
 
 [sourcecode:html]
 {% raw %}{{#available }}{% endraw %}
@@ -71,38 +71,38 @@ An alternative, more verbose approach is to repeat the tags as following:
 {% raw %}{{^available}}{% endraw %}<rect role="button" tabindex="0" class="seat unavailable" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"/>{% raw %}{{/available }}{% endraw %}
 [/sourcecode]
 
-## Sizing your seatmap
+## Dimensionner votre plan de siège
 
-Unless your seatmap's size is fixed, it's difficult to size the [`amp-list`](../../../documentation/components/reference/amp-list.md) containing the seatmap. [`amp-list`](../../../documentation/components/reference/amp-list.md) needs either fixed dimensions or use `layout="fill"` (to use the available space of the parent container). There are two ways to address this problem:
+À moins que la taille de votre plan de siège ne soit fixe, il est difficile de dimensionner le composant [`amp-list`](../../../documentation/components/reference/amp-list.md) contenant le plan de siège. [`amp-list`](../../../documentation/components/reference/amp-list.md) nécessite des dimensions fixes ou utilise `layout="fill"` (pour utiliser l'espace disponible du conteneur parent). Il existe deux façons de résoudre ce problème:
 
-1. Calculate the available space on the page once you know the space used by other components like headers and footers. This calculation can be done in CSS by using the `calc` expression and assigning it as the `min-height` of a parent div of the [`amp-list`](../../../documentation/components/reference/amp-list.md).
-2. Use a flex layout when knowing the height of the page layout.
+1. Calculez l'espace disponible sur la page une fois que vous connaissez l'espace utilisé par d'autres composants tels que les en-têtes et les pieds de page. Ce calcul peut être effectué en CSS en utilisant l'expression `calc` et en l'attribuant comme `min-height` d'un div parent de du composant [`amp-list`](../../../documentation/components/reference/amp-list.md).
+2. Utilisez une mise en page flexible lorsque vous connaissez la hauteur de la mise en page.
 
-## Styling amp-pan-zoom
+## Styles pour amp-pan-zoom
 
-If using the approach described in the previous section, [`amp-pan-zoom`](../../../documentation/components/reference/amp-pan-zoom.md) needs to use `layout="fill"` as well.
+Si vous utilisez l'approche décrite dans la section précédente, [`amp-pan-zoom`](../../../documentation/components/reference/amp-pan-zoom.md) doit également utiliser `layout="fill"`.
 
-[tip type="tip"] **TIP –** To keep some white space around the seatmap and still make it part of the pinch and zooming area:
+[tip type="tip"] **CONSEIL -** Pour conserver un espace blanc autour du plan de siège tout en l'intégrant à la zone de pincement et de zoom:
 
-- Add a wrapping div for the svg
-- Add padding
+- Ajoutez un div d'habillage pour le svg
+- Ajoutez du remplissage
 
-If you don’t have a wrapping div and add margin to the SVG instead, it won't make the margins part of the pinch and zooming area. [/tip]
+Si vous n'avez pas de div d'habillage et que vous ajoutez plutôt une marge au SVG, les marges ne feront pas partie de la zone de pincement et de zoom. [/tip]
 
-## Handling state
+## Traitement de l'état
 
-When users click on different seats, it’s possible to keep track of the selected seat `id`s in a variable by using `amp-state`, either by:
+Lorsque les utilisateurs cliquent sur différents sièges, il est possible de suivre les `id` des sièges sélectionnés dans une variable en utilisant `amp-state`, soit:
 
-- Adding an [`amp-bind`](../../../documentation/components/reference/amp-bind.md) expression for every seat to add the selected seat to a list
-- Or using [`amp-selector`](../../../documentation/components/reference/amp-selector.md) with the action `on="select:AMP.setState({selectedSeats: event.selectedOptions})"` so that all the selected seats are added to a list
+- En ajoutant une expression [`amp-bind`](../../../documentation/components/reference/amp-bind.md) pour chaque siège pour ajouter le siège sélectionné à une liste
+- Ou en utilisant [`amp-selector`](../../../documentation/components/reference/amp-selector.md) avec l'action `on="select:AMP.setState({selectedSeats: event.selectedOptions})"` afin que tous les sièges sélectionnés soient ajoutés à une liste
 
-While the first approach doesn’t require the additional component [`amp-selector`](../../../documentation/components/reference/amp-selector.md), it can make the seatmap very slow because every [`amp-bind`](../../../documentation/components/reference/amp-bind.md) expression will be evaluated at every seat selection/deselection.
+Bien que la première approche ne nécessite pas le composant supplémentaire [`amp-selector`](../../../documentation/components/reference/amp-selector.md), elle peut rendre le plan de siège très lent car chaque expression [`amp-bind`](../../../documentation/components/reference/amp-bind.md) sera évaluée à chaque sélection/désélection de siège.
 
-The second approach also allows you to reduce the duplication of the [`amp-bind`](../../../documentation/components/reference/amp-bind.md) expression for every seat that will be rendered by the template.
+La deuxième approche vous permet également de réduire la duplication de l'expression [`amp-bind`](../../../documentation/components/reference/amp-bind.md) pour chaque siège qui sera affiché par le modèle.
 
-## Final HTML structure
+## Structure HTML finale
 
-For reference, here's the final HTML for the seatmap:
+Pour référence, voici la structure HTML finale du plan de siège:
 
 [sourcecode:html]
 {% raw %}<div class="seatmap-container">
