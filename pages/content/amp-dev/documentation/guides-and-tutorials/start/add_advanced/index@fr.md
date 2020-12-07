@@ -1,5 +1,5 @@
 ---
-"$title": Add advanced AMP features
+"$title": Ajout de fonctionnalités AMP avancées
 "$order": '0'
 description: "Dans ce tutoriel, vous développerez votre compréhension des fondements AMP et apprendrez comment AMP gère la publicité, les analyses, les vidéos intégrées, l'intégration des médias sociaux, les carrousels, etc."
 "$hidden": 'true'
@@ -11,14 +11,14 @@ formats:
 
 Dans ce tutoriel, vous développerez votre compréhension des fondements AMP et apprendrez comment AMP gère la publicité, les analyses, les vidéos intégrées, l'intégration des médias sociaux, les carrousels, etc. À la fin de ce tutoriel, vous aurez créé un article d'actualités mobile qui inclut ces fonctionnalités.
 
-## You’ll learn to:
+## Vous apprendrez à :
 
-- Display ads by using [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)
-- Embed YouTube videos, Twitter cards and responsive text elements
-- Build carousels with images and combinations of content by using [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)
-- Track simple patterns with [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
-- Add site navigation to your page with [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md)
-- Use custom fonts in AMP
+- Afficher des annonces à l'aide d'[`amp-ad`](../../../../documentation/components/reference/amp-ad.md)
+- Intégrer des vidéos YouTube, des cartes Twitter et des éléments de texte réactifs
+- Créer des carrousels avec des images et des combinaisons de contenu en utilisant [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)
+- Suivre des modèles simples avec [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
+- Ajouter la navigation du site à votre page avec [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md)
+- Utiliser des polices personnalisées dans AMP
 
 ## Vous créerez :
 
