@@ -33,29 +33,29 @@ limitations under the License.
 
 L'e-mail est structuré comme une arborescence MIME. Cette arborescence MIME contient le corps du message et toutes les pièces jointes à l'e-mail.
 
-To embed AMP within an email, add a new MIME part with a content type of `text/x-amp-html` as a descendant of `multipart/alternative`. It should live alongside the existing `text/html` or `text/plain` parts. This ensures that the email message works on all clients.
+Pour intégrer AMP dans un e-mail, ajoutez une nouvelle partie MIME avec un type de contenu `text/x-amp-html` descendant de `multipart/alternative`. Il doit cohabiter avec les parties `text/html` ou `text/plain` existantes. Cela garantit que le message électronique fonctionne sur tous les clients.
 
 <amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/master/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"> <img data-md-type="raw_html" alt="AMP for Email MIME Parts Diagram" src="../img/amp-email-mime-parts.png"> </noscript></amp-img>
 
-For more information about the `multipart/alternative` subtype, refer to [RFC 1521, section 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
+Pour plus d'informations sur le sous-type `multipart/alternative`, reportez-vous à la [RFC 1521, section 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
-## Additional information <a name="additional-information"></a>
+## Informations supplémentaires <a name="additional-information"></a>
 
-The `text/x-amp-html` part must be nested under a `multipart/alternative` node. An email cannot have more than one `text/x-amp-html` part inside a `multipart/alternative` node.
+La partie `text/x-amp-html` doit être imbriquée sous un nœud `multipart/alternative`. Un e-mail ne peut pas avoir plus d'une partie `text/x-amp-html` dans un nœud `multipart/alternative`.
 
 `multipart/alternative` doit contenir au moins un nœud non AMP (`text/plain` ou `text/html`) en plus du nœud `text/x-amp-html`. Cela sera affiché aux utilisateurs dont les clients de messagerie ne prennent pas en charge AMP ou qui se sont désinscrits via les paramètres de leur fournisseur de messagerie.
 
-Note: Some email clients[[1]](https://openradar.appspot.com/radar?id=6054696888303616) will only render the last MIME part, so we recommend placing the `text/x-amp-html` MIME part *before* the `text/html` MIME part.
+Remarque : certains clients de messagerie[[1]](https://openradar.appspot.com/radar?id=6054696888303616) ne renverront que la dernière partie MIME, nous vous recommandons donc de placer la partie MIME `text/x-amp-html` *avant* la partie MIME `text/html`.
 
-### Replying/forwarding semantics <a name="replyingforwarding-semantics"></a>
+### Sémantique de réponse/transfert <a name="replyingforwarding-semantics"></a>
 
-The email client strips out the `text/x-amp-html` part of the MIME tree when a user replies to or forwards an AMP email message.
+Le client de messagerie supprime la partie `text/x-amp-html` de l'arborescence MIME lorsqu'un utilisateur répond ou transfère un e-mail AMP.
 
-### Expiry <a name="expiry"></a>
+### Expiration <a name="expiry"></a>
 
-The email client may stop displaying the AMP part of an email after a set period of time, e.g. 30 days. In this case, emails will display the `text/html` or `text/plain` part.
+Le client de messagerie peut cesser d'afficher la partie AMP d'un e-mail après une période de temps définie, par exemple 30 jours. Dans ce cas, les e-mails afficheront la partie `text/html` ou `text/plain`.
 
-## Example <a name="example"></a>
+## Exemple <a name="example"></a>
 
 <!-- prettier-ignore-start -->
 
