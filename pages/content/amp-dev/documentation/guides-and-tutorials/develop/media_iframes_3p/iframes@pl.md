@@ -1,7 +1,9 @@
 ---
-$title: Dodawanie ramek iframe
-$order: 10
+"$title": Dodawanie ramek iframe
+"$order": '10'
 description: Dowiedz się, jak wyświetlać zawartość multimedialną na swoich stronach i jak używać ramek iframe do wyświetlania zaawansowanej zawartości poza ograniczeniami AMP.
+formats:
+- websites
 components:
 - iframe
 author: pbakaus
@@ -10,7 +12,7 @@ contributors:
 - bpaduch
 ---
 
-Dowiedz się, jak wyświetlać zawartość multimedialną na swoich stronach i jak używać ramek iframe do wyświetlania zaawansowanej zawartości poza ograniczeniami AMP.
+Learn how to display include media content in your pages, and how to use iframes to display advanced content outside of AMP's limitations.
 
 ## Podstawy
 
@@ -30,9 +32,8 @@ Ramki iframe są szczególnie przydatne w AMP do wyświetlania treści nieobsłu
 Aby dodać składnik [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) do strony, najpierw umieść w sekcji `<head>` następujący skrypt, który ładuje dodatkowy kod składnika rozszerzonego:
 
 [sourcecode:html]
-
-<script async="" custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
-
+<script async custom-element="amp-iframe"
+  src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 [/sourcecode]
 
 ### Napisz znaczniki
@@ -67,9 +68,7 @@ Przykład z atrybutem placeholder:
 
 Renderowany jako:
 
-<amp-iframe width="400" height="225" sandbox="allow-scripts allow-same-origin" layout="responsive" src="https://giphy.com/embed/OWabwoEn7ezug">
-<amp-img placeholder layout="fill" src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"></amp-img>
-</amp-iframe>
+<amp-iframe width="400" height="225" sandbox="allow-scripts allow-same-origin" layout="responsive" src="https://giphy.com/embed/OWabwoEn7ezug"><amp-img placeholder layout="fill" src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"></amp-img></amp-iframe>
 
 ## Przykłady
 

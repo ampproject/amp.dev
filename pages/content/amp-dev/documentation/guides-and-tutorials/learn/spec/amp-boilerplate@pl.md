@@ -1,8 +1,11 @@
 ---
-$title: Kod standardowy AMP
-order: 9
+"$title": Kod standardowy AMP
+order: '9'
+formats:
+- websites
+- stories
 teaser:
-  text:  head > style[amp-boilerplate] i noscript > style[amp-boilerplate]
+  text: " head > style[amp-boilerplate] i noscript > style[amp-boilerplate]"
 ---
 
 <!--
@@ -28,7 +31,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-## `head > style[amp-boilerplate]` i `noscript > style[amp-boilerplate]` <a name="head--styleamp-boilerplate-and-noscript--styleamp-boilerplate"></a>
+## <code>head > style[amp-boilerplate]</code> i <code>noscript > style[amp-boilerplate]</code>
 
 Dokumenty AMP HTML muszą zawierać następujący kod standardowy w sekcji `head`. Walidacja jest obecnie przeprowadzana za pomocą wyrażeń regularnych, więc ważne jest, aby utrzymać modyfikacje na jak najniższym poziomie. Obecnie dozwolone są następujące modyfikacje:
 
@@ -38,9 +41,7 @@ Dokumenty AMP HTML muszą zawierać następujący kod standardowy w sekcji `head
 <!-- prettier-ignore-start -->
 
 [sourcecode:html]
-
-<style amp-boilerplate="">body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate="">body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 [/sourcecode]
 
 <!-- prettier-ignore-end -->

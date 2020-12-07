@@ -1,6 +1,6 @@
 ---
-$title: Rozwiązywanie błędów walidacji
-$order: 2
+"$title": Rozwiązywanie błędów walidacji
+"$order": '2'
 description: W tej sekcji przeanalizujemy i rozwiążemy błędy walidacji naszej strony AMP. Pamiętaj, że w Twojej konsoli błędy mogą być wyświetlane w innej kolejności.
 ---
 

@@ -1,8 +1,11 @@
 ---
-$title: Spraw, by Twoje strony można było odnaleźć
-$titles:
-  teaser: Spraw, by Twoje strony można było odnaleźć
-description: "W niektórych przypadkach można serwować zarówno wersję tej samej strony bez AMP jak i z AMP, na przykład artykuł informacyjny. Rozważ to: jeśli wyszukiwarka Google..."
+formats:
+- websites
+"$title": Spraw, by Twoje strony można było odnaleźć
+"$titles":
+  teaser: Make your pages discoverable
+"$order": '5'
+description: 'W niektórych przypadkach można serwować zarówno wersję tej samej strony bez AMP jak i z AMP, na przykład artykuł informacyjny. Rozważ to: jeśli wyszukiwarka Google...'
 teaser:
   icon: odnajdź
   text: Dowiedz się, jak wyszukiwarki internetowe dowiadują się, że istnieje wersja AMP witryny.
@@ -19,15 +22,15 @@ Do strony bez AMP dodaj:
 
 [sourcecode:html]
 
-
-<link rel="amphtml" href="https://www.example.com/url/to/amp/document.html"> [/sourcecode]
+<link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
+[/sourcecode]
 
 Do strony AMP dodaj to:
 
 [sourcecode:html]
 
-
-<link rel="canonical" href="https://www.example.com/url/to/full/document.html"> [/sourcecode]
+<link rel="canonical" href="https://www.example.com/url/to/full/document.html">
+[/sourcecode]
 
 ### Co zrobić, jeśli mam tylko jedną stronę?
 
@@ -35,8 +38,8 @@ Jeśli masz tylko jedną stronę i jest to strona AMP, musisz dodać do niej lin
 
 [sourcecode:html]
 
-
-<link rel="canonical" href="https://www.example.com/url/to/amp/document.html"> [/sourcecode]
+<link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
+[/sourcecode]
 
 [tip type="read-on"] **CZYTAJ DALEJ —** dowiedz się więcej o tym, jak Google znajduje strony AMP w [wytycznych wyszukiwarki Google dotyczących stron AMP)](https://support.google.com/webmasters/answer/6340290). [/tip]
 

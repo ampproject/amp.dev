@@ -1,8 +1,8 @@
 ---
-$title: Konfigurowanie
-$order: 0
-description: "Do rozpoczęcia tego samouczka potrzebne są: - Podstawowa wiedza o HTML, CSS i JavaScript - Podstawowa wiedza o głównych koncepcjach AMP..."
-$parent: /content/docs/fundamentals/add_advanced.md
+"$title": Konfigurowanie
+"$order": '0'
+description: 'Do rozpoczęcia tego samouczka potrzebne są: - Podstawowa wiedza o HTML, CSS i JavaScript - Podstawowa wiedza o głównych koncepcjach AMP...'
+"$parent": "/content/docs/fundamentals/add_advanced.md"
 ---
 
 ## Wymagania wstępne
