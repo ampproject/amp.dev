@@ -1,8 +1,8 @@
 ---
-"$title": Create interactive AMP pages
+"$title": Comment créer des pages AMP interactives
 "$path": "/documentation/guides-and-tutorials/develop/interactivity/index.html"
 "$order": '0'
-description: "In this tutorial, you'll learn how to use data binding and expressions to build awesome, interactive AMP pages with amp-bind ..."
+description: Dans ce tutoriel, vous apprendrez à utiliser la liaison de données et les expressions pour créer de superbes pages AMP interactives avec amp-bind ...
 "$hidden": 'true'
 formats:
 - websites
@@ -10,12 +10,12 @@ formats:
 
 {{ image('/static/img/docs/tutorials/interactivity-final-page.jpg', 415, 738, align='right third', caption='Completed AMP page for this tutorial') }}
 
-In this tutorial, you'll learn how to use data binding and expressions to build awesome, interactive AMP pages with [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
+Dans ce didacticiel, vous apprendrez à utiliser la liaison de données et les expressions pour créer de superbes pages AMP interactives avec [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
 
-## What you'll build
+## Ce que vous allez créer
 
-You'll build an e-commerce product page that:
+Vous allez créer une page de produit e-commerce qui:
 
-- Uses AMP HTML and AMP components for a fast and rich user experience.
-- Includes cross-element interactivity by using [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
-- Fetches additional product data on demand by using [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state).
+- Utilise les composants HTML AMP et AMP pour une expérience utilisateur rapide et riche.
+- Offre une interactivité entre les éléments à l'aide de [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
+- Récupère des données produit supplémentaires sur demande en utilisant [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state).
