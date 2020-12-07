@@ -1,24 +1,24 @@
 ---
-"$title": Add a comment
+"$title": Comment ajouter un commentaire
 "$order": '2'
-description: At this point, the user can add a comment using the amp-form, library. Notice how the presence of the form is conditional, depending on the state of the amp-access component ...
+description: "À ce stade, l'utilisateur peut ajouter un commentaire à l'aide de la bibliothèque amp-form. Notez que la présence de amp-form conditionnée par l'état du composant amp-access ..."
 ---
 
 <amp-img src="/static/img/comment.png" alt="Add comment" height="325" width="300"></amp-img>
 
-At this point, the user can add a comment using the [`amp-form`](../../../../documentation/components/reference/amp-form.md) library. Notice how the presence of the form is conditional, depending on the state of the [`amp-access`](../../../../documentation/components/reference/amp-access.md) component:
+À ce stade, l'utilisateur peut ajouter un commentaire à l'aide de la bibliothèque [`amp-form`](../../../../documentation/components/reference/amp-form.md). Notez que la présence de amp-form est conditionnee par l'état du composant [`amp-access`](../../../../documentation/components/reference/amp-access.md):
 
 [sourcecode:html]
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
 [/sourcecode]
 
-We specify a POST method and a XHR action, as non XHR actions are not allowed with POST methods in AMP. Because this is a demo, we are not persisting comments, so it’s only possible to add one comment at the time; whenever a comment is added, the AMPByExample server replies with a JSON response containing the entered text with some additions, like a timestamp, an avatar and a name for the user.
+Nous spécifions une méthode POST et une action XHR, car les actions non XHR ne sont pas autorisées avec les méthodes POST dans AMP. Étant donné que nous somme ici dans le cadre d'une démo, nous ne mettons pas l'accent sur les commentaires, il n'est donc possible d'ajouter qu'un seul commentaire à la fois; chaque fois qu'un commentaire est ajouté, le serveur AMPByExample renvoie une réponse JSON contenant le texte saisi avec quelques ajouts, comme un horodatage, un avatar et un nom d'utilisateur.
 
-Here's an example of JSON response:
+Voici un exemple de réponse JSON:
 
 [sourcecode:json] {"Datetime":"09:34:21", "User":"Charlie", "Text":"Hello!", "UserImg":"/img/ic_account_box_black_48dp_1x.png"} [/sourcecode]
 
-The form component will simply display those values inside the page using the [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md) template:
+Le composant amp-form affichera simplement ces valeurs dans la page à l'aide du modèle [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md):
 
 [sourcecode:html]
 <div submit-success>
@@ -34,7 +34,7 @@ The form component will simply display those values inside the page using the [`
 </div>
 [/sourcecode]
 
-In this example, we are only checking if the value of the comment is not empty; if the value is empty, we return an error that causes the following code to execute
+Dans cet exemple, nous vérifions uniquement si la valeur du commentaire n'est pas vide; si la valeur est vide, nous retournons une erreur qui provoque l'exécution du code suivant
 
 [sourcecode:html]
 <div submit-error>
@@ -44,7 +44,7 @@ In this example, we are only checking if the value of the comment is not empty; 
 </div>
 [/sourcecode]
 
-As an extra touch, we add the `required` attribute to enforce the presence of comment text before submitting the comment:
+En guise de touche supplémentaire, nous ajoutons l'attribut `required` pour imposer la présence de texte de commentaire avant l'envoi:
 
 <amp-img src="/static/img/enforce-comment.png" alt="Enforce comment" height="325" width="300"></amp-img>
 
@@ -52,6 +52,6 @@ As an extra touch, we add the `required` attribute to enforce the presence of co
 <input type="text" class="data-input" name="text" placeholder="Your comment..." required>
 [/sourcecode]
 
-When you add a comment and click the submit button, you should now see something similar to the following screenshot:
+Lorsque vous ajoutez un commentaire et cliquez sur le bouton d'envoi, vous voyez un écran similaire à celui-ci:
 
 <amp-img src="/static/img/logout-button.png" alt="Comment added" height="352" width="300"></amp-img>
