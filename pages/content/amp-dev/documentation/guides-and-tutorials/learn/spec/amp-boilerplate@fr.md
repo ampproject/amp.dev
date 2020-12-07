@@ -1,5 +1,5 @@
 ---
-"$title": AMP Boilerplate Code
+"$title": Code du modèle AMP
 order: '9'
 formats:
 - websites
@@ -33,10 +33,10 @@ limitations under the License.
 
 ##  <code>head > style[amp-boilerplate]</code> et  <code>noscript > style[amp-boilerplate] </code> <a></a>
 
-AMP HTML documents must contain the following boilerplate in their `head` tag. Validation is currently done with regular expressions, so it's important to keep mutations as minimal as possible. Currently, the allowed mutations are:
+Les documents HTM AMP doivent contenir le modèle suivant dans leur balise `head`. La validation est actuellement effectuée avec des expressions régulières, il est donc important de garder les mutations aussi minimes que possible. Actuellement, les mutations autorisées sont:
 
-1. Inserting arbitrary whitespace immediately after the `style` tag opens, and immediately before it closes
-2. Replacing any space in the snippet below with arbitrary whitespace.
+1. Insertion d'espaces arbitraires immédiatement après l'ouverture de la balise `style` et immédiatement avant sa fermeture
+2. Remplacement de tout espace dans l'extrait ci-dessous par un espace arbitraire.
 
 <!-- prettier-ignore-start -->
 
@@ -46,4 +46,4 @@ AMP HTML documents must contain the following boilerplate in their `head` tag. V
 
 <!-- prettier-ignore-end -->
 
-[tip] You can use the [boilerplate generator](https://amp.dev/boilerplate) to quickly setup a basic skeleton for your AMP page. It also provides snippets for structured data, to create a PWA and more! [/tip]
+[tip] Vous pouvez utiliser le [générateur de modèle](https://amp.dev/boilerplate) pour configurer rapidement un squelette de base pour votre page AMP. Il fournit également des extraits de données structurées, pour créer une PWA et plus encore! [/tip]
