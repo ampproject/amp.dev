@@ -44,7 +44,6 @@ Content-Type: text/html; charset="UTF-8"
 
 <span>Hello World in HTML!</span>
 --001a114634ac3555ae05525685ae
-
 ```
 
 [tip type="important"] Certains clients de messagerie n'affichent que la dernière partie MIME. Pour vous assurer qu'un e-mail est affiché, placez la partie MIME `text/x-amp-html` _avant _la partie MIME `text/html`. [/tip]
