@@ -49,7 +49,7 @@ En observant à nouveau le code HTML du bouton, nous utilisons `on="tap:amp-acce
 
 [/sourcecode]
 
-[tip type="note"] **NOTE –**  Notice that it’s possible to define different URLs inside the login node, in this case we are defining `sign-in`, and we will later define `sign-out`. [/tip]
+[tip type="note"] **REMARQUE -** Notez qu'il est possible de définir des URL différentes à l' intérieur du nœud de connexion. Dans notre cas , nous définissons `sign-in`, et plus tard, nous définirons `sign-out` . [/tip]
 
 La page de connexion est une page non-AMP dans laquelle nous remplissons les valeurs d'identifiant et de mot de passe par souci de simplicité. Notez l'utilisation du type d'entrée masqué `returnURL`, qui est renseigné par le serveur AMPByExample via la création de modèles côté serveur. Le serveur lit cette valeur à partir d'un paramètre appelé `return` qui est automatiquement ajouté par la bibliothèque AMP à l'URL de connexion.
 
