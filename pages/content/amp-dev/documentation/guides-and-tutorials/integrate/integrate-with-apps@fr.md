@@ -28,7 +28,7 @@ This is a message with links to an <a href="https://www-example-org.cdn.ampproje
 article with AMP version</a> and an <a href="www.example.org/b"> article without AMP version</a>.
 ```
 
-[tip type="tip"] **TIP –** Consider providing users the option to view the non-AMP version instead of the AMP version through the preference settings in your app. [/tip]
+[tip type="tip"] **CONSEIL -** Pensez à offrir aux utilisateurs la possibilité d'afficher la version non AMP au lieu de la version AMP via les paramètres de préférence de votre application. [/tip]
 
 ### Comment transformer les liens
 
