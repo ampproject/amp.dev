@@ -5,7 +5,7 @@ formats:
 - websites
 - stories
 teaser:
-  text: " head > style[amp-boilerplate] and noscript > style[amp-boilerplate]"
+  text: head > style[amp-boilerplate] et noscript > style[amp-boilerplate]
 ---
 
 <!--
@@ -31,7 +31,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-## `head > style[amp-boilerplate]` and `noscript > style[amp-boilerplate]` <a name="head--styleamp-boilerplate-and-noscript--styleamp-boilerplate"></a>
+##  <code>head > style[amp-boilerplate]</code> et  <code>noscript > style[amp-boilerplate] </code> <a></a>
 
 AMP HTML documents must contain the following boilerplate in their `head` tag. Validation is currently done with regular expressions, so it's important to keep mutations as minimal as possible. Currently, the allowed mutations are:
 
