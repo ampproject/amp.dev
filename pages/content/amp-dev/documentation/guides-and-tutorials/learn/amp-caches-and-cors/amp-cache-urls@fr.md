@@ -155,7 +155,7 @@ L'algorithme combiné consiste à:
 
 Le « chemin » d'une URL sur le cache AMP est toujours composé d'un ou de plusieurs répertoires de préfixes, tels que `/c`, suivis d'un infixe `/s` uniquement si l'URL de l'éditeur est http `s`, suivi de l'URL du document de l'éditeur sans le protocole.
 
-{{ image('/static/img/docs/guides/cache-url-path.jpg', 1688, 312, layout='intrinsic', alt='Image displaying cached URL formats') }}
+{{ image('/static/img/docs/guides/cache-url-path.jpg', 1688, 312, layout='intrinsic', alt='Image affichant les formats d\'URL mis en cache') }}
 
 Les répertoires de préfixes, tels que `/c` correspondent à différents types de services qu'un cache AMP peut effectuer. Différents caches AMP peuvent prendre en charge différents types de diffusion, la liste suivante n'est pas exhaustive:
 
