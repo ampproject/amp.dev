@@ -33,36 +33,36 @@ limitations under the License.
 
 Voici la liste des [composants AMP](https://amp.dev/documentation/components/?format=email) actuellement pris en charge dans les e-mails AMP. Les composants sont regroupés dans les catégories suivantes :
 
-- [Dynamic Content](#dynamic-content)
-- [Layout](#layout)
-- [Media](#media)
+- [Contenu dynamique](#dynamic-content)
+- [Mise en page](#layout)
+- [Média](#media)
 
-## Dynamic Content <a name="dynamic-content"></a>
+## Contenu dynamique <a name="dynamic-content"></a>
 
-Element | Description
+Élément | Description
 --- | ---
 [`<amp-form>`](https://amp.dev/documentation/components/amp-form) | Élément de formulaire. L'attribut action-xhr doit être utilisé à la place de l'attribut action standard. Peut être utilisé avec `<template type="amp-mustache">` pour renvoyer une réponse. <br><br> **Remarque :** [la redirection après l'envoi ](https://amp.dev/documentation/components/amp-form/#redirecting-after-a-submission) n'est pas autorisée.
 [`<amp-selector>`](https://amp.dev/documentation/components/amp-selector) | Widget à sélection multiple à utiliser dans un formulaire.
-[`amp-bind`](https://amp.dev/documentation/components/amp-bind) and [`<amp-bind-macro>`](https://amp.dev/documentation/components/amp-bind#defining-macros-with-amp-bind-macro) | Simple scripting language in AMP that allows the manipulation of a state machine for interactions between elements. Can also be used to add behavior on certain events.<br><br>**Note:** It is prohibited to bind to `[href]` or `[src]`. It is also prohibited to use the `AMP.print`, `AMP.navigateTo` and `AMP.goBack` actions.
-[`<amp-state>`](https://amp.dev/documentation/components/amp-bind#%3Camp-state%3E-specification) | `<amp-state>` is used to define the initial state used by `amp-bind`.<br><br>**Note:** The `src` attribute is not currently supported.
-[`<amp-list>`](https://amp.dev/documentation/components/amp-list) | Remotely fetches JSON data that will be rendered by an [`<amp-mustache>`](https://amp.dev/documentation/components/amp-mustache).<br><br>**Note:** Binding to the `[src]` attribute is not allowed. Including user credentials with `credentials="include"` is also prohibited.
+[`amp-bind`](https://amp.dev/documentation/components/amp-bind) et [`<amp-bind-macro>/code3}`](https://amp.dev/documentation/components/amp-bind#defining-macros-with-amp-bind-macro) | Langage de script simple dans AMP qui permet la manipulation d'une machine à états pour les interactions entre éléments. Peut également être utilisé pour ajouter un comportement sur certains événements.<br><br>**Remarque :** il est interdit de le lier à `[href]/code3} ou <code data-md-type="codespan">[src]`. Il est également interdit d'utiliser les actions `AMP.print`, `AMP.navigateTo` et `AMP.goBack`.
+[`<amp-state>`](https://amp.dev/documentation/components/amp-bind#%3Camp-state%3E-specification) | `<amp-state>` est utilisé pour définir l'état initial utilisé par `amp-bind`.<br><br>**Remarque :** l'attribut `src` n'est actuellement pas pris en charge.
+[`<amp-list>`](https://amp.dev/documentation/components/amp-list) | Récupère à distance les données JSON qui seront rendues par un [`<amp-mustache>`](https://amp.dev/documentation/components/amp-mustache).<br><br>**Remarque :** la liaison à l'attribut `[src]` n'est pas autorisée. L'inclusion des informations d'identification de l'utilisateur avec `credentials="include"` est également interdite.
 [`<template type="amp-mustache">`](https://amp.dev/documentation/components/amp-mustache) | Modèle de balise Mustache pour rendre les résultats d'un appel `amp-list`.
 
-## Layout <a name="layout"></a>
+## Mise en page <a name="layout"></a>
 
-Element | Description
+Élément | Description
 --- | ---
-[layout attributes](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/#layout-attributes) | Layout behavior is determined by the layout attribute.
+[attributs de mise en page](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/#layout-attributes) | Le comportement de la mise en page est déterminé par l'attribut de mise en page.
 [`<amp-accordion>`](https://amp.dev/documentation/components/amp-accordion) | Élément d'interface utilisateur qui facilite l'affichage/le masquage de différentes sections.
 [`<amp-carousel>`](https://amp.dev/documentation/components/amp-carousel) | Composant d'interface utilisateur carrousel.
 [`<amp-fit-text>`](https://amp.dev/documentation/components/amp-fit-text) | Composant d'aide pour ajuster le texte dans une certaine zone.
 [`<amp-layout>`](https://amp.dev/documentation/components/amp-layout) | Conteneur qui peut avoir des mises en page réactives basées sur les proportions.
 [`<amp-sidebar>`](https://amp.dev/documentation/components/amp-sidebar) | Barre latérale à des fins de navigation.
-[`<amp-timeago>`](https://amp.dev/documentation/components/amp-timeago) | Provides a convenient way of rendering timestamps.
+[`<amp-timeago>`](https://amp.dev/documentation/components/amp-timeago) | Fournit un moyen pratique de renvoyer des horodatages.
 
-## Media <a name="media"></a>
+## Média <a name="media"></a>
 
-Element | Description
+Élément | Description
 --- | ---
 [`<amp-img>`](https://amp.dev/documentation/components/amp-img) | Composant AMP qui remplace `<img>`.<br><br>**Remarque :** la liaison à `[src]` n'est pas autorisée.
-[`<amp-anim>`](https://amp.dev/documentation/components/amp-anim) | Embeds GIF files.<br><br>**Note:** Binding to `[src]` is not allowed.
+[`<amp-anim>`](https://amp.dev/documentation/components/amp-anim) | Intègre des fichiers GIF.<br><br>**Remarque :** la liaison à `[src]` n'est pas autorisée.
