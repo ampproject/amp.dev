@@ -1,7 +1,7 @@
 ---
-"$title": Add custom fonts
+"$title": Comment ajouter des polices personnalisées
 "$order": '6'
-description: "AMP pages can't include external stylesheets, with the exception of custom fonts. You can embed custom fonts into your page in two ways ..."
+description: "Les pages AMP ne peuvent pas inclure de feuilles de style externes, à l'exception des polices personnalisées. Vous pouvez intégrer des polices personnalisées dans votre page de deux manières ..."
 formats:
 - websites
 - ads
@@ -9,20 +9,20 @@ formats:
 author: pbakaus
 ---
 
-AMP pages can’t include external stylesheets, with the exception of custom fonts. You can embed custom fonts into your page in two ways:
+Les pages AMP ne peuvent pas inclure de feuilles de style externes, à l'exception des polices personnalisées. Vous pouvez intégrer des polices personnalisées dans votre page de deux manières:
 
-1. Through a `<link>` tag (allow-listed font providers only)
-2. Via `@font-face` (no restrictions, all fonts allowed)
+1. Via une balise `<link>` (fournisseurs de polices autorisés uniquement)
+2. Via `@font-face` (aucune restriction, toutes les polices sont autorisées)
 
-### 1. Using `<link>`
+### 1. Avec `<link>`
 
-Use a `<link>` tag (usually in the head of your page), like so:
+Utilisez une balise `<link>` (généralement dans l'en-tête de votre page), comme ceci:
 
 [sourcecode:html]
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 [/sourcecode]
 
-The following origins are allowlisted and allowed for font serving via link tags:
+Les origines suivantes sont répertoriées et autorisées pour la diffusion de polices via des balises de lien:
 
 - Typography.com: **https://cloud.typography.com**
 - Fonts.com: **https://fast.fonts.net**
@@ -30,9 +30,9 @@ The following origins are allowlisted and allowed for font serving via link tags
 - Typekit: **https://use.typekit.net**
 - Font Awesome: **https://maxcdn.bootstrapcdn.com**, **https://use.fontawesome.com**
 
-### 2. Using `@font-face`
+### 2. Avec `@font-face`
 
-Alternatively, you can use [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) within your AMP stylesheet:
+Vous pouvez également utiliser [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) dans votre feuille de style AMP:
 
 [sourcecode:html]
 <style amp-custom>
@@ -47,4 +47,4 @@ Alternatively, you can use [`@font-face`](https://developer.mozilla.org/en-US/do
 </style>
 [/sourcecode]
 
-[tip type="note"] **NOTE –**  Fonts included via `@font-face` must be fetched via the HTTP or HTTPS scheme. [/tip]
+[tip type="note"] **REMARQUE –**  les polices ajoutées via `@font-face` doivent être récupérées via HTTP ou HTTPS. [/tip]
