@@ -14,7 +14,8 @@ Strony AMP mogą korzystać z wielu funkcji PWA samodzielnie, pod warunkiem, że
 
 [tip type="tip"] **Typ: porada**
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. [/tip]
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+[/tip]
 
 Atrybut `on` służy do instalowania programów obsługi zdarzeń w elementach. Obsługiwane zdarzenia zależą od danego elementu.
 
@@ -25,9 +26,10 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
 
 Opisy poszczególnych części składni znajdują się w poniższej tabeli.
 
-[tip type="note"] Uwaga [/tip]
+[tip type="note"] **Typ: Uwaga**
 
-Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. [/tip]
+Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+[/tip]
 
 Wydanie z kanału AMP Dev <strong>&nbsp;może być mniej stabilne</strong> i może zawierać funkcje niedostępne dla wszystkich użytkowników. Wybierz je, jeśli chcesz pomóc w testowaniu nowych wersji AMP, zgłaszaniu błędów lub tworzeniu dokumentów wymagających nowej funkcji, która nie jest jeszcze dostępna dla wszystkich.
 
@@ -36,7 +38,7 @@ Dev Channel to świetny wybór:
 - do testowania i zabawy nowymi funkcjami, które nie są jeszcze dostępne dla wszystkich użytkowników.
 - do stosowania w zapewnieniu jakości (QA) w celu zapewnienia, że witryna jest zgodna z następną wersją AMP.
 
-[tip type="important"] Ważne [/tip]
+[tip type="important"] **Typ: Ważne**
 
 Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est. [/tip]
 
@@ -46,6 +48,6 @@ Ten przewodnik wyjaśnia wszystkie szczegóły techniczne i najlepsze praktyki, 
 
 Relacja internetowa to pod względem technicznym pojedyncza strona utworzona przy użyciu AMP i zgodna ze specyfikacją AMP:
 
-[tip type="read-on"] Czytaj dalej [/tip]
+[tip type="read-on"] Czytaj dalej
 
 Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. At vero eos et accusam et justo duo dolores et ea rebum. [/tip]
