@@ -1,5 +1,6 @@
 .#{prefix(null, 'sidebar')} {
   grid-column: 2/4;
+  z-index: 90;
   position: sticky;
   top: 80px;
   width: 0;
