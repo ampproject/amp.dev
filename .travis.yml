@@ -34,7 +34,20 @@ jobs:
     - scripts/unbuffer.sh gulp buildComponentVersions
     - scripts/unbuffer.sh npm test
     script:
-    - if [ $TRAVIS_BRANCH == "future" ] && [ $TRAVIS_PULL_REQUEST == "false" ]; then scripts/unbuffer.sh gulp buildPrepare; fi
+    - |
+      if [ $TRAVIS_BRANCH == "future" ] && [ $TRAVIS_PULL_REQUEST == "false" ]; then scripts/unbuffer.sh gulp buildPrepare; fi
+      if [ $TRAVIS_PULL_REQUEST == "true" ]; then
+        # extract list of files being modified that touch markdown localized files (e.g. example@ru.md)
+        MD_LANGS=$(git diff --name-only $TRAVIS_COMMIT_RANGE | grep @ | awk -F'[@.]' '{print $2}' | uniq)
+        # extract list of files being modified that touch PO files
+        PO_LANGS=$(git diff --name-only $TRAVIS_COMMIT_RANGE | grep LC_MESSAGES | awk -F'/' '{print $3}' | uniq)
+        # combine the two lists into one unqiue list
+        LANGS=(`for L in "${MD_LANGS[@]}" "${PO_LANGS[@]}" ; do echo "$L" ; done | sort -du`)
+        # join the list of languages with a comma
+        LANGS="${LANGS// /,}"
+
+        [ ! -z $LANGS ] && scripts/unbuffer.sh gulp buildPages --locales $LANGS
+      fi
   - stage: build
     env: APP_ENV=staging
     install: &1
