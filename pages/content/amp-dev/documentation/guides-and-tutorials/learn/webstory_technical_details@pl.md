@@ -1,8 +1,10 @@
 ---
-$title: Szczegóły techniczne relacji internetowych
-$order: 1
+"$title": Szczegóły techniczne relacji internetowych
+"$order": '1'
 description: Szczegóły techniczne relacji internetowych
-$category: Develop
+"$category": Develop
+formats:
+- stories
 author: CrystalOnScript
 ---
 

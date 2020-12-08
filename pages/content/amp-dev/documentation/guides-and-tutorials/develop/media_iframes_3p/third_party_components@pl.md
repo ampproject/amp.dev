@@ -1,7 +1,9 @@
 ---
-$title: Dodawanie zawartości stron trzecich
-$order: 9
+"$title": Dodawanie zawartości stron trzecich
+"$order": '9'
 description: Dowiedz się jak dodać składniki stron trzecich do swoich stron internetowych...
+formats:
+- websites
 components:
 - iframe
 - facebook
@@ -20,15 +22,13 @@ Aby osadzić tweet z Twittera w swojej stronie, użyj elementu [`amp-twitter`](.
 Aby osadzić tweet w swojej stronie, należy najpierw umieścić następujący skrypt w sekcji `<head>`:
 
 [sourcecode:html]
-
-<script async="" custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
-
+<script async custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
 [/sourcecode]
 
 Obecnie tweety są automatycznie skalowane proporcjonalnie, aby dopasować je do podanego rozmiaru, ale może to skutkować wyglądem mniej niż idealnym. Ręcznie dostosuj dostarczoną szerokość i wysokość lub użyj atrybutu media, aby wybrać proporcje zależne od szerokości ekranu.
 
 [example preview="inline" playground="true" imports="amp-twitter:0.1"]
-
 ```html
 <amp-twitter width="500"
   height="583"
@@ -36,7 +36,6 @@ Obecnie tweety są automatycznie skalowane proporcjonalnie, aby dopasować je do
   data-tweetid="638793490521001985">
 </amp-twitter>
 ```
-
 [/example]
 
 [tip type="tip"] **PORADA —** więcej przykładów użycia składnika [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) znajdziesz w sekcji [AMP By Example](../../../../documentation/examples/documentation/amp-twitter.html). [/tip]
@@ -48,15 +47,13 @@ Aby osadzić Instagram w swojej stronie, użyj elementu [`amp-instagram`](../../
 Aby osadzić Instagram, należy najpierw umieścić następujący skrypt w sekcji `<head>`:
 
 [sourcecode:html]
-
-<script async="" custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
-
+<script async custom-element="amp-instagram"
+  src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
 [/sourcecode]
 
 Dodaj szortkod danych Instagrama, znajdujący się w adresie URL zdjęcia z Instagrama. Na przykład w adresie `https://instagram.com/p/fBwFP`, szortkodem danych jest `fBwFP`. Ponadto Instagram stosuje stały współczynnik proporcji dla układów responsywnych, więc wartość szerokości i wysokości powinna być uniwersalna.
 
 [example preview="inline" playground="true" imports="amp-instagram:0.1"]
-
 ```html
 <amp-instagram data-shortcode="fBwFP"
   width="320"
@@ -64,7 +61,6 @@ Dodaj szortkod danych Instagrama, znajdujący się w adresie URL zdjęcia z Inst
   layout="responsive">
 </amp-instagram>
 ```
-
 [/example]
 
 [tip type="tip"] **PORADA —** więcej przykładów użycia składnika [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) znajdziesz w sekcji [AMP By Example](../../../../documentation/examples/documentation/amp-instagram.html). [/tip]
@@ -76,9 +72,8 @@ Aby wyświetlić na swojej stronie wpis lub film z Facebooka, użyj elementu [`a
 Najpierw musisz umieścić następujący skrypt w sekcji `<head>`:
 
 [sourcecode:html]
-
-<script async="" custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
-
+<script async custom-element="amp-facebook"
+  src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
 [/sourcecode]
 
 ##### Przykład: osadzanie wpisu
@@ -117,9 +112,8 @@ Aby osadzić film z YouTube w swojej stronie, użyj elementu [`amp-youtube`](../
 Najpierw musisz umieścić następujący skrypt w sekcji `<head>`:
 
 [sourcecode:html]
-
-<script async="" custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
-
+<script async custom-element="amp-youtube"
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 [/sourcecode]
 
 Identyfikator `data-videoid` YouTube jest zawarty w każdym adresie URL filmu na YouTube. Na przykład w adresie `https://www.youtube.com/watch?v=Z1q71gFeRqM` identyfikatorem filmu jest ciąg `Z1q71gFeRqM`.
@@ -127,7 +121,6 @@ Identyfikator `data-videoid` YouTube jest zawarty w każdym adresie URL filmu na
 Użyj atrybutu `layout="responsive"` aby uzyskać poprawne układy dla filmów o współczynniku proporcji 16:9:
 
 [example preview="inline" playground="true" imports="amp-youtube:0.1"]
-
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"
@@ -135,7 +128,6 @@ Użyj atrybutu `layout="responsive"` aby uzyskać poprawne układy dla filmów o
   height="315">
 </amp-youtube>
 ```
-
 [/example]
 
 [tip type="tip"] **PORADA —** więcej przykładów użycia składnika [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) znajdziesz w sekcji [AMP By Example](../../../../documentation/examples/documentation/amp-youtube.html). [/tip]
@@ -149,7 +141,6 @@ Uruchamianie wewnątrz dokumentu AMP kodu JavaScript dostarczonego przez sieć r
 Musisz określić szerokość i wysokość reklamy oraz typ sieci reklamowej. Element `type` identyfikuje szablon sieci reklamowej. Różne typy reklam wymagają różnych atrybutów `data-*`.
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
-
 ```html
 <amp-ad width="300"
   height="250"
@@ -160,13 +151,11 @@ Musisz określić szerokość i wysokość reklamy oraz typ sieci reklamowej. El
   data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
 </amp-ad>
 ```
-
 [/example]
 
 Jeśli jest to obsługiwane przez sieć, należy dodać `placeholder`, aby wyświetlać element zastępczy, jeśli reklama jest niedostępna:
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
-
 ```html
 <amp-ad width="300"
   height="250"
@@ -178,7 +167,6 @@ Jeśli jest to obsługiwane przez sieć, należy dodać `placeholder`, aby wyśw
   <div placeholder>Have a great day!</div>
 </amp-ad>
 ```
-
 [/example]
 
 AMP obsługuje szeroką gamę sieci reklamowych. Pełna lista — patrz składnik [`amp-ad`](../../../../documentation/components/reference/amp-ad.md).

@@ -1,7 +1,9 @@
 ---
-$title: Związek AMP z PWA
-$order: 7
+"$title": Związek AMP z PWA
+"$order": '7'
 description: Progresywne aplikacje webowe i strony AMP świetnie ze sobą współpracują. W rzeczywistości, w wielu przypadkach uzupełniają się one w ten czy inny sposób. Naucz się jak...
+formats:
+- websites
 components:
 - youtube
 author: pbakaus

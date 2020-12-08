@@ -1,6 +1,8 @@
 ---
-$title: Serwowanie AMP za pomocą podpisanych wymian
-$order: 4
+"$title": Serwowanie AMP za pomocą podpisanych wymian
+"$order": '4'
+formats:
+- websites
 author: CrystalOnScript
 ---
 
@@ -40,8 +42,10 @@ W celu wygenerowania certyfikatu urząd certyfikacji (CA) będzie potrzebować �
 
 ```sh
 # generate private key (if necessary)
+
 $ openssl ecparam -out ampbyexample-packager.key -name prime256v1 -genkey
 # generate CSR (the file ampbyexample-packager.csr)
+
 $ openssl req -new -key ampbyexample-packager.key -nodes -out ampbyexample-packager.csr -subj "/C=US/ST=California/L=Mountain View/O=Google LLC/CN=ampbyexample.com"
 ```
 
@@ -197,4 +201,5 @@ W konsoli DevTools na karcie `Network` będzie widać `signed-exchange` w kolumn
 
 Poniżej znajduje się lista sieci CDN i dostawców usług hostingowych oferujących gotową obsługę podpisanych wymian. Korzystanie z jednego z nich jest najprostszym sposobem rozpoczęcia korzystania z podpisanych wymian:
 
+- [AMP Packager Instalator Google Cloud Click-to-Deploy](https://console.cloud.google.com/marketplace/details/google/amp-packager?filter=solution-type:k8s) [AMP Packager](https://github.com/ampproject/amppackager#amp-packager) to narzędzie do ulepszania adresów URL AMP poprzez udostępnianie stron AMP za pomocą podpisanych giełd. Przeczytaj więcej na [blogu AMP](https://blog.amp.dev/2020/11/23/amp-packager-is-now-available-on-google-cloud-marketplace/).
 - [Rzeczywisty adres URL AMP Cloudflare](https://www.cloudflare.com/website-optimization/amp-real-url/). [Cloudflare](https://www.cloudflare.com/) jest jedną z największych sieci na świecie. Dziś firmy, organizacje non-profit, blogerzy i każdy, kto ma obecność w Internecie, mogą dzięki Cloudflare pochwalić się szybszymi, bezpieczniejszymi witrynami internetowymi i aplikacjami.

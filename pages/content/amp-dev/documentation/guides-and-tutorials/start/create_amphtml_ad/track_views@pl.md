@@ -1,6 +1,6 @@
 ---
-$title: Śledzenie odsłon reklamy
-$order: 2
+"$title": Śledzenie odsłon reklamy
+"$order": '2'
 description: W reklamach AMPHTML można śledzić metryki za pomocą składników amp-pixel lub amp-analytics. W naszym prostym przykładzie dodamy możliwość śledzenia odsłon stron...
 ---
 

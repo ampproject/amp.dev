@@ -1,8 +1,8 @@
 ---
-$title: Wspólne atrybuty elementów
-$order: 1
+"$title": Wspólne atrybuty elementów
+"$order": '1'
 description: AMP zapewnia zestaw wspólnych atrybutów, rozszerzanych na wiele składników AMP (i elementów HTML). Niniejszy dokument opisuje każdy z tych wspólnych atrybutów.
-toc: true
+toc: 'true'
 ---
 
 AMP zapewnia zestaw wspólnych atrybutów, rozszerzanych na wiele składników AMP (i elementów HTML). Niniejszy dokument opisuje każdy z tych wspólnych atrybutów.

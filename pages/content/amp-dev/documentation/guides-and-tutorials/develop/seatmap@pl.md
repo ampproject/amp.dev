@@ -1,8 +1,10 @@
 ---
-$title: Tworzenie mapy miejsc
-$order: 104
+"$title": Tworzenie mapy miejsc
+"$order": '104'
 description: Mapy miejsc są ważną częścią aplikacji internetowych automatów biletowych, ale ich implementacja w AMP może być trudna. Czytaj dalej, aby dowiedzieć się jak zaimplementować mapę miejsc w AMP
-tutorial: true
+tutorial: 'true'
+formats:
+- websites
 author: kul3r4
 contributors:
 - pbakaus
@@ -48,7 +50,13 @@ rect[selected].seat {
 
 Mapa miejsc jest renderowana za pomocą składników [`amp-list`](../../../documentation/components/reference/amp-list.md) oraz [`amp-mustache`](../../../documentation/components/reference/amp-mustache.md). Po otrzymaniu danych z wywołania [`amp-list`](../../../documentation/components/reference/amp-list.md) można użyć owych danych do iteracji przez miejsca:
 
-[sourcecode:html] {% raw %}<svg preserveaspectratio="xMidYMin slice" viewbox="0 0 {{width}} {{height}}"> {{#seats}} <rect option="{{id}}" role="button" tabindex="0" class="seat {{unavailable}}" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"></rect> {{/seats}} </svg>{% endraw %} [/sourcecode]
+[sourcecode:html]
+{% raw %}<svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
+{{#seats}}
+<rect option="{{id}}" role="button" tabindex="0" class="seat {{unavailable}}" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"/>
+{{/seats}}
+</svg>{% endraw %}
+[/sourcecode]
 
 ## Stylizacja niedostępnych miejsc
 
@@ -56,9 +64,12 @@ W powyższym przykładzie `{% raw %}{{unavailable}}{% endraw %}` jest wartości�
 
 Alternatywnym, bardziej szczegółowym podejściem jest powtarzanie znaczników w następujący sposób:
 
-[sourcecode:html] {% raw %}{{#available }}{% endraw %} <rect option="{{id}}" role="button" tabindex="0" class="seat" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"></rect>{% raw %}{{/available }}{% endraw %}
+[sourcecode:html]
+{% raw %}{{#available }}{% endraw %}
+<rect option="{{id}}" role="button" tabindex="0" class="seat" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"/>{% raw %}{{/available }}{% endraw %}
 
-{% raw %}{{^available}}{% endraw %}<rect role="button" tabindex="0" class="seat unavailable" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"></rect>{% raw %}{{/available }}{% endraw %} [/sourcecode]
+{% raw %}{{^available}}{% endraw %}<rect role="button" tabindex="0" class="seat unavailable" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"/>{% raw %}{{/available }}{% endraw %}
+[/sourcecode]
 
 ## Ustawianie rozmiaru mapy miejsc
 
@@ -93,21 +104,28 @@ Drugie podejście pozwala również ograniczyć dublowanie wyrażenia [`amp-bind
 
 Oto ostateczny poglądowy kod HTML mapy miejsc:
 
-[sourcecode:html] {% raw %}
-
-<div class="seatmap-container">
-<amp-list layout="fill" src="/json/seats.json" binding="no" items="." single-item noloading>
-<template type="amp-mustache">
-<amp-pan-zoom layout="fill" class="seatmap">
-<amp-selector multiple on="select:AMP.setState({
-selectedSeats: event.selectedOptions
-})" layout="fill">
-<div class="svg-container">
-<svg preserveaspectratio="xMidYMin slice" viewbox="0 0 {{width}} {{height}}">{{#siedzenia}} <rect option="{{id}}" role="button" tabindex="0" class="seat {{unavailable}}" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"></rect> {{/siedzenia}}</svg>
-</div>
-</amp-selector>
-</amp-pan-zoom>
-</template>
-</amp-list>
-<div>{% endraw %} [/sourcecode]</div>
-</div>
+[sourcecode:html]
+{% raw %}<div class="seatmap-container">
+  <amp-list layout="fill" src="/json/seats.json" binding="no" items="." single-item noloading>
+    <template type="amp-mustache">
+      <amp-pan-zoom layout="fill" class="seatmap">
+        <amp-selector multiple on="select:AMP.setState({
+          selectedSeats: event.selectedOptions
+        })" layout="fill">
+          <div class="svg-container">
+            <svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
+            {{#seats}}
+              <rect option="{{id}}" role="button"
+               tabindex="0" class="seat {{unavailable}}"
+              x="{{x}}" y="{{y}}"
+              width="{{width}}" height="{{height}}"
+              rx="{{rx}}" ry="{{ry}}"/>
+            {{/seats}}
+            </svg>
+          </div>
+        </amp-selector>
+      </amp-pan-zoom>
+    </template>
+  </amp-list>
+</div>{% endraw %}
+[/sourcecode]

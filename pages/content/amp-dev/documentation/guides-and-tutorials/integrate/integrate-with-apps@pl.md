@@ -1,7 +1,9 @@
 ---
-$title: Integracja AMP z aplikacją
-$order: 2
+"$title": Integracja AMP z aplikacją
+"$order": '2'
 description: Niniejszy przewodnik jest przeznaczony dla twórców aplikacji mobilnych i internetowych, którzy chcą zintegrować i powiązać je ze stronami AMP. Weźmy na przykład pod uwagę mobilną aplikację do czatu...
+formats:
+- websites
 ---
 
 Niniejszy przewodnik jest przeznaczony dla twórców aplikacji mobilnych i internetowych, którzy chcą zintegrować i powiązać je ze stronami AMP. Weźmy na przykład pod uwagę mobilną aplikację do czatu, ładującą wersję AMP współdzielonego adresu URL w celu szybszego wyświetlania zawartości użytkownikom.

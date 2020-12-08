@@ -1,7 +1,7 @@
 ---
-$title: Podgląd i walidacja
-$order: 5
-description: "Podgląd strony AMP wyświetla się tak samo, jak podgląd każdej innej statycznej strony HTML. Nie jest wymagany żaden krok tworzenia ani przetwarzanie wstępne. Możesz: ..."
+"$title": Podgląd i walidacja
+"$order": '5'
+description: '"Podgląd strony AMP wyświetla się tak samo, jak podgląd każdej innej statycznej strony HTML. Nie jest wymagany żaden krok tworzenia ani przetwarzanie wstępne. Możesz: ..."'
 author: pbakaus
 contributors:
 - bpaduch

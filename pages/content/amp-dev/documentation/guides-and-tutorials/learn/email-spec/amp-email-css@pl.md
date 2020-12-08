@@ -1,9 +1,11 @@
 ---
-$title: CSS obsługiwany przez AMP dla poczty e-mail
-order: 5
+"$title": CSS obsługiwany przez AMP dla poczty e-mail
+order: '5'
+formats:
+- email
 teaser:
   text: Ten dokument przedstawia w zarysie funkcje CSS obecnie obsługiwane w wiadomościach e-mail AMP.
-toc: true
+toc: 'true'
 ---
 
 <!--
