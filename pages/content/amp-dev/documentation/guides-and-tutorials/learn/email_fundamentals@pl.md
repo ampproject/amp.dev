@@ -1,8 +1,10 @@
 ---
-$title: Podstawy poczty elektronicznej AMP
-$order: 1
+"$title": Podstawy poczty elektronicznej AMP
+"$order": '1'
 description: Wszystko, co musisz wiedzieć, aby rozpocząć pisanie prawidłowych wiadomości e-mail AMP.
 author: CrystalOnScript
+formats:
+- email
 ---
 
 Jeśli znasz AMP, to świetna wiadomość! AMP dla poczty e-mail jest po prostu podzbiorem biblioteki AMP HTML. Jeśli nie znasz AMP, to też świetna wiadomość! Ten przewodnik da Ci wszystko, co musisz wiedzieć, aby rozpocząć pisanie prawidłowych wiadomości e-mail AMP!

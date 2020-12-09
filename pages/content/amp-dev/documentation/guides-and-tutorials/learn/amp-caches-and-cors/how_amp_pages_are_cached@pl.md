@@ -1,7 +1,11 @@
 ---
-$title: Jak są buforowane strony AMP
-$order: 0
+"$title": Jak są buforowane strony AMP
+"$order": '0'
 description: W tym dokumencie opisano rolę serwerów buforujących AMP w ekosystemie AMP oraz sposób buforowania strony AMP.
+formats:
+- websites
+- stories
+- ads
 ---
 
 W tym dokumencie opisano rolę serwerów buforujących AMP w ekosystemie AMP oraz sposób buforowania strony AMP.
@@ -45,8 +49,7 @@ Jeśli nie chcesz, aby Twój dokument został zbuforowany, jedną z opcji jest u
 
 Dostęp do buforowanych stron AMP mają platformy (takie jak wyszukiwarka Google, Wiadomości Google i Bing) oraz aplikacje mobilne. Aplikacje mobilne mogą łączyć się z buforowaną zawartością AMP poprzez adres URL (patrz [interfejs AMP URL API Google](https://developers.google.com/amp/cache/use-amp-url)) lub żądanie XHR różnych źródeł w aplikacjach PWA (więcej informacji znajdziesz w artykule [Osadzanie i używanie AMP jako źródła danych](../../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md)).
 
-<amp-img src="/static/img/docs/platforms_accessing_cache.png" width="1054" height="356" layout="responsive" alt="platforms and mobile apps access cached AMP pages">
-</amp-img>
+<amp-img src="/static/img/docs/platforms_accessing_cache.png" width="1054" height="356" layout="responsive" alt="platforms and mobile apps access cached AMP pages"></amp-img>
 
 ## W jaki sposób jest buforowana moja strona AMP?
 

@@ -1,8 +1,8 @@
 ---
-$title: Praca z danymi zdalnymi
-$order: 3
+"$title": Praca z danymi zdalnymi
+"$order": '3'
 description: Co zrobić, jeśli dane, które można powiązać, są zbyt duże lub złożone, aby pobrać je podczas ładowania strony? Albo co zrobić, jeśli każda jednostka SKU ma cenę, która wymaga...
-toc: true
+toc: 'true'
 ---
 
 Co zrobić, jeśli dane, które można powiązać, są zbyt duże lub złożone, aby pobrać je podczas ładowania strony? Albo co zrobić, jeśli każda jednostka SKU ma cenę, która wymaga długiego czasu do wyszukania? Wyszukiwanie cen SKU niewyświetlanych pozycji to strata pracy.

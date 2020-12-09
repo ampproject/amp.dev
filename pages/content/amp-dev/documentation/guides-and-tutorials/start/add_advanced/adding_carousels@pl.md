@@ -1,6 +1,6 @@
 ---
-$title: Dodawanie karuzel
-$order: 3
+"$title": Dodawanie karuzel
+"$order": '3'
 description: Kolejną wspólną cechą stron mobilnych jest karuzela. Karuzele można z łatwością dodawać do stron AMP za pomocą składnika amp-carousel.
 ---
 

@@ -1,8 +1,8 @@
 ---
-$title: Konfigurowanie
-$order: 0
+"$title": Konfigurowanie
+"$order": '0'
 description: Skonfiguruj swoje środowisko programistyczne Krok 1. Pobierz kod. Pobierz przykładowy kod samouczka w postaci pliku ZIP lub poprzez git...
-$parent: /documentation/guides-and-tutorials/start/converting/setting-up.md
+"$parent": "/documentation/guides-and-tutorials/start/converting/setting-up.md"
 ---
 
 ## Wymagania wstępne

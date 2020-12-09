@@ -1,6 +1,10 @@
 ---
-$title: Dostawcy usług analityki
-order: 3
+"$title": Dostawcy usług analityki
+order: '3'
+formats:
+- websites
+- stories
+- ads
 teaser:
   text: Ten dokument zawiera listę dostawców usług analityki, mających wbudowane konfiguracje do użytku ze składnikiem amp-analytics.
 ---

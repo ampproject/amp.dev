@@ -1,9 +1,11 @@
 ---
-$title: Zintegruj swoje technologie reklamowe z AMP
-order: 3
+"$title": Zintegruj swoje technologie reklamowe z AMP
+order: '3'
+formats:
+- ads
 teaser:
   text: Jeśli jesteś dostawcą technologii reklamowych i chcesz zintegrować je z AMP HTML, zapoznaj się z poniższymi wytycznymi.
-toc: true
+toc: 'true'
 ---
 
 <!--
@@ -25,11 +27,17 @@ Jako że AMP nie zezwala wydawcom na wykonywanie dowolnego kodu JavaScript, nale
 
 Przykład: serwer Amazon A9 można wywołać przy użyciu następującej składni:
 
-[sourcecode:html] <amp-ad width="300" height="250" type="a9" data-aax_size="300x250" data-aax_pubname="test123" data-aax_src="302"
-
+[sourcecode:html]
+<amp-ad
+  width="300"
+  height="250"
+  type="a9"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
 >
-
- [/sourcecode]
+</amp-ad>
+[/sourcecode]
 
 Zauważ, że każdy z atrybutów następujących po właściwości `type` jest zależny od parametrów, których oczekuje serwer Amazon A9 w celu dostarczenia reklamy. Plik [a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) pokazuje jak są mapowane parametry w celu wykonania wywołania skryptu JavaScript, który wywołuje serwer A9 poprzez adres URL `https://c.amazon-adsystem.com/aax2/assoc.js`. W celu zwrócenia reklamy do adresu URL są dołączane odpowiednie parametry przekazywane przez znacznik reklamy AMP.
 
@@ -59,11 +67,17 @@ Odtwarzacz wideo, który działa na zwykłych stronach HTML, nie będzie działa
 
 Odtwarzacz Brightcove można wywołać w następujący sposób:
 
-[sourcecode:html] <amp-brightcove data-account="1290862519001" data-video-id="ref:amp-docs-sample" data-player="S1Tt8cgaM" layout="responsive" width="480" height="270"
-
+[sourcecode:html]
+<amp-brightcove
+  data-account="1290862519001"
+  data-video-id="ref:amp-docs-sample"
+  data-player="S1Tt8cgaM"
+  layout="responsive"
+  width="480"
+  height="270"
 >
-
- [/sourcecode]
+</amp-brightcove>
+[/sourcecode]
 
 Instrukcje dotyczące opracowania znacznika AMP takiego jak znacznik Brightcove znajdują się w [tym żądaniu ściągnięcia ](https://github.com/ampproject/amphtml/pull/1052).
 

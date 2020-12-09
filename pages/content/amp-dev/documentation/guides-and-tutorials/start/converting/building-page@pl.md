@@ -1,6 +1,6 @@
 ---
-$title: Tworzenie zwykłej strony HTML
-$order: 1
+"$title": Tworzenie zwykłej strony HTML
+"$order": '1'
 description: W katalogu projektu znajduje się plik o nazwie article.html. Jest to artykuł informacyjny, który tworzymy jako odpowiednik AMP...
 ---
 
