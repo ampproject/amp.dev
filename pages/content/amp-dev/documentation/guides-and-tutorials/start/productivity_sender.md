@@ -25,7 +25,7 @@ To learn more about AMP for EMail watch [this talk](https://www.youtube.com/watc
 
 # Inspiration for AMP Email use cases
 
-We know that diving into using a technology can be overwhelming so this [link](/documentation/guides-and-tutorials/start/email-inspiration) should give you some ideas for which AMP Emails would be a great fit.
+We know that diving into using a technology can be overwhelming so this [link](email-inspiration.md) should give you some ideas for which AMP Emails would be a great fit.
 
 # Senders who have had success with AMP Emails
 
