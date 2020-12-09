@@ -1,5 +1,5 @@
 /**
- * Copyright 2019 The AMP HTML Authors. All Rights Reserved.
+ * Copyright 2020 The AMP HTML Authors. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,11 +17,8 @@
 'use strict';
 
 const contentSecurityPolicy = require('helmet-csp');
-const crypto = require('crypto');
 
 module.exports = (req, res, next) => {
-  res.locals.nonce = crypto.randomBytes(16).toString('hex');
-
   const directives = {
     defaultSrc: ['*', 'data:', 'blob:'],
     workerSrc: [`'self'`, 'blob:'],
@@ -33,6 +30,7 @@ module.exports = (req, res, next) => {
       'https://cdn.ampproject.org/sw/',
       'https://cdn.ampproject.org/viewer/',
       'https://cdn.ampproject.org/rtv/',
+      'https://playground.amp.dev/',
       'https://www.googletagmanager.com/gtag/js',
     ],
     objectSrc: [`'none'`],
@@ -44,12 +42,9 @@ module.exports = (req, res, next) => {
     reportUri: ['https://csp-collector.appspot.com/csp/amp'],
   };
 
-  // Don't enforce nonce for examples
-  if (!/\/documentation\/examples\//.test(req.path)) {
-    directives.scriptSrc = [
-      ...directives.scriptSrc,
-      `'nonce-${res.locals.nonce}'`,
-    ];
+  // Allow unsafe-inline for examples
+  if (/\/documentation\/examples\//.test(req.path)) {
+    directives.scriptSrc = [...directives.scriptSrc, `'unsafe-inline'`];
   }
 
   // Add security headers.

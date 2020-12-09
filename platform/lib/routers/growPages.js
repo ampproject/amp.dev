@@ -200,9 +200,7 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
     return;
   }
 
-  const {locals} = res || {};
-  const {nonce} = locals || {};
-  const templateContext = createRequestContext(req, {nonce});
+  const templateContext = createRequestContext(req);
 
   const template = await loadTemplate(url.pathname);
   if (!template) {
