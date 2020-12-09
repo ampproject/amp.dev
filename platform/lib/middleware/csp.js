@@ -17,6 +17,17 @@
 'use strict';
 
 const contentSecurityPolicy = require('helmet-csp');
+const config = require('@lib/config');
+
+const getDynamicHosts = () =>
+  ['playground', 'preview', 'go', 'log']
+    .map((key) => {
+      const {[key]: hostConfig} = config.hosts || {};
+      if (hostConfig) {
+        return `${config.getHost(hostConfig)}/`;
+      }
+    })
+    .filter((v) => v);
 
 module.exports = (req, res, next) => {
   const directives = {
@@ -30,14 +41,14 @@ module.exports = (req, res, next) => {
       'https://cdn.ampproject.org/sw/',
       'https://cdn.ampproject.org/viewer/',
       'https://cdn.ampproject.org/rtv/',
-      'https://playground.amp.dev/',
       'https://www.googletagmanager.com/gtag/js',
+      ...getDynamicHosts(),
     ],
     objectSrc: [`'none'`],
     styleSrc: [
       `'unsafe-inline'`,
       'https://cdn.ampproject.org/rtv/',
-      'https://playground.amp.dev/',
+      ...getDynamicHosts(),
     ],
     reportUri: ['https://csp-collector.appspot.com/csp/amp'],
   };
