@@ -18,7 +18,7 @@ Una Storia web dal punto di vista tecnico è una singola pagina web realizzata t
 - Contenere un tag `<meta charset="utf-8">` come primo elemento figlio del tag `<head>`.
 - Contenere un tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` all'interno del proprio tag `<head>`. Le procedure consigliate suggeriscono l'inclusione dello script il prima possibile nella sezione `<head>`.
 - Contenere un tag `<link rel="canonical" href="page/url">` all'interno della propria sezione `<head>` con l'elemento href che punta all'URL della Storia web.
-- Contenere un tag `<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">` all'interno del tag `<head>`. Si consiglia inoltre di includere l'attributo initial-scale=1.
+- Contenere un tag `<meta name="viewport" content="width=device-width">` all'interno del tag `<head>`. Si consiglia inoltre di includere l'attributo initial-scale=1.
 - Contenere il codice [boilerplate AMP](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) nel tag `<head>`.
 
 La differenza tra una semplice pagina web AMP e una storia web realizzata con AMP è il componente [`amp-story`](https://amp.dev/documentation/components/amp-story/?format=stories)  È l'unico elemento figlio diretto della sezione `<body>` del documento e deve contenere l'attributo `standalone`. Tutte le pagine, i livelli e gli elementi della Storia web sono definiti all'interno dei tag `<amp-story>`.
@@ -30,7 +30,7 @@ La differenza tra una semplice pagina web AMP e una storia web realizzata con AM
     <meta charset="utf-8">
     <title>Joy of Pets</title>
     <link rel="canonical" href="pets.html">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-video"

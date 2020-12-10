@@ -13,7 +13,7 @@ $title: AMP HTML로 이루어진 페이지 만들기
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>Hello, AMPs</title>
     <link rel="canonical" href="{{doc.url}}">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -53,7 +53,7 @@ AMP HTML 문서는 다음 규칙을 준수해야 합니다.
 | `<meta charset="utf-8">` 태그를 `<head>` 태그의 첫 번째 자식 요소로 사용해야 합니다. | 페이지 인코딩을 식별합니다. |
 | `<script async src="https://cdn.ampproject.org/v0.js"></script>` 태그를 `<head>` 태그의 두 번째 자식 요소로 사용해야 합니다. | AMP JS 라이브러리를 가져오고 로드합니다. |
 | `<head>` 내에 `<link rel="canonical" href="$SOME_URL">` 태그를 사용해야 합니다. | AMP HTML 문서의 AMP가 아닌 HTML 버전을 가리킵니다. HTML 버전이 존재하지 않으면 문서 자체를 가리킵니다. [페이지를 검색 가능하게 만들기](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md)에서 자세히 알아보세요.
-| `<head>` 태그 내에 `<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">` 태그를 사용해야 합니다. `initial-scale=1`도 작성하는 것이 좋습니다. | 반응형 뷰포트를 지정합니다. [반응형 AMP 페이지 만들기](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md)에서 자세히 알아보세요. |
+| `<head>` 태그 내에 `<meta name="viewport" content="width=device-width">`도 작성하는 것이 좋습니다. | 반응형 뷰포트를 지정합니다. [반응형 AMP 페이지 만들기](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md)에서 자세히 알아보세요. |
 | `<head>` 태그에 [AMP 보일러플레이트 코드](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md)를 포함해야 합니다.  | CSS 보일러플레이트는 AMP JS가 로드되기 전까지 우선 콘텐츠를 숨깁니다. |
 
 ## 선택적으로 사용 가능한 메타데이터

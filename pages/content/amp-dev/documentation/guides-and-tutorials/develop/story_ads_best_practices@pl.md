@@ -1,10 +1,10 @@
 ---
-"$title": Najlepsze praktyki tworzenia reklam fabularnych Web
-"$order": '16'
+'$title': Najlepsze praktyki tworzenia reklam fabularnych Web
+'$order': '16'
 description: Relacje Web to interaktywne, pełnoekranowe materiały, angażujące czytelników w treść. Reklamy wyświetlane w relacjach Web powinny być spójne z relacjami Web.
 formats:
-- ads
-- stories
+  - ads
+  - stories
 ---
 
 Relacje Web to interaktywne, pełnoekranowe materiały, angażujące czytelników w treść. Reklamy wyświetlane w relacjach Web powinny być spójne z relacjami Web. Zapobiega to irytowaniu użytkowników lub zakłócaniu ich wrażeń. Ten przewodnik pokazuje, jak stworzyć reklamę fabularną Web.
@@ -42,7 +42,7 @@ Dane tagów meta określają, że reklama ma format Web Story, ustawiają wylicz
 <html amp4ads>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
 
     <!-- Specifies where the user is directed -->
     <meta name="amp-cta-url" content="%%CLICK_URL_UNESC%%%%DEST_URL%%">

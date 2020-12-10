@@ -22,9 +22,10 @@ Bu stiller, [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/am
 Diğerlerinin yanı sıra [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) için özel öğe komut dosyasını da içerir. Böylece, sitedeki birçok sayfaya yerleşik YouTube videoları eklenebilir.
 
 [sourcecode:html] {% raw %}
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
   <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 
@@ -102,8 +103,8 @@ AMP projesi şu anda `opacity`, `transform` ve `-vendorPrefix-transform` özelli
 
 Aşağıdaki örneklerde, `<property>` etiketinin beyaz listede olması gerekir:
 
-* `transition <property> (Also -vendorPrefix-transition)`
-* @ `@keyframes name { from: {<property>: value} to {<property: value>} } (also @-vendorPrefix-keyframes)`
+- `transition <property> (Also -vendorPrefix-transition)`
+- @ `@keyframes name { from: {<property>: value} to {<property: value>} } (also @-vendorPrefix-keyframes)`
 
 `overflow` özelliğinin (ve `overflow-y`, `overflow-x`) stili <span class="notranslate">“auto”</span> veya <span class="notranslate">“scroll”</span> olarak belirlenemez.
 AMP dokümanlarında hiçbir kullanıcı tanımlı öğenin kaydırma çubuğu olamaz.
@@ -115,12 +116,13 @@ AMP sayfaları harici stil sayfaları içeremez. Bunun tek istisnası özel yaz�
 
 Yazı tipi sağlayıcıları, yalnızca CSS entegrasyonlarını desteklediklerinde ve HTTPS üzerinde sunum yaptıklarında beyaz listeye eklenebilir. Şu anda yalnızca aşağıdaki kaynaklar beyaz listeye alınmıştır ve bağlantı etiketleri aracılığıyla yazı tipi sunumu için bu kaynaklara izin verilmektedir:
 
-* [https://fast.fonts.net](https://fast.fonts.net)
-* [https://fonts.googleapis.com](https://fonts.googleapis.com)
+- [https://fast.fonts.net](https://fast.fonts.net)
+- [https://fonts.googleapis.com](https://fonts.googleapis.com)
 
 Beyaz listedeki Google Fonts yazı tipi sağlayıcısını işaret eden örnek bağlantı etiketi:
 
 [sourcecode:html]
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 [/sourcecode]
 

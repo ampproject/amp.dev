@@ -88,7 +88,7 @@ AMP 要求您为视口定义 `width` 和 `minimum-scale`。这两个值必须分
 要解决视口错误，请将以下 HTML 代码段添加到 `<head>` 标记中：
 
 ```html
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="viewport" content="width=device-width">
 ```
 
 在 AMP 中，必需为 `width` 和 `minimum-scale` 指定值。定义 `initial-scale` 不是一项强制性要求，但移动网站开发者通常都会指定此值，所以我们建议您也这么做。要详细了解视口和自适应设计，请参阅[配置视口](https://developers.google.com/speed/docs/insights/ConfigureViewport)。
@@ -275,7 +275,7 @@ The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
 
     <link rel="canonical" href="/article.html">
     <link rel="shortcut icon" href="amp_favicon.png">

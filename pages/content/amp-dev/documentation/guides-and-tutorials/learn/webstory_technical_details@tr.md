@@ -20,7 +20,7 @@ Web Hikayesi, teknik olarak AMP ile oluşturulmuş tek bir web sayfasıdır ve A
 - `<head>` etiketinin ilk alt öğesi olarak bir ` <meta charset="utf-8">` içerir.
 - `<head>` etiketlerinin içinde bir `<script async src="https://cdn.ampproject.org/v0.js"></script>` etiketi içerir. En iyi uygulama olarak, betiği olabildiğince erken ` <head>` içine eklemelisiniz.
 - Href, Web Hikayesi URL'sini işaret edecek şekilde `<head>` içinde bir `<link rel="canonical" href="page/url">` etiketi içerir.
-- `<head>` etiketi içinde `<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">` etiketi içerir. Ayrıca initial-scale=1 eklemek de önerilir.
+- `<head>` etiketi içinde `<meta name="viewport" content="width=device-width">` etiketi içerir. Ayrıca initial-scale=1 eklemek de önerilir.
 - `<head>` etiketinde [AMP ortak metni](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) kodunu  içerir.
 
 Bir AMP web sayfası ile AMP ile oluşturulmuş bir Web Hikayesi arasındaki fark, [`amp-story`](https://amp.dev/documentation/components/amp-story/?format=stories) bileşenidir. `<body>` belgesinin doğrudan alt öğesidir ve `standalone` özniteliğini içermelidir. Tüm Web Hikayesi sayfaları, katmanları ve öğeleri `<amp-story>` etiketleri içinde tanımlanmıştır.
@@ -32,7 +32,7 @@ Bir AMP web sayfası ile AMP ile oluşturulmuş bir Web Hikayesi arasındaki far
     <meta charset="utf-8">
     <title>Joy of Pets</title>
     <link rel="canonical" href="pets.html">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-video"

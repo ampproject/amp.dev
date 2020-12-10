@@ -81,7 +81,7 @@ La sintassi AMP richiede la definizione degli attributi `width` e `minimum-scale
 Per risolvere l'errore di visualizzazione, aggiungere il seguente frammento HTML al tag `<head>`:
 
 ```html
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="viewport" content="width=device-width">
 ```
 
 I valori specificati per gli attributi `width` e `minimum-scale` sono obbligatori in AMP. La definizione `initial-scale` non è obbligatoria, ma è comunemente inclusa nello sviluppo di pagine web per dispositivi mobili. Altre informazioni sulle finestre di visualizzazione e sulle strutture reattive sono disponibili nella sezione [Configurazione della finestra di viusliazzazione](https://developers.google.com/speed/docs/insights/ConfigureViewport).
@@ -247,7 +247,7 @@ Ora il tuo documento AMP dovrebbe assomigliare a questo:
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
 
     <link rel="canonical" href="/article.html">
     <link rel="shortcut icon" href="amp_favicon.png">

@@ -77,9 +77,10 @@ Cuando utilices preprocesadores, presta especial atención a los elementos que i
 incluye todas las etiquetas AMP que se necesitan y el CSS insertado de los archivos de origen de `*.scss`. También incluye la secuencia de comandos personalizada de [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md), entre otras, para que muchas páginas del sitio web puedan incluir vídeos de YouTube insertados.
 
 [sourcecode:html]{% raw %}
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
   <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">

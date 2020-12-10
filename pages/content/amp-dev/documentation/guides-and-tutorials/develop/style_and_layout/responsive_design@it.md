@@ -22,7 +22,7 @@ In questa guida mostreremo come implementare facilmente questi fondamentali elem
 Ma quali valori usare? Ebbene, in AMP questa informazione è già disponibile. Nell'ambito del [markup obbligatorio](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) per le pagine AMP, occorre specificare la seguente finestra di visualizzazione:
 
 ```html
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="viewport" content="width=device-width" />
 ```
 
 Queste sono le tipiche impostazioni di visualizzazione da usare per un sito veloce. Anche se l'attributo `initial-scale=1` non è obbligatorio per una pagina AMP valida, è tuttavia consigliato, perché imposta il livello di zoom su 1 quando la pagina è caricata per la prima volta. [/filter]
@@ -33,7 +33,7 @@ Queste sono le tipiche impostazioni di visualizzazione da usare per un sito velo
 
 Per progettare siti veloci si possono utilizzare le query CSS [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) che adattano lo stile della pagina web a varie dimensioni dello schermo senza dover alterare il contenuto della pagina. In AMP, si possono utilizzare le stesse query CSS `@media`. Inoltre, per un controllo più preciso su un elemento AMP, è possibile specificare l'attributo `media` sull'elemento. Questo è particolarmente utile quando occorre mostrare o nascondere un elemento in base a una media query. Consultare la sezione [Gestione dell'art direction delle immagini](#changing-the-art-direction-of-an-image) per un esempio di utilizzo dell'attributo `media`.
 
-Ridimensionare ogni elemento per adattarlo a uno schermo può essere complicato<sup><a href="#fn1" id="ref1">*</a></sup>. Tuttavia, in AMP, si può facilmente adattare un elemento specificando l'attributo `"layout=responsive"` insieme agli attributi `width` e `height`. Applicando il layout di tipo `responsive` a un elemento, esso sarà automaticamente ridimensionato alla larghezza del suo elemento contenitore e l'altezza cambierà in base alle proporzioni specificate dai parametri `width` e `height` dell'elemento. Quasi tutti gli elementi AMP supportano un layout `responsive`; consultare la documentazione di riferimento degli elementi per vedere i layout supportati.
+Ridimensionare ogni elemento per adattarlo a uno schermo può essere complicato<sup><a href="#fn1" id="ref1">\*</a></sup>. Tuttavia, in AMP, si può facilmente adattare un elemento specificando l'attributo `"layout=responsive"` insieme agli attributi `width` e `height`. Applicando il layout di tipo `responsive` a un elemento, esso sarà automaticamente ridimensionato alla larghezza del suo elemento contenitore e l'altezza cambierà in base alle proporzioni specificate dai parametri `width` e `height` dell'elemento. Quasi tutti gli elementi AMP supportano un layout `responsive`; consultare la documentazione di riferimento degli elementi per vedere i layout supportati.
 
 Anche se gli elementi possono essere facilmente adattati con l'attributo `"layout=responsive"`, occorre comunque considerare come gli elementi saranno visualizzati su schermi di tutte le dimensioni, inclusi desktop e tablet. Un errore comune è quello di consentire a un'immagine di occupare l'intera larghezza dello schermo, il che estende l'immagine oltre le dimensioni previste, causando un'esperienza negativa agli utenti di sistemi widescreen. Per impostazione predefinita, gli elementi con `layout=responsive` occuperanno l'intera larghezza del contenitore dell'elemento, che spesso non è limitato in larghezza (cioè, larghezza = 100%). Per migliorare l'aspetto delle immagini basta limitare la larghezza del contenitore dell'immagine. Ad esempio, impostando una regola di "max-width" sull'elemento "body" o "main", tutte le immagini saranno limitate a una larghezza massima predefinita.
 
@@ -45,11 +45,13 @@ Nell'esempio seguente, abbiamo un'immagine di fiori (640 x 427 pixel) che voglia
 
 ```html
 <div class="resp-img">
-  <amp-img alt="flowers"
+  <amp-img
+    alt="flowers"
     src="{{server_for_email}}/static/inline-examples/images/flowers.jpg"
     layout="responsive"
     width="640"
-    height="427"></amp-img>
+    height="427"
+  ></amp-img>
 </div>
 ```
 
@@ -59,7 +61,7 @@ Tuttavia, vogliamo che l'immagine non si estenda oltre le dimensioni previste, q
 
 ```html
 <style amp-custom>
-.resp-img {
+  .resp-img {
     max-width: 700px;
   }
 </style>
@@ -86,10 +88,12 @@ Nell'esempio seguente, vogliamo visualizzare un video YouTube integrato che si a
 [example preview="top-frame" playground="true" imports="amp-youtube:0.1"]
 
 ```html
-<amp-youtube data-videoid="lBTCB7yLs8Y"
+<amp-youtube
+  data-videoid="lBTCB7yLs8Y"
   layout="responsive"
   width="560"
-  height="315">
+  height="315"
+>
 </amp-youtube>
 ```
 
@@ -122,7 +126,8 @@ Nell'esempio seguente abbiamo diversi file di immagine che hanno le stesse propo
 [example preview="top-frame" playground="true"]
 
 ```html
-<amp-img alt="apple"
+<amp-img
+  alt="apple"
   src="{{server_for_email}}/static/inline-examples/images/apple.jpg"
   height="596"
   width="900"
@@ -133,19 +138,20 @@ Nell'esempio seguente abbiamo diversi file di immagine che hanno le stesse propo
             {{server_for_email}}/static/inline-examples/images/apple-500.jpg 500w,
             {{server_for_email}}/static/inline-examples/images/apple-400.jpg 400w"
   sizes="(max-width: 400px) 100vw,
-            (max-width: 900px) 75vw, 600px">
+            (max-width: 900px) 75vw, 600px"
+>
 </amp-img>
 ```
 
 [/example]
 
-Ad esempio, supponiamo di avere un dispositivo con una larghezza della finestra di visualizzazione di 412 pixel e una proporzione pixel di 2,6. In base al codice precedente, l'immagine deve essere visualizzata al 75% della larghezza della finestra di visualizzazione, quindi il browser sceglie un'immagine di circa 803 pixel (412 * 0,75 * 2,6), che corrisponde al tipo `apple-800.jpg`.
+Ad esempio, supponiamo di avere un dispositivo con una larghezza della finestra di visualizzazione di 412 pixel e una proporzione pixel di 2,6. In base al codice precedente, l'immagine deve essere visualizzata al 75% della larghezza della finestra di visualizzazione, quindi il browser sceglie un'immagine di circa 803 pixel (412 _ 0,75 _ 2,6), che corrisponde al tipo `apple-800.jpg`.
 
 [tip type="read-on"] **CONTINUA A LEGGERE:** Per ulteriori informazioni sull'utilizzo degli attributi srcset e sizes in AMP, consultare la guida su [Art direction con srcset, sizes e heights](art_direction.md). [/tip]
 
 #### Gestione dell'art direction delle immagini <a name="changing-the-art-direction-of-an-image"></a>
 
-L'art direction indica il processo di adattamento delle caratteristiche visive di un'immagine ai vari punti di interruzione. Ad esempio, invece di ridimensionare semplicemente un'immagine man mano che lo schermo si restringe, è possibile offrire una versione ritagliata dell'immagine che ne restringe la messa a fuoco, oppure fornire  immagini completamente diverse a seconda dei diversi punti di interruzione. In HTML, questi risultati possono essere ottenuti utilizzando l'elemento `picture`. In AMP, le procedure di art direction posono essere realizzate utilizzando l'attributo `media`.
+L'art direction indica il processo di adattamento delle caratteristiche visive di un'immagine ai vari punti di interruzione. Ad esempio, invece di ridimensionare semplicemente un'immagine man mano che lo schermo si restringe, è possibile offrire una versione ritagliata dell'immagine che ne restringe la messa a fuoco, oppure fornire immagini completamente diverse a seconda dei diversi punti di interruzione. In HTML, questi risultati possono essere ottenuti utilizzando l'elemento `picture`. In AMP, le procedure di art direction posono essere realizzate utilizzando l'attributo `media`.
 
 ##### Esempio: immagini di dimensioni diverse per diversi punti di interruzione
 
@@ -160,21 +166,27 @@ Nell'esempio seguente, abbiamo 3 diverse immagini ritagliate di un gatto che vog
 [example preview="top-frame" playground="true"]
 
 ```html
-<amp-img alt="grey cat"
-    media="(min-width: 670px)"
-    width="650"
-    height="340"
-    src="{{server_for_email}}/static/inline-examples/images/cat-large.jpg"></amp-img>
-  <amp-img alt="grey cat"
-    media="(min-width: 470px) and (max-width: 669px)"
-    width="450"
-    height="340"
-    src="{{server_for_email}}/static/inline-examples/images/cat-medium.jpg"></amp-img>
-  <amp-img alt="grey cat"
-    media="(max-width: 469px)"
-    width="226"
-    height="340"
-    src="{{server_for_email}}/static/inline-examples/images/cat-small.jpg"></amp-img>
+<amp-img
+  alt="grey cat"
+  media="(min-width: 670px)"
+  width="650"
+  height="340"
+  src="{{server_for_email}}/static/inline-examples/images/cat-large.jpg"
+></amp-img>
+<amp-img
+  alt="grey cat"
+  media="(min-width: 470px) and (max-width: 669px)"
+  width="450"
+  height="340"
+  src="{{server_for_email}}/static/inline-examples/images/cat-medium.jpg"
+></amp-img>
+<amp-img
+  alt="grey cat"
+  media="(max-width: 469px)"
+  width="226"
+  height="340"
+  src="{{server_for_email}}/static/inline-examples/images/cat-small.jpg"
+></amp-img>
 ```
 
 [/example]
@@ -191,7 +203,7 @@ In HTML, i vari formati di immagine possono essere forniti utilizzando il tag `p
 
 In AMP, ci sono due modi per realizzare immagini ottimizzate per la pubblicazione:
 
-- Gli sviluppatori che utilizzano formati di immagine non diffusamente supportati, come WebP, possono configurare il proprio server per elaborare le intestazioni `Accept` del browser e restituire byte di immagini e [intestazioni `Content-Type`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/) di tipo opportuno. Ciò evita che il browser scarichi tipi di immagini non supportate. Qui puoi trovare ulteriori informazioni sulla [negoziazione dei contenuti](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation).[sourcecode:html] Accept: image/webp,image/apng,image/*,*/*;q=0.8 [/sourcecode]
+- Gli sviluppatori che utilizzano formati di immagine non diffusamente supportati, come WebP, possono configurare il proprio server per elaborare le intestazioni `Accept` del browser e restituire byte di immagini e [intestazioni `Content-Type`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/) di tipo opportuno. Ciò evita che il browser scarichi tipi di immagini non supportate. Qui puoi trovare ulteriori informazioni sulla [negoziazione dei contenuti](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation).[sourcecode:html] Accept: image/webp,image/apng,image/_,_/\*;q=0.8 [/sourcecode]
 - Fornire fallback di immagini nidificati, come mostrato nell'esempio seguente.
 
 ##### Esempio: fornitura di diversi formati di immagine
@@ -201,17 +213,21 @@ Nell'esempio seguente, se il browser supporta WebP, fornisce l'immagine mountain
 [example preview="top-frame" playground="true"]
 
 ```html
-<amp-img alt="Mountains"
+<amp-img
+  alt="Mountains"
   width="550"
   height="368"
   layout="responsive"
-  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
-  <amp-img alt="Mountains"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp"
+>
+  <amp-img
+    alt="Mountains"
     fallback
     width="550"
     height="368"
     layout="responsive"
-    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"
+  ></amp-img>
 </amp-img>
 ```
 

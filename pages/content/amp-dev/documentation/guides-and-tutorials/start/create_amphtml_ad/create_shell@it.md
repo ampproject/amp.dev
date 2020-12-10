@@ -14,7 +14,7 @@ Utilizzando l'editor di testo preferito, creiamo un file HTML denominato **`my-a
 <head>
   <meta charset="utf-8">
   <title>My amphtml ad</title>
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
 </head>
 <body>
 </body>
@@ -60,7 +60,7 @@ Ecco il codice completo per il file HTML:
 <head>
   <meta charset="utf-8">
   <title>My amphtml ad</title>
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
 </head>

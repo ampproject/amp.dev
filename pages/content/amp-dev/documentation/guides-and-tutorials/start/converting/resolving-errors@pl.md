@@ -81,7 +81,7 @@ AMP wymaga definicji atrybutów `width` i `minimum-scale` okienka na ekranie. Na
 Aby rozwiązać błąd dotyczący okienka na ekranie, dodaj do sekcji `<head>` następujący fragment kodu HTML:
 
 ```html
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="viewport" content="width=device-width">
 ```
 
 Podane wartości atrybutów `width` i `minimum scale` są wartościami wymaganymi w AMP. Zdefiniowanie atrybutu `initial-scale` nie jest obowiązkowe, ale jest powszechnie stosowane w programowaniu stron mobilnych i jest zalecane. Więcej informacji o okienku na ekranie i projekcie responsywnym zawiera artykuł [Konfigurowanie okienka na ekranie](https://developers.google.com/speed/docs/insights/ConfigureViewport).
@@ -247,7 +247,7 @@ Teraz dokument AMP powinien wyglądać tak:
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
 
     <link rel="canonical" href="/article.html">
     <link rel="shortcut icon" href="amp_favicon.png">

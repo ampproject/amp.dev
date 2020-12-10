@@ -43,7 +43,7 @@ Here is the recommended order for the `<head>` section in an AMP page:
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <meta name="description" content="This is the AMP Boilerplate.">
     <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
     <link rel="preload" as="script" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
@@ -150,7 +150,7 @@ Just make sure to place the preload statements _after_ the viewport declaration 
 
 [sourcecode:html]
 
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="viewport" content="width=device-width">
 ...
 <link rel="preload" media="(max-width: 415px)" ...>
 [/sourcecode]

@@ -16,10 +16,10 @@ En esta guía, le mostraremos cómo puede implementar fácilmente estos fundamen
 
 Para optimizar su página web para que el contenido sea escalable y se ajuste a la ventana del navegador para cualquier dispositivo, debe especificar un `viewport` (elemento de vista gráfica) `meta`. El elemento viewport indica al navegador cómo escalar y dimensionar el área visible (viewport) de la página web.
 
-Pero, ¿qué valores debe utilizar? Pues bien, aparte del [marcado requerido](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) para páginas AMP, se debe especificar el  siguiente viewport:
+Pero, ¿qué valores debe utilizar? Pues bien, aparte del [marcado requerido](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) para páginas AMP, se debe especificar el siguiente viewport:
 
 ```html
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="viewport" content="width=device-width" />
 ```
 
 Éstas son las configuraciones típicas del viewport que utilizarías para un sitio responsivo. Aunque `initial-scale = 1` no es necesario para una página AMP válida, se recomienda porque establece el nivel de zoom en 1 cuando se cargue la página por primera vez.
@@ -28,7 +28,7 @@ Pero, ¿qué valores debe utilizar? Pues bien, aparte del [marcado requerido](..
 
 En el diseño responsivo, puede utilizar CSS [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) para adaptar el estilo de su página web para la variedad de la pantalla dimensiones sin tener que alterar el contenido de la página. En AMP, puede seguir utilizando las mismas consultas CSS `@media`. Además, para un control más preciso sobre un elemento AMP, se puede especificar el atributo `media` en el elemento. Esto es particularmente útil cuando se necesita para mostrar u ocultar un elemento en base a una consulta de medios. Ver la sección [Cambiando la dirección de arte de una imagen](#changing-the-art-direction-of-an-image) para un ejemplo que utiliza el atributo `media`.
 
-Haciendo que cada elemento de cambio de tamaño para adaptarse a una pantalla puede ser complicado <sup><a href="#fn1" id="ref1">*</a></sup>. Sin embargo, en AMP, usted puede hacer fácilmente un elemento responsivo con sólo especificar el atributo `"layout=responsive"` junto a los atributos `width` y `height`. Cuando se aplica el layout `responsive` a un elemento, ese elemento cambiará de tamaño automáticamente a la anchura de su elemento contenedor, y la altura cambiará en función de la relación de aspecto especificada por `width` y `height` característica del elemento. Casi todos los elementos de AMP apoyan un layout `responsive`; consulte la documentación de referencia del elemento para ver qué diseños son compatibles.
+Haciendo que cada elemento de cambio de tamaño para adaptarse a una pantalla puede ser complicado <sup><a href="#fn1" id="ref1">\*</a></sup>. Sin embargo, en AMP, usted puede hacer fácilmente un elemento responsivo con sólo especificar el atributo `"layout=responsive"` junto a los atributos `width` y `height`. Cuando se aplica el layout `responsive` a un elemento, ese elemento cambiará de tamaño automáticamente a la anchura de su elemento contenedor, y la altura cambiará en función de la relación de aspecto especificada por `width` y `height` característica del elemento. Casi todos los elementos de AMP apoyan un layout `responsive`; consulte la documentación de referencia del elemento para ver qué diseños son compatibles.
 
 A pesar de que usted puede hacer fácilmente elementos responsivos con `"layout=responsive"`, debe tener en cuenta cómo aparecerán los elementos en todos los tamaños de pantalla -incluyendo ordenadores y tablets. Un error común es permitir una imagen para tomar todo el ancho de la pantalla, que se extiende más allá de la imagen, su tamaño previsto, provocando una mala experiencia para los usuarios de pantalla ancha. Por defecto, los elementos con `layout=responsive` tomarán la anchura total del contenedor del elemento, que es a menudo sin restricciones de ancho (es decir., `width=100%`). Se puede mejorar la forma de las imágenes aparecen con sólo restringir el ancho de contenedor de la imagen. Por ejemplo, mediante el establecimiento de una regla `"max-width"` en el `"body"` o `"main"`, puede restringir todas las imágenes a un ancho máximo específicas.
 
@@ -37,22 +37,26 @@ A pesar de que usted puede hacer fácilmente elementos responsivos con `"layout=
 En el siguiente ejemplo, tenemos una imagen de flores (640 x 427 px) que queremos mostrar en todos los tamaños de pantalla, así que especificamos el `width` y `height`, y configuramos el layout a `responsive`.
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <div class="resp-img">
-  <amp-img alt="flowers"
+  <amp-img
+    alt="flowers"
     src="{{server_for_email}}/static/inline-examples/images/flowers.jpg"
     layout="responsive"
     width="640"
-    height="427"></amp-img>
+    height="427"
+  ></amp-img>
 </div>
 ```
+
 [/example]
 
 Sin embargo, si no queremos que la imagen se vaya más allá de su tamaño, configuramos un ancho máximo con `max-width` de 700 px a través de una personalización de CSS en el `head`, así:
 
 ```html
 <style amp-custom>
-.resp-img {
+  .resp-img {
     max-width: 700px;
   }
 </style>
@@ -60,9 +64,9 @@ Sin embargo, si no queremos que la imagen se vaya más allá de su tamaño, conf
 
 Leer más: Para aprender más sobre los diferentes layouts en AMP, leer la guía [Layout & consultas de medios](control_layout.md#the-layout-attribute).
 
- <a id="fn1"></a>
+<a id="fn1"></a>
 [tip type="note"]
-***¿Por qué es complicado hacer que los elementos cambien de tamaño para que se ajusten a la pantalla cuando puedo hacer esto fácilmente con el estilo `"width=100%"`?** La parte difícil es tener elementos responsivos en la página sin afectar negativamente las métricas de rendimiento o la experiencia del usuario. Sí, puede obtener fácilmente imágenes para que se ajusten a la pantalla con `"width=100%"`, pero hay golpes al  rendimiento. El navegador debe descargar primero la imagen para obtener las dimensiones de la imagen, luego redimensionar la imagen apropiadamente para el tamaño de la pantalla y, finalmente, refluir y volver a cargar la página. En AMP, la ruta de renderizado se optimiza de modo que primero se presenta la página, dejando de lado los marcadores de posición de las imágenes basadas en las dimensiones proporcionadas en [`amp-img`](../../../../documentation/components/reference/amp-img.md) (usando esos números para establecer la relación de aspecto), los recursos se descargan y Página está pintada. No se requiere reflujo.
+**\*¿Por qué es complicado hacer que los elementos cambien de tamaño para que se ajusten a la pantalla cuando puedo hacer esto fácilmente con el estilo `"width=100%"`?** La parte difícil es tener elementos responsivos en la página sin afectar negativamente las métricas de rendimiento o la experiencia del usuario. Sí, puede obtener fácilmente imágenes para que se ajusten a la pantalla con `"width=100%"`, pero hay golpes al rendimiento. El navegador debe descargar primero la imagen para obtener las dimensiones de la imagen, luego redimensionar la imagen apropiadamente para el tamaño de la pantalla y, finalmente, refluir y volver a cargar la página. En AMP, la ruta de renderizado se optimiza de modo que primero se presenta la página, dejando de lado los marcadores de posición de las imágenes basadas en las dimensiones proporcionadas en [`amp-img`](../../../../documentation/components/reference/amp-img.md) (usando esos números para establecer la relación de aspecto), los recursos se descargan y Página está pintada. No se requiere reflujo.
 [/tip]
 
 ## Medios de escala para la página <a name="scaling-media-for-the-page"></a>
@@ -78,13 +82,17 @@ Cuando incluya un video en su página web, desea asegurarse de que el usuario pu
 En el próximo ejemplo, queremos mostrar un video insertado desde YouTube que responda al tamaño y orientación de la pantalla donde se muestre. Agregando el atributo `"layout=responsive"` al elemento [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md), el video cambia su tamaño para ajustarse a la pantalla, y su aspecto de radio es mantenido por las especificaciones de tamaños que se hayan realizado sobre `width` y `height`.
 
 [example preview="top-frame" playground="true" imports="amp-youtube:0.1"]
+
 ```html
-<amp-youtube data-videoid="lBTCB7yLs8Y"
+<amp-youtube
+  data-videoid="lBTCB7yLs8Y"
   layout="responsive"
   width="560"
-  height="315">
+  height="315"
+>
 </amp-youtube>
 ```
+
 [/example]
 
 Hay más tipos de videos que tú puedes agregar a tus páginas AMP. Para más detalles, mira la lista de [media components](../../../../documentation/components/index.html) -en inglés.
@@ -112,8 +120,10 @@ En el siguiente ejemplo tenemos varias imágenes que tienen el mismo radio de as
 - Para cualquier tamaño por debajo de 900 px, renderizar la imagen a 600 px de ancho.
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="apple"
+<amp-img
+  alt="apple"
   src="{{server_for_email}}/static/inline-examples/images/apple.jpg"
   height="596"
   width="900"
@@ -124,12 +134,14 @@ En el siguiente ejemplo tenemos varias imágenes que tienen el mismo radio de as
             {{server_for_email}}/static/inline-examples/images/apple-500.jpg 500w,
             {{server_for_email}}/static/inline-examples/images/apple-400.jpg 400w"
   sizes="(max-width: 400px) 100vw,
-            (max-width: 900px) 75vw, 600px">
+            (max-width: 900px) 75vw, 600px"
+>
 </amp-img>
 ```
+
 [/example]
 
-Por ejemplo, digamos que tenemos un dispositivo que tiene un ancho de ventana de 412 px y un DPR de 2.6. Basándose en el código anterior, la imagen debe mostrarse al 75% del ancho de la ventana de visualización, por lo que el navegador elige una imagen cercana a 803 px (412 * .75 * 2.6), que pasa a ser `apple-800.jpg`.
+Por ejemplo, digamos que tenemos un dispositivo que tiene un ancho de ventana de 412 px y un DPR de 2.6. Basándose en el código anterior, la imagen debe mostrarse al 75% del ancho de la ventana de visualización, por lo que el navegador elige una imagen cercana a 803 px (412 _ .75 _ 2.6), que pasa a ser `apple-800.jpg`.
 
 Leer más: Para aprender más sobre el `srcset` y `sizes` en AMP, see the [Imágenes adaptativas con srcset, sizes & heights](art_direction.md) guide.
 
@@ -148,23 +160,31 @@ En el ejemplo siguiente, tenemos 3 imágenes recortadas diferentes de un gato qu
 Nota: Como quisiéramos que las imágenes fueran tamaños fijos (es decir, no sesgamos), no especificamos un valor de diseño, que por defecto se establecerá en `layout=fixed` porque establecemos el `width` y el `height`. Para obtener más información, consulte ["¿Qué ocurre si width y height no están definidos?"](control_layout.md).
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="grey cat"
-    media="(min-width: 670px)"
-    width="650"
-    height="340"
-    src="{{server_for_email}}/static/inline-examples/images/cat-large.jpg"></amp-img>
-  <amp-img alt="grey cat"
-    media="(min-width: 470px) and (max-width: 669px)"
-    width="450"
-    height="340"
-    src="{{server_for_email}}/static/inline-examples/images/cat-medium.jpg"></amp-img>
-  <amp-img alt="grey cat"
-    media="(max-width: 469px)"
-    width="226"
-    height="340"
-    src="{{server_for_email}}/static/inline-examples/images/cat-small.jpg"></amp-img>
+<amp-img
+  alt="grey cat"
+  media="(min-width: 670px)"
+  width="650"
+  height="340"
+  src="{{server_for_email}}/static/inline-examples/images/cat-large.jpg"
+></amp-img>
+<amp-img
+  alt="grey cat"
+  media="(min-width: 470px) and (max-width: 669px)"
+  width="450"
+  height="340"
+  src="{{server_for_email}}/static/inline-examples/images/cat-medium.jpg"
+></amp-img>
+<amp-img
+  alt="grey cat"
+  media="(max-width: 469px)"
+  width="226"
+  height="340"
+  src="{{server_for_email}}/static/inline-examples/images/cat-small.jpg"
+></amp-img>
 ```
+
 [/example]
 
 Leer más: Para aprender más sobre la dirección artística en AMP, lee la guía [Imágenes adaptativas con srcset, sizes & heights](art_direction.md).
@@ -182,20 +202,26 @@ Leer más: Para aprender más acerca de los fallbacks, lee la guía [Placeholder
 En el ejemplo siguiente, si el navegador admite WebP, sirva mountains.webp, de lo contrario sirva mountains.jpg.
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Mountains"
+<amp-img
+  alt="Mountains"
   width="550"
   height="368"
   layout="responsive"
-  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
-  <amp-img alt="Mountains"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp"
+>
+  <amp-img
+    alt="Mountains"
     fallback
     width="550"
     height="368"
     layout="responsive"
-    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"
+  ></amp-img>
 </amp-img>
 ```
+
 [/example]
 
 Como un buen bono, algunas cachés, como el caché de Google AMP, comprimen y convierten automáticamente imágenes a WebP y las resoluciones correctas si no lo hacen. Sin embargo, no todas las plataformas utilizan cachés, por lo que todavía debe optimizar imágenes manualmente.
