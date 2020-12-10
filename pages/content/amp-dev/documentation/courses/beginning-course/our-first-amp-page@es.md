@@ -127,7 +127,7 @@ Las siguientes etiquetas son requeridas en páginas AMP. Las páginas AMP valida
 
 - Contener una etiqueta `<meta charset="utf-8">` como primer elemento de la etiqueta `<head>`.
 
-- Contener una etiqueta `<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">` dentro de la etiqueta `<head>`. **Nota**: Tambien se recomienda incluir `initial-scale=1`.
+- Contener una etiqueta `<meta name="viewport" content="width=device-width">` dentro de la etiqueta `<head>`. **Nota**: Tambien se recomienda incluir `initial-scale=1`.
 
 Las siguientes reglas son específicamente para configurar el tiempo de ejecución de AMP. Las páginas AMP válidas deben:
 
@@ -350,7 +350,7 @@ Las siguientes etiquetas son requeridas en páginas AMP. Las páginas AMP valida
 
 - Contener una etiqueta `<meta charset="utf-8">` como primer elemento de la etiqueta `<head>`.
 
-- Contener una etiqueta `<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">` dentro de la etiqueta `<head>`. **Nota**: Tambien se recomienda incluir `initial-scale=1`.
+- Contener una etiqueta `<meta name="viewport" content="width=device-width">. **Nota**: Tambien se recomienda incluir `initial-scale=1`.
 
 Las siguientes reglas son específicamente para configurar el tiempo de ejecución de AMP. Las páginas AMP válidas deben:
 

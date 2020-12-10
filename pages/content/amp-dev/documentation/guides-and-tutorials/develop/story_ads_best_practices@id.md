@@ -32,11 +32,8 @@ Data tag meta menentukan bahwa iklan memenuhi format Cerita AMP, menetapkan enum
 
 [sourcecode:html]
 
-
-  
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-
+    <meta name="viewport" content="width=device-width">
 
 ```
 <!-- Specifies where the user is directed -->
@@ -55,11 +52,7 @@ Data tag meta menentukan bahwa iklan memenuhi format Cerita AMP, menetapkan enum
 <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
 ```
 
-  
-  
     <amp-img src="%%FILE:JPG1%%" layout="responsive" height="1280" width="720"></amp-img>
-  
-
 
 Disarankan untuk memilih tag amp-cta-jenis dari [pilihan teks Tombol CTA yang tersedia](#call-to-action-button-text-enum). AMP akan secara otomatis melokalkan pilihan yang telah ditentukan jika tepat.
 
@@ -97,7 +90,7 @@ Jika dibutuhkan dukungan untuk enum teks tombol CTA, silakan buka [masalah GitHu
 
 ##Halaman Landing Iklan Anda dapat menentukan satu dari tiga pilihan untuk halaman landing iklan Cerita AMP.
 
-- `STORY`: Halaman landing adalah sebuah  [cerita bersponsor](story_ads_best_practices.md#sponsored-story).
+- `STORY`: Halaman landing adalah sebuah [cerita bersponsor](story_ads_best_practices.md#sponsored-story).
 - `AMP`: Halaman landing adalah sebuah Halaman AMP yang valid.
 - `NONAMP`: Jenis halaman web lain.
 
@@ -117,7 +110,6 @@ CTA berada 32 px dari dasar dan ditempatkan di tengah secara horizontal. Ini 120
 
   <source src="videos/kitten-playing.webm" type="video/webm">   <source src="videos/kitten-playing.mp4" type="video/mp4">   <div fallback="">     <p>Browser ini tidak mendukung elemen video.</p>   </div>  [/sourcecode]</source></source>
 
-
 ###Gambar Gambar latar belakang dapat diatur sesuai skala layar penuh. CSS berikut ini adalah cara yang berhasil untuk memotong dan menempatkan video dan gambar di tengah.
 
 [sourcecode:html]
@@ -135,7 +127,6 @@ Contoh: Menentukan beberapa berkas sumber
 [sourcecode:html] <amp-video id="video-page1" autoplay="" loop="" layout="fill" poster="https://example.com/media/poster.jpg"></amp-video>
 
   <source src="https://amp-example.com/media/movie.m3u8" type="application/vnd.apple.mpegurl">   <source src="https://amp-example.com/media/movie.mp4" type="video/mp4">  [/sourcecode]</source></source>
-
 
 ####Ukuran & Durasi video Demi kinerja yang optimal, Anda perlu menargetkan untuk menyediakan video yang tidak lebih besar daripada 4 MB. Ukuran berkas yang lebih kecil memungkinkan pengunduhan yang lebih cepat, jadi pertahankan agar ukurannya sekecil mungkin.
 

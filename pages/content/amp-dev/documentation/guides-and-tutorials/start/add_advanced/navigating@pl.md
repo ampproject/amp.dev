@@ -1,6 +1,6 @@
 ---
-$title: Nawigacja w witrynie
-$order: 5
+"$title": Nawigacja w witrynie
+"$order": '5'
 description: Większość mobilnych witryn internetowych ma menu nawigacyjne. Menu te mogą przybierać różne formy. W tym samouczku wypróbujemy następujące przykłady...
 ---
 

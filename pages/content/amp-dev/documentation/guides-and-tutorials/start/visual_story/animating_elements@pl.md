@@ -1,6 +1,6 @@
 ---
-$title: Animowanie elementów
-$order: 6
+"$title": Animowanie elementów
+"$order": '6'
 description: Możesz dodatkowo wzbogacić relację internetową poprzez zastosowanie animowanych wejść do elementów wewnątrz strony. Możesz na przykład sprawić, że Twój tytuł wleci z...
 components:
 - anim
@@ -10,13 +10,11 @@ author: bpaduch
 Możesz dodatkowo wzbogacić relację internetową poprzez zastosowanie animowanych wejść do elementów wewnątrz strony. Możesz na przykład sprawić, że Twój tytuł wleci z lewej strony albo spadnie na stronę, albo stopniowo się pojawi itd. Framework relacji AMP zawiera następujące wstępnie ustawione animacje do użytku w relacji internetowej:
 
 <table>
-<thead>
-<tr>
+<thead><tr>
   <th width="50%">Wstępne ustawienie animacji</th>
   <th width="25%">Domyślny czas trwania (ms)</th>
   <th width="25%">Domyślne opóźnienie (ms)</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr>
   <td><code>drop</code></td>

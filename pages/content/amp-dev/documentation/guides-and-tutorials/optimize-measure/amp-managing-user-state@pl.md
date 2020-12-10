@@ -1,5 +1,10 @@
 ---
-$title: Zarządzanie stanem użytkownika nieuwierzytelnionego za pomocą AMP
+"$title": Zarządzanie stanem użytkownika nieuwierzytelnionego za pomocą AMP
+order: '2'
+formats:
+- websites
+teaser:
+  text: "**Spis treści**"
 ---
 
 <!--
@@ -116,8 +121,7 @@ W tym scenariuszu użytkownik otrzymuje spójną obsługę koszyka, mimo że prz
 **Aby umożliwić tę i każdą inną obsługę zależną od stanu użytkownika, wszystkie konteksty, przez które przechodzą użytkownicy, muszą udostępniać sobie nawzajem swój indywidualnie utrzymywany stan.**. Powiesz „Doskonale!”, mając na myśli pomysł udostępniania wartości plików cookie z identyfikatorami użytkowników ponad tymi granicami kontekstowymi. Jest pewien drobiazg: mimo że każdy z tych kontekstów wyświetla treści kontrolowane przez tego samego wydawcę, każdy z nich postrzega drugi kontekst jako stronę trzecią, ponieważ każdy z kontekstów znajduje się w innej domenie.
 
 <amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png" width="1030" height="868">
-  <noscript><img alt="Możliwość wyświetlania AMP w wielu kontekstach oznacza, że każdy z tych kontekstów ma własną pamięć na identyfikatory" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png"></noscript>
-</amp-img>
+  <noscript><img alt="Łącza mogą służyć do przekazywania informacji identyfikujących jeden kontekst do innego (połączonego) kontekstu" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png"></noscript></amp-img>
 
 Jak zobaczysz w poniższym omówieniu, działanie z pozycji strony trzeciej podczas interakcji z plikami cookie może stanowić wyzwanie, w zależności od tego, jak skonfigurowane są ustawienia przeglądarki użytkownika. W szczególności, jeśli pliki cookie stron trzecich zostaną zablokowane w określonej sytuacji, uniemożliwi to udostępnianie informacji między różnymi kontekstami. Z drugiej strony, jeśli operacje z plikami cookie stron trzecich są dozwolone, informacje można udostępniać.
 
@@ -139,12 +143,13 @@ Po ułożeniu fundamentów odwiedzimy temat o węższym zakresie zastosowań, al
 Przechodząc przez poniższe wskazówki techniczne, załóżmy, że będziesz wiązać **stan użytkownika** ze stabilnym **identyfikatorem**, reprezentującym użytkownika. Identyfikator może wyglądać na przykład tak: `n34ic982n2386n30`. Po stronie serwera należy wówczas powiązać identyfikator `n34ic982n2386n30` z dowolnym zestawem informacji o stanie użytkownika, takim jak zawartość koszyka, lista wcześniej przeczytanych artykułów lub inne dane zależne od przypadku użycia.
 
 <amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
-  <noscript><img alt="Pojedynczy identyfikator może służyć do zarządzania stanem użytkownika w wielu przypadkach użycia" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png"></noscript>
-</amp-img>
+  <noscript><img alt="Przykład tego, jak identyfikator w kontekście przeglądarki AMP można przekazać za pośrednictwem linku do kontekstu źródła wydawcy" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png"></noscript></amp-img>
 
 Dla przejrzystości w pozostałej części tego dokumentu będziemy nazywać różne ciągi znaków, będące identyfikatorami, stosując bardziej zrozumiałe nazwy poprzedzone znakiem dolara (`$`):
 
-[sourcecode:text] n34ic982n2386n30 ⇒ $sample_id [/sourcecode]
+[sourcecode:text]
+n34ic982n2386n30 ⇒ $sample_id
+[/sourcecode]
 
 **Nasz przypadek użycia:** w całym tym przewodniku będziemy pracować nad przykładem zaprojektowanym w celu uzyskania prostego śledzenia odsłon (tj. analityki), w którym chcemy uzyskać jak najdokładniejsze zliczanie użytkowników. To znaczy, że nawet jeśli użytkownik uzyskuje dostęp do treści danego wydawcy z różnych kontekstów (w tym przechodząc między stronami AMP i bez AMP), chcemy, aby te wizyty były zliczane w taki sam sposób, jakby użytkownik przeglądał tylko tradycyjne strony (bez AMP) tego wydawcy.
 
@@ -173,20 +178,23 @@ To znaczy, że są dwa przypadki stanu stron bez AMP w źródle wydawcy:
 **Przypadek nr 1: pierwsze odwiedziny.** Przy pierwszym wylądowaniu na stronie bez AMP nie ma żadnego pliku cookie. Jeśli obecność pliku cookie sprawdzona została przed jego ustawieniem, w pliku cookie odpowiadającym  `uid` nie zobaczysz żadnych ustawionych wartości:
 
 [sourcecode:bash]
-
-> document.cookie "" [/sourcecode]
+> document.cookie
+  ""
+[/sourcecode]
 
 Plik cookie należy ustawiać w trakcie pierwszego ładowania strony, aby po załadowaniu strony widać było, że wartość została ustawiona:
 
 [sourcecode:bash]
-
-> document.cookie "uid=$publisher_origin_identifier" [/sourcecode]
+> document.cookie
+  "uid=$publisher_origin_identifier"
+[/sourcecode]
 
 **Przypadek nr 2: drugie i następne odwiedziny.** Plik cookie będzie ustawiony. Jeśli więc otworzysz konsolę programistyczną na stronie, zobaczysz:
 
 [sourcecode:bash]
-
-> document.cookie "uid=$publisher_origin_identifier" [/sourcecode]
+> document.cookie
+  "uid=$publisher_origin_identifier"
+[/sourcecode]
 
 ##### Wysyłanie analitycznych pakietów ping <a name="send-analytics-pings"></a>
 
@@ -194,11 +202,15 @@ Po ustawieniu identyfikatora można go dołączać do analitycznych pakietów pi
 
 Konkretna implementacja będzie zależeć od żądanej konfiguracji, ale zazwyczaj należy wysyłać do serwera usług analityki pakiety ping (żądania), które zawierają przydatne dane w adresie URL samego żądania. Oto przykład, który również wskazuje, w jaki sposób umieścić wartość pliku cookie w żądaniu:
 
-[sourcecode:http] https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_identifier [/sourcecode]
+[sourcecode:http]
+https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_identifier
+[/sourcecode]
 
 Należy pamiętać, że w powyższym przykładzie identyfikator użytkownika jest wskazywany przez oddzielny parametr zapytania, `user_id`:
 
-[sourcecode:text] user_id=$publisher_origin_identifier [/sourcecode]
+[sourcecode:text]
+user_id=$publisher_origin_identifier
+[/sourcecode]
 
 Użycie tutaj parametru „`user_id`” powinno być określone na podstawie tego, czego oczekuje serwer usług analityki i nie należy go specjalnie wiązać z tym, co nazywasz plikiem cookie przechowującym identyfikator lokalnie.
 
@@ -305,7 +317,9 @@ W naszej tabeli mapowania wartości AMP Client ID, które są widoczne w anality
 
 Natychmiast po stwierdzeniu, że nie udało się odczytać identyfikatora źródła wydawcy należy sprawdzić, czy Client ID AMP zawarty w analitycznym pakiecie ping jest już użyty w mapowaniu. W tym celu należy najpierw skonsultować się z przychodzącym żądaniem składnika amp-analytics, aby uzyskać wartość Client ID. Na przykład na podstawie tego żądania:
 
-[sourcecode:http] https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id [/sourcecode]
+[sourcecode:http]
+https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id
+[/sourcecode]
 
 wyodrębniamy pogrubioną część odpowiadającą Client ID AMP: `$amp_client_id`.
 
@@ -349,7 +363,9 @@ Jako identyfikatora rekordu analitycznego użyjemy potencjalnego identyfikatora 
 
 Teraz, po ustaleniu identyfikatora rekordu analitycznego, można rzeczywiście zapisać informacje o stanie użytkownika (w tym przypadku dane analityczne), kluczowane przez ten identyfikator:
 
-[sourcecode:text] {analytics record identifier, analytics data ...} [/sourcecode]
+[sourcecode:text]
+{analytics record identifier, analytics data ...}
+[/sourcecode]
 
 <a id="task5"></a>
 
@@ -360,8 +376,7 @@ Gdy odczytywanie i zapisywanie plików cookie stron trzecich jest niedozwolone, 
 W tym zadaniu zajmiemy się dodatkową optymalizacją, która pozwala użytkownikowi przechodzić między kontekstami z jednej strony na drugą **za pomocą linków lub wysyłania formularzy**. W tych sytuacjach oraz dzięki opisanej poniżej implementacji możliwe jest utworzenie w pełni efektywnego schematu zarządzania stanem użytkownika w różnych kontekstach.
 
 <amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
-  <noscript><img alt="Łącza mogą służyć do przekazywania informacji identyfikujących jeden kontekst do innego (połączonego) kontekstu" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png"></noscript>
-</amp-img>
+  <noscript><img alt="Przykład tworzenia analitycznego polecenia ping, które zawiera identyfikator z poprzedniego kontekstu podany za pośrednictwem adresu URL i identyfikator z bieżącego kontekstu" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
 
 ##### Stosowanie funkcji podstawiania <a name="using-substitution-features"></a>
 
@@ -369,42 +384,52 @@ W naszym podejściu wykorzystamy dwa typy [podstawień zmiennych AMP](https://gi
 
 **Aby zaktualizować linki wychodzące w celu użycia zastępczego identyfikatora Client ID:** zdefiniuj nowy parametr zapytania, `ref_id` (identyfikator skierowania), który znajdzie się w adresie URL i wskaże **identyfikator kontekstu źródłowego** użytkownika. Ustaw ten parametr zapytania na wartość równą wartości podstawienia Client ID AMP:
 
-[sourcecode:html] <a href="https://example.com/step2.html?ref_id=CLIENT_ID(uid)" data-amp-replace="CLIENT_ID"
-
->
->
-
+[sourcecode:html]
+<a
+  href="https://example.com/step2.html?ref_id=CLIENT_ID(uid)"
+  data-amp-replace="CLIENT_ID"
+></a>
 [/sourcecode]
 
 **Alternatywne rozwiązanie przekazywania Client ID do linków wychodzących:** zdefiniuj nowy parametr zapytania `ref_id` jako część atrybutu danych `data-amp-addparams`, a w przypadku zapytań wymagających podstawienia parametru podaj te dane jako część `data-amp-replace`. Przy takim podejściu adres URL będzie wyglądał czysto, a parametry określone w `data-amp-addparams` będą dodawane dynamicznie.
 
-[sourcecode:html] <a href="https://example.com/step2.html" data-amp-addparams="ref_id=CLIENT_ID(uid)" data-amp-replace="CLIENT_ID"
-
->
->
-
+[sourcecode:html]
+<a
+  href="https://example.com/step2.html"
+  data-amp-addparams="ref_id=CLIENT_ID(uid)"
+  data-amp-replace="CLIENT_ID"
+></a>
 [/sourcecode]
 
 W razie przekazywania wielu parametrów zapytania przez `data-amp-addparams` są one rozdzielane znakami `&`
 
-[sourcecode:html] <a href="https://example.com/step2.html" data-amp-addparams="ref_id=CLIENT_ID(uid)&pageid=p123" data-amp-replace="CLIENT_ID"
-
->
->
-
+[sourcecode:html]
+<a
+  href="https://example.com/step2.html"
+  data-amp-addparams="ref_id=CLIENT_ID(uid)&pageid=p123"
+  data-amp-replace="CLIENT_ID"
+></a>
 [/sourcecode]
 
 **Aby zaktualizować dane wejściowe w formularzu, należy użyć podstawienia Client ID:** zdefiniuj nazwę pola wprowadzania danych, np. `orig_user_id`. Określ wartość `default-value` pola formularza, która ma być wartością podstawienia Client ID AMP:
 
-[sourcecode:html] <input name="ref_id" type="hidden" value="CLIENT_ID(uid)" data-amp-replace="CLIENT_ID"> [/sourcecode]
+[sourcecode:html]
+<input
+  name="ref_id"
+  type="hidden"
+  value="CLIENT_ID(uid)"
+  data-amp-replace="CLIENT_ID"
+/>
+[/sourcecode]
 
 Dzięki podjęciu tych kroków Client ID jest dostępny dla serwera docelowego i/lub jako parametr adresu URL na stronie, na której ląduje użytkownik po kliknięciu linku lub wysłaniu formularza (w **kontekście docelowym**). Nazwa (czyli „klucz”) będzie miała postać `ref_id`, ponieważ tak ją zdefiniowaliśmy w powyższych implementacjach i będzie miała powiązaną wartość równą wartości Client ID. Na przykład, klikając zdefiniowany powyżej link (znacznik `<a>`), użytkownik przejdzie do tego adresu URL:
 
-[sourcecode:http] https://example.com/step2.html?ref_id=$amp_client_id [/sourcecode]
+[sourcecode:http]
+https://example.com/step2.html?ref_id=$amp_client_id
+[/sourcecode]
 
 <amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
-  <noscript><img alt="Przykład tego, jak identyfikator w kontekście przeglądarki AMP można przekazać za pośrednictwem linku do kontekstu źródła wydawcy" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png"></noscript>
-</amp-img>
+  <noscript><img alt="Możliwość wyświetlania AMP w wielu kontekstach oznacza, że każdy z tych kontekstów ma własną pamięć na identyfikatory" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png"></noscript></amp-img>
 
 Gdy użytkownik wyląduje na stronie zawierającej wartość `ref_id` w postaci parametru adresu URL lub w nagłówku, mamy możliwość wspólnego przetwarzania identyfikatora `ref_id` wraz z identyfikatorem wyeksponowanym za pomocą samej strony (czyli wartością pliku cookie). Dzięki zawarciu obu tych wartości w analitycznym pakiecie ping Twój serwer analityki może pracować z obiema wartościami jednocześnie, a wiedząc, że są one powiązane, odzwierciedlać tę zależność w Twoim zapleczu. W następnym kroku podano szczegóły wykonania.
 
@@ -428,24 +453,32 @@ Aby przetwarzać żądanie podczas przekierowania, należy obsłużyć je na ser
 W przypadku przetwarzania żądania na stronie docelowej podejście będzie się różnić w zależności od tego, czy strona ta jest stroną AMP, czy bez AMP.
 
 <amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
-  <noscript><img alt="Przykład tworzenia analitycznego polecenia ping, które zawiera identyfikator z poprzedniego kontekstu podany za pośrednictwem adresu URL i identyfikator z bieżącego kontekstu" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png"></noscript>
-</amp-img>
+  <noscript><img alt="Pojedynczy identyfikator może służyć do zarządzania stanem użytkownika w wielu przypadkach użycia" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png"></noscript></amp-img>
 
 *Aktualizacje strony AMP:* w konfiguracji składnika amp-analytics użyj funkcji podstawiania parametru zapytania, aby uzyskać wartość identyfikatora `ref_id` w adresie URL. Funkcja parametru zapytania pobiera parametr, który wskazuje „klucz” żądanej pary klucz-wartość w adresie URL i zwraca odpowiednią wartość. Użyj funkcji Client ID, tak jak to robiliśmy, aby uzyskać identyfikator do kontekstu strony AMP.
 
-[sourcecode:http] https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)} [/sourcecode]
+[sourcecode:http]
+https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}
+[/sourcecode]
 
 Po przesłaniu przez sieć zostaną zastąpione rzeczywiste wartości:
 
-[sourcecode:http] https://analytics.example.com/ping?type=pageview&orig_user_id=$referrer_page_identifier&user_id=$current_page_identifier [/sourcecode]
+[sourcecode:http]
+https://analytics.example.com/ping?type=pageview&orig_user_id=$referrer_page_identifier&user_id=$current_page_identifier
+[/sourcecode]
 
 Podążając za naszymi powyższymi przykładami, otrzymamy:
 
-[sourcecode:text] $referrer_page_identifier is $amp_client_id $current_page_identifier is $publisher_origin_id [/sourcecode]
+[sourcecode:text]
+$referrer_page_identifier is $amp_client_id
+$current_page_identifier is $publisher_origin_id
+[/sourcecode]
 
 czyli faktyczny pakiet ping to:
 
-[sourcecode:http] https://analytics.example.com/ping?type=pageview&orig_user_id=$amp_client_id&user_id=$publisher_origin_id [/sourcecode]
+[sourcecode:http]
+https://analytics.example.com/ping?type=pageview&orig_user_id=$amp_client_id&user_id=$publisher_origin_id
+[/sourcecode]
 
 Zalecamy sprawdzanie autentyczności wartości parametrów zapytania za pomocą kroków przedstawionych w poniższej sekcji [Walidacja parametrów](#parameter-validation).
 
@@ -539,11 +572,15 @@ Wartości zawarte w adresie URL mogą być złośliwie zmieniane, zniekształcan
 
 Na przykład w powyższych krokach skonstruowaliśmy następujący adres URL, przeznaczony do kliknięcia przez użytkownika w celu przejścia do odpowiedniej strony:
 
-[sourcecode:http] https://example.com/step2.html?orig_user_id=$amp_client_id [/sourcecode]
+[sourcecode:http]
+https://example.com/step2.html?orig_user_id=$amp_client_id
+[/sourcecode]
 
 Jest jednak równie możliwe, że użytkownik lub jakiś napastnik zmieni ten adres URL:
 
-[sourcecode:http] https://example.com/step2.html?orig_user_id=$malicious_value [/sourcecode]
+[sourcecode:http]
+https://example.com/step2.html?orig_user_id=$malicious_value
+[/sourcecode]
 
 Chcesz mieć pewność, że przetwarzasz tylko wystąpienia `$amp_client_id` i unikasz używania wystąpień `$malicious_value`.
 

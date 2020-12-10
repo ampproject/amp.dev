@@ -36,3 +36,10 @@ test('redirects regex golink', (done) => {
 test('returns 404 on invalid golink', (done) => {
   request(app).get('/invalid').expect(404, done);
 });
+
+test('strips trailing slashes from the url', (done) => {
+  request(app)
+    .get('/email/')
+    .expect(302)
+    .expect('Location', /email$/, done);
+});

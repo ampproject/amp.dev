@@ -126,7 +126,7 @@ As seguintes tags são necessárias nas páginas AMP. As páginas AMP válidas d
 
 - Conter uma tag `<meta charset =" utf-8 ">` como o primeiro filho da tag `<head>`.
 
-- Conter uma tag `<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">` dentro de sua tag `<head>`. **Nota**: Também é recomendado incluir `initial-scale=1`.
+- Conter uma tag `<meta name="viewport" content="width=device-width">` dentro de sua tag `<head>`. **Nota**: Também é recomendado incluir `initial-scale=1`.
 
 As regras a seguir são especificamente para configurar o AMP runtime. As páginas AMP válidas também devem:
 
@@ -350,7 +350,7 @@ As seguintes tags são necessárias nas páginas AMP. As páginas AMP válidas d
 
 - Conter uma tag `<meta charset =" utf-8 ">` como o primeiro filho da tag `<head>`.
 
-- Conter uma tag `<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">` dentro de sua tag `<head>`. **Nota**: Também é recomendado incluir `initial-scale=1`.
+- Conter uma tag `<meta name="viewport" content="width=device-width">Nota**: Também é recomendado incluir `initial-scale=1`.
 
 As regras a seguir são especificamente para configurar o AMP runtime. As páginas AMP válidas também devem:
 

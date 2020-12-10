@@ -35,11 +35,8 @@ I dati del tag Meta indicano che l'annuncio rispetta il formato delle storie AMP
 
 [sourcecode:html]
 
-
-
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-
+    <meta name="viewport" content="width=device-width">
 
 ```
 <!-- Indica dove l'utente è reindirizzato -->
@@ -58,11 +55,7 @@ I dati del tag Meta indicano che l'annuncio rispetta il formato delle storie AMP
 <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
 ```
 
-
-
     <amp-img src="%%FILE:JPG1%%" layout="responsive" height="1280" width="720"></amp-img>
-
-
 
 Si consiglia di scegliere il tag amp-cta-type tra le [opzioni di testo disponibili per il pulsante CTA](#call-to-action-button-text-enum). AMP localizzerà automaticamente le opzioni predefinite se necessario.
 
@@ -148,7 +141,6 @@ Esempio: indicazione di più file di origine
 [sourcecode:html] <amp-video id="video-page1" autoplay="" loop="" layout="fill" poster="https://example.com/media/poster.jpg"></amp-video>
 
   <source src="https://amp-example.com/media/movie.m3u8" type="application/vnd.apple.mpegurl">   <source src="https://amp-example.com/media/movie.mp4" type="video/mp4">  [/sourcecode]</source></source>
-
 
 ####Dimensioni e lunghezza dei video:
 

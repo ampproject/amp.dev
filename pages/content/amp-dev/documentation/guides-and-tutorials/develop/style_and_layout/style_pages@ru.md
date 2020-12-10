@@ -1,17 +1,17 @@
 ---
-"$title": Поддерживаемые элементы CSS
+'$title': Поддерживаемые элементы CSS
 description: Как и обычные страницы, AMP-страницы оформляются с помощью CSS, однако в них не допускаются ссылки на внешние таблицы стилей (за исключением внешних шрифтов). Кроме того, некоторые стили запрещены...
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 author: Meggin
 contributors:
-- pbakaus
-- CrystalOnScript
-- bpaduch
-- choumx
+  - pbakaus
+  - CrystalOnScript
+  - bpaduch
+  - choumx
 ---
 
 [filter formats="email"] Примечание. Формат «AMP для писем» накладывает дополнительные ограничения на CSS, которые описаны в статье [Поддержка CSS в AMP для писем](../../../../documentation/guides-and-tutorials/learn/email-spec/amp-email-css.md). [/filter]
@@ -87,9 +87,10 @@ AMP-страницы не могут включать внешние табли�
 Если вы используете препроцессоры, загружайте только те элементы, которые применяются на ваших страницах. Например, файл [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) будет содержать всю необходимую разметку AMP и встроенные стили CSS из исходных файлов `*.scss`, а также скрипт специальных элементов для атрибута [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md). Благодаря этому на многих страницах сайта можно встраивать видео YouTube.
 
 [sourcecode:html] {% raw %}
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
   <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 

@@ -1,12 +1,17 @@
 ---
-$title: Obsługiwane CSS
+'$title': Obsługiwane CSS
 description: Jak wszystkie strony internetowe, strony AMP są stylizowane za pomocą CSS, ale nie można odwoływać się do zewnętrznych arkuszy stylów, z wyjątkiem czcionek niestandardowych. Niedozwolone są również niektóre style...
+formats:
+  - websites
+  - email
+  - ads
+  - stories
 author: Meggin
 contributors:
-- pbakaus
-- CrystalOnScript
-- bpaduch
-- choumx
+  - pbakaus
+  - CrystalOnScript
+  - bpaduch
+  - choumx
 ---
 
 [filter formats="email"] Uwaga: AMP dla poczty e-mail określa dodatkowe ograniczenia CSS, które są opisane w artykule [CSS obsługiwane przez AMP dla poczty e-mail](../../../../documentation/guides-and-tutorials/learn/email-spec/amp-email-css.md). [/filter]
@@ -17,14 +22,14 @@ Style można umieszczać w nagłówku dokumentu lub jako atrybuty inline `style`
 
 [tip type="note"] **UWAGA —** składniki AMP mają domyślne style, dzięki czemu pisanie responsywnych stron jest dość łatwe. Style te są zdefiniowane w [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css). [/tip]
 
-## Niedozwolone style
+## Disallowed styles
 
 Następujące style są niedozwolone na stronach AMP:
 
 <table>
   <thead>
     <tr>
-      <th class="col-thirty" data-th="Banned style">Zakazany styl</th>
+      <th class="col-thirty" data-th="Banned style">Banned style</th>
       <th data-th="Description">Opis</th>
     </tr>
   </thead>
@@ -35,7 +40,7 @@ Następujące style są niedozwolone na stronach AMP:
       <td data-th="Description">Użycie kwalifikatora <code>!important</code> i odwołanie do niego jest niedozwolone. Jest to niezbędne, aby umożliwić AMP wymuszanie zasad określania rozmiarów jego elementów.</td>
     </tr>
     <tr>
-      <td data-th="Banned style"><code><link rel="”stylesheet”"></code></td>
+      <td data-th="Banned style"><code><link rel=”stylesheet”></code></td>
       <td data-th="Description">Niedozwolone, z wyjątkiem <a href="#the-custom-fonts-exception">czcionek niestandardowych</a>.</td>
     </tr>
     <tr>
@@ -83,33 +88,29 @@ W razie używania preprocesorów zwróć szczególną uwagę na to, co dodajesz;
 
 [sourcecode:html]{% raw %}
 
-
+<head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
   <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 
-
-  <title>AMP Project</title>   <link rel="icon" href="/static/img/amp_favicon.png">   <link rel="canonical" href="%7B%7Bdoc.url%7D%7D">   <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet">   <style amp-custom="">
+  <title>AMP Project</title>
+  <link rel="icon" href="/static/img/amp_favicon.png">
+  <link rel="canonical" href="{{doc.url}}">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet">
+  <style amp-custom>
   {% include "/assets/css/main.min.css" %}
   </style>
 
-  <style amp-boilerplate="">body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate="">body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-
-  <script async="" src="https://cdn.ampproject.org/v0.js"></script>
-
-  <script async="" custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
-
-  <script async="" custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-
-  <script async="" custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
-
-  <script async="" custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
-
-  <script async="" custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
-
-  <script async="" custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
-
- {% endraw %}[/sourcecode]
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+</head>
+{% endraw %}[/sourcecode]
 
 Aby sprawdzić, jak powyższe przekłada się na sformatowany kod AMP HTML, zobacz źródło dowolnej strony na [amp.dev](https://amp.dev/). (W Chrome, kliknij prawy przyciskiem myszy i wybierz polecenie `Wyświetl źródło strony`).

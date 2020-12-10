@@ -1,7 +1,12 @@
 ---
-$title: Responsywne obrazy z atrybutem srcset, rozmiary i wysokości
-$order: 4
+"$title": Responsywne obrazy z atrybutem srcset, rozmiary i wysokości
+"$order": '4'
 description: Użyj atrybutu srcset do kontroli zasobów elementu na podstawie różnych wyrażeń medialnych. W szczególności, użyj go do wszystkich znaczników amp-img, aby określić, które...
+formats:
+- websites
+- email
+- ads
+- stories
 components:
 - iframe
 author: pbakaus
@@ -16,7 +21,6 @@ Użyj atrybutu `srcset` do kontroli zasobów elementu na podstawie różnych wyr
 W tym prostym przykładzie atrybut `srcset` określa, którego obrazu użyć na podstawie szerokości ekranu. Deskryptor `w` mówi przeglądarce o szerokości każdego obrazu z listy:
 
 [example preview="top-frame" playground="true"]
-
 ```html
 <amp-img alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
@@ -27,7 +31,6 @@ W tym prostym przykładzie atrybut `srcset` określa, którego obrazu użyć na 
             {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w">
 </amp-img>
 ```
-
 [/example]
 
 [tip type="note"] **UWAGA —**  AMP obsługuje srcset z deskryptorem `w` we wszystkich przeglądarkach. [/tip]
@@ -41,7 +44,6 @@ Opcjonalnego atrybutu AMP `sizes` można również użyć z atrybutem `srcset`. 
 Rozważmy następujący przykład:
 
 [example preview="top-frame" playground="true"]
-
 ```html
 <amp-img alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
@@ -52,7 +54,6 @@ Rozważmy następujący przykład:
   sizes="(min-width: 650px) 50vw, 100vw">
 </amp-img>
 ```
-
 [/example]
 
 Atrybut `sizes` określa szerokość elementu jako 50% rozmiaru okienka na stronie, gdy okienko ma co najmniej 650px. Na przykład, jeżeli okienko ma 800px, to szerokość elementu jest ustawiana na 400px. Następnie przeglądarka wybiera zasób `srcset` względem 400px, zakładając, że współczynnik pikseli urządzenia wynosi 1, czyli w tym przypadku będzie to plik `hummingbird-narrow.jpg`. (320px).
@@ -73,7 +74,6 @@ Gdy atrybut `heights` jest określony wraz z atrybutami `width` i `height`, usta
 Przykład:
 
 [example preview="top-frame" playground="true"]
-
 ```html
 <amp-img alt="AMP"
   src="{{server_for_email}}/static/inline-examples/images/amp.jpg"
@@ -82,7 +82,6 @@ Przykład:
   heights="(min-width:500px) 200px, 80%">
 </amp-img>
 ```
-
 [/example]
 
 W tym przykładzie wysokość elementu będzie domyślnie wynosiła 80% szerokości, ale w przypadku okienka na stronie szerszego niż `500px` zostanie ona ograniczona do `200px`.

@@ -1,12 +1,17 @@
 ---
-$title: Jak wnieść wkład
-$titles:
-  navigation: Wnieś wkład
-$path: /documentation/guides-and-tutorials/contribute/index.html
-$localization:
-  path: /{locale}/documentation/guides-and-tutorials/contribute/index.html
-$order: 0
+"$title": Jak wnieść wkład
+"$titles":
+  navigation: Contribute
+"$path": "/documentation/guides-and-tutorials/contribute/index.html"
+"$localization":
+  path: "/{locale}/documentation/guides-and-tutorials/contribute/index.html"
+"$order": '0'
 description: AMP Project nie byłby możliwy bez pomocy wszystkich członków społeczności, bez względu na to, czy jesteś programistą, twórcą treści czy dostawcą usług związanych z AMP.
+formats:
+- websites
+- stories
+- ads
+- email
 ---
 
 Projekt AMP nie byłby możliwy bez pomocy wszystkich członków społeczności, bez względu na to, czy jesteś programistą, twórcą treści czy dostawcą usług związanych z AMP. Możesz wnieść swój wkład na wiele sposobów.

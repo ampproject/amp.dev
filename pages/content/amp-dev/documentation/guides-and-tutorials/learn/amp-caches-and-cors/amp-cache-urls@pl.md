@@ -1,7 +1,11 @@
 ---
-$title: Format adresu URL serwera buforującego AMP i obsługa żądań
-$order: 9
-toc: false
+"$title": Format adresu URL serwera buforującego AMP i obsługa żądań
+"$order": '9'
+toc: 'false'
+formats:
+- websites
+- stories
+- ads
 author: Gregable
 contributors:
 - sebastianbenz
@@ -15,11 +19,8 @@ Jeśli jest to możliwe, usługa Google AMP Cache tworzy subdomenę domeny każd
 
 Do konwersji adresu URL na wersję serwera buforującego AMP można użyć tego kalkulatora adresów URL:
 
-<div>
-<amp-iframe title="AMP Cache tool" height="104" layout="fixed-height" sandbox="allow-scripts" src="/static/samples/files/amp-url-converter.html?url=https://amp.dev/index.amp.html">
-  <div placeholder></div>
-</amp-iframe>
-</div>
+<div><amp-iframe title="AMP Cache tool" height="104" layout="fixed-height" sandbox="allow-scripts" src="/static/samples/files/amp-url-converter.html?url=https://amp.dev/index.amp.html">
+  <div placeholder></div></amp-iframe></div>
 
 [tip type="tip"] Użyj modułu <a>AMP-Toolbox Cache URL</a> <a>Node.js</a> do translacji adresu URL ze źródła na format adresu URL serwera buforującego AMP. [/tip]
 

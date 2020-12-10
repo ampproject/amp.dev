@@ -1,6 +1,6 @@
 ---
-$title: Zapoznanie się z kodem startowym
-$order: 1
+'$title': Zapoznanie się z kodem startowym
+'$order': '1'
 description: Strona AMP jest stroną HTML z pewnymi ograniczeniami, zapewniającymi jej niezawodne działanie. Strony AMP zawierają nieco specjalnych znaczników, które identyfikują je jako strony AMP.
 ---
 
@@ -11,16 +11,75 @@ Strona AMP jest stroną HTML z pewnymi ograniczeniami, zapewniającymi jej nieza
 Podstawowa strona AMP wygląda tak:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html amp>
- <head>
-   <meta charset="utf-8">
-   <link rel="canonical" href="hello-world.html">
-   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-   <script async src="https://cdn.ampproject.org/v0.js"></script>
- </head>
- <body>Hello World!</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="canonical" href="hello-world.html" />
+    <meta name="viewport" content="width=device-width" />
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+    Hello World!
+  </body>
 </html>
 ```
 
@@ -31,10 +90,26 @@ Podstawowa strona AMP wygląda tak:
 Kod startowy samouczka ([`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html)) tworzy podstawową stronę AMP z jej zawartością (obrazami, tekstem, itd.), a także zawiera kilka składników AMP:
 
 ```html
-<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
-<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
-<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-<script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+<script
+  async
+  custom-element="amp-carousel"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+></script>
+<script
+  async
+  custom-template="amp-mustache"
+  src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"
+></script>
+<script
+  async
+  custom-element="amp-form"
+  src="https://cdn.ampproject.org/v0/amp-form-0.1.js"
+></script>
+<script
+  async
+  custom-element="amp-selector"
+  src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"
+></script>
 ```
 
 Składniki AMP oferują dodatkową funkcjonalność i składniki interfejsu użytkownika dodające bogatą interaktywność na stronie AMP. Kod startowy wykorzystuje następujące składniki AMP:

@@ -1,6 +1,6 @@
 ---
-$title: Tworzenie reklamy graficznej
-$order: 1
+"$title": Tworzenie reklamy graficznej
+"$order": '1'
 description: Nasza reklama to prosty obraz z hiperlinkiem do reklamowanej witryny. Wyświetlamy go za pomocą znacznika amp-img. Oto kod...
 ---
 

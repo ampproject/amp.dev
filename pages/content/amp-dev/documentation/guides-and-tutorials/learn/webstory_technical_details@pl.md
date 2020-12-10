@@ -1,8 +1,10 @@
 ---
-$title: Szczegóły techniczne relacji internetowych
-$order: 1
+"$title": Szczegóły techniczne relacji internetowych
+"$order": '1'
 description: Szczegóły techniczne relacji internetowych
-$category: Develop
+"$category": Develop
+formats:
+- stories
 author: CrystalOnScript
 ---
 
@@ -18,7 +20,7 @@ Relacja internetowa to pod względem technicznym pojedyncza strona utworzona prz
 - Zawiera znacznik `<meta charset="utf-8>` jako pierwszy element podrzędny znacznika `<head>`.
 - Zawiera znacznik `<script async src="https://cdn.ampproject.org/v0.js"></script>` w sekcji `<head>`. Zgodnie z najlepszą praktyką należy dodać skrypt jak najwcześniej w sekcji `<head>`.
 - Zawiera znacznik ` <link rel="canonical" href="page/url">` w sekcji `<head>`, z odsyłaczem href wskazującym adres URL relacji internetowej.
-- Zawiera znacznik `<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">` w sekcji `<head>`. Zalecane jest dodanie również właściwości initial-scale=1.
+- Zawiera znacznik `<meta name="viewport" content="width=device-width">` w sekcji `<head>`. Zalecane jest dodanie również właściwości initial-scale=1.
 - Zawiera [kod standardowy AMP](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) w sekcji `<head>`.
 
 Różnica między stroną internetową AMP a relacją internetową utworzoną przy użyciu AMP to składnik [`amp-story`](https://amp.dev/documentation/components/amp-story/?format=stories). Jest jedynym bezpośrednim elementem podrzędnym sekcji `<body>` dokumentu i musi zawierać atrybut `standalone`. Wszystkie strony, warstwy i elementy relacji internetowej są definiowane w znacznikach `<amp-story>`.
@@ -30,7 +32,7 @@ Różnica między stroną internetową AMP a relacją internetową utworzoną pr
     <meta charset="utf-8">
     <title>Joy of Pets</title>
     <link rel="canonical" href="pets.html">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-video"
