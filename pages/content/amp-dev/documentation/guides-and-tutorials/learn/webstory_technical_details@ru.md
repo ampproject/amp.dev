@@ -20,7 +20,7 @@ author: CrystalOnScript
 - Содержит тег `<meta charset="utf-8">` в качестве первого дочернего элемента `<head>`.
 - Содержит `<script async src="https://cdn.ampproject.org/v0.js"></script>` внутри элемента `<head>`. Размещать этот скрипт рекомендуется как можно ближе к началу `<head>`.
 - Содержит `<link rel="canonical" href="page/url">` внутри элемента `<head>`; значение href является URL-адресом веб-истории.
-- Содержит `<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">` внутри тега `<head>`. Также рекомендуется включить атрибут initial-scale=1.
+- Содержит `<meta name="viewport" content="width=device-width">` внутри тега `<head>`. Также рекомендуется включить атрибут initial-scale=1.
 - Содержит [шаблонный код AMP](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) внутри тега `<head>`.
 
 Разница между веб-страницей AMP и веб-историей, созданной с помощью AMP, заключается в наличии компонента [`amp-story`](https://amp.dev/documentation/components/amp-story/?format=stories). Это единственный непосредственный дочерний элемент тега `<body>`, и он должен содержать атрибут `standalone`. Определение всех страниц, слоев и элементов веб-историй размещается внутри тегов `<amp-story>`.
@@ -32,7 +32,7 @@ author: CrystalOnScript
     <meta charset="utf-8">
     <title>Joy of Pets</title>
     <link rel="canonical" href="pets.html">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-video"

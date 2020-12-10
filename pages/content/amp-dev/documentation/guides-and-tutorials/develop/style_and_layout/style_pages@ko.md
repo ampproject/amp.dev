@@ -71,9 +71,10 @@ AMP 페이지에는 외부 스타일시트를 포함할 수 없지만, 맞춤 �
 전처리기를 사용할 때는 포함하는 항목에 특히 주의해야 합니다. 페이지에서 사용하는 항목만 로드하세요. 예를 들어, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) 에는 모든 필수 AMP 마크업과 `*.scss` 소스 파일의 인라인 CSS가 포함됩니다. 또한 [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) 등의 커스텀 엘리먼트용 스크립트를 포함하여 YouTube 동영상 등을 사이트의 여러 페이지에 넣을 수 있도록 했습니다.
 
 [sourcecode:html]{% raw %}
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
   <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 

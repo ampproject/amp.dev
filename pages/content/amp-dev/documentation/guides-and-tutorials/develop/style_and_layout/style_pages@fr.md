@@ -22,9 +22,10 @@ Par exemple, [head.html](https://github.com/ampproject/docs/blob/master/views/pa
 Il comprend également, entre autres, le script d'élément personnalisé pour [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md), afin que de nombreuses pages sur le site puissent inclure des vidéos YouTube intégrées.
 
 [sourcecode:html] {% raw %}
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
   <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 
@@ -103,8 +104,8 @@ Le projet AMP accepte actuellement `opacity`, `transform` et `-vendorPrefix-tran
 
 Dans les exemples suivants, `<property>` doit être sur liste blanche :
 
-* `transition <property> (Also -vendorPrefix-transition)`
-* @ `@keyframes name { from: {<property>: value} to {<property: value>} } (also @-vendorPrefix-keyframes)`
+- `transition <property> (Also -vendorPrefix-transition)`
+- @ `@keyframes name { from: {<property>: value} to {<property: value>} } (also @-vendorPrefix-keyframes)`
 
 La propriété `overflow` (et `overflow-y`, `overflow-x`) ne peut pas utiliser le style “auto” ni “scroll”.
 Aucun élément défini par l'utilisateur dans un document AMP ne peut avoir une barre de défilement.
@@ -116,12 +117,13 @@ Les deux méthodes acceptées pour le référencement des polices personnalisée
 
 Les fournisseurs de polices ne peuvent être sur liste blanche que s'ils adoptent les intégrations CSS uniquement et utilisent le protocole HTTPS. Actuellement, seules ces origines figurent sur liste blanche et sont autorisées à offrir des polices via les balises de liens :
 
-* [https://fast.fonts.net](https://fast.fonts.net)
-* [https://fonts.googleapis.com](https://fonts.googleapis.com)
+- [https://fast.fonts.net](https://fast.fonts.net)
+- [https://fonts.googleapis.com](https://fonts.googleapis.com)
 
 Exemple de balise de lien pointant vers le fournisseur de polices sur liste blanche, Google Fonts :
 
 [sourcecode:html]
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 [/sourcecode]
 

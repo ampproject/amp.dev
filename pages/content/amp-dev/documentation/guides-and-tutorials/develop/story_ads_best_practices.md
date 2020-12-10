@@ -11,6 +11,7 @@ formats:
 Web Stories are a full-screen tappable experience that immerses readers in the content. Ads that appears in Web Stories should have a consistent and cohesive design with the Web Stories UX. This prevents a jarring or interruptive user experience. This guide demonstrates how to build an ad for Web Stories.
 
 ## Web Story ad principles
+
 Current ad formats, such as banners and boxes, do not integrate well with the AMP Story format. Classic ads are slow, interruptive, and feel out of place within the Story experience.
 
 Web Story ads conform to the following principles:
@@ -24,6 +25,7 @@ Web Story ads conform to the following principles:
 To be consistent with these principles, the Web Story runtime determines the right placement of an ad page amidst the Web Story. Read more about ad placement mechanics in [Advertise in Web Stories](advertise_amp_stories.md).
 
 ## Sample Web Story ad
+
 Web Story ads are AMPHTML ads, but have required meta tag data, meet defined layout specifications and required UI elements. A Web Story ad will always include a call to action(CTA) button and an ad label displayed as a text disclaimer at the top of the page.
 
 {{ image('/static/img/docs/stampads/stamp_ad.png', 425, 800, layout='intrinsic', alt='Example of an AMP Story ad', caption='Example of an AMP Story ad', align='' ) }}
@@ -43,7 +45,7 @@ Meta tag data specifies that the ad meets the Web Story format, sets the CTA but
 <html amp4ads>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
 
     <!-- Specifies where the user is directed -->
     <meta name="amp-cta-url" content="%%CLICK_URL_UNESC%%%%DEST_URL%%">
@@ -105,6 +107,7 @@ The CTA button text enum is specified in the ad response payload.
 If support is needed for a new CTA button text enum, please open a [GitHub issue](https://github.com/ampproject/amphtml/issues/new).
 
 ## Ad landing page
+
 You can specify one of three options for an Web Story ad landing page.
 
 - `STORY`: Landing page is a [sponsored story](story_ads_best_practices.md#sponsored-story).
@@ -112,9 +115,11 @@ You can specify one of three options for an Web Story ad landing page.
 - `NONAMP`: Any other type of webpage.
 
 ## Layout
+
 AMP Stories are horizontal and full-screen. Story ads are required to match this format to provide a consistent user experience.
 
 ## Overlay dimensions
+
 The ad label overlays a dark gradient bar across the entire width of the ad and will stretch from the top to 46px down.
 
 {{ image('/static/img/docs/stampads/ad_overlay.png', 515, 520, layout='intrinsic', alt='Demonstration of ad overlay', caption='The ad overlay sits at the top', align='' ) }}
@@ -124,6 +129,7 @@ The CTA sits 32px from the bottom and is centered horizontally. It is 120px by 3
 {{ image('/static/img/docs/stampads/cta_button.png', 515, 520, layout='intrinsic', alt='Demonstration of the CTA Button', caption='The CTA Button sits near the bottom', align='' ) }}
 
 ## Images and video
+
 Images and video included in an AMP Story ad should be 4:3 standard full-screen. Ads that include video should use a [poster](../../../documentation/components/reference/amp-video.md#poster) The recommended dimensions for a poster image are 720p (720w x 1280h) .
 
 [sourcecode:html]
@@ -144,6 +150,7 @@ Images and video included in an AMP Story ad should be 4:3 standard full-screen.
 [/sourcecode]
 
 ### Images
+
 Background images can be scaled to full screen. The following CSS is a successful way to crop and center videos and images.
 
 [sourcecode:html]
@@ -165,6 +172,7 @@ Background images can be scaled to full screen. The following CSS is a successfu
 ### Video
 
 #### Specify `<source>` vs `src`
+
 When specifying the source for an [`amp-video`](../../../documentation/components/reference/amp-video.md)
 
 Example: Specifying multiple source files
@@ -181,9 +189,11 @@ Example: Specifying multiple source files
 [/sourcecode]
 
 #### Size & length of video
+
 For optimal performance, you should aim to provide videos that are no larger than 4 MB. Smaller file sizes allow for faster downloading, so keep things as small as possible.
 
 #### Video formats
+
 If you can only provide a single video format, provide **MP4**. However, where possible, use **HLS** video and specify MP4 as a fallback for browsers that do not yet support HLS video. HLS performs adaptive bitrate streaming, where the quality of the video can be altered to best suit the user's network connection.
 
 [tip type="note"]

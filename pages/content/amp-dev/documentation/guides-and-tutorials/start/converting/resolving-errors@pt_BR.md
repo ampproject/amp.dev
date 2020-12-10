@@ -88,7 +88,7 @@ A AMP exige a definição de `width` e `minimum-scale` para a janela de visualiz
 Para corrigir o erro na janela de visualização, adicione o seguinte snippet HTML à tag `<head>`:
 
 ```html
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="viewport" content="width=device-width">
 ```
 
 Os valores especificados para `width` e `minimum-scale` são obrigatórios na AMP. A definição de `initial-scale` não é obrigatória, mas é recomendada e costuma ser incluída no desenvolvimento da Web para dispositivos móveis. Leia mais sobre a janela de visualização e o design responsivo em [Defina a janela de visualização](https://developers.google.com/speed/docs/insights/ConfigureViewport).
@@ -269,7 +269,7 @@ O documento AMP será parecido com isto:
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
 
     <link rel="canonical" href="/article.html">
     <link rel="shortcut icon" href="amp_favicon.png">

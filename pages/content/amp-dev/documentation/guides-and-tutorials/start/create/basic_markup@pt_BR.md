@@ -13,7 +13,7 @@ Copie e salve o código em um arquivo com extensão .html.
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>Hello, AMP</title>
     <link rel="canonical" href="{{doc.url}}">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -51,7 +51,7 @@ Os documentos HTML para AMP PRECISAM seguir estas regras:
 | Conter uma tag `<meta charset="utf-8">` que seja a primeira dentro da tag `<head>` | Identifica a codificação da página. |
 | Conter uma tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` como segunda filha da tag `<head>` | Inclui e carrega a biblioteca JavaScript AMP. |
 | Conter uma tag `<link rel="canonical" href="$ALGUM_URL">` dentro de `<head>` | Direciona para a versão em HTML comum do documento HTML para AMP. Caso essa versão não exista, essa tag redirecionará para o próprio documento atual. Saiba mais em [Torne sua página detectável](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md).
-| Conter uma tag `<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">` dentro de `<head>` (recomendado: incluir também `initial-scale=1`) | Especifica uma janela de visualização responsiva. Saiba mais em [Criar páginas AMP responsivas](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md). |
+| Conter uma tag `<meta name="viewport" content="width=device-width">o: incluir também `initial-scale=1`) | Especifica uma janela de visualização responsiva. Saiba mais em [Criar páginas AMP responsivas](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md). |
 | Conter uma tag de [código de modelo AMP](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) em `<head>`  | O modelo de CSS deve ocultar inicialmente o conteúdo até que a biblioteca de JavaScript AMP seja carregada. |
 
 ## Metadados opcionais

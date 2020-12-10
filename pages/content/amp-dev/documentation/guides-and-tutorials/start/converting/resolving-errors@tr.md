@@ -81,7 +81,7 @@ AMP, görüntü alanı için bir `width` ve `minimum-scale` tanımlanmasını ge
 Görüntü alanı hatasını çözmek için aşağıdaki HTML parçacığını `<head>` etiketine ekleyin:
 
 ```html
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="viewport" content="width=device-width">
 ```
 
 `width` ve `minimum-scale` için belirtilen değerler, AMP'de gerekli değerlerdir. `initial-scale` tanımlamak zorunlu değildir, ancak genellikle mobil web geliştirmeye dahil edilir ve önerilir. [Görüntü Alanı Yapılandırma bölümünde](https://developers.google.com/speed/docs/insights/ConfigureViewport) , görüntü alanı ve duyarlı tasarım hakkında daha fazla bilgi edinebilirsiniz.
@@ -247,7 +247,7 @@ Artık AMP belgeniz şunun gibi görünmelidir:
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
 
     <link rel="canonical" href="/article.html">
     <link rel="shortcut icon" href="amp_favicon.png">

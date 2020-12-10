@@ -30,7 +30,7 @@ But you can use CSS preprocessors and templating to build static pages
 to better manage your content.
 
 [tip type="note"]
-**NOTE –**  AMP components come with default styles to make authoring responsive pages reasonably easy. These styles are defined in the [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
+**NOTE –** AMP components come with default styles to make authoring responsive pages reasonably easy. These styles are defined in the [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
 [/tip]
 
 ## Disallowed styles
@@ -110,9 +110,10 @@ It also includes the custom element script for
 so that many pages across the site can include embedded youtube videos.
 
 [sourcecode:html]{% raw %}
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
   <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 

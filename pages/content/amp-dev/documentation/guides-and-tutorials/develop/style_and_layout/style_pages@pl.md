@@ -1,17 +1,17 @@
 ---
-"$title": Obsługiwane CSS
+'$title': Obsługiwane CSS
 description: Jak wszystkie strony internetowe, strony AMP są stylizowane za pomocą CSS, ale nie można odwoływać się do zewnętrznych arkuszy stylów, z wyjątkiem czcionek niestandardowych. Niedozwolone są również niektóre style...
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 author: Meggin
 contributors:
-- pbakaus
-- CrystalOnScript
-- bpaduch
-- choumx
+  - pbakaus
+  - CrystalOnScript
+  - bpaduch
+  - choumx
 ---
 
 [filter formats="email"] Uwaga: AMP dla poczty e-mail określa dodatkowe ograniczenia CSS, które są opisane w artykule [CSS obsługiwane przez AMP dla poczty e-mail](../../../../documentation/guides-and-tutorials/learn/email-spec/amp-email-css.md). [/filter]
@@ -87,9 +87,10 @@ Dane wyjściowe generowane przez preprocesory działają w AMP tak samo dobrze, 
 W razie używania preprocesorów zwróć szczególną uwagę na to, co dodajesz; ładuj tylko to, czego używasz na swoich stronach. Na przykład, plik [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) zawiera wszystkie wymagane znaczniki AMP oraz kod inline CSS z plików źródłowych `*.scss`. Zawiera także (między innymi) niestandardowy skrypt elementu [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md), dzięki czemu wiele stron w całej witrynie może zawierać wbudowane filmy z YouTube.
 
 [sourcecode:html]{% raw %}
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
   <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 
