@@ -24,6 +24,7 @@ module.exports = {
       el.removeAttr('amp');
       el.removeAttr('⚡');
       el.attr('⚡4email', '');
+      el.attr('data-css-strict', '');
     },
     'form, a': (el) => {
       el.removeAttr('target');

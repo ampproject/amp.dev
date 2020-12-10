@@ -68,7 +68,7 @@ describe('formatTransform', () => {
 <body></body>
 </html>`);
     const want = s(`<!doctype html>
-<html ⚡4email>
+<html ⚡4email data-css-strict>
 <head>
 <meta charset="utf-8">
 <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -95,7 +95,7 @@ describe('formatTransform', () => {
 <form action-xhr="/something"></form>
 </body>
 </html>`);
-    const want = s(`<!doctype html><html ⚡4email><head></head>
+    const want = s(`<!doctype html><html ⚡4email data-css-strict><head></head>
 <body>
 <a href="${PLATFORM_HOST}/something">Link</a>
 <amp-img src="${PLATFORM_HOST}/something" width="1" height="1"></amp-img>
@@ -133,7 +133,7 @@ describe('formatTransform', () => {
 <div>baz</div>
 </body>
 </html>`);
-    const want = s(`<!doctype html><html ⚡4email><head></head>
+    const want = s(`<!doctype html><html ⚡4email data-css-strict><head></head>
 <body>
 <!-- comment -->
 <div>bar</div>
@@ -149,7 +149,7 @@ describe('formatTransform', () => {
   it('checks if result is valid AMP', () => {
     const input = '<!doctype html><html ⚡><head></head><body></body></html>';
     const want =
-      '<!doctype html><html ⚡4email><head></head><body></body></html>';
+      '<!doctype html><html ⚡4email data-css-strict><head></head><body></body></html>';
     const {transformedContent, validationResult} = formatTransform.transform(
       input,
       'email'

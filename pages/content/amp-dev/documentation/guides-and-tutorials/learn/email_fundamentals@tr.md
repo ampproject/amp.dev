@@ -15,7 +15,7 @@ AMP E-postaları klasik HTML e-postaları gibi görünür, ancak birkaç farklı
 
 ```html
 <!doctype html>
-<html ⚡4email>
+<html ⚡4email data-css-strict>
 <head>
   <meta charset="utf-8">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
