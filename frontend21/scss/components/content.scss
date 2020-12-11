@@ -1,3 +1,13 @@
 .#{prefix(null, 'content')} {
   grid-column: 4 / 12;
+  margin-top: 25px;
+  position: relative;
+  width: 100%;
+  padding: 60px;
+  background: color('white');
+  box-shadow: 0 25px 40px 0 transparentize(color('black'), 0.95);
+
+  h1 {
+    font-size: 35px;
+  }
 }

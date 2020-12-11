@@ -10,13 +10,13 @@
     position: relative;
     display: flex;
     align-items: flex-start;
-    margin-bottom: 15px;
+    margin: 20px 0;
 
     @include respond-to('medium') {
       width: 33%;
 
       & + & {
-        margin-left: 15px;
+        margin-left: 40px;
       }
     }
 
