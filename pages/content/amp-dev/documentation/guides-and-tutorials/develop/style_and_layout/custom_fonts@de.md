@@ -1,7 +1,7 @@
 ---
 "$title": Add custom fonts
 "$order": '6'
-description: "AMP pages can't include external stylesheets, with the exception of custom fonts. You can embed custom fonts into your page in two ways ..."
+description: AMP Seiten dürfen keine externen Stylesheets enthalten, mit Ausnahme von benutzerdefinierten Schriftarten. Es gibt zwei Möglichkeiten, …
 formats:
 - websites
 - ads
@@ -9,14 +9,14 @@ formats:
 author: pbakaus
 ---
 
-AMP pages can’t include external stylesheets, with the exception of custom fonts. You can embed custom fonts into your page in two ways:
+AMP Seiten dürfen keine externen Stylesheets enthalten, mit Ausnahme von benutzerdefinierten Schriftarten. Es gibt zwei Möglichkeiten, benutzerdefinierte Schriftarten in deine Seite einzubetten:
 
-1. Through a `<link>` tag (allow-listed font providers only)
+1. Über das Tag `<link>` (nur zugelassene Schriftartenanbieter)
 2. Via `@font-face` (no restrictions, all fonts allowed)
 
 ### 1. Using `<link>`
 
-Use a `<link>` tag (usually in the head of your page), like so:
+Verwende das Tag `<link>` (normalerweise im Head deiner Seite) wie folgt:
 
 [sourcecode:html]
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
@@ -47,4 +47,4 @@ Alternatively, you can use [`@font-face`](https://developer.mozilla.org/en-US/do
 </style>
 [/sourcecode]
 
-[tip type="note"] **NOTE –**  Fonts included via `@font-face` must be fetched via the HTTP or HTTPS scheme. [/tip]
+[tip type="note"] **HINWEIS:** Schriftarten, die via `@font-face` eingebunden werden, müssen über das HTTP oder HTTPS Schema abgerufen werden. [/tip]
