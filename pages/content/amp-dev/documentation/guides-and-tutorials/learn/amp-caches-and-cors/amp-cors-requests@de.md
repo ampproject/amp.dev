@@ -163,7 +163,7 @@ Dieser Header wird von der <a href="https://www.w3.org/TR/cors/">W3 CORS Spezifi
 
 Obwohl die W3 CORS Spezifikation die Rückgabe des Wertes <code>*</code> in der Antwort erlaubt, solltest du aus Sicherheitsgründen Folgendes tun:
 
-- If the `Origin` header is present, validate and echo the value of the <code><code data-md-type="codespan">Origin</code> header.
+- Falls der `Origin` Header vorhanden ist, validiere den Wert des <code>Origin</code> Headers und gib ihn mittels 'echo' aus.
 
 ### Anfragen zur Zustandsänderung verarbeiten <a name="processing-state-changing-requests"></a>
 
