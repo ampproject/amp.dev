@@ -349,9 +349,9 @@ Die so erstellte Zuordnung sieht folgendermaßen aus:
   </tr>
   <tr>
     <td>
-<code>$prospective_identifier</code>(generated just-in-time when analytics ping is received)</td>
+<code>$prospective_identifier</code> (wird bei Bedarf generiert, wenn der Analytics Ping empfangen wird)</td>
     <td>
-<code>$amp_client_id</code> (came from analytics ping)</td>
+<code>$amp_client_id</code> (stammt aus Analytics Ping)</td>
   </tr>
 </table>
 
