@@ -304,6 +304,6 @@ Aktualisiere die Seite und sieh dir die Konsolenausgabe an. Du solltest die folg
 
 ### Häufig gestellte Fragen
 
-- [What is DOM reflow?](http://stackoverflow.com/a/27637245)
-- [What if the layout attribute isn’t defined?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isnt-specified)
-- [What if width and height are undefined?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-width-and-height-are-undefined)
+- [Was ist der DOM Reflow?](http://stackoverflow.com/a/27637245)
+- <a class="" href="https://gitlocalize.com/repo/4863/de/pages/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isnt-specified">Was, wenn das Attribut <code>layout</code> nicht angegeben ist?</a>
+- [Was, wenn Breite und Höhe nicht definiert sind?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-width-and-height-are-undefined)
