@@ -10,7 +10,7 @@ description: Ähnlich wie beim Login Button ist das Vorhandensein des Logout But
 <button amp-access="loggedIn" amp-access-hide tabindex="0" on="tap:amp-access.login-sign-out" class="button-primary comment-button">Logout</button>
 [/sourcecode]
 
-When you click the Logout button, you are directed to the URL that you specified in the [`amp-access`](../../../../documentation/components/reference/amp-access.md) JSON configuration, as part of the login object:
+Wenn du auf den Logout Button klickst, wirst du weitergeleitet zu der URL, die du in der JSON Konfiguration für [`amp-access`](../../../../documentation/components/reference/amp-access.md) als Teil des Login Objekts angegeben hast:
 
 [sourcecode:json]
 {
@@ -21,4 +21,4 @@ When you click the Logout button, you are directed to the URL that you specified
 }
 [/sourcecode]
 
-Similar to the login, when the AMPByExample server receives a logout request, it uses the return URL query parameter automatically added by the AMP library and redirects to it, adding `#success=true`. By this time, you are back on the initial page; the AMPByExample cookie previously created for the login page (called `ABE_LOGGED_IN`) would be cleared at this point.
+Es ist ähnlich wie bei der Anmeldung: Wenn der AMPByExample Server eine Abmeldeanforderung empfängt, verwendet er den von der AMP Bibliothek automatisch hinzugefügten Abfrageparameter der Rückgabe URL, leitet ihn um und fügt `#success=true` hinzu. Jetzt bist du wieder auf der Startseite. Das zuvor für die Anmeldeseite gesetzte AMPByExample Cookie (`ABE_LOGGED_IN` genannt) wird nun gelöscht.
