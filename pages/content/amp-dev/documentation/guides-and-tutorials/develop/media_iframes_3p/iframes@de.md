@@ -1,7 +1,7 @@
 ---
 "$title": Füge iframes hinzu
 "$order": '10'
-description: "Learn how to display include media content in your pages, and how to use iframes to display advanced content outside of AMP's limitations."
+description: Erfahre, wie du Medieninhalte auf deinen Seiten anzeigst und wie du mithilfe von iframes erweiterte Inhalte jenseits der AMP Einschränkungen anzeigst.
 formats:
 - websites
 components:
@@ -18,18 +18,18 @@ Learn how to display include media content in your pages, and how to use iframes
 
 Mit dem Element [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) kannst du auf deiner Seite ein iframe anzeigen.
 
-Iframes are especially useful in AMP to display content not supported in the main page context, such as content requiring user-authored JavaScript.
+In AMP eignen sich iframes besonders dazu, Inhalte anzuzeigen, die im Hauptseitenkontext nicht unterstützt werden, z. B. Inhalte, die vom Benutzer erstelltes JavaScript erfordern.
 
 ### Anforderungen für `amp-iframe`
 
-- Must be at least **600px** or **75%** of the first viewport away from the top (except for iframes that use a [`placeholder`](#using-placeholders)).
-- Can only request resources via HTTPS, and they must not be in the same origin as the container, unless they do not specify allow-same-origin.
+- Mindestens **600px** oder **75 %** des ersten Viewports vom oberen Rand entfernt (außer für iframes, die einen [`placeholder`](#using-placeholders) verwenden)
+- Ressourcen können nur über HTTPS angefordert werden und müssen einen anderen Ursprung haben als der Container, es sei denn, "allow-same-origin" ist bei ihnen nicht angegeben.
 
-[tip type="read-on"] **READ ON –** Learn more at the [full specification for `amp-iframe`](../../../../documentation/components/reference/amp-iframe.md). [/tip]
+[tip type="read-on"] **ERFAHRE MEHR:** Mehr Infos findest du in der [vollständigen Spezifikation für `amp-iframe`](../../../../documentation/components/reference/amp-iframe.md). [/tip]
 
-### Include the script
+### Binde das Skript ein
 
-To include an [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) in your page, first include the following script to the `<head>`, which loads the additional code for the extended component:
+Um ein [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) zu deiner Seite hinzuzufügen, binde zuerst das folgende Skript in `<head>` ein, um den zusätzlichen Code für die erweiterte Komponente zu laden:
 
 [sourcecode:html]
 <script async custom-element="amp-iframe"
@@ -38,7 +38,7 @@ To include an [`amp-iframe`](../../../../documentation/components/reference/amp-
 
 ### Schreibe das Markup
 
-In the following example, we created a responsive [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) to embed a Google Map via the [Google Maps Embed API](https://developers.google.com/maps/documentation/embed/guide):
+Im folgenden Beispiel haben wir ein responsives [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) erstellt, um eine Google Map über die [Google Maps Embed API](https://developers.google.com/maps/documentation/embed/guide) einzubetten:
 
 ```html
 <amp-iframe width="200" height="100"
@@ -52,7 +52,7 @@ In the following example, we created a responsive [`amp-iframe`](../../../../doc
 
 Du kannst ein [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) am Anfang des Dokuments anzeigen, vorausgesetzt, das [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) enthält ein Element mit dem Attribut `placeholder` (z. B. ein [`amp-img`](../../../../documentation/components/reference/amp-img.md) Element), das als Platzhalter gerendert wird, bis das iframe zur Anzeige bereit ist.
 
-[tip type="read-on"] **READ ON –**: Learn more about placeholders in [Iframe with placeholder](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder). [/tip]
+[tip type="read-on"] **ERFAHRE MEHR:** Mehr Infos über Platzhalter findest du in [iframe mit Platzhalter](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder). [/tip]
 
 Beispiel mit Platzhalter:
 
@@ -72,4 +72,4 @@ Wird gerendert als:
 
 ## Beispiele
 
-You can find more advanced [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) examples in [AMP By Example](../../../../documentation/examples/documentation/amp-iframe.html).
+Komplexere Beispiele für [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) findest du bei [AMP By Example](../../../../documentation/examples/documentation/amp-iframe.html).
