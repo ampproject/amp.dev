@@ -81,7 +81,7 @@ Okay, die Seite ist *in meiner Domäne* und das JSON ist auch *in meiner Domäne
 Ah, aber wie hat der Benutzer deine AMP Seite erreicht? Hat er auf eine Seite im Cache zugegriffen? Es ist sehr wahrscheinlich, dass der Benutzer nicht direkt auf deine AMP Seite zugegriffen hat, sondern diese über eine andere Plattform entdeckt hat. So verwendet z. B. die Google Suche den Google AMP Cache, um AMP Seiten schnell zu rendern. Hierbei handelt es sich um zwischengespeicherte Seiten, die aus dem Google AMP Cache bereitgestellt werden – einer *anderen* Domäne. Wenn der Benutzer auf den Button klickt, um die Preise auf deiner Seite zu aktualisieren, sendet die AMP Seite im Cache eine Anfrage an deine Ursprungsdomäne, um die Preise abzurufen. Dies ist eine Nichtübereinstimmung der Quellen (Cache -> Ursprungsdomäne). Um solche Cross-Origin Anfragen zuzulassen, musst du mit CORS arbeiten. Andernfalls schlägt die Anfrage fehl.
 
 <amp-img alt="CORS and Cache" layout="responsive" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png" width="809" height="391">
-  <noscript>     <img alt="CORS and Cache" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png">   </noscript></amp-img>
+  <noscript><img alt="CORS und Cache" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png"></noscript></amp-img>
 
 **Okay, was soll ich tun?**
 
@@ -197,7 +197,7 @@ In CORS Anfragen an deinen Endpoint müssen zwei Szenarien berücksichtigt werde
 Sehen wir uns diese Szenarien anhand eines Beispiels an. In unserem Beispiel verwalten wir die Website `example.com`, die eine AMP Seite mit dem Namen `article-amp.html` hostet. Die AMP Seite enthält eine `amp-list` zum Abrufen dynamischer Daten aus der Datei `data.json`, die auch auf `example.com` gehostet wird. Wir möchten Anfragen von unserer AMP Seite an unsere Datei `data.json` verarbeiten. Diese Anfragen können von der AMP Seite in derselben Quelle (nicht im Cache) oder von der AMP Seite in einer anderen Quelle (im Cache) stammen.
 
 <amp-img alt="CORS example" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png" width="629" height="433">
-  <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png">   </noscript></amp-img>
+  <noscript><img alt="CORS Beispiel" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png"></noscript></amp-img>
 
 ### Zulässige Quellen <a name="allowed-origins"></a>
 
@@ -281,7 +281,7 @@ function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
 Im folgenden Szenario fordert die Seite `article-amp.html` die Datei `data.json` an. Die Quellen sind gleich.
 
 <amp-img alt="CORS example - scenario 1" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png" width="657" height="155">
-  <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png">   </noscript></amp-img>
+  <noscript><img alt="CORS Beispiel" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png"></noscript></amp-img>
 
 Wenn wir die Anfrage genauer ansehen, finden wir Folgendes:
 
@@ -305,7 +305,7 @@ Access-Control-Allow-Origin: https://example.com
 Im folgenden Szenario fordert die Seite `article-amp.html` aus dem Google AMP Cache die Datei `data.json` an. Die Quellen unterscheiden sich.
 
 <amp-img alt="CORS example - scenario 2" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png" width="657" height="155">
-  <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png">   </noscript></amp-img>
+  <noscript><img alt="CORS Beispiel" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png"></noscript></amp-img>
 
 Wenn wir die Anfrage genauer ansehen, finden wir Folgendes:
 
@@ -362,7 +362,7 @@ function assertFontCors(req, res, opt_validMethods, opt_exposeHeaders) {
 Wenn du beispielsweise /some/font.ttf in `https://example.com/amp.html` laden wolltest, sollte der Quellserver mit dem Header Access-Control-Allow-Origin antworten (wie nachfolgend angezeigt).
 
 <amp-img alt="CORS font example" layout="responsive" src="https://amp.dev/static/img/docs/cors-font.jpg" width="2268" height="1594">
-  <noscript>     <img alt="CORS font example" src="https://amp.dev/static/img/docs/cors-font.jpg">   </noscript></amp-img>
+  <noscript><img alt="Beispiel für eine CORS-Schriftart" src="https://amp.dev/static/img/docs/cors-font.jpg"></noscript></amp-img>
 
 [tip type="note"] Wenn deine Schriftartendatei von jeder beliebigen Quelle aus zugänglich sein darf, kannst du mit einem Platzhalter für `Access-Control-Allow-Origin` antworten. Der AMP Cache wird diesen Wert ebenfalls zurückgeben, d. h. er antwortet mit `Access-Control-Allow-Origin: *`. Wenn du diese Einstellung bereits verwendest, musst du nichts ändern. [/tip]
 
