@@ -1,16 +1,17 @@
 {
   "colors": {
-    "ui-and-a11y": "#447FB4",
-    "amp4email": "#4AA5AF",
-    "infra": "#19c8b2",
-    "outreach": "#55B097",
-    "runtime": "#E6A03C",
-    "stories": "#D8843B",
-    "access-subscriptions": "#B72B4F",
-    "analytics": "#AB62D7",
-    "ads": "#8945AF",
-    "performance": "#7474E1",
-    "bento": "#485867"
+    "components": "#48525C",
+    "amp4email": "#A6E22E",
+    "infra": "#00DCC0",
+    "outreach": "#E1EB64",
+    "runtime": "#09A600",
+    "stories": "#FFDC00",
+    "caching": "#EC6600",
+    "viewers": "#FF7272",
+    "analytics": "#5500D7",
+    "ads": "#EB49E1",
+    "performance": "#C80000",
+    "bento": "#45184B"
   },
-  "fallbackColor": "#202029"
+  "fallbackColor": "#005AF0"
 }

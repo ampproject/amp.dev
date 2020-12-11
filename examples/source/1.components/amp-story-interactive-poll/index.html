@@ -1,0 +1,198 @@
+<!---
+author: mszylkowski
+--->
+
+
+<!--
+  ## Introduction
+
+  The [`amp-story-interactive`](/documentation/components/amp-story-interactive/?format=stories) component provides customizable immersive quizzes and polls for Web Stories.
+  
+  In this guide we build a Web Story with polls that reports the answers to a result element. The result element shows different categories based off a user's poll answers. 
+-->
+
+<!-- -->
+<!doctype html>
+<html ⚡ lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="This is an interactive story with polls.">
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0/amp-story-1.0.js">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+    <!-- To begin, import `amp-story-interactive` along your other stories imports. -->
+    <script async custom-element="amp-story-interactive" src="https://cdn.ampproject.org/v0/amp-story-interactive-0.1.js"></script>
+    <style amp-custom>
+    .center {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 22em;
+      font-size: 0.23em;
+    }
+
+    #poll-1 {
+      --interactive-prompt-text-color: rgb(230, 110, 19);
+    }
+
+    #poll-2 {
+      --interactive-accent-color: rgb(9, 63, 4);
+    }
+
+    #poll-3 {
+        --interactive-prompt-background: linear-gradient(120deg, dodgerblue, blue);
+      }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <link rel="canonical" href=".">
+    <title>Interactive polls with results</title>
+  </head>
+  <body>
+    <amp-story standalone
+      publisher="Stories Format"
+      title="Name that artist"
+      poster-portrait-src="./last_supper.jpg"
+      publisher-logo-src="https://amp.dev/static/img/icons/icon-512x512.png">
+      <!-- 
+        ## Overview
+
+  We will create an interactive experience that calculates what animal you are. The `option-{1/2/3/4}-results-category` attribute links each poll option to a result category, so pay special attention to it. 
+  
+        ## Define the polls
+        
+        To add a poll, we have to specify some attributes:
+
+        - `option-{1/2/3/4}-text` passes the options to the poll.
+        - `option-{1/2/3/4}-confetti` passes the emojis that explode when selecting an option. Give it a try by selecting an option!
+        - `prompt-text` and `prompt-size` determine the content and size of the question. We'll make it large sine the content is short.
+        - `theme` and `chip-style` change the way the poll looks.
+        - `option-{1/2/3/4}-results-category` helps calculate the state of the amp-story-interactive-results element, more info below.
+
+        In this case, we added a dark transparent poll with orange prompt text, and we linked each option to a `option-{1/2/3/4}-results-category`.
+      
+      -->
+
+      <amp-story-page id="page-poll-1">
+        <amp-story-grid-layer template="fill" style="background-color: white">
+          <amp-img style="opacity:0.7"
+            layout="fixed" width="1600" height="1200"
+            src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?q=20"/>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="fill" aspect-ratio="4:6">
+          <div animate-in="scale-fade-up">
+            <amp-story-interactive-poll
+            id="poll-1" class="center"
+            prompt-text="What's your favorite food?"
+            endpoint="https://amp.dev/documentation/examples/components/amp-story-interactive-poll/results"
+            prompt-size="large" theme="dark" chip-style="transparent"
+            option-1-text="Bones" option-1-results-category="Dog" option-1-confetti="🦴"
+            option-2-text="Fish" option-2-results-category="Cat" option-2-confetti="🐟"
+            option-3-text="Carrots" option-3-results-category="Bunny" option-3-confetti="🥕"
+            option-4-text="Cheese" option-4-results-category="Mouse" option-4-confetti="🧀">
+          </amp-story-interactive-poll>
+          </div>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <!--
+        Now we can create another poll with the same attributes. Note how the results-category associated with each option is independent from the order.
+        For this poll, we will set the accent color to green: `--interactive-accent-color:rgb(9, 63, 4);`.
+      -->
+      <amp-story-page id="page-poll-2">
+        <amp-story-grid-layer template="fill">
+          <amp-img
+            layout="fixed" width="1600" height="1200"
+            src="https://images.unsplash.com/photo-1542144582-1ba00456b5e3?q=20"/>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="fill" aspect-ratio="4:6">
+          <div animate-in="scale-fade-up">
+            <amp-story-interactive-poll
+              id="poll-2"
+              prompt-text="How do you spend your free time?"
+              endpoint="https://amp.dev/documentation/examples/components/amp-story-interactive-poll/results"
+              class="center"
+              prompt-size="large"
+              option-1-text="Stretching back" option-1-results-category="Cat" option-1-confetti="🧘"
+              option-2-text="Brushing mustache" option-2-results-category="Mouse" option-2-confetti="👺"
+              option-3-text="Jumping" option-3-results-category="Bunny" option-3-confetti="🦘"
+              option-4-text="Fetching balls" option-4-results-category="Dog" option-4-confetti="⚽">
+            </amp-story-interactive-poll>
+          </div>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <!-- And let's make a third one just to train muscle memory.
+      
+      There's multiple attributes and CSS variables exposed for creators to adapt the style to fit the story design.
+      Adding gradients to the prompt-background is a great way to enhance the visuals of your elements, for instance.
+      
+      `--interactive-prompt-background: linear-gradient(120deg, var(--color-1), var(--color-2));`
+
+      [tip type="read-on"]If you want to see all the available styles, check the [documentation](/documentation/components/amp-story-interactive?format=stories) or [example story](/documentation/examples/components/amp-story-interactive/story).[/tip]
+      
+      -->
+      <amp-story-page id="page-poll-3">
+        <amp-story-grid-layer template="fill">
+          <amp-img
+            layout="fixed" width="1600" height="1200"
+            src="https://images.unsplash.com/photo-1500835556837-99ac94a94552?q=20"/>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="fill" aspect-ratio="4:6">
+          <div animate-in="scale-fade-up">
+            <amp-story-interactive-poll
+               id="poll-3"
+               prompt-text="What would you do for holidays?"
+               endpoint="https://amp.dev/documentation/examples/components/amp-story-interactive-poll/results"
+               class="center poll-3"
+               prompt-size="large"
+               chip-style="shadow"
+               option-1-text="Easter island" option-1-results-category="Bunny" option-1-confetti="🗿"
+               option-2-text="Drive with tongue out" option-2-results-category="Dog" option-2-confetti="🏎️"
+               option-3-text="Run from cats" option-3-results-category="Mouse" option-3-confetti="🏃"
+               option-4-text="Stay in bed" option-4-results-category="Cat" option-4-confetti="😴">
+            </amp-story-interactive-poll>
+          </div>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <!-- 
+        ## Link to the results
+        We have specified `option-{1/2/3/4}-results-category` on all the polls without any immediate effect, but here is where they come into play.
+
+        An internal state saves the user's poll selections. The `amp-story-interactive-results` element reads each polls state and calculates the results. It then displays the category, description and image of the calculated state.
+
+        If you go back to the other pages and answer to the poll (in the story below), you'll see how the results change state to another animal when you go back to the results page.
+
+        [tip type="note"]The result shown will be the one with more options selected, prioritizing the states configured first. If no options are selected, it will then show the `option-1` state by default.[/tip]
+      -->
+      <amp-story-page id="page-results">
+        <amp-story-grid-layer template="fill">
+          <amp-img
+            layout="fixed" width="1600" height="1200"
+            src="https://images.unsplash.com/photo-1500835556837-99ac94a94552?q=20"/>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="fill" aspect-ratio="4:6">
+          <div animate-in="scale-fade-up">
+            <amp-story-interactive-results
+               id="results-1" class="center"
+               prompt-text="You are a"
+               option-1-results-category="Cat" option-1-text="Everyone loves cats, and so do you! Cats are the best companion to WFH" option-1-image="https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg"
+               option-2-results-category="Dog" option-2-text="You always have energy and love being with friends. Outdoors is your favorite place" option-2-image="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg"
+               option-3-results-category="Bunny" option-3-text="You love jumping around and having fun. Your bubbly personality is contagious, and your love for carrots is unconditional" option-3-image="https://images.pexels.com/photos/326012/pexels-photo-326012.jpeg"
+               option-4-results-category="Mouse" option-4-text="Even though you're small, you're also full of curiosity and love going around finding new things to do" option-4-image="https://images.pexels.com/photos/51340/rat-pets-eat-51340.jpeg">
+            </amp-story-interactive-results>
+          </div>
+        </amp-story-grid-layer>
+      </amp-story-page>
+    </amp-story>
+  </body>
+</html>
+
+<!--
+        # More resources
+
+        If you want to learn more about all the interactive experiences for Web Stories, head over to the [documentation](/documentation/components/amp-story-interactive?format=stories) or check out the guide on how to make a [story with quizzes](/documentation/examples/components/amp-story-interactive-quiz/?format=stories) instead.
+      -->

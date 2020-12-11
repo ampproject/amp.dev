@@ -1,10 +1,6 @@
 ---
 $title: amp-mustache
 $category@: dynamic-content
-formats:
-- websites
-- email
-- ads
 teaser:
     text:  Mustache.js 템플릿의 렌더링을 허용합니다.
 ---

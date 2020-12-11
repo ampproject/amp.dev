@@ -1,10 +1,6 @@
 ---
 $title: amp-pixel
 $category@: ads-analytics
-formats:
-- websites
-- ads
-- stories
 teaser:
   text: Pixel de suivi permettant de comptabiliser les pages vues.
 ---

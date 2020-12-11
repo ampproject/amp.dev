@@ -13,7 +13,7 @@ Salin dan simpan ke dalam file berekstensi .html.
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>Hello, AMPs</title>
     <link rel="canonical" href="{{doc.url}}">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -51,7 +51,7 @@ Dokumen HTML AMP HARUS:
 | Berisi tag `<meta charset="utf-8">` sebagai turunan pertama dari tag `<head>`. | Mengidentifikasi encoding untuk halaman. |
 | Berisi tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` sebagai turunan kedua dari tag `<head>`. | Menyertakan dan memuat library JS AMP. |
 | Berisi tag `<link rel="canonical" href="$SOME_URL">` di dalam `<head>`. | Mengarah ke versi HTML reguler dari dokumen HTML AMP, atau ke dokumen HTML AMP itu sendiri jika tidak ada versi HTML seperti itu. Pelajari lebih lanjut di [Membuat Halaman Anda Mudah Ditemukan](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md).
-| Berisi tag `<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">` di dalam tag `<head>`. Juga direkomendasikan untuk memasukkan `initial-scale=1`. | Menentukan viewport yang responsif. Pelajari lebih lanjut di [Membuat Halaman AMP Responsif](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md). |
+| Berisi tag `<meta name="viewport" content="width=device-width">rekomendasikan untuk memasukkan `initial-scale=1`. | Menentukan viewport yang responsif. Pelajari lebih lanjut di [Membuat Halaman AMP Responsif](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md). |
 | Berisi [Kode boilerplate AMP](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) di tag `<head>`.  | Boilerplate CSS untuk mula-mula menyembunyikan konten hingga JS AMP dimuat. |
 
 ## Metadata opsional

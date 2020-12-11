@@ -1,19 +1,20 @@
 ---
-$title: Best practices for creating an AMP Story ad
+$title: Best practices for creating a Web Story ad
 $order: 16
-description: 'AMP Stories are a full-screen tappable experience that immerses readers in the content. Ads that appears in AMP Stories should have a consistent and cohesive design with the AMP Stories UX.'
+description: 'Web Stories are a full-screen tappable experience that immerses readers in the content. Ads that appears in Web Stories should have a consistent and cohesive design with the Web Stories UX.'
 
 formats:
   - ads
   - stories
 ---
 
-AMP Stories are a full-screen tappable experience that immerses readers in the content. Ads that appears in AMP Stories should have a consistent and cohesive design with the AMP Stories UX. This prevents a jarring or interruptive user experience. This guide demonstrates how to build an ad for AMP Stories.
+Web Stories are a full-screen tappable experience that immerses readers in the content. Ads that appears in Web Stories should have a consistent and cohesive design with the Web Stories UX. This prevents a jarring or interruptive user experience. This guide demonstrates how to build an ad for Web Stories.
 
-##AMP Story ad principles
+## Web Story ad principles
+
 Current ad formats, such as banners and boxes, do not integrate well with the AMP Story format. Classic ads are slow, interruptive, and feel out of place within the Story experience.
 
-AMP Story ads conform to the following principles:
+Web Story ads conform to the following principles:
 
 - Valid AMPHTML Ad: follow the same technical specification as a classic [AMPHTML ad](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md).
 - Visual first: Inviting, bold, context-driven invitation state.
@@ -21,29 +22,30 @@ AMP Story ads conform to the following principles:
 - Same interaction model: User can continue to the next screen just like they would with an organic story page.
 - Fast: The ad never appears to a user in a half-loaded state.
 
-To be consistent with these principles, the AMP Story runtime determines the right placement of an ad page amidst the AMP Story. Read more about ad placement mechanics in [Advertise in AMP Stories](advertise_amp_stories.md).
+To be consistent with these principles, the Web Story runtime determines the right placement of an ad page amidst the Web Story. Read more about ad placement mechanics in [Advertise in Web Stories](advertise_amp_stories.md).
 
-##Sample Story ad
-AMP Story ads are AMPHTML ads, but have required meta tag data, meet defined layout specifications and required UI elements. An AMP Story ad will always include a call to action(CTA) button and an ad label displayed as a text disclaimer at the top of the page.
+## Sample Web Story ad
+
+Web Story ads are AMPHTML ads, but have required meta tag data, meet defined layout specifications and required UI elements. A Web Story ad will always include a call to action(CTA) button and an ad label displayed as a text disclaimer at the top of the page.
 
 {{ image('/static/img/docs/stampads/stamp_ad.png', 425, 800, layout='intrinsic', alt='Example of an AMP Story ad', caption='Example of an AMP Story ad', align='' ) }}
 
-To keep the user experience consistent, the AMP Story runtime is responsible for rendering the ad label and the CTA button.
+To keep the user experience consistent, the Web Story runtime is responsible for rendering the ad label and the CTA button.
 
 [tip type="important"]
-**IMPORTANT –** Only the CTA button is clickable in an AMP Story ad, so keep this in mind when developing your creative.
+**IMPORTANT –** Only the CTA button is clickable in an Web Story ad, so keep this in mind when developing your creative.
 [/tip]
 
-##Meta tag data
+## Meta tag data
 
-Meta tag data specifies that the ad meets the AMP Story format, sets the CTA button text enum, directs where the button will send the user and what type of page it is.
+Meta tag data specifies that the ad meets the Web Story format, sets the CTA button text enum, directs where the button will send the user and what type of page it is.
 
 [sourcecode:html]
 
 <html amp4ads>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
 
     <!-- Specifies where the user is directed -->
     <meta name="amp-cta-url" content="%%CLICK_URL_UNESC%%%%DEST_URL%%">
@@ -67,7 +69,7 @@ Meta tag data specifies that the ad meets the AMP Story format, sets the CTA but
 </html>
 [/sourcecode]
 
-Choosing the amp-cta-type tag from the [available CTA Button text options](#call-to-action-button-text-enum) is recommended. AMP will automatically localize predefined options when appropriate.
+Choosing the `amp-cta-type tag` from the [available CTA Button text options](#call-to-action-button-text-enum) is recommended. AMP will automatically localize predefined options when appropriate.
 
 Custom text is allowed, but you will need to implement your own localization.
 
@@ -104,17 +106,20 @@ The CTA button text enum is specified in the ad response payload.
 
 If support is needed for a new CTA button text enum, please open a [GitHub issue](https://github.com/ampproject/amphtml/issues/new).
 
-##Ad Landing Page
-You can specify one of three options for an AMP Story ad landing page.
+## Ad landing page
+
+You can specify one of three options for an Web Story ad landing page.
 
 - `STORY`: Landing page is a [sponsored story](story_ads_best_practices.md#sponsored-story).
 - `AMP`: Landing page is a valid AMP Page.
 - `NONAMP`: Any other type of webpage.
 
-##Layout
+## Layout
+
 AMP Stories are horizontal and full-screen. Story ads are required to match this format to provide a consistent user experience.
 
-##Overlay dimensions
+## Overlay dimensions
+
 The ad label overlays a dark gradient bar across the entire width of the ad and will stretch from the top to 46px down.
 
 {{ image('/static/img/docs/stampads/ad_overlay.png', 515, 520, layout='intrinsic', alt='Demonstration of ad overlay', caption='The ad overlay sits at the top', align='' ) }}
@@ -123,7 +128,8 @@ The CTA sits 32px from the bottom and is centered horizontally. It is 120px by 3
 
 {{ image('/static/img/docs/stampads/cta_button.png', 515, 520, layout='intrinsic', alt='Demonstration of the CTA Button', caption='The CTA Button sits near the bottom', align='' ) }}
 
-##Images and video
+## Images and video
+
 Images and video included in an AMP Story ad should be 4:3 standard full-screen. Ads that include video should use a [poster](../../../documentation/components/reference/amp-video.md#poster) The recommended dimensions for a poster image are 720p (720w x 1280h) .
 
 [sourcecode:html]
@@ -143,7 +149,8 @@ Images and video included in an AMP Story ad should be 4:3 standard full-screen.
 </amp-video>
 [/sourcecode]
 
-###Images
+### Images
+
 Background images can be scaled to full screen. The following CSS is a successful way to crop and center videos and images.
 
 [sourcecode:html]
@@ -162,9 +169,10 @@ Background images can be scaled to full screen. The following CSS is a successfu
 
 [/sourcecode]
 
-###Video
+### Video
 
-####Specify `<source>` vs `src`
+#### Specify `<source>` vs `src`
+
 When specifying the source for an [`amp-video`](../../../documentation/components/reference/amp-video.md)
 
 Example: Specifying multiple source files
@@ -180,10 +188,12 @@ Example: Specifying multiple source files
 </amp-video>
 [/sourcecode]
 
-####Size & Length of video
+#### Size & length of video
+
 For optimal performance, you should aim to provide videos that are no larger than 4 MB. Smaller file sizes allow for faster downloading, so keep things as small as possible.
 
-####Video formats
+#### Video formats
+
 If you can only provide a single video format, provide **MP4**. However, where possible, use **HLS** video and specify MP4 as a fallback for browsers that do not yet support HLS video. HLS performs adaptive bitrate streaming, where the quality of the video can be altered to best suit the user's network connection.
 
 [tip type="note"]
@@ -192,7 +202,7 @@ If you can only provide a single video format, provide **MP4**. However, where p
 
 ####Video resolution
 
-AMP story videos are always vertical (i.e., portrait view), with an expected aspect ratio of 16:9. Use the recommended resolution for the video streaming type:
+Web Story videos are always vertical (i.e., portrait view), with an expected aspect ratio of 16:9. Use the recommended resolution for the video streaming type:
 
 <table>
   <thead>
@@ -294,4 +304,4 @@ A Sponsored Story exists as a URL on the web, enabling the drive of user traffic
 
 {{ image('/static/img/docs/stampads/sponsored_story_full.png', 1600, 900, layout='intrinsic', alt='CTA button directs to a Sponsored Story', caption='CTA button directs to a Sponsored Story', align='' ) }}
 
-Read more about creating an [AMP Story here](../start/create_successful_stories.md).
+Read more about creating an [Web Story here](../start/create_successful_stories.md).

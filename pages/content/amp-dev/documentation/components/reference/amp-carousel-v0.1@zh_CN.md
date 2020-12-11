@@ -1,10 +1,6 @@
 ---
 $title: amp-carousel
 $category@: layout
-formats:
-- websites
-- email
-- ads
 teaser:
   text: 沿着一条横轴显示多个相似的内容片段。
 ---

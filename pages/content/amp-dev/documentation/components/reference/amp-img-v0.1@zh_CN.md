@@ -1,11 +1,6 @@
 ---
 $title: amp-img
 $category@: media
-formats:
-- websites
-- email
-- ads
-- stories
 teaser:
   text: 替换 HTML5 img 标记。
 ---

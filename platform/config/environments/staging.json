@@ -16,6 +16,11 @@
 			"host": "amp-dev-staging.appspot.com",
 			"port": ""
     },
+		"websocket": {
+			"scheme": "wss",
+			"host": "amp-dev-staging.appspot.com",
+			"port": ""
+    },
     "playground": {
       "scheme": "https",
       "subdomain": "playground-dot-amp-dev-staging",

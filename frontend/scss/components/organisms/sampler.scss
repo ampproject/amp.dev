@@ -72,17 +72,17 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     white-space: nowrap;
-    background: color('ebony-clay');
+    background: color('charade');
   }
 
   &-tab {
     cursor: pointer;
     padding: 1.125em 1.75em;
-    border-right: 1px solid color('bright-gray');
-    background: color('ebony-clay');
+    border-right: 1px solid color('river-bed');
+    background: color('charade');
 
     &.active {
-      background: color('bright-gray');
+      background: color('river-bed');
 
       span {
         opacity: 1;

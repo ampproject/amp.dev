@@ -82,18 +82,6 @@ box-shadow: 0 25px 50px 0 rgba(0,0,0,0.21);
   box-shadow: 0 10px 25px 0 rgba(0,0,0,0.2);
 }
 
-@mixin turbo-pizazz {
-	background: linear-gradient(45deg, color('pizazz'), color('turbo'));
-}
-
-@mixin emerald-doger {
-	background: linear-gradient(45deg, color('emerald'), color('doger-blue'));
-}
-
-@mixin river-ebony {
-	background: linear-gradient(45deg, color('river-bed'), color('ebony-clay'));
-}
-
 @mixin heroEnterAnimation {
 	@keyframes growDown {
 		from {
@@ -154,29 +142,6 @@ box-shadow: 0 25px 50px 0 rgba(0,0,0,0.21);
 	    transform: translate3d(0, -2.3%, 0);
 	  }
 	}
-}
-
-@mixin loading-indicator {
-  pointer-events: none;
-
-  &::after {
-    content: '';
-    display: block;
-    width: 45px;
-    height: 45px;
-    margin: 100px auto auto auto;
-    border: 3px solid color('silver');
-    border-radius: 50%;
-    border-left-color: transparent;
-    animation: rotate 1.5s linear infinite;
-  }
-  @keyframes rotate {
-    to { transform: rotate(360deg); }
-  }
-}
-
-%loading-indicator {
-  @include loading-indicator;
 }
 
 @mixin scrollbar {

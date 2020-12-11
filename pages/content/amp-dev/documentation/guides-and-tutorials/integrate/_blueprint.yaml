@@ -9,3 +9,4 @@ bucket: true
 formats:
   - websites
   - email
+  - stories

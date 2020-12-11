@@ -1,9 +1,6 @@
 ---
 $title: amp-lightbox
 $category@: layout
-formats:
-- websites
-- ads
 teaser:
   text: Afficher des éléments dans une fenêtre modale "lightbox" en plein écran.
 ---

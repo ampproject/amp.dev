@@ -1,8 +1,6 @@
 ---
 $title: amp-auto-ads
 $category@: ads-analytics
-formats:
-- websites
 teaser:
   text: リモートで提供される設定ファイルを使用して、AMP ページに広告を動的に挿入します。
 ---

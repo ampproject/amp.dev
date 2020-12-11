@@ -14,94 +14,86 @@
 
 .#{template('pixi')} {
   $root: &;
-  padding: 0 15px;
   background: color('whisper');
 
   @media (min-width: 768px) {
-    display: grid;
-    grid-template-columns: repeat(24,1fr);
-    grid-gap: 30px;
     max-width: 1920px;
     margin: auto;
-    padding: 0;
+    padding: 60px 0;
   }
 
-  .#{utility('stage')} {
+  &-stage {
+    padding: 180px 15px 0 15px;
+    position: relative;
+
     @media (min-width: 768px) {
-      grid-column: 1/25;
+      padding: 120px 15px 0 35px;
     }
 
-    &.#{utility('container-fluid')} {
-      width: calc(100% + 30px);
-      margin: 0 -15px;
-      @media (min-width: 768px) {
-        width: 100%;
-        margin: 0;
-      }
-    }
-
-    .#{organism('stage')} {
-      margin-bottom: 50px;
-
-      &-content {
-        margin: 15em 0 2em;
-        @media (min-width: 768px) {
-          margin: 7vw 0 11vw;
-        }
-      }
-
-      &-image {
-        position: absolute;
-        top: -10%;
-        right: 0;
-        width: 62%;
-        height: 100%;
-        @media (min-width: 768px) {
-          height: 90%;
-          width: 60%;
-        }
-        @media (min-width: 1024px) {
-          width: 45%;
-        }
-
-        svg {
-          height: 100%;
-          @media (min-width: 1024px) {
-            height: 140%;
-            width: 100%;
-            transform: translateY(-5%);
-          }
-        }
-      }
-    }
-
-    & + .#{utility('content')} {
-      @media (min-width: 768px) {
-        margin-top: -15%;
-      }
-
-      h1 {
-        @include hl-xxlrg;
-      }
-    }
-  }
-
-  .#{utility('container-fluid')} {
-    @include container-fluid;
-  }
-
-  &-coming-soon {
-    margin-bottom: 100px;
-  }
-
-  &-intro {
-    margin-left: 17px;
-    @media (min-width: 768px) {
-      grid-column: 4/22;
-      margin-left: 0;
-    }
     @media (min-width: 1024px) {
-      grid-column: 7/17;
+      padding: 120px 15px 0 35px;
+    }
+
+    @media (min-width: 1280px) {
+      margin: 0 auto;
+      padding: 90px 0 0 35px;
+    }
+
+    h1 {
+      max-width: 600px;
+      margin: 0;
+      margin-bottom: -40px;
+      font-size: 42px;
+      line-height: 1.14;
+
+      @media (min-width: 768px) {
+        font-size: 64px;
+        margin-right: 360px;
+      }
+    }
+
+    svg {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 200px;
+      height: 200px;
+
+      @media (min-width: 768px) {
+        top: -70px;
+        right: 25px;
+        width: 250px;
+        height: 250px;
+      }
+
+      @media (min-width: 1024px) {
+        top: -70px;
+        right: -20px;
+        width: 360px;
+        height: 360px;
+      }
+    }
+  }
+
+  section {
+    max-width: 1050px;
+    margin: 0 auto;
+
+    @media (min-width: 1024px) {
+      margin: 30px auto;
+    }
+  }
+
+  &-ctas {
+    margin-bottom: 100px;
+
+    @media (min-width: 768px) {
+      display: flex;
+    }
+
+    a {
+      padding: 0 1.5em 1.5em 0;
+      transition-delay: 400ms;
     }
   }
 
@@ -109,167 +101,92 @@
     grid-column: 1/25;
     margin-bottom: 200px;
 
-    @media (min-width: 768px) {
-      grid-column: 3/22;
+    .pristine {
+      display: none;
     }
 
-    @media (min-width: 1024px) {
-      grid-column: 5/20;
-    }
+    &-input {
+      position: relative;
+      padding: 30px 0;
 
-    &-primary {
       @media (min-width: 768px) {
-        border: solid 2px color('mercury');
-        border-radius: 4px;
+        padding: 30px 15px;
       }
 
-      &-metric {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        padding: 25px 0;
-        border-bottom: solid 2px color('mercury');
+      @media (min-width: 1024px) {
+        padding: 50px 35px 30px 35px;
+      }
 
-        &.fast {
-          label {
-            color: color('malachite');
-          }
-          span:after {
-            border-top-color: color('malachite');
-          }
-        }
+      @media (min-width: 1280px) {
+        padding: 50px 0 30px 0;
+      }
 
-        &.average {
-          label {
-            color: color('buttercup');
-          }
-          span:after {
-            border-top-color: color('buttercup');
-          }
-        }
-
-        &.slow {
-          label {
-            color: color('red');
-          }
-          span:after {
-            border-top-color: color('red');
-          }
-        }
+      .#{atom('pixi-stripes')} {
+        top: 85px;
+        height: calc(100% - 80px);
 
         @media (min-width: 768px) {
-          padding: 38px 25px;
+          top: 90px;
+          margin-left: -15px;
+          margin-right: -15px;
         }
 
-        &:last-child {
-          border-bottom: 0;
+        @media (min-width: 1024px) {
+          top: 125px;
+          margin-left: -35px;
+          margin-right: -35px;
         }
 
-        &-title {
-          margin-top: 0;
-          line-height: 1.5;
-
-          @media (min-width: 768px) {
-            width: 35%;
-          }
-
-          label {
-            color: color('silver');
-          }
+        @media (min-width: 1280px) {
+          margin-left: 0;
+          margin-right: 0;
         }
+      }
 
-        &-info {
-          font-weight: bold;
-          font-size: 14px;
+      section {
+        position: relative;
+      }
+    }
 
-          @media (min-width: 768px) {
-            width: 35%;
-          }
+    &-reports {
+      grid-column: 1/25;
+      margin: 57px 0;
+      padding: 100px 15px 0 15px;
 
-          span {
-            font-weight: normal;
-          }
-        }
+      @media (min-width: 768px) {
+        margin: 57px 15px;
+      }
 
-        &-graph {
-          height: 100%;
-          width: 100%;
+      @media (min-width: 1024px) {
+        margin: 57px 15px;
+        padding: 100px 35px 0 35px;
+      }
 
-          @media (min-width: 768px) {
-            width: 62%;
-            padding-left: 30px;
-          }
+      @media (min-width: 1280px) {
+        margin: 57px 15px;
+        padding: 100px 0 0 0;
+      }
 
-          &-indicator {
-            display: flex;
-            flex-direction: column;
-            white-space: nowrap;
-            font-weight: bold;
-            transform: translateX(calc(100% - 16px));
-            transition: all .6s ease-in-out;
+      &-title {
+        display: flex;
+        margin: 30px 0 20px;
 
-            span {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              margin-right: auto;
-              transform: translate3d(calc(-50% + 8px), 0, 0);
+        h2 {
+          margin: 0 20px 0 0;
 
-              &:after {
-                content: '';
-                margin: 2px auto 5px auto;
-                border-left: 8px solid transparent;
-                border-right: 8px solid transparent;
-                border-top: 8px solid color('red');
-              }
-            }
-          }
-
-          &-bar {
-            position: relative;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, color('malachite') 0%,color('buttercup') 33%,color('buttercup') 66%, color('red') 100%);
-
-            span {
-              position: absolute;
-              top: -2px;
-              display: flex;
-              flex-direction: column;
-              line-height: 1;
-              white-space: nowrap;
-              transform: translateX(-50%);
-
-              &:first-child {
-                left: 33%;
-              }
-
-              &:last-child {
-                left: 66%;
-              }
-
-              &:before {
-                content: '';
-                width: 1px;
-                height: 10px;
-                margin: 0 auto 5px;
-                background: color('black');
-              }
-            }
+          &[dir='rtl'] {
+            margin: 0 0 0 20px;
           }
         }
       }
     }
   }
-}
 
-@keyframes rotating {
-  from {
-    transform: rotate(0deg);
+  #pixi-visibility-analytics {
+    display: none;
   }
 
-  to {
-    transform: rotate(360deg);
+  .analysis-complete > #pixi-visibility-analytics {
+    display: block;
   }
 }

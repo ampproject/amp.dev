@@ -1,10 +1,6 @@
 ---
 $title: amp-carousel
 $category@: layout
-formats:
-- websites
-- email
-- ads
 teaser:
   text: Yatay eksen boyunca birden çok benzer içerik parçası görüntüler.
 ---

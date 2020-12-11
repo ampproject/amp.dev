@@ -1,8 +1,6 @@
 ---
 $title: amp-auto-ads
 $category@: ads-analytics
-formats:
-- websites
 teaser:
   text: 通过使用远程提供的配置文件，向 AMP 网页中动态投放广告。
 ---

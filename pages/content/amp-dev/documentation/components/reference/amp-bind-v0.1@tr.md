@@ -1,10 +1,6 @@
 ---
 $title: amp-bind
 $category@: dynamic-content
-formats:
-- websites
-- email
-- ads
 teaser:
   text: Veri bağlama ve basit JS benzeri ifadeler aracılığıyla kullanıcı işlemlerine veya veri değişikliklerine yanıt olarak öğelerin değişmesine olanak tanır.
 ---

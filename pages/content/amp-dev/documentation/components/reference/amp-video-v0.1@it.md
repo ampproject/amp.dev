@@ -1,10 +1,6 @@
 ---
 $title: amp-video
 $category@: media
-formats:
-- websites
-- ads
-- stories
 teaser:
   text: Sostituisce il tag video HTML5.
 ---

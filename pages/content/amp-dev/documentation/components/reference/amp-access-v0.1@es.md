@@ -1,8 +1,6 @@
 ---
 $title: amp-access
 $category@: dynamic-content
-formats:
-- websites
 teaser:
   text: Proporciona un muro de pago de AMP y asistencia con la suscripción.
 ---

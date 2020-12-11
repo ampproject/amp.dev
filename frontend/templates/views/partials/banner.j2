@@ -1,18 +1,13 @@
 {% do doc.styles.addCssFile('/css/components/molecules/banner.css') %}
-
-<a id="blm-banner"
-   target="_blank"
-   href="https://blacklivesmatter.com">
-  #BlackLivesMatter
-</a>
 <div class="ap-m-banner">
   <a id="top-banner"
      class="ap-m-banner-link"
      target="_blank"
      href="https://go.amp.dev/devx-survey">
     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-    {{ _('Do you build things with AMP? Fill out the new AMP Developer Survey!') }}
+    {{ _('Do you build things with AMP? Fill out the AMP Developer Survey!') }}
   </a>
+  
 {% if banner_closeable %}
   <button class="ap-m-banner-dismiss" on="tap:{{ banner_notification_id }}.dismiss">
     {% do doc.icons.useIcon('/icons/close.svg') %}

@@ -8,7 +8,7 @@ AMP’s component system allows you to quickly build efficient and responsive fe
 
 - **built-in**: These are components that are included in the base AMP JavaScript library (specified in the `<head>` tag), such as [`amp-img`](../../../../documentation/components/reference/amp-img.md) and [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md).  These components can be used immediately in an AMP document.
 
-- **extended**: These are extensions to the base library that must be explicitly included in the document as custom elements.  Custom elements require specific scripts that are added to the `<head>` section (e.g., `<script async custom-element="[`amp-video`](../../../../documentation/components/reference/amp-video.md)  ...`).
+- **extended**: These are extensions to the base library that must be explicitly included in the document as custom elements.  Custom elements require specific scripts that are added to the `<head>` section (e.g., `<script async custom-element="`[`amp-video`](../../../../documentation/components/reference/amp-video.md)`...`).
 
 - **experimental**: These are components that are released but are not yet ready for wide use. Developers can choose to opt-in to use these features before they are fully released.  Learn more in [Experimental features](../../../../documentation/guides-and-tutorials/learn/experimental.md).
 

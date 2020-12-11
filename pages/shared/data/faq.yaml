@@ -192,6 +192,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/google/doubleclick.md
       - label: eADV
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/eadv.md
+      - label: Epeex
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/epeex.md
       - label: E-Planning
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/eplanning.md
       - label: Ezoic
@@ -593,10 +595,10 @@ email:
         url: https://postmaster.mail.ru/amp
         image:
           src: /static/img/email-clients/mailru.png
-      - label: Outlook.com
-        url: https://docs.microsoft.com/en-us/outlook/amphtml/
+      - label: Yahoo Mail
+        url: https://developer.verizonmedia.com/mail/amp-for-email/
         image:
-          src: /static/img/email-clients/outlook.png
+          src: /static/img/email-clients/yahoo-mail.png
   partners:
     - title: Email Platforms and Service Providers (ESPs)
       id: esp
@@ -657,9 +659,9 @@ email:
           url: https://sendpulse.com/
         - label: SocketLabs
           url: https://www.socketlabs.com/
-        - label: Sparkpost
+        - label: SparkPost
           url: https://www.sparkpost.com/
         - label: Tripolis
           url: https://www.tripolis.com/
-        - label: Twilio Sendgrid
+        - label: Twilio SendGrid
           url: https://www.twilio.com/sendgrid

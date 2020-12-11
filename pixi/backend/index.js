@@ -19,5 +19,6 @@ const express = require('express');
 const pixi = express.Router();
 
 pixi.use('/page-experience/api', require('./api.js'));
+pixi.use('/page-experience/mock-api/', require('./mockApi.js'));
 
 module.exports = pixi;

@@ -1,8 +1,6 @@
 ---
 $title: amp-addthis
 $category@: social
-formats:
-- websites
 teaser:
   text: AddThis の埋め込みウェブサイト ツールを表示します。
 ---

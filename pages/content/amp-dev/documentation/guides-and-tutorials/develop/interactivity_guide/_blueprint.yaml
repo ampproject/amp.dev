@@ -1,0 +1,9 @@
+$view: /views/detail/docs-detail.j2
+$path: /documentation/guides-and-tutorials/develop/interactivity_guide/{base}.html
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials/develop/interactivity_guide/{base}.html
+$title@: Interactivity
+$order: 2
+
+formats:
+  - websites

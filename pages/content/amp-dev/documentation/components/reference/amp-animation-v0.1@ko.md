@@ -1,9 +1,6 @@
 ---
 $title: amp-animation
 $category@: presentation
-formats:
-- websites
-- ads
 teaser:
   text: 애니메이션을 정의하고 표시합니다.
 ---

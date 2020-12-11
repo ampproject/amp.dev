@@ -1,8 +1,6 @@
 ---
 $title: amp-ad
 $category@: ads-analytics
-formats:
-- websites
 teaser:
   text: 広告を表示するコンテナです。
 ---
@@ -263,6 +261,7 @@ AMP 検証ツールの仕様で [amp-ad のルール](https://github.com/ampproj
 * [AdvertServe](https://github.com/ampproject/amphtml/blob/master/ads/advertserve.md)
 * [Adyoulike](https://github.com/ampproject/amphtml/blob/master/ads/adyoulike.md)
 * [Affiliate-B](https://github.com/ampproject/amphtml/blob/master/ads/affiliateb.md)
+* [AJA](https://github.com/ampproject/amphtml/blob/master/ads/aja.md)
 * [AMoAd](https://github.com/ampproject/amphtml/blob/master/ads/amoad.md)
 * [AppNexus](https://github.com/ampproject/amphtml/blob/master/ads/appnexus.md)
 * [AppVador](https://github.com/ampproject/amphtml/blob/master/ads/appvador.md)
@@ -288,6 +287,7 @@ AMP 検証ツールの仕様で [amp-ad のルール](https://github.com/ampproj
 * [Dot and Media](https://github.com/ampproject/amphtml/blob/master/ads/dotandads.md)
 * [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 * [eADV](https://github.com/ampproject/amphtml/blob/master/ads/eadv.md)
+* [Epeex](https://github.com/ampproject/amphtml/blob/master/ads/epeex.md)
 * [E-Planning](https://github.com/ampproject/amphtml/blob/master/ads/eplanning.md)
 * [Ezoic](https://github.com/ampproject/amphtml/blob/master/ads/ezoic.md)
 * [Felmat](https://github.com/ampproject/amphtml/blob/master/ads/felmat.md)
@@ -411,7 +411,6 @@ AMP 検証ツールの仕様で [amp-ad のルール](https://github.com/ampproj
 ## サポートされている埋め込みタイプ <a name="supported-embed-types"></a>
 
 * [24smi](https://github.com/ampproject/amphtml/blob/master/ads/24smi.md)
-* [AJA](https://github.com/ampproject/amphtml/blob/master/ads/aja.md)
 * [Bringhub](https://github.com/ampproject/amphtml/blob/master/ads/bringhub.md)
 * [Dable](https://github.com/ampproject/amphtml/blob/master/ads/dable.md)
 * [Engageya](https://github.com/ampproject/amphtml/blob/master/ads/engageya.md)

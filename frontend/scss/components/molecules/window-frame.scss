@@ -19,11 +19,11 @@ The window frame molecule imitates the window of a desktop device and can contai
 @import '../atoms/_text';
 
 .#{molecule('window-frame')} {
-  @include river-ebony;
+  @include gradient-dark;
 
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
-  border-top: calc(1.5rem + 1px) solid color('mirage');
+  border-top: calc(1.5rem + 1px) solid color('charade');
   display: inline-block;
   margin-bottom: auto;
   padding: .5rem;

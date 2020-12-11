@@ -1,128 +1,102 @@
 {
-  "coreWebVitals": {
-    "fieldData": {
-      "lcp": {
-        "unit": {
-          "name": "sec",
-          "conversion": 1000
-        },
-        "data": {
-          "percentile": 3100,
-          "distributions": [{
-            "min": 0,
-            "max": 2500,
-            "proportion": 0.6472574979735206
-          }, {
-            "min": 2500,
-            "max": 4000,
-            "proportion": 0.2092677654687922
-          }, {
-            "min": 4000,
-            "proportion": 0.14347473655768708
-          }],
-          "category": "AVERAGE"
-        }
-      },
-      "fid": {
-        "unit": {
-          "name": "ms",
-          "conversion": 1
-        },
-        "data": {
-          "percentile": 289,
-          "distributions": [{
-            "min": 0,
-            "max": 100,
-            "proportion": 0.09960294951786727
-          }, {
-            "min": 100,
-            "max": 300,
-            "proportion": 0.6889393079977311
-          }, {
-            "min": 300,
-            "proportion": 0.21145774248440163
-          }],
-          "category": "AVERAGE"
-        }
-      },
-      "cls": {
-        "unit": {
-          "name": "",
-          "conversion": 100
-        },
-        "data": {
-          "percentile": 7,
-          "distributions": [{
-            "min": 0,
-            "max": 10,
-            "proportion": 0.816381257056831
-          }, {
-            "min": 10,
-            "max": 25,
-            "proportion": 0.15609710199473087
-          }, {
-            "min": 25,
-            "proportion": 0.02752164094843808
-          }],
-          "category": "FAST"
-        }
-      }
-    },
-    "labData": {
-      "lcp": {
-        "id": "lcp",
-        "unit": {
-          "name": "sec",
-          "conversion": 1000
-        },
-        "data": {
-          "id": "largest-contentful-paint",
-          "title": "Largest Contentful Paint",
-          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn More](https://web.dev/lighthouse-largest-contentful-paint/)",
-          "score": 0.67,
-          "scoreDisplayMode": "numeric",
-          "displayValue": "3.4 s",
-          "numericValue": 3395.517406396801
-        }
-      },
-      "fid": {
-        "id": "fid",
-        "unit": {
-          "name": "ms",
-          "conversion": 1
-        },
-        "data": {
-          "id": "interactive",
-          "title": "Time to Interactive",
-          "description": "Time to interactive is the amount of time it takes for the page to become fully interactive. [Learn more](https://web.dev/interactive/).",
-          "score": 0.83,
-          "scoreDisplayMode": "numeric",
-          "displayValue": "4.5 s",
-          "numericValue": 4455.760415752422
-        }
-      },
-      "cls": {
-        "id": "cls",
-        "unit": {
-          "name": "",
-          "conversion": 100
-        },
-        "data": {
-          "id": "cumulative-layout-shift",
-          "title": "Cumulative Layout Shift",
-          "description": "Cumulative Layout Shift measures the movement of visible elements within the viewport. [Learn more](https://web.dev/cls/).",
-          "score": 1,
-          "scoreDisplayMode": "numeric",
-          "displayValue": "0",
-          "details": {
-            "items": [{
-              "finalLayoutShiftTraceEventFound": true
-            }],
-            "type": "debugdata"
-          },
-          "numericValue": 0
-        }
-      }
-    }
-  }
+	"pageExperience": {
+		"fieldData": {
+			"isAllFast": true,
+			"lcp": {
+				"unit": {
+					"name": "s",
+					"conversion": 1000,
+					"digits": 1
+				},
+				"data": {
+					"numericValue": 2372,
+					"category": "FAST",
+					"proportion": 0.7753324868864865
+				}
+			},
+			"fid": {
+				"unit": {
+					"name": "ms",
+					"conversion": 1,
+					"digits": 0
+				},
+				"data": {
+					"numericValue": 2,
+					"category": "FAST",
+					"proportion": 0.9918542336548767
+				}
+			},
+			"cls": {
+				"unit": {
+					"name": "",
+					"conversion": 100,
+					"digits": 2
+				},
+				"data": {
+					"numericValue": 7,
+					"category": "FAST",
+					"proportion": 0.816381257056831
+				}
+			}
+		},
+		"labData": {
+			"isAllFast": true,
+			"lcp": {
+				"unit": {
+					"name": "s",
+					"conversion": 1000,
+					"digits": 1
+				},
+				"data": {
+					"numericValue": 2495.517406396801,
+					"proportion": {
+						"fast": 2500,
+						"average": 4000,
+						"slow": 6000
+					},
+					"category": "FAST"
+				}
+			},
+			"tbt": {
+				"unit": {
+					"name": "ms",
+					"conversion": 1,
+					"digits": 0
+				},
+				"data": {
+					"numericValue": 296.4999999999998,
+					"proportion": {
+						"fast": 300,
+						"average": 600,
+						"slow": 900
+					},
+					"category": "FAST"
+				}
+			},
+			"cls": {
+				"unit": {
+					"name": "",
+					"conversion": 1,
+					"digits": 2
+				},
+				"data": {
+					"numericValue": 0,
+					"proportion": {
+						"fast": 0.1,
+						"average": 0.25,
+						"slow": 0.4
+					},
+					"category": "FAST"
+				}
+			}
+		},
+		"source": "fieldData"
+	},
+	"textCompression": true,
+	"fastServerResponse": true,
+	"usesAppropriatelySizedImages": false,
+	"usesOptimizedImages": false,
+	"usesWebpImages": false,
+	"fastFontDisplay": false,
+	"minifiedCss": true
 }

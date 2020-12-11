@@ -1,8 +1,6 @@
 ---
 $title: amp-access-laterpay
 $category@: dynamic-content
-formats:
-- websites
 teaser:
   text: このコンポーネントにより、サイト運営者は LaterPay マイクロペイメント プラットフォームと簡単に統合できます。
 ---

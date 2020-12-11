@@ -1,11 +1,8 @@
 {# Simply set to False to disable banner #}
-{% set show_banner = True %}
+{% set show_banner = False %}
 {% set banner_notification_id = 'survey-q3' %}
-{% set banner_closeable = True %}
 
-{% if show_banner and banner_closeable %}
-{# Outside of the banner.j2 partial as it needs to be at root level
-to provide its state to other components #}
+{% if show_banner %}
 <amp-user-notification id="{{ banner_notification_id }}" class="ap-m-banner-user-notification" layout="nodisplay">
 </amp-user-notification>
 {% endif %}

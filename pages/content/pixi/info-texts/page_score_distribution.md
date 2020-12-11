@@ -1,0 +1,1 @@
+The page score distribution chart shows the percentage of pages that have scores that lie within the Good, Needs Improvement and Poor thresholds. To pass Core Web Vitals, your page should have >75% of visits falling within the Good threshold.

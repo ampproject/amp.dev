@@ -74,7 +74,7 @@ The ghost frame desktop wraps an element with a desktop-like frame.
 
   // ui
   &:before {
-    background-image: radial-gradient(circle at center, color('silver') 25%, transparent 25%), radial-gradient(circle at center, color('silver') 25%, transparent 25%), radial-gradient(circle at center, color('silver') 25%, transparent 25%);
+    background-image: radial-gradient(circle at center, color('iron') 25%, transparent 25%), radial-gradient(circle at center, color('iron') 25%, transparent 25%), radial-gradient(circle at center, color('iron') 25%, transparent 25%);
     background-position: 0%, 2%, 3.9%;
     background-repeat: no-repeat;
     background-size: 4% 100%, 4% 100%, 4% 100%;

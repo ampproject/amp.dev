@@ -1,6 +1,6 @@
 ---
 $title: Optimize your hosted AMP pages
-$order: 20
+$order: 7
 description: 'The AMP runtime is optimized for speed and if your AMP pages are served by an AMP cache, they are fully optimized and offer the highest loading performance ...'
 
 formats:
@@ -43,7 +43,7 @@ Here is the recommended order for the `<head>` section in an AMP page:
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <meta name="description" content="This is the AMP Boilerplate.">
     <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
     <link rel="preload" as="script" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
@@ -150,7 +150,7 @@ Just make sure to place the preload statements _after_ the viewport declaration 
 
 [sourcecode:html]
 
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="viewport" content="width=device-width">
 ...
 <link rel="preload" media="(max-width: 415px)" ...>
 [/sourcecode]

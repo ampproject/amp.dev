@@ -1,10 +1,6 @@
 ---
 $title: amp-video
 $category@: media
-formats:
-- websites
-- ads
-- stories
 teaser:
     text:  HTML5 동영상 태그를 대체합니다.
 ---

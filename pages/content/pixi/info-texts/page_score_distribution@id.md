@@ -1,0 +1,1 @@
+Bagan distribusi skor halaman menunjukkan persentase halaman yang memiliki skor yang berada dalam ambang batas Baik, Perlu Peningkatan, dan Buruk. Untuk lulus Core Web Vitals, halaman Anda harus memiliki >75% kunjungan yang berada dalam ambang batas Baik.

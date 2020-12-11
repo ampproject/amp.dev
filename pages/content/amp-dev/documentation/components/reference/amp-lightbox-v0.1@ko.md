@@ -1,9 +1,6 @@
 ---
 $title: amp-lightbox
 $category@: layout
-formats:
-- websites
-- ads
 teaser:
   text: 전체 표시 영역 '라이트박스' 모달에 요소를 표시합니다.
 ---

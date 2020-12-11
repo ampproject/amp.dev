@@ -1,8 +1,6 @@
 ---
 $title: amp-social-share
 $category@: ads-analytics
-formats:
-- websites
 teaser:
   text: Paylaşım izleme özelliği geliştirme aşamasındadır.
 ---

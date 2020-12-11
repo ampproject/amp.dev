@@ -23,29 +23,6 @@
     grid-column: 1 / 16;
   }
 
-  .amp-carousel-button {
-    width: 3em;
-    height: 3em;
-    border-radius: 50%;
-    box-shadow: 0 10px 15px 0 rgba(0,0,0,0.4);
-    transition: 400ms;
-    background-color: color('concrete');
-
-    &-prev {
-      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='%23005AF0'%3E%3Cpath d='M15 8.25H5.87l4.19-4.19L9 3 3 9l6 6 1.06-1.06-4.19-4.19H15v-1.5z'/%3E%3C/svg%3E");
-    }
-
-    &-next {
-      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='%23005AF0' %3E%3Cpath d='M9 3L7.94 4.06l4.19 4.19H3v1.5h9.13l-4.19 4.19L9 15l6-6z'/%3E%3C/svg%3E");
-    }
-
-    &:hover {
-      cursor: pointer;
-      box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.2);
-      background-color: #FFFFFF;
-    }
-  }
-
   &-slide {
     display: block;
     margin-left: 85px;

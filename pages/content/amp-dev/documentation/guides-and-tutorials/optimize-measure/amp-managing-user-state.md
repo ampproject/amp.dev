@@ -1,6 +1,6 @@
 ---
 $title: Manage non-authenticated user state with AMP
-$order: 1000
+order: 2
 formats:
   - websites
 teaser:
@@ -29,6 +29,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
+
+
 
 **Table of contents**
 
@@ -156,7 +158,7 @@ In walking through the technical guidance below, let's assume that you’ll be b
 For clarity throughout the rest of this document, we’ll call various strings of characters that are identifiers by more readable names preceded by a dollar sign (`$`):
 
 [sourcecode:text]
-n34ic982n2386n30 ⇒ \$sample_id
+n34ic982n2386n30 ⇒ $sample_id
 [/sourcecode]
 
 **Our use case:** Throughout this guide we will work on an example designed to achieve simple pageview tracking (i.e., analytics) in which we want to produce the most accurate user counting possible. This means that even if the user is accessing a particular publisher’s content from different contexts (including crossing between AMP and non-AMP pages), we want these visits to be counted toward a singular understanding of the user that is the same as if the user were browsing only on such publisher’s traditional non-AMP pages.
@@ -186,26 +188,23 @@ This means there are two cases for the state of non-AMP pages on the publisher o
 **Case #1: Initial visit.** Upon first landing on the non-AMP page, there will be no cookie. If you checked for the cookie before one was set, you’d see no values set in the cookie corresponding to the `uid`:
 
 [sourcecode:bash]
-
 > document.cookie
-> ""
-> [/sourcecode]
+  ""
+[/sourcecode]
 
 Sometime in the initial load, the cookie should be set, so that if you do this once the page is loaded, you will see a value has been set:
 
 [sourcecode:bash]
-
 > document.cookie
-> "uid=\$publisher_origin_identifier"
-> [/sourcecode]
+  "uid=$publisher_origin_identifier"
+[/sourcecode]
 
 **Case #2: Non-initial visit.** There will be a cookie set. Thus, if you open the developer console on the page, you’d see:
 
 [sourcecode:bash]
-
 > document.cookie
-> "uid=\$publisher_origin_identifier"
-> [/sourcecode]
+  "uid=$publisher_origin_identifier"
+[/sourcecode]
 
 ##### Send analytics pings <a name="send-analytics-pings"></a>
 
@@ -220,7 +219,7 @@ https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_ident
 Note that in the above example the identifier for the user is indicated by a specific query param, `user_id`:
 
 [sourcecode:text]
-user_id=\$publisher_origin_identifier
+user_id=$publisher_origin_identifier
 [/sourcecode]
 
 The use of “`user_id`” here should be determined by what your analytics server expects to process and is not specifically tied to what you call the cookie that stores the identifier locally.
@@ -397,33 +396,30 @@ Our approach will take advantage of two types of [AMP variable substitutions](ht
 
 [sourcecode:html]
 <a
-href="https://example.com/step2.html?ref_id=CLIENT_ID(uid)"
-data-amp-replace="CLIENT_ID"
-
-> </a>
-> [/sourcecode]
+  href="https://example.com/step2.html?ref_id=CLIENT_ID(uid)"
+  data-amp-replace="CLIENT_ID"
+></a>
+[/sourcecode]
 
 **Alternative solution for passing Client ID to the outgoing links:** Define the new query parameter `ref_id` as part of the data attribute `data-amp-addparams` and for queries that needs parameter substitution provide those details as part of `data-amp-replace`. With this approach the URL would look clean and the parameters specified on `data-amp-addparams` will be dynamically added
 
 [sourcecode:html]
 <a
-href="https://example.com/step2.html"
-data-amp-addparams="ref_id=CLIENT_ID(uid)"
-data-amp-replace="CLIENT_ID"
-
-> </a>
-> [/sourcecode]
+  href="https://example.com/step2.html"
+  data-amp-addparams="ref_id=CLIENT_ID(uid)"
+  data-amp-replace="CLIENT_ID"
+></a>
+[/sourcecode]
 
 For passing multiple query parameters through `data-amp-addparams` have those `&` separated like
 
 [sourcecode:html]
 <a
-href="https://example.com/step2.html"
-data-amp-addparams="ref_id=CLIENT_ID(uid)&pageid=p123"
-data-amp-replace="CLIENT_ID"
-
-> </a>
-> [/sourcecode]
+  href="https://example.com/step2.html"
+  data-amp-addparams="ref_id=CLIENT_ID(uid)&pageid=p123"
+  data-amp-replace="CLIENT_ID"
+></a>
+[/sourcecode]
 
 **To update form inputs to use a Client ID substitution:** Define a name for the input field, such as `orig_user_id`. Specify the `default-value` of the form field to be the value of AMP’s Client ID substitution:
 

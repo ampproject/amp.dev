@@ -1,0 +1,2581 @@
+{
+	"captchaResult": "CAPTCHA_NOT_NEEDED",
+	"kind": "pagespeedonline#result",
+	"id": "https://amp.dev/test/url/",
+	"loadingExperience": {
+		"id": "https://amp.dev",
+		"metrics": {
+			"FIRST_INPUT_DELAY_MS": {
+				"percentile": 289,
+				"distributions": [
+					{"min": 0, "max": 100, "proportion": 0.09960294951786727},
+					{"min": 100, "max": 300, "proportion": 0.6889393079977311},
+					{"min": 300, "proportion": 0.21145774248440163}
+				],
+				"category": "AVERAGE"
+			},
+			"CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+				"percentile": 0,
+				"distributions": [
+					{
+						"min": 0,
+						"max": 10,
+						"proportion": 0.932653831634579
+					},
+					{
+						"min": 10,
+						"max": 25,
+						"proportion": 0.0041860660207206071
+					},
+					{
+						"min": 25,
+						"proportion": 0.06316010234470032
+					}
+				],
+				"category": "FAST"
+			},
+			"FIRST_CONTENTFUL_PAINT_MS": {
+				"percentile": 1863,
+				"distributions": [
+					{
+						"min": 0,
+						"max": 1000,
+						"proportion": 0.37251953925868864
+					},
+					{
+						"min": 1000,
+						"max": 3000,
+						"proportion": 0.548093291417637
+					},
+					{
+						"min": 3000,
+						"proportion": 0.079387169323674525
+					}
+				],
+				"category": "AVERAGE"
+			},
+			"LARGEST_CONTENTFUL_PAINT_MS": {
+				"percentile": 3100,
+				"distributions": [
+					{"min": 0, "max": 2500, "proportion": 0.6472574979735206},
+					{"min": 2500, "max": 4000, "proportion": 0.2092677654687922},
+					{"min": 4000, "proportion": 0.14347473655768708}
+				],
+				"category": "AVERAGE"
+			}
+		},
+		"overall_category": "AVERAGE",
+		"initial_url": "https://amp.dev/test/url/",
+		"origin_fallback": false
+	},
+	"originLoadingExperience": {
+		"id": "https://amp.dev",
+		"metrics": {
+			"FIRST_INPUT_DELAY_MS": {
+				"percentile": 2,
+				"distributions": [
+					{
+						"min": 0,
+						"max": 100,
+						"proportion": 0.99185423365487668
+					},
+					{
+						"min": 100,
+						"max": 300,
+						"proportion": 0.0042515183994283664
+					},
+					{
+						"min": 300,
+						"proportion": 0.0038942479456948922
+					}
+				],
+				"category": "FAST"
+			},
+			"CUMULATIVE_LAYOUT_SHIFT_SCORE": {
+				"percentile": 0,
+				"distributions": [
+					{
+						"min": 0,
+						"max": 10,
+						"proportion": 0.932653831634579
+					},
+					{
+						"min": 10,
+						"max": 25,
+						"proportion": 0.0041860660207206071
+					},
+					{
+						"min": 25,
+						"proportion": 0.06316010234470032
+					}
+				],
+				"category": "FAST"
+			},
+			"FIRST_CONTENTFUL_PAINT_MS": {
+				"percentile": 1863,
+				"distributions": [
+					{
+						"min": 0,
+						"max": 1000,
+						"proportion": 0.37251953925868864
+					},
+					{
+						"min": 1000,
+						"max": 3000,
+						"proportion": 0.548093291417637
+					},
+					{
+						"min": 3000,
+						"proportion": 0.079387169323674525
+					}
+				],
+				"category": "AVERAGE"
+			},
+			"LARGEST_CONTENTFUL_PAINT_MS": {
+				"percentile": 2372,
+				"distributions": [
+					{
+						"min": 0,
+						"max": 2500,
+						"proportion": 0.77533248688648648
+					},
+					{
+						"min": 2500,
+						"max": 4000,
+						"proportion": 0.15472022366716684
+					},
+					{
+						"min": 4000,
+						"proportion": 0.069947289446346775
+					}
+				],
+				"category": "FAST"
+			}
+		},
+		"overall_category": "AVERAGE",
+		"initial_url": "https://amp.dev/test/url/"
+	},
+	"lighthouseResult": {
+		"requestedUrl": "https://amp.dev/test/url/",
+		"finalUrl": "https://amp.dev/test/url/",
+		"lighthouseVersion": "6.1.0",
+		"userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/83.0.4103.93 Safari/537.36",
+		"fetchTime": "2020-09-02T06:17:33.187Z",
+		"environment": {
+			"networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4143.7 Safari/537.36 Chrome-Lighthouse",
+			"hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/83.0.4103.93 Safari/537.36",
+			"benchmarkIndex": 725
+		},
+		"runWarnings": [],
+		"configSettings": {
+			"emulatedFormFactor": "desktop",
+			"locale": "en-US",
+			"onlyCategories": [
+				"performance"
+			],
+			"channel": "lr"
+		},
+		"audits": {
+			"uses-optimized-images": {
+				"id": "uses-optimized-images",
+				"title": "Efficiently encode images",
+				"description": "Optimized images load faster and consume less cellular data. [Learn more](https://web.dev/uses-optimized-images/).",
+				"score": 0.67,
+				"scoreDisplayMode": "numeric",
+				"displayValue": "Potential savings of 47 KiB",
+				"details": {
+					"type": "opportunity",
+					"items": [
+						{
+							"totalBytes": 37159,
+							"wastedBytes": 26084,
+							"fromProtocol": true,
+							"isCrossOrigin": true,
+							"url": "https://blog.amp.dev/wp-content/uploads/2020/08/Asset-2-80-300x150.jpg"
+						},
+						{
+							"url": "https://blog.amp.dev/wp-content/uploads/2020/07/Asset-1-80-300x150.jpg",
+							"wastedBytes": 22181,
+							"totalBytes": 33542,
+							"fromProtocol": true,
+							"isCrossOrigin": true
+						}
+					],
+					"headings": [
+						{"key": "url", "valueType": "thumbnail"},
+						{"valueType": "url", "key": "url", "label": "URL"},
+						{
+							"key": "totalBytes",
+							"valueType": "bytes",
+							"label": "Resource Size"
+						},
+						{
+							"key": "wastedBytes",
+							"valueType": "bytes",
+							"label": "Potential Savings"
+						}
+					],
+					"overallSavingsMs": 450,
+					"overallSavingsBytes": 48265
+				},
+				"warnings": [],
+				"numericValue": 450
+			},
+			"final-screenshot": {
+				"id": "final-screenshot",
+				"title": "Final Screenshot",
+				"description": "The last screenshot captured of the pageload.",
+				"score": null,
+				"scoreDisplayMode": "informative",
+				"details": {
+					"timing": 4171,
+					"data": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBA17uH9tvl+6nRBr7h/bb5fupo2BgsNT0lZIgIiIP//Z",
+					"type": "screenshot",
+					"timestamp": 3959976611265
+				}
+			},
+			"network-rtt": {
+				"id": "network-rtt",
+				"title": "Network Round Trip Times",
+				"description": "Network round trip times (RTT) have a large impact on performance. If the RTT to an origin is high, it's an indication that servers closer to the user could improve performance. [Learn more](https://hpbn.co/primer-on-latency-and-bandwidth/).",
+				"score": null,
+				"scoreDisplayMode": "informative",
+				"displayValue": "0 ms",
+				"details": {
+					"headings": [],
+					"type": "table",
+					"items": []
+				},
+				"numericValue": 0
+			},
+			"render-blocking-resources": {
+				"id": "render-blocking-resources",
+				"title": "Eliminate render-blocking resources",
+				"description": "Resources are blocking the first paint of your page. Consider delivering critical JS/CSS inline and deferring all non-critical JS/styles. [Learn more](https://web.dev/render-blocking-resources/).",
+				"score": 0.84,
+				"scoreDisplayMode": "numeric",
+				"displayValue": "Potential savings of 190 ms",
+				"details": {
+					"headings": [
+						{
+							"label": "URL",
+							"valueType": "url",
+							"key": "url"
+						},
+						{
+							"key": "totalBytes",
+							"valueType": "bytes",
+							"label": "Transfer Size"
+						},
+						{
+							"label": "Potential Savings",
+							"key": "wastedMs",
+							"valueType": "timespanMs"
+						}
+					],
+					"overallSavingsMs": 190,
+					"type": "opportunity",
+					"items": [
+						{
+							"totalBytes": 1721,
+							"url": "https://fonts.googleapis.com/css?family=Noto+Sans",
+							"wastedMs": 230
+						}
+					]
+				},
+				"numericValue": 190
+			},
+			"offscreen-images": {
+				"id": "offscreen-images",
+				"title": "Defer offscreen images",
+				"description": "Consider lazy-loading offscreen and hidden images after all critical resources have finished loading to lower time to interactive. [Learn more](https://web.dev/offscreen-images/).",
+				"score": 1,
+				"scoreDisplayMode": "numeric",
+				"details": {
+					"headings": [],
+					"overallSavingsBytes": 0,
+					"items": [],
+					"type": "opportunity",
+					"overallSavingsMs": 0
+				},
+				"warnings": [],
+				"numericValue": 0
+			},
+			"critical-request-chains": {
+				"id": "critical-request-chains",
+				"title": "Avoid chaining critical requests",
+				"description": "The Critical Request Chains below show you what resources are loaded with a high priority. Consider reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load. [Learn more](https://web.dev/critical-request-chains/).",
+				"score": null,
+				"scoreDisplayMode": "informative",
+				"displayValue": "4 chains found",
+				"details": {
+					"type": "criticalrequestchain",
+					"longestChain": {
+						"transferSize": 15437,
+						"length": 1,
+						"duration": 2913.230000063777
+					},
+					"chains": {
+						"23.106": {
+							"request": {
+								"startTime": 3959975.328423,
+								"endTime": 3959975.33325,
+								"transferSize": 1560,
+								"url": "https://fonts.googleapis.com/css?family=Google%20Sans%3A400%2C500",
+								"responseReceivedTime": 3959975.333246
+							}
+						},
+						"23.115": {
+							"request": {
+								"endTime": 3959975.354476,
+								"startTime": 3959975.345062,
+								"transferSize": 15229,
+								"responseReceivedTime": 3959975.354474,
+								"url": "https://fonts.gstatic.com/s/googlesans/v16/4UaGrENHsxJlGDuGo1OIlL3Owp5eKQtG.woff2"
+							}
+						},
+						"780DF6C1483324616AFB900A23ED3BD8": {
+							"request": {
+								"startTime": 3959972.441699,
+								"responseReceivedTime": 3959973.384806,
+								"url": "https://amp.dev/test/url/",
+								"endTime": 3959973.384809,
+								"transferSize": 22982
+							},
+							"children": {
+								"23.61": {
+									"request": {
+										"responseReceivedTime": 3959974.236375,
+										"endTime": 3959974.236729,
+										"url": "blob:https://amp.dev/79963491-dd85e357a7b6",
+										"startTime": 3959974.17123,
+										"transferSize": 0
+									}
+								},
+								"23.2": {
+									"request": {
+										"url": "https://fonts.googleapis.com/css?family=Noto+Sans",
+										"endTime": 3959973.407887,
+										"responseReceivedTime": 3959973.407884,
+										"transferSize": 1721,
+										"startTime": 3959973.402859
+									}
+								},
+								"23.34": {
+									"request": {
+										"endTime": 3959973.777277,
+										"url": "https://amp.dev/fonts/rfont.woff?026f947e111d1e6f3844201e97a371c1",
+										"responseReceivedTime": 3959973.777276,
+										"transferSize": 2568,
+										"startTime": 3959973.427634
+									}
+								},
+								"23.37": {
+									"request": {
+										"url": "https://amp.dev/fonts/UnnamedSans-Bold.ttf",
+										"responseReceivedTime": 3959974.030891,
+										"transferSize": 166673,
+										"startTime": 3959973.427053,
+										"endTime": 3959974.030893
+									}
+								}
+							}
+						},
+						"23.120": {
+							"request": {
+								"transferSize": 15437,
+								"endTime": 3959975.354929,
+								"startTime": 3959975.347556,
+								"url": "https://fonts.gstatic.com/s/googlesans/v16/4UabrENHsxJlGDuGo1OIlLU94YtzCwZsPF4o.woff2",
+								"responseReceivedTime": 3959975.354928
+							}
+						}
+					}
+				}
+			},
+			"user-timings": {
+				"id": "user-timings",
+				"title": "User Timing marks and measures",
+				"description": "Consider instrumenting your app with the User Timing API to measure your app's real-world performance during key user experiences. [Learn more](https://web.dev/user-timings/).",
+				"score": null,
+				"scoreDisplayMode": "informative",
+				"displayValue": "8 user timings",
+				"details": {
+					"type": "table",
+					"headings": [
+						{
+							"itemType": "text",
+							"key": "name",
+							"text": "Name"
+						},
+						{
+							"key": "timingType",
+							"itemType": "text",
+							"text": "Type"
+						},
+						{
+							"text": "Start Time",
+							"itemType": "ms",
+							"key": "startTime",
+							"granularity": 0.01
+						},
+						{
+							"key": "duration",
+							"granularity": 0.01,
+							"text": "Duration",
+							"itemType": "ms"
+						}
+					],
+					"items": [
+						{
+							"timingType": "Mark",
+							"startTime": 1124.49,
+							"name": "is"
+						},
+						{
+							"name": "dr",
+							"timingType": "Mark",
+							"startTime": 1126.932
+						},
+						{
+							"timingType": "Mark",
+							"startTime": 1139.093,
+							"name": "visible"
+						},
+						{
+							"startTime": 1139.139,
+							"timingType": "Mark",
+							"name": "ofv"
+						},
+						{
+							"timingType": "Mark",
+							"name": "e_is",
+							"startTime": 1288.918
+						},
+						{
+							"startTime": 1437.296,
+							"name": "mbv",
+							"timingType": "Mark"
+						},
+						{
+							"name": "pc",
+							"startTime": 1630.999,
+							"timingType": "Mark"
+						},
+						{
+							"startTime": 2295.979,
+							"name": "ol",
+							"timingType": "Mark"
+						}
+					]
+				}
+			},
+			"layout-shift-elements": {
+				"id": "layout-shift-elements",
+				"title": "Avoid large layout shifts",
+				"description": "These DOM elements contribute most to the CLS of the page.",
+				"score": null,
+				"scoreDisplayMode": "informative",
+				"displayValue": "1 element found",
+				"details": {
+					"items": [
+						{
+							"node": {
+								"path": "1,HTML,1,BODY,0,DIV,0,DIV,1,DIV,0,DIV,0,DIV,0,DIV,1,DIV,0,A,1,SPAN",
+								"nodeLabel": "r/test",
+								"snippet": "\u003cspan\u003e",
+								"type": "node",
+								"selector": "div.ampCard \u003e div.ampCard__Info \u003e a.ampCard__Link \u003e span"
+							},
+							"score": 4.316609753962e-06
+						}
+					],
+					"type": "table",
+					"headings": [
+						{
+							"text": "Element",
+							"itemType": "node",
+							"key": "node"
+						},
+						{
+							"text": "CLS Contribution",
+							"itemType": "numeric",
+							"granularity": 0.001,
+							"key": "score"
+						}
+					]
+				}
+			},
+			"no-document-write": {
+				"id": "no-document-write",
+				"title": "Avoids `document.write()`",
+				"description": "For users on slow connections, external scripts dynamically injected via `document.write()` can delay page load by tens of seconds. [Learn more](https://web.dev/no-document-write/).",
+				"score": 1,
+				"scoreDisplayMode": "binary",
+				"details": {
+					"headings": [],
+					"type": "table",
+					"items": []
+				}
+			},
+			"uses-webp-images": {
+				"id": "uses-webp-images",
+				"title": "Serve images in next-gen formats",
+				"description": "Image formats like JPEG 2000, JPEG XR, and WebP often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more](https://web.dev/uses-webp-images/).",
+				"score": 0.87,
+				"scoreDisplayMode": "numeric",
+				"displayValue": "Potential savings of 187 KiB",
+				"details": {
+					"type": "opportunity",
+					"headings": [
+						{
+							"valueType": "thumbnail",
+							"key": "url"
+						},
+						{
+							"valueType": "url",
+							"label": "URL",
+							"key": "url"
+						},
+						{
+							"key": "totalBytes",
+							"label": "Resource Size",
+							"valueType": "bytes"
+						},
+						{
+							"label": "Potential Savings",
+							"key": "wastedBytes",
+							"valueType": "bytes"
+						}
+					],
+					"overallSavingsMs": 160,
+					"overallSavingsBytes": 191492,
+					"items": [
+						{
+							"fromProtocol": true,
+							"url": "https://www.amp.dev/amp/img/chrome.png",
+							"wastedBytes": 23514,
+							"totalBytes": 29604,
+							"isCrossOrigin": true
+						}
+					]
+				},
+				"warnings": [],
+				"numericValue": 160
+			},
+			"network-requests": {
+				"id": "network-requests",
+				"title": "Network Requests",
+				"description": "Lists the network requests that were made during page load.",
+				"score": null,
+				"scoreDisplayMode": "informative",
+				"details": {
+					"type": "table",
+					"items": [
+						{
+							"resourceSize": 143022,
+							"endTime": 943.10999987646937,
+							"resourceType": "Document",
+							"url": "https://amp.dev/test/url/",
+							"finished": true,
+							"transferSize": 22982,
+							"startTime": 0,
+							"statusCode": 200,
+							"mimeType": "text/html"
+						},
+						{
+							"resourceSize": 2719,
+							"mimeType": "text/css",
+							"transferSize": 1721,
+							"finished": true,
+							"startTime": 961.159999947995,
+							"endTime": 966.188000049442,
+							"url": "https://fonts.googleapis.com/css?family=Noto+Sans",
+							"statusCode": 200,
+							"resourceType": "Stylesheet"
+						},
+						{
+							"url": "https://cdn.ampproject.org/v0/amp-lightbox-0.1.js",
+							"statusCode": 200,
+							"endTime": 966.77300008013844,
+							"resourceSize": 22754,
+							"finished": true,
+							"startTime": 961.495999712497,
+							"resourceType": "Script",
+							"mimeType": "text/javascript",
+							"transferSize": 9159
+						},
+						{
+							"statusCode": 200,
+							"resourceType": "Script",
+							"url": "https://cdn.ampproject.org/v0/amp-analytics-0.1.js",
+							"resourceSize": 97881,
+							"endTime": 976.60999977961183,
+							"transferSize": 30912,
+							"mimeType": "text/javascript",
+							"finished": true,
+							"startTime": 968.79700012505054
+						},
+						{
+							"finished": true,
+							"startTime": 969.04300013557076,
+							"transferSize": 18012,
+							"statusCode": 200,
+							"mimeType": "text/javascript",
+							"resourceSize": 49677,
+							"url": "https://cdn.ampproject.org/v0/amp-bind-0.1.js",
+							"resourceType": "Script",
+							"endTime": 980.72799993678927
+						},
+						{
+							"resourceType": "Script",
+							"resourceSize": 17320,
+							"startTime": 969.198000151664,
+							"endTime": 979.4000000692904,
+							"finished": true,
+							"url": "https://cdn.ampproject.org/v0/amp-social-share-0.1.js",
+							"statusCode": 200,
+							"transferSize": 7464,
+							"mimeType": "text/javascript"
+						}
+					],
+					"headings": [
+						{
+							"itemType": "url",
+							"text": "URL",
+							"key": "url"
+						},
+						{
+							"granularity": 1,
+							"text": "Start Time",
+							"itemType": "ms",
+							"key": "startTime"
+						},
+						{
+							"key": "endTime",
+							"itemType": "ms",
+							"granularity": 1,
+							"text": "End Time"
+						},
+						{
+							"text": "Transfer Size",
+							"key": "transferSize",
+							"itemType": "bytes",
+							"displayUnit": "kb",
+							"granularity": 1
+						},
+						{
+							"key": "resourceSize",
+							"text": "Resource Size",
+							"itemType": "bytes",
+							"displayUnit": "kb",
+							"granularity": 1
+						},
+						{
+							"itemType": "text",
+							"text": "Status Code",
+							"key": "statusCode"
+						},
+						{
+							"key": "mimeType",
+							"text": "MIME Type",
+							"itemType": "text"
+						},
+						{
+							"key": "resourceType",
+							"itemType": "text",
+							"text": "Resource Type"
+						}
+					]
+				}
+			},
+			"interactive": {
+				"id": "interactive",
+				"title": "Time to Interactive",
+				"description": "Time to interactive is the amount of time it takes for the page to become fully interactive. [Learn more](https://web.dev/interactive/).",
+				"score": 0.86,
+				"scoreDisplayMode": "numeric",
+				"displayValue": "2.7 s",
+				"numericValue": 2710
+			},
+			"server-response-time": {
+				"id": "server-response-time",
+				"title": "Reduce initial server response time",
+				"description": "Keep the server response time for the main document short because all other requests depend on it. [Learn more](https://web.dev/time-to-first-byte/).",
+				"score": 0,
+				"scoreDisplayMode": "binary",
+				"displayValue": "Root document took 940 ms",
+				"details": {
+					"headings": [],
+					"items": [],
+					"type": "opportunity",
+					"overallSavingsMs": 344.10699999999997
+				},
+				"numericValue": 944.107
+			},
+			"largest-contentful-paint": {
+				"id": "largest-contentful-paint",
+				"title": "Largest Contentful Paint",
+				"description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn More](https://web.dev/lighthouse-largest-contentful-paint/)",
+				"score": 0.73,
+				"scoreDisplayMode": "numeric",
+				"displayValue": "1.7 s",
+				"numericValue": 5000
+			},
+			"cumulative-layout-shift": {
+				"id": "cumulative-layout-shift",
+				"title": "Cumulative Layout Shift",
+				"description": "Cumulative Layout Shift measures the movement of visible elements within the viewport. [Learn more](https://web.dev/cls/).",
+				"score": 1,
+				"scoreDisplayMode": "numeric",
+				"displayValue": "0",
+				"details": {
+					"items": [
+						{
+							"finalLayoutShiftTraceEventFound": true
+						}
+					],
+					"type": "debugdata"
+				},
+				"numericValue": 4.316609753962e-06
+			},
+			"total-byte-weight": {
+				"id": "total-byte-weight",
+				"title": "Avoids enormous network payloads",
+				"description": "Large network payloads cost users real money and are highly correlated with long load times. [Learn more](https://web.dev/total-byte-weight/).",
+				"score": 0.99,
+				"scoreDisplayMode": "numeric",
+				"displayValue": "Total size was 1,842 KiB",
+				"details": {
+					"headings": [
+						{
+							"text": "URL",
+							"key": "url",
+							"itemType": "url"
+						},
+						{
+							"key": "totalBytes",
+							"text": "Transfer Size",
+							"itemType": "bytes"
+						}
+					],
+					"items": [
+						{
+							"totalBytes": 407110,
+							"url": "https://amp.dev/video/test.mp4"
+						},
+						{
+							"totalBytes": 214684,
+							"url": "https://www.amp.dev/videoplayer.js"
+						},
+						{
+							"url": "https://amp.dev/fonts/UnnamedSans-Bold.ttf",
+							"totalBytes": 166673
+						}
+					],
+					"type": "table"
+				},
+				"numericValue": 1886003
+			},
+			"performance-budget": {
+				"id": "performance-budget",
+				"title": "Performance budget",
+				"description": "Keep the quantity and size of network requests under the targets set by the provided performance budget. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/budgets).",
+				"score": null,
+				"scoreDisplayMode": "notApplicable"
+			},
+			"estimated-input-latency": {
+				"id": "estimated-input-latency",
+				"title": "Estimated Input Latency",
+				"description": "Estimated Input Latency is an estimate of how long your app takes to respond to user input, in milliseconds, during the busiest 5s window of page load. If your latency is higher than 50 ms, users may perceive your app as laggy. [Learn more](https://web.dev/estimated-input-latency/).",
+				"score": 1,
+				"scoreDisplayMode": "numeric",
+				"displayValue": "30 ms",
+				"numericValue": 28.333333333333339
+			},
+			"uses-text-compression": {
+				"id": "uses-text-compression",
+				"title": "Enable text compression",
+				"description": "Text-based resources should be served with compression (gzip, deflate or brotli) to minimize total network bytes. [Learn more](https://web.dev/uses-text-compression/).",
+				"score": 0.67,
+				"scoreDisplayMode": "numeric",
+				"details": {
+					"headings": [],
+					"overallSavingsMs": 0,
+					"items": [],
+					"type": "opportunity",
+					"overallSavingsBytes": 0
+				},
+				"numericValue": 0
+			},
+			"long-tasks": {
+				"id": "long-tasks",
+				"title": "Avoid long main-thread tasks",
+				"description": "Lists the longest tasks on the main thread, useful for identifying worst contributors to input delay. [Learn more](https://web.dev/long-tasks-devtools/)",
+				"score": null,
+				"scoreDisplayMode": "informative",
+				"displayValue": "5 long tasks found",
+				"details": {
+					"headings": [
+						{
+							"text": "URL",
+							"itemType": "url",
+							"key": "url"
+						},
+						{
+							"key": "startTime",
+							"text": "Start Time",
+							"granularity": 1,
+							"itemType": "ms"
+						},
+						{
+							"key": "duration",
+							"itemType": "ms",
+							"granularity": 1,
+							"text": "Duration"
+						}
+					],
+					"type": "table",
+					"items": [
+						{
+							"duration": 208,
+							"startTime": 2904,
+							"url": "https://www.amp.dev/videoplayer.js"
+						},
+						{
+							"url": "https://cdn.ampproject.org/v0.js",
+							"duration": 157,
+							"startTime": 1360
+						},
+						{
+							"url": "https://cdn.ampproject.org/rtv/012008150009001/v0/amp-ad-network-doubleclick-impl-0.1.js",
+							"duration": 67,
+							"startTime": 2445
+						},
+						{
+							"startTime": 1610,
+							"duration": 63,
+							"url": "https://cdn.ampproject.org/v0.js"
+						},
+						{
+							"duration": 63,
+							"url": "https://cdn.ampproject.org/v0.js",
+							"startTime": 2280
+						}
+					]
+				}
+			},
+			"third-party-summary": {
+				"id": "third-party-summary",
+				"title": "Minimize third-party usage",
+				"description": "Third-party code can significantly impact load performance. Limit the number of redundant third-party providers and try to load third-party code after your page has primarily finished loading. [Learn more](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/).",
+				"score": 1,
+				"scoreDisplayMode": "binary",
+				"displayValue": "Third-party code blocked the main thread for 20 ms",
+				"details": {
+					"items": [
+						{
+							"entity": {
+								"text": "AMP",
+								"type": "link",
+								"url": "https://amp.dev/"
+							},
+							"transferSize": 364928,
+							"blockingTime": 24.466,
+							"mainThreadTime": 1375.9269999999785
+						},
+						{
+							"mainThreadTime": 13.497,
+							"blockingTime": 0,
+							"entity": {
+								"text": "Google/Doubleclick Ads",
+								"type": "link",
+								"url": "https://www.doubleclickbygoogle.com/"
+							},
+							"transferSize": 266359
+						},
+						{
+							"blockingTime": 0,
+							"mainThreadTime": 2.018,
+							"entity": {
+								"text": "Google Fonts",
+								"url": "https://fonts.google.com/",
+								"type": "link"
+							},
+							"transferSize": 35630
+						},
+						{
+							"mainThreadTime": 0,
+							"transferSize": 1344,
+							"blockingTime": 0,
+							"entity": {
+								"text": "Amazon Ads",
+								"url": "https://ad.amazon.com/",
+								"type": "link"
+							}
+						},
+						{
+							"mainThreadTime": 0,
+							"transferSize": 1094,
+							"blockingTime": 0,
+							"entity": {
+								"text": "Other Google APIs/SDKs",
+								"url": "https://developers.google.com/apis-explorer/#p/",
+								"type": "link"
+							}
+						}
+					],
+					"summary": {
+						"wastedBytes": 669355,
+						"wastedMs": 24.466
+					},
+					"type": "table",
+					"headings": [
+						{
+							"key": "entity",
+							"text": "Third-Party",
+							"itemType": "link"
+						},
+						{
+							"key": "transferSize",
+							"granularity": 1,
+							"itemType": "bytes",
+							"text": "Transfer Size"
+						},
+						{
+							"itemType": "ms",
+							"granularity": 1,
+							"text": "Main-Thread Blocking Time",
+							"key": "blockingTime"
+						}
+					]
+				}
+			},
+			"bootup-time": {
+				"id": "bootup-time",
+				"title": "JavaScript execution time",
+				"description": "Consider reducing the time spent parsing, compiling, and executing JS. You may find delivering smaller JS payloads helps with this. [Learn more](https://web.dev/bootup-time/).",
+				"score": 0.9,
+				"scoreDisplayMode": "numeric",
+				"displayValue": "1.3 s",
+				"details": {
+					"items": [
+						{
+							"scriptParseCompile": 6.825,
+							"scripting": 857.79199999999241,
+							"url": "https://cdn.ampproject.org/v0.js",
+							"total": 1007.5789999999928
+						},
+						{
+							"url": "https://amp.dev/test/url/",
+							"total": 285.41500000000008,
+							"scriptParseCompile": 1.2550000000000001,
+							"scripting": 3.9659999999999993
+						},
+						{
+							"scriptParseCompile": 8.3990000000000009,
+							"total": 265.67900000000003,
+							"url": "https://cdn.ampproject.org/rtv/012008150009001/v0/amp-ad-network-doubleclick-impl-0.1.js",
+							"scripting": 160.385
+						}
+					],
+					"type": "table",
+					"summary": {
+						"wastedMs": 1282.3049999999923
+					},
+					"headings": [
+						{
+							"text": "URL",
+							"key": "url",
+							"itemType": "url"
+						},
+						{
+							"granularity": 1,
+							"itemType": "ms",
+							"text": "Total CPU Time",
+							"key": "total"
+						},
+						{
+							"key": "scripting",
+							"text": "Script Evaluation",
+							"itemType": "ms",
+							"granularity": 1
+						},
+						{
+							"key": "scriptParseCompile",
+							"granularity": 1,
+							"itemType": "ms",
+							"text": "Script Parse"
+						}
+					]
+				},
+				"numericValue": 1282.3049999999923
+			},
+			"redirects": {
+				"id": "redirects",
+				"title": "Avoid multiple page redirects",
+				"description": "Redirects introduce additional delays before the page can be loaded. [Learn more](https://web.dev/redirects/).",
+				"score": 1,
+				"scoreDisplayMode": "numeric",
+				"details": {
+					"items": [],
+					"headings": [],
+					"type": "opportunity",
+					"overallSavingsMs": 0
+				},
+				"numericValue": 0
+			},
+			"main-thread-tasks": {
+				"id": "main-thread-tasks",
+				"title": "Tasks",
+				"description": "Lists the toplevel main thread tasks that executed during page load.",
+				"score": null,
+				"scoreDisplayMode": "informative",
+				"details": {
+					"items": [
+						{
+							"startTime": 980.116,
+							"duration": 10.131
+						},
+						{
+							"duration": 12.516,
+							"startTime": 994.045
+						},
+						{
+							"startTime": 1012.167,
+							"duration": 53.885
+						},
+						{
+							"startTime": 1079.594,
+							"duration": 20.651
+						},
+						{
+							"startTime": 1110.125,
+							"duration": 7.979
+						},
+						{
+							"duration": 156.97,
+							"startTime": 1135.596
+						},
+						{
+							"duration": 27.338,
+							"startTime": 1292.666
+						},
+						{
+							"startTime": 1321.09,
+							"duration": 9.85
+						},
+						{
+							"duration": 29.531,
+							"startTime": 1331.006
+						},
+						{
+							"startTime": 1360.554,
+							"duration": 54.568
+						},
+						{
+							"startTime": 1415.192,
+							"duration": 11.821
+						},
+						{
+							"duration": 29.363,
+							"startTime": 1432.397
+						},
+						{
+							"duration": 6.325,
+							"startTime": 1463.742
+						},
+						{
+							"startTime": 1481.032,
+							"duration": 19.806
+						},
+						{
+							"duration": 62.751,
+							"startTime": 1504.398
+						},
+						{
+							"startTime": 1574.833,
+							"duration": 19.449
+						},
+						{
+							"startTime": 1594.622,
+							"duration": 10.535
+						},
+						{
+							"startTime": 1609.313,
+							"duration": 7.204
+						},
+						{
+							"duration": 21.561,
+							"startTime": 1616.531
+						},
+						{
+							"startTime": 1640.474,
+							"duration": 5.772
+						},
+						{
+							"duration": 15.937,
+							"startTime": 1647.067
+						},
+						{
+							"startTime": 1665.972,
+							"duration": 34.913
+						},
+						{
+							"duration": 5.706,
+							"startTime": 1700.981
+						},
+						{
+							"startTime": 1709.732,
+							"duration": 8.288
+						},
+						{
+							"startTime": 1721.554,
+							"duration": 6.5
+						},
+						{
+							"duration": 6.579,
+							"startTime": 1728.071
+						},
+						{
+							"startTime": 1735.973,
+							"duration": 5.534
+						},
+						{
+							"startTime": 1746.671,
+							"duration": 8.416
+						},
+						{
+							"duration": 8.236,
+							"startTime": 1755.101
+						},
+						{
+							"duration": 63.088,
+							"startTime": 1765.535
+						},
+						{
+							"startTime": 1838.595,
+							"duration": 5.538
+						},
+						{
+							"duration": 10.325,
+							"startTime": 1873.705
+						},
+						{
+							"duration": 208.02,
+							"startTime": 1916.944
+						},
+						{
+							"duration": 24.736,
+							"startTime": 2125.211
+						},
+						{
+							"startTime": 2163.155,
+							"duration": 24.103
+						},
+						{
+							"startTime": 2187.348,
+							"duration": 26.559
+						},
+						{
+							"duration": 6.298,
+							"startTime": 2234.876
+						},
+						{
+							"startTime": 2241.196,
+							"duration": 11.749
+						},
+						{
+							"duration": 17.725,
+							"startTime": 2260.491
+						},
+						{
+							"duration": 6.526,
+							"startTime": 2278.26
+						},
+						{
+							"duration": 6.563,
+							"startTime": 2284.83
+						},
+						{
+							"duration": 10.448,
+							"startTime": 2300.348
+						},
+						{
+							"startTime": 2315.574,
+							"duration": 5.711
+						},
+						{
+							"duration": 5.099,
+							"startTime": 2330.568
+						},
+						{
+							"duration": 19.037,
+							"startTime": 2337.238
+						},
+						{
+							"duration": 25.475,
+							"startTime": 2380.561
+						},
+						{
+							"duration": 12.6,
+							"startTime": 2431.725
+						},
+						{
+							"duration": 8.854,
+							"startTime": 2458.991
+						},
+						{
+							"duration": 16.074,
+							"startTime": 2474.235
+						},
+						{
+							"startTime": 2493.745,
+							"duration": 12.026
+						},
+						{
+							"duration": 14.227,
+							"startTime": 2514.493
+						},
+						{
+							"startTime": 2544.267,
+							"duration": 9.231
+						},
+						{
+							"duration": 19.885,
+							"startTime": 2867.777
+						},
+						{
+							"startTime": 2896.377,
+							"duration": 9.192
+						},
+						{
+							"duration": 9.059,
+							"startTime": 2916.188
+						},
+						{
+							"startTime": 2931.712,
+							"duration": 26.036
+						},
+						{
+							"startTime": 2966.312,
+							"duration": 8.338
+						},
+						{
+							"startTime": 2977.203,
+							"duration": 6.338
+						},
+						{
+							"startTime": 2994.248,
+							"duration": 17.088
+						},
+						{
+							"startTime": 3020.74,
+							"duration": 5.864
+						},
+						{
+							"startTime": 3031.337,
+							"duration": 11.269
+						},
+						{
+							"duration": 11.771,
+							"startTime": 3044.316
+						},
+						{
+							"duration": 12.681,
+							"startTime": 3058.09
+						},
+						{
+							"duration": 5.957,
+							"startTime": 3074.055
+						},
+						{
+							"startTime": 3080.024,
+							"duration": 5.366
+						},
+						{
+							"duration": 13.47,
+							"startTime": 3085.407
+						},
+						{
+							"startTime": 3106.67,
+							"duration": 8.718
+						},
+						{
+							"startTime": 3121.189,
+							"duration": 21.18
+						},
+						{
+							"startTime": 3145.883,
+							"duration": 14.031
+						},
+						{
+							"duration": 10.325,
+							"startTime": 3160.02
+						},
+						{
+							"startTime": 3220.879,
+							"duration": 14.562
+						},
+						{
+							"duration": 5.726,
+							"startTime": 3235.489
+						},
+						{
+							"startTime": 3255.686,
+							"duration": 13.473
+						},
+						{
+							"startTime": 3269.192,
+							"duration": 67.475
+						},
+						{
+							"duration": 6.008,
+							"startTime": 3338.377
+						},
+						{
+							"startTime": 3345.143,
+							"duration": 6.928
+						},
+						{
+							"startTime": 3363.637,
+							"duration": 10.175
+						},
+						{
+							"startTime": 3375.826,
+							"duration": 10.5
+						},
+						{
+							"duration": 18.142,
+							"startTime": 3388.661
+						},
+						{
+							"duration": 8.396,
+							"startTime": 4178.971
+						},
+						{
+							"startTime": 4254.692,
+							"duration": 9.625
+						},
+						{
+							"startTime": 4279.219,
+							"duration": 5.447
+						},
+						{
+							"startTime": 4295.157,
+							"duration": 8.036
+						},
+						{
+							"duration": 5.122,
+							"startTime": 4306.493
+						}
+					],
+					"type": "table",
+					"headings": [
+						{
+							"key": "startTime",
+							"granularity": 1,
+							"text": "Start Time",
+							"itemType": "ms"
+						},
+						{
+							"text": "End Time",
+							"granularity": 1,
+							"key": "duration",
+							"itemType": "ms"
+						}
+					]
+				}
+			},
+			"total-blocking-time": {
+				"id": "total-blocking-time",
+				"title": "Total Blocking Time",
+				"description": "Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds. [Learn more](https://web.dev/lighthouse-total-blocking-time/).",
+				"score": 0.74,
+				"scoreDisplayMode": "numeric",
+				"displayValue": "230 ms",
+				"numericValue": 229
+			},
+			"dom-size": {
+				"id": "dom-size",
+				"title": "Avoids an excessive DOM size",
+				"description": "A large DOM will increase memory usage, cause longer [style calculations](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations), and produce costly [layout reflows](https://developers.google.com/speed/articles/reflow). [Learn more](https://web.dev/dom-size/).",
+				"score": 0.93,
+				"scoreDisplayMode": "numeric",
+				"displayValue": "743 elements",
+				"details": {
+					"headings": [
+						{
+							"text": "Statistic",
+							"itemType": "text",
+							"key": "statistic"
+						},
+						{
+							"key": "element",
+							"itemType": "code",
+							"text": "Element"
+						},
+						{
+							"itemType": "numeric",
+							"key": "value",
+							"text": "Value"
+						}
+					],
+					"type": "table",
+					"items": [
+						{
+							"statistic": "Total DOM Elements",
+							"value": "743"
+						},
+						{
+							"value": "17",
+							"element": {
+								"type": "code",
+								"value": "\u003crect width=\"20\" height=\"20\" fill=\"white\"\u003e"
+							},
+							"statistic": "Maximum DOM Depth"
+						},
+						{
+							"statistic": "Maximum Child Elements",
+							"value": "9",
+							"element": {
+								"type": "code",
+								"value": "\u003cdiv class=\"CommentsThreads\"\u003e"
+							}
+						}
+					]
+				},
+				"numericValue": 743
+			},
+			"metrics": {
+				"id": "metrics",
+				"title": "Metrics",
+				"description": "Collects all available metrics.",
+				"score": null,
+				"scoreDisplayMode": "informative",
+				"details": {
+					"type": "debugdata",
+					"items": [
+						{
+							"cumulativeLayoutShift": 4.316609753962e-06,
+							"observedLastVisualChange": 3521,
+							"observedFirstPaint": 1048,
+							"observedFirstContentfulPaint": 1048,
+							"observedCumulativeLayoutShift": 4.316609753962e-06,
+							"maxPotentialFID": 208,
+							"observedDomContentLoaded": 1070,
+							"estimatedInputLatency": 28,
+							"observedSpeedIndexTs": 3959974010536,
+							"observedLoadTs": 3959974736962,
+							"totalBlockingTime": 229,
+							"interactive": 2710,
+							"observedLargestContentfulPaint": 1634,
+							"observedLargestContentfulPaintTs": 3959974074227,
+							"observedTraceEnd": 4379,
+							"speedIndex": 1725,
+							"observedSpeedIndex": 1570,
+							"firstContentfulPaint": 500,
+							"observedDomContentLoadedTs": 3959973510118,
+							"observedLastVisualChangeTs": 3959975961132,
+							"firstCPUIdle": 2308,
+							"observedFirstPaintTs": 3959973488267,
+							"observedFirstVisualChange": 1487,
+							"observedTraceEndTs": 3959976819616,
+							"observedFirstVisualChangeTs": 3959973927132,
+							"observedNavigationStart": 0,
+							"observedLoad": 2297,
+							"firstMeaningfulPaint": 500,
+							"largestContentfulPaint": 5000,
+							"observedNavigationStartTs": 3959972440132,
+							"observedFirstMeaningfulPaint": 1081,
+							"observedFirstContentfulPaintTs": 3959973488267,
+							"observedFirstMeaningfulPaintTs": 3959973521496
+						},
+						{
+							"lcpInvalidated": false
+						}
+					]
+				},
+				"numericValue": 2710
+			},
+			"unused-javascript": {
+				"id": "unused-javascript",
+				"title": "Remove unused JavaScript",
+				"description": "Remove unused JavaScript to reduce bytes consumed by network activity. [Learn more](https://web.dev/remove-unused-code/).",
+				"score": 0.63,
+				"scoreDisplayMode": "numeric",
+				"displayValue": "Potential savings of 210 KiB",
+				"details": {
+					"type": "opportunity",
+					"overallSavingsBytes": 215005,
+					"items": [
+						{
+							"wastedPercent": 63.099629069173837,
+							"wastedBytes": 135465,
+							"totalBytes": 214684,
+							"url": "https://www.amp.dev/videoplayer.js"
+						},
+						{
+							"wastedPercent": 58.770729080178619,
+							"url": "https://cdn.ampproject.org/rtv/012008150009001/v0/amp-ad-network-doubleclick-impl-0.1.js",
+							"wastedBytes": 50475,
+							"totalBytes": 85885,
+							"subItems": {
+								"type": "subitems",
+								"items": [
+									{
+										"sourceWastedBytes": 5292,
+										"source": "…src/service/resources-impl.js",
+										"sourceBytes": 4120
+									},
+									{
+										"source": "…src/service/url-replacements-impl.js",
+										"sourceBytes": 2686,
+										"sourceWastedBytes": 3067
+									},
+									{
+										"sourceWastedBytes": 2678,
+										"sourceBytes": 2589,
+										"source": "…src/service/action-impl.js"
+									},
+									{
+										"source": "…extensions/amp-ad-network-doubleclick-impl/0.1/amp-ad-network-doubleclick-impl.js",
+										"sourceWastedBytes": 2665,
+										"sourceBytes": 5602
+									},
+									{
+										"sourceBytes": 2719,
+										"source": "…src/service/viewport/viewport-impl.js",
+										"sourceWastedBytes": 2464
+									}
+								]
+							}
+						},
+						{
+							"totalBytes": 71814,
+							"wastedPercent": 40.472262717716568,
+							"url": "https://cdn.ampproject.org/v0.js",
+							"wastedBytes": 29065,
+							"subItems": {
+								"type": "subitems",
+								"items": [
+									{
+										"sourceWastedBytes": 2310,
+										"sourceBytes": 2592,
+										"source": "…src/service/action-impl.js"
+									},
+									{
+										"source": "…src/service/url-replacements-impl.js",
+										"sourceBytes": 2676,
+										"sourceWastedBytes": 1872
+									},
+									{
+										"sourceWastedBytes": 1812,
+										"sourceBytes": 2181,
+										"source": "…src/service/history-impl.js"
+									},
+									{
+										"source": "…src/service/viewport/viewport-impl.js",
+										"sourceBytes": 2718,
+										"sourceWastedBytes": 1699
+									},
+									{
+										"sourceBytes": 1363,
+										"source": "…src/service/navigation.js",
+										"sourceWastedBytes": 1520
+									}
+								]
+							}
+						}
+					],
+					"overallSavingsMs": 510,
+					"headings": [
+						{
+							"label": "URL",
+							"key": "url",
+							"valueType": "url",
+							"subItemsHeading": {
+								"valueType": "code",
+								"key": "source"
+							}
+						},
+						{
+							"subItemsHeading": {
+								"key": "sourceBytes"
+							},
+							"label": "Transfer Size",
+							"key": "totalBytes",
+							"valueType": "bytes"
+						},
+						{
+							"subItemsHeading": {
+								"key": "sourceWastedBytes"
+							},
+							"key": "wastedBytes",
+							"valueType": "bytes",
+							"label": "Potential Savings"
+						}
+					]
+				},
+				"numericValue": 510
+			},
+			"first-contentful-paint": {
+				"id": "first-contentful-paint",
+				"title": "First Contentful Paint",
+				"description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more](https://web.dev/first-contentful-paint/).",
+				"score": 1,
+				"scoreDisplayMode": "numeric",
+				"displayValue": "0.5 s",
+				"numericValue": 500
+			},
+			"efficient-animated-content": {
+				"id": "efficient-animated-content",
+				"title": "Use video formats for animated content",
+				"description": "Large GIFs are inefficient for delivering animated content. Consider using MPEG4/WebM videos for animations and PNG/WebP for static images instead of GIF to save network bytes. [Learn more](https://web.dev/efficient-animated-content/)",
+				"score": 0.88,
+				"scoreDisplayMode": "numeric",
+				"displayValue": "Potential savings of 45 KiB",
+				"details": {
+					"overallSavingsBytes": 46111,
+					"headings": [
+						{
+							"key": "url",
+							"label": "URL",
+							"valueType": "url"
+						},
+						{
+							"label": "Resource Size",
+							"key": "totalBytes",
+							"valueType": "bytes"
+						},
+						{
+							"valueType": "bytes",
+							"label": "Potential Savings",
+							"key": "wastedBytes"
+						}
+					],
+					"type": "opportunity",
+					"overallSavingsMs": 150,
+					"items": [
+						{
+							"url": "https://tpc.googlesyndication.com/simgad/12345128718192216",
+							"totalBytes": 102468,
+							"wastedBytes": 46111
+						}
+					]
+				},
+				"numericValue": 150
+			},
+			"first-cpu-idle": {
+				"id": "first-cpu-idle",
+				"title": "First CPU Idle",
+				"description": "First CPU Idle marks the first time at which the page's main thread is quiet enough to handle input.  [Learn more](https://web.dev/first-cpu-idle/).",
+				"score": 0.92,
+				"scoreDisplayMode": "numeric",
+				"displayValue": "2.3 s",
+				"numericValue": 2308
+			},
+			"speed-index": {
+				"id": "speed-index",
+				"title": "Speed Index",
+				"description": "Speed Index shows how quickly the contents of a page are visibly populated. [Learn more](https://web.dev/speed-index/).",
+				"score": 0.74,
+				"scoreDisplayMode": "numeric",
+				"displayValue": "1.7 s",
+				"numericValue": 1724.6858534518203
+			},
+			"timing-budget": {
+				"id": "timing-budget",
+				"title": "Timing budget",
+				"description": "Set a timing budget to help you keep an eye on the performance of your site. Performant sites load fast and respond to user input events quickly. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/budgets).",
+				"score": null,
+				"scoreDisplayMode": "notApplicable"
+			},
+			"network-server-latency": {
+				"id": "network-server-latency",
+				"title": "Server Backend Latencies",
+				"description": "Server latencies can impact web performance. If the server latency of an origin is high, it's an indication the server is overloaded or has poor backend performance. [Learn more](https://hpbn.co/primer-on-web-performance/#analyzing-the-resource-waterfall).",
+				"score": null,
+				"scoreDisplayMode": "informative",
+				"displayValue": "0 ms",
+				"details": {
+					"headings": [],
+					"items": [],
+					"type": "table"
+				},
+				"numericValue": 0
+			},
+			"uses-rel-preload": {
+				"id": "uses-rel-preload",
+				"title": "Preload key requests",
+				"description": "Consider using `\u003clink rel=preload\u003e` to prioritize fetching resources that are currently requested later in page load. [Learn more](https://web.dev/uses-rel-preload/).",
+				"score": 1,
+				"scoreDisplayMode": "numeric",
+				"details": {
+					"overallSavingsMs": 0,
+					"headings": [],
+					"type": "opportunity",
+					"items": []
+				},
+				"numericValue": 0
+			},
+			"largest-contentful-paint-element": {
+				"id": "largest-contentful-paint-element",
+				"title": "Largest Contentful Paint element",
+				"description": "This is the largest contentful element painted within the viewport. [Learn More](https://web.dev/lighthouse-largest-contentful-paint/)",
+				"score": null,
+				"scoreDisplayMode": "informative",
+				"displayValue": "1 element found",
+				"details": {
+					"headings": [
+						{
+							"text": "Element",
+							"itemType": "node",
+							"key": "node"
+						}
+					],
+					"items": [
+						{
+							"node": {
+								"snippet": "\u003cimg decoding=\"async\" src=\"https://amp.dev/jdsfh892347.jpg?auto=webp&amp;s=sdfsdf123412\" data-amp-bind-src=\"imageContent.url\" class=\"i-amphtml-fill-content i-amphtml-replaced-content i-amphtml-error\"\u003e",
+								"nodeLabel": "img",
+								"selector": "div.PostContainer \u003e div.PostContainer__ImageContent \u003e amp-img.i-amphtml-element \u003e img.i-amphtml-fill-content",
+								"path": "1,HTML,1,BODY,0,DIV,0,DIV,1,DIV,0,DIV,0,DIV,2,DIV,1,AMP-IMG,1,IMG",
+								"type": "node"
+							}
+						}
+					],
+					"type": "table"
+				}
+			},
+			"uses-passive-event-listeners": {
+				"id": "uses-passive-event-listeners",
+				"title": "Uses passive listeners to improve scrolling performance",
+				"description": "Consider marking your touch and wheel event listeners as `passive` to improve your page's scroll performance. [Learn more](https://web.dev/uses-passive-event-listeners/).",
+				"score": 1,
+				"scoreDisplayMode": "binary",
+				"details": {
+					"items": [],
+					"headings": [],
+					"type": "table"
+				}
+			},
+			"resource-summary": {
+				"id": "resource-summary",
+				"title": "Keep request counts low and transfer sizes small",
+				"description": "To set budgets for the quantity and size of page resources, add a budget.json file. [Learn more](https://web.dev/use-lighthouse-for-performance-budgets/).",
+				"score": null,
+				"scoreDisplayMode": "informative",
+				"displayValue": "87 requests • 1,842 KiB",
+				"details": {
+					"headings": [
+						{
+							"itemType": "text",
+							"key": "label",
+							"text": "Resource Type"
+						},
+						{
+							"itemType": "numeric",
+							"key": "requestCount",
+							"text": "Requests"
+						},
+						{
+							"text": "Transfer Size",
+							"itemType": "bytes",
+							"key": "transferSize"
+						}
+					],
+					"type": "table",
+					"items": [
+						{
+							"resourceType": "total",
+							"requestCount": 87,
+							"label": "Total",
+							"transferSize": 1886003
+						},
+						{
+							"resourceType": "script",
+							"transferSize": 566761,
+							"label": "Script",
+							"requestCount": 20
+						},
+						{
+							"transferSize": 504149,
+							"resourceType": "image",
+							"requestCount": 34,
+							"label": "Image"
+						},
+						{
+							"transferSize": 407110,
+							"resourceType": "media",
+							"label": "Media",
+							"requestCount": 1
+						},
+						{
+							"requestCount": 4,
+							"resourceType": "font",
+							"label": "Font",
+							"transferSize": 199907
+						},
+						{
+							"requestCount": 21,
+							"transferSize": 163753,
+							"label": "Other",
+							"resourceType": "other"
+						},
+						{
+							"resourceType": "document",
+							"transferSize": 36666,
+							"requestCount": 3,
+							"label": "Document"
+						},
+						{
+							"transferSize": 7657,
+							"resourceType": "stylesheet",
+							"label": "Stylesheet",
+							"requestCount": 4
+						},
+						{
+							"resourceType": "third-party",
+							"transferSize": 1693780,
+							"requestCount": 81,
+							"label": "Third-party"
+						}
+					]
+				}
+			},
+			"screenshot-thumbnails": {
+				"id": "screenshot-thumbnails",
+				"title": "Screenshot Thumbnails",
+				"description": "This is what the load of your site looked like.",
+				"score": null,
+				"scoreDisplayMode": "informative",
+				"details": {
+					"items": [
+						{
+							"timestamp": 3959972792232,
+							"data": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAMCAgMCgAoAKACgD//Z",
+							"timing": 352
+						}
+					],
+					"type": "filmstrip",
+					"scale": 3521
+				}
+			},
+			"unminified-css": {
+				"id": "unminified-css",
+				"title": "Minify CSS",
+				"description": "Minifying CSS files can reduce network payload sizes. [Learn more](https://web.dev/unminified-css/).",
+				"score": 0.87,
+				"scoreDisplayMode": "numeric",
+				"details": {
+					"type": "opportunity",
+					"headings": [],
+					"overallSavingsBytes": 0,
+					"items": [],
+					"overallSavingsMs": 0
+				},
+				"numericValue": 0
+			},
+			"max-potential-fid": {
+				"id": "max-potential-fid",
+				"title": "Max Potential First Input Delay",
+				"description": "The maximum potential First Input Delay that your users could experience is the duration of the longest task. [Learn more](https://web.dev/lighthouse-max-potential-fid/).",
+				"score": 0.64,
+				"scoreDisplayMode": "numeric",
+				"displayValue": "210 ms",
+				"numericValue": 208
+			},
+			"unused-css-rules": {
+				"id": "unused-css-rules",
+				"title": "Remove unused CSS",
+				"description": "Remove dead rules from stylesheets and defer the loading of CSS not used for above-the-fold content to reduce unnecessary bytes consumed by network activity. [Learn more](https://web.dev/unused-css-rules/).",
+				"score": 1,
+				"scoreDisplayMode": "numeric",
+				"details": {
+					"headings": [],
+					"overallSavingsMs": 0,
+					"overallSavingsBytes": 0,
+					"type": "opportunity",
+					"items": []
+				},
+				"numericValue": 0
+			},
+			"diagnostics": {
+				"id": "diagnostics",
+				"title": "Diagnostics",
+				"description": "Collection of useful page vitals.",
+				"score": null,
+				"scoreDisplayMode": "informative",
+				"details": {
+					"type": "debugdata",
+					"items": [
+						{
+							"numTasksOver500ms": 0,
+							"numTasksOver50ms": 7,
+							"numRequests": 92,
+							"numTasksOver100ms": 2,
+							"totalTaskTime": 2167.2360000000149,
+							"numFonts": 4,
+							"maxRtt": 0.00019665550348428777,
+							"mainDocumentTransferSize": 22982,
+							"numStylesheets": 4,
+							"maxServerLatency": null,
+							"numScripts": 20,
+							"numTasksOver10ms": 48,
+							"rtt": 0.00019665550348428777,
+							"numTasks": 1837,
+							"throughput": 90215367329.4953,
+							"totalByteWeight": 1886003,
+							"numTasksOver25ms": 14
+						}
+					]
+				}
+			},
+			"uses-rel-preconnect": {
+				"id": "uses-rel-preconnect",
+				"title": "Preconnect to required origins",
+				"description": "Consider adding `preconnect` or `dns-prefetch` resource hints to establish early connections to important third-party origins. [Learn more](https://web.dev/uses-rel-preconnect/).",
+				"score": 1,
+				"scoreDisplayMode": "numeric",
+				"warnings": [
+					"More than 2 preconnect links were found. Preconnect links should be used sparingly and only to the most important origins."
+				]
+			},
+			"unminified-javascript": {
+				"id": "unminified-javascript",
+				"title": "Minify JavaScript",
+				"description": "Minifying JavaScript files can reduce payload sizes and script parse time. [Learn more](https://web.dev/unminified-javascript/).",
+				"score": 1,
+				"scoreDisplayMode": "numeric",
+				"details": {
+					"headings": [],
+					"overallSavingsBytes": 0,
+					"type": "opportunity",
+					"items": [],
+					"overallSavingsMs": 0
+				},
+				"warnings": [],
+				"numericValue": 0
+			},
+			"mainthread-work-breakdown": {
+				"id": "mainthread-work-breakdown",
+				"title": "Minimize main-thread work",
+				"description": "Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this. [Learn more](https://web.dev/mainthread-work-breakdown/)",
+				"score": 0.87,
+				"scoreDisplayMode": "numeric",
+				"displayValue": "2.2 s",
+				"details": {
+					"headings": [
+						{
+							"key": "groupLabel",
+							"text": "Category",
+							"itemType": "text"
+						},
+						{
+							"key": "duration",
+							"text": "Time Spent",
+							"itemType": "ms",
+							"granularity": 1
+						}
+					],
+					"items": [
+						{
+							"groupLabel": "Script Evaluation",
+							"group": "scriptEvaluation",
+							"duration": 1330.662999999998
+						},
+						{
+							"duration": 307.61499999999967,
+							"groupLabel": "Style & Layout",
+							"group": "styleLayout"
+						},
+						{
+							"duration": 290.18599999999816,
+							"groupLabel": "Other",
+							"group": "other"
+						},
+						{
+							"duration": 128.14699999999951,
+							"groupLabel": "Rendering",
+							"group": "paintCompositeRender"
+						},
+						{
+							"groupLabel": "Script Parsing & Compilation",
+							"duration": 58.683000000000021,
+							"group": "scriptParseCompile"
+						},
+						{
+							"groupLabel": "Parse HTML & CSS",
+							"duration": 34.497999999999969,
+							"group": "parseHTML"
+						},
+						{
+							"groupLabel": "Garbage Collection",
+							"group": "garbageCollection",
+							"duration": 17.444
+						}
+					],
+					"type": "table"
+				},
+				"numericValue": 2167.2359999999953
+			},
+			"first-meaningful-paint": {
+				"id": "first-meaningful-paint",
+				"title": "First Meaningful Paint",
+				"description": "First Meaningful Paint measures when the primary content of a page is visible. [Learn more](https://web.dev/first-meaningful-paint/).",
+				"score": 1,
+				"scoreDisplayMode": "numeric",
+				"displayValue": "0.5 s",
+				"numericValue": 500
+			},
+			"font-display": {
+				"id": "font-display",
+				"title": "Ensure text remains visible during webfont load",
+				"description": "Leverage the font-display CSS feature to ensure text is user-visible while webfonts are loading. [Learn more](https://web.dev/font-display/).",
+				"score": 0,
+				"scoreDisplayMode": "binary",
+				"details": {
+					"type": "table",
+					"headings": [
+						{
+							"key": "url",
+							"itemType": "url",
+							"text": "URL"
+						},
+						{
+							"itemType": "ms",
+							"text": "Potential Savings",
+							"key": "wastedMs"
+						}
+					],
+					"items": [
+						{
+							"url": "https://fonts.gstatic.com/s/googlesans/v16/4UaGrENHsxJlGDuGo1OIlL3Owp5eKQtG.woff2",
+							"wastedMs": 9.41399997100234
+						},
+						{
+							"url": "https://fonts.gstatic.com/s/googlesans/v16/4UabrENHsxJlGDuGo1OIlLU94YtzCwZsPF4o.woff2",
+							"wastedMs": 7.3730000294744968
+						}
+					]
+				},
+				"warnings": []
+			},
+			"uses-long-cache-ttl": {
+				"id": "uses-long-cache-ttl",
+				"title": "Uses efficient cache policy on static assets",
+				"description": "A long cache lifetime can speed up repeat visits to your page. [Learn more](https://web.dev/uses-long-cache-ttl/).",
+				"score": 0.99,
+				"scoreDisplayMode": "numeric",
+				"displayValue": "5 resources found",
+				"details": {
+					"headings": [
+						{
+							"key": "url",
+							"text": "URL",
+							"itemType": "url"
+						},
+						{
+							"text": "Cache TTL",
+							"displayUnit": "duration",
+							"key": "cacheLifetimeMs",
+							"itemType": "ms"
+						},
+						{
+							"key": "totalBytes",
+							"displayUnit": "kb",
+							"itemType": "bytes",
+							"granularity": 1,
+							"text": "Transfer Size"
+						}
+					],
+					"type": "table",
+					"items": [
+						{
+							"debugData": {
+								"type": "debugdata",
+								"max-age": 86400,
+								"public": true
+							},
+							"cacheLifetimeMs": 86400000,
+							"cacheHitProbability": 0.6,
+							"totalBytes": 3184,
+							"wastedBytes": 1273.6000000000001,
+							"url": "https://tpc.googlesyndication.com/pagead/images/adchoices/en.png"
+						},
+						{
+							"url": "https://tpc.googlesyndication.com/pagead/images/adchoices/en_bl.png",
+							"debugData": {
+								"type": "debugdata",
+								"max-age": 86400,
+								"public": true
+							},
+							"totalBytes": 3151,
+							"cacheLifetimeMs": 86400000,
+							"cacheHitProbability": 0.6,
+							"wastedBytes": 1260.4
+						},
+						{
+							"wastedBytes": 389.6,
+							"debugData": {
+								"type": "debugdata",
+								"max-age": 86400,
+								"public": true
+							},
+							"cacheHitProbability": 0.6,
+							"totalBytes": 974,
+							"url": "https://tpc.googlesyndication.com/pagead/images/adchoices/icon.png",
+							"cacheLifetimeMs": 86400000
+						},
+						{
+							"cacheLifetimeMs": 86400000,
+							"cacheHitProbability": 0.6,
+							"url": "https://tpc.googlesyndication.com/pagead/images/adchoices/icon.png",
+							"wastedBytes": 389.6,
+							"debugData": {
+								"public": true,
+								"max-age": 86400,
+								"type": "debugdata"
+							},
+							"totalBytes": 974
+						},
+						{
+							"wastedBytes": 3475.8999999999992,
+							"cacheHitProbability": 0.9,
+							"url": "https://amp.dev/sdfs2314sdfs.png?width=640&crop=smart&format=pjpg&auto=webp&s=5762z42efsagd",
+							"debugData": {
+								"public": true,
+								"type": "debugdata",
+								"max-age": 604800
+							},
+							"cacheLifetimeMs": 604800000,
+							"totalBytes": 34759
+						}
+					],
+					"summary": {
+						"wastedBytes": 6789.1
+					}
+				},
+				"numericValue": 6789.1
+			},
+			"uses-responsive-images": {
+				"id": "uses-responsive-images",
+				"title": "Properly size images",
+				"description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn more](https://web.dev/uses-responsive-images/).",
+				"score": 0.83,
+				"scoreDisplayMode": "numeric",
+				"displayValue": "Potential savings of 276 KiB",
+				"details": {
+					"headings": [
+						{
+							"valueType": "thumbnail",
+							"key": "url"
+						},
+						{
+							"label": "URL",
+							"key": "url",
+							"valueType": "url"
+						},
+						{
+							"label": "Resource Size",
+							"key": "totalBytes",
+							"valueType": "bytes"
+						},
+						{
+							"key": "wastedBytes",
+							"label": "Potential Savings",
+							"valueType": "bytes"
+						}
+					],
+					"type": "opportunity",
+					"overallSavingsBytes": 282177,
+					"overallSavingsMs": 200,
+					"items": [
+						{
+							"totalBytes": 118338,
+							"wastedBytes": 116489,
+							"url": "https://styles.amp.dev/234wdfs/styles/324rwesdf.png?width=256&s=24refgdfdg",
+							"wastedPercent": 98.4375
+						},
+						{
+							"url": "https://www.amp.dev/kdhfsddk.png",
+							"wastedBytes": 4695,
+							"wastedPercent": 99.3896484375,
+							"totalBytes": 4724
+						}
+					]
+				},
+				"warnings": [],
+				"numericValue": 200
+			}
+		},
+		"categories": {
+			"performance": {
+				"id": "performance",
+				"title": "Performance",
+				"score": 0.81,
+				"auditRefs": [
+					{
+						"id": "first-contentful-paint",
+						"weight": 15,
+						"group": "metrics"
+					},
+					{
+						"id": "speed-index",
+						"weight": 15,
+						"group": "metrics"
+					},
+					{
+						"id": "largest-contentful-paint",
+						"weight": 25,
+						"group": "metrics"
+					},
+					{
+						"id": "interactive",
+						"weight": 15,
+						"group": "metrics"
+					},
+					{
+						"id": "total-blocking-time",
+						"weight": 25,
+						"group": "metrics"
+					},
+					{
+						"id": "cumulative-layout-shift",
+						"weight": 5,
+						"group": "metrics"
+					},
+					{
+						"id": "first-cpu-idle",
+						"weight": 0
+					},
+					{
+						"id": "max-potential-fid",
+						"weight": 0
+					},
+					{
+						"id": "first-meaningful-paint",
+						"weight": 0
+					},
+					{
+						"id": "estimated-input-latency",
+						"weight": 0
+					},
+					{
+						"id": "render-blocking-resources",
+						"weight": 0,
+						"group": "load-opportunities"
+					},
+					{
+						"id": "uses-responsive-images",
+						"weight": 0,
+						"group": "load-opportunities"
+					},
+					{
+						"id": "offscreen-images",
+						"weight": 0,
+						"group": "load-opportunities"
+					},
+					{
+						"id": "unminified-css",
+						"weight": 0,
+						"group": "load-opportunities"
+					},
+					{
+						"id": "unminified-javascript",
+						"weight": 0,
+						"group": "load-opportunities"
+					},
+					{
+						"id": "unused-css-rules",
+						"weight": 0,
+						"group": "load-opportunities"
+					},
+					{
+						"id": "unused-javascript",
+						"weight": 0,
+						"group": "load-opportunities"
+					},
+					{
+						"id": "uses-optimized-images",
+						"weight": 0,
+						"group": "load-opportunities"
+					},
+					{
+						"id": "uses-webp-images",
+						"weight": 0,
+						"group": "load-opportunities"
+					},
+					{
+						"id": "uses-text-compression",
+						"weight": 0,
+						"group": "load-opportunities"
+					},
+					{
+						"id": "uses-rel-preconnect",
+						"weight": 0,
+						"group": "load-opportunities"
+					},
+					{
+						"id": "server-response-time",
+						"weight": 0,
+						"group": "load-opportunities"
+					},
+					{
+						"id": "redirects",
+						"weight": 0,
+						"group": "load-opportunities"
+					},
+					{
+						"id": "uses-rel-preload",
+						"weight": 0,
+						"group": "load-opportunities"
+					},
+					{
+						"id": "efficient-animated-content",
+						"weight": 0,
+						"group": "load-opportunities"
+					},
+					{
+						"id": "total-byte-weight",
+						"weight": 0,
+						"group": "diagnostics"
+					},
+					{
+						"id": "uses-long-cache-ttl",
+						"weight": 0,
+						"group": "diagnostics"
+					},
+					{
+						"id": "dom-size",
+						"weight": 0,
+						"group": "diagnostics"
+					},
+					{
+						"id": "critical-request-chains",
+						"weight": 0,
+						"group": "diagnostics"
+					},
+					{
+						"id": "user-timings",
+						"weight": 0,
+						"group": "diagnostics"
+					},
+					{
+						"id": "bootup-time",
+						"weight": 0,
+						"group": "diagnostics"
+					},
+					{
+						"id": "mainthread-work-breakdown",
+						"weight": 0,
+						"group": "diagnostics"
+					},
+					{
+						"id": "font-display",
+						"weight": 0,
+						"group": "diagnostics"
+					},
+					{
+						"id": "performance-budget",
+						"weight": 0,
+						"group": "budgets"
+					},
+					{
+						"id": "timing-budget",
+						"weight": 0,
+						"group": "budgets"
+					},
+					{
+						"id": "resource-summary",
+						"weight": 0,
+						"group": "diagnostics"
+					},
+					{
+						"id": "third-party-summary",
+						"weight": 0,
+						"group": "diagnostics"
+					},
+					{
+						"id": "largest-contentful-paint-element",
+						"weight": 0,
+						"group": "diagnostics"
+					},
+					{
+						"id": "layout-shift-elements",
+						"weight": 0,
+						"group": "diagnostics"
+					},
+					{
+						"id": "uses-passive-event-listeners",
+						"weight": 0,
+						"group": "diagnostics"
+					},
+					{
+						"id": "no-document-write",
+						"weight": 0,
+						"group": "diagnostics"
+					},
+					{
+						"id": "long-tasks",
+						"weight": 0,
+						"group": "diagnostics"
+					},
+					{
+						"id": "network-requests",
+						"weight": 0
+					},
+					{
+						"id": "network-rtt",
+						"weight": 0
+					},
+					{
+						"id": "network-server-latency",
+						"weight": 0
+					},
+					{
+						"id": "main-thread-tasks",
+						"weight": 0
+					},
+					{
+						"id": "diagnostics",
+						"weight": 0
+					},
+					{
+						"id": "metrics",
+						"weight": 0
+					},
+					{
+						"id": "screenshot-thumbnails",
+						"weight": 0
+					},
+					{
+						"id": "final-screenshot",
+						"weight": 0
+					}
+				]
+			}
+		},
+		"categoryGroups": {
+			"a11y-names-labels": {
+				"title": "Names and labels",
+				"description": "These are opportunities to improve the semantics of the controls in your application. This may enhance the experience for users of assistive technology, like a screen reader."
+			},
+			"a11y-color-contrast": {
+				"title": "Contrast",
+				"description": "These are opportunities to improve the legibility of your content."
+			},
+			"a11y-audio-video": {
+				"title": "Audio and video",
+				"description": "These are opportunities to provide alternative content for audio and video. This may improve the experience for users with hearing or vision impairments."
+			},
+			"metrics": {
+				"title": "Metrics"
+			},
+			"best-practices-general": {
+				"title": "General"
+			},
+			"best-practices-ux": {
+				"title": "User Experience"
+			},
+			"a11y-tables-lists": {
+				"title": "Tables and lists",
+				"description": "These are opportunities to to improve the experience of reading tabular or list data using assistive technology, like a screen reader."
+			},
+			"a11y-navigation": {
+				"title": "Navigation",
+				"description": "These are opportunities to improve keyboard navigation in your application."
+			},
+			"seo-mobile": {
+				"title": "Mobile Friendly",
+				"description": "Make sure your pages are mobile friendly so users don’t have to pinch or zoom in order to read the content pages. [Learn more](https://developers.google.com/search/mobile-sites/)."
+			},
+			"pwa-fast-reliable": {
+				"title": "Fast and reliable"
+			},
+			"a11y-language": {
+				"title": "Internationalization and localization",
+				"description": "These are opportunities to improve the interpretation of your content by users in different locales."
+			},
+			"seo-crawl": {
+				"title": "Crawling and Indexing",
+				"description": "To appear in search results, crawlers need access to your app."
+			},
+			"pwa-installable": {
+				"title": "Installable"
+			},
+			"pwa-optimized": {
+				"title": "PWA Optimized"
+			},
+			"budgets": {
+				"title": "Budgets",
+				"description": "Performance budgets set standards for the performance of your site."
+			},
+			"best-practices-browser-compat": {
+				"title": "Browser Compatibility"
+			},
+			"a11y-best-practices": {
+				"title": "Best practices",
+				"description": "These items highlight common accessibility best practices."
+			},
+			"seo-content": {
+				"title": "Content Best Practices",
+				"description": "Format your HTML in a way that enables crawlers to better understand your app’s content."
+			},
+			"load-opportunities": {
+				"title": "Opportunities",
+				"description": "These suggestions can help your page load faster. They don't [directly affect](https://web.dev/performance-scoring/) the Performance score."
+			},
+			"best-practices-trust-safety": {
+				"title": "Trust and Safety"
+			},
+			"a11y-aria": {
+				"title": "ARIA",
+				"description": "These are opportunities to improve the usage of ARIA in your application which may enhance the experience for users of assistive technology, like a screen reader."
+			},
+			"diagnostics": {
+				"title": "Diagnostics",
+				"description": "More information about the performance of your application. These numbers don't [directly affect](https://web.dev/performance-scoring/) the Performance score."
+			}
+		},
+		"timing": {
+			"total": 12432.82
+		},
+		"i18n": {
+			"rendererFormattedStrings": {
+				"varianceDisclaimer": "Values are estimated and may vary. The [performance score is calculated](https://web.dev/performance-scoring/) directly from these metrics.",
+				"opportunityResourceColumnLabel": "Opportunity",
+				"opportunitySavingsColumnLabel": "Estimated Savings",
+				"errorMissingAuditInfo": "Report error: no audit information",
+				"errorLabel": "Error!",
+				"warningHeader": "Warnings: ",
+				"auditGroupExpandTooltip": "Show audits",
+				"passedAuditsGroupTitle": "Passed audits",
+				"notApplicableAuditsGroupTitle": "Not applicable",
+				"manualAuditsGroupTitle": "Additional items to manually check",
+				"toplevelWarningsMessage": "There were issues affecting this run of Lighthouse:",
+				"crcLongestDurationLabel": "Maximum critical path latency:",
+				"crcInitialNavigation": "Initial Navigation",
+				"lsPerformanceCategoryDescription": "[Lighthouse](https://developers.google.com/web/tools/lighthouse/) analysis of the current page on an emulated mobile network. Values are estimated and may vary.",
+				"labDataTitle": "Lab Data"
+			}
+		},
+		"stackPacks": [
+			{
+				"id": "amp",
+				"title": "AMP",
+				"iconDataURL": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\"%3E%3Cpath d=\"M171.887 116.28l-53.696 0 128 0z\" fill=\"%230379c4\" fill-rule=\"evenodd\"/%3E%3C/svg%3E",
+				"descriptions": {
+					"render-blocking-resources": "Use tools such as [AMP Optimizer](https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer) to [server-side render AMP layouts](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/server-side-rendering/).",
+					"unminified-css": "Refer to the [AMP documentation](https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages/) to ensure all your styles are supported.",
+					"uses-webp-images": "Consider displaying all your `amp-img` components in WebP formats while specifying an appropriate fallback for other browsers. [Learn more](https://amp.dev/documentation/components/amp-img/#example:-specifying-a-fallback-image).",
+					"offscreen-images": "Ensure that you are you using valid `amp-img` tags for your images which automatically lazy-load outside the first viewport. [Learn more](https://amp.dev/documentation/guides-and-tutorials/develop/media_iframes_3p/?format=websites#images).",
+					"uses-responsive-images": "The `amp-img` element supports the `srcset` attribute to specify which image assets to use based on the screen size.  [Learn more](https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction/).",
+					"efficient-animated-content": "For animated content, use [amp-anim](https://amp.dev/documentation/components/amp-anim/) to minimize CPU usage while the content remains offscreen."
+				}
+			}
+		]
+	},
+	"analysisUTCTimestamp": "2020-09-02T06:17:33.187Z"
+}

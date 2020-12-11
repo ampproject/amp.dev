@@ -1,8 +1,6 @@
 ---
 $title: amp-access-laterpay
 $category@: dynamic-content
-formats:
-- websites
 teaser:
   text: 可让发布商轻松集成 LaterPay 微支付平台。
 ---

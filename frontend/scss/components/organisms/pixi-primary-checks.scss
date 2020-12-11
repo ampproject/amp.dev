@@ -1,0 +1,123 @@
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_button.scss';
+
+.#{organism('pixi-primary-checks')} {
+  $primary-checks: &;
+  margin-bottom: 70px;
+  border-radius: 4px;
+  overflow: visible;
+
+  &-tabs {
+    display: flex;
+    transition: opacity 0.2s ease;
+    box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.87);
+
+    @media (min-width: 768px) {
+      width: 66.6%;
+
+      &[dir='rtl'] {
+        margin-left: 33.4%;
+      }
+    }
+
+    &-tab {
+      flex-grow: 1;
+      @include unset-button;
+      padding: 14px 20px;
+      @include txt-font-accent;
+      font-size: 18px;
+      background-color: color('iron');
+      transition: color 0.2s ease, background-color 0.2s ease;
+      cursor: pointer;
+
+      @media (min-width: 768px) {
+        padding: 16px 25px;
+      }
+
+      @media (min-width: 1024px) {
+        padding: 16px 35px;
+      }
+
+      [dir='rtl'] > & {
+        text-align: right;
+      }
+
+      &:first-child,
+      [dir='rtl'] > &:last-child {
+        border-top-left-radius: 4px;
+      }
+
+      &:last-child,
+      [dir='rtl'] > &:first-child {
+        border-top-right-radius: 4px;
+      }
+
+      &:hover {
+        background-color: transparentize(color('black'), 0.7);
+      }
+
+      &.active {
+        color: color('charade');
+        background-color: color('white');
+      }
+    }
+  }
+
+  &-data {
+    display: none;
+    box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.87);
+
+    &-error-label,
+    &-api-error-label {
+      position: absolute;
+      left: 0;
+      top: 230px;
+      display: none;
+      justify-content: center;
+      width: 100%;
+
+      label {
+        max-width: 700px;
+        padding: 15px;
+        text-align: center;
+      }
+    }
+
+    &-note {
+      font-size: 14px;
+      font-weight: bold;
+      border-top: solid 2px color('iron');
+      padding: 10px 20px;
+
+      @media (min-width: 768px) {
+        padding: 10px 25px;
+      }
+
+      @media (min-width: 1024px) {
+        padding: 10px 35px;
+      }
+    }
+
+    &.active {
+      display: block;
+    }
+
+    &.error {
+      position: relative;
+
+      &.missing-field-data #{$primary-checks}-data-error-label,
+      &.api-error #{$primary-checks}-data-api-error-label {
+        display: flex;
+
+        & > h3 {
+          color: safeColor('light-gray');
+        }
+      }
+    }
+  }
+}

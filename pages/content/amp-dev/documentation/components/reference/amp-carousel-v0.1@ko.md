@@ -1,10 +1,6 @@
 ---
 $title: amp-carousel
 $category@: layout
-formats:
-- websites
-- email
-- ads
 teaser:
   text: 가로축을 따라 여러 개의 유사한 콘텐츠를 표시합니다.
 ---

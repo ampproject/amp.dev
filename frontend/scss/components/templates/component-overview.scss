@@ -97,7 +97,7 @@ body {
       @include txt;
 
       &:not(:last-child):after {
-        color: color('silver');
+        color: color('iron');
         content: " |";
       }
     }

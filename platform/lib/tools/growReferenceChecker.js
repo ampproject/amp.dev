@@ -322,10 +322,11 @@ class GrowReferenceChecker {
     if (errorLocales.length > 0) {
       if (
         IMPORTED_DOCS.includes(sourcePath) ||
-        (sourcePath.match(IGNORED_PATH_PATTERNS) && !sourcePath.includes('@'))
+        sourcePath.match(IGNORED_PATH_PATTERNS) ||
+        sourcePath.includes('@')
       ) {
         log.warn(
-          'anchor not found in imported document',
+          'anchor not found in imported/translated document',
           anchor,
           '\n',
           'found in:',

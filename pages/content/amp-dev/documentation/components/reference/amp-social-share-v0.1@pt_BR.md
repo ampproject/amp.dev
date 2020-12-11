@@ -1,8 +1,6 @@
 ---
 $title: amp-social-share
 $category@: ads-analytics
-formats:
-- websites
 teaser:
   text: O recurso de rastreamento de compartilhamento está sendo desenvolvido.
 ---

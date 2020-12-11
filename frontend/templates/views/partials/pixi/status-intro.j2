@@ -1,0 +1,35 @@
+{% do doc.styles.addCssFile('css/components/molecules/pixi-status-intro.css') %}
+
+<section id="status-intro" class="ap-m-pixi-status-intro">
+  <div class="ap-m-pixi-status-intro-text">
+   {{ pixi.html|render|safe }}
+  </div>
+  <div id="status-intro-banner-loading" class="ap-m-pixi-status-intro-banner">
+    <div class="ap-m-pixi-status-intro-banner-icon" dir="{{ doc.locale.text_direction }}"></div>
+    <div class="ap-m-pixi-status-intro-banner-content">
+      <h3>
+        {{ pixi.staticText.statusIntro.headline }}
+        {% if pixi.staticText.statusIntro.headline2 %}
+          <br>
+          {{ pixi.staticText.statusIntro.headline2 }}
+        {% endif %}
+        {% include 'views/partials/pixi/analyzing-dots.j2' %}
+      </h3>
+      <p>
+        {{ pixi.staticText.statusIntro.loadingCopy|replace('${finishedChecks}', '<span id="finished-checks">0</span>')|replace('${totalChecks}','<span id="total-checks">0</span>')|safe }}
+      </p>
+      <div class="ap-m-pixi-status-intro-banner-ctas">
+        <a class="ap-a-btn pristine" id="investigate-button">{{ pixi.staticText.statusIntro.buttonInvestigate }}</a>
+        <a href="#recommendations" class="ap-a-btn" id="fix-it-button">
+          {{ pixi.staticText.statusIntro.buttonFixIt }}
+        </a>
+        <button class="ap-a-btn ap-a-btn-light" id="share-button"
+            id="share-button"
+            on="tap:share-dialog"
+            name="button">
+          {{ pixi.staticText.statusIntro.buttonShare }}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

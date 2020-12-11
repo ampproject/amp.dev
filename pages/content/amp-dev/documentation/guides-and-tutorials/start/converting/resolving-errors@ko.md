@@ -88,7 +88,7 @@ AMP에서는 표시 영역의 `width` 및 `minimum-scale`을 정의해야 합니
 표시 영역 오류를 해결하려면 다음의 HTML 스니펫을 `<head>` 태그에 추가합니다.
 
 ```html
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="viewport" content="width=device-width">
 ```
 
 `width` 및 `minimum-scale`에 지정된 값은 AMP에서 요구되는 값입니다. `initial-scale` 정의는 필수 항목은 아니지만 모바일 웹 개발 과정에 일반적으로 포함되며 권장되는 사항입니다. [표시 영역 구성](https://developers.google.com/speed/docs/insights/ConfigureViewport)에서 표시 영역 및 반응형 디자인에 관해 자세히 알아볼 수 있습니다.
@@ -275,7 +275,7 @@ AMP는 사용자가 지정한 너비와 높이에 따라 해당 요소의 가로
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
 
     <link rel="canonical" href="/article.html">
     <link rel="shortcut icon" href="amp_favicon.png">

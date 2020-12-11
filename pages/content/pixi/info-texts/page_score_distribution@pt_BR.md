@@ -1,0 +1,1 @@
+O gráfico de distribuição de pontuação de página mostra a porcentagem de páginas que possuem pontuações que se encontram nos limites Bom, Precisa Melhorar e Ruim. Para passar no Core Web Vitals (Principais Métricas da Web), sua página deve ter >75% das visitas dentro do limite Bom.

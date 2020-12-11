@@ -22,7 +22,7 @@ You must demonstrate an understanding and compliance of the AMP email format. Em
 
 Send a production-ready AMP email to the following addresses:
 
-*   amphtmltest@outlook.com
+*   ampverification@yahoo.com
 *   postmaster\_amp@corp.mail.ru
 *   ampforemail.whitelisting@gmail.com
 
@@ -45,12 +45,7 @@ You must follow each client's privacy policy.
 *   [Non-Russian based users](https://help.mail.ru/engmail-help/privacy)
 *   [Russian based users](https://agent.mail.ru/legal/privacypolicy/en)
 
-
-**Microsoft**
-
-[Microsoft Privacy Statement](https://privacy.microsoft.com/en-us/privacystatement)
-
-**Yahoo! Mail - Verizon Media**
+**Verizon Media (Yahoo Mail)**
 
 *   [Verizon Media Privacy Policy - US](https://www.verizonmedia.com/policies/us/en/verizonmedia/privacy/index.html)
 *   For other countries please visit [here](https://www.verizonmedia.com/policies/).

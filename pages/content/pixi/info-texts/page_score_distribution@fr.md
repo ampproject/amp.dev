@@ -1,0 +1,1 @@
+Le graphique de distribution des scores de page indique le pourcentage de pages dont les scores se situent dans les seuils Bon, Amélioration nécessaire et Faible. Pour passer les Core Web Vitals, votre site doit avoir > 75% de pages tombant sous le seuil Bon.

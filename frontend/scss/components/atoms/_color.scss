@@ -19,24 +19,24 @@ It has multiple size modifiers (more could be added below).
 
 @mixin color-black { color: color('black'); }
 @mixin color-blue-ribbon { color: color('blue-ribbon'); }
-@mixin color-silver { color: color('silver'); }
-@mixin color-gray-chateau { color: color('gray-chateau'); }
+@mixin color-silver { color: color('iron'); }
+@mixin color-gray-chateau { color: color('oslo-gray'); }
 @mixin color-white { color: color('white'); }
 
 @mixin color-websites { color: color('white'); }
-@mixin color-stories { color: color('ultramarine'); }
+@mixin color-stories { color: color('charade'); }
 @mixin color-ads { color: color('white'); }
-@mixin color-e-mails { color: color('ultramarine'); }
-@mixin color-overview { color: color('mine-shaft'); }
+@mixin color-e-mails { color: color('charade'); }
+@mixin color-overview { color: color('charade'); }
 
 @mixin fill-websites { fill: color('white'); }
-@mixin fill-stories { fill: color('ultramarine'); }
+@mixin fill-stories { fill: color('charade'); }
 @mixin fill-ads { fill: color('white'); }
-@mixin fill-e-mails { fill: color('ultramarine'); }
-@mixin fill-overview { fill: color('mine-shaft'); }
+@mixin fill-e-mails { fill: color('charade'); }
+@mixin fill-overview { fill: color('charade'); }
 
-@mixin gradient-default { background: linear-gradient(45deg, color('blue-ribbon'), color('robins-egg')); }
+@mixin gradient-dark { background: linear-gradient(45deg, color('river-bed'), color('charade')); }
 @mixin gradient-websites { background: linear-gradient(225deg, color('robins-egg') 0%, color('blue-ribbon') 75%); }
-@mixin gradient-stories { background: linear-gradient(225deg, color('pizazz') 0%, color('school-bus') 75%); }
-@mixin gradient-ads { background: linear-gradient(225deg, color('lavender-magenta') 0%, color('electric-violet') 75%); }
-@mixin gradient-e-mails { background: linear-gradient(225deg, color('apple') 0%, color('confetti') 75%); }
+@mixin gradient-stories { background: linear-gradient(225deg, color('clementine') 0%, color('school-bus') 75%); }
+@mixin gradient-ads { background: linear-gradient(225deg, color('lav-magenta') 0%, color('electric-violet') 75%); }
+@mixin gradient-e-mails { background: linear-gradient(225deg, color('japan-laurel') 0%, color('confetti') 75%); }

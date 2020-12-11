@@ -1,7 +1,9 @@
 <!---
 
 teaserImage: '/static/samples/img/teaser/geolocation-based_consent_flow.jpg'
-author: micajuine-ho, sebastianbenz
+author:
+  - micajuine-ho
+  - sebastianbenz
 
 --->
 
@@ -14,11 +16,11 @@ author: micajuine-ho, sebastianbenz
 -->
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en"
 <head>
   <meta charset="utf-8">
   <link rel="canonical" href="<% canonical %>">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <title>Server Side User Consent Flow</title>
   <!-- ## Setup -->
@@ -93,13 +95,14 @@ author: micajuine-ho, sebastianbenz
     <script type="application/json">{
       "consentInstanceId": "server-side-consent",
       "consentRequired": "remote",
-      "checkConsentHref": "/documentation/examples/api/get-consent-sever-side"
+      "checkConsentHref": "<% hosts.platform %>/documentation/examples/api/get-consent-server-side",
+      "promptUI": "myConsentFlow"
     }</script>
     <div id="myConsentFlow" class="popupOverlay">
       <div class="consentPopup">
         <div class="dismiss-button" role="button" tabindex="0" on="tap:myUserConsent.dismiss">X</div>
         <h2>Headline</h2>
-        <p>This is an important message requiring you to make a choice if you're based if the server says you have not made a consent decision.</p>
+        <p>If the server says you have not made a consent decision, we require you to make a choice.</p>
         <button on="tap:myUserConsent.accept">Accept</button>
         <button on="tap:myUserConsent.reject">Reject</button>
       </div>

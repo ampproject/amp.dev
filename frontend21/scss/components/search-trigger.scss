@@ -1,0 +1,45 @@
+.#{prefix(null, 'search-trigger')} {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0 0 0 20px;
+  padding: 5px 0;
+
+  &-close {
+    position: fixed;
+    left: calc(90vw - 18px);
+    top: 35px;
+    padding: 12px;
+    margin: 0;
+    fill: color('white');
+    background: color('blue-ribbon');
+    border-radius: 50%;
+    box-shadow: 0 6px 10px 0 transparentize(color('black'), 0.86);
+    z-index: 3;
+
+    @include respond-to('medium') {
+      position: absolute;
+      left: auto;
+      right: 10px;
+      top: 52px;
+    }
+
+    @include respond-to('large') {
+      right: 52px;
+    }
+
+    @include respond-to('max') {
+      right: 87px;
+    }
+  }
+
+  &-close &-icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  &-icon {
+    width: 18px;
+    height: 18px;
+  }
+}

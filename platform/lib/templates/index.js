@@ -42,6 +42,7 @@ function createRequestContext(
   context = {}
 ) {
   context.requestPath = request.path;
+  context.query = request.query;
 
   // Store the initially requested format to be able
   // to match user request against available formats

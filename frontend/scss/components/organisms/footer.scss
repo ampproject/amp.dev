@@ -23,7 +23,7 @@
   @include txt;
   @include txt-1;
   @include color-white;
-  @include river-ebony;
+  @include gradient-dark;
 }
 
 .#{organism('footer')} {
@@ -191,7 +191,7 @@
     display: block;
     @include txt-2;
     margin-top: 2em;
-    color: color('silver');
+    color: color('iron');
 
     a {
       color: color('whisper');

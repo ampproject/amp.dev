@@ -1,5 +1,6 @@
 @import 'mixins.scss';
 @import 'components/atoms/_text.scss';
+@import '../loader/loading-indicator.scss';
 
 .import-url {
   &-bar {
@@ -32,7 +33,7 @@
 
       &.loading {
         font-size: 0;
-        background: color('mercury');
+        background: color('iron');
 
         @extend %loading-indicator;
         &:after {
@@ -46,7 +47,7 @@
 
     &-label {
       display: block;
-      color: color('red');
+      color: color('guardsman-red');
       opacity: 0;
       transition: transform .3s ease, opacity .2s ease;
 

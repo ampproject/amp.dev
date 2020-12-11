@@ -42,8 +42,12 @@ platform/pages*
 platform/static
 platform/config/build-info.yaml
 thumbor/static
-frontend/templates/views/partials/pixi.j2
+frontend/templates/views/partials/pixi/webpack.j2
 
 # Ignore pipeline cache
 .cache/**/*
 !.cache/.gitkeep
+
+# Ignore certs from being accidentally committed
+packager/certs/*pem
+packager/certs/*pem.enc

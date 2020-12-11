@@ -1,8 +1,6 @@
 ---
 $title: amp-addthis
 $category@: social
-formats:
-- websites
 teaser:
   text: Muestra un elemento insertado de las herramientas del sitio web AddThis.
 ---

@@ -1,0 +1,245 @@
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+.#{molecule('pixi-recommendations-item')} {
+  $recommendationsItem: &;
+  margin-top: 30px;
+  transition: transform 0.25s ease-in, background 0.25s ease-in,
+    box-shadow 0.3s ease-in, border-color 0.3s ease-in;
+
+  &-box {
+    padding: 30px 18px;
+    border-radius: 8px;
+    border: solid 2px color('iron');
+
+    @media (min-width: 768px) {
+      padding: 23px;
+    }
+
+    @media (min-width: 1024px) {
+      padding: 33px;
+    }
+  }
+
+  &-header {
+    background: transparent;
+    border: none;
+    text-align: initial;
+    position: relative;
+    margin: -20px -20px 0;
+    padding: 20px 20px 30px;
+    cursor: pointer;
+    width: calc(100% + 40px);
+
+    &-title {
+      width: 80%;
+      max-width: 720px;
+      margin: 0;
+      font-family: Poppins;
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 1.3;
+      color: color('black');
+    }
+
+    &-toggle {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      width: 17px;
+      height: 17px;
+      margin-top: 5px;
+      background-repeat: no-repeat;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M56.293 16.003c1.761-1.645 4.553-1.645 6.314 0a4.323 4.323 0 010 6.357l-27.45 25.638c-1.761 1.645-4.553 1.645-6.314 0L1.393 22.36C.494 21.521 0 20.397 0 19.182s.494-2.339 1.393-3.178c1.761-1.645 4.553-1.645 6.314 0L32 38.693l24.293-22.689z'/%3E%3C/svg%3E");
+      transition: transform 0.25s cubic-bezier(0, 0, 0.3, 1);
+
+      &[dir='rtl'] {
+        left: 20px;
+        right: initial;
+      }
+
+      @media (min-width: 768px) {
+        width: 21px;
+        height: 21px;
+      }
+    }
+  }
+
+  &-body {
+    display: none;
+    margin-bottom: 25px;
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    p {
+      max-width: 720px;
+      margin: 0;
+      line-height: 1.63;
+    }
+
+    code {
+      overflow-wrap: break-word;
+    }
+
+    .#{molecule('lnk-square')} {
+      margin-left: auto;
+      padding: 20px 0 0;
+      border-bottom: 0;
+
+      div {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg id='internal' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' width='22' height='22' fill='%23fff'%3E%3Cpath d='M43.16 10.18c-0.881-0.881-2.322-0.881-3.203 0s-0.881 2.322 0 3.203l16.335 16.335h-54.051c-1.281 0-2.242 1.041-2.242 2.242 0 1.281 0.961 2.322 2.242 2.322h54.051l-16.415 16.335c-0.881 0.881-0.881 2.322 0 3.203s2.322 0.881 3.203 0l20.259-20.259c0.881-0.881 0.881-2.322 0-3.203l-20.179-20.179z'%3E%3C/path%3E%3C/svg%3E");
+      }
+    }
+  }
+
+  &-details {
+    min-width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    overflow: auto;
+
+    &-title {
+      font-family: Poppins;
+      font-size: 16px;
+      font-weight: bold;
+      color: color('black');
+    }
+
+    table {
+      text-align: left;
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    tr + tr,
+    thead + tr {
+      border-top: 1px solid color('iron');
+    }
+
+    td,
+    th {
+      padding: 15px;
+    }
+
+    .thumbnail {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      padding: 0;
+
+      img {
+        object-fit: cover;
+      }
+    }
+
+    .url {
+      max-width: 300px;
+      white-space: nowrap;
+      overflow: hidden;
+      direction: rtl;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &-next-advice {
+    &[dir='rtl'] {
+      margin-left: initial;
+
+      &:hover {
+        transform: translateX(-10px);
+      }
+    }
+
+    &-icon {
+      [dir='rtl'] > & {
+        transform: scaleX(-1);
+      }
+
+      [dir='rtl']:hover > & {
+        transform: scaleX(-1) translate(10px);
+      }
+    }
+
+    &-text {
+      [dir='rtl'] > & {
+        padding-left: initial;
+        padding-right: 10px;
+      }
+      [dir='rtl']:hover > & {
+        transform: translateX(-10px);
+      }
+    }
+  }
+
+  &-tags {
+    padding-top: 20px;
+    border-top: solid 2px color('iron');
+
+    span {
+      height: 30px;
+      margin: 15px 8px 15px 0;
+      padding: 5.5px 10px;
+      border: 1px solid safeColor('light-gray');
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: bold;
+      color: safeColor('light-gray');
+
+      &:first-child {
+        display: none;
+      }
+    }
+  }
+
+  &.expanded {
+    @media (min-width: 768px) {
+      transform: translateY(-0.125em);
+
+      #{$recommendationsItem}-box {
+        border-color: transparent;
+        background: safeColor('white');
+        box-shadow: 0 15px 30px 0 fade-out(color('black'), 0.85);
+      }
+    }
+
+    #{$recommendationsItem} {
+      &-header-toggle {
+        transform: rotate(180deg);
+      }
+
+      &-body {
+        display: flex;
+
+        &-text pre {
+          white-space: pre-wrap;
+          line-height: 1.5em;
+        }
+      }
+    }
+  }
+
+  &.highlight {
+    #{$recommendationsItem}-header-title {
+      &:before {
+        content: '';
+        display: inline-block;
+        height: 25px;
+        width: 25px;
+        margin-right: 10px;
+        vertical-align: top;
+        background-size: cover;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cg fill='%23005AF0' fill-rule='nonzero'%3E%3Cpath d='M15 0c8.285 0 15 6.716 15 15 0 8.284-6.715 15-15 15-8.284 0-15-6.716-15-15C0 6.716 6.716 0 15 0zm0 1.5C7.544 1.5 1.5 7.544 1.5 15S7.544 28.5 15 28.5 28.5 22.456 28.5 15 22.456 1.5 15 1.5z'/%3E%3Cpath d='M13.012 9.287L13 9.007c0-.692.158-1.2.474-1.523.315-.323.752-.484 1.31-.484.541 0 .972.156 1.292.467.32.31.48.809.48 1.493 0 .14-.005.249-.013.327l-.652 9.007h-2.276l-.603-9.007zM14.75 24c-.312 0-.604-.083-.875-.248a1.754 1.754 0 01-.64-.68A1.939 1.939 0 0113 22.13c0-.33.08-.642.24-.934.16-.293.373-.526.64-.7.268-.174.558-.26.87-.26.334 0 .639.09.914.273.275.182.492.42.652.712.16.293.24.596.24.91 0 .33-.084.64-.251.928-.167.288-.39.517-.669.687-.279.17-.574.254-.886.254z'/%3E%3C/g%3E%3C/svg%3E");
+      }
+    }
+  }
+}

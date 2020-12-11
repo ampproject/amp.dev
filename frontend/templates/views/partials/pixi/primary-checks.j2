@@ -1,0 +1,106 @@
+{% do doc.styles.addCssFile('css/components/organisms/pixi-primary-checks.css') %}
+
+<div class="ap-o-pixi-primary-checks" id="core-web-vitals">
+  <div class="ap-o-pixi-primary-checks-tabs" dir="{{ doc.locale.text_direction }}" aria-label="{{ pixi.staticText.coreWebVitals.tabsAriaLabel }}">
+    <button role="tab" aria-selected="true" aria-controls="primary-checks-field-data"
+            id="field-data-tab" class="ap-o-pixi-primary-checks-tabs-tab active">
+      {{ pixi.staticText.coreWebVitals.fieldData }}
+    </button>
+    <button role="tab" aria-selected="false" aria-controls="primary-checks-lab-data"
+            id="lab-data-tab" class="ap-o-pixi-primary-checks-tabs-tab">
+      {{ pixi.staticText.coreWebVitals.labData }}
+    </button>
+  </div>
+
+  <div id="primary-checks-field-data" class="ap-o-pixi-primary-checks-data active" tabindex="0"
+    role="tabpanel" tabindex="0" aria-labelledby="field-data-tab">
+    {% with primary_metric = {
+      'id': 'fieldData.lcp',
+      'title': {
+        'full': pixi.staticText.coreWebVitals.loadingSpeed,
+        'id': 'LCP'
+      },
+      'scale': 'simple'
+    } %}
+    {% include 'views/partials/pixi/primary-metric.j2' %}
+    {% endwith %}
+
+    {% with primary_metric = {
+      'id': 'fieldData.fid',
+      'title': {
+        'full':pixi.staticText.coreWebVitals.interactivity,
+        'id': 'FID'
+      },
+      'scale': 'simple'
+    } %}
+    {% include 'views/partials/pixi/primary-metric.j2' %}
+    {% endwith %}
+
+    {% with primary_metric = {
+      'id': 'fieldData.cls',
+      'title': {
+        'full': pixi.staticText.coreWebVitals.visualStability,
+        'id': 'CLS'
+      },
+      'scale': 'simple'
+    } %}
+    {% include 'views/partials/pixi/primary-metric.j2' %}
+    {% endwith %}
+
+    <div class="ap-o-pixi-primary-checks-data-error-label">
+      <label>{{ g.doc('/content/pixi/no-field-data.md', locale=doc.locale).html|render|safe }}</label>
+    </div>
+    <div class="ap-o-pixi-primary-checks-data-api-error-label">
+      <h3>{{ pixi.scriptText.status.error }}</h3>
+    </div>
+    <div class="ap-o-pixi-primary-checks-data-note"> 
+      {{ pixi.staticText.coreWebVitals.fieldDataExplainer }} 
+    </div>
+  </div>
+
+  <div class="ap-o-pixi-primary-checks-data" tabindex="0" id="primary-checks-lab-data"
+    role="tabpanel" tabindex="0" aria-labelledby="lab-data-tab">
+    {% with primary_metric = {
+      'id': 'labData.lcp',
+      'type': '-lab',
+      'title': {
+        'full': pixi.staticText.coreWebVitals.loadingSpeed,
+        'id': 'LCP'
+      },
+      'scale': 'weighted'
+    } %}
+    {% include 'views/partials/pixi/primary-metric.j2' %}
+    {% endwith %}
+
+    {% with primary_metric = {
+      'id': 'labData.tbt',
+      'type': '-lab',
+      'title': {
+        'full': pixi.staticText.coreWebVitals.interactivity,
+        'id': 'TBT'
+      },
+      'scale': 'weighted'
+    } %}
+    {% include 'views/partials/pixi/primary-metric.j2' %}
+    {% endwith %}
+
+    {% with primary_metric = {
+      'id': 'labData.cls',
+      'type': '-lab',
+      'title': {
+        'full': pixi.staticText.coreWebVitals.visualStability,
+        'id': 'CLS'
+      },
+      'scale': 'weighted'
+    } %}
+    {% include 'views/partials/pixi/primary-metric.j2' %}
+    {% endwith %}
+
+    <div class="ap-o-pixi-primary-checks-data-api-error-label">
+      <h3>{{ pixi.scriptText.status.error }}</h3>
+    </div>
+    <div class="ap-o-pixi-primary-checks-data-note"> 
+      {{ pixi.staticText.coreWebVitals.labDataExplainer }} 
+    </div>
+  </div>
+</div>

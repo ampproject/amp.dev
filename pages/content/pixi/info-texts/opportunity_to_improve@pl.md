@@ -1,0 +1,1 @@
+Jest to różnica wyników strony serwowanej z źródła i jej zbuforowanego odpowiednika AMP, jeśli taki istnieje. Jeżeli strona z źródła już działa porównywalnie do jej zbuforowanego odpowiednika, zgłaszany jest status „Brak”, natomiast status „---” jest zgłaszany, jeżeli nie ma żadnych dostępnych danych na temat zbuforowanej strony.

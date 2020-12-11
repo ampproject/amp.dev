@@ -1,0 +1,1 @@
+Bu, kaynaktan sunulan AMP sayfası ile önbellekten sunulan muadili arasındaki puan farkıdır. Kaynak sayfa zaten önbelleğe alınmış emsaliyle karşılaştırılabilir bir performans gösteriyorsa "Yok" durumu rapor edilirken, önbelleğe alınan sayfa hakkında herhangi bir veri yoksa "---" durumu rapor edilir.

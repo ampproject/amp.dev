@@ -1,9 +1,6 @@
 ---
 $title: amp-lightbox
 $category@: layout
-formats:
-- websites
-- ads
 teaser:
   text: Отображение элементов в модальном окне просмотра, занимающем всю область просмотра.
 ---

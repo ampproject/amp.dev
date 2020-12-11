@@ -90,12 +90,12 @@ $borderSize: 5px;
 
   &-default {
     margin: 0;
-    border-bottom: $borderSize solid color('malachite');
+    border-bottom: $borderSize solid color('japan-laurel');
     border-right: none;
     border-radius: 0 $borderSize $borderSize 0;
     word-break: break-word;
     @media(min-width: 768px) {
-      border-right: $borderSize solid color('malachite');
+      border-right: $borderSize solid color('japan-laurel');
       border-bottom: none;
     }
 

@@ -1,10 +1,6 @@
 ---
 $title: amp-list
 $category@: dynamic-content
-formats:
-- websites
-- email
-- stories
 teaser:
   text: Verileri dinamik bir şekilde indirir ve şablon kullanarak liste öğeleri oluşturur.
 ---

@@ -1,9 +1,6 @@
 ---
 $title: amp-lightbox
 $category@: layout
-formats:
-- websites
-- ads
 teaser:
   text: Exibe elementos em um modal "lightbox" que ocupa toda a janela de visualização.
 ---

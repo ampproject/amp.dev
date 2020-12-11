@@ -19,11 +19,18 @@ import events from '../events/events.js';
 import * as Button from '../button/button.js';
 import FlyIn from '../fly-in/fly-in.js';
 import * as ExperimentItem from './experiment-list-item.js';
+import * as InputBar from '../input-bar/input-bar.js';
 import createInput from '../input-bar/input-bar.js';
 
 const EXPERIMENTS_CONFIG_SOURCE_PATH =
   'https://raw.githubusercontent.com/ampproject/amphtml/master/tools/experiments/experiments-config.js';
+
+// Matches items from object string, e.g: { id: 'id', name: 'name'}
+const EXPERIMENTS_ITEM_PATTERN = /(?:\{\s)(.*?)(?:})/gms;
+// Matches id from item, e.g: id: 'amp-access-iframe'
 const EXPERIMENTS_ID_PATTERN = /(?:id: ')(.*?)(?:')/gm;
+// Matches name from item, e.g: 'AMP Access JWT prototype'
+const EXPERIMENTS_NAME_PATTERN = /(?:name: ')(.*?)(?:')/gm;
 
 export const EVENT_TOGGLE_EXPERIMENT = 'event-toggle-experiment';
 
@@ -55,23 +62,41 @@ class Experiments extends FlyIn {
         type: 'url',
         name: 'text',
         placeholder: 'Experiment ID',
+        autocomplete: {
+          title: 'Active Experiments',
+          options: [],
+        },
       }
     );
+
+    this.init()
+      .then(() => {
+        this.inputBar.updateAutocompleteOptions(this.availableExperiments);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
 
     this.inputBar.input.addEventListener('keydown', (e) => {
       if (e.keyCode === 13) {
         this.onSubmitExperiment();
       }
     });
-    this.inputBar.submit.addEventListener('click', () => {
-      this.onSubmitExperiment();
-    });
-
-    this.addActiveExperiments();
+    this.inputBar.submit.addEventListener(
+      'click',
+      this.onSubmitExperiment.bind(this)
+    );
 
     events.subscribe(ExperimentItem.EVENT_REMOVE_EXPERIMENT, (experiment) => {
       this.removeExperiment(experiment);
     });
+
+    this.inputBar.subscribe(
+      InputBar.EVENT_SELECT_AUTOCOMPLETE,
+      this.onSubmitExperiment.bind(this)
+    );
+
+    this.addActiveExperiments();
   }
 
   async init() {
@@ -82,6 +107,10 @@ class Experiments extends FlyIn {
     }
   }
 
+  /**
+   * Reads activated experiments from localStorage
+   * and adds them to the list
+   */
   addActiveExperiments() {
     const experiments = localStorage.getItem('amp-experiment-toggles');
     if (experiments) {
@@ -97,7 +126,10 @@ class Experiments extends FlyIn {
     this.inputBar.toggleLoading();
     this.init().then(() => {
       const inputValue = this.inputBar.value;
-      if (!inputValue || !this.availableExperiments.includes(inputValue)) {
+      const experimentIds = this.availableExperiments.map(
+        (experiment) => experiment.id
+      );
+      if (!inputValue || !experimentIds.includes(inputValue)) {
         this.inputBar.showError('Not a valid AMP Experiment');
       } else if (!this.activeExperiments.includes(inputValue)) {
         this.addExperiment(inputValue);
@@ -123,10 +155,31 @@ class Experiments extends FlyIn {
         return response.text();
       })
       .then((body) => {
-        const experimentIds = body.match(EXPERIMENTS_ID_PATTERN).map((id) => {
-          return id.substring(5, id.length - 1);
-        });
-        return experimentIds;
+        const experiments = body
+          .match(EXPERIMENTS_ITEM_PATTERN)
+          .map((experiment) => {
+            let id = experiment.match(EXPERIMENTS_ID_PATTERN);
+            if (!id) {
+              throw Error('Invalid experiment', experiment);
+            }
+
+            id = id[0].substring(5, id[0].length - 1);
+            let name = experiment.match(EXPERIMENTS_NAME_PATTERN);
+            if (name) {
+              name = name[0]
+                .replace(/'\s\+\s+'/, '')
+                .trim()
+                .substring(1, name[0].length - 1);
+            } else {
+              name = id;
+            }
+
+            return {
+              id: id,
+              name: name,
+            };
+          });
+        return experiments;
       })
       .catch((err) => {
         console.error(err);

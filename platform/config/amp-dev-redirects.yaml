@@ -14,13 +14,19 @@
 # Add new entries in alphabetical order in the format /path/to/old/url: /path/to/new/url
 
 /ads: /about/ads/
+/amp-optimizer: /documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/
 /docs: /documentation/guides-and-tutorials/
 /email: /about/email/
 /learn: /documentation/courses/
 /optimizer: /documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/
+/pageexperience: /page-experience
+/pixi: /page-experience
 /samples: /documentation/examples/
 /stories: /about/stories/
+/vitals: /page-experience
+/web-vitals: /page-experience
 /websites: /about/websites/
+/webvitals: /page-experience
 
 ### Other redirects
 # Put here redirects for pages that have been moved, etc

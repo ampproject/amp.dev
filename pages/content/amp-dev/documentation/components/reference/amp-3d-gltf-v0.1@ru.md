@@ -1,10 +1,8 @@
 ---
 $title: amp-3d-gltf
 $category@: media
-formats:
-- websites
 teaser:
-  text: Компонент для показа 3D-моделей, использующих формат gITF (GL Transmission Format)
+  text: Компонент для показа 3D-моделей, использующих формат glTF (GL Transmission Format)
 ---
 
 <!--
@@ -25,7 +23,7 @@ limitations under the License.
 
 
 
-Этот компонент предназначен для показа 3D-моделей, использующих формат gITF (GL Transmission Format).
+Этот компонент предназначен для показа 3D-моделей, использующих формат glTF (GL Transmission Format).
 
 <table>
   <tr>
@@ -44,7 +42,7 @@ limitations under the License.
 
 ## Использование <a name="usage"></a>
 
-Компонент `amp-3d-gltf` предназначен для показа 3D-моделей, при создании которых использовался формат gITF.
+Компонент `amp-3d-gltf` предназначен для показа 3D-моделей, при создании которых использовался формат glTF.
 
 **Примечание.** Такие модели могут демонстрироваться только в браузерах, которые поддерживают WebGL.
 

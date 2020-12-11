@@ -16,6 +16,11 @@
       "host": "localhost",
       "port": "8080"
     },
+    "websocket": {
+      "scheme": "ws",
+      "host": "localhost",
+      "port": "8080"
+    },
     "playground": {
       "scheme": "http",
       "subdomain": "playground",

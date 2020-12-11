@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   {% for doc in docs|sort(attribute='url') if not doc.sitemap.enabled is sameas false %}
   <url>
-    <loc>{{ doc.url }}</loc>
+    <loc>{{ doc.pod.podspec.base_urls.platform }}{{ doc.url.path }}</loc>
     {% if doc.modified %}
     <lastmod>{{ doc.modified|date("%Y-%M-%D") }}</lastmod>
     {% endif %}

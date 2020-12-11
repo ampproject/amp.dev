@@ -1,47 +1,41 @@
 ---
-$title: Как создать адаптивные AMP-страницы
+formats:
+- websites
+- email
+- ads
+- stories
+"$path": "/documentation/guides-and-tutorials/develop/style_and_layout/index.html"
+"$localization":
+  path: "/{locale}/documentation/guides-and-tutorials/develop/style_and_layout/index.html"
+"$title": Как создать адаптивные AMP-страницы
+"$order": '0'
+description: 'По методам стилизации и компоновки страницы AMP HTML очень схожи с обычными HTML-страницами: в обоих случаях используется CSS.'
+"$hidden": 'true'
+author: pbakaus
+contributors:
+- Meggin
 ---
 
-Чтобы сделать элементы на AMP-страницах адаптивными, просто добавьте в них атрибут `layout=responsive`.
+По методам стилизации и компоновки страницы AMP HTML очень схожи с обычными HTML-страницами: в обоих случаях используется CSS.
 
-## Как создать адаптивные изображения
+Чтобы обеспечить оптимальную производительность и удобство для пользователя, AMP [накладывает ограничения на использование некоторых стилей CSS](style_pages.md), а общий объем стилей на странице не должен превышать 75 000 байт. При этом AMP обеспечивает новые возможности для адаптивного дизайна, такие как [заполнители и резервные элементы](placeholders.md), [расширенная художественная обработка при помощи srcset](art_direction.md) и [атрибут layout](control_layout.md), предоставляя более высокий уровень контроля над отображением элементов.
 
-Все сторонние ресурсы, в том числе изображения, должны иметь указанный размер и положение, чтобы при их загрузке не происходила перекомпоновка страницы.
-
-Чтобы создать адаптивное изображение, задайте его ширину и высоту, выберите адаптивный макет и с помощью атрибута [`srcset`](style_pages.md) укажите, какое изображение следует использовать в зависимости от размеров экрана:
-
-[sourcecode:html]
-<amp-img
-    src="/img/narrow.jpg"
-    srcset="/img/wide.jpg 640w,
-           /img/narrow.jpg 320w"
-    width="1698"
-    height="2911"
-    layout="responsive"
-    alt="an image">
-</amp-img>
-[/sourcecode]
-
-Ширина элемента [`amp-img`](../../../../documentation/components/reference/amp-img.md) устанавливается равной ширине контейнера, а его высота автоматически меняется в соответствии с соотношением сторон, определяемым атрибутами width и height:
-
-<amp-img src="/static/img/docs/responsive_amp_img.png" width="500" height="857" layout="responsive"></amp-img>
-
-[Подробнее...](../../../../documentation/examples/documentation/amp-img.html)
+[tip type="tip"] **СОВЕТ.** В AMP очень легко сделать элемент адаптивным: просто добавьте к нему атрибут `layout="responsive"`. Подробнее об адаптивном дизайне в AMP см. в статье [Создание адаптивных AMP-страниц](responsive_design.md). [/tip]
 
 ## Как добавить стили на страницу
 
-Добавьте все стили в тег `<style amp-custom>` в заголовке документа.
-Пример:
+Объем CSS-стилей на каждой AMP-странице не должен превышать 75 000 байт. Это ограничение распространяется как на стили, определенные в разделе head документа, так и на встроенные стили.
+
+### Определение стилей в разделе head
+
+Для определения стилей CSS используйте тег `<style amp-custom>` в разделе head документа. В коде каждой  AMP-страницы может быть только один тег `<style amp-custom>`.
 
 [sourcecode:html]
 <!doctype html>
   <head>
-    <meta charset="utf-8">
-    <link rel="canonical" href="hello-world.html">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    ...
     <style amp-custom>
-      /* any custom style goes here. */
+      /* any custom styles go here. */
       body {
         background-color: white;
       }
@@ -53,13 +47,11 @@ $title: Как создать адаптивные AMP-страницы
         background-color: grey;
       }
     </style>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    ...
   </head>
 [/sourcecode]
 
-**Внимание!** На одной AMP-странице можно добавить только один тег `<style amp-custom>`.
-
-Задайте стили компонентов с помощью селекторов классов или элементов, а также общих свойств CSS. Пример:
+Для стилизации компонентов AMP и элементов HTML используйте классы и селекторы в сочетании с обычными CSS-свойствами:
 
 [sourcecode:html]
 <body>
@@ -76,29 +68,46 @@ $title: Как создать адаптивные AMP-страницы
 </body>
 [/sourcecode]
 
-**Внимание!** Проверьте, поддерживаются ли выбранные вами стили в AMP, поскольку некоторые из них недоступны из соображений производительности. [Подробнее...](style_pages.md)
+### Определение встроенных стилей
 
-## Размеры и положение элементов
+AMP допускает использование встроенных стилей:
 
-AMP разделяет процессы обработки макета документа и ресурсов. Это позволяет сначала загружать макет.
+[sourcecode:html]
+<body>
+  <p style="color:pink;margin-left:30px;">Hello, Kitty.</p>
+</body>
+[/sourcecode]
 
-Укажите размер и положение всех видимых элементов AMP, задав значение атрибутов `width` и `height`.
-Эти атрибуты определяют соотношение сторон элемента, размеры которого могут меняться в зависимости от параметров контейнера.
+Размер каждого встроенного стиля не должен превышать 1000 байт. Встроенные стили засчитываются в общее ограничение в 75 000 байт.
 
-Создайте адаптивный макет,
-у которого ширина элемента равна ширине контейнера, а высота автоматически меняется в соответствии с соотношением сторон, заданным атрибутами width и height.
+## Элементы с адаптивным макетом
 
-Подробнее о том, [какие стили поддерживаются в AMP](control_layout.md)...
+Чтобы указывать размер и положение для видимых элементов AMP, используйте атрибуты `width` и `height`. Эти атрибуты определяют соотношение сторон элемента, размеры которого могут пропорционально меняться в соответствии с размером контейнера.
+
+Если установить атрибуту «layout» значение «responsive», то ширина элемента будет определяться шириной элемента-контейнера, а высота будет задаваться автоматически на основании соотношения сторон, определяемого атрибутами «width» и «height».
+
+[tip type="read-on"] **ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ.** Подробнее о поддерживаемых макетах в AMP вы можете прочитать [здесь](control_layout.md) [/tip]
+
+## Указание заполнителей и резервных элементов
+
+Благодаря встроенной поддержке заполнителей и резервных элементов вашим пользователям больше никогда не придется смотреть на пустой экран.
+
+[tip type="read-on"] **ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ.** Подробнее о заполнителях и резервных элементах вы можете прочитать [здесь](placeholders.md) [/tip]
+
+## Художественная обработка изображений
+
+AMP поддерживает атрибуты `srcset` и `sizes`, дающий точный контроль над загрузкой изображений в различных сценариях.
+
+[tip type="read-on"] **ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ.** Подробнее о художественной обработке при помощи srcset и sizes вы можете прочитать [здесь](art_direction.md) [/tip]
 
 ## Как проверить стили и макет
 
-Для проверки значений CSS и макета страницы используется инструмент AMP Validator.
+Для проверки значений CSS и макета страницы используйте AMP-валидатор.
 
-Он определяет, не превышает ли объем стилей CSS 50 тыс. байтов, выявляет запрещенные стили и проверяет, правильно ли отформатирован макет страницы.
-Ознакомьтесь с [полным списком ошибок в стилях и макетах](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md).
+Валидатор подтверждает, что объем CSS на вашей странице не превышает ограничение в 75 000 байт, проверяет наличие запрещенных стилей и гарантирует, что макет страницы поддерживается и правильно отформатирован. См. также полный список [ошибок, затрагивающих к стили и макеты](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md#style-and-layout-errors).
 
-Ниже представлен пример ошибки, возникшей из-за того, что объем стиля CSS страницы превышает 50 тыс. байтов:
+Пример ошибки в консоли на странице со стилями CSS, чей объем превышает лимит в 75 000 байт:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Подробнее [о проверке AMP-страниц, в том числе о выявлении и устранении ошибок в стилях](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)...
+[tip type="read-on"] **ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ.** Подробнее о валидации и исправлении AMP-страниц вы можете прочитать [здесь](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) [/tip]

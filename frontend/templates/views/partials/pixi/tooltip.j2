@@ -1,0 +1,35 @@
+{% do doc.styles.addCssFile('css/components/molecules/pixi-tooltip.css') %}
+
+<div id="tooltip-{{ tooltip.id|replace(".", "-")  + tooltip.type|default('') }}"
+    class="ap-m-tooltip {% if tooltip.invert %}invert{% endif %}">
+
+  <button class="ap-m-tooltip-toggle" aria-expanded="false" [aria-expanded]="tooltipExpanded || 'false'"
+      id="tooltip-{{ tooltip.id|replace(".", "-") + tooltip.type|default('') }}-open"
+      on="tap:tooltip-{{ tooltip.id|replace(".", "-") + tooltip.type|default('') }}.toggleClass(class=active),AMP.setState({tooltipExpanded: tooltipExpanded == 'true' ? 'false' : 'true'})"
+      aria-label="{{ pixi.staticText.infoDialog.open }} {{ info_texts[tooltip.id].title }}">
+    {% do doc.icons.useIcon('icons/questionmark-outline.svg') %}
+    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#questionmark-outline"></use></svg>
+  </button>
+
+  <div class="ap-m-tooltip-tip" role="region"
+      aria-labelledby="tooltip-{{ tooltip.id|replace(".", "-") + tooltip.type|default('') }}-title">
+    <button class="ap-m-tooltip-close" role="button"
+        aria-label="{{ pixi.staticText.infoDialog.close }}"
+        id="tooltip-{{ tooltip.id|replace(".", "-") + tooltip.type|default('') }}-close"
+        on="tap:tooltip-{{ tooltip.id|replace(".", "-")  + tooltip.type|default('') }}.toggleClass(class=active),AMP.setState({tooltipExpanded: 'false'}),tooltip-{{ tooltip.id|replace(".", "-") + tooltip.type|default('') }}-open.focus">
+      {% do doc.icons.useIcon('/icons/close.svg') %}
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
+    </button>
+    <div>
+      <h3 id="tooltip-{{ tooltip.id|replace(".", "-") + tooltip.type|default('') }}-title">
+        {{ info_texts[tooltip.id].title|markdown|safe }}
+      </h3>
+      <div id="tooltip-{{ tooltip.id|replace(".", "-") + tooltip.type|default('') }}-description">
+        {{ info_texts[tooltip.id].body|markdown|safe }}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ap-m-tooltip-background" tabindex="-1" role="presentation"
+    on="tap:tooltip-{{ tooltip.id|replace(".", "-")  + tooltip.type|default('') }}.toggleClass(class=active),AMP.setState({tooltipExpanded: 'false'})">
+</div>

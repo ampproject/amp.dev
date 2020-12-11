@@ -9,14 +9,6 @@
 The KPI molecule is a combination of icon, headline and text atoms.
 The size of the icon should be 2 (small), the headline should be h1 (xxlarge) and text should be 4 (large).
 
-### MODIFIERS:
-he current modifiers change the background gradient color for the KPI. Modifiers are labeled by the fist word in each color name inside the gradient.
-Please refer to mixins.scss to see gradients.
-
--emerald-doger
--tubo-pizazz
--river-ebony
-
 */
 
 @import '../atoms/_text.scss';

@@ -1,10 +1,6 @@
 ---
 $title: amp-list
 $category@: dynamic-content
-formats:
-- websites
-- email
-- stories
 teaser:
   text: scarica i dati in modo dinamico e crea voci di elenco utilizzando un modello.
 ---

@@ -64,6 +64,10 @@ module.exports = {
       pixiConfig.development.API_ENDPOINT_PAGE_SPEED_INSIGHTS,
     API_ENDPOINT_SAFE_BROWSING:
       pixiConfig.development.API_ENDPOINT_SAFE_BROWSING,
+    API_ENDPOINT_LINTER: pixiConfig.development.API_ENDPOINT_LINTER,
+    API_ENDPOINT_MOBILE_FRIENDLINESS:
+      pixiConfig.development.API_ENDPOINT_MOBILE_FRIENDLINESS,
+    AMP_DEV_PIXI_APIS_KEY: '',
   },
 
   // An array of directory names to be searched recursively up from the requiring module's location

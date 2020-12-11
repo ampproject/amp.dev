@@ -1,8 +1,6 @@
 ---
 $title: amp-auto-ads
 $category@: ads-analytics
-formats:
-- websites
 teaser:
   text: Динамически размещает объявления на AMP-странице с помощью файла конфигурации с удаленного сервера.
 ---

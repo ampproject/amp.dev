@@ -1,7 +1,7 @@
 ---
 $title: AMP for Email - Email Provider integration
 $order: 5
-desccription: 'Information for email clients and providers for integrating with AMP.'
+description: 'Information for email clients and providers for integrating with AMP.'
 formats:
   - email
 ---

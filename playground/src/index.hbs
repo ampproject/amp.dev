@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width">
 
     <title>
       {{^htmlWebpackPlugin.options.validator}}
@@ -41,13 +41,6 @@
 
     <!-- Color the status bar on mobile devices -->
     <meta name="theme-color" content="#ffffff">
-
-    {{^htmlWebpackPlugin.options.embed}}
-    <link rel="preload" href="https://amp.dev/static/fonts/noto-sans-v7-latin-regular.woff2" as="font" crossorigin>
-    <link rel="preload" href="https://amp.dev/static/fonts/noto-sans-v7-latin-700.woff2" as="font" crossorigin>
-    <link rel="preload" href="https://amp.dev/static/fonts/poppins-v5-latin-700.woff2" as="font" crossorigin>
-    <link rel="preload" href="https://amp.dev/static/fonts/fira-mono-v7-latin-500.woff2" as="font" crossorigin>
-    {{/htmlWebpackPlugin.options.embed}}
 
     <script async src="https://www.googletagmanager.com/gtag/js?id={{htmlWebpackPlugin.options.gaTrackingId}}"></script>
   </head>
@@ -115,8 +108,8 @@
         <div id="preview-header-close" class="button" aria-label="close preview" title="close preview" tabindex="0" role="button">✕</div>
         <div id="preview-header-state" class="button" aria-label="toggle state" title="toggle state" tabindex="0" role="button" disabled>
           <span>State</span>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 22" width="30" height="22">
-            <path d="M6.696 21.204v-.234c-.696-.288-1.275-.804-1.737-1.548-.462-.744-.693-1.686-.693-2.826 0-.492.06-1.122.18-1.89a9.688 9.688 0 00.162-1.62c0-1.392-.666-2.214-1.998-2.466v-.036c.684-.132 1.188-.405 1.512-.819.324-.414.486-.969.486-1.665 0-.444-.054-.99-.162-1.638-.12-.744-.18-1.362-.18-1.854 0-1.14.231-2.082.693-2.826C5.421 1.038 6 .522 6.696.234V0h-2.88c-.3.144-.63.393-.99.747s-.681.864-.963 1.53c-.282.666-.423 1.467-.423 2.403 0 .468.06 1.086.18 1.854.108.648.162 1.2.162 1.656 0 1.116-.594 1.74-1.782 1.872v1.08c.648.06 1.10t7.267 1.377.621s.405.771.405 1.251c0 .456-.054 1.008-.162 1.656-.12.768-.18 1.386-.18 1.854 0 .936.141 1.737.423 2.403.282.666.603 1.176.963 1.53.36.354.69.603.99.747h2.88zm12.276-3.906V14.22h-3.186v3.078h3.186zm4.356 0V14.22h-3.186v3.078h3.186zm-8.73 0V14.22h-3.186v3.078h3.186zm16.416 3.906c.3-.144.63-.393.99-.747s.681-.864.963-1.53c.282-.666.423-1.467.423-2.403 0-.468-.06-1.086-.18-1.854-.12-.72-.18-1.272-.18-1.656 0-.492.141-.924.423-1.296.282-.372.741-.564 1.377-.576v-1.08c-.636-.024-1.095-.219-1.377-.585a2.048 2.048 0 01-.423-1.287c0-.384.06-.936.18-1.656.12-.768.18-1.386.18-1.854 0-.936-.141-1.737-.423-2.403-.282-.666-.603-1.176-.963-1.53-.36-.354-.69-.603-.99-.747h-2.88v.234c.432.18.834.492 1.206.936.372.444.669.987.891 1.629a6.32 6.32 0 01.333 2.079c0 .492-.06 1.11-.18 1.854a10.252 10.252 0 00-.162 1.638c0 .612.162 1.101.486 1.467.324.366.828.615 1.512.747v.036c-1.332.252-1.998.984-1.998 2.196 0 .456.054.996.162 1.62.12.768.18 1.398.18 1.89a6.32 6.32 0 01-.333 2.079c-.222.642-.519 1.185-.891 1.629-.372.444-.774.756-1.206.936v.234h2.88z"/>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 22" width="35" height="22">
+            <path d="M6.696 21.204v-.234c-.696-.288-1.275-.804-1.737-1.548-.462-.744-.693-1.686-.693-2.826 0-.492.06-1.122.18-1.89a9.688 9.688 0 00.162-1.62c0-1.392-.666-2.214-1.998-2.466v-.036c.684-.132 1.188-.405 1.512-.819.324-.414.486-.969.486-1.665 0-.444-.054-.99-.162-1.638-.12-.744-.18-1.362-.18-1.854 0-1.14.231-2.082.693-2.826C5.421 1.038 6 .522 6.696.234V0h-2.88c-.3.144-.63.393-.99.747s-.681.864-.963 1.53c-.282.666-.423 1.467-.423 2.403 0 .468.06 1.086.18 1.854.108.648.162 1.2.162 1.656 0 1.116-.594 1.74-1.782 1.872v1.08c.648.06 1.107.267 1.377.621s.405.771.405 1.251c0 .456-.054 1.008-.162 1.656-.12.768-.18 1.386-.18 1.854 0 .936.141 1.737.423 2.403.282.666.603 1.176.963 1.53.36.354.69.603.99.747h2.88zm12.276-3.906V14.22h-3.186v3.078h3.186zm4.356 0V14.22h-3.186v3.078h3.186zm-8.73 0V14.22h-3.186v3.078h3.186zm16.416 3.906c.3-.144.63-.393.99-.747s.681-.864.963-1.53c.282-.666.423-1.467.423-2.403 0-.468-.06-1.086-.18-1.854-.12-.72-.18-1.272-.18-1.656 0-.492.141-.924.423-1.296.282-.372.741-.564 1.377-.576v-1.08c-.636-.024-1.095-.219-1.377-.585a2.048 2.048 0 01-.423-1.287c0-.384.06-.936.18-1.656.12-.768.18-1.386.18-1.854 0-.936-.141-1.737-.423-2.403-.282-.666-.603-1.176-.963-1.53-.36-.354-.69-.603-.99-.747h-2.88v.234c.432.18.834.492 1.206.936.372.444.669.987.891 1.629a6.32 6.32 0 01.333 2.079c0 .492-.06 1.11-.18 1.854a10.252 10.252 0 00-.162 1.638c0 .612.162 1.101.486 1.467.324.366.828.615 1.512.747v.036c-1.332.252-1.998.984-1.998 2.196 0 .456.054.996.162 1.62.12.768.18 1.398.18 1.89a6.32 6.32 0 01-.333 2.079c-.222.642-.519 1.185-.891 1.629-.372.444-.774.756-1.206.936v.234h2.88z"/>
           </svg>
         </div>
         <div id="preview-header-experiments" class="button" aria-label="toggle experiments" title="toggle experiments" tabindex="0" role="button">
@@ -156,7 +149,7 @@
     <div id="share-view" class="fly-in fly-in--left fly-in--share fly-in--lightbox" data-title="Share"></div>
     <div id="state-view" class="fly-in fly-in--left fly-in--state fly-in--lightbox" data-title="AMP State"></div>
     <div id="import-view" class="fly-in fly-in--left fly-in--import fly-in--lightbox" data-title="Import"></div>
-    <div id="experiments-view" class="fly-in fly-in--right fly-in--experiments fly-in--lightbox" data-title="Experiments"></div>
+    <div id="experiments-view" class="fly-in fly-in--left fly-in--experiments fly-in--lightbox" data-title="Experiments"></div>
     <div id="fly-in-background"></div>
     {{/htmlWebpackPlugin.options.validator}}
   </body>

@@ -1,10 +1,6 @@
 ---
 $title: amp-list
 $category@: dynamic-content
-formats:
-- websites
-- email
-- stories
 teaser:
   text: データを動的にダウンロードし、テンプレートを使用してリスト項目を作成します。
 ---

@@ -6,6 +6,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 const config = require('./config.js');
+const {calculateHash} = require('@ampproject/toolbox-script-csp');
 
 module.exports = (env, argv) => {
   const mode = argv.mode || 'production';
@@ -19,7 +20,8 @@ module.exports = (env, argv) => {
       publicPath: '/static/page-experience/',
     },
     optimization: {
-      minimizer: [new ClosurePlugin({mode: 'STANDARD'}, {})],
+      minimizer: [new ClosurePlugin({mode: 'AGGRESSIVE_BUNDLE'}, {})],
+      concatenateModules: false,
     },
     devtool: mode == 'development' ? 'cheap-module-source-map' : false,
     plugins: [
@@ -27,17 +29,34 @@ module.exports = (env, argv) => {
         template: path.join(__dirname, 'src/ui/page-experience.hbs'),
         filename: './pixi.html',
         inject: false,
-      }),
-      new webpack.EnvironmentPlugin({
-        AMP_DEV_API_KEY_SAFE_BROWSING: '',
-        AMP_DEV_API_KEY_PAGE_SPEED_INSIGHTS: '',
+        templateParameters: (compilation, assets, assetTags, options) => {
+          const js = Object.values(compilation.assets)[0].source();
+
+          return {
+            compilation,
+            webpackConfig: compilation.options,
+            htmlWebpackPlugin: {
+              files: assets,
+              options,
+            },
+            cspHash: calculateHash(js),
+          };
+        },
       }),
       new webpack.DefinePlugin({
+        IS_DEVELOPMENT: mode == 'development',
+        API_ENDPOINT_LINTER: JSON.stringify(config[mode].API_ENDPOINT_LINTER),
         API_ENDPOINT_SAFE_BROWSING: JSON.stringify(
           config[mode].API_ENDPOINT_SAFE_BROWSING
         ),
         API_ENDPOINT_PAGE_SPEED_INSIGHTS: JSON.stringify(
           config[mode].API_ENDPOINT_PAGE_SPEED_INSIGHTS
+        ),
+        API_ENDPOINT_MOBILE_FRIENDLINESS: JSON.stringify(
+          config[mode].API_ENDPOINT_MOBILE_FRIENDLINESS
+        ),
+        AMP_DEV_PIXI_APIS_KEY: JSON.stringify(
+          process.env.AMP_DEV_PIXI_APIS || ''
         ),
       }),
       new FileManagerPlugin({
@@ -45,14 +64,15 @@ module.exports = (env, argv) => {
           copy: [
             {
               source: './dist/pixi.html',
-              destination: '../frontend/templates/views/partials/pixi.j2',
+              destination:
+                '../frontend/templates/views/partials/pixi/webpack.j2',
             },
             {
               source: './dist/*.js',
               destination: '../dist/static/page-experience/',
             },
             {
-              source: './dist/pixi.main.map',
+              source: './dist/*.map',
               destination: '../dist/static/page-experience/',
             },
           ],
@@ -68,13 +88,6 @@ module.exports = (env, argv) => {
     ],
     module: {
       rules: [
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          use: {
-            loader: 'babel-loader',
-          },
-        },
         {
           test: /\.hbs$/,
           loader: 'handlebars-loader',

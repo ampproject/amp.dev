@@ -1,8 +1,6 @@
 ---
 $title: amp-addthis
 $category@: social
-formats:
-- websites
 teaser:
   text: Показ виджета сервиса AddThis, предназначенного для распространения веб-контента
 ---

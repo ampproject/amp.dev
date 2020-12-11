@@ -1,9 +1,6 @@
 ---
 $title: amp-selector
 $category@: dynamic-content
-formats:
-- websites
-- email
 teaser:
   text: オプションのメニューを提示し、ユーザーに選択を求めるコントロールを表示します。
 ---

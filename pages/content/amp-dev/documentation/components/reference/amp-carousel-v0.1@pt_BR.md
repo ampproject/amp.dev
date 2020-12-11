@@ -1,10 +1,6 @@
 ---
 $title: amp-carousel
 $category@: layout
-formats:
-- websites
-- email
-- ads
 teaser:
   text: Exibe vários conteúdos semelhantes em um eixo horizontal.
 ---

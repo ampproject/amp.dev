@@ -7,14 +7,14 @@ formats:
 <!--
   ## Introduction
 
-  An autocomplete-enabled input field suggests completed results corresponding to the user input as they type into the input field. 
+  An autocomplete-enabled input field suggests completed results corresponding to the user input as they type into the input field.
   This feature can help the user to carry out their task more quickly.
-  
+
   Data can be fetched from a JSON endpoint.
 -->
 <!-- -->
 <!DOCTYPE html>
-<html ⚡4email>
+<html ⚡4email lang="en" data-css-strict>
   <head>
     <meta charset="utf-8" />
     <!-- The AMP runtime.-->
@@ -25,8 +25,8 @@ formats:
         visibility: hidden;
       }
     </style>
-    <!-- 
-    ## Setup 
+    <!--
+    ## Setup
 
     Import the `amp-autocomplete` component.
   -->
@@ -71,10 +71,10 @@ formats:
   </head>
   <body>
     <h2>Basic usage</h2>
-    <!-- 
-    ## Basic usage 
+    <!--
+    ## Basic usage
 
-    An `amp-autocomplete` must always have an **input field** specified with an `input` or `textarea` tag and a datasource. 
+    An `amp-autocomplete` must always have an **input field** specified with an `input` or `textarea` tag and a datasource.
     When a user types into this input field, relevant suggestions will automatically appear below the input field.
 
     A **datasource** must be a JSON object containing an array property `items` and can be provided as remote data through the `src` attribute.
@@ -96,7 +96,7 @@ formats:
     </amp-autocomplete>
 
     <h2>Suggesting rich content</h2>
-    <!-- 
+    <!--
     ## Suggesting rich content
 
     More complicated data can be passed into autocompleted with an array of JsonObjects in "items".
@@ -105,7 +105,7 @@ formats:
     { "items" : [
         {
             "value" : "Albany",
-            "state" : "New York", 
+            "state" : "New York",
             "areaCode" : 518,
             "population" : 98251
         }, {
@@ -128,7 +128,7 @@ formats:
     <template type="amp-mustache" id="amp-template-custom">
       <div class="city-item" data-value="{{value}}, {{state}}">
         <div>{{value}}, {{state}}</div>
-        <div class="custom-population">Population: {{population}}</div>        
+        <div class="custom-population">Population: {{population}}</div>
       </div>
     </template>
     ```
@@ -148,13 +148,13 @@ formats:
     </amp-autocomplete>
 
     <h2>Inline autocomplete</h2>
-    <!-- 
+    <!--
     ## Displaying suggestions inline
 
     Suggestions can be triggered on a specified character token in an `amp-autocomplete` for multiple autosuggestions in a single input by using the `inline` attribute.
-    
+
     The token for triggering the autosuggestion must be the provided value for the `inline` attribute. For example, if `inline="+"`, then when the `+` token is entered by the user,
-    any relevant suggestions will be displayed. Otherwise, the field will behave the same as an unenhanced input field. The `inline` attribute does not support the empty string, 
+    any relevant suggestions will be displayed. Otherwise, the field will behave the same as an unenhanced input field. The `inline` attribute does not support the empty string,
     or `""` as a legitimate token value on `amp-autocomplete`.
   -->
     <div>

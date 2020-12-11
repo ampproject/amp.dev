@@ -1,0 +1,1 @@
+En la tabla de distribución sobre las puntuaciones de la página, se muestra el porcentaje de páginas cuya puntuación está dentro de los límites de puntuación para las categorías "Buena", "Necesita mejorar" y "Deficiente". Para acceder al Core Web Vitals, su página debería tener >75% de visitas que se encuentren dentro del límite correspondiente para la categoría "Buena".

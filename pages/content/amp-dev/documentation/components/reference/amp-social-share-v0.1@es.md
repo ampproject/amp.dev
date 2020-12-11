@@ -1,8 +1,6 @@
 ---
 $title: amp-social-share
 $category@: ads-analytics
-formats:
-- websites
 teaser:
   text: Se está desarrollando la función para hacer un seguimiento del uso compartido de contenido en redes sociales.
 ---

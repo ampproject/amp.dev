@@ -110,6 +110,6 @@ This is only applicable if third parties are unable to:
 *   Write and propose a design review. 
 *   Tests must be able to catch breakage. 
 *   Fix, or request help, if the component breaks.
-*   Provide through documentation with code samples.
+*   Provide thorough documentation with code samples.
 *   Maintain and update documentation.  
 *   Provide a troubleshooting channel for AMP developers to request assistance.

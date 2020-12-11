@@ -1,9 +1,6 @@
 ---
 $title: amp-animation
 $category@: presentation
-formats:
-- websites
-- ads
 teaser:
   text: Définir et afficher une animation.
 ---

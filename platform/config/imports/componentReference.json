@@ -1,4 +1,4 @@
 {
 	"only": [],
-	"fetchFromMaster": ["amp-access-laterpay", "amp-app-banner", "amp-script", "amp-carousel", "amp-consent", "amp-bind", "amp-story", "amp-subscriptions", "amp-list", "amp-script"]
+	"fetchFromMaster": ["amp-youtube", "amp-access-laterpay", "amp-app-banner", "amp-script", "amp-carousel", "amp-consent", "amp-bind", "amp-story", "amp-subscriptions", "amp-list", "amp-script"]
 }

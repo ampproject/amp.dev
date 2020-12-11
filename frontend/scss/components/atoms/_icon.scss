@@ -23,35 +23,35 @@ square
 */
 
 @mixin ico {
-	display: flex;
-	font-size: initial;
-	box-sizing: initial;
-	justify-content: center;
+  display: flex;
+  font-size: initial;
+  box-sizing: initial;
+  justify-content: center;
 }
 
 @mixin ico-1 {
-	width: 1em;
-	height: 1em;
+  width: 1em;
+  height: 1em;
 }
 
 @mixin ico-2 {
-	width: 1.375em;
-	height: 1.375em;
+  width: 1.375em;
+  height: 1.375em;
 }
 
 @mixin ico-3 {
-	width: 2.5em;
-	height: 2.5em;
+  width: 2.5em;
+  height: 2.5em;
 }
 
 @mixin ico-4 {
-	width: 4em;
-	height: 4em;
+  width: 4em;
+  height: 4em;
 }
 
 @mixin ico-5 {
-	width: 5em;
-	height: 5em;
+  width: 5em;
+  height: 5em;
 }
 
 @mixin ico-10 {
@@ -62,30 +62,30 @@ square
 }
 
 @mixin ico-blue-ribbon {
-	fill: color('blue-ribbon');
+  fill: color('blue-ribbon');
 }
 
 @mixin ico-white {
-	fill: color('white');
+  fill: color('white');
 }
 
 @mixin ico-stories {
   fill: color('school-bus');
 }
 
-@mixin ico-e-mails {
-  fill: color('forest-green');
+@mixin ico-ads {
+  fill: color('electric-violet');
 }
 
-@mixin ico-ads {
-  fill: color('ultramarine');
+@mixin ico-e-mails {
+  fill: color('japan-laurel');
 }
 
 @mixin ico-river-bed {
-	fill: color('river-bed');
+  fill: color('river-bed');
 }
 
 @mixin ico-square {
-	fill: color('white');
-	background-color: color('blue-ribbon');
+  fill: color('white');
+  background-color: color('blue-ribbon');
 }

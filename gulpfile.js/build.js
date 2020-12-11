@@ -137,12 +137,16 @@ function icons() {
     .pipe(gulp.dest(`${project.paths.GROW_POD}/icons`));
 }
 
+function buildFrontend21() {
+  return sh('npm run build:frontend');
+}
+
 /**
  * Runs all tasks needed to build the frontend
  * @return {undefined}
  */
 function buildFrontend(done) {
-  return gulp.parallel(sass, templates, icons)(done);
+  return gulp.parallel(sass, templates, icons, buildFrontend21)(done);
 }
 
 /**
@@ -296,7 +300,7 @@ function buildPrepare(done) {
         './dist/',
         './boilerplate/dist/',
         './playground/dist/',
-        './frontend/templates/views/partials/pixi.j2',
+        './frontend/templates/views/partials/pixi/webpack.j2',
         './.cache/',
         './examples/static/samples/samples.json',
       ];

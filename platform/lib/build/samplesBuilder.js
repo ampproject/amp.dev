@@ -279,7 +279,10 @@ class SamplesBuilder {
     if (sample.path.endsWith('/index.html')) {
       sample.path = path.dirname(sample.path) + '.html';
     }
+
     const platformHost = config.getHost(config.hosts.platform);
+    const websocketHost = config.getHost(config.hosts.websocket);
+    
     const parsedSample = await abe.parseSample(samplePath, {
       'base_path': `${platformHost}${this._getBaseRoute(sample)}`,
       'canonical': `${platformHost}${this._getDocumentationRoute(sample)}`,
@@ -287,6 +290,7 @@ class SamplesBuilder {
       'hosts': {
         'platform': platformHost,
         'api': API_HOST,
+        'websocket': websocketHost,
         'backend': BACKEND_HOST,
         'preview': config.hosts.preview.base,
       },

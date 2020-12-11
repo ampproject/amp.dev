@@ -13,9 +13,9 @@ AMP Optimizers are tools that bring AMP Cache optimizations to your own site. Us
 
 ## Isn’t AMP already fast?
 
-In the beginning, AMP caches served the majority of AMP pages. These caches performed additional optimizations on pages to guarantee a strong user experience. But, over time, more surfaces started linking to AMP pages and developers began building entire websites with AMP.
+You may be thinking: wait – isn’t AMP supposed to be fast out-of-the-box? And you would be right: the AMP runtime is optimized for speed and all valid AMP pages load fast. However, there are additional performance optimizations you can implement on your server to help the browser load AMP pages even faster.
 
-To ensure best performance and user experience for AMP pages served on the origin. the AMP team
+In the beginning, AMP caches served the majority of AMP pages. These caches performed additional optimizations on pages to guarantee a strong user experience. But, over time, more surfaces started linking to AMP pages and developers began building entire websites with AMP. That's why the AMP team has started working on AMP Optimizers to allow everyone to serve AMP pages with AMP Cache like performance on their own origin.
 
 ## Integrate an AMP Optimizer
 
@@ -36,10 +36,11 @@ The best way to publish optimized AMP is using a site generator or CMS with buil
 
 ### Custom Build or Server Integrations
 
-You can also integrate an AMP Optimizer yourself. There are two different open source AMP Optimizer implementations available:
+You can also integrate an AMP Optimizer yourself. There are multiple open source AMP Optimizer implementations available:
 
-- [Node.js AMP Optimizer](node-amp-optimizer.md): a Node.js based library for producing optimized AMP. Check out the our getting started guide here on amp.dev.
-- [PHP AMP Optimizer](https://github.com/ampproject/amp-wp/tree/develop/lib/optimizer): a PHP based library for producing optimized AMP.
+- [AMP Optimizer (Node.js)](node-amp-optimizer.md): a Node.js based library for producing optimized AMP. Check out the our getting started guide here on amp.dev.  The implementation is maintained by the AMP team.
+- [AMP Toolbox for PHP](https://github.com/ampproject/amp-toolbox-php): a PHP based library for producing optimized AMP. The implementation is maintained by the AMP team.
+- [amp-renderer (Python)](https://github.com/chasefinch/amp-renderer): a Python port of the Node AMP Optimizer.
 
 There are different integrations for pages rendered dynamically by your server and static sites:
 

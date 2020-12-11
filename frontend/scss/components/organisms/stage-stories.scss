@@ -65,7 +65,7 @@
       left: 0;
       bottom: calc(100% + 1em);
       padding: 0.5em;
-      border: 1px solid color('ultramarine');
+      border: 1px solid color('charade');
       border-radius: 50%;
 
       @media (min-width: 768px) {
@@ -114,7 +114,8 @@
     }
 
     &-button {
-      background-color: color('ultramarine');
+      color: color('blue-ribbon');
+      background: color('white');
       margin-top: 20px;
     }
   }

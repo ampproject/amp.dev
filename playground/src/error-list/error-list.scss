@@ -30,10 +30,10 @@
     font-size: 14px;
     background-position: left 25px top 25px;
     background-repeat: no-repeat;
-    border-bottom: 1px solid color('silver');
+    border-bottom: 1px solid color('iron');
 
     &:hover, &:active {
-      background-color: color('wild-sand');
+      background-color: color('athens-gray');
     }
   }
 
@@ -47,7 +47,7 @@
     padding-top: 8px;
     line-height: 18px;
     font-size: 14px;
-    color: color('gray-chateau');
+    color: color('oslo-gray');
   }
 
   .error {

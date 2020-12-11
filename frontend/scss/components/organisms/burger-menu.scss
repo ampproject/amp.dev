@@ -26,10 +26,10 @@
   background-color: color('white');
 
   @media (max-width: $minDeviceWidth) {
-    padding: 74px 20px 0;
+    padding: 37px 20px 0;
 
     .has-banner ~ & {
-      padding: calc(74px + #{$bannerHeight}) 0 0 20px;
+      padding: calc(37px + #{$bannerHeight}) 0 0 20px;
     }
   }
 
@@ -37,7 +37,7 @@
   &-label {
     position: fixed;
     z-index: 1001;
-    top: 50px;
+    top: 12px;
     right: 20px;
     cursor: pointer;
 
@@ -46,12 +46,12 @@
     }
 
     .has-banner + & {
-      top: calc(49px + #{$bannerHeight});
+      top: calc(12px + #{$bannerHeight});
     }
 
     amp-user-notification[hidden] + .has-banner + &,
     .amp-hidden + .has-banner + & {
-      top: 50px;
+      top: 12px;
     }
 
     @media (min-width: 768px) {

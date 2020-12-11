@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-const {dummyApiResponse} = require('./constants.js');
 const express = require('express');
+const url = require('url');
+const AmpCaches = require('@ampproject/toolbox-cache-list');
 const {lint, LintMode} = require('@ampproject/toolbox-linter');
 const cheerio = require('cheerio');
 const log = require('@lib/utils/log')('Pixi API');
@@ -27,30 +28,68 @@ const rateLimitedFetch = new RateLimitedFetch({
   },
 });
 
-const execLint = async (url) => {
+const COMPONENT_SRC_MATCHER = /\/v0\/([^.]+)-(\d+(?:\.\d+)*)\.m?js/;
+const findAmpComponents = ($) => {
+  const versionMap = {};
+  $('script[src]').each((i, script) => {
+    const match = COMPONENT_SRC_MATCHER.exec($(script).attr('src'));
+    if (match) {
+      versionMap[match[1]] = match[2];
+    }
+  });
+  return versionMap;
+};
+
+const isAmp = ($) => {
+  const ampHtml = $('html[amp],html[⚡]');
+  return ampHtml.length > 0;
+};
+
+const isCacheUrl = (urlString, cachesList) => {
+  const pageUrl = url.parse(urlString);
+  const matchedCache = cachesList.find((cache) =>
+    pageUrl.hostname.endsWith(cache.cacheDomain)
+  );
+  return !!matchedCache;
+};
+
+const execChecks = async (url) => {
+  const ampCacheListPromise = AmpCaches.list();
   const res = await rateLimitedFetch.fetchHtmlResponse(url);
   const body = await res.text();
+  const $ = cheerio.load(body);
+  const ampCacheList = await ampCacheListPromise;
   const context = {
-    $: cheerio.load(body),
+    $,
     headers: {},
     raw: {
       headers: res.headers,
       body,
     },
     url,
-    mode: LintMode.Amp,
+    mode: LintMode.PageExperience,
   };
-  return lint(context);
+  const result = {
+    redirected: res.redirected,
+    url: res.url,
+    isAmp: isAmp($),
+    isCacheUrl: isCacheUrl(res.url, ampCacheList),
+  };
+
+  if (!result.isAmp) {
+    return result;
+  }
+
+  const lintResults = await lint(context);
+  return {
+    components: findAmpComponents($),
+    data: lintResults,
+    ...result,
+  };
 };
 
 // eslint-disable-next-line new-cap
 const api = express.Router();
-api.get('/page-experience-dummy', async (request, response) => {
-  await new Promise((resolve, reject) => {
-    setTimeout(resolve, 2000);
-  });
-  response.json(dummyApiResponse);
-});
 
 api.get('/lint', async (request, response) => {
   log.info('lint endpoint called.');
@@ -58,10 +97,10 @@ api.get('/lint', async (request, response) => {
 
   const fetchUrl = request.query.url;
   try {
-    const lintResult = await execLint(fetchUrl);
+    const checkResult = await execChecks(fetchUrl);
     const result = {
       status: 'ok',
-      data: lintResult,
+      ...checkResult,
     };
     response.json(result);
   } catch (e) {

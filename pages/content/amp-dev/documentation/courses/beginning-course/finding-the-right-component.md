@@ -27,7 +27,7 @@ When we look at the [documentation](../../../documentation/components/reference/
 
 - What layouts does this component support?
 
-{{ image('/static/img/courses/beginner/image25.png', 512, 386, caption='AMP documentation page for `<amp-carousel>`.') }}
+{{ image('/static/img/courses/beginner/image25.png', 512, 386, caption='AMP documentation page for <amp‑carousel>.') }}
 
 Look at the following items in the [documentation](../../../documentation/components/reference/amp-carousel.md) of `<amp-carousel>`:
 
@@ -136,7 +136,7 @@ Another way to find components is to use the [AMP Components Reference](../../..
 
 Finally, we might still have questions about how the component would act on our site, or we may be unclear about how to use the component in more complex ways. The [AMP By Example](../../../documentation/examples/index.html) section on amp.dev has pages showcasing many AMP components, showing a variety of ways to configure those components to meet common use cases in modern websites. Usually, you can get to the corresponding AMP By Example page for a component directly from its documentation.
 
-{{ image('/static/img/courses/beginner/image7.png', 512, 350, caption='AMP By Example page for the `<amp-carousel>` component.') }}
+{{ image('/static/img/courses/beginner/image7.png', 512, 350, caption='AMP By Example page for the <amp‑carousel> component.') }}
 
 ## Exercise 6: Adding Social Sharing Links
 
@@ -194,7 +194,7 @@ When we look at the [documentation]({{g.doc('/content/amp-dev/documentation/comp
 
 - What layouts does this component support?
 
-{{ image('/static/img/courses/beginner/image25.webp', 1024, 771, caption='AMP documentation page for `<amp-carousel>`.') }}
+{{ image('/static/img/courses/beginner/image25.webp', 1024, 771, caption='AMP documentation page for <amp‑carousel>.') }}
 
 Look at the following items in the [documentation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) of `<amp-carousel>`:
 

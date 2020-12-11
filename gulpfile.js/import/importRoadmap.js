@@ -130,13 +130,14 @@ async function getMetaForWorkigGroup(workingGroup) {
       `${DEFAULT_ORGANISATION}/${workingGroup.name}`
     );
   } catch (e) {
-    log.warn(`.. ${wg.name} - METADATA.yaml not found`);
+    log.warn(`.. ${workingGroup.name} - METADATA.yaml not found`);
   }
   try {
     meta = yaml.safeLoad(meta);
   } catch (e) {
     log.error(
-      `.. ${wg.name} - Failed loading ${DEFAULT_ORGANISATION}/${workingGroup.name}/METADATA.yaml`,
+      `.. ${workingGroup.name} - Failed loading ${DEFAULT_ORGANISATION}` +
+        `/${workingGroup.name}/METADATA.yaml`,
       e
     );
   }
@@ -229,8 +230,8 @@ async function importRoadmap() {
   );
 
   log.success(
-    `Successfully imported ${roadmap.length} roadmap status-update issues
-    from ${workingGroups.length} working-groups`
+    `Successfully imported ${roadmap.issues.length} roadmap status-update` +
+      `issues from ${workingGroups.length} working-groups`
   );
 }
 

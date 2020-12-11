@@ -10,6 +10,39 @@ creation:
       height: 506
     formats:
       - ads
+  - name: BEE
+    url: https://beefree.io/bee-plugin/
+    type: Embeddable Email Builder
+    description: Add beautiful, effective email creation into your SaaS application, including interactive content powered by AMP.
+    image:
+      src: /static/img/tools/bee.png
+      width: 440
+      height: 209
+      fit: contain
+    formats:
+      - email
+  - name: Dyspatch Email Builder
+    url: https://www.dyspatch.io/
+    type: Email Production
+    description: Save time by creating HTML and AMP emails simultaneously with the Dyspatch drag-and-drop email builder.
+    image:
+      src: /static/img/tools/dyspatch.png
+      width: 600
+      height: 96
+      fit: contain
+    formats:
+      - email
+  - name: Mailmondo
+    url: https://mailmodo.com
+    type: Email Editor
+    description: Create AMP emails with inline forms so that your users can take actions right inside the email. Just like an app!
+    image:
+      src: /static/img/tools/mailmondo.png
+      width: 659
+      height: 122
+      fit: contain
+    formats:
+      - email
   - name: Stripo Email Editor
     url: https://stripo.email/amp-support/
     type: Email Templates Editor
@@ -103,6 +136,46 @@ creation:
       height: 3
     formats:
       - stories
+  - name: Tappable
+    description: The collaborative Web Stories builder. Design immersive Stories, publish on a blazing fast CDN and measure engagement with zero-config analytics.
+    url: https://tappable.co
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/tappable.svg
+      width: 5
+      height: 3
+    formats:
+      - stories
+  - name: Product Stories
+    description: eCommerce tool for the automatic generation of Web Stories from product information.
+    url: https://productstories.pro/
+    type: Templated Editor
+    image:
+      src: /static/img/tools/productstories.png
+      width: 5
+      height: 3
+    formats:
+      - stories
+  - name: Join Stories
+    description: Long Story short, Join Stories is the fastest and easiest Story creation tool.
+    url: https://www.join-stories.com/
+    type:  WYSIWYG Editor
+    image:
+      src: /static/img/tools/joinstories.jpg
+      width: 800
+      height: 400
+    formats:
+      - stories
+  - name: Web Stories for WordPress
+    description: Web Stories for WordPress provides story creation capabilities in a user-friendly, WYSIWYG tool.
+    url: https://wp.stories.google/
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/webstoriesforwordpress.png
+      width: 5
+      height: 3
+    formats:
+      - stories
   - name: Unbounce
     description: Unbounce is a platform to create landing pages, website popups, and sticky bars.
     url: https://unbounce.com
@@ -123,8 +196,8 @@ platforms:
     url: https://amp-wp.org/
     image:
       src: /static/img/tools/amp_for_wordpress.jpg
-      width: 700
-      height: 499
+      width: 800
+      height: 400
     formats:
       - websites
       - stories
@@ -249,6 +322,17 @@ developer:
       src: /static/img/tools/amp_toolbox.jpg
       width: 700
       height: 527
+    formats:
+      - websites
+  - name: AMP Page Experience Guide
+    official: true
+    type: Optimization
+    description: Analyze and learn how to optimize your AMP pages for Google\'s page experience ranking signal
+    url: /page-experience/
+    image:
+      src: /static/img/tools/page-experience-guide.jpg
+      width: 800
+      height: 400
     formats:
       - websites
   - name: AMP Bench

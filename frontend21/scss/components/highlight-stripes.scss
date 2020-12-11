@@ -1,0 +1,17 @@
+.#{prefix(null, 'highlight-stripes')} {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 121px;
+
+  &:after {
+    content: '';
+    flex: 1 0 auto;
+    width: 100vw;
+    max-width: 1920px;
+    background: linear-gradient(233deg, color('robins-egg') 10%, color('blue-ribbon') 50%);
+    clip-path: url(#highlight-stripes);
+    transform: skewY(-4.5deg);
+  }
+}

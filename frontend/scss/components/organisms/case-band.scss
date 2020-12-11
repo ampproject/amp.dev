@@ -37,7 +37,7 @@
 }
 
 .#{organism('case-band')} {
-  grid-column: 1 / -1;
+  grid-column: 2 / -1;
   width: 100%;
   max-width: 1680px;
   height: auto;
@@ -89,18 +89,6 @@
       grid-column: 4 / 7;
       grid-row: 4 / 9;
       animation-delay: -4s;
-    }
-
-    &:nth-child(6) {
-      grid-column: 10 / 12;
-      grid-row: 4 / 10;
-      animation-delay: -1s;
-    }
-
-    &:nth-child(7) {
-      grid-column: 11 / 13;
-      grid-row: 1 / 6;
-      animation-delay: 0s;
     }
   }
 }
