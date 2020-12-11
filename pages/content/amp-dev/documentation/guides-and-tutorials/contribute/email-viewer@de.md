@@ -8,15 +8,15 @@ formats:
 
 E-Mail Clients, die AMP für E-Mail unterstützen möchten, sollten den [AMP Viewer](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) verwenden, um die AMP E-Mails ihres Absenders zu hosten. Ein Viewer, der mit der [AMP Viewer Bibliothek](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration) erstellt wurde, kapselt ein AMP Dokument ein und bietet [Funktionen](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/CAPABILITIES.md), die via postMessage eine bidirektionale Kommunikation mit dem AMP Dokument ermöglichen. Diese Funktionen ermöglichen es, die Kontrolle über die E-Mail Sichtbarkeit zu gewähren, Benutzermetriken weiterzugeben und Methoden bereitzustellen, mit denen die Sicherheit der von der E-Mail ausgehenden XHR Anforderungen gewährleistet wird.
 
-## Viewer XHR interception
+## XHR Abfangfunktion des Viewers
 
-The AMP Viewer library’s `xhrInterceptor` capability allows for the viewer to intercept outgoing XHR requests. The AMP Viewer can introspect a request for its validity and intent to ensure the protection and privacy of it users.
+Die Funktion `xhrInterceptor` der AMP Viewer Bibliothek erlaubt dem Viewer, ausgehende XHR Anforderungen abzufangen. Der AMP Viewer kann eine Anforderung auf ihre Gültigkeit und ihren Zweck prüfen, um den Schutz und die Privatsphäre seiner Benutzer zu gewährleisten.
 
-#### XHR requests
+#### XHR Anforderungen
 
 AMP Komponenten wie [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email) und [`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=email) erfordern Aufrufe an Endpoints, um Daten zu veröffentlichen oder abzurufen. Diese Aufrufe werden als XHR Anforderungen klassifiziert.
 
-#### Viewer and AMP document communication
+#### Kommunikation zwischen Viewer und AMP Dokument
 
 Das Protokoll für die Kommunikation zwischen dem Viewer und dem AMP Dokument wird über [postMessage](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) realisiert. Es folgt ein einfaches Beispiel für postMessage zum Abfangen von XHR: Der Viewer verarbeitet die von einem AMP Dokument gesendete xhr postMessage und gibt eine benutzerdefinierte Antwort zurück.
 
@@ -30,7 +30,7 @@ viewerIframe.contentWindow.onMessage = (xhrRequestIntercepted) => {
 };
 ```
 
-### Enabling XHR intercepting
+### XHR Abfangfunktion aktivieren
 
 Aktiviere das Abfangen von xhr, indem du bei der Initialisierung den Viewer für die Funktion xhrInterceptor aktivierst. Wie das funktioniert, siehst du im Viewer Beispiel und im Beispiel für das Abfangen von xhr. Dann muss das AMP Dokument die XHR Interception zulassen. Die Funktion wird für Dokumente aktiviert, indem das Attribut `allow-xhr-interception` zum Tag `<html amp4email>` hinzugefügt wird. Der E-Mail Client muss dieses Attribut vor dem Rendern im AMP Dokument festlegen, da es bewusst ein ungültiges Attribut ist und bei der Validierung des AMP Dokuments als solches markiert wird.
 
@@ -62,7 +62,7 @@ Viewer.prototype.ssrRenderAmpListTemplate_ = (data) => Promise.resolve({
 });
 ```
 
-This is a trivial example where there is no [mustache](https://mustache.github.io/) library dependency or sanitization of the content.
+In diesem trivialen Beispiel gibt es keine Abhängigkeit der [mustache](https://mustache.github.io/) Bibliothek und keine Inhaltsbereinigung.
 
 Das folgende Diagramm zeigt ein realistischeres Beispiel dafür, wie ein AMP Dokument in einem E-Mail Client Viewer mit der Funktion `viewerRenderTemplate` das Rendern des Templates [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email) handhaben kann.
 
@@ -84,13 +84,13 @@ Die AMP Runtime leitet die Anforderung zum Abrufen von [`<amp-list>`](../../../d
 
 Der HTML Wert im JSON Payload wird zum Rendern in das AMP Dokument eingefügt.
 
-The table below outlines the capabilities and the affected components:
+Die folgende Tabelle enthält die Funktionen und die betroffenen Komponenten:
 
 <table>
   <thead>
     <tr>
-      <th width="30%">Viewer capability</th>
-      <th>Affected components</th>
+      <th width="30%">Viewer Funktion</th>
+      <th>Betroffene Komponenten</th>
     </tr>
   </thead>
   <tbody>
