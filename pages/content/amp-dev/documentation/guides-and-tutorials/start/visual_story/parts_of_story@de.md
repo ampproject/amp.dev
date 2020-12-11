@@ -1,18 +1,18 @@
 ---
-"$title": Understanding the parts of an AMP story
+"$title": Die Bestandteile einer AMP Story
 "$order": '2'
-description: "A Web Story is a full-screen visual storytelling experience that conveys information with images, videos, graphics, audio, and more. It's perfect for users ..."
+description: Eine Web Story ist visuelles Storytelling im Vollbildmodus, bei dem Informationen zusammen mit Bildern, Videos, Grafiken, Ton und mehr vermittelt werden. Web Storys sind ideal für Benutzer …
 author: bpaduch
 ---
 
-A Web Story is a full-screen visual storytelling experience that conveys information with images, videos, graphics, audio, and more. It's perfect for users who want bite-sized, visually-rich content.
+Eine Web Story ist visuelles Storytelling im Vollbildmodus, bei dem Informationen zusammen mit Bildern, Videos, Grafiken, Ton und mehr vermittelt werden. Web Storys sind ideal für Benutzer, die optisch ansprechenden Content als kleine Häppchen konsumieren möchten.
 
-The basic ingredients that go into an Web Story are individual **pages**. These pages, in turn, are composed of individual **layers** that contain basic HTML and AMP **elements**.
+Die Grundzutaten einer Web Story sind einzelne **Seiten**. Diese Seiten bestehen wiederum aus einzelnen **Ebenen**, die einfache HTML und AMP **Elemente** enthalten.
 
 {{ image('/static/img/docs/tutorials/amp_story/story_parts.png', 1047, 452, align='center ninety') }}
 
-Each of those ingredients are translated into AMP components, where the story is represented by [`amp-story`](../../../../documentation/components/reference/amp-story.md), the page is represented by `amp-story-page`, and the layers are represented by `amp-story-grid-layer`.
+Jeder dieser Bestandteile wird in AMP Komponenten übersetzt, wobei [`amp-story`](../../../../documentation/components/reference/amp-story.md) die Story repräsentiert, `amp-story-page` die Seite und `amp-story-grid-layer` die Ebenen.
 
 {{ image('/static/img/docs/amp-story-tag-hierarchy.png', 557, 355, align='center seventyfive' ) }}
 
-Let's start creating our Web Story with the [`amp-story`](../../../../documentation/components/reference/amp-story.md) container.
+Beginnen wir nun mit der Erstellung unserer Web Story und verwenden dazu den Container [`amp-story`](../../../../documentation/components/reference/amp-story.md).
