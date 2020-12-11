@@ -37,9 +37,9 @@ Das folgende Markup eignet sich als Ausgangspunkt oder Boilerplate. Kopiere es u
 </html>
 [/sourcecode]
 
-The content in the body, so far, is pretty straightforward. But there’s a lot of additional code in the head of the page that might not be immediately obvious. Let’s deconstruct the required mark-up.
+Bisher ist der Inhalt im Abschnitt "body" relativ selbsterklärend. Aber es gibt eine Menge zusätzlichen Code im Head der Seite, der unklar sein könnte. Gehen wir das erforderliche Markup Schritt für Schritt durch.
 
-Use HTTPS: When creating AMP pages and content, you should strongly consider using the HTTPS protocol (vs. HTTP). Although, HTTPS is not required for the AMP document itself or for images and fonts, there are many AMP features that require HTTPS (e.g., video, iframes, and more). To ensure your AMP pages take full advantage of all AMP features, use the HTTPS protocol.  You can learn more about HTTPS in ["Why HTTPS Matters"](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
+Verwende HTTPS: Wenn du AMP Seiten und Inhalte erstellst, solltest du unbedingt das HTTPS Protokoll verwenden (nicht HTTP). Obwohl HTTPS für das AMP Dokument oder für Bilder und Schriftarten nicht erforderlich ist, gibt es viele AMP Funktionen, die HTTPS erfordern (z. B. Video und iframes). Verwende das HTTPS Protokoll, um sicherzustellen, dass deine AMP Seiten alle AMP Funktionen optimal nutzen. Weitere Informationen zu HTTPS findest du unter ["Why HTTPS Matters"](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
 
 [tip type="tip"] Verwende den [AMP Boilerplate Generator](/boilerplate), um schnell mit dem Erstellen neuer AMP Seiten zu beginnen. [/tip]
 
@@ -49,24 +49,24 @@ AMP HTML Dokumente MÜSSEN:
 
 Regel | Beschreibung
 --- | ---
-Start with the `<!doctype html>` doctype. | Standard für HTML.
-Contain a top-level `<html ⚡>` tag <br>(`<html amp>` is accepted as well). | Identifiziert die Seite als AMP Inhalt.
-Contain `<head>` and `<body>` tags. | Optional in HTML, aber nicht in AMP.
-Contain a `<meta charset="utf-8">` tag as the first child of their `<head>` tag. | Identifiziert die Codierung für die Seite.
-Contain a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside their `<head>` tag. As a best practice, you should include the script as early as possible in the `<head>`. | Includes and loads the AMP JS library.
-Contain a `<link rel="canonical" href="$SOME_URL">` tag inside their `<head>`. | Verweist auf die reguläre HTML Version des AMP HTML Dokuments oder auf sich selbst, wenn keine solche HTML Version vorhanden ist. Weitere Informationen findest du in [So werden deine Seiten gefunden](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md).
-Contain a `<meta name="viewport" content="width=device-width"> It's also recommended to include `initial-scale=1`. | Specifies a responsive viewport. Learn more in [Create Responsive AMP Pages](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).
-Contain the [AMP boilerplate code](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) in their `<head>` tag. | CSS Boilerplate, um den Inhalt zu verbergen, bis AMP JS geladen ist.
+mit dem Doctype <code><!doctype html></code> beginnen | Standard für HTML.
+ein `<html ⚡>` Tag der obersten Ebene enthalten <br>(`<html amp>` wird ebenfalls akzeptiert) | Identifiziert die Seite als AMP Inhalt.
+die Tags `<head>` und `<body>` enthalten | Optional in HTML, aber nicht in AMP.
+das Tag `<meta charset="utf-8">` als erstes untergeordnetes Element des Tags `<head>` enthalten | Identifiziert die Codierung für die Seite.
+das Tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` im Tag `<head>` enthalten. Als Best Practice solltest du das Skript so früh wie möglich in `<head>` platzieren. | Bindet die AMP JS Bibliothek ein und lädt sie.
+das Tag `<link rel="canonical" href="$SOME_URL">` im `<head>` enthalten. | Verweist auf die reguläre HTML Version des AMP HTML Dokuments oder auf sich selbst, wenn keine solche HTML Version vorhanden ist. Weitere Informationen findest du in [So werden deine Seiten gefunden](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md).
+das Tag `<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">` im `<head>` Tag enthalten. Es wird auch empfohlen, `initial-scale=1` aufzunehmen. | Sorgt für einen responsiven Viewport. Weitere Informationen findest du unter [Erstelle responsive AMP Seiten](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).
+den [Code der AMP Boilerplate](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) im Tag `<head>` enthalten | CSS Boilerplate, um den Inhalt zu verbergen, bis AMP JS geladen ist.
 
 ## Optionale Metadaten
 
-In addition to the bare requirements, our sample also includes a Schema.org definition in the head, which isn’t a strict requirement for AMP, but it is a requirement to get your content distributed in certain places (for example, in the Google Search top stories carousel).
+Neben den reinen Anforderungen enthält unser Beispiel im Head auch eine Schema.org Definition. Dies ist für AMP keine strenge Anforderung, wird aber benötigt, damit deine Inhalte in bestimmten Kontexten verfügbar sind (z. B. im Schlagzeilenkarussell der Google Suche).
 
 [tip type="read-on"]Weitere Informationen findest du in diesen Ressourcen:
 
-- [Getting Started with AMP on Google Search](https://developers.google.com/amp/docs) - learn to prepare your AMP pages for Google Search.
-- [Metadata samples](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) - learn more about all the metadata you’ll need in various other places (e.g., Twitter). [/tip]
+- [Erste Schritte mit AMP in der Google Suche](https://developers.google.com/amp/docs): Erfahre, wie du deine AMP Seiten für die Google Suche vorbereitest.
+- [Beispiele für Metadaten](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples): Erfahre mehr über alle Metadaten, die du an verschiedenen anderen Orten benötigst (z. B. bei Twitter). [/tip]
 
 <hr>
 
-Good news! That’s all we need to create our first AMP page, but of course, there’s not a lot going on in the body yet. In the next section, we’ll cover how to add basics like images, custom AMP elements, how to style your page and work out a responsive layout.
+Gute Neuigkeiten! Mehr brauchen wir nicht, um unsere erste AMP Seite zu erstellen, aber natürlich hat der Abschnitt "body" noch nicht viel zu bieten. Im nächsten Abschnitt erfährst du, wie du Grundelemente wie Bilder und benutzerdefinierte AMP Elemente hinzufügst, den Stil deiner Seite anpasst und ein responsives Layout erstellst.
