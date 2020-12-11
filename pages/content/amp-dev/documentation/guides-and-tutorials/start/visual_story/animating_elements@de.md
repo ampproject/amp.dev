@@ -244,7 +244,6 @@ Let's delay the entrance of the first image so that it comes in close to when th
     animate-in="fade-in"
     animate-in-delay="1s">
 </amp-img>
-
 ```
 
 Refresh and reload your story.  Your last page should look like this:
