@@ -17,7 +17,7 @@ contributors:
 
 Mit AMP kannst du wie auf einer normalen HTML Seite **Bild-**, **Video-** und **Audioinhalte** einbetten. Erfahre, wie sich die entsprechenden AMP Elemente unterscheiden und wie du sie in deine Seiten aufnehmen kannst.
 
-## Why not <img>, <video> and <audio>?</audio></video>
+## Warum nicht <code><img></code>, <code><video></code> und <code><audio></code>?
 
 AMP doesn't support the default HTML counterparts to displaying media, like `<img>`. We provide equivalent components for the following reasons:
 
@@ -129,7 +129,7 @@ Include an audio resource in your page, using the [`amp-audio`](../../../../docu
 
 Verwende dieses Element nur zum direkten Einbetten einer HTML5 Audiodatei. Der Vorgang ist für alle in eine AMP Seite eingebetteten externen Ressourcen gleich: Das Element nutzt Lazy Loading für die durch das Attribut `src` angegebene Audioressource und lädt sie zu einem von AMP festgelegten Zeitpunkt.
 
-Include a fallback, if the browser doesn't support HTML5 audio, for example:
+Fügen Sie einen Fallback hinzu, wenn der Browser HTML5-Audio nicht unterstützt, zum Beispiel:
 
 [example preview="inline" playground="true" imports="amp-audio:0.1"]
 ```html
