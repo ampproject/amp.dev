@@ -41,22 +41,22 @@ Die folgende Liste enthält die [AMP Komponenten](https://amp.dev/documentation/
 
 Element | Beschreibung
 --- | ---
-[`<amp-form>`](https://amp.dev/documentation/components/amp-form) | Form element. The action-xhr attribute must be used in place of the regular action attribute. Can be used in conjunction with `<template type="amp-mustache">` to render a response. <br><br>**Note:** [Redirecting after submission](https://amp.dev/documentation/components/amp-form/#redirecting-after-a-submission) is not allowed.
+[`<amp-form>`](https://amp.dev/documentation/components/amp-form) | Formularelement. Das Attribut "action-xhr" muss anstelle des regulären Attributs "action" verwendet werden. Kann in Verbindung mit `<template type="amp-mustache">` verwendet werden, um eine Antwort zu rendern. <br><br>**Hinweis:** [Weiterleitung nach der Übermittlung](https://amp.dev/documentation/components/amp-form/#redirecting-after-a-submission) ist nicht zulässig.
 [`<amp-selector>`](https://amp.dev/documentation/components/amp-selector) | Ein Mehrfachauswahlwidget zur Verwendung in einem Formular.
-[`amp-bind`](https://amp.dev/documentation/components/amp-bind) und [`<amp-bind-macro>`](https://amp.dev/documentation/components/amp-bind#defining-macros-with-amp-bind-macro) | Simple scripting language in AMP that allows the manipulation of a state machine for interactions between elements. Can also be used to add behavior on certain events.<br><br>**Note:** It is prohibited to bind to `[href]` or `[src]`. It is also prohibited to use the `AMP.print`, `AMP.navigateTo` and `AMP.goBack` actions.
+[`amp-bind`](https://amp.dev/documentation/components/amp-bind) und [`<amp-bind-macro>`](https://amp.dev/documentation/components/amp-bind#defining-macros-with-amp-bind-macro) | Einfache Skriptsprache in AMP, die die Manipulation einer Zustandsmaschine für Interaktionen zwischen Elementen ermöglicht. Kann auch verwendet werden, um Verhalten zu bestimmten Ereignissen hinzuzufügen.<br><br>**Hinweis:** Darf nicht mit `[href]` oder `[src]` verbunden werden. Es ist auch nicht zulässig, die Aktionen `AMP.print`, `AMP.navigateTo` und `AMP.goBack` zu verwenden.
 [`<amp-state>`](https://amp.dev/documentation/components/amp-bind#%3Camp-state%3E-specification) | `<amp-state>` wird verwendet, um den Anfangszustand zu definieren, der von `amp-bind` verwendet wird.<br><br>**Hinweis:** Das Attribut `src` wird derzeit nicht unterstützt.
-[`<amp-list>`](https://amp.dev/documentation/components/amp-list) | Remotely fetches JSON data that will be rendered by an [`<amp-mustache>`](https://amp.dev/documentation/components/amp-mustache).<br><br>**Note:** Binding to the `[src]` attribute is not allowed. Including user credentials with `credentials="include"` is also prohibited.
-[`<template type="amp-mustache">`](https://amp.dev/documentation/components/amp-mustache) | A Mustache template markup to render the results of an `amp-list` call.
+[`<amp-list>`](https://amp.dev/documentation/components/amp-list) | Ruft per Remotezugriff JSON Daten ab, die von [`<amp-mustache>`](https://amp.dev/documentation/components/amp-mustache) gerendert werden.<br><br>**Hinweis:** Bindung an das Attribut `[src]` ist nicht zulässig. Auch das Aufnehmen von Benutzeranmeldedaten mit `credentials="include"` ist nicht zulässig.
+[`<template type="amp-mustache">`](https://amp.dev/documentation/components/amp-mustache) | Ein Mustache Template Markup zum Rendern der Ergebnisse eines `amp-list` Aufrufs.
 
 ## Layout <a name="layout"></a>
 
 Element | Beschreibung
 --- | ---
-[Layoutattribute](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/#layout-attributes) | Layout behavior is determined by the layout attribute.
+[Layoutattribute](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/#layout-attributes) | Das Layoutverhalten wird durch das Attribut "layout" bestimmt.
 [`<amp-accordion>`](https://amp.dev/documentation/components/amp-accordion) | Ein UI Element, das das Einblenden/Ausblenden verschiedener Abschnitte erleichtert.
-[`<amp-carousel>`](https://amp.dev/documentation/components/amp-carousel) | A carousel UI component.
+[`<amp-carousel>`](https://amp.dev/documentation/components/amp-carousel) | Die UI Komponente Karussell.
 [`<amp-fit-text>`](https://amp.dev/documentation/components/amp-fit-text) | Eine Hilfskomponente zum Anpassen von Text in einem bestimmten Bereich.
-[`<amp-layout>`](https://amp.dev/documentation/components/amp-layout) | A container that can have aspect-ratio based responsive layouts.
+[`<amp-layout>`](https://amp.dev/documentation/components/amp-layout) | Ein Container, der responsive Layouts haben kann, die auf dem Seitenverhältnis basieren.
 [`<amp-sidebar>`](https://amp.dev/documentation/components/amp-sidebar) | Eine Seitenleiste für Navigationszwecke.
 [`<amp-timeago>`](https://amp.dev/documentation/components/amp-timeago) | Bietet eine bequeme Möglichkeit, um Zeitstempel zu rendern.
 
