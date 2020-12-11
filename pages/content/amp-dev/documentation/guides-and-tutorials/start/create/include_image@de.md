@@ -9,7 +9,7 @@ contributors:
 
 Die meisten HTML Tags können direkt in AMP HTML verwendet werden, aber bestimmte Tags wie z. B. `<img>` werden durch äquivalente oder leicht verbesserte benutzerdefinierte AMP HTML Tags ersetzt (einige problematische Tags sind vollständig untersagt, siehe [HTML Tags in der Spezifikation](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#html-tags)).
 
-To demonstrate what additional markup could look like, here’s the code required to embed an image into the page:
+Um zu demonstrieren, wie zusätzliches Markup aussehen könnte, zeigen wir hier den Code, mit dem ein Bild in eine Seite eingebettet wird:
 
 [sourcecode:html]
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
