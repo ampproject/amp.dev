@@ -1,29 +1,29 @@
 ---
 "$title": Gratulation!
 "$order": '7'
-description: You’ve finished the "Add advanced AMP features" tutorial and successfully explored many key advanced components of AMP!
+description: Du hast das Tutorial "Füge erweiterte AMP Funktionen hinzu" abgeschlossen und viele wichtige erweiterte AMP Komponenten …
 ---
 
 Du hast das Tutorial "Füge erweiterte AMP Funktionen hinzu" abgeschlossen und viele wichtige erweiterte AMP Komponenten kennengelernt!
 
-In this tutorial, you learned to:
+In diesem Tutorial hast du gelernt,
 
-- Display ads by using [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)
-- Embed YouTube videos by using [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md)
-- Embed Twitter cards by using [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md)
-- Include responsive text elements by using [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md)
-- Build carousels by using [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)
-- Track simple analytic patterns by using [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
-- Add site navigation by using [`amp-img`](../../../../documentation/components/reference/amp-img.md), and [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md)
-- Use custom fonts in AMP
+- Ads mithilfe von [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) anzuzeigen,
+- YouTube Videos mithilfe von [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) einzubetten,
+- Twitter Cards mithilfe von [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) einzubetten,
+- responsive Textelemente mithilfe von [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md) zu erstellen,
+- Karussells mithilfe von [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) zu erstellen,
+- einfache Analysemuster mithilfe von [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) zu verfolgen,
+- eine Navigation zur Website mithilfe von [`amp-sidebar`](../../../../documentation/components/reference/amp-img.md) hinzuzufügen,
+- in AMP benutzerdefinierte Schriftarten zu verwenden.
 
 ## Nächste Schritte
 
-To further advance your AMP expertise, check out these resources:
+Sieh dir diese Ressourcen an, um dein Wissen über AMP zu vertiefen:
 
-- [Create interactive AMP pages](../../../../documentation/guides-and-tutorials/develop/interactivity/index.md) tutorial : Learn how to use [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) to build interactive AMP pages
-- [Combine AMP with PWA](../../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md): Learn how Progressive Web Apps and AMP pages complement each other
-- [AMP Templates](../../../../documentation/templates/index.html): Style your pages with pre-styled templates and components
-- [Examples](../../../../documentation/examples/index.html): Learn from live samples and demos
-- [AMP Channel on YouTube](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw): Learn by watching AMP-specific videos
-- [AMP components](../../../../documentation/components/index.html): Get details on all of the AMP components
+- Tutorial [Erstelle interaktive AMP Seiten](../../../../documentation/guides-and-tutorials/develop/interactivity/index.md): Lerne, wie du mit [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) interaktive AMP Seiten erstellen kannst.
+- [Kombiniere AMP mit PWA](../../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md): Erfahre, wie sich Progressive Web Apps und AMP Seiten gegenseitig ergänzen.
+- [AMP Vorlagen](../../../../documentation/templates/index.html): Gestalte deine Seiten mit gestylten Templates und Komponenten.
+- [Beispiele](../../../../documentation/examples/index.html): Lerne mit animierten Beispielen und Demos.
+- [AMP Channel auf YouTube](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw): Lerne mit AMP-spezifischen Videos.
+- [AMP Komponenten](../../../../documentation/components/index.html): Hier findest du Einzelheiten zu allen AMP Komponenten.
