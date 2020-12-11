@@ -88,7 +88,7 @@ AMP にはビューポートの `width` と `minimum-scale` の定義が必要�
 ビューポートに関するエラーを解決するには、次の HTML スニペットを `<head>` タグに追加します。
 
 ```html
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="viewport" content="width=device-width">
 ```
 
 `width` と `minimum-scale` に指定する値は、AMP で必須の値です。`initial-scale` の定義は必須ではありませんが、モバイルウェブの開発では指定するのが一般的であり、おすすめします。ビューポートとレスポンシブ デザインについて詳しくは、[ビューポートを設定する](https://developers.google.com/speed/docs/insights/ConfigureViewport)をご覧ください。
@@ -275,7 +275,7 @@ AMP ドキュメントは次のようになります。
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
 
     <link rel="canonical" href="/article.html">
     <link rel="shortcut icon" href="amp_favicon.png">

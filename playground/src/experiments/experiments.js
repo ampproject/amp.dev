@@ -163,13 +163,13 @@ class Experiments extends FlyIn {
               throw Error('Invalid experiment', experiment);
             }
 
-            id = id[0].substring(5, id.length - 1);
+            id = id[0].substring(5, id[0].length - 1);
             let name = experiment.match(EXPERIMENTS_NAME_PATTERN);
             if (name) {
               name = name[0]
                 .replace(/'\s\+\s+'/, '')
                 .trim()
-                .substring(1, name.length - 1);
+                .substring(1, name[0].length - 1);
             } else {
               name = id;
             }

@@ -306,7 +306,11 @@ describe('DocumentParser', () => {
       expect(document.isAmpAds).toBe(false);
     });
     it('amp-mail', () => {
-      const document = parse('<html ⚡4email>', '<body>', '</body>');
+      const document = parse(
+        '<html ⚡4email data-css-strict>',
+        '<body>',
+        '</body>'
+      );
       expect(document.isAmpStory).toBe(false);
       expect(document.isAmpWeb).toBe(false);
       expect(document.isAmpEmail).toBe(true);

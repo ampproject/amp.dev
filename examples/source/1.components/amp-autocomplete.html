@@ -1,9 +1,9 @@
 <!--
   ## Introduction
 
-  An autocomplete-enabled input field suggests completed results corresponding to the user input as they type into the input field. 
+  An autocomplete-enabled input field suggests completed results corresponding to the user input as they type into the input field.
   This feature can help the user to carry out their task more quickly.
-  
+
   Data can either be fetched from a JSON endpoint or locally from amp-state.
 -->
 <!-- -->
@@ -12,11 +12,11 @@
 <head>
   <meta charset="utf-8">
   <link rel="canonical" href="<% canonical %>">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <title>amp-autocomplete</title>
-  <!-- 
-    ## Setup 
+  <!--
+    ## Setup
 
     Import the `amp-autocomplete` component.
   -->
@@ -90,10 +90,10 @@
 </head>
 <body>
   <h2>Basic usage</h2>
-  <!-- 
-    ## Basic usage 
+  <!--
+    ## Basic usage
 
-    An `amp-autocomplete` must always be nested in a form and have an **input field** specified with an `input` or `textarea` tag and a datasource. 
+    An `amp-autocomplete` must always be nested in a form and have an **input field** specified with an `input` or `textarea` tag and a datasource.
     When a user types into this input field, relevant suggestions will automatically appear below the input field.
 
     A **datasource** must be a JSON object containing an array property `items`, and can be specified inline with a child `script type="application/json"` tag, or a server endpoint specified with a `src` attribute.
@@ -111,7 +111,7 @@
     </amp-autocomplete>
   </form>
 
-  <!-- 
+  <!--
     Alternatively, a datasource can also be provided as remote data through the `src` attribute.
   -->
   <form class="sample-form" method="post"
@@ -123,7 +123,7 @@
   </form>
 
   <h2>Dynamic <code>src</code></h2>
-  <!-- 
+  <!--
     ## Dynamic `src`
 
     The content of an `amp-autocomplete` can be changed dynamically by modifying its `src` value using `amp-bind`.
@@ -143,7 +143,7 @@
             [src]="srcUrl">
             <input name="name" required>
         </amp-autocomplete>
-        <input name="submit-button" type="submit" value="Submit"><br>      
+        <input name="submit-button" type="submit" value="Submit"><br>
       </div>
       <div submit-success>
         <template type="amp-mustache">
@@ -154,7 +154,7 @@
   </div>
 
   <h2>Suggesting rich content</h2>
-  <!-- 
+  <!--
     ## Suggesting rich content
 
     More complicated data can be passed into autocompleted with an array of JsonObjects in "items".
@@ -163,7 +163,7 @@
     { "items" : [
         {
             "city" : "Albany",
-            "state" : "New York", 
+            "state" : "New York",
             "areaCode" : 518,
             "population" : 98251
         }, {
@@ -186,12 +186,12 @@
     <template type="amp-mustache" id="amp-template-custom">
       <div class="city-item" data-value="{{city}}, {{state}}">
           <div>{{city}}, {{state}}</div>
-          <div class="custom-population">Population: {{population}}</div>        
+          <div class="custom-population">Population: {{population}}</div>
       </div>
     </template>
     ```
 
-    By default, `amp-autocomplete` will suggest items by matching on the "value" property of each JsonObject, but for more specified data, an attribute `filter-value` can be provided to signify the appropriate property to search on. 
+    By default, `amp-autocomplete` will suggest items by matching on the "value" property of each JsonObject, but for more specified data, an attribute `filter-value` can be provided to signify the appropriate property to search on.
     In the above example, we will want to search on the property `name`, because that is what the user will most likely search for.
   -->
   <form class="sample-form"
@@ -206,7 +206,7 @@
                 { "items" : [
                     {
                         "city" : "Albany",
-                        "state" : "New York", 
+                        "state" : "New York",
                         "areaCode" : 518,
                         "population" : 98251
                     }, {
@@ -225,7 +225,7 @@
             <template type="amp-mustache" id="amp-template-custom">
                 <div class="city-item" data-value="{{city}}, {{state}}">
                     <div>{{city}}, {{state}}</div>
-                    <div class="custom-population">Population: {{population}}</div>        
+                    <div class="custom-population">Population: {{population}}</div>
                 </div>
             </template>
         </amp-autocomplete>
@@ -242,7 +242,7 @@
 </form>
 
   <h2>Display default items</h2>
-  <!-- 
+  <!--
     ## Displaying default items
 
     Default suggestions for an `amp-autocomplete` can be displayed on user `focus` using rich content templating and the `min-characters` attribute on `amp-autocomplete`.
@@ -276,20 +276,20 @@
       action-xhr="<% hosts.platform %>/documentation/examples/api/echo"
       target="_top">
       <amp-autocomplete filter="substring" min-characters="0" filter-value="name" [src]="manualFilterData">
-        <input type="search" name="product" on="input-debounced:AMP.setState({ manualFilterData: event.value.length == 0 ? 
+        <input type="search" name="product" on="input-debounced:AMP.setState({ manualFilterData: event.value.length == 0 ?
             initialInventory : generalInventory })">
         <amp-state id="initialInventory">
             <script type="application/json">
               { "items" : [
-               { "isInitial": "true", 
+               { "isInitial": "true",
                   "name": "apple"
-                }, { "isInitial": "true", 
+                }, { "isInitial": "true",
                   "name": "grapes"
-                }, { "isInitial": "true", 
+                }, { "isInitial": "true",
                   "name": "whole milk"
-                }, { "isInitial": "true", 
+                }, { "isInitial": "true",
                   "name": "banana"
-                } ] 
+                } ]
               }
             </script>
         </amp-state>
@@ -307,7 +307,7 @@
                 </div>
               </div>
             {{/isInitial}}
-          </template> 
+          </template>
         </amp-autocomplete>
       <input type="submit" value="Search">
       <div submit-success>
@@ -322,13 +322,13 @@
   </div>
 
   <h2>Inline autocomplete</h2>
-  <!-- 
+  <!--
     ## Displaying suggestions inline
 
     Suggestions can be triggered on a specified character token in an `amp-autocomplete` for multiple autosuggestions in a single input by using the `inline` attribute.
-    
+
     The token for triggering the autosuggestion must be the provided value for the `inline` attribute. For example, if `inline="+"`, then when the `+` token is entered by the user,
-    any relevant suggestions will be displayed. Otherwise, the field will behave the same as an unenhanced input field. The `inline` attribute does not support the empty string, 
+    any relevant suggestions will be displayed. Otherwise, the field will behave the same as an unenhanced input field. The `inline` attribute does not support the empty string,
     or `""` as a legitimate token value on `amp-autocomplete`.
   -->
   <div>
@@ -410,7 +410,7 @@
   </div>
 
   <h2>Query data sources</h2>
-  <!-- 
+  <!--
     ## Specifying query parameters
 
     User inputs can be passed to a statically generated endpoint when the `query` attribute is paired with the `src` attribute.

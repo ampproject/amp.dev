@@ -43,7 +43,7 @@ The following code represents the minimum amount of markup that makes up a valid
 
 [sourcecode:html]
 <!DOCTYPE html>
-<html ⚡4email>
+<html ⚡4email data-css-strict>
   <head>
     <meta charset="utf-8" />
     <style amp4email-boilerplate>

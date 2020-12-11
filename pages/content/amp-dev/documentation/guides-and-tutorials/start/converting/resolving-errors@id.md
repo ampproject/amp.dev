@@ -88,7 +88,7 @@ AMP memerlukan definisi `width` dan `minimum-scale` untuk viewport. Nilai ini ma
 Untuk menyelesaikan error viewport, tambahkan cuplikan HTML berikut ke tag `<head>`:
 
 ```html
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="viewport" content="width=device-width">
 ```
 
 Nilai untuk `width` dan `minimum-scale` wajib ditetapkan di AMP. Menetapkan `initial-scale` tidak wajib dilakukan, tapi biasanya disertakan dalam pengembangan web seluler dan hal itu direkomendasikan. Anda dapat membaca selengkapnya tentang viewport dan desain yang responsif di [Mengonfigurasi Area Pandang](https://developers.google.com/speed/docs/insights/ConfigureViewport).
@@ -269,7 +269,7 @@ Sekarang dokumen AMP Anda akan terlihat seperti berikut:
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
 
     <link rel="canonical" href="/article.html">
     <link rel="shortcut icon" href="amp_favicon.png">

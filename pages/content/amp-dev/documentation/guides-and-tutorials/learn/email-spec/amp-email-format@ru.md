@@ -41,7 +41,7 @@ AMP — это технология, используемая для разра�
 
 [sourcecode:html]
 <!DOCTYPE html>
-<html ⚡4email>
+<html ⚡4email data-css-strict>
   <head>
     <meta charset="utf-8" />
     <style amp4email-boilerplate>

@@ -81,7 +81,7 @@ description: В этом разделе мы просмотрим и устра�
 Чтобы устранить ошибку области просмотра, добавьте в тег `<head>` следующий HTML-код:
 
 ```html
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="viewport" content="width=device-width">
 ```
 
 Приведенные выше значения `width` и `minimum-scale` обязательны для AMP-страниц. Параметр `initial-scale` не является обязательным, но рекомендуется к использованию и обычно применяется на мобильных веб-страницах. Подробнее об области просмотра и адаптивном дизайне см. в разделе [Настройка области просмотра](https://developers.google.com/speed/docs/insights/ConfigureViewport).
@@ -247,7 +247,7 @@ AMP не поддерживает стандартные HTML-элементы �
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
 
     <link rel="canonical" href="/article.html">
     <link rel="shortcut icon" href="amp_favicon.png">

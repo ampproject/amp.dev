@@ -1,667 +1,890 @@
-<!doctype html>
+<!DOCTYPE html>
 <html amp lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>The Mars Cruise</title>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <!-- ## Setup -->
+    <script
+      async
+      custom-element="amp-story"
+      src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+    ></script>
+    <script
+      async
+      custom-element="amp-video"
+      src="https://cdn.ampproject.org/v0/amp-video-0.1.js"
+    ></script>
+    <link rel="canonical" href="index.html" />
+    <meta name="viewport" content="width=device-width" />
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript>
+      <style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style>
+    </noscript>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Josefin+Sans:700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Tienne:700"
+      rel="stylesheet"
+    />
 
-<head>
-  <meta charset="utf-8">
-  <title>The Mars Cruise</title>
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <!-- ## Setup -->
-  <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-  <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
-  <link rel="canonical" href="index.html">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
-  <noscript>
-    <style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style>
-  </noscript>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Tienne:700" rel="stylesheet">
-
-  <!--
+    <!--
     Publishers should expand their schema.org markup with any relevant information.
       https://www.ampproject.org/docs/fundamentals/discovery#use-schema.org-for-most-search-engines
   -->
-  <script type="application/ld+json">
+    <script type="application/ld+json">
       {
         "@context": "http://schema.org",
         "@type": "CreativeWork",
         "headline": "The Mars Cruise",
         "url": "https://www.example.com"
       }
-  </script>
+    </script>
 
+    <style amp-custom>
+      :root {
+        --yellow: #ffd200;
+        --transparent: rgba(0, 0, 0, 0);
+        --black: rgba(0, 0, 0, 1);
+      }
 
-  <style amp-custom>
-    :root {
-      --yellow: #ffd200;
-      --transparent: rgba(0, 0, 0, 0);
-      --black: rgba(0, 0, 0, 1);
-    }
+      amp-story {
+        color: #eaeaea;
+        font-weight: 300;
+        font-family: 'Roboto', sans-serif;
+      }
 
-    amp-story {
-      color: #eaeaea;
-      font-weight: 300;
-      font-family: 'Roboto', sans-serif;
-    }
+      amp-story .horiz {
+        display: flex;
+        flex-direction: row;
+      }
 
-    amp-story .horiz {
-      display: flex;
-      flex-direction: row;
-    }
+      amp-story .horiz::before,
+      amp-story .horiz::after {
+        content: '';
+        flex: 1 1;
+        border-bottom: 0.0625em solid #fff;
+        margin: auto;
+      }
 
-    amp-story .horiz::before,
-    amp-story .horiz::after {
-      content: "";
-      flex: 1 1;
-      border-bottom: 0.0625em solid #fff;
-      margin: auto;
-    }
+      amp-story .horiz::before {
+        margin-right: 2.3rem;
+      }
 
-    amp-story .horiz::before {
-      margin-right: 2.3rem;
-    }
+      amp-story .horiz::after {
+        margin-left: 2.3rem;
+      }
 
-    amp-story .horiz::after {
-      margin-left: 2.3rem;
-    }
+      amp-story h2 {
+        color: var(--yellow);
+        font-size: 6.8vw;
+        font-weight: 700;
+        font-family: 'Josefin Sans', sans-serif;
+        text-transform: uppercase;
+        margin-bottom: -2vw;
+      }
 
-    amp-story h2 {
-      color: var(--yellow);
-      font-size: 6.8vw;
-      font-weight: 700;
-      font-family: 'Josefin Sans', sans-serif;
-      text-transform: uppercase;
-      margin-bottom: -2vw;
-    }
+      amp-story h3 {
+        font-weight: 700;
+        font-family: 'Josefin Sans', sans-serif;
+      }
 
-    amp-story h3 {
-      font-weight: 700;
-      font-family: 'Josefin Sans', sans-serif;
-    }
+      amp-story p {
+        font-size: 4.5vw;
+        line-height: 5vw;
+        letter-spacing: 0.1vw;
+      }
 
-    amp-story p {
-      font-size: 4.5vw;
-      line-height: 5vw;
-      letter-spacing: 0.1vw;
-    }
+      amp-story .yellow {
+        color: var(--yellow);
+      }
 
-    amp-story .yellow {
-      color: var(--yellow);
-    }
+      /* PAGE 01: COVER - THE MARS CRUISE */
+      #cover {
+        background-color: #71311c;
+      }
 
-    /* PAGE 01: COVER - THE MARS CRUISE */
-    #cover {
-      background-color: #71311c;
-    }
+      #cover[active] .bkgd {
+        animation-name: coverPan;
+        animation-duration: 30s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+        animation-timing-function: ease-out;
+      }
 
-    #cover[active] .bkgd {
-      animation-name: coverPan;
-      animation-duration: 30s;
-      animation-iteration-count: 1;
-      animation-direction: normal;
-      animation-fill-mode: forwards;
-      animation-play-state: running;
-      animation-timing-function: ease-out;
-    }
+      #cover .gradient {
+        background: linear-gradient(
+          to bottom,
+          transparent 0%,
+          transparent 34%,
+          black 100%
+        );
+      }
 
-    #cover .gradient {
-      background: linear-gradient(to bottom, transparent 0%, transparent 34%, black 100%);
-    }
+      #cover .copy-layer {
+        margin: 0 auto;
+        padding: 0 14vw 12vw;
+        align-content: flex-end;
+      }
 
-    #cover .copy-layer {
-      margin: 0 auto;
-      padding: 0 14vw 12vw;
-      align-content: flex-end;
-    }
+      #cover h1 {
+        color: #fff;
+        font-size: 19.4vw;
+        font-weight: 700;
+        font-family: 'Josefin Sans', sans-serif;
+        line-height: 20vw;
+      }
 
-    #cover h1 {
-      color: #fff;
-      font-size: 19.4vw;
-      font-weight: 700;
-      font-family: 'Josefin Sans', sans-serif;
-      line-height: 20vw;
-    }
+      #cover .horiz {
+        padding: 0 2vw;
+        font-size: 7.5vw;
+        font-weight: 700;
+        font-style: italic;
+        font-family: 'Tienne', serif;
+      }
 
-    #cover .horiz {
-      padding: 0 2vw;
-      font-size: 7.5vw;
-      font-weight: 700;
-      font-style: italic;
-      font-family: 'Tienne', serif;
-    }
+      #cover .yellow {
+        font-size: 25vw;
+        display: block;
+      }
 
-    #cover .yellow {
-      font-size: 25vw;
-      display: block;
-    }
+      #cover p {
+        font-size: 5vw;
+        line-height: 6.3vw;
+        text-align: left;
+        padding: 0 3vw;
+      }
 
-    #cover p {
-      font-size: 5vw;
-      line-height: 6.3vw;
-      text-align: left;
-      padding: 0 3vw;
-    }
+      /* PAGE 02: THE JOURNEY */
+      #journey {
+        background-color: black;
+      }
 
-    /* PAGE 02: THE JOURNEY */
-    #journey {
-      background-color: black;
-    }
+      #journey .copy-layer {
+        padding: 12.8vw 21vw;
+      }
 
-    #journey .copy-layer {
-      padding: 12.8vw 21vw;
-    }
+      #journey h2 {
+        margin-bottom: -1vw;
+      }
 
-    #journey h2 {
-      margin-bottom: -1vw;
-    }
-
-    /*
+      /*
       * PAGE 04: TRIP HIGHLIGHTS
       * Stylelint requires `#trip-highlights` styles before `#what-to-bring`
       */
-    #trip-highlights {
-      background-color: #000;
-    }
+      #trip-highlights {
+        background-color: #000;
+      }
 
-    #trip-highlights .icons {
-      padding: 0;
-    }
+      #trip-highlights .icons {
+        padding: 0;
+      }
 
-    #trip-highlights .icons > div {
-      opacity: 0;
-      width: auto;
-      position: absolute;
-      align-content: flex-start;
-    }
+      #trip-highlights .icons > div {
+        opacity: 0;
+        width: auto;
+        position: absolute;
+        align-content: flex-start;
+      }
 
-    #trip-highlights h3 {
-      width: 0;
-      color: #fff;
-      overflow: hidden;
-      white-space: nowrap;
-    }
+      #trip-highlights h3 {
+        width: 0;
+        color: #fff;
+        overflow: hidden;
+        white-space: nowrap;
+      }
 
-    #trip-highlights h3 span {
-      padding: 1vw 2vw 0.7vw;
-      text-transform: uppercase;
-      display: inline-block;
-      background-color: black;
-    }
+      #trip-highlights h3 span {
+        padding: 1vw 2vw 0.7vw;
+        text-transform: uppercase;
+        display: inline-block;
+        background-color: black;
+      }
 
-    #trip-highlights .pin {
-      top: 7vw;
-      left: 10vw;
-    }
+      #trip-highlights .pin {
+        top: 7vw;
+        left: 10vw;
+      }
 
-    #trip-highlights .pin amp-img {
-      width: 14vw;
-      height: 20vw;
-    }
+      #trip-highlights .pin amp-img {
+        width: 14vw;
+        height: 20vw;
+      }
 
-    #trip-highlights .pin h3 {
-      font-size: 2.7vw;
-      animation-delay: 1s;
-      margin-top: -6.7vw;
-      margin-left: 13vw;
-    }
+      #trip-highlights .pin h3 {
+        font-size: 2.7vw;
+        animation-delay: 1s;
+        margin-top: -6.7vw;
+        margin-left: 13vw;
+      }
 
-    #trip-highlights .flag {
-      top: 68.1vw;
-      left: 9.2vw;
-      animation-delay: 0.15s;
-    }
+      #trip-highlights .flag {
+        top: 68.1vw;
+        left: 9.2vw;
+        animation-delay: 0.15s;
+      }
 
-    #trip-highlights .flag amp-img {
-      width: 7vw;
-      height: 8vw;
-      margin-top: -7.7vw;
-      margin-left: -1vw;
-    }
+      #trip-highlights .flag amp-img {
+        width: 7vw;
+        height: 8vw;
+        margin-top: -7.7vw;
+        margin-left: -1vw;
+      }
 
-    #trip-highlights .flag h3 {
-      font-size: 1.9vw;
-      margin-top: 1.3vw;
-      margin-left: -2.4vw;
-      animation-delay: 1s;
-    }
+      #trip-highlights .flag h3 {
+        font-size: 1.9vw;
+        margin-top: 1.3vw;
+        margin-left: -2.4vw;
+        animation-delay: 1s;
+      }
 
-    #trip-highlights .resort {
-      top: 86.3vw;
-      left: 52.9vw;
-      animation-delay: 0.4s;
-    }
+      #trip-highlights .resort {
+        top: 86.3vw;
+        left: 52.9vw;
+        animation-delay: 0.4s;
+      }
 
-    #trip-highlights .resort amp-img {
-      width: 8vw;
-      height: 14vw;
-      margin-top: -13.8vw;
-      margin-left: -4.1vw;
-    }
+      #trip-highlights .resort amp-img {
+        width: 8vw;
+        height: 14vw;
+        margin-top: -13.8vw;
+        margin-left: -4.1vw;
+      }
 
-    #trip-highlights .resort h3 {
-      font-size: 1.9vw;
-      margin-top: -4.6vw;
-      margin-left: 5vw;
-      animation-delay: 1s;
-    }
+      #trip-highlights .resort h3 {
+        font-size: 1.9vw;
+        margin-top: -4.6vw;
+        margin-left: 5vw;
+        animation-delay: 1s;
+      }
 
-    #trip-highlights .video-wrapper {
-      padding-right: 14.6vw;
-      padding-left: 24.5vw;
-      padding-top: 28.4vw;
-    }
+      #trip-highlights .video-wrapper {
+        padding-right: 14.6vw;
+        padding-left: 24.5vw;
+        padding-top: 28.4vw;
+      }
 
-    #trip-highlights .video-wrapper .video {
-      padding: 0.375em;
-      background-color: rgba(255, 255, 255, 0.21);
-    }
+      #trip-highlights .video-wrapper .video {
+        padding: 0.375em;
+        background-color: rgba(255, 255, 255, 0.21);
+      }
 
-    #trip-highlights .copy-layer {
-      margin: 0 auto;
-      padding: 0 19vw 16.3vw;
-      max-width: 65%;
-      align-content: flex-end;
-    }
+      #trip-highlights .copy-layer {
+        margin: 0 auto;
+        padding: 0 19vw 16.3vw;
+        max-width: 65%;
+        align-content: flex-end;
+      }
 
-    #trip-highlights[active] .icons > div {
-      animation-name: dropIn;
-      animation-duration: 0.65s;
-      animation-iteration-count: 1;
-      animation-direction: normal;
-      animation-fill-mode: forwards;
-      animation-play-state: running;
-      animation-timing-function: ease-out;
-    }
+      #trip-highlights[active] .icons > div {
+        animation-name: dropIn;
+        animation-duration: 0.65s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+        animation-timing-function: ease-out;
+      }
 
-    #trip-highlights[active] .icons h3 {
-      animation-name: wipeRight;
-      animation-duration: 0.65s;
-      animation-iteration-count: 1;
-      animation-direction: normal;
-      animation-fill-mode: forwards;
-      animation-play-state: running;
-      animation-timing-function: ease-out;
-    }
+      #trip-highlights[active] .icons h3 {
+        animation-name: wipeRight;
+        animation-duration: 0.65s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+        animation-timing-function: ease-out;
+      }
 
-    /*
+      /*
       * PAGE 03: WHAT TO BRING
       * Stylelint requires `#trip-highlights` styles before `#what-to-bring`
       */
-    #what-to-bring {
-      background-color: #0b0309;
-    }
-
-    #what-to-bring .suitcase-wrapper {
-      padding: 22vh 0 0;
-    }
-
-    #what-to-bring .suitcase-wrapper amp-img {
-      width: 100%;
-      position: absolute;
-    }
-
-    #what-to-bring .mars-wrapper {
-      padding: 0;
-      align-content: flex-end;
-    }
-
-    #what-to-bring[active] .mars-wrapper amp-img {
-      animation-name: marsRising;
-      animation-duration: 1s;
-      animation-iteration-count: 1;
-      animation-direction: normal;
-      animation-fill-mode: forwards;
-      animation-play-state: running;
-      animation-timing-function: ease-out;
-    }
-
-    #what-to-bring .copy-layer {
-      align-content: flex-end;
-      padding: 0 19.6vw 12vh;
-    }
-
-    /* PAGE 05: ROVER TOURS */
-    #rover-tours {
-      background-color: #775444;
-    }
-
-    #rover-tours .button-container {
-      align-content: flex-end;
-      padding: 0 19.6vw 2.4vw;
-    }
-
-    #rover-tours .copy-layer {
-      padding: 15.6vw 21.5vw;
-    }
-
-    #rover-tours h2 {
-      margin-bottom: 0;
-    }
-
-    /* PAGE 05B: ROVER 360 */
-    #rover-360 {
-      background-color: #151515;
-    }
-
-    /* PAGE 06: LAST PAGE - WE CAN'T WAIT TO HAVE YOU ABOARD */
-    #last {
-      background-color: black;
-    }
-
-    #last .copy-layer {
-      padding: 12.4vw 24vw 10vw;
-      text-align: center;
-    }
-
-    #last h2 {
-      color: var(--yellow);
-      font-size: 8.6vw;
-      font-weight: 700;
-      font-family: 'Josefin Sans', sans-serif;
-      text-transform: uppercase;
-      display: flex;
-      flex-direction: column;
-    }
-
-    #last .last {
-      font-size: 7.2vw;
-    }
-
-    #last .italic {
-      color: #fff;
-      font-size: 5vw;
-      font-weight: 700;
-      font-style: italic;
-      font-family: 'Tienne', serif;
-      text-transform: initial;
-      margin-bottom: 1.5vw;
-    }
-
-    #last[active] .mars {
-      animation-name: endMars;
-      animation-duration: 30s;
-      animation-iteration-count: 1;
-      animation-direction: normal;
-      animation-fill-mode: forwards;
-      animation-play-state: running;
-      animation-timing-function: ease-out;
-    }
-
-    #last[active] .astronaut {
-      animation-name: endAstronaut;
-      animation-duration: 30s;
-      animation-iteration-count: 1;
-      animation-direction: normal;
-      animation-fill-mode: forwards;
-      animation-play-state: running;
-      animation-timing-function: ease-out;
-    }
-
-    @keyframes coverPan {
-      0% {
-        transform: translate(2.5rem, 4.1875rem) scale(1.25);
+      #what-to-bring {
+        background-color: #0b0309;
       }
 
-      100% {
-        transform: translate(-2.5rem, 0.625rem) scale(1.35);
-      }
-    }
-
-    @keyframes marsRising {
-      0% {
-        opacity: 0;
-        transform: translate(0, 1.0625rem) scale(1);
+      #what-to-bring .suitcase-wrapper {
+        padding: 22vh 0 0;
       }
 
-      100% {
-        opacity: 1;
-        transform: translate(0, 0.625rem) scale(1.15);
-      }
-    }
-
-    @keyframes endMars {
-      0% {
-        transform: translate(0.775rem, 0.775rem) scale(1.2);
-      }
-
-      100% {
-        transform: translate(-0.4375rem, -0.375rem) scale(1.3);
-      }
-    }
-
-    @keyframes endAstronaut {
-      0% {
-        transform: translate(1.8375rem, 2.775rem) scale(1.1);
-      }
-
-      100% {
-        transform: translate(-1.5rem, 0.375rem) scale(1.2);
-      }
-    }
-
-    @keyframes dropIn {
-      0% {
-        opacity: 0;
-        transform: translateY(-34.375rem);
-      }
-
-      100% {
-        opacity: 1;
-      }
-    }
-
-    @keyframes wipeRight {
-      0% {
-        width: 0;
-      }
-
-      100% {
+      #what-to-bring .suitcase-wrapper amp-img {
         width: 100%;
+        position: absolute;
       }
-    }
-  </style>
-</head>
 
-<body>
-  <amp-story standalone title="The Mars Cruise" publisher="The AMP Project"
-    publisher-logo-src="./img/publisher-src.png" poster-portrait-src="./img/portrait-src.jpg"
-    poster-square-src="./img/square-src.jpg" poster-landscape-src="./img/landscape-src.jpg"
-    background-audio="./audio/Asche_Spencer-Contemplative_312.mp3">
+      #what-to-bring .mars-wrapper {
+        padding: 0;
+        align-content: flex-end;
+      }
 
-    <!-- The Cover Page -->
-    <amp-story-page id="cover">
-      <amp-story-grid-layer template="fill">
-        <amp-img class="bkgd" src="./img/01/bkgd.jpg" width="720" height="1280" layout="responsive">
-        </amp-img>
-      </amp-story-grid-layer>
-      <amp-story-grid-layer template="fill" class="gradient"></amp-story-grid-layer>
-      <amp-story-grid-layer template="vertical" class="copy-layer">
-        <h1 animate-in="fly-in-bottom" animate-in-duration="0.55s" animate-in-delay="0.35s">
-          <span class="horiz">The</span><span class="yellow">MARS</span>CRUISE
-        </h1>
-        <p class="copy" animate-in="fade-in" animate-in-duration="0.75s" animate-in-delay="0.75s">
-          Get ready for the trip of your life. Keep reading to see all
-          that awaits you on the Red Planet.
-        </p>
-      </amp-story-grid-layer>
-    </amp-story-page>
+      #what-to-bring[active] .mars-wrapper amp-img {
+        animation-name: marsRising;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+        animation-timing-function: ease-out;
+      }
 
-    <!-- Journey -->
-    <amp-story-page id="journey">
-      <amp-story-grid-layer template="fill">
-        <amp-video width="960" height="1280" autoplay noaudio layout="responsive"
-          src="./video/02-bkgd.mp4" poster="./img/02/bkgd-poster.jpg"></amp-video>
-      </amp-story-grid-layer>
-      <amp-story-grid-layer template="vertical" class="copy-layer">
-        <h2 animate-in="fly-in-right" animate-in-duration="0.6s" animate-in-delay="0.2s">
-          the journey
-        </h2>
-        <p class="copy" animate-in="fade-in" animate-in-duration="0.7s" animate-in-delay="0.6s">
-          Every 2 years, when Earth and Mars are closest to each other,
-          the voyage to the fourth planet takes a brisk 9 months.
-        </p>
-      </amp-story-grid-layer>
-    </amp-story-page>
+      #what-to-bring .copy-layer {
+        align-content: flex-end;
+        padding: 0 19.6vw 12vh;
+      }
 
-    <!-- What to Bring -->
-    <amp-story-page id="what-to-bring">
-      <amp-story-grid-layer template="fill">
-        <amp-img src="./img/03/bkgd.jpg" width="960" height="1280"></amp-img>
-      </amp-story-grid-layer>
-      <amp-story-grid-layer template="vertical" class="mars-wrapper">
-        <amp-img class="mars" src="./img/03/mars.png" width="960" height="450" layout="responsive">
-        </amp-img>
-      </amp-story-grid-layer>
-      <amp-story-grid-layer template="vertical" class="suitcase-wrapper">
-        <div>
-          <amp-img class="suitcase" src="./img/03/suitcase.png"
-            layout="responsive" width="960"
-            height="663" animate-in="fly-in-bottom"
-            animate-in-duration="0.85s" animate-in-delay="0.45s">
-          </amp-img>
-          <amp-img class="books" src="./img/03/books.png"
-            layout="responsive" width="960"
-            height="663" animate-in="fly-in-top"
-            animate-in-duration="0.75s" animate-in-delay="0.8s">
-          </amp-img>
-          <amp-img class="sextant" src="./img/03/sextant.png"
-            layout="responsive" width="960"
-            height="663" animate-in="fly-in-top"
-            animate-in-duration="1.25s" animate-in-delay="1.2s">
-          </amp-img>
-          <amp-img class="helmet" src="./img/03/helmet.png"
-            layout="responsive" width="960"
-            height="680" animate-in="fly-in-top"
-            animate-in-duration="0.75s" animate-in-delay="1.1s">
-          </amp-img>
-          <amp-img class="suitcase-front" src="./img/03/suitcase-front.png"
-            layout="responsive" width="960"
-            height="663" animate-in="fly-in-bottom"
-            animate-in-duration="0.85s" animate-in-delay="0.45s">
-          </amp-img>
-        </div>
-      </amp-story-grid-layer>
-      <amp-story-grid-layer template="vertical" class="copy-layer">
-        <h2 animate-in="fly-in-bottom" animate-in-duration="0.5s" animate-in-delay="1.05s">
-          what to bring
-        </h2>
-        <p animate-in="fade-in" animate-in-duration="0.6s" animate-in-delay="1.55s">
-          Aside from warm clothes, there are a few essentials you’ll
-          want to bring from home: like a space suit, solar phone
-          charger, sextant, and a good book
-        </p>
-      </amp-story-grid-layer>
-    </amp-story-page>
+      /* PAGE 05: ROVER TOURS */
+      #rover-tours {
+        background-color: #775444;
+      }
 
-    <!-- Highlights -->
-    <amp-story-page id="trip-highlights">
-      <amp-story-grid-layer template="fill">
-        <amp-video noaudio autoplay width="960" height="1280" src="./video/04-bkgd.mp4"
-          layout="responsive" poster="./img/04/poster.jpg">
-          <div fallback>
-            <p>This browser does not support the video element.</p>
+      #rover-tours .button-container {
+        align-content: flex-end;
+        padding: 0 19.6vw 2.4vw;
+      }
+
+      #rover-tours .copy-layer {
+        padding: 15.6vw 21.5vw;
+      }
+
+      #rover-tours h2 {
+        margin-bottom: 0;
+      }
+
+      /* PAGE 05B: ROVER 360 */
+      #rover-360 {
+        background-color: #151515;
+      }
+
+      /* PAGE 06: LAST PAGE - WE CAN'T WAIT TO HAVE YOU ABOARD */
+      #last {
+        background-color: black;
+      }
+
+      #last .copy-layer {
+        padding: 12.4vw 24vw 10vw;
+        text-align: center;
+      }
+
+      #last h2 {
+        color: var(--yellow);
+        font-size: 8.6vw;
+        font-weight: 700;
+        font-family: 'Josefin Sans', sans-serif;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+      }
+
+      #last .last {
+        font-size: 7.2vw;
+      }
+
+      #last .italic {
+        color: #fff;
+        font-size: 5vw;
+        font-weight: 700;
+        font-style: italic;
+        font-family: 'Tienne', serif;
+        text-transform: initial;
+        margin-bottom: 1.5vw;
+      }
+
+      #last[active] .mars {
+        animation-name: endMars;
+        animation-duration: 30s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+        animation-timing-function: ease-out;
+      }
+
+      #last[active] .astronaut {
+        animation-name: endAstronaut;
+        animation-duration: 30s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+        animation-timing-function: ease-out;
+      }
+
+      @keyframes coverPan {
+        0% {
+          transform: translate(2.5rem, 4.1875rem) scale(1.25);
+        }
+
+        100% {
+          transform: translate(-2.5rem, 0.625rem) scale(1.35);
+        }
+      }
+
+      @keyframes marsRising {
+        0% {
+          opacity: 0;
+          transform: translate(0, 1.0625rem) scale(1);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translate(0, 0.625rem) scale(1.15);
+        }
+      }
+
+      @keyframes endMars {
+        0% {
+          transform: translate(0.775rem, 0.775rem) scale(1.2);
+        }
+
+        100% {
+          transform: translate(-0.4375rem, -0.375rem) scale(1.3);
+        }
+      }
+
+      @keyframes endAstronaut {
+        0% {
+          transform: translate(1.8375rem, 2.775rem) scale(1.1);
+        }
+
+        100% {
+          transform: translate(-1.5rem, 0.375rem) scale(1.2);
+        }
+      }
+
+      @keyframes dropIn {
+        0% {
+          opacity: 0;
+          transform: translateY(-34.375rem);
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes wipeRight {
+        0% {
+          width: 0;
+        }
+
+        100% {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <amp-story
+      standalone
+      title="The Mars Cruise"
+      publisher="The AMP Project"
+      publisher-logo-src="./img/publisher-src.png"
+      poster-portrait-src="./img/portrait-src.jpg"
+      poster-square-src="./img/square-src.jpg"
+      poster-landscape-src="./img/landscape-src.jpg"
+      background-audio="./audio/Asche_Spencer-Contemplative_312.mp3"
+    >
+      <!-- The Cover Page -->
+      <amp-story-page id="cover">
+        <amp-story-grid-layer template="fill">
+          <amp-img
+            class="bkgd"
+            src="./img/01/bkgd.jpg"
+            width="720"
+            height="1280"
+            layout="responsive"
+          >
+          </amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer
+          template="fill"
+          class="gradient"
+        ></amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical" class="copy-layer">
+          <h1
+            animate-in="fly-in-bottom"
+            animate-in-duration="0.55s"
+            animate-in-delay="0.35s"
+          >
+            <span class="horiz">The</span><span class="yellow">MARS</span>CRUISE
+          </h1>
+          <p
+            class="copy"
+            animate-in="fade-in"
+            animate-in-duration="0.75s"
+            animate-in-delay="0.75s"
+          >
+            Get ready for the trip of your life. Keep reading to see all that
+            awaits you on the Red Planet.
+          </p>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <!-- Journey -->
+      <amp-story-page id="journey">
+        <amp-story-grid-layer template="fill">
+          <amp-video
+            width="960"
+            height="1280"
+            autoplay
+            noaudio
+            layout="responsive"
+            src="./video/02-bkgd.mp4"
+            poster="./img/02/bkgd-poster.jpg"
+          ></amp-video>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical" class="copy-layer">
+          <h2
+            animate-in="fly-in-right"
+            animate-in-duration="0.6s"
+            animate-in-delay="0.2s"
+          >
+            the journey
+          </h2>
+          <p
+            class="copy"
+            animate-in="fade-in"
+            animate-in-duration="0.7s"
+            animate-in-delay="0.6s"
+          >
+            Every 2 years, when Earth and Mars are closest to each other, the
+            voyage to the fourth planet takes a brisk 9 months.
+          </p>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <!-- What to Bring -->
+      <amp-story-page id="what-to-bring">
+        <amp-story-grid-layer template="fill">
+          <amp-img src="./img/03/bkgd.jpg" width="960" height="1280"></amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical" class="mars-wrapper">
+          <amp-img
+            class="mars"
+            src="./img/03/mars.png"
+            width="960"
+            height="450"
+            layout="responsive"
+          >
+          </amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical" class="suitcase-wrapper">
+          <div>
+            <amp-img
+              class="suitcase"
+              src="./img/03/suitcase.png"
+              layout="responsive"
+              width="960"
+              height="663"
+              animate-in="fly-in-bottom"
+              animate-in-duration="0.85s"
+              animate-in-delay="0.45s"
+            >
+            </amp-img>
+            <amp-img
+              class="books"
+              src="./img/03/books.png"
+              layout="responsive"
+              width="960"
+              height="663"
+              animate-in="fly-in-top"
+              animate-in-duration="0.75s"
+              animate-in-delay="0.8s"
+            >
+            </amp-img>
+            <amp-img
+              class="sextant"
+              src="./img/03/sextant.png"
+              layout="responsive"
+              width="960"
+              height="663"
+              animate-in="fly-in-top"
+              animate-in-duration="1.25s"
+              animate-in-delay="1.2s"
+            >
+            </amp-img>
+            <amp-img
+              class="helmet"
+              src="./img/03/helmet.png"
+              layout="responsive"
+              width="960"
+              height="680"
+              animate-in="fly-in-top"
+              animate-in-duration="0.75s"
+              animate-in-delay="1.1s"
+            >
+            </amp-img>
+            <amp-img
+              class="suitcase-front"
+              src="./img/03/suitcase-front.png"
+              layout="responsive"
+              width="960"
+              height="663"
+              animate-in="fly-in-bottom"
+              animate-in-duration="0.85s"
+              animate-in-delay="0.45s"
+            >
+            </amp-img>
           </div>
-        </amp-video>
-      </amp-story-grid-layer>
-      <amp-story-grid-layer template="vertical" class="video-wrapper">
-        <div class="video" animate-in="fly-in-right"
-          animate-in-duration="0.55s" animate-in-delay="0.9s">
-          <amp-video autoplay noaudio width="960" height="540"
-            src="./video/04-trip-movie.mp4" layout="responsive"
-            poster="./img/04/trip-movie.jpg">
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical" class="copy-layer">
+          <h2
+            animate-in="fly-in-bottom"
+            animate-in-duration="0.5s"
+            animate-in-delay="1.05s"
+          >
+            what to bring
+          </h2>
+          <p
+            animate-in="fade-in"
+            animate-in-duration="0.6s"
+            animate-in-delay="1.55s"
+          >
+            Aside from warm clothes, there are a few essentials you’ll want to
+            bring from home: like a space suit, solar phone charger, sextant,
+            and a good book
+          </p>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <!-- Highlights -->
+      <amp-story-page id="trip-highlights">
+        <amp-story-grid-layer template="fill">
+          <amp-video
+            noaudio
+            autoplay
+            width="960"
+            height="1280"
+            src="./video/04-bkgd.mp4"
+            layout="responsive"
+            poster="./img/04/poster.jpg"
+          >
             <div fallback>
               <p>This browser does not support the video element.</p>
             </div>
           </amp-video>
-        </div>
-      </amp-story-grid-layer>
-      <amp-story-grid-layer template="vertical" class="icons">
-        <div class="pin">
-          <amp-img layout="flex-item" src="./img/04/pin.png"></amp-img>
-          <h3><span>valles marineris</span></h3>
-        </div>
-        <div class="flag">
-          <amp-img layout="flex-item" src="./img/04/flag.png"></amp-img>
-          <h3><span>marineris golf course</span></h3>
-        </div>
-        <div class="resort">
-          <amp-img layout="flex-item" src="./img/04/resort.png"></amp-img>
-          <h3><span>rift valley resort</span></h3>
-        </div>
-      </amp-story-grid-layer>
-      <amp-story-grid-layer template="vertical" class="copy-layer">
-        <h2 animate-in="fly-in-bottom" animate-in-duration="0.8s" animate-in-delay="0.85s">
-          trip highlights
-        </h2>
-        <p animate-in="fade-in" animate-in-duration="0.65s" animate-in-delay="1.55s">
-          There’s a whole planet to explore, and we want to make sure
-          you see the best parts. First among them is the beautiful
-          rift valley, Valles Marineris.
-        </p>
-      </amp-story-grid-layer>
-    </amp-story-page>
-
-    <!-- Rover tours -->
-    <amp-story-page id="rover-tours">
-      <amp-story-grid-layer template="fill">
-        <amp-img src="./img/05/bkgd.jpg" width="960" height="1280" layout="responsive"></amp-img>
-      </amp-story-grid-layer>
-      <amp-story-grid-layer template="vertical" class="copy-layer">
-        <h2 animate-in="fade-in" animate-in-duration="0.75s">
-          rover tours
-        </h2>
-        <p animate-in="fade-in" animate-in-duration="0.75s" animate-in-delay="0.25s">
-          This is one activity you won’t want to miss. For a small
-          upgrade fee, you and your family can take a guided tour of
-          Mars from the comfort of our all-terrain Rovers.</p>
-      </amp-story-grid-layer>
-      <amp-story-grid-layer template="vertical" class="button-container">
-        <amp-img src="./img/05/360-btn.png" width="567" height="230" layout="responsive"></amp-img>
-      </amp-story-grid-layer>
-    </amp-story-page>
-
-    <!-- 360 -->
-    <amp-story-page id="rover-360" auto-advance-after="rover-video">
-      <amp-story-grid-layer template="fill">
-        <amp-video id="rover-video" autoplay noaudio width="960" height="1280"
-          src="./video/05B-rover.mp4" layout="responsive" poster="./img/05B/rover.jpg">
-          <div fallback>
-            <p>This browser does not support the video element.</p>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical" class="video-wrapper">
+          <div
+            class="video"
+            animate-in="fly-in-right"
+            animate-in-duration="0.55s"
+            animate-in-delay="0.9s"
+          >
+            <amp-video
+              autoplay
+              noaudio
+              width="960"
+              height="540"
+              src="./video/04-trip-movie.mp4"
+              layout="responsive"
+              poster="./img/04/trip-movie.jpg"
+            >
+              <div fallback>
+                <p>This browser does not support the video element.</p>
+              </div>
+            </amp-video>
           </div>
-        </amp-video>
-      </amp-story-grid-layer>
-    </amp-story-page>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical" class="icons">
+          <div class="pin">
+            <amp-img layout="flex-item" src="./img/04/pin.png"></amp-img>
+            <h3><span>valles marineris</span></h3>
+          </div>
+          <div class="flag">
+            <amp-img layout="flex-item" src="./img/04/flag.png"></amp-img>
+            <h3><span>marineris golf course</span></h3>
+          </div>
+          <div class="resort">
+            <amp-img layout="flex-item" src="./img/04/resort.png"></amp-img>
+            <h3><span>rift valley resort</span></h3>
+          </div>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical" class="copy-layer">
+          <h2
+            animate-in="fly-in-bottom"
+            animate-in-duration="0.8s"
+            animate-in-delay="0.85s"
+          >
+            trip highlights
+          </h2>
+          <p
+            animate-in="fade-in"
+            animate-in-duration="0.65s"
+            animate-in-delay="1.55s"
+          >
+            There’s a whole planet to explore, and we want to make sure you see
+            the best parts. First among them is the beautiful rift valley,
+            Valles Marineris.
+          </p>
+        </amp-story-grid-layer>
+      </amp-story-page>
 
-    <!-- Can't Wait -->
-    <amp-story-page id="last">
-      <amp-story-grid-layer template="fill">
-        <amp-img src="./img/06/bkgd.jpg" width="960" height="1280" layout="responsive"></amp-img>
-      </amp-story-grid-layer>
-      <amp-story-grid-layer template="fill">
-        <amp-img class="mars" src="./img/06/mars.png" width="960" height="1280" layout="responsive">
-        </amp-img>
-      </amp-story-grid-layer>
-      <amp-story-grid-layer template="fill">
-        <amp-img class="astronaut" src="./img/06/astronaut.png"
-          width="960" height="1280" layout="responsive">
-        </amp-img>
-      </amp-story-grid-layer>
-      <amp-story-grid-layer template="vertical" class="copy-layer">
-        <h2 animate-in="fly-in-top" animate-in-duration="0.55s" animate-in-delay="0.35s">
-          <span class="horiz italic">We</span>
-          can't wait
-          <span class="italic">to have</span>
-          <span class="last">you aboard!</span>
-        </h2>
-      </amp-story-grid-layer>
-    </amp-story-page>
+      <!-- Rover tours -->
+      <amp-story-page id="rover-tours">
+        <amp-story-grid-layer template="fill">
+          <amp-img
+            src="./img/05/bkgd.jpg"
+            width="960"
+            height="1280"
+            layout="responsive"
+          ></amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical" class="copy-layer">
+          <h2 animate-in="fade-in" animate-in-duration="0.75s">rover tours</h2>
+          <p
+            animate-in="fade-in"
+            animate-in-duration="0.75s"
+            animate-in-delay="0.25s"
+          >
+            This is one activity you won’t want to miss. For a small upgrade
+            fee, you and your family can take a guided tour of Mars from the
+            comfort of our all-terrain Rovers.
+          </p>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical" class="button-container">
+          <amp-img
+            src="./img/05/360-btn.png"
+            width="567"
+            height="230"
+            layout="responsive"
+          ></amp-img>
+        </amp-story-grid-layer>
+      </amp-story-page>
 
-    <!-- Bookend -->
-    <amp-story-bookend src="./json/bookend.json" layout="nodisplay"></amp-story-bookend>
+      <!-- 360 -->
+      <amp-story-page id="rover-360" auto-advance-after="rover-video">
+        <amp-story-grid-layer template="fill">
+          <amp-video
+            id="rover-video"
+            autoplay
+            noaudio
+            width="960"
+            height="1280"
+            src="./video/05B-rover.mp4"
+            layout="responsive"
+            poster="./img/05B/rover.jpg"
+          >
+            <div fallback>
+              <p>This browser does not support the video element.</p>
+            </div>
+          </amp-video>
+        </amp-story-grid-layer>
+      </amp-story-page>
 
-  </amp-story>
+      <!-- Can't Wait -->
+      <amp-story-page id="last">
+        <amp-story-grid-layer template="fill">
+          <amp-img
+            src="./img/06/bkgd.jpg"
+            width="960"
+            height="1280"
+            layout="responsive"
+          ></amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="fill">
+          <amp-img
+            class="mars"
+            src="./img/06/mars.png"
+            width="960"
+            height="1280"
+            layout="responsive"
+          >
+          </amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="fill">
+          <amp-img
+            class="astronaut"
+            src="./img/06/astronaut.png"
+            width="960"
+            height="1280"
+            layout="responsive"
+          >
+          </amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical" class="copy-layer">
+          <h2
+            animate-in="fly-in-top"
+            animate-in-duration="0.55s"
+            animate-in-delay="0.35s"
+          >
+            <span class="horiz italic">We</span>
+            can't wait
+            <span class="italic">to have</span>
+            <span class="last">you aboard!</span>
+          </h2>
+        </amp-story-grid-layer>
+      </amp-story-page>
 
-</body>
-
+      <!-- Bookend -->
+      <amp-story-bookend
+        src="./json/bookend.json"
+        layout="nodisplay"
+      ></amp-story-bookend>
+    </amp-story>
+  </body>
 </html>
