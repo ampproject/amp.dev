@@ -27,7 +27,7 @@ Ciao mondo in testo semplice!
 Content-Type: text/x-amp-html; charset="UTF-8"
 
 <!doctype html>
-<html ⚡4email>
+<html ⚡4email data-css-strict>
 <head>
   <meta charset="utf-8">
   <style amp4email-boilerplate>body{visibility:hidden}</style>

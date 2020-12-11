@@ -41,7 +41,7 @@ Poniższy kod zawiera minimalną ilość znaczników, niezbędnych w prawidłowe
 
 [sourcecode:html]
 <!DOCTYPE html>
-<html ⚡4email>
+<html ⚡4email data-css-strict>
   <head>
     <meta charset="utf-8" />
     <style amp4email-boilerplate>

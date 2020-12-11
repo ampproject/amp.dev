@@ -20,7 +20,7 @@ Lo strumento playground AMP supporta il formato AMP per e-mail, permettendo di s
 
 ```html
 <!doctype html>
-<html ⚡4email>
+<html ⚡4email data-css-strict>
 <head>
   <meta charset="utf-8">
   <script async src="https://cdn.ampproject.org/v0.js"></script>

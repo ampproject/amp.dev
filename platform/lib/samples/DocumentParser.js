@@ -59,12 +59,12 @@ const AMPHTML_BOILERPLATE =
 /* eslint-disable */
 const BEAUTIFY_OPTIONS = {
   indent_size: 2,
-  "wrap_attributes": "force",
+  'wrap_attributes': 'force',
   //"wrap_attributes_indent_size": 4,
   unformatted: ['noscript', 'style', 'head', 'script'],
   'indent-char': ' ',
   'no-preserve-newlines': '',
-  'extra_liners': []
+  'extra_liners': [],
 };
 /* eslint-enable */
 
@@ -255,8 +255,7 @@ class DocumentParser {
   replaceAmpHtmlEmailRuntimeAddViewport(string) {
     return string.replace(
       '<style amp4email-boilerplate>body{visibility:hidden}</style>',
-      '<meta name="viewport" content="width=device-width,minimum-scale' +
-        '=1,initial-scale=1">' +
+      '<meta name="viewport" content="width=device-width">' +
         AMPHTML_BOILERPLATE
     );
   }
