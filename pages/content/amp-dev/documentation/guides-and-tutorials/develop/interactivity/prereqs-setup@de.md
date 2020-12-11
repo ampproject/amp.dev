@@ -1,7 +1,7 @@
 ---
-"$title": Setting up
+"$title": Einrichtung
 "$order": '0'
-description: 'Before starting this tutorial, you''ll need the following: - A basic knowledge of HTML, CSS, and JavaScript - A browser of your choice - A text editor of ...'
+description: 'Dieses Tutorial setzt Folgendes voraus: - Grundkenntnisse in HTML, CSS und JavaScript - einen Browser deiner Wahl - einen Texteditor deiner Wahl'
 "$parent": "/content/docs/interaction_dynamic/interactivity.md"
 ---
 
@@ -10,8 +10,8 @@ description: 'Before starting this tutorial, you''ll need the following: - A bas
 Dieses Tutorial setzt Folgendes voraus:
 
 - Grundkenntnisse in HTML, CSS und JavaScript
-- A browser of your choice
-- A text editor of your choice
+- einen Browser deiner Wahl
+- einen Texteditor deiner Wahl
 - [Node.js und NPM](https://docs.npmjs.com/getting-started/installing-node) müssen auf deinem Computer installiert sein.
 
 ## Richte deine Entwicklungsumgebung ein
@@ -26,7 +26,7 @@ git clone https://github.com/googlecodelabs/advanced-interactivity-in-amp.git
 
 ### Schritt 2. Installiere die Abhängigkeiten
 
-Unzip the archive file (if necessary) and navigate into the directory. Install the dependencies by running `npm install`.
+Entpacke die Archivdatei (falls erforderlich) und wechsle zum Verzeichnis. Installiere die Abhängigkeiten, indem du `npm install` ausführst.
 
 ```shell
 cd advanced-interactivity-in-amp
@@ -41,4 +41,4 @@ Starte den Entwicklungsserver mit node.js:
 node app.js
 ```
 
-Then, navigate to <a href="http://localhost:3000">http://localhost:3000</a> in your web browser to see the AMP page running!
+Rufe dann in deinem Webbrowser <a href="http://localhost:3000">http://localhost:3000</a> auf, um die AMP Seite in Aktion zu sehen!
