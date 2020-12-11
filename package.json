@@ -42,7 +42,11 @@
 			"pre-push": "npm test"
 		}
 	},
-	"keywords": ["amphtml", "framework", "documentation"],
+	"keywords": [
+		"amphtml",
+		"framework",
+		"documentation"
+	],
 	"author": "The AMP HTML Authors",
 	"license": "Apache-2.0",
 	"signale": {
@@ -53,7 +57,10 @@
 		"@boilerplate": "boilerplate",
 		"@lib": "platform/lib"
 	},
-	"browserslist": ["last 2 versions", "not dead"],
+	"browserslist": [
+		"last 2 versions",
+		"not dead"
+	],
 	"dependencies": {
 		"@ampproject/toolbox-cache-list": "2.7.1",
 		"@ampproject/toolbox-cors": "2.7.1",
@@ -70,7 +77,7 @@
 		"express": "4.17.1",
 		"express-formidable": "1.2.0",
 		"gcp-metadata": "4.2.1",
-    "helmet-csp": "3.2.0",
+		"helmet-csp": "3.2.0",
 		"http-proxy": "1.18.1",
 		"iltorb": "2.4.5",
 		"ioredis": "4.19.2",
