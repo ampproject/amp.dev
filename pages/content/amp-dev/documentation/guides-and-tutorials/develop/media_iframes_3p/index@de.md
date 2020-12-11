@@ -1,7 +1,7 @@
 ---
-"$title": Include images & video
+"$title": Füge Bilder & Videos hinzu
 "$order": '8'
-description: "Like on a normal HTML page, AMP allows you to embed images, video and audio content. Learn what's different about the AMP equivalents and learn how to..."
+description: Mit AMP kannst du wie auf einer normalen HTML Seite Bild-, Video- und Audioinhalte einbetten. Erfahre, wie sich die entsprechenden AMP Elemente unterscheiden …
 formats:
 - websites
 - stories
@@ -15,16 +15,16 @@ contributors:
 - bpaduch
 ---
 
-Like on a normal HTML page, AMP allows you to embed **images**, **video** and **audio** content. Learn what's different about the AMP equivalents and learn how to include them in your pages.
+Mit AMP kannst du wie auf einer normalen HTML Seite **Bild-**, **Video-** und **Audioinhalte** einbetten. Erfahre, wie sich die entsprechenden AMP Elemente unterscheiden und wie du sie in deine Seiten aufnehmen kannst.
 
 ## Why not <img>, <video> and <audio>?</audio></video>
 
 AMP doesn't support the default HTML counterparts to displaying media, like `<img>`. We provide equivalent components for the following reasons:
 
-- We need to understand layout of the page before assets load, crucial to [support first-viewport preloading](../../../../about/how-amp-works.html#size-all-resources-statically)
-- We need to control network requests to [lazy load and prioritize resources effectively](../../../../about/how-amp-works.html#prioritize-resource-loading)
+- Wir müssen das Layout der Seite verstehen, bevor Ressourcen geladen werden. Das ist wichtig für die [Unterstützung des Preloading für den ersten Viewport](../../../../about/how-amp-works.html#size-all-resources-statically).
+- Wir müssen Netzwerkanforderungen steuern, um [Lazy Loading zu ermöglichen und Ressourcen effektiv zu priorisieren](../../../../about/how-amp-works.html#prioritize-resource-loading).
 
-Caution: While they're not supported, they *will* render, but AMP won't [validate your pages](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) and you won't get all the benefits AMP provides.
+Achtung: Die Elemente werden zwar nicht unterstützt, *werden aber gerendert*. Allerdings [validiert AMP deine Seiten](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) dann nicht und du kannst nicht alle Vorteile von AMP nutzen.
 
 ## Images
 
@@ -60,7 +60,7 @@ As [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) reli
 
 ### Advanced layouts
 
-AMP makes it much easier than with standard CSS/HTML to create fully responsive images. In its most basic form, all you have to do is to add `layout="responsive"`:
+Im Vergleich zu standardmäßigem CSS/HTML ist es mit AMP wesentlich einfacher, vollständig responsive Bilder zu erstellen. Für das einfachste Ergebnis musst du nur `layout="responsive"` hinzufügen:
 
 [example preview="inline" playground="true"]
 ```html
@@ -73,13 +73,13 @@ AMP makes it much easier than with standard CSS/HTML to create fully responsive 
 ```
 [/example]
 
-[tip type="read-on"] **READ ON –**  Learn more about [advanced layout techniques](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md). [/tip]
+[tip type="read-on"] **ERFAHRE MEHR:** Erfahre mehr über [fortgeschrittene Layoutmethoden](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md). [/tip]
 
 ### Behavior and placeholders
 
-The AMP HTML runtime can effectively manage image resources, choosing to delay or prioritize resource loading based on the viewport position, system resources, connection bandwidth, or other factors.
+Die AMP HTML Runtime kann Bildressourcen effektiv verwalten. Dazu wird das Laden von Ressourcen verzögert oder priorisiert, wobei die Position des Viewports, die Systemressourcen, die Verbindungsbandbreite und andere Faktoren berücksichtigt werden.
 
-[tip type="read-on"] **READ ON –**  Learn how to [provide fallbacks and placeholders for images](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md). [/tip]
+[tip type="read-on"] **ERFAHRE MEHR:** Erfahre, wie du [Fallbacks und Platzhalter für Bilder bereitstellst](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md). [/tip]
 
 ## Animated images
 
@@ -99,15 +99,15 @@ The [`amp-anim`](../../../../documentation/components/reference/amp-anim.md) ele
 ```
 [/example]
 
-[tip type="note"] <strong>NOTE –</strong>  Include <code><script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script></code> in the head of your page to use this component. [/tip]
+[tip type="note"] **HINWEIS:** Binde `<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` im Header deiner Seite ein, um diese Komponente zu verwenden. [/tip]
 
 ## Video
 
 Include a video in your page using the [`amp-video`](../../../../documentation/components/reference/amp-video.md) element.
 
-Only use this element for direct HTML5 video file embeds. The element loads the video resource specified by the `src` attribute lazily, at a time determined by AMP.
+Verwende dieses Element nur zum direkten Einbetten einer HTML5 Videodatei. Das Element nutzt Lazy Loading für die durch das Attribut `src` angegebene Videoressource und lädt sie zu einem von AMP festgelegten Zeitpunkt.
 
-Include a placeholder before the video starts, and a fallback, if the browser doesn't support HTML5 video, for example:
+Stelle für den Fall, dass der Browser HTML5 Video nicht unterstützt, einen Platzhalter vor dem Start des Videos sowie ein Fallback bereit. Beispiel:
 
 [example preview="inline" playground="true" imports="amp-video:0.1"]
 ```html
@@ -127,7 +127,7 @@ Include a placeholder before the video starts, and a fallback, if the browser do
 
 Include an audio resource in your page, using the [`amp-audio`](../../../../documentation/components/reference/amp-audio.md) element.
 
-Only use this element for direct HTML5 audio file embeds. Like all embedded external resources in an AMP page, the element loads the audio resource specified by the `src` attribute lazily, at a time determined by AMP.
+Verwende dieses Element nur zum direkten Einbetten einer HTML5 Audiodatei. Der Vorgang ist für alle in eine AMP Seite eingebetteten externen Ressourcen gleich: Das Element nutzt Lazy Loading für die durch das Attribut `src` angegebene Audioressource und lädt sie zu einem von AMP festgelegten Zeitpunkt.
 
 Include a fallback, if the browser doesn't support HTML5 audio, for example:
 
@@ -149,4 +149,4 @@ Include a fallback, if the browser doesn't support HTML5 audio, for example:
 ```
 [/example]
 
-[tip type="note"] <strong>NOTE –</strong>  Include <code><script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script></code> in the head of your page to use this component. [/tip]
+[tip type="note"] **HINWEIS:** Binde `<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` im Header deiner Seite ein, um diese Komponente zu verwenden. [/tip]
