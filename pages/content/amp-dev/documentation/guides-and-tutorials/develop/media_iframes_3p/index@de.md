@@ -19,16 +19,16 @@ Mit AMP kannst du wie auf einer normalen HTML Seite **Bild-**, **Video-** und **
 
 ## Warum nicht <code><img></code>, <code><video></code> und <code><audio></code>?
 
-AMP doesn't support the default HTML counterparts to displaying media, like `<img>`. We provide equivalent components for the following reasons:
+AMP unterstützt nicht die standardmäßigen HTML Entsprechungen zum Anzeigen von Medien wie beispielsweise `<img>`. Wir bieten aus folgenden Gründen äquivalente Komponenten an:
 
 - Wir müssen das Layout der Seite verstehen, bevor Ressourcen geladen werden. Das ist wichtig für die [Unterstützung des Preloading für den ersten Viewport](../../../../about/how-amp-works.html#size-all-resources-statically).
 - Wir müssen Netzwerkanforderungen steuern, um [Lazy Loading zu ermöglichen und Ressourcen effektiv zu priorisieren](../../../../about/how-amp-works.html#prioritize-resource-loading).
 
 Achtung: Die Elemente werden zwar nicht unterstützt, *werden aber gerendert*. Allerdings [validiert AMP deine Seiten](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) dann nicht und du kannst nicht alle Vorteile von AMP nutzen.
 
-## Images
+## Bilder
 
-Include an image in your page using the [`amp-img`](../../../../documentation/components/reference/amp-img.md) element, like so:
+Füge mit dem Element [`amp-img`](../../../../documentation/components/reference/amp-img.md) ein Bild in deine Seite ein:
 
 [example preview="inline" playground="true"]
 ```html
@@ -40,11 +40,11 @@ Include an image in your page using the [`amp-img`](../../../../documentation/co
 ```
 [/example]
 
-In this most basic example, the image will display with the specified fixed height and width. At minimum, an explicit width and height needs to be set.
+In diesem einfachen Beispiel wird das Bild mit der vorgegebenen festen Höhe und Breite angezeigt. Es muss mindestens eine explizite Breite und Höhe festgelegt werden.
 
-#### Displaying images when JavaScript is disabled
+#### Bilder anzeigen, wenn JavaScript deaktiviert ist
 
-As [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) relies on JavaScript, if the user chooses to disable scripts, images won't display.  In this case, you should provide a fallback to the image using `<img>` and `<noscript>`, like so:
+Da [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) auf JavaScript basiert, werden Bilder nicht angezeigt, wenn der Benutzer die Skripte deaktiviert. In diesem Fall solltest du mit `<img>` und `<noscript>` wie folgt ein Fallback für das Bild bereitstellen:
 
 [example preview="inline" playground="true"]
 ```html
@@ -58,7 +58,7 @@ As [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) reli
 ```
 [/example]
 
-### Advanced layouts
+### Erweiterte Layouts
 
 Im Vergleich zu standardmäßigem CSS/HTML ist es mit AMP wesentlich einfacher, vollständig responsive Bilder zu erstellen. Für das einfachste Ergebnis musst du nur `layout="responsive"` hinzufügen:
 
@@ -75,15 +75,15 @@ Im Vergleich zu standardmäßigem CSS/HTML ist es mit AMP wesentlich einfacher, 
 
 [tip type="read-on"] **ERFAHRE MEHR:** Erfahre mehr über [fortgeschrittene Layoutmethoden](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md). [/tip]
 
-### Behavior and placeholders
+### Verhalten und Platzhalter
 
 Die AMP HTML Runtime kann Bildressourcen effektiv verwalten. Dazu wird das Laden von Ressourcen verzögert oder priorisiert, wobei die Position des Viewports, die Systemressourcen, die Verbindungsbandbreite und andere Faktoren berücksichtigt werden.
 
 [tip type="read-on"] **ERFAHRE MEHR:** Erfahre, wie du [Fallbacks und Platzhalter für Bilder bereitstellst](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md). [/tip]
 
-## Animated images
+## Animierte Bilder
 
-The [`amp-anim`](../../../../documentation/components/reference/amp-anim.md) element is very similar to the [`amp-img`](../../../../documentation/components/reference/amp-img.md) element, and provides additional functionality to manage loading and playing of animated images such as GIFs.
+Das Element [`amp-anim`](../../../../documentation/components/reference/amp-anim.md) ist dem Element [`amp-img`](../../../../documentation/components/reference/amp-img.md) sehr ähnlich und bietet zusätzliche Funktionen, um das Laden und Abspielen von animierten Bildern wie GIFs zu verwalten.
 
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
 ```html
@@ -103,7 +103,7 @@ The [`amp-anim`](../../../../documentation/components/reference/amp-anim.md) ele
 
 ## Video
 
-Include a video in your page using the [`amp-video`](../../../../documentation/components/reference/amp-video.md) element.
+Füge mit dem Element [`amp-video`](../../../../documentation/components/reference/amp-video.md) ein Video zu deiner Seite hinzu.
 
 Verwende dieses Element nur zum direkten Einbetten einer HTML5 Videodatei. Das Element nutzt Lazy Loading für die durch das Attribut `src` angegebene Videoressource und lädt sie zu einem von AMP festgelegten Zeitpunkt.
 
@@ -125,7 +125,7 @@ Stelle für den Fall, dass der Browser HTML5 Video nicht unterstützt, einen Pla
 
 ## Audio
 
-Include an audio resource in your page, using the [`amp-audio`](../../../../documentation/components/reference/amp-audio.md) element.
+Füge mit dem Element [`amp-audio`](../../../../documentation/components/reference/amp-audio.md) eine Audioressource zu deiner Seite hinzu.
 
 Verwende dieses Element nur zum direkten Einbetten einer HTML5 Audiodatei. Der Vorgang ist für alle in eine AMP Seite eingebetteten externen Ressourcen gleich: Das Element nutzt Lazy Loading für die durch das Attribut `src` angegebene Audioressource und lädt sie zu einem von AMP festgelegten Zeitpunkt.
 
