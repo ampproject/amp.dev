@@ -13,7 +13,7 @@ Cópialo y guárdalo en un archivo con extensión .html.
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>Hello, AMPs</title>
     <link rel="canonical" href="{{doc.url}}">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -51,7 +51,7 @@ Los documentos de AMP HTML deben:
 | Incluir una etiqueta `<meta charset="utf-8">` como la primera etiqueta secundaria de su etiqueta `<head>`. | Identifica la codificación de la página. |
 | Incluir una etiqueta `<script async src="https://cdn.ampproject.org/v0.js"></script>` como la segunda etiqueta secundaria de la etiqueta `<head>`. | Incluye y carga la biblioteca JS de AMP. |
 | Incluir una etiqueta `<link rel="canonical" href="$SOME_URL">` dentro de `<head>`. | Dirige a la versión HTML normal del documento AMP HTML o a sí misma si no existe dicha versión HTML. Consulta más información en el artículo sobre cómo [hacer que una página sea visible](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md).
-| Incluir una etiqueta `<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">` dentro de la etiqueta `<head>`. También se recomienda incluir `initial-scale=1`. | Especifica un viewport adaptable. Consulta más información en el artículo sobre cómo [crear páginas AMP adaptables](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md). |
+| Incluir una etiqueta `<meta name="viewport" content="width=device-width">. También se recomienda incluir `initial-scale=1`. | Especifica un viewport adaptable. Consulta más información en el artículo sobre cómo [crear páginas AMP adaptables](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md). |
 | Incluir el [código de plantilla de AMP](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) en la etiqueta `<head>`.  | La plantilla CSS para ocultar inicialmente el contenido hasta que se cargue AMP JS. |
 
 ## Metadatos opcionales

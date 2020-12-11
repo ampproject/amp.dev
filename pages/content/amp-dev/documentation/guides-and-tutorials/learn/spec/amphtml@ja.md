@@ -25,10 +25,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
-
-
 AMP HTML は、一定のベースラインパフォーマンス特性を保証するようにニュース記事などのコンテンツページを作成するための HTML のサブセットです。
 
 HTML のサブセットであるため、HTML で利用可能なタグと機能のフルセットに制限がありますが、新しいレンダリングエンジンを開発する必要はありません。既存のユーザエージェントは他のすべての HTML と同じように AMP HTML をレンダリングできます。
@@ -65,13 +61,14 @@ AMP フォーマットを使用することで、コンテンツ制作者は AMP
 ### サンプルドキュメント <a name="sample-document"></a>
 
 [sourcecode:html]
+
 <!doctype html>
 <html ⚡>
   <head>
     <meta charset="utf-8">
     <title>Sample document</title>
     <link rel="canonical" href="./regular-html-version.html">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <style amp-custom>
       h1 {color: red}
     </style>
@@ -112,8 +109,8 @@ AMP フォーマットを使用することで、コンテンツ制作者は AMP
 AMP HTML ドキュメントに必須ものは次の通りです。
 
 - <a name="dctp"></a>Doctype `<!doctype html>`で始まります。[🔗](#dctp)
-- <a name="ampd"></a>cトップレベルの `<html ⚡>` タグを含みます (`<html amp>` も同様に受け付けられます)。[🔗](#ampd)
-- <a name="crps"></a>`<head>` タグと `<body>` タグを含みます(これらはHTMLではオプションです)。[🔗](#crps)
+- <a name="ampd"></a>c トップレベルの `<html ⚡>` タグを含みます (`<html amp>` も同様に受け付けられます)。[🔗](#ampd)
+- <a name="crps"></a>`<head>` タグと `<body>` タグを含みます(これらは HTML ではオプションです)。[🔗](#crps)
 - <a name="canon"></a>通常の HTML バージョンの AMP HTML ドキュメントを指すか、そのような HTML バージョンが存在しない場合はそれ自体を指す `<link rel="canonical" href="$SOME_URL">` タグを head の中に入れます。[🔗](#canon)
 - <a name="chrs"></a>head タグの最初の子として `<meta charset="utf-8">` タグを含めます。[🔗](#chrs)
 - <a name="vprt"></a>head タグの中に `<meta name="viewport" content="width=device-width">` タグを含めます。`minimum-scale=1` と `initial-scale=1` を含めることもお勧めです。[🔗](#vprt)
@@ -274,7 +271,7 @@ AMP HTML マークアップでは、他のすべての作成した ID が許可�
 
 #### 作成したスタイルシート <a name="author-stylesheets"></a>
 
-文書の先頭にある1つの `<style amp-custom>` タグまたはインラインスタイルを使ってドキュメントにカスタムスタイルを追加できます。
+文書の先頭にある 1 つの `<style amp-custom>` タグまたはインラインスタイルを使ってドキュメントにカスタムスタイルを追加できます。
 
 `@keyframes` ルールは `<style amp-custom>` で許可されています。しかし、それらが多すぎる場合は、追加の `<style amp-keyframes>` タグ内に配置することをお勧めします。これは AMP ドキュメントの最後に配置する必要があります。詳しくは、このドキュメントの [Keyframes スタイルシート](#keyframes-stylesheet) のセクションをご覧ください。
 
@@ -283,15 +280,18 @@ AMP HTML マークアップでは、他のすべての作成した ID が許可�
 作成したスタイルシートのセレクタには、次の制限があります。
 
 ##### クラス名とタグ名 <a name="class-and-tag-names"></a>
+
 作成したスタイルシートのクラス名、ID、タグ名、属性は文字列 `-amp-` と `i-amp-` で始めることはできません。これらは AMP ランタイムによる内部使用のために予約されています。つまり、ユーザのスタイルシートは `-amp-` クラス、`i-amp-` ID、`i-amp-` タグと属性の CSS セレクタを参照できないということです。これらのクラス、ID、およびタグ/属性名は、作成者によってカスタマイズされることを意図していません。ただし、これらのコンポーネントの仕様で明示的に禁止されていない CSS プロパティについては、作成者が `amp-` クラスおよびタグのスタイルをオーバーライドできます。
 
 クラス名の制限を回避するために属性セレクタを使用しないようにするために、CSS セレクタに `-amp-` と `i-amp-` で始まるトークンと文字列を含めることは一般的に許可されていません。
 
 #### Important <a name="important"></a>
+
 `!important` 修飾子の使用は許可されていません。これは、AMP がその要素サイジング不変量を強制できるようにするために必要な要件です。
 
 #### プロパティ <a name="properties"></a>
-AMP は、一般的なブラウザでGPUを高速化できるプロパティの遷移とアニメーションのみを許可します。現在のホワイトリストは、`opacity`、`transform` (`-vendorPrefix-transform`も) です。
+
+AMP は、一般的なブラウザで GPU を高速化できるプロパティの遷移とアニメーションのみを許可します。現在のホワイトリストは、`opacity`、`transform` (`-vendorPrefix-transform`も) です。
 
 以下の例では、`<property>` は上記のホワイトリストに含まれている必要があります。
 
@@ -301,6 +301,7 @@ AMP は、一般的なブラウザでGPUを高速化できるプロパティの�
 `overflow` (そして `overflow-y`、`overflow-x`) は “auto” や “scroll” のようにはスタイル設定できません。AMP ドキュメント内のユーザ定義要素にスクロールバーを含めることはできません。
 
 #### 最大サイズ <a name="maximum-size"></a>
+
 作成したスタイルシートまたはインラインスタイルが合わせて 75,000 バイトを超える場合は検証エラーです。
 
 ### Keyframe スタイルシート <a name="keyframes-stylesheet"></a>
@@ -308,15 +309,17 @@ AMP は、一般的なブラウザでGPUを高速化できるプロパティの�
 `<style amp-custom>` に加えて、`<style amp-keyframes>` タグを追加することもできます。これは特にキーフレームアニメーションに許可されています。
 
 以下の制限が `<style amp-keyframes>` タグに適用されます:
- 1. ドキュメントの `<body>` 要素の最後の子としてのみ配置できます。
- 2. `@keyframes`、`@media`、`@supports` のルールとそれらの組み合わせのみが含まれます。
- 3. 500,000 バイトを超えないようにしてください。
+
+1.  ドキュメントの `<body>` 要素の最後の子としてのみ配置できます。
+2.  `@keyframes`、`@media`、`@supports` のルールとそれらの組み合わせのみが含まれます。
+3.  500,000 バイトを超えないようにしてください。
 
 `<style amp-keyframes>` タグが存在するのは、適度に複雑なアニメーションであってもキーフレームの規則はしばしばかさばっているため、CSS の解析が遅くなり、最初のコンテンツの描画が内容豊富なものになるためです。しかし、そのような規則はときに `<style amp-custom>` に課されたサイズ制限を超えます。そのようなキーフレーム宣言をドキュメントの一番下の `<style amp-keyframes>` に置くことで、サイズ制限を超えることができます。キーフレームはレンダリングをブロックしないため、最初のコンテンツペイントをブロックして解析することも避けられます。
 
 例:
 
 [sourcecode:html]
+
 <style amp-keyframes>
 @keyframes anim1 {}
 
@@ -329,11 +332,12 @@ AMP は、一般的なブラウザでGPUを高速化できるプロパティの�
 
 ### カスタムフォント <a name="custom-fonts"></a>
 
-作成したスタイルシートにはカスタムフォントを含めることができます。サポートされている2つの方法はホワイトリストのフォントプロバイダを指すリンクタグと `@font-face` インクルードです。
+作成したスタイルシートにはカスタムフォントを含めることができます。サポートされている 2 つの方法はホワイトリストのフォントプロバイダを指すリンクタグと `@font-face` インクルードです。
 
 例:
 
 [sourcecode:html]
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 [/sourcecode]
 
@@ -348,7 +352,6 @@ AMP は、一般的なブラウザでGPUを高速化できるプロパティの�
 
 作成した自分のカスタム CSS を介して `@font-face` CSS 命令を介してすべてのカスタムフォントを自由に含めることができます。`@font-face` で取り込まれたフォントは HTTP または HTTPS スキームで取り出さなければなりません。
 
-
 ## AMP ランタイム <a name="amp-runtime"></a>
 
 AMP ランタイムは、すべての AMP ドキュメント内で実行される JavaScript の一部です。AMP カスタム要素の実装を提供し、リソースのロードと優先順位付けを管理し、オプションで開発中に使用するための AMP HTML のランタイムバリデータを含みます。
@@ -356,7 +359,6 @@ AMP ランタイムは、すべての AMP ドキュメント内で実行され�
 AMP ランタイムは、AMP ドキュメント `<head>` の必須の `<script src="https://cdn.ampproject.org/v0.js"></script>` タグを介してロードされます。
 
 AMP ランタイムは、どのページでも開発モードにすることができます。開発モードでは埋め込みページで AMP 検証がトリガーされ、検証ステータスとエラーが JavaScript 開発者コンソールに送信されます。開発モードはページの URL に `#development=1` を追加することで起動されます。
-
 
 ## リソース <a name="resources"></a>
 
@@ -366,14 +368,13 @@ AMP ランタイムの読み込み動作については特に保証はありま�
 
 AMP ランタイムは、現在ビューポートにないリソースをアンロードするか、iframe などのリソースコンテナを再利用して RAM 全体の消費量を減らすことをいつでも決定できます。
 
-
 ## AMP コンポーネント <a name="amp-components"></a>
 
-AMP HTML は、「AMPコンポーネント」と呼ばれるカスタム要素を使用して、`<img>` や `<video>` などの組み込みリソースローディングタグを置き換えたり、画像ライトボックスやカルーセルなどの複雑なインタラクションを伴う機能を実装します。
+AMP HTML は、「AMP コンポーネント」と呼ばれるカスタム要素を使用して、`<img>` や `<video>` などの組み込みリソースローディングタグを置き換えたり、画像ライトボックスやカルーセルなどの複雑なインタラクションを伴う機能を実装します。
 
 サポートされているコンポーネントの詳細については [AMP コンポーネント仕様](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-components.md) を参照してください。
 
-サポートされている AMP コンポーネントは2種類あります:
+サポートされている AMP コンポーネントは 2 種類あります:
 
 1. ビルトイン
 2. 拡張
@@ -406,12 +407,13 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 例: `on="tap:fooId"`
 
 ドキュメント化されている場合、一部のアクションは引数を取ります。引数は `key=value` 記法で括弧の間に定義されます。許容される値は:
- - 引用符で囲まれていない単純な文字列: `simple-value`;
- - 引用符付き文字列: `"string value"` もしくは `'string value'`;
- - ブール値: `true` or `false`;
- - 数値: `11` or `1.1`.
 
-2つのイベントをセミコロン `;` で区切ることで、要素上の複数のイベントを待ち受けることができます。
+- 引用符で囲まれていない単純な文字列: `simple-value`;
+- 引用符付き文字列: `"string value"` もしくは `'string value'`;
+- ブール値: `true` or `false`;
+- 数値: `11` or `1.1`.
+
+2 つのイベントをセミコロン `;` で区切ることで、要素上の複数のイベントを待ち受けることができます。
 
 例: `on="submit-success:lightbox1;submit-error:lightbox2"`
 
@@ -424,7 +426,9 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 拡張コンポーネントはこのようにドキュメントの先頭に `<script>` タグを含めることでロードされます:
 
 [sourcecode:html]
+
 <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+
 [/sourcecode]
 
 `<script>` タグは `async` 属性を持ち、要素の名前を参照する `custom-element` 属性を持つ必要があります。
@@ -445,7 +449,6 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 
 [AMP バージョン管理ポリシー](https://github.com/ampproject/amphtml/blob/master/spec/amp-versioning-policy.md)を参照してください。
 
-
 ### 拡張テンプレート <a name="templates"></a>
 
 テンプレートは、言語固有のテンプレートと提供された JSON データに基づいて HTML コンテンツをレンダリングします。
@@ -456,7 +459,9 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 拡張コンポーネントはこのようにドキュメントの先頭に `<script>` タグを含めることでロードされます:
 
 [sourcecode:html]
+
 <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+
 [/sourcecode]
 
 `<script>` タグは `async` 属性を持っていなければならず、そしてテンプレートの型を参照する `custom-template` 属性を持っていなければなりません。
@@ -467,7 +472,7 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 
 [sourcecode:html]
 <template type="amp-mustache" id="template1">
-  Hello {% raw %}{{you}}{% endraw %}!
+Hello {% raw %}{{you}}{% endraw %}!
 </template>
 [/sourcecode]
 
@@ -491,7 +496,6 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
 
 詳細については、カスタム要素のバージョン管理を参照してください。
 
-
 ## セキュリティ <a name="security"></a>
 
 AMP HTML ドキュメントは、キーワード `unsafe-inline` と `unsafe-eval` を含まないコンテンツセキュリティポリシーで提供されたときにエラーを引き起こしてはいけません。
@@ -504,18 +508,18 @@ AMP HTML フォーマットは、常にそうなるように設計されてい�
 
 現在、以下の SVG 要素が許可されています:
 
-* 基本: "g", "glyph", "glyphRef", "image", "marker", "metadata", "path", "solidcolor", "svg", "switch", "view"
-* 形状: "circle", "ellipse", "line", "polygon", "polyline", "rect"
-* テキスト: "text", "textPath", "tref", "tspan"
-* レンダリング: "clipPath", "filter", "hkern", "linearGradient", "mask", "pattern", "radialGradient", "vkern"
-* 特殊: "defs" (上記のすべての子はここで許可されています), "symbol", "use"
-* フィルター: "feColorMatrix", "feComposite", "feGaussianBlur", "feMerge", "feMergeNode", "feOffset", "foreignObject"
-* ARIA: "desc", "title"
+- 基本: "g", "glyph", "glyphRef", "image", "marker", "metadata", "path", "solidcolor", "svg", "switch", "view"
+- 形状: "circle", "ellipse", "line", "polygon", "polyline", "rect"
+- テキスト: "text", "textPath", "tref", "tspan"
+- レンダリング: "clipPath", "filter", "hkern", "linearGradient", "mask", "pattern", "radialGradient", "vkern"
+- 特殊: "defs" (上記のすべての子はここで許可されています), "symbol", "use"
+- フィルター: "feColorMatrix", "feComposite", "feGaussianBlur", "feMerge", "feMergeNode", "feOffset", "foreignObject"
+- ARIA: "desc", "title"
 
 これらの属性と同様です:
 
-* "xlink:href": "#" で始まる URI のみが許可されます
-* "style"
+- "xlink:href": "#" で始まる URI のみが許可されます
+- "style"
 
 ## AMP ドキュメントディスカバリー <a name="amp-document-discovery"></a>
 
@@ -526,6 +530,7 @@ AMP HTML フォーマットは、常にそうなるように設計されてい�
 例:
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
@@ -534,6 +539,7 @@ AMP ドキュメント自体は、"canonical" リレーションを持つ `link`
 例:
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/canonical/document.html">
 [/sourcecode]
 

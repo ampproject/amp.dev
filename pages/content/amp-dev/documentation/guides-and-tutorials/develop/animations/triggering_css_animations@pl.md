@@ -1,7 +1,10 @@
 ---
-$title: Wyzwalanie animacji CSS i przejść
-$order: 1
+"$title": Wyzwalanie animacji CSS i przejść
+"$order": '1'
 description: Wyzwalanie animacji CSS na stronach polega na dodawaniu i usuwaniu klas za pomocą kodu JavaScript. Ten sam sposób działania można osiągnąć na stronach AMP za pomocą działania toggleClass...
+formats:
+- websites
+- ads
 ---
 
 Animacje CSS umożliwiają przejście elementów internetowych z jednej konfiguracji stylu CSS do innej. Przeglądarka może uruchamiać zdefiniowane animacje podczas ładowania, ale animacje CSS wyzwalane zdarzeniami [polegają na dodawaniu i usuwaniu klas](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations). AMP obsługuje oba typy animacji.
@@ -91,7 +94,6 @@ Jeśli musisz usunąć klasę i uniemożliwić jej ponowne zastosowanie, dodaj a
 Można dodawać i usuwać dowolną liczbę klas CSS przy użyciu stanów i składnika [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
 
 [example preview="top-frame" playground="true"]
-
 ```html
 <head>
   <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
@@ -156,7 +158,6 @@ Można dodawać i usuwać dowolną liczbę klas CSS przy użyciu stanów i skła
   </button>
 </body>
 ```
-
 [/example]
 
 Zdefiniuj animacje wielu klas, dodając najpierw listę klas CSS w znaczniku `<style amp-custom>` w sekcji `head`:

@@ -13,7 +13,7 @@ $title: 制作 AMP HTML 网页
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>Hello, AMPs</title>
     <link rel="canonical" href="{{doc.url}}">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -51,7 +51,7 @@ AMP HTML 文档必须：
 | 包含 `<meta charset="utf-8">` 标记，以此作为其 `<head>` 标记的第一个子级。| 标识网页的编码。|
 | 包含 `<script async src="https://cdn.ampproject.org/v0.js"></script>` 标记，以此作为其 `<head>` 标记的第二个子级。| 包含并加载 AMP JS 库。|
 | 在其 `<head>` 内包含 `<link rel="canonical" href="$SOME_URL">` 标记。| 指向常规 HTML 版 AMP HTML 文档，如果不存在此类 HTML 版本，则指向其自身。有关详情，请参阅[使您的网页可被轻松发现](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md)。
-| 在其 `<head>` 标记内包含 `<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">` 标记。还建议您添加 `initial-scale=1`。| 指定自适应视口。有关详情，请参阅[制作自适应 AMP 网页](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md)。|
+| 在其 `<head>` 标记内包含 `<meta name="viewport" content="width=device-width">指定自适应视口。有关详情，请参阅[制作自适应 AMP 网页](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md)。|
 | 在其 `<head>` 标记内包含 [AMP 样板代码](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md)。| CSS 样板最初会隐藏内容，直到 AMP JS 加载完毕为止。|
 
 ## 可选元数据

@@ -20,7 +20,7 @@ AMP 플레이그라운드는 이메일용 AMP 형식을 지원하여 AMP 이메�
 
 ```html
 <!doctype html>
-<html ⚡4email>
+<html ⚡4email data-css-strict>
 <head>
   <meta charset="utf-8">
   <script async src="https://cdn.ampproject.org/v0.js"></script>

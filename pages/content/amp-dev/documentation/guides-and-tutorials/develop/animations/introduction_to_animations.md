@@ -263,9 +263,9 @@ By using [`var()` and `calc()` expressions](../../../../documentation/components
 [/example]
 This example works by:
 
-*   Declaring a variable, `--duration`, and gives it the value of two seconds.
-*   Sets the `duration` to the var `--duration`'s value.
-*   Calculates the delay applied to each element with that meets the selector `.card`.
+*   Declaring a variable, `--duration`, and giving it the value of two seconds.
+*   Setting the `duration` to the var `--duration`'s value.
+*   Calculating the delay applied to each element with the class `.card`.
     1.  The [`length()` extension](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) calculates how many `.card` elements were selected
     1.  The length then subtracts each `.card`'s [index()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension)
     1.  The resulting value is multiplied by the var `--duration`

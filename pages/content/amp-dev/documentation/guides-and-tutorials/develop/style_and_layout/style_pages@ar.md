@@ -40,9 +40,10 @@ $title: لغة CSS المعتمدة
 وهكذا يمكن أن تتضمن العديد من الصفحات في الموقع مقاطع فيديو youtube مضمّنة.
 
 [sourcecode:html] {% raw %}
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
   <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 
@@ -127,8 +128,8 @@ $title: لغة CSS المعتمدة
 
 في الأمثلة التالية، يجب أن تكون `<property>` في القائمة البيضاء:
 
-* `transition <property> (Also -vendorPrefix-transition)`
-* @ `@keyframes name { from: {<property>: value} to {<property: value>} } (also @-vendorPrefix-keyframes)`
+- `transition <property> (Also -vendorPrefix-transition)`
+- @ `@keyframes name { from: {<property>: value} to {<property: value>} } (also @-vendorPrefix-keyframes)`
 
 لا يمكن تحديد نمط الخاصية `overflow` (و`overflow-y`, `overflow-x`)
 كـ “auto” أو “scroll”.
@@ -145,12 +146,13 @@ $title: لغة CSS المعتمدة
 وفي الوقت الحالي، لا تحوي القائمة البيضاء سوى هذه الأصول
 حيث يُسمح لها بعرض الخطوط من خلال علامات الروابط:
 
-* [https://fast.fonts.net](https://fast.fonts.net)
-* [https://fonts.googleapis.com](https://fonts.googleapis.com)
+- [https://fast.fonts.net](https://fast.fonts.net)
+- [https://fonts.googleapis.com](https://fonts.googleapis.com)
 
 نموذج لعلامة رابط تشير إلى مقدم خطوط مدرج بالقائمة البيضاء، وهو Google Fonts:
 
 [sourcecode:html]
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 [/sourcecode]
 

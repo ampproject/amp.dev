@@ -1,7 +1,9 @@
 ---
-$title: Przypadki użycia
-$order: 2
-description: "Niniejszy przewodnik zawiera zestaw typowych przypadków użycia śledzenia zaangażowania użytkowników: UWAGA — chcesz dodać przypadek użycia? Daj nam znać."
+"$title": Przypadki użycia
+"$order": '2'
+description: '"Niniejszy przewodnik zawiera zestaw typowych przypadków użycia śledzenia zaangażowania użytkowników: UWAGA — chcesz dodać przypadek użycia? Daj nam znać."'
+formats:
+- websites
 ---
 
 Niniejszy przewodnik zawiera zestaw typowych przypadków użycia śledzenia zaangażowania użytkowników:

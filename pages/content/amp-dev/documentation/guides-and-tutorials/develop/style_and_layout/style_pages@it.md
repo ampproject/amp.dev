@@ -21,9 +21,10 @@ Ad esempio, nella sezione [head.html](https://github.com/ampproject/docs/blob/ma
 È incluso, tra gli altri, anche lo script di elementi personalizzati per [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md), per consentire di includere video di YouTube incorporati in tante pagine del sito.
 
 [sourcecode:html] {% raw %}
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
   <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 
@@ -102,8 +103,8 @@ Il progetto AMP autorizza attualmente le proprietà `opacity`, `transform` e `-v
 
 Negli esempi seguenti, `<property>` deve essere nella allowlist:
 
-* `transition <property> (Also -vendorPrefix-transition)`
-* @ `@keyframes name { from: {<property>: value} to {<property: value>} } (also @-vendorPrefix-keyframes)`
+- `transition <property> (Also -vendorPrefix-transition)`
+- @ `@keyframes name { from: {<property>: value} to {<property: value>} } (also @-vendorPrefix-keyframes)`
 
 Alla proprietà `overflow` (e `overflow-y`, `overflow-x`) non può essere applicato lo stile “auto” o “scroll”.
 Nessun elemento definito dall'utente in un documento AMP può avere una barra di scorrimento.
@@ -115,12 +116,13 @@ I due metodi supportati per i riferimenti ai tipi di carattere personalizzati so
 
 I fornitori di caratteri possono essere autorizzati soltanto se supportano le integrazioni solo CSS e se pubblicano i tipi di carattere tramite HTTPS. Attualmente, soltanto le seguenti origini sono autorizzate e consentite per la pubblicazione dei tipi di carattere tramite tag link:
 
-* [https://fast.fonts.net](https://fast.fonts.net)
-* [https://fonts.googleapis.com](https://fonts.googleapis.com)
+- [https://fast.fonts.net](https://fast.fonts.net)
+- [https://fonts.googleapis.com](https://fonts.googleapis.com)
 
 Esempio di tag link che rimanda al fornitore di caratteri autorizzato Google Fonts:
 
 [sourcecode:html]
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 [/sourcecode]
 
