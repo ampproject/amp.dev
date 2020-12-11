@@ -1,7 +1,7 @@
 ---
 "$title": Modify presentation and layout
 "$order": '3'
-description: "AMP pages are web pages; any styling to the page and its elements is done using common CSS properties. Style elements using class or element selectors ..."
+description: 'AMP Seiten sind Webseiten: Die Seite und ihre Elemente werden mit gewöhnlichen CSS Eigenschaften gestylt. Styleelemente verwenden Klassen oder …'
 author: pbakaus
 contributors:
 - bpaduch
@@ -9,7 +9,7 @@ contributors:
 
 ## Bearbeite die Präsentation
 
-AMP pages are web pages; any styling to the page and its elements is done using common CSS properties. Style elements using class or element selectors in an embedded stylesheet in the `<head>`, called `<style amp-custom>`:
+AMP Seiten sind Webseiten: Die Seite und ihre Elemente werden mit gewöhnlichen CSS Eigenschaften gestylt. Styleelemente verwenden Klassen oder Elementselektoren in einem eingebetteten Stylesheet im `<head>`, das `<style amp-custom>` heißt:
 
 [sourcecode:html]
 <style amp-custom>
@@ -30,4 +30,4 @@ Jede AMP Seite kann nur ein einziges eingebettetes Stylesheet und Inline Styles 
 
 Wenn Elemente auf der Seite angeordnet werden, gelten in AMP strengere Regeln. Auf einer normalen HTML Seite verwendest du fast ausschließlich CSS, um Elemente zu gestalten. AMP erfordert aber aus Leistungsgründen, dass für alle Elemente von Anfang an eine explizite Größe festgelegt wird.
 
-[tip type="read-on"] **READ ON –** Learn all about how AMP renders and layouts a page and how you can modify the layout in [Layout & Media queries](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md). [/tip]
+[tip type="read-on"] **ERFAHRE MEHR:** Unter [Layout & Medienabfragen](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) erfährst du alles darüber, wie AMP eine Seite rendert und gestaltet, und wie du das Layout ändern kannst. [/tip]
