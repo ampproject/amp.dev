@@ -1,7 +1,7 @@
 ---
-"$title": Formatting guides & tutorials
+"$title": Leitfäden & Tutorials formatieren
 "$order": '3'
-description: File formatting requirements for amp.dev
+description: Formatierungsanforderungen für Dateien in amp.dev
 formats:
 - websites
 - stories
@@ -12,23 +12,23 @@ author: CrystalOnScript
 
 Leitfäden und Tutorials werden mit einer zusätzlichen Frontmatter und Shortcode Formatierung in [Markdown](https://www.markdownguide.org/) eingereicht.
 
-## Documentation locations
+## Speicherorte für Dokumentationen
 
-Content on amp.dev is pulled from two repositories, [amp.dev](https://github.com/ampproject/amp.dev) and [AMPHTML](https://github.com/ampproject/amphtml). All reference documentation under components is pulled from AMPHTML, either from builtins or extensions.
+Inhalte werden auf amp.dev aus zwei Repositorys abgerufen: [amp.dev](https://github.com/ampproject/amp.dev) und [AMPHTML](https://github.com/ampproject/amphtml). Alle Referenzdokumentationen für Komponenten werden aus AMPHTML abgerufen, entweder aus vordefinierten Elementen oder aus Erweiterungen.
 
-- [Built-in components ](https://github.com/ampproject/amphtml/tree/master/builtins)
-- [Components](https://github.com/ampproject/amphtml/tree/master/extensions)
-- [Courses](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/courses)
-- [Examples](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/examples)
-- [Guides & tutorials](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/guides-and-tutorials)
+- [Integrierte Komponenten ](https://github.com/ampproject/amphtml/tree/master/builtins)
+- [Komponenten](https://github.com/ampproject/amphtml/tree/master/extensions)
+- [Kurse](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/courses)
+- [Beispiele](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/examples)
+- [Leitfäden & Tutorials](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/guides-and-tutorials)
 
 Es gibt mehrere andere Dokumente, die von AMPHTML nach amp.dev importiert werden. Sie sind [in dieser Datei aufgeführt](https://github.com/ampproject/amp.dev/blob/future/platform/config/imports/spec.json). Aktualisiere diese Dokumente nicht im Repository amp.dev, da deine Änderungen sonst in späteren Builds überschrieben werden.
 
 ## Frontmatter
 
-Frontmatter exists at the top of each guide and tutorial.
+Frontmatter steht am Anfang jedes Leitfadens und Tutorials.
 
-Example:
+Beispiel:
 
 ```yaml
 $title: Include Custom JavaScript in AMP Pages
@@ -58,25 +58,25 @@ description: For web experiences requiring a high amount of customization AMP ha
    <td>
     <code>formats</code>
    </td>
-   <td>List the AMP experiences your document is relevant to. If your document was relevant to AMP websites and AMP stories, but not AMP ads or AMP email, your frontmatter would like the following:     ```yaml         formats:           - websites           - stories     ```      </td>
+   <td>Liste die AMP Erfahrungen auf, für die dein Dokument relevant ist. Wenn dein Dokument für AMP Websites und AMP Storys relevant ist, jedoch nicht für AMP Ads oder AMP E-Mail, sieht dein Frontmatter wie folgt aus:     ```yaml         formats:           - websites           - stories     ```</td>
   </tr>
   <tr>
    <td>
 <code>author</code>
    </td>
-   <td>The author is you! Use your GitHub username.    </td>
+   <td>Der Autor bist du! Verwende deinen GitHub Benutzernamen.</td>
   </tr>
   <tr>
    <td>
 <code>contributors</code>
    </td>
-   <td>List anyone who contributed to your document. This field is optional.    </td>
+   <td>Nenne alle, die zu deinem Dokument beigetragen haben. Dieses Feld ist optional.</td>
   </tr>
   <tr>
    <td>
 <code>description</code>
    </td>
-   <td>Write a brief description of your guide or tutorial. This helps with search engine optimization, getting your work into the hands of those who need it!    </td>
+   <td>Beschreibe deinen Leitfaden oder dein Tutorial kurz. Dies hilft bei der Suchmaschinenoptimierung und macht deine Arbeit leichter auffindbar!</td>
   </tr>
   <tr>
    <td>
@@ -90,16 +90,16 @@ description: For web experiences requiring a high amount of customization AMP ha
 
 Eine Liste der Shortcodes und ihrer Verwendung findest du unter [documentation.md auf GitHub](https://github.com/ampproject/amp.dev/blob/future/contributing/documentation.md#shortcodes).
 
-## Images
+## Bilder
 
-amp.dev is built with AMP! Therefore our images must match the [`amp-img`](../../../../documentation/components/reference/amp-img.md) criteria. The build process uses the following syntax to convert images to proper `amp-img` format.
+amp.dev wird mit AMP erstellt! Deshalb müssen unsere Bilder den Kriterien von [`amp-img`](../../../../documentation/components/reference/amp-img.md) entsprechen. Zum Erstellen wird die folgende Syntax verwendet, um Bilder in das korrekte Format `amp-img` zu konvertieren.
 
 <div class="ap-m-code-snippet"><pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}
 </pre></div>
 
-## Filtering sections
+## Abschnitte filtern
 
-Some documents may be relevant for multiple AMP formats, but certain formats may need further explanation or information that is not relevant to the others. You can filter these sections by wrapping them in the following shortcode.
+Einige Dokumente sind möglicherweise für mehrere AMP Formate relevant, aber bestimmte Formate können weitere Erklärungen oder Informationen erfordern, die für andere irrelevant sind. Du kannst diese Abschnitte filtern, indem du sie in den folgenden Shortcode einschließt.
 
 <div class="ap-m-code-snippet"><pre>&lsqb;filter formats="websites"]
 This is only visible for [websites](?format=websites).
@@ -118,9 +118,9 @@ This is visible for [stories](?format=stories).
 &lsqb;/filter]
 </pre></div>
 
-## Tips
+## Tipps
 
-You can add tips and callouts by wrapping text in the following shortcode:
+Tipps und Beschriftungen kannst du hinzufügen, indem du Text in den folgenden Shortcode einschließt:
 
 <div class="ap-m-code-snippet"><pre>&lsqb;tip type="default"]
 Default tip
@@ -141,7 +141,7 @@ Read-on
 
 ## Code Snippets
 
-Place code snippets inside sets of three backticks, specify the language at the end of the first set of backticks.
+Platziere Code Snippets innerhalb von jeweils drei Backticks und gib die Sprache am Ende der ersten Backticks Dreiergruppe an.
 
 <div class="ap-m-code-snippet"><pre>```html
   // code sample
@@ -165,7 +165,7 @@ Wenn dein Code doppelt geschweifte Klammern enthält – was häufig der Fall is
 ```
 </pre></div>
 
-### Code snippets in lists
+### Code Snippets in Listen
 
 Python Markdown besitzt einige Einschränkungen. Verwende die folgende Syntax, wenn du Code Snippets in Listen aufnimmst:
 
@@ -175,7 +175,7 @@ Python Markdown besitzt einige Einschränkungen. Verwende die folgende Syntax, w
       </html>
     &lsqb;/sourcecode]</pre></div>
 
-## Preview code samples
+## Vorschau von Codebeispielen
 
 Codebeispiele können eine Vorschau und/oder einen Link zu einer [AMP Playground](https://playground.amp.dev/) Version enthalten.
 
@@ -190,15 +190,15 @@ Codebeispiele können eine Vorschau und/oder einen Link zu einer [AMP Playground
   &lsqb;/example]</pre>
 </div>
 
-Note: The preview will automatically be transformed to the currently selected format when opening it in the playground 🤯!
+Hinweis: Die Vorschau wird automatisch in das momentan ausgewählte Format umgewandelt, wenn sie im Playground geöffnet wird 🤯!
 
-Use the `preview` attribute to define how the preview is generated:
+Verwende das Attribut `preview`, um zu definieren, wie die Vorschau generiert werden soll:
 
-- **none**: No preview will be generated
+- **none**: Es wird keine Vorschau generiert.
 
 - **inline**: Die Beispielvorschau wird über dem Quellcode angezeigt. Eine Inline Vorschau ist für normale Website Beispiele nur möglich, wenn der Code keine `head` Elemente enthält. Verwende diese Option für kleine Beispiele, die kein Styling oder andere `head` Elemente benötigen (Importe zählen nicht, da sie über das Attribut `imports` angegeben werden).
 
-- **top-frame**: The example preview is displayed above the source code inside an iframe. The orientation can be toggled between `portrait` and `landscape` mode. You can preselect the orientation by specifying the additional attribute:
+- **top-frame**: Die Beispielvorschau wird über dem Quellcode in einem iframe angezeigt. Die Ausrichtung kann zwischen dem Modus `portrait` und `landscape` umgeschaltet werden. Du kannst die Ausrichtung durch Angabe des zusätzlichen Attributs vorab auswählen:
 
 - **orientation**: `default: landscape|portrait`
 
@@ -206,7 +206,7 @@ Wenn benutzerdefinierte Elemente benötigt werden, gib diese im Attribut `import
 
 Verwende für E-Mail Inhalte mit Ressourcenlinks den Platzhalter <code>{{server_for_email}}</code> in der Quelle.
 
-### Inline Sample
+### Inline Beispiel
 
 Es folgt eine einfache Einbettung eines Inline Beispiels. CSS kannst du über Inline Styles definieren:
 
@@ -216,7 +216,7 @@ Es folgt eine einfache Einbettung eines Inline Beispiels. CSS kannst du über In
     ```
   [/example]</pre></div>
 
-This is what it looks like:
+Das sieht so aus:
 
 [example preview="inline" playground="true"]
 ```html
@@ -224,13 +224,13 @@ This is what it looks like:
 ```
 [/example]
 
-Warning: inline samples are embedded directly into the page. This might lead to conflicts if components are already used on the page (e.g. `amp-consent`).
+Warnung: Inline Beispiele werden direkt in die Seite eingebettet. Dies kann zu Konflikten führen, wenn Komponenten bereits auf der Seite verwendet werden (z. B. `amp-consent`).
 
-### Top-Frame Preview
+### Top-Frame Vorschau
 
-Use top-frame preview whenever you need to specify header elements or define global styles inside `<style amp-custom>`.
+Verwende eine Top-Frame Vorschau, wenn du Header Elemente angeben musst, oder definiere globale Stile in `<style amp-custom>`.
 
-Important: Do not add any AMP boilerplate code to the header as this will get added automatically, based on the AMP format. Only add elements to the head that are needed by the sample!
+Wichtig: Füge dem Header keinen AMP Boilerplate Code hinzu. Dieser wird auf Basis des AMP Formats automatisch hinzugefügt. Füge dem Header nur Elemente hinzu, die vom Beispiel benötigt werden!
 
 <div class="ap-m-code-snippet"><pre>[example preview="top-frame"
          playground="true"]
@@ -254,7 +254,7 @@ Important: Do not add any AMP boilerplate code to the header as this will get ad
     ```
   [/example]</pre></div>
 
-This is what it looks like:
+Das sieht so aus:
 
 [example preview="top-frame"
          playground="true"]
@@ -278,9 +278,9 @@ This is what it looks like:
 ```
 [/example]
 
-### AMP Stories
+### AMP Storys
 
-Use `preview="top-frame"` together with `orientation="portrait"` for previewing AMP Stories.
+Verwende `preview="top-frame"` zusammen mit `orientation="portrait"` für die Vorschau von AMP Storys.
 
 <div class="ap-m-code-snippet"><pre>[example preview="top-frame"
          orientation="portrait"
@@ -317,7 +317,7 @@ Use `preview="top-frame"` together with `orientation="portrait"` for previewing 
     ```
   [/example]</pre></div>
 
-This is what it looks like:
+Das sieht so aus:
 
 [example preview="top-frame"
          orientation="portrait"
@@ -354,7 +354,7 @@ This is what it looks like:
 ```
 [/example]
 
-### Absolute URLs for AMP Email
+### Absolute URLs für AMP E-Mail
 
 Beachte, wie wir <code>{{server_for_email}}</code> verwenden, um die Endpoint URL absolut zu machen, wenn sie in eine AMP E-Mail eingebettet ist.
 
@@ -370,7 +370,7 @@ Beachte, wie wir <code>{{server_for_email}}</code> verwenden, um die Endpoint UR
     ```
   [/example]</pre></div>
 
-This is what it looks like:
+Das sieht so aus:
 
 [example preview="top-frame" playground="true"]
 ```html
@@ -407,7 +407,7 @@ Hier ein `top-frame` Beispiel mit einem Remote Endpoint. Für Mustache Templates
 [/example]</pre>
 </div>
 
-This is what it looks like:
+Das sieht so aus:
 
 [example preview="top-frame"
          playground="true"
@@ -436,7 +436,7 @@ Andere Seiten verlinkst du mit der standardmäßigen Markdown Link Syntax:
 
 Bei der Verlinkung einer anderen Seite auf amp.dev ist die Referenz ein relativer Dateipfad zur Zieldatei.
 
-### Anchors
+### Anker
 
 Anker dienen der Verknüpfung mit bestimmten Abschnitten in einem Dokument:
 
@@ -451,23 +451,23 @@ Bitte erstelle das Ankerziel mithilfe von `<a name="#anchor-name></a>`, bevor du
 
 ```
 
-You must only use letters, digits, the dash and the underscore in an anchor. Please use short anchor names in english that match the headline or describe the section. Ensure the anchor name is unique inside the document.
+Im Anker sind nur Buchstaben, Ziffern, Bindestrich und Unterstrich zulässig. Bitte verwende kurze Ankernamen in englischer Sprache, die der Überschrift entsprechen oder den Abschnitt beschreiben. Stelle sicher, dass der Ankername im Dokument einmalig ist.
 
 Wenn eine Seite übersetzt wird, dürfen die Ankernamen nicht geändert werden und müssen in englischer Sprache bleiben.
 
-When you create an anchor that will be used in a link from another page you should also create the same anchor in all translations.
+Wenn du einen Anker erstellst, der in einem Link von einer anderen Seite verwendet wird, musst du in allen Übersetzungen den gleichen Anker erstellen.
 
-### AMP format filter
+### AMP Formatfilter
 
-Component documentation, guides and tutorials and examples are filterable by AMP format, such as AMP websites or AMP stories. When linking out to such a page you should explicitly specify a format, which is supported by the target, by appending the format parameter to the link:
+Dokumentationen für Komponenten, Leitfäden, Tutorials und Beispiele können nach dem AMP Format gefiltert werden, z. B. AMP Websites oder AMP Storys. Wenn du zu einer solchen Seite verlinkst, musst du explizit ein Format angeben, das vom Ziel unterstützt wird: Hänge dazu den Formatparameter an den Link an:
 
 ```md
  [link](../../learn/amp-actions-and-events.md?format=websites)
 ```
 
-Only when you are sure the target supports **all** the formats that your page does you can omit the parameter.
+Nur wenn du sicher bist, dass das Ziel **alle** Formate deiner Seite unterstützt, kannst du den Parameter weglassen.
 
-### Component references
+### Komponentenreferenzen
 
 Ein Link zur Referenzdokumentation einer Komponente verweist automatisch auf die neueste Version, sofern dein Link keine Versionsangabe enthält. Wenn du ausdrücklich auf eine bestimmte Version verweisen möchtest, gib den vollständigen Namen an:
 
@@ -476,23 +476,23 @@ Ein Link zur Referenzdokumentation einer Komponente verweist automatisch auf die
  [explicit version](../../../components/reference/amp-carousel-v0.2.md?format=websites)
 ```
 
-## Document Structure
+## Dokumentstruktur
 
-### Titles, headings and subheadings
+### Titel, Überschriften und Unterabschnitte
 
-The first letter of the first word in titles, headings and subheadings is capitalized, what follows is lowercase. Expectations include AMP and other proper nouns. No heading is titled `Introduction`, introductions follow the document title.
+Der erste Buchstabe des ersten Wortes in Titeln, Überschriften und Unterabschnitten wird groß geschrieben, der Rest in Kleinbuchstaben. Dies gilt auch für AMP und andere Eigennamen. Eine Überschrift darf nicht `Einführung` heißen, Einführungen folgen auf den Dokumenttitel.
 
-### Document naming
+### Dokumente benennen
 
-Name documents with the dash naming convention.
+Verwende Bindestriche im Namen des Dokuments.
 
 <table>
   <tr>
    <td>
-<strong>Do</strong>
+<strong>Richtig</strong>
    </td>
    <td>
-<strong>Don’t</strong>
+<strong>Falsch</strong>
    </td>
   </tr>
   <tr>
