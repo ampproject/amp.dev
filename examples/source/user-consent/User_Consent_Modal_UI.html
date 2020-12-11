@@ -8,7 +8,7 @@ author: micajuineho
 <!--
   ## Introduction
 
-  Sometimes publishers want to display more disclourues in the initial consent prompt iframe. This sample demonstrates how you can use `amp-consent` together with a third-party iframe this. In this sample we'll style the consent prompt iframe to appear like a modal.
+  Sometimes publishers want to display more disclosures in the initial consent prompt iframe. This sample demonstrates how you can use `amp-consent` together with a third-party iframe and style it to appear like a modal.
 -->
 <!-- -->
 <!doctype html>
@@ -21,7 +21,7 @@ author: micajuineho
   <title>User Consent Modal UI</title>
   <!-- ## Setup -->
   <!--
-  We need to import the `amp-consent` ...
+  We need to import the `amp-consent` component.
   -->
   <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
 
@@ -46,9 +46,8 @@ author: micajuineho
   <amp-consent id="myUserConsent" layout="nodisplay">
     <script type="application/json">{
       "consentInstanceId": "myConsent",
-      "checkConsent": "remote",
-      "checkConsentHref": "/documentation/examples/api/get-consent",
-      "promptUISrc": "/documentation/examples/static/samples/files/diy-consent.html",
+      "consentRequired": true,
+      "promptUISrc": "/examples/static/samples/files/diy-consent.html",
       "postPromptUI": "post-consent-ui"
     }</script>
     <div id="post-consent-ui">
@@ -58,7 +57,7 @@ author: micajuineho
 
   <!-- ## Consent Dialog Iframe -->
   <!--
-    When the consent dialog iframe can inform  the `amp-consent` component that it is ready to be shown with certain styles, that is passed in via postMessages.
+    When the consent dialog iframe is ready, it can send the `amp-consent` component a postMessage with the style information.
 
     ```js
     window.parent.postMessage({
@@ -69,8 +68,8 @@ author: micajuineho
     }, '*');
     ```
 
-    Here the initialHeight is a string that represents the viewport height that the iframe should take.
-    A viewport height greater between 30 and 60, inclusive, will tell `amp-consent` to style the iframe in a bottom sheet.
+    Here, the initialHeight is a string that represents the viewport height that the iframe should take.
+    A viewport height between 30 and 60, inclusive, will tell `amp-consent` to style the iframe in a bottom sheet.
     A viewport height greater than 60 and less than or equal to 80 will tell `amp-consent` to style the iframe as a centered modal.
   -->
 
