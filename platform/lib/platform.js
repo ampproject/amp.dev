@@ -103,6 +103,7 @@ class Platform {
 
   _configureMiddlewares() {
     this.server.use(shrinkRay());
+    this.server.use(require('./middleware/csp.js'));
     this.server.use(require('./middleware/security.js'));
     this.server.use(require('./middleware/redirects.js'));
     this.server.use(require('./middleware/caching.js'));
@@ -117,6 +118,7 @@ class Platform {
         email: true,
       })
     );
+
     // debug computing times
     this.server.use((req, res, next) => {
       const timeStart = process.hrtime();
