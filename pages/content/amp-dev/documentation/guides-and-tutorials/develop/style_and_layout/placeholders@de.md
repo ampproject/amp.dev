@@ -20,7 +20,7 @@ Some elements will even reward you for doing it by relaxing restrictions – for
 
 ## Placeholders
 
-The element marked with the `placeholder` attribute acts as a placeholder for the parent AMP element. If specified, a `placeholder` element must be a direct child of the AMP element. An element marked as a `placeholder` will always `fill` the parent AMP element.
+Das mit dem Attribut `placeholder` markierte Element agiert als Platzhalter für das übergeordnete AMP Element. Wenn ein Element `placeholder` angegeben ist, muss es dem AMP Element direkt untergeordnet sein. Ein als `placeholder` markiertes Element füllt das übergeordnete AMP Element dank `fill` immer aus.
 
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
 ```html
@@ -48,7 +48,7 @@ You can specify the `fallback` attribute on an element to indicate the fallback 
 - if the content fails to load (e.g., Tweet deleted)
 - if the image type is unsupported (e.g., WebP isn't supported in all browsers)
 
-You can set the `fallback` attribute on *any* HTML element, not just AMP elements. If specified, the `fallback` element must be a direct child of the AMP element.
+Du kannst das Attribut `fallback` für ein *beliebiges* HTML Element festlegen, nicht nur für AMP Elemente. Wenn das `fallback` Element angegeben wird, muss es dem AMP Element direkt untergeordnet sein.
 
 ##### Example: Unsupported feature
 
@@ -68,7 +68,7 @@ In the following example, we use the `fallback` attribute to communicate to the 
 ```
 [/example]
 
-##### Example: Serve different image formats
+##### Beispiel: unterschiedliche Bildformate bereitstellen
 
 In the following example, we use the `fallback` attribute to tell the browser to use the JPEG file if the WebP format is unsupported.
 
