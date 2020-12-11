@@ -17,7 +17,7 @@ Das folgende Markup eignet sich als Ausgangspunkt oder Boilerplate. Kopiere es u
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>Hello, AMPs</title>
     <link rel="canonical" href="{{doc.url}}">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
