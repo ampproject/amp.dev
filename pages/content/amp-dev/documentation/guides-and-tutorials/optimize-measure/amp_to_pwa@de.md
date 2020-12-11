@@ -20,7 +20,7 @@ Verwende einen lokalen Webserver, um eine Vorschau der Website anzuzeigen.
 
 [tip type="default"] **TIPP:** Um schnell einen Webserver zu erstellen, führe einfach `python -m SimpleHTTPServer` aus. [/tip]
 
-You should be able to view the landing page for Lyrical Lyghtning, the Mobile Music Magic festival. It has one link on the homepage to view the schedule and which stage the bands are on.
+Du solltest in der Lage sein, die Zielseite von Lyrical Lightning anzuzeigen. Dabei handelt es sich um das Mobile Music Magic Festival. Auf der Homepage gibt es einen Link, über den du das Programm und die Bühnenbelegung der Bands anzeigen kannst.
 
 {{ image('/static/img/docs/tutorials/tut-lyricallyghtning.png', 594, 558, alt='Bild der PWA' ) }}
 
