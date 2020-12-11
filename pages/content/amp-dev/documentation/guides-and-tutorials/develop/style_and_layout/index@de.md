@@ -9,9 +9,7 @@ formats:
   path: "/{locale}/documentation/guides-and-tutorials/develop/style_and_layout/index.html"
 "$title": Style & Layout
 "$order": '0'
-description: |-
-  Styling and layout on AMP HTML pages is very similar to normal HTML pages – in
- "both cases, you'll use CSS."
+description: Das Styling und Layout von AMP HTML Seiten ist gewöhnlichen HTML Seiten sehr ähnlich. In beiden Fällen verwendest du CSS.
 "$hidden": 'true'
 author: pbakaus
 contributors:
@@ -86,21 +84,21 @@ Jede Instanz eines Inline Styles hat ein Limit von 1.000 Byte. Inline Styles wer
 
 Lege die Größe und Position aller sichtbaren AMP Elemente fest, indem du die Attribute `width` und `height` angibst. Diese Attribute implizieren das Seitenverhältnis des Elements, das dann mit dem Container skaliert werden kann.
 
-Set the layout to responsive. This sizes the element to the width of its container element and resizes its height automatically to the aspect ratio given by width and height attributes.
+Setze das Layout auf responsiv. Dadurch wird die Größe des Elements an die Breite des Containerelements angepasst und die Höhe automatisch an das Seitenverhältnis, das durch die Attribute für Breite und Höhe vorgegeben ist.
 
-[tip type="read-on"] **READ ON –** Learn more about [supported layouts in AMP](control_layout.md) [/tip]
+[tip type="read-on"] **ERFAHRE MEHR:** Erfahre mehr über [unterstützte Layouts in AMP](control_layout.md). [/tip]
 
 ## Provide placeholders & fallbacks
 
-The built-in support for placeholders and fallbacks means your users never have to stare at a blank screen again.
+Durch die integrierte Unterstützung für Platzhalter und Fallbacks langweilen deine Benutzer sich nie wieder vor einem leeren Bildschirm.
 
-[tip type="read-on"] **READ ON –** Learn more about [Placeholders and fallbacks](placeholders.md) [/tip]
+[tip type="read-on"] **ERFAHRE MEHR:** Erfahre mehr über [Platzhalter & Fallbacks](placeholders.md). [/tip]
 
 ## Art direct your images
 
 AMP unterstützt die Attribute `srcset` und `sizes`. Dadurch kannst du präzise steuern, welche Bilder in welchem Szenario geladen werden.
 
-[tip type="read-on"] **READ ON –** Learn more about [art direction with srcset and sizes](art_direction.md) [/tip]
+[tip type="read-on"] **ERFAHRE MEHR:** Erfahre mehr über [Art Direction mit srcset und sizes](art_direction.md). [/tip]
 
 ## Validate your styles and layout
 
@@ -112,4 +110,4 @@ Beispiel eines Fehlers in der Konsole für eine Seite mit CSS, die das Limit von
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-[tip type="read-on"] **READ ON –** Learn more about how to [validate and fix your AMP pages](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) [/tip]
+[tip type="read-on"] **ERFAHRE MEHR:** Erfahre mehr darüber, wie du [deine AMP Seiten überprüfst und validierst](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md). [/tip]
