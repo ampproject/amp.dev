@@ -1,5 +1,5 @@
 ---
-"$title": Login
+"$title": Anmeldung
 "$order": '1'
 description: The first time you land on the page, you can see 2 comments and a login button. If you look for the login button in the code, you will find ...
 ---
@@ -61,7 +61,7 @@ Once the AMPByExample server receives the POST request from the login page and t
 
 It’s important to understand what the AMP runtime does and what the server should be doing, as the implementation of the server is the responsibility of the publisher of the page.
 
-As a quick recap:
+Eine kurze Zusammenfassung:
 
 - The AMP runtime automatically adds the return parameter to the sign-in request specified inside the login JSON object
 - The AMP runtime closes the login page and redirects to the page specified by the return URL parameter
