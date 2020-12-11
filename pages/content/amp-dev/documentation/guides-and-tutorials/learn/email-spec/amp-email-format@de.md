@@ -1,5 +1,5 @@
 ---
-"$title": AMP for Email Format
+"$title": Das Format AMP für E-Mail
 order: '1'
 formats:
 - email
@@ -31,7 +31,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-AMP is a technology known for developing super fast web pages on mobile clients. AMP is a set of HTML tags backed by JavaScript that easily enables functionality with an added focus on performance and security. There are [AMP components](https://amp.dev/documentation/components/) for everything from carousels, to responsive form elements, to retrieving fresh content from remote endpoints.
+Die AMP Technologie ist bekannt für die Entwicklung superschneller Webseiten auf mobilen Clients. AMP besteht aus einer Reihe von HTML Tags, die von JavaScript unterstützt werden und auf einfache Weise Funktionen ermöglichen, die zusätzlich auf Leistung und Sicherheit achten. [AMP Komponenten](https://amp.dev/documentation/components/) gibt es für alles: von Karussells über responsive Formularelemente bis hin zum Abruf neuer Inhalte von Remote Endpoints.
 
 Das Format AMP für E-Mail bietet [ein Subset von AMP Komponenten](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md), die du in E-Mail Nachrichten verwenden kannst. Empfänger von AMP E-Mails können die AMP Komponenten direkt in der E-Mail anzeigen und mit ihnen interagieren.
 
@@ -59,18 +59,18 @@ Der folgende Code zeigt das minimale Markup, aus der eine gültige AMP E-Mail Na
 
 Eine AMP E-Mail Nachricht MUSS
 
-- <a name="dctp"></a>start with the doctype `<!doctype html>`. [🔗](#dctp)
-- <a name="ampd"></a>contain a top-level `<html ⚡4email>` tag (`<html amp4email>` is accepted as well). [🔗](#ampd)
-- <a name="crps"></a>contain `<head>` and `<body>` tags (They are optional in HTML). [🔗](#crps)
-- <a name="chrs"></a>contain a `<meta charset="utf-8">` tag as the first child of their head tag. [🔗](#chrs)
-- <a name="scrpt"></a>contain a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside their head tag. [🔗](#scrpt)
-- <a name="boilerplate"></a>contain amp4email boilerplate (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) inside their head tag to initially hide the content until AMP JS is loaded. [🔗](#boilerplate)
+- <a name="dctp"></a>mit dem Doctype `<!doctype html>` beginnen, [🔗](#dctp)
+- <a name="ampd"></a>das Tag `<html ⚡4email>` der obersten Ebene enthalten (`<html amp4email>` wird ebenfalls akzeptiert), [🔗](#ampd)
+- <a name="crps"></a>die Tags `<head>` und `<body>` enthalten (diese sind in HTML optional), [🔗](#crps)
+- <a name="chrs"></a>das Tag `<meta charset="utf-8">` als erstes untergeordnetes Element ihres Head Tags enthalten, [🔗](#chrs)
+- <a name="scrpt"></a>das Tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` in ihrem Head Tag enthalten, [🔗](#scrpt)
+- <a name="boilerplate"></a>ein amp4email Boilerplate (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) in ihrem Head Tag enthalten, um den Inhalt auszublenden, bis AMP JS geladen wird. [🔗](#boilerplate)
 
 The entire AMPHTML markup must not exceed 200,000 bytes.
 
 ## Struktur und Rendering <a name="structure-and-rendering"></a>
 
-AMP for Email relies on the standard `multipart/alternative` [MIME](https://en.wikipedia.org/wiki/MIME) subtype, as defined in [RFC 1521, section 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
+AMP für E-Mail basiert auf dem standardmäßigen `multipart/alternative` [MIME](https://en.wikipedia.org/wiki/MIME) Untertyp, definiert in [RFC 1521, Abschnitt 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
 *Weitere Informationen dazu findest du in [Struktur und Rendering von AMP E-Mails](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md).*
 
@@ -80,17 +80,17 @@ AMP for Email relies on the standard `multipart/alternative` [MIME](https://en.w
 
 ## HTML Anforderungen <a name="html-requirements"></a>
 
-*See [Supported HTML in AMP for Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md).*
+*Siehe [AMP für E-Mail: Unterstütztes HTML](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md).*
 
 ## CSS Anforderungen <a name="css-requirements"></a>
 
 ### Unterstützte Selektoren und Eigenschaften <a name="supported-selectors-and-properties"></a>
 
-*See [Supported CSS in AMP for Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md).*
+*Siehe [AMP für E-Mail: Unterstütztes CSS](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md).*
 
-### Specifying CSS in an AMP document <a name="specifying-css-in-an-amp-document"></a>
+### Angabe von CSS in einem AMP Dokument <a name="specifying-css-in-an-amp-document"></a>
 
-All CSS in any AMP document must be included in a `<style amp-custom>` tag within the header or as inline `style` attributes.
+Das gesamte CSS in einem AMP Dokument muss im Tag `<style amp-custom>` im Header enthalten sein oder als `style` Inline Attribute vorliegen.
 
 [sourcecode:html]
 ...
@@ -110,29 +110,29 @@ All CSS in any AMP document must be included in a `<style amp-custom>` tag withi
 </head>
 [/sourcecode]
 
-Note: The entire `<style>` tag cannot exceed 50,000 bytes. The validator will check for this.
+Hinweis: Das gesamte Tag `<style>` darf 50.000 Byte nicht überschreiten. Der Validator überprüft dies.
 
 ## Dokumentabmessungen <a name="document-dimensions"></a>
 
 - **Optimale Breite**: 800px oder weniger (breiterer Inhalt kann in einigen Clients unerwartet abgeschnitten werden).
 
-- **Height**: variable, the client allows the user to scroll through the content.
+- **Höhe**: variabel, der Client erlaubt dem Benutzer, durch den Inhalt zu scrollen.
 
 ## Validierung <a name="validation"></a>
 
 Um sicherzustellen, dass deine E-Mail Nachrichten die strengen Kriterien für das Format AMP für E-Mail erfüllen, kannst du die vorhandenen AMP Validierungstools verwenden.
 
-See [Validate AMP Email](https://amp.dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_emails/) for more information.
+Mehr Informationen findest du in [Validierung von AMP E-Mails](https://amp.dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_emails/).
 
 ## Privatsphäre und Sicherheit <a name="privacy-and-security"></a>
 
-### Tracking email opens and interaction <a name="tracking-email-opens-and-interaction"></a>
+### Das Öffnen von E-Mails und die Interaktion verfolgen <a></a>
 
-AMPHTML allows tracking email opens with pixel tracking techniques, same as regular HTML emails. Any user-initiated requests for data from external services will also indicate the user is interacting with the message. Email clients may offer their users the ability to disable loading remote images, and other external requests.
+AMPHTML ermöglicht es, das Öffnen von E-Mails durch Pixel Tracking Techniken zu verfolgen, genau wie gewöhnliche HTML E-Mails. Auch alle vom Benutzer initiierten Anforderungen für Daten von externen Diensten zeigen an, dass der Benutzer mit der Nachricht interagiert. E-Mail Clients können ihren Benutzern erlauben, das Laden von Remotebildern und andere externe Anforderungen zu deaktivieren.
 
-### AMP-specific analytics <a name="amp-specific-analytics"></a>
+### AMP-spezifisches Analytics <a name="amp-specific-analytics"></a>
 
-The following AMP-specific analytic techniques are not supported:
+Die folgenden AMP-spezifischen Analytics Techniken werden nicht unterstützt:
 
 - [AMP `CLIENT_ID`](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics#user-identification)
 - [`amp-analytics`](https://amp.dev/documentation/components/amp-analytics)
@@ -147,4 +147,4 @@ Weiterleitungen in [`<amp-form>`](https://amp.dev/documentation/components/amp-f
 
 ## Feedback & Support <a name="feedback--support"></a>
 
-For support and feedback on AMP for Email, please use the following channel: [ongoing-participation](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#ongoing-participation)
+Verwende bitte den folgenden Kanal für Support und Feedback zu AMP für E-Mail: [ongoing-participation](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#ongoing-participation)
