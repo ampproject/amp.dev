@@ -66,7 +66,7 @@ Eine AMP E-Mail Nachricht MUSS
 - <a name="scrpt"></a>das Tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` in ihrem Head Tag enthalten, [🔗](#scrpt)
 - <a name="boilerplate"></a>ein amp4email Boilerplate (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) in ihrem Head Tag enthalten, um den Inhalt auszublenden, bis AMP JS geladen wird. [🔗](#boilerplate)
 
-The entire AMPHTML markup must not exceed 200,000 bytes.
+Das gesamte AMPHTML Markup darf nicht größer sein als 200.000 Bytes.
 
 ## Struktur und Rendering <a name="structure-and-rendering"></a>
 
