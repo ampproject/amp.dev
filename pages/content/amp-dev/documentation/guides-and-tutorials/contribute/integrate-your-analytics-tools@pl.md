@@ -9,13 +9,6 @@ teaser:
 toc: 'true'
 ---
 
-<!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md.
-Please do not change this file.
-If you have found a bug or an issue please
-have a look and request a pull request there.
--->
-
 ## Omówienie <a name="overview"></a>
 
 Jeśli używasz narzędzia typu „oprogramowanie jako usługa” dla wydawców, aby lepiej zrozumieć ich ruch i osoby odwiedzające, być może zechcesz zintegrować swoją usługę ze składnikiem `amp-anaytics`. Umożliwi to Twoim klientom przeglądanie wzorców ruchu na ich stronach AMP HTML.

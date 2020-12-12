@@ -6,13 +6,6 @@ teaser:
 toc: true
 ---
 
-<!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md.
-Please do not change this file.
-If you have found a bug or an issue please
-have a look and request a pull request there.
--->
-
 ## Información general <a name="overview"></a>
 
 Si utiliza una herramienta del tipo "software como un servicio" para que los publicistas comprendan más fácilmente cómo funcionan su tráfico y los visitantes, posiblemente desee integrar su servicio con `amp-analytics`. Esto permitirá que sus clientes visualicen los patrones en el tráfico de sus páginas AMP HTML.
