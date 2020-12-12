@@ -4,7 +4,7 @@ $title: AMP与CORS
 
 许多AMP组件以及功能需要使用CORS（Cross-Origin Resource Sharing, 跨站资源资源共享)来请求远程服务器来获取数据。关于CORS，可以阅读[W3 CORS Spec](https://www.w3.org/TR/cors/)了解更多。
 
-## 为什么我的站点需要使用CORS?? <a name="why-do-i-need-cors-for-my-own-origin"></a>
+## 为什么我的站点需要使用CORS?? <a id="why-do-i-need-cors-for-my-own-origin"></a>
 
 你可能会对此感到困惑，为什么请求自己域名的资源需要使用CORS？让我们来好好研究一下。
 
@@ -30,7 +30,7 @@ AMP组件（例如amp-from，amp-list等等）在获取动态数据(例如JSON)�
 2.  根据下面的教程来处理CORS的请求和响应。
 
 
-## 在CORS中使用cookie <a name="utilizing-cookies-for-cors-requests"></a>
+## 在CORS中使用cookie <a id="utilizing-cookies-for-cors-requests"></a>
 
 有很多AMP组件例如amp-list在使用CORS请求的时候会自动设置[credentials mode](https://fetch.spec.whatwg.org/#concept-request-credentials-mode)或者允许开发者自行设置。下面的例子中[`amp-list`](https://amp.dev/documentation/components/amp-list)组件通过使用CORS请求来获取远程服务器的数据，同时在请求时也设置了
 `credentials`属性。
@@ -63,8 +63,7 @@ AMP组件（例如amp-from，amp-list等等）在获取动态数据(例如JSON)�
 如果你是使用Node作为后端的语言，你可以使用[AMP CORS middleware](https://www.npmjs.com/package/amp-toolbox-cors)这个中间件来处理上述的要求，这个中间件是[AMP Toolbox](https://github.com/ampproject/amp-toolbox)的其中一部分。
 
 
-### 验证CORS请求 <a name="verify-cors-requests"></a>
-<span id="verify-cors-requests"></span>
+### 验证CORS请求 <a id="verify-cors-requests"></a>
 
 当你的服务器收到CORS请求的时候：
 
@@ -91,7 +90,7 @@ AMP组件（例如amp-from，amp-list等等）在获取动态数据(例如JSON)�
 [/tip]
 
 
-#### 2) 允许同一来源(Same-Origin)的请求 <a name="2-allow-same-origin-requests"></a>
+#### 2) 允许同一来源(Same-Origin)的请求 <a id="2-allow-same-origin-requests"></a>
 <span id="allow-same-origin-requests"></span>
 
 如果请求时`Origin`字段在请求头中没有设置，那么AMP将会设置以下字段:
@@ -109,8 +108,7 @@ AMP-Same-Origin: true
 
 为了限制请求的来源，请检查`"__amp_source_origin"`参数是在你允许的请求来源范围内。
 
-### 发送正确的响应 <a name="send-cors-response-headers"></a>
-<span id="send-cors-response-headers"></span>
+### 发送正确的响应 <a id="send-cors-response-headers"></a>
 
 在验证了CORS请求以后，作为结果的HTTP响应应该包含以下响应头：
 
@@ -122,7 +120,7 @@ AMP-Same-Origin: true
 
 * 如果在请求头中带有Origin的字段，你应该验证这个字段的值并且返回这个字段的值作为响应头。
 
-### 处理状态变更的请求 <a name="processing-state-changing-requests"></a>
+### 处理状态变更的请求 <a id="processing-state-changing-requests"></a>
 
 [tip type="important"]
 

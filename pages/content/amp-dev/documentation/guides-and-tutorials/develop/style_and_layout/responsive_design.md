@@ -27,7 +27,7 @@ In this guide, we'll show you how you can easily implement these responsive fund
 
 [video src='https://www.youtube.com/watch?v=XDvbJ2apaiA' caption='Learn about responsive design in AMP from this video.']
 
-## Controlling the viewport <a name="controlling-the-viewport"></a>
+## Controlling the viewport <a name="controlling-the-viewport" id="controlling-the-viewport"></a>
 
 [filter formats="websites, ads, stories"]
 To optimize your web page so the content scales and fits the browser window for any device, you need to specify a `meta` viewport element. The viewport element instructs the browser on how to scale and size the visible area (the viewport) of the web page.

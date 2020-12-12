@@ -20,7 +20,7 @@ have a look and request a pull request there.
 - [Kanały wydań](#release-channels)
     - [Conocne](#nightly)
     - [Cotygodniowe](#weekly)
-        - [Kanały eksperymentalne i beta](#experimental-and-beta-channels)
+        - [Kanały eksperymentalne i beta](#beta-and-experimental-channels)
     - [Stabilne długookresowe (lts)](#long-term-stable-lts)
 - [Ustalanie, czy Twoja zmiana jest w danej wersji](#determining-if-your-change-is-in-a-release)
 - [Kadencja wydawnicza](#release-cadence)
@@ -33,7 +33,7 @@ Nowa wersja AMP jest wypychana na wszystkie strony AMP co tydzień we wtorek. **
 
 Środowisko uruchomieniowe i rozszerzenia AMP są dostarczane przez różne *kanały wydań*. Każdy kanał służy programistom oraz samemu projektowi AMP HTML. Zobacz sekcję [kadencja wydawnicza](#release-cadence), aby dowiedzieć się więcej o tym, jak i kiedy kod z repozytorium [`ampproject/amphtml`](https://github.com/ampproject/amphtml) zmienia się w kompilacje wersji.
 
-Aby określić, czy PR włączono do któregokolwiek z poniższych kanałów wydań, należy poszukać etykiet GitHub *PR Use: In Canary*, *PR Use: In Production* lub *PR Use: In LTS* (więcej szczegółów znajdziesz w sekcji na temat [ustalania, czy Twoja zmiana jest w danej wersji](#Determining-if-your-change-is-in-a-release)).
+Aby określić, czy PR włączono do któregokolwiek z poniższych kanałów wydań, należy poszukać etykiet GitHub *PR Use: In Canary*, *PR Use: In Production* lub *PR Use: In LTS* (więcej szczegółów znajdziesz w sekcji na temat [ustalania, czy Twoja zmiana jest w danej wersji](#determining-if-your-change-is-in-a-release)).
 
 ### Conocne <a name="nightly"></a>
 
@@ -75,7 +75,7 @@ Kanał wydawania **lts** zapewnia poprzednią **stabilną ** kompilację w odst�
 
 W przypadku, gdy drugi poniedziałek miesiąca wypada w święto, promocja zostanie przeprowadzona po zakończeniu [zamrożenia wydania](#release-freezes).
 
-Ważne: wydawcy korzystający z kanału wydania **lts** nie powinni używać nowo wprowadzonych funkcji. Ze względu na dłuższy cykl wydanie **lts** może być nawet siedem tygodni za `HEAD` z [`ampproject/amphtml`](https://github.com/ampproject/amphtml). Zobacz sekcję [Ustalanie, czy Twoja zmiana jest w danej wersji](#Determining-if-your-change-is-in-a-release), aby sprawdzić, czy zmiana będzie gotowa z wybranym cyklem wydania.
+Ważne: wydawcy korzystający z kanału wydania **lts** nie powinni używać nowo wprowadzonych funkcji. Ze względu na dłuższy cykl wydanie **lts** może być nawet siedem tygodni za `HEAD` z [`ampproject/amphtml`](https://github.com/ampproject/amphtml). Zobacz sekcję [Ustalanie, czy Twoja zmiana jest w danej wersji](#determining-if-your-change-is-in-a-release), aby sprawdzić, czy zmiana będzie gotowa z wybranym cyklem wydania.
 
 ## Ustalanie, czy Twoja zmiana jest w danej wersji <a name="determining-if-your-change-is-in-a-release"></a>
 
@@ -102,7 +102,7 @@ Po uwzględnieniu wszystkich tych czynników doszliśmy do 1–2 tygodniowego cy
 
 Staramy się trzymać tego harmonogramu tak ściśle, jak to możliwe, ale komplikacje mogą skutkować opóźnieniami. Możesz śledzić najnowszy status każdego wydania w sekcji [*Type: Release* GitHub issues](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) i na [kanale AMP Slack #release](https://amphtml.slack.com/messages/C4NVAR0H3/) ([zarejestruj się w usłudze Slack](https://bit.ly/amp-slack-signup)).
 
-- Wtorek o godzinie [11 czasu pacyficznego](https://www.google.com/search?q=11am+pacific+in+current+time+zone): tworzone są nowe kompilacje **eksperymentalne** i **beta** wersji z [najnowszej kompilacji głównej, która przeszła wszystkie nasze testy](https://travis-ci.org/ampproject/amphtml/branches) i są wypychane do użytkowników AMP, którzy wybrali odpowiednio [kanał eksperymentalny AMP](#amp-experimental-and-beta-channels) lub [kanał beta AMP](#amp-experimental-and-beta-channels).
+- Wtorek o godzinie [11 czasu pacyficznego](https://www.google.com/search?q=11am+pacific+in+current+time+zone): tworzone są nowe kompilacje **eksperymentalne** i **beta** wersji z [najnowszej kompilacji głównej, która przeszła wszystkie nasze testy](https://travis-ci.org/ampproject/amphtml/branches) i są wypychane do użytkowników AMP, którzy wybrali odpowiednio [kanał eksperymentalny AMP](#beta-and-experimental-channels) lub [kanał beta AMP](#beta-and-experimental-channels).
 - Środa: sprawdzamy zgłoszenia usterek użytkowników *kanału eksperymentalnego* i *kanału beta*, a jeśli wszystko wygląda dobrze, wypychamy wersję **beta** do 1% stron AMP.
 - Czwartek–poniedziałek: nadal monitorujemy wskaźniki błędów i zgłoszenia usterek użytkowników *kanału eksperymentalnego* i *kanału beta* oraz 1% stron z kompilacjami **eksperymentalnymi**/**beta**.
 - Wtorek w następnym tygodniu: kompilacja **beta** jest w pełni promowana na **stabilną** (tzn. wszystkie strony AMP będą odtąd używać tej kompilacji).
