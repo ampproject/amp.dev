@@ -1,24 +1,24 @@
 ---
 "$title": Einführung in komplexe Animationen
 "$order": '2'
-description: "For animations that can't be driven by adding and removing classes, AMP offers several animation specific components. These components apply AMP's principles to animations ..."
+description: Für Animationen, die nicht durch das Hinzufügen und Entfernen von Klassen gesteuert werden können, bietet AMP mehrere animationsspezifische Komponenten. Diese Komponenten wenden die AMP Prinzipien auf Animationen an …
 formats:
 - websites
 - ads
 author: CrystalOnScript
 ---
 
-For animations that can't be driven by [adding and removing classes](triggering_css_animations.md), AMP offers several animation specific components. These components apply AMP's principles to animations: they're fast, efficient, and user first. AMP restricts what CSS properties inside keyframes are allowed, but grants benefits such as fine-grain control, seamless animations, and cross browser compatibility with no extra work.
+Für Animationen, die nicht durch das [Hinzufügen und Entfernen von Klassen](triggering_css_animations.md) gesteuert werden können, bietet AMP mehrere animationsspezifische Komponenten. Diese Komponenten wenden die AMP Prinzipien auf Animationen an: Sie sind schnell, effizient und benutzerorientiert. Zwar schränkt AMP die innerhalb von Keyframes zulässigen CSS Eigenschaften ein, bietet dafür aber Vorteile wie Feinsteuerung, nahtlose Animationen und browserübergreifende Kompatibilität ohne zusätzliche Mühe.
 
-Use amp-animation if you need to tightly control playback, as well as have precise timing with multiple elements animating at the same time.
+Verwende amp-animation, wenn du die Wiedergabe präzise steuern möchtest und präzises Timing erreichen willst, während mehrere Elemente gleichzeitig animiert werden.
 
-## Creating a basic AMP animation
+## Einfache AMP Animation erstellen
 
 Die Komponente [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) ermöglicht die Verwendung der [Web Animation API](https://www.w3.org/TR/web-animations/) in AMP.
 
-A basic [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) is a JSON object made of the following key parts:
+Eine einfache [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) ist ein JSON Objekt, das aus den folgenden Schlüsselelementen besteht:
 
-- The element the component is animating, or `selector`.
+- Element, das die Komponente animiert, oder `selector`
 - [Timing Properties](../../../../documentation/components/reference/amp-animation.md#timing-properties)
 - [Keyframes](../../../../documentation/components/reference/amp-animation.md#keyframes)
 - [Trigger](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
@@ -45,21 +45,21 @@ A basic [`amp-animation`](../../../../documentation/components/reference/amp-ani
 
 ### Eigenschaften für das Timing
 
-The [timing properties](../../../../documentation/components/reference/amp-animation.md#timing-properties) control how long an animation takes, the amount of times it plays, and which direction keyframes execute.
+Die [Timing Eigenschaften](../../../../documentation/components/reference/amp-animation.md#timing-properties) steuern, wie lange eine Animation dauert, wie oft sie abgespielt wird und in welche Richtung Keyframes ausgeführt werden.
 
-No timing properties are required, but an animation might not run if properties related to time and display are missing, such as `duration` and `fill`.
+Die Angabe von Timing Eigenschaften ist nicht erforderlich, aber eine Animation wird möglicherweise nicht ausgeführt, wenn Eigenschaften für die Zeit und Anzeige fehlen, z. B. `duration` und `fill`.
 
 ### Keyframes
 
-While CSS allows you to morph from one state to another via transitions, you must declare animation properties as keyframes to implement [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) (similar to [CSS animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)). To ensure smooth playback and cross browser compatibility, [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) [restricts what keyframe properties](../../../../documentation/components/reference/amp-animation.md#allow-listed-properties-for-keyframes) are usable to GPU accelerated properties that do not cause a re-layout and can animate on the [compositor thread](https://dev.chromium.org/developers/design-documents/compositor-thread-architecture). This prevents animations from interfering with AMP and the browser's [render process](https://developers.google.com/web/updates/2018/09/inside-browser-part3#javascript_can_block_the_parsing).
+Während CSS es erlaubt, durch Übergänge von einem Zustand in einen anderen zu wechseln, musst du Animationseigenschaften als Keyframes deklarieren, um [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) zu implementieren (ähnlich wie bei [CSS Animationen](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)). Um eine reibungslose Wiedergabe und browserübergreifende Kompatibilität zu gewährleisten, beschränkt [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) [die zulässigen Keyframe Eigenschaften](../../../../documentation/components/reference/amp-animation.md#allow-listed-properties-for-keyframes) auf GPU-beschleunigte Eigenschaften, die kein neues Layout verursachen und im [Compositor Thread](https://dev.chromium.org/developers/design-documents/compositor-thread-architecture) animiert werden können. Dies verhindert, dass AMP und der [Rendervorgang](https://developers.google.com/web/updates/2018/09/inside-browser-part3#javascript_can_block_the_parsing) des Browsers durch Animationen beeinträchtigt werden.
 
-[tip type="note"] Keyframes are either defined directly in an [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) or referenced from [`<amp style-keyframe>`](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#keyframes-stylesheet) as long as they follow the property restrictions. Read more [here about keyframes in `amp-animation`](../../../../documentation/components/reference/amp-animation.md#keyframes). [/tip]
+[tip type="note"] Keyframes werden entweder direkt in einer [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) definiert oder von [`<amp style-keyframe>`](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#keyframes-stylesheet) aus referenziert, sofern sie den Beschränkungen für Eigenschaften entsprechen. Mehr Infos über [Keyframes findest du in `amp-animation`](../../../../documentation/components/reference/amp-animation.md#keyframes). [/tip]
 
 ### Trigger
 
-The trigger starts the animation sequence. The [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) extension starts either when the `<body>` becomes visible on the page or by connecting it to an [AMP action or event](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)
+Der Trigger startet die Animationssequenz. Die Erweiterung [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) startet entweder, wenn der `<body>` auf der Seite sichtbar wird, oder indem die Seite mit einer [AMP Aktion oder einem AMP Event](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) verbunden wird.
 
-Triggering on visibility of `<body>` is useful when the animation should run as soon as the page loads because it appears "above the fold", or within the first viewport of the page. Animations trigger through visibility by adding `trigger="visibility"` as an attribute to the component.
+Das Auslösen bei Sichtbarkeit von `<body>` ist nützlich, wenn die Animation ausgeführt werden soll, sobald die Seite geladen wird, da sie im angezeigten Bereich oder im ersten Viewport der Seite erscheint. Animationen werden durch Sichtbarkeit ausgelöst, indem der Komponente das Attribut `trigger="visibility"` hinzugefügt wird.
 
 ```
 <amp-animation layout="nodisplay"
@@ -68,7 +68,7 @@ Triggering on visibility of `<body>` is useful when the animation should run as 
 </amp-animation>
 ```
 
-Animations connect to an action or event by assigning the [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) component an `id` and linking that `id` to the desired event trigger, such as tapping a button.
+Animationen stellen eine Verbindung zu einer Aktion oder einem Event her, indem sie der Komponente [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) eine `id` zuweisen und diese `id` mit dem gewünschten Ereignisauslöser verknüpfen, z. B. Tippen auf einen Button.
 
 ```
 <amp-animation layout="nodisplay" id="exampleAnimation">
@@ -123,7 +123,7 @@ Elemente desselben Tags oder derselben Klasse können bestimmte Timing Eigenscha
 
 ### Verkettete Animationen
 
-Multiple animations can connect together to form a large sequence. You can create timed effects, such as overlays on a video, by writing animations in the `animations` array within the [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) component.
+Mehrere Animationen können zu einer großen Sequenz verbunden werden. Du kannst zeitgesteuerte Effekte wie Überlagerungen in einem Video erstellen, indem du Animationen in das Array `animations` in der Komponente [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) schreibst.
 
 ```
 <amp-animation id="overlaysAnim" layout="nodisplay">
@@ -207,7 +207,7 @@ Für größere Animationen können Animationen innerhalb des Arrays `animations`
 
 ### Animieren einer unbekannten Anzahl von Elementen
 
-By using [`var()` and `calc()` expressions](../../../../documentation/components/reference/amp-animation.md) along with [CSS extensions](../../../../documentation/components/reference/amp-animation.md#css-extensions), you can write complex and timed animations that work with any number of elements. This allows for dynamic and user generated data to be animated with ease and fluidity.
+Mithilfe der [Ausdrücke `var()` und `calc()`](../../../../documentation/components/reference/amp-animation.md) kannst du zusammen mit [CSS Erweiterungen](../../../../documentation/components/reference/amp-animation.md#css-extensions) komplexe und zeitgesteuerte Animationen schreiben, die mit einer beliebigen Anzahl von Elementen funktionieren. Dies ermöglicht eine simple und flüssige Animation dynamischer und benutzergenerierter Daten.
 
 [example preview="top-frame" playground="true"]
 ```html
@@ -262,17 +262,17 @@ By using [`var()` and `calc()` expressions](../../../../documentation/components
 - Declaring a variable, `--duration`, and giving it the value of two seconds.
 - Setting the `duration` to the var `--duration`'s value.
 - Calculating the delay applied to each element with the class `.card`.
-    1. The [`length()` extension](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) calculates how many `.card` elements were selected
+    1. Die [Erweiterung `length()`](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) berechnet, wie viele `.card` Elemente ausgewählt wurden.
     2. Dann wird der [index()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension) jeder `.card` von der Länge subtrahiert.
     3. Der resultierende Wert wird mit der Variablen `--duration` multipliziert.
     4. Die Endsumme wird in Sekunden auf die Verzögerung dieses Elements angewendet.
-- The animation is applied to each element individually so that the cards are shuffled one after another instead of all at the same time.
+- Die Animation wird auf jedes Element individuell angewendet, sodass die Karten nicht alle gleichzeitig, sondern nacheinander zufällig wiedergegeben werden.
 
 Öffne die Animation im AMP Playground und füge weitere [`amp-img`](../../../../documentation/components/reference/amp-img) Elemente hinzu, um dieses Verhalten zu testen.
 
 ### Sieht überall gut aus
 
-Animations can include [`conditions`](../../../../documentation/components/reference/amp-animation.md#conditions) that allow customized effects. Tailor animations to any screen size through the [`media` condition](../../../../documentation/components/reference/amp-animation.md#media-query) and supports backwards browser compatibility by enabling [`supports` conditions](../../../../documentation/components/reference/amp-animation.md#supports-condition) in a [`switch` statement](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement).
+Animationen können [`conditions`](../../../../documentation/components/reference/amp-animation.md#conditions) enthalten, die benutzerdefinierte Effekte ermöglichen. Passe Animationen mit der [Bedingung `media`](../../../../documentation/components/reference/amp-animation.md#media-query) an eine beliebige Bildschirmgröße an und unterstütze die Abwärtskompatibilität für Browser, indem du die [Bedingungen `supports`](../../../../documentation/components/reference/amp-animation.md#supports-condition) in einer [`switch` Anweisung](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement) aktivierst.
 
 [example preview="top-frame" playground="true"]
 ```html
