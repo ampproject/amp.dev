@@ -107,6 +107,6 @@ Một đóng góp cấp 3 giới thiệu một thành phần dành riêng cho b�
 - Viết và đề xuất việc xem lại thiết kế.
 - Các kiểm tra phải có thể phát hiện lỗi gãy.
 - Khắc phục, hoặc yêu cầu trợ giúp nếu thành phần bị gãy.
-- Provide thorough documentation with code samples.
+- Cung cấp các tài liệu với mẫu code.
 - Duy trì và cập nhật tài liệu.
 - Cung cấp một kênh khắc phục sự cố để các nhà phát triển AMP có thể yêu cầu hỗ trợ.
