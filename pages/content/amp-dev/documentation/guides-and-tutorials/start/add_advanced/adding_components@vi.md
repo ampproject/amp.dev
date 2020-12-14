@@ -8,7 +8,7 @@ Hệ thống thành phần AMP cho phép bạn nhanh chóng xây dựng các tí
 
 - **tích hợp**: Các thành phần này được bao gồm trong thư viện JavaScript AMP cơ sở (được quy định trong thẻ `<head>` (đầu đề)), ví dụ như [`amp-img`](../../../../documentation/components/reference/amp-img.md) và [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md). Các thành phần này có thể được sử dụng ngay lập tức trong một tài liệu AMP.
 
-- **extended**: These are extensions to the base library that must be explicitly included in the document as custom elements.  Custom elements require specific scripts that are added to the `<head>` section (e.g., `<script async custom-element="`[`amp-video`](../../../../documentation/components/reference/amp-video.md)`...`).
+- **mở rộng**: Đây là các phần mở rộng cho thư viện cơ sở và phải được bao gồm một cách rõ ràng trong tài liệu dưới dạng các yếu tố tùy chỉnh. Các yếu tố tùy chỉnh yêu cầu các kịch bản cụ thể, được thêm vào phần `<head>` (đầu đề) (ví dụ, `<script async custom-element="`[`amp-video`](../../../../documentation/components/reference/amp-video.md)`...`).
 
 - **thử nghiệm**: Các thành phần này đã được phát hành nhưng vẫn chưa sẵn sàng cho sử dụng rộng khắp. Các nhà phát triển có thể đăng ký sử dụng các tính năng này trước khi chúng được phát hành đầy đủ. Tìm hiểu thêm trong [các tính năng Thử nghiệm](../../../../documentation/guides-and-tutorials/learn/experimental.md).
 
