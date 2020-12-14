@@ -1,13 +1,13 @@
 ---
 "$title": Prepare your page for discovery and distribution
 "$order": '4'
-description: 'In some cases, you might want to have both a non-AMP and an AMP version of the same page, for example, a news article. Consider this: If Google Search ...'
+description: In manchen Fällen ist es sinnvoll, sowohl eine AMP Version als auch eine Version ohne AMP derselben Seite zu haben, z. B. für einen Nachrichtenartikel …
 author: pbakaus
 contributors:
 - bpaduch
 ---
 
-In some cases, you might want to have both a non-AMP and an AMP version of the same page, for example, a news article. Consider this: If Google Search finds the non-AMP version of that page, *how does it know there’s a "paired" AMP version of it*?
+In manchen Fällen ist es sinnvoll, sowohl eine AMP Version als auch eine Version ohne AMP derselben Seite zu haben, z. B. für einen Nachrichtenartikel. Aber woher weiß die Google Suche nach dem Fund deiner traditionellen Seite eigentlich, *dass es auch eine "gekoppelte" AMP Version gibt*?
 
 ## Linking pages with `<link>`
 
@@ -33,4 +33,4 @@ If you only have one page, and that page is an AMP page, you must still add the 
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-[tip type="read-on"] **READ ON –** Learn more about how Google finds AMP pages in [Google Search guidelines for AMP pages](https://support.google.com/webmasters/answer/6340290). [/tip]
+[tip type="read-on"] **ERFAHRE MEHR: ** In [Richtlinien für AMP Seiten (Accelerated Mobile Pages) in der Google Suche](https://support.google.com/webmasters/answer/6340290) erfährst du mehr darüber, wie Google AMP Seiten findet. [/tip]
