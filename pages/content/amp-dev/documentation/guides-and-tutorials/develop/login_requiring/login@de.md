@@ -1,14 +1,14 @@
 ---
 "$title": Anmeldung
 "$order": '1'
-description: The first time you land on the page, you can see 2 comments and a login button. If you look for the login button in the code, you will find ...
+description: Wenn du zum ersten Mal auf der Seite landest, siehst du 2 Kommentare und einen Login Button. Wenn du im Code nach dem Button suchst, …
 ---
 
-The first time you land on the [page](../../../../documentation/examples/previews/Comment_Section.html), you can see 2 comments and a login button.
+Wenn du zum ersten Mal auf der [Seite](../../../../documentation/examples/previews/Comment_Section.html) landest, siehst du 2 Kommentare und einen Login Button.
 
 <amp-img src="/static/img/login-button.jpg" alt="Login button" height="290" width="300"></amp-img>
 
-If you look for the login button in the code, you will find:
+ Wenn du im Code nach dem Button suchst, findest du Folgendes:
 
 [sourcecode:html]
 <span amp-access="NOT loggedIn" role="button" tabindex="0" amp-access-hide>
@@ -17,7 +17,7 @@ If you look for the login button in the code, you will find:
 </span>
 [/sourcecode]
 
-The behaviour of [`amp-access`](../../../../documentation/components/reference/amp-access.md) related attributes are dependent on a page-wide configuration for [`amp-access`](../../../../documentation/components/reference/amp-access.md), in our case, this one:
+Das Verhalten der Attribute, die zu [`amp-access`](../../../../documentation/components/reference/amp-access.md) gehören, hängt von einer seitenweiten Konfiguration für [`amp-access`](../../../../documentation/components/reference/amp-access.md) ab, in unserem Fall von dieser:
 
 [sourcecode:html]
 <script id="amp-access" type="application/json">
@@ -36,9 +36,9 @@ The behaviour of [`amp-access`](../../../../documentation/components/reference/a
 </script>
 [/sourcecode]
 
-The authorization endpoint is deployed as part of AMPByExample. It's the responsibility of the publisher of the page to provide this endpoint. In this sample case, for simplicity, we implemented basic logic so that when this request is received, the server reads the value of a cookie named `ABE_LOGGED_IN`. If the cookie is not there, we return a JSON response containing `loggedIn = false`. As a result, the first time a user lands on the page, this request will return `loggedIn = false` and the login button will be shown.
+Der Autorisierungs-Endpoint wird als Teil von AMPByExample bereitgestellt. Für die Bereitstellung dieses Endpoints ist der Publisher der Seite verantwortlich. In diesem Beispiel haben wir zur Vereinfachung eine grundlegende Logik implementiert, sodass der Server beim Empfang dieser Anforderung den Wert eines Cookies namens `ABE_LOGGED_IN` ausliest. Wenn der Cookie nicht vorhanden ist, geben wir eine JSON Antwort zurück, die `loggedIn = false` enthält. Wenn ein Benutzer zum ersten Mal auf der Seite landet, gibt diese Anforderung `loggedIn = false` zurück und der Login Button wird angezeigt.
 
-Looking again at the button's HTML code, by using `on="tap:amp-access.login-sign-in"`, we specify that once the user taps on the button, the URL specified in the JSON above should be used:
+Sehen wir uns erneut den HTML Code des Buttons an: Mithilfe von `on="tap:amp-access.login-sign-in"` legen wir fest, dass die im obigen JSON angegebene URL verwendet werden muss, sobald Benutzer auf den Button tippen:
 
 [sourcecode:json]
 {
@@ -49,22 +49,22 @@ Looking again at the button's HTML code, by using `on="tap:amp-access.login-sign
 
 [/sourcecode]
 
-[tip type="note"] **NOTE –**  Notice that it’s possible to define different URLs inside the login node, in this case we are defining `sign-in`, and we will later define `sign-out`. [/tip]
+[tip type="note"] **HINWEIS:** Beachte, dass innerhalb des Login Knotens verschiedene URLs definiert werden können. In diesem Fall definieren wir `sign-in` und werden später `sign-out` definieren. [/tip]
 
-The login page is a non-AMP page in which we populate the login and password values for the sake of simplicity. Notice the usage of `returnURL` hidden input type, which is populated by the AMPByExample server via server-side templating. The server reads this value from a parameter called `return`, automatically added by the AMP library to the sign-in URL.
+Die Login Seite ist eine nicht-AMP Seite, auf der zur Vereinfachung die Werte für Login und Passwort ausgefüllt werden. Beachte die Verwendung des Typs für verborgene Eingabe `returnURL`, der vom AMPByExample Server über serverseitiges Templating ausgefüllt wird. Der Server liest diesen Wert aus einem Parameter namens `return`, der von der AMP Bibliothek automatisch zur Login URL hinzugefügt wird.
 
-In the example below, the value for the `return` parameter is added to the request once you click the login button. You can explore this value by using the Chrome DevTools console and navigating to the Network tab.
+Im folgenden Beispiel wird der Wert für den Parameter `return` zur Anforderung hinzugefügt, sobald du auf den Login Button klickst. Du kannst dir diesen Wert in der Chrome DevTools Konsole im Tab "Network" näher ansehen.
 
 <amp-img src="/static/img/return-parameter.jpg" alt="Return parameter" height="150" width="600"></amp-img>
 
-Once the AMPByExample server receives the POST request from the login page and the login and password are correct, it redirects the request to the `returnURL` that we mentioned above, and appends the `#success=true` parameter. The AMP runtime can now authorize the page and finally allow you to add a comment.
+Wenn der AMPByExample Server die POST Anforderung von der Login Seite empfängt und das Login und das Passwort korrekt sind, leitet er die Anforderung an die oben erwähnte `returnURL` weiter und hängt den Parameter `#success=true` an. Jetzt kann die AMP Runtime die Seite autorisieren und dir erlauben, einen Kommentar hinzuzufügen.
 
-It’s important to understand what the AMP runtime does and what the server should be doing, as the implementation of the server is the responsibility of the publisher of the page.
+Es ist wichtig, dass du verstehst, was die AMP Runtime macht und was der Server tun sollte, da der Publisher der Seite für die Implementierung des Servers verantwortlich ist.
 
 Eine kurze Zusammenfassung:
 
-- The AMP runtime automatically adds the return parameter to the sign-in request specified inside the login JSON object
-- The AMP runtime closes the login page and redirects to the page specified by the return URL parameter
-- The server should orchestrate the response once the user clicks on the login button
+- Die AMP Runtime fügt den Rückgabeparameter automatisch zu der Login Anforderung hinzu, die im JSON Login Objekt angegeben ist.
+- Die AMP Runtime schließt die Login Seite und leitet weiter zu der Seite, die vom URL Rückgabeparameter angegeben ist.
+- Der Server sollte die Antwort koordinieren, sobald Benutzer auf den Login Button klicken.
 
-[tip type="tip"] **TIP –** A more detailed explanation about this flow can also be found in the [`amp-access`](../../../../documentation/components/reference/amp-access.md). [/tip]
+[tip type="tip"] **TIPP:** Dieser Vorgang wird unter [`amp-access`](../../../../documentation/components/reference/amp-access.md) ausführlicher erklärt. [/tip]
