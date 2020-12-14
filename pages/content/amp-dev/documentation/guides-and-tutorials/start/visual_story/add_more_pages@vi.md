@@ -1,17 +1,17 @@
 ---
-"$title": Adding more pages
+"$title": Thêm một số trang nữa
 "$order": '5'
-description: Now that you are familiar with adding a page to a Web Story, adding the next pages in our "The Joy of Pets" story is very similar.
+description: Giờ đây bạn đã quen thuộc với thao tác thêm một trang vào Câu chuyện web, thao tác thêm những trang tiếp theo trong câu chuyện "Niềm vui của thú cưng" cũng thực hiện tương tự vậy
 author: bpaduch
 ---
 
 Giờ đây bạn đã quen thuộc với thao tác thêm một trang vào Câu chuyện web, thao tác thêm những trang tiếp theo trong câu chuyện "Niềm vui của thú cưng" cũng thực hiện tương tự vậy. Dựa trên thông tin được cung cấp bên dưới, **hãy tiếp tục tạo những trang còn lại** bằng cách dùng những điều mà bạn đã học được tới giờ. Nếu bị kẹt, hãy nhìn vào mã (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>) hoàn chỉnh.
 
-[tip type="tip"] **TIP –** Remember that each page needs a unique "id" attribute (e.g., `id="page1"`). [/tip]
+[tip type="tip"] **MẸO –** Nhớ rằng mỗi trang cần có một thuộc tính "id" đặc trưng (ví dụ như `id="page1"`). [/tip]
 
-## Page 1: Cats
+## Trang 1: Mèo
 
-Demonstrates how to display an image and text in a single layer.
+Minh hoạ cách hiển thị một hình ảnh hay văn bản trong một lớp duy nhất.
 
 <table class="noborder pages">
   <tr>
@@ -27,9 +27,9 @@ Demonstrates how to display an image and text in a single layer.
   </tr>
 </table>
 
-## Page 2: Dogs
+## Trang 2: Chó
 
-Demonstrates how to arrange text and display a screen-filling image with two layers.
+Minh hoạ cách sắp xếp văn bản và hiển thị một hình ảnh lấp đầy màn hình với hai lớp.
 
 <table class="noborder">
   <tr>
@@ -47,9 +47,9 @@ Demonstrates how to arrange text and display a screen-filling image with two lay
   </tr>
 </table>
 
-## Page 3: Birds
+## Trang 3: Chim
 
-Demonstrates how to arrange text, display a screen-filling image, and provide background audio for the page.
+Minh hoạ cách sắp xếp văn bản, hiển thị một hình ảnh lấp đầy màn hình, và cung ứng âm thanh nền cho trang.
 
 <table class="noborder">
   <tr>
@@ -69,9 +69,9 @@ Demonstrates how to arrange text, display a screen-filling image, and provide ba
   </tr>
 </table>
 
-## Page 4: Rabbits
+## Trang 4: Thỏ
 
-Demonstrates how to arrange text and display a screen-filling video for the page.
+Minh hoạ cách sắp xếp văn bản và hiển thị một video lấp đầy màn hình cho trang.
 
 <table class="noborder">
   <tr>
