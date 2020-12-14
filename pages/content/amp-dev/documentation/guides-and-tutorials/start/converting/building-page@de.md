@@ -6,8 +6,8 @@ description: Im Projektverzeichnis findest du die Datei article.html. Das ist de
 
 Im Projektverzeichnis findest du die Datei [`article.html`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/article.html). Das ist der Nachrichtenartikel, für den wir eine Entsprechung in AMP erstellen.
 
-1. **Copy** the entire code from the `article.html `file and paste it into a new file.
-2. **Save** the new file as `article.amp.html`.
+1. **Kopiere** den gesamten Code aus der Datei `article.html` und füge ihn in eine neue Datei ein.
+2. **Speichere** die neue Datei als `article.amp.html`.
 
 [tip type="note"] **HINWEIS:** Deine AMP Dateien müssen nicht unbedingt `.amp.html` im Namen enthalten. AMP Dateien können eine beliebige Erweiterung haben. Publisher unterscheiden ihre AMP Seiten üblicherweise von den kanonischen Versionen, indem sie in der URL bestimmte Parameter verwenden. Zum Beispiel:  `http://publisher.com/article.html?amp`. [/tip]
 
@@ -38,7 +38,7 @@ Deine Datei `article.amp.html` sollte wie folgt aussehen:
 </html>
 ```
 
-This is an intentionally simplistic page with common static news article elements: CSS, JavaScript, and an image tag.
+Diese Seite ist absichtlich vereinfacht und enthält allgemeine statische Elemente eines Nachrichtenartikels: CSS, JavaScript und ein Bildtag.
 
 Bisher ist die AMP Version des Artikels nur eine Kopie des Originalartikels. Wir wollen sie zu AMP konvertieren.
 
@@ -70,9 +70,9 @@ Zum Beispiel:
 http://localhost:8000/article.amp.html#development=1
 ```
 
-In the Developer Console, you should receive several validation errors (you may need to manually refresh the page in your browser to see these):
+In der Entwicklerkonsole sollten mehrere Validierungsfehler angezeigt werden (möglicherweise musst du die Seite in deinem Browser manuell aktualisieren, um die Fehler anzuzeigen):
 
-{{ image('/static/img/docs/tutorials/tut-convert-html-validation-errors.png', 905, 427, align='', caption='AMP validation errors for our sample') }}
+{{ image('/static/img/docs/tutorials/tut-convert-html-validation-errors.png', 905, 427, align='', caption='AMP Validierungsfehler für unser Beispiel') }}
 
 Um ein gültiges AMP Dokument zu erhalten, müssen wir alle diese Fehler beheben. Genau das werden wir in diesem Codelab tun.
 
@@ -80,6 +80,6 @@ Zuvor **simulieren** wir eine mobile Umgebung in den Entwicklertools des Browser
 
 In deinem Browser sollte jetzt eine simulierte mobile Auflösung wie die folgende erscheinen:
 
-{{ image('/static/img/docs/tutorials/tut-convert-html-nexus5.png', 436, 812, align='third center', caption='Mobile simulation of our AMP page') }}
+{{ image('/static/img/docs/tutorials/tut-convert-html-nexus5.png', 436, 812, align='third center', caption='Mobile Simulation unserer AMP Seite') }}
 
 Jetzt können wir loslegen! Gehen wir die Validierungsfehler einzeln durch und untersuchen wir ihren Bezug zu AMP.
