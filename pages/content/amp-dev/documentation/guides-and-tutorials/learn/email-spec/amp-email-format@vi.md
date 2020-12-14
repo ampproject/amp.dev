@@ -1,10 +1,10 @@
 ---
-"$title": AMP for Email Format
+"$title": Định dạng AMP cho Email
 order: '1'
 formats:
 - email
 teaser:
-  text: " Required markup"
+  text: 'Đánh dấu bắt buộc '
 toc: 'true'
 ---
 
@@ -31,13 +31,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-AMP is a technology known for developing super fast web pages on mobile clients. AMP is a set of HTML tags backed by JavaScript that easily enables functionality with an added focus on performance and security. There are [AMP components](https://amp.dev/documentation/components/) for everything from carousels, to responsive form elements, to retrieving fresh content from remote endpoints.
+AMP là một công nghệ nổi tiếng để phát triển các trang web siêu nhanh cho các máy khách di động. AMP là một nhóm các thẻ HTML được hỗ trợ bởi JavaScript có thể dễ dàng cho phép các chức năng với một trọng tâm lớn hơn đến hiệu năng và bảo mật. Có các [thành phần AMP](https://amp.dev/documentation/components/) cho mọi thứ từ băng chuyền, đến các yếu tố biểu mẫu tương thích để truy xuất nội dung mới từ các điểm cuối từ xa.
 
-The AMP for Email format provides [a subset of AMP components](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md) that you can use in email messages. Recipients of AMP emails can view and interact with the AMP components directly in the email.
+Định dạng AMP cho Email cung cấp một [nhóm con các thành phần AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md) mà bạn có thể sử dụng trong các tin nhắn email. Người nhận email AMP có thể xem và tương tác trực tiếp với các thành phần AMP trong email.
 
-## Required markup <a name="required-markup"></a>
+## Đánh dấu bắt buộc
 
-The following code represents the minimum amount of markup that makes up a valid AMP email message:
+Đoạn code sau đây đại diện cho số đánh dấu tối thiểu tạo thành một email AMP hợp lệ:
 
 [sourcecode:html]
 <!DOCTYPE html>
@@ -57,40 +57,40 @@ The following code represents the minimum amount of markup that makes up a valid
 </html>
 [/sourcecode]
 
-An AMP email message MUST
+Một email AMP PHẢI
 
-- <a name="dctp"></a>start with the doctype `<!doctype html>`. [🔗](#dctp)
-- <a name="ampd"></a>contain a top-level `<html ⚡4email>` tag (`<html amp4email>` is accepted as well). [🔗](#ampd)
-- <a name="crps"></a>contain `<head>` and `<body>` tags (They are optional in HTML). [🔗](#crps)
-- <a name="chrs"></a>contain a `<meta charset="utf-8">` tag as the first child of their head tag. [🔗](#chrs)
-- <a name="scrpt"></a>contain a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside their head tag. [🔗](#scrpt)
-- <a name="boilerplate"></a>contain amp4email boilerplate (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) inside their head tag to initially hide the content until AMP JS is loaded. [🔗](#boilerplate)
+- <a name="dctp"></a>bắt đầu với doctype `<!doctype html>`. [🔗](#dctp)
+- <a name="ampd"></a>chứa một thẻ `<html ⚡4email>` cấp cao nhất (`<html amp4email>` cũng được chấp nhận). [🔗](#ampd)
+- <a name="crps"></a>chứa các thẻ `<head>` và `<body>` (Chúng là không bắt buộc trong HTML). [🔗](#crps)
+- <a name="chrs"></a>chứa một thẻ `<meta charset="utf-8">` như con đầu tiên của thẻ head. [🔗](#chrs)
+- <a name="scrpt"></a>chứa một thẻ `<script async src="https://cdn.ampproject.org/v0.js"></script>` bên trong thẻ head. [🔗](#scrpt)
+- <a name="boilerplate"></a>chứa code soạn sẵn amp4email (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) trong thẻ head để ẩn nội dung ban đầu cho đến khi AMP JS được tải. [🔗](#boilerplate)
 
 Toàn bộ đánh dấu AMPHTML phải không vượt quá 200,000 byte.
 
-## Structure and rendering <a name="structure-and-rendering"></a>
+## Cấu trúc và render <a name="structure-and-rendering"></a>
 
-AMP for Email relies on the standard `multipart/alternative` [MIME](https://en.wikipedia.org/wiki/MIME) subtype, as defined in [RFC 1521, section 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
+AMP cho Email phụ thuộc vào loại con [MIME](https://en.wikipedia.org/wiki/MIME) `multipart/alternative` như được định nghĩa trong [RFC 1521, phần 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
-*For more information, see [Structure and rendering of AMP emails](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md).*
+*Để biết thêm thông tin, xem [Cấu trúc và render các email AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md).*
 
-## Supported AMP components <a name="supported-amp-components"></a>
+## Các thành phần AMP được hỗ trợ <a name="supported-amp-components"></a>
 
-*See [AMP for Email Supported Components](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md).*
+*Xem [Các Thành phần được Hỗ trợ của AMP cho Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md).*
 
-## HTML requirements <a name="html-requirements"></a>
+## Yêu cầu với HTML <a name="html-requirements"></a>
 
-*See [Supported HTML in AMP for Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md).*
+*Xem [HTML được Hỗ trợ trong AMP cho Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md).*
 
-## CSS requirements <a name="css-requirements"></a>
+## Yêu cầu với CSS <a name="css-requirements"></a>
 
-### Supported selectors and properties <a name="supported-selectors-and-properties"></a>
+### Các bộ chọn và thuộc tính được hỗ trợ <a name="supported-selectors-and-properties"></a>
 
-*See [Supported CSS in AMP for Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md).*
+*Xem [CSS được Hỗ trợ trong AMP cho Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md).*
 
-### Specifying CSS in an AMP document <a name="specifying-css-in-an-amp-document"></a>
+### Quy định CSS trong một tài liệu AMP <a name="specifying-css-in-an-amp-document"></a>
 
-All CSS in any AMP document must be included in a `<style amp-custom>` tag within the header or as inline `style` attributes.
+Mọi CSS trong một tài liệu AMP bất kỳ đều phải được bao gồm trong một thẻ `<style amp-custom>` trong phần header hoặc như các thuộc tính `style` (phong cách) inline.
 
 [sourcecode:html]
 ...
@@ -110,41 +110,41 @@ All CSS in any AMP document must be included in a `<style amp-custom>` tag withi
 </head>
 [/sourcecode]
 
-Note: The entire `<style>` tag cannot exceed 50,000 bytes. The validator will check for this.
+Lưu ý: Toàn bộ thẻ `<style>` (phong cách) không được vượt quá 50.000 byte. Bộ xác thực sẽ kiểm tra điều này.
 
-## Document dimensions <a name="document-dimensions"></a>
+## Kích thước tài liệu <a name="document-dimensions"></a>
 
-- **Optimal width**: 800px or less (any wider and content may be unexpectedly truncated on some clients).
+- **Chiều rộng tối ưu**: 800px hoặc nhỏ hơn (nếu rộng hơn thì nội dung có thể bị cắt bớt trên một số máy khách).
 
-- **Height**: variable, the client allows the user to scroll through the content.
+- **Chiều cao**: biến số, máy khách cho phép người dùng cuộn qua nội dung.
 
-## Validation <a name="validation"></a>
+## Xác thực <a name="validation"></a>
 
-To ensure your email messages meet the strict criteria for the AMP for Email format, you can use AMP's existing validation tools.
+Để đảm bảo email của bạn đáp ứng tiêu chí nghiêm ngặt của định dạng AMP cho Email, bạn có thể sử dụng các công cụ xác thực AMP hiện có.
 
-See [Validate AMP Email](https://amp.dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_emails/) for more information.
+Xem [Xác thực Email AMP](https://amp.dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_emails/) để biết thêm thông tin.
 
-## Privacy and Security <a name="privacy-and-security"></a>
+## Quyền Riêng tư và Bảo mật <a name="privacy-and-security"></a>
 
-### Tracking email opens and interaction <a name="tracking-email-opens-and-interaction"></a>
+### Theo dõi lượt mở email và tương tác <a name="tracking-email-opens-and-interaction"></a>
 
-AMPHTML allows tracking email opens with pixel tracking techniques, same as regular HTML emails. Any user-initiated requests for data from external services will also indicate the user is interacting with the message. Email clients may offer their users the ability to disable loading remote images, and other external requests.
+AMPHTML cho phép theo dõi các lượt mở email với kỹ thuật theo dõi điểm ảnh, cũng như trên các email HTML thông thường. Mọi yêu cầu dữ liệu của người dùng từ các dịch vụ bên ngoài cũng sẽ cho thấy người dùng đang tương tác với thư. Các trình khách email có thể cho người dùng khả năng tắt các ảnh từ xa, và các yêu cầu bên ngoài khác.
 
-### AMP-specific analytics <a name="amp-specific-analytics"></a>
+### Phân tích chuyên dụng cho AMP <a name="amp-specific-analytics"></a>
 
-The following AMP-specific analytic techniques are not supported:
+Các kỹ thuật phân tích chuyên dụng cho AMP sau đây không được hỗ trợ:
 
 - [AMP `CLIENT_ID`](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics#user-identification)
 - [`amp-analytics`](https://amp.dev/documentation/components/amp-analytics)
 - [`amp-pixel`](https://amp.dev/documentation/components/amp-pixel)
 - [AMP Variable Substitution](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics_basics/#variable-substitution)
 
-### Component-specific considerations <a name="component-specific-considerations"></a>
+### Các cân nhắc dành riêng cho thành phần <a name="component-specific-considerations"></a>
 
-Requests for images inside [`<amp-carousel>`](https://amp.dev/documentation/components/amp-carousel) or [`<amp-accordion>`](https://amp.dev/documentation/components/amp-accordion) can indicate to the sender that the user is interacting with the message.
+Yêu cầu cho các ảnh bên trong [`<amp-carousel>`](https://amp.dev/documentation/components/amp-carousel) hoặc [`<amp-accordion>`](https://amp.dev/documentation/components/amp-accordion) có thể thông báo cho người gửi rằng người dùng đang tương tác với email.
 
-Redirects in [`<amp-form>`](https://amp.dev/documentation/components/amp-form) are disallowed at runtime.
+Việc chuyển hướng trong [`<amp-form>`](https://amp.dev/documentation/components/amp-form) bị cấm tại thời gian chạy.
 
-## Feedback & Support <a name="feedback--support"></a>
+## Phản hồi & Hỗ trợ <a name="feedback--support"></a>
 
-For support and feedback on AMP for Email, please use the following channel: [ongoing-participation](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#ongoing-participation)
+Để được hỗ trợ và phản hồi trong AMP cho Email, hãy sử dụng kênh sau đây: [ongoing-participation](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#ongoing-participation)
