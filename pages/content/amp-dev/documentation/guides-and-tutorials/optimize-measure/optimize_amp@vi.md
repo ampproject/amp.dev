@@ -22,7 +22,7 @@ Các trang AMP mặc định đã có tốc độ tải nhanh rồi, nhưng có 
 
 Chẳng hạn như bằng cách áp dụng các kĩ thuật tối ưu hoá sau:
 
-- [Optimized AMP runtime loading](#optimize-the-amp-runtime-loading)
+- [Tối ưu hoá thời gian chạy AMP đã tải ](#optimize-the-amp-runtime-loading)
 - [Tải sẵn hình ảnh anh hùng](#preload-hero-images) (bản thân kích cỡ/mã hoá hình ảnh không thay đổi)
 - [Tối ưu hoá các phông chữ tùy chỉnh](#optimize-custom-fonts) (trong trường hợp này là các phông Google)
 
@@ -201,7 +201,7 @@ Với AMP, có vài thứ bạn có thể làm để tối ưu hoá việc tải
 [sourcecode:html]
 <link rel="preload" as="font" href="/bundles/app/fonts/helveticaneue-roman-webfont.woff2" >[/sourcecode]
 
-- If you are using Google fonts, or any other font provider with unknown font URLs, preconnect the respective font server: PLACEHOLDER_START10PLACEHOLDER_END
+- Nếu bạn đang sử dụng Google Fonts hoặc bất kỳ nhà cung cấp phông chữ nào khác có URL phông chữ không xác định, hãy kết nối sẵn với máy chủ phông chữ tương ứng: PLACEHOLDER_START10PLACEHOLDER_END
 
 Cuối cùng, nhưng không kém phần quan trọng là việc cố gắng giảm thiểu số phông chữ tùy chỉnh mà bạn dùng trên trang của mình. Nếu được, hãy dùng các phông chữ hệ thống thay vì phông chữ tùy chỉnh vì phông chữ hệ thống làm cho website khớp với hệ điều hành của người dùng, và nó giúp tránh việc tải thêm nhiều tài nguyên.
 
