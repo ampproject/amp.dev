@@ -9,13 +9,6 @@ teaser:
 toc: 'true'
 ---
 
-<!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md.
-Please do not change this file.
-If you have found a bug or an issue please
-have a look and request a pull request there.
--->
-
 ## Genel bakış <a name="overview"></a>
 
 Yayıncıların trafiğini ve ziyaretçilerini daha iyi anlamaları için bir hizmet olarak yazılım aracı kullanıyorsanız, hizmetinizi `amp-analytics` ile entegre etmek isteyebilirsiniz. Bunu yapmanız, müşterilerinizin AMP HTML sayfalarına ilişkin trafik modellerini görüntülemesini sağlayacaktır.
@@ -25,7 +18,6 @@ Yayıncıların trafiğini ve ziyaretçilerini daha iyi anlamaları için bir hi
 Analiz hizmetinizi AMP HTML çalışma zamanına eklemeden önce şunları yapmanız gerekebilir:
 
 - Analiz hizmetiniz için bir AMP HTML belgesinde ihtiyaç duyacağınız [değişken](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) ve [istek](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-analytics.md#requests) türlerini tanımlamak.
-- Toplu işlem davranışına sahip istekler kullanılıyorsa, nihai url'yi oluşturmak için işlem grubu oluşturma eklentisi fonksiyonunun gerekip gerekmediğini belirlemek.
 - Hizmetinizle ilgili olabilecek bir sayfadan analiz isteklerinin gönderilmesine neden olan tetikleyicileri belirlemek.
 - Birinci ve üçüncü taraf AMP bağlamları boyuna [kullanıcıları nasıl takip edeceğinizi veya takip edip etmeyeceğinizi](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md) hesaba katmak.
 - Analiz panelinizin AMP trafiğini nasıl işlediğini belirlemek.
@@ -48,11 +40,10 @@ Analiz hizmetinizi AMP HTML çalışma zamanına eklemeden önce şunları yapma
     3. [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html). referansında bir örnek.
     4. [extensions/amp-analytics/0.1/test/vendor-requests.json ](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../extensions/amp-analytics/0.1/test/vendor-requests.json) dosyasında bir test.
     5. Analiz hizmetinizi, [extensions/amp-analytics/0.1/analytics-vendors-list.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./analytics-vendors-list.md) dosyasındaki desteklenen sağlayıcılar listesine ekleyin. Kullanım belgelerinizin türünü, açıklamasını ve bağlantısını ekleyin.
-3. Gerekirse yeni bir toplu eklenti varsa. Talimatlar için lütfen [Toplu Eklenti Ekleme](#add-batch-plugin) bölümüne bakın.
-4. Örnekteki isabetlerin beklendiği gibi çalıştığından emin olmak için [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html) içine koyduğunuz yeni örneği test edin. Örneğin, ihtiyaç duyulan veriler toplanıyor ve analiz panelinizde görüntüleniyor.
-5. Bu yama ile Uygulama Amacı konusuna atıfta bulunarak bir Çekme İsteği gönderin.
-6. Hizmetinizin kullanım belgelerini güncelleyin ve müşterilerinizi bilgilendirin.
-7. [AMP bilgi havuzu dışında bir entegrasyon testi](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../3p/README.md#adding-proper-integration-tests) barındırmanız şiddetle tavsiye edilir.
+3. Örnekteki isabetlerin beklendiği gibi çalıştığından emin olmak için [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html) içine koyduğunuz yeni örneği test edin. Örneğin, ihtiyaç duyulan veriler toplanıyor ve analiz panelinizde görüntüleniyor.
+4. Bu yama ile Uygulama Amacı konusuna atıfta bulunarak bir Çekme İsteği gönderin.
+5. Hizmetinizin kullanım belgelerini güncelleyin ve müşterilerinizi bilgilendirin.
+6. [AMP bilgi havuzu dışında bir entegrasyon testi](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../3p/README.md#adding-proper-integration-tests) barındırmanız şiddetle tavsiye edilir.
 
 ## Etiket Yöneticileri<a name="tag-managers"></a>
 
