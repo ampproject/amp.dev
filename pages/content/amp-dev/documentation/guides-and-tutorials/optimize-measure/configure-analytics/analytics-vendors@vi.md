@@ -38,21 +38,21 @@ Những nhà cung cấp nào muốn tích hợp dịch vụ của họ với [`<
 
 ### Acquia Lift <a name="acquia-lift"></a>
 
-Type attribute value: `acquialift`
+Giá trị thuộc tính type: `acquialift`
 
-Adds support for Acquia Lift. The `decisionApiUrl`, `accountId` and `siteId` must be specified. More information about Acquia Lift can be found at [https://docs.acquia.com/lift](https://docs.acquia.com/lift).
+Bổ sung hỗ trợ cho Acquia Lift. `decisionApiUrl`, `accountId` và `siteId` cần phải được chỉ định. Thông tin thêm về Acquia Lift có thể được tìm thấy tại [https://docs.acquia.com/lift](https://docs.acquia.com/lift).
 
 ### Adobe Analytics <a name="adobe-analytics"></a>
 
 Giá trị thuộc tính type: `adobeanalytics`
 
-Adds support for Adobe Analytics. More details for adding Adobe Analytics support can be found at [marketing.adobe.com](https://marketing.adobe.com/resources/help/en_US/sc/implement/accelerated-mobile-pages.html).
+Bổ sung hỗ trợ cho Adobe Analytics. Chi tiết khác cho việc thêm sự hỗ trợ của Adobe Analytics có thể được tìm thấy tại [marketing.adobe.com](https://marketing.adobe.com/resources/help/en_US/sc/implement/accelerated-mobile-pages.html).
 
 ### AFS Analytics <a name="afs-analytics"></a>
 
 Giá trị thuộc tính type: `afsanalytics`
 
-Adds support for AFS Analytics. Additionally, the `websiteid` and `server` variables must be specified. More details for adding AFS Analytics support can be found at [afsanalytics.com](https://www.afsanalytics.com/articles/developers/).
+Bổ sung hỗ trợ cho AFS Analytics. Ngoài ra, biến số `websiteid` và `server` cần phải được chỉ định. Chi tiết khác cho việc thêm sự hỗ trợ của AFS Analytics có thể được tìm thấy tại [afsanalytics.com](https://www.afsanalytics.com/articles/developers/).
 
 ### Alexa Internet <a name="alexa-internet"></a>
 
@@ -60,7 +60,7 @@ Giá trị thuộc tính type: `alexametrics`
 
 <!-- markdown-link-check-disable -->
 
-Adds support for Alexa Certified Site Metrics. The `atrk_acct` and `domain` variables must be specified. More information can be found at [Alexa’s Certified Metrics FAQ](https://support.alexa.com/hc/en-us/sections/200063374-Certified-Site-Metrics).
+Bổ sung hỗ trợ cho số liệu thống kê website do Alexa chứng nhận. Biến số `atrk_acct` và `domain` cần phải được chỉ định. Có thể xem thêm thông tin tại [Hỏi đáp về số liệu thống kê được chứng nhận của Alexa](https://support.alexa.com/hc/en-us/sections/200063374-Certified-Site-Metrics).
 
 <!-- markdown-link-check-enable -->
 
@@ -72,13 +72,13 @@ Giá trị thuộc tính type: `amplitude`
 
 Giá trị thuộc tính type: `atinternet`
 
-Adds support for AT Internet. More details for adding AT Internet support can be found at [developers.atinternet-solutions.com](http://developers.atinternet-solutions.com/javascript-en/advanced-features-javascript-en/accelerated-mobile-pages-amp-javascript-en/).
+Bổ sung hỗ trợ cho AT Internet. Chi tiết khác cho việc thêm sự hỗ trợ của AT Internet có thể được tìm thấy tại [developers.atinternet-solutions.com](http://developers.atinternet-solutions.com/javascript-en/advanced-features-javascript-en/accelerated-mobile-pages-amp-javascript-en/).
 
 ### Baidu Analytics <a name="baidu-analytics"></a>
 
 Giá trị thuộc tính type: `baiduanalytics`
 
-Adds support for Baidu Analytics. More details for adding Baidu Analytics support can be found at [tongji.baidu.com/](http://tongji.baidu.com/web/help/article?id=268&type=0).
+Bổ sung hỗ trợ cho Baidu Analytics. Chi tiết khác cho việc thêm sự hỗ trợ của Baidu Analytics support có thể được tìm thấy tại [tongji.baidu.com/](http://tongji.baidu.com/web/help/article?id=268&type=0).
 
 ### BlueConic <a name="blueconic"></a>
 
@@ -92,7 +92,7 @@ Giá trị thuộc tính type: `browsi`
 
 Giá trị thuộc tính type: `burt`
 
-Adds support for Burt. Additionally, the `trackingKey` variable must be specified. It's also possible to specify the optional variables `category` and `subCategory`. More details can be found at [burtcorp.com](http://burtcorp.com).
+Bổ sung hỗ trợ cho Burt. Ngoài ra, biến số `trackingKey` cần phải được chỉ định. Ta cũng có thể chỉ định những biến số tuỳ chọn là `category` và `subCategory`. Có thể xem thêm chi tiết tại [burtcorp.com](http://burtcorp.com).
 
 ### BySide <a name="byside"></a>
 
@@ -106,25 +106,25 @@ Giá trị thuộc tính type: `captainmetrics`
 
 Giá trị thuộc tính type: `chartbeat`
 
-Adds support for Chartbeat. More details for adding Chartbeat support can be found at [support.chartbeat.com](http://support.chartbeat.com/docs/integrations.html#amp).
+Bổ sung hỗ trợ cho Chartbeat. Chi tiết khác về việc thêm sự hỗ trợ của Chartbeat có thể được tìm thấy tại [support.chartbeat.com](http://support.chartbeat.com/docs/integrations.html#amp).
 
 ### Clicky Web Analytics <a name="clicky-web-analytics"></a>
 
 Giá trị thuộc tính type: `clicky`
 
-Adds support for Clicky Web Analytics. More details for adding Clicky support can be found at [clicky.com](https://clicky.com/help/apps-plugins).
+Bổ sung hỗ trợ cho Clicky Web Analytics. Chi tiết khác cho việc thêm sự hỗ trợ của Clicky có thể được tìm thấy tại [clicky.com](https://clicky.com/help/apps-plugins).
 
 ### comScore <a name="comscore"></a>
 
 Giá trị thuộc tính type: `comscore`
 
-Adds support for comScore Unified Digital Measurement™ pageview analytics. Requires defining *var* `c2` with comScore-provided *c2 id*. More information can be found at [comscore.com](http://www.comscore.com).
+Bổ sung hỗ trợ cho công cụ phân tích lượt xem trang, do comScore Unified Digital Measurement™ thực hiện. Yêu cầu định nghĩa *var* `c2` với *id c2* do comScore cung cấp. Có thể xem thêm thông tin tại [comscore.com](http://www.comscore.com).
 
 ### Cxense <a name="cxense"></a>
 
 Giá trị thuộc tính type: `cxense`
 
-Adds support for Cxense Insight analytics. Requires defining *var* `siteId` with Cxense-provided *siteId*. More details can be found at [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration).
+Bổ sung hỗ trợ cho công cụ phân tích của Cxense Insight. Yêu cầu định nghĩa *var* `siteId` *siteId* do Cxense cung cấp. Có thể xem thêm chi tiết tại [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration).
 
 ### Deep.BI <a name="deepbi"></a>
 
@@ -134,53 +134,53 @@ Giá trị thuộc tính type: `deepbi`
 
 Giá trị thuộc tính type: `dynatrace`
 
-Adds support for Dynatrace real user monitoring. Requires defining *var* `app` with a Dynatrace provided *application id* and *var* `tenant` with a Dynatrace provided *environment identifier*. More details for adding Dynatrace real user monitoring can be found at [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/).
+Bổ sung hỗ trợ cho việc theo dõi người dùng thực, do Dynatrace thực hiện. Yêu cầu định nghĩa *var* `app` với *id ứng dụng* do Dynatrace cung cấp và *var* `tenant` với *bộ định danh môi trường* do Dynatrace cung cấp. Chi tiết khác về việc thêm tác vụ theo dõi người dùng thực do Dynatrace thực hiện, có thể được tìm thấy tại [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/).
 
 ### EPICA <a name="epica"></a>
 
 Giá trị thuộc tính type: `epica`
 
-Adds support for EPICA page views and events. More details can be found at [EPICA docs](https://www.epica.ai).
+Bổ sung hỗ trợ cho lượt xem trang và sự kiện của EPICA. Có thể xem thêm chi tiết tại [Tài liệu cho EPICA](https://www.epica.ai).
 
 ### Eulerian Analytics <a name="eulerian-analytics"></a>
 
 Giá trị thuộc tính type: `euleriananalytics`
 
-Adds support for Eulerian Technologies Analytics. Requires defining *var* `analyticsHost` with Eulerian delegated domain. More details can be found at [eulerian.wiki](https://eulerian.wiki).
+Bổ sung hỗ trợ cho Eulerian Technologies Analytics. Yêu cầu định nghĩa *var* `analyticsHost` với tên miền được uỷ thác của Eulerian. Có thể xem thêm chi tiết tại [eulerian.wiki](https://eulerian.wiki).
 
 ### Facebook Pixel <a name="facebook-pixel"></a>
 
 Giá trị thuộc tính type: `facebookpixel`
 
-Adds support for the [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel). In your [`amp-analytics`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./amp-analytics.md) configuration, you must define your Pixel ID as `pixelId: YOUR-PIXEL-ID`. The events supported along with the corresponding event values that can be specified are detailed in the [Facebook Pixel developer documentation](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
+Bổ sung hỗ trợ cho [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel). Trong cấu hình [`amp-analytics`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./amp-analytics.md), bạn phải định nghĩa Pixel ID là `pixelId: YOUR-PIXEL-ID`. Về những sự kiện được hỗ trợ cùng với những giá trị sự kiện tương ứng vốn có thể được chỉ định, có thể xem chi tiết ở [tài liệu nhà phát triển của Facebook Pixel](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
 
 ### Gemius <a name="gemius"></a>
 
 Giá trị thuộc tính type: `gemius`
 
-Adds support for Gemius Audience/Prism analytics. Additionally, the gemius-provided `prefix` and `identifier` variables must be specified. It's also possible to specify the optional variable `extraparams` (key1=value1|key2=value2). More details can be found at [gemius.com](https://www.gemius.com).
+Bổ sung hỗ trợ cho công cụ phân tích của Gemius Audience/Prism. Ngoài ra, các biến số `prefix` và `identifier` do Gemius cung cấp cần phải được chỉ định. Ta cũng có thể chỉ định biến số tuỳ chọn `extraparams` (key1=value1|key2=value2). Có thể xem thêm chi tiết tại [gemius.com](https://www.gemius.com).
 
 ### GfK Sensic <a name="gfk-sensic"></a>
 
 Giá trị thuộc tính type: `gfksensic`
 
-Adds support for GfK Sensic audio stream usage analytics. Please refer to our [client documentation](https://confluence-docu.gfk.com/display/SENSIC/AMP+Integration) for details.
+Bổ sung hỗ trợ cho tác vụ phân tích việc sử dụng truyền phát âm thanh của GfK Sensic. Vui lòng tham khảo [tài liệu máy khách](https://confluence-docu.gfk.com/display/SENSIC/AMP+Integration) để biết chi tiết.
 
 ### Google Ads <a name="google-ads"></a>
 
 Giá trị thuộc tính type: `googleadwords`
 
-Adds support for Google Ads conversion tracking and remarketing. See more details in the Google Ads help center for [conversion tracking](https://support.google.com/adwords/answer/1722054?hl=en) and [remarketing](https://support.google.com/adwords/answer/2453998?hl=en). Both tags can be used independent of each other.
+Bổ sung hỗ trợ cho tác vụ theo dõi chuyển đổi và tiếp thị lại của Google Ads. Xem thêm chi tiết trong phần trung tâm trợ giúp của Google Ads đối với [theo dõi chuyển đổi](https://support.google.com/adwords/answer/1722054?hl=en) và [tiếp thị lại](https://support.google.com/adwords/answer/2453998?hl=en). Cả hai thẻ đều có thể được dùng độc lập với nhau.
 
 ### Google Analytics <a name="google-analytics"></a>
 
 Giá trị thuộc tính type: `googleanalytics`
 
-Adds support for Google Analytics. More details for adding Google Analytics support can be found at [developers.google.com](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
+Bổ sung hỗ trợ cho Google Analytics. Chi tiết khác cho việc thêm sự hỗ trợ của Google Analytics có thể được tìm thấy tại [developers.google.com](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
 ### Google Tag Manager <a name="google-tag-manager"></a>
 
-Type attribute value: N/A
+Giá trị thuộc tính type: không có
 
 Khác với những nhà cung cấp khách đối với công cụ phân tích, Google Tag Manager là dịch vụ quản lí thẻ, và không cần có thuộc tính `type`. Google Tag Manager được [hỗ trợ](https://developers.google.com/google-ads/amp/landing-pages#google_tag_manager) trong AMP. Hãy tham khảo tài liệu Google Tag Manager để biết [những thẻ được hỗ trợ](https://support.google.com/tagmanager/answer/6106924) và biết các chỉ dẫn cho việc [thêm Google Tag Manager vào trang AMP của bạn](https://support.google.com/tagmanager/answer/6103696).
 
@@ -188,13 +188,13 @@ Khác với những nhà cung cấp khách đối với công cụ phân tích, 
 
 Giá trị thuộc tính type: `ibeatanalytics`
 
-Adds support for Ibeat Analytics. More details for adding Ibeat support can be found at [Ibeat Integration Support](https://ibeat.indiatimes.com/support.html#h.a5rit14mwie1).
+Bổ sung hỗ trợ cho Ibeat Analytics. Chi tiết khác cho việc thêm sự hỗ trợ của Ibeat có thể được tìm thấy tại [Hỗ trợ tích hợp Ibeat](https://ibeat.indiatimes.com/support.html#h.a5rit14mwie1).
 
 ### INFOnline / IVW <a name="infonline--ivw"></a>
 
 Giá trị thuộc tính type: `infonline`
 
-Adds support for [INFOnline](https://www.infonline.de) / [IVW](http://www.ivw.de). Requires a copy of [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html) on a different subdomain than the including AMP file ([why?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). The file must be served via HTTPS. For example, if your AMP files are hosted on `www.example.com`, then `amp-analytics-infonline.html` needs to be on another subdomain such as `iframe.example.com` or `assets.example.com`.
+Bổ sung hỗ trợ cho [INFOnline](https://www.infonline.de) / [IVW](http://www.ivw.de). Cần có một bản sao của [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html) trên một tên miền con khác tên miền bao gồm tập tin AMP ([tại sao?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). Tập tin này phải được phân phát qua HTTPS. Ví dụ nếu những tập tin AMP của bạn được lưu trữ trên <code>www.example.com</code>, thì `amp-analytics-infonline.html` cần ở trên một tên miền con khác chẳng hạn như `iframe.example.com` hoặc `assets.example.com`.
 
 Ngoài ra, những biến số sau cần phải được định nghĩa:
 
@@ -209,7 +209,7 @@ Chi tiết khác về việc thêm sự hỗ trợ của INFOnline / IVW có th�
 
 Giá trị thuộc tính type: `infonline-anonymous`
 
-Adds support for the [anonymous INFOnline](https://www.infonline.de). Requires a copy of [infonline-anonymous.html](https://www.infonline.de/amp/infonline-anonymous.html) on a different subdomain than the including AMP file ([why?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). The file must be served via HTTPS. For example, if your AMP files are hosted on `www.example.com`, then `infonline-anonymous.html` needs to be on another subdomain such as `iframe.example.com` or `assets.example.com`.
+Bổ sung hỗ trợ cho [anonymous INFOnline](https://www.infonline.de). Cần có một bản sao của [infonline-anonymous.html](https://www.infonline.de/amp/infonline-anonymous.html) trên một tên miền con khác tên miền bao gồm tập tin AMP ([tại sao?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). Tập tin này phải được phân phát qua HTTPS. Ví dụ nếu những tập tin AMP của bạn được lưu trữ trên `www.example.com`, thì `infonline-anonymous.html` cần phải ở trên tên miền con khác chẳng hạn như `iframe.example.com` hay `assets.example.com`.
 
 Ngoài ra, những biến số sau cần phải được định nghĩa:
 
@@ -229,7 +229,7 @@ Giá trị thuộc tính type: `iplabel`
 
 Giá trị thuộc tính type: `keen`
 
-Adds support for Keen. Additionally, the following `vars` must be defined:
+Bổ sung hỗ trợ cho Keen. Ngoài ra, các `vars` sau cần phải được định nghĩa:
 
 - `projectId`: id dự án
 - `writeKey`: khoá ghi dữ liệu
@@ -240,7 +240,7 @@ Dùng `extraUrlParams` để đưa vào thêm dữ liệu. Chi tiết cấu hìn
 
 Giá trị thuộc tính type: `kenshoo`
 
-Adds support for Kenshoo. More information and configuration details can be found at [helpcenter.kenshoo.com](https://helpcenter.kenshoo.com/hc/en-us/articles/360025260592).
+Bổ sung hỗ trợ cho Kenshoo. Thông tin thêm và chi tiết cấu hình có thể được tìm thấy tại [helpcenter.kenshoo.com](https://helpcenter.kenshoo.com/hc/en-us/articles/360025260592).
 
 ### Krux <a name="krux"></a>
 
@@ -248,7 +248,7 @@ Giá trị thuộc tính type: `krux`
 
 <!-- markdown-link-check-disable -->
 
-Adds support for Krux. Configuration details can be found at [help.krux.com](https://konsole.zendesk.com/hc/en-us/articles/216596608).
+Bổ sung hỗ trợ cho Krux. Chi tiết cấu hình có thể được tìm thấy tại [help.krux.com](https://konsole.zendesk.com/hc/en-us/articles/216596608).
 
 <!-- markdown-link-check-enable -->
 
@@ -256,7 +256,7 @@ Adds support for Krux. Configuration details can be found at [help.krux.com](htt
 
 Giá trị thuộc tính type: `linkpulse`
 
-Adds support for Linkpulse. Configuration details can be found at [docs.linkpulse.com](http://docs.linkpulse.com).
+Bổ sung hỗ trợ cho Linkpulse. Chi tiết cấu hình có thể được tìm thấy tại [docs.linkpulse.com](http://docs.linkpulse.com).
 
 ### Lotame <a name="lotame"></a>
 
@@ -268,7 +268,7 @@ Adds support for Lotame. More information and configuration details can be found
 
 Giá trị thuộc tính type: `mapp_intelligence`
 
-Adds support for Mapp Intelligence tracking. More information and configuration details can be found at [docs.mapp.com](https://docs.mapp.com/pages/viewpage.action?pageId=10027966).
+Bổ sung hỗ trợ của tác vụ theo dõi của Mapp Intelligence. Thông tin thêm và chi tiết cấu hình có thể được tìm thấy tại [docs.mapp.com](https://docs.mapp.com/pages/viewpage.action?pageId=10027966).
 
 ### Marin Software <a name="marin-software"></a>
 
@@ -278,13 +278,13 @@ Giá trị thuộc tính type: `marinsoftware`
 
 Giá trị thuộc tính type: `mediametrie`
 
-Adds support for Médiamétrie tracking pages. Requires defining *var* `serial`. Vars `level1` to `level4` are optional. More information can be found at [mediametrie.com](http://www.mediametrie.com/).
+Bổ sung hỗ trợ cho những trang theo dõi của Médiamétrie. Cần phải định nghĩa *var* `serial`. Các biến số `level1` đến `level4` thuộc hàng tuỳ chọn. Thông tin thêm có thể được tìm thấy tại [mediametrie.com](http://www.mediametrie.com/).
 
 ### mediarithmics <a name="mediarithmics"></a>
 
 Giá trị thuộc tính type: `mediarithmics`
 
-Adds support for mediarithmics. More information and configuration details can be found at `https://developer.mediarithmics.com`.
+Bổ sung hỗ trợ cho mediarithmics. Thông tin thêm và chi tiết cấu hình có thể được tìm thấy tại `https://developer.mediarithmics.com`.
 
 ### Memo <a name="memo"></a>
 
@@ -298,13 +298,13 @@ Giá trị thuộc tính type: `metrika`
 
 Giá trị thuộc tính type: `moat`
 
-Adds support for Moat. Please contact your Moat representative for configuration details. More information on Moat can be found at [moat.com/analytics](https://moat.com/analytics).
+Bổ sung hỗ trợ cho Moat. Vui lòng liên lạc với đại diện của Moat để biết chi tiết cấu hình. Thông tin thêm về Moat có thể được tìm thấy tại [moat.com/analytics](https://moat.com/analytics).
 
 ### Mobify <a name="mobify"></a>
 
 Giá trị thuộc tính type: `mobify`
 
-Adds support for Mobify. More details for adding Mobify support can be found at [docs.mobify.com](https://docs.mobify.com/amp-sdk/latest/guides/amp-analytics/).
+Bổ sung hỗ trợ cho Mobify. Chi tiết khác cho việc thêm sự hỗ trợ của Mobify có thể được tìm thấy tại [docs.mobify.com](https://docs.mobify.com/amp-sdk/latest/guides/amp-analytics/).
 
 ### MoEngage <a name="moengage"></a>
 
@@ -314,7 +314,7 @@ Giá trị thuộc tính type: `moengage`
 
 Giá trị thuộc tính type: `mparticle`
 
-Adds support for mParticle. More details for adding mParticle support can be found at [docs.mparticle.com](http://docs.mparticle.com/?javascript#amp).
+Bổ sung hỗ trợ cho mParticle. Chi tiết khác cho việc thêm sự hỗ trợ của mParticle có thể được tìm thấy tại [docs.mparticle.com](http://docs.mparticle.com/?javascript#amp).
 
 ### Navegg <a name="navegg"></a>
 
@@ -324,25 +324,25 @@ Giá trị thuộc tính type: `navegg`
 
 Giá trị thuộc tính type: `newrelic`
 
-Adds support for New Relic Browser to measure AMP throughput and performance. By adding the `newrelic` attribute value you’ll need to add your `app ID` and `license key` from your New Relic Browser account to start capturing data. More details can be found on the New Relic Browser AMP docs page at [docs.newrelic.com](https://docs.newrelic.com/docs/browser/new-relic-browser/installation/monitor-amp-pages-new-relic-browser).
+Bổ sung hỗ trợ cho New Relic Browser để đo thông lượng và hiệu năng AMP. Bằng cách thêm giá trị thuộc tính `newrelic` bạn sẽ cần thêm `app ID` và `license key` của bạn từ tài khoản New Relic Browser để bắt đầu thu lấy dữ liệu. Chi tiết khác có thể được tìm thấy trên trang tài liệu AMP của New Relic Browser tại [docs.newrelic.com](https://docs.newrelic.com/docs/browser/new-relic-browser/installation/monitor-amp-pages-new-relic-browser).
 
 ### Nielsen <a name="nielsen"></a>
 
 Giá trị thuộc tính type: `nielsen`
 
-Adds support for Nielsen DCR. Please contact your Nielsen representative to get set up with your `apid` as well as assist in defining the remaining parameters in the `vars` section. For more information, see [Nielsen's support documentation](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API).
+Bổ sung hỗ trợ cho Nielsen DCR. Vui lòng liên lạc với đại diện Nielsen để được thiết lập với `apid` cũng như có được sự trợ giúp trong việc định nghĩa những tham số còn lại trong phần `vars`. Để biết thêm thông tin, hãy xem [tài liệu hỗ trợ của Nielsen](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API).
 
 ### Nielsen Marketing Cloud <a name="nielsen-marketing-cloud"></a>
 
 Giá trị thuộc tính type: `nielsen-marketing-cloud`
 
-Adds support for Nielsen Marketing Cloud. More details can be found at [Nielsen Marketing Cloud](http://www.nielsen.com/us/en/solutions/capabilities/nielsen-marketing-cloud.html).
+Bổ sung hỗ trợ cho Nielsen Marketing Cloud. Chi tiết khác có thể được tìm thấy tại [Nielsen Marketing Cloud](http://www.nielsen.com/us/en/solutions/capabilities/nielsen-marketing-cloud.html).
 
 ### OEWA <a name="oewa"></a>
 
 Giá trị thuộc tính type: `oewa`
 
-Adds support for `[OEWA](https://www.oewa.at)`. Requires a copy of [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) on a different subdomain than the including AMP file ([why?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). The file must be served via HTTPS. For example, if your AMP files are hosted on `www.example.com`, then `amp-analytics-oewa.html` needs to be on another subdomain such as `oewa-amp.example.com`. More details for adding OEWA support can be found [here](http://www.oewa.at/Implementierung).
+Bổ sung hỗ trợ cho `[OEWA](https://www.oewa.at)`. Cần một bản sao của [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) trên một tên miền con khác tên miền bao gồm tập tin AMP ([tại sao?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). Tập tin này phải được phân phát qua HTTPS. Ví dụ nếu những tập tin AMP của bạn được lưu trữ trên `www.example.com`, thì `amp-analytics-oewa.html` cần phải ở trên tên miền con khác chẳng hạn như `oewa-amp.example.com`. Chi tiết khác cho việc thêm sự hỗ trợ của OEWA có thể được tìm thấy [ở đây](http://www.oewa.at/Implementierung).
 
 Ngoài ra, những biến số sau phải được định nghĩa:
 
@@ -365,13 +365,13 @@ Giá trị thuộc tính type: `oracleInfinityAnalytics`
 
 Giá trị thuộc tính type: `parsely`
 
-Adds support for Parsely. Configuration details can be found at [parsely.com/docs](http://parsely.com/docs/integration/tracking/google-amp.html).
+Bổ sung hỗ trợ cho Parsely. Chi tiết cấu hình có thể được tìm thấy tại [parsely.com/docs](http://parsely.com/docs/integration/tracking/google-amp.html).
 
 ### Permutive <a name="permutive"></a>
 
 Giá trị thuộc tính type: `permutive`
 
-Adds support for Permutive event collection. Additionally, the following `vars` must be defined:
+Bổ sung hỗ trợ cho tập hợp sự kiện của Permutive. Ngoài ra, `vars` sau phải được định nghĩa:
 
 - `namespace`: không gian tên AMP Permutive
 - `key`: khoá API công khai của Permutive
@@ -392,13 +392,13 @@ Adds support for Piano. Configuration details can be found at `http://vx.piano.i
 
 Giá trị thuộc tính type: `pinpoll`
 
-Adds support for Pinpoll. Configuration details can be found at [pinpoll.com](https://pinpoll.com/).
+Bổ sung hỗ trợ cho Pinpoll. Chi tiết cấu hình có thể được tìm thấy tại [pinpoll.com](https://pinpoll.com/).
 
 ### Pressboard <a name="pressboard"></a>
 
 Giá trị thuộc tính type: `pressboard`
 
-Adds support for Pressboard. Configuration details can be found at [help.pressboard.ca](http://help.pressboard.ca/publisher-resources/getting-started/implementing-google-amp).
+Bổ sung hỗ trợ cho Pressboard. Chi tiết cấu hình có thể được tìm thấy tại [help.pressboard.ca](http://help.pressboard.ca/publisher-resources/getting-started/implementing-google-amp).
 
 ### Quantcast Measurement <a name="quantcast-measurement"></a>
 
@@ -406,7 +406,7 @@ Giá trị thuộc tính type: `quantcast`
 
 <!-- markdown-link-check-disable -->
 
-Adds support for Quantcast Measurement. More details for adding Quantcast Measurement can be found at [quantcast.com](https://www.quantcast.com/help/guides/)
+Bổ sung hỗ trợ cho Quantcast Measurement. Chi tiết khác để thêm Quantcast Measurement có thể được tìm thấy tại [quantcast.com](https://www.quantcast.com/help/guides/)
 
 <!-- markdown-link-check-enable -->
 
@@ -432,7 +432,7 @@ Adds support for RudderStack page views and events. Find out more on the impleme
 
 Giá trị thuộc tính type: `segment`
 
-Adds support for segment page views and events. To see the full list of fields that you can send, see [Segment Spec](https://segment.com/docs/spec/).
+Bổ sung hỗ trợ cho lượt xem và sự kiện của Segment. Để xem danh sách đầy đủ của các trường mà bạn có thể gửi, xem [Segment Spec](https://segment.com/docs/spec/).
 
 ### ShinyStat <a name="shinystat"></a>
 
@@ -442,19 +442,19 @@ Giá trị thuộc tính type: `shinystat`
 
 Giá trị thuộc tính type: `mpulse`
 
-Adds support for [SOASTA mPulse](https://www.soasta.com/mPulse). Configuration details can be found at [docs.soasta.com](http://docs.soasta.com/).
+Bổ sung hỗ trợ cho [SOASTA mPulse](https://www.soasta.com/mPulse). Chi tiết cấu hình có thể được tìm thấy tại [docs.soasta.com](http://docs.soasta.com/).
 
 ### SimpleReach <a name="simplereach"></a>
 
 Giá trị thuộc tính type: `simplereach`
 
-Adds support for SimpleReach. Configuration details can be found at `http://docs.simplereach.com/dev-guide/implementation/google-amp-implementation`.
+Bổ sung hỗ trợ cho SimpleReach. Chi tiết cấu hình có thể được tìm thấy tại `http://docs.simplereach.com/dev-guide/implementation/google-amp-implementation`.
 
 ### Snowplow Analytics <a name="snowplow-analytics"></a>
 
 Giá trị thuộc tính type: `snowplow`, `snowplow_v2`
 
-Adds support for Snowplow Analytics. More details for adding Snowplow Analytics support can be found at [github.com/snowplow/snowplow/wiki](https://github.com/snowplow/snowplow/wiki/Google-AMP-Tracker).
+Bổ sung hỗ trợ cho Snowplow Analytics. Chi tiết khác về việc bổ sung hỗ trợ cho Snowplow Analytics có thể được tìm thấy tại [github.com/snowplow/snowplow/wiki](https://github.com/snowplow/snowplow/wiki/Google-AMP-Tracker).
 
 ### Tail <a name="tail"></a>
 
@@ -466,25 +466,25 @@ Adds support for Tail. More details for adding Tail support can be found at [tai
 
 Giá trị thuộc tính type: `top100`
 
-Adds support for Rambler/TOP-100. Configuration details can be found at [top100.rambler.ru](https://top100.rambler.ru).
+Bổ sung hỗ trợ cho Rambler/TOP-100. Chi tiết cấu hình có thể được tìm thấy tại [top100.rambler.ru](https://top100.rambler.ru).
 
 ### TEA Analytics <a name="tea-analytics"></a>
 
 Giá trị thuộc tính type: `teaanalytics`
 
-Adds support for TEA Analytics. More details for adding TEA Analytics support can contact with Kimberly (wuqian56@gmail.com).
+Bổ sung hỗ trợ cho TEA Analytics. Chi tiết khác về việc bổ sung hỗ trợ cho TEA Analytics, có thể liên hệ với Kimberly (wuqian56@gmail.com).
 
 ### Tealium Collect <a name="tealium-collect"></a>
 
 Giá trị thuộc tính type: `tealiumcollect`
 
-Adds support for Tealium Collect. More details for adding Tealium Collect support can be found at [docs.tealium.com](https://docs.tealium.com/platforms/amp/install/).
+Bổ sung hỗ trợ cho Tealium Collect. Chi tiết khác về việc bổ sung hỗ trợ cho Tealium Collect có thể được tìm thấy tại [docs.tealium.com](https://docs.tealium.com/platforms/amp/install/).
 
 ### Top.Mail.Ru <a name="topmailru"></a>
 
 Giá trị thuộc tính type: `topmailru`
 
-Adds support for Top.Mail.Ru. Configuration details can be found at [Top.Mail.Ru Help](https://help.mail.ru/top/amp-analytics).
+Bổ sung hỗ trợ cho Top.Mail.Ru. Chi tiết cấu hình có thể được tìm thấy tại [Top.Mail.Ru Help](https://help.mail.ru/top/amp-analytics).
 
 ### Treasure Data <a name="treasure-data"></a>
 
@@ -496,7 +496,7 @@ Adds support for Treasure Data. Configuration details can be found at `https://d
 
 Giá trị thuộc tính type: `umenganalytics`
 
-Adds support for Umeng+ Analytics. More details for adding Umeng+ Analytics support can be found at [dev.umeng.com](http://dev.umeng.com/udplus/js-sdkdoc#5).
+Bổ sung hỗ trợ cho Umeng+ Analytics. Chi tiết khác về việc bổ sung hỗ trợ cho Umeng+ Analytics có thể được tìm thấy tại [dev.umeng.com](http://dev.umeng.com/udplus/js-sdkdoc#5).
 
 ### Upscore <a name="upscore"></a>
 
@@ -506,7 +506,7 @@ Giá trị thuộc tính type: `upscore`
 
 Giá trị thuộc tính type: `vponanalytics`
 
-Adds support for Vpon Vpon Analytics. Configuration details can be found at [Vpon Analytics](https://cmp.vpadn.com/dmp/doc/amp_analytics.html).
+Bổ sung hỗ trợ cho Vpon Vpon Analytics. Chi tiết cấu hình có thể được tìm thấy tại [Vpon Analytics](https://cmp.vpadn.com/dmp/doc/amp_analytics.html).
 
 ### Webengage <a name="webengage"></a>
 
@@ -514,12 +514,12 @@ Thuộc tính type: `webengage`
 
 ### Webtrekk <a name="webtrekk"></a>
 
-The attribute value ~~`webtrekk`~~ is deprecated (will remove on 31/12/2018) - use `webtrekk_v2` instead
+Giá trị thuộc tính type ~~`webtrekk`~~ bị vô hiệu (bị xoá vào ngày 31/12/2018) - dùng `webtrekk_v2` để thay thế
 
-Adds support for Webtrekk. Configuration details can be found at [supportcenter.webtrekk.com](https://supportcenter.webtrekk.com/en/public/amp-analytics.html).
+Bổ sung hỗ trợ cho Webtrekk. Chi tiết cấu hình có thể được tìm thấy tại [supportcenter.webtrekk.com](https://supportcenter.webtrekk.com/en/public/amp-analytics.html).
 
 ### Yandex Metrica <a name="yandex-metrica"></a>
 
 Giá trị thuộc tính type: `metrika`
 
-Adds support for Yandex Metrica. Configuration details can be found at [Yandex Support](https://yandex.com/support/metrica/code/install-counter-amp.xml).
+Bổ sung hỗ trợ cho Yandex Metrica. Chi tiết cấu hình có thể được tìm thấy tại [Yandex Support](https://yandex.com/support/metrica/code/install-counter-amp.xml).
