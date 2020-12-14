@@ -1,0 +1,30 @@
+.#{prefix(null, 'pill')} {
+  display: inline-block;
+  margin: 0 5px 5px 0;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 25px;
+  background: color('white');
+  font-size: 14px;
+  line-height: 1.6rem;
+  color: safeColor('light-gray');
+  font-family: 'Noto Sans', sans-serif;
+  box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.85);
+  transition: background-color .2s ease-in, color .2s ease-in, box-shadow .25s ease-in;
+  cursor: pointer;
+
+  @include respond-to('min') {
+    padding: 5px 20px;
+  }
+
+  @include respond-to('medium') {
+    margin: 0 10px 10px 0;
+    padding: 5px 20px;
+  }
+
+  &:hover, &.--selected {
+    background: safeColor('blue');
+    color: safeColor('white');
+    box-shadow: 0 2px 5px 0 transparentize(color('black'), 0.85);
+  }
+}

@@ -99,10 +99,11 @@ recent_components:
 </section>
 
 <section>
-  <h2>{{ _('Filter by category') }}</h2>
-
   {% set categories = g.categories('/content/amp-dev/documentation/components/reference', locale=doc.locale) %}
   {% set filter_categories = categories|map(attribute=0)|list|tojson %}
+
+  <h2>{{ _('Filter by category') }}</h2>
+  {% include 'views/2021/partials/category-filter.j2'%}
 
   <ul class="ap-table-component">
     {% for category, docs in categories %}

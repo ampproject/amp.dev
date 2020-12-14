@@ -1,0 +1,14 @@
+.#{prefix(null, 'filter-bubbles-list')} {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include respond-to('min') {
+    padding: 30px 0px;
+    margin: 0;
+    width: auto;
+  }
+
+  @include respond-to('medium') {
+    padding: 30px 0;
+  }
+}
