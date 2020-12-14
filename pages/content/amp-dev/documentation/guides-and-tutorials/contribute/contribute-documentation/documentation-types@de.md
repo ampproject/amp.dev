@@ -1,7 +1,7 @@
 ---
-"$title": Documentation types
+"$title": Dokumentationsarten
 "$order": '1'
-description: Types of documentation contributions accepted on amp.dev
+description: Arten von Dokumentationsbeiträgen, die bei amp.dev akzeptiert werden
 formats:
 - websites
 - stories
@@ -13,29 +13,29 @@ toc: 'false'
 
 Es folgt eine kurze Übersicht über die Arten von Dokumentationsbeiträgen, die bei amp.dev akzeptiert werden:
 
-- [Introductory tutorial](documentation-types.md?format=websites#introductory-tutorial)
-- [Advanced tutorial](documentation-types.md?format=websites#advanced-tutorial)
-- [Introductory guide](documentation-types.md?format=websites#introductory-guide)
-- [Concept guide](documentation-types.md?format=websites#concept-guide)
-- [Reference documentation](documentation-types.md?format=websites#reference-documentation)
+- [Einführungstutorial](documentation-types.md?format=websites#introductory-tutorial)
+- [Tutorial für Fortgeschrittene](documentation-types.md?format=websites#advanced-tutorial)
+- [Einführungsleitfaden](documentation-types.md?format=websites#introductory-guide)
+- [Konzeptleitfaden](documentation-types.md?format=websites#concept-guide)
+- [Referenzdokumentation](documentation-types.md?format=websites#reference-documentation)
 
-## Introductory tutorial <a name="introductory-tutorial"></a>
+## Einführungstutorial <a name="introductory-tutorial"></a>
 
 Einführungstutorials vermitteln Entwicklern ein allgemeines Bild der Technologie. Sie beginnen mit dem Schreiben von Code und enden mit einem kompletten "Hallo Welt" Basisprojekt. Einführende Tutorials zeigen Schritt für Schritt, wie man die jeweilige AMP Kernfunktion erstellt. Du kannst Einführungstutorials kombinieren mit Inline Codebeispielen und/oder einem herunterladbaren Beispiel, das Entwickler schon nach minimalen Änderungen nutzen können.
 
-amp.dev examples:
+Beispiele für amp.dev:
 
-- [Create your first AMP page](../../../../documentation/guides-and-tutorials/start/create/index.md?format=websites)
-- [Create your first AMP story](../../../../documentation/guides-and-tutorials/start/visual_story/index.md?format=stories)
-- [Create your first AMPHTML ad](../../../../documentation/guides-and-tutorials/start/create_amphtml_ad/index.md?format=ads)
+- [Erstelle deine erste AMP Seite](../../../../documentation/guides-and-tutorials/start/create/index.md?format=websites)
+- [Erstelle deine erste AMP Story](../../../../documentation/guides-and-tutorials/start/visual_story/index.md?format=stories)
+- [Erstelle deine erste AMPHTML Ad](../../../../documentation/guides-and-tutorials/start/create_amphtml_ad/index.md?format=ads)
 
 <table>
   <tr>
    <td>
-<strong>Do</strong>
+<strong>Richtig</strong>
    </td>
    <td>
-<strong>Don’t</strong>
+<strong>Falsch</strong>
    </td>
   </tr>
   <tr>
@@ -60,11 +60,11 @@ amp.dev examples:
   </tr>
 </table>
 
-## Advanced tutorial <a name="advanced-tutorial"></a>
+## Tutorial für Fortgeschrittene <a name="advanced-tutorial"></a>
 
 Tutorials für Fortgeschrittene helfen Entwicklern, eine bestimmte Aufgabe zu erfüllen. Das setzt voraus, dass die Entwickler mit AMP vertraut sind. Das Tutorial soll demonstrieren, wie man eine Erfahrung schaffen, eine Funktion integrieren oder Implementierungsaufgaben erledigen kann.
 
-amp.dev examples:
+Beispiele für amp.dev:
 
 - [Konfiguriere grundlegendes Analytics für deine AMP Seiten](../../../../documentation/guides-and-tutorials/optimize-measure/tracking-engagement.md?format=websites)
 - [Füge mit amp-script benutzerdefiniertes JavaScript zu AMP Seiten hinzu](../../../../documentation/guides-and-tutorials/develop/custom-javascript-tutorial.md?format=websites)
@@ -73,10 +73,10 @@ amp.dev examples:
 <table>
   <tr>
    <td>
-<strong>Do</strong>
+<strong>Richtig</strong>
    </td>
    <td>
-<strong>Don’t</strong>
+<strong>Falsch</strong>
    </td>
   </tr>
   <tr>
@@ -93,22 +93,22 @@ amp.dev examples:
   </tr>
 </table>
 
-## Introductory guide <a name="introductory-guide"></a>
+## Einführungsleitfaden <a name="introductory-guide"></a>
 
 Ein Einführungsleitfaden bietet einen Überblick über relevante Informationen für die ersten Schritte mit AMP. Er sollte das Feature identifizieren, seine Eigenschaften beschreiben und seine Funktionen erklären. Einführungsleitfäden stellen Entwicklern die Grundvoraussetzungen des Features vor, ohne auf die Implementierung einzugehen. Wenn du einen Prozess Schritt für Schritt mit Codebeispielen durchgehst, verfasst du wahrscheinlich ein Tutorial. Wenn du einen Überblick über alle programmgesteuerten Elemente für eine AMP Komponente gibst, schreibst du wahrscheinlich ein Referenzdokument.
 
-amp.dev examples:
+Beispiele für amp.dev:
 
-- [AMP email fundamentals](../../../../documentation/guides-and-tutorials/learn/email_fundamentals.md?format=email)
-- [Common element attributes](../../../../documentation/guides-and-tutorials/learn/common_attributes.md?format=websites)
+- [Grundlagen für AMP E-Mail](../../../../documentation/guides-and-tutorials/learn/email_fundamentals.md?format=email)
+- [Allgemeine Elementattribute](../../../../documentation/guides-and-tutorials/learn/common_attributes.md?format=websites)
 
 <table>
   <tr>
    <td>
-<strong>Do</strong>
+<strong>Richtig</strong>
    </td>
    <td>
-<strong>Don’t</strong>
+<strong>Falsch</strong>
    </td>
   </tr>
   <tr>
@@ -129,23 +129,23 @@ amp.dev examples:
   </tr>
 </table>
 
-## Concept guide <a name="concept-guide"></a>
+## Konzeptleitfaden <a name="concept-guide"></a>
 
 Mithilfe von Konzeptleitfäden können Entwickler ein tieferes Verständnis von AMP aufbauen. Ein Konzeptleitfaden ist wie eine topografische Karte. Er zeigt die verschiedenen Pfade einer Umgebung und bietet Details wie z. B. Höhenangaben, schreibt dabei aber keine bestimmte Route durch das Gelände vor. Erkläre, was das Feature ist und wie es funktioniert, ohne darauf einzugehen, wie das Feature erstellt wird.
 
-amp.dev examples:
+Beispiele für amp.dev:
 
-- [Animate & transition](../../../../documentation/guides-and-tutorials/develop/animations/triggering_css_animations.md?format=websites)
-- [Track engagement with analytics](../../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md?format=websites)
-- [Style & layout](../../../../documentation/guides-and-tutorials/develop/style_and_layout/index.md?format=websites)
+- [Animation & Übergang](../../../../documentation/guides-and-tutorials/develop/animations/triggering_css_animations.md?format=websites)
+- [Engagement mit Analytics verfolgen](../../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md?format=websites)
+- [Style & Layout](../../../../documentation/guides-and-tutorials/develop/style_and_layout/index.md?format=websites)
 
 <table>
   <tr>
    <td>
-<strong>Do</strong>
+<strong>Richtig</strong>
    </td>
    <td>
-<strong>Don’t</strong>
+<strong>Falsch</strong>
    </td>
   </tr>
   <tr>
@@ -166,21 +166,21 @@ amp.dev examples:
   </tr>
 </table>
 
-## Reference documentation <a name="reference-documentation"></a>
+## Referenzdokumentation <a name="reference-documentation"></a>
 
 Eine Referenzdokumentation enthält alle programmatischen Elemente einer AMP Komponente. Sie bietet präzise Informationen zu deren Verhalten und soll überflogen werden können. Die Referenzdokumentation sollte exemplarische Codebeispiele enthalten und Use Cases präsentieren.
 
-amp.dev reference documents are found under [the AMP component catalogue](../../../../documentation/components/index.html?format=websites).
+Referenzdokumente für amp.dev findest du unter [AMP Komponentenkatalog](../../../../documentation/components/index.html?format=websites).
 
 [tip type="important"] Die AMP Referenzdokumentation wird zum [AMPHTML Repository](https://github.com/ampproject/amphtml) beigetragen. [/tip]
 
 <table>
   <tr>
    <td>
-<strong>Do</strong>
+<strong>Richtig</strong>
    </td>
    <td>
-<strong>Don’t</strong>
+<strong>Falsch</strong>
    </td>
   </tr>
   <tr>
