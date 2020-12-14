@@ -1,7 +1,7 @@
 ---
-"$title": Include images & video
+"$title": Bao gồm ảnh & video
 "$order": '8'
-description: "Like on a normal HTML page, AMP allows you to embed images, video and audio content. Learn what's different about the AMP equivalents and learn how to..."
+description: Cũng như một trang HTML thông thường, AMP cho phép bạn nhúng các ảnh, video và nội dung âm thanh. Tìm hiểu điểm khác biệt của AMP và học cách để...
 formats:
 - websites
 - stories
@@ -15,20 +15,20 @@ contributors:
 - bpaduch
 ---
 
-Like on a normal HTML page, AMP allows you to embed **images**, **video** and **audio** content. Learn what's different about the AMP equivalents and learn how to include them in your pages.
+Cũng như một trang HTML thông thường, AMP cho phép bạn nhúng các **ảnh**, **video** và nội dung **âm thanh**. Tìm hiểu điểm khác biệt của AMP và học cách để bao gồm chúng trong các trang của bạn.
 
 ## Why not <img>, <video> and <audio>?</audio></video>
 
-AMP doesn't support the default HTML counterparts to displaying media, like `<img>`. We provide equivalent components for the following reasons:
+AMP không hỗ trợ việc sử dụng các thẻ HTML mặc định tương ứng để hiển thị nội dung đa phương tiện, ví dụ như `<img>`. Chúng tôi cung cấp các thành phần tương đương vì lý do sau:
 
-- We need to understand layout of the page before assets load, crucial to [support first-viewport preloading](../../../../about/how-amp-works.html#size-all-resources-statically)
-- We need to control network requests to [lazy load and prioritize resources effectively](../../../../about/how-amp-works.html#prioritize-resource-loading)
+- Chúng tôi cần hiểu bố cục của trang trước khi tải tài sản, vốn là thiết yếu để [hỗ trợ tải trước cho màn hiển thị đầu tiên](../../../../about/how-amp-works.html#size-all-resources-statically)
+- Chúng tôi cần kiểm soát các yêu cầu mạng để [tải lười và ưu tiên tài nguyên một cách hiệu quả](../../../../about/how-amp-works.html#prioritize-resource-loading)
 
-Caution: While they're not supported, they *will* render, but AMP won't [validate your pages](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) and you won't get all the benefits AMP provides.
+Thận trọng: Tuy không được hỗ trợ, nhưng chúng *vẫn sẽ được* render; tuy nhiên, AMP sẽ không [xác thực cho các trang của bạn](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) và bạn sẽ không nhận được tất cả lợi ích mà AMP mang lại.
 
-## Images
+## Ảnh
 
-Include an image in your page using the [`amp-img`](../../../../documentation/components/reference/amp-img.md) element, like so:
+Bao gồm một ảnh trong trang của bạn sử dụng yếu tố [`amp-img`](../../../../documentation/components/reference/amp-img.md), ví dụ như:
 
 [example preview="inline" playground="true"]
 ```html
@@ -40,11 +40,11 @@ Include an image in your page using the [`amp-img`](../../../../documentation/co
 ```
 [/example]
 
-In this most basic example, the image will display with the specified fixed height and width. At minimum, an explicit width and height needs to be set.
+Trong ví dụ cơ bản nhất này, ảnh sẽ hiển thị với chiều cao và chiều rộng cố định. Tối thiểu là một chiều rộng và chiều cao cụ thể phải được quy định.
 
-#### Displaying images when JavaScript is disabled
+#### Hiển thị ảnh khi JavaScript bị vô hiệu
 
-As [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) relies on JavaScript, if the user chooses to disable scripts, images won't display.  In this case, you should provide a fallback to the image using `<img>` and `<noscript>`, like so:
+Bởi [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) phụ thuộc vào JavaScript, nếu người dùng chọn vô hiệu kịch bản, các ảnh sẽ không được hiển thị. Trong trường hợp này, bạn cần cung cấp một phương án dự phòng cho ảnh sử dụng `<img>` và `<noscript>`, ví dụ như:
 
 [example preview="inline" playground="true"]
 ```html
@@ -58,9 +58,9 @@ As [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) reli
 ```
 [/example]
 
-### Advanced layouts
+### Bố cục nâng cao
 
-AMP makes it much easier than with standard CSS/HTML to create fully responsive images. In its most basic form, all you have to do is to add `layout="responsive"`:
+AMP cho phép bạn tạo các trang tương thích hoàn toàn một cách dễ dàng hơn so với sử dụng CSS/HTML tiêu chuẩn. Ở dạng cơ bản nhất, tất cả những gì bạn cần làm là bổ sung `layout="responsive"`:
 
 [example preview="inline" playground="true"]
 ```html
@@ -73,17 +73,17 @@ AMP makes it much easier than with standard CSS/HTML to create fully responsive 
 ```
 [/example]
 
-[tip type="read-on"] **READ ON –**  Learn more about [advanced layout techniques](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md). [/tip]
+[tip type="read-on"] **ĐỌC TIẾP –** Tìm hiểu thêm về các [kỹ thuật tạo bố cục nâng cao](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md). [/tip]
 
-### Behavior and placeholders
+### Hành vi và mã giữ chỗ
 
-The AMP HTML runtime can effectively manage image resources, choosing to delay or prioritize resource loading based on the viewport position, system resources, connection bandwidth, or other factors.
+Thời gian chạy AMP HTML có thể quản lý hiệu quả các tài nguyên ảnh, chọn trì hoãn hay ưu tiên tải tài nguyên dựa trên vị trí màn hiển thị, tài nguyên hệ thống, băng thông kết nối hay các yếu tố khác.
 
-[tip type="read-on"] **READ ON –**  Learn how to [provide fallbacks and placeholders for images](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md). [/tip]
+[tip type="read-on"] **ĐỌC TIẾP –** Tìm hiểu cách để [cung cấp các phương án dự phòng và mã giữ chỗ cho ảnh](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md). [/tip]
 
-## Animated images
+## Ảnh hoạt họa
 
-The [`amp-anim`](../../../../documentation/components/reference/amp-anim.md) element is very similar to the [`amp-img`](../../../../documentation/components/reference/amp-img.md) element, and provides additional functionality to manage loading and playing of animated images such as GIFs.
+Yếu tố [`amp-anim`](../../../../documentation/components/reference/amp-anim.md) rất giống với yếu tố [`amp-img`](../../../../documentation/components/reference/amp-img.md) và cung cấp các chức năng bổ sung để quản lý việc tải và phát các ảnh hoạt họa như ảnh GIF.
 
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
 ```html
@@ -99,15 +99,15 @@ The [`amp-anim`](../../../../documentation/components/reference/amp-anim.md) ele
 ```
 [/example]
 
-[tip type="note"] <strong>NOTE –</strong>  Include <code><script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script></code> in the head of your page to use this component. [/tip]
+[tip type="note"] **LƯU Ý –** Bao gồm `<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` trong phần head (đầu đề) của trang để sử dụng thành phần này. [/tip]
 
 ## Video
 
-Include a video in your page using the [`amp-video`](../../../../documentation/components/reference/amp-video.md) element.
+Bao gồm một video trong trang của bạn sử dụng yếu tố [`amp-video`](../../../../documentation/components/reference/amp-video.md).
 
-Only use this element for direct HTML5 video file embeds. The element loads the video resource specified by the `src` attribute lazily, at a time determined by AMP.
+Chỉ sử dụng yếu tố này để nhúng trực tiếp tập tin video HTML5. Yếu tố này tải tài nguyên video như được quy định bởi thuộc tính `src` theo nguyên tắc tải lười, tại thời điểm quy định bởi AMP.
 
-Include a placeholder before the video starts, and a fallback, if the browser doesn't support HTML5 video, for example:
+Bao gồm một mã giữ chỗ trước khi video bắt đầu, cùng một phương án dự phòng nếu trình duyệt không hỗ trợ video HTML5, ví dụ:
 
 [example preview="inline" playground="true" imports="amp-video:0.1"]
 ```html
@@ -123,11 +123,11 @@ Include a placeholder before the video starts, and a fallback, if the browser do
 ```
 [/example]
 
-## Audio
+## Âm thanh
 
-Include an audio resource in your page, using the [`amp-audio`](../../../../documentation/components/reference/amp-audio.md) element.
+Bao gồm tài nguyên âm thanh trong trang của bạn sử dụng yếu tố [`amp-audio`](../../../../documentation/components/reference/amp-audio.md).
 
-Only use this element for direct HTML5 audio file embeds. Like all embedded external resources in an AMP page, the element loads the audio resource specified by the `src` attribute lazily, at a time determined by AMP.
+Chỉ sử dụng yếu tố này để nhúng trực tiếp tập tin âm thanh HTML5. Cũng như mọi tài nguyên bên ngoài được nhúng vào một trang AMP, yếu tố này tải tài nguyên âm thanh như được quy định bởi thuộc tính `src` theo nguyên tắc tải lười, tại thời điểm quy định bởi AMP.
 
 Include a fallback, if the browser doesn't support HTML5 audio, for example:
 
@@ -149,4 +149,4 @@ Include a fallback, if the browser doesn't support HTML5 audio, for example:
 ```
 [/example]
 
-[tip type="note"] <strong>NOTE –</strong>  Include <code><script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script></code> in the head of your page to use this component. [/tip]
+[tip type="note"] **LƯU Ý –** Bao gồm `<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` trong phần head (đầu đề) của trang để sử dụng thành phần này. [/tip]
