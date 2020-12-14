@@ -6,13 +6,6 @@ teaser:
 toc: true
 ---
 
-<!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md.
-Please do not change this file.
-If you have found a bug or an issue please
-have a look and request a pull request there.
--->
-
 ## Informazioni generali <a name="overview"></a>
 
 Utilizzando strumenti di tipo software come servizi (software-as-a-service) per editori per analizzare al meglio i loro flussi di traffico e di visitatori, potresti avere l'esigenza di integrare il tuo servizio in `amp-analytics`. Ciò consentirà ai tuoi clienti di visualizzare i flussi di traffico per le loro pagine AMP HTML.
@@ -22,7 +15,6 @@ Utilizzando strumenti di tipo software come servizi (software-as-a-service) per 
 Prima di poter aggiungere i tuoi servizi e strumenti di analisi al sistema runtime di AMP HTML, dovrai:
 
 - Individuare i tipi di [variabili](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) e [richieste](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-analytics.md#requests) di cui avrai bisogno in un documento AMP HTML per il tuo servizio di analisi.
-- Determinare se la funzione di plug-in per invio in batch è necessaria per costruire l'URL finale in caso di utilizzo dell'invio in batch di richieste.
 - Identificare gli eventi che determinano l'invio di richieste di analisi da parte di  pagine che sono pertinenti per il tuo servizio.
 - Valutare se e in che modo [tracciare gli utenti in](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md) contesti AMP proprietari e di terzi.
 - Determinare come il pannello di controllo del tuo strumento di analisi gestisce il traffico AMP.
@@ -45,11 +37,10 @@ Prima di poter aggiungere i tuoi servizi e strumenti di analisi al sistema runti
     3. Un esempio è disponibile nei riferimenti [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html).
     4. Un test nel file [extensions/amp-analytics/0.1/test/vendor-requests.json](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../extensions/amp-analytics/0.1/test/vendor-requests.json).
     5. Aggiungere il proprio servizio di analisi all'elenco dei fornitori supportati nel file [extensions/amp-analytics/0.1/analytics-vendors-list.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./analytics-vendors-list.md). Includere tipo, descrizione e collegamenti alla documentazione di utilizzo.
-3. Verificare se è richiesto un nuovo plug-in di invio in batch. Consultare le istruzioni [Aggiungi plug-in di invio in batch](#add-batch-plugin).
-4. Testare il nuovo esempio inserito in [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html) per assicurarsi che i risultati funzionino come previsto. Ad esempio, verificare che i dati necessari vengono raccolti e visualizzati nel pannello di controllo dello strumento di analisi.
-5. Inviare una richiesta pull con questa patch, facendo riferimento alla segnalazione Intent-to-Implement.
-6. Aggiornare la documentazione di utilizzo del servizio e informarne i  clienti.
-7. Si consiglia di mantenere [un test di integrazione al di fuori dell'archivio AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../3p/README.md#adding-proper-integration-tests).
+3. Testare il nuovo esempio inserito in [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html) per assicurarsi che i risultati funzionino come previsto. Ad esempio, verificare che i dati necessari vengono raccolti e visualizzati nel pannello di controllo dello strumento di analisi.
+4. Inviare una richiesta pull con questa patch, facendo riferimento alla segnalazione Intent-to-Implement.
+5. Aggiornare la documentazione di utilizzo del servizio e informarne i  clienti.
+6. Si consiglia di mantenere [un test di integrazione al di fuori dell'archivio AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../3p/README.md#adding-proper-integration-tests).
 
 ## Gestione dei tag <a name="tag-managers"></a>
 
