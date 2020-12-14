@@ -131,18 +131,15 @@ Ví dụ, những việc sau có thể được thực hiện trong AMP:
   </tr>
   <tr>
     <td rowspan="3"><code>change</code></td>
-    <td rowspan="3">Fired when the value of the element is changed and committed.       <p>       Data properties mirror those in <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#Properties">HTMLInputElement</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement#Properties">HTMLSelectElement</a>.</p>     </td>
+    <td rowspan="3">Kích hoạt khi giá trị của yếu tố được thay đổi và cam kết. <p>Thuộc tính dữ liệu sao chép các thuộc tính trong <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#Properties">HTMLInputElement</a> và <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement#Properties">HTMLSelectElement</a>.</p>
+</td>
     <td><code>input</code></td>
     <td>
-      <pre>event.min
-event.max
-event.value
-event.valueAsNumber</pre>
+      <pre>event.min<br>event.max<br>event.value<br>event.valueAsNumber</pre>
     </td>
   </tr>
   <tr>
-    <td>
-<code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
+    <td> <code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
 </td>
     <td>
       <code>event.checked</code>
@@ -232,8 +229,7 @@ event.valueAsNumber</pre>
     <th width="40%">Dữ liệu</th>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(low-trust)</td>
     <td>Kích hoạt khi truy xuất dữ liệu thất bại.</td>
     <td>Không có</td>
   </tr>
@@ -283,8 +279,7 @@ event.valueAsNumber</pre>
     <th width="40%">Dữ liệu</th>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(low-trust)</td>
     <td>Kích hoạt khi truy xuất dữ liệu thất bại.</td>
     <td>Không có</td>
   </tr>
@@ -340,11 +335,11 @@ event.valueAsNumber</pre>
   </tr>
   <tr>
     <td><code>show</code></td>
-    <td>Shows the target element. If an     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a     result, it gains focus.</td>
+    <td>Hiển thị yếu tố mục tiêu. Nếu một <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus">yếu tố <code>autofocus</code> (tự động lấy tiêu điểm)</a> được hiển thị, nó sẽ được lấy tiêu điểm.</td>
   </tr>
   <tr>
     <td><code>toggleVisibility</code></td>
-    <td>Toggles the visibility of the target element. If an     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a     result, it gains focus.</td>
+    <td>Bật/tắt hiển thị yếu tố mục tiêu. Nếu một <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus">yếu tố <code>autofocus</code> (tự động lấy tiêu điểm)</a> được hiển thị, nó sẽ được lấy tiêu điểm.</td>
   </tr>
   <tr>
     <td><code>toggleClass(class=STRING, force=BOOLEAN)</code></td>
@@ -352,7 +347,7 @@ event.valueAsNumber</pre>
   </tr>
   <tr>
     <td><code>focus</code></td>
-    <td>Makes the target element gain focus. To lose focus, <code>focus</code>     on another element (usually parent element). We strongly advise against     losing focus by focusing on <code>body</code>/<code>documentElement</code>     for accessibility reasons.</td>
+    <td>Lấy tiêu điểm vào yếu tố mục tiêu. Để bỏ tiêu điểm, <code>focus</code> (tập trung) vào một yếu tố khác (thường là yếu tố cha). Chúng tôi đặc biệt khuyến cáo không giảm tiêu điểm bằng cách tập trung vào  <code>body</code>/<code>documentElement</code> vì lý do hỗ trợ tiếp cận.</td>
   </tr>
 </table>
 
@@ -365,7 +360,8 @@ event.valueAsNumber</pre>
   </tr>
   <tr>
     <td><code>toggle(section=STRING)</code></td>
-    <td>Toggles the <code>expanded</code> and <code>collapsed</code> states of <code>amp-accordion</code> sections. When called with no arguments, it toggles all sections of the accordion. Trigger on a specific section by providing the section id: <code>on="tap:myAccordion.toggle(section='section-id')"</code>.   </td>
+    <td>Bật/tắt trạng thái <code>expanded</code> (mở rộng) và <code>collapsed</code> (thu hẹp) của các phần <code>amp-accordion</code>. Khi được gọi mà không có tham số, nó sẽ bật/tắt tất cả các phần của accordion. Kích hoạt trên một phần cụ thể bằng cách cung cấp ID phần:  <code>on="tap:myAccordion.toggle(section=</code>
+</td>
 </tr>
   <tr>
     <td><code>expand(section=STRING)</code></td>
@@ -435,8 +431,7 @@ event.valueAsNumber</pre>
     <td>Cập nhật bố cục của <code>amp-list</code> thành  <code>layout="CONTAINTER"</code> để cho phép <a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">đổi kích cỡ năng động</a>.</td>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(low-trust)</td>
     <td>Kích hoạt khi truy xuất dữ liệu thất bại.</td>
     <td>Không có</td>
   </tr>
@@ -463,7 +458,7 @@ event.valueAsNumber</pre>
   </tr>
   <tr>
     <td><code>toggle(index=INTEGER, value=BOOLEAN)</code></td>
-    <td>Toggles the application of the `selected`. If the select attribute is absent, this action adds it. If the select attribute is present, this action removes it.     You may force and keep an add or remove by including a boolean value in the `value` argument. A value of `true` will force add the `selected` attribute and not remove it if already present. A value of  `false` will remove the attribute, but not add it if absent.   </td>
+    <td>Bật/tắt mục `selected` (được chọn). Nếu không có thuộc tính được chọn, hành động này sẽ bổ sung nó. Nếu có thuộc tính được chọn, hành động này sẽ xóa nó. Bạn có thể bắt buộc và duy trì thêm hoặc xóa bằng cách thêm một giá trị boolean trong tham số `value` (giá trị). Một giá trị `true` (đúng) sẽ bắt buộc thêm thuộc tính `selected` (được chọn) và không xóa nó nếu nó đã được chọn. Một giá trị `false` (sai) sẽ xóa thuộc tính, và không thêm nó nếu nó không được chọn.</td>
   </tr>
 </table>
 
