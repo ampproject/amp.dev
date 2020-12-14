@@ -489,9 +489,7 @@ Wir empfehlen, die Authentizität der Werte der Abfrageparameter mithilfe der im
   <li>auf den Ort zugreifen kann, an dem der Code, der die Parameter ausgelesen und entfernt hat, die entsprechenden Daten gespeichert hat.</li>
 </ul>
 <p>Füge dazu auf deiner Seite ohne AMP das folgende JavaScript hinzu, mit dem alle Abfrageparameter aus der URL entfernt werden:</p>
-<pre>var href = location.href.replace(/\?[^{{'[% raw %]'}}#]{{'{% endraw %}'}}+/, '');
-history.replaceState(null, null, href);
-</pre>
+<pre>var href = location.href.replace(/\?[^{{'[% raw %]'}}#]{{'{% endraw %}'}}+/, '');<br>history.replaceState(null, null, href);</pre>
 <p>Passe diesen Code nach Bedarf an, um nur bestimmte Abfrageparameter zu entfernen.</p>
 </blockquote>
 
