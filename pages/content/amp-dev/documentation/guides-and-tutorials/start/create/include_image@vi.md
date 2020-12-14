@@ -15,4 +15,4 @@ Hầu hết các thẻ HTML đều có thể được sử dụng trực tiếp 
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-[tip type="read-on"] **READ ON –** To learn why we’re replacing tags like `<img>` with [`<amp-img>`](../../../../documentation/components/reference/amp-img.md), and how many are available, visit [Include Images & Video](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md). [/tip]
+[tip type="read-on"] **ĐỌC TIẾP –** Để biết vì sao chúng tôi thay các thẻ như `<img>` bằng [`<amp-img>`](../../../../documentation/components/reference/amp-img.md), và có bao nhiêu thẻ, hãy truy cập [Bao gồm Ảnh & Video](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md). [/tip]
