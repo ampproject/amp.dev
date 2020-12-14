@@ -1,7 +1,7 @@
 ---
-"$title": Responsive images with srcset, sizes & heights
+"$title": Ảnh tương thích với srcset, kích cỡ & chiều cao
 "$order": '4'
-description: Use the srcset attribute to control an element’s assets based on varying media expressions. In particular, use it for all amp-img tags to specify which ...
+description: Sử dụng thuộc tính srcset để kiểm soát các tài sản của một yếu tố dựa trên các biểu thức đa phương tiện khác nhau. Cụ thể, sử dụng nó cho tất cả các thẻ amp-img để quy định...
 formats:
 - websites
 - email
@@ -16,9 +16,9 @@ contributors:
 
 ## srcset
 
-Use the `srcset` attribute to control an element’s assets based on varying media expressions. In particular, use it for all [`amp-img`](../../../../documentation/components/reference/amp-img.md) tags to specify which image assets to use based on varying screen sizes. AMP will autogenerate a `sizes` attribute, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img" data-md-type="link">that meets the HTML5 definition of `sizes`</a>, for all underlying `<img>` tags of `<amp-img>` if the `<amp-img>` has a `srcset` attribute but no `sizes`.
+Sử dụng thuộc tính `srcset` để kiểm soát các tài sản của một yếu tố dựa trên các biểu thức đa phương tiện khác nhau. Cụ thể, sử dụng nó cho tất cả các thẻ [`amp-img`](../../../../documentation/components/reference/amp-img.md) để quy định các tài sản ảnh nào sẽ được sử dụng dựa trên các kích cỡ màn hình khác nhau. AMP sẽ tự động tạo một thuộc tính `sizes` (kích cỡ) <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img" data-md-type="link">đáp ứng định nghĩa của HTML5 về `sizes` (kích cỡ)</a> cho tất cả các thẻ `<img>` trong nền của `<amp-img>` nếu `<amp-img>` có một thuộc tính `srcset` nhưng không có `sizes` (kích cỡ).
 
-In this simple example, `srcset` specifies which image to use based on the screen width. The `w` descriptor tells the browser the width of each image in the list:
+Trong ví dụ đơn giản này, `srcset` quy định các ảnh sẽ được sử dụng dựa trên chiều rộng màn hình. Ký hiệu `w` cho trình duyệt biết chiều rộng của mỗi ảnh trong danh sách:
 
 [example preview="top-frame" playground="true"]
 ```html
@@ -33,15 +33,15 @@ In this simple example, `srcset` specifies which image to use based on the scree
 ```
 [/example]
 
-[tip type="note"] **NOTE –**  AMP supports srcset with the `w` descriptor across all browsers. [/tip]
+[tip type="note"] **LƯU Ý –** AMP hỗ trợ srcset với ký hiệu `w` trong mọi trình duyệt. [/tip]
 
-Learn more about creating responsive images using `srcset` in [Using Responsive Images (Now)](http://alistapart.com/article/using-responsive-images-now).
+Tìm hiểu thêm về việc tạo các ảnh tương thích sử dụng `srcset` trong [Sử dụng Ảnh Tương thích (Ngay bây giờ)](http://alistapart.com/article/using-responsive-images-now).
 
-## sizes
+## sizes (kích cỡ)
 
-You can also use the optional AMP `sizes` attribute along with `srcset`. The AMP `sizes` attribute describes how to calculate the element size based on any media expression. <strong data-md-type="raw_html">Defining `sizes` on any AMP Element will cause AMP to set an inline style for width on that element according to the matched media query.</strong> Based on the element’s calculated size, the user agent selects the most relative source supplied by the `srcset` attribute.
+Bạn cũng có thể sử dụng thuộc tính `sizes` (kích cỡ) không bắt buộc của AMP, cùng với `srcset`. Thuộc tính `sizes` (kích cỡ) của AMP mô tả cách để tính kích cỡ yếu tố dựa trên một biểu thức đa phương tiện bất kỳ. <strong data-md-type="raw_html">Việc định nghĩa `sizes` (kích cỡ) trên bất kỳ Yếu tố AMP nào sẽ khiến AMP đặt một phong cách inline về chiều rộng cho yếu tố đó theo truy vấn đa phương tiện liên quan.</strong> Dựa trên kích cỡ tính được của yếu tố, user agent sẽ lựa chọn nguồn tương đối nhất được cung cấp bởi thuộc tính `srcset`.
 
-Consider the following example:
+Cân nhắc ví dụ sau:
 
 [example preview="top-frame" playground="true"]
 ```html
@@ -56,22 +56,22 @@ Consider the following example:
 ```
 [/example]
 
-The `sizes` attribute defines the element’s width to be 50% the size of the viewport when the viewport is 650px or more. For example, if the viewport is 800px, the element’s width is set to 400px. The browser then selects the `srcset` resource relative to 400px, assuming the device pixel ratio is 1, which in this instance is `hummingbird-narrow.jpg` (320px).
+Thuộc tính `sizes` (kích cỡ) định nghĩa chiều rộng của yếu tố là 50% kích cỡ của màn hiển thị khi màn hiển thị có chiều rộng 650px hoặc hơn. Ví dụ, nếu màn hiển thị là 800px, chiều rộng của yếu tố sẽ là 400px. Sau đó, trình duyệt sẽ chọn tài nguyên `srcset` tương đương với 400px, giả sử rằng tỷ lệ điểm ảnh của thiết bị là 1, trong trường hợp này là `hummingbird-narrow.jpg` (320px).
 
-[tip type="important"] **IMPORTANT –** When sizes attribute is specified along with width and height, layout defaults to `responsive`. [/tip]
+[tip type="important"] **QUAN TRỌNG –** Khi thuộc tính sizes (kích cỡ) được quy định cùng với chiều rộng và chiều cao, bố cục sẽ được đặt mặc định là <code>responsive</code> (tương thích). [/tip]
 
-Read more about the [AMP `sizes` attribute here](../../../../documentation/guides-and-tutorials/learn/common_attributes.md).
+Đọc thêm về [thuộc tính `sizes` (kích cỡ) của AMP ở đây](../../../../documentation/guides-and-tutorials/learn/common_attributes.md).
 
-## heights
+## heights (chiều cao)
 
-All AMP custom elements that allow `responsive` layout, also support the `heights` attribute. The value of this attribute is a sizes expression based on media expressions as similar to the [img sizes attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), but with two key differences:
+Mọi yếu tố tùy chỉnh AMP cho phép bố cục `responsive` (tương thích), đồng thời cũng hỗ trợ thuộc tính `heights` (chiều cao). Giá trị của thuộc tính này là biểu thức sizes (kích cỡ) dựa trên biểu thức đa phương tiện tương tự với [thuộc tính img sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), nhưng với 2 điểm khác biệt chính:
 
-1. It applies to the height and not width of the element.
-2. Percent values are allowed, e.g. `86%`. If a percent value is used, it indicates the percent of the element's width.
+1. Nó áp dụng chiều cao chứ không phải là chiều rộng của yếu tố.
+2. Nó cho phép giá trị phần trăm, ví dụ như `86%`. Nếu giá trị phần trăm được sử dụng, nó sẽ chỉ báo phần trăm chiều rộng của yếu tố.
 
-When the `heights` attribute is specified along with `width` and `height`, the `layout` is defaulted to `responsive`.
+Khi thuộc tính `heights` (chiều cao) được quy định với `width` (chiều rộng) và `height` (chiều cao), `layout` (bố cục) sẽ được đặt mặc định là `responsive` (tương thích).
 
-An example:
+Một ví dụ:
 
 [example preview="top-frame" playground="true"]
 ```html
@@ -84,4 +84,4 @@ An example:
 ```
 [/example]
 
-In this example, the height of the element by default will be 80% of the width, but for the viewport wider than `500px` it will be capped at `200px`.
+Trong ví dụ này, chiều cao của yếu tố theo mặc định sẽ là 80% chiều rộng, nhưng đối với màn hiển thị rộng hơn `500px`, nó sẽ được giới hạn ở `200px`.
