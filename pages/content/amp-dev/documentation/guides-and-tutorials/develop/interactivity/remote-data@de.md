@@ -1,5 +1,5 @@
 ---
-"$title": Working with remote data
+"$title": Mit Remotedaten arbeiten
 "$order": '3'
 description: Was ist, wenn deine bindbaren Daten zu groß oder zu komplex sind, um sie beim Laden der Seite abzurufen? Oder wenn jede SKU einen Preis hat …
 toc: 'true'
@@ -11,7 +11,7 @@ Was ist, wenn deine bindbaren Daten zu groß oder zu komplex sind, um sie beim L
 
 [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) unterstützt das Abrufen von Remotedaten über das Attribut [`src`](../../../../documentation/components/reference/amp-bind.md#attributes), das JSON von einem CORS Endpoint abruft. Dieser Abruf wird nur einmal (und zwar beim Laden der Seite) ausgeführt und stellt die Aktualität der Daten sicher (insbesondere, wenn sie aus einem Cache stammen).
 
-You can also bind the `src` attribute for the [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) element. This means that a user action can trigger a fetch of remote JSON data into the page's bindable state.
+Du kannst das Attribut `src` auch an das Element [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) binden. Das bedeutet, dass eine Benutzeraktion einen Abruf von JSON Remotedaten in den bindbaren Status der Seite auslösen kann.
 
 [/tip]
 
@@ -19,17 +19,17 @@ You can also bind the `src` attribute for the [`<amp-state>`](../../../../docume
 
 Nutzen wir die Funktion zum Abruf von Remotedaten, um die Preise für SKUs in unserem Beispiel nachzuschlagen. Unser Express.js Entwicklungsserver in `app.js` hat bereits den Endpoint `/shirts/sizesAndPrices?shirt=<sku>`, der für eine bestimmte SKU eines Hemdes die verfügbaren Größen und Preise pro Größe zurückgibt. Er sendet die Antwort mit einer künstlichen Verzögerung von einer Sekunde, um Netzwerklatenz zu simulieren.
 
-Request | Response
+Anfrage | Antwort
 --- | ---
 `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}`
 
 Ähnlich wie bei den JSON Daten in [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) Elementen werden die von diesen Abrufen zurückgegebenen Remotedaten im Attribut `id` des Elements zusammengeführt und sind dort verfügbar. Der Zugriff auf die Daten, die von der obigen Beispielantwort zurückgegeben wurden, kann z. B. über den folgenden Ausdruck erfolgen:
 
-Expression | Result
+Ausdruck | Ergebnis
 --- | ---
 `shirts['1001'].sizes['XS']` | `8.99`
 
-### Bind the data
+### Binde die Daten
 
 Dies wollen wir nun auf unser E-Commerce Beispiel anwenden. Rufen wir zunächst diese Hemddaten ab, sobald eine neue SKU ausgewählt wird. Füge die Bindung `[src]` zu unserem Element `amp-state#shirts` hinzu:
 
@@ -39,7 +39,7 @@ Dies wollen wir nun auf unser E-Commerce Beispiel anwenden. Rufen wir zunächst 
 <amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
 ```
 
-### Indicate unavailable sizes
+### Gib nicht verfügbare Größen an
 
 Als Nächstes markieren wir deutlich die nicht verfügbaren Größen für eine bestimmte SKU. Die CSS Klasse `"unavailable"` streicht das Element mit einer diagonale Linie durch. Wir können sie zu den Elementen im [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) hinzufügen, die den nicht verfügbaren Größen entsprechen:
 
@@ -69,9 +69,9 @@ Als Nächstes markieren wir deutlich die nicht verfügbaren Größen für eine b
 </amp-selector>
 ```
 
-Now, reload the page and try it out. Selecting a new SKU (shirt color) will cause unavailable sizes to be crossed-out (after a short delay).
+Lade nun die Seite neu und probiere sie aus. Wenn du eine neue SKU (Hemdfarbe) auswählst, werden nicht verfügbare Größen (nach einer kurzen Verzögerung) durchgestrichen.
 
-### Specify initial states
+### Gib die Anfangszustände an
 
 Es gibt aber ein kleines Problem: Was ist mit dem schwarzen Hemd, der standardmäßig ausgewählten Farbe? Wir müssen die Daten für die Größen und Preise des schwarzen Hemdes zu `amp-state#shirts` hinzufügen, da [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) nur als Reaktion auf explizite Benutzeraktionen ausgeführt wird:
 
@@ -90,7 +90,7 @@ Es gibt aber ein kleines Problem: Was ist mit dem schwarzen Hemd, der standardm�
 <!-- ... -->
 ```
 
-And, we'll need to update the default state of relevant elements:
+Außerdem müssen wir den Standardstatus der relevanten Elemente aktualisieren:
 
 ```html
 <amp-selector name="size">
@@ -125,7 +125,7 @@ And, we'll need to update the default state of relevant elements:
 
 [tip type="note"] **HINWEIS:**  [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) wird nicht beim Laden der Seite ausgeführt, sondern nur als Reaktion auf explizite Benutzeraktionen. So wird sichergestellt, dass das erste Laden der Seite über alle Seiten hinweg konstant schnell ist, unabhängig von der Verwendung von [`amp-bind`](../../../../documentation/components/reference/amp-bind.md). [/tip]
 
-## Variable shirt prices
+## Variable Hemdpreise
 
 Da die verfügbaren Größen nun korrekt angezeigt werden, sollten wir sicherstellen, dass auch der richtige Preis angezeigt wird.
 
@@ -168,4 +168,4 @@ Wir sind fast fertig! Deaktiviere den Button "Add to cart", wenn die ausgewählt
     [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]">
 ```
 
-**Try it out**:  If you select a size that's unavailable, you can't add it to the cart.
+**Probiere es aus**: Wenn du eine Größe auswählst, die nicht verfügbar ist, kannst du sie nicht in den Warenkorb legen.
