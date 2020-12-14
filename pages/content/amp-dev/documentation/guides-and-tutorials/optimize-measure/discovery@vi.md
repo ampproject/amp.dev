@@ -7,14 +7,14 @@ formats:
 "$order": '5'
 description: 'In some cases, you might want to have both a non-AMP and an AMP version of the same page, for example, a news article. Consider this: If Google Search ...'
 teaser:
-  icon: discover
-  text: Learn how search engines find out that there is an AMP version of your site.
-  label: Learn more
+  icon: khám phá
+  text: Tìm hiểu cách công cụ tìm kiếm biết được có một phiên bản AMP cho website của bạn.
+  label: Tìm hiểu thêm
 ---
 
 In some cases, you might want to have both a non-AMP and an AMP version of the same page, for example, a news article. Consider this: If Google Search finds the non-AMP version of that page, how does it know there’s an AMP version of it?
 
-### Linking pages with <link>
+### Liên kết các trang với <link>
 
 In order to solve this problem, we add information about the AMP page to the non-AMP page and vice versa, in the form of `<link>` tags in the `<head>`.
 
@@ -25,35 +25,35 @@ Add the following to the non-AMP page:
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-And this to the AMP page:
+Thêm thông tin này vào trang AMP:
 
 [sourcecode:html]
 
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
-### What if I only have one page?
+### Nếu tôi chỉ có một trang thì sao?
 
-If you only have one page, and that page is an AMP page, you must still add the canonical link to it, which will then simply point to itself:
+Nếu bạn chỉ có một trang, và trang đó là trang AMP, bạn vẫn phải thêm liên kết chính thức vào trang đó, và liên kết này đơn giản là trỏ đến chính nó:
 
 [sourcecode:html]
 
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-[tip type="read-on"] **READ ON –** Learn more about how Google finds AMP pages in [Google Search guidelines for AMP pages](https://support.google.com/webmasters/answer/6340290). [/tip]
+[tip type="read-on"] **ĐỌC TIẾP –** Tìm hiểu thêm về cách Google tìm ra các trang AMP trong [hướng dẫn của Google Tìm kiếm dành cho các trang AMP](https://support.google.com/webmasters/answer/6340290). [/tip]
 
-## Integrate with third-party platforms through additional metadata <a name="integrate-with-third-party-platforms-through-additional-metadata"></a>
+## Tích hợp với những nền tảng bên thứ ba thông qua siêu dữ liệu khác <a name="integrate-with-third-party-platforms-through-additional-metadata"></a>
 
 Sometimes a third-party site (that embeds your AMP page or includes links to it) needs to know more about your page other than the fact that it is an AMP page. The questions a platform might ask about your page are things like “Are you a news article?”, “Or a video?”, or “Do you have a screenshot and short description?”.
 
-This isn’t just relevant for AMP pages but for all web pages. For some platforms, this metadata is additional, for others it is a requirement, meaning they **won’t show links to your content if you didn’t include the right metadata**. Make sure you include the right metadata for the platforms you want your content to appear on.
+Điều này không chỉ thích hợp cho các trang AMP mà còn cho tất cả các trang web. Đối với một số nền tảng, siêu dữ liệu này là phần cộng thêm, nhưng đối với số khác thì nó là điều bắt buộc, nghĩa là họ **không hiển thị liên kết đến nội dung của bạn nếu bạn không bao gồm siêu dữ liệu phù hợp**. Hãy bảo đảm là bạn bao gồm siêu dữ liệu phù hợp cho những nền tảng bạn muốn nội dung xuất hiện trên đó.
 
-### Use Schema.org for most search engines
+### Dùng Schema.org cho hầu hết các công cụ tìm kiếm
 
 [Schema.org](http://schema.org/) offers open vocabularies to add meta data to all sorts of things. In the case of AMP, the properties that make sense in context include the specific type of content (i.e. ‘news article’), the headline, the published date and associated preview images.
 
-Example:
+Ví dụ:
 
 [sourcecode:html]
 
@@ -91,13 +91,13 @@ Example:
 
 [/sourcecode]
 
-More examples can be found in the [ampproject examples folder](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), including the alternative HTML attribute syntax).
+Xem thêm ví dụ ở [thư mục ví dụ ampproject](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), bao gồm cú pháp thuộc tính HTML thay thế.
 
-[tip type="read-on"] Visit these resources for more information on structured data:
+[tip type="read-on"] Truy cập những nguồn này để biết thêm thông tin về dữ liệu có cấu trúc:
 
 - Learn how to [Structure your content to appear in Google Search rich results](https://developers.google.com/search/docs/guides/mark-up-content) (e.g., top stories carousel, recipe cards, etc.).
 - Test your structured data with the [Google Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/). [/tip]
 
-### Other metadata for even more platforms
+### Siêu dữ liệu khác cho những nền tảng khác nữa
 
 Head to the [Social Discovery guide at Web Fundamentals](https://developers.google.com/web/fundamentals/discovery-and-monetization/social-discovery/) to learn about all the other different ways of preparing your content for discovery and distribution.
