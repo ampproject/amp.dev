@@ -94,8 +94,7 @@ description: For web experiences requiring a high amount of customization AMP ha
 
 amp.dev được xây dựng với AMP! Do đó, các ảnh của chúng tôi phải phù hợp với tiêu chí [`amp-img`](../../../../documentation/components/reference/amp-img.md). Quy trình xây dựng sử dụng cú pháp sau để chuyển đổi ảnh sang định dạng `amp-img` chuẩn.
 
-<div class="ap-m-code-snippet"><pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}
-</pre></div>
+<div class="ap-m-code-snippet"><pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}</pre></div>
 
 ## Lọc các phần
 
@@ -158,12 +157,7 @@ Read-on
 
 Nếu mã của bạn chứa 2 ngoặc nhọn, thường là khi bạn sử dụng khuôn mẫu [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md?format=websites), bạn phải gói phần chứa code:
 
-<div class="ap-m-code-snippet"><pre>```html
-{% raw	%}
-  // code with double curly braces
-{% endraw	%}
-```
-</pre></div>
+<div class="ap-m-code-snippet"><pre>```html<br>{% raw	%}<br>  // code with double curly braces<br>{% endraw	%}<br>```</pre></div>
 
 ### Trích đoạn mã trong danh sách
 
@@ -448,7 +442,6 @@ Vui lòng tạo mục tiêu anchor bằng `<a name="#anchor-name></a>` trước 
 
 ```html
 ## Example section <a name="example-section"></a>
-
 ```
 
 Bạn chỉ được sử dụng chữ cái, số, dấu gạch ngang và gạch dưới trong một anchor. Vui lòng sử dụng tên anchor ngắn bằng tiếng Anh, phù hợp với đầu mục hoặc mô tả phần. Đảm bảo tên anchor là duy nhất trong tài liệu.
@@ -496,15 +489,15 @@ Chữ cái đầu tiên của từ đầu tiên trong tiêu đề, đầu mục 
    </td>
   </tr>
   <tr>
-   <td>hello-world-tutorial.md    </td>
-   <td>hello_world_tutorial.md    </td>
+   <td>hello-world-tutorial.md</td>
+   <td>hello_world_tutorial.md</td>
   </tr>
   <tr>
-   <td>website-fundamentals.md    </td>
-   <td>websiteFundamentals.md    </td>
+   <td>website-fundamentals.md</td>
+   <td>websiteFundamentals.md</td>
   </tr>
   <tr>
-   <td>actions-and-events.md    </td>
-   <td>actionsandevents.md    </td>
+   <td>actions-and-events.md</td>
+   <td>actionsandevents.md</td>
   </tr>
 </table>
