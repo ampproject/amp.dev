@@ -1,27 +1,27 @@
 ---
-"$title": Introduction to complex animations
+"$title": Giới thiệu về hoạt họa phức hợp
 "$order": '2'
-description: "For animations that can't be driven by adding and removing classes, AMP offers several animation specific components. These components apply AMP's principles to animations ..."
+description: Đối với các hình hoạt họa không thể được thúc đẩy bằng cách thêm và xóa lớp, AMP cung cấp một số thành phần dành riêng cho hoạt họa. Các thành phần này áp dụng nguyên tắc của AMP cho hình hoạt họa...
 formats:
 - websites
 - ads
 author: CrystalOnScript
 ---
 
-For animations that can't be driven by [adding and removing classes](triggering_css_animations.md), AMP offers several animation specific components. These components apply AMP's principles to animations: they're fast, efficient, and user first. AMP restricts what CSS properties inside keyframes are allowed, but grants benefits such as fine-grain control, seamless animations, and cross browser compatibility with no extra work.
+Đối với các hình hoạt họa không thể được thúc đẩy bằng cách <a class="" href="https://gitlocalize.com/repo/4863/vi/pages/content/amp-dev/documentation/guides-and-tutorials/develop/animations/triggering_css_animations.md">thêm và xóa lớp</a>, AMP cung cấp một số thành phần dành riêng cho hoạt họa. Các thành phần này áp dụng nguyên tắc của AMP cho hình hoạt họa: chúng nhanh, hiệu quả và đặt người dùng làm ưu tiên hàng đầu. AMP giới hạn các thuộc tính CSS được cho phép bên trong keyframe, nhưng cung cấp các lợi ích như kiểm soát chi tiết, hoạt họa liền mạch, và tương thích đa trình duyệt mà không cần xử lý thêm.
 
-Use amp-animation if you need to tightly control playback, as well as have precise timing with multiple elements animating at the same time.
+Sử dụng amp-animation nếu bạn cần kiểm soát chặt chẽ khả năng phát lại, cũng như hẹn giờ chính xác với nhiều yếu tố được hoạt họa tại cùng một thời điểm.
 
-## Creating a basic AMP animation
+## Tạo một hình hoạt họa AMP cơ bản
 
-The [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) component enables use of the [Web Animation API](https://www.w3.org/TR/web-animations/) in AMP.
+Thành phần [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) cho phép sử dụng [API Hoạt họa Web](https://www.w3.org/TR/web-animations/) trong AMP.
 
-A basic [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) is a JSON object made of the following key parts:
+Một [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) cơ bản là một đối tượng JSON được tạo bằng các thành phần chính yếu sau:
 
-- The element the component is animating, or `selector`.
-- [Timing Properties](../../../../documentation/components/reference/amp-animation.md#timing-properties)
-- [Keyframes](../../../../documentation/components/reference/amp-animation.md#keyframes)
-- [Trigger](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
+- Yếu tố được hoạt họa bởi thành phần, hoặc `selector` (bộ chọn).
+- [Thuộc tính Hẹn giờ](../../../../documentation/components/reference/amp-animation.md#timing-properties)
+- [Keyframe](../../../../documentation/components/reference/amp-animation.md#keyframes)
+- [Yếu tố Kích hoạt](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
 
 ```
 <amp-animation layout="nodisplay" id="exampleAnimation">
@@ -39,27 +39,27 @@ A basic [`amp-animation`](../../../../documentation/components/reference/amp-ani
 <button on="tap:exampleAnimation.start">
 ```
 
-### Selector
+### Bộ chọn
 
-Much like CSS, the [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) component links the animation properties to the element by declaring the element's tag name, class, or id in the `"selector"` field. The component animates each element with the tag type or class name declared. Use an id to ensure you animate a single element.
+Cũng giống như CSS, thành phần [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) liên kết các thuộc tính hoạt họa với yếu tố bằng cách khai báo tên thẻ, lớp hoặc ID của yếu tố trong trường `"selector"` (bộ chọn). Thành phần này sẽ hoạt họa từng yếu tố với loại thẻ hoặc tên lớp được khai báo. Sử dụng một ID để đảm bảo bạn hoạt họa một yếu tố duy nhất.
 
-### Timing properties
+### Thuộc tính hẹn giờ
 
-The [timing properties](../../../../documentation/components/reference/amp-animation.md#timing-properties) control how long an animation takes, the amount of times it plays, and which direction keyframes execute.
+Các [thuộc tính hẹn giờ](../../../../documentation/components/reference/amp-animation.md#timing-properties) kiểm soát thời lượng của một hình hoạt họa, số lần nó được phát, và hướng thực thi keyframe.
 
-No timing properties are required, but an animation might not run if properties related to time and display are missing, such as `duration` and `fill`.
+Không có thuộc tính hẹn giờ nào là bắt buộc phải có, nhưng một hình hoạt họa có thể không chạy nếu các thuộc tính liên quan đến thời gian và hiển thị bị thiếu, ví dụ như `duration` (thời lượng) và `fill` (lấp đầy).
 
-### Keyframes
+### Keyframe
 
-While CSS allows you to morph from one state to another via transitions, you must declare animation properties as keyframes to implement [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) (similar to [CSS animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)). To ensure smooth playback and cross browser compatibility, [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) [restricts what keyframe properties](../../../../documentation/components/reference/amp-animation.md#allow-listed-properties-for-keyframes) are usable to GPU accelerated properties that do not cause a re-layout and can animate on the [compositor thread](https://dev.chromium.org/developers/design-documents/compositor-thread-architecture). This prevents animations from interfering with AMP and the browser's [render process](https://developers.google.com/web/updates/2018/09/inside-browser-part3#javascript_can_block_the_parsing).
+Tuy CSS cho phép bạn chuyển từ một trạng thái sang một trạng thái khác thông qua chuyển tiếp, bạn phải khai báo các thuộc tính hoạt họa như là keyframe để triển khai [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) (cũng giống như [hoạt họa CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)). Để đảm bảo phát lại mượt mà và khả năng tương thích với nhiều trình duyệt, [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) [giới hạn các thuộc tính keyframe](../../../../documentation/components/reference/amp-animation.md#allow-listed-properties-for-keyframes) được sử dụng cho các thuộc tính tăng tốc GPU để không bắt tải lại bố cục và có thể hoạt họa trên [luồng compositor (hậu kỳ)](https://dev.chromium.org/developers/design-documents/compositor-thread-architecture). Việc này ngăn hình hoạt họa can thiệp vào [tiến trình render](https://developers.google.com/web/updates/2018/09/inside-browser-part3#javascript_can_block_the_parsing) của trình duyệt và AMP.
 
-[tip type="note"] Keyframes are either defined directly in an [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) or referenced from [`<amp style-keyframe>`](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#keyframes-stylesheet) as long as they follow the property restrictions. Read more [here about keyframes in `amp-animation`](../../../../documentation/components/reference/amp-animation.md#keyframes). [/tip]
+[tip type="note"] Các keyframe được định nghĩa trực tiếp trong một [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) hoặc được tham chiếu từ [`<amp style-keyframe>`](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#keyframes-stylesheet) chừng nào chúng còn tuân thủ các giới hạn về thuộc tính. Đọc thêm về [keyframe trong `amp-animation` ở đây](../../../../documentation/components/reference/amp-animation.md#keyframes). [/tip]
 
 ### Trigger
 
-The trigger starts the animation sequence. The [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) extension starts either when the `<body>` becomes visible on the page or by connecting it to an [AMP action or event](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)
+Yếu tố kích hoạt bắt đầu trình tự hoạt họa. Phần mở rộng [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) bắt đầu khi `<body>` được hiển thị trên trang hoặc khi kết nối nó với một [hành động hay sự kiện AMP](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)
 
-Triggering on visibility of `<body>` is useful when the animation should run as soon as the page loads because it appears "above the fold", or within the first viewport of the page. Animations trigger through visibility by adding `trigger="visibility"` as an attribute to the component.
+Việc kích hoạt khi hiển thị `<body>` khá hữu ích khi hình hoạt họa cần chạy ngay khi trang được tải bởi nó xuất hiện "trên bề mặt", hay trong màn hiển thị đầu tiên của trang. Hoạt họa được kích hoạt thông qua hiển thị bằng cách thêm `trigger="visibility"` làm một thuộc tính cho thành phần.
 
 ```
 <amp-animation layout="nodisplay"
@@ -68,7 +68,7 @@ Triggering on visibility of `<body>` is useful when the animation should run as 
 </amp-animation>
 ```
 
-Animations connect to an action or event by assigning the [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) component an `id` and linking that `id` to the desired event trigger, such as tapping a button.
+Hoạt họa kết nối với một hành động hay sự kiện bằng cách gán cho thành phần [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) một `id` và liên kết `id` đó với yếu tố kích hoạt sự kiện mong muốn, ví dụ như chạm vào một nút.
 
 ```
 <amp-animation layout="nodisplay" id="exampleAnimation">
@@ -78,13 +78,13 @@ Animations connect to an action or event by assigning the [`amp-animation`](../.
 <button on="tap:exampleAnimation.start">
 ```
 
-## Building complex animations
+## Xây dựng các hình hoạt họa phức hợp
 
-Building an animation in [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) allows for fine grained control that goes beyond starting and stopping an animation: it can also pause, reverse, and direct to a specific point. You can even chain multiple animations together and animate elements in a sequence.
+Việc xây dựng một hình hoạt họa trong [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) cho phép kiểm soát chi tiết hơn là chỉ bắt đầu và dừng một hình hoạt họa: nó còn có thể tạm dừng, đảo ngược và chuyển hướng đến một điểm cụ thể. Bạn thậm chí còn có thể xâu chuỗi nhiều hình hoạt họa với nhau và hoạt họa các yếu tố theo một trình tự.
 
-### Subtargets
+### Mục tiêu con
 
-Elements of the same tag or class can have specified timing properties and override the values of variables defined in the top level animation.
+Các yếu tố có cùng thẻ hoặc lớp có thể có các thuộc tính hẹn giờ cụ thể và ghi đè các giá trị biến số được quy định trong hoạt họa cấp cao nhất.
 
 [example preview="top-frame" playground="true" imports="amp-animation"]
 ```html
@@ -121,9 +121,9 @@ Elements of the same tag or class can have specified timing properties and overr
 ```
 [/example]
 
-### Chained animations
+### Chuỗi hoạt họa
 
-Multiple animations can connect together to form a large sequence. You can create timed effects, such as overlays on a video, by writing animations in the `animations` array within the [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) component.
+Nhiều hình hoạt họa có thể kết nối cùng nhau để tạo thành một trình tự lớn. Bạn có thể tạo các hiệu ứng hẹn giờ, ví dụ như hình phủ lên một video, bằng cách viết các hình hoạt họa trong chuỗi `animations` trong thành phần [`amp-animation`](../../../../documentation/components/reference/amp-animation.md).
 
 ```
 <amp-animation id="overlaysAnim" layout="nodisplay">
@@ -157,9 +157,9 @@ Multiple animations can connect together to form a large sequence. You can creat
 </amp-animation>
 ```
 
-This setup plays each animation for 3 seconds in a sequence.
+Thiết lập này sẽ phát mỗi hình hoạt họa trong 3 giây trong một trình tự.
 
-For larger animations, animations inside the `animations` array are able to reference other [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) components.
+Đối với các hình hoạt họa lớn hơn, các hoạt họa trong chuỗi `animations` có thể tham chiếu các thành phần [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) khác.
 
 ```
 <amp-animation id="addEnergy" layout="nodisplay">
@@ -205,9 +205,9 @@ For larger animations, animations inside the `animations` array are able to refe
 </amp-animation>
 ```
 
-### Animating an unknown amount of elements
+### Hoạt họa số yếu tố không xác định
 
-By using [`var()` and `calc()` expressions](../../../../documentation/components/reference/amp-animation.md) along with [CSS extensions](../../../../documentation/components/reference/amp-animation.md#css-extensions), you can write complex and timed animations that work with any number of elements. This allows for dynamic and user generated data to be animated with ease and fluidity.
+Thông qua việc sử dụng các [biểu thức `var()` và `calc()`](../../../../documentation/components/reference/amp-animation.md) cùng với [phần mở rộng CSS](../../../../documentation/components/reference/amp-animation.md#css-extensions), bạn có thể viết các hình hoạt họa phức hợp và hẹn giờ để hoạt động với số yếu tố bất kỳ. Điều này cho phép dữ liệu năng động do người dùng tạo có thể được hoạt họa một cách dễ dàng và trôi chảy.
 
 [example preview="top-frame" playground="true"]
 ```html
@@ -259,20 +259,20 @@ By using [`var()` and `calc()` expressions](../../../../documentation/components
 ```
 [/example]
 
-- Declaring a variable, `--duration`, and giving it the value of two seconds.
-- Setting the `duration` to the var `--duration`'s value.
-- Calculating the delay applied to each element with the class `.card`.
-    1. The [`length()` extension](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) calculates how many `.card` elements were selected
-    2. The length then subtracts each `.card`'s [index()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension)
-    3. The resulting value is multiplied by the var `--duration`
-    4. The final total is applied in seconds to that element's delay
-- The animation is applied to each element individually so that the cards are shuffled one after another instead of all at the same time.
+- Khai báo một biến số, `--duration`, và cho nó giá trị 2 giây.
+- Thiết lập `duration` (thời lượng) cho giá trị của var `--duration`.
+- Tính độ trễ được áp dụng cho từng yếu tố với lớp `.card`.
+    1. [Phần mở rộng `length()`](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) tính số yếu tố `.card` được chọn
+    2. Sau đó, độ dài sẽ trừ đi [index()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension) của từng `.card`
+    3. Giá trị kết quả sẽ được nhân với var `--duration`
+    4. Giá trị cuối cùng tính theo giây sẽ được áp dụng cho độ trễ của yếu tố
+- Hình hoạt họa này được áp dụng riêng cho từng yếu tố, để các thẻ được trộn tuần tự thay cho tất cả cùng lúc.
 
-Open the animation in the AMP playground and add more [`amp-img`](../../../../documentation/components/reference/amp-img) elements to test this behavior.
+Mở hình hoạt họa trong sân thực hành AMP và thêm các yếu tố [`amp-img`](../../../../documentation/components/reference/amp-img) để kiểm tra hành vi này.
 
-### Look great, everywhere
+### Chạy tốt ở mọi nơi
 
-Animations can include [`conditions`](../../../../documentation/components/reference/amp-animation.md#conditions) that allow customized effects. Tailor animations to any screen size through the [`media` condition](../../../../documentation/components/reference/amp-animation.md#media-query) and supports backwards browser compatibility by enabling [`supports` conditions](../../../../documentation/components/reference/amp-animation.md#supports-condition) in a [`switch` statement](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement).
+Các hình hoạt họa có thể bao gồm [`conditions`](../../../../documentation/components/reference/amp-animation.md#conditions) (điều kiện) cho phép các yếu tố tùy chỉnh. Tùy chỉnh hình hoạt họa cho mọi kích cỡ màn hình thông qua [điều kiện `media` (đa phương tiện)](../../../../documentation/components/reference/amp-animation.md#media-query) và hỗ trợ tương thích ngược với các trình duyệt bằng cách bật [các điều kiện `supports` (hỗ trợ)](../../../../documentation/components/reference/amp-animation.md#supports-condition) trong một [tuyên bố `switch`](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement).
 
 [example preview="top-frame" playground="true"]
 ```html
