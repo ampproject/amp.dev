@@ -1,36 +1,36 @@
 ---
-"$title": Use AMP as a data source for your PWA
+"$title": Sử dụng AMP như một nguồn dữ liệu cho PWA của bạn
 "$order": '1'
-description: "If you've invested in AMP but haven't built a Progressive Web App yet, your AMP Pages can dramatically simplify your development of your Progressive Web App."
+description: Nếu bạn đã đầu tư vào AMP nhưng chưa xây dựng một Ứng dụng Web Lũy tiến (PWA), các Trang AMP của bạn có thể đơn giản hóa đáng kể việc phát triển Ứng dụng Web Lũy tiến.
 formats:
 - websites
 author: pbakaus
 ---
 
-If you've invested in AMP but haven't built a Progressive Web App yet, your AMP Pages can dramatically simplify your development of your Progressive Web App. In this guide you'll learn how to consume AMP within your Progressive Web App and use your existing AMP Pages as a data source.
+Nếu bạn đã đầu tư vào AMP nhưng chưa xây dựng một Ứng dụng Web Lũy tiến (PWA), các Trang AMP của bạn có thể đơn giản hóa đáng kể việc phát triển Ứng dụng Web Lũy tiến. Trong hướng dẫn này, bạn sẽ học được cách sử dụng AMP trong Ứng dụng Web Lũy tiến và sử dụng các Trang AMP hiện có của bạn như một nguồn dữ liệu.
 
-## From JSON to AMP
+## Từ JSON đến AMP
 
-In the most common scenario, a Progressive Web App is a single page application that connects to a JSON API via Ajax. This JSON API then returns sets of data to drive the navigation, and the actual content to render the articles.
+Trong tình huống phổ biến nhất, một Ứng dụng Web Lũy tiến là một ứng dụng đơn trang kết nối đến một JSON API thông qua Ajax. JSON API này sau đó sẽ trả về các nhóm dữ liệu để thúc đẩy việc điều hướng, và nội dung thực tế để render bài viết.
 
-You would then proceed and convert the raw content into usable HTML and render it on the client. This process is costly and often hard to maintain. Instead, you can reuse your already existing AMP Pages as a content source. Best of all, AMP makes it trivial to do so in just a few lines of code.
+Sau đó, bạn sẽ có thể chuyển nội dung thô thành HTML khả dụng và hiển thị nó lên máy khách. Quy trình này rất tốn kém và thường khó duy trì. Thay vào đó, bạn có thể tái sử dụng các Trang AMP hiện có như một nguồn nội dung. Tuyệt vời nhất, bạn có thể dễ dàng làm việc đó trong AMP chỉ với một vài dòng code.
 
-## Include "Shadow AMP" in your Progressive Web App
+## Bao gồm "Shadow AMP" trong Ứng dụng Web Lũy tiến
 
-The first step is to include a special version of AMP we call “Shadow AMP” in your Progressive Web App. Yes, that’s right – you load the AMP library in the top level page, but it won’t actually control the top level content. It will only “amplify” the portions of our page that you tell it to.
+Bước đầu tiên là bao gồm một phiên bản đặc biệt của AMP mà chúng tôi gọi là “Shadow AMP” trong Ứng dụng Web Lũy tiến của bạn. Đúng vậy – bạn tải thư viện AMP ở trang cấp cao nhất, nhưng nó sẽ không thực sự kiểm soát nội dung cấp cao nhất. Nó chỉ “tăng cường” các phần của trang chúng tôi mà bạn yêu cầu.
 
-Include Shadow AMP in the head of your page, like so:
+Bao gồm Shadow AMP ở phần head của trang như thế này:
 
 [sourcecode:html]
 <!-- Asynchronously load the AMP-with-Shadow-DOM runtime library. -->
 <script async src="https://cdn.ampproject.org/shadow-v0.js"></script>
 [/sourcecode]
 
-### How do you know when the Shadow AMP API is ready to use?
+### Làm thế nào thì bạn biết API Shadow AMP đã sẵn sàng để sử dụng?
 
-We recommend you load the Shadow AMP library with the `async` attribute in place. That means, however, that you need to use a certain approach to understand when the library is fully loaded and ready to be used.
+Chúng tôi khuyên bạn nên tải thư viện Shadow AMP với thuộc tính `async` (không đồng bộ). Điều đó có nghĩa là bạn cần sử dụng một lối tiếp cận nhất định để hiểu khi nào thì thư viện đã được tải đầy đủ và sẵn sàng để sử dụng.
 
-The right signal to observe is the availability of the global `AMP` variable, and Shadow AMP uses a “[asynchronous function loading approach](http://mrcoles.com/blog/google-analytics-asynchronous-tracking-how-it-work/)” to help with that. Consider this code:
+Tín hiệu cần quan sát là tình trạng sẵn có của biến số `AMP` toàn cục, và Shadow AMP sử dụng một “[lối tiếp cận tải chức năng không đồng bộ](http://mrcoles.com/blog/google-analytics-asynchronous-tracking-how-it-work/)” để hỗ trợ việc đó. Hãy cân nhắc đoạn code này:
 
 [sourcecode:javascript]
 (window.AMP = window.AMP || []).push(function(AMP) {
@@ -38,26 +38,26 @@ The right signal to observe is the availability of the global `AMP` variable, an
 });
 [/sourcecode]
 
-This code will work, and any number of callbacks added this way will indeed fire when AMP is available, but why?
+Đoạn code này sẽ hoạt động, và mọi cuộc gọi lại được bổ sung theo cách này sẽ kích hoạt khi AMP khả dụng, nhưng vì sao?
 
-This code translates to:
+Đoạn code này có nghĩa:
 
-1. “if window.AMP doesn't exist, create an empty array to take its position”
-2. "then push a callback function into the array that should be executed when AMP is ready"
+1. “nếu window.AMP không tồn tại, tạo một dãy trống để chiếm vị trí của nó”
+2. "sau đó đẩy một chức năng gọi lại vào dãy để được thực thi khi AMP đã sẵn sàng"
 
-It works because the Shadow AMP library, upon actual load, will realize there's already an array of callbacks under `window.AMP`, then process the entire queue. If you later execute the same function again, it will still work, as Shadow AMP replaces `window.AMP` with itself and a custom `push` method that simply fires the callback right away.
+Nó hoạt động bởi thư viện Shadow AMP, khi được tải thực tế, sẽ nhận ra rằng đã có một dãy cuộc gọi lại trong `window.AMP`, và sau đó xử lý toàn bộ hàng đợi này. Nếu sau đó bạn thực thi lại chức năng này, nó vẫn sẽ hoạt động, bởi Shadow AMP sẽ thay `window.AMP` bằng chính nó và một phương thức `push` (đẩy) tùy chỉnh sẽ kích hoạt cuộc gọi lại ngay lập tức.
 
-[tip type="tip"] **TIP –** To make the above code sample practical, we recommend that you wrap it into a Promise, then always use said Promise before working with the AMP API. Look at our [React demo code](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20) for an example. [/tip]
+[tip type="tip"] **MẸO –** Để tiện sử dụng đoạn code mẫu ở trên, chúng tôi khuyên bạn nên bọc nó trong một Promise (Lời hứa), sau đó luôn sử dụng Promise (Lời hứa) đó trước khi làm việc với AMP API. Hãy xem [Đoạn code mẫu React](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20) của chúng tôi để biết ví dụ. [/tip]
 
-## Handle navigation in your Progressive Web App
+## Xử lý việc điều hướng trong Ứng dụng Web Lũy tiến của bạn
 
-You’ll still need to implement this step manually. After all, it's up to you how you present links to content in your navigation concept. A number of lists? A bunch of cards?
+Bạn vẫn cần triển khai thủ công bước này. Bởi lẽ, việc trình bày các liên kết đến nội dung trong khái niệm điều hướng của bạn là tùy thuộc vào bạn. Một số danh sách? Một loạt thẻ?
 
-In a common scenario, you’d fetch some JSON that returns ordered URLs with some metadata. In the end, you should end up with a function callback that fires when the user clicks on one of the links, and said callback should include the URL of the requested AMP page. If you have that, you’re all set for the final step.
+Trong tình huống phổ biến nhất, bạn sẽ truy xuất một số JSON, chúng sẽ trả về những URL đã đặt với một vài siêu dữ liệu. Cuối cùng, bạn sẽ có một cuộc gọi lại chức năng được kích hoạt khi người dùng nhấn vào một trong các liên kết, và cuộc gọi lại đó sẽ bao gồm URL của Trang AMP đã yêu cầu. Nếu bạn có nó, bạn đã sẵn sàng cho bước cuối cùng.
 
-## Use the Shadow AMP API to render a page inline
+## Sử dụng API Shadow AMP để render mộ trang inline
 
-Finally, when you want to display content after a user action, it's time to fetch the relevant AMP document and let Shadow AMP take over. First, implement a function to fetch the page, similar to this one:
+Cuối cùng, khi bạn muốn hiển thị nội dung sau một hành động của người dùng, hãy truy xuất tài liệu AMP liên quan và cho phép Shadow AMP giành quyền kiểm soát. Đầu tiên, triển khai một chức năng để truy xuất trang, tương tự như:
 
 [sourcecode:javascript]
 function fetchDocument(url) {
@@ -79,9 +79,9 @@ function fetchDocument(url) {
 }
 [/sourcecode]
 
-[tip type="important"] **IMPORTANT –** To simplify the above code example, we skipped over error handling. You should always make sure to catch and handle errors gracefully. [/tip]
+[tip type="important"] **QUAN TRỌNG –** Để đơn giản hóa đoạn code ở trên, chúng tôi đã bỏ qua khâu xử lý lỗi. Bạn luôn nên đảm bảo bắt và xử lý các lỗi một cách khéo léo. [/tip]
 
-Now that we have our ready-to-use `Document` object, it's time to let AMP take over and render it. Get a reference to the DOM element that serves as container for the AMP document, then call `AMP.attachShadowDoc()`, like so:
+Bây giờ thì chúng ta đã có đối tượng `Document` (Tài liệu) sẵn dùng, hãy để AMP giành quyền kiểm soát và render nó. Nhận một tham chiếu cho yếu tố DOM có tác dụng như một container cho tài liệu AMP, sau đó gọi `AMP.attachShadowDoc()` như thế này:
 
 [sourcecode:javascript]
 // This can be any DOM element
@@ -97,32 +97,32 @@ fetchDocument(url).then(function(doc) {
 });
 [/sourcecode]
 
-[tip type="tip"] **TIP –** Before you actually hand the document over to AMP, it's the perfect time to remove page elements that make sense when displaying the AMP page standalone, but not in embedded mode: For example, footers and headers. [/tip]
+[tip type="tip"] **MẸO –** Trước khi bạn trao tài liệu cho AMP, đây là thời điểm thích hợp để xóa các yếu tố trang vốn phù hợp khi hiển thị trang AMP độc lập, nhưng không thích hợp trong chế độ nhúng: Ví dụ, các chân trang và đầu đề trang. [/tip]
 
-And that's it! Your AMP page renders as a child of your overall Progressive Web App.
+Và thế là xong! Trang AMP của bạn sẽ render như một con của Ứng dụng Web Lũy tiến tổng quát.
 
-## Clean up after yourself
+## Dọn dẹp
 
-Chances are your user will navigate from AMP to AMP within your Progressive Web App. When discarding the previous rendered AMP Page, always make sure to tell AMP about it, like so:
+Nhiều khả năng người dùng sẽ điều hướng giữa các trang AMP trong Ứng dụng Web Lũy tiến của bạn. Khi loại bỏ Trang AMP đã render trước đó, hãy luôn đảm bảo rằng bạn đã thông báo với AMP, ví dụ như:
 
 [sourcecode:javascript]
 // ampedDoc is the reference returned from AMP.attachShadowDoc
 ampedDoc.close();
 [/sourcecode]
 
-This will tell AMP that you're not using this document any longer and will free up memory and CPU overhead.
+Điều này sẽ cho AMP biết bạn không còn sử dụng tài liệu này nữa và giải phóng bộ nhớ và CPU đang dùng.
 
-## See it in action
+## Xem hoạt động thực tế
 
 [video src="/static/img/docs/pwamp_react_demo.mp4" width="620" height="1100" loop="true", controls="true"]
 
-You can see the "AMP in PWA" pattern in action in the [React sample](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa) we've built. It demonstrates smooth transitions during navigation and comes with a simple React component that wraps the above steps. It's the best of both worlds – flexible, custom JavaScript in the Progressive Web App, and AMP to drive the content.
+Bạn có thể thấy quy luật "AMP trong PWA" trong [mẫu React](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa) mà chúng tôi đã xây dựng. Nó minh họa sự chuyển tiếp mượt mà trong quá trình điều hướng và đi kèm một thành phần React đơn giản để bọc các bước ở trên. Nó có ưu điểm của cả hai ngôn ngữ – JavaScript linh hoạt, tùy chỉnh trong Ứng dụng Web Lũy tiến, với AMP để thúc đẩy nội dung.
 
-- Grab the source code here: [https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)
-- Use the React component standalone via npm: [https://www.npmjs.com/package/react-amp-document](https://www.npmjs.com/package/react-amp-document)
-- See it in action here: [https://choumx.github.io/amp-pwa/](https://choumx.github.io/amp-pwa/) (best on your phone or mobile emulation)
+- Tải mã nguồn ở đây: [https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)
+- Sử dụng thành phần React độc lập thông qua npm: [https://www.npmjs.com/package/react-amp-document](https://www.npmjs.com/package/react-amp-document)
+- Xem hành động thực tế ở đây: [https://choumx.github.io/amp-pwa/](https://choumx.github.io/amp-pwa/) (tốt nhất trên điện thoại hoặc trình giả lập di động của bạn)
 
-You can also see a sample of PWA and AMP using Polymer framework. The sample uses [amp-viewer](https://github.com/PolymerLabs/amp-viewer/) to embed AMP pages.
+Bạn cũng có thể xem code mẫu của PWA và AMP sử dụng khung Polymer. Mẫu này sử dụng [amp-viewer](https://github.com/PolymerLabs/amp-viewer/) để nhúng các trang AMP.
 
-- Grab the code here: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp)
-- See it in action here: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/)
+- Tải mã ở đây: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp)
+- Xem hoạt động thực tế ở đây: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/)
