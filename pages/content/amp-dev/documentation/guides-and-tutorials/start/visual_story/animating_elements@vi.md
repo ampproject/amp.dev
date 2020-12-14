@@ -244,7 +244,6 @@ Hãy tạo độ trễ cho chuyển động vào của hình ảnh đầu tiên 
     animate-in="fade-in"
     animate-in-delay="1s">
 </amp-img>
-
 ```
 
 Làm mới và tải lại câu chuyện của bạn. Trang cuối cùng của bạn sẽ trông như thế này:
