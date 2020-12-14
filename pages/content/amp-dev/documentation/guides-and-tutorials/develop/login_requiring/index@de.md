@@ -1,5 +1,5 @@
 ---
-"$title": Create a login-requiring AMP page
+"$title": Erstelle eine AMP Seite mit obligatorischer Anmeldung
 "$order": '0'
 description: Einige Benutzerinteraktionen mit einer Seite, z. B. das Schreiben eines Kommentars, können mit einer Anmeldung verbunden sein. Du kannst einen Anmeldeprozess …
 numbered: '1'
