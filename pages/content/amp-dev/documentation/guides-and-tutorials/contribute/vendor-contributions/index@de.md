@@ -1,5 +1,5 @@
 ---
-"$title": Integrate your technology with AMP
+"$title": Integriere deine Technologie in AMP
 "$order": '0'
 "$hidden": 'true'
 description: Wenn du als Provider Technologie für Publisher und Werbetreibende im Internet bereitstellst, laden wir dich ein, AMP zu unterstützen, damit deine Kunden weiterhin von deiner Technologie profitieren und …
