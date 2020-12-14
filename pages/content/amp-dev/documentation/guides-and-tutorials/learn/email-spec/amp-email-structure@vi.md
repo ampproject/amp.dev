@@ -1,13 +1,10 @@
 ---
-"$title": Structure and rendering of AMP emails
+"$title": Cấu trúc và render cho các email AMP
 order: '2'
 formats:
 - email
 teaser:
-  text: |2-
-
-    Email is structured as a MIME tree. This MIME tree contains the message body
-    and any attachments to the email.
+  text: 'Email được cấu trúc là một '
 toc: 'true'
 ---
 
@@ -34,31 +31,31 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Email is structured as a [MIME tree](https://en.wikipedia.org/wiki/MIME). This MIME tree contains the message body and any attachments to the email.
+Email được cấu trúc là một cây MIME. Cây MIME chứa nội dung email và mọi tập tin đính kèm email.
 
-To embed AMP within an email, add a new MIME part with a content type of `text/x-amp-html` as a descendant of `multipart/alternative`. It should live alongside the existing `text/html` or `text/plain` parts. This ensures that the email message works on all clients.
+Để nhúng AMP trong một email, bạn chỉ cần bổ sung một phần MIME mới với loại nội dung là `text/x-amp-html` làm con cháu của `multipart/alternative`. Nó phải cùng tồn tại với các phần `text/html` hoặc `text/plain` hiện có. Điều này đảm bảo nội dung email sẽ hoạt động trên tất cả các máy khách.
 
 <amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/master/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"> <img data-md-type="raw_html" alt="AMP for Email MIME Parts Diagram" src="../img/amp-email-mime-parts.png"> </noscript></amp-img>
 
-For more information about the `multipart/alternative` subtype, refer to [RFC 1521, section 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
+Để biết thêm thông tin về loại con `multipart/alternative`, hãy tham khảo [RFC 1521, phần 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
-## Additional information <a name="additional-information"></a>
+## Thông tin bổ sung <a name="additional-information"></a>
 
-The `text/x-amp-html` part must be nested under a `multipart/alternative` node. An email cannot have more than one `text/x-amp-html` part inside a `multipart/alternative` node.
+Phần `text/x-amp-html` phải được lồng trong một node `multipart/alternative`. Một email không thể có nhiều hơn một phần `text/x-amp-html` trong một node `multipart/alternative`.
 
-The `multipart/alternative` must contain at least one non-AMP (`text/plain` or `text/html`) node in addition to the `text/x-amp-html` node. This will be displayed to users whose email clients don't support AMP or who opted out via their email provider's settings.
+`Multipart/alternative` phải chứa ít nhất một node không phải AMP (`text/plain` hoặc `text/html`) ngoài node `text/x-amp-html`. Nó sẽ được hiển thị cho người dùng mà trình khách email không hỗ trợ AMP hoặc những người đã hủy đăng ký thông qua cài đặt của nhà cung cấp dịch vụ email.
 
-Note: Some email clients[[1]](https://openradar.appspot.com/radar?id=6054696888303616) will only render the last MIME part, so we recommend placing the `text/x-amp-html` MIME part *before* the `text/html` MIME part.
+Lưu ý: Một số trình khách email[[1]](https://openradar.appspot.com/radar?id=6054696888303616) sẽ chỉ render phần MIME cuối cùng, vậy nên chúng tôi khuyên bạn nên đặt phần MIME `text/x-amp-html` *trước* phần MIME `text/html`.
 
-### Replying/forwarding semantics <a name="replyingforwarding-semantics"></a>
+### Ngữ nghĩa trả lời/chuyển tiếp <a name="replyingforwarding-semantics"></a>
 
-The email client strips out the `text/x-amp-html` part of the MIME tree when a user replies to or forwards an AMP email message.
+Trình khách email loại bỏ phần `text/x-amp-html` của cây MIME khi một người dùng trả lời hoặc chuyển tiếp một email AMP.
 
-### Expiry <a name="expiry"></a>
+### Hết hạn <a name="expiry"></a>
 
-The email client may stop displaying the AMP part of an email after a set period of time, e.g. 30 days. In this case, emails will display the `text/html` or `text/plain` part.
+Trình khách email có thể ngừng hiển thị phần AMP của một email sau một khoảng thời gian nhất định, ví dụ như 30 ngày. Trong trường hợp này, email sẽ hiển thị phần `text/html` hoặc `text/plain`.
 
-## Example <a name="example"></a>
+## Ví dụ <a name="example"></a>
 
 <!-- prettier-ignore-start -->
 
