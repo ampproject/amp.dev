@@ -1,7 +1,7 @@
 ---
-"$title": Starting our story
+"$title": Bắt đầu câu chuyện
 "$order": '3'
-description: An entire Web Story is represented by the amp-story component, which serves as a container for all the pages in a story. The amp-story component is also responsible for ...
+description: Một Câu chuyện web hoàn chỉnh được thể hiện bằng thành phần amp-story vốn có vai trò như một container cho tất cả các trang trong một câu chuyện. Thành phần amp-story cũng chịu trách nhiệm cho ...
 author: bpaduch
 ---
 
@@ -18,7 +18,7 @@ Thành phần [`amp-story`](../../../../documentation/components/reference/amp-s
 </head>
 ```
 
-**Add** the `<amp-story>` element to the `<body>` of your document, and specify the mandatory `standalone` attribute, like so:
+**Thêm** phần tử `<amp-story>` vào `<body>` của tài liệu, và chỉ định thuộc tính bắt buộc `standalone`, như thế này:
 
 ```html
 <body>
@@ -27,18 +27,18 @@ Thành phần [`amp-story`](../../../../documentation/components/reference/amp-s
 </body>
 ```
 
-It's important to note that to have a valid AMP story, the `<body>` element must have only one child—the [`amp-story`](../../../../documentation/components/reference/amp-story.md) component; all other elements are contained in the [`amp-story`](../../../../documentation/components/reference/amp-story.md).
+Điều quan trọng là cần lưu ý rằng để có một câu chuyện AMP hợp lệ, phần tử `<body>` cần phải có duy nhất một phần tử con—thành phần [`amp-story`](../../../../documentation/components/reference/amp-story.md); tất cả những phần tử khác được bao hàm trong [`amp-story`](../../../../documentation/components/reference/amp-story.md).
 
-## Providing meta information
+## Cung cấp siêu thông tin
 
-For stories to be discovered on the web, certain metadata is required to provide mini details of the story, like:
+Để câu chuyện được nhiều người khám phá trên web, ta cần có siêu dữ liệu nhất định để cung cấp những chi tiết nhỏ của câu chuyện, như:
 
 - Tiêu đề câu chuyện, thể hiện bằng thuộc tính `title` (Ví dụ: "Niềm vui của thú cưng").
 - Tên của nhà phát hành, thể hiện bằng thuộc tính `publisher` (ví dụ: "hướng dẫn về AMP").
-- The publisher's logo, represented by the `publisher-logo-src` attribute.  This is a URL for a logo image, in square format with a 1x1 aspect ratio.
-- A poster image of the story, represented by the `poster-portrait-src` attribute. This is a URL for the poster, and the image must be in portrait format with a 3x4 aspect ratio.
+- Logo của nhà phát hành, thể hiện bằng thuộc tính `publisher-logo-src`.  Đây là một URL cho hình ảnh logo, ở định dạng vuông với tỉ lệ khung hình 1x1.
+- Hình ảnh người đăng câu chuyện, thể hiện bằng thuộc tính `poster-portrait-src`. Đây là một URL cho người đăng, và hình ảnh phải ở định dạng theo phương dọc (dạng ảnh chân dung) với tỉ lệ khung hình 3x4.
 
-Let's add these attributes to our [`amp-story`](../../../../documentation/components/reference/amp-story.md) tag:
+Ta hãy thêm những thuộc tính này vào thẻ [`amp-story`](../../../../documentation/components/reference/amp-story.md):
 
 ```html
 <amp-story standalone
@@ -48,8 +48,8 @@ Let's add these attributes to our [`amp-story`](../../../../documentation/compon
     poster-portrait-src="assets/cover.jpg">
 ```
 
-In addition to these required attributes, there are other attributes you can apply. To learn more, see the [attributes](../../../../documentation/components/reference/amp-story.md#attributes) section of the [`amp-story`](../../../../documentation/components/reference/amp-story.md) reference documentation.
+Ngoài các thuộc tính bắt buộc này, bạn có thể áp dụng các thuộc tính khác. Để tìm hiểu thêm, xem phần [thuộc tính](../../../../documentation/components/reference/amp-story.md#attributes) của tài liệu tham khảo [`amp-story`](../../../../documentation/components/reference/amp-story.md) .
 
-[tip type="note"] **NOTE –**  These metadata attributes supplement and do not replace any Structured Data (e.g. JSON-LD) on the page. To ensure your Web Stories are discovered across all platforms, you should add [Structured Data](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md#integrate-with-third-party-platforms-through-additional-metadata) to all your AMP pages, including AMP stories. [/tip]
+[tip type="note"] **LƯU Ý –**  Các thuộc tính siêu dữ liệu này bổ sung và không thay thế bất kì Dữ liệu có cấu trúc nào (ví dụ như JSON-LD) trên trang. Để bảo đảm Câu chuyện web của bạn được khám phá trên tất cả các nền tảng, bạn cần thêm [Dữ liệu có cấu trúc](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md#integrate-with-third-party-platforms-through-additional-metadata) vào tất cả các trang AMP, bao gồm câu chuyện AMP. [/tip]
 
-At this point, we have a shell of a story without any content. Let's create that page.
+Lúc này, ta có vỏ của câu chuyện mà chưa có nội dung. Ta hãy tạo trang đó nào.
