@@ -1,16 +1,16 @@
 ---
 "$title": Biến website AMP của bạn thành một PWA
 "$order": '10'
-description: By caching resources within the browser, a PWA is able to provide data, assets, and offline pages to the user to keep them engaged and informed.
+description: Bằng cách lưu vào bộ nhớ đệm những tài nguyên bên trong trình duyệt, PWA có thể cung ứng dữ liệu, tài sản và những trang ngoại tuyến để người dùng duy trì nối kết và trạng thái cập nhật với chúng.
 tutorial: 'true'
 formats:
 - websites
 author: crystalonscript
 ---
 
-Progressive Web Apps harness the power of [service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) to enable rich offline abilities and consistent user experiences across varying network strengths. By caching resources within the browser, a PWA is able to provide data, assets, and offline pages to the user to keep them engaged and informed.
+Các Ứng dụng Web Lũy tiến tận dụng sức mạnh của [các service worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) để làm phong phú nhiều khả năng xử lí ngoại tuyến và mang đến trải nghiệm nhất quán cho người dùng ở nhiều tín hiệu mạng khác nhau. Bằng cách lưu vào bộ nhớ đệm những tài nguyên bên trong trình duyệt, PWA có thể cung ứng dữ liệu, tài sản và những trang ngoại tuyến để người dùng duy trì nối kết và trạng thái cập nhật với chúng.
 
-This tutorial will teach you how to turn an AMP site into an installable PWA with offline capabilities by adding a Web Manifest and a Service Worker powered by the AMP Service Worker.
+Hướng dẫn này sẽ chỉ bạn cách biến website AMP thành một PWA dễ cài đặt với nhiều chức năng ngoại tuyến bằng cách thêm vào một Web Manifest và một Service Worker được cung cấp bởi Service Worker AMP.
 
 # Tải xuống và chạy đoạn mã khởi đầu
 
@@ -24,13 +24,13 @@ You should be able to view the landing page for Lyrical Lyghtning, the Mobile Mu
 
 {{ image('/static/img/docs/tutorials/tut-lyricallyghtning.png', 594, 558, alt='Image of PWA' ) }}
 
-Users of our site may have spotty network connectivity at the event when they'll likely want to access the schedule. This makes a great candidate to turn it into a PWA that can be installed to our user's home screen, and provides all critical functionality even when offline.
+Người dùng của website chúng ta có thể có kết nối mạng bất ổn ở sự kiện lúc mà họ muốn truy cập lịch diễn. Do vậy đây là dịp tốt để biến nó thành một PWA vốn có thể cài đặt vào màn hình chính của người dùng và mang đến toàn bộ tính năng thiết yếu ngay cả khi ngoại tuyến.
 
-# Create a Web App Manifest
+# Tạo một Web App Manifest
 
-The [web app manifest ](https://developers.google.com/web/fundamentals/web-app-manifest/)is a simple JSON file that tells the browser about your web application and how it should behave when 'installed' on the user's mobile device or desktop. Having a manifest is required by many browsers to show the [Add to Home Screen prompt](https://developers.google.com/web/fundamentals/app-install-banners/).
+[Web App Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/) là một file JSON giản đơn cho trình duyệt biết về ứng dụng web của bạn và cách nó nên vận hành khi 'được cài đặt' trên thiết bị di động hay máy tính bàn của người dùng. Nhiều trình duyệt yêu cầu có một manifest để hiển thị [lời nhắc Thêm vào màn hình chính](https://developers.google.com/web/fundamentals/app-install-banners/).
 
-Add a file titled `manifest.json` to your repository with the following code:
+Thêm một file có tiêu đề `manifest.json` vào kho lưu trữ của bạn với đoạn mã sau:
 
 [sourcecode:JSON]
 {
@@ -56,26 +56,26 @@ Add a file titled `manifest.json` to your repository with the following code:
 }
 [/sourcecode]
 
-# Add the AMP Service Worker
+# Thêm Service Worker AMP
 
-A service worker is a script that your browser runs in the background, separate from a web page, that extends the browsers features by caching requests to improve performance and providing offline functionality. Building a service worker from scratch is possible but time consuming. Libraries like Workbox help, but AMP goes one step further by offering the [AMP Service Worker](https://github.com/ampproject/amp-sw), in which AMP automates a lot of steps directly, including the caching of AMP Scripts, assets and documents as well as implementing common best practices such as [navigation preload](https://developers.google.com/web/updates/2017/02/navigation-preload).
+Service worker là một đoạn mã mà trình duyệt chạy ngầm, tách biệt với một trang web, có chức năng mở rộng các tính năng của trình duyệt bằng cách lưu các yêu cầu vào bộ nhớ đệm nhằm cải thiện hiệu năng và mang đến chức năng xử lí ngoại tuyến. Xây dựng một service worker từ chỗ không có gì là điều khả dĩ nhưng tốn thời giờ. Những thư viện như Workbox là công cụ hữu ích, nhưng AMP còn đi thêm một bước nữa bằng cách cung ứng [Service Worker AMP](https://github.com/ampproject/amp-sw), trong đó AMP tự động hoá trực tiếp nhiều bước, bao gồm bước lưu bộ nhớ đệm đối với các Đoạn mã AMP, tài sản và tài liệu cũng như thực thi những phương cách vận hành tốt nhất thường thấy như [tải sẵn điều hướng](https://developers.google.com/web/updates/2017/02/navigation-preload).
 
-The AMP Service Worker automatically [caches AMP scripts](https://github.com/ampproject/amp-sw/tree/master/src/modules/amp-caching) and [documents](https://github.com/ampproject/amp-sw/tree/master/src/modules/document-caching) as user requests them, after installing it. We'll start by adding the basic AMP Service Worker.
+Service Worker AMP tự động [lưu các kịch bản AMP](https://github.com/ampproject/amp-sw/tree/master/src/modules/amp-caching) và [tài liệu vào bộ nhớ đệm](https://github.com/ampproject/amp-sw/tree/master/src/modules/document-caching) khi người dùng yêu cầu chúng, sau khi cài đặt nó. Ta sẽ bắt đầu bằng cách thêm vào Service Worker AMP cơ bản.
 
-## Create the service worker file
+## Tạo tập tin service worker
 
-Create a file called `sw.js` and add the following code:
+Tạo một tập tin mang tên `sw.js` và thêm vào đoạn mã sau:
 
 [sourcecode:js]
 importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init();
 [/sourcecode]
 
-With just two lines of code, this imports the AMP Service Worker into your Service Worker and initializes it.
+Chỉ với hai dòng mã, đoạn này sẽ nhập Service Worker AMP vào Service Worker của bạn và khởi chạy nó.
 
-## Auto-install your service worker on your AMP pages
+## Tự động cài đặt service worker trên các trang AMP của bạn
 
-AMP websites use the [`<amp-install-serviceworker>`](../../../documentation/components/reference/amp-install-serviceworker.md) component to install the service worker in the browser's background, while the user is enjoying your content.
+Website AMP sử dụng thành phần [`<amp-install-serviceworker>`](../../../documentation/components/reference/amp-install-serviceworker.md) để cài đặt service worker ở dưới nền trình duyệt, trong khi người dùng đang tận hưởng phần nội dung.
 
 Đặt thẻ đoạn mã bắt buộc ở đầu `index.html` và yếu tố `<amp-install-serviceworker>` bên trong `<body>`:
 
@@ -94,9 +94,9 @@ AMP websites use the [`<amp-install-serviceworker>`](../../../documentation/comp
 </body>
 [/sourcecode]
 
-[tip type="important"] **Important –** The service worker should be served from the root directory (`/sw.js`) to be able to cache all the content of your site. [/tip]
+[tip type="important"] **Quan trọng–** Service worker cần được phục vụ từ thư mục gốc (`/sw.js`) để có thể lưu vào bộ nhớ đệm toàn bộ nội dung của website. [/tip]
 
-The `<amp-install-serviceworker>` installs the service worker by creating an iframe and running the `data-iframe-src` file. Create the `install-sw.html` file and add the following code:
+`<amp-install-serviceworker>` cài đặt service worker bằng cách tạo một iframe và chạy tập tin `data-iframe-src`. Tạo tập tin `install-sw.html` và thêm vào mã sau:
 
 [sourcecode:html]
 
@@ -109,17 +109,17 @@ The `<amp-install-serviceworker>` installs the service worker by creating an ifr
 </script>
 [/sourcecode]
 
-The iframe registers the AMP Service Worker file into the browser.
+iframe đăng kí tập tin Service Worker AMP vào trong trình duyệt.
 
 # Tuỳ chỉnh phần được lưu vào bộ nhớ đệm
 
-The AMP Service Worker comes with built-in benefits while allowing optional fields that you can configure to optimize against your app's needs.
+Service Worker AMP đi kèm với những lợi ích tích hợp đồng thời cho phép các trường tuỳ chọn mà bạn có thể cấu hình nhằm tối ưu hoá trên cơ sở nhu cầu của ứng dụng.
 
-Our music festival app will cache our image assets, prefetch the line up link, and specify an offline page.
+Ứng dụng lễ hội âm nhạc của chúng ta sẽ lưu những tài sản hình ảnh vào bộ nhớ đệm, tìm nạp trước liên kết xếp hàng, và chỉ định một trang ngoại tuyến.
 
-## Cache Assets
+## Lưu tài sản vào bộ nhớ đệm
 
-You can configure the AMP Service Worker to [cache assets](https://github.com/ampproject/amp-sw/tree/master/src/modules/asset-caching), such as images, videos and fonts. We'll use it to cache our background image and the AMP logo. Open the `sw.js` file and update it to the code below:
+Bạn có thể cấu hình Service Worker AMP để [lưu tài sản vào bộ nhớ đệm](https://github.com/ampproject/amp-sw/tree/master/src/modules/asset-caching), chẳng hạn như các hình ảnh, video và phông chữ. Chúng ta sẽ dùng nó để lưu vào bộ nhớ đệm đối với hình ảnh nền và logo AMP. Mở tập tin `sw.js` và cập nhật mã bên dưới:
 
 [sourcecode:js]
 importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
@@ -133,9 +133,9 @@ cachingStrategy: 'CACHE_FIRST'
 
 Chúng ta đã chỉ định chiến lược lưu vào bộ nhớ đệm là [bộ nhớ đệm trước tiên](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-falling-back-to-network). Nghĩa là ứng dụng sẽ tìm cách dùng hình ảnh từ bộ nhớ đệm trước tiên trước khi yêu cầu điều gì từ mạng. Cách này đặc biệt hữu dụng cho ứng dụng này do chúng ta sẽ không cập nhật ảnh nền hay logo AMP.
 
-## Prefetch Links
+## Truy xuất sẵn các liên kết
 
-The AMP Service Worker prefetches links that have the `data-rel=prefetch` attribute. This enables users to view pages offline even if they haven't visited them yet. We'll add the attribute to our link tag for `lineup.html`.
+Service Worker AMP truy xuất sẵn những liên kết vốn có thuộc tính `data-rel=prefetch`. Việc này cho phép người dùng xem các trang web khi ngoại tuyến cho dù họ chưa truy cập chúng. Chúng ta sẽ thêm thuộc tính này vào thẻ liên kết của chúng ta dành cho `lineup.html`.
 
 [sourcecode:html]
 ...
@@ -143,9 +143,9 @@ The AMP Service Worker prefetches links that have the `data-rel=prefetch` attrib
 ...
 [/sourcecode]
 
-# Show an offline page
+# Hiển thị một trang ngoại tuyến
 
-To deal with unexpected cases or clicks on links to pages that we didn't prefetch, we'll add an offline page to offer a consistent user experience that is "on brand", as opposed to showing the generic browser offline page. Download [`offline.html` here](/static/files/tutorials/offline.zip) and update `sw.js` to the following code:
+Để giải quyết những trường hợp bất ngờ hoặc những lần nhấp chuột vào liên kết dẫn đến những trang mà chúng ta không tìm nạp trước, ta sẽ thêm một trang ngoại tuyến để mang đến trải nghiệm nhất quán cho người dùng, vốn là điều "phản ánh đúng thương hiệu", ngược lại với việc hiển thị trang ngoại tuyến chung chung của trình duyệt . Tải xuống [`offline.html` ở đây](/static/files/tutorials/offline.zip) và cập nhật `sw.js` vào mã sau:
 
 [sourcecode:js]
 importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
@@ -163,24 +163,24 @@ assets: []
 
 # Thử nghiệm PWA
 
-You can test that your AMP Service Worker is caching necessary assets and providing an ideal offline solution through [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/progressive-web-apps).
+Bạn có thể kiểm tra rằng Service Worker AMP của mình đang lưu các tài sản cần thiết vào bộ nhớ đệm và cung ứng giải pháp ngoại tuyến lí tưởng qua [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/progressive-web-apps).
 
-We'll test Lyrical Lyghtning by opening the DevTools panel by hitting `Ctrl + Shift + I` on Windows or `Cmd + Opt + I` on Mac. You can also right click the page and select `inspect` from the menu. Then select `Application` to view your service worker registration.
+Ta sẽ thử nghiệm Lyrical Lyghtning bằng cách mở bảng điều khiển DevTools bằng tổ hợp phím `Ctrl + Shift + I` trên Windows hoặc `Cmd + Opt + I` trên Mac. Bạn cũng có thể nhấp chuột phải vào trang đó và chọn `inspect` từ menu. Sau đó chọn `Application` để xem phần đăng kí service worker .
 
 {{ image('/static/img/docs/tutorials/amp-sw-test.png', 1349, 954, alt='DevTools panel open on lyrical lyghtning PWA' ) }}
 
-Click the `offline` box to switch into offline mode. Click the `see full lineup` link and navigate to `offline.html` to check if they were properly cached and prefetched.
+Nhấp vào hộp `offline` để chuyển sang chế độ ngoại tuyến. Nhấp vào liên kết `xem sắp xếp đầy đủ` và điều hướng đến `offline.html` để kiểm tra xem liệu chúng có được lưu đúng cách vào bộ nhớ đệm và có được truy xuất sẵn không.
 
-[tip type="default"] **Tip –** For a thorough analysis of a Progressive Web App's features, run [Google's Lighhouse tool](https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool) to generate a report. [/tip]
+[tip type="default"] **Mẹo –** Để có được phần phân tích thấu đáo cho các tính năng của một Ứng dụng Web Lũy tiến, hãy chạy [công cụ Lighthouse của Google](https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool) để tạo một bản báo cáo. [/tip]
 
 # Chúc mừng!
 
 Bạn đã tạo thành công một PWA bằng AMP! Trong phần hướng dẫn này, bạn đã học được cách:
 
-- Create a [Web App Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/)
-- Install a Service Worker in AMP using [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md)
-- Customize the [AMP Service Worker ](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html)
+- Tạo một [Web App Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/)
+- Cài đặt một Service Worker trong AMP bằng [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md)
+- Tuỳ chỉnh [Service Worker AMP ](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html)
 - [Prefetch links ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
-- Create an offline page
+- Tạo một trang ngoại tuyến
 
-Read more about [Service Worker](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html)s and [offline UX considerations](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux). Learn to t[rack engagement with analytics ](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.html)and follow the tutorial on [how to configure basic analytics for your AMP pages](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/tracking-engagement.html).
+Đọc thêm về [Service Worker](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html) và [những cân nhắc về UX ngoại tuyến](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux). Tìm hiểu cách [theo dõi sự tương tác bằng công cụ phân tích ](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.html)và làm theo hướng dẫn về [cách cấu hình công cụ phân tích cơ bản cho trang AMP của bạn](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/tracking-engagement.html).
