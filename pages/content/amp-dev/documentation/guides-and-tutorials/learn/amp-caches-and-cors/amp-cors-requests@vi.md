@@ -81,7 +81,7 @@ Vậy là, trang này nằm *trên tên miền của tôi* và JSON nằm *trên
 À, nhưng làm thế nào người dùng của bạn có thể truy cập trang AMP của bạn? Liệu có một trang bộ nhớ đệm mà họ có thể truy cập? Nhiều khả năng người dùng của bạn đã không truy cập trực tiếp đến trang AMP của bạn, mà thay vào đó, họ khám phá trang của bạn thông qua một nền tảng khác. Ví dụ, Google Search sử dụng Bộ nhớ đệm AMP của Google để render nhanh các trang AMP; đây là các trang trong bộ nhớ đệm được phục vụ từ một Bộ nhớ đệm AMP của Google, nằm trên một tên miền khác. Khi người dùng của bạn nhấn vào nút để cập nhật giá trên trang của bạn, trang AMP trong bộ nhớ đệm này sẽ gửi một yêu cầu đến tên miền nguồn gốc của bạn để nhận giá, vốn không khớp giữa các nguồn gốc (bộ nhớ đệm -> tên miền nguồn gốc). Để cho phép các yêu cầu chéo nguồn gốc này, bạn cần xử lý CORS, nếu không, yêu cầu này sẽ thất bại.
 
 <amp-img alt="CORS and Cache" layout="responsive" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png" width="809" height="391">
-  <noscript>     <img alt="CORS and Cache" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png">   </noscript></amp-img>
+  <noscript><img alt="CORS và bộ nhớ đệm" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png"></noscript></amp-img>
 
 **Được rồi, vậy tôi nên làm gì?**
 
@@ -197,7 +197,7 @@ Có 2 tình huống cần tính đến trong các yêu cầu CORS đến điểm
 Hãy cùng xem kỹ các tình huống này với một ví dụ. Trong ví dụ này, chúng ta quản lý website `example.com` lưu trữ một trang AMP tên là `article-amp.html.`. Trang AMP này chứa một `amp-list` để truy xuất dữ liệu động từ một tập tin `data.json` cũng được lưu trữ trên `example.com`. Chúng ta muốn xử lý các yêu cầu đến tập tin `data.json` từ trang AMP của mình. Các yêu cầu này có thể là từ trang AMP trên cùng một nguồn gốc (không phải trong bộ nhớ đệm) hoặc từ trang AMP trên một nguồn gốc khác (được lưu trong bộ nhớ đệm).
 
 <amp-img alt="CORS example" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png" width="629" height="433">
-  <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png">   </noscript></amp-img>
+  <noscript><img alt="Ví dụ CORS" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png"></noscript></amp-img>
 
 ### Các nguồn gốc được cho phép <a name="allowed-origins"></a>
 
@@ -281,7 +281,7 @@ function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
 Trong tình huống sau, trang `article-amp.html` yêu cầu tập tin `data.json`; nguồn gốc của chúng là giống nhau.
 
 <amp-img alt="CORS example - scenario 1" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png" width="657" height="155">
-  <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png">   </noscript></amp-img>
+  <noscript><img alt="Ví dụ CORS" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png"></noscript></amp-img>
 
 Nếu chúng ta xem kỹ yêu cầu, chúng ta sẽ thấy:
 
@@ -305,7 +305,7 @@ Access-Control-Allow-Origin: https://example.com
 Trong tình huống sau, trang `article-amp.html` được lưu trong Bộ nhớ đệm AMP của Google yêu cầu tập tin `data.json`; nguồn gốc của chúng là khác nhau.
 
 <amp-img alt="CORS example - scenario 2" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png" width="657" height="155">
-  <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png">   </noscript></amp-img>
+  <noscript><img alt="Ví dụ CORS" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png"></noscript></amp-img>
 
 Nếu chúng ta xem kỹ yêu cầu này, chúng ta sẽ thấy:
 
@@ -362,7 +362,7 @@ function assertFontCors(req, res, opt_validMethods, opt_exposeHeaders) {
 Ví dụ, nếu bạn muốn tải /some/font.ttf trong `https://example.com/amp.html`, máy chủ nguồn gốc sẽ hồi đáp với đầu đề Access-Control-Allow-Origin (Kiểm soát-Truy cập-Cho phép-Nguồn gốc) như dưới đây.
 
 <amp-img alt="CORS font example" layout="responsive" src="https://amp.dev/static/img/docs/cors-font.jpg" width="2268" height="1594">
-  <noscript>     <img alt="CORS font example" src="https://amp.dev/static/img/docs/cors-font.jpg">   </noscript></amp-img>
+  <noscript><img alt="Ví dụ về phông chữ CORS" src="https://amp.dev/static/img/docs/cors-font.jpg"></noscript></amp-img>
 
 [tip type="note"] Nếu tập tin phông chữ của bạn cho phép việc truy cập từ bất kỳ nguồn gốc nào, bạn có thể hồi đáp với một thẻ ký tự đại diện `Access-Control-Allow-Origin` (Kiểm soát-Truy cập-Cho phép-Nguồn gốc), bộ nhớ đệm AMP cũng sẽ lặp lại giá trị này, đồng nghĩa nó sẽ được hồi đáp với `Access-Control-Allow-Origin: *`. Nếu bạn đã có cài đặt này thì không cần thay đổi thứ gì. [/tip]
 
