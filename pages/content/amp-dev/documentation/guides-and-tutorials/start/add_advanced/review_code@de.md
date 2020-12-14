@@ -176,9 +176,9 @@ Zum Beispiel:
 http://localhost:8000/article.amp.html#development=1
 ```
 
-Open the [Developer Console](https://developer.chrome.com/devtools/docs/console) in Chrome (or your preferred browser), and verify there are no AMP errors.
+Öffne die [Entwicklerkonsole](https://developer.chrome.com/devtools/docs/console) in Chrome (oder in deinem bevorzugten Browser) und stelle sicher, dass keine AMP Fehler vorliegen.
 
-[tip] You can use several other tools to validate your AMP page, like:
+[tip] Du kannst auch andere Tools verwenden, um deine AMP Seite zu validieren, z. B.:
 
 - die [AMP Validator Erweiterung für Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc)
 - die [AMP Validator Erweiterung für Opera](https://addons.opera.com/en-gb/extensions/details/amp-validator/)
@@ -187,7 +187,7 @@ Open the [Developer Console](https://developer.chrome.com/devtools/docs/console)
 
 Weitere Informationen findest du im Leitfaden [Validierung von AMP Seiten](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md). [/tip]
 
-{{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='Simulated on a Nexus 5X device') }}
+{{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='Simuliert auf einem Nexus 5X Gerät') }}
 
 ## Simulation der mobilen Erfahrung
 
