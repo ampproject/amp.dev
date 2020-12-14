@@ -20,7 +20,7 @@ npm install @ampproject/toolbox-optimizer
 
 ## Sử dụng
 
-The AMP Optimizer API takes an HTML string as input and returns an optimized version of the HTML string. The basic usage looks like this:
+API của Bộ tối ưu hoá AMP lấy một chuỗi HTML làm đầu vào và trả về một phiên bản tối ưu hoá của chuỗi HTML đó. Việc sử dụng cơ bản trông như thế này:
 
 ```js
 const AmpOptimizer = require('@ampproject/toolbox-optimizer');
@@ -35,7 +35,7 @@ const optimizedHtml = await ampOptimizer.transformHtml(html);
 
 ### Tạo AMP tối ưu hoá ở thời gian dựng
 
-For static sites it’s best to optimize AMP pages at build-time when building your site. Here is an example on how you would integrate it into a [Gulp.js](https://gulpjs.com/) based build. This example adds a custom transform that optimizes all HTML files inside the src folder:
+Đối với website tĩnh, tốt nhất là tối ưu hoá các trang AMP ở thời gian dựng khi dựng website của bạn. Đây là một ví dụ về cách bạn tích hợp nó vào bản dựng dựa trên [Gulp.js](https://gulpjs.com/). Ví dụ này thêm một biến đổi tuỳ chỉnh vốn sẽ tối ưu hoá tất cả các tập tin HTML bên trong thư mục src:
 
 ```js
 const {src, dest} = require('gulp');
@@ -65,7 +65,7 @@ exports.default = build;
 
 ### Thời gian render
 
-For dynamic pages it’s often necessary to render pages on the server. In this case, you can run AMP Optimizer after rendering your pages. Here is a sample integration into an [Express.js](https://expressjs.com/) server. One way to integrate AMP Optimization into an Express router is to run it in a callback after the templates are [rendered](https://expressjs.com/en/api.html#app.render):
+Đối với các trang động, việc render các trang trên máy chủ thường là cần thiết. Trong trường hợp này, bạn có thể chạy Bộ tối ưu hóa AMP sau khi render các trang của mình. Đây là một tích hợp mẫu vào máy chủ [Express.js](https://expressjs.com/) . Một cách để tích hợp Bộ tối ưu hóa AMP vào bộ định tuyến Express là chạy nó trong lệnh gọi lại sau khi các khuôn mẫu được [render](https://expressjs.com/en/api.html#app.render):
 
 ```js
 const express = require('express');
@@ -88,19 +88,19 @@ Quan trọng: Đảm bảo thiết lập tác vụ lưu bộ nhớ đệm hoặc
 
 ## Cấu hình
 
-AMP Optimizer provides a reasonable default configuration that should work well in most of the cases. However, transformations can be customized for specific use cases. You can find a list of all available options [here](https://github.com/ampproject/amp-toolbox/tree/main/packages/optimizer#options).
+Bộ tối ưu hoá AMP cung cấp cấu hình mặc định hợp lí vốn có thể hoạt động tốt trong hầu hết các trường hợp. Tuy nhiên, các phép biến đổi có thể được tuỳ chỉnh cho những trường hợp sử dụng cụ thể. Bạn có thể tìm thấy danh sách tất cả các tuỳ chọn có sẵn [tại đây](https://github.com/ampproject/amp-toolbox/tree/main/packages/optimizer#options).
 
 Một vài tuỳ chọn đáng chú ý:
 
-- `lts: true` for enabling [long-term stable URLs](https://github.com/ampproject/amphtml/blob/main/contributing/lts-release.md) for AMP runtime and components.
-- `verbose: true` for detailed debugging outputs. Especially good for identifying reasons why the AMP boilerplate could not be removed.
-- `imageOptimizer`: enable automated image srcset generation by providing a function for calculating srcset URLs for a given image src. The function should return a URL pointing to a version of the `src` image with the given width. If no image is available, it should return a falsy value. More about this in the next section.
+- `lts: true` để cho phép [các URL ổn định dài hạn](https://github.com/ampproject/amphtml/blob/main/contributing/lts-release.md) cho thời gian chạy và các thành phần AMP.
+- `verbose: true` cho đầu ra gỡ lỗi chi tiết. Đặc biệt tốt để nhận diện lí do code soạn sẵn AMP không thể được xoá bỏ.
+- `imageOptimizer`: cho phép tạo srcset của hình ảnh được tự động, bằng cách cung ứng một chức năng để tính toán URL srcset đối với một src hình ảnh cho trước. Chức năng này có thể trả về một URL trỏ đến một phiên bản của hình ảnh `src` với độ rộng cho trước. Nếu không có hình ảnh nào, nó có thể trả về giá trị sai lệch. Thông tin thêm về điều này ở phần tiếp theo.
 
 ### Tối ưu hoá hình ảnh
 
 Bộ tối ưu hóa AMP có thể tạo các giá trị `srcset` cho một `amp-img` dựa trên định nghĩa `layout` của nó. Để điều này hoạt động, bạn cần cung cấp một hàm ánh xạ `src` và `width` của hình ảnh thành giá trị nguồn `srcset` đã thay đổi kích thước. Việc thay đổi kích thước hình ảnh không được thực hiện bởi Bộ tối ưu hóa AMP và cần phải xảy ra tại thời gian dựng (ví dụ: đối với các website tĩnh) hoặc thông qua dịch vụ lưu trữ hình ảnh như [thumbor](https://github.com/thumbor/thumbor) .
 
-Here is an example implementation that appends the image width to the `src`:
+Đây là một triển khai mẫu vốn ghép độ rộng hình ảnh vào `src`:
 
 ```js
 const ampOptimizer = AmpOptimizer.create({
@@ -119,7 +119,7 @@ const ampOptimizer = AmpOptimizer.create({
 })
 ```
 
-Using this implementation, AMP Optimizer will transform the following `amp-img` declarations:
+Sử dụng bản triển khai này, Bộ tối ưu hoá AMP sẽ biến đổi các khai báo `amp-img` sau:
 
 ```html
 <!-- Injects srcset for responsive layout -->
