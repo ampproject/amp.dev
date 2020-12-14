@@ -1,24 +1,24 @@
 ---
 formats:
 - websites
-"$title": Make your pages discoverable
+"$title": Quảng bá các trang của bạn
 "$titles":
   teaser: Make your pages discoverable
 "$order": '5'
-description: 'In some cases, you might want to have both a non-AMP and an AMP version of the same page, for example, a news article. Consider this: If Google Search ...'
+description: 'Trong một số trường hợp, bạn có thể muốn cả phiên bản AMP lẫn không phải AMP cho cùng một trang, ví dụ như trang bài báo tin tức. Hãy xét đến điều này: nếu Google Tìm kiếm...'
 teaser:
   icon: khám phá
   text: Tìm hiểu cách công cụ tìm kiếm biết được có một phiên bản AMP cho website của bạn.
   label: Tìm hiểu thêm
 ---
 
-In some cases, you might want to have both a non-AMP and an AMP version of the same page, for example, a news article. Consider this: If Google Search finds the non-AMP version of that page, how does it know there’s an AMP version of it?
+Trong một số trường hợp, bạn có thể muốn có cả hai phiên bản AMP và không phải AMP của cùng một trang, ví dụ như cho một bài viết tin tức. Hãy cân nhắc: Nếu Google Tìm kiếm tìm thấy phiên bản không phải AMP của trang đó, liệu họ có biết rằng có một phiên bản AMP "cặp đôi" của nó hay không?
 
 ### Liên kết các trang với <link>
 
-In order to solve this problem, we add information about the AMP page to the non-AMP page and vice versa, in the form of `<link>` tags in the `<head>`.
+Để giải quyết vấn đề này, chúng tôi thêm thông tin về trang AMP vào trang không phải AMP và ngược lại, dưới dạng thẻ `<link>` trong `<head>`.
 
-Add the following to the non-AMP page:
+Thêm thông tin sau vào trang không phải AMP:
 
 [sourcecode:html]
 
@@ -45,13 +45,13 @@ Nếu bạn chỉ có một trang, và trang đó là trang AMP, bạn vẫn ph�
 
 ## Tích hợp với những nền tảng bên thứ ba thông qua siêu dữ liệu khác <a name="integrate-with-third-party-platforms-through-additional-metadata"></a>
 
-Sometimes a third-party site (that embeds your AMP page or includes links to it) needs to know more about your page other than the fact that it is an AMP page. The questions a platform might ask about your page are things like “Are you a news article?”, “Or a video?”, or “Do you have a screenshot and short description?”.
+Đôi khi một website bên thứ ba (vốn nhúng trang AMP của bạn hoặc bao gồm những liên kết đến trang đó) cần biết thêm về trang của bạn ngoài thông tin đó là một trang AMP. Những câu hỏi mà một nền tảng có thể nêu ra về trang của bạn là những câu như "Bạn là trang bài báo tin tức?", "Hay trang video?", hay "Bạn có ảnh chụp màn hình và miêu tả ngắn không?".
 
 Điều này không chỉ thích hợp cho các trang AMP mà còn cho tất cả các trang web. Đối với một số nền tảng, siêu dữ liệu này là phần cộng thêm, nhưng đối với số khác thì nó là điều bắt buộc, nghĩa là họ **không hiển thị liên kết đến nội dung của bạn nếu bạn không bao gồm siêu dữ liệu phù hợp**. Hãy bảo đảm là bạn bao gồm siêu dữ liệu phù hợp cho những nền tảng bạn muốn nội dung xuất hiện trên đó.
 
 ### Dùng Schema.org cho hầu hết các công cụ tìm kiếm
 
-[Schema.org](http://schema.org/) offers open vocabularies to add meta data to all sorts of things. In the case of AMP, the properties that make sense in context include the specific type of content (i.e. ‘news article’), the headline, the published date and associated preview images.
+[Schema.org](http://schema.org/) cung ứng những từ vựng mở để thêm siêu dữ liệu vào đủ loại thành phần. Trong trường hợp AMP, những thuộc tính có nghĩa trong bối cảnh này bao gồm loại nội dung cụ thể (tức là 'bài báo tin tức'), tiêu đề bài, ngày phát hành và hình ảnh xem trước có liên quan.
 
 Ví dụ:
 
@@ -95,9 +95,9 @@ Xem thêm ví dụ ở [thư mục ví dụ ampproject](https://github.com/amppr
 
 [tip type="read-on"] Truy cập những nguồn này để biết thêm thông tin về dữ liệu có cấu trúc:
 
-- Learn how to [Structure your content to appear in Google Search rich results](https://developers.google.com/search/docs/guides/mark-up-content) (e.g., top stories carousel, recipe cards, etc.).
-- Test your structured data with the [Google Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/). [/tip]
+- Tìm hiểu cách [Đặt cấu trúc cho nội dung của bạn để xuất hiện trong số những kết quả phong phú của Google Tìm kiếm](https://developers.google.com/search/docs/guides/mark-up-content) (như băng chuyền câu chuyện hàng đầu, thẻ công thức nấu ăn, v.v.).
+- Kiểm tra dữ liệu có cấu trúc bằng [Công cụ kiểm tra dữ liệu có cấu trúc của Google](https://developers.google.com/structured-data/testing-tool/). [/tip]
 
 ### Siêu dữ liệu khác cho những nền tảng khác nữa
 
-Head to the [Social Discovery guide at Web Fundamentals](https://developers.google.com/web/fundamentals/discovery-and-monetization/social-discovery/) to learn about all the other different ways of preparing your content for discovery and distribution.
+Hãy ghé [hướng dẫn Khám phá xã hội tại Web Fundamentals](https://developers.google.com/web/fundamentals/discovery-and-monetization/social-discovery/) để tìm hiểu về tất cả những cách khác cho việc sửa soạn nội dung của bạn để cho mục đích khám phá và phân phối.
