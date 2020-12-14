@@ -1,15 +1,15 @@
 ---
-"$title": Modify presentation and layout
+"$title": Sửa đổi trình bày và bố cục
 "$order": '3'
-description: "AMP pages are web pages; any styling to the page and its elements is done using common CSS properties. Style elements using class or element selectors ..."
+description: "Các trang AMP là các trang web; mọi phong cách cho trang và các yếu tố của nó đều được thực hiện sử dụng các đặc tính CSS thông dụng. Các yếu tố phong cách sử dụng bộ chọn lớp hoặc yếu tố..."
 author: pbakaus
 contributors:
 - bpaduch
 ---
 
-## Modify the presentation
+## Sửa đổi trình bày
 
-AMP pages are web pages; any styling to the page and its elements is done using common CSS properties. Style elements using class or element selectors in an embedded stylesheet in the `<head>`, called `<style amp-custom>`:
+Các trang AMP là các trang web; mọi phong cách cho trang và các yếu tố của nó đều được thực hiện sử dụng các đặc tính CSS thông dụng. Các yếu tố phong cách sử dụng bộ chọn lớp hoặc yếu tố trong một stylesheet nhúng trong phần `<head>`, gọi là `<style amp-custom>`:
 
 [sourcecode:html]
 <style amp-custom>
@@ -24,10 +24,10 @@ AMP pages are web pages; any styling to the page and its elements is done using 
 </style>
 [/sourcecode]
 
-Every AMP page can only have a single embedded stylesheet and inline styles, but there are certain selectors you’re not allowed to use. [Learn all about styling](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).
+Mọi trang AMP đều chỉ có thể có một stylesheet nhúng duy nhất và các phong cách inline, nhưng có một số bộ chọn nhất định mà bạn không được phép sử dụng. [Tìm hiểu thêm về tạo phong cách](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).
 
-## Control the layout
+## Kiểm soát bố cục
 
-AMP follows stricter rules when laying out elements on the page. On a normal HTML page, you almost exclusively use CSS to lay out elements. But for performance reasons, AMP requires all elements to have an explicit size set from the get-go.
+AMP tuân thủ các quy tắc chặt chẽ hơn khi bố trí các yếu tố trên trang. Trên một trang HTML thông thường, bạn sẽ chủ yếu sử dụng CSS để bố trí các yếu tố. Nhưng vì lý do hiệu năng, AMP đòi hỏi tất cả các yếu tố đều phải có một nhóm kích cỡ rõ ràng từ đầu.
 
-[tip type="read-on"] **READ ON –** Learn all about how AMP renders and layouts a page and how you can modify the layout in [Layout & Media queries](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md). [/tip]
+[tip type="read-on"] **ĐỌC THÊM –** Tìm hiểu chi tiết về cách AMP render và bố trí một trang và cách bạn có thể sửa bố cục này trong [Bố cục & Truy vấn Đa phương tiện](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md). [/tip]
