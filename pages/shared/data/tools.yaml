@@ -20,7 +20,7 @@ creation:
       height: 209
       fit: contain
     formats:
-      - email      
+      - email
   - name: Stripo Email Editor
     url: https://stripo.email/amp-support/
     type: Email Templates Editor
@@ -142,6 +142,16 @@ creation:
       src: /static/img/tools/joinstories.jpg
       width: 800
       height: 400
+    formats:
+      - stories
+  - name: StorifyMe
+    description: StorifyMe stands out as all-in-one Web Stories platform. Made for brands & individuals, tailored for e-commerce, marketers and publishers.
+    url: https://storifyme.com/
+    type:  WYSIWYG Editor
+    image:
+      src: /static/img/tools/storifyme-d7219df6e7a9.jpg
+      width: 1600
+      height: 800
     formats:
       - stories
   - name: Web Stories for WordPress
