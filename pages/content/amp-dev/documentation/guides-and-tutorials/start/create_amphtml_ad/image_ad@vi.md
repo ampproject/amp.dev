@@ -1,7 +1,7 @@
 ---
 "$title": Tạo ảnh quảng cáo
 "$order": '1'
-description: 'Our ad is a simple image with a hyperlink to the advertised site.  We''ll display the image using the amp-img tag. Here''s the code: ...'
+description: '"Quảng cáo của chúng ta chỉ là một ảnh đơn giản với siêu liên kết đến website được quảng cáo. Chúng ta sẽ hiển thị quảng cáo sử dụng thẻ amp-img. Đây là đoạn mã: ..."'
 ---
 
 Bên trong phần `<body>` của tài liệu quảng cáo AMPHTML của bạn, bạn có thể bao gồm các thẻ HTML và AMP; tuy nhiên, không phải thẻ nào cũng được cho phép. Tham khảo [thông số quảng cáo AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#allowed-amp-extensions-and-builtins) để biết danh sách các thẻ được cho phép.
