@@ -1,0 +1,55 @@
+---
+"$title": Starting our story
+"$order": '3'
+description: An entire Web Story is represented by the amp-story component, which serves as a container for all the pages in a story. The amp-story component is also responsible for ...
+author: bpaduch
+---
+
+Một Câu chuyện web hoàn chỉnh được thể hiện bằng thành phần [`amp-story`](../../../../documentation/components/reference/amp-story.md) vốn có vai trò như một container cho tất cả các trang trong một câu chuyện.  Thành phần [`amp-story`](../../../../documentation/components/reference/amp-story.md) cũng chịu trách nhiệm cho việc tạo vỏ giao diện người dùng, bao gồm việc xử lí những cử chỉ và điều hướng.
+
+Thành phần [`amp-story`](../../../../documentation/components/reference/amp-story.md) là một thành phần AMP tùy chỉnh, và giống như tất cả các thành phần tùy chỉnh, kịch bản liên kết cho thành phần đó phải được thêm vào tài liệu AMP.
+
+**Mở** tập tin `pets.html` trong trình soạn thảo văn bản, và trong phần `<head>`, **thêm** kịch bản sau:
+
+```html
+<head>
+<script async custom-element="amp-story"
+        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+</head>
+```
+
+**Add** the `<amp-story>` element to the `<body>` of your document, and specify the mandatory `standalone` attribute, like so:
+
+```html
+<body>
+  <amp-story standalone>
+  </amp-story>
+</body>
+```
+
+It's important to note that to have a valid AMP story, the `<body>` element must have only one child—the [`amp-story`](../../../../documentation/components/reference/amp-story.md) component; all other elements are contained in the [`amp-story`](../../../../documentation/components/reference/amp-story.md).
+
+## Providing meta information
+
+For stories to be discovered on the web, certain metadata is required to provide mini details of the story, like:
+
+- Tiêu đề câu chuyện, thể hiện bằng thuộc tính `title` (Ví dụ: "Niềm vui của thú cưng").
+- Tên của nhà phát hành, thể hiện bằng thuộc tính `publisher` (ví dụ: "hướng dẫn về AMP").
+- The publisher's logo, represented by the `publisher-logo-src` attribute.  This is a URL for a logo image, in square format with a 1x1 aspect ratio.
+- A poster image of the story, represented by the `poster-portrait-src` attribute. This is a URL for the poster, and the image must be in portrait format with a 3x4 aspect ratio.
+
+Let's add these attributes to our [`amp-story`](../../../../documentation/components/reference/amp-story.md) tag:
+
+```html
+<amp-story standalone
+    title="Joy of Pets"
+    publisher="AMP tutorials"
+    publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+    poster-portrait-src="assets/cover.jpg">
+```
+
+In addition to these required attributes, there are other attributes you can apply. To learn more, see the [attributes](../../../../documentation/components/reference/amp-story.md#attributes) section of the [`amp-story`](../../../../documentation/components/reference/amp-story.md) reference documentation.
+
+[tip type="note"] **NOTE –**  These metadata attributes supplement and do not replace any Structured Data (e.g. JSON-LD) on the page. To ensure your Web Stories are discovered across all platforms, you should add [Structured Data](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md#integrate-with-third-party-platforms-through-additional-metadata) to all your AMP pages, including AMP stories. [/tip]
+
+At this point, we have a shell of a story without any content. Let's create that page.
