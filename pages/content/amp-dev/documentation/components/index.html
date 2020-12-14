@@ -43,7 +43,6 @@ recent_components:
 
 <section>
   <div class="ap-icon-text">
-    {% do doc.styles.addCssFile('/css/components/molecules/benefit.css') %}
     <div class="ap-icon-text-item">
       <div class="ap-icon-text-item-icon">
         {% do doc.icons.useIcon('/icons/built-in.svg') %}
@@ -82,5 +81,22 @@ recent_components:
     </div>
   </div>
 </section>
+
+<hr>
+
+<section>
+  <h2>{{ _('Highlighted Components') }}</h2>
+  <div class="ap-teaser-grid">
+    {% for teaser_doc in doc.highlighted_components %}
+    {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
+      [% if format in '{{ teaser_doc.formats }}' %]
+        {% with highlightedTeaser = True %}
+        {% include 'views/2021/partials/teaser.j2' %}
+        {% endwith %}
+      [% endif %]
+    {% endfor %}
+  </div>
+</section>
+
 
 {% endblock %}

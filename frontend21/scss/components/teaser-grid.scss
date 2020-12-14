@@ -1,0 +1,7 @@
+.#{prefix(null, 'teaser-grid')} {
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  align-items: stretch;
+  grid-column-gap: 30px;
+  margin-top: 20px;
+}
