@@ -94,8 +94,7 @@ Eine Liste der Shortcodes und ihrer Verwendung findest du unter [documentation.m
 
 amp.dev wird mit AMP erstellt! Deshalb müssen unsere Bilder den Kriterien von [`amp-img`](../../../../documentation/components/reference/amp-img.md) entsprechen. Zum Erstellen wird die folgende Syntax verwendet, um Bilder in das korrekte Format `amp-img` zu konvertieren.
 
-<div class="ap-m-code-snippet"><pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}
-</pre></div>
+<div class="ap-m-code-snippet"><pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}</pre></div>
 
 ## Abschnitte filtern
 
@@ -158,12 +157,7 @@ Platziere Code Snippets innerhalb von jeweils drei Backticks und gib die Sprache
 
 Wenn dein Code doppelt geschweifte Klammern enthält – was häufig der Fall ist, wenn du [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md?format=websites) Templates verwendest –, musst du den Codeteil einschließen:
 
-<div class="ap-m-code-snippet"><pre>```html
-{% raw	%}
-  // code with double curly braces
-{% endraw	%}
-```
-</pre></div>
+<div class="ap-m-code-snippet"><pre>```html<br>{% raw	%}<br>  // code with double curly braces<br>{% endraw	%}<br>```</pre></div>
 
 ### Code Snippets in Listen
 
@@ -448,7 +442,6 @@ Bitte erstelle das Ankerziel mithilfe von `<a name="#anchor-name></a>`, bevor du
 
 ```html
 ## Example section <a name="example-section"></a>
-
 ```
 
 Im Anker sind nur Buchstaben, Ziffern, Bindestrich und Unterstrich zulässig. Bitte verwende kurze Ankernamen in englischer Sprache, die der Überschrift entsprechen oder den Abschnitt beschreiben. Stelle sicher, dass der Ankername im Dokument einmalig ist.
@@ -496,15 +489,15 @@ Verwende Bindestriche im Namen des Dokuments.
    </td>
   </tr>
   <tr>
-   <td>hello-world-tutorial.md    </td>
-   <td>hello_world_tutorial.md    </td>
+   <td>hello-world-tutorial.md</td>
+   <td>hello_world_tutorial.md</td>
   </tr>
   <tr>
-   <td>website-fundamentals.md    </td>
-   <td>websiteFundamentals.md    </td>
+   <td>website-fundamentals.md</td>
+   <td>websiteFundamentals.md</td>
   </tr>
   <tr>
-   <td>actions-and-events.md    </td>
-   <td>actionsandevents.md    </td>
+   <td>actions-and-events.md</td>
+   <td>actionsandevents.md</td>
   </tr>
 </table>
