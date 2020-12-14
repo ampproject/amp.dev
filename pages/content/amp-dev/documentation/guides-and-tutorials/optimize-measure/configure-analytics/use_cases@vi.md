@@ -10,21 +10,21 @@ Hướng dẫn này cung cấp một tập hợp các trường hợp sử dụn
 
 [tip type = "note"] **LƯU Ý -** Bạn muốn thêm một ca sử dụng? [Hãy cho chúng tôi biết.](https://github.com/ampproject/docs/issues/new) Hoặc bạn cũng có thể đóng góp các trường hợp sử dụng của riêng mình, hãy xem [Cách đóng góp](../../../../documentation/guides-and-tutorials/contribute/index.md) . [/tiền boa]
 
-## Tracking page views
+## Theo dõi lượt xem trang
 
-Learn how to track page views using [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) and [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
+Tìm hiểu cách để theo dõi các lượt xem trang sử dụng [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) và [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
 
-### Using `amp-pixel`
+### Sử dụng `amp-pixel`
 
-Send pageview data to a specified URL using [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md):
+Gửi dữ liệu lượt xem trang đến một URL được quy định sử dụng [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md):
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>
 ```
 
-### Using amp-analytics - no vendor
+### Sử dụng amp-analytics - không có nhà cung cấp
 
-Send pageview data to a specified URL using [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md):
+Gửi dữ liệu lượt xem trang đến một URL được quy định sử dụng [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md):
 
 ```html
 <amp-analytics>
@@ -47,9 +47,9 @@ Send pageview data to a specified URL using [`amp-analytics`](../../../../docume
 </amp-analytics>
 ```
 
-### Using amp-analytics - googleanalytics
+### Sử dụng amp-analytics - googleanalytics
 
-Send pageview data to Google Analytics (see also [Page tracking in Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)):
+Gửi dữ liệu lượt xem trang đến Google Analytics (xem thêm [Theo dõi lượt xem trang trong Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)):
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics1">
@@ -69,13 +69,13 @@ Send pageview data to Google Analytics (see also [Page tracking in Google Analyt
 </amp-analytics>
 ```
 
-## Tracking page clicks <a name="tracking-page-clicks"></a>
+## Theo dõi lượt nhấp trang <a name="tracking-page-clicks"></a>
 
-Learn how to track page clicks using [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), sending event data to a specified URL, and to [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
+Tìm hiểu cách để theo dõi các lượt nhấp trang sử dụng [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), gửi dữ liệu sự kiện đến một URL được quy định, và đến [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
-### Sending data to specified URL
+### Gửi dữ liệu đến một URL được quy định
 
-The following example uses the `selector` attribute to send a `click` event to the specified URL everytime a user clicks on a link (`<a href>`):
+Ví dụ sau sử dụng thuộc tính `selector` (bộ chọn) để gửi một sự kiện `click` (nhấp) đến URL được quy định mỗi khi người dùng nhấn vào một liên kết (`<a href>`):
 
 ```html
 <amp-analytics>
@@ -103,9 +103,9 @@ The following example uses the `selector` attribute to send a `click` event to t
 </amp-analytics>
 ```
 
-### Sending data to Google Analytics
+### Gửi dữ liệu đến Google Analytics
 
-The following example uses the `selector` attribute of the `trigger` to send a `click` event to Google Analytics when a particular element is clicked (see also [AMP event tracking in Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#event_tracking)):
+Ví dụ sau sử dụng thuộc tính `selector` (bộ chọn) của `trigger` (yếu tố kích hoạt) để gửi một sự kiện `click` (nhấp) đến Google Analytics khi một yếu tố cụ thể được nhấn (xem thêm [theo dõi sự kiện AMP trong Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#event_tracking)):
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics3">
@@ -130,9 +130,9 @@ The following example uses the `selector` attribute of the `trigger` to send a `
 </amp-analytics>
 ```
 
-## Tracking scrolling <a name="tracking-scrolling"></a>
+## Theo dõi cuộn <a name="tracking-scrolling"></a>
 
-Track page scrolling using [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). The following example uses the `scrollspec` attribute to send a `scroll` event to the specified URL when page is scrolled vertically by 25%, 50% and 90%. The event also fires when the page is horizontally scrolled to 90% of `scroll` width:
+Theo dõi cuộn trang sử dụng [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). Ví dụ sau đây sử dụng thuộc tính `scrollspec` để gửi một sự kiện `scroll` (cuộn) đến URL được quy định khi trang được cuộn dọc 25%, 50% và 90%. Sự kiện này cũng được kích hoạt khi trang được cuộn ngang đến 90% chiều rộng `scroll` (cuộn):
 
 ```html
 <amp-analytics>
@@ -158,13 +158,13 @@ Track page scrolling using [`amp-analytics`](../../../../documentation/component
 </amp-analytics>
 ```
 
-## Tracking social interactions <a name="tracking-social-interactions"></a>
+## Theo dõi tương tác xã hội <a name="tracking-social-interactions"></a>
 
-Learn how to track social interactions using [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), sending event data to a specified URL, and to [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
+Tìm hiểu cách để theo dõi tương tác xã hội sử dụng [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), gửi dữ liệu sự kiện đến một URL được quy định, và đến [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
-### Sending data to specified URL
+### Gửi dữ liệu đến một URL được quy định
 
-The following example uses the `selector` attribute to send a `click` event to the specified URL everytime a user clicks on a tweet (`#tweet-link`):
+Ví dụ sau sử dụng thuộc tính `selector` (bộ chọn) để gửi một sự kiện `click` (nhấp) đến URL được quy định mỗi khi người dùng nhấn vào một tweet (`#tweet-link`):
 
 ```html
 <amp-analytics>
@@ -192,9 +192,9 @@ The following example uses the `selector` attribute to send a `click` event to t
 </amp-analytics>
 ```
 
-### Sending data to Google Analytics
+### Gửi dữ liệu đến Google Analytics
 
-The following example uses the `selector` attribute of the `trigger` to send an event when a particular social button is clicked (see also [AMP social interactions tracking in Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#social_interactions)):
+Ví dụ sau sử dụng thuộc tính `selector` (bộ chọn) của `trigger` (yếu tố kích hoạt) để gửi một sự kiện khi một nút xã hội cụ thể được nhấn (xem thêm [theo dõi tương tác xã hội AMP trong Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#social_interactions)):
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics4">
