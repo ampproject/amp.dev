@@ -304,6 +304,6 @@ Làm mới trang và xem đầu ra bảng điều khiển. Bạn sẽ thấy th�
 
 ### Các câu hỏi thường gặp
 
-- [What is DOM reflow?](http://stackoverflow.com/a/27637245)
-- [What if the layout attribute isn’t defined?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isnt-specified)
-- [What if width and height are undefined?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-width-and-height-are-undefined)
+- [Luồng định hướng lại DOM là gì?](http://stackoverflow.com/a/27637245)
+- [Điều gì xảy ra nếu thuộc tính <code>layout</code> (bố cục) không được quy định?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isnt-specified)
+- [Điều gì xảy ra nếu chiều rộng và chiều cao không được định nghĩa? ](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-width-and-height-are-undefined)
