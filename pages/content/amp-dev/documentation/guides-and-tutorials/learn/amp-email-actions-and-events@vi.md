@@ -67,12 +67,8 @@ Xem bảng dưới đây để biết mô tả về từng phần của cú phá
   <tr>
     <td><code>arg=value</code></td>
     <td>không</td>
-    <td>Some actions, if documented, may accept arguments. The arguments are defined between parentheses in <code>key=value</code> notation. The accepted values are:       <ul>         <li>simple unquoted strings: <code>simple-value</code>
-</li>         <li>quoted strings: <code>"string value"</code> or <code>'string value'</code>
-</li>         <li>boolean values: <code>true</code> or <code>false</code>
-</li>         <li>numbers: <code>11</code> or <code>1.1</code>
-</li>         <li>dot-syntax reference to event data: <code>event.someDataVariableName</code>
-</li>       </ul>     </td>
+    <td>Một số hành động, nếu được ghi chép, có thể chấp nhận các tham số. Các tham số được định nghĩa giữa các ngoặc đơn trong chú thích <code>key=value</code>. Các giá trị được chấp nhận là: <ul> <li>các chuỗi đơn giản không được trích dẫn: <code>simple-value</code> </li> <li>các chuỗi được trích dẫn: <code>"string value"</code> hoặc <code>'string value'</code> </li> <li>các giá trị boolean: <code>true</code> (đúng) hoặc <code>false</code> (sai) </li> <li>số: <code>11</code> hoặc <code>1.1</code> </li> <li>Tham chiếu cú pháp dấu chấm cho dữ liệu sự kiện: <code>event.someDataVariableName</code> </li> </ul>
+</td>
   </tr>
 </table>
 
