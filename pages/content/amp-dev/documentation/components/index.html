@@ -98,5 +98,34 @@ recent_components:
   </div>
 </section>
 
+<section>
+  <h2>{{ _('Filter by category') }}</h2>
 
+  {% set categories = g.categories('/content/amp-dev/documentation/components/reference', locale=doc.locale) %}
+  {% set filter_categories = categories|map(attribute=0)|list|tojson %}
+
+  <ul class="ap-table-component">
+    {% for category, docs in categories %}
+    <li class="ap-table-component-section">
+      <h3 class="ap-table-component-section-title">{{ category }}</h3>
+      <ul>
+        {% for component in docs if component.is_current %}
+        <li>
+          <a class="ap-table-component-link" href="{{ component.url.path }}">
+            <div class="ap-table-component-link-formats">
+
+            </div>
+            <div class="ap-table-component-link-title">{{ component.title }}</div>
+            <div class="ap-table-component-link-description">{{ component.teaser.text|truncate(70, false, '...') }}</div>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+  </ul>
+
+
+
+</section>
 {% endblock %}

@@ -24,6 +24,7 @@
 @import 'components/icon-text.scss';
 @import 'components/teaser-grid.scss';
 @import 'components/teaser-component.scss';
+@import 'components/table-component.scss';
 @import 'components/tag.scss';
 
 
@@ -72,6 +73,15 @@ button {
   box-shadow: none;
   border: none;
   -webkit-appearance: none;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  padding: 0;
 }
 
 select {

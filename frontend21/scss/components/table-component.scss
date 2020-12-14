@@ -1,0 +1,46 @@
+.#{prefix(null, 'table-component')} {
+  min-height: 50px;
+
+  &-section {
+    position: relative;
+
+    &-title {
+      position: sticky;
+      top: 50px;
+      margin: 0;
+      padding-top: 43px;
+      padding-bottom: 5px;
+      background: color('white');
+      border-bottom: 1px solid transparentize(color('black'), 0.95);
+    }
+  }
+
+  &-link {
+    display: flex;
+    align-items: center;
+    height: 42px;
+    border-bottom: 1px solid transparentize(color('black'), 0.95);
+    color: color('river-bed');
+
+    &-formats {
+      width: 8%;
+    }
+
+    &-title {
+      width: 40%;
+      font-family: $fontFamilyCode;
+      font-size: 14px;
+    }
+
+    &-description {
+      width: 52%;
+      font-size: 12px;
+      font-weight: normal;
+    }
+
+    &:hover {
+      background: color('athens-gray');
+      border-color: color('athens-gray');
+    }
+  }
+}
