@@ -1,5 +1,5 @@
 ---
-"$title": Congratulations!
+"$title": Chúc mừng!
 "$order": '9'
 description: 'You have successfully completed your first AMP story! In this tutorial, you learned to: - Create a multi-page story by using the amp-story component'
 author: bpaduch
@@ -9,12 +9,12 @@ Bạn đã hoàn thành tốt Câu chuyện Web đầu tiên của mình sử d�
 
 Trong bài thực hành này, bạn đã học cách để:
 
-- Create a multi-page Web Story by using the [`amp-story`](../../../../documentation/components/reference/amp-story.md) component
-- Create visual effects with multiple layers in a page
+- Tạo một câu chuyện nhiều trang bằng cách dùng thành phần [`amp-story`](../../../../documentation/components/reference/amp-story.md)
+- Tạo những hiệu ứng hình ảnh với nhiều lớp trong một trang
 - Bố trí các phần tử trong một trang bằng cách sử dụng các khuôn mẫu lớp
-- Add audio that plays while a page is viewed
+- Thêm phần âm thanh phát ra khi có người xem một trang
 - Tạo hình hoạt họa cho các phần tử trên một trang
-- Keep readers engaged with your content by adding related links to the end of the story
+- Giúp người đọc duy trì tương tác với nội dung của bạn bằng cách thêm vào ở cuối câu chuyện những liên kết có liên quan
 
 ## Bước tiếp theo
 
