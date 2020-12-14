@@ -1,12 +1,12 @@
 ---
 "$title": Theo dõi tương tác bằng công cụ phân tích
 "$order": '4'
-description: Analytics platforms are commonly integrated into websites through inline JavaScript snippets and function calls, which trigger events that are sent back to the analytics system.
+description: Các nền tảng phân tích thường được tích hợp vào các website thông qua đoạn code JavaScript inline và lệnh gọi chức năng để kích hoạt các sự kiện được gửi trả về hệ thống phân tích.
 ---
 
 Các nền tảng phân tích thường được tích hợp vào các website thông qua đoạn code JavaScript inline và lệnh gọi chức năng để kích hoạt các sự kiện được gửi trả về hệ thống phân tích. AMP cung cấp một cú pháp cấu hình JSON linh hoạt để sao chép quy trình này cho nhiều đối tác phân tích khác nhau.
 
-The following is an example of traditional JavaScript-driven Google Analytics tracking. We'll rewrite this into the [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) JSON format but first, let's look at the traditional approach:
+Sau đây là một ví dụ về tính năng theo dõi Google Analytics dựa trên JavaScript truyền thống. Chúng ta sẽ chuyển nó sang định dạng JSON [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), nhưng trước hết, hãy xem lối tiếp cận truyền thống:
 
 ```html
 <script>
@@ -20,15 +20,15 @@ ga('send', 'pageview');
 </script>
 ```
 
-This JavaScript is quite simple; it sends a notification to track the pageview event.
+JavaScript này rất đơn giản; nó gửi một thông báo để theo dõi sự kiện xem trang.
 
-To replicate this functionality in AMP, we must first **include** the [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) component library in our document’s `<head>`:
+Để tái lập chức năng này trong AMP, trước tiên ta cần phải **bao gồm** thư viện thành phần [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) ở trong phần `<head>` của tài liệu:
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 ```
 
-Then, let's **add** the [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) component to the end of the `body` of the document:
+Sau đó ta hãy **thêm** thành phần [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) vào cuối `body` (thân) tài liệu:
 
 ```html
 <amp-analytics type="googleanalytics">
@@ -51,13 +51,13 @@ Then, let's **add** the [`amp-analytics`](../../../../documentation/components/r
 </amp-analytics>
 ```
 
-Just as with the JavaScript example at the top of this page, this [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) snippet will send a notification to Google Analytics indicating that a page has been viewed.
+Giống như với ví dụ JavaScript ở đầu trang này, đoạn mã [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) này sẽ gửi một tin báo đến Google Analytics cho biết một trang đã được xem.
 
-To specify this, we've set the `type` to `googleanalytics` and then in the JSON we've created a trigger we've called "default pageview".  This trigger will fire when the page is visible (due to the `"on": "visible"`) and when it fires we'll send a `pageview` analytics request to Google Analytics with the `vars` we have specified.
+Để quy định điều này, chúng ta đã thiết lập `type` (loại) thành `googleanalytics` và sau đó trong JSON, chúng ta đã tạo một yếu tố kích hoạt gọi là "default pageview". Yếu tố kích hoạt này sẽ kích hoạt khi trang được hiển thị (nhờ có `"on": "visible"`) và khi nó kích hoạt, chúng ta sẽ gửi một yêu cầu phân tích `pageview` đến Google Analytics với `vars` mà chúng ta đã quy định.
 
-The JSON used to configure [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) is a very flexible format for describing what analytics data to send and when to send it.  The [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) has complete details on the format.
+JSON dùng để cấu hình [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) là một định dạng rất linh hoạt để mô tả dữ liệu phân tích nào cần gửi đi và khi nào cần gửi nó. [`Amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) đã hoàn thành các chi tiết trên định dạng này.
 
-Building on the above example, we can **add** another trigger named `"click on #header trigger"`:
+Dựa vào ví dụ bên trên, ta có thể **thêm** mã kích hoạt khác mang tên `"click on #header trigger"`:
 
 ```html
 <amp-analytics type="googleanalytics">
@@ -89,10 +89,10 @@ Building on the above example, we can **add** another trigger named `"click on #
 </amp-analytics>
 ```
 
-As you can guess from the name of this new trigger it will fire when the element with the ID `"header"` is clicked (specified by `"on": "click"` and `"selector": "#header"`).  When this trigger fires, we'll send the `event` request to our analytics provider, specifying a couple of variables to include in the request.
+Như bạn có thể đoán từ tên của yếu tố kích hoạt mới này, nó sẽ kích hoạt khi yếu tố với ID `"header"` được nhấn (được quy định bởi `"on": "click"` và `"selector": "#header"`). Khi yếu tố kích hoạt này kích hoạt, nó sẽ gửi yêu cầu `event` (sự kiện) cho nhà cung cấp dịch vụ phân tích của chúng ta, quy định một cặp biến số để bao gồm trong yêu cầu.
 
-If you have a custom tracking platform that you want to integrate with, you can still use [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) and define your own personalized URL endpoints to send tracking data to. Learn more in the [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) component reference documentation.
+Nếu bạn có một nền tảng theo dõi tùy chỉnh mà bạn muốn tích hợp, bạn vẫn có thể sử dụng [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) và định nghĩa điểm cuối URL cá nhân của mình để gửi dữ liệu theo dõi đến đó. Tìm hiểu thêm trong tài liệu tham khảo cho thành phần [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
 
-[tip type="note"] **NOTE –**  `“UA-YYYY-Y”` is an example Google Analytics account; it should be replaced with your own website’s Google Analytics tracking code if you are using this example on your site. [/tip]
+[tip type="note"] **LƯU Ý –**  `“UA-YYYY-Y”` là một tài khoản Google Analytics mẫu; nó cần được thay bằng mã theo dõi Google Analytics cho website của bạn nếu bạn sử dụng ví dụ này trên website của mình. [/tip]
 
-[tip type="tip"] **TIP –** If you are interested in a simpler tracking system, you might want to take a look at [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md). If you only need to track pageviews, [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) it is a lighter-weight solution than [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) because it only aims to solve the requirements of traditional pixel tracking. Learn more in the [Analytics: the basics guide](../../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md). [/tip]
+[tip type="tip"] **MẸO –** Nếu bạn quan tâm đến một hệ thống theo dõi đơn giản hơn, bạn có thể tìm hiểu về [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md). Nếu bạn chỉ cần theo dõi lượt xem trang, [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) là một giải pháp nhẹ cân hơn [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) bởi nó chỉ nhằm giải quyết các yêu cầu của việc theo dõi điểm ảnh truyền thống. Tìm hiểu thêm trong [Hướng dẫn cơ bản về Phân tích](../../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md). [/tip]
