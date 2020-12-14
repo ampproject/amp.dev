@@ -1,7 +1,7 @@
 ---
-"$title": Validating your AMP HTML
+"$title": Xác thực AMP HTML của bạn
 "$order": '8'
-description: Whenever you create an AMP page, you should always validate that your AMP HTML is correct. There are [several methods that you can use to validate your AMP pages ...
+description: Bất kì khi nào bạn tạo một trang AMP, bạn luôn có thể xác thực AMP HTML của bạn là đúng. Có một số phương pháp mà bạn có thể dùng để xác thực các trang AMP của mình ...
 author: bpaduch
 ---
 
@@ -17,7 +17,7 @@ Ví dụ:
 http://localhost:8000/pets.html#development=1
 ```
 
-Open the [Developer Console](https://developer.chrome.com/devtools/docs/console) in Chrome (or your preferred browser), and verify there are no AMP errors. You might need to refresh your browser to see validation messages. If your page is free of errors, you should see the message:
+Mở [Developer Console (Bảng điều khiển Nhà phát triển)](https://developer.chrome.com/devtools/docs/console) trong Chrome (hoặc trình duyệt ưa thích của bạn), và xác minh rằng không có lỗi AMP. Bạn có thể cần làm mới trình duyệt để thấy thông điệp xác thực. Nếu trang của bạn không có lỗi, bạn cần phải thấy dòng sau:
 
 ```text
  AMP validation successful.
