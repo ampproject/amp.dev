@@ -1,7 +1,7 @@
 ---
-"$title": Secure from third party attacks
+"$title": Bảo mật trước những tấn công của bên thứ ba
 "$order": '7'
-description: Take measures to protect your AMP pages and users from security vulnerabilities on the web
+description: Thực hiện những biện pháp nhằm bảo vệ các trang AMP của bạn cùng người dùng để tránh những lỗ hổng bảo mật trên web
 formats:
 - websites
 author: CrystalOnScript
@@ -9,11 +9,11 @@ author: CrystalOnScript
 
 Thực hiện những biện pháp nhằm bảo vệ các trang AMP của bạn cùng người dùng để tránh những lỗ hổng bảo mật trên web. Một trong những đòn ác ý nhất là [cross-site scripting (chèn kịch bản vào website ngoài)](https://www.google.com/about/appsecurity/learning/xss/) (XSS). XSS là một lỗi bảo mật cho phép người tấn công chèn đoạn mã độc hại trên các trang HTML được hiển thị cho người dùng.
 
-Protect against these types of attacks by adopting a [Content Security Policy (CSP)](https://csp.withgoogle.com/docs/index.html). AMP caches like the Google AMP Cache already add CSP to your pages! However, pages lack this additional layer of protection when users circumvent the cached version, if you do not add your own CSP.
+Bảo vệ trước những loại tấn công này bằng cách dùng đến [Chính sách bảo mật nội dung (CSP)](https://csp.withgoogle.com/docs/index.html). Bộ nhớ đệm AMP giống Bộ nhớ đệm Google AMP đã thêm CSP vào các trang của bạn! Tuy nhiên, các trang thiếu lớp bổ sung bảo vệ này khi người dùng tránh phiên bản được lưu bộ nhớ đệm, nếu bạn không thêm CSP của chính mình.
 
-# Implement AMP’s CSP
+# Thực thi CSP của AMP
 
-Implement a CSP by adding the appropriate meta tag to the head of your pages. Below is AMP’s CSP, allowing only AMP scripts to be injected into your page:
+Thực thi một CSP bằng cách thêm vào siêu thẻ phù hợp vào đầu các trang. Bên dưới là CSP của AMP, chỉ cho phép các đoạn mã AMP được chèn vào trang của bạn:
 
 ```html
 <meta
@@ -22,6 +22,6 @@ Implement a CSP by adding the appropriate meta tag to the head of your pages. Be
 />
 ```
 
-[You can view the full example here](https://github.com/ampproject/amphtml/blob/master/examples/csp.amp.html).
+[Bạn có thể xem ví dụ đầy đủ ở đây](https://github.com/ampproject/amphtml/blob/master/examples/csp.amp.html).
 
-[tip type="read-on"] Learn more about [protecting about security vulnerabilities and CSPs here](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP). [/tip]
+[tip type="read-on"] Tìm hiểu thêm về [việc bảo vệ trước những lỗ hổng bảo mật và CSP tại đây](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP). [/tip]
