@@ -238,16 +238,12 @@ Có nhiều công cụ mà bạn có thể sử dụng để mã hóa video và 
   </thead>
   <tbody>
     <tr>
-     <td>
-<a href="https://www.ffmpeg.org/about.html">FFmpeg</a>
-     </td>
+     <td><a href="https://www.ffmpeg.org/about.html">FFmpeg</a></td>
      <td>Thiết lập tối ưu được khuyến nghị:       <ul>         <li>Đối với MP4, sử dụng <code>-crf 23</code>.</li>         <li>Đối với WEBM, sử dụng <code>-b:v 1M</code>.</li>       </ul>
 </td>
     </tr>
     <tr>
-     <td>
-<a href="https://libav.org/avconv.html">avconv</a>
-     </td>
+     <td><a href="https://libav.org/avconv.html">avconv</a></td>
      <td>Thiết lập tối ưu được khuyến nghị:       <ul>         <li>Đối với MP4, sử dụng <code>-crf 23</code>.</li>         <li>Đối với WEBM, sử dụng <code>-b:v 1M</code>.</li>       </ul>
 </td>
     </tr>
