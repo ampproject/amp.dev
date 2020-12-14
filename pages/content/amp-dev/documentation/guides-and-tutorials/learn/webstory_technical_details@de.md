@@ -20,7 +20,7 @@ Eine Web Story ist technisch gesehen eine einzelne Webseite, die mit AMP erstell
 - Sie enthält das Tag ` <meta charset="utf-8">` als untergeordnetes Element des Tags `<head>`.
 - Sie enthält das Tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` in ihrem Tag `<head>`. Als Best Practice solltest du das Skript so früh wie möglich in `<head>` platzieren.
 - Sie enthält das Tag `<link rel="canonical" href="page/url">` in ihrem Tag `<head>`, wobei href auf die URL der Web Story verweist.
-- Contain a `<meta name="viewport" content="width=device-width">` tag inside the `<head>` tag. It's also recommended to include initial-scale=1.
+- Sie enthält das Tag `<meta name="viewport" content="width=device-width">` innerhalb des Tags `<head>`. Es wird auch empfohlen, 'initial-scale=1' anzugeben.
 - Sie enthält den Code der [AMP Boilerplate](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) im Tag `<head>`.
 
 Der Unterschied zwischen einer AMP Webseite und einer mit AMP erstellten Web Story liegt in der Komponente [`amp-story`](https://amp.dev/documentation/components/amp-story/?format=stories). Das ist das einzige direkt untergeordnete Element des Elements `<body>` des Dokuments und muss das Attribut `standalone` enthalten. Alle Seiten, Ebenen und Elemente der Web Story werden innerhalb der Tags `<amp-story>` definiert.
