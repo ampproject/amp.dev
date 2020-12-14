@@ -41,7 +41,7 @@ Sau đó thêm phần sau vào đâu đó trong phần `<body>` (thân) của b�
 
 Nếu người dùng điều hướng đến các trang AMP của bạn trên nguồn gốc của bạn (không phải ở lần nhấp chuột đầu tiên, vốn thường được phục vụ từ một Bộ nhớ đệm AMP), Service Worker sẽ tiếp quản và có thể làm [nhiều điều rất thú vị](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux).
 
-## The AMP Service Worker
+## Service Worker AMP
 
 Nếu bạn đang ở đây, chắc hẳn bạn đang xây dựng các trang AMP. Đội ngũ AMP rất quan tâm đến việc đặt người dùng làm ưu tiên hàng đầu và mang đến họ một trải nghiệm web đẳng cấp thế giới. Để đảm bảo các trải nghiệm này được nhất quán, nhóm AMP đã tạo ra một service worker dành riêng cho AMP!
 
@@ -110,7 +110,7 @@ Một trang ngoại tuyến thành công sẽ trông như một phần trên web
 
 Nhóm đang làm việc để triển khai một tính năng buộc cập nhật/gỡ bỏ nếu Service Worker AMP của bạn cần bị tắt hoặc thay đổi nếu việc triển khai cho người dùng xảy ra sự cố.
 
-To effectively manage a service worker, you should understand how [standard HTTP caching affects the way your service worker's JavaScript is kept up to date](https://developers.google.com/web/updates/2018/06/fresher-sw). Service workers served with appropriate HTTP caching directives can resolve small bug fixes by making the appropriate changes and redeploying your service worker to your hosting environment. If you need to remove a service worker, it's a good idea to keep a simple, [no-op](https://en.wikipedia.org/wiki/NOP) service worker file handy, like the following:
+Để quản lý hiệu quả một service worker, bạn cần hiểu cách [bộ nhớ đệm HTTP tiêu chuẩn ảnh hưởng đến việc cập nhật cho JavaScript của service worker](https://developers.google.com/web/updates/2018/06/fresher-sw). Các service worker được phục vụ với chỉ dẫn về bộ nhớ đệm HTTP phù hợp có thể giải quyết các bản khắc phục lỗi nhỏ bằng cách thực hiện các thay đổi phù hợp và triển khai lại service worker cho môi trường máy chủ của bạn. Nếu bạn cần gỡ bỏ một service worker, hãy giữ một tập tin service worker [no-op](https://en.wikipedia.org/wiki/NOP) (không hoạt động) đơn giản ở chỗ thuận tiện, như sau:
 
 ```js
 self.addEventListener('install', () => {
