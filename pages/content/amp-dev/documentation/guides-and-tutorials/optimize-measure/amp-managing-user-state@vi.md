@@ -1,10 +1,10 @@
 ---
-"$title": Manage non-authenticated user state with AMP
+"$title": Quản lý trạng thái người dùng chưa xác thực với AMP
 order: '2'
 formats:
 - websites
 teaser:
-  text: "**Table of contents**"
+  text: "**Mục lục**"
 ---
 
 <!--
@@ -30,305 +30,305 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-**Table of contents**
+**Mục lục**
 
-- [Background](#background)
-- [Implementation guide](#implementation-guide)
-    - [Before getting started](#before-getting-started)
-    - [Task 1: For non-AMP pages on the publisher origin, set up an identifier and send analytics pings](#task1)
-    - [Task 2: For AMP pages, set up an identifier and send analytics pings by including Client ID replacement in amp-analytics pings](#task2)
-    - [Task 3: Process analytics pings from pages on the publisher origin](#task3)
-    - [Task 4: Process analytics pings from AMP cache or AMP viewer display contexts and establish identifier mappings (if needed)](#task4)
-    - [Task 5: Using Client ID in linking and form submission](#task5)
-- [Strongly recommended practices](#strongly-recommended-practices)
+- [Nền](#background)
+- [Hướng dẫn triển khai](#implementation-guide)
+    - [Trước khi bắt đầu](#before-getting-started)
+    - [Tác vụ 1: Đối với các trang không phải AMP trên nguồn gốc của nhà phát hành, thiết lập một mã định danh và gửi ping phân tích](#task1)
+    - [Tác vụ 2: Đối với các trang AMP, thiết lập một mã định danh và gửi ping phân tích bằng cách bao gồm ID Máy khách thay thế trong các lệnh ping amp-analytics](#task2)
+    - [Tác vụ 3: Xử lý các ping phân tích từ các trang trên nguồn gốc của nhà phát hành](#task3)
+    - [Tác vụ 4: Xử lý ping phân tích từ bộ nhớ đệm AMP hoặc ngữ cảnh hiển thị của trình xem AMP và thiết lập các sơ đồ mã định danh (nếu cần)](#task4)
+    - [Tác vụ 5: Sử dụng ID Máy khách trong liên kết và biểu mẫu được gửi đi](#task5)
+- [Các biện pháp thực hành được đặc biệt khuyến nghị](#strongly-recommended-practices)
 
-User state is an important concept on today’s web. Consider the following use cases that are enabled by managing user state:
+Trạng thái người dùng là một khái niệm quan trọng trên các trang web ngày nay. Hãy cân nhắc trường hợp sử dụng sau, có được bằng cách quản lý trạng thái người dùng:
 
-- A merchant builds a useful **shopping cart** that shows a user the same items during their second visit that they had added to the cart during their first visit many weeks ago. Such an experience increases the chance of the user buying that item by making sure they remain aware of the item they considered buying in the past.
-- A news publisher who can tailor **recommended articles** to a reader based on the reader’s repeated visits to the publisher’s articles, which helps keep the reader engaged and discovering more content.
-- A website developer running any type of site collects **analytics** that can tell if two pageviews belong to the same person who saw two pages or to two different people who each saw a single page. Having this insight helps to know how the site is performing, and, ultimately, how to improve it.
+- Một thương gia xây dựng một **giỏ hàng** hữu ích hiển thị cho người dùng các sản phẩm tương tự trong lần truy cập thứ hai của họ mà họ đã thêm vào giỏ ở lần truy cập thứ nhất rất nhiều tuần trước. Trải nghiệm này sẽ tăng khả năng người dùng mua sản phẩm đó bằng cách đảm bảo họ vẫn nhớ về sản phẩm mà họ đã cân nhắc mua trong quá khứ.
+- Một nhà phát hành tin tức có thể tùy chỉnh các **bài viết được khuyến nghị** cho một độc giả dựa trên các lần truy cập lặp lại của độc giả đến các bài viết của nhà phát hành này, điều này giúp gắn kết độc giả và khuyến khích họ khám phá các nội dung khác.
+- Một nhà phát triển website vận hành một loại website bất kỳ thu thập thông tin **phân tích** có thể cho biết liệu 2 lượt xem trang là của cùng 1 người xem 2 trang hay 2 người khác nhau, mỗi người xem 1 trang. Việc sở hữu kiến thức này giúp họ biết hiệu quả của website và, quan trọng hơn cả, cách để cải thiện nó.
 
-This article is designed to help you be more successful in **managing non-authenticated user state in AMP**, a way of providing a seamless user journey even if the user hasn’t taken an action to provide their identity, like signing in. After reviewing some of the challenges and considerations in approaching this topic, this guide outlines the ways in which user state is supported by AMP and offers recommendations on how you can approach a technical implementation.
+Bài viết này được thiết kế để giúp bạn trở nên thành công hơn trong việc **quản lý trạng thái người dùng chưa xác thực trong AMP**, một cách để cung cấp hành trình liền mạch cho người dùng ngay cả khi họ chưa có hành động nào để cung cấp danh tính của mình, chẳng hạn như đăng nhập. Sau khi xem lại một số thách thức và cân nhắc trong việc tiếp cận chủ đề này, hướng dẫn này sẽ phác thảo các cách mà trạng thái người dùng được hỗ trợ bởi AMP và cung cấp các khuyến nghị về cách bạn có thể tiếp cận một lối triển khai kỹ thuật.
 
-## Background <a name="background"></a>
+## Nền <a name="background"></a>
 
-The topic of user state deserves special attention in AMP because AMP pages can display in multiple contexts such as on your website, in Google Search or a third party app. This introduces challenges in managing user state when users travel between these.
+Chủ đề trạng thái người dùng cần được chú ý đặc biệt trong AMP bởi các trang AMP có thể được hiển thị theo nhiều ngữ cảnh khác nhau, ví dụ như trên website của bạn, trong Google Tìm kiếm hoặc một ứng dụng của bên thứ ba. Việc này mang đến các thách thức trong việc quản lý trạng thái người dùng khi người dùng điều hướng giữa các ngữ cảnh này.
 
-### Display contexts for AMP pages <a name="display-contexts-for-amp-pages"></a>
+### Các ngữ cảnh hiển thị cho trang AMP <a name="display-contexts-for-amp-pages"></a>
 
-You can think of AMP as a portable content format that enables content to be loaded fast anywhere. AMP documents can be displayed via three noteworthy contexts:
+Bạn có thể coi AMP như một định dạng nội dung lưu động, cho phép nội dung có thể được tải nhanh chóng ở bất cứ đâu. Các tài liệu AMP có thể được hiển thị thông qua 3 ngữ cảnh đáng lưu ý:
 
-- The publisher's origin
-- An AMP cache
-- An AMP viewer
+- Nguồn gốc của nhà phát hành
+- Một bộ nhớ đệm AMP
+- Một trình xem AMP
 
 <table>
   <tr>
-    <th width="20%">Context</th>
-    <th width="20%">Can non-AMP pages be served from here?</th>
-    <th width="20%">Can AMP pages be served from here?</th>
-    <th>Sample URL</th>
+    <th width="20%">Ngữ cảnh</th>
+    <th width="20%">Liệu các trang không phải AMP có thể được phục vụ từ đây?</th>
+    <th width="20%">Liệu các trang AMP có thể được phục vụ từ đây?</th>
+    <th>URL mẫu</th>
   </tr>
   <tr>
-    <td>Publisher’s origin</td>
-    <td>Yes</td>
-    <td>Yes</td>
+    <td>Nguồn gốc của nhà phát hành</td>
+    <td>Có</td>
+    <td>Có</td>
     <td><code>https://example.com/article.amp.html</code></td>
   </tr>
    <tr>
-    <td>AMP cache</td>
-    <td>No</td>
-    <td>Yes</td>
+    <td>Bộ nhớ đệm AMP</td>
+    <td>Không</td>
+    <td>Có</td>
     <td><code>https://example-com.cdn.ampproject.org/s/example.com/article.amp.html</code></td>
   </tr>
    <tr>
-    <td>AMP viewer</td>
-    <td>No</td>
-    <td>Yes</td>
+    <td>Trình xem AMP</td>
+    <td>Không</td>
+    <td>Có</td>
     <td><code>https://google.com/amp/s/example.com/article.amp.html</code></td>
   </tr>
 </table>
 
-Let’s examine each of these situations more closely.
+Hãy cùng xem kỹ từng tình huống trong đây.
 
-**Context #1: the publisher’s origin.** AMP pages are deployed so that they are originally hosted from and accessible via the publisher’s site, e.g. on `https://example.com` one might find `https://example.com/article.amp.html`.
+**Ngữ cảnh #1: nguồn gốc của nhà phát hành.** Các trang AMP được triển khai theo cách mà ban đầu chúng được lưu trữ và truy cập thông qua website của nhà phát hành, chẳng hạn như trên `https://example.com`, bạn có thể tìm thấy `https://example.com/article.amp.html`.
 
-Publishers can choose to publish exclusively in AMP, or to publish two versions of content (that is, AMP content “paired” with non-AMP content). The “paired” model requires some [particular steps](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/discovery) to ensure the AMP versions of pages are discoverable to search engines, social media sites, and other platforms. Both publishing approaches are fully supported; it's up to the publisher to decide on which approach to take.
+Các nhà phát hành có thể chọn chỉ phát hành bằng AMP, hoặc phát hành 2 phiên bản của nội dung (nghĩa là, nội dung AMP “kết hợp” với nội dung không phải AMP). Mô hình “kết hợp” đòi hỏi một số [bước cụ thể](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/discovery) để đảm bảo các phiên bản AMP của trang có thể được khám phá trên công cụ tìm kiếm, mạng xã hội và các nền tảng khác. Cả hai lối phát hành này đều được hỗ trợ toàn diện; nhà phát hành có quyền quyết định lối tiếp cận để thực hiện.
 
-> **NOTE:**
-> Due to the “paired” publishing model just described, the publisher’s origin (in the example above, `https://example.com`) is a context in which **both AMP and non-AMP content can be accessed**. Indeed, it’s the only context in which this can happen because AMP caches and AMP viewers, described below, only deliver valid AMP content.
+> **LƯU Ý:**
+> Do mô hình phát hành “kết hợp” này mà nguồn gốc của nhà phát hành (trong ví dụ ở trên là `https://example.com`) là một ngữ cảnh trong đó **cả nội dung AMP và không phải AMP đều có thể được truy cập**. Hiển nhiên, đó là ngữ cảnh duy nhất mà điều này có thể xảy ra bởi các bộ nhớ đệm AMP và trình xem AMP, được mô tả dưới đây, chỉ cung cấp nội dung AMP hợp lệ.
 
-**Context #2: an AMP cache.** AMP files can be cached in the cloud by a third-party cache to reduce the time content takes to get to a user’s mobile device.
+**Ngữ cảnh #2: một bộ nhớ đệm AMP.** Các tập tin AMP có thể được lưu bộ nhớ đệm trong đám mây bởi một bộ nhớ đệm của bên thứ ba để giảm thời gian mà nội dung được đưa đến thiết bị di động của người dùng.
 
-By using the AMP format, content producers are making the content in AMP files available to be cached by third parties. Under this type of framework, publishers continue to control their content (by publishing to their origin as detailed above), but platforms can cache or mirror the content for optimal delivery speed to users.
+Thông qua việc sử dụng định dạng AMP, các nhà sản xuất nội dung cho phép nội dung trong các tập tin AMP được lưu trong bộ nhớ đệm bởi các bên thứ ba. Theo loại khung này, các nhà phát hành sẽ tiếp tục kiểm soát nội dung của họ (bằng cách phát hành lên nguồn gốc của họ như đã nói ở trên), nhưng các nền tảng có thể lưu hoặc sao chép nội dung để đảm bảo tốc độ cung cấp tối ưu cho người dùng.
 
-Traditionally, content served in this way originates from a different domain. For example, the [Google AMP Cache](https://developers.google.com/amp/cache/overview) uses `https://cdn.ampproject.org` to deliver content, e.g. `https://example-com.cdn.ampproject.org/s/example.com/article.amp.html`.
+Thông thường, nội dung được cung cấp theo cách này đều có nguồn gốc từ một tên miền khác. Ví dụ [Bộ nhớ đệm AMP của Google](https://developers.google.com/amp/cache/overview) sử dụng `https://cdn.ampproject.org` để cung cấp nội dung, ví dụ như `https://example-com.cdn.ampproject.org/s/example.com/article.amp.html`.
 
-**Context #3: an AMP viewer.** The AMP format is built to support embedding within third-party AMP viewers. This enables a high degree of cooperation between the AMP file and the viewer experience, benefits of which include: smart and secure preloading and pre-rendering of content and innovative affordances like swiping between full AMP pages.
+**Ngữ cảnh #3: một trình xem AMP.** Định dạng AMP được xây dựng để hỗ trợ nhúng trong các trình xem AMP của bên thứ ba. Việc này cho phép một cấp độ hợp tác cao hơn giữa tập tin AMP và trải nghiệm người xem, các lợi ích bao gồm: tải sẵn và render sẵn nội dung một cách thông minh và bảo mật, và các tiện ích sáng tạo như vuốt giữa các trang AMP đầy đủ.
 
-Just like the AMP cache case, expect the domain for an AMP viewer to also be different from the publisher origin. For example, the viewer for Google Search is hosted on `https://google.com` and embeds an iframe that requests the publisher content from the Google AMP Cache.
+Cũng như trường hợp bộ nhớ đệm AMP, tên miền cho một trình xem AMP cũng sẽ khác với nguồn gốc của nhà phát hành. Ví dụ, trình xem cho Google Tìm kiếm được lưu trữ trên `https://google.com` và nhúng một iframe yêu cầu nội dung nhà phát hành từ Bộ nhớ đệm AMP của Google.
 
-### Multiple contexts means multiple state management <a name="multiple-contexts-means-multiple-state-management"></a>
+### Nhiều ngữ cảnh đồng nghĩa với nhiều cách quản lý trạng thái <a name="multiple-contexts-means-multiple-state-management"></a>
 
-Publishers must be prepared to manage the user state for each display context separately. AMP’s [Client ID](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#client-id) feature, which takes advantage of cookies or local storage to persist state, provides the necessary support for AMP pages to have a stable and pseudonymous identifier for the user. From an implementation point of view, either cookies or local storage are used, and AMP makes the decision which to use depending on the display context. This choice is influenced by the technical feasibility of managing this state scaled to hundreds or thousands of publishers.
+Các nhà phát hành phải chuẩn bị để quản lý trạng thái người dùng cho từng ngữ cảnh hiển thị. Tính năng [ID Máy khách](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#client-id) của AMP tận dụng cookie hoặc ổ lưu trữ cục bộ để duy trì trạng thái và cung cấp hỗ trợ cần thiết cho các trang AMP để có một mã định danh ổn định cho người dùng. Từ quan điểm triển khai, có thể sử dụng cookie hoặc ổ lưu trữ cục bộ, và AMP sẽ đưa ra quyết định sử dụng cách nào tùy thuộc vào ngữ cảnh hiển thị. Lựa chọn này chịu ảnh hưởng bởi tính khả thi kỹ thuật đối với việc quản lý trạng thái này, phóng lên hàng trăm hoặc hàng nghìn nhà phát hành.
 
-However, publishers of AMP pages can easily end up (unwittingly) designing user journeys that involve multiple contexts. Let’s revisit our earlier look at the shopping cart use case and add some more detail to it to make a full **user story**:
+Tuy nhiên, các nhà phát hành trang AMP có thể vô ý thiết kế các hành trình người dùng liên quan đến nhiều ngữ cảnh khác nhau. Hãy nhìn lại trường hợp sử dụng giỏ hàng trước đây của chúng ta và bổ sung một số chi tiết để biến nó thành một **câu chuyện người dùng** đầy đủ:
 
-> *On day 1, the user discovers an AMP page from Example Inc. via Google Search. Google Search loads AMP pages in an AMP viewer. While viewing the page, the user adds four items to their shopping cart but doesn't check out. Two weeks later, on day 15, the user remembers the four items they were considering to purchase and decides now is the time to buy. They access Example Inc.’s homepage at `https://example.com` directly (it is a non-AMP homepage) and finds their four items are still saved in the shopping cart.*
+> *Vào ngày 1, người dùng khám phá một trang AMP từ Example Inc. thông qua Google Tìm kiếm. Google Tìm kiếm tải các trang AMP trong một trình xem AMP. Trong khi xem trang này, người dùng thêm 4 sản phẩm vào giỏ hàng của họ nhưng không thanh toán. 2 tuần sau, vào ngày 15, người dùng nhớ đến 4 sản phẩm mà họ đã cân nhắc mua và quyết định bây giờ là lúc để mua. Họ truy cập trang chủ của Example Inc. tại  `https://example.com` một cách trực tiếp (đó là một trang chủ không phải AMP), và thấy 4 sản phẩm của họ vẫn được lưu trong giỏ hàng.*
 
-In this scenario, the user receives a consistent shopping cart experience even though she has traversed from an AMP viewer context to a publisher origin context—and with some time passing between these events. This experience is very reasonable and, if you’re designing a shopping experience, you should expect to support it, so how do you make it happen?
+Trong tình huống này, người dùng nhận được một trải nghiệm giỏ hàng nhất quán, ngay cả khi họ đã chuyển từ một ngữ cảnh trình xem AMP sang ngữ cảnh nguồn gốc của nhà phát hành—và một khoảng thời gian đã trôi qua giữa 2 sự kiện này. Trải nghiệm này rất hợp lý, và nếu bạn đang thiết kế một trải nghiệm mua sắm, bạn nên hỗ trợ nó, vậy làm thế nào bạn có thể biến nó thành hiện thực?
 
-**To enable this and any experience involving user state, all contexts the user traverses must share their individually-maintained state with each other.** “Perfect!”, you say, with the idea to share the cookie values with user identifiers across these contextual boundaries. One wrinkle: even though each of these contexts displays content controlled by the same publisher, they each see the other as a third-party because each context lives on different domains.
+**Để cho phép trải nghiệm này và mọi trải nghiệm liên quan đến trạng thái người dùng, mọi ngữ cảnh sử dụng của người dùng đều phải có chung trạng thái (được duy trì riêng biệt với nhau).** “Thật hoàn hảo!”, bạn thốt lên, với ý tưởng là chia sẻ giá trị cookie với các mã định danh người dùng trên các ranh giới ngữ cảnh này. Một vấn đề: tuy mỗi ngữ cảnh này đều hiển thị nội dung được kiểm soát bởi cùng một nhà phát hành, chúng sẽ đều coi nhau như bên thứ ba bởi mỗi ngữ cảnh đều sống trên các tên miền khác nhau.
 
 <amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png" width="1030" height="868">
   <noscript>     <img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png">   </noscript></amp-img>
 
-As you'll see in the following discussion, being in a third-party position when interacting with cookies may present challenges, depending on how the user’s browser settings are configured. In particular, if third party cookies are blocked in a particular situation, then it will prevent the ability for information to be shared across the contexts. On the other hand, if third-party cookie operations are allowed, then information can be shared.
+Như bạn có thể thấy trong cuộc thảo luận sau, việc ở vị thế của một bên thứ ba khi tương tác với cookie có thể mang đến nhiều thách thức tùy thuộc vào cách cấu hình cài đặt trình duyệt của người dùng. Cụ thể, nếu các cookie của bên thứ ba bị chặn trong một tình huống cụ thể, nó sẽ ngăn thông tin được chia sẻ trên nhiều ngữ cảnh. Mặt khác, nếu cookie của bên thứ ba được phép hoạt động, thông tin sẽ có thể được chia sẻ.
 
-## Implementation guide <a name="implementation-guide"></a>
+## Hướng dẫn triển khai <a name="implementation-guide"></a>
 
-This section provides recommendations for managing user state. The tasks below are presented as a progression, but can largely be viewed in two chunks:
+Phần này cung cấp các khuyến nghị để quản lý trạng thái người dùng. Các tác vụ dưới đây được trình bày dưới dạng tiến độ, nhưng nhìn chung có thể được xem theo 2 phần:
 
-**Chunk #1: Fundamental implementation:** Tasks 1-4 are essential toward getting the basics working. They rely on a minimal set of features needed to get the job partially done: AMP’s Client ID substitution, reading and writing of cookies, and maintaining a backend mapping table. Why “partially”? Because the steps conveyed in these tasks rely on reading and writing cookies and because the browser’s cookie settings may prevent this in certain circumstances, this set of tasks is likely to be insufficient for fully managing user state in all scenarios.
+**Phần #1: Triển khai cơ bản:** Tác vụ 1-4 là thiết yếu để triển khai phần cơ bản. Chúng phụ thuộc vào một nhóm tính năng tối thiểu để hoàn thành một phần công việc: Thay ID Máy khách của AMP, đọc và ghi cookie, và duy trì một bảng sơ đồ backend. Vì sao lại “một phần”? Bởi các bước được nêu trong tác vụ này phụ thuộc vào việc đọc và ghi các cookie và bởi cài đặt cookie của trình duyệt có thể ngăn điều này trong một số tình huống nhất định, nhóm tác vụ này nhiều khả năng sẽ là không đủ để quản lý toàn diện trạng thái người dùng trong mọi tình huống.
 
-After laying the foundation, we then visit a topic with a narrower range of use cases but that offers a complete solution for those use cases.
+Sau khi thiết lập nền tảng, chúng ta sẽ xem xét một chủ đề với phạm vi sử dụng hẹp hơn, nhưng cung cấp một giải pháp toàn diện cho những trường hợp sử dụng đó.
 
-**Chunk #2: Using Client ID in linking and form submission:** In Task 5, you'll learn to advantage of link traversal and/or form submission to pass AMP Client ID information across contextual boundaries where the user is traversing from one page directly to another.
+**Phần #2: Sử dụng ID Máy khách trong liên kết và biểu mẫu được gửi đi:** Trong Tác vụ 5, bạn sẽ học được lợi thế của việc điều hướng liên kết và/hoặc gửi đi biểu mẫu để truyền tải thông tin ID Máy khách AMP qua nhiều ranh giới ngữ cảnh khác nhau, ở đó người dùng điều hướng trực tiếp từ trang này sang trang kia.
 
-> **CAUTION:**
-> The following implementation guide advises usage of and working with cookies. Be sure to consult the [Strongly recommended practices](#strongly-recommended-practices) section for important suggestions to keep in mind.
+> **CHÚ Ý:**
+> Hướng dẫn triển khai sau đây tư vấn về việc sử dụng và làm việc với cookie. Hãy tham vấn  [Các biện pháp thực hành được đặc biệt khuyến nghị ](#strongly-recommended-practices) để biết các đề xuất quan trọng cần lưu ý.
 
-### Before getting started <a name="before-getting-started"></a>
+### Trước khi bắt đầu <a name="before-getting-started"></a>
 
-In walking through the technical guidance below, let's assume that you’ll be binding **user state** to a stable **identifier** that represents the user. For example, the identifier might look like `n34ic982n2386n30`. On the server side you then associate `n34ic982n2386n30` to any set of user state information, such as shopping cart content, a list of previously read articles, or other data depending on the use case.
+Khi thực hiện các hướng dẫn kỹ thuật dưới đây, hãy giả sử rằng bạn sẽ ràng buộc **trạng thái người dùng** với một **mã định danh** ổn định đại diện cho người dùng. Ví dụ, mã định danh có thể có dạng `n34ic982n2386n30`. Ở phía máy chủ, bạn sẽ liên kết `n34ic982n2386n30` với mọi nhóm thông tin trạng thái người dùng, ví dụ như nội dung giỏ hàng, một danh sách các bài viết đã đọc trước đó, hoặc các dữ liệu khác tùy thuộc vào trường hợp sử dụng.
 
 <amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
   <noscript>     <img alt="A single identifier could be used to manage user state for many use cases" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png">   </noscript></amp-img>
 
-For clarity throughout the rest of this document, we’ll call various strings of characters that are identifiers by more readable names preceded by a dollar sign (`$`):
+Để đảm bảo sự rõ ràng ở phần còn lại của tài liệu này, chúng ta sẽ gọi những chuỗi ký tự khác nhau, là các mã định danh, bằng các tên dễ đọc, đứng trước bởi một ký tự đô-la (`$`):
 
 [sourcecode:text]
 n34ic982n2386n30 ⇒ $sample_id
 [/sourcecode]
 
-**Our use case:** Throughout this guide we will work on an example designed to achieve simple pageview tracking (i.e., analytics) in which we want to produce the most accurate user counting possible. This means that even if the user is accessing a particular publisher’s content from different contexts (including crossing between AMP and non-AMP pages), we want these visits to be counted toward a singular understanding of the user that is the same as if the user were browsing only on such publisher’s traditional non-AMP pages.
+**Trường hợp sử dụng của chúng ta:** Trong suốt hướng dẫn này, chúng ta sẽ làm việc trên một ví dụ được thiết kế để theo dõi lượt xem trang một cách đơn giản (nghĩa là trình phân tích), trong đó chúng ta muốn tạo ra cách đếm người dùng chính xác nhất. Điều này có nghĩa ngay cả khi người dùng đang truy cập một nội dung cụ thể của nhà phát hành từ các ngữ cảnh khác nhau (bao gồm chuyển giữa các trang AMP và không phải AMP), chúng ta muốn các lượt truy cập này được đếm vào một định nghĩa người dùng duy nhất, như thể người dùng chỉ đang duyệt trên các trang truyền thống không phải AMP của nhà phát hành đó.
 
-**Assumption about availability of stable cookie values:** We also assume that the user is using the same device, browser, and non-private/incognito browsing, in order to assure that cookie values are preserved and available across the user’s sessions over time. If this is not the case, these techniques should not be expected to work. If this is required, look to manage user state based on the user’s authenticated (i.e. signed-in) identity.
+**Giả sử về tình trạng sẵn có của các giá trị cookie ổn định:** Chúng ta cũng giả sử rằng người dùng đang sử dụng cùng một thiết bị, trình duyệt, chế độ duyệt không riêng tư/không ẩn danh, để đảm bảo rằng các giá trị cookie được giữ nguyên và khả dụng trên các phiên làm việc của người dùng theo thời gian. Nếu không, các kỹ thuật này sẽ không hoạt động đúng kỳ vọng. Nếu cần, hãy kiểm tra để đảm bảo trạng thái người dùng dựa trên danh tính được xác thực của người dùng (nghĩa là, danh tính đăng nhập).
 
-**The concepts presented below can be extended to other use cases:** Although we focus just on the analytics use case, the concepts conveyed below can be reworked for other use cases requiring user state management across contexts.
+**Các khái niệm được trình bày dưới đây có thể được mở rộng cho các trường hợp sử dụng khác:** Tuy chúng ta chỉ tập trung vào trường hợp sử dụng phân tích, các khái niệm được trình bày dưới đây có thể được tái sử dụng cho các trường hợp sử dụng khác, vốn đòi hỏi việc quản lý trạng thái người dùng trên nhiều ngữ cảnh.
 
 <a id="task1"></a>
 
-### Task 1: For non-AMP pages on the publisher origin, set up an identifier and send analytics pings <a name="task-1-for-non-amp-pages-on-the-publisher-origin-set-up-an-identifier-and-send-analytics-pings"></a>
+### Tác vụ 1: Đối với các trang không phải AMP trên nguồn gốc của nhà phát hành, thiết lập một mã định danh và gửi ping phân tích <a name="task-1-for-non-amp-pages-on-the-publisher-origin-set-up-an-identifier-and-send-analytics-pings"></a>
 
-Let’s begin by configuring analytics for non-AMP pages served off of the publisher origin. This can be achieved in many ways, including using an analytics package like Google Analytics or Adobe Analytics, or by writing a custom implementation.
+Hãy bắt đầu bằng cách cấu hình phân tích cho các trang không phải AMP, được phục vụ ngay từ nguồn gốc của nhà phát hành. Điều này có thể được thực hiện theo nhiều cách, bao gồm sử dụng một gói phân tích như Google Analytics hoặc Adobe Analytics, hoặc bằng cách viết một tác vụ triển khai tùy chỉnh.
 
-If you’re using an analytics package from a vendor, it’s likely that package takes care of both setting up cookies and transmitting pings via its configuration code and APIs. If this is the case, you should read through the steps below to ensure they align with your analytics approach but expect that you won’t need to make any changes as part of completing this task.
+Nếu bạn đang sử dụng một gói phân tích từ một nhà cung cấp, nhiều khả năng gói đó đã đảm nhiệm cả việc thiết lập cookie và truyền tải ping qua mã cấu hình và API của nó. Nếu vậy, bạn nên đọc qua các bước dưới đây để đảm bảo chúng phù hợp với phong cách phân tích của bạn, nhưng bạn có thể kỳ vọng mình sẽ không cần thay đổi gì khi hoàn thành tác vụ này.
 
-The rest of this task offers guidance if you are looking to set up your own analytics.
+Phần còn lại của tác vụ này cung cấp các hướng dẫn nếu bạn muốn thiết lập trình phân tích của riêng mình.
 
-##### Set up an identifier using first-party cookies <a name="set-up-an-identifier-using-first-party-cookies"></a>
+##### Thiết lập một mã định danh sử dụng các cookie của bên thứ nhất <a name="set-up-an-identifier-using-first-party-cookies"></a>
 
-If you have non-AMP pages being served from your publisher origin, set up a persistent and stable identifier to be used on these pages. This is typically [implemented with first-party cookies](https://en.wikipedia.org/wiki/HTTP_cookie#Tracking).
+Nếu bạn có các trang không phải AMP đang được phục vụ từ nguồn gốc nhà phát hành của mình, hãy thiết lập một mã định danh cố định và ổn định để sử dụng cho các trang này. Điều này thường được [triển khai sử dụng các cookie của bên thứ nhất](https://en.wikipedia.org/wiki/HTTP_cookie#Tracking).
 
-For the purposes of our example, let’s say you’ve set a cookie called `uid` (“user identifier”) that will be created on a user’s first visit. If it’s not the user’s first visit, then read the value that was previously set on the first visit.
+Vì mục đích của ví dụ này, hãy giả sử rằng bạn đã đặt một cookie tên là `uid` (“mã định danh người dùng”) mà sẽ được tạo ở lần truy cập đầu tiên của người dùng. Nếu đây không phải lần truy cập đầu tiên của người dùng, thì đọc giá trị đã được đặt ở lần truy cập đầu tiên trước đó.
 
-This means there are two cases for the state of non-AMP pages on the publisher origin:
+Điều này có nghĩa có 2 trường hợp cho trạng thái của các trang không phải AMP trên nguồn gốc của nhà phát hành:
 
-**Case #1: Initial visit.** Upon first landing on the non-AMP page, there will be no cookie. If you checked for the cookie before one was set, you’d see no values set in the cookie corresponding to the `uid`:
+**Trường hợp #1: Lần truy cập ban đầu.** Sau khi vừa đến trang không phải AMP, sẽ không có cookie nào. Nếu bạn kiểm tra cookie trước khi nó được đặt, bạn sẽ không thấy giá trị nào được đặt trong cookie tương ứng với `uid`:
 
 [sourcecode:bash]
 > document.cookie
   ""
 [/sourcecode]
 
-Sometime in the initial load, the cookie should be set, so that if you do this once the page is loaded, you will see a value has been set:
+Cookie sẽ được đặt ở một thời điểm nào đó trong lần tải ban đầu, vậy nên nếu bạn làm việc này sau khi trang được tải, bạn sẽ thấy một giá trị đã được đặt:
 
 [sourcecode:bash]
 > document.cookie
   "uid=$publisher_origin_identifier"
 [/sourcecode]
 
-**Case #2: Non-initial visit.** There will be a cookie set. Thus, if you open the developer console on the page, you’d see:
+**Trường hợp #2: Lần truy cập không phải ban đầu.** Sẽ có một cookie đã được đặt từ trước rồi. Do đó, nếu bạn mở bảng điều khiển nhà phát triển trên trang này, bạn sẽ thấy:
 
 [sourcecode:bash]
 > document.cookie
   "uid=$publisher_origin_identifier"
 [/sourcecode]
 
-##### Send analytics pings <a name="send-analytics-pings"></a>
+##### Gửi đi ping phân tích <a name="send-analytics-pings"></a>
 
-Once you’ve set up an identifier, you can now incorporate it in analytics pings to begin tracking pageviews.
+Sau khi bạn đã thiết lập một mã định danh, bạn có thể tích hợp nó trong ping phân tích để bắt đầu theo dõi lượt xem trang.
 
-The specific implementation will depend on your desired configuration, but generally you’ll be looking to send pings (requests) to your analytics server, which include useful data within the URL of the request itself. Here’s an example, which also indicates how you’d include your cookie value inside of the request:
+Việc triển khai cụ thể sẽ tùy thuộc vào cấu hình mong muốn của bạn, nhưng nhìn chung, bạn sẽ muốn gửi ping (yêu cầu) đến máy chủ phân tích của mình, bao gồm các dữ liệu hữu ích trong URL của chính yêu cầu đó. Đây là một ví dụ, nó cũng cho thấy cách bạn có thể bao gồm giá trị cookie bên trong yêu cầu:
 
 [sourcecode:http]
 https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_identifier
 [/sourcecode]
 
-Note that in the above example the identifier for the user is indicated by a specific query param, `user_id`:
+Lưu ý rằng trong ví dụ ở trên, mã định danh cho người dùng được chỉ báo bởi một tham số truy vấn cụ thể, `user_id`:
 
 [sourcecode:text]
 user_id=$publisher_origin_identifier
 [/sourcecode]
 
-The use of “`user_id`” here should be determined by what your analytics server expects to process and is not specifically tied to what you call the cookie that stores the identifier locally.
+Việc sử dụng “`user_id`” ở đây nên được quyết định bởi nội dung mà máy chủ phân tích của bạn quen xử lý, chứ không liên quan cụ thể đến tên của cookie lưu trữ mã định danh này một cách cục bộ.
 
 <a id="task2"></a>
 
-### Task 2: For AMP pages, set up an identifier and send analytics pings by including Client ID replacement in amp-analytics pings <a name="task-2-for-amp-pages-set-up-an-identifier-and-send-analytics-pings-by-including-client-id-replacement-in-amp-analytics-pings"></a>
+### Tác vụ 2: Đối với các trang AMP, thiết lập một mã định danh và gửi ping phân tích bằng cách bao gồm ID Máy khách thay thế trong các lệnh ping amp-analytics <a name="task-2-for-amp-pages-set-up-an-identifier-and-send-analytics-pings-by-including-client-id-replacement-in-amp-analytics-pings"></a>
 
-Turning now to AMP pages, let's look at how you can establish and transmit an identifier for analytics. This will be applicable regardless of the context the AMP page is presented in, so this covers any AMP page on the publisher origin, served via an AMP cache, or displayed in AMP viewer.
+Xét đến các trang AMP, hãy xem cách bạn có thể thiết lập và truyền tải một mã định danh cho các trình phân tích. Mã này sẽ được áp dụng bất kể ngữ cảnh của trang AMP, vậy nên nó bao gồm mọi trang AMP trên nguồn gốc của nhà phát hành, được phục vụ qua một bộ nhớ đệm AMP hay hiển thị trong một trình xem AMP.
 
-Through usage of features that require Client ID, AMP will do the “under the hood” work to generate and store client ID values and surface them to the features that require them. One of the principal features that can use AMP’s Client ID is [amp-analytics](https://amp.dev/documentation/components/amp-analytics), which happens to be exactly what we’ll need to implement our analytics use case example.
+Thông qua việc sử dụng các tính năng cần ID Máy khách, AMP sẽ làm việc “ngầm” để tạo và lưu trữ các giá trị ID máy khách và cung cấp chúng cho các tính năng cần chúng. Một tính năng chính có thể sử dụng ID Máy khách của AMP là [amp-analytics](https://amp.dev/documentation/components/amp-analytics), nó chính là thứ mà chúng ta sẽ cần để triển khai ví dụ về trường hợp sử dụng phân tích của mình.
 
-On AMP pages, construct an amp-analytics ping containing the Client ID:
+Trên các trang AMP, xây dựng một mã ping amp-analytics chứa ID Máy khách:
 
 <table>
   <tr>
-    <td width="40%"><strong>amp-analytics configuration looks like:</strong></td>
+    <td width="40%"><strong>Cấu hình amp-analytics sẽ có dạng như sau:</strong></td>
     <td width="60%"><code>https://analytics.example.com/ping?type=pageview&user_id=${clientId(uid)}</code></td>
   </tr>
   <tr>
-    <td><strong>What goes over the network looks like:</strong></td>
+    <td><strong>Những gì được truyền tải qua mạng sẽ có dạng như sau:</strong></td>
     <td>
-<code>https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id</code><p><em>In this case, <code>${clientId(uid)}</code> is replaced by an actual value that AMP either generates at that moment or will be returned based on what the user’s browser has already stored locally</em></p>
+<code>https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id</code><p><em>Trong trường hợp này, <code>${clientId(uid)}</code> được thay thế bởi một giá trị thực tế mà AMP tạo tại thời điểm đó, hoặc sẽ được trả về dựa trên những gì mà trình duyệt của người dùng đã lưu trữ cục bộ</em></p>
 </td>
   </tr>
 </table>
 
-Take note of the fact that the parameter passed into the Client ID substitution, `${clientId(uid)`, is `uid`. This was a deliberate choice that matches the same cookie name used on the publisher origin as described in [Task 1](#task1). For the most seamless integration, you should apply the same technique.
+Lưu ý rằng tham số được truyền vào ID Máy khách thay thế, `${clientId(uid)` là `uid`. Đây là một lựa chọn có ý định phù hợp với tên cookie đã được sử dụng trên nguồn gốc của nhà phát hành như được mô tả trong [Tác vụ 1](#task1). Để tích hợp một cách liền mạch nhất có thể, bạn cũng nên áp dụng kỹ thuật này.
 
-Concerning the rest of the amp-analytics implementation, see the documentation for [amp-analytics configuration](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) for more detail on how to set up amp-analytics requests or to modify those of your analytics vendor. The ping can be further modified to transport additional data that you either directly define or by taking advantage of other [AMP substitutions](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
+Liên quan đến phần còn lại của việc triển khai amp-analytics, hãy xem tài liệu [cấu hình amp-analytics](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) để biết thông tin chi tiết về cách thiết lập các yêu cầu amp-analytics hoặc sửa đổi chúng cho nhà cung cấp phân tích của bạn. Lệnh ping có thể được sửa đổi thêm nữa để truyền tải dữ liệu bổ sung mà bạn định nghĩa trực tiếp, hoặc tận dụng các mã [AMP thay thế](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) khác.
 
-> **Good to know:**
-> Why did we use of the name `uid` for the parameter passed to the Client ID feature? The parameter that the `clientId(...)` substitution takes is used to define scope. You can actually use the Client ID feature for many use cases and, as a result, generate many client IDs. The parameter differentiates between these use cases and so you use it to specify which use case you would like a Client ID for. For instance, you might want to send different identifiers to third parties like an advertiser and you could use the “scope” parameter to achieve this.
+> **Nên biết:**
+> Vì sao chúng ta sử dụng tên `uid` cho tham số được truyền đến tính năng ID Máy khách? Tham số mà `clientId(...)` thay thế sử dụng sẽ được dùng để định nghĩa phạm vi. Bạn có thể sử dụng tính năng ID Máy khách cho nhiều trường hợp sử dụng và, do đó, tạo ra nhiều ID máy khách khác nhau. Tham số này phân biệt giữa những trường hợp sử dụng này và do đó bạn sử dụng nó để quy định trường hợp sử dụng mà bạn muốn dùng ID Máy khách đó. Ví dụ, bạn có thể muốn gửi nhiều mã định danh khác nhau đến các bên thư ba như một nhà quảng cáo và bạn có thể sử dụng tham số “scope” (phạm vi) để thực hiện điều này.
 
-On the publisher origin, it’s easiest to think of “scope” as what you call the cookie. By recommending a value of `uid` for the Client ID parameter here in [Task 2](#task2), we align with the choice to use a cookie called `uid` in [Task 1](#task1).
+Trên nguồn gốc của nhà phát hành, bạn có thể coi “scope” (phạm vi) như một cookie. Thông qua việc khuyến nghị một giá trị `uid` cho tham số ID Máy khách trong [Tác vụ 2](#task2), chúng ta tiếp tục với lựa chọn sử dụng một cookie tên là `uid` trong [Tác vụ 1](#task1).
 
 <a id="task3"></a>
 
-### Task 3: Process analytics pings from pages on the publisher origin <a name="task-3-process-analytics-pings-from-pages-on-the-publisher-origin"></a>
+### Tác vụ 3: Xử lý các ping phân tích từ các trang trên nguồn gốc của nhà phát hành <a name="task-3-process-analytics-pings-from-pages-on-the-publisher-origin"></a>
 
-Because of the setup performed in Tasks 1 and 2, when someone accesses the AMP version (from any context) or the non-AMP version on the publisher origin the analytics ping will use the same identifier. By following the guidance in [Task 2](#task2) to choose a Client ID "scope" that was the same name as the name of the cookie you used in [Task 1](#task1), AMP reuses the same cookie.
+Nhờ các thiết lập được thực hiện trong Tác vụ 1 và 2, khi một ai đó truy cập phiên bản AMP (từ mọi ngữ cảnh) hay phiên bản không phải AMP trên nguồn gốc của nhà phát hành, ping phân tích sẽ sử dụng mã định danh này. Thông qua việc làm theo hướng dẫn trong [Tác vụ 2](#task2) để chọn một "scope" (phạm vi) ID Máy khách có cùng tên với cookie mà bạn đã dùng trong [Tác vụ 1](#task1), AMP sẽ tái sử dụng cookie này.
 
-This is illustrated in the table below:
+Điều này được minh họa trong bảng dưới đây:
 
 <table>
   <tr>
-    <td width="40%">An analytics ping coming from a <strong>non-AMP page on the publisher origin</strong> looks like</td>
+    <td width="40%">Một lệnh ping phân tích đến từ một <strong>trang không phải AMP trên nguồn gốc của nhà phát hành</strong> có dạng</td>
     <td width="60%"><code>https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_identifier</code></td>
   </tr>
   <tr>
-    <td>An analytics ping coming from an <strong>AMP page on the publisher origin</strong> looks like</td>
+    <td>Một lệnh ping phân tích đến từ một <strong>trang AMP trên nguồn gốc của nhà phát hành</strong> có dạng</td>
     <td>
-<code>https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_identifier</code><br><em>In this case, it's the same! By choosing a scope value of <code>uid</code> the underlying value of the <code>uid</code> cookie, which is <code>$publisher_origin_identifier</code>, gets used.</em>
+<code>https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_identifier</code><br><em>Trong trường hợp này, chúng giống nhau! Thông qua việc lựa chọn giá trị phạm vi là <code>uid</code>, giá trị cơ sở của cookie <code>uid</code>, vốn là <code>$publisher_origin_identifier</code> sẽ được sử dụng.</em>
 </td>
   </tr>
 </table>
 
 <a id="task4"></a>
 
-### Task 4: Process analytics pings from AMP cache or AMP viewer display contexts and establish identifier mappings (if needed) <a name="task-4-process-analytics-pings-from-amp-cache-or-amp-viewer-display-contexts-and-establish-identifier-mappings-if-needed"></a>
+### Tác vụ 4: Xử lý ping phân tích từ bộ nhớ đệm AMP hoặc ngữ cảnh hiển thị của trình xem AMP và thiết lập các sơ đồ mã định danh (nếu cần) <a name="task-4-process-analytics-pings-from-amp-cache-or-amp-viewer-display-contexts-and-establish-identifier-mappings-if-needed"></a>
 
-When we set up analytics pings in [Task 2](#task2) to transmit data from AMP pages displayed within an AMP cache or AMP viewer, we also created a problem. As discussed previously, AMP cache and AMP viewer contexts are different from the publisher origin context, and along with this comes as different way of maintaining identifiers. To process these pings to avoid problems like overcounting users, we’ll take some [steps](#implementation-steps) to try and reconcile identifiers as often as we can.
+Khi chúng ta thiết lập ping phân tích trong [Tác vụ 2](#task2) để truyền tải dữ liệu từ các trang AMP được hiển thị trong một bộ nhớ đệm AMP hoặc trình xem AMP, chúng ta cũng tạo một vấn đề. Như đã thảo luận trước đây, các ngữ cảnh của bộ nhớ đệm AMP và trình xem AMP khác với ngữ cảnh trên nguồn gốc của nhà phát hành, và cùng với việc này là những cách khác nhau để duy trì mã định danh. Để xử lý các ping này nhằm tránh các vấn đề như đếm thừa người dùng, chúng ta sẽ thực hiện một số [bước](#implementation-steps) để thử đối chiếu mã định danh một cách thường xuyên nhất có thể.
 
-To help explain the steps we’re taking, it’s helpful to first reconsider exactly how the overcounting problem arises.
+Để giúp giải thích các bước tiến hành, bạn cần kiểm tra lại rằng vấn đề đếm thừa có nguồn gốc chính xác từ đâu.
 
-#### Reviewing the problem <a name="reviewing-the-problem"></a>
+#### Xem lại vấn đề <a name="reviewing-the-problem"></a>
 
-Consider the following flow:
+Cân nhắc luồng sau:
 
-1. A user visits the **AMP page in an AMP viewer display context**, such as `https://google.com/amp/s/example.com/article.amp.html`. Since the AMP viewer does not have access to the `uid` cookie on the publisher origin, a random value of `$amp_client_id` is generated to identify the user.
-2. The same user then visits **a page on the publisher origin `https://example.com`**. As described in [Task 3](#task3), the user is identified with `$publisher_origin_identifier`.
+1. Một người dùng truy cập **trang AMP trong một ngữ cảnh hiển thị trình xem AMP** như  `https://google.com/amp/s/example.com/article.amp.html`. Bởi trình xem AMP không thể truy cập cookie `uid` trên nguồn gốc của nhà phát hành, một giá trị ngẫu nhiên là `$amp_client_id` sẽ được tạo để xác định người dùng.
+2. Sau đó, người dùng này sẽ truy cập **một trang trên nguồn gốc của nhà phát hành `https://example.com`**. Như đã mô tả trong [Tác vụ 3](#task3), người dùng này được xác định bằng  `$publisher_origin_identifier`.
 
-Here (1) and (2) happen on different origins (or contexts). Because of this, there’s no shared state and `$amp_client_id` is different from `$publisher_origin_identifier`. So, what’s the impact? (1) is a single pageview session that looks like one user and (2) is another single pageview session that looks like it’s coming from another user. **Basically, even though the user has stayed engaged with `https://example.com` content, we overcount users and the user in (1) looks like a bounce (a single page visit).**
+Ở đây, (1) và (2) có thể xuát hiện trên các nguồn gốc (hay ngữ cảnh) khác nhau. Do đó, không có trạng thái chung và `$amp_client_id` sẽ khác với `$publisher_origin_identifier`. Vậy, ảnh hưởng của nó như thế nào? (1) là một phiên xem trang đơn trông như của một người dùng và (2) là một phiên xem trang đơn khác trông như của một người dùng khác. **Về mặt cơ bản, tuy người dùng đã duy trì tương tác với nội dung của `https://example.com`, chúng ta đã đếm thừa người dùng và người dùng trong (1) trông như được nảy lại (một lượt xem trang đơn).**
 
-#### Solution strategy <a name="solution-strategy"></a>
+#### Chiến lược giải pháp <a name="solution-strategy"></a>
 
-To address the problem of overcounting, you should employ the following strategy, the potency of which depends on whether reading or writing of third-party cookies is permitted:
+Để giải quyết vấn đề đếm thừa, bạn nên sử dụng chiến lược sau đây, hiệu quả của nó tùy thuộc vào việc liệu bạn cho phép đọc hay ghi cookie của bên thứ ba:
 
-- **Immediate identifier reconciliation: If you can access or change the publisher origin cookies**, use or create the publisher origin identifier and ignore any identifier within the analytics request. You will be able to successfully link activity between the two contexts.
-- **Delayed identifier reconciliation: If you cannot access or change the publisher origin identifier (i.e. the cookies)**, then fall back to the AMP Client ID that comes within the analytics request itself. Use this identifier as an “**alias**”, rather than using or creating a new publisher origin identifier (cookie), which you cannot do (because of third party cookie blocking), and add the alias to a **mapping table**. You will be unsuccessful in immediately linking activity between the two contexts, but by using a mapping table you may be able to link the AMP Client ID value with the publisher origin identifier on a future visit by the user. When this happens, you will have the needed information to link the activity and reconcile that the page visits in the different contexts came from the same user. Task 5 describes how to achieve a complete solution in specific scenarios where the user traverses from one page immediately to another.
+- **Đối chiếu mã định danh ngay lập tức: Nếu bạn có thể truy cập hoặc thay đổi cookie cho nguồn gốc của nhà phát hành**, sử dụng hoặc tạo mã định danh nguồn gốc của nhà phát hành và bỏ qua mọi mã định danh trong yêu cầu phân tích. Bạn sẽ có thể liên kết hoạt động giữa hai ngữ cảnh.
+- **Đối chiếu mã định danh chậm: Nếu bạn không thể truy cập hay thay đổi mã định danh cho nguồn gốc của nhà phát hành (ví dụ như cookie)**, hãy quay về ID Máy khách AMP đi kèm theo chính yêu cầu phân tích đó. Sử dụng mã định danh này như một “**alias**” (biệt danh), thay vì sử dụng hay tạo một mã định danh cho nguồn gốc của nhà phát hành mới (cookie), vốn không thể được thực hiện (bởi cookie của bên thứ ba đã bị chặn), và thêm biệt danh này vào một **bảng sơ đồ**. Bạn sẽ không thể liên kết hoạt động ngay lập tức giữa 2 ngữ cảnh này, nhưng bằng cách sử dụng một bảng sơ đồ, bạn sẽ có thể liên kết giá trị ID Máy khách AMP với mã định danh cho nguồn gốc của nhà phát hành trên một lượt truy cập trong tương lai của người dùng này. Khi điều này xảy ra, bạn sẽ có thông tin cần thiết để liên kết hoạt động và đối chiếu lượt truy cập trang đó trong các ngữ cảnh khác nhau để xác định rằng chúng đến từ cùng một người dùng. Tác vụ 5 mô tả cách đạt được một giải pháp toàn diện trong các tình huống cụ thể, ở đó người dùng điều hướng trực tiếp từ một trang sang một trang khác.
 
-#### Implementation steps <a name="implementation-steps"></a>
+#### Các bước triển khai <a name="implementation-steps"></a>
 
-On the server check for an existing publisher origin identifier
+Trên máy chủ, kiểm tra một mã định danh cho nguồn gốc của nhà phát hành hiện có
 
-Read the cookies sent as part of the analytics request. In our example, this means checking for the `uid` cookie from example.com.
+Đọc các cookie được gửi đi như một phần của yêu cầu phân tích. Trong ví dụ của chúng ta, điều này có nghĩa là kiểm tra cookie `uid` từ example.com.
 
-- If the `uid` value is successfully read, use it to record analytics data (**analytics record identifier**). Because of [Task 1](#task1), we know this identifier’s value is `$publisher_origin_identifier`. With an analytics record identifier established, we can skip ahead to the [Data storage](#data-storage) section.
-- If the `uid` value is not successfully read, proceed with the steps below involving the mapping table.
+- Nếu giá trị `uid` được đọc thành công, sử dụng nó để ghi lại dữ liệu phân tích (**mã định danh hồ sơ phân tích**). Từ [Tác vụ 1](#task1), chúng ta biết giá trị của mã định danh này là `$publisher_origin_identifier`. Sau khi thiết lập mã định danh cho hồ sơ phân tích, chúng ta có thể bỏ qua đến phần [Lưu trữ dữ liệu](#data-storage).
+- Nếu giá trị `uid` không được đọc thành công, tiếp tục với các bước dưới đây liên quan đến bảng sơ đồ.
 
-##### Mapping table <a name="mapping-table"></a>
+##### Bảng sơ đồ <a name="mapping-table"></a>
 
-Our mapping table will associate AMP Client ID values that are seen in the analytics pings to publisher origin identifiers as follows:
+Bảng sơ đồ của chúng ta sẽ liên kết các giá trị ID Máy khách AMP trong ping phân tích với mã định danh cho nguồn gốc của nhà phát hành như sau:
 
 <table>
   <tr>
-    <th width="50%"><strong>User ID on publisher origin</strong></th>
-    <th width="50%"><strong>User ID on AMP page that’s NOT on publisher origin (“alias”)</strong></th>
+    <th width="50%"><strong>ID Người dùng trên nguồn gốc của nhà phát hành</strong></th>
+    <th width="50%"><strong>ID Người dùng trên trang AMP KHÔNG PHẢI là nguồn gốc của nhà phát hành (“biệt danh”)</strong></th>
   </tr>
   <tr>
-    <td>Comes from publisher origin identifier or generated as a prospective value if the publisher origin identifier cannot be accessed.</td>
-    <td>Comes from AMP Client ID</td>
+    <td>Đến từ mã định danh cho nguồn gốc của nhà phát hành hoặc được tạo như một giá trị tiềm năng nếu mã định danh cho nguồn gốc của nhà phát hành không thể được truy cập.</td>
+    <td>Đến từ ID Máy khách AMP</td>
   </tr>
 </table>
 
-Immediately after determining that you were unsuccessful in reading the publisher origin identifier, check if the AMP Client ID contained within the analytics ping is already used in a mapping. To do this, first consult the incoming amp-analytics request to get the Client ID value. For example, from this request:
+Ngay sau khi xác định rằng bạn đã không thành công trong việc đọc mã định danh cho nguồn gốc của nhà phát hành, kiểm tra rằng ID Máy khách AMP có trong ping phân tích đã được sử dụng trong một sơ đồ. Để làm điều này, trước hết hãy tham vấn yêu cầu amp-analytics vào để nhận giá trị ID Máy khách. Ví dụ, từ yêu cầu này:
 
 [sourcecode:http]
 https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id
 [/sourcecode]
 
-we extract out the bolded portion corresponding to the AMP Client ID: `$amp_client_id`.
+Chúng ta trích xuất phần bôi đậm tương ứng với ID Máy khách AMP: `$amp_client_id`.
 
-Next, examine the mapping table to try and find the same value in the “alias” column:
+Tiếp đó, kiểm tra bảng sơ đồ để cố tìm giá trị này trong cột “alias” (biệt danh):
 
 <table>
   <tr>
-    <th width="50%"><strong>User ID on publisher origin</strong></th>
-    <th width="50%"><strong>User ID on AMP page that’s NOT on publisher origin (“alias”)</strong></th>
+    <th width="50%"><strong>ID Người dùng trên nguồn gốc của nhà phát hành</strong></th>
+    <th width="50%"><strong>ID Người dùng trên trang AMP KHÔNG PHẢI là nguồn gốc của nhà phát hành (“biệt danh”)</strong></th>
   </tr>
   <tr>
     <td><code>$existing_publisher_origin_identifier</code></td>
@@ -336,34 +336,33 @@ Next, examine the mapping table to try and find the same value in the “alias�
   </tr>
 </table>
 
-In the example above, we find a record that already exists. The value we find that’s paired with the AMP Client ID becomes the analytics record identifier. Here, that is `$existing_publisher_origin_identifier`. With an analytics record identifier established, we can skip ahead to the [Data storage](#data-storage) section.
+Trong ví dụ ở trên, chúng ta tìm thấy một hồ sơ đã tồn tại. Giá trị tìm thấy được ghép đôi với ID Máy khách AMP sẽ trở thành mã định danh cho hồ sơ phân tích. Ở đây là `$existing_publisher_origin_identifier`. Sau khi thiết lập mã định danh cho hồ sơ phân tích, chúng ta có thể bỏ qua đến phần [Lưu trữ dữ liệu](#data-storage).
 
-Otherwise, if the AMP Client ID is not found in a mapping, we need to create a mapping:
+Mặt khác, nếu ID Máy khách AMP không được tìm thấy trong một sơ đồ, chúng ta cần tạo một sơ đồ:
 
-1. Generate a **prospective publisher origin identifier**. Let’s call this `$prospective_identifier` in the examples to follow. This value should be created in accordance with how you set up the value on the publisher origin, as described in [Task 1](#task1) above.
-2. Next, attempt to [set](https://en.wikipedia.org/wiki/HTTP_cookie#Setting_a_cookie) the prospective publisher origin identifier as a cookie on the publisher origin. This will succeed if third-party cookies can be written, and otherwise it will fail.
-3. Then, store the {prospective publisher origin identifier, AMP Client ID} pair.
+1. Tạo một **mã định danh cho nguồn gốc của nhà phát hành tiềm năng**. Hãy gọi nó là  `$prospective_identifier` trong các ví dụ sau đây. Giá trị này nên được tạo theo cách bạn thiết lập nó trên nguồn gốc của nhà phát hành, như được mô tả trong [Tác vụ 1](#task1) ở trên.
+2. Tiếp theo, cố [thiết lập](https://en.wikipedia.org/wiki/HTTP_cookie#Setting_a_cookie) mã định danh cho nguồn gốc của nhà phát hành tiềm năng là một cookie trên nguồn gốc của nhà phát hành. Việc này sẽ thành công nếu cookie của bên thứ ba có thể được ghi, nếu không, nó sẽ thất bại.
+3. Sau đó, lưu trữ cặp {mã định danh cho nguồn gốc của nhà phát hành tiềm năng, ID Máy khách AMP}.
 
-The mapping we’ve created ends up looking like this:
+Sơ đồ chúng ta đã tạo sẽ có dạng như sau:
 
 <table>
   <tr>
-    <th><strong>User ID on publisher origin</strong></th>
-    <th><strong>User ID on AMP page that’s NOT on publisher origin (“alias”)</strong></th>
+    <th><strong>ID Người dùng trên nguồn gốc của nhà phát hành</strong></th>
+    <th><strong>ID Người dùng trên trang AMP KHÔNG PHẢI là nguồn gốc của nhà phát hành (“biệt danh”)</strong></th>
   </tr>
   <tr>
     <td>
-<code>$prospective_identifier</code>(generated just-in-time when analytics ping is received)</td>
-    <td>
-<code>$amp_client_id</code> (came from analytics ping)</td>
+<code>$prospective_identifier</code> (được tạo theo nguyên tắc kịp thời khi ping phân tích được nhận)</td>
+    <td> <code>$amp_client_id</code> (đến từ ping phân tích)</td>
   </tr>
 </table>
 
-We’ll use the prospective publisher origin identifier as the analytics record identifier since that’s the value associated with the state on the publisher origin. In this case that’s `$prospective_identifier`, which will come into play in the [Data storage](#data-storage) section that follows.
+Chúng ta sẽ sử dụng mã định danh cho nguồn gốc của nhà phát hành tiềm năng làm mã định danh cho hồ sơ phân tích bởi giá trị này đã được liên kết với trạng thái trên nguồn gốc của nhà phát hành. Trong trường hợp này, nó sẽ là `$prospective_identifier` và được sử dụng trong phần [Lưu trữ dữ liệu](#data-storage) sau đây.
 
-##### Data storage <a name="data-storage"></a>
+##### Lưu trữ dữ liệu <a name="data-storage"></a>
 
-Now that you've figured out the analytics record identifier you can actually store the user state information (analytics data in this case) keyed by that identifier:
+Bây giờ bạn đã biết mã định danh cho hồ sơ phân tích, bạn có thể lưu trữ thông tin trạng thái người dùng (dữ liệu phân tích trong trường hợp này) đã được nhập bởi mã định danh đó:
 
 [sourcecode:text]
 {analytics record identifier, analytics data ...}
@@ -371,20 +370,20 @@ Now that you've figured out the analytics record identifier you can actually sto
 
 <a id="task5"></a>
 
-### Task 5: Using Client ID in linking and form submission <a name="task-5-using-client-id-in-linking-and-form-submission"></a>
+### Tác vụ 5: Sử dụng ID Máy khách trong liên kết và biểu mẫu được gửi đi <a name="task-5-using-client-id-in-linking-and-form-submission"></a>
 
-In general, when reading and writing third-party cookies is disallowed, there will be situations where managing user state is impossible to do with complete effectiveness. In Tasks 1-4, the steps we’ve taken help in two ways: (1) They provide a completely effective solution for when reading and writing third-party cookies is allowed, and (2) they set our system up to take advantage of any eventual opportunity to reconcile cross-context identifiers if immediate reconciliation is impossible due to the browser’s cookie settings.
+Nhìn chung, khi việc đọc và ghi các cookie của bên thứ ba bị cấm, sẽ có các tình huống mà ở đó bạn không thể quản lý trạng thái người dùng một cách hiệu quả. Trong Tác vụ 1-4, các bước chúng ta đã thực hiện sẽ hữu ích trong 2 cách: (1) Chúng cung cấp một hoàn toàn giải pháp hiệu quả khi việc đọc và ghi cookie của bên thứ ba được cho phép, và (2) chúng thiết lập hệ thống của chúng ta để tận dụng mọi cơ hội đối chiếu các mã định danh của nhiều ngữ cảnh nếu việc đối chiếu ngay lập tức không thể được thực hiện do cài đặt cookie của trình duyệt.
 
-In this task, we’ll cover an additional optimization that helps when the user is navigating across contexts from one page to another page either **via linking or form submissions**. In these situations, and with the implementation work described below, it is possible to set up a fully effective scheme for managing user state across contexts.
+Trong tác vụ này, chúng ta sẽ bao gồm một biện pháp tối ưu bổ sung cho trường hợp người dùng điều hướng trên nhiều ngữ cảnh khác nhau, từ trang này đến trang kia **thông qua liên kết hoặc gửi đi biểu mẫu**. Trong các tình huống này, và với việc triển khai như được mô tả dưới đấy, bạn có thể thiết lập một kế hoạch hoàn toàn hiệu quả để quản lý trạng thái người dùng trên nhiều ngữ cảnh.
 
 <amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
   <noscript>     <img alt="Links can be used to pass the identifier information of one context into another (linked) context" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png">   </noscript></amp-img>
 
-##### Using substitution features <a name="using-substitution-features"></a>
+##### Sử dụng các tính năng thay thế <a name="using-substitution-features"></a>
 
-Our approach will take advantage of two types of [AMP variable substitutions](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md).
+Lối tiếp cận của chúng ta sẽ tận dụng 2 loại [biến số AMP thay thế](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md).
 
-**To update outgoing links to use a Client ID substitution:** Define a new query parameter, `ref_id` (“referrer ID”), which will appear within the URL and indicate the **originating context’s identifier** for the user. Set this query parameter to equal the value of AMP’s Client ID substitution:
+**Để cập nhật liên kết đầu ra cho việc sử dụng một ID Máy khách thay thế:** Định nghĩa một tham số truy vấn mới, `ref_id` (“ID giới thiệu”), sẽ xuất hiện trong URL và chỉ báo **mã định danh của ngữ cảnh gốc** cho người dùng. Thiết lập tham số truy vấn này cho bằng giá trị của ID Máy khách AMP thay thế:
 
 [sourcecode:html]
 <a
@@ -393,7 +392,7 @@ Our approach will take advantage of two types of [AMP variable substitutions](ht
 ></a>
 [/sourcecode]
 
-**Alternative solution for passing Client ID to the outgoing links:** Define the new query parameter `ref_id` as part of the data attribute `data-amp-addparams` and for queries that needs parameter substitution provide those details as part of `data-amp-replace`. With this approach the URL would look clean and the parameters specified on `data-amp-addparams` will be dynamically added
+**Giải pháp thay thế để truyền ID Máy khách cho các liên kết đầu ra:** Định nghĩa thuộc tính truy vấn mới `ref_id` như một phần của thuộc tính dữ liệu `data-amp-addparams` và cho các truy vấn cần tham số thay thế, cung cấp các thông tin đó như một phần của `data-amp-replace`. Với lối tiếp cận này, URL trông sẽ gọn gàng và các tham số được quy định trên `data-amp-addparams` sẽ được bổ sung động
 
 [sourcecode:html]
 <a
@@ -403,7 +402,7 @@ Our approach will take advantage of two types of [AMP variable substitutions](ht
 ></a>
 [/sourcecode]
 
-For passing multiple query parameters through `data-amp-addparams` have those `&` separated like
+Để truyền nhiều tham số truy vấn thông qua `data-amp-addparams`, phân tách chúng bằng `&` như sau
 
 [sourcecode:html]
 <a
@@ -413,7 +412,7 @@ For passing multiple query parameters through `data-amp-addparams` have those `&
 ></a>
 [/sourcecode]
 
-**To update form inputs to use a Client ID substitution:** Define a name for the input field, such as `orig_user_id`. Specify the `default-value` of the form field to be the value of AMP’s Client ID substitution:
+**Để cập nhật đầu vào biểu mẫu cho việc sử dụng một ID Máy khách thay thế:** Định nghĩa tên cho trường nhập liệu, ví dụ như `orig_user_id`. Quy định `default-value` của trường biểu mẫu làm giá trị của ID Máy khách AMP thay thế:
 
 [sourcecode:html]
 <input
@@ -424,7 +423,7 @@ For passing multiple query parameters through `data-amp-addparams` have those `&
 />
 [/sourcecode]
 
-By taking these steps, the Client ID is available to the target server and/or as a URL parameter on the page the user lands on after the link click or form submission (the **destination context**). The name (or “key”) will be `ref_id` because that’s how we’ve defined it in the above implementations and will have an associated value equal to the Client ID. For instance, by following the link (`<a>` tag) defined above, the user will navigate to this URL:
+Thông qua việc thực hiện các bước này, ID Máy khách có thể được sử dụng bởi máy chủ đích và/hoặc như một tham số URL trên trang mà người dùng truy cập sau khi nhấn vào liên kết hoặc gửi đi biểu mẫu (**ngữ cảnh đích đến**). Tên (hoặc “khóa”) này sẽ là `ref_id` bởi đó là cách chúng ta đã định nghĩa nó trong việc triển khai ở trên và sẽ có một giá trị liên kết bằng ID Máy khách. Ví dụ, khi theo liên kết (thẻ `<a>`) được định nghĩa ở trên, người dùng sẽ điều hướng đến URL này:
 
 [sourcecode:http]
 https://example.com/step2.html?ref_id=$amp_client_id
@@ -433,181 +432,179 @@ https://example.com/step2.html?ref_id=$amp_client_id
 <amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
   <noscript>     <img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png">   </noscript></amp-img>
 
-When the user lands on a page containing containing an `ref_id` value either as a URL parameter or in the header, we have the opportunity to co-process the `ref_id` identifier along with the identifier exposed via the page itself (i.e. a cookie value). By including both in an analytics ping, your analytics server can work with both values simultaneously, and, knowing they are related, reflect this relationship in your backend. The next step provides details on how to do this.
+Khi người dùng đến một trang chứa giá trị `ref_id` dưới dạng tham số URL hoặc trong đầu đề của nó, chúng ta sẽ có cơ hội xử lý đồng thời mã định danh `ref_id` và mã định danh được hiển thị thông qua chính trang đó (nghĩa là một giá trị cookie). Thông qua việc bao gồm một ping phân tích, máy chủ phân tích của bạn có thể làm việc với cả 2 giá trị cùng lúc, và, bởi chúng liên quan đến nhau, phản ánh mối quan hệ này trong backend của bạn. Bước tiếp theo cung cấp thông tin về cách để làm điều này.
 
-##### Extracting URL query parameters <a name="extracting-url-query-parameters"></a>
+##### Truy xuất tham số truy vấn URL <a name="extracting-url-query-parameters"></a>
 
-By using substitution features, we set up a link navigation flow or form submission flow that exposes information, specifically the Client ID, to the target server and/or as a URL parameter that can be read on the client once the user completes the navigation.
+Thông qua việc sử dụng tính năng thay thế, chúng ta đã thiết lập một luồng điều hướng liên kết hoặc luồng gửi đi biểu mẫu để hiển thị thông tin, cụ thể là ID Máy khách, cho máy chủ đích và/hoặc như một tham số URL có thể được đọc trên máy khách sau khi người dùng hoàn tất việc điều hướng.
 
-If the information was exposed just to the server, e.g. via a form POST, then you can proceed to process the information and render the resulting page. When processing such data, please take note of the steps regarding [Parameter validation](#parameter-validation) that are detailed below.
+Nếu thông tin chỉ được hiển thị cho máy chủ, nghĩa là thông qua một lệnh POST (ĐĂNG) biểu mẫu, bạn có thể tiếp tục xử lý thông tin và render trang kết quả. Khi xử lý dữ liệu này, hãy lưu ý các bước liên quan đến việc [Xác thực tham số](#parameter-validation) được nêu dưới đây.
 
-If the information is available via URL and you wish to process it, there are a couple of approaches you can use:
+Nếu thông tin này có sẵn trong URL và bạn muốn xử lý nó, có một vài lối tiếp cận mà bạn có thể sử dụng:
 
-- Process during redirect (server-side handling)
-- Process on the landing page (client-side handling)
+- Xử lý trong quá trình chuyển hướng (xử lý phía máy chủ)
+- Xử lý trên trang đích đến (xử lý phía máy khách)
 
-**Process during redirect (server-side handling)**
+**Xử lý trong quá trình chuyển hướng (xử lý phía máy chủ)**
 
-To process during redirect, handle the request on the server and extract the relevant parameter(s). Please take note of the steps regarding [Parameter validation](#parameter-validation) that are detailed below. Process the data, combined with cookie values containing other relevant identifiers, and then redirect to a URL that does not contain the parameters.
+Để xử lý trong quá trình chuyển hướng, xử lý yêu cầu này trên máy chủ và truy xuất các tham số liên quan. Hãy lưu ý các bước liên quan đến việc [Xác thực tham số](#parameter-validation) được nêu dưới đây. Xử lý dữ liệu, kết hợp với các giá trị cookie chứa những mã định danh liên quan khác, và sau đó chuyển hướng đến một URL không chứa tham số này.
 
-**Process on the landing page (client-side handling)**
+**Xử lý trên trang đích đến (xử lý phía máy khách)**
 
-To process on the landing page, the approach will vary depending on whether that page is an AMP page or a non-AMP page.
+Để xử lý trên trang đích đến, lối tiếp cận này sẽ thay đổi tùy vào việc đó là một trang AMP hay không phải AMP.
 
 <amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
   <noscript>     <img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png">   </noscript></amp-img>
 
-*Updates to AMP page:* Use the Query Parameter substitution feature in your amp-analytics configuration to obtain the `ref_id` identifier value within the URL. The Query Parameter feature takes a parameter that indicates the “key” of the desired key-value pair in the URL and returns the corresponding value. Use the Client ID feature as we have been doing to get the identifier for the AMP page context.
+*Cập nhật cho trang AMP:* Sử dụng tính năng thay thế Tham số Truy vấn trong cấu hình amp-analytics của bạn để thu giá trị mã định danh `ref_id` trong URL. Tính năng Tham số Truy vấn nhận một tham số chỉ báo “khóa” của cặp giá trị khóa mong muốn trong URL và trả về giá trị tương ứng. Sử dụng tính năng ID Máy khách như bình thường để nhận mã định danh cho ngữ cảnh trang AMP.
 
 [sourcecode:http]
 https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}
 [/sourcecode]
 
-When this gets transmitted across the network, actual values will be replaced:
+Khi thông tin này được truyền tải qua mạng lưới, giá trị thực tế của nó sẽ được thay thế:
 
 [sourcecode:http]
 https://analytics.example.com/ping?type=pageview&orig_user_id=$referrer_page_identifier&user_id=$current_page_identifier
 [/sourcecode]
 
-Following through our examples above, we have:
+Tiếp tục ví dụ ở trên, chúng ta có:
 
 [sourcecode:text]
 $referrer_page_identifier is $amp_client_id
 $current_page_identifier is $publisher_origin_id
 [/sourcecode]
 
-so the ping is actually:
+vậy nên ping thực tế là:
 
 [sourcecode:http]
 https://analytics.example.com/ping?type=pageview&orig_user_id=$amp_client_id&user_id=$publisher_origin_id
 [/sourcecode]
 
-We recommend validating the authenticity of query parameter values by using the steps outlined in the [Parameter validation](#parameter-validation) section below.
+Chúng tôi khuyến nghị xác thực các giá trị tham số truy vấn bằng các bước được nêu trong phần [Xác thực tham số](#parameter-validation) dưới đây.
 
-*Updates to non-AMP page:* Similarly, on a non-AMP page served from your publisher origin, extract and transmit `ref_id` value contained within the URL. Validate the authenticity of the value by following the steps outlined in the [Parameter validation](#parameter-validation) section below. Then, construct analytics pings that will include both an `orig_user_id` derived from `ref_id` and a `user_id` based on the value of the first-party cookie identifier.
+*Cập nhật cho trang không phải AMP:* Tương tự, trên một trang không phải AMP được phục vụ từ nguồn gốc của nhà phát hành, truy xuất và truyền tải giá trị `ref_id` có trong URL. Xác thực giá trị bằng cách làm theo các bước được nêu trong phần [Xác thực tham số](#parameter-validation) dưới đây. Sau đó, xây dựng các lệnh ping phân tích sẽ bao gồm cả `orig_user_id` được rút ra từ `ref_id` và `user_id` được dựa trên giá trị của mã định danh cookie của bên thứ nhất.
 
 <blockquote>
-<p><strong>IMPORTANT:</strong></p>
-<p>If you choose to process the parameters client-side on the landing page, the landing page should remove identifier information from URLs as soon as the identifier can be captured.</p>
-<p>Before removing the parameters, be sure that other code that needs to run to read them has either:</p>
+<p><strong>QUAN TRỌNG:</strong></p>
+<p>Nếu bạn chọn xử lý tham số ở phía máy khách trên trang đích đến, trang đích đến nên xóa thông tin mã định danh ra khỏi URL ngay khi mã định danh có thể được chụp.</p>
+<p>Trước khi xóa các tham số này, hãy đảm bảo các đoạn mã khác cần chạy để đọc chúng đã:</p>
 <ul>
-  <li>Run before the removal happens; or</li>
-  <li>Can access a place where the code that read and removed the parameters has stored the data</li>
+  <li>Chạy trước khi việc xóa bỏ được thực hiện; hoặc</li>
+  <li>Có thể truy cập nơi lưu trữ dữ liệu của đoạn mã đã đọc và xóa tham số này</li>
 </ul>
-<p>To do this on your non-AMP page, include the following JavaScript, which will remove all query parameters from the URL:</p>
-<pre>var href = location.href.replace(/\?[^{{'[% raw %]'}}#]{{'{% endraw %}'}}+/, '');
-history.replaceState(null, null, href);
-</pre>
-<p>Adapt this as needed to remove fewer query parameters.</p>
+<p>Để làm điều này trên trang không phải AMP của bạn, hãy bao gồm JavaScript sau, nó sẽ xóa tất cả tham số truy vấn ra khỏi URL:</p>
+<pre>var href = location.href.replace(/\?[^{{'[% raw %]'}}#]{{'{% endraw %}'}}+/, '');<br>history.replaceState(null, null, href);</pre>
+<p>Thay đổi tùy nhu cầu để xóa ít tham số truy vấn hơn.</p>
 </blockquote>
 
-##### Processing multiple identifiers in an analytics ping <a name="processing-multiple-identifiers-in-an-analytics-ping"></a>
+##### Xử lý nhiều mã định danh trong một ping phân tích <a name="processing-multiple-identifiers-in-an-analytics-ping"></a>
 
-Unlike in [Task 4](#task4) where we configured the analytics ping to contain just one identifier value, with the steps we’ve taken so far in Task 5 we now have two — `orig_user_id` and `user_id`. We will next cover how to process these two identifiers that are part of the inbound analytics ping.
+Khác với [Tác vụ 4](#task4), ở đó chúng ta đã cấu hình ping phân tích để chỉ chứa một giá trị mã định danh, với các bước chúng ta đã thực hiện trong Tác vụ 5, giờ đấy chúng ta có cả `orig_user_id` và `user_id`. Tiếp theo, chúng ta sẽ bàn về cách để xử lý 2 mã định danh này, vốn là một phần của ping phân tích đầu vào.
 
-Before we proceed, be sure to take note of the steps described in [Parameter validation](#parameter-validation) below and ensure that you are willing to trust both of the values indicated by `orig_user_id` and `user_id`.
+Trước khi tiếp tục, hãy lưu ý các bước được mô tả trong phần [Xác thực tham số](#parameter-validation) dưới đây và đảm bảo bạn sẵn sàng tin cả 2 giá trị được biểu thị bởi `orig_user_id` và `user_id`.
 
-Check if either of the values corresponding to is present in your mapping table. In our example above, the first pageview happens on an AMP page that’s NOT on the publisher origin followed by the second pageview that happens on the publisher origin. As a result, the values for the analytics ping query parameters will look like this:
+Kiểm tra liệu các giá trị tương ứng với nó đã có trong bảng sơ đồ của bạn hay chưa. Trong ví dụ của chúng ta ở trên, lượt xem đầu tiên xảy ra ở một trang AMP KHÔNG PHẢI trên nguồn gốc của nhà phát hành, theo sau là lượt xem trang thứ hai, xảy ra trên nguồn gốc của nhà phát hành. Do đó, các giá trị cho tham số truy vấn của ping phân tích sẽ có dạng như sau:
 
-**Case #1: Identifier arrangement when analytics ping is sent from page on publisher origin**
+**Trường hợp #1: Bố trí mã định danh từ ping phân tích được gửi từ trang trên nguồn gốc của nhà phát hành**
 
 <table>
   <tr>
     <th width="20%"></th>
-    <th width="40%"><strong>User ID on publisher origin</strong></th>
-    <th width="40%"><strong>User ID on AMP page that’s NOT on publisher origin (“alias”)</strong></th>
+    <th width="40%"><strong>ID Người dùng trên nguồn gốc của nhà phát hành</strong></th>
+    <th width="40%"><strong>ID Người dùng trên trang AMP KHÔNG PHẢI là nguồn gốc của nhà phát hành (“biệt danh”)</strong></th>
   </tr>
   <tr>
-    <td><strong>How it’s expressed in analytics ping</strong></td>
+    <td><strong>Cách nó được diễn đạt trong ping phân tích</strong></td>
     <td><code>user_id=$publisher_origin_id</code></td>
     <td><code>orig_user_id=$amp_client_id</code></td>
   </tr>
   <tr>
-    <td><strong>Parameter key</strong></td>
+    <td><strong>Khóa tham số</strong></td>
     <td><code>user_id</code></td>
     <td><code>orig_user_id</code></td>
   </tr>
   <tr>
-    <td><strong>Parameter value</strong></td>
+    <td><strong>Giá trị tham số</strong></td>
     <td><code>$publisher_origin_id</code></td>
     <td><code>$amp_client_id</code></td>
   </tr>
 </table>
 
-Please notice that the identifier coming from the first pageview corresponds to the rightmost column and the identifier coming from the second pageview is in the middle column, in accordance with how our example flow above was constructed.
+Hãy lưu ý rằng mã định danh đến từ lượt xem trang đầu tiên tương ứng với cột bên phải ngoài cùng và mã định danh đến từ lượt xem trang thứ hai nằm ở cột giữa, theo cách luồng mẫu của chúng ta đã được xây dựng.
 
-If instead the user starts on a page served from the publisher origin and subsequently navigates to an AMP page that’s NOT on the publisher origin, then the keys of the parameters will be reversed, but the corresponding way that we reference the values will not be (i.e. `$amp_client_id` always refers to an identifier stored on an AMP page that’s NOT on the publisher origin):
+Nếu thay vào đó, người dùng bắt đầu trên một trang được phục vụ từ nguồn gốc của nhà phát hành và sau đó điều hướng đến một trang AMP KHÔNG PHẢI trên nguồn gốc của nhà phát hành, thì các khóa của tham số sẽ được đảo ngược, nhưng cách tương ứng mà chúng ta tham chiếu đến các giá trị thì không (nghĩa là `$amp_client_id` sẽ luôn tham chiếu đến một mã định danh được lưu trữ trên một trang AMP, KHÔNG PHẢI trên nguồn gốc của nhà phát hành):
 
-**Case #2: Identifier arrangement when analytics ping is sent from an AMP page that’s NOT on the publisher origin**
+**Trường hợp #2: Bố trí mã định danh từ ping phân tích được gửi từ một trang AMP KHÔNG PHẢI trên nguồn gốc của nhà phát hành**
 
 <table>
   <tr>
     <th width="20%"> </th>
-    <th width="40%"><strong>User ID on publisher origin</strong></th>
-    <th width="40%"><strong>User ID on AMP page that’s NOT on publisher origin (“alias”)</strong></th>
+    <th width="40%"><strong>ID Người dùng trên nguồn gốc của nhà phát hành</strong></th>
+    <th width="40%"><strong>ID Người dùng trên trang AMP KHÔNG PHẢI là nguồn gốc của nhà phát hành (“biệt danh”)</strong></th>
   </tr>
   <tr>
-    <td><strong>How it’s expressed in analytics ping</strong></td>
+    <td><strong>Cách nó được diễn đạt trong ping phân tích</strong></td>
     <td><code>orig_user_id=$publisher_origin_id</code></td>
     <td><code>user_id=$amp_client_id</code></td>
   </tr>
   <tr>
-    <td><strong>Parameter key</strong></td>
+    <td><strong>Khóa tham số</strong></td>
     <td><code>orig_user_id</code></td>
     <td><code>user_id</code></td>
   </tr>
   <tr>
-    <td><strong>Parameter value</strong></td>
+    <td><strong>Giá trị tham số</strong></td>
     <td><code>$publisher_origin_id</code></td>
     <td><code>$amp_client_id</code></td>
   </tr>
 </table>
 
-When you are searching the mapping table, take note of which situation applies and search for values within the columns of the mapping table where you expect them to appear. For instance, if the analytics ping is being sent from a page on the publisher origin (Case #1), then check for values keyed by `user_id` in the mapping table column “User ID on publisher origin” and check for values keyed by `orig_user_id` in the column “User ID on AMP page that’s NOT on publisher origin (‘alias’)”.
+Khi bạn tìm kiếm trong bảng sơ đồ, hãy lưu ý tình huống được áp dụng và tìm kiếm giá trị trong các cột của bảng sơ đồ ở nơi bạn kỳ vọng chúng sẽ xuất hiện. Ví dụ, nếu ping phân tích đang được gửi từ một trang trên nguồn gốc của nhà phát hành (Trường hợp #1), hãy kiểm tra các giá trị được nhập bởi `user_id` trong cột “ID Người dùng trên nguồn gốc của nhà phát hành” của bảng sơ đồ và kiểm tra các giá trị được nhập bởi `orig_user_id` trong cột “ID Người dùng ở trang AMP KHÔNG PHẢI trên nguồn gốc của nhà phát hành (‘biệt danh’)”.
 
-If you cannot locate either identifier value being used in your mapping table, establish a new mapping:
+Nếu bạn không thể tìm được giá trị mã định danh nào được sử dụng trong bảng sơ đồ của mình, hãy thiết lập một sơ đồ mới:
 
-- If the analytics request comes from a page on your publisher origin, then you should choose the value corresponding to `uid` to be the analytics record identifier; choose the value of `orig_uid` to be the “alias”.
-- If the analytics request does not come from a page on your publisher origin, then you should choose the value corresponding to `uid` to be an “alias” value in the mapping table. Then, proceed with the remaining instructions in [Task 4](#task4) to create a prospective publisher origin identifier and attempt to set this value as a cookie on the origin.
+- Nếu yêu cầu phân tích đến từ một trang trên nguồn gốc của nhà phát hành, bạn nên chọn giá trị tương ứng với `uid` làm mã định danh cho hồ sơ phân tích; chọn giá trị `orig_uid` làm “biệt danh”.
+- Nếu yêu cầu phân tích không đến từ một trang trên nguồn gốc của nhà phát hành, bạn nên chọn giá trị tương ứng với `uid` làm giá trị “biệt danh” trong bảng sơ đồ. Sau đó, thực hiện các hướng dẫn còn lại trong [Tác vụ 4](#task4) để tạo một mã định danh cho nguồn gốc của nhà phát hành tiềm năng và cố thiết lập giá trị này làm cookie trên nguồn gốc.
 
-##### Parameter validation <a name="parameter-validation"></a>
+##### Xác thực tham số <a name="parameter-validation"></a>
 
-Values contained in a URL can be maliciously changed, malformed, or somehow otherwise not be the values that you expect to be there. This is sometimes called cross site request forgery. Just as it is important to ensure that the analytics pings that your analytics server receives are coming from pages that you expect to be sending analytics pings, when you are “forwarding” on values that were part of the URL, be sure to validate the referrer to ensure you can trust these values.
+Các giá trị được chứa trong một URL có thể bị thay đổi một cách ác ý, có dạng không hợp lệ, hoặc nói cách khác không phải là giá trị mà bạn kỳ vọng. Hiện tượng này đôi khi được gọi là giả mạo yêu cầu chéo website. Tương tự như việc bạn cần đảm bảo ping phân tích mà máy chủ phân tích nhận được đều đến từ các trang gửi ping phân tích hợp lệ, khi bạn “chuyển tiếp” các giá trị là một phần của URL, hãy nhớ xác thực trình giới thiệu để đảm bảo bạn có thể tin các giá trị này.
 
-For instance, in the steps above, we constructed the following URL, intended for the user to click on and navigate to the corresponding page:
+Ví dụ, trong các bước ở trên, chúng ta đã xây dựng URL sau đây, nhằm để người dùng nhấn vào và điều hướng đến trang tương ứng:
 
 [sourcecode:http]
 https://example.com/step2.html?orig_user_id=$amp_client_id
 [/sourcecode]
 
-However, it’s just as possible that the user or some attacker change this URL to be:
+Tuy nhiên, người dùng hoặc một kẻ tấn công nào đó cũng có thể thay đổi URL này thành:
 
 [sourcecode:http]
 https://example.com/step2.html?orig_user_id=$malicious_value
 [/sourcecode]
 
-You want to ensure that you process only instances of `$amp_client_id` and avoid using instances of `$malicious_value`.
+Bạn muốn đảm bảo rằng bạn chỉ xử lý các trường hợp `$amp_client_id` và tránh sử dụng các trường hợp `$malicious_value`.
 
-**Suggested steps for validating values received via URL query parameters:** Confirm that the referrer of the landing page matches a URL you’d expect to see. This should typically be one you’ve seen carrying a previously seen identifier value in a valid CORS request. We recommend that you only accept such known identifiers.
+**Các bước đề xuất để xác thực giá trị nhận được qua tham số truy vấn URL:** Xác nhận rằng trình giới thiệu của trang đích đến khớp với URL mà bạn kỳ vọng sẽ nhìn thấy. Nó thường là giá trị mà bạn đã biết, mang theo một mã định danh đã được xác định từ trước trong một yêu cầu CORS hợp lệ. Chúng tôi khuyến nghị bạn chỉ chấp nhận các mã định danh đã biết.
 
-On a non-AMP page, check `document.referrer` directly on the client side or pass the value on as part of the analytics ping to be able to validate on the server side. If the referrer value is one you can trust, then you can accept and process values that originated from the URL of the landing page, such as `orig_user_id` in the example above.
+Trên một trang không phải AMP, hãy kiểm tra `document.referrer` trực tiếp trên phía máy khách hoặc chuyển tiếp giá trị này như một phần của ping phân tích để có thể xác thực trên phía máy chủ. Nếu bạn có thể tin tưởng giá trị giới thiệu, thì bạn có thể chấp nhận và xử lý các giá trị xuất phát từ URL của trang đích đến, ví dụ như `orig_user_id` trong ví dụ ở trên.
 
-On an AMP page, use the [Document Referrer](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#document-referrer) substitution variable to pass along the referrer value as part of the analytics ping. Server side processing is the only available option. To illustrate, here’s an analytics ping that the landing page can send that contains (1) the Client ID value of the current page, (2) a value passed via URL that we’ve set up to be the Client ID value in the referring page, and (3) the referrer information itself to validate the value of (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
+Trên một trang AMP, sử dụng biến số thay thế cho [Trình Giới thiệu Tài liệu](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#document-referrer) để chuyển tiếp giá trị giới thiệu như một phần của ping phân tích. Việc xử lý ở phía máy chủ là lựa chọn duy nhất. Để minh họa, đây là một ping phân tích mà trang đích đến có thể gửi chứa (1) giá trị ID Máy khách của trang hiện tại, (2) một giá trị được chuyển tiếp qua URL mà chúng ta đã thiết lập làm giá trị ID Máy khách trong trang giới thiệu, và (3) thông tin của trình giới thiệu để xác thực giá trị của (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
 
-If you cannot trust the referrer, then reject any values provided via URL parameters and do not use them.
+Nếu bạn không thể tin tưởng trình giới thiệu, hãy từ chối mọi giá trị được cung cấp thông qua các tham số URL và không sử dụng chúng.
 
-## Strongly recommended practices <a name="strongly-recommended-practices"></a>
+## Các biện pháp thực hành được đặc biệt khuyến nghị <a name="strongly-recommended-practices"></a>
 
-### Keep just one association <a name="keep-just-one-association"></a>
+### Chỉ giữ một mối quan hệ liên kết <a name="keep-just-one-association"></a>
 
-**Only one association between identifiers from any two contexts should be maintained.** If an AMP Client ID that you have previously associated with a cookie or other user identifier issued by you is seen together with a new cookie or user identifier that you issue, you should delete all state you held against the previous cookie and user identifier.
+**Chỉ nên duy trì một mối quan hệ liên kết giữa các mã định danh từ 2 ngữ cảnh bất kỳ.** Nếu một ID Máy khách AMP mà trước đây đã được bạn liên kết với một cookie hoặc một mã định danh người dùng khác mà bạn đã cấp được nhìn thấy với một cookie mới hoặc mã định danh người dùng mới mà bạn đã cấp, bạn nên xóa mọi trạng thái mà bạn đã duy trì cho cookie và mã định danh người dùng trước đó.
 
-These steps will help ensure alignment with users’ expectations of privacy. As detailed in the preceding sections, managing user state in AMP will often involve storing and associating different identifiers across multiple contexts where AMP content is displayed. **This situation should never be abused to reconstitute data or perform tracking that the user would not expect or that you have not clearly disclosed to the user, such as, for example, after the user has deleted his or her cookies for your sites.**
+Các bước này sẽ giúp đảm bảo bạn tuân thủ các kỳ vọng về quyền riêng tư của người dùng. Như đã được mô tả trong các phần trên, việc quản lý trạng thái người dùng trong AMP thường liên quan đến việc lưu trữ và liên kết các mã định danh khác nhau trên nhiều ngữ cảnh mà ở đó nội dung AMP được hiển thị. **Tình huống này không nên được lạm dụng để xây dựng lại dữ liệu hoặc thực hiện những việc theo dõi ngoài kỳ vọng của người dùng hay chưa được tiết lộ cho họ, ví dụ như sau khi người dùng đã xóa cookie của họ cho website của bạn.**
 
-### Respect cookie and local storage deletions <a name="respect-cookie-and-local-storage-deletions"></a>
+### Tôn trọng cookie và lệnh xóa lưu trữ cục bộ <a name="respect-cookie-and-local-storage-deletions"></a>
 
-**You should respect all applicable privacy controls that are made available to the user, including any such controls creating the ability to delete all cookies and local storage.** At no time should the AMP Client ID or AMP infrastructure be [used to reconstitute a deleted identifier](https://en.wikipedia.org/wiki/Zombie_cookie) after a user expressly deletes one side of an identifier relationship.
+**Bạn nên tôn trọng mọi biện pháp kiểm soát quyền riêng tư được áp dụng của người dùng, bao gồm mọi biện pháp kiểm soát cho khả năng xóa toàn bộ cookie và ổ lưu trữ cục bộ.** Trong mọi trường hợp, ID Máy khách AMP hoặc cấu trúc AMP đều không nên [được sử dụng để xây dựng lại một mã định danh đã bị xóa](https://en.wikipedia.org/wiki/Zombie_cookie) sau khi người dùng đã xóa một phía của mối quan hệ với mã định danh.
 
-### Comply with local laws and regulations <a name="comply-with-local-laws-and-regulations"></a>
+### Tuân thủ luật pháp và quy định địa phương <a name="comply-with-local-laws-and-regulations"></a>
 
-**Associating cookies and/or identifiers from two or more domains might require updating your privacy policy, providing additional user disclosures, or obtaining end user consent in some jurisdictions.** The usage of the AMP Client ID, which uses cookies or local storage as a means of persistent storage to offer a stable identifier, should be analyzed by each publisher with regard to all applicable laws and regulations regarding data collection, storage, processing, and user notice.
+**Việc liên kết các cookie và/hoặc mã định danh từ 2 hay nhiều tên miền có thể đòi hỏi bạn cập nhật chính sách quyền riêng tư của mình, tiết lộ bổ sung cho người dùng, hay có được sự đồng ý của người dùng cuối trong một số khu vực tài phán.** Việc sử dụng ID Máy khách AMP, nghĩa là sử dụng cookie hoặc ổ lưu trữ cục bộ làm ổ lưu trữ cố định để đảm bảo mã định danh ổn định, nên được các nhà phát hành cân nhắc liên quan đến mọi luật pháp và quy định hiện hành về thu thập, lưu trữ, xử lý dữ liệu và thông báo cho người dùng.
