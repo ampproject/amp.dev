@@ -14,9 +14,9 @@ Trong bài thực hành này, chúng tôi sẽ giới thiệu bạn đến với
 
 ## Bạn sẽ học được cách để:
 
-- Create a multi-page story by using the [`amp-story`](../../../../documentation/components/reference/amp-story.md) component
-- Create visual effects with multiple layers in a page
-- Lay out elements in a page by using layer templates
+- Tạo một câu chuyện nhiều trang bằng cách sử dụng thành phần [`amp-story`](../../../../documentation/components/reference/amp-story.md)
+- Tạo những hiệu ứng hình ảnh với nhiều lớp trong một trang
+- Bố trí các phần tử trong một trang bằng cách sử dụng các khuôn mẫu lớp
 - Thêm phần âm thanh phát ra khi có người xem một trang
 - Tạo hình hoạt họa cho các phần tử trên một trang
 - Giúp người đọc duy trì tương tác với nội dung của bạn bằng cách thêm vào ở cuối câu chuyện những liên kết có liên quan
