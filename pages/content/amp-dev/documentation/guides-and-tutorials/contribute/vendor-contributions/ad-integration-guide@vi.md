@@ -1,13 +1,10 @@
 ---
-"$title": Integrate your ad technologies into AMP
+"$title": Tích hợp công nghệ quảng cáo của bạn vào AMP
 order: '3'
 formats:
 - ads
 teaser:
-  text: |2-
-
-    If you are an ad technology provider looking to integrate with AMP HTML,
-    please see the guidelines below.
+  text: Nếu bạn là một đơn vị cung cấp công nghệ quảng cáo và muốn tích hợp với AMP HTML, hãy xem các hướng dẫn dưới đây.
 toc: 'true'
 ---
 
@@ -18,17 +15,17 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-If you are an ad technology provider looking to integrate with AMP HTML, please see the guidelines below. To ensure minimum latency and quality, please follow the instructions listed [here](https://github.com/ampproject/amphtml/blob/master/ads/../3p/README.md#ads) before submitting a pull request to the AMP open-source project. For general guidance on how to get started with contributing to AMP, please see [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/ads/../CONTRIBUTING.md).
+Nếu bạn là một đơn vị cung cấp công nghệ quảng cáo và muốn tích hợp với AMP HTML, hãy xem các hướng dẫn dưới đây. Để đảm bảo độ trễ tối thiểu và chất lượng tốt, hãy tuân thủ các hướng dẫn được liệt kê [ở đây](https://github.com/ampproject/amphtml/blob/master/ads/../3p/README.md#ads) trước khi gửi một yêu cầu kéo cho dự án mã nguồn mở AMP. Để biết hướng dẫn chung về cách bắt đầu đóng góp cho AMP, hãy xem <a class="" href="https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md">CONTRIBUTING.md</a>.
 
-## Ad Server <a name="ad-server"></a>
+## Máy chủ Quảng cáo <a name="ad-server"></a>
 
-*Examples : DFP, A9*
+*Ví dụ: DFP, A9*
 
-As an ad server, publishers you support include a JavaScript library provided by you and place various "ad snippets" that rely on the JavaScript library to fetch ads and render them on the publisher’s website.
+Là một máy chủ quảng cáo, các nhà phát hành mà bạn hỗ trợ sẽ bao gồm một thư viện JavaScript do bạn cung cấp và đặt các "đoạn code quảng cáo" khác nhau dựa trên thư viện JavaScript này để truy xuất quảng cáo và hiển thị chúng trên website của nhà phát hành.
 
-Because AMP doesn’t allow publishers to execute arbitrary JavaScript, you will need to contribute to the AMP open-source code to allow the `amp-ad` tag to request ads from your ad server.
+Bởi AMP không cho phép các nhà phát hành thực thi JavaScript tùy chỉnh, bạn sẽ cần đóng góp vào mã nguồn mở AMP để cho phép thẻ <code>amp-ad</code> yêu cầu quảng cáo từ máy chủ quảng cáo của bạn.
 
-For example : Amazon A9 server can be invoked by using following syntax:
+Ví dụ: Máy chủ Amazon A9 có thể được gọi bằng cách sử dụng cú pháp sau:
 
 [sourcecode:html]
 <amp-ad
@@ -42,33 +39,33 @@ For example : Amazon A9 server can be invoked by using following syntax:
 </amp-ad>
 [/sourcecode]
 
-Note that each of the attributes that follow `type` are dependent on the parameters that the Amazon’s A9 server expects in order to deliver an ad. The [a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) file shows you how the parameters are mapped to making a JavaScript call which invokes the A9 server via the `https://c.amazon-adsystem.com/aax2/assoc.js` URL. The corresponding parameters passed by the AMP ad tag are appended to the URL to return an ad.
+Lưu ý rằng mỗi thuộc tính theo sau `type` (loại) đều phụ thuộc vào các tham số mà máy chủ Amazon A9 kỳ vọng để cung cấp một quảng cáo. Tập tin [a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) hiển thị cho bạn cách các tham số được ánh xạ để thực hiện một lệnh gọi JavaScript và gọi máy chủ A9 thông qua URL `https://c.amazon-adsystem.com/aax2/assoc.js`. Các tham số tương ứng được phê duyệt bởi thẻ quảng cáo AMP sẽ được chèn vào URL để trả về một quảng cáo.
 
-For details on how to integrate your ad network with AMP, see [Integrating ad networks into AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+Để biết thêm chi tiết về cách tích hợp mạng lưới quảng cáo của bạn vào AMP, hãy xem [Tích hợp các mạng lưới quảng cáo vào AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
 
-## Supply Side Platform (SSP) or an Ad Exchange <a name="supply-side-platform-ssp-or-an-ad-exchange"></a>
+## Nền tảng Bên Cung cấp (SSP) hoặc một Sàn Quảng cáo <a name="supply-side-platform-ssp-or-an-ad-exchange"></a>
 
-*Examples : Rubicon, Criteo OR Appnexus, Ad-Exchange*
+*Ví dụ: Rubicon, Criteo HOẶC Appnexus, Ad-Exchange*
 
-If you are a sell-side platform that wants to get called directly from a publisher’s webpage, you will need to follow the same directions as listed above for integrating with an Ad Server. Adding your own `type` value to the amp-ad tag allows you to distribute your tag directly to the publisher, so they can insert your tags directly into their AMP pages.
+Nếu bạn là một nền tảng bên bán muốn được gọi trực tiếp từ một trang web của nhà phát hành, bạn sẽ cần làm theo hướng dẫn ở trên để tích hợp với một Máy chủ Quảng cáo. Việc thêm giá trị `type` (loại) của riêng bạn vào thẻ amp-ad cho phép bạn phân phối thẻ của mình cho nhà phát hành, để họ có thể chèn trực tiếp thẻ của bạn vào các trang AMP của họ.
 
-More commonly, SSPs work with the publisher to traffick the SSP’s ad tags in their ad server. In this case, ensure that all assets being loaded by your script in the ad server’s creative are being made over HTTPS. There are some restrictions around some ad formats like expandables, so we recommend that you test out the most commonly delivered creative formats with your publishers.
+Thông dụng hơn, các SSP sẽ làm việc với nhà phát hành để chèn thẻ quảng cáo của SSP vào máy chủ quảng cáo của họ. Trong trường hợp này, hãy đảm bảo mọi tài sản đang được tải bởi kịch bản của bạn trong quảng cáo của máy chủ quảng cáo đều được tạo qua HTTPS. Có một số hạn chế về định dạng quảng cáo như khả năng mở rộng, vậy nên chúng tôi khuyên bạn kiểm tra những định dạng quảng cáo thông dụng nhất với nhà phát hành của mình.
 
-## Ad Agency <a name="ad-agency"></a>
+## Công ty Thiết kế Quảng cáo <a name="ad-agency"></a>
 
-*Examples : Essence, Omnicom*
+*Ví dụ: Essence, Omnicom*
 
-Work with your publisher to ensure that the creatives you develop are AMP-compliant. Since all creatives are served into iframes whose size is determined when the ad is called, ensure that your creative doesn't try to modify the size of the iframe.
+Làm việc với nhà phát hành của bạn để đảm bảo các quảng cáo bạn đang phát triển tuân thủ AMP. Bởi tất cả quảng cáo đều được phục vụ trong iframe với kích cỡ được xác định khi quảng cáo được gọi, hãy đảm bảo quảng cáo của bạn không cố gắng sửa đổi kích cỡ của iframe.
 
-Ensure that all assets that are part of the creative are requested using HTTPS. Some ad formats are not fully supported at the moment and we recommend testing the creatives in an AMP environment. Some examples are : Rich Media Expandables, Interstitials, Page Level Ads.
+Đảm bảo mọi tài sản thuộc quảng cáo đều được yêu cầu qua HTTPS. Một số định dạng quảng cáo không được hỗ trợ đầy đủ tại thời điểm này và chúng tôi khuyên bạn nên kiểm tra quảng cáo trong một môi trường AMP. Một số ví dụ: Quảng cáo Mở rộng Đa phương tiện Phong phú, Quảng cáo Đan xen, Quảng cáo Cấp độ Trang.
 
-## Video Player <a name="video-player"></a>
+## Trình phát Video <a name="video-player"></a>
 
-*Examples : Brightcove, Ooyala*
+*Ví dụ: Brightcove, Ooyala*
 
-A video player that works in regular HTML pages will not work in AMP and therefore a specific tag must be created that allows the AMP Runtime to load your player. Brightcove has created a custom [amp-brightcove](https://github.com/ampproject/amphtml/blob/master/extensions/amp-brightcove/amp-brightcove.md) tag that allows media and ads to be played in AMP pages.
+Một trình phát video hoạt động trong các trang HTML thông thường sẽ không hoạt động trong AMP và do đó một thẻ cụ thể phải được tạo để cho phép Thời gian chạy AMP tải trình phát của bạn. Brightcove đã tạo một thẻ [amp-brightcove](https://github.com/ampproject/amphtml/blob/master/extensions/amp-brightcove/amp-brightcove.md) cho phép các nội dung đa phương tiện và quảng cáo được phát trong các trang AMP.
 
-A Brightcove player can be invoked by the following:
+Một trình phát Brightcove có thể được gọi như sau:
 
 [sourcecode:html]
 <amp-brightcove
@@ -82,37 +79,37 @@ A Brightcove player can be invoked by the following:
 </amp-brightcove>
 [/sourcecode]
 
-For instructions on how to develop an amp tag like Brightcove, see [this pull request](https://github.com/ampproject/amphtml/pull/1052).
+Để biết hướng dẫn về cách phát triển một thẻ amp như Brightcove, hãy xem [yêu cầu kéo này](https://github.com/ampproject/amphtml/pull/1052).
 
-## Video Ad Network <a name="video-ad-network"></a>
+## Mạng lưới Quảng cáo Video <a name="video-ad-network"></a>
 
-*Examples : Tremor, Brightroll*
+*Ví dụ: Tremor, Brightroll*
 
-If you are a video ad network, please work with your publisher to ensure that:
+Nếu bạn là một mạng lưới quảng cáo video, hãy làm việc với nhà phát hành của bạn để đảm bảo rằng:
 
-- All video assets are served over HTTPS
-- The publisher’s video player has AMP support
+- Mọi tài sản video đều được phục vụ qua HTTPS
+- Trình phát video của nhà phát hành có hỗ trợ AMP
 
-## Data Management Platform (DMP) <a name="data-management-platform-dmp"></a>
+## Nền tảng Quản lý Dữ liệu (DMP) <a name="data-management-platform-dmp"></a>
 
-*Examples : KRUX, Bluekai*
+*Ví dụ: KRUX, Bluekai*
 
-See [how to enhance custom ad configuration](https://amp.dev/documentation/components/amp-ad#enhance-incoming-ad-configuration).
+Xem [cách để tăng cường cấu hình quảng cáo tùy chỉnh](https://amp.dev/documentation/components/amp-ad#enhance-incoming-ad-configuration).
 
-You can use a similar approach to enrich the ad call by passing in audience segments that you get from the user cookie into the ad call.
+Bạn có thể sử dụng một lối tiếp cận tương tự để tăng cường cho lệnh gọi quảng cáo bằng cách chuyển các phân khúc độc giả mà bạn nhận được từ cookie người dùng vào lệnh gọi quảng cáo.
 
-## Viewability Provider <a name="viewability-provider"></a>
+## Nhà cung cấp Khả năng Xem <a name="viewability-provider"></a>
 
-*Examples : MOAT, Integral Ad Science*
+*Ví dụ: MOAT, Integral Ad Science*
 
-Viewability providers typically integrate with publishers via the ad server’s creative wrappers. If that is the case, ensure that the creative wrapper loads all assets over HTTPS.
+Nhà cung cấp khả năng xem thường tích hợp với các nhà phát hành thông qua hàm bọc quảng cáo của máy chủ quảng cáo. Nếu vậy, hãy đảm bảo hàm bọc quảng cáo tải tất cả các tài sản qua HTTPS.
 
-For e.g. for MOAT, make sure `http://js.moatads.com` is switched to `https://z.moatads.com`
+Ví dụ cho MOAT, đảm bảo rằng `http://js.moatads.com` được chuyển thành `https://z.moatads.com`
 
-Also, see the approach to using the [intersection observer pattern](https://github.com/ampproject/amphtml/blob/master/ads/README.md#ad-viewability).
+Đồng thời, xem lối tiếp cận để sử dụng [mô hình quan sát đa phần](https://github.com/ampproject/amphtml/blob/master/ads/README.md#ad-viewability).
 
-## Content-Recommendation Platform <a name="content-recommendation-platform"></a>
+## Nền tảng Khuyến nghị Nội dung <a name="content-recommendation-platform"></a>
 
-*Examples : Taboola, Outbrain*
+*Ví dụ: Taboola, Outbrain*
 
-Useful if you have some piece of JavaScript embeded on the publisher website today but the approach will not work in AMP pages. If you would like to recommend content on an AMP page, we suggest that you use the [`amp-embed` extension](https://amp.dev/documentation/components/amp-ad) to request the content details. Please see the [Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md) example.
+Hữu ích nếu bạn có một số đoạn JavaScript được nhúng trên website của nhà phát hành hôm nay, nhưng lối tiếp cận này có thể không hoạt động trên các trang AMP. Nếu bạn muốn khuyến nghị nội dung trên một trang AMP, chúng tôi khuyên bạn nên sử dụng [phần mở rộng `amp-embed`](https://amp.dev/documentation/components/amp-ad) để yêu cầu chi tiết nội dung. Vui lòng xem ví dụ về [Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md).
