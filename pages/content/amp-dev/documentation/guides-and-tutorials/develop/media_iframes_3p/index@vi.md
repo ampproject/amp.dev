@@ -17,7 +17,7 @@ contributors:
 
 Cũng như một trang HTML thông thường, AMP cho phép bạn nhúng các **ảnh**, **video** và nội dung **âm thanh**. Tìm hiểu điểm khác biệt của AMP và học cách để bao gồm chúng trong các trang của bạn.
 
-## Why not <img>, <video> and <audio>?</audio></video>
+## Tại sao không sử dụng <code><img></code>, <code><video></code> và <code><audio></code>?
 
 AMP không hỗ trợ việc sử dụng các thẻ HTML mặc định tương ứng để hiển thị nội dung đa phương tiện, ví dụ như `<img>`. Chúng tôi cung cấp các thành phần tương đương vì lý do sau:
 
@@ -129,7 +129,7 @@ Bao gồm tài nguyên âm thanh trong trang của bạn sử dụng yếu tố 
 
 Chỉ sử dụng yếu tố này để nhúng trực tiếp tập tin âm thanh HTML5. Cũng như mọi tài nguyên bên ngoài được nhúng vào một trang AMP, yếu tố này tải tài nguyên âm thanh như được quy định bởi thuộc tính `src` theo nguyên tắc tải lười, tại thời điểm quy định bởi AMP.
 
-Include a fallback, if the browser doesn't support HTML5 audio, for example:
+Bao gồm dự phòng, nếu trình duyệt không hỗ trợ âm thanh HTML5, ví dụ:
 
 [example preview="inline" playground="true" imports="amp-audio:0.1"]
 ```html
