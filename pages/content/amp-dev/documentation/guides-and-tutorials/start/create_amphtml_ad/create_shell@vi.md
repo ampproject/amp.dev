@@ -48,7 +48,7 @@ Các quảng cáo AMPHTML đòi hỏi một kiểu phong cách [code soạn sẵ
 <style amp4ads-boilerplate>body{visibility:hidden}</style>
 ```
 
-To style your AMPHTML ad, your CSS must be embedded inline in the AMPHTML document using <code><style amp-custom></style> </code>tags in the <code></code> section. As we're rendering a basic image ad, we don't require any CSS, so we won't add these tags.
+Để tạo phong cách cho quảng cáo AMPHTML của bạn, mã CSS của bạn phải được nhúng inline trong tài liệu AMPHTML sử dụng thẻ <code><style amp-custom></style></code> trong phần <code><head></code>. Khi chúng ta render một ảnh quảng cáo cơ bản, chúng ta không cần CSS nào, vậy nên chúng ta sẽ không thêm các thẻ này.
 
 [tip type="note"] **LƯU Ý –** Đối với các quảng cáo AMPHTML, kích cỡ tối đa cho một stylesheet inline là *20 KB*. Tìm hiểu thêm về [Các yêu cầu đối với CSS trong thông số quảng cáo AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#css). [/tip]
 
