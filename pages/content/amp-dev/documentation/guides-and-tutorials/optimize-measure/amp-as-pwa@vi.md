@@ -1,7 +1,7 @@
 ---
-"$title": Easy offline access and improved performance
+"$title": Dễ dàng truy cập ngoại tuyến và cải thiện hiệu năng
 "$order": '11'
-description: A Service Worker is a client-side proxy that sits between your page and your server, and is used to build fantastic offline experiences, fast-loading ...
+description: "Một Service Worker là một proxy phía máy khách và là trung gian giữa trang và máy chủ của bạn; Service Worker được sử dụng để xây dựng các trải nghiệm ngoại tuyến, tải nhanh..."
 formats:
 - websites
 author: CrystalOnScript
@@ -9,19 +9,19 @@ contributors:
 - pbakaus
 ---
 
-[Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) enable rich offline experiences and consistent user experiences across varying network strengths. By caching resources within the browser, a web app is able to provide data, assets, and offline pages to the user to keep them engaged and informed.
+[Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) cho phép tạo ra các trải nghiệm ngoại tuyến phong phú và trải nghiệm người dùng nhất quán trên nhiều cường độ tín hiệu mạng khác nhau. Thông qua việc lưu tài nguyên trong bộ nhớ đệm của trình duyệt, một ứng dụng web có thể cung cấp dữ liệu, tài sản và các trang ngoại tuyến cho người dùng để giúp họ gắn kết và cập nhật.
 
-Remember: The Service Worker won't be able to interact with the AMP-cached version of your page. Use it for onward journeys to your origin.
+Hãy nhớ: Service Worker sẽ không thể tương tác với phiên bản AMP của trang được lưu trong bộ nhớ đệm. Hãy sử dụng nó cho các hành trình đi tiếp đến nguồn gốc của bạn.
 
-## Install a Service Worker
+## Cài đặt một Service Worker
 
-A Service Worker is a client-side proxy that sits between your page and your server, and is used to build fantastic offline experiences, fast-loading app shell scenarios, and send push notifications.
+Một Service Worker là một proxy phía máy khách và là trung gian giữa trang và máy chủ của bạn; Service Worker được sử dụng để xây dựng các trải nghiệm ngoại tuyến, tải nhanh các tình huống vỏ ứng dụng, và gửi thông báo đẩy.
 
-[tip type="note"] **NOTE –** If the concept of Service Workers is new to you, read the [introduction at WebFundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers). [/tip]
+[tip type="note"] **LƯU Ý –** Nếu bạn chưa quen với khái niệm về Service Worker, hãy đọc <a class="" href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers">bài giới thiệu tại WebFundamentals</a>. [/tip]
 
-Your Service Worker needs to be registered on a given page, or the browser won't find or run it. By default, this is done with the help of a [little bit of JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). On AMP Pages, you use the [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) component to achieve the same.
+Service Worker của bạn cần được đăng ký trên một trang nhất định, nếu không, trình duyệt sẽ không thể tìm thấy hay chạy nó. Theo mặc định, việc này được thực hiện với sự trợ giúp của [một chút JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). Trên các Trang AMP, bạn có thể sử dụng thành phần [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) để làm điều này.
 
-For that, first include the [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) component via its script in the `<head>` of your page:
+Vì thế, trước hết hãy bao gồm thành phần [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) thông qua kịch bản của nó trong phần `<head>` (đầu đề) của trang của bạn:
 
 [sourcecode:html]
 
@@ -30,7 +30,7 @@ For that, first include the [`amp-install-serviceworker`](../../../documentation
 
 [/sourcecode]
 
-Then add the following somewhere within your `<body>` (modify to point to your actual Service Worker):
+Sau đó thêm phần sau vào đâu đó trong phần `<body>` (thân) của bạn (sửa để chỉ đến Service Worker thực của bạn):
 
 [sourcecode:html]
 <amp-install-serviceworker
@@ -39,17 +39,17 @@ Then add the following somewhere within your `<body>` (modify to point to your a
 </amp-install-serviceworker>
 [/sourcecode]
 
-If the user navigates to your AMP pages on your origin (as opposed to the first click, which is usually served from an AMP Cache), the Service Worker will take over and can do a [myriad of cool things](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux).
+Nếu người dùng điều hướng đến các trang AMP của bạn trên nguồn gốc của bạn (không phải ở lần nhấp chuột đầu tiên, vốn thường được phục vụ từ một Bộ nhớ đệm AMP), Service Worker sẽ tiếp quản và có thể làm [nhiều điều rất thú vị](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux).
 
 ## The AMP Service Worker
 
-If you're here, you're building pages with AMP. The AMP team cares immensely about putting the user first and giving them a world class web experience. To keep these experiences consistent the AMP team has created a service worker specifically for AMP!
+Nếu bạn đang ở đây, chắc hẳn bạn đang xây dựng các trang AMP. Đội ngũ AMP rất quan tâm đến việc đặt người dùng làm ưu tiên hàng đầu và mang đến họ một trải nghiệm web đẳng cấp thế giới. Để đảm bảo các trải nghiệm này được nhất quán, nhóm AMP đã tạo ra một service worker dành riêng cho AMP!
 
-[tip type="default"] **TIP –** Follow our tutorial to learn to use the [AMP Service Worker in your PWA](/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp_to_pwa.md). [/tip]
+[tip type="default"] **MẸO –** Làm theo bài thực hành của chúng tôi để sử dụng [Service Worker AMP trong PWA của bạn](/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp_to_pwa.md). [/tip]
 
-### Installing the AMP Service Worker
+### Cài đặt Service Worker AMP
 
-Install the AMP Service Worker with minimal steps:
+Cài đặt Service Worker AMP với các bước tối thiểu:
 
 - [sourcecode:js]  importScripts('https://cdn.ampproject.org/sw/amp-sw.js');  [/sourcecode]
 
@@ -57,13 +57,13 @@ Install the AMP Service Worker with minimal steps:
       AMP_SW.init();
       [/sourcecode]
 
-- Done.
+- Xong.
 
-### Automated Caching
+### Lưu bộ nhớ đệm tự động
 
-The AMP Service Worker automatically caches AMP script files and AMP documents. By caching AMP script files, they are instantly available to the users browser allowing for offline functionality and speedier pages on flaky networks.
+Service Worker AMP sẽ tự động lưu các tập tin kịch bản AMP và tài liệu AMP trong bộ nhớ đệm. Thông qua việc lưu các tập tin kịch bản AMP trong bộ nhớ đệm, chúng có thể được trình duyệt người dùng sử dụng ngay lập tức, cho phép các chức năng ngoại tuyến và tải trang nhanh hơn trên mạng không ổn định.
 
-If your app requires specific types of document caching, the AMP Service Worker allows for customization. Such as adding a deny list for documents that should always be requested from the network. In the following example, replace `Array<RegExp>` with an array of regular expressions representing documents you want to avoid caching.
+Nếu ứng dụng của bạn yêu cầu các loại bộ nhớ đệm cụ thể, Service Worker AMP cũng có khả năng tùy chỉnh. Ví dụ như thêm một danh sách từ chối cho các tài liệu, vốn luôn cần được yêu cầu từ mạng lưới. Trong ví dụ sau, thay `Array<RegExp>` bằng một dãy các biểu thức chính quy đại diện cho các tài liệu mà bạn không muốn lưu trong bộ nhớ đệm.
 
 [sourcecode:js]
 AMP_SW.init(
@@ -73,13 +73,13 @@ denyList?: Array<RegExp>;
 );
 [/sourcecode]
 
-Read more about [customizing document caching here](https://github.com/ampproject/amp-sw/tree/master/src/modules/document-caching).
+Đọc thêm về [tùy chỉnh việc lưu tài liệu trong bộ nhớ đệm ở đây](https://github.com/ampproject/amp-sw/tree/master/src/modules/document-caching).
 
-### Optimizing the AMP Service Worker
+### Tối ưu Service Worker AMP
 
-To use the AMP Service Worker to its full capabilities, the optional fields should be configured to cache necessary assets and prefetch links.
+Để tận dụng tối đa chức năng của Service Worker AMP, các trường tùy chọn đều phải được cấu hình để lưu các tài sản cần thiết trong bộ nhớ đệm và truy xuất trước các liên kết.
 
-Assets that drive the user's visit to a page, such as a video, important images, or a downloadable PDF, should be cached so that they can be accessed again if the user is offline.
+Các tài sản thúc đẩy người dùng truy cập đến một trang, ví dụ như video, ảnh quan trọng, hoặc một tập tin PDF có thể tải về nên được lưu trong bộ nhớ đệm để chúng có thể được truy cập lại khi người dùng ngoại tuyến.
 
 [sourcecode:js]
 AMP_SW.init(
@@ -90,25 +90,25 @@ cachingStrategy: 'CACHE_FIRST'
 );
 [/sourcecode]
 
-You are able to customize the caching strategy and define a deny list.
+Bạn có thể tùy chỉnh chiến lược lưu bộ nhớ đệm và định nghĩa một danh sách từ chối.
 
-Links to pages your users may need to visit can be prefetched, allowing them to be accessed while offline. This is done by adding a `data-prefetch` attribute to the link tag.
+Liên kết đến các trang mà người dùng của bạn ghé thăm có thể được truy xuất trước, cho phép họ truy cập chúng khi đang ngoại tuyến. Việc này được thực hiện bằng cách thêm một thuộc tính `data-prefetch` vào thẻ liên kết.
 
 [sourcecode:html]
 <a href='....' data-rel='prefetch' />
 [/sourcecode]
 
-### Offline Experience
+### Trải nghiệm Ngoại tuyến
 
-Communicate to user's that they have gone offline, and should try reloading the site when back online, by including an offline page. The AMP Service Worker can cache both the page and its assets.
+Thông báo với người dùng rằng họ đang ngoại tuyến, và nên tải lại trang khi họ có mạng, bằng cách bao gồm một trang ngoại tuyến. Service Worker AMP có thể lưu cả hai trang và các tài sản của nó trong bộ nhớ đệm.
 
 [sourcecode:js] AMP_SW.init({ offlinePageOptions: { url: '/offline.html'; assets: ['/images/offline-header.jpg']; } }) [/sourcecode]
 
-A successful offline page looks like it's a part of your site by having a consistent UI with the rest of the application.
+Một trang ngoại tuyến thành công sẽ trông như một phần trên website của bạn và có UI thống nhất với phần còn lại của ứng dụng.
 
-### Force Update
+### Buộc Cập nhật
 
-The team is working to implement a force update/remove feature if your AMP Service Worker needs to be disabled or changed if a deployment to users has gone wrong.
+Nhóm đang làm việc để triển khai một tính năng buộc cập nhật/gỡ bỏ nếu Service Worker AMP của bạn cần bị tắt hoặc thay đổi nếu việc triển khai cho người dùng xảy ra sự cố.
 
 To effectively manage a service worker, you should understand how [standard HTTP caching affects the way your service worker's JavaScript is kept up to date](https://developers.google.com/web/updates/2018/06/fresher-sw). Service workers served with appropriate HTTP caching directives can resolve small bug fixes by making the appropriate changes and redeploying your service worker to your hosting environment. If you need to remove a service worker, it's a good idea to keep a simple, [no-op](https://en.wikipedia.org/wiki/NOP) service worker file handy, like the following:
 
@@ -121,11 +121,11 @@ self.addEventListener('install', () => {
 });
 ```
 
-[tip type="read-on"] [Read more](https://stackoverflow.com/questions/33986976/how-can-i-remove-a-buggy-service-worker-or-implement-a-kill-switch/38980776#38980776) about managing deployed service workers. [/tip]
+[tip type="read-on"] [Đọc thêm](https://stackoverflow.com/questions/33986976/how-can-i-remove-a-buggy-service-worker-or-implement-a-kill-switch/38980776#38980776) về việc quản lý các service worker được triển khai. [/tip]
 
 ## Write a Custom Service Worker
 
-You can use the above technique to enable offline access to your AMP website, as well as extend your pages **as soon as they’re served from the origin**. That's because you can modify the response via the Service Worker’s `fetch` event, and return any response you want:
+Bạn có thể sử dụng kỹ thuật ở trên để cho phép truy cập ngoại tuyến đến website AMP của mình, cũng như mở rộng các trang của bạn **ngay khi chúng được phục vụ từ nguồn gốc**. Đó là bởi bạn có thể sửa đổi hồi đáp thông qua sự kiện `fetch` (truy xuất) của Service Worker, và trả về mọi hồi đáp mà bạn muốn:
 
 [sourcecode:js]
 self.addEventListener('fetch', function(event) {
@@ -148,7 +148,7 @@ return networkResponse;
 });
 [/sourcecode]
 
-Using this technique, you can amend your AMP Page will all sorts of additional functionality that would otherwise fail [AMP validation](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md), for example:
+Sử dụng kỹ thuật này, bạn có thể bổ sung đủ loại chức năng cho Trang AMP của mình, mà trong trường hợp khác sẽ không qua được [xác thực AMP](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md), ví dụ:
 
-- Dynamic features that require custom JS.
-- Components that are customized/only relevant for your site.
+- Các tính năng động cần JS tùy chỉnh.
+- Các thành phần được tùy chỉnh/chỉ liên quan đến website của bạn.
