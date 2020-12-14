@@ -1,7 +1,7 @@
 ---
-"$title": Include third-party content
+"$title": Bao gồm nội dung của bên thứ ba
 "$order": '9'
-description: Learn how to include third-party components in your pages ...
+description: Tìm hiểu cách để bao gồm các thành phần của bên thứ ba trong trang của bạn...
 formats:
 - websites
 components:
@@ -13,20 +13,20 @@ contributors:
 - bpaduch
 ---
 
-Learn how to include third-party components in your pages.
+Tìm hiểu cách để bao gồm các thành phần của bên thứ ba trong trang của bạn.
 
-## Embed a Tweet
+## Nhúng một Tweet
 
-Embed a  Tweet from Twitter in your page by using the [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) element.
+Nhúng một Tweet từ Twitter trong trang của bạn sử dụng yếu tố [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md).
 
-To embed a tweet in your page, first include the following script in the `<head>`:
+Để nhúng một tweet vào trang của bạn, trước hết hãy bao gồm kịch bản sau trong phần `<head>`:
 
 [sourcecode:html]
 <script async custom-element="amp-twitter"
   src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
 [/sourcecode]
 
-Currently, tweets are automatically proportionally scaled to fit the provided size, but this may yield less than the ideal appearance. Manually tweak the provided width and height or use the media attribute to select the aspect ratio based on screen width.
+Hiện tại, các tweet sẽ tự động được thu phóng để vừa với kích cỡ được cung cấp, nhưng điều này có thể cho chúng một ngoại hình không lý tưởng. Hãy tinh chỉnh thủ công chiều rộng và chiều cao được cung cấp hay sử dụng thuộc tính đa phương tiện để chọn tỷ lệ khung hình dựa trên chiều rộng màn hình.
 
 [example preview="inline" playground="true" imports="amp-twitter:0.1"]
 ```html
@@ -38,20 +38,20 @@ Currently, tweets are automatically proportionally scaled to fit the provided si
 ```
 [/example]
 
-[tip type="tip"] **TIP –** See more [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) examples at [AMP By Example](../../../../documentation/examples/documentation/amp-twitter.html). [/tip]
+[tip type="tip"] **MẸO –** Xem thêm ví dụ về [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) tại [AMP By Example](../../../../documentation/examples/documentation/amp-twitter.html). [/tip]
 
-## Embed an Instagram
+## Nhúng một Instagram
 
-Embed an Instagram in your page by using the [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) element.
+Nhúng một Instagram vào trang của bạn sử dụng yếu tố [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md).
 
-To embed an Instagram, first include the following script in the `<head>`:
+Để nhúng một Instagram, trước hết hãy bao gồm kịch bản sau trong phần `<head>`:
 
 [sourcecode:html]
 <script async custom-element="amp-instagram"
   src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
 [/sourcecode]
 
-Include the Instagram data-shortcode found in the Instagram photo URL. For example, in `https://instagram.com/p/fBwFP`, `fBwFP` is the data-shortcode. Also, Instagram uses a fixed aspect ratio for responsive layouts, so the value for width and height should be universal.
+Bao gồm mã ngắn dữ liệu Instagram có trong URL ảnh Instagram. Ví dụ, trong `https://instagram.com/p/fBwFP`, `fBwFP` là mã ngắn dữ liệu. Đồng thời, Instagram sử dụng một tỷ lệ khung hình cố định cho bố cục tương thích, vậy nên giá trị cho chiều rộng và chiều cao sẽ là giá trị chung.
 
 [example preview="inline" playground="true" imports="amp-instagram:0.1"]
 ```html
@@ -63,22 +63,22 @@ Include the Instagram data-shortcode found in the Instagram photo URL. For examp
 ```
 [/example]
 
-[tip type="tip"] **TIP –** See more [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) examples at [AMP By Example](../../../../documentation/examples/documentation/amp-instagram.html). [/tip]
+[tip type="tip"] **MẸO –** Xem thêm ví dụ về [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) tại [AMP By Example](../../../../documentation/examples/documentation/amp-instagram.html). [/tip]
 
-## Display a Facebook post or video
+## Hiển thị một bài đăng hoặc video Facebook
 
-Display a Facebook post or video in your page by using the [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) element.
+Hiển thị một bài đăng hoặc video Facebook trong trang của bạn sử dụng yếu tố [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md).
 
-You must include the following script in the `<head>`:
+Bạn cần bao gồm kịch bản sau trong phần `<head>`:
 
 [sourcecode:html]
 <script async custom-element="amp-facebook"
   src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
 [/sourcecode]
 
-##### Example: Embedding a post
+##### Ví dụ: Nhúng một bài đăng
 
-Source:
+Nguồn:
 
 ```html
 <amp-facebook width="486" height="657"
@@ -87,11 +87,11 @@ Source:
 </amp-facebook>
 ```
 
-Preview: <amp-facebook width="486" height="657" layout="responsive" data-href="https://www.facebook.com/zuck/posts/10102593740125791"> </amp-facebook>
+Xem trước: {amp-facebook0} {/amp-facebook0}
 
-##### Example: Embedding a video
+##### Ví dụ: Nhúng một video
 
-Source:
+Nguồn:
 
 ```html
 <amp-facebook width="476" height="316"
@@ -101,24 +101,24 @@ Source:
 </amp-facebook>
 ```
 
-Preview: <amp-facebook width="476" height="316" layout="responsive" data-embed-as="video" data-href="https://www.facebook.com/nasaearth/videos/10155187938052139"> </amp-facebook>
+Xem trước: {amp-facebook0} {/amp-facebook0}
 
-[tip type="tip"] **TIP –** See more [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) examples at [AMP By Example](../../../../documentation/examples/documentation/amp-facebook.html). [/tip]
+[tip type="tip"] **MẸO –** Xem thêm ví dụ về [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) tại [AMP By Example](../../../../documentation/examples/documentation/amp-facebook.html). [/tip]
 
-## Embed a YouTube video
+## Nhúng một video YouTube
 
-Embed a YouTube video in your page by using the [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) element.
+Nhúng một video YouTube vào trang của bạn sử dụng yếu tố [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md).
 
-You must include the following script in the `<head>`:
+Bạn cần bao gồm kịch bản sau trong phần `<head>`:
 
 [sourcecode:html]
 <script async custom-element="amp-youtube"
   src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 [/sourcecode]
 
-The YouTube `data-videoid` can be found in every YouTube video page URL. For example, in `https://www.youtube.com/watch?v=Z1q71gFeRqM`, `Z1q71gFeRqM` is the video id.
+`data-videoid` YouTube có thể được tìm thấy trong URL của trang video YouTube. Ví dụ, trong `https://www.youtube.com/watch?v=Z1q71gFeRqM`, `Z1q71gFeRqM` là video id.
 
-Use `layout="responsive"` to yield correct layouts for 16:9 aspect ratio videos:
+Sử dụng `layout="responsive"` để cho bố cục phù hợp cho các video có tỷ lệ khung hình 16:9:
 
 [example preview="inline" playground="true" imports="amp-youtube:0.1"]
 ```html
@@ -130,15 +130,15 @@ Use `layout="responsive"` to yield correct layouts for 16:9 aspect ratio videos:
 ```
 [/example]
 
-[tip type="tip"] **TIP –** See more [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) examples at [AMP By Example](../../../../documentation/examples/documentation/amp-youtube.html). [/tip]
+[tip type="tip"] **MẸO –** Xem thêm ví dụ về [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) tại [AMP By Example](../../../../documentation/examples/documentation/amp-youtube.html). [/tip]
 
-## Display an ad
+## Hiển thị một quảng cáo
 
-Display an ad in your page by using the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) element. Only ads served via HTTPS are supported.
+Hiển thị một quảng cáo trong trang của bạn sử dụng yếu tố [`amp-ad`](../../../../documentation/components/reference/amp-ad.md). Chỉ hỗ trợ các quảng cáo được phục vụ qua HTTPS.
 
-No ad network-provided JavaScript is allowed to run inside the AMP document. Instead, the AMP runtime loads an iframe from a different origin (via iframe sandbox) and executes the ad network’s JS inside that iframe sandbox.
+JavaScript của mạng lưới quảng cáo không được chạy trong tài liệu AMP. Thay vào đó, thời gian chạy AMP sẽ tải một iframe từ một nguồn khác (thông qua iframe sandbox) và thực thi JS của mạng lưới quảng cáo trong iframe sandbox đó.
 
-You must specify the ad width and height, and the ad network type. The `type` identifies the ad network's template. Different ad types require different `data-*` attributes.
+Bạn phải quy định chiều rộng và chiều cao của quảng cáo, và loại mạng lưới quảng cáo. `Type` (loại) xác định khuôn mẫu của mạng lưới quảng cáo. Các loại quảng cáo khác nhau yêu cầu các thuộc tính `data-*` khác nhau.
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
@@ -153,7 +153,7 @@ You must specify the ad width and height, and the ad network type. The `type` id
 ```
 [/example]
 
-If supported by the ad network, include a `placeholder` to be shown if no ad is available:
+Nếu mạng lưới quảng cáo có hỗ trợ, bao gồm một `placeholder` (mã giữ chỗ) trong trường hợp không có quảng cáo nào khả dụng:
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
@@ -169,6 +169,6 @@ If supported by the ad network, include a `placeholder` to be shown if no ad is 
 ```
 [/example]
 
-AMP supports a wide range of ad networks. See the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)  for a full list.
+AMP hỗ trợ nhiều loại mạng lưới quảng cáo. Xem [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) để biết danh sách đầy đủ.
 
-[tip type="read-on"] **READ ON –** Learn more about ads in the [Serving Ads on AMP](../../../../documentation/guides-and-tutorials/develop/monetization/index.md) guide. [/tip]
+[tip type="read-on"] **ĐỌC TIẾP –** Tìm hiểu thêm về quảng cáo trong hướng dẫn [Phục vụ Quảng cáo trên AMP](../../../../documentation/guides-and-tutorials/develop/monetization/index.md). [/tip]
