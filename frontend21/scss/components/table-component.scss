@@ -8,8 +8,10 @@
       position: sticky;
       top: 50px;
       margin: 0;
-      padding-top: 43px;
+      padding-top: 37px;
       padding-bottom: 5px;
+      font-size: 19px;
+      text-transform: capitalize;
       background: color('white');
       border-bottom: 1px solid transparentize(color('black'), 0.95);
     }

@@ -107,7 +107,7 @@ recent_components:
   <ul class="ap-table-component">
     {% for category, docs in categories %}
     <li class="ap-table-component-section">
-      <h3 class="ap-table-component-section-title">{{ category }}</h3>
+      <h3 class="ap-table-component-section-title">{{ category|replace('-', ' ') }}</h3>
       <ul>
         {% for component in docs if component.is_current %}
         <li>
