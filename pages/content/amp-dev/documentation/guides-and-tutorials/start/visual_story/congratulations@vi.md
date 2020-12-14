@@ -1,7 +1,7 @@
 ---
 "$title": Chúc mừng!
 "$order": '9'
-description: 'You have successfully completed your first AMP story! In this tutorial, you learned to: - Create a multi-page story by using the amp-story component'
+description: 'Bạn đã hoàn thành tốt câu chuyện AMP đầu tiên của mình! Trong bài thực hành này, bạn đã học cách để: - Tạo một câu chuyện nhiều trang bằng cách dùng thành phần amp-story'
 author: bpaduch
 ---
 
