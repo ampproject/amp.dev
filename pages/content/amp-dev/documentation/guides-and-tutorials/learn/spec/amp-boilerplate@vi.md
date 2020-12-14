@@ -1,5 +1,5 @@
 ---
-"$title": AMP Boilerplate Code
+"$title": Code soạn sẵn AMP
 order: '9'
 formats:
 - websites
@@ -33,10 +33,10 @@ limitations under the License.
 
 ## `head > style[amp-boilerplate]` và `noscript > style[amp-boilerplate]` <a name="head--styleamp-boilerplate-and-noscript--styleamp-boilerplate"></a>
 
-AMP HTML documents must contain the following boilerplate in their `head` tag. Validation is currently done with regular expressions, so it's important to keep mutations as minimal as possible. Currently, the allowed mutations are:
+Các tài liệu AMP HTML phải chứa code soạn sẵn sau trong thẻ `head` (đầu đề) của họ. Việc xác thực hiện được thực hiện bằng biểu thức chính quy, vậy nên bạn nên giảm thiểu các biến thể. Hiện tại, các biến thể được cho phép là:
 
-1. Inserting arbitrary whitespace immediately after the `style` tag opens, and immediately before it closes
-2. Replacing any space in the snippet below with arbitrary whitespace.
+1. Chèn dấu cách trắng tùy ý ngay sau khi mở thẻ `style` (phong cách), và ngay trước khi nó đóng
+2. Thay thế bất kỳ dấu cách nào trong đoạn code dưới đây với dấu cách trắng tùy ý.
 
 <!-- prettier-ignore-start -->
 
@@ -46,4 +46,4 @@ AMP HTML documents must contain the following boilerplate in their `head` tag. V
 
 <!-- prettier-ignore-end -->
 
-[tip] You can use the [boilerplate generator](https://amp.dev/boilerplate) to quickly setup a basic skeleton for your AMP page. It also provides snippets for structured data, to create a PWA and more! [/tip]
+[tip] Bạn có thể sử dụng [trình tạo code soạn sẵn](https://amp.dev/boilerplate) để nhanh chóng thiết lập một khung xương cơ bản cho trang AMP của mình. Nó cũng cung cấp các đoạn code cho cấu trúc dữ liệu, để tạo một PWA và nhiều hơn thế nữa! [/tip]
