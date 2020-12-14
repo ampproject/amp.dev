@@ -134,15 +134,15 @@ Ví dụ, những việc sau có thể được thực hiện trong AMP:
   <!-- change -->
   <tr>
     <td rowspan="3"><code>change</code></td>
-    <td rowspan="3">Fired when the value of the element is changed and committed.       <p>       Data properties mirror those in <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#Properties">HTMLInputElement</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement#Properties">HTMLSelectElement</a>.</p>     </td>
+    <td rowspan="3">Kích hoạt khi giá trị của yếu tố được thay đổi và cam kết. <p>Thuộc tính dữ liệu sao chép các thuộc tính trong <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#Properties">HTMLInputElement</a> và <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement#Properties">HTMLSelectElement</a>.</p>
+</td>
     <td><code>input</code></td>
     <td>
       <pre>event.min event.max event.value event.valueAsNumber</pre>
     </td>
   </tr>
   <tr>
-    <td>
-<code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
+    <td> <code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
 </td>
     <td>
       <code>event.checked</code>
@@ -238,8 +238,7 @@ Ví dụ, những việc sau có thể được thực hiện trong AMP:
     <td>Cập nhật bố cục của <code>amp-list</code> thành <code>layout="CONTAINTER"</code> để cho phép <a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">đổi kích cỡ năng động</a>.</td>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(low-trust)</td>
     <td>Kích hoạt khi truy xuất dữ liệu thất bại.</td>
     <td>Không có</td>
   </tr>
@@ -289,8 +288,7 @@ Ví dụ, những việc sau có thể được thực hiện trong AMP:
     <th width="40%">Dữ liệu</th>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(low-trust)</td>
     <td>Kích hoạt khi truy xuất dữ liệu thất bại.</td>
     <td>Không có</td>
   </tr>
@@ -305,17 +303,14 @@ Ví dụ, những việc sau có thể được thực hiện trong AMP:
     <th width="40%">Dữ liệu</th>
   </tr>
   <tr>
-    <td>
-<code>firstPlay</code>(low-trust)</td>
+    <td> <code>firstPlay</code>(low-trust)</td>
     <td>Kích hoạt lần đầu tiên video được người dùng phát. Ở các video tự động phát, việc này được kích hoạt ngay khi người dùng tương tác với video. Đây là sự kiện có mức tin tưởng thấp, điều này có nghĩa nó không thể kích hoạt hầu hết các hành động; chỉ các hành động có mức tin tưởng thấp như <code>amp-animation</code> mới có thể được chạy.</td>
     <td></td>
   </tr>
   <tr>
-    <td>
-<code>timeUpdate</code>(low-trust)</td>
+    <td> <code>timeUpdate</code>(low-trust)</td>
     <td>Kích hoạt khi vị trí phát của một video được thay đổi. Tần suất của sự kiện được AMP kiểm soát và hiện được đặt ở chu kỳ 1 giây. Đây là sự kiện có mức tin tưởng thấp, điều này có nghĩa nó không thể kích hoạt hầu hết các hành động; chỉ các hành động có mức tin tưởng thấp như <code>amp-animation</code> mới có thể được chạy.</td>
-    <td>
-<code>{time, percent}</code><code>time</code> indicates the current time in seconds, <code>percent</code> is a number between 0 and 1 and indicates current position as percentage of total time.</td>
+    <td> <code>{time, percent}</code><code>time</code> indicates the current time in seconds, <code>percent</code> is a number between 0 and 1 and indicates current position as percentage of total time.</td>
   </tr>
 </table>
 
@@ -335,14 +330,12 @@ Ví dụ, những việc sau có thể được thực hiện trong AMP:
   <tr>
     <td><code>submit-success</code></td>
     <td>Kích hoạt khi gửi biểu mẫu thành công.</td>
-    <td><pre>// Response JSON.
-event.response</pre></td>
+    <td><pre>// Response JSON.<br>event.response</pre></td>
   </tr>
   <tr>
     <td><code>submit-error</code></td>
     <td>Kích hoạt khi gửi biểu mẫu thất bại.</td>
-    <td><pre>// Response JSON.
-event.response</pre></td>
+    <td><pre>// Response JSON.<br>event.response</pre></td>
   </tr>
   <tr>
     <td><code>valid</code></td>
@@ -375,7 +368,7 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>toggleVisibility</code></td>
-    <td>Toggles the visibility of the target element. If an     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a     result, it gains focus.</td>
+    <td>Bật/tắt hiển thị yếu tố mục tiêu. Nếu một <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus">yếu tố <code>autofocus</code> (tự động lấy tiêu điểm)</a> được hiển thị, nó sẽ được lấy tiêu điểm.</td>
   </tr>
   <tr>
     <td><code>toggleClass(class=STRING, force=BOOLEAN)</code></td>
@@ -387,7 +380,7 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>focus</code></td>
-    <td>Makes the target element gain focus. To lose focus, <code>focus</code>     on another element (usually parent element). We strongly advise against     losing focus by focusing on <code>body</code>/<code>documentElement</code>     for accessibility reasons.</td>
+    <td>Lấy tiêu điểm vào yếu tố mục tiêu. Để bỏ tiêu điểm, <code>focus</code> (tập trung) vào một yếu tố khác (thường là yếu tố cha). Chúng tôi đặc biệt khuyến cáo không giảm tiêu điểm bằng cách tập trung vào  <code>body</code>/<code>documentElement</code> vì lý do hỗ trợ tiếp cận.</td>
   </tr>
 </table>
 
@@ -566,7 +559,7 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>toggle(index=INTEGER, value=BOOLEAN)</code></td>
-    <td>Toggles the application of the `selected`. If the select attribute is absent, this action adds it. If the select attribute is present, this action removes it.     You may force and keep an add or remove by including a boolean value in the `value` argument. A value of `true` will force add the `selected` attribute and not remove it if already present. A value of  `false` will remove the attribute, but not add it if absent.   </td>
+    <td>Bật/tắt mục `selected` (được chọn). Nếu không có thuộc tính được chọn, hành động này sẽ bổ sung nó. Nếu có thuộc tính được chọn, hành động này sẽ xóa nó. Bạn có thể bắt buộc và duy trì thêm hoặc xóa bằng cách thêm một giá trị boolean trong tham số `value` (giá trị). Một giá trị `true` (đúng) sẽ bắt buộc thêm thuộc tính `selected` (được chọn) và không xóa nó nếu nó đã được chọn. Một giá trị `false` (sai) sẽ xóa thuộc tính, và không thêm nó nếu nó không được chọn.</td>
   </tr>
 </table>
 
