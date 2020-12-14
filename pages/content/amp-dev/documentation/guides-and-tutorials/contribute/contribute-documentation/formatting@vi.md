@@ -100,43 +100,41 @@ amp.dev được xây dựng với AMP! Do đó, các ảnh của chúng tôi ph
 
 Một số tài liệu có thể liên quan cho nhiều định dạng AMP, nhưng một số định dạng có thể cần được giải thích thêm hoặc chứa những thông tin không liên quan đến các định dạng khác. Bạn có thể lọc các phần này bằng cách gói chúng trong mã ngắn sau.
 
-<div class="ap-m-code-snippet"><pre>&lsqb;filter formats="websites"]
+<div class="ap-m-code-snippet"><pre>&amp;lsqb;filter formats="websites"]
 This is only visible for [websites](?format=websites).
-&lsqb;/filter]
+&amp;lsqb;/filter]
 
-&lsqb;filter formats="websites"]
+&amp;lsqb;filter formats="websites"]
 This is only visible for [websites](?format=websites).
-&lsqb;/filter]
+&amp;lsqb;/filter]
 
-&lsqb;filter formats="websites, email"]
-This is visible for [websites](?format=websites) & [email](?format=email).
-&lsqb;/filter]
+&amp;lsqb;filter formats="websites, email"]
+This is visible for [websites](?format=websites) &amp; [email](?format=email).
+&amp;lsqb;/filter]
 
-&lsqb;filter formats="stories"]
+&amp;lsqb;filter formats="stories"]
 This is visible for [stories](?format=stories).
-&lsqb;/filter]
-</pre></div>
+&amp;lsqb;/filter]</pre></div>
 
 ## Mẹo
 
 Bạn có thể thêm mẹo và chú ý bằng cách gói văn bản trong mã ngắn sau:
 
-<div class="ap-m-code-snippet"><pre>&lsqb;tip type="default"]
+<div class="ap-m-code-snippet"><pre>&amp;lsqb;tip type="default"]
 Default tip
 [/tip]
 
-&lsqb;tip type="important"]
+&amp;lsqb;tip type="important"]
 Important
 [/tip]
 
-&lsqb;tip type="note"]
+&amp;lsqb;tip type="note"]
 Note
 [/tip]
 
-&lsqb;tip type="read-on"]
+&amp;lsqb;tip type="read-on"]
 Read-on
-[/tip]
-</pre></div>
+[/tip]</pre></div>
 
 ## Trích đoạn code
 
@@ -152,8 +150,7 @@ Read-on
 
 ```js
   // code sample
-```
-</pre></div>
+```</pre></div>
 
 Nếu mã của bạn chứa 2 ngoặc nhọn, thường là khi bạn sử dụng khuôn mẫu [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md?format=websites), bạn phải gói phần chứa code:
 
