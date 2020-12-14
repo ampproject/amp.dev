@@ -163,7 +163,7 @@ Sau khi xác minh yêu cầu CORS, kết quả hồi đáp HTTP phải chứa c�
 
 Tuy thông số W3 CORS cho phép giá trị <code>*</code> được trả về trong hồi đáp, để đảm bảo bảo mật, bạn nên:
 
-- If the `Origin` header is present, validate and echo the value of the <code><code data-md-type="codespan">Origin</code> header.
+- Nếu đầu đề `Origin` (Nguồn gốc) tồn tại, xác thực và lặp lại giá trị của đầu đề <code>Origin</code>.
 
 ### Xử lý các yêu cầu thay đổi trạng thái <a name="processing-state-changing-requests"></a>
 
