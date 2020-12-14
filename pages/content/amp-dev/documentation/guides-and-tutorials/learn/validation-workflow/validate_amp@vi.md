@@ -94,7 +94,7 @@ amphtmlValidator.getInstance().then(function (validator) {
 });
 ```
 
-##### Example: Using a gulp task to validate AMP HTML
+##### Ví dụ: Sử dụng một tác vụ gulp để xác thực AMP HTML
 
 Trong ví dụ này, chúng ta có một tác vụ gulp để xác thực mọi tập tin AMP HTML. Nếu có một lỗi xác thực AMP, tác vụ sẽ thoát với một mã lỗi (1).
 
