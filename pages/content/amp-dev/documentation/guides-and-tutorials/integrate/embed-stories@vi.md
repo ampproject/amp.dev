@@ -1,19 +1,19 @@
 ---
-"$title": Embed stories in web pages
+"$title": Nhúng các câu chuyện vào các trang web
 "$order": '3'
-description: The AMP Story Player enables you to embed stories that users are able to tap or click through, inside of a web page. Follow this step-by-step guide to learn how.
+description: Trình phát AMP Story
 formats:
 - websites
 - stories
 ---
 
-Stories are a full-screen immersive experience. They’re hosted on the open web with their own URL, making them easily shareable. But, what if you want to integrate stories into your own site, for example, within a blog, product description or news article?
+Câu chuyện là một trải nghiệm đắm chìm toàn màn hình. Chúng được lưu trữ trên web mở với URL của riêng mình, cho phép chúng có thể dễ dàng được chia sẻ. Nhưng nếu bạn muốn tích hợp các câu chuyện vào website của mình, chẳng hạn như trong một blog, mô tả sản phẩm hoặc bài viết tin tức?
 
-The [AMP Story Player](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md) enables you to embed stories that users are able to tap or click through, inside of a web page. Follow this step-by-step guide to learn how.
+Trình phát AMP Story cho phép bạn nhúng các câu chuyện mà người dùng có thể chạm hoặc nhấp qua vào trong một trang web. Làm theo hướng dẫn từng bước này để biết cách.
 
-# Display stories in a non-AMP page
+# Hiển thị các câu chuyện trong một trang không phải AMP
 
-You can embed AMP stories inside a non-AMP page, allowing users to tap or click through the experience without leaving the host document!
+Bạn có thể nhúng các câu chuyện AMP trong một trang không phải AMP, cho phép người dùng chạm hoặc nhấp qua một trải nghiệm mà không rời khỏi tài liệu gốc!
 
 [example preview="top-frame" playground="false"]
 ```html
@@ -69,24 +69,24 @@ You can embed AMP stories inside a non-AMP page, allowing users to tap or click 
 ```
 [/example]
 
-## Embed AMP story player
+## Nhúng trình phát AMP Story
 
-Displaying an AMP story in a non-AMP page requires the use of the [`amp-story-player`](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md) element.
+Việc hiển thị một AMP Story trong một trang không phải AMP đòi hỏi yếu tố [`amp-story-player`](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md).
 
-### Import scripts
+### Nhập kịch bản
 
-Include the two required scripts in the head of your document:
+Bao gồm 2 kịch bản bắt buộc trong phần head (đầu đề) của tài liệu:
 
 ```html
 <script async src="https://cdn.ampproject.org/amp-story-player-v0.js"></script>
 <link href="https://cdn.ampproject.org/amp-story-player-v0.css" rel="stylesheet" type="text/css">
 ```
 
-The first script imports the logic for the player and the second one sets the default styling.
+Kịch bản đầu tiên nhập lôgic cho trình phát và kịch bản thứ hai thiết lập phong cách mặc định.
 
-### Specify a story
+### Quy định một câu chuyện
 
-Include the `<amp-story-player>` element inside the document `body`. Then specify the desired story by placing an `<a>` tag inside of the `<amp-story-player>` element. Point the `href` to the story’s location. The `href` may point to the URL of a hosted story or a relative path. Place the title of the story within the `<a>` tags.
+Bao gồm yếu tố `<amp-story-player>` bên trong `body` (thân) tài liệu. Sau đó quy định câu chuyện mong muốn bằng cách đặt một thẻ `<a>` bên trong yếu tố `<amp-story-player>`. Chỉ `href` đến vị trí của câu chuyện. `href` có thể chỉ đến URL của một câu chuyện được lưu trữ hoặc một đường dẫn tương đối. Đặt tiêu đề của câu chuyện trong thẻ `<a>`.
 
 ```html
  <amp-story-player style="width: 360px; height: 600px;">
@@ -97,9 +97,9 @@ Include the `<amp-story-player>` element inside the document `body`. Then specif
   </amp-story-player>
 ```
 
-### Size the player
+### Đổi kích cỡ trình phát
 
-You may define the story player's `width`, `height`, and other styles inline or as you would any other element's style.
+Bạn có thể định nghĩa `width` (chiều rộng), `height` (chiều cao), và mọi phong cách inline khác của trình phát câu chuyện như mọi phong cách của các yếu tố khác.
 
 ```html
 <body>
@@ -113,9 +113,9 @@ You may define the story player's `width`, `height`, and other styles inline or 
 
 We recommend maintaining a 3:5 aspect ratio for the best user experience, but you may define any width and height.
 
-#### Responsive sizing
+#### Đổi kích cỡ tương thích
 
-The story player's responsiveness works as any other block element. Use CSS to maintain width and height ratios, such as the example below:
+Độ tương thích của trình phát câu chuyện hoạt động như mọi yếu tố khối khác. Sử dụng CSS để duy trì tỷ lệ chiều rộng và chiều cao, ví dụ như dưới đây:
 
 ```html
 <amp-story-player style="width: 50vw; height: 83.35vw;">
@@ -123,9 +123,9 @@ The story player's responsiveness works as any other block element. Use CSS to m
 </amp-story-player>
 ```
 
-### Provide a placeholder
+### Cung cấp một mã giữ chỗ
 
-Include a representative poster image by adding an `<img>` tag as a child of the story's `<a>` tag with the following configuration. The AMP story player displays this image while loading the full story.
+Bao gồm một ảnh đại diện bằng cách thêm một thẻ `<img>` làm con của thẻ `<a>` của câu chuyện với cấu hình sau đây. Trình phát AMP Story sẽ hiển thị ảnh này trong thời gian tải toàn bộ câu chuyện.
 
 ```html
 <amp-story-player style="width: 50vw; height: 83.35vw;">
@@ -136,9 +136,9 @@ Include a representative poster image by adding an `<img>` tag as a child of the
 </amp-story-player>
 ```
 
-For the best user experience, we strongly recommend including a poster image. If you do not include a poster image the story player will display a loader spinner with a grey background.
+Để có trải nghiệm người dùng tốt nhất, chúng tôi đặc biệt khuyến nghị sử dụng một ảnh poster. Nếu bạn không bao gồm một ảnh poster, trình phát câu chuyện sẽ hiển thị một con quay tải với nền xám.
 
-## Embed multiple stories
+## Nhúng nhiều câu chuyện
 
 You may add multiple stories in the same `<amp-story-player>` element by defining multiple `<a>` tags. The player presents the second story’s cover page after user’s tap through the first.
 
@@ -155,7 +155,7 @@ You may add multiple stories in the same `<amp-story-player>` element by definin
 </amp-story-player>
 ```
 
-You can embed as many instances of `<amp-story-player>` as desired. They display as individual viewers.
+Bạn có thể nhúng bao nhiêu trường hợp `<amp-story-player>` tùy thích. Chúng sẽ được hiển thị như các trình xem khác nhau.
 
 ```html
 <amp-story-player style="width: 360px; height: 600px;">
@@ -172,6 +172,6 @@ You can embed as many instances of `<amp-story-player>` as desired. They display
 </amp-story-player>
 ```
 
-# Display stories in an AMP page
+# Hiển thị các câu chuyện trong một trang AMP
 
-To use the `<amp-story-player>` component in AMP pages, read the documentation of the [AMP version of the amp-story-player](https://amp.dev/documentation/components/amp-story-player/?format=stories).
+Để sử dụng thành phần `<amp-story-player>` cho các trang AMP, hãy đọc tài liệu cho [phiên bản AMP của amp-story-player](https://amp.dev/documentation/components/amp-story-player/?format=stories).
