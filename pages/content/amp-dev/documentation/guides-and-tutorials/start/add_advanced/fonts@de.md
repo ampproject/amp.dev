@@ -6,10 +6,10 @@ description: 'Benutzerdefinierte Schriftarten kannst du auf zwei Arten in deine 
 
 Damit die Ladezeiten von Dokumenten so kurz wie möglich bleiben, kannst du in AMP keine externen Stylesheets einbinden. Die einzige Ausnahme sind **Schriftarten**.
 
-You can embed custom fonts into your AMP page in two ways:
+Benutzerdefinierte Schriftarten kannst du auf zwei Arten in deine AMP Seite einbetten:
 
 1. Über das Tag `<link>`: nur für zugelassene Schriftartenanbieter.
-2. By using the `@font-face` CSS rule: there are no restrictions, all fonts are allowed.
+2. Mithilfe der CSS Regel `@font-face`: Hier gibt es keine Einschränkungen, alle Schriftarten sind zugelassen.
 
 In diesem Tutorial verwenden wir das Tag `<link>`, um Schriftarten zu unserer Seite hinzuzufügen. **Füge** im `<head>` einen Stylesheet Link hinzu, um die Schriftart "Raleway" anzufordern:
 
@@ -34,4 +34,4 @@ body {
 
 Dein AMP Artikel ist nun fertig! Er sollte so aussehen:
 
-{{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='center half', caption='Completed news article') }}
+{{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='center half', caption='Fertiger Nachrichtenartikel') }}
