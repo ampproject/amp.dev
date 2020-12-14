@@ -66,12 +66,12 @@ Read more about the [AMP `sizes` attribute here](../../../../documentation/guide
 
 All AMP custom elements that allow `responsive` layout, also support the `heights` attribute. The value of this attribute is a sizes expression based on media expressions as similar to the [img sizes attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), but with two key differences:
 
-1. It applies to the height and not width of the element.
+1. Er bezieht sich auf die Höhe des Elements, nicht auf die Breite.
 2. Percent values are allowed, e.g. `86%`. If a percent value is used, it indicates the percent of the element's width.
 
-When the `heights` attribute is specified along with `width` and `height`, the `layout` is defaulted to `responsive`.
+Wenn das Attribut `heights` zusammen mit `width` und `height` angegeben wird, ist das `layout` standardmäßig `responsive`.
 
-An example:
+Ein Beispiel:
 
 [example preview="top-frame" playground="true"]
 ```html
