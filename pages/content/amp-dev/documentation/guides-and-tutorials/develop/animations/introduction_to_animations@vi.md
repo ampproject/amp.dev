@@ -55,7 +55,7 @@ Tuy CSS cho phép bạn chuyển từ một trạng thái sang một trạng th�
 
 [tip type="note"] Các keyframe được định nghĩa trực tiếp trong một [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) hoặc được tham chiếu từ [`<amp style-keyframe>`](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#keyframes-stylesheet) chừng nào chúng còn tuân thủ các giới hạn về thuộc tính. Đọc thêm về [keyframe trong `amp-animation` ở đây](../../../../documentation/components/reference/amp-animation.md#keyframes). [/tip]
 
-### Trigger
+### <a>Yếu tố kích hoạt</a>
 
 Yếu tố kích hoạt bắt đầu trình tự hoạt họa. Phần mở rộng [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) bắt đầu khi `<body>` được hiển thị trên trang hoặc khi kết nối nó với một [hành động hay sự kiện AMP](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)
 
