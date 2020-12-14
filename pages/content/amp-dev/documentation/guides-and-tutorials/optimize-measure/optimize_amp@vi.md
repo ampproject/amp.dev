@@ -1,7 +1,7 @@
 ---
 "$title": Tối ưu hoá các trang AMP được lưu trữ của bạn
 "$order": '7'
-description: The AMP runtime is optimized for speed and if your AMP pages are served by an AMP cache, they are fully optimized and offer the highest loading performance ...
+description: Thời gian chạy AMP được tối ưu hoá cho tốc độ và nếu các trang AMP được một bộ nhớ đệm AMP phân phát, chúng sẽ được tối ưu hoá hoàn toàn và mang đến hiệu năng tải cao nhất...
 formats:
 - websites
 - stories
@@ -12,29 +12,29 @@ Hướng dẫn này cung cấp mẹo và lời khuyên cho các webmaster về c
 
 ### Chẳng phải AMP mặc định đã nhanh rồi sao?
 
-The AMP runtime is [optimized for speed](../../../about/how-amp-works.html) and if your AMP pages are served by an [AMP cache](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md), they are fully optimized and offer the highest loading performance. For example, if your users are coming to your AMP pages from Google Search on mobile, by default the pages are served by an AMP cache.
+Thời gian chạy AMP được [tối ưu hoá cho tốc độ](../../../about/how-amp-works.html) và nếu các trang AMP pages được một [bộ nhớ đệm AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md) phân phát, chúng sẽ được tối ưu hoá hoàn toàn và mang đến hiệu năng tải cao nhất. Ví dụ nếu người dùng từ Google Tìm kiếm trên di động đến các trang AMP của bạn, theo mặc định những trang này được một bộ nhớ đệm AMP phân phát.
 
 Tuy nhiên, các trang AMP không phải lúc nào cũng có một bộ nhớ đệm AMP phân phát. Một website có thể quyết định hiển thị các trang AMP từ chính máy chủ của chúng cho những nguồn lưu lượng truy cập khác. Trường hợp sử dụng thường xuyên nhất là những website được dựng hoàn toàn bằng AMP, chẳng hạn [tasty.co](https://tasty.co), tại đó những người dùng đến thẳng website. Nguồn lưu lượng truy cập khác là Twitter, vốn [bắt đầu liên kết với các trang AMP](https://searchengineland.com/twitter-ramps-amp-278300) thay vì truyền phiên bản di động tiêu chuẩn. Điều này nghĩa là nếu một người dùng nhấp vào một liên kết trong một ứng dụng di động của Twitter, liên kết đó sẽ đến phiên bản AMP của trang trên bản gốc của chính bạn (nếu bản đó khả dụng).
 
-As a consequence, you can't always be sure that your AMP pages are only served from an AMP cache. For these cases, where you are serving AMP pages from your own servers, it is important to make sure that your AMP pages offer the optimal loading performance.
+Hệ quả là bạn không thể lúc nào cũng bảo đảm được rằng các trang AMP chỉ được phân phát từ một bộ nhớ đệm AMP. Trong những trường hợp này, tại chỗ bạn đang phân phát các trang AMP từ chính máy chủ của mình, điều quan trọng là chắc chắn rằng các trang AMP cung ứng được hiệu năng tải tối ưu.
 
 Các trang AMP mặc định đã có tốc độ tải nhanh rồi, nhưng có một số biện pháp tối ưu hoá hiệu năng khác mà bạn có thể thực thi để giúp trình duyệt tải trang AMP thậm chí nhanh hơn nữa. Hướng dẫn này miêu tả một vài tối ưu hoá bạn có thể xem xét khi phát hành các trang AMP. Tuy nhiên, trước khi bắt đầu đọc hướng dẫn này, hãy bảo đảm là bạn đã làm xong tất cả [những cách làm tốt nhất cho hiệu năng web cơ bản](#basic-optimizations). Đặc biệt là phần tối ưu hoá hình ảnh có tác động lớn lên hiệu năng tải.
 
-For example, by applying the following optimization techniques:
+Chẳng hạn như bằng cách áp dụng các kĩ thuật tối ưu hoá sau:
 
 - [Optimized AMP runtime loading](#optimize-the-amp-runtime-loading)
 - [Tải sẵn hình ảnh anh hùng](#preload-hero-images) (bản thân kích cỡ/mã hoá hình ảnh không thay đổi)
 - [Tối ưu hoá các phông chữ tùy chỉnh](#optimize-custom-fonts) (trong trường hợp này là các phông Google)
 
-the ["The Scenic" template](../../../documentation/templates/index.html) loads [two seconds faster on a 3G connection](https://www.webpagetest.org/video/compare.php?tests=180529_RY_9198dcdba1824c169887c6e40c221dae-r:1-c:0).
+[Khuôn mẫu "The Scenic"](../../../documentation/templates/index.html) tải [nhanh hơn hai giây bằng kết nối 3G](https://www.webpagetest.org/video/compare.php?tests=180529_RY_9198dcdba1824c169887c6e40c221dae-r:1-c:0).
 
 Nếu bạn muốn bỏ qua phần chi tiết, hãy xem thử [trình tạo Code soạn sẵn AMP](/boilerplate), cái mà bạn có thể dùng để tạo các trang AMP tùy chỉnh được tối ưu hoá.
 
-### Optimize the AMP Runtime loading <a name="optimize-the-amp-runtime-loading"></a>
+### Tối ưu hoá thời gian chạy AMP đã tải <a name="optimize-the-amp-runtime-loading"></a>
 
 Mặc dù AMP khá hạn chế về việc đánh dấu nào được dùng trong phần `<head>`, nhưng vẫn còn chỗ cho tối ưu hoá. Chìa khoá ở đây là cấu trúc phần `<head>` theo cách nào đó sao cho tất cả các đoạn mã chặn kết xuất và các phông chữ tuỳ chỉnh tải càng nhanh càng tốt.
 
-Here is the recommended order for the `<head>` section in an AMP page:
+Đây là trật tự đề xuất cho phần `<head>` trong một trang AMP:
 
 [sourcecode:html]
 
@@ -64,7 +64,7 @@ Here is the recommended order for the `<head>` section in an AMP page:
 </html>
 [/sourcecode]
 
-Let's go through it step-by-step:
+Ta hãy xét kĩ đoạn mã này theo từng bước:
 
 1. Thẻ đầu tiên nên là thẻ `meta charset`, tiếp theo sau là bất kì thẻ `meta` nào còn lại.
 
@@ -88,11 +88,11 @@ Let's go through it step-by-step:
 
 10. Cuối cùng, quy định [code soạn sẵn AMP](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md). Bằng cách đặt code soạn sẵn ở cuối cùng, nó sẽ ngăn mọi phong cách tùy chỉnh khỏi việc ghi đè lên quy tắc css cho code soạn sẵn.
 
-[tip] The AMP Cache performs all these optimizations automatically (and a few more). You can use the AMP Optimizer tool to automatically perform these optimizations on your own origin. [/tip]
+[tip] Bộ nhớ đệm AMP tự động thực hiện tất cả những tối ưu hoá này (và vài cái khác). Bạn có thể dùng công cụ Tối ưu hoá AMP để tự động thực hiện những tối ưu hoá này ở phần gốc của bạn. [/tip]
 
 ### Tải sẵn hình ảnh anh hùng <a name="preload-hero-images"></a>
 
-[AMP HTML uses its own image element: `amp-img`](../../../documentation/components/reference/amp-img.md). While [`amp-img`](../../../documentation/components/reference/amp-img.md) has many advantages over the traditional HTML `img` tag, one disadvantage is that the AMP runtime must be loaded before the image download can start. For some images, such as hero images for a product page, it's critical that the images load as quickly as possible. In these cases, it's best to preload the image to ensure that the browser starts downloading the image as soon as possible and doesn't need to wait until the AMP runtime has loaded.
+[HTML AMP sử dụng yếu tố hình ảnh của chính nó: `amp-img`](../../../documentation/components/reference/amp-img.md). Mặc dù [`amp-img`](../../../documentation/components/reference/amp-img.md) có nhiều điểm lợi so với thẻ `img` HTML truyền thống, những một điểm bất lợi là thời gian chạy AMP cần phải được tải trước khi có thể bắt đầu tải xuống hình ảnh. Đối với một số hình ảnh, chẳng hạn như những hình ảnh anh hùng đối với một trang sản phẩm, điều trọng yếu là hình ảnh tải càng nhanh càng tốt. Trong những trường hợp này, tốt nhất nên tải trước hình ảnh để bảo đảm rằng trình duyệt bắt đầu tải xuống hình ảnh càng sớm càng tốt và không cần phải chờ đến khi thời gian chạy AMP đã tải.
 
 [sourcecode:html]
 
@@ -107,7 +107,7 @@ Let's go through it step-by-step:
 </body>
 [/sourcecode]
 
-But what if your responsive layout requires different hero images depending on the screen width? For example, a wide image for desktop and a narrow image for mobile like this:
+Nhưng nếu như bố cục tương tác của bạn cần đến hai hình ảnh anh hùng khác nhau tuỳ vào độ rộng màn hình? Ví dụ, một hình rộng cho máy tính bàn và hình hẹp cho thiết bị di động như thế này:
 
 [sourcecode:html]
 <amp-img width="404" height="720"
@@ -134,7 +134,7 @@ But what if your responsive layout requires different hero images depending on t
     media="(min-width: 416px)">
 [/sourcecode]
 
-By the way, the same approach works for [`amp-video`](../../../documentation/components/reference/amp-video.md) poster images:
+Nhân tiện, cùng phương cách đó cũng hiệu quả cho hình ảnh poster [`amp-video`](../../../documentation/components/reference/amp-video.md):
 
 [sourcecode:html]
 
@@ -162,7 +162,7 @@ Hãy bảo đảm là bạn đặt lệnh tải sẵn *đằng sau* khai báo m�
 
 Giờ đây tất cả [những trình duyệt lớn đều hỗ trợ service worker](https://caniuse.com/#feat=serviceworkers), nên đó là ý hay khi đánh giá liệu việc thêm service worker vào website của bạn có phải là điều có ý nghĩa không.
 
-There are two different architectural patterns that we know will work for reliably fast navigations:
+Có hai mẫu hình kiến trúc khác nhau mà ta biết sẽ hoạt động hiệu quả cho những điều hướng nhanh một cách đáng tin cậy:
 
 - Đối với những dụng một trang: mô hình Vỏ Ứng dụng (trong ngữ cảnh AMP được sử dụng như [AMP trong PWA](../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md)). Mẫu hình này cần một service worker để nâng cấp một tài liệu AMP thành trải nghiệm PWA dựa trên vỏ ứng dụng.
 - Đối với những ứng dụng nhiều trang: [truyền phát những nguồn tổng hợp](https://developers.google.com/web/fundamentals/primers/service-workers/high-performance-loading#streaming_composite_responses). Một service worker lưu phần header và footer tĩnh trong bộ nhớ đệm và sử dụng chức năng truyền phát để lập tức trả về một phần phản hồi có trong bộ nhớ đệm trong lúc tải nội dung.
@@ -176,7 +176,7 @@ Nếu website AMP của bạn dùng một service worker, đây là một số b
 - Lưu sẵn vào bộ nhớ đệm đối với [thời gian chạy AMP](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#amp-runtime) và những phần mở rộng (như [`amp-carousel`](../../../documentation/components/reference/amp-carousel.md)).
 - Lưu sẵn vào bộ nhớ đệm đối với logo, phông chữ và nội dung tĩnh khác vốn được dùng trên hầu hết các trang.
 - Phục vụ logo, phông chữ và hình ảnh bằng cách dùng [chiến lược bộ nhớ đệm trước tiên](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-falling-back-to-network).
-- Serve the AMP runtime and extensions by using a [stale-while-revalidate](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#stale-while-revalidate) strategy.
+- Phục vụ thời gian chạy AMP và các phần mở rộng bằng cách dùng chiến lược [stale-while-revalidate](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#stale-while-revalidate).
 - Khi dùng chiến lược mạng-trước-tiên cho những yêu cầu điều hướng, hãy bảo đảm là bạn đã kích hoạt [tải sẵn điều hướng](https://developers.google.com/web/updates/2017/02/navigation-preload).
 
 Nếu bạn đang tìm cách bắt đầu với một service worker trong website AMP, hãy xem thử [mẫu](https://www.google.com/url?q=https://gist.github.com/sebastianbenz/1d449dee039202d8b7464f1131eae449&sa=D&ust=1529413323498000&usg=AFQjCNE4fepX-hqVeRBW8df43uV5Bi4Llg) này, vốn cung ứng một service worker để thực thi tất cả những biện pháp thực hành tiên tiến nhất này.
@@ -205,17 +205,17 @@ Với AMP, có vài thứ bạn có thể làm để tối ưu hoá việc tải
 
 Cuối cùng, nhưng không kém phần quan trọng là việc cố gắng giảm thiểu số phông chữ tùy chỉnh mà bạn dùng trên trang của mình. Nếu được, hãy dùng các phông chữ hệ thống thay vì phông chữ tùy chỉnh vì phông chữ hệ thống làm cho website khớp với hệ điều hành của người dùng, và nó giúp tránh việc tải thêm nhiều tài nguyên.
 
-### Server-Side Rendering AMP Layouts <a name="server-side-rendering"></a>
+### Render phía máy chủ đối với các bố cục AMP <a name="server-side-rendering"></a>
 
 Render phía máy chủ đối với các bố cục AMP là một kĩ thuật mà bộ nhớ đệm AMP dùng để tăng tốc hơn nữa thời gian tải. Với tác vụ render phía máy chủ, ta có thể xoá bỏ code soạn sẵn AMP sao cho tài liệu AMP có thể được xuất ra mà không cần chạy JavaScript thời gian chạy AMP. Ví dụ: phiên bản được render phía máy chủ của Trình tạo Code soạn sẵn AMP [render nhanh gấp hai lần](https://www.webpagetest.org/video/compare.php?tests=180810_W7_f343aff20fe04fcf84598080fcb98716%2C180810_ZG_24f02134178d96ce8cfc9912f86c873c&thumbSize=200&ival=500&end=visual) so với phiên bản AMP bình thường!
 
-If you're publishing an AMP page, you should definitely consider using [AMP Optimizer](amp-optimizer-guide/index.md). AMP Optimizers let you serve optimized AMP pages from your own backend which includes server-side rendering AMP layouts. AMP Optimizer also automatically performs many other optimizations described in this document.
+Nếu bạn phát hành một trang AMP, bạn chắc chắn nên xem xét việc dùng đến [Tối ưu hoá AMP](amp-optimizer-guide/index.md). Tối ưu hoá AMP cho phép bạn phân phát những trang AMP được tối ưu hoá từ backend vốn bao gồm việc render phía máy chủ đối với các bố cục AMP. Tối ưu hoá AMP còn tự động thực hiện những tác vụ tối ưu hoá khác được miêu tả trong tài liệu này.
 
-### Basic optimizations <a name="basic-optimizations"></a>
+### Những tác vụ tối ưu hoá cơ bản <a name="basic-optimizations"></a>
 
-Of course, all the basics of web performance optimizations also apply to AMP pages:
+Dĩ nhiên, tất cả những điểm cơ bản của tác vụ tối ưu hoá hiệu năng web đều áp dụng được cho các trang AMP:
 
-- [Optimize images](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization) and videos. Image optimization can have a massive impact on loading performance.
-- [Compress and minify CSS & HTML](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer). Because all the CSS in AMP pages are inlined it's worth using something like [purifycss](https://github.com/purifycss/purifycss) to strip out unused CSS.
-- Use [HTTP Caching](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)
-- ... and more
+- [Tối ưu hoá hình ảnh](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization) và video. Tối ưu hoá hình ảnh có thể có tác động lớn lên hiệu năng tải.
+- [Nén và giảm thiểu CSS & HTML](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer). Vì toàn bộ CSS trong các trang AMP đều dạng nội tuyến, nên cũng đáng dùng một cái như [purifycss](https://github.com/purifycss/purifycss) để loại bỏ những CSS không dùng đến.
+- Sử dụng [HTTP Caching](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)
+- ...và nhiều cái khác
