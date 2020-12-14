@@ -12,8 +12,8 @@ Bạn có thể cải tiến thêm nữa Câu chuyện web bằng cách áp dụ
 <table>
 <thead><tr>
   <th width="50%">Hình hoạt họa thiết lập sẵn</th>
-  <th width="25%">Default duration (ms)</th>
-  <th width="25%">Default delay (ms)</th>
+  <th width="25%">Thời lượng mặc định (mili giây)</th>
+  <th width="25%">Độ trễ mặc định (mili giây)</th>
 </tr></thead>
 <tbody>
 <tr>
@@ -119,7 +119,7 @@ Bạn có thể cải tiến thêm nữa Câu chuyện web bằng cách áp dụ
 </amp-story-page>
 ```
 
-[tip type="note"] Explore the different animation effects by adding the `animate-in="<animation preset>"` attribute to elements on your story pages. [/tip]
+[tip type="note"] Khám phá những hiệu ứng hoạt hình khác nhau bằng cách thêm thuộc tính `animate-in="<animation preset>"` vào các phần tử trên các trang câu chuyện. [/tip]
 
 ## Định thời gian cho hình hoạt họa
 
@@ -174,11 +174,11 @@ Trang cuối của Câu chuyện web gồm hai lớp: lớp đầu tiên là b�
 </amp-story-page>
 ```
 
-Reload the AMP story in your browser, and verify that the page renders correctly and looks like this:
+Tải lại câu chuyện AMP trong trình duyệt, và xác minh trang đó render chính xác và trông như thế này:
 
 {{ image('/static/img/docs/tutorials/amp_story/pg5-collage.png', 720, 1280, align='center third', alt='Static page 5' ) }}
 
-It looks great but everything is static! Let's animate!
+Trông tuyệt đó nhưng mọi thứ đang ở trạng thái tĩnh! Ta hãy làm nó chuyển động!
 
 Ta sẽ bắt đầu bằng cách tạo hình động cho chuyển động vào của dòng chữ băng rôn và để nó "bay vèo vào" từ bên phải của trang. Thêm `animate-in="whoosh-in-right"` vào phần tử `<p>` giống thế này:
 
@@ -190,7 +190,7 @@ Pets can lower your stress levels!</p>
 
 Tải lại trang câu chuyện trong trình duyệt, và xác minh rằng băng rôn bay vèo vào.
 
-Next, let's make all the images fade in. Add `animate-in="fade-in"` to each of the [`amp-img`](../../../../documentation/components/reference/amp-img.md) elements so the code looks like this:
+Tiếp theo, hãy làm cho tất cả các hình ảnh mờ dần. Thêm `animate-in="fade-in"` vào từng phần tử [`amp-img`](../../../../documentation/components/reference/amp-img.md) để mã trông giống như sau:
 
 ```html
 <amp-img src="assets/cat.jpg"
@@ -247,7 +247,7 @@ Hãy tạo độ trễ cho chuyển động vào của hình ảnh đầu tiên 
 
 ```
 
-Refresh and reload your story.  Your last page should look like this:
+Làm mới và tải lại câu chuyện của bạn. Trang cuối cùng của bạn sẽ trông như thế này:
 
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Page 5 collage', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 
