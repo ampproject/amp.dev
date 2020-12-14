@@ -1,12 +1,12 @@
 ---
 "$title": Add a comment
 "$order": '2'
-description: At this point, the user can add a comment using the amp-form, library. Notice how the presence of the form is conditional, depending on the state of the amp-access component ...
+description: An dieser Stelle können Benutzer mithilfe der Bibliothek amp-form einen Kommentar hinzufügen. Beachte, dass das Vorhandensein des Formulars bedingt ist und vom Status der Komponente amp-access abhängt …
 ---
 
 <amp-img src="/static/img/comment.png" alt="Add comment" height="325" width="300"></amp-img>
 
-At this point, the user can add a comment using the [`amp-form`](../../../../documentation/components/reference/amp-form.md) library. Notice how the presence of the form is conditional, depending on the state of the [`amp-access`](../../../../documentation/components/reference/amp-access.md) component:
+An dieser Stelle können Benutzer mithilfe der Bibliothek [`amp-form`](../../../../documentation/components/reference/amp-form.md) einen Kommentar hinzufügen. Beachte, dass das Vorhandensein des Formulars bedingt ist und vom Status der Komponente [`amp-access`](../../../../documentation/components/reference/amp-access.md) abhängt:
 
 [sourcecode:html]
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
@@ -14,7 +14,7 @@ At this point, the user can add a comment using the [`amp-form`](../../../../doc
 
 We specify a POST method and a XHR action, as non XHR actions are not allowed with POST methods in AMP. Because this is a demo, we are not persisting comments, so it’s only possible to add one comment at the time; whenever a comment is added, the AMPByExample server replies with a JSON response containing the entered text with some additions, like a timestamp, an avatar and a name for the user.
 
-Here's an example of JSON response:
+Hier ist ein Beispiel für eine JSON Antwort:
 
 [sourcecode:json]
 {"Datetime":"09:34:21",
@@ -23,7 +23,7 @@ Here's an example of JSON response:
 "UserImg":"/img/ic_account_box_black_48dp_1x.png"}
 [/sourcecode]
 
-The form component will simply display those values inside the page using the [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md) template:
+Die Formularkomponente zeigt diese Werte auf der Seite einfach mithilfe des Templates [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md) an:
 
 [sourcecode:html]
 <div submit-success>
@@ -39,7 +39,7 @@ The form component will simply display those values inside the page using the [`
 </div>
 [/sourcecode]
 
-In this example, we are only checking if the value of the comment is not empty; if the value is empty, we return an error that causes the following code to execute
+In diesem Beispiel prüfen wir nur, ob der Wert des Kommentars nicht leer ist. Wenn der Wert leer ist, geben wir einen Fehler zurück, der die Ausführung des folgenden Codes auslöst:
 
 [sourcecode:html]
 <div submit-error>
@@ -57,6 +57,6 @@ As an extra touch, we add the `required` attribute to enforce the presence of co
 <input type="text" class="data-input" name="text" placeholder="Your comment..." required>
 [/sourcecode]
 
-When you add a comment and click the submit button, you should now see something similar to the following screenshot:
+Wenn du einen Kommentar hinzufügst und auf den Submit Button klickst, sollte das Ergebnis in etwa so aussehen wie im folgenden Screenshot:
 
 <amp-img src="/static/img/logout-button.png" alt="Comment added" height="352" width="300"></amp-img>
