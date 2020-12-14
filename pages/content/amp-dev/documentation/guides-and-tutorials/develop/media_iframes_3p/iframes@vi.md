@@ -1,7 +1,7 @@
 ---
-"$title": Include iframes
+"$title": Bao gồm các iframe
 "$order": '10'
-description: "Learn how to display include media content in your pages, and how to use iframes to display advanced content outside of AMP's limitations."
+description: Tìm hiểu cách để hiển thị các nội dung đa phương tiện trong trang của bạn, và cách sử dụng iframe để hiển thị các nội dung nâng cao bên ngoài giới hạn của AMP.
 formats:
 - websites
 components:
@@ -14,31 +14,31 @@ contributors:
 
 Learn how to display include media content in your pages, and how to use iframes to display advanced content outside of AMP's limitations.
 
-## The basics
+## Kiến thức cơ bản
 
-You can display an iframe in your page by using the [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) element.
+Bạn có thể hiển thị một iframe trong trang của mình bằng cách sử dụng yếu tố [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md).
 
-Iframes are especially useful in AMP to display content not supported in the main page context, such as content requiring user-authored JavaScript.
+Iframe đặc biệt hữu ích trong AMP để hiển thị các nội dung không được hỗ trợ trong ngữ cảnh của trang chính, ví dụ như các nội dung đòi hỏi JavaScript do người dùng viết.
 
-### Requirements for `amp-iframe`
+### Yêu cầu đối với `amp-iframe`
 
-- Must be at least **600px** or **75%** of the first viewport away from the top (except for iframes that use a [`placeholder`](#using-placeholders)).
-- Can only request resources via HTTPS, and they must not be in the same origin as the container, unless they do not specify allow-same-origin.
+- Phải cách mép trên của màn hiển thị đầu tiên ít nhất **600px** hoặc **75%** (ngoại trừ các iframe sử dụng [`placeholder`](#using-placeholders) (mã giữ chỗ)).
+- Chỉ có thể yêu cầu các tài nguyên qua HTTPS, và chúng phải không có cùng nguồn với container, trừ khi chúng không quy định allow-same-origin (cho phép cùng nguồn gốc).
 
-[tip type="read-on"] **READ ON –** Learn more at the [full specification for `amp-iframe`](../../../../documentation/components/reference/amp-iframe.md). [/tip]
+[tip type="read-on"] **ĐỌC TIẾP** – Tìm hiểu thêm ở phần [thông số kỹ thuật đầy đủ cho `amp-iframe`](../../../../documentation/components/reference/amp-iframe.md). [/tip]
 
-### Include the script
+### Bao gồm kịch bản
 
-To include an [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) in your page, first include the following script to the `<head>`, which loads the additional code for the extended component:
+Để bao gồm một [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) trong trang của bạn, trước hết hãy bao gồm kịch bản sau trong phần `<head>` để tải thêm code cho thành phần mở rộng:
 
 [sourcecode:html]
 <script async custom-element="amp-iframe"
   src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 [/sourcecode]
 
-### Write the markup
+### Viết đánh dấu
 
-In the following example, we created a responsive [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) to embed a Google Map via the [Google Maps Embed API](https://developers.google.com/maps/documentation/embed/guide):
+Trong ví dụ sau, chúng ta đã tạo một [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) hồi đáp để nhúng Google Maps thông qua [API Nhúng Google Maps](https://developers.google.com/maps/documentation/embed/guide):
 
 ```html
 <amp-iframe width="200" height="100"
@@ -48,13 +48,13 @@ In the following example, we created a responsive [`amp-iframe`](../../../../doc
 </amp-iframe>
 ```
 
-## Using placeholders <a name="using-placeholders"></a>
+## Sử dụng mã giữ chỗ <a name="using-placeholders"></a>
 
-You can display an [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) at the top of a document, provided the [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) contains an element with the `placeholder` attribute, (for example, an [`amp-img`](../../../../documentation/components/reference/amp-img.md) element) which would be rendered as a placeholder until the iframe is ready to be displayed.
+Bạn có thể hiển thị một [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) ở đầu tài liệu, với điều kiện [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) chứa một yếu tố với thuộc tính `placeholder` (mã giữ chỗ), (ví dụ, một yếu tố [`amp-img`](../../../../documentation/components/reference/amp-img.md)) nó sẽ được render dưới dạng một mã giữ chỗ cho đến khi iframe đã sẵn sàng để được hiển thị.
 
-[tip type="read-on"] **READ ON –**: Learn more about placeholders in [Iframe with placeholder](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder). [/tip]
+[tip type="read-on"] **ĐỌC TIẾP –**: Tìm hiểu thêm về mã giữ chỗ trong [Iframe với mã giữ chỗ](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder). [/tip]
 
-Example with placeholder:
+Ví dụ với mã giữ chỗ:
 
 ```html
 <amp-iframe width="400" height="225"
@@ -66,10 +66,10 @@ Example with placeholder:
 </amp-iframe>
 ```
 
-Renders as:
+Render dưới dạng:
 
 <amp-iframe width="400" height="225" sandbox="allow-scripts allow-same-origin" layout="responsive" src="https://giphy.com/embed/OWabwoEn7ezug"><amp-img placeholder layout="fill" src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"></amp-img></amp-iframe>
 
-## Examples
+## Ví dụ
 
-You can find more advanced [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) examples in [AMP By Example](../../../../documentation/examples/documentation/amp-iframe.html).
+Bạn có thể tìm thấy các ví dụ nâng cao hơn về [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) trong [AMP By Example](../../../../documentation/examples/documentation/amp-iframe.html).
