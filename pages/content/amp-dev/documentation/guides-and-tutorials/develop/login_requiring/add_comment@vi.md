@@ -1,24 +1,24 @@
 ---
-"$title": Add a comment
+"$title": Thêm bình luận
 "$order": '2'
-description: At this point, the user can add a comment using the amp-form, library. Notice how the presence of the form is conditional, depending on the state of the amp-access component ...
+description: Tạm thời điểm hiện tại, người dùng có thể thêm một bình luận sử dụng thư viện amp-form. Hãy lưu ý điều kiện hiển thị biểu mẫu, tùy thuộc vào trạng thái của thành phần amp-access...
 ---
 
 <amp-img src="/static/img/comment.png" alt="Add comment" height="325" width="300"></amp-img>
 
-At this point, the user can add a comment using the [`amp-form`](../../../../documentation/components/reference/amp-form.md) library. Notice how the presence of the form is conditional, depending on the state of the [`amp-access`](../../../../documentation/components/reference/amp-access.md) component:
+Tạm thời điểm hiện tại, người dùng có thể thêm một bình luận sử dụng thư viện [`amp-form`](../../../../documentation/components/reference/amp-form.md). Hãy lưu ý điều kiện hiển thị biểu mẫu, tùy thuộc vào trạng thái của thành phần [`amp-access`](../../../../documentation/components/reference/amp-access.md):
 
 [sourcecode:html]
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
 [/sourcecode]
 
-We specify a POST method and a XHR action, as non XHR actions are not allowed with POST methods in AMP. Because this is a demo, we are not persisting comments, so it’s only possible to add one comment at the time; whenever a comment is added, the AMPByExample server replies with a JSON response containing the entered text with some additions, like a timestamp, an avatar and a name for the user.
+Chúng ta quy định một phương thức POST và một hành động XHR, bởi các hành động không phải là XHR không được cho phép với POST trong AMP. Bởi đây là bản demo, chúng ta không duy trì bình luận liên tục, vậy nên bạn chỉ có thể thêm một bình luận tại một thời điểm; mỗi khi một bình luận được bổ sung, máy chủ AMPByExample sẽ trả lời với một hồi đáp JSON chứa văn bản đã nhập với một số thông tin bổ sung như dấu thời gian, hình đại diện và tên người dùng.
 
-Here's an example of JSON response:
+Đây là một ví dụ về hồi đáp JSON:
 
 [sourcecode:json] {"Datetime":"09:34:21", "User":"Charlie", "Text":"Hello!", "UserImg":"/img/ic_account_box_black_48dp_1x.png"} [/sourcecode]
 
-The form component will simply display those values inside the page using the [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md) template:
+Thành phần biểu mẫu sẽ chỉ hiển thị các giá trị này trong trang sử dụng khuôn mẫu [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md):
 
 [sourcecode:html]
 <div submit-success>
@@ -34,7 +34,7 @@ The form component will simply display those values inside the page using the [`
 </div>
 [/sourcecode]
 
-In this example, we are only checking if the value of the comment is not empty; if the value is empty, we return an error that causes the following code to execute
+Trong ví dụ này, chúng ta chỉ kiểm tra liệu giá trị của bình luận có trống hay không; nếu giá trị này bị trống, chúng ta sẽ trả về một lỗi để khiến đoạn code sau được thực thi
 
 [sourcecode:html]
 <div submit-error>
@@ -44,7 +44,7 @@ In this example, we are only checking if the value of the comment is not empty; 
 </div>
 [/sourcecode]
 
-As an extra touch, we add the `required` attribute to enforce the presence of comment text before submitting the comment:
+Để tạo điểm nhấn, chúng ta bổ sung thuộc tính `required` để buộc có văn bản bình luận trước khi gửi đi bình luận đó:
 
 <amp-img src="/static/img/enforce-comment.png" alt="Enforce comment" height="325" width="300"></amp-img>
 
@@ -52,6 +52,6 @@ As an extra touch, we add the `required` attribute to enforce the presence of co
 <input type="text" class="data-input" name="text" placeholder="Your comment..." required>
 [/sourcecode]
 
-When you add a comment and click the submit button, you should now see something similar to the following screenshot:
+Khi bạn thêm một bình luận và nhấn nút gửi đi, bạn sẽ thấy nội dung như trong ảnh chụp màn hình sau:
 
 <amp-img src="/static/img/logout-button.png" alt="Comment added" height="352" width="300"></amp-img>
