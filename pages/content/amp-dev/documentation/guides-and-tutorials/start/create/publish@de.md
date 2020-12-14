@@ -1,5 +1,5 @@
 ---
-"$title": Final steps before publishing
+"$title": Letzte Schritte vor der Veröffentlichung
 "$order": '6'
 description: Gratulation! Du hast deine Seite lokal getestet und alle Validierungsfehler behoben. Damit ist deine erste AMP Seite bereit zur Veröffentlichung.
 author: pbakaus
