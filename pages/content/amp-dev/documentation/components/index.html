@@ -107,10 +107,12 @@ recent_components:
 
   <ul class="ap-table-component">
     {% for category, docs in categories %}
+    [% if not category or '{{ category|slug }}' == category or not '{{ filter_categories }}'.includes(category) %]
     <li class="ap-table-component-section">
       <h3 class="ap-table-component-section-title">{{ category|replace('-', ' ') }}</h3>
       <ul>
         {% for component in docs if component.is_current %}
+        [% if '{{ component.formats }}'.includes(format) %]
         <li>
           <a class="ap-table-component-link" href="{{ component.url.path }}">
             {% if component.formats %}
@@ -125,13 +127,12 @@ recent_components:
             <div class="ap-table-component-link-description">{{ component.teaser.text|truncate(70, false, '...') }}</div>
           </a>
         </li>
+        [% endif %]
         {% endfor %}
       </ul>
     </li>
+    [% endif %]
     {% endfor %}
   </ul>
-
-
-
 </section>
 {% endblock %}
