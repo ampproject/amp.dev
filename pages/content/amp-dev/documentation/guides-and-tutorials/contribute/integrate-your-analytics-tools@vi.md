@@ -1,11 +1,11 @@
 ---
-"$title": Integrate your analytics tool with AMP
+"$title": Tích hợp công cụ phân tích của bạn với AMP
 order: '1'
 formats:
 - websites
 - stories
 teaser:
-  text: " Overview"
+  text: Tổng quan
 toc: 'true'
 ---
 
@@ -16,52 +16,52 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-## Overview <a name="overview"></a>
+## Tổng quan <a name="overview"></a>
 
-If you operate a software-as-a-service tool for publishers to better understand their traffic and visitors, you may want to integrate your service into `amp-analytics`. This will enable your customers to view traffic patterns for their AMP HTML pages.
+Nếu bạn vận hành một phần mềm như một dịch vụ để giúp các nhà phát hành hiểu rõ hơn về lưu lượng và khách truy cập của họ, bạn có thể muốn tích hợp dịch vụ của mình vào `amp-analytics`. Việc này sẽ cho phép các khách hàng của bạn xem quy luật lưu lượng cho các trang AMP HTML của họ.
 
-## Before you begin <a name="before-you-begin"></a>
+## Trước khi bắt đầu <a name="before-you-begin"></a>
 
-Before you can add your analytics service to AMP HTML runtime, you may need to:
+Trước khi bạn có thể thêm dịch vụ phân tích của mình vào thời gian chạy AMP HTML, bạn có thể cần:
 
-- Identify the kinds of [variables](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) and [requests](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-analytics.md#requests) you'll need in an AMP HTML document for your analytics service.
-- Determine if the batching plugin function is required to construct the final url if using requests with batching behavior.
-- Identify the triggers that result in analytics requests being sent from a page that would be relevant for your service.
-- Consider if and how you will [track users across](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md) first-party and third-party AMP contexts.
-- Determine how your analytics dashboard handles AMP traffic.
-- Identify any missing functionality in `amp-analytics`, and [file requests](https://github.com/ampproject/amphtml/issues/new) for needed features.
-- AMP Analytics sends its variables to a preconfigured endpoint. If you do not already have an existing endpoint, review [this sample](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample) for an overview on how to build one.
-    - For all transport types except `iframe`, variables are sent as query string parameters in a HTTPS request.
-    - For the `iframe` transport type, an iframe is created and variables are sent to it via `window.postMessage`. In this case, the message need not be a URL. This option is available only to MRC-accredited vendors.
-- Consider how integration with `amp-analytics` may impact any policies (particularly your privacy policy) or agreements you may have.
+- Xác định loại [biến số](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) và [yêu cầu](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-analytics.md#requests) bạn sẽ cần trong một tài liệu AMP HTML cho dịch vụ phân tích của mình.
+- Xác định liệu chức năng tiện ích chia lô có là cần thiết để xây dựng URL cuối cùng hay không nếu sử dụng các yêu cầu có hành vi chia lô.
+- Xác định các yếu tố kích hoạt dẫn đến yêu cầu phân tích được gửi từ một trang liên quan đến dịch vụ của bạn.
+- Cân nhắc cách bạn sẽ [theo dõi người dùng](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md) trong các ngữ cảnh AMP bên thứ nhất và bên thứ ba.
+- Xác định cách bảng điều khiển phân tích của bạn xử lý lưu lượng AMP.
+- Xác định các chức năng còn thiếu trong `amp-analytics`, và [gửi yêu cầu](https://github.com/ampproject/amphtml/issues/new) cho các tính năng cần thiết.
+- AMP Analytics sẽ gửi các biến số của nó đến một điểm cuối được cấu hình sẵn. Nếu bạn chưa có một điểm cuối hiện có, hãy xem lại [mẫu này](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample) để có cái nhìn tổng quan về cách xây dựng nó.
+    - Đối với tất cả các loại vận chuyển ngoại trừ `iframe`, các biến số sẽ được gửi dưới dạng tham số chuỗi truy vấn trong một yêu cầu HTTPS.
+    - Đối với loại vận chuyển `iframe`, một iframe được tạo và các biến số được gửi đến nó qua `window.postMessage`. Trong trường hợp này, thông điệp này không cần phải là một URL. Tùy chọn này chỉ được cung cấp cho các nhà cung cấp có chứng nhận MRC.
+- Cân nhắc tác dụng của việc tích hợp `amp-analytics` đến mọi chính sách (cụ thể là chính sách quyền riêng tư của bạn) hoặc thỏa thuận mà bạn có thể có.
 
-## Adding your configuration to the AMP HTML runtime <a name="adding-your-configuration-to-the-amp-html-runtime"></a>
+## Thêm cấu hình của bạn vào thời gian chạy AMP HTML <a name="adding-your-configuration-to-the-amp-html-runtime"></a>
 
-1. Create an [Intent-To-Implement issue](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../CONTRIBUTING.md#contributing-features) stating that you'll be adding your analytics service's configuration to AMP HTML's runtime. Be sure to include **cc @ampproject/wg-analytics** in your description.
-2. Develop a patch that implements the following:
-    1. A new configuration json file `${vendorName}.json` in the vendors [folder](https://github.com/ampproject/amphtml/tree/master/extensions/amp-analytics/0.1/vendors) including any options above and beyond the default, such as:
-        1. `"vars": {}` for additional default variables.
-        2. `"requests": {}` for requests that your service will use.
-        3. `"optout":` if needed. We currently don't have a great opt-out system, so please reach out to help us design one that works well for you.
-        4. `"warningMessage":` if needed. Displays warning information from the vendor (such as deprecation or migration) in the console.
-    2. If you are using iframe transport, also add a new line to ANALYTICS_IFRAME_TRANSPORT_CONFIG in iframe-transport-vendors.js containing `"*vendor-name*": "*url*"`
-    3. An example in the [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html). reference.
-    4. A test in the [extensions/amp-analytics/0.1/test/vendor-requests.json ](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../extensions/amp-analytics/0.1/test/vendor-requests.json) file.
-    5. Add your analytics service to the supported vendors list in the [extensions/amp-analytics/0.1/analytics-vendors-list.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./analytics-vendors-list.md) file. Include the type, description, and link to your usage documentation.
-3. If a new batch plugin if required. Please refer to [Add Batch Plugin](#add-batch-plugin) for instructions.
-4. Test the new example you put in [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html) to ensure the hits from the example are working as expected. For example, the data needed is being collected and displayed in your analytics dashboard.
-5. Submit a Pull Request with this patch, referencing the Intent-To-Implement issue.
-6. Update your service's usage documentation and inform your customers.
-7. It's highly recommended to maintain [an integration test outside AMP repo](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../3p/README.md#adding-proper-integration-tests).
+1. Tạo một [vấn đề Ý định Triển khai](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../CONTRIBUTING.md#contributing-features), tuyên bố rằng bạn sẽ thêm cấu hình của dịch vụ phân tích của mình vào thời gian chạy AMP HTML. Hãy nhớ bao gồm **cc @ampproject/wg-analytics** trong mô tả của bạn.
+2. Phát triển một bản vá triển khai những nội dung sau:
+    1. Một tập tin json cấu hình mới `${vendorName}.json` trong [thư mục](https://github.com/ampproject/amphtml/tree/master/extensions/amp-analytics/0.1/vendors) nhà cung cấp, bao gồm mọi tùy chọn ngoài tùy chọn mặc định như:
+        1. `"vars": {}` cho các biến số mặc định bổ sung.
+        2. `"requests": {}` cho các yêu cầu mà dịch vụ của bạn sẽ sử dụng.
+        3. `"optout":` nếu cần. Hiện tại, chúng tôi không có một hệ thống bỏ đăng ký hoàn hảo, vậy nên hãy liên hệ để giúp chúng tôi thiết kế một hệ thống hoạt động tốt đối với bạn.
+        4. `"warningMessage":` nếu cần. Hiển thị thông tin cảnh báo từ nhà cung cấp (ví dụ như vô hiệu hoặc chuyển đổi) trong bảng điều khiển.
+    2. Nếu bạn đang sử dụng vận chuyển iframe, hãy thêm một dòng mới vào ANALYTICS_IFRAME_TRANSPORT_CONFIG trong iframe-transport-vendors.js chứa `"*vendor-name*": "*url*"`
+    3. Một ví dụ trong tài liệu tham khảo [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html).
+    4. Một kiểm tra trong tập tin [extensions/amp-analytics/0.1/test/vendor-requests.json](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../extensions/amp-analytics/0.1/test/vendor-requests.json).
+    5. Thêm dịch vụ phân tích của bạn vào danh sách nhà cung cấp được hỗ trợ trong tập tin [extensions/amp-analytics/0.1/analytics-vendors-list.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./analytics-vendors-list.md). Bao gồm loại, mô tả và liên kết đến tài liệu sử dụng của bạn.
+3. Nếu một tiện ích lô mới là cần thiết. Vui lòng tham khảo [Thêm Tiện ích Lô](#add-batch-plugin) để được hướng dẫn.
+4. Kiểm tra ví dụ mới mà bạn đã đặt vào [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html) để đảm bảo các chức năng từ ví dụ đang hoạt động như kỳ vọng. Ví dụ, dữ liệu cần thiết đang được thu thập và hiển thị trong bảng điều khiển phân tích của bạn.
+5. Gửi một Yêu cầu Kéo với bản vá này, tham chiếu vấn đề Ý định Triển khai.
+6. Cập nhật tài liệu sử dụng dịch vụ của bạn và thông báo với các khách hàng.
+7. Bạn nên duy trì một [kiểm tra tích hợp bên ngoài kho lưu trữ AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../3p/README.md#adding-proper-integration-tests).
 
-## Tag Managers <a name="tag-managers"></a>
+## Quản lý Thẻ <a name="tag-managers"></a>
 
-Tag management services have two options for integrating with AMP Analytics:
+Dịch vụ quản lý thẻ có 2 tùy chọn để tích hợp dịch vụ Phân tích AMP:
 
-- **Endpoint approach:** Acting as the an additional endpoint for `amp-analytics`, and conducting marketing management in the backend.
-- **Config approach:** Conducting tag management via a dynamically generated JSON config file unique to each publisher.
+- **Lối tiếp cận đầu cuối:** Có chức năng như một đầu cuối bổ sung cho `amp-analytics`, và phân tích việc quản lý tiếp thị trong backend.
+- **Lối tiếp cận cấu hình:** Thực hiện quản lý thẻ thông qua một tập tin cấu hình JSON được tạo năng động và duy nhất cho từng nhà phát hành.
 
-The endpoint approach is the same as the standard approach detailed in the previous section. The config approach consists of creating a unique configuration for amp-analytics that is specific to each publisher and includes all of their compatible analytics packages. A publisher would include the configuration using a syntax similar to this:
+Lối tiếp cận điểm cuối cũng giống như lối tiếp cận tiêu chuẩn được mô tả trong phần trước. Lối tiếp cận cấu hình bao gồm tạo một cấu hình amp-analytics duy nhất cho từng nhà phát hành và bao gồm tất cả các gói phân tích tương thích của họ. Một nhà phát hành sẽ bao gồm cấu hình này sử dụng một cú pháp giống như:
 
 [sourcecode:html]
 <amp-analytics
@@ -69,12 +69,12 @@ The endpoint approach is the same as the standard approach detailed in the previ
 ></amp-analytics>
 [/sourcecode]
 
-To take this approach, review the documentation for publishers' integration with AMP Analytics.
+Để thực hiện lối tiếp cận này, hãy xem lại tài liệu để tích hợp vào AMP Analytics cho nhà phát hành.
 
-## Further Resources <a name="further-resources"></a>
+## Tài nguyên bổ sung <a name="further-resources"></a>
 
-- Deep Dive: [Why not just use an iframe?](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/why-not-iframe.md)
-- Deep Dive: [Managing non-authenticated user state with AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)
-- [amp-analytics sample](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
-- [amp-analytics](https://amp.dev/documentation/components/amp-analytics) reference documentation
-- [amp-analytics variables](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) reference documentation
+- Deep Dive: [Tại sao lại không sử dụng một iframe?](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/why-not-iframe.md)
+- Deep Dive: [Quản lý trạng thái người dùng chưa xác thực với AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)
+- [Mẫu amp-analytics](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
+- Tài liệu tham khảo [amp-analytics](https://amp.dev/documentation/components/amp-analytics)
+- Tài liệu tham khảo [biến số amp-analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)
