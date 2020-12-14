@@ -37,15 +37,15 @@ Dieses Dokument beschreibt die CSS Funktionen, die derzeit in AMP E-Mails unters
 
 ### Internes Stylesheet <a name="internal-stylesheet"></a>
 
-When using an internal stylesheet, the CSS is specified inside a single `<style amp-custom>` tag located in the `<head>` tag of the email.
+Bei Verwendung eines internen Stylesheets wird das CSS in einem einzelnen Tag `<style amp-custom>` angegeben, das sich im Tag `<head>` der E-Mail befindet.
 
 ### Inline Styles <a name="inline-styles"></a>
 
-In addition to an internal stylesheet, inline styles can be specified on any element using the [`style` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-style).
+Zusätzlich zu einem internen Stylesheet können Inlinestyles für jedes Element mithilfe des [Attributs `style`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-style) angegeben werden.
 
 ### Externes Stylesheet <a name="external-stylesheet"></a>
 
-External stylesheets are **not** supported in AMP for Email.
+Externe Stylesheets werden in AMP für E-Mail **nicht** unterstützt.
 
 Die Verwendung von `<link rel="stylesheet" href="...">` ist nirgendwo in der E-Mail zulässig.
 
@@ -345,7 +345,7 @@ Benutzerdefinierte Schriftarten werden in AMP für E-Mail **nicht** unterstützt
 
 ## Medienfunktionen <a name="media-features"></a>
 
-List of [media features](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#Media_features) supported for conditionally applying rules via `@media` queries.
+Liste der [Medienfunktionen](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#Media_features), die für das bedingte Anwenden von Regeln über `@media` Abfragen unterstützt werden:
 
 - [`device-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-width)
     - `max-device-width`
