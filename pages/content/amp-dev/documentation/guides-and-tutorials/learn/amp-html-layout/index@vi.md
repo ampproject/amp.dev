@@ -1,5 +1,5 @@
 ---
-"$title": AMPHTML Layout System
+"$title": Hệ thống Bố cục AMPHTML
 order: '1'
 formats:
 - websites
@@ -7,7 +7,7 @@ formats:
 - stories
 - ads
 teaser:
-  text: " Overview"
+  text: 'Tổng quan '
 ---
 
 <!--
@@ -33,38 +33,38 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-## Overview <a name="overview"></a>
+## Tổng quan
 
-The main goal of the layout system is to ensure that AMP elements can express their layout so that the runtime is able to infer sizing of elements before any remote resources, such as JavaScript and data calls, have been completed. This is important since this significantly reduces rendering and scrolling jank.
+Mục đích chính của hệ thống bố cục là đảm bảo các yếu tố AMP có thể diễn đạt bố cục của chúng để thời gian chạy có thể suy diễn kích thước của các yếu tố trước khi các tài nguyên từ xa như JavaScript và cuộc gọi dữ liệu được hoàn tất. Điều này quan trọng bởi nó giúp giảm đáng kể thời gian render và tình trạng giật khi cuộn.
 
-With this in mind, the AMP Layout System is designed to support few but flexible layouts that provide good performance guarantees. This system relies on a set of attributes such as `layout`, `width`, `height`, `sizes` and `heights` to express the element's layout and sizing needs.
+Xét đến điều này, Hệ thống Bố cục AMP được thiết kế để hỗ trợ một số ít bố cục linh hoạt giúp đảm bảo hiệu năng tốt. Hệ thống này phụ thuộc vào một nhóm các thuộc tính như `layout` (bố cục), `width` (chiều rộng), `height` (chiều cao), `sizes` (kích thước) và `heights` (chiều cao) để diễn đạt nhu cầu về bố cục và kích thước của yếu tố.
 
-## Behavior <a name="behavior"></a>
+## Hành vi <a name="behavior"></a>
 
-A non-container AMP element (i.e., `layout != container`) starts up in the unresolved/unbuilt mode in which all of its children are hidden except for a placeholder (see `placeholder` attribute). The JavaScript and data payload necessary to fully construct the element may still be downloading and initializing, but the AMP runtime already knows how to size and lay out the element only relying on CSS classes and `layout`, `width`, `height` and `media` attributes. In most cases, a `placeholder`, if specified, is sized and positioned to take all of the element's space.
+Một yếu tố AMP ngoài container (ví dụ, `layout != container`) sẽ khởi động trong chế độ chưa diễn giải/chưa xây dựng trong đó tất cả các con của nó đều bị ẩn ngoại trừ một mã giữ chỗ (xem thuộc tính `placeholder` (mã giữ chỗ)). JavaScript và trọng tải dữ liệu cần để xây dựng toàn bộ yếu tố vẫn có thể đang tải về và khởi động, nhưng thời gian chạy AMP đã biết làm thế nào để chia kích thước và bố cục cho yếu tố mà chỉ dựa vào các lớp CSS và các thuộc tính `layout` (bố cục), `width` (chiều rộng), `height` (chiều cao) và `media` (đa phương tiện). Trong hầu hết các trường hợp, một `placeholder` (mã giữ chỗ), nếu được quy định, sẽ được đổi kích thước và vị trí để tận dụng toàn bộ không gian của yếu tố.
 
-The `placeholder` is hidden as soon as the element is built and its first layout complete. At this point, the element is expected to have all of its children properly built and positioned and ready to be displayed and to accept a reader's input. This is the default behavior. Each element can override to, e.g., hide `placeholder` faster or keep it around longer.
+`Placeholder` (mã giữ chỗ) sẽ được ẩn ngay khi yếu tố được xây dựng và bố cục đầu tiên của nó hoàn tất. Ở thời điểm này, yếu tố này được kỳ vọng là đã xây dựng và định vị các con của nó đúng cách để sẵn sàng được hiển thị và chấp nhận đầu vào của một độc giả. Đây là hành vi mặc định. Mỗi yếu tố có thể ghi đè lên, ví dụ như, ẩn `placeholder` (mã giữ chỗ) nhanh hơn hoặc giữ nó lâu hơn.
 
-The element is sized and displayed based on the `layout`, `width`, `height` and `media` attributes by the runtime. All of the layout rules are implemented via CSS internally. The element is said to "define size" if its size is inferable via CSS styles and does not change based on its children: available immediately or inserted dynamically. This does not mean that this element's size cannot change. The layout could be fully responsive as is the case with `responsive`, `fixed-height`, `fill` and `flex-item` layouts. It simply means that the size does not change without an explicit user action, e.g. during rendering or scrolling or post download.
+Yếu tố này được đổi kích thước và hiển thị dựa trên các thuộc tính `layout` (bố cục), `width` (chiều rộng), `height` (chiều cao) và `media` (đa phương tiện) theo thời gian chạy. Tất cả các quy tắc bố cục đều được triển khai thông qua CSS nội bộ. Yếu tố này được cho là "định nghĩa kích thước" nếu kích thước của nó có thể được suy diễn từ phong cách CSS và không thay đổi dựa trên các con của nó: khả dụng ngay lập tức hoặc được chèn động. Điều này không có nghĩa kích thước của yếu tố này không thể được thay đổi. Bố cục có thể được tương thích hoàn toàn như với các bố cục `responsive` (tương thích), `fixed-height` (chiều cao cố định), `fill` (lấp đầy) và `flex-item` (linh hoạt). Nó chỉ có nghĩa là kích thước không thay đổi nếu không được người dùng tương tác rõ ràng, ví dụ như trong quá trình render hoặc cuộn, hoặc sau khi tải về.
 
-If the element has been configured incorrectly, in PROD it will not be rendered at all and in DEV mode the runtime will render the element in the error state. Possible errors include invalid or unsupported values of `layout`, `width` and `height` attributes.
+Nếu yếu tố được cấu hình sai cách, nó sẽ hoàn toàn không được render trong PROD, và trong chế độ DEV, thời gian chạy sẽ render yếu tố này trong trạng thái lỗi. Các lỗi tiềm năng bao gồm giá trị không hợp lệ hoặc không được hỗ trợ của các thuộc tính `layout` (bố cục), `width` (chiều rộng) và `height` (chiều cao).
 
-## Layout Attributes <a name="layout-attributes"></a>
+## Thuộc tính Bố cục <a name="layout-attributes"></a>
 
-### `width` and `height` <a name="width-and-height"></a>
+### `width` và `height` <a name="width-and-height"></a>
 
-Depending on the value of the `layout` attribute, AMP component elements must have a `width` and `height` attribute that contains an integer pixel value. Actual layout behavior is determined by the `layout` attribute as described below.
+Tùy thuộc vào giá trị của thuộc tính `layout` (bố cục), các yếu tố thành phần AMP phải có một thuộc tính `width` (chiều rộng) và `height` (chiều cao) chứa một giá trị điểm ảnh là số nguyên. Hành vi bố cục thực tế được xác định bởi thuộc tính `layout` (bố cục) như được mô tả dưới đây.
 
-In a few cases, if `width` or `height` are not specified, the AMP runtime can default these values as follows:
+Trong một số trường hợp, nếu `width` (chiều rộng) hoặc `height` (chiều cao) không được quy định, thời gian chạy AMP có thể gán mặc định cho các giá trị này như sau:
 
-- `amp-pixel`: Both `width` and `height` are defaulted to 0.
-- `amp-audio`: The default `width` and `height` are inferred from browser.
+- `amp-pixel`: Cả `width` (chiều rộng) và `height` (chiều cao) đều được đặt mặc định là 0.
+- `amp-audio`: `width` (chiều rộng) và `height` (chiều cao) mặc định được suy diễn từ trình duyệt.
 
 ### `layout` <a name="layout"></a>
 
-AMP provides a set of layouts that specify how an AMP component behaves in the document layout. You can specify a layout for a component by adding the `layout` attribute with one of the values specified in the table below.
+AMP cung cấp một nhóm bố cục quy định hoạt động của một thành phần AMP trong bố cục tài liệu. Bạn có thể quy định một bố cục cho một thành phần bằng cách bổ sung thuộc tính `layout` (bố cục) với một trong các giá trị bố cục được quy định trong bảng dưới đây.
 
-**Example**: A simple responsive image, where width and height are used to determine the aspect ratio.
+**Ví dụ**: Một ảnh tương thích đơn giản, ở đó chiều rộng và chiều cao được sử dụng để xác định tỷ lệ khung hình.
 
 [sourcecode:html]
 <amp-img
@@ -76,51 +76,52 @@ AMP provides a set of layouts that specify how an AMP component behaves in the d
 ></amp-img>
 [/sourcecode]
 
-Supported values for the `layout` attribute:
+Các giá trị được hỗ trợ cho thuộc tính `layout` (bố cục):
 
 <table>
   <thead>
     <tr>
-      <th width="30%">Value</th>
-      <th>Behavior  and  Requirements</th>
+      <th width="30%">Giá trị</th>
+      <th>Hành vi và Yêu cầu</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Not present</td>
-      <td>If no value is specified, the layout for the component is inferred as follows:         <ul>           <li>If <code>height</code> is present and <code>width</code> is absent or is set to <code>auto</code>, a <code>fixed-height</code> layout is assumed.</li>           <li>If <code>width</code> and <code>height</code> are present along with a <code>sizes</code> or <code>heights</code> attribute, a <code>responsive</code> layout is assumed.</li>           <li>If <code>width</code> and <code>height</code> are present, a  <code>fixed</code> layout is assumed.</li>           <li> if <code>width</code> and <code>height</code> are absent, a <code>container</code> layout is assumed.</li>         </ul>       </td>
+      <td>Không có</td>
+      <td>Nếu không có giá trị nào được quy định, bố cục cho thành phần sẽ được suy diễn như sau:         <ul>           <li>Nếu <code>height</code> (chiều cao) được quy định và <code>width</code> (chiều rộng) bị thiếu hoặc được thiết lập là <code>auto</code> (tự động), một bố cục <code>fixed-height</code> (có chiều cao cố định) sẽ được ngầm định.</li>           <li>Nếu <code>width</code> (chiều rộng) và <code>height</code> (chiều cao) cùng được quy định với một thuộc tính <code>sizes</code> (kích thước) hoặc <code>heights</code> (chiều cao), một bố cục <code>responsive</code> (tương thích) sẽ được ngầm định.</li>           <li>Nếu <code>width</code> (chiều rộng) và <code>height</code> (chiều cao) cùng được quy định, một bố cục <code>fixed</code> (cố định) sẽ được ngầm định.</li>           <li> Nếu <code>width</code> (chiều rộng) và <code>height</code> (chiều cao) bị thiếu, một bố cục <code>container</code> (hộp chứa) sẽ được ngầm định.</li>         </ul>
+</td>
     </tr>
     <tr>
       <td><code>container</code></td>
-      <td>The element lets its children define its size, much like a normal HTML <code>div</code>. The component is assumed to not have specific layout itself but only act as a container; its children are rendered immediately.</td>
+      <td>Yếu tố cho phép con của nó tự quy định kích cỡ, như một thẻ <code>div</code> HTML thông thường. Thành phần này được giả sử là không có một bố cục cụ thể, mà hoạt động như một container; các con của nó được render ngay lập tức.</td>
     </tr>
     <tr>
       <td><code>fill</code></td>
-      <td>The element takes the space available to it—both width and height. In other words, the layout and size of a <code>fill</code> element matches its parent. For an element to fill its parent container, specify the "fill" layout, and ensure the parent container specifies <code>position:relative</code> or <code>position:absolute</code>. </td>
+      <td>Yếu tố sẽ chiếm diện tích dành cho nó, cả chiều rộng lẫn chiều cao. Nói cách khác, bố cục và kích thước của một yếu tố <code>fill</code> (lấp đầy) sẽ khớp với cha của nó. Để một yếu tố có thể lấp đầy container cha của nó, quy định bố cục "fill" (lấp đầy) và đảm bảo container cha quy định <code>position:relative</code> (vị trí:tương đối) hoặc <code>position:absolute</code> (vị trí:tuyệt đối).</td>
     </tr>
     <tr>
       <td><code>fixed</code></td>
-      <td>The element has a fixed width and height with no responsiveness supported. The <code>width</code> and <code>height</code> attributes must be present. The only exceptions are the <code>amp-pixel</code> and <code>amp-audio</code> components. </td>
+      <td>Yếu tố này có một chiều rộng và chiều cao cố định, và không hỗ trợ tương thích. Các thuộc tính <code>width</code> (chiều rộng) và <code>height</code> (chiều cao) phải được quy định. Các ngoại lệ duy nhất là các thành phần <code>amp-pixel</code> và <code>amp-audio</code>.</td>
     </tr>
     <tr>
       <td><code>fixed-height</code></td>
-      <td>The element takes the space available to it but keeps the height unchanged. This layout works well for elements such as <code>amp-carousel</code> that involves content positioned horizontally. The <code>height</code> attribute must be present. The <code>width</code> attribute must not be present or must be equal to <code>auto</code>. </td>
+      <td>Yếu tố sẽ chiếm diện tích dành cho nó nhưng không thay đổi chiều cao. Bố cục này hoạt động tốt cho các yếu tố như <code>amp-carousel</code> liên quan đến nội dung được đặt ngang. Thuộc tính <code>height</code> (chiều cao) phải được quy định. Thuộc tính <code>width</code> (chiều rộng) phải không được quy định hoặc bằng <code>auto</code> (tự động).</td>
     </tr>
     <tr>
       <td><code>flex-item</code></td>
-      <td>The element and other elements in its parent with layout type <code>flex-item</code> take the parent container's remaining space when the parent is a flexible container (i.e., <code>display: flex</code>). The <code>width</code> and <code>height</code> attributes are not required.</td>
+      <td>Yếu tố và các yếu tố khác trong cha của nó với loại bố cục <code>flex-item</code> sẽ chiếm diện tích còn lại của container cha khi cha là một container linh hoạt (nghĩa là, <code>display: flex</code> (hiển thị:linh hoạt)). Các thuộc tính <code>width</code> (chiều rộng) và <code>height</code> (chiều cao) là không cần thiết.</td>
     </tr>
     <tr>
       <td><code>intrinsic</code></td>
-      <td>The element takes the space available to it and resizes its height automatically to the aspect ratio given by the <code>width</code> and <code>height</code> attributes <em>until</em> it reaches the element's size defined by the `width` and `height` attributes passed to the <code>amp-img</code>, or reaches a CSS constraint, such as `max-width`. The width and height attributes must be present. This layout works very well for most AMP elements, including <code>amp-img</code>, <code>amp-carousel</code>, etc. The available space depends on the parent element and can also be customized using <code>max-width</code> CSS. This layout differs from <code>responsive</code> by having an intrinsic height and width. This is most apparent inside a floated element where a <code>responsive</code> layout will render 0x0 and an <code>intrinsic</code> layout will inflate to the smaller of its natural size or any CSS constraint.</td>
+      <td>Yếu tố này chiếm dịch tích dành cho nó và tự động đổi kích cỡ chiều cao của nó theo tỷ lệ khung hình được quy định bởi thuộc tính <code>width</code> (chiều rộng) và <code>height</code> (chiều cao) <em>cho đến khi</em> nó đạt kích thước của yếu tố, được định nghĩa với các thuộc tính `width` và `height` được truyền đến <code>amp-img</code>, hoặc đạt một giới hạn CSS ví dụ như `max-width`. Các thuộc tính width (chiều rộng) và height (chiều cao) phải được quy định. Bố cục này hoạt động tốt cho hầu hết các yếu tố AMP, bao gồm <code>amp-img</code>, <code>amp-carousel</code>, v.v. Không gian có sẵn phụ thuộc vào yếu tố cha và cũng có thể được tùy chỉnh sử dụng CSS <code>max-width</code>. Bố cục này khác với bố cục <code>responsive</code> (tương thích) bởi nó có một chiều cao và chiều rộng thực chất. Điều này được thể hiện rõ nhất trong một yếu tố nổi mà ở đó bố cục <code>responsive</code> (tương thích) sẽ render 0x0 và một bố cục <code>intrinsic</code> (thực chất) sẽ tăng lên đến ngưỡng nhỏ hơn của kích cỡ tự nhiên của nó hay bất kỳ hạn chế CSS nào.</td>
     </tr>
     <tr>
       <td><code>nodisplay</code></td>
-      <td>The element isn't displayed, and takes up zero space on the screen as if its display style was <code>none</code>. This layout can be applied to every AMP element.  It’s assumed that the element can display itself on user action (e.g., <code>amp-lightbox</code>). The <code>width</code> and <code>height</code> attributes are not required.</td>
+      <td>Yếu tố này không được hiển thị, và không chiếm diện tích trên màn hình bởi phong cách hiển thị của nó là  <code>none</code> (không có). Bố cục này có thể được áp dụng cho mọi yếu tố AMP. Yếu tố này có thể được hiển thị tùy theo hành động của người dùng (ví dụ như <code>amp-lightbox</code>). Các thuộc tính <code>width</code> (chiều rộng) và <code>height</code> (chiều cao) là không cần thiết.</td>
     </tr>
     <tr>
       <td><code>responsive</code></td>
-      <td>The element takes the space available to it and resizes its height automatically to the aspect ratio given by the <code>width</code> and <code>height</code> attributes. This layout works very well for most AMP elements, including <code>amp-img</code>, <code>amp-video</code>, etc.  The available space depends on the parent element and can also be customized using <code>max-width</code> CSS. The <code>width</code> and <code>height</code> attributes must be present.<p><strong>Note</strong>: Elements with <code>"layout=responsive"</code> have no intrinsic size. The size of the element is determined from its container element. To ensure your AMP element displays, you must specify a width and height for the  containing element. Do not specify <code>"display:table"</code> on the containing element as this overrides the display of the AMP element, rendering the AMP element invisible.</p>
+      <td>Yếu tố này chiếm dịch tích dành cho nó và tự động đổi kích cỡ chiều cao của nó theo tỷ lệ khung hình được quy định bởi thuộc tính <code>width</code> (chiều rộng) và <code>height</code> (chiều cao). Bố cục này hoạt động tốt cho hầu hết các yếu tố AMP, bao gồm <code>amp-img</code>, <code>amp-video</code>, v.v. Không gian có sẵn phụ thuộc vào yếu tố cha và cũng có thể được tùy chỉnh sử dụng CSS <code>max-width</code>. Các thuộc tính <code>width</code> (chiều rộng) và <code>height</code> (chiều cao) phải được quy định.<p><strong>Lưu ý</strong>: Các yếu tố có <code>"layout=responsive"</code> không có kích cỡ thực chất. Kích cỡ của yếu tố này được xác định bởi yếu tố container của nó. Để đảm bảo yếu tố AMP của bạn được hiển thị, bạn phải quy định một chiều rộng và chiều cao cho yếu tố chứa nó. Không quy định  <code>"display:table"</code> trên yếu tố chứa nó bởi điều này sẽ ghi đè việc hiển thị yếu tố AMP, khiến yếu tố AMP bị vô hình.</p>
 </td>
     </tr>
   </tbody>
@@ -128,13 +129,13 @@ Supported values for the `layout` attribute:
 
 ### `sizes` <a name="sizes"></a>
 
-All AMP elements that support the `responsive` layout, also support the `sizes` attribute. The value of this attribute is a sizes expression as described in the [img sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), but extended to all elements, not just images. In short, the `sizes` attribute describes how the width of the element is calculated depending on the media conditions.
+Mọi yếu tố AMP hỗ trợ bố cục `responsive` (tương thích) cũng đều hỗ trợ thuộc tính `sizes` (kích cỡ). Giá trị của thuộc tính này là biểu thức sizes (kích cỡ) như được mô tả trong [img sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), nhưng được mở rộng cho mọi yếu tố, không chỉ là ảnh. Nói một cách ngắn gọn, thuộc tính `sizes` (kích thước) mô tả cách chiều rộng của yếu tố được tính dựa trên các điều kiện đa phương tiện.
 
-When the `sizes` attribute is specified along with `width` and `height`, the `layout` is defaulted to `responsive`.
+Khi thuộc tính `sizes` (kích thước) được quy định với `width` (chiều rộng) và `height` (chiều cao), `layout` (bố cục) sẽ được đặt mặc định là `responsive` (tương thích).
 
-**Example**: Using the `sizes` attribute
+**Ví dụ**: Sử dụng thuộc tính `sizes` (kích thước)
 
-In the following example, if the viewport is wider than `320px`, the image will be 320px wide, otherwise, it will be 100vw wide (100% of the viewport width).
+Trong ví dụ sau, nếu màn hiển thị rộng hơn `320px`, ảnh sẽ rộng 320px, nếu không, nó sẽ rộng 100vw (100% chiều rộng màn hiển thị).
 
 [sourcecode:html]
 <amp-img
@@ -149,11 +150,11 @@ In the following example, if the viewport is wider than `320px`, the image will 
 
 ### `disable-inline-width` <a name="disable-inline-width"></a>
 
-The `sizes` attribute on its own will set an inline `width` style on the element. When pairing `disable-inline-width` with `sizes`, the AMP element will propagate the value of `sizes` to the element's underlying tag, as with the `img` nested inside an `amp-img`, **without** setting the inline `width` as `sizes` typically does on its own in AMP.
+Thuộc tính `sizes` (kích thước) đứng riêng sẽ thiết lập một phong cách `width` (chiều rộng) inline cho yếu tố này. Khi kết hợp `disable-inline-width` với `sizes`, yếu tố AMP sẽ nhân rộng giá trị của `sizes` (kích thước) đến thẻ cơ sở của yếu tố, cũng giống `img` được lồng trong một `amp-img`, **mà không** thiết lập `width` inline như `sizes` thường làm khi đứng riêng trong AMP.
 
-**Example**: Using the `disable-inline-width` attribute
+**Ví dụ**: Sử dụng thuộc tính `disable-inline-width`
 
-In the following example, the width of the `<amp-img>` element is unaffected, and `sizes` is only used to select one of the sources from the `srcset`.
+Trong ví dụ sau, chiều rộng của yếu tố `<amp-img>` không bị ảnh hưởng, và `sizes` (kích thước) chỉ được sử dụng để chọn một nguồn từ `srcset`.
 
 [sourcecode:html]
 <amp-img
@@ -169,16 +170,16 @@ In the following example, the width of the `<amp-img>` element is unaffected, an
 
 ### `heights` <a name="heights"></a>
 
-All AMP elements that support the `responsive` layout, also support the `heights` attribute. The value of this attribute is a sizes expression based on media expressions as similar to the [img sizes attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), but with two key differences:
+Mọi yếu tố AMP hỗ trợ bố cục `responsive` (tương thích) cũng đều hỗ trợ thuộc tính `heights` (chiều cao). Giá trị của thuộc tính này là biểu thức sizes (kích cỡ) dựa trên biểu thức đa phương tiện tương tự với [thuộc tính img sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), nhưng với 2 điểm khác biệt chính:
 
-1. It applies to the height, not the width of the element.
-2. Percent values are allowed, e.g. `86%`. If a percent value is used, it indicates the percentage of the element's width.
+1. Giá trị này được áp dụng cho chiều cao, chứ không phải là chiều rộng của yếu tố.
+2. Nó cho phép giá trị phần trăm, ví dụ như `86%`. Nếu giá trị phần trăm được sử dụng, nó sẽ chỉ báo phần trăm chiều rộng của yếu tố.
 
-When the `heights` attribute is specified along with `width` and `height`, the `layout` is defaulted to `responsive`.
+Khi thuộc tính `heights` (chiều cao) được quy định với `width` (chiều rộng) và `height` (chiều cao), `layout` (bố cục) sẽ được đặt mặc định là `responsive` (tương thích).
 
-**Example**: Using the `heights` attribute
+**Ví dụ**: Sử dụng thuộc tính `height` (chiều cao)
 
-In the following example, the height of the image will default to 80% of the width, but if the viewport is wider than `500px`, the height is capped at `200px`. Because the `heights` attribute is specified along with `width` and `height`, the layout defaults to `responsive`.
+Trong ví dụ sau, chiều cao của ảnh sẽ được đặt mặc định là 80% chiều rộng, nhưng nếu màn hiển thị rộng hơn `500px`, chiều cao sẽ được giới hạn ở `200px`. Bởi thuộc tính `heights` (chiều cao) được quy định với `width` (chiều rộng) và `height` (chiều cao), bố cục sẽ được đặt mặc định là `responsive` (tương thích).
 
 [sourcecode:html]
 <amp-img
@@ -192,11 +193,11 @@ In the following example, the height of the image will default to 80% of the wid
 
 ### `media` <a name="media"></a>
 
-Most AMP elements support the `media` attribute. The value of `media` is a media query. If the query does not match, the element is not rendered at all and its resources and potentially its child resources will not be fetched. If the browser window changes size or orientation, the media queries are re-evaluated and elements are hidden and shown based on the new results.
+Hầu hết các yếu tố đều hỗ trợ thuộc tính `media` (đa phương tiện). Giá trị của `media` là một truy vấn đa phương tiện. Nếu truy vấn không khớp, yếu tố này sẽ hoàn toàn không được render và các tài nguyên và có thể là tài nguyên con của nó sẽ không được truy xuất. Nếu cửa sổ trình duyệt thay đổi kích cỡ hoặc hướng, các truy vấn đa phương tiện sẽ được tái đánh giá và các yếu tố được ẩn và hiển thị dựa trên kết quả mới.
 
-**Example**: Using the `media` attribute
+**Ví dụ**: Sử dụng thuộc tính `media` (đa phương tiện)
 
-In the following example, we have 2 images with mutually exclusive media queries. Depending on the screen width, one of the two images will be fetched and rendered. The `media` attribute is available on all AMP elements, so it can be used with non-image elements, such as ads.
+Trong ví dụ sau đây, chúng ta có 2 ảnh với các truy vấn đa phương tiện loại trừ lẫn nhau. Tùy thuộc vào chiều rộng màn hình, một trong hai ảnh sẽ được truy xuất và render. Thuộc tính `media` (đa phương tiện) khả dụng trên tất cả các yếu tố AMP, vậy nên nó có thể được sử dụng với các yếu tố không phải ảnh, ví dụ như quảng cáo.
 
 [sourcecode:html]
 <amp-img
@@ -217,7 +218,7 @@ In the following example, we have 2 images with mutually exclusive media queries
 
 ### `placeholder` <a name="placeholder"></a>
 
-The `placeholder` attribute can be set on any HTML element, not just AMP elements. The `placeholder` attribute indicates that the element marked with this attribute acts as a placeholder for the parent AMP element. If specified, a placeholder element must be a direct child of the AMP element. By default, the placeholder is immediately shown for the AMP element, even if the AMP element's resources have not been downloaded or initialized. Once ready, the AMP element typically hides its placeholder and shows the content. The exact behavior with respect to the placeholder is up to the element's implementation.
+Thuộc tính `placeholder` (mã giữ chỗ) có thể được thiết lập trên mọi yếu tố HTML, không chỉ các yếu tố AMP. Thuộc tính `placeholder` (mã giữ chỗ) cho thấy yếu tố được đánh dấu với thuộc tính này sẽ hoạt động như mã giữ chỗ cho yếu tố AMP cha. Nếu được quy định, một yếu tố placeholder (mã giữ chỗ) phải là một con trực tiếp của yếu tố AMP. Theo mặc định, mã giữ chỗ sẽ được hiển thị ngay lập tức cho yếu tố AMP, kể cả khi tài nguyên của yếu tố AMP chưa được tải về hoặc bắt đầu. Sau khi đã sẵn sàng, yếu tố AMP thường sẽ ẩn mã giữ chỗ của nó và hiển thị nội dung. Hành vi chính xác liên quan đến mã giữ chỗ này phụ thuộc vào việc triển khai của yếu tố.
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
@@ -227,7 +228,7 @@ The `placeholder` attribute can be set on any HTML element, not just AMP element
 
 ### `fallback` <a name="fallback"></a>
 
-The `fallback` attribute can be set on any HTML element, not just AMP elements. A fallback is a convention that allows the element to communicate to the reader that the browser does not support the element. If specified, a fallback element must be a direct child of the AMP element. The exact behavior with respect to the fallback is up to the element's implementation.
+Thuộc tính `fallback` (phương án dự phòng) có thể được thiết lập trên mọi yếu tố HTML, không chỉ các yếu tố AMP. Phương án dự phòng là một quy ước cho phép yếu tố giao tiếp với độc giả rằng trình duyệt không hỗ trợ yếu tố. Nếu được quy định, một yếu tố fallback (phương án dự phòng) phải là một con trực tiếp của yếu tố AMP. Hành vi chính xác liên quan đến phương án dự phòng này phụ thuộc vào việc triển khai của yếu tố.
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
@@ -237,83 +238,80 @@ The `fallback` attribute can be set on any HTML element, not just AMP elements. 
 
 ### `noloading` <a name="noloading"></a>
 
-The `noloading` attribute indicates whether the "loading indicator" should be turned off for this element. Many AMP elements are allow-listed to show a "loading indicator", which is a basic animation that shows that the element has not yet fully loaded. The elements can opt out of this behavior by adding this attribute.
+Thuộc tính `noloading` (không tải) chỉ báo khi nào thì "chỉ báo tải" nên được tắt cho yếu tố này. Rất nhiều yếu tố AMP được cho phép hiển thị một "chỉ báo tải", vốn là một hình hoạt họa cơ bản cho thấy rằng yếu tố này chưa được tải đầy đủ. Các yếu tố có thể bỏ hành vi này bằng cách thêm thuộc tính này.
 
-## (tl;dr) Summary of Layout Requirements & Behaviors <a name="tldr-summary-of-layout-requirements--behaviors"></a>
+## (tl;dr) Tóm tắt Yêu cầu & Hành vi của Bố cục <a name="tldr-summary-of-layout-requirements--behaviors"></a>
 
-The following table describes the acceptable parameters, CSS classes, and styles used for the `layout` attribute. Note that:
+Bảng sau đây mô tả các tham số được chấp nhận, lớp CSS và phong cách được sử dụng cho thuộc tính `layout` (bố cục). Lưu ý rằng:
 
-1. Any CSS class marked prefixed with `-amp-` and elements prefixed with `i-amp-` are considered to be internal to AMP and their use in user stylesheets is not allowed. They are shown here simply for informational purposes.
-2. Even though `width` and `height` are specified in the table as required, the default rules may apply as is the case with `amp-pixel` and `amp-audio`.
+1. Mọi lớp CSS có tiền tố `-amp-` và các yếu tố có tiền tố `i-amp-` đều được coi là nội bộ đối với AMP và việc sử dụng của chúng trong các stylesheet người dùng là không được cho phép. Chúng chỉ được hiển thị ở đây vì mục đích thông tin.
+2. Tuy `width` (chiều rộng) và `height` (chiều cao) được quy định trong bảng này như cần thiết, các quy tắc mặc định có thể áp dụng như trường hợp của `amp-pixel` và `amp-audio`.
 
 <table>
   <thead>
     <tr>
-      <th width="21%">Layout</th>
-      <th width="20%">Width/<br>Height Required?</th>
-      <th width="20%">Defines Size?</th>
-      <th width="20%">Additional Elements</th>
+      <th width="21%">Bố cục</th>
+      <th width="20%">Cần Chiều rộng/<br>Chiều cao?</th>
+      <th width="20%">Định nghĩa Kích thước?</th>
+      <th width="20%">Yếu tố Bổ sung</th>
       <th width="19%">CSS "display"</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><code>container</code></td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
+      <td>Không</td>
+      <td>Không</td>
+      <td>Không</td>
       <td><code>block</code></td>
     </tr>
     <tr>
       <td><code>fill</code></td>
-      <td>No</td>
-      <td>Yes, parent's size.</td>
-      <td>No</td>
+      <td>Không</td>
+      <td>Có, kích thước của cha.</td>
+      <td>Không</td>
       <td><code>block</code></td>
     </tr>
     <tr>
       <td><code>fixed</code></td>
-      <td>Yes</td>
-      <td>Yes, specified by <code>width</code> and <code>height</code>.</td>
-      <td>No</td>
+      <td>Có</td>
+      <td>Có, quy định bởi <code>width</code> (chiều rộng) và <code>height</code> (chiều cao).</td>
+      <td>Không</td>
       <td><code>inline-block</code></td>
     </tr>
     <tr>
       <td><code>fixed-height</code></td>
-      <td>
-<code>height</code> only; <code>width</code> can be <code>auto</code>
-</td>
-      <td>Yes, specified by the parent container and <code>height</code>.</td>
-      <td>No</td>
+      <td>Chỉ <code>height</code> (chiều cao); <code>width</code> (chiều rộng) có thể là <code>auto</code> (tự động)</td>
+      <td>Có, quy định bởi container cha và <code>height</code> (chiều cao).</td>
+      <td>Không</td>
       <td><code>block</code></td>
     </tr>
     <tr>
       <td><code>flex-item</code></td>
-      <td>No</td>
-      <td>No</td>
-      <td>Yes, based on parent container.</td>
+      <td>Không</td>
+      <td>Không</td>
+      <td>Có, dựa trên container cha.</td>
       <td><code>block</code></td>
     </tr>
     <tr>
       <td><code>intrinsic</code></td>
-      <td>Yes</td>
-      <td>Yes, based on parent container and aspect ratio of <code>width:height</code>.</td>
-      <td>Yes, <code>i-amphtml-sizer</code>.</td>
-      <td>
-<code>block</code> (behaves like a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element" rel="nofollow">replaced element</a>)</td>
+      <td>Có</td>
+      <td>Có, dựa trên container cha và tỷ lệ khung hình của <code>width:height</code> (chiều rộng:chiều cao).</td>
+      <td>Có, <code>i-amphtml-sizer</code>.</td>
+      <td> <code>block</code> (cư xử như một <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element" rel="nofollow">yếu tố bị thay thế</a>)</td>
     </tr>
     <tr>
       <td><code>nodisplay</code></td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
+      <td>Không</td>
+      <td>Không</td>
+      <td>Không</td>
       <td><code>none</code></td>
     </tr>
     <tr>
       <td><code>responsive</code></td>
-      <td>Yes</td>
-      <td>Yes, based on parent container and aspect ratio of <code>width:height</code>.</td>
-      <td>Yes, <code>i-amphtml-sizer</code>.</td>
+      <td>Có</td>
+      <td>Có, dựa trên container cha và tỷ lệ khung hình của <code>width:height</code> (chiều rộng:chiều cao).</td>
+      <td>Có, <code>i-amphtml-sizer</code>.</td>
       <td><code>block</code></td>
     </tr>
   </tbody>
