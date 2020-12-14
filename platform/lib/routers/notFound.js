@@ -18,13 +18,21 @@
 
 const {pagePath} = require('@lib/utils/project');
 const {setMaxAge} = require('../utils/cacheHelpers.js');
+const AmpOptimizer = require('@ampproject/toolbox-optimizer');
+const {readFileSync} = require('fs');
+const {join} = require('path');
+const FourOhFour = readFileSync(join(pagePath(), '404.html'), 'utf-8');
+
+const optimizer = AmpOptimizer.create();
 
 // eslint-disable-next-line no-unused-vars
 module.exports = (req, res, next) => {
   setMaxAge(res, 60 * 10); // ten minutes
   if (req.headers.accept && req.headers.accept.includes('text/html')) {
-    res.status(404).sendFile('404.html', {root: pagePath()});
-    return;
+    optimizer.transformHtml(FourOhFour).then((optimized) => {
+      res.status(404).send(optimized);
+    });
+  } else {
+    res.status(404).send('404').end();
   }
-  res.status(404).send('404').end();
 };
