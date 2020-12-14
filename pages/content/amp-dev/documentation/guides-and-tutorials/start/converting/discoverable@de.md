@@ -88,7 +88,7 @@ Für gültige AMP Seiten sind keine strukturierten Daten von [schema.org](http:/
 
 **Lade** die Seite in deinem Browser neu und stelle sicher, dass es keine AMP Validierungsfehler gibt.
 
-[tip type="note"] In addition to the schema.org structured data format, there are other formats supported by search engines and social media networks. See the supported documentation:
+[tip type="note"] Neben dem strukturierten Datenformat von schema.org werden auch weitere Formate von Suchmaschinen und sozialen Netzwerken unterstützt. Hier findest du entsprechende Dokumentationen:
 
 - [Metatags für Twitter Cards](https://dev.twitter.com/cards/overview)
 - [Metatags für Facebook Open Graph](https://developers.facebook.com/docs/sharing/webmasters) [/tip]
