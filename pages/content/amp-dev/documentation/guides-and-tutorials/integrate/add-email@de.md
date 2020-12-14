@@ -44,7 +44,6 @@ Content-Type: text/html; charset="UTF-8"
 
 <span>Hello World in HTML!</span>
 --001a114634ac3555ae05525685ae
-
 ```
 
 [tip type="important"] Um sicherzustellen, dass eine E-Mail gerendert wird, platziere den MIME Teil `text/x-amp-html` vor dem MIME Teil `text/html`. [/tip]
