@@ -23,7 +23,15 @@
     color: color('river-bed');
 
     &-formats {
+      display: flex;
       width: 8%;
+
+      .#{prefix(null, 'tag')} {
+        max-width: 8px;
+        max-height: 8px;
+        margin-right: 4px;
+        border-radius: 50%;
+      }
     }
 
     &-title {

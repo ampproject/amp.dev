@@ -112,9 +112,14 @@ recent_components:
         {% for component in docs if component.is_current %}
         <li>
           <a class="ap-table-component-link" href="{{ component.url.path }}">
-            <div class="ap-table-component-link-formats">
+            {% if component.formats %}
+              <div class="ap-table-component-link-formats">
+                {% for format in component.formats %}
+                <div class="ap-tag --{{ format }}"></div>
+                {% endfor %}
+              </div>
+            {% endif %}
 
-            </div>
             <div class="ap-table-component-link-title">{{ component.title }}</div>
             <div class="ap-table-component-link-description">{{ component.teaser.text|truncate(70, false, '...') }}</div>
           </a>
