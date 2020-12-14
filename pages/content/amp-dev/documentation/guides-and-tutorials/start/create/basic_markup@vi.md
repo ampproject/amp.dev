@@ -1,13 +1,13 @@
 ---
-"$title": Create your AMP HTML page
+"$title": Tạo trang AMP HTML của bạn
 "$order": '1'
-description: 'Use HTTPS: When creating AMP pages and content, you should strongly consider using the HTTPS protocol (vs. HTTP). Although, HTTPS is not required for the AMP document itself or ...'
+description: 'Sử dụng HTTPS: Khi tạo các trang và nội dung AMP, bạn nên cân nhắc sử dụng giao thức HTTPS (thay cho HTTP). Tuy bản thân tài liệu không bắt buộc sử dụng HTTPS...'
 author: pbakaus
 contributors:
 - bpaduch
 ---
 
-The following markup is a decent starting point or boilerplate. Copy this and save it to a file with a .html extension.
+Các đánh dấu sau là một điểm bắt đầu hay code soạn sẵn tốt. Hãy sao chép và lưu chúng vào một tập tin với phần mở rộng .html.
 
 [sourcecode:html]
 <!doctype html>
@@ -37,36 +37,36 @@ The following markup is a decent starting point or boilerplate. Copy this and sa
 </html>
 [/sourcecode]
 
-The content in the body, so far, is pretty straightforward. But there’s a lot of additional code in the head of the page that might not be immediately obvious. Let’s deconstruct the required mark-up.
+Nội dung của phần body (thân), đến hiện tại, vẫn còn khá đơn giản. Nhưng có rất nhiều mã bổ sung trong phần head (đầu đề) của trang mà có thể không quá rõ ràng. Hãy cùng phân tích đánh dấu bắt buộc.
 
-Use HTTPS: When creating AMP pages and content, you should strongly consider using the HTTPS protocol (vs. HTTP). Although, HTTPS is not required for the AMP document itself or for images and fonts, there are many AMP features that require HTTPS (e.g., video, iframes, and more). To ensure your AMP pages take full advantage of all AMP features, use the HTTPS protocol.  You can learn more about HTTPS in ["Why HTTPS Matters"](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
+Sử dụng HTTPS: Khi tạo các trang và nội dung AMP, bạn nên cân nhắc sử dụng giao thức HTTPS (thay cho HTTP). Tuy bản thân tài liệu hay các ảnh và phông chữ không bắt buộc sử dụng HTTPS, nhưng có rất nhiều tính năng cần HTTPS (ví dụ như video, iframe, v.v.). Để đảm bảo các trang AMP của bạn tận dụng được tất cả các tính năng AMP, hãy sử dụng giao thức HTTPS. Bạn có thể tìm hiểu thêm về HTTPS trong bài ["Tầm quan trọng của HTTPS"](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
 
-[tip type="tip"] Use the [AMP Boilerplate Generator](/boilerplate) to quickly get started with creating new AMP pages. [/tip]
+[tip type="tip"] Sử dụng [Trình tạo Code soạn sẵn AMP](/boilerplate) để nhanh chóng bắt đầu tạo các trang AMP mới. [/tip]
 
-## Required mark-up
+## Đánh dấu bắt buộc
 
-AMP HTML documents MUST:
+Các tài liệu AMP HTML PHẢI:
 
-Rule | Description
+Quy tắc | Mô tả
 --- | ---
-Start with the `<!doctype html>` doctype. | Standard for HTML.
-Contain a top-level `<html ⚡>` tag <br>(`<html amp>` is accepted as well). | Identifies the page as AMP content.
-Contain `<head>` and `<body>` tags. | Optional in HTML but not in AMP.
-Contain a `<meta charset="utf-8">` tag as the first child of their `<head>` tag. | Identifies the encoding for the page.
-Contain a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside their `<head>` tag. As a best practice, you should include the script as early as possible in the `<head>`. | Includes and loads the AMP JS library.
-Contain a `<link rel="canonical" href="$SOME_URL">` tag inside their `<head>`. | Points to the regular HTML version of the AMP HTML document or to itself if no such HTML version exists. Learn more in [Make Your Page Discoverable](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md).
-Contain a `<meta name="viewport" content="width=device-width"> It's also recommended to include `initial-scale=1`. | Specifies a responsive viewport. Learn more in [Create Responsive AMP Pages](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).
-Contain the [AMP boilerplate code](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) in their `<head>` tag. | CSS boilerplate to initially hide the content until AMP JS is loaded.
+Bắt đầu với loại tài liệu `<!doctype html>`. | Tiêu chuẩn cho HTML.
+Chứa một thẻ `<html ⚡>` cấp cao nhất <br>(`<html amp>` cũng được chấp nhận). | Xác định trang này là có nội dung AMP.
+Chứa các thẻ `<head>` và `<body>`. | Chúng là tùy chọn trong HTML nhưng là bắt buộc trong AMP.
+Chứa một thẻ `<meta charset="utf-8">` như con đầu tiên của thẻ `<head>`. | Thẻ này xác định mã hóa cho trang.
+Chứa một thẻ `<script async src="https://cdn.ampproject.org/v0.js"></script>` trong thẻ `<head>`. Theo biện pháp thực hành tiên tiến nhất, bạn nên bao gồm kịch bản này càng sớm càng tốt trong `<head>` (đầu đề). | Bao gồm và tải thư viện AMP JS.
+Chứa một thẻ `<link rel="canonical" href="$SOME_URL">` trong phần `<head>`. | Chỉ đến phiên bản HTML thông thường của tài liệu AMP HTML này hoặc đến chính nó nếu phiên bản HTML đó không tồn tại. Tìm hiểu thêm trong phần [Quảng bá trang của bạn](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md).
+Chứa một thẻ `<meta name="viewport" content="width=device-width>`. Bạn cũng nên bao gồm initial-scale=1. | Quy định một màn hiển thị tương thích. Tìm hiểu thêm trong bài [Tạo các trang AMP tương thích](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).
+Chứa [code soạn sẵn AMP](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) trong thẻ <code><head></code>. | Một đoạn code soạn sẵn CSS để ẩn nội dung từ đầu cho đến khi AMP JS được tải.
 
-## Optional metadata
+## Siêu dữ liệu tùy chọn
 
-In addition to the bare requirements, our sample also includes a Schema.org definition in the head, which isn’t a strict requirement for AMP, but it is a requirement to get your content distributed in certain places (for example, in the Google Search top stories carousel).
+Ngoài các yêu cầu tối thiểu, đoạn code mẫu của chúng ta cũng bao gồm một định nghĩa Schema.org ở phần head (đầu đề), vốn không phải là yêu cầu bắt buộc cho AMP, nhưng cần để phân phối nội dung của bạn ở một số nơi (ví dụ, trong băng chuyền câu chuyện hàng đầu của Google Tìm kiếm).
 
-[tip type="read-on"]Visit these resources to learn more:
+[tip type="read-on"] Truy cập các tài nguyên này để tìm hiểu thêm:
 
-- [Getting Started with AMP on Google Search](https://developers.google.com/amp/docs) - learn to prepare your AMP pages for Google Search.
-- [Metadata samples](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) - learn more about all the metadata you’ll need in various other places (e.g., Twitter). [/tip]
+- [Bắt đầu với AMP trên Google Tìm kiếm](https://developers.google.com/amp/docs) - tìm hiểu để chuẩn bị các trang AMP của bạn cho Google Tìm kiếm.
+- [Mẫu siêu dữ liệu](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) - tìm hiểu thêm về tất cả các siêu dữ liệu mà bạn sẽ cần ở các nơi khác nhau (ví dụ: Twitter). [/tip]
 
 <hr>
 
-Good news! That’s all we need to create our first AMP page, but of course, there’s not a lot going on in the body yet. In the next section, we’ll cover how to add basics like images, custom AMP elements, how to style your page and work out a responsive layout.
+Tin tốt đây! Đó là tất cả những gì chúng ta cần để tạo trang AMP đầu tiên, nhưng dĩ nhiên, chưa có nhiều nội dung trong phần body (thân). Ở phần tiếp theo, chúng ta sẽ bàn về cách để thêm các nội dung cơ bản như ảnh, yếu tố AMP tùy chỉnh, cách để tạo phong cách cho trang của bạn và áp dụng một bố cục tương thích.
