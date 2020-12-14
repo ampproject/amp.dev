@@ -1,7 +1,7 @@
 <span id="ap-sidebar-toolbar" class="ap-sidebar --sidebaropen">
 
   {% do doc.icons.useIcon('/icons/sidebar-toggle.svg') %}
-  <button class="ap-sidebar-toggle"
+  <button id="sidebar-toggle" class="ap-sidebar-toggle"
       on="tap:ap-sidebar-toolbar.toggleClass(class=--sidebaropen)">
     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sidebar-toggle"></use></svg>
     <span>{{ _('Toggle Sidebar') }}</span>

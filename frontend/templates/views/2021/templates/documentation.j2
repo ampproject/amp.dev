@@ -2,9 +2,40 @@
 
 {% block main %}
 <main>
+  <amp-animation id="sidebarToggleAnim"
+      layout="nodisplay">
+    <script type="application/json">
+      {
+        "duration": "100ms",
+        "fill": "both",
+        "iterations": "1",
+        "direction": "alternate",
+        "animations": [
+          {
+            "selector": "#sidebar-toggle",
+            "duration": "1ms",
+            "keyframes": { "opacity": 1 }
+          },
+          {
+            "selector": "#sidebar-toggle",
+            "duration": "99ms",
+            "delay": "1ms",
+            "keyframes": { "opacity": 0 }
+          }
+        ]
+      }
+    </script>
+  </amp-animation>
+
   {% include 'views/2021/partials/sidebar.j2' %}
 
   <div class="ap-content">
+    <div class="">
+      <amp-position-observer on="exit:sidebarToggleAnim.start"
+          intersection-ratio="0.01"
+          layout="nodisplay">
+      </amp-position-observer>
+    </div>
     {{ doc.html|render|safe }}
   </section>
 </main>
