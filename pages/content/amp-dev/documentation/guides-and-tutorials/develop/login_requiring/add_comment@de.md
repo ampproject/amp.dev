@@ -1,5 +1,5 @@
 ---
-"$title": Add a comment
+"$title": Füge einen Kommentar hinzu
 "$order": '2'
 description: An dieser Stelle können Benutzer mithilfe der Bibliothek amp-form einen Kommentar hinzufügen. Beachte, dass das Vorhandensein des Formulars bedingt ist und vom Status der Komponente amp-access abhängt …
 ---
@@ -12,7 +12,7 @@ An dieser Stelle können Benutzer mithilfe der Bibliothek [`amp-form`](../../../
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
 [/sourcecode]
 
-We specify a POST method and a XHR action, as non XHR actions are not allowed with POST methods in AMP. Because this is a demo, we are not persisting comments, so it’s only possible to add one comment at the time; whenever a comment is added, the AMPByExample server replies with a JSON response containing the entered text with some additions, like a timestamp, an avatar and a name for the user.
+Wir geben eine POST Methode und eine XHR Aktion an, da nicht-XHR Aktionen mit POST Methoden in AMP nicht zulässig sind. Da es sich um eine Demo handelt, bleiben Kommentare nicht erhalten, sodass jeweils nur ein Kommentar hinzugefügt werden kann. Wenn ein Kommentar hinzugefügt wird, reagiert der AMPByExample Server mit einer JSON Antwort, die den eingegebenen Text mit einigen Ergänzungen wie Zeitstempel, Avatar und Name für den Benutzer enthält.
 
 Hier ist ein Beispiel für eine JSON Antwort:
 
@@ -49,7 +49,7 @@ In diesem Beispiel prüfen wir nur, ob der Wert des Kommentars nicht leer ist. W
 </div>
 [/sourcecode]
 
-As an extra touch, we add the `required` attribute to enforce the presence of comment text before submitting the comment:
+Als Extra fügen wir das Attribut `required` hinzu, das verlangt, dass ein Kommentartext vorhanden ist, bevor der Kommentar gesendet wird:
 
 <amp-img src="/static/img/enforce-comment.png" alt="Enforce comment" height="325" width="300"></amp-img>
 
