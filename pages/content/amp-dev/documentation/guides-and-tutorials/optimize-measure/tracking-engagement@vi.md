@@ -1,5 +1,5 @@
 ---
-"$title": How to configure basic analytics for your AMP pages
+"$title": Cách cấu hình công cụ phân tích cơ bản cho các trang AMP
 "$order": '100'
 description: Các nền tảng phân tích thường được tích hợp vào các website thông qua đoạn code JavaScript inline và lệnh gọi chức năng để kích hoạt các sự kiện được gửi trả về hệ thống phân tích.
 tutorial: 'true'
@@ -31,7 +31,7 @@ ga('send', 'pageview');
 
 JavaScript này rất đơn giản; nó gửi một thông báo để theo dõi sự kiện xem trang.
 
-## Step 1: Include `amp-analytics` script
+## Bước 1: Bao gồm đoạn mã `amp-analytics`
 
 Để tái lập chức năng này trong AMP, trước tiên ta cần phải **bao gồm** thư viện thành phần [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) ở trong phần `<head>` của tài liệu:
 
@@ -39,7 +39,7 @@ JavaScript này rất đơn giản; nó gửi một thông báo để theo dõi 
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 ```
 
-## Step 2: Add configuration code
+## Bước 2: Thêm mã cấu hình
 
 Sau đó ta hãy **thêm** thành phần [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) vào cuối `body` (thân) tài liệu:
 
@@ -64,15 +64,15 @@ Sau đó ta hãy **thêm** thành phần [`amp-analytics`](../../../documentatio
 </amp-analytics>
 ```
 
-Just as with the JavaScript example at the top of this page, this [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) snippet will send a notification to Google Analytics indicating that a page has been viewed.
+Giống như với ví dụ JavaScript ở đầu trang này, đoạn mã [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) này sẽ gửi một tin báo đến Google Analytics cho biết một trang đã được xem.
 
 Để quy định điều này, chúng ta đã thiết lập `type` (loại) thành `googleanalytics` và sau đó trong JSON, chúng ta đã tạo một yếu tố kích hoạt gọi là "default pageview". Yếu tố kích hoạt này sẽ kích hoạt khi trang được hiển thị (nhờ có `"on": "visible"`) và khi nó kích hoạt, chúng ta sẽ gửi một yêu cầu phân tích `pageview` đến Google Analytics với `vars` mà chúng ta đã quy định.
 
 JSON dùng để cấu hình [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) là một định dạng rất linh hoạt để mô tả dữ liệu phân tích nào cần gửi đi và khi nào cần gửi nó. [`Amp-analytics`](../../../documentation/components/reference/amp-analytics.md) đã hoàn thành các chi tiết trên định dạng này.
 
-## Step 3: Adding more triggers
+## Bước 3: Thêm nhiều mã kích hoạt khác
 
-Building on the above example, we can **add** another trigger named `"click on #header trigger"`:
+Dựa vào ví dụ bên trên, ta có thể **thêm** mã kích hoạt khác mang tên `"click on #header trigger"`:
 
 ```html
 <amp-analytics type="googleanalytics">
