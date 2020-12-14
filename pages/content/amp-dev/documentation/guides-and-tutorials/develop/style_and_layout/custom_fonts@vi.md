@@ -1,7 +1,7 @@
 ---
-"$title": Add custom fonts
+"$title": Thêm phông chữ tùy chỉnh
 "$order": '6'
-description: "AMP pages can't include external stylesheets, with the exception of custom fonts. You can embed custom fonts into your page in two ways ..."
+description: Các trang AMP không thể bao gồm các stylesheet bên ngoài, ngoại trừ các phông chữ tùy chỉnh. Bạn có thể nhúng các phông chữ tùy chỉnh vào trang của mình theo 2 cách...
 formats:
 - websites
 - ads
@@ -9,20 +9,20 @@ formats:
 author: pbakaus
 ---
 
-AMP pages can’t include external stylesheets, with the exception of custom fonts. You can embed custom fonts into your page in two ways:
+Các trang AMP không thể bao gồm các stylesheet bên ngoài, ngoại trừ các phông chữ tùy chỉnh. Bạn có thể nhúng các phông chữ tùy chỉnh vào trang của mình theo 2 cách:
 
-1. Through a `<link>` tag (allow-listed font providers only)
-2. Via `@font-face` (no restrictions, all fonts allowed)
+1. Thông qua một thẻ `<link>` (chỉ các nhà cung cấp phông chữ được cho phép)
+2. Thông qua `@font-face` (không có hạn chế, mọi phông chữ đều được cho phép)
 
-### 1. Using `<link>`
+### 1. Sử dụng `<link>`
 
-Use a `<link>` tag (usually in the head of your page), like so:
+Sử dụng một thẻ `<link>` (thường là ở phần head của trang), ví dụ như:
 
 [sourcecode:html]
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 [/sourcecode]
 
-The following origins are allowlisted and allowed for font serving via link tags:
+Các nguồn gốc sau đây được cho phép và có thể phục vụ phông chữ thông qua thẻ liên kết:
 
 - Typography.com: **https://cloud.typography.com**
 - Fonts.com: **https://fast.fonts.net**
@@ -30,9 +30,9 @@ The following origins are allowlisted and allowed for font serving via link tags
 - Typekit: **https://use.typekit.net**
 - Font Awesome: **https://maxcdn.bootstrapcdn.com**, **https://use.fontawesome.com**
 
-### 2. Using `@font-face`
+### 2. Sử dụng `@font-face`
 
-Alternatively, you can use [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) within your AMP stylesheet:
+Hoặc, bạn có thể sử dụng [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) trong stylesheet AMP của mình:
 
 [sourcecode:html]
 <style amp-custom>
@@ -47,4 +47,4 @@ Alternatively, you can use [`@font-face`](https://developer.mozilla.org/en-US/do
 </style>
 [/sourcecode]
 
-[tip type="note"] **NOTE –**  Fonts included via `@font-face` must be fetched via the HTTP or HTTPS scheme. [/tip]
+[tip type="note"] **LƯU Ý –** Các phông chữ được bao gồm qua `@font-face` phải được truy xuất thông qua giao thức HTTP hoặc HTTPS. [/tip]
