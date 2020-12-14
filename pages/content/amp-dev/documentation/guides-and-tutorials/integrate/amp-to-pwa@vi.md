@@ -1,46 +1,46 @@
 ---
-"$title": Preload your PWA from your AMP pages
+"$title": Tải sẵn PWA của bạn từ các trang AMP
 "$order": '1'
-description: A good strategy is to make the entry point into your site an AMP page, then warm up the PWA behind the scenes and switch to ...
+description: Một chiến lược tốt là đặt một trang AMP làm trang đầu vào cho website của bạn, sau đó khởi động PWA đằng sau hậu trường và chuyển sang...
 formats:
 - websites
 author: pbakaus
 ---
 
-A good strategy is to make the **entry point into your site an AMP page**, then **warm up the PWA behind the scenes** and switch to it for the onward journey:
+Một chiến lược tốt là **đặt một trang AMP làm trang đầu vào cho website của bạn**, sau đó **khởi động PWA đằng sau hậu trường** và chuyển sang nó cho đoạn đường tiếp theo:
 
-- All content “leaf” pages (those that have specific content, not overview pages) are published as AMPs for that nearly instant loading experience.
-- These AMPs use AMP’s special element [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) to warm up a cache and the PWA shell while the user is enjoying your content.
-- When the user clicks another link on your website (for example, the call to action at the bottom for a more app-like experience), the service worker intercepts the request, takes over the page and loads the PWA shell instead.
+- Mọi trang “lá” nội dung (những trang có nội dung cụ thể, không chỉ là trang tổng quan) đều được đăng dưới dạng AMP cho trải nghiệm tải gần như tức thì.
+- Các AMP này sử dụng yếu tố đặc biệt [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) của AMP để khởi động một bộ nhớ đệm và dòng lệnh PWA trong khi người dùng đang thưởng thức nội dung của bạn.
+- Khi người dùng nhấn vào một liên kết khác trên website của bạn (ví dụ, nút kêu gọi hành động ở cuối cho một trải nghiệm tương đương ứng dụng), service worker sẽ tiếp quản yêu cầu này, giành quyền kiểm soát trang và tải dòng lệnh PWA.
 
-Read on to learn why, and how to use this development pattern.
+Đọc thêm để tìm hiểu lý do, và cách để sử dụng quy luật phát triển này.
 
-## Improve the user journey by connecting to a PWA
+## Cải thiện hành trình người dùng bằng cách kết nối với một PWA
 
-### AMP for initial user acquisition
+### AMP để thu nhận người dùng ban đầu
 
-AMP is an ideal solution for so-called **leaf pages**, content pages that your users discover organically through a search engine, a shared link by a friend or through a link on another site. Because of AMP's [specialized pre-rendering](../../../about/how-amp-works.html), AMP pages load extremely fast, which in return means much less drop off (the latest [DoubleClick study](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/) shows that **more than 53% of all users will drop off after 3 seconds**).
+AMP là một giải pháp lý tưởng cho các **trang lá**, là các trang nội dung mà người dùng của bạn phát hiện một cách tự nhiên thông qua một công cụ tìm kiếm, một liên kết do bạn bè chia sẻ hoặc thông qua một liên kết trên một website khác. Nhờ [kỹ thuật render sẵn chuyên dụng](../../../about/how-amp-works.html) của AMP, các trang AMP có thể tải rất nhanh, điều này đồng nghĩa với tỷ lệ bỏ cuộc thấp hơn đáng kể ([nghiên cứu mới nhất của DoubleClick](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/) cho thấy **hơn 53% người dùng sẽ bỏ cuộc sau 3 giây**).
 
-### PWA for rich interactivity and engagement
+### PWA cho khả năng tương tác và gắn kết đa dạng
 
-Progressive Web Apps, on the other hand, allow for much greater interactivity and engagement, but do not have the *instant first-load characteristics* of an AMP page. At their core is a technology called Service Worker, a client-side proxy that allows you to cache all sorts of assets for your pages, but said Service Worker only activates *after* the first load.
+Mặt khác, Ứng dụng Web Lũy tiến cho phép khả năng tương tác và gắn kết lớn hơn đáng kể, nhưng không có <em>đặc điểm tải đầu tiên tức thì</em> của một trang AMP. Ở cốt lõi của chúng là một công nghệ mang tên Service Worker, một proxy phía máy khách cho phép bạn lưu bộ nhớ đệm cho đủ loại tài sản cho các trang của bạn, nhưng Service Worker đó chỉ kích hoạt <em>sau</em> lần tải đầu tiên.
 
 {{ image('/static/img/docs/pwamp_comparison.png', 977, 549, align='', caption='The pros and cons of AMP vs. PWA.') }}
 
-## Warm up your PWA with `amp-install-serviceworker`
+## Khởi động PWA của bạn với `amp-install-serviceworker`
 
-AMP has the ability to install the Service Worker of your Progressive Web App from within an AMP page – yes, even if that AMP page is served from an AMP Cache! If done correctly, a link that leads to your PWA (from one of your AMP pages) will feel almost instant, similar to the first hop to the AMP page.
+AMP có khả năng cài đặt Service Worker cho Ứng dụng Web Lũy tiến của bạn từ trong một trang AMP – đúng vậy, kể cả khi trang AMP đó được phục vụ từ một Bộ nhớ đệm AMP! Nếu được thực hiện đúng cách, một liên kết dẫn đến PWA của bạn (từ một trong các trang AMP) sẽ có cảm giác gần như tức thì, giống như cú nhảy đầu tiên đến trang AMP.
 
-[tip type="tip"] **TIP –** If you're not familiar with Service Worker yet, I greatly recommend Jake Archibald’s [Udacity course](https://www.udacity.com/course/offline-web-applications--ud899). [/tip]
+[tip type="tip"] **MẸO –** Nếu bạn chưa biết về Service Worker, tôi đặc biệt khuyến nghị [khóa học Udacity](https://www.udacity.com/course/offline-web-applications--ud899) của Jake Archibald. [/tip]
 
-First, install the service worker on all of your AMP Pages using [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md), by first including the component via its script in the `<head>` of your page:
+Đầu tiên, cài đặt service worker trên tất cả các Trang AMP của bạn bằng [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md), đầu tiên bằng cách bao gồm thành phần này thông qua kịch bản của nó trong phần `<head>` (đầu đề) của trang của bạn:
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
   src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 [/sourcecode]
 
-Then add the following somewhere within your `<body>` (modify to point to your actual Service Worker):
+Sau đó thêm phần sau vào đâu đó trong phần `<body>` (thân) của bạn (sửa để chỉ đến Service Worker thực của bạn):
 
 [sourcecode:html]
 <amp-install-serviceworker
@@ -49,7 +49,7 @@ Then add the following somewhere within your `<body>` (modify to point to your a
 </amp-install-serviceworker>
 [/sourcecode]
 
-Ultimately, in the service worker’s installation step, cache any resources that the PWA will need:
+Cuối cùng, trong bước cài đặt của service worker, lưu bất kỳ tài nguyên nào mà PWA sẽ cần vào bộ nhớ đệm:
 
 [sourcecode:javascript]
 var CACHE_NAME = 'my-site-cache-v1';
@@ -71,21 +71,21 @@ self.addEventListener('install', function(event) {
 });
 [/sourcecode]
 
-[tip type="tip"] **TIP –** There are easier ways to deal with a Service Worker. Take a look at the [Service Worker helper libraries](https://github.com/GoogleChrome/sw-helpers). [/tip]
+[tip type="tip"] **MẸO –** Đây là các cách dễ hơn để làm việc với một Service Worker. Xem [thư viện trợ giúp Service Worker](https://github.com/GoogleChrome/sw-helpers). [/tip]
 
-## Make all links on an AMP Page navigate to the PWA
+## Đặt tất cả các liên kết trên một Trang AMP để điều hướng đến PWA
 
-Chances are that most links on your AMP pages lead to more content pages. There are two strategies to make sure that subsequent link clicks result in an "upgrade" to the Progressive Web App, [depending on the way you use AMP](../../../documentation/guides-and-tutorials/optimize-measure/discovery.md):
+Nhiều khả năng là hầu hết các liên kết trên trang AMP của bạn đều dẫn đến các trang nội dung khác. Có 2 chiến lược để đảm bảo các nhấp chuột vào liên kết sau đó sẽ dẫn đến "nâng cấp" cho Ứng dụng Web Lũy tiến, [tùy thuộc vào cách bạn sử dụng AMP](../../../documentation/guides-and-tutorials/optimize-measure/discovery.md):
 
-### 1. If you pair your canonical pages with AMP pages
+### 1. Nếu bạn ghép đôi các trang chính thức của mình với trang AMP
 
-In this case you have a canonical website (non-AMP) and generate AMP pages that are linked to these canonical pages. This is currently the most common way AMP is used, and it means that the links on your AMP pages will likely link to the canonical version of your site. **Good news: If your canonical site is your PWA, you're all set**.
+Trong trường hợp này, bạn sẽ có một website chính thức (không phải AMP) và tạo các trang AMP được liên kết đến những trang chính thức này. Hiện tại, đây là cách sử dụng phổ biến nhất của AMP, và nó có nghĩa rằng các liên kết trên trang AMP của bạn nhiều khả năng sẽ liên kết đến phiên bản chính thức của website của bạn. **Tin tốt: Nếu website chính thức của bạn là PWA của bạn, bạn đã sẵn sàng**.
 
-### 2. If your canonical site is AMP
+### 2. Nếu website chính thức của bạn là AMP
 
-In this case your canonical pages *are* your AMP pages: You're building your entire website with AMP, and simply use AMP as a library (fun fact: the very site you're reading this on is built this way). **In this scenario, most links on your AMP pages will lead to other AMP pages.**
+Trong trường hợp này, các trang chính thức của bạn *là* các trang AMP của bạn: Bạn đang xây dựng toàn bộ website của mình bằng AMP, và chỉ sử dụng AMP như một thư viện (dữ kiện vui: website bạn đang đọc bài viết này cũng được xây dựng theo cách đó). **Trong trường hợp này, hầu hết các liên kết trên các trang AMP của bạn đều sẽ dẫn đến các trang AMP khác.**
 
-You can now deploy your PWA on a separate path like `your-domain.com/pwa` and use the Service Worker that's already running to **intercept the browser navigation when someone clicks on a link on the AMP Page**:
+Bây giờ bạn có thể triển khai PWA của mình trên một đường dẫn riêng như `your-domain.com/pwa` và sử dụng Service Worker đã chạy để **tiếp quản điều hướng của trình duyệt khi một ai đó nhấn vào một liên kết trên Trang AMP**:
 
 [sourcecode:javascript]
 self.addEventListener('fetch', event => {
@@ -99,9 +99,9 @@ self.addEventListener('fetch', event => {
 });
 [/sourcecode]
 
-What’s especially interesting about this technique is that you are now using progressive enhancement to go from AMP to PWA. However, this also means that, as is, browsers that don’t yet support service workers will jump from AMP to AMP and will never actually navigate to the PWA.
+Điều đặc biệt thú vị về kỹ thuật này là bạn đang sử dụng tăng cường lũy tiến để chuyển từ AMP sang PWA. Tuy nhiên, điều này cũng có nghĩa rằng, ở trạng thái nguyên bản, các trình duyệt chưa hỗ trợ service worker sẽ nhảy từ AMP sang AMP và không bao giờ thực sự điều hướng sang PWA.
 
-AMP solves this with something called [shell URL rewriting](../../../documentation/components/reference/amp-install-serviceworker.md#shell-url-rewrite). By adding a fallback URL pattern to the [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) tag, you are instructing AMP to rewrite all matching links on a given page to go to another legacy shell URL instead, if no service worker support has been detected:
+AMP giải quyết vấn đề này với một kỹ thuật tên là [viết lại URL dòng lệnh](../../../documentation/components/reference/amp-install-serviceworker.md#shell-url-rewrite). Thông qua việc bổ sung một quy luật URL phương án dự phòng vào thẻ [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md), bạn đang hướng dẫn AMP viết lại tất cả các liên kết khớp trên một trang cụ thể để truy cập một URL dòng lệnh cũ trong trường hợp không phát hiện hỗ trợ cho service worker:
 
 [sourcecode:html]
 <amp-install-serviceworker
@@ -112,6 +112,6 @@ AMP solves this with something called [shell URL rewriting](../../../documentati
 </amp-install-serviceworker>
 [/sourcecode]
 
-With these attributes in place, all subsequent clicks on an AMP will go to your PWA, regardless of any service worker.
+Khi các thuộc tính này được áp dụng, mọi nhấp chuột sau đó trên một AMP sẽ đến PWA của bạn, bất kể service worker thế nào.
 
-[tip type="read-on"] **READ ON –** You've already come so far – why not reuse your existing AMP pages to build your PWA? [Here's how](amp-in-pwa.md). [/tip]
+[tip type="read-on"] **ĐỌC TIẾP –** Bạn đã đến đây rồi – tại sao không tái sử dụng các trang AMP hiện có để xây dựng PWA của mình? [Cách thức thế này](amp-in-pwa.md). [/tip]
