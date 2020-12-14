@@ -1,5 +1,5 @@
 ---
-"$title": Actions and events
+"$title": Hành động và sự kiện
 order: '0'
 formats:
 - websites
@@ -32,76 +32,71 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-[tip type="note"] This documentation covers actions and events for AMP websites, stories and ads. Read [Actions and events in AMP email](https://github.com/ampproject/amphtml/blob/master/spec/amp-email-actions-and-events.md) for the AMP email format. [/tip]
+[tip type="note"] Tài liệu này bàn về các hành động và sự kiện cho các website, câu chuyện và quảng cáo trong AMP. Đọc [Hành động và sự kiện trong email AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-email-actions-and-events.md) cho định dạng email AMP. [/tip]
 
-The `on` attribute is used to install event handlers on elements. The events that are supported depend on the element.
+Thuộc tính `on` (bật) được sử dụng để cài đặt bộ xử lý sự kiện cho các yếu tố. Các sự kiện được hỗ trợ tùy thuộc vào yếu tố.
 
-The value for the syntax is a simple domain-specific language of the form:
+Giá trị cho cú pháp là một ngôn ngữ đơn giản dành riêng cho lĩnh vực của biểu mẫu:
 
 [sourcecode:javascript]
 eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
 
-See the table below for descriptions of each part of the syntax.
+Xem bảng dưới đây để biết mô tả về từng phần của cú pháp.
 
 <table>
   <tr>
-    <th width="30%">Syntax</th>
-    <th width="18%">Required?</th>
-    <th width="42%">Description</th>
+    <th width="30%">Cú pháp</th>
+    <th width="18%">Bắt buộc?</th>
+    <th width="42%">Mô tả</th>
   </tr>
   <tr>
     <td><code>eventName</code></td>
-    <td>yes</td>
-    <td>This is the name of the event that an element exposes.</td>
+    <td>có</td>
+    <td>Đây là tên của sự kiện được yếu tố hiển thị.</td>
   </tr>
   <tr>
     <td><code>targetId</code></td>
-    <td>yes</td>
-    <td>This is the DOM id for the element, or a predefined <a href="#special-targets">special target</a> you'd like to execute an action on  in response to the event. In the following example, the <code>targetId</code> is the DOM id of the <code>amp-lightbox</code> target, <code>photo-slides</code>.     <pre><amp-lightbox id="photo-slides"></amp-lightbox>
-<button on="tap:photo-slides">Show Images</button></pre>     </td>
+    <td>có</td>
+    <td>Đây là DOM ID cho yếu tố, hoặc một <a href="#special-targets">mục tiêu đặc biệt</a> được định nghĩa sẵn mà bạn muốn thực thi một hành động hoặc để đáp lại sự kiện. Trong ví dụ sau,  <code>targetId</code> là DOM ID của mục tiêu <code>amp-lightbox</code>, <code>photo-slides</code>. <pre><amp-lightbox id="photo-slides"></amp-lightbox> <button on="tap:photo-slides">Show Images</button></pre>
+</td>
   </tr>
   <tr>
     <td><code>methodName</code></td>
-    <td>no</td>
-    <td>This is for elements with default actions.<p>This is the method that the target element (referenced by <code>targetId</code>) exposes and you'd like to execute when the event is triggered.</p>
-<p>AMP has a concept of a default action that elements can implement. So when omitting the <code>methodName</code> AMP will execute that default method.</p>
+    <td>không</td>
+    <td>Dành cho các yếu tố với hành động mặc định.<p>Đây là phương thức được yếu tố mục tiêu (tham chiếu bởi <code>targetId</code>) hiển thị và bạn muốn thực thi khi sự kiện được kích hoạt.</p> <p>AMP có một khái niệm về một hành động mặc định mà các yếu tố có thể triển khai. Vậy nên khi bỏ sót  <code>methodName</code>, AMP sẽ thực thi phương thức mặc định đó.</p>
 </td>
   </tr>
   <tr>
     <td><code>arg=value</code></td>
-    <td>no</td>
-    <td>Some actions, if documented, may accept arguments. The arguments are defined between parentheses in <code>key=value</code> notation. The accepted values are:       <ul>         <li>simple unquoted strings: <code>simple-value</code>
-</li>         <li>quoted strings: <code>"string value"</code> or <code>'string value'</code>
-</li>         <li>boolean values: <code>true</code> or <code>false</code>
-</li>         <li>numbers: <code>11</code> or <code>1.1</code>
-</li>         <li>dot-syntax reference to event data: <code>event.someDataVariableName</code>
-</li>       </ul>     </td>
+    <td>không</td>
+    <td>Một số hành động, nếu được ghi chép, có thể chấp nhận các tham số. Các tham số được định nghĩa giữa các ngoặc đơn trong chú thích <code>key=value</code>. Các giá trị được chấp nhận là: <ul> <li>các chuỗi đơn giản không được trích dẫn: <code>simple-value</code> </li> <li>các chuỗi được trích dẫn: <code>"string value"</code> hoặc <code>'string value'</code> </li> <li>giá trị boolean: <code>true</code> hoặc <code>false</code> </li> <li>số: <code>11</code> hoặc <code>1.1</code> </li> <li>Tham chiếu cú pháp dấu chấm cho dữ liệu sự kiện: <code>event.someDataVariableName</code> </li> </ul>
+</td>
   </tr>
 </table>
 
-## Handling multiple events <a name="handling-multiple-events"></a>
+## Xử lý nhiều sự kiện <a name="handling-multiple-events"></a>
 
-You can listen to multiple events on an element by separating the events with a semicolon `;`.
+Bạn có thể lắng nghe nhiều sự kiện trên một yếu tố bằng cách chia tách các sự kiện bằng dấu chấm phẩy `;`.
 
-Example: `on="submit-success:lightbox1;submit-error:lightbox2"`
+Ví dụ: `on="submit-success:lightbox1;submit-error:lightbox2"`
 
-## Multiple actions for one event <a name="multiple-actions-for-one-event"></a>
+## Nhiều hành động cho một sự kiện <a name="multiple-actions-for-one-event"></a>
 
-You can execute multiple actions in sequence for the same event by separating the actions with a comma ','.
+Bạn có thể thực thi nhiều hành động lần lượt cho cùng một sự kiện bằng cách chia tách các hành động với một dấu phẩy ','.
 
-Example: `on="tap:target1.actionA,target2.actionB"`
+Ví dụ: `on="tap:target1.actionA,target2.actionB"`
 
-## Globally-defined events and actions <a name="globally-defined-events-and-actions"></a>
+## Các sự kiện và hành động được định nghĩa toàn cục <a name="globally-defined-events-and-actions"></a>
 
-AMP defines a `tap` event globally that you can listen to on any HTML element (including AMP elements).
+AMP định nghĩa một sự kiện `tap` (chạm) trên toàn cục mà bạn có thể lắng nghe trên mọi yếu tố HTML (bao gồm các yếu tố AMP).
 
-AMP also defines the `hide`, `show` and `toggleVisibility` actions globally that you can trigger on any HTML element.
+AMP cũng định nghĩa các hành động `hide` (ẩn), `show` (hiển thị) và `toggleVisibility` (bật/tắt hiển thị) trên toàn cục mà bạn có thể kích hoạt trên mọi yếu tố HTML.
 
 [tip type="note"]
 
-An element can only be shown if it was previously hidden by a `hide` or `toggleVisibility` action, or by using the [`hidden`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden) attribute. The `show` action does not support elements hidden by CSS `display:none` or AMP's `layout=nodisplay`.
+Một yếu tố chỉ có thể được hiển thị nếu trước đó nó đã bị ẩn bởi một hành động `hide` hoặc `toggleVisibility`, hoặc bằng cách sử dụng thuộc tính [`hidden`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden) (ẩn). Hành động `show` (hiển thị) không hỗ trợ các yếu tố bị ẩn bởi `display:none` (hiển thị:không) của CSS hoặc `layout=nodisplay` (bố cục=không hiển thị) của AMP.
 
-For example, the following is possible in AMP:
+Ví dụ, những việc sau có thể được thực hiện trong AMP:
 
 [sourcecode:html]
 
@@ -112,29 +107,29 @@ For example, the following is possible in AMP:
 
 [/tip]
 
-## Element-specific events <a name="element-specific-events"></a>
+## Các sự kiện cụ thể của yếu tố <a name="element-specific-events"></a>
 
-### * - all elements <a name="---all-elements"></a>
+### * - tất cả yếu tố <a name="---all-elements"></a>
 
 <table>
   <tr>
-    <th>Event</th>
-    <th>Description</th>
+    <th>Sự kiện</th>
+    <th>Mô tả</th>
   </tr>
   <tr>
     <td><code>tap</code></td>
-    <td>Fired when the element is clicked/tapped.</td>
+    <td>Kích hoạt khi yếu tố được nhấn/chạm vào.</td>
   </tr>
 </table>
 
-### Input elements <a name="input-elements"></a>
+### Yếu tố đầu vào <a name="input-elements"></a>
 
 <table>
   <tr>
-    <th width="20%">Event</th>
-    <th width="30%">Description</th>
-    <th width="40%">Elements</th>
-    <th>Data</th>
+    <th width="20%">Sự kiện</th>
+    <th width="30%">Mô tả</th>
+    <th width="40%">Yếu tố</th>
+    <th>Dữ liệu</th>
   </tr>
   <!-- change -->
   <tr>
@@ -142,10 +137,7 @@ For example, the following is possible in AMP:
     <td rowspan="3">Fired when the value of the element is changed and committed.       <p>       Data properties mirror those in <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#Properties">HTMLInputElement</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement#Properties">HTMLSelectElement</a>.</p>     </td>
     <td><code>input</code></td>
     <td>
-      <pre>event.min
-event.max
-event.value
-event.valueAsNumber</pre>
+      <pre>event.min event.max event.value event.valueAsNumber</pre>
     </td>
   </tr>
   <tr>
@@ -159,44 +151,42 @@ event.valueAsNumber</pre>
   <tr>
     <td><code>select</code></td>
     <td>
-      <pre>event.min
-event.max
-event.value</pre>
+      <pre>event.min event.max event.value</pre>
     </td>
   </tr>
   <!-- input-debounced -->
   <tr>
     <td><code>input-debounced</code></td>
-    <td>Fired when the value of the element is changed. This is similar to the standard <code>change</code> event, but it only fires when 300ms have passed after the value of the input has stopped changing.</td>
-    <td>Elements that fire <code>input</code> event.</td>
-    <td>Same as <code>change</code> event data.</td>
+    <td>Kích hoạt khi giá trị của yếu tố được thay đổi. Điều này tương tự như sự kiện <code>change</code> (thay đổi) tiêu chuẩn, nhưng chỉ kích hoạt khi 300ms đã trôi qua sau khi giá trị của dữ liệu đầu vào đã ngừng thay đổi.</td>
+    <td>Các yếu tố kích hoạt sự kiện <code>input</code> (nhập liệu).</td>
+    <td>Giống như dữ liệu sự kiện <code>change</code> (thay đổi).</td>
   </tr>
     <!-- input-throttled -->
   <tr>
     <td><code>input-throttled</code></td>
-    <td>Fired when the value of the element is changed. This is similar to the standard <code>change</code> event, but it is throttled to firing at most once every 100ms while the value of the input is changing.</td>
-    <td>Elements that fire <code>input</code> event.</td>
-    <td>Same as <code>change</code> event data.</td>
+    <td>Kích hoạt khi giá trị của yếu tố được thay đổi. Điều này tương tự như sự kiện <code>change</code> (thay đổi) tiêu chuẩn, nhưng bị hạn chế chỉ kích hoạt tối đa một lần sau mỗi 100ms trong khi giá trị của dữ liệu đầu vào đang thay đổi.</td>
+    <td>Các yếu tố kích hoạt sự kiện <code>input</code> (nhập liệu).</td>
+    <td>Giống như dữ liệu sự kiện <code>change</code> (thay đổi).</td>
   </tr>
 </table>
 
-### amp-accordion > section <a name="amp-accordion"></a>
+### amp-accordion > phần <a name="amp-accordion"></a>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Sự kiện</th>
+    <th width="35%">Mô tả</th>
+    <th width="40%">Dữ liệu</th>
   </tr>
   <tr>
     <td><code>expand</code></td>
-    <td>Fired when an accordion section expands.</td>
-    <td>None.</td>
+    <td>Kích hoạt khi một phần accordion được mở rộng.</td>
+    <td>Không có.</td>
   </tr>
   <tr>
     <td><code>collapse</code></td>
-    <td>Fired when an accordion section collapses.</td>
-    <td>None.</td>
+    <td>Kích hoạt khi một phần accordion được thu hẹp.</td>
+    <td>Không có.</td>
   </tr>
 </table>
 
@@ -204,15 +194,14 @@ event.value</pre>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Sự kiện</th>
+    <th width="35%">Mô tả</th>
+    <th width="40%">Dữ liệu</th>
   </tr>
   <tr>
     <td><code>slideChange</code></td>
-    <td>Fired when the carousel's current slide changes.</td>
-    <td><pre>// Slide number.
-event.index</pre></td>
+    <td>Kích hoạt khi slide hiện tại của băng chuyền được thay đổi.</td>
+    <td><pre>// Slide number. event.index</pre></td>
   </tr>
 </table>
 
@@ -220,19 +209,19 @@ event.index</pre></td>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Sự kiện</th>
+    <th width="35%">Mô tả</th>
+    <th width="40%">Dữ liệu</th>
   </tr>
   <tr>
     <td><code>lightboxOpen</code></td>
-    <td>Fired when lightbox is fully visible.</td>
-    <td>None</td>
+    <td>Kích hoạt khi lightbox được hiển thị hoàn toàn.</td>
+    <td>Không có</td>
   </tr>
   <tr>
     <td><code>lightboxClose</code></td>
-    <td>Fired when lightbox is fully closed.</td>
-    <td>None</td>
+    <td>Kích hoạt khi lightbox được đóng hoàn toàn.</td>
+    <td>Không có</td>
   </tr>
 </table>
 
@@ -240,19 +229,19 @@ event.index</pre></td>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Sự kiện</th>
+    <th width="35%">Mô tả</th>
+    <th width="40%">Dữ liệu</th>
   </tr>
   <tr>
     <td><code>changeToLayoutContainer</code></td>
-    <td>Update's <code>amp-list</code>'s layout to <code>layout="CONTAINTER"</code> to allow <a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">dynamic resizing</a>.</td>
+    <td>Cập nhật bố cục của <code>amp-list</code> thành <code>layout="CONTAINTER"</code> để cho phép <a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">đổi kích cỡ năng động</a>.</td>
   </tr>
   <tr>
     <td>
 <code>fetch-error</code>(low-trust)</td>
-    <td>Fired when fetching data fails.</td>
-    <td>None</td>
+    <td>Kích hoạt khi truy xuất dữ liệu thất bại.</td>
+    <td>Không có</td>
   </tr>
 </table>
 
@@ -260,17 +249,14 @@ event.index</pre></td>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Sự kiện</th>
+    <th width="35%">Mô tả</th>
+    <th width="40%">Dữ liệu</th>
   </tr>
   <tr>
     <td><code>select</code></td>
-    <td>Fired when an option is selected or deselected.</td>
-    <td><pre>// Target element's "option" attribute value.
-event.targetOption
-// Array of "option" attribute values of all selected elements.
-event.selectedOptions</pre></td>
+    <td>Kích hoạt khi một tùy chọn được chọn hoặc bỏ chọn.</td>
+    <td><pre>// Target element's "option" attribute value. event.targetOption<br>// Array of "option" attribute values of all selected elements. event.selectedOptions</pre></td>
   </tr>
 </table>
 
@@ -278,35 +264,35 @@ event.selectedOptions</pre></td>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Sự kiện</th>
+    <th width="35%">Mô tả</th>
+    <th width="40%">Dữ liệu</th>
   </tr>
   <tr>
     <td><code>sidebarOpen</code></td>
-    <td>Fired when sidebar is fully opened after transition has ended.</td>
-    <td>None</td>
+    <td>Kích hoạt khi thanh bên được mở hoàn toàn sau khi quá trình chuyển tiếp kết thúc.</td>
+    <td>Không có</td>
   </tr>
   <tr>
     <td><code>sidebarClose</code></td>
-    <td>Fired when sidebar is fully closed after transition has ended.</td>
-    <td>None</td>
+    <td>Kích hoạt khi thanh bên được đóng hoàn toàn sau khi quá trình chuyển tiếp kết thúc.</td>
+    <td>Không có</td>
   </tr>
 </table>
 
-### amp-state <a name="amp-state"></a>
+### amp-state <a name="amp-state-1"></a>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Sự kiện</th>
+    <th width="35%">Mô tả</th>
+    <th width="40%">Dữ liệu</th>
   </tr>
   <tr>
     <td>
 <code>fetch-error</code>(low-trust)</td>
-    <td>Fired when fetching data fails.</td>
-    <td>None</td>
+    <td>Kích hoạt khi truy xuất dữ liệu thất bại.</td>
+    <td>Không có</td>
   </tr>
 </table>
 
@@ -314,53 +300,53 @@ event.selectedOptions</pre></td>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Sự kiện</th>
+    <th width="35%">Mô tả</th>
+    <th width="40%">Dữ liệu</th>
   </tr>
   <tr>
     <td>
 <code>firstPlay</code>(low-trust)</td>
-    <td>Fired the first time the video is played by the user. On autoplay videos, this is fired as soon as the user interacts with the video. This event is low-trust which means it can not trigger most actions; only low-trust actions such as <code>amp-animation</code> actions can be run.</td>
+    <td>Kích hoạt lần đầu tiên video được người dùng phát. Ở các video tự động phát, việc này được kích hoạt ngay khi người dùng tương tác với video. Đây là sự kiện có mức tin tưởng thấp, điều này có nghĩa nó không thể kích hoạt hầu hết các hành động; chỉ các hành động có mức tin tưởng thấp như <code>amp-animation</code> mới có thể được chạy.</td>
     <td></td>
   </tr>
   <tr>
     <td>
 <code>timeUpdate</code>(low-trust)</td>
-    <td>Fired when the playing position of a video has changed. Frequency of the event is controlled by AMP and is currently set at 1 second intervals. This event is low-trust which means it can not trigger most actions; only low-trust actions such as <code>amp-animation</code> actions can be run.</td>
+    <td>Kích hoạt khi vị trí phát của một video được thay đổi. Tần suất của sự kiện được AMP kiểm soát và hiện được đặt ở chu kỳ 1 giây. Đây là sự kiện có mức tin tưởng thấp, điều này có nghĩa nó không thể kích hoạt hầu hết các hành động; chỉ các hành động có mức tin tưởng thấp như <code>amp-animation</code> mới có thể được chạy.</td>
     <td>
 <code>{time, percent}</code><code>time</code> indicates the current time in seconds, <code>percent</code> is a number between 0 and 1 and indicates current position as percentage of total time.</td>
   </tr>
 </table>
 
-### form <a name="form"></a>
+### form
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Sự kiện</th>
+    <th width="35%">Mô tả</th>
+    <th width="40%">Dữ liệu</th>
   </tr>
   <tr>
     <td><code>submit</code></td>
-    <td>Fired when the form is submitted.</td>
+    <td>Kích hoạt khi biểu mẫu được gửi đi.</td>
     <td></td>
   </tr>
   <tr>
     <td><code>submit-success</code></td>
-    <td>Fired when the form submission response is success.</td>
+    <td>Kích hoạt khi gửi biểu mẫu thành công.</td>
     <td><pre>// Response JSON.
 event.response</pre></td>
   </tr>
   <tr>
     <td><code>submit-error</code></td>
-    <td>Fired when the form submission response is an error.</td>
+    <td>Kích hoạt khi gửi biểu mẫu thất bại.</td>
     <td><pre>// Response JSON.
 event.response</pre></td>
   </tr>
   <tr>
     <td><code>valid</code></td>
-    <td>Fired when the form is valid.</td>
+    <td>Kích hoạt khi biểu mẫu là hợp lệ.</td>
     <td></td>
   </tr>
   <tr>
@@ -370,14 +356,14 @@ event.response</pre></td>
   </tr>
 </table>
 
-## Element-specific actions <a name="element-specific-actions"></a>
+## Các hành động dành riêng cho yếu tố <a name="element-specific-actions"></a>
 
-### * (all elements) <a name="-all-elements"></a>
+### * (tất cả yếu tố) <a name="-all-elements"></a>
 
 <table>
   <tr>
-    <th width="40%">Action</th>
-    <th>Description</th>
+    <th width="40%">Hành động</th>
+    <th>Mô tả</th>
   </tr>
   <tr>
     <td><code>hide</code></td>
@@ -393,11 +379,11 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>toggleClass(class=STRING, force=BOOLEAN)</code></td>
-    <td>Toggles class of the target element. <code>force</code> is optional, and if defined, it ensures that class would only be added but not removed if set to <code>true</code>, and only removed but not added if set to <code>false</code>.</td>
+    <td>Bật/tắt lớp của yếu tố mục tiêu.  <code>force</code> (bắt buộc) là tùy chọn, nhưng nếu được định nghĩa, nó đảm bảo lớp này chỉ được thêm mà không bị xóa nếu đặt thành <code>true</code> (đúng), và chỉ bị xóa nhưng không được thêm nếu đặt thành <code>false</code> (sai).</td>
   </tr>
   <tr>
     <td><code>scrollTo(duration=INTEGER, position=STRING)</code></td>
-    <td>Scrolls an element into view with a smooth animation.<br>     <code>duration</code> is optional. Specifies the length of the animation in milliseconds. If unspecified, an amount relative to scroll difference     under or equal to 500 milliseconds is used.<br>     <code>position</code> is optional. One of <code>top</code>, <code>center</code>     or <code>bottom</code> (default <code>top</code>).     Specifies the position of the element relative to the viewport after     scrolling.<br>     As an accessibility best practice, pair this with a call to <code>focus()</code> to focus on the element being scrolled to.</td>
+    <td>Cuộn một yếu tố vào màn hiển thị với một hình hoạt họa mượt mà.<br> <code>duration</code> (thời lượng) là không bắt buộc. Quy định thời lượng của hình hoạt họa tính theo mili giây. Nếu không quy định, một số tương đương với chênh lệch tốc độ cuộn thấp hơn hoặc bằng 500 mili giây sẽ được sử dụng.<br> <code>position</code> (vị trí) là không bắt buộc. Một trong các giá trị <code>top</code> (trên cùng), <code>center</code> (ở giữa) hoặc <code>bottom</code> (dưới cùng)  (mặc định là <code>top</code>). Quy định vị trí của yếu tố tương đối với màn hiển thị sau khi cuộn.<br> Như một biện pháp thực hành tiên tiến nhất về hỗ trợ tiếp cận, ghép yếu tố này với một cuộc gọi <code>focus()</code> để tập trung vào yếu tố đang được cuộn đến.</td>
   </tr>
   <tr>
     <td><code>focus</code></td>
@@ -409,16 +395,16 @@ event.response</pre></td>
 
 <table>
   <tr>
-    <th width="20%">Action</th>
-    <th>Description</th>
+    <th width="20%">Hành động</th>
+    <th>Mô tả</th>
   </tr>
   <tr>
     <td><code>play</code></td>
-    <td>Plays the audio. Is a no-op if the <code><amp-audio></code> element is a descendant of <code><amp-story></code>.</td>
+    <td>Phát âm thanh. Không hoạt động nếu yếu tố <code><amp-audio></code> là con của <code><amp-story></code>.</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
-    <td>Pauses the audio. Is a no-op if the <code><amp-audio></code> element is a descendant of <code><amp-story></code>.</td>
+    <td>Tạm dừng âm thanh. Không hoạt động nếu yếu tố <code><amp-audio></code> là con của <code><amp-story></code>.</td>
   </tr>
 </table>
 
@@ -426,28 +412,28 @@ event.response</pre></td>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Hành động</th>
+    <th>Mô tả</th>
   </tr>
   <tr>
     <td><code>play</code></td>
-    <td>Plays the animation.</td>
+    <td>Phát hình hoạt họa.</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
-    <td>Pauses the animation.</td>
+    <td>Tạm dừng hình hoạt họa.</td>
   </tr>
   <tr>
     <td><code>stop</code></td>
-    <td>Stops the animation.</td>
+    <td>Dừng hình hoạt họa.</td>
   </tr>
   <tr>
     <td><code>seekTo(time=INTEGER)</code></td>
-    <td>Sets the currentTime of the animation to the specified value and pauses animation. </td>
+    <td>Đặt currentTime của hình hoạt họa thành giá trị được quy định và tạm dừng hình hoạt họa.</td>
   </tr>
   <tr>
     <td><code>seekTo(percent=[0,1])</code></td>
-    <td>Uses the given percentage value to determine the currentTime of the animation to the specified value and pauses animation. </td>
+    <td>Sử dụng giá trị phần trăm được cho để xác định currentTime của hình hoạt họa thành giá trị được quy định và tạm dừng hình hoạt họa.</td>
   </tr>
 </table>
 
@@ -455,37 +441,38 @@ event.response</pre></td>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Hành động</th>
+    <th>Mô tả</th>
   </tr>
   <tr>
     <td><code>toggle(section=STRING)</code></td>
-    <td>Toggles the <code>expanded</code> and <code>collapsed</code> states of <code>amp-accordion</code> sections. When called with no arguments, it toggles all sections of the accordion. Trigger on a specific section by providing the section id: <code>on="tap:myAccordion.toggle(section='section-id')"</code>.   </td>
+    <td>Bật/tắt trạng thái <code>expanded</code> (mở rộng) và <code>collapsed</code> (thu hẹp) của các phần <code>amp-accordion</code>. Khi được gọi mà không có tham số, nó sẽ bật/tắt tất cả các phần của accordion. Kích hoạt trên một phần cụ thể bằng cách cung cấp ID phần: <code>on="tap:myAccordion.toggle(section=</code>
+</td>
 </tr>
   <tr>
     <td><code>expand(section=STRING)</code></td>
-    <td>Expands the sections of the accordion. If a section is already expanded, it stays expanded. When called with no arguments, it expands all sections of the accordion. Trigger on a specific section by providing the section id: <code>on="tap:myAccordion.expand(section='section-id')"</code>.</td>
+    <td>Mở rộng các phần của accordion. Nếu một phần đã được mở rộng rồi, nó vẫn sẽ được mở rộng. Khi được gọi mà không có tham số, nó sẽ mở rộng tất cả các phần của accordion. Kích hoạt trên một phần cụ thể bằng cách cung cấp ID phần: <code>on="tap:myAccordion.expand(section='section-id')"</code>.</td>
   </tr>
   <tr>
     <td><code>collapse(section=STRING)</code></td>
-    <td>Collapses the sections of the accordion. If a section is already collapsed, it stays collapsed. When called with no arguments, it collapses all sections of the accordion. Trigger on a specific section by providing the section id: <code>on="tap:myAccordion.collapse(section='section-id')"</code>.</td>
+    <td>Thu hẹp các phần của accordion. Nếu một phần đã được thu hẹp rồi, nó vẫn sẽ được thu hẹp. Khi được gọi mà không có tham số, nó sẽ thu hẹp tất cả các phần của accordion. Kích hoạt trên một phần cụ thể bằng cách cung cấp ID phần: <code>on="tap:myAccordion.collapse(section='section-id')"</code>.</td>
   </tr>
 </table>
 
-### amp-carousel[type="slides"] <a name="amp-carouseltypeslides-1"></a>
+### amp-carousel[type="slides"] <a name="amp-carouseltypeslides"></a>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Hành động</th>
+    <th>Mô tả</th>
   </tr>
   <tr>
     <td><code>goToSlide(index=INTEGER)</code></td>
-    <td>Advances the carousel to a specified slide index.</td>
+    <td>Chuyển băng chuyền đến một thứ tự slide cụ thể.</td>
   </tr>
   <tr>
     <td><code>toggleAutoplay(toggleOn=true|false)</code></td>
-    <td>Toggle the carousel's autoplay status. <code>toggleOn</code> is optional.</td>
+    <td>Bật/tắt trạng thái tự động phát của băng chuyền. <code>toggleOn</code> là không bắt buộc.</td>
   </tr>
 </table>
 
@@ -493,29 +480,29 @@ event.response</pre></td>
 
 <table>
   <tr>
-    <th width="40%">Action</th>
-    <th>Description</th>
+    <th width="40%">Hành động</th>
+    <th>Mô tả</th>
   </tr>
   <tr>
     <td><code>open (default)</code></td>
-    <td>Opens the image lightbox with the source image being the one that triggered the action.</td>
+    <td>Mở lightbox ảnh với ảnh nguồn là ảnh đã kích hoạt hành động này.</td>
   </tr>
 </table>
 
-### amp-lightbox <a name="amp-lightbox-1"></a>
+### amp-lightbox <a name="amp-lightbox"></a>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Hành động</th>
+    <th>Mô tả</th>
   </tr>
   <tr>
     <td><code>open (default)</code></td>
-    <td>Opens the lightbox.</td>
+    <td>Mở lightbox.</td>
   </tr>
   <tr>
     <td><code>close</code></td>
-    <td>Closes the lightbox.</td>
+    <td>Đóng lightbox.</td>
   </tr>
 </table>
 
@@ -523,25 +510,25 @@ event.response</pre></td>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Hành động</th>
+    <th>Mô tả</th>
   </tr>
   <tr>
     <td><code>open</code></td>
-    <td>Opens the lightbox-gallery. Can be triggered by tapping another element, if you specify the image id: `on="tap:amp-lightbox-gallery.open(id='image-id')"`.</td>
+    <td>Mở thư viện lightbox. Có thể được kích hoạt bằng cách chạm vào một yếu tố khác, nếu bạn quy định id ảnh: `on="tap:amp-lightbox-gallery.open(id='image-id')"`.</td>
   </tr>
 </table>
 
-### amp-list <a name="amp-list-1"></a>
+### amp-list <a name="amp-list"></a>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Hành động</th>
+    <th>Mô tả</th>
   </tr>
   <tr>
     <td><code>refresh</code></td>
-    <td>Refreshes data from the <code>src</code> and re-renders the list.</td>
+    <td>Làm mới dữ liệu từ <code>src</code> và render lại danh sách.</td>
   </tr>
 </table>
 
@@ -549,33 +536,33 @@ event.response</pre></td>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Hành động</th>
+    <th>Mô tả</th>
   </tr>
   <tr>
     <td><code>update (default)</code></td>
-    <td>Updates the DOM items to show updated content.</td>
+    <td>Cập nhật các mục DOM để hiển thị nội dung được cập nhật.</td>
   </tr>
 </table>
 
-### amp-selector <a name="amp-selector-1"></a>
+### amp-selector <a name="amp-selector"></a>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Hành động</th>
+    <th>Mô tả</th>
   </tr>
   <tr>
     <td><code>clear</code></td>
-    <td>Clears all selections from a defined <code>amp-selector</code>.</td>
+    <td>Xóa tất cả các lựa chọn từ một <code>amp-selector</code> đã quy định.</td>
   </tr>
   <tr>
     <td><code>selectUp(delta=INTEGER)</code></td>
-    <td>Moves the selection up by the value of `delta`. The default `delta` is set to -1. If no options are selected, the selected state will become the value of the last option.</td>
+    <td>Di chuyển lựa chọn về phía trước theo giá trị của `delta`. `delta` mặc định được đặt là -1. Nếu không có tùy chọn nào được chọn, trạng thái được chọn sẽ trở thành giá trị của tùy chọn gần nhất.</td>
   </tr>
   <tr>
     <td><code>selectDown(delta=INTEGER)</code></td>
-    <td>Moves the selection down by the value of `delta`. The default `delta` is set to 1. If no options are selected, the selected state will become the value of the first option.</td>
+    <td>Di chuyển lựa chọn về phía sau theo giá trị của `delta`. `delta` mặc định được đặt là 1. Nếu không có tùy chọn nào được chọn, trạng thái được chọn sẽ trở thành giá trị của tùy chọn đầu tiên.</td>
   </tr>
   <tr>
     <td><code>toggle(index=INTEGER, value=BOOLEAN)</code></td>
@@ -583,37 +570,37 @@ event.response</pre></td>
   </tr>
 </table>
 
-### amp-sidebar <a name="amp-sidebar-1"></a>
+### amp-sidebar <a name="amp-sidebar"></a>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Hành động</th>
+    <th>Mô tả</th>
   </tr>
   <tr>
     <td><code>open (default)</code></td>
-    <td>Opens the sidebar.</td>
+    <td>Mở thanh bên.</td>
   </tr>
   <tr>
     <td><code>close</code></td>
-    <td>Closes the sidebar.</td>
+    <td>Đóng thanh bên.</td>
   </tr>
   <tr>
     <td><code>toggle</code></td>
-    <td>Toggles the state of the sidebar.</td>
+    <td>Bật/tắt trạng thái của thanh bên.</td>
   </tr>
 </table>
 
-### amp-state <a name="amp-state-1"></a>
+### amp-state <a name="amp-state"></a>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Hành động</th>
+    <th>Mô tả</th>
   </tr>
   <tr>
     <td><code>refresh</code></td>
-    <td>Refetches data at the `src` attribute while ignoring browser cache.</td>
+    <td>Truy xuất lại dữ liệu tại thuộc tính `src`, đồng thời bỏ qua bộ nhớ đệm của trình duyệt.</td>
   </tr>
 </table>
 
@@ -621,43 +608,43 @@ event.response</pre></td>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Hành động</th>
+    <th>Mô tả</th>
   </tr>
   <tr>
     <td><code>dismiss (default)</code></td>
-    <td>Hides the referenced user notification element.</td>
+    <td>Ẩn yếu tố thông báo người dùng được tham chiếu.</td>
   </tr>
 </table>
 
-### Video elements <a name="video-elements"></a>
+### Yếu tố video <a name="video-elements"></a>
 
-The actions below are supported in the following AMP video elements: `amp-video`, `amp-youtube`, `amp-3q-player`, `amp-brid-player`, `amp-dailymotion`, `amp-delight-player`, `amp-ima-video`.
+Các hành động dưới đây được hỗ trợ trong các yếu tố video AMP sau đây: `amp-video`, `amp-youtube`, `amp-3q-player`, `amp-brid-player`, `amp-dailymotion`, `amp-delight-player`, `amp-ima-video`.
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Hành động</th>
+    <th>Mô tả</th>
   </tr>
   <tr>
     <td><code>play</code></td>
-    <td>Plays the video.</td>
+    <td>Phát video.</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
-    <td>Pauses the video.</td>
+    <td>Tạm dừng video.</td>
   </tr>
   <tr>
     <td><code>mute</code></td>
-    <td>Mutes the video.</td>
+    <td>Tắt tiếng video.</td>
   </tr>
   <tr>
     <td><code>unmute</code></td>
-    <td>Unmutes the video.</td>
+    <td>Bỏ tắt tiếng video.</td>
   </tr>
   <tr>
     <td><code>fullscreencenter</code></td>
-    <td>Takes the video to fullscreen.</td>
+    <td>Hiển thị video toàn màn hình.</td>
   </tr>
 </table>
 
@@ -665,69 +652,69 @@ The actions below are supported in the following AMP video elements: `amp-video`
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Hành động</th>
+    <th>Mô tả</th>
   </tr>
   <tr>
     <td><code>clear</code></td>
-    <td>Clears any values in the form's inputs.</td>
+    <td>Xóa mọi giá trị dữ liệu đầu vào của biểu mẫu.</td>
   </tr>
   <tr>
     <td><code>submit</code></td>
-    <td>Submits the form.</td>
+    <td>Gửi biểu mẫu.</td>
   </tr>
 </table>
 
-## Special targets <a name="special-targets"></a>
+## Mục tiêu đặc biệt <a name="special-targets"></a>
 
-The following are targets provided by the AMP system that have special requirements:
+Sau đây là các mục tiêu được cung cấp bởi hệ thống AMP với các yêu cầu đặc biệt:
 
-### Target: AMP <a name="target-amp"></a>
+### Mục tiêu: AMP <a name="target-amp"></a>
 
-The `AMP` target is provided by the AMP runtime and implements top-level actions that apply to the whole document.
+Mục tiêu `AMP` được cung cấp bởi thời gian chạy AMP và triển khai các hành động ở cấp độ cao nhất, áp dụng cho toàn tài liệu.
 
 <table>
   <tr>
-    <th width="40%">Action</th>
-    <th>Description</th>
+    <th width="40%">Hành động</th>
+    <th>Mô tả</th>
   </tr>
   <tr>
     <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
-      <p>Navigates current window to given URL, to the optional specified target if given (currenly only supporting <code>_top</code> and <code>_blank </code>). The optional <code>opener</code> parameter can be specified when using a target of <code>_blank</code> to allow the newly opened page to access <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener</code></a>. Supports <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">standard URL substitutions</a>.</p>
-      <p><strong>Caveat:</strong> Using normal <code><a></code> links is recommended wherever possible since <code>AMP.navigateTo</code> is not recognized by web crawlers.</p>
+      <p>Điều hướng cửa sổ hiện tại đến URL được cho, đến mục tiêu được quy định (không bắt buộc) nếu được cho (hiện tại chỉ hỗ trợ <code>_top</code> (trên cùng) và <code>_blank </code> (trống)). Tham số <code>opener</code> (mở) có thể được quy định khi sử dụng mục tiêu là <code>_blank</code> (trống) để cho phép các trang mới được mở truy cập <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener</code></a>. Hỗ trợ <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">thay thế URL tiêu chuẩn</a>.</p>
+      <p><strong>Lưu ý</strong>: Nên sử dụng các liên kết <code><a></code> bất cứ khi nào có thể bởi  <code>AMP.navigateTo</code> không được các web crawler công nhận.</p>
     </td>
   </tr>
   <tr>
     <td><code>closeOrNavigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
-      <p>Tries to close the window if allowed, otherwise it navigates similar to <code>navigateTo</code> Action. Useful for use-cases where a "Back" button may need to close the window if it were opened in a new window from previous page or navigate if it wasn't opened.</p>
-      <p><strong>Caveat:</strong> Using normal <code><a></code> links is recommended wherever possible since <code>AMP.closeOrNavigateTo</code> is not recognized by web crawlers.</p>
+      <p>Cố đóng cửa sổ nếu được cho phép, nếu không, nó sẽ điều hướng tương tự như Hành động <code>navigateTo</code>. Hữu ích cho các trường hợp sử dụng ở đó một nút "Quay lại" có thể là cần thiết để đóng cửa sổ nếu nó được mở trong một cửa sổ mới từ trang trước đó hoặc điều hướng nếu nó không được mở.</p>
+      <p><strong>Lưu ý:</strong> Sử dụng bình thường<code><a></a></code> liên kết được khuyến nghị nếu có thể vì <code>AMP.closeOrNavigateTo</code> không được trình thu thập dữ liệu web nhận dạng.</p>
     </td>
   </tr>
   <tr>
     <td><code>goBack</code></td>
-    <td>Navigates back in history.</td>
+    <td>Về trang trước trong lịch sử.</td>
   </tr>
   <tr>
     <td><code>print</code></td>
-    <td>Opens the Print Dialog to print the current page.</td>
+    <td>Mở Hộp thoại In để in trang hiện tại.</td>
   </tr>
   <tr>
     <td>scrollTo(id=STRING, duration=INTEGER, position=STRING)</td>
-    <td>Scrolls to the provided element ID on the current page.</td>
+    <td>Cuộn đến ID yếu tố được cung cấp trên trang hiện tại.</td>
   </tr>
   <tr>
     <td>optoutOfCid</td>
-    <td>Opts out of Client ID generation for all scopes.</td>
+    <td>Hủy tạo ID Máy khách cho tất cả phạm vi.</td>
   </tr>
   <tr>
     <td>
 <code>setState({foo: 'bar'})</code><sup>1</sup>
 </td>
     <td>
-      <p>Requires <a href="https://amp.dev/documentation/components/amp-bind.html#updating-state-with-ampsetstate">amp-bind</a>.</p>
-      <p>Merges an object literal into the bindable state.</p>
+      <p>Yêu cầu <a href="https://amp.dev/documentation/components/amp-bind.html#updating-state-with-ampsetstate">amp-bind</a>.</p>
+      <p>Hợp nhất một object literal vào một trạng thái ràng buộc được.</p>
       <p></p>
     </td>
   </tr>
@@ -736,21 +723,21 @@ The `AMP` target is provided by the AMP runtime and implements top-level actions
 <code>pushState({foo: 'bar'})</code><sup>1</sup>
 </td>
     <td>
-      <p>Requires <a href="https://amp.dev/documentation/components/amp-bind.html#modifying-history-with-amppushstate">amp-bind</a>.</p>
-      <p>Merges an object literal into the bindable state and pushes a new entry onto browser history stack. Popping the entry will restore the previous values of variables (in this example, <code>foo</code>).    </p>
+      <p>Yêu cầu <a href="https://amp.dev/documentation/components/amp-bind.html#modifying-history-with-amppushstate">amp-bind</a>.</p>
+      <p>Hợp nhất một object literal vào một trạng thái ràng buộc được và đẩy một mục mới vào danh sách lịch sử trình duyệt. Việc đẩy mục này sẽ khôi phục các giá trị trước đó của biến số (trong ví dụ này là <code>foo</code>).</p>
 </td>
   </tr>
 </table>
 
-<sup>1</sup>When used with <a href="#multiple-actions-for-one-event">multiple actions</a>, subsequent actions will wait for <code>setState()</code> or <code>pushState()</code> to complete before invocation. Only a single <code>setState()</code> or <code>pushState()</code> is allowed per event.
+<sup>1</sup>Khi được sử dụng với <a href="#multiple-actions-for-one-event">nhiều hành động</a>, các hành động sau đó sẽ chờ <code>setState()</code> hoặc <code>pushState()</code> hoàn thành trước khi kích hoạt. Chỉ một <code>setState()</code> hoặc <code>pushState()</code> được cho phép cho mỗi sự kiện.
 
-### Target: amp-access <a name="target-amp-access"></a>
+### Mục tiêu: amp-access <a name="target-amp-access"></a>
 
-The `amp-access` target is provided by the [amp-access](https://amp.dev/documentation/components/amp-access.html) component.
+Mục tiêu `amp-access` được cung cấp bởi thành phần [amp-access](https://amp.dev/documentation/components/amp-access.html).
 
-The `amp-access` target is special for these reasons:
+Mục tiêu `amp-access` là mục tiêu đặc biệt vì các lý do sau:
 
-1. You can't give an arbitrary ID to this target. The target is always `amp-access`.
-2. The actions for `amp-access` are dynamic depending on the structure of the [AMP Access Configuration](https://amp.dev/documentation/components/amp-access#configuration).
+1. Bạn không thể cung cấp ID tùy chỉnh cho mục tiêu này. Mục tiêu này luôn là `amp-access`.
+2. Các hành động cho `amp-access` là năng động tùy thuộc vào cấu trúc của [Cấu hình Truy cập AMP](https://amp.dev/documentation/components/amp-access#configuration).
 
-See [details](https://amp.dev/documentation/components/amp-access#login-link) about using the `amp-access` target.
+Xem [chi tiết](https://amp.dev/documentation/components/amp-access#login-link) về việc sử dụng mục tiêu `amp-access`.
