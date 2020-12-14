@@ -1,41 +1,41 @@
 ---
-"$title": Triggering CSS animations & transitions
+"$title": Kích hoạt hình hoạt họa & chuyển tiếp CSS
 "$order": '1'
-description: Triggering CSS animations on pages relies on adding and removing classes, done via JavaScript. You can achieve the same behavior on AMP pages by using the toggleClass action ...
+description: Kích hoạt hình hoạt họa CSS trên các trang phụ thuộc vào việc thêm và xóa các lớp, và được thực hiện qua JavaScript. Bạn có thể đạt được hành vi này trên các trang AMP bằng cách sử dụng hành động toggleClass...
 formats:
 - websites
 - ads
 ---
 
-CSS animations enable web elements to transition from one CSS style configuration to another. The browser can start defined animations on load, but event triggered CSS animations [rely on adding and removing classes](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations). AMP supports both animation types.
+Các hình hoạt họa CSS cho phép yếu tố web chuyển tiếp giữa các cấu hình phong cách CSS khác nhau. Trình duyệt có thể bắt đầu các hình hoạt họa được định nghĩa khi tải, nhưng các hình hoạt họa CSS được kích hoạt bởi sự kiện [phụ thuộc vào việc thêm và xóa các lớp](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations). AMP hỗ trợ cả hai loại hoạt họa.
 
-Use CSS when you have a smaller, contained animation that doesn't need to be precisely timed.
+Sử dụng CSS khi bạn có một hình hoạt họa nhỏ, chứa bên trong và không cần hẹn giờ chính xác.
 
-## Defining CSS and keyframes
+## Định nghĩa CSS và keyframe
 
-You can define CSS in AMP in the following ways:
+Bạn có thể định nghĩa CSS trong AMP theo các cách sau:
 
 [filter formats="websites, stories"]
 
-- Within the `<style amp-custom>` tag inside the head of the document. 75,000 byte limit.
-- Inline styles. Each instance of an inline style has a 1,000 byte limit. Inline styles count towards the 75,000 byte `<style amp-custom>` limit.
-- Within the `<style amp-keyframes>` tag inside the head of the document. 500,000 byte limit. Restricted to keyframe properties.
+- Trong thẻ `<style amp-custom>` ở trong đầu mục tài liệu. Giới hạn 75.000 byte.
+- Phong cách inline. Mỗi trường hợp của một phong cách inline có giới hạn là 1.000 byte. Các phong cách inline được tính vào giới hạn 75.000 byte `<style amp-custom>`.
+- Trong thẻ `<style amp-keyframes>` ở trong đầu mục tài liệu. Giới hạn 500.000 byte. Giới hạn cho các thuộc tính keyframe.
 
 [/filter]
 
 [filter formats="ads"]
 
-- Within the `<style amp-custom>` tag inside the head of the document. 20,000 byte limit.
-- Inline styles. Each instance of an inline style has a 1,000 byte limit. Inline styles count towards the 20,000 byte `<style amp-custom>` limit.
-- Within the `<style amp-keyframes>` tag inside the head of the document. 500,000 byte limit. Restricted to keyframe properties.
+- Trong thẻ `<style amp-custom>` ở trong đầu mục tài liệu. Giới hạn 20.000 byte.
+- Phong cách inline. Mỗi trường hợp của một phong cách inline có giới hạn là 1.000 byte. Các phong cách inline được tính vào giới hạn 20.000 byte `<style amp-custom>`.
+- Trong thẻ `<style amp-keyframes>` ở trong đầu mục tài liệu. Giới hạn 500.000 byte. Giới hạn cho các thuộc tính keyframe.
 
 [/filter]
 
-[tip type="read-on"] Read more in [Style & layout](../style_and_layout/index.md) about using CSS in AMP. [/tip]
+[tip type="read-on"] Đọc thêm trong phần [Phong cách & bố cục](../style_and_layout/index.md) về việc sử dụng CSS trong AMP. [/tip]
 
-[filter formats="websites, stories"] To keep your pages lean and speedy, AMP has enforced a 75,000 byte CSS limit in the `<amp style-custom>` tag. While you can use this to define animation styles, the 500,000 bye limit inside of `<amp style-keyframes>` tag allows for more verbose animations that won't take away precious site style resources. [/filter]
+[filter formats="websites, stories"] Để đảm bảo trang web của bạn luôn tinh gọn và tải nhanh, AMP đã áp đặt giới hạn 75.000 byte CSS cho thẻ `<amp style-custom>`. Tuy bạn có thể sử dụng nó để định nghĩa các phong cách hoạt họa, giới hạn 500.000 byte trong thẻ `<amp style-keyframes>` cho phép các hình hoạt họa chi tiết hơn và không chiếm tài nguyên phong cách quý giá của website. [/filter]
 
-[filter formats="ads"] To keep your ads lean and speedy, AMP has enforced a 20,000 byte CSS limit in the `<amp style-custom>` tag. While you can use this to define animation styles,the 500,000 bye limit inside of `<amp style-keyframes>` tag allows for more verbose animations that won't take away precious site style resources. [/filter]
+[filter formats="ads"] Để đảm bảo quảng cáo của bạn luôn tinh gọn và tải nhanh, AMP đã áp đặt giới hạn 20.000 byte CSS cho thẻ `<amp style-custom>`. Tuy bạn có thể sử dụng nó để định nghĩa các phong cách hoạt họa, giới hạn 500.000 byte trong thẻ `<amp style-keyframes>` cho phép các hình hoạt họa chi tiết hơn và không chiếm tài nguyên phong cách quý giá của website. [/filter]
 
 ```html
   <style amp-custom>
@@ -62,21 +62,21 @@ You can define CSS in AMP in the following ways:
 </body>
 ```
 
-## Adding, removing, and toggling classes
+## Thêm, xóa và chuyển đổi các lớp
 
-The AMP action, `toggleClass` enables the addition and removal of classes to defined elements.
+Hành động AMP, `toggleClass` cho phép thêm và xóa các lớp cho các yếu tố được định nghĩa.
 
 ```js
 elementName.toggleClass(class="className")
 ```
 
-You can toggle a class on the same element you'd like users to interact with, such as an animated hamburger menu.
+Bạn có thể chuyển đổi một lớp trên một yếu tố mà bạn muốn người dùng tương tác, ví dụ như menu hamburger có hình hoạt họa.
 
 ```html
  <div id="hamburger" tabindex=1 role=button on="tap:hamburger.toggleClass(class='close')">
 ```
 
-The `toggleClass` action can apply to other elements as well and toggle between two classes by adding the `force` attribute.
+Hành động `toggleClass` cũng có thể được áp dụng cho các yếu tố khác và chuyển đổi giữa hai lớp bằng cách thêm thuộc tính `force`.
 
 ```html
 <button on="tap:magicBox.toggleClass(class='invisible', force=true),magicBox.toggleClass(class='visible', force=false)">
@@ -87,11 +87,11 @@ The `toggleClass` action can apply to other elements as well and toggle between 
 </button>
 ```
 
-If you need to remove a class and disallow reapplication, add the `force` attribute with a value of `false`. If you need to addd a class and disallow removal, add `force` with a value of `true`.
+Nếu bạn cần xóa một lớp và cấm nó được áp dụng lại, hãy thêm thuộc tính `force` với giá trị `false`. Nếu bạn cần thêm một lớp và cấm nó bị xóa, hãy thêm thuộc tính `force` với giá trị `true`.
 
-## Animate with CSS and state
+## Hoạt họa với CSS và trạng thái
 
-You can add and remove any number of CSS classes with states using [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
+Bạn có thể thêm và xóa số lớp CSS bất kỳ với các trạng thái sử dụng [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
 
 [example preview="top-frame" playground="true"]
 ```html
@@ -160,7 +160,7 @@ You can add and remove any number of CSS classes with states using [`amp-bind`](
 ```
 [/example]
 
-Define multiple class animations by first adding a list of CSS classes within the `<style amp-custom>` tag in the `head` of the document:
+Định nghĩa hình hoạt họa nhiều lớp bằng cách thêm một danh sách các lớp CSS trong thẻ `<style amp-custom>` ở trong phần `head` (đầu mục) tài liệu.
 
 ```css
     .visible {
@@ -177,7 +177,7 @@ Define multiple class animations by first adding a list of CSS classes within th
     }
 ```
 
-Then pair each class with a state:
+Sau đó ghép đôi mỗi lớp với một trạng thái:
 
 ```html
 <amp-state id="magicBox">
@@ -200,13 +200,13 @@ Then pair each class with a state:
 </amp-state>
 ```
 
-And link the element with the classes:
+Và liên kết yếu tố với các lớp:
 
 ```html
   <div [class]="magicBox[animateBox].className"> </div>
 ```
 
-The states change from a linked AMP action or event. The following example changes the state from user interaction:
+Các trạng thái sẽ thay đổi từ một hành động hoặc sự kiện AMP được liên kết. Ví dụ sau đây thay đổi trạng thái từ tương tác người dùng:
 
 ```html
 <button on="tap:AMP.setState({animateBox: 'invisibleBox'})">
@@ -223,4 +223,4 @@ The states change from a linked AMP action or event. The following example chang
 </button>
 ```
 
-Using [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) in this way set the class explicitly to the defined class. You will not have to tell it to remove other classes.
+Việc sử dụng [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) bằng cách này sẽ thiết lập lớp thành lớp được định nghĩa một cách rõ ràng. Bạn sẽ không phải buộc nó xóa các lớp khác.
