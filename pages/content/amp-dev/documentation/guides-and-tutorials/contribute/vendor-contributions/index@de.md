@@ -107,6 +107,6 @@ Mit einem Beitrag der 3. Ebene wird eine neue, für Drittparteien spezifische Ko
 - Schreibe ein Design Review und schlage es vor.
 - Die Tests müssen kritische Fehler im Code erkennen können.
 - Behebe das Problem oder fordere Hilfe an, wenn es zu einem Abbruch in der Funktion der Komponente kommt.
-- Provide thorough documentation with code samples.
+- Stelle ausführliche Dokumentation mit Code Beispielen zur Verfügung.
 - Pflege und Aktualisierung der Dokumentation
 - Bereitstellung eines Kanals für Troubleshooting für AMP Entwickler, über den diese Hilfe anfordern können
