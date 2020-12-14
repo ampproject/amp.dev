@@ -1,5 +1,5 @@
 ---
-"$title": Turn your AMP site into a PWA
+"$title": Biến website AMP của bạn thành một PWA
 "$order": '10'
 description: By caching resources within the browser, a PWA is able to provide data, assets, and offline pages to the user to keep them engaged and informed.
 tutorial: 'true'
@@ -12,13 +12,13 @@ Progressive Web Apps harness the power of [service workers](https://developer.mo
 
 This tutorial will teach you how to turn an AMP site into an installable PWA with offline capabilities by adding a Web Manifest and a Service Worker powered by the AMP Service Worker.
 
-# Download and run the starter code
+# Tải xuống và chạy đoạn mã khởi đầu
 
-Download the [starter code here](/static/files/tutorials/amptopwa.zip).
+Tải xuống [đoạn mã khởi đầu ở đây](/static/files/tutorials/amptopwa.zip).
 
-Use a local web server to preview the website.
+Sử dụng máy chủ web cục bộ để xem trước website.
 
-[tip type="default"] **TIP –** For a quick web server, run `python -m SimpleHTTPServer`. [/tip]
+[tip type="default"] **MẸO–** Đối với máy chủ web nhanh, hãy chạy dòng `python -m SimpleHTTPServer`. [/tip]
 
 You should be able to view the landing page for Lyrical Lyghtning, the Mobile Music Magic festival. It has one link on the homepage to view the schedule and which stage the bands are on.
 
@@ -77,7 +77,7 @@ With just two lines of code, this imports the AMP Service Worker into your Servi
 
 AMP websites use the [`<amp-install-serviceworker>`](../../../documentation/components/reference/amp-install-serviceworker.md) component to install the service worker in the browser's background, while the user is enjoying your content.
 
-Place the required script tag in the head of `index.html` and the `<amp-install-serviceworker>` element inside the `<body>`:
+Đặt thẻ đoạn mã bắt buộc ở đầu `index.html` và yếu tố `<amp-install-serviceworker>` bên trong `<body>`:
 
 [sourcecode:html]
 …
@@ -111,7 +111,7 @@ The `<amp-install-serviceworker>` installs the service worker by creating an ifr
 
 The iframe registers the AMP Service Worker file into the browser.
 
-# Customize what is cached
+# Tuỳ chỉnh phần được lưu vào bộ nhớ đệm
 
 The AMP Service Worker comes with built-in benefits while allowing optional fields that you can configure to optimize against your app's needs.
 
@@ -131,7 +131,7 @@ cachingStrategy: 'CACHE_FIRST'
 });
 [/sourcecode]
 
-We've specified the caching strategy to be [cache first](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-falling-back-to-network). The means the app will try to serve images from cache first before requesting anything from the network. This is especially useful for this app since we won't be updating our background image or the AMP logo.
+Chúng ta đã chỉ định chiến lược lưu vào bộ nhớ đệm là [bộ nhớ đệm trước tiên](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-falling-back-to-network). Nghĩa là ứng dụng sẽ tìm cách dùng hình ảnh từ bộ nhớ đệm trước tiên trước khi yêu cầu điều gì từ mạng. Cách này đặc biệt hữu dụng cho ứng dụng này do chúng ta sẽ không cập nhật ảnh nền hay logo AMP.
 
 ## Prefetch Links
 
@@ -161,7 +161,7 @@ assets: []
 });
 [/sourcecode]
 
-# Test your PWA
+# Thử nghiệm PWA
 
 You can test that your AMP Service Worker is caching necessary assets and providing an ideal offline solution through [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/progressive-web-apps).
 
@@ -173,9 +173,9 @@ Click the `offline` box to switch into offline mode. Click the `see full lineup`
 
 [tip type="default"] **Tip –** For a thorough analysis of a Progressive Web App's features, run [Google's Lighhouse tool](https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool) to generate a report. [/tip]
 
-# Congratulations!
+# Chúc mừng!
 
-You have successfully created an PWA with AMP! In this tutorial you learned to:
+Bạn đã tạo thành công một PWA bằng AMP! Trong phần hướng dẫn này, bạn đã học được cách:
 
 - Create a [Web App Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/)
 - Install a Service Worker in AMP using [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md)
