@@ -50,7 +50,7 @@ module.exports = (req, res, next) => {
       'https://cdn.ampproject.org/rtv/',
       ...getDynamicHosts(),
     ],
-    reportUri: ['https://csp-collector.appspot.com/csp/amp'],
+    reportUri: ['/csp-report'],
   };
 
   // Allow unsafe-inline for examples
