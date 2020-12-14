@@ -20,7 +20,7 @@ Sử dụng máy chủ web cục bộ để xem trước website.
 
 [tip type="default"] **MẸO–** Đối với máy chủ web nhanh, hãy chạy dòng `python -m SimpleHTTPServer`. [/tip]
 
-You should be able to view the landing page for Lyrical Lyghtning, the Mobile Music Magic festival. It has one link on the homepage to view the schedule and which stage the bands are on.
+Bạn có thể xem được trang đích cho Lyrical Lightning, lễ hội Mobile Music Magic. Nó có một liên kết trên trang chủ để xem lịch diễn và tên sân khấu các ban nhạc sẽ trình diễn.
 
 {{ image('/static/img/docs/tutorials/tut-lyricallyghtning.png', 594, 558, alt='Image of PWA' ) }}
 
@@ -180,7 +180,7 @@ Bạn đã tạo thành công một PWA bằng AMP! Trong phần hướng dẫn 
 - Tạo một [Web App Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/)
 - Cài đặt một Service Worker trong AMP bằng [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md)
 - Tuỳ chỉnh [Service Worker AMP ](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html)
-- [Prefetch links ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
+- [Truy xuất sẵn các liên kết](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
 - Tạo một trang ngoại tuyến
 
 Đọc thêm về [Service Worker](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html) và [những cân nhắc về UX ngoại tuyến](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux). Tìm hiểu cách [theo dõi sự tương tác bằng công cụ phân tích ](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.html)và làm theo hướng dẫn về [cách cấu hình công cụ phân tích cơ bản cho trang AMP của bạn](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/tracking-engagement.html).
