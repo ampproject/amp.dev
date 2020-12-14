@@ -1,5 +1,5 @@
 ---
-"$title": Prepare your page for discovery and distribution
+"$title": Bereite deine Seite für das Auffinden und die Verteilung vor
 "$order": '4'
 description: In manchen Fällen ist es sinnvoll, sowohl eine AMP Version als auch eine Version ohne AMP derselben Seite zu haben, z. B. für einen Nachrichtenartikel …
 author: pbakaus
@@ -9,25 +9,25 @@ contributors:
 
 In manchen Fällen ist es sinnvoll, sowohl eine AMP Version als auch eine Version ohne AMP derselben Seite zu haben, z. B. für einen Nachrichtenartikel. Aber woher weiß die Google Suche nach dem Fund deiner traditionellen Seite eigentlich, *dass es auch eine "gekoppelte" AMP Version gibt*?
 
-## Linking pages with `<link>`
+## Verknüpfen von Seiten mit `<link>`
 
-To establish that a non-AMP page and an AMP page should be treated as being "paired" together, we add information about the AMP page to the non-AMP page and vice versa, in the form of `<link>` tags in the `<head>`.
+Um festzulegen, dass eine nicht-AMP Seite und eine AMP Seite als "gekoppelt" behandelt werden sollen, fügen wir der nicht-AMP Seite Informationen über die AMP Seite hinzu und umgekehrt. Dazu verwenden wir die Tags `<link>` im `<head>`.
 
-Add the following to the non-AMP page:
+Füge Folgendes zu deiner nicht-AMP Seite hinzu:
 
 [sourcecode:html]
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-And this to the AMP page:
+Und füge dies zu deiner AMP Seite hinzu:
 
 [sourcecode:html]
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
-## What if I only have one page?
+## Und wenn ich nur eine Seite habe?
 
-If you only have one page, and that page is an AMP page, you must still add the canonical link to it, which will then simply point to itself:
+Auch wenn du nur eine Seite hast und es eine AMP Seite ist, musst du den kanonischen Link hinzufügen, der in diesem Fall auf sich selbst verweist:
 
 [sourcecode:html]
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
