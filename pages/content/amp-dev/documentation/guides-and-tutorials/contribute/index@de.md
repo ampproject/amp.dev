@@ -1,5 +1,5 @@
 ---
-"$title": How to contribute
+"$title": So trägst du bei
 "$titles":
   navigation: Contribute
 "$path": "/documentation/guides-and-tutorials/contribute/index.html"
@@ -18,25 +18,25 @@ Ob Entwickler, Content Autoren oder Anbieter von AMP relevanten Diensten – ohn
 
 ### Probleme mit AMP melden
 
-If you have feedback or are experiencing technical issues with AMP, please file it using the [issue tracker](https://github.com/ampproject/amphtml/issues).  If you're having issues with [amp.dev](https://amp.dev), please use the [docs issue tracker](https://github.com/ampproject/docs/issues) instead.
+Für Feedback oder technische Probleme mit AMP kannst du den [Issue Tracker](https://github.com/ampproject/amphtml/issues) verwenden. Bei Problemen mit [amp.dev](https://amp.dev) verwende stattdessen den [Issue Tracker für Dokumentationen](https://github.com/ampproject/docs/issues).
 
-### Providing technical contributions to AMP
+### Technische Beiträge zu AMP leisten
 
-The AMP Project strongly encourages technical contributions!
+Wir beim AMP Projekt freuen und sehr über technische Beiträge!
 
 Wir hoffen natürlich, dass du dich aktiv an unserer Open Source Community beteiligen wirst. Aber wir freuen uns auch über einmalige Beiträge zu den Themen, die dich besonders interessieren.
 
 #### Code beitragen
 
-To get started with contributing code to the AMP Project read through [the CONTRIBUTING file](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md), which includes details of the process by which a feature or bug fix goes from concept to submission and how you can participate in technical designs and discussions.  If you're new to open source we have some [tips for getting started](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-code).
+Bevor du das AMP Projekt mit Code unterstützt, lies dir [die Datei CONTRIBUTING](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md) durch. Sie beschreibt den Prozess, den ein Feature oder ein Bugfix vom Entwurf bis zur Einreichung durchläuft. Außerdem erfährst du, wie du an technischen Entwürfen und Diskussionen teilnehmen kannst. Wenn du dich zum ersten Mal an Open Source beteiligst, haben wir hier einige [Tipps für den Anfang](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-code).
 
-### Providing content contributions to AMP
+### Content Beiträge zu AMP leisten
 
-Content on [amp.dev](https://amp.dev) is how developers learn to build successful web experiences with AMP. We appreciate your interest in updating, creating, and requesting useful documentation!
+Mithilfe der Inhalte auf [amp.dev](https://amp.dev) lernen Entwickler, mit AMP erfolgreiche Weberfahrungen zu erstellen. Wir freuen uns, dass du dich für die Aktualisierung, Erstellung und Anforderung hilfreicher Dokumentationen interessierst!
 
 #### Bei der Dokumentation helfen
 
-Documentation? We've got all sorts -- examples for uses of AMP, tutorials to get developers started, and guides to explore AMP's features.
+Dokumentation? Wir haben alle möglichen Arten: Beispiele für die Verwendung von AMP, einführende Tutorials für Entwickler und Leitfäden zum Kennenlernen der AMP Features.
 
 [amp.dev](https://amp.dev) ist der Ort, an dem die meisten Leute AMP kennenlernen. Zu Dokumentationen kannst du im [ampproject docs GitHub Projekt](https://github.com/ampproject/docs) beitragen. (Du kannst sogar [die Seite, die du gerade liest](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md), verbessern!)
 
