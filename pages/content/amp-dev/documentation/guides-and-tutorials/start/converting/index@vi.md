@@ -1,30 +1,30 @@
 ---
-"$title": Convert HTML to AMP
+"$title": Chuyển đổi từ HTML sang AMP
 formats:
 - websites
 "$titles":
   teaser: Convert HTML to AMP
 "$order": '0'
-description: In this tutorial, you’ll learn the key concepts of AMP and how AMP documents differ from traditional HTML documents. By the end of this tutorial
+description: Trong bài thực hành này, bạn sẽ học về các khái niệm chính của AMP và điểm khác biệt giữa các tài liệu AMP so với tài liệu HTML truyền thống. Vào cuối bài thực hành này
 "$hidden": 'true'
 teaser:
-  icon: convert
-  text: Learn how to convert HTML to AMP in this step by step tutorial.
-  label: Learn more
+  icon: chuyển đổi
+  text: Tìm hiểu cách để chuyển đổi HTML sang AMP trong bài thực hành từng bước này.
+  label: Tìm hiểu thêm
 ---
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-end-product.png', 452, 918, align='right third', caption='Completed news article') }}
 
-In this tutorial, you’ll learn the key concepts of AMP and how AMP documents differ from traditional HTML documents.  By the end of this tutorial, you'll have built an AMP page from an existing HTML page.
+Trong bài thực hành này, bạn sẽ học về các khái niệm chính của AMP và điểm khác biệt giữa các tài liệu AMP so với tài liệu HTML truyền thống. Vào cuối bài thực hành này, bạn sẽ xây dựng được một trang AMP từ một trang HTML hiện có.
 
-## You'll learn to:
+## Bạn sẽ học được cách để:
 
-- Master the foundations of an AMP site
-- Recognize the differences between AMP pages and traditional HTML pages
-- Convert a traditional HTML page to AMP HTML
-- Validate an AMP page
-- Prepare your AMP content for discoverability
+- Làm chủ nền tảng của một website AMP
+- Nhận biết sự khác biệt giữa các trang AMP và trang HTML truyền thống
+- Chuyển đổi một trang HTML truyền thống thành AMP HTML
+- Xác thực một trang AMP
+- Chuẩn bị nội dung AMP của bạn để quảng bá
 
-## You'll build:
+## Bạn sẽ xây dựng:
 
-A simple news article page that conforms to AMP specifications and incorporates common features found on mobile news sites.
+Một trang bài viết tin tức đơn giản tuân theo các thông số AMP và tích hợp những tính năng phổ biến trên các website tin tức di động.
