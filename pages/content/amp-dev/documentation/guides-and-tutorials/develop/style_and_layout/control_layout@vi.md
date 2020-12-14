@@ -30,7 +30,7 @@ Tạo các ảnh tương thích bằng cách quy định `width` và `height`, �
 </amp-img>
 [/sourcecode]
 
-This [`amp-img`](../../../../documentation/components/reference/amp-img.md) element automatically fits the width of its container element, and its height is automatically set to the aspect ratio determined by the given width and height. Try it out by resizing this browser window:
+Yếu tố [`amp-img`](../../../../documentation/components/reference/amp-img.md) này sẽ tự động vừa với chiều rộng của yếu tố container của nó, và chiều cao của nó được thiết lập tự động theo tỷ lệ khung hình được xác định bởi chiều rộng và chiều cao đã cho. Hãy thử ngay bằng cách đổi kích cỡ cửa sổ trình duyệt này:
 
 <amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
 
@@ -38,11 +38,11 @@ This [`amp-img`](../../../../documentation/components/reference/amp-img.md) elem
 
 ## Thuộc tính layout (bố cục) <a name="the-layout-attribute"></a>
 
-The `layout` attribute gives you easy, per-element control over how your element should render on screen. Many of these things are possible with pure CSS – but they're much harder, and require a myriad of hacks. Use the `layout` attribute instead.
+Thuộc tính `layout` (bố cục) cho phép bạn kiểm soát dễ dàng, chi tiết cách render yếu tố trên màn hình. Rất nhiều thao tác trong số này cũng có thể được thực hiện chỉ với CSS – nhưng chúng sẽ khó hơn rất nhiều và cần nhiều thủ thuật. Thay vào đó, hãy sử dụng thuộc tính `layout` (bố cục).
 
 ### Các giá trị được hỗ trợ cho thuộc tính `layout` (bố cục)
 
-The following values can be used in the `layout` attribute:
+Các giá trị sau có thể được sử dụng trong thuộc tính `layout` (bố cục):
 
 <table>
   <thead>
@@ -97,18 +97,18 @@ The following values can be used in the `layout` attribute:
   </tbody>
 </table>
 
-[tip type="tip"] **TIP –** Visit the [Demonstrating AMP layouts](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html) page to see how the various layouts respond to screen resizing. [/tip]
+[tip type="tip"] **MẸO –** Truy cập trang [Minh họa cho bố cục AMP](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html) để xem cách các bố cục khác nhau phản ứng với việc thay đổi kích cỡ màn hình. [/tip]
 
 ### Điều gì xảy ra nếu chiều rộng và chiều cao không được định nghĩa? <a name="what-if-width-and-height-are-undefined"></a>
 
-In a few cases if `width` or `height` are not specified, the AMP runtime can default these values as the following:
+Trong một số trường hợp, nếu `width` (chiều rộng) hoặc `height` (chiều cao) không được quy định, thời gian chạy AMP có thể gán mặc định cho các giá trị này như sau:
 
 - [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): Cả chiều rộng và chiều cao sẽ được đặt mặc định là 0.
 - [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): Chiều rộng và chiều cao mặc định được suy luận từ trình duyệt.
 
 ### Điều gì xảy ra nếu thuộc tính <code>layout</code> (bố cục) không được quy định? <a name="what-if-the-layout-attribute-isnt-specified"></a>
 
-If the <code>layout</code> attribute isn't specified, AMP tries to infer or guess the appropriate value:
+Nếu thuộc tính <code>layout</code> (bố cục) không được quy định, AMP sẽ cố suy luận hoặc phỏng đoán giá trị phù hợp:
 
 <table>
   <thead>
@@ -143,15 +143,15 @@ If the <code>layout</code> attribute isn't specified, AMP tries to infer or gues
 
 ### Truy vấn đa phương tiện CSS
 
-Use [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) to control how the page layout looks and behaves, as you would do on any other website. When the browser window changes size or orientation, the media queries are re-evaluated and elements are hidden and shown based on the new results.
+Sử dụng [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) để kiểm soát ngoại hình và hành vi của bố cục trang, cũng như cách bạn làm trên các website khác. Khi cửa sổ trình duyệt thay đổi kích cỡ hoặc hướng, các truy vấn đa phương tiện sẽ được tái đánh giá và các yếu tố được ẩn và hiển thị dựa trên kết quả mới.
 
-[tip type="read-on"] **READ ON –** Learn more about controlling layout by applying media queries in [Use CSS media queries for responsiveness](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en). [/tip]
+[tip type="read-on"] **ĐỌC TIẾP –** Tìm hiểu thêm về việc kiểm soát bố cục bằng cách áp dụng các truy vấn đa phương tiện trong [Sử dụng các truy vấn đa phương tiện CSS để đảm bảo tương thích](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en). [/tip]
 
 ### Truy vấn đa phương tiện yếu tố <a name="element-media-queries"></a>
 
-One extra feature for responsive design available in AMP is the `media` attribute. This attribute can be used on every AMP element; it works similar to media queries in your global stylesheet, but only impacts the specific element on a single page.
+Một tính năng mới cho thiết kế tương thích trong AMP là thuộc tính `media` (đa phương tiện). Thuộc tính này có thể được sử dụng trên mọi yếu tố AMP; nó hoạt động tương tự như truy vấn đa phương tiện trong stylesheet toàn cục của bạn, nhưng chỉ ảnh hưởng đến yếu tố cụ thể trên một trang duy nhất.
 
-For example, here we have 2 images with mutually exclusive media queries.
+Ví dụ, ở đây chúng ta có 2 ảnh với các truy vấn đa phương tiện loại trừ lẫn nhau.
 
 [sourcecode:html]
 <amp-img
@@ -163,7 +163,7 @@ For example, here we have 2 images with mutually exclusive media queries.
 </amp-img>
 [/sourcecode]
 
-Depending on the screen width, one or the other will be fetched and rendered.
+Tùy thuộc vào chiều rộng màn hình, một trong hai truy vấn sẽ được truy xuất và render.
 
 [sourcecode:html]
 <amp-img
