@@ -166,8 +166,7 @@ Trước khi chúng ta bắt đầu thêm mã, hãy cùng xem lại trang mẫu 
 Trước khi thay đổi trang, hãy bật [bộ xác thực AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) để chúng ta biết mình đang làm việc với AMP HTML hợp lệ. <strong>Thêm</strong> mã định danh mảnh vỡ này vào URL của bạn:
 
 ```text
-# development=1
-
+#development=1
 ```
 
 Ví dụ:
