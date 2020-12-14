@@ -1,14 +1,14 @@
 ---
-"$title": Login
+"$title": Đăng nhập
 "$order": '1'
-description: The first time you land on the page, you can see 2 comments and a login button. If you look for the login button in the code, you will find ...
+description: Lần đầu tiên bạn vào trang, bạn có thể thấy 2 bình luận và một nút đăng nhập. Nếu bạn tìm nút đăng nhập trong code, bạn sẽ thấy...
 ---
 
-The first time you land on the [page](../../../../documentation/examples/previews/Comment_Section.html), you can see 2 comments and a login button.
+Lần đầu tiên bạn vào [trang](../../../../documentation/examples/previews/Comment_Section.html), bạn có thể thấy 2 bình luận và một nút đăng nhập.
 
 <amp-img src="/static/img/login-button.jpg" alt="Login button" height="290" width="300"></amp-img>
 
-If you look for the login button in the code, you will find:
+Nếu bạn tìm nút đăng nhập trong code, bạn sẽ thấy:
 
 [sourcecode:html]
 <span amp-access="NOT loggedIn" role="button" tabindex="0" amp-access-hide>
@@ -17,7 +17,7 @@ If you look for the login button in the code, you will find:
 </span>
 [/sourcecode]
 
-The behaviour of [`amp-access`](../../../../documentation/components/reference/amp-access.md) related attributes are dependent on a page-wide configuration for [`amp-access`](../../../../documentation/components/reference/amp-access.md), in our case, this one:
+Hành vi của các thuộc tính liên quan đến [`amp-access`](../../../../documentation/components/reference/amp-access.md) phụ thuộc vào một cấu hình toàn trang cho [`amp-access`](../../../../documentation/components/reference/amp-access.md), trong trường hợp của chúng ta:
 
 [sourcecode:html]
 <script id="amp-access" type="application/json">
@@ -36,9 +36,9 @@ The behaviour of [`amp-access`](../../../../documentation/components/reference/a
 </script>
 [/sourcecode]
 
-The authorization endpoint is deployed as part of AMPByExample. It's the responsibility of the publisher of the page to provide this endpoint. In this sample case, for simplicity, we implemented basic logic so that when this request is received, the server reads the value of a cookie named `ABE_LOGGED_IN`. If the cookie is not there, we return a JSON response containing `loggedIn = false`. As a result, the first time a user lands on the page, this request will return `loggedIn = false` and the login button will be shown.
+Điểm cuối xác thực được triển khai như một phần của AMPByExample. Nhà phát hành trang web có trách nhiệm cung cấp điểm cuối này. Trong trường hợp mẫu này, để đơn giản, chúng ta đã triển khai lôgic cơ bản rằng khi yêu cầu này được tiếp nhận, máy chủ sẽ đọc giá trị của một cookie tên là `ABE_LOGGED_IN`. Nếu cookie không có ở đó, chúng ta sẽ trả về một hồi đáp JSON chứa `loggedIn = false`. Do đó, lần đầu tiên người dùng vào trang, yêu cầu này sẽ trả về `loggedIn = false` và nút đăng nhập sẽ được hiển thị.
 
-Looking again at the button's HTML code, by using `on="tap:amp-access.login-sign-in"`, we specify that once the user taps on the button, the URL specified in the JSON above should be used:
+Nhìn lại mã HTML của nút này, bằng cách sử dụng `on="tap:amp-access.login-sign-in"`, chúng ta quy định rằng sau khi người dùng chạm vào nút đó, URL được quy định trong JSON ở trên sẽ được sử dụng:
 
 [sourcecode:json]
 {
@@ -49,22 +49,22 @@ Looking again at the button's HTML code, by using `on="tap:amp-access.login-sign
 
 [/sourcecode]
 
-[tip type="note"] **NOTE –**  Notice that it’s possible to define different URLs inside the login node, in this case we are defining `sign-in`, and we will later define `sign-out`. [/tip]
+[tip type="note"] **LƯU Ý –** Lưu ý rằng bạn có thể quy định các URL khác nhau trong node đăng nhập, trong trường hợp này, chúng ta đang định nghĩa `sign-in`, và sau đó chúng ta sẽ định nghĩa `sign-out`. [/tip]
 
-The login page is a non-AMP page in which we populate the login and password values for the sake of simplicity. Notice the usage of `returnURL` hidden input type, which is populated by the AMPByExample server via server-side templating. The server reads this value from a parameter called `return`, automatically added by the AMP library to the sign-in URL.
+Trang đăng nhập là một trang phi AMP mà chúng ta sẽ điền các giá trị đăng nhập và mật khẩu để đơn giản hóa. Lưu ý việc sử dụng loại nhập liệu ẩn `returnURL`, được máy chủ AMPByExample điền dữ liệu vào thông qua khuôn mẫu phía máy chủ. Máy chủ sẽ đọc giá trị này từ một tham số gọi là `return` (trả về), được thư viện AMP tự động bổ sung vào URL đăng nhập.
 
-In the example below, the value for the `return` parameter is added to the request once you click the login button. You can explore this value by using the Chrome DevTools console and navigating to the Network tab.
+Trong ví dụ dưới đây, giá trị cho tham số `return` (trả về) được thêm vào yêu cầu sau khi bạn đã nhấn vào nút đăng nhập. Bạn có thể khám phá giá trị này bằng cách sử dụng bảng điều khiển Chrome DevTools và điều hướng đến tab Network (Mạng).
 
 <amp-img src="/static/img/return-parameter.jpg" alt="Return parameter" height="150" width="600"></amp-img>
 
-Once the AMPByExample server receives the POST request from the login page and the login and password are correct, it redirects the request to the `returnURL` that we mentioned above, and appends the `#success=true` parameter. The AMP runtime can now authorize the page and finally allow you to add a comment.
+Sau khi máy chủ AMPByExample đã nhận yêu cầu POST từ trang đăng nhập và thông tin đăng nhập và mật khẩu là chính xác, nó sẽ chuyển hướng yêu cầu đến `returnURL` mà chúng ta đã nhắc đến ở trên, và chèn tham số `#success=true`. Bây giờ, thời gian chạy AMP đã có thể xác thực trang và cho phép bạn thêm một bình luận.
 
-It’s important to understand what the AMP runtime does and what the server should be doing, as the implementation of the server is the responsibility of the publisher of the page.
+Bạn cần hiểu về công việc của thời gian chạy AMP và của máy chủ, bởi việc triển khai máy chủ là trách nhiệm của nhà phát hành trang web.
 
-As a quick recap:
+Tóm lại:
 
-- The AMP runtime automatically adds the return parameter to the sign-in request specified inside the login JSON object
-- The AMP runtime closes the login page and redirects to the page specified by the return URL parameter
-- The server should orchestrate the response once the user clicks on the login button
+- Thời gian chạy AMP sẽ tự động thêm tham số trả về vào yêu cầu đăng nhập được quy định trong đối tượng JSON đăng nhập
+- Thời gian chạy AMP sẽ đóng trang đăng nhập và chuyển hướng đến trang được quy định bởi tham số URL trả về
+- Máy chủ nên xử lý hồi đáp sau khi người dùng nhấn vào nút đăng nhập
 
-[tip type="tip"] **TIP –** A more detailed explanation about this flow can also be found in the [`amp-access`](../../../../documentation/components/reference/amp-access.md). [/tip]
+[tip type="tip"] **MẸO –** Một giải thích chi tiết hơn về quy trình này cũng có thể được tìm thấy trong [`amp-access`](../../../../documentation/components/reference/amp-access.md). [/tip]
