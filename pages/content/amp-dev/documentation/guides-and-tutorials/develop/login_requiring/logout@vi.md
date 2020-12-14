@@ -10,7 +10,7 @@ Cũng giống như nút đăng nhập, việc hiển thị nút đăng xuất t�
 <button amp-access="loggedIn" amp-access-hide tabindex="0" on="tap:amp-access.login-sign-out" class="button-primary comment-button">Logout</button>
 [/sourcecode]
 
-When you click the Logout button, you are directed to the URL that you specified in the [`amp-access`](../../../../documentation/components/reference/amp-access.md) JSON configuration, as part of the login object:
+Khi bạn nhấn nút Đăng xuất, bạn sẽ được chuyển hướng đến URL mà bạn đã quy định trong cấu hình JSON [`amp-access`](../../../../documentation/components/reference/amp-access.md), như một phần của đối tượng đăng nhập:
 
 [sourcecode:json]
 {
@@ -21,4 +21,4 @@ When you click the Logout button, you are directed to the URL that you specified
 }
 [/sourcecode]
 
-Similar to the login, when the AMPByExample server receives a logout request, it uses the return URL query parameter automatically added by the AMP library and redirects to it, adding `#success=true`. By this time, you are back on the initial page; the AMPByExample cookie previously created for the login page (called `ABE_LOGGED_IN`) would be cleared at this point.
+Tương tự đăng nhập, khi máy chủ AMPByExample nhận được một yêu cầu đăng xuất, nó sẽ sử dụng tham số truy vấn URL trả về đã được thư viện AMP tự động thêm vào và chuyển hướng đến đó, bổ sung thêm chuỗi `#success=true`. Bây giờ, bạn đã quay về trang ban đầu; cookie AMPByExample vốn trước đó đã được tạo cho trang đăng nhập (tên là `ABE_LOGGED_IN`) sẽ được xóa ở thời điểm hiện tại.
