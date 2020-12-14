@@ -118,7 +118,7 @@
 		"eslint": "7.15.0",
 		"eslint-config-google": "0.14.0",
 		"eslint-config-prettier": "7.0.0",
-		"eslint-plugin-prettier": "3.2.0",
+		"eslint-plugin-prettier": "3.3.0",
 		"fetch-mock": "9.11.0",
 		"file-loader": "6.2.0",
 		"filemanager-webpack-plugin": "2.0.5",
