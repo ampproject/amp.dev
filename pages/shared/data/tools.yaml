@@ -32,7 +32,7 @@ creation:
       fit: contain
     formats:
       - email
-  - name: Mailmondo
+  - name: Mailmodo
     url: https://mailmodo.com
     type: Email Editor
     description: Create AMP emails with inline forms so that your users can take actions right inside the email. Just like an app!
