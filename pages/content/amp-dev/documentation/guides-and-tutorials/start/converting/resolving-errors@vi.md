@@ -10,8 +10,7 @@ Trong phần này, chúng ta sẽ xem và giải quyết các lỗi xác thực 
 
 Chúng ta sẽ bắt đầu bằng cách khắc phục lỗi sau:
 
-<pre class="error-text">The mandatory tag 'meta charset=utf-8' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'meta charset=utf-8' is missing or incorrect.</pre>
 
 Để hiển thị đúng văn bản, AMP đòi hỏi bạn nhập bộ ký tự cho trang đó. Thông tin về bộ ký tự siêu dữ liệu cũng phải là con đầu của thẻ `<head>`. Lý do mà thẻ này phải đứng đầu là để tránh diễn giải lại các nội dung đã được thêm trước thẻ bộ ký tự siêu dữ liệu này.
 
@@ -27,8 +26,7 @@ Chúng ta sẽ bắt đầu bằng cách khắc phục lỗi sau:
 
 Bây giờ, hãy xem lỗi sau:
 
-<pre class="error-text">The mandatory tag 'link rel=canonical' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'link rel=canonical' is missing or incorrect.</pre>
 
 Mỗi tài liệu AMP cần có một liên kết tham chiếu đến phiên bản "chính thức" của tài liệu. Chúng ta sẽ biết thêm về các trang chính thức và những lối tiếp cận khác nhau đến liên kết chính thức trong bước [Quảng bá trang của bạn](discoverable.md) của bài thực hành này.
 
@@ -54,9 +52,7 @@ Bây giờ, hãy **tải lại** trang. Tuy vẫn còn nhiều lỗi cần sửa
 
 AMP yêu cầu một thuộc tính trên yếu tố `<html>` gốc của trang để khai báo trang này là một tài liệu AMP.
 
-<pre class="error-text">The mandatory attribute '⚡' is missing in tag 'html ⚡ for top-level html'
-The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory attribute '⚡' is missing in tag 'html ⚡ for top-level html'<br>The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.</pre>
 
 Các lỗi ở trên có thể được giải quyết bằng cách thêm thuộc tính `⚡ ` vào thẻ `<html>` như sau:
 
@@ -78,8 +74,7 @@ Bây giờ, hãy tải lại trang và kiểm tra rằng cả hai lỗi đều �
 
 Tiếp theo, hãy xử lý lỗi sau đây:
 
-<pre class="error-text">The mandatory tag 'meta name=viewport' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'meta name=viewport' is missing or incorrect.</pre>
 
 AMP yêu cầu định nghĩa `width` (chiều rộng) và `minimum-scale` (quy mô nhỏ nhất) cho màn hiển thị. Các giá trị này phải được định nghĩa tương ứng là `device-width` (chiều rộng thiết bị) và `1`. Màn hiển thị là một thẻ thường được bao gồm trong `<head>` của một trang HTML.
 
@@ -97,8 +92,7 @@ Như mọi khi, **tải lại** trang và kiểm tra xem lỗi đã biến mất
 
 Lỗi sau đây liên quan đến stylesheet của chúng ta:
 
-<pre class="error-text">The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invalid value 'base.css'.
-</pre>
+<pre class="error-text">The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invalid value 'base.css'.</pre>
 
 Cụ thể, lỗi này than phiền về thẻ liên kết stylesheet sau đây trong thẻ `<head>` của chúng ta:
 
@@ -131,8 +125,7 @@ Một lần nữa, **tải lại** trang và kiểm tra rằng lỗi stylesheet 
 
 Tuy các stylesheet có thể được tái xử lý khá dễ dàng với AMP bằng cách đặt CSS inline, điều này không áp dụng cho JavaScript.
 
-<pre class="error-text">The tag 'script' is disallowed except in specific forms.
-</pre>
+<pre class="error-text">The tag 'script' is disallowed except in specific forms.</pre>
 
 Nhìn chung, các kịch bản trong AMP chỉ được cho phép nếu chúng tuân thủ 2 yêu cầu chính:
 
@@ -173,10 +166,7 @@ Bây giờ, **tải lại** trang và kiểm tra rằng lỗi kịch bản đã 
 
 Các lỗi sau đây liên quan đến việc thiếu code soạn sẵn:
 
-<pre class="error-text">The mandatory tag 'noscript enclosure for boilerplate' is missing or incorrect.
-The mandatory tag 'head > style : boilerplate' is missing or incorrect.
-The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'noscript enclosure for boilerplate' is missing or incorrect.<br>The mandatory tag 'head > style : boilerplate' is missing or incorrect.<br>The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.</pre>
 
 Mọi tài liệu AMP đều cần các code soạn sẵn AMP sau:
 
@@ -192,8 +182,7 @@ Thẻ `<style amp-boilerplate>` ban đầu ẩn nội dung của phần body (th
 
 AMP không hỗ trợ việc sử dụng các thẻ HTML mặc định tương ứng để hiển thị nội dung đa phương tiện, điều này giải thích cho lỗi sau:
 
-<pre class="error-text">The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
-</pre>
+<pre class="error-text">The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?</pre>
 
 AMP có một thành phần web được thiết kế cụ thể để thay thẻ `<img>` tên là [`<amp-img>`](../../../../documentation/components/reference/amp-img.md):
 
@@ -203,9 +192,7 @@ AMP có một thành phần web được thiết kế cụ thể để thay th�
 
 **Thay** thẻ `<img>` bằng thẻ [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) ở trên và chạy lại bộ xác thực. Bạn sẽ nhận được một vài lỗi mới:
 
-<pre class="error-text">Layout not supported: container
-The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
-</pre>
+<pre class="error-text">Layout not supported: container<br>The implied layout 'CONTAINER' is not supported by tag 'amp-img'.</pre>
 
 Vì sao [`amp-img`](../../../../documentation/components/reference/amp-img.md) lại kích hoạt một lỗi khác? Bởi [`amp-img`](../../../../documentation/components/reference/amp-img.md) không thay thế trực tiếp cho thẻ img HTML truyền thống. Có một số yêu cầu bổ sung khi sử dụng [`amp-img`](../../../../documentation/components/reference/amp-img.md).
 
@@ -313,8 +300,7 @@ Bây giờ tài liệu AMP của bạn sẽ có dạng như sau:
 
 Làm mới trang và xem đầu ra bảng điều khiển. Bạn sẽ thấy thông điệp sau:
 
-<pre class="success-text">AMP validation successful.
-</pre>
+<pre class="success-text">AMP validation successful.</pre>
 
 ### Các câu hỏi thường gặp
 
