@@ -98,7 +98,9 @@ recent_components:
   </div>
 </section>
 
-<section>
+{# Add Recent Components? #}
+
+<section id="filter">
   {% set categories = g.categories('/content/amp-dev/documentation/components/reference', locale=doc.locale) %}
   {% set filter_categories = categories|map(attribute=0)|list|tojson %}
 
@@ -109,7 +111,8 @@ recent_components:
     {% for category, docs in categories %}
     [% if not category or '{{ category|slug }}' == category or not '{{ filter_categories }}'.includes(category) %]
     <li class="ap-table-component-section">
-      <h3 class="ap-table-component-section-title">{{ category|replace('-', ' ') }}</h3>
+      {% set category_name = category|replace('-', ' ') %}
+      <h3 class="ap-table-component-section-title">{{ category_name }}</h3>
       <ul>
         {% for component in docs if component.is_current %}
         [% if '{{ component.formats }}'.includes(format) %]

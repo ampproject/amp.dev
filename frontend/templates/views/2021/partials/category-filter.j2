@@ -1,5 +1,7 @@
 <div class="ap-filter-bubbles-list">
-  <a class="ap-pill [% if not {{ filter_categories }}.includes(category)%]filtered[% endif %]" href="{{ doc.url.path }}#filter" name="all">
+  <a class="ap-pill [% if not {{ filter_categories }}.includes(category)%]--selected[% endif %]"
+      href="{{ doc.url.path }}#filter"
+      name="all">
     {{ _('All') }}
   </a>
 
