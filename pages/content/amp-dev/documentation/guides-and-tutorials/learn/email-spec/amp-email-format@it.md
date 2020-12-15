@@ -1,9 +1,11 @@
 ---
-$title: Formato AMP per e-mail
-order: 1
+"$title": Formato AMP per e-mail
+order: '1'
+formats:
+- email
 teaser:
-  text: Markup obbligatori
-toc: true
+  text: 'Markup obbligatori '
+toc: 'true'
 ---
 
 <!--
@@ -33,7 +35,7 @@ AMP è una popolare tecnologia per lo sviluppo di pagine web molto veloci su cli
 
 Il formato AMP per e-mail fornisce [un sottoinsieme di componenti AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md) che possono essere utilizzati nei messaggi e-mail. I destinatari delle e-mail AMP possono visualizzare e interagire con i componenti AMP direttamente nelle e-mail.
 
-## Markup obbligatori <a name="required-markup"></a>
+## Markup obbligatori
 
 Il codice seguente rappresenta la quantità minima di markup richiesti da un messaggio e-mail in formato AMP valido:
 
@@ -79,13 +81,23 @@ Il formato AMP per E-mail si basa sul sottotipo <a>MIME</a> <code>multipart/alte
 
 Tutti gli elementi CSS presenti in ogni documento AMP devono essere inclusi in un tag `<style amp-custom>` all'interno dell'intestazione o come attributi `style` inline.
 
-[sourcecode:html] ...
-
-<style amp-custom=""> /* any custom styles go here. */ body { background-color: white; } amp-img { border: 5px solid black; } amp-img.grey-placeholder { background-color: grey; } </style><br>[/sourcecode]
-
+[sourcecode:html]
 ...
-
- [/sourcecode]
+<style amp-custom>
+  /* any custom styles go here. */
+  body {
+    background-color: white;
+  }
+  amp-img {
+    border: 5px solid black;
+  }
+  amp-img.grey-placeholder {
+    background-color: grey;
+  }
+</style>
+...
+</head>
+[/sourcecode]
 
 Nota: l'intero tag `<style>` non può superare i 50.000 byte. Lo strumento di convalida verificherà anche le dimensioni.
 
@@ -111,10 +123,10 @@ AMPHTML consente il controllo delle interazioni e-mail con tecniche di tracciame
 
 Le seguenti tecniche di analisi specifiche di AMP non sono supportate:
 
-- [AMP `CLIENT_ID</a>`](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics#user-identification)
+- [AMP `CLIENT_ID`](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics#user-identification)
 - [`amp-analytics`](https://amp.dev/documentation/components/amp-analytics)
 - [`amp-pixel`](https://amp.dev/documentation/components/amp-pixel)
-- [Sostituzione di variabili AMP](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics_basics/#variable-substitution)
+- [AMP Variable Substitution](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics_basics/#variable-substitution)
 
 ### Considerazioni relative ai componenti <a name="component-specific-considerations"></a>
 
