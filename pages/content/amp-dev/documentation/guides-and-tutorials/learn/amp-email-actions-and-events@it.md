@@ -67,12 +67,8 @@ Consultare la tabella seguente per le descrizioni di ciascun elemento della sint
   <tr>
     <td><code>arg=value</code></td>
     <td>no</td>
-    <td>Some actions, if documented, may accept arguments. The arguments are defined between parentheses in <code>key=value</code> notation. The accepted values are:       <ul>         <li>simple unquoted strings: <code>simple-value</code>
-</li>         <li>quoted strings: <code>"string value"</code> or <code>'string value'</code>
-</li>         <li>boolean values: <code>true</code> or <code>false</code>
-</li>         <li>numbers: <code>11</code> or <code>1.1</code>
-</li>         <li>dot-syntax reference to event data: <code>event.someDataVariableName</code>
-</li>       </ul>     </td>
+    <td>Alcune azioni, se documentate, possono accettare argomenti. Gli argomenti sono definiti tra parentesi nella notazione <code>key=value</code>. I valori accettati sono: <ul> <li>stringhe semplici senza virgolette: <code>simple-value</code> </li> <li>stringhe con virgolette: <code>"string value"</code> oppure <code>'string value'</code> </li> <li>valori booleani: <code>true</code> o <code>false</code> </li> <li>numeri: <code>11</code> o <code>1.1</code> </li> <li>dati con sintassi puntata riferiti ad eventi: <code>event.someDataVariableName</code> </li> </ul>
+</td>
   </tr>
 </table>
 
@@ -135,18 +131,15 @@ Ad esempio, in AMP è possibile la seguente struttura:
   </tr>
   <tr>
     <td rowspan="3"><code>change</code></td>
-    <td rowspan="3">Fired when the value of the element is changed and committed.       <p>       Data properties mirror those in <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#Properties">HTMLInputElement</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement#Properties">HTMLSelectElement</a>.</p>     </td>
+    <td rowspan="3">Attivazione quando il valore dell'elemento viene modificato e confermato. <p>Le proprietà dei dati rispecchiano quelle in <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#Properties">HTMLInputElement</a> e <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement#Properties">HTMLSelectElement</a>.</p>
+</td>
     <td><code>input</code></td>
     <td>
-      <pre>event.min
-event.max
-event.value
-event.valueAsNumber</pre>
+      <pre>event.min<br>event.max<br>event.value<br>event.valueAsNumber</pre>
     </td>
   </tr>
   <tr>
-    <td>
-<code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
+    <td> <code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
 </td>
     <td>
       <code>event.checked</code>
@@ -236,8 +229,7 @@ event.valueAsNumber</pre>
     <th width="40%">Dati</th>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(bassa affidabilità)</td>
     <td>Attivazione quando il recupero dei dati non riesce.</td>
     <td>Nessuno</td>
   </tr>
@@ -287,8 +279,7 @@ event.valueAsNumber</pre>
     <th width="40%">Dati</th>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(bassa affidabilità)</td>
     <td>Attivazione quando il recupero dei dati non riesce.</td>
     <td>Nessuno</td>
   </tr>
@@ -344,11 +335,11 @@ event.valueAsNumber</pre>
   </tr>
   <tr>
     <td><code>show</code></td>
-    <td>Shows the target element. If an     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a     result, it gains focus.</td>
+    <td>Mostra l'elemento target. Se un <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus">elemento <code>autofocus</code></a> diventa visibile di conseguenza, la sua messa a fuoco aumenta.</td>
   </tr>
   <tr>
     <td><code>toggleVisibility</code></td>
-    <td>Toggles the visibility of the target element. If an     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a     result, it gains focus.</td>
+    <td>Attiva e disattiva la visibilità dell'elemento target. Se un <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus">elemento <code>autofocus</code></a> diventa visibile di conseguenza, esso diventa attivo.</td>
   </tr>
   <tr>
     <td><code>toggleClass(class=STRING, force=BOOLEAN)</code></td>
@@ -356,7 +347,7 @@ event.valueAsNumber</pre>
   </tr>
   <tr>
     <td><code>focus</code></td>
-    <td>Makes the target element gain focus. To lose focus, <code>focus</code>     on another element (usually parent element). We strongly advise against     losing focus by focusing on <code>body</code>/<code>documentElement</code>     for accessibility reasons.</td>
+    <td>Aumenta la messa a fuoco dell'elemento target. Per ridurre la messa a fuoco, attivare il <code>focus</code> su un altro elemento (di solito l'elemento genitore). Sconsigliamo di ridurre la messa a fuoco di un elemento, attivando il focus sull'elemento <code>body</code>/<code>documentElement</code> per motivi di accessibilità.</td>
   </tr>
 </table>
 
@@ -369,7 +360,7 @@ event.valueAsNumber</pre>
   </tr>
   <tr>
     <td><code>toggle(section=STRING)</code></td>
-    <td>Toggles the <code>expanded</code> and <code>collapsed</code> states of <code>amp-accordion</code> sections. When called with no arguments, it toggles all sections of the accordion. Trigger on a specific section by providing the section id: <code>on="tap:myAccordion.toggle(section='section-id')"</code>.   </td>
+    <td>Alterna gli stati <code>expanded</code> e <code>collapsed</code> delle sezioni <code>amp-accordion</code>. Quando l'azione è richiamata senza argomenti, essa alterna tutte le sezioni del pannello a soffietto. Per attivare una sezione specifica occorre fornire l'id della sezione: <code>on="tap:myAccordion.toggle(section='section-id')"</code>.</td>
 </tr>
   <tr>
     <td><code>expand(section=STRING)</code></td>
@@ -437,8 +428,7 @@ event.valueAsNumber</pre>
     <td>Aggiorna il layout di <code>amp-list</code> a <code>layout="CONTAINTER"</code> per consentire <a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">il ridimensionamento dinamico</a>.</td>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(bassa affidabilità)</td>
     <td>Attivazione quando il recupero dei dati non riesce.</td>
     <td>None</td>
   </tr>
@@ -465,7 +455,7 @@ event.valueAsNumber</pre>
   </tr>
   <tr>
     <td><code>toggle(index=INTEGER, value=BOOLEAN)</code></td>
-    <td>Toggles the application of the `selected`. If the select attribute is absent, this action adds it. If the select attribute is present, this action removes it.     You may force and keep an add or remove by including a boolean value in the `value` argument. A value of `true` will force add the `selected` attribute and not remove it if already present. A value of  `false` will remove the attribute, but not add it if absent.   </td>
+    <td>Attiva o disattiva l'applicazione dell'elemento 'selezionato'. Se l'attributo select è assente, questa azione lo aggiunge. Se l'attributo select è presente, questa azione lo rimuove. Per forzare un'aggiunta o una rimozione, occorre includere un valore booleano nell'argomento 'value'. Un valore "true" forzerà l'aggiunta dell'attributo 'selected' e non lo rimuoverà se già presente. Un valore 'false' rimuoverà l'attributo, ma non lo aggiungerà se è assente.</td>
   </tr>
 </table>
 
