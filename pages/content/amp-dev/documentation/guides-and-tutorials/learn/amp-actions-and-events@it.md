@@ -1,5 +1,5 @@
 ---
-"$title": Actions and events
+"$title": Azioni ed eventi
 order: '0'
 formats:
 - websites
@@ -32,39 +32,38 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-[tip type="note"] This documentation covers actions and events for AMP websites, stories and ads. Read [Actions and events in AMP email](https://github.com/ampproject/amphtml/blob/master/spec/amp-email-actions-and-events.md) for the AMP email format. [/tip]
+[tip type="note"] Questa documentazione descrive azioni ed eventi per siti web, storie e annunci AMP. Leggere il documento [Azioni ed eventi nelle email AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-email-actions-and-events.md) per il formato delle email AMP.[/tip]
 
-The `on` attribute is used to install event handlers on elements. The events that are supported depend on the element.
+L'attributo `on` viene utilizzato per installare i gestori di eventi sugli elementi. Gli eventi supportati dipendono dall'elemento.
 
-The value for the syntax is a simple domain-specific language of the form:
+Il valore per la sintassi è un semplice linguaggio specifico del dominio del modulo:
 
 [sourcecode:javascript]
 eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
 
-See the table below for descriptions of each part of the syntax.
+Consultare la tabella seguente per le descrizioni di ciascun elemento della sintassi.
 
 <table>
   <tr>
-    <th width="30%">Syntax</th>
-    <th width="18%">Required?</th>
-    <th width="42%">Description</th>
+    <th width="30%">Sintassi</th>
+    <th width="18%">Obbligatorio?</th>
+    <th width="42%">Descrizione</th>
   </tr>
   <tr>
     <td><code>eventName</code></td>
-    <td>yes</td>
-    <td>This is the name of the event that an element exposes.</td>
+    <td>sì</td>
+    <td>Questo è il nome dell'evento esposto da un elemento.</td>
   </tr>
   <tr>
     <td><code>targetId</code></td>
-    <td>yes</td>
+    <td>sì</td>
     <td>This is the DOM id for the element, or a predefined <a href="#special-targets">special target</a> you'd like to execute an action on  in response to the event. In the following example, the <code>targetId</code> is the DOM id of the <code>amp-lightbox</code> target, <code>photo-slides</code>.     <pre><amp-lightbox id="photo-slides"></amp-lightbox>
 <button on="tap:photo-slides">Show Images</button></pre>     </td>
   </tr>
   <tr>
     <td><code>methodName</code></td>
     <td>no</td>
-    <td>This is for elements with default actions.<p>This is the method that the target element (referenced by <code>targetId</code>) exposes and you'd like to execute when the event is triggered.</p>
-<p>AMP has a concept of a default action that elements can implement. So when omitting the <code>methodName</code> AMP will execute that default method.</p>
+    <td>Questo si applica ad elementi con azioni predefinite.<p>Si tratta del metodo esposto dall'elemento target (referenziato da <code>targetId</code>) che deve essere eseguito all'attivazione dell'evento.</p> <p>L'AMP prevede il concetto di azioni predefinite che possono essere implementate dagli elementi. Perciò omettendo <code>methodName</code>, l'AMP eseguirà il metodo predefinito.</p>
 </td>
   </tr>
   <tr>
@@ -79,29 +78,29 @@ See the table below for descriptions of each part of the syntax.
   </tr>
 </table>
 
-## Handling multiple events <a name="handling-multiple-events"></a>
+## Gestione di più eventi <a name="handling-multiple-events"></a>
 
-You can listen to multiple events on an element by separating the events with a semicolon `;`.
+È possibile ricevere più eventi su un elemento separando gli eventi con un punto e virgola `;`.
 
-Example: `on="submit-success:lightbox1;submit-error:lightbox2"`
+Esempio: `on="submit-success:lightbox1;submit-error:lightbox2"`
 
-## Multiple actions for one event <a name="multiple-actions-for-one-event"></a>
+## Azioni multiple per un evento <a name="multiple-actions-for-one-event"></a>
 
-You can execute multiple actions in sequence for the same event by separating the actions with a comma ','.
+È possibile eseguire più azioni in sequenza per lo stesso evento separando le azioni con una virgola ",".
 
-Example: `on="tap:target1.actionA,target2.actionB"`
+Esempio: `on="tap:target1.actionA,target2.actionB"`
 
-## Globally-defined events and actions <a name="globally-defined-events-and-actions"></a>
+## Eventi e azioni definiti a livello globale <a name="globally-defined-events-and-actions"></a>
 
-AMP defines a `tap` event globally that you can listen to on any HTML element (including AMP elements).
+AMP permette di definire un evento `tap` globale che può essere ricevuto su qualsiasi elemento HTML (inclusi gli elementi AMP).
 
-AMP also defines the `hide`, `show` and `toggleVisibility` actions globally that you can trigger on any HTML element.
+AMP permette inoltre di definire le azioni globali `hide`, `show` e `toggleVisibility` che possno essere attivate su qualsiasi elemento HTML.
 
 [tip type="note"]
 
-An element can only be shown if it was previously hidden by a `hide` or `toggleVisibility` action, or by using the [`hidden`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden) attribute. The `show` action does not support elements hidden by CSS `display:none` or AMP's `layout=nodisplay`.
+Un elemento può essere mostrato solo se in precedenza era stato nascosto da un'azione  `hide` o `toggleVisibility`, oppure usando l'attributo [`hidden`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden). L'azione `show` non  supporta elementi nascosti dall'attributo CSS `display:none` o dall'attributo AMP `layout=nodisplay`.
 
-For example, the following is possible in AMP:
+Ad esempio, in AMP è possibile la seguente struttura:
 
 [sourcecode:html]
 
@@ -112,29 +111,29 @@ For example, the following is possible in AMP:
 
 [/tip]
 
-## Element-specific events <a name="element-specific-events"></a>
+## Eventi specifici di un elemento <a name="element-specific-events"></a>
 
-### * - all elements <a name="---all-elements"></a>
+### * - tutti gli elementi <a name="---all-elements"></a>
 
 <table>
   <tr>
-    <th>Event</th>
-    <th>Description</th>
+    <th>Evento</th>
+    <th>Descrizione</th>
   </tr>
   <tr>
     <td><code>tap</code></td>
-    <td>Fired when the element is clicked/tapped.</td>
+    <td>Attivazione facendo clic o toccando l'elemento.</td>
   </tr>
 </table>
 
-### Input elements <a name="input-elements"></a>
+### Elementi di input <a name="input-elements"></a>
 
 <table>
   <tr>
     <th width="20%">Event</th>
-    <th width="30%">Description</th>
-    <th width="40%">Elements</th>
-    <th>Data</th>
+    <th width="30%">Descrizione</th>
+    <th width="40%">Elementi</th>
+    <th>Dati</th>
   </tr>
   <!-- change -->
   <tr>
@@ -167,16 +166,16 @@ event.value</pre>
   <!-- input-debounced -->
   <tr>
     <td><code>input-debounced</code></td>
-    <td>Fired when the value of the element is changed. This is similar to the standard <code>change</code> event, but it only fires when 300ms have passed after the value of the input has stopped changing.</td>
-    <td>Elements that fire <code>input</code> event.</td>
-    <td>Same as <code>change</code> event data.</td>
+    <td>Attivazione quando il valore dell'elemento viene modificato. È simile all'evento <code>change</code> standard, ma si attiva solo quando sono trascorsi 300 ms senza che il valore dell'input subisca altre variazioni.</td>
+    <td>Elementi che attivano l'evento <code>input</code>.</td>
+    <td>Gli stessi dati dell'evento  <code>change</code>.</td>
   </tr>
     <!-- input-throttled -->
   <tr>
     <td><code>input-throttled</code></td>
-    <td>Fired when the value of the element is changed. This is similar to the standard <code>change</code> event, but it is throttled to firing at most once every 100ms while the value of the input is changing.</td>
-    <td>Elements that fire <code>input</code> event.</td>
-    <td>Same as <code>change</code> event data.</td>
+    <td>Attivazione quando il valore dell'elemento viene modificato. È simile all'evento <code>change</code> standard, ma può essere attivato al massimo una volta ogni 100 ms mentre il valore dell'input cambia.</td>
+    <td>Elementi che attivano l'evento <code>input</code>.</td>
+    <td>Gli stessi dati dell'evento <code>change</code>.</td>
   </tr>
 </table>
 
@@ -184,129 +183,125 @@ event.value</pre>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Evento</th>
+    <th width="35%">Descrizione</th>
+    <th width="40%">Dati</th>
   </tr>
   <tr>
     <td><code>expand</code></td>
-    <td>Fired when an accordion section expands.</td>
-    <td>None.</td>
+    <td>Attivazione all'espansione di una sezione a soffietto.</td>
+    <td>Nessuno.</td>
   </tr>
   <tr>
     <td><code>collapse</code></td>
-    <td>Fired when an accordion section collapses.</td>
-    <td>None.</td>
+    <td>Attivazione alla compressione di una sezione a soffietto.</td>
+    <td>Nessuno.</td>
   </tr>
 </table>
 
-### amp-carousel[type="slides"] <a name="amp-carouseltypeslides"></a>
+### amp-carousel[type="slides"] <a name="amp-carouseltypeslides-1"></a>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Evento</th>
+    <th width="35%">Descrizione</th>
+    <th width="40%">Dati</th>
   </tr>
   <tr>
     <td><code>slideChange</code></td>
-    <td>Fired when the carousel's current slide changes.</td>
-    <td><pre>// Slide number.
-event.index</pre></td>
+    <td>Attivazione quando cambia la diapositiva corrente di una sequenza.</td>
+    <td><pre>//Numero di diapositiva.<br>event.index</pre></td>
   </tr>
 </table>
 
-### amp-lightbox <a name="amp-lightbox"></a>
+### amp-lightbox <a name="amp-lightbox-1"></a>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Evento</th>
+    <th width="35%">Descrizione</th>
+    <th width="40%">Dati</th>
   </tr>
   <tr>
     <td><code>lightboxOpen</code></td>
-    <td>Fired when lightbox is fully visible.</td>
-    <td>None</td>
+    <td>Attivazione quando il lightbox è completamente visibile.</td>
+    <td>Nessuno</td>
   </tr>
   <tr>
     <td><code>lightboxClose</code></td>
-    <td>Fired when lightbox is fully closed.</td>
-    <td>None</td>
+    <td>Attivazione quando il lightbox è completamente chiuso.</td>
+    <td>Nessuno</td>
   </tr>
 </table>
 
-### amp-list <a name="amp-list"></a>
+### amp-list <a name="amp-list-1"></a>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Evento</th>
+    <th width="35%">Descrizione</th>
+    <th width="40%">Dati</th>
   </tr>
   <tr>
     <td><code>changeToLayoutContainer</code></td>
-    <td>Update's <code>amp-list</code>'s layout to <code>layout="CONTAINTER"</code> to allow <a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">dynamic resizing</a>.</td>
+    <td>Aggiorna il layout di <code>amp-list</code> a <code>layout="CONTAINTER"</code> per consentire <a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">il ridimensionamento dinamico</a>.</td>
   </tr>
   <tr>
     <td>
 <code>fetch-error</code>(low-trust)</td>
-    <td>Fired when fetching data fails.</td>
-    <td>None</td>
+    <td>Attivazione quando il recupero dei dati non riesce.</td>
+    <td>Nessuno</td>
   </tr>
 </table>
 
-### amp-selector <a name="amp-selector"></a>
+### amp-selector <a name="amp-selector-1"></a>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Evento</th>
+    <th width="35%">Descrizione</th>
+    <th width="40%">Dati</th>
   </tr>
   <tr>
     <td><code>select</code></td>
-    <td>Fired when an option is selected or deselected.</td>
-    <td><pre>// Target element's "option" attribute value.
-event.targetOption
-// Array of "option" attribute values of all selected elements.
-event.selectedOptions</pre></td>
+    <td>Attivazione quando un'opzione è selezionata o deselezionata.</td>
+    <td><pre>// Valore dell'attributo "option" dell'elemento target. <code>event.targetOption</code><br/>// Array di valori degli attributi "option" di tutti gli elementi selezionati. <code>event.selectedOptions</code>Option<br></pre></td>
   </tr>
 </table>
 
-### amp-sidebar <a name="amp-sidebar"></a>
+### amp-sidebar <a name="amp-sidebar-1"></a>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Evento</th>
+    <th width="35%">Descrizione</th>
+    <th width="40%">Dati</th>
   </tr>
   <tr>
     <td><code>sidebarOpen</code></td>
-    <td>Fired when sidebar is fully opened after transition has ended.</td>
-    <td>None</td>
+    <td>Attivazione quando la barra laterale è completamente aperta al termine della transizione.</td>
+    <td>Nessuno</td>
   </tr>
   <tr>
     <td><code>sidebarClose</code></td>
-    <td>Fired when sidebar is fully closed after transition has ended.</td>
-    <td>None</td>
+    <td>Attivazione quando la barra laterale è completamente chiusa al termine della transizione.</td>
+    <td>Nessuno</td>
   </tr>
 </table>
 
-### amp-state <a name="amp-state"></a>
+### amp-state <a name="amp-state-1"></a>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Evento</th>
+    <th width="35%">Descrizione</th>
+    <th width="40%">Dati</th>
   </tr>
   <tr>
     <td>
 <code>fetch-error</code>(low-trust)</td>
-    <td>Fired when fetching data fails.</td>
-    <td>None</td>
+    <td>Attivazione quando il recupero dei dati non riesce.</td>
+    <td>Nessuno</td>
   </tr>
 </table>
 
@@ -314,53 +309,53 @@ event.selectedOptions</pre></td>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Evento</th>
+    <th width="35%">Descrizione</th>
+    <th width="40%">Dati</th>
   </tr>
   <tr>
     <td>
 <code>firstPlay</code>(low-trust)</td>
-    <td>Fired the first time the video is played by the user. On autoplay videos, this is fired as soon as the user interacts with the video. This event is low-trust which means it can not trigger most actions; only low-trust actions such as <code>amp-animation</code> actions can be run.</td>
+    <td>Attivazione alla prima riproduzione del video da parte dell'utente. L'attivazione sui video a riproduzione automatica avviene non appena l'utente interagisce con il video. Questo evento è a bassa affidabilità, il che implica che non può attivare la maggior parte delle azioni; possono essere eseguite solo azioni a bassa affidabilità, quali le azioni <code>amp-animation</code>.</td>
     <td></td>
   </tr>
   <tr>
     <td>
 <code>timeUpdate</code>(low-trust)</td>
-    <td>Fired when the playing position of a video has changed. Frequency of the event is controlled by AMP and is currently set at 1 second intervals. This event is low-trust which means it can not trigger most actions; only low-trust actions such as <code>amp-animation</code> actions can be run.</td>
+    <td>Attivazione quando la posizione di riproduzione di un video cambia. La frequenza dell'evento è controllata da AMP ed è attualmente impostata a intervalli di 1 secondo. Questo evento è a bassa affidabilità, per cui non può attivare la maggior parte delle azioni; possono essere eseguite solo azioni a bassa affidabilità quali le azioni <code>amp-animation</code>.</td>
     <td>
 <code>{time, percent}</code><code>time</code> indicates the current time in seconds, <code>percent</code> is a number between 0 and 1 and indicates current position as percentage of total time.</td>
   </tr>
 </table>
 
-### form <a name="form"></a>
+### moduli <a name="form"></a>
 
 <table>
   <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
+    <th width="25%">Evento</th>
+    <th width="35%">Descrizione</th>
+    <th width="40%">Dati</th>
   </tr>
   <tr>
     <td><code>submit</code></td>
-    <td>Fired when the form is submitted.</td>
+    <td>Attivazione all'invio del modulo.</td>
     <td></td>
   </tr>
   <tr>
     <td><code>submit-success</code></td>
-    <td>Fired when the form submission response is success.</td>
+    <td>Attivazione quando la risposta all'invio del modulo ha successo.</td>
     <td><pre>// Response JSON.
 event.response</pre></td>
   </tr>
   <tr>
     <td><code>submit-error</code></td>
-    <td>Fired when the form submission response is an error.</td>
+    <td>Attivazione quando la risposta all'invio del modulo è un errore.</td>
     <td><pre>// Response JSON.
 event.response</pre></td>
   </tr>
   <tr>
     <td><code>valid</code></td>
-    <td>Fired when the form is valid.</td>
+    <td>Attivazione quando il modulo è valido.</td>
     <td></td>
   </tr>
   <tr>
@@ -370,14 +365,14 @@ event.response</pre></td>
   </tr>
 </table>
 
-## Element-specific actions <a name="element-specific-actions"></a>
+## Azioni specifiche di un elemento <a name="element-specific-actions"></a>
 
-### * (all elements) <a name="-all-elements"></a>
+### * (tutti gli elementi) <a name="-all-elements"></a>
 
 <table>
   <tr>
-    <th width="40%">Action</th>
-    <th>Description</th>
+    <th width="40%">Azione</th>
+    <th>Descrizione</th>
   </tr>
   <tr>
     <td><code>hide</code></td>
@@ -393,11 +388,11 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>toggleClass(class=STRING, force=BOOLEAN)</code></td>
-    <td>Toggles class of the target element. <code>force</code> is optional, and if defined, it ensures that class would only be added but not removed if set to <code>true</code>, and only removed but not added if set to <code>false</code>.</td>
+    <td>Alterna le classi dell'elemento target. L'attributo <code>force</code> è opzionale e, se definito, garantisce che la classe sia solo aggiunta ma non rimossa, se l'opzione è impostata su <code>true</code>, e che essa sia solo rimossa ma non aggiunta, se l'opzione è impostata su <code>false</code>.</td>
   </tr>
   <tr>
     <td><code>scrollTo(duration=INTEGER, position=STRING)</code></td>
-    <td>Scrolls an element into view with a smooth animation.<br>     <code>duration</code> is optional. Specifies the length of the animation in milliseconds. If unspecified, an amount relative to scroll difference     under or equal to 500 milliseconds is used.<br>     <code>position</code> is optional. One of <code>top</code>, <code>center</code>     or <code>bottom</code> (default <code>top</code>).     Specifies the position of the element relative to the viewport after     scrolling.<br>     As an accessibility best practice, pair this with a call to <code>focus()</code> to focus on the element being scrolled to.</td>
+    <td>Permette di scorrere un elemento nella visualizzazione con un'animazione fluida. L'attributo <br> <code>duration</code> è opzionale. Indica la lunghezza dell'animazione in millisecondi. Se non specificato, viene utilizzato un valore relativo alla differenza di scorrimento minore o uguale a 500 millisecondi. L'attributo <br> <code>position</code> è opzionale. Può assumere uno dei valori <code>top</code>, <code>center</code> o <code>bottom</code> (valore predefinito <code>top</code>). Indica la posizione dell'elemento rispetto alla finestra di visualizzazione dopo lo scorrimento. <br> Per favorire l'accessibilità, abbinarlo a una chiamata a <code>focus()</code> per evidenziare l'elemento in scorrimento.</td>
   </tr>
   <tr>
     <td><code>focus</code></td>
@@ -409,8 +404,8 @@ event.response</pre></td>
 
 <table>
   <tr>
-    <th width="20%">Action</th>
-    <th>Description</th>
+    <th width="20%">Azione</th>
+    <th>Descrizione</th>
   </tr>
   <tr>
     <td><code>play</code></td>
@@ -426,28 +421,28 @@ event.response</pre></td>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Azione</th>
+    <th>Descrizione</th>
   </tr>
   <tr>
     <td><code>play</code></td>
-    <td>Plays the animation.</td>
+    <td>Riproduce l'animazione.</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
-    <td>Pauses the animation.</td>
+    <td>Mette in pausa l'animazione.</td>
   </tr>
   <tr>
     <td><code>stop</code></td>
-    <td>Stops the animation.</td>
+    <td>Arresta l'animazione.</td>
   </tr>
   <tr>
     <td><code>seekTo(time=INTEGER)</code></td>
-    <td>Sets the currentTime of the animation to the specified value and pauses animation. </td>
+    <td>Imposta il parametro currentTime dell'animazione sul valore specificato e la mette in pausa.</td>
   </tr>
   <tr>
     <td><code>seekTo(percent=[0,1])</code></td>
-    <td>Uses the given percentage value to determine the currentTime of the animation to the specified value and pauses animation. </td>
+    <td>Usa il valore percentuale specificato per determinare il valore corrispondente del parametro currentTime dell'animazione e la mette in pausa.</td>
   </tr>
 </table>
 
@@ -455,8 +450,8 @@ event.response</pre></td>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Azione</th>
+    <th>Descrizione</th>
   </tr>
   <tr>
     <td><code>toggle(section=STRING)</code></td>
@@ -464,28 +459,28 @@ event.response</pre></td>
 </tr>
   <tr>
     <td><code>expand(section=STRING)</code></td>
-    <td>Expands the sections of the accordion. If a section is already expanded, it stays expanded. When called with no arguments, it expands all sections of the accordion. Trigger on a specific section by providing the section id: <code>on="tap:myAccordion.expand(section='section-id')"</code>.</td>
+    <td>Espande le sezioni del pannello a soffietto. Se una sezione è già espansa, rimane espansa. Quando l'azione è richiamata senza argomenti, essa espande tutte le sezioni del pannello a soffietto. Per attivare una sezione specifica occorre fornire l'id della sezione: <code>on="tap:myAccordion.expand(section='section-id')"</code>.</td>
   </tr>
   <tr>
     <td><code>collapse(section=STRING)</code></td>
-    <td>Collapses the sections of the accordion. If a section is already collapsed, it stays collapsed. When called with no arguments, it collapses all sections of the accordion. Trigger on a specific section by providing the section id: <code>on="tap:myAccordion.collapse(section='section-id')"</code>.</td>
+    <td>Comprime le sezioni del pannello a soffietto. Se una sezione è già compressa, rimane compressa. Quando l'azione è richiamata senza argomenti, essa comprime tutte le sezioni del pannello a soffietto. Per attivare una sezione specifica occorre fornire l'id della sezione: <code>on="tap:myAccordion.collapse(section='section-id')"</code>.</td>
   </tr>
 </table>
 
-### amp-carousel[type="slides"] <a name="amp-carouseltypeslides-1"></a>
+### amp-carousel[type="slides"] <a name="amp-carouseltypeslides"></a>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Azione</th>
+    <th>Descrizione</th>
   </tr>
   <tr>
     <td><code>goToSlide(index=INTEGER)</code></td>
-    <td>Advances the carousel to a specified slide index.</td>
+    <td>Avanza nella sequenza fino alla diapositiva che occupa la posizione dell'indice specificato</td>
   </tr>
   <tr>
     <td><code>toggleAutoplay(toggleOn=true|false)</code></td>
-    <td>Toggle the carousel's autoplay status. <code>toggleOn</code> is optional.</td>
+    <td>Attiva e disattiva lo stato di riproduzione automatica della sequenza. <code>toggleOn</code> è opzionale.</td>
   </tr>
 </table>
 
@@ -493,29 +488,29 @@ event.response</pre></td>
 
 <table>
   <tr>
-    <th width="40%">Action</th>
-    <th>Description</th>
+    <th width="40%">Azione</th>
+    <th>Descrizione</th>
   </tr>
   <tr>
     <td><code>open (default)</code></td>
-    <td>Opens the image lightbox with the source image being the one that triggered the action.</td>
+    <td>Apre il lightbox dell'immagine con l'immagine sorgente che ha attivato l'azione.</td>
   </tr>
 </table>
 
-### amp-lightbox <a name="amp-lightbox-1"></a>
+### amp-lightbox <a name="amp-lightbox"></a>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Azione</th>
+    <th>Descrizione</th>
   </tr>
   <tr>
     <td><code>open (default)</code></td>
-    <td>Opens the lightbox.</td>
+    <td>Apre il lightbox.</td>
   </tr>
   <tr>
     <td><code>close</code></td>
-    <td>Closes the lightbox.</td>
+    <td>Chiude il lightbox.</td>
   </tr>
 </table>
 
@@ -523,25 +518,25 @@ event.response</pre></td>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Azione</th>
+    <th>Descrizione</th>
   </tr>
   <tr>
     <td><code>open</code></td>
-    <td>Opens the lightbox-gallery. Can be triggered by tapping another element, if you specify the image id: `on="tap:amp-lightbox-gallery.open(id='image-id')"`.</td>
+    <td>Apre la raccolta di lightbox. Può essere attivata toccando un altro elemento, indicando l'id immagine: `on =" tap: amp-lightbox-gallery.open (id = 'image-id') "'.</td>
   </tr>
 </table>
 
-### amp-list <a name="amp-list-1"></a>
+### amp-list <a name="amp-list"></a>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Azione</th>
+    <th>Descrizione</th>
   </tr>
   <tr>
     <td><code>refresh</code></td>
-    <td>Refreshes data from the <code>src</code> and re-renders the list.</td>
+    <td>Aggiorna i dati dall'elemento <code>src</code> ed esegue di nuovo il rendering dell'elenco.</td>
   </tr>
 </table>
 
@@ -549,33 +544,33 @@ event.response</pre></td>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Azione</th>
+    <th>Descrizione</th>
   </tr>
   <tr>
     <td><code>update (default)</code></td>
-    <td>Updates the DOM items to show updated content.</td>
+    <td>Aggiorna gli elementi DOM per mostrare il contenuto aggiornato.</td>
   </tr>
 </table>
 
-### amp-selector <a name="amp-selector-1"></a>
+### amp-selector <a name="amp-selector"></a>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Azione</th>
+    <th>Descrizione</th>
   </tr>
   <tr>
     <td><code>clear</code></td>
-    <td>Clears all selections from a defined <code>amp-selector</code>.</td>
+    <td>Cancella tutte le selezioni da un elemento <code>amp-selector</code> definito.</td>
   </tr>
   <tr>
     <td><code>selectUp(delta=INTEGER)</code></td>
-    <td>Moves the selection up by the value of `delta`. The default `delta` is set to -1. If no options are selected, the selected state will become the value of the last option.</td>
+    <td>Sposta la selezione verso l'alto del valore indicato dal parametro 'delta'. Il valore predefinito di 'delta' è -1. Se non sono selezionate opzioni, lo stato selezionato diventerà il valore dell'ultima opzione.</td>
   </tr>
   <tr>
     <td><code>selectDown(delta=INTEGER)</code></td>
-    <td>Moves the selection down by the value of `delta`. The default `delta` is set to 1. If no options are selected, the selected state will become the value of the first option.</td>
+    <td>Sposta la selezione verso il basso del valore indicato dal parametro 'delta'. Il valore predefinito di 'delta' è -1. Se non sono selezionate opzioni, lo stato selezionato diventerà il valore della prima opzione.</td>
   </tr>
   <tr>
     <td><code>toggle(index=INTEGER, value=BOOLEAN)</code></td>
@@ -583,37 +578,37 @@ event.response</pre></td>
   </tr>
 </table>
 
-### amp-sidebar <a name="amp-sidebar-1"></a>
+### amp-sidebar <a name="amp-sidebar"></a>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Azione</th>
+    <th>Descrizione</th>
   </tr>
   <tr>
     <td><code>open (default)</code></td>
-    <td>Opens the sidebar.</td>
+    <td>Apre la barra laterale.</td>
   </tr>
   <tr>
     <td><code>close</code></td>
-    <td>Closes the sidebar.</td>
+    <td>Chiude la barra laterale.</td>
   </tr>
   <tr>
     <td><code>toggle</code></td>
-    <td>Toggles the state of the sidebar.</td>
+    <td>Alterna gli stati della barra laterale.</td>
   </tr>
 </table>
 
-### amp-state <a name="amp-state-1"></a>
+### amp-state <a name="amp-state"></a>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Azione</th>
+    <th>Descrizione</th>
   </tr>
   <tr>
     <td><code>refresh</code></td>
-    <td>Refetches data at the `src` attribute while ignoring browser cache.</td>
+    <td>Recupera di nuovo i dati dall'attributo `src` ignorando la cache del browser.</td>
   </tr>
 </table>
 
@@ -621,75 +616,75 @@ event.response</pre></td>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Azione</th>
+    <th>Descrizione</th>
   </tr>
   <tr>
     <td><code>dismiss (default)</code></td>
-    <td>Hides the referenced user notification element.</td>
+    <td>Nasconde l'elemento di notifica dell'utente referenziato.</td>
   </tr>
 </table>
 
-### Video elements <a name="video-elements"></a>
+### Elementi video <a name="video-elements"></a>
 
-The actions below are supported in the following AMP video elements: `amp-video`, `amp-youtube`, `amp-3q-player`, `amp-brid-player`, `amp-dailymotion`, `amp-delight-player`, `amp-ima-video`.
+Le azioni riportate di seguito sono supportate dai seguenti elementi video AMP: `amp-video`, `amp-youtube`, `amp-3q-player`, `amp-brid-player`, `amp-dailymotion`, `amp-delight-player`, `amp-ima-video`.
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Azione</th>
+    <th>Descrizione</th>
   </tr>
   <tr>
     <td><code>play</code></td>
-    <td>Plays the video.</td>
+    <td>Riproduce il video.</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
-    <td>Pauses the video.</td>
+    <td>Mette in pausa il video.</td>
   </tr>
   <tr>
     <td><code>mute</code></td>
-    <td>Mutes the video.</td>
+    <td>Disattiva l'audio del video.</td>
   </tr>
   <tr>
     <td><code>unmute</code></td>
-    <td>Unmutes the video.</td>
+    <td>Riattiva l'audio del video.</td>
   </tr>
   <tr>
     <td><code>fullscreencenter</code></td>
-    <td>Takes the video to fullscreen.</td>
+    <td>Espande il video a schermo intero.</td>
   </tr>
 </table>
 
-### form <a name="form-1"></a>
+### modulo <a name="form-1"></a>
 
 <table>
   <tr>
-    <th>Action</th>
-    <th>Description</th>
+    <th>Azione</th>
+    <th>Descrizione</th>
   </tr>
   <tr>
     <td><code>clear</code></td>
-    <td>Clears any values in the form's inputs.</td>
+    <td>Cancella tutti i valori nei campi di input del modulo.</td>
   </tr>
   <tr>
     <td><code>submit</code></td>
-    <td>Submits the form.</td>
+    <td>Invia il modulo.</td>
   </tr>
 </table>
 
-## Special targets <a name="special-targets"></a>
+## Target speciali <a name="special-targets"></a>
 
-The following are targets provided by the AMP system that have special requirements:
+Di seguito sono riportati i target forniti dal sistema AMP con requisiti speciali:
 
 ### Target: AMP <a name="target-amp"></a>
 
-The `AMP` target is provided by the AMP runtime and implements top-level actions that apply to the whole document.
+Il target `AMP` è fornito dal sistema di runtime AMP e implementa azioni di primo livello che si applicano all'intero documento.
 
 <table>
   <tr>
-    <th width="40%">Action</th>
-    <th>Description</th>
+    <th width="40%">Azione</th>
+    <th>Descrizione</th>
   </tr>
   <tr>
     <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
@@ -701,33 +696,33 @@ The `AMP` target is provided by the AMP runtime and implements top-level actions
   <tr>
     <td><code>closeOrNavigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
-      <p>Tries to close the window if allowed, otherwise it navigates similar to <code>navigateTo</code> Action. Useful for use-cases where a "Back" button may need to close the window if it were opened in a new window from previous page or navigate if it wasn't opened.</p>
+      <p>Prova a chiudere la finestra se consentito, altrimenti permette di esplorare in modo simile all'azione <code>navigateTo</code>. Utile per i casi d'uso in cui un pulsante "Indietro" potrebbe tentare di chiudere la finestra se essa era stata aperta in una nuova finestra dalla pagina precedente o per proseguire l'esplorazione se la finestra non era stata aperta.</p>
       <p><strong>Caveat:</strong> Using normal <code><a></code> links is recommended wherever possible since <code>AMP.closeOrNavigateTo</code> is not recognized by web crawlers.</p>
     </td>
   </tr>
   <tr>
     <td><code>goBack</code></td>
-    <td>Navigates back in history.</td>
+    <td>Torna indietro nella cronologia.</td>
   </tr>
   <tr>
     <td><code>print</code></td>
-    <td>Opens the Print Dialog to print the current page.</td>
+    <td>Apre la finestra di dialogo Stampa per stampare la pagina corrente.</td>
   </tr>
   <tr>
     <td>scrollTo(id=STRING, duration=INTEGER, position=STRING)</td>
-    <td>Scrolls to the provided element ID on the current page.</td>
+    <td>Scorre fino all'ID dell'elemento fornito nella pagina corrente.</td>
   </tr>
   <tr>
     <td>optoutOfCid</td>
-    <td>Opts out of Client ID generation for all scopes.</td>
+    <td>Disattiva la generazione dell'ID client per tutti gli ambiti.</td>
   </tr>
   <tr>
     <td>
 <code>setState({foo: 'bar'})</code><sup>1</sup>
 </td>
     <td>
-      <p>Requires <a href="https://amp.dev/documentation/components/amp-bind.html#updating-state-with-ampsetstate">amp-bind</a>.</p>
-      <p>Merges an object literal into the bindable state.</p>
+      <p>Richiede <a href="https://amp.dev/documentation/components/amp-bind.html#updating-state-with-ampsetstate">amp-bind</a>.</p>
+      <p>Aggiunge il valore letterale di un oggetto allo stato associabile.</p>
       <p></p>
     </td>
   </tr>
@@ -736,21 +731,21 @@ The `AMP` target is provided by the AMP runtime and implements top-level actions
 <code>pushState({foo: 'bar'})</code><sup>1</sup>
 </td>
     <td>
-      <p>Requires <a href="https://amp.dev/documentation/components/amp-bind.html#modifying-history-with-amppushstate">amp-bind</a>.</p>
-      <p>Merges an object literal into the bindable state and pushes a new entry onto browser history stack. Popping the entry will restore the previous values of variables (in this example, <code>foo</code>).    </p>
+      <p>Richiede <a href="https://amp.dev/documentation/components/amp-bind.html#modifying-history-with-amppushstate">amp-bind</a>.</p>
+      <p>Aggiunge il valore letterale di un oggetto allo stato associabile e inserisce un nuovo elemento nello stack della cronologia del browser. La visualizzazione dell'elemento ripristinerà i precedenti valori delle variabili (in questo esempio, <code>foo</code>).</p>
 </td>
   </tr>
 </table>
 
-<sup>1</sup>When used with <a href="#multiple-actions-for-one-event">multiple actions</a>, subsequent actions will wait for <code>setState()</code> or <code>pushState()</code> to complete before invocation. Only a single <code>setState()</code> or <code>pushState()</code> is allowed per event.
+<sup>1</sup>In caso di utilizzo con <a href="#multiple-actions-for-one-event">azioni multiple</a>, le azioni successive attenderanno il completamento di <code>setState()</code> o <code>pushState()</code> prima della chiamata. Per ogni evento è consentita una sola chiamata di <code>setState()</code> o  <code>pushState()</code>.
 
 ### Target: amp-access <a name="target-amp-access"></a>
 
-The `amp-access` target is provided by the [amp-access](https://amp.dev/documentation/components/amp-access.html) component.
+Il target `amp-access` è fornito dal componente [amp-access](https://amp.dev/documentation/components/amp-access.html).
 
-The `amp-access` target is special for these reasons:
+Il target `amp-access` è speciale per i seguenti motivi:
 
-1. You can't give an arbitrary ID to this target. The target is always `amp-access`.
-2. The actions for `amp-access` are dynamic depending on the structure of the [AMP Access Configuration](https://amp.dev/documentation/components/amp-access#configuration).
+1. Non è possibile assegnare un ID arbitrario a questo target. Il target è sempre `amp-access`.
+2. Le azioni per `amp-access` sono dinamiche a seconda della struttura della [configurazione di accesso AMP](https://amp.dev/documentation/components/amp-access#configuration).
 
-See [details](https://amp.dev/documentation/components/amp-access#login-link) about using the `amp-access` target.
+Consultare i [dettagli](https://amp.dev/documentation/components/amp-access#login-link) sull'utilizzo del target `amp-access`.
