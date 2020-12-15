@@ -1,9 +1,11 @@
 ---
-$title: Cómo integrar sus tecnologías para crear anuncios en AMP
-order: 3
+"$title": Cómo integrar sus tecnologías para crear anuncios en AMP
+order: '3'
+formats:
+- ads
 teaser:
   text: Si usted es un proveedor de tecnología publicitaria y busca integrarse con AMP HTML, consulte las siguientes recomendaciones.
-toc: true
+toc: 'true'
 ---
 
 <!--
@@ -25,11 +27,17 @@ Debido a que AMP no permite que los editores ejecuten JavaScript de manera arbit
 
 Por ejemplo: puede invocarse al servidor Amazon A9 mediante la siguiente sintaxis:
 
-[sourcecode:html] <amp-ad width="300" height="250" type="a9" data-aax_size="300x250" data-aax_pubname="test123" data-aax_src="302"
-
+[sourcecode:html]
+<amp-ad
+  width="300"
+  height="250"
+  type="a9"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
 >
-
- [/sourcecode]
+</amp-ad>
+[/sourcecode]
 
 Tenga en cuenta que cada uno de los atributos que se escriban después de `type` dependen de los parámetros que el servidor A9 de Amazon espera para enviar un anuncio. En el archivo [a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) se muestra cómo deben asignarse los parámetros para realizar una llamada de JavaScript que invoque al servidor A9 mediante la URL `https://c.amazon-adsystem.com/aax2/assoc.js`. Los parámetros correspondientes que son aprobados por la etiqueta del anuncio de AMP se adjuntan a la URL para devolver un anuncio.
 
@@ -59,11 +67,17 @@ Un reproductor de video que funciona en las páginas HTML normales no funcionar�
 
 Un reproductor de Brightcove puede invocarse mediante las siguientes líneas:
 
-[sourcecode:html] <amp-brightcove data-account="1290862519001" data-video-id="ref:amp-docs-sample" data-player="S1Tt8cgaM" layout="responsive" width="480" height="270"
-
+[sourcecode:html]
+<amp-brightcove
+  data-account="1290862519001"
+  data-video-id="ref:amp-docs-sample"
+  data-player="S1Tt8cgaM"
+  layout="responsive"
+  width="480"
+  height="270"
 >
-
- [/sourcecode]
+</amp-brightcove>
+[/sourcecode]
 
 Para obtener instrucciones sobre cómo desarrollar una etiqueta de amp similar a la de Brightcove, consulte [esta solicitud de validación](https://github.com/ampproject/amphtml/pull/1052).
 
