@@ -238,15 +238,11 @@ Esistono vari strumenti che si possono utilizzare per codificare i video e regol
   </thead>
   <tbody>
     <tr>
-     <td>
-<a href="https://www.ffmpeg.org/about.html">FFmpeg</a>
-     </td>
+     <td><a href="https://www.ffmpeg.org/about.html">FFmpeg</a></td>
      <td>Ottimizzazioni consigliate: <ul> <li> Per MP4, usare <code>-crf 23</code>. </li> <li> Per WEBM, usare <code>-b:v 1M</code>. </li> </ul> </td>
     </tr>
     <tr>
-     <td>
-<a href="https://libav.org/avconv.html">avconv</a>
-     </td>
+     <td><a href="https://libav.org/avconv.html">avconv</a></td>
      <td>Ottimizzazioni consigliate: <ul> <li> Per MP4, usare <code>-crf 23</code>. </li> <li> Per WEBM, usare <code>-b:v 1M</code>.</li> </ul> </td>
     </tr>
     <tr>
