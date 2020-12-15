@@ -18,8 +18,7 @@ Antes de la introducción del componente [`amp-bind`](../../../../documentation/
 Abra el archivo [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html), y agregue el siguiente script a la lista de componentes de AMP en la sección `<head>` de la página:
 
 ```html
-<script async custom-element="amp-bind"
-    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 ```
 
 ## Adición de un indicador de diapositiva
@@ -78,9 +77,9 @@ A continuación, utilizamos esta variable de estado que rastrea la diapositiva m
 <p class="dots">
   <!-- The <span> element corresponding to the current displayed slide
        will have the 'current' CSS class. -->
-  <span [class]="selected.slide == 0 ? 'current' : ''" class="current"></span>
-  <span [class]="selected.slide == 1 ? 'current' : ''"></span>
-  <span [class]="selected.slide == 2 ? 'current' : ''"></span>
+  <span : class="current"></span>
+  <span :></span>
+  <span :></span>
 </p>
 ```
 
@@ -177,8 +176,7 @@ Si agregamos otra variable de estado que rastree la SKU seleccionada, podemos vi
 Agregue una acción "on" al [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) que actualiza la variable `selected.sku` siempre que se seleccione un nuevo color:
 
 ```html
-<amp-selector name="color"
-    on="select:AMP.setState({selected: {sku: event.targetOption}})">
+<amp-selector name="color" on="select:AMP.setState({selected: {sku: event.targetOption}})"></amp-selector>
 ```
 
 [tip type="tip"] **CONSEJO:** Esto también se puede hacer agregando las acciones `on="tap:AMP.setState(...)` a cada [`amp-img`](../../../../documentation/components/reference/amp-img.md) secundario dentro del [`amp-selector`](../../../../documentation/components/reference/amp-selector.md). Una de las grandes cosas sobre [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) es que simplifica el marcado [/tip]
