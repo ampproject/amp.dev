@@ -66,7 +66,7 @@ Un mensaje de correo electrónico de AMP DEBE:
 - <a name="scrpt"></a>contener una etiqueta `<script async src="https://cdn.ampproject.org/v0.js"></script>` dentro de su etiqueta principal. [🔗](#scrpt)
 - <a name="boilerplate"></a>contener el texto estándar de amp4email (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) dentro de su etiqueta principal para ocultar inicialmente el contenido hasta que se cargue AMP JS. [🔗](#boilerplate)
 
-The entire AMPHTML markup must not exceed 200,000 bytes.
+El total de etiquetas AMP HTML no debe exceder los 200,000 bytes.
 
 ## Estructura y renderización <a name="structure-and-rendering"></a>
 
