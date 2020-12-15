@@ -163,7 +163,7 @@ Este encabezado es un requisito de la <a href="https://www.w3.org/TR/cors/">espe
 
 A pesar de que la especificación W3 de CORS permite devolver el valor de <code>*</code> en la respuesta, para mejorar la seguridad, debe hacer lo siguiente:
 
-- If the `Origin` header is present, validate and echo the value of the <code><code data-md-type="codespan">Origin</code> header.
+- Si el encabezado `Origin` está presente, compruebe y repita la validación del encabezado <code>Origin</code>.
 
 ### Cómo procesar las solicitudes de cambio de estado <a name="processing-state-changing-requests"></a>
 
