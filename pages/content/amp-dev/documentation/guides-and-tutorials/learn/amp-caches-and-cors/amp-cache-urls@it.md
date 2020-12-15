@@ -117,8 +117,8 @@ Alcuni esempi dell'algoritmo base:
    </td>
   </tr>
   <tr>
-   <td> <code>xn--57hw060o.com</code> (⚡😊.com)    </td>
-   <td> <code>xn---com-p33b41770a</code> (⚡😊-com)    </td>
+   <td> <code>xn--57hw060o.com</code> (⚡😊.com)</td>
+   <td> <code>xn---com-p33b41770a</code> (⚡😊-com)</td>
   </tr>
   <tr>
    <td>
