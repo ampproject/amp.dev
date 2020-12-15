@@ -1,18 +1,18 @@
 ---
-$title: Comprensione delle parti di una storia AMP
-$order: 2
-description: Una storia web è un'esperienza di narrazione visiva a schermo intero che trasmette informazioni con immagini, video, grafica, audio e altro ancora. È perfetto per gli utenti ...
+"$title": Understanding the parts of an AMP story
+"$order": '2'
+description: "A Web Story is a full-screen visual storytelling experience that conveys information with images, videos, graphics, audio, and more. It's perfect for users ..."
 author: bpaduch
 ---
 
-Una storia web è un'esperienza di narrazione visiva a schermo intero che trasmette informazioni con immagini, video, grafica, audio e altro ancora. È uno strumento perfetto per gli utenti che desiderano accedere a contenuti in dimensioni limitate e visivamente ricchi.
+A Web Story is a full-screen visual storytelling experience that conveys information with images, videos, graphics, audio, and more. It's perfect for users who want bite-sized, visually-rich content.
 
-Gli ingredienti di base che entrano in una storia web sono le singole **pagine**. Queste pagine, a loro volta, sono composte da singoli **livelli** che contengono **elementi** HTML e AMP di base.
+The basic ingredients that go into an Web Story are individual **pages**. These pages, in turn, are composed of individual **layers** that contain basic HTML and AMP **elements**.
 
 {{ image('/static/img/docs/tutorials/amp_story/story_parts.png', 1047, 452, align='center ninety') }}
 
-Ciascuno di questi ingredienti viene tradotto in componenti AMP, dove la storia è rappresentata dall'elemento [`amp-story`](../../../../documentation/components/reference/amp-story.md), la pagina è rappresentata dagli elementi `amp-story-page` e i livelli sono rappresentati dagli elementi `amp-story-grid-layer`.
+Each of those ingredients are translated into AMP components, where the story is represented by [`amp-story`](../../../../documentation/components/reference/amp-story.md), the page is represented by `amp-story-page`, and the layers are represented by `amp-story-grid-layer`.
 
 {{ image('/static/img/docs/amp-story-tag-hierarchy.png', 557, 355, align='center seventyfive' ) }}
 
-Cominciamo a creare la nostra storia web con il contenitore [`amp-story`](../../../../documentation/components/reference/amp-story.md).
+Let's start creating our Web Story with the [`amp-story`](../../../../documentation/components/reference/amp-story.md) container.
