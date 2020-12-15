@@ -77,8 +77,8 @@ author: CrystalOnScript
    <td>Il racconto su web di un'esperienza realizzato con AMP.</td>
    <td>
 <ul>
-      <li>The Web Story format is free and part of the open web.       </li>
-<li>Web Stories immerse readers in fast-loading full-screen experiences.  </li>
+      <li>Il formato delle storie Web è libero e fa parte del web aperto.</li>
+<li>Le storie Web permettono ai lettori di immergersi in coinvolgenti esperienze su pagine a schermo intero con caricamento veloce.</li>
 </ul>
    </td>
   </tr>
