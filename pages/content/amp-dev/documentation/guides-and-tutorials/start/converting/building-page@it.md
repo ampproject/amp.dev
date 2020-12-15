@@ -1,7 +1,7 @@
 ---
-$title: Realizzazione di una normale pagina HTML
-$order: 1
-description: Nella directory di progetto si trova un file denominato article.html. Si tratta della pagina di articoli per cui stiamo realizzando un'equivalente pagina AMP ...
+"$title": Realizzazione di una normale pagina HTML
+"$order": '1'
+description: "Nella directory di progetto si trova un file denominato article.html. Si tratta della pagina di articoli per cui stiamo realizzando un'equivalente pagina AMP ..."
 ---
 
 Nella directory di progetto si trova un file denominato [`article.html`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/article.html). Si tratta della pagina di articoli per cui stiamo realizzando un'equivalente pagina AMP.
