@@ -38,7 +38,7 @@ Wiele składników i rozszerzeń AMP wykorzystuje zdalne punkty końcowe, stosuj
 
 <div class="noshowtoc"></div>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true">
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#why-do-i-need-cors-for-my-own-origin-" data-md-type="link">Po co mi CORS do własnego źródła?</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#why-do-i-need-cors-for-my-own-origin" data-md-type="link">Po co mi CORS do własnego źródła?</a></li>
 <li data-md-type="list_item" data-md-list-type="unordered"><a href="#utilizing-cookies-for-cors-requests" data-md-type="link">Stosowanie plików cookie do żądań CORS</a></li>
 <li data-md-type="list_item" data-md-list-type="unordered">
 <p data-md-type="paragraph"><a href="#cors-security-in-amp" data-md-type="link">Zabezpieczenia CORS w AMP</a></p>
@@ -66,7 +66,7 @@ Wiele składników i rozszerzeń AMP wykorzystuje zdalne punkty końcowe, stosuj
 </ul>
 <div data-md-type="block_html"></div>
 
-## Po co mi CORS do własnego źródła?<a name="why-do-i-need-cors-for-my-own-origin"></a>
+## Po co mi CORS do własnego źródła?<a id="why-do-i-need-cors-for-my-own-origin"></a>
 
 Konieczność stosowania mechanizmu CORS do żądań własnego źródła może być dezorientująca, zagłębmy się w to.
 
@@ -88,7 +88,7 @@ Ach, ale jak Twój użytkownik dostał się na stronę AMP? Czy dostęp jest uzy
 1. W przypadku stron AMP pobierających dane dynamiczne testuj wersję buforowaną tych stron; *nie testuj tylko we własnej domenie*. (Patrz [Testowanie CORS w AMP](#testing-cors-in-amp) poniżej)
 2. Wykonaj zawarte w niniejszym dokumencie instrukcje dotyczące obsługi żądań i odpowiedzi CORS.
 
-## Stosowanie plików cookie do żądań CORS <a name="utilizing-cookies-for-cors-requests"></a>
+## Stosowanie plików cookie do żądań CORS <a id="utilizing-cookies-for-cors-requests"></a>
 
 Większość składników AMP wykorzystującch żądania CORS albo automatycznie ustawia tryb [credentials mode](https://fetch.spec.whatwg.org/#concept-request-credentials-mode), albo pozwala autorowi na opcjonalne włączenie go. Na przykład składnik [`amp-list`](https://amp.dev/documentation/components/amp-list) pobiera dynamiczną zawartość z pliku JSON punktu końcowego CORS i pozwala autorowi na ustawienie trybu uwierzytelniania za pomocą atrybutu `credentials`.
 
@@ -120,7 +120,7 @@ Aby zapewnić prawidłowość i bezpieczeństwo żądań i odpowiedzi na stronac
 
 Jeśli używasz Node na swoim zapleczu, możesz użyć [oprogramowania pośredniczącego AMP CORS](https://www.npmjs.com/package/amp-toolbox-cors), które jest częścią [przybornika AMP](https://github.com/ampproject/amp-toolbox).
 
-### Weryfikowanie żądań CORS <a name="verify-cors-requests"></a>
+### Weryfikowanie żądań CORS <a id="verify-cors-requests"></a>
 
 Gdy Twój punkt końcowy otrzyma żądanie CORS:
 
@@ -141,7 +141,7 @@ Na przykład, punkty końcowe powinny zezwalać na żądania z:
 
 - [Omówienie usługi Google AMP Cache](https://developers.google.com/amp/cache/overview) [/tip]
 
-#### 2) Zezwalanie na żądania tych samych źródeł <a name="2-allow-same-origin-requests"></a>
+#### 2) Zezwalanie na żądania tych samych źródeł <a id="2-allow-same-origin-requests"></a>
 
 <span id="allow-same-origin-requests"></span>
 
@@ -153,7 +153,7 @@ AMP-Same-Origin: true
 
 Ten nagłówek niestandardowy jest wysyłany przez środowisko uruchomieniowe AMP po wygenerowaniu żądania XHR tego samego źródła (tj. dokumentu serwowanego z niebuforowanego adresu URL). Zezwól na żądania zawierające nagłówek `AMP-Same-Origin:true`.
 
-### Wysyłanie nagłówków odpowiedzi CORS <a name="send-cors-response-headers"></a>
+### Wysyłanie nagłówków odpowiedzi CORS <a id="send-cors-response-headers"></a>
 
 Po zweryfikowaniu żądania CORS wynikowa odpowiedź HTTP musi zawierać następujące nagłówki:
 
@@ -165,7 +165,7 @@ Chociaż specyfikacja CORS W3 zezwala na zwrócenie w odpowiedzi wartości <code
 
 - Jeśli nagłówek `Origin` jest obecny, zatwierdzić i powtórzyć wartość nagłówka <code>Origin</code>.
 
-### Przetwarzanie żądań zmiany stanu <a name="processing-state-changing-requests"></a>
+### Przetwarzanie żądań zmiany stanu <a id="processing-state-changing-requests"></a>
 
 [tip type="important"] Wykonaj te kontrole poprawności *&nbsp;przed * przetworzeniem wniosku. Taka walidacja pozwala zapewnić ochronę przed atakami CSRF i uniknąć przetwarzania żądań niezaufanych źródeł. [/tip]
 

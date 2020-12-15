@@ -1,8 +1,10 @@
 ---
-$title: Proteja el contenido de su suscripción mediante el cifrado del lado del cliente
-$titles:
-  teaser: Proteja el contenido de su suscripción mediante el cifrado del lado del cliente.
-$order: 10
+formats:
+- websites
+"$title": Proteja el contenido de su suscripción mediante el cifrado del lado del cliente
+"$titles":
+  teaser: Protect your subscription content with client-side encryption.
+"$order": '10'
 description: Resuelva los problemas de cifrado de contenido implementando la validación de los suscriptores premium y la desencriptación de contenido en el lado del cliente. ¡Con esta solución, los usuarios con acceso premium podrán desencriptar contenido sin necesidad de cargar una nueva página o esperar a que responda un backend!
 author: CrystalOnScript
 ---

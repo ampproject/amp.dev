@@ -552,7 +552,7 @@ CDATA – это контент между открывающим и закры
 * `<body>`
 * `<script src="https://cdn.ampproject.org/v0.js">`
 
-## Ошибки стиля и дизайна
+## Ошибки стиля и дизайна <a name="style-and-layout-errors"></a>
 
 Прежде чем переходить к разбору ошибок, следует понять, как на AMP-страницах работают [стили](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md) и [шаблоны](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md). Поскольку AMP-страницы имеют формат HTML, они во многом похожи на обычные HTML-страницы.
 Но существует ряд ограничений, которые обеспечивают быструю загрузку контента.

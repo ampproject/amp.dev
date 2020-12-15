@@ -1,9 +1,11 @@
 ---
-$title: Estructura y renderización en los correos electrónicos de AMP
-order: 2
+"$title": Estructura y renderización en los correos electrónicos de AMP
+order: '2'
+formats:
+- email
 teaser:
-  text: El correo electrónico está estructurado como un árbol MIME. En este árbol MIME se incluyen tanto el cuerpo del mensaje como los archivos adjuntos del correo electrónico.
-toc: true
+  text: 'El correo electrónico está estructurado como un '
+toc: 'true'
 ---
 
 <!--
@@ -29,13 +31,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-El correo electrónico está estructurado como un [árbol MIME](https://en.wikipedia.org/wiki/MIME). En este árbol MIME se incluyen tanto el cuerpo del mensaje como los archivos adjuntos del correo electrónico.
+El correo electrónico está estructurado como un árbol MIME. En este árbol MIME se incluyen tanto el cuerpo del mensaje como los archivos adjuntos del correo electrónico.
 
 Para integrar AMP en un correo electrónico, agregue una nueva sección del MIME que tenga un contenido tipo `text/x-amp-html` y sea descendiente de `multipart/alternative`. Debe establecerse junto con el actual `text/html` o las secciones de `text/plain`. Esto garantizará que el mensaje de correo electrónico funcione para todos los clientes.
 
-<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/master/spec/img/amp-email-mime-parts.png">
-<noscript data-md-type="raw_html" data-segment-id="8724406"><img data-md-type="raw_html" alt="AMP para diagrama de piezas de MIME de correo electrónico" src="../img/amp-email-mime-parts.png"></noscript>
-</amp-img>
+<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/master/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"><img data-md-type="raw_html" alt="AMP para diagrama de piezas de MIME de correo electrónico" src="../img/amp-email-mime-parts.png"></noscript></amp-img>
 
 Para obtener más información sobre el subtipo `multipart/alternative` consulte el [RFC 1521, sección 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
@@ -59,18 +59,36 @@ El cliente de correo electrónico puede ocultar la sección de AMP en un correo 
 
 <!-- prettier-ignore-start -->
 
-[sourcecode:html] De: Persona A [persona@example.com](mailto:persona@example.com) Para: Persona B [personb@example.com](mailto:personb@example.com) Asunto: ¡Recibió un correo electrónico de AMP! Tipo de contenido: multiparte/alternativo; boundary="001a114634ac3555ae05525685ae"
+[sourcecode:html]
+From:  Person A <persona@example.com>
+To: Person B <personb@example.com>
+Subject: An AMP email!
+Content-Type: multipart/alternative; boundary="001a114634ac3555ae05525685ae"
 
---001a114634ac3555ae05525685ae Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+--001a114634ac3555ae05525685ae
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
 
-¡Hola mundo en texto sin formato!
+Hello World in plain text!
 
---001a114634ac3555ae05525685ae Content-Type: text/x-amp-html; charset="UTF-8"
+--001a114634ac3555ae05525685ae
+Content-Type: text/x-amp-html; charset="UTF-8"
 
 <!doctype html>
+<html ⚡4email data-css-strict>
+<head>
+  <meta charset="utf-8">
+  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+</head>
+<body>
+Hello World in AMP!
+</body>
+</html>
+--001a114634ac3555ae05525685ae
+Content-Type: text/html; charset="UTF-8"
 
-    <meta charset="utf-8">   <style amp4email-boilerplate="">body{visibility:hidden}</style>   <script async="" src="https://cdn.ampproject.org/v0.js"></script>   Hello World in AMP!   --001a114634ac3555ae05525685ae Content-Type: text/html; charset="UTF-8"
-
-<span>Hello World in HTML!</span> --001a114634ac3555ae05525685ae-- [/sourcecode]
+<span>Hello World in HTML!</span>
+--001a114634ac3555ae05525685ae--
+[/sourcecode]
 
 <!-- prettier-ignore-end -->

@@ -1,7 +1,10 @@
 ---
-$title: Introducción a las animaciones complejas
-$order: 2
+"$title": Introducción a las animaciones complejas
+"$order": '2'
 description: Para las animaciones que no pueden basarse en integrar y eliminar clases, AMP ofrece varios componentes específicos para generar animaciones. Estos componentes implementan los principios de AMP para las animaciones ...
+formats:
+- websites
+- ads
 author: CrystalOnScript
 ---
 
@@ -258,7 +261,7 @@ Mediante el uso de las [expresiones](../../../../documentation/components/refere
 </body>
 ```
 
-[/example] Este ejemplo funciona de la siguiente manera:
+[/example]
 
 - Declarar una variable, `--duration`, y asignarle un valor de dos segundos.
 - Establecer `duration` con el valor de la variable `--duration`.

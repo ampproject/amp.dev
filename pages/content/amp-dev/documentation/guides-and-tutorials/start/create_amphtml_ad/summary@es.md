@@ -1,6 +1,6 @@
 ---
-$title: ¡Felicidades!
-$order: 4
+"$title": "¡Felicidades!"
+"$order": '4'
 description: "¡Creó con éxito un anuncio AMPHTML que puede publicarse en las páginas AMP y sin AMP! En este tutorial, aprendió a: Crear un anuncio AMPHTML que sea válido de acuerdo con ..."
 ---
 

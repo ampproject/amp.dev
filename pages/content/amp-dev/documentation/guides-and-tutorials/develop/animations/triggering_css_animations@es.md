@@ -1,7 +1,10 @@
 ---
-$title: Activar las animaciones y transiciones CSS
-$order: 1
+"$title": Activar las animaciones y transiciones CSS
+"$order": '1'
 description: La activación de animaciones CSS en páginas se basa en integrar y eliminar clases hechas mediante JavaScript. Puede lograr el mismo comportamiento en las AMP pages utilizando la acción toggleClass ...
+formats:
+- websites
+- ads
 ---
 
 Las animaciones CSS permiten que los elementos web hagan la transición desde una configuración a otra en los estilos CSS. El navegador puede iniciar con animaciones predeterminadas dependiendo de lo que cargue, pero las animaciones CSS que se activan por eventos [se basan en integrar y eliminar clases](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations). AMP es compatible con ambos tipos de animación.
@@ -91,7 +94,6 @@ Si necesita eliminar una clase y rechazar su reinstauración, agregue el atribut
 Puede integrar y eliminar cualquier cantidad de clases CSS con estados mediante el uso de [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
 
 [example preview="top-frame" playground="true"]
-
 ```html
 <head>
   <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
@@ -156,7 +158,6 @@ Puede integrar y eliminar cualquier cantidad de clases CSS con estados mediante 
   </button>
 </body>
 ```
-
 [/example]
 
 Defina las animaciones de varias clases al agregar primero una lista de clases CSS en la etiqueta `<style amp-custom>` que está en el interior del `head` del documento:

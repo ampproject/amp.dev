@@ -20,7 +20,7 @@ have a look and request a pull request there.
 - [Sürüm Yayınlama Kanalları](#release-channels)
     - [Gecelik](#nightly)
     - [Haftalık](#weekly)
-        - [Deneysel ve Beta kanallar](#experimental-and-beta-channels)
+        - [Deneysel ve Beta kanallar](#beta-and-experimental-channels)
     - [Uzun Vadeli Kararlı (lts)](#long-term-stable-lts)
 - [Değişikliğinizin bir sürümde olup olmadığını belirleme](#determining-if-your-change-is-in-a-release)
 - [Yayın Temposu](#release-cadence)
@@ -33,7 +33,7 @@ Her hafta Salı günü tüm AMP sayfalarına yeni bir AMP sürümü aktarılır.
 
 AMP çalışma zamanı ve uzantıları, çeşitli farklı *yayın kanalları* aracılığıyla sunulur. Her kanal, geliştiriciler ve AMP HTML Projesi'nin kendisi için bir amaca hizmet eder. [`ampproject/amphtml`](https://github.com/ampproject/amphtml) bilgi havuzundan kodların nasıl ve ne zaman yayın derlemelerine aktarıldığına dair daha detaylı döküm için [yayın temposu bölümüne](#release-cadence) göz atın.
 
-Aşağıdaki yayın kanallarından herhangi birine PR dahil edilip edilmediğini belirlemek için şu GitHub etiketlerini arayın: *PR Use: In Canary*, *PR Use: In Production* veya *PR Use: In LTS* (daha fazla ayrıntı için [değişikliğinizin bir sürümde olup olmadığını belirleme ](#Determining-if-your-change-is-in-a-release) hakkındaki bölüme bakın).
+Aşağıdaki yayın kanallarından herhangi birine PR dahil edilip edilmediğini belirlemek için şu GitHub etiketlerini arayın: *PR Use: In Canary*, *PR Use: In Production* veya *PR Use: In LTS* (daha fazla ayrıntı için [değişikliğinizin bir sürümde olup olmadığını belirleme ](#determining-if-your-change-is-in-a-release) hakkındaki bölüme bakın).
 
 ### Gecelik <a name="nightly"></a>
 
@@ -75,7 +75,7 @@ Bu kanalları seçmek mümkündür. Ayrıntılar için [DEVELOPING.md] içindeki
 
 Ayın ikinci pazartesi gününün tatile denk gelmesi durumunda, yükseltme, [yayın dondurma](#release-freezes) sürecinin bitiminden sonra gerçekleştirilecektir.
 
-Önemli: **lts** sürüm kanalını kullanan yayıncılar yeni tanıtılan özellikleri kullanmamalıdır. Daha uzun döngüden dolayı, **lt** sürümü, [`ampproject/amphtml`](https://github.com/ampproject/amphtml) `HEAD` bölümünden yedi hafta kadar geride olabilir. Seçtiğiniz sürüm döngüsünde bir değişikliğin hazır olup olmayacağını doğrulamak için [değişikliğinizin bir sürümde olup olmadığını belirleme](#Determining-if-your-change-is-in-a-release) bölümüne bakın.
+Önemli: **lts** sürüm kanalını kullanan yayıncılar yeni tanıtılan özellikleri kullanmamalıdır. Daha uzun döngüden dolayı, **lt** sürümü, [`ampproject/amphtml`](https://github.com/ampproject/amphtml) `HEAD` bölümünden yedi hafta kadar geride olabilir. Seçtiğiniz sürüm döngüsünde bir değişikliğin hazır olup olmayacağını doğrulamak için [değişikliğinizin bir sürümde olup olmadığını belirleme](#determining-if-your-change-is-in-a-release) bölümüne bakın.
 
 ## Değişikliğinizin bir sürümde olup olmadığını belirleme <a name="determining-if-your-change-is-in-a-release"></a>
 
@@ -86,7 +86,7 @@ Aşağıdakilerden birini kullanarak belirli bir derlemede hangi değişiklikler
 - Her bir sürüm derlemesi için [*Type: Release* GitHub konuları](https://github.com/ampproject/amphtml/labels/Type%3A%20Release), ilgili sürümde bulunan değişiklikleri listeleyen belirli bir [sürüm sayfasına](https://github.com/ampproject/amphtml/releases) bir bağlantı içerir.
 - [*PR Use: In Beta / Experimental*](https://github.com/ampproject/amphtml/issues?q=label%3A%22PR+use%3A+In+Beta+%2F+Experimental%22), [*PR Use: In Stable*](https://github.com/ampproject/amphtml/issues?utf8=%E2%9C%93&q=label%3A%22PR%20use%3A%20In%20Production%22) ve [*PR Use: In LTS*](https://github.com/ampproject/amphtml/issues?utf8=%E2%9C%93&q=label%3A%22PR%20use%3A%20In%20LTS%22) etiketleri, *haftalık* veya **lts** derlemelerine aktarıldıklarında PR'lara eklenir. Derlemenin oluşturulduğu zaman ile etiketin eklendiği zaman arasında bir gecikme olabilir.
 
-## <a name="release-cadence">Yayın Temposu</a>
+## <a id="release-cadence">Yayın Temposu</a>
 
 Yayın tempomuz konusunda kasıtlı olarak ihtiyatlıyız.
 
@@ -102,7 +102,7 @@ Tüm bu faktörleri değerlendirdikten sonra 1-2 haftalık aktarma döngüsüne 
 
 Karışıklıklar gecikmelere neden olsa da, bu programa olabildiğince yakından bağlı kalmaya çalışıyoruz. [*Type: Release* GitHub konuları](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) ve [AMP Slack #release kanalındaki](https://amphtml.slack.com/messages/C4NVAR0H3/) herhangi bir sürümle ilgili en son durumu takip edebilirsiniz ([Slack'e kaydolun](https://bit.ly/amp-slack-signup)).
 
-- Salı, [11am Pasifik](https://www.google.com/search?q=11am+pacific+in+current+time+zone): yeni **deneysel** ve **beta** sürüm derlemeleri, [tüm testlerimizi geçen en son ana derlemeden](https://travis-ci.org/ampproject/amphtml/branches) oluşturulur ve sırasıyla [AMP Deneysel Kanalına](#amp-experimental-and-beta-channels) veya [AMP Beta Kanalına](#amp-experimental-and-beta-channels) katılan AMP kullanıcılarına aktarılır.
+- Salı, [11am Pasifik](https://www.google.com/search?q=11am+pacific+in+current+time+zone): yeni **deneysel** ve **beta** sürüm derlemeleri, [tüm testlerimizi geçen en son ana derlemeden](https://travis-ci.org/ampproject/amphtml/branches) oluşturulur ve sırasıyla [AMP Deneysel Kanalına](#beta-and-experimental-channels) veya [AMP Beta Kanalına](#beta-and-experimental-channels) katılan AMP kullanıcılarına aktarılır.
 - Çarşamba: *Deneysel Kanalı* ve *Beta Kanalı* kullanıcıları için hata raporlarını kontrol ediyoruz ve her şey yolunda görünüyorsa **beta sürümünü** AMP sayfalarının %1'ine aktarıyoruz
 - Perşembe-Pazartesi: *Deneysel Kanalı* ve *Beta Kanalı* kullanıcıları için hata oranlarını ve hata raporlarını ve **deneysel**/**beta** derlemelerine sahip sayfaların %1'ini izlemeye devam ediyoruz
 - Ertesi hafta Salı: **beta** derleme tamamen **kararlı** hale getirilir (yani tüm AMP sayfaları artık bu yapıyı kullanır)
