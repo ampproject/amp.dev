@@ -1,9 +1,11 @@
 ---
-$title: Struttura e rendering delle e-mail AMP
-order: 2
+"$title": Struttura e rendering delle e-mail AMP
+order: '2'
+formats:
+- email
 teaser:
-  text: Le e-mail hanno la struttura di un albero MIME. Questo albero MIME contiene il corpo del messaggio e gli eventuali allegati all'e-mail.
-toc: true
+  text: 'Le e-mail hanno la struttura di un '
+toc: 'true'
 ---
 
 <!--
@@ -29,13 +31,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Le e-mail hanno la struttura di un [albero MIME](https://en.wikipedia.org/wiki/MIME). Questo albero MIME contiene il corpo del messaggio e gli eventuali allegati all'e-mail.
+Le e-mail hanno la struttura di un albero MIME. Questo albero MIME contiene il corpo del messaggio e gli eventuali allegati all'e-mail.
 
 Per incorporare contenuti AMP in un'email, occorre aggiungere una nuova parte MIME con contenuto di tipo `text/x-amp-html` come discendente di `multipart/alternative`. Tale elemento dovrà coesistere con le parti `text/html` o `text/plain` esistenti. Ciò garantisce che il messaggio e-mail funzioni su tutti i client.
 
-<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/master/spec/img/amp-email-mime-parts.png">
-<noscript data-md-type="raw_html" data-segment-id="8724406"><img data-md-type="raw_html" alt="Diagramma delle parti MIME di AMP per email" src="../img/amp-email-mime-parts.png"></noscript>
-</amp-img>
+<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/master/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"><img data-md-type="raw_html" alt="Diagramma delle parti MIME di AMP per email" src="../img/amp-email-mime-parts.png"></noscript></amp-img>
 
 Per ulteriori informazioni sul sottotipo `multipart/alternative`, fare riferimento allo standard [RFC 1521, sezione 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
@@ -59,18 +59,36 @@ Alcuni client di posta elettronica potrebbero interrompere la visualizzazione de
 
 <!-- prettier-ignore-start -->
 
-[sourcecode:html] From:  Person A [persona@example.com](mailto:persona@example.com) To: Person B [personb@example.com](mailto:personb@example.com) Subject: An AMP email! Content-Type: multipart/alternative; boundary="001a114634ac3555ae05525685ae"
+[sourcecode:html]
+From:  Person A <persona@example.com>
+To: Person B <personb@example.com>
+Subject: An AMP email!
+Content-Type: multipart/alternative; boundary="001a114634ac3555ae05525685ae"
 
---001a114634ac3555ae05525685ae Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+--001a114634ac3555ae05525685ae
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
 
-Ciao mondo in testo semplice!
+Hello World in plain text!
 
---001a114634ac3555ae05525685ae Content-Type: text/x-amp-html; charset="UTF-8"
+--001a114634ac3555ae05525685ae
+Content-Type: text/x-amp-html; charset="UTF-8"
 
 <!doctype html>
+<html ⚡4email data-css-strict>
+<head>
+  <meta charset="utf-8">
+  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+</head>
+<body>
+Hello World in AMP!
+</body>
+</html>
+--001a114634ac3555ae05525685ae
+Content-Type: text/html; charset="UTF-8"
 
-    <meta charset="utf-8">   <style amp4email-boilerplate="">body{visibility:hidden}</style>   <script async="" src="https://cdn.ampproject.org/v0.js"></script>   Ciao Mondo in AMP!   --001a114634ac3555ae05525685ae Content-Type: text/html; charset="UTF-8"
-
-<span>Ciao mondo in HTML!</span> --001a114634ac3555ae05525685ae-- [/sourcecode]
+<span>Hello World in HTML!</span>
+--001a114634ac3555ae05525685ae--
+[/sourcecode]
 
 <!-- prettier-ignore-end -->
