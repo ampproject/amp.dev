@@ -33,7 +33,7 @@ Di seguito è riportato l'elenco dei [componenti AMP](https://amp.dev/documentat
 - [Layout](#layout)
 - [Contenuti multimediali](#media)
 
-## <a name="dynamic-content">Contenuti dinamici</a>
+## <a id="dynamic-content">Contenuti dinamici</a>
 
 Elemento | Descrizione
 --- | ---

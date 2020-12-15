@@ -59,7 +59,7 @@ aspects of using CORS in AMP. To learn about CORS itself, see the
 
 </div>
 
-## Why do I need CORS for my own origin? <a name="why-do-i-need-cors-for-my-own-origin"></a>
+## Why do I need CORS for my own origin? <a id="why-do-i-need-cors-for-my-own-origin"></a>
 
 You might be confused as to why you'd need CORS for requests to your own origin,
 let's dig into that.
@@ -147,7 +147,7 @@ To ensure valid and secure requests and responses for your AMP pages, you must:
 
 If you're using Node in your backend, you can use the [AMP CORS middleware](https://www.npmjs.com/package/amp-toolbox-cors), which is part of the [AMP Toolbox](https://github.com/ampproject/amp-toolbox).
 
-### Verify CORS requests <a name="verify-cors-requests"></a>
+### Verify CORS requests <a id="verify-cors-requests"></a>
 
 When your endpoint receives a CORS request:
 
@@ -172,7 +172,7 @@ For information on AMP Cache URL formats, see these resources:
 - [Google AMP Cache Overview](https://developers.google.com/amp/cache/overview)
   [/tip]
 
-#### 2) Allow same-origin requests <a name="2-allow-same-origin-requests"></a>
+#### 2) Allow same-origin requests <a id="2-allow-same-origin-requests"></a>
 
 <span id="allow-same-origin-requests"></span>
 

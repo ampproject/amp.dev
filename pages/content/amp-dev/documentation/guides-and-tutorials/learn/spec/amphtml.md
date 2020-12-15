@@ -282,7 +282,7 @@ HTML tags can be used unchanged in AMP HTML. Certain tags have equivalent custom
     <td>Allowed.</td>
   </tr>
   <tr>
-    <td width="30%"><code><a name="cust"></a>style</code></td>
+    <td width="30%"><code><a id="cust"></a>style</code></td>
     <td><a href="#boilerplate">Required style tag for amp-boilerplate</a>. One additional style tag is allowed in head tag for the purpose of custom styling. This style tag must have the attribute <code>amp-custom</code>. <a href="#cust">🔗</a></td>
   </tr>
   <tr>
