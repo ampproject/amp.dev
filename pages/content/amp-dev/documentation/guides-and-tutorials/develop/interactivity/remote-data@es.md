@@ -1,34 +1,37 @@
 ---
-$title: Trabajar con datos remotos
+"$title": Trabajo con datos remotos
+"$order": '3'
+description: "¿Qué sucede si los datos vinculables son demasiado grandes o complejos para recuperarse al cargar la página? ¿O qué pasa si cada SKU tiene un precio que tarda..."
+toc: 'true'
 ---
 
-¿Qué sucede si los datos enlazables son demasiado grandes o complejos para recuperarse al cargar la página? ¿O qué pasa si cada SKU tiene un precio que toma mucho tiempo para buscar? Buscar precios de SKU para artículos no vistos es un trabajo desperdiciado.
+¿Qué sucede si los datos vinculables son demasiado grandes o complejos para recuperarse al cargar la página? ¿O qué pasa si cada SKU tiene un precio que tarda mucho tiempo en buscarse? Buscar precios de SKU para artículos no vistos es un trabajo desperdiciado.
 
 [tip type="success"]
 
-[`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) admite la obtención de datos remotos a través de su atributo `src`, que obtiene JSON desde un extremo de CORS. Esta búsqueda se realiza una vez y en la carga de la página y es útil para garantizar la frescura de los datos (especialmente cuando se sirve desde una caché).
+[`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) admite la obtención de datos remotos mediante su atributo `src`, el cual obtiene JSON desde un extremo de CORS. Esta búsqueda se realiza una vez y en la carga de la página y es útil para garantizar el buen estado de los datos (especialmente cuando se sirve desde una caché).
 
 También puede vincular el atributo `src` para el elemento [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state). Esto significa que una acción del usuario puede activar una recuperación de datos JSON remotos en el estado vinculable de la página.
 
 [/tip]
 
-## Recogiendo los tamaños disponibles para una camiseta
+## Recuperación de los tamaños disponibles para una camisa
 
-Hagamos uso de la capacidad de obtener datos remotos para buscar precios de SKUs en nuestra muestra. Nuestro servidor de desarrollo Express.js en `app.js` ya tiene un endpoint `/shirts/sizesAndPrices?shirt=<sku>` que, dado un SKU de camisa, devuelve los tamaños y el precio disponibles para cada tamaño. Envía la respuesta con un retardo artificial de un segundo para simular la latencia de la red.
+Hagamos uso de la capacidad de obtener datos remotos para buscar precios de SKUs en nuestra muestra. Nuestro servidor de desarrollo Express.js en `app.js` ya cuenta con un endpoint `/shirts/sizesAndPrices?shirt=<sku>` que, dado el SKU de una camisa, devuelve los tamaños y el precio disponibles para cada tamaño. Envía la respuesta con un retraso artificial de un segundo para simular la latencia de la red.
 
-|  Solicitud                            | Respuesta |
-|---------------------------------------|-----------|
-| `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
+Solicitud | Respuesta
+--- | ---
+`GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}`
 
-De forma similar a los datos JSON dentro de los elementos [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state), los datos remotos devueltos por estas recuperaciones se combinan y se encuentran disponibles bajo el atributo id del elemento. Por ejemplo, los datos devueltos de la respuesta de ejemplo anterior se pueden acceder en una expresión:
+De forma similar a los datos JSON que están dentro de los elementos [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state), los datos remotos devueltos por estas recuperaciones se combinan y se encuentran disponibles bajo el atributo <code>id</code> del elemento. Por ejemplo, los datos devueltos de la respuesta de ejemplo anterior se pueden acceder en una expresión:
 
-|  Expresión                   | Resultado |
-|------------------------------|-----------|
-| `shirts['1001'].sizes['XS']` | `8.99`    |
+Expresión | Resultado
+--- | ---
+`shirts['1001'].sizes['XS']` | `8.99`
 
-### Enlazar los datos
+### Vinculación de los datos
 
-Ahora, apliquemos esto a nuestro ejemplo de comercio electrónico. Primero vamos a buscar esta información de la camiseta cuando se selecciona una nueva SKU. Agregue un enlace `[src]` a nuestro elemento `amp-state#shirts`:
+Ahora, apliquemos esto a nuestro ejemplo de comercio electrónico. Primero vamos a buscar esta información de la camiseta cuando se selecciona un nuevo SKU. Agregue un enlace `[src]` a nuestro elemento `amp-state#shirts`:
 
 ```html
 <!-- When `selected.sku` changes, update the `src` attribute and fetch
@@ -36,9 +39,9 @@ Ahora, apliquemos esto a nuestro ejemplo de comercio electrónico. Primero vamos
 <amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
 ```
 
-### Indicar tamaños no disponibles
+### Indicación de los tamaños no disponibles
 
-A continuación, marque claramente los tamaños no disponibles como tales para un SKU determinado. La clase CSS `"unavailable"` añade una línea diagonal a través de un elemento -- podemos añadirlo a los elementos dentro del selector [`amp-selector`](../../../../documentation/components/reference/amp-selector.md)  correspondientes a tamaños no disponibles:
+A continuación, marque claramente los tamaños no disponibles para un SKU determinado. La clase CSS `"unavailable"` agrega una línea diagonal mediante un elemento -- que podemos agregar a los elementos que están dentro del selector [`amp-selector`](../../../../documentation/components/reference/amp-selector.md)  correspondientes a los tamaños no disponibles:
 
 ```html
 <amp-selector name="size">
@@ -66,11 +69,11 @@ A continuación, marque claramente los tamaños no disponibles como tales para u
 </amp-selector>
 ```
 
-Ahora, vuelva a cargar la página y pruébela. Si selecciona un nuevo SKU (color de la camisa), los tamaños no disponibles se tacharán (después de un breve retraso).
+Ahora, vuelva a cargar la página y pruébela. Si selecciona un nuevo SKU (color de camisa), los tamaños no disponibles se tacharán (después de un breve retraso).
 
-### Especificar estados iniciales
+### Especificación de los estados iniciales
 
-Hay, sin embargo, un pequeño problema -- ¿qué pasa con la camisa negra, el color seleccionado por defecto? Necesitaremos agregar los datos de tamaño y precio de la camisa negra a `amp-state#shirts` porque [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) sólo se ejecuta en respuesta a una acción explícita del usuario:
+Sin embargo, hay un pequeño problema con --. ¿Qué ocurre con la camisa negra, el color que se selecciona de manera predeterminada? Necesitaremos agregar los datos del tamaño y precio de la camisa negra a `amp-state#shirts` porque [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) solo se ejecuta como respuesta a una acción explícita del usuario:
 
 ```html
 <amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
@@ -87,7 +90,7 @@ Hay, sin embargo, un pequeño problema -- ¿qué pasa con la camisa negra, el co
 <!-- ... -->
 ```
 
-Y, debemos actualizar el estado predeterminado de los elementos relevantes:
+Y debemos actualizar el estado predeterminado de los elementos relevantes:
 
 ```html
 <amp-selector name="size">
@@ -120,13 +123,13 @@ Y, debemos actualizar el estado predeterminado de los elementos relevantes:
 </amp-selector>
 ```
 
-Nota: [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) no se ejecuta en carga de página, -- solo en respuesta a una acción explícita del usuario. Esto asegura que la carga inicial de la página sea consistentemente rápida entre las páginas independientemente del uso de [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
+[tip type="tip"] <strong>NOTA:</strong> [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) no se ejecuta en la carga de la página -- solo como respuesta a una acción explícita del usuario. Esto garantiza que la carga inicial de la página sea consistentemente rápida entre las páginas, independientemente del uso de [`amp-bind`](../../../../documentation/components/reference/amp-bind.md). [/tip]
 
 ## Precios variables
 
 Ahora que mostramos correctamente los tamaños disponibles, nos aseguramos de que el precio correcto también se muestre.
 
-Nuestra tienda de AMPPAREL es peculiar en que el precio de la camisa es específico para el color Y el tamaño. Esto significa que necesitamos una nueva variable para rastrear el tamaño seleccionado por el usuario. Agregue una nueva acción a nuestro elemento [`amp-selector`](../../../../documentation/components/reference/amp-selector.md):
+Nuestra tienda AMPPAREL es peculiar, ya que el precio de la camisa es específico para el color Y el tamaño. Esto significa que necesitamos una nueva variable para rastrear el tamaño seleccionado por el usuario. Agregue una nueva acción a nuestro elemento [`amp-selector`](../../../../documentation/components/reference/amp-selector.md):
 
 ```html
 <!-- When an element is selected, set the `selectedSize` variable to the
@@ -135,13 +138,11 @@ Nuestra tienda de AMPPAREL es peculiar en que el precio de la camisa es específ
     on="select:AMP.setState({selectedSize: event.targetOption})">
 ```
 
-Tenga en cuenta que no estamos inicializando el valor de `selectedSize` a través del elemento `amp-state#selected`. Eso es porque intencionalmente no proporcionamos un tamaño seleccionado por defecto y en lugar de eso queremos obligar al usuario a elegir un tamaño.
+Tenga en cuenta que no estamos inicializando el valor de `selectedSize` mediante el elemento `amp-state#selected`. Eso es porque intencionalmente no proporcionamos un tamaño seleccionado de manera predeterminada y, en vez de eso, queremos obligar al usuario a elegir un tamaño.
 
-[tip type="tip"]
-**TIP –** `AMP.setState()` se puede utilizar para definir nuevas variables además de modificar las existentes. Las expresiones evaluarán las variables indefinidas a `null`.
-[/tip]
+ [tip type="tip"] **CONSEJO:** `AMP.setState()` puede utilizarse para definir nuevas variables, además de modificar las existentes. Las expresiones evaluarán las variables indefinidas a `null`. [/tip]
 
-Añada un nuevo elemento `<span>` que enrolle la etiqueta de precio y cambie el texto predeterminado a "---" ya que no hay una selección de tamaño predeterminada.
+Agregue un nuevo elemento `<span>` que enrolle la etiqueta del precio y cambie el texto predeterminado a "--" ya que no hay una selección de tamaño predeterminada.
 
 ```html
 <h6>PRICE :
@@ -151,11 +152,11 @@ Añada un nuevo elemento `<span>` que enrolle la etiqueta de precio y cambie el 
 </h6>
 ```
 
-Y tenemos precios correctos! Pruébalo.
+¡Y obtenemos precios correctos! Pruébelo.
 
 ## Botón habilitado condicionalmente
 
-¡Ya casi hemos terminado! Desactivemos el botón "Añadir al carrito" cuando el tamaño seleccionado no esté disponible:
+¡Ya casi terminamos! Vamos a desactivar el botón "Añadir al carrito" cuando el tamaño seleccionado no esté disponible:
 
 ```html
 <!-- Disable the "ADD TO CART" button when:
@@ -167,4 +168,4 @@ Y tenemos precios correctos! Pruébalo.
     [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]">
 ```
 
-**Pruébalo**:  si selecciona un tamaño que no está disponible, no puede agregarlo al carrito.
+**Pruébelo**:  Si selecciona un tamaño que no está disponible, no podrá agregarlo al carrito.

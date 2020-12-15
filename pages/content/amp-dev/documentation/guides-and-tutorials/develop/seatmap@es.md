@@ -1,8 +1,10 @@
 ---
-$title: Cómo crear un mapa de asientos
-$order: 104
+"$title": Cómo crear un mapa de asientos
+"$order": '104'
 description: Los mapas de asientos son una parte importante de las aplicaciones web para emitir boletos, pero puede ser complicado implementarlos en AMP. Continúe leyendo para saber cómo implementar un mapa de asientos en AMP.
-tutorial: true
+tutorial: 'true'
+formats:
+- websites
 author: kul3r4
 contributors:
 - pbakaus
@@ -48,7 +50,13 @@ rect[selected].seat {
 
 El mapa de asientos se renderiza mediante [`amp-list`](../../../documentation/components/reference/amp-list.md) y [`amp-mustache`](../../../documentation/components/reference/amp-mustache.md). Después de recibir los datos provenientes de la llamada [`amp-list`](../../../documentation/components/reference/amp-list.md), puede utilizar dichos datos para iterar a través de los asientos:
 
-[sourcecode:html] {% raw %}<svg preserveaspectratio="xMidYMin slice" viewbox="0 0 {{width}} {{height}}"> {{#seats}} <rect option="{{id}}" role="button" tabindex="0" class="seat {{unavailable}}" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"></rect> {{/seats}} </svg>{% endraw %} [/sourcecode]
+[sourcecode:html]
+{% raw %}<svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
+{{#seats}}
+<rect option="{{id}}" role="button" tabindex="0" class="seat {{unavailable}}" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"/>
+{{/seats}}
+</svg>{% endraw %}
+[/sourcecode]
 
 ## Cómo diseñar los asientos que no están disponibles
 
@@ -56,9 +64,12 @@ En el ejemplo anterior, `{% raw %}{{unavailable}}{% endraw %}` son valores de un
 
 Como alternativa, un enfoque más detallado consiste en repetir las etiquetas de la siguiente forma:
 
-[sourcecode:html] {% raw %}{{#available }}{% endraw %} <rect option="{{id}}" role="button" tabindex="0" class="seat" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"></rect>{% raw %}{{/available }}{% endraw %}
+[sourcecode:html]
+{% raw %}{{#available }}{% endraw %}
+<rect option="{{id}}" role="button" tabindex="0" class="seat" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"/>{% raw %}{{/available }}{% endraw %}
 
-{% raw %}{{^available}}{% endraw %}<rect role="button" tabindex="0" class="seat unavailable" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"></rect>{% raw %}{{/available }}{% endraw %} [/sourcecode]
+{% raw %}{{^available}}{% endraw %}<rect role="button" tabindex="0" class="seat unavailable" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"/>{% raw %}{{/available }}{% endraw %}
+[/sourcecode]
 
 ## Cómo determinar el tamaño de su mapa de asientos
 
@@ -93,21 +104,28 @@ Además, en el segundo enfoque también se le permitirá reducir la duplicación
 
 Como referencia, aquí puede consultar el HTML final para el mapa de asientos:
 
-[sourcecode:html] {% raw %}
-
-<div class="seatmap-container">
-<amp-list layout="fill" src="/json/seats.json" binding="no" items="." single-item noloading>
-<template type="amp-mustache">
-<amp-pan-zoom layout="fill" class="seatmap">
-<amp-selector multiple on="select:AMP.setState({
-selectedSeats: event.selectedOptions
-})" layout="fill">
-<div class="svg-container">
-<svg preserveaspectratio="xMidYMin slice" viewbox="0 0 {{width}} {{height}}">{{#asientos}}<rect option="{{id}}" role="button" tabindex="0" class="seat {{unavailable}}" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"></rect> {{/asientos}}</svg>
-</div>
-</amp-selector>
-</amp-pan-zoom>
-</template>
-</amp-list>
-<div>{% endraw %} [/sourcecode]</div>
-</div>
+[sourcecode:html]
+{% raw %}<div class="seatmap-container">
+  <amp-list layout="fill" src="/json/seats.json" binding="no" items="." single-item noloading>
+    <template type="amp-mustache">
+      <amp-pan-zoom layout="fill" class="seatmap">
+        <amp-selector multiple on="select:AMP.setState({
+          selectedSeats: event.selectedOptions
+        })" layout="fill">
+          <div class="svg-container">
+            <svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
+            {{#seats}}
+              <rect option="{{id}}" role="button"
+               tabindex="0" class="seat {{unavailable}}"
+              x="{{x}}" y="{{y}}"
+              width="{{width}}" height="{{height}}"
+              rx="{{rx}}" ry="{{ry}}"/>
+            {{/seats}}
+            </svg>
+          </div>
+        </amp-selector>
+      </amp-pan-zoom>
+    </template>
+  </amp-list>
+</div>{% endraw %}
+[/sourcecode]

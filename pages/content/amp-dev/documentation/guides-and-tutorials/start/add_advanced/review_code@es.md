@@ -1,8 +1,10 @@
 ---
-$title: Revisar el código de inicio
+"$title": Revisión del código de inicio
+"$order": '1'
+description: 'Antes de empezar a agregar el código, revisemos la página de ejemplo '
 ---
 
-Antes de comenzar a agregar código, revisemos la página [article.amp.html](https://github.com/googlecodelabs/accelerated-mobile-pages-advanced/blob/master/article.amp.html) de ejemplo, que debería ser la siguiente:
+Antes de comenzar a agregar código, revisemos la página de ejemplo [article.amp.html](https://github.com/googlecodelabs/accelerated-mobile-pages-advanced/blob/master/article.amp.html), que debería ser la siguiente:
 
 ```html
 <!DOCTYPE html>
@@ -157,14 +159,15 @@ Antes de comenzar a agregar código, revisemos la página [article.amp.html](htt
 </html>
 ```
 
-Esta es una página de AMP simple que pasa tanto la [validación de AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) como la validación de datos estructurados [schema.org](http://schema.org/). Si esta página se ha implementado en un sitio web de noticias, los usuarios pueden descubrir la página a través de ricas experiencias en Páginas de resultados de motores de búsqueda (por ejemplo, en el Carrusel de historias superiores de la Búsqueda de Google).
+Esta es una página de AMP simple que pasa tanto la [validación de AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) como la validación de datos estructurados [schema.org](http://schema.org/). Si esta página se implementó en un sitio web de noticias, los usuarios pueden descubrir la página mediante enriquecedoras experiencias en las Páginas de resultados de los motores de búsqueda (por ejemplo, en el carrusel de historias principales de Google Search).
 
-## Habilitación de Validator AMP
+## Habilitación de AMP Validator
 
-Antes de modificar la página, habilitemos el [validador de AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) para que sepamos que estamos trabajando con HTML válido de AMP. **Agregue** este identificador de fragmento a su URL:
+Antes de modificar la página, habilitemos [AMP Validator](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) para saber que estamos trabajando con el HTML válido de AMP. **Agregue** este identificador de fragmento a su URL:
 
 ```text
-#development=1
+# development=1
+
 ```
 
 Por ejemplo:
@@ -173,23 +176,21 @@ Por ejemplo:
 http://localhost:8000/article.amp.html#development=1
 ```
 
-Abra la [Consola del programador en Chrome](https://developer.chrome.com/devtools/docs/console) (o su navegador preferido) y verifique que no haya errores de AMP.
+Abra la [Consola del programador](https://developer.chrome.com/devtools/docs/console) en Chrome (o en su navegador preferido) y verifique que no haya errores en AMP.
 
-[tip]
-Puede utilizar varias otras herramientas para validar su página AMP, como:
+[tip] Puede utilizar varias otras herramientas para validar su página AMP, como:
 
 - La [extensión de validación AMP para Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc)
 - La [extensión de validación AMP para Opera](https://addons.opera.com/en-gb/extensions/details/amp-validator/)
 - La [interfaz web de validación AMP](https://validator.ampproject.org/)
 - ... y muchos más.
 
-Obtenga más información en la guía de páginas de [Validación AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md).
-[/tip]
+Obtenga más información en la guía de [validación de páginas AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md). [/tip]
 
-{{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='Simulado en un dispositivo Nexus 5X') }}
+{{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='Simulación en un dispositivo Nexus 5X') }}
 
-## Simular la experiencia móvil
+## Simulación de la experiencia móvil
 
-Estamos diseñando esta página para un dispositivo móvil, así que vamos a **simular** la experiencia del dispositivo móvil en las herramientas de desarrollo de su navegador. Por ejemplo, en Chrome DevTools, haz clic en el icono del teléfono móvil y selecciona un dispositivo móvil en el menú.
+Estamos diseñando esta página para un dispositivo móvil, así que vamos a **simular** la experiencia del dispositivo móvil en las herramientas de desarrollo de su navegador. Por ejemplo, en Chrome DevTools, haga clic en el icono del teléfono móvil y seleccione un dispositivo móvil en el menú.
 
-Ahora, podemos empezar a trabajar en la propia página. Añadamos algunos componentes de AMP a nuestra página.
+Ahora, podemos empezar a trabajar en la página. Agreguemos algunos componentes de AMP a nuestra página.
