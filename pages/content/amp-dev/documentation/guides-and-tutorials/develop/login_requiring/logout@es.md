@@ -1,14 +1,16 @@
 ---
-$title: Cerrar sesión
+"$title": Cerrar sesión
+"$order": '3'
+description: El botón para cerrar sesión, igual que el botón para iniciar sesión, se muestra de acuerdo con el estado del componente amp-access...
 ---
 
-El botón para cerrar sesión, igual que el botón para iniciar sesión, se muestra en función del estado del componente [`amp-access`](../../../../documentation/components/reference/amp-access.md):
+El botón para cerrar sesión, igual que el botón para iniciar sesión, se muestra de acuerdo con el estado del componente [`amp-access`](../../../../documentation/components/reference/amp-access.md):
 
 [sourcecode:html]
 <button amp-access="loggedIn" amp-access-hide tabindex="0" on="tap:amp-access.login-sign-out" class="button-primary comment-button">Logout</button>
 [/sourcecode]
 
-Al hacer clic en el botón Cerrar sesión, se redirige a los usuarios a la URL que se haya indicado en la configuración JSON del componente [`amp-access`](../../../../documentation/components/reference/amp-access.md), en el objeto "login":
+[sourcecode:html] <button amp-access="loggedIn" amp-access-hide="" tabindex="0" on="tap:amp-access.login-sign-out" class="button-primary comment-button">Logout</button> [/sourcecode]
 
 [sourcecode:json]
 {
@@ -19,4 +21,4 @@ Al hacer clic en el botón Cerrar sesión, se redirige a los usuarios a la URL q
 }
 [/sourcecode]
 
-Cuando el servidor AMPByExample recibe una solicitud para cerrar sesión, tiene lugar un proceso similar al de inicio de sesión: se lee el parámetro de consulta "returnURL" que ha añadido automáticamente la biblioteca AMP y, a continuación, se redirige a los usuarios a dicha URL, a la que se añade `#success=true`. Una vez completado el proceso, el usuario que ha cerrado sesión vuelve a encontrarse en la página inicial, momento en el que se elimina la cookie de AMPByExample que se había creado al iniciar sesión (llamada `ABE_LOGGED_IN`).
+Al hacer clic en el botón Cerrar sesión, se redirige a los usuarios a la URL que se haya indicado en la configuración JSON del componente [`amp-access`](../../../../documentation/components/reference/amp-access.md), en el objeto "login":
