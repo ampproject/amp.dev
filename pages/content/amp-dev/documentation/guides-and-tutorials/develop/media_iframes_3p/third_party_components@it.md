@@ -44,7 +44,7 @@ Attualmente i tweet vengono ridimensionati automaticamente e proporzionalmente i
 
 Per includere un oggetto Instagram nella pagina, è possibile utilizzare l'elemento [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md).
 
-[sourcecode:html]
+Per incorporare un Instagram, includi prima il seguente script in `<head>` :
 
 [sourcecode:html]
 <script async custom-element="amp-instagram"
