@@ -20,7 +20,7 @@ Una historia web técnicamente es una página web construida con AMP y que cumpl
 - Incluir una etiqueta ` <meta charset="utf-8">` como la primera etiqueta secundaria de la etiqueta `<head>`.
 - Incluir una etiqueta `<script async src="https://cdn.ampproject.org/v0.js"></script>` dentro de la etiqueta `<head>`. Como práctica recomendada, debe incluir el script lo antes posible en el `<head>`.
 - Incluir una etiqueta ` <link rel="canonical" href="page/url">` dentro de `<head>` y href debe indicar cuál es la URL de la historia web.
-- Contain a `<meta name="viewport" content="width=device-width">` tag inside the `<head>` tag. It's also recommended to include initial-scale=1.
+- Incluir una etiqueta `<meta name="viewport" content="width=device-width">` dentro de la etiqueta `<head>`. También se recomienda incluir initial-scale = 1.
 - Incluir el [código reutilizable de AMP](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) en la etiqueta `<head>`.
 
 La diferencia entre una página web de AMP y una historia web que se construyó con AMP es el componente [`amp-story`](https://amp.dev/documentation/components/amp-story/?format=stories). Este es el único elemento secundario directo del documento `<body>` y debe contener el atributo `standalone`. Todas las páginas, capas y elementos que conforman la historia web se definen dentro de las etiquetas `<amp-story>`.
