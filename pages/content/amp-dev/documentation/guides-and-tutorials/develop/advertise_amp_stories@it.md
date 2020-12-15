@@ -1,7 +1,7 @@
 ---
-"$title": Advertise in Web Stories
+"$title": Annunci nelle storie Web
 "$order": '3'
-description: Web Stories are a full-screen tappable experience that immerses readers in the content. Advertising with AMP Story ads allows for seamless and disruption-free ...
+description: "Le storie Web sono una coinvolgente esperienza a schermo intero, con contenuti abilitati per il tocco, che immerge gli utenti nella loro lettura. L'inclusione di inserzioni pubblicitarie in storie Web consente un'integrazione distribuzione continua e senza problemi..."
 formats:
 - stories
 author: CrystalOnScript
@@ -15,7 +15,7 @@ Le storie web utilizzano un singolo componente [`amp-story-auto-ads`](../../../d
 
 [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) è un wrapper che racchiude il componente [`amp-ad`](../../../documentation/components/reference/amp-ad.md) e inserisce dinamicamente uno o più annunci mentre l'utente fruisce dei contenuti della storia. Per garantire la migliore esperienza di utilizzo:
 
-1. Ads are pre-rendered by the Web Stories runtime, then inserted. This guarantees that the users will never be shown a blank or unloaded ad.
+1. Il rendering degli annunci è realizzato in via preliminare dal sistema di runtime delle storie Web e solo dopo gli annunci sono inseriti. Ciò garantisce che agli utenti non verrà mai mostrato un annuncio vuoto o non caricato completamente.
 
 2. La densità degli annunci inseriti è ottimizzata in rapporto ai contenuti per evitare problemi di saturazione eccessiva. Il componente [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) determina quando e dove inserire gli annunci mentre l'utente procede nella storia.
 
@@ -31,11 +31,11 @@ Una storia web inserisce il primo annuncio in una posizione dopo le prime due pa
 
 Gli utenti possono procedere oltre gli annunci allo stesso modo con cui avanzano tra le normali pagine della storia, cioè toccando i due terzi della parte destra dello schermo.
 
-{{ image('/static/img/docs/stampads/story_ad_ui.png', 304, 512, layout='intrinsic', alt='Image showing the area users can tap to skip an ad', caption='Users can progress past ads by tapping the right two thirds of the screen.', align='' ) }}
+{{ image('/static/img/docs/stampads/story_ad_ui.png', 304, 512, layout='intrinsic', alt='Immagine che mostra l\'area che gli utenti possono toccare per saltare un annuncio', caption='Gli utenti possono procedere oltre gli annunci toccando i due terzi della parte destra dello schermo.', align ='') }}
 
 Gli utenti possono interagire direttamente con l'annuncio toccando il pulsante [invito all'azione](story_ads_best_practices.md#call-to-action-button-text-enum) generato dal sistema, che appare nell'ultimo terzo in fondo a tutti gli annunci nelle storie web. Il pulsante può essere configurato per inviare gli utenti a un URL arbitrario (oppure al relativo app store).
 
-{{ image('/static/img/docs/stampads/sponsored_story.png', 1600, 597, layout='intrinsic', alt='Image showing that usersare redirected to an ad landing destination, but can return to the story.', caption='Users are redirected to an ad landing destination, but can return to the story.', align='' ) }}
+{{ image('/static/img/docs/stampads/sponsored_story.png', 1600, 597, layout='intrinsic', alt='Immagine che mostra che gli utenti sono reindirizzati a una pagina di destinazione, ma possono tornare alla storia.', caption='Gli utenti sono reindirizzati a una pagina di destinazione dell\'annuncio, ma possono tornare alla storia.', align='' ) }}
 
 ## Configurazione di una storia web per gli annunci
 
@@ -75,4 +75,4 @@ Se sei un inserzionista interessato a pubblicare i tuoi annunci all'interno di s
 
 Gli editori possono anche inserire annunci personalizzati se impostano un proprio server annunci. [Il processo dettagliato è disponibile qui](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
 
-[tip type="note"] Read [Traffic custom creatives in Web Stories](https://support.google.com/admanager/answer/9038178) for information about uploading ads to Google Ad Manager and checkout our guide on [Best practices for creating an AMP Story ad](story_ads_best_practices.md). [/tip]
+[tip type="note"] Leggere la pagina [Traffico di elementi creativi personalizzati nelle storie Web](https://support.google.com/admanager/answer/9038178) per informazioni sul caricamento di annunci su Google Ad Manager e consultare la nostra guida sulle [procedure consigliate per la creazione di un annuncio in storie AMP](story_ads_best_practices.md).[/tip]
