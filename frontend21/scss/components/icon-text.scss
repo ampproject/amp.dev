@@ -1,6 +1,7 @@
 .#{prefix(null, 'icon-text')} {
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
 
   @include respond-to('medium') {
     flex-direction: row;
