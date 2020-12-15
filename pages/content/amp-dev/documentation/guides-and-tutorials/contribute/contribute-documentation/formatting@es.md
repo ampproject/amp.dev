@@ -94,8 +94,7 @@ Para consultar una lista de códigos cortos y la manera de utilizarlos, vaya a [
 
 ¡amp.dev se desarrolló con AMP! Por lo tanto, nuestras imágenes deben coincidir con los criterios [`amp-img`](../../../../documentation/components/reference/amp-img.md). El proceso de desarrollo utiliza la siguiente sintaxis para convertir las imágenes al formato adecuado `amp-img`.
 
-<div class="ap-m-code-snippet"><pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}
-</pre></div>
+<div class="ap-m-code-snippet"><pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}</pre></div>
 
 ## Filtro de secciones
 
@@ -158,12 +157,7 @@ Coloque los fragmentos de código dentro de los conjuntos con tres comillas simp
 
 Si su código contiene llaves dobles, lo cual sucede con frecuencia si utiliza plantillas [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md?format=websites), entonces debe envolver esa parte del código:
 
-<div class="ap-m-code-snippet"><pre>```html
-{% raw	%}
-  // code with double curly braces
-{% endraw	%}
-```
-</pre></div>
+<div class="ap-m-code-snippet"><pre>```html<br>{% raw	%}<br>  // code with double curly braces<br>{% endraw	%}<br>```</pre></div>
 
 ### Fragmentos de código en listas
 
@@ -448,7 +442,6 @@ Cree el destino del anclaje utilizando `<a name="#anchor-name></a>` antes de vin
 
 ```html
 ## Example section <a name="example-section"></a>
-
 ```
 
 Cuando realice un anclaje, solamente debe utilizar letras, dígitos, guiones y guiones bajos. Para el anclaje, emplee nombres cortos en inglés que coincidan con el título o que describan la sección. Asegúrese de que el nombre del anclaje sea exclusivo dentro del documento.
