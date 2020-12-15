@@ -12,7 +12,7 @@ contributors:
 
 Le mappe dei posti a sedere sono parti importanti per le app web di vendita di biglietti, ma l'implementazione in AMP può essere difficile. Continua a leggere per imparare come implementare mappe dei posti a sedere in AMP usando i componenti AMP disponibili.
 
-[tip] A live sample implementing the practices described below is available [here](../../../documentation/examples/documentation/SeatMap.html). [/tip]
+[tip] Un esempio reale che implementa le procedure descritte di seguito è disponibile [qui](../../../documentation/examples/documentation/SeatMap.html). [/tip]
 
 ## Componenti AMP richiesti
 
