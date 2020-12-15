@@ -4,10 +4,7 @@ order: '3'
 formats:
 - ads
 teaser:
-  text: |2-
-
- "_If you'd like to propose changes to the standard, please comment on the"
-    [Intent
+  text: _Si desea proponer cambios en el formato estándar, agregue un comentario en el artículo [Intent
 toc: 'true'
 ---
 
