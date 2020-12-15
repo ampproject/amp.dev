@@ -1,10 +1,10 @@
 ---
 "$title": Create a live blog
 "$order": '102'
-description: Live blogs are web pages that are updated frequently throughout an on-going event, such as a sporting event or an election. In AMP, you can implement a live blog by using ...
+description: I live blog sono pagine web che vengono aggiornate frequentemente durante un evento in corso, ad esempio un evento sportivo o elettorale. Il sistema AMP permette di implementare un live blog usando ...
 tutorial: 'true'
 formats:
-- websites
+- siti web
 author: kul3r4
 contributors:
 - bpaduch
@@ -35,9 +35,9 @@ This is what the initial code for the blog could look like:
 
 Let's look at this code:
 
-Each [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component requires a unique id as there could be more than one on a page.  In this example, we specified `my-live-list` as the unique id.
+Ciascun componente [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) richiede un ID univoco in quanto potrebbero essercene più di uno su una pagina. In questo esempio, abbiamo usato `my-live-list` come ID univoco.
 
-The `data-poll-interval` attribute specifies how often polls should occur; if the host document is updated, the update should be available to the user after the next time interval.
+L'attributo `data-poll-interval` specifica la frequenza con cui deve avvenire il polling; se il documento host viene aggiornato, l'aggiornamento dovrebbe essere disponibile per l'utente nell'intervallo di tempo successivo.
 
 Every time a new item is added to the host document, the `<button update on="tap:my-live-list.update">` element shows a "You have updates" button which, when clicked, triggers the page to show the latest posts.
 
