@@ -1,7 +1,7 @@
 ---
-$title: Aggiunta di caratteri
-$order: 6
-description: "I caratteri personalizzati possono essere inclusi nelle pagine AMP in due modi: 1. Tramite un tag <link>: solo per i fornitori di caratteri autorizzati. 2. Utilizzando ..."
+"$title": Aggiunta di caratteri
+"$order": '6'
+description: 'I caratteri personalizzati possono essere inclusi nelle pagine AMP in due modi: 1. Tramite un tag <link>: solo per i fornitori di caratteri autorizzati. 2. Utilizzando ...'
 ---
 
 Per velocizzare il caricamento dei documenti, le pagine AMP non possono includere fogli di stile esterni. Tuttavia, c'è un'eccezione a questa regola: i **caratteri**.
