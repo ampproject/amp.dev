@@ -1,7 +1,7 @@
 ---
 "$title": "Tracciamento dell'engagement tramite strumenti di analisi"
 "$order": '4'
-description: Analytics platforms are commonly integrated into websites through inline JavaScript snippets and function calls, which trigger events that are sent back to the analytics system.
+description: Le piattaforme di analisi sono comunemente integrate nei siti web tramite frammenti JavaScript inline e chiamate a funzioni, che attivano eventi poi reinviati al sistema di analisi.
 ---
 
 Le piattaforme di analisi sono comunemente integrate nei siti web tramite frammenti JavaScript inline e chiamate a funzioni, che attivano eventi poi reinviati al sistema di analisi. AMP fornisce una sintassi di configurazione JSON flessibile per replicare questo processo su diverse piattaforme di analisi.
@@ -20,15 +20,15 @@ ga('send', 'pageview');
 </script>
 ```
 
-This JavaScript is quite simple; it sends a notification to track the pageview event.
+Questo codice JavaScript è abbastanza semplice; invia una notifica per tenere traccia di un evento di visualizzazione pagina.
 
-To replicate this functionality in AMP, we must first **include** the [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) component library in our document’s `<head>`:
+Per replicare questa funzionalità in AMP, dobbiamo prima **includere** la libreria del componente [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) nella sezione `<head>` del nostro documento:
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 ```
 
-Then, let's **add** the [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) component to the end of the `body` of the document:
+Quindi, **aggiungiamo** il componente [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) alla fine della sezione `body` del documento:
 
 ```html
 <amp-analytics type="googleanalytics">
@@ -51,13 +51,13 @@ Then, let's **add** the [`amp-analytics`](../../../../documentation/components/r
 </amp-analytics>
 ```
 
-Just as with the JavaScript example at the top of this page, this [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) snippet will send a notification to Google Analytics indicating that a page has been viewed.
+Proprio come con l'esempio JavaScript nella parte alta di questa pagina, anche questo frammento di [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) invierà una notifica a Google Analytics indicando che una pagina è stata visualizzata.
 
-To specify this, we've set the `type` to `googleanalytics` and then in the JSON we've created a trigger we've called "default pageview".  This trigger will fire when the page is visible (due to the `"on": "visible"`) and when it fires we'll send a `pageview` analytics request to Google Analytics with the `vars` we have specified.
+A questo scopo, abbiamo impostato il valore `type` su `googleanalytics` e poi nella parte JSON abbiamo creato un trigger di nome "default pageview". Questo trigger sarà attivato quando la pagina è visibile (grazie all'istruzione `"on": "visible"`) e quando si attiva invieremo una richiesta di analisi `pageview` a Google Analytics con le `vars` specificate.
 
-The JSON used to configure [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) is a very flexible format for describing what analytics data to send and when to send it.  The [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) has complete details on the format.
+La parte JSON utilizzata per configurare [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) è un formato molto flessibile per descrivere quali dati di analisi inviare e quando inviarli. L'elemento [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) ha i dettagli completi sul formato.
 
-Building on the above example, we can **add** another trigger named `"click on #header trigger"`:
+A partire dal precedente esempio, possiamo **aggiungere** un altro trigger di nome `"click on #header trigger"`:
 
 ```html
 <amp-analytics type="googleanalytics">
@@ -89,10 +89,10 @@ Building on the above example, we can **add** another trigger named `"click on #
 </amp-analytics>
 ```
 
-As you can guess from the name of this new trigger it will fire when the element with the ID `"header"` is clicked (specified by `"on": "click"` and `"selector": "#header"`).  When this trigger fires, we'll send the `event` request to our analytics provider, specifying a couple of variables to include in the request.
+Come si intuisce dal nome di questo nuovo trigger, esso si attiverà quando viene cliccato l'elemento con l'ID `"header"` (come indicato dalle istruzioni `"on": "click"` e `"selector": "#header"`). Quando questo trigger si attiva, invieremo la richiesta `event` al nostro fornitore di analisi, indicando un paio di variabili da includere nella richiesta.
 
-If you have a custom tracking platform that you want to integrate with, you can still use [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) and define your own personalized URL endpoints to send tracking data to. Learn more in the [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) component reference documentation.
+Disponendo di una piattaforma di tracciamento personalizzata con cui si intende eseguire l'integrazione, è comunque possibile utilizzare [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) e definire gli endpoint degli URL personalizzati a cui inviare i dati di tracciamento. Ulteriori informazioni sono disponibili nella documentazione di riferimento del componente [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
 
-[tip type="note"] **NOTE –**  `“UA-YYYY-Y”` is an example Google Analytics account; it should be replaced with your own website’s Google Analytics tracking code if you are using this example on your site. [/tip]
+[tip type="note"] **NOTA:** `“UA-YYYY-Y”` è un esempio di account Google Analytics; dovrebbe essere sostituito con il codice di tracciamento di Google Analytics del sito web per il quale si utilizza questo esempio. [/tip]
 
-[tip type="tip"] **TIP –** If you are interested in a simpler tracking system, you might want to take a look at [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md). If you only need to track pageviews, [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) it is a lighter-weight solution than [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) because it only aims to solve the requirements of traditional pixel tracking. Learn more in the [Analytics: the basics guide](../../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md). [/tip]
+[tip type="tip"] **SUGGERIMENTO:** Se sei interessato a un sistema di tracciamento più semplice, potresti dare un'occhiata a [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md). Se hai solo bisogno di monitorare le visualizzazioni di pagina, [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) è una soluzione più leggera di [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) perché serve solo a risolvere i requisiti del tracciamento di pixel tradizionale. Ulteriori informazioni in [Strumenti di analisi: guida di base](../../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md). [/tip]
