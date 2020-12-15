@@ -15,4 +15,4 @@ Para demostrar el aspecto que tendría el marcado adicional, le mostramos a cont
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-[sourcecode:html] <amp-img src="bienvenido.jpg" alt="Bienvenido" height="400" width="800"></amp-img> [/sourcecode]
+[tip type="read-on"] **LEER MÁS:**  Para saber por qué reemplazamos etiquetas como `<img>` por [`<amp-img>`](../../../../documentation/components/reference/amp-img.md), y cuántas hay disponibles, consulte el artículo [Incluir imágenes y videos](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md). [/tip]
