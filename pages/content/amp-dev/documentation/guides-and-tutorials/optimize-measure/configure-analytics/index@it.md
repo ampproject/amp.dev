@@ -29,7 +29,7 @@ Quali dati relativi ai tuoi utenti pensi di acquisire per valutarne il coinvolgi
 
 Quali dati sui tuoi utenti intendi acquisire per misurare il coinvolgimento? È necessario identificare questi dati prima di poterli configurare.
 
-Key data points to consider:
+Fattori importanti relativi ai dati da prendere in considerazione:
 
 - Eseguirai solamente il monitoraggio delle visualizzazioni di pagina o anche di altri modelli di coinvolgimento dell’utente (vedi anche [amp-pixel o amp-analytics](analytics_basics.md#use-amp-pixel-or-amp-analytics))?
 - Quali tipi di dati acquisirai relativamente ai tuoi utenti, ai tuoi contenuti, a dispositivi o browser (vedi anche [Sostituzione delle variabili](analytics_basics.md#variable-substitution))?
