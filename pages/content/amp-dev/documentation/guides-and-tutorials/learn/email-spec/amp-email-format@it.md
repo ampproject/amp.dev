@@ -40,11 +40,22 @@ Il formato AMP per e-mail fornisce [un sottoinsieme di componenti AMP](https://g
 Il codice seguente rappresenta la quantità minima di markup richiesti da un messaggio e-mail in formato AMP valido:
 
 [sourcecode:html]
-
-
-
-
-<meta charset="utf-8"> <style amp4email-boilerplate=""> body { visibility: hidden; } </style> <script async="" src="https://cdn.ampproject.org/v0.js"></script> Hello, world. [/sourcecode]
+<!DOCTYPE html>
+<html ⚡4email data-css-strict>
+  <head>
+    <meta charset="utf-8" />
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+    Hello, world.
+  </body>
+</html>
+[/sourcecode]
 
 Un messaggio e-mail AMP DEVE
 
