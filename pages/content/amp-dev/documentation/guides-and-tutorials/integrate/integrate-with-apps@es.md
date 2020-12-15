@@ -74,7 +74,7 @@ El cuerpo de respuesta contiene la asignación de URL de AMP en formato JSON:
 }
 ```
 
-[tip type="tip"] <strong>Nota:</strong> Las URL de las páginas de AMP que están almacenadas en caché, en los cachés de AMP, y que no son de Google no se pueden recuperar mediante la API de AMP URL. Sin embargo, puede derivar fácilmente la URL que está en el caché de la AMP URL que se devuelve (ampURL).
+[tip type="tip"] <strong>Nota:</strong> Las URL de las páginas de AMP que están almacenadas en caché, en los cachés de AMP, y que no son de Google no se pueden recuperar mediante la API de AMP URL. Sin embargo, puede derivar fácilmente la URL que está en el caché de la AMP URL que se devuelve (ampURL).[/tip]
 
 ## Uso de los cachés de AMP
 

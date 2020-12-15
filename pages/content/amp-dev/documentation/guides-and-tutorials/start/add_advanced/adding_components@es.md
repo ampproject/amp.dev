@@ -58,7 +58,8 @@ Recuerde que no todos los componentes están incluidos en el archivo JavaScript 
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ads.png', 376, 606, align='center half', caption='Test ads') }}
 
-Importante: Es posible que tenga algunos errores en la consola de desarrollador, como <code>Mixed Content</code> o <code>XMLHttpRequest cannot load</code>. El error anterior probablemente esté relacionado con el anuncio de A9 porque no todo el contenido que carga es seguro. Este es un requisito importante para todos los anuncios que se presentan en AMP. [/tip]
+[tip type="important"]
+Es posible que tenga algunos errores en la consola de desarrollador, como <code>Mixed Content</code> o <code>XMLHttpRequest cannot load</code>. El error anterior probablemente esté relacionado con el anuncio de A9 porque no todo el contenido que carga es seguro. Este es un requisito importante para todos los anuncios que se presentan en AMP. [/tip]
 
 Los dos <a><code>amp-ad</code></a>s que se muestran a continuación son un ejemplo de la flexibilidad que <a><code>amp-ad</code></a> ofrece para soportar las características de la plataforma publicitaria.  En este caso hemos configurado (utilizando el panel de control de DoubleClick) dos anuncios de prueba de DoubleClick para que solo se muestren en ciertos países. El primero se mostrará solo en el Reino Unido y el segundo se mostrará solo en los Estados Unidos. Intente <strong>agregar</strong> estas dos configuraciones de anuncios geográficos en el documento AMP, debajo de los anuncios que agregó anteriormente:
 

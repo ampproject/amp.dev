@@ -27,7 +27,7 @@ Consulte más información sobre las [aplicaciones web progresivas](https://deve
 
 Las páginas AMP pueden aprovechar muchas de las funciones de las PWA, siempre que se publiquen desde su origen (el dominio de su sitio web) y no desde una caché de AMP. Esto significa que dichas funciones no se activarán si se accede a una página AMP desde plataformas como Google o Bing, pero se activarán si los usuarios comienzan a desplazarse por el sitio web o si navegan directamente hasta sus páginas AMP.
 
-[tip type="read-on"] <strong>MÁS INFORMACIÓN: </strong> Descubra cómo [habilitar las funciones de las PWA](../../../documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md) en sus páginas AMP.
+[tip type="read-on"] <strong>MÁS INFORMACIÓN: </strong> Descubra cómo [habilitar las funciones de las PWA](../../../documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md) en sus páginas AMP.[/tip]
 
 ## Uso de páginas AMP como punto de entrada de una PWA
 
@@ -35,7 +35,7 @@ El atractivo más sólido de las páginas AMP es su **publicación casi instant�
 
 Una buena estrategia sería, por ejemplo, definir que una página AMP fuese el punto de entrada de los usuarios a su sitio web y después preparar la PWA de manera discreta y dirigirlos hacia ella durante el resto de la visita.
 
-[tip type="read-on"] <strong>MÁS INFORMACIÓN: </strong> Descubra cómo [conectar una página AMP a una PWA](../../../documentation/guides-and-tutorials/integrate/amp-to-pwa.md) con [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md).
+[tip type="read-on"] <strong>MÁS INFORMACIÓN: </strong> Descubra cómo [conectar una página AMP a una PWA](../../../documentation/guides-and-tutorials/integrate/amp-to-pwa.md) con [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md).[/tip]
 
 ## Uso de las páginas AMP como fuente de datos de una PWA
 
@@ -43,4 +43,4 @@ Una de las características principales de las páginas AMP es que insertarlas e
 
 Si está creando una aplicación web progresiva, puede obtener los mismos beneficios y reducir de forma radical la complejidad del backend y del cliente si **reutiliza sus páginas AMP como fuente de datos de sus PWA**.
 
-[tip type="read-on"] <strong>MÁS INFORMACIÓN: </strong> Descubra cómo [utilizar páginas AMP en una PWA](../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md).
+[tip type="read-on"] <strong>MÁS INFORMACIÓN: </strong> Descubra cómo [utilizar páginas AMP en una PWA](../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md).[/tip]

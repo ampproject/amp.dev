@@ -30,4 +30,4 @@ Las páginas AMP solo pueden tener una hoja de estilo incrustada y estilos en l�
 
 AMP sigue reglas estrictas al distribuir los elementos en la página. En una página HTML normal, CSS se usa casi exclusivamente para distribuir elementos. Sin embargo, por motivos de rendimiento, AMP requiere que todos los elementos tengan un tamaño explícito establecido desde el principio.
 
-[tip type="read-on"] <strong>LEER MÁS:</strong> Obtenga más información sobre cómo AMP representa y diseña una página, y cómo puede modificar el diseño, en el artículo [Dudas sobre diseño y los medios](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md).
+[tip type="read-on"] <strong>LEER MÁS:</strong> Obtenga más información sobre cómo AMP representa y diseña una página, y cómo puede modificar el diseño, en el artículo [Dudas sobre diseño y los medios](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md).[/tip]
