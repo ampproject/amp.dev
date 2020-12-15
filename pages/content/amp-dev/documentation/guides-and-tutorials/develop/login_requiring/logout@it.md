@@ -1,10 +1,10 @@
 ---
-"$title": Logout
+"$title": Disconnessione
 "$order": '3'
-description: Similar to the login button, the presence of the logout button is conditionally dependent on the state of the amp-access component ...
+description: Come nel caso del pulsante di accesso, la presenza del pulsante di disconnessione dipende dallo stato del componente amp-access ...
 ---
 
-Similar to the login button, the presence of the logout button is conditionally dependent on the state of the [`amp-access`](../../../../documentation/components/reference/amp-access.md) component:
+Come nel caso del pulsante di accesso, la presenza del pulsante di disconnessione dipende dallo stato del componente [`amp-access`](../../../../documentation/components/reference/amp-access.md):
 
 [sourcecode:html]
 <button amp-access="loggedIn" amp-access-hide tabindex="0" on="tap:amp-access.login-sign-out" class="button-primary comment-button">Logout</button>
