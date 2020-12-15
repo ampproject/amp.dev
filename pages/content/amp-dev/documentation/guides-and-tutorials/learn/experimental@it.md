@@ -16,7 +16,7 @@ Gli sviluppatori e gli utenti possono scegliere di utilizzare queste funzionalit
 
 {% set experimental_components = g.docs('/content/amp-dev/documentation/components/reference')|selectattr('experimental')|list %} {% if experimental_components|length %} Segue una lista dei componenti che sono attualmente in stato sperimentale e sono pronti all'utilizzo da parte degli sviluppatori allo scopo di ricevere il feedback del loro primo uso:
 
-<ul> {% for component in experimental_components %}   <li><a href="%7B%7B%20component.url.path%20%7D%7D">{{ component.title }}</a></li> {% endfor %} </ul> {% endif %}
+<ul><br>{% for component in experimental_components %}<br>  <li><a href="{{ component.url.path }}">{{ component.title }}</a></li><br>{% endfor %}<br></ul><br>{% endif %}
 
 ## Iscrizione al canale AMP Dev
 
@@ -82,7 +82,7 @@ Le prove sull'origine offrono l'opportunità di implementare e provare una nuova
 
 {% set trial_components = g.docs('/content/amp-dev/documentation/components/reference')|selectattr('origin_trial')|list %} {% if trial_components|length %} I componenti nell'elenco seguente possono essere attualmente provati nell'origine:
 
-<ul> {% for component in trial_components %}   <li><a href="%7B%7B%20component.url.path%20%7D%7D">{{ component.title }}</a></li> {% endfor %} </ul> {% endif %}
+<ul><br>{% for component in trial_components %}<br>  <li><a href="{{ component.url.path }}">{{ component.title }}</a></li><br>{% endfor %}<br></ul><br>{% endif %}
 
 ### Attivazione di una prova sull'origine
 
