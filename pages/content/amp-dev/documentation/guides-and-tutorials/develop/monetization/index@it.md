@@ -1,7 +1,7 @@
 ---
 "$title": Monetizing your AMP page with ads
 "$order": '0'
-description: This guide provides instructions and best practices for displaying ads on your AMP pages. So, to display ads in AMP, you need to add the custom amp-ad component...
+description: Questa guida fornisce istruzioni e procedure consigliate per la visualizzazione di annunci nelle pagine AMP. Quindi, per visualizzare annunci in AMP, occorre aggiungere il componente personalizzato amp-ad ...
 formats:
 - websites
 ---
@@ -37,7 +37,7 @@ In this example, we are adding an ad slot to serve ads from the a9 network:
 
 ### Step 3: Specify the size of the ad unit
 
-Add the `width` and `height` attributes to the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)  tag.  This specifies the size of the ad on your AMP page:
+Aggiungere gli attributi `width` e `height` al tag [`amp-ad`](../../../../documentation/components/reference/amp-ad.md). Specificare la dimensione dell'annuncio sulla pagina AMP:
 
 ```html
 <amp-ad type="a9">
@@ -47,7 +47,7 @@ Add the `width` and `height` attributes to the [`amp-ad`](../../../../documentat
 
 ### Step 4: Set ad network parameters
 
-Each network has specific data attributes they require to serve ads.  Refer to the ad network's [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) documentation and add the attributes that are needed In the following example,  the a9 network requires additional parameters to specify the size of the ad, and other details:
+Ogni rete dispone di specifici attributi di dati richiesti per fornire annunci. Consultare la documentazione per il componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) della rete di annunci e aggiungere gli attributi <br>richiesti. Nel seguente esempio, la rete a9 richiede parametri aggiuntivi per indicare la dimensione dell'annuncio e altri dettagli:
 
 ```html
 <amp-ad type="a9"
@@ -90,7 +90,7 @@ Congratulations! You are now serving ads on your AMP page!
 
 ## Serving direct-sold AMPHTML ads
 
-The [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component serves ads from the network you specify.  Those ads can be standard HTML ads or AMPHTML ads, provided that the ad network supports AMPHTML ads. To serve your direct-sold ads as AMPHTML ads, create the ad in AMP HTML according to the [AMPHTML ad spec](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) requirements and use an [ad server that serves AMPHTML ads](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
+Il componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) permette di fornire annunci dalla rete specificata. Questi annunci possono essere HTML standard o AMPHTML, a condizione che la rete pubblicitaria supporti gli annunci AMPHTML. Per offrire i propri annunci a vendita diretta sotto forma di annunci AMPHTML, occorre creare l'annuncio secondo i requisiti delle [specifiche degli annunci AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) e utilizzare un [server in grado di pubblicare annunci AMPHTML](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
 
 ## Augmenting targeting data on ad requests
 
@@ -128,7 +128,7 @@ Here are some tips to maximize the effectiveness of ads on your AMP pages:
 - **Avoid interstitials** or other ad formats that cause the content to reflow on ad load.
 - **Optimize for viewability** by setting the data-loading-strategy to prefer-viewability-over-views.
 - **Place ads in your video content** via [supported players](../../../../documentation/components/index.html#media) or [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) to enable revenue on all types of content.
-- **Implement native ads** to compete with display ads using multi-sized ad requests, adding demand pressure while providing your readers with a premium user experience.
+- **Implementare annunci nativi** per competere con gli annunci su display, utilizzando richieste di annunci a più dimensioni, aumentando le richieste e fornendo ai lettori un'esperienza di utilizzo di qualità premium.
 
 ### Innovation: Offer the most engaging ad products
 
