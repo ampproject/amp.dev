@@ -81,7 +81,7 @@ Bien, entonces si la página se encuentra *en mi dominio* y JSON también está 
 Vaya, pero ¿cómo llegó el usuario a su página AMP? ¿accede desde una página que está almacenada en el caché? Es muy probable que su usuario no haya accedido a su página AMP directamente, sino que haya descubierto su página mediante otra plataforma. Por ejemplo, Google Search utiliza el caché AMP de Google para renderizar rápidamente las páginas AMP. Estas son páginas almacenadas en el caché y proporcionan sus servicios desde el caché AMP de Google, que es un dominio *diferente*. Cuando su usuario hace clic en el botón para actualizar los precios en su página, la página que está almacenada en el caché de AMP envía una solicitud a su dominio de origen para obtener los precios, lo cual genera una discrepancia entre los orígenes (caché -> dominio de origen). Para permitir tales solicitudes de origen cruzado es necesario que habilite CORS, de lo contrario las solicitudes fallarán.
 
 <amp-img alt="CORS and Cache" layout="responsive" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png" width="809" height="391">
-  <noscript>     <img alt="CORS and Cache" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png">   </noscript></amp-img>
+  <noscript><img alt="CORS y caché" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png"></noscript></amp-img>
 
 **Muy bien, ¿qué debo hacer ahora?**
 
@@ -197,7 +197,7 @@ Debe tener en cuenta dos escenarios para las solicitudes CORS que recibe su endp
 Analicemos estos escenarios con un ejemplo. En nuestro ejemplo, administramos el sitio `example.com` que aloja una página AMP llamada `article-amp.html.` La página AMP contiene un `amp-list` para recuperar datos dinámicos de un archivo `data.json` que también está alojado en `example.com`. Si deseamos procesar las solicitudes en nuestro archivo `data.json` que provengan de nuestra página AMP. Estas solicitudes podrían tener el mismo origen que la página AMP (la cual no está almacenada en el caché) o provenir de la página AMP (que está almacenada en el caché) pero tiene un origen diferente.
 
 <amp-img alt="CORS example" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png" width="629" height="433">
-  <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png">   </noscript></amp-img>
+  <noscript><img alt="Ejemplo de CORS" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png"></noscript></amp-img>
 
 ### Los orígenes que están permitidos <a name="allowed-origins"></a>
 
@@ -281,7 +281,7 @@ function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
 En el siguiente escenario, la página `article-amp.html` solicita el archivo `data.json`, cuyos orígenes son los mismos.
 
 <amp-img alt="CORS example - scenario 1" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png" width="657" height="155">
-  <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png">   </noscript></amp-img>
+  <noscript><img alt="Ejemplo de CORS" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png"></noscript></amp-img>
 
 Si analizamos esta solicitud, encontraremos:
 
@@ -305,7 +305,7 @@ Access-Control-Allow-Origin: https://example.com
 En el siguiente escenario, la página `article-amp.html` que se almacenó en el caché AMP de Google solicita el archivo `data.json`, en este caso los orígenes son diferentes.
 
 <amp-img alt="CORS example - scenario 2" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png" width="657" height="155">
-  <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png">   </noscript></amp-img>
+  <noscript><img alt="Ejemplo de CORS" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png"></noscript></amp-img>
 
 Si analizamos esta solicitud, encontraremos:
 
@@ -362,7 +362,7 @@ function assertFontCors(req, res, opt_validMethods, opt_exposeHeaders) {
 Por ejemplo, si desea cargar /some/font.ttf en `https://example.com/amp.html`, el servidor de origen debe responder con el encabezado Access-Control-Allow-Origin, como se muestra a continuación.
 
 <amp-img alt="CORS font example" layout="responsive" src="https://amp.dev/static/img/docs/cors-font.jpg" width="2268" height="1594">
-  <noscript>     <img alt="CORS font example" src="https://amp.dev/static/img/docs/cors-font.jpg">   </noscript></amp-img>
+  <noscript><img alt="Ejemplo de fuente CORS" src="https://amp.dev/static/img/docs/cors-font.jpg"></noscript></amp-img>
 
 [tip type="note"] Si la fuente de su archivo es correcta para ser accesible desde cualquier origen, puede responder con un comodín `Access-Control-Allow-Origin`, el caché de AMP también repetirá la validación, lo cual significa que responderá con `Access-Control-Allow-Origin: *`. Si ya tiene esta configuración, no es necesario cambiar nada. [/tip]
 
