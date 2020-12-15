@@ -1,6 +1,8 @@
 ---
-$title: Lavorare con dati remoti
+"$title": Lavorare con dati remoti
+"$order": '3'
 description: Cosa succede se i dati associabili sono troppo grandi o complessi per essere recuperati al caricamento della pagina? Oppure se ogni SKU avesse un prezzo che richiede ...
+toc: 'true'
 ---
 
 Cosa succede se i dati associabili sono troppo grandi o complessi per essere recuperati al caricamento della pagina? Oppure se ogni SKU avesse un prezzo che richiede troppo tempo per essere trovato? La ricerca dei prezzi per gli SKU di articoli non visualizzati è uno spreco di risorse.
@@ -121,7 +123,7 @@ Inoltre, dovremo aggiornare lo stato predefinito degli elementi coinvolti:
 </amp-selector>
 ```
 
-[tip type="note"] **NOTA:** [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) non viene eseguito al caricamento della pagina, ma solo in risposta a un'azione esplicita dell'utente. Ciò garantisce che il caricamento della pagina iniziale sia sempre veloce allo stesso modo nelle varie pagine, indipendentemente dall'utilizzo di [`amp-bind`](../../../../documentation/components/reference/amp-bind.md). [/tip]
+[tip type = "note"] **NOTA:** [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) non viene eseguito al caricamento della pagina, ma solo in risposta a un'azione esplicita dell'utente. Ciò garantisce che il caricamento della pagina iniziale sia sempre veloce allo stesso modo nelle varie pagine, indipendentemente dall'utilizzo di [`amp-bind`](../../../../documentation/components/reference/amp-bind.md). [/tip]
 
 ## Prezzi variabili delle magliette
 
