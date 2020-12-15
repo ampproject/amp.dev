@@ -67,12 +67,10 @@ Consulte en la siguiente tabla la descripción sobre cada parte de la sintaxis.
   <tr>
     <td><code>arg=value</code></td>
     <td>No</td>
-    <td>Some actions, if documented, may accept arguments. The arguments are defined between parentheses in <code>key=value</code> notation. The accepted values are:       <ul>         <li>simple unquoted strings: <code>simple-value</code>
-</li>         <li>quoted strings: <code>"string value"</code> or <code>'string value'</code>
-</li>         <li>boolean values: <code>true</code> or <code>false</code>
-</li>         <li>numbers: <code>11</code> or <code>1.1</code>
-</li>         <li>dot-syntax reference to event data: <code>event.someDataVariableName</code>
-</li>       </ul>     </td>
+    <td>Algunas acciones, cuando se documentan, pueden aceptar argumentos. Los argumentos se definen entre paréntesis mediante la notación <code>key=value</code>. Los valores aceptados son:       <ul>         <li>cadenas sencillas sin comillas: <code>simple-value</code> </li>         <li>cadenas con comillas: <code>"string value"</code> o </li>
+</ul>
+<code></code>
+</td>
   </tr>
 </table>
 
@@ -135,15 +133,15 @@ Por ejemplo, en AMP es posible hacer lo siguiente:
   </tr>
   <tr>
     <td rowspan="3"><code>change</code></td>
-    <td rowspan="3">Fired when the value of the element is changed and committed.       <p>       Data properties mirror those in <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#Properties">HTMLInputElement</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement#Properties">HTMLSelectElement</a>.</p>     </td>
+    <td rowspan="3">Se activa cuando el valor del elemento cambia y se asigna.       <p>       Las propiedades de los datos son similares a los que se encuentran en <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#Properties">HTMLInputElement</a> y de <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement#Properties">HTMLSelectElement</a>.</p>
+</td>
     <td><code>input</code></td>
     <td>
       <pre>event.min<br>event.max<br>event.value<br>event.valueAsNumber</pre>
     </td>
   </tr>
   <tr>
-    <td>
-<code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
+    <td> <code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
 </td>
     <td>
       <code>event.checked</code>
@@ -235,8 +233,7 @@ event.value</pre>
     <th width="40%">Datos</th>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(low-trust)</td>
     <td>Se activa cuando ocurre un error en la consulta de datos.</td>
     <td>Ninguno</td>
   </tr>
@@ -286,8 +283,7 @@ event.value</pre>
     <th width="40%">Datos</th>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(low-trust)</td>
     <td>Se activa cuando ocurre un error en la consulta de datos.</td>
     <td>Ninguno</td>
   </tr>
@@ -343,11 +339,11 @@ event.value</pre>
   </tr>
   <tr>
     <td><code>show</code></td>
-    <td>Shows the target element. If an     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a     result, it gains focus.</td>
+    <td>Muestra al elemento objetivo. Si como resultado de ello un <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus">elemento</a><code>autofocus</code>  se vuelve visible, aumenta su prioridad.</td>
   </tr>
   <tr>
     <td><code>toggleVisibility</code></td>
-    <td>Toggles the visibility of the target element. If an     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a     result, it gains focus.</td>
+    <td>Cambia la visibilidad de un elemento objetivo. Si como resultado de ello un <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus">elemento</a><code>autofocus</code>  se vuelve visible, aumenta su prioridad.</td>
   </tr>
   <tr>
     <td><code>toggleClass(class=STRING, force=BOOLEAN)</code></td>
@@ -355,7 +351,7 @@ event.value</pre>
   </tr>
   <tr>
     <td><code>focus</code></td>
-    <td>Makes the target element gain focus. To lose focus, <code>focus</code>     on another element (usually parent element). We strongly advise against     losing focus by focusing on <code>body</code>/<code>documentElement</code>     for accessibility reasons.</td>
+    <td>Hace que el elemento objetivo aumente su prioridad. Para disminuir la prioridad, puede utilizarse <code>focus</code> en otro elemento (generalmente en un elemento primario). Le recomendamos nuevamente que no pierda de vista la prioridad en <code>body</code>/<code>documentElement</code> por cuestiones de accesibilidad.</td>
   </tr>
 </table>
 
@@ -368,7 +364,8 @@ event.value</pre>
   </tr>
   <tr>
     <td><code>toggle(section=STRING)</code></td>
-    <td>Toggles the <code>expanded</code> and <code>collapsed</code> states of <code>amp-accordion</code> sections. When called with no arguments, it toggles all sections of the accordion. Trigger on a specific section by providing the section id: <code>on="tap:myAccordion.toggle(section='section-id')"</code>.   </td>
+    <td>Habilita o deshabilita los estados <code>expanded</code> y <code>collapsed</code> en las secciones de <code>amp-accordion</code>. Cuando se hacen llamadas sin argumentos, permite alternar todas las secciones del acordeón. Habilita una sección específica al proporcionar el ID de la sección: <code>on="tap:myAccordion.toggle(section=</code>
+</td>
 </tr>
   <tr>
     <td><code>expand(section=STRING)</code></td>
@@ -436,8 +433,7 @@ event.value</pre>
     <td>Actualiza el diseño de <code>amp-list</code> a <code>layout="CONTAINTER"</code> para permitir <a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">cambios en el tamaño de forma dinámica</a>.</td>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(low-trust)</td>
     <td>Se activa cuando ocurre un error en la consulta de datos.</td>
     <td>Ninguno</td>
   </tr>
@@ -464,7 +460,7 @@ event.value</pre>
   </tr>
   <tr>
     <td><code>toggle(index=INTEGER, value=BOOLEAN)</code></td>
-    <td>Toggles the application of the `selected`. If the select attribute is absent, this action adds it. If the select attribute is present, this action removes it.     You may force and keep an add or remove by including a boolean value in the `value` argument. A value of `true` will force add the `selected` attribute and not remove it if already present. A value of  `false` will remove the attribute, but not add it if absent.   </td>
+    <td>Habilita o deshabilita la aplicación “seleccionada”. Si el atributo que se seleccionó está ausente, esta acción lo agregará. Si el atributo que se seleccionó está presente, esta acción lo eliminará. Puede forzar y mantener una adición o eliminación incluyendo un valor booleano en el argumento “value”. Un valor “true” forzará agregar el atributo “seleccionado” y no lo removerá si ya está presente. Un valor “false” eliminará el atributo, pero no lo agregará si está ausente.</td>
   </tr>
 </table>
 
@@ -531,4 +527,4 @@ El objetivo de `AMP` es proporcionado por su tiempo de ejecución e implementa a
   </tr>
 </table>
 
-<sup>1</sup>When used with <a href="#multiple-actions-for-one-event">multiple actions</a>, subsequent actions will wait for <code>setState()</code> to complete before invocation. Only a single <code>setState()</code> is allowed per event.
+<sup>1</sup>Cuando se utiliza con <a href="#multiple-actions-for-one-event">varias acciones</a>, las acciones que se realicen posteriormente esperarán hasta que se complete <code>setState()</code> antes de que los invoquen. Solamente se permite un <code>setState()</code> por evento.
