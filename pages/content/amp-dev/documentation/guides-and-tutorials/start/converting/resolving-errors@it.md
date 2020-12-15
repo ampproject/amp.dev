@@ -304,6 +304,6 @@ Aggiornare la pagina e guardare l'output della console. Si dovrebbe ricevere il 
 
 ### Domande frequenti
 
-- [What is DOM reflow?](http://stackoverflow.com/a/27637245)
-- [What if the layout attribute isn’t defined?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isnt-specified)
-- [What if width and height are undefined?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-width-and-height-are-undefined)
+- [Cosa sono gli adattamenti dinamici del DOM?](http://stackoverflow.com/a/27637245)
+- [Cosa succede se l'attributo layout non è definito?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isnt-specified)
+- [Cosa succede se larghezza e altezza non sono definite?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-width-and-height-are-undefined)
