@@ -1,6 +1,6 @@
 ---
-$title: Iniziamo la nostra storia
-$order: 3
+"$title": Iniziamo la nostra storia
+"$order": '3'
 description: Una storia web completa è rappresentata dal componente amp-story, che funge da contenitore per tutte le pagine della storia. Il componente amp-story è anche responsabile di ...
 author: bpaduch
 ---
