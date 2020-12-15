@@ -349,13 +349,13 @@ The mapping we’ve created ends up looking like this:
 <table>
   <tr>
     <th><strong>User ID on publisher origin</strong></th>
-    <th><strong>User ID on AMP page that’s NOT on publisher origin (“alias”)</strong></th>
+    <th><strong>ID utente sulla pagina AMP che NON è sull</strong></th>
   </tr>
   <tr>
     <td>
-<code>$prospective_identifier</code>(generated just-in-time when analytics ping is received)</td>
+<code>$prospective_identifier</code> (generato in modalità just-in-time quando viene ricevuto il ping di analisi)</td>
     <td>
-<code>$amp_client_id</code> (came from analytics ping)</td>
+<code>$amp_client_id</code> (proveniente dal ping di analisi)</td>
   </tr>
 </table>
 
@@ -495,9 +495,7 @@ We recommend validating the authenticity of query parameter values by using the 
   <li>Can access a place where the code that read and removed the parameters has stored the data</li>
 </ul>
 <p>To do this on your non-AMP page, include the following JavaScript, which will remove all query parameters from the URL:</p>
-<pre>var href = location.href.replace(/\?[^{{'[% raw %]'}}#]{{'{% endraw %}'}}+/, '');
-history.replaceState(null, null, href);
-</pre>
+<pre>var href = location.href.replace(/\?[^{{'[% raw %]'}}#]{{'{% endraw %}'}}+/, '');<br>history.replaceState(null, null, href);</pre>
 <p>Adapt this as needed to remove fewer query parameters.</p>
 </blockquote>
 
@@ -515,7 +513,7 @@ Check if either of the values corresponding to is present in your mapping table.
   <tr>
     <th width="20%"></th>
     <th width="40%"><strong>User ID on publisher origin</strong></th>
-    <th width="40%"><strong>User ID on AMP page that’s NOT on publisher origin (“alias”)</strong></th>
+    <th width="40%"><strong>     <br><br>	ID utente sulla pagina AMP che NON è sull'origine dell'editore ("alias")</strong></th>
   </tr>
   <tr>
     <td><strong>How it’s expressed in analytics ping</strong></td>
