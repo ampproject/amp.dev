@@ -1,5 +1,5 @@
 ---
-"$title": Placeholders & fallbacks
+"$title": Segnaposti e fallback
 "$order": '3'
 descriptions: "In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible."
 formats:
@@ -16,11 +16,11 @@ contributors:
 
 In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible.
 
-Some elements will even reward you for doing it by relaxing restrictions – for example, if you provide a placeholder for [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder), it can be used near the top of the page (which won't work without).
+Alcuni elementi incoraggiano anche il loro utilizzo riducendo le restrizioni: ad esempio, fornendo un segnaposto per [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder), esso può essere utilizzato nella parte superiore della pagina (che non funzionerà senza).
 
-## Placeholders
+## Segnaposti
 
-The element marked with the `placeholder` attribute acts as a placeholder for the parent AMP element. If specified, a `placeholder` element must be a direct child of the AMP element. An element marked as a `placeholder` will always `fill` the parent AMP element.
+Gli elementi marcati con l'attributo `placeholder` agiscono come segnaposto per l'elemento AMP padre. Quando indicato, un elemento `placeholder` deve essere figlio diretto dell'elemento AMP. Gli elementi marcati con l'attributo `placeholder` avranno sempre la proprietà `fill` rispetto all'elemento AMP padre.
 
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
 ```html
@@ -36,23 +36,23 @@ The element marked with the `placeholder` attribute acts as a placeholder for th
 ```
 [/example]
 
-By default, the placeholder is immediately shown for the AMP element, even if the AMP element's resources have not been downloaded or initialized. Once ready, the AMP element typically hides its placeholder and shows the content.
+Per impostazione predefinita, il segnaposto viene immediatamente mostrato al posto dell'elemento AMP, anche se le risorse dell'elemento AMP non sono state scaricate o inizializzate. Una volta pronto, l'elemento AMP in genere nasconde il suo segnaposto e mostra il proprio contenuto.
 
-[tip type="note"] **NOTE –**  The placeholder doesn’t have to be an AMP element; any HTML element can act as the placeholder. [/tip]
+[tip type="note"] **NOTA:** Il segnaposto non deve essere un elemento AMP; qualsiasi elemento HTML può fungere da segnaposto. [/tip]
 
-## Fallbacks <a name="fallbacks"></a>
+## Fallback <a name="fallbacks"></a>
 
-You can specify the `fallback` attribute on an element to indicate the fallback behavior:
+È possibile specificare l'attributo `fallback` su un elemento per indicare il comportamento alternativo in caso di:
 
-- for any element the browser doesn’t support
-- if the content fails to load (e.g., Tweet deleted)
-- if the image type is unsupported (e.g., WebP isn't supported in all browsers)
+- elementi non supportati dal browser
+- contenuti che non possono essere caricati (ad esempio, Tweet cancellati)
+- tipi di immagini non supportati (ad esempio, WebP non è supportato in tutti i browser)
 
-You can set the `fallback` attribute on *any* HTML element, not just AMP elements. If specified, the `fallback` element must be a direct child of the AMP element.
+Si può impostare l'attributo di `fallback` su *qualsiasi* elemento HTML, non solo sugli elementi AMP. Se indicato, l'elemento di `fallback` deve essere un figlio diretto dell'elemento AMP.
 
-##### Example: Unsupported feature
+##### Esempio: funzionalità non supportata
 
-In the following example, we use the `fallback` attribute to communicate to the user that the browser doesn’t support a particular feature:
+Nell'esempio seguente, utilizziamo l'attributo `fallback` per comunicare all'utente che il browser non supporta una particolare funzionalità:
 
 [example preview="inline" playground="true" imports="amp-video:0.1"]
 ```html
@@ -68,9 +68,9 @@ In the following example, we use the `fallback` attribute to communicate to the 
 ```
 [/example]
 
-##### Example: Serve different image formats
+##### Esempio: fornitura di diversi formati di immagine
 
-In the following example, we use the `fallback` attribute to tell the browser to use the JPEG file if the WebP format is unsupported.
+Nell'esempio seguente, utilizziamo l'attributo `fallback` per indicare al browser di utilizzare il file JPEG se il formato WebP non è supportato.
 
 [example preview="inline" playground="true"]
 ```html
@@ -89,16 +89,19 @@ In the following example, we use the `fallback` attribute to tell the browser to
 ```
 [/example]
 
-## Interaction of placeholders and fallbacks
+## Interazione di segnaposti e fallback
 
-For AMP components that rely on dynamic content (e.g., [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md), [`amp-list`](../../../../documentation/components/reference/amp-list.md)), the interaction of fallbacks and placeholders operates as follows:
+Per i componenti AMP che si basano su contenuti dinamici (ad es. [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md), [`amp-list`](../../../../documentation/components/reference/amp-list.md)), l'interazione di fallback e segnaposto funziona come segue:
 
 <ol>
-  <li>Display the placeholder while the content is loading.</li>
-  <li>If the content loads successfully, hide the placeholder and display the content.</li>
-  <li>If the content fails to load:     <ol>       <li>If there's a fallback element, display the fallback.</li>       <li>Otherwise, continue displaying the placeholder.</li>     </ol>   </li>
+  <li>Visualizzazione del segnaposto durante il caricamento del contenuto.</li>
+  <li>Se il contenuto viene caricato correttamente, il segnaposto è nascosto e visualizzato il contenuto.</li>
+  <li>Se il contenuto non viene caricato: <ol>
+<li> Se è presente un elemento di fallback, è visualizzato il fallback.</li>
+<li>Altrimenti, si continua a visualizzare il segnaposto.</li> </ol>
+</li>
 </ol>
 
-## Hiding loading indicators
+## Nascondere gli indicatori di caricamento
 
-Many AMP elements are allowlisted to show a "loading indicator", which is a basic animation that shows that the element has not yet fully loaded. Elements can opt out of this behavior by adding the `noloading` attribute.
+Molti elementi AMP sono autorizzati a mostrare un "indicatore di caricamento", che è un'animazione di base che mostra che l'elemento non è stato ancora completamente caricato. Gli elementi possono disattivare questo comportamento aggiungendo l'attributo `noloading`.
