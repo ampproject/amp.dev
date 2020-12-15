@@ -100,43 +100,41 @@ Para consultar una lista de códigos cortos y la manera de utilizarlos, vaya a [
 
 Algunos documentos pueden ser importantes para varios de los formatos de AMP, pero algunos formatos posiblemente requieran descripciones adicionales o información que no sea relevante para los demás. Puede filtrar estas secciones envolviéndolas con el siguiente código corto.
 
-<div class="ap-m-code-snippet"><pre>&lsqb;filter formats="websites"]
+<div class="ap-m-code-snippet"><pre>&amp;lsqb;filter formats="websites"]
 This is only visible for [websites](?format=websites).
-&lsqb;/filter]
+&amp;lsqb;/filter]
 
-&lsqb;filter formats="websites"]
+&amp;lsqb;filter formats="websites"]
 This is only visible for [websites](?format=websites).
-&lsqb;/filter]
+&amp;lsqb;/filter]
 
-&lsqb;filter formats="websites, email"]
-This is visible for [websites](?format=websites) & [email](?format=email).
-&lsqb;/filter]
+&amp;lsqb;filter formats="websites, email"]
+This is visible for [websites](?format=websites) &amp; [email](?format=email).
+&amp;lsqb;/filter]
 
-&lsqb;filter formats="stories"]
+&amp;lsqb;filter formats="stories"]
 This is visible for [stories](?format=stories).
-&lsqb;/filter]
-</pre></div>
+&amp;lsqb;/filter]</pre></div>
 
 ## Sugerencias
 
 Puede agregar sugerencias y textos destacados envolviendo el texto con el siguiente código corto:
 
-<div class="ap-m-code-snippet"><pre>&lsqb;tip type="default"]
+<div class="ap-m-code-snippet"><pre>&amp;lsqb;tip type="default"]
 Default tip
 [/tip]
 
-&lsqb;tip type="important"]
+&amp;lsqb;tip type="important"]
 Important
 [/tip]
 
-&lsqb;tip type="note"]
+&amp;lsqb;tip type="note"]
 Note
 [/tip]
 
-&lsqb;tip type="read-on"]
+&amp;lsqb;tip type="read-on"]
 Read-on
-[/tip]
-</pre></div>
+[/tip]</pre></div>
 
 ## Fragmentos de código
 
@@ -152,8 +150,7 @@ Coloque los fragmentos de código dentro de los conjuntos con tres comillas simp
 
 ```js
   // code sample
-```
-</pre></div>
+```</pre></div>
 
 Si su código contiene llaves dobles, lo cual sucede con frecuencia si utiliza plantillas [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md?format=websites), entonces debe envolver esa parte del código:
 
