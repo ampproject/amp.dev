@@ -15,4 +15,4 @@ Per illustrare il possibile aspetto del markup supplementare, ecco il codice nec
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-[sourcecode:html] <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img> [/sourcecode]
+[tip type="read-on"] <strong>CONTINUA A LEGGERE -</strong> Per capire perché stiamo sostituendo tag come <code><img></code> con <a><code><amp-img></code></a> e quanti di essi sono disponibili, vai alla sezione <a>Includere Iframe ed elementi multimediali</a>.[/tip]
