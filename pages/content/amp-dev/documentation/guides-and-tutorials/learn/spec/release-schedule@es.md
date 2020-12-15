@@ -17,15 +17,15 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-- [Release Channels](#release-channels)
-    - [Nightly](#nightly)
-    - [Weekly](#weekly)
-        - [Experimental and Beta channels](#beta-and-experimental-channels)
-    - [Long-Term Stable (lts)](#long-term-stable-lts)
-- [Determining if your change is in a release](#determining-if-your-change-is-in-a-release)
-- [Release Cadence](#release-cadence)
-    - [Detailed schedule](#detailed-schedule)
-    - [Release Freezes](#release-freezes)
+- [Canales para los lanzamientos](#release-channels)
+    - [Nocturnos](#nightly)
+    - [Semanales](#weekly)
+        - [Canales Beta y Experimental](#beta-and-experimental-channels)
+    - [Estabilidad a largo plazo (lts)](#long-term-stable-lts)
+- [Cómo determinar si su modificación se encuentra en un lanzamiento](#determining-if-your-change-is-in-a-release)
+- [Cadencia de los lanzamientos](#release-cadence)
+    - [ Calendario detallado ](#detailed-schedule)
+    - [Congelar el lanzamiento](#release-freezes)
 
 Cada martes un nuevo lanzamiento se envía a todas las páginas de AMP. **Una vez que un cambio en AMP se fusiona con la rama principal del repositorio AMPHTML, generalmente tomará entre 1 y 2 semanas para que la modificación esté activa para todos los usuarios.**
 
