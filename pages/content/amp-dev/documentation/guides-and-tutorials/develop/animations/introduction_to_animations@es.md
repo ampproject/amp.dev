@@ -1,7 +1,10 @@
 ---
-$title: Introducción a las animaciones complejas
-$order: 2
+"$title": Introducción a las animaciones complejas
+"$order": '2'
 description: Para las animaciones que no pueden basarse en integrar y eliminar clases, AMP ofrece varios componentes específicos para generar animaciones. Estos componentes implementan los principios de AMP para las animaciones ...
+formats:
+- websites
+- ads
 author: CrystalOnScript
 ---
 
@@ -16,9 +19,9 @@ El componente [`amp-animation`](../../../../documentation/components/reference/a
 Una parte básica de [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) es un objeto JSON hecho de las siguientes partes esenciales:
 
 - El elemento en que el componente genera la animación, o `selector`.
-- [Propiedades de sincronización](../../../../documentation/components/reference/amp-animation.md#timing-properties)
-- [Fotogramas clave](../../../../documentation/components/reference/amp-animation.md#keyframes)
-- [Activador](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
+- [Timing Properties](../../../../documentation/components/reference/amp-animation.md#timing-properties)
+- [Keyframes](../../../../documentation/components/reference/amp-animation.md#keyframes)
+- [Trigger](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
 
 ```
 <amp-animation layout="nodisplay" id="exampleAnimation">
@@ -258,7 +261,7 @@ Mediante el uso de las [expresiones](../../../../documentation/components/refere
 </body>
 ```
 
-[/example] Este ejemplo funciona de la siguiente manera:
+[/example]
 
 - Declarar una variable, `--duration`, y asignarle un valor de dos segundos.
 - Establecer `duration` con el valor de la variable `--duration`.
