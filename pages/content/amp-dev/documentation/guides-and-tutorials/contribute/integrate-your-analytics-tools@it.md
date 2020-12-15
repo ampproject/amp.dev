@@ -75,6 +75,6 @@ Per adottare questo approccio, consultare la documentazione per l'integrazione d
 
 - Approfondimento: [Perché non usare semplicemente un iframe?](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/why-not-iframe.md)
 - Approfondimento: [Gestione dello stato di utenti non autenticati con AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)
-- [amp-analytics sample](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
+- [Esempio di amp-analytics](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
 - Documentazione di riferimento di [amp-analytics](https://amp.dev/documentation/components/amp-analytics)
 - Documentazione di riferimento sulle [variabili di amp-analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)
