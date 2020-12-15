@@ -69,12 +69,8 @@ Consultare la tabella seguente per le descrizioni di ciascun elemento della sint
   <tr>
     <td><code>arg=value</code></td>
     <td>no</td>
-    <td>Some actions, if documented, may accept arguments. The arguments are defined between parentheses in <code>key=value</code> notation. The accepted values are:       <ul>         <li>simple unquoted strings: <code>simple-value</code>
-</li>         <li>quoted strings: <code>"string value"</code> or <code>'string value'</code>
-</li>         <li>boolean values: <code>true</code> or <code>false</code>
-</li>         <li>numbers: <code>11</code> or <code>1.1</code>
-</li>         <li>dot-syntax reference to event data: <code>event.someDataVariableName</code>
-</li>       </ul>     </td>
+    <td>Alcune azioni, se documentate, possono accettare argomenti. Gli argomenti sono definiti tra parentesi nella notazione <code>key=value</code>. I valori accettati sono: <ul> <li>stringhe semplici senza virgolette: <code>simple-value</code> </li> <li>stringhe con virgolette: <code>"string value"</code> oppure <code>'string value'</code> </li> <li>valori booleani: <code>true</code> o <code>false</code> </li> <li>numeri: <code>11</code> o <code>1.1</code> </li> <li>dati con sintassi puntata riferiti ad eventi: <code>event.someDataVariableName</code> </li> </ul>
+</td>
   </tr>
 </table>
 
@@ -138,18 +134,15 @@ Ad esempio, in AMP è possibile la seguente struttura:
   <!-- change -->
   <tr>
     <td rowspan="3"><code>change</code></td>
-    <td rowspan="3">Fired when the value of the element is changed and committed.       <p>       Data properties mirror those in <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#Properties">HTMLInputElement</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement#Properties">HTMLSelectElement</a>.</p>     </td>
+    <td rowspan="3">Attivazione quando il valore dell'elemento viene modificato e confermato. <p>Le proprietà dei dati rispecchiano quelle in <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#Properties">HTMLInputElement</a> e <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement#Properties">HTMLSelectElement</a>.</p>
+</td>
     <td><code>input</code></td>
     <td>
-      <pre>event.min
-event.max
-event.value
-event.valueAsNumber</pre>
+      <pre>event.min<br>event.max<br>event.value<br>event.valueAsNumber</pre>
     </td>
   </tr>
   <tr>
-    <td>
-<code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
+    <td> <code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
 </td>
     <td>
       <code>event.checked</code>
@@ -158,9 +151,7 @@ event.valueAsNumber</pre>
   <tr>
     <td><code>select</code></td>
     <td>
-      <pre>event.min
-event.max
-event.value</pre>
+      <pre>event.min<br>event.max<br>event.value</pre>
     </td>
   </tr>
   <!-- input-debounced -->
@@ -247,8 +238,7 @@ event.value</pre>
     <td>Aggiorna il layout di <code>amp-list</code> a <code>layout="CONTAINTER"</code> per consentire <a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">il ridimensionamento dinamico</a>.</td>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(bassa affidabilità)</td>
     <td>Attivazione quando il recupero dei dati non riesce.</td>
     <td>Nessuno</td>
   </tr>
@@ -298,8 +288,7 @@ event.value</pre>
     <th width="40%">Dati</th>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(bassa affidabilità)</td>
     <td>Attivazione quando il recupero dei dati non riesce.</td>
     <td>Nessuno</td>
   </tr>
@@ -314,17 +303,15 @@ event.value</pre>
     <th width="40%">Dati</th>
   </tr>
   <tr>
-    <td>
-<code>firstPlay</code>(low-trust)</td>
+    <td> <code>firstPlay</code>(bassa affidabilità)</td>
     <td>Attivazione alla prima riproduzione del video da parte dell'utente. L'attivazione sui video a riproduzione automatica avviene non appena l'utente interagisce con il video. Questo evento è a bassa affidabilità, il che implica che non può attivare la maggior parte delle azioni; possono essere eseguite solo azioni a bassa affidabilità, quali le azioni <code>amp-animation</code>.</td>
     <td></td>
   </tr>
   <tr>
-    <td>
-<code>timeUpdate</code>(low-trust)</td>
+    <td> <code>timeUpdate</code>(bassa affidabilità)</td>
     <td>Attivazione quando la posizione di riproduzione di un video cambia. La frequenza dell'evento è controllata da AMP ed è attualmente impostata a intervalli di 1 secondo. Questo evento è a bassa affidabilità, per cui non può attivare la maggior parte delle azioni; possono essere eseguite solo azioni a bassa affidabilità quali le azioni <code>amp-animation</code>.</td>
     <td>
-<code>{time, percent}</code><code>time</code> indicates the current time in seconds, <code>percent</code> is a number between 0 and 1 and indicates current position as percentage of total time.</td>
+<code>{time, percent}</code> <code>time</code> indica l'orario attuale in secondi, <code>percent</code> è un numero compreso tra 0 e 1 e indica la posizione attuale in termini percentuali sul tempo totale.</td>
   </tr>
 </table>
 
@@ -344,14 +331,12 @@ event.value</pre>
   <tr>
     <td><code>submit-success</code></td>
     <td>Attivazione quando la risposta all'invio del modulo ha successo.</td>
-    <td><pre>// Response JSON.
-event.response</pre></td>
+    <td><pre>//Risposta JSON.<br>       event.response</pre></td>
   </tr>
   <tr>
     <td><code>submit-error</code></td>
     <td>Attivazione quando la risposta all'invio del modulo è un errore.</td>
-    <td><pre>// Response JSON.
-event.response</pre></td>
+    <td><pre>// Risposta JSON.<br>       event.response</pre></td>
   </tr>
   <tr>
     <td><code>valid</code></td>
@@ -384,7 +369,7 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>toggleVisibility</code></td>
-    <td>Toggles the visibility of the target element. If an     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a     result, it gains focus.</td>
+    <td>Attiva e disattiva la visibilità dell'elemento target. Se un <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus">elemento <code>autofocus</code></a> diventa visibile di conseguenza, esso diventa attivo.</td>
   </tr>
   <tr>
     <td><code>toggleClass(class=STRING, force=BOOLEAN)</code></td>
@@ -396,7 +381,7 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>focus</code></td>
-    <td>Makes the target element gain focus. To lose focus, <code>focus</code>     on another element (usually parent element). We strongly advise against     losing focus by focusing on <code>body</code>/<code>documentElement</code>     for accessibility reasons.</td>
+    <td>Aumenta la messa a fuoco dell'elemento target. Per ridurre la messa a fuoco, attivare il <code>focus</code> su un altro elemento (di solito l'elemento genitore). Sconsigliamo di ridurre la messa a fuoco di un elemento, attivando il focus sull'elemento <code>body</code>/<code>documentElement</code> per motivi di accessibilità.</td>
   </tr>
 </table>
 
@@ -455,7 +440,7 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>toggle(section=STRING)</code></td>
-    <td>Toggles the <code>expanded</code> and <code>collapsed</code> states of <code>amp-accordion</code> sections. When called with no arguments, it toggles all sections of the accordion. Trigger on a specific section by providing the section id: <code>on="tap:myAccordion.toggle(section='section-id')"</code>.   </td>
+    <td>Alterna gli stati <code>expanded</code> e <code>collapsed</code> delle sezioni <code>amp-accordion</code>. Quando l'azione è richiamata senza argomenti, essa alterna tutte le sezioni del pannello a soffietto. Per attivare una sezione specifica occorre fornire l'id della sezione: <code>on="tap:myAccordion.toggle(section='section-id')"</code>.</td>
 </tr>
   <tr>
     <td><code>expand(section=STRING)</code></td>
@@ -574,7 +559,7 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>toggle(index=INTEGER, value=BOOLEAN)</code></td>
-    <td>Toggles the application of the `selected`. If the select attribute is absent, this action adds it. If the select attribute is present, this action removes it.     You may force and keep an add or remove by including a boolean value in the `value` argument. A value of `true` will force add the `selected` attribute and not remove it if already present. A value of  `false` will remove the attribute, but not add it if absent.   </td>
+    <td>Attiva o disattiva l'applicazione dell'elemento 'selezionato'. Se l'attributo select è assente, questa azione lo aggiunge. Se l'attributo select è presente, questa azione lo rimuove. Per forzare un'aggiunta o una rimozione, occorre includere un valore booleano nell'argomento 'value'. Un valore "true" forzerà l'aggiunta dell'attributo 'selected' e non lo rimuoverà se già presente. Un valore 'false' rimuoverà l'attributo, ma non lo aggiungerà se è assente.</td>
   </tr>
 </table>
 
@@ -689,7 +674,7 @@ Il target `AMP` è fornito dal sistema di runtime AMP e implementa azioni di pri
   <tr>
     <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
-      <p>Navigates current window to given URL, to the optional specified target if given (currenly only supporting <code>_top</code> and <code>_blank </code>). The optional <code>opener</code> parameter can be specified when using a target of <code>_blank</code> to allow the newly opened page to access <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener</code></a>. Supports <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">standard URL substitutions</a>.</p>
+      <p>Permette di esplorare nella finestra corrente l'URL dato, portandola al target specificato, se indicato (attualmente sono supportati solo i valori <code>_top</code> e <code>_blank </code>). Il parametro opzionale <code>opener</code> può essere indicato se si usa un target di tipo <code>_blank</code> per consentire alla pagina appena aperta di accedere all'elemento <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener<code></code></code></a>. Supporta <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">sostituzioni di URL standard</a>.</p>
       <p><strong>Caveat:</strong> Using normal <code><a></code> links is recommended wherever possible since <code>AMP.navigateTo</code> is not recognized by web crawlers.</p>
     </td>
   </tr>
