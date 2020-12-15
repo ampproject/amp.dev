@@ -1,7 +1,11 @@
 ---
-$title: Administración de las solicitudes y el formato URL para el caché de AMP
-$order: 9
-toc: false
+"$title": Administración de las solicitudes y el formato URL para el caché de AMP
+"$order": '9'
+toc: 'false'
+formats:
+- websites
+- stories
+- ads
 author: Gregable
 contributors:
 - sebastianbenz
@@ -15,11 +19,8 @@ Cuando sea posible, en el caché de AMP de Google se creará un subdominio para 
 
 Puede utilizar esta calculadora de URL para convertir una URL en una versión del caché de AMP:
 
-<div>
-<amp-iframe title="AMP Cache tool" height="104" layout="fixed-height" sandbox="allow-scripts" src="/static/samples/files/amp-url-converter.html?url=https://amp.dev/index.amp.html">
-  <div placeholder></div>
-</amp-iframe>
-</div>
+<div><amp-iframe title="AMP Cache tool" height="104" layout="fixed-height" sandbox="allow-scripts" src="/static/samples/files/amp-url-converter.html?url=https://amp.dev/index.amp.html">
+  <div placeholder></div></amp-iframe></div>
 
 [tip type="tip"] Utilice el módulo [Node.js](https://nodejs.org) de [AMP-Toolbox Cache URL](https://github.com/ampproject/amp-toolbox/tree/master/packages/cache-url)  para traducir una URL desde su origen al formato URL para el caché de AMP. [/tip]
 
@@ -116,8 +117,8 @@ Estos son algunos ejemplos del algoritmo básico:
    </td>
   </tr>
   <tr>
-   <td> <code>xn--57hw060o.com</code> (⚡😊.com)</td>
-   <td> <code>xn---com-p33b41770a</code> (⚡😊-com)</td>
+   <td> <code>xn--57hw060o.com</code> (⚡😊.com)    </td>
+   <td> <code>xn---com-p33b41770a</code> (⚡😊-com)    </td>
   </tr>
   <tr>
    <td>
