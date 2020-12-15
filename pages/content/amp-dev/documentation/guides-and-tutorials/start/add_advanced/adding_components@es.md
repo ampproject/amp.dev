@@ -8,7 +8,7 @@ El sistema de componentes de AMP le permite crear rápidamente características 
 
 - **built-in**: Estos son los componentes que se incluyen en la biblioteca base de AMP JavaScript (especificada en la etiqueta `<head>`), como [`amp-img`](../../../../documentation/components/reference/amp-img.md) y [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md). Estos componentes se pueden utilizar inmediatamente en un documento de AMP.
 
-- **extended**: These are extensions to the base library that must be explicitly included in the document as custom elements.  Custom elements require specific scripts that are added to the `<head>` section (e.g., `<script async custom-element="`[`amp-video`](../../../../documentation/components/reference/amp-video.md)`...`).
+- **extended**: Son extensiones de la biblioteca base que deben incluirse explícitamente en el documento como elementos personalizados. Los elementos personalizados requieren secuencias de comandos específicas que se agregan a la sección `<head>` (por ejemplo, `<script async custom-element="`[`amp-video`](../../../../documentation/components/reference/amp-video.md)`...`).
 
 - **experimental**: Estos son los componentes que se liberan, pero aún no están listos para un uso amplio. Los desarrolladores pueden optar por utilizar estas características antes de que se liberen completamente. Obtenga más información en [Características experimentales](../../../../documentation/guides-and-tutorials/learn/experimental.md).
 
@@ -51,21 +51,7 @@ Recuerde que no todos los componentes están incluidos en el archivo JavaScript 
 <strong>Agregue</strong> la siguiente secuencia de comandos a la etiqueta `<head>`:
 
 ```html
-<amp-ad
-  width="300"
-  height="250"
-  type="doubleclick"
-  data-slot="/35096353/amptesting/geo/uk">
-  <div fallback>No ad appeared because you're not browsing from the UK!</div>
-</amp-ad>
-
-<amp-ad
-  width="300"
-  height="250"
-  type="doubleclick"
-  data-slot="/35096353/amptesting/geo/us">
-  <div fallback>No ad appeared because you're not browsing from the US!</div>
-</amp-ad>
+<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
 ```
 
 **Actualice** la página y debería ver 2 anuncios de prueba:
