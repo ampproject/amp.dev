@@ -171,7 +171,7 @@ Testeremo il sito Lyrical Lyghtning aprendo il pannello DevTools tramite `Ctrl +
 
 Fare clic sulla casella `offline` per passare alla modalità offline. Fare clic sul link `see full lineup` e accedere a `offline.html` per controllare che le risorse siano state memorizzate in cache e pre-caricate correttamente.
 
-[tip type="default"] **Tip –** For a thorough analysis of a Progressive Web App's features, run [Google's Lighhouse tool](https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool) to generate a report. [/tip]
+[tip type="default"] **Suggerimento:** Per un'analisi approfondita delle funzioni di una Progressive Web App, eseguire [lo strumento Lighhouse di Google](https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool) che genera un report di funzionamento della PWA. [/tip]
 
 # Congratulazioni!
 
