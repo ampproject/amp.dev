@@ -1,6 +1,6 @@
 ---
-$title: Rendi la tua pagina individuabile
-$order: 3
+"$title": Rendi la tua pagina individuabile
+"$order": '3'
 description: È necessario impostare il seguente collegamento bidirezionale in modo che i motori di ricerca individuino la relazione tra il normale documento HTML e la corrispondente versione AMP.
 ---
 
