@@ -3,8 +3,8 @@
 "$order": '3'
 description: El Reproductor de historias de AMP le permite insertar historias donde los usuarios pueden presionar o hacer clic dentro de una página web. Siga esta guía detallada para aprender cómo hacerlo.
 formats:
-- sitios web
-- historias
+  - websites
+  - stories
 ---
 
 Las historias son una experiencia inmersiva en pantalla completa y se alojan en la web abierta con su propia URL, lo que las hace fáciles de compartir. Pero, ¿qué sucede si quiere integrar las historias en su propia página, por ejemplo, dentro de un blog, la descripción de un producto o un reportaje?
