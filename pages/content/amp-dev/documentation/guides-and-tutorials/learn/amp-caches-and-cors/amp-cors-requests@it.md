@@ -163,7 +163,7 @@ Tale intestazione è un requisito delle <a href="https://www.w3.org/TR/cors/">Sp
 
 Anche se la specifica W3 CORS consente di restituire il valore <code>*</code> nella risposta, per una maggiore sicurezza:
 
-- If the `Origin` header is present, validate and echo the value of the <code><code data-md-type="codespan">Origin</code> header.
+- Se l'intestazione `Origin` è presente, occorre convalidare e mostrare il valore dell'intestazione <code>Origin</code>.
 
 ### Elaborazione delle richieste di modifica dello stato <a name="processing-state-changing-requests"></a>
 
