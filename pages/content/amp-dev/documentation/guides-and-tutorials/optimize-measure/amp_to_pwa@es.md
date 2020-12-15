@@ -180,7 +180,7 @@ Haga clic en la casilla `offline` para cambiar al modo sin conexión. Luego, hag
 - Cómo crear un <a>manifiesto web de la aplicación</a>
 - Instalar un Service Worker en AMP utilizando el componente [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md)
 - Personalizar el [AMP Service Worker ](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html)
-- [Prefetch links ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
+- [Cómo cargar previamente los enlaces ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
 - Crear una página sin conexión
 
 Obtenga más información sobre los [Service Workers](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html) y las [Cosas que se deben tener en cuenta sobre la experiencia de usuario cuando no hay conexión](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux). Aprenda cómo hacer un [seguimiento de la participación mediante las estadísticas ](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.html)y siga el tutorial sobre [cómo configurar los análisis básicos en sus páginas AMP](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/tracking-engagement.html).
