@@ -3,8 +3,8 @@
 "$order": '3'
 description: I componenti sperimentali AMP sono funzioni rilasciate ma non ancora pronte per un ampio utilizzo, quindi sono protette dallo stato sperimentale.
 formats:
-- websites
-- stories
+- siti web
+- storie
 - annunci
 ---
 
@@ -26,8 +26,8 @@ Il rilascio del canale AMP Dev **potrebbe essere meno stabile** e potrebbe conte
 
 L'attivazione del canale Dev permette di:
 
-- test and play with new features not yet available to all users.
-- use in quality assurance (QA) to ensure that your site is compatible with the next version of AMP.
+- eseguire operazioni di test e verifica di nuove funzionalità non ancora disponibili per tutti gli utenti.
+- utilizzare nelle procedure di Quality Assurance (QA) per garantire che i siti siano compatibili con la successiva versione di AMP.
 
 Se trovi un problema che sembra verificarsi solo nella versione del canale  AMP Dev, [lo puoi segnalare](https://github.com/ampproject/amphtml/issues/new) con una descrizione del problema. Includi sempre un URL a una pagina che riproduce il problema.
 
