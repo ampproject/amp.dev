@@ -71,7 +71,7 @@ self.addEventListener('install', function(event) {
 });
 [/sourcecode]
 
-[tip type="tip"] <strong>CONSEJO:</strong> Hay formas más sencillas de trabajar con Service Worker. Dele un vistazo a las [bibliotecas auxiliares de Service Worker](https://github.com/GoogleChrome/sw-helpers).
+[tip type="tip"] <strong>CONSEJO:</strong> Hay formas más sencillas de trabajar con Service Worker. Dele un vistazo a las [bibliotecas auxiliares de Service Worker](https://github.com/GoogleChrome/sw-helpers).[/tip]
 
 ## Redirección de la PWA a todos los enlaces de una página AMP
 
