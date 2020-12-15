@@ -244,7 +244,6 @@ Ritardiamo l'entrata della prima immagine in modo che sia vicina al banner di te
     animate-in="fade-in"
     animate-in-delay="1s">
 </amp-img>
-
 ```
 
 Aggiornare e ricaricare la storia. L'ultima pagina dovrebbe avere un aspetto simile al seguente:
