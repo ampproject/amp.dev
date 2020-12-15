@@ -1,7 +1,12 @@
 ---
-$title: Inclusione di immagini e video
-$order: 8
+"$title": Inclusione di immagini e video
+"$order": '8'
 description: Come in una normale pagina HTML, AMP ti consente di incorporare immagini, video e contenuti audio. Scopri le differenze negli equivalenti elementi AMP e scopri come ...
+formats:
+- websites
+- stories
+- email
+- ads
 components:
 - iframe
 author: pbakaus
@@ -12,7 +17,7 @@ contributors:
 
 Come in una normale pagina HTML, AMP ti consente di incorporare immagini, video e contenuti audio. Scopri le differenze negli equivalenti elementi AMP e scopri come includerli nelle tue pagine.
 
-## Perché non usare <img>, <video> e <audio>?</audio></video>
+## Perché non usare <code><img></code>, <code><video></code> e <code><audio></code>?
 
 AMP non supporta i componenti HTML predefiniti per la visualizzazione di contenuti multimediali, come `<img>`. Forniamo componenti equivalenti per i seguenti motivi:
 
@@ -26,7 +31,6 @@ Attenzione: finché non saranno supportati, essi *saranno* visualizzati, ma AMP 
 Includere un'immagine nella pagina utilizzando l'elemento [`amp-img`](../../../../documentation/components/reference/amp-img.md), in questo modo:
 
 [example preview="inline" playground="true"]
-
 ```html
 <amp-img alt="A beautiful sunset"
   src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
@@ -34,7 +38,6 @@ Includere un'immagine nella pagina utilizzando l'elemento [`amp-img`](../../../.
   height="195">
 </amp-img>
 ```
-
 [/example]
 
 In questo esempio molto semplice, l'immagine verrà visualizzata con l'altezza e la larghezza fisse indicate. Occorre almeno impostare esplicitamente una larghezza e un'altezza.
@@ -102,7 +105,7 @@ L'elemento [`amp-anim`](../../../../documentation/components/reference/amp-anim.
 
 [/example]
 
-[tip type="note"] **NOTA:** Includere l'elemento `<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` nell'intestazione della pagina per utilizzare questo componente. [/tip]
+[tip type="note"] <strong>NOTA:</strong> Includere l'elemento <code><script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script></code> nell'intestazione della pagina per utilizzare questo componente. [/tip]
 
 ## Video
 
@@ -134,7 +137,7 @@ Includere una risorsa audio nella pagina, utilizzando l'elemento [`amp-audio`](.
 
 Utilizzare questo elemento solo per l'integrazione diretta di file audio HTML5. Come per tutte le risorse esterne incorporate in una pagina AMP, l'elemento carica in modalità lazy la risorsa audio specificata dall'attributo `src`, in un momento stabilito da AMP.
 
-Includere un segnaposto prima dell'inizio dell'audio e un fallback, se il browser non supporta l'audio HTML5, ad esempio:
+Includi un fallback, se il browser non supporta l'audio HTML5, ad esempio:
 
 [example preview="inline" playground="true" imports="amp-audio:0.1"]
 
@@ -156,4 +159,4 @@ Includere un segnaposto prima dell'inizio dell'audio e un fallback, se il browse
 
 [/example]
 
-[tip type="note"] **NOTA:** Includere l'elemento `<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` nell'intestazione della pagina per utilizzare questo componente. [/tip]
+[tip type="note"] <strong>NOTA:</strong> Includere l'elemento <code><script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script></code> nell'intestazione della pagina per utilizzare questo componente. [/tip]
