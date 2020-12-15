@@ -8,6 +8,12 @@
   background: color('white');
   box-shadow: 0 10px 60px 0 transparentize(color('black'), 0.9);
 
+  &-sidebar-observer {
+    position: absolute;
+    top: calc(100vh - 50px);
+    height: calc(100% - 100vh);
+  }
+
   h1 {
     font-size: 35px;
   }

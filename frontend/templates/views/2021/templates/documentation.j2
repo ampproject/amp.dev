@@ -2,27 +2,25 @@
 
 {% block main %}
 <main>
-  <amp-animation id="sidebarToggleAnim"
-      layout="nodisplay">
+  <amp-animation  id="showSidebarToggleAnim" layout="nodisplay">
     <script type="application/json">
       {
-        "duration": "100ms",
+        "selector": "#sidebar-toggle",
+        "duration": "250ms",
         "fill": "both",
-        "iterations": "1",
         "direction": "alternate",
-        "animations": [
-          {
-            "selector": "#sidebar-toggle",
-            "duration": "1ms",
-            "keyframes": { "opacity": 1 }
-          },
-          {
-            "selector": "#sidebar-toggle",
-            "duration": "99ms",
-            "delay": "1ms",
-            "keyframes": { "opacity": 0 }
-          }
-        ]
+        "keyframes": { "opacity": 1 }
+      }
+    </script>
+  </amp-animation>
+  <amp-animation  id="hideSidebarToggleAnim" layout="nodisplay">
+    <script type="application/json">
+      {
+        "selector": "#sidebar-toggle",
+        "duration": "250ms",
+        "fill": "both",
+        "direction": "alternate",
+        "keyframes": { "opacity": 0 }
       }
     </script>
   </amp-animation>
@@ -30,8 +28,8 @@
   {% include 'views/2021/partials/sidebar.j2' %}
 
   <div class="ap-content">
-    <div class="">
-      <amp-position-observer on="exit:sidebarToggleAnim.start"
+    <div class="ap-content-sidebar-observer">
+      <amp-position-observer on="exit:showSidebarToggleAnim.start; enter:hideSidebarToggleAnim.start"
           intersection-ratio="0.01"
           layout="nodisplay">
       </amp-position-observer>
