@@ -63,15 +63,21 @@ Importante: Es posible que tenga algunos errores en la consola de desarrollador,
 Los dos <a><code>amp-ad</code></a>s que se muestran a continuación son un ejemplo de la flexibilidad que <a><code>amp-ad</code></a> ofrece para soportar las características de la plataforma publicitaria.  En este caso hemos configurado (utilizando el panel de control de DoubleClick) dos anuncios de prueba de DoubleClick para que solo se muestren en ciertos países. El primero se mostrará solo en el Reino Unido y el segundo se mostrará solo en los Estados Unidos. Intente <strong>agregar</strong> estas dos configuraciones de anuncios geográficos en el documento AMP, debajo de los anuncios que agregó anteriormente:
 
 ```html
-<amp-youtube
-  data-videoid="npum8JsITQE"
-  layout="responsive"
-  width="480"
-  height="270">
-  <div fallback>
-    <p>The video could not be loaded.</p>
-  </div>
-</amp-youtube>
+<amp-ad
+  width="300"
+  height="250"
+  type="doubleclick"
+  data-slot="/35096353/amptesting/geo/uk">
+  <div fallback>No ad appeared because you're not browsing from the UK!</div>
+</amp-ad>
+
+<amp-ad
+  width="300"
+  height="250"
+  type="doubleclick"
+  data-slot="/35096353/amptesting/geo/us">
+  <div fallback>No ad appeared because you're not browsing from the US!</div>
+</amp-ad>
 ```
 
 <strong>Actualice</strong> la página y dele un vistazo. La siguiente captura de pantalla se tomó desde Canadá, así que tampoco se cargaron los anuncios:
@@ -97,7 +103,15 @@ Llevaremos nuestro documento de AMP al siguiente nivel y agregaremos funciones w
 Trataremos de insertar un video de YouTube en el documento. **Agregue** el siguiente código inmediatamente después del <code><header></code> en su documento AMP (sobre el <a><code>amp-ad</code></a> que acaba de añadir):
 
 ```html
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<amp-youtube
+  data-videoid="npum8JsITQE"
+  layout="responsive"
+  width="480"
+  height="270">
+  <div fallback>
+    <p>The video could not be loaded.</p>
+  </div>
+</amp-youtube>
 ```
 
 <strong>Actualice</strong> la página. Debería ver este texto en vez de un video: <em>“The video could not be loaded.”</em>
@@ -131,18 +145,18 @@ La incrustación de tweets preformateados de Twitter es una característica com�
 Comience agregando la siguiente solicitud de JavaScript a la etiqueta <code><head></code> de su documento:
 
 ```html
+<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+```
+
+Ahora, en su artículo, **agregue** este código para incrustar el Tweet:
+
+```html
 <amp-twitter
   width="486"
   height="657"
   layout="responsive"
   data-tweetid="638793490521001985">
 </amp-twitter>
-```
-
-Ahora, en su artículo, **agregue** este código para incrustar el Tweet:
-
-```html
-<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
 ```
 
 El atributo <code>data-tweetid</code> es otro ejemplo de un atributo personalizado requerido por una plataforma particular. En este caso, Twitter correlaciona el valor del atributo <code>data-tweetid</code> con un Tweet determinado.
@@ -166,16 +180,14 @@ AMP proporciona otro componente específicamente diseñado para este tipo de sit
 Hagamos un intento. Primero, **agregue** a la etiqueta la biblioteca del componente <code><head></code>:
 
 ```html
-<amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-  Big, bold article quote goes here.
-</amp-fit-text>
+<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
 ```
 
 Agregue lo siguiente a su página:
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-  Hello!
+  Big, bold article quote goes here.
 </amp-fit-text>
 ```
 
@@ -185,7 +197,7 @@ Ahora, experimente más. ¿Qué pasa si la cita es mucho más corta?
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-   And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+  Hello!
 </amp-fit-text>
 ```
 
