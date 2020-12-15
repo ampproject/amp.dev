@@ -78,7 +78,7 @@ author: CrystalOnScript
    <td>
 <ul>
       <li>El formato para crear historias web es gratuito y también es parte de la web abierta.</li>
-<li>Web Stories immerse readers in fast-loading full-screen experiences.  </li>
+<li>Las historias de Web permiten que los lectores tengan experiencias inmersivas en una pantalla de tamaño completo y que cargan rápidamente.</li>
 </ul>
    </td>
   </tr>
