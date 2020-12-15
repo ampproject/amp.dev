@@ -1,28 +1,30 @@
 ---
-$title: Conversione di pagine HTML in AMP
-$titles:
-  teaser: Conversione di pagine HTML in AMP
-$order: 0
-description: In questa esercitazione apprenderai i concetti fondamentali di AMP e imparerai a riconoscere le differenze tra i documenti AMP e quelli HTML tradizionali. Alla fine
-$hidden: true
+"$title": Convert HTML to AMP
+formats:
+- websites
+"$titles":
+  teaser: Convert HTML to AMP
+"$order": '0'
+description: In this tutorial, you’ll learn the key concepts of AMP and how AMP documents differ from traditional HTML documents. By the end of this tutorial
+"$hidden": 'true'
 teaser:
-  icon: conversioni
-  text: Scopri come convertire pagine HTML in AMP in questa esercitazione guidata.
-  label: Per saperne di più
+  icon: convert
+  text: Learn how to convert HTML to AMP in this step by step tutorial.
+  label: Learn more
 ---
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-end-product.png', 452, 918, align='right third', caption='Completed news article') }}
 
-In questa esercitazione apprenderai i concetti fondamentali di AMP e imparerai a riconoscere le differenze tra i documenti AMP e quelli HTML tradizionali. Alla fine di questa esercitazione, avrai creato una pagina AMP a partire da una pagina HTML esistente.
+In this tutorial, you’ll learn the key concepts of AMP and how AMP documents differ from traditional HTML documents.  By the end of this tutorial, you'll have built an AMP page from an existing HTML page.
 
-## Imparerai a:
+## You'll learn to:
 
-- Comprendere i concetti base di un sito AMP
-- Riconoscere le differenze tra pagine AMP e pagine HTML tradizionali
-- Convertire una pagina HTML tradizionale in una pagina AMP HTML
-- Convalidare una pagina AMP
-- Rendere i contenuti AMP agevolmente individuabili
+- Master the foundations of an AMP site
+- Recognize the differences between AMP pages and traditional HTML pages
+- Convert a traditional HTML page to AMP HTML
+- Validate an AMP page
+- Prepare your AMP content for discoverability
 
-## Alla fine realizzerai:
+## You'll build:
 
-Una semplice pagina di articoli conforme alle specifiche AMP e che integra le funzioni più comuni presenti nei tipici siti di notizie per dispositivi mobili.
+A simple news article page that conforms to AMP specifications and incorporates common features found on mobile news sites.
