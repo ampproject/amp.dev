@@ -1,6 +1,6 @@
 ---
 "$title": Procedure consigliate per la creazione di annunci in storie Web
-"$order": "Le storie AMP sono una coinvolgente esperienza a schermo intero, con contenuti abilitati per il tocco, che immerge gli utenti nella lettura dei contenuti. Gli annunci che appaiono nelle storie AMP devono avere una struttura coerente con l'interfaccia utente delle storie AMP."
+"$order": '16'
 description: "Le storie Web sono una coinvolgente esperienza a schermo intero, con contenuti abilitati per il tocco, che immerge gli utenti nella lettura dei contenuti. Gli annunci che appaiono nelle storie Web devono avere una struttura coerente con l'interfaccia utente delle storie Web."
 formats:
 - ads
