@@ -1,10 +1,12 @@
 .#{prefix(null, 'content')} {
   grid-column: 4 / 12;
+  z-index: 1;
   margin-top: 25px;
   margin-bottom: 55px;
   position: relative;
   width: 100%;
-  padding: 60px;
+  margin-left: auto;
+  padding: 10px 60px 60px 60px;
   background: color('white');
   box-shadow: 0 10px 60px 0 transparentize(color('black'), 0.9);
 
@@ -20,5 +22,9 @@
 
   h2 {
     margin-top: 2em;
+  }
+
+  .--sidebaropen & {
+    width: calc(100% - 250px);
   }
 }

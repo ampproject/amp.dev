@@ -1,11 +1,11 @@
 {% extends '/views/2021/base.html' %}
 
 {% block main %}
-<main>
+<main id="main" class="--sidebaropen">
   <amp-animation  id="sidebarToggleAnim" layout="nodisplay">
     <script type="application/json">
       {
-        "duration": "350ms",
+        "duration": "750ms",
         "fill": "both",
         "animations": [
           {
@@ -15,7 +15,7 @@
           {
             "selector": "#sidebar-toggle-background",
             "delay": "100ms",
-            "easing": "cubic-bezier(0,0,.21,1)",
+            "duration": "650ms",
             "keyframes": { "transform": "scaleX(var(--value))" }
           }
         ]
@@ -23,17 +23,19 @@
     </script>
   </amp-animation>
 
+  <div class="ap-container">
+    {% include 'views/2021/partials/sidebar.j2' %}
 
-  {% include 'views/2021/partials/sidebar.j2' %}
-
-  <div class="ap-content">
-    <div class="ap-content-sidebar-observer">
-      <amp-position-observer on="exit:sidebarToggleAnim.start(--value=1); enter:sidebarToggleAnim.start(--value=0)"
-          intersection-ratio="0.01"
-          layout="nodisplay">
-      </amp-position-observer>
+    <div class="ap-content">
+      <div class="ap-content-sidebar-observer">
+        <amp-position-observer on="exit:sidebarToggleAnim.start(--value=1); enter:sidebarToggleAnim.start(--value=0)"
+            intersection-ratio="0.01"
+            layout="nodisplay">
+        </amp-position-observer>
+      </div>
+      {% include 'views/2021/partials/sidebar-toggle.j2' %}
+      {{ doc.html|render|safe }}
     </div>
-    {{ doc.html|render|safe }}
-  </section>
+  </div>
 </main>
 {% endblock %}

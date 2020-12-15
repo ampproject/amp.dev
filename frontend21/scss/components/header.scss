@@ -1,9 +1,11 @@
 .#{prefix(null, 'header')} {
   $header: &;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 15px;
   position: sticky;
   top: 0;
   z-index: 1001;
-  max-width: $maxWidth;
   margin: 0 auto;
   background: color('white');
 
@@ -21,12 +23,12 @@
   }
 
   &-main {
+    grid-column: 2/12;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+    width: 100%;
     height: 50px;
-    max-width: 1460px;
-    padding: 0 30px;
     margin: 0 auto;
   }
 

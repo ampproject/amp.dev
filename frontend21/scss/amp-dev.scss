@@ -7,6 +7,7 @@
 @import 'mixins.scss';
 
 @import 'components/sidebar.scss';
+@import 'components/sidebar-toggle.scss';
 @import 'components/section.scss';
 @import 'components/text-media.scss';
 @import 'components/text-block.scss';
@@ -29,7 +30,6 @@
 @import 'components/filter-bubbles-list.scss';
 @import 'components/pill.scss';
 
-
 main {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -44,6 +44,12 @@ main {
   @media (min-width: 768px) {
     grid-gap: 30px;
   }
+}
+
+.ap-container {
+  position: relative;
+  display: flex;
+  grid-column: 2 / 12;
 }
 
 h1, h2, h3, h4, h5, h6 {
