@@ -1,9 +1,11 @@
 ---
-$title: Elementi CSS supportati da AMP per e-mail
-order: 5
+"$title": Elementi CSS supportati da AMP per e-mail
+order: '5'
+formats:
+- email
 teaser:
   text: Questo documento descrive le funzionalità CSS attualmente supportate nelle e-mail AMP.
-toc: true
+toc: 'true'
 ---
 
 <!--
