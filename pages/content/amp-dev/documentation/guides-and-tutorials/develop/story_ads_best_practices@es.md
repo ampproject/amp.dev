@@ -33,7 +33,7 @@ Para que la experiencia del usuario se mantenga constante, el tiempo de ejecuci�
 
 [tip type="important"] **IMPORTANTE –** En los anuncios que aparecen en las historias web solo puede hacerse clic sobre el botón CTA, así que tenga esto en cuenta cuando desarrolle sus creativos. [/tip]
 
-## Meta tag data
+## Los datos que proporcionan las metaetiquetas
 
 En los datos de las metaetiquetas se especifica que el anuncio cumple con el formato necesario para aparecer en las historias web, se establece la enumeración del texto en el botón CTA, además controlan el tipo de página y el lugar donde el botón enviará al usuario.
 
@@ -100,7 +100,7 @@ El botón de llamada a la acción puede configurarse desde un conjunto de opcion
 
 Si se necesita del soporte para crear una nueva enumeración del texto en el botón CTA, abra una [problemática en GitHub](https://github.com/ampproject/amphtml/issues/new).
 
-## Ad landing page
+## Página de destino de los anuncios
 
 Puede especificar una de las siguientes tres opciones cuando desee crear una página de destino para los anuncios que aparecen en las historias web.
 
@@ -108,13 +108,13 @@ Puede especificar una de las siguientes tres opciones cuando desee crear una pá
 - `AMP`: La página de destino es una página AMP válida.
 - `NONAMP`: Cualquier otro tipo de página web.
 
-## Layout
+## El diseño
 
-AMP Stories are horizontal and full-screen. Story ads are required to match this format to provide a consistent user experience.
+De las historias de AMP es horizontal y en pantalla completa. Es necesario que los anuncios que aparecen en las historias cumplan con este formato para que proporcionen una experiencia de usuario uniforme.
 
-## Overlay dimensions
+## Superposición de dimensiones
 
-The ad label overlays a dark gradient bar across the entire width of the ad and will stretch from the top to 46px down.
+La etiqueta de los anuncios se superpone en una barra oscura con efecto de degradado en todo el ancho del anuncio y se extenderá desde la parte superior hasta 46 pixeles en la parte inferior.
 
 {{ image('/static/img/docs/stampads/ad_overlay.png', 515, 520, layout='intrinsic', alt='Demonstration of ad overlay', caption='The ad overlay sits at the top', align='' ) }}
 
@@ -122,9 +122,9 @@ El CTA se sitúa a 32 pixeles desde la parte inferior y está centrado horizonta
 
 {{ image('/static/img/docs/stampads/cta_button.png', 515, 520, layout='intrinsic', alt='Demonstration of the CTA Button', caption='The CTA Button sits near the bottom', align='' ) }}
 
-## Images and video
+## Imágenes y video
 
-Images and video included in an AMP Story ad should be 4:3 standard full-screen. Ads that include video should use a [poster](../../../documentation/components/reference/amp-video.md#poster) The recommended dimensions for a poster image are 720p (720w x 1280h) .
+Las imágenes y videos que se incluyan en un anuncio de las historias de AMP deben tener el formato 4:3 estándar en pantalla completa. Los anuncios que incluyen video deben utilizar un [cartel](../../../documentation/components/reference/amp-video.md#poster). Las dimensiones recomendadas para las imágenes de los carteles son 720 pixeles (720 de ancho x 1280 de alto).
 
 [sourcecode:html]
 <amp-video controls
@@ -143,9 +143,9 @@ Images and video included in an AMP Story ad should be 4:3 standard full-screen.
 </amp-video>
 [/sourcecode]
 
-### Images
+### Imagénes
 
-Background images can be scaled to full screen. The following CSS is a successful way to crop and center videos and images.
+Las imágenes de fondo pueden ampliarse a pantalla completa. La siguiente CSS muestra una manera eficaz de recortar y centrar videos e imágenes.
 
 [sourcecode:html]
 
@@ -182,17 +182,17 @@ Ejemplo: Especificar varios archivos fuente
 </amp-video>
 [/sourcecode]
 
-#### Size & length of video
+#### Tamaño y duración del video
 
-For optimal performance, you should aim to provide videos that are no larger than 4 MB. Smaller file sizes allow for faster downloading, so keep things as small as possible.
+Para lograr un rendimiento óptimo, trate de proporcionar videos que no sean más grandes que<br>4 MB. Cuando el tamaño de los archivos es menor se descargan más rápidamente, entonces procure que los archivos sean tan pequeños como sea posible.
 
-#### Video formats
+#### Formatos de video
 
-If you can only provide a single video format, provide **MP4**. However, where possible, use **HLS** video and specify MP4 as a fallback for browsers that do not yet support HLS video. HLS performs adaptive bitrate streaming, where the quality of the video can be altered to best suit the user's network connection.
+Si únicamente puede proporcionar un solo formato de video, proporcione el **MP4**. Sin embargo, siempre que sea posible, utilice el protocolo de video **HLS** y especifique MP4 como una solución alternativa para los navegadores que aún no admiten los videos HLS. El protocolo HLS realiza transmisiones con una tasa de bits adaptable, donde la calidad del video puede modificarse para ajustarse mejor a la conexión de red del usuario.
 
 [tip type="note"] **TENGA EN CUENTA –** El formato de video HLS no es compatible con el navegador Chrome para equipos de escritorio (ni siquiera utilizando emuladores), por lo cual es necesario especificar una solución alternativa que admita el MP4 para todo tipo de tráfico que haya entre los equipos escritorio y su página. Para depurar videos HLS, necesitará utilizar un dispositivo móvil concreto mediante el modo de depuración USB. [/tip]
 
-#### Video resolution
+#### Resolución del video
 
 Los videos que aparecen en las historias web siempre son verticales  (por ejemplo, visualizaciones verticales), con una proporción esperada para el aspecto de 16:9. Utilice la resolución recomendada según el tipo de transmisión del video:
 
