@@ -1,7 +1,7 @@
 ---
-$title: Congratulazioni!
-$order: 7
-description: Hai terminato l'esercitazione "Aggiunta di funzionalità AMP avanzate" e hai scoperto il funzionamento di molti dei principali componenti avanzati di AMP!
+"$title": Congratulazioni!
+"$order": '7'
+description: You’ve finished the "Add advanced AMP features" tutorial and successfully explored many key advanced components of AMP!
 ---
 
 Hai terminato l'esercitazione "Aggiunta di funzionalità AMP avanzate" e hai scoperto il funzionamento di molti dei principali componenti avanzati di AMP!
