@@ -1,10 +1,10 @@
 ---
-"$title": AMP for Email Format
+"$title": Formato de AMP for Email
 order: '1'
 formats:
 - email
 teaser:
-  text: " Required markup"
+  text: 'Etiquetas necesarias '
 toc: 'true'
 ---
 
@@ -31,13 +31,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-AMP is a technology known for developing super fast web pages on mobile clients. AMP is a set of HTML tags backed by JavaScript that easily enables functionality with an added focus on performance and security. There are [AMP components](https://amp.dev/documentation/components/) for everything from carousels, to responsive form elements, to retrieving fresh content from remote endpoints.
+AMP es una tecnología que se caracteriza por desarrollar páginas web súper rápidas para los clientes que utilizan dispositivos móviles. AMP consiste en un conjunto de etiquetas HTML que se apoya en JavaScript para habilitar fácilmente la funcionalidad poniendo especial atención en el desempeño y la seguridad. Hay [componentes de AMP](https://amp.dev/documentation/components/) para todo, desde carruseles hasta elementos del formulario que son adaptables, e incluso recuperación de contenido nuevo desde endpoints remotos.
 
-The AMP for Email format provides [a subset of AMP components](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md) that you can use in email messages. Recipients of AMP emails can view and interact with the AMP components directly in the email.
+El formulario de AMP for Email proporciona [un subconjunto de componentes de AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md) que pueden utilizarse en los mensajes de correo electrónico. Los receptores de los correos electrónicos de AMP pueden ver e interactuar directamente con los componentes de AMP en el correo electrónico.
 
-## Required markup <a name="required-markup"></a>
+## Etiquetas necesarias
 
-The following code represents the minimum amount of markup that makes up a valid AMP email message:
+En el siguiente código se representa la cantidad mínima de etiquetas para generar un mensaje de correo electrónico que sea válido en AMP:
 
 [sourcecode:html]
 <!DOCTYPE html>
@@ -57,40 +57,40 @@ The following code represents the minimum amount of markup that makes up a valid
 </html>
 [/sourcecode]
 
-An AMP email message MUST
+Un mensaje de correo electrónico de AMP DEBE:
 
-- <a name="dctp"></a>start with the doctype `<!doctype html>`. [🔗](#dctp)
-- <a name="ampd"></a>contain a top-level `<html ⚡4email>` tag (`<html amp4email>` is accepted as well). [🔗](#ampd)
-- <a name="crps"></a>contain `<head>` and `<body>` tags (They are optional in HTML). [🔗](#crps)
-- <a name="chrs"></a>contain a `<meta charset="utf-8">` tag as the first child of their head tag. [🔗](#chrs)
-- <a name="scrpt"></a>contain a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside their head tag. [🔗](#scrpt)
-- <a name="boilerplate"></a>contain amp4email boilerplate (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) inside their head tag to initially hide the content until AMP JS is loaded. [🔗](#boilerplate)
+- <a name="dctp"></a>comenzar con el tipo de documento `<!doctype html>`. [🔗](#dctp)
+- <a name="ampd"></a>contener una etiqueta `<html ⚡4email>` de nivel superior (además de aceptar a `<html amp4email>`. [🔗](#ampd)
+- <a name="crps"></a>contener las etiquetas `<head>` y `<body>` (en HTML son opcionales). [🔗](#crps)
+- <a name="chrs"></a>contener una etiqueta `<meta charset="utf-8">` como primer elemento secundario de su etiqueta principal. [🔗](#chrs)
+- <a name="scrpt"></a>contener una etiqueta `<script async src="https://cdn.ampproject.org/v0.js"></script>` dentro de su etiqueta principal. [🔗](#scrpt)
+- <a name="boilerplate"></a>contener el texto estándar de amp4email (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) dentro de su etiqueta principal para ocultar inicialmente el contenido hasta que se cargue AMP JS. [🔗](#boilerplate)
 
 The entire AMPHTML markup must not exceed 200,000 bytes.
 
-## Structure and rendering <a name="structure-and-rendering"></a>
+## Estructura y renderización <a name="structure-and-rendering"></a>
 
-AMP for Email relies on the standard `multipart/alternative` [MIME](https://en.wikipedia.org/wiki/MIME) subtype, as defined in [RFC 1521, section 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
+AMP for Email se basa en el subtipo [MIME](https://en.wikipedia.org/wiki/MIME) estándar `multipart/alternative` como se define en el [RFC 1521, sección 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
-*For more information, see [Structure and rendering of AMP emails](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md).*
+*Para obtener más información, consulte [Estructura y renderización de los correos electrónicos en AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md).*
 
-## Supported AMP components <a name="supported-amp-components"></a>
+## Componentes que son compatibles con AMP <a name="supported-amp-components"></a>
 
-*See [AMP for Email Supported Components](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md).*
+*Consulte el artículo [Componentes que son compatibles con AMP for Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md).*
 
-## HTML requirements <a name="html-requirements"></a>
+## Requisitos de HTML <a name="html-requirements"></a>
 
-*See [Supported HTML in AMP for Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md).*
+*Consulte el artículo [Compatibilidad de HTML con AMP for Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md).*
 
-## CSS requirements <a name="css-requirements"></a>
+## Requisitos del CSS <a name="css-requirements"></a>
 
-### Supported selectors and properties <a name="supported-selectors-and-properties"></a>
+### Selectores y propiedades que son compatibles <a name="supported-selectors-and-properties"></a>
 
-*See [Supported CSS in AMP for Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md).*
+*Consulte el artículo [Compatibilidad de CSS con AMP for Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md).*
 
-### Specifying CSS in an AMP document <a name="specifying-css-in-an-amp-document"></a>
+### Cómo especificar CSS en un documento de AMP <a name="specifying-css-in-an-amp-document"></a>
 
-All CSS in any AMP document must be included in a `<style amp-custom>` tag within the header or as inline `style` attributes.
+Todas las CSS que se encuentren en cualquier documento de AMP deben estar incluidas en una etiqueta `<style amp-custom>` dentro del encabezado o como atributos de `style` en línea.
 
 [sourcecode:html]
 ...
@@ -110,41 +110,41 @@ All CSS in any AMP document must be included in a `<style amp-custom>` tag withi
 </head>
 [/sourcecode]
 
-Note: The entire `<style>` tag cannot exceed 50,000 bytes. The validator will check for this.
+Nota: el total de etiquetas `<style>` no puede exceder los 50,000 bytes. El verificador comprobará que no se exceda ese tamaño.
 
-## Document dimensions <a name="document-dimensions"></a>
+## Dimensiones del documento <a name="document-dimensions"></a>
 
-- **Optimal width**: 800px or less (any wider and content may be unexpectedly truncated on some clients).
+- **Ancho óptimo**: 800 pixeles o menos (el contenido y cualquier tamaño de ancho pueden truncarse repentinamente en algunos clientes).
 
-- **Height**: variable, the client allows the user to scroll through the content.
+- **Altura**: variable, el cliente permite que el usuario se desplace por el contenido.
 
-## Validation <a name="validation"></a>
+## Validación <a name="validation"></a>
 
-To ensure your email messages meet the strict criteria for the AMP for Email format, you can use AMP's existing validation tools.
+Para garantizar que sus mensajes de correo electrónico cumplan con los estrictos criterios que pide el formato de AMP for Email, puede utilizar las herramientas de validación con las que cuenta AMP.
 
-See [Validate AMP Email](https://amp.dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_emails/) for more information.
+Para obtener más información, consulte el artículo [Cómo validar el correo electrónico de AMP](https://amp.dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_emails/).
 
-## Privacy and Security <a name="privacy-and-security"></a>
+## Privacidad y seguridad <a name="privacy-and-security"></a>
 
-### Tracking email opens and interaction <a name="tracking-email-opens-and-interaction"></a>
+### Apertura e interacción con el correo electrónico de seguimiento <a name="tracking-email-opens-and-interaction"></a>
 
-AMPHTML allows tracking email opens with pixel tracking techniques, same as regular HTML emails. Any user-initiated requests for data from external services will also indicate the user is interacting with the message. Email clients may offer their users the ability to disable loading remote images, and other external requests.
+AMP HTML permite hacer un seguimiento cada que se abre el correo electrónico con técnicas de rastreo de pixeles, al igual que con los correos electrónicos normales de HTML. Todas las solicitudes que se inicien por el usuario para obtener datos de servicios externos también indicarán que el usuario está interactuando con el mensaje. Los clientes de correo electrónico pueden ofrecerle a sus usuarios la capacidad de desactivar la carga de imágenes remotas y otras solicitudes externas.
 
-### AMP-specific analytics <a name="amp-specific-analytics"></a>
+### Análisis específicos de AMP <a name="amp-specific-analytics"></a>
 
-The following AMP-specific analytic techniques are not supported:
+Las siguientes técnicas analíticas específicas de AMP no son compatibles:
 
 - [AMP `CLIENT_ID`](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics#user-identification)
 - [`amp-analytics`](https://amp.dev/documentation/components/amp-analytics)
 - [`amp-pixel`](https://amp.dev/documentation/components/amp-pixel)
 - [AMP Variable Substitution](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics_basics/#variable-substitution)
 
-### Component-specific considerations <a name="component-specific-considerations"></a>
+### Cuestiones específicas de los componentes <a name="component-specific-considerations"></a>
 
-Requests for images inside [`<amp-carousel>`](https://amp.dev/documentation/components/amp-carousel) or [`<amp-accordion>`](https://amp.dev/documentation/components/amp-accordion) can indicate to the sender that the user is interacting with the message.
+Las solicitudes para reproducir imágenes dentro de [`<amp-carousel>`](https://amp.dev/documentation/components/amp-carousel) o de [`<amp-accordion>`](https://amp.dev/documentation/components/amp-accordion) pueden indicarle al remitente que el usuario está interactuando con el mensaje.
 
-Redirects in [`<amp-form>`](https://amp.dev/documentation/components/amp-form) are disallowed at runtime.
+Los redireccionamientos hacia [`<amp-form>`](https://amp.dev/documentation/components/amp-form) son rechazados durante el tiempo de ejecución.
 
-## Feedback & Support <a name="feedback--support"></a>
+## Comentarios y asistencia <a name="feedback--support"></a>
 
-For support and feedback on AMP for Email, please use the following channel: [ongoing-participation](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#ongoing-participation)
+Para obtener asistencia y realizar comentarios sobre AMP for Email, utilice el siguiente canal: [Participación continua](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#ongoing-participation)
