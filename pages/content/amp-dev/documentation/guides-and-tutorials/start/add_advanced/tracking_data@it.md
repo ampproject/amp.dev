@@ -6,7 +6,7 @@ description: Analytics platforms are commonly integrated into websites through i
 
 Le piattaforme di analisi sono comunemente integrate nei siti web tramite frammenti JavaScript inline e chiamate a funzioni, che attivano eventi poi reinviati al sistema di analisi. AMP fornisce una sintassi di configurazione JSON flessibile per replicare questo processo su diverse piattaforme di analisi.
 
-The following is an example of traditional JavaScript-driven Google Analytics tracking. We'll rewrite this into the [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) JSON format but first, let's look at the traditional approach:
+Quello che segue è un esempio del tradizionale tracciamento di Google Analytics basato su JavaScript. Lo riscriveremo nel formato JSON di [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), ma prima diamo un
 
 ```html
 <script>
