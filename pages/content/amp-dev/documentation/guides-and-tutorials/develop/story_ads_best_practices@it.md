@@ -72,7 +72,7 @@ Si consiglia di scegliere il tag amp-cta-type tra le <a>opzioni di testo disponi
 
 ## Enumerazione testi del pulsante Invito all'azione <a name="call-to-action-button-text-enum"></a>
 
-The call to action button can be configured from a predefined set of choices:
+Il pulsante di invito all'azione può essere configurato scegliendo tra una serie predefinita di opzioni:
 
 - `APPLY_NOW`: "Richiedi ora"
 - `BOOK_NOW`: "Prenota"
@@ -102,7 +102,7 @@ Se si ritiene necessario disporre di altre opzione di enumerazione testi per il 
 
 ## Pagina di destinazione annunci
 
-You can specify one of three options for an Web Story ad landing page.
+È possibile specificare una di tre opzioni per la pagina di destinazione di un annuncio in storie AMP.
 
 - `STORY`: la pagina di destinazione è una [storia sponsorizzata](story_ads_best_practices.md#sponsored-story).
 - `AMP`: la pagina di destinazione è una pagina AMP valida.
@@ -114,7 +114,7 @@ Le storie AMP sono disposte orizzontalmente e a schermo intero. Gli annunci nell
 
 ## Dimensioni di sovrimpressione
 
-The ad label overlays a dark gradient bar across the entire width of the ad and will stretch from the top to 46px down.
+L'etichetta dell'annuncio appare in sovrimpressione su una barra di sfumatura scura per tutta la larghezza dell'annuncio e si estende dalla cima verso il basso per 46 pixel.
 
 {{ image('/static/img/docs/stampads/ad_overlay.png', 515, 520, layout='intrinsic', alt='Esempio di sovrimpressione annuncio', caption='L'annuncio in sovrimpressione inizia in cima', align='' ) }}
 
@@ -143,9 +143,9 @@ Le immagini e i video inclusi in annunci per storie AMP devono essere in formato
 </amp-video>
 [/sourcecode]
 
-### Images
+### Immagini
 
-Background images can be scaled to full screen. The following CSS is a successful way to crop and center videos and images.
+Le immagini di sfondo possono essere ridimensionate a schermo intero. Il seguente CSS è uno strumento efficace per ritagliare e centrare video e immagini.
 
 [sourcecode:html]
 
