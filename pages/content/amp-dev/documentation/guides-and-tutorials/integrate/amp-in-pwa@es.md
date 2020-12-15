@@ -32,7 +32,11 @@ Le recomendamos que cargue la biblioteca de Shadow AMP con el atributo `async`. 
 
 La señal que debe observar es la disponibilidad de la variable global `AMP`, y Shadow AMP utiliza un "[enfoque de carga de función asíncrona](http://mrcoles.com/blog/google-analytics-asynchronous-tracking-how-it-work/)" para facilitarlo. Dele un vistazo al código que se incluye a continuación:
 
-[sourcecode:javascript] (window.AMP = window.AMP || []).push(function(AMP) { // AMP está disponible. }); [/sourcecode]
+[sourcecode:javascript]
+(window.AMP = window.AMP || []).push(function(AMP) {
+  // AMP is now available.
+});
+[/sourcecode]
 
 Este código funcionará y todas las devoluciones de llamada que se hayan agregado de esta forma se activarán en cuanto AMP esté disponible, pero ¿por qué?
 
@@ -101,7 +105,10 @@ fetchDocument(url).then(function(doc) {
 
 Es posible que sus usuarios naveguen de una AMP a otra con su aplicación web progresiva. Al descartar la página AMP renderizada anterior, asegúrese de indicarlo a AMP, por ejemplo, de la siguiente manera:
 
-[sourcecode:javascript] // ampedDoc es la referencia devuelta por AMP.attachShadowDoc ampedDoc.close(); [/sourcecode]
+[sourcecode:javascript]
+// ampedDoc is the reference returned from AMP.attachShadowDoc
+ampedDoc.close();
+[/sourcecode]
 
 De esta forma le indica a AMP que no utilizará más este documento y se libera espacio en la memoria y recursos en la CPU.
 
