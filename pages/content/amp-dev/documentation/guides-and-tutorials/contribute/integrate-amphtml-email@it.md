@@ -1,6 +1,9 @@
 ---
-$title: "AMP per E-mail: integrazione dei fornitori e-mail"
+"$title": 'AMP per E-mail: integrazione dei fornitori e-mail'
+"$order": '5'
 description: Informazioni di integrazione dei contenuti AMP per client e fornitori di posta elettronica.
+formats:
+- email
 ---
 
 Stiamo attualmente lavorando alla stesura di una guida completa sull'integrazione di AMP per e-mail.
