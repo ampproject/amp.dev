@@ -1,6 +1,6 @@
 ---
-$title: Esplorazione dei siti
-$order: 5
+"$title": Esplorazione dei siti
+"$order": '5'
 description: La maggior parte dei siti web per dispositivi mobili comprende un menu di navigazione. Questi menu possono assumere molte forme diverse. In questa esercitazione, proveremo i seguenti esempi ...
 ---
 
