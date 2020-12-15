@@ -34,15 +34,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-*If you'd like to propose changes to the standard, please comment on the [Intent to Implement](https://github.com/ampproject/amphtml/issues/4264)*.
+*Si desea proponer cambios en el formato estándar, agregue un comentario en el artículo [Intento para implementarlo](https://github.com/ampproject/amphtml/issues/4264)*.
 
-AMPHTML ads is a mechanism for rendering fast, performant ads in AMP pages. To ensure that AMPHTML ad documents ("AMP creatives") can be rendered quickly and smoothly in the browser and do not degrade user experience, AMP creatives must obey a set of validation rules. Similar in spirit to the [AMP format rules](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml), AMPHTML ads have access to a limited set of allowed tags, capabilities, and extensions.
+Los anuncios AMPHTML son un mecanismo para renderizar anuncios rápidamente y de manera eficaz en las páginas de AMP. Para garantizar que los documentos de los anuncios AMPHTML ("Creativos de AMP") puedan renderizarse de forma rápida y sin contratiempos en el navegador, y que no afecten la experiencia del usuario, los creativos de AMP deben cumplir todo un conjunto de reglas para su validación. Al igual que las [reglas de formato para AMP](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml), los anuncios AMPHTML tienen acceso a un conjunto limitado de etiquetas, funciones y extensiones permitidas.
 
-## AMPHTML ad format rules <a name="amphtml-ad-format-rules"></a>
+## Reglas de formato para los anuncios AMPHTML <a name="amphtml-ad-format-rules"></a>
 
-Unless otherwise specified below, the creative must obey all rules given by the [AMP format rules](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml.html), included here by reference. For example, the AMPHTML ad [Boilerplate](#boilerplate) deviates from the AMP standard boilerplate.
+A menos que se especifique lo contrario, el creativo debe cumplir todas las reglas establecidas por las [reglas de formato para AMP](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml.html), las cuales se incluyen aquí como referencia. Por ejemplo, el [código reutilizable](#boilerplate) para los anuncios AMPHTML difiere del código reutilizable estándar que se usa en AMP.
 
-In addition, creatives must obey the following rules:
+Adicionalmente, los creativos deben cumplir las siguientes reglas:
 
 <table>
 <thead><tr>
@@ -51,22 +51,21 @@ In addition, creatives must obey the following rules:
 </tr></thead>
 <tbody>
 <tr>
-<td>Must use <code><html ⚡4ads></code> or <code><html amp4ads></code> as its enclosing tags.</td>
+<td>Debe utilizar <code><html ⚡4ads></code> o <code><html amp4ads></code> como etiquetas adjuntas.</td>
 <td>Allows validators to identify a creative document as either a general AMP doc or a restricted AMPHTML ad doc and to dispatch appropriately.</td>
 </tr>
 <tr>
-<td>Must include <code><script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script></code> as the runtime script instead of <code>https://cdn.ampproject.org/v0.js</code>.</td>
+<td>Debe incluir <code><script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script></code> como el script que controla el tiempo de ejecución en lugar de <code>https://cdn.ampproject.org/v0.js</code>.</td>
 <td>Allows tailored runtime behaviors for AMPHTML ads served in cross-origin iframes.</td>
 </tr>
 <tr>
-<td>Must not include a <code><link rel="canonical"></code> tag.</td>
+<td>No debe incluir una etiqueta <code><link rel="canonical"></code>.</td>
 <td>Ad creatives don't have a "non-AMP canonical version" and won't be independently search-indexed, so self-referencing would be useless.</td>
 </tr>
 <tr>
-<td>Can include optional meta tags in HTML head as identifiers, in the format of <code><meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code>. Those meta tags must be placed before the <code>amp4ads-v0.js</code> script. The value of <code>vendor</code> and <code>id</code> are strings containing only [0-9a-zA-Z_-]. The value of <code>type</code> is either <code>creative-id</code> or <code>impression-id</code>.</td>
-<td>Those custom identifiers can be used to identify the impression or the creative. They can be helpful for reporting and debugging.<br><br><p>Example:</p>
-<pre>
-<meta name="amp4ads-id"
+<td>Puede incluir metaetiquetas opcionales en el encabezado del HTML que funcionen como identificadores en el formato de <code><meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code>. Esas metaetiquetas deben colocarse antes del script <code>amp4ads-v0.js</code>. Los valores de <code>vendor</code> e <code>id</code> son cadenas que solo contienen [0-9a-zA-Z_-]. El valor de <code>type</code> puede ser tanto <code>creative-id</code> como <code>impression-id</code>.</td>
+<td>Estos identificadores personalizados pueden utilizarse para identificar la impresión o la creatividad. Pueden ser útiles para presentar informes y la depuración.<br><br><p>Por ejemplo:</p>
+<pre> <meta name="amp4ads-id"
   content="vendor=adsense,type=creative-id,id=1283474">
 <meta name="amp4ads-id"
   content="vendor=adsense,type=impression-id,id=xIsjdf921S"></pre>
@@ -74,32 +73,16 @@ In addition, creatives must obey the following rules:
 </tr>
 <tr>
 <td>
-<code><amp-analytics></code> viewability tracking may only target the full-ad selector, via  <code>"visibilitySpec": { "selector": "amp-ad" }</code> as defined in <a href="https://github.com/ampproject/amphtml/issues/4018">Issue #4018</a> and <a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a>. In particular, it may not target any selectors for elements within the ad creative.</td>
-<td>In some cases, AMPHTML ads may choose to render an ad creative in an iframe.In those cases, host page analytics can only target the entire iframe anyway, and won’t have access to any finer-grained selectors.<br><br> <p>Example:</p> <pre>
-<amp-analytics id="nestedAnalytics">
-  <script type="application/json">
-  {
-    "requests": {
-      "visibility": "https://example.com/nestedAmpAnalytics"
-    },
-    "triggers": {
-      "visibilitySpec": {
-      "selector": "amp-ad",
-      "visiblePercentageMin": 50,
-      "continuousTimeMin": 1000
-      }
-    }
-  }
-  </script>
-</amp-analytics>
-</pre> <p>This configuration sends a request to the <code>https://example.com/nestedAmpAnalytics</code> URL when 50% of the enclosing ad has been continuously visible on the screen for 1 second.</p> </td>
+<code><amp-analytics></code> el seguimiento de la visibilidad solo puede dirigirse al selector de anuncios completo, a través de <code>"visibilitySpec": { "selector": "amp-ad" }</code> como se define en la <a href="https://github.com/ampproject/amphtml/issues/4018">Problemática #4018</a> y <a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a>. En particular, es posible que no se dirija a ningún selector de elementos dentro de la creatividad del anuncio.</td>
+<td>Algunas veces, en los anuncios AMPHTML puede selelecionarse renderizar un anuncio creativo en un iframe. En esos casos, el análisis de la página del host solo puede orientar el iframe completo y no tendrá acceso a ningún seleccionador de grano fino.<br><br> <p>Por ejemplo:</p> <pre> <amp-analytics id="nestedAnalytics"> <script type="application/json"> { "requests": { "visibility": "https://example.com/nestedAmpAnalytics" }, "triggers": { "visibilitySpec": { "selector": "amp-ad", "visiblePercentageMin": 50, "continuousTimeMin": 1000 } } } </script> </amp-analytics> </pre> <p> Esta configuración envía una solicitud a la <code>https://example.com/nestedAmpAnalytics</code> URL cuando el 50% del anuncio adjunto pudo visualizarse de forma continua en la pantalla durante 1 segundo.</p>
+</td>
 </tr>
 </tbody>
 </table>
 
-### Boilerplate <a name="boilerplate"></a>
+### Código repetitivo <a name="boilerplate"></a>
 
-AMPHTML ad creatives require a different, and considerably simpler, boilerplate style line than [general AMP documents do](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md):
+Los creativos de los anuncios AMPHTML requieren de un código repetitivo diferente y con un estilo considerablemente más simple en comparación con lo que [hacen los documentos generales de AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md):
 
 [sourcecode:html]
 <style amp4ads-boilerplate>
@@ -109,11 +92,11 @@ AMPHTML ad creatives require a different, and considerably simpler, boilerplate 
 </style>
 [/sourcecode]
 
-*Rationale:* The `amp-boilerplate` style hides body content until the AMP runtime is ready and can unhide it. If Javascript is disabled or the AMP runtime fails to load, the default boilerplate ensures that the content is eventually displayed regardless. In AMPHTML ads, however, if Javascript is entirely disabled, AMPHTML ads won't run and no ad will ever be shown, so there is no need for the `<noscript>` section. In the absence of the AMP runtime, most of the machinery that AMPHTML ads rely on (e.g., analytics for visibility tracking or `amp-img` for content display) won't be available, so it's better to display no ad than a malfunctioning one.
+<em>Justificación: </em> El estilo <code>amp-boilerplate </code> oculta el contenido del cuerpo hasta que el tiempo de ejecución de AMP está listo y puede mostrarlo. Si Javascript está desactivado o el tiempo de ejecución de AMP no se carga, el texto estándar predeterminado garantiza que el contenido se seguirá mostrando independientemente. Sin embargo, en los anuncios AMPHTML, si Javascript está completamente deshabilitado, los anuncios AMPHTML no se ejecutarán y no se mostrará ningún anuncio, por lo que no es necesaria la sección <code><noscript></code>. En ausencia del tiempo de ejecución de AMP, la mayoría de la maquinaria en la que se basan los anuncios AMPHTML (por ejemplo, los análisis para el seguimiento de la visibilidad o <code>amp-img</code> para la visualización de contenido) no estarán disponibles, por lo que es preferible no mostrar ningún anuncio que uno defectuoso.
 
-Finally, the AMPHTML ad boilerplate uses `amp-a4a-boilerplate` rather than `amp-boilerplate` so that validators can easily identify it and produce more accurate error messages to help developers.
+Por último, el código repetitivo del anuncio AMPHTML utiliza <code>amp-a4a-boilerplate</code> en lugar de <code>amp-boilerplate</code> para que los validadores puedan identificarlo fácilmente y generar mensajes de error más precisos para ayudar a los desarrolladores.
 
-Note that the same rules about mutations to the boilerplate text apply as in the [general AMP boilerplate](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md).
+Tenga en cuenta que las mismas reglas sobre los cambios en el texto del código reutilizable se aplicaran como en el <a class="" href="">código repetitivo general de AMP</a>.
 
 ### CSS <a name="css"></a>
 
@@ -125,13 +108,13 @@ Note that the same rules about mutations to the boilerplate text apply as in the
 <tbody>
   <tr>
     <td>
-<code>position:fixed</code> and <code>position:sticky</code> are prohibited in creative CSS.</td>
+<code>position:fixed</code> y <code>position:sticky</code> están prohibidos en el creativo de CSS.</td>
     <td>
 <code>position:fixed</code> breaks out of shadow DOM, which AMPHTML ads depend on. lso, ads in AMP are already not allowed to use fixed position.</td>
   </tr>
   <tr>
     <td>
-<code>touch-action</code> is prohibited.</td>
+<code>touch-action</code> está prohibido.</td>
     <td>An ad that can manipulate <code>touch-action</code> can interfere with    the user's ability to scroll the host document.</td>
   </tr>
   <tr>
@@ -150,11 +133,11 @@ Note that the same rules about mutations to the boilerplate text apply as in the
 </tbody>
 </table>
 
-#### CSS animations and transitions <a name="css-animations-and-transitions"></a>
+#### Animaciones y transiciones en CSS <a name="css-animations-and-transitions"></a>
 
-##### Selectors <a name="selectors"></a>
+##### Seleccionadores <a name="selectors"></a>
 
-The `transition` and `animation` properties are only allowed on selectors that:
+Las propiedades `transition` y `animation` solo se permiten en los seleccionadores que:
 
 - Contain only `transition`, `animation`, `transform`, `visibility`, or `opacity` properties.
 
@@ -245,7 +228,7 @@ The following are *allowed* AMP extension modules and AMP built-in tags in an AM
 - [amp-img](https://amp.dev/documentation/components/amp-img)
 - [amp-layout](https://amp.dev/documentation/components/amp-layout)
 - [amp-lightbox](https://amp.dev/documentation/components/amp-lightbox)
-- amp-mraid, on an experimental basis. If you're considering using this, please open an issue at [wg-monetization](https://github.com/ampproject/wg-monetization/issues/new).
+- amp-mraid, es experimental. Si está considerando utilizarlo, abra una problemática en [wg-monetization](https://github.com/ampproject/wg-monetization/issues/new).
 - [amp-mustache](https://amp.dev/documentation/components/amp-mustache)
 - [amp-pixel](https://amp.dev/documentation/components/amp-pixel)
 - [amp-position-observer](https://amp.dev/documentation/components/amp-position-observer)
@@ -315,7 +298,7 @@ Most of the omissions are either for performance or because the tags are not HTM
 
 #### 4.7.18 SVG <a name="4718-svg"></a>
 
-SVG tags are not in the HTML5 namespace. They are listed below without section ids.
+Las etiquetas de los SVG no están en el espacio de nombres de HTML5. Se detallan a continuación sin un ID de sección.
 
 `<svg>``<g>``<path>``<glyph>``<glyphref>``<marker>``<view>``<circle>``<line>``<polygon>``<polyline>``<rect>``<text>``<textpath>``<tref>``<tspan>``<clippath>``<filter>``<lineargradient>``<radialgradient>``<mask>``<pattern>``<vkern>``<hkern>``<defs>``<use>``<symbol>``<desc>``<title>`
 
