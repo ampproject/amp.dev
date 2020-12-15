@@ -19,8 +19,8 @@ Il componente [`amp-animation`](../../../../documentation/components/reference/a
 Un componente [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) è un semplice oggetto JSON composto dalle seguenti parti principali:
 
 - L'elemento che il componente sta animando o l'elemento `selector`.
-- [Timing Properties](../../../../documentation/components/reference/amp-animation.md#timing-properties)
-- [Keyframes](../../../../documentation/components/reference/amp-animation.md#keyframes)
+- [Proprietà di temporizzazione](../../../../documentation/components/reference/amp-animation.md#timing-properties)
+- [Fotogrammi principali](../../../../documentation/components/reference/amp-animation.md#keyframes)
 - [Trigger](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
 
 ```
