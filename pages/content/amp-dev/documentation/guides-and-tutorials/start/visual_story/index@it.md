@@ -1,7 +1,7 @@
 ---
-"$title": Create your first Web Story
+"$title": Crea la tua prima storia web
 "$order": '0'
-description: "In this tutorial, we'll introduce you to the amp-story component, which you can use to create visually engaging Web Stories with AMP. By the end of this tutorial, you'll ..."
+description: In questa esercitazione, ti presenteremo il componente amp-story, che puoi utilizzare per creare storie web AMP visivamente accattivanti. Alla fine di questa esercitazione, ...
 "$hidden": 'true'
 formats:
 - stories
@@ -10,13 +10,13 @@ author: bpaduch
 
 [video src="/static/video/tut_pets-story-complete.mp4" caption="Completed AMP story." poster="/static/img/docs/tutorials/amp_story/story_poster.png"]
 
-In this tutorial, we'll introduce you to the [`amp-story`](../../../../documentation/components/reference/amp-story.md) component, which you can use to create visually engaging Web Stories with AMP. By the end of this tutorial, you'll have created a story about "The Joy of Pets" that provides bite-sized information and visuals to entertain and engage readers.
+In questa esercitazione, ti presenteremo il componente [`amp-story`](../../../../documentation/components/reference/amp-story.md), che puoi utilizzare per creare storie web AMP visivamente accattivanti. Alla fine di questa esercitazione, avremo creato una storia dal titolo "The Joy of Pets" che fornisce blocchi di informazioni e contenuti visivi in grado di intrattenere e attirare gli utenti.
 
-## You will learn to:
+## Imparerai a:
 
-- Create a multi-page story by using the [`amp-story`](../../../../documentation/components/reference/amp-story.md) component
-- Create visual effects with multiple layers in a page
-- Lay out elements in a page by using layer templates
-- Add audio that plays while a page is viewed
-- Animate elements on a page
-- Keep readers engaged with your content by adding related links to the end of the story
+- Creare una storia web multi-pagina utilizzando il componente [`amp-story`](../../../../documentation/components/reference/amp-story.md)
+- Creare effetti visivi con più livelli in una pagina
+- Disporre gli elementi in una pagina utilizzando i modelli con livelli
+- Aggiungere audio da riprodurre durante la visualizzazione di una pagina
+- Animare gli elementi di una pagina
+- Tenere i lettori incollati ai tuoi contenuti, aggiungendo collegamenti a pagine simili alla fine della storia
