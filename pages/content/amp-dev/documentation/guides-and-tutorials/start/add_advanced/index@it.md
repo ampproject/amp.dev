@@ -1,7 +1,7 @@
 ---
-"$title": Add advanced AMP features
+"$title": Aggiunta di funzionalità AMP avanzate
 "$order": '0'
-description: "In this tutorial, you'll build on your understanding of AMP foundations and learn how AMP handles advertising, analytics, embedded videos, social media integration, carousels, and more."
+description: In questa esercitazione, amplierai la comprensione dei concetti base di AMP e imparerai a gestire in AMP annunci, analisi, video, integrazione di elementi dei social media, sequenze e molto altro.
 "$hidden": 'true'
 formats:
 - websites
@@ -9,19 +9,19 @@ formats:
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='Completed news article') }}
 
-In this tutorial, you'll build on your understanding of AMP foundations and learn how AMP handles advertising, analytics, embedded videos, social media integration, carousels, and more. By the end of this tutorial, you'll have created a mobile news article that includes these features.
+In questa esercitazione, amplierai la comprensione dei concetti base di AMP e imparerai a gestire in AMP annunci, analisi, video, integrazione di elementi dei social media, sequenze e molto altro. Alla fine dell'esercitazione, sarai in grado di creare un articolo di notizie per dispositivi mobili che include le suddette funzionalità.
 
-## You’ll learn to:
+## Imparerai a:
 
-- Display ads by using [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)
-- Embed YouTube videos, Twitter cards and responsive text elements
-- Build carousels with images and combinations of content by using [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)
-- Track simple patterns with [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
-- Add site navigation to your page with [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md)
-- Use custom fonts in AMP
+- Visualizzare gli annunci utilizzando [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)
+- Incorporare video YouTube, schede di Twitter ed elementi di testo reattivi
+- Realizzare sequenze di immagini e combinazioni di contenuti utilizzando [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)
+- Tracciare semplici schemi di analisi dei dati utilizzando [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
+- Aggiungere opzioni di navigazione dei siti utilizzando <a><code>amp-sidebar</code></a>
+- Usare caratteri personalizzati in AMP
 
-## You'll build:
+## Alla fine realizzerai:
 
-A news article page that conforms to AMP specifications and incorporates advertising, analytics, embedded video, embedded social media, carousels, and a site navigation menu.
+Una pagina per articoli di notizie che rispetta le specifiche AMP e include elementi quali annunci, strumenti di analisi, video, contenuti di social media, sequenze e menu di navigazione del sito.
 
-[tip type="note"] **NOTE –**  This tutorial is a continuation of the concepts introduced in the ["Convert your HTML to AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md) tutorial. If you don't already have a basic understanding of AMP’s core concepts, please try out the ["Convert your HTML to AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md) tutorial. [/tip]
+[tip type="note"] **NOTA:** Il contenuto di questa esercitazione completa i concetti introdotti nell'esercitazione ["Convertire pagine HTML in AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md). Si consiglia a chi non ha già conoscenze di base di AMP di seguire l'esercitazione ["Convertire pagine HTML in AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md). [/tip]
