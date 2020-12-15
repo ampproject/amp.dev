@@ -1,5 +1,5 @@
 ---
-"$title": AMP Boilerplate Code
+"$title": El código reutilizable en AMP
 order: '9'
 formats:
 - websites
@@ -31,12 +31,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-## `head > style[amp-boilerplate]` and `noscript > style[amp-boilerplate]` <a name="head--styleamp-boilerplate-and-noscript--styleamp-boilerplate"></a>
+##  <code>head > style[amp-boilerplate]</code> y <code>noscript > style[amp-boilerplate]</code>
 
-AMP HTML documents must contain the following boilerplate in their `head` tag. Validation is currently done with regular expressions, so it's important to keep mutations as minimal as possible. Currently, the allowed mutations are:
+Los documentos AMP HTML deben incluir el siguiente código reutilizable en su etiqueta `head`. Actualmente, la validación se lleva a cabo con expresiones regulares, de modo que es importante mantener el menor número de mutaciones como sea posible. Actualmente, las mutaciones permitidas son:
 
-1. Inserting arbitrary whitespace immediately after the `style` tag opens, and immediately before it closes
-2. Replacing any space in the snippet below with arbitrary whitespace.
+1. Insertar espacios en blanco de forma arbitraria inmediatamente después de que se abra la etiqueta `style` y justo antes de que se cierre.
+2. Reemplazar cualquier espacio en el fragmento de abajo con espacios en blanco colocados de manera arbitraria.
 
 <!-- prettier-ignore-start -->
 
@@ -46,4 +46,4 @@ AMP HTML documents must contain the following boilerplate in their `head` tag. V
 
 <!-- prettier-ignore-end -->
 
-[tip] You can use the [boilerplate generator](https://amp.dev/boilerplate) to quickly setup a basic skeleton for your AMP page. It also provides snippets for structured data, to create a PWA and more! [/tip]
+[tip] Puede utilizar el [generador de código reutilizable](https://amp.dev/boilerplate) para configurar rápidamente una estructura básica para su página de AMP. ¡También proporciona fragmentos del código fuente para datos estructurados, para crear una PWA y muchas cosas más! [/tip]
