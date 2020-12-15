@@ -50,7 +50,7 @@ Su resultado final debe ser algo parecido a esto:
 
 ¡<strong>Actualice</strong> la página y vea cómo gira!
 
-tip type="note"] <strong>NOTA:</strong>  Tal vez se dio cuenta de que cuando <a><code>amp-carousel</code></a> tenía el tipo <code>carousel</code>, usamos el tipo de disposición <code>fixed-height</code>. Los tipos de disposición compatibles con el tipo <code>carousel</code> son limitados, por ejemplo, el tipo <code>carousel</code> no es compatible con la disposición <code>responsive</code>. Como su nombre indica, los elementos de altura fija ocupan el espacio disponible, pero mantienen la altura sin cambios. Para los elementos de altura fija, debe definir el atributo <code>height</code>, mientras que el atributo <code>width</code> debe ser <code>auto</code> o no estar establecido. [/tip]
+[tip type="note"] <strong>NOTA:</strong>  Tal vez se dio cuenta de que cuando <a><code>amp-carousel</code></a> tenía el tipo <code>carousel</code>, usamos el tipo de disposición <code>fixed-height</code>. Los tipos de disposición compatibles con el tipo <code>carousel</code> son limitados, por ejemplo, el tipo <code>carousel</code> no es compatible con la disposición <code>responsive</code>. Como su nombre indica, los elementos de altura fija ocupan el espacio disponible, pero mantienen la altura sin cambios. Para los elementos de altura fija, debe definir el atributo <code>height</code>, mientras que el atributo <code>width</code> debe ser <code>auto</code> o no estar establecido. [/tip]
 
 ## Contenido mixto de carrusel
 

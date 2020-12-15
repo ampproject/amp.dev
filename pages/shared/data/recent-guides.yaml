@@ -1,3 +1,7 @@
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/email-inspiration.md
+  date: '2020-12-04 09:09:23 -0800'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/productivity_sender.md
+  date: '2020-12-04 09:09:23 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery_web_stories.md
   date: '2020-10-15 14:29:25 -0600'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/interactivity_guide/client_rendering.md
@@ -104,9 +108,9 @@
   date: '2019-02-04 18:46:52 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md
   date: '2019-02-04 18:46:52 -0800'
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/combine-amp-pwa.md
-  date: '2019-02-04 18:46:52 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md
+  date: '2019-02-04 18:46:52 -0800'
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/combine-amp-pwa.md
   date: '2019-02-04 18:46:52 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md
   date: '2019-02-03 12:25:13 -0800'
@@ -116,14 +120,6 @@
   date: '2019-02-02 16:23:14 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md
   date: '2019-02-02 16:23:14 -0800'
-- path: /content/amp-dev/documentation/guides-and-tutorials/develop/interactive_widget/index.md
-  date: '2019-01-30 17:55:15 -0800'
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/limitations_of_amp_ads.md
-  date: '2019-01-29 18:01:38 -0800'
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/limitations_of_amp_email.md
-  date: '2019-01-29 18:01:38 -0800'
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/limitations_of_amp_story.md
-  date: '2019-01-29 18:01:38 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/create_shell.md
   date: '2019-01-29 18:01:38 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/image_ad.md
@@ -150,8 +146,6 @@
   date: '2019-01-29 17:38:27 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/third_party_components.md
   date: '2019-01-29 17:38:27 -0800'
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/how_amp_is_different.md
-  date: '2019-01-28 20:36:41 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/seatmap.md
   date: '2019-01-24 22:31:10 +0100'
 - path: /content/amp-dev/documentation/guides-and-tutorials/index.html
