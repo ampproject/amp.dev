@@ -57,8 +57,8 @@ Consulte en la siguiente tabla la descripción sobre cada parte de la sintaxis.
   <tr>
     <td><code>targetId</code></td>
     <td>Sí</td>
-    <td>This is the DOM id for the element, or a predefined <a href="#special-targets">special target</a> you'd like to execute an action on  in response to the event. In the following example, the <code>targetId</code> is the DOM id of the <code>amp-lightbox</code> target, <code>photo-slides</code>.     <pre><amp-lightbox id="photo-slides"></amp-lightbox>
-<button on="tap:photo-slides">Show Images</button></pre>     </td>
+    <td>Es el ID del DOM para el elemento o un  <a href="#special-targets">objetivo especial</a> que se definió previamente, en el cual le gustaría ejecutar una acción como respuesta a un evento. En el siguiente ejemplo, el <code>targetId</code> es el ID del DOM para los objetivos <code>amp-lightbox</code> y <code>photo-slides</code>.     <pre>&lt;amp-lightbox id="photo-slides">&lt;/amp-lightbox> &lt;button on="tap:photo-slides">Show Images&lt;/button></pre>
+</td>
   </tr>
   <tr>
     <td><code>methodName</code></td>
@@ -399,11 +399,11 @@ event.value</pre>
   </tr>
   <tr>
     <td><code>play</code></td>
-    <td>Plays the audio. Is a no-op if the <code><amp-audio></code> element is a descendant of <code><amp-story></code>.</td>
+    <td>Reproduce el sonido. No opera si el elemento <code>&lt;amp-audio></code> es descendiente de <code>&lt;amp-story></code>.</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
-    <td>Pauses the audio. Is a no-op if the <code><amp-audio></code> element is a descendant of <code><amp-story></code>.</td>
+    <td>Pone pausa al sonido. No opera si el elemento <code>&lt;amp-audio></code> es descendiente de <code>&lt;amp-story></code>.</td>
   </tr>
 </table>
 
