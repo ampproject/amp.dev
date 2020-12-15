@@ -352,10 +352,9 @@ Al final, la asignación que creamos se parecerá a esto:
     <th><strong>El ID de usuario en la página de AMP que NO está en el origen del editor (“alias”)</strong></th>
   </tr>
   <tr>
+    <td> <code>$prospective_identifier</code> (generado justo a tiempo, cuando se recibe el ping analítico)</td>
     <td>
-<code>$prospective_identifier</code>(generated just-in-time when analytics ping is received)</td>
-    <td>
-<code>$amp_client_id</code> (came from analytics ping)</td>
+<code>$amp_client_id</code> (se incluye en el ping analítico)</td>
   </tr>
 </table>
 
