@@ -1,10 +1,14 @@
 <span id="ap-sidebar-toolbar" class="ap-sidebar --sidebaropen">
 
   {% do doc.icons.useIcon('/icons/sidebar-toggle.svg') %}
-  <button id="sidebar-toggle" class="ap-sidebar-toggle"
+  <button class="ap-sidebar-toggle"
       on="tap:ap-sidebar-toolbar.toggleClass(class=--sidebaropen)">
-    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sidebar-toggle"></use></svg>
-    <span>{{ _('Toggle Sidebar') }}</span>
+    <div id="sidebar-toggle-icon">
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sidebar-toggle"></use></svg>
+    </div>
+    <span id="sidebar-toggle-background">
+      <span id="sidebar-toggle-label">{{ _('Toggle Sidebar') }}</span>
+    </span>
   </button>
 </span>
 

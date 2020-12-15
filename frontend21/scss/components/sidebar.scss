@@ -21,19 +21,18 @@
     position: absolute;
     left: 0;
     display: flex;
-    flex-direction: row-reverse;
     align-items: center;
-    width: 135px;
+    justify-content: center;
+    width: 34px;
     height: 34px;
-    padding: 5px 10px;
     border-radius: 4px;
     font-family: $fontFamilyHeadline;
     font-size: 12px;
     font-weight: bold;
     white-space: nowrap;
     color: color('white');
-    background: color('blue-ribbon');
     box-shadow: 0 5px 15px -5px transparentize(color('black'), 0.75);
+    background: color('blue-ribbon');
     transform-origin: left;
     transform: rotate(-90deg) translate(-120px, 17px);
 
@@ -41,11 +40,23 @@
       width: 1.2em;
       height: 1.2em;
       fill: currentColor;
-      transform: rotate(-90deg);
     }
 
-    span {
-      margin-left: 7px;
+    #sidebar-toggle-background {
+      position: absolute;
+      top: 0;
+      left: 30px;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 5px 10px;
+      border-radius: 4px;
+      transform-origin: left;
+      background: color('blue-ribbon');
+    }
+
+    #sidebar-toggle-label {
+
     }
 
     .--sidebaropen & {
