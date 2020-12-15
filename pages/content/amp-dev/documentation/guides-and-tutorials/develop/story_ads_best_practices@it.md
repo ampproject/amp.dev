@@ -66,47 +66,47 @@ I dati del tag Meta indicano che l'annuncio rispetta il formato delle storie Web
 </html>
 [/sourcecode]
 
-Choosing the `amp-cta-type tag` from the [available CTA Button text options](#call-to-action-button-text-enum) is recommended. AMP will automatically localize predefined options when appropriate.
+Si consiglia di scegliere il tag amp-cta-type tra le <a>opzioni di testo disponibili per il pulsante CTA</a>. AMP localizzerà automaticamente le opzioni predefinite se necessario.
 
-PLACEHOLDER_START0PLACEHOLDER_END
+È consentito il testo personalizzato, ma sarà necessario implementare la propria localizzazione.
 
-## Call to action button text enum <a name="call-to-action-button-text-enum"></a>
+## Enumerazione testi del pulsante Invito all'azione <a name="call-to-action-button-text-enum"></a>
 
 The call to action button can be configured from a predefined set of choices:
 
-- `APPLY_NOW`: "Apply Now"
-- `BOOK_NOW`: "Book"
-- `BUY_TICKETS`: "Buy Tickets"
+- `APPLY_NOW`: "Richiedi ora"
+- `BOOK_NOW`: "Prenota"
+- `BUY_TICKETS`: "Acquista biglietti"
 - `DOWNLOAD`: "Download"
-- `EXPLORE`: "Explore Now"
-- `GET_NOW`: "Get Now"
-- `INSTALL`: "Install Now"
-- `LISTEN`: "Listen Now"
-- `MORE`: "More"
-- `OPEN_APP`: "Open App"
-- `ORDER_NOW`: "Order Now"
-- `PLAY`: "Play"
-- `READ`: "Read Now"
-- `SHOP`: "Shop Now"
-- `SHOWTIMES`: "Showtimes"
-- `SIGN_UP`: "Sign Up"
-- `SUBSCRIBE`: "Subscribe Now"
-- `USE_APP`: "Use App"
-- `VIEW`: "View"
-- `WATCH`: "Watch"
-- `WATCH_EPISODE`: "Watch Episode"
+- `EXPLORE`: "Esplora ora"
+- `GET_NOW`: "Ricevi ora"
+- `INSTALL`: "Installa ora"
+- `LISTEN`: "Ascolta ora"
+- `MORE`: "Altro"
+- `OPEN_APP`: "Apri app"
+- `ORDER_NOW`: "Ordina ora"
+- `PLAY`: "Gioca"
+- `READ`: "Leggi ora"
+- `SHOP`: "Fai shopping ora"
+- `SHOWTIMES`: "Showtime"
+- `SIGN_UP`: "Registrati"
+- `SUBSCRIBE`: "Abbonati ora"
+- `USE_APP`: "Usa app"
+- `VIEW`: "Visualizza"
+- `WATCH`: "Guarda"
+- `WATCH_EPISODE`: "Guarda episodio"
 
-[tip type="note"] **NOTE –** Deep links to apps are not supported, but links to the App Store page or the Google Play Store page are supported using http/https. The CTA button text enum is specified in the ad response payload. [/tip]
+[tip type="note"] **NOTA:** i collegamenti diretti alle app non sono supportati, ma i collegamenti alla pagina App Store o alla pagina Google Play Store sono supportati tramite http/https. L'enumerazione dei testi del pulsante CTA è specificata nel payload della risposta all'annuncio. [/tip]
 
-If support is needed for a new CTA button text enum, please open a [GitHub issue](https://github.com/ampproject/amphtml/issues/new).
+Se si ritiene necessario disporre di altre opzione di enumerazione testi per il pulsante CTA, è possibile aprire una [segnalazione GitHub](https://github.com/ampproject/amphtml/issues/new).
 
 ## Pagina di destinazione annunci
 
 You can specify one of three options for an Web Story ad landing page.
 
-- `STORY`: Landing page is a [sponsored story](story_ads_best_practices.md#sponsored-story).
-- `AMP`: Landing page is a valid AMP Page.
-- `NONAMP`: Any other type of webpage.
+- `STORY`: la pagina di destinazione è una [storia sponsorizzata](story_ads_best_practices.md#sponsored-story).
+- `AMP`: la pagina di destinazione è una pagina AMP valida.
+- `NONAMP`: la destinazione è una pagina web di qualunque altro tipo.
 
 ## Layout
 
@@ -116,11 +116,11 @@ Le storie AMP sono disposte orizzontalmente e a schermo intero. Gli annunci nell
 
 The ad label overlays a dark gradient bar across the entire width of the ad and will stretch from the top to 46px down.
 
-{{ image('/static/img/docs/stampads/ad_overlay.png', 515, 520, layout='intrinsic', alt='Demonstration of ad overlay', caption='The ad overlay sits at the top', align='' ) }}
+{{ image('/static/img/docs/stampads/ad_overlay.png', 515, 520, layout='intrinsic', alt='Esempio di sovrimpressione annuncio', caption='L'annuncio in sovrimpressione inizia in cima', align='' ) }}
 
-The CTA sits 32px from the bottom and is centered horizontally. It is 120px by 36px.
+Il pulsante CTA si trova a 32 pixel dal fondo ed è centrato orizzontalmente. Occupa un'area di 120 per 36 pixel.
 
-{{ image('/static/img/docs/stampads/cta_button.png', 515, 520, layout='intrinsic', alt='Demonstration of the CTA Button', caption='The CTA Button sits near the bottom', align='' ) }}
+{{ image('/static/img/docs/stampads/cta_button.png', 515, 520, layout='intrinsic', alt='Esempio del pulsante CTA', caption='Il pulsante CTA si trova in fondo alla pagina', align='' ) }}
 
 ## Immagini e video
 
