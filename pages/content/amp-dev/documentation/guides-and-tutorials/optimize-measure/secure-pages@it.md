@@ -1,6 +1,10 @@
 ---
-$title: Protezione contro attacchi di terzi
+"$title": Protezione contro attacchi di terzi
+"$order": '7'
 description: Adotta misure adeguate per proteggere le tue pagine AMP e gli utenti dalle vulnerabilità di sicurezza sul web
+formats:
+- websites
+author: CrystalOnScript
 ---
 
 Adotta misure adeguate per proteggere le tue pagine AMP e gli utenti dalle vulnerabilità di sicurezza sul web. Uno dei peggiori attacchi è il [cross-site scripting](https://www.google.com/about/appsecurity/learning/xss/) (filtro XSS). Il bug XSS è una vulnerabilità della sicurezza che può consentire a un utente malintenzionato di inserire codice dannoso nelle pagine HTML visualizzate agli utenti.
@@ -20,4 +24,4 @@ Implementare un meccanismo CSP aggiungendo il meta tag appropriato all'intestazi
 
 [Puoi visualizzare l'esempio completo qui](https://github.com/ampproject/amphtml/blob/master/examples/csp.amp.html).
 
-[tip type="read-on"] Ulteriori informazioni sulla [protezione dalle vulnerabilità della sicurezza e sui meccanismi CSP disponibili qui](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP). [/tip]
+[tip type="read-on"] Learn more about [protecting about security vulnerabilities and CSPs here](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP). [/tip]
