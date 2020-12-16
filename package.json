@@ -55,7 +55,7 @@
 	},
 	"browserslist": ["last 2 versions", "not dead"],
 	"dependencies": {
-		"@ampproject/toolbox-cache-list": "2.7.1",
+		"@ampproject/toolbox-cache-list": "2.7.2",
 		"@ampproject/toolbox-cors": "2.7.1",
 		"@ampproject/toolbox-linter": "2.7.1",
 		"@ampproject/toolbox-optimizer": "2.7.1",
