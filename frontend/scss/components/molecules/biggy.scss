@@ -46,6 +46,8 @@
         margin-top: -48px;
         margin-left: -40px;
         font-size: 140px;
+        max-width: calc(100% + 40px); /* 40px compensation for margin-left */
+        overflow: hidden;
         @media (min-width: 768px) {
           margin-top: -25px;
           margin-left: -150px;
