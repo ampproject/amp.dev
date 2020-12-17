@@ -27,6 +27,7 @@ const directLinterRecommendations = {
   isTransformedAmp: 'use-amp-optimizer',
   heroImageIsDefined: 'hero-images',
   noRenderBlockingExtension: 'prevent-render-blocking-extensions',
+  viewportDisablesTapDelay: 'viewport-disables-tap-delay',
 };
 
 const directPageExperienceRecommendations = {
