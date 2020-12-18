@@ -152,9 +152,7 @@ Contohnya, yang berikut ini mungkin dilakukan di AMP:
   <tr>
     <td><code>select</code></td>
     <td>
-      <pre>event.min
-event.max
-event.value</pre>
+      <pre>event.min<br>event.max<br>event.value</pre>
     </td>
   </tr>
   <!-- input-debounced -->
@@ -204,8 +202,7 @@ event.value</pre>
   <tr>
     <td><code>slideChange</code></td>
     <td>Dipicu ketika slide korsel (carousel) yang sedang aktif berubah.</td>
-    <td><pre>// Slide number.
-event.index</pre></td>
+    <td><pre>// Slide number.<br>event.index</pre></td>
   </tr>
 </table>
 
