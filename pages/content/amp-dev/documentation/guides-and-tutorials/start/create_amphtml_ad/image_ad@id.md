@@ -1,7 +1,7 @@
 ---
-$title: Membuat iklan gambar
-$order: 1
-description: "Iklan kita adalah gambar sederhana dengan hyperlink (hipertaut) ke situs yang diiklankan. Kita akan menampilkan gambar dengan menggunakan tag amp-img. Kodenya berikut ini: ..."
+"$title": Membuat iklan gambar
+"$order": '1'
+description: 'Iklan kita adalah gambar sederhana dengan hyperlink (hipertaut) ke situs yang diiklankan. Kita akan menampilkan gambar dengan menggunakan tag amp-img. Kodenya berikut ini: ...'
 ---
 
 Di dalam `<body>` dokumen iklan HTML AMP, Anda dapat menyertakan tag HTML dan AMP; namun, tidak semua tag diizinkan. Rujuklah [spek iklan HTML AMP](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#allowed-amp-extensions-and-builtins) untuk mengetahui daftar tag yang diizinkan.
