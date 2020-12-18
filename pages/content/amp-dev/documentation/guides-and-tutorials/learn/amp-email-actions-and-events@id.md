@@ -68,12 +68,8 @@ Lihat tabel di bawah ini untuk mengetahui deskripsi setiap bagian sintaks.
   <tr>
     <td><code>arg=value</code></td>
     <td>tidak</td>
-    <td>Some actions, if documented, may accept arguments. The arguments are defined between parentheses in <code>key=value</code> notation. The accepted values are:       <ul>         <li>simple unquoted strings: <code>simple-value</code>
-</li>         <li>quoted strings: <code>"string value"</code> or <code>'string value'</code>
-</li>         <li>boolean values: <code>true</code> or <code>false</code>
-</li>         <li>numbers: <code>11</code> or <code>1.1</code>
-</li>         <li>dot-syntax reference to event data: <code>event.someDataVariableName</code>
-</li>       </ul>     </td>
+    <td>Beberapa tindakan, jika didokumentasikan, mungkin menerima argumen. Argumen ditetapkan di dalam kurung di dalam notasi <code>key=value</code>. Nilai-nilai yang diterima adalah: <ul> <li>untai tanpa tanda kutip yang sederhana: <code>simple-value</code> </li> <li>untai bertanda kutip: <code>"string value"</code> atau <code>'string value'</code> </li> <li>nilai-nilai Boolean: <code>true</code> atau <code>false</code> </li> <li>angka: <code>11</code> atau <code>1.1</code> </li> <li>referensi dot-syntax untuk data peristiwa: <code>event.someDataVariableName</code> </li> </ul>
+</td>
   </tr>
 </table>
 
@@ -136,18 +132,15 @@ Contohnya, yang berikut ini mungkin dilakukan di AMP:
   </tr>
   <tr>
     <td rowspan="3"><code>change</code></td>
-    <td rowspan="3">Fired when the value of the element is changed and committed.       <p>       Data properties mirror those in <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#Properties">HTMLInputElement</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement#Properties">HTMLSelectElement</a>.</p>     </td>
+    <td rowspan="3">Dipicu ketika nilai elemen berubah dan diterapkan. <p> Properti data mencerminkannya dalam <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#Properties">HTMLInputElement</a> dan <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement#Properties">HTMLSelectElement</a>.</p>
+</td>
     <td><code>input</code></td>
     <td>
-      <pre>event.min
-event.max
-event.value
-event.valueAsNumber</pre>
+      <pre>event.min<br>event.max<br>event.value<br>event.valueAsNumber</pre>
     </td>
   </tr>
   <tr>
-    <td>
-<code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
+    <td> <code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
 </td>
     <td>
       <code>event.checked</code>
@@ -239,8 +232,7 @@ event.value</pre>
     <th width="40%">Data</th>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code> (kepercayaan rendah)</td>
     <td>Dipicu saat pengambilan data gagal.</td>
     <td>Tidak ada</td>
   </tr>
@@ -290,8 +282,7 @@ event.value</pre>
     <th width="40%">Data</th>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code> (kepercayaan rendah)</td>
     <td>Dipicu saat pengambilan data gagal.</td>
     <td>Tidak ada</td>
   </tr>
@@ -347,11 +338,11 @@ event.value</pre>
   </tr>
   <tr>
     <td><code>show</code></td>
-    <td>Shows the target element. If an     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a     result, it gains focus.</td>
+    <td>Memperlihatkan elemen target. Jika sebuah <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus">element</a> <code>autofocus</code> menjadi terlihat, maka elemen tersebut akan mendapatkan fokus.</td>
   </tr>
   <tr>
     <td><code>toggleVisibility</code></td>
-    <td>Toggles the visibility of the target element. If an     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a     result, it gains focus.</td>
+    <td>Mengalihkan atau mengubah visibilitas elemen target. Jika sebuah <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus">element</a> <code>autofocus</code> menjadi terlihat, maka elemen tersebut akan mendapatkan fokus.</td>
   </tr>
   <tr>
     <td><code>toggleClass(class=STRING, force=BOOLEAN)</code></td>
@@ -359,7 +350,7 @@ event.value</pre>
   </tr>
   <tr>
     <td><code>focus</code></td>
-    <td>Makes the target element gain focus. To lose focus, <code>focus</code>     on another element (usually parent element). We strongly advise against     losing focus by focusing on <code>body</code>/<code>documentElement</code>     for accessibility reasons.</td>
+    <td>Membuat elemen target mendapatkan fokus. Untuk menghilangkan fokus, <code>focus</code> pada elemen lain (biasanya elemen induk). Kami sangat menyarankan agar tidak menghilangkan fokus dengan berfokus pada <code>body</code>/<code>documentElement</code> demi keperluan aksesibilitas.</td>
   </tr>
 </table>
 
@@ -440,8 +431,7 @@ event.value</pre>
     <td>Perbarui tata letak <code>amp-list</code> ke <code>layout="CONTAINTER"</code> untuk memungkinkan <a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">pengubahan ukuran dinamis</a>.</td>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code> (kepercayaan rendah)</td>
     <td>Dipicu saat pengambilan data gagal.</td>
     <td>Tidak ada</td>
   </tr>
@@ -468,7 +458,7 @@ event.value</pre>
   </tr>
   <tr>
     <td><code>toggle(index=INTEGER, value=BOOLEAN)</code></td>
-    <td>Toggles the application of the `selected`. If the select attribute is absent, this action adds it. If the select attribute is present, this action removes it.     You may force and keep an add or remove by including a boolean value in the `value` argument. A value of `true` will force add the `selected` attribute and not remove it if already present. A value of  `false` will remove the attribute, but not add it if absent.   </td>
+    <td>Mengalihkan penerapan `selected` (terpilih). Jika atribut untuk memilih tidak ada, tindakan ini akan menambahkannya. Jika atribut untuk memilih ada, tindakan ini akan menghapusnya. Anda dapat memaksa dan mempertahankan serta menambahkan atau menghapus dengan menyertakan nilai Boolean di dalam argumen `value`. Sebuah nilai `true` akan memaksa untuk menambahkan atribut `selected` dan tidak akan menghapusnya jika memang sudah ada. Sebuah nilai `false` akan menghapus atribut tersebut, tetapi tidak akan menambahkannya jika tidak ada.</td>
   </tr>
 </table>
 
