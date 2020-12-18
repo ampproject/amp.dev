@@ -368,7 +368,7 @@ event.index</pre></td>
   </tr>
   <tr>
     <td><code>show</code></td>
-    <td>Shows the target element. If an     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a     result, it gains focus.</td>
+    <td>Memperlihatkan elemen target. Jika sebuah <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus">elemen</a> <code>autofocus</code>  menjadi terlihat, maka elemen tersebut akan mendapatkan fokus.</td>
   </tr>
   <tr>
     <td><code>toggleVisibility</code></td>
@@ -397,11 +397,11 @@ event.index</pre></td>
   </tr>
   <tr>
     <td><code>play</code></td>
-    <td>Plays the audio. Is a no-op if the <code><amp-audio></code> element is a descendant of <code><amp-story></code>.</td>
+    <td>Memutar audio. Tidak berfungsi (no-op) jika elemen <code>&lt;amp-audio></code> adalah turunan dari <code>&lt;amp-story></code>.</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
-    <td>Pauses the audio. Is a no-op if the <code><amp-audio></code> element is a descendant of <code><amp-story></code>.</td>
+    <td>Menjeda audio. Tidak berfungsi (no-op) jika elemen <code>&lt;amp-audio></code> adalah turunan dari <code>&lt;amp-story></code>.</td>
   </tr>
 </table>
 
