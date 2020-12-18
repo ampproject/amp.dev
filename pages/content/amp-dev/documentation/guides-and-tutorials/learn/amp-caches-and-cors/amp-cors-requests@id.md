@@ -79,7 +79,7 @@ Baik, jadi halaman itu ada *di domain saya* dan JSON tersebut ada *di domain say
 Ah, tetapi bagaimana pengguna Anda sampai ke halaman AMP Anda? Apakah karena halaman di cache yang mereka akses? Kemungkinan besar bahwa pengguna Anda tidak mengakses halaman AMP secara langsung, tetapi menemukan halaman Anda melalui platform lain. Contohnya: Google Search menggunakan Cache AMP Google untuk merender halaman AMP dengan cepat; ini adalah halaman yang disimpan di cache yang disajikan dari Cache AMP Google, dan ini adalah domain yang *berbeda*. Saat pengguna Anda mengeklik tombol untuk memperbarui harga pada halaman Anda, halaman AMP di dalam cache mengirimkan permintaan ke domain asal Anda untuk mendapatkan harga, dan ini adalah ketidakcocokan antara asal (cache -> domain asal). Untuk memungkinkan permintaan lintas asal seperti ini, Anda harus menangani CORS, jika tidak, permintaan akan gagal.
 
 <amp-img alt="CORS and Cache" layout="responsive" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png" width="809" height="391">
-  <noscript>     <img alt="CORS and Cache" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png">   </noscript></amp-img>
+  <noscript><img alt="CORS dan Cache" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png"></noscript></amp-img>
 
 **Baik, jadi saya harus bagaimana?**
 
@@ -195,7 +195,7 @@ Ada dua skenario yang harus diperhitungkan dalam permintaan CORS ke endpoint And
 Mari kita bahas kedua skenario ini disertai contoh. Di dalam contoh ini, kita mengelola situs `example.com` yang menjadi host halaman AMP berjudul `article-amp.html.`Halaman AMP tersebut berisi `amp-list` untuk mengambil data dinamis dari berkas `data.json` yang juga dikelola di `example.com`. Kita ingin memproses permintaan ke berkas `data.json` kita yang berasal dari halaman AMP kita. Permintaan ini bisa berasal dari halaman AMP pada asal yang sama (non-cache) atau dari halaman AMP di asal yang berbeda (di cache).
 
 <amp-img alt="CORS example" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png" width="629" height="433">
-  <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png">   </noscript></amp-img>
+  <noscript><img alt="Contoh CORS" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png"></noscript></amp-img>
 
 ### Asal yang diizinkan <a name="allowed-origins"></a>
 
@@ -279,7 +279,7 @@ function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
 Di dalam skenario berikut ini, halaman `article-amp.html` meminta berkas `data.json`; asalnya sama.
 
 <amp-img alt="CORS example - scenario 1" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png" width="657" height="155">
-  <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png">   </noscript></amp-img>
+  <noscript><img alt="Contoh CORS" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png"></noscript></amp-img>
 
 Jika kita memeriksa permintaan ini, kita akan menemukan:
 
@@ -303,7 +303,7 @@ Access-Control-Allow-Origin: https://example.com
 Di dalam skenario berikut ini, halaman `article-amp.html` di Cache AMP Google meminta berkas `data.json`; asalnya berbeda.
 
 <amp-img alt="CORS example - scenario 2" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png" width="657" height="155">
-  <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png">   </noscript></amp-img>
+  <noscript><img alt="Contoh CORS" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png"></noscript></amp-img>
 
 Jika kita memeriksa permintaan ini, kita akan menemukan:
 
@@ -360,7 +360,7 @@ function assertFontCors(req, res, opt_validMethods, opt_exposeHeaders) {
 Sebagai contoh, jika Anda ingin memuat /some/font.ttf dalam `https://example.com/amp.html`, server asal harus menanggapi dengan tajuk Akses-Kontrol-Izinkan-Asal (Access-Control-Allow-Origin) seperti di bawah ini.
 
 <amp-img alt="CORS font example" layout="responsive" src="https://amp.dev/static/img/docs/cors-font.jpg" width="2268" height="1594">
-  <noscript>     <img alt="CORS font example" src="https://amp.dev/static/img/docs/cors-font.jpg">   </noscript></amp-img>
+  <noscript><img alt="Contoh font CORS" src="https://amp.dev/static/img/docs/cors-font.jpg"></noscript></amp-img>
 
 [tip type="note"] Jika berkas font Anda dapat diakses dari asal apa saja, Anda dapat menanggapi dengan karakter pengganti `Access-Control-Allow-Origin`, cache AMP juga akan memantulkan nilai tersebut, artinya akan menanggapinya dengan `Access-Control-Allow-Origin: *`. Jika Anda sudah menerapkan pengaturan ini, tidak perlu mengubah apa pun. [/tip]
 
