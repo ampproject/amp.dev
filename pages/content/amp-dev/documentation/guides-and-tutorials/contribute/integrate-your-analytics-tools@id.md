@@ -73,6 +73,6 @@ Untuk mengambil pendekatan ini, kaji dokumentasi untuk integrasi penayang dengan
 
 - Kajian Mendalam: [Mengapa tidak menggunakan iframe saja?](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/why-not-iframe.md)
 - Kajian Mendalam: [Mengelola status pengguna yang belum disahkan dengan AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)
-- [amp-analytics sample](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
+- [Sampel amp-analytics](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
 - Dokumentasi referensi [amp-analytics](https://amp.dev/documentation/components/amp-analytics)
 - Dokumentasi referensi [variabel amp-analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)
