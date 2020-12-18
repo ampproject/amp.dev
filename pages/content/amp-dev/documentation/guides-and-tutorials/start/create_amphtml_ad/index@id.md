@@ -1,6 +1,8 @@
 ---
-$title: Membuat iklan HTML AMP
+"$title": Membuat iklan HTML AMP
 description: Di dalam tutorial ini, Anda akan mempelajari cara membuat iklan HTML AMP dari nol yang dapat disajikan ke halaman AMP dan non-AMP.
+formats:
+- ads
 ---
 
 {{ image('/static/img/docs/ads/amp-ad-framed-final.png', 597, 1240, align='right third', caption='Iklan gambar HTML AMP yang selesai') }}
