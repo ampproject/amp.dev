@@ -94,7 +94,7 @@ amphtmlValidator.getInstance().then(function (validator) {
 });
 ```
 
-##### Example: Using a gulp task to validate AMP HTML
+##### Contoh: Menggunakan tugas gulp untuk memvalidasi HTML AMP
 
 Dalam contoh ini, kita menggunakan tugas gulp untuk memvalidasi semua berkas HTML AMP. Jika ada eror validasi AMP, tugas akan keluar dengan kode eror (1).
 
