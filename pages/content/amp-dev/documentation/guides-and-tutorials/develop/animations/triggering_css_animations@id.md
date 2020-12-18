@@ -74,7 +74,6 @@ Anda dapat mengalihkan kelas pada elemen yang sama yang Anda inginkan berinterak
 
 ```html
  <div id="hamburger" tabindex=1 role=button on="tap:hamburger.toggleClass(class='close')">
-
 ```
 
 Tindakan `toggleClass` dapat berlaku pada elemen lain serta beralih di antara dua kelas dengan menambahkan atribut `force`.
