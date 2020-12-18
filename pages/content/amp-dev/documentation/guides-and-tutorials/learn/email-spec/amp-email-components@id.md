@@ -33,8 +33,8 @@ limitations under the License.
 
 Yang berikut ini adalah daftar [komponen AMP](https://amp.dev/documentation/components/?format=email) yang saat ini didukung di dalam pesan email AMP. Komponen-komponen ini dikelompokkan ke dalam kategori berikut ini:
 
-- [Dynamic Content](#dynamic-content)
-- [Layout](#layout)
+- [Konten Dinamis](#dynamic-content)
+- [Tata Letak](#layout)
 - [Media](#media)
 
 ## Konten Dinamis <a name="dynamic-content"></a>
@@ -52,7 +52,7 @@ Elemen | Deskripsi
 
 Elemen | Deskripsi
 --- | ---
-[layout attributes](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/#layout-attributes) | Perilaku tata letak ditentukan dengan atribut tata letak.
+[Atribut Tata Letak](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/#layout-attributes) | Perilaku tata letak ditentukan dengan atribut tata letak.
 [`<amp-accordion>`](https://amp.dev/documentation/components/amp-accordion) | Elemen UI yang memfasilitasi pemunculan/penyembunyian bagian yang berbeda.
 [`<amp-carousel>`](https://amp.dev/documentation/components/amp-carousel) | Komponen UI korsel.
 [`<amp-fit-text>`](https://amp.dev/documentation/components/amp-fit-text) | Komponen pembantu untuk mengepaskan teks di dalam area tertentu.
