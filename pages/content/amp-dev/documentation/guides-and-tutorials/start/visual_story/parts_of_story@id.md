@@ -1,6 +1,6 @@
 ---
-$title: Memahami bagian dari cerita AMP
-$order: 2
+"$title": Memahami bagian dari cerita AMP
+"$order": '2'
 description: Sebuah Cerita Web adalah pengalaman bercerita dengan visual dan layar penuh yang menyampaikan informasi dengan gambar, video, grafik, audio, dan masih banyak lagi. Ini sangat cocok bagi pengguna ....
 author: bpaduch
 ---
