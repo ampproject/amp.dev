@@ -1,38 +1,41 @@
 ---
-$title: Menyiapkan
+"$title": Menyiapkan
+"$order": '0'
+description: 'Sebelum memulai tutorial ini, Anda memerlukan hal-hal berikut ini: - Pengetahuan dasar tentang HTML, CSS, dan JavaScript - Browser pilihan Anda - Editor teks ....'
+"$parent": "/content/docs/interaction_dynamic/interactivity.md"
 ---
 
 ## Prasyarat
 
-Sebelum memulai tutorial ini, Anda akan memerlukan hal berikut:
+Sebelum memulai tutorial ini, Anda akan memerlukan hal-hal berikut ini:
 
 - Pengetahuan dasar tentang HTML, CSS, dan JavaScript
 - Browser pilihan Anda
 - Editor teks pilihan Anda
 - [Node.js dan NPM](https://docs.npmjs.com/getting-started/installing-node) yang diinstal di komputer Anda
 
-## Siapkan lingkungan pengembangan
+## Menyiapkan lingkungan pengembangan
 
-### Langkah 1. Download kodenya
+### Langkah ke-1. Mengunduh kode
 
-Download kode pembuka tutorial baik dalam [file ZIP](https://github.com/googlecodelabs/advanced-interactivity-in-amp/archive/master.zip) atau melalui git:
+Unduh kode awal tutorial, baik sebagai [berkas ZIP](https://github.com/googlecodelabs/advanced-interactivity-in-amp/archive/master.zip) atau melalui git:
 
 ```shell
 git clone https://github.com/googlecodelabs/advanced-interactivity-in-amp.git
 ```
 
-### Langkah 2. Instal dependensi
+### Langkah ke-2. Menginstal dependensi
 
-Ekstrak file arsip (jika perlu) lalu buka direktori. Instal dependensi dengan menjalankan `npm install`.
+Ekstrak berkas arsip (jika diperlukan), lalu buka direktori. Instal dependensi dengan menjalankan `npm install`.
 
 ```shell
 cd advanced-interactivity-in-amp
 npm install
 ```
 
-### Langkah 3. Jalankan server pengembangan
+### Langkah ke-3. Menjalankan server pengembangan
 
-Mulai server pengembangan dengan node.js:
+Jalankan server pengembangan dengan node.js:
 
 ```shell
 node app.js
