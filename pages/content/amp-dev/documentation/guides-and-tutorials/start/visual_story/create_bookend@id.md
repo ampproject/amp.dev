@@ -1,5 +1,5 @@
 ---
-"$title": Creating the bookend
+"$title": Membuat bookend
 "$order": '7'
 description: Setelah Anda menambahkan semua halaman Anda, mari kita lihat layar terakhir dari cerita ini, bookend. Layar terakhir ini mengakhiri cerita ....
 author: bpaduch
