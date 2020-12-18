@@ -15,4 +15,4 @@ Untuk mendemonstrasikan seperti apa tampilan markah tambahan ini, berikut ini ad
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-[sourcecode:html] <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img> [/sourcecode]
+[tip type="read-on"] **BACA –** Untuk mempelajari mengapa kita mengganti tag seperti `<img>` dengan [`<amp-img>`](../../../../documentation/components/reference/amp-img.md), dan berapa banyak yang tersedia, kunjungi [Menyertakan Gambar & Video](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md). [/tip]
