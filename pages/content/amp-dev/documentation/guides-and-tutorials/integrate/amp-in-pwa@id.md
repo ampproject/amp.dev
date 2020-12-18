@@ -32,7 +32,11 @@ Sebaiknya muat perpustakaan AMP Bayangan dengan menempatkan atribut `async`. Nam
 
 Sinyal yang tepat yang harus diamati adalah ketersediaan variabel `AMP` global, dan AMP Bayangan menggunakan “[pendekatan pemuatan fungsi asinkron](http://mrcoles.com/blog/google-analytics-asynchronous-tracking-how-it-work/)” untuk membantu Anda mengetahuinya. Pertimbangkan kode berikut ini:
 
-[sourcecode:javascript] (window.AMP = window.AMP || []).push(function(AMP) { // AMP kini tersedia. }); [/sourcecode]
+[sourcecode:javascript]
+(window.AMP = window.AMP || []).push(function(AMP) {
+  // AMP is now available.
+});
+[/sourcecode]
 
 Kode ini akan berfungsi, dan berapa pun jumlah panggilan balik yang ditambahkan dengan cara ini akan diaktifkan saat AMP tersedia, namun mengapa hal ini bisa terjadi?
 
@@ -101,7 +105,10 @@ Dan selesai! Halaman AMP Anda akan dirender sebagai anak (turunan) dari seluruh 
 
 Pengguna Anda kemungkinan akan membuka satu AMP ke AMP lainnya di Aplikasi Web Progresif Anda. Saat menutup Halaman AMP yang dirender sebelumnya, selalu pastikan bahwa AMP mengetahui tindakan tersebut, seperti contoh berikut ini:
 
-[sourcecode:javascript] // ampedDoc adalah referensi yang ditampilkan dari AMP.attachShadowDoc ampedDoc.close(); [/sourcecode]
+[sourcecode:javascript]
+// ampedDoc is the reference returned from AMP.attachShadowDoc
+ampedDoc.close();
+[/sourcecode]
 
 Cara ini akan memberi tahu AMP bahwa Anda tidak lagi menggunakan dokumen ini, dan akan mengosongkan memori serta overhead CPU.
 
