@@ -19,9 +19,9 @@ Komponen [`amp-animation`](../../../../documentation/components/reference/amp-an
 Sebuah [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) dasar adalah objek JSON yang terbuat dari bagian-bagian penting berikut ini:
 
 - Elemen komponen beranimasi, atau `selector`.
-- [Timing Properties](../../../../documentation/components/reference/amp-animation.md#timing-properties)
-- [Keyframes](../../../../documentation/components/reference/amp-animation.md#keyframes)
-- [Trigger](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
+- [Properti Penghitungan Waktu](../../../../documentation/components/reference/amp-animation.md#timing-properties)
+- [Keyframe](../../../../documentation/components/reference/amp-animation.md#keyframes)
+- [Pemicu](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
 
 ```
 <amp-animation layout="nodisplay" id="exampleAnimation">
