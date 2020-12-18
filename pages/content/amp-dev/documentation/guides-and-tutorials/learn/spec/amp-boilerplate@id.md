@@ -1,5 +1,5 @@
 ---
-"$title": AMP Boilerplate Code
+"$title": Kode Boilerplate AMP
 order: '9'
 formats:
 - websites
@@ -33,10 +33,10 @@ limitations under the License.
 
 ## `head > style[amp-boilerplate]` dan `noscript > style[amp-boilerplate]` <a name="head--styleamp-boilerplate-and-noscript--styleamp-boilerplate"></a>
 
-AMP HTML documents must contain the following boilerplate in their `head` tag. Validation is currently done with regular expressions, so it's important to keep mutations as minimal as possible. Currently, the allowed mutations are:
+Dokumen HTML AMP harus memuat boilerplate berikut ini di dalam tag `head`-nya. Validasi atau pengesahan saat ini dilakukan dengan ekspresi biasa, jadi penting untuk menjaga mutasi seminimal mungkin. Saat ini, mutasi yang diizinkan adalah:
 
-1. Inserting arbitrary whitespace immediately after the `style` tag opens, and immediately before it closes
-2. Replacing any space in the snippet below with arbitrary whitespace.
+1. Memasukkan ruang kosong (whitespace) sesuai keinginan tepat setelah tag `style` dibuka, dan tepat sebelum ditutup
+2. Menggantikan setiap ruang di snippet di bawah ini dengan ruang kosong sesuai keinginan.
 
 <!-- prettier-ignore-start -->
 
@@ -46,4 +46,4 @@ AMP HTML documents must contain the following boilerplate in their `head` tag. V
 
 <!-- prettier-ignore-end -->
 
-[tip] You can use the [boilerplate generator](https://amp.dev/boilerplate) to quickly setup a basic skeleton for your AMP page. It also provides snippets for structured data, to create a PWA and more! [/tip]
+[tip] Anda dapat menggunakan [pembuat boilerplate](https://amp.dev/boilerplate) agar dapat dengan cepat menyiapkan kerangka dasar untuk halaman AMP Anda. Ini juga menyediakan snippet untuk data terstruktur, untuk membuat PWA dan masih banyak lagi! [/tip]
