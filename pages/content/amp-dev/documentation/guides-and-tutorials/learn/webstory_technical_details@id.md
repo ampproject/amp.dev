@@ -20,7 +20,7 @@ Cerita Web secara teknis adalah halaman web tunggal yang dibuat dengan AMP dan m
 - Berisi tag` <meta charset="utf-8">` sebagai anak atau turunan pertama dari tag `<head>`.
 - Berisi tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` di dalam `<head>`-nya. Sebagai praktik terbaik, Anda seharusnya menyertakan skrip ini sedini mungkin di dalam `<head>`.
 - Berisi tag` <link rel="canonical" href="page/url">` di dalam `<head>`-nya dengan href yang mengarah ke URL Cerita Web.
-- Contain a `<meta name="viewport" content="width=device-width">` tag inside the `<head>` tag. It's also recommended to include initial-scale=1.
+- Berisi tag `<meta name="viewport" content="width=device-width">` di dalam `<head>`-nya. Disarankan juga untuk menyertakan skala inisial=1.
 - Berisi kode  [boilerplate AMP](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) di dalam tag `<head>`.
 
 Perbedaan antara halaman web AMP dan Cerita Web yang dibuat dengan AMP adalah komponen [`amp-story`](https://amp.dev/documentation/components/amp-story/?format=stories). Ini adalah satu-satunya anak langsung dari `<body>` dokumen dan harus berisi atribut `standalone`. Semua halaman, lapisan, dan elemen Cerita Web ditentukan di dalam tag `<amp-story>`.
