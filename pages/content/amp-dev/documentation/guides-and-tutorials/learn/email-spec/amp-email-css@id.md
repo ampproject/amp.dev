@@ -53,7 +53,7 @@ Menggunakan `<link rel="stylesheet" href="...">` tidak diizinkan di bagian mana 
 
 ### Pemilih sederhana <a name="simple-selectors"></a>
 
-- [Type selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) `elementname`
+- [Pemilih kelas](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) `.classname`
 - [Class selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) `.classname`
 - [ID selector](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) `#idname`
 - [Universal selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) `*`
