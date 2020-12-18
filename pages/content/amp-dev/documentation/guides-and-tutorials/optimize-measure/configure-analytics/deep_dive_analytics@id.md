@@ -54,7 +54,7 @@ Kode contoh di atas adalah untuk membantu Anda belajar, tetapi ini sama sekali b
 
 ## Ke mana data analisis dikirimkan: atribut type (jenis)
 
-AMP is designed to support two common patterns of data collection:
+AMP dirancang untuk mendukung dua pola pengumpulan data yang umum:
 
 - Penyerapan data oleh endpoint milik penayang untuk sistem analitik internal.
 - Penyerapan data oleh endpoint milik vendor untuk interoperabilitas dengan solusi vendor (misalnya, [Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html), [Chartbeat](http://support.chartbeat.com/docs/), [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)).
@@ -129,7 +129,7 @@ Beberapa penyedia analitik (termasuk Google Analytics) telah menyediakan konfigu
 
 Atribut [extraUrlParams](../../../../documentation/components/reference/amp-analytics.md#extra-url-params) menentukan parameter tambahan untuk ditambahkan ke untai kueri dari URL permintaan melalui konvensi "& foo=baz" biasa.
 
-Atribut `request-name` digunakan dalam konfigurasi pemicu untuk menentukan permintaan apa yang harus dikirim sebagai respons atas peristiwa tertentu. Atribut `request-value` berupa URL `https`. Nilai ini dapat mencakup token placeholder yang dapat merujuk ke permintaan atau variabel lain.
+Contoh [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) menambahkan parameter tambahan `cd1` ke permintaan dan menetapkan nilai parameter ke "AMP":
 
 ```js
   "extraUrlParams": {
@@ -252,7 +252,7 @@ AMP mengisi variabel dengan nilai sesuai urutan prioritas:
 3. `vars` di tingkat teratas yang ditempatkan dalam [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
 4. Nilai yang disediakan platform.
 
-In this example, there’s a remote configuration, variables defined at the top-level, in triggers, and at the platform level:
+Dalam contoh ini, terdapat konfigurasi jarak jauh, variabel yang ditentukan di level teratas, pada pemicu, dan di tingkat platform:
 
 ```html
 <amp-analytics config="http://example.com/config.json">
