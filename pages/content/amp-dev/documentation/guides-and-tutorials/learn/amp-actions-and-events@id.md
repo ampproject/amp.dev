@@ -143,8 +143,7 @@ Contohnya, yang berikut ini mungkin dilakukan di AMP:
     </td>
   </tr>
   <tr>
-    <td>
-<code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
+    <td> <code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
 </td>
     <td>
       <code>event.checked</code>
@@ -260,10 +259,7 @@ event.index</pre></td>
   <tr>
     <td><code>select</code></td>
     <td>Dipicu ketika suatu opsi dipilih atau tidak jadi dipilih.</td>
-    <td><pre>// Target element's "option" attribute value.
-event.targetOption
-// Array of "option" attribute values of all selected elements.
-event.selectedOptions</pre></td>
+    <td><pre>// Target element's "option" attribute value.<br>event.targetOption<br>// Array of "option" attribute values of all selected elements.<br>event.selectedOptions</pre></td>
   </tr>
 </table>
 
@@ -338,14 +334,12 @@ event.selectedOptions</pre></td>
   <tr>
     <td><code>submit-success</code></td>
     <td>Fired when the form submission response is success.</td>
-    <td><pre>// Response JSON.
-event.response</pre></td>
+    <td><pre>// Response JSON.<br>event.response</pre></td>
   </tr>
   <tr>
     <td><code>submit-error</code></td>
     <td>Dipicu ketika respons pengiriman formulir mengalami eror.</td>
-    <td><pre>// Response JSON.
-event.response</pre></td>
+    <td><pre>// Response JSON.<br>event.response</pre></td>
   </tr>
   <tr>
     <td><code>valid</code></td>
