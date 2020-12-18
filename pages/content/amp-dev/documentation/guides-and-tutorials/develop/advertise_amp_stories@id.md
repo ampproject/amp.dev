@@ -13,11 +13,11 @@ Cerita Web merupakan pengalaman layar penuh yang dapat diketuk dan membuat pemba
 
 Cerita Web menggunakan satu komponen [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) untuk menentukan kuantitas dan penempatan iklan.
 
-[`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) is a wrapper around the [`amp-ad`](../../../documentation/components/reference/amp-ad.md) component. It dynamically inserts one or multiple ads while the user consumes the story content. To ensure the best user experience:
+Ekstensi [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) adalah pembungkus komponen [`amp-ad`](../../../documentation/components/reference/amp-ad.md) yang secara dinamis memasukkan satu atau beberapa iklan sementara pengguna menikmati isi cerita. Untuk memastikan pengalaman pengguna terbaik:
 
 1. Iklan dirender sebelumnya dengan runtime Cerita Web, lalu dimasukkan. Ini menjamin bahwa pengguna tidak akan mendapatkan sajian iklan yang kosong atau tidak termuat.
 
-2. Ad density is optimised with content ratio to prevent oversaturation. The [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) component decides when and where to insert ads as the user progresses.
+2. Kepadatan iklan dioptimalkan dengan rasio konten untuk mencegah saturasi yang berlebihan. Ekstensi [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) memutuskan kapan dan di mana memasukkan iklan seiring kemajuan pengguna.
 
 Suatu Cerita Web menempatkan iklan pertama beberapa saat setelah dua halaman pertama dengan tujuan mengoptimalkan pendapatan monetisasi dan pengalaman pengguna.
 
@@ -25,11 +25,11 @@ Suatu Cerita Web menempatkan iklan pertama beberapa saat setelah dua halaman per
   <amp-img placeholder width="360" height="640" src="/static/img/docs/stampads/stamp_gif_still.png">
   </amp-img></amp-anim>
 
-[tip type="note"] **NOTE –** A longer Web Story will typically create more opportunities for ad placement. The exact placement of the ad algorithm will continue to be optimized over time. [/tip]
+[tip type="note"] **CATATAN –** Cerita AMP yang lebih panjang memberikan peluang yang lebih banyak untuk penempatan iklan. Penempatan algoritme iklan yang akurat akan terus dioptimalkan seiring waktu. [/tip]
 
 ## Interaksi pengguna
 
-Users can progress past ads the same way as normal story pages; by tapping the right two thirds of the screen.
+Pengguna dapat berinteraksi dengan iklan lalu dengan cara yang sama seperti halaman cerita normal; dengan mengetuk dua per tiga bagian kanan layar.
 
 {{ image('/static/img/docs/stampads/story_ad_ui.png', 304, 512, layout='intrinsic', alt='Image showing the area users can tap to skip an ad', caption='Pengguna dapat berinteraksi dengan iklan lalu dengan mengetuk dua per tiga bagian kanan layar.', align='' ) }}
 
@@ -57,11 +57,11 @@ Cerita Web tidak dapat mendukung [`amp-ad`](../../../documentation/components/re
 </amp-story>
 [/sourcecode]
 
-Unlike a normal [`amp-ad`](../../../documentation/components/reference/amp-ad.md), no `<fallback>` or `<placeholder>` is required, as Web Story ads are only displayed once fully rendered.
+Tidak seperti [`amp-ad`](../../../documentation/components/reference/amp-ad.md) yang biasa, tidak dibutuhkan `<fallback>` atau `<placeholder>`, karena iklan Cerita AMP hanya akan ditampilkan setelah sepenuhnya dirender.
 
-## Getting started with Story Ads
+## Mengintegrasikan Dukungan Server Iklan
 
-The easiest way to include ads in your Web Story is by serving ads from a supported ad server.
+Cara termudah untuk menyertakan iklan di dalam Cerita AMP Anda adalah dengan menyajikan iklan dan server iklan yang didukung.
 
 Server iklan yang saat ini mendukung iklan Cerita AMP:
 
@@ -73,6 +73,6 @@ Server iklan yang saat ini mendukung iklan Cerita AMP:
 
 Jika Anda adalah pengiklan yang tertarik menjalankan iklan Anda di dalam Cerita Web, harap [hubungi kami](mailto:story-ads-wg@google.com) untuk mendapatkan informasi lebih lanjut.
 
-Publishers can also place custom ads if they set up their own ad server. [The process is detailed here](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
+Penayang juga dapat menempatkan iklan kustom jika mereka membuat server iklan sendiri. [. Prosesnya diuraikan di sini](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
 
-[tip type="note"] Read [Traffic custom creatives in Web Stories](https://support.google.com/admanager/answer/9038178) for information about uploading ads to Google Ad Manager and checkout our guide on [Best practices for creating an AMP Story ad](story_ads_best_practices.md). [/tip]
+[tip type="note"] Bacalah [Kreatif kustom lalu lintas di Cerita Web](https://support.google.com/admanager/answer/9038178) untuk mendapatkan informasi tentang mengunggah iklan ke Google Ad Manager dan buka panduan kami tentang [Praktik terbaik untuk membuat iklan Cerita AMP](story_ads_best_practices.md). [/tip]
