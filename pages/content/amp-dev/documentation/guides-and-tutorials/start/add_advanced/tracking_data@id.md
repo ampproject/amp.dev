@@ -1,8 +1,10 @@
 ---
-$title: Melacak interaksi dengan analisis
+"$title": Melacak keterlibatan dengan analitik
+"$order": '4'
+description: Analytics platforms are commonly integrated into websites through inline JavaScript snippets and function calls, which trigger events that are sent back to the analytics system.
 ---
 
-Platform analisis biasanya diintegrasikan dengan situs melalui panggilan fungsi dan cuplikan JavaScript sebaris, yang akan memicu peristiwa yang dikirimkan kembali ke sistem analisis. AMP memberikan sintaks konfigurasi JSON yang fleksibel untuk membuat replika proses ini untuk beberapa partner analisis.
+Platform analitis pada umumnya diintegrasikan ke dalam situs web melalui snippet (cuplikan) JavaScript dan panggilan fungsi inline, ini memicu peristiwa yang dikirimkan kembali ke sistem analitis. AMP menyediakan sintaksis konfigurasi JSON yang fleksibel untuk mengulangi proses ini untuk beberapa mitra analitis.
 
 Berikut adalah contoh pelacakan Google Analytics berdasarkan JavaScript tradisional. Kami akan menulis ulang ini dalam format JSON [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), namun sebelum itu, mari kita lihat pendekatan tradisional:
 
