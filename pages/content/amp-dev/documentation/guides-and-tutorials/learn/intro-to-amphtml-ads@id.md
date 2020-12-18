@@ -115,7 +115,7 @@ Ya, ada dukungan bawaan untuk verifikasi dan deteksi keterlihatan dengan menggun
 
 #### Apakah iklan HTML AMP mendukung animasi berbasis lini masa?
 
-Ya. Terdapat dukungan bawaan untuk verifikasi dan deteksi visibilitas menggunakan [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) (mis., Tampilan Aktif Google mengintegrasikan cara ini). Ada juga vendor lain seperti MOAT yang secara aktif menerapkan dukungan untuk hal tersebut.
+Ya. Lihat [`amp-animation`](../../../documentation/components/reference/amp-animation.md).
 
 #### Sebagian besar iklan memiliki jalan keluar iklan yang dapat dikonfigurasi dan target yang dapat diketuk. Apakah iklan HTML AMP juga memiliki mekanisme yang sama?
 
