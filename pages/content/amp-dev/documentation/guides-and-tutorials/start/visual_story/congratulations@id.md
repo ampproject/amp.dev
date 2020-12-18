@@ -1,27 +1,24 @@
 ---
-$title: Selamat!
+"$title": Congratulations!
+"$order": '9'
+description: 'Anda telah berhasil menyelesaikan cerita AMP pertama Anda! Di dalam tutorial ini, Anda telah mempelajari cara: - Membuat cerita multi-halaman dengan menggunakan komponen amp-story'
+author: bpaduch
 ---
 
-Anda berhasil menyelesaikan artikel AMP pertama Anda!
+Anda telah berhasil menyelesaikan Cerita Web pertama Anda dengan menggunakan AMP!
 
-Dalam tutorial ini, Anda mempelajari cara:
+Di dalam tutorial ini, Anda akan mempelajari cara:
 
-- Membuat artikel multi-halaman menggunakan komponen [`amp-story`](../../../../documentation/components/reference/amp-story.md)
+- Membuat Cerita Web multi-halaman dengan menggunakan komponen [`amp-story`](../../../../documentation/components/reference/amp-story.md)
 - Membuat efek visual dengan banyak lapisan dalam satu halaman
-- Mengatur tata letak elemen pada halaman menggunakan template lapisan
+- Mengatur tata letak elemen pada halaman dengan menggunakan templat lapisan
 - Menambahkan audio yang diputar saat halaman ditampilkan
 - Menjalankan animasi elemen pada halaman
-- Mempertahankan interaksi pembaca dengan konten dengan menambahkan link terkait ke akhir artikel
+- Mempertahankan interaksi pembaca dengan konten Anda melalui penambahan tautan terkait di akhir cerita
 
-## Langkah berikutnya
+## Langkah-langkah berikutnya
 
-Pelajari artikel AMP lebih lanjut dari referensi berikut:
+Pelajari lebih lanjut tentang Cerita Web dan AMP dari berbagai sumber daya berikut ini:
 
 - [`amp-story`](../../../../documentation/components/reference/amp-story.md)
-- [praktik terbaik artikel AMP](../../../../documentation/guides-and-tutorials/start/create_successful_stories.md)
-
-[tip type="note"]
-
-Komponen [`amp-story`](../../../../documentation/components/reference/amp-story.md) masih bersifat **eksperimental**. Untuk mendaftar ke uji coba asli agar dapat memublikasikan halaman dengan komponen ini, silakan kunjungi <a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a>.
-
-[/tip]
+- [praktik-praktik terbaik cerita AMP](../../../../documentation/guides-and-tutorials/start/create_successful_stories.md)
