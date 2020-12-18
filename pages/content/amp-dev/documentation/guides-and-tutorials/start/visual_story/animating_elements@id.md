@@ -176,7 +176,7 @@ Halaman Cerita Web terakhir kita terdiri dari dua lapisan: lapisan pertama adala
 
 Muat ulang cerita AMP di browser Anda, dan pastikan halaman tersebut dirender dengan benar dan terlihat seperti ini:
 
-Halaman artikel AMP terakhir kita terdiri dari dua lapisan: lapisan pertama adalah kolase gambar hewan, sedangkan lapisan kedua menampilkan beberapa teks banner.  Untuk membuat halaman ini, **tambahkan** kode berikut tepat setelah halaman artikel Anda sebelumnya:
+{{ image('/static/img/docs/tutorials/amp_story/pg5-collage.png', 720, 1280, align='center third', alt='Static page 5' ) }}
 
 Kelihatannya bagus, tapi semuanya tampak statis! Ayo, kita animasikan!
 
