@@ -55,61 +55,75 @@ Ada berbagai komponen yang dapat Anda gunakan untuk menampilkan tautan dan konte
 <tbody>
   <tr>
     <td>heading</td>
-    <td>Memungkinkan Anda menentukan heading untuk mengelompokkan artikel. <pre class="nopreline">
-{
-  "type": "heading",
-  "text": "More to read"
-},
-</pre>   <br>   <figure class="alignment-wrapper half">     <amp-img src="/static/img/docs/tutorials/amp_story/bookend_heading.png" width="720" height="140" layout="responsive" alt="bookend heading"></amp-img>   </figure>   </td>
+    <td>Memungkinkan Anda menentukan tajuk untuk mengelompokkan artikel.   <pre class="nopreline">
+  {
+    "type": "heading",
+    "text": "More to read"
+  },
+  </pre>     <br>     <figure class="alignment-wrapper half">
+      <amp-img src="/static/img/docs/tutorials/amp_story/bookend_heading.png" width="720" height="140" layout="responsive" alt="bookend heading"></amp-img>
+    </figure></td>
   </tr>
   <tr>
     <td>small</td>
-    <td>Memungkinkan Anda untuk menautkan ke artikel terkait dengan opsi untuk menyertakan gambar kecil yang terkait. <pre class="nopreline">
-{
-  "type": "small",
-  "title": "Learn about cats",
-  "url": "https://wikipedia.org/wiki/Cat",
-  "image": "assets/bookend_cats.jpg"
-},
-</pre>   <br>   <figure class="alignment-wrapper half">     <amp-img src="/static/img/docs/tutorials/amp_story/bookend_small.png" width="720" height="267" layout="responsive" alt="bookend small article"></amp-img>   </figure> </td>
+    <td>Memungkinkan Anda untuk menautkan ke artikel terkait dengan opsi untuk menyertakan gambar kecil yang terkait.   <pre class="nopreline">
+  {
+    "type": "small",
+    "title": "Learn about cats",
+    "url": "https://wikipedia.org/wiki/Cat",
+    "image": "assets/bookend_cats.jpg"
+  },
+  </pre>     <br>     <pre data-md-type="custom_pre"><figure class="alignment-wrapper half">
+      <amp-img src="/static/img/docs/tutorials/amp_story/bookend_small.png" width="720" height="267" layout="responsive" alt="bookend small article"></amp-img>
+    </figure></pre>
+</td>
   </tr>
   <tr>
     <td>landscape</td>
-    <td>Memungkinkan Anda untuk menautkan ke artikel atau konten lain, seperti video. Gambar yang terkait dengan jenis ini berukuran lebih besar dan berformat lanskap. <pre class="nopreline">
-{
-  "type": "landscape",
-  "title": "Learn about border collies",
-  "url": "https://wikipedia.org/wiki/Border_Collie",
-  "image": "assets/bookend_dogs.jpg",
-  "category": "Dogs"
-},
-</pre>   <br>   <figure class="alignment-wrapper half">     <amp-img src="/static/img/docs/tutorials/amp_story/bookend_landscape.png" width="720" height="647" layout="responsive" alt="bookend landscape article"></amp-img>   </figure>   </td>
+    <td>Memungkinkan Anda untuk menautkan ke artikel atau konten lain, seperti video. Gambar yang terkait dengan jenis ini berukuran lebih besar dan berformat lanskap.   <pre class="nopreline">
+  {
+    "type": "landscape",
+    "title": "Learn about border collies",
+    "url": "https://wikipedia.org/wiki/Border_Collie",
+    "image": "assets/bookend_dogs.jpg",
+    "category": "Dogs"
+  },
+  </pre>     <br>     <pre data-md-type="custom_pre"><figure class="alignment-wrapper half">
+      <amp-img src="/static/img/docs/tutorials/amp_story/bookend_landscape.png" width="720" height="647" layout="responsive" alt="bookend landscape article"></amp-img>
+    </figure></pre>
+</td>
   </tr>
   <tr>
     <td>portrait</td>
-    <td>Memungkinkan Anda untuk menautkan ke berita atau konten lain.  Gambar yang terkait dengan jenis ini berukuran lebih besar dan berformat potret. <pre class="nopreline">
-{
-  "type": "portrait",
-  "title": "Learn about macaws",
-  "url": "https://wikipedia.org/wiki/Macaw",
-  "image": "assets/bookend_birds.jpg",
-  "category": "birds"
-},
-</pre>   <br>   <figure class="alignment-wrapper half">     <amp-img src="/static/img/docs/tutorials/amp_story/bookend_portrait.png" width="720" height="1018" layout="responsive" alt="bookend portrait article"></amp-img>   </figure>   </td>
+    <td>Memungkinkan Anda untuk menautkan ke berita atau konten lain.  Gambar yang terkait dengan jenis ini berukuran lebih besar dan berformat potret.  <pre class="nopreline">
+  {
+    "type": "portrait",
+    "title": "Learn about macaws",
+    "url": "https://wikipedia.org/wiki/Macaw",
+    "image": "assets/bookend_birds.jpg",
+    "category": "birds"
+  },
+  </pre>     <br>     <pre data-md-type="custom_pre"><figure class="alignment-wrapper half">
+      <amp-img src="/static/img/docs/tutorials/amp_story/bookend_portrait.png" width="720" height="1018" layout="responsive" alt="bookend portrait article"></amp-img>
+    </figure></pre>
+</td>
   </tr>
   <tr>
     <td>cta-link</td>
-    <td>Memungkinkan Anda untuk menentukan link pesan ajakan yang ditampilkan sebagai tombol (misalnya, baca selengkapnya, Berlangganan). <pre class="nopreline">
-{
-  "type": "cta-link",
-  "links": [
-    {
-      "text": "Learn more",
-      "url": "https://amp.dev/about/stories.html"
-    }
-  ]
-}
-</pre>   <br>   <figure class="alignment-wrapper half">     <amp-img src="/static/img/docs/tutorials/amp_story/bookend_cta.png" width="720" height="137" layout="responsive" alt="bookend cta"></amp-img>   </figure>   </td>
+    <td>Memungkinkan Anda untuk menentukan tautan ajakan aksi yang ditampilkan sebagai tombol (cth.: baca selengkapnya, Berlangganan).   <pre class="nopreline">
+  {
+    "type": "cta-link",
+    "links": [
+      {
+        "text": "Learn more",
+        "url": "https://amp.dev/about/stories.html"
+      }
+    ]
+  }
+  </pre>     <br>     <pre data-md-type="custom_pre"><figure class="alignment-wrapper half">
+      <amp-img src="/static/img/docs/tutorials/amp_story/bookend_cta.png" width="720" height="137" layout="responsive" alt="bookend cta"></amp-img>
+    </figure></pre>
+</td>
   </tr>
 </tbody>
 </table>
