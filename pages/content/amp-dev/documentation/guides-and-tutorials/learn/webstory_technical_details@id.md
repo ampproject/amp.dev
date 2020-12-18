@@ -139,12 +139,12 @@ Enkode video untuk menyesuaikan mutu untuk pengoptimalan yang disarankan berikut
 
 <table>
   <tr>
-   <td>MP4    </td>
-   <td>-crf 23    </td>
+   <td>MP4</td>
+   <td>-crf 23</td>
   </tr>
   <tr>
-   <td>WEBM    </td>
-   <td>-b:v 1M    </td>
+   <td>WEBM</td>
+   <td>-b:v 1M</td>
   </tr>
 </table>
 
@@ -159,11 +159,11 @@ Jika Anda hanya dapat menyediakan format video tunggal, sediakan MP4. Jika mungk
 <table>
   <tr>
    <td>MP4, HLS, dan DASH</td>
-   <td>H.264    </td>
+   <td>H.264</td>
   </tr>
   <tr>
-   <td>WEBM    </td>
-   <td>VP9    </td>
+   <td>WEBM</td>
+   <td>VP9</td>
   </tr>
 </table>
 
