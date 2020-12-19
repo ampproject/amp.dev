@@ -28,7 +28,7 @@ examples.use(cookieParser());
 const COOKIE_NAME = 'amp-subscription-settings';
 const COOKIE_EXPIRATION_DATE = 365 * 24 * 60 * 60 * 1000; // 365 days in ms
 const COOKIE_VALUES = new Set(['watching', 'only-mentions', 'ignoring']);
-const COOKIE_DEFAULT = 'watching';
+const COOKIE_DEFAULT = 'only-mentions';
 
 examples.get('/subscription', upload.none(), (request, response) => {
   setMaxAge(response, 0);
@@ -36,8 +36,12 @@ examples.get('/subscription', upload.none(), (request, response) => {
   const currentSubscription = readSubscription(request);
   response.json({
     currentSubscription,
-    [currentSubscription]: true,
-  });
+    options: Array.from(COOKIE_VALUES, value => ({
+      value,
+      isSelected: value === currentSubscription,
+      text: `${value[0].toUpperCase()}${value.substring(1).replaceAll('-', ' ')}`
+    }))
+  })
 });
 
 examples.post('/subscription', upload.none(), async (request, response) => {

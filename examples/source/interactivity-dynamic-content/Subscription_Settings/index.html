@@ -1,4 +1,6 @@
 <!---
+standaloneSnippets: true
+preview: true
 author: TomerAberbach
 formats:
   - email
@@ -25,7 +27,7 @@ formats:
     <!-- ## Setup -->
 
     <!--
-      We need an [`amp-list`](/documentation/components/amp-list) to query the server for the user's current subscription settings on email or page load.
+      We need an [`amp-list`](/documentation/components/amp-list) to query the server for the user's current subscription setting on email or page load.
     -->
     <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
 
@@ -35,7 +37,7 @@ formats:
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
 
     <!--
-      We'll also need [`amp-form`](/documentation/components/amp-form) to update the user's subscription settings on the server when they select a new setting from the icon dropdown.
+      We'll also need [`amp-form`](/documentation/components/amp-form) to update the user's subscription setting on the server when they select a new setting from the icon dropdown.
     -->
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
 
@@ -45,10 +47,14 @@ formats:
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 
     <style amp-custom>
-      amp-list {
-        min-height: 30px;
+      .ap-o-code-preview-preview {
         font-family: 'Roboto', sans-serif;
         font-size: 0.875em;
+        height: 80px;
+      }
+
+      .ap-o-code-preview-preview > * {
+        margin: 10px;
       }
 
       .relative {
@@ -68,31 +74,15 @@ formats:
         height: 30px;
       }
 
-      .hidden {
-        display: none;
-      }
-
       .disabled {
         opacity: 0.3;
-      }
-
-      #form {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-      }
-
-      #form > * + * {
-        margin-left: 5px;
       }
 
       .icon > * {
         visibility: hidden;
       }
 
-      .icon.watching > .watching,
-      .icon.only-mentions > .only-mentions,
-      .icon.ignoring > .ignoring {
+      .visible {
         visibility: visible;
       }
 
@@ -101,7 +91,7 @@ formats:
         cursor: pointer;
       }
 
-      .disabled #select {
+      .disabled #select, select[disabled] {
         cursor: progress;
       }
     </style>
@@ -113,32 +103,38 @@ formats:
 
       The server responds to [GET](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET) and [POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST) requests at `<% base_path %>/subscription`.
 
-      It responds to GET requests with one of the following JSON objects (depending on the user's current subscription settings):
-      ```json
-      {
-        "currentSubscription": "watching",
-        "watching": true
-      }
-      ```
+      It responds to GET requests with a JSON object like the following:
       ```json
       {
         "currentSubscription": "only-mentions",
-        "only-mentions": true
+        "options": [
+          {
+            "value": "watching",
+            "isSelected": false,
+            "text": "Watching"
+          },
+          {
+            "value": "only-mentions",
+            "isSelected": true,
+            "text": "Only mentions"
+          },
+          {
+            "value": "ignoring",
+            "isSelected": false,
+            "text": "Ignoring"
+          }
+        ]
       }
       ```
-      ```json
-      {
-        "currentSubscription": "ignoring",
-        "ignoring": true
-      }
-      ```
-      The purpose of the second property, which may seem unnecessary, is explained in a later section.
+      `currentSubscription` and `isSelected` vary depending on the user's current subscription setting and `isSelected` is only `true` for one of the objects in `options`.
 
       The server expects POST requests to specify one of the subscription settings above (e.g. `ignoring`) for a `nextSubscription` field in its form data, and will update the user's current subscription setting to the specified value.
     -->
 
     <!--
       ### AMP
+
+      #### Step 1: Basic Dropdown
 
       We start with a native [`select`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select) element for our dropdown and fill it with our supported subscription settings. The `select` element is a great choice because it is highly accessible on all platforms.
     -->
@@ -149,65 +145,220 @@ formats:
     </select>
 
     <!--
-      To query the server for the user's current subscription settings on email or page load and pre-select the user's current setting in the dropdown, we wrap the `select` element in an `amp-list` and set its `src` appropriately.
+      #### Step 2: Fetching the Current Subscription Setting
 
-      We use an `amp-mustache` template to render the `select` element with the `option` corresponding to the user's subscription setting having a `selected` attribute. To understand why the code is duplicative, consider that the `selected` attribute is a [boolean attribute](https://www.w3.org/TR/2011/WD-html5-author-20110809/common-microsyntaxes.html#boolean-attribute) and review the [`amp-mustache` restrictions](https://amp.dev/documentation/components/amp-mustache/#restrictions).
+      To query the server for the user's current subscription setting on email or page load and pre-select the user's current setting in the dropdown, we wrap the `select` element in an `amp-list` and set its `src` to the URL where our server is listening for GET requests.
+
+      We use an `amp-mustache` template to render the `select` element and ensure that the `option` element corresponding to the user's subscription setting has the `selected` attribute. To understand why the code is duplicative, consider that the `selected` attribute is a [boolean attribute](https://www.w3.org/TR/2011/WD-html5-author-20110809/common-microsyntaxes.html#boolean-attribute) and review the [`amp-mustache` restrictions](/documentation/components/amp-mustache/#restrictions).
+
+      Finally, we add a [placeholder and fallback](/documentation/guides-and-tutorials/develop/style_and_layout/placeholders) to keep the user informed about the state of the user interface and gracefully handle any issues.
     -->
-    <amp-list src="<% base_path %>/subscription" binding="refresh" items="." single-item layout="intrinsic">
+    <amp-list src="<% base_path %>/subscription" binding="refresh" items="." single-item layout="fill">
       <template type="amp-mustache">
         <select>
-          {{#watching}}<option selected value="watching">Watching</option>{{/watching}}
-          {{^watching}}<option value="watching">Watching</option>{{/watching}}
-
-          {{#only-mentions}}<option selected value="only-mentions">Only mentions</option>{{/only-mentions}}
-          {{^only-mentions}}<option value="only-mentions">Only mentions</option>{{/only-mentions}}
-
-          {{#ignoring}}<option selected value="ignoring">Ignoring</option>{{/ignoring}}
-          {{^ignoring}}<option value="ignoring">Ignoring</option>{{/ignoring}}
+          {{#options}}
+            {{#isSelected}}
+              <option value="{{value}}" selected>
+                {{text}}
+              </option>
+            {{/isSelected}}
+            {{^isSelected}}
+              <option value="{{value}}">
+                {{text}}
+              </option>
+            {{/isSelected}}
+          {{/options}}
         </select>
       </template>
+      <div placeholder>Loading...</div>
+      <div fallback>Something went wrong. Please refresh</div>
     </amp-list>
 
+    <!--
+      Note that the `amp-list` is annotated with [`single-item`](/documentation/components/amp-list#single-item) because our server responds to GET requests with a single logical value (the subscription setting) and we only want the template to be invoked once for the response. Setting [`items="."`](/documentation/components/amp-list#items) ensures that the template can access the response object's root fields.
+    -->
 
     <!--
-    ## Final
+      #### Step 3: Updating the Subscription Setting on Selection
+
+      To update the user's subscription setting on the server when they select a new setting in the `select` element, we start by wrapping the `select` element in an [AMP `form`](/documentation/components/amp-form) element, setting its `method` to `post`, and setting its `action-xhr` attribute to the URL where our server is listening for POST requests.
+
+      The `name` attribute of the `select` element is set to `nextSubscription` because `nextSubscription` is the name of the form data field where the server expects the user's new subscription setting to be in the POST request (see the [Server section](<% base_path %>/#server)) and the `select` element is the element containing the user's selected subscription setting.
+
+      Finally, we trigger the submission of the form when the `select` element's value is changed by using the [`on` attribute](/documentation/guides-and-tutorials/learn/common_attributes#on) to attach an event handler that invokes the `form` element's [`submit` action](/documentation/guides-and-tutorials/learn/amp-actions-and-events#form_1) to the `select` element's [`change` event](/documentation/guides-and-tutorials/learn/amp-actions-and-events#input-elements). Note that we gave the `form` element an `id` so that we could refer to it in the event handler.
+
+      You can test that the code is functional by selecting a new subscription setting, refreshing the page, and noticing that the `select` element's subscription setting on page load is the one you selected!
     -->
-    <amp-list
-      src="<% base_path %>/subscription" binding="refresh"
-      items="." single-item layout="responsive">
+    <amp-list src="<% base_path %>/subscription" binding="refresh" items="." single-item layout="fill">
       <template type="amp-mustache">
-        <form
-          id="form" action-xhr="<% base_path %>/subscription" method="post"
-          on="submitting: AMP.setState({ subscription: { error: false } });
-              submit-success: AMP.setState({ subscription: { current: subscription.next, next: null } });
-              submit-error: AMP.setState({ subscription: { next: null, error: true } });">
-          <div class="relative icon-sized" [class]="(subscription.next ? 'disabled' : '') + ' relative icon-sized'">
-            <div
-              class="{{currentSubscription}} icon relative icon-sized"
-              [class]="(subscription.current || '{{currentSubscription}}') + ' icon relative icon-sized'">
-              <amp-img class="watching absolute" width="30" height="30" src="/static/samples/img/watching.png"></amp-img>
-              <amp-img class="only-mentions absolute" width="30" height="30" src="/static/samples/img/only-mentions.png"></amp-img>
-              <amp-img class="ignoring absolute" width="30" height="30" src="/static/samples/img/ignoring.png"></amp-img>
-            </div>
-            <select
-              name="nextSubscription"
-              id="select" class="absolute icon-sized"
-              on="change: AMP.setState({ subscription: { next: event.value } }), form.submit;">
-              {{#watching}}<option selected value="watching">Watching</option>{{/watching}}
-              {{^watching}}<option value="watching">Watching</option>{{/watching}}
-
-              {{#only-mentions}}<option selected value="only-mentions">Only mentions</option>{{/only-mentions}}
-              {{^only-mentions}}<option value="only-mentions">Only mentions</option>{{/only-mentions}}
-
-              {{#ignoring}}<option selected value="ignoring">Ignoring</option>{{/ignoring}}
-              {{^ignoring}}<option value="ignoring">Ignoring</option>{{/ignoring}}
-            </select>
-          </div>
-          <div id="error-message" class="hidden" [class]="subscription.error ? '' : 'hidden'">
-            Something went wrong. Please try again
-          </div>
+        <form action-xhr="<% base_path %>/subscription" method="post" id="form1">
+          <select name="nextSubscription" on="change: form1.submit;">
+            {{#options}}
+              {{#isSelected}}
+                <option value="{{value}}" selected>
+                  {{text}}
+                </option>
+              {{/isSelected}}
+              {{^isSelected}}
+                <option value="{{value}}">
+                  {{text}}
+                </option>
+              {{/isSelected}}
+            {{/options}}
+          </select>
         </form>
       </template>
+      <div placeholder>Loading...</div>
+      <div fallback>Something went wrong. Please refresh</div>
+    </amp-list>
+
+    <!--
+      #### Step 4: Disabling While Submitting
+
+      The implementation from [step 3](<% base_path %>#step-3:-updating-the-subscription-setting-on-selection) works, but its user experience could be improved. After selecting a new subscription setting from the dropdown, it is unclear when the form is submitting or submitted. Furthermore, nothing prevents the user from attempting to select a new subscription setting while the form is still submitting. Ideally the `select` element would be [disabled](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled) while the form is submitting (to indicate that the form is submitting and to prevent the user from changing the `select` element's value while it is being submitted) and become enabled again once the form finishes submitting.
+
+      However, there's a problem with this approach: [values of disabled inputs are not submitted with a form](https://www.w3.org/TR/PR-html40-971107/interact/forms.html#:~:text=Values%20of%20disabled%20controls%20are%20not%20submitted%20with%20a%20form.). Under different circumstances we might consider using the [`readonly`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly) attribute instead of the `disabled` attribute to avoid this problem, but the [`select` element does not support the `readonly` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly#wikiArticle:~:text=The%20attribute%20is%20not%20supported%20or%20relevant%20to%20%3Cselect%3E%20or). Fortunately, we can solve this problem by submitting the `select` element's value through a new [hidden `input` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/hidden) that we ensure always contains the same value as the `select` element. We don't need to disable this new element because users cannot interact with or see it.
+
+      To set up this solution we start by adding a hidden `input` element, and moving the `name` of the `select` element to the hidden `input` element because the latter's value will now be submitted instead of the former's value. To keep the hidden `input` element's value in sync with the `select` element's value we update a new `subscription.next` state variable using [`AMP.setState`](/documentation/components/amp-bind#updating-state-variables-with-amp.setstate()) whenever the `select` element's value changes (in our existing event handler) and [bind](/documentation/components/amp-bind#bindings) the hidden `input` element's `value` attribute to the state variable.
+
+      To disable the `select` element we need a state variable that represents whether the form is currently submitting that we can use in the `select` element's `disabled` attribute binding. We reuse the `subscription.next` state variable by ensuring it is `null` when the form is _not_ submitting by updating `subscription.next` to `null` on the `submit-success` event of the `form` element. Finally, we bind the `select` element's `disabled` attribute to `subscription.next != null` because the state variable is not null when the form is submitting (and the `select` element should therefore be disabled).
+
+      Note that despite the `disabled` attribute being a [boolean attribute](https://www.w3.org/TR/2011/WD-html5-author-20110809/common-microsyntaxes.html#boolean-attribute), we can still effectively bind it because [`amp-bind` will remove the attribute when the binding expression is `false`](/documentation/components/amp-bind#bindings:~:text=Boolean%20expression%20results%20toggle%20boolean%20attributes.,false%2C%20the%20controls%20attribute%20is%20removed.).
+    -->
+    <amp-list src="<% base_path %>/subscription" binding="refresh" items="." single-item layout="fill">
+      <template type="amp-mustache">
+        <form action-xhr="<% base_path %>/subscription" method="post" id="form2"
+          on="submit-success: AMP.setState({ subscription: { next: null } });">
+          <input type="hidden" name="nextSubscription" [value]="subscription.next">
+          <select
+            on="change: AMP.setState({ subscription: { next: event.value } }), form2.submit;"
+            [disabled]="subscription.next != null">
+            {{#options}}
+              {{#isSelected}}
+                <option value="{{value}}" selected>
+                  {{text}}
+                </option>
+              {{/isSelected}}
+              {{^isSelected}}
+                <option value="{{value}}">
+                  {{text}}
+                </option>
+              {{/isSelected}}
+            {{/options}}
+          </select>
+        </form>
+      </template>
+      <div placeholder>Loading...</div>
+      <div fallback>Something went wrong. Please refresh</div>
+    </amp-list>
+
+    <!--
+      #### Step 5: Handling Form Submission Failure
+
+      To improve the user experience further we should handle form submission failure ([step 4](/documentation/examples/interactivity-dynamic-content/subscription_settings#step-4:-disabling-while-submitting) does not). We can display an error message and revert the `select` element to its previous value when the form fails to submit.
+
+      To display an error message when the form fails to submit we add element containing our error message to the `form` element's children, and annotate the child element with the [`submit-error` attribute](/documentation/components/amp-form#submit-error). The attribute ensures that the element is only visible after a failed form submission.
+
+      Reverting the `select` element's value to its previous value when the form fails to submit is more involved. We can't set the `select` element's value adhoc so we need to fully manage the `select` element's value by binding the `selected` attribute of each of its `option` elements. This requires maintaining the `select` element's current value in a `subscription.current` state variable and the element's previous value in a `subscription.previous` state variable.
+     -->
+    <amp-list src="<% base_path %>/subscription" binding="refresh" items="." single-item layout="fill">
+      <template type="amp-mustache">
+        <form action-xhr="<% base_path %>/subscription" method="post" id="form3"
+          on="submit-success: AMP.setState({ subscription: { next: null } });
+            submit-error:
+              AMP.setState({
+                subscription: {
+                  current: subscription.previous,
+                  next: null
+                }
+              });">
+          <input type="hidden" name="nextSubscription" [value]="subscription.next">
+          <select
+            on="change:
+                AMP.setState({
+                  subscription: {
+                    previous: (subscription && subscription.current) || '{{currentSubscription}}',
+                    current: event.value,
+                    next: event.value
+                  }
+                }),
+                form3.submit;"
+            [disabled]="subscription.next != null">
+            {{#options}}
+              {{#isSelected}}
+                <option value="{{value}}" selected [selected]="subscription.current == '{{value}}'">
+                  {{text}}
+                </option>
+              {{/isSelected}}
+              {{^isSelected}}
+                <option value="{{value}}" [selected]="subscription.current == '{{value}}'">
+                  {{text}}
+                </option>
+              {{/isSelected}}
+            {{/options}}
+          </select>
+          <div submit-error>Something went wrong. Please try again</div>
+        </form>
+      </template>
+      <div placeholder>Loading...</div>
+      <div fallback>Something went wrong. Please refresh</div>
+    </amp-list>
+
+    <!--
+    #### Step 6: Icon Dropdown
+    -->
+    <amp-list src="<% base_path %>/subscription" binding="refresh" items="." single-item layout="fill">
+      <template type="amp-mustache">
+        <form action-xhr="<% base_path %>/subscription" method="post" id="form4"
+          on="submit-success: AMP.setState({ subscription: { next: null } });
+            submit-error:
+              AMP.setState({
+                subscription: {
+                  current: subscription.previous,
+                  next: null
+                }
+              });">
+          <div class="relative icon-sized" [class]="(subscription.next ? 'disabled ' : ' ') + 'relative icon-sized'">
+            <div class="icon relative icon-sized">
+              {{#options}}
+                <amp-img width="30" height="30" src="/static/samples/img/{{value}}.png"
+                   class="{{#isSelected}}visible {{/isSelected}}absolute"
+                   [class]="(subscription.current == '{{value}}' ? 'visible ' : ' ') + 'absolute'">
+                </amp-img>
+              {{/options}}
+            </div>
+            <input type="hidden" name="nextSubscription" [value]="subscription.next">
+            <select
+              id="select" class="absolute icon-sized"
+              on="change:
+                  AMP.setState({
+                    subscription: {
+                      previous: (subscription && subscription.current) || '{{currentSubscription}}',
+                      current: event.value,
+                      next: event.value
+                    }
+                  }),
+                  form4.submit;"
+              [disabled]="subscription.next != null">
+              {{#options}}
+                {{#isSelected}}
+                  <option value="{{value}}" selected [selected]="subscription.current == '{{value}}'">
+                    {{text}}
+                  </option>
+                {{/isSelected}}
+                {{^isSelected}}
+                  <option value="{{value}}" [selected]="subscription.current == '{{value}}'">
+                    {{text}}
+                  </option>
+                {{/isSelected}}
+              {{/options}}
+            </select>
+          </div>
+          <div submit-error>Something went wrong. Please try again</div>
+        </form>
+      </template>
+      <div placeholder>Loading...</div>
+      <div fallback>Something went wrong. Please refresh</div>
     </amp-list>
   </body>
 </html>
