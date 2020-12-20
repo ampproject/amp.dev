@@ -324,7 +324,7 @@ formats:
     <!--
       #### Step 6: Icon Dropdown
 
-      Styling the `select` element itself to look like an icon using only CSS supported by email clients isn't feasible. We need another way. Ideally we could do away with the `select` element's persistent user interface, which shows the element's current value, and show a different icon for each dropdown state in its place, but keep the element's ephemeral dropdown, what you see on click.
+      Styling the `select` element itself to look like an icon using only CSS supported by email clients isn't feasible. Instead, we'll hide the `select` element's persistent user interface, which shows the element's current value, and show a different icon for each dropdown state in its place, but keep the element's ephemeral dropdown, what you see on click.
 
       Fortunately, styling `select` primarily affects the persistent user interface while styling `option` primarily affects the ephemeral dropdown. We can use this fact to hide the former, but keep the latter. Of the three common choices for hiding an element using CSS ([`display: none;`, `visibility: hidden;`, and `opacity: 0;`](https://magnusbenoni.com/difference-between-display-visibility-opacity)), `opacity: 0;` is most suited because we want to keep the element in the tab order as well as keep receiving its click events:
       ```css
