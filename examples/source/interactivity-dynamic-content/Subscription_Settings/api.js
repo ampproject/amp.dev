@@ -36,12 +36,14 @@ examples.get('/subscription', upload.none(), (request, response) => {
   const currentSubscription = readSubscription(request);
   response.json({
     currentSubscription,
-    options: Array.from(COOKIE_VALUES, value => ({
+    options: Array.from(COOKIE_VALUES, (value) => ({
       value,
       isSelected: value === currentSubscription,
-      text: `${value[0].toUpperCase()}${value.substring(1).replaceAll('-', ' ')}`
-    }))
-  })
+      text: `${value[0].toUpperCase()}${value
+        .substring(1)
+        .replaceAll('-', ' ')}`,
+    })),
+  });
 });
 
 examples.post('/subscription', upload.none(), async (request, response) => {
