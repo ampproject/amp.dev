@@ -20,7 +20,29 @@ creation:
       height: 209
       fit: contain
     formats:
-      - email      
+      - email
+  - name: Dyspatch Email Builder
+    url: https://www.dyspatch.io/
+    type: Email Production
+    description: Save time by creating HTML and AMP emails simultaneously with the Dyspatch drag-and-drop email builder.
+    image:
+      src: /static/img/tools/dyspatch.png
+      width: 600
+      height: 96
+      fit: contain
+    formats:
+      - email
+  - name: Mailmodo
+    url: https://mailmodo.com
+    type: Email Editor
+    description: Create AMP emails with inline forms so that your users can take actions right inside the email. Just like an app!
+    image:
+      src: /static/img/tools/mailmondo.png
+      width: 659
+      height: 122
+      fit: contain
+    formats:
+      - email
   - name: Stripo Email Editor
     url: https://stripo.email/amp-support/
     type: Email Templates Editor

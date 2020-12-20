@@ -1,8 +1,10 @@
 ---
-$title: Zmień swoją witrynę AMP w PWA
-$order: 10
+"$title": Zmień swoją witrynę AMP w PWA
+"$order": '10'
 description: Dzięki buforowaniu zasobów w przeglądarce PWA jest w stanie dostarczać użytkownikowi dane, zasoby i strony offline utrzymujące zaangażowanie i zapewniające informacje.
-tutorial: true
+tutorial: 'true'
+formats:
+- websites
 author: crystalonscript
 ---
 
@@ -30,7 +32,29 @@ Użytkownicy naszej witryny mogą mieć słaby dostęp sieci podczas imprezy, ki
 
 Do swojego repozytorium dodaj plik o nazwie `manifest.json` z następującym kodem:
 
-[sourcecode:JSON] { "short_name": "LyLy", "name": "Lyrical Lyghtning", "icons": [ { "src": "./images/amplogo192.png", "type": "image/png", "sizes": "192x192" }, { "src": "./images/amplogo512.png", "type": "image/png", "sizes": "512x512" } ], "start_url": "/index.html", "background_color": "#222325", "display": "standalone", "scope": "/", "theme_color": "#222325" } [/sourcecode]
+[sourcecode:JSON]
+{
+"short_name": "LyLy",
+"name": "Lyrical Lyghtning",
+"icons": [
+{
+"src": "./images/amplogo192.png",
+"type": "image/png",
+"sizes": "192x192"
+},
+{
+"src": "./images/amplogo512.png",
+"type": "image/png",
+"sizes": "512x512"
+}
+],
+"start_url": "/index.html",
+"background_color": "#222325",
+"display": "standalone",
+"scope": "/",
+"theme_color": "#222325"
+}
+[/sourcecode]
 
 # Dodanie skryptu AMP Service Worker
 
@@ -42,7 +66,10 @@ Mechanizm AMP Service Worker po zainstalowaniu automatycznie [buforuje skrypty A
 
 Utwórz plik o nazwie `sw.js` i dodaj następujący kod:
 
-[sourcecode:js] importScripts('https://cdn.ampproject.org/sw/amp-sw.js'); AMP_SW.init(); [/sourcecode]
+[sourcecode:js]
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+AMP_SW.init();
+[/sourcecode]
 
 Dzięki zaledwie dwóm linijkom kodu można zaimportować mechanizm AMP Service Worker do swojego skryptu Service Worker i zainicjować go.
 
@@ -52,13 +79,20 @@ Witryny internetowe AMP używają składnika [`<amp-install-serviceworker>`](../
 
 Umieść wymagany znacznik skryptu w sekcji head pliku `index.html` oraz element `<amp-install-serviceworker>` w sekcji `<body>`:
 
-[sourcecode:html] …
+[sourcecode:html]
+…
 
-<script async="" custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 
-… ... {amp-install-serviceworker0} {/amp-install-serviceworker0}
+…
+...
+<amp-install-serviceworker src="/sw.js"
+           data-iframe-src="install-sw.html"
+           layout="nodisplay">
+</amp-install-serviceworker>
 
-
+</body>
+[/sourcecode]
 
 [tip type="important"] **Ważne —** aby móc buforować całą zawartość witryny, plik service worker należy serwować z katalogu głównego (`/sw.js`). [/tip]
 
@@ -67,12 +101,13 @@ Element `<amp-install-serviceworker>` instaluje skrypt service worker, tworząc 
 [sourcecode:html]
 
 <!doctype html>
-
-<title>installing service worker</title> <script type="text/javascript">
+<title>installing service worker</title>
+<script type='text/javascript'>
  if('serviceWorker' in navigator) {
    navigator.serviceWorker.register('./sw.js');
  };
-</script> [/sourcecode]
+</script>
+[/sourcecode]
 
 Ramka iframe rejestruje plik AMP Service Worker w przeglądarce.
 
@@ -86,7 +121,15 @@ Nasza aplikacja festiwalu muzycznego będzie buforować zasoby obrazów, wstępn
 
 Mechanizm AMP Service Worker można skonfigurować do [buforowania zasobów](https://github.com/ampproject/amp-sw/tree/master/src/modules/asset-caching) takich jak obrazy, filmy i czcionki. Użyjemy go do buforowania naszego obrazu tła i logotypu AMP. Otwórz plik `sw.js` i zaktualizuj go przy użyciu poniższego kodu:
 
-[sourcecode:js] importScripts('https://cdn.ampproject.org/sw/amp-sw.js'); AMP_SW.init({ assetCachingOptions: [{ regexp: /.(png|jpg)/, cachingStrategy: 'CACHE_FIRST' }] }); [/sourcecode]
+[sourcecode:js]
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+AMP_SW.init({
+assetCachingOptions: [{
+regexp: /\.(png|jpg)/,
+cachingStrategy: 'CACHE_FIRST'
+}]
+});
+[/sourcecode]
 
 Określiliśmy strategię buforowania [cache first](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-falling-back-to-network). To znaczy, że aplikacja będzie starała się najpierw serwować zbuforowane obrazy, zanim zażąda czegokolwiek z sieci. Jest to szczególnie przydatne w przypadku tej aplikacji, ponieważ nie będziemy aktualizować naszego obrazu tła ani logotypu AMP.
 
@@ -94,13 +137,29 @@ Określiliśmy strategię buforowania [cache first](https://developers.google.co
 
 AMP Service Worker wstępnie ładuje linki, które mają atrybut `data-rel=prefetch`. Dzięki temu użytkownicy mogą przeglądać strony w trybie offline, nawet jeśli jeszcze ich nie odwiedzili. Dodamy ten atrybut do naszego znacznika linku do pliku `lineup.html`.
 
-[sourcecode:html] ... <a href="/lineup.html" data-rel="prefetch">See Full Lineup</a> ... [/sourcecode]
+[sourcecode:html]
+...
+<a href="/lineup.html" data-rel="prefetch">See Full Lineup</a>
+...
+[/sourcecode]
 
 # Pokazywanie strony trybu offline
 
 W celu poradzenia sobie z nieoczekiwanymi przypadkami lub kliknięciami linków do stron, których nie pobraliśmy wstępnie, dodamy stronę trybu offline, aby oferować spójne doświadczenie użytkownika, które jest „zorientowane na markę”, w przeciwieństwie do pokazywania ogólnej strony trybu offline przeglądarki. Pobierz plik [`offline.html` stąd](/static/files/tutorials/offline.zip) i zaktualizuj plik `sw.js` przy użyciu następującego kodu:
 
-[sourcecode:js] importScripts('https://cdn.ampproject.org/sw/amp-sw.js'); AMP_SW.init({ assetCachingOptions: [{ regexp: /.(png|jpg)/, cachingStrategy: 'CACHE_FIRST' }], offlinePageOptions: { url: '/offline.html', assets: [] } }); [/sourcecode]
+[sourcecode:js]
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+AMP_SW.init({
+assetCachingOptions: [{
+regexp: /\.(png|jpg)/,
+cachingStrategy: 'CACHE_FIRST'
+}],
+offlinePageOptions: {
+url: '/offline.html',
+assets: []
+}
+});
+[/sourcecode]
 
 # Testowanie PWA
 

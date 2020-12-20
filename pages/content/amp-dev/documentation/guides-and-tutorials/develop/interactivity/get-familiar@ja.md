@@ -3,21 +3,81 @@ $title: スターター コードについて
 ---
 
 ## AMP のボイラープレート
+
 AMP ページは、安定したパフォーマンスのために制限がいくつか課された HTML ページです。AMP ページには、AMP ページであることを示す特別なマークアップが含まれています。
 
 基本的な構成の AMP ページは次のようになります。
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html amp>
-<head>
-   <meta charset="utf-8">
-   <link rel="canonical" href="hello-world.html">
-   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-   <script async src="https://cdn.ampproject.org/v0.js"></script>
-</head>
-<body>Hello World!</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="canonical" href="hello-world.html" />
+    <meta name="viewport" content="width=device-width" />
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+    Hello World!
+  </body>
 </html>
 ```
 
@@ -26,10 +86,26 @@ AMP ページは、安定したパフォーマンスのために制限がいく�
 チュートリアルのスターター コード（[`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html)）は、基本的な AMP ページとそのページ コンテンツ（画像、テキストなど）を作成するだけでなく、いくつかの AMP コンポーネントも追加します。
 
 ```html
-<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
-<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
-<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-<script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+<script
+  async
+  custom-element="amp-carousel"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+></script>
+<script
+  async
+  custom-template="amp-mustache"
+  src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"
+></script>
+<script
+  async
+  custom-element="amp-form"
+  src="https://cdn.ampproject.org/v0/amp-form-0.1.js"
+></script>
+<script
+  async
+  custom-element="amp-selector"
+  src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"
+></script>
 ```
 
 AMP コンポーネントでさらに機能や UI コンポーネントが加わることにより、AMP ページのインタラクティビティが向上します。スターター コードでは次のような AMP コンポーネントを使用します。

@@ -1,7 +1,9 @@
 ---
-$title: Cómo agregar AMP a los correos electrónicos existentes
-$order: 1
+"$title": Cómo agregar AMP a los correos electrónicos existentes
+"$order": '1'
 author: CrystalOnScript
+formats:
+- email
 ---
 
 El formato de AMP para correos electrónicos está integrado como un nuevo segmento de MIME. Este se visualizará si su correo electrónico se envía a un proveedor que es compatible con AMP para correos electrónicos, ¡si no es así, no se preocupe! El proveedor le mostrará su HTML o texto sin formato de respaldo. Utilice esta guía para incluir AMP en sus correos electrónicos.
@@ -27,7 +29,7 @@ Hello World in plain text!
 Content-Type: text/x-amp-html; charset="UTF-8"
 
 <!doctype html>
-<html ⚡4email>
+<html ⚡4email data-css-strict>
 <head>
   <meta charset="utf-8">
   <style amp4email-boilerplate>body{visibility:hidden}</style>

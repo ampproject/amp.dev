@@ -6,13 +6,6 @@ teaser:
 toc: true
 ---
 
-<!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md.
-Please do not change this file.
-If you have found a bug or an issue please
-have a look and request a pull request there.
--->
-
 ## نظرة عامة <a></a>
 
 إذا كنت تستخدم أداة توفير البرامج كخدمة للناشرين لفهم الزيارات فهمًا أفضل، فقد ترغب في دمج خدمتك في `amp-analytics`. إذ سيمكِّن هذا الدمج عملائك من عرض أنماط الزيارات لصفحات AMP HTML الخاصة بهم.

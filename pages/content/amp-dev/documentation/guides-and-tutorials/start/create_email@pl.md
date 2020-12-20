@@ -1,8 +1,10 @@
 ---
-$title: Utwórz swoją pierwszą wiadomość e-mail AMP
-$order: 0
+"$title": Utwórz swoją pierwszą wiadomość e-mail AMP
+"$order": '0'
 description: Dowiedz się, co odróżnia wiadomości e-mail AMP, tworząc swoją pierwszą wiadomość.
-tutorial: true
+tutorial: 'true'
+formats:
+- email
 author: CrystalOnScript
 ---
 
@@ -20,7 +22,7 @@ Plac zabaw AMP obsługuje format AMP dla poczty e-mail, umożliwiając tworzenie
 
 ```html
 <!doctype html>
-<html ⚡4email>
+<html ⚡4email data-css-strict>
 <head>
   <meta charset="utf-8">
   <script async src="https://cdn.ampproject.org/v0.js"></script>

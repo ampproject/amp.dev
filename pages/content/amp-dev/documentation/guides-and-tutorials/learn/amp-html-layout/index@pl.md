@@ -1,8 +1,13 @@
 ---
-$title: System układu AMPHTML
-order: 1
+"$title": System układu AMPHTML
+order: '1'
+formats:
+- websites
+- email
+- stories
+- ads
 teaser:
-  text:  Omówienie
+  text: 'Omówienie '
 ---
 
 <!--
@@ -28,7 +33,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-## Omówienie <a name="overview"></a>
+##  Omówienie
 
 Głównym celem systemu układu jest zapewnienie elementom AMP możliwości wyrażania swojego układu w sposób umożliwiający środowisku uruchomieniowemu wywnioskowanie rozmiaru elementów przed wykonaniem wywołań jakichkolwiek zasobów zdalnych, takich jak JavaScript i dane. Jest to o tyle istotne, że znacznie ogranicza to pauzy renderowania i przewijania.
 
@@ -61,11 +66,14 @@ AMP zapewnia zestaw układów, które określają sposób działania składnika 
 
 **Przykład**: prosty, responsywny obraz, w którym atrybuty width i height są używane do określenia współczynnika proporcji.
 
-[sourcecode:html] <amp-img src="/img/amp.jpg" width="1080" height="610" layout="responsive" alt="an image"
-
->
->
-
+[sourcecode:html]
+<amp-img
+  src="/img/amp.jpg"
+  width="1080"
+  height="610"
+  layout="responsive"
+  alt="an image"
+></amp-img>
 [/sourcecode]
 
 Obsługiwane wartości atrybutu `layout`:
@@ -131,11 +139,16 @@ Gdy atrybut `sizes` jest określony wraz z atrybutami `width` i `height`, ustawi
 
 W poniższym przykładzie, jeśli okienko na ekranie jest szersze niż `320px`, obraz będzie miał szerokość 320px, w przeciwnym razie będzie miał szerokość 100vw (100% szerokości okienka na ekranie).
 
-[sourcecode:html] <amp-img src="https://acme.org/image1.png" width="400" height="300" layout="responsive" sizes="(min-width: 320px) 320px, 100vw"
-
+[sourcecode:html]
+<amp-img
+  src="https://acme.org/image1.png"
+  width="400"
+  height="300"
+  layout="responsive"
+  sizes="(min-width: 320px) 320px, 100vw"
 >
-
- [/sourcecode]
+</amp-img>
+[/sourcecode]
 
 ### `disable-inline-width` <a name="disable-inline-width"></a>
 
@@ -145,11 +158,17 @@ Atrybut `sizes` ustawi samodzielnie na elemencie styl inline `width`. Podczas pa
 
 W poniższym przykładzie szerokość elementu `<amp-img>` nie jest zmieniana, a atrybut `sizes` jest używany tylko do wybrania jednego ze źródeł z `srcset`.
 
-[sourcecode:html] <amp-img src="https://acme.org/image1.png" width="400" height="300" layout="responsive" sizes="(min-width: 320px) 320px, 100vw" disable-inline-width
-
+[sourcecode:html]
+<amp-img
+  src="https://acme.org/image1.png"
+  width="400"
+  height="300"
+  layout="responsive"
+  sizes="(min-width: 320px) 320px, 100vw"
+  disable-inline-width
 >
-
- [/sourcecode]
+</amp-img>
+[/sourcecode]
 
 ### `heights` <a name="heights"></a>
 
@@ -164,11 +183,15 @@ Gdy atrybut `heights` jest określony wraz z atrybutami `width` i `height`, usta
 
 W poniższym przykładzie wysokość obrazu będzie domyślnie wynosiła 80% szerokości, ale jeśli okienko na ekranie ma szerokość większą niż `500px`, wysokość jest ograniczona do `200px`. Jako że atrybut `heights` jest określony wraz z atrybutami `width` i `height`, domyślnie ustawiany jest układ `responsive`.
 
-[sourcecode:html] <amp-img src="https://acme.org/image1.png" width="320" height="256" heights="(min-width:500px) 200px, 80%"
-
+[sourcecode:html]
+<amp-img
+  src="https://acme.org/image1.png"
+  width="320"
+  height="256"
+  heights="(min-width:500px) 200px, 80%"
 >
-
- [/sourcecode]
+</amp-img>
+[/sourcecode]
 
 ### `media` <a name="media"></a>
 
@@ -178,31 +201,42 @@ Większość elementów AMP obsługuje atrybut `media`. Wartość atrybutu `medi
 
 W poniższym przykładzie mamy 2 obrazy z wzajemnie wykluczającymi się zapytaniami o media. W zależności od szerokości ekranu zostanie pobrany i wyrenderowany jeden z tych dwóch obrazów. Atrybut `media` jest dostępny na wszystkich elementach AMP, więc może być używany z elementami innymi niż obrazy, takimi jak reklamy.
 
-[sourcecode:html] <amp-img media="(min-width: 650px)" src="wide.jpg" width="466" height="355" layout="responsive"
-
->
->
-
-<amp-img media="(max-width: 649px)" src="narrow.jpg" width="527" height="193" layout="responsive"
-
->
->
-
+[sourcecode:html]
+<amp-img
+  media="(min-width: 650px)"
+  src="wide.jpg"
+  width="466"
+  height="355"
+  layout="responsive"
+></amp-img>
+<amp-img
+  media="(max-width: 649px)"
+  src="narrow.jpg"
+  width="527"
+  height="193"
+  layout="responsive"
+></amp-img>
 [/sourcecode]
 
 ### `placeholder` <a name="placeholder"></a>
 
 Atrybut `placeholder` można ustawić w dowolnym elemencie HTML, nie tylko elementach AMP. Atrybut `placeholder` wskazuje, że element oznaczony tym atrybutem działa jako element zastępczy nadrzędnego elementu AMP. Atrybut ten można umieścić w dowolnym elemencie HTML, który jest bezpośrednim elementem podrzędnym elementu AMP. Domyślnie elementy zastępcze elementu AMP są wyświetlane natychmiast, nawet jeśli zasoby elementu AMP nie zostały pobrane lub zainicjowane. Gdy element AMP jest już gotowy, zazwyczaj ukrywa elementy zastępcze i pokazuje swoją zawartość. Dokładny sposób działania elementu zastępczego zależy od implementacji elementu. AMP
 
-[sourcecode:html] {amp-anim0} {amp-img1}{/amp-img1} {/amp-anim0} [/sourcecode]
+[sourcecode:html]
+<amp-anim src="animated.gif" width="466" height="355" layout="responsive">
+  <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+</amp-anim>
+[/sourcecode]
 
 ### `fallback` <a name="fallback"></a>
 
 Atrybut `fallback` można ustawić w dowolnym elemencie HTML, nie tylko elementach AMP. Fallback jest konwencją, która pozwala na poinformowanie czytelnika, że dany element nie jest obsługiwany przez przeglądarkę. Jeśli jest określony, element fallback musi być bezpośrednim elementem podrzędnym elementu AMP. Dokładny sposób działania elementu fallback zależy od implementacji elementu AMP.
 
-[sourcecode:html] {amp-anim0}{/amp-anim0}
-
-  <div fallback="">Nie można odtwarzać animowanych obrazów na tym urządzeniu.</div>  [/sourcecode]
+[sourcecode:html]
+<amp-anim src="animated.gif" width="466" height="355" layout="responsive">
+  <div fallback>Cannot play animated images on this device.</div>
+</amp-anim>
+[/sourcecode]
 
 ### `noloading` <a name="noloading"></a>
 

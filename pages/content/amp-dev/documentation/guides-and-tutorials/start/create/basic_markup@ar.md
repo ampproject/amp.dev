@@ -12,7 +12,7 @@ $title: إنشاء صفحة AMP HTML
     <meta charset="utf-8">
     <title>Hello, AMPs</title>
     <link rel="canonical" href="{{doc.url}}">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -44,7 +44,7 @@ $title: إنشاء صفحة AMP HTML
   - أن تحتوي على العلامتين `<head>` و`<body>` (هما علامتان اختياريتان في HTML).
   - أن تحتوي على العلامة <span dir="ltr" class="nowrap">`<link rel="canonical" href="$SOME_URL">`</span> داخل عنوانها، والتي تشير إلى إصدار HTML العادي لمستند <span dir="ltr" class="nowrap">AMP HTML</span> أو إلى نفسها إذا لم يكن إصدار HTML من هذا القبيل موجودًا.
   - أن تحتوي على العلامة <span dir="ltr" class="nowrap">`<meta charset="utf-8">`</span> بوصفها التابع الأول للعلامة head.
-  - أن تحتوي على العلامة <span dir="ltr" class="nowrap">`<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">`</span> داخل العلامة head. من الموصى به أيضًا تضمين <span dir="ltr" class="nowrap">initial-scale=1</span>.
+  - أن تحتوي على العلامة <span dir="ltr" class="nowrap">`<meta name="viewport" content="width=device-width">لموصى به أيضًا تضمين <span dir="ltr" class="nowrap">initial-scale=1</span>.
   - أن تحتوي على العلامة <span dir="ltr" class="nowrap">`<script async src="https://cdn.ampproject.org/v0.js"></script>`</span> بوصفها العنصر الأخير في head (يشمل هذا مكتبة <span dir="ltr" class="nowrap">AMP JS</span> ويقوم بتحميلها).
   - أن تحتوي على ما يلي في العلامة `<head>`:
     <span dir="ltr">`<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`</span>

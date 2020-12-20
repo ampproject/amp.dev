@@ -1,7 +1,9 @@
 ---
-$title: Utilizar el visor de AMP para renderizar correos electrónicos
-$order: 5
+"$title": Utilizar el visor de AMP para renderizar correos electrónicos
+"$order": '5'
 author: alabiaga
+formats:
+- email
 ---
 
 Los clientes de correo electrónico que busquen apoyar a AMP for Email deben utilizar el [visor de AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) para alojar los correos electrónicos de AMP de sus emisores. Un visor desarrollado con la [biblioteca del visor de AMP](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration) resume un documento de AMP y habilita [funciones](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/CAPABILITIES.md) que permiten la comunicación bidireccional con el documento AMP mediante postMessage. Estas funciones incluyen autorizar el control en la visibilidad del correo electrónico, retransmitir las métricas del usuario y facilitar los medios para garantizar la seguridad de las solicitudes XHR realizadas desde el correo electrónico.
@@ -64,8 +66,7 @@ Este es un ejemplo trivial en el que no hay dependencia de la biblioteca  [musta
 
 En el siguiente diagrama se representa un ejemplo más real sobre cómo un documento de AMP en un visor del cliente de correo electrónico con una función `viewerRenderTemplate` podría manejar la representación de la plantilla [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email).
 
-<amp-img alt="Viewer render template diagram" layout="responsive" width="372" height="279" src="/static/img/docs/viewer_render_template_diagram.png">
-</amp-img>
+<amp-img alt="Viewer render template diagram" layout="responsive" width="372" height="279" src="/static/img/docs/viewer_render_template_diagram.png"></amp-img>
 
 El tiempo de ejecución de AMP enviaría la solicitud de recuperación de datos del componente [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email) al visor, que a su vez enviaría esta solicitud a un servidor para el cliente de correo electrónico. En el servidor se introducirá esta URL y los resultados de la búsqueda de la URL a través de varios servicios, posiblemente inspeccionando la validez de la URL, el contenido de los datos devueltos desde esa URL y renderizando las plantillas de [mustache](https://mustache.github.io/) con esos datos. Después devolvería esa plantilla renderizada y la enviaría al visor en el siguiente formato de respuesta JSON.
 

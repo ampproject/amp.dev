@@ -1,9 +1,12 @@
 ---
-$title: Integre sus herramientas analíticas con AMP
-order: 1
+"$title": Integre sus herramientas analíticas con AMP
+order: '1'
+formats:
+- websites
+- stories
 teaser:
   text: Overview
-toc: true
+toc: 'true'
 ---
 
 <!--
@@ -60,11 +63,10 @@ Los servicios de administración de etiquetas cuentan con dos opciones para inte
 
 El concepto del endpoint es idéntico al concepto estándar que se describió a detalle en la sección anterior. El concepto de la configuración consiste en crear una configuración única para amp-analytics y que sea específica para cada editor, e incluya todos los paquetes analíticos que sean compatibles con dicha configuración. Un editor incluiría la configuración utilizando una sintaxis similar a ésta:
 
-[sourcecode:html] <amp-analytics config="https://my-awesome-tag-manager.example.com/user-id.json"
-
->
->
-
+[sourcecode:html]
+<amp-analytics
+  config="https://my-awesome-tag-manager.example.com/user-id.json"
+></amp-analytics>
 [/sourcecode]
 
 Para adoptar este concepto, consulte la documentación que le explicará cómo integrar a los editores con AMP Analytics.

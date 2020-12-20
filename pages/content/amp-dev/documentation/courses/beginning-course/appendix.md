@@ -53,7 +53,7 @@ Since we want our AMP pages to be optimized for mobile devices, and also be resp
 So, the following tag must be placed within the `<head>` tag of our AMP page. Add it below the shortcut icon link.
 
 [sourcecode:html]
-{% raw %}<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+{% raw %}<meta name="viewport" content="width=device-width">
 {% endraw %}[/sourcecode]
 
 If you refresh your page, it should now look a bit better in small screens, like this:
@@ -121,7 +121,7 @@ Since we want our AMP pages to be optimized for mobile devices and also be respo
 The following tag must be placed within the `<head>` tag of our AMP page. Add it below the shortcut icon link.
 
 [sourcecode:html]
-{% raw %}<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+{% raw %}<meta name="viewport" content="width=device-width">
 {% endraw %}[/sourcecode]
 
 If you refresh your page, it should now look a bit better in small screens, like this:

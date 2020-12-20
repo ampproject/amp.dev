@@ -1,9 +1,11 @@
 ---
-$title: Specyfikacja AMP dla reklam
-order: 3
+"$title": Specyfikacja AMP dla reklam
+order: '3'
+formats:
+- ads
 teaser:
   text: _Jeśli chcesz zaproponować zmiany w standardzie, umieść komentarz na [Intent
-toc: true
+toc: 'true'
 ---
 
 <!--
@@ -40,34 +42,54 @@ O ile poniżej nie określono inaczej, kreacja musi przestrzegać wszystkich zas
 Ponadto kreacje muszą być zgodne z następującymi regułami:
 
 <table>
-<thead>
-<tr>
+<thead><tr>
   <th>Reguła</th>
   <th>Uzasadnienie</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr>
-<td>Musi być ujęta w znaczniki <code></code> lub <code></code>.</td>
+<td>Musi być ujęta w znaczniki <code>&lt;html ⚡4ads></code> lub <code>&lt;html amp4ads></code>.</td>
 <td>Pozwala walidatorom zidentyfikować dokument kreacji jako ogólny dokument AMP lub ograniczony dokument reklamy AMPHTML i odpowiednio go wysłać.</td>
 </tr>
 <tr>
-<td>Musi zawierać <code><script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script></code> jako skrypt uruchomieniowy, zamiast <code>https://cdn.ampproject.org/v0.js</code>.</td>
+<td>Musi zawierać <code>&lt;script async src="https://cdn.ampproject.org/amp4ads-v0.js">&lt;/script></code> jako skrypt uruchomieniowy, zamiast <code>https://cdn.ampproject.org/v0.js</code>.</td>
 <td>Umożliwia dostosowane do serwowanych w ramkach iframe reklam AMPHTML o różnym pochodzeniu sposoby działania środowiska uruchomieniowego.</td>
 </tr>
 <tr>
-<td>Nie może zawierać znacznika <code><link rel="canonical"></code>.</td>
+<td>Nie może zawierać znacznika <code>&lt;link rel="canonical"></code>.</td>
 <td>Kreacje reklamowe nie mają „wersji kanonicznej bez AMP” i nie będą niezależnie indeksowane przez wyszukiwarkę, więc odwołania do samej siebie byłyby bezużyteczne.</td>
 </tr>
 <tr>
-<td>Może zawierać w sekcji head kodu HTML opcjonalne tagi meta jako identyfikatory, w formacie <code><meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code>. Te tagi meta muszą być umieszczone przed skryptem <code>amp4ads-v0.js</code>. Wartości <code>vendor</code> i <code>id</code> to ciągi zawierające jedynie znaki [0-9a-zA-Z_-]. Wartość <code>type</code> to albo <code>creative-id</code>, albo <code>impression-id</code>.</td>
-<td>Za pomocą tych niestandardowych identyfikatorów można zidentyfikować wyświetlenie lub kreację. Mogą być pomocne przy zgłaszaniu i debugowaniu.<br><br><p>Przykład:</p> <pre> <meta name="amp4ads-id" content="vendor=adsense,type=creative-id,id=1283474"> </pre>
-<meta name="amp4ads-id" content="vendor=adsense,type=impression-id,id=xIsjdf921S">
+<td>Może zawierać w sekcji head kodu HTML opcjonalne tagi meta jako identyfikatory, w formacie <code>&lt;meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code>. Te tagi meta muszą być umieszczone przed skryptem <code>amp4ads-v0.js</code>. Wartości <code>vendor</code> i <code>id</code> to ciągi zawierające jedynie znaki [0-9a-zA-Z_-]. Wartość <code>type</code> to albo <code>creative-id</code>, albo <code>impression-id</code>.</td>
+<td>Za pomocą tych niestandardowych identyfikatorów można zidentyfikować wyświetlenie lub kreację. Mogą być pomocne przy zgłaszaniu i debugowaniu.<br><br><p>Przykład:</p>
+<pre>
+&lt;meta name="amp4ads-id"
+  content="vendor=adsense,type=creative-id,id=1283474">
+&lt;meta name="amp4ads-id"
+  content="vendor=adsense,type=impression-id,id=xIsjdf921S"></pre>
 </td>
 </tr>
 <tr>
-<td>Śledzenie widoczności za pomocą składnika <code><amp-analytics></amp-analytics></code> może dotyczyć jedynie selektora całej reklamy, <code>"visibilitySpec": { "selector": "amp-ad" }</code> zgodnie z definicją w <a href="https://github.com/ampproject/amphtml/issues/4018">Issue #4018</a> i <a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a>. W szczególności nie może ono być skierowane na żadne selektory elementów w kreacji reklamowej.</td>
-<td>W niektórych przypadkach reklamy AMPHTML mogą decydować się na wyrenderowanie reklamy w ramce iframe. W tych przypadkach analiza strony hosta może być ukierunkowana tylko na całą ramkę iframe i nie będzie miała dostępu do żadnych precyzyjniejszych selektorów.<br><br> <p>Przykład:</p> <pre><br>{amp-analytics4}   <script type="application/json"><br>  {<br>    "requests": {<br>      "visibility": "https://example.com/nestedAmpAnalytics"<br>    },<br>    "triggers": {<br>      "visibilitySpec": {<br>      "selector": "amp-ad",<br>      "visiblePercentageMin": 50,<br>      "continuousTimeMin": 1000<br>      }<br>    }<br>  }<br>  </script> {/amp-analytics4}</pre><br> <p>Ta konfiguracja wysyła żądanie do adresu URL <code>https://example.com/nestedAmpAnalytics</code>, gdy 50% załączonej reklamy było stale widoczne na ekranie przez 1 sekundę.</p></td>
+<td>Śledzenie widoczności za pomocą składnika <code>&lt;amp-analytics>&lt;/amp-analytics></code> może dotyczyć jedynie selektora całej reklamy, <code>"visibilitySpec": { "selector": "amp-ad" }</code> zgodnie z definicją w <a href="https://github.com/ampproject/amphtml/issues/4018">Issue #4018</a> i <a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a>. W szczególności nie może ono być skierowane na żadne selektory elementów w kreacji reklamowej.</td>
+<td>W niektórych przypadkach reklamy AMPHTML mogą decydować się na wyrenderowanie reklamy w ramce iframe. W tych przypadkach analiza strony hosta może być ukierunkowana tylko na całą ramkę iframe i nie będzie miała dostępu do żadnych precyzyjniejszych selektorów.<br><br> <p>Przykład:</p> <pre>
+&lt;amp-analytics id="nestedAnalytics">
+  &lt;script type="application/json">
+  {
+    "requests": {
+      "visibility": "https://example.com/nestedAmpAnalytics"
+    },
+    "triggers": {
+      "visibilitySpec": {
+      "selector": "amp-ad",
+      "visiblePercentageMin": 50,
+      "continuousTimeMin": 1000
+      }
+    }
+  }
+  &lt;/script>
+&lt;/amp-analytics>
+</pre> <p>Ta konfiguracja wysyła żądanie do adresu URL  <code>https://example.com/nestedAmpAnalytics</code>, gdy 50% załączonej reklamy było stale widoczne na ekranie przez 1 sekundę.</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -77,9 +99,11 @@ Ponadto kreacje muszą być zgodne z następującymi regułami:
 Kreacje reklamowe AMPHTML wymagają innej i znacznie prostszej linii stylu boilerplate niż [ogólne dokumenty AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md):
 
 [sourcecode:html]
-
-<style amp4ads-boilerplate=""><br>  body {<br>    visibility: hidden;<br>  }<br></style>
-
+<style amp4ads-boilerplate>
+  body {
+    visibility: hidden;
+  }
+</style>
 [/sourcecode]
 
 *Uzasadnienie:* styl `amp-boilerplate` ukrywa zawartość sekcji body aż do momentu, gdy środowisko uruchomieniowe AMP jest gotowe i może ją pokazać. Jeśli obsługa JavaScript jest wyłączona lub załadowanie środowiska uruchomieniowego AMP nie powiodło się, domyślny gotowy kod zapewnia, że mimo to zawartość zostanie ostatecznie wyświetlona. Jeśli jednak JavaScript jest całkowicie wyłączony, reklamy AMPHTML nie będą uruchamiane i nigdy nie zostanie wyświetlona żadna reklama, więc nie ma potrzeby stosowania sekcji `<noscript>`. W przypadku braku środowiska uruchomieniowego AMP większość maszynerii, na której opierają się reklamy AMPHTML (jak analityka śledzenia widoczności lub składnik `amp-img` do wyświetlania treści) nie będzie dostępna, więc lepiej jest nie wyświetlać żadnej reklamy niż reklamę działającą wadliwie.
@@ -91,12 +115,10 @@ Należy pamiętać, że obowiązują te same zasady dotyczące modyfikacji tekst
 ### CSS <a name="css"></a>
 
 <table>
-<thead>
-<tr>
+<thead><tr>
   <th>Reguła</th>
   <th>Uzasadnienie</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
   <tr>
     <td>Właściwości <code>position:fixed</code> i <code>position:sticky</code> są zabronione w CSS kreacji.</td>
@@ -116,8 +138,7 @@ Należy pamiętać, że obowiązują te same zasady dotyczące modyfikacji tekst
   </tr>
   <tr>
     <td>Prefiksy zależne od dostawcy są do celów walidacji uznawane za aliasy tego samego symbolu bez prefiksu. To znaczy, że jeśli symbol <code>foo</code> jest zabroniony przez reguły walidacji CSS, symbol <code>-vendor-foo</code> będzie również zabroniony.</td>
-    <td>Niektóre właściwości poprzedzone prefiksami dostawcy zapewniają funkcjonalność równoważną z właściwościami, które są w inny sposób zakazane lub ograniczone przez te reguły.<br><br><p>Przykład: zarówno <code>-webkit-transition</code> i <code>-moz-transition</code> są uznawane za aliasy symbolu <code>transition</code>. Będą one dozwolone tylko w kontekstach, w których dozwolony będzie sam element <code>transition</code> (patrz  sekcja <a href="#selectors">Selektory</a> poniżej).</p>
-</td>
+    <td>Niektóre właściwości poprzedzone prefiksami dostawcy zapewniają funkcjonalność równoważną z właściwościami, które są w inny sposób zakazane lub ograniczone przez te reguły.<br><br><p>Przykład: zarówno <code>-webkit-transition</code> i <code>-moz-transition</code> są uznawane za aliasy symbolu <code>transition</code>. Będą one dozwolone tylko w kontekstach, w których dozwolony będzie sam element <code>transition</code> (patrz  sekcja <a href="#selectors">Selektory</a> poniżej).</p> </td>
   </tr>
 </tbody>
 </table>
@@ -134,13 +155,24 @@ Właściwości `transition` i `animation` są dozwolone tylko w selektorach, kt�
 
 **Dobrze**
 
-[sourcecode:css] .box { transform: rotate(180deg); transition: transform 2s; } [/sourcecode]
+[sourcecode:css]
+.box {
+  transform: rotate(180deg);
+  transition: transform 2s;
+}
+[/sourcecode]
 
 **Źle**
 
 Właściwość niedozwolona w klasie CSS.
 
-[sourcecode:css] .box { color: red; // non-animation property not allowed in animation selector transform: rotate(180deg); transition: transform 2s; } [/sourcecode]
+[sourcecode:css]
+.box {
+  color: red; // non-animation property not allowed in animation selector
+  transform: rotate(180deg);
+  transition: transform 2s;
+}
+[/sourcecode]
 
 ##### Właściwości podlegające przejściu i i animacji <a name="transitionable-and-animatable-properties"></a>
 
@@ -148,23 +180,45 @@ Jedynymi właściwościami, które podlegają przejściu są opacity i transform
 
 **Dobrze**
 
-[sourcecode:css] transition: transform 2s; [/sourcecode]
+[sourcecode:css]
+transition: transform 2s;
+[/sourcecode]
 
 **Źle**
 
-[sourcecode:css] transition: background-color 2s; [/sourcecode]
+[sourcecode:css]
+transition: background-color 2s;
+[/sourcecode]
 
 **Dobrze**
 
-[sourcecode:css] @keyframes turn { from { transform: rotate(180deg); }
+[sourcecode:css]
+@keyframes turn {
+  from {
+    transform: rotate(180deg);
+  }
 
-to { transform: rotate(90deg); } } [/sourcecode]
+  to {
+    transform: rotate(90deg);
+  }
+}
+[/sourcecode]
 
 **Źle**
 
-[sourcecode:css] @keyframes slidein { from { margin-left: 100%; width: 300%; }
+[sourcecode:css]
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
 
-to { margin-left: 0%; width: 100%; } } [/sourcecode]
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+[/sourcecode]
 
 ### Dozwolone rozszerzenia i wbudowane obiekty AMP <a name="allowed-amp-extensions-and-builtins"></a>
 
@@ -184,7 +238,7 @@ Poniżej widnieją *dozwolone* moduły rozszerzeń AMP i znaczniki AMP wbudowywa
 - [amp-img](https://amp.dev/documentation/components/amp-img)
 - [amp-layout](https://amp.dev/documentation/components/amp-layout)
 - [amp-lightbox](https://amp.dev/documentation/components/amp-lightbox)
-- amp-mraid, na zasadzie eksperymentu. Jeśli rozważasz jego użycie, otwórz zgłoszenie w [wg-ads](https://github.com/ampproject/wg-ads/issues/new).
+- amp-mraid, na zasadzie eksperymentu. Jeśli rozważasz jego użycie, otwórz zgłoszenie w [wg-monetization](https://github.com/ampproject/wg-ads/issues/new).
 - [amp-mustache](https://amp.dev/documentation/components/amp-mustache)
 - [amp-pixel](https://amp.dev/documentation/components/amp-pixel)
 - [amp-position-observer](https://amp.dev/documentation/components/amp-position-observer)
@@ -256,35 +310,7 @@ Większość pominięć wynika z kwestii wydajności albo tego, że znaczniki ni
 
 Tagi SVG nie znajdują się w przestrzeni nazw HTML5. Są one wymienione poniżej bez identyfikatorów sekcji.
 
-`<svg>`
-`<g>`
-`<path>`
-`<glyph>`
-`<glyphref>`
-`<marker>`
-`<view>`
-`<circle>`
-`<line>`
-`<polygon>`
-`<polyline>`
-`<rect>`
-`<text>`
-`<textpath>`
-`<tref>`
-`<tspan>`
-`<clippath>`
-`<filter>`
-`<lineargradient>`
-`<radialgradient>`
-`<mask>`
-`<pattern>`
-`<vkern>`
-`<hkern>`
-`<defs>`
-`<use>`
-`<symbol>`
-`<desc>`
-`<title>`
+`<svg>``<g>``<path>``<glyph>``<glyphref>``<marker>``<view>``<circle>``<line>``<polygon>``<polyline>``<rect>``<text>``<textpath>``<tref>``<tspan>``<clippath>``<filter>``<lineargradient>``<radialgradient>``<mask>``<pattern>``<vkern>``<hkern>``<defs>``<use>``<symbol>``<desc>``<title>`
 
 #### 4.9 Dane tabelaryczne <a name="49-tabular-data"></a>
 

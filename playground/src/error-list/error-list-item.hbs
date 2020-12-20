@@ -2,9 +2,9 @@
   <div>
     <p class="message">
       {{ message }}
-      <a href="{{ specUrl }}" target="_blank" rel="noopener">
-        Learn&nbsp;more
-      </a>
+      {{#if specUrl}}
+      <a href="{{ specUrl }}" target="_blank" rel="noopener">Learn&nbsp;more</a>
+      {{/if}}
     </p>
     <div class="location">Line {{ line }}, Column {{ col }}</div>
   </div>

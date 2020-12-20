@@ -1,6 +1,8 @@
 ---
-$title: Tworzenie reklamy AMPHTML
+"$title": Tworzenie reklamy AMPHTML
 description: Z tego samouczka dowiesz się jak stworzyć od podstaw reklamę AMPHTML, którą można serwować na stronach AMP i bez AMP.
+formats:
+- ads
 ---
 
 {{ image('/static/img/docs/ads/amp-ad-framed-final.png', 597, 1240, align='right third', caption='Completed AMPHTML image ad') }}

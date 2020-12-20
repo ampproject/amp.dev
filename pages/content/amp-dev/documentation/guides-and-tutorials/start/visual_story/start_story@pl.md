@@ -1,6 +1,6 @@
 ---
-$title: Rozpoczynanie relacji
-$order: 3
+"$title": Rozpoczynanie relacji
+"$order": '3'
 description: Całą relację internetową reprezentuje element amp-story, który służy jako kontener na wszystkie strony relacji. Składnik amp-story odpowiada również za...
 author: bpaduch
 ---

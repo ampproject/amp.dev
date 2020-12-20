@@ -1,7 +1,9 @@
 ---
-$title: Wstępne ładowanie PWA ze stron AMP
-$order: 1
+"$title": Wstępne ładowanie PWA ze stron AMP
+"$order": '1'
 description: Dobrą strategią jest uczynienie strony AMP punktem wejścia do witryny, a następnie rozgrzanie PWA za kulisami i przełączenie na...
+formats:
+- websites
 author: pbakaus
 ---
 
@@ -34,20 +36,40 @@ AMP ma możliwość zainstalowania składnika Service Worker progresywnej aplika
 Najpierw zainstaluj Service Worker na wszystkich stronach AMP, używając składnika [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) i najpierw włączając go poprzez jego skrypt w sekcji `<head>` swojej strony:
 
 [sourcecode:html]
-
-<script async="" custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
-
+<script async custom-element="amp-install-serviceworker"
+  src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 [/sourcecode]
 
 Następnie dodaj następujące elementy gdzieś w sekcji `<body>` (zmień tak, aby wskazywały na rzeczywisty skrypt Service Worker):
 
-[sourcecode:html] {amp-install-serviceworker0} {/amp-install-serviceworker0} [/sourcecode]
+[sourcecode:html]
+<amp-install-serviceworker
+      src="https://www.your-domain.com/serviceworker.js"
+      layout="nodisplay">
+</amp-install-serviceworker>
+[/sourcecode]
 
 Ostatecznie, na etapie instalacji skryptu Service Worker, należy zadbać o zbuforowanie wszystkich zasobów, których będzie wymagać PWA:
 
-[sourcecode:javascript] var CACHE_NAME = 'my-site-cache-v1'; var urlsToCache = [ '/', '/styles/main.css', '/script/main.js' ];
+[sourcecode:javascript]
+var CACHE_NAME = 'my-site-cache-v1';
+var urlsToCache = [
+  '/',
+  '/styles/main.css',
+  '/script/main.js'
+];
 
-self.addEventListener('install', function(event) { // Perform install steps event.waitUntil( caches.open(CACHE_NAME) .then(function(cache) { console.log('Opened cache'); return cache.addAll(urlsToCache); }) ); }); [/sourcecode]
+self.addEventListener('install', function(event) {
+  // Perform install steps
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(function(cache) {
+        console.log('Opened cache');
+        return cache.addAll(urlsToCache);
+      })
+  );
+});
+[/sourcecode]
 
 [tip type="tip"] **PORADA —** są łatwiejsze sposoby obsługi mechanizmu Service Worker. Zapoznaj esię z [bibliotekami programów obsługi mechanizmu Service Worker](https://github.com/GoogleChrome/sw-helpers). [/tip]
 
@@ -65,21 +87,30 @@ W tym przypadku Twoje strony kanoniczne *są* stronami AMP: Tworzysz całą swoj
 
 Teraz możesz wdrożyć swoją PWA na osobnej ścieżce, takiej jak `your-domain.com/pwa` i użyć już uruchomionego procesu Service Worker, aby <strong>przechwytywać nawigację przeglądarki, gdy ktoś kliknie link na stronie AMP</strong>:
 
-[sourcecode:javascript] self.addEventListener('fetch', event => { if (event.request.mode === 'navigate') { event.respondWith(fetch('/pwa'));
+[sourcecode:javascript]
+self.addEventListener('fetch', event => {
+    if (event.request.mode === 'navigate') {
+      event.respondWith(fetch('/pwa'));
 
-```
-  // Immediately start downloading the actual resource.
-  fetch(event.request.url);
-}
-```
+      // Immediately start downloading the actual resource.
+      fetch(event.request.url);
+    }
 
-}); [/sourcecode]
+});
+[/sourcecode]
 
 Co jest szczególnie interesujące w tej technice, to fakt, że obecnie używasz progresywnych ulepszeń, aby przejść z AMP do PWA. Znaczy to jednak również, że przeglądarki, które nie obsługują jeszcze usługowych procesów service worker, będą przeskakiwać z AMP do AMP i nigdy nie będą w rzeczywistości przechodzić do PWA.
 
 AMP rozwiązuje to za pomocą czegoś, co nazywa się [przepisywaniem adresów URL powłoki](../../../documentation/components/reference/amp-install-serviceworker.md#shell-url-rewrite). Dodając do znacznika [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) wzorzec rezerwowego adresu URL, instruujesz AMP, że ma przepisać wszystkie pasujące linki na danej stronie, aby zamiast tego przejść do innego starszego adresu URL powłoki, jeśli nie wykryto obsługi mechanizmu Service Worker:
 
-[sourcecode:html] {amp-install-serviceworker0} {/amp-install-serviceworker0} [/sourcecode]
+[sourcecode:html]
+<amp-install-serviceworker
+      src="https://www.your-domain.com/serviceworker.js"
+      layout="nodisplay"
+      data-no-service-worker-fallback-url-match=".*"
+      data-no-service-worker-fallback-shell-url="https://www.your-domain.com/pwa">
+</amp-install-serviceworker>
+[/sourcecode]
 
 Po wprowadzeniu tych atrybutów wszystkie następne kliknięcia w AMP trafią do PWA, bez względu na obsługę mechanizmu Service Worker.
 

@@ -1,17 +1,13 @@
 ---
-$title: Zintegruj swoje narzędzie analityczne z AMP
-order: 1
+"$title": Zintegruj swoje narzędzie analityczne z AMP
+order: '1'
+formats:
+- websites
+- stories
 teaser:
-  text:  Omówienie
-toc: true
+  text: " Omówienie"
+toc: 'true'
 ---
-
-<!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md.
-Please do not change this file.
-If you have found a bug or an issue please
-have a look and request a pull request there.
--->
 
 ## Omówienie <a name="overview"></a>
 
@@ -60,11 +56,10 @@ Usługi zarządzania tagami mają dwie opcje integracji z AMP Analytics:
 
 Podejście oparte na punktach końcowych jest takie samo jak podejście standardowe, opisane w poprzedniej sekcji. Podejście konfiguracyjne polega na utworzeniu unikalnej konfiguracji składnika amp-analytics, która jest specyficzna dla każdego wydawcy i zawiera wszystkie ich kompatybilne pakiety analityczne. Wydawca włącza taką konfigurację, używając składni takiej jak ta:
 
-[sourcecode:html] <amp-analytics config="https://my-awesome-tag-manager.example.com/user-id.json"
-
->
->
-
+[sourcecode:html]
+<amp-analytics
+  config="https://my-awesome-tag-manager.example.com/user-id.json"
+></amp-analytics>
 [/sourcecode]
 
 Aby przyjąć takie podejście, należy zapoznać się z dokumentacją dotyczącą integracji wydawców z AMP Analytics.

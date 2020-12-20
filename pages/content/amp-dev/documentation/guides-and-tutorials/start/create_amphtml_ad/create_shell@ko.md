@@ -14,7 +14,7 @@ description: "가장 좋아하는 텍스트 에디터를 사용하여 my-amphtml
 <head>
   <meta charset="utf-8">
   <title>My amphtml ad</title>
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
 </head>
 <body>
 </body>
@@ -60,7 +60,7 @@ HTML 파일의 완성된 코드는 다음과 같습니다.
 <head>
   <meta charset="utf-8">
   <title>My amphtml ad</title>
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
 </head>

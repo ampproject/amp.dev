@@ -1,9 +1,11 @@
 ---
-$title: Format AMP dla poczty e-mail
-order: 1
+"$title": Format AMP dla poczty e-mail
+order: '1'
+formats:
+- email
 teaser:
-  text: Wymagane znaczniki
-toc: true
+  text: 'Wymagane znaczniki '
+toc: 'true'
 ---
 
 <!--
@@ -33,16 +35,27 @@ AMP to technologia znana z tworzenia superszybkich stron internetowych na klient
 
 Format AMP dla poczty e-mail zawiera [podzbiór składników AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md), które można stosować w wiadomościach e-mail. Odbiorcy wiadomości e-mail AMP mogą wyświetlać składniki AMP i wchodzić w interakcję z nimi bezpośrednio w wiadomości e-mail.
 
-## Wymagane znaczniki <a name="required-markup"></a>
+## Wymagane znaczniki
 
 Poniższy kod zawiera minimalną ilość znaczników, niezbędnych w prawidłowej wiadomości e-mail AMP:
 
 [sourcecode:html]
-
-
-
-
-        <meta charset="utf-8">     <style amp4email-boilerplate=""><br>      body {<br>        visibility: hidden;<br>      }<br>    </style>     <script async="" src="https://cdn.ampproject.org/v0.js"></script>           Hello, world.     [/sourcecode]
+<!DOCTYPE html>
+<html ⚡4email data-css-strict>
+  <head>
+    <meta charset="utf-8" />
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+    Hello, world.
+  </body>
+</html>
+[/sourcecode]
 
 Wiadomość e-mail AMP musi
 
@@ -79,13 +92,23 @@ AMP dla poczty e-mail opiera się na standardowym podtypie <a>MIME</a> <code>mul
 
 Cały kod CSS w dowolnym dokumencie AMP musi być zawarty w znaczniku `<style amp-custom>` w nagłówku lub jako atrybuty inline `style`.
 
-[sourcecode:html] ...
-
-<style amp-custom=""><br>  /* any custom styles go here. */<br>  body {<br>    background-color: white;<br>  }<br>  amp-img {<br>    border: 5px solid black;<br>  }<br>  amp-img.grey-placeholder {<br>    background-color: grey;<br>  }<br></style>
-
+[sourcecode:html]
 ...
-
- [/sourcecode]
+<style amp-custom>
+  /* any custom styles go here. */
+  body {
+    background-color: white;
+  }
+  amp-img {
+    border: 5px solid black;
+  }
+  amp-img.grey-placeholder {
+    background-color: grey;
+  }
+</style>
+...
+</head>
+[/sourcecode]
 
 Uwaga: rozmiar całego znacznika <kod><style> nie może przekraczać 50 000 bajtów. Sprawdzi to walidator.</kod>
 

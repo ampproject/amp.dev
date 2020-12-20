@@ -1,23 +1,34 @@
 ---
-$title: Incluir imágenes y videos
+"$title": Adición de imágenes y videos
+"$order": '8'
+description: Al igual que las páginas HTML normales, las páginas AMP le permiten insertar contenidos de imágenes, videos y  audios. Descubra cómo...
+formats:
+- websites
+- stories
+- email
+- ads
+components:
+- iframe
+author: pbakaus
+contributors:
+- Meggin
+- bpaduch
 ---
 
- Al igual que las páginas HTML normales, las páginas AMP te permiten insertar **imágenes** ,**videos**  y **audios**
-Contenido. Descubre cómo incluir las versiones AMP equivalentes en tus páginas y qué diferencias existen entre ellas.
+Al igual que las páginas HTML normales, las páginas AMP le permiten insertar contenidos de **imágenes**, **videos** y **audios**. Descubra cómo incluir las versiones AMP equivalentes en sus páginas y qué diferencias existen entre ellas.
 
-##  ¿Por qué no puedo utilizar `<img>` , `<video>` y `<audio>`?
+## ¿Por qué no puedo utilizar <code><img></code>, <code><video></code>  y  <code><audio></code>?
 
- AMP no admite los equivalentes predeterminados de HTML para mostrar contenido multimedia, como `<img>`. Proporcionamos componentes equivalentes por los siguientes motivos:
+AMP no admite los equivalentes predeterminados de HTML para mostrar contenido multimedia, como `<img>`. Proporcionamos componentes equivalentes por los siguientes motivos:
 
-*  Conocer el diseño de la página antes de que se carguen los recursos es fundamental para [admitir las ventanas gráficas iniciales precargadas.](../../../../about/how-amp-works.html#size-all-resources-statically)
-*  Debemos controlar las solicitudes de red para [realizar cargas diferidas y priorizar los recursos de un modo efectivo.](../../../../about/how-amp-works.html#prioritize-resource-loading)
+- Es esencial conocer el diseño de la página antes de que se carguen los recursos para [admitir las ventanas gráficas iniciales precargadas.](../../../../about/how-amp-works.html#size-all-resources-statically)
+- Debemos controlar las solicitudes de red para [realizar cargas diferidas y priorizar los recursos de un modo efectivo.](../../../../about/how-amp-works.html#prioritize-resource-loading)
 
-Precaución: Aunque no se admitan, se *renderizarán*, pero AMP no [validará tus páginas](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)
-y no podrás aprovechar todas las ventajas que aporta AMP.
+Precaución: Aunque no se admitan, se *renderizarán*, pero AMP no [validará sus páginas](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) y no podrá aprovechar todas las ventajas que ofrece AMP.
 
 ## Imágenes
 
- Para incluir una imagen en tu página, utiliza el elemento [`amp-img`](../../../../documentation/components/reference/amp-img.md), como se muestra a continuación:
+Para incluir una imagen en su página, utilice el elemento [`amp-img`](../../../../documentation/components/reference/amp-img.md), tal como se muestra a continuación:
 
 [example preview="inline" playground="true"]
 ```html
@@ -29,11 +40,11 @@ y no podrás aprovechar todas las ventajas que aporta AMP.
 ```
 [/example]
 
-En este ejemplo muy básico, la imagen se mostrará con la altura y anchura fijas especificadas. Hay que especificar, como mínimo, unos valores determinados de anchura y altura.
+En este ejemplo muy básico, la imagen se mostrará con la altura y el ancho fijos especificados. Hay que especificar al menos unos valores determinados de ancho y alto.
 
 #### Mostrar imágenes cuando JavaScript está inhabilitado
 
- Como `<amp-img>` depende de JavaScript, si el usuario elige inhabilitar las secuencias de comandos, no se mostrarán las imágenes. En este caso, debes proporcionar una alternativa a la imagen usando `<img>` y `<noscript>`, como se muestra a continuación:
+Como `<amp-img>` depende de JavaScript, si el usuario elige inhabilitar las secuencias de comandos, no se mostrarán las imágenes. En este caso, debe proporcionar una alternativa a la imagen usando `<img>` y `<noscript>`, como se muestra a continuación:
 
 [example preview="inline" playground="true"]
 ```html
@@ -49,7 +60,7 @@ En este ejemplo muy básico, la imagen se mostrará con la altura y anchura fija
 
 ### Diseños avanzados
 
- Crear imágenes totalmente adaptables es mucho más fácil con AMP que con páginas en CSS/HTML estándar. En su forma más básica, solo tienes que añadir `layout="responsive"`:
+Crear imágenes totalmente adaptables es mucho más fácil con AMP que con páginas en CSS/HTML estándar. En su forma más básica, solo debe añadir `layout="responsive"`:
 
 [example preview="inline" playground="true"]
 ```html
@@ -62,17 +73,17 @@ En este ejemplo muy básico, la imagen se mostrará con la altura y anchura fija
 ```
 [/example]
 
-Leer más: Consulta más información sobre [las técnicas de diseño avanzadas](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md).
+[tip type="read-on"] <strong>MÁS INFORMACIÓN: </strong> Obtenga más información sobre [las técnicas de diseño avanzadas](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md). [/tip]
 
 ### Comportamiento y marcadores de posición
 
-El tiempo de ejecución de HTML en AMP permite gestionar recursos de imagen de una forma muy eficaz porque puedes elegir si retrasar o priorizar la carga de recursos en función de la posición de la ventana gráfica, los recursos del sistema, el ancho de banda de la conexión y otros factores.
+El tiempo de ejecución de HTML en AMP permite administrar los recursos de imagen de una forma muy eficaz porque puede elegir si retrasar o priorizar la carga de recursos según la posición de la ventana gráfica, los recursos del sistema, el ancho de banda de la conexión y otros factores.
 
-Leer más: Descubre cómo [proporcionar alternativas y marcadores de posición para imágenes](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
+[tip type="read-on"] <strong>MÁS INFORMACIÓN: </strong> Descubra cómo [proporcionar alternativas y marcadores de posición para las imágenes](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md). [/tip]
 
 ## Imágenes animadas
 
- El elemento [`amp-anim`](../../../../documentation/components/reference/amp-anim.md)  es muy parecido al elemento [`amp-img`](../../../../documentation/components/reference/amp-img.md) y ofrece una función diferente a la hora de gestionar la carga y la reproducción de archivos GIF y de otros tipos de imágenes animadas.
+El elemento [`amp-anim`](../../../../documentation/components/reference/amp-anim.md)  es muy parecido al elemento [`amp-img`](../../../../documentation/components/reference/amp-img.md) y ofrece una función diferente a la hora de administrar la carga y la reproducción de imágenes animadas, como los archivos GIF.
 
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
 ```html
@@ -88,15 +99,15 @@ Leer más: Descubre cómo [proporcionar alternativas y marcadores de posición p
 ```
 [/example]
 
-Nota: Incluye`<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` en el encabezado de la página para usar este componente.
+[tip type="tip"] <strong>NOTA:</strong> Incluya`<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` en el encabezado de la página para usar este componente.[/tip]
 
 ## Video
 
- Para incluir un video en tu página, utiliza el elemento [`amp-video`](../../../../documentation/components/reference/amp-video.md) .
+Para incluir un video en su página, utilice el elemento [`amp-video`](../../../../documentation/components/reference/amp-video.md) .
 
- Úsalo solamente para insertar archivos de video HTML5 directos. Este elemento carga el recurso de video que determina el atributo `src` de manera diferida cuando lo determine la página AMP.
+Úselo solamente para insertar archivos de video HTML5 directos. Este elemento carga el recurso de video que determina el atributo `src` de manera diferida cuando lo determine la página AMP.
 
-Incluye un marcador de posición antes del inicio del video y una alternativa, si el navegador no admite videos en HTML5, por ejemplo:
+Incluya un marcador de posición antes del inicio del video y una alternativa, si el navegador no admite videos en HTML5, por ejemplo:
 
 [example preview="inline" playground="true" imports="amp-video:0.1"]
 ```html
@@ -114,11 +125,11 @@ Incluye un marcador de posición antes del inicio del video y una alternativa, s
 
 ## Audio
 
- Para incluir un recurso de audio en tu página, utiliza el elemento [`amp-audio`](../../../../documentation/components/reference/amp-audio.md) .
+Para incluir un recurso de audio en su página, utilice el elemento [`amp-audio`](../../../../documentation/components/reference/amp-audio.md) .
 
- Úsalo solo para insertar directamente archivos de audio HTML5. Igual que sucede con todos los recursos externos que se insertan en una página AMP, el elemento carga el recurso de audio especificado por el atributo `src` de manera diferida cuando lo determine la página AMP.
+Úselo solo para insertar directamente archivos de audio HTML5. Igual que sucede con todos los recursos externos que se insertan en una página AMP, el elemento carga el recurso de audio especificado por el atributo `src` de manera diferida cuando lo determine la página AMP.
 
-Incluye un marcador de posición antes del inicio del audio y una alternativa, si el navegador no admite audios en HTML5, por ejemplo:
+Include a fallback, if the browser doesn't support HTML5 audio, for example:
 
 [example preview="inline" playground="true" imports="amp-audio:0.1"]
 ```html
@@ -138,4 +149,4 @@ Incluye un marcador de posición antes del inicio del audio y una alternativa, s
 ```
 [/example]
 
-Nota: Incluye`<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` en el encabezado de la página para usar este componente.
+[tip type="tip"] <strong>NOTA:</strong> Incluya`<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` en el encabezado de la página para usar este componente. [/tip]

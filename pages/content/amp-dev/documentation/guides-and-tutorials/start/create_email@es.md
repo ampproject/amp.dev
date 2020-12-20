@@ -1,8 +1,10 @@
 ---
-$title: Cómo crear su primer correo electrónico de AMP
-$order: 0
+"$title": Cómo crear su primer correo electrónico de AMP
+"$order": '0'
 description: Descubra qué hace diferentes a los correos electrónicos de AMP al crear su primer correo electrónico.
-tutorial: true
+tutorial: 'true'
+formats:
+- email
 author: CrystalOnScript
 ---
 
@@ -20,7 +22,7 @@ AMP playground es compatible con el formato de AMP for Email, lo que le permite 
 
 ```html
 <!doctype html>
-<html ⚡4email>
+<html ⚡4email data-css-strict>
 <head>
   <meta charset="utf-8">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
