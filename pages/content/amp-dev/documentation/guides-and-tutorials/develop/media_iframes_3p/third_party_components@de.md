@@ -1,7 +1,7 @@
 ---
 "$title": Füge Inhalte von Drittanbietern hinzu
 "$order": '9'
-description: Learn how to include third-party components in your pages ...
+description: Erfahre, wie du Komponenten von Drittanbietern in deine Seiten aufnimmst …
 formats:
 - websites
 components:
@@ -19,14 +19,14 @@ Erfahre, wie du Komponenten von Drittanbietern in deine Seiten aufnimmst.
 
 Bette mithilfe des Elements [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) einen Tweet von Twitter in deine Seite ein.
 
-To embed a tweet in your page, first include the following script in the `<head>`:
+Um einen Tweet in deine Seite einzubetten, binde zunächst das folgende Skript in `<head>` ein:
 
 [sourcecode:html]
 <script async custom-element="amp-twitter"
   src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
 [/sourcecode]
 
-Currently, tweets are automatically proportionally scaled to fit the provided size, but this may yield less than the ideal appearance. Manually tweak the provided width and height or use the media attribute to select the aspect ratio based on screen width.
+Tweets werden derzeit automatisch proportional skaliert, damit sie zur angegebenen Größe passen. Damit erreichst du aber eventuell nicht deine ideale Darstellung. Passe die angegebene Breite und Höhe manuell an oder verwende das Attribut "media", um das Seitenverhältnis auf Basis der Bildschirmbreite auszuwählen.
 
 [example preview="inline" playground="true" imports="amp-twitter:0.1"]
 ```html
@@ -38,20 +38,20 @@ Currently, tweets are automatically proportionally scaled to fit the provided si
 ```
 [/example]
 
-[tip type="tip"] **TIP –** See more [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) examples at [AMP By Example](../../../../documentation/examples/documentation/amp-twitter.html). [/tip]
+[tip type="tip"] **TIPP:** Mehr Beispiele für [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) findest du bei [Beispiele für AMP](../../../../documentation/examples/documentation/amp-twitter.html). [/tip]
 
 ## Bild aus Instagram einbetten
 
 Bette mithilfe des Elements [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) Bild aus Instagram in deine Seite ein.
 
-To embed an Instagram, first include the following script in the `<head>`:
+Um einen Beitrag aus Instagram in deine Seite einzubetten, binde zunächst das folgende Skript in `<head>` ein:
 
 [sourcecode:html]
 <script async custom-element="amp-instagram"
   src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
 [/sourcecode]
 
-Include the Instagram data-shortcode found in the Instagram photo URL. For example, in `https://instagram.com/p/fBwFP`, `fBwFP` is the data-shortcode. Also, Instagram uses a fixed aspect ratio for responsive layouts, so the value for width and height should be universal.
+Füge den Instagram "data-shortcode" aus der Instagram Foto URL hinzu. In `https://instagram.com/p/fBwFP` ist der Wert von "data-shortcode" beispielsweise `fBwFP` . Außerdem verwendet Instagram ein festes Seitenverhältnis für responsive Layouts, sodass der Wert für Breite und Höhe universell sein sollte.
 
 [example preview="inline" playground="true" imports="amp-instagram:0.1"]
 ```html
@@ -63,13 +63,13 @@ Include the Instagram data-shortcode found in the Instagram photo URL. For examp
 ```
 [/example]
 
-[tip type="tip"] **TIP –** See more [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) examples at [AMP By Example](../../../../documentation/examples/documentation/amp-instagram.html). [/tip]
+[tip type="tip"] **TIPP:** Mehr Beispiele für [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) findest du bei [AMP By Example](../../../../documentation/examples/documentation/amp-instagram.html). [/tip]
 
 ## Beitrag oder Video aus Facebook anzeigen
 
 Zeige mit dem Element [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) einen Beitrag oder ein Video aus Facebook auf deiner Seite an.
 
-You must include the following script in the `<head>`:
+Binde das folgende Skript in `<head>` ein:
 
 [sourcecode:html]
 <script async custom-element="amp-facebook"
@@ -78,7 +78,7 @@ You must include the following script in the `<head>`:
 
 ##### Beispiel: Einbetten eines Beitrags
 
-Source:
+Quellcode:
 
 ```html
 <amp-facebook width="486" height="657"
@@ -91,7 +91,7 @@ Vorschau: <amp-facebook width="486" height="657" layout="responsive" data-href="
 
 ##### Beispiel: Einbetten eines Videos
 
-Source:
+Quellcode:
 
 ```html
 <amp-facebook width="476" height="316"
@@ -103,13 +103,13 @@ Source:
 
 Vorschau: <amp-facebook width="476" height="316" layout="responsive" data-embed-as="video" data-href="https://www.facebook.com/nasaearth/videos/10155187938052139"> </amp-facebook>
 
-[tip type="tip"] **TIP –** See more [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) examples at [AMP By Example](../../../../documentation/examples/documentation/amp-facebook.html). [/tip]
+[tip type="tip"] **TIPP:** Mehr Beispiele für [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) findest du bei [AMP By Example](../../../../documentation/examples/documentation/amp-facebook.html). [/tip]
 
 ## YouTube Video einbetten
 
 Bette mithilfe des Elements [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) ein Youtube Video in deine Seite ein.
 
-You must include the following script in the `<head>`:
+Binde das folgende Skript in `<head>` ein:
 
 [sourcecode:html]
 <script async custom-element="amp-youtube"
@@ -130,15 +130,15 @@ Verwende `layout="responsive"`, um korrekte Layouts für Videos mit einem Seiten
 ```
 [/example]
 
-[tip type="tip"] **TIP –** See more [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) examples at [AMP By Example](../../../../documentation/examples/documentation/amp-youtube.html). [/tip]
+[tip type="tip"] **TIPP:** Mehr Beispiele für [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) findest du bei [AMP By Example](../../../../documentation/examples/documentation/amp-youtube.html). [/tip]
 
 ## Eine Ad anzeigen
 
-Display an ad in your page by using the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) element. Only ads served via HTTPS are supported.
+Zeige mit dem Element [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) eine Ad auf deiner Seite an. Es werden nur Ads unterstützt, die über HTTPS bereitgestellt werden.
 
-No ad network-provided JavaScript is allowed to run inside the AMP document. Instead, the AMP runtime loads an iframe from a different origin (via iframe sandbox) and executes the ad network’s JS inside that iframe sandbox.
+Innerhalb des AMP Dokuments darf kein vom Werbenetzwerk bereitgestelltes JavaScript ausgeführt werden. Stattdessen lädt die AMP Runtime ein iframe aus einer anderen Quelle (über die iframe Sandbox) und führt das JS des Werbenetzwerks in dieser iframe Sandbox aus.
 
-You must specify the ad width and height, and the ad network type. The `type` identifies the ad network's template. Different ad types require different `data-*` attributes.
+Du musst die Breite und Höhe der Ad sowie den Typ des Werbenetzwerks angeben. `type` identifiziert das Template des Werbenetzwerks. Unterschiedliche Typen von Ads erfordern unterschiedliche `data-*` Attribute.
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
@@ -171,4 +171,4 @@ Wenn das Werbenetzwerk dies unterstützt, füge einen `placeholder` hinzu, der a
 
 AMP unterstützt eine Vielzahl von Werbenetzwerken. Eine vollständige Liste findest du bei [`amp-ad`](../../../../documentation/components/reference/amp-ad.md).
 
-[tip type="read-on"] **READ ON –** Learn more about ads in the [Serving Ads on AMP](../../../../documentation/guides-and-tutorials/develop/monetization/index.md) guide. [/tip]
+[tip type="read-on"] **ERFAHRE MEHR:** Mehr Infos über Ads findest du im Leitfaden zur [Bereitstellung von Ads in AMP](../../../../documentation/guides-and-tutorials/develop/monetization/index.md). [/tip]
