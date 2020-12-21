@@ -166,8 +166,7 @@ Das ist eine einfache AMP Seite, die sowohl die [AMP Validierung](../../../../do
 Bevor wir die Seite verändern, aktivieren wir den [AMP Validator](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md), um sicherzustellen, dass das verwendete AMP HTML gültig ist. **Füge** diese Fragment-ID zu deiner URL hinzu:
 
 ```text
-# development=1
-
+#development=1
 ```
 
 Zum Beispiel:
