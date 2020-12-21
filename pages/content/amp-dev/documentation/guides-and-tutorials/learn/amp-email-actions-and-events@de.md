@@ -67,12 +67,8 @@ Die folgende Tabelle beschreibt die einzelnen Elemente der Syntax.
   <tr>
     <td><code>arg=value</code></td>
     <td>nein</td>
-    <td>Some actions, if documented, may accept arguments. The arguments are defined between parentheses in <code>key=value</code> notation. The accepted values are:       <ul>         <li>simple unquoted strings: <code>simple-value</code>
-</li>         <li>quoted strings: <code>"string value"</code> or <code>'string value'</code>
-</li>         <li>boolean values: <code>true</code> or <code>false</code>
-</li>         <li>numbers: <code>11</code> or <code>1.1</code>
-</li>         <li>dot-syntax reference to event data: <code>event.someDataVariableName</code>
-</li>       </ul>     </td>
+    <td>Manche Aktionen können (sofern sie dokumentiert sind) Argumente akzeptieren. Die Argumente werden in Klammern im Format <code>key=value</code> angegeben. Die zulässigen Werte sind:       <ul>         <li>einfache Strings ohne Anführungszeichen: <code>simple-value</code> </li>         <li>Strings mit Anführungszeichen: <code>"string value"</code> oder <code>'string value'</code> </li>         <li>Boolesche Werte: <code>true</code> oder <code>false</code> </li>         <li>Zahlen: <code>11</code> oder <code>1.1</code> </li>         <li>Punktsyntaxverweis auf Ereignisdaten: <code>event.someDataVariableName</code> </li>       </ul>
+</td>
   </tr>
 </table>
 
@@ -343,7 +339,7 @@ In AMP ist beispielsweise Folgendes möglich:
   </tr>
   <tr>
     <td><code>toggleVisibility</code></td>
-    <td>Toggles the visibility of the target element. If an     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a     result, it gains focus.</td>
+    <td>Schaltet die Sichtbarkeit des Zielelements um.     Wenn dadurch das <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus">Element <code>autofocus</code></a>     sichtbar wird, rückt es in den Fokus.</td>
   </tr>
   <tr>
     <td><code>toggleClass(class=STRING, force=BOOLEAN)</code></td>
@@ -459,7 +455,7 @@ In AMP ist beispielsweise Folgendes möglich:
   </tr>
   <tr>
     <td><code>toggle(index=INTEGER, value=BOOLEAN)</code></td>
-    <td>Toggles the application of the `selected`. If the select attribute is absent, this action adds it. If the select attribute is present, this action removes it.     You may force and keep an add or remove by including a boolean value in the `value` argument. A value of `true` will force add the `selected` attribute and not remove it if already present. A value of  `false` will remove the attribute, but not add it if absent.   </td>
+    <td>Schaltet die Anwendung von `selected` um. Wenn das Attribut select nicht vorhanden ist, wird es durch diese Aktion hinzugefügt. Wenn das Attribut select vorhanden ist, wird es durch diese Aktion entfernt.     Du kannst das Hinzufügen oder Entfernen erzwingen und beibehalten, indem du einen Booleschen Wert in das Argument `value` aufnimmst. Der Wert `true` erzwingt das Hinzufügen des Attributs `selected` und entfernt es nicht, wenn es bereits vorhanden ist. Der Wert `false` entfernt das Attribut, fügt es jedoch nicht hinzu, wenn es nicht vorhanden ist.</td>
   </tr>
 </table>
 
@@ -526,4 +522,4 @@ Das Ziel `AMP` wird von der AMP Runtime bereitgestellt und implementiert Aktione
   </tr>
 </table>
 
-<sup>1</sup>When used with <a href="#multiple-actions-for-one-event">multiple actions</a>, subsequent actions will wait for <code>setState()</code> to complete before invocation. Only a single <code>setState()</code> is allowed per event.
+<sup>1</sup>Bei Verwendung mit <a href="#multiple-actions-for-one-event">mehreren Aktionen</a>, warten nachfolgende Aktionen auf <code>setState()</code>, um den vorherigen Aufruf abzuschließen. Pro Ereignis ist nur ein einziger <code>setState()</code> zulässig.
