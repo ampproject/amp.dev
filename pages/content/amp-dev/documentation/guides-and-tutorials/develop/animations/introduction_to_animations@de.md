@@ -259,9 +259,9 @@ Mithilfe der [Ausdrücke `var()` und `calc()`](../../../../documentation/compone
 ```
 [/example]
 
-- Declaring a variable, `--duration`, and giving it the value of two seconds.
-- Setting the `duration` to the var `--duration`'s value.
-- Calculating the delay applied to each element with the class `.card`.
+- Die Variable `--duration` wird deklariert und ihr Wert wird auf zwei Sekunden gesetzt.
+- `duration` wird auf den Wert der Variable `--duration` gesetzt.
+- Berechnen der Verzögerung, die auf jedes Element angewendet wird, das mit dem Selektor `.card` übereinstimmt.
     1. Die [Erweiterung `length()`](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) berechnet, wie viele `.card` Elemente ausgewählt wurden.
     2. Dann wird der [index()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension) jeder `.card` von der Länge subtrahiert.
     3. Der resultierende Wert wird mit der Variablen `--duration` multipliziert.
