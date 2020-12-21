@@ -1,5 +1,5 @@
 ---
-"$title": Modify presentation and layout
+"$title": Bearbeite Präsentation und Layout
 "$order": '3'
 description: 'AMP Seiten sind Webseiten: Die Seite und ihre Elemente werden mit gewöhnlichen CSS Eigenschaften gestylt. Styleelemente verwenden Klassen oder …'
 author: pbakaus
