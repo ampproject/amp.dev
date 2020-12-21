@@ -139,12 +139,12 @@ Codifique os vídeos para ajustar a qualidade das seguintes otimizações recome
 
 <table>
   <tr>
-   <td>MP4    </td>
-   <td>-crf 23    </td>
+   <td>MP4</td>
+   <td>-crf 23</td>
   </tr>
   <tr>
-   <td>WEBM    </td>
-   <td>-b:v 1M    </td>
+   <td>WEBM</td>
+   <td>-b:v 1M</td>
   </tr>
 </table>
 
@@ -159,11 +159,11 @@ Se você só puder fornecer um único formato de vídeo, forneça MP4. Quando po
 <table>
   <tr>
    <td>MP4, HLS e DASH</td>
-   <td>H.264    </td>
+   <td>H.264</td>
   </tr>
   <tr>
-   <td>WEBM    </td>
-   <td>VP9    </td>
+   <td>WEBM</td>
+   <td>VP9</td>
   </tr>
 </table>
 
