@@ -102,14 +102,7 @@ Links zu Seiten, die deine Benutzer möglicherweise besuchen müssen, können vo
 
 Teile den Benutzern mit, dass sie offline sind und versuchen sollten, die Website neu zu laden, sobald sie wieder online sind. Füge dazu eine Offlineseite hinzu. Der AMP Service Worker kann sowohl die Seite als auch deren Assets zwischenspeichern.
 
-[sourcecode:js]
-AMP_SW.init({
-offlinePageOptions: {
-url: '/offline.html';
-assets: ['/images/offline-header.jpg'];
-}
-})
-[/sourcecode]
+[sourcecode:js] AMP_SW.init({ offlinePageOptions: { url: '/offline.html'; assets: ['/images/offline-header.jpg']; } }) [/sourcecode]
 
 Eine gelungene Offlineseite sieht wie ein Teil deiner Website aus, da ihre Benutzeroberfläche mit dem Rest der Anwendung konsistent ist.
 
