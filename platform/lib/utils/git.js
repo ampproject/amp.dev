@@ -14,30 +14,14 @@
  * limitations under the License.
  */
 const {execSync} = require('child_process');
-const {sh} = require('./sh');
 
-const trim = async (promise) => {
-  const str = await promise;
-  return (str || '').trim();
+module.exports.version = execSync('git log -1 --pretty=format:%h ')
+  .toString()
+  .trim();
+module.exports.message = execSync('git log -1 --pretty=%B --no-merges')
+  .toString()
+  .trim();
+module.exports.user = execSync('git config user.name').toString().trim();
+module.exports.committerDate = (path) => {
+  return execSync(`git log --format=%ai ${path} | tail -1`).toString().trim();
 };
-
-module.exports.versionSync = () =>
-  execSync('git log -1 --pretty=format:%h ').toString().trim();
-
-module.exports.messageSync = () =>
-  execSync('git log -1 --pretty=%B --no-merges').toString().trim();
-
-module.exports.userSync = () =>
-  execSync('git config user.name').toString().trim();
-
-module.exports.committerDate = (path) =>
-  trim(sh(`git log --format=%ai ${path} | tail -1`, {quiet: true}));
-
-module.exports.version = () =>
-  trim(sh('git log -1 --pretty=format:%h', {quiet: true}));
-
-module.exports.message = () =>
-  trim(sh('git log -1 --pretty=%B --no-merges', {quiet: true}));
-
-module.exports.user = async () =>
-  trim(sh('git config user.name', {quiet: true}));

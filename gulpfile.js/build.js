@@ -24,7 +24,6 @@ const config = require('@lib/config');
 const signale = require('signale');
 const del = require('del');
 const fs = require('fs');
-const util = require('util');
 const path = require('path');
 const through = require('through2');
 const archiver = require('archiver');
@@ -50,8 +49,6 @@ const TRAVIS_GCS_PATH = 'gs://amp-dev-ci/travis/';
 
 // Path of the grow test pages for filtering in the grow podspec.yaml
 const TEST_CONTENT_PATH_REGEX = '^/tests/';
-
-const writeFileAsync = util.promisify(fs.writeFile);
 
 /**
  * Cleans all directories/files that get created by any of the following
@@ -185,11 +182,7 @@ async function buildComponentVersions() {
   const dir = path.join(project.paths.DIST, 'static/files');
 
   mkdirp(dir);
-  await writeFileAsync(
-    path.join(dir, 'component-versions.json'),
-    content,
-    'utf-8'
-  );
+  fs.writeFileSync(path.join(dir, 'component-versions.json'), content, 'utf-8');
 }
 
 /**
@@ -535,23 +528,19 @@ function collectStatics(done) {
  *
  * @return {undefined}
  */
-async function persistBuildInfo() {
-  const version = await git.version();
-  const user = await git.user();
-  const message = await git.message();
-
+function persistBuildInfo(done) {
   const buildInfo = {
     'number': travis.build.number || null,
     'at': new Date(),
-    'by': user,
+    'by': git.user,
     'environment': config.environment,
     'commit': {
-      'sha': version,
-      'message': message,
+      'sha': git.version,
+      'message': git.message,
     },
   };
 
-  await writeFileAsync(project.paths.BUILD_INFO, yaml.safeDump(buildInfo));
+  fs.writeFile(project.paths.BUILD_INFO, yaml.safeDump(buildInfo), done);
 }
 
 exports.clean = clean;
