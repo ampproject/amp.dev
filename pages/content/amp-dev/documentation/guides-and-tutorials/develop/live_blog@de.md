@@ -45,7 +45,7 @@ Live Blogs können sehr groß werden und die Seite zu lang machen. Du kannst das
 
 Alle Blogeinträge in [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) müssen dem Element `<div items></div>` untergeordnet sein. Da jeder Beitrag als Element gesehen wird, muss jedes Element eine eindeutige `id` und das Attribut `data-sort-time` haben.
 
-## Implementation details
+## Implementierungsdetails
 
 Nun, da du mit der Komponente [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) vertraut bist, können wir die Implementierung eines komplexeren Live Blogs anschauen. Lies weiter, um mehr über die Implementierung von Paginierung und die Funktionsweise von Deep Linking zu erfahren.
 
@@ -80,7 +80,7 @@ Sobald die Menge der Blogbeiträge die von `data-max-items-per-page` festgelegte
 
 Du kannst das Attribut "disabled" zur gehosteten Seite hinzufügen, um den Abfragemechanismus zu verhindern. Im Beispiel für ein Live Blogs führen wir dieses Verhalten in einem serverseitigen Template aus. Wenn die angeforderte Seite nicht die erste ist, fügen wir das Attribut "disabled" zur Komponente [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) hinzu.
 
-### Deeplinking <a name="deeplinking"></a>
+### Deep Linking <a name="deeplinking"></a>
 
 Bei der Veröffentlichung eines Blogbeitrags ist es wichtig, einen Deep Link zum Beitrag erstellen zu können, um Funktionen wie das Teilen von Beiträgen zu ermöglichen. Mit [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) ist Deep Linking anhand der `id` des Blogelements möglich. So kannst du zum Beispiel mit [https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3](../../../documentation/examples/previews/Live_Blog.html#post3) direkt zum Blogbeitrag mit der ID `post3` navigieren.
 
@@ -90,6 +90,6 @@ AMP By Example verwendet ein Cookie im [Beispiel für ein Live Blog](live_blog.m
 
 Oder sieh dir diese RTC Ressourcen an:
 
-- [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) reference documentation
+- Referenzdokumentation zu [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md)
 - [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md)
 - [Beispiel für ein Live Blog von AMP By Example](live_blog.md)
