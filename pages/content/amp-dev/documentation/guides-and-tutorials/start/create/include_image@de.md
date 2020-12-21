@@ -1,5 +1,5 @@
 ---
-"$title": Include an image
+"$title": Füge ein Bild hinzu
 "$order": '2'
 description: Die meisten HTML Tags können direkt in AMP HTML verwendet werden, aber bestimmte Tags wie z. B. <img> werden durch äquivalente oder leicht verbesserte …
 author: pbakaus
