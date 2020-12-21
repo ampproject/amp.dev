@@ -54,7 +54,7 @@ Du kannst ein [`amp-iframe`](../../../../documentation/components/reference/amp-
 
 [tip type="read-on"] **ERFAHRE MEHR:** Mehr Infos über Platzhalter findest du in [iframe mit Platzhalter](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder). [/tip]
 
-Example with placeholder:
+Beispiel mit Platzhalter:
 
 ```html
 <amp-iframe width="400" height="225"
