@@ -1,5 +1,5 @@
 ---
-"$title": Tracking engagement with analytics
+"$title": Engagement mit Analytics verfolgen
 "$order": '4'
 description: Analytics Plattformen werden gewöhnlich über Inline JavaScript Snippets und Funktionsaufrufe in Websites integriert. Diese triggern Ereignisse, die an das Analytics System …
 ---
