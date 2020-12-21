@@ -1,5 +1,5 @@
 ---
-"$title": Introduction to complex animations
+"$title": Einführung in komplexe Animationen
 "$order": '2'
 description: Für Animationen, die nicht durch das Hinzufügen und Entfernen von Klassen gesteuert werden können, bietet AMP mehrere animationsspezifische Komponenten. Diese Komponenten wenden die AMP Prinzipien auf Animationen an …
 formats:
@@ -14,7 +14,7 @@ Verwende amp-animation, wenn du die Wiedergabe präzise steuern möchtest und pr
 
 ## Einfache AMP Animation erstellen
 
-The [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) component enables use of the [Web Animation API](https://www.w3.org/TR/web-animations/) in AMP.
+Die Komponente [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) ermöglicht die Verwendung der [Web Animation API](https://www.w3.org/TR/web-animations/) in AMP.
 
 Eine einfache [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) ist ein JSON Objekt, das aus den folgenden Schlüsselelementen besteht:
 
@@ -41,9 +41,9 @@ Eine einfache [`amp-animation`](../../../../documentation/components/reference/a
 
 ### Selector
 
-Much like CSS, the [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) component links the animation properties to the element by declaring the element's tag name, class, or id in the `"selector"` field. The component animates each element with the tag type or class name declared. Use an id to ensure you animate a single element.
+Ähnlich wie bei CSS verknüpft die Komponente [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) die Animationseigenschaften mit dem Element, indem sie den Tagnamen, die Klasse oder die ID des Elements im Feld `"selector"` deklariert. Die Komponente animiert jedes Element mit dem deklarierten Tagtyp oder Klassennamen. Verwende eine ID, um sicherzustellen, dass ein bestimmtes Element animiert wird.
 
-### Timing properties
+### Eigenschaften für das Timing
 
 Die [Timing Eigenschaften](../../../../documentation/components/reference/amp-animation.md#timing-properties) steuern, wie lange eine Animation dauert, wie oft sie abgespielt wird und in welche Richtung Keyframes ausgeführt werden.
 
@@ -78,13 +78,13 @@ Animationen stellen eine Verbindung zu einer Aktion oder einem Event her, indem 
 <button on="tap:exampleAnimation.start">
 ```
 
-## Building complex animations
+## Komplexe Animationen erstellen
 
-Building an animation in [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) allows for fine grained control that goes beyond starting and stopping an animation: it can also pause, reverse, and direct to a specific point. You can even chain multiple animations together and animate elements in a sequence.
+Für eine Animation, die in [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) erstellt wird, können nicht nur das Starten und Stoppen der Animation präzise gesteuert werden: Sie kann auch angehalten oder umgekehrt werden und zu einem bestimmten Punkt springen. Du kannst sogar mehrere Animationen miteinander verketten und Elemente in einer Sequenz animieren.
 
-### Subtargets
+### Teilziele
 
-Elements of the same tag or class can have specified timing properties and override the values of variables defined in the top level animation.
+Elemente desselben Tags oder derselben Klasse können bestimmte Timing Eigenschaften haben und die Werte von Variablen überschreiben, die in der Animation der obersten Ebene definiert sind.
 
 [example preview="top-frame" playground="true" imports="amp-animation"]
 ```html
@@ -121,7 +121,7 @@ Elements of the same tag or class can have specified timing properties and overr
 ```
 [/example]
 
-### Chained animations
+### Verkettete Animationen
 
 Mehrere Animationen können zu einer großen Sequenz verbunden werden. Du kannst zeitgesteuerte Effekte wie Überlagerungen in einem Video erstellen, indem du Animationen in das Array `animations` in der Komponente [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) schreibst.
 
@@ -158,9 +158,9 @@ Mehrere Animationen können zu einer großen Sequenz verbunden werden. Du kannst
 
 ```
 
-This setup plays each animation for 3 seconds in a sequence.
+Dieses Setup spielt jede Animation 3 Sekunden lang in einer Sequenz ab.
 
-For larger animations, animations inside the `animations` array are able to reference other [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) components.
+Für größere Animationen können Animationen innerhalb des Arrays `animations` auf andere [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) Komponenten verweisen.
 
 ```
 <amp-animation id="addEnergy" layout="nodisplay">
@@ -206,7 +206,7 @@ For larger animations, animations inside the `animations` array are able to refe
 </amp-animation>
 ```
 
-### Animating an unknown amount of elements
+### Animieren einer unbekannten Anzahl von Elementen
 
 Mithilfe der [Ausdrücke `var()` und `calc()`](../../../../documentation/components/reference/amp-animation.md) kannst du zusammen mit [CSS Erweiterungen](../../../../documentation/components/reference/amp-animation.md#css-extensions) komplexe und zeitgesteuerte Animationen schreiben, die mit einer beliebigen Anzahl von Elementen funktionieren. Dies ermöglicht eine simple und flüssige Animation dynamischer und benutzergenerierter Daten.
 
@@ -264,14 +264,14 @@ Mithilfe der [Ausdrücke `var()` und `calc()`](../../../../documentation/compone
 - Setting the `duration` to the var `--duration`'s value.
 - Calculating the delay applied to each element with the class `.card`.
     1. Die [Erweiterung `length()`](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) berechnet, wie viele `.card` Elemente ausgewählt wurden.
-    2. The length then subtracts each `.card`'s [index()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension)
-    3. The resulting value is multiplied by the var `--duration`
-    4. The final total is applied in seconds to that element's delay
+    2. Dann wird der [index()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension) jeder `.card` von der Länge subtrahiert.
+    3. Der resultierende Wert wird mit der Variablen `--duration` multipliziert.
+    4. Die Endsumme wird in Sekunden auf die Verzögerung dieses Elements angewendet.
 - Die Animation wird auf jedes Element individuell angewendet, sodass die Karten nicht alle gleichzeitig, sondern nacheinander zufällig wiedergegeben werden.
 
-Open the animation in the AMP playground and add more [`amp-img`](../../../../documentation/components/reference/amp-img) elements to test this behavior.
+Öffne die Animation im AMP Playground und füge weitere [`amp-img`](../../../../documentation/components/reference/amp-img) Elemente hinzu, um dieses Verhalten zu testen.
 
-### Look great, everywhere
+### Sieht überall gut aus
 
 Animationen können [`conditions`](../../../../documentation/components/reference/amp-animation.md#conditions) enthalten, die benutzerdefinierte Effekte ermöglichen. Passe Animationen mit der [Bedingung `media`](../../../../documentation/components/reference/amp-animation.md#media-query) an eine beliebige Bildschirmgröße an und unterstütze die Abwärtskompatibilität für Browser, indem du die [Bedingungen `supports`](../../../../documentation/components/reference/amp-animation.md#supports-condition) in einer [`switch` Anweisung](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement) aktivierst.
 
