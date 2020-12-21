@@ -1,7 +1,7 @@
 ---
 "$title": Monetizing your AMP page with ads
 "$order": '0'
-description: This guide provides instructions and best practices for displaying ads on your AMP pages. So, to display ads in AMP, you need to add the custom amp-ad component...
+description: Dieser Leitfaden enthält Anweisungen und Best Practices zum Anzeigen von Ads auf deinen AMP Seiten.  Um Ads in AMP anzuzeigen, musst du zu deiner …
 formats:
 - websites
 ---
@@ -12,13 +12,13 @@ Dieser Leitfaden enthält Anweisungen und Best Practices zum Anzeigen von Ads au
 
 Wenn du auf nicht-AMP Seiten (herkömmliches HTML) Ads auf deiner Seite anzeigen möchtest, füge ein JavaScript Snippet hinzu, um Ads aus deinem Werbenetzwerk zu schalten. Aus Gründen der Leistung und Sicherheit kannst du kein JavaScript von Drittanbietern in AMP Seiten aufnehmen. Um Ads in AMP anzuzeigen, musst du die benutzerdefinierte Komponente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) zu deiner AMP Seite hinzufügen.
 
-[tip type="tip"] **TIP –** See [AMP By Example for a live demo](../../../../documentation/components/reference/amp-ad.md) that demonstrates adding an amp-ad tag to an AMP page. [/tip]
+[tip type="tip"] **TIPP:** Bei [AMP By Example findest du ein Live Demo](../../../../documentation/components/reference/amp-ad.md), welches demonstriert, wie das Tag "amp-ad" zu einer AMP Seite hinzugefügt wird. [/tip]
 
-Let's walk through the steps of adding the component so you can display ads on your AMP page.
+Sehen wir uns die Schritte zum Hinzufügen der Komponente an, damit du auf deiner AMP Seite Ads anzeigen kannst.
 
 ### Schritt 1: Füge das amp-ad Skript hinzu
 
-The [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component is a custom ad extension to the AMP library. Under the hood of [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) is custom JavaScript that's carefully designed to optimize performance. To run the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component, you must add the required JavaScript for this component in the `head` section of your AMP page:
+Die Komponente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) ist eine benutzerdefinierte Anzeigenerweiterung der AMP Bibliothek. Unter der Haube von [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) befindet sich benutzerdefiniertes JavaScript, das sorgfältig entwickelt wurde, um die Leistung zu optimieren. Um die Komponente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) auszuführen, musst du das für diese Komponente erforderliche JavaScript im `head` deiner AMP Seite einbinden:
 
 ```html
 <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
@@ -28,7 +28,7 @@ The [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) compone
 
 Over 100+ [ad servers and networks](ads_vendors.md) provide built-in integrations with AMP.  To add an ad for a given ad network, add the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) tag, and specify the network in the `type` attribute.
 
-In this example, we are adding an ad slot to serve ads from the a9 network:
+In diesem Beispiel fügen wir ein Ad Slot hinzu, um Ads aus dem a9 Netzwerk bereitzustellen:
 
 ```html
 <amp-ad type="a9">
@@ -37,7 +37,7 @@ In this example, we are adding an ad slot to serve ads from the a9 network:
 
 ### Schritt 3: Gib die Größe des Ad Abschnitts an
 
-Add the `width` and `height` attributes to the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)  tag.  This specifies the size of the ad on your AMP page:
+Füge die Attribute `width` und `height` zum [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) Tag hinzu. Damit gibst du die Größe der Ad auf deiner AMP Seite an:
 
 ```html
 <amp-ad type="a9">
@@ -47,7 +47,7 @@ Add the `width` and `height` attributes to the [`amp-ad`](../../../../documentat
 
 ### Schritt 4: Lege die Parameter des Werbenetzwerks fest
 
-Each network has specific data attributes they require to serve ads.  Refer to the ad network's [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) documentation and add the attributes that are needed In the following example,  the a9 network requires additional parameters to specify the size of the ad, and other details:
+Jedes Netzwerk hat bestimmte Datenattribute, die für die Bereitstellung von Ads erforderlich sind. Konsultiere die [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) Dokumentation des Werbenetzwerks und füge die erforderlichen Attribute hinzu. Im folgenden Beispiel fordert das a9 Netzwerk zusätzliche Parameter, um die Größe der Ad und andere Details anzugeben:
 
 ```html
 <amp-ad type="a9"
@@ -74,7 +74,7 @@ Abhängig vom Werbenetzwerk kannst du einen Platzhalter anzeigen, bis die Ad ang
 
 ### Schritt 6: (Optional) Gib ein Fallback an
 
-Depending on the ad network, you can choose to show a fallback element if no ad is available to serve. To specify a fallback, add a child element with the `fallback` attribute. Learn more in [Placeholders & fallbacks](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
+Abhängig vom Werbenetzwerk kannst du ein Fallback Element anzeigen, wenn keine Ad bereitgestellt werden kann. Um ein Fallback anzugeben, füge ein untergeordnetes Element mit dem Attribut `fallback` hinzu. Weitere Infos findest du unter [Platzhalter & Fallbacks](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ```html
 <amp-ad type="a9"
@@ -86,7 +86,7 @@ Depending on the ad network, you can choose to show a fallback element if no ad 
 </amp-ad>
 ```
 
-Congratulations! You are now serving ads on your AMP page!
+Gratulation! Jetzt stellst du Ads auf deiner AMP Seite bereit!
 
 ## Bereitstellung von direkt verkauften AMPHTML Ads
 
@@ -94,20 +94,20 @@ Die Komponente [`amp-ad`](../../../../documentation/components/reference/amp-ad.
 
 ## Erweitern der Targeting Daten für Anzeigenanforderungen
 
-As part of the Fast Fetch serving mechanism, the Real-Time Config (RTC) feature allows publishers to augment ad requests with first-party and third-party targeting information that's retrieved at runtime. RTC allows up to 5 callouts to targeting servers for each individual ad slot, the results of which are appended to the ad request.  To use RTC on your ads, the ad network you use must support RTC and Fast Fetch.
+Als Teil des Fast Fetch Bereitstellungsmechanismus können Publisher mithilfe der RTC Funktion (Real-Time Config) Ad Anforderungen mithilfe von Targeting Daten von Erstanbietern und Drittanbietern optimieren, die zur Laufzeit abgerufen werden. RTC erlaubt für jedes einzelne Ad Slot bis zu 5 Callouts an Targeting Server, deren Ergebnisse an die Ad Anforderung angehängt werden. Um RTC in deinen Ads zu verwenden, muss das von dir verwendete Werbenetzwerk RTC und Fast Fetch unterstützen.
 
 You can learn more about RTC from this YouTube video:
 
 [video src='https://www.youtube.com/watch?v=mvAmvKiWPfA' caption='Watch Effective AMP Monetization with Header Bidding.']
 
-Or, learn more from these RTC resources:
+Oder sieh dir diese RTC Ressourcen an:
 
 - [AMP RTC publisher implementation guide](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
 - [AMP Real Time Config](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
 
 ## Best Practices
 
-Here are some tips to maximize the effectiveness of ads on your AMP pages:
+Nachfolgend findest du einige Tipps, mit denen du die Effektivität von Ads auf deinen AMP Seiten optimieren kannst:
 
 ### Platzierung & Kontrolle: Optimiere die Platzierungen deiner Ads
 
@@ -142,5 +142,5 @@ Here are some tips to maximize the effectiveness of ads on your AMP pages:
 
 ## Zusätzliche Ressourcen
 
-- [AMPHTML ad templates](../../../../documentation/examples/index.html)
-- [Demo: Shows how to add `amp-ad` to your AMP page](../../../../documentation/components/reference/amp-ad.md)
+- [Templates für AMPHTML Ads](../../../../documentation/examples/index.html)
+- [Demo: So fügst du `amp-ad` zu deiner AMP Seite hinzu](../../../../documentation/components/reference/amp-ad.md)
