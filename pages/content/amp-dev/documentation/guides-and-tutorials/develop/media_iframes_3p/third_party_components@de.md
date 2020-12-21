@@ -15,7 +15,7 @@ contributors:
 
 Erfahre, wie du Komponenten von Drittanbietern in deine Seiten aufnimmst.
 
-## Embed a Tweet
+## Einen Tweet einbetten
 
 Bette mithilfe des Elements [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) einen Tweet von Twitter in deine Seite ein.
 
@@ -40,9 +40,9 @@ Currently, tweets are automatically proportionally scaled to fit the provided si
 
 [tip type="tip"] **TIP –** See more [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) examples at [AMP By Example](../../../../documentation/examples/documentation/amp-twitter.html). [/tip]
 
-## Embed an Instagram
+## Bild aus Instagram einbetten
 
-Embed an Instagram in your page by using the [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) element.
+Bette mithilfe des Elements [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) Bild aus Instagram in deine Seite ein.
 
 To embed an Instagram, first include the following script in the `<head>`:
 
@@ -67,7 +67,7 @@ Include the Instagram data-shortcode found in the Instagram photo URL. For examp
 
 ## Beitrag oder Video aus Facebook anzeigen
 
-Display a Facebook post or video in your page by using the [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) element.
+Zeige mit dem Element [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) einen Beitrag oder ein Video aus Facebook auf deiner Seite an.
 
 You must include the following script in the `<head>`:
 
@@ -87,9 +87,9 @@ Source:
 </amp-facebook>
 ```
 
-Preview: <amp-facebook width="486" height="657" layout="responsive" data-href="https://www.facebook.com/zuck/posts/10102593740125791"> </amp-facebook>
+Vorschau: <amp-facebook width="486" height="657" layout="responsive" data-href="https://www.facebook.com/zuck/posts/10102593740125791"> </amp-facebook>
 
-##### Example: Embedding a video
+##### Beispiel: Einbetten eines Videos
 
 Source:
 
@@ -101,13 +101,13 @@ Source:
 </amp-facebook>
 ```
 
-Preview: <amp-facebook width="476" height="316" layout="responsive" data-embed-as="video" data-href="https://www.facebook.com/nasaearth/videos/10155187938052139"> </amp-facebook>
+Vorschau: <amp-facebook width="476" height="316" layout="responsive" data-embed-as="video" data-href="https://www.facebook.com/nasaearth/videos/10155187938052139"> </amp-facebook>
 
 [tip type="tip"] **TIP –** See more [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) examples at [AMP By Example](../../../../documentation/examples/documentation/amp-facebook.html). [/tip]
 
-## Embed a YouTube video
+## YouTube Video einbetten
 
-Embed a YouTube video in your page by using the [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) element.
+Bette mithilfe des Elements [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) ein Youtube Video in deine Seite ein.
 
 You must include the following script in the `<head>`:
 
@@ -116,9 +116,9 @@ You must include the following script in the `<head>`:
   src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 [/sourcecode]
 
-The YouTube `data-videoid` can be found in every YouTube video page URL. For example, in `https://www.youtube.com/watch?v=Z1q71gFeRqM`, `Z1q71gFeRqM` is the video id.
+Die YouTube `data-videoid` findest du in jeder URL für eine YouTube Videoseite. In `https://www.youtube.com/watch?v=Z1q71gFeRqM` ist die Video ID beispielsweise `Z1q71gFeRqM`.
 
-Use `layout="responsive"` to yield correct layouts for 16:9 aspect ratio videos:
+Verwende `layout="responsive"`, um korrekte Layouts für Videos mit einem Seitenverhältnis von 16:9 zu erreichen:
 
 [example preview="inline" playground="true" imports="amp-youtube:0.1"]
 ```html
@@ -132,7 +132,7 @@ Use `layout="responsive"` to yield correct layouts for 16:9 aspect ratio videos:
 
 [tip type="tip"] **TIP –** See more [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) examples at [AMP By Example](../../../../documentation/examples/documentation/amp-youtube.html). [/tip]
 
-## Display an ad
+## Eine Ad anzeigen
 
 Display an ad in your page by using the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) element. Only ads served via HTTPS are supported.
 
@@ -153,7 +153,7 @@ You must specify the ad width and height, and the ad network type. The `type` id
 ```
 [/example]
 
-If supported by the ad network, include a `placeholder` to be shown if no ad is available:
+Wenn das Werbenetzwerk dies unterstützt, füge einen `placeholder` hinzu, der angezeigt wird, wenn keine Ad verfügbar ist:
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
 ```html
@@ -169,6 +169,6 @@ If supported by the ad network, include a `placeholder` to be shown if no ad is 
 ```
 [/example]
 
-AMP supports a wide range of ad networks. See the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)  for a full list.
+AMP unterstützt eine Vielzahl von Werbenetzwerken. Eine vollständige Liste findest du bei [`amp-ad`](../../../../documentation/components/reference/amp-ad.md).
 
 [tip type="read-on"] **READ ON –** Learn more about ads in the [Serving Ads on AMP](../../../../documentation/guides-and-tutorials/develop/monetization/index.md) guide. [/tip]
