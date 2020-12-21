@@ -38,7 +38,7 @@ Viele AMP Komponenten und Erweiterungen nutzen Remote Endpoints mithilfe von COR
 
 <div class="noshowtoc"></div>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true">
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#why-do-i-need-cors-for-my-own-origin-" data-md-type="link">Why do I need CORS for my own origin?</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#why-do-i-need-cors-for-my-own-origin-" data-md-type="link">Warum brauche ich CORS für meine eigene Quelle? </a></li>
 <li data-md-type="list_item" data-md-list-type="unordered"><a href="#utilizing-cookies-for-cors-requests" data-md-type="link">Verwendung von Cookies für CORS Anfragen</a></li>
 <li data-md-type="list_item" data-md-list-type="unordered">
 <p data-md-type="paragraph"><a href="#cors-security-in-amp" data-md-type="link">CORS Sicherheit in AMP</a></p>
