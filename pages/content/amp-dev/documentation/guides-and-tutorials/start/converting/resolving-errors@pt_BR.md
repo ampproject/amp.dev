@@ -1,7 +1,7 @@
 ---
 "$title": Corrigir erros de validação
 "$order": '2'
-description: "In this section, we'll go through and resolve the AMP validation errors from our AMP page. Note that the errors may appear in a different order in your console."
+description: Nesta seção, analisaremos e resolveremos os erros de validação de AMP na nossa página AMP.  Esses erros podem aparecer em outra ordem no seu console.
 ---
 
 Nesta seção, analisaremos e resolveremos os erros de validação de AMP na nossa página AMP.  Esses erros podem aparecer em outra ordem no seu console.
