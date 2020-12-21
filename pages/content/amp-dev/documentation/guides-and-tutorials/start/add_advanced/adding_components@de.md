@@ -8,7 +8,7 @@ Mit dem AMP Komponentensystem kannst du schnell und mit minimalem Aufwand effizi
 
 - <strong>built-in</strong> (integriert): Das sind Komponenten, die in der AMP JavaScript Basisbibliothek enthalten sind (im Tag `<head>` definiert), z. B. [`amp-img`](../../../../documentation/components/reference/amp-img.md) und [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md). Diese Komponenten können sofort in einem AMP Dokument verwendet werden.
 
-- **extended**: These are extensions to the base library that must be explicitly included in the document as custom elements.  Custom elements require specific scripts that are added to the `<head>` section (e.g., `<script async custom-element="`[`amp-video`](../../../../documentation/components/reference/amp-video.md)`...`).
+- **extended** (erweitert): Das sind Erweiterungen der Basisbibliothek, die explizit als benutzerdefinierte Elemente in das Dokument aufgenommen werden müssen. Benutzerdefinierte Elemente erfordern bestimmte Skripte, die im Abschnitt `<head>` hinzugefügt werden (z. B. `<script async custom-element="`[`amp-video`](../../../../documentation/components/reference/amp-video.md)`...`).
 
 - **experimental** (experimentell): Das sind Komponenten, die veröffentlicht wurden, aber noch nicht für den breiten Einsatz geeignet sind. Entwickler können sich dafür entscheiden, diese Funktionen schon vor ihrem endgültigen Release zu verwenden. Weitere Informationen dazu findest du unter [Experimentelle Funktionen](../../../../documentation/guides-and-tutorials/learn/experimental.md).
 
