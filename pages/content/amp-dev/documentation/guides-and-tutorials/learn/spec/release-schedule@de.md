@@ -79,7 +79,7 @@ Wichtig: Publisher, die den **lts** Releasekanal verwenden, sollten keine neu ei
 
 ## Feststellen, ob sich deine Änderung in einem Release befindet <a name="determining-if-your-change-is-in-a-release"></a>
 
-[*Type: Release* GitHub issues](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) are used to track the status of current and past releases; from the initial cut, to testing via **experimental**/**beta** channels, to eventual release via the **stable** and **lts** channels. Announcements about releases are made on the [AMP Slack #release channel](https://amphtml.slack.com/messages/C4NVAR0H3/) ([sign up for Slack](https://bit.ly/amp-slack-signup)).
+Der [*Typ: Release* für GitHub Probleme](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) wird verwendet, um den Status aktueller und früherer Releases zu verfolgen: von der ersten Version über das Testen auf den Kanälen **Experimell**/**Beta** bis hin zu einem etwaigen Release über die **stabilen** und **lts** Kanäle. Releaseankündigungen erfolgen  auf dem [AMP Slack # Release Channel](https://amphtml.slack.com/messages/C4NVAR0H3/) ([Bei Slack anmelden](https://bit.ly/amp-slack-signup)).
 
 Mithilfe der folgenden Methoden kannst du feststellen, welche Änderungen ein bestimmtes Build enthält:
 
@@ -121,7 +121,7 @@ Wenn für Woche N eine einwöchiger Releasepause angekündigt wird:
 
 Mögliche Gründe für eine Releasepause:
 
-- Times when there are not enough people available to push the AMP release to **stable** and monitor it. Currently, most of the people performing AMP releases are based in the United States, so this will usually be the weeks of the major US holidays of Independence Day (July 4), Thanksgiving (fourth Thursday in November), Christmas (25 December), and New Year's Eve/Day (December 31/January 1).
+- Zeiten, in denen nicht genügend Personen verfügbar sind, um die AMP Version zu **stabilisieren** und zu überwachen. Derzeit befinden sich die meisten Leute, die AMP Releases durchführen, in den USA. Deshalb sind es normalerweise die Wochen der wichtigsten amerikanischen Feiertage: Independence Day (4. Juli), Thanksgiving (vierter Donnerstag im November), Weihnachten (25. Dezember) und Silvester/Neujahr (31. Dezember/1. Januar).
 - Ein Notfall, z. B. ein Problem mit der Sicherheit oder dem Datenschutz, das vom [Technischen Entscheidungsgremium (TSC)](https://github.com/ampproject/meta-tsc) oder den Releaseverantwortlichen festgestellt wurde.
 - Andere Situationen, in denen die Stabilität des Basiscodes als vorrangig betrachtet wird, wie vom TSC festgelegt.
 
