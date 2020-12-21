@@ -57,7 +57,7 @@ Os anúncios HTML para AMP são flexíveis e dinâmicos, permitindo muitos forma
 
 ### Editores
 
-To serve your direct-sold ad formats in AMPHTML, you must create the ads according to the [AMPHTML ad spec](a4a_spec.md) and deliver them using an ad server that supports AMPHTML ad serving.  Currently, the following ad servers support AMPHTML ads:
+Para veicular seus formatos de anúncio de venda direta em HTML para AMP, é preciso criar os anúncios de acordo com as [Especificações de anúncio HTML para AMP](a4a_spec.md) e exibi-los usando um servidor de anúncios que seja compatível com veiculação de anúncios HTML para AMP.  Atualmente, os servidores de anúncio compatíveis com anúncios HTML para AMP são os seguintes:
 
 - DoubleClick for Publishers
 - TripleLift
@@ -65,11 +65,11 @@ To serve your direct-sold ad formats in AMPHTML, you must create the ads accordi
 - [tip type="note"]<br>Adzerk
 - Google AdSense
 
-To deliver AMPHTML ads through your indirect channels (e.g., exchange, SSP, etc.), use a supporting ad network/ad server on the [following list](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md).
+Para exibir anúncios HTML para AMP usando seus canais indiretos (por exemplo, exchange, SSP etc.), escolha uma rede de publicidade ou um servidor de anúncios compatível na [lista a seguir](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md).
 
 ### Agências de criação
 
-If you are a creative agency, you must create the ads in accordance with  the [AMPHTML ad spec](a4a_spec.md). For inspiration and examples, see the open-source AMPHTML ad templates on [Examples](../../../documentation/examples/index.html). Alternatively, use one of the following tools to create AMPHTML ads:
+As agências de criação precisam criar os anúncios de acordo com as [Especificações de anúncio HTML para AMP](a4a_spec.md). Para ver exemplos e se inspirar, confira os modelos de anúncios HTML para AMP de código aberto no site [Examples](../../../documentation/examples/index.html). Como alternativa, use uma das seguintes ferramentas para criar os anúncios HTML para AMP:
 
 - [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
@@ -81,9 +81,9 @@ Para exibir anúncios HTML para AMP em páginas AMP, será preciso criar uma ext
 
 ## Criar anúncios HTML para AMP
 
-**From scratch**: AMPHTML ads must follow  the [AMPHTML ad spec](a4a_spec.md).  For demos and examples, see the open-source AMPHTML ad templates on [Examples](../../../documentation/examples/documentation/amp-ad.html).
+**Do zero**: os anúncios HTML para AMP precisam seguir as [especificações de anúncios HTML para AMP](a4a_spec.md).  Para ver demonstrações e exemplos, confira os modelos de anúncios HTML para AMP de código aberto no site [AMP by Example](../../../documentation/examples/documentation/amp-ad.html).
 
-**Using tools**: You can use any of the following tools to build AMPHTML creatives:
+**Usando ferramentas**: use qualquer uma das seguintes ferramentas se você quiser gerar criativos HTML para AMP:
 
 - [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
@@ -91,7 +91,7 @@ Para exibir anúncios HTML para AMP em páginas AMP, será preciso criar uma ext
 
 ### Validar a sintaxe do anúncio HTML para AMP
 
-After creating your AMPHTML ad, you should make sure that the ad is using the correct AMPHTML syntax. Depending on your development environment, there are a few options for you to validate your AMPHTML ads:
+Depois de criar seu anúncio HTML para AMP, certifique-se de que ele está usando a sintaxe HTML para AMP correta. Dependendo do seu ambiente de desenvolvimento, há algumas opções para validar os anúncios HTML para AMP:
 
 - Use o módulo [NPM validador de AMP](https://www.npmjs.com/package/amphtml-validator) para validação da integração no CI de criação.
 - Use o [validador de AMP](https://validator.ampproject.org/) para fazer um teste isolado.
