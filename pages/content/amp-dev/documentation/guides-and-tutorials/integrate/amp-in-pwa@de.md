@@ -1,5 +1,5 @@
 ---
-"$title": Use AMP as a data source for your PWA
+"$title": Verwende AMP als Datenquelle für deine PWA
 "$order": '1'
 description: Wenn du AMP bereits verwendest, aber noch keine Progressive Web App erstellt hast, können deine AMP Seiten die Entwicklung deiner Progressive Web App erheblich vereinfachen.
 formats:
@@ -9,7 +9,7 @@ author: pbakaus
 
 Wenn du AMP bereits verwendest, aber noch keine Progressive Web App erstellt hast, können deine AMP Seiten die Entwicklung deiner Progressive Web App erheblich vereinfachen. In diesem Leitfaden erfährst du, wie du AMP innerhalb deiner Progressive Web App verwendest und deine vorhandenen AMP Seiten als Datenquelle nutzt.
 
-## From JSON to AMP
+## Von JSON zu AMP
 
 Im gängigsten Szenario ist eine Progressive Web App eine Single-Page Anwendung, die über Ajax eine Verbindung zu einer JSON API herstellt. Diese JSON API gibt dann Datensätze zurück, um die Navigation zu steuern, und den tatsächlichen Inhalt, um die Artikel zu rendern.
 
