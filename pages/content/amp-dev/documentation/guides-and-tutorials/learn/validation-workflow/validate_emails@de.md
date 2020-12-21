@@ -1,5 +1,5 @@
 ---
-"$title": Validate AMP Emails
+"$title": Validierung von AMP E-Mails
 "$order": '1'
 author: CrystalOnScript
 formats:
@@ -16,20 +16,20 @@ Es gibt verschiedene Möglichkeiten, um eine E-Mail als gültige AMP E-Mail zu v
 
 Der [webbasierte AMP Validator](https://validator.ampproject.org/#htmlFormat=AMP4EMAIL) unterstützt die Plattform AMP für E-Mail. Verwende den webbasierten Validator, indem du deine AMP E-Mail in das Tool einfügst. Alle Validierungsfehler werden direkt inline markiert.
 
-{{ image('/static/img/docs/guides/emailvalidate.jpg', 500, 382, alt='Image of web-based email validator' ) }}
+{{ image('/static/img/docs/guides/emailvalidate.jpg', 500, 382, alt='Bild eines webbasierten E-Mail Validators' ) }}
 
 ## Befehlszeilenvalidator
 
-You can validate AMP Emails files by using the [AMP HTML validator command line tool](https://www.npmjs.com/package/amphtml-validator).
+Du kannst AMP E-Mail Dateien mit dem [Befehlszeilentool AMP HTML Validator](https://www.npmjs.com/package/amphtml-validator) überprüfen.
 
 ### Installation
 
-1. Make sure you have [Node.js with its package manager 'npm' ](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)on your system.
-2. Install the AMP HTML validator command line tool by running the following command: `npm install -g amphtml-validator`.
+1. Stelle sicher, dass du [Node.js mit dem Paketmanager 'npm'](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) in deinem System hast.
+2. Installiere das Befehlszeilentool AMP HTML Validator mithilfe des folgenden Befehls: `npm install -g amphtml-validator`.
 
 ### Verwendung
 
-After installing the command-line tool, run the following command after replacing `<amphtml file>` with your file containing the AMP Email content.
+Nachdem du das Befehlszeilentool installiert hast, ersetze im folgenden Befehl `<amphtml file>` durch deine Datei mit dem Inhalt der AMP E-Mail und führe ihn aus.
 
 ```
 amphtml-validator --html_format AMP4EMAIL <amphtml file>
@@ -39,7 +39,7 @@ Wenn die E-Mail gültig ist, zeigt das Befehlszeilentool das Ergebnis `PASS`. We
 
 ## AMP Playground
 
-You can also validate AMP Emails using the [AMP playground](https://playground.amp.dev/?runtime=amp4email). Similar to the web-based validator, paste your AMP Email into the tool, and the playground will flag any validator errors directly inline.
+Du kannst AMP E-Mails auch mit dem [AMP Playground](https://playground.amp.dev/?runtime=amp4email) validieren. Füge ähnlich wie beim webbasierten Validator deine AMP E-Mail in das Tool ein. Der Playground markiert alle Validierungsfehler direkt inline.
 
 ### Validiere zugestellte E-Mails
 
@@ -55,4 +55,4 @@ Der Playground importiert die heruntergeladene AMP E-Mail in den Inline Editor u
 
 # Was passiert, wenn meine E-Mail nicht gültig ist?
 
-The AMP Validator isn't just a convenience for you during development, email providers supporting AMP Emails will automatically fallback to the provided HTML or Plain Text MIME types. An AMP Email should only be sent if it passes the validator.
+Der AMP Validator vereinfacht nicht nur die Entwicklung. Da E-Mail Anbieter, die AMP E-Mails unterstützen, automatisch auf die bereitgestellten HTML oder Nur-Text MIME Typen zurückgreifen, sollte eine AMP E-Mail nur gesendet werden, nachdem sie erfolgreich mit dem Validator überprüft wurde.
