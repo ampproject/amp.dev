@@ -72,7 +72,7 @@ Gestalte AMP Komponenten und HTML Elemente mithilfe von Klassen oder Selektoren 
 
 ### Definiere Inline Styles
 
-AMP allows inline styles:
+AMP erlaubt inline Styles:
 
 [sourcecode:html]
 <body>
@@ -84,7 +84,7 @@ Jede Instanz eines Inline Styles hat ein Limit von 1.000 Byte. Inline Styles wer
 
 ## Layout elements responsively
 
-Specify the size and position for all visible AMP elements by providing a `width` and `height` attribute. These attributes imply the aspect ratio of the element, which can then scale with the container.
+Lege die Größe und Position aller sichtbaren AMP Elemente fest, indem du die Attribute `width` und `height` angibst. Diese Attribute implizieren das Seitenverhältnis des Elements, das dann mit dem Container skaliert werden kann.
 
 Set the layout to responsive. This sizes the element to the width of its container element and resizes its height automatically to the aspect ratio given by width and height attributes.
 
