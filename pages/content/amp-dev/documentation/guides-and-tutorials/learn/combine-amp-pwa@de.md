@@ -1,7 +1,7 @@
 ---
-"$title": How AMP and PWA relate to each other
+"$title": Wechselwirkung zwischen AMP und PWA
 "$order": '7'
-description: Progressive Web Apps and AMP pages work great together. In fact, in many cases, they complement each other in one way or another. Learn how to ...
+description: Progressive Web Apps und AMP Seiten funktionieren hervorragend zusammen. In vielen Fällen können sie sich sogar ergänzen. Finde heraus, wie …
 formats:
 - websites
 components:
@@ -11,36 +11,36 @@ author: pbakaus
 
 [video src='https://www.youtube.com/watch?v=Yllbfu3JE2Y' caption='Watch the intro to combining AMP and PWA.']
 
-Progressive Web Apps and AMP pages work great together. In fact, in many cases, they complement each other in one way or another. Learn how to:
+Progressive Web Apps und AMP Seiten funktionieren hervorragend zusammen. In vielen Fällen ergänzen sie sich auf die eine oder andere Weise. Finde heraus, wie du:
 
-1. [Enable PWA features](../../../documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md) for your AMP pages
-2. Create a [compelling, super-fast user journey](../../../documentation/guides-and-tutorials/integrate/amp-to-pwa.md) from AMP to PWA
-3. [Simplify your PWA](../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md) by using the power of AMP
+1. für deine eigenen AMP Seiten [PWA Funktionen aktivierst](../../../documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md),
+2. einen [überzeugenden, blitzschnellen Übergang der Benutzer](../../../documentation/guides-and-tutorials/integrate/amp-to-pwa.md) von AMP zu PWA schaffst,
+3. [deine PWA vereinfachst](../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md), indem du die Möglichkeiten von AMP voll ausschöpfst.
 
 [tip type="note"]
 
-Learn more about [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/) at Web Fundamentals.
+Weitere Informationen zu [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/) findest du bei Web Fundamentals.
 
 [/tip]
 
-## AMP pages with PWA features
+## AMP Seiten mit PWA Funktionen
 
-AMP Pages can use many PWA features on their own, as long as they're served from your origin (your site's domain) as opposed to an AMP Cache. This means that PWA features won't kick in when consuming an AMP Page within a platform like Google or Bing, but they will on the onward journey, or if users navigate to your AMP pages directly.
+AMP Seiten können viele eigenständige PWA Funktionen nutzen, sofern sie nicht aus einem AMP Cache, sondern aus deiner eigenen Quelle (der Domain deiner Website) bereitgestellt werden. Das bedeutet: PWA Funktionen werden beim Anzeigen einer AMP Seite innerhalb einer Plattform wie Google oder Bing nicht aktiviert, sondern kommen erst zum Einsatz, sobald die Benutzer von da aus weiter navigieren oder wenn sie deine AMP Seiten direkt aufrufen.
 
-[tip type="read-on"] **READ ON –** Learn how to [enable PWA features](../../../documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md) for your AMP Pages. [/tip]
+[tip type="read-on"] **LIES WEITER:** Lerne, wie du [PWA Funktionen für deine AMP Seiten aktivierst](../../../documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md). [/tip]
 
-## AMP as entry point into your PWA
+## AMP als Einstiegspunkt in deine PWA
 
-AMP's unique selling point is the **almost-instant delivery**, a characteristic that makes AMP the perfect fit for the first user interaction with your site. *Progressive web apps* enable much **more interactivity and engagement-enabling features**, but their first load is hindered by the fact that the site's Service Worker, and therefore its assets and app shell, are only accelerating delivery on subsequent loads.
+Das Besondere an AMP ist die **fast verzögerungsfreie Bereitstellung** – eine Eigenschaft, die AMP zur idealen Lösung für die erste Benutzerinteraktion mit deiner Website macht. *Progressive Web Apps* ermöglichen zwar **mehr Interaktivität und bieten Funktionen für zusätzliches Engagement**. Allerdings wird ihr erstmaliges Laden dadurch erschwert, dass der Service Worker der Website – und damit ihre Assets und die App Shell – die Bereitstellung nur beim nachfolgenden Laden beschleunigen.
 
-A good strategy is to make the entry point into your site an AMP page, then warm up the PWA behind the scenes and switch to it for the onward journey.
+Eine gute Strategie besteht darin, eine AMP Seite als Einstiegspunkt für deine Website zu erstellen, dann die PWA hinter den Kulissen zu starten und für die weitere Navigation der Benutzer durch die Website zur PWA zu wechseln.
 
-[tip type="read-on"] **READ ON –** Learn how to [connect AMP to a PWA](../../../documentation/guides-and-tutorials/integrate/amp-to-pwa.md) through [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md). [/tip]
+[tip type="read-on"] **LIES WEITER:** Finde heraus, wie <br>du mithilfe von [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) [AMP mit PWA verbindest](../../../documentation/guides-and-tutorials/integrate/amp-to-pwa.md). [/tip]
 
-## AMP as data source for your PWA
+## AMP als Datenquelle für deine PWA
 
-One of the core features of AMP Pages is that they're easy and safe to embed, which is why an ever-growing number of platforms are happy to distribute and serve them.
+Eines der wichtigsten Features von AMP Seiten ist ihre unproblematische und sichere Einbettung, weshalb immer mehr Plattformen sie gerne verteilen und bereitstellen.
 
-If you're building a Progressive Web App, you can receive the same benefits and dramatically reduce your backend and client complexity by **re-using your AMP Pages as data-source for your PWA**.
+Wenn du eine Progressive Web App erstellst, kannst du dieselben Vorteile nutzen und die Komplexität von Backend und Client drastisch reduzieren, **indem du deine AMP Seiten als Datenquelle für deine PWA wiederverwendest**.
 
-[tip type="read-on"] **READ ON –** Learn how to [consume AMP pages within a PWA](../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md). [/tip]
+[tip type="read-on"] **LIES WEITER:** Lerne, wie du [AMP Seiten innerhalb einer PWA verwendest](../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md). [/tip]
