@@ -25,6 +25,6 @@ In diesem Tutorial lernst du die Basiskonzepte von AMP kennen und erfährst, wie
 - Validate an AMP page
 - Prepare your AMP content for discoverability
 
-## You'll build:
+## Das erstellst du:
 
-A simple news article page that conforms to AMP specifications and incorporates common features found on mobile news sites.
+Eine einfache Nachrichtenartikelseite, die den AMP Spezifikationen entspricht und allgemeine Funktionen von mobilen Nachrichtenseiten enthält.
