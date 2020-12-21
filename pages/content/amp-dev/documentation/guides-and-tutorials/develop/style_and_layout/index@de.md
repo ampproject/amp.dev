@@ -26,9 +26,9 @@ Aus Gründen der Leistung und Benutzerfreundlichkeit beschränkt AMP einige [CSS
 
 ## Add styles to a page <a name="add-styles-to-a-page"></a>
 
-Each AMP page has a 75,000 byte CSS limit. Styles defined in the head of the document and inline count towards this limit.
+Jede AMP Seite hat ein CSS Limit von 75.000 Byte. Styles, die im Header des Dokuments oder inline definiert sind, werden auf dieses Limit angerechnet.
 
-### Define styles in head
+### Definiere Styles im Header
 
 Define CSS within the `<style amp-custom>` tag inside the head of the document. There is only one `<style amp-custom>` tag allowed on each AMP page.
 
@@ -53,7 +53,7 @@ Define CSS within the `<style amp-custom>` tag inside the head of the document. 
   </head>
 [/sourcecode]
 
-Style AMP components and HTML elements with class or selectors using common CSS properties:
+Gestalte AMP Komponenten und HTML Elemente mithilfe von Klassen oder Selektoren und verwende dafür allgemeine CSS Eigenschaften:
 
 [sourcecode:html]
 <body>
@@ -70,7 +70,7 @@ Style AMP components and HTML elements with class or selectors using common CSS 
 </body>
 [/sourcecode]
 
-### Define inline styles
+### Definiere Inline Styles
 
 AMP allows inline styles:
 
@@ -80,7 +80,7 @@ AMP allows inline styles:
 </body>
 [/sourcecode]
 
-Each instance of an inline style has a 1,000 byte limit. Inline styles count toward the total 75,000 byte limit.
+Jede Instanz eines Inline Styles hat ein Limit von 1.000 Byte. Inline Styles werden auf das Limit von 75.000 Byte angerechnet.
 
 ## Layout elements responsively
 
@@ -98,17 +98,17 @@ The built-in support for placeholders and fallbacks means your users never have 
 
 ## Art direct your images
 
-AMP supports both `srcset` and `sizes` attributes to give you fine grained control, of which images to load in which scenario.
+AMP unterstützt die Attribute `srcset` und `sizes`. Dadurch kannst du präzise steuern, welche Bilder in welchem Szenario geladen werden.
 
 [tip type="read-on"] **READ ON –** Learn more about [art direction with srcset and sizes](art_direction.md) [/tip]
 
 ## Validate your styles and layout
 
-Use the AMP validator to test your page's CSS and layout values.
+Verwende den AMP Validator, um die Werte für CSS und Layout deiner Seite zu testen.
 
-The validator confirms that your page’s CSS doesn’t exceed 75,000 bytes limit, checks for disallowed styles, and ensures that the page's layout is supported and correctly formatted. See also this complete list of [Style and layout errors](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md#style-and-layout-errors).
+Der Validator bestätigt, dass das CSS deiner Seite das Limit von 75.000 Byte einhält, sucht nach unzulässigen Styles und stellt sicher, dass das Seitenlayout unterstützt wird und korrekt formatiert ist. Siehe auch diese vollständige Liste der [Fehler bei Style und Layout](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md#style-and-layout-errors).
 
-Example error in console for page with CSS that exceeds the 75,000 bytes limit:
+Beispiel eines Fehlers in der Konsole für eine Seite mit CSS, die das Limit von 75.000 Byte überschreitet:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
