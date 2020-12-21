@@ -47,7 +47,7 @@ Wenn du das hier liest, erstellst du mit Sicherheit Seiten mit AMP. Das AMP Team
 
 [tip type="default"] **TIPP:** Sieh dir unser Tutorial an, um zu erfahren, wie du den [AMP Service Worker in deiner PWA](/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp_to_pwa.md) verwenden kannst. [/tip]
 
-### Installing the AMP Service Worker
+### Der AMP Service Worker
 
 Installiere mit wenigen Schritten den AMP Service Worker:
 
