@@ -53,18 +53,18 @@ O uso de `<link rel="stylesheet" href="...">` não é permitido em lugar algum d
 
 ### Seletores simples <a name="simple-selectors"></a>
 
-- [Type selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) `elementname`
-- [Class selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) `.classname`
-- [ID selector](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) `#idname`
-- [Universal selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) `*`
-- [Attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) `[attr=value]`
+- [Seletor de tipo](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) `elementname`
+- [ Seletor de classe](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) `.classname`
+- [Seletor de ID](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) `#idname`
+- [Seletor universal](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) `*`
+- [Seletor de atributo](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) `[attr=value]`
 
 ### Combinadores <a name="combinators"></a>
 
-- [Adjacent sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator) `A + B`
-- [General sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator) `A ~ B`
-- [Child combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator) `A > B`
-- [Descendant combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator) `A B`
+- [Combinador irmão adjacente](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator) `A + B`
+- [Combinador geral irmão](https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator) `A ~ B`
+- [Combinador filho](https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator) `A > B`
+- [Combinador descendente](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator) `A B`
 
 ### Pseudo-classes <a name="pseudo-classes"></a>
 
