@@ -97,7 +97,7 @@ Depois de criar seu anúncio HTML para AMP, certifique-se de que ele está usand
 - Use o [validador de AMP](https://validator.ampproject.org/) para fazer um teste isolado.
 - Estabeleça uma parceria com o [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) (em inglês) e use o ponto de extremidade público do validador que ele oferece.
 
-Para renderizar rapidamente os anúncios HTML para AMP em páginas AMP (ou seja, usando a renderização preferencial no Fast Fetch), a sintaxe precisa estar correta.  Se ela não for válida, o anúncio ainda será renderizado, mas isso não acontecerá tão rápido.
+[tip type="note"]Para renderizar rapidamente os anúncios HTML para AMP em páginas AMP (ou seja, usando a renderização preferencial no Fast Fetch), a sintaxe precisa estar correta.  Se ela não for válida, o anúncio ainda será renderizado, mas isso não acontecerá tão rápido.[/tip]
 
 ## Compatibilidade com anúncios HTML para AMP em RTB
 
@@ -105,7 +105,7 @@ Se você quiser que Ad Exchanges e SSPs sejam compatíveis com anúncios HTML pa
 
 ## Perguntas frequentes
 
-#### Há alguma amostra de anúncio HTML para AMP?<br>[/tip]
+#### Há alguma amostra de anúncio HTML para AMP?
 
 Sim. Você encontra vários modelos fantásticos de anúncios HTML para AMP no site [Examples](../../../documentation/examples/documentation/amp-ad.html). Essas amostras usam componentes avançados em AMP.
 
@@ -113,11 +113,11 @@ Sim. Você encontra vários modelos fantásticos de anúncios HTML para AMP no s
 
 Sim, há compatibilidade nativa para verificação e detecção de visibilidade usando [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md). Por exemplo, o ActiveView do Google integra-se dessa maneira. Há também outros fornecedores, como a MOAT, que vêm implementando ativamente essa compatibilidade.
 
-#### Os anúncios HTML para AMP são compatíveis com animação baseada em linha do tempo?<br>[/tip]
+#### Os anúncios HTML para AMP são compatíveis com animação baseada em linha do tempo?
 
 Sim. Consulte [`amp-animation`](../../../documentation/components/reference/amp-animation.md).
 
-#### A maioria dos anúncios tem regiões-alvo ativadas por toque e saídas de anúncio configuráveis. Os anúncios HTML para AMP têm um mecanismo semelhante?<br>[/tip]
+#### A maioria dos anúncios tem regiões-alvo ativadas por toque e saídas de anúncio configuráveis. Os anúncios HTML para AMP têm um mecanismo semelhante?
 
 Sim. Consulte [`amp-ad-exit`](../../../documentation/components/reference/amp-ad-exit.md).
 
