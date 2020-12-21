@@ -73,7 +73,7 @@ Diese zulässigen Styles sollten die Werte wie folgt beschränken, um die Leistu
   </tbody>
 </table>
 
-## The custom fonts exception <a name="the-custom-fonts-exception"></a>
+## Ausnahme für benutzerdefinierte Schriftarten <a name="the-custom-fonts-exception"></a>
 
 AMP Seiten dürfen keine externen Stylesheets enthalten, mit Ausnahme von benutzerdefinierten Schriftarten.
 
