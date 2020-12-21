@@ -9,7 +9,7 @@ Die meisten mobilen Websites enthalten ein Navigationsmenü. Solche Menüs könn
 - ein Link zurück zu deiner Homepage; das ist die einfachste Option.
 - eine Navigationsrandleiste mithilfe der Komponente [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md)
 
-## Link back home
+## Link zur Homepage
 
 Leite deine Benutzer einfach zurück auf deine Homepage, wenn du ihnen auf unkomplizierte Weise die regulären Navigationsoptionen deiner Website verfügbar machen möchtest.
 
@@ -24,7 +24,7 @@ Leite deine Benutzer einfach zurück auf deine Homepage, wenn du ihnen auf unkom
 </header>
 ```
 
-And **add** these style rules to your inline CSS:
+**Füge** diese Styleregeln zu deinem Inline CSS hinzu:
 
 ```css
 .home-button {
@@ -51,9 +51,9 @@ article {
 
 {{ image('/static/img/docs/tutorials/tut-advanced-navigate-home.png', 412, 190, align='center half', caption='Navigation via Home Symbol') }}
 
-This link can be replaced with the URL of your website’s homepage to allow your users to navigate to other parts of your site through your existing website’s navigation.
+Du kannst diesen Link durch die URL der Homepage deiner Website ersetzen, damit deine Benutzer über die Navigation deiner vorhandenen Website zu anderen Elementen deiner Website navigieren können.
 
-This is the simplest approach that leverages your existing website navigation. Next, we’ll explore a popular option for site navigation.
+Das ist der einfachste Weg, um die Navigation deiner vorhandenen Website zu nutzen. Als Nächstes untersuchen wir eine beliebte Navigationsoption für Websites.
 
 ## Navigiere via Randleiste
 
@@ -76,7 +76,7 @@ Als Nächstes wollen wir ein Menüsymbol anzeigen. Wenn du auf das Symbol tippst
 
 Im oben gezeigten Code schalten wir die Randleiste mithilfe von `toggle` im Aktionsattribut [`on`](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) um, das für das Element [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) gilt. Dieses ist durch die ID `sidebar1` gekennzeichnet. Fügen wir die Seitenleiste hinzu.
 
-**Add** the following HTML just after the `</header>`:
+**Füge** den folgenden HTML Code direkt nach dem `</header>` hinzu:
 
 ```html
 <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
@@ -91,7 +91,7 @@ Im oben gezeigten Code schalten wir die Randleiste mithilfe von `toggle` im Akti
 
 Die Randleiste wird ausgeblendet, aber wenn Benutzer auf das Hamburgersymbol tippen, erscheint das Menü im linken Bildschirmbereich. Um das Menü zu schließen, können Benutzer auf das Symbol X tippen.
 
-Finally, **add** these style rules to your inline CSS:
+**Füge** zum Abschluss diese Styleregeln zu deinem Inline CSS hinzu:
 
 ```css
 .hamburger {
