@@ -1,7 +1,7 @@
 ---
-"$title": Incluir uma imagem
+"$title": Inclua uma imagem
 "$order": '2'
-description: Most HTML tags can be used directly in AMP HTML, but certain tags, such as the <img> tag, are replaced with equivalent or slightly enhanced custom AMP HTML tags
+description: A maioria das tags HTML podem ser usadas diretamente em AMP HTML, mas algumas, como a tag <img>, são substituídas por tags AMP HTML equivalentes ou ligeiramente melhoradas
 author: pbakaus
 contributors:
 - bpaduch
