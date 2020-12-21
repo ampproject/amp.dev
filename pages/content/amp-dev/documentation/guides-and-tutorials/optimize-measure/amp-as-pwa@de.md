@@ -1,7 +1,7 @@
 ---
-"$title": Easy offline access and improved performance
+"$title": Einfacher Offlinezugriff und verbesserte Leistung
 "$order": '11'
-description: A Service Worker is a client-side proxy that sits between your page and your server, and is used to build fantastic offline experiences, fast-loading ...
+description: Ein Service Worker ist ein clientseitiger Proxy, der sich zwischen deiner Seite und deinem Server befindet. Er wird verwendet, um fantastische Offline Erlebnisse und …
 formats:
 - websites
 author: CrystalOnScript
@@ -21,7 +21,7 @@ Ein Service Worker ist ein clientseitiger Proxy, der sich zwischen deiner Seite 
 
 Dein Service Worker muss auf einer bestimmten Seite registriert sein – sonst kann der Browser ihn nicht finden oder ausführen. Standardmäßig erfolgt dies mit [ein wenig JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). Auf AMP Seiten verwendest du zu diesem Zweck die Komponente [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md).
 
-For that, first include the [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) component via its script in the `<head>` of your page:
+Füge dazu zuerst die Komponente [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) über ihr Skript im Abschnitt `<head>` deiner Seite ein:
 
 [sourcecode:html]
 
@@ -41,7 +41,7 @@ Füge dann irgendwo in deinem `<body>` Folgendes hinzu (passe es entsprechend an
 
 Sobald Benutzer zu deinen AMP Seiten in deiner Quelle navigieren (im Gegensatz zum ersten Klick, der gewöhnlich von einem AMP Cache aus ausgeführt wird), übernimmt der Service Worker die Aufgabe und kann [viele coole Dinge](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux) tun.
 
-## The AMP Service Worker
+## Der AMP Service Worker
 
 Wenn du das hier liest, erstellst du mit Sicherheit Seiten mit AMP. Das AMP Team legt großen Wert darauf, dass Benutzer im Vordergrund stehen und eine erstklassige Weberfahrung haben. Damit diese Erfahrungen durchweg konsistent bleiben, hat das AMP Team einen Service Worker speziell für AMP erstellt.
 
@@ -59,7 +59,7 @@ Installiere mit wenigen Schritten den AMP Service Worker:
 
 - Fertig.
 
-### Automated Caching
+### Automatisiertes Zwischenspeichern
 
 Der AMP Service Worker speichert AMP Skriptdateien und AMP Dokumente automatisch im Cache. Da AMP Skriptdateien zwischengespeichert werden, stehen sie dem Browser der Benutzer sofort zur Verfügung und ermöglichen auch in unzuverlässigen Netzwerken Offlinefunktionen und schnellere Seiten.
 
@@ -117,7 +117,7 @@ Eine gelungene Offlineseite sieht wie ein Teil deiner Website aus, da ihre Benut
 
 Das Team arbeitet an der Implementierung einer Funktion zum Erzwingen/Entfernen des Updates für den Fall, dass dein AMP Service Worker deaktiviert oder geändert werden muss, wenn eine Bereitstellung für Benutzer fehlgeschlagen ist.
 
-To effectively manage a service worker, you should understand how [standard HTTP caching affects the way your service worker's JavaScript is kept up to date](https://developers.google.com/web/updates/2018/06/fresher-sw). Service workers served with appropriate HTTP caching directives can resolve small bug fixes by making the appropriate changes and redeploying your service worker to your hosting environment. If you need to remove a service worker, it's a good idea to keep a simple, [no-op](https://en.wikipedia.org/wiki/NOP) service worker file handy, like the following:
+Um einen Server Worker effektiv zu verwalten, solltest du wissen, wie sich das [standardmäßige HTTP Caching auf die Aktualisierung des JavaScript deines Service Workers auswirkt](https://developers.google.com/web/updates/2018/06/fresher-sw). Service Worker, die entsprechende HTTP Caching Anweisungen erhalten, können geringfügige Fehlerbehebungen vornehmen, indem die passenden Änderungen vorgenommen werden und dein Service Worker in deiner Hostingumgebung erneut bereitgestellt wird. Wenn du einen Service Worker entfernen musst, solltest du am besten eine einfache [no-op](https://en.wikipedia.org/wiki/NOP) (Nulloperation) Service Worker Datei wie die folgende griffbereit halten:
 
 ```js
 self.addEventListener('install', () => {
@@ -130,7 +130,7 @@ self.addEventListener('install', () => {
 
 [tip type="read-on"] [Hier findest du mehr Informationen](https://stackoverflow.com/questions/33986976/how-can-i-remove-a-buggy-service-worker-or-implement-a-kill-switch/38980776#38980776) über das Verwalten bereitgestellter Service Worker. [/tip]
 
-## Write a Custom Service Worker
+## Schreibe einen benutzerdefinierten Service Worker
 
 Mit der oben genannten Technik kannst du den Offlinezugriff auf deine AMP Website aktivieren und deine Seiten erweitern, **sobald sie von der Quelle aus bereitgestellt werden**. Das ist möglich, weil du die Antwort über das Event `fetch` des Service Workers ändern und eine beliebige Antwort zurückgeben kannst:
 
@@ -157,5 +157,5 @@ return networkResponse;
 
 Mit dieser Technik kannst du deine AMP Seite mit allen möglichen Zusatzfunktionen ausstatten, die andernfalls die [AMP Validierung nicht bestehen würden](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md), zum Beispiel:
 
-- Dynamic features that require custom JS.
+- Dynamische Funktionen, die benutzerdefiniertes JS erfordern.
 - Komponenten, die nur für deine Website angepasst bzw. relevant sind
