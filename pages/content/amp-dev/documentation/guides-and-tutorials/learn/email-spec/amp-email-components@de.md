@@ -33,9 +33,9 @@ limitations under the License.
 
 Die folgende Liste enthält die [AMP Komponenten](https://amp.dev/documentation/components/?format=email), die derzeit in AMP E-Mail Nachrichten unterstützt werden. Die Komponenten sind in folgende Kategorien unterteilt:
 
-- [Dynamic Content](#dynamic-content)
+- [Dynamischer Inhalt ](#dynamic-content)
 - [Layout](#layout)
-- [Media](#media)
+- [Medien ](#media)
 
 ## Dynamischer Inhalt <a name="dynamic-content"></a>
 
@@ -52,7 +52,7 @@ Element | Beschreibung
 
 Element | Beschreibung
 --- | ---
-[layout attributes](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/#layout-attributes) | Das Layoutverhalten wird durch das Attribut "layout" bestimmt.
+[Layoutattribute](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/#layout-attributes) | Das Layoutverhalten wird durch das Attribut "layout" bestimmt.
 [`<amp-accordion>`](https://amp.dev/documentation/components/amp-accordion) | Ein UI Element, das das Einblenden/Ausblenden verschiedener Abschnitte erleichtert.
 [`<amp-carousel>`](https://amp.dev/documentation/components/amp-carousel) | Die UI Komponente Karussell.
 [`<amp-fit-text>`](https://amp.dev/documentation/components/amp-fit-text) | Eine Hilfskomponente zum Anpassen von Text in einem bestimmten Bereich.
