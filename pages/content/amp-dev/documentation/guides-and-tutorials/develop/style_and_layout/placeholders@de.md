@@ -16,7 +16,7 @@ contributors:
 
 In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible.
 
-Some elements will even reward you for doing it by relaxing restrictions – for example, if you provide a placeholder for [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder), it can be used near the top of the page (which won't work without).
+Einige Elemente werden Sie sogar dafür belohnen, indem Sie Einschränkungen lockern. Wenn Sie beispielsweise einen Platzhalter für [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder) bereitstellen, kann dieser oben auf der Seite verwendet werden (ohne den er nicht funktioniert).
 
 ## Placeholders
 
@@ -36,23 +36,23 @@ Das mit dem Attribut `placeholder` markierte Element agiert als Platzhalter für
 ```
 [/example]
 
-By default, the placeholder is immediately shown for the AMP element, even if the AMP element's resources have not been downloaded or initialized. Once ready, the AMP element typically hides its placeholder and shows the content.
+Standardmäßig wird der Platzhalter für das AMP-Element sofort angezeigt, auch wenn die Ressourcen des AMP-Elements nicht heruntergeladen oder initialisiert wurden. Sobald es fertig ist, versteckt das AMP-Element normalerweise seinen Platzhalter und zeigt den Inhalt an.
 
-[tip type="note"] **NOTE –**  The placeholder doesn’t have to be an AMP element; any HTML element can act as the placeholder. [/tip]
+[tip type="note"] HINWEIS **-** Der Platzhalter muss kein AMP-Element sein. Jedes HTML-Element kann als Platzhalter fungieren. [/tip]
 
 ## Fallbacks <a name="fallbacks"></a>
 
 You can specify the `fallback` attribute on an element to indicate the fallback behavior:
 
-- for any element the browser doesn’t support
-- if the content fails to load (e.g., Tweet deleted)
-- if the image type is unsupported (e.g., WebP isn't supported in all browsers)
+- Für jedes Element wird der Browser nicht unterstützt
+- wenn der Inhalt nicht geladen werden kann (z. B. Tweet gelöscht)
+- Wenn der Bildtyp nicht unterstützt wird (z. B. wird WebP nicht in allen Browsern unterstützt).
 
 Du kannst das Attribut `fallback` für ein *beliebiges* HTML Element festlegen, nicht nur für AMP Elemente. Wenn das `fallback` Element angegeben wird, muss es dem AMP Element direkt untergeordnet sein.
 
 ##### Example: Unsupported feature
 
-In the following example, we use the `fallback` attribute to communicate to the user that the browser doesn’t support a particular feature:
+Im folgenden Beispiel verwenden wir das `fallback` Attribut, um dem Benutzer mitzuteilen, dass der Browser eine bestimmte Funktion nicht unterstützt:
 
 [example preview="inline" playground="true" imports="amp-video:0.1"]
 ```html
@@ -70,7 +70,7 @@ In the following example, we use the `fallback` attribute to communicate to the 
 
 ##### Beispiel: unterschiedliche Bildformate bereitstellen
 
-In the following example, we use the `fallback` attribute to tell the browser to use the JPEG file if the WebP format is unsupported.
+Im folgenden Beispiel verwenden wir das `fallback` Attribut, um den Browser anzuweisen, die JPEG-Datei zu verwenden, wenn das WebP-Format nicht unterstützt wird.
 
 [example preview="inline" playground="true"]
 ```html
