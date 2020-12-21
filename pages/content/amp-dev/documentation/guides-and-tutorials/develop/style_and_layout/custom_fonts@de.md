@@ -1,5 +1,5 @@
 ---
-"$title": Add custom fonts
+"$title": Füge benutzerdefinierte Schriftarten hinzu
 "$order": '6'
 description: AMP Seiten dürfen keine externen Stylesheets enthalten, mit Ausnahme von benutzerdefinierten Schriftarten. Es gibt zwei Möglichkeiten, …
 formats:
@@ -12,9 +12,9 @@ author: pbakaus
 AMP Seiten dürfen keine externen Stylesheets enthalten, mit Ausnahme von benutzerdefinierten Schriftarten. Es gibt zwei Möglichkeiten, benutzerdefinierte Schriftarten in deine Seite einzubetten:
 
 1. Über das Tag `<link>` (nur zugelassene Schriftartenanbieter)
-2. Via `@font-face` (no restrictions, all fonts allowed)
+2. Über `@font-face` (uneingeschränkt, alle Schriftarten erlaubt)
 
-### 1. Using `<link>`
+### 1. Verwendung von `<link>`
 
 Verwende das Tag `<link>` (normalerweise im Head deiner Seite) wie folgt:
 
@@ -22,7 +22,7 @@ Verwende das Tag `<link>` (normalerweise im Head deiner Seite) wie folgt:
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 [/sourcecode]
 
-The following origins are allowlisted and allowed for font serving via link tags:
+Die folgenden Quellen sind zulässig und für das Bereitstellen von Schriftarten über Linktags erlaubt:
 
 - Typography.com: **https://cloud.typography.com**
 - Fonts.com: **https://fast.fonts.net**
@@ -30,9 +30,9 @@ The following origins are allowlisted and allowed for font serving via link tags
 - Typekit: **https://use.typekit.net**
 - Font Awesome: **https://maxcdn.bootstrapcdn.com**, **https://use.fontawesome.com**
 
-### 2. Using `@font-face`
+### 2. Verwendung von `@font-face`
 
-Alternatively, you can use [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) within your AMP stylesheet:
+Alternativ kannst du [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) in deinem AMP Stylesheet verwenden:
 
 [sourcecode:html]
 <style amp-custom>
