@@ -1,13 +1,13 @@
 ---
-"$title": Creating the bookend
+"$title": Ein Bookend erstellen
 "$order": '7'
-description: "Now that you've added all of your pages, let's look at the last screen of the story, the bookend. This last screen wraps up the story ..."
+description: 'Da du nun alle Seiten hinzugefügt hast, können wir uns die letzte Seite der Story ansehen: das Bookend. Diese letzte Seite schließt die Story ab …'
 author: bpaduch
 ---
 
 Da du nun alle Seiten hinzugefügt hast, können wir uns die letzte Seite der Story ansehen: das Bookend. Diese letzte Seite schließt die Story ab. Hier kannst du Social Share Buttons und sonstige relevante Links bereitstellen, damit die Benutzer deine Story teilen und tiefer in andere Inhalte auf deiner Website eintauchen.
 
-The information on the bookend screen comes from a JSON file that's specified in the `<amp-story-bookend>` tag. For our tutorial, we already have a JSON file ([bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json)) that contains the bookend data.
+Die Informationen auf der Bookend Seite stammen aus einer JSON Datei, die im Tag `<amp-story-bookend>` angegeben wird. Für unser Tutorial haben wir bereits eine JSON Datei ([bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json)) angelegt, welche die Bookend Daten enthält.
 
 Das Tag `<amp-story-bookend>` muss das letzte Tag in [`<amp-story>`](../../../../documentation/components/reference/amp-story.md) sein. **Fügen** wir also `<amp-story-bookend></amp-story-bookend>` kurz vor dem abschließenden Tag [`</amp-story>`](../../../../documentation/components/reference/amp-story.md) hinzu. Im Tag `amp-story-bookend` muss das Attribut `src` auf die Datei `bookend.json` verweisen. Außerdem benötigst du das Attribut `layout="nodisplay"`:
 
@@ -21,15 +21,15 @@ Wenn du den Inhalt in deinem Browser aktualisierst und zur letzten Story Seite w
 
 {{ image('/static/img/docs/tutorials/amp_story/bookend_full.gif', 398, 709, align='center third', alt='Bookend' ) }}
 
-Let's look at the JSON file.  Open the [bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json) file in your text editor.
+Sehen wir uns die JSON Datei an. Öffne die Datei [bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json) in deinem Texteditor.
 
-Every bookend screen requires a `bookendVersion`, which is `v1.0` for this tutorial:
+Jede Seite des Bookends benötigt die Angabe von `bookendVersion`. In diesem Tutorial ist das `v1.0`:
 
 ```json
 "bookendVersion": "v1.0",
 ```
 
-Social share buttons allow readers to share your content through social platforms, like Twitter, Facebook, Pinterest, and so on. You specify social share providers in a shareProviders object, and create an array containing [type names](../../../../documentation/components/reference/amp-social-share.md#pre-configured-providers) for each of the social platforms.
+Mithilfe der Social Share Buttons können Leser deine Inhalte auf sozialen Plattformen wie Twitter, Facebook, Pinterest usw. teilen. Gib die Social Share Anbieter im Objekt "shareProviders" an und erstelle ein Array mit [Typnamen](../../../../documentation/components/reference/amp-social-share.md#pre-configured-providers) für jede der sozialen Plattformen.
 
 Für dieses Tutorial haben wir Facebook, Twitter und E-Mail als Anbieter von Social Share Buttons ausgewählt:
 
@@ -43,7 +43,7 @@ Für dieses Tutorial haben wir Facebook, Twitter und E-Mail als Anbieter von Soc
 
 {{ image('/static/img/docs/tutorials/amp_story/bookend_social_share.png', 720, 240, align='center half', alt='Bookend social share' ) }}
 
-The rest of the bookend screen is for related content.  All related content is contained in a `components` object.
+Der Rest der Bookend Seite ist relevanten Links vorbehalten. Alle relevanten Inhalte befinden sich im Objekt `components`.
 
 Es gibt verschiedene Komponenten, mit denen du relevante Inhalte und Links anzeigen kannst. Jede Komponente enthält das Attribut "type". Sehen wir uns die verfügbaren Komponenten an:
 
@@ -128,6 +128,6 @@ Es gibt verschiedene Komponenten, mit denen du relevante Inhalte und Links anzei
 </tbody>
 </table>
 
-There's more to learn about the bookend component. For details, see the [`amp-story`](../../../../documentation/components/reference/amp-story.md) reference documentation.
+Damit sind die Informationen zur Bookend Komponente noch nicht erschöpft. Weitere Informationen findest du in der Referenzdokumentation zu [`amp-story`](../../../../documentation/components/reference/amp-story.md).
 
-Our story is nearly complete.  Before we can publish our content, let's check that our AMP HTML is valid.
+Unsere Story ist fast fertig. Bevor wir unseren Content veröffentlichen können, müssen wir überprüfen, ob unser AMP HTML gültig ist.
