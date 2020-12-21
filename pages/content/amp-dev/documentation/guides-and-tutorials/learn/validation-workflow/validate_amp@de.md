@@ -196,18 +196,15 @@ Die meisten Validierungsfehler lassen sich leicht erkennen und beheben. Sieh dir
 
 Es generiert diesen AMP Validierungsfehler, der in den folgenden Tools angezeigt wird:
 
-- Browser Developer Console
-    <amp-img src="/static/img/docs/validator_console_imgerror.png" width="696" height="30" layout="responsive" alt="AMP error: The tag 'img' may only appear as a descendant of tag'noscript'. Did you mean 'amp-img'? line 11, column 2"></amp-img>
+- Entwicklerkonsole des Browsers <br><amp-img src="/static/img/docs/validator_console_imgerror.png"         width="696" height="30" layout="responsive"         alt="AMP error: The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'? line 11, column 2"></amp-img>
 
 
 
-- Web Interface
-    <amp-img src="/static/img/docs/validator_webui_imgerror.png" width="676" height="58" layout="responsive" alt="AMP error: The tag 'img' may only appear as a descendant of tag'noscript'. Did you mean 'amp-img'? line 11, column 2"></amp-img>
+- Webschnittstelle <br><amp-img src="/static/img/docs/validator_webui_imgerror.png"         width="676" height="58" layout="responsive"         alt="AMP error: The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'? line 11, column 2"></amp-img>
 
 
 
-- Browser Extension
-    <amp-img src="/static/img/docs/validator_extension_imgerror.png" width="724" height="108" layout="responsive" alt="AMP error: The tag 'img' may only appear as a descendant of tag'noscript'. Did you mean 'amp-img'? line 11, column 2"></amp-img>
+- Browsererweiterung <br><amp-img src="/static/img/docs/validator_extension_imgerror.png"        width="724" height="108" layout="responsive"    alt="AMP error: The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'? line 11, column 2"></amp-img>
 
 
 
