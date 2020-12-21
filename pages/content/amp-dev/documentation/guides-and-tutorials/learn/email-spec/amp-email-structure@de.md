@@ -33,11 +33,11 @@ limitations under the License.
 
 Eine E-Mail besitzt die Struktur eines MIME Baumes. Dieser MIME Baum enthält den Nachrichtentext und alle Anhänge der E-Mail.
 
-To embed AMP within an email, add a new MIME part with a content type of `text/x-amp-html` as a descendant of `multipart/alternative`. It should live alongside the existing `text/html` or `text/plain` parts. This ensures that the email message works on all clients.
+Um AMP in eine E-Mail einzubetten, füge einen neuen MIME Teil mit dem Inhaltstyp `text/x-amp-html` als Nachfolger von `multipart/alternative` hinzu. Er muss den vorhandenen Teilen `text/html` oder `text/plain` gleichgestellt sein. Dadurch wird sichergestellt, dass die E-Mail Nachricht auf allen Clients funktioniert.
 
 <amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/master/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"> <img data-md-type="raw_html" alt="AMP for Email MIME Parts Diagram" src="../img/amp-email-mime-parts.png"> </noscript></amp-img>
 
-For more information about the `multipart/alternative` subtype, refer to [RFC 1521, section 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
+Weitere Informationen über den Untertyp `multipart/alternative` findest du in [RFC 1521, Abschnitt 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
 ## Zusätzliche Information <a name="additional-information"></a>
 
@@ -49,11 +49,11 @@ Hinweis: Einige E-Mail Clients[[1]](https://openradar.appspot.com/radar?id=60546
 
 ### Semantik für Antworten und Weiterleitung <a name="replyingforwarding-semantics"></a>
 
-The email client strips out the `text/x-amp-html` part of the MIME tree when a user replies to or forwards an AMP email message.
+Der E-Mail Client entfernt den Teil `text/x-amp-html` des MIME Baumes, wenn ein Benutzer auf eine AMP E-Mail Nachricht antwortet oder diese weiterleitet.
 
 ### Ablauf <a name="expiry"></a>
 
-The email client may stop displaying the AMP part of an email after a set period of time, e.g. 30 days. In this case, emails will display the `text/html` or `text/plain` part.
+Es kann sein, dass der E-Mail Client nach einem festgelegten Zeitraum, z. B. 30 Tagen, den AMP Teil einer E-Mail nicht mehr anzeigt. In diesem Fall wird in E-Mails der Teil `text/html` oder `text/plain` angezeigt.
 
 ## Beispiel <a name="example"></a>
 
