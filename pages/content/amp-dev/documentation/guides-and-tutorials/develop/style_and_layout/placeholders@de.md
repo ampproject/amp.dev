@@ -91,7 +91,7 @@ Im folgenden Beispiel verwenden wir das `fallback` Attribut, um den Browser anzu
 
 ## Interaktion von Platzhaltern und Fallbacks
 
-For AMP components that rely on dynamic content (e.g., [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md), [`amp-list`](../../../../documentation/components/reference/amp-list.md)), the interaction of fallbacks and placeholders operates as follows:
+Für AMP Komponenten, die auf dynamischen Inhalten basieren (z. B. [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md), [`amp-list`](../../../../documentation/components/reference/amp-list.md)), funktioniert die Interaktion von Fallbacks und Platzhaltern wie folgt:
 
 <ol>
   <li>Zeige den Platzhalter an, während der Inhalt geladen wird.</li>
@@ -102,4 +102,4 @@ For AMP components that rely on dynamic content (e.g., [`amp-twitter`](../../../
 
 ## Ausblenden von Ladeindikatoren
 
-Many AMP elements are allowlisted to show a "loading indicator", which is a basic animation that shows that the element has not yet fully loaded. Elements can opt out of this behavior by adding the `noloading` attribute.
+Viele AMP Elemente lassen die Anzeige eines Ladeindikators zu. Das ist eine Standardanimation, die zeigt, dass ein Element noch nicht vollständig geladen ist. Mithilfe des Attributs `noloading` können Elemente ein solches Verhalten unterbinden.
