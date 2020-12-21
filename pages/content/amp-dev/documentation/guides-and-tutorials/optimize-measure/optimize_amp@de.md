@@ -70,7 +70,7 @@ Das wollen wir uns Schritt für Schritt anschauen:
 
 2. Der nächste Schritt besteht im Vorladen des AMP Runtime `v0.js` `<script>` Tags durch `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>`. Die AMP Runtime sollte so schnell wie möglich mit dem Download beginnen, da die [AMP Boilerplate](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) das Dokument über `body { visibility:hidden }` verbirgt, bis die AMP Runtime geladen wurde. Durch das Vorladen der AMP Runtime wird der Browser angewiesen, das Skript mit einer höheren Priorität herunterzuladen. Schau dir [server-side-rendering](#server-side-rendering) an, um zu erfahren, wie sich dies vermeiden lässt. {amp-img6} {/amp-img6}
 
-3. If your page includes render-delaying extensions (e.g., amp-experiment, amp-dynamic-css-classes, amp-story), preload those extensions as they're required by the AMP runtime for rendering the page.
+3. Wenn deine Seite Erweiterungen enthält, die das Rendern verzögern (z. B. amp-experiment, amp-dynamic-css-classes, amp-story), lade diese Erweiterungen vor, da sie von der AMP Runtime zum Rendern der Seite benötigt werden.
 
 [sourcecode:html]
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-custom-css-0.1.js">
@@ -81,7 +81,7 @@ Das wollen wir uns Schritt für Schritt anschauen:
 
 [sourcecode:html]<link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>[/sourcecode]
 
-1. Load the AMP runtime:
+1. Laden Sie die AMP-Laufzeit:
 
 [sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
 
@@ -200,12 +200,12 @@ Mit AMP kannst du einige Dinge tun, um das Laden von Schriftarten zu optimieren 
 
 - Verwende nach Möglichkeit [font-display: optional](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display): Dadurch wird die Schriftart nur verwendet, wenn sie sich bereits im Cache befindet, und es wird auf die Systemschriftart zurückgegriffen, wenn deine benutzerdefinierte Schriftart noch nicht geladen wurde.
 - Optimiere deine Webschriftarten (stelle beispielsweise benutzerdefinierte Schriftarten mithilfe von WOFF2 bereit).
-- Preload custom fonts:
+- Laden Sie benutzerdefinierte Schriftarten vor:
 
 [sourcecode:html]
 <link rel="preload" as="font" href="/bundles/app/fonts/helveticaneue-roman-webfont.woff2" >[/sourcecode]
 
-- If you are using Google fonts, or any other font provider with unknown font URLs, preconnect the respective font server:
+- Falls du Google Fonts oder einen anderen Anbieter von Schriftarten mit unbekannten Font URLs verwendest, stelle mittels "preconnect" eine Verbindung zum entsprechenden Font Server her:
 
 [sourcecode:html]
  <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
