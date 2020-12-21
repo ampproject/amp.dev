@@ -70,7 +70,7 @@ Veja uma descrição passo a passo:
 
 2. Em seguida, faça o pré-carregamento da tag `<script>` com o runtime AMP `v0.js` usando `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>`. O runtime AMP deve começar a baixar o quanto antes porque o [boilerplate AMP](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) oculta o documento através de `body { visibility:hidden }` até que o runtime AMP termine de carregar. O pré-carregamento do runtime AMP avisa ao navegador que faça o download do script com uma prioridade mais alta. Dê uma olhada em [server-side-rendering](#server-side-rendering) para saber como evitar isso. {amp-img6} {/amp-img6}
 
-3. If your page includes render-delaying extensions (e.g., amp-experiment, amp-dynamic-css-classes, amp-story), preload those extensions as they're required by the AMP runtime for rendering the page.
+3. Se sua página incluir extensões que provocam atraso na renderização (por exemplo, amp-experiment, amp-dynamic-css-classes, amp-story), faça o pré-carregamento dessas extensões conforme sejam requeridas pelo runtime AMP para renderizar a página.
 
 [sourcecode:html]
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-custom-css-0.1.js">
@@ -81,7 +81,7 @@ Veja uma descrição passo a passo:
 
 [sourcecode:html]<link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>[/sourcecode]
 
-1. Load the AMP runtime:
+1. Carregue o tempo de execução de AMP:
 
 [sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
 
@@ -200,12 +200,12 @@ Com o AMP, existem algumas coisas que você pode fazer para otimizar o carregame
 
 - Se possível, use [font-display: optional](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display): Isso só usará a fonte se ela já estiver no cache e retornará à fonte do sistema caso a fonte personalizada ainda não tiver sido carregada.
 - Otimize suas fontes Web (por exemplo, sirva fontes personalizadas usando WOFF2).
-- Preload custom fonts:
+- Pré-carregar fontes personalizadas:
 
 [sourcecode:html]
 <link rel="preload" as="font" href="/bundles/app/fonts/helveticaneue-roman-webfont.woff2" >[/sourcecode]
 
-- If you are using Google fonts, or any other font provider with unknown font URLs, preconnect the respective font server:
+- Se você estiver usando fontes do Google ou qualquer outro provedor de fontes com URLs de fontes desconhecidas, conecte previamente o servidor de fontes correspondente:
 
 [sourcecode:html]
  <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
