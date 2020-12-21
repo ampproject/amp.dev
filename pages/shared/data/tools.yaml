@@ -126,6 +126,16 @@ creation:
       height: 3
     formats:
       - stories
+  - name: Web Stories for WordPress
+    description: Web Stories for WordPress provides story creation capabilities in a user-friendly, WYSIWYG tool.
+    url: https://wp.stories.google/
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/webstoriesforwordpress.png
+      width: 5
+      height: 3
+    formats:
+      - stories
   - name: Visual Stories
     description: Multi-site, multi-author blogging tools and WYSIWYG editor to create Web Stories on your own domain.
     url: https://visualstories.com
@@ -166,14 +176,24 @@ creation:
       height: 400
     formats:
       - stories
-  - name: Web Stories for WordPress
-    description: Web Stories for WordPress provides story creation capabilities in a user-friendly, WYSIWYG tool.
-    url: https://wp.stories.google/
+  - name: StorifyMe
+    description: StorifyMe stands out as all-in-one Web Stories platform. Made for brands & individuals, tailored for e-commerce, marketers and publishers.
+    url: https://storifyme.com/
+    type:  WYSIWYG Editor
+    image:
+      src: /static/img/tools/storifyme.jpg
+      width: 1600
+      height: 800
+    formats:
+      - stories
+  - name: Viqeo Studio
+    description: Viqeo is the all-in-one video platform for creating Videos, Web Stories, Lessons and Onboardings.
+    url: https://viqeo.tv/
     type: WYSIWYG Editor
     image:
-      src: /static/img/tools/webstoriesforwordpress.png
-      width: 5
-      height: 3
+      src: /static/img/tools/viqeostudio.png
+      width: 800
+      height: 400
     formats:
       - stories
   - name: Unbounce

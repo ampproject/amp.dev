@@ -1,9 +1,11 @@
 ---
-$title: Formato AMP per e-mail
-order: 1
+"$title": Formato AMP per e-mail
+order: '1'
+formats:
+- email
 teaser:
-  text: Markup obbligatori
-toc: true
+  text: 'Markup obbligatori '
+toc: 'true'
 ---
 
 <!--
@@ -33,16 +35,27 @@ AMP è una popolare tecnologia per lo sviluppo di pagine web molto veloci su cli
 
 Il formato AMP per e-mail fornisce [un sottoinsieme di componenti AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md) che possono essere utilizzati nei messaggi e-mail. I destinatari delle e-mail AMP possono visualizzare e interagire con i componenti AMP direttamente nelle e-mail.
 
-## Markup obbligatori <a name="required-markup"></a>
+## Markup obbligatori
 
 Il codice seguente rappresenta la quantità minima di markup richiesti da un messaggio e-mail in formato AMP valido:
 
 [sourcecode:html]
-
-
-
-
-<meta charset="utf-8"> <style amp4email-boilerplate=""> body { visibility: hidden; } </style> <script async="" src="https://cdn.ampproject.org/v0.js"></script> Hello, world. [/sourcecode]
+<!DOCTYPE html>
+<html ⚡4email data-css-strict>
+  <head>
+    <meta charset="utf-8" />
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+    Hello, world.
+  </body>
+</html>
+[/sourcecode]
 
 Un messaggio e-mail AMP DEVE
 
@@ -79,13 +92,23 @@ Il formato AMP per E-mail si basa sul sottotipo <a>MIME</a> <code>multipart/alte
 
 Tutti gli elementi CSS presenti in ogni documento AMP devono essere inclusi in un tag `<style amp-custom>` all'interno dell'intestazione o come attributi `style` inline.
 
-[sourcecode:html] ...
-
-<style amp-custom=""> /* any custom styles go here. */ body { background-color: white; } amp-img { border: 5px solid black; } amp-img.grey-placeholder { background-color: grey; } </style><br>[/sourcecode]
-
+[sourcecode:html]
 ...
-
- [/sourcecode]
+<style amp-custom>
+  /* any custom styles go here. */
+  body {
+    background-color: white;
+  }
+  amp-img {
+    border: 5px solid black;
+  }
+  amp-img.grey-placeholder {
+    background-color: grey;
+  }
+</style>
+...
+</head>
+[/sourcecode]
 
 Nota: l'intero tag `<style>` non può superare i 50.000 byte. Lo strumento di convalida verificherà anche le dimensioni.
 

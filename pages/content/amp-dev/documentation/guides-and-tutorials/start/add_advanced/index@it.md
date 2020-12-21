@@ -1,8 +1,10 @@
 ---
-$title: Aggiunta di funzionalità AMP avanzate
-$order: 0
+"$title": Aggiunta di funzionalità AMP avanzate
+"$order": '0'
 description: In questa esercitazione, amplierai la comprensione dei concetti base di AMP e imparerai a gestire in AMP annunci, analisi, video, integrazione di elementi dei social media, sequenze e molto altro.
-$hidden: true
+"$hidden": 'true'
+formats:
+- websites
 ---
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='Completed news article') }}

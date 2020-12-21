@@ -1,8 +1,10 @@
 ---
-$title: Crea la tua prima e-mail AMP
-$order: 0
+"$title": Crea la tua prima e-mail AMP
+"$order": '0'
 description: Scopri i vantaggi offerti dalle e-mail AMP creando il tuo primo messaggio AMP.
-tutorial: true
+tutorial: 'true'
+formats:
+- email
 author: CrystalOnScript
 ---
 
