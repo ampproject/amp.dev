@@ -57,8 +57,8 @@ Veja a tabela abaixo para descrições de cada parte da sintaxe.
   <tr>
     <td><code>targetId</code></td>
     <td>sim</td>
-    <td>This is the DOM id for the element, or a predefined <a href="#special-targets">special target</a> you'd like to execute an action on  in response to the event. In the following example, the <code>targetId</code> is the DOM id of the <code>amp-lightbox</code> target, <code>photo-slides</code>.     <pre><amp-lightbox id="photo-slides"></amp-lightbox>
-<button on="tap:photo-slides">Show Images</button></pre>     </td>
+    <td>Este é a id do DOM para o elemento, ou um <a href="#special-targets">alvo especial</a> predefinido sobre o qual você gostaria de executar uma ação em resposta ao evento. No exemplo a seguir, o <code>targetId</code> é o id do DOM para o alvo <code>amp-lightbox</code>, <code>photo-slides</code>. <pre><amp-lightbox id="photo-slides"></amp-lightbox> <button on="tap:photo-slides">Mostrar Imagens</button></pre>
+</td>
   </tr>
   <tr>
     <td><code>methodName</code></td>
@@ -678,14 +678,14 @@ O alvo `AMP` é fornecido pelo runtime AMP e implementa ações top-level que se
     <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
       <p>Navega a janela atual para a URL fornecida, para o alvo opcional especificado, se fornecido (atualmente, suporta apenas <code>_top</code> r <code>_blank </code>). O parâmetro opcional <code>opener</code> parameter can be specified when using a target of <code>_blank</code> para permitir que a página recém-aberta acesse <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener</code></a>. Suporta <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">substituições de URL padrão</a>.</p>
-      <p><strong>Caveat:</strong> Using normal <code><a></code> links is recommended wherever possible since <code>AMP.navigateTo</code> is not recognized by web crawlers.</p>
+      <p><strong>Advertência:</strong> o uso de links <code><a></code> normais é recomendado sempre que possível, já que <code>AMP.navigateTo</code> não é reconhecido por rastreadores da web.</p>
     </td>
   </tr>
   <tr>
     <td><code>closeOrNavigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
       <p>Tenta fechar a janela se permitido, caso contrário, navega de forma semelhante à ação <code>navigateTo</code>. Útil para casos de uso em que um botão "Voltar" poderá precisar fechar a janela se ela foi aberta numa nova janela da página anterior ou navegar, se não foi aberta.</p>
-      <p><strong>Caveat:</strong> Using normal <code><a></code> links is recommended wherever possible since <code>AMP.closeOrNavigateTo</code> is not recognized by web crawlers.</p>
+      <p><strong>Advertência:</strong> o uso de links <code><a></code> normais é recomendado sempre que possível, já que <code>AMP.closeOrNavigateTo</code> não é reconhecido por rastreadores da web.</p>
     </td>
   </tr>
   <tr>
