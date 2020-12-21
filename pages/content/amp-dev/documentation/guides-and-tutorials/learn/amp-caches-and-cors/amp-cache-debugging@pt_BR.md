@@ -23,7 +23,7 @@ Documentos AMP válidos geralmente aparecem e se comportam da mesma forma tanto 
 Se um documento específico aparecer e se comportar conforme o esperado em sua origem, mas não quando visualizado através do cache ([como mapear URLs de origem ao cache do Google AMP](https://developers.google.com/amp/cache/overview#amp-cache-url-format)), experimente o seguinte:
 
 1. Abra o console das ferramentas de erro/desenvolvedor do seu navegador e resolva quaisquer erros ou advertências que aparecerem.
-2. Run the document through [an AMP document validator](https://search.google.com/test/amp) and resolve any unexpected errors or warnings.
+2. Execute o documento através da [AMPBench](https://search.google.com/test/amp) resolva quaisquer erros ou advertências que aparecerem.
 
 Se você ainda tiver problemas após seguir estas etapas, verifique a tabela abaixo.
 
@@ -39,7 +39,7 @@ Se você ainda tiver problemas após seguir estas etapas, verifique a tabela aba
   <tbody>
     <tr>
       <td>As fontes da Web não aparecem (são usadas fontes de reserva)</td>
-      <td>The AMP Cache is not allowlisted by the font provider.</td>
+      <td>O Cache AMP não aparece na lista de sites liberados (allowlist) pelo provedor de fontes.</td>
       <td>Entre em contato com o provedor de fontes solicite que sejam liberados <a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">todos os caches</a>.</td>
     </tr>
     <tr>
