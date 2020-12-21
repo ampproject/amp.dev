@@ -73,12 +73,12 @@ author: CrystalOnScript
    </td>
   </tr>
   <tr>
-   <td>Web Story / Web Stories     </td>
+   <td>História Web / histórias Web</td>
    <td>Uma experiência Web de história construída com AMP.</td>
    <td>
 <ul>
-      <li>The Web Story format is free and part of the open web.       </li>
-<li>Web Stories immerse readers in fast-loading full-screen experiences.  </li>
+      <li>O formato de história Web é gratuito e faz parte da Web aberta.</li>
+<li>Histórias Web imergem os leitores em experiências de carregamento rápido em tela cheia.</li>
 </ul>
    </td>
   </tr>
