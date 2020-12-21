@@ -46,4 +46,4 @@ AMP HTML Dokumente müssen das folgende Boilerplate in ihrem `head` Tag enthalte
 
 <!-- prettier-ignore-end -->
 
-[tip] You can use the [boilerplate generator](https://amp.dev/boilerplate) to quickly setup a basic skeleton for your AMP page. It also provides snippets for structured data, to create a PWA and more! [/tip]
+[tip] Mit dem [Boilerplate Generator](https://amp.dev/boilerplate) kannst du schnell ein Grundgerüst für deine AMP Seite anlegen. Dieser bietet auch Snippets für strukturierte Daten, um unter anderem eine PWA zu erstellen! [/tip]
