@@ -1,5 +1,5 @@
 ---
-"$title": Getting familiar with the starter code
+"$title": Lerne den Startercode kennen
 "$order": '1'
 description: Eine AMP Seite ist eine HTML Seite, die bestimmte Einschränkungen hat, um zuverlässige Leistung zu garantieren. AMP Seiten haben ein spezielles Markup, das sie als AMP Seite identifiziert.
 ---
@@ -83,7 +83,7 @@ Eine blanke AMP Seite sieht wie folgt aus:
 </html>
 ```
 
-[tip] You can use the [boilerplate generator](https://amp.dev/boilerplate) to quickly setup a basic skeleton for your AMP page. It also provides snippets for structured data, to create a PWA and more! [/tip]
+[tip] Mit dem [Boilerplate Generator](https://amp.dev/boilerplate) kannst du schnell ein Grundgerüst für deine AMP Seite anlegen. Dieser bietet auch Snippets für strukturierte Daten, um unter anderem eine PWA zu erstellen! [/tip]
 
 ## AMP Komponenten
 
@@ -112,18 +112,18 @@ Der Startercode des Tutorials ([`static/index.html`](https://github.com/googleco
 ></script>
 ```
 
-AMP components offer additional functionality and UI components that add rich interactivity to AMP pages. The starter code uses the following AMP components:
+AMP Komponenten bieten zusätzliche Funktionen und UI Komponenten, die AMP Seiten mit einer umfangreichen Interaktivität ausstatten. Der Startercode verwendet die folgenden AMP Komponenten:
 
 - [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md): Ein Bilderkarussell, das mehrere Ansichten des Produkts anzeigt.
 - [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md): Ein Vorlagensystem zum Rendern von Serverantworten aus amp-form.
 - [`amp-form`](../../../../documentation/components/reference/amp-form.md): Bietet spezielle Funktionen für `<form>` Elemente, die für AMP Seiten erforderlich sind.
-- [`amp-selector`](../../../../documentation/components/reference/amp-selector.md): Offers a semantic way to select one or many elements of a group of elements. Can be used as an input source to amp-form.
+- [`amp-selector`](../../../../documentation/components/reference/amp-selector.md): Bietet die semantische Möglichkeit, ein oder mehrere Elemente in einer Gruppe von Elementen auszuwählen. Kann als Eingabequelle für amp-form dienen.
 
 ## Grundlegende Interaktivität
 
 Der Startercode bietet eine grundlegende Interaktivität:
 
 - Das Bilderkarussell (ein [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)) zeigt mehrere Ansichten des Produkts an.
-- The product can be added to the user's cart (via [`amp-form`](../../../../documentation/components/reference/amp-form.md)) by tapping the "Add to cart" button on the bottom of the page.
+- Um das Produkt (über [`amp-form`](../../../../documentation/components/reference/amp-form.md)) zum Warenkorb hinzuzufügen, tippen Benutzer unten auf der Seite auf den Button "Add to cart".
 
-**Try it out**: Swipe the image carousel and tap the "Add to cart" button.
+**Probiere es aus**: Wische über das Bilderkarussell und tippe auf den Button "Add to cart".
