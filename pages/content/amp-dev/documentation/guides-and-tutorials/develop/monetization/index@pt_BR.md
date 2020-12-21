@@ -12,7 +12,7 @@ Este guia oferece instruções e práticas recomendadas para a exibição de an�
 
 Quando você quer exibir anúncios em páginas não AMP (HTML tradicional), basta incluir um snippet de JavaScript para veicular anúncios da rede de publicidade.  Por motivos de segurança e desempenho, não é possível incluir JavaScript de terceiros em páginas AMP.  Portanto, para exibir anúncios em AMP, é preciso adicionar o componente personalizado [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) à página AMP.
 
-Consulte o site [AMP By Example para ver uma demonstração ao vivo](../../../../documentation/components/reference/amp-ad.md) de como adicionar uma tag de anúncio AMP a uma página AMP.
+[tip type = "tip"] **&nbsp;TIP - {/ strong0} Consulte [ AMP por exemplo para ver uma demonstração ao vivo {/ a1} que demonstra como adicionar uma tag de anúncio amp a uma página AMP. [/dica]](../../../../documentation/components/reference/amp-ad.md)**
 
 Vejamos as etapas necessárias para incluir o componente que permite exibir anúncios numa página AMP.
 
@@ -37,7 +37,7 @@ Neste exemplo, adicionaremos um local de anúncio para veicular anúncios da red
 
 ### Etapa 3: especifique o tamanho do bloco de anúncios
 
-Add the `width` and `height` attributes to the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)  tag.  This specifies the size of the ad on your AMP page:
+Adicione os atributos `width` e `height` à tag <code><amp-ad></code>.  Isso especificará o tamanho do anúncio na página AMP:
 
 ```html
 <amp-ad type="a9">
@@ -47,7 +47,7 @@ Add the `width` and `height` attributes to the [`amp-ad`](../../../../documentat
 
 ### Etapa 4: defina os parâmetros da rede de publicidade
 
-Each network has specific data attributes they require to serve ads.  Refer to the ad network's [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) documentation and add the attributes that are needed In the following example,  the a9 network requires additional parameters to specify the size of the ad, and other details:
+Cada rede exige atributos de dados específicos para veicular os anúncios.  Consulte a documentação <code><amp-ad></code> da rede de publicidade e adicione os atributos necessários. No exemplo a seguir, a rede a9 exige parâmetros adicionais para especificar o tamanho do anúncio, entre outros detalhes:
 
 ```html
 <amp-ad type="a9"
