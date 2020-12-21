@@ -20,40 +20,40 @@ O cache de AMP é uma rede de fornecimento de conteúdo (CDN, na sigla em inglê
 
 [tip type = "note"] Os documentos de e-mail de AMP estão isentos do cache de AMP. [/dica]
 
-Learn more about AMP Caches in the YouTube video below, or in the [Why AMP Caches Exist](https://medium.com/@pbakaus/why-amp-caches-exist-cd7938da2456) blog post.
+Saiba mais sobre os caches de AMP neste vídeo do YouTube ou na postagem do blog [Por que existem caches de AMP](https://medium.com/@pbakaus/why-amp-caches-exist-cd7938da2456).
 
-[video src='https://www.youtube.com/watch?v=n8n7fj60lds' caption='Watch this video to learn why AMP Caches exist.']
+[video src='https://www.youtube.com/watch?v=n8n7fj60lds' caption='Assista esse vídeo para saber por que existem caches de AMP.']
 
 ## Quais caches de AMP estão disponíveis?
 
-Currently, there are two AMP Cache providers:
+No momento, há dois provedores de cache de AMP:
 
 - [Cache de AMP do Google](https://developers.google.com/amp/cache/)
 - [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
-AMP is an open ecosystem and the AMP Project actively encourages the development of more AMP Caches.  To learn about creating AMP Caches, see the [AMP Cache Guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
+AMP é um ecossistema aberto, e o Projeto AMP incentiva ativamente o desenvolvimento de mais caches de AMP.  Para saber mais sobre a criação de caches de AMP, consulte as [Diretrizes de cache de AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
 
 ## Como escolher um cache de AMP?
 
-As a publisher, you don't choose an AMP Cache, it's *actually the platform* that links to your content that chooses the AMP Cache (if any) to use.
+O editor não escolhe um cache de AMP. Essa escolha é feita pela *plataforma* que vincula seu conteúdo (se houver).
 
-This is an inversion of the typical model where content delivery is the responsibility of the publisher.  However, this model allows platforms to provide their users with predictable load performance and among other things allows them to ensure required security and privacy invariants during AMP’s pre-rendering phase. To learn about the strict guidelines for creating AMP Caches, see the [AMP Cache Guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
+Isso é o contrário do modelo normal em que a entrega de conteúdo é de responsabilidade do editor.  No entanto, esse modelo permite que as plataformas forneçam aos usuários um desempenho de carregamento previsível e, entre outras coisas, que garantam as constantes necessárias de segurança e privacidade durante a fase de pré-renderização de AMP. [Clique aqui](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md) se quiser saber mais sobre as diretrizes rígidas para a criação de caches de AMP.
 
 ## Posso optar por não armazenar em cache?
 
 O armazenamento em cache é uma parte essencial do ecossistema AMP. Publicar um documento AMP válido é optar automaticamente pelo armazenamento em cache.
 
-Should you desire not to have your document cached, one option is to remove the `amp` attribute from the HTML tag. This makes the document technically invalid AMP, while not impacting the functionality of the document.
+Se você não quiser armazenar seu documento em cache, uma opção é remover o atributo `amp` da tag HTML. Isso torna o documento AMP tecnicamente inválido, mas não afeta a funcionalidade dele.
 
 ## Quem solicita páginas AMP armazenadas em cache?
 
-Cached AMP pages are accessed by platforms (like Google Search, Google News, and Bing) and mobile apps. Mobile apps can link to cached AMP content via the URL (see Google's [AMP URL API](https://developers.google.com/amp/cache/use-amp-url)) or by cross-origin XHRs in  Progressive Web Apps (learn more in [Embed & use AMP as a data source](../../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md)).
+As páginas AMP armazenadas em cache são acessadas por plataformas, como a Pesquisa Google, o Google Notícias e o Bing, e aplicativos para dispositivos móveis. Os aplicativos para dispositivos móveis podem vincular o conteúdo armazenado em cache de AMP por meio do URL (consulte a [AMP URL API] do Google(https://developers.google.com/amp/cache/use-amp-url)) ou por XHRs de origem cruzada em Progressive Web Apps (saiba mais em [Incorporar e usar AMP como fonte de dados](https://developers.google.com/amp/cache/use-amp-url)).
 
 <amp-img src="/static/img/docs/platforms_accessing_cache.png" width="1054" height="356" layout="responsive" alt="platforms and mobile apps access cached AMP pages"></amp-img>
 
 ## Como minha página AMP é armazenada em cache?
 
-By using the AMP format, you are making your content available to be cached by AMP Caches. There are a few ways that your AMP page can end up in an AMP Cache:
+Ao usar o formato AMP, você disponibiliza conteúdo para ser armazenado em cache pelos caches de AMP. Sua página AMP pode ser armazenada em um cache de AMP das seguintes maneiras:
 
 - **Descoberta de plataforma**: as plataformas descobrem seu conteúdo de AMP por meio das tags `<html ⚡>` ou `<html amp>` e o armazenam em cache. Por exemplo, a Pesquisa Google rastreia o conteúdo de todas as páginas AMP identificadas e válidas e adiciona esse conteúdo ao cache de AMP do Google.
 
