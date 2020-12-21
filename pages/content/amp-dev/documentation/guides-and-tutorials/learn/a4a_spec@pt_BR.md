@@ -102,11 +102,11 @@ Os criativos de anúncios AMPHTML requerem um estilo de boilerplate diferente e 
 </style>
 [/sourcecode]
 
-*Rationale:* The `amp-boilerplate` style hides body content until the AMP runtime is ready and can unhide it. If Javascript is disabled or the AMP runtime fails to load, the default boilerplate ensures that the content is eventually displayed regardless. In AMPHTML ads, however, if Javascript is entirely disabled, AMPHTML ads won't run and no ad will ever be shown, so there is no need for the `<noscript>` section. In the absence of the AMP runtime, most of the machinery that AMPHTML ads rely on (e.g., analytics for visibility tracking or `amp-img` for content display) won't be available, so it's better to display no ad than a malfunctioning one.
+*Justificativa:* o estilo `amp-boilerplate` oculta o conteúdo do corpo até que o runtime AMP esteja pronto e possa exibi-lo. Se o Javascript estiver desativado ou o runtime AMP não for carregado, o boilerplate default garante que o conteúdo seja exibido de forma independente. Em anúncios AMPHTML, no entanto, se o JavaScript estiver totalmente desativado, os anúncios AMPHTML não serão executados e nenhum anúncio será mostrado. Portanto, não há necessidade de haver a seção `<noscript>`. Na ausência do runtime AMP, a maioria dos mecanismos dos quais dependem os anúncios AMPHTML (por exemplo, análises para rastreamento de visibilidade ou `amp-img` para exibição de conteúdo) não estará disponível, então é melhor não exibir nenhum anúncio do que um com defeito.
 
-Finally, the AMPHTML ad boilerplate uses `amp-a4a-boilerplate` rather than `amp-boilerplate` so that validators can easily identify it and produce more accurate error messages to help developers.
+Por fim, o boilerplate do anúncio AMPHTML usa `amp-a4a-boilerplate` em vez de `amp-boilerplate` para que os validadores possam identificá-lo com facilidade e produzir mensagens de erro mais precisas para ajudar os desenvolvedores.
 
-Note that the same rules about mutations to the boilerplate text apply as in the [general AMP boilerplate](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md).
+Observe que as mesmas regras sobre alterações para o texto boilerplate se aplicam ao [boilerplate AMP geral](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md).
 
 ### CSS <a name="css"></a>
 
