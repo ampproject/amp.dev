@@ -35,8 +35,7 @@ const TIMESTAMP = Date.now();
 // We tag docker images by the current git commit SHA + TIMESTAMP,
 // this makes it easy to identify and reproduce builds.
 // Pass a specific tag via commandline using `gulp updateStart --tag ABCDE...`
-const TAG =
-  argv.tag || `${require('@lib/utils/git').versionSync()}-${TIMESTAMP}`;
+const TAG = argv.tag || `${require('@lib/utils/git').version}-${TIMESTAMP}`;
 
 // The Google Cloud project id, pass via commandline
 // using `gulp deploy --project my-gcloud-project
