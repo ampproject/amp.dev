@@ -10,7 +10,7 @@ author: bpaduch
 
 [video src="/static/video/tut_pets-story-complete.mp4" caption="Completed AMP story." poster="/static/img/docs/tutorials/amp_story/story_poster.png"]
 
-In this tutorial, we'll introduce you to the [`amp-story`](../../../../documentation/components/reference/amp-story.md) component, which you can use to create visually engaging Web Stories with AMP. By the end of this tutorial, you'll have created a story about "The Joy of Pets" that provides bite-sized information and visuals to entertain and engage readers.
+In diesem Tutorial lernst du die Komponente [`amp-story`](../../../../documentation/components/reference/amp-story.md) kennen, mit der du optisch ansprechende Web Storys mit AMP erstellen kannst. Am Ende dieses Tutorials wirst du die Story "The Joy of Pets" erstellt haben, die Informationen und Grafiken als kleine Häppchen serviert, welche die Leser unterhalten und zur Interaktion bewegen sollen.
 
 ## Das lernst du:
 
