@@ -244,7 +244,6 @@ Verzögern wir den Eingangseffekt des ersten Bildes so, dass dieses etwa am Ende
     animate-in="fade-in"
     animate-in-delay="1s">
 </amp-img>
-
 ```
 
 Aktualisiere deine Story und lade sie neu. Deine letzte Seite sollte folgendermaßen aussehen:
