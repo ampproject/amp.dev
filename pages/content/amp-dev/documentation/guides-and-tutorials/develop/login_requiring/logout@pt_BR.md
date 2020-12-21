@@ -1,7 +1,7 @@
 ---
 "$title": Logout
 "$order": '3'
-description: Similar to the login button, the presence of the logout button is conditionally dependent on the state of the amp-access component ...
+description: Assim como o botão de login, a presença do botão de saída depende do estado do componente amp-access ...
 ---
 
 Assim como o botão de login, a presença do botão de saída depende do estado do componente [`amp-access`](../../../../documentation/components/reference/amp-access.md):
