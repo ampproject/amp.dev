@@ -1,5 +1,5 @@
 ---
-"$title": Integrate AMP with your app
+"$title": Integriere AMP in deine App
 "$order": '2'
 description: Dieser Leitfaden richtet sich an Entwickler von mobilen Apps und Web Apps, die AMP Seiten integrieren und auf diese verweisen möchten. Stelle dir beispielsweise eine mobile Chat App vor, …
 formats:
@@ -8,20 +8,20 @@ formats:
 
 Dieser Leitfaden richtet sich an Entwickler von mobilen Apps und Web Apps, die AMP Seiten integrieren und auf diese verweisen möchten. Stelle dir beispielsweise eine mobile Chat App vor, die die AMP Version eines geteilten Links lädt, um Benutzern eine schnellere Erfahrung zu bieten.
 
-## Transform links to AMP
+## Transformiere Links zu AMP
 
 Mit AMP ist es möglich, externe Websites in deiner nativen oder mobilen Web App nahezu sofort zu rendern. Dies erreichst du, indem du URLs in deinem Content mit den entsprechenden AMP URLs (sofern vorhanden) abgleichst und anstelle der Originalversion die AMP Version öffnest. Als Hilfsmittel kannst du Tools wie [Google AMP URL API](https://developers.google.com/amp/cache/use-amp-url) verwenden.
 
 Die folgende Nachricht kann beispielsweise so transformiert werden, dass sie die AMP Versionen bereitstellt. Dazu werden alle URLs durch die entsprechenden AMP Versionen ersetzt (sofern vorhanden). Um die Ladezeit zu reduzieren und sicherzustellen, dass gültiges AMP bereitgestellt wird, solltest du die im AMP Cache zwischengespeicherten AMP Seiten verlinken.
 
-Original message:
+Originalnachricht:
 
 ```text
 This is a message with links to an <a href="http://www.example.org/a">
 article with AMP version</a> and an <a href="http://www.example.org/b"> article without AMP version</a>.
 ```
 
-Transformed message:
+Transformierte Nachricht:
 
 ```text
 This is a message with links to an <a href="https://www-example-org.cdn.ampproject.org/c/www.example.org/a">
@@ -40,7 +40,7 @@ Es gibt drei Möglichkeiten, Links programmatisch zu transformieren:
 
 [tip type="important"] **WICHTIG:** Fordere infolge einer Benutzerinteraktion niemals AMP URLs über die Google AMP API an. Das würde die Leistung deiner App beeinträchtigen, da eine zusätzliche Netzwerkanfrage erfolgt. Verwende stattdessen einen der drei oben beschriebenen Ansätze. [/tip]
 
-#### Google's AMP URL API
+#### Google AMP URL API
 
 Google stellt die AMP URL API bereit, um die passenden AMP HTML URLs für eine bestimmte Liste von URLs abzurufen ([offizielle Dokumentation](https://developers.google.com/amp/cache/use-amp-url) / [Demo](../../../documentation/examples/documentation/Using_the_AMP_URL_API.html)). Bei den URLs muss es sich nicht um die kanonischen Versionen handeln. Wenn eine AMP Version vorhanden ist, enthält die Antwort die ursprüngliche AMP URL und die URL für die zwischengespeicherte AMP Seite im Google AMP Cache.
 
@@ -76,15 +76,15 @@ Der Body der Antwort enthält die AMP URL Zuordnung im JSON Format:
 
 [tip type="note"] **HINWEIS:** URLs für zwischengespeicherte AMP Seiten in nicht-Google AMP Caches können nicht über die AMP URL API abgerufen werden. Allerdings kann die zwischengespeicherte URL problemlos aus der zurückgegebenen AMP URL abgeleitet werden. [/tip]
 
-## Using AMP Caches
+## Verwendung von AMP Caches
 
-An [AMP Cache](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md) is a proxy-based content delivery network (CDN) for delivering valid AMP documents. AMP Caches are designed to:
+Ein [AMP Cache](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md) ist ein proxybasiertes Content Delivery Network (CDN) zur Bereitstellung gültiger AMP Dokumente. AMP Caches wurden entwickelt, um:
 
 - nur gültige AMP Seiten bereitzustellen,
 - AMP Seiten ein effizientes und sicheres Vorladen zu erlauben,
-- Perform additional user-beneficial performance optimizations to content.
+- Inhalte zusätzlich zu optimieren, um eine benutzerfreundliche Leistung zu erreichen.
 
-Currently, there are two AMP Cache providers:
+Derzeit gibt es zwei AMP Cache Provider:
 
 - [Google AMP Cache](https://developers.google.com/amp/cache/)
 - [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
@@ -94,25 +94,25 @@ Es gibt es zwei Möglichkeiten, eine AMP Datei in einer App anzuzeigen:
 1. Verwendung der vom Publisher gehosteten Version
 2. Verwendung der in einem AMP Cache gehosteten Version
 
-We recommend using the AMP Cache for the following reasons:
+Wir empfehlen aus folgenden Gründen die Verwendung des AMP Cache:
 
-- Better user experience due to faster load time and low latency (>1s faster loading time).
-- Performance and bandwidth benefits due to additional caching of client dependent artifacts, e.g. caching different versions of the same image depending on the client's viewport size.
-- The original AMP file might no longer be valid AMP, which could lead to a bad user experience. In this case, the AMP Cache serves the last valid version of the AMP file.
+- Verbesserte Benutzererfahrung durch schnellere Ladezeit und geringe Latenz (>1s schnellere Ladezeit).
+- Vorteile bei Leistung und Bandbreite aufgrund der zusätzlichen Zwischenspeicherung von clientabhängigen Artefakten, z. B. Caching verschiedener Versionen desselben Bildes abhängig von der Größe des Client Viewports.
+- Möglicherweise ist die ursprüngliche AMP Datei kein gültiges AMP mehr, was die Benutzererfahrung verschlechtert. In diesem Fall stellt der AMP Cache die letzte gültige Version der AMP Datei bereit.
 - Ein nicht optimaler Publisher könnte einem AMP Cache Crawler und deinen Benutzern zwei verschiedene Dokumente bereitstellen. Die Verwendung eines AMP Cache garantiert, dass Benutzer immer dieselbe AMP Datei sehen wie der Cache.
 
 [tip type="important"] **WICHTIG:** Wenn du AMP Seiten über den AMP Cache bereitstellst, sorge für eine Viewer Erfahrung, bei der die Quelle der AMP Version deutlich sichtbar ist und die den Benutzern die Möglichkeit bietet, die kanonische URL zu teilen (weitere Informationen hierzu findest du in den zwei folgenden Abschnitten). [/tip]
 
-## Implementing an AMP Viewer
+## Einen AMP Viewer implementieren
 
 Die AMP Runtime bietet eine Viewer API. Diese stellt ein Protokoll zum Senden und Empfangen von Nachrichten zwischen der AMP Runtime und dem Viewer bereit. Dadurch lassen sich das Pre-Rendering von AMP Dokumenten, das Blättern zwischen Artikeln durch Wischen und die Instrumentierung der AMP Runtime steuern. Weitere Informationen zur AMP Viewer API findest du im Leitfaden [Verbindung von AMP Viewern mit AMP Seiten](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md). Viewer Implementierungen für [Web](https://github.com/ampproject/amp-viewer/blob/master/mobile-web/README.md) und [iOS](https://github.com/ampproject/amp-viewer/tree/master/ios) sind bei [GitHub](https://github.com/ampproject/amp-viewer) verfügbar. Ein Android Viewer ist noch nicht verfügbar. Sieh dir [diese Antwort](https://stackoverflow.com/questions/44856759/does-we-need-to-change-anything-in-usual-webpage-loader-for-loading-an-amp-acce/44869038#44869038) bei Stack Overflow an, um zu erfahren, wie du ein WebView am besten für die Anzeige von AMP Seiten konfigurierst.
 
 Hier sind einige allgemeine Best Practices für die Implementierung eines AMP Viewers:
 
-- Serve the AMP page from an AMP Cache (>1s faster loading time).
-- Display the article's publisher origin (e.g., in a collapsible header).
+- Stelle die AMP Seite aus einem AMP Cache bereit (>1s schnellere Ladezeit).
+- Zeige die Publisher Quelle des Artikels an (z. B. in einem zuklappbaren Header).
 - Stelle eine Aktion zum Teilen bereit (siehe den Abschnitt "[AMP Content teilen](#sharing-amp-content)" weiter unten).
-- In webView-based viewers, enable third-party cookies.
+- Aktiviere in webView-basierten Viewern die Cookies von Drittanbietern.
 - Lege einen Referrer für deine Plattform/App fest.
 
 ### AMP Content teilen <a name="sharing-amp-content"></a>
