@@ -15,4 +15,4 @@ Um zu demonstrieren, wie zusätzliches Markup aussehen könnte, zeigen wir hier 
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-[tip type="read-on"] **READ ON –** To learn why we’re replacing tags like `<img>` with [`<amp-img>`](../../../../documentation/components/reference/amp-img.md), and how many are available, visit [Include Images & Video](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md). [/tip]
+[tip type="read-on"] <strong>ERFAHRE MEHR:</strong> Um zu erfahren, warum wir Tags wie <code><img></code> durch <a><code><amp-img></code></a> ersetzen und wie viele solcher Tags verfügbar sind, sieh dir den Link <a>Füge Bilder & Video hinzu</a> an. [/tip]
