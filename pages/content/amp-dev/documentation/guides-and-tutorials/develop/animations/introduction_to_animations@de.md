@@ -155,7 +155,6 @@ Mehrere Animationen können zu einer großen Sequenz verbunden werden. Du kannst
     }
   </script>
 </amp-animation>
-
 ```
 
 Dieses Setup spielt jede Animation 3 Sekunden lang in einer Sequenz ab.
