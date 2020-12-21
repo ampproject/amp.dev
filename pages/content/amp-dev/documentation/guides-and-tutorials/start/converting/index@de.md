@@ -1,15 +1,15 @@
 ---
-"$title": Convert HTML to AMP
+"$title": Konvertiere HTML zu AMP
 formats:
 - websites
 "$titles":
   teaser: Convert HTML to AMP
 "$order": '0'
-description: In this tutorial, you’ll learn the key concepts of AMP and how AMP documents differ from traditional HTML documents. By the end of this tutorial
+description: In diesem Tutorial lernst du die Basiskonzepte von AMP kennen und erfährst, wie sich AMP Dokumente von herkömmlichen HTML Dokumenten unterscheiden …
 "$hidden": 'true'
 teaser:
   icon: convert
-  text: Learn how to convert HTML to AMP in this step by step tutorial.
+  text: Lerne schrittweise, wie du HTML zu AMP konvertierst.
   label: Mehr erfahren
 ---
 
@@ -19,11 +19,11 @@ In diesem Tutorial lernst du die Basiskonzepte von AMP kennen und erfährst, wie
 
 ## Das lernst du:
 
-- Master the foundations of an AMP site
-- Recognize the differences between AMP pages and traditional HTML pages
-- Convert a traditional HTML page to AMP HTML
-- Validate an AMP page
-- Prepare your AMP content for discoverability
+- die Grundlagen einer AMP Website zu meistern,
+- die Unterschiede zwischen AMP Seiten und herkömmlichen HTML Seiten zu erkennen,
+- eine herkömmliche HTML Seite nach AMP HTML zu konvertieren,
+- eine AMP Seite zu validieren,
+- die Auffindbarkeit deiner AMP Inhalte zu verbessern.
 
 ## Das erstellst du:
 
