@@ -1,5 +1,5 @@
 ---
-"$title": Common element attributes
+"$title": Allgemeine Elementattribute
 "$order": '1'
 description: AMP bietet eine Reihe allgemeiner Attribute, die in vielen AMP Komponenten (und HTML Elementen) eingesetzt werden können. Dieses Dokument beschreibt jedes der allgemeinen Attribute.
 toc: 'true'
@@ -25,14 +25,14 @@ Weitere Informationen dazu findest du unter [Platzhalter und Fallbacks](../../..
 
 ## heights
 
-All AMP elements that support the `responsive` layout, also support the `heights` attribute. The value of this attribute is a sizes expression based on media expressions, similar to the [sizes attribute on `img` tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) but with two key differences:
+Alle AMP Elemente, die das Layout `responsive` unterstützen, unterstützen auch das Attribut `heights`. Der Wert dieses Attributs ist ein Ausdruck vom Typ "sizes", der auf Ausdrücken vom Typ "media" basiert, ähnlich dem [Attribut "sizes" für Tags vom Typ `img`,](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) jedoch mit zwei Hauptunterschieden:
 
 1. Der Wert bezieht sich auf die Höhe, nicht auf die Breite des Elements.
 2. Prozentwerte sind zulässig. Ein Prozentwert gibt den Prozentsatz der Breite des Elements an. Ein Wert von `80%` gibt beispielsweise an, dass die Höhe des Elements 80 % der Breite des Elements beträgt.
 
 Hinweis: Wenn das Attribut `heights` zusammen mit `width` und `height` angegeben wird, wird das Attribut `layout` standardmäßig auf `responsive` gesetzt.
 
-Example:
+Beispiel:
 
 ```html
 <amp-img src="amp.png"
@@ -41,7 +41,7 @@ Example:
 </amp-img>
 ```
 
-For more information, see [Art direction with srcset, sizes & heights](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md).
+Weitere Informationen dazu findest du unter [Art Direction mit srcset, sizes und heights](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md).
 
 ## layout
 
