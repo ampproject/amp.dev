@@ -36,7 +36,7 @@ limitations under the License.
 - [Implementation guide](#implementation-guide)
     - [Before getting started](#before-getting-started)
     - [Task 1: For non-AMP pages on the publisher origin, set up an identifier and send analytics pings](#task1)
-    - [Task 2: For AMP pages, set up an identifier and send analytics pings by including Client ID replacement in amp-analytics pings](#task2)
+    - [Aufgabe 2: Einrichtung eines Identifikators für AMP Seiten und Versand von Analytics Pings mit Substitution der Client ID in amp-analytics Pings ](#task2)
     - [Task 3: Process analytics pings from pages on the publisher origin](#task3)
     - [Task 4: Process analytics pings from AMP cache or AMP viewer display contexts and establish identifier mappings (if needed)](#task4)
     - [Task 5: Using Client ID in linking and form submission](#task5)
@@ -121,7 +121,7 @@ In diesem Szenario hat die Benutzerin ein einheitliches Erlebnis mit dem Warenko
 **To enable this and any experience involving user state, all contexts the user traverses must share their individually-maintained state with each other.** "Perfect!", you say, with the idea to share the cookie values with user identifiers across these contextual boundaries. One wrinkle: even though each of these contexts displays content controlled by the same publisher, they each see the other as a third-party because each context lives on different domains.
 
 <amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png" width="1030" height="868">
-  <noscript>     <img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png">   </noscript></amp-img>
+  <noscript><img alt="Die Fähigkeit von AMP, in vielen Kontexten angezeigt zu werden, bedeutet, dass jeder dieser Kontexte über einen eigenen Speicher für Bezeichner verfügt" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png"></noscript></amp-img>
 
 Wie du nachfolgend sehen wirst, kann es je nach Konfiguration der Browsereinstellungen des Benutzers eine Herausforderung darstellen, sich bei der Interaktion mit Cookies in der Position eines Drittanbieters zu befinden. Insbesondere gilt: Wenn Cookies von Drittanbietern in einer bestimmten Situation blockiert werden, können Informationen nicht kontextübergreifend ausgetauscht werden. Wenn Vorgänge mit Cookies von Drittanbietern zulässig sind, können Informationen gemeinsam genutzt werden.
 
@@ -143,7 +143,7 @@ Nach diesen Grundlagen sehen wir uns ein Thema mit einer engeren Auswahl an Use 
 In der folgenden technischen Anleitung gehen wir davon aus, dass du den **Benutzerstatus** an einen stabilen **Identifikator** bindest, der den Benutzer repräsentiert. Der Identifikator könnte zum Beispiel so aussehen: `n34ic982n2386n30`. Auf der Serverseite verknüpfst du den Identifikator `n34ic982n2386n30` dann mit einer beliebigen Auswahl von Informationen zum Benutzerstatus, z. B. dem Inhalt des Warenkorbs, einer Liste von bereits gelesenen Artikeln oder anderen Daten – je nach Use Case.
 
 <amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
-  <noscript>     <img alt="A single identifier could be used to manage user state for many use cases" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png">   </noscript></amp-img>
+  <noscript><img alt="Eine einzelne Kennung kann verwendet werden, um den Benutzerstatus für viele Anwendungsfälle zu verwalten" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png"></noscript></amp-img>
 
 Aus Gründen der Übersichtlichkeit werden wir im Weiteren die Zeichenfolgen, die als Identifikatoren fungieren, mit lesbaren Namen ersetzen, denen ein Dollarzeichen (`$`) vorangestellt ist:
 
@@ -287,7 +287,7 @@ Die Vorgänge unter (1) und (2) erfolgen hier in unterschiedlichen Quellen (oder
 Um das Problem der Überzählung zu lösen, solltest du die folgende Strategie anwenden. Ihre Wirksamkeit hängt davon ab, ob das Lesen oder Schreiben von Cookies von Drittanbietern zulässig ist:
 
 - **Sofortige Abstimmung von Identifikatoren: Wenn du auf die Cookies aus der Publisher Quelle zugreifen oder diese bearbeiten kannst**, verwende oder erstelle einen Identifikator für die Publisher Quelle und ignoriere alle Identifikatoren innerhalb der Analytics Anfrage. So kannst du die Aktivität zwischen den beiden Kontexten erfolgreich verknüpfen.
-- **Delayed identifier reconciliation: If you cannot access or change the publisher origin identifier (i.e. the cookies)**, then fall back to the AMP Client ID that comes within the analytics request itself. Use this identifier as an "**alias**", rather than using or creating a new publisher origin identifier (cookie), which you cannot do (because of third party cookie blocking), and add the alias to a **mapping table**. You will be unsuccessful in immediately linking activity between the two contexts, but by using a mapping table you may be able to link the AMP Client ID value with the publisher origin identifier on a future visit by the user. When this happens, you will have the needed information to link the activity and reconcile that the page visits in the different contexts came from the same user. Task 5 describes how to achieve a complete solution in specific scenarios where the user traverses from one page immediately to another.
+- **Verzögerte Abstimmung von Identifikatoren: Wenn du nicht auf den Identifikator der Publisher Quelle (also die Cookies) zugreifen oder diesen bearbeiten kannst**, verwende die AMP Client ID, die in der eigentlichen Analytics Anfrage enthalten ist, als Fallback. Verwende den Identifikator als "**Alias**", anstatt einen neuen Identifikator (Cookie) für die Publisher Quelle zu verwenden oder zu erstellen (da du dies aufgrund der Blockierung von Cookies von Drittanbietern nicht tun kannst), und füge den Alias einer **Zuordnungstabelle** hinzu. Du wirst nicht in der Lage sein, die Aktivitäten zwischen beiden Kontexten sofort zu verknüpfen. Mithilfe einer Zuordnungstabelle kannst du jedoch eventuell den Wert der AMP Client ID bei einem zukünftigen Besuch des Benutzers mit dem Identifikator der Publisher Quelle verknüpfen. In einem solchen Fall erhältst du die erforderlichen Informationen, um die Aktivität zu verknüpfen und die Seitenaufrufe untereinander so abzustimmen, dass deutlich wird, dass sie vom selben Benutzer in verschiedenen Kontexten stammen. In Aufgabe 5 wird beschrieben, wie du eine Gesamtlösung in bestimmten Szenarien erreichst, in denen der Benutzer sofort von einer Seite zur nächsten wechselt.
 
 #### Implementierungsschritte <a name="implementation-steps"></a>
 
@@ -372,7 +372,7 @@ Wenn das Lesen und Schreiben von Cookies von Drittanbietern nicht zulässig ist,
 Bei dieser Aufgabe besprechen wir eine zusätzliche Optimierung, die hilfreich ist, wenn Benutzer von einer Seite zur anderen **via Verlinkung oder Formularübermittlung** navigieren – und sich damit zwischen mehreren Kontexten bewegen. In solchen Situationen ist es mithilfe der nachfolgend beschriebenen Implementierungsschritte möglich, ein rundum wirksames Schema für die kontextübergreifende Verwaltung des Benutzerstatus einzurichten.
 
 <amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
-  <noscript>     <img alt="Links can be used to pass the identifier information of one context into another (linked) context" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png">   </noscript></amp-img>
+  <noscript><img alt="Links können verwendet werden, um die Bezeichnungsinformationen eines Kontexts in einen anderen (verknüpften) Kontext zu übertragen" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png"></noscript></amp-img>
 
 ##### Verwenden von Substitutionsfunktionen <a name="using-substitution-features"></a>
 
@@ -425,7 +425,7 @@ https://example.com/step2.html?ref_id=$amp_client_id
 [/sourcecode]
 
 <amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
-  <noscript>     <img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png">   </noscript></amp-img>
+  <noscript><img alt="Beispiel dafür, wie eine Kennung in einem AMP-Viewer-Kontext über einen Link in einen Publisher-Ursprungskontext übergeben werden kann" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png"></noscript></amp-img>
 
 Wenn Benutzer auf einer Seite landen, die den Wert `ref_id` entweder als URL Parameter oder im Header enthält, können wir den Identifikator `ref_id` zusammen mit dem Identifikator verarbeiten, den die Seite selbst zur Verfügung stellt (also einem Cookie Wert). Wenn du beide Identifikatoren in einen Analytics Ping aufnimmst, kann dein Analytics Server beide Werte gleichzeitig verarbeiten. Da dem Server bekannt ist, dass die Werte in Beziehung zueinander stehen, kann er diese Beziehung in deinem Backend widerspiegeln. Im nächsten Schritt findest du eine ausführliche Beschreibung dieser Vorgehensweise.
 
@@ -449,7 +449,7 @@ Bei einer Verarbeitung während der Weiterleitung musst du die Anfrage auf dem S
 Bei der Verarbeitung auf der Landing Page muss unterschieden werden, ob es sich dabei um eine AMP Seite oder um eine Seite ohne AMP handelt.
 
 <amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
-  <noscript>     <img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png">   </noscript></amp-img>
+  <noscript><img alt="Beispiel für die Erstellung eines Analyse-Pings, der einen Bezeichner aus dem vorherigen Kontext enthält, der über eine URL bereitgestellt wird, und einen Bezeichner aus dem aktuellen Kontext" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
 
 *Updates to AMP page:* Use the Query Parameter substitution feature in your amp-analytics configuration to obtain the `ref_id` identifier value within the URL. The Query Parameter feature takes a parameter that indicates the "key" of the desired key-value pair in the URL and returns the corresponding value. Use the Client ID feature as we have been doing to get the identifier for the AMP page context.
 
@@ -509,7 +509,7 @@ Check if either of the values corresponding to the inbound analytics ping are pr
   <tr>
     <th width="20%"></th>
     <th width="40%"><strong>Benutzer ID in der Quelle des Publishers</strong></th>
-    <th width="40%"><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
+    <th width="40%"><strong>Benutzer ID auf einer AMP Seite NICHT in der Quelle des Publishers ("Alias")</strong></th>
   </tr>
   <tr>
     <td><strong>Ausdruck im Analytics Ping</strong></td>
@@ -538,7 +538,7 @@ Wenn der Benutzer stattdessen auf einer Seite startet, die von der Publisher Que
   <tr>
     <th width="20%"> </th>
     <th width="40%"><strong>Benutzer ID in der Quelle des Publishers</strong></th>
-    <th width="40%"><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
+    <th width="40%"><strong>Benutzer ID auf einer AMP Seite NICHT in der Quelle des Publishers ("Alias")</strong></th>
   </tr>
   <tr>
     <td><strong>Ausdruck im Analytics Ping</strong></td>
