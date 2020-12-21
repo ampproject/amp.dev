@@ -147,9 +147,7 @@ In der folgenden technischen Anleitung gehen wir davon aus, dass du den **Benutz
 
 Aus Gründen der Übersichtlichkeit werden wir im Weiteren die Zeichenfolgen, die als Identifikatoren fungieren, mit lesbaren Namen ersetzen, denen ein Dollarzeichen (`$`) vorangestellt ist:
 
-[sourcecode:text]
-n34ic982n2386n30 ⇒ $sample_id
-[/sourcecode]
+[sourcecode:text] n34ic982n2386n30 ⇒ $sample_id [/sourcecode]
 
 **Unser Use Case:** In dieser Anleitung werden wir an einem Beispiel arbeiten, mit dem wir ein einfaches Tracking von Seitenaufrufen (Analytics) umsetzen wollen, um eine möglichst präzise Benutzerzählung zu erreichen. Das bedeutet: Selbst wenn Benutzer aus verschiedenen Kontexten (einschließlich einer Kombination aus AMP Seiten und Seiten ohne AMP) auf den Inhalt eines bestimmten Publishers zugreifen, sollen diese Besuche einem einzelnen Benutzer zugeordnet werden, so als würde dieser sich nur auf traditionellen nicht-AMP Seiten dieses Publishers bewegen.
 
@@ -317,9 +315,7 @@ In unserer Zuordnungstabelle werden die Werte der AMP Client IDs, die in den Ana
 
 Wenn du feststellst, dass du den Identifikator in der Quelle des Publishers nicht auslesen konntest, überprüfe sofort, ob die im Analytics Ping enthaltene AMP Client ID bereits Teil einer Zuordnung ist. Sieh dir dazu zunächst die eingehende Anfrage von amp-analytics an, um den Client ID Wert auszulesen. Angenommen, die Anfrage sieht wie folgt aus:
 
-[sourcecode:http]
-https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id
-[/sourcecode]
+[sourcecode:http] https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id [/sourcecode]
 
 Wir extrahieren daraus den fett gedruckten Teil, welcher der AMP Client ID entspricht: `$amp_client_id`.
 
@@ -365,9 +361,7 @@ Wir verwenden den zukünftigen Identifikator in der Publisher Quelle als Identif
 
 Jetzt kennst du den Identifikator für Analyseeinträge und kannst die Informationen zum Benutzerstatus (in diesem Fall Daten für Analytics) speichern, die zu diesem Identifikator gehören:
 
-[sourcecode:text]
-{analytics record identifier, analytics data ...}
-[/sourcecode]
+[sourcecode:text] {analytics record identifier, analytics data ...} [/sourcecode]
 
 <a id="task5"></a>
 
