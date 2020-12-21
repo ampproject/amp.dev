@@ -57,8 +57,8 @@ Die nachfolgenden Tabelle beschreibt die einzelnen Elemente der Syntax.
   <tr>
     <td><code>targetId</code></td>
     <td>ja</td>
-    <td>This is the DOM id for the element, or a predefined <a href="#special-targets">special target</a> you'd like to execute an action on  in response to the event. In the following example, the <code>targetId</code> is the DOM id of the <code>amp-lightbox</code> target, <code>photo-slides</code>.     <pre><amp-lightbox id="photo-slides"></amp-lightbox>
-<button on="tap:photo-slides">Show Images</button></pre>     </td>
+    <td>Das ist die DOM ID für das Element oder ein vordefiniertes <a href="#special-targets">besonderes Ziel</a>, für das eine Aktion als Reaktion auf das Event ausgeführt werden soll. Im folgenden Beispiel ist die <code>targetId</code> die DOM ID des Ziels <code>amp-lightbox</code>, <code>photo-slides</code>. <pre><amp-lightbox id="photo-slides"></amp-lightbox> <button on="tap:photo-slides">Bilder anzeigen</button></pre>
+</td>
   </tr>
   <tr>
     <td><code>methodName</code></td>
@@ -129,7 +129,7 @@ In AMP ist beispielsweise Folgendes möglich:
     <th width="20%">Event</th>
     <th width="30%">Beschreibung</th>
     <th width="40%">Elemente</th>
-    <th>Data</th>
+    <th>Daten</th>
   </tr>
   <!-- change -->
   <tr>
@@ -181,7 +181,7 @@ event.value</pre>
   <tr>
     <th width="25%">Event</th>
     <th width="35%">Beschreibung</th>
-    <th width="40%">Data</th>
+    <th width="40%">Daten</th>
   </tr>
   <tr>
     <td><code>expand</code></td>
@@ -201,7 +201,7 @@ event.value</pre>
   <tr>
     <th width="25%">Event</th>
     <th width="35%">Beschreibung</th>
-    <th width="40%">Data</th>
+    <th width="40%">Daten</th>
   </tr>
   <tr>
     <td><code>slideChange</code></td>
@@ -216,7 +216,7 @@ event.value</pre>
   <tr>
     <th width="25%">Event</th>
     <th width="35%">Beschreibung</th>
-    <th width="40%">Data</th>
+    <th width="40%">Daten</th>
   </tr>
   <tr>
     <td><code>lightboxOpen</code></td>
@@ -236,7 +236,7 @@ event.value</pre>
   <tr>
     <th width="25%">Event</th>
     <th width="35%">Beschreibung</th>
-    <th width="40%">Data</th>
+    <th width="40%">Daten</th>
   </tr>
   <tr>
     <td><code>changeToLayoutContainer</code></td>
@@ -255,7 +255,7 @@ event.value</pre>
   <tr>
     <th width="25%">Event</th>
     <th width="35%">Blendet das Zielelement aus.</th>
-    <th width="40%">Data</th>
+    <th width="40%">Daten</th>
   </tr>
   <tr>
     <td><code>select</code></td>
@@ -270,7 +270,7 @@ event.value</pre>
   <tr>
     <th width="25%">Event</th>
     <th width="35%">Beschreibung</th>
-    <th width="40%">Data</th>
+    <th width="40%">Daten</th>
   </tr>
   <tr>
     <td><code>sidebarOpen</code></td>
@@ -290,7 +290,7 @@ event.value</pre>
   <tr>
     <th width="25%">Event</th>
     <th width="35%">Beschreibung</th>
-    <th width="40%">Data</th>
+    <th width="40%">Daten</th>
   </tr>
   <tr>
     <td> <code>fetch-error</code>(low-trust)</td>
@@ -305,7 +305,7 @@ event.value</pre>
   <tr>
     <th width="25%">Event</th>
     <th width="35%">Beschreibung</th>
-    <th width="40%">Data</th>
+    <th width="40%">Daten</th>
   </tr>
   <tr>
     <td> <code>firstPlay</code>(low-trust)</td>
@@ -325,7 +325,7 @@ event.value</pre>
   <tr>
     <th width="25%">Event</th>
     <th width="35%">Beschreibung</th>
-    <th width="40%">Data</th>
+    <th width="40%">Daten</th>
   </tr>
   <tr>
     <td><code>submit</code></td>
@@ -381,7 +381,7 @@ event.value</pre>
   </tr>
   <tr>
     <td><code>scrollTo(duration=INTEGER, position=STRING)</code></td>
-    <td>Scrolls an element into view with a smooth animation.<br>     <code>duration</code> is optional. Specifies the length of the animation in milliseconds. If unspecified, an amount relative to scroll difference     under or equal to 500 milliseconds is used.<br>     <code>position</code> is optional. One of <code>top</code>, <code>center</code>     or <code>bottom</code> (default <code>top</code>).     Specifies the position of the element relative to the viewport after     scrolling.<br>     As an accessibility best practice, pair this with a call to <code>focus()</code> to focus on the element being scrolled to.</td>
+    <td>Scrollt ein Element mit einer glatten Animation in den sichtbaren Bereich.<br> <code>duration</code> ist optional. Gibt die Länge der Animation in Millisekunden an. Wenn nicht angegeben, wird ein Wert relativ zur Bildlaufdifferenz unter oder gleich 500 Millisekunden verwendet.<br> <code>position</code> ist optional. Entweder <code>top</code>, <code>center</code> oder <code>bottom</code> (Standardwert ist <code>top</code>). Gibt die Position des Elements im Verhältnis zum Viewport nach dem Scrollen an.<br> Als Best Practice im Sinne der Barrierefreiheit sollte diese Aktion mit einem Aufruf von <code>focus()</code> kombiniert werden, um den Fokus auf das Element zu setzen, zu dem gescrollt wird.</td>
   </tr>
   <tr>
     <td><code>focus</code></td>
@@ -679,14 +679,14 @@ Das Ziel `AMP` wird von der AMP Runtime bereitgestellt und implementiert Aktione
     <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
       <p>Navigiert das aktuelle Fenster zur angegebenen URL oder zum optional definierten Ziel, sofern angegeben (unterstützt derzeit nur <code>_top</code> und <code>_blank </code>). Der optionale Parameter <code>opener</code> kann angegeben werden, wenn ein Ziel von <code>_blank</code> verwendet wird, damit die neu geöffnete Seite auf <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener</code></a> zugreifen kann. Unterstützt <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">standardmäßige URL <br>Substitutionen</a>.</p>
-      <p><strong>Caveat:</strong> Using normal <code><a></code> links is recommended wherever possible since <code>AMP.navigateTo</code> is not recognized by web crawlers.</p>
+      <p><strong>Warnung:</strong> Es wird empfohlen, nach Möglichkeit normale <code><a></code> Links zu verwenden, da <code>AMP.navigateTo</code> von Webcrawlern nicht erkannt wird.</p>
     </td>
   </tr>
   <tr>
     <td><code>closeOrNavigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
       <p>Versucht, das Fenster zu schließen, sofern dies zulässig ist. Andernfalls wird ähnlich wie bei der Aktion <code>navigateTo</code> navigiert. Nützlich für Use Cases, in denen es sein kann, dass eine Schaltfläche "Zurück" das Fenster schließen muss, wenn es in einem neuen Fenster von der vorherigen Seite geöffnet wurde, oder wenn eine Navigation erforderlich ist, wenn das Fenster nicht geöffnet wurde.</p>
-      <p><strong>Caveat:</strong> Using normal <code><a></code> links is recommended wherever possible since <code>AMP.closeOrNavigateTo</code> is not recognized by web crawlers.</p>
+      <p><strong>Warnung:</strong> Es wird empfohlen, nach Möglichkeit normale <code><a></code> Links zu verwenden, da <code>AMP.closeOrNavigateTo</code> von Webcrawlern nicht erkannt wird.</p>
     </td>
   </tr>
   <tr>
