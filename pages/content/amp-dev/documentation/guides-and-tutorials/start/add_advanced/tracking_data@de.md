@@ -28,7 +28,7 @@ Um diese Funktionalität in AMP zu replizieren, müssen wir zuerst die Komponent
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 ```
 
-Then, let's **add** the [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) component to the end of the `body` of the document:
+Dann **fügen** wird die Komponente [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) am Ende des `body` unseres Dokuments hinzu:
 
 ```html
 <amp-analytics type="googleanalytics">
@@ -57,7 +57,7 @@ Um dies anzugeben, haben wir dem Attribut `type` den Wert `googleanalytics` gege
 
 Das zur Konfiguration von [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) verwendete JSON ist ein Format, mit dem du sehr flexibel beschreiben kannst, welche Analytics Daten wann gesendet werden sollen. Die Komponente [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) enthält vollständige Details über das Format.
 
-Building on the above example, we can **add** another trigger named `"click on #header trigger"`:
+Auf Basis des obigen Beispiels können wir einen weiteren Trigger mit dem Namen `"click on #header trigger"` **hinzufügen**:
 
 ```html
 <amp-analytics type="googleanalytics">
