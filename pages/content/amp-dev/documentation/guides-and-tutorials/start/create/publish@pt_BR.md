@@ -1,7 +1,7 @@
 ---
 "$title": Final steps before publishing
 "$order": '6'
-description: "Congrats! You've tested your page locally and fixed all validation errors, which means your first AMP page is ready to ship."
+description: Parabéns! Você testou sua página localmente e corrigiu todos os erros de validação, o que quer dizer que sua primeira página AMP está pronta para ser publicada.
 author: pbakaus
 contributors:
 - bpaduch
