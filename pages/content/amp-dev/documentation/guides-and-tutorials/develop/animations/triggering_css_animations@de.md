@@ -74,7 +74,6 @@ Du kannst eine Klasse auf dasselbe Element umschalten, mit dem Benutzer interagi
 
 ```html
  <div id="hamburger" tabindex=1 role=button on="tap:hamburger.toggleClass(class='close')">
-
 ```
 
 Die Aktion `toggleClass` kann auch auf andere Elemente angewendet werden und durch Hinzufügen des Attributs `force` zwischen zwei Klassen umschalten.
