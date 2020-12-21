@@ -53,18 +53,18 @@ Die Verwendung von `<link rel="stylesheet" href="...">` ist nirgendwo in der E-M
 
 ### Einfache Selektoren <a name="simple-selectors"></a>
 
-- [Type selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) `elementname`
-- [Class selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) `.classname`
-- [ID selector](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) `#idname`
-- [Universal selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) `*`
-- [Attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) `[attr=value]`
+- [Typauswahl](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) `elementname`
+- [Klassenauswahl](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) `.classname`
+- [ID-Auswahl](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) `#idname`
+- [Universalselektor](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) `*`
+- [Attributauswahl](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) `[attr=value]`
 
 ### Kombinatoren <a name="combinators"></a>
 
-- [Adjacent sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator) `A + B`
-- [General sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator) `A ~ B`
-- [Child combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator) `A > B`
-- [Descendant combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator) `A B`
+- [ Angrenzender gleichgeordneter Kombinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator) `A + B`
+- [Allgemeiner gleichgeordneter Kombinator](https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator) `A ~ B`
+- [Untergeordneter Kombinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator) `A > B`
+- [Nachfolgender Kombinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator) `A B`
 
 ### Pseudoklassen <a name="pseudo-classes"></a>
 
