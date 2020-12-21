@@ -157,7 +157,7 @@ Im folgenden Beispiel haben die Bilddateien dasselbe Seitenverhältnis, aber unt
 
 [/example]
 
-For example, say we have a device that has a viewport width of 412 px and a DPR of 2.6. Based on the code above, the image must be displayed at 75% of the viewport width, so the browser chooses an image close to 803 px (412 _ .75 _ 2.6), which happens to be `apple-800.jpg`.
+Angenommen, wir haben ein Gerät mit einer Viewportbreite von 412 px und einem DPR von 2,6. Basierend auf dem obigen Code muss das Bild eine Breite von 75 % der Viewportbreite haben, sodass der Browser ein Bild mit etwa 803 px (412 _ 0,75 _ 2,6) auswählt, das in unserem Fall `apple-800.jpg` ist.
 
 [tip type="read-on"] **ERFAHRE MEHR:** Weitere Infos zur Verwendung von srcset und Größen in AMP findest du im Leitfaden [Art Direction mit srcset, Größen & Höhen](art_direction.md). [/tip]
 
@@ -215,7 +215,8 @@ In HTML kannst du mithilfe des Tags `picture` verschiedene Bildformate bereitste
 
 AMP bietet zwei Möglichkeiten, um optimierte Bilder bereitzustellen:
 
-- Developers using image formats that are not widely supported, such as WebP, can configure their server to process browser `Accept` headers and respond with image bytes and the appropriate [`Content-Type` header](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/). This avoids the browser from downloading image types it does not support. Read more about [content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation).[sourcecode:html]  Accept: image/webp,image/apng,image/_,_/\*;q=0.8  [/sourcecode]
+- Entwickler, die seltene Bildformate wie WebP verwenden, können ihren Server so konfigurieren, dass er den `Accept` Browserheader verarbeitet und mit Bildbytes und dem entsprechenden [`Content-Type` Header](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/) antwortet. Dadurch wird verhindert, dass der Browser Bildtypen herunterlädt, die er nicht unterstützt. Erfahre mehr über die [Inhaltsaushandlung (Content Negotiation)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation).
+    <pre>[sourcecode:html] Accept: image/webp,image/apng,image/,/*;q=0.8 [/sourcecode]</pre>
 - Provide nested image fallbacks, such as the example below.
 
 ##### Beispiel: unterschiedliche Bildformate bereitstellen
