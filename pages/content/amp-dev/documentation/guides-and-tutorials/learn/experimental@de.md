@@ -16,7 +16,7 @@ Entwickler und Benutzer können der Nutzung dieser Funktionen zustimmen, noch be
 
 {% set experimental_components = g.docs('/content/amp-dev/documentation/components/reference')|selectattr('experimental')|list %} {% if experimental_components|length %} Nachfolgend findest du eine Liste mit Komponenten, die bereits unter dem Status "experimentell" verfügbar sind und von Entwicklern unter Berücksichtigung des Benutzerfeedbacks getestet werden können:
 
-<ul> {% for component in experimental_components %}   <li><a href="%7B%7B%20component.url.path%20%7D%7D">{{ component.title }}</a></li> {% endfor %} </ul> {% endif %}
+<ul><br>{% for component in experimental_components %}<br>  <li><a href="{{ component.url.path }}">{{ component.title }}</a></li><br>{% endfor %}<br></ul><br>{% endif %}
 
 ## Teste den AMP Dev Channel
 
@@ -82,7 +82,7 @@ Origin Trials die Möglichkeit, eine neue Funktion zu implementieren und zu nutz
 
 {% set trial_components = g.docs('/content/amp-dev/documentation/components/reference')|selectattr('origin_trial')|list %} {% if trial_components|length %} Die Komponenten in der folgenden Liste können mittels Origin Trial getestet werden:
 
-<ul> {% for component in trial_components %}   <li><a href="%7B%7B%20component.url.path%20%7D%7D">{{ component.title }}</a></li> {% endfor %} </ul> {% endif %}
+<ul><br>{% for component in trial_components %}<br>  <li><a href="{{ component.url.path }}">{{ component.title }}</a></li><br>{% endfor %}<br></ul><br>{% endif %}
 
 ### Origin Trial aktivieren
 
