@@ -20,7 +20,7 @@ Use um servidor web local para visualizar o site.
 
 [tip type="default"] **TIP –** For a quick web server, run `python -m SimpleHTTPServer`. [/tip]
 
-You should be able to view the landing page for Lyrical Lyghtning, the Mobile Music Magic festival. It has one link on the homepage to view the schedule and which stage the bands are on.
+Você deve conseguir visualizar a página inicial do Lyrical Lyghtning, o festival Mobile Music Magic. Há um link na página inicial para visualizar a programação e em que palco as bandas estão.
 
 {{ image('/static/img/docs/tutorials/tut-lyricallyghtning.png', 594, 558, alt='Image of PWA' ) }}
 
@@ -180,7 +180,7 @@ Você conseguiu criar um PWA com AMP! Neste tutorial, você aprendeu a:
 - Criar um [Manifesto de Web App](https://developers.google.com/web/fundamentals/web-app-manifest/)
 - Instalar um Service Worker no AMP usando [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md)
 - Personalizar o [AMP Service Worker ](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html)
-- [Prefetch links ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
+- [Realize carregamento prévio de links (prefetching)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
 - Criar uma página offline
 
 Saiba mais sobre [Service Worker](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html)s e [considerações de experiência do usuário offline](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux). Saiba como [acompanhar o envolvimento com analytics](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.html) e acompanhe o tutorial sobre [como configurar análises básicas para suas páginas AMP](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/tracking-engagement.html).
