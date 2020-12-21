@@ -1,7 +1,7 @@
 ---
-"$title": Advertise in Web Stories
+"$title": Anuncie em histórias Web
 "$order": '3'
-description: Web Stories are a full-screen tappable experience that immerses readers in the content. Advertising with AMP Story ads allows for seamless and disruption-free ...
+description: As histórias Web são uma experiência orientada a toque em tela cheia que mergulha os leitores no seu conteúdo. A publicidade com anúncios de histórias AMP permite a criação de histórias sem descontinuidades nem interrupções ...
 formats:
 - stories
 author: CrystalOnScript
@@ -13,9 +13,9 @@ As histórias Web são uma experiência orientada a toque em tela cheia que merg
 
 As Histórias Web usam um único componente [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) para ditar a quantidade e o posicionamento do anúncio.
 
-O [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) é um wrapper em volta do componente [`amp-ad`](../../../documentation/components/reference/amp-ad.md). Ele insere dinamicamente um ou vários anúncios enquanto o usuário consome o conteúdo da história. Para garantir a melhor experiência do usuário:
+##Colocação dos anúncios Ao contrário das páginas web AMP, onde a quantidade e localização dos anúncios é determinada pelo colocação de múltiplos componentes [`amp-ad`](../../../documentation/components/reference/amp-ad.md), as histórias Web dependem de um único componente [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) para determinar a quantidade e colocação dos anúncios.
 
-1. Ads are pre-rendered by the Web Stories runtime, then inserted. This guarantees that the users will never be shown a blank or unloaded ad.
+1. Anúncios são pré-renderizados pelo runtime de Histórias Web e depois são inseridos. Isto garante que os usuários jamais verão um anúncio em branco ou não totalmente carregado.
 
 2. A densidade do anúncio é otimizada de forma proporcional ao conteúdo para evitar o excesso de saturação. O componente [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) decide quando e onde inserir anúncios à medida que o usuário avança.
 
@@ -75,4 +75,4 @@ Se você for um anunciante interessado em veicular seus anúncios em Histórias 
 
 Editores também podem colocar anúncios personalizados se eles configurarem seus próprios servidores de anúncios. [O processo é detalhado aqui](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
 
-[tip type="note"] Read [Traffic custom creatives in Web Stories](https://support.google.com/admanager/answer/9038178) for information about uploading ads to Google Ad Manager and checkout our guide on [Best practices for creating an AMP Story ad](story_ads_best_practices.md). [/tip]
+[tip type="note"] Leia [Promova criativos personalizados em Histórias Web](https://support.google.com/admanager/answer/9038178) para informações sobre o upload de anúncios para o Google Ad Manager e confira nosso guia sobre [Melhores práticas para criar um anúncio de Histórias AMP](story_ads_best_practices.md). [/tip]
