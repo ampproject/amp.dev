@@ -21,9 +21,9 @@ Mit responsivem Webdesign werden flüssige Webseiten erstellt, die auf die Bedü
 
 Dieser Leitfaden zeigt, wie du diese responsiven Grundlagen mühelos in AMP implementieren kannst:
 
-- [Controlling the viewport](#controlling-the-viewport)
-- [Creating a responsive layout](#creating-a-responsive-layout)
-- [Scaling media](#scaling-media-for-the-page)
+- [Steuerung des Viewports](#controlling-the-viewport)
+- [Erstellung eines responsiven Layouts](#creating-a-responsive-layout)
+- [Skalieren von Medien](#scaling-media-for-the-page)
 
 [video src='https://www.youtube.com/watch?v=XDvbJ2apaiA' caption='Erfahre in diesem Video mehr über das responsive Design in AMP.']
 
@@ -117,9 +117,9 @@ Es gibt viele Arten von Videos, die du deinen AMP Seiten hinzufügen kannst. Wei
 
 Ein großer Teil einer Webseite besteht aus Bildern (ungefähr [65% der Bytes einer Seite](http://httparchive.org/interesting.php#bytesperpage)). Deine Bilder sollten zumindest auf Bildschirmen verschiedener Größen und Ausrichtungen sichtbar sein (d. h. Benutzer müssen nicht scrollen, verkleinern oder zoomen, um das gesamte Bild zu sehen). In AMP ist das ganz einfach über das Attribut `"layout=responsive"` möglich (siehe [Füge Bilder in AMP hinzu](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)). Zusätzlich zum einfachen responsiven Bild möchtest du möglicherweise mehrere Bildressourcen bereitstellen, um:
 
-- [Serve crisp images for the right resolution](#serving-crisp-images-for-the-right-resolution)
-- [Change the art direction of an image](#changing-the-art-direction-of-an-image)
-- [Provide optimized image formats](#providing-optimized-images)
+- [gestochen scharfe Bilder bei passender Auflösung bereitzustellen,](#serving-crisp-images-for-the-right-resolution)
+- [die Art Direction eines Bildes zu ändern,](#changing-the-art-direction-of-an-image)<br>
+- [optimierte Bildformate bereitzustellen.](#providing-optimized-images)<br>
 
 #### Gestochen scharfe Bilder bei passender Auflösung bereitstellen <a name="serving-crisp-images-for-the-right-resolution"></a>
 
@@ -262,6 +262,6 @@ Hier einige Beispiele, die dich hoffentlich dazu inspirieren, responsive AMP Sei
 
 #### Made by AMP
 
-- [Examples](../../../../documentation/examples/index.html)
-- [Templates](../../../../documentation/templates/index.html)
+- [Beispiele](../../../../documentation/examples/index.html)
+- [Vorlagen](../../../../documentation/templates/index.html)
 - [AMP Conf Workshop Codelab: Making beautiful AMPs](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)
