@@ -19,7 +19,7 @@ Die Komponente [`amp-animation`](../../../../documentation/components/reference/
 Eine einfache [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) ist ein JSON Objekt, das aus den folgenden Schlüsselelementen besteht:
 
 - Element, das die Komponente animiert, oder `selector`
-- [Timing Properties](../../../../documentation/components/reference/amp-animation.md#timing-properties)
+- [Eigenschaften für das Timing](../../../../documentation/components/reference/amp-animation.md#timing-properties)
 - [Keyframes](../../../../documentation/components/reference/amp-animation.md#keyframes)
 - [Trigger](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
 
