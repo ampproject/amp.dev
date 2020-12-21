@@ -1,15 +1,15 @@
 ---
-"$title": Adding more pages
+"$title": Weitere Seiten hinzufügen
 "$order": '5'
-description: Now that you are familiar with adding a page to a Web Story, adding the next pages in our "The Joy of Pets" story is very similar.
+description: Da du mit dem Hinzufügen einer Seite zu einer Web Story nun vertraut bist, sollte dir das Hinzufügen der nächsten Seiten in unserer Story "The Joy of Pets" nicht schwerfallen.
 author: bpaduch
 ---
 
 Da du mit dem Hinzufügen einer Seite zu einer Web Story nun vertraut bist, sollte dir das Hinzufügen der nächsten Seiten in unserer Story "Die Freude an Haustieren" nicht schwerfallen. Nutze die unten angegebenen Informationen und wende dein neues Wissen an, um **die restlichen Seiten zu erstellen**. Wenn du nicht weiterkommst, kannst du dir den fertigen Code ansehen (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>).
 
-[tip type="tip"] **TIP –** Remember that each page needs a unique "id" attribute (e.g., `id="page1"`). [/tip]
+[tip type="tip"] **TIPP:** Denke daran, dass jede Seite ein eindeutiges Attribut "id" benötigt (z. B. `id="page1"`). [/tip]
 
-## Page 1: Cats
+## Seite 1: Katzen
 
 Demonstriert, wie Bild und Text in einer einzigen Ebene angezeigt werden.
 
@@ -27,7 +27,7 @@ Demonstriert, wie Bild und Text in einer einzigen Ebene angezeigt werden.
   </tr>
 </table>
 
-## Page 2: Dogs
+## Seite 2: Hunde
 
 Demonstriert, wie man Text anordnet und ein bildschirmfüllendes Bild mit zwei Ebenen anzeigt.
 
@@ -47,7 +47,7 @@ Demonstriert, wie man Text anordnet und ein bildschirmfüllendes Bild mit zwei E
   </tr>
 </table>
 
-## Page 3: Birds
+## Seite 3: Vögel
 
 Demonstriert, wie man Text anordnet, ein bildschirmfüllendes Bild mit zwei Ebenen anzeigt und Hintergrundsound für die Seite bereitstellt.
 
@@ -64,7 +64,7 @@ Demonstriert, wie man Text anordnet, ein bildschirmfüllendes Bild mit zwei Eben
   </tr>
 </table>
 
-## Page 4: Rabbits
+## Seite 4: Kaninchen
 
 Demonstriert, wie man Text anordnet und ein bildschirmfüllendes Video für die Seite anzeigt.
 
