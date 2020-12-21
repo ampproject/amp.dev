@@ -1,5 +1,5 @@
 ---
-"$title": Monetizing your AMP page with ads
+"$title": Monetarisierung deiner AMP Seite mit Ads
 "$order": '0'
 description: Dieser Leitfaden enthält Anweisungen und Best Practices zum Anzeigen von Ads auf deinen AMP Seiten.  Um Ads in AMP anzuzeigen, musst du zu deiner …
 formats:
@@ -126,7 +126,7 @@ Nachfolgend findest du einige Tipps, mit denen du die Effektivität von Ads auf 
 
 - **Vermeide schwere Creatives** gemäß den [IAB Leitfäden](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf).
 - **Vermeide Interstitials** oder andere Anzeigenformate, die dazu beim Laden der Ad zum Reflow von Inhalten führen.
-- **Optimize for viewability** by setting the data-loading-strategy to prefer-viewability-over-views.
+- **Optimiere die Sichtbarkeit**, indem du die dem Attribut "data-loading-strategy" den Wert "prefer-viewability-over-views" gibst.
 - **Platziere Ads in deinen Videoinhalten** über [unterstützte Player](../../../../documentation/components/index.html#media) oder [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md), um Umsätze für alle Inhaltsarten  zu erzielen.
 - **Implementiere native Ads**, um mit Display Ads mit Anzeigenanforderungen in mehreren Größen zu konkurrieren. Dies erhöht den Nachfragedruck und bietet deinen Lesern eine erstklassige Nutzererfahrung.
 
