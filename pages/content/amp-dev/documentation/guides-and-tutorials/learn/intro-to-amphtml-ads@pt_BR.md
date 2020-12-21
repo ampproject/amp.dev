@@ -16,7 +16,7 @@ Os anúncios HTML para AMP são escritos em HTML para AMP, de acordo com as [Esp
 
 Por que os anúncios HTML para AMP são melhores que os anúncios tradicionais?
 
-1. **Mais rápidos**: os anúncios HTML para AMP são mais rápidos porque são solicitados antecipadamente no processo de renderização da página e são exibidos imediatamente, pouco antes de o usuário visualizar o anúncio. O tamanho reduzido dos anúncios HTML para AMP também melhora a velocidade.<br>[tip type="note"]
+1. **Mais rápidos**: os anúncios HTML para AMP são mais rápidos porque são solicitados antecipadamente no processo de renderização da página e são exibidos imediatamente, pouco antes de o usuário visualizar o anúncio. O tamanho reduzido dos anúncios HTML para AMP também melhora a velocidade.
 2. **Mais leves**: os anúncios HTML para AMP agregam recursos de uso comum, o que reduz o tamanho dos arquivos. Depois que estão na página, os anúncios HTML para AMP também consomem menos recursos. Por exemplo, em vez de 10 rastreadores solicitando informações de anúncios convencionais, os anúncios HTML para AMP coletam todos os dados de uma vez e os distribuem a todos os rastreadores interessados.
 3. **Coordenados**: nas páginas AMP, o [ambiente de tempo de execução de AMP](spec/amphtml.md#amp-runtime) pode coordenar os recursos limitados de um celular no componente certo no momento certo para oferecer a melhor experiência do usuário. Por exemplo, os anúncios HTML para AMP com animações são pausados quando não estão na janela de visualização atual.
 4. **Mais interessantes**: os usuários não interagem com anúncios que não conseguem ver. Anúncios mais rápidos levam a maior visibilidade e, consequentemente, a taxas de cliques mais elevadas, o que, por sua vez, leva a um melhor desempenho do anúncio.
@@ -47,11 +47,11 @@ Os anúncios HTML para AMP são flexíveis e dinâmicos, permitindo muitos forma
 
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='Veiculação de anúncios HTML para AMP em páginas AMP', caption='Veiculação de anúncios HTML para AMP em páginas AMP', align='' ) }}
 
-1. Os editores inserem um espaço de anúncio na página AMP por meio da tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md), especificando a rede de publicidade que querem usar.<br>[tip type="note"]
+1. Os editores inserem um espaço de anúncio na página AMP por meio da tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md), especificando a rede de publicidade que querem usar.
 2. O ambiente de tempo de execução de AMP envia uma solicitação de anúncio à rede de publicidade especificada para recuperar o anúncio. As redes de publicidade que veiculam anúncios HTML para AMP oferecem uma [implementação do Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) (em inglês) que valida e assina o criativo.
 3. A rede de publicidade responde com o anúncio HTML para AMP e o ambiente de tempo de execução de AMP renderiza o anúncio na página AMP.
 
-[tip type = "note"] Nenhuma integração especial é necessária para veicular anúncios HTML para AMP em páginas não AMP. Verifique com sua rede de anúncios se eles oferecem suporte a anúncios HTML para AMP. [/dica]
+[tip type="note"] Nenhuma integração especial é necessária para veicular anúncios HTML para AMP em páginas não AMP. Verifique com sua rede de anúncios se eles oferecem suporte a anúncios HTML para AMP. [/tip]
 
 ## Veicular anúncios HTML para AMP
 
@@ -62,7 +62,7 @@ Para veicular seus formatos de anúncio de venda direta em HTML para AMP, é pre
 - DoubleClick for Publishers
 - TripleLift
 - Dianomi
-- [tip type="note"]<br>Adzerk
+- Adzerk
 - Google AdSense
 
 Para exibir anúncios HTML para AMP usando seus canais indiretos (por exemplo, exchange, SSP etc.), escolha uma rede de publicidade ou um servidor de anúncios compatível na [lista a seguir](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md).
