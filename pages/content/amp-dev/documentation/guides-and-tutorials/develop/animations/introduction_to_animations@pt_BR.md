@@ -19,7 +19,7 @@ O componente [`amp-animation`](../../../../documentation/components/reference/am
 Um [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) básico é um objeto JSON object que consiste das seguintes partes fundamentais:
 
 - O elemento que o componente está animando, ou `seletor`.
-- [Timing Properties](../../../../documentation/components/reference/amp-animation.md#timing-properties)
+- [Propriedades de temporização](../../../../documentation/components/reference/amp-animation.md#timing-properties)
 - [Keyframes](../../../../documentation/components/reference/amp-animation.md#keyframes)
 - [Trigger](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
 
@@ -259,9 +259,9 @@ Utilizando as [expressões `var()` e `calc()`](../../../../documentation/compone
 ```
 [/example]
 
-- Declaring a variable, `--duration`, and giving it the value of two seconds.
-- Setting the `duration` to the var `--duration`'s value.
-- Calculating the delay applied to each element with the class `.card`.
+- Declara uma variável `--duration` e atribui a ela o valor de dois segundos.
+- Declara como valor da propriedade `duration` o valor da variável `--duration`.
+- Calcula o atraso (propriedade delay) aplicado a cada elemento que corresponde ao seletor `.card`.
     1. A [extensão `length()`](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) calcula quantos elementos `.card` foram selecionados
     2. Depois subtrai desse total o [index()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension) de cada `.card`
     3. O valor resultante é multiplicado pela variável `--duration`
