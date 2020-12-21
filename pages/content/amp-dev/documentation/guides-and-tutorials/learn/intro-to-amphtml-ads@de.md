@@ -14,7 +14,7 @@ AMPHTML Ads werden unter Berücksichtigung der [AMPHTML Ad Spezifikation](a4a_sp
 
 ### Vorteile
 
-Why are AMPHTML ads better than traditional ads?
+Warum sind AMPHTML Ads besser als herkömmliche Anzeigen?
 
 1. **Schneller**: AMPHTML Ads sind schneller, da die Ads zu einem früheren Zeitpunkt im Rendering der Seite angefordert werden. Sie werden angezeigt, kurz bevor der Benutzer die Ad sieht. Darüber hinaus erhöht die reduzierte Dateigröße von AMPHTML Ads die Geschwindigkeit.
 2. **Leichter**: AMPHTML Ads kombinieren häufig verwendete Funktionalitäten von Ads, wodurch die Dateigröße der Ad reduziert wird. Sobald AMPHTML Ads auf der Seite angezeigt werden, verbrauchen sie auch weniger Ressourcen. So sammeln z. B. AMPHTML Ads alle Daten auf einmal und verteilen sie an eine beliebige Anzahl interessierter Tracker, anstelle von 10 Trackern, die in gewöhnlichen Ads alle separat ihre Informationen anfordern.
@@ -25,7 +25,7 @@ Why are AMPHTML ads better than traditional ads?
 
 ### Formate
 
-AMPHTML ads are flexible and dynamic, allowing for many creative formats like carousel, parallax, and lightbox, to name a few. Get started by leveraging the open-source AMPHTML ad templates on [Examples](../../../documentation/examples/index.html).
+AMPHTML Ads sind flexibel und dynamisch und ermöglichen viele kreative Formate wie Karussell, Parallax und Lightbox, um nur einige wenige zu nennen. Ein guter Anfang sind die Open-Source AMPHTML Ad Templates unter [Beispiele](../../../documentation/examples/index.html).
 
 <table class="nocolor">
   <tr>
@@ -45,7 +45,7 @@ AMPHTML ads are flexible and dynamic, allowing for many creative formats like ca
 
 ## So funktionieren AMPHTML Ads
 
-{{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='Serving AMPHTML ads to AMP pages', caption='Serving AMPHTML ads to AMP pages', align='' ) }}
+{{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='Bereitstellung von AMPHTML Ads auf AMP Seiten', caption='Bereitstellung von AMPHTML Ads auf AMP Seiten', align='' ) }}
 
 1. Publisher reservieren über das Tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md) einen Platz für die Ad auf ihrer AMP Seite und geben das Werbenetzwerk an, das sie verwenden möchten.
 2. Die AMP Runtime sendet eine Anfrage an das angegebene Werbenetzwerk, um die Ad abzurufen. Werbenetzwerke, die AMPHTML Ads bereitstellen können, bieten eine [Fast Fetch Implementierung](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md), mit der das Creative validiert und signiert wird.
@@ -59,7 +59,7 @@ AMPHTML ads are flexible and dynamic, allowing for many creative formats like ca
 
 Um deine direkt verkauften Ad Formate in AMPHTML bereitzustellen, müssen die Ads gemäß der [AMPHTML Ad Spezifikation](a4a_spec.md) erstellt und über einen Ad Server, der die AMPHTML Ad Bereitstellung unterstützt, bereitgestellt werden. Derzeit unterstützen die folgenden Ad Server AMPHTML Ads:
 
-- DoubleClick for Publishers
+- DoubleClick für Publisher
 - TripleLift
 - Dianomi
 - Adzerk
@@ -73,56 +73,56 @@ Als Kreativagentur musst du bei der Erstellung von Ads die [AMPHTML Ad Spezifika
 
 - [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*coming soon*)
+- Adobe Animate (*kommt bald*)
 
 ### Werbenetzwerke/Server
 
-To deliver AMPHTML ads to AMP pages, you need to create an [`amp-ad`](../../../documentation/components/reference/amp-ad.md) extension for your network (unless you already have one) which uses the [Fast Fetch ad request implementation](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Refer to [Integrating with AMP to serve display ads](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md) for details.  Keep in mind that no special integration is needed to serve AMPHTML to non-AMP pages.
+Um AMPHTML Ads auf AMP Seiten bereitzustellen, musst du die Erweiterung [`amp-ad`](../../../documentation/components/reference/amp-ad.md) für dein Netzwerk erstellen (sofern nicht bereits erfolgt), welche die [Fast Fetch Implementierung für Ad Anfragen](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) verwendet. Einzelheiten dazu findest du unter [AMP integrieren, um Display Ads zu schalten](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md).  Beachte, dass für die Bereitstellung von AMPHTML an Seiten ohne AMP keine spezielle Integration erforderlich ist.
 
 ## AMPHTML Ads erstellen
 
 **Von Grund auf**: AMPHTML Ads müssen der [AMPHTML Ad Spezifikation](a4a_spec.md) entsprechen. Demos und Beispiele findest du in den Open-Source AMPHTML Ad Templates unter [Beispiele](../../../documentation/examples/documentation/amp-ad.html).
 
-**Using tools**: You can use any of the following tools to build AMPHTML creatives:
+**Mithilfe von Tools**: Du kannst eines der folgenden Tools verwenden, um AMPHTML Creatives zu erstellen:
 
 - [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*coming soon*)
+- Adobe Animate (*kommt bald*)
 
 ### AMPHTML Ad Syntax validieren
 
-After creating your AMPHTML ad, you should make sure that the ad is using the correct AMPHTML syntax. Depending on your development environment, there are a few options for you to validate your AMPHTML ads:
+Stelle nach der Erstellung deiner AMPHTML Ad sicher, dass die Ad die korrekte AMPHTML Syntax verwendet. Abhängig von deiner Entwicklungsumgebung stehen dir einige Optionen zur Überprüfung deiner AMPHTML Ads zur Verfügung:
 
-- Use the [AMP validator NPM](https://www.npmjs.com/package/amphtml-validator) module to integrate validation into your build CI.
-- Use the [AMP validator](https://validator.ampproject.org/) for one-off testing.
-- Partner with [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) and use their public validator end point.
+- Verwende das Modul [AMP Validator NPM](https://www.npmjs.com/package/amphtml-validator), um die Validierung in deine Build CI zu integrieren.
+- Verwende den [AMP Validator](https://validator.ampproject.org/) für einmalige Tests.
+- Arbeite mit [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) zusammen und verwende deren öffentlichen Validator Endpoint.
 
-[tip type="note"] **NOTE –**  To render AMPHTML ads quickly on AMP pages (i.e., using preferential rendering in Fast Fetch), the syntax must be correct.  If the syntax isn't valid, the ad will still render, just not as quickly. [/tip]
+[tip type="note"] **HINWEIS:** Damit AMPHTML Ads schnell auf AMP Seiten gerendert werden (also mit Preferential Rendering in Fast Fetch), muss die Syntax korrekt sein. Bei ungültiger Syntax wird die Ad trotzdem gerendert, allerdings nicht so schnell. [/tip]
 
 ## Unterstützung von AMPHTML Ads in RTB
 
-For SSPs and ad exchanges that want to support AMPHTML ads in a Real-Time Bidding (RTB) environment, refer to the [Implementation Guide for RTB Ad Exchanges](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/RTBExchangeGuide.md) for details.
+Informationen zu SSPs und Ad Exchanges, die AMPHTML Ads in einer Umgebung unterstützen möchten, die Real-Time Bidding (RTB) ermöglicht, findest du im [Implementierungshandbuch für RTB Ad Exchanges](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/RTBExchangeGuide.md).
 
 ## FAQs
 
 #### Gibt es Beispiele für AMPHTML Ads?
 
-Yes. A number of great looking AMPHTML ad templates can be found on [Examples](../../../documentation/examples/documentation/amp-ad.html). These samples use advanced components in AMP.
+Ja. Du findest eine ganze Reihe großartiger AMPHTML Ad Templates unter [Beispiele](../../../documentation/examples/documentation/amp-ad.html). Diese Beispiele verwenden erweiterte Komponenten in AMP.
 
 #### Unterstützen AMPHTML Ads die Drittanbieterüberprüfung und die Erfassung der Sichtbarkeit?
 
-Yes, there is native support for verification and viewability detection using [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) (e.g., Google's ActiveView integrates this way). There are also other vendors like MOAT that are actively implementing support for it.
+Ja, es gibt native Unterstützung für Überprüfung und Erfassung der Sichtbarkeit mithilfe von [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) (so wird z. B. ActiveView von Google auf diese Weise integriert). Es gibt auch andere Anbieter wie MOAT, die aktiv Unterstützung dafür implementieren.
 
 #### Unterstützen AMPHTML Ads Animationen auf der Basis von Timelines?
 
-Yes. See [`amp-animation`](../../../documentation/components/reference/amp-animation.md).
+Ja. Siehe [`amp-animation`](../../../documentation/components/reference/amp-animation.md).
 
 #### Die meisten Ads haben antippbare Zielobjekte und konfigurierbare Ad Exits. Haben AMPHTML Ads einen ähnlichen Mechanismus?
 
-Yes. See [`amp-ad-exit`](../../../documentation/components/reference/amp-ad-exit.md).
+Ja. Siehe [`amp-ad-exit`](../../../documentation/components/reference/amp-ad-exit.md).
 
 #### Ich kann keine Antwort auf meine Frage finden. Wo kann ich Fragen stellen?
 
-- [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) is our recommended way to find answers to questions about AMP; since members of the AMP Project community regularly monitor Stack Overflow you will probably receive the fastest response to your questions there.
-- Join the [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) channel for solutions and answers.
-- If you encounter a bug in AMP or have a feature request for AMP, see [Reporting issues with AMP](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp) for information on filing an issue.
+- Wir empfehlen [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) für Fragen rund um AMP. Da Mitglieder der AMP Project Community regelmäßig auf Stack Overflow mitlesen, erhältst du dort mit großer Wahrscheinlichkeit die schnellste Antwort auf deine Frage.
+- Tritt dem Channel [#a4a-discuss auf Slack](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) bei, um Lösungen und Antworten zu finden.
+- Wenn du einen Bug in AMP findest oder dir eine bestimmte Funktion wünschst, findest du unter [Probleme mit AMP melden](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp) weitere Informationen zum Erstellen von Issues.
