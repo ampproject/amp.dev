@@ -65,11 +65,11 @@ For example: `<amp-analytics type="googleanalytics">` sends analytics data to th
 
 Analytics vendor configurations are a quick way to get started with [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). You should consult your vendor’s documentation and help resources for further guidance. As previously mentioned, the list of vendors who’ve already integrated with AMP, as well as links to their specific documentation can be found in the [Analytics Vendors](analytics-vendors.md) list.
 
-If you’re an analytics vendor, learn more about [integrating your own analytics configuration into AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+Wenn du Analytics Anbieter bist, findest du hier mehr Informationen über die [Integration deiner eigenen Analytics Konfiguration in AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
 
 ## Remote Konfiguration laden: das Attribut "config"
 
-You don't have to include all of the configuration for [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) entirely on your AMP page. Instead, you can can call out to a remote URL for all or part of the configurations.
+Du musst nicht die gesamte Konfiguration für [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) in deine AMP Seite einbinden. Stattdessen kannst du eine Remote URL aufrufen, um einen Teil oder alle der Konfigurationen abzurufen.
 
 This allows you to do things like vary the configuration based on a specific request. If you as the publisher have control over the remote file, you can do any server-side processing necessary to construct the configuration data.
 
@@ -79,7 +79,7 @@ The first step to loading remote configurations is to include the config attribu
 <amp-analytics config="https://example.com/analytics.account.config.json">
 ```
 
-The next step is to create the JSON content that lives in the remote URL. In this simple example, the configuration contained in the JSON object is just the variable value for the analytics account.
+Als Nächstes muss der JSON Inhalt erstellt werden, der sich in der Remote URL befindet. In diesem einfachen Beispiel ist die im JSON Objekt enthaltene Konfiguration lediglich der Variablenwert für den Analytics Account.
 
 Beispielinhalt in `https://example.com/analytics.account.config.json`:
 
@@ -104,7 +104,7 @@ Der letzte Schritt besteht darin, sicherzustellen, dass die Inhalte der Remote D
 
 ## Requests, Triggers und Transports <a name="requests-triggers--transports"></a>
 
-The `requests` attribute defines ‘what data gets sent’ (for example, `pageviews`, `events`), and where that data gets sent (the URLs used to transmit data).
+Das Attribut `requests` definiert, welche Daten gesendet werden (z. B. `pageviews`, `events`) und wohin diese Daten gesendet werden (d. h. mit welchen URLs die Daten übermittelt werden).
 
 Das Attribut `triggers` beschreibt, wann Analysedaten gesendet werden sollen, z. B. wenn Benutzer eine Seite ansehen oder auf einen Link klicken.
 
@@ -129,7 +129,7 @@ Einige Analytics Anbieter (einschließlich Google Analytics) stellen bereits ein
 
 Das Attribut [extraUrlParams](../../../../documentation/components/reference/amp-analytics.md#extra-url-params) gibt zusätzliche Parameter an, die an die Zeichenfolge der Abfrage in der URL der Anforderung angehängt werden. Dazu wird wie gewohnt die Konvention "&foo=baz" verwendet.
 
-The [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) example adds an additional parameter `cd1` to the request and sets the parameter value to "AMP":
+Das Beispiel zu [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) fügt der Anforderung den zusätzlichen Parameter `cd1` hinzu und setzt den Parameterwert auf "AMP":
 
 ```js
   "extraUrlParams": {
@@ -161,7 +161,7 @@ So wird z. B. das folgende Element [`amp-analytics`](../../../../documentation/c
 }
 ```
 
-[tip type="important"] **IMPORTANT –** The above approach is only recommended for AMP pages and not AMPHTML ads. Since analytics priority is lower compared to content on the page, it's recommended that clicks are tracked using a browser redirect to avoid click loss. [/tip]
+[tip type="important"] **WICHTIG:** Der oben beschriebene Ansatz wird nur für AMP Seiten, nicht für AMPHTML Ads empfohlen. Da die Analysepriorität im Vergleich zum Inhalt der Seite niedriger ist, wird empfohlen, Klicks mithilfe einer Browserumleitung zu verfolgen, um den Verlust von Klicks zu vermeiden. [/tip]
 
 AMP unterstützt die folgenden Triggerkonfigurationen:
 
@@ -248,7 +248,7 @@ In the example below, `beacon` and `xhrpost` are set to false, so they will not 
 
 AMP populates variables with values in an order of precedence:
 
-1. Remote configurations (via `config`).
+1. Remote Konfigurationen (über `config`)
 2. `vars`, verschachtelt in einem Trigger innerhalb von `triggers`
 3. `vars` der höchsten Ebene, verschachtelt in [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
 4. Von der Plattform bereitgestellte Werte
