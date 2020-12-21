@@ -103,7 +103,7 @@ Sorgente:
 
 Anteprima: {amp-facebook0} {/amp-facebook0}
 
-[tip type = "tip"] **SUGGERIMENTO:** Altri esempi di [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) sono disponibili su [AMP By Example](../../../../documentation/examples/documentation/amp-facebook.html). [/tip]
+[tip type="tip"] **SUGGERIMENTO:** Altri esempi di [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) sono disponibili su [AMP By Example](../../../../documentation/examples/documentation/amp-facebook.html). [/tip]
 
 ## Includere un video di YouTube
 

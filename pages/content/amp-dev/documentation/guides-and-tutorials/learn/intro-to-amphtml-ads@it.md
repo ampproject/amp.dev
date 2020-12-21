@@ -97,7 +97,7 @@ Dopo aver creato annunci AMPHTML, occorre verificare che utilizzino la sintassi 
 - Use the [AMP validator](https://validator.ampproject.org/) for one-off testing.
 - Partner with [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) and use their public validator end point.
 
-[tip type = "note"] **NOTA:** Per visualizzare rapidamente gli annunci AMPHTML nelle pagine AMP (ad esempio, utilizzando il rendering preferenziale offerto da Fast Fetch), la sintassi deve essere corretta. Se la sintassi non è valida, l'annuncio verrà comunque visualizzato, ma non altrettanto rapidamente. [/tip]
+[tip type="note"] **NOTA:** Per visualizzare rapidamente gli annunci AMPHTML nelle pagine AMP (ad esempio, utilizzando il rendering preferenziale offerto da Fast Fetch), la sintassi deve essere corretta. Se la sintassi non è valida, l'annuncio verrà comunque visualizzato, ma non altrettanto rapidamente. [/tip]
 
 ## Supporto di annunci AMPHTML in RTB
 

@@ -116,7 +116,7 @@ Le storie AMP sono disposte orizzontalmente e a schermo intero. Gli annunci nell
 
 L'etichetta dell'annuncio appare in sovrimpressione su una barra di sfumatura scura per tutta la larghezza dell'annuncio e si estende dalla cima verso il basso per 46 pixel.
 
-{{ image('/static/img/docs/stampads/ad_overlay.png', 515, 520, layout='intrinsic', alt='Esempio di sovrimpressione annuncio', caption='L'annuncio in sovrimpressione inizia in cima', align='' ) }}
+{{ image('/static/img/docs/stampads/ad_overlay.png', 515, 520, layout='intrinsic', alt='Esempio di sovrimpressione annuncio', caption='L\'annuncio in sovrimpressione inizia in cima', align='' ) }}
 
 Il pulsante CTA si trova a 32 pixel dal fondo ed è centrato orizzontalmente. Occupa un'area di 120 per 36 pixel.
 
