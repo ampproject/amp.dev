@@ -13,7 +13,7 @@ contributors:
 
 Denke daran: Der Service Worker kann nicht mit der im AMP Cache gespeicherten Version deiner Seite interagieren. Verwende ihn für die Benutzerführung zu deiner Quelle.
 
-## Install a Service Worker
+## Installiere einen Service Worker
 
 Ein Service Worker ist ein clientseitiger Proxy, der sich zwischen deiner Seite und deinem Server befindet. Er wird verwendet, um fantastische Offline Erlebnisse und schnell ladende App Shell Szenarien zu erstellen und Pushbenachrichtigungen zu senden.
 
@@ -30,7 +30,7 @@ For that, first include the [`amp-install-serviceworker`](../../../documentation
 
 [/sourcecode]
 
-Then add the following somewhere within your `<body>` (modify to point to your actual Service Worker):
+Füge dann irgendwo in deinem `<body>` Folgendes hinzu (passe es entsprechend an, um auf deinen tatsächlichen Service Worker zu verweisen):
 
 [sourcecode:html]
 <amp-install-serviceworker
@@ -49,7 +49,7 @@ Wenn du das hier liest, erstellst du mit Sicherheit Seiten mit AMP. Das AMP Team
 
 ### Installing the AMP Service Worker
 
-Install the AMP Service Worker with minimal steps:
+Installiere mit wenigen Schritten den AMP Service Worker:
 
 - [sourcecode:js]  importScripts('https://cdn.ampproject.org/sw/amp-sw.js');  [/sourcecode]
 
@@ -57,7 +57,7 @@ Install the AMP Service Worker with minimal steps:
       AMP_SW.init();
       [/sourcecode]
 
-- Done.
+- Fertig.
 
 ### Automated Caching
 
@@ -73,7 +73,7 @@ denyList?: Array<RegExp>;
 );
 [/sourcecode]
 
-Read more about [customizing document caching here](https://github.com/ampproject/amp-sw/tree/master/src/modules/document-caching).
+Weitere Informationen zum [Anpassen des Zwischenspeicherns von Dokumenten findest du hier](https://github.com/ampproject/amp-sw/tree/master/src/modules/document-caching).
 
 ### AMP Service Worker optimieren
 
@@ -90,7 +90,7 @@ cachingStrategy: 'CACHE_FIRST'
 );
 [/sourcecode]
 
-You are able to customize the caching strategy and define a deny list.
+Du kannst die Cachingstrategie anpassen und eine Sperrliste anlegen.
 
 Links zu Seiten, die deine Benutzer möglicherweise besuchen müssen, können vorabgerufen werden, sodass sie offline verfügbar sind. Dazu wird das Attribut `data-prefetch` zum Linktag hinzugefügt.
 
@@ -98,7 +98,7 @@ Links zu Seiten, die deine Benutzer möglicherweise besuchen müssen, können vo
 <a href='....' data-rel='prefetch' />
 [/sourcecode]
 
-### Offline Experience
+### Offline Erfahrung
 
 Teile den Benutzern mit, dass sie offline sind und versuchen sollten, die Website neu zu laden, sobald sie wieder online sind. Füge dazu eine Offlineseite hinzu. Der AMP Service Worker kann sowohl die Seite als auch deren Assets zwischenspeichern.
 
@@ -111,11 +111,11 @@ assets: ['/images/offline-header.jpg'];
 })
 [/sourcecode]
 
-A successful offline page looks like it's a part of your site by having a consistent UI with the rest of the application.
+Eine gelungene Offlineseite sieht wie ein Teil deiner Website aus, da ihre Benutzeroberfläche mit dem Rest der Anwendung konsistent ist.
 
-### Force Update
+### Erzwungenes Update
 
-The team is working to implement a force update/remove feature if your AMP Service Worker needs to be disabled or changed if a deployment to users has gone wrong.
+Das Team arbeitet an der Implementierung einer Funktion zum Erzwingen/Entfernen des Updates für den Fall, dass dein AMP Service Worker deaktiviert oder geändert werden muss, wenn eine Bereitstellung für Benutzer fehlgeschlagen ist.
 
 To effectively manage a service worker, you should understand how [standard HTTP caching affects the way your service worker's JavaScript is kept up to date](https://developers.google.com/web/updates/2018/06/fresher-sw). Service workers served with appropriate HTTP caching directives can resolve small bug fixes by making the appropriate changes and redeploying your service worker to your hosting environment. If you need to remove a service worker, it's a good idea to keep a simple, [no-op](https://en.wikipedia.org/wiki/NOP) service worker file handy, like the following:
 
@@ -128,7 +128,7 @@ self.addEventListener('install', () => {
 });
 ```
 
-[tip type="read-on"] [Read more](https://stackoverflow.com/questions/33986976/how-can-i-remove-a-buggy-service-worker-or-implement-a-kill-switch/38980776#38980776) about managing deployed service workers. [/tip]
+[tip type="read-on"] [Hier findest du mehr Informationen](https://stackoverflow.com/questions/33986976/how-can-i-remove-a-buggy-service-worker-or-implement-a-kill-switch/38980776#38980776) über das Verwalten bereitgestellter Service Worker. [/tip]
 
 ## Write a Custom Service Worker
 
@@ -155,7 +155,7 @@ return networkResponse;
 });
 [/sourcecode]
 
-Using this technique, you can amend your AMP Page will all sorts of additional functionality that would otherwise fail [AMP validation](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md), for example:
+Mit dieser Technik kannst du deine AMP Seite mit allen möglichen Zusatzfunktionen ausstatten, die andernfalls die [AMP Validierung nicht bestehen würden](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md), zum Beispiel:
 
 - Dynamic features that require custom JS.
 - Komponenten, die nur für deine Website angepasst bzw. relevant sind
