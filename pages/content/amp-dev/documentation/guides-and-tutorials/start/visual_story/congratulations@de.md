@@ -5,11 +5,11 @@ description: Du hast erfolgreich deine erste AMP Story erstellt! In diesem Tutor
 author: bpaduch
 ---
 
-You have successfully completed your first Web Story using AMP!
+Du hast erfolgreich deine erste Web Story mit AMP erstellt!
 
 In diesem Tutorial hast du gelernt,
 
-- Create a multi-page Web Story by using the [`amp-story`](../../../../documentation/components/reference/amp-story.md) component
+- eine mehrseitige Web Story mithilfe der Komponente [`amp-story`](../../../../documentation/components/reference/amp-story.md) zu erstellen,
 - visuelle Effekte mit mehreren Ebenen auf einer Seite zu erstellen,
 - die Elemente auf einer Seite mithilfe von Ebenen-Templates anzuordnen,
 - Ton hinzuzufügen, der bei Ansicht der Seite abgespielt wird,
@@ -18,7 +18,7 @@ In diesem Tutorial hast du gelernt,
 
 ## Nächste Schritte
 
-Learn more about Web Stories and AMP from these resources:
+Weitere Informationen zu Web Storys und AMP findest du in den folgenden Ressourcen:
 
 - [`amp-story`](../../../../documentation/components/reference/amp-story.md)
-- [AMP story best practices](../../../../documentation/guides-and-tutorials/start/create_successful_stories.md)
+- [Best Practices für AMP Story](../../../../documentation/guides-and-tutorials/start/create_successful_stories.md)
