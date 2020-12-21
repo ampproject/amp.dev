@@ -45,7 +45,7 @@ Por default, o placeholder é mostrado imediatamente para o elemento AMP, mesmo 
 - se o conteúdo não for carregado, por exemplo, tweet excluído;
 - se o tipo de imagem não for compatível. Por exemplo, o WebP não é compatível com todos os navegadores.
 
-You can set the `fallback` attribute on *any* HTML element, not just AMP elements. If specified, the `fallback` element must be a direct child of the AMP element.
+O atributo `fallback` pode ser definido em *qualquer* elemento HTML, e não somente em elementos AMP. Quando especificado, o elemento `fallback` precisa ser um filho direto do elemento AMP.
 
 ##### Exemplo: recurso incompatível
 
