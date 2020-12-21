@@ -1,11 +1,14 @@
 ---
-$title: Casos de uso
-$order: 2
+"$title": Use cases
+"$order": '2'
+description: 'Este guia mostra um conjunto de casos de uso comuns do rastreamento de engajamento do usuário: OBSERVAÇÃO – Quer adicionar um caso de uso? Fale conosco.'
+formats:
+- websites
 ---
 
 Este guia mostra um conjunto de casos de uso comuns do rastreamento de engajamento do usuário:
 
-Observação: Quer adicionar um caso de uso? [Fale conosco.](https://github.com/ampproject/docs/issues/new) Você também pode enviar seus próprios casos. Veja [como contribuir](../../../../documentation/guides-and-tutorials/contribute/index.md).
+[tip type="note"] <strong>OBSERVAÇÃO –</strong> Quer adicionar um caso de uso? [Fale conosco.](https://github.com/ampproject/docs/issues/new) Você também pode enviar seus próprios casos de uso. Veja [como contribuir](../../../../documentation/guides-and-tutorials/contribute/index.md).[/tip]
 
 ## Rastrear visualizações de página
 
@@ -21,7 +24,7 @@ Envie dados de visualização de página a um URL especificado usando [`amp-pixe
 
 ### Como usar amp-analytics – sem fornecedor
 
-Envie dados de visualização de página a um URL especificado usando [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md):
+Envie dados de visualização de página a uma URL especificada usando [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md):
 
 ```html
 <amp-analytics>
@@ -69,12 +72,11 @@ Envie dados de visualização de página ao Google Analytics. Veja também como 
 
 ## Rastrear cliques na página <a name="tracking-page-clicks"></a>
 
-Saiba como rastrear cliques na página usando [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
-e enviando dados de eventos a um URL especificado e ao [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
+Saiba como rastrear cliques na página usando [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) e enviando dados de eventos a uma URL especificada e ao [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
-### Como enviar dados a um URL especificado
+### Como enviar dados a uma URL especificada
 
-O exemplo a seguir usa o atributo `selector` para enviar um evento `click` ao URL especificado sempre que um usuário clica em um link (`<a href>`):
+O exemplo a seguir usa o atributo `selector` para enviar um evento `click` à URL especificada sempre que um usuário clica em um link (`<a href>`):
 
 ```html
 <amp-analytics>
@@ -131,7 +133,7 @@ O exemplo a seguir usa o atributo `selector` do `trigger` para enviar um evento 
 
 ## Como rastrear a rolagem de página <a name="tracking-scrolling"></a>
 
-Rastreie a rolagem de página usando [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). O exemplo a seguir usa o atributo `scrollspec` para enviar um evento `scroll` ao URL especificado quando um usuário rola 25%, 50% e 90% da página verticalmente. O evento também é acionado pela rolagem horizontal de 90% da largura de `scroll`:
+Rastreie a rolagem de página usando [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). O exemplo a seguir usa o atributo `scrollspec` para enviar um evento `scroll` à URL especificada quando um usuário rola 25%, 50% e 90% da página verticalmente. O evento também é acionado pela rolagem horizontal de 90% da largura de `scroll`:
 
 ```html
 <amp-analytics>
@@ -159,12 +161,11 @@ Rastreie a rolagem de página usando [`amp-analytics`](../../../../documentation
 
 ## Como rastrear interações em redes sociais <a name="tracking-social-interactions"></a>
 
-Saiba como rastrear interações em redes sociais usando [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
-e enviando dados de eventos a um URL especificado e ao [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
+Saiba como rastrear interações em redes sociais usando [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) e enviando dados de eventos a um URL especificado e ao [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
-### Como enviar dados a um URL especificado
+### Como enviar dados a uma URL especificada
 
-O exemplo a seguir usa o atributo `selector` para enviar um evento `click` ao URL especificado sempre que um usuário clica em um tweet (`#tweet-link`):
+O exemplo a seguir usa o atributo `selector` para enviar um evento `click` à URL especificada sempre que um usuário clica em um tweet (`#tweet-link`):
 
 ```html
 <amp-analytics>
@@ -194,7 +195,7 @@ O exemplo a seguir usa o atributo `selector` para enviar um evento `click` ao UR
 
 ### Como enviar dados ao Google Analytics
 
-O exemplo a seguir usa o atributo `selector` do `trigger` para enviar um evento sempre que um botão específico de redes sociais recebe um clique. Veja também o [rastreamento de interações em redes sociais nas AMP no Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#social_interactions)):
+O exemplo a seguir usa o atributo `selector` do `trigger` para enviar um evento sempre que um botão específico de redes sociais recebe um clique. Veja também o [rastreamento de interações em redes sociais nas AMP no Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/#social_interactions):
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics4">

@@ -1,5 +1,7 @@
 ---
-$title: Apresentação do código inicial
+"$title": Getting familiar with the starter code
+"$order": '1'
+description: Uma página AMP é uma página HTML com algumas restrições que proporcionam um desempenho estável. As páginas AMP têm algumas marcações especiais que as identificam como AMP.
 ---
 
 ## Texto informativo sobre as AMP
@@ -81,9 +83,11 @@ A estrutura básica de uma página AMP é a seguinte:
 </html>
 ```
 
+O código inicial do tutorial ([`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html), página em inglês) cria a estrutura básica da página AMP com os conteúdos associados (imagens, texto etc.), além de incluir alguns componentes AMP:
+
 ## Componentes AMP
 
-O código inicial do tutorial ([`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html), página em inglês) cria a estrutura básica da página AMP com os conteúdos associados (imagens, texto etc.), além de incluir alguns componentes AMP:
+Os componentes AMP oferecem elementos de IU e recursos adicionais que dão uma interatividade avançada às páginas AMP. O código inicial usa os seguintes componentes AMP:
 
 ```html
 <script
@@ -108,7 +112,7 @@ O código inicial do tutorial ([`static/index.html`](https://github.com/googleco
 ></script>
 ```
 
-Os componentes AMP oferecem elementos de IU e recursos adicionais que dão uma interatividade avançada às páginas AMP. O código inicial usa os seguintes componentes AMP:
+O código inicial oferece alguns elementos de interatividade básica:
 
 - [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md): é um carrossel de imagens que exibe várias visualizações do produto.
 - [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md): é um sistema de modelos que renderiza as respostas do servidor de amp-form.
@@ -117,7 +121,7 @@ Os componentes AMP oferecem elementos de IU e recursos adicionais que dão uma i
 
 ## Interatividade básica
 
-O código inicial oferece alguns elementos de interatividade básica:
+**Faça um teste**: deslize o carrossel de imagens e toque no botão "Adicionar ao carrinho".
 
 - O carrossel de imagens ([`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)) exibe várias visualizações do produto.
 - O produto será adicionado ao carrinho do usuário (por [`amp-form`](../../../../documentation/components/reference/amp-form.md)) quando ele clicar no botão "Adicionar ao carrinho" na parte inferior da página.

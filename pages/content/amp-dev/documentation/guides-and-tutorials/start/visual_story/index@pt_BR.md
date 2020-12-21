@@ -1,5 +1,11 @@
 ---
-$title: Criar uma história visual com AMP
+"$title": Create your first Web Story
+"$order": '0'
+description: Neste tutorial, veremos o componente amp-story. Use esse componente para criar histórias AMP com um visual que estimula o engajamento. Ao final deste tutorial, você ...
+"$hidden": 'true'
+formats:
+- stories
+author: bpaduch
 ---
 
 [video src="/static/video/tut_pets-story-complete.mp4" caption="Completed AMP story." poster="/static/img/docs/tutorials/amp_story/story_poster.png"]
@@ -14,7 +20,3 @@ Neste tutorial, veremos o componente [`amp-story`](../../../../documentation/com
 - adicionar áudio para ser ouvido durante a visualização da página;
 - aplicar animações a elementos da página;
 - manter os leitores engajados com seu conteúdo por meio de links relacionados ao final da história.
-
-[tip type="note"]
- O componente [`amp-story`](../../../../documentation/components/reference/amp-story.md) é **experimental**.
-[/tip]

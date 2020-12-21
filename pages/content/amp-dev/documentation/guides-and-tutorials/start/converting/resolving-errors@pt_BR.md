@@ -1,5 +1,7 @@
 ---
-$title: Corrigir erros de validação
+"$title": Corrigir erros de validação
+"$order": '2'
+description: Nesta seção, analisaremos e resolveremos os erros de validação de AMP na nossa página AMP.  Esses erros podem aparecer em outra ordem no seu console.
 ---
 
 Nesta seção, analisaremos e resolveremos os erros de validação de AMP na nossa página AMP.  Esses erros podem aparecer em outra ordem no seu console.
@@ -40,12 +42,12 @@ Neste tutorial, o artigo HTML original que estamos convertendo será a página c
 <link rel="canonical" href="/article.html">
 ```
 
-[tip type="note"]
-É possível criar uma página AMP canônica independente. Nesse caso, o link canônico ainda é necessário, mas precisa levar ao próprio artigo AMP:
+[tip type="note"] É possível criar uma página AMP canônica independente. Nesse caso, o link canônico ainda é necessário, mas precisa levar ao próprio artigo AMP:
 
 ```html
 <link rel="canonical" href="article.amp.html">
 ```
+
 [/tip]
 
 Agora, **atualize** a página. Embora ainda haja muitos erros para corrigir, o erro do link canônico não está mais presente.
@@ -67,12 +69,12 @@ Para corrigir os erros acima, basta adicionar o atributo `⚡` à tag `<html>` d
 
 Agora, atualize a página e verifique se os erros desapareceram.
 
-[tip type="note"]
-A abordagem recomendada é especificar `⚡`, mas também é possível usar o atributo `amp` no lugar do atributo `⚡`. Veja este exemplo:
+[tip type="note"] A abordagem recomendada é especificar `⚡`, mas também é possível usar o atributo `amp` no lugar do atributo `⚡`. Veja este exemplo:
 
 ```html
 <html amp lang="en">
 ```
+
 [/tip]
 
 ## Especificar uma janela de visualização
@@ -121,7 +123,7 @@ O problema é que essa é uma referência de folha de estilo externa. Na AMP, pa
 
 Então, corrija o erro:
 
-1.  **Remova** a tag `<link>` que direciona para a folha de estilo na tag `<head>` e a substitua por uma tag in-line `<style amp-custom></style>`. O atributo `amp-custom` na tag de estilo é obrigatório.
+1. **Remova** a tag `<link>` que direciona para a folha de estilo na tag `<head>` e a substitua por uma tag in-line `<style amp-custom></style>`. O atributo `amp-custom` na tag de estilo é obrigatório.
 2. **Copie** todos os estilos do arquivo [`base.css`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.css) para as tags `<style amp-custom></style>`.
 
 Mais uma vez, **atualize** a página e verifique se o erro das folhas de estilo desapareceu.
@@ -140,17 +142,15 @@ The tag 'script' is disallowed except in specific forms.
 
 Em geral, os scripts só são permitidos na AMP quando cumprem dois requisitos principais:
 
-1.  Todo JavaScript precisa ser assíncrono (ou seja, incluir o atributo `async` na tag de script).
-2.  O JavaScript é para a biblioteca AMP e para qualquer componente AMP na página.
+1. Todo JavaScript precisa ser assíncrono (ou seja, incluir o atributo `async` na tag de script).
+2. O JavaScript é para a biblioteca AMP e para qualquer componente AMP na página.
 
 Isso exclui efetivamente o uso de todo JavaScript gerado por usuários/terceiros na AMP, exceto no caso indicado abaixo.
 
-[tip type="note"]
-As únicas exceções à restrição a scripts gerados por usuários/terceiros são:
+[tip type="note"] As únicas exceções à restrição a scripts gerados por usuários/terceiros são:
 
-1.  Scripts que adicionam metadados à página ou configuram componentes AMP: terão o atributo de tipo `application/ld+json` ou `application/json`.
-2.  Scripts incluídos em iframes:  só inclua JavaScript em um iframe em último caso. Sempre que possível, substitua os recursos JavaScript usando os [Componentes AMP](../../../../documentation/components/index.html). Veremos nosso primeiro componente AMP na próxima seção.
-[/tip]
+1. Scripts que adicionam metadados à página ou configuram componentes AMP: terão o atributo de tipo `application/ld+json` ou `application/json`.
+2. Scripts incluídos em iframes:  só inclua JavaScript em um iframe em último caso. Sempre que possível, substitua os recursos JavaScript usando os [Componentes AMP](../../../../documentation/components/index.html). Veremos nosso primeiro componente AMP na próxima seção. [/tip]
 
 Tente abrir o arquivo externo [`base.js`] (https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js). O que você vê? O arquivo deverá estar vazio, sem qualquer código JavaScript, e incluir apenas um comentário com informações como esta:
 
@@ -232,7 +232,7 @@ O sistema de layout AMP permite que os elementos da página sejam posicionados e
 
 No caso do nosso artigo, o sistema de layout inferiu que o layout de `amp-img` é do tipo `container`. No entanto, o tipo `container` só é aplicável a elementos que tenham elementos filhos. O tipo `container` é incompatível com a tag `amp-img`, o que causa esse erro.
 
-Por que o tipo `container` foi inferido? Porque não especificamos um atributo `height` para a tag `amp-img`. No HTML, sempre especifique largura e altura fixas para os elementos da página a fim de reduzir o reflow. Na AMP, é necessário definir a largura e a altura dos elementos do [`amp-img`](../../../../documentation/components/reference/amp-img.md) para que a AMP possa predeterminar a proporção do elemento.
+Por que o tipo `container` foi inferido? Porque não especificamos um atributo `height` para a tag `amp-img`. No HTML, sempre especifique largura e altura fixas para os elementos da página a fim de reduzir o reflow. Na AMP, é necessário definir a largura e a altura dos elementos do <a href="../../../../documentation/components/reference/amp-img.md" data-md-type="link">`amp-img`</a> para que a AMP possa predeterminar a proporção do elemento.
 
 **Adicione** `width` e `height` à tag [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) da seguinte forma:
 
