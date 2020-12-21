@@ -1,6 +1,7 @@
 ---
-$title: Aggiunta di componenti AMP estesi
-description: "Il sistema dei componenti AMP consente di creare rapidamente e con il minimo sforzo funzionalità efficienti e reattive per i propri articoli. La libreria AMP HTML ha tre classificazioni per i componenti AMP: ..."
+"$title": Aggiunta di componenti AMP estesi
+"$order": '2'
+description: 'Il sistema dei componenti AMP consente di creare rapidamente e con il minimo sforzo funzionalità efficienti e reattive per i propri articoli. La libreria AMP HTML ha tre classificazioni per i componenti AMP: ...'
 ---
 
 Il sistema dei componenti AMP consente di creare rapidamente e con il minimo sforzo funzionalità efficienti e reattive per i propri articoli. La libreria AMP HTML ha tre classificazioni per i componenti AMP:
@@ -135,7 +136,7 @@ Come per gli altri elementi della pagina, abbiamo specificato gli attributi `wid
 
 Per ulteriori informazioni sull'inclusione di video YouTube, consultare la documentazione del componente [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md). Consultare anche l'[elenco dei componenti AMP multimediali](../../../../documentation/components/index.html#media).
 
-[tip type="tip"] **SUGGERIMENTO:** Utilizzare l'attributo [`fallback`](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md#fallbacks) per informare gli utenti se un componente non viene caricato o se non è supportato nel loro browser. [/tip]
+[tip type = "tip"] **SUGGERIMENTO:** Utilizzare l'attributo [`fallback`](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md#fallbacks) per informare gli utenti se un componente non viene caricato o se non è supportato nel loro browser. [/tip]
 
 ## Visualizzazione di Tweet
 

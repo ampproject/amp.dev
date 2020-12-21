@@ -1,7 +1,7 @@
 ---
-$title: Congratulazioni!
-$order: 4
-description: "Sei riuscito a creare un annuncio AMPHTML, che può essere pubblicato su pagine AMP e non! In questa esercitazione, hai imparato a: creare un annuncio AMPHTML valido in base a ..."
+"$title": Congratulazioni!
+"$order": '4'
+description: 'Sei riuscito a creare un annuncio AMPHTML, che può essere pubblicato su pagine AMP e non! In questa esercitazione, hai imparato a: creare un annuncio AMPHTML valido in base a ...'
 ---
 
 Sei riuscito a creare un annuncio AMPHTML, che può essere pubblicato su pagine AMP e non!

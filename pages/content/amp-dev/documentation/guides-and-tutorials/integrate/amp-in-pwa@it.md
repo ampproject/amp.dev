@@ -1,7 +1,9 @@
 ---
-$title: Uso di AMP come fonte di dati per i contenuti PWA
-$order: 1
-description: Se hai investito in AMP ma non hai ancora realizzato un'App Web progressiva, le tue pagine AMP possono semplificare notevolmente lo sviluppo della tua App Web progressiva.
+"$title": Uso di AMP come fonte di dati per i contenuti PWA
+"$order": '1'
+description: "Se hai investito in AMP ma non hai ancora realizzato un'App Web progressiva, le tue pagine AMP possono semplificare notevolmente lo sviluppo della tua App Web progressiva."
+formats:
+- websites
 author: pbakaus
 ---
 
@@ -20,11 +22,8 @@ Il primo passo è includere una versione speciale di AMP chiamata "Shadow AMP" n
 Includere Shadow AMP nell'intestazione della pagina, nel seguente modo:
 
 [sourcecode:html]
-
 <!-- Asynchronously load the AMP-with-Shadow-DOM runtime library. -->
-
-<!-- Asynchronously load the AMP-with-Shadow-DOM runtime library. --><br><script async src="https://cdn.ampproject.org/shadow-v0.js"></script>
-
+<script async src="https://cdn.ampproject.org/shadow-v0.js"></script>
 [/sourcecode]
 
 ### Come si fa a sapere quando l'API Shadow AMP è pronta per l'uso?
@@ -33,7 +32,11 @@ Consigliamo di caricare la libreria Shadow AMP con l'attributo `async` attivo. C
 
 Il segnale giusto da osservare è la disponibilità della variabile globale `AMP` e a questo scopo Shadow AMP utilizza un "[approccio asincrono per il caricamento delle funzioni](http://mrcoles.com/blog/google-analytics-asynchronous-tracking-how-it-work/)". Consideriamo questo codice:
 
-[sourcecode:javascript] (window.AMP = window.AMP || []).push(function(AMP) { // AMP ora disponibile. }); [/sourcecode]
+[sourcecode:javascript]
+(window.AMP = window.AMP || []).push(function(AMP) {
+  // AMP is now available.
+});
+[/sourcecode]
 
 Questo codice funzionerà e permetterà di attivare un qualsiasi numero di callback aggiunti in questo modo quando AMP è effettivamente disponibile. Ma vediamo come funziona.
 
@@ -56,21 +59,43 @@ Nello scenario più comune, dovrai prelevare alcuni elementi JSON che restituisc
 
 Infine, quando si desidera visualizzare il contenuto dopo un'azione dell'utente, è il momento di prelevare il documento AMP in questione e lasciare il controllo a Shadow AMP. Innanzitutto, puoi implementare una funzione per prelevare la pagina, simile alla seguente:
 
-[sourcecode:javascript] function fetchDocument(url) {
+[sourcecode:javascript]
+function fetchDocument(url) {
 
-// purtroppo fetch() non supporta il recupero di documenti, // perciò dobbiamo ricorrere al sempre affidabile componente XMLHttpRequest. var xhr = new XMLHttpRequest();
+  // unfortunately fetch() does not support retrieving documents,
+  // so we have to resort to good old XMLHttpRequest.
+  var xhr = new XMLHttpRequest();
 
-return new Promise(function(resolve, reject) { xhr.open('GET', url, true); xhr.responseType = 'document'; xhr.setRequestHeader('Accept', 'text/html'); xhr.onload = function() { // .responseXML contiene un oggetto Documento pronto all'uso resolve(xhr.responseXML); }; xhr.send(); }); } [/sourcecode]
+  return new Promise(function(resolve, reject) {
+    xhr.open('GET', url, true);
+    xhr.responseType = 'document';
+    xhr.setRequestHeader('Accept', 'text/html');
+    xhr.onload = function() {
+      // .responseXML contains a ready-to-use Document object
+      resolve(xhr.responseXML);
+    };
+    xhr.send();
+  });
+}
+[/sourcecode]
 
 [tip type="important"] **IMPORTANTE:** Per semplificare l'esempio di codice sopra riportato, abbiamo saltato la gestione degli errori. In realtà devi sempre occuparti efficacemente del rilevamento e della gestione degli errori. [/tip]
 
 Ora che abbiamo un oggetto `Document` pronto per l'uso, è il momento di lasciare il controllo ad AMP per il rendering del documento. Richiedere un riferimento all'elemento DOM che funge da contenitore per il documento AMP, quindi richiamare `AMP.attachShadowDoc()`, in questo modo:
 
-[sourcecode:javascript] // Questo può essere un qualunque elemento DOM var container = document.getElementById('container');
+[sourcecode:javascript]
+// This can be any DOM element
+var container = document.getElementById('container');
 
-// La pagina AMP da visualizzare var url = "https://my-domain/amp/an-article.html";
+// The AMP page you want to display
+var url = "https://my-domain/amp/an-article.html";
 
-// Usare il metodo fetchDocument per recuperare il documento fetchDocument(url).then(function(doc) { // Passare il controllo ad AMP per il rendering della pagina var ampedDoc = AMP.attachShadowDoc(container, doc, url); }); [/sourcecode]
+// Use our fetchDocument method to get the doc
+fetchDocument(url).then(function(doc) {
+  // Let AMP take over and render the page
+  var ampedDoc = AMP.attachShadowDoc(container, doc, url);
+});
+[/sourcecode]
 
 [tip type="tip"] **SUGGERIMENTO:** Prima di passare effettivamente il controllo del documento ad AMP, occorre rimuovere gli elementi della pagina che hanno senso quando si visualizza la pagina AMP in modo autonomo, ma non quando è in modalità incorporata: ad esempio piè di pagina e intestazioni. [/tip]
 
@@ -80,7 +105,10 @@ Ecco fatto! Il rendering della pagina AMP come elemento figlio dell'intera App W
 
 È probabile che l'utente passi da un contenuto AMP all'altro all'interno della tua App Web progressiva. Quando scarti l'ultima pagina AMP riprodotta, assicurati sempre di segnalarlo ad AMP, in questo modo:
 
-[sourcecode:javascript] // ampedDoc è il riferimento restituito da  AMP.attachShadowDoc ampedDoc.close(); [/sourcecode]
+[sourcecode:javascript]
+// ampedDoc is the reference returned from AMP.attachShadowDoc
+ampedDoc.close();
+[/sourcecode]
 
 Questo dirà al sistema AMP che non stai più usando il documento, liberando memoria e riducendo il carico della CPU.
 

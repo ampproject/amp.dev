@@ -1,6 +1,7 @@
 ---
-$title: "Miglioramento dell'interattività"
-description: "Il codice di avvio fornisce un''esperienza d''uso piuttosto limitata. Ci sono un paio di modi in cui possiamo migliorarlo: Aggiungere un indicatore che mostri ..."
+"$title": "Miglioramento dell'interattività"
+"$order": '2'
+description: 'Il codice di avvio fornisce un''esperienza d''uso piuttosto limitata. Ci sono un paio di modi in cui possiamo migliorarlo\: Aggiungere un indicatore che mostri ...'
 ---
 
 Il codice di avvio fornisce un'esperienza d'uso piuttosto limitata. Ci sono un paio di modi in cui possiamo migliorarlo:
@@ -180,7 +181,7 @@ Aggiungere un'azione "on" all'elemento [`amp-selector`](../../../../documentatio
     on="select:AMP.setState({selected: {sku: event.targetOption}})">
 ```
 
-[tip type="tip"] **SUGGERIMENTO:** Questo risultato può essere ottenuto anche aggiungendo azioni `on="tap:AMP.setState(...)` a ciascun figlio [`amp-img`](../../../../documentation/components/reference/amp-img.md) all'interno di [`amp-selector`](../../../../documentation/components/reference/amp-selector.md). Uno dei grandi vantaggi dell'uso di [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) è che semplifica il markup come in questo caso. [/tip]
+[tip type="tip"] **SUGGERIMENTO:** Questo risultato può essere ottenuto anche aggiungendo azioni `on="tap:AMP.setState(...)` a ciascun figlio [`amp-img`](../../../../documentation/components/reference/amp-img.md) all'interno di [`amp-selector`](../../../../documentation/components/reference/amp-selector.md). Uno dei grandi vantaggi dell'uso di [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) è che semplifica il markup come in questo caso. [/ tip]
 
 ### Abbinamento degli elementi delle immagini
 

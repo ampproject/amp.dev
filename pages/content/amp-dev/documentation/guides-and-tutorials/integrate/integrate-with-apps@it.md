@@ -1,7 +1,9 @@
 ---
-$title: Integrazione di AMP nelle app
-$order: 2
-description: Questa guida si rivolge agli sviluppatori di app mobili e per web, che desiderano fare uso e fornire collegamenti a pagine AMP. Ad esempio, consideriamo un'app di chat per dispositivi mobili ...
+"$title": Integrazione di AMP nelle app
+"$order": '2'
+description: "Questa guida si rivolge agli sviluppatori di app mobili e per web, che desiderano fare uso e fornire collegamenti a pagine AMP. Ad esempio, consideriamo un'app di chat per dispositivi mobili ..."
+formats:
+- websites
 ---
 
 Questa guida si rivolge agli sviluppatori di app mobili e per web, che desiderano fare uso e fornire collegamenti a pagine AMP. Ad esempio, consideriamo un'app di chat per dispositivi mobili che carica la versione AMP di un URL condiviso per garantire agli utenti un'esperienza d'uso più veloce.
@@ -15,13 +17,15 @@ Ad esempio, il seguente messaggio può essere trasformato per consentire la gest
 Messaggio originale:
 
 ```text
-Questo è un messaggio con collegamenti a un <a href="http://www.example.org/a">articolo con versione AMP</a> e un <a href="http://www.example.org/b">articolo senza versione AMP</a>.
+This is a message with links to an <a href="http://www.example.org/a">
+article with AMP version</a> and an <a href="http://www.example.org/b"> article without AMP version</a>.
 ```
 
 Messaggio trasformato:
 
 ```text
-Questo è un messaggio con collegamenti a un <a href="https://www-example-org.cdn.ampproject.org/c/www.example.org/a">articolo con versione AMP</a> e un <a href="www.example.org/b">articolo senza versione AMP</a>.
+This is a message with links to an <a href="https://www-example-org.cdn.ampproject.org/c/www.example.org/a">
+article with AMP version</a> and an <a href="www.example.org/b"> article without AMP version</a>.
 ```
 
 [tip type="tip"] **SUGGERIMENTO:** valuta la possibilità di fornire agli utenti l'opzione di visualizzare la versione non AMP al posto di quella AMP tramite le impostazioni delle preferenze nella tua app. [/tip]

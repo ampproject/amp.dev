@@ -1,6 +1,6 @@
 ---
-$title: Acquisire dimestichezza con il codice di avvio
-$order: 1
+"$title": Acquisire dimestichezza con il codice di avvio
+"$order": '1'
 description: Una pagina AMP è una pagina HTML con alcune limitazioni per garantire prestazioni affidabili. Le pagine AMP hanno elementi di markup speciali che le identificano come tali.
 ---
 
@@ -83,7 +83,7 @@ Una pagina AMP essenziale ha il seguente aspetto:
 </html>
 ```
 
-[tip] Si può utilizzare il [generatore boilerplate](https://amp.dev/boilerplate) per definire rapidamente la struttura di base per le pagine AMP. Tale strumento fornisce anche frammenti per dati strutturati, per creare PWA (progressive web app) e molto altro! [/tip]
+[tipi] Si può utilizzare il [generatore boilerplate](https://amp.dev/boilerplate) per definire rapidamente la struttura di base per le pagine AMP. Tale strumento fornisce anche frammenti per dati strutturati, per creare PWA (progressive web app) e molto altro! [/tip]
 
 ## Componenti AMP
 

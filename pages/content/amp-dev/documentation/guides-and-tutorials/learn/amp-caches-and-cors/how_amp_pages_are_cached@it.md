@@ -1,7 +1,11 @@
 ---
-$title: Memorizzazione nella cache delle pagine AMP
-$order: 0
-description: In questo documento impareremo a conoscere il ruolo della cache AMP nell'ecosistema AMP e in che modo le pagine AMP sono memorizzate nella cache.
+"$title": Memorizzazione nella cache delle pagine AMP
+"$order": '0'
+description: "In questo documento impareremo a conoscere il ruolo della cache AMP nell'ecosistema AMP e in che modo le pagine AMP sono memorizzate nella cache."
+formats:
+- websites
+- stories
+- ads
 ---
 
 In questo documento impareremo a conoscere il ruolo della cache AMP nell'ecosistema AMP e in che modo le pagine AMP sono memorizzate nella cache.
@@ -45,8 +49,7 @@ Se si preferisce che i propri documenti non siano memorizzati nella cache, è po
 
 Le pagine AMP memorizzate nella cache sono accessibili da piattaforme (come Google Search, Google News e Bing) e app per dispositivi mobili. Le app mobili possono collegarsi al contenuto AMP memorizzato nella cache tramite l'URL (consultare l'[API AMP URL](https://developers.google.com/amp/cache/use-amp-url) di Google) o tramite richieste XHR multi-origine nelle app web progressive (ulteriori informazioni disponibili nel documento [Incorporare e usare AMP come origine dati](../../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md)).
 
-<amp-img src="/static/img/docs/platforms_accessing_cache.png" width="1054" height="356" layout="responsive" alt="platforms and mobile apps access cached AMP pages">
-</amp-img>
+<amp-img src="/static/img/docs/platforms_accessing_cache.png" width="1054" height="356" layout="responsive" alt="platforms and mobile apps access cached AMP pages"></amp-img>
 
 ## Come viene memorizzata nella cache la mia pagina AMP?
 
