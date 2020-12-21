@@ -123,7 +123,7 @@ Inoltre, dovremo aggiornare lo stato predefinito degli elementi coinvolti:
 </amp-selector>
 ```
 
-[tip type = "note"] **NOTA:** [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) non viene eseguito al caricamento della pagina, ma solo in risposta a un'azione esplicita dell'utente. Ciò garantisce che il caricamento della pagina iniziale sia sempre veloce allo stesso modo nelle varie pagine, indipendentemente dall'utilizzo di [`amp-bind`](../../../../documentation/components/reference/amp-bind.md). [/tip]
+[tip type="note"] **NOTA:** [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) non viene eseguito al caricamento della pagina, ma solo in risposta a un'azione esplicita dell'utente. Ciò garantisce che il caricamento della pagina iniziale sia sempre veloce allo stesso modo nelle varie pagine, indipendentemente dall'utilizzo di [`amp-bind`](../../../../documentation/components/reference/amp-bind.md). [/tip]
 
 ## Prezzi variabili delle magliette
 

@@ -136,7 +136,7 @@ Come per gli altri elementi della pagina, abbiamo specificato gli attributi `wid
 
 Per ulteriori informazioni sull'inclusione di video YouTube, consultare la documentazione del componente [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md). Consultare anche l'[elenco dei componenti AMP multimediali](../../../../documentation/components/index.html#media).
 
-[tip type = "tip"] **SUGGERIMENTO:** Utilizzare l'attributo [`fallback`](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md#fallbacks) per informare gli utenti se un componente non viene caricato o se non è supportato nel loro browser. [/tip]
+[tip type="tip"] **SUGGERIMENTO:** Utilizzare l'attributo [`fallback`](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md#fallbacks) per informare gli utenti se un componente non viene caricato o se non è supportato nel loro browser. [/tip]
 
 ## Visualizzazione di Tweet
 
