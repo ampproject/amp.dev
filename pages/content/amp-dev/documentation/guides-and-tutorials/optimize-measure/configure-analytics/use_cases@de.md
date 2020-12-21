@@ -16,7 +16,7 @@ Hier lernst du, wie das Tracking von Seitenaufrufen mithilfe von [`amp-pixel`](.
 
 ### Verwendung von `amp-pixel`
 
-Send pageview data to a specified URL using [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md):
+Sende die Daten der Seitenaufrufe an eine bestimmte URL mittels [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md):
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>
@@ -24,7 +24,7 @@ Send pageview data to a specified URL using [`amp-pixel`](../../../../documentat
 
 ### Verwendung von amp-analytics – ohne Anbieter
 
-Send pageview data to a specified URL using [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md):
+Sende die Daten der Seitenaufrufe an eine bestimmte URL mittels [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md):
 
 ```html
 <amp-analytics>
@@ -71,11 +71,11 @@ Sende die Daten der Seitenaufrufe an Google Analytics (siehe auch [Tracking von 
 
 ## Tracking von Klicks auf der Seite <a name="tracking-page-clicks"></a>
 
-Learn how to track page clicks using [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), sending event data to a specified URL, and to [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
+Hier lernst du, wie das Tracking von Klicks auf der Seite mithilfe von [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) sowie der Versand von Event Daten an eine bestimmte URL und an [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/) funktionieren.
 
 ### Daten an eine bestimmte URL senden
 
-The following example uses the `selector` attribute to send a `click` event to the specified URL everytime a user clicks on a link (`<a href>`):
+Das folgende Beispiel verwendet das Attribut `selector`, um ein `click` Event an eine bestimmte URL zu senden, sobald ein Benutzer einen Link anklickt (`<a href>`):
 
 ```html
 <amp-analytics>
@@ -192,7 +192,7 @@ Das folgende Beispiel verwendet das Attribut `selector`, um ein `click` Event an
 </amp-analytics>
 ```
 
-### Sending data to Google Analytics
+### Daten an Google Analytics senden
 
 Im folgenden Beispiel wird das Attribut `selector` von `trigger` dazu verwendet, ein Event zu senden, wenn ein bestimmter Button eines sozialen Netzwerks angeklickt wird (siehe auch <a>Tracking von sozialen Interaktionen mit AMP in Google Analytics</a>):
 
