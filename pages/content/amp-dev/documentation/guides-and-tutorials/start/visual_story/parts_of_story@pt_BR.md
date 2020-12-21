@@ -1,13 +1,13 @@
 ---
 "$title": Understanding the parts of an AMP story
 "$order": '2'
-description: "A Web Story is a full-screen visual storytelling experience that conveys information with images, videos, graphics, audio, and more. It's perfect for users ..."
+description: Uma História Web é uma experiência de narrativa visual em tela inteira que transmite informações com imagens, vídeos, gráficos, áudio e muito mais. É perfeita para usuários ...
 author: bpaduch
 ---
 
-A Web Story is a full-screen visual storytelling experience that conveys information with images, videos, graphics, audio, and more. It's perfect for users who want bite-sized, visually-rich content.
+Uma História Web é uma experiência de narrativa visual em tela inteira que transmite informações com imagens, vídeos, gráficos, áudio e muito mais. É perfeita para usuários que desejam conteúdo pequeno e visualmente rico.
 
-The basic ingredients that go into an Web Story are individual **pages**. These pages, in turn, are composed of individual **layers** that contain basic HTML and AMP **elements**.
+Os componentes básicos de uma História Web são **páginas individuais**. Essas páginas, por sua vez, são compostas de **camadas** individuais que contêm HTML básico e **elementos** AMP.
 
 {{ image('/static/img/docs/tutorials/amp_story/story_parts.png', 1047, 452, align='center ninety') }}
 
@@ -15,4 +15,4 @@ Cada ingrediente é traduzido em componentes AMP, em que a história é represen
 
 {{ image('/static/img/docs/amp-story-tag-hierarchy.png', 557, 355, align='center seventyfive' ) }}
 
-Let's start creating our Web Story with the [`amp-story`](../../../../documentation/components/reference/amp-story.md) container.
+Vamos começar a criar nossa História Web com o container [`amp-story`](../../../../documentation/components/reference/amp-story.md).
