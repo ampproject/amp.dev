@@ -33,7 +33,7 @@ limitations under the License.
 
 Hinweis: Diese Liste ist nicht normativ und dient nur zu Referenzzwecken. Die AMP Validator Regeln sind maßgeblich für die unterstützten HTML Tags und Attribute.
 
-In addition to the [supported AMP components](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md), the following HTML tags are allowed in AMP for Email.
+Zusätzlich zu den [unterstützten AMP Komponenten](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md) sind in AMP für E-Mail die folgenden HTML Tags zulässig.
 
 ## Unterstützte Tags <a name="supported-tags"></a>
 
