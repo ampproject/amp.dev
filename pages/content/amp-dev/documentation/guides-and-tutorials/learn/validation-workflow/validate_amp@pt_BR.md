@@ -132,7 +132,14 @@ Agora, veja a validação de uma página HTML para AMP real.
 
 Obviamente, esta página contém AMPHTML válido. Agora, vejamos uma página que não é válida: [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html). Para executar o comando `amphtml-validator`, forneça a URL da página ou um nome de arquivo local. Faça o download e salve [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) em um arquivo. Depois, execute o seguinte:
 
-[sourcecode:console] $ amphtml-validator several_errors.html several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='. several_errors.html:26:2 The tag 'script' is disallowed except in specific forms. several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) ... [/sourcecode]
+[sourcecode:console]
+$ amphtml-validator several_errors.html
+several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
+several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
+several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})
+several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
+...
+[/sourcecode]
 
 As mensagens de erro incluem nome do arquivo, linha, coluna e um texto, e costumam terminar com um link da referência AMPHTML. Alguns editores, incluindo o Emacs (procure o comando e o modo de compilação), conseguem interpretar esse formato e levam você diretamente aos erros no arquivo original.
 
@@ -191,8 +198,7 @@ Ela gera este erro de validação AMP, mostrado nessas diferentes ferramentas:
 
 
 
-- Browser Extension
-    <amp-img src="/static/img/docs/validator_extension_imgerror.png" width="724" height="108" layout="responsive" alt="AMP error: The tag 'img' may only appear as a descendant of tag'noscript'. Did you mean 'amp-img'? line 11, column 2"></amp-img>
+- Extensão do navegador {amp-img0}{/amp-img0}
 
 
 
