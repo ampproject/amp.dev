@@ -155,7 +155,6 @@ Várias animações podem ser encadeadas uma nas outras para formar uma grande s
     }
   </script>
 </amp-animation>
-
 ```
 
 Essa configuração reproduz cada animação por 3 segundos em sequência.
