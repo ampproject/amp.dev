@@ -48,7 +48,7 @@ AMPHTML Ad Creatives erfordern eine andere, wesentlich einfachere [Zeile für Bo
 <style amp4ads-boilerplate>body{visibility:hidden}</style>
 ```
 
-To style your AMPHTML ad, your CSS must be embedded inline in the AMPHTML document using <code><style amp-custom></style> </code>tags in the <code></code> section. As we're rendering a basic image ad, we don't require any CSS, so we won't add these tags.
+Um den Stil deiner AMPHTML Ad festzulegen, muss dein CSS mithilfe der Tags <code><style amp-custom></style></code> im Abschnitt <code><head></code> inline in das AMPHTML Dokument eingebettet werden. Da wir eine einfache Ad rendern, die aus einem Bild besteht, benötigen wir kein CSS und werden diese Tags daher nicht hinzufügen.
 
 [tip type="note"] **HINWEIS:** Bei AMPHTML Ads beträgt die maximale Größe für ein Inline Stylesheet *20 Kilobyte*. Weitere Informationen zu [den Anforderungen an CSS findest du in der Spezifikation für AMPHTML Ads](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#css). [/tip]
 
