@@ -21,9 +21,9 @@ O Web design responsivo é a criação de páginas web fáceis de usar e que ate
 
 Neste guia, você verá como implementar facilmente estes princípios básicos em páginas AMP:
 
-- [Controlling the viewport](#controlling-the-viewport)
-- [Creating a responsive layout](#creating-a-responsive-layout)
-- [Scaling media](#scaling-media-for-the-page)
+- [Como controlar a janela de visualização](#controlling-the-viewport)
+- [Como criar um layout responsivo](#creating-a-responsive-layout)
+- [Como dimensionar mídias](#scaling-media-for-the-page)
 
 [video src='https://www.youtube.com/watch?v=XDvbJ2apaiA' caption='Saiba mais sobre design responsivo através deste vídeo.']
 
@@ -255,12 +255,12 @@ Eis alguns exemplos que poderão lhe inspirar a criar páginas AMP responsivas:
 
 #### Produção
 
-- [Getty Images "2016 in Focus" ](http://www.gettyimages.com/2016/)
-- [BRIT + CO's holiday gift guide](http://www.brit.co/the-coolest-tech-gadget-holiday-gift-guide/amp/)
+- [Getty Images "2016 em foco" ](http://www.gettyimages.com/2016/)
+- [Guia de presentes para o feriado da BRIT + CO](http://www.brit.co/the-coolest-tech-gadget-holiday-gift-guide/amp/)
 - [The Guardian](https://amp.theguardian.com/travel/2017/feb/26/trekking-holidays-in-patagonia)
 
 #### Criado pela AMP
 
-- [Examples](../../../../documentation/examples/index.html)
-- [Templates](../../../../documentation/templates/index.html)
-- [AMP Conf Workshop Codelab: Making beautiful AMPs](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)
+- [Examples: modelos e amostras](../../../../documentation/examples/index.html)
+- [Modelos](../../../../documentation/templates/index.html)
+- [Codelab do workshop da conferência sobre AMP: como criar lindas páginas AMP](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)
