@@ -1,5 +1,5 @@
 ---
-"$title": Embed stories in web pages
+"$title": Bette Storys in Webseiten ein
 "$order": '3'
 description: 'Mit dem '
 formats:
@@ -75,7 +75,7 @@ Um eine AMP Story auf einer nicht-AMP Seite anzuzeigen, muss das Element [`amp-s
 
 ### Skripte importieren
 
-Include the two required scripts in the head of your document:
+Binde die beiden erforderlichen Skripte im Header deines Dokuments ein:
 
 ```html
 <script async src="https://cdn.ampproject.org/amp-story-player-v0.js"></script>
@@ -86,7 +86,7 @@ Das erste Skript importiert die Logik für den Player und das zweite legt das st
 
 ### Eine Story angeben
 
-Include the `<amp-story-player>` element inside the document `body`. Then specify the desired story by placing an `<a>` tag inside of the `<amp-story-player>` element. Point the `href` to the story’s location. The `href` may point to the URL of a hosted story or a relative path. Place the title of the story within the `<a>` tags.
+Füge das Element `<amp-story-player>` in den `body` des Dokuments ein. Gib dann die gewünschte Story an. Füge dazu das Tag `<a>` im Element `<amp-story-player>` ein. Verweise durch `href` auf den Ort der Story. Das `href` kann auf die URL einer gehosteten Story verweisen oder auf einen relativen Pfad. Platziere den Titel der Story innerhalb der `<a>` Tags.
 
 ```html
  <amp-story-player style="width: 360px; height: 600px;">
@@ -115,7 +115,7 @@ We recommend maintaining a 3:5 aspect ratio for the best user experience, but yo
 
 #### Responsive Dimensionierung
 
-The story player's responsiveness works as any other block element. Use CSS to maintain width and height ratios, such as the example below:
+Die Responsivität des Story Players funktioniert wie bei jedem anderen Blockelement. Verwende CSS, um die Breiten- und Höhenverhältnisse beizubehalten, wie das folgende Beispiel zeigt:
 
 ```html
 <amp-story-player style="width: 50vw; height: 83.35vw;">
@@ -125,7 +125,7 @@ The story player's responsiveness works as any other block element. Use CSS to m
 
 ### Einen Platzhalter angeben
 
-Include a representative poster image by adding an `<img>` tag as a child of the story's `<a>` tag with the following configuration. The AMP story player displays this image while loading the full story.
+Füge ein repräsentatives Poster Image hinzu, indem du das Tag `<img>` als untergeordnetes Element im Tag `<a>` der Story mit der nachstehenden Konfiguration verwendest. Der AMP Story Player zeigt dieses Bild an, während die gesamte Story geladen wird.
 
 ```html
 <amp-story-player style="width: 50vw; height: 83.35vw;">
@@ -136,11 +136,11 @@ Include a representative poster image by adding an `<img>` tag as a child of the
 </amp-story-player>
 ```
 
-For the best user experience, we strongly recommend including a poster image. If you do not include a poster image the story player will display a loader spinner with a grey background.
+Für eine optimale Benutzererfahrung sollte unbedingt ein Poster Image beigefügt werden. Wenn du kein Poster Image hinzufügst, zeigt der Story Player einen Wartekreisel mit grauem Hintergrund an.
 
 ## Mehrere Storys einbetten
 
-You may add multiple stories in the same `<amp-story-player>` element by defining multiple `<a>` tags. The player presents the second story’s cover page after user’s tap through the first.
+Du kannst mehrere Storys im selben `<amp-story-player>` Element hinzufügen, indem du mehrere `<a>` Tags definierst. Der Player zeigt das Cover der zweiten Story an, nachdem der Benutzer die erste Story angesehen hat.
 
 ```html
 <amp-story-player style="width: 360px; height: 600px;">
@@ -174,4 +174,4 @@ Du kannst beliebig viele Instanzen von `<amp-story-player>` einbetten. Sie werde
 
 # Storys in einer AMP Seite anzeigen
 
-To use the `<amp-story-player>` component in AMP pages, read the documentation of the [AMP version of the amp-story-player](https://amp.dev/documentation/components/amp-story-player/?format=stories).
+Lies die Dokumentation zur [AMP Version von amp-story-player](https://amp.dev/documentation/components/amp-story-player/?format=stories), wenn du die Komponente `<amp-story-player>` auf AMP Seiten verwenden möchtest.
