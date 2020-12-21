@@ -1,5 +1,5 @@
 ---
-"$title": Placeholders & fallbacks
+"$title": Platzhalter & Fallbacks
 "$order": '3'
 descriptions: "In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible."
 formats:
@@ -18,7 +18,7 @@ In the spirit of perceived performance and progressive enhancement, it's best pr
 
 Einige Elemente werden Sie sogar dafür belohnen, indem Sie Einschränkungen lockern. Wenn Sie beispielsweise einen Platzhalter für [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder) bereitstellen, kann dieser oben auf der Seite verwendet werden (ohne den er nicht funktioniert).
 
-## Placeholders
+## Platzhalter
 
 Das mit dem Attribut `placeholder` markierte Element agiert als Platzhalter für das übergeordnete AMP Element. Wenn ein Element `placeholder` angegeben ist, muss es dem AMP Element direkt untergeordnet sein. Ein als `placeholder` markiertes Element füllt das übergeordnete AMP Element dank `fill` immer aus.
 
@@ -42,7 +42,7 @@ Standardmäßig wird der Platzhalter für das AMP-Element sofort angezeigt, auch
 
 ## Fallbacks <a name="fallbacks"></a>
 
-You can specify the `fallback` attribute on an element to indicate the fallback behavior:
+Du kannst das Attribut `fallback` für ein Element angeben, um das Fallback Verhalten festzulegen:
 
 - Für jedes Element wird der Browser nicht unterstützt
 - wenn der Inhalt nicht geladen werden kann (z. B. Tweet gelöscht)
@@ -50,7 +50,7 @@ You can specify the `fallback` attribute on an element to indicate the fallback 
 
 Du kannst das Attribut `fallback` für ein *beliebiges* HTML Element festlegen, nicht nur für AMP Elemente. Wenn das `fallback` Element angegeben wird, muss es dem AMP Element direkt untergeordnet sein.
 
-##### Example: Unsupported feature
+##### Beispiel: Nicht unterstützte Funktion
 
 Im folgenden Beispiel verwenden wir das `fallback` Attribut, um dem Benutzer mitzuteilen, dass der Browser eine bestimmte Funktion nicht unterstützt:
 
@@ -89,16 +89,17 @@ Im folgenden Beispiel verwenden wir das `fallback` Attribut, um den Browser anzu
 ```
 [/example]
 
-## Interaction of placeholders and fallbacks
+## Interaktion von Platzhaltern und Fallbacks
 
 For AMP components that rely on dynamic content (e.g., [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md), [`amp-list`](../../../../documentation/components/reference/amp-list.md)), the interaction of fallbacks and placeholders operates as follows:
 
 <ol>
-  <li>Display the placeholder while the content is loading.</li>
-  <li>If the content loads successfully, hide the placeholder and display the content.</li>
-  <li>If the content fails to load:     <ol>       <li>If there's a fallback element, display the fallback.</li>       <li>Otherwise, continue displaying the placeholder.</li>     </ol>   </li>
+  <li>Zeige den Platzhalter an, während der Inhalt geladen wird.</li>
+  <li>Wenn der Inhalt erfolgreich geladen wurde, blende den Platzhalter aus und zeige den Inhalt an.</li>
+  <li>Wenn der Inhalt nicht geladen werden kann:     <ol>       <li>Wenn ein Fallback Element vorhanden ist, zeige das Fallback an.</li>       <li>Andernfalls zeige weiterhin den Platzhalter an.</li>     </ol>
+</li>
 </ol>
 
-## Hiding loading indicators
+## Ausblenden von Ladeindikatoren
 
 Many AMP elements are allowlisted to show a "loading indicator", which is a basic animation that shows that the element has not yet fully loaded. Elements can opt out of this behavior by adding the `noloading` attribute.
