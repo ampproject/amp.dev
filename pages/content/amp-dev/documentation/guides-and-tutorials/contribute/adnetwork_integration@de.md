@@ -8,7 +8,7 @@ formats:
 
 Dieser Leitfaden richtet sich an Werbenetzwerke, die AMP integrieren möchten, um Display Ads auf AMP Seiten bereitzustellen.
 
-## Overview
+## Überblick
 
 Als Ad Server kannst du AMP integrieren, um herkömmliche HTML Ads auf AMP Seiten sowie [AMPHTML](../../../documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md) Ads bereitzustellen.
 
@@ -21,7 +21,7 @@ Als Ad Server kannst du AMP integrieren, um herkömmliche HTML Ads auf AMP Seite
 1. [`amp-ad`](../../../documentation/components/reference/amp-ad.md) (i.e., if you haven't already created one to serve traditional HTML ads).
 2. [Erstelle eine Fast Fetch Integration, um AMPHTML Ads bereitzustellen](#creating-a-fast-fetch-integration).
 
-## Creating an `amp-ad` <a name="creating-an-amp-ad"></a>
+## Eine `amp-ad` <a name="creating-an-amp-ad"></a> erstellen
 
 Publisher, die du als Ad Server unterstützt, betten eine von dir bereitgestellte JavaScript Bibliothek ein und platzieren auf ihren Websites diverse "Ad Snippets", die auf der JavaScript Bibliothek basieren, um Ads abzurufen und zu rendern. Da AMP den Publishern nicht erlaubt, arbiträres JavaScript auszuführen, musst du zum AMP Open Source Code beitragen und dem Tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md) erlauben, Ads von deinem Ad Server anzufordern.
 
@@ -42,16 +42,16 @@ Im obigen Code gibt das Attribut `type` das Werbenetzwerk an, in diesem Fall A9.
 
 For instructions on creating an [`amp-ad`](../../../documentation/components/reference/amp-ad.md) integration, see [Integrating ad networks into AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
 
-## Creating a Fast Fetch integration <a name="creating-a-fast-fetch-integration"></a>
+## Fast Fetch Integration erstellen <a name="creating-a-fast-fetch-integration"></a>
 
 [Fast Fetch](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/) ist ein AMP Mechanismus, der die Ad Anforderung von der Ad Antwort trennt. Dadurch können Ad Anforderungen früher im Lebenszyklus einer Seite auftreten, und Ads werden nur gerendert, wenn ihre Anzeige durch den Benutzer wahrscheinlich ist. Fast Fetch bevorzugt verifizierte AMPHTML Ads gegenüber herkömmlichen HTML Ads. Wenn in Fast Fetch eine Ad nicht validiert werden kann, wird diese Ad in ein domänenübergreifendes iframe eingeschlossen, um sie vom restlichen AMP Dokument zu isolieren. Umgekehrt wird eine validierte AMPHTML Ad direkt in die Seite geschrieben. Fast Fetch verarbeitet sowohl AMP Ads als auch nicht-AMP Ads. Für Ads, deren Validierung fehlschlägt, sind aber keine zusätzlichen Ad Anforderungen erforderlich.
 
-{{ image('/static/img/docs/ads/amphtml-ad-flow.svg', 843, 699, alt='Fast Fetch Integration flow', caption='Fast Fetch Integration flow' ) }}
+{{ image('/static/img/docs/ads/amphtml-ad-flow.svg', 843, 699, alt='Fast Fetch Integration flow', caption='Fast Fetch Integrationsfluss' ) }}
 
 Um AMPHTML Ads von deinem Werbeserver aus bereitzustellen, musst du eine Fast Fetch Integration implementieren, die Folgendes umfasst:
 
-1. Supporting SSL network communication.
-2. Providing JavaScript to build the ad request (example implementations: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) & [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
+1. Unterstützung der SSL Netzwerkkommunikation.
+2. Bereitstellung von JavaScript, um die Ad Anforderung zu erstellen (Beispiele für Implementierungen: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) & [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
 3. Validieren und Signieren des Creative über einen Validierungsdienst. [Cloudflare](https://blog.cloudflare.com/firebolt/) bietet einen Validierungsdienst für AMP Ads, mit dem jeder unabhängige Ads Anbieter seine Ads schneller, einfacher und ansprechender liefern kann.
 
 Anweisungen zum Erstellen einer Fast Fetch Integration findest du im [Leitfaden zur Netzwerkimplementierung von Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).
