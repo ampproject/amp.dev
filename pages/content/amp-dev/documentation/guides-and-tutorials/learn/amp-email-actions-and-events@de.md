@@ -135,18 +135,15 @@ In AMP ist beispielsweise Folgendes möglich:
   </tr>
   <tr>
     <td rowspan="3"><code>change</code></td>
-    <td rowspan="3">Fired when the value of the element is changed and committed.       <p>       Data properties mirror those in <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#Properties">HTMLInputElement</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement#Properties">HTMLSelectElement</a>.</p>     </td>
+    <td rowspan="3">Wird ausgelöst, wenn der Wert des Elements geändert und bestätigt wird. <p> Die Eigenschaften der Daten spiegeln diese in <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#Properties">HTMLInputElement</a> und <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement#Properties">HTMLSelectElement</a> wider.</p>
+</td>
     <td><code>input</code></td>
     <td>
-      <pre>event.min
-event.max
-event.value
-event.valueAsNumber</pre>
+      <pre>event.min<br>event.max<br>event.value<br>event.valueAsNumber</pre>
     </td>
   </tr>
   <tr>
-    <td>
-<code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
+    <td> <code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
 </td>
     <td>
       <code>event.checked</code>
@@ -213,7 +210,7 @@ event.valueAsNumber</pre>
   <tr>
     <th width="25%">Event</th>
     <th width="35%">Beschreibung</th>
-    <th width="40%">Data</th>
+    <th width="40%">Daten</th>
   </tr>
   <tr>
     <td><code>lightboxOpen</code></td>
@@ -236,8 +233,7 @@ event.valueAsNumber</pre>
     <th width="40%">Daten</th>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(low-trust)</td>
     <td>Wird ausgelöst, wenn das Abrufen von Daten fehlschlägt.</td>
     <td>Keine</td>
   </tr>
@@ -287,8 +283,7 @@ event.valueAsNumber</pre>
     <th width="40%">Daten</th>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(low-trust)</td>
     <td>Wird ausgelöst, wenn das Abrufen von Daten fehlschlägt.</td>
     <td>Keine</td>
   </tr>
@@ -344,7 +339,7 @@ event.valueAsNumber</pre>
   </tr>
   <tr>
     <td><code>show</code></td>
-    <td>Shows the target element. If an     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a     result, it gains focus.</td>
+    <td>Zeigt das Zielelement an. Wenn dadurch das <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus">Element</a><code>autofocus</code> sichtbar wird, springt der Fokus darauf.</td>
   </tr>
   <tr>
     <td><code>toggleVisibility</code></td>
@@ -356,7 +351,7 @@ event.valueAsNumber</pre>
   </tr>
   <tr>
     <td><code>focus</code></td>
-    <td>Makes the target element gain focus. To lose focus, <code>focus</code>     on another element (usually parent element). We strongly advise against     losing focus by focusing on <code>body</code>/<code>documentElement</code>     for accessibility reasons.</td>
+    <td>Setzt den Fokus auf das Zielelement. Um den Fokus aufzuheben, muss ein anderes Element mittels <code>focus</code> den Fokus erhalten (in der Regel das übergeordnete Element). Aus Gründen der Barrierefreiheit raten wir dringend davon ab, den Fokus zu diesem Zweck auf <code>body</code>/<code>documentElement</code> zu setzen.</td>
   </tr>
 </table>
 
@@ -369,7 +364,7 @@ event.valueAsNumber</pre>
   </tr>
   <tr>
     <td><code>toggle(section=STRING)</code></td>
-    <td>Toggles the <code>expanded</code> and <code>collapsed</code> states of <code>amp-accordion</code> sections. When called with no arguments, it toggles all sections of the accordion. Trigger on a specific section by providing the section id: <code>on="tap:myAccordion.toggle(section='section-id')"</code>.   </td>
+    <td>Schaltet zwischen den Zuständen <code>expanded</code> und <code>collapsed</code> der Sektionen von <code>amp-accordion</code> um. Bei Aufruf ohne Argumente werden alle Sektionen des Akkordeons umgeschaltet. Gib die Section ID, damit die Aktion bei einer bestimmten Sektion ausgelöst wird: <code>on="tap:myAccordion.toggle(section='section-id')"</code>.</td>
 </tr>
   <tr>
     <td><code>expand(section=STRING)</code></td>
@@ -437,8 +432,7 @@ event.valueAsNumber</pre>
     <td>Aktualisiert das Layout von <code>amp-list</code> zu <code>layout="CONTAINTER"</code>, um eine <a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">dynamische Größenänderung</a> zu ermöglichen.</td>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(low-trust)</td>
     <td>Wird ausgelöst, wenn das Abrufen von Daten fehlschlägt.</td>
     <td>Keine</td>
   </tr>
