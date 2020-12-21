@@ -33,10 +33,10 @@ limitations under the License.
 
 ## `head > style[amp-boilerplate]` und `noscript > style[amp-boilerplate]` <a name="head--styleamp-boilerplate-and-noscript--styleamp-boilerplate"></a>
 
-AMP HTML documents must contain the following boilerplate in their `head` tag. Validation is currently done with regular expressions, so it's important to keep mutations as minimal as possible. Currently, the allowed mutations are:
+AMP HTML Dokumente müssen das folgende Boilerplate in ihrem `head` Tag enthalten. Die Validierung erfolgt derzeit mit regulären Ausdrücken. Darum ist es wichtig, Mutationen so gering wie möglich zu halten. Derzeit sind folgende Mutationen zulässig:
 
-1. Inserting arbitrary whitespace immediately after the `style` tag opens, and immediately before it closes
-2. Replacing any space in the snippet below with arbitrary whitespace.
+1. Einfügen eines beliebigen Leerzeichens direkt nach dem Öffnen des `style` Tags und direkt vor dem Schließen
+2. Ersetzen eines beliebigen Leerzeichens im folgenden Snippet durch ein arbiträres Leerzeichen.
 
 <!-- prettier-ignore-start -->
 
