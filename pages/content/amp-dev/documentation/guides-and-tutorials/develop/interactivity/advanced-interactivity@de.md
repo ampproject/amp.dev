@@ -1,7 +1,7 @@
 ---
 "$title": Verbesserung der Interaktivität
 "$order": '2'
-description: 'The starter code provides a pretty bare user experience. There are a couple ways we can improve it\: - Add an indicator that displays the ...'
+description: 'Der Startercode bietet eine recht einfache Benutzererfahrung. Es gibt mehrere Möglichkeiten, ihn zu verbessern\: - Füge einen Indikator hinzu …'
 ---
 
 Der Startercode bietet eine recht einfache Benutzererfahrung. Es gibt mehrere Möglichkeiten, ihn zu verbessern:
@@ -24,11 +24,11 @@ Vor der Einführung der Komponente [`amp-bind`](../../../../documentation/compon
 
 ## Füge einen Folienindikator hinzu
 
-[`amp-bind`](../../../../documentation/components/reference/amp-bind.md) works by binding element attributes to custom expressions. These expressions can reference the "state" (mutable JSON data). We can initialize this state through the [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) component included with [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
+[`amp-bind`](../../../../documentation/components/reference/amp-bind.md) bindet Elementattribute an benutzerdefinierte Ausdrücke. Diese Ausdrücke können auf den "Status" (veränderbare JSON Daten) verweisen. Wir können diesen Status über die Komponente [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) initialisieren, die zu [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) gehört.
 
 ### Initialisiere den Folienstatus
 
-Let's initialize a state variable to keep track of the index of the currently displayed slide in the image carousel. Open [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html) and add the following to the top of the `<body>` of the page (before the `<header>`):
+Initialisieren wir eine Statusvariable, um den Index der momentan angezeigten Folie im Bilderkarussell zu verfolgen. Öffne [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html) und füge Folgendes am Anfang des `<body>` der Seite (vor dem `<header>`) hinzu:
 
 ```html
 <amp-state id="selected">
@@ -40,7 +40,7 @@ Let's initialize a state variable to keep track of the index of the currently di
 </amp-state>
 ```
 
-The data within [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) elements are accessible by their associated ID. For example, we can refer to this variable by the following expression fragment:
+Der Zugriff auf die Daten innerhalb von [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) Elementen erfolgt über die zugehörige ID. Zum Beispiel können wir auf diese Variable durch das folgende Ausdrucksfragment verweisen:
 
 ```javascript
 selected.slide // Evaluates to 0.
@@ -48,7 +48,7 @@ selected.slide // Evaluates to 0.
 
 ### Aktualisiere den Folienstatus
 
-Next, let's update this variable when the user changes slides on the carousel by adding the following `"on"` action to the existing [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) element:
+Dieses Variable soll nun aktualisiert werden, sobald Benutzer die Folien im Karussell wechseln. Dazu fügen wir die folgende Aktion `"on"` zu dem vorhandenen Element [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) hinzu:
 
 ```html
 <amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
@@ -65,9 +65,9 @@ Wenn sich nun die angezeigte Folie für das [`amp-carousel`](../../../../documen
 }
 ```
 
-The `event.index` expression evaluates to the new slide index, and the `AMP.setState()` action merges this object literal into the current state. This replaces the current value of `selected.slide` with the value of `event.index`.
+Der Ausdruck `event.index` wird als neuer Folienindex ausgewertet und die Aktion `AMP.setState()` führt dieses Objektliteral im aktuellen Status zusammen. Dadurch wird der aktuelle Wert von `selected.slide` durch den Wert von `event.index` ersetzt.
 
-[tip type="tip"] **TIP –** `AMP.setState()` performs a deep merge of nested object literals. For more details, see the [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) documentation. [/tip]
+[tip type="tip"] **TIPP:** `AMP.setState()` führt ein Deep Merge der verschachtelten Objektliterale durch. Weitere Informationen findest du in der Dokumentation zu [`amp-bind`](../../../../documentation/components/reference/amp-bind.md). [/tip]
 
 ### Binde die Indikatorelemente
 
@@ -90,22 +90,22 @@ Verwende als Nächstes diese Statusvariable, die die derzeit angezeigte Folie ve
 
 Wenn die Folie im Karussell geändert wird, passiert Folgendes:
 
-1. Triggers the `slideChange event` ...
-2. Which calls the `AMP.setState` action ...
-3. Which updates the state variable `selected.slide` ...
-4. Which updates the `[class]` binding on the indicator `<span>` elements!
+1. Das `slideChange event` wird ausgelöst …
+2. Dadurch wird die Aktion `AMP.setState` aufgerufen …
+3. Dadurch wird die Statusvariable `selected.slide` aktualisiert …
+4. Dadurch wird die `[class]` Bindung der `<span>` Elemente des Indikators aktualisiert!
 
-Nice! Now we have a working slide indicator.
+Großartig! Jetzt funktioniert unser Folienindikator.
 
 [tip type="success"]
 
-See if you can add functionality so that when a user taps on a slide's indicator dot, it updates the image carousel with the selected item. As a hint, use the `tap` event and `[slide]` binding on [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md).
+Versuche, eine Funktionalität hinzuzufügen, die das Bilderkarussell auf das ausgewählte Element setzt, wenn Benutzer auf den Indikatorpunkt einer Folie tippen. Tipp: Verwende das Ereignis `tap` und die Bindung `[slide]` in [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md).
 
 [/tip]
 
 ## Ändere die Bilder im Karussell
 
-It would be nice if we could see images of different shirt colors when we change the selected color. With [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) we can do this by binding `[src]` on the [`amp-img`](../../../../documentation/components/reference/amp-img.md) elements within the [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md).
+Es wäre ein schöner Effekt, wenn wir Bilder mit verschiedenen Hemdfarben sehen könnten, sobald wir die ausgewählte Farbe ändern. Das können wir mit [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) erreichen, indem wir `[src]` an die [`amp-img`](../../../../documentation/components/reference/amp-img.md) Elemente innerhalb von [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) binden.
 
 ### Initialisiere den SKU Status
 
@@ -159,7 +159,7 @@ Jetzt können wir über die ID des Hemdes auf die URL des Bildes zugreifen. Zum 
 
 ### Verfolge die ausgewählte SKU
 
-If we add another state variable that tracks the selected SKU, we can bind an expression to the [`amp-img`](../../../../documentation/components/reference/amp-img.md) elements to update their `src` attributes when the selected SKU changes. Add a new `sku` key to the existing `amp-state#selected` element's JSON:
+Wenn wir eine weitere Statusvariable hinzufügen, die die ausgewählte SKU verfolgt, können wir einen Ausdruck an die [`amp-img`](../../../../documentation/components/reference/amp-img.md) Elemente binden, um deren `src` Attribute zu aktualisieren, wenn die ausgewählte SKU sich ändert. Füge den neuen Schlüssel `sku` zum JSON des vorhandenen Elements `amp-state#selected` hinzu:
 
 ```html
 <amp-state id="selected">
@@ -174,14 +174,14 @@ If we add another state variable that tracks the selected SKU, we can bind an ex
 
 ### Aktualisiere den SKU Status
 
-Add an "on" action to the [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) that updates the `selected.sku` variable whenever a new color is selected:
+Füge dem [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) die Aktion "on" hinzu, die die Variable `selected.sku` aktualisiert, wenn eine neue Farbe ausgewählt wird:
 
 ```html
 <amp-selector name="color"
     on="select:AMP.setState({selected: {sku: event.targetOption}})">
 ```
 
-[tip type="tip"] **TIP –** This could also be done by adding `on="tap:AMP.setState(...)` actions to each [`amp-img`](../../../../documentation/components/reference/amp-img.md) child inside the [`amp-selector`](../../../../documentation/components/reference/amp-selector.md). One of the great things about [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) is that it simplifies markup in ways like this. [/tip]
+[tip type="tip"] **TIPP:** Das ist auch möglich, indem du Aktionen vom Typ `on="tap:AMP.setState(...)` zu jedem untergeordneten [`amp-img`](../../../../documentation/components/reference/amp-img.md) Element innerhalb von [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) hinzufügst. Einer der großen Vorteile von [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) ist, dass es auf diese Weise das Markup vereinfacht. [/tip]
 
 ### Binde die Bildelemente
 
@@ -197,6 +197,6 @@ Füge dann Bindungen zu [`amp-img`](../../../../documentation/components/referen
     [src]="shirts[selected.sku].image"></amp-img>
 ```
 
-[tip type="note"] **NOTE –**  In practice, each image in the carousel would likely have a different `src`. This could be done by replacing the single image with an array of images. For simplicity, this tutorial uses a single image at different magnifications. [/tip]
+[tip type="note"] **HINWEIS:** In der Praxis hätte wahrscheinlich jedes Bild im Karussell ein anderes `src`. Das kann erreicht werden, indem das einzelne Bild durch ein Array von Bildern ersetzt wird. Zur Vereinfachung verwenden wir in diesem Tutorial ein einzelnes Bild mit unterschiedlichen Vergrößerungen. [/tip]
 
 **Probiere es aus**: Aktualisiere die Seite und wähle eine andere Farbe für ein Hemd. Wenn du das tust, werden die Bilder des Karussells aktualisiert, um Hemden mit der ausgewählten Farbe anzuzeigen.
