@@ -3,15 +3,15 @@
 "$order": '3'
 descriptions: No espírito do desempenho percebido e melhoria progressiva, é uma prática recomendada no AMP fornecer placeholders e fallbacks sempre que possível.
 formats:
-- sites
-- e-mail
-- anúncios
-- histórias
+  - websites
+  - email
+  - ads
+  - stories
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 No espírito do desempenho percebido e melhoria progressiva, é uma prática recomendada no AMP fornecer placeholders e fallbacks sempre que possível.
