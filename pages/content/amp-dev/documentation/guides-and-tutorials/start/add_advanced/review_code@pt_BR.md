@@ -1,7 +1,7 @@
 ---
 "$title": Revisão do código inicial
 "$order": '1'
-description: 'Before we start adding code, let''s review the sample article.amp.html page, which should be as follows: ...'
+description: 'Antes de começar a adicionar código, revise a página de exemplo article.amp.html, que terá uma aparência semelhante a esta: ...'
 ---
 
 Antes de começar a adicionar código, revise a página de exemplo [article.amp.html](https://github.com/googlecodelabs/accelerated-mobile-pages-advanced/blob/master/article.amp.html), que terá uma aparência semelhante a esta:
