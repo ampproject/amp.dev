@@ -73,6 +73,6 @@ Um diesen Ansatz zu verwenden, sieh dir die Dokumentation für die Integration v
 
 - Vertiefung: [Warum nicht einfach ein iframe verwenden?](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/why-not-iframe.md)
 - Vertiefung: [Status nicht authentifizierter Benutzer mit AMP verwalten](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)
-- [amp-analytics sample](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
+- [Beispiel für amp-analytics](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
 - Referenzdokumentation zu [amp-analytics](https://amp.dev/documentation/components/amp-analytics)
 - Referenzdokumentation zu den [Variablen in amp-analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)
