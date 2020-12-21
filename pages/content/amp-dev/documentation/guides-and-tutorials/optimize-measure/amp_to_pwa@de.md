@@ -1,5 +1,5 @@
 ---
-"$title": Turn your AMP site into a PWA
+"$title": Wandle deine AMP Website in eine PWA um
 "$order": '10'
 description: Durch das Zwischenspeichern von Ressourcen im Browser kann eine PWA den Benutzern Daten, Assets und Offlineseiten bereitstellen, um sie zu unterhalten und zu informieren.
 tutorial: 'true'
@@ -10,13 +10,13 @@ author: crystalonscript
 
 Progressive Web Apps nutzen die Leistung von [Service Workern](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API), um über verschiedene Netzwerkstärken hinweg umfassende Offlinefunktionen und konsistente Benutzererfahrungen zu ermöglichen. Durch das Zwischenspeichern von Ressourcen im Browser kann eine PWA den Benutzern Daten, Assets und Offlineseiten bereitstellen, um sie zu unterhalten und zu informieren.
 
-This tutorial will teach you how to turn an AMP site into an installable PWA with offline capabilities by adding a Web Manifest and a Service Worker powered by the AMP Service Worker.
+In diesem Tutorial erfährst du, wie du eine AMP Website in eine installierbare PWA mit Offlinefunktionen verwandelst, indem du ein Webmanifest und einen vom AMP Service Worker unterstützten Service Worker hinzufügst.
 
-# Download and run the starter code
+# Lade den Startercode herunter und führe ihn aus
 
-Download the [starter code here](/static/files/tutorials/amptopwa.zip).
+Lade [hier den Startercode herunter](/static/files/tutorials/amptopwa.zip).
 
-Use a local web server to preview the website.
+Verwende einen lokalen Webserver, um eine Vorschau der Website anzuzeigen.
 
 [tip type="default"] **TIPP:** Um schnell einen Webserver zu erstellen, führe einfach `python -m SimpleHTTPServer` aus. [/tip]
 
@@ -30,7 +30,7 @@ Benutzer unserer Website könnten beim Event eine schlechte Netzwerkverbindung h
 
 Das [Web App Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/) ist eine einfache JSON Datei, die dem Browser Informationen zu deiner Webanwendung und deren Verhalten liefert, wenn sie auf dem mobilen Gerät oder Desktop der Benutzer 'installiert' wird. Viele Browser benötigen ein Manifest, um die [Eingabeaufforderung 'Zum Startbildschirm hinzufügen'](https://developers.google.com/web/fundamentals/app-install-banners/) anzeigen zu können.
 
-Add a file titled `manifest.json` to your repository with the following code:
+Füge deinem Repository eine Datei mit dem Titel `manifest.json` hinzu. Verwende dazu den folgenden Code:
 
 [sourcecode:JSON]
 {
@@ -56,26 +56,26 @@ Add a file titled `manifest.json` to your repository with the following code:
 }
 [/sourcecode]
 
-# Add the AMP Service Worker
+# Füge den AMP Service Worker hinzu
 
 Ein Service Worker ist ein Skript, das dein Browser – unabhängig von einer Webseite – im Hintergrund ausführt und das die Browserfunktionen erweitert. Auf diese Weise werden Anfragen zwischengespeichert, um die Leistung zu verbessern und Offlinefunktionen bereitzustellen. Die Neuentwicklung eines Service Workers ist möglich, aber zeitaufwendig. Bibliotheken wie z. B. Workbox sind hilfreich, aber AMP geht mit dem [AMP Service Worker](https://github.com/ampproject/amp-sw) noch einen Schritt weiter: Viele Schritte werden automatisiert, einschließlich der Zwischenspeicherung von AMP Skripten, Assets und Dokumenten sowie der Implementierung gängiger Best Practices wie dem [Vorladen der Navigation](https://developers.google.com/web/updates/2017/02/navigation-preload).
 
 Der AMP Service Worker führt nach seiner Installation automatisch die [Zwischenspeicherung von AMP Skripten](https://github.com/ampproject/amp-sw/tree/master/src/modules/amp-caching) und [Dokumenten](https://github.com/ampproject/amp-sw/tree/master/src/modules/document-caching) durch, sobald Benutzer diese anfordern. Wir beginnen mit dem Hinzufügen des grundlegenden AMP Service Workers.
 
-## Create the service worker file
+## Erstelle die Service Worker Datei
 
-Create a file called `sw.js` and add the following code:
+Erstelle eine Datei mit dem Namen `sw.js` und füge den folgenden Code hinzu:
 
 [sourcecode:js]
 importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init();
 [/sourcecode]
 
-With just two lines of code, this imports the AMP Service Worker into your Service Worker and initializes it.
+Mit nur zwei Codezeilen wird der AMP Service Worker in deinen Service Worker importiert und initialisiert.
 
-## Auto-install your service worker on your AMP pages
+## Installiere deinen Service Worker automatisch auf deinen AMP Seiten
 
-AMP websites use the [`<amp-install-serviceworker>`](../../../documentation/components/reference/amp-install-serviceworker.md) component to install the service worker in the browser's background, while the user is enjoying your content.
+AMP Websites verwenden die Komponente [`<amp-install-serviceworker>`](../../../documentation/components/reference/amp-install-serviceworker.md), um den Service Worker im Hintergrund des Browsers zu installieren, während der Benutzer deine Inhalte genießt.
 
 Platziere das erforderliche Tag "script" im Head von `index.html` und das Element `<amp-install-serviceworker>` im `<body>`:
 
@@ -96,7 +96,7 @@ Platziere das erforderliche Tag "script" im Head von `index.html` und das Elemen
 
 [tip type="important"] **Wichtig:** Der Service Worker sollte aus dem Stammverzeichnis (`/sw.js`) bereitgestellt werden, damit der gesamte Inhalt deiner Website zwischengespeichert werden kann. [/tip]
 
-The `<amp-install-serviceworker>` installs the service worker by creating an iframe and running the `data-iframe-src` file. Create the `install-sw.html` file and add the following code:
+Der `<amp-install-serviceworker>` installiert den Service Worker, indem er ein iframe erstellt und die Datei `data-iframe-src` ausführt. Erstelle die Datei `install-sw.html` und füge den folgenden Code hinzu:
 
 [sourcecode:html]
 
@@ -109,9 +109,9 @@ The `<amp-install-serviceworker>` installs the service worker by creating an ifr
 </script>
 [/sourcecode]
 
-The iframe registers the AMP Service Worker file into the browser.
+Das iframe registriert die AMP Service Worker Datei im Browser.
 
-# Customize what is cached
+# Passe an, was zwischengespeichert wird
 
 Der AMP Service Worker bietet bereits integrierte Funktionen und ermöglicht darüber hinaus optionale Felder, die du konfigurieren kannst, um sie an die Anforderungen deiner App anzupassen.
 
@@ -143,9 +143,9 @@ Der AMP Service Worker ruft vorab Links mit dem Attribut `data-rel=prefetch` ab.
 ...
 [/sourcecode]
 
-# Show an offline page
+# Zeige eine Offlineseite an
 
-To deal with unexpected cases or clicks on links to pages that we didn't prefetch, we'll add an offline page to offer a consistent user experience that is "on brand", as opposed to showing the generic browser offline page. Download [`offline.html` here](/static/files/tutorials/offline.zip) and update `sw.js` to the following code:
+Um auf unerwartete Fälle oder Linkklicks zu Seiten zu reagieren, die wir nicht vorab abgerufen haben, fügen wir eine Offlineseite hinzu, um eine konsistente, "markentreue" Benutzererfahrung zu bieten, anstatt die standardmäßige Offlineseite des Browsers anzuzeigen. Lade [`offline.html` hier](/static/files/tutorials/offline.zip) herunter und aktualisiere `sw.js` mit dem folgenden Code:
 
 [sourcecode:js]
 importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
@@ -161,7 +161,7 @@ assets: []
 });
 [/sourcecode]
 
-# Test your PWA
+# Teste deine PWA
 
 Mit [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/progressive-web-apps) kannst du testen, ob dein AMP Service Worker die erforderlichen Assets zwischenspeichert und eine ideale Offlinelösung bereitstellt.
 
@@ -173,7 +173,7 @@ Aktiviere das Kontrollkästchen `offline`, um in den Offlinemodus zu wechseln. K
 
 [tip type="default"] **Tipp:** Führe das <a>Google Lighthouse Tool</a> aus, um die Funktionen einer Progressive Web App gründlich zu analysieren und einen Bericht zu erhalten. [/tip]
 
-# Congratulations!
+# Gratulation!
 
 Du hast erfolgreich eine PWA mit AMP erstellt! In diesem Tutorial hast du gelernt,
 
