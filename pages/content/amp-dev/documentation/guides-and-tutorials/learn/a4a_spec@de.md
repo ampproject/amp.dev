@@ -51,33 +51,32 @@ Zusätzlich dazu müssen Creatives die folgenden Regeln befolgen:
 </tr></thead>
 <tbody>
 <tr>
-<td>Must use <code><html ⚡4ads></code> or <code><html amp4ads></code> as its enclosing tags.</td>
+<td>Sie müssen von den Tags <code>&lt;html ⚡4ads></code> oder <code>&lt;html amp4ads></code> eingeschlossen sein.</td>
 <td>Ermöglicht Validierungstools, ein Creative Dokument entweder als allgemeines AMP Dokument oder als eingeschränktes AMPHTML Ad Dokument zu identifizieren und entsprechend abzufertigen.</td>
 </tr>
 <tr>
-<td>Must include <code><script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script></code> as the runtime script instead of <code>https://cdn.ampproject.org/v0.js</code>.</td>
+<td>Als Runtime Skript muss <code>&lt;script async src="https://cdn.ampproject.org/amp4ads-v0.js">&lt;/script></code> anstelle von <code>https://cdn.ampproject.org/v0.js</code> eingebunden sein.</td>
 <td>Das ermöglicht maßgeschneidertes Runtime Verhalten für AMPHTML Ads, die in Cross-Origin iframes bereitgestellt werden.</td>
 </tr>
 <tr>
-<td>Must not include a <code><link rel="canonical"></code> tag.</td>
+<td>Das Tag <code>&lt;link rel="canonical"></code> darf nicht verwendet werden.</td>
 <td>Ad Creatives haben keine "kanonische Nicht-AMP Version" und werden nicht unabhängig für die Suche indexiert, was eine Selbstreferenzierung unnötig macht.</td>
 </tr>
 <tr>
-<td>Can include optional meta tags in HTML head as identifiers, in the format of <code><meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code>. Those meta tags must be placed before the <code>amp4ads-v0.js</code> script. The value of <code>vendor</code> and <code>id</code> are strings containing only [0-9a-zA-Z_-]. The value of <code>type</code> is either <code>creative-id</code> or <code>impression-id</code>.</td>
-<td>Those custom identifiers can be used to identify the impression or the creative. They can be helpful for reporting and debugging.<br><br><p>Example:</p>
+<td>Optionale Meta Tags können im HTML Kopf als Kennung im Format <code>&lt;meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code> verwendet werden. Solche Meta Tags müssen vor dem Skript <code>amp4ads-v0.js</code> platziert werden. Die Werte von <code>vendor</code> und <code>id</code> sind Strings, die nur die Zeichen [0-9a-zA-Z_-] enthalten. Der Wert von <code>type</code> ist entweder <code>creative-id</code> oder <code>impression-id</code>.</td>
+<td>Mit diesen benutzerdefinierten Kennungen können Impressionen und Creatives identifiziert werden. Das kann bei der Berichterstellung und Fehlersuche hilfreich sein.<br><br><p>Beispiel:</p>
 <pre>
-<meta name="amp4ads-id"
+&lt;meta name="amp4ads-id"
   content="vendor=adsense,type=creative-id,id=1283474">
-<meta name="amp4ads-id"
+&lt;meta name="amp4ads-id"
   content="vendor=adsense,type=impression-id,id=xIsjdf921S"></pre>
 </td>
 </tr>
 <tr>
-<td>
-<code><amp-analytics></code> viewability tracking may only target the full-ad selector, via  <code>"visibilitySpec": { "selector": "amp-ad" }</code> as defined in <a href="https://github.com/ampproject/amphtml/issues/4018">Issue #4018</a> and <a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a>. In particular, it may not target any selectors for elements within the ad creative.</td>
-<td>In some cases, AMPHTML ads may choose to render an ad creative in an iframe.In those cases, host page analytics can only target the entire iframe anyway, and won’t have access to any finer-grained selectors.<br><br> <p>Example:</p> <pre>
-<amp-analytics id="nestedAnalytics">
-  <script type="application/json">
+<td>Das Nachverfolgen der Sichtbarkeit mit <code>&lt;amp-analytics></code> darf nur den Selektor full-ad via <code>"visibilitySpec": { "selector": "amp-ad" }</code> zum Ziel haben (siehe dazu <a href="https://github.com/ampproject/amphtml/issues/4018">Issue #4018</a> und <a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a>). Insbesondere darf die Komponente keine Selektoren zum Ziel haben, um auf Elemente innerhalb des Ad Creative zuzugreifen.</td>
+<td>In manchen Fällen werden AMPHTML Ads ein Ad Creative in einem iframe rendern. In solchen Fällen kann das Analysetool der Hostseite trotzdem nur das gesamte iframe zum Ziel haben und erhält keinen Zugriff auf Selektoren unterer Ebenen.<br><br> <p>Beispiel:</p> <pre>
+&lt;amp-analytics id="nestedAnalytics">
+  &lt;script type="application/json">
   {
     "requests": {
       "visibility": "https://example.com/nestedAmpAnalytics"
@@ -90,9 +89,10 @@ Zusätzlich dazu müssen Creatives die folgenden Regeln befolgen:
       }
     }
   }
-  </script>
-</amp-analytics>
-</pre> <p>This configuration sends a request to the <code>https://example.com/nestedAmpAnalytics</code> URL when 50% of the enclosing ad has been continuously visible on the screen for 1 second.</p> </td>
+  &lt;/script>
+&lt;/amp-analytics>
+</pre> <p>Diese Konfiguration sendet eine Anfrage an die URL <code>https://example.com/nestedAmpAnalytics</code>, wenn 50 % der umschließenden Ad 1 Sekunde lang ununterbrochen auf dem Bildschirm sichtbar waren.</p>
+</td>
 </tr>
 </tbody>
 </table>
