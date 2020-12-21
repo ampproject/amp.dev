@@ -1,5 +1,5 @@
 ---
-"$title": Create a live blog
+"$title": Erstellen Sie ein Live-Blog
 "$order": '102'
 description: Live Blogs sind Webseiten, die ein aktuelles Ereignis wie eine Sportveranstaltung oder eine Wahl verfolgen und häufig aktualisiert werden. Mit AMP kannst du ein Live Blog implementieren, indem du ...
 tutorial: 'true'
@@ -10,19 +10,19 @@ contributors:
 - bpaduch
 ---
 
-Live blogs are web pages that are updated frequently throughout an on-going event, such as a sporting event or an election. In AMP, you can implement a live blog by using the [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component.
+Live-Blogs sind Webseiten, die während eines laufenden Ereignisses, z. B. eines Sportereignisses oder einer Wahl, regelmäßig aktualisiert werden. In AMP können Sie mithilfe der [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) Komponente ein Live-Blog implementieren.
 
-This tutorial provides a short overview of the [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component and focuses on some implementation details for live blogs, like [pagination](#pagination) and [deep linking](#deeplinking). We'll use AMP By Example's [live blog sample](live_blog.md) to illustrate implementing live blogs in AMP.
+Dieses Tutorial bietet einen kurzen Überblick über die [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) Komponente und konzentriert sich auf einige Implementierungsdetails für Live-Blogs, wie [Paginierung](#pagination) und [Deep Linking](#deeplinking) . Wir werden das [Live-Blog-Beispiel](live_blog.md) von AMP By Example verwenden, um die Implementierung von Live-Blogs in AMP zu veranschaulichen.
 
 [tip type="tip"] **TIP –** Use the [LiveBlogPosting](http://schema.org/LiveBlogPosting) metadata markup so your blog can be integrated with third-party platform features. [/tip]
 
 {{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample.png', 700, 1441, align='right third') }}
 
-## Overview of `amp-live-list`
+## Übersicht der `amp-live-list`
 
-The [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component regularly polls the host document for new content and updates the user's browser as new items become available. This means that each time a new blog post needs to be added, the host document should be updated by the CMS to include the update in both the body and the [metadata](../../../documentation/examples/documentation/Live_Blog.html#metadata) section of the page.
+Die [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) Komponente fragt das Host-Dokument regelmäßig nach neuen Inhalten ab und aktualisiert den Browser des Benutzers, sobald neue Elemente verfügbar werden. Dies bedeutet, dass jedes Mal, wenn ein neuer Blog-Beitrag hinzugefügt werden muss, das Host-Dokument vom CMS aktualisiert werden sollte, um die Aktualisierung sowohl in den Hauptteil als auch in den [Metadatenabschnitt](../../../documentation/examples/documentation/Live_Blog.html#metadata) der Seite aufzunehmen.
 
-This is what the initial code for the blog could look like:
+So könnte der ursprüngliche Code für das Blog aussehen:
 
 ```html
 <amp-live-list id="my-live-list"
@@ -33,27 +33,27 @@ This is what the initial code for the blog could look like:
 </amp-live-list>
 ```
 
-Let's look at this code:
+Sehen wir uns diesen Code genauer an:
 
-Each [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component requires a unique id as there could be more than one on a page.  In this example, we specified `my-live-list` as the unique id.
+Jede Instanz der Komponente [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) benötigt eine eindeutige ID, da mehrere solcher Komponenten auf einer Seite vorhanden sein könnten. In diesem Beispiel haben wir `my-live-list` als eindeutige ID angegeben.
 
-The `data-poll-interval` attribute specifies how often polls should occur; if the host document is updated, the update should be available to the user after the next time interval.
+Das Attribut `data-poll-interval` gibt an, wie oft Abfragen erfolgen sollen. Wenn das Host Dokument aktualisiert wird, sollte das Update dem Benutzer nach dem nächsten Zeitintervall zur Verfügung stehen.
 
-Every time a new item is added to the host document, the `<button update on="tap:my-live-list.update">` element shows a "You have updates" button which, when clicked, triggers the page to show the latest posts.
+Jedes Mal, wenn ein neues Element zum Host Dokument hinzugefügt wird, zeigt das Element `<button update on="tap:my-live-list.update">` den Button "You have updates" an, der beim Anklicken das Laden aktueller Posts auf der Seite auslöst.
 
-Live blogs can grow and make the page too long. You can use the `data-max-items-per-page` attribute to specify how many items can be added to the live blog. If the number of items after an update exceeds `data-max-items-per-page`, the oldest updates exceeding this number are removed. For example, if the page currently has 9 items and `data-max-items-per-page` is set to 10, and 3 new items arrive in the latest update, the two oldest items are removed from the page with the latest update.
+Live Blogs können sehr groß werden und die Seite zu lang machen. Du kannst das Attribut `data-max-items-per-page` verwenden, um anzugeben, wie viele Elemente dem Live Blog hinzugefügt werden können. Wenn die Anzahl der Elemente nach der Aktualisierung `data-max-items-per-page` überschreitet, werden die ältesten Aktualisierungen, die über diesen Wert hinausgehen, entfernt. Wenn die Seite z. B. derzeit 9 Einträge hat, `data-max-items-per-page` auf 10 festgelegt ist und mit der letzten Aktualisierung 3 neue Einträge eintreffen, werden die beiden ältesten Einträge von der Seite mit der letzten Aktualisierung entfernt.
 
-All blog posts in the [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) must be children of `<div items></div>`. By referring to each post as an item, every item must have a unique `id` and a `data-sort-time`.
+Alle Blogeinträge in [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) müssen dem Element `<div items></div>` untergeordnet sein. Da jeder Beitrag als Element gesehen wird, muss jedes Element eine eindeutige `id` und das Attribut `data-sort-time` haben.
 
 ## Implementation details
 
-Now that you’re familiar with the [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component, let’s figure out how to implement a more complex live blog. Read on to learn more about how to implement pagination, and how deep linking works.
+Nun, da du mit der Komponente [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) vertraut bist, können wir die Implementierung eines komplexeren Live Blogs anschauen. Lies weiter, um mehr über die Implementierung von Paginierung und die Funktionsweise von Deep Linking zu erfahren.
 
-### Pagination <a name="pagination"></a>
+### Seitennummerierung <a name="pagination"></a>
 
-Long blogs could use pagination to improve performance by limiting the number of blog items to display on a page. To implement pagination, in the [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component, add the `<div pagination></div>`, then insert any markup you need for pagination (for example, a page number or a link to the next and previous page).
+Die Performance langer Blogs kann mithilfe von Paginierung verbessert werden. Dabei wir die Anzahl der auf einer Seite angezeigten Blog Elemente begrenzt. Um die Paginierung zu implementieren, füge in der Komponente [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) das Element `<div pagination></div>` hinzu und füge dann das für die Paginierung erforderliche Markup ein (z. B. eine Seitenzahl oder einen Link zur nächsten und vorherigen Seite).
 
-With pagination, the simple code we used earlier becomes:
+Mit Paginierung wird der einfache Code, den wir bereits verwendet haben, zu:
 
 ```html
 <amp-live-list id="my-live-list"
@@ -72,24 +72,24 @@ With pagination, the simple code we used earlier becomes:
 </amp-live-list>
 ```
 
-{{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample_pg2.png', 700, 1441, align='right third') }}
+{{ image('/static/img/docs/tutorials/amp_story/pg0_layer1.jpg', 720, 1280, align='center third' ) }}
 
-It’s your responsibility to populate the navigation items correctly by updating the hosted page. For example, in the [live blog sample](live_blog.md) we render the page via a server-side template and we use a query parameter to specify what the first blog item of the page should be. We limit the size of the page to 5 items, so if the server has generated more than 5 items, a user landing on the main page will see the "Next" element in the navigation area. Refer to [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) for details.
+Du bist dafür zuständig, die Navigationselemente korrekt zu füllen, indem du die gehostete Seite aktualisierst. Im [Beispiel für ein Live Blog](live_blog.md) rendern wir die Seite beispielsweise über ein serverseitiges Template und verwenden einen Abfrageparameter, um festzulegen, was das erste Blog Element auf der Seite sein soll. Wir beschränken den Umfang der Seite auf 5 Elemente. Wenn der Server also mehr als 5 Elemente generiert hat, wird einem Benutzer, der die Hauptseite aufruft, das Element "Weiter" im Navigationsbereich angezeigt. Weitere Informationen findest du unter [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md).
 
-After the size of blog posts has exceeded the maximum number of items specified by `data-max-items-per-page`, the older blog items are displayed in the “Next” pages, for example on page 2. Given that the [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) polls the server at intervals to see if there is any change in the items, there's no need to poll the server if the user isn't on the first page.
+Sobald die Menge der Blogbeiträge die von `data-max-items-per-page` festgelegte maximale Anzahl von Elementen überschreitet, werden die älteren Blogeinträge über den Link "Weiter"auf den nächsten Seiten angezeigt, zum Beispiel auf Seite 2. Da [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) den Server in Intervallen abfragt, um festzustellen, ob sich die Einträge geändert haben, ist es nicht notwendig, den Server abzufragen, wenn der Benutzer nicht auf der ersten Seite ist.
 
-You can add the disabled attribute to  the hosted page to prevent the polling mechanism. In the live blog sample, we perform this behavior in  a server-side template; when the requested page is not the first one, we add the disabled attribute to the [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component.
+Du kannst das Attribut "disabled" zur gehosteten Seite hinzufügen, um den Abfragemechanismus zu verhindern. Im Beispiel für ein Live Blogs führen wir dieses Verhalten in einem serverseitigen Template aus. Wenn die angeforderte Seite nicht die erste ist, fügen wir das Attribut "disabled" zur Komponente [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) hinzu.
 
 ### Deeplinking <a name="deeplinking"></a>
 
-When you publish a blog post, it’s important to be able to deep link to the post to enable features like sharing. With [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md), deep linking is possible by simply using the `id` of the blog item. For example, [https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3](../../../documentation/examples/previews/Live_Blog.html#post3) allows you to navigate directly to the blog post with the `post3` id.
+Bei der Veröffentlichung eines Blogbeitrags ist es wichtig, einen Deep Link zum Beitrag erstellen zu können, um Funktionen wie das Teilen von Beiträgen zu ermöglichen. Mit [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) ist Deep Linking anhand der `id` des Blogelements möglich. So kannst du zum Beispiel mit [https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3](../../../documentation/examples/previews/Live_Blog.html#post3) direkt zum Blogbeitrag mit der ID `post3` navigieren.
 
-AMP By Example uses a cookie to in the [live blog sample](live_blog.md) to generate fresh content, so if it’s the first time you are landing on the page, the post with id “post3” might not be available, in that case, you are redirected to the first post.
+AMP By Example verwendet ein Cookie im [Beispiel für ein Live Blog](live_blog.md), um neue Inhalte zu generieren. Wenn du die Seite also zum ersten Mal aufrufst, ist der Beitrag mit der ID "post3" möglicherweise nicht verfügbar. In diesem Fall wirst du zum ersten Beitrag weitergeleitet.
 
-## Resources
+## Ressourcen <a></a>
 
-Learn more from these resources:
+Oder sieh dir diese RTC Ressourcen an:
 
 - [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) reference documentation
 - [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md)
-- [AMP BY Example's Live blog sample](live_blog.md)
+- [Beispiel für ein Live Blog von AMP By Example](live_blog.md)
