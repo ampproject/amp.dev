@@ -1,5 +1,5 @@
 ---
-"$title": Login
+"$title": Anmeldung
 "$order": '1'
 description: Wenn du zum ersten Mal auf der Seite landest, siehst du 2 Kommentare und einen Login Button. Wenn du im Code nach dem Button suchst, …
 ---
@@ -61,7 +61,7 @@ Wenn der AMPByExample Server die POST Anforderung von der Login Seite empfängt 
 
 Es ist wichtig, dass du verstehst, was die AMP Runtime macht und was der Server tun sollte, da der Publisher der Seite für die Implementierung des Servers verantwortlich ist.
 
-As a quick recap:
+Eine kurze Zusammenfassung:
 
 - Die AMP Runtime fügt den Rückgabeparameter automatisch zu der Login Anforderung hinzu, die im JSON Login Objekt angegeben ist.
 - Die AMP Runtime schließt die Login Seite und leitet weiter zu der Seite, die vom URL Rückgabeparameter angegeben ist.
