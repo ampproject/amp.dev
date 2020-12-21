@@ -26,7 +26,7 @@ Die Komponente [`amp-ad`](../../../../documentation/components/reference/amp-ad.
 
 ### Schritt 2: Füge das amp-ad Tag zu deiner AMP Seite hinzu
 
-Over 100+ [ad servers and networks](ads_vendors.md) provide built-in integrations with AMP.  To add an ad for a given ad network, add the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) tag, and specify the network in the `type` attribute.
+Über 100 [Werbeserver und Werbenetzwerke](ads_vendors.md) bieten AMP kompatible Integrationen. Um eine Ad für ein bestimmtes Werbenetzwerk hinzuzufügen, füge das Tag [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) hinzu und gib im Attribut `type` das Netzwerk an.
 
 In diesem Beispiel fügen wir ein Ad Slot hinzu, um Ads aus dem a9 Netzwerk bereitzustellen:
 
@@ -96,13 +96,13 @@ Die Komponente [`amp-ad`](../../../../documentation/components/reference/amp-ad.
 
 Als Teil des Fast Fetch Bereitstellungsmechanismus können Publisher mithilfe der RTC Funktion (Real-Time Config) Ad Anforderungen mithilfe von Targeting Daten von Erstanbietern und Drittanbietern optimieren, die zur Laufzeit abgerufen werden. RTC erlaubt für jedes einzelne Ad Slot bis zu 5 Callouts an Targeting Server, deren Ergebnisse an die Ad Anforderung angehängt werden. Um RTC in deinen Ads zu verwenden, muss das von dir verwendete Werbenetzwerk RTC und Fast Fetch unterstützen.
 
-You can learn more about RTC from this YouTube video:
+In diesem YouTube Video erfährst du mehr über RTC:
 
 [video src='https://www.youtube.com/watch?v=mvAmvKiWPfA' caption='Watch Effective AMP Monetization with Header Bidding.']
 
 Oder sieh dir diese RTC Ressourcen an:
 
-- [AMP RTC publisher implementation guide](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
+- [Implementierungsleitfaden für AMP RTC Publisher](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
 - [AMP Real Time Config](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
 
 ## Best Practices
@@ -133,8 +133,8 @@ Nachfolgend findest du einige Tipps, mit denen du die Effektivität von Ads auf 
 ### Innovation: Biete die attraktivsten Ads Produkte an
 
 - **Implementiere Ads auf zusätzlichen AMP Seiten**, um zusätzlichen Umsatz zu erzielen:
-    - [Ads in a carousel](../../../../documentation/examples/documentation/Carousel_Ad.html)
-    - [Ads in a lightbox](../../../../documentation/examples/documentation/Lightbox_Ad.html)
+    - [Ads in einem Carousel](../../../../documentation/examples/documentation/Carousel_Ad.html)
+    - [Ads in einer Lightbox](../../../../documentation/examples/documentation/Lightbox_Ad.html)
     - … und [mehr](../../../../documentation/examples/index.html)
 - **Implementiere neue Formate für direkt verkaufte Ads**, um dein Verkaufsteam mit wirkungsvollen und innovativen Ads Produkten auszustatten:
     - [Sticky Ads](../../../../documentation/examples/documentation/amp-sticky-ad.html)
