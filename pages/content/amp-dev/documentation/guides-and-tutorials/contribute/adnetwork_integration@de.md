@@ -18,7 +18,7 @@ Als Ad Server kannst du AMP integrieren, um herkömmliche HTML Ads auf AMP Seite
 
 ##### Möchtest du AMPHTML Ads bereitstellen?
 
-1. [`amp-ad`](../../../documentation/components/reference/amp-ad.md) (i.e., if you haven't already created one to serve traditional HTML ads).
+1. [`amp-ad`](../../../documentation/components/reference/amp-ad.md) (wenn du noch keine Ad erstellt hast, um herkömmliche HTML Ads bereitzustellen).
 2. [Erstelle eine Fast Fetch Integration, um AMPHTML Ads bereitzustellen](#creating-a-fast-fetch-integration).
 
 ## Eine `amp-ad` <a name="creating-an-amp-ad"></a> erstellen
@@ -27,7 +27,7 @@ Publisher, die du als Ad Server unterstützt, betten eine von dir bereitgestellt
 
 [tip type="note"] **HINWEIS:** Mit dieser Implementierung von [`amp-ad`](../../../documentation/components/reference/amp-ad.md) kannst du herkömmliche HTML Ads **und** AMPHTML Ads anzeigen. [/tip]
 
-For example, the Amazon A9 server can be invoked by using following syntax:
+Der Amazon A9 Server kann beispielsweise mithilfe der folgenden Syntax aufgerufen werden:
 
 ```html
 <amp-ad width="300" height="250"
@@ -40,7 +40,7 @@ For example, the Amazon A9 server can be invoked by using following syntax:
 
 Im obigen Code gibt das Attribut `type` das Werbenetzwerk an, in diesem Fall A9. Die Attribute `data-*` hängen von den Parametern ab, die der Amazon A9 Server zum Bereitstellen einer Ad vorsieht. Die Datei [`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) zeigt dir, wie die Parameter dem JavaScript Aufruf an die URL des A9 Servers zugeordnet sind. Die entsprechenden Parameter, die vom Tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md) übertragen werden, werden an die URL angehängt, um eine Ad zurückzugeben.
 
-For instructions on creating an [`amp-ad`](../../../documentation/components/reference/amp-ad.md) integration, see [Integrating ad networks into AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+Anweisungen zum Erstellen einer [`amp-ad`](../../../documentation/components/reference/amp-ad.md) Integration findest du unter [Werbenetzwerke in AMP integrieren](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
 
 ## Fast Fetch Integration erstellen <a name="creating-a-fast-fetch-integration"></a>
 
