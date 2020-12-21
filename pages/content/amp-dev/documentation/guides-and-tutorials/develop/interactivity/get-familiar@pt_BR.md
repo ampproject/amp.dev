@@ -1,5 +1,5 @@
 ---
-"$title": Apresentação do código inicial
+"$title": Getting familiar with the starter code
 "$order": '1'
 description: Uma página AMP é uma página HTML com algumas restrições que proporcionam um desempenho estável. As páginas AMP têm algumas marcações especiais que as identificam como AMP.
 ---
