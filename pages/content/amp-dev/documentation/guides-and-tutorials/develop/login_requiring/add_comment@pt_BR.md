@@ -16,7 +16,12 @@ Especificamos um método POST e uma ação XHR, porque páginas AMP não permite
 
 Eis um exemplo de resposta JSON:
 
-[sourcecode:json] {"Datetime":"09:34:21", "User":"Charlie", "Text":"Hello!", "UserImg":"/img/ic_account_box_black_48dp_1x.png"} [/sourcecode]
+[sourcecode:json]
+{"Datetime":"09:34:21",
+"User":"Charlie",
+"Text":"Hello!",
+"UserImg":"/img/ic_account_box_black_48dp_1x.png"}
+[/sourcecode]
 
 O componente do formulário exibirá esses valores dentro da página usando o modelo [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md):
 
