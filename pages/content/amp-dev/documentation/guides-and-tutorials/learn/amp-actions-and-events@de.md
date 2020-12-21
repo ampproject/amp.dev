@@ -398,11 +398,11 @@ event.value</pre>
   </tr>
   <tr>
     <td><code>play</code></td>
-    <td>Plays the audio. Is a no-op if the <code><amp-audio></code> element is a descendant of <code><amp-story></code>.</td>
+    <td>Spielt das Audio ab. Ist eine No-Op, wenn das Element <code>&lt;amp-audio></code> dem Element <code>&lt;amp-story></code> untergeordnet ist.</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
-    <td>Pauses the audio. Is a no-op if the <code><amp-audio></code> element is a descendant of <code><amp-story></code>.</td>
+    <td>Hält das Audio an. Ist eine No-Op, wenn das Element <code>&lt;amp-audio></code> dem Element <code>&lt;amp-story></code> untergeordnet ist.</td>
   </tr>
 </table>
 
