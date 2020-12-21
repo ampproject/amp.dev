@@ -7,7 +7,7 @@ components:
 author: bpaduch
 ---
 
-You can further enhance a Web Story by applying animation entrances to elements inside a page. For example, you can make your title fly in from the left, or drop into the page, or fade in, and so on.  The AMP story framework provides the following preset animations to use in a Web Story:
+Du kannst deine Web Story noch weiter verbessern, indem du Eingangsanimationen für Elemente innerhalb einer Seite erstellst. So kannst du z. B. deinen Titel von links einfliegen oder von oben in die Seite fallen lassen, ihn einblenden lassen usw. Das AMP Story Framework bietet die folgenden voreingestellten Animationen, die in einer Web Story verwendet werden können:
 
 <table>
 <thead><tr>
@@ -119,16 +119,16 @@ Um eine Eingangsanimations auf ein Element anzuwenden, musst du <code>animate-in
 </amp-story-page>
 ```
 
-[tip type="note"] Explore the different animation effects by adding the `animate-in="<animation preset>"` attribute to elements on your story pages. [/tip]
+[tip type="note"] Erkunde gerne die verschiedenen Animationseffekte, indem du den Elementen auf deinen Story Seiten das Attribut `animate-in="<animation preset>"` hinzufügst. [/tip]
 
 ## Timing der Animation
 
-Each animation preset has a built-in default time value for:
+Jede voreingestellte Animation verfügt über einen integrierten Standardzeitwert für:
 
 - **delay** (Verzögerung): Das ist die Zeitspanne, um die der Start der Animation verzögert wird. So bedeutet z. B. eine Verzögerung von .3s, dass die Animation nach 0,3 Sekunden auf die Seite gelangt. Eine Verzögerung von 0s startet die Animation sofort.
 - **duration** (Dauer): Das ist die Zeitspanne, in der die Animation ausgeführt wird. So dauert z. B. Einblendanimation "fade-in" 500 ms von Anfang bis Ende.
 
-You can customize the timing of an animation by changing the delay or duration through the `animate-in-delay` and `animate-in-duration` attributes. In the following example, `my-element` flys in from the left of the page after .3 seconds, and completely flies in within .5 seconds:
+Du kannst das Timing einer Animation anpassen, indem du die Verzögerung oder Dauer mithilfe der Attribute `animate-in-delay` und `animate-in-duration` änderst. Im folgenden Beispiel fliegt `my-element` nach 0,3 Sekunden von links auf der Seite ein. Innerhalb von 0,5 Sekunden ist die Animation abgeschlossen:
 
 ```html
 <amp-story-page id="my-page">
@@ -144,7 +144,7 @@ You can customize the timing of an animation by changing the delay or duration t
 
 ## Animieren der letzten Seite
 
-Our last Web Story page is comprised of two layers: the first layer is a collage of animal images and the second layer displays some banner text.  To create this page, **add** the following code just after your previous story page:
+Die letzte Seite unserer Web Story besteht aus zwei Ebenen: Die erste Ebene ist eine Collage aus Tierbildern und die zweite Ebene zeigt Bannertext an. Um diese Seite zu erstellen, musst du den folgenden Code direkt nach deiner vorangehenden Story Seite **einfügen**:
 
 ```html
 <amp-story-page id="page5">
@@ -174,13 +174,13 @@ Our last Web Story page is comprised of two layers: the first layer is a collage
 </amp-story-page>
 ```
 
-Reload the AMP story in your browser, and verify that the page renders correctly and looks like this:
+Lade die AMP Story in deinem Browser neu und überzeuge dich davon, dass die Seite korrekt gerendert wird und folgendermaßen aussieht:
 
 {{ image('/static/img/docs/tutorials/amp_story/pg5-collage.png', 720, 1280, align='center third', alt='Static page 5' ) }}
 
 Es sieht toll aus, aber alles ist statisch! Animieren wir die Elemente.
 
-We'll start by animating the entrance of the banner text and have it "whoosh in" from the right of the page. Add `animate-in="whoosh-in-right"` to the `<p>` element like so:
+Beginnen wir damit, den Eingang des Bannertextes zu animieren und diesen von rechts auf die Seite hineinzischen zu lassen. Füge dem Element `<p>` das Attribut `animate-in="whoosh-in-right"` hinzu:
 
 ```html
 <p class="banner-text"
@@ -188,9 +188,9 @@ We'll start by animating the entrance of the banner text and have it "whoosh in"
 Pets can lower your stress levels!</p>
 ```
 
-Reload your story page in your browser, and verify that the banner whooshes in.
+Lade deine Story Seite in deinem Browser neu und überprüfe, ob das Banner hereinzischt.
 
-Next, let's make all the images fade in. Add `animate-in="fade-in"` to each of the [`amp-img`](../../../../documentation/components/reference/amp-img.md) elements so the code looks like this:
+Lassen wir als Nächstes alle Bilder einblenden. Füge jedem der Elemente <a><code>amp-img</code></a> das Attribut `animate-in="fade-in"` hinzu. So soll der Code aussehen:
 
 ```html
 <amp-img src="assets/cat.jpg"
@@ -215,9 +215,9 @@ Next, let's make all the images fade in. Add `animate-in="fade-in"` to each of t
 </amp-img>
 ```
 
-If you refresh and reload the page, each of the images fade in.  That's great but you can barely notice the effect because all the images fade in at the same time! We can improve the visual effect by changing the timing of these animations.
+Wenn du die Seite aktualisierst und neu lädst, wird jedes Bild eingeblendet. Das ist großartig, aber der Effekt ist kaum zu sehen, da alle Bilder gleichzeitig eingeblendet werden. Verstärken wir den visuellen Effekt, indem wir das Timing dieser Animationen ändern.
 
-Let's delay the entrance of the first image so that it comes in close to when the text banner finishes entering, say .4s. The remaining three images can come .2s after the previous image's entrance. For each of the [`amp-img`](../../../../documentation/components/reference/amp-img.md) elements, add `animate-in-delay=""` with the appropriate time delay value. Your code should look like this:
+Verzögern wir den Eingangseffekt des ersten Bildes so, dass dieses etwa am Ende der Animation des Textbanners hereinkommt, zum Beispiel bei 0,4 Sekunden. Die restlichen drei Bilder können 0,2 Sekunden nach dem Eingang des vorherigen Bildes kommen. Füge für jedes der [`amp-img`](../../../../documentation/components/reference/amp-img.md) Elemente das Attribut `animate-in-delay=""` mit dem entsprechenden Wert für die Zeitverzögerung hinzu. Dein Code sollte wie folgt aussehen:
 
 ```html
 <amp-img src="assets/cat.jpg"
@@ -247,8 +247,8 @@ Let's delay the entrance of the first image so that it comes in close to when th
 
 ```
 
-Refresh and reload your story.  Your last page should look like this:
+Aktualisiere deine Story und lade sie neu. Deine letzte Seite sollte folgendermaßen aussehen:
 
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Page 5 collage', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 
-There are a lot of possibilities with animations in Web Stories  (e.g., combining animations, chaining animations), and this tutorial scratches only the surface. To learn more about animations, see the [`amp-story`](../../../../documentation/components/reference/amp-story.md) reference documentation.
+Es gibt viele Möglichkeiten, wie Animationen in Web Storys verwendet werden können (z. B. Kombinieren von Animationen, Verketten von Animationen), und dieses Tutorial kratzt nur an der Oberfläche. Weitere Informationen zu Animationen findest du in der Referenzdokumentation zu [`amp-story`](../../../../documentation/components/reference/amp-story.md).
