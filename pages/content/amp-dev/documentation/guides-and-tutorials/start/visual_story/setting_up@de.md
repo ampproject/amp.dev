@@ -24,19 +24,19 @@ Dieses Tutorial setzt Folgendes voraus:
 
 #### Schritt 2. Führe die Beispielseite aus
 
-To test our sample Web Story, we need to access the files from a web server. There are several ways to create a temporary local web server for the purposes of testing.  Here are some options, choose the one that works best for you:
+Um unsere Web Story zu testen, müssen wir von einem Webserver aus auf die Dateien zugreifen. Es gibt mehrere Wege, wie du einen temporären lokalen Webserver zu Testzwecken erstellen kannst. Hier sind einige Optionen – wähle die für dich geeignete Variante aus:
 
 - ["Web Server for Chrome" (Google Chrome App)](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
 - [Lokaler HTTP Pythonserver](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server#Running_a_simple_local_HTTP_server)
 - [Apache](https://httpd.apache.org/docs/2.4/getting-started.html)
 - [nginx](http://nginx.org/)
 
-After setting up your local web server, have a look at what our completed Web Story will look like by the end of this tutorial by accessing the following <a href="http://localhost:8000/pets-completed.html">URL</a>:
+Sobald du deinen lokalen Webserver eingerichtet hast, kannst du dir ansehen, wie unsere fertige Web Story am Ende dieses Tutorials aussehen wird. Greife dazu auf diese <a href="http://localhost:8000/pets-completed.html">URL</a> zu:
 
 ```html
 http://localhost:8000/pets-completed.html
 ```
 
-[tip type="important"] **IMPORTANT –** Make sure the URL serves from `localhost` otherwise the Web Story might not load correctly, and you may encounter errors like `"source" "must start with "https://" or "//" or be relative and served from either https or from localhost.` [/tip]
+[tip type="important"] **WICHTIG:** Stelle sicher, dass die URL von `localhost` bereitgestellt wird. Andernfalls wird die Web Story möglicherweise nicht korrekt geladen und es treten Fehler wie `"source" "must start with "https://" or "//" or be relative and served from either https or from localhost.` auf. [/tip]
 
-Click through the completed story and get a sense of what we'll be creating.
+Klicke dich durch die fertige Story und mache dir ein Bild davon, was wir hier erstellen.
