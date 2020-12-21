@@ -217,7 +217,7 @@ AMP bietet zwei Möglichkeiten, um optimierte Bilder bereitzustellen:
 
 - Entwickler, die seltene Bildformate wie WebP verwenden, können ihren Server so konfigurieren, dass er den `Accept` Browserheader verarbeitet und mit Bildbytes und dem entsprechenden [`Content-Type` Header](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/) antwortet. Dadurch wird verhindert, dass der Browser Bildtypen herunterlädt, die er nicht unterstützt. Erfahre mehr über die [Inhaltsaushandlung (Content Negotiation)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation).
     <pre>[sourcecode:html] Accept: image/webp,image/apng,image/,/*;q=0.8 [/sourcecode]</pre>
-- Provide nested image fallbacks, such as the example below.
+- Stelle verschachtelte Fallbacks für Bilder bereit, wie im folgenden Beispiel dargestellt.
 
 ##### Beispiel: unterschiedliche Bildformate bereitstellen
 
