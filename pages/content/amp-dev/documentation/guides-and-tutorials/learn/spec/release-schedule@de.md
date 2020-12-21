@@ -17,17 +17,17 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-- [Release Channels](#release-channels)
+- [Releasekanäle](#release-channels)
     - [Nightly](#nightly)
     - [Weekly](#weekly)
-        - [Experimental and Beta channels](#experimental-and-beta-channels)
+        - [Die Kanäle Experimentell und Beta](#experimental-and-beta-channels)
     - [Long-Term Stable (lts)](#long-term-stable-lts)
-- [Determining if your change is in a release](#determining-if-your-change-is-in-a-release)
-- [Release Cadence](#release-cadence)
-    - [Detailed schedule](#detailed-schedule)
-    - [Release Freezes](#release-freezes)
+- [Feststellen, ob sich deine Änderung in einem Release befindet ](#determining-if-your-change-is-in-a-release)
+- [Intervall für Releases ](#release-cadence)
+    - [Detaillierter Zeitplan ](#detailed-schedule)
+    - [Releasepausen ](#release-freezes)
 
-A new release of AMP is pushed to all AMP pages every week on Tuesday. **Once a change in AMP is merged into the master branch of the amphtml repository, it will typically take 1-2 weeks for the change to be live for all users.**
+Ein neues Release von AMP wird jede Woche am Dienstag auf alle AMP Seiten übertragen. **Sobald eine Änderung in AMP mit dem Hauptzweig des amphtml Repositorys zusammengeführt wurde, dauert es gewöhnlich 1-2 Wochen, bis die Änderung bei allen Benutzer ankommt.**
 
 ## Releasekanäle <a name="release-channels"></a>
 
@@ -73,7 +73,7 @@ Der *Experimentelle Kanal* **ist möglicherweise weniger stabil** und kann Funkt
 
 Der **lts** Releasekanal bietet in einem monatlichen Intervall ein vorheriges **stabiles** Build. Am zweiten Montag jeden Monats wird die aktuelle **stabile** Version in **lts** aufgenommen. Dieser Kanal wird nicht für alle AMP Publisher empfohlen. Er dient für Publisher, die auf ihrer Website seltener eine QA durchführen. Zu diesem Zweck können sie den **lts** Kanal für bestimmte Webseiten aktivieren (siehe <a href="https://github.com/ampproject/amphtml/blob/master/contributing/lts-release.md" data-md-type="link">**lts** Readme</a>)
 
-If the second Monday of the month falls on a holiday, the promotion will be performed after the end of the [release freeze](#release-freezes).
+Wenn der zweite Montag des Monats auf einen Feiertag fällt, erfolgt die Promotion nach dem Ende der [Releasepause](#release-freezes).
 
 Wichtig: Publisher, die den **lts** Releasekanal verwenden, sollten keine neu eingeführten Funktionen verwenden. Aufgrund des längeren Zyklus kann der **lts** Release bis zu sieben Wochen nach dem `HEAD` von [`ampproject/amphtml`](https://github.com/ampproject/amphtml) liegen. Lies den Abschnitt [Feststellen, ob sich deine Änderung in einem Release befindet](#determining-if-your-change-is-in-a-release), um zu  überprüfen, ob eine Änderung für den von dir gewählten Releasezyklus bereitsteht.
 
@@ -93,7 +93,7 @@ Was unser Intervall für Releases betrifft, sind wir absichtlich vorsichtig.
 Wenn es darum geht, wie oft wir neue Versionen von AMP für alle bereitstellen, sind viele Faktoren zu berücksichtigen, darunter:
 
 - Stabilität für die Millionen von Websites und Milliarden von Seiten, die mit AMP erstellt wurden
-- cache-busting that might happen when we push a new version
+- Probleme mit Caches, die auftreten können, wenn wir eine neue Version veröffentlichen
 - der Wunsch, neue Funktionen schnell zu veröffentlichen
 
 Wir haben all diese Faktoren berücksichtigt und uns für einen 1-2-wöchigen Pushzyklus entschieden. Nach bisherigen Erfahrungen scheint dies ein vernünftiger Kompromiss zu sein. Trotzdem werden wir diese Faktoren weiterhin beobachten und den Zyklus möglicherweise ändern.
@@ -102,7 +102,7 @@ Wir haben all diese Faktoren berücksichtigt und uns für einen 1-2-wöchigen Pu
 
 Wir versuchen, diesen Zeitplan so genau wie möglich einzuhalten. Trotzdem kann es aufgrund von Komplikationen zu Verzögerungen kommen. Den aktuellen Status der einzelnen Releases kannst du in den [GitHub Problemen *Typ: Release*](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) und im [AMP Slack #Release Channel](https://amphtml.slack.com/messages/C4NVAR0H3/) ([Bei Slack anmelden](https://bit.ly/amp-slack-signup)) verfolgen.
 
-- Tuesday @ [11am Pacific](https://www.google.com/search?q=11am+pacific+in+current+time+zone): new **experimental** and **beta** release builds are created from the [latest master build that passes all of our tests](https://travis-ci.com/ampproject/amphtml/branches) and are pushed to users who opted into the [AMP Experimental Channel](#amp-experimental-and-beta-channels) or [AMP Beta Channel](#amp-experimental-and-beta-channels), respectively.
+- Dienstag [11 Uhr pazifischer Zeit](https://www.google.com/search?q=11am+pacific+in+current+time+zone): neue **Experimentell** und **Beta** Builds werden aus dem [neuesten Primärbuild erstellt, das alle unsere Tests besteht](https://travis-ci.com/ampproject/amphtml/branches), und an die AMP Benutzer weitergeleitet, die am [AMP Experimentellen Kanal](#amp-experimental-and-beta-channels) oder am [AMP Betakanal](#amp-experimental-and-beta-channels) teilnehmen.
 - Mittwoch: Wir überprüfen Fehlerberichte für die Benutzer des *Experimentellen Kanals* und des *Betakanals*. Wenn alles gut aussieht, erhält 1% der AMP Seiten die **Beta**.
 - Donnerstag-Montag: Wir überwachen weiterhin die Fehlerraten und Fehlerberichte für Benutzer des *Experimentellen Kanals* und des *Betakanals* sowie das 1% der Seiten mit dem **experimentellen** bzw. **Beta** Build
 - Dienstag der folgenden Woche:  Das **Beta** Build wird vollständig auf **stabil** hochgestuft (d. h. jetzt verwenden alle AMP Seiten dieses Build).
@@ -123,8 +123,8 @@ Mögliche Gründe für eine Releasepause:
 
 - Times when there are not enough people available to push the AMP release to **stable** and monitor it. Currently, most of the people performing AMP releases are based in the United States, so this will usually be the weeks of the major US holidays of Independence Day (July 4), Thanksgiving (fourth Thursday in November), Christmas (25 December), and New Year's Eve/Day (December 31/January 1).
 - Ein Notfall, z. B. ein Problem mit der Sicherheit oder dem Datenschutz, das vom [Technischen Entscheidungsgremium (TSC)](https://github.com/ampproject/meta-tsc) oder den Releaseverantwortlichen festgestellt wurde.
-- Other situations when the stability of the codebase is deemed to be particularly important as determined by the TSC.
+- Andere Situationen, in denen die Stabilität des Basiscodes als vorrangig betrachtet wird, wie vom TSC festgelegt.
 
-In all cases, except emergencies, the release freezes will be announced at least one month in advance.
+In allen Fällen außer in Notfällen wird eine Releasepause mindestens einen Monat im Voraus bekanntgegeben.
 
 Beachte, dass eine Releasepause, sofern nicht anders angekündigt, kein Einfrieren des Codes bedeutet. Während einer Releasepause kann weiterhin Code geschrieben, überprüft und zusammengeführt werden.
