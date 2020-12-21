@@ -61,11 +61,11 @@ Chinês | `@zh_CN`
 
 ### Todas as localizações AMP
 
-- [Slack Channel](https://amphtml.slack.com/messages/CCVMH4ZMF)
+- [Canal do Slack](https://amphtml.slack.com/messages/CCVMH4ZMF)
 
 ### Localizações em Coreano
 
-- [Slack Channel](https://amphtml.slack.com/messages/CCR8RFVUH)
+- [Canal do Slack](https://amphtml.slack.com/messages/CCR8RFVUH)
 
 Não achou um canal para seu idioma? Junte-se ao [canal AMP-Translation](https://amphtml.slack.com/messages/CCVMH4ZMF/details/) geral para saber como criar um!
 
