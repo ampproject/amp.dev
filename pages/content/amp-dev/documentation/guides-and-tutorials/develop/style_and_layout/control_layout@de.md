@@ -16,7 +16,7 @@ AMP unterstützt sowohl **Medienabfragen** als auch **Elementabfragen** und verf
 
 ## Responsive Bilder leicht gemacht
 
-Create responsive images by specifying the `width` and `height`, setting layout to `responsive`, and indicating with [`srcset`](art_direction.md) which image asset to use based on varying screen sizes:
+Erstelle wie folgt responsive Bilder: Gib `width` und `height` an, setze das Layout auf `responsive` und lege durch [`srcset`](art_direction.md) fest, welches Bildobjekt auf unterschiedlichen Bildschirmgrößen verwendet werden soll:
 
 [sourcecode:html]
 <amp-img
@@ -76,7 +76,7 @@ The following values can be used in the `layout` attribute:
     </tr>
     <tr>
       <td data-th="Layout type"><code>fill</code></td>
-      <td data-th="Description">No</td>
+      <td data-th="Description">Nein</td>
       <td data-th="Behavior">Das Element nimmt den verfügbaren Platz ein, sowohl Breite als auch Höhe. Mit anderen Worten: Das Layout eines Füllelements entspricht dem übergeordneten Element. Damit ein Element seinen übergeordneten Container füllen kann, musst du sicherstellen, dass der übergeordnete Container "position:relative" oder "position:absolute" angibt.</td>
     </tr>
     <tr>
@@ -97,7 +97,7 @@ The following values can be used in the `layout` attribute:
   </tbody>
 </table>
 
-[tip type="tip"] **TIP –** Visit the [Demonstrating AMP layouts](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html) page to see how the various layouts respond to screen resizing. [/tip]
+[tip type="tip"] **TIP**: Besuche die [Seite Demonstration von AMP Layouts](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html), um zu sehen, wie die verschiedenen Layouts auf eine Größenänderung des Bildschirms reagieren. [/tip]
 
 ### Was, wenn Breite und Höhe nicht definiert sind? <a name="what-if-width-and-height-are-undefined"></a>
 
@@ -134,8 +134,7 @@ If the <code>layout</code> attribute isn't specified, AMP tries to infer or gues
       <td data-th="Inferred layout"><code>fixed</code></td>
     </tr>
     <tr>
-      <td data-th="Rule">
-<code>width</code> and <code>height</code> are not present</td>
+      <td data-th="Rule"> <code>width</code> und <code>height</code> fehlen</td>
       <td data-th="Inferred layout"><code>container</code></td>
     </tr>
   </tbody>
@@ -151,7 +150,7 @@ Verwende [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media), um
 
 ### Element media queries <a name="element-media-queries"></a>
 
-One extra feature for responsive design available in AMP is the `media` attribute. This attribute can be used on every AMP element; it works similar to media queries in your global stylesheet, but only impacts the specific element on a single page.
+Ein zusätzliches Merkmal des responsiven Designs in AMP ist das Attribut `media`. Dieses Attribut kann für jedes AMP Element verwendet werden. Es funktioniert ähnlich wie Medienabfragen in deinem globalen Stylesheet, wirkt sich jedoch nur auf das jeweilige Element auf einer einzelnen Seite aus.
 
 Hier haben wir zum Beispiel zwei Bilder mit sich gegenseitig ausschließenden Medienabfragen.
 
