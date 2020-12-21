@@ -173,7 +173,7 @@ No exemplo a seguir, você verá três diferentes imagens de um gato cortadas qu
 - 470 a 669 pixels, será exibida `cat-medium.jpg` (450 x 340 pixels);
 - 469 pixels ou menos, será exibida `cat-small.jpg` (226 x 340 pixels).
 
-Observação: Como queríamos que as imagens tivessem tamanhos fixos (ou seja, sem distorções), não foi especificado um valor de layout. Por padrão, ele é definido como `layout=fixed` porque foram configuradas a altura e a largura. Para mais informações, consulte ["E se o atributo de layout não for especificado?"](control_layout.md#what-if-the-layout-attribute-isnt-specified).
+[tip type="note"] OBSERVAÇÃO – Como queríamos que as imagens tivessem tamanhos fixos (ou seja, não distorcidas), não especificamos um valor de layout, que por default será definido como layout=fixed porque configuramos altura e largura. Para mais detalhes, veja "E se o atributo layout não for especificado?". [/tip]
 
 [example preview="top-frame" playground="true"]
 
@@ -215,8 +215,8 @@ Em HTML, você pode veicular diferentes formatos de imagem usando a tag `picture
 
 Em AMP, há duas maneiras de conseguir servir imagens otimizadas:
 
-- Developers using image formats that are not widely supported, such as WebP, can configure their server to process browser `Accept` headers and respond with image bytes and the appropriate [`Content-Type` header](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/). This avoids the browser from downloading image types it does not support. Read more about [content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation).[sourcecode:html]  Accept: image/webp,image/apng,image/_,_/\*;q=0.8  [/sourcecode]
-- Provide nested image fallbacks, such as the example below.
+- Desenvolvedores que usam formatos de imagem que não são amplamente suportados, como WebP, podem configurar seu servidor para processar os cabeçalhos  <code>Accept</code> do navegador e responder com bytes de imagem e o cabeçalho <a><code>Content-Type</code></a>. Isto evita que o navegador baixe tipos de imagem incompatíveis. Leia mais sobre negociação de conteúdo.[sourcecode:html]  Accept: image/webp,image/apng,image/_,_/\*;q=0.8  [/sourcecode]
+- Forneça fallbacks de imagem aninhados, como no exemplo abaixo.
 
 ##### Exemplo: como veicular diferentes formatos de imagem
 
