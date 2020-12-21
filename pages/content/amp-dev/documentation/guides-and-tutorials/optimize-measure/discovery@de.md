@@ -1,7 +1,7 @@
 ---
 formats:
 - websites
-"$title": Make your pages discoverable
+"$title": So werden deine Seiten gefunden
 "$titles":
   teaser: Make your pages discoverable
 "$order": '5'
