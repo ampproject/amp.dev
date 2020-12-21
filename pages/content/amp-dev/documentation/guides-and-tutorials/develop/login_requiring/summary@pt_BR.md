@@ -1,7 +1,7 @@
 ---
 "$title": Summary
 "$order": '4'
-description: In this tutorial, we explored how to combine amp-access and amp-form to create a comment section that requires a login.
+description: Neste tutorial, vamos ver como combinar amp-access e amp-form para criar uma seção de comentários que exige login.
 ---
 
 Neste tutorial, vamos ver como combinar [`amp-access`](../../../../documentation/components/reference/amp-access.md) e [`amp-form`](../../../../documentation/components/reference/amp-form.md) para criar uma seção de comentários que exige login.
