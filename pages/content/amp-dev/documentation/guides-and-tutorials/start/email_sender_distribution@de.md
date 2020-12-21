@@ -34,12 +34,12 @@ Du musst die Datenschutzrichtlinien aller Clients befolgen.
 
 **Gmail**
 
-[GooglePrivacy & Terms](https://policies.google.com/privacy)
+[Google Datenschutzerklärung & Nutzungsbedingungen](https://policies.google.com/privacy)
 
 **Mail.ru**
 
-- [Non-Russian based users](https://help.mail.ru/engmail-help/privacy)
-- [Russian based users](https://agent.mail.ru/legal/privacypolicy/en)
+- [Benutzer außerhalb von Russland](https://help.mail.ru/engmail-help/privacy)<br>
+- [Benutzer in Russland](https://agent.mail.ru/legal/privacypolicy/en)<br>
 
 **Verizon Media (Yahoo Mail)**
 
