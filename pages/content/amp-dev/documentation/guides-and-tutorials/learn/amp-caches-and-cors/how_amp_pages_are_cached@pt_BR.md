@@ -61,7 +61,7 @@ Ao usar o formato AMP, você disponibiliza conteúdo para ser armazenado em cach
 
     - Exemplo de URL do cache de AMP do Google: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
-[tip type="note"] **NOTE –** The AMP Cache URL is not a user-facing URL, that is, users wouldn't typically request content via those URLs. [/tip]
+[tip type="note"]<strong>Observação</strong>: o URL do cache de AMP não é um URL voltado ao usuário, ou seja, normalmente ele não solicita conteúdo por meio desses URLs.[/tip]
 
 - **Inclusão de editores**: os editores podem adicionar especificamente a página AMP ao cache de AMP.  Essa opção é aplicável somente ao cache de AMP do Google (consulte [Cache de AMP do Google: atualizar o conteúdo AMP] (https://developers.google.com/amp/cache/update-cache)).
 
