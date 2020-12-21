@@ -137,24 +137,7 @@ Se você estiver interessado em ir além do que a configuração default pode of
 Tanto o componente [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) quanto [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) permitem todas as substituições de variáveis ​​de URL padrão (consulte [Substituições de variáveis ​​de AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)). No exemplo abaixo, a solicitação de exibição de página é enviada à URL juntamente com a URL canônica do documento AMP atual, o title e um [código de cliente](analytics_basics.md#user-identification):
 
 ```html
-<amp-analytics>
-
-<script type="application/json">
-
-  {"requests":
-    {"pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}",
-  },
-  "vars":
-    {"account":
-  "ABC123", },"triggers":
-    {"someEvent":
-      {"on": "visible",
-      "request": "pageview",
-      "vars":
-        {"title":
-"Minha página inicial", } } } }</script>
-
-</amp-analytics>
+<amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
 ```
 
 Por ser bastante simples, a tag [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) só pode incluir variáveis ​​definidas pela plataforma ou que possam ser analisadas pelo runtime AMP a partir da página AMP. No exemplo acima, a plataforma preenche os valores de `canonicalURL` e `clientId(site-user-id)`. A tag [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) pode incluir as mesmas variáveis que [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md), assim como as variáveis ​​definidas de modo exclusivo dentro da configuração da tag.
@@ -164,7 +147,27 @@ Use o formato `${varName}` em strings de solicitação para variáveis definidas
 No exemplo de [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) abaixo, a solicitação de pageview é enviada à URL com dados adicionais extraídos de substituições de variáveis, algumas fornecidas pela plataforma, outras definidas inline, dentro da configuração de [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md):
 
 ```html
-<amp-pixel src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"></amp-pixel>
+<amp-analytics>
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
+      },
+      "vars": {
+        "account":"ABC123"
+      },
+      "triggers": {
+        "someEvent": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage"
+          }
+        }
+      }
+    }
+  </script>
+</amp-analytics>
 ```
 
 No exemplo acima, as variáveis `account` e `title` são definidas na configuração de [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). As variáveis `canonicalUrl` e `clientId` não são definidas na configuração, por isso os valores delas são substituídos pela plataforma.
