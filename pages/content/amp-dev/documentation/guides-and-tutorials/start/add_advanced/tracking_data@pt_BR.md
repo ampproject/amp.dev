@@ -1,8 +1,10 @@
 ---
-$title: Acompanhar o engajamento com análises
+"$title": Acompanhe o envolvimento com análises
+"$order": '4'
+description: Analytics platforms are commonly integrated into websites through inline JavaScript snippets and function calls, which trigger events that are sent back to the analytics system.
 ---
 
-Em geral, as plataformas de análise são integradas aos sites por meio de snippets de JavaScript in-line e chamadas de função, que acionam eventos retornados ao sistema de análise. A tecnologia AMP oferece uma sintaxe de configuração JSON flexível para reproduzir esse processo em diversos parceiros de análise.
+As plataformas de análise são frequentemente integradas a sites através de fragmentos de JavaScript inline e chamadas de função, que disparam eventos que são enviados de volta ao sistema de análise. O AMP fornece uma sintaxe de configuração JSON flexível para replicar esse processo para diferentes parceiros de análise.
 
 A seguir, veja um exemplo do acompanhamento tradicional do Google Analytics com base em JavaScript. O conteúdo será reescrito no formato JSON [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). Antes disso, veja a abordagem tradicional:
 
