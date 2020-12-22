@@ -84,6 +84,8 @@
 		"ioredis": "4.22.0",
 		"jimp": "0.16.1",
 		"js-yaml": "4.0.0",
+		"google-spreadsheet": "3.1.15",
+		"joi": "17.3.0",
 		"json-tree-view": "0.4.12",
 		"linkifyjs": "2.1.9",
 		"lru-cache": "6.0.0",
