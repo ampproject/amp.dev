@@ -12,32 +12,32 @@ formats:
 
 في الصفحات المبنية بلغة برمجة غير AMP (HTML تقليدية) إذا كنت ترغب في عرض الإعلانات على صفحتك، فسيتعين عليك تضمين مقتطف من JavaScript لعرض الإعلانات من شبكة الإعلانات لديك. ولأسباب تتعلق بالأداء والأمان، لا يمكنك تضمين JavaScript لجهة خارجية في صفحات AMP. لذا، من أجل عرض الإعلانات في AMP، عليك إضافة المكون [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) المخصص إلى صفحة AMP الخاصة بك.
 
-[tip type="tip"] **TIP –** See [AMP By Example for a live demo](../../../../documentation/components/reference/amp-ad.md) that demonstrates adding an amp-ad tag to an AMP page. [/tip]
+[tip type="tip"] **تلميح–** راجع [أمثلة استخدام AMP للحصول على عرض توضيحي مباشر](../../../../documentation/components/reference/amp-ad.md) يشرح طريقة إضافة العلامة amp-ad لصفحة AMP. [/tip]
 
 لنبدأ خطوات إضافة المكون حتى تتمكن من عرض الإعلانات على صفحة AMP لديك.
 
-### Step 1: Add the amp-ad script
+### الخطوة 1: إضافة البرنامج النصي amp-ad
 
-The [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component is a custom ad extension to the AMP library. Under the hood of [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) is custom JavaScript that's carefully designed to optimize performance. To run the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component, you must add the required JavaScript for this component in the `head` section of your AMP page:
+يُعد المكون [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) إضافة إعلان مخصصة لمكتبة AMP. ويوجد تحت غطاء [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) JavaScript مخصص تم تصميمه بعناية لتحسين الأداء. لتشغيل المكون [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)، عليك إضافة JavaScript المطلوبة لهذا المكوِّن في قسم `head` بصفحة AMP لديك:
 
 ```html
 <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
 ```
 
-### Step 2: Add the amp-ad tag to your AMP page
+### الخطوة 2: إضافة علامة amp-ad إلى صفحة AMP لديك
 
-Over 100+ [ad servers and networks](ads_vendors.md) provide built-in integrations with AMP.  To add an ad for a given ad network, add the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) tag, and specify the network in the `type` attribute.
+يوفر +100 [خادم وشبكة إعلانات](ads_vendors.md) تكاملات مدمجة مع AMP. لإضافة إعلان لشبكة إعلانات معينة، أضف العلامة [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)، وحدد الشبكة في السمة `type`.
 
-In this example, we are adding an ad slot to serve ads from the a9 network:
+نضيف في هذا المثال شريحة إعلانية لعرض الإعلانات من شبكة a9:
 
 ```html
 <amp-ad type="a9">
 </amp-ad>
 ```
 
-### Step 3: Specify the size of the ad unit
+### الخطوة 3: تحديد حجم وحدة الإعلان
 
-Add the `width` and `height` attributes to the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)  tag.  This specifies the size of the ad on your AMP page:
+أضف سمتي `width` و`height` إلى العلامة [`amp-ad`](../../../../documentation/components/reference/amp-ad.md).  إذ يحدد هذا الأمر حجم الإعلان على صفحة AMP لديك:
 
 ```html
 <amp-ad type="a9">
@@ -45,9 +45,9 @@ Add the `width` and `height` attributes to the [`amp-ad`](../../../../documentat
 </amp-ad>
 ```
 
-### Step 4: Set ad network parameters
+### الخطوة 4: تعيين معلمات شبكة الإعلانات
 
-Each network has specific data attributes they require to serve ads.  Refer to the ad network's [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) documentation and add the attributes that are needed In the following example,  the a9 network requires additional parameters to specify the size of the ad, and other details:
+تحتوي كل شبكة على سمات بيانات محددة مطلوبة لعرض الإعلانات. راجع وثائق [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) لشبكة الإعلانات، وأضف السمات المطلوبة في المثال التالي، حيث تتطلب شبكة a9 معلمات إضافية لتحديد حجم الإعلان وتفاصيل أخرى:
 
 ```html
 <amp-ad type="a9"
@@ -58,9 +58,9 @@ Each network has specific data attributes they require to serve ads.  Refer to t
 </amp-ad>
 ```
 
-### Step 5: (Optional) Specify a placeholder
+### الخطوة 5: (اختياري) حدد عنصرًا نائبًا
 
-Depending on the ad network, you can choose to show a placeholder until the ad is available for viewing. This provides a better user experience by preventing a blank space.  To specify a placeholder, add a child element with the `placeholder` attribute. Learn more in [Placeholders & fallbacks](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
+اعتمادًا على شبكة الإعلانات، يمكنك اختيار عرض عنصر نائب حتى يصبح الإعلان متوفرًا للعرض. إذ يوفر هذا الأمر تجربة مستخدم أفضل من خلال تفادي المسافات الفارغة. لتحديد عنصر نائب، أضف عنصرًا تابعًا بالسمة `placeholder`. تعرف على المزيد في [العناصر النائبة والاحتياطية](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ```html
 <amp-ad type="a9"
@@ -72,9 +72,9 @@ Depending on the ad network, you can choose to show a placeholder until the ad i
 </amp-ad>
 ```
 
-### Step 6: (Optional) Specify a fallback
+### الخطوة 6: (اختياري) حدد عنصرًا احتياطيًا
 
-Depending on the ad network, you can choose to show a fallback element if no ad is available to serve. To specify a fallback, add a child element with the `fallback` attribute. Learn more in [Placeholders & fallbacks](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
+اعتمادًا على شبكة الإعلانات، يمكنك اختيار عرض عنصر احتياطي إذا لم يكن هناك إعلانات متوفرة للعرض. لتحديد عنصر احتياطي، أضف عنصرًا تابعًا بالسمة `fallback`. تعرف على المزيد في [العناصر النائبة والاحتياطية](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ```html
 <amp-ad type="a9"
@@ -86,61 +86,61 @@ Depending on the ad network, you can choose to show a fallback element if no ad 
 </amp-ad>
 ```
 
-Congratulations! You are now serving ads on your AMP page!
+تهانينا! أنت الآن تعرض الإعلانات على صفحة AMP الخاصة بك!
 
-## Serving direct-sold AMPHTML ads
+## عرض إعلانات AMPHTML للبيع المباشر
 
-The [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component serves ads from the network you specify.  Those ads can be standard HTML ads or AMPHTML ads, provided that the ad network supports AMPHTML ads. To serve your direct-sold ads as AMPHTML ads, create the ad in AMP HTML according to the [AMPHTML ad spec](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) requirements and use an [ad server that serves AMPHTML ads](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
+يعرض المكون [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) الإعلانات من الشبكة التي تحددها. ويمكن أن تكون هذه الإعلانات عبارة عن إعلانات HTML قياسية أو إعلانات AMPHTML، بشرط أن تدعم شبكة الإعلانات إعلانات AMPHTML. لعرض إعلانات بيع مباشر على أنها إعلانات AMPHTML، قم بإنشاء إعلان في AMP HTML وفقًا لمتطلبات [مواصفات إعلانات AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) واستخدم [خادم إعلانات يعرض إعلانات AMPHTML](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
 
-## Augmenting targeting data on ad requests
+## زيادة بيانات الاستهداف في طلبات الإعلان
 
-As part of the Fast Fetch serving mechanism, the Real-Time Config (RTC) feature allows publishers to augment ad requests with first-party and third-party targeting information that's retrieved at runtime. RTC allows up to 5 callouts to targeting servers for each individual ad slot, the results of which are appended to the ad request.  To use RTC on your ads, the ad network you use must support RTC and Fast Fetch.
+تسمح ميزة التكوين في التوقيت الحقيقي، كجزء من آلية عرض الإحضار السريع، للناشرين بزيادة طلبات الإعلان بمعلومات استهداف الطرف الأول والطرف الثالث التي يتم استردادها في وقت التشغيل. كما يسمح التكوين في التوقيت الحقيقي بما يصل إلى 5 استدعاءات لخوادم الاستهداف لكل شريحة إعلانية فردية، ويتم إلحاق نتائجها بطلب الإعلان. لاستخدام التكوين في التوقيت الحقيقي في إعلاناتك، يجب أن تدعم شبكة الإعلانات التي تستخدمها التكوين في التوقيت الحقيقي والإحضار السريع.
 
-You can learn more about RTC from this YouTube video:
+يمكنك التعرف على المزيد حول التكوين في التوقيت الحقيقي من مقطع الفيديو عبر Youtube التالي:
 
 [video src='https://www.youtube.com/watch?v=mvAmvKiWPfA' caption='شاهد الربح الفعال في AMP باستخدام مزايدات رأس الصفحة.']
 
-Or, learn more from these RTC resources:
+أو تعرف على المزيد من موارد التكوين في التوقيت الحقيقي:
 
-- [AMP RTC publisher implementation guide](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
-- [AMP Real Time Config](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
+- [دليل تنفيذ الناشر للتكوين في التوقيت الحقيقي في AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
+- [التكوين في التوقيت الحقيقي في AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
 
-## Best practices
+## أفضل الممارسات
 
-Here are some tips to maximize the effectiveness of ads on your AMP pages:
+فيما يلي بعض النصائح لزيادة فعالية الإعلانات على صفحات AMP لديك:
 
-### Placement & controls: optimize your ad placements
+### الموضع وعناصر التحكم: تحسين مواضع إعلانك
 
-- **Place the same number of ads** on AMP Pages as your non-AMP pages to generate maximum revenue per page.
-- **Place the first ad immediately below the first viewport** ("below the fold") to provide an optimal user experience.
-- Unless you're using advanced CSS or media queries, **ensure your ad units are centered on the page** to provide your users with an optimal mobile web experience.
+- ضع عدد الإعلانات نفسه في صفحات AMP مثل صفحاتك المبنية بغير AMP لتحقيق أقصى عائد لكل صفحة.
+- **ضع الإعلان الأول أسفل منفذ العرض الأول مباشرة** ("أسفل الطية") لتوفير تجربة مستخدم فائقة.
+- ما لم تكن تستخدم CSS أو استعلامات وسائط متقدمة **تأكد من أن وحداتك الإعلانية متمركزة في الصفحة** لتزويد المستخدمين بتجربة ويب مثالية للهاتف المحمول.
 - Enable [multi-size ad requests](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests) on your AMP inventory to increase ad auction pressure and drive revenue.
 
-### Demand & pricing: get the right price for your ads
+### الطلب والتسعير: احصل على السعر المناسب لإعلاناتك
 
-- **Sell ad units on your AMP pages across all sales channels**, including direct and indirect to maximize competition for your inventory on AMP pages.
-- **Price your ad inventory on AMP pages** similar to your inventory on non-AMP pages. Monitor performance and adjust pricing accordingly.
-- **Ensure all ad demand channels are competing** for ad inventory on your AMP pages to drive up competition.
+- **قم ببيع الوحدات الإعلانية على صفحات AMP لديك عبر كل قنوات المبيعات**، بما في ذلك المباشرة وغير المباشرة لزيادة المنافسة على مخزونك على صفحات AMP.
+- **حدد سعر مخزون إعلاناتك على صفحات AMP** المشابهة لمخزونك على صفحات بغير AMP. وراقب الأداء وعدِّل الأسعار وفقًا لذلك.
+- **تأكد من أن جميع قنوات طلب الإعلانات تتنافس** على مخزون الإعلانات على صفحات AMP لديك لزيادة المنافسة.
 
-### Ad types: Serve the best types of ads
+### أنواع الإعلانات: عرض أفضل أنواع الإعلانات
 
 - **تجنب الإبداع الزائد** وفقًا [للدليل الإرشادي لمكتب الإعلان التفاعلي](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf).
-- **Avoid interstitials** or other ad formats that cause the content to reflow on ad load.
-- **Optimize for viewability** by setting the data-loading-strategy to prefer-viewability-over-views.
+- **الإعلانات البينية** أو تنسيقات الإعلانات الأخرى التي من شأنها التسبب في إعادة تدفق المحتوى عند تحميل الإعلان.
+- **حسِّن من إمكانية العرض** من خلال إعداد استراتيجية تحميل بيانات لتفضيل إمكانية العرض على طرق العرض.
 - **ضع الإعلانات في محتوى الفيديو لديك** عبر [المشغلات المدعومة](../../../../documentation/components/index.html#media) أو [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) لتمكين الإيرادات على كل أنواع المحتوى.
-- **Implement native ads** to compete with display ads using multi-sized ad requests, adding demand pressure while providing your readers with a premium user experience.
+- **قم بتنفيذ الإعلانات الأصلية** للتنافس مع الإعلانات المعروضة باستخدام طلبات الإعلانات متعددة الأحجام، مما يزيد من ضغط الطلب أثناء توفير تجربة مستخدم فائقة لقرائك.
 
-### Innovation: Offer the most engaging ad products
+### الابتكار: تقديم المنتجات الإعلانية الأكثر جاذبية
 
-- **Implement ads on ancillary AMP pages** to generate incremental revenue:
-    - [Ads in a carousel](../../../../documentation/examples/documentation/Carousel_Ad.html)
-    - [Ads in a lightbox](../../../../documentation/examples/documentation/Lightbox_Ad.html)
-    - ... and [more](../../../../documentation/examples/index.html)
-- **Implement new formats for direct sold ads** to equip your sales team with high-impact, innovative ad products:
-    - [Sticky Ads](../../../../documentation/examples/documentation/amp-sticky-ad.html)
-    - [Flying Carpet](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
+- **قم بتنفيذ الإعلانات على صفحات AMP الملحقة** لتحقيق إيرادات إضافية:
+    - [الإعلانات في المكتبة](../../../../documentation/examples/documentation/Carousel_Ad.html)
+    - [الإعلانات في العرض المبسط](../../../../documentation/examples/documentation/Lightbox_Ad.html)
+    - ... و[المزيد](../../../../documentation/examples/index.html)
+- **قم بتنفيذ تنسيقات جديدة لإعلانات البيع المباشر** لتزويد فريق المبيعات بمنتجات إعلانية مبتكرة وعالية التأثير:
+    - [إعلانات مثبتة](../../../../documentation/examples/documentation/amp-sticky-ad.html)
+    - [السجاد الطائر](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
 
 ## موارد إضافية
 
-- [AMPHTML ad templates](../../../../documentation/examples/index.html)
-- [Demo: Shows how to add `amp-ad` to your AMP page](../../../../documentation/components/reference/amp-ad.md)
+- [قوالب إعلانات AMPHTML](../../../../documentation/examples/index.html)
+- [عرض توضيحي: شرح طريقة إضافة `amp-ad` إلى صفحة AMP لديك](../../../../documentation/components/reference/amp-ad.md)
