@@ -26,7 +26,7 @@ formats:
 
 ## ما هي ذاكرات AMP للتخزين المؤقت المتوفرة؟<br />يوجد حاليًا مزودان لذاكرة التخزين المؤقت لصفحات AMP:<[br />ذاكرة Google AMP للتخزين ا](https://developers.google.com/amp/cache/)لمؤقت
 
-Currently, there are two AMP Cache providers:
+يوجد حاليًا مزودان لذاكرة التخزين المؤقت لصفحات AMP:
 
 - [Google AMP Cache](https://developers.google.com/amp/cache/)
 - [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
