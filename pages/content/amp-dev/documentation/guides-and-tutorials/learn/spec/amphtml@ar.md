@@ -178,15 +178,15 @@ limitations under the License.
 
 يشترط في مستندات AMP HTML
 
-- <a name="dctp"></a>start with the doctype `<!doctype html>`. [🔗](#dctp)
+- <a name="dctp"></a>تبدأ بنوع مستند `<!doctype html>`. [🔗](#dctp)
 - يحتوي على علامة المستوى الأعلى
     <span><code data-md-type="codespan"><html ⚡></code></span> (تكون
     <span><code><html amp></code></span> مقبولة كذلك).
-- <a name="crps"></a>contain `<head>` and `<body>` tags (They are optional in HTML). [🔗](#crps)
-- <a name="canon"></a>contain a `<link rel="canonical" href="$SOME_URL">` tag inside their head that points to the regular HTML version of the AMP HTML document or to itself if no such HTML version exists. [🔗](#canon)
-- <a name="chrs"></a>contain a `<meta charset="utf-8">` tag as the first child of their head tag. [🔗](#chrs)
-- <a name="vprt"></a>contain a `<meta name="viewport" content="width=device-width">` tag inside their head tag. It's also recommended to include `minimum-scale=1` and `initial-scale=1`. [🔗](#vprt)
-- <a name="scrpt"></a>contain a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside their head tag. [🔗](#scrpt)
+- <a name="crps"></a>تحتوي على علامات `<head>` و`<body>` (وهي اختيارية في HTML). [🔗](#crps)
+- <a name="canon"></a>تحتوي على علامة `<link rel="canonical" href="$SOME_URL">` داخل رؤوسها والتي تشير إلى إصدار HTML العادي من مستند AMP HTML أو إلى نفسها إذا لا يوجد إصدار HTML من هذا القبيل. [🔗](#canon)
+- <a name="chrs"></a>تحتوي على علامة `<meta charset="utf-8">` كفرع أول لعلامة الرأس الخاصة بها. [🔗](#chrs)
+- <a name="vprt"></a>تحتوي على علامة `<meta name="viewport" content="width=device-width">` داخل علامة رأسها. ويوصى أيضًا بتضمين`minimum-scale=1` و`initial-scale=1`. [🔗](#vprt)
+- <a name="scrpt"></a>تحتوي على علامة `<script async src="https://cdn.ampproject.org/v0.js"></script>` داخل علامة الرأس الخاصة بها. [🔗](#scrpt)
 - <a name="boilerplate"></a>تحتوي [ على رمز فقرة AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md)  (`head > style[amp-boilerplate]` و`noscript > style[amp-boilerplate]` في علامة رؤوسهم. [🔗](#boilerplate)
 
 ### بيانات التعريف<a name="metadata"></a>
@@ -383,8 +383,8 @@ limitations under the License.
 
 وتنطبق القيود التالية على العلامة `<style amp-keyframes>`:
 
-1. May only be placed as the last child of the document's `<body>` element.
-2. May only contain `@keyframes`, `@media`, `@supports` rules and their combination.
+1. يمكن وضعها فقط كآخر عنصر تابع للعنصر `<body>` الخاص بالمستند.
+2. قد تحتوي فقط على القواعد `@keyframes`، `@media`، `@supports` والدمج بينها.
 3. يجب ألا تكون أكبر من 500000 بايت.
 
 يرجع سبب وجود العلامة `<style amp-keyframes>` إلى أن قواعد الإطارات الرئيسية غالبًا ما تكون ضخمة حتى بالنسبة إلى الرسوم المتحركة المركَّبة على نحو معتدل، التي تؤدي إلى بطء تحليل CSS والرسمة الأولى للمحتوى. ولكن غالبًا ما تتجاوز هذه القواعد حد الحجم المفروض على `<style amp-custom>`. ويسمح وضع إعلانات الإطارات الرئيسية هذه في أسفل المستند في `<style amp-keyframes>` بتجاوز قيود الحجم. ونظرًا لأن الإطارات الأساسية لا تحظر العرض، فإنها تتجنب أيضًا حظر أول رسومات المحتوى لتحليلها.
