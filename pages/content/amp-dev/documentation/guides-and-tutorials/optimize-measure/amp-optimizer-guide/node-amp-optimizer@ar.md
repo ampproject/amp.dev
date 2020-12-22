@@ -10,15 +10,15 @@ author: sebastianbenz
 
 يشرح هذا الدليل كيفية إعداد Node.js واستخدام إصدار من "أداة AMP Optimizer".
 
-## Setup
+## الإعداد
 
-Install via NPM using:
+التثبيت عبر NPM باستخدام:
 
 ```shell
 npm install @ampproject/toolbox-optimizer
 ```
 
-## Usage
+## الاستخدام
 
 تتخذ واجهة برمجة تطبيقات "أداة AMP Optimizer" سلسلة HTML كإدخال وتعرض نسخة محسّنة من سلسلة HTML. يبدو الاستخدام الأساسي كما يلي:
 
@@ -33,9 +33,9 @@ const html = '<h1>Hello World!</h1>';
 const optimizedHtml = await ampOptimizer.transformHtml(html);
 ```
 
-### Creating optimized AMP at Build-Time
+### إنشاء AMP محسّن في وقت الإنشاء
 
-For static sites it’s best to optimize AMP pages at build-time when building your site. Here is an example on how you would integrate it into a [Gulp.js](https://gulpjs.com/) based build. This example adds a custom transform that optimizes all HTML files inside the src folder:
+بالنسبة إلى المواقع الثابتة، من الأفضل تحسين صفحات AMP في وقت الإنشاء عند إنشاء موقعك. فيما يلي مثال على كيفية دمجها في إنشاء يستند إلى [Gulp.js](https://gulpjs.com/). يضيف هذا المثال تحويلاً مخصصًا يعمل على تحسين جميع ملفات HTML داخل مجلد src:
 
 ```js
 const {src, dest} = require('gulp');
@@ -63,7 +63,7 @@ function build(cb) {
 exports.default = build;
 ```
 
-### Render-time
+### وقت العرض
 
 بالنسبة للصفحات الديناميكية، غالبًا ما يكون من الضروري عرض الصفحات على الخادم. في هذه الحالة، يمكنك تشغيل "أداة AMP Optimizer" بعد عرض صفحاتك. فيما يلي نموذج للتكامل في خادم [Express.js](https://expressjs.com/). تتمثل إحدى طرق تكامل "تحسين AMP" مع موجّه Express في تشغيله في استرداد بعد [عرضها](https://expressjs.com/en/api.html#app.render):
 
@@ -86,21 +86,21 @@ module.exports = router;
 
 هام: تأكد من إعداد التخزين المؤقت أو نظام إدارة المحتوى (CDN) عند استخدام أداة AMP Optimizer على الخادم لتجنب تأخيرات العرض.
 
-## Configuration
+## التكوين
 
 تقدّم "أداة AMP Optimizer" تكوينًا افتراضيًا معقولاً من المفترض أن يعمل جيدًا في معظم الحالات. ومع ذلك، يمكن تخصيص عمليات التحويل لحالات استخدام محددة. يمكنك العثور على قائمة بجميع الخيارات المتاحة [هنا](https://github.com/ampproject/amp-toolbox/tree/main/packages/optimizer#options).
 
-A few notable options are:
+بعض الخيارات الملحوظة هي:
 
-- `lts: true` for enabling [long-term stable URLs](https://github.com/ampproject/amphtml/blob/main/contributing/lts-release.md) for AMP runtime and components.
-- `verbose: true` for detailed debugging outputs. Especially good for identifying reasons why the AMP boilerplate could not be removed.
-- `imageOptimizer`: enable automated image srcset generation by providing a function for calculating srcset URLs for a given image src. The function should return a URL pointing to a version of the `src` image with the given width. If no image is available, it should return a falsy value. More about this in the next section.
+- `lts: true` لتمكين [عناوين URL الثابتة طويلة المدى](https://github.com/ampproject/amphtml/blob/main/contributing/lts-release.md) for لوقت تشغيل AMP ومكوناته.
+- `verbose: true` لمخرجات تصحيح الأخطاء التفصيلي. جيد بشكل خاص لتحديد أسباب عدم إمكانية إزالة نموذج AMP المعياري.
+- `iأداة تحسين الصور`: تمكين إنشاء srcset للصور تلقائيًا من خلال توفير وظيفة لحساب عناوين URL لدى srcset لصورة معينة src. يجب أن تعرض الوظيفة عنوان URL يشير إلى نسخة من صورة `src` بالعرض المحدد. في حالة عدم توفّر أي صورة، فيجب أن تعرض قيمة خاطئة. يتوفر المزيد حول هذا في القسم التالي.
 
-### Image Optimization
+### تحسين الصورة
 
 يمكن "لأداة AMP Optimizer" إنشاء قيم `srcset` لصالح `amp-img` بناءً على تعريف `layout` الخاص. من أجل أن يجري الأمر على ما يرام، تحتاج إلى توفير وظيفة تقوم بتعيين `src` و`width` خاص بالصورة إلى قيمة مصدر `srcset` تم تغيير حجمها. لا يتم تنفيذ تغيير حجم الصورة بواسطة "أداة AMP Optimizer" ويجب أن يحدث إما في وقت الإنشاء (على سبيل المثال للمواقع الثابتة) أو عبر خدمة استضافة الصور مثل [thumbor](https://github.com/thumbor/thumbor).
 
-Here is an example implementation that appends the image width to the `src`:
+في ما يلي مثال للتنفيذ الذي يُلحق عرض الصورة بـ `src`:
 
 ```js
 const ampOptimizer = AmpOptimizer.create({
@@ -137,7 +137,7 @@ const ampOptimizer = AmpOptimizer.create({
 ></amp-img>
 ```
 
-into:
+في:
 
 ```html
 <!-- Injects srcset for responsive layout -->
