@@ -1,9 +1,11 @@
 ---
-$title: CSS yang Didukung AMP untuk Email
-order: 5
+"$title": CSS yang Didukung AMP untuk Email
+order: '5'
+formats:
+- email
 teaser:
   text: Dokumen ini menguraikan fitur-fitur CSS yang saat ini didukung di dalam email AMP.
-toc: true
+toc: 'true'
 ---
 
 <!--
@@ -51,18 +53,18 @@ Menggunakan `<link rel="stylesheet" href="...">` tidak diizinkan di bagian mana 
 
 ### Pemilih sederhana <a name="simple-selectors"></a>
 
-- [Pemilih jenis](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) `elementname`
-- [Pemilih kelas](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) `.classname`
-- [Pemilih ID](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) `#idname`
-- [Pemilih universal](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) `*`
-- [Pemilih attribute](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) `[attr=value]`
+- [Type selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) `elementname`
+- [Class selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) `.classname`
+- [ID selector](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) `#idname`
+- [Universal selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) `*`
+- [Attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) `[attr=value]`
 
 ### Penggabung <a name="combinators"></a>
 
-- [Penggabung sibling yang berdekatan](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator) `A + B`
-- [Penggabung sibling umum](https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator) `A ~ B`
-- [Penggabung anak](https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator) `A > B`
-- [Penggabung keturunan](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator) `A B`
+- [Adjacent sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator) `A + B`
+- [General sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator) `A ~ B`
+- [Child combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator) `A > B`
+- [Descendant combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator) `A B`
 
 ### Kelas semu <a name="pseudo-classes"></a>
 
