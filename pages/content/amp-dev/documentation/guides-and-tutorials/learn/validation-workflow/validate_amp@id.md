@@ -148,7 +148,10 @@ Format pesan eror ini terdiri dari nama berkas, baris, kolom, dan pesan, yang se
 
 Sebagai titik awal yang baik untuk membuat halaman AMP Anda sendiri, pertimbangkan [minimum_valid_amp.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/minimum_valid_amp.html):
 
-[sourcecode:console] $ amphtml-validator minimum_valid_amp.html minimum_valid_amp.html: PASS [/sourcecode]
+[sourcecode:console]
+$ amphtml-validator minimum_valid_amp.html
+minimum_valid_amp.html: PASS
+[/sourcecode]
 
 Alat baris perintah menawarkan fitur tambahan yang meliputi menonaktifkan warna, mencetak output JSON, atau menjalankan versi tertentu dari JavaScript validator (sebagai standar, fitur ini menjalankan skrip terbaru yang dipublikasikan).
 
