@@ -4,7 +4,7 @@
 description: Pekerja Layanan (Service Worker) adalah proksi sisi klien yang berada di antara halaman Anda dan server, dan digunakan untuk membangun pengalaman offline yang fantastis, pemuatan cepat ....
 formats:
 - websites
-author: 'Ingat: Pekerja Layanan tidak akan dapat berinteraksi dengan versi halaman Anda yang disimpan di dalam cache AMP. Gunakan itu untuk perjalanan selanjutnya ke asal Anda.'
+author: CrystalOnScript
 contributors:
 - pbakaus
 ---
