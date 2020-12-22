@@ -17,7 +17,7 @@ contributors:
 
 Seperti pada halaman HTML biasa, AMP memungkinkan Anda menyematkan konten **gambar**, **video**, dan **audio**. Pelajari apa yang berbeda tentang padanan AMP dan pelajari cara menyertakannya di halaman Anda.
 
-## Mengapa bukan `<img>`, `<video>` dan `<audio>`?
+## Mengapa bukan <code><img></code>, <code><video></code>, dan <code><audio></code>?
 
 AMP tidak mendukung pasangan HTML standar untuk menampilkan media, seperti `<img>`. Kita memberikan komponen dengan nilai yang setara karena alasan berikut ini:
 
@@ -129,7 +129,7 @@ Sertakan sumber daya (konten) audio pada halaman Anda dengan menggunakan elemen 
 
 Gunakan elemen ini hanya untuk sematan berkas audio HTML5 langsung. Seperti halnya semua sumber daya eksternal yang disematkan pada halaman AMP, elemen ini akan memuat sumber daya audio yang telah ditetapkan dengan atribut `src` secara perlahan, pada waktu yang telah ditentukan oleh AMP.
 
-Include a fallback, if the browser doesn't support HTML5 audio, for example:
+Sertakan fallback, jika browser tidak mendukung audio HTML5, misalnya:
 
 [example preview="inline" playground="true" imports="amp-audio:0.1"]
 ```html
