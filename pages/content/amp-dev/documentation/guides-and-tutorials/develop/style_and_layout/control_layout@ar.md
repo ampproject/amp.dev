@@ -86,12 +86,12 @@ The following values can be used in the `layout` attribute:
     </tr>
     <tr>
       <td data-th="Layout type"><code>flex-item</code></td>
-      <td data-th="Description">No</td>
+      <td data-th="Description">لا</td>
       <td data-th="Behavior">يشغل العنصر والعناصر الأخرى في الأصل الخاص به المساحة المتبقية في الحاوية الأصل عند يكون الأصل حاوية مرنة (أي الحاوية <code>display:flex</code>). يتم تحديد حجم العنصر بواسطة العنصر الأصل وعدد العناصر الأخرى داخل الأصل وفقًا لتخطيط <code>display:flex</code> من CSS.</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>intrinsic</code></td>
-      <td data-th="Description">Yes</td>
+      <td data-th="Description">نعم</td>
       <td data-th="Behavior">يشغل العنصر المساحة المتوفرة له ويغير حجم ارتفاعه تلقائيًا حسب نسبة الأبعاد المقدمة من سمتي <code>width</code> و<code>height</code><em>حتى</em> يصل إلى الحجم الطبيعي للعنصر أو القيد الخاص بـ CSS (على سبيل المثال أقصى عرض). يجب أن تكون سمتي العرض والارتفاع موجودتين. يعمل هذا التخطيط جيدًا مع معظم عناصر AMP، يشمل ذلك <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> و<a href="../../../../documentation/components/reference/amp-carousel.md"><code>amp-carousel</code></a>، وغيره. وتعتمد المساحة المتوفرة على العنصر الأصل ويمكن أيضًا تخصيصه باستخدام <code>max-width</code> من CSS. يختلف هذا التخطيط عن <code>responsive</code> باحتوائه على قيمة ارتفاع وعرض مضمنة. وهذا يظهر في <br>الغالب مع العنصر العائم حيث يعرض التخطيط <code>responsive</code> قيمة 0x0 ويتضخم التخطيط <code>intrinsic</code> إلى قيمة أصغر من حجمه الأصلي أو إلى أي قيد من CSS.</td>
     </tr>
   </tbody>
