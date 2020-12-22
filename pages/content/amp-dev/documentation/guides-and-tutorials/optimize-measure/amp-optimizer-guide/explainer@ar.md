@@ -1,5 +1,5 @@
 ---
-"$title": How an AMP Optimizer works
+"$title": كيف يعمل AMP Optimizer
 "$order": '1'
 description: يتخذ AMP Optimizer مستند AMPHTML صالحًا كمدخلات ويحوله إلى نسخة محسّنة عن طريق تطبيق تحسينات إضافية من الصعب القيام بها "يدويًا". يوضح هذا الدليل بالتفصيل كيفية عمل مُحسِّن AMP.
 formats:
@@ -14,23 +14,23 @@ author: sebastianbenz
 <html ⚡ i-amphtml-layout i-amphtml-no-boilerplate transformed="self;v=1">
 ```
 
-Note: AMP caches use a different transformed flag, for example, the Google AMP caches adds `transformed=google;v=1`.
+ملاحظة: تستخدم ذاكرات AMP للتخزين المؤقت علامة محوّلة مختلفة، على سبيل المثال، تضيف ذاكرات Google للتخزين المؤقت `transformed=google;v=1`.
 
-AMP Optimizers perform various optimizations on an AMP document ranging from server-side rendering layouts to image optimization. Here is an example showing the differences between an AMP page and its optimized version ([click for a large version](/static/img/docs/guides/optimized-amp-diff.png)).
+تقوم AMP Optimizers بإجراء تحسينات متنوعة على مستند AMP بدءً من تخطيطات العرض من جانب الخادم إلى تحسين الصورة. في ما يلي مثال يوضح الاختلافات بين صفحة AMP ونسختها المحسّنة ([انقر للحصول على الإصدار الكامل](/static/img/docs/guides/optimized-amp-diff.png)).
 
 <a href="/static/img/docs/guides/optimized-amp-diff.png"><amp-img lightbox layout="responsive" width="2560" height="773" src="/static/img/docs/guides/optimized-amp-diff.png"></amp-img></a>
 
-In the rest of this guide, we will introduce these optimizations in more details.
+في بقية هذا الدليل، سنعرض هذه التحسينات بمزيد من التفصيل.
 
-### Server-side rendering AMP Layouts
+### تخطيطات AMP الخاصة بالعرض من جانب الخادم
 
-Server-side rendering AMP layouts has the biggest potential to improve the loading performance of your AMP page. To avoid content jumps, AMP requires websites to add the [AMP-boilerplate code](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) in the header. The AMP-boilerplate hides the page content by setting the page body's opacity to 0. Once AMP has been loaded, it is able to calculate the layout of the page. After that, AMP sets the body's opacity to 1 making the page content visible. Unfortunately, this approach must download the AMP framework before it can render the page.
+تتمتع تخطيطات AMP للعرض من جانب الخادم بأكبر إمكانات لتحسين أداء تحميل صفحة AMP الخاصة بك. لتجنب قفزات المحتوى، تتطلب AMP من مواقع الويب إضافة رمز [AMP-boilerplate](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) في رأس الصفحة. يخفي AMP-boilerplate محتوى الصفحة عن طريق تعيين تعتيم نص الصفحة على 0. وبمجرد تحميل AMP، يمكنه حساب تنسيق الصفحة. بعد ذلك، يعيّن AMP تعتيم الجسم على 1 مما يجعل محتوى الصفحة مرئيًا. للأسف، يجب أن يقوم هذا الأسلوب بتنزيل إطار عمل AMP قبل أن يتمكن من عرض الصفحة.
 
-To improve this, AMP layouts, such as the `responsive` or `fixed-height` layout, can be rendered server-side before serving the page to the user agent. This way it becomes possible to remove the AMP-boilerplate while still avoiding [content shifts](https://web.dev/cls/) during page load.
+لتحسين ذلك، يمكن عرض تخطيطات AMP، مثل `responsive` أو `fixed-height` من جانب الخادم قبل عرض الصفحة إلى وكيل المستخدم. بهذه الطريقة، يصبح من الممكن إزالة AMP-boilerplate مع الاستمرار في تجنب [تحولات المحتوى](https://web.dev/cls/) أثناء تحميل الصفحة.
 
-Server-side rendering does three things:
+يقوم العرض من جانب الخادم بثلاثة أشياء:
 
-⁣**1. Remove the AMP boilerplate: ** for each element using an AMP layout, the layout-specific markup gets injected.
+⁣ **1. إزالة AMP boilerplate: ** لكل عنصر يستخدم تخطيط AMP، يتم إدخال الترميز الخاص بالتخطيط.
 
 ⁣**2. Inline AMP-internal CSS styles: ** the AMP-boilerplate code is replaced by the <a href="https://cdn.ampproject.org/v0.css">AMP-runtime CSS styles</a>: <style amp-runtime>...</style>. For non-server-side rendered documents, AMP adds these styles at runtime. However, server-side-rendered AMP pages require these for the AMP layouts to work before AMP has been loaded. To avoid potential version conflicts, at runtime, AMP will check if the version specified in i-amphtml-version="011905222334000" differs from the current AMP version and will update the CSS with the latest version if not.
 
@@ -38,7 +38,7 @@ Server-side rendering does three things:
 <style amp-runtime i-amphtml-version="011905222334000">html{overflow-x:hidden!important}html.i-amphtml-...</style>
 ```
 
-⁣**3. Server-side rendered AMP layouts: ** for each element using an AMP layout, the layout-specific sizer elements gets injected.
+⁣ **3. تخطيطات AMP المعروضة من جانب الخادم: ** لكل عنصر يستخدم تخطيط AMP، يتم إدخال عناصر الحجم الخاصة بالتخطيط.
 
 ```
 <amp-img src="image.jpg" width="1080" height="610" layout="responsive"
@@ -47,13 +47,13 @@ Server-side rendering does three things:
 </amp-img>
 ```
 
-Warning: The AMP boilerplate cannot always be removed. You can find out if the boilerplate has been removed, by checking if the `i-amphtml-no-boilerplate` attribute is present on the`html` element. For example, the `amp-experiment` component changes page content at runtime. To avoid content shifts requires the AMP-boilerplate code needs to be present if `amp-experiment` is used on a page.
+تحذير: لا يمكن إزالة AMP boilerplate دائمًا. يمكنك معرفة ما إذا تمت إزالة AMP boilerplate أم لا، عن طريق التحقق مما إذا كانت السمة `i-amphtml-no-boilerplate` موجودة في العنصر `html`. على سبيل المثال، يعمل المكوِّن `amp-experiment` على تغيير محتوى الصفحة في وقت التشغيل. لتجنب تحولات المحتوى، يجب أن يكون رمز AMP-boilerplate موجودًا في حالة استخدام `amp-experiment` على الصفحة.
 
-### Hero Image Optimization
+### تحسين الصورة الرئيسية
 
-An AMP Optimizer can significantly improve the time it takes to render images in the first viewport. This is critical when optimizing the [LCP times](https://web.dev/lcp/) to meet the [Core Web Vitals](https://web.dev/vitals).
+يمكن لـ AMP Optimizer تحسين الوقت الذي يستغرقه عرض الصور في إطار العرض الأول بشكل ملحوظ. يعد هذا أمرًا بالغ الأهمية عند تحسين [LCP times](https://web.dev/lcp/) لتتوافق مع [أساسيات الويب الأساسية](https://web.dev/vitals).
 
-In AMP, hero images can be explicitly declared by annotating an `amp-img` with the `data-hero` attribute:
+في AMP، يمكن الإعلان عن الصور الرئيسية صراحةً من خلال إضافة تعليق توضيحي إلى `amp-img` باستخدام السمة `data-hero`:
 
 ```
 <amp-img data-hero src="/hero.jpg" layout="responsive" width="640" height="480"></amp-img>
@@ -61,41 +61,41 @@ In AMP, hero images can be explicitly declared by annotating an `amp-img` with t
 
 تدعم AMP Optimizers صورتين رئيستين كحد أقصى على الصفحة لتجنب تعطيل النطاق الترددي للموارد الهامة الأخرى. إذا كان هذا الحد لا يناسبك، [فيرجى إخبارنا بذلك](https://github.com/ampproject/amp-toolbox/issues).
 
-AMP Optimizers will also auto-detect hero images for `amp-img`, `amp-iframe`, `amp-video`, or `amp-video-iframe` elements and inject `link rel=preload` for the image `src`. Auto-detecting works by analysing HTML markup and image layouts to detect large images in the first viewport.
+ستكتشف AMP Optimizers أيضًا تلقائيًا الصور الرئيسية لعناصر `amp-img` أو `amp-iframe` أو `amp-video` أو `amp-video-iframe` وتقوم بحقن `link rel=preload` للصورة `src` . يعمل الاكتشاف التلقائي من خلال تحليل ترميز HTML وتخطيطات الصور لاكتشاف الصور الكبيرة في منفذ العرض الأول.
 
-In case of `amp-img`, AMP Optimizers will also server-side render the `img` tag inside the `amp-img`. This enables the browser to render the image straight away without the AMP runtime being required.
+في حالة `amp-img`، ستعرض AMP Optimizers من جانب الخادم علامة `img` داخل `amp-img` . يتيح ذلك للمتصفح عرض الصورة على الفور دون الحاجة إلى وقت تشغيل AMP.
 
-### Image Optimization
+### تحسين الصورة
 
-AMP Optimizers can help you serve optimized responsive images by generating AMP Layout specific `srcset` attributes. For example, the following `amp-img` declaration:
+يمكن أن تساعدك AMP Optimizers على تقديم صور متجاوبة محسّنة من خلال إنشاء سمات `srcset` الخاصة بتخطيط AMP. على سبيل المثال، إعلان `amp-img` التالي:
 
 ```
 <amp-img src="image1.png" width="400" height="800" layout="responsive"></amp-img>
 ```
 
-is enhanced with the following `srcset` definition:
+تم تحسينه بتعريف `srcset` التالي:
 
 ```
 <amp-img src="image1.png" width="400" height="800" layout="responsive" srcset="image1.470w.png 470w, image1.820w.png 820w, image1.1440w.png 1440w"></amp-img>
 ```
 
-For this to work, your build/hosting environment needs to support resizing / optimizing images. Checkout the individual optimizer guides on how to best integrate image optimization.
+لكي يعمل هذا الأمر، تحتاج بيئة البناء/الاستضافة إلى دعم تغيير/تحسين الصور. راجع أدلة المحسن الفردية حول كيفية دمج تحسين الصورة بشكل أفضل.
 
-### AMP Module Build (Coming soon)
+### AMP Module Build (قريبًا)
 
-There is a smaller version of AMP Runtime and components available based on [JavaScript Modules](https://v8.dev/features/modules#browser) which requires users to download less JavaScript when viewing an AMP page. AMP Optimizers enable the AMP Module build by default, by transforming:
+يتوفر إصدار أصغر من AMP Runtime والمكونات استنادًا إلى [JavaScript Modules](https://v8.dev/features/modules#browser) التي تتطلب من المستخدمين تنزيل كمية أقل من JavaScript عند عرض صفحة AMP. تعمل مُحسِنات AMP على تمكين إنشاء وحدة AMP افتراضيًا عن طريق تحويل:
 
 ```
 <script async src="https://www.ampproject.org/v0.js"></script>
 ```
 
-into:
+إلى:
 
 ```
 <script type="module" async src="https://www.ampproject.org/v0.mjs"></script>
 <script nomodule async src="https://www.ampproject.org/v0.js"></script>
 ```
 
-Browsers that understand `type="module"` ignore scripts with a `nomodule` attribute. This means users with modern browsers will benefit from the smaller runtime bundles, whereas users on older browsers will fallback to the non-module version of the AMP runtime.
+المتصفحات التي تقرأ `type="module"` تتجاهل النصوص البرمجية التي تأتي بسمة `nomodule`. وهذا يعني أن المستخدمين الذين لديهم متصفحات حديثة سيستفيدون من حِزم وقت التشغيل الأصغر، في حين أن المستخدمين على المتصفحات القديمة سيعودون إلى الإصدار غير المخطط من وقت تشغيل AMP.
 
-Note: the AMP Module Build is only available for transformed AMP as it requires the AMP Runtime CSS to be inlined.
+ملاحظة: لا يتوفر AMP Module Build إلا لصفحات AMP المحولة لأنه يتطلب تضمين AMP Runtime CSS.
