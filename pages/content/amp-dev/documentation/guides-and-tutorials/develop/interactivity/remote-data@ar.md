@@ -34,8 +34,7 @@ toc: 'true'
 والآن، لنطبق هذا الأمر على مثال التجارة الإلكترونية لدينا، أولًا، نقوم بإحضار بيانات هذا القميص عند تحديد وحدة حفظ المخزون. أضف `[src]` ربط للعنصر `amp-state#shirts`:
 
 ```html
-<!-- When `selected.sku` changes, update the `src` attribute and fetch
-     JSON at the new URL. Then, merge that data under `id` ("shirts"). -->
+<!-- When `selected.sku` changes, update the `src` attribute and fetch JSON at the new URL. Then, merge that data under `id` ("shirts"). -->
 <amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
 ```
 
