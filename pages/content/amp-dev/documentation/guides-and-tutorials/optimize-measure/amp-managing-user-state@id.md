@@ -1,10 +1,10 @@
 ---
-"$title": Manage non-authenticated user state with AMP
+"$title": Mengelola status pengguna yang belum disahkan dengan AMP
 order: '2'
 formats:
 - websites
 teaser:
-  text: "**Table of contents**"
+  text: "**Daftar isi**"
 ---
 
 <!--
@@ -30,7 +30,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-**Table of contents**
+**Daftar isi**
 
 - [Background](#background)
 - [Implementation guide](#implementation-guide)
@@ -42,171 +42,171 @@ limitations under the License.
     - [Task 5: Using Client ID in linking and form submission](#task5)
 - [Strongly recommended practices](#strongly-recommended-practices)
 
-User state is an important concept on today’s web. Consider the following use cases that are enabled by managing user state:
+Status pengguna merupakan konsep yang penting pada web masa kini. Pertimbangkan kasus atau contoh penggunaan berikut ini yang diaktifkan dengan mengelola status pengguna:
 
-- A merchant builds a useful **shopping cart** that shows a user the same items during their second visit that they had added to the cart during their first visit many weeks ago. Such an experience increases the chance of the user buying that item by making sure they remain aware of the item they considered buying in the past.
-- A news publisher who can tailor **recommended articles** to a reader based on the reader’s repeated visits to the publisher’s articles, which helps keep the reader engaged and discovering more content.
-- A website developer running any type of site collects **analytics** that can tell if two pageviews belong to the same person who saw two pages or to two different people who each saw a single page. Having this insight helps to know how the site is performing, and, ultimately, how to improve it.
+- Pedagang yang membuat **keranjang belanja** berguna yang memperlihatkan kepada pengguna dalam kunjungan keduanya barang-barang yang sama dengan barang-barang yang ditambahkannya dalam kunjungan pertama beberapa minggu lalu. Pengalaman seperti ini meningkatkan peluang bahwa pengguna akan membeli barang tersebut dengan memastikan bahwa mereka mengetahui adanya barang yang mereka pertimbangkan untuk dibeli sebelumnya.
+- Penerbit berita yang dapat menyesuaikan **artikel rekomendasi** kepada pembaca berdasarkan kunjungan berulang pembaca ke artikel penerbit, dan ini membantu pembaca tetap tertarik dan melihat lebih banyak konten.
+- Pengembang situs web yang menjalankan jenis situs apa pun mengumpulkan **analitik** yang dapat memberikan informasi apakah dua tampilan halaman dilihat oleh orang yang sama atau dua orang melihat masing-masing halaman. Memiliki informasi ini membantu untuk mengetahui bagaimana kinerja situs, dan pada akhirnya, bagaimana meningkatkannya.
 
-This article is designed to help you be more successful in **managing non-authenticated user state in AMP**, a way of providing a seamless user journey even if the user hasn’t taken an action to provide their identity, like signing in. After reviewing some of the challenges and considerations in approaching this topic, this guide outlines the ways in which user state is supported by AMP and offers recommendations on how you can approach a technical implementation.
+Artikel ini dirancang untuk membantu Anda agar lebih berhasil dalam **mengelola status pengguna yang belum disahkan di AMP**, sebuah cara untuk menyediakan perjalanan pengguna yang mulus, bahkan jika pengguna belum mengambil tindakan untuk memberikan identitasnya, seperti masuk ke akunnya. Setelah mengkaji beberapa tantangan dan pertimbangan dalam pendekatan untuk topik ini, panduan ini menguraikan berbagai cara di mana status pengguna didukung oleh AMP dan menawarkan rekomendasi tentang cara Anda melakukan pendekatan terhadap sebuah penerapan teknis.
 
-## Background <a name="background"></a>
+## Latar Belakang <a name="background"></a>
 
-The topic of user state deserves special attention in AMP because AMP pages can display in multiple contexts such as on your website, in Google Search or a third party app. This introduces challenges in managing user state when users travel between these.
+Topik status pengguna layak mendapatkan perhatian khusus di AMP karena halaman AMP dapat menampilkan beberapa konteks, seperti di situs web Anda, di Google Search, atau aplikasi pihak ketiga. Ini memperkenalkan tantangan dalam mengelola status pengguna saat pengguna bergerak di antara hal-hal ini.
 
-### Display contexts for AMP pages <a name="display-contexts-for-amp-pages"></a>
+### Konteks tampilan untuk halaman AMP <a name="display-contexts-for-amp-pages"></a>
 
-You can think of AMP as a portable content format that enables content to be loaded fast anywhere. AMP documents can be displayed via three noteworthy contexts:
+Anda dapat menganggap AMP sebagai format konten portabel yang memungkinkan konten agar dapat dimuat dengan cepat di mana pun. Dokumen AMP dapat ditampilkan melalui tiga konteks yang layak diperhatikan:
 
-- The publisher's origin
-- An AMP cache
-- An AMP viewer
+- Asal penayang
+- Cache AMP
+- Penampil AMP
 
 <table>
   <tr>
-    <th width="20%">Context</th>
-    <th width="20%">Can non-AMP pages be served from here?</th>
-    <th width="20%">Can AMP pages be served from here?</th>
-    <th>Sample URL</th>
+    <th width="20%">Konteks</th>
+    <th width="20%">Dapatkah halaman non-AMP disajikan dari sini?</th>
+    <th width="20%">Dapatkah halaman AMP disajikan dari sini?</th>
+    <th>URL Sampel</th>
   </tr>
   <tr>
-    <td>Publisher’s origin</td>
-    <td>Yes</td>
-    <td>Yes</td>
+    <td>Asal penayang</td>
+    <td>Ya</td>
+    <td>Ya</td>
     <td><code>https://example.com/article.amp.html</code></td>
   </tr>
    <tr>
-    <td>AMP cache</td>
-    <td>No</td>
-    <td>Yes</td>
+    <td>Cache AMP</td>
+    <td>Tidak</td>
+    <td>Ya</td>
     <td><code>https://example-com.cdn.ampproject.org/s/example.com/article.amp.html</code></td>
   </tr>
    <tr>
-    <td>AMP viewer</td>
-    <td>No</td>
-    <td>Yes</td>
+    <td>Penampil AMP</td>
+    <td>Tidak</td>
+    <td>Ya</td>
     <td><code>https://google.com/amp/s/example.com/article.amp.html</code></td>
   </tr>
 </table>
 
-Let’s examine each of these situations more closely.
+Mari kita pelajari masing-masing situasi ini secara lebih mendalam.
 
-**Context #1: the publisher’s origin.** AMP pages are deployed so that they are originally hosted from and accessible via the publisher’s site, e.g. on `https://example.com` one might find `https://example.com/article.amp.html`.
+**Konteks #1: asal penayang.** Halaman AMP diterapkan agar dapat dikelola asalnya dari dan dapat diakses melalui situs penayang, cth. di `https://example.com` ada yang mungkin menemukan `https://example.com/article.amp.html`.
 
 Publishers can choose to publish exclusively in AMP, or to publish two versions of content (that is, AMP content "paired" with non-AMP content). The "paired" model requires some [particular steps](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/discovery) to ensure the AMP versions of pages are discoverable to search engines, social media sites, and other platforms. Both publishing approaches are fully supported; it's up to the publisher to decide on which approach to take.
 
-> **NOTE:**
+> **CATATAN:**
 > Due to the "paired" publishing model just described, the publisher’s origin (in the example above, `https://example.com`) is a context in which **both AMP and non-AMP content can be accessed**. Indeed, it’s the only context in which this can happen because AMP caches and AMP viewers, described below, only deliver valid AMP content.
 
-**Context #2: an AMP cache.** AMP files can be cached in the cloud by a third-party cache to reduce the time content takes to get to a user’s mobile device.
+**Konteks #2: sebuah cache AMP.**Berkas AMP dapat dimasukkan ke cache di cloud oleh cache pihak ketiga untuk mengurangi waktu yang diperlukan konten untuk sampai ke perangkat seluler pengguna.
 
-By using the AMP format, content producers are making the content in AMP files available to be cached by third parties. Under this type of framework, publishers continue to control their content (by publishing to their origin as detailed above), but platforms can cache or mirror the content for optimal delivery speed to users.
+Dengan menggunakan format AMP, penghasil konten membuat konten dalam berkas AMP bisa disimpan di cache oleh pihak ketiga. Dengan jenis kerangka kerja ini, penayang dapat terus mengontrol kontennya (dengan menayangkan ke asalnya sebagaimana diuraikan di atas), namun platform dapat menyimpan di cache atau mencerminkan konten untuk kecepatan penyampaian yang optimal ke pengguna.
 
-Traditionally, content served in this way originates from a different domain. For example, the [Google AMP Cache](https://developers.google.com/amp/cache/overview) uses `https://cdn.ampproject.org` to deliver content, e.g. `https://example-com.cdn.ampproject.org/s/example.com/article.amp.html`.
+Biasanya, konten yang disajikan dengan cara ini berasal dari domain yang berbeda. Contohnya, [Cache AMP Google](https://developers.google.com/amp/cache/overview) menggunakan `https://cdn.ampproject.org` untuk menyampaikan konten, cth.: `https://example-com.cdn.ampproject.org/s/example.com/article.amp.html`.
 
-**Context #3: an AMP viewer.** The AMP format is built to support embedding within third-party AMP viewers. This enables a high degree of cooperation between the AMP file and the viewer experience, benefits of which include: smart and secure preloading and pre-rendering of content and innovative affordances like swiping between full AMP pages.
+**Konteks #3: sebuah penampil AMP.** Format AMP dibuat untuk mendukung penyematan di dalam penampil AMP pihak ketiga. Ini memungkinkan kerja sama tingkat tinggi antara berkas AMP dan pengalaman penampil, manfaatnya antara lain: pra-muat dan pra-render konten yang cerdas dan aman serta kemampuan inovatif, seperti mengusap di antara halaman AMP penuh.
 
-Just like the AMP cache case, expect the domain for an AMP viewer to also be different from the publisher origin. For example, the viewer for Google Search is hosted on `https://google.com` and embeds an iframe that requests the publisher content from the Google AMP Cache.
+Sama seperti kasus cache AMP, bisa diperkirakan bahwa domain untuk penampil AMP juga akan berbeda dari asal penayang. Contohnya, penampil untuk Google Search dikelola di `https://google.com` dan menyematkan iframe yang meminta konten penayang dari Cache AMP Google.
 
-### Multiple contexts means multiple state management <a name="multiple-contexts-means-multiple-state-management"></a>
+### Multi-konteks berarti manajemen multi-status <a name="multiple-contexts-means-multiple-state-management"></a>
 
-Publishers must be prepared to manage the user state for each display context separately. AMP’s [Client ID](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#client-id) feature, which takes advantage of cookies or local storage to persist state, provides the necessary support for AMP pages to have a stable and pseudonymous identifier for the user. From an implementation point of view, either cookies or local storage are used, and AMP makes the decision which to use depending on the display context. This choice is influenced by the technical feasibility of managing this state scaled to hundreds or thousands of publishers.
+Penayang harus disiapkan untuk mengelola status pengguna untuk setiap konteks tampilan secara terpisah. Fitur [ID Klien](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#client-id) AMP, yang memanfaatkan cookie atau penyimpanan lokal untuk mempertahankan status, memberikan dukungan yang diperlukan untuk halaman AMP agar mempunyai pengenal yang stabil dan semu (pseudonymous) untuk pengguna. Dari sudut pandang penerapan, digunakan cookie atau penyimpanan lokal, dan AMP memutuskan mana yang akan digunakan sesuai dengan konteks tampilan. Pilihan ini dipengaruhi oleh kelayakan teknis dalam mengelola status ini yang berskala ratusan hingga ribuan penayang.
 
-However, publishers of AMP pages can easily end up (unwittingly) designing user journeys that involve multiple contexts. Let’s revisit our earlier look at the shopping cart use case and add some more detail to it to make a full **user story**:
+Namun, penayang halaman AMP dapat dengan mudah akhirnya merancang (tanpa disengaja) perjalanan pengguna yang melibatkan banyak konteks. Mari kita kembali ke kajian tentang contoh penggunaan keranjang belanja dan tambahkan sejumlah informasi untuk membuat **cerita pengguna** lengkap:
 
-> *On day 1, the user discovers an AMP page from Example Inc. via Google Search. Google Search loads AMP pages in an AMP viewer. While viewing the page, the user adds four items to their shopping cart but doesn't check out. Two weeks later, on day 15, the user remembers the four items they were considering to purchase and decides now is the time to buy. They access Example Inc.’s homepage at `https://example.com` directly (it is a non-AMP homepage) and finds their four items are still saved in the shopping cart.*
+> *Pada hari ke-1, pengguna menemukan halaman AMP dari Example Inc. melalui Google Search. Google Search memuat halaman AMP di penampil AMP. Saat melihat halaman tersebut, pengguna menambahkan empat barang ke keranjang belanja, namun tidak menyelesaikan belanja (check-out). Dua minggu kemudian, pada hari ke-15, pengguna mengingat keempat barang yang dipertimbangkannya untuk dibeli dan memutuskan akan membelinya sekarang. Pengguna mengakses halaman awal Example Inc. di `https://example.com` secara langsung (ini adalah halaman awal non-AMP) dan menemukan empat barang tersebut masih tersimpan di keranjang belanja.*
 
-In this scenario, the user receives a consistent shopping cart experience even though she has traversed from an AMP viewer context to a publisher origin context—and with some time passing between these events. This experience is very reasonable and, if you’re designing a shopping experience, you should expect to support it, so how do you make it happen?
+Di dalam skenario ini, pengguna menerima pengalaman keranjang belanja yang konsisten, walaupun dia telah berpindah dari konteks penampil AMP ke konteks asal penayang—dan setelah beberapa waktu berlalu di antara peristiwa ini. Pengalaman ini sangat beralasan dan, jika Anda merancang pengalaman berbelanja, Anda seharusnya memperkirakan untuk mendukungnya. Jadi, bagaimana cara Anda mewujudkannya?
 
 **To enable this and any experience involving user state, all contexts the user traverses must share their individually-maintained state with each other.** "Perfect!", you say, with the idea to share the cookie values with user identifiers across these contextual boundaries. One wrinkle: even though each of these contexts displays content controlled by the same publisher, they each see the other as a third-party because each context lives on different domains.
 
 <amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png" width="1030" height="868">
   <noscript>     <img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png">   </noscript></amp-img>
 
-As you'll see in the following discussion, being in a third-party position when interacting with cookies may present challenges, depending on how the user’s browser settings are configured. In particular, if third party cookies are blocked in a particular situation, then it will prevent the ability for information to be shared across the contexts. On the other hand, if third-party cookie operations are allowed, then information can be shared.
+Sebagaimana Anda lihat di dalam pembahasan berikut ini, mempunyai posisi pihak ketiga saat berinteraksi dengan cookie dapat menimbulkan kesulitan, tergantung bagaimana pengaturan browser pengguna dikonfigurasi. Secara khusus, jika cookie pihak ketiga diblokir di dalam suatu situasi tertentu, maka ini akan menghalangi kemampuan berbagi informasi di semua konteks. Pada sisi lain, jika operasi cookie pihak ketiga diizinkan, maka informasi dapat dibagikan.
 
-## Implementation guide <a name="implementation-guide"></a>
+## Panduan penerapan <a name="implementation-guide"></a>
 
-This section provides recommendations for managing user state. The tasks below are presented as a progression, but can largely be viewed in two chunks:
+Bagian ini menyediakan rekomendasi untuk mengelola status pengguna. Tugas-tugas di bawah ini dapat disajikan sebagai kemajuan, namun pada umumnya dapat dilihat dalam dua bagian:
 
 **Chunk #1: Fundamental implementation:** Tasks 1-4 are essential toward getting the basics working. They rely on a minimal set of features needed to get the job partially done: AMP’s Client ID substitution, reading and writing of cookies, and maintaining a backend mapping table. Why "partially"? Because the steps conveyed in these tasks rely on reading and writing cookies and because the browser’s cookie settings may prevent this in certain circumstances, this set of tasks is likely to be insufficient for fully managing user state in all scenarios.
 
-After laying the foundation, we then visit a topic with a narrower range of use cases but that offers a complete solution for those use cases.
+Setelah memaparkan dasarnya, kita akan membahas topik dengan kisaran yang lebih sempit tentang contoh penggunaan, namun menawarkan solusi lengkap untuk contoh penggunaan tersebut.
 
-**Chunk #2: Using Client ID in linking and form submission:** In Task 5, you'll learn to advantage of link traversal and/or form submission to pass AMP Client ID information across contextual boundaries where the user is traversing from one page directly to another.
+**Bagian #2: Menggunakan ID Klien dalam penautan dan pengiriman formulir:** Di dalam Tugas 5, Anda akan belajar untuk memanfaatkan traversal tautan dan/atau pengiriman formulir untuk meneruskan informasi ID Klien AMP di seluruh batasan kontekstual di mana pengguna melintas dari satu halaman langsung ke halaman lainnya.
 
-> **CAUTION:**
-> The following implementation guide advises usage of and working with cookies. Be sure to consult the [Strongly recommended practices](#strongly-recommended-practices) section for important suggestions to keep in mind.
+> **PERHATIAN:**
+> Panduan penerapan berikut ini menyarankan penggunaan cookie dan bekerja dengan cookie. Pastikan untuk merujuk bagian [Praktik-praktik yang sangat direkomendasikan](#strongly-recommended-practices) untuk mengetahui saran penting yang perlu diingat.
 
-### Before getting started <a name="before-getting-started"></a>
+### Sebelum memulai <a name="before-getting-started"></a>
 
-In walking through the technical guidance below, let's assume that you’ll be binding **user state** to a stable **identifier** that represents the user. For example, the identifier might look like `n34ic982n2386n30`. On the server side you then associate `n34ic982n2386n30` to any set of user state information, such as shopping cart content, a list of previously read articles, or other data depending on the use case.
+Dalam menelusuri panduan teknis di bawah ini, kita akan menganggap bahwa Anda akan mengikatkan **status pengguna** ke sebuah **pengenal** stabil yang mewakili pengguna. Contohnya: pengenal mungkin terlihat seperti `n34ic982n2386n30`. Di bagian server, Anda kemudian mengaitkan `n34ic982n2386n30` ke seperangkat informasi status pengguna apa pun, seperti isi keranjang belanja, daftar artikel yang telah dibaca sebelumnya, atau data lain sesuai dengan contoh penggunaan.
 
 <amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
   <noscript>     <img alt="A single identifier could be used to manage user state for many use cases" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png">   </noscript></amp-img>
 
-For clarity throughout the rest of this document, we’ll call various strings of characters that are identifiers by more readable names preceded by a dollar sign (`$`):
+Demi kejelasan di seluruh bagian dokumen berikutnya, kita akan menyebut berbagai untai karakter yang merupakan pengenal dengan nama yang lebih mudah dibaca dan diawali dengan tanda dolar (`$`):
 
 [sourcecode:text]
 n34ic982n2386n30 ⇒ $sample_id
 [/sourcecode]
 
-**Our use case:** Throughout this guide we will work on an example designed to achieve simple pageview tracking (i.e., analytics) in which we want to produce the most accurate user counting possible. This means that even if the user is accessing a particular publisher’s content from different contexts (including crossing between AMP and non-AMP pages), we want these visits to be counted toward a singular understanding of the user that is the same as if the user were browsing only on such publisher’s traditional non-AMP pages.
+**Contoh penggunaan kita:** Di seluruh panduan ini, kita akan mengerjakan sebuah contoh yang telah dirancang untuk mencapai pelacakan tampilan halaman sederhana (yaitu analitis) yang akan kita gunakan untuk menghasilkan penghitungan pengguna yang seakurat mungkin. Ini berarti bahwa bahkan jika pengguna mengakses konten penayang tertentu dari konteks yang berbeda (termasuk berpindah antara halaman AMP dan non-AMP), kita ingin agar kunjungan ini dihitung dengan satu pemahaman tentang pengguna seakan-akan pengguna tersebut hanya menelusuri halaman non-AMP tradisional penerbit tersebut
 
-**Assumption about availability of stable cookie values:** We also assume that the user is using the same device, browser, and non-private/incognito browsing, in order to assure that cookie values are preserved and available across the user’s sessions over time. If this is not the case, these techniques should not be expected to work. If this is required, look to manage user state based on the user’s authenticated (i.e. signed-in) identity.
+**Asumsi tentang ketersediaan nilai cookie yang stabil:**  Kita juga menganggap bahwa pengguna menggunakan perangkat, browser, dan penelusuran non-pribadi/samaran yang sama, agar dapat memastikan bahwa nilai-nilai cookie tersebut terjaga dan tersedia di semua sesi pengguna seiring waktu. Jika tidak demikian halnya, teknik ini tidak bisa diharapkan berhasil. Jika ini diharuskan, usahakan untuk mengelola status pengguna berdasarkan identitas (yaitu, identitas masuk) pengguna yang telah disahkan.
 
-**The concepts presented below can be extended to other use cases:** Although we focus just on the analytics use case, the concepts conveyed below can be reworked for other use cases requiring user state management across contexts.
+**Konsep yang disajikan di bawah ini dapat diperluas ke contoh penggunaan lain:**  Walaupun kita hanya berfokus pada contoh penggunaan analitis, konsep-konsep yang disampaikan di bawah ini dapat dimanfaatkan untuk contoh penggunaan lain yang memerlukan manajemen status pengguna.
 
 <a id="task1"></a>
 
-### Task 1: For non-AMP pages on the publisher origin, set up an identifier and send analytics pings <a name="task-1-for-non-amp-pages-on-the-publisher-origin-set-up-an-identifier-and-send-analytics-pings"></a>
+### Tugas 1: Untuk halaman non-AMP di asal penayang, atur pengenal dan kirimkan ping analitis <a name="task-1-for-non-amp-pages-on-the-publisher-origin-set-up-an-identifier-and-send-analytics-pings"></a>
 
-Let’s begin by configuring analytics for non-AMP pages served off of the publisher origin. This can be achieved in many ways, including using an analytics package like Google Analytics or Adobe Analytics, or by writing a custom implementation.
+Mari kita mulai dengan mengonfigurasi analitis untuk halaman non-AMP yang disajikan dari asal penayang. Ini dapat dicapai dengan berbagai cara, termasuk menggunakan paket analitis seperti Google Analytics atau Adobe Analytics, atau dengan menuliskan penerapan kustom.
 
-If you’re using an analytics package from a vendor, it’s likely that package takes care of both setting up cookies and transmitting pings via its configuration code and APIs. If this is the case, you should read through the steps below to ensure they align with your analytics approach but expect that you won’t need to make any changes as part of completing this task.
+Jika Anda menggunakan paket analitis dari vendor, kemungkinan besar paket tersebut mengurus penyiapan cookie dan pengiriman ping melalui kode konfigurasi dan API-nya. Jika demikian halnya, Anda harus membaca langkah-langkah di bawah ini dengan saksama untuk memastikannya selaras dengan pendekatan analitis Anda, namun perkirakan bahwa Anda tidak akan perlu membuat perubahan apa pun sebagai bagian dari penyelesaian tugas ini.
 
-The rest of this task offers guidance if you are looking to set up your own analytics.
+Bagian selanjutnya dari tugas ini menawarkan panduan jika Anda ingin menyiapkan analitis Anda sendiri.
 
-##### Set up an identifier using first-party cookies <a name="set-up-an-identifier-using-first-party-cookies"></a>
+##### Menyiapkan pengenal dengan menggunakan cookie pihak pertama <a name="set-up-an-identifier-using-first-party-cookies"></a>
 
-If you have non-AMP pages being served from your publisher origin, set up a persistent and stable identifier to be used on these pages. This is typically [implemented with first-party cookies](https://en.wikipedia.org/wiki/HTTP_cookie#Tracking).
+Jika halaman non-AMP disajikan dari asal penayang Anda, atur pengenal yang persisten dan stabil untuk digunakan pada halaman ini. Ini biasanya [diterapkan dengan cookie pihak pertama](https://en.wikipedia.org/wiki/HTTP_cookie#Tracking).
 
 For the purposes of our example, let’s say you’ve set a cookie called `uid` ("user identifier") that will be created on a user’s first visit. If it’s not the user’s first visit, then read the value that was previously set on the first visit.
 
-This means there are two cases for the state of non-AMP pages on the publisher origin:
+Ini berarti ada dua kasus atau contoh untuk status halaman non-AMP di asal penayang:
 
-**Case #1: Initial visit.** Upon first landing on the non-AMP page, there will be no cookie. If you checked for the cookie before one was set, you’d see no values set in the cookie corresponding to the `uid`:
+**Kasus #1: Kunjungan awal.** Setelah tiba pertama kali di halaman non-AMP, tidak akan ada cookie. Jika Anda telah memeriksa adanya cookie sebelum ada, Anda akan melihat nilai yang disiapkan pada cookie tidak ada yang sesuai dengan `uid`:
 
 [sourcecode:bash]
 > document.cookie
   ""
 [/sourcecode]
 
-Sometime in the initial load, the cookie should be set, so that if you do this once the page is loaded, you will see a value has been set:
+Terkadang, pada pemuatan awal, cookie akan disiapkan, jadi jika Anda melakukan ini setelah halaman dimuat, Anda akan melihat sebuah nilai telah ditetapkan:
 
 [sourcecode:bash]
 > document.cookie
   "uid=$publisher_origin_identifier"
 [/sourcecode]
 
-**Case #2: Non-initial visit.** There will be a cookie set. Thus, if you open the developer console on the page, you’d see:
+**Kasus: Bukan kunjungan awal.** Tidak akan ada cookie ditetapkan. Oleh karena itu, jika Anda membuka konsol pengembang pada halaman tersebut, Anda akan melihat:
 
 [sourcecode:bash]
 > document.cookie
   "uid=$publisher_origin_identifier"
 [/sourcecode]
 
-##### Send analytics pings <a name="send-analytics-pings"></a>
+##### Mengirimkan ping analitis <a name="send-analytics-pings"></a>
 
-Once you’ve set up an identifier, you can now incorporate it in analytics pings to begin tracking pageviews.
+Setelah Anda menyiapkan sebuah pengenal, Anda kemudian dapat menggabungkannya ke dalam ping analitis untuk memulai pelacakan tampilan halaman.
 
-The specific implementation will depend on your desired configuration, but generally you’ll be looking to send pings (requests) to your analytics server, which include useful data within the URL of the request itself. Here’s an example, which also indicates how you’d include your cookie value inside of the request:
+Penerapan yang spesifik akan tergantung konfigurasi yang Anda inginkan, namun pada umumnya, Anda akan mengirimkan ping (permintaan) ke server analitis Anda, dan ini menyertakan data berguna di dalam URL permintaan itu sendiri. Berikut ini adalah contoh, di sini juga mengindikasikan bagaimana Anda menyertakan nilai cookie di dalam permintaan:
 
 [sourcecode:http]
 https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_identifier
 [/sourcecode]
 
-Note that in the above example the identifier for the user is indicated by a specific query param, `user_id`:
+Perhatikan bahwa di dalam contoh di atas, pengenal untuk pengguna diindikasikan dengan parameter kueri yang spesifik, code0}user_id:
 
 [sourcecode:text]
 user_id=$publisher_origin_identifier
@@ -216,118 +216,118 @@ The use of "`user_id`" here should be determined by what your analytics server e
 
 <a id="task2"></a>
 
-### Task 2: For AMP pages, set up an identifier and send analytics pings by including Client ID replacement in amp-analytics pings <a name="task-2-for-amp-pages-set-up-an-identifier-and-send-analytics-pings-by-including-client-id-replacement-in-amp-analytics-pings"></a>
+### Tugas 2: Untuk halaman AMP, atur pengenal dan kirimkan ping analitis dengan menyertakan pengganti ID Klien di dalam ping amp-analytics <a name="task-2-for-amp-pages-set-up-an-identifier-and-send-analytics-pings-by-including-client-id-replacement-in-amp-analytics-pings"></a>
 
-Turning now to AMP pages, let's look at how you can establish and transmit an identifier for analytics. This will be applicable regardless of the context the AMP page is presented in, so this covers any AMP page on the publisher origin, served via an AMP cache, or displayed in AMP viewer.
+Beralih ke halaman AMP, mari kita lihat bagaimana Anda dapat membuat dan mengirimkan sebuah pengenal untuk analitis. Ini akan berlaku, terlepas dari konteks penyajian halaman AMP, jadi ini mencakup halaman AMP apa pun di asal penayang, yang disajikan melalui cache AMP, atau ditampilkan di penampil AMP.
 
 Through usage of features that require Client ID, AMP will do the "under the hood" work to generate and store client ID values and surface them to the features that require them. One of the principal features that can use AMP’s Client ID is [amp-analytics](https://amp.dev/documentation/components/amp-analytics), which happens to be exactly what we’ll need to implement our analytics use case example.
 
-On AMP pages, construct an amp-analytics ping containing the Client ID:
+Pada halaman AMP, buat ping amp-analytics yang berisi ID Klien:
 
 <table>
   <tr>
-    <td width="40%"><strong>amp-analytics configuration looks like:</strong></td>
+    <td width="40%"><strong>konfigurasi amp-analytics terlihat seperti:</strong></td>
     <td width="60%"><code>https://analytics.example.com/ping?type=pageview&user_id=${clientId(uid)}</code></td>
   </tr>
   <tr>
-    <td><strong>What goes over the network looks like:</strong></td>
+    <td><strong>Yang ke jaringan terlihat seperti:</strong></td>
     <td>
-<code>https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id</code><p><em>In this case, <code>${clientId(uid)}</code> is replaced by an actual value that AMP either generates at that moment or will be returned based on what the user’s browser has already stored locally</em></p>
+<code>https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id</code><p><em>Di dalam kasus ini, <code>${clientId(uid)}</code> diganti dengan nilai aktual yang dihasilkan AMP pada saat itu atau yang akan dikembalikan AMP berdasarkan apa yang telah disimpan browser pengguna secara lokal</em></p>
 </td>
   </tr>
 </table>
 
-Take note of the fact that the parameter passed into the Client ID substitution, `${clientId(uid)`, is `uid`. This was a deliberate choice that matches the same cookie name used on the publisher origin as described in [Task 1](#task1). For the most seamless integration, you should apply the same technique.
+Perhatikan fakta bahwa parameter yang diteruskan ke dalam pengganti ID Klien, `${clientId(uid)`, adalah `uid`. Ini adalah pilihan yang disengaja yang sesuai dengan nama cookie yang digunakan di asal penayang sebagaimana dijelaskan di dalam [Tugas 1](#task1). Untuk mencapai integrasi yang paling mulus, Anda harus menerapkan teknik yang sama.
 
-Concerning the rest of the amp-analytics implementation, see the documentation for [amp-analytics configuration](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) for more detail on how to set up amp-analytics requests or to modify those of your analytics vendor. The ping can be further modified to transport additional data that you either directly define or by taking advantage of other [AMP substitutions](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
+Menyangkut penerapan amp-analytics selanjutnya, kunjungi dokumentasi untuk [konfigurasi amp-analytics](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) untuk mengetahui selengkapnya tentang cara menyiapkan permintaan amp-analytics atau untuk memodifikasi permintaan vendor analitis Anda. Ping dapat dimodifikasi lebih lanjut untuk mentransportasikan data tambahan yang Anda tentukan secara langsung atau dengan memanfaatkan [penggantian AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) lain.
 
-> **Good to know:**
+> **Pengetahuan lain:**
 > Why did we use of the name `uid` for the parameter passed to the Client ID feature? The parameter that the `clientId(...)` substitution takes is used to define scope. You can actually use the Client ID feature for many use cases and, as a result, generate many client IDs. The parameter differentiates between these use cases and so you use it to specify which use case you would like a Client ID for. For instance, you might want to send different identifiers to third parties like an advertiser and you could use the "scope" parameter to achieve this.
 
 On the publisher origin, it’s easiest to think of "scope" as what you call the cookie. By recommending a value of `uid` for the Client ID parameter here in [Task 2](#task2), we align with the choice to use a cookie called `uid` in [Task 1](#task1).
 
 <a id="task3"></a>
 
-### Task 3: Process analytics pings from pages on the publisher origin <a name="task-3-process-analytics-pings-from-pages-on-the-publisher-origin"></a>
+### Tugas 3: Proses ping analitis dari halaman di asal penayang <a name="task-3-process-analytics-pings-from-pages-on-the-publisher-origin"></a>
 
-Because of the setup performed in Tasks 1 and 2, when someone accesses the AMP version (from any context) or the non-AMP version on the publisher origin the analytics ping will use the same identifier. By following the guidance in [Task 2](#task2) to choose a Client ID "scope" that was the same name as the name of the cookie you used in [Task 1](#task1), AMP reuses the same cookie.
+Karena penyiapan yang dilakukan pada Tugas 1 dan 2, saat seseorang mengakses versi AMP (dari konteks apa pun) atau versi non-AMP di asal penayang, ping analitis akan menggunakan pengenal yang sama. Dengan mengikuti panduan di [Tugas 2](#task2) untuk memilih “cakupan” ID Klien dengan nama yang sama dengan cookie yang Anda gunakan di [Tugas 1](#task1), AMP menggunakan ulang cookie yang sama.
 
-This is illustrated in the table below:
+Hal ini digambarkan pada tabel di bawah ini:
 
 <table>
   <tr>
-    <td width="40%">An analytics ping coming from a <strong>non-AMP page on the publisher origin</strong> looks like</td>
+    <td width="40%">Sebuah ping analitis yang berasal dari <strong>halaman non-AMP di asal penayang</strong> terlihat <br>seperti</td>
     <td width="60%"><code>https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_identifier</code></td>
   </tr>
   <tr>
-    <td>An analytics ping coming from an <strong>AMP page on the publisher origin</strong> looks like</td>
+    <td>Sebuah ping analitis yang berasal dari <strong>halaman AMP di asal penayang</strong> terlihat seperti</td>
     <td>
-<code>https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_identifier</code><br><em>In this case, it's the same! By choosing a scope value of <code>uid</code> the underlying value of the <code>uid</code> cookie, which is <code>$publisher_origin_identifier</code>, gets used.</em>
+<code>https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_identifier</code><br><em>Dalam hal ini, sama! Dengan memilih nilai cakupan  <code>uid</code> nilai yang mendasari cookie <code>uid</code>, yaitu <code>$publisher_origin_identifier</code>, digunakan.</em>
 </td>
   </tr>
 </table>
 
 <a id="task4"></a>
 
-### Task 4: Process analytics pings from AMP cache or AMP viewer display contexts and establish identifier mappings (if needed) <a name="task-4-process-analytics-pings-from-amp-cache-or-amp-viewer-display-contexts-and-establish-identifier-mappings-if-needed"></a>
+### Tugas 4: Proses ping analitis dari konteks tampilan penampil AMP atau cache AMP dan buat pemetaan pengenal (jika diperlukan) <a name="task-4-process-analytics-pings-from-amp-cache-or-amp-viewer-display-contexts-and-establish-identifier-mappings-if-needed"></a>
 
-When we set up analytics pings in [Task 2](#task2) to transmit data from AMP pages displayed within an AMP cache or AMP viewer, we also created a problem. As discussed previously, AMP cache and AMP viewer contexts are different from the publisher origin context, and along with this comes as different way of maintaining identifiers. To process these pings to avoid problems like overcounting users, we’ll take some [steps](#implementation-steps) to try and reconcile identifiers as often as we can.
+Saat kita menyiapkan ping analitis di dalam [Tugas 2](#task2) untuk mengirimkan data dari halaman AMP yang ditampilkan di dalam cache AMP atau penampil AMP, kita juga menciptakan masalah. Sebagaimana telah dibahas sebelumnya, konteks cache AMP dan penampil AMP berbeda dari konteks asal penayang, dan bersama hal ini ada cara berbeda dalam mengelola pengenal. Untuk memproses ping ini demi menghindari masalah, seperti kelebihan hitung pengguna, kita akan mengambil beberapa [langkah-langkah](#implementation-steps) untuk mencoba mencocokkan pengenal sesering kita bisa.
 
-To help explain the steps we’re taking, it’s helpful to first reconsider exactly how the overcounting problem arises.
+Untuk membantu menjelaskan langkah-langkah yang kita ambil, sangat membantu jika terlebih dahulu dipertimbangkan bagaimana tepatnya masalah kelebihan hitung timbul.
 
-#### Reviewing the problem <a name="reviewing-the-problem"></a>
+#### Mengkaji masalah <a name="reviewing-the-problem"></a>
 
-Consider the following flow:
+Pertimbangkan alur yang berikut ini:
 
-1. A user visits the **AMP page in an AMP viewer display context**, such as `https://google.com/amp/s/example.com/article.amp.html`. Since the AMP viewer does not have access to the `uid` cookie on the publisher origin, a random value of `$amp_client_id` is generated to identify the user.
-2. The same user then visits **a page on the publisher origin `https://example.com`**. As described in [Task 3](#task3), the user is identified with `$publisher_origin_identifier`.
+1. Seorang pengguna mengunjungi **halaman AMP di dalam konteks tampilan penampil AMP**, seperti `https://google.com/amp/s/example.com/article.amp.html`. Karena penampil AMP tidak mempunyai akses ke cookie `uid` di asal penayang, sebuah nilai sembarang `$amp_client_id` dihasilkan untuk mengenali pengguna.
+2. Pengguna yang sama kemudian mengunjungi **sebuah halaman di asal penayang `https://example.com`**. Sebagaimana dijelaskan di dalam [Tugas 3](#task3), pengguna tersebut dikenali dengan `$publisher_origin_identifier`.
 
-Here (1) and (2) happen on different origins (or contexts). Because of this, there’s no shared state and `$amp_client_id` is different from `$publisher_origin_identifier`. So, what’s the impact? (1) is a single pageview session that looks like one user and (2) is another single pageview session that looks like it’s coming from another user. **Basically, even though the user has stayed engaged with `https://example.com` content, we overcount users and the user in (1) looks like a bounce (a single page visit).**
+Di sini, (1) dan (2) terjadi pada asal (atau konteks) yang berbeda. Oleh karena ini, tidak ada status yang sama dan `$amp_client_id` berbeda dari `$publisher_origin_identifier`. Jadi, apa dampaknya? (1) satu sesi tampilan halaman yang terlihat seperti satu pengguna dan (2) satu sesi tampilan halaman lain yang terlihat seperti dilakukan oleh pengguna lain. **Pada dasarnya, walaupun pengguna tersebut tetap terlibat dengan konten `https://example.com`, hitungan pengguna yang kita lakukan berlebihan dan pengguna pada (1) sepertinya adalah pentalan atau bounce (kunjungan satu halaman saja).**
 
-#### Solution strategy <a name="solution-strategy"></a>
+#### Strategi solusi <a name="solution-strategy"></a>
 
-To address the problem of overcounting, you should employ the following strategy, the potency of which depends on whether reading or writing of third-party cookies is permitted:
+Untuk mengatasi masalah kelebihan hitung, Anda harus menggunakan strategi berikut ini, pemanfaatannya bergantung pada apakah pembacaan atau penulisan cookie pihak ketiga diizinkan:
 
-- **Immediate identifier reconciliation: If you can access or change the publisher origin cookies**, use or create the publisher origin identifier and ignore any identifier within the analytics request. You will be able to successfully link activity between the two contexts.
+- **Pencocokan pengenal segera: Jika Anda dapat mengakses atau mengubah cookie asal penayang**, gunakan atau buat pengenal asal penayang dan abaikan pengenal apa pun di dalam permintaan analitis. Anda akan berhasil menautkan kegiatan di antara kedua konteks.
 - **Delayed identifier reconciliation: If you cannot access or change the publisher origin identifier (i.e. the cookies)**, then fall back to the AMP Client ID that comes within the analytics request itself. Use this identifier as an "**alias**", rather than using or creating a new publisher origin identifier (cookie), which you cannot do (because of third party cookie blocking), and add the alias to a **mapping table**. You will be unsuccessful in immediately linking activity between the two contexts, but by using a mapping table you may be able to link the AMP Client ID value with the publisher origin identifier on a future visit by the user. When this happens, you will have the needed information to link the activity and reconcile that the page visits in the different contexts came from the same user. Task 5 describes how to achieve a complete solution in specific scenarios where the user traverses from one page immediately to another.
 
-#### Implementation steps <a name="implementation-steps"></a>
+#### Langkah-langkah penerapan <a name="implementation-steps"></a>
 
-On the server check for an existing publisher origin identifier
+Pada server, periksa apakah sudah ada pengenal asal penayang
 
-Read the cookies sent as part of the analytics request. In our example, this means checking for the `uid` cookie from example.com.
+Baca cookie yang dikirimkan sebagai bagian dari permintaan analitis. Di dalam contoh kita, ini berarti memeriksa adanya cookie `uid` dari example.com.
 
-- If the `uid` value is successfully read, use it to record analytics data (**analytics record identifier**). Because of [Task 1](#task1), we know this identifier’s value is `$publisher_origin_identifier`. With an analytics record identifier established, we can skip ahead to the [Data storage](#data-storage) section.
-- If the `uid` value is not successfully read, proceed with the steps below involving the mapping table.
+- Jika nilai `uid` berhasil dibaca, gunakan untuk mencatat data analitis (**pengenal catatan analitis**). Berkat [Tugas 1](#task1), kita mengetahui nilai pengenal ini adalah `$publisher_origin_identifier`. Karena pengenal catatan analitis sudah dibuat, kita dapat langsung menuju bagian [Penyimpanan data](#data-storage).
+- Jika nilai `uid` tidak berhasil dibaca, lanjutkan dengan langkah-langkah di bawah ini yang melibatkan tabel pemetaan.
 
-##### Mapping table <a name="mapping-table"></a>
+##### Tabel pemetaan <a name="mapping-table"></a>
 
-Our mapping table will associate AMP Client ID values that are seen in the analytics pings to publisher origin identifiers as follows:
+Tabel pemetaan kita akan mengaitkan nilai-nilai ID Klien AMP yang terlihat di ping analitis ke pengenal asal penayang, sebagai berikut:
 
 <table>
   <tr>
-    <th width="50%"><strong>User ID on publisher origin</strong></th>
+    <th width="50%"><strong>ID Pengguna di asal penayang</strong></th>
     <th width="50%"><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
   </tr>
   <tr>
-    <td>Comes from publisher origin identifier or generated as a prospective value if the publisher origin identifier cannot be accessed.</td>
-    <td>Comes from AMP Client ID</td>
+    <td>Berasal dari pengenal asal penayang atau dihasilkan sebagai nilai prospektif jika pengenal asal penayang tidak dapat diakses.</td>
+    <td>Berasal dari ID Klien AMP</td>
   </tr>
 </table>
 
-Immediately after determining that you were unsuccessful in reading the publisher origin identifier, check if the AMP Client ID contained within the analytics ping is already used in a mapping. To do this, first consult the incoming amp-analytics request to get the Client ID value. For example, from this request:
+Setelah memastikan bahwa Anda tidak berhasil membaca pengenal asal penayang, langsung periksa apakah ID Klien AMP yang ada di dalam ping analitis sudah digunakan di dalam sebuah pemetaan. Untuk melakukan hal ini, terlebih dahulu periksa permintaan amp-analytics untuk mendapatkan nilai ID Klien. Contohnya, dari permintaan ini:
 
 [sourcecode:http]
 https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id
 [/sourcecode]
 
-we extract out the bolded portion corresponding to the AMP Client ID: `$amp_client_id`.
+kita mengekstraksi bagian yang ditebalkan sesuai dengan ID Klien AMP: `$amp_client_id`.
 
 Next, examine the mapping table to try and find the same value in the "alias" column:
 
 <table>
   <tr>
-    <th width="50%"><strong>User ID on publisher origin</strong></th>
+    <th width="50%"><strong>ID Pengguna di asal penayang</strong></th>
     <th width="50%"><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
   </tr>
   <tr>
@@ -336,34 +336,32 @@ Next, examine the mapping table to try and find the same value in the "alias" co
   </tr>
 </table>
 
-In the example above, we find a record that already exists. The value we find that’s paired with the AMP Client ID becomes the analytics record identifier. Here, that is `$existing_publisher_origin_identifier`. With an analytics record identifier established, we can skip ahead to the [Data storage](#data-storage) section.
+Di dalam contoh di atas, kita menemukan catatan yang sudah ada. Nilai yang kita temukan yang disandingkan dengan ID Klien AMP menjadi pengenal catatan analitis. Di sini, itu adalah `$existing_publisher_origin_identifier`. Karena pengenal catatan analitis sudah dibuat, kita dapat langsung menuju bagian [Penyimpanan data](#data-storage).
 
-Otherwise, if the AMP Client ID is not found in a mapping, we need to create a mapping:
+Namun, jika ID Klien AMP tidak ditemukan di dalam pemetaan, kita perlu membuat pemetaan:
 
-1. Generate a **prospective publisher origin identifier**. Let’s call this `$prospective_identifier` in the examples to follow. This value should be created in accordance with how you set up the value on the publisher origin, as described in [Task 1](#task1) above.
-2. Next, attempt to [set](https://en.wikipedia.org/wiki/HTTP_cookie#Setting_a_cookie) the prospective publisher origin identifier as a cookie on the publisher origin. This will succeed if third-party cookies can be written, and otherwise it will fail.
-3. Then, store the {prospective publisher origin identifier, AMP Client ID} pair.
+1. Buat **pengenal asal penayang prospektif**. Mari kita sebut ini `$prospective_identifier` di dalam contoh selanjutnya. Nilai ini harus dibuat sesuai dengan cara Anda menyiapkan nilai di asal penayang, sebagaimana dijelaskan di dalam [Tugas 1](#task1) di atas.
+2. Selanjutnya, coba [atur](https://en.wikipedia.org/wiki/HTTP_cookie#Setting_a_cookie) pengenal asal penayang prospektif tersebut sebagai cookie di asal penayang. Ini berhasil jika cookie pihak ketiga dapat ditulis, jika tidak, berarti gagal.
+3. Setelah itu, simpan pasangan {prospective publisher origin identifier, AMP Client ID}.
 
-The mapping we’ve created ends up looking like this:
+Pemetaan yang kita buat akhirnya akan terlihat seperti ini:
 
 <table>
   <tr>
-    <th><strong>User ID on publisher origin</strong></th>
+    <th><strong>ID Pengguna di asal penayang</strong></th>
     <th><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
   </tr>
   <tr>
-    <td>
-<code>$prospective_identifier</code>(generated just-in-time when analytics ping is received)</td>
-    <td>
-<code>$amp_client_id</code> (came from analytics ping)</td>
+    <td> <code>$prospective_identifier</code>(dibuat tepat pada waktu ping analitik diterima)</td>
+    <td> <code>$amp_client_id</code> (berasal dari ping analitik)</td>
   </tr>
 </table>
 
-We’ll use the prospective publisher origin identifier as the analytics record identifier since that’s the value associated with the state on the publisher origin. In this case that’s `$prospective_identifier`, which will come into play in the [Data storage](#data-storage) section that follows.
+Kita akan menggunakan pengenal asal penayang prospektif sebagai pengenal catatan analitis karena itu adalah nilai yang dikaitkan dengan status di asal penayang. Di dalam hal ini, itu adalah `$prospective_identifier`, yang akan digunakan dalam bagian [Penyimpanan data](#data-storage) selanjutnya.
 
-##### Data storage <a name="data-storage"></a>
+##### Penyimpanan data <a name="data-storage"></a>
 
-Now that you've figured out the analytics record identifier you can actually store the user state information (analytics data in this case) keyed by that identifier:
+Setelah Anda mengetahui pengenal catatan analitis, kini Anda dapat benar-benar menyimpan informasi status pengguna (data analitis dalam hal ini) yang telah ditentukan oleh pengenal itu:
 
 [sourcecode:text]
 {analytics record identifier, analytics data ...}
@@ -371,18 +369,18 @@ Now that you've figured out the analytics record identifier you can actually sto
 
 <a id="task5"></a>
 
-### Task 5: Using Client ID in linking and form submission <a name="task-5-using-client-id-in-linking-and-form-submission"></a>
+### Tugas 5: Menggunakan ID Klien dalam penautan dan pengiriman formulir <a name="task-5-using-client-id-in-linking-and-form-submission"></a>
 
-In general, when reading and writing third-party cookies is disallowed, there will be situations where managing user state is impossible to do with complete effectiveness. In Tasks 1-4, the steps we’ve taken help in two ways: (1) They provide a completely effective solution for when reading and writing third-party cookies is allowed, and (2) they set our system up to take advantage of any eventual opportunity to reconcile cross-context identifiers if immediate reconciliation is impossible due to the browser’s cookie settings.
+Secara umum, jika membaca dan menulis cookie pihak ketiga tidak diizinkan, akan ada situasi di mana mengelola status pengguna mustahil dilakukan secara benar-benar efektif. Pada Tugas 1-4, langkah-langkah yang telah kita ambil membantu dalam dua hal: (1) Menyediakan solusi yang sepenuhnya efektif jika pembacaan dan penulisan cookie pihak ketiga diizinkan, dan (2) menyiapkan sistem kita untuk memanfaatkan peluang apa pun yang terkait peristiwa untuk mencocokkan pengenal lintas konteks jika pencocokan segera mustahil karena pengaturan cookie browser.
 
-In this task, we’ll cover an additional optimization that helps when the user is navigating across contexts from one page to another page either **via linking or form submissions**. In these situations, and with the implementation work described below, it is possible to set up a fully effective scheme for managing user state across contexts.
+Di dalam tugas ini, kita akan membahas pengoptimalan tambahan yang akan membantu saat pengguna bergerak menelusuri konteks dari satu halaman ke halaman lainnya, baik **melalui penautan maupun pengiriman formulir**. Di dalam situasi ini, dan dengan kerja penerapan yang dijelaskan di bawah ini, kita dapat menyiapkan rencana yang sepenuhnya efektif untuk mengelola status pengguna di semua konteks.
 
 <amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
   <noscript>     <img alt="Links can be used to pass the identifier information of one context into another (linked) context" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png">   </noscript></amp-img>
 
-##### Using substitution features <a name="using-substitution-features"></a>
+##### Menggunakan fitur-fitur penggantian <a name="using-substitution-features"></a>
 
-Our approach will take advantage of two types of [AMP variable substitutions](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md).
+Pendekatan kita akan menggunakan dua jenis dari [penggantian variabel AMP](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md).
 
 **To update outgoing links to use a Client ID substitution:** Define a new query parameter, `ref_id` ("referrer ID"), which will appear within the URL and indicate the **originating context’s identifier** for the user. Set this query parameter to equal the value of AMP’s Client ID substitution:
 
@@ -393,7 +391,7 @@ Our approach will take advantage of two types of [AMP variable substitutions](ht
 ></a>
 [/sourcecode]
 
-**Alternative solution for passing Client ID to the outgoing links:** Define the new query parameter `ref_id` as part of the data attribute `data-amp-addparams` and for queries that needs parameter substitution provide those details as part of `data-amp-replace`. With this approach the URL would look clean and the parameters specified on `data-amp-addparams` will be dynamically added
+**Solusi alternatif untuk meneruskan ID Klien ke tautan keluar:** Tentukan parameter kueri yang baru `ref_id` sebagai bagian dari atribut data `data-amp-addparams` dan untuk kueri yang membutuhkan penggantian parameter, berikan informasi tersebut sebagai bagian dari `data-amp-replace`. Dengan pendekatan ini, URL akan terlihat bersih dan parameter yang ditentukan pada `data-amp-addparams` akan ditambahkan secara dinamis
 
 [sourcecode:html]
 <a
@@ -403,7 +401,7 @@ Our approach will take advantage of two types of [AMP variable substitutions](ht
 ></a>
 [/sourcecode]
 
-For passing multiple query parameters through `data-amp-addparams` have those `&` separated like
+Untuk meneruskan parameter beberapa kueri melalui `data-amp-addparams` buat `&` terpisah, seperti
 
 [sourcecode:html]
 <a
@@ -413,7 +411,7 @@ For passing multiple query parameters through `data-amp-addparams` have those `&
 ></a>
 [/sourcecode]
 
-**To update form inputs to use a Client ID substitution:** Define a name for the input field, such as `orig_user_id`. Specify the `default-value` of the form field to be the value of AMP’s Client ID substitution:
+**Untuk memperbarui input formulir untuk menggunakan penggantian ID Klien:** Tentukan nama untuk bidang input, seperti `orig_user_id`. Tentukan `default-value` bidang formulir untuk menjadi nilai penggantian ID Klien AMP:
 
 [sourcecode:html]
 <input
@@ -433,26 +431,26 @@ https://example.com/step2.html?ref_id=$amp_client_id
 <amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
   <noscript>     <img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png">   </noscript></amp-img>
 
-When the user lands on a page containing containing an `ref_id` value either as a URL parameter or in the header, we have the opportunity to co-process the `ref_id` identifier along with the identifier exposed via the page itself (i.e. a cookie value). By including both in an analytics ping, your analytics server can work with both values simultaneously, and, knowing they are related, reflect this relationship in your backend. The next step provides details on how to do this.
+Jika pengguna tiba di halaman yang berisi nilai `ref_id`, baik sebagai parameter URL atau pada tajuk, kita berpeluang untuk memproses pengenal `ref_id` bersama pengenal yang diungkap melalui halaman itu sendiri (yaitu sebuah nilai cookie). Dengan menyertakan keduanya di dalam ping analitis, server analitis Anda dapat bekerja dengan kedua nilai ini secara serentak, dan, karena mengetahui bahwa keduanya terkait, merefleksikan hubungan ini di backend Anda. Langkah selanjutnya memberikan uraian tentang cara melakukan hal ini.
 
-##### Extracting URL query parameters <a name="extracting-url-query-parameters"></a>
+##### Mengekstrak parameter kueri URL <a name="extracting-url-query-parameters"></a>
 
-By using substitution features, we set up a link navigation flow or form submission flow that exposes information, specifically the Client ID, to the target server and/or as a URL parameter that can be read on the client once the user completes the navigation.
+Dengan menggunakan fitur-fitur penggantian, kita menetapkan alur navigasi tautan atau alur penyerahan formulir yang mengungkap informasi, khususnya ID Klien, ke server target dan/atau sebagai parameter URL yang dapat dibaca pada klien setelah pengguna selesai bernavigasi.
 
-If the information was exposed just to the server, e.g. via a form POST, then you can proceed to process the information and render the resulting page. When processing such data, please take note of the steps regarding [Parameter validation](#parameter-validation) that are detailed below.
+Jika informasi tersebut hanya diungkapkan ke server, contohnya: melalui POST formulir, maka Anda dapat melanjutkan pemrosesan informasi dan merender halaman hasil. Saat memproses data tersebut, harap perhatikan langkah-langkah menyangkut [Validasi parameter](#parameter-validation) yang diuraikan di bawah ini.
 
-If the information is available via URL and you wish to process it, there are a couple of approaches you can use:
+Jika informasi tersebut tersedia melalui URL dan Anda ingin memprosesnya, ada beberapa pendekatan yang dapat Anda gunakan:
 
-- Process during redirect (server-side handling)
-- Process on the landing page (client-side handling)
+- Memproses selama pengalihan (penanganan di pihak atau sisi server)
+- Memproses pada halaman landing (penanganan di pihak atau sisi klien)
 
-**Process during redirect (server-side handling)**
+**Memproses selama pengalihan (penanganan di pihak atau sisi server)**
 
-To process during redirect, handle the request on the server and extract the relevant parameter(s). Please take note of the steps regarding [Parameter validation](#parameter-validation) that are detailed below. Process the data, combined with cookie values containing other relevant identifiers, and then redirect to a URL that does not contain the parameters.
+Untuk memproses selama pengalihan, tangani permintaan di server dan ekstrak parameter yang relevan. Harap perhatikan langkah-langkah menyangkut [Validasi parameter](#parameter-validation) yang diuraikan di bawah ini. Proses data, yang digabungkan dengan nilai-nilai cookie yang berisi pengenal yang relevan lainnya, lalu alihkan ke URL yang tidak mengandung parameter tersebut.
 
-**Process on the landing page (client-side handling)**
+**Memproses pada halaman landing (penanganan di pihak atau sisi klien)**
 
-To process on the landing page, the approach will vary depending on whether that page is an AMP page or a non-AMP page.
+Untuk memproses pada halaman landing atau halaman tujuan, pendekatan akan berbeda-beda tergantung apakah halaman tersebut sebuah halaman AMP atau halaman non-AMP.
 
 <amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
   <noscript>     <img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png">   </noscript></amp-img>
@@ -463,101 +461,99 @@ To process on the landing page, the approach will vary depending on whether that
 https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}
 [/sourcecode]
 
-When this gets transmitted across the network, actual values will be replaced:
+Saat ini dikirimkan ke jaringan, nilai-nilai yang aktual akan digantikan:
 
 [sourcecode:http]
 https://analytics.example.com/ping?type=pageview&orig_user_id=$referrer_page_identifier&user_id=$current_page_identifier
 [/sourcecode]
 
-Following through our examples above, we have:
+Dari contoh-contoh kita di atas, kita mempunyai:
 
 [sourcecode:text]
 $referrer_page_identifier is $amp_client_id
 $current_page_identifier is $publisher_origin_id
 [/sourcecode]
 
-so the ping is actually:
+jadi, ping sebenarnya:
 
 [sourcecode:http]
 https://analytics.example.com/ping?type=pageview&orig_user_id=$amp_client_id&user_id=$publisher_origin_id
 [/sourcecode]
 
-We recommend validating the authenticity of query parameter values by using the steps outlined in the [Parameter validation](#parameter-validation) section below.
+Disarankan untuk mengesahkan keaslian nilai-nilai parameter kueri dengan menggunakan langkah-langkah yang diuraikan di dalam bagian [Validasi parameter](#parameter-validation) di bawah ini.
 
-*Updates to non-AMP page:* Similarly, on a non-AMP page served from your publisher origin, extract and transmit `ref_id` value contained within the URL. Validate the authenticity of the value by following the steps outlined in the [Parameter validation](#parameter-validation) section below. Then, construct analytics pings that will include both an `orig_user_id` derived from `ref_id` and a `user_id` based on the value of the first-party cookie identifier.
+*Pembaruan pada halaman non-AMP:* Sama halnya, pada halaman non-AMP yang disajikan dari asal penayang Anda, ekstrak dan kirimkan nilai `ref_id` yang ada di dalam URL. Sahkan keaslian nilai tersebut dengan mengikuti langkah-langkah yang diuraikan di dalam bagian [Validasi parameter](#parameter-validation) di bawah ini. Lalu, buat ping analitis yang akan menyertakan `orig_user_id` yang diambil dari `ref_id` dan `user_id` berdasarkan nilai pengenal cookie pihak pertama.
 
 <blockquote>
-<p><strong>IMPORTANT:</strong></p>
-<p>If you choose to process the parameters client-side on the landing page, the landing page should remove identifier information from URLs as soon as the identifier can be captured.</p>
-<p>Before removing the parameters, be sure that other code that needs to run to read them has either:</p>
+<p><strong>PENTING:</strong></p>
+<p>Jika Anda memilih untuk memproses parameter pada sisi klien di halaman landing, halaman tersebut harus menghapus informasi pengenal dari URL segera setelah pengenal dapat diketahui.</p>
+<p>Sebelum menghapus parameter tersebut, pastikan bahwa kode lain yang perlu dijalankan untuk membacanya:</p>
 <ul>
-  <li>Run before the removal happens; or</li>
-  <li>Can access a place where the code that read and removed the parameters has stored the data</li>
+  <li>Telah berjalan sebelum penghapusan dilakukan; atau</li>
+  <li>Dapat mengakses tempat di mana kode pembaca dan parameter yang dihapus telah menyimpan datanya</li>
 </ul>
-<p>To do this on your non-AMP page, include the following JavaScript, which will remove all query parameters from the URL:</p>
-<pre>var href = location.href.replace(/\?[^{{'[% raw %]'}}#]{{'{% endraw %}'}}+/, '');
-history.replaceState(null, null, href);
-</pre>
-<p>Adapt this as needed to remove fewer query parameters.</p>
+<p>Untuk melakukan ini pada halaman non-AMP Anda, sertakan JavaScript berikut ini, yang akan menghapus semua parameter kueri dari URL:</p>
+<pre>var href = location.href.replace(/\?[^{{'[% raw %]'}}#]{{'{% endraw %}'}}+/, '');<br>history.replaceState(null, null, href);</pre>
+<p>Sesuaikan ini sesuai kebutuhan untuk menghapus lebih sedikit parameter kueri.</p>
 </blockquote>
 
-##### Processing multiple identifiers in an analytics ping <a name="processing-multiple-identifiers-in-an-analytics-ping"></a>
+##### Memproses beberapa pengenal di dalam ping analitis <a name="processing-multiple-identifiers-in-an-analytics-ping"></a>
 
-Unlike in [Task 4](#task4) where we configured the analytics ping to contain just one identifier value, with the steps we’ve taken so far in Task 5 we now have two — `orig_user_id` and `user_id`. We will next cover how to process these two identifiers that are part of the inbound analytics ping.
+Tidak seperti di dalam [Tugas 4](#task4) di mana kita mengonfigurasi ping analitis agar hanya berisi satu nilai pengenal, dengan langkah-langkah yang telah kita ambil sejauh ini di dalam Tugas 5, kini kita mempunyai dua pengenal — `orig_user_id` dan `user_id`. Selanjutnya, kita akan membahas cara memproses kedua pengenal ini yang merupakan bagian dari ping analitis yang masuk.
 
-Before we proceed, be sure to take note of the steps described in [Parameter validation](#parameter-validation) below and ensure that you are willing to trust both of the values indicated by `orig_user_id` and `user_id`.
+Sebelum kita melanjutkan, pastikan Anda memperhatikan langkah-langkah yang dijelaskan di dalam [Validasi parameter](#parameter-validation) di bawah ini dan pastikan bahwa Anda bersedia untuk memercayai kedua nilai yang diindikasikan oleh `orig_user_id` dan `user_id`.
 
 Check if either of the values corresponding to the inbound analytics ping are present in your mapping table. In our example above, the first pageview happens on an AMP page that’s NOT on the publisher origin followed by the second pageview that happens on the publisher origin. As a result, the values for the analytics ping query parameters will look like this:
 
-**Case #1: Identifier arrangement when analytics ping is sent from page on publisher origin**
+**Kasus #1: Pengaturan pengenal jika ping analitis dikirimkan dari halaman di asal penayang**
 
 <table>
   <tr>
     <th width="20%"></th>
-    <th width="40%"><strong>User ID on publisher origin</strong></th>
+    <th width="40%"><strong>ID Pengguna di asal penayang</strong></th>
     <th width="40%"><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
   </tr>
   <tr>
-    <td><strong>How it’s expressed in analytics ping</strong></td>
+    <td><strong>Bagaimana ini diekspresikan dalam ping analitis</strong></td>
     <td><code>user_id=$publisher_origin_id</code></td>
     <td><code>orig_user_id=$amp_client_id</code></td>
   </tr>
   <tr>
-    <td><strong>Parameter key</strong></td>
+    <td><strong>Kunci parameter</strong></td>
     <td><code>user_id</code></td>
     <td><code>orig_user_id</code></td>
   </tr>
   <tr>
-    <td><strong>Parameter value</strong></td>
+    <td><strong>Nilai parameter</strong></td>
     <td><code>$publisher_origin_id</code></td>
     <td><code>$amp_client_id</code></td>
   </tr>
 </table>
 
-Please notice that the identifier coming from the first pageview corresponds to the rightmost column and the identifier coming from the second pageview is in the middle column, in accordance with how our example flow above was constructed.
+Harap perhatikan bahwa pengenal yang berasal dari tampilan halaman pertama sesuai degan kolom paling kanan dan pengenal yang berasal dari tampilan halaman kedua berada di kolom tengah, sesuai dengan bagaimana alur contoh kita di atas dibuat.
 
-If instead the user starts on a page served from the publisher origin and subsequently navigates to an AMP page that’s NOT on the publisher origin, then the keys of the parameters will be reversed, but the corresponding way that we reference the values will not be (i.e. `$amp_client_id` always refers to an identifier stored on an AMP page that’s NOT on the publisher origin):
+Jika sebaliknya, pengguna memulai pada halaman yang disajikan dari asal penayang dan selanjutnya bernavigasi ke halaman AMP yang TIDAK berada di asal penayang, maka kunci parameter akan dibalik, namun cara untuk merujuk nilai tidak akan dibalik (yaitu `$amp_client_id`, rujuklah selalu pengenal yang disimpan di halaman AMP yang TIDAK berada di asal penayang):
 
-**Case #2: Identifier arrangement when analytics ping is sent from an AMP page that’s NOT on the publisher origin**
+**Kasus #2: Pengaturan pengenal jika ping analitis dikirimkan dari AMP halaman yang TIDAK berada di asal penayang**
 
 <table>
   <tr>
     <th width="20%"> </th>
-    <th width="40%"><strong>User ID on publisher origin</strong></th>
+    <th width="40%"><strong>ID Pengguna di asal penayang</strong></th>
     <th width="40%"><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
   </tr>
   <tr>
-    <td><strong>How it’s expressed in analytics ping</strong></td>
+    <td><strong>Bagaimana ini diekspresikan dalam ping analitis</strong></td>
     <td><code>orig_user_id=$publisher_origin_id</code></td>
     <td><code>user_id=$amp_client_id</code></td>
   </tr>
   <tr>
-    <td><strong>Parameter key</strong></td>
+    <td><strong>Kunci parameter</strong></td>
     <td><code>orig_user_id</code></td>
     <td><code>user_id</code></td>
   </tr>
   <tr>
-    <td><strong>Parameter value</strong></td>
+    <td><strong>Nilai parameter</strong></td>
     <td><code>$publisher_origin_id</code></td>
     <td><code>$amp_client_id</code></td>
   </tr>
@@ -565,49 +561,49 @@ If instead the user starts on a page served from the publisher origin and subseq
 
 When you are searching the mapping table, take note of which situation applies and search for values within the columns of the mapping table where you expect them to appear. For instance, if the analytics ping is being sent from a page on the publisher origin (Case #1), then check for values keyed by `user_id` in the mapping table column "User ID on publisher origin" and check for values keyed by `orig_user_id` in the column "User ID on AMP page that’s NOT on publisher origin (‘alias’)".
 
-If you cannot locate either identifier value being used in your mapping table, establish a new mapping:
+Jika Anda tidak dapat menemukan nilai pengenal yang digunakan di dalam tabel pemetaan Anda, buat pemetaan baru:
 
 - If the analytics request comes from a page on your publisher origin, then you should choose the value corresponding to `uid` to be the analytics record identifier; choose the value of `orig_uid` to be the "alias".
 - If the analytics request does not come from a page on your publisher origin, then you should choose the value corresponding to `uid` to be an "alias" value in the mapping table. Then, proceed with the remaining instructions in [Task 4](#task4) to create a prospective publisher origin identifier and attempt to set this value as a cookie on the origin.
 
-##### Parameter validation <a name="parameter-validation"></a>
+##### Validasi parameter <a name="parameter-validation"></a>
 
 Values contained in a URL can be maliciously changed, malformed, or somehow otherwise not be the values that you expect to be there. This is sometimes called cross site request forgery. Just as it is important to ensure that the analytics pings that your analytics server receives are coming from pages that you expect to be sending analytics pings, when you are "forwarding" on values that were part of the URL, be sure to validate the referrer to ensure you can trust these values.
 
-For instance, in the steps above, we constructed the following URL, intended for the user to click on and navigate to the corresponding page:
+Contohnya, di dalam langkah-langkah di atas, kita membuat URL berikut ini, yang dimaksudkan agar diklik pengguna dan bernavigasi ke halaman yang sesuai:
 
 [sourcecode:http]
 https://example.com/step2.html?orig_user_id=$amp_client_id
 [/sourcecode]
 
-However, it’s just as possible that the user or some attacker change this URL to be:
+Namun, ada kemungkinan bahwa pengguna atau penyerang mengubah URL ini menjadi:
 
 [sourcecode:http]
 https://example.com/step2.html?orig_user_id=$malicious_value
 [/sourcecode]
 
-You want to ensure that you process only instances of `$amp_client_id` and avoid using instances of `$malicious_value`.
+Anda perlu memastikan bahwa Anda hanya memproses hal seperti `$amp_client_id` dan menghindari hal seperti `$malicious_value`.
 
-**Suggested steps for validating values received via URL query parameters:** Confirm that the referrer of the landing page matches a URL you’d expect to see. This should typically be one you’ve seen carrying a previously seen identifier value in a valid CORS request. We recommend that you only accept such known identifiers.
+**Langkah-langkah yang disarankan untuk mengesahkan nilai-nilai yang diterima melalui parameter kueri URL:** Pastikan bahwa perujuk halaman landing cocok dengan URL yang Anda perkirakan akan Anda lihat. Ini seharusnya yang Anda lihat membawa nilai pengenal yang sebelumnya telah dilihat ada di dalam permintaan CORS yang valid. Kami sarankan agar Anda hanya menerima pengenal yang telah diketahui..
 
-On a non-AMP page, check `document.referrer` directly on the client side or pass the value on as part of the analytics ping to be able to validate on the server side. If the referrer value is one you can trust, then you can accept and process values that originated from the URL of the landing page, such as `orig_user_id` in the example above.
+Pada halaman non-AMP, periksa `document.referrer` langsung pada sisi klien atau teruskan nilai tersebut sebagia bagian dari ping analitis agar dapat mengesahkan pada sisi server. Jika nilai perujuk dapat Anda percayai, maka Anda dapat menerima dan memproses nilai yang dihasilkan dari URL halaman landing, seperti `orig_user_id` di dalam contoh di atas.
 
-On an AMP page, use the [Document Referrer](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#document-referrer) substitution variable to pass along the referrer value as part of the analytics ping. Server side processing is the only available option. To illustrate, here’s an analytics ping that the landing page can send that contains (1) the Client ID value of the current page, (2) a value passed via URL that we’ve set up to be the Client ID value in the referring page, and (3) the referrer information itself to validate the value of (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
+Pada halaman AMP, gunakan variabel penggantian [Perujuk Dokumen](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#document-referrer) untuk meneruskan nilai perujuk sebagai bagian dari ping analitis. Pemrosesan sisi server adalah satu-satunya pilihan yang ada. Untuk menggambarkannya, berikut ini adalah ping analitis yang dapat dikirimkan halaman landing yang berisi (1) nilai ID Klien halaman saat ini, (2) nilai yang diteruskan melalui URL yang telah kita atur menjadi nilai ID Klien di dalam halaman rujukan, dan (3) informasi perujuk itu sendiri untuk mengesahkan nilai (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
 
-If you cannot trust the referrer, then reject any values provided via URL parameters and do not use them.
+Jika Anda tidak dapat memercayai perujuk, maka tolak nilai apa pun yang disediakan melalui parameter URL dan jangan gunakan.
 
-## Strongly recommended practices <a name="strongly-recommended-practices"></a>
+## Praktik-praktik yang sangat direkomendasikan <a name="strongly-recommended-practices"></a>
 
-### Keep just one association <a name="keep-just-one-association"></a>
+### Mempertahankan satu hubungan saja <a name="keep-just-one-association"></a>
 
-**Only one association between identifiers from any two contexts should be maintained.** If an AMP Client ID that you have previously associated with a cookie or other user identifier issued by you is seen together with a new cookie or user identifier that you issue, you should delete all state you held against the previous cookie and user identifier.
+**Hanya satu hubungan di antara pengenal dari dua konteks mana saja yang harus dipertahankan.** Jika ID Klien AMP yang sebelumnya telah Anda hubungkan atau kaitkan dengan sebuah cookie atau pengenal pengguna lain yang Anda buat terlihat bersama cookie atau pengenal pengguna baru yang Anda buat, Anda harus menghapus semua status yang Anda buat untuk cookie dan pengenal pengguna sebelumnya.
 
-These steps will help ensure alignment with users’ expectations of privacy. As detailed in the preceding sections, managing user state in AMP will often involve storing and associating different identifiers across multiple contexts where AMP content is displayed. **This situation should never be abused to reconstitute data or perform tracking that the user would not expect or that you have not clearly disclosed to the user, such as, for example, after the user has deleted his or her cookies for your sites.**
+Langkah-langkah ini akan membantu memastikan keselarasan dengan ekspektasi privasi pengguna. Sebagaimana telah diuraikan di dalam bagian sebelum ini, mengelola status pengguna di dalam AMP akan sering melibatkan penyimpanan dan pengaitan atau penghubungan berbagai pengenal di beberapa konteks di mana konten AMP ditampilkan. **Situasi ini tidak boleh disalahgunakan untuk menyusun data kembali atau melakukan pelacakan yang tidak diduga pengguna atau yang belum Anda ungkapkan dengan jelas kepada pengguna, seperti, contohnya, setelah pengguna menghapus cookie-nya dari situs Anda.**
 
-### Respect cookie and local storage deletions <a name="respect-cookie-and-local-storage-deletions"></a>
+### Menghormati penghapusan cookie dan penyimpanan lokal <a name="respect-cookie-and-local-storage-deletions"></a>
 
-**You should respect all applicable privacy controls that are made available to the user, including any such controls creating the ability to delete all cookies and local storage.** At no time should the AMP Client ID or AMP infrastructure be [used to reconstitute a deleted identifier](https://en.wikipedia.org/wiki/Zombie_cookie) after a user expressly deletes one side of an identifier relationship.
+**Anda harus menghormati semua kontrol privasi yang berlaku yang disediakan untuk pengguna, termasuk kontrol yang memberikan kemampuan untuk menghapus semua cookie dan penyimpanan lokal.** Kapan pun, infrastruktur ID Klien AMP atau AMP tidak boleh [digunakan untuk menyusun kembali pengenal yang telah dihapus](https://en.wikipedia.org/wiki/Zombie_cookie) setelah pengguna dengan tegas menghapus satu sisi hubungan pengenal.
 
-### Comply with local laws and regulations <a name="comply-with-local-laws-and-regulations"></a>
+### Mematuhi undang-undang dan peraturan setempat <a name="comply-with-local-laws-and-regulations"></a>
 
-**Associating cookies and/or identifiers from two or more domains might require updating your privacy policy, providing additional user disclosures, or obtaining end user consent in some jurisdictions.** The usage of the AMP Client ID, which uses cookies or local storage as a means of persistent storage to offer a stable identifier, should be analyzed by each publisher with regard to all applicable laws and regulations regarding data collection, storage, processing, and user notice.
+**Cookie dan/atau pengenal terkait dari dua atau lebih domain mungkin mengharuskan Anda memperbarui kebijakan privasi Anda, menyediakan pengungkapan pengguna tambahan, atau memperoleh izin pengguna di beberapa yurisdiksi.** Penggunaan ID Klien AMP, yang menggunakan cookie atau penyimpanan lokal sebagai cara penyimpanan yang persisten untuk menawarkan pengenal yang stabil, harus dianalisis oleh setiap penayang, sehubungan dengan semua hukum dan peraturan yang berlaku menyangkut pengumpulan, penyimpanan, dan pemrosesan data serta pemberitahuan pengguna.
