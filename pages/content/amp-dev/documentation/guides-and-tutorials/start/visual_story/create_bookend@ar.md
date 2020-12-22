@@ -1,5 +1,5 @@
 ---
-"$title": Creating the bookend
+"$title": إنشاء نهاية قصة
 "$order": '7'
 description: الآن بعد أن أضفت جميع صفحاتك، فلنلقِ نظرة على الشاشة الأخيرة من القصة، نهاية القصة. هذه الشاشة الأخيرة تختتم القصة ...
 author: bpaduch
@@ -54,7 +54,7 @@ author: bpaduch
 </tr></thead>
 <tbody>
   <tr>
-    <td>heading</td>
+    <td>عنوان</td>
     <td>Allows you to specify a heading to group articles.   <pre class="nopreline">
   {
     "type": "heading",
@@ -79,7 +79,7 @@ author: bpaduch
   </tr>
   <tr>
     <td>landscape</td>
-    <td>Allows you to link to articles or other content, like videos. The image associated with this type is larger and in landscape format.   <pre class="nopreline">
+    <td>يسمح لك بربط المقالات أو محتوى آخر مثل مقاطع الفيديو. أما الصورة المقترنة بهذا النوع فهي أكبر وبتنسيق أفقي.   <pre class="nopreline">
   {
     "type": "landscape",
     "title": "Learn about border collies",
@@ -89,11 +89,12 @@ author: bpaduch
   },
   </pre>     <br>     <pre data-md-type="custom_pre"><figure class="alignment-wrapper half">
       <amp-img src="/static/img/docs/tutorials/amp_story/bookend_landscape.png" width="720" height="647" layout="responsive" alt="bookend landscape article"></amp-img>
-    </figure></pre>     </td>
+    </figure></pre>
+</td>
   </tr>
   <tr>
     <td>portrait</td>
-    <td>Allows you to link to stories or other content.  The image associated with this type is larger and in portrait format.   <pre class="nopreline">
+    <td>يسمح لك بربط القصص أو محتوى آخر. أما الصورة المرتبطة بهذا النوع فهي أكبر وبتنسيق عمودي.   <pre class="nopreline">
   {
     "type": "portrait",
     "title": "Learn about macaws",
@@ -103,11 +104,12 @@ author: bpaduch
   },
   </pre>     <br>     <pre data-md-type="custom_pre"><figure class="alignment-wrapper half">
       <amp-img src="/static/img/docs/tutorials/amp_story/bookend_portrait.png" width="720" height="1018" layout="responsive" alt="bookend portrait article"></amp-img>
-    </figure></pre>     </td>
+    </figure></pre>
+</td>
   </tr>
   <tr>
     <td>cta-link</td>
-    <td>Allows you to specify calls to action links that are displayed as buttons (e.g., read more, Subscribe).   <pre class="nopreline">
+    <td>يسمح لك بتحديد روابط الدعوة إلى اتخاذ إجراء والتي يتم عرضها كأزرار (على سبيل المثال، اقرأ المزيد، اشترك).   <pre class="nopreline">
   {
     "type": "cta-link",
     "links": [
@@ -119,7 +121,8 @@ author: bpaduch
   }
   </pre>     <br>     <pre data-md-type="custom_pre"><figure class="alignment-wrapper half">
       <amp-img src="/static/img/docs/tutorials/amp_story/bookend_cta.png" width="720" height="137" layout="responsive" alt="bookend cta"></amp-img>
-    </figure></pre>     </td>
+    </figure></pre>
+</td>
   </tr>
 </tbody>
 </table>
