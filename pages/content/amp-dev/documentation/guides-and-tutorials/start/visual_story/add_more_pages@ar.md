@@ -17,9 +17,7 @@ Now that you are familiar with adding a page to a Web Story, adding the next pag
   <tr>
     <td width="60%">
       <ul>
-        <li>Contains 1 layer:       <ul>         <li>Implements the <a href="create_cover_page.md#vertical"><code>vertical</code></a> template.</li>         <li>Contains 3 elements:           <ul>             <li>An <code><h1></code> element with the title: <em>Cats</em>
-</li>             <li>A responsive <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> (<code class="filename">cat.jpg</code>, 720 x 1280px)</li>             <li>A <code><q></code> element for the following quotation: <em>Dogs come when they're called. Cats take a message and get back to you. --Mary Bly</em>
-</li>           </ul>         </li>       </ul>
+        <li>تحتوي على طبقة واحدة: <ul> <li>تطبِّق النموذج <a href="create_cover_page.md#vertical"><code>vertical</code></a>.</li> <li>تتضمن 3 عناصر: <ul> <li>عنصر <code><h1></code> بالاسم: <em>قطط</em> </li> <li> <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> (<code class="filename">cat.jpg</code>، 720 x 1280 بكسل) سريعة الاستجابة</li> <li>عنصر <code></code> للاقتباس التالي: <em>تجري الكلاب نحوك عند استدعائها. فيما تتلقى القطط رسالة وتعود إليك. --Mary Bly</em> </li>           </ul>         </li>       </ul>
 </li>
 </ul>
     </td>
@@ -35,11 +33,7 @@ Now that you are familiar with adding a page to a Web Story, adding the next pag
   <tr>
     <td width="60%">
       <ul>
-        <li>Contains 2 layers:       <ul>         <li>
-<b>Layer 1</b>: Implements the <a href="create_cover_page.md#fill"><code>fill</code></a> template, and contains a responsive <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> (<code class="filename">dog.jpg</code>, 720 x 1280px).</li>         <li>
-<b>Layer 2</b>:  Implements the <a href="create_cover_page.md#thirds"><code>thirds</code></a> template and contains 2 elements:           <ul>             <li>An <code><h1></code> element with the title: <em>Dogs</em>
-</li>             <li>A <code><p></code> element that specifies a <a href="create_cover_page.md#thirds"><code>grid-area</code></a> that occupies the <a href="create_cover_page.md#thirds"><code>lower-third</code></a> and contains the following text: <em>Dogs were probably the first tame animals. They have accompanied humans for some 10,000 years. Some scientists assert that all dogs, domestic and wild, share a common ancestor in the small South Asian wolf.</em>
-</li>           </ul>         </li>       </ul>
+        <li>تحتوي على طبقتين: <ul> <li> <b>الطبقة 1</b>: تطبِّق النموذج <a href="create_cover_page.md#fill"><code>fill</code></a> وتتضمن <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> (<code class="filename">dog.jpg</code>, 720 x 1280 بكسل) سريعة الاستجابة.</li> <li> <b>الطبقة 2</b>: تطبِّق النموذج <a href="create_cover_page.md#thirds"><code>thirds</code></a> وتحتوي على عنصرين: <ul> <li>عنصر <code><h1></code> بالاسم: <em>كلاب</em> </li> <li>وعنصر <code><br></code> الذي يحدد <a><code>grid-area</code></a> التي تحتل <a><code>lower-third</code></a> وتتضمن النص التالي: <em>ربما كانت الكلاب هي الحيوانات المروضة الأولى. لقد رافقوا البشر منذ حوالي 10000 عام. ويؤكد بعض العلماء أن جميع الكلاب، المنزلية منها والبرية، تتشارك أسلاف مشتركة من ذئب جنوب آسيا الصغير.</em> </li>           </ul>         </li>       </ul>
 </li>
 </ul>
     </td>
@@ -55,14 +49,9 @@ Now that you are familiar with adding a page to a Web Story, adding the next pag
   <tr>
     <td width="60%">
       <ul>
-      <li>Contains 3 layers:       <ul>         <li>
-<b>Layer 1</b>: Implements the <a href="create_cover_page.md#fill"><code>fill</code></a> template, and contains a responsive <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> (<code class="filename">bird.jpg</code>, 720 x 1280px).</li>         <li>
-<b>Layer 2</b>  Implements the <a href="create_cover_page.md#vertical"><code>vertical</code></a> template and contains one element:           <ul>             <li>An <code><h1></code> element with the title: <em>Birds</em>
-</li>           </ul>         </li>         <li>
-<b>Layer 3</b>:  Implements the <a href="create_cover_page.md#vertical"><code>vertical</code></a> template and contains one element:           <ul>             <li>A <code><q></code> element for the following quotation: <em>A bird is three things: Feathers, flight and song, And feathers are the least of these.--Marjorie Allen Seiffert</em>
-</li>             <li>This third layer specifies <code>class="bottom"</code> to align the child elements to the bottom of screen.</li>           </ul>         </li>       </ul>
+      <li>تحتوي على 3 طبقات:       <ul>         <li> <b>الطبقة 1</b>: تطبِّق قالب <a href="create_cover_page.md#fill"><code>fill</code></a> وتتضمن <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> (<code class="filename">bird.jpg</code>, 720 x 1280 بكسل).</li>         <li> <b>الطبقة 2</b>  تطبِّق القالب <a href="create_cover_page.md#vertical"><code>vertical</code></a> وتتضمن:           <ul>             <li>عنصر <code><h1></code> بالاسم: <em>طيور</em> </li>           </ul>         </li>         <li> <b>الطبقة 3</b>:  تطبِّق القالب <a href="create_cover_page.md#vertical"><code>vertical</code></a> وتحتوي على عنصر واحد:           <ul>             <li>عنصر <code><q></code> للاقتباس التالي: <em>يتكون الطائر عبارة عن ثلاثة أشياء: الريش، والطيران، والغناء؛ أقلها الريش.--Marjorie Allen Seiffert</em> </li>             <li>تحدد الطبقة الثالثة هذه <code>class="bottom"</code> لمحاذاة العناصر التابعة في الجزء السفلي من الشاشة.</li>           </ul>         </li>       </ul>
 </li>
-      <li>Plays an audio file in the background while the page is displayed. You can play audio in the background for the whole story or for a single page.  To play audio for a page, add the <code>background-audio="assets/bird-singing.mp3"</code> attribute to the <code><amp-story-page></code> element.</li>
+      <li>تشغِّل ملفًا صوتيًا في الخلفية أثناء عرض الصفحة. ويمكنك تشغيل الصوت في الخلفية للقصة بأكملها أو لصفحة واحدة. لتشغيل ملف صوتي لصفحة، أضف السمة <code>background-audio="assets/bird-singing.mp3"</code> إلى العنصر <code><amp-story-page></code>.</li>
       </ul>
     </td>
     <td>{{ image('/static/img/docs/tutorials/amp_story/pg3-birds.png', 720, 1280, alt='Page 3 - Birds' ) }}</td>
@@ -77,13 +66,7 @@ Demonstrates how to arrange text and display a screen-filling video for the page
   <tr>
     <td width="60%">
       <ul>
-      <li>Contains 3 layers:       <ul>         <li>
-<b>Layer 1</b>: Implements the <code>fill</code> template, and contains a responsive <a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a> (<code class="filename">rabbit.mp4</code>).           <ul>             <li>Remember to add the <strong>required script</strong> for the <a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a> component in your <code><head></code> section so the video appears.</li>             <li>Specify a <code>poster</code> image (<code class="filename">rabbit.jpg</code>). This attribute is <strong>required</strong> for valid AMP stories.</li>             <li>Set the video to play automatically with the <code>autoplay</code> attribute. This attribute is <strong>required</strong> for valid AMP stories.</li>             <li>Set the video to automatically loop back with the <code>loop</code> attribute.</li>             <li>Set the dimensions to <code>width="720"</code> <code>height="1280"</code> and <code>layout="responsive"</code>.</li>           </ul>
-</li>         <li>
-<b>Layer 2</b>  Implements the <code>vertical</code> template and contains one element:           <ul>             <li>An <code><h1></code> element with the title: <em>Rabbits</em>
-</li>           </ul>         </li>         <li>
-<b>Layer 3</b>:  Implements the <code>vertical</code> template and contains one element:           <ul>             <li>A <code><p></code> element that contains the following text: <em>Rabbits can learn to follow simple voice commands and come when called by name, and are curious and playful</em>.</li>             <li>Apply the <code>bottom</code> CSS class to the layer to align the child elements to the bottom of screen.</li>           </ul>         </li>
-</ul>
+      <li>تحتوي على 3 طبقات:       <ul>         <li> <b>الطبقة 1</b>: تطبِّق النموذج <code>fill</code> وتتضمن <a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a> (<code class="filename">rabbit.mp4</code>) سريع الاستجابة.           <ul>             <li>تذكر إضافة <strong>النص البرمجي المطلوب</strong> لمكون <a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a> في قسم <code></code> الخاص بك ليتسنى ظهور الفيديو.</li>             <li>حدد صورة <code>poster</code> (<code class="filename">rabbit.jpg</code>). هذه السمة <strong>مطلوبة</strong> للحصول على قصص AMP صالحة.</li>             <li>قم بتعيين ليعمل تلقائيًا باستخدام السمة <code>autoplay</code>. هذه السمة <strong>مطلوبة</strong> للحصول على قصص AMP صالحة.</li>             <li>قم بتعيين الفيديو ليعمل تلقائيًا مرة أخرى على نحو متواصل باستخدام السمة <code>loop</code>.</li>             <li>قم بتعيين الأبعاد إلى <code>width="720"</code> <code>height="1280"</code> <code>layout="responsive"</code>.</li>           </ul> </li>         <li> <b>الطبقة 2</b>  تطبِّق النموذج <code>vertical</code> وتتضمن:           <ul>             <li>عنصر <code><h1></code> بالاسم: <em>أرانب</em> </li>           </ul>         </li>         <li> <b>الطبقة 3</b>:  تطبِّق النموذج <code>vertical</code> وتتضمن عنصرًا واحدًا:           <ul>             <li>عنصر <code><p></code> يحتوي على النص التالي: <em>يمكن للأرانب أن تتعلم اتباع الأوامر الصوتية البسيطة وأن تجري نحوك عند مناداتها بالاسم وتكون فضولية ومرحة</em>.</li>             <li>طبِّق فئة CSS <code>bottom</code> على الطبقة لمحاذاة العناصر التابعة في الجزء السفلي من الشاشة.</li>           </ul>         </li> </ul>
 </li>
       </ul>
     </td>
