@@ -20,7 +20,7 @@ Gunakan server web lokal untuk melihat pratinjau situs web tersebut.
 
 [tip type="default"] **KIAT –** Agar server web cepat, jalankan `python -m SimpleHTTPServer`. [/tip]
 
-You should be able to view the landing page for Lyrical Lyghtning, the Mobile Music Magic festival. It has one link on the homepage to view the schedule and which stage the bands are on.
+Anda akan dapat melihat halaman landing untuk Lyrical Lightning, festival Mobile Music Magic. Ada satu tautan di halaman awal untuk melihat jadwal dan di panggung mana band berada.
 
 {{ image('/static/img/docs/tutorials/tut-lyricallyghtning.png', 594, 558, alt='Image of PWA' ) }}
 
@@ -180,7 +180,7 @@ Anda telah berhasil membuat PWA dengan AMP! Di dalam tutorial ini Anda telah bel
 - Membuat [Manifes Aplikasi Web](https://developers.google.com/web/fundamentals/web-app-manifest/)
 - Menginstal Pekerja Layanan di AMP dengan menggunakan [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md)
 - Menyesuaikan [Pekerja Layanan AMP ](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html)
-- [Prefetch links ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
+- [Mengambil Tautan Sebelumnya](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
 - Membuat sebuah halaman offline
 
 Bacalah lebih lanjut tentang [Pekerja Layanan](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html) dan [pertimbangan UX offline](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux). Pelajari cara [melacak keterlibatan dengan analitis ](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.html)dan ikuti tutorial tentang [cara mengonfigurasi analitis dasar untuk halaman AMP Anda](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/tracking-engagement.html).
