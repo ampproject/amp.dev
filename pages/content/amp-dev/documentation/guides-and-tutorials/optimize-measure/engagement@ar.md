@@ -10,7 +10,7 @@ formats:
 
 ### ساعد القراء في التعرّف عليك من خلال العلامات التجارية المتسقة والمحتوى الغني عبر صفحات AMP والصفحات التي لا تدعم AMP
 
-- **Reflect your brand in AMP pages.** Use the same header and design scheme (e.g. colors, spacing, type styles) as in your non-AMP pages to ensure your pages are recognizable and appear legitimate.
+- **اجعل صورة علامتك التجارية تنعكس في صفحات AMP.** استخدم نفس العنوان ونظام التصميم (مثل الألوان والتباعد وأنماط الكتابة) كما هو الحال في صفحاتك التي لا تدعم AMP للتأكد من أنه يمكن التعرف على صفحاتك وأنها تبدو منطقية.
 
 - **قم بعرض المحتوى الأكثر جاذبية** عند تحويل صفحاتك. قم بتضمين عناصر الصفحة الرئيسية مثل الصور ومقاطع الفيديو والتضمينات والبيانات المنظمة والتعليقات ووسائل التواصل الاجتماعي. تعرّف على كيفية [تضمين محتوى تابع لجهة خارجية](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/third_party_components.md).
 
@@ -22,19 +22,19 @@ formats:
 
 - **إنشاء رحلات مستخدمين مخصصة.** قدّم زرًا لتسجيل الدخول، وإذا كان محتواك محميًا بنظام حظر الاشتراك غير المدفوع، فنفِّذ القواعد والعروض باستخدام [`amp-access`](../../../documentation/components/reference/amp-access.md).
 
-- **Extend onward journeys.** Link to related or suggested articles and other relevant sections of your site.
+- **التوسع في متابعة الرحلات.** قم بالربط بالمقالات ذات الصلة أو المقترحة والأقسام الأخرى ذات الصلة في موقعك.
 
 - **قم بتخصيص المحتوى** بتضمين التوصيات من خلال [`amp-list`](../../../documentation/components/reference/amp-list.md).
 
 - **قم بتنفيذ قائمة** باستخدام [`amp-sidebar`](../../../documentation/components/reference/amp-sidebar.md) لتشجيع المستخدمين على استعراض بقية موقعك.
 
-- **Help readers share your content** with [`amp-social-share`](../../../documentation/components/reference/amp-social-share.md) and your own share buttons.
+- **ساعد القراء على مشاركة محتواك** باستخدام [`amp-social-share`](../../../documentation/components/reference/amp-social-share.md) وأزرار المشاركة الخاصة بك.
 
-- **Cultivate new interactions** such as lead generation, newsletter signup, and comment support with [`amp-form`](../../../documentation/components/reference/amp-form.md).
+- **شجع على تفاعلات جديدة** مثل إنشاء قوائم العملاء المحتملين والاشتراك في النشرة الإخبارية ودعم التعليقات باستخدام [`amp-form`](../../../documentation/components/reference/amp-form.md).
 
 - **استهدف أنواع الإعلانات التي تعرض تجربة جيدة للقارئ.** اكتشف أشكال إعلانات AMP مثل [`amp-sticky-ad`](../../../documentation/components/reference/amp-sticky-ad.md) و[`amp-fx-flying-carpet`](../../../documentation/components/reference/amp-fx-flying-carpet.md). اتّبع [أفضل ممارسات](../../../documentation/guides-and-tutorials/develop/monetization/index.md) تحقيق الدخل من الإعلانات.
 
-- **Drive app downloads.** Include an app install link in a banner with [`amp-app-banner`](../../../documentation/components/reference/amp-app-banner.md).
+- **احرص على زيادة تنزيلات التطبيقات.** قم بتضمين رابط تثبيت التطبيق في شعار باستخدام [`amp-app-banner`](../../../documentation/components/reference/amp-app-banner.md).
 
 - **تأكد من حدوث انتقال سريع** إلى موقع تطبيق الويب التقدمي (PWA) الخاص بك الذي لا يدعم AMP للقراء. استخدم [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) لملء ذاكرة التخزين المؤقت.
 
