@@ -74,7 +74,6 @@ elementName.toggleClass(class="className")
 
 ```html
  <div id="hamburger" tabindex=1 role=button on="tap:hamburger.toggleClass(class='close')">
-
 ```
 
 يمكن تطبيق الإجراء `toggleClass` على عناصر أخرى أيضًا والتبديل بين فئتين من خلال إضافة السمة `force`.
