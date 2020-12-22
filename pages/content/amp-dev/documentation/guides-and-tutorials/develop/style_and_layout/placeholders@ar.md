@@ -16,11 +16,11 @@ contributors:
 
 In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible.
 
-Some elements will even reward you for doing it by relaxing restrictions – for example, if you provide a placeholder for [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder), it can be used near the top of the page (which won't work without).
+حتى أن بعض العناصر ستكافئك على القيام بهذا الأامر عن طريق تخفيف القيود؛ على سبيل المثال، إذا قدمت عنصرًا نائبًا لـ [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder)، فيمكن استخدامه بالقرب من الجزء الأعلى من الصفحة (التي لن تعمل بدونها).
 
 ## العناصر النائبة
 
-The element marked with the `placeholder` attribute acts as a placeholder for the parent AMP element. If specified, a `placeholder` element must be a direct child of the AMP element. An element marked as a `placeholder` will always `fill` the parent AMP element.
+يعمل العنصر الموسوم بالسمة `placeholder` كعنصر نائب لعنصر AMP الأصلي. وإذا تم تحديده، فيجب أن يكون عنصر `placeholder` عنصرًا تابعًا مباشرًا لعنصر AMP. وسيقوم العنصر الذي تم وسمه على أنه `placeholder` بـ `fill` عنصر AMP الأصلي دائمًا.
 
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
 ```html
@@ -36,17 +36,17 @@ The element marked with the `placeholder` attribute acts as a placeholder for th
 ```
 [/example]
 
-By default, the placeholder is immediately shown for the AMP element, even if the AMP element's resources have not been downloaded or initialized. Once ready, the AMP element typically hides its placeholder and shows the content.
+بشكل افتراضي، يتم عرض العنصر النائب على الفور لعنصر AMP، حتى إذا لم يتم تنزيل موارد عنصر AMP أو تهيئتها. وبمجرد أن يصبح عنصر AMP جاهزًا، عادةً ما يقوم بإخفاء العنصر النائب وعرض المحتوى.
 
-[tip type="note"] **NOTE –**  The placeholder doesn’t have to be an AMP element; any HTML element can act as the placeholder. [/tip]
+[tip type="note"] **ملحوظة –**  ليس من الضروري أن يكون العنصر النائب عنصر AMP؛ حيث يمكن لأي عنصر HTML أن يعمل كعنصر نائب. [/tip]
 
 ## الاحتياطيات <a name="fallbacks"></a>
 
 يمكنك تحديد السمة `fallback` في عنصر ما للإشارة إلى سلوك الاحتياطي:
 
-- for any element the browser doesn’t support
-- if the content fails to load (e.g., Tweet deleted)
-- if the image type is unsupported (e.g., WebP isn't supported in all browsers)
+- لأي عنصر لا يدعمه المتصفح
+- إذا فشل تحميل المحتوى (على سبيل المثال، حذف التغريدة)
+- إذا كان نوع الصورة غير مدعوم (على سبيل المثال، WebP غير مدعوم في كل المتصفحات)
 
 يمكنك تعيين السمة `fallback` إلى *أي* عنصر HTML، وليس فقط عناصر AMP. وإذا تم تحديده، فيجب أن يكون العنصر `fallback` تابعًا مباشرًا لعنصر AMP.
 
@@ -91,7 +91,7 @@ In the following example, we use the `fallback` attribute to tell the browser to
 
 ## تفاعل العناصر النائبة والاحتياطية
 
-For AMP components that rely on dynamic content (e.g., [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md), [`amp-list`](../../../../documentation/components/reference/amp-list.md)), the interaction of fallbacks and placeholders operates as follows:
+بالنسبة إلى مكونات AMP التي تعتمد على المحتوى الديناميكي (على سبيل المثال، [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md)، [`amp-list`](../../../../documentation/components/reference/amp-list.md))، يعمل تفاعل العناصر النائبة والاحتياطية على النحو التالي:
 
 <ol>
   <li>عرض العنصر النائب أثناء تحميل المحتوى.</li>
@@ -102,4 +102,4 @@ For AMP components that rely on dynamic content (e.g., [`amp-twitter`](../../../
 
 ## إخفاء مؤشرات التحميل
 
-Many AMP elements are allowlisted to show a "loading indicator", which is a basic animation that shows that the element has not yet fully loaded. Elements can opt out of this behavior by adding the `noloading` attribute.
+يسمح للعديد من عناصر AMP بإظهار "مؤشر التحميل"، وهو رسم متحرك أساسي يوضح أن العنصر لم يتم تحميله بالكامل بعد. ويمكن للعناصر تعطيل هذا السلوك عن طريق إضافة السمة `noloading`
