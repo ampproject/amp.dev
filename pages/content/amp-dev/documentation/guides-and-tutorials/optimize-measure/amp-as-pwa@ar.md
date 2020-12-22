@@ -30,7 +30,7 @@ contributors:
 
 [/sourcecode]
 
-Then add the following somewhere within your `<body>` (modify to point to your actual Service Worker):
+ثم أضف ما يلي في مكان ما داخل `<body>` الخاص بك (قم بالتعديل للإشارة إلى عامل الخدمة الفعلي لك):
 
 [sourcecode:html]
 <amp-install-serviceworker
