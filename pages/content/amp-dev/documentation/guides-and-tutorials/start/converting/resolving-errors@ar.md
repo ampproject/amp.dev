@@ -10,8 +10,7 @@ description: في هذا القسم، سنتناول أخطاء التحقق م�
 
 سنبدأ بإصلاح الخطأ التالي:
 
-<pre class="error-text">The mandatory tag 'meta charset=utf-8' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'meta charset=utf-8' is missing or incorrect.</pre>
 
 لعرض النص عرضًا صحيحًا، تتطلب AMP تحديد مجموعة الأحرف للصفحة. ويجب أن تكون معلومات مجموعة أحرف التعريف أيضًا أول فرع في علامة `<head>`. ويتمثل سبب وجوب أن تكون هذه العلامة أولاً في تجنب إعادة تفسير المحتوى الذي تمت إضافته قبل علامة مجموعة أحرف التعريف.
 
@@ -27,8 +26,7 @@ description: في هذا القسم، سنتناول أخطاء التحقق م�
 
 الآن، دعنا نلقي نظرة على الخطأ التالي:
 
-<pre class="error-text">The mandatory tag 'link rel=canonical' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'link rel=canonical' is missing or incorrect.</pre>
 
 يحتاج كل مستند AMP إلى رابط يشير إلى الإصدار "المعياري" من ذلك المستند، وسنتعلم المزيد حول ماهية الصفحات المعيارية والأساليب المختلفة للربط المعياري في الخطوة [جعل صفحتك قابلة للاكتشاف](discoverable.md) من هذا البرنامج التعليمي.
 
@@ -54,9 +52,7 @@ description: في هذا القسم، سنتناول أخطاء التحقق م�
 
 تتطلب AMP سمة على عنصر `<html>` للجذر لإعلان الصفحة كمستند AMP.
 
-<pre class="error-text">The mandatory attribute '⚡' is missing in tag 'html ⚡ for top-level html'
-The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory attribute '⚡' is missing in tag 'html ⚡ for top-level html'<br>The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.</pre>
 
 ويمكن حل الأخطاء أعلاه ببساطة عن طريق إضافة السمة `⚡` إلى العلامة `<html>` على النحو التالي:
 
@@ -78,8 +74,7 @@ The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 
 بعد ذلك، دعنا نتعامل مع الخطأ التالي:
 
-<pre class="error-text">The mandatory tag 'meta name=viewport' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'meta name=viewport' is missing or incorrect.</pre>
 
 تتطلب AMP تعريف `width` و`minimum-scale` لمنفذ العرض، ويجب تحديد هذه القيم على أنها `device-width` و`1`، على التوالي، إذ يُعد إطار العرض علامة شائعة مضمنة في `<head>` لصفحة HTML.
 
@@ -97,8 +92,7 @@ The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 
 الخطأ التالي متعلق باستخدامنا لصفحات الأنماط:
 
-<pre class="error-text">The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invalid value 'base.css'.
-</pre>
+<pre class="error-text">The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invalid value 'base.css'.</pre>
 
 يُعد هذا الخطأ على وجه التحديد الشكوى بشأن علامة رابط صفحة الأنماط التالية في علامة `<head>`:
 
@@ -131,8 +125,7 @@ The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 
 بينما يمكن إعادة صياغة صفحات الأنماط بسهولة نسبيًا باستخدام AMP من خلال تضمين CSS، إلا أن الشيء نفسه لا ينطبق على JavaScript.
 
-<pre class="error-text">The tag 'script' is disallowed except in specific forms.
-</pre>
+<pre class="error-text">The tag 'script' is disallowed except in specific forms.</pre>
 
 بشكل عام، لا يُسمح بالنصوص البرمجية في AMP إلا إذا كانت تتبع متطلبين رئيسيين:
 
@@ -173,10 +166,7 @@ use of external JavaScript files.
 
 تشير الأخطاء التالية إلى رمز فقرة مفقود:
 
-<pre class="error-text">The mandatory tag 'noscript enclosure for boilerplate' is missing or incorrect.
-The mandatory tag 'head > style : boilerplate' is missing or incorrect.
-The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'noscript enclosure for boilerplate' is missing or incorrect.<br>The mandatory tag 'head > style : boilerplate' is missing or incorrect.<br>The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.</pre>
 
 يتطلب كل مستند AMP رمز الكود لـ AMP التالي:
 
@@ -192,8 +182,7 @@ The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.
 
 لا تدعم AMP نظائر HTML الافتراضية لعرض الوسائط، وهو ما يفسر الخطأ التالي:
 
-<pre class="error-text">The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
-</pre>
+<pre class="error-text">The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?</pre>
 
 ويحتوي AMP على مكون ويب مصمم خصيصًا لاستبدال علامة `<img>`، إنها العلامة [`<amp-img>`](../../../../documentation/components/reference/amp-img.md):
 
@@ -203,9 +192,7 @@ The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.
 
 **استبدل** العلامة [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) أعلاه بالعلامة `<img>` وابدأ في تشغيل المدقق مرة أخرى، ومن المفترض أن تتلقى عدة أخطاء جديدة:
 
-<pre class="error-text">Layout not supported: container
-The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
-</pre>
+<pre class="error-text">Layout not supported: container<br>The implied layout 'CONTAINER' is not supported by tag 'amp-img'.</pre>
 
 لماذا تسبب [`amp-img`](../../../../documentation/components/reference/amp-img.md) في تشغيل خطأ آخر؟ لأن [`amp-img`](../../../../documentation/components/reference/amp-img.md) ليس بديلًا مباشرًا لعلامة HTML التقليدية، هناك متطلبات إضافية عند استخدام [`amp-img`](../../../../documentation/components/reference/amp-img.md).
 
