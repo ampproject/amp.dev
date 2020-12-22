@@ -66,7 +66,7 @@ Sebuah pesan email AMP HARUS
 - <a name="scrpt"></a>berisi tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` di dalam tag tajuknya. [🔗](#scrpt)
 - <a name="boilerplate"></a>berisi boilerplate amp4email (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) di dalam tag tajuknya untuk pada awalnya menyembunyikan konten hingga JS AMP dimuat. [🔗](#boilerplate)
 
-The entire AMPHTML markup must not exceed 200,000 bytes.
+Seluruh markup AMPHTML tidak boleh melebihi 200.000 byte.
 
 ## Struktur dan perenderan <a name="structure-and-rendering"></a>
 
