@@ -17,7 +17,7 @@ contributors:
 
 كما هو الحال في صفحة HTML عادية، يسمح لك AMP بتضمين محتوى **الصور**، و**مقاطع الفيديو** و**الصوت** . تعرَّف على الأشياء المختلفة حول مكافئات AMP وتعرَّف على طريقة تضمينها في صفحاتك.
 
-## Why not <img>, <video> and <audio>?</audio></video>
+## لمَ لا <code><img></code>، <code><video></code> و<code><audio></code><audio>؟
 
 لا تدعم AMP مثيلات HTML لعرض الوسائط مثل `<img>`. فيما نقدم نحن مكونات مكافئة للأسباب التالية:
 
@@ -26,7 +26,7 @@ contributors:
 
 تحذير: بينما تُعد هذه المكونات غير مدعومة، إلا أنه *سيتم* عرضها، لكنAMP لن تقوم بـ [التتحقق من صحة صفحاتك](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) ولن تستفيد من الميزات التي توفرها AMP.
 
-## Images
+## الصور
 
 قم بتضمين صورة في صفحتك باستخدام العنصر [`amp-img`](../../../../documentation/components/reference/amp-img.md) على النحو التالي:
 
@@ -101,7 +101,7 @@ contributors:
 
 [tip type="note"] <strong>ملحوظة–</strong>  قم بتضمين <code><script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script></code> في رأس صفحتك لاستخدام هذا المكون. [/tip]
 
-## Video
+## فيديو
 
 قم بتضمين مقطع فيديو في صفحتك باستخدام العنصر [`amp-video`](../../../../documentation/components/reference/amp-video.md).
 
@@ -129,7 +129,7 @@ contributors:
 
 استخدم هذا العنصر فقط لتضمينات ملفات الصوت HTML5 مباشرة. يقوم العنصر بتحميل مورد الصوت المحدد عن طريق السمة `src` على نحو بطيء، وفي وقت تحدده AMP.
 
-Include a fallback, if the browser doesn't support HTML5 audio, for example:
+قم بتضمين احتياطي ، إذا كان المتصفح لا يدعم صوت HTML5 ، على سبيل المثال:
 
 [example preview="inline" playground="true" imports="amp-audio:0.1"]
 ```html
