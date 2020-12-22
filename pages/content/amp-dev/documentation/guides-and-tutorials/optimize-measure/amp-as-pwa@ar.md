@@ -41,7 +41,7 @@ contributors:
 
 إذا انتقل المستخدم إلى صفحات AMP الخاصة بك على أصلك (على عكس النقرة الأولى، والتي يتم تقديمها عادةً من ذاكرة التخزين المؤقت لصفحات AMP)، سيتولى عامل الخدمة المسؤولية ويمكنه القيام [بعدد لا يُحصى من الأمور الرائعة](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux).
 
-## The AMP Service Worker
+## عامل خدمة AMP
 
 إذا كنت هنا، فأنت تنشئ صفحات باستخدام AMP. يهتم فريق AMP بشكل كبير بوضع المستخدم في المقام الأول ومنحه تجربة ويب عالمية المستوى. للحفاظ على اتساق هذه التجارب، أنشأ فريق AMP عامل خدمة خصيصًا لـ AMP!
 
@@ -117,7 +117,7 @@ assets: ['/images/offline-header.jpg'];
 
 يعمل الفريق على تنفيذ ميزة "فرض تحديث/إزالة" إذا احتاج عامل خدمة AMP إلى التعطيل أو التغيير إذا حدث خطأ في النشر للمستخدمين.
 
-To effectively manage a service worker, you should understand how [standard HTTP caching affects the way your service worker's JavaScript is kept up to date](https://developers.google.com/web/updates/2018/06/fresher-sw). Service workers served with appropriate HTTP caching directives can resolve small bug fixes by making the appropriate changes and redeploying your service worker to your hosting environment. If you need to remove a service worker, it's a good idea to keep a simple, [no-op](https://en.wikipedia.org/wiki/NOP) service worker file handy, like the following:
+لإدارة عامل الخادم بشكل فعّال، يجب استيعاب كيفية [تأثير التخزين المؤقت HTTP القياسي في الطريقة التي يتم بها تحديث JavaScript لعامل الخدمة لديك](https://developers.google.com/web/updates/2018/06/fresher-sw). يمكن للعاملين في الخدمة الذين يتم تزويدهم بتوجيهات التخزين المؤقت المناسبة لـ HTTP حل إصلاحات الأخطاء الصغيرة من خلال إجراء التغييرات المناسبة وإعادة نشر عامل الخدمة الخاص بك إلى بيئة الاستضافة الخاصة بك. إذا كنت بحاجة إلى إزالة عامل خدمة، فمن الأفضل الاحتفاظ بملف عامل خدمة بسيط، [‏‏لم يتم إجراء أية عملية](https://en.wikipedia.org/wiki/NOP) في متناول اليد، مثل ما يلي:
 
 ```js
 self.addEventListener('install', () => {
