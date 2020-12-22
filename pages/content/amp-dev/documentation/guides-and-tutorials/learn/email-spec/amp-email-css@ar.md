@@ -53,18 +53,18 @@ limitations under the License.
 
 ### المحددات البسيطة <a name="simple-selectors"></a>
 
-- [Type selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) `elementname`
-- [Class selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) `.classname`
-- [ID selector](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) `#idname`
-- [Universal selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) `*`
-- [Attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) `[attr=value]`
+- [محدد النوع](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) `elementname`
+- [محدد الفئة](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) `.classname`
+- [محدد المعرف](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) `#idname`
+- [محدد عمومي](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) `*`
+- [محدد السمة](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) `[attr=value]`
 
 ### وحدات التجميع <a name="combinators"></a>
 
-- [Adjacent sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator) `A + B`
-- [General sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator) `A ~ B`
-- [Child combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator) `A > B`
-- [Descendant combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator) `A B`
+- [وحدة تجميع تابع مجاور](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator) `A + B`
+- [وحدة تجميع تابع عام](https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator) `A ~ B`
+- [وحدة تجميع فرعية](https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator) `A > B`
+- [وحدة تجميع تبعية](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator) `A B`
 
 ### فئات صورية <a name="pseudo-classes"></a>
 
