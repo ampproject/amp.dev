@@ -94,8 +94,7 @@ description: For web experiences requiring a high amount of customization AMP ha
 
 يتم دمج amp.dev مع AMP! بالتالي يجب أن تطابق الصور الخاصة بنا معايير [`amp-img`](../../../../documentation/components/reference/amp-img.md). تستخدم عملية الإنشاء البنية التالية لتحويل الصور إلى تنسيق `amp-img` صحيح.
 
-<div class="ap-m-code-snippet"><pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}
-</pre></div>
+<div class="ap-m-code-snippet"><pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}</pre></div>
 
 ## تصفية الأقسام
 
@@ -158,12 +157,7 @@ Read-on
 
 إذا كان الرمز الخاص بك يحتوي على أقواس مزدوجة منحنية، وعادة ما يكون الأمر كذلك إذا كنت تستخدم قوالب [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md?format=websites)، فيجب عليك طي جزء الرمز:
 
-<div class="ap-m-code-snippet"><pre>```html
-{% raw	%}
-  // code with double curly braces
-{% endraw	%}
-```
-</pre></div>
+<div class="ap-m-code-snippet"><pre>```html<br>{% raw	%}<br>  // code with double curly braces<br>{% endraw	%}<br>```</pre></div>
 
 ### قصاصات الرموز البرمجية في القوائم
 
@@ -448,7 +442,6 @@ Read-on
 
 ```html
 ## Example section <a name="example-section"></a>
-
 ```
 
 يجب فقط استخدام الأحرف والأرقام والشرطة والشرطة السفلية في الإرساء. ويرجى استخدام أسماء إرساء قصيرة باللغة الإنجليزية تطابق العنوان أو تصف القسم. تأكد من أن اسم الإرساء فريد داخل المستند.
@@ -496,15 +489,15 @@ Read-on
    </td>
   </tr>
   <tr>
-   <td>hello-world-tutorial.md    </td>
-   <td>hello_world_tutorial.md    </td>
+   <td>hello-world-tutorial.md</td>
+   <td>hello_world_tutorial.md</td>
   </tr>
   <tr>
-   <td>website-fundamentals.md    </td>
-   <td>websiteFundamentals.md    </td>
+   <td>website-fundamentals.md</td>
+   <td>websiteFundamentals.md</td>
   </tr>
   <tr>
-   <td>actions-and-events.md    </td>
-   <td>actionsandevents.md    </td>
+   <td>actions-and-events.md</td>
+   <td>actionsandevents.md</td>
   </tr>
 </table>
