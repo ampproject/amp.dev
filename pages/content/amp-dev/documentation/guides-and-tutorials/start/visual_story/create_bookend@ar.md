@@ -55,18 +55,18 @@ author: bpaduch
 <tbody>
   <tr>
     <td>عنوان</td>
-    <td>Allows you to specify a heading to group articles.   <pre class="nopreline">
+    <td>يسمح لك بتحديد عنوان رئيسي للمقالات المجمعة. <pre class="nopreline">
   {
     "type": "heading",
     "text": "More to read"
   },
   </pre>     <br>     <figure class="alignment-wrapper half">
       <amp-img src="/static/img/docs/tutorials/amp_story/bookend_heading.png" width="720" height="140" layout="responsive" alt="bookend heading"></amp-img>
-    </figure>     </td>
+    </figure></td>
   </tr>
   <tr>
     <td>small</td>
-    <td>Allows you to link to related articles with the option to include an associated small image.   <pre class="nopreline">
+    <td>يسمح لك بربط المقالات ذات الصلة بخيار تضمين صورة صغيرة مقترنة.   <pre class="nopreline">
   {
     "type": "small",
     "title": "Learn about cats",
@@ -75,7 +75,8 @@ author: bpaduch
   },
   </pre>     <br>     <pre data-md-type="custom_pre"><figure class="alignment-wrapper half">
       <amp-img src="/static/img/docs/tutorials/amp_story/bookend_small.png" width="720" height="267" layout="responsive" alt="bookend small article"></amp-img>
-    </figure></pre>   </td>
+    </figure></pre>
+</td>
   </tr>
   <tr>
     <td>landscape</td>
