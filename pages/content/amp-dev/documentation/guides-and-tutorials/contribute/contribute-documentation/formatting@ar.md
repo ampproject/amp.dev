@@ -100,43 +100,41 @@ description: For web experiences requiring a high amount of customization AMP ha
 
 قد تكون بعض المستندات متعلقة بعدة تنسيقات AMP، ولكن قد تحتاج تنسيقات معينة إلى شرح أو معلومات إضافية لا تمت بصلة مع التنسيقات الأخرى. يمكنك تصفية هذه الأقسام من خلال طيها في الرمز المختصر التالي.
 
-<div class="ap-m-code-snippet"><pre>&lsqb;filter formats="websites"]
+<div class="ap-m-code-snippet"><pre>&amp;lsqb;filter formats="websites"]
 This is only visible for [websites](?format=websites).
-&lsqb;/filter]
+&amp;lsqb;/filter]
 
-&lsqb;filter formats="websites"]
+&amp;lsqb;filter formats="websites"]
 This is only visible for [websites](?format=websites).
-&lsqb;/filter]
+&amp;lsqb;/filter]
 
-&lsqb;filter formats="websites, email"]
-This is visible for [websites](?format=websites) & [email](?format=email).
-&lsqb;/filter]
+&amp;lsqb;filter formats="websites, email"]
+This is visible for [websites](?format=websites) &amp; [email](?format=email).
+&amp;lsqb;/filter]
 
-&lsqb;filter formats="stories"]
+&amp;lsqb;filter formats="stories"]
 This is visible for [stories](?format=stories).
-&lsqb;/filter]
-</pre></div>
+&amp;lsqb;/filter]</pre></div>
 
 ## تلميحات
 
 يمكنك إضافة تلميحات واستدعاءات من خلال طي النص في الرمز المختصر التالي:
 
-<div class="ap-m-code-snippet"><pre>&lsqb;tip type="default"]
+<div class="ap-m-code-snippet"><pre>&amp;lsqb;tip type="default"]
 Default tip
 [/tip]
 
-&lsqb;tip type="important"]
+&amp;lsqb;tip type="important"]
 Important
 [/tip]
 
-&lsqb;tip type="note"]
+&amp;lsqb;tip type="note"]
 Note
 [/tip]
 
-&lsqb;tip type="read-on"]
+&amp;lsqb;tip type="read-on"]
 Read-on
-[/tip]
-</pre></div>
+[/tip]</pre></div>
 
 ## قصاصات الرموز البرمجية
 
@@ -152,8 +150,7 @@ Read-on
 
 ```js
   // code sample
-```
-</pre></div>
+```</pre></div>
 
 إذا كان الرمز الخاص بك يحتوي على أقواس مزدوجة منحنية، وعادة ما يكون الأمر كذلك إذا كنت تستخدم قوالب [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md?format=websites)، فيجب عليك طي جزء الرمز:
 
