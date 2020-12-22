@@ -1,7 +1,7 @@
 ---
 "$title": تهانينا!
 "$order": '4'
-description: 'You’ve finished the tutorial and successfully converted an HTML document to an AMP document. In this tutorial, you learned to: - Recognize the differences between AMP and ...'
+description: '"لقد أنهيت البرنامج التعليمي وحوَّلت بنجاح مستند HTML إلى مستند AMP. في هذا البرنامج التعليمي، تعلمت: - التعرف على الاختلافات بين AMP و ..."'
 ---
 
 لقد أنهيت البرنامج التعليمي وحوَّلت بنجاح مستند HTML إلى مستند AMP.
