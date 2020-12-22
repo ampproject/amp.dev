@@ -1,10 +1,20 @@
 ---
-$title: Mengintegrasikan alat analitis Anda dengan AMP
-order: 1
+"$title": Mengintegrasikan alat analitis Anda dengan AMP
+order: '1'
+formats:
+- websites
+- stories
 teaser:
   text: Gambaran Umum
-toc: true
+toc: 'true'
 ---
+
+<!--
+This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md.
+Please do not change this file.
+If you have found a bug or an issue please
+have a look and request a pull request there.
+-->
 
 ## Gambaran Umum <a name="overview"></a>
 
@@ -51,11 +61,10 @@ Layanan manajemen tag mempunyai dua pilihan untuk berintegrasi dengan Analitis A
 
 Pendekatan endpoint sama dengan pendekatan standar yang diuraikan di dalam bagian sebelumnya. Pendekatan konfig berisi tentang pembuatan konfigurasi unik untuk amp-analytics yang spesifik untuk setiap penayang dan menyertakan semua paket analitis mereka yang kompatibel. Penayang akan menyertakan konfigurasi yang menggunakan sintaks yang serupa dengan ini:
 
-[sourcecode:html] <amp-analytics config="https://my-awesome-tag-manager.example.com/user-id.json"
-
->
->
-
+[sourcecode:html]
+<amp-analytics
+  config="https://my-awesome-tag-manager.example.com/user-id.json"
+></amp-analytics>
 [/sourcecode]
 
 Untuk mengambil pendekatan ini, kaji dokumentasi untuk integrasi penayang dengan Analitis AMP.
@@ -64,6 +73,6 @@ Untuk mengambil pendekatan ini, kaji dokumentasi untuk integrasi penayang dengan
 
 - Kajian Mendalam: [Mengapa tidak menggunakan iframe saja?](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/why-not-iframe.md)
 - Kajian Mendalam: [Mengelola status pengguna yang belum disahkan dengan AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)
-- [Sampel amp-analytics](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
+- [amp-analytics sample](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
 - Dokumentasi referensi [amp-analytics](https://amp.dev/documentation/components/amp-analytics)
 - Dokumentasi referensi [variabel amp-analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)
