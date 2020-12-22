@@ -19,9 +19,9 @@ author: CrystalOnScript
 ويكون [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) الأساسي عبارة عن كائن JSON مكوَّن من الأجزاء الأساسية التالية:
 
 - العنصر الذي يحركه المكون، أو `selector`.
-- [Timing Properties](../../../../documentation/components/reference/amp-animation.md#timing-properties)
-- [Keyframes](../../../../documentation/components/reference/amp-animation.md#keyframes)
-- [Trigger](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
+- [خصائص التوقيت](../../../../documentation/components/reference/amp-animation.md#timing-properties)
+- [إطارات أساسية](../../../../documentation/components/reference/amp-animation.md#keyframes)
+- <a>المشغِّل</a>
 
 ```
 <amp-animation layout="nodisplay" id="exampleAnimation">
@@ -155,7 +155,6 @@ author: CrystalOnScript
     }
   </script>
 </amp-animation>
-
 ```
 
 حيث يقوم هذا الإعداد بتشغيل كل رسم متحرك لمدة 3 ثوانٍ بالتسلسل.
@@ -260,9 +259,9 @@ author: CrystalOnScript
 ```
 [/example]
 
-- Declaring a variable, `--duration`, and giving it the value of two seconds.
-- Setting the `duration` to the var `--duration`'s value.
-- Calculating the delay applied to each element with the class `.card`.
+- الإعلان عن متغير، `--duration`، حيث يوفر له قيمة ثانيتين.
+- تعيين `duration` لقيمة المتغير `--duration`.
+- حساب التأخير المطبق على كل عنصر مع ذلك الذي يستوفي `.card` المحدد.
     1. يقوم [إمتداد `length()` ](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) بحساب عدد عناصر `.card` تم تحديدها
     2. ثم يقوم الطول عندها بطرح كل `.card`'s [فهرس()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension)
     3. يتم ضرب قيمة الناتج في المتغير `--duration`
