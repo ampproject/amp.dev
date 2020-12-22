@@ -13,19 +13,19 @@ contributors:
 
 # تأكد من التحقق من صحة مواصفات AMP
 
-AMP comes with a ton of built in benefits, such as decreasing user wait time by preloading content from AMP Caches. To get these benefits, pages must be valid AMP documents. Pages published with errors reported by the AMP validator are not indexable by AMP Caches, and possibly served as error pages.
+تأتي AMP مع الكثير من المزايا المضمّنة، مثل تقليل وقت انتظار المستخدم عن طريق تحميل المحتوى مسبقًا من ذاكرة AMP للتخزين المؤقت. للحصول على هذه المزايا، يجب أن تكون الصفحات عبارة عن مستندات AMP صالحة. لا تكون الصفحات المنشورة مع وجود أخطاء تم الإبلاغ عنها بواسطة أداة AMP للتحقق من الصحة قابلة للفهرسة من خلال ذاكرة AMP للتخزين المؤقت، وربما يتم عرضها كصفحات خطأ.
 
 لا تنشر أبدًا صفحة AMP غير صالحة مرة أخرى باستخدام هذه الأدوات:
 
-- [Validate AMP pages](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md?format=websites)
-- [The AMP Validator ](https://validator.ampproject.org/)
-- [Google AMP Tester](https://search.google.com/test/amp)
+- [التحقق من صفحات AMP](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md?format=websites)
+- [أداة AMP للتحقق من الصحة](https://validator.ampproject.org/)
+- [أداة اختبار Google AMP](https://search.google.com/test/amp)
 - [AMP Linter](https://github.com/ampproject/amp-toolbox/tree/master/packages/linter)
-- [AMP Tools](../../../documentation/tools.html?format=websites)
+- [أدوات AMP](../../../documentation/tools.html?format=websites)
 
 # منح صفحات AMP المخزنة مؤقتًا الوصول إلى الخادم
 
-Great news, valid AMP pages automatically opt into all existing AMP Caches! This means your users experience content that loads efficiently and safely. These types of optimizations are great, but come with a small catch. Some users will be served AMP pages from domains that do not match your own. This can cause pages to lose access to site data when using dynamic AMP components such as [`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=websites) or [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=websites). These types of errors are Cross-Origin Resource Sharing, or CORS, issues. Work with safety, not against it, by enabling CORS Requests from all available [AMP Caches](https://cdn.ampproject.org/caches.json)! If you're using Node.js in your backend, you can use the [amp-cors middleware](https://github.com/ampproject/amp-toolbox/tree/master/packages/cors).
+أخبار رائعة، يتم تضمين جميع صفحات AMP الصالحة تلقائيًا داخل جميع ذاكرات AMP للتخزين المؤقت! هذا يعني أن المستخدمين لديك سيتمتعون بتجربة محتوى يتم تحميله بكفاءة وأمان. تُعتبر هذه الأنواع من التحسينات رائعة، ولكنها تأتي مع عيب صغير. إذ يتم عرض صفحات AMP لبعض المستخدمين من نطاقات لا تتطابق مع نطاقك. ويمكن أن يتسبب هذا في فقد الصفحات للوصول إلى بيانات الموقع عند استخدام مكونات AMP الديناميكية مثل [`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=websites) أو [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=websites). وهذه الأنواع من الأخطاء ما هي إلا مشكلات متعلقة بمشاركة الموارد عبر المنشأ أو CORS. يجب توخَ الحذر أثناء العمل، ولا تُقصّر فيه، بتمكين طلبات CORS من جميع [ذاكرات AMP للتخزين المؤقت](https://cdn.ampproject.org/caches.json) المتاحة! إذا كنت تستخدم Node.js في الواجهة الخلفية، فيمكنك استخدام [برنامج amp-cors الوسيط](https://github.com/ampproject/amp-toolbox/tree/master/packages/cors).
 
 تعرّف على المزيد حول منح الوصول إلى الخادم:
 
@@ -35,7 +35,7 @@ Great news, valid AMP pages automatically opt into all existing AMP Caches! This
 
 # محتوى آمن وقابل للمشاركة مع تبادلات معتمدة
 
-Keep your domain's URL and simplify analytics when sharing content through signed exchanges (SXG). By serving AMP pages with SXG, digital signatures protect your information by tying the document to its claimed URL. This behavior treats user sessions and cookies as first party, closing possible analytics gaps. Implementing SXG delivers signed AMP content in addition to, rather than instead of, regular AMP content.
+احتفظ بعنوان URL الخاص بنطاقك وقم بتبسيط التحليلات عند مشاركة المحتوى من خلال التبادلات المعتمدة (SXG). من خلال تقديم صفحات AMP باستخدام SXG، فإن التوقيعات الرقمية تحمي معلوماتك عن طريق ربط المستند بعنوان URL المرتبط به. ويتعامل هذا السلوك مع جلسات المستخدم وملفات تعريف الارتباط على أنها الطرف الأول، مما يؤدي إلى سد فجوات التحليلات المحتملة. ويوفر تطبيق SXG محتوى AMP معتمد بالإضافة إلى، أو بالأحرى بدلاً من، محتوى AMP العادي.
 
 تعرف على المزيد حول تنفيذ التبادلات المعتمدة:
 
@@ -66,11 +66,11 @@ Keep your domain's URL and simplify analytics when sharing content through signe
 
 # التأكد من أن ملفات AMP قابلة للاكتشاف من خلال محركات البحث
 
-Pages only build in AMP(AMP first) and pages with a AMP double(paired AMP) all need to ensure they are discoverable! All AMP pages required the `<link rel="canonical" href="$SOME_URL">` in their `<head>`. AMP first pages need to link to themselves and AMP pages paired to a non-AMP page will need to link link to each other.
+تحتاج جميع الصفحات التي يتم تصميمها باستخدام AMP (AMP أولا) والصفحات التي تحتوي على AMP مزدوج (AMP مقترن) إلى ضمان إمكانية اكتشافها! تتطلب جميع صفحات AMP الرمز `<link rel="canonical" href="$SOME_URL">` في `<head>` الخاص بها. يجب أن ترتبط الصفحات المصممة على أساس (AMP أولا) بنفسها وستحتاج صفحات AMP المقترنة بصفحات لا تدعم AMP إلى الارتباط ببعضها البعض.
 
 تأكد من أن بيانات [Schema.org](https://schema.org/) الوصفية الخاصة بك تضيف معلومات مفيدة! قد تتطلب المواقع ومحركات البحث الأخرى ذلك لمشاركة المحتوى الخاص بك.
 
-Web Robots, Web Wanderers, Crawlers or Spiders, are all names for programs that search for content. They traverse the web, helping search engines index web content so that user's queries can surface the correct results! Make sure your seekers can find your site by including the proper instructions in the `robots.txt` file and set up the appropriate headers.
+تمثل روبوتات الويب، هائموا الويب، برامج الزحف أو العناكب، جميعًا أسماء للبرامج التي تبحث عن المحتوى. وهي تنتقل عبر الويب، حيث تساعد محركات البحث في فهرسة محتوى الويب بحيث يمكن لاستعلامات المستخدم إظهار النتائج الصحيحة! تأكد من أنه يمكن للباحثين العثور على موقعك من خلال تضمين الإرشادات المناسبة في ملف `robots.txt` وإعداد الترويسات المناسبة.
 
 لا تستثني برامج الزحف من خلال ملف [robots.txt](https://support.google.com/webmasters/answer/6062608?hl=en) الخاص بك.
 
@@ -105,7 +105,7 @@ X-Robots-Tag: noindex                      <= don't!
 
 # قياس معدل نقل بيانات المستخدم ورحلاته
 
-Gathering correct metrics is essential to useful analytics. When testing how introducing AMP to your site impacts users, ensure you're measuring the correct things. False negatives, false positives, or irrelevant results may arise if analytics don't account for the differences AMP can create. Make sure you understand what to look for, and how to measure it!
+يُعد جمع المقاييس الصحيحة أمرًا ضروريًا للقيام بتحليلات مفيدة. وعند اختبار مدى تأثير إدخال AMP في موقعك على المستخدمين، تأكد من قياس الأشياء الصحيحة. قد تظهر السلبيات غير الصحيحة أو الإيجابيات غير الصحيحة أو النتائج غير ذات الصلة إذا لم تضع التحليلات في الحسبان الاختلافات التي يمكن أن تصنعها AMP. تأكد من أنك تفهم ما الذي تبحث عنه، وكيفية قياسه!
 
 تعرف على المزيد حول إعداد التحليلات المناسبة لـ AMP:
 
