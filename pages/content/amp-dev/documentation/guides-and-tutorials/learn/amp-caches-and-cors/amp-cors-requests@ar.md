@@ -79,7 +79,7 @@ limitations under the License.
 ولكن كيف وصل المستخدم إلى صفحة AMP الخاصة بك؟ هل هي صفحة يتم الوصول إليها لأنها مخزنة في ذاكرة التخزين المؤقت؟ من المحتمل جدًا أن المستخدم لديك لم يصل إلى صفحة AMP الخاصة بك مباشرةً، ولكن بدلًا عن ذلك؛ اكتشف صفحتك من خلال نظام أساسي آخر. على سبيل المثال، يستخدم بحث Google ذاكرة التخزين المؤقت لصفحات AMP من Google لعرض صفحات AMP بسرعة؛ هذه صفحات موجودة في ذاكرة تخزين مؤقت يتم عرضها من ذاكرة AMP للتخزين المؤقت من Google، وهو نطاق *مختلف*. وعندما ينقر المستخدم فوق الزر لتحديث الأسعار على صفحتك، ترسل صفحة AMP الموجودة في ذاكرة التخزين المؤقت طلبًا إلى نطاقك الأصلي للحصول على الأسعار، وهو ما يمثل عدم تطابق بين الأصول (ذاكرة التخزين المؤقت -> النطاق الأصلي). من أجل السماح بمثل هذه الطلبات متعددة المصادر، تحتاج إلى التعامل مع اشتراك المصادر في الموارد، وإلا سيفشل الطلب.
 
 <amp-img alt="CORS and Cache" layout="responsive" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png" width="809" height="391">
-  <noscript>     <img alt="CORS and Cache" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png">   </noscript></amp-img>
+  <noscript><img alt="CORS و Cache" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png"></noscript></amp-img>
 
 **حسنًا، ماذا عليَّ أن أفعل؟**
 
@@ -195,7 +195,7 @@ AMP-Same-Origin: true
 لنستعرض هذه السيناريوهات بمثال؛ في مثالنا، ندير الموقع `example.com` الذي يستضيف صفحة AMP باسم `article-amp.html.` وتحتوي صفحة AMP على `amp-list` لاسترداد البيانات الديناميكية من ملف `data.json` الذي تتم استضافته أيضًا على `example.com`. ونريد معالجة الطلبات الواردة إلى ملف `data.json` التي تأتي من صفحة AMP. إذ يمكن أن تكون هذه الطلبات من صفحة AMP على الأصل نفسه (غير مخزنة في ذاكرة التخزين المؤقت) أو من صفحة AMP على أصل مختلف (نسخة مخزنة في ذاكرة التخزين المؤقت).
 
 <amp-img alt="CORS example" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png" width="629" height="433">
-  <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png">   </noscript></amp-img>
+  <noscript><img alt="مثال CORS" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png"></noscript></amp-img>
 
 ### الأصول المسموح بها <a name="allowed-origins"></a>
 
@@ -279,7 +279,7 @@ function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
 في السيناريو التالي، تطلب صفحة `article-amp.html` الملف `data.json`؛ والأصول نفسها.
 
 <amp-img alt="CORS example - scenario 1" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png" width="657" height="155">
-  <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png">   </noscript></amp-img>
+  <noscript><img alt="مثال CORS" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png"></noscript></amp-img>
 
 إذا قمنا بفحص الطلب، فسنجد:
 
@@ -303,7 +303,7 @@ Access-Control-Allow-Origin: https://example.com
 في السيناريو التالي، تطلب الصفحة `article-amp.html` المخزنة في ذاكرة AMP للتخزين المؤقت من Google ملف `data.json`؛ والأصول مختلفة.
 
 <amp-img alt="CORS example - scenario 2" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png" width="657" height="155">
-  <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png">   </noscript></amp-img>
+  <noscript><img alt="مثال CORS" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png"></noscript></amp-img>
 
 إذا قمنا بفحص هذا الطلب، فسنجد:
 
@@ -360,7 +360,7 @@ function assertFontCors(req, res, opt_validMethods, opt_exposeHeaders) {
 على سبيل المثال، إذا أردت تحميل /some/font.ttf في `https://example.com/amp.html`، فيجب أن يستجيب خادم الأصل بالترويسة Access-Control-Allow-Origin على النحو الموضح أدناه.
 
 <amp-img alt="CORS font example" layout="responsive" src="https://amp.dev/static/img/docs/cors-font.jpg" width="2268" height="1594">
-  <noscript>     <img alt="CORS font example" src="https://amp.dev/static/img/docs/cors-font.jpg">   </noscript></amp-img>
+  <noscript><img alt="مثال على خط CORS" src="https://amp.dev/static/img/docs/cors-font.jpg"></noscript></amp-img>
 
 [tip type="note"] إذا كان بالإمكان الوصول إلى ملف الخط الخاص بك من أي مصدر، فيمكنك الرد باستخدام حرف البدل `Access-Control-Allow-Origin`، كما أن ذاكرة AMP للتخزين المؤقت ستكرر هذه القيمة مما يعني أنها ستستجيب بـ `Access-Control-Allow-Origin: * `. وإذا كان لديك هذا الإعداد بالفعل، فلا داعي لتغيير أي شيء. [/tip]
 
