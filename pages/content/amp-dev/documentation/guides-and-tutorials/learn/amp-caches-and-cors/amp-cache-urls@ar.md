@@ -15,7 +15,7 @@ contributors:
 
 ## تنسيق عنوان URL
 
-When possible, the Google AMP Cache will create a subdomain for each AMP document's domain by first converting it from [IDN (punycode)](https://en.wikipedia.org/wiki/Punycode) to UTF-8. The caches replaces every `-` (dash) with `--` (2 dashes) and replace every `.` (dot) with `-` (dash). For example, `pub.com` will map to `pub-com.cdn.ampproject.org`.
+عندما يكون ذلك ممكنًا، ستعمل ذاكرة Google AMP للتخزين المؤقت على إنشاء نطاق فرعي لكل نطاق لمستند AMP من خلال تحويله أولاً من [IDN (punycode)](https://en.wikipedia.org/wiki/Punycode) إلى UTF-8. وتعمل ذاكرات التخزين المؤقت على استبدال كل `-` (شرطة) لتحل محلها `--` (شرطتان) واستبدال كل `.` (نقطة) لتحل محلها `-` (شرطة). على سبيل المثال، سيتم تمثيل `pub.com` بتنسيق `pub-com.cdn.ampproject.org`.
 
 يمكنك استخدام حاسبة عناوين URL التالية لتحويل عنوان URL إلى إصدار مخزن AMP مؤقت:
 
@@ -28,15 +28,15 @@ When possible, the Google AMP Cache will create a subdomain for each AMP documen
 
 - بنية عنوان URL على مخزن AMP Cache مؤقت.
 - كيفية التنبؤ بالشكل الذي ستظهر عليه عناوين URL على مخزن AMP مؤقت.
-- How to reverse an AMP Cache Origin header to determine what its publisher domain was.
+- كيفية عكس رأس صفحة "أصل ذاكرة AMP للتخزين المؤقت" لتحديد اسم نطاق الناشر الخاص به.
 
 ## بروتوكول أسماء النطاقات
 
-All documents use https protocol on AMP caches.
+تستخدم جميع المستندات بروتوكول https على ذاكرات AMP للتخزين المؤقت.
 
 ## لاحقة اسم النطاق
 
-All AMP Caches are registered in a JSON file, found online on the [AMPHTML Repository](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). An example cache record in this file will look like:
+يتم تسجيل جميع ذاكرات AMP للتخزين المؤقت في ملف JSON، ويمكن العثور عليه على الإنترنت في [مستودع AMPHTML](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). وسيبدو المثال على سجلّ المخزن المؤقت في هذا الملف على النحو التالي:
 
 ```json
 {
@@ -51,7 +51,7 @@ All AMP Caches are registered in a JSON file, found online on the [AMPHTML Repos
 
 يخدم مخزن AMP Cache المؤقت السجلات على النطاق المحدد من قِبل `cacheDomain`. وفي هذه الحالة، يصبح النطاق `cdn.ampproject.org`.
 
-This document uses URLs with `cdn.ampproject.org` as examples, but other caches typically use a similar URL structure.
+يستخدم هذا المستند عناوين URL تحتوي على `cdn.ampproject.org` كأمثلة، لكن ذاكرات التخزين المؤقت الأخرى تستخدم عادةً بنية عنوان URL مشابهة.
 
 ## بادئة اسم النطاق
 
@@ -157,16 +157,16 @@ This document uses URLs with `cdn.ampproject.org` as examples, but other caches 
 
 {{ image('/static/img/docs/guides/cache-url-path.jpg', 1688, 312, layout='intrinsic', alt='Image displaying cached URL formats') }}
 
-The prefix directories, such as `/c` correspond to different types of serving that an AMP Cache may perform. Different AMP Caches may support different serving types, and this is not an exhaustive list:
+تتطابق أدلة البادئة، مثل `/c` مع أنواع عرض مختلفة قد تنفّذها ذاكرة AMP للتخزين المؤقت. قد تدعم ذاكرات AMP للتخزين المؤقت المختلفة أنواع عرض مختلفة، وهذه ليست قائمة شاملة:
 
 - `/c` - <strong>C</strong>ontent (المحتوى): هذا مستند AMP يتم عرضه كصفحة مستقلة يمكن الربط بها مباشرةً في بعض الواجهات.
 - `/v` - <strong>V</strong>iewer (العارض): هذا أيضًا مستند AMP، ولكن يتم عرضه في [عارض AMP](https://amp.dev/documentation/guides-and-tutorials/integrate/integrate-with-apps/#implementing-an-amp-viewer) وهو عبارة عن بيئة إطار يعرض مستند AMP في سياق "صفحة نتائج بحث" أو واجهة أخرى.
-- `/wp` - <strong>W</strong>eb <strong>P</strong>ackage: This is an AMP document served as a [Signed Exchange](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/signed-exchange/), a Web Package technology. These URLs act as redirects to the publisher’s own origin.
+- `/wp` - <strong>W</strong>eb <strong>P</strong>ackage (حزمة الويب): هذا مستند AMP يتم عرضه على هيئة نموذج [Signed Exchange](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/signed-exchange/)، وهي تقنية Web Package (حزمة ويب). وستعمل عناوين URL كعمليات لإعادة التوجيه إلى الأصل الخاص بالناشر.
 - `/cert` - <strong>Cert</strong>ificate (الشهادة): هذه شهادة عامة للاستخدام مع نموذج [Signed Exchange](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/signed-exchange/).
 - `/i` - <strong>I</strong>mage (الصورة): هذه صورة يتم عرضها من قبل مخزن AMP المؤقت، عادةً كمورد فرعي للمستند.
 - `/ii` - <strong>I</strong>mage (الصورة): هذه أيضًا صورة يتم عرضها من قِبل AMP Cache، ولكنها عادةً ما تُدمج مع معلّمات cache-configuring الأخرى مثل `/ii/w800` والتي تشير إلى قيمة maximum-width (حد أقصى للعرض) يطلبها المستند. ويمكن للمخزن المؤقت إنتاج صور بمقياس مختلف هنا من أجل حفظ النطاق الترددي للمتصفّح.
 
-In addition, AMP Caches may choose append special query parameters to the document URL which are not part of the publisher document query. For example, [`<amp-live-list>`](../../../components/reference/amp-live-list.md) makes refresh requests by fetching a document with the parameter `amp_latest_update_time<`. These parameters are not passed to the origin when the document is crawled, but are strictly present to configure the request to the AMP Cache.
+إضافةً إلى ذلك، قد تختار ذاكرات AMP للتخزين المؤقت إلحاق معلّمات استعلام خاصة لعنوان URL للمستند والتي لا تعدّ جزءًا من استعلام مستند الناشر. على سبيل المثال، التعليمة البرمجية [`<amp-live-list>`](../../../components/reference/amp-live-list.md) تُجري طلبات محدّثة عن طريق إحضار مستند باستخدام المعلّمة `amp_latest_update_time<`. لا يتم تمرير هذه المعلّمات إلى الأصل عند الزحف إلى المستند، ولكنها تكون موجودة حصريًا لتكوين الطلب إلى ذاكرة AMP للتخزين المؤقت.
 
 ## أصول CORS
 
@@ -179,7 +179,7 @@ In addition, AMP Caches may choose append special query parameters to the docume
 - `https://www-example-com.cdn.ampproject.org`
 - `https://v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq.cdn.ampproject.org`
 
-First, remove the protocol prefix (`https://`) and the AMP Cache domain suffix, such as `.cdn.ampproject.org`. The suffix may be from any one of the caches listed in [caches.json](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). The remaining string will be the “domain prefix”. In the case of the above two examples, the “domain prefix is:
+أولاً، أزِل بادئة البروتوكول (`https://`) ولاحقة نطاق ذاكرة AMP للتخزين المؤقت، مثل `.cdn.ampproject.org`. قد تكون اللاحقة من أي واحد من ذاكرات التخزين المؤقت المدرجة في [caches.json](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). وستكون السلسلة المتبقية هي "بادئة النطاق". في حالة المقالين المذكورين أعلاه، ستكون "بادئة النطاق" كالتالي:
 
 - `www-example-com`
 - `v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq`
@@ -193,7 +193,7 @@ First, remove the protocol prefix (`https://`) and the AMP Cache domain suffix, 
 3. كرِّر على مستوى مخرج الأحرف بدءًا من الخطوة 2 بالترتيب، مصدرًا إياها بترتيب مصادفتها. عندما تصادفك "`-`" (واصلة), حرِّر سريعًا عند الحرف التالي. وإذا كان الحرف التالي أيضًا "`-`" (واصلة)، تجاوز كلا الحرفين من الإدخال وأصدِر "`-`" (واصلة) مفردة. إذا كان الحرف التالي أي حرف آخر، تجاوز فقط "`-`" (الواصلة) المفردة وأصدِر "`.`" (نقطة).  على سبيل المثال، التعليمة البرمجية `a--b-example-com` تصبح `a-b.example.com`.
 4. نفِّذ التعليمة البرمجية للترميز Punycode encode على نتيجة الخطوة 3. راجِع [RFC 3492](https://tools.ietf.org/html/rfc3492) للتعرّف علىpunycode.
 
-The result of Step 4 will be the Publisher Domain. The protocol is unavailable from the domain itself, but is either `http` or `https`. The port is always the default for the protocol.
+ستكون نتيجة الخطوة 4 هي "نطاق الناشر". ولن يكون البروتوكول متوفّرًا من النطاق نفسه، ولكنه سيكون إما `http` أو `https`. وسيكون المنفذ دائمًا هو الخيار التلقائي للبروتوكول.
 
 ## معالجة إعادة التوجيه والأخطاء
 
