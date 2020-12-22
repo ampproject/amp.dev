@@ -4,10 +4,7 @@ order: '3'
 formats:
 - ads
 teaser:
-  text: |2-
-
- "_If you'd like to propose changes to the standard, please comment on the"
-    [Intent
+  text: "\n_إذا كنت ترغب في اقتراح إجراء تغييرات على المقياس، فيرجى التعليق على "
 toc: 'true'
 ---
 
@@ -53,7 +50,7 @@ limitations under the License.
 <tr>
 <td>يجب استخدام نوع <code>&lt;html ⚡4ads></code> أو <code>&lt;html amp4ads></code>
 </td>
-<td>Allows validators to identify a creative document as either a general AMP doc or a restricted AMPHTML ad doc and to dispatch appropriately.</td>
+<td>السماح لمسؤلي التحقق من الصحة بتحديد مستند تصميم الإعلان إما كمستند AMP عام أو مستند مخصص لـ AMPHTML مقيد وكذا إرساله على نحو مناسب.</td>
 </tr>
 <tr>
 <td>يجب تضمين <code>&lt;script async src="https://cdn.ampproject.org/amp4ads-v0.js">&lt;/script></code> كنص برمجي لوقت التشغيل بدلًا عن <code>https://cdn.ampproject.org/v0.js</code>.</td>
@@ -128,8 +125,7 @@ limitations under the License.
     <td>يخرج  <code>position:fixed</code> من DOM الظل، حيثما تعتمد إعلانات AMPHTML عليها. ولا يسمح أيضًا للإعلانات في AMP باستخدام الموضع الثابت.</td>
   </tr>
   <tr>
-    <td>
-<code>touch-action</code> is prohibited.</td>
+    <td> <code>touch-action</code> محظور.</td>
     <td>إعلان يمكنه معالجة <code>touch-action</code> ويمكنه التداخل مع قدرة المستخدم على تمرير المستند المضيف.</td>
   </tr>
   <tr>
@@ -243,7 +239,7 @@ transition: background-color 2s;
 - [amp-img](https://amp.dev/documentation/components/amp-img)
 - [amp-layout](https://amp.dev/documentation/components/amp-layout)
 - [amp-lightbox](https://amp.dev/documentation/components/amp-lightbox)
-- amp-mraid, on an experimental basis. If you're considering using this, please open an issue at [wg-monetization](https://github.com/ampproject/wg-monetization/issues/new).
+- amp-mraid، على أساس تجريبي. إذا كنت تفكر في استخدامه، فيرجى فتح مشكلة في [wg-monetization](https://github.com/ampproject/wg-monetization/issues/new).
 - [amp-mustache](https://amp.dev/documentation/components/amp-mustache)
 - [amp-pixel](https://amp.dev/documentation/components/amp-pixel)
 - [amp-position-observer](https://amp.dev/documentation/components/amp-position-observer)
