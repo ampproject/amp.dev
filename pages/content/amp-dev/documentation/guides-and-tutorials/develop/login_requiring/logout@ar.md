@@ -10,7 +10,7 @@ description: على نحو مشابه لزر تسجيل الدخول، يعتم�
 <button amp-access="loggedIn" amp-access-hide tabindex="0" on="tap:amp-access.login-sign-out" class="button-primary comment-button">Logout</button>
 [/sourcecode]
 
-When you click the Logout button, you are directed to the URL that you specified in the [`amp-access`](../../../../documentation/components/reference/amp-access.md) JSON configuration, as part of the login object:
+عندما تنقر فوق زر تسجيل الخروج، يتم إعادة توجيهك إلى عنوان URL الذي قمت بتحديده في تكوين JSON [`amp-access`](../../../../documentation/components/reference/amp-access.md) كجزء من كائن تسجيل الدخول:
 
 [sourcecode:json]
 {
@@ -21,4 +21,4 @@ When you click the Logout button, you are directed to the URL that you specified
 }
 [/sourcecode]
 
-Similar to the login, when the AMPByExample server receives a logout request, it uses the return URL query parameter automatically added by the AMP library and redirects to it, adding `#success=true`. By this time, you are back on the initial page; the AMPByExample cookie previously created for the login page (called `ABE_LOGGED_IN`) would be cleared at this point.
+ومثل تسجيل الدخول، عند تلقي خادم the AMPByExample طلب تسجيل خروج، فإنه يستخدم معلمة استعلام عنوان URL للإرجاع التي تمت إضافتها تلقائيًا بواسطة مكتبة AMP وإعادة التوجيه إليها، مع إضافة `#success=true`. وبحلول ذلك الوقت، ستعود إلى الصفحة الأولى؛ وسيتم مسح ملف تعريف الارتباط AMPByExample الذي تم إنشاؤه مسبقًا لصفحة تسجيل الدخول (يسمى `ABE_LOGGED_IN`) في هذه المرحلة.
