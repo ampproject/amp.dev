@@ -23,7 +23,7 @@ contributors:
 
 - [التحكم في منفذ العرض](#controlling-the-viewport)
 - [إنشاء مخطط سريع الاستجابة](#creating-a-responsive-layout)
-- [Scaling media](#scaling-media-for-the-page)
+- [تغيير حجم الوسائط](#scaling-media-for-the-page)
 
 [video src='https://www.youtube.com/watch?v=XDvbJ2apaiA' caption='تعرف على التصميم سريع الاستجابة في AMP في هذا الفيديو.']
 
@@ -117,9 +117,9 @@ contributors:
 
 تشكل الصور جزءًا كبيرًا من صفحة الويب (حوالي [65% من مقدار بايت الصفحة](http://httparchive.org/interesting.php#bytesperpage)). على الأقل، يجب أن تكون صورك مرئية على أحجام واتجاهات مختلفة للشاشة (على سبيل المثال، لا يتعين على المستخدم التمرير التصغير/التكبير لرؤية الصورة بأكملها). ويتم إجراء ذلك بسهولة في AMP عبر السمة `"layout=responsive"` (راجع [تضمين الصور في AMP ](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)). بالإضافة إلى الصورة المتجاوبة الأساسية، إذ قد ترغب في خدمة موارد صور متعددة من أجل:
 
-- [Serve crisp images for the right resolution](#serving-crisp-images-for-the-right-resolution)
-- [Change the art direction of an image](#changing-the-art-direction-of-an-image)
-- [Provide optimized image formats](#providing-optimized-images)
+- [عرض صور نقية للحصول على الدقة المناسبة](#serving-crisp-images-for-the-right-resolution)
+- [تغيير الاتجاه الفني للصورة](#changing-the-art-direction-of-an-image)
+- [توفير تنسيقات صور محسنة](#providing-optimized-images)
 
 #### عرض صور نقية للحصول على الدقة المناسبة <a name="serving-crisp-images-for-the-right-resolution"></a>
 
@@ -157,7 +157,7 @@ contributors:
 
 [/example]
 
-For example, say we have a device that has a viewport width of 412 px and a DPR of 2.6. Based on the code above, the image must be displayed at 75% of the viewport width, so the browser chooses an image close to 803 px (412 _ .75 _ 2.6), which happens to be `apple-800.jpg`.
+على سبيل المثال، لنفترض أن لدينا جهازًا يبلغ عرض منفذ العرض الخاص به 412 بكسل وDPR 2.6. وبناءً على الرمز أعلاه، يجب عرض الصورة بنسبة 75٪ من عرض منفذ العرض، لذلك يختار المتصفح صورة قريبة من 803 بكسل (412 * 0.75 * 2.6)، والتي تصادف أن تكون `apple-800.jpg`.
 
 [tip type="read-on"] **تابع القراءة –** لمزيد من المعلومات حول استخدام srcset والأحجام في AMP، راجع الدليل [الاتجاه الفني مع srcset، والأحجام والارتفاعات](art_direction.md). [/tip]
 
@@ -215,8 +215,8 @@ For example, say we have a device that has a viewport width of 412 px and a DPR 
 
 في AMP، هناك طريقتان للنجاح في عرض الصور المحسَّنة:
 
-- Developers using image formats that are not widely supported, such as WebP, can configure their server to process browser `Accept` headers and respond with image bytes and the appropriate [`Content-Type` header](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/). This avoids the browser from downloading image types it does not support. Read more about [content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation).[sourcecode:html]  Accept: image/webp,image/apng,image/_,_/\*;q=0.8  [/sourcecode]
-- Provide nested image fallbacks, such as the example below.
+- يمكن للمطورين الذين يستخدمون تنسيقات صور غير مدعومة على نطاق واسع، مثل WebP، تهيئة خادمهم لمعالجة ترويسات `Accept` للمتصفح والاستجابة بوحدات بايت الصورة وترويسة [`Content-Type` المناسبة](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/). وهذا يجعل المتصفح يتجنب تنزيل أنواع الصور التي لا يدعمها. اقرأ المزيد حول [تفاوض المحتوى](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation).[sourcecode:html] Accept: image/webp,image/apng,image/_,_/\*;q=0.8 [/sourcecode]
+- توفير صور احتياطية متداخلة، مثل المثال أدناه.
 
 ##### مثال: عرض تنسيقات صور مختلفة
 
@@ -261,6 +261,6 @@ For example, say we have a device that has a viewport width of 412 px and a DPR 
 
 #### منشأة بواسطة AMP
 
-- [Examples](../../../../documentation/examples/index.html)
-- [Templates](../../../../documentation/templates/index.html)
+- [أمثلة](../../../../documentation/examples/index.html)
+- [القوالب ](../../../../documentation/templates/index.html)
 - [AMP Conf Workshop Codelab: Making beautiful AMPs](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)
