@@ -23,7 +23,7 @@ have a look and request a pull request there.
 في حالة ظهور مستند معين وأدائه السلوك المتوقع على الأصل الخاص بك، ولكنه لا يفعل نفس الشيء عند عرضه عن طريق ذاكرة تخزين مؤقت ([كيف تعين عناوين URL الأصل بذاكرة AMP للتخزين المؤقت من Google](https://developers.google.com/amp/cache/overview#amp-cache-url-format))، فجرب ما يلي:
 
 1. افتح وحدة تحكم أدوات المطور/الأخطاء في المتصفح، وقم بحل أي أخطاء أو تحذيرات قد تظهر.
-2. Run the document through [an AMP document validator](https://search.google.com/test/amp) and resolve any unexpected errors or warnings.
+2. قم بتشغيل المستند عن طريق [AMPBench](https://search.google.com/test/amp) وقم بحل أي أخطاء أو تحذيرات غير متوقعة.
 
 إذا كان ما يزال لديك مشكلة بعد هذه الخطوات، فتحقق من الجدول التالي.
 
@@ -39,7 +39,7 @@ have a look and request a pull request there.
   <tbody>
     <tr>
       <td>عدم ظهور خطوط الويب (يتم استخدام الخطوط الاحتياطية)</td>
-      <td>The AMP Cache is not allowlisted by the font provider.</td>
+      <td>ذاكرة AMP للتخزين المؤقت ليست مدرجة ضمن القائمة البيضاء من جانب موفر الخطوط.</td>
       <td>اتصل بموفر الخطوط واطلب منهم إدراج <a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">جميع ذاكرات التخزين المؤقت</a>.</td>
     </tr>
     <tr>
