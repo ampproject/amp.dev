@@ -79,7 +79,7 @@ have a look and request a pull request there.
 
 ## تحديد ما إذا كان التغيير الخاص بك ضمن إصدار أم لا <a name="determining-if-your-change-is-in-a-release"></a>
 
-[*Type: Release* GitHub issues](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) are used to track the status of current and past releases; from the initial cut, to testing via **experimental**/**beta** channels, to eventual release via the **stable** and **lts** channels. Announcements about releases are made on the [AMP Slack #release channel](https://amphtml.slack.com/messages/C4NVAR0H3/) ([sign up for Slack](https://bit.ly/amp-slack-signup)).
+يتم استخدام [*النوع: إصدار* مشكلات GitHub ](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) لتتبع حالة الإصدارات الحالية والسابقة؛ بدء من الإصدار الأولي حتى الاختبار عبر القناتين **التجريبية**/**الأولية** وصولا إلى الإصدار النهائي عبر القنوات **المستقرة** و**الاستقرار طويل المدى**. ويتم إصدار إعلانات حول الإصدارات على [قناة #إصدار AMP Slack](https://amphtml.slack.com/messages/C4NVAR0H3/) ([التسجيل في Slack](https://bit.ly/amp-slack-signup)).
 
 يمكنك تحديد التغييرات في بناء معين باستخدام أحد الخيارات التالية:
 
