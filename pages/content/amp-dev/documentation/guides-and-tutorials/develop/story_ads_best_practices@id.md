@@ -21,7 +21,7 @@ Iklan Cerita Web mengikuti prinsip-prinsip berikut ini:
 - Model interaksi yang sama: Pengguna dapat melanjutkan ke layar selanjutnya, sama seperti dengan halaman cerita organik.
 - Cepat: Iklan tidak pernah tampil kepada pengguna dalam keadaan setengah termuat.
 
-To be consistent with these principles, the Web Story runtime determines the right placement of an ad page amidst the Web Story. Read more about ad placement mechanics in [Advertise in Web Stories](advertise_amp_stories.md).
+Agar konsisten dengan prinsip-prinsip ini, runtime Cerita AMP menentukan penempatan yang tepat untuk sebuah halaman iklan di tengah-tengah Cerita AMP. Baca selengkapnya tentang mekanisme penempatan iklan di [Beriklan di Cerita AMP](advertise_amp_stories.md).
 
 ## Sampel iklan Cerita Web
 
@@ -72,7 +72,7 @@ Teks kustom diperbolehkan, namun Anda perlu menerapkan pelokalan Anda sendiri.
 
 ## Enum teks tombol permintaan tindakan (CTA) <a name="call-to-action-button-text-enum"></a>
 
-The call to action button can be configured from a predefined set of choices:
+Tombol permintaan tindakan (CTA) dapat dikonfigurasi dari seperangkat pilihan yang telah ditentukan:
 
 - `APPLY_NOW`: "Terapkan Sekarang"
 - `BOOK_NOW`: "Pesan"
@@ -182,19 +182,19 @@ Contoh: Menentukan beberapa berkas sumber
 </amp-video>
 [/sourcecode]
 
-#### Ukuran & Durasi video Demi kinerja yang optimal, Anda perlu menargetkan untuk menyediakan video yang tidak lebih besar daripada 4 MB. Ukuran berkas yang lebih kecil memungkinkan pengunduhan yang lebih cepat, jadi pertahankan agar ukurannya sekecil mungkin.
+#### Ukuran & Durasi video
 
-For optimal performance, you should aim to provide videos that are no larger than 4 MB. Smaller file sizes allow for faster downloading, so keep things as small as possible.
+Demi kinerja yang optimal, Anda perlu menargetkan untuk menyediakan video yang tidak lebih besar daripada 4 MB. Ukuran berkas yang lebih kecil memungkinkan pengunduhan yang lebih cepat, jadi pertahankan agar ukurannya sekecil mungkin.
 
-#### Format video Jika Anda hanya dapat menyediakan format video tunggal, sediakan **MP4**. Namun, di mana pun bisa, gunakan video **HLS** dan tentukan MP4 sebagai standar (fallback) bagi browser yang belum mendukung video HLS. HLS melakukan streaming bitrate adaptif, di mana mutu video dapat diubah agar paling sesuai dengan koneksi jaringan pengguna.
+#### Format video
 
-If you can only provide a single video format, provide **MP4**. However, where possible, use **HLS** video and specify MP4 as a fallback for browsers that do not yet support HLS video. HLS performs adaptive bitrate streaming, where the quality of the video can be altered to best suit the user's network connection.
+Jika Anda hanya dapat menyediakan format video tunggal, sediakan **MP4**. Namun, di mana pun bisa, gunakan video **HLS** dan tentukan MP4 sebagai standar (fallback) bagi browser yang belum mendukung video HLS. HLS melakukan streaming bitrate adaptif, di mana mutu video dapat diubah agar paling sesuai dengan koneksi jaringan pengguna.
 
 [tip type="note"] **CATATAN –** Format video HLS tidak didukung di Chrome untuk browser Desktop (bahkan melalui emulasi juga tidak), jadi menetapkan standar MP4 diperlukan untuk lalu lintas desktop apa pun ke halaman Anda. Untuk melakukan debug video HLS, Anda perlu menggunakan perangkat seluler aktual melalui debugging pada USB. [/tip]
 
 #### Resolusi video
 
-Video cerita AMP selalu vertikal (yaitu tampilan potret), dengan rasio aspek yang diharapkan pada 16:9. Gunakan resolusi yang disarankan untuk jenis streaming video:
+Video cerita Web selalu vertikal (yaitu tampilan potret), dengan rasio aspek yang diharapkan pada 16:9. Gunakan resolusi yang disarankan untuk jenis streaming video:
 
 <table>
   <thead>
@@ -284,4 +284,4 @@ Cerita Bersponsor hadir sebagai URL di web, ini memungkinkan lalu lintas penggun
 
 {{ image('/static/img/docs/stampads/sponsored_story_full.png', 1600, 900, layout='intrinsic', alt='CTA button directs to a Sponsored Story', caption='Tombol CTA mengarahkan ke Cerita Bersponsor', align='' ) }}
 
-Read more about creating an [Web Story here](../start/create_successful_stories.md).
+Baca selengkapnya tentang membuat [Cerita Web di sini](../start/create_successful_stories.md).
