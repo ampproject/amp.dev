@@ -73,12 +73,12 @@ author: CrystalOnScript
    </td>
   </tr>
   <tr>
-   <td>Web Story / Web Stories     </td>
+   <td>قصة Web / قصص Web</td>
    <td>قصة تجربة ويب مبنية باستخدام AMP.</td>
    <td>
 <ul>
-      <li>The Web Story format is free and part of the open web.       </li>
-<li>Web Stories immerse readers in fast-loading full-screen experiences.  </li>
+      <li>يتميز تنسيق قصة Web بأنه حر وجزء من الويب المفتوح.</li>
+<li>تغمر قصص Web القراء في تجارب سريعة التحميل تُعرض ملء الشاشة.</li>
 </ul>
    </td>
   </tr>
