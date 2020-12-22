@@ -37,9 +37,9 @@ Setelan tersebut adalah setelan viewport umum yang digunakan untuk situs respons
 <meta name="viewport" content="width=device-width" />
 ```
 
-These are the typical viewport settings that you'd use for a responsive site. Although `initial-scale=1` isn't required for a valid AMP page, it's recommended because it sets the zoom level to 1 when the page is first loaded. [/filter]
+Ini adalah pengaturan viewport umum yang digunakan untuk situs responsif. Meskipun `initial-scale=1` tidak diperlukan untuk halaman AMP yang valid, komponen ini direkomendasikan karena akan menetapkan tingkat zoom ke 1 saat halaman dimuat pertama kali. [/filter]
 
-[filter formats="email"] This section is only valid for AMP websites, ads and stories. [/filter]
+[filter format="email"] Bagian ini hanya berlaku untuk cerita, iklan, dan situs web AMP. [/filter]
 
 ## Membuat tata letak responsif <a name="creating-a-responsive-layout"></a>
 
@@ -211,12 +211,12 @@ Menampilkan halaman yang dimuat dengan cepat memerlukan gambar yang dioptimalkan
 
 In HTML, you can serve different image formats by using the `picture` tag. In AMP, although the `picture` tag isn't supported, you can serve different images by using the `fallback` attribute.
 
-[tip type="read-on"] **BACA –** Untuk mempelajari lebih lanjut tentang fallback, kunjungi panduan [Bakal Tempat & Fallback](placeholders.md). [/tip]
+[tip type="read-on"]Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang fallback, lihat panduan [Placeholder & Fallback](placeholders.md). [/tip]
 
 Di AMP, ada dua cara untuk mencapai penayangan gambar yang optimal:
 
-- Developers using image formats that are not widely supported, such as WebP, can configure their server to process browser `Accept` headers and respond with image bytes and the appropriate [`Content-Type` header](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/). This avoids the browser from downloading image types it does not support. Read more about [content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation).[sourcecode:html]  Accept: image/webp,image/apng,image/_,_/\*;q=0.8  [/sourcecode]
-- Provide nested image fallbacks, such as the example below.
+- Pengembang yang menggunakan format gambar yang tidak didukung secara luas, seperti WebP, dapat mengonfigurasi server mereka untuk memproses tajuk `Accept` browser dan merespons dengan byte gambar serta [tajuk `Content-Type`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/) yang sesuai. Hal ini untuk menghindari browser mengunduh jenis gambar yang tidak didukungnya. Baca lebih lanjut tentang [negosiasi konten](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation).[sourcecode:html] Accept: image/webp,image/apng,image/_,_/\*;q=0.8 [/sourcecode]
+- Berikan fallback gambar bertingkat, seperti contoh di bawah ini.
 
 ##### Contoh: Menampilkan format gambar yang berbeda
 
