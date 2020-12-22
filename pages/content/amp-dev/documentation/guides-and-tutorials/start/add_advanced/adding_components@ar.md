@@ -1,7 +1,7 @@
 ---
 "$title": إضافة مكونات AMP الموسعة
 "$order": '2'
-description: 'AMP’s component system allows you to quickly build efficient and responsive features into your articles with minimal effort. The AMP HTML library has three classifications for AMP components: ...'
+description: '"يسمح نظام مكونات AMP لك ببناء ميزات فعالة ومستجيبة بسرعة ودمجها في مقالاتك بأقل مجهود. تحتوي مكتبة AMP HTML على ثلاث تصنيفات لمكونات AMP: ..."'
 ---
 
 يسمح نظام مكونات AMP لك ببناء ميزات فعالة ومستجيبة بسرعة ودمجها في مقالاتك بأقل مجهود. تحتوي مكتبة AMP HTML على ثلاث تصنيفات لمكونات AMP:
