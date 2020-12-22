@@ -1,7 +1,7 @@
 ---
 "$title": إنشاء الإعلان المصور
 "$order": '1'
-description: 'Our ad is a simple image with a hyperlink to the advertised site.  We''ll display the image using the amp-img tag. Here''s the code: ...'
+description: '"إعلاننا عبارة عن صورة بسيطة مع ارتباط تشعبي للموقع المعلن عنه؛ سنعرض الصورة باستخدام علامة amp-img. إليك الرمز: ..."'
 ---
 
 داخل `<body>` الخاص بمستند إعلان AMPHTML، يمكنك تضمين علامات HTML وAMP؛ على الرغم من ذلك، لا يُسمح بجميع العلامات. راجع [مواصفات إعلان AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#allowed-amp-extensions-and-builtins) للحصول على قائمة بالعلامات المسموح بها.
