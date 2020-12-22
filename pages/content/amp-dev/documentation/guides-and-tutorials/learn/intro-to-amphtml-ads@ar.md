@@ -1,7 +1,7 @@
 ---
-"$title": Intro to AMPHTML ads
+"$title": مقدمة لإعلانات AMPHTML
 "$order": '1'
-description: AMPHTML ads are a faster, lighter and more secure way to advertise on the web. Although AMP pages support traditional HTML ads, these ads can be slow to load.
+description: تُعد إعلانات AMPHTML طريقة أسرع وأبسط وأكثر أمانًا للإعلان على الويب. على الرغم من أن صفحات AMP تدعم إعلانات HTML التقليدية، فقد تكون هذه الإعلانات بطيئة في التحميل.
 formats:
 - ads
 ---
@@ -12,18 +12,18 @@ formats:
 
 فيما تتم كتابة إعلانات AMPHTML بلغة AMP HTML وفقًا [لمواصفات إعلانات AMPHTML](a4a_spec.md) (أحد أشكال AMP HTML + CSS). ,هذا يعني أن الإعلانات لم تعد قادرة على تشغيل JavaScript عشوائي، والذي يعد السبب الأول لضعف أداء الإعلان على نحو تقليدي. لذا، وعلى غرار AMP الأساسي تمامًا، تم دمج حالات استخدام JavaScript للإعلانات الأساسية في مشروع AMP مفتوح المصدر الذي يضمن السلوك الجيد من الإعلانات.
 
-### Benefits
+### المزايا
 
 لماذا تُعد إعلانات AMPHTML أفضل من الإعلانات التقليدية؟
 
-1. **Faster**: AMPHTML ads are faster because the ads are requested earlier in the page rendering process, and immediately displayed just before the user is about to view the ad. The reduced file size of AMPHTML ads also increases speed.
-2. **Lighter**: AMPHTML ads combine commonly used ad functionality, which reduces the ad's file size. Once on the page, AMPHTML ads also consume less resources. For example, instead of 10 trackers requesting their own information in regular ads, AMPHTML ads collect all the data once and distribute it to any number of interested trackers.
-3. **Coordinated**: On AMP pages, the [AMP runtime](spec/amphtml.md#amp-runtime) can coordinate a mobile phone's limited resources to the right component at the right time to give the best user experience. For example, AMPHTML ads with animations are paused when the ads are not in the current viewport.
-4. **More Engaging**: Users can't engage with ads they can't see. Faster ads lead to higher viewability and therefore higher click-through rates, which ultimately leads to better ad performance.
-5. **Safe from Malware**: It's impossible to spread malware with AMPHTML ads because the ads are verified before being served. Because of this, advertisers can ensure a safe user experience and positive brand perception.
-6. **More Flexible**: AMPHTML ads are designed to work on both AMP and non-AMP web pages, as well as across any device.
+1. **أسرع**: تكون إعلانات AMPHTML أسرع لأنه يتم طلب الإعلانات في وقت مبكر من عملية عرض الصفحة، ويتم عرضها على الفور قبل أن يوشك المستخدم على عرض الإعلان. ويؤدي تقليل حجم ملف إعلانات AMPHTML أيضًا إلى زيادة السرعة.
+2. **أبسط**: تجمع إعلانات AMPHTML بين وظيفية الإعلان شائعة الاستخدام، الأمر الذي يقلل حجم ملف الإعلان. وبمجرد وصولها إلى الصفحة، تستهلك إعلانات AMPHTML أيضًا موارد أقل. على سبيل المثال، بدلًا عن طلب 10 متتبعين معلوماتهم الخاصة في الإعلانات العادية، تجمع إعلانات AMPHTML جميع البيانات مرة واحدة وتوزعها على أي عدد من المتتبعين المهتمين.
+3. **منسَّقة**: في صفحات AMP، يمكن [لوقت تشغيل AMP](spec/amphtml.md#amp-runtime) تنسيق الموارد المحدودة للهاتف المحمول مع المكون الصحيح في الوقت المناسب لمنح أفضل تجربة للمستخدم. على سبيل المثال، يتم إيقاف إعلانات AMPHTML ذات الرسوم المتحركة مؤقتًا عندما لا تكون الإعلانات موجودة في منفذ العرض الحالي.
+4. **أكثر انخراطًا**: لا يمكن للمستخدمين التعامل مع الإعلانات التي لا يمكنهم رؤيتها. إذ تؤدي الإعلانات الأسرع إلى إمكانية عرض أعلى وبالتالي زيادة معدلات نقرات العبور، مما يؤدي في النهاية إلى أداء إعلان أفضل.
+5. **آمنة من البرامج الضارة**: من المستحيل نشر برامج ضارة باستخدام إعلانات AMPHTML لأنه يتم التحقق من الإعلانات قبل عرضها. لهذا السبب، يمكن للمعلنين ضمان تجربة مستخدم آمنة وتصور إيجابي للعلامة التجارية.
+6. **أكثر مرونة**: تم تصميم إعلانات AMPHTML للعمل على كل من صفحات ويب AMP وصفحات الويب بغير تنسيق AMP، وكذلك عبر أي جهاز.
 
-### Formats
+### التنسيقات
 
 تتميز إعلانات AMPHTML بالمرونة والديناميكية، مما يسمح بالعديد من التنسيقات الإبداعية مثل carousel وparallax وlightbox، على سبيل المثال لا الحصر. استفد من نماذج إعلانات AMPHTML  <a class="" href="https://gitlocalize.com/repo/4863/ar/pages/content/amp-dev/documentation/examples/index.html">مفتوحة المصدر في أمثلة </a>.
 
@@ -43,21 +43,21 @@ formats:
   </tr>
 </table>
 
-## How AMPHTML ads work
+## طريقة عمل إعلانات AMPHTML
 
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='Serving AMPHTML ads to AMP pages', caption='Serving AMPHTML ads to AMP pages', align='' ) }}
 
-1. Publishers insert an ad slot on their AMP page via the [`amp-ad`](../../../documentation/components/reference/amp-ad.md) tag, specifying the ad network they wish to use.
-2. The AMP Runtime sends an ad request to the specified ad network to retrieve the ad. Ad networks capable of serving AMPHTML ads provide a [Fast Fetch implementation](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) that validates and signs the creative.
-3. The ad network responds with the AMPHTML ad and the AMP Runtime renders the ad on the AMP page.
+1. يُدرج الناشرون شريحة إعلانية في صفحة AMP الخاصة بهم عبر العلامة [`amp-ad`](../../../documentation/components/reference/amp-ad.md)، مع تحديد شبكة الإعلانات التي يرغبون في استخدامها.
+2. يرسل وقت تشغيل AMP طلب إعلان إلى شبكة الإعلانات المحددة لاسترداد الإعلان. وتوفر شبكات الإعلانات القادرة على عرض إعلانات AMPHTML [تنفيذ الإحضار السريع](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) الذي يتحقق من صحة التصميم ويوقع عليه.
+3. تستجيب شبكة الإعلانات بإعلان AMPHTML ويعرض وقت تشغيل AMP الإعلان على صفحة AMP.
 
-[tip type="note"] No special integration is needed to serve AMPHTML ads to non-AMP pages. Check with your ad network to see if they support AMPHTML ads. [/tip]
+[tip type="note"] لا حاجة إلى تكامل خاص لعرض إعلانات AMPHTML على الصفحات بغير بتنسيق AMP. تحقق من شبكة الإعلانات لديك لمعرفة ما إذا كانت تدعم إعلانات AMPHTML أم لا. [/tip]
 
-## Serving AMPHTML ads
+## عرض إعلانات AMPHTML
 
-### Publishers
+### الناشرون
 
-To serve your direct-sold ad formats in AMPHTML, you must create the ads according to the [AMPHTML ad spec](a4a_spec.md) and deliver them using an ad server that supports AMPHTML ad serving.  Currently, the following ad servers support AMPHTML ads:
+لعرض أشكال الإعلانات التي تُباع مباشرةً في AMPHTML، يجب عليك إنشاء الإعلانات وفقًا لـ [مواصفات إعلانات AMPHTML](a4a_spec.md) وتقديمها باستخدام خادم إعلانات يدعم عرض إعلانات AMPHTML. أما حاليًا، تدعم خوادم الإعلانات التالية إعلانات AMPHTML:
 
 - DoubleClick للناشرين
 - TripleLift
@@ -67,7 +67,7 @@ To serve your direct-sold ad formats in AMPHTML, you must create the ads accordi
 
 لعرض إعلانات AMPHTML عبر قنواتك غير المباشرة (مثل exchange وSSP وما إلى ذلك)، استخدم شبكة إعلانات/خادم إعلانات داعمًا في [القائمة التالية](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md).
 
-### Creative agencies
+### وكالات إبداعية
 
 إذا كنت تمثل وكالة إبداعية، فيجب عليك إنشاء الإعلانات وفقًا [لمواصفات إعلان AMPHTML ](a4a_spec.md). لاستلهام أفكار والحصول على أمثلة، راجع نماذج إعلانات AMPHTML مفتوحة المصدر على [أمثلة](../../../documentation/examples/index.html). بدلًا من ذلك، استخدم إحدى الأدوات التالية لإنشاء إعلانات AMPHTML:
 
@@ -75,11 +75,11 @@ To serve your direct-sold ad formats in AMPHTML, you must create the ads accordi
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
 - Adobe Animate (*قريبًا*)
 
-### Ad networks/servers
+### خوادم/شبكات الإعلانات
 
 لتقديم إعلانات AMPHTML إلى صفحات AMP، يلزمك إنشاء ملحق [`amp-ad`](../../../documentation/components/reference/amp-ad.md) لشبكتك (ما لم يكن لديك واحد بالفعل) والذي يستخدم [تنفيذ طلب إعلان للإحضار السريع](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md). راجع [التكامل مع AMP لعرض الإعلانات](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md) للحصول على مزيد التفاصيل. وضع في اعتبارك أنه ليست هناك حاجة إلى تكامل خاص لعرض AMPHTML على الصفحات بغير AMP.
 
-## Creating AMPHTML ads
+## إنشاء إعلانات AMPHTML
 
 **من نقطة الصفر**: يجب أن تتبع إعلانات AMPHTML [مواصفات إعلان AMPHTML](a4a_spec.md). للحصول على عروض توضيحية وأمثلة، راجع نماذج إعلانات AMPHTML مفتوحة المصدر في [أمثلة](../../../documentation/examples/documentation/amp-ad.html).
 
@@ -89,7 +89,7 @@ To serve your direct-sold ad formats in AMPHTML, you must create the ads accordi
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
 - Adobe Animate (*قريبًا*)
 
-### Validate AMPHTML ad syntax
+### التحقق من صحة بناء جملة إعلانات AMPHTML
 
 بعد إنشاء إعلان AMPHTML، يجب التأكد من أن الإعلان يستخدم بناء الجملة AMPHTML الصحيح. اعتمادًا على بيئة التطوير لديك، هناك بعض الخيارات المتاحة لك للتحقق من صحة إعلانات AMPHTML الخاصة بك:
 
@@ -99,29 +99,29 @@ To serve your direct-sold ad formats in AMPHTML, you must create the ads accordi
 
 [tip type="note"] **ملحوظة–**  لعرض إعلانات AMPHTML بسرعة على صفحات AMP (أي باستخدام العرض التفضيلي في الإحضار السريع)، يجب أن يكون بناء الجملة صحيحًا. وإذا كان بناء الجملة غير صحيح، فسيستمر عرض الإعلان، ولكن ليس بالسرعة نفسها. [/tip]
 
-## Supporting AMPHTML ads in RTB
+## دعم إعلانات AMPHTML في RTB
 
 بالنسبة إلى SSPs وعمليات تبادل الإعلانات التي ترغب في دعم إعلانات AMPHTML في بيئة عروض الأسعار في الوقت الفعلي (RTB)، يُرجى الرجوع إلى [دليل التنفيذ لتبادل الإعلانات في RTB](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/RTBExchangeGuide.md) للحصول على مزيد التفاصيل.
 
-## FAQs
+## الأسئلة الشائعة
 
-#### Are there any AMPHTML ad samples?
+#### هل توجد أي نماذج من إعلانات AMPHTML؟
 
 نعم. يمكن العثور على عدد من نماذج إعلانات AMPHTML ذات التصميم الرائع في [أمثلة](../../../documentation/examples/documentation/amp-ad.html). إذ تستخدم هذه النماذج مكونات متقدمة في AMP.
 
-#### Do AMPHTML ads support 3rd party verification and viewability detection?
+#### هل تدعم إعلانات AMPHTML التحقق من الأطراف الثالثة واكتشاف إمكانية العرض؟
 
 نعم، هناك دعم أصلي للتحقق واكتشاف إمكانية العرض باستخدام [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) (على سبيل المثال، يتكامل ActiveView من Google بهذه الطريقة). وهناك أيضًا بائعون آخرون مثل MOAT يقومون بتنفيذ الدعم بنشاط لها.
 
-#### Do AMPHTML ads support timeline-based animation?
+#### هل تدعم إعلانات AMPHTML الرسوم المتحركة المستندة إلى الجدول الزمني؟
 
 نعم، راجع [`amp-animation`](../../../documentation/components/reference/amp-animation.md).
 
-#### Most ads have tappable targets and configurable ad exits. Do AMPHTML ads have a similar mechanism?
+#### تحتوي معظم الإعلانات على أهداف قابلة للنقر ومخارج قابلة للتكوين، هل لإعلانات AMPHTML آلية مماثلة؟
 
 نعم، راجع [`amp-ad-exit`](../../../documentation/components/reference/amp-ad-exit.md).
 
-#### I can't find what I need, where can I ask questions?
+#### لا أجد ما أحتاجه، أين يمكنني طرح الأسئلة؟
 
 - [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) هي الطريقة الموصى بها للعثور على إجابات للأسئلة حول AMP؛ نظرًا لأن أعضاء مجتمع AMP Project يراقبون Stack Overflow بانتظام، فمن المحتمل أن تتلقى الإجابة الأسرع عن أسئلتك هناك.
 - انضم إلى قناة [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) للحصول على حلول وأجوبة.
