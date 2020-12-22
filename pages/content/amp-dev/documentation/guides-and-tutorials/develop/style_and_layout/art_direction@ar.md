@@ -16,9 +16,9 @@ contributors:
 
 ## srcset
 
-Use the `srcset` attribute to control an element’s assets based on varying media expressions. In particular, use it for all [`amp-img`](../../../../documentation/components/reference/amp-img.md) tags to specify which image assets to use based on varying screen sizes. AMP will autogenerate a `sizes` attribute, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img" data-md-type="link">that meets the HTML5 definition of `sizes`</a>, for all underlying `<img>` tags of `<amp-img>` if the `<amp-img>` has a `srcset` attribute but no `sizes`.
+استخدم السمة `srcset` للتحكم في أصول العنصر بناءً على تعبيرات الوسائط المختلفة. على وجه الخصوص، استخدمها مع كل علامات [`amp-img`](../../../../documentation/components/reference/amp-img.md) لتحديد أي أصول صورة ستستخدمها في أحجام الشاشة المختلفة. وسيقوم AMP بإنشاء تلقائي للسمة `sizes`، <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img" data-md-type="link">التي تقابل تعريف HTML5 لـ `sizes`</a>، لكل علامات `<img>` المصدر لـ `<amp-img>` إذا كانت `<amp-img>` تحتوي على السمة `srcset` لكن لا تحتوي على `sizes`.
 
-In this simple example, `srcset` specifies which image to use based on the screen width. The `w` descriptor tells the browser the width of each image in the list:
+في هذا المثال البسيط، تحدد `srcset` الصورة التي سيتم استخدامها بناءً على عرض الشاشة. ويخبر واصف `w` المتصفح بعرض كل صورة في القائمة:
 
 [example preview="top-frame" playground="true"]
 ```html
@@ -33,13 +33,13 @@ In this simple example, `srcset` specifies which image to use based on the scree
 ```
 [/example]
 
-[tip type="note"] **NOTE –**  AMP supports srcset with the `w` descriptor across all browsers. [/tip]
+[tip type="note"] **ملحوظة–**  يدعم AMP السمة srcset بالواصف `w` عبر كل المتصفحات. [/tip]
 
-Learn more about creating responsive images using `srcset` in [Using Responsive Images (Now)](http://alistapart.com/article/using-responsive-images-now).
+تعرف على المزيد حول إنشاء صور سريعة الاستجابة باستخدام `srcset` في [استخدام الصور سريعة الاستجابة (الآن)](http://alistapart.com/article/using-responsive-images-now).
 
 ## الأحجام
 
-You can also use the optional AMP `sizes` attribute along with `srcset`. The AMP `sizes` attribute describes how to calculate the element size based on any media expression. <strong data-md-type="raw_html">Defining `sizes` on any AMP Element will cause AMP to set an inline style for width on that element according to the matched media query.</strong> Based on the element’s calculated size, the user agent selects the most relative source supplied by the `srcset` attribute.
+يمكنك أيضًا استخدام السمة الاختيارية `sizes` لصفحات AMP مع `srcset`. إذ تصف السمة `sizes` الخاصة بـ AMP كيفية حساب حجم العنصر بناءً على أي تعبير وسائط. حيث سيتسبب <strong>تحديد <code>أحجام</code> على أي عنصر من عناصر AMP في تعيين AMP لنمط مضمن للعرض على هذا العنصر وفقًا لاستعلام الوسائط المتطابق.</strong> وبناءً على الحجم المحسوب للعنصر، يحدد وكيل المستخدم المصدر الأكثر صلة الذي توفره السمة `srcset`.
 
 تدبر في المثال التالي:
 
@@ -56,20 +56,20 @@ You can also use the optional AMP `sizes` attribute along with `srcset`. The AMP
 ```
 [/example]
 
-The `sizes` attribute defines the element’s width to be 50% the size of the viewport when the viewport is 650px or more. For example, if the viewport is 800px, the element’s width is set to 400px. The browser then selects the `srcset` resource relative to 400px, assuming the device pixel ratio is 1, which in this instance is `hummingbird-narrow.jpg` (320px).
+تحدد السمة `sizes` عرض العنصر ليكون بنسبة 50٪ من حجم إطار العرض عندما يكون حجم إطار العرض 650 بكسل أو أكثر. على سبيل المثال، إذا كان حجم منفذ العرض 800 بكسل، فسيتم ضبط عرض العنصر على 400 بكسل. ثم يحدد المتصفح مورد `srcset` بالنسبة إلى 400 بكسل، بافتراض أن نسبة وحدات البكسل للجهاز هي 1، والتي في هذه الحالة تكون عبارة عن `hummingbird-narrow.jpg` (320 بكسل).
 
-[tip type="important"] **IMPORTANT –** When sizes attribute is specified along with width and height, layout defaults to `responsive`. [/tip]
+[tip type="important"] **مهم –** عند تحديد سمة الأحجام جنبًا إلى جنب مع العرض والارتفاع، يكون التخطيط الافتراضي عبارة عن `responsive`. [/tip]
 
-Read more about the [AMP `sizes` attribute here](../../../../documentation/guides-and-tutorials/learn/common_attributes.md).
+اقرأ المزيد حول سمة [`sizes` الخاصة بـ AMP هنا](../../../../documentation/guides-and-tutorials/learn/common_attributes.md).
 
 ## الارتفاعات
 
-All AMP custom elements that allow `responsive` layout, also support the `heights` attribute. The value of this attribute is a sizes expression based on media expressions as similar to the [img sizes attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), but with two key differences:
+تدعم أيضًا جميع عناصر AMP المخصصة التي تسمح بتخطيط `responsive` سمة `heights` . قيمة هذه السمة عبارة عن تعبير أحجام يستند إلى تعبيرات وسائط مشابهة [لسمة أحجام الصور](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) ، ولكن مع اختلافين رئيسيين:
 
 1. تنطبق على ارتفاع العنصر وليس عرضه.
-2. Percent values are allowed, e.g. `86%`. If a percent value is used, it indicates the percent of the element's width.
+2. القيم المئوية مسموح بها، على سبيل المثال `86٪`. وإذا تم استخدام قيمة النسبة المئوية، فإنها تشير إلى النسبة المئوية لعرض العنصر.
 
-When the `heights` attribute is specified along with `width` and `height`, the `layout` is defaulted to `responsive`.
+عندما يتم تحديد السمة `heights` جنبًا إلى جنب مع`width` و`height`، يتم تعيين `layout` بشكل افتراضي إلى `responsive`.
 
 مثال:
 
@@ -84,4 +84,4 @@ When the `heights` attribute is specified along with `width` and `height`, the `
 ```
 [/example]
 
-In this example, the height of the element by default will be 80% of the width, but for the viewport wider than `500px` it will be capped at `200px`.
+في هذا المثال، سيكون ارتفاع العنصر افتراضيًا بنسبة 80٪ من العرض، ولكن بالنسبة لإطار العرض الأوسع من `500px`، فسيتم تحديده عند `200px`.
