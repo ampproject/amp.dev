@@ -12,7 +12,7 @@ author: sebastianbenz
 
 ### أليست AMP سريعة بشكل افتراضي؟
 
-The AMP runtime is [optimized for speed](../../../about/how-amp-works.html) and if your AMP pages are served by an [AMP cache](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md), they are fully optimized and offer the highest loading performance. For example, if your users are coming to your AMP pages from Google Search on mobile, by default the pages are served by an AMP cache.
+يتميز وقت تشغيل AMP بأنه [محسّن للحصول على السرعة](../../../about/how-amp-works.html) وإذا عُرضت صفحات AMP الخاصة بك بواسطة ذاكرة AMP للتخزين المؤقت، فهي محسّنة بالكامل وتوفر أعلى أداء تحميل. على سبيل المثال، إذا كان المستخدمون يأتون إلى صفحات AMP الخاصة بك من "بحث Google" على الهاتف المحمول، فسيتم عرض الصفحات بواسطة ذاكرة AMP للتخزين المؤقت بشكل افتراضي.
 
 ومع ذلك، لا يتم دائمًا عرض صفحات AMP من ذاكرة AMP للتخزين المؤقت. إذ قد يقرر الموقع الإلكتروني عرض صفحات AMP من خوادمه الخاصة لمصادر نقل بيانات أخرى. وأكثر حالات الاستخدام شيوعًا هي المواقع التي تم إنشاؤها بالكامل في إطار AMP، مثل [tasty.co](https://tasty.co)، حيث ينتقل المستخدمون مباشرة إلى الموقع. ومن بين مصادر نقل البيانات الأخرى موقع Twitter، والذي [بدأ في الارتباط بصفحات AMP](https://searchengineland.com/twitter-ramps-amp-278300) بدلاً من تقديم إصدار الجوال القياسي. هذا يعني أنه إذا نقر المستخدم على رابط في أحد تطبيقات Twitter للهاتف المحمول، فإن الرابط ينتقل إلى إصدار AMP لصفحتك على الأصل الخاص بك (إذا كان متاحًا).
 
@@ -68,7 +68,7 @@ The AMP runtime is [optimized for speed](../../../about/how-amp-works.html) and 
 
 1. يجب أن تكون العلامة الأولى هي علامة `meta charset`، متبوعة بأي علامات `meta` متبقية.
 
-2. Next, preload the AMP runtime `v0.js` `<script>` tag with `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>`. The AMP runtime should start downloading as soon as possible because the [AMP boilerplate](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) hides the document via `body { visibility:hidden }` until the AMP runtime has loaded. Preloading the AMP runtime tells the browser to download the script with a higher priority. Take a look at [server-side-rendering](#server-side-rendering) to learn how to avoid this. <amp-img src="/static/img/docs/preload_resource_priorities.jpg" width="1230" height="1068" layout="responsive" alt="Priority level changes when preload is applied"> </amp-img>
+2. بعد ذلك، قم بالتحميل المسبق لعلامة وقت تشغيل AMP `v0.js` `<script>` باستخدام `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>`. يجب أن يبدأ وقت تشغيل AMP بالتحميل بأسرع وقت لأن [AMP boilerplate](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) يقوم بإخفاء المستند من خلال `body { visibility:hidden }` حتى يكتمل تحميل وقت تشغيل AMP. التحميل المسبق لوقت تشغيل AMP يُعلم المتصفح بتحميل النص البرمجي بأولوية قصوى. القِ نظرة على [العرض بجانب الخادم](#server-side-rendering) للتعرّف على كيفية تجنب هذا الأمر.
 
 3. إذا كانت صفحتك تحتوي على إضافات تأخير العرض (على سبيل المثال، amp-experience وamp-dynamic-css-class وamp-story)، فحمِّل هذه الإضافات مسبقًا كما هو مطلوب في وقت تشغيل AMP لعرض الصفحة.
 
