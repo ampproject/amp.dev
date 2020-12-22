@@ -45,7 +45,7 @@ contributors:
 
 ## الترميز المطلوب
 
-AMP HTML documents MUST:
+يجب أن تتسم مستندات AMP HTML بما يلي:
 
 القاعدة | الوصف
 --- | ---
@@ -60,11 +60,11 @@ Contain a `<meta name="viewport" content="width=device-width"> It's also recomme
 
 ## البيانات الوصفية الاختيارية
 
-In addition to the bare requirements, our sample also includes a Schema.org definition in the head, which isn’t a strict requirement for AMP, but it is a requirement to get your content distributed in certain places (for example, in the Google Search top stories carousel).
+بالإضافة إلى المتطلبات الجلية، يتضمن المثال الخاص بنا أيضًا تعريف Schema.org في العنوان، وهو ليس متطلبًا صارمًا لـ AMP، ولكنه متطلب لأجل توزيع المحتوى الخاص بك في أماكن معينة (على سبيل المثال في العرض الدوار لأهم قصص بحث Google).
 
-[tip type="read-on"]Visit these resources to learn more:
+[tip type="read-on"]زر هذه الموارد لتعلم المزيد:
 
-- [Getting Started with AMP on Google Search](https://developers.google.com/amp/docs) - learn to prepare your AMP pages for Google Search.
+- [الشروع في العمل مع AMP على بحث Google](https://developers.google.com/amp/docs) - تعلم كيفية تحضير صفحات AMP لبحث Google.
 - [أمثلة بيانات التعريف](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) - تعلم المزيد حول كافة بيانات التعريف التي ستحتاج إليها في العديد من الأماكن الأخرى  (مثل Twitter). [/tip]
 
 <hr>
