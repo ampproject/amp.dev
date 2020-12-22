@@ -1,7 +1,7 @@
 ---
-"$title": Monetizing your AMP page with ads
+"$title": الربح من صفحة AMP الخاصة بك مع الإعلانات
 "$order": '0'
-description: This guide provides instructions and best practices for displaying ads on your AMP pages. So, to display ads in AMP, you need to add the custom amp-ad component...
+description: يقدم هذا الدليل إرشادات وأفضل الممارسات لعرض الإعلانات على صفحات AMP الخاصة بك. لذا، من أجل عرض الإعلانات في AMP، يلزمك إضافة مكون amp-ad المخصص ...
 formats:
 - websites
 ---
@@ -114,7 +114,7 @@ formats:
 - ضع عدد الإعلانات نفسه في صفحات AMP مثل صفحاتك المبنية بغير AMP لتحقيق أقصى عائد لكل صفحة.
 - **ضع الإعلان الأول أسفل منفذ العرض الأول مباشرة** ("أسفل الطية") لتوفير تجربة مستخدم فائقة.
 - ما لم تكن تستخدم CSS أو استعلامات وسائط متقدمة **تأكد من أن وحداتك الإعلانية متمركزة في الصفحة** لتزويد المستخدمين بتجربة ويب مثالية للهاتف المحمول.
-- Enable [multi-size ad requests](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests) on your AMP inventory to increase ad auction pressure and drive revenue.
+-  <a class="" href="https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests">قم بتمكين طلبات الإعلانات متعددة الأحجام في مخزون </a> AMP لزيادة لضغط على مزاد الإعلانات وزيادة الأرباح.
 
 ### الطلب والتسعير: احصل على السعر المناسب لإعلاناتك
 
