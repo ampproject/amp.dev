@@ -22,7 +22,7 @@ Selain memvalidasi AMP, Anda juga mungkin ingin mengonfirmasi bahwa dokumen AMP 
 
 Validator AMP hadir sepaket dengan perpustakaan JS AMP, sehingga perpustakaan ini tersedia di setiap halaman AMP tanpa perlu diotak-atik. Untuk memvalidasi:
 
-1. Open your AMP page in your browser.
+1. Buka halaman Anda di browser.
 2. Lampirkan "`#development=[1,actions,amp,amp4ads,amp4email]`" ke URL, contoh: `http://localhost:8000/released.amp.html#development=1` adalah cara lama atau warisan untuk memvalidasi format <code>AMP</code>. URL berikut ini, <code>http://localhost:8000/released.amp.html#development=amp4email</code> akan memvalidasi dokumen sesuai spek AMP untuk email.
 3. Buka [konsol Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/debug/console/) dan periksa apakah ada eror atau kesalahan validasi.
 
