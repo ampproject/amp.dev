@@ -39,7 +39,7 @@ Markah berikut ini merupakan titik awal atau boilerplate yang baik. Salin dan si
 
 Sejauh ini, konten pada badan halaman ini cukup mudah dipahami. Namun, banyak kode tambahan di bagian tajuk yang mungkin tidak bisa langsung dipahami. Mari kita uraikan markah yang diperlukan.
 
-[tip type="note"] Saat membuat konten dan halaman AMP, sebaiknya Anda memprioritaskan penggunaan protokol HTTPS (bukan HTTP). Meskipun HTTPS tidak wajib digunakan untuk dokumen AMP itu sendiri atau untuk gambar dan font, ada banyak fitur AMP yang mewajibkan penggunaan HTTPS (misalnya video, iframe, dan banyak lagi). Untuk memastikan halaman AMP Anda memanfaatkan sepenuhnya semua fitur AMP, gunakan protokol HTTPS.  Anda dapat mempelajari HTTPS lebih lanjut dalam ["Perlunya Menggunakan HTTPS"](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https). [/tip]
+Gunakan HTTPS: Saat membuat konten dan halaman AMP, sebaiknya Anda memprioritaskan penggunaan protokol HTTPS (bukan HTTP). Meskipun HTTPS tidak wajib digunakan untuk dokumen AMP itu sendiri atau untuk gambar dan font, banyak fitur AMP yang mewajibkan penggunaan HTTPS (cth.: video, iframe, dan banyak lagi). Untuk memastikan halaman AMP Anda sepenuhnya memanfaatkan semua fitur AMP, gunakan protokol HTTPS. Anda dapat mempelajari HTTPS lebih lanjut dalam ["Mengapa HTTPS Penting"](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
 
 [tip type="tip"] Gunakan [Penghasil Boilerplate AMP](/boilerplate) agar dapat dengan cepat memulai pembuatan halaman AMP baru. [/tip]
 
