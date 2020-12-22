@@ -48,7 +48,7 @@ description: '"باستخدام محرر النصوص المفضل لديك، ق
 <style amp4ads-boilerplate>body{visibility:hidden}</style>
 ```
 
-To style your AMPHTML ad, your CSS must be embedded inline in the AMPHTML document using <code><style amp-custom></style> </code>tags in the <code></code> section. As we're rendering a basic image ad, we don't require any CSS, so we won't add these tags.
+لتحديد نمط إعلان AMPHTML الخاص بك، يجب أن تكون CSS مضمنة في مستند AMPHTML باستخدام علامات <code><style amp-custom></style></code> في القسم <code><head></code>. ونظرًا لأننا نعرض إعلانًا مصورًا أساسيًا، فإننا لا نطلب أي CSS، لذلك لن نضيف هذه العلامات.
 
 [tip type="note"] **ملحوظة –** بالنسبة لإعلانات AMPHTML، يبلغ الحد الأقصى لحجم صفحة الأنماط المضمنة *20 كيلو بايت*. اعرف المزيد عن [متطلبات CSS في مواصفات إعلان AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#css). [/tip]
 
