@@ -20,9 +20,9 @@ Dokumen ini menguraikan ekspektasi pihak ketiga AMP dan menentukan tingkat kontr
 
 # Panduan berkontribusi
 
-All general contributions are subject to the [AMPHTML universal guidelines in CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). We expect the third party to test, maintain, and update their contribution to various degrees.
+Semua kontribusi umum tunduk terhadap [panduan universal HTML AMP di CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Kami mengharapkan pihak ketiga untuk menguji, memelihara, dan memperbarui kontribusinya ke berbagai tingkatan.
 
-To qualify for inclusion, all contribution levels must:
+Agar memenuhi syarat untuk dimasukkan, semua tingkat kontribusi harus:
 
 - Memenuhi [persyaratan kelayakan Wikipedia bahasa Inggris](https://en.wikipedia.org/wiki/Wikipedia:Notability).
 - Mempertahankan atau meningkatkan jenis tingkat layanan yang sama seperti yang dijanjikan AMP untuk penayang dan pengguna.
@@ -38,7 +38,7 @@ Ada 3 tingkat kontribusi pihak ketiga. Tingkatan bergantung pada jumlah logika y
 
 Semakin banyak logika yang ditambahkan ke repositori AMP, terutama logika khusus pihak ketiga, semakin meningkatkan tingkat kontribusi. Tingkat kontribusi yang tinggi membutuhkan lebih banyak komitmen dari pihak ketiga.
 
-Level 1 and level 2 contributions share components between third parties. If there is a component fulfills a purpose similar to your business, consider reusing that component. This requires much less effort and is more long-term maintainable.
+Kontribusi tingkat 1 dan tingkat 2 berbagi komponen antara pihak ketiga. Jika ada komponen yang memenuhi tujuan yang mirip dengan bisnis Anda, pertimbangkan untuk menggunakan kembali komponen tersebut. Ini membutuhkan lebih sedikit usaha dan lebih dapat dipelihara dalam jangka panjang.
 
 Setelah memutuskan tingkat kontribusi yang sesuai dengan contoh penggunaan Anda, buka [masalah GitHub](https://github.com/ampproject/amphtml/issues/new) untuk memulai.
 
@@ -48,7 +48,7 @@ Ekstensi amp-ad digunakan untuk menayangkan iklan Display di halaman AMP. Lebih 
 
 Ada lebih dari 90 penyedia iklan yang telah menambahkan dukungan untuk fitur yang berkaitan dengan iklan seperti [`amp-ad`](../../../components/reference/amp-ad.md) . Berikut adalah contoh [pull request](https://github.com/ampproject/amphtml/pull/2299) dari jaringan iklan [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
 
-The only third party specific logic checked into the AMP repository is a third party configuration. Adding a new third party to an existing level 1 contribution typically does not need a design review. Third parties can follow the integration documentation of the component, such as [Integrating ad networks into AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+Satu-satunya logika yang spesifik untuk pihak ketiga yang masuk ke dalam repositori AMP adalah konfigurasi pihak ketiga. Menambahkan pihak ketiga baru ke kontribusi tingkat 1 yang sudah ada biasanya tidak memerlukan tinjauan desain. Pihak ketiga dapat mengikuti dokumentasi integrasi komponen, seperti [Mengintegrasikan jaringan iklan ke dalam AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
 
 ### Harapan untuk pihak ketiga
 
@@ -61,9 +61,9 @@ The only third party specific logic checked into the AMP repository is a third p
 
 [**amp-ad**](../../../components/reference/amp-ad.md)
 
-Ad providers should read the [development overview](https://github.com/ampproject/amphtml/tree/master/ads#overview) and the [developer instructions](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) for adding your support to [`amp-ad`](../../../components/reference/amp-ad.md). Depending on the ad technology your company provides, you might find [these integration instructions ](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads)useful.
+Penayang iklan harus membaca [gambaran umum pengembangan](https://github.com/ampproject/amphtml/tree/master/ads#overview) dan [petunjuk pengembang](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) untuk menambahkan dukungan Anda ke [`amp-ad`](../../../components/reference/amp-ad.md). Bergantung pada teknologi iklan yang disediakan perusahaan Anda, [petunjuk integrasi ini](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads) mungkin berguna bagi Anda.
 
-There are many ad providers who have added support for advertising related features like amp-ad. Here is a [sample pull request](https://github.com/ampproject/amphtml/pull/2299) from the ad network [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
+Banyak penyedia iklan yang telah menambahkan dukungan untuk fitur terkait periklanan, seperti amp-ad. Berikut ini [contoh permintaan perubahan](https://github.com/ampproject/amphtml/pull/2299) dari jaringan iklan [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
 
 ## Kontribusi tingkat 2
 
@@ -75,7 +75,7 @@ Semua logika bisnis dimasukkan ke dalam repositori AMP, tetapi satu-satunya logi
 
 ### Harapan pihak ketiga
 
-- Adding new third party service to an existing level 2 contribution typically does not need a design review. The third party can follow the documentation of that component.
+- Menambahkan layanan pihak ketiga yang baru ke kontribusi tingkat 2 yang sudah ada biasanya tidak memerlukan tinjauan desain. Pihak ketiga dapat mengikuti dokumentasi komponen itu.
 - Mengusulkan komponen baru untuk kontribusi tingkat 2 harus memiliki logika fitur yang dapat dibagikan oleh layanan pihak ketiga lainnya.
 
 ### Contoh tingkat 2
@@ -84,28 +84,28 @@ Semua logika bisnis dimasukkan ke dalam repositori AMP, tetapi satu-satunya logi
 
 Analitik AMP memungkinkan Anda mengirimkan peristiwa kembali ke server berdasarkan pemicu yang Anda konfigurasi. Kami telah menulis [panduan integrasi analitik](../../optimize-measure/configure-analytics/index.md) untuk membantu Anda memulai.
 
-If you only need to add a tracking pixel with dynamic parameters to your tracking URL, check out [`amp-pixel`](../../../components/reference/amp-pixel.md). Be sure to document usage on your support pages for developers that may want to use your technology with AMP.
+Jika Anda hanya perlu menambahkan piksel pelacakan dengan parameter dinamis ke URL pelacakan Anda, coba [`amp-pixel`](../../../components/reference/amp-pixel.md). Pastikan untuk mendokumentasikan penggunaan di halaman dukungan Anda untuk pengembang yang mungkin ingin menggunakan teknologi Anda dengan AMP.
 
 Ada penyedia analitik yang telah menambahkan dukungan ke amp-analytics. Berikut ini [sampel permintaan perubahan](https://github.com/ampproject/amphtml/pull/1595) dari penyedia analitik [Parse.ly](https://www.parsely.com/help/integration/google-amp/).
 
 [**amp-call-tracking**](../../../components/reference/amp-call-tracking.md)
 
-If you provide call tracking measurement services, your use case may be supported with [`amp-call-tracking`](../../../components/reference/amp-call-tracking.md). This component dynamically replaces a phone number in a hyperlink to enable call tracking, by executing a CORS request to substitute the number.
+Jika Anda menyediakan layanan pengukuran pelacakan panggilan, kasus atau contoh penggunaan Anda mungkin didukung dengan [`amp-call-tracking`](../../../components/reference/amp-call-tracking.md). Komponen ini secara dinamis menggantikan nomor telepon di hipertaut (hyperlink) untuk mengaktifkan pelacakan panggilan, dengan menjalankan permintaan CORS untuk mengganti nomor tersebut.
 
-To learn more about how this component might work for you, please see the [reference documentation](../../../components/reference/amp-call-tracking.md).
+Untuk mempelajari lebih lanjut tentang bagaimana komponen ini dapat berfungsi untuk Anda, silakan kunjungi [dokumentasi referensi](../../../components/reference/amp-call-tracking.md).
 
 ## Kontribusi tingkat 3
 
 Kontribusi tingkat 3 memperkenalkan komponen yang spesifik untuk pihak ketiga yang baru. Ini hanya berlaku jika pihak ketiga tidak dapat:
 
-- Find a component that exists for their use case.
-- Request feature improvements to meet their use case.
+- Menemukan komponen yang sudah ada untuk kasus atau contoh penggunaannya.
+- Meminta peningkatan fitur untuk memenuhi kasus atau contoh penggunaannya.
 - Mengusulkan komponen yang berlaku pada layanan pihak ketiga lainnya.
 
 ### Harapan pihak ketiga
 
 - Menulis dan mengusulkan tinjauan desain.
-- Tests must be able to catch breakage.
+- Pengujian harus bisa menemukan kerusakan.
 - Memperbaiki, atau meminta bantuan, jika komponen rusak.
 - Menyediakan melalui dokumentasi dengan sampel kode.
 - Memelihara dan memperbarui dokumentasi.
