@@ -8,22 +8,22 @@ author: CrystalOnScript
 
 توفر AMP مزايا سرعة تتجاوز التنسيق من خلال تقنيات مثل التخزين المؤقت والتحميل المُسبق. يمكن أن يكون لهذه المزايا [جوانب سلبية](https://blog.amp.dev/2017/02/06/whats-in-an-amp-url/) مثل عناوين URL الإضافية التي يتم عرضها عند التضمين داخل [عارض AMP](https://developers.google.com/search/docs/guides/about-amp). من خلال تقديم محتوى AMP باستخدام التبادلات الموقّعة، يمكنك استخدام ميزة "منصة الويب" الجديدة للتغلب على كل ذلك.
 
-A [signed exchange](https://developers.google.com/web/updates/2018/11/signed-exchanges) is made up of a valid AMP document and the original URL of the content. This information is protected by digital signatures that securely tie the document to its claimed URL. This enables browsers to safely display the original URL in the URL bar instead of the hostname of the machine that delivered the bytes to the browser.
+يتكون [التبادل الموقّع](https://developers.google.com/web/updates/2018/11/signed-exchanges) من مستند AMP صالح وعنوان URL الأصلي للمحتوى. هذه المعلومات محمية من خلال التوقيعات الرقمية التي تربط المستند بشكل آمن بعنوان URL الخاص بها. يتيح ذلك للمتصفحات عرض عنوان URL الأصلي بأمان في شريط URL بدلاً من اسم مضيف الجهاز الذي قام بتسليم وحدات البايت إلى المتصفح.
 
 يتم تسليم محتوى AMP الموقّع *بالإضافة إلى* (بدلاً من) محتوى AMP العادي.
 
-{{ image('/static/img/docs/guides/sxg/sxg.png', 411, 293, layout='responsive', alt='Image displaying URL from signed exchange', caption=' ', align='' ) }}
+{{ image('/static/img/docs/guides/sxg/sxg.png', 411, 293, layout='responsive', alt='عنوان URL لعرض الصورة من عملية التبادل الموقعة', caption=' ', align='' ) }}
 
-[tip type="note"] This feature is currently supported on Chrome, but implementation is planned for additional browsers. [/tip]
+[tip type="note"] يتم دعم هذه الميزة حاليًا على Chrome، ولكن هناك خطط موضوعة للتنفيذ على متصفحات إضافية. [/tip]
 
 # هل ستعمل التبادلات الموقّعة معي؟
 
 لتنفيذ التبادلات الموقّعة، يجب أن تستوفي المتطلبات التالية:
 
 - القدرة على تكوين عناوين HTTP التي تم إنشاؤها بواسطة الخادم الخاص بك والتحكم فيها. (معظم حلول الاستضافة المستندة إلى الويب البحتة مثل Blogger *غير* متوافقة مع التبادلات الموقّعة.)
-- The ability to generate AMP signed exchanges, such as by running [`amppackager`](https://github.com/ampproject/amppackager/blob/master/README.md), as a [Go binary](https://golang.org/doc/install), or within a [Docker VM](https://docs.docker.com/machine/get-started/).
+- القدرة على إنشاء تبادلات AMP موقّعة، مثل تشغيل خادم [`amppackager{/ code1}`](https://github.com/ampproject/amppackager/blob/master/README.md)، على أنه [Go binary](https://golang.org/doc/install)، أو داخل [Docker VM](https://docs.docker.com/machine/get-started/).
     - يجب تحديث أداة إنشاء الحِزم كل ستة أسابيع.
-- The ability to [Vary](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary) on `Accept` and `AMP-Cache-Transform` headers on edge HTTP servers, returning different content for the same URL.
+- القدرة على [التنوع](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary) ugn رؤوس `Accept` و`AMP-Cache-Transform` على خوادم HTTP، وإرجاع محتوى مختلف لعنوان URL نفسه.
 - يحتاج النظام الذي يقوم بتشغيل `amppackager` إلى أن يكون قادرًا على إرسال طلبات الشبكة الصادرة من أجل:
     - المرجع المصدّق الذي يصدر شهادتك
     - خادم الناشر الذي يستضيف مستندات AMP للتوقيع
@@ -111,17 +111,17 @@ Ea8/B6hPatJ0ES8q/HO3X8IVQwVs1n3aAr0im0/T+Xc=
 
 اتّبع الإرشادات [هنا لإعداد `amppackager` لموقعك](https://github.com/ampproject/amppackager/blob/master/README.md).
 
-[tip type="read-on"] See [`packager.js`](https://github.com/ampproject/docs/blob/future/platform/lib/routers/packager.js) (used by `amp.dev`) for an example of the server-side changes you will need to make to route the required requests to `amppkg`. [/tip]
+[tip type="read-on"] راجع [`packager.js`](https://github.com/ampproject/docs/blob/future/platform/lib/routers/packager.js) (المستخدم بواسطة `amp.dev`) للحصول على مثال حول التغييرات بجانب الخادم التي ستحتاج إلى إجرائها لتوجيه الطلبات المطلوبة إلى `amppkg`. [/tip]
 
 ### الاختبار
 
-Verify that your staging site responds with content of MIME type `application/signed-exchange` when specified by the HTTP request. For example (replace `staging.example.com` with your staging server):
+تحقق من أن الموقع المرحلي الخاص بك يستجيب بمحتوى من نوع MIME بالقيمة `application/signed-exchange` عند تحديده بواسطة طلب HTTP. على سبيل المثال (استبدل `staging.example.com` بخادمك المرحلي):
 
 ```sh
 $ curl -si -H 'amp-cache-transform: google;v="1..100"' -H 'accept: application/signed-exchange;v=b3;q=0.9,*/*;q=0.8' https://staging.example.com/ | less
 ```
 
-The output must include this line:
+يجب أن يتضمن الإخراج هذا السطر:
 
 ```txt
 content-type: application/signed-exchange;v=b3
@@ -131,7 +131,7 @@ content-type: application/signed-exchange;v=b3
 
 [tip type="important"] سلسلة الإصدار `v=b3` في الاستجابة هي الإصدار اعتبارًا من أغسطس 2019. سيتغير هذا الإصدار. [/tip]
 
-The bulk of the response should be your AMP page (in plaintext). There's a small binary header, and, if the page is >16kb, a few binary bytes sprinkled throughout.
+يجب أن يكون الجزء الأكبر من الاستجابة هو صفحة AMP الخاصة بك (بنص عادي). يوجد رأس ثنائي صغير، وإذا كانت الصفحة أكبر من 16 كيلوبايت، يتم توزيع بضع وحدات بايت ثنائية في كل مكان.
 
 يمكن استخدام أداة [`dump-signedexchange`](https://github.com/WICG/webpackage/blob/master/go/signedexchange/README.md#installation) لفحص الاستجابة:
 
@@ -143,7 +143,7 @@ format version: 1b3
 
 (لاحظ أن مفتاح التحويل `-verify` لن يعمل في هذه المرحلة لأن الشهادات المطلوبة ليست على خادم `https://example.com/`.)
 
-Verify that the response *always* include the `Vary` header with the value `Accept,AMP-Cache-Transform` (irrespective of whether the MIME type is `text/html`, `application/signed-exchange`, or something else):
+تحقق من أن الاستجابة *دائمًا* تتضمن رأس `Vary` مع القيمة `Accept,AMP-Cache-Transform` (بغض النظر عما إذا كان نوع MIME هو `text/html` أو `application/signed-exchange` أو أي شيء آخر):
 
 ```sh
 $ curl -si https://staging.example.com/ | less
@@ -171,35 +171,35 @@ vary: Accept,AMP-Cache-Transform
 
 يمكنك أيضًا الاختبار في Chrome بمساعدة [ModHeader extension](https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj?hl=en). يمكنك تثبيته من متجر Chrome على الويب وتكوين `Request Headers` في `amp-cache-transform` باستخدام `Value` من `google`.
 
-{{ image('/static/img/docs/guides/sxg/sxg1.jpg', 1900, 666, layout='responsive', alt='Testing Chrome with the help of the ModHeader extension', caption=' ', align='' ) }}
+{{ image('/static/img/docs/guides/sxg/sxg1.jpg', 1900, 666, layout='responsive', alt='اختبار Chrome بمساعدة ملحق ModHeader', caption=' ', align='' ) }}
 
 بعد طلب `https://example.com/` سيعرض الخادم تبادلاً موقّعًا، ولكن يجب أن يبدو ويتصرف كما كان من قبل. ستحتاج إلى التحقق من إرجاع التبادل الموقّع بشكل صحيح عبر [ وحدة تحكم DevTools](https://developers.google.com/web/tools/chrome-devtools/).
 
-{{ image('/static/img/docs/guides/sxg/sxg2.jpg', 3058, 1204, layout='responsive', alt='Signed exchange header displayed in the DevTools console', caption=' ', align='' ) }}
+{{ image('/static/img/docs/guides/sxg/sxg2.jpg', 3058, 1204, layout='responsive', alt='عرض ترويسة التبادل الموقّع في وحدة تحكم DevTools', caption=' ', align='' ) }}
 
-Under the `Network` tab, click on your domain name and check that `Signed HTTP exchange` appears under `Preview`.
+ضمن علامة التبويب `Network` انقر على اسم مجالك وتحقق من ظهور `Signed HTTP exchange` ضمن `Preview`.
 
-#### With the Google AMP Cache
+#### باستخدام ذاكرة Google AMP للتخزين المؤقت
 
 تأكد من توافق التبادلات الموقّعة مع ذاكرة التخزين المؤقت من Google AMP. يتعلق هذا بإمكانية اكتشافها على محركات البحث مثل "بحث Google".
 
-To test signed exchanges in the Google AMP cache, open the network tab in DevTools, enable `Preserve log`, and visit a URL such as `https://example-com.cdn.ampproject.org/wp/s/example.com/`.
+لاختبار التبادلات الموقّعة في ذاكرة Google AMP للتخزين المؤقت، افتح علامة تبويب الشبكة في DevTools، وقم بتمكين `Preserve log`، وانتقل إلى عنوان URL مثل `https://example-com.cdn.ampproject.org/wp/s/example.com/`.
 
-DevTools will show a `200` with a `signed-exchange` row, and a `from signed-exchange` row, if the request was successful.
+ستقوم DevTools بعرض `200` باستخدام صف `signed-exchange` و`from signed-exchange`، إذا كان الطلب ناجحًا.
 
 إذا لم ينجح، سيتم فقد صفوف التبادل الموقّع، أو سيتم تمييزها باللون الأحمر. كما قد يتوفر رأس `warning` الذي يقدّم معلومات إضافية.
 
 ## التبادلات الموقّعة في بحث Google
 
-If your AMP pages were successfully distributed as signed exchanges, their search results will display the AMP lightning bolt, same as before, but tapping on the results will show `https://example.com` in the URL bar, instead of a URL beginning with `https://www.google.com/amp/….`. Additionally, the `viewer` bar will not appear.
+إذا تم توزيع صفحات AMP الخاصة بك بنجاح على أنها عمليات تبادل موقّعة، ستعرض نتائج البحث سهم البرق الخاص بصفحات AMP، كما كان من قبل، ولكن النقر على النتائج سيعرض `https://example.com` في شريط عنوان URL، بدلاً من عنوان URL يبدأ بـ `https://www.google.com/amp/….`. بالإضافة إلى ذلك، لن يظهر شريط `viewer`.
 
-Within the DevTools console, under the `network` tab, you will be able to see `signed-exchange` under the `type` column.
+داخل وحدة تحكم DevTools، ضمن علامة التبويب `network` ستتمكّن من رؤية `signed-exchange` ضمن العمود `type`.
 
-{{ image('/static/img/docs/guides/sxg/sxg3.jpg', 1366, 841, layout='responsive', alt='Within the DevTools console, under the network tab, you will be able to see signed-exchange under the type column.', caption=' ', align='' ) }}
+{{ image('/static/img/docs/guides/sxg/sxg3.jpg', 1366, 841, layout='responsive', alt='دخل وحدة تحكم DevTools، أسفل علامة تبويب الشبكة، ستتمكن من رؤية التبادل الموقّع تحت عمود النوع.', caption=' ', align='' ) }}
 
 # مزوّدو خدمة التبادل الموقّعة
 
 فيما يلي قائمة بشبكات توصيل المحتوى (CDN) ومزوّدي الاستضافة الذين يقدمون دعمًا خارج الصندوق لعمليات التبادل الموقّعة. يُعد استخدام أحد هذه أسهل طريقة لبدء التبادلات الموقّعة:
 
-- [AMP Packager Google Cloud Click-to-Deploy Installer](https://console.cloud.google.com/marketplace/details/google/amp-packager?filter=solution-type:k8s) [AMP Packager](https://github.com/ampproject/amppackager#amp-packager) is a tool to improve AMP URLs by serving AMP using Signed Exchanges. Read more in [AMP Blog](https://blog.amp.dev/2020/11/23/amp-packager-is-now-available-on-google-cloud-marketplace/).
+- تعد [AMP Packager Google Cloud Click-to-Deploy Installer](https://console.cloud.google.com/marketplace/details/google/amp-packager?filter=solution-type:k8s) [AMP Packager](https://github.com/ampproject/amppackager#amp-packager) أداة لتحسين عناوين URL لصفحات AMP من خلال تقديم AMP باستخدام المبادلات الموقّعة. اقرأ المزيد في [مدونة AMP](https://blog.amp.dev/2020/11/23/amp-packager-is-now-available-on-google-cloud-marketplace/).
 - [Cloudflare AMP Real URL](https://www.cloudflare.com/website-optimization/amp-real-url/). [Cloudflare](https://www.cloudflare.com/) هي إحدى أكبر الشبكات في العالم. اليوم، تفتخر الشركات والمؤسسات غير الربحية والمدونون وأي شخص له وجود على الإنترنت بمواقع وتطبيقات أسرع وأكثر أمانًا بفضل Cloudflare.
