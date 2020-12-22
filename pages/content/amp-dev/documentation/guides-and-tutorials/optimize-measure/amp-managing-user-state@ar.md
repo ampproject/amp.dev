@@ -353,9 +353,8 @@ Next, examine the mapping table to try and find the same value in the "alias" co
   </tr>
   <tr>
     <td>
-<code>$prospective_identifier</code>(generated just-in-time when analytics ping is received)</td>
-    <td>
-<code>$amp_client_id</code> (came from analytics ping)</td>
+<code>$prospective_identifier</code> (يتم إنشاؤه في الوقت المناسب عند تلقي رسالة الفحص)</td>
+    <td> <code>$amp_client_id</code> (يأتي من رسالة فحص التحليلات)</td>
   </tr>
 </table>
 
