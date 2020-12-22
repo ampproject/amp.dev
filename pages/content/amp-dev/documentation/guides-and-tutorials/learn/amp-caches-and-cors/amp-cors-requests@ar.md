@@ -161,7 +161,7 @@ AMP-Same-Origin: true
 
 على الرغم من أن مواصفات اشتراك المصادر في الموارد لـ W3 تسمح بإرجاع قيمة <code>*</code> في الاستجابة، يجب عليك من أجل تحسين الأمان:
 
-- If the `Origin` header is present, validate and echo the value of the <code><code data-md-type="codespan">Origin</code> header.
+- إذا كانت ترويسة `Origin` موجودة، فتحقق من صحة قيمة الترويسة <code>Origin</code> وارتدادها.
 
 ### معالجة طلبات تغيير الحالات <a name="processing-state-changing-requests"></a>
 
