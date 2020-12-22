@@ -15,4 +15,4 @@ contributors:
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-[sourcecode:html] <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img> [/sourcecode]
+[tip type="read-on"] **تابع قراءة –** للتعرّف على أسباب إقدامنا على استبدال العلامات، مثل استبدال `<img>` بـ [`<amp-img>`](../../../../documentation/components/reference/amp-img.md)، وكم عدد المتوفر منها زر [تضمين الصور والفيديو](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md). [/tip]
