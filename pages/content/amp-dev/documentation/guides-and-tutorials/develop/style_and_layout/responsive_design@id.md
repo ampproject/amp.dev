@@ -21,9 +21,9 @@ Desain web yang responsif adalah tentang membangun halaman web yang luwes yang m
 
 Dalam panduan ini, kami akan menunjukkan cara menerapkan dasar-dasar komponen responsif tersebut di AMP dengan mudah:
 
-- [Controlling the viewport](#controlling-the-viewport)
-- [Creating a responsive layout](#creating-a-responsive-layout)
-- [Scaling media](#scaling-media-for-the-page)
+- [Mengontrol viewport](#controlling-the-viewport)
+- [Membuat tata letak responsif](#creating-a-responsive-layout)
+- [Mengubah skala media](#scaling-media-for-the-page)
 
 [video src='https://www.youtube.com/watch?v=XDvbJ2apaiA' caption='Belajar tentang desain responsif di AMP dari video ini.']
 
@@ -117,9 +117,9 @@ Banyak jenis video yang dapat Anda tambahkan ke halaman AMP. Untuk mengetahui se
 
 Images make up a large part of a web page (approximately [65% of the page's bytes](http://httparchive.org/interesting.php#bytesperpage)). At minimum, your images should be visible on various screen sizes and orientations (i.e., the user doesn't have to scroll, pinch/zoom to see the entire image). That's easily done in AMP via the `"layout=responsive"` attribute (see [Include Images in AMP](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)). In addition to the basic responsive image, you might want to serve multiple image resources to:
 
-- [Serve crisp images for the right resolution](#serving-crisp-images-for-the-right-resolution)
-- [Change the art direction of an image](#changing-the-art-direction-of-an-image)
-- [Provide optimized image formats](#providing-optimized-images)
+- [Menayangkan gambar tajam untuk resolusi yang sesuai](#serving-crisp-images-for-the-right-resolution)
+- [Mengubah gambar responsif dari suatu gambar](#changing-the-art-direction-of-an-image)
+- [Memberikan format gambar yang dioptimalkan](#providing-optimized-images)
 
 #### Menayangkan gambar tajam untuk resolusi yang sesuai <a name="serving-crisp-images-for-the-right-resolution"></a>
 
