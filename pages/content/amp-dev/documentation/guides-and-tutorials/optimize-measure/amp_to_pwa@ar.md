@@ -180,7 +180,7 @@ assets: []
 - إنشاء [بيان تطبيق ويب](https://developers.google.com/web/fundamentals/web-app-manifest/)
 - تثبيت عامل خدمة في AMP باستخدام [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md)
 - تخصيص [عامل خدمة AMP ](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html)
-- [Prefetch links ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
+- [روابط الجلب المُسبق](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
 - إنشاء صفحة غير متصلة بالإنترنت
 
 اقرأ المزيد عن [عمال الخدمة](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html)و[اعتبارات تجربة المستخدم في وضع عدم الاتصال](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux). تعرّف على كيفية[تتبُّع التفاعل باستخدام التحليلات ](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.html)واتّبع البرنامج التعليمي حول [كيفية تكوين التحليلات الأساسية لصفحات AMP](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/tracking-engagement.html).
