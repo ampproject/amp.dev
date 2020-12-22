@@ -31,11 +31,11 @@ author: CrystalOnScript
 
 يمكن للمستخدمين تجاوز الإعلان بالطريقة نفسها مثل صفحات القصص العادية؛ من خلال الضغط على ثلثي الشاشة جهة اليمين.
 
-{{ image('/static/img/docs/stampads/story_ad_ui.png', 304, 512, layout='intrinsic', alt='Image showing the area users can tap to skip an ad', caption='Users can progress past ads by tapping the right two thirds of the screen.', align='' ) }}
+{{ image('/static/img/docs/stampads/story_ad_ui.png', 304, 512, layout='intrinsic', alt='صورة توضح لمستخدمي المنطقة إمكانية النقر لتخطي الإعلان', caption='يمكن للمستخدمين تخطي الإعلانات من خلال الضغط على ثلثي الشاشة جهة اليمين.', align='' ) }}
 
 يمكن للمستخدمين التفاعل مباشرة مع الإعلان من خلال النقر فوق زر [الدعوة إلى اتخاذ إجراء](story_ads_best_practices.md#call-to-action-button-text-enum) المعروض من قبل النظام والذي يظهر في الثلث السفلي من إعلانات قصة الويب. يمكن تكوين الزر لإرسال المستخدم إلى عنوان URL عشوائيًا (أو إلى متجر تطبيقات ذي صلة).
 
-{{ image('/static/img/docs/stampads/sponsored_story.png', 1600, 597, layout='intrinsic', alt='Image showing that usersare redirected to an ad landing destination, but can return to the story.', caption='Users are redirected to an ad landing destination, but can return to the story.', align='' ) }}
+{{ image('/static/img/docs/stampads/sponsored_story.png', 1600, 597, layout='intrinsic', alt='صورة توضح إعادة توجيه المستخدمين إلى وجهة مقصودة للإعلان، لكن بإمكانهم العودة إلى القصة.', caption='تتم إعادة توجيه المستخدمين إلى وجهة هبوط للإعلان، لكن بإمكانهم العودة إلى القصة.', align='' ) }}
 
 ## تكوين قصة ويب للإعلانات
 
