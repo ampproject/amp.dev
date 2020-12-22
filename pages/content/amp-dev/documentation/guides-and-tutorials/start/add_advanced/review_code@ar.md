@@ -1,7 +1,7 @@
 ---
 "$title": مراجعة رمز البدء
 "$order": '1'
-description: 'Before we start adding code, let''s review the sample article.amp.html page, which should be as follows: ...'
+description: '"قبل البدء في إضافة رمز، هيا نراجع مثال صفحة article.amp.html، والذي يجب أن يكون كالتالي: ..."'
 ---
 
 قبل البدء في إضافة رمز، هيا نراجع مثال صفحة [article.amp.html](https://github.com/googlecodelabs/accelerated-mobile-pages-advanced/blob/master/article.amp.html)، والذي يجب أن يكون كالتالي:
