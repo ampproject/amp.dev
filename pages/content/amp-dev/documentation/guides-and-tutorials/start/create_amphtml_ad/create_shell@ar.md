@@ -1,7 +1,7 @@
 ---
 "$title": إنشاء غلاف للإعلان
 "$order": '0'
-description: 'Using your favorite text editor, create an HTML file named my-amphtml-ad.html. Copy the following HTML markup into that file: ...'
+description: '"باستخدام محرر النصوص المفضل لديك، قم بإنشاء ملف HTML باسم my-amphtml-ad.html. وانسخ لغة ترميز HTML التالية إلى ذلك الملف: ..."'
 ---
 
 يُعد [رمز HTML المطلوب لإعلان AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) أحد صيغ [AMPHTML المطلوب لصفحة AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md). دعنا نتعرف على الرمز المطلوب من خلال إنشاء غلاف إعلان AMPHTML الخاص بنا.
