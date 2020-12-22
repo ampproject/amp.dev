@@ -166,8 +166,7 @@ description: 'Before we start adding code, let''s review the sample article.amp.
 قبل أن نبدل الصفحة، هيا نقوم بتمكين [أداة التحقق من صحة AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) لكي نعرف أننا نعمل على رمز AMP HTML صالح.  **أضف** معرف المقطع  هذا إلى عنوان URL الخاص بك:
 
 ```text
-# development=1
-
+#development=1
 ```
 
 على سبيل المثال:
