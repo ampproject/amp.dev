@@ -1,7 +1,7 @@
 ---
-"$title": Introduction to complex animations
+"$title": مقدمة إلى الرسوم المتحركة المركَّبة
 "$order": '2'
-description: "For animations that can't be driven by adding and removing classes, AMP offers several animation specific components. These components apply AMP's principles to animations ..."
+description: توفر AMP للرسوم المتحركة التي لا يمكن إدارتها من خلال إضافة فئات أو إزالتها، العديد من المكونات المحددة للرسوم المتحركة. إذ تطبق هذه المكونات مبادئ AMP على الرسوم المتحركة ...
 formats:
 - websites
 - ads
@@ -10,9 +10,9 @@ author: CrystalOnScript
 
 توفر AMP للرسوم المتحركة التي لا يمكن إدارتها من خلال [إضافة فئات أو إزالتها](triggering_css_animations.md)، العديد من المكونات المحددة للرسوم المتحركة. إذ تطبق هذه المكونات مبادئ AMP على الرسوم المتحركة: حيث إنها تتميز بالسرعة والكفاءة وتجعل المستخدم أولوية لها. فيما تقيد AMP خصائص CSS المسموح بها اخل الإطارات الرئيسية، لكنها تضمن فوائد من التحكم التفصيلي والرسوم المتحركة السلسة والتوافق عبر المتصفحات من دون عمل إضافي.
 
-Use amp-animation if you need to tightly control playback, as well as have precise timing with multiple elements animating at the same time.
+استخدم amp-animation إذا كنت تريد التحكم في التشغيل بدقة، فضلًا عن تحديد توقيت دقيق مع عناصر متعددة تتحرك في الوقت نفسه.
 
-## Creating a basic AMP animation
+## إنشاء رسوم AMP متحركة أساسية
 
 يمكِّن المكون [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) استخدام [واجهة برمجة تطبيقات الرسوم المتحركة للويب](https://www.w3.org/TR/web-animations/) في AMP.
 
@@ -39,23 +39,23 @@ Use amp-animation if you need to tightly control playback, as well as have preci
 <button on="tap:exampleAnimation.start">
 ```
 
-### Selector
+### المحدد
 
 مثل CSS، يربط المكون [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) خصائص الرسوم المتحركة بالعنصر من خلال الإعلان عن اسم علامة العنصر ومعرِّفه في حقل `"selector"`. ويقوم المكون بتحريك كل عنصر بنوع العلامة أو اسم الفئة المعلن. لذا استخدم معرَِفًا لضمان تحريك عنصر مفرد.
 
-### Timing properties
+### {a0}Timing Properties{/a0}
 
 تتحكم [خصائص التوقيت](../../../../documentation/components/reference/amp-animation.md#timing-properties) في المدة التي تستغرقها الرسوم المتحركة، ومقدار وقت التشغيل، واتجاه تنفيذ الإطارات الأساسية.
 
 ولا يتطلب وجود خصائص توقيت، لكن قد لا تعمل الرسوم المتحركة إذا كانت الخصائص المتعلقة بالوقت والعرض مفقودة، مثل `duration` و`fill`.
 
-### Keyframes
+### {a0}Keyframes{/a0}
 
 بينما تتيح لك CSS بالتحويل من حالة لأخرى عبر الانتقالات، عليك الإعلان عن خصائص الرسوم المتحركة على أنها إطارات رئيسية لتنفيذ [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) (مشابهة [للرسوم المتحركة لـ CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)). ولضمان التشغيل السلس والتوافق عبر المتصفحات، [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) [يقيد أي خصائص إطارات رئيسية](../../../../documentation/components/reference/amp-animation.md#allow-listed-properties-for-keyframes) قابلة للاستخدام لخصائص وحدة معالجة الرسوميات المسرَّعة والتي لا تتسبب في إعادة التخطيط ويمكنها التحرك في [مؤشر ترابط مصفف](https://dev.chromium.org/developers/design-documents/compositor-thread-architecture). وهذا يمنع الرسوم المتحركة من التداخل مع AMP [وعملية عرض](https://developers.google.com/web/updates/2018/09/inside-browser-part3#javascript_can_block_the_parsing) المتصفح.
 
 [tip type="note"] يتم تحديد الإطارات الرئيسية إما مباشرة في [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) أو يشار إليها من [`<amp style-keyframe>`](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#keyframes-stylesheet) شريطة أنها تتبع قيود الخصائص، اقرأ المزيد [هنا عن الإطارات الرئيسية في `amp-animation`](../../../../documentation/components/reference/amp-animation.md#keyframes). [/tip]
 
-### Trigger
+### {a0}Trigger{/a0}
 
 يبدأ المشغِّل تسلسل الرسوم المتحركة، فيما يبدأ امتداد [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) عندما يصبح `<body>` مرئيًا على الصفحة أو من خلال توصيله [بإجراء أو حدث AMP](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)
 
@@ -78,13 +78,13 @@ Use amp-animation if you need to tightly control playback, as well as have preci
 <button on="tap:exampleAnimation.start">
 ```
 
-## Building complex animations
+## بناء رسوم متحركة مركَّبة
 
 يتيح بناء رسوم متحركة في [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) بالتحكم الدقيق الذي يتخطى مجرد بدء الرسوم المتحركة وإيقافه؛ كما يمكن أيضًا إيقافه مؤقتًا وعكسه وتوجيهه إلى نقطة معينة. ويمكنك حتى تجميع العديد من الرسوم المتحركة معًا وتحريك العناصر في تسلسل.
 
-### Subtargets
+### الأهداف الفرعية
 
-Elements of the same tag or class can have specified timing properties and override the values of variables defined in the top level animation.
+يمكن أن تتضمن عناصر العلامة أو الفئة نفسها خصائص توقيت محددة وتتجاوز قيم المتغيرات المحددة في الرسوم المتحركة ذات المستوى الأعلى.
 
 [example preview="top-frame" playground="true" imports="amp-animation"]
 ```html
@@ -121,7 +121,7 @@ Elements of the same tag or class can have specified timing properties and overr
 ```
 [/example]
 
-### Chained animations
+### الرسوم المتحركة المتسلسلة
 
 يمكن أن تتصل رسوم متحركة متعددة معًا لتشكيل تسلسل كبير. إذ يمكنك إنشاء تأثيرات موقوتة مثل التراكبات في مقاطع الفيديو من خلال كتابة الرسوم المتحركة في صفيفة `animations` داخل المكون [`amp-animation`](../../../../documentation/components/reference/amp-animation.md).
 
@@ -158,7 +158,7 @@ Elements of the same tag or class can have specified timing properties and overr
 
 ```
 
-This setup plays each animation for 3 seconds in a sequence.
+حيث يقوم هذا الإعداد بتشغيل كل رسم متحرك لمدة 3 ثوانٍ بالتسلسل.
 
 وبالنسبة للرسوم المتحركة الأكبر، تكون الرسوم المتحركة الموجودة داخل صفيفة `animations` قادرة على الإشارة إلى مكونات [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) أخرى.
 
@@ -206,7 +206,7 @@ This setup plays each animation for 3 seconds in a sequence.
 </amp-animation>
 ```
 
-### Animating an unknown amount of elements
+### تحريك مقدار غير معروف من العناصر
 
 يمكنك من خلال استخدام [تعبيرات`var()` و`calc()`](../../../../documentation/components/reference/amp-animation.md) إلى جانب [تعبيرات CSS](../../../../documentation/components/reference/amp-animation.md#css-extensions) كتابة
 
@@ -266,12 +266,12 @@ This setup plays each animation for 3 seconds in a sequence.
     1. يقوم [إمتداد `length()` ](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) بحساب عدد عناصر `.card` تم تحديدها
     2. ثم يقوم الطول عندها بطرح كل `.card`'s [فهرس()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension)
     3. يتم ضرب قيمة الناتج في المتغير `--duration`
-    4. The final total is applied in seconds to that element's delay
-- The animation is applied to each element individually so that the cards are shuffled one after another instead of all at the same time.
+    4. يتم تطبيق الإجمالي النهائي في ثوانٍ على تأخير هذا العنصر
+- يتم تطبيق الرسوم المتحركة على كل عنصر على حدة ليتسنى خلط البطاقات واحدة تلو الأخرى بدلًا عن الكل في الوقت نفسه.
 
 افتح الرسوم المتحركة في ساحة AMP وأضف المزيد من عناصر [`amp-img`](../../../../documentation/components/reference/amp-img) لاختبار سلوكها.
 
-### Look great, everywhere
+### اظهر بمظهر رائع، في كل مكان
 
 يمكن أن تتضمن الرسوم المتحركة [`conditions`](../../../../documentation/components/reference/amp-animation.md#conditions) تسمح بتخصيص التأثيرات. خصص الرسوم المتحركة لأي مقاس شاشة من خلال [حالة `media`](../../../../documentation/components/reference/amp-animation.md#media-query) وتدعم توافق المتصفح مع الإصدارات السابقة من خلال تمكين [حالات`supports`](../../../../documentation/components/reference/amp-animation.md#supports-condition) في [بيان `switch`](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement).
 
