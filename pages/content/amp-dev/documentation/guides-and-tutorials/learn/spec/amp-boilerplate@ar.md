@@ -1,5 +1,5 @@
 ---
-"$title": AMP Boilerplate Code
+"$title": رمز فقرة AMP
 order: '9'
 formats:
 - websites
@@ -33,10 +33,10 @@ limitations under the License.
 
 ## `head > style[amp-boilerplate]` و`noscript > style[amp-boilerplate]` <a name="head--styleamp-boilerplate-and-noscript--styleamp-boilerplate"></a>
 
-AMP HTML documents must contain the following boilerplate in their `head` tag. Validation is currently done with regular expressions, so it's important to keep mutations as minimal as possible. Currently, the allowed mutations are:
+يجب أن تحتوي مستندات AMP HTML على الفقرة التالية في العلامة `head` الخاصة بها. إذ يتم حاليًا التحقق من الصحة من خلال التعبيرات العادية، لذا من المهم الحفاظ على الحد الأدنى من التحولات. وحاليًا، مسموح بالتحولات التالية:
 
-1. Inserting arbitrary whitespace immediately after the `style` tag opens, and immediately before it closes
-2. Replacing any space in the snippet below with arbitrary whitespace.
+1. إدراج مسافة بيضاء عشوائية بعد فتح علامة `style` مباشرةً وقبل إغلاقها مباشرةً
+2. استبدال أي مسافة في المقتطف أدناه بمسافة بيضاء عشوائية.
 
 <!-- prettier-ignore-start -->
 
@@ -46,4 +46,4 @@ AMP HTML documents must contain the following boilerplate in their `head` tag. V
 
 <!-- prettier-ignore-end -->
 
-[tip] You can use the [boilerplate generator](https://amp.dev/boilerplate) to quickly setup a basic skeleton for your AMP page. It also provides snippets for structured data, to create a PWA and more! [/tip]
+[tip] يمكنك استخدام [مولد الفقرات](https://amp.dev/boilerplate) لإعداد هيكل أساسي سريع لصفحة AMP لديك. وهو يوفر أيضًا مقتطفات للبيانات المهيكلة، لأجل إنشاء تطبيقات ويب تقدمية وغير ذلك الكثير! [/tip]
