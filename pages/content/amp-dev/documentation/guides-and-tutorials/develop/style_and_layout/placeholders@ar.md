@@ -52,7 +52,7 @@ In the spirit of perceived performance and progressive enhancement, it's best pr
 
 ##### مثال: ميزة غير مدعومة
 
-In the following example, we use the `fallback` attribute to communicate to the user that the browser doesn’t support a particular feature:
+في المثال التالي، نستخدم السمة `fallback` لإبلاغ المستخدم بأن المتصفح لا يدعم ميزة معينة:
 
 [example preview="inline" playground="true" imports="amp-video:0.1"]
 ```html
@@ -70,7 +70,7 @@ In the following example, we use the `fallback` attribute to communicate to the 
 
 ##### مثال: عرض تنسيقات صور مختلفة
 
-In the following example, we use the `fallback` attribute to tell the browser to use the JPEG file if the WebP format is unsupported.
+في المثال التالي، نستخدم السمة `fallback` لإبلاغ المتصفح باستخدام ملف JPEG إذا كان تنسيق WebP غير مدعوم.
 
 [example preview="inline" playground="true"]
 ```html
