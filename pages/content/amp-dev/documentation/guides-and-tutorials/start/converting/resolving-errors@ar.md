@@ -62,7 +62,7 @@ description: في هذا القسم، سنتناول أخطاء التحقق م�
 
 والآن، تابع وأعد تحميل الصفحة وتحقق من اختفاء كلا الخطأين.
 
-[tip type="note"] Although specifying the `⚡` is the recommended approach, it's also possible to use the `amp` attribute in place of the `⚡` attribute, like so:
+[tip type="note"] على الرغم من أن تحديد `⚡` يُعد الأسلوب الموصى به، فمن الممكن أيضًا استخدام السمة `amp` بدلًا عن السمة `⚡` مثل:
 
 ```html
 <html amp lang="en">
