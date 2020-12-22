@@ -73,6 +73,6 @@ have a look and request a pull request there.
 
 - تعمق: [لماذا لا نستخدم iframe فقط؟](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/why-not-iframe.md)
 - تعمق: [إدارة حالة مستخدم غير مصادق عليه باستخدام AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)
-- [amp-analytics sample](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
+- [نماذج amp-analytics](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
 - وثائق مرجعية لـ [amp-analytics](https://amp.dev/documentation/components/amp-analytics)
 - الوثائق المرجعية [لمتغيرات amp-analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)
