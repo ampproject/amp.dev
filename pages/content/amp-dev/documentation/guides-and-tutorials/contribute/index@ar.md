@@ -1,7 +1,7 @@
 ---
 "$title": How to contribute
 "$titles":
-  navigation: Contribute
+  navigation: مساهمة
 "$path": "/documentation/guides-and-tutorials/contribute/index.html"
 "$localization":
   path: "/{locale}/documentation/guides-and-tutorials/contribute/index.html"
