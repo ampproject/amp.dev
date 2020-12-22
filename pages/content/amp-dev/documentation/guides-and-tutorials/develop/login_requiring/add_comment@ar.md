@@ -1,7 +1,7 @@
 ---
-"$title": Add a comment
+"$title": "{code0}co{/code0}: تعليق"
 "$order": '2'
-description: At this point, the user can add a comment using the amp-form, library. Notice how the presence of the form is conditional, depending on the state of the amp-access component ...
+description: يمكن للمستخدم في هذه المرحلة إضافة تعليق باستخدام amp-form، المكتبة. لاحظ كيف أن وجود النموذج مشروط، وذلك اعتمادًا على حالة المكون amp-access ...
 ---
 
 <amp-img src="/static/img/comment.png" alt="Add comment" height="325" width="300"></amp-img>
@@ -12,9 +12,9 @@ description: At this point, the user can add a comment using the amp-form, libra
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
 [/sourcecode]
 
-We specify a POST method and a XHR action, as non XHR actions are not allowed with POST methods in AMP. Because this is a demo, we are not persisting comments, so it’s only possible to add one comment at the time; whenever a comment is added, the AMPByExample server replies with a JSON response containing the entered text with some additions, like a timestamp, an avatar and a name for the user.
+إننا نحدد طريقة POST وإجراء XHR، لأنه لا يتم السماح بإجراءات غير XHR مع طرق POST في AMP. ونظرًا لأن هذا عرض توضيحي، فنحن لا نواصل التعليقات، لذلك من الممكن فقط إضافة تعليق واحد في ذلك الوقت؛ كلما تمت إضافة تعليق، يرد خادم AMPByExample باستجابة JSON تحتوي على النص المُدخل مع بعض الإضافات، مثل الطابع الزمني والصورة الرمزية واسم للمستخدم.
 
-Here's an example of JSON response:
+إليك مثال على استجابة JSON:
 
 [sourcecode:json]
 {"Datetime":"09:34:21",
@@ -39,7 +39,7 @@ Here's an example of JSON response:
 </div>
 [/sourcecode]
 
-In this example, we are only checking if the value of the comment is not empty; if the value is empty, we return an error that causes the following code to execute
+في هذا المثال، نتحقق فقط من أن قيمة التعليق ليست فارغة؛ وإذا كانت القيمة فارغة، فإننا نقوم بإرجاع خطأ من شأنه أن يؤدي إلى تنفيذ الرمز التالي
 
 [sourcecode:html]
 <div submit-error>
@@ -57,6 +57,6 @@ In this example, we are only checking if the value of the comment is not empty; 
 <input type="text" class="data-input" name="text" placeholder="Your comment..." required>
 [/sourcecode]
 
-When you add a comment and click the submit button, you should now see something similar to the following screenshot:
+عندما تضيف تعليقًا وتنقر فوق زر الإرسال، يجب أن ترى الآن شيئًا مشابهًا للقطة الشاشة التالية:
 
 <amp-img src="/static/img/logout-button.png" alt="Comment added" height="352" width="300"></amp-img>
