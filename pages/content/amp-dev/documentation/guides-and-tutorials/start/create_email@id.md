@@ -1,8 +1,10 @@
 ---
-$title: Membuat Email AMP pertama Anda
-$order: 0
+"$title": Membuat Email AMP pertama Anda
+"$order": '0'
 description: Pelajari apa yang membuat email AMP berbeda dengan membuat email pertama Anda.
-tutorial: true
+tutorial: 'true'
+formats:
+- email
 author: CrystalOnScript
 ---
 
