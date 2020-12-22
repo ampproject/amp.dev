@@ -1,8 +1,13 @@
 ---
-$title: المساهمة في المستندات
-$order: 0
-$hidden: صواب
+"$title": المساهمة في المستندات
+"$order": '0'
+"$hidden": 'true'
 description: بدء المساهمة في المستندات الخاصة بـ amp.dev
+formats:
+- websites
+- stories
+- ads
+- email
 author: CrystalOnScript
 ---
 
