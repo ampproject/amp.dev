@@ -67,7 +67,7 @@ formats:
 
 ## مساهمة المستوى 2
 
-Level 2 contributions leverage the feature logic of existing components. All logic is checked into the AMP repository, and no custom Javascript can be loaded into an iframe. For example, analytics providers add their configurations to the [`amp-analytics`](../../../components/reference/amp-analytics.md) component but including the endpoint to track data, such as user clicks.
+تستخدم مساهمات المستوى 2 منطق الميزة للمكونات الموجودة. يتم تسجيل المنطق بأكمله في مستودع AMP، ولا يمكن تحميل أي Javascript مخصص في إطار iframe. على سبيل المثال، يضيف موفرو التحليلات تكويناتهم إلى مكون [`amp-analytics`](../../../components/reference/amp-analytics.md) لكن مع تضمين نقطة النهاية لتتبع البيانات، مثل عدد مرات النقر للمستخدم.
 
 تضيف الجهات الخارجية تكوينات أو ميزات، مثل واجهات برمجة التطبيقات الجديدة إلى المكونات الموجودة لتنفيذ وظائفها. وإذا كان هذا المكون غير موجود فقد تقترح مكونًا جديدًا
 
@@ -76,7 +76,7 @@ Level 2 contributions leverage the feature logic of existing components. All log
 ### توقعات الجهات الخارجية
 
 - إضافة خدمة جهة خارجية جديدة إلى مساهمة المستوى 2 في العادة لا يحتاج إلى مراجعة تصميم. يمكن أن تتبع الجهة الخارجية وثائق ذلك المكون.
-- يحتاج اقتراح مكون جديد لمساهمة المستوى 2 إلى منطق ميزة قابل للمشاركة من جانب خدمات الجهة الخارجية الأخرى.
+- إن اقتراح مكون جديد لمساهمة المستوى 2 يحتاج إلى منطق ميزة قابل للمساركة من جانب خدمات الجهة الخارجية الأخرى.
 
 ### أمثلة المستوى 2
 
