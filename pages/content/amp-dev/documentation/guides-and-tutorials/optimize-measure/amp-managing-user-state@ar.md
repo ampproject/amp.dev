@@ -32,15 +32,15 @@ limitations under the License.
 
 **فهرس المحتويات**
 
-- [Background](#background)
-- [Implementation guide](#implementation-guide)
-    - [Before getting started](#before-getting-started)
-    - [Task 1: For non-AMP pages on the publisher origin, set up an identifier and send analytics pings](#task1)
-    - [Task 2: For AMP pages, set up an identifier and send analytics pings by including Client ID replacement in amp-analytics pings](#task2)
-    - [Task 3: Process analytics pings from pages on the publisher origin](#task3)
-    - [Task 4: Process analytics pings from AMP cache or AMP viewer display contexts and establish identifier mappings (if needed)](#task4)
-    - [Task 5: Using Client ID in linking and form submission](#task5)
-- [Strongly recommended practices](#strongly-recommended-practices)
+- [معلومات عامة ](#background)
+- [دليل التنفيذ ](#implementation-guide)
+    - [قبل البدء ](#before-getting-started)
+    - [المهمة 1: بالنسبة للصفحات التي لا تدعم AMP الموجودة في مصدر الناشر، عليك بإعداد معرّف وإرسال رسائل فحص التحليلات ](#task1)
+    - [المهمة 2: بالنسبة لصفحات AMP، إعداد معرّف وإرسال رسائل فحص التحليلات من خلال تضمين بديل لمعرّف العميل في رسائل فحص تحليلات AMP ](#task2)
+    - [المهمة 3: معالجة رسائل فحص التحليلات من الصفحات الموجودة في مصدر الناشر ](#task3)
+    - [المهمة 4: عرض معالجة رسائل اختبار التحليلات من ذاكرة AMP للتخزين المؤقت أو عارض AMP لسياقات وتخطيطات المعرّفات (إذا لزم الأمر)](#task4)
+    - [المهمة 5: استخدام معرّف العميل في الربط وتقديم النموذج ](#task5)
+- [الممارسات الموُصى بها بشدة ](#strongly-recommended-practices)
 
 حالة المستخدم هي مفهوم مهم على شبكة الإنترنت اليوم. ضع في اعتبارك حالات الاستخدام التالية التي يتم تمكينها من خلال إدارة حالة المستخدم:
 
@@ -93,10 +93,10 @@ limitations under the License.
 
 **السياق #1: مصدر الناشر.** يتم نشر صفحات AMP بحيث يتم استضافتها في الأصل من موقع الناشر ويمكن الوصول إليها عبره، على سبيل المثال، على `https://example.com` قد يجد المرء `https://example.com/article.amp.html`.
 
-Publishers can choose to publish exclusively in AMP, or to publish two versions of content (that is, AMP content "paired" with non-AMP content). The "paired" model requires some [particular steps](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/discovery) to ensure the AMP versions of pages are discoverable to search engines, social media sites, and other platforms. Both publishing approaches are fully supported; it's up to the publisher to decide on which approach to take.
+يمكن للناشرين اختيار النشر حصريًا في AMP، أو نشر إصدارين من المحتوى (أيّ، محتوى AMP "مقترن" بمحتوى لا يدعم AMP). يتطلب النموذج "المزدوج" بعض [الخطوات المحددة](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/discovery) لضمان إمكانية اكتشاف إصدارات AMP من الصفحات لمحركات البحث ومواقع التواصل الاجتماعي والمنصات الأخرى. كلا طريقتيّ النشر مدعومتين بالكامل؛ الأمر متروك للناشر لاتخاذ قرار بشأن الطريقة التي يجب اتباعها.
 
 > **ملاحظة:**
-> Due to the "paired" publishing model just described, the publisher’s origin (in the example above, `https://example.com`) is a context in which **both AMP and non-AMP content can be accessed**. Indeed, it’s the only context in which this can happen because AMP caches and AMP viewers, described below, only deliver valid AMP content.
+> نظرًا لنموذج النشر "المزدوج" الموضح للتو، فإن مصدر الناشر (في المثال أعلاه، `https://example.com`) هو سياق **يمكن من خلاله الوصول إلى المحتوى الذي يدعم AMP والذي لا يدعمه**. في الواقع، هذا هو السياق الوحيد الذي يمكن أن يحدث فيه ذلك لأن ذاكرات AMP للتخزين المؤقت وعوارض AMP، الموصوفة أدناه، تقدم فقط محتوى AMP صالحًا.
 
 **السياق #2: ذاكرة AMP للتخزين المؤقت.** يمكن تخزين ملفات AMP مؤقتًا في السحابة بواسطة ذاكرة تخزين مؤقت لطرف ثالث لتقليل الوقت الذي يستغرقه المحتوى للوصول إلى جهاز المستخدم المحمول.
 
@@ -118,7 +118,7 @@ Publishers can choose to publish exclusively in AMP, or to publish two versions 
 
 في هذا السيناريو، تتلقى المستخدمة تجربة عربة تسوق متسقة على الرغم من انتقالها من سياق عارض AMP إلى سياق مصدر الناشر—ومع مرور بعض الوقت بين هذه الأحداث. هذه التجربة معقولة جدًا، وإذا كنت تصمم تجربة تسوق، فيجب أن تتوقع دعمها، فكيف تحقق ذلك؟
 
-**To enable this and any experience involving user state, all contexts the user traverses must share their individually-maintained state with each other.** "Perfect!", you say, with the idea to share the cookie values with user identifiers across these contextual boundaries. One wrinkle: even though each of these contexts displays content controlled by the same publisher, they each see the other as a third-party because each context lives on different domains.
+**لتمكين هذا وأي تجربة تتعلق بحالة المستخدم، يجب على جميع السياقات التي يمر بها المستخدم مشاركة كل حالة تم الحصول عليه بشكل فردي مع بعضها البعض.** "مثالية!"، كما تقول، عن فكرة مشاركة قيم ملفات تعريف الارتباط مع معرفات المستخدم عبر هذه الحدود التي تصنعها السياقات. ولكن توجد مشكلة صغيرة واحدة: على الرغم من أن كل سياق من هذه السياقات يعرض محتوى يتحكم فيه الناشر بنفسه، فإن كل منهما يرى الآخر كطرف ثالث لأن كل سياق يتمركز في نطاقات مختلفة.
 
 <amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png" width="1030" height="868">
   <noscript><img alt="تعني إمكانية عرض AMP في العديد من السياقات أن لكل من هذه السياقات مساحة تخزين خاصة به للمعرفات" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png"></noscript></amp-img>
@@ -129,7 +129,7 @@ Publishers can choose to publish exclusively in AMP, or to publish two versions 
 
 يقدم هذا القسم توصيات لإدارة حالة المستخدم. ويتم تقديم المهام أدناه في هيئة تدرج وتسلسل، ولكن يمكن النظر إليها إجمالاً في جزأين:
 
-**Chunk #1: Fundamental implementation:** Tasks 1-4 are essential toward getting the basics working. They rely on a minimal set of features needed to get the job partially done: AMP’s Client ID substitution, reading and writing of cookies, and maintaining a backend mapping table. Why "partially"? Because the steps conveyed in these tasks rely on reading and writing cookies and because the browser’s cookie settings may prevent this in certain circumstances, this set of tasks is likely to be insufficient for fully managing user state in all scenarios.
+**الجزء #1: التنفيذ الأساسي:** المهام من 1 إلى 4 ضرورية لتشغيل الأساسيات. حيث يعتمدون على مجموعة قليلة من الميزات اللازمة لإنجاز المهمة بشكل جزئي، حيث يعملون على: استبدال المعرف الخاص بعميل AMP، وقراءة ملفات تعريف الارتباط وكتابتها، والحفاظ على جدول تعيين الواجهة الخلفية. لماذا "بشكل جزئي"؟ نظرًا لأن الخطوات المنقولة في هذه المهام تعتمد على قراءة ملفات تعريف الارتباط وكتابتها ولأن إعدادات ملفات تعريف الارتباط في المتصفح قد تمنع ذلك في ظروف معينة، فمن المحتمل ألا تكون هذه المجموعة من المهام كافية لإدارة حالة المستخدم بشكل كامل في جميع السيناريوهات.
 
 بعد وضع الأساسات، نقوم بعد ذلك بزيارة موضوع بنطاق أضيق من حالات الاستخدام ولكنه يقدم حلاً كاملاً لحالات الاستخدام هذه.
 
@@ -171,7 +171,7 @@ n34ic982n2386n30 ⇒ $sample_id
 
 إذا كانت لديك صفحات لا تدعم AMP يتم عرضها من مصدر النشر الخاص بك، فقم بإعداد معرّف ثابت ومستقر لاستخدامه في هذه الصفحات. هذا عادة ما [يتم تنفيذه مع ملفات تعريف ارتباط الطرف الأول](https://en.wikipedia.org/wiki/HTTP_cookie#Tracking).
 
-For the purposes of our example, let’s say you’ve set a cookie called `uid` ("user identifier") that will be created on a user’s first visit. If it’s not the user’s first visit, then read the value that was previously set on the first visit.
+من أجل المثال الخاص بنا، لنفترض أنك قمت بتعيين ملف تعريف ارتباط يسمى `uid` ("معرّف المستخدم")، الذي سيتم إنشاؤه في أول زيارة للمستخدم. إذا لم تكن الزيارة الأولى للمستخدم، فقم بقراءة القيمة التي تم تعيينها مسبقًا في الزيارة الأولى.
 
 هذا يعني أن هناك وضعان لحالة الصفحات التي لا تدعم AMP على مصدر الناشر:
 
@@ -212,7 +212,7 @@ https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_ident
 user_id=$publisher_origin_identifier
 [/sourcecode]
 
-The use of "`user_id`" here should be determined by what your analytics server expects to process and is not specifically tied to what you call the cookie that stores the identifier locally.
+يجب تحديد استخدام "`user_id`" هنا من خلال ما يتوقع خادم التحليلات الخاص بك معالجته وليس مرتبطًا بشكل خاص بما تسميه ملف تعريف الارتباط الذي يخزن المعرّف محليًا.
 
 <a id="task2"></a>
 
@@ -220,7 +220,7 @@ The use of "`user_id`" here should be determined by what your analytics server e
 
 بالانتقال الآن إلى صفحات AMP، دعنا نلقي نظرة على كيفية إنشاء معرّف للتحليلات ونقله. سيكون هذا ساريًا بغض النظر عن السياق الذي يتم تقديم صفحة AMP فيه، لذلك يغطي هذا أي صفحة AMP في مصدر الناشر، يتم عرضها عبر ذاكرة AMP للتخزين المؤقت، أو يتم عرضها في عارض AMP.
 
-Through usage of features that require Client ID, AMP will do the "under the hood" work to generate and store client ID values and surface them to the features that require them. One of the principal features that can use AMP’s Client ID is [amp-analytics](https://amp.dev/documentation/components/amp-analytics), which happens to be exactly what we’ll need to implement our analytics use case example.
+من خلال استخدام الميزات التي تتطلب معرّف العميل، ستقوم AMP بالعمل "المعقّد" لإنشاء قيم معرّف العميل وتخزينها وإبرازها للميزات التي تتطلبها. إحدى الميزات الرئيسية التي يمكن أن تستخدم معرّف عميل AMP هي [تحليلات AMP](https://amp.dev/documentation/components/amp-analytics)، والتي تصادف أن تكون بالضبط ما سنحتاجه لتنفيذ مثال حالة استخدام التحليلات.
 
 في صفحات AMP، أنشئ رسالة فحص تحليلات AMP تحتوي على معرّف العميل:
 
@@ -242,9 +242,9 @@ Through usage of features that require Client ID, AMP will do the "under the hoo
 فيما يتعلق ببقية تنفيذ تحليلات AMP، راجع وثائق [تكوين تحليلات AMP](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) لمزيد من التفاصيل حول كيفية إعداد طلبات amp-analytics أو لتعديل طلبات مورد التحليلات الخاص بك. يمكن تعديل رسالة الفحص بشكل إضافي لنقل البيانات الإضافية التي تحددها مباشرة أو من خلال الاستفادة من [بدائل AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) الأخرى.
 
 > **من المفيد أن تعلم مايلي:**
-> Why did we use of the name `uid` for the parameter passed to the Client ID feature? The parameter that the `clientId(...)` substitution takes is used to define scope. You can actually use the Client ID feature for many use cases and, as a result, generate many client IDs. The parameter differentiates between these use cases and so you use it to specify which use case you would like a Client ID for. For instance, you might want to send different identifiers to third parties like an advertiser and you could use the "scope" parameter to achieve this.
+> لماذا استخدمنا الاسم `uid` للمعلمة التي تم تمريرها إلى ميزة معرّف العميل؟ يتم استخدام المعلمة التي يستخدمها بديل `clientId(...)` لتحديد النطاق التي تُستخدم فيه. يمكنك بالفعل استخدام ميزة Client ID للعديد من حالات الاستخدام، ونتيجة لذلك، يمكنك إنشاء العديد من معرفات العملاء. تميّز المعلمة بين حالات الاستخدام هذه ولذا تستخدمها لتحديد حالة الاستخدام التي تريد معرّف العميل لها. على سبيل المثال، قد ترغب في إرسال معرّفات مختلفة إلى جهات ثالثة مثل أحد القائمين على الإعلان ويمكنك استخدام معلمة "النطاق" لتحقيق ذلك.
 
-On the publisher origin, it’s easiest to think of "scope" as what you call the cookie. By recommending a value of `uid` for the Client ID parameter here in [Task 2](#task2), we align with the choice to use a cookie called `uid` in [Task 1](#task1).
+في مصدر الناشر، من الأسهل التفكير في "النطاق" كما لو أنك تدعوه ملف تعريف الارتباط. من خلال التوصية بقيمة `uid` لمعلمة معرّف العميل هنا في [المهمة 2](#task2)، فإننا نتماشى مع خيار استخدام ملف تعريف ارتباط يُدعى `uid` في [المهمة 1](#task1).
 
 <a id="task3"></a>
 
@@ -289,7 +289,7 @@ On the publisher origin, it’s easiest to think of "scope" as what you call the
 لمعالجة مشكلة زيادة العدد، يجب عليك استخدام الاستراتيجية التالية، والتي تعتمد فعاليتها على ما إذا كان مسموحًا بقراءة ملفات تعريف ارتباط الطرف الثالث أو كتابتها:
 
 - **التسوية الفورية للمعرّف: إذا كان بإمكانك الوصول إلى ملفات تعريف ارتباط مصدر الناشر أو تغييرها**، فاستخدم أو أنشئ معرّف مصدر الناشر وتجاهل أي معرّف في طلب التحليلات. ستتمكن من ربط النشاط بين السياقين بنجاح.
-- **Delayed identifier reconciliation: If you cannot access or change the publisher origin identifier (i.e. the cookies)**, then fall back to the AMP Client ID that comes within the analytics request itself. Use this identifier as an "**alias**", rather than using or creating a new publisher origin identifier (cookie), which you cannot do (because of third party cookie blocking), and add the alias to a **mapping table**. You will be unsuccessful in immediately linking activity between the two contexts, but by using a mapping table you may be able to link the AMP Client ID value with the publisher origin identifier on a future visit by the user. When this happens, you will have the needed information to link the activity and reconcile that the page visits in the different contexts came from the same user. Task 5 describes how to achieve a complete solution in specific scenarios where the user traverses from one page immediately to another.
+- **تسوية المعرّف المتأخرة: إذا لم تتمكن من الوصول إلى معرّف مصدر الناشر أو تغييره (مثل ملفات تعريف الارتباط)**، فارجع إلى معرّف عميل AMP الذي يأتي ضمن طلب التحليلات نفسه. استخدم هذا المعرف "**كاسم مستعار**"، بدلاً من استخدام أو إنشاء معرّف مصدر ناشر جديد (ملف تعريف ارتباط)، وهو ما لا يمكنك القيام به (بسبب حظر ملفات تعريف الارتباط من طرف ثالث)، وقم بإضافة الاسم المستعار إلى **جدول تعيين**. لن تنجح في ربط النشاط على الفور بين السياقين، ولكن باستخدام جدول التعيين، قد تتمكن من ربط قيمة معرّف عميل AMP بمعرّف مصدر الناشر في زيارة مستقبلية يقوم بها المستخدم. عندما يحدث هذا، سيكون لديك المعلومات اللازمة لربط النشاط والتسوية بين أن زيارات الصفحة في السياقات المختلفة جاءت من نفس المستخدم. تشرح المهمة 5 كيفية تحقيق حل كامل في سيناريوهات محددة حيث ينتقل المستخدم من صفحة إلى أخرى على الفور.
 
 #### خطوات التنفيذ <a name="implementation-steps"></a>
 
@@ -307,7 +307,7 @@ On the publisher origin, it’s easiest to think of "scope" as what you call the
 <table>
   <tr>
     <th width="50%"><strong>معرّف المستخدم في مصدر الناشر</strong></th>
-    <th width="50%"><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
+    <th width="50%"><strong>معرّف المستخدم في صفحة AMP الغير موجود في مصدر الناشر ("الاسم المستعار")</strong></th>
   </tr>
   <tr>
     <td>يأتي من معرّف مصدر الناشر أو يتم إنشاؤه كقيمة محتملة إذا تعذر الوصول إلى معرّف مصدر الناشر.</td>
@@ -323,12 +323,12 @@ https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id
 
 نستخرج الجزء الغامق المقابل لمعرّف عميل AMP: `$amp_client_id`.
 
-Next, examine the mapping table to try and find the same value in the "alias" column:
+بعد ذلك، افحص جدول التعيين لمحاولة العثور على نفس القيمة في عمود "الاسم المستعار":
 
 <table>
   <tr>
     <th width="50%"><strong>معرّف المستخدم في مصدر الناشر</strong></th>
-    <th width="50%"><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
+    <th width="50%"><strong>معرّف المستخدم في صفحة AMP الغير موجود في مصدر الناشر ("الاسم المستعار")</strong></th>
   </tr>
   <tr>
     <td><code>$existing_publisher_origin_identifier</code></td>
@@ -349,7 +349,7 @@ Next, examine the mapping table to try and find the same value in the "alias" co
 <table>
   <tr>
     <th><strong>معرف المستخدم في أصل الناشر</strong></th>
-    <th><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
+    <th><strong>معرّف المستخدم في صفحة AMP الغير موجود في مصدر الناشر ("الاسم المستعار")</strong></th>
   </tr>
   <tr>
     <td>
@@ -383,7 +383,7 @@ Next, examine the mapping table to try and find the same value in the "alias" co
 
 المنهج الخاص بنا سيستفيد من فئتين من [بدائل AMP المختلفة](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md).
 
-**To update outgoing links to use a Client ID substitution:** Define a new query parameter, `ref_id` ("referrer ID"), which will appear within the URL and indicate the **originating context’s identifier** for the user. Set this query parameter to equal the value of AMP’s Client ID substitution:
+**&nbsp;لتحديث الروابط الخارجية لاستخدام بديل لمعرف العميل: ** حدد معلمة جديدًا للاستعلام، `ref_id` (“referrer ID”)، والذي سيظهر داخل عنوان URL ويشير إلى **إنشاء معرّف السياق** للمستخدم. عيِّن معلمة الاستعلام هذه بحيث تساوي قيمة بديل معرِّف عميل AMP:
 
 [sourcecode:html]
 <a
@@ -423,7 +423,7 @@ Next, examine the mapping table to try and find the same value in the "alias" co
 />
 [/sourcecode]
 
-By taking these steps, the Client ID is available to the target server and/or as a URL parameter on the page the user lands on after the link click or form submission (the **destination context**). The name (or "key") will be `ref_id` because that’s how we’ve defined it in the above implementations and will have an associated value equal to the Client ID. For instance, by following the link (`<a>` tag) defined above, the user will navigate to this URL:
+من خلال اتباع هذه الخطوات، يكون معرف العميل متاحًا للخادم المستهدف و/أو كمعلمة عنوان URL على الصفحة التي يصل إليها المستخدم بعد النقر على الرابط أو إرسال النموذج (**سياق الوجهة**). سيكون الاسم (أو "المفتاح") هو `ref_id` لأن هذه هي الطريقة التي حددناه بها في عمليات التنفيذ المذكورة أعلاه وسيكون له قيمة مرتبطة تساوي معرّف العميل. على سبيل المثال، باتباع الرابط (علامة `<a>`) المحددة أعلاه، سيتصفح المستخدم عنوان URL هذا:
 
 [sourcecode:http]
 https://example.com/step2.html?ref_id=$amp_client_id
@@ -456,7 +456,7 @@ https://example.com/step2.html?ref_id=$amp_client_id
 <amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
   <noscript><img alt="مثال على كيفية إنشاء تحليل ping يحتوي على معرف من السياق السابق المقدم عبر عنوان URL ومعرف من السياق الحالي" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
 
-*Updates to AMP page:* Use the Query Parameter substitution feature in your amp-analytics configuration to obtain the `ref_id` identifier value within the URL. The Query Parameter feature takes a parameter that indicates the "key" of the desired key-value pair in the URL and returns the corresponding value. Use the Client ID feature as we have been doing to get the identifier for the AMP page context.
+*تحديثات صفحة AMP:* استخدم ميزة استبدال "معلمة الاستفسار" في تهيئة amp-analytics للحصول على قيمة المعرف `ref_id` داخل عنوان URL. تأخذ ميزة "معلمة الاستفسار" معلمة تشير إلى "مفتاح" زوج القيمة الرئيسية المطلوب في عنوان URL وتعيد القيمة المقابلة. استخدم ميزة معرّف العميل كما فعلنا للحصول على المعرّف لسياق صفحة AMP.
 
 [sourcecode:http]
 https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}
@@ -504,7 +504,7 @@ https://analytics.example.com/ping?type=pageview&orig_user_id=$amp_client_id&use
 
 قبل المضي قدمًا، تأكد من تدوين الخطوات الموضحة في [التحقق من صحة المعلمة](#parameter-validation) أدناه وتأكد من أنك على استعداد للثقة في كل من القيم المشار إليها بواسطة `orig_user_id` و`user_id`.
 
-Check if either of the values corresponding to the inbound analytics ping are present in your mapping table. In our example above, the first pageview happens on an AMP page that’s NOT on the publisher origin followed by the second pageview that happens on the publisher origin. As a result, the values for the analytics ping query parameters will look like this:
+تحقق مما إذا كانت أي من القيم المطابقة لها موجودة في جدول التعيين. في المثال أعلاه، تحدث مشاهدة الصفحة الأولى على صفحة AMP ليست موجودة في أصل الناشر متبوعة بمشاهدة الصفحة الثانية التي تحدث في أصل الناشر. نتيجة لذلك، ستبدو قيم معلمات استعلام رسالة فحص التحليلات على النحو التالي:
 
 **الحالة رقم 1: ترتيب المعرّف عند إرسال رسالة فحص التحليلات من الصفحة الموجودة في أصل الناشر**
 
@@ -512,7 +512,7 @@ Check if either of the values corresponding to the inbound analytics ping are pr
   <tr>
     <th width="20%"></th>
     <th width="40%"><strong>معرف المستخدم في أصل الناشر</strong></th>
-    <th width="40%"><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
+    <th width="40%"><strong>معرّف المستخدم في صفحة AMP الغير موجود في مصدر الناشر ("الاسم المستعار")</strong></th>
   </tr>
   <tr>
     <td><strong>كيف يتم التعبير عنها في رسالة فحص التحليلات</strong></td>
@@ -541,7 +541,7 @@ Check if either of the values corresponding to the inbound analytics ping are pr
   <tr>
     <th width="20%"> </th>
     <th width="40%"><strong>معرّف المستخدم في مصدر الناشر</strong></th>
-    <th width="40%"><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
+    <th width="40%"><strong>معرّف المستخدم في صفحة AMP الغير موجود في مصدر الناشر ("الاسم المستعار")</strong></th>
   </tr>
   <tr>
     <td><strong>كيف يتم التعبير عنها في رسالة فحص التحليلات</strong></td>
@@ -560,16 +560,16 @@ Check if either of the values corresponding to the inbound analytics ping are pr
   </tr>
 </table>
 
-When you are searching the mapping table, take note of which situation applies and search for values within the columns of the mapping table where you expect them to appear. For instance, if the analytics ping is being sent from a page on the publisher origin (Case #1), then check for values keyed by `user_id` in the mapping table column "User ID on publisher origin" and check for values keyed by `orig_user_id` in the column "User ID on AMP page that’s NOT on publisher origin (‘alias’)".
+عندما تقوم بالبحث في جدول التعيينات، قم بتدوين الموقف الذي ينطبق وابحث عن القيم داخل أعمدة جدول التعيينات حيث تتوقع ظهورها. على سبيل المثال، إذا تم إرسال اختبار الاتصال التحليلي من صفحة على أصل الناشر (الحالة رقم 1)، فتحقق من القيم التي تم ترميزها بواسطة `user_id` في عمود جدول التعيينات "معرف المستخدم في أصل الناشر" وتحقق من القيم التي تم إدخالها بواسطة `orig_user_id` في العمود "معرّف المستخدم في صفحة AMP التي ليست موجودة في أصل الناشر ("الاسم المستعار")".
 
 إذا لم تتمكن من تحديد موقع قيمة المعرف المستخدمة في جدول التعيينات، فقم بإنشاء تعيين جديد:
 
-- If the analytics request comes from a page on your publisher origin, then you should choose the value corresponding to `uid` to be the analytics record identifier; choose the value of `orig_uid` to be the "alias".
-- If the analytics request does not come from a page on your publisher origin, then you should choose the value corresponding to `uid` to be an "alias" value in the mapping table. Then, proceed with the remaining instructions in [Task 4](#task4) to create a prospective publisher origin identifier and attempt to set this value as a cookie on the origin.
+- إذا كان طلب التحليلات يأتي من صفحة موجودة في أصل الناشر، فعليك اختيار القيمة المقابلة لـ `uid` لتكون معرّف سجل التحليلات؛ اختر قيمة `orig_uid` لتكون "الاسم المستعار".
+- إذا كان طلب التحليلات لا يأتي من صفحة موجودة في أصل الناشر، فيجب عليك اختيار القيمة المقابلة لـ `uid` لتكون قيمة "الاسم المستعار" في جدول التعيينات. بعد ذلك، تابع التعليمات المتبقية في [المهمة 4](#task4) لإنشاء معرف أصل ناشر محتمل وحاول تعيين هذه القيمة كملف تعريف ارتباط على الأصل.
 
 ##### التحقق من صحة المعلمة <a name="parameter-validation"></a>
 
-Values contained in a URL can be maliciously changed, malformed, or somehow otherwise not be the values that you expect to be there. This is sometimes called cross site request forgery. Just as it is important to ensure that the analytics pings that your analytics server receives are coming from pages that you expect to be sending analytics pings, when you are "forwarding" on values that were part of the URL, be sure to validate the referrer to ensure you can trust these values.
+يمكن تغيير القيم الموجودة في عنوان URL بشكل ضار، أو تشوهها، أو بطريقة ما لا تكون القيم التي تتوقع وجودها هناك. يسمى هذا أحيانًا طلب التزوير عبر المواقع. مثلما هو مهم للتأكد من أن اختبارات اتصال التحليلات التي يتلقاها خادم التحليلات الخاص بك تأتي من الصفحات التي تتوقع أن ترسل إشارات تحليلات، فعند "إعادة توجيه" القيم التي كانت جزءًا من عنوان URL، تأكد من التحقق من صحة المُحيل للتأكد من أنه يمكنك الوثوق بهذه القيم.
 
 على سبيل المثال، في الخطوات المذكورة أعلاه، أنشأنا عنوان URL التالي، المخصص للمستخدم للنقر عليه والانتقال إلى الصفحة المقابلة:
 
