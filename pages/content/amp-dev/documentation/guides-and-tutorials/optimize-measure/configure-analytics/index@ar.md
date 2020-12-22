@@ -1,8 +1,8 @@
 ---
-"$title": تهيئة Analytics
+"$title": تكوين التحليلات
 "$order": '5'
 "$hidden": 'true'
-description: If you’re using Google Analytics as your analytics provider, learn how to set up basic Google Analytics for AMP and how to link AMP and non-AMP content using Client ID
+description: إذا كنت تستخدم Google Analytics كموفر للتحليلات، فتعرّف على كيفية إعداد Google Analytics الأساسية لـ AMP وكيفية ربط محتوى AMP والمحتوى الذي لا يدعم AMP باستخدام Client ID
 formats:
 - websites
 - stories
@@ -29,10 +29,10 @@ formats:
 
 ما البيانات حول المستخدمين التي سوف تلتقطها من أجل قياس التفاعل؟ يجب أن تحدد هذه البيانات قبل أن تتمكن من تكوينها.
 
-Key data points to consider:
+نقاط البيانات الرئيسية التي يجب مراعاتها:
 
 - هل ستتبّع فقط مشاهدات الصفحة، أم أنماط تفاعل المستخدم الإضافية (انظر أيضًا [<span dir="ltr" class="nowrap">amp-pixel</span> أو <span dir="ltr" class="nowrap">amp-analytics</span>](analytics_basics.md#use-amp-pixel-or-amp-analytics))؟
 - ما أنواع البيانات التي ستقوم بجمعها بشأن مستخدميك، أو محتواك، أو الجهاز، أو المتصفح (انظر أيضًا [استبدال المتغير](analytics_basics.md#variable-substitution))؟
 - كيف ستتعرّف على هوية مستخدميك (انظر أيضًا [هوية المستخدم](analytics_basics.md#user-identification))؟
 
-Learn more: Continue to learn about analytics with [Analytics: the Basics](analytics_basics.md).
+اعرف المزيد: استمر في التعرف على التحليلات من خلال [Analytics: الأساسيات](analytics_basics.md).
