@@ -49,7 +49,7 @@ article {
 
 الآن قم **بتحديث** الصفحة. يجب أن تشاهد ارتباطًا في الزاوية العلوية اليسرى للصفحة تشير إلى `homepage.html`.  إذا قمت بالنقر فوق رمز الصفحة الرئيسية، سوف تكتشف سريعًا أنه لا يؤدي إلى أي مكان (نظرًا لأنه ليس لدينا ملف `homepage.html`).
 
-{{ image('/static/img/docs/tutorials/tut-advanced-navigate-home.png', 412, 190, align='center half', caption='Home icon navigation') }}
+{{ image('/static/img/docs/tutorials/tut-advanced-navigate-home.png', 412, 190, align='center half', caption='التنقل برمز الصفحة الرئيسية') }}
 
 يمكن استبدال هذا الارتباط بعنوان URL للصفحة الرئيسية لموقعك للسماح للمستخدمين بالتنقل إلى الأجزاء الأخرى من موقعك باستخدام التنقل الموجود لموقعك.
 
