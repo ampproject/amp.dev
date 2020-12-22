@@ -115,7 +115,7 @@ Ya, ada dukungan bawaan untuk verifikasi dan deteksi keterlihatan dengan menggun
 
 #### Apakah iklan HTML AMP mendukung animasi berbasis lini masa?
 
-Yes. See [`amp-animation`](../../../documentation/components/reference/amp-animation.md).
+Ya. Lihat [`amp-animation`](../../../documentation/components/reference/amp-animation.md).
 
 #### Sebagian besar iklan memiliki jalan keluar iklan yang dapat dikonfigurasi dan target yang dapat diketuk. Apakah iklan HTML AMP juga memiliki mekanisme yang sama?
 
