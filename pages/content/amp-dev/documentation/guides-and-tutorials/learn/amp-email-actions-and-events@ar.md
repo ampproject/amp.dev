@@ -132,15 +132,15 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
   </tr>
   <tr>
     <td rowspan="3"><code>change</code></td>
-    <td rowspan="3">Fired when the value of the element is changed and committed.       <p>       Data properties mirror those in <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#Properties">HTMLInputElement</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement#Properties">HTMLSelectElement</a>.</p>     </td>
+    <td rowspan="3">التشغيل عند تغيير قيمة العنصر وتنفيذها.       <p>       وتعكس خصائص البيانات تلك الأشياء في <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#Properties">HTMLInputElement</a> و<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement#Properties">HTMLSelectElement</a>.</p>
+</td>
     <td><code>input</code></td>
     <td>
       <pre>event.min<br>event.max<br>event.value<br>event.valueAsNumber</pre>
     </td>
   </tr>
   <tr>
-    <td>
-<code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
+    <td> <code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
 </td>
     <td>
       <code>event.checked</code>
@@ -230,8 +230,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
     <th width="40%">البيانات</th>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(انخفاض مستوى الثقة)</td>
     <td>التشغيل عند فشل إحضار البيانات.</td>
     <td>لا يوجد</td>
   </tr>
@@ -281,8 +280,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
     <th width="40%">البيانات</th>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(انخفاض مستوى الثقة)</td>
     <td>التشغيل عند فشل إحضار البيانات.</td>
     <td>لا يوجد</td>
   </tr>
@@ -342,7 +340,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
   </tr>
   <tr>
     <td><code>toggleVisibility</code></td>
-    <td>Toggles the visibility of the target element. If an     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a     result, it gains focus.</td>
+    <td>تبديل رؤية العنص الهدف. إذا أصبح     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus">عنصر <code>autofocus</code></a> مرئيًا كنتيجة لذلك، فإنه يكتسب التركيز.</td>
   </tr>
   <tr>
     <td><code>toggleClass(class=STRING, force=BOOLEAN)</code></td>
@@ -350,7 +348,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
   </tr>
   <tr>
     <td><code>focus</code></td>
-    <td>Makes the target element gain focus. To lose focus, <code>focus</code>     on another element (usually parent element). We strongly advise against     losing focus by focusing on <code>body</code>/<code>documentElement</code>     for accessibility reasons.</td>
+    <td>التسبب في إكساب العنصر الهدف للتركيز. لخسارة التركيز <code>focus</code>     على عنصر آخر (عنصر أصل). إننا ننصح بشدة بعدفقدان التركيز على  <code>body</code>/<code>documentElement</code>     لأسباب تتعلق بإمكانية الوصول.</td>
   </tr>
 </table>
 
@@ -363,11 +361,12 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
   </tr>
   <tr>
     <td><code>toggle(section=STRING)</code></td>
-    <td>Toggles the <code>expanded</code> and <code>collapsed</code> states of <code>amp-accordion</code> sections. When called with no arguments, it toggles all sections of the accordion. Trigger on a specific section by providing the section id: <code>on="tap:myAccordion.toggle(section='section-id')"</code>.   </td>
+    <td>تبديل الحالات <code>expanded</code> و<code>collapsed</code> الخاصة بالأقسام <code>amp-accordion</code>. عند الاستدعاء من دون وسيطات، يقوم بتدبيل كل الأقسام القابلة للطي. قم بتشغيل قسم معين من خلال توفير معرِّف القسم: <code>on="tap:myAccordion.toggle(section=</code>
+</td>
 </tr>
   <tr>
     <td><code>expand(section=STRING)</code></td>
-    <td>Expands the sections of the accordion. If a section is already expanded, it stays expanded. When called with no arguments, it expands all sections of the accordion. Trigger on a specific section by providing the section id: <code>on="tap:myAccordion.expand(section='section-id')"</code>.</td>
+    <td>توسيع الأقسام الخاصة بالأكورديون. إذا تم توسيع القسم بالفعل، فسيظل موسعًا. وعندما يتم استدعاؤه بدون وسيطات، فإنه يقوم بتسويع كل أقسام الأكورديون. قم بتشغيل قسم معين من خلال توفير معرِّف القسم: <code>on="tap:myAccordion.expand(section='section-id')"</code>.</td>
   </tr>
   <tr>
     <td><code>collapse(section=STRING)</code></td>
@@ -432,8 +431,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
     <td>تحديث مخطط <code>amp-list</code> إلى <code>layout="CONTAINTER"</code> للسماح <a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">بتغيير الحجم الديناميكي</a>.</td>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(انخفاض مستوى الثقة)</td>
     <td>التشغيل عند فشل إحضار البيانات.</td>
     <td>لا يوجد</td>
   </tr>
@@ -460,7 +458,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
   </tr>
   <tr>
     <td><code>toggle(index=INTEGER, value=BOOLEAN)</code></td>
-    <td>Toggles the application of the `selected`. If the select attribute is absent, this action adds it. If the select attribute is present, this action removes it.     You may force and keep an add or remove by including a boolean value in the `value` argument. A value of `true` will force add the `selected` attribute and not remove it if already present. A value of  `false` will remove the attribute, but not add it if absent.   </td>
+    <td>تبديل التطبيق الخاص "بالمحدد". إذا كانت سمة التحديد غير موجودة، فإن هذا الإجراء يضيفها. وإذا كانت سمة التحديد موجودة، فإن هذا الإجراء يزيلها. ويمكنك فرض إضافة أو إزالة والاحتفاظ بها عن طريق تضمين قيمة منطقية في وسيطة "القيمة". وستفرض قيمة "صحيح" إضافة السمة "المحددة" وعدم إزالتها إذا كانت موجودة بالفعل. وستؤدي القيمة "خطأ" إلى إزالة السمة، ولكن لن تضيفها في حالة عدم وجودها.</td>
   </tr>
 </table>
 
