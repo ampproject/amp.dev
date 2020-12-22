@@ -180,9 +180,9 @@ Buka [Konsol Pengembang](https://developer.chrome.com/devtools/docs/console) (De
 
 [tip] Anda dapat menggunakan berbagai alat lainnya untuk memvalidasi halaman AMP Anda, seperti:
 
-- The [AMP Validator extension for Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc)
-- The [AMP Validator extension for Opera](https://addons.opera.com/en-gb/extensions/details/amp-validator/)
-- The [AMP Validator Web Interface](https://validator.ampproject.org/)
+- [Ekstensi Validator AMP untuk Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc)
+- [Ekstensi Validator AMP untuk Opera](https://addons.opera.com/en-gb/extensions/details/amp-validator/)
+- [Antarmuka Web Validator AMP](https://validator.ampproject.org/)
 - ... dan masih banyak lagi
 
 Pelajari lebih lanjut dalam panduan [Memvalidasi halaman AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md). [/tip]
