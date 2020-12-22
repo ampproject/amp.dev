@@ -233,7 +233,7 @@ limitations under the License.
     <td>استبدلت بـ <code>amp-audio</code>.</td>
   </tr>
   <tr>
-    <td width="30%">استبدلت بـ <code>amp-iframe</code>.</td>
+    <td width="30%">iframe</td>
     <td>استبدلت بـ <code>amp-iframe</code>.</td>
   </tr>
     <tr>
@@ -288,7 +288,7 @@ limitations under the License.
     <td>يمكن استخدام السمة <code>http-equiv</code> لقيم معينة مسموح بها؛ راجع <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">مواصفات مسؤول التحقق من صحة AMP</a> للحصول على التفاصيل.</td>
   </tr>
   <tr>
-    <td width="30%"><code><a name="ancr"></a>a</code></td>
+    <td width="30%"><code>a</code></td>
     <td>يجب ألا تبدأ قيمة السمة <code>href</code> بـ <code>javascript:</code>. وفي حالة التعيين، يجب أن تكون قيمة السمة<code>target</code> عبارة عن <code>_blank</code>. وخلاف ذلك مسموح به. <a href="#ancr">🔗</a>
 </td>
   </tr>
