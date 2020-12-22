@@ -244,7 +244,6 @@ Pets can lower your stress levels!</p>
     animate-in="fade-in"
     animate-in-delay="1s">
 </amp-img>
-
 ```
 
 قم تحديث وإعادة تحميل قصتك، يجب أن تبدو صفحتك الأخيرة كما يلي:
