@@ -238,15 +238,11 @@ Ada berbagai alat yang dapat Anda gunakan untuk mengode video dan menyesuaikan m
   </thead>
   <tbody>
     <tr>
-     <td>
-<a href="https://www.ffmpeg.org/about.html">FFmpeg</a>
-     </td>
+     <td><a href="https://www.ffmpeg.org/about.html">FFmpeg</a></td>
      <td>Pengoptimalan yang disarankan:       <ul>         <li>Untuk MP4, gunakan <code>-crf 23</code>.</li>         <li>Untuk WEBM, gunakan <code>-b:v 1M</code>.</li>       </ul> </td>
     </tr>
     <tr>
-     <td>
-<a href="https://libav.org/avconv.html">avconv</a>
-     </td>
+     <td><a href="https://libav.org/avconv.html">avconv</a></td>
      <td>Pengoptimalan yang disarankan:       <ul>         <li>Untuk MP4, gunakan <code>-crf 23</code>.</li>         <li>Untuk WEBM, gunakan <code>-b:v 1M</code>.</li>       </ul> </td>
     </tr>
     <tr>
