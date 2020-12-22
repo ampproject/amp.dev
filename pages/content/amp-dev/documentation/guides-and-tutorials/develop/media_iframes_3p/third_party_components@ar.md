@@ -42,16 +42,16 @@ contributors:
 
 ## تضمين Instagram
 
-Embed an Instagram in your page by using the [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) element.
+قم بتضمين Instagram في صفحتك باستخدام عنصر [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) .
 
-To embed an Instagram, first include the following script in the `<head>`:
+لتضمين Instagram، قم أولا بتضمين النص البرمجي التالي في `<head>`:
 
 [sourcecode:html]
 <script async custom-element="amp-instagram"
   src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
 [/sourcecode]
 
-Include the Instagram data-shortcode found in the Instagram photo URL. For example, in `https://instagram.com/p/fBwFP`, `fBwFP` is the data-shortcode. Also, Instagram uses a fixed aspect ratio for responsive layouts, so the value for width and height should be universal.
+يمكنك تضمين الرمز القصير لبيانات Instagram والمتوفّر في عنوان URL لصورة Instagram. على سبيل المثال، في `https://instagram.com/p/fBwFP`، يكون `fBwFP` هو الرمز القصير للبيانات. كما يستخدم Instagram أيضًا نسبة ثابتة للعرض إلى الارتفاع للتنسيقات سريعة الاستجابة، وهكذا يجب أن تكون قيمة العرض والارتفاع عامة.
 
 [example preview="inline" playground="true" imports="amp-instagram:0.1"]
 ```html
