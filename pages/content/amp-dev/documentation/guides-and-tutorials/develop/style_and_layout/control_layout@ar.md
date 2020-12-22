@@ -145,7 +145,7 @@ The following values can be used in the `layout` attribute:
 
 يمكنك استخدام [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) للتحكم في مظهر وسلوك تخطيط الصفحة، وذلك مثلما تفعل على أي موقع ويب آخر. عند تغيّر حجم نافذة المتصفّح أو اتجاهها، تتم إعادة تقييم استعلامات الوسائط ويتم إخفاء العناصر وعرضها بناءً على النتائج الجديدة.
 
-يمكنك استخدام [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) للتحكم في مظهر وسلوك تنسيق الصفحة، وذلك مثلما تفعل على أي موقع ويب آخر. عند تغيّر حجم نافذة المتصفّح أو اتجاهها، تتم إعادة تقييم الاستعلامات عن الوسائط ويتم إخفاء العناصر وعرضها بناءً على النتائج الجديدة.
+[tip type="read-on"] تعرّف على المزيد من المعلومات حول التحكم في التخطيط من خلال تطبيق استعلامات الوساط في <a class="" href="https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en">استخدام استعلامات وسائط CSS للاستجابة</a>. [/tip]
 
 ### استعلامات وسائط العناصر <a name="element-media-queries"></a>
 
