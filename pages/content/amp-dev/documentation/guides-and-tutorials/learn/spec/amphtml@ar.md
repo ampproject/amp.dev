@@ -179,7 +179,9 @@ limitations under the License.
 يشترط في مستندات AMP HTML
 
 - <a name="dctp"></a>start with the doctype `<!doctype html>`. [🔗](#dctp)
-- <a name="ampd"></a>contain a top-level `<html ⚡>` tag (`<html amp>` is accepted as well). [🔗](#ampd)
+- يحتوي على علامة المستوى الأعلى
+    <span><code data-md-type="codespan"><html ⚡></code></span> (تكون
+    <span><code><html amp></code></span> مقبولة كذلك).
 - <a name="crps"></a>contain `<head>` and `<body>` tags (They are optional in HTML). [🔗](#crps)
 - <a name="canon"></a>contain a `<link rel="canonical" href="$SOME_URL">` tag inside their head that points to the regular HTML version of the AMP HTML document or to itself if no such HTML version exists. [🔗](#canon)
 - <a name="chrs"></a>contain a `<meta charset="utf-8">` tag as the first child of their head tag. [🔗](#chrs)
@@ -316,47 +318,47 @@ limitations under the License.
 
 راجع [وثائق AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-css-classes.md) للتعريف على معنى أسماء الفئات المسبوقة بـ `amp-`. إذ يُسمح باستخدام هذه الفئات ويقصد بها السماح بتخصيص بعض ميزات وقت تشغيل AMP وملحقاته.
 
-All other authored class names are allowed in AMP HTML markup.
+يُسمح بجميع أسماء الفئات المختلقة الأخرى في لغة ترميز AMP HTML.
 
 ### المعرِّفات <a name="ids"></a>
 
-Certain ID names are disallowed in AMP HTML, such as IDs prefixed with `-amp-` and `i-amp-` that may conflict with internal AMP IDs.
+غير مسموح ببعض أسماء المعرِّفات في AMP HTML، مثل المعرفات المسبوقة بـ `-amp-` و`i-amp-` التي قد تتعارض مع معرِّفات AMP الداخلية.
 
-Consult the AMP documentation for specific extensions before using `amp-` and `AMP` IDs to avoid conflict with the features provided by these extensions, such as `amp-access`.
+راجع وثائق AMP للحصول على ملحقات معينة قبل استخدام معرِّفات`amp-` و`AMP` لتفادي التعارض مع الميزات التي توفرها هذه الملحقات، مثل `amp-access`.
 
-View the full list of disallowed ID names by searching for `mandatory-id-attr` [here](https://github.com/ampproject/amphtml/blob/master/spec/../validator/validator-main.protoascii).
+واعرض القائمة الكاملة لأسماء المعرِّفات غير المسموح بها من خلال البحث عن `mandatory-id-attr` [هنا](https://github.com/ampproject/amphtml/blob/master/spec/../validator/validator-main.protoascii).
 
 ### الروابط<a name="links"></a>
 
-The `javascript:` schema is disallowed.
+مخطط `javascript:` غير مسموح به.
 
 ### صفحات الأنماط<a name="stylesheets"></a>
 
-Major semantic tags and the AMP custom elements come with default styles to make authoring a responsive document reasonably easy. An option to opt out of default styles may be added in the future.
+تأتي العلامات الدلالية الرئيسية وعناصر AMP المخصصة مع أنماط افتراضية لتسهيل عملية تصميم مستند سريع الاستجابة على نحو معقول. وقد يتم إضافة خيار إلغاء الاشتراك في الأنماط الافتراضية في المستقبل.
 
 #### @-قواعد <a name="-rules"></a>
 
-The following @-rules are allowed in stylesheets:
+@-قواعد التالية مسموح بها في صفحات الأنماط:
 
 `@font-face`, `@keyframes`, `@media`, `@page`, `@supports`.
 
-`@import` will not be allowed. Others may be added in the future.
+لن يُسمَح بـ `@import`، قد يتم إضافة أخرى في المستقبل.
 
 #### صفحات أنماط المؤلف <a name="author-stylesheets"></a>
 
-Authors may add custom styles to a document using a single `<style amp-custom>` tag in the head of the document or inline styles.
+يمكن للمؤلفين إضافة أنماط مخصصة إلى مستند باستخدام علامة `<style amp-custom>` واحدة في رأس المستند أو الأنماط المضمنة.
 
-`@keyframes` rules are allowed in the `<style amp-custom>`. However, if they are too many of them, it's recommended to place them in the additional `<style amp-keyframes>` tag, which must be located at the end of the AMP document. For details, see the [Keyframes stylesheet](#keyframes-stylesheet) section of this document.
+يُسمَح بقواعد `@keyframes` في `<style amp-custom>`. على الرغم من ذلك، إذا كان عددها كبيرًا جدًا، فيوصى بوضعها في علامة `<style amp-keyframes>` الإضافية، التي يجب أن تكون موجودة في نهاية مستند AMP. وللحصول على مزيد من التفاصيل، راجع قسم [صحفتا أنماط الإطارات الأساسية](#keyframes-stylesheet) من هذا المستند.
 
 #### المحددات<a name="selectors"></a>
 
-The following restrictions apply to selectors in author style sheets:
+تنطبق القيود التالية على المحددات في صفحات أنماط المؤلف:
 
 ##### أسماء العلامات والفئات <a name="class-and-tag-names"></a>
 
-Class names, IDs, tag names and attributes, in author stylesheets, may not start with the string `-amp-` and `i-amp-`. These are reserved for internal use by the AMP runtime. It follows, that the user's stylesheet may not reference CSS selectors for `-amp-` classes, `i-amp-` IDs and `i-amp-` tags and attributes. These classes, IDs and tag/attribute names are not meant to be customized by authors. Authors, however, can override styles of `amp-` classes and tags for any CSS properties not explicitly forbidden by these components' spec.
+قد لا تبدأ أسماء الفئات والمعرِّفات والعلامات والسمات في صفحات أنماط المؤلف بالسلسلتين  `-amp-` و`i-amp-`. حيث إنها محجوزة للاستخدام الداخلي في وقت تشغيل AMP. ويترتب على ذلك أن صفحة أنماط المستخدم قد لا تشير إلى محددات CSS لفئات  `-amp-` ومعرِّفات `i-amp-` وعلامات وسمات `i-amp-`. وليس الغرض أن يتم تخصيص هذه الفئات والمعرِّفات وأسماء العلامات/السمات عن طريق المؤلفين. على الرغم من ذلك، يمكن للمؤلفين تجاوز أنماط فئات وعلامات `amp-` لأي خصائص CSS لم يتم حظرها صراحةً حسب مواصفات هذه المكونات.
 
-To prevent usage of attribute selectors to circumvent class name limitations it is generally not allowed for CSS selectors to contain tokens and strings starting with `-amp-` and `i-amp-`.
+لمنع استخدام محددات السمات للتحايل على قيود اسم الفئة، لا يُسمح لمحددات CSS عمومًا بأن تحتوي على رموز وسلاسل تبدأ بـ `-amp-` and `i-amp-`.
 
 #### مهم <a name="important"></a>
 
@@ -366,28 +368,28 @@ To prevent usage of attribute selectors to circumvent class name limitations it 
 
 يسمح AMP فقط بالتحولات والرسوم المتحركة للخصائص التي يمكن تسريعها بواسطة معالج الرسوميات في المتصفحات الشائعة. وإننا ندرج حاليًا في القائمة البيضاء: `opacity`, `transform` (وأيضًا `-vendorPrefix-transform`).
 
-In the following examples `<property>` needs to be in the allowed list above.
+في المثال التالي، يلزم إدراج `<property>` في القائمة البيضاء أعلاه.
 
 - `transition <property>` (وأيضًا -vendorPrefix-transition)
 - `@keyframes name { from: {<property>: value} to {<property: value>} }` (وأيضًا `@-vendorPrefix-keyframes`)
 
 #### الحد الأقصى للحجم <a name="maximum-size"></a>
 
-It is a validation error if the author stylesheet or inline styles together are larger than 75,000 bytes.
+يُعد خطأ تحقق من الصحة في حالة ما إذا كانت صفحة أنماط المؤلف أو الأنماط المضمنة معًا أكبر من 75000 بايت.
 
 ### صفحة أنماط الإطارات الأساسية <a name="keyframes-stylesheet"></a>
 
-In addition to the `<style amp-custom>`, authors may also add the `<style amp-keyframes>` tag, which is allowed specifically for keyframes animations.
+بالإضافة إلى `<style amp-custom>`، يمكن للمؤلفين أيضًا إضافة العلامة `<style amp-keyframes>`، المسموح بها تحديدًا للرسوم المتحركة للإطارات الرئيسية.
 
-The following restrictions apply to the `<style amp-keyframes>` tag:
+وتنطبق القيود التالية على العلامة `<style amp-keyframes>`:
 
 1. May only be placed as the last child of the document's `<body>` element.
 2. May only contain `@keyframes`, `@media`, `@supports` rules and their combination.
 3. يجب ألا تكون أكبر من 500000 بايت.
 
-The reason the `<style amp-keyframes>` tag exists is because keyframes rules are often bulky even for moderately complicated animations, which leads to slow CSS parsing and first contentful paint. But such rules often exceed the size limit imposed on `<style amp-custom>`. Putting such keyframes declarations at the bottom of the document in the `<style amp-keyframes>` allows them to exceed size limitations. And since keyframes are not render-blocking, it also avoids blocking first contentful paint to parse them.
+يرجع سبب وجود العلامة `<style amp-keyframes>` إلى أن قواعد الإطارات الرئيسية غالبًا ما تكون ضخمة حتى بالنسبة إلى الرسوم المتحركة المركَّبة على نحو معتدل، التي تؤدي إلى بطء تحليل CSS والرسمة الأولى للمحتوى. ولكن غالبًا ما تتجاوز هذه القواعد حد الحجم المفروض على `<style amp-custom>`. ويسمح وضع إعلانات الإطارات الرئيسية هذه في أسفل المستند في `<style amp-keyframes>` بتجاوز قيود الحجم. ونظرًا لأن الإطارات الأساسية لا تحظر العرض، فإنها تتجنب أيضًا حظر أول رسومات المحتوى لتحليلها.
 
-Example:
+مثال:
 
 [sourcecode:html]
 <style amp-keyframes>
@@ -404,7 +406,7 @@ Example:
 
 قد يقوم المؤلفون بتضمين صفحات أنماط للخطوط المخصصة. وتكون الطريقتان المعتمدتان عبارة عن علامات الرابط التي تشير إلى مزودي الخطوط المدرجين في القائمة البيضاء وتضمين `@font-face`.
 
-Example:
+مثال:
 
 [sourcecode:html]
 <link
@@ -413,67 +415,67 @@ Example:
 />
 [/sourcecode]
 
-Font providers can be allowlisted if they support CSS-only integrations and serve over HTTPS. The following origins are currently allowed for font serving via link tags:
+يمكن إدراج مزودي الخطوط في القائمة البيضاء إذا كانوا يدعمون عمليات تكامل CSS فقط ويعملون عبر HTTPS. ويُسمح حاليًا للأصول التالية بعرض الخطوط عبر علامات الارتباط:
 
 - Fonts.com: `https://fast.fonts.net`
 - Google Fonts: `https://fonts.googleapis.com`
 - Font Awesome: `https://maxcdn.bootstrapcdn.com, https://use.fontawesome.com`
 - [Typekit](https://helpx.adobe.com/typekit/using/google-amp.html): `https://use.typekit.net/kitId.css` (replace `kitId` accordingly)
 
-IMPLEMENTERS NOTE: Adding to this list requires a change to the AMP Cache CSP rule.
+ملحوظة مسؤولي التنفيذ: تتطلب الإضافة إلى هذه القائمة تغيير قاعدة AMP Cache CSP.
 
-Authors are free to include all custom fonts via an `@font-face` CSS instruction via their custom CSS. Fonts included via `@font-face` must be fetched via the HTTP or HTTPS scheme.
+للمؤلفين الحرية في تضمين كل الخطوط المخصصة عبر تعليمات CSS `@font-face` عبر CSS المخصص. ويجب إحضار الخطوط المضمنة عبر `@font-face` عبر المخطط HTTP أو HTTPS.
 
 ## وقت تشغيل AMP <a name="amp-runtime"></a>
 
 يمكن إدراج مزودي الخطوط في القائمة البيضاء إذا كانوا يدعمون عمليات تكامل CSS فقط ويعملون عبر HTTPS. ويُسمح حاليًا للأصول التالية بعرض الخطوط عبر علامات الارتباط:
 
-The AMP runtime is loaded via the mandatory <code><script src="https://cdn.ampproject.org/v0.js"></script></code> tag in the AMP document <code></code>.
+يتم تحميل وقت تشغيل AMP عبر علامة <code><script src="https://cdn.ampproject.org/v0.js"></script></code> الإلزامية في <code><head></code> لمستند AMP.
 
-The AMP runtime can be placed into a development mode for any page. Development mode will trigger AMP validation on the embedded page, which will emit the validation status and any errors to the JavaScript developer console. Development mode may be triggered by appending `#development=1` to the URL of the page.
+ويمكن وضع وقت تشغيل AMP في وضع التطوير لأي صفحة. حيث سيؤدي وضع التطوير إلى تشغيل التحقق من صحة AMP على الصفحة المضمنة، مما يؤدي إلى إرسال حالة التحقق وأي أخطاء إلى وحدة تحكم مطوري JavaScript. وقد يتم تشغيل وضع التطوير من خلال إلحاق `#development=1` بعنوان URL للصفحة.
 
 ## الموارد <a name="resources"></a>
 
 يجب تضمين الموارد مثل الصور أو مقاطع الفيديو أو الملفات الصوتية أو الإعلانات في ملف AMP HTML من خلال عناصر مخصصة مثل `<amp-img>`. إذ نطلق عليها اسم "الموارد المُدارة" لأنه يتم تحديد ما إذا كان سيتم تحميلها وعرضها للمستخدم وكذا توقيت ذلك من خلال وقت تشغيل AMP.
 
-There are no particular guarantees as to the loading behavior of the AMP runtime, but it should generally strive to load resources quickly enough, so that they are loaded by the time the user would like to see them if possible. The runtime should prioritize resources currently in the viewport and attempt to predict changes to the viewport and preload resources accordingly.
+ولا توجد ضمانات خاصة فيما يتعلق بسلوك التحميل لوقت تشغيل AMP، ولكن يجب أن يسعى عمومًا لتحميل الموارد بسرعة كافية، بحيث يتم تحميلها في الوقت الذي يرغب المستخدم في رؤيتها إن أمكن. ويجب أن يعطي وقت التشغيل الأولوية للموارد الموجودة حاليًا في منفذ العرض ومحاولة توقع التغييرات في منفذ العرض وتحميل الموارد مسبقًا وفقًا لذلك.
 
-The AMP runtime may at any time decide to unload resources that are not currently in viewport or reuse the resource containers such as iframes to reduce overall RAM consumption.
+فيما قد يقرر وقت تشغيل AMP في أي وقت إلغاء تحميل الموارد غير الموجودة حاليًا في منفذ العرض أو إعادة استخدام حاويات الموارد مثل iframe لتقليل الاستهلاك الإجمالي لذاكرة الوصول العشوائي.
 
 ## مكونات AMP <a name="amp-components"></a>
 
-AMP HTML uses custom elements called "AMP components" to substitute built-in resource-loading tags such as `<img>` and `<video>` and to implement features with complex interactions such as image lightboxes or carousels.
+يستخدم AMP HTML عناصر مخصصة تسمى "مكونات AMP" لاستبدال علامات تحميل الموارد المضمنة مثل `<img>` و`<video>` ولتنفيذ ميزات ذات تفاعلات مركَّبة مثل مكتبات الفيديو أو lightbox للصور.
 
-See the [AMP component spec](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-components.md) for details about supported components.
+راجع [مواصفات مكون AMP](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-components.md) للحصول على مزيد من التفاصيل حول المكونات المدعومة.
 
-There are 2 types of supported AMP components:
+هناك نوعان من مكونات AMP المدعومة:
 
 1. مضمنة
 2. موسعة
 
-Built-in components are always available in an AMP document and have a dedicated custom element such as `<amp-img>`. Extended components must be explicitly included into the document.
+تتوفر المكونات المضمنة دائمًا في مستند AMP ولها عنصر مخصص خاص مثل `<amp-img>`. ويجب تضمين المكونات الموسعة بشكل صريح في المستند.
 
 ### السمات المشتركة <a name="common-attributes"></a>
 
 #### `layout`, `width`, `height`, `media`, `placeholder`, `fallback` <a name="layout-width-height-media-placeholder-fallback"></a>
 
-These attributes define the layout of an element. The key goal here is to ensure that the element can be displayed and its space can be properly reserved before any of the JavaScript or remote resources have been downloaded.
+تحدد هذه السمات تخطيط العنصر، حيث إن الهدف الرئيسي هنا عبارة عن ضمان إمكانية عرض العنصر وحجز مساحته على نحو صحيح قبل تنزيل أي من JavaScript أو الموارد عن بُعد.
 
-See the [AMP Layout System](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-layout.md) for details about the layout system.
+راجع [نظام تخطيط AMP](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-layout.md) لمزيد من التفاصيل حول نظام التخطيط.
 
 #### `on` <a name="on"></a>
 
-The `on` attribute is used to install event handlers on elements. The events that are supported depend on the element.
+تُستخدَم السمة `on` لتثبيت معالجات الأحداث في العناصر. إذ تعتمد الأحداث المدعومة على العناصر.
 
-The value for the syntax is a simple domain specific language of the form:
+وتكون القيمة لبناء الجملة عبارة عن لغة نموذجية بسيطة خاصة بالمجال من النموذج:
 
 [sourcecode:javascript]
 eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 [/sourcecode]
 
-Example: `on="tap:fooId.showLightbox"`
+مثال: `on="tap:fooId.showLightbox"`
 
-If `methodName` is omitted the default method is executed if defined for the element. Example: `on="tap:fooId"`
+إذا تم إغفال `methodName`، فسيتم تنفيذ الطريقة الافتراضية في حالة تحديدها للعنصر. مثال: `on="tap:fooId"`
 
 قد تقبل بعض الإجراءات الوسيطة، إذا تم توثيقها. ويتم تحديد الوسيطات بين هلالين في ترقيم `key=value`. وتكون القيم المقبولة عبارة عن:
 
@@ -510,7 +512,7 @@ Example: `on="submit-success:lightbox1;submit-error:lightbox2"`
 
 ##### عنوان URL <a name="url"></a>
 
-The URL for extended components is of the form:
+يتخذ عنوان URL للمكونات الموسعة الشكل:
 
 [sourcecode:http]
 https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
@@ -595,17 +597,17 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
 
 توفر الآلية الموضحة أدناه طريقة موحدة للبرنامج لاكتشاف ما إذا كان إصدار AMP موجودًا لمستند معياري أم لا.
 
-If an AMP document exists that is an alternative representation of a canonical document, then the canonical document should point to the AMP document via a `link` tag with the [relation "amphtml"](http://microformats.org/wiki/existing-rel-values#HTML5_link_type_extensions).
+وفي حالة وجود مستند AMP يُعد تمثيلًا بديلًا لمستند معياري، يجب أن يشير المستند المعياري إلى مستند AMP عبر العلامة `link` [بالصلة"amphtml"](http://microformats.org/wiki/existing-rel-values#HTML5_link_type_extensions).
 
-Example:
+مثال:
 
 [sourcecode:html]
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html" />
 [/sourcecode]
 
-The AMP document itself is expected to point back to its canonical document via a `link` tag with the relation "canonical".
+من المتوقع أن يشير مستند AMP نفسه إلى المستند المعياري عبر علامة `link`  بالصلة "معياري".
 
-Example:
+مثال:
 
 [sourcecode:html]
 <link
