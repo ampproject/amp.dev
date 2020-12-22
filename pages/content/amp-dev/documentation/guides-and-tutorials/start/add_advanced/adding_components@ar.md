@@ -8,7 +8,7 @@ description: '"يسمح نظام مكونات AMP لك ببناء ميزات ف�
 
 - **مدمجة**: يتم تضمين هذه المكونات في مكتبة AMP JavaScript الأساسية (المحدد في علامة `<head>`)، مثل  [`amp-img`](../../../../documentation/components/reference/amp-img.md) و[`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md).  ويمكن استخدام هذه المكونات مباشرة في مستند AMP.
 
-- **extended**: These are extensions to the base library that must be explicitly included in the document as custom elements.  Custom elements require specific scripts that are added to the `<head>` section (e.g., `<script async custom-element="`[`amp-video`](../../../../documentation/components/reference/amp-video.md)`...`).
+- **موسعة**: هذه هي الملحقات بالمكتبة الأساسية والتي يجب تضمينها صراحة في المستند كعناصر مخصصة.  تتطلب العناصر المخصصة نصوص برمجية خاصة تجري إضافتها إلى قسم `<head>` (على سبيل المثال، `<script async custom-element="`[`amp-video`](../../../../documentation/components/reference/amp-video.md)`...`).
 
 - **تجريبية**: هذه هي المكونات التي تم إصدارها ولكنها ليست جاهزة للاستخدام على نطاق واسع. يمكن للمطورين اختيار الاشتراك في استخدام هذه الميزات قبل أن يتم إصدارها بالكامل.  تعلم المزيد في [الميزات التجريبية](../../../../documentation/guides-and-tutorials/learn/experimental.md).
 
