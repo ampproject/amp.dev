@@ -376,7 +376,7 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>show</code></td>
-    <td>Shows the target element. If an     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a     result, it gains focus.</td>
+    <td>إظهار العنصر الهدف، إذا أصبح     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus">عنصر <code>autofocus</code></a> مرئيًا كنتيجة لذلك، فإنه يكتسب التركيز.</td>
   </tr>
   <tr>
     <td><code>toggleVisibility</code></td>
@@ -405,11 +405,11 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>play</code></td>
-    <td>Plays the audio. Is a no-op if the <code><amp-audio></code> element is a descendant of <code><amp-story></code>.</td>
+    <td>يشغل الصوت. وهو عبارة عن تعليمة غير فعالة إذا كان العنصر <code>&lt;amp-audio></code> تابعًا لـ <code>&lt;amp-story></code>.</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
-    <td>Pauses the audio. Is a no-op if the <code><amp-audio></code> element is a descendant of <code><amp-story></code>.</td>
+    <td>يوقف الصوت مؤقتًا. وهو عبارة عن تعليمة غير فعالة إذا كان العنصر <code>&lt;amp-audio></code> تابعًا لـ <code>&lt;amp-story></code>.</td>
   </tr>
 </table>
 
