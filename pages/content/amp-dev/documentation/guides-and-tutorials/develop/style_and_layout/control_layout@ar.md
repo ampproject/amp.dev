@@ -65,7 +65,7 @@ The following values can be used in the `layout` attribute:
     </tr>
     <tr>
       <td data-th="Layout type"><code>responsive</code></td>
-      <td data-th="Description">Yes</td>
+      <td data-th="Description">نعم</td>
       <td data-th="Behavior">تتم ملاءمة حجم العنصر مع عرض عنصر الحاوية الخاص به كما يتم تغيير حجم ارتفاعه تلقائيًا ليلائم نسبة الأبعاد المحددة من خلال سمتي العرض والارتفاع. ويعمل هذا التخطيط بشكل جيد جدًا مع أغلب عناصر AMP، بما في ذلك <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a>، و<a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a>. تعتمد المساحة المتاحة على العنصر الأصل ويمكن أيضًا تخصيصها باستخدام <code>max-width</code> CSS.<p><strong>ملاحظة</strong>: العناصر بالتخطيط <code>"layout=responsive"</code> ليس لها حجم فطري. يتم تحديد حجم العنصر من عنصر الحاوية الخاص به. لضمان عرض عنصر AMP الخاص بك، يجب أن تحدد قيمة عرض وارتفاع لعنصر الحاوية. لا تحدد <code>"display:table"</code> على عنصر الحاوية لأن هذا يتجاوز عرض عنصر AMP، ما يؤدي إلى تحويل عنصر AMP إلى غير مرئي.</p>
 </td>
     </tr>
@@ -99,14 +99,14 @@ The following values can be used in the `layout` attribute:
 
 [tip type="tip"] **تلميح–** زر صفحة [توضيح تخطيطات AMP](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html) لمعرفة كيف تستجيب التخطيطات المتنوعة لتغير حجم الشاشة. [/tip]
 
-### What if width and height are undefined? <a name="what-if-width-and-height-are-undefined"></a>
+### ماذا لو كان العرض والارتفاع غير حدد؟ <a name="what-if-width-and-height-are-undefined"></a>
 
-In a few cases if `width` or `height` are not specified, the AMP runtime can default these values as the following:
+في حالات قليلة إذا كان `width` أو `height` غير محدد، فأن وقت تشغيل AMP يمكن استعمال القيم الافتراضية كالتالي:
 
-- [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): Both width and height are defaulted to 0.
-- [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): The default width and height are inferred from browser.
+- <code>amp-pixel</code>: تعيين القيمة الافتراضية لكل من `width` و <code>height</code> إلى 0.
+- <code>amp-audio</code>: يتم استنتاج قيمة `width` و<code>height</code> الافتراضية من المستعرض.
 
-### What if the <code>layout</code> attribute isn’t specified? <a name="what-if-the-layout-attribute-isnt-specified"></a>
+### ماذا لو كان السمة <code>layout</code> غير محددة؟ <a name="what-if-the-layout-attribute-isnt-specified"></a>
 
 إذا كانت سمة <code>layout</code> غير محددة، فإن AMP يحاول استنتاج أو تخزين القيمة المناسبة:
 
@@ -133,14 +133,13 @@ In a few cases if `width` or `height` are not specified, the AMP runtime can def
       <td data-th="Inferred layout"><code>fixed</code></td>
     </tr>
     <tr>
-      <td data-th="Rule">
-<code>width</code> and <code>height</code> are not present</td>
+      <td data-th="Rule">قيمة <code>width</code> و<code>height</code> غير موجودة</td>
       <td data-th="Inferred layout"><code>container</code></td>
     </tr>
   </tbody>
 </table>
 
-## Using media queries
+## استخدام استعلامات الوسائط
 
 ### استعلامات وسائط CSS
 
