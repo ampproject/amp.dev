@@ -41,7 +41,7 @@ JavaScript هذا بسيط للغاية؛ حيث يرسل إشعارًا لتت�
 
 ## الخطوة الثانية: إضافة رمز التكوين
 
-Then, let's **add** the [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) component to the end of the `body` of the document:
+بعد ذلك، دعونا **نُضيف** مكوّن <a><code>amp-</code></a> إلى نهاية <code>body</code> الخاص بالمستند:
 
 ```html
 <amp-analytics type="googleanalytics">
@@ -104,10 +104,10 @@ Then, let's **add** the [`amp-analytics`](../../../documentation/components/refe
 </amp-analytics>
 ```
 
-As you can guess from the name of this new trigger it will fire when the element with the ID `"header"` is clicked (specified by `"on": "click"` and `"selector": "#header"`).  When this trigger fires, we'll send the `event` request to our analytics provider, specifying a couple of variables to include in the request.
+سينطلق هذا المشغل الجديد، مثلما نستنبط من اسمه، عند النقر فوق العنصر الذي يحمل المُعرّف `"header"` (المُحدد من قِبل `"on": "click"` و`"selector": "#header"`). وعندما ينطلق المُشغل، سنرسل طلب `event` إلى موفر التحليلات الخاص بنا، مع تحديد بضع متغيرات لتضمينها في الطلب.
 
-If you have a custom tracking platform that you want to integrate with, you can still use [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) and define your own personalized URL endpoints to send tracking data to. Learn more in the [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) component reference documentation.
+إذا كان لديك نظام تتبع مخصص ترغب في الاندماج معه، فلا يزال بإمكانك استخدام [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) وتحديد نقاط نهاية URL المخصصة لإرسال بيانات التتبع إليها. تعرّف على المزيد في المستندات المرجعية لمكوِّن [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md).
 
 [tip type="note"] **ملحوظة –**  `“UA-YYYY-Y”` هو مثال لحساب Google Analytics؛ يجب استبداله بشفرة تتبع Google Analytics للموقع الإلكتروني الخاص بك إذا كنت تستخدم هذا المثال على موقعك. [/tip]
 
-[tip type="tip"] **TIP –** If you are interested in a simpler tracking system, you might want to take a look at [`amp-pixel`](../../../documentation/components/reference/amp-pixel.md). If you only need to track pageviews, [`amp-pixel`](../../../documentation/components/reference/amp-pixel.md) it is a lighter-weight solution than [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) because it only aims to solve the requirements of traditional pixel tracking. Learn more in the [Analytics: the basics guide](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md). [/tip]
+[tip type="tip"] **ملحوظة –** إذا كنت مهتمًا بنظام تتبع أبسط، فقد ترغب في إلقاء نظرة على [`amp-pixel`](../../../documentation/components/reference/amp-pixel.md). إذا كنت بحاجة فقط إلى تتبع مشاهدات الصفحة، فإن [`amp-pixel`](../../../documentation/components/reference/amp-pixel.md) هو حل أخف وزنًا من [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) لأنه يهدف فقط إلى حل متطلبات تتبع البكسل التقليدي. تعرف على المزيد في [التحليلات: دليل الأسس](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md). [/tip]
