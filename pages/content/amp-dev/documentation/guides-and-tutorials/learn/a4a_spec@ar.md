@@ -51,33 +51,32 @@ limitations under the License.
 </tr></thead>
 <tbody>
 <tr>
-<td>Must use <code><html ⚡4ads></code> or <code><html amp4ads></code> as its enclosing tags.</td>
+<td>يجب استخدام نوع <code>&lt;html ⚡4ads></code> أو <code>&lt;html amp4ads></code>
+</td>
 <td>Allows validators to identify a creative document as either a general AMP doc or a restricted AMPHTML ad doc and to dispatch appropriately.</td>
 </tr>
 <tr>
-<td>Must include <code><script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script></code> as the runtime script instead of <code>https://cdn.ampproject.org/v0.js</code>.</td>
+<td>يجب تضمين <code>&lt;script async src="https://cdn.ampproject.org/amp4ads-v0.js">&lt;/script></code> كنص برمجي لوقت التشغيل بدلًا عن <code>https://cdn.ampproject.org/v0.js</code>.</td>
 <td>Allows tailored runtime behaviors for AMPHTML ads served in cross-origin iframes.</td>
 </tr>
 <tr>
-<td>Must not include a <code><link rel="canonical"></code> tag.</td>
+<td>يجب تضمين العلامة <code>&lt;link rel="canonical"></code>.</td>
 <td>Ad creatives don't have a "non-AMP canonical version" and won't be independently search-indexed, so self-referencing would be useless.</td>
 </tr>
 <tr>
-<td>Can include optional meta tags in HTML head as identifiers, in the format of <code><meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code>. Those meta tags must be placed before the <code>amp4ads-v0.js</code> script. The value of <code>vendor</code> and <code>id</code> are strings containing only [0-9a-zA-Z_-]. The value of <code>type</code> is either <code>creative-id</code> or <code>impression-id</code>.</td>
-<td>Those custom identifiers can be used to identify the impression or the creative. They can be helpful for reporting and debugging.<br><br><p>Example:</p>
-<pre>
-<meta name="amp4ads-id"
+<td>يمكن تضمين علامات تعريف اختيارية في رأس HTML كمعرِّفات، وذلك بتنسيق <code>&lt;meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code>. ويجب أن تكون علامات التعريف تلك موضوعة قبل النص البرمجي <code>amp4ads-v0.js</code>. إذ إن قيمة <code>vendor</code> و<code>id</code> عبارة عن سلاسل تحتوي على [0-9a-zA-Z_-] فقط. وقيمة <code>type</code> is إما <code>creative-id</code> أو <code>impression-id</code>.</td>
+<td>يمكن استخدام هذه المعرَِفات المخصصة لتحديد الانطباع أو الإبداع. ويمكن أن تكون مفيدة في إعداد التقارير وتصحيح الأخطاء.على سبيل المثال:<br><pre>
+&lt;meta name="amp4ads-id"
   content="vendor=adsense,type=creative-id,id=1283474">
-<meta name="amp4ads-id"
+&lt;meta name="amp4ads-id"
   content="vendor=adsense,type=impression-id,id=xIsjdf921S"></pre>
 </td>
 </tr>
 <tr>
-<td>
-<code><amp-analytics></code> viewability tracking may only target the full-ad selector, via  <code>"visibilitySpec": { "selector": "amp-ad" }</code> as defined in <a href="https://github.com/ampproject/amphtml/issues/4018">Issue #4018</a> and <a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a>. In particular, it may not target any selectors for elements within the ad creative.</td>
-<td>In some cases, AMPHTML ads may choose to render an ad creative in an iframe.In those cases, host page analytics can only target the entire iframe anyway, and won’t have access to any finer-grained selectors.<br><br> <p>Example:</p> <pre>
-<amp-analytics id="nestedAnalytics">
-  <script type="application/json">
+<td>قد يستهدف تتبع إمكانية المعاينة لـ <code>&lt;amp-analytics></amp-analytics></code> محدد كامل الإعلانات فقط، وذلك عبر  <code>"visibilitySpec": { "selector": "amp-ad" }</code> على النحو المحدد في <a href="https://github.com/ampproject/amphtml/issues/4018">المشكلة#4018</a> و<a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a>. على وجه الخصوص، لا يجوز له استهداف أي محددات للعناصر داخل تصميم الإعلان.</td>
+<td>في بعض الحالات، قد تختار إعلانات AMPHTML عرض تصميم إعلاني باستخدام iframe. وفي تلك الحالات، يمكن لتحليلات الصفحة المضيفة أن تستهدف فقط iframe بأكمله على أي حال، ولن تتمكن من الوصول إلى أي محددات دقيقة . على سبيل المثال: <pre>
+&lt;amp-analytics id="nestedAnalytics">
+  &lt;script type="application/json">
   {
     "requests": {
       "visibility": "https://example.com/nestedAmpAnalytics"
@@ -90,9 +89,10 @@ limitations under the License.
       }
     }
   }
-  </script>
-</amp-analytics>
-</pre> <p>This configuration sends a request to the <code>https://example.com/nestedAmpAnalytics</code> URL when 50% of the enclosing ad has been continuously visible on the screen for 1 second.</p> </td>
+  &lt;/script>
+&lt;/amp-analytics>
+</pre> <p> يرسل هذا التكوين طلبًا إلى عنوان URL <code>https://example.com/nestedAmpAnalytics</code> عندما يكون 50٪ من الإعلان المرفق مرئيًا بشكل مستمر على الشاشة لمدة ثانية واحدة.</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -111,9 +111,9 @@ limitations under the License.
 
 *السبب:* يخفي نمط `amp-boilerplate` المحتوى الأساسي حتى يصبح وقت تشغيل AMP جاهزًا ويمكن إظهاره. ففي حالة تعطيل Javascript أو فشل تحميل وقت تشغيل AMP، يضمن النص النموذجي الافتراضي عرض المحتوى في نهاية المطاف بصرف النظر عن ذلك.في إعلانات AMPHTML، وعلى الرغم من ذلك، يتم تعطيل Javascript تمامًا، ولن تعمل إعلانات AMPHTML ولن يتم عرض أي إعلان، لذا لا حاجة لقسم`<noscript>`. وفي غياب وقت تشغيل AMP، لن تتوفر معظم الآليات التي تعتمد عليها إعلانات AMPHTML (على سبيل المثال، تحليلات تتبع الرؤية أو `amp-img` لعرض المحتوى)، لذا من الأفضل عدم عرض أي إعلان بدلًا عن عرض إعلان معطل.
 
-Finally, the AMPHTML ad boilerplate uses `amp-a4a-boilerplate` rather than `amp-boilerplate` so that validators can easily identify it and produce more accurate error messages to help developers.
+في النهاية، يستخدم النص النموذجي لإعلان AMPHTML `amp-a4a-boilerplate` بدلًا عن `amp-boilerplate`حتى يتمكن مسؤولو التحقق من الصحة من التعرف عليه بسهولة وإنتاج رسائل خطأ أكثر دقة لمساعدة المطورين.
 
-Note that the same rules about mutations to the boilerplate text apply as in the [general AMP boilerplate](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md).
+لاحظ أن القواعد نفسها المتعلقة بالطفرات في النص النموذجي مطبقة كما في النص[ النموذجي العام لـ AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md).
 
 ### CSS <a name="css"></a>
 
