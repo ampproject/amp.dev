@@ -495,9 +495,7 @@ https://analytics.example.com/ping?type=pageview&orig_user_id=$amp_client_id&use
   <li>يمكنها الوصول إلى مكان حيث قامت التعليمة البرمجية التي قرأت وأزالت المعلمات بتخزين البيانات</li>
 </ul>
 <p>لإجراء ذلك على صفحتك التي ليست بتنسيق AMP، ضمِّن JavaScript التالية، والتي ستزيل جميع معلمات الاستعلام من عنوان URL:</p>
-<pre>var href = location.href.replace(/\?[^{{'[% raw %]'}}#]{{'{% endraw %}'}}+/, '');
-history.replaceState(null, null, href);
-</pre>
+<pre>var href = location.href.replace(/\?[^{{'[% raw %]'}}#]{{'{% endraw %}'}}+/, '');<br>history.replaceState(null, null, href);</pre>
 <p>قم بتعديل هذا حسب الحاجة لإزالة عدد أقل من معلمات الاستعلام.</p>
 </blockquote>
 
