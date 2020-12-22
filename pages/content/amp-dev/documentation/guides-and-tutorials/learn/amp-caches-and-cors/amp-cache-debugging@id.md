@@ -23,7 +23,7 @@ Dokumen AMP yang valid biasanya tampil dan berperilaku sama pada Cache AMP sebag
 Jika suatu dokumen tertentu tampil dan berperilaku sebagaimana di asal Anda, namun tidak demikian saat dilihat melalui cache [(cara memetakan URL asal pada Cache AMP Google](https://developers.google.com/amp/cache/overview#amp-cache-url-format)), cobalah yang berikut ini:
 
 1. Buka konsol alat eror/pengembang browser Anda, lalu atasi eror atau peringatan apa pun yang muncul.
-2. Run the document through [an AMP document validator](https://search.google.com/test/amp) and resolve any unexpected errors or warnings.
+2. Jalankan dokumen tersebut melalui [AMPBench](https://search.google.com/test/amp), lalu atasi eror atau peringatan yang tidak tak terduga.
 
 Jika Anda masih mengalami masalah setelah mengikuti langkah-langkah ini, periksalah tabel di bawah ini.
 
@@ -39,7 +39,7 @@ Jika Anda masih mengalami masalah setelah mengikuti langkah-langkah ini, periksa
   <tbody>
     <tr>
       <td>Font web tidak muncul (font fallback digunakan)</td>
-      <td>The AMP Cache is not allowlisted by the font provider.</td>
+      <td>Cache AMP tidak diberikan izin oleh penyedia font.</td>
       <td>Hubungi penyedia font dan minta mereka untuk mengizinkan <a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">semua cache</a>.</td>
     </tr>
     <tr>
