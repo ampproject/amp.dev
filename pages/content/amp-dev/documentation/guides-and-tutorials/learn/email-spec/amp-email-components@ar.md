@@ -33,9 +33,9 @@ limitations under the License.
 
 فيما يلي قائمة بـ [مكونات AMP](https://amp.dev/documentation/components/?format=email) المدعومة حاليًا في رسائل AMP الإلكترونية. ويجري تجميع المكونات تحت الفئات التالية:
 
-- [Dynamic Content](#dynamic-content)
-- [Layout](#layout)
-- [Media](#media)
+- [المحتوى الديناميكي ](#dynamic-content)
+- [التخطيط](#layout)
+- [الوسائط](#media)
 
 ## المحتوى الديناميكي <a name="dynamic-content"></a>
 
@@ -52,7 +52,7 @@ limitations under the License.
 
 العنصر | الوصف
 --- | ---
-[layout attributes](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/#layout-attributes) | يتحدد سلوك التخطيط بواسطة سمة التخطيط
+[سمات التخطيط](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/#layout-attributes) | يتحدد سلوك التخطيط بواسطة سمة التخطيط
 [`<amp-accordion>`](https://amp.dev/documentation/components/amp-accordion) | عنصر واجهة مستخدم لتسهيل عرض/إخفاء أقسام مختلفة.
 [`<amp-carousel>`](https://amp.dev/documentation/components/amp-carousel) | مكون واجهة مستخدم UI.
 [`<amp-fit-text>`](https://amp.dev/documentation/components/amp-fit-text) | مكون مساعدة لاحتواء النص داخل منطقة معينة.
