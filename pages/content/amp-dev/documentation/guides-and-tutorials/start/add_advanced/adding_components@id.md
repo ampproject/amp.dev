@@ -8,7 +8,7 @@ Sistem komponen AMP memungkinkan Anda membuat fitur yang efisien dan responsif k
 
 - **bawaan**: Ini adalah komponen yang disertakan dalam perpustakaan JavaScript AMP dasar (yang ditentukan dalam tag `<head>`), seperti [`amp-img`](../../../../documentation/components/reference/amp-img.md) dan [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md). Komponen ini dapat digunakan langsung dalam dokumen AMP.
 
-- **extended**: These are extensions to the base library that must be explicitly included in the document as custom elements.  Custom elements require specific scripts that are added to the `<head>` section (e.g., `<script async custom-element="`[`amp-video`](../../../../documentation/components/reference/amp-video.md)`...`).
+- **diperluas**: Ini adalah ekstensi perpustakaan dasar yang harus disertakan secara eksplisit di dalam dokumen sebagai elemen khusus. Elemen khusus memerlukan skrip tertentu yang ditambahkan ke bagian `<head>` (cth.: `<script async custom-element="`[`amp-video`](../../../../documentation/components/reference/amp-video.md)`...`).
 
 - **eksperimental**: Ini adalah komponen yang dirilis, namun belum siap untuk digunakan secara luas. Pengembang dapat memilih untuk menggunakan fitur ini sebelum dirilis sepenuhnya. Pelajari lebih lanjut dalam [Fitur-fitur eksperimental](../../../../documentation/guides-and-tutorials/learn/experimental.md).
 
