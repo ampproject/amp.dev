@@ -22,7 +22,7 @@ Halaman AMP distandarkan untuk memuat dengan cepat, tetapi ada beberapa pengopti
 
 Contohnya, dengan menerapkan teknik-teknik pengoptimalan berikut ini:
 
-- [Optimized AMP runtime loading](#optimize-the-amp-runtime-loading)
+- [Mengoptimalkan pemuatan Runtime AMP](#optimize-the-amp-runtime-loading)
 - [Gambar hero yang dimuat sebelumnya](#preload-hero-images) (ukuran/pengodean gambar itu sendiri belum berubah)
 - [Mengoptimalkan font kustom](#optimize-custom-fonts) (dalam hal ini, Google Font)
 
@@ -70,7 +70,7 @@ Mari kita bahas langkah demi langkah:
 
 2. Selanjutnya, muat terlebih dahulu tag `v0.js` `<script>` runtime AMP dengan `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>`. Runtime AMP harus mulai mengunduh sesegera mungkin karena [boilerplate AMP](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) menyembunyikan dokumen melalui `body { visibility:hidden }` hingga runtime AMP telah dimuat. Memuat runtime AMP terlebih dahulu menjadi isyarat bagi browser untuk mengunduh skrip tersebut dengan prioritas yang lebih tinggi. Kunjungi [perenderan sisi server](#server-side-rendering) untuk belajar cara menghindari hal ini.
 
-3. If your page includes render-delaying extensions (e.g., amp-experiment, amp-dynamic-css-classes, amp-story), preload those extensions as they're required by the AMP runtime for rendering the page.
+3. Jika halaman Anda menyertakan ekstensi penunda perenderan (cth., amp-experiment, amp-dynamic-css-classes, amp-story), muat terlebih dahulu ekstensi tersebut karena mereka dibutuhkan oleh runtime AMP untuk merender halaman.
 
 [sourcecode:html]
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-custom-css-0.1.js">
@@ -81,7 +81,7 @@ Mari kita bahas langkah demi langkah:
 
 [sourcecode:html]<link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>[/sourcecode]
 
-1. Load the AMP runtime:
+1. Muat runtime AMP:
 
 [sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
 
@@ -200,12 +200,12 @@ Dengan AMP, ada beberapa hal yang dapat Anda lakukan untuk mengoptimalkan pemuat
 
 - Jika mungkin, gunakan [font-display: opsional](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display): Ini hanya akan menggunakan font tersebut jika sudah ada di cache, dan kembali ke font sistem jika font kustom Anda belum dimuat.
 - Optimalkan font web Anda (contohnya, sajikan font kustom dengan menggunakan WOFF2).
-- Preload custom fonts:
+- Muat font kustom terlebih dahulu:
 
 [sourcecode:html]
 <link rel="preload" as="font" href="/bundles/app/fonts/helveticaneue-roman-webfont.woff2" >[/sourcecode]
 
-- If you are using Google fonts, or any other font provider with unknown font URLs, preconnect the respective font server:
+- Jika Anda menggunakan Google Fonts, atau penyedia font lainnya dengan URL font yang tidak diketahui, sambungkan server font yang bersangkutan terlebih dahulu:
 
 [sourcecode:html]
  <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
