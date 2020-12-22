@@ -1,30 +1,30 @@
 ---
-"$title": Convert HTML to AMP
+"$title": تحويل HTML إلى AMP
 formats:
 - websites
 "$titles":
   teaser: Convert HTML to AMP
 "$order": '0'
-description: In this tutorial, you’ll learn the key concepts of AMP and how AMP documents differ from traditional HTML documents. By the end of this tutorial
+description: في هذا البرنامج التعليمي، ستتعرف على المفاهيم الأساسية لصفحات AMP وكيف تختلف مستندات AMP عن مستندات HTML التقليدية، وبنهاية هذا البرنامج التعليمي
 "$hidden": 'true'
 teaser:
-  icon: convert
-  text: Learn how to convert HTML to AMP in this step by step tutorial.
-  label: Learn more
+  icon: تحويل
+  text: تعرف على طريقة تحويل HTML إلى AMP في هذا البرنامج التعليمي خطوة بخطوة.
+  label: تعرف على المزيد
 ---
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-end-product.png', 452, 918, align='right third', caption='Completed news article') }}
 
-In this tutorial, you’ll learn the key concepts of AMP and how AMP documents differ from traditional HTML documents.  By the end of this tutorial, you'll have built an AMP page from an existing HTML page.
+في هذا البرنامج التعليمي، ستتعرف على المفاهيم الأساسية لصفحات AMP وكيف تختلف مستندات AMP عن مستندات HTML التقليدية، وبنهاية هذا البرنامج التعليمي؛ ستكون قد أنشأت صفحة AMP من صفحة HTML موجودة مسبقًا.
 
-## You'll learn to:
+## ستتعلم:
 
-- Master the foundations of an AMP site
-- Recognize the differences between AMP pages and traditional HTML pages
-- Convert a traditional HTML page to AMP HTML
-- Validate an AMP page
-- Prepare your AMP content for discoverability
+- إتقان أسس موقع AMP
+- التعرَّف على الاختلافات بين صفحات AMP وصفحات HTML التقليدية
+- تحويل صفحة HTML تقليدية إلى AMP HTML
+- التحقق من صحة صفحة AMP
+- تجهيز محتوى AMP لقابلية الاكتشاف
 
-## You'll build:
+## ستقوم ببناء:
 
-A simple news article page that conforms to AMP specifications and incorporates common features found on mobile news sites.
+صفحة مقال إخباري بسيط يتوافق مع مواصفات AMP ويتضمن الميزات الشائعة الموجودة في مواقع الأخبار على الجوال.
