@@ -23,40 +23,25 @@ Menambahkan [Manifes Aplikasi Web](https://developers.google.com/web/fundamental
 
 Kemudian, tautkan manifes dari `<head>` halaman AMP:
 
-[sourcecode:json]
-{
-  "short_name": "ABE",
-  "name": "AMPByExample",
-  "icons": [
-    {
-      "src": "launcher-icon-1x.png",
-      "type": "image/png",
-      "sizes": "48x48"
-    },
-    {
-      "src": "launcher-icon-2x.png",
-      "type": "image/png",
-      "sizes": "96x96"
-    },
-    {
-      "src": "launcher-icon-4x.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    }
-  ],
-  "start_url": "index.html?launcher=true"
-}
+[sourcecode:html]
+
+<script async custom-element="amp-install-serviceworker"
+  src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+
 [/sourcecode]
 
 Kemudian, tambahkan komponen berikut ini di tempat lain dalam `<body>` Anda (ubah agar mengarah ke Pekerja Layanan Anda yang sebenarnya):
 
 [sourcecode:html]
-<link rel="manifest" href="/manifest.json">
+<amp-install-serviceworker
+      src="https://www.your-domain.com/serviceworker.js"
+      layout="nodisplay">
+</amp-install-serviceworker>
 [/sourcecode]
 
 Catatan: Jika konsep Service Worker merupakan hal baru bagi Anda, baca pendahuluan di WebFundamentals.<br>Service Worker adalah proxy sisi-klien yang berada di antara halaman da[n server, serta dapat digunaka](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers)n untuk menciptakan pengalaman akses offline yang memuaskan, skenario pemuatan app shell yang cepat, dan mengirimkan notifikasi push.
 
-## The AMP Service Worker
+## Pekerja Layanan AMP
 
 Service Worker perlu didaftarkan pada halaman tertentu, karena jika tidak, browser tidak akan menemukan atau menjalankannya. Secara default, tindakan ini dilakukan dengan bantuan [sedikit JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). Pada Halaman AMP, Anda menggunakan komponen [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) untuk melakukan hal yang sama.
 
@@ -132,7 +117,7 @@ Halaman offline yang berhasil tampak seperti bagian dari situs Anda dengan memil
 
 Tim kami sedang bekerja untuk menerapkan fitur pembaruan/penghapusan paksa jika Pekerja Layanan AMP Anda perlu dinonaktifkan atau diubah jika ada kesalahan saat melakukan penerapan pada pengguna.
 
-To effectively manage a service worker, you should understand how [standard HTTP caching affects the way your service worker's JavaScript is kept up to date](https://developers.google.com/web/updates/2018/06/fresher-sw). Service workers served with appropriate HTTP caching directives can resolve small bug fixes by making the appropriate changes and redeploying your service worker to your hosting environment. If you need to remove a service worker, it's a good idea to keep a simple, [no-op](https://en.wikipedia.org/wiki/NOP) service worker file handy, like the following:
+Agar dapat mengelola pekerja server secara efektif, Anda harus memahami bagaimana [cache HTTP standar memengaruhi cara JavaScript pekerja layanan Anda tetap diperbarui](https://developers.google.com/web/updates/2018/06/fresher-sw). Pekerja layanan yang diberikan arahan yang sesuai untuk penyimpanan HTTP di cache dapat menyelesaikan perbaikan bug kecil dengan membuat perubahan yang sesuai dan menerapkan ulang pekerja layanan Anda ke lingkungan pengelola Anda. Jika Anda perlu untuk menghapus pekerja layanan, baik untuk menyimpan berkas pekerja layanan yang sederhana, [no-op](https://en.wikipedia.org/wiki/NOP) (tidak operasional) yang berguna, seperti berikut ini:
 
 ```js
 self.addEventListener('install', () => {
