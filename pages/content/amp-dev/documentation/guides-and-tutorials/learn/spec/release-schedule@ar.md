@@ -17,17 +17,17 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-- [Release Channels](#release-channels)
-    - [Nightly](#nightly)
-    - [Weekly](#weekly)
-        - [Experimental and Beta channels](#experimental-and-beta-channels)
-    - [Long-Term Stable (lts)](#long-term-stable-lts)
-- [Determining if your change is in a release](#determining-if-your-change-is-in-a-release)
-- [Release Cadence](#release-cadence)
-    - [Detailed schedule](#detailed-schedule)
-    - [Release Freezes](#release-freezes)
+- [قنوات الإصدار ](#release-channels)
+    - [كل ليلة](#nightly)
+    - [أسبوعيًا ](#weekly)
+        - [القنوات الأولية والتجريبية](#experimental-and-beta-channels)
+    - [الاستقرار طويل المدى ](#long-term-stable-lts)
+- [تحديد ما إذا كان التغيير الخاص بك ضمن إصدار أم لا ](#determining-if-your-change-is-in-a-release)
+- [وتيرة الإصدار ](#release-cadence)
+    - [جدولة مفصلة ](#detailed-schedule)
+    - [عمليات تجميد الإصدار ](#release-freezes)
 
-A new release of AMP is pushed to all AMP pages every week on Tuesday. **Once a change in AMP is merged into the master branch of the amphtml repository, it will typically take 1-2 weeks for the change to be live for all users.**
+يتم إطلاق إصدار جديد من AMP إلى جميع صفحات AMP كل أسبوع في يوم الثلاثاء. **بمجرد دمج تغيير في AMP في الفرع الرئيسي لمستودع amphtml، سيستغرق الأمر عادةً من أسبوع إلى أسبوعين حتى يتم تفعيل التغيير لجميع المستخدمين.**
 
 ## قنوات الإصدار <a name="release-channels"></a>
 
@@ -73,7 +73,7 @@ A new release of AMP is pushed to all AMP pages every week on Tuesday. **Once a 
 
 توفر قناة الإصدار **الاستقرار طويل المدى** إصدارًا **مستقرًا** سابقًا لفواصل زمنية مدتها شهر واحد. وفي ثاني يوم إثنين من كل شهر، يتم ترقية الإصدار **المستقر** الحالي إلى **استقرار طويل المدى**. وهذه القناة غير مستحسنة لجميع ناشري AMP. كما يتم توفيرها بحيث يمكن للناشرين الذين يرغبون في إجراء دورة ضمان الجودة على مواقع الويب لديهم في كثير من الأحيان القيام بذلك عن طريق اختيار صفحات ويب معينة في القناة **استقرار طويل المدى** (راجع <a href="https://github.com/ampproject/amphtml/blob/master/contributing/lts-release.md" data-md-type="link">قراءة تعليمات **الاستقرار طويل المدى**</a>).
 
-If the second Monday of the month falls on a holiday, the promotion will be performed after the end of the [release freeze](#release-freezes).
+وإذا صادف يوم الإثنين الثاني من الشهر يوم عطلة، فسيتم تنفيذ العرض الترويجي بعد نهاية [تجميد الإصدار](#release-freezes).
 
 مهم: يجب على الناشرين الذين يستخدمون قناة الإصدار **الاستقرار طويل المدى** عدم استخدام الميزات المقدمة حديثًا. ونظرًا للدورة الأطول، قد يتأخر إصدار **الاستقرار طويل المدى** بمقدار سبعة أسابيع عن`HEAD` الخاص بـ  [`ampproject/amphtml`](https://github.com/ampproject/amphtml). راجع قسم [تحديد ما إذا كان التغيير الخاص بك في إصدار](#determining-if-your-change-is-in-a-release) للتحقق مما إذا كان التغيير سيكون جاهزًا في دورة الإصدار التي اخترتها.
 
@@ -93,7 +93,7 @@ If the second Monday of the month falls on a holiday, the promotion will be perf
 فعند تحديد عدد المرات التي يجب أن نطرح فيها إصدارات جديدة من AMP للجميع، يتعين علينا تقييم العديد من العوامل بما في ذلك:
 
 - الاستقرار لملايين المواقع/مليارات الصفحات التي تم إنشاؤها باستخدام AMP
-- cache-busting that might happen when we push a new version
+- عمليات خرق لذاكرة التخزين المؤقت التي قد تحدث عند إطلاق إصدار جديد
 - الرغبة في الحصول على ميزات جديدة بسرعة
 
 وبعد النظر في كل هذه العوامل، نصل إلى دورة الإطلاق من أسبوع إلى أسبوعين. ووجدنا حتى الآن أن هذا حل وسط معقول، لكننا سنواصل تقييم كل هذه العوامل وقد نجري عليها تغييرات في المستقبل.
@@ -102,7 +102,7 @@ If the second Monday of the month falls on a holiday, the promotion will be perf
 
 إننا نحاول الالتزام بهذا الجدول قدر الإمكان، على الرغم من أن التعقيدات قد تسبب في عمليات تأخير. فيما يمكنك تتبع آخر حالة حول أي إصدار في [*النوع: إصدار* مشكلات GitHub](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) و[قناة #إصدار AMP Slack](https://amphtml.slack.com/messages/C4NVAR0H3/) ([التسجيل في Slack](https://bit.ly/amp-slack-signup)).
 
-- Tuesday @ [11am Pacific](https://www.google.com/search?q=11am+pacific+in+current+time+zone): new **experimental** and **beta** release builds are created from the [latest master build that passes all of our tests](https://travis-ci.com/ampproject/amphtml/branches) and are pushed to users who opted into the [AMP Experimental Channel](#amp-experimental-and-beta-channels) or [AMP Beta Channel](#amp-experimental-and-beta-channels), respectively.
+- الأربعاء @ [ 11صباحًا بتوقيت المحيط الهادئ](https://www.google.com/search?q=11am+pacific+in+current+time+zone): تم إنشاء إصدارات **&nbsp;تجريبية** و**أولية** جديدة من [أحدث إصدار رئيسي اجتاز كل اختباراتنا](https://travis-ci.com/ampproject/amphtml/branches) ويتم إطلاقها إلى مستخدمي AMP الذين اختاروا [قناة AMP التجريبية](#amp-experimental-and-beta-channels) أو[ قناة AMP الأولية](#amp-experimental-and-beta-channels) على التوالي.
 - الأربعاء: نتحقق من تقارير الأخطاء لمستخدمي *القناة التجريبية* و*القناة الأولية* وإذا بدا كل شيء على ما يرام، فإننا نطلق **الإصدار الأولي** إلى 1٪ من صفحات AMP
 - من الخميس إلى الإثنين: نواصل مراقبة معدلات الخطأ وتقارير الأخطاء لمستخدمي *القناة التجريبية* و*القناة الأولية* و1٪ من الصفحات باستخدام البنائين **التجريبي**/**الأولي**
 - الثلاثاء من الأسبوع التالي: يتم ترقية الإصدار **الأولي** بالكامل إلى **مستقر** (أي ستستخدم جميع صفحات AMP هذا الإصدار الآن)
@@ -121,10 +121,10 @@ If the second Monday of the month falls on a holiday, the promotion will be perf
 
 قد يحدث تجميد الإصدار بسبب:
 
-- Times when there are not enough people available to push the AMP release to **stable** and monitor it. Currently, most of the people performing AMP releases are based in the United States, so this will usually be the weeks of the major US holidays of Independence Day (July 4), Thanksgiving (fourth Thursday in November), Christmas (25 December), and New Year's Eve/Day (December 31/January 1).
+- الأوقات التي لا يتوفر فيها عدد كافٍ من الأشخاص لإطلاق إصدار AMP إلى **مستقر** ومراقبته. ويقيم حاليًا معظم الأشخاص الذين ينفذون إصدارات AMP في الولايات المتحدة، لذلك ستشمل هذه الأسابيع عادةً الأعياد الأمريكية الرئيسية ليوم الاستقلال (4 يوليو) وعيد الشكر (الخميس الرابع في نوفمبر) وعيد الميلاد (25 ديسمبر) وليلة/يوم رأس السنة (31 ديسمبر/1 يناير).
 - حالة طارئة، مثل مشكلة تتعلق بالأمان أو الخصوصية على النحو الذي تحدده [لجنة التوجيه الفني (TSC)](https://github.com/ampproject/meta-tsc) أو الأشخاص الذين يقومون بتنفيذ الإصدار.
-- Other situations when the stability of the codebase is deemed to be particularly important as determined by the TSC.
+- حالات أخرى عندما يُعد استقرار قاعدة الشفرة ذا أهمية خاصة على النحو الذي تحدده لجنة التوجيه الفني.
 
-In all cases, except emergencies, the release freezes will be announced at least one month in advance.
+في جميع الحالات، باستثناء حالات الطوارئ، سيتم الإعلان عن تجميد الإصدار قبل شهر واحد على الأقل.
 
 لاحظ أنه ما لم يتم الإعلان عن خلاف ذلك، فإن تجميد الإصدار لا يعني تجميد الرمز. إذ ما يزال من الممكن كتابة التعليمات البرمجية ومراجعتها ودمجها أثناء تجميد الإصدار.
