@@ -238,16 +238,12 @@ Web Story videos are always vertical (i.e., portrait view), with an expected asp
   </thead>
   <tbody>
     <tr>
-     <td>
-<a href="https://www.ffmpeg.org/about.html">FFmpeg</a>
-     </td>
+     <td><a href="https://www.ffmpeg.org/about.html">FFmpeg</a></td>
      <td>التخصيصات الموصى بها:       <ul>         <li>لتنسيق MP4، استخدم <code>-crf 23</code>.</li>         <li>لتنسيق WEBM، استخدم <code>-b:v 1M</code>.</li>       </ul>
 </td>
     </tr>
     <tr>
-     <td>
-<a href="https://libav.org/avconv.html">avconv</a>
-     </td>
+     <td><a href="https://libav.org/avconv.html">avconv</a></td>
      <td>التخصيصات الموصى بها:       <ul>         <li>لتنسيقMP4، استخدم <code>-crf 23</code>.</li>         <li>لتنسيقWEBM، استخدم <code>-b:v 1M</code>.</li>       </ul>
 </td>
     </tr>
@@ -262,7 +258,7 @@ Web Story videos are always vertical (i.e., portrait view), with an expected asp
 
 تأكد من أن حجم مقاطع HLS الخاصة بك لا تزيد مدتها عن 10 ثوانٍ.
 
-## Animation
+## حيوية
 
 ثمة بعض المحاذير للرسوم المتحركة في القصص، مثل مفهوم ما هو "مرئي". على سبيل المثال: في عرض سطح المكتب الخاص بـ "3 panel"، قد يكون تصميمك مرئيًا على الصفحة ولكن ليس التركيز المركزي بعد. ويمكن أن يمثل هذا الأمر مشكلة إذا كان التأثير المطلوب هو بدء الرسوم المتحركة عندما تصبح الصفحة نقطة التركيز الرئيسية.
 
