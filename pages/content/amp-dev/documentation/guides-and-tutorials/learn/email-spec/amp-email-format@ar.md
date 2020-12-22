@@ -66,7 +66,7 @@ limitations under the License.
 - <a name="scrpt"></a>تحتوي على علامة `<script async src="https://cdn.ampproject.org/v0.js"></script>` داخل علامة الرأس الخاصة بها. [🔗](#scrpt)
 - <a name="boilerplate"></a>تحتوي على القالب الأساسي amp4email (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) داخل علامة الرأس الخاصة بها لإخفاء المحتوى مبدئيًا حتى يتم تحميلAMP JS. [🔗](#boilerplate)
 
-The entire AMPHTML markup must not exceed 200,000 bytes.
+يجب ألا تتجاوز لغة ترميز AMPHTML بأكملها حجم 200000 بايت.
 
 ## الهيكل والعرض <a name="structure-and-rendering"></a>
 
