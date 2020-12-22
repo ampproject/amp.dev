@@ -21,7 +21,7 @@ author: CrystalOnScript
 - تضمين العلامة ` <meta charset="utf-8">` على أنها التابع الأول للعلامة `<head>`.
 - تضمين العلامة `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside their `<head>`. وكأفضل ممارسة، يجب تضمين النص في أقرب وقت ممكن في `<head>`.
 - تضمين العلامة a` <link rel="canonical" href="page/url">` داخل `<head>` مع المدلال النصي الترابطي الذي يشير إلى عنوان URL لقصة الويب.
-- Contain a `<meta name="viewport" content="width=device-width">` tag inside the `<head>` tag. It's also recommended to include initial-scale=1.
+- تضمين العلامة `<meta name="viewport" content="width=device-width">` داخل العلامة `<head>`. يوصى أيضًا بتضمين المقياس الأولي=1.
 - تضمين الرمز [AMP boilerplate](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) في العلامة `<head>`.
 
 يتمثل الاختلاف بين صفحة ويب AMP وقصة ويب تم إنشاؤها باستخدام AMP في المكوِّن [`amp-story`](https://amp.dev/documentation/components/amp-story/?format=stories). إذ إنه الفرع المباشر الوحيد لـ `<body>` الخاص بالمستند، ويجب أن يحتوي على السمة `standalone`. ويتم تحديد جميع صفحات قصة الويب وعناصرها وطبقاتها ضمن العلامات `<amp-story>`.
