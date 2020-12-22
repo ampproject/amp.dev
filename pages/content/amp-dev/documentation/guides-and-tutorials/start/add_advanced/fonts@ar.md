@@ -1,7 +1,7 @@
 ---
 "$title": إضافة الخطوط
 "$order": '6'
-description: 'You can embed custom fonts into your AMP page in two ways: 1. Through a <link> tag: for allow-listed font providers only. 2. By using ...'
+description: '"يمكنك تضمين خطوط مخصصة في صفحة AMP بطريقتين: 1. عن طريق علامة <link>: لموفري الخطوط المدرجين في قائمة السماح فقط. 2. باستخدام ..."'
 ---
 
 في AMP، للمحافظة على جعل أوقات التحميل سريعة قدر الإمكان، لا يمكنك تضمين جداول بيانات خارجية. مع ذلك، هناك ثمة استثناء وحيد لهذه القاعدة —**الخطوط**.
