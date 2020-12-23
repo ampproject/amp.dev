@@ -1,7 +1,7 @@
 ---
 "$title": Advertise in Web Stories
 "$order": '3'
-description: Web Stories are a full-screen tappable experience that immerses readers in the content. Advertising with AMP Story ads allows for seamless and disruption-free ...
+description: "Les stories Web s'affichent en plein écran et plongent les lecteurs dans le contenu. La diffusion de stories publicitaires permet une intégration fluide et sans interruption ..."
 formats:
 - stories
 author: CrystalOnScript
@@ -9,17 +9,17 @@ author: CrystalOnScript
 
 Les stories Web s'affichent en plein écran et plongent les lecteurs dans le contenu. La diffusion de stories publicitaires AMP permet une intégration fluide et sans interruption dans le parcours utilisateur, tout en assurant l'engagement et l'attraction de ce dernier vis-à-vis de la plateforme.
 
-## Ad Placement
+## Placement des annonces
 
-Web Stories use a single  [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) component to dictate ad quantity and placement.
+Les stories Web utilisent un seul composant [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) pour déterminer la quantité et le placement des annonces.
 
-[`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) is a wrapper around the [`amp-ad`](../../../documentation/components/reference/amp-ad.md) component. It dynamically inserts one or multiple ads while the user consumes the story content. To ensure the best user experience:
+[`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) est un wrapper placé autour du composant [`amp-ad`](../../../documentation/components/reference/amp-ad.md). Il insère de façon dynamique une ou plusieurs annonces pendant que l'utilisateur consomme le contenu de la story. Pour garantir la meilleure expérience utilisateur:
 
 1. Ads are pre-rendered by the Web Stories runtime, then inserted. This guarantees that the users will never be shown a blank or unloaded ad.
 
-2. Ad density is optimised with content ratio to prevent oversaturation. The [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) component decides when and where to insert ads as the user progresses.
+2. La densité des annonces est optimisée avec le rapport de contenu pour éviter la sursaturation. Le composant [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) décide quand et où insérer des annonces à mesure que l'utilisateur progresse.
 
-A Web Story places the first ad sometime after the first two pages with the aim of optimizing monetization revenue and user experience.
+Une story Web place la première annonce après les deux premières pages dans le but d'optimiser les revenus de monétisation et l'expérience utilisateur.
 
 <amp-anim width="360" height="640" src="/static/img/docs/stampads/stamp_gif_ad.gif">
   <amp-img placeholder width="360" height="640" src="/static/img/docs/stampads/stamp_gif_still.png">
@@ -33,11 +33,11 @@ Users can progress past ads the same way as normal story pages; by tapping the r
 
 {{ image('/static/img/docs/stampads/story_ad_ui.png', 304, 512, layout='intrinsic', alt='Image showing the area users can tap to skip an ad', caption='Users can progress past ads by tapping the right two thirds of the screen.', align='' ) }}
 
-Users interact directly with the ad by tapping the system rendered [call to action](story_ads_best_practices.md#call-to-action-button-text-enum) button that appears in the bottom third of all Web Story ads.  The button can be configured to send the user to an arbitrary URL (or to the relevant app store).
+Les utilisateurs interagissent directement avec l'annonce en appuyant sur le bouton [d'appel à l'action](story_ads_best_practices.md#call-to-action-button-text-enum) affiché par le système qui apparaît dans le tiers inférieur de toutes les annonces stories publicitaires Web. Le bouton peut être configuré pour envoyer l'utilisateur vers une URL arbitraire (ou vers l'App Store concerné).
 
 {{ image('/static/img/docs/stampads/sponsored_story.png', 1600, 597, layout='intrinsic', alt='Image showing that usersare redirected to an ad landing destination, but can return to the story.', caption='Users are redirected to an ad landing destination, but can return to the story.', align='' ) }}
 
-## Configure a Web Story for ads
+## Configurer une story Web pour les annonces
 
 Web Stories cannot support an [`amp-ad`](../../../documentation/components/reference/amp-ad.md) directly on the page. Instead, all ads are fetched and displayed by the [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) component. The [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) component must be placed as a direct child element of [`amp-story`](../../../documentation/components/reference/amp-story.md).
 
@@ -57,22 +57,22 @@ Web Stories cannot support an [`amp-ad`](../../../documentation/components/refer
 </amp-story>
 [/sourcecode]
 
-Unlike a normal [`amp-ad`](../../../documentation/components/reference/amp-ad.md), no `<fallback>` or `<placeholder>` is required, as Web Story ads are only displayed once fully rendered.
+Contrairement à une annonce [`amp-ad`](../../../documentation/components/reference/amp-ad.md) normale, aucun `<fallback>` ou `<placeholder>` n'est requis, car les stories publicitaires Web ne sont affichées qu'une fois qu'elles sont entièrement générées.
 
-## Getting started with Story Ads
+## Premiers pas avec les stories publicitaires
 
-The easiest way to include ads in your Web Story is by serving ads from a supported ad server.
+Le moyen le plus simple d'inclure des annonces dans votre story Web Story consiste à diffuser des annonces à partir d'un serveur publicitaire compatible.
 
-Ad platforms that currently support Web Story ads:
+Les serveurs publicitaires qui prennent actuellement en charge les annonces Web Story sont:
 
-- Google Ad Manager
-    - [Direct sold ads](https://support.google.com/admanager/answer/9038178)
-    - [Programmatic ads](https://support.google.com/admanager/answer/9416436)
-- Google AdSense coming soon
-- Other ad platforms can integrate (contact us for [details via Github](https://github.com/ampproject/amphtml/issues/30769))
+- Google Ad Manager <a name="google-ad-manager"></a>
+    - [Annonces à vente directe](https://support.google.com/admanager/answer/9038178)
+    - [Annonces programmatiques](https://support.google.com/admanager/answer/9416436)
+- Google AdSense bientôt disponible
+- Possibilité d'intégrer d'autres plateformes (contactez-nous pour plus de [détails via Github](https://github.com/ampproject/amphtml/issues/30769))
 
-If you are an advertiser interested in running your ads inside Web Stories please [reach out](mailto:story-ads-wg@google.com) for more information.
+Si vous êtes un annonceur et souhaitez diffuser vos annonces dans les stories Web, veuillez nous [contacter](mailto:story-ads-wg@google.com) pour plus d'informations.
 
-Publishers can also place custom ads if they set up their own ad server. [The process is detailed here](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
+Les éditeurs peuvent également placer des annonces personnalisées s'ils configurent leur propre serveur publicitaire. [Vous trouverez ici une procédure détaillée à cet effet](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
 
-[tip type="note"] Read [Traffic custom creatives in Web Stories](https://support.google.com/admanager/answer/9038178) for information about uploading ads to Google Ad Manager and checkout our guide on [Best practices for creating an AMP Story ad](story_ads_best_practices.md). [/tip]
+[tip type="note"] Consultez la section [Trafic des créations personnalisées dans les stories Web](https://support.google.com/admanager/answer/9038178) pour plus d'informations sur l'importation d'annonces dans Google Ad Manager et consultez notre guide sur les [bonnes pratiques pour créer une story publicitaire AMP](story_ads_best_practices.md). [/tip]
