@@ -121,7 +121,7 @@ AMP 캐시 사례와 마찬가지로 AMP 뷰어의 도메인도 퍼블리셔 출
 **To enable this and any experience involving user state, all contexts the user traverses must share their individually-maintained state with each other.** "Perfect!", you say, with the idea to share the cookie values with user identifiers across these contextual boundaries. One wrinkle: even though each of these contexts displays content controlled by the same publisher, they each see the other as a third-party because each context lives on different domains.
 
 <amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png" width="1030" height="868">
-  <noscript>     <img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png">   </noscript></amp-img>
+  <noscript><img alt="AMP가 여러 컨텍스트에 표시되는 기능은 각 컨텍스트에 식별자를위한 자체 저장소가 있음을 의미합니다." src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png"></noscript></amp-img>
 
 다음 논의에서 확인하실 수 있는 것처럼 쿠키와 상호작용 시 타사 위치에 있을 경우 사용자의 브라우저 설정 구성 방식에 따라 문제가 발생할 수 있습니다. 특히 타사 쿠키가 특정 상황에서 차단된 경우 컨텍스트 사이에서 정보 공유 기능도 차단됩니다. 반면 타사 쿠키 작동이 허용된 경우 정보가 공유될 수 있습니다.
 
@@ -143,7 +143,7 @@ AMP 캐시 사례와 마찬가지로 AMP 뷰어의 도메인도 퍼블리셔 출
 아래의 기술 지침을 한 단계씩 따라가는 과정에서 **사용자 상태**를 사용자를 대표하는 안정적 **식별자**에 바인딩한다고 가정하겠습니다. 예를 들어 식별자는 `n34ic982n2386n30`처럼 표시될 것입니다. 다음으로 서버 측에서 장바구니 콘텐츠, 이전에 읽은 기사 목록 또는 사용 사례별 기타 데이터와 같은 사용자 상태 정보의 집합에 `n34ic982n2386n30`를 연결합니다.
 
 <amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
-  <noscript>     <img alt="A single identifier could be used to manage user state for many use cases" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png">   </noscript></amp-img>
+  <noscript><img alt="단일 식별자를 사용하여 많은 사용 사례에서 사용자 상태를 관리 할 수 있습니다." src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png"></noscript></amp-img>
 
 이 문서의 나머지 부분에서 명확한 표현을 위해 달러(`$`) 기호를 앞에 붙여 가독성을 높인 식별자인 다양한 문자열을 호출합니다.
 
@@ -380,7 +380,7 @@ Next, examine the mapping table to try and find the same value in the "alias" co
 이 태스크에서는 사용자가 **연결 또는 양식 제출을 통해** 한 페이지에서 다른 페이지로 이동하는 경우 유용한 최적화를 추가적으로 다룰 예정입니다. 이 사례에 아래 설명된 구현 작업이 추가되면 컨텍스트 간 사용자 상태를 관리하는 완벽하게 효율적인 방식을 설정할 수 있습니다.
 
 <amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
-  <noscript>     <img alt="Links can be used to pass the identifier information of one context into another (linked) context" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png">   </noscript></amp-img>
+  <noscript><img alt="링크를 사용하여 한 컨텍스트의 식별자 정보를 다른 (연결된) 컨텍스트로 전달할 수 있습니다." src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png"></noscript></amp-img>
 
 ##### 대체 기능 사용 <a name="using-substitution-features"></a>
 
@@ -433,7 +433,7 @@ https://example.com/step2.html?ref_id=$amp_client_id
 [/sourcecode]
 
 <amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
-  <noscript>     <img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png">   </noscript></amp-img>
+  <noscript><img alt="AMP 뷰어 컨텍스트의 식별자가 링크를 통해 게시자 원본 컨텍스트로 전달되는 방법의 예" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png"></noscript></amp-img>
 
 사용자가 URL 매개변수로 또는 헤더 내에 `ref_id` 값이 포함된 페이지를 방문할 경우 `ref_id` 식별자를 페이지에서 자체적으로 노출된 식별자(쿠키 값)와 함께 처리할 수 있습니다. 분석 핑에 식별자 두 개를 모두 포함하면 분석 서버는 동시에 두 값을 처리할 수 있으며 두 값이 연결되어 있음을 이해하여 백엔드에 해당 관계를 반영합니다. 다음 단계에서는 자세한 실행 방법을 살펴보겠습니다.
 
@@ -457,7 +457,7 @@ URL을 통해 정보가 제공되며 해당 정보를 처리하고자 할 경우
 랜딩 페이지에서 처리할 경우 페이지가 AMP 페이지인지 비 AMP 페이지인지에 따라 접근 방식이 다릅니다.
 
 <amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
-  <noscript>     <img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png">   </noscript></amp-img>
+  <noscript><img alt="URL을 통해 제공된 이전 컨텍스트의 식별자와 현재 컨텍스트의 식별자를 포함하는 분석 핑을 구성하는 방법의 예" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
 
 *Updates to AMP page:* Use the Query Parameter substitution feature in your amp-analytics configuration to obtain the `ref_id` identifier value within the URL. The Query Parameter feature takes a parameter that indicates the "key" of the desired key-value pair in the URL and returns the corresponding value. Use the Client ID feature as we have been doing to get the identifier for the AMP page context.
 
@@ -497,9 +497,7 @@ https://analytics.example.com/ping?type=pageview&orig_user_id=$amp_client_id&use
   <li>매개변수를 읽고 제거한 코드가 데이터를 저장한 위치에 액세스 가능함.</li>
 </ul>
 <p>비 AMP 페이지에서 이 작업을 수행하려면 다음 JavaScript를 사용하여 URL의 모든 쿼리 매개변수를 제거합니다.</p>
-<pre>var href = location.href.replace(/\?[^{{'[% raw %]'}}#]{{'{% endraw %}'}}+/, '');
-history.replaceState(null, null, href);
-</pre>
+<pre>var href = location.href.replace(/\?[^{{'[% raw %]'}}#]{{'{% endraw %}'}}+/, '');<br>history.replaceState(null, null, href);</pre>
 <p>필요한 경우 조정하여 제거할 쿼리 매개변수 개수를 줄일 수 있습니다.</p>
 </blockquote>
 
