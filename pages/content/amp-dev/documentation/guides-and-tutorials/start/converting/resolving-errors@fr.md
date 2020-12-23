@@ -304,6 +304,6 @@ Actualisez la page et regardez le résultat de la console. Le message suivant de
 
 ### Questions fréquemment posées
 
-- [What is DOM reflow?](http://stackoverflow.com/a/27637245)
-- [What if the layout attribute isn’t defined?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isnt-specified)
-- [What if width and height are undefined?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-width-and-height-are-undefined)
+- [Qu'est-ce que la redistribution de DOM?](http://stackoverflow.com/a/27637245)
+- [Que faire si l'attribut de mise en page n'est pas défini](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isnt-specified)
+- [Que faire si la largeur et la hauteur ne sont pas définies?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-width-and-height-are-undefined)
