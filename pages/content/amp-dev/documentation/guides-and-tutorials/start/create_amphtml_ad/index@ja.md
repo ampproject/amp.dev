@@ -1,29 +1,29 @@
 ---
-"$title": Create an AMPHTML ad
-description: "In this tutorial, you'll learn how to create an AMPHTML ad from scratch that can be served to AMP and non-AMP pages."
+"$title": AMPHTML 広告の作成
+description: このチュートリアルでは、AMP と非 AMP ページに配信できる AMPHTML 広告をゼロから作成する方法を学習します。
 formats:
 - ads
 ---
 
 {{ image('/static/img/docs/ads/amp-ad-framed-final.png', 597, 1240, align='right third', caption='Completed AMPHTML image ad') }}
 
-In this tutorial, you'll learn how to create an [AMPHTML ad](../../../../documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md) from scratch that can be served to AMP and non-AMP pages. The ad format used in this tutorial is a simple image ad.
+このチュートリアルでは、AMP と非 AMP ページに配信できる [AMPHTML 広告](../../../../documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md)をゼロから作成する方法を学習します。このチュートリアルで使用される広告形式は単純な画像広告です。
 
-AMPHTML ads are similar to traditional HTML ads, but instead of coding them in traditional HTML, they are coded in AMPHTML, according to the [AMPHTML ad spec](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md). By creating the ads in AMPHTML, the ads take advantage of the same optimizations and performance utilized in AMP pages, making them a faster, lighter and a more secure way to advertise on the web. Most of all, these ads can be delivered anywhere on the web, *not just on AMP pages*.
+AMPHTML 広告は従来の HTML 広告に似ていますが、従来の HTML でコーディングする代わりに、[AMPHTML 広告の仕様](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md)に従って AMPHTML でコーディングされます。AMPHTML で広告を作成することで、広告は AMP ページで使用される最適化とパフォーマンスを活用できるため、より高速、軽量、かつ安全に、ウェブで広告を掲載することができます。さらに、こういった広告は *AMP ページだけでなく*ウェブのあらゆる場所に配信することができます。
 
-## You will learn to:
+## 学習する内容:
 
-- Create a valid AMPHTML ad according to the [AMPHTML ad spec](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md)
-- Track ad views by using the [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) component
-- Verify the AMPHTML ad syntax by using the [AMP validator](https://validator.ampproject.org/#htmlFormat=AMP4ADS)
+- [AMPHTML 広告の仕様](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md)に従って有効な AMPHTML を作成する
+- [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) コンポーネントを使用して、広告ビューを追跡する
+- [AMP Validator ツール](https://validator.ampproject.org/#htmlFormat=AMP4ADS)を使用して、AMPHTML 広告の構文を検証する
 
-## Prerequisites:
+## 前提条件:
 
-- A basic knowledge of HTML, CSS, and JavaScript
-- A browser and text editor of your choice
+- HTML、CSS、JavaScript の基本的な知識
+- 任意のブラウザとテキストエディタ
 
-[tip] *Don't want to create an ad from scratch?*  Use one of the following tools to create your AMPHTML ad:
+[tip] *広告からゼロから作成するのは好みませんか？*以下のいずれかのツールを使用して、AMPHTML 広告を作成できます。
 
-- [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
+- [Celtra の Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*coming soon*) [/tip]
+- Adobe Animate（*近日公開予定*）[/tip]
