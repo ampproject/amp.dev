@@ -1,8 +1,10 @@
 ---
-$title: AMP サイトから PWA への変換
-$order: 10
+"$title": AMP サイトから PWA への変換
+"$order": '10'
 description: ブラウザ内にリソースをキャッシュすることで、PWA は、データ、アセット、およびオフラインページをユーザーに提供し、ユーザーの関心を維持し、情報を提供し続けることができます。
-tutorial: true
+tutorial: 'true'
+formats:
+- websites
 author: crystalonscript
 ---
 
@@ -30,7 +32,29 @@ Lyrical Lightning という Mobile Music Magic フェスティバルのランデ
 
 以下のコードを使用して、`manifest.json` というファイルをリポジトリに追加します。
 
-[sourcecode:JSON] { "short_name": "LyLy", "name": "Lyrical Lyghtning", "icons": [ { "src": "./images/amplogo192.png", "type": "image/png", "sizes": "192x192" }, { "src": "./images/amplogo512.png", "type": "image/png", "sizes": "512x512" } ], "start_url": "/index.html", "background_color": "#222325", "display": "standalone", "scope": "/", "theme_color": "#222325" } [/sourcecode]
+[sourcecode:JSON]
+{
+"short_name": "LyLy",
+"name": "Lyrical Lyghtning",
+"icons": [
+{
+"src": "./images/amplogo192.png",
+"type": "image/png",
+"sizes": "192x192"
+},
+{
+"src": "./images/amplogo512.png",
+"type": "image/png",
+"sizes": "512x512"
+}
+],
+"start_url": "/index.html",
+"background_color": "#222325",
+"display": "standalone",
+"scope": "/",
+"theme_color": "#222325"
+}
+[/sourcecode]
 
 # AMP サービスワーカーの追加
 
@@ -42,7 +66,10 @@ AMP サービスワーカーは、インストールされると、ユーザー�
 
 `sw.js` というファイルを作成して、以下のコードを追加します。
 
-[sourcecode:js] importScripts('https://cdn.ampproject.org/sw/amp-sw.js'); AMP_SW.init(); [/sourcecode]
+[sourcecode:js]
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+AMP_SW.init();
+[/sourcecode]
 
 たった 2 行のコードで、AMP サービスワーカーをユーザーのサービスワーカーにインポートして初期化することができます。
 
@@ -52,23 +79,35 @@ AMP ウェブサイトは、[`<amp-install-serviceworker>`](../../../documentati
 
 `index.html` の head に必要なスクリプトタグを配置し、`<body>` に `<amp-install-serviceworker>` を配置します。
 
-[sourcecode:html] …
+[sourcecode:html]
+…
 
 <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 
-… ...
+…
+...
+<amp-install-serviceworker src="/sw.js"
+           data-iframe-src="install-sw.html"
+           layout="nodisplay">
+</amp-install-serviceworker>
 
+</body>
+[/sourcecode]
 
+[tip type="important"] **Important –** The service worker should be served from the root directory (`/sw.js`) to be able to cache all the content of your site. [/tip]
 
-[tip type="important"] **重要 –** サイトのすべてのコンテンツをキャッシュできるようにするには、サービスワーカーをルートディレクトリ（`/sw.js`）から提供する必要があります。 [/tip]
-
-`<amp-install-serviceworker>` は、iframe を作成して、`data-iframe-src` ファイルを実行することで、サービスワーカーをインストールします。`install-sw.html` ファイルを作成して、以下のコードを追加します。
+The `<amp-install-serviceworker>` installs the service worker by creating an iframe and running the `data-iframe-src` file. Create the `install-sw.html` file and add the following code:
 
 [sourcecode:html]
 
 <!doctype html>
-
-<title>installing service worker</title> <script type='text/javascript'> if('serviceWorker' in navigator) { navigator.serviceWorker.register('./sw.js'); }; </script> [/sourcecode]
+<title>installing service worker</title>
+<script type='text/javascript'>
+ if('serviceWorker' in navigator) {
+   navigator.serviceWorker.register('./sw.js');
+ };
+</script>
+[/sourcecode]
 
 iframe は、AMP サービスワーカーファイルをブラウザに登録します。
 
@@ -82,7 +121,15 @@ AMP サービスワーカーには、ユーザーが構成可能なオプショ�
 
 画像、動画、およびフォントなどの[アセットをキャッシュ](https://github.com/ampproject/amp-sw/tree/master/src/modules/asset-caching)するように、AMP サービスワーカーを構成することができます。これを使用して、背景画像と AMP ロゴをキャッシュすることにします。`sw.js` ファイルを開いて、以下のコードで更新します。
 
-[sourcecode:js] importScripts('https://cdn.ampproject.org/sw/amp-sw.js'); AMP_SW.init({ assetCachingOptions: [{ regexp: /.(png|jpg)/, cachingStrategy: 'CACHE_FIRST' }] }); [/sourcecode]
+[sourcecode:js]
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+AMP_SW.init({
+assetCachingOptions: [{
+regexp: /\.(png|jpg)/,
+cachingStrategy: 'CACHE_FIRST'
+}]
+});
+[/sourcecode]
 
 キャッシュストラテジーを [cache first](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-falling-back-to-network) に指定しました。これは、アプリがネットワークにリクエストする前に、先にキャッシュから配信しようとすることを意味します。背景画像や AMP ロゴを更新することはないため、特にこのアプリではこれが役立ちます。
 
@@ -90,13 +137,29 @@ AMP サービスワーカーには、ユーザーが構成可能なオプショ�
 
 AMP サービスワーカーは、`data-rel=prefetch` 属性のあるリンクをプリフェッチします。このため、以前に訪問したことのないページでもオフラインで表示することができるようになります。この属性を `lineup.html` のリンクタグに追加することにします。
 
-[sourcecode:html] ... <a href="/lineup.html" data-rel="prefetch">See Full Lineup</a> ... [/sourcecode]
+[sourcecode:html]
+...
+<a href="/lineup.html" data-rel="prefetch">See Full Lineup</a>
+...
+[/sourcecode]
 
 # オフラインページの表示
 
 プリフェッチしなかったページへのリンクで予期しなかったケースやクリックに対応するために、汎用的なブラウザのオフラインページを表示する代わりに、一貫した「オンブランド」のユーザーエクスペリエンスを提供するオフラインページを追加します。[`offline.html` をここから](/static/files/tutorials/offline.zip)ダウンロードして、`sw.js` を以下のコードに更新します。
 
-[sourcecode:js] importScripts('https://cdn.ampproject.org/sw/amp-sw.js'); AMP_SW.init({ assetCachingOptions: [{ regexp: /.(png|jpg)/, cachingStrategy: 'CACHE_FIRST' }], offlinePageOptions: { url: '/offline.html', assets: [] } }); [/sourcecode]
+[sourcecode:js]
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+AMP_SW.init({
+assetCachingOptions: [{
+regexp: /\.(png|jpg)/,
+cachingStrategy: 'CACHE_FIRST'
+}],
+offlinePageOptions: {
+url: '/offline.html',
+assets: []
+}
+});
+[/sourcecode]
 
 # PWA のテスト
 
@@ -117,7 +180,7 @@ AMP で PWA を作成しました。このチュートリアルでは、以下�
 - [ウェブアプリマニフェスト](https://developers.google.com/web/fundamentals/web-app-manifest/)の作成
 - [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) による AMP へのサービスワーカーのインストール
 - [AMP サービスワーカー](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html)のカスタマイズ
-- [リンクのプリフェッチ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
+- [Prefetch links ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
 - オフラインページの作成
 
 さらに、[サービスワーカー](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html)と[オフライン UX に関する考慮事項](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux)をお読みください。[分析によるエンゲージメントの追跡](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.html)方法を学習し、[AMP ページ用の基本分析の構成方法](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/tracking-engagement.html)を説明したチュートリアルを実行してください。
