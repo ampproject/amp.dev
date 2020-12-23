@@ -36,18 +36,19 @@ contributors:
   <tbody>
     <tr>
       <td data-th="Banned style">
-<code>!important</code> qualifier </td>
+<code>!important</code> 한정자</td>
       <td data-th="Description">
 <code>!important</code> 한정자를 style 작성에 사용하거나 <code>!important</code> 한정자가 적용된 style을 HTML 엘리먼트에서 사용할 수 없습니다. AMP 에서 엘리먼트 크기 조정 규칙을 시행하기 위한 필수 요구사항입니다.</td>
     </tr>
     <tr>
       <td data-th="Banned style"><code><link rel=”stylesheet”></code></td>
-      <td data-th="Description">Disallowed with the exception of <a href="#the-custom-fonts-exception">custom fonts</a>.</td>
+      <td data-th="Description">
+<a href="#the-custom-fonts-exception">맞춤 글꼴</a> 이외의 경우에는 사용할 수 없습니다.</td>
     </tr>
     <tr>
       <td data-th="Banned style">
-<code>i-amphtml-</code> class and <code>i-amphtml-</code> tag names.</td>
-      <td data-th="Description">The validator disallows class and tags names with the following regex `(^|\W)i-amphtml-`. These are reserved for internal use by the AMP framework. It follows, that the user's stylesheet may not reference CSS selectors for <code>i-amphtml-</code> classes and tags.</td>
+<code>i-amphtml-</code> 클래스 및 <code>i-amphtml-</code> 태그 이름</td>
+      <td data-th="Description">정규 표현식 `(^|\W)i-amphtml-`가 포함된 클래스 및 태그는 검사기에서 허용되지 않으며 AMP 프레임워크에서 내부용으로만 사용할 수 있습니다. 따라서 사용자의 스타일시트는 <code>i-amphtml-</code> 클래스 및 태그에 CSS 선택자를 참조할 수 없습니다.</td>
     </tr>
   </tbody>
 </table>
@@ -78,7 +79,7 @@ contributors:
 
 ## 맞춤 글꼴은 허용됨 <a name="the-custom-fonts-exception"></a>
 
-AMP pages can’t include external stylesheets, with the exception of custom fonts.
+AMP 페이지에 외부 스타일시트를 포함할 수 없지만 사용자 지정 글꼴은 예외입니다.
 
 전처리기로 생성된 출력은 다른 웹페이지에서와 마찬가지로 AMP에서도 제대로 작동합니다. 예를 들어, [amp.dev](https://amp.dev/) 사이트는 [Sass](http://sass-lang.com/) 를 사용합니다. ([Grow](http://grow.io/) 를 통해 [amp.dev](https://amp.dev/) 를 구성하는 정적 AMP 페이지가 생성됩니다.)
 
