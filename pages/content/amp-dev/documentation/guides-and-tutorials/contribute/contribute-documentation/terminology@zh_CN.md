@@ -23,7 +23,7 @@ author: CrystalOnScript
    </td>
   </tr>
   <tr>
-   <td>AMP    </td>
+   <td>AMP</td>
    <td>开放源代码网络组件框架的官方名称。AMP 的全称为 Accelerated Mobile Pages。全称已被弃用，因为它过于局限，无法充分定义 AMP：AMP 不再仅限于构建网页，您现在可以使用 AMP 构建广告、电子邮件和故事。</td>
    <td>
 <ul>
