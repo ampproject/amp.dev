@@ -139,12 +139,12 @@ AMP ウェブページと AMP を使って作成されたウェブストーリ�
 
 <table>
   <tr>
-   <td>MP4    </td>
-   <td>-crf 23    </td>
+   <td>MP4</td>
+   <td>-crf 23</td>
   </tr>
   <tr>
-   <td>WEBM    </td>
-   <td>-b:v 1M    </td>
+   <td>WEBM</td>
+   <td>-b:v 1M</td>
   </tr>
 </table>
 
@@ -159,11 +159,11 @@ HLS セグメントを 10 秒未満の長さに維持するようにしてくだ
 <table>
   <tr>
    <td>MP4、HLS、および DASH</td>
-   <td>H.264    </td>
+   <td>H.264</td>
   </tr>
   <tr>
-   <td>WEBM    </td>
-   <td>VP9    </td>
+   <td>WEBM</td>
+   <td>VP9</td>
   </tr>
 </table>
 
