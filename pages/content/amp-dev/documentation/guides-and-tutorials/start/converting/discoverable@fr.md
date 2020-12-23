@@ -91,7 +91,7 @@ Pour notre article de presse, **ajoutez** les données structurées suivantes au
 [tip type="note"] En plus du format de données structurées schema.org, il existe d'autres formats pris en charge par les moteurs de recherche et les réseaux sociaux. Consultez la documentation prise en charge:
 
 - [Balises méta Twitter Cards](https://dev.twitter.com/cards/overview)
-- [Facebook Open Graph meta tags](https://developers.facebook.com/docs/sharing/webmasters) [/tip]
+- [Balises méta Facebook Open Graph](https://developers.facebook.com/docs/sharing/webmasters) [/tip]
 
 ### Valider les données structurées
 
