@@ -10,7 +10,7 @@ formats:
 <!--
   ## Introduction
 
-  This example shows how to implement a subscription settings icon dropdown. It is perfect for subscription based emails, as it allows the user to easily change their subscription settings at the moment they realize they want to. It also works for websites.
+  This example shows how to implement a subscription settings icon dropdown. This lets the user to change their subscription settings without navigating away from the email. It also works for websites.
 -->
 <!-- -->
 <!doctype html>
@@ -27,22 +27,22 @@ formats:
     <!-- ## Setup -->
 
     <!--
-      We need an [`amp-list`](/documentation/components/amp-list) to query the server for the user's current subscription setting on email or page load.
+      We use an [`amp-list`](/documentation/components/amp-list) component to query the user's current subscription setting on email or page load from the server.
     -->
     <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
 
     <!--
-      We'll use [`amp-mustache`](/documentation/components/amp-mustache) to render the icon dropdown in its initial state, which should be based on the server's response.
+      We'll use [`amp-mustache`](/documentation/components/amp-mustache) o render the dropdown icon linked to the server responded subscription state.
     -->
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
 
     <!--
-      We'll also need [`amp-form`](/documentation/components/amp-form) to update the user's subscription setting on the server when they select a new setting from the icon dropdown.
+      We'll also use [`amp-form`](/documentation/components/amp-form) to update the user's subscription setting on the server when they select a new setting from the icon dropdown.
     -->
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
 
     <!--
-      Lastly, we need [`amp-bind`](/documentation/components/amp-bind) to update the dropdown's state in response to events.
+      Lastly, we use [`amp-bind`](/documentation/components/amp-bind) to update the dropdown's state in response to events.
     -->
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 
@@ -136,9 +136,9 @@ formats:
         ]
       }
       ```
-      `currentSubscription` and `isSelected` vary depending on the user's current subscription setting and `isSelected` is only `true` for one of the objects in `options` at a time.
+      `currentSubscription` and `isSelected` vary depending on the user's current subscription setting. `isSelected` is only `true` for one of the objects in `options` at a time.
 
-      The server expects POST requests to specify one of the subscription settings above (e.g. `ignoring`) for a `nextSubscription` field in its form data, and will update the user's current subscription setting to the specified value.
+      The server expects POST requests to specify one of the subscription settings above (e.g. `ignoring`) for a `nextSubscription` field in its form data. It then updates the user's current subscription setting to the specified value.
     -->
 
     <!--
@@ -157,7 +157,7 @@ formats:
     <!--
       #### Step 2: Fetching the Current Subscription Setting
 
-      To query the server for the user's current subscription setting on email or page load and pre-select the user's current setting in the dropdown, we wrap the `select` element in an `amp-list` and set its `src` to the URL where our server is listening for GET requests.
+We wrap the `select` element in an `amp-list` and set its `src` to the URL our server is listening for GET requests. This queries the user's current subscription setting.
 
       We use an `amp-mustache` template to render the `select` element and ensure that the `option` element corresponding to the user's subscription setting has the `selected` attribute. To understand why the code is duplicative, consider that the `selected` attribute is a [boolean attribute](https://www.w3.org/TR/2011/WD-html5-author-20110809/common-microsyntaxes.html#boolean-attribute) and review the [`amp-mustache` restrictions](/documentation/components/amp-mustache/#restrictions).
 
@@ -193,11 +193,11 @@ formats:
 
       To update the user's subscription setting on the server when they select a new setting, we start by wrapping the `select` element in an [AMP `form`](/documentation/components/amp-form) element, setting its `method` to `post`, and setting its `action-xhr` attribute to the URL where our server is listening for POST requests.
 
-      The `name` attribute of the `select` element is set to `nextSubscription` because `nextSubscription` is the name of the form data field where the server expects the user's new subscription setting to be in the POST request (see the [Server section](<% base_path %>/#server)) and the `select` element is the element containing the user's selected subscription setting.
+      The `name` attribute of the `select` element is set to `nextSubscription`. `nextSubscription` is the name of the form data field where the server expects the user's new subscription setting to be in the POST request (see the [Server section](<% base_path %>/#server)) and the `select` element contains the user's selected subscription setting.
 
-      Finally, we trigger the form submission when the `select` element's value is changed by using the [`on` attribute](/documentation/guides-and-tutorials/learn/common_attributes#on) to attach an event handler to the `select` element's [`change` event](/documentation/guides-and-tutorials/learn/amp-actions-and-events#input-elements) that invokes the `form` element's [`submit` action](/documentation/guides-and-tutorials/learn/amp-actions-and-events#form_1). Note that we gave the `form` element an `id` so that we could refer to it in the event handler.
+      Finally, we trigger the form submission when the `select` element's value changes. We do so by using the [`on` attribute](/documentation/guides-and-tutorials/learn/common_attributes#on) to attach an event handler to the `select` element's [`change` event](/documentation/guides-and-tutorials/learn/amp-actions-and-events#input-elements) , invoking the `form` element's [`submit` action]. [`submit` action](/documentation/guides-and-tutorials/learn/amp-actions-and-events#form_1). Note that we gave the `form` element an `id` so that we could refer to it in the event handler.
 
-      You can test that the code is functional by selecting a new subscription setting, refreshing the page, and noticing that the `select` element's subscription setting on page load is the one you selected!
+      You can test the code by selecting a new subscription setting and refreshing the page. The `select` element's subscription setting on page load is now the one you selected!
     -->
     <amp-list src="<% base_path %>/subscription" binding="refresh" items="." single-item layout="fill">
       <template type="amp-mustache">
@@ -229,7 +229,7 @@ formats:
 
       Ideally the `select` element would be [disabled](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled) while the form is submitting. However, there's a problem with this approach: [values of disabled inputs are not submitted with a form](https://www.w3.org/TR/PR-html40-971107/interact/forms.html#:~:text=Values%20of%20disabled%20controls%20are%20not%20submitted%20with%20a%20form.). Under different circumstances we might consider using the [`readonly`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly) attribute instead of the `disabled` attribute to avoid this problem, but the [`select` element does not support the `readonly` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly#wikiArticle:~:text=The%20attribute%20is%20not%20supported%20or%20relevant%20to%20%3Cselect%3E%20or). Fortunately, we can solve this problem by submitting the `select` element's value through a new [hidden `input` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/hidden), which doesn't need to be disabled because users cannot interact with or see it, that we ensure always contains the same value as the `select` element.
 
-      We start by adding a hidden `input` element, and moving the `name` of the `select` element to the hidden `input` element so that its value is submitted. To keep the hidden `input` element's value in sync with the `select` element's value we update a new `nextSubscription` state variable using [`AMP.setState`](/documentation/components/amp-bind#updating-state-variables-with-amp.setstate()) whenever the `select` element's value changes and [bind](/documentation/components/amp-bind#bindings) the hidden `input` element's `value` attribute to the state variable.
+      We start by adding a hidden `input` element, and moving the `name` of the `select` element to the hidden `input` element so that its value submits. To keep the hidden `input` element's value in sync with the `select` element's value, we update a new `nextSubscription` state variable using [`AMP.setState`](/documentation/components/amp-bind#updating-state-variables-with-amp.setstate()) whenever the `select` element's value changes and [bind](/documentation/components/amp-bind#bindings) the hidden `input` element's `value` attribute to the state variable.
 
       To disable the `select` element we need a state variable that represents whether the form is currently submitting that we can use in the `select` element's `disabled` attribute binding. We reuse the `nextSubscription` state variable by ensuring it is `null` when the form is _not_ submitting by updating `nextSubscription` to `null` on the `submit-success` and `submit-error` events of the `form` element. Finally, we bind the `select` element's `disabled` attribute to `!!nextSubscription` because the state variable is truthy when the form is submitting. We do the same for each of its `option` elements to prevent the user from using the keyboard to switch between the values while the form is submitting.
     -->
@@ -268,13 +268,13 @@ formats:
     <!--
       #### Step 5: Handling Form Submission Failure
 
-      When the form fails to submit we should display an error message and revert the `select` element to its previous value so that the user interface is consistent with the user's persisted subscription setting.
+      We need to display an error message and revert the `select` element to its previous value if the form fails to submit.
 
-      To display an error message when the form fails to submit we add element containing our error message to the `form` element's children, and annotate the child element with the [`submit-error` attribute](/documentation/components/amp-form#submit-error). The attribute ensures that the element is only visible after a failed form submission.
+      To display an error message when the form fails to submit, we add element containing our error message to the `form` element's children. We annotate the child element with the [`submit-error` attribute](/documentation/components/amp-form#submit-error). This attribute ensures that the element is only visible after a failed form submission.
 
-      Reverting the `select` element's value to its previous value requires fully managing the `select` element's value by binding the `selected` attribute of each of its `option` elements. This requires maintaining the `select` element's current value in a `currentSubscription` state variable and the element's previous value in a `previousSubscription` state variable.
+      Reverting the `select` element's value to its previous value requires binding the `selected` attribute of each `option` element. This requires maintaining the `select` element's current value in a `currentSubscription` state variable and the element's previous value in a `previousSubscription` state variable.
 
-      When the `select` element's value is changed we set `currentSubscription` to the new value and `previousSubscription` to the element's previous value, which is stored in the `currentSubscription` state variable if this is not the first time the element's value has been changed or in the `currentSubscription` field of the `amp-list` response otherwise.
+      When the `select` element's value changes, we set `currentSubscription` to the new value and `previousSubscription` to the element's previous value. We store these in the `currentSubscription` state variable, if this is not the first time the element's value has changed. Otherwise, it's stored in the `currentSubscription` field of the `amp-list` response.
 
       We ensure the `select` element's selected `option` stays in sync with `currentSubscription` by binding the `selected` attribute of each `option`. Finally, we revert the `select` element to its previous value on form submission failure by setting `currentSubscription` to `previousSubscription` in the `form` element's `submit-error` event.
 
@@ -326,7 +326,7 @@ formats:
 
       Styling the `select` element itself to look like an icon using only CSS supported by email clients isn't feasible. Instead, we'll hide the `select` element's persistent user interface, which shows the element's current value, and show a different icon for each dropdown state in its place, but keep the element's ephemeral dropdown, what you see on click.
 
-      Fortunately, styling `select` primarily affects the persistent user interface while styling `option` primarily affects the ephemeral dropdown. We can use this fact to hide the former, but keep the latter. Of the three common choices for hiding an element using CSS ([`display: none;`, `visibility: hidden;`, and `opacity: 0;`](https://magnusbenoni.com/difference-between-display-visibility-opacity)), `opacity: 0;` is most suited because we want to keep the element in the tab order as well as keep receiving its click events:
+      Fortunately, styling `select` affects the persistent user interface while styling `option` affects the ephemeral dropdown. We can use this fact to hide the former, but keep the latter. Of the three common choices for hiding an element using CSS ([`display: none;`, `visibility: hidden;`, and `opacity: 0;`](https://magnusbenoni.com/difference-between-display-visibility-opacity)), `opacity: 0;` is most suited because we want to keep the element in the tab order as well as keep receiving its click events:
       ```css
       .subscription-select {
         opacity: 0;
@@ -337,7 +337,7 @@ formats:
 
       The next step is to create a new icon-based user interface and position it _behind_ the invisible `select` user interface (in terms of stacking order) so that when a user tries to click on one of our icons they'll actually be clicking on the invisible `select` element and triggering its events! We'll keep our new icons behind the `select` element by placing the icon's code before the `select` element's code (see [Stacking without the `z-index` property](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/Stacking_without_z-index)).
 
-      The `relative` and `absolute` CSS classes are used to position the `select` element above the icons, and the `icon-size` class is used to ensure the element's click target bounding box is the same size as the icons:
+      We use the `relative` and `absolute` CSS classes are to position the `select` element above the icons, and use the `icon-size` class to ensure the element's click target bounding box is the same size as the icons:
       ```css
       .relative {
         position: relative;
