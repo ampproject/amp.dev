@@ -20,7 +20,7 @@ Techniquement, une story Web est une page Web unique créée avec AMP et conform
 - Contenir une balise ` <meta charset="utf-8">` comme premier enfant de la balise `<head>`.
 - Contenir une balise `<script async src="https://cdn.ampproject.org/v0.js"></script>` dans la balise `<head>`. Une bonne pratique est d'inclure ce script le plus tôt possible dans `<head>`.
 - Contenir une balise ` <link rel="canonical" href="page/url">` dans `<head>` avec un href qui pointe vers l'URL de la story Web.
-- Contain a `<meta name="viewport" content="width=device-width">` tag inside the `<head>` tag. It's also recommended to include initial-scale=1.
+- Contenir une balise `<meta name="viewport" content="width=device-width">` dans la balise `<head>`. il est également recommandé d'ajouter initial-scale=1.
 - Contenir le code [AMP boilerplate](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) dans la balise `<head>`.
 
 La différence entre une page Web AMP et une story Web créée avec AMP est le composant [`amp-story`](https://amp.dev/documentation/components/amp-story/?format=stories). C'est le seul enfant direct du `<body>` du document et doit contenir l'attribut `standalone`. Toutes les pages, couches et éléments de la story Web sont définis dans les balises `<amp-story>`.
