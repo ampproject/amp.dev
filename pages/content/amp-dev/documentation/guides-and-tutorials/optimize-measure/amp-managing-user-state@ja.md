@@ -428,9 +428,7 @@ AMP クライアント ID がマッピングに見つからない場合は、マ
 
 By taking these steps, the Client ID is available to the target server and/or as a URL parameter on the page the user lands on after the link click or form submission (the **destination context**). The name (or "key") will be `ref_id` because that’s how we’ve defined it in the above implementations and will have an associated value equal to the Client ID. For instance, by following the link (`<a>` tag) defined above, the user will navigate to this URL:
 
-[sourcecode:http]
-https://example.com/step2.html?ref_id=$amp_client_id
-[/sourcecode]
+[sourcecode:http] https://example.com/step2.html?ref_id=$amp_client_id [/sourcecode]
 
 <amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
   <noscript><img alt="AMPビューアコンテキストの識別子をリンク経由でパブリッシャーオリジンコンテキストに渡す方法の例" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png"></noscript></amp-img>
