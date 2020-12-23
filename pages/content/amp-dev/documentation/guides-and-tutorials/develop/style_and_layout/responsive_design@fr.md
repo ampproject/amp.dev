@@ -73,7 +73,7 @@ Cependant, nous ne voulons pas que l'image s'étire au-delà de sa taille prévu
 
 ```html
 <style amp-custom>
-  .resp-img {
+.resp-img {
     max-width: 700px;
   }
 </style>
