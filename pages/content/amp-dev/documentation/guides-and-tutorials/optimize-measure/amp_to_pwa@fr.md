@@ -20,7 +20,7 @@ Utilisez un serveur Web local pour prévisualiser le site Web.
 
 [tip type="default"] **CONSEIL -** Pour un serveur Web rapide, exécutez `python -m SimpleHTTPServer`. [/tip]
 
-You should be able to view the landing page for Lyrical Lyghtning, the Mobile Music Magic festival. It has one link on the homepage to view the schedule and which stage the bands are on.
+Vous devriez pouvoir voir la page de destination de Lyrical Lightning, le festival Mobile Music Magic. Il contient un lien sur la page d'accueil pour voir le programme et sur quelle scène les groupes sont.
 
 {{ image('/static/img/docs/tutorials/tut-lyricallyghtning.png', 594, 558, alt='Image of PWA' ) }}
 
