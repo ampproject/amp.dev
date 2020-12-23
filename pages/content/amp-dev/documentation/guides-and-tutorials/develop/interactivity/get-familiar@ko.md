@@ -1,5 +1,7 @@
 ---
-$title: 시작 코드에 익숙해지기
+"$title": 시작 코드에 익숙해지기
+"$order": '1'
+description: AMP 페이지는 안정적인 성능을 제공하기 위한 몇 가지 제한사항이 있는 HTML 페이지입니다. AMP 페이지에는 해당 페이지가 AMP 페이지임을 알 수 있는 몇 가지 특별한 마크업이 있습니다.
 ---
 
 ## AMP 상용구
@@ -81,9 +83,11 @@ AMP 페이지는 안정적인 성능을 제공하기 위한 몇 가지 제한사
 </html>
 ```
 
+가이드에 사용된 시작 코드([`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html))는 기본적인 AMP 페이지에 이미지, 텍스트 등의 페이지 콘텐츠와 몇 가지 AMP 구성요소를 더한 것입니다.
+
 ## AMP 구성요소
 
-가이드에 사용된 시작 코드([`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html))는 기본적인 AMP 페이지에 이미지, 텍스트 등의 페이지 콘텐츠와 몇 가지 AMP 구성요소를 더한 것입니다.
+AMP 구성요소는 AMP 페이지에 풍부한 상호작용을 더해주는 추가적인 기능과 UI 구성요소를 제공합니다. 시작 코드는 다음과 같은 AMP 구성요소를 사용합니다.
 
 ```html
 <script
@@ -108,7 +112,7 @@ AMP 페이지는 안정적인 성능을 제공하기 위한 몇 가지 제한사
 ></script>
 ```
 
-AMP 구성요소는 AMP 페이지에 풍부한 상호작용을 더해주는 추가적인 기능과 UI 구성요소를 제공합니다. 시작 코드는 다음과 같은 AMP 구성요소를 사용합니다.
+시작 코드는 몇 가지 기본적인 상호작용을 제공합니다.
 
 - [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md): 해당 제품의 다양한 모습을 보여주는 이미지 캐러셀입니다.
 - [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md): [`amp-form`](../../../../documentation/components/reference/amp-form.md) 서버 응답을 렌더링하는 템플릿 시스템입니다.
@@ -117,9 +121,9 @@ AMP 구성요소는 AMP 페이지에 풍부한 상호작용을 더해주는 추�
 
 ## 기본적인 상호작용
 
-시작 코드는 몇 가지 기본적인 상호작용을 제공합니다.
+**사용해보기**: 이미지 캐러셀을 스와이프하고 '장바구니에 추가' 버튼을 탭하세요.
 
 - 이미지 캐러셀([`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md))은 해당 제품의 다양한 모습을 보여줍니다.
 - 페이지 하단에 있는 '장바구니에 추가' 버튼을 탭하면 제품이 사용자의 장바구니에 추가([`amp-form`](../../../../documentation/components/reference/amp-form.md) 사용)됩니다.
 
-**사용해보기**: 이미지 캐러셀을 스와이프하고 '장바구니에 추가' 버튼을 탭하세요.
+**사용해보기**: 이미지 캐러셀을 스와이프하고 "장바구니에 추가" 버튼을 탭하세요.
