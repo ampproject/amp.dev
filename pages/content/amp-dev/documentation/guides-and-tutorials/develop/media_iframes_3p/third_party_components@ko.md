@@ -1,7 +1,7 @@
 ---
 "$title": Include third-party content
 "$order": '9'
-description: Learn how to include third-party components in your pages ...
+description: 페이지에서 써드 파티 컴포넌트를 가져오는 법에 대해서 다룹니다 ...
 formats:
 - 웹사이트
 components:
