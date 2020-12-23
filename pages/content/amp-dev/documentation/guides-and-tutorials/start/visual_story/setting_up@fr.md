@@ -11,8 +11,8 @@ Avant de commencer ce tutoriel, vous aurez besoin des éléments suivants :
 
 - Des bases en HTML, CSS et JavaScript
 - Une compréhension des concepts de base d'AMP (voir le tutoriel ["Convertir votre HTML en AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md?format=websites))
-- A browser of your choice
-- A text editor of your choice
+- Un navigateur de votre choix
+- Un éditeur de texte de votre choix
 
 ## Configurez votre environnement de développement
 
@@ -26,8 +26,8 @@ Avant de commencer ce tutoriel, vous aurez besoin des éléments suivants :
 
 To test our sample Web Story, we need to access the files from a web server. There are several ways to create a temporary local web server for the purposes of testing.  Here are some options, choose the one that works best for you:
 
-- [“Web Server for Chrome” Google Chrome app](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
-- [A local HTTP Python server](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server#Running_a_simple_local_HTTP_server)
+- [Application Google Chrome "Web Server for Chrome"](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
+- [Un serveur HTTP Python local](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server#Running_a_simple_local_HTTP_server)
 - [Apache](https://httpd.apache.org/docs/2.4/getting-started.html)
 - [nginx](http://nginx.org/)
 
