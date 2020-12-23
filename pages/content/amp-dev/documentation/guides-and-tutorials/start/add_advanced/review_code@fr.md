@@ -166,8 +166,7 @@ Il s'agit d'une page AMP simple qui passe à la fois la [validation AMP](../../.
 Avant de modifier la page, activons le [validateur AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) afin de savoir si nous travaillons avec du HTML AMP valide. **Ajoutez** cet identifiant de fragment à votre URL :
 
 ```text
-# development=1
-
+#development=1
 ```
 
 Par exemple :
