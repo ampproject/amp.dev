@@ -1,9 +1,9 @@
 ---
-"$title": Integrating with AMP to serve display ads
+"$title": AMP와 통합하여 디스플레이 광고 제공
 "$order": '5'
-description: This guide is for ad networks that want to integrate with AMP to serve display ads to AMP pages.
+description: 이 가이드는 AMP와 통합하여 디스플레이 광고를 AMP 페이지에 게재하려는 광고 네트워크를 위한 것입니다.
 formats:
-- ads
+- 광고
 ---
 
 이 가이드는 AMP와 통합하여 디스플레이 광고를 AMP 페이지에 게재하려는 광고 네트워크를 위한 것입니다.
