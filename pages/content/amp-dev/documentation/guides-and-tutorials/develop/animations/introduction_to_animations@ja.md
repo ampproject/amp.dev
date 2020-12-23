@@ -19,9 +19,9 @@ author: CrystalOnScript
 基本的な [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) は、次の主な項目で構成される JSON オブジェクトです。
 
 - コンポーネントがアニメーションしている要素、または `selector`
-- [Timing Properties](../../../../documentation/components/reference/amp-animation.md#timing-properties)
-- [Keyframes](../../../../documentation/components/reference/amp-animation.md#keyframes)
-- [Trigger](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
+- [タイミングプロパティ](../../../../documentation/components/reference/amp-animation.md#timing-properties)
+- [キーフレーム](../../../../documentation/components/reference/amp-animation.md#keyframes)
+- [トリガ](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
 
 ```
 <amp-animation layout="nodisplay" id="exampleAnimation">
