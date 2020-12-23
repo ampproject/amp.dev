@@ -19,9 +19,9 @@ Le composant [`amp-animation`](../../../../documentation/components/reference/am
 Une [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) basique est un objet JSON composé des éléments clés suivants:
 
 - L'élément que le composant anime, ou `selector`.
-- [Timing Properties](../../../../documentation/components/reference/amp-animation.md#timing-properties)
-- [Keyframes](../../../../documentation/components/reference/amp-animation.md#keyframes)
-- [Trigger](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
+- [Propriétés de durée](../../../../documentation/components/reference/amp-animation.md#timing-properties)
+- [Images clés](../../../../documentation/components/reference/amp-animation.md#keyframes)
+- [Déclencheur](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
 
 ```
 <amp-animation layout="nodisplay" id="exampleAnimation">
@@ -259,9 +259,9 @@ En utilisant les expressions [`var()` et `calc()`](../../../../documentation/com
 ```
 [/example]
 
-- Declaring a variable, `--duration`, and giving it the value of two seconds.
-- Setting the `duration` to the var `--duration`'s value.
-- Calculating the delay applied to each element with the class `.card`.
+- Déclare une variable, `--duration`, et on lui donne la valeur de deux secondes.
+- Définit la `duration` sur la valeur de var `--duration`.
+- Calcule le délai appliqué à chaque élément qui répond au sélecteur `.card`.
     1. L'extension [`length()`](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) calcule le nombre d'éléments `.card` sélectionnés
     2. La longueur soustrait ensuite le [index()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension) de chaque `.card`
     3. La valeur résultante est multipliée par la var `--duration`
