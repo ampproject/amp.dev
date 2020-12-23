@@ -76,7 +76,7 @@ Supposons que vous ayez une page AMP qui répertorie les produits avec des prix.
 
 D'accord, donc la page est *sur mon domaine* et le JSON est *sur mon domaine*. Je ne vois aucun problème !
 
-Ah, but how did your user get to your AMP page? Is it a cached page they access? It's quite likely that your user did not access your AMP page directly, but instead they discovered your page through another platform. For example, Google Search uses the Google AMP Cache to render AMP pages quickly; these are cached pages that are served from the Google AMP Cache, which is a *different* domain. When your user clicks the button to update the prices on your page, the cached AMP page sends a request to your origin domain to get the prices, which is a mismatch between origins (cache -> origin domain). To allow for such cross-origin requests, you need to handle CORS, otherwise, the request fails.
+Ah, mais comment votre utilisateur est-il arrivé sur votre page AMP ? S'agit-il d'une page mise en cache à laquelle il accède ? Il est fort probable que votre utilisateur n'ait pas accédé directement à votre page AMP, mais qu'il ait découvert votre page via une autre plateforme. Par exemple, la recherche Google utilise le cache AMP Google pour afficher rapidement les pages AMP ; ce sont des pages mises en cache qui sont diffusées à partir du cache AMP Google, qui est un domaine *différent*. Lorsque votre utilisateur clique sur le bouton pour mettre à jour les prix sur votre page, la page AMP mise en cache envoie une requête à votre domaine d'origine pour obtenir les prix, ce qui crée une discordance entre les origines (cache -> domaine d'origine). Pour permettre de telles requêtes d'origine croisée, vous devez gérer CORS, sinon la requête échouera.
 
 <amp-img alt="CORS and Cache" layout="responsive" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png" width="809" height="391">
   <noscript>     <img alt="CORS and Cache" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png">   </noscript></amp-img>
@@ -135,7 +135,7 @@ Par exemple, les points de terminaison doivent autoriser les requêtes provenant
 
 - Sous-domaine de cache AMP Google : `https://<publisher's domain>.cdn.ampproject.org` <br>(par exemple, `https://nytimes-com.cdn.ampproject.org`)
 
-[tip type="read-on"] For information on AMP Cache URL formats, see these resources:
+[tip type="read-on"] Pour plus d'informations sur les formats d'URL de cache AMP, consultez ces ressources :
 
 - [Présentation du cache AMP Google](https://developers.google.com/amp/cache/overview) [/tip]
 
@@ -149,7 +149,7 @@ Pour les requêtes de même origine où l'en-tête `Origin` est manquant, AMP d�
 AMP-Same-Origin: true
 [/sourcecode]
 
-This custom header is sent by the AMP Runtime when an XHR request is made on the same origin (i.e., document served from a non-cache URL). Allow requests that contain the `AMP-Same-Origin:true` header.
+Cet en-tête personnalisé est envoyé par le runtime AMP lorsqu'une requête XHR est effectuée sur la même origine (c'est-à-dire un document diffusé à partir d'une URL ne provenant pas du cache). Autorisez les requêtes qui contiennent l'en-tête `AMP-same-origin:true`.
 
 ### Envoyer des en-têtes de réponse CORS <a name="send-cors-response-headers"></a>
 
@@ -328,7 +328,7 @@ Google AMP Cache met en cache les documents, images et polices AMP HTML pour opt
 
 ### Comportement passé (avant octobre 2019) <a name="past-behavior-before-october-2019"></a>
 
-When an AMP page was loading `https://example.com/some/font.ttf` from `@font-face src` attribute, AMP Cache will cache the font file and serve the resource as below with having the wild card `Access-Control-Allow-Origin`.
+Lorsqu'une page AMP chargeait `https://example.com/some/font.ttf` à partir de l'attribut `@font-face src`, AMP Cache mettait en cache le fichier de police et diffusait la ressource comme ci-dessous avec l'inconnue `Access-Control-Allow-Origin`.
 
 - URL `https://example-com.cdn.ampproject.org/r/s/example.com/some/font.tff`
 - Access-Control-Allow-Origin : *
@@ -419,7 +419,7 @@ access-control-allow-methods: POST, GET, OPTIONS
 
 #### Requête de test de la page AMP mise en cache <a name="test-request-from-cached-amp-page"></a>
 
-In a CORS request not from the same domain (i.e., cache), the `origin` header is part of the request.
+Dans une requête CORS ne provenant pas du même domaine (c'est-à-dire du cache), l'en-tête `origin` fait partie de la requête.
 
 Voici notre commande curl pour tester une requête de la page AMP mise en cache sur le cache Google AMP vers le fichier `examples.json` :
 
