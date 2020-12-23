@@ -48,33 +48,34 @@ AMPHTML 広告は、高速で高性能の広告を AMP ページにレンダリ�
 </tr></thead>
 <tbody>
 <tr>
-<td>Must use <code><html ⚡4ads></code> or <code><html amp4ads></code> as its enclosing tags.</td>
+<td>エンクロージングタグとして <code>&lt;html ⚡4ads></code> または <code>&lt;html amp4ads></code> を使用すること。</td>
 <td>バリデータは、クリエイティブドキュメントを一般的な AMP ドキュメントか制限された AMPHTML 広告ドキュメントのどちらであるかを識別し、適宜ディスパッチできるようにします。</td>
 </tr>
 <tr>
-<td>Must include <code><script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script></code> as the runtime script instead of <code>https://cdn.ampproject.org/v0.js</code>.</td>
+<td>ランタイムスクリプトとして、<code>https://cdn.ampproject.org/v0.js</code> ではなく、<code>&lt;script async src="https://cdn.ampproject.org/amp4ads-v0.js">&lt;/script></code> を含めること。</td>
 <td>クロスオリジンの iframe に配信される AMPHTML 広告のランタイムの動作をカスタマイズできます。</td>
 </tr>
 <tr>
-<td>Must not include a <code><link rel="canonical"></code> tag.</td>
+<td>
+<code>&lt;link rel="canonical"></code> タグを含めないこと。</td>
 <td>広告クリエイティブには「non-AMP canonical version」がなく、検索用に個別にインデックス化されないため、自己参照が無意味になります。</td>
 </tr>
 <tr>
-<td>Can include optional meta tags in HTML head as identifiers, in the format of <code><meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code>. Those meta tags must be placed before the <code>amp4ads-v0.js</code> script. The value of <code>vendor</code> and <code>id</code> are strings containing only [0-9a-zA-Z_-]. The value of <code>type</code> is either <code>creative-id</code> or <code>impression-id</code>.</td>
-<td>Those custom identifiers can be used to identify the impression or the creative. They can be helpful for reporting and debugging.<br><br><p>Example:</p>
+<td>HTML の head に識別子としてオプションのメタタグを含めることができる。形式は <code>&lt;meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code> とする。これらのメタタグは <code>amp4ads-v0.js</code> スクリプトの前に配置すること。<code>vendor</code> と <code>id</code> の値は [0-9a-zA-Z_-] のみを含む文字列。<code>type</code> の値は <code>creative-id</code> または <code>impression-id</code>。</td>
+<td>カスタム識別子はインプレッションかクリエイティブかを識別するために使用され、レポート作成とデバッグに役立ちます。<br><br><p>例:</p>
 <pre>
-<meta name="amp4ads-id"
+&lt;meta name="amp4ads-id"
   content="vendor=adsense,type=creative-id,id=1283474">
-<meta name="amp4ads-id"
+&lt;meta name="amp4ads-id"
   content="vendor=adsense,type=impression-id,id=xIsjdf921S"></pre>
 </td>
 </tr>
 <tr>
 <td>
-<code><amp-analytics></code> viewability tracking may only target the full-ad selector, via  <code>"visibilitySpec": { "selector": "amp-ad" }</code> as defined in <a href="https://github.com/ampproject/amphtml/issues/4018">Issue #4018</a> and <a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a>. In particular, it may not target any selectors for elements within the ad creative.</td>
-<td>In some cases, AMPHTML ads may choose to render an ad creative in an iframe.In those cases, host page analytics can only target the entire iframe anyway, and won’t have access to any finer-grained selectors.<br><br> <p>Example:</p> <pre>
-<amp-analytics id="nestedAnalytics">
-  <script type="application/json">
+<code>&lt;amp-analytics></code> ビューアビリティ追跡は、<code>"visibilitySpec": { "selector": "amp-ad" }</code> によって full-ad セレクタのみをターゲットできる。<a href="https://github.com/ampproject/amphtml/issues/4018">Issue #4018</a> と <a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a> で定義。特に、広告クリエイティブ内にある要素のセレクタをターゲットしない可能性がある。</td>
+<td>一部のケースでは、AMPHTML 広告は、iframe に広告クリエイティブをレンダリングすることとを選択する場合があります。このような場合でも、ホストページのアナリティクスは iframe 全体をターゲットし、より細かいセレクタにはアクセスできません。<br><br> <p>例:</p> <pre>
+&lt;amp-analytics id="nestedAnalytics">
+  &lt;script type="application/json">
   {
     "requests": {
       "visibility": "https://example.com/nestedAmpAnalytics"
@@ -87,9 +88,10 @@ AMPHTML 広告は、高速で高性能の広告を AMP ページにレンダリ�
       }
     }
   }
-  </script>
-</amp-analytics>
-</pre> <p>This configuration sends a request to the <code>https://example.com/nestedAmpAnalytics</code> URL when 50% of the enclosing ad has been continuously visible on the screen for 1 second.</p> </td>
+  &lt;/script>
+&lt;/amp-analytics>
+</pre> <p>この構成は、エンクロージング広告の 50% が 1 秒間画面に連続表示されると、リクエストを <code>https://example.com/nestedAmpAnalytics</code> URL に送信します。</p>
+</td>
 </tr>
 </tbody>
 </table>
