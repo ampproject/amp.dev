@@ -53,18 +53,18 @@ limitations under the License.
 
 ### シンプルセレクタ <a name="simple-selectors"></a>
 
-- [Type selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) `elementname`
-- [Class selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) `.classname`
-- [ID selector](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) `#idname`
-- [Universal selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) `*`
-- [Attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) `[attr=value]`
+- [タイプセレクタ](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) `elementname`
+- [クラスセレクタ](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) `.classname`
+- [ID セレクタ](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) `#idname`
+- [汎用セレクタ](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) `*`
+- [属性セレクタ](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) `[attr=value]`
 
 ### 結合子 <a name="combinators"></a>
 
-- [Adjacent sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator) `A + B`
-- [General sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator) `A ~ B`
-- [Child combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator) `A > B`
-- [Descendant combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator) `A B`
+- [隣接兄弟結合子](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator) `A + B`
+- [汎用兄弟結合子](https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator) `A ~ B`
+- [子結合子](https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator) `A > B`
+- [子孫結合子](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator) `A B`
 
 ### 疑似クラス <a name="pseudo-classes"></a>
 
