@@ -16,7 +16,7 @@ formats:
 
 ### <code>amp-pixel</code> を使用する
 
-Send pageview data to a specified URL using [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md):
+[ ` amp-pixel {/ code1} {/ a0}を使用して、指定されたURLにページビューデータを送信します。`](../../../../documentation/components/reference/amp-pixel.md)
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>
@@ -71,7 +71,7 @@ Send pageview data to a specified URL using [`amp-pixel`](../../../../documentat
 
 ## ページクリックのトラッキング <a name="tracking-page-clicks"></a>
 
-Learn how to track page clicks using [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), sending event data to a specified URL, and to [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
+ソーシャルインタラクションをトラッキングするには、[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) を使用して、イベントデータを指定の URL と [Google アナリティクス](https://developers.google.com/analytics/devguides/collection/amp-analytics/)に送信します。
 
 ### 指定の URL にデータを送信する
 
