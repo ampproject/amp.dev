@@ -32,7 +32,7 @@ formats:
     <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
 
     <!--
-      We'll use [`amp-mustache`](/documentation/components/amp-mustache) o render the dropdown icon linked to the server responded subscription state.
+      We'll use [`amp-mustache`](/documentation/components/amp-mustache) to render the dropdown icon linked to the server responded subscription state.
     -->
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
 
@@ -157,7 +157,7 @@ formats:
     <!--
       #### Step 2: Fetching the Current Subscription Setting
 
-We wrap the `select` element in an `amp-list` and set its `src` to the URL our server is listening for GET requests. This queries the user's current subscription setting.
+      We wrap the `select` element in an `amp-list` and set its `src` to the URL our server is listening for GET requests. This queries the user's current subscription setting.
 
       We use an `amp-mustache` template to render the `select` element and ensure that the `option` element corresponding to the user's subscription setting has the `selected` attribute. To understand why the code is duplicative, consider that the `selected` attribute is a [boolean attribute](https://www.w3.org/TR/2011/WD-html5-author-20110809/common-microsyntaxes.html#boolean-attribute) and review the [`amp-mustache` restrictions](/documentation/components/amp-mustache/#restrictions).
 
@@ -195,7 +195,7 @@ We wrap the `select` element in an `amp-list` and set its `src` to the URL our s
 
       The `name` attribute of the `select` element is set to `nextSubscription`. `nextSubscription` is the name of the form data field where the server expects the user's new subscription setting to be in the POST request (see the [Server section](<% base_path %>/#server)) and the `select` element contains the user's selected subscription setting.
 
-      Finally, we trigger the form submission when the `select` element's value changes. We do so by using the [`on` attribute](/documentation/guides-and-tutorials/learn/common_attributes#on) to attach an event handler to the `select` element's [`change` event](/documentation/guides-and-tutorials/learn/amp-actions-and-events#input-elements) , invoking the `form` element's [`submit` action]. [`submit` action](/documentation/guides-and-tutorials/learn/amp-actions-and-events#form_1). Note that we gave the `form` element an `id` so that we could refer to it in the event handler.
+      Finally, we trigger the form submission when the `select` element's value changes. We do so by using the [`on` attribute](/documentation/guides-and-tutorials/learn/common_attributes#on) to attach an event handler to the `select` element's [`change` event](/documentation/guides-and-tutorials/learn/amp-actions-and-events#input-elements), invoking the `form` element's [`submit` action]. [`submit` action](/documentation/guides-and-tutorials/learn/amp-actions-and-events#form_1). Note that we gave the `form` element an `id` so that we could refer to it in the event handler.
 
       You can test the code by selecting a new subscription setting and refreshing the page. The `select` element's subscription setting on page load is now the one you selected!
     -->
