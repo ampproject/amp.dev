@@ -33,4 +33,4 @@ Si vous n'avez qu'une seule page, et que cette page est une page AMP, vous devez
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-[tip type="read-on"] **READ ON –** Learn more about how Google finds AMP pages in [Google Search guidelines for AMP pages](https://support.google.com/webmasters/answer/6340290). [/tip]
+[tip type="read-on"] **LIRE -** En savoir plus sur la façon dont Google trouve les pages AMP dans les [consignes de recherche Google pour les pages AMP](https://support.google.com/webmasters/answer/6340290). [/tip]
