@@ -1,5 +1,5 @@
 ---
-"$title": Advertise in Web Stories
+"$title": Annonces dans les stories Web
 "$order": '3'
 description: "Les stories Web s'affichent en plein écran et plongent les lecteurs dans le contenu. La diffusion de stories publicitaires permet une intégration fluide et sans interruption ..."
 formats:
@@ -15,7 +15,7 @@ Les stories Web utilisent un seul composant [`amp-story-auto-ads`](../../../docu
 
 [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) est un wrapper placé autour du composant [`amp-ad`](../../../documentation/components/reference/amp-ad.md). Il insère de façon dynamique une ou plusieurs annonces pendant que l'utilisateur consomme le contenu de la story. Pour garantir la meilleure expérience utilisateur:
 
-1. Ads are pre-rendered by the Web Stories runtime, then inserted. This guarantees that the users will never be shown a blank or unloaded ad.
+1. Les annonces sont pré-affichées par le runtime Web Stories, avant d'être insérées. Cela garantit que les utilisateurs ne verront jamais une annonce vierge ou non chargée.
 
 2. La densité des annonces est optimisée avec le rapport de contenu pour éviter la sursaturation. Le composant [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) décide quand et où insérer des annonces à mesure que l'utilisateur progresse.
 
