@@ -23,7 +23,7 @@ Les documents AMP valides apparaissent et se comportent généralement de la mê
 Si un document particulier apparaît et se comporte comme prévu sur votre origine, mais pas lorsqu'il est affiché via le cache ([comment cartographier les URL d'origine vers le cache AMP de Google](https://developers.google.com/amp/cache/overview#amp-cache-url-format)), essayez ce qui suit :
 
 1. Ouvrez la console des outils de développement/d'erreur de votre navigateur et résolvez les erreurs ou les avertissements qui apparaissent.
-2. Run the document through [an AMP document validator](https://search.google.com/test/amp) and resolve any unexpected errors or warnings.
+2. Exécutez le document via [AMPBench](https://search.google.com/test/amp) et résolvez les erreurs ou avertissements inattendus.
 
 Si vous rencontrez toujours un problème après avoir suivi ces étapes, consultez le tableau ci-dessous.
 
@@ -39,7 +39,7 @@ Si vous rencontrez toujours un problème après avoir suivi ces étapes, consult
   <tbody>
     <tr>
       <td>Les polices Web n'apparaissent pas (des polices de remplacement sont utilisées)</td>
-      <td>The AMP Cache is not allowlisted by the font provider.</td>
+      <td>Le cache AMP n'est pas répertorié en blanc par le fournisseur de polices.</td>
       <td>Contactez le fournisseur de polices et demandez-lui d'autoriser <a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">tous les caches</a> .</td>
     </tr>
     <tr>
