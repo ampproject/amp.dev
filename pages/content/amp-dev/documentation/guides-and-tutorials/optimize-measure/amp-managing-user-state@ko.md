@@ -32,15 +32,15 @@ limitations under the License.
 
 **목차**
 
-- [Background](#background)
-- [Implementation guide](#implementation-guide)
-    - [Before getting started](#before-getting-started)
-    - [Task 1: For non-AMP pages on the publisher origin, set up an identifier and send analytics pings](#task1)
-    - [Task 2: For AMP pages, set up an identifier and send analytics pings by including Client ID replacement in amp-analytics pings](#task2)
-    - [Task 3: Process analytics pings from pages on the publisher origin](#task3)
-    - [Task 4: Process analytics pings from AMP cache or AMP viewer display contexts and establish identifier mappings (if needed)](#task4)
-    - [Task 5: Using Client ID in linking and form submission](#task5)
-- [Strongly recommended practices](#strongly-recommended-practices)
+- [배경 설명 ](#background)
+- [구현 가이드 ](#implementation-guide)
+    - [시작하기 전](#before-getting-started)
+    - [태스크 1: 퍼블리셔 출처의 비 AMP 페이지에서 식별자 설정 및 분석 핑 전송](#task1)
+    - [태스크 2: AMP 페이지에서 amp-analytics 핑에 클라이언트 ID 대체 값을 포함하여 식별자 설정 및 분석 핑 전송](#task2)
+    - [태스크 3: 퍼블리셔 출처의 페이지에서 분석 핑 처리](#task3)
+    - [태스크 4: AMP 캐시 또는 AMP 뷰어 표시 컨텍스트의 분석 핑 처리 및 식별자 매핑 설정(필요한 경우) ](#task4)
+    - [태스크 5: 연결 시 클라이언트 ID 사용 및 양식 제출 ](#task5)
+- [강력 권고 사항 ](#strongly-recommended-practices)
 
 오늘날의 웹에서 사용자 상태는 중요한 개념입니다. 사용자 상태를 관리하여 활성화 가능한 사용 사례를 살펴보세요.
 
@@ -93,10 +93,10 @@ AMP를 콘텐츠가 어디서든 빠르게 로드될 수 있게 지원하는 휴
 
 **컨텍스트 1: 퍼블리셔의 출처.** AMP 페이지는 퍼블리셔의 사이트에서 호스팅되고 해당 사이트를 통해 액세스 가능하도록 배포됩니다. 예를 들어, `https://example.com`에서 `https://example.com/article.amp.html`를 찾을 수 있습니다.
 
-Publishers can choose to publish exclusively in AMP, or to publish two versions of content (that is, AMP content "paired" with non-AMP content). The "paired" model requires some [particular steps](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/discovery) to ensure the AMP versions of pages are discoverable to search engines, social media sites, and other platforms. Both publishing approaches are fully supported; it's up to the publisher to decide on which approach to take.
+퍼블리셔는 콘텐츠를 AMP 페이지로만 게시하거나 두 가지 버전으로 게시하도록 선택할 수 있습니다(즉, AMP 콘텐츠가 비 AMP 콘텐츠와 "한 쌍"으로 제공되는 것입니다). 이와 같은 “한 쌍” 모델을 사용할 경우 검색 엔진, 소셜 미디어 사이트 및 기타 플랫폼에서 페이지의 AMP 버전을 검색할 수 있도록 [특정 단계](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/discovery)를 거쳐야 합니다. 두 가지 게시 접근 방식 모두 완전히 지원되며, 어떤 방식을 선택할지는 퍼블리셔가 정하게 됩니다.
 
 > **참고:**
-> Due to the "paired" publishing model just described, the publisher’s origin (in the example above, `https://example.com`) is a context in which **both AMP and non-AMP content can be accessed**. Indeed, it’s the only context in which this can happen because AMP caches and AMP viewers, described below, only deliver valid AMP content.
+> 앞서 설명해드린 “한 쌍” 게시 모델에 따르면 퍼블리셔의 출처(상단의 예시에서는 `https://example.com`)는 **AMP 및 비 AMP 콘텐츠에 모두 액세스할 수 있는** 컨텍스트입니다. 물론 아래 설명과 같이 AMP 캐시 및 AMP 뷰어는 AMP 콘텐츠만을 전달하므로, 컨텍스트 1은 두 가지 버전이 모두 지원되는 유일한 컨텍스트입니다.
 
 **컨텍스트 2: AMP 캐시.** AMP 파일이 타사 캐시로 클라우드에서 캐싱되면 콘텐츠가 사용자의 모바일 기기에 도달하는 데 필요한 시간이 단축됩니다.
 
@@ -118,7 +118,7 @@ AMP 캐시 사례와 마찬가지로 AMP 뷰어의 도메인도 퍼블리셔 출
 
 이 시나리오에서 사용자가 AMP 뷰어 컨텍스트에서 게시자 출처 컨텍스트로 이동했으며, 이벤트 사이에 시간이 흘렀음에도 일관성 있는 장바구니 경험이 제공되었습니다. 이러한 경험은 무척 합리적이며, 여러분이 장바구니 기능을 설계하는 중이라면 지원을 추가하는 것이 좋습니다. 그렇다면 이 기능은 어떻게 구현할 수 있을까요?
 
-**To enable this and any experience involving user state, all contexts the user traverses must share their individually-maintained state with each other.** "Perfect!", you say, with the idea to share the cookie values with user identifiers across these contextual boundaries. One wrinkle: even though each of these contexts displays content controlled by the same publisher, they each see the other as a third-party because each context lives on different domains.
+**이 기능 및 사용자 상태가 포함된 모든 경험을 구현하려면 사용자가 이동하는 모든 컨텍스트는 개별적으로 관리되는 상태를 서로 공유해야 합니다.** 컨텍스트의 경계를 가로질러 사용자 식별자가 포함된 쿠키 값을 공유한다는 아이디어가 “완벽!”하다고 생각하시겠죠. 다만, 한 가지 작은 문제가 있습니다. 바로 이러한 각각의 컨텍스트는 동일한 퍼블리셔에서 제어되는 ​​콘텐츠를 표시하지만, 각 컨텍스트의 도메인이 다르기 때문에 서로를 타사로 간주한다는 점입니다.
 
 <amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png" width="1030" height="868">
   <noscript><img alt="AMP가 여러 컨텍스트에 표시되는 기능은 각 컨텍스트에 식별자를위한 자체 저장소가 있음을 의미합니다." src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png"></noscript></amp-img>
@@ -129,7 +129,7 @@ AMP 캐시 사례와 마찬가지로 AMP 뷰어의 도메인도 퍼블리셔 출
 
 이 섹션에서는 사용자 상태 관리에 대한 권고 사항을 제공합니다. 아래 태스크는 진행 과정으로 제시되지만 크게 2가지 부분으로 볼 수 있습니다.
 
-**Chunk #1: Fundamental implementation:** Tasks 1-4 are essential toward getting the basics working. They rely on a minimal set of features needed to get the job partially done: AMP’s Client ID substitution, reading and writing of cookies, and maintaining a backend mapping table. Why "partially"? Because the steps conveyed in these tasks rely on reading and writing cookies and because the browser’s cookie settings may prevent this in certain circumstances, this set of tasks is likely to be insufficient for fully managing user state in all scenarios.
+**1번째 부분: 기본적 구현:** 태스크 1-4는 기본 작업을 완료하는 데 반드시 필요합니다. 이때 부분적 구현 완료에 필요한 최소한의 기능 집합을 사용하여 AMP 클라이언트 ID 대체, 쿠키 읽기 및 작성, 백엔드 매핑 테이블 관리 등을 수행합니다. 그런데 왜 "부분적"일까요? 이 태스크에서 수행되는 단계가 쿠키의 읽기 및 작성에 의존적이며 특정 상황에서 브라우저의 쿠키 설정에 따라 금지될 수 있기 때문입니다. 이러한 태스크 집합만으로는 모든 시나리오에서 사용자 상태를 완전히 관리하기에 부족할 수 있습니다.
 
 기초를 마련한 후 다음으로 더 협소한 범위의 사용 사례를 통해 이 주제를 다시 살펴보며, 그 경우에는 사용 사례의 완전한 솔루션이 제시됩니다.
 
@@ -171,7 +171,7 @@ n34ic982n2386n30 ⇒ $sample_id
 
 퍼블리셔 출처에서 제공되는 비 AMP 페이지를 사용 중인 경우 이러한 페이지에서 사용될 수 있도록 일관적이고 안정적인 식별자를 설정합니다. 해당 설정은 일반적으로 [퍼스트 파티 쿠키를 통해 구현](https://en.wikipedia.org/wiki/HTTP_cookie#Tracking)됩니다.
 
-For the purposes of our example, let’s say you’ve set a cookie called `uid` ("user identifier") that will be created on a user’s first visit. If it’s not the user’s first visit, then read the value that was previously set on the first visit.
+예시의 목적에 맞춰 사용자의 최초 방문 시 생성된 쿠키 이름이 `uid`(“user identifier”)로 설정되었다고 가정하겠습니다. 사용자의 최초 방문이 아닌 경우 이전에 최초 방문 시 설정되었던 값을 확인합니다.
 
 즉 퍼블리셔 출처의 비 AMP 페이지 상태에는 두 가지 케이스가 있습니다.
 
@@ -212,7 +212,7 @@ https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_ident
 user_id=$publisher_origin_identifier
 [/sourcecode]
 
-The use of "`user_id`" here should be determined by what your analytics server expects to process and is not specifically tied to what you call the cookie that stores the identifier locally.
+“`user_id`”의 사용은 분석 서버가 처리하고자 하는 내용에 따라 결정되어야 하며 로컬에서 식별자를 저장하는 쿠키의 이름과 특별히 연관된 것은 아닙니다.
 
 <a id="task2"></a>
 
@@ -220,7 +220,7 @@ The use of "`user_id`" here should be determined by what your analytics server e
 
 이제 AMP 페이지로 이동하여 분석용 식별자를 설정하고 전송하는 방식을 살펴보겠습니다. 이러한 방식은 AMP 페이지가 표시되는 컨텍스트에 관계없이 적용 가능하므로, AMP 캐시를 통해 지원되거나 AMP 뷰어에 표시되는 퍼블리셔 출처의 모든 AMP 페이지에서 사용할 수 있습니다.
 
-Through usage of features that require Client ID, AMP will do the "under the hood" work to generate and store client ID values and surface them to the features that require them. One of the principal features that can use AMP’s Client ID is [amp-analytics](https://amp.dev/documentation/components/amp-analytics), which happens to be exactly what we’ll need to implement our analytics use case example.
+클라이언트 ID가 필요한 기능을 사용하여 AMP는 클라이언트 ID 값을 생성 및 저장하고 이를 필요로 하는 기능에 표시하는 "내부적" 작업을 수행합니다. AMP 클라이언트 ID를 사용할 수 있는 주요 기능은 [amp-analytics](https://amp.dev/documentation/components/amp-analytics)입니다. 분석 사용 사례를 구현하는 데 필요한 바로 그 기능이죠.
 
 AMP 페이지에서 클라이언트 ID를 포함한 amp-analytics 핑을 구성합니다.
 
@@ -242,9 +242,9 @@ AMP 페이지에서 클라이언트 ID를 포함한 amp-analytics 핑을 구성�
 amp-analytics 구현의 나머지 부분은 [amp-analytics 구성](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/)에서 amp-analytics 요청 설정 방법 또는 분석 벤더의 요청 수정 등의 자세한 내용을 참조하세요. 직접 정의하거나 기타 [AMP 대체](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)를 활용하여 추가 데이터를 전송하도록 핑을 더 많이 수정할 수 있습니다.
 
 > **유용한 정보:**
-> Why did we use of the name `uid` for the parameter passed to the Client ID feature? The parameter that the `clientId(...)` substitution takes is used to define scope. You can actually use the Client ID feature for many use cases and, as a result, generate many client IDs. The parameter differentiates between these use cases and so you use it to specify which use case you would like a Client ID for. For instance, you might want to send different identifiers to third parties like an advertiser and you could use the "scope" parameter to achieve this.
+> 클라이언트 ID 기능에 전달된 매개변수에 `uid`라는 이름이 사용된 이유는 무엇일까요? `clientId(...)` 대체 시 필요한 매개변수는 범위를 정의하는 데 사용됩니다. 실제로 클라이언트 ID 기능은 다양한 사용 사례에서 활용하고 결과적으로 많은 클라이언트 ID를 생성할 수 있습니다. 이 매개변수는 사용 사례별로 다르므로 클라이언트 ID를 사용하고자 하는 사례에 따라 지정할 수 있습니다. 예를 들어 광고주와 같은 타사에 다른 식별자를 전송하고 이러한 목표 달성을 위해 "범위" 매개변수를 사용할 수 있습니다.
 
-On the publisher origin, it’s easiest to think of "scope" as what you call the cookie. By recommending a value of `uid` for the Client ID parameter here in [Task 2](#task2), we align with the choice to use a cookie called `uid` in [Task 1](#task1).
+퍼블리셔 출처에서 "범위"를 쿠키로 치환하여 생각하면 간편합니다. <a>태스크 2</a>에서 클라이언트 ID의 <code>uid</code> 값을 추천함으로써 <a>태스크 1</a>에서 <code>uid</code>라고 명명한 쿠키를 사용한 선택과 일치하게 됩니다.
 
 <a id="task3"></a>
 
@@ -291,7 +291,7 @@ On the publisher origin, it’s easiest to think of "scope" as what you call the
 과도 집계 문제를 해결하려면 다음 전략을 사용해야 합니다. 이 전략의 효과는 타사 쿠키를 읽거나 작성하는 것이 허용되는지에 따라 달라집니다.
 
 - **즉각적인 식별자 조정: 퍼블리셔 출처 쿠키에 액세스하거나 해당 쿠키를 변경할 수 있는 경우**, 퍼블리셔 출처 식별자를 사용 또는 생성하고 분석 요청에 포함된 다른 식별자는 무시합니다. 두 컨텍스트 간 활동을 성공적으로 연결할 수 있습니다.
-- **Delayed identifier reconciliation: If you cannot access or change the publisher origin identifier (i.e. the cookies)**, then fall back to the AMP Client ID that comes within the analytics request itself. Use this identifier as an "**alias**", rather than using or creating a new publisher origin identifier (cookie), which you cannot do (because of third party cookie blocking), and add the alias to a **mapping table**. You will be unsuccessful in immediately linking activity between the two contexts, but by using a mapping table you may be able to link the AMP Client ID value with the publisher origin identifier on a future visit by the user. When this happens, you will have the needed information to link the activity and reconcile that the page visits in the different contexts came from the same user. Task 5 describes how to achieve a complete solution in specific scenarios where the user traverses from one page immediately to another.
+- **지연된 식별자 조정: 퍼블리셔 출처 식별자(쿠키)에 액세스하거나 해당 쿠키를 변경할 수 없는 경우**, 분석 요청 자체에 포함된 AMP 클라이언트 ID로 폴백합니다. (타사 쿠키 차단으로 인해) 불가능한 새 퍼블리셔 출처 식별자(쿠키)를 사용하거나 생성하는 대신 해당 식별자를 “**별칭**”으로 사용하고, 별칭을 **매핑 테이블**에 추가합니다. 두 컨텍스트 간의 활동을 즉시 연결할 수는 없지만 매핑 테이블을 사용하면 사용자가 나중에 방문할 경우 AMP 클라이언트 ID 값을 퍼블리셔 출처의 식별자와 연결할 수 있습니다. 이러한 작업이 수행되면 활동을 연결하고 동일한 사용자가 다른 컨텍스트에서 페이지를 방문한 경우 조정하는 데 필요한 정보를 얻을 수 있습니다. 태스크 5는 사용자가 한 페이지에서 다른 페이지로 즉시 이동하는 특정 시나리오의 완전한 솔루션을 제시합니다.
 
 #### 구현 단계 <a name="implementation-steps"></a>
 
@@ -309,7 +309,7 @@ On the publisher origin, it’s easiest to think of "scope" as what you call the
 <table>
   <tr>
     <th width="50%"><strong>퍼블리셔 출처의 사용자 ID</strong></th>
-    <th width="50%"><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
+    <th width="50%"><strong>퍼블리셔 출처가 아닌 AMP 페이지의 사용자 ID(“별칭”)</strong></th>
   </tr>
   <tr>
     <td>퍼블리셔 출처의 식별자에서 발생하거나 퍼블리셔 출처 식별자 액세스가 불가능한 경우 예비 값으로 생성됨</td>
@@ -325,12 +325,12 @@ https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id
 
 AMP 클라이언트 ID `$amp_client_id`에 해당하는 강조 표시된 부분을 추출합니다.
 
-Next, examine the mapping table to try and find the same value in the "alias" column:
+다음으로 매핑 테이블을 검사하여 “별칭” 열에서 동일한 값을 찾습니다.
 
 <table>
   <tr>
     <th width="50%"><strong>퍼블리셔 출처의 사용자 ID</strong></th>
-    <th width="50%"><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
+    <th width="50%"><strong>퍼블리셔 출처가 아닌 AMP 페이지의 사용자 ID(“별칭”)</strong></th>
   </tr>
   <tr>
     <td><code>$existing_publisher_origin_identifier</code></td>
@@ -351,7 +351,7 @@ Next, examine the mapping table to try and find the same value in the "alias" co
 <table>
   <tr>
     <th><strong>퍼블리셔 출처의 사용자 ID</strong></th>
-    <th><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
+    <th><strong>퍼블리셔 출처가 아닌 AMP 페이지의 사용자 ID(“별칭”)</strong></th>
   </tr>
   <tr>
     <td> <code>$prospective_identifier</code>(핑 수신 시점에 JIT 방식으로 생성됨)</td>
@@ -384,7 +384,7 @@ Next, examine the mapping table to try and find the same value in the "alias" co
 
 [AMP 변수 대체](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md)의 두 가지 유형을 활용한 접근 방식을 따릅니다.
 
-**To update outgoing links to use a Client ID substitution:** Define a new query parameter, `ref_id` ("referrer ID"), which will appear within the URL and indicate the **originating context’s identifier** for the user. Set this query parameter to equal the value of AMP’s Client ID substitution:
+**발신 링크를 업데이트하여 클라이언트 ID 대체 기능 사용하기:** 새 쿼리 매개변수인 `ref_id`(“referrer ID”)를 정의합니다. 이 매개변수는 URL 내에 표시되며 **시작 컨텍스트의 식별자**를 사용자에게 알려줍니다. 쿼리 매개변수를 AMP 클라이언트 ID 대체 값과 동일하게 설정합니다.
 
 [sourcecode:html]
 <a
@@ -424,7 +424,7 @@ Next, examine the mapping table to try and find the same value in the "alias" co
 />
 [/sourcecode]
 
-By taking these steps, the Client ID is available to the target server and/or as a URL parameter on the page the user lands on after the link click or form submission (the **destination context**). The name (or "key") will be `ref_id` because that’s how we’ve defined it in the above implementations and will have an associated value equal to the Client ID. For instance, by following the link (`<a>` tag) defined above, the user will navigate to this URL:
+이러한 단계를 수행하면 클라이언트 ID가 대상 서버에서 지원되거나 링크 클릭 또는 양식 제출 후 사용자에게 표시되는 페이지의 URL 매개변수로 사용될 수 있습니다(**대상 컨텍스트**). 이름(또는 “키”)가`ref_id`로 설정되는 이유는 상기 구현에서 그렇게 정의되었으며 클라이언트 ID와 동일한 관련 값을 보유하기 때문입니다. 예를 들어 위에서 정의된 링크(`<a>` 태그)를 따라가면 사용자는 다음 URL로 이동합니다.
 
 [sourcecode:http]
 https://example.com/step2.html?ref_id=$amp_client_id
@@ -457,7 +457,7 @@ URL을 통해 정보가 제공되며 해당 정보를 처리하고자 할 경우
 <amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
   <noscript><img alt="URL을 통해 제공된 이전 컨텍스트의 식별자와 현재 컨텍스트의 식별자를 포함하는 분석 핑을 구성하는 방법의 예" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
 
-*Updates to AMP page:* Use the Query Parameter substitution feature in your amp-analytics configuration to obtain the `ref_id` identifier value within the URL. The Query Parameter feature takes a parameter that indicates the "key" of the desired key-value pair in the URL and returns the corresponding value. Use the Client ID feature as we have been doing to get the identifier for the AMP page context.
+분석 요청이 퍼블리셔 출처의 페이지에서 발생한 경우 <code>uid</code>에 해당하는 값을 분석 기록 식별자로 선택해야 합니다. `orig_uid` 값은 “별칭”으로 선택합니다.
 
 [sourcecode:http] https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)} [/sourcecode]
 
@@ -503,7 +503,7 @@ https://analytics.example.com/ping?type=pageview&orig_user_id=$amp_client_id&use
 
 계속 진행하기 전 아래의 [매개변수 유효성 검사](#parameter-validation)에서 설명된 단계를 참조하여 `orig_user_id` 및 `user_id`로 표시된 값 모두를 신뢰할 것인지 확인합니다.
 
-Check if either of the values corresponding to the inbound analytics ping are present in your mapping table. In our example above, the first pageview happens on an AMP page that’s NOT on the publisher origin followed by the second pageview that happens on the publisher origin. As a result, the values for the analytics ping query parameters will look like this:
+해당 값 중 하나가 매핑 테이블에 포함되어 있는지 확인합니다. 상기 예시에서는 첫 번째 페이지뷰는 퍼블리셔 출처가 아닌 AMP 페이지에서 발생하고, 다음으로 두 번째 페이지뷰는 퍼블리셔 출처에서 발생했습니다. 결과적으로 분석 핑 쿼리 매개변수의 값은 다음과 같습니다.
 
 **케이스 1: 퍼블리셔 출처의 페이지에서 분석 핑이 전송된 경우 식별자 배열**
 
@@ -511,7 +511,7 @@ Check if either of the values corresponding to the inbound analytics ping are pr
   <tr>
     <th width="20%"></th>
     <th width="40%"><strong>퍼블리셔 출처의 사용자 ID</strong></th>
-    <th width="40%"><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
+    <th width="40%"><strong>퍼블리셔 출처가 아닌 AMP 페이지의 사용자 ID(“별칭”)</strong></th>
   </tr>
   <tr>
     <td><strong>분석 핑에서 표시되는 방식</strong></td>
@@ -540,7 +540,7 @@ Check if either of the values corresponding to the inbound analytics ping are pr
   <tr>
     <th width="20%"> </th>
     <th width="40%"><strong>퍼블리셔 출처의 사용자 ID</strong></th>
-    <th width="40%"><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
+    <th width="40%"><strong>퍼블리셔 출처가 아닌 AMP 페이지의 사용자 ID(“별칭”)</strong></th>
   </tr>
   <tr>
     <td><strong>분석 핑에서 표시되는 방식</strong></td>
@@ -559,16 +559,16 @@ Check if either of the values corresponding to the inbound analytics ping are pr
   </tr>
 </table>
 
-When you are searching the mapping table, take note of which situation applies and search for values within the columns of the mapping table where you expect them to appear. For instance, if the analytics ping is being sent from a page on the publisher origin (Case #1), then check for values keyed by `user_id` in the mapping table column "User ID on publisher origin" and check for values keyed by `orig_user_id` in the column "User ID on AMP page that’s NOT on publisher origin (‘alias’)".
+매핑 테이블을 검색할 경우에는 적용되는 상황에 유의하고 값이 표시될 것으로 기대되는 매핑 테이블의 열에서 값을 검색합니다. 예를 들어 분석 핑이 퍼블리셔 출처의 페이지에서 전송되는 경우(케이스 1) 매핑 테이블 열 중 "퍼블리셔 출처의 사용자 ID"에서 `user_id`로 키 처리된 값을 검사하고 "퍼블리셔 출처가 아닌 AMP 페이지의 사용자 ID(‘별칭’)" 열에서 `orig_user_id`로 키 처리된 값을 검사합니다.
 
 매핑 테이블에서 사용 중인 식별자 값을 찾을 수 없는 경우 새 매핑을 설정합니다.
 
-- If the analytics request comes from a page on your publisher origin, then you should choose the value corresponding to `uid` to be the analytics record identifier; choose the value of `orig_uid` to be the "alias".
-- If the analytics request does not come from a page on your publisher origin, then you should choose the value corresponding to `uid` to be an "alias" value in the mapping table. Then, proceed with the remaining instructions in [Task 4](#task4) to create a prospective publisher origin identifier and attempt to set this value as a cookie on the origin.
+- 분석 요청이 퍼블리셔 출처의 페이지에서 발생한 경우 `uid`에 해당하는 값을 분석 기록 식별자로 선택해야 합니다. `orig_uid` 값은 “별칭”으로 선택합니다.
+- 분석 요청이 퍼블리셔 출처의 페이지에서 발생하지 않은 경우 `uid`에 해당하는 값을 “별칭”으로 선택해야 합니다. 다음으로 [태스크 4](#task4)의 나머지 지침에 따라 진행하여 예비 퍼블리셔 출처 식별자를 생성하고 이 값을 출처의 쿠키로 설정합니다.
 
 ##### 매개변수 유효성 검사 <a name="parameter-validation"></a>
 
-Values contained in a URL can be maliciously changed, malformed, or somehow otherwise not be the values that you expect to be there. This is sometimes called cross site request forgery. Just as it is important to ensure that the analytics pings that your analytics server receives are coming from pages that you expect to be sending analytics pings, when you are "forwarding" on values that were part of the URL, be sure to validate the referrer to ensure you can trust these values.
+URL에 포함된 값은 악의적으로 변경되거나, 형식이 잘못되거나, 예상되는 값이 아닐 수 있습니다. 때때로 이런 경우를 사이트 간 요청 위조(CSRF)라고 부릅니다. 분석 서버가 수신한 분석 핑이 분석 핑을 전송할 것으로 예상되는 페이지에서 발생하였는지 확인하는 게 중요한 것처럼 URL의 일부 값을 "전달"할 경우에도 신뢰할 수 있는 값인지 확인하려면 참조자의 유효성을 검사해야 합니다.
 
 예를 들어 위의 단계에서 사용자가 클릭하여 해당 페이지로 이동할 수 있도록 다음 URL을 구성했습니다.
 
