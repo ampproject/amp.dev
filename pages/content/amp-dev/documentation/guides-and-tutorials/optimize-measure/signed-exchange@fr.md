@@ -14,7 +14,7 @@ Le contenu AMP signé est fourni *en plus* (plutôt qu'à la place) du contenu A
 
 {{ image('/static/img/docs/guides/sxg/sxg.png', 411, 293, layout='responsive', alt='Image displaying URL from signed exchange', caption=' ', align='' ) }}
 
-[tip type="note"] This feature is currently supported on Chrome, but implementation is planned for additional browsers. [/tip]
+[tip type="note"] Cette fonctionnalité est actuellement prise en charge sur Chrome, mais son implémentation est prévue pour d'autres navigateurs. [/tip]
 
 # Les échanges signés fonctionneront-ils pour moi?
 
