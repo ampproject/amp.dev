@@ -94,8 +94,7 @@ description: For web experiences requiring a high amount of customization AMP ha
 
 amp.dev は AMP で作られています！そのため、画像は [`amp-img`](../../../../documentation/components/reference/amp-img.md) 基準に一致していなければなりません。ビルドプロセスでは、以下の構文により、画像を適切な `amp-img` 形式に変換しています。
 
-<div class="ap-m-code-snippet"><pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}
-</pre></div>
+<div class="ap-m-code-snippet"><pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}</pre></div>
 
 ## セクションのフィルタリング
 
@@ -158,12 +157,7 @@ Read-on
 
 コードに二重波かっこが含まれる場合、コードの部分が囲まれている必要があります。二重波かっこは、[`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md?format=websites) テンプレートを使用している場合に見られることがよくあります。
 
-<div class="ap-m-code-snippet"><pre>```html
-{% raw	%}
-  // code with double curly braces
-{% endraw	%}
-```
-</pre></div>
+<div class="ap-m-code-snippet"><pre>```html<br>{% raw	%}<br>  // code with double curly braces<br>{% endraw	%}<br>```</pre></div>
 
 ### リスト内のコードスニペット
 
@@ -448,7 +442,6 @@ amp.dev の別のページにリンクする場合、参照はそのターゲッ
 
 ```html
 ## Example section <a name="example-section"></a>
-
 ```
 
 アンカーには、文字、数字、ダッシュ、およびアンダースコアのみを使用できます。見出しに一致するか、セクションを説明する短いアンカー名を英語で指定してください。ドキュメント内で一意のアンカー名を指定してください。
@@ -496,15 +489,15 @@ amp.dev の別のページにリンクする場合、参照はそのターゲッ
    </td>
   </tr>
   <tr>
-   <td>hello-world-tutorial.md    </td>
-   <td>hello_world_tutorial.md    </td>
+   <td>hello-world-tutorial.md</td>
+   <td>hello_world_tutorial.md</td>
   </tr>
   <tr>
-   <td>website-fundamentals.md    </td>
-   <td>websiteFundamentals.md    </td>
+   <td>website-fundamentals.md</td>
+   <td>websiteFundamentals.md</td>
   </tr>
   <tr>
-   <td>actions-and-events.md    </td>
-   <td>actionsandevents.md    </td>
+   <td>actions-and-events.md</td>
+   <td>actionsandevents.md</td>
   </tr>
 </table>
