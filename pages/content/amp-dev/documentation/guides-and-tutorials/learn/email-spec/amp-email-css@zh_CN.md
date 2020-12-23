@@ -53,18 +53,18 @@ AMP 电子邮件中**不**支持外部样式表。
 
 ### 简单选择器 <a name="simple-selectors"></a>
 
-- [Type selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) `elementname`
-- [Class selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) `.classname`
-- [ID selector](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) `#idname`
-- [Universal selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) `*`
-- [Attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) `[attr=value]`
+- [类型选择器](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) `elementname`
+- [类选择器](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) `.classname`
+- [ID 选择器](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) `#idname`
+- [通配选择器](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) `*`
+- [属性选择器](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) `[attr=value]`
 
 ### 连结符 <a name="combinators"></a>
 
-- [Adjacent sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator) `A + B`
-- [General sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator) `A ~ B`
-- [Child combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator) `A > B`
-- [Descendant combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator) `A B`
+- [相邻同级结合符](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator) `A + B`
+- [通用同级结合符](https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator) `A ~ B`
+- [子结合符](https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator) `A > B`
+- [后代结合符](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator) `A B`
 
 ### 伪类 <a name="pseudo-classes"></a>
 
