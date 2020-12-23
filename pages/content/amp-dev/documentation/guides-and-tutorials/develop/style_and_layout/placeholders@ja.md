@@ -33,7 +33,7 @@ contributors:
 </amp-anim>
 
 
-デフォルトでは、AMP 要素のリソースがダウンロードや初期化されていない場合でも、 プレースホルダが AMP 要素にすぐに表示されます。 準備ができると、AMP 要素は通常、プレースホルダを非表示にしてコンテンツを表示します。
+デフォルトでは、AMP 要素のリソースがダウンロードまたは初期化されていない場合でも、 プレースホルダが AMP 要素にすぐに表示されます。 AMP 要素の準備ができると、通常その要素がプレースホルダを非表示にしてコンテンツを表示します。
 
 [tip type="note"] <strong>注意 –</strong>  プレースホルダは AMP 要素でなくてもかまいません。 任意の HTML 要素をプレースホルダとして使用できます。[/tip]
 
@@ -45,7 +45,7 @@ contributors:
 - コンテンツを読み込めなかった場合（削除されたツイートなど）
 - 画像の種類がサポートされていない場合（すべてのブラウザでサポートされていない WebP など）
 
-You can set the `fallback` attribute on *any* HTML element, not just AMP elements. If specified, the `fallback` element must be a direct child of the AMP element.
+AMP要素だけでなく、*&nbsp;any {/ em1} HTML要素に` fallback {/ code0}属性を設定できます。指定する場合、` fallback {/ code2}要素はAMP要素の直接の子である必要があります。``*
 
 ##### 例: サポートされていない機能の場合
 
@@ -88,7 +88,7 @@ You can set the `fallback` attribute on *any* HTML element, not just AMP element
 
 ## プレースホルダとフォールバックの相互作用
 
-動的コンテンツ（[`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md)、[`amp-list`](../../../../documentation/components/reference/amp-list.md) など）に依存する AMP コンポーネントでは、フォールバックとプレースホルダは次のように作用します。
+動的コンテンツに依存する AMP コンポーネント（[`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md)、[`amp-list`](../../../../documentation/components/reference/amp-list.md) など）では、フォールバックとプレースホルダは次のように作用します。
 
 <ol>
   <li>コンテンツの読み込み中はプレースホルダが表示されます。</li>
