@@ -73,6 +73,6 @@ have a look and request a pull request there.
 
 - 자세한 내용: [iframe을 사용하지 않는 이유](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/why-not-iframe.md)
 - 자세한 내용: [AMP로 미인증 사용자 관리하기](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)
-- [amp-analytics sample](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
+- [amp-analytics 예시](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
 - [amp-analytics](https://amp.dev/documentation/components/amp-analytics) 참조 문서
 - [amp-analytics variables](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) 참조 문서
