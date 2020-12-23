@@ -100,43 +100,41 @@ amp.dev は AMP で作られています！そのため、画像は [`amp-img`](
 
 ドキュメントには、複数の AMP 形式に関連性のあるものもあれば、ほかの形式には関連性のない説明や情報がさらに必要なものもあります。こういったセクションについては、以下のショートコードで囲むことでフィルタリングすることができます。
 
-<div class="ap-m-code-snippet"><pre>&lsqb;filter formats="websites"]
+<div class="ap-m-code-snippet"><pre>&amp;lsqb;filter formats="websites"]
 This is only visible for [websites](?format=websites).
-&lsqb;/filter]
+&amp;lsqb;/filter]
 
-&lsqb;filter formats="websites"]
+&amp;lsqb;filter formats="websites"]
 This is only visible for [websites](?format=websites).
-&lsqb;/filter]
+&amp;lsqb;/filter]
 
-&lsqb;filter formats="websites, email"]
-This is visible for [websites](?format=websites) & [email](?format=email).
-&lsqb;/filter]
+&amp;lsqb;filter formats="websites, email"]
+This is visible for [websites](?format=websites) &amp; [email](?format=email).
+&amp;lsqb;/filter]
 
-&lsqb;filter formats="stories"]
+&amp;lsqb;filter formats="stories"]
 This is visible for [stories](?format=stories).
-&lsqb;/filter]
-</pre></div>
+&amp;lsqb;/filter]</pre></div>
 
 ## ヒント
 
 以下のショートコードでテキストを囲むことで、ヒントとコールアウトを追加できます。
 
-<div class="ap-m-code-snippet"><pre>&lsqb;tip type="default"]
+<div class="ap-m-code-snippet"><pre>&amp;lsqb;tip type="default"]
 Default tip
 [/tip]
 
-&lsqb;tip type="important"]
+&amp;lsqb;tip type="important"]
 Important
 [/tip]
 
-&lsqb;tip type="note"]
+&amp;lsqb;tip type="note"]
 Note
 [/tip]
 
-&lsqb;tip type="read-on"]
+&amp;lsqb;tip type="read-on"]
 Read-on
-[/tip]
-</pre></div>
+[/tip]</pre></div>
 
 ## コードスニペット
 
@@ -152,8 +150,7 @@ Read-on
 
 ```js
   // code sample
-```
-</pre></div>
+```</pre></div>
 
 コードに二重波かっこが含まれる場合、コードの部分が囲まれている必要があります。二重波かっこは、[`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md?format=websites) テンプレートを使用している場合に見られることがよくあります。
 
