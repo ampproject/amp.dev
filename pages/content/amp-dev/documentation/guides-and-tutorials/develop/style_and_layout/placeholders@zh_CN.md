@@ -22,6 +22,8 @@ contributors:
 
 标有 `placeholder` 属性的元素充当父级 AMP 元素的占位符。 如果指定，则 `placeholder` 元素必须是 AMP 元素的直接子级。标记为 `placeholder` 的元素将始终 `fill`（填充）父级 AMP 元素。
 
+[example preview="inline" playground="true" imports="amp-anim:0.1"]
+```html
 <amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
   layout="responsive"
   width="400"
@@ -31,7 +33,8 @@ contributors:
     layout="fill">
   </amp-img>
 </amp-anim>
-
+```
+[/example]
 
 默认情况下，占位符会立即对 AMP 元素显示，即使 AMP 元素的资源尚未下载或初始化。就绪后，AMP 元素一般会隐藏其占位符并显示内容。
 
@@ -51,6 +54,8 @@ contributors:
 
 在以下示例中，我们使用 `fallback` 属性告知用户浏览器不支持某个特定功能：
 
+[example preview="inline" playground="true" imports="amp-video:0.1"]
+```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
   height="360"
@@ -60,12 +65,15 @@ contributors:
     <p>This browser does not support the video element.</p>
   </div>
 </amp-video>
-
+```
+[/example]
 
 ##### 示例：提供不同格式的图片
 
 在以下示例中，我们使用 `fallback` 属性告知浏览器在 WebP 格式不受支持时，使用 JPEG 文件。
 
+[example preview="inline" playground="true"]
+```html
 <amp-img alt="Mountains"
   width="550"
   height="368"
@@ -78,7 +86,8 @@ contributors:
     layout="responsive"
     src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
 </amp-img>
-
+```
+[/example]
 
 ## 占位符和后备的互动
 
