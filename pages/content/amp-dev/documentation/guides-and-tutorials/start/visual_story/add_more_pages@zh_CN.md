@@ -43,7 +43,7 @@ author: bpaduch
 
 ## 第 3 页：小鸟
 
-演示如何在单个图层中显示图片和文字。
+演示如何为网页排列文字并显示会全屏播放的视频。
 
 <table class="noborder">
   <tr>
