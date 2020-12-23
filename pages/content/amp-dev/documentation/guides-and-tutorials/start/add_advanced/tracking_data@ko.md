@@ -1,8 +1,10 @@
 ---
-$title: 애널리틱스로 사용자 참여 추적하기
+"$title": 분석을 활용한 참여 추적
+"$order": '4'
+description: Analytics platforms are commonly integrated into websites through inline JavaScript snippets and function calls, which trigger events that are sent back to the analytics system.
 ---
 
-애널리틱스 플랫폼은 대개 분석 시스템으로 다시 전송되는 이벤트를 트리거하는 인라인 자바스크립트 스니펫과 함수 호출을 통해 웹사이트에 통합됩니다. AMP는 여러 분석 파트너를 대상으로 이 프로세스를 복제할 수 있도록 유연한 JSON 구성 구문을 제공합니다.
+일반적으로 애널리틱스 플랫폼은 분석 시스템으로 다시 전송되는 이벤트를 트리거하는 인라인 자바스크립트 스니펫과 함수 호출을 통해 웹사이트에 통합됩니다. AMP는 여러 분석 파트너를 대상으로 이 프로세스를 복제할 수 있도록 유연한 JSON 구성 구문을 제공합니다.
 
 다음은 기존의 자바스크립트 기반 Google 애널리틱스 추적의 예입니다. 나중에 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) JSON 형식으로 다시 작성하겠지만, 먼저 기존 접근방식부터 살펴보겠습니다.
 
@@ -91,10 +93,6 @@ AMP에서 이 기능을 복제하려면 먼저 문서의 `<head>`에 [`amp-analy
 
 통합하려는 사용자설정 추적 플랫폼이 있는 경우, [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)를 사용하고 추적 데이터를 전송할 맞춤설정된 URL 엔드포인트를 정의할 수 있습니다. [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 구성요소 참조 문서에서 자세히 알아보세요.
 
-[tip type="note"]
-`“UA-YYYY-Y”`는 Google 애널리틱스 계정 예시이므로, 사이트에 이 예제를 사용할 때는 웹사이트의 Google 애널리틱스 추적 코드를 대신 입력해야 합니다.
-[/tip]
+[tip type="note"] `“UA-YYYY-Y”`는 Google 애널리틱스 계정 예시이므로, 사이트에 이 예제를 사용할 때는 웹사이트의 Google 애널리틱스 추적 코드를 대신 입력해야 합니다. [/tip]
 
-[tip]
-더 간단한 추적 시스템에 관심이 있다면 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)에서 자세히 알아보세요.
-[/tip]
+[tip] 더 간단한 추적 시스템에 관심이 있다면 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)에서 자세히 알아보세요. [/tip]
