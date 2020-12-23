@@ -25,11 +25,11 @@ Une story Web place la première annonce après les deux premières pages dans l
   <amp-img placeholder width="360" height="640" src="/static/img/docs/stampads/stamp_gif_still.png">
   </amp-img></amp-anim>
 
-[tip type="note"] **NOTE –** A longer Web Story will typically create more opportunities for ad placement. The exact placement of the ad algorithm will continue to be optimized over time. [/tip]
+[tip type="note"] **NOTE –** Une story Web plus longue offre plus d'opportunités de placement publicitaire. Le placement exact de l'algorithme publicitaire continuera à être optimisé au fil du temps. [/tip]
 
 ## Interaction utilisateur
 
-Users can progress past ads the same way as normal story pages; by tapping the right two thirds of the screen.
+Les utilisateurs peuvent passer les annonces de la même manière que sur les pages de story normales: en touchant les deux tiers droits de l'écran.
 
 {{ image('/static/img/docs/stampads/story_ad_ui.png', 304, 512, layout='intrinsic', alt='Image showing the area users can tap to skip an ad', caption='Users can progress past ads by tapping the right two thirds of the screen.', align='' ) }}
 
@@ -39,7 +39,7 @@ Les utilisateurs interagissent directement avec l'annonce en appuyant sur le bou
 
 ## Configurer une story Web pour les annonces
 
-Web Stories cannot support an [`amp-ad`](../../../documentation/components/reference/amp-ad.md) directly on the page. Instead, all ads are fetched and displayed by the [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) component. The [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) component must be placed as a direct child element of [`amp-story`](../../../documentation/components/reference/amp-story.md).
+Les stories Web ne peuvent pas prendre en charge un attribut [`amp-ad`](../../../documentation/components/reference/amp-ad.md) directement sur la page. Au lieu de cela, toutes les annonces sont récupérées et affichées par l'extension [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md). Le composant [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) doit être placé en tant qu'élément enfant direct de [`amp-story`](../../../documentation/components/reference/amp-story.md).
 
 [sourcecode:html]
 <amp-story>
