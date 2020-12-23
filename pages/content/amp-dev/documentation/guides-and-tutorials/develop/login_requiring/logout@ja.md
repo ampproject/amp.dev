@@ -10,7 +10,7 @@ description: ログアウトボタンも、ログインボタンと同じよう�
 <button amp-access="loggedIn" amp-access-hide tabindex="0" on="tap:amp-access.login-sign-out" class="button-primary comment-button">Logout</button>
 [/sourcecode]
 
-[sourcecode:html] <button amp-access="loggedIn" amp-access-hide="" tabindex="0" on="tap:amp-access.login-sign-out" class="button-primary comment-button">Logout</button> [/sourcecode]
+Logout ボタンをクリックすると、[`amp-access`](../../../../documentation/components/reference/amp-access.md) JSON 構成の login オブジェクトの一部として指定した URL にリダイレクトされます。
 
 [sourcecode:json]
 {
@@ -21,4 +21,4 @@ description: ログアウトボタンも、ログインボタンと同じよう�
 }
 [/sourcecode]
 
-Logout ボタンをクリックすると、[`amp-access`](../../../../documentation/components/reference/amp-access.md) JSON 設定の login オブジェクトの一部として指定した URL にリダイレクトされます。
+ログインの場合と同様に、AMPByExample サーバーはログアウト リクエストを受け取ると、AMP ライブラリによって自動的に追加されるリターン URL クエリ パラメータを使用し、`#success=true` を追加してリダイレクトします。この時点で初期ページに戻り、ログインページで作成した AMPByExample Cookie（`ABE_LOGGED_IN`）は削除されます。
