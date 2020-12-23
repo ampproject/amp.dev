@@ -1,14 +1,17 @@
 ---
-$title: AMP Optimizer 작동 원리
-$order: 1
+"$title": AMP Optimizer 작동 원리
+"$order": '1'
 description: AMP Optimizer는 유효한 AMPHTML 문서를 입력 값으로 사용하고 "수동으로" 실행하기엔 매우 복잡한 추가 최적화를 적용하여 최적화된 버전으로 변환합니다. 이 가이드는 AMP Optimizer 작동 원리를 자세히 설명합니다.
+formats:
+- websites
+- stories
 author: sebastianbenz
 ---
 
 AMP Optimizer는 유효한 AMPHTML 문서를 입력하고 "수동으로" 실행하기엔 매우 복잡한 추가 최적화를 적용하여 최적화된 버전으로 변환합니다. `transformed` 속성을 통해 `html` 요소의 <strong>변환된 AMP</strong> 결과를 확인할 수 있습니다.
 
 ```
-<html ⚡ i-amphtml-layout i-amphtml-no-boilerplate transformed="self">
+<html ⚡ i-amphtml-layout i-amphtml-no-boilerplate transformed="self;v=1">
 ```
 
 참조: AMP 캐시는 변환된 다른 플래그를 사용합니다. 예를 들어 Google AMP 캐시는 `transformed=google;v=1`를 추가합니다.
@@ -29,7 +32,7 @@ AMP Optimizer는 서버 사이드 렌더링 레이아웃에서 이미지 최적�
 
 ⁣**1. AMP 상용구 제거: ** AMP 레이아웃을 사용한 각 요소에 레이아웃 전용 마크업이 삽입됩니다.
 
-⁣**2. AMP 내부 CSS 스타일 인라인화: ** AMP 상용구 코드가 <a href="https://cdn.ampproject.org/v0.css" data-md-type="link">AMP-런타임 CSS 스타일</a>인 <style data-md-type="raw_html" amp-runtime="">...</style>로 대체됩니다. 서버 측에서 렌더링된 문서가 아닌 경우 AMP는 런타임에 이러한 스타일을 추가합니다. 하지만 서버 측에서 렌더링된 AMP 페이지의 경우 AMP가 로드되기 전 AMP 레이아웃이 작동하는 데 이러한 코드가 필요합니다. 따라서 잠재적 버전 충돌을 방지하기 위해 런타임에서 AMP는 i-amphtml-version="011905222334000"에 지정된 버전과 현재 AMP 버전 간 차이가 있는지 확인하고, 그렇지 않은 경우 CSS를 최신 버전으로 업데이트합니다.
+⁣**2. Inline AMP-internal CSS styles: ** the AMP-boilerplate code is replaced by the <a href="https://cdn.ampproject.org/v0.css">AMP-runtime CSS styles</a>: <style amp-runtime>...</style>. For non-server-side rendered documents, AMP adds these styles at runtime. However, server-side-rendered AMP pages require these for the AMP layouts to work before AMP has been loaded. To avoid potential version conflicts, at runtime, AMP will check if the version specified in i-amphtml-version="011905222334000" differs from the current AMP version and will update the CSS with the latest version if not.
 
 ```
 <style amp-runtime i-amphtml-version="011905222334000">html{overflow-x:hidden!important}html.i-amphtml-...</style>
