@@ -155,7 +155,6 @@ author: CrystalOnScript
     }
   </script>
 </amp-animation>
-
 ```
 
 上述设置将使每个动画按顺序播放 3 秒。
