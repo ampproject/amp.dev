@@ -128,17 +128,30 @@ gulp.task('default', ['amphtml:validate'], function () {
 
 现在，我们来验证一个真实的 AMP HTML 网页：
 
-[sourcecode:console] $ amphtml-validator https://amp.dev/ https://amp.dev/: PASS [/sourcecode]
+[sourcecode:console]
+$ amphtml-validator https://amp.dev/
+https://amp.dev/: PASS
+[/sourcecode]
 
 不出所料，此网页是有效的 AMP HTML。我们来试一个无效的网页：[several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html)。要运行 `amphtml-validator` 命令，您可以提供网页的网址或本地文件名称。将 [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) 下载并保存到文件中，然后运行以下命令：
 
-[sourcecode:console] $ amphtml-validator several_errors.html several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='. several_errors.html:26:2 The tag 'script' is disallowed except in specific forms. several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://amp.dev/zh_cn/documentation/components/reference/amp-img.html) several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see https://amp.dev/documentation/components/amp-ad.html) … [/sourcecode]
+[sourcecode:console]
+$ amphtml-validator several_errors.html
+several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
+several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
+several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})
+several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
+...
+[/sourcecode]
 
 错误消息的格式由文件名、行、列和消息组成，通常后跟指向 AMP HTML 参考的链接。某些编辑器（包括 Emacs）可以解析这种格式，并让您能够跳至原始文件中的错误所在位置。
 
 要着手制作自己的 AMP 网页，请考虑使用 [minimum_valid_amp.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/minimum_valid_amp.html)：
 
-[sourcecode:console] $ amphtml-validator minimum_valid_amp.html minimum_valid_amp.html: PASS [/sourcecode]
+[sourcecode:console]
+$ amphtml-validator minimum_valid_amp.html
+minimum_valid_amp.html: PASS
+[/sourcecode]
 
 命令行工具提供了更多功能，包括取消颜色标注、 打印 JSON 输出或运行特定版本的验证工具 JavaScript（默认运行最新发布的脚本）。
 
