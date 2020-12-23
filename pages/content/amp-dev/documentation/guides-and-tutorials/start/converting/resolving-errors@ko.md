@@ -1,7 +1,7 @@
 ---
 "$title": 유효성 검사 오류 해결
 "$order": '2'
-description: "In this section, we'll go through and resolve the AMP validation errors from our AMP page. Note that the errors may appear in a different order in your console."
+description: 이 섹션에서는 AMP 페이지의 AMP 유효성 검사 오류 및 해결 방법을 살펴봅니다. 콘솔에 따라 오류가 아래와 다른 순서로 나타날 수 있습니다.
 ---
 
 이 섹션에서는 AMP 페이지에 있는 AMP 유효성 검사 오류 및 해결 방법을 살펴봅니다.  콘솔에 따라 오류가 아래와 다른 순서로 나타날 수 있습니다.
