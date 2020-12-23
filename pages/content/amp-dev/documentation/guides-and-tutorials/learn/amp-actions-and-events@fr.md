@@ -375,7 +375,7 @@ L'exemple suivant est possible dans AMP:
   </tr>
   <tr>
     <td><code>show</code></td>
-    <td>Shows the target element. If an     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a     result, it gains focus.</td>
+    <td>	Affiche l'élément cible. Si un élément <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus">élément de <code>autofocus</code></a> devient visible en conséquence, il obtient la mise au point.</td>
   </tr>
   <tr>
     <td><code>toggleVisibility</code></td>
@@ -404,11 +404,11 @@ L'exemple suivant est possible dans AMP:
   </tr>
   <tr>
     <td><code>play</code></td>
-    <td>Plays the audio. Is a no-op if the <code><amp-audio></code> element is a descendant of <code><amp-story></code>.</td>
+    <td>Lit l'audio. Prend la valeur no-op si l'élément <code>&lt;amp-audio></code> est un élément enfant de <code>&lt;amp-story></code>.</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
-    <td>Pauses the audio. Is a no-op if the <code><amp-audio></code> element is a descendant of <code><amp-story></code>.</td>
+    <td>Met l'audio en pause. Prend la valeur no-op si l'élément <code>&lt;amp-audio></code> est un élément enfant de <code>&lt;amp-story></code>.</td>
   </tr>
 </table>
 
