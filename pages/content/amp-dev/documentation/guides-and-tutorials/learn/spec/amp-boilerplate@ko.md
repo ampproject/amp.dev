@@ -1,5 +1,5 @@
 ---
-"$title": AMP Boilerplate Code
+"$title": AMP 상용구 코드
 order: '9'
 formats:
 - websites
@@ -33,10 +33,10 @@ limitations under the License.
 
 ## <code>head > style[amp-boilerplate]</code> 및 <code>noscript > style[amp-boilerplate]</code> <a></a>
 
-AMP HTML documents must contain the following boilerplate in their `head` tag. Validation is currently done with regular expressions, so it's important to keep mutations as minimal as possible. Currently, the allowed mutations are:
+AMP HTML 문서는 `head` 태그에 다음 상용구를 포함해야 합니다. 현재 일반 표현식의 유효성 검증이 완료되었으니 변형은 최소한으로 유지해야 합니다. 현재 허용되는 변형은 다음과 같습니다.
 
-1. Inserting arbitrary whitespace immediately after the `style` tag opens, and immediately before it closes
-2. Replacing any space in the snippet below with arbitrary whitespace.
+1. `style` 태그가 열리고 닫힌 직후에 임의의 공백을 삽입하는 것.
+2. 아래 코드 조각의 모든 공간을 임의의 공백으로 교체하는 것.
 
 <!-- prettier-ignore-start -->
 
@@ -46,4 +46,4 @@ AMP HTML documents must contain the following boilerplate in their `head` tag. V
 
 <!-- prettier-ignore-end -->
 
-[tip] You can use the [boilerplate generator](https://amp.dev/boilerplate) to quickly setup a basic skeleton for your AMP page. It also provides snippets for structured data, to create a PWA and more! [/tip]
+[tip] [상용구 생성기](https://amp.dev/boilerplate)를 사용하여 AMP 페이지의 기본 스켈레톤을 빠르게 설정할 수 있습니다. 또한 PWA 등을 제작하는 데 필요한 구조적 데이터의 코드 조각도 제공합니다! [/tip]
