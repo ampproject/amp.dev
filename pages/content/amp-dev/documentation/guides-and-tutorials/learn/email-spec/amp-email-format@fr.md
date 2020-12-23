@@ -66,7 +66,7 @@ Un e-mail AMP DOIT
 - <a name="scrpt"></a>contenir une balise `<script async src="https://cdn.ampproject.org/v0.js"></script>` dans la balise head. [🔗](#scrpt)
 - <a name="boilerplate"></a>contenir le texte standard amp4email (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) à l'intérieur de la balise head afin de masquer initialement le contenu jusqu'à ce que le JS AMP soit chargé. [🔗](#boilerplate)
 
-The entire AMPHTML markup must not exceed 200,000 bytes.
+Le balisage AMPHTML entier ne doit pas dépasser 200 000 octets.
 
 ## Structure et rendu <a name="structure-and-rendering"></a>
 
