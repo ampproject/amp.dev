@@ -1,8 +1,10 @@
 ---
-$title: 利用分析工具跟踪互动情况
+"$title": 通过分析跟踪互动
+"$order": '4'
+description: Analytics platforms are commonly integrated into websites through inline JavaScript snippets and function calls, which trigger events that are sent back to the analytics system.
 ---
 
-分析平台常常会通过内嵌 JavaScript 代码段和函数调用（可触发会被发回至分析系统的事件）集成到网站中。AMP 提供了灵活的 JSON 配置语法，以便为多个分析合作伙伴复制此过程。
+分析平台通常通过内嵌 JavaScript 代码段和函数调用集成到网站中，这些代码段和函数调用可以触发能够发送回分析系统的事件。AMP 提供了灵活的 JSON 配置语法，可以对多个分析合作伙伴复制此过程。
 
 以下是由 JavaScript 提供支持的 Google Analytics（分析）传统跟踪代码段示例。我们会以 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) JSON 格式重写它，不过在此之前，我们先来了解一下这种传统方法：
 
@@ -91,10 +93,6 @@ ga('send', 'pageview');
 
 如果您想与某个自定义跟踪平台集成，则仍可使用 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 组件并指定要将跟踪数据发送到的个性化网址端点。有关详情，请参阅 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 组件参考文档。
 
-[tip type="note"]
-`“UA-YYYY-Y”` 是一个示例 Google Analytics（分析）帐号；如果您要在自己的网站上使用此示例，则应将其替换为您网站的 Google Analytics（分析）跟踪代码。
-[/tip]
+[tip type="note"] `“UA-YYYY-Y”` 是一个示例 Google Analytics（分析）帐号；如果您要在自己的网站上使用此示例，则应将其替换为您网站的 Google Analytics（分析）跟踪代码。 [/tip]
 
-[tip]
-如果您想使用一种更简单的跟踪系统，不妨了解一下 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)。
-[/tip]
+[tip] 如果您想使用一种更简单的跟踪系统，不妨了解一下 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)。 [/tip]
