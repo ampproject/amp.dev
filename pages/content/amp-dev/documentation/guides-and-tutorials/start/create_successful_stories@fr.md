@@ -12,24 +12,24 @@ Les stories Web sont un format de narration immersif, exploitable et qui peut fa
 
 Les stories Web sont de petits délices et les lecteurs aiment les bouchées rapides lors de leurs micromoments. Attendre le métro ou prendre un café ouvre des possibilités de consommation de contenu condensé. Assurez-vous que chaque bouchée engage et ravisse en suivant ces bonnes pratiques pour créer une story Web agréable à consommer.
 
-## At a glance
+## En un coup d’œil
 
 Les principaux points à retenir pour créer une story Web agréable à grignoter :
 
 - Racontez une story complète et intéressante.
-- Maximize the impact of your cover page with high quality imagery and a catchy title.
-- Make it visual with videos and images that fit and fill the user's screen.
-- You can say a lot, with less, especially when using visual imagery. Aim to keep text below 10 words per page.
-- When using videos, shorter ones are best so try to stick to less than 15 seconds.
-- Some people and some situations require viewing without sound. Keep content inclusive by adding captions to videos.
-- Give readers something to tap through. An average length of 10 to 20 pages enables most authors to tell a good narrative.
-- Don’t overuse animations or embed, and pay attention to transition timing.
+- Maximisez l'impact de votre page de couverture avec des images de haute qualité et un titre accrocheur.
+- Rendez-la visuelle avec des vidéos et des images qui s'adaptent et remplissent l'écran de l'utilisateur.
+- Vous pouvez en dire beaucoup, avec moins, en particulier lorsque vous utilisez des images visuelles. Essayez de garder la taille du texte en dessous de 10 mots par page.
+- Lorsque vous utilisez des vidéos, les plus courtes sont les meilleures, alors essayez de vous en tenir à moins de 15 secondes.
+- Certaines personnes et certaines situations nécessitent une visualisation sans son. Gardez le contenu inclusif en ajoutant des légendes aux vidéos.
+- Donnez aux lecteurs quelque chose à exploiter. Une longueur moyenne de 10 à 20 pages permet à la plupart des auteurs de raconter un bon récit.
+- N'abusez pas des animations et ne les intégrez pas, et faites attention au moment de la transition.
 
 ## Maîtrisez votre récit
 
 Planifiez l'introduction de la story, créez un arc et construisez un récit complet. Une fois que vous savez ce que vous voulez dire, subdivisez l'ensemble. Chaque page de la story Web doit véhiculer une idée unique qui fonctionne de manière cohérente avec les autres.
 
-### Tasteful and filling content
+### Contenu de bon goût et suffisant
 
 Chaque story Web doit comporter au minimum 4 pages et, idéalement, moins de 30. Les stories Web doivent être bien racontées et faciles à consommer. Si nécessaire pour votre récit, dépassez 30.
 
@@ -37,33 +37,33 @@ Chaque story Web doit comporter au minimum 4 pages et, idéalement, moins de 30.
 
 Votre page de garde est l'habillage de votre story Web. C'est la première chose que les visiteurs verront et, s'ils ne l'ouvrent pas, la seule chose qu'ils verront. Assurez-vous qu'elle soit attrayante ! Une bonne page de couverture comporte deux éléments, des images accrocheuses et un titre bref et mémorable.
 
-### Imagery
+### Images
 
-Use a high-quality portrait image or video that fits the full screen. Let your fans know its your brand by including a favicon and logo.
+Utilisez une image ou une vidéo de portrait de haute qualité qui s'adapte au plein écran. Faites savoir à vos fans qu'il s'agit de votre marque en incluant un favicon et un logo.
 
-### Title
+### Titre
 
 Gardez le titre clair et net, idéalement moins de 10 mots en moins de 40 caractères. Incluez le nom de l'auteur et de la publication et ajoutez une date de publication si la story est sensible.
 
-### Brand and date
+### Marque et date
 
 Le lecteur a besoin de savoir qui a publié la story Web et quand. Incluez une attribution de marque et une date de publication sur la page de garde. Cela favorise la confiance et, si un utilisateur aime votre contenu, la fidélité. Cette [story Web](https://edition-cnn-com.cdn.ampproject.org/c/s/edition.cnn.com/ampstories/travel/12-beautiful-reasons-to-visit-italy) de CNN sur les voyages en Italie permet de voir en un coup d'œil qui a publié la story et à quel point elle est récente.
 
-## Visual treat
+## Plaisir visuel
 
-Allure readers in with quality visuals that captivate their attention and text they can read easily and quickly. Mainly use high-quality videos and images, but add some animation sparkle where it makes sense.
+Attirez les lecteurs avec des visuels de qualité qui captivent leur attention et des textes qu'ils peuvent lire facilement et rapidement. Utilisez principalement des vidéos et des images de haute qualité, mais ajoutez un peu d'animation là où cela a du sens.
 
-All images and videos should take up the entire screen with minimal use of letterboxing where it makes sense.
+Toutes les images et vidéos doivent occuper tout l'écran avec une utilisation minimale de la boîte aux lettres là où cela s'avère pertinent.
 
-### Video
+### Vidéo
 
 Les vidéos sont très attrayantes pour les lecteurs, incluez-en autant que possible dans votre story Web. Visez des vidéos de moins de 15 secondes. Si vous avez une vidéo plus longue, divisez-la en plusieurs morceaux.
 
 Les stories Web sont utilisées en mode portrait, gardez donc à l'esprit les points suivants :
 
-- Shot video in high-end mobile devices when possible.
-- Shot at 480p.
-- Shot in at least 24 frames per second.
+- Enregistrez vos vidéos sur des appareils mobiles haut de gamme lorsque cela est possible.
+- Enregistrez vos vidéos en 480p.
+- Enregistrez vos vidéos en au moins 24 images par seconde.
 
 <table>
   <tr>
@@ -91,11 +91,11 @@ Les stories Web sont utilisées en mode portrait, gardez donc à l'esprit les po
   </tr>
   <tr>
     <td>Cette vidéo plein écran aide les lecteurs à se concentrer sur un seul sujet clé.</td>
-    <td>This landscape video lacks the immersive feeling and may distract readers.</td>
+    <td>Cette vidéo en paysage n'offre pas de sentiment immersif et peut distraire les lecteurs.</td>
   </tr>
 </table>
 
-Ensure your content is accessible. Resize videos to make room for text and captions at the bottom. Not all readers will be able, or want, to hear video content.
+Assurez-vous que votre contenu est accessible. Redimensionnez les vidéos pour faire de la place pour le texte et les légendes situées en-dessous. Tous les lecteurs ne pourront pas ou ne voudront pas entendre le contenu vidéo.
 
 <table>
   <tr>
@@ -122,14 +122,14 @@ Ensure your content is accessible. Resize videos to make room for text and capti
     </td>
   </tr>
   <tr>
-    <td>Captions help keep your audience engaged, even when they can’t listen to the audio. </td>
+    <td>Les sous-titres aident votre public à rester engagé, même lorsqu'il ne peut pas écouter l'audio.</td>
     <td>Sans sous-titres, votre public doit pouvoir écouter le son pour suivre votre story. Cela peut limiter les contacts avec votre contenu et le moment où ils sont en mesure de le faire.</td>
   </tr>
 </table>
 
 ### Images
 
-Use full screen, portrait images with good resolution (828 x 1,792).
+Utilisez des portraits en plein écran avec une bonne résolution (828 x 1792).
 
 <figure class="alignment-wrapper margin-">
   <amp-video layout="responsive" poster="/static/img/docs/guides/storiesbp/do-background-still.jpg" width="1440" height="630" loop autoplay noaudio>
@@ -137,7 +137,7 @@ Use full screen, portrait images with good resolution (828 x 1,792).
     <source src="/static/img/docs/guides/storiesbp/do-background.mp4" type="video/mp4"></source>
   </amp-video></figure>
 
-Avoid landscape cropped photos.
+Évitez les photos recadrées en mode paysage.
 
 {{ image('/static/img/docs/guides/storiesbp/dont-background.jpg', 1440, 630, layout='responsive', alt='Image showing a non-immersive AMP story', caption=' ', align='' ) }}
 
@@ -155,12 +155,12 @@ Restez concentré(e) sur ce qui est important. Coupez les éléments inutiles ou
     <td>{{ image('/static/img/docs/guides/storiesbp/crop-images-do-not.jpg', 250, 500, layout='intrinsic', alt='Image demonstrating poor image cropping', align='center' ) }}</td>
   </tr>
     <tr>
-    <td>This image is cropped to align with page content and supports the main idea.</td>
-    <td>With this crop, it’s unclear where the reader’s focus should be and what idea the image intends to convey.</td>
+    <td>Cette image est recadrée pour s'aligner sur le contenu de la page et prend en charge l'idée principale.</td>
+    <td>Avec ce recadrage, on ne sait pas où doit se concentrer le lecteur et quelle idée l'image entend véhiculer.</td>
   </tr>
 </table>
 
-### Text
+### Texte
 
 Assurez-vous que le texte est lisible. Utilisez au moins une police de taille 24, mais vous pouvez la rendre aussi grande et lisible que possible. Faites contraster la couleur du texte avec l'arrière-plan ou l'image de la page de la story. N'incluez pas d'images ou de vidéos contenant uniquement du texte.
 
@@ -174,7 +174,7 @@ Assurez-vous que le texte est lisible. Utilisez au moins une police de taille 24
     <td>{{ image('/static/img/docs/guides/storiesbp/readability1-dont.jpg', 250, 500, layout='intrinsic', alt='Image showing poor use of text contrast in an AMP story', align='' ) }}</td>
   </tr>
   <tr>
-    <td>A high contrast makes the words easy to see.</td>
+    <td>Un contraste élevé rend les mots faciles à voir.</td>
     <td>Avec un faible contraste, vos mots et vos images peuvent se mélanger, rendant les mots difficiles à lire et la story plus difficile à suivre.</td>
   </tr>
   <tr>
@@ -183,15 +183,15 @@ Assurez-vous que le texte est lisible. Utilisez au moins une police de taille 24
   </tr>
     <tr>
       <td>La mise en évidence du texte peut faire ressortir les mots et aider vos lecteurs à rester concentrés sur votre story.</td>
-      <td>Using light-colored text over a busy image makes the words hard to read. </td>
+      <td>L'utilisation d'un texte clair sur une image chargée rend les mots difficiles à lire.</td>
   </tr>
 </table>
 
-#### Word Nibbles
+#### Mots à grignoter
 
 Le texte doit venir en petites portions à grignoter, pas en masse. Essayez de ne pas dépasser 200 caractères par page.
 
-Treat details like an ingredient list, make them available, but only if users ask. Include long-form text content in a page attachment. Page attachments communicate to user’s there's more to read. They can swipe up on their device if interested.
+Traitez les détails comme une liste d'ingrédients, rendez-les disponibles, mais uniquement si les utilisateurs les demandent. Incluez du contenu textuel plus long dans une pièce jointe de page. Les pièces jointes aux pages indiquent à l'utilisateur qu'il y a davantage à lire. Ils peuvent glisser vers le haut sur leur appareil s'ils sont intéressés.
 
 Une page avec un contenu texte plus long qu'une phrase peut être inévitable. Essayez de ne pas les laisser occuper plus de 10 % du total des pages de la story.
 
@@ -205,14 +205,14 @@ Une page avec un contenu texte plus long qu'une phrase peut être inévitable. E
     <td>{{ image('/static/img/docs/guides/storiesbp/text-density-dont.jpg', 250, 500, layout='intrinsic', alt='Image showing too much text in an AMP story', align='center' ) }}</td>
   </tr>
   <tr>
-    <td>Try to keep text to just the essentials. Varying type size and style to break up blocks of text can increase scannability.</td>
+    <td>Essayez de garder le texte sur l'essentiel. La variation de la taille et du style du texte pour séparer des blocs de texte peut augmenter la capacité de numérisation.</td>
     <td>Un grand mur de texte comme celui-ci peut être difficile à lire et peut décourager l'engagement avec votre story.</td>
   </tr>
 </table>
 
 ### Animations
 
-Animations are appetizing when done with purpose, such as adding motion to static images. You can animate images and assets with fly-in, rotation, or fade-in effects.
+Les animations sont appétissantes lorsqu'elles sont faites avec un but précis, comme ajouter du mouvement à des images statiques. Vous pouvez animer des images et des éléments avec des effets de survol, de rotation ou de fondu.
 
 <table>
   <tr>
@@ -231,14 +231,14 @@ Animations are appetizing when done with purpose, such as adding motion to stati
     <td>{{ image('/static/img/docs/guides/storiesbp/static-image-live-do-not.jpg', 360, 720, layout='intrinsic', alt='Image demonstrating a dull story page', align='center' ) }}</td>
   </tr>
     <tr>
-    <td>The motion in this example helps support the main idea and adds a dynamic element to the page.</td>
-    <td>This static page is functional, but it may be missing an opportunity to be more engaging to readers.</td>
+    <td>Le mouvement de cet exemple aide à soutenir l'idée principale et ajoute un élément dynamique à la page.</td>
+    <td>Cette page statique est fonctionnelle, mais elle manque peut-être une occasion d'être plus attrayante pour les lecteurs.</td>
   </tr>
 </table>
 
-But, use sparingly, as animations can become unsavory if overused. Avoid adding too much of a single flavor and spice with animations sparingly.
+Toutefois, utilisez-les avec parcimonie, car les animations peuvent devenir peu recommandables si elles sont surutilisées. Évitez d'ajouter trop de saveurs et d'épices en fournissant vos animations avec parcimonie.
 
-#### Timing is everything
+#### Le timing est essentiel
 
 Les pages doivent défiler rapidement (une animation ne doit pas empêcher un utilisateur de passer à la page suivante), mais pas trop vite ! Il est important de proposer la bonne combinaison de style et de durée. Par exemple, les animations simples devraient prendre moins de 500 millisecondes, mais le panoramique sur une image d'arrière-plan devrait durer plus longtemps.
 
@@ -266,12 +266,12 @@ Les pages doivent défiler rapidement (une animation ne doit pas empêcher un ut
     </td>
   </tr>
   <tr>
-    <td>This Ken Burns effect on the background image is subtle and makes the experience more immersive. It creates a right balance with the text overlay together.</td>
-    <td>Here, the Ken Burns effect is too fast. The motion is distracting and makes it hard to focus on the headline.</td>
+    <td>Cet effet Ken Burns sur l'image d'arrière-plan est subtil et rend l'expérience plus immersive. Cela crée un bon équilibre avec la superposition de texte.</td>
+    <td>Ici, l'effet Ken Burns est trop rapide. Le mouvement est distrayant et rend difficile la concentration sur le titre.</td>
   </tr>
 </table>
 
-Consider getting creative with motion. Animate multiple objects into a sequence, rather than having them move together in a single effect. Elements can have different effects and durations that work towards a cohesive animation.
+Pensez à faire preuve de créativité avec le mouvement. Animez plusieurs objets dans une séquence, plutôt que de les faire bouger ensemble en un seul effet. Les éléments peuvent avoir différents effets et durées qui contribuent à une animation cohérente.
 
 <table>
   <tr>
@@ -297,12 +297,12 @@ Consider getting creative with motion. Animate multiple objects into a sequence,
     </td>
   </tr>
   <tr>
-    <td>Animating these objects separately makes this visual more interesting and enjoyable. It also helps each item stand out more distinctly.</td>
-    <td>Adding rapid motion to one big block like this doesn’t add to understanding, and it can be distracting.</td>
+    <td>L'animation de ces objets séparément rend ce visuel plus intéressant et plus agréable. Cela permet également à chaque élément de se démarquer plus distinctement.</td>
+    <td>L'ajout de mouvements rapides à un gros bloc comme celui-ci ne contribue pas à la compréhension et peut être distrayant.</td>
   </tr>
 </table>
 
-#### Perfect pairings
+#### Accords parfaits
 
 Associez votre style d'animation à l'esthétique de votre story. Utilisez la bibliothèque d'animations Web Story disponible pour vous aider à trouver un style et une intensité qui vous conviennent sans vous distraire du contenu.
 
@@ -330,16 +330,16 @@ Associez votre style d'animation à l'esthétique de votre story. Utilisez la bi
     </td>
   </tr>
   <tr>
-    <td>Sliding the title up and fading in the subtitle guides the reader to follow the content of the page in the right order.</td>
+    <td>Faire glisser le titre vers le haut et disparaître dans le sous-titre guide le lecteur pour suivre le contenu de la page dans le bon ordre.</td>
     <td>Cette animation de rotation n'ajoute pas de valeur à la story. Au lieu de cela, elle crée un bruit visuel et peut distraire les lecteurs.</td>
   </tr>
 </table>
 
-## Hungry for more
+## Envie de plus
 
 Permettez aux utilisateurs d'explorer davantage votre sujet en intégrant du contenu tiers, en joignant des informations supplémentaires et en établissant des liens vers de nouveaux emplacements.
 
-### Strategic embeds
+### Intégrations stratégiques
 
 Les intégrations fournissent une dimension supplémentaire là où elles sont pertinentes et présentées de manière agréable. Incluez du contenu pertinent à côté de l'intégration afin qu'il s'agisse d'un élément intégré de la story. Vous devrez peut-être activer l'interactivité pour votre intégration.
 
@@ -353,12 +353,12 @@ Les intégrations fournissent une dimension supplémentaire là où elles sont p
     <td>{{ image('/static/img/docs/guides/storiesbp/embed-dont.jpg', 250, 500, layout='intrinsic', alt='AMP story page with no background or header, but a single embed looks unfinished', align='center' ) }}</td>
   </tr>
   <tr>
-    <td>The embed on this page integrates well with the rest of the layout. The headline, date, and background graphics help enhance the visual.</td>
+    <td>L'intégration sur cette page s'intègre bien avec le reste de la mise en page. Les graphiques de titre, de date et d'arrière-plan contribuent à améliorer le visuel.</td>
     <td>Mettre l'intégration seule sur la page semble inachevée et ne s'intègre pas bien à la story complète.</td>
   </tr>
 </table>
 
-### Attach additional content
+### Joindre du contenu supplémentaire
 
 Rationalisez votre story Web en plaçant le contenu associé dans les pièces jointes. De cette façon, les lecteurs peuvent creuser plus profondément s'ils veulent en savoir plus sur votre story. Les lecteurs naviguent plus facilement dans une story lorsqu'un contenu supplémentaire est joint aux pages pertinentes.
 
@@ -386,7 +386,7 @@ Rationalisez votre story Web en plaçant le contenu associé dans les pièces jo
     </td>
   </tr>
   <tr>
-    <td>The embed on this page integrates well with the rest of the layout. The headline, date, and background graphics help enhance the visual.</td>
+    <td>L'intégration sur cette page s'intègre bien avec le reste de la mise en page. Les graphiques de titre, de date et d'arrière-plan contribuent à améliorer le visuel.</td>
     <td>Mettre l'intégration seule sur la page semble inachevée et ne s'intègre pas bien à la story complète.</td>
   </tr>
 </table>
@@ -412,7 +412,7 @@ Les pièces jointes fonctionnent bien avec de longs blocs de texte, ou si votre 
   </tr>
 </table>
 
-### Link to new locations
+### Lien vers de nouveaux emplacements
 
 Vous pouvez ajouter des liens n'importe où sur une page de story Web. Si vous appuyez sur un lien, une info-bulle apparaît. Cela indique à l'utilisateur la destination du lien et lui permet de confirmer l'action avant de quitter la story.
 
@@ -427,13 +427,13 @@ Vous pouvez ajouter des liens n'importe où sur une page de story Web. Si vous a
   </tr>
   <tr>
     <td>Les liens sur cette page sont clairement indiqués et entourés de contenu connexe. Ils n'interfèrent pas avec la navigation dans la story.</td>
-    <td>The links on this page completely block the navigation. Readers will not be able to easily go to the previous or the next page.</td>
+    <td>Les liens sur cette page bloquent complètement la navigation. Les lecteurs ne pourront pas accéder facilement à la page précédente ou suivante.</td>
   </tr>
 </table>
 
-Think strategically about size, location and frequency of your link appearances. Too many tappable elements can complicate navigation and frustrate readers.
+Pensez stratégiquement à la taille, à l'emplacement et à la fréquence d'apparition de vos liens. Trop d'éléments activables peuvent compliquer la navigation et frustrer les lecteurs.
 
-## Code or create
+## Coder ou créer
 
 Les stories Web peuvent être entièrement codées à la main ou créées en utilisant les [outils de création](../../tools.html?format=stories).
 
