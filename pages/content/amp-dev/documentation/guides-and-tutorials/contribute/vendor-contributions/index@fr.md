@@ -1,5 +1,5 @@
 ---
-"$title": Integrate your technology with AMP
+"$title": Intégrez votre technologie dans AMP
 "$order": '0'
 "$hidden": 'true'
 description: "Si vous êtes un fournisseur de technologie pour éditeurs ou annonceurs sur le Web, nous vous invitons à ajouter la prise en charge d'AMP afin que vos clients puissent continuer de tirer parti de votre technologie et ..."
@@ -84,7 +84,7 @@ Toute la logique métier est archivée dans le référentiel AMP, mais la seule 
 
 L'analyse AMP vous permet de renvoyer des événements à votre serveur en fonction des déclencheurs que vous avez configurés. Nous avons rédigé un [guide d'intégration d'analyse ](../../optimize-measure/configure-analytics/index.md)pour vous aider à vous lancer.
 
-If you only need to add a tracking pixel with dynamic parameters to your tracking URL, check out [`amp-pixel`](../../../components/reference/amp-pixel.md). Be sure to document usage on your support pages for developers that may want to use your technology with AMP.
+Si vous avez uniquement besoin d'ajouter un pixel de suivi avec des paramètres dynamiques à votre URL de suivi, consultez [`amp-pixel`](../../../components/reference/amp-pixel.md). Assurez-vous de documenter l'utilisation sur vos pages de support pour les développeurs souhaitant utiliser votre technologie avec AMP.
 
 Certains fournisseurs d'analyse ont ajouté la prise en charge d'amp-analytics. Voici un [exemple de demande de tirage](https://github.com/ampproject/amphtml/pull/1595) du fournisseur d'analyse [Parse.ly](https://www.parsely.com/help/integration/google-amp/).
 
