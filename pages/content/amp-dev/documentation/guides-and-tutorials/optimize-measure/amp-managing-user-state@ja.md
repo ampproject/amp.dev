@@ -32,15 +32,15 @@ limitations under the License.
 
 **目次**
 
-- [Background](#background)
-- [Implementation guide](#implementation-guide)
-    - [Before getting started](#before-getting-started)
-    - [Task 1: For non-AMP pages on the publisher origin, set up an identifier and send analytics pings](#task1)
-    - [Task 2: For AMP pages, set up an identifier and send analytics pings by including Client ID replacement in amp-analytics pings](#task2)
-    - [Task 3: Process analytics pings from pages on the publisher origin](#task3)
-    - [Task 4: Process analytics pings from AMP cache or AMP viewer display contexts and establish identifier mappings (if needed)](#task4)
-    - [Task 5: Using Client ID in linking and form submission](#task5)
-- [Strongly recommended practices](#strongly-recommended-practices)
+- [背景 ](#background)
+- [実装ガイド](#implementation-guide)
+    - [始める前に ](#before-getting-started)
+    - [タスク 1: サイト運営者オリジンの非 AMP ページについては、ID をセットアップし、アナリティクス ping を送信する ](#task1)
+    - [タスク 2: AMP ページについては、ID をセットアップし、amp-analytics ping にクライアント ID の置換を含めてアナリティクス ping を送信する](#task2)
+    - [タスク 3: サイト運営者オリジンでページのアナリティクス ping を処理する ](#task3)
+    - [タスク 4: AMP キャッシュまたは AMP ビューアの表示コンテキストのアナリティクス ping を処理し、ID マッピングを確立する（必要な場合） ](#task4)
+    - [タスク 5: リンクとフォーム送信にクライアント ID を使用する ](#task5)
+- [強く推奨される実践 ](#strongly-recommended-practices)
 
 ユーザー状態は今日のウェブにおいて重要な概念です。ユーザー状態を管理することで可能となる次の使用事例を考察してみましょう。
 
@@ -93,10 +93,10 @@ AMP は、どこにおいても高速にコンテンツを有効化する移植�
 
 **コンテキスト 1: サイト運営者のオリジン。** AMP ページは、サイト運営者のサイト（`https://example.com`）にホスティングされており、そこからアクセスできるようにデプロイされています（`https://example.com/article.amp.html`）。
 
-Publishers can choose to publish exclusively in AMP, or to publish two versions of content (that is, AMP content "paired" with non-AMP content). The "paired" model requires some [particular steps](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/discovery) to ensure the AMP versions of pages are discoverable to search engines, social media sites, and other platforms. Both publishing approaches are fully supported; it's up to the publisher to decide on which approach to take.
+サイト運営者は、AMP で排他的に公開するか、2 つのバージョンを公開するか（AMP コンテンツと「対となる」非 AMP コンテンツ）を選択することができます。この「対となる」モデルには、検索エンジン、ソーシャルメディアサイト、およびその他のプラットフォームで AMP バージョンのページが発見されるようにするための[特別な手順](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/discovery)が必要です。いずれの公開方法も完全にサポートされているため、どちらを採用するかは、サイト運営者の判断によります。
 
 > **注意:**
-> Due to the "paired" publishing model just described, the publisher’s origin (in the example above, `https://example.com`) is a context in which **both AMP and non-AMP content can be accessed**. Indeed, it’s the only context in which this can happen because AMP caches and AMP viewers, described below, only deliver valid AMP content.
+> 上述した「対となる」公開モデルにより、サイト運営者のオリジン（この例では `https://example.com`）は、**AMP と非 AMP コンテンツの両方にアクセスできる**コンテキストです。以下に説明する AMP キャッシュと AMP ビューアは、有効な AMP コンテンツのみを配信できるため、事実上、これを行える唯一のコンテキストと言えます。
 
 **コンテキスト 2: AMP キャッシュ。**AMP ファイルは、サードパーティのキャッシュによってクラウドにキャッシュされるため、コンテンツがユーザーのモバイルデバイスに到達するまでの時間を短縮することができます。
 
@@ -118,7 +118,7 @@ AMP キャッシュの場合と同様、AMP ビューアのドメインは、サ
 
 このシナリオでは、ユーザーは AMP ビューアコンテキストからサイト運営者のオリジンのコンテキストに移動しただけでなく、イベント間で時間が経過しているにもかかわらず、一貫した買い物かごエクスペリエンスが提供されています。このエクスペリエンスは非常に合理的であり、買い物エクスペリエンスを設計しているのであればサポートすべきものであるといえます。では、どのようにして実現されているのでしょうか。
 
-**To enable this and any experience involving user state, all contexts the user traverses must share their individually-maintained state with each other.** "Perfect!", you say, with the idea to share the cookie values with user identifiers across these contextual boundaries. One wrinkle: even though each of these contexts displays content controlled by the same publisher, they each see the other as a third-party because each context lives on different domains.
+**ユーザー状態を伴うエクスペリエンスを有効化するには、ユーザーが移動するすべてのコンテキスト間で、個別に管理された状態が共有されている必要があります。**これらのコンテキストの境界をまたいで cookie の値をユーザー ID と共有する、という考えに「なるほど！」と納得するかもしれませんが、アドバイスが 1 つあります。これらのコンテキストはそれぞれ、同一のサイト運営者が制御するコンテンツを表示してはいますが、コンテキストは別々のドメインに存在するため、互いをサードパーティとみなします。
 
 <amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png" width="1030" height="868">
   <noscript><img alt="多くのコンテキストで表示されるAMPの機能は、それらのコンテキストのそれぞれが識別子用の独自のストレージを持っていることを意味します" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png"></noscript></amp-img>
@@ -129,7 +129,7 @@ AMP キャッシュの場合と同様、AMP ビューアのドメインは、サ
 
 このセクションには、ユーザー状態の管理に関する推奨事項を記載しています。以下のタスクは順に提示されていますが、大まかに 2 つに分けてみることができます。
 
-**Chunk #1: Fundamental implementation:** Tasks 1-4 are essential toward getting the basics working. They rely on a minimal set of features needed to get the job partially done: AMP’s Client ID substitution, reading and writing of cookies, and maintaining a backend mapping table. Why "partially"? Because the steps conveyed in these tasks rely on reading and writing cookies and because the browser’s cookie settings may prevent this in certain circumstances, this set of tasks is likely to be insufficient for fully managing user state in all scenarios.
+**パート 1: 基本実装:** タスク 1～4 は、基本部分が機能するようにするための基礎項目です。ジョブを部分的に達成するために必要な最小限の機能（AMP のクライアント ID 置換、cookie の読み取りと書き込み、およびバックエンドマッピングテーブルの管理）に依存しています。なぜ「部分的」なのでしょうか。これらのタスクで行われる手順は cookie の読み取りと書き込みに依存しており、ある状況ではブラウザの cookie 設定がこれを阻止する可能性があるため、これらのタスクは、すべてのシナリオにおいてユーザー状態を完全に管理するには不十分であるからです。
 
 基礎を固めたら、使用事例をより狭めてトピックを確認し、そのケースに対して完全なソリューションを提供することができるようになります。
 
@@ -171,7 +171,7 @@ n34ic982n2386n30 ⇒ $sample_id
 
 サイト運営者オリジンから配信されている非 AMP ページがある場合、これらのページで使用する永続的な安定した ID をセットアップします。これは通常、[ファーストパーティ cookie で実装されます](https://en.wikipedia.org/wiki/HTTP_cookie#Tracking)。
 
-For the purposes of our example, let’s say you’ve set a cookie called `uid` ("user identifier") that will be created on a user’s first visit. If it’s not the user’s first visit, then read the value that was previously set on the first visit.
+この例の目的により、ユーザーの初回訪問時に作成される `uid`（ユーザー ID）という cookie を設定したとしましょう。ユーザーの初回訪問でない場合は、過去に起きた初回訪問時に設定された値を読み取ります。
 
 つまり、サイト運営者オリジンにある非 AMP ページの状態Tには 2 つのケースがあるということです。
 
@@ -212,7 +212,7 @@ https://analytics.example.com/ping?type=pageview&user_id=$publisher_origin_ident
 user_id=$publisher_origin_identifier
 [/sourcecode]
 
-The use of "`user_id`" here should be determined by what your analytics server expects to process and is not specifically tied to what you call the cookie that stores the identifier locally.
+ここでの “`user_id`” の使用方法は、使用するアナリティクスサーバーが処理するものによって決定し、cookie と呼んでいる、ID をローカルに保存するものに特に紐づけられてはいません。
 
 <a id="task2"></a>
 
@@ -220,7 +220,7 @@ The use of "`user_id`" here should be determined by what your analytics server e
 
 AMP ページに移り、アナリティクス向けの ID を確立して送信する方法を確認してみましょう。これは、AMP ページが配信されるコンテキストは関係ないため、サイト運営者オリジンの AMP ページ、AMP キャッシュから配信される AMP ページ、または AMP ビューアに表示される AMP ページに適用されます。
 
-Through usage of features that require Client ID, AMP will do the "under the hood" work to generate and store client ID values and surface them to the features that require them. One of the principal features that can use AMP’s Client ID is [amp-analytics](https://amp.dev/documentation/components/amp-analytics), which happens to be exactly what we’ll need to implement our analytics use case example.
+クライアント ID を必要とする機能を使用することで、AMP は「内部的に」クライアント ID 値を生成して保存し、それを必要とする機能に提供します。AMP のクライアント ID を使用できる主な機能の 1 つに、このアナリティクス使用事例の例を実装するために必要な [amp-analytics](https://amp.dev/documentation/components/amp-analytics) があります。
 
 AMP ページで、クライアント ID を含む amp-analytics ping を構築します。
 
@@ -242,9 +242,9 @@ AMP ページで、クライアント ID を含む amp-analytics ping を構築�
 amp-analyticsの残りの実装については、amp-analyticsリクエストを設定する方法、またはアナリティクスベンダーのリクエストを変更する方法の詳細について、[amp-analytics 構成](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/)のドキュメントをご覧ください。ping は、直接定義するか、他の [AMP 置換](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)を利用して追加のデータを転送できるようにさらに変更することができます。
 
 > **お役立ち情報:**
-> Why did we use of the name `uid` for the parameter passed to the Client ID feature? The parameter that the `clientId(...)` substitution takes is used to define scope. You can actually use the Client ID feature for many use cases and, as a result, generate many client IDs. The parameter differentiates between these use cases and so you use it to specify which use case you would like a Client ID for. For instance, you might want to send different identifiers to third parties like an advertiser and you could use the "scope" parameter to achieve this.
+> クライアント ID 機能に渡されるパラメータに `uid` という名前をなぜ使用したのでしょうか。`clientId(...)` 置換が取るパラメータは、スコープの定義に使用されます。実際のところ、クライアント ID 機能は多数の使用事例で使用できる機能であるため、結果的に多数のクライアント ID を生成することになります。これらの使用事例はパラメータによって区別することができるため、パラメータを使用して、どの使用事例にクライアント ID を使用したいのかを指定することができます。たとえば、異なる ID を広告主のようなサードパーティに送信するには、“scope” パラメータを使用して実現することができます。
 
-On the publisher origin, it’s easiest to think of "scope" as what you call the cookie. By recommending a value of `uid` for the Client ID parameter here in [Task 2](#task2), we align with the choice to use a cookie called `uid` in [Task 1](#task1).
+サイト運営者オリジンでは、「スコープ」を cookie と呼んでいるものと考えるのが最も簡単です。<a>タスク 2</a> でクライアント ID パラメータに <code>uid</code> の値を推奨することで、<a>タスク 1</a> で <code>uid</code> という cookie を使用する選択に合わせています。
 
 <a id="task3"></a>
 
@@ -291,7 +291,7 @@ On the publisher origin, it’s easiest to think of "scope" as what you call the
 過剰計数の問題を解決するには、次の戦略を採用する必要がありますが、その効力は、サードパーティ cookie の読み取りまたは書き込みが許可されているかによって異なります。
 
 - **ID の即時調整: サイト運営者オリジンの cookie にアクセスまたはそれを変更できる場合**は、サイト運営者オリジンの ID を使用または作成して、アナリティクスリスクエスト内の ID を無視するようにします。こうすれば、2 つのコンテキストでアクティビティをうまくリンクすることができるようになります。
-- **Delayed identifier reconciliation: If you cannot access or change the publisher origin identifier (i.e. the cookies)**, then fall back to the AMP Client ID that comes within the analytics request itself. Use this identifier as an "**alias**", rather than using or creating a new publisher origin identifier (cookie), which you cannot do (because of third party cookie blocking), and add the alias to a **mapping table**. You will be unsuccessful in immediately linking activity between the two contexts, but by using a mapping table you may be able to link the AMP Client ID value with the publisher origin identifier on a future visit by the user. When this happens, you will have the needed information to link the activity and reconcile that the page visits in the different contexts came from the same user. Task 5 describes how to achieve a complete solution in specific scenarios where the user traverses from one page immediately to another.
+- **ID の遅延調整: サイト運営者オリジンの ID（cookie）にアクセスまたはそれを変更できない場合**は、アナリティクスリクエスト自体に含まれる AMP クライアント ID にフォールバックします。（サードパーティ cookie のブロックにより）いずれにしても使用できない新しいサイト運営者オリジンの ID（cookie）を使用する代わりに、この ID を「**エイリアス**」として使用し、そのエイリアスを**マッピングテーブル**に追加します。2 つのコンテキストで直ちにアクティビティをうまくリンクできるようになりますが、マッピングテーブルを使用することで、将来的に同じユーザーが訪問したときに、AMP クライアント ID の値とサイト運営者オリジンの ID をリンクできる可能性があります。これが起きた場合、アクティビティをリンクするために必要な情報を得て、異なるコンテキストのページアクセスが同じユーザーによって行われたものであるように調整することができます。タスク 5 では、ユーザーがあるページからすぐに別のページに移動した場合の特定のシナリオで、完全なソリューションを投入する方法を説明しています。
 
 #### 実装手順 <a name="implementation-steps"></a>
 
@@ -309,7 +309,7 @@ On the publisher origin, it’s easiest to think of "scope" as what you call the
 <table>
   <tr>
     <th width="50%"><strong>サイト運営者オリジンのユーザー ID</strong></th>
-    <th width="50%"><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
+    <th width="50%"><strong>サイト運営者オリジンにはない AMP ページのユーザー ID（「エイリアス」）</strong></th>
   </tr>
   <tr>
     <td>サイト運営者オリジンの ID であるか、サイト運営者オリジンの ID にアクセスできない場合に見込みの値として生成される ID</td>
@@ -325,12 +325,12 @@ https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id
 
 AMP クライアント ID に対応する太字の部分を抽出します（`$amp_client_id`）。
 
-Next, examine the mapping table to try and find the same value in the "alias" column:
+次に、マッピングテーブルを調べて、「エイリアス」の列に同じ値がないか探します。
 
 <table>
   <tr>
     <th width="50%"><strong>サイト運営者オリジンのユーザー ID</strong></th>
-    <th width="50%"><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
+    <th width="50%"><strong>サイト運営者オリジンにはない AMP ページのユーザー ID（「エイリアス」）</strong></th>
   </tr>
   <tr>
     <td><code>$existing_publisher_origin_identifier</code></td>
@@ -351,7 +351,7 @@ AMP クライアント ID がマッピングに見つからない場合は、マ
 <table>
   <tr>
     <th><strong>サイト運営者オリジンのユーザー ID</strong></th>
-    <th><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
+    <th><strong>サイト運営者オリジンにはない AMP ページのユーザー ID（「エイリアス」）</strong></th>
   </tr>
   <tr>
     <td> <code>$prospective_identifier</code>（アナリティクス ping を受信するときにジャストインタイムで生成）</td>
@@ -384,7 +384,7 @@ AMP クライアント ID がマッピングに見つからない場合は、マ
 
 このアプローチでは、2 種類の [AMP 変数置換](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md)を利用します。
 
-**To update outgoing links to use a Client ID substitution:** Define a new query parameter, `ref_id` ("referrer ID"), which will appear within the URL and indicate the **originating context’s identifier** for the user. Set this query parameter to equal the value of AMP’s Client ID substitution:
+**発信リンクを更新して、クライアント ID 置換を使用する:** 新しいクエリパラメータ `ref_id`（「リファラー ID」）を定義します。これは URL 内に表示され、ユーザーの**発信元コンテキストの ID** を示します。このクエリパラメータを AMP のクライアント ID 置換の値と同等になるように設定します。
 
 [sourcecode:html]
 <a
@@ -424,7 +424,7 @@ AMP クライアント ID がマッピングに見つからない場合は、マ
 />
 [/sourcecode]
 
-By taking these steps, the Client ID is available to the target server and/or as a URL parameter on the page the user lands on after the link click or form submission (the **destination context**). The name (or "key") will be `ref_id` because that’s how we’ve defined it in the above implementations and will have an associated value equal to the Client ID. For instance, by following the link (`<a>` tag) defined above, the user will navigate to this URL:
+これらの手順を行うと、リンククリックやフォーム送信後にユーザーがたどり着くページ（**リンク先コンテキスト**）のターゲットサーバーや URL パラメータとして、クライアント ID が利用できるようになります。上記の実装で定義したように、名前（または「キー」）は `ref_id` で、クライアント ID と同じ関連付けられた値が指定されます。たとえば、上記で定義したリンク（`<a>` タグ）をたどると、ユーザーは次の URL に移動します。
 
 [sourcecode:http] https://example.com/step2.html?ref_id=$amp_client_id [/sourcecode]
 
@@ -455,7 +455,7 @@ By taking these steps, the Client ID is available to the target server and/or as
 <amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
   <noscript><img alt="URLを介して提供された以前のコンテキストからの識別子と現在のコンテキストからの識別子を含む分析pingを構築する方法の例" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
 
-*Updates to AMP page:* Use the Query Parameter substitution feature in your amp-analytics configuration to obtain the `ref_id` identifier value within the URL. The Query Parameter feature takes a parameter that indicates the "key" of the desired key-value pair in the URL and returns the corresponding value. Use the Client ID feature as we have been doing to get the identifier for the AMP page context.
+これらの手順を行うと、リンククリックやフォーム送信後にユーザーがたどり着くページ（<strong>リンク先コンテキスト</strong>）のターゲットサーバーや URL パラメータとして、クライアント ID が利用できるようになります。上記の実装で定義したように、名前（または「キー」）は `ref_id` で、クライアント ID と同じ関連付けられた値が指定されます。たとえば、上記で定義したリンク（<code><a></code> タグ）をたどると、ユーザーは次の URL に移動します。
 
 [sourcecode:http]
 https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}
@@ -503,7 +503,7 @@ https://analytics.example.com/ping?type=pageview&orig_user_id=$amp_client_id&use
 
 先に進む前に、以下の「[パラメータの検証](#parameter-validation)」セクションに説明される手順に注意し、`orig_user_id` と `user_id` が示す両方の値を信頼できることを確認してください。
 
-Check if either of the values corresponding to the inbound analytics ping are present in your mapping table. In our example above, the first pageview happens on an AMP page that’s NOT on the publisher origin followed by the second pageview that happens on the publisher origin. As a result, the values for the analytics ping query parameters will look like this:
+対応するいずれかの値がマッピングテーブルに存在するかどうかを確認します。上記の例では、最初のページビューは、サイト運営者オリジンにない AMP ページで発生し、その後 2 つ目のページビューがサイト運営者オリジンで発生します。その結果、アナリティクス ping のクエリパラメータの値は次のようになります。
 
 **ケース 1: アナリティクス ping がサイト運営者オリジンのページから送信された場合の ID**
 
@@ -511,7 +511,7 @@ Check if either of the values corresponding to the inbound analytics ping are pr
   <tr>
     <th width="20%"></th>
     <th width="40%"><strong>サイト運営者オリジンのユーザー ID</strong></th>
-    <th width="40%"><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
+    <th width="40%"><strong>サイト運営者オリジンにはない AMP ページのユーザー ID（「エイリアス」）</strong></th>
   </tr>
   <tr>
     <td><strong>アナリティクス ping での表現</strong></td>
@@ -540,7 +540,7 @@ Check if either of the values corresponding to the inbound analytics ping are pr
   <tr>
     <th width="20%"> </th>
     <th width="40%"><strong>サイト運営者オリジンのユーザー ID</strong></th>
-    <th width="40%"><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
+    <th width="40%"><strong>サイト運営者オリジンにはない AMP ページのユーザー ID（「エイリアス」）</strong></th>
   </tr>
   <tr>
     <td><strong>アナリティクス ping での表現</strong></td>
@@ -559,16 +559,16 @@ Check if either of the values corresponding to the inbound analytics ping are pr
   </tr>
 </table>
 
-When you are searching the mapping table, take note of which situation applies and search for values within the columns of the mapping table where you expect them to appear. For instance, if the analytics ping is being sent from a page on the publisher origin (Case #1), then check for values keyed by `user_id` in the mapping table column "User ID on publisher origin" and check for values keyed by `orig_user_id` in the column "User ID on AMP page that’s NOT on publisher origin (‘alias’)".
+マッピングテーブルを検索する際は、どの状況に該当するかを確認し、値が表示されると思われるマッピングテーブルの列で値を検索します。たとえば、アナリティクス ping がサイト運営者オリジンのページから送信されている場合（ケース 1）、マッピングテーブルの「サイト運営者オリジンのユーザー ID」列にある `user_id` キーの値を確認し、「サイト運営者オリジンにない AMP ページのユーザー ID（エイリアス）」の `orig_user_id` キーの値を確認します。
 
 マッピングテーブルでいずれの ID 値の使用も確認できない場合は、新しいマッピングを作成します。
 
-- If the analytics request comes from a page on your publisher origin, then you should choose the value corresponding to `uid` to be the analytics record identifier; choose the value of `orig_uid` to be the "alias".
-- If the analytics request does not come from a page on your publisher origin, then you should choose the value corresponding to `uid` to be an "alias" value in the mapping table. Then, proceed with the remaining instructions in [Task 4](#task4) to create a prospective publisher origin identifier and attempt to set this value as a cookie on the origin.
+- アナリティクスリクエストがサイト運営者オリジンのページから発信されている場合は、`uid` に対応する値をアナリティクスレコード ID に選択し、`orig_uid` の値を「エイリアス」に選択する必要があります。
+- アナリティクスリクエストがサイト運営者オリジンのページから発信されていない場合は、マッピングテーブルに `uid` に対応する値を「エイリアス」の値に選択し、[タスク 4](#task4) の残りの手順に従って見込みのサイト運営者オリジン ID を作成し、その値をオリジンの cookie に設定します。
 
 ##### パラメータの検証 <a name="parameter-validation"></a>
 
-Values contained in a URL can be maliciously changed, malformed, or somehow otherwise not be the values that you expect to be there. This is sometimes called cross site request forgery. Just as it is important to ensure that the analytics pings that your analytics server receives are coming from pages that you expect to be sending analytics pings, when you are "forwarding" on values that were part of the URL, be sure to validate the referrer to ensure you can trust these values.
+URL に含まれる値は、悪意を以て変更されたり、不正な形式であったり、何らかの理由でそこに期待される値でなかったりすることがあります。これはクロスサイトリクエストフォージェリと呼ばれることがあり、アナリティクスサーバーが受信するアナリティクス ping が期待されるページから送信されていることを確認することも重要ですが、URL の一部であった値で「転送」する場合は、リファラーを検証してそれらの値を信頼できることを確認してください。
 
 たとえば、上記の手順では、ユーザーがクリックして対応するページに移動させることを目的に、次の URL を作成しました。
 
