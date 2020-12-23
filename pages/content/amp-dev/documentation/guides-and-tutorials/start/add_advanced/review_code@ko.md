@@ -1,7 +1,7 @@
 ---
 "$title": 시작 코드 검토
 "$order": '1'
-description: 'Before we start adding code, let''s review the sample article.amp.html page, which should be as follows: ...'
+description: 코드를 추가하기 전에 샘플 article.amp.html 페이지를 살펴보겠습니다. 샘플 페이지는 다음과 같이 작성되어 있습니다...
 ---
 
 코드를 추가하기 전에 샘플 [article.amp.html](https://github.com/googlecodelabs/accelerated-mobile-pages-advanced/blob/master/article.amp.html) 페이지를 살펴 보겠습니다. 샘플 페이지는 다음과 같이 작성되어 있습니다.
