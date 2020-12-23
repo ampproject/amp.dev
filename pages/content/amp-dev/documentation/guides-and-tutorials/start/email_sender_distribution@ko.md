@@ -34,12 +34,12 @@ AMP 이메일 형식에 대한 이해 및 컴플라이언스를 증명해야 합
 
 **Gmail**
 
-[GooglePrivacy & Terms](https://policies.google.com/privacy)
+[Google 개인정보 보호 및 약관](https://policies.google.com/privacy)
 
 **Mail.ru**
 
-- [Non-Russian based users](https://help.mail.ru/engmail-help/privacy)
-- [Russian based users](https://agent.mail.ru/legal/privacypolicy/en)
+- [러시아에 거주하지 않는 사용자](https://help.mail.ru/engmail-help/privacy)
+- [러시아 거주 사용자](https://agent.mail.ru/legal/privacypolicy/en)
 
 **Verizon Media (Yahoo Mail)**
 
