@@ -94,8 +94,7 @@ description: For web experiences requiring a high amount of customization AMP ha
 
 amp.dev는 AMP로 작성되었습니다! 그렇기에 이미지는 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 기준에 부합합니다. 빌드 프로세스에서 이미지를 `amp-img` 형식으로 변환하는 데 다음 구문이 활용되었습니다.
 
-<div class="ap-m-code-snippet"><pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}
-</pre></div>
+<div class="ap-m-code-snippet"><pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}</pre></div>
 
 ## 섹션 필터링
 
@@ -158,12 +157,7 @@ Read-on
 
 [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md?format=websites) 템플릿을 활용하면 자주 그렇듯 코드에 중괄호가 두 개 포함된 경우 코드 부분을 래핑해야 합니다.
 
-<div class="ap-m-code-snippet"><pre>```html
-{% raw	%}
-  // code with double curly braces
-{% endraw	%}
-```
-</pre></div>
+<div class="ap-m-code-snippet"><pre>```html<br>{% raw	%}<br>  // code with double curly braces<br>{% endraw	%}<br>```</pre></div>
 
 ### 목록의 코드 조각
 
@@ -448,7 +442,6 @@ amp.dev에 다른 페이지를 연결할 경우 참조는 대상 파일에 상�
 
 ```html
 ## Example section <a name="example-section"></a>
-
 ```
 
 앵커에는 문자, 숫자, 대시 및 밑줄 기호만 사용되어야 합니다. 헤드라인과 일치하거나 섹션을 설명하는 앵커 이름을 영어로 짧게 작성합니다. 또한 앵커 이름이 문서 안에 하나만 있도록 지정합니다.
@@ -496,15 +489,15 @@ AMP 웹사이트나 AMP 스토리와 같은 AMP 형식으로 컴포넌트 문서
    </td>
   </tr>
   <tr>
-   <td>hello-world-tutorial.md    </td>
-   <td>hello_world_tutorial.md    </td>
+   <td>hello-world-tutorial.md</td>
+   <td>hello_world_tutorial.md</td>
   </tr>
   <tr>
-   <td>website-fundamentals.md    </td>
-   <td>websiteFundamentals.md    </td>
+   <td>website-fundamentals.md</td>
+   <td>websiteFundamentals.md</td>
   </tr>
   <tr>
-   <td>actions-and-events.md    </td>
-   <td>actionsandevents.md    </td>
+   <td>actions-and-events.md</td>
+   <td>actionsandevents.md</td>
   </tr>
 </table>
