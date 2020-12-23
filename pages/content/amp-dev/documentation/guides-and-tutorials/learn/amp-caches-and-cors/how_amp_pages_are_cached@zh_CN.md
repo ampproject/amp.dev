@@ -61,7 +61,7 @@ AMP 缓存不是由身为发布商的您来选择的 - 所要使用的 AMP 缓�
 
     - Google AMP 缓存网址示例：`https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
-[tip type="note"] **NOTE –** The AMP Cache URL is not a user-facing URL, that is, users wouldn't typically request content via those URLs. [/tip]
+[tip type="note"]<strong>注意:</strong> AMP 缓存网址不是面向用户的网址，也就是说，用户通常不会通过这些网址来请求获取内容。[/tip]
 
 - **发布商添加**：发布商可以非常明确地将 AMP 网页添加到 AMP 缓存中。此选项仅适用于 Google AMP 缓存（请参阅 [Google AMP 缓存：更新 AMP 内容](https://developers.google.com/amp/cache/update-cache)）。
 
