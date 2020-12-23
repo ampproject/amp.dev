@@ -33,7 +33,7 @@ Vous pouvez définir le CSS dans AMP des manières suivantes:
 
 [tip type="read-on"] Vous trouverez plus de détails sur l'utilisation de CSS dans AMP dans la section [Style et mise en page](../style_and_layout/index.md). [/tip]
 
-[filter formats="websites, stories"] To keep your pages lean and speedy, AMP has enforced a 75,000 byte CSS limit in the `<amp style-custom>` tag. While you can use this to define animation styles, the 500,000 bye limit inside of `<amp style-keyframes>` tag allows for more verbose animations that won't take away precious site style resources. [/filter]
+[filter formats="websites, stories"] Pour alléger et accélérer vos pages, AMP a appliqué une limite CSS de 75 000 octets dans la balise `<amp style-custom>`. Bien que vous puissiez l'utiliser pour définir des styles d'animation, la limite de 500 000 octets à l'intérieur de la balise `<amp style-keyframes>` permet des animations plus détaillées qui ne retireront pas les précieuses ressources de style du site. [/filter]
 
 [filter formats="ads"] Pour alléger et accélérer vos annonces, AMP a appliqué une limite CSS de 20 000 octets dans la balise `<amp style-custom>`. Bien que vous puissiez l'utiliser pour définir des styles d'animation, la limite de 500 000 octets à l'intérieur de la balise `<amp style-keyframes>` permet des animations plus détaillées qui ne retireront pas les précieuses ressources de style du site. [/filter]
 
