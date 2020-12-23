@@ -1,7 +1,7 @@
 ---
 "$title": Add advanced AMP features
 "$order": '0'
-description: "In this tutorial, you'll build on your understanding of AMP foundations and learn how AMP handles advertising, analytics, embedded videos, social media integration, carousels, and more."
+description: "Dans ce tutoriel, vous développerez votre compréhension des fondements AMP et apprendrez comment AMP gère la publicité, les analyses, les vidéos intégrées, l'intégration des médias sociaux, les carrousels, etc."
 "$hidden": 'true'
 formats:
 - websites
@@ -9,7 +9,7 @@ formats:
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='Completed news article') }}
 
-In this tutorial, you'll build on your understanding of AMP foundations and learn how AMP handles advertising, analytics, embedded videos, social media integration, carousels, and more. By the end of this tutorial, you'll have created a mobile news article that includes these features.
+Dans ce tutoriel, vous développerez votre compréhension des fondements AMP et apprendrez comment AMP gère la publicité, les analyses, les vidéos intégrées, l'intégration des médias sociaux, les carrousels, etc. À la fin de ce tutoriel, vous aurez créé un article d'actualités mobile qui inclut ces fonctionnalités.
 
 ## You’ll learn to:
 
@@ -20,8 +20,8 @@ In this tutorial, you'll build on your understanding of AMP foundations and lear
 - Add site navigation to your page with [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md)
 - Use custom fonts in AMP
 
-## You'll build:
+## Vous créerez :
 
-A news article page that conforms to AMP specifications and incorporates advertising, analytics, embedded video, embedded social media, carousels, and a site navigation menu.
+Une page d'article de presse conforme aux spécifications AMP et qui intègre la publicité, l'analyse, la vidéo intégrée, les médias sociaux intégrés, les carrousels et un menu de navigation du site.
 
-[tip type="note"] **NOTE –**  This tutorial is a continuation of the concepts introduced in the ["Convert your HTML to AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md) tutorial. If you don't already have a basic understanding of AMP’s core concepts, please try out the ["Convert your HTML to AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md) tutorial. [/tip]
+[tip type="note"] **REMARQUE -** Ce tutoriel est une continuation des concepts introduits dans le didacticiel ["Convertir votre HTML en AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md). Si vous ne maîtrisez pas encore les concepts de base d'AMP, veuillez essayer le tutoriel ["Convertir votre HTML en AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md). [/tip]
