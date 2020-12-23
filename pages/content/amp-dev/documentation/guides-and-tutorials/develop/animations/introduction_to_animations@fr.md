@@ -155,7 +155,6 @@ Plusieurs animations peuvent se connecter pour former une grande séquence. Vous
     }
   </script>
 </amp-animation>
-
 ```
 
 Cette configuration lit chaque animation pendant 3 secondes dans une séquence.
