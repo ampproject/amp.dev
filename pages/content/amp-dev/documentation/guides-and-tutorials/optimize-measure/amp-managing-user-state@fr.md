@@ -471,10 +471,7 @@ https://analytics.example.com/ping?type=pageview&orig_user_id=$referrer_page_ide
 
 En suivant nos exemples ci-dessus, nous avons:
 
-[sourcecode:text]
-$referrer_page_identifier is $amp_client_id
-$current_page_identifier is $publisher_origin_id
-[/sourcecode]
+[sourcecode:text] $referrer_page_identifier is $amp_client_id $current_page_identifier is $publisher_origin_id [/sourcecode]
 
 le ping est alors:
 
