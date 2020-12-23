@@ -1,7 +1,7 @@
 ---
 "$title": 制作实时博客
 "$order": '102'
-description: Live blogs are web pages that are updated frequently throughout an on-going event, such as a sporting event or an election. In AMP, you can implement a live blog by using ...
+description: 实时博客是在整个持续性事件（如体育赛事或选举）中频繁更新的网页。在 AMP 中，您可以使用 ...
 tutorial: 'true'
 formats:
 - websites
