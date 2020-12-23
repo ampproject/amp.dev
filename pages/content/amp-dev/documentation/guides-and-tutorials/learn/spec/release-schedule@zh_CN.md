@@ -17,17 +17,17 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-- [Release Channels](#release-channels)
-    - [Nightly](#nightly)
-    - [Weekly](#weekly)
-        - [Experimental and Beta channels](#experimental-and-beta-channels)
-    - [Long-Term Stable (lts)](#long-term-stable-lts)
-- [Determining if your change is in a release](#determining-if-your-change-is-in-a-release)
-- [Release Cadence](#release-cadence)
-    - [Detailed schedule](#detailed-schedule)
-    - [Release Freezes](#release-freezes)
+- [发布渠道 ](#release-channels)
+    - [每夜 ](#nightly)
+    - [每周 ](#weekly)
+        - [Beta 和实验渠道 ](#experimental-and-beta-channels)
+    - [长期稳定 (lts) ](#long-term-stable-lts)
+- [确定您的变更是否包含在某一版本中 ](#determining-if-your-change-is-in-a-release)
+- [发布节奏 ](#release-cadence)
+    - [详细时间表 ](#detailed-schedule)
+    - [发布冻结 ](#release-freezes)
 
-A new release of AMP is pushed to all AMP pages every week on Tuesday. **Once a change in AMP is merged into the master branch of the amphtml repository, it will typically take 1-2 weeks for the change to be live for all users.**
+新版 AMP 会于每周二推送到所有 AMP 页面。**在 AMP 中的变更合并到 amphtml 仓库的主分支后，变更通常需要 1-2 周时间才能对所有用户生效**。
 
 ## 发布渠道 <a name="release-channels"></a>
 
@@ -73,13 +73,13 @@ AMP 运行时和扩展项通过各种不同的*发布渠道*提供。每种渠�
 
 **lts** 发布渠道以一个月为间隔提供之前的**稳定**构建。在每个月的第二个周一，当前的**稳定**版将升级到 **lts**。并不建议所有 AMP 发布商都加入此渠道。此渠道旨在提供给不希望频繁对其网站执行 QA 的发布商，使其可以选择特定网页加入 **lts** 渠道（请参阅 <a href="https://github.com/ampproject/amphtml/blob/master/contributing/lts-release.md" data-md-type="link">**lts** 自述文件</a>）。
 
-If the second Monday of the month falls on a holiday, the promotion will be performed after the end of the [release freeze](#release-freezes).
+如果每个月的第二个周一为节假日，将在[发布冻结](#release-freezes)结束后执行升级。
 
 重要提示：使用 **lts** 发布渠道的发布商不应使用新引入的功能。由于周期较长，**lts** 版本可能落后于 [`ampproject/amphtml`](https://github.com/ampproject/amphtml) 的 `HEAD` 长达七周时间。请参阅[确定您的变更是否包含在某一版本中](#Determining-if-your-change-is-in-a-release)部分，验证变更能否在您选择的发布周期内实现。
 
 ## 确定您的变更是否包含在某一版本中 <a name="determining-if-your-change-is-in-a-release"></a>
 
-[*Type: Release* GitHub issues](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) are used to track the status of current and past releases; from the initial cut, to testing via **experimental**/**beta** channels, to eventual release via the **stable** and **lts** channels. Announcements about releases are made on the [AMP Slack #release channel](https://amphtml.slack.com/messages/C4NVAR0H3/) ([sign up for Slack](https://bit.ly/amp-slack-signup)).
+[*Type: Release* GitHub 问题](https://github.com/ampproject/amphtml/labels/Type%3A%20Release)用于跟踪当前和过往版本的状态；从最初着手编写，到通过**实验**/**Beta** 渠道执行测试，再到通过**稳定**和 **lts** 渠道实现最终发布。将在 [AMP Slack #release 频道](https://amphtml.slack.com/messages/C4NVAR0H3/)（[注册 Slack](https://bit.ly/amp-slack-signup)）中提供有关版本的公告。
 
 您可以使用以下任一方式确定给定构建中的变更：
 
@@ -93,7 +93,7 @@ If the second Monday of the month falls on a holiday, the promotion will be perf
 在确定我们应以怎样的频率向所有用户推送新版 AMP 时，我们需要权衡许多因素，其中包括：
 
 - 保证使用 AMP 构建的数百万个网站/数十亿个页面的稳定性
-- cache-busting that might happen when we push a new version
+- 避免推送新版本时可能发生的缓存无效化
 - 用户对于快速获取新功能的渴望
 
 在考虑所有这些因素后，我们将推送周期定为 1-2 周。到目前为止，我们认为这是一个合理的折衷方案，但我们将继续评估所有这些因素，并可能在将来进行调整。
@@ -102,7 +102,7 @@ If the second Monday of the month falls on a holiday, the promotion will be perf
 
 尽管复杂问题可能会导致延迟，但我们将尽力遵循这一时间表。您可以通过 [*Type: Release* GitHub 问题](https://github.com/ampproject/amphtml/labels/Type%3A%20Release)以及 [AMP Slack #release 频道](https://amphtml.slack.com/messages/C4NVAR0H3/)（[注册 Slack](https://bit.ly/amp-slack-signup)）跟踪有关任何版本的最新状态。
 
-- Tuesday @ [11am Pacific](https://www.google.com/search?q=11am+pacific+in+current+time+zone): new **experimental** and **beta** release builds are created from the [latest master build that passes all of our tests](https://travis-ci.com/ampproject/amphtml/branches) and are pushed to users who opted into the [AMP Experimental Channel](#amp-experimental-and-beta-channels) or [AMP Beta Channel](#amp-experimental-and-beta-channels), respectively.
+- 周二（[太平洋时间上午 11 点](https://www.google.com/search?q=11am+pacific+in+current+time+zone)）：将基于<a>通过我们所有测试的最新主构建</a>创建新的**实验**和 <strong>Beta</strong> 发布构建，并分别推送给选择加入 [AMP 实验渠道](#amp-experimental-and-beta-channels)或 [AMP Beta 渠道](#amp-experimental-and-beta-channels)的 AMP 用户。
 - 周三：我们会检查*实验渠道*和 *Beta 渠道*用户的错误报告，如果一切正常，我们会将 **Beta** 版推送给 1% 的 AMP 页面
 - 周四至次周一：我们会继续监测*实验渠道*和 *Beta 渠道*用户以及 1% 使用**实验**/**Beta** 构建的页面的错误率和错误报告
 - 次周二：**Beta** 构建完全升级到**稳定**渠道（即所有 AMP 页面都将使用此构建）
@@ -121,10 +121,10 @@ If the second Monday of the month falls on a holiday, the promotion will be perf
 
 执行发布冻结的原因包括：
 
-- Times when there are not enough people available to push the AMP release to **stable** and monitor it. Currently, most of the people performing AMP releases are based in the United States, so this will usually be the weeks of the major US holidays of Independence Day (July 4), Thanksgiving (fourth Thursday in November), Christmas (25 December), and New Year's Eve/Day (December 31/January 1).
+- 没有足够的用户来推动 AMP 版本升级到**稳定**渠道并对其进行监测。目前，大多数执行 AMP 发布的用户均位于美国，因此发布冻结主要发生于美国独立日（7 月 4 日）、感恩节（ 11 月的第四个周四）、圣诞节（12 月 25 日）和新年前一天/新年当天（12 月 31 日/ 1 月 1 日）所在的周。
 - 出现紧急情况，例如[技术指导委员会 (TSC)](https://github.com/ampproject/meta-tsc) 或执行发布的人员确定存在安全或隐私问题。
-- Other situations when the stability of the codebase is deemed to be particularly important as determined by the TSC.
+- 由 TSC 确定存在被认定会对代码库的稳定性造成重大影响的其他情况。
 
-In all cases, except emergencies, the release freezes will be announced at least one month in advance.
+在除紧急情况外的其他所有情况下，都将至少提前一个月提供发布冻结的公告。
 
 请注意，除非另行公告，否则发布冻结并不意味着代码冻结。在发布冻结期间，用户仍可编写、审查及合并代码。
