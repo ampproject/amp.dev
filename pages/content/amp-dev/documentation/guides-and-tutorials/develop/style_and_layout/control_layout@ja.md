@@ -142,7 +142,7 @@ AMP は**メディアクエリ**と**要素クエリ**の両方をサポート�
 
 [`@media`](https://developer.mozilla.org/ja-JP/docs/Web/CSS/@media) を 使用すると、他のウェブサイトと同様に、ページ レイアウトの見え方や動作をコントロールできます。 ブラウザ ウィンドウのサイズや向きが変わると、 メディアクエリが再評価されて、その新しい結果を基に、要素が表示されるか非表示になるかが 決まります。
 
-メディアクエリを適用してレイアウトを制御する方法について詳しくは、[CSS メディアクエリを使用してレスポンシブにする](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=ja)をご覧ください。
+[tip type="read-on"]メディアクエリを適用してレイアウトを制御する方法について詳しくは、[CSS メディアクエリを使用してレスポンシブにする](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=ja)をご覧ください。[/tip]
 
 ### 要素のメディアクエリ <a name="element-media-queries"></a>
 
