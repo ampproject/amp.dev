@@ -20,7 +20,7 @@ author: CrystalOnScript
 - `<head>` 태그의 첫 번째 하위 요소로 `<meta charset="utf-8">` 태그를 포함합니다.
 - `<head>` 태그에 `<script async src="https://cdn.ampproject.org/v0.js"></script>` 태그를 포함합니다. 모범 사례로서 `<head>`의 스크립트는 가능한 초기에 포함되어야 합니다.
 - `<head>` 태그에 ` <link rel="canonical" href="page/url">` 태그를 포함하며 href를 사용해 웹 스토리 URL를 지정합니다.
-- Contain a `<meta name="viewport" content="width=device-width">` tag inside the `<head>` tag. It's also recommended to include initial-scale=1.
+- `<head>` 태그에 `<meta name="viewport" content="width=device-width">` 태그를 포함합니다. 또한 initial-scale=1도 사용하는 것이 좋습니다.
 - `<head>` 태그에 [AMP 상용구](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) 코드를 포함합니다.
 
 AMP 웹 페이지 및 AMP로 작성된 웹 스토리의 차이점은 [`amp-story`](https://amp.dev/documentation/components/amp-story/?format=stories) 컴포넌트입니다. 이 컴포넌트는 문서 `<body>`의 유일한 하위 요소이며 `standalone` 속성을 포함해야 합니다. 모든 웹 스토리 페이지, 레이어 및 요소는 `<amp-story>` 태그에 정의됩니다.
