@@ -180,7 +180,7 @@ Vous avez créé avec succès une PWA avec AMP! Dans ce tutoriel, vous avez appr
 - Créer un [manifeste d'application Web](https://developers.google.com/web/fundamentals/web-app-manifest/)
 - Installer un service worker AMP à l'aide de [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md)
 - Personnaliser le [service worker AMP](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html)
-- [Prefetch links ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
+- Préchargez les liens
 - Créer une page hors ligne
 
 plus de détails sur les [service workers](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html) et [les points essentiels sur les UX hors ligne](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux). Apprenez à créer [suivre l'engagement avec les analyses](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.html) et suivez le tutoriel sur [la configuration des analyses de base pour vos pages AMP](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/tracking-engagement.html).
