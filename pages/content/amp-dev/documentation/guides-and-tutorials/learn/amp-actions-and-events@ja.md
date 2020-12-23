@@ -135,18 +135,15 @@ AMP は、HTML 要素（AMP 要素を含む）でリスンできる `tap` イベ
   <!-- change -->
   <tr>
     <td rowspan="3"><code>change</code></td>
-    <td rowspan="3">Fired when the value of the element is changed and committed.       <p>       Data properties mirror those in <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#Properties">HTMLInputElement</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement#Properties">HTMLSelectElement</a>.</p>     </td>
+    <td rowspan="3">要素の値が変更されたりコミットされたりした場合に発行されます。       <p>       データプロパティは <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#Properties">HTMLInputElement</a> と <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement#Properties">HTMLSelectElement</a> にミラーされます。</p>
+</td>
     <td><code>input</code></td>
     <td>
-      <pre>event.min
-event.max
-event.value
-event.valueAsNumber</pre>
+      <pre>event.min<br>event.max<br>event.value<br>event.valueAsNumber</pre>
     </td>
   </tr>
   <tr>
-    <td>
-<code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
+    <td> <code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
 </td>
     <td>
       <code>event.checked</code>
@@ -155,9 +152,7 @@ event.valueAsNumber</pre>
   <tr>
     <td><code>select</code></td>
     <td>
-      <pre>event.min
-event.max
-event.value</pre>
+      <pre>event.min<br>event.max<br>event.value</pre>
     </td>
   </tr>
   <!-- input-debounced -->
@@ -211,8 +206,7 @@ event.value</pre>
   <tr>
     <td><code>slideChange</code></td>
     <td>カルーセルの現在のスライドが変化すると発行されます。</td>
-    <td><pre>// Slide number.
-event.index</pre></td>
+    <td><pre>// Slide number.<br>event.index</pre></td>
   </tr>
 </table>
 
@@ -250,8 +244,7 @@ event.index</pre></td>
 <code>amp-list</code> のレイアウトを <code>layout="CONTAINTER"</code> に更新し、<a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">動的なサイズ変更</a>を行えるようにします。</td>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(低信頼)</td>
     <td>データのフェッチに失敗したときに発行されます。</td>
     <td>なし</td>
   </tr>
@@ -268,10 +261,7 @@ event.index</pre></td>
   <tr>
     <td><code>select</code></td>
     <td>オプションが選択または選択解除されると発行されます。</td>
-    <td><pre>// Target element's "option" attribute value.
-event.targetOption
-// Array of "option" attribute values of all selected elements.
-event.selectedOptions</pre></td>
+    <td><pre>// Target element's "option" attribute value.<br>event.targetOption<br>// Array of "option" attribute values of all selected elements.<br>event.selectedOptions</pre></td>
   </tr>
 </table>
 
@@ -304,8 +294,7 @@ event.selectedOptions</pre></td>
     <th width="40%">データ</th>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(低信頼)</td>
     <td>データのフェッチに失敗したときに発行されます。</td>
     <td>なし</td>
   </tr>
@@ -320,17 +309,14 @@ event.selectedOptions</pre></td>
     <th width="40%">データ</th>
   </tr>
   <tr>
-    <td>
-<code>firstPlay</code>(low-trust)</td>
+    <td> <code>firstPlay</code>(低信頼)</td>
     <td>ユーザーによって動画が初めて再生されたときに発行されます。自動再生動画では、ユーザーが動画と対話した時点で発行されます。このイベントは低信頼性であるため、ほとんどのアクションをトリガできません。<code>amp-animation</code> アクションなどの低信頼性アクションのみを実行できます。</td>
     <td></td>
   </tr>
   <tr>
-    <td>
-<code>timeUpdate</code>(low-trust)</td>
+    <td> <code>timeUpdate</code>（低信頼）</td>
     <td>動画の再生位置が変更されると発行されます。イベントの頻度は AMP によって制御されており、現在 1 秒間隔に設定されています。このイベントは低信頼性であるため、ほとんどのアクションをトリガできません。<code>amp-animation</code> アクションなどの低信頼性アクションのみを実行できます。</td>
-    <td>
-<code>{time, percent}</code><code>time</code> indicates the current time in seconds, <code>percent</code> is a number between 0 and 1 and indicates current position as percentage of total time.</td>
+    <td> <code>{time, percent}</code><code>time</code> は、現在の時間を秒で示し、<code>percent</code> は、合計時間のパーセント率として現在の位置を示す、0 と 1 の間の数値です。</td>
   </tr>
 </table>
 
@@ -350,14 +336,12 @@ event.selectedOptions</pre></td>
   <tr>
     <td><code>submit-success</code></td>
     <td>Fired when the form submission response is success.</td>
-    <td><pre>// Response JSON.
-event.response</pre></td>
+    <td><pre>// Response JSON.<br>event.response</pre></td>
   </tr>
   <tr>
     <td><code>submit-error</code></td>
     <td>フォーム送信のレスポンスがエラーである場合に発行されます。</td>
-    <td><pre>// Response JSON.
-event.response</pre></td>
+    <td><pre>// Response JSON.<br>event.response</pre></td>
   </tr>
   <tr>
     <td><code>valid</code></td>
@@ -386,11 +370,11 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>show</code></td>
-    <td>Shows the target element. If an     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a     result, it gains focus.</td>
+    <td>ターゲット要素を表示します。<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> 要素</a>が可視状態になると、フォーカスが設定されます。</td>
   </tr>
   <tr>
     <td><code>toggleVisibility</code></td>
-    <td>Toggles the visibility of the target element. If an     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a     result, it gains focus.</td>
+    <td>ターゲット要素の可視性を切り替えます。<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> 要素</a>が可視状態になると、フォーカスが設定されます。</td>
   </tr>
   <tr>
     <td><code>toggleClass(class=STRING, force=BOOLEAN)</code></td>
@@ -402,7 +386,7 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>focus</code></td>
-    <td>Makes the target element gain focus. To lose focus, <code>focus</code>     on another element (usually parent element). We strongly advise against     losing focus by focusing on <code>body</code>/<code>documentElement</code>     for accessibility reasons.</td>
+    <td>ターゲット要素にフォーカスを設定します。フォーカスを解除するには、別の要素に <code>focus</code> します（通常、親要素）。アクセシビリティを考慮し、<code>body</code>/<code>documentElement</code> にフォーカスを設定することで解除することは強くお勧めしません。</td>
   </tr>
 </table>
 
@@ -461,7 +445,9 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>toggle(section=STRING)</code></td>
-    <td>Toggles the <code>expanded</code> and <code>collapsed</code> states of <code>amp-accordion</code> sections. When called with no arguments, it toggles all sections of the accordion. Trigger on a specific section by providing the section id: <code>on="tap:myAccordion.toggle(section='section-id')"</code>.   </td>
+    <td>
+<code>amp-accordion</code> の <code>expanded</code> と <code>collapsed</code> 状態を切り替えます。引数なしで呼び出されると、アコーディオンのすべてのセクションを切り替えます。次のようにセクション ID を指定すると、特定のセクションでトリガされます。<code>on="tap:myAccordion.toggle(section=</code>
+</td>
 </tr>
   <tr>
     <td><code>expand(section=STRING)</code></td>
@@ -583,7 +569,7 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>toggle(index=INTEGER, value=BOOLEAN)</code></td>
-    <td>Toggles the application of the `selected`. If the select attribute is absent, this action adds it. If the select attribute is present, this action removes it.     You may force and keep an add or remove by including a boolean value in the `value` argument. A value of `true` will force add the `selected` attribute and not remove it if already present. A value of  `false` will remove the attribute, but not add it if absent.   </td>
+    <td>`selected` のアプリケーションを切り替えます。select 属性がない場合、このアクションによって追加されます。select 属性が存在する場合、このアクションによって削除されます。`value` 引数にブール値を指定すると、追加または削除を強制・維持することができます。`true` の場合は `selected` 属性を強制的に追加し、すでに存在する場合は削除しません。`false` の場合は属性を削除し、すでに存在しない場合は追加しません。</td>
   </tr>
 </table>
 
