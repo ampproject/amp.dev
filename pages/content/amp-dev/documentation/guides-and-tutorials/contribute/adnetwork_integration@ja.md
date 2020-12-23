@@ -1,9 +1,9 @@
 ---
-"$title": Integrating with AMP to serve display ads
+"$title": AMPと統合してディスプレイ広告を配信
 "$order": '5'
 description: このガイドは、AMP との統合によって AMP ページにディスプレイ広告を配信したいと考えている広告ネットワークを対象としています。
 formats:
-- ads
+- 広告
 ---
 
 このガイドは、AMP との統合によって AMP ページにディスプレイ広告を配信したいと考えている広告ネットワークを対象としています。
