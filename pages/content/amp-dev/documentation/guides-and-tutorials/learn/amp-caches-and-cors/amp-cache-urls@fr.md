@@ -15,7 +15,7 @@ Dans ce document, vous découvrirez le format d'URL du cache AMP et la manière 
 
 ## Format d'URL
 
-When possible, the Google AMP Cache will create a subdomain for each AMP document's domain by first converting it from [IDN (punycode)](https://en.wikipedia.org/wiki/Punycode) to UTF-8. The caches replaces every `-` (dash) with `--` (2 dashes) and replace every `.` (dot) with `-` (dash). For example, `pub.com` will map to `pub-com.cdn.ampproject.org`.
+Si possible, Google AMP Cache créera un sous-domaine pour le domaine de chaque document AMP en le convertissant d'abord du format [IDN (punycode)](https://en.wikipedia.org/wiki/Punycode) au format UTF-8. Les caches remplacent chaque `-` (tiret) par `--` (2 tirets) et remplacent tous les `.` (point) par un `-` (tiret). Par exemple, `pub.com` correspondra à `pub-com.cdn.ampproject.org` .
 
 Vous pouvez utiliser ce calculateur d'URL pour convertir une URL en une version de cache AMP :
 
@@ -36,7 +36,7 @@ Tous les documents utilisent le protocole https sur les caches AMP.
 
 ## Suffixe de nom de domaine
 
-All AMP Caches are registered in a JSON file, found online on the [AMPHTML Repository](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). An example cache record in this file will look like:
+Tous les caches AMP sont enregistrés dans un fichier JSON, disponible en ligne dans le [référentiel AMPHTML](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). Un exemple d'enregistrement de cache dans ce fichier ressemblerait à ceci:
 
 ```json
 {
@@ -55,31 +55,31 @@ Ce document utilise des URL avec `cdn.ampproject.org` comme exemples, mais d'aut
 
 ## Préfixe de nom de domaine
 
-An AMP Cache serves documents on an altered URL, such as `example-com.cdn.ampproject.org`. The first dotted component of the original domain name in the example, `example.com`, becomes `example-com`. This document refers to this non-dotted string, `example-com`, as the “domain prefix”. See below for the algorithm that performs this transformation.
+Un cache AMP fournit des documents sur une URL modifiée, telle que `example-com.cdn.ampproject.org`. Le premier composant avec point du nom de domaine d'origine dans l'exemple, `example.com`, devient `example-com`. Ce document fait référence à cette chaîne sans point, `example-com`, comme le « préfixe de domaine ». Reportez-vous ci-dessous pour en savoir plus sur l'algorithme qui effectue cette transformation.
 
-Multiple dotted components are not used in this prefix, such as `example.com.cdn.ampproject.org`, due to the constraint of https (TLS) certificates, [RFC 2818](https://tools.ietf.org/html/rfc2818#section-3.1):
+Les composants comprenant plusieurs points ne sont pas utilisés dans ce préfixe, tels que `example.com.cdn.ampproject.org`, en raison de la contrainte des certificats https (TLS), [RFC 2818](https://tools.ietf.org/html/rfc2818#section-3.1):
 
 ```
 Les noms peuvent contenir le caractère générique * qui remplace n'importe quel composant de nom de domaine ou fragment de composant. Par exemple, *.a.com correspond à foo.a.com mais pas à bar.foo.a.com.
 ```
 
-Publisher domains can be up to 255 characters in length, while each domain prefix is limited to 63 characters, as per [RFC 2181](https://tools.ietf.org/html/rfc2181#section-11) which reads:
+Les domaines de l'éditeur peuvent comporter jusqu'à 255 caractères, tandis que chaque préfixe de domaine est limité à 63 caractères, conformément à la contrainte [RFC 2181](https://tools.ietf.org/html/rfc2181#section-11) qui précise:
 
 ```
-The length of any one label is limited to between 1 and 63 octets.  A full domain name is limited to 255 octets (including the separators).
+La longueur de n'importe quelle étiquette doit être comprise entre 1 et 63 octets. Un nom de domaine complet est limité à 255 octets (y compris les séparateurs).
 ```
 
-All publisher domains map to a unique domain prefix. The algorithm for doing so attempts to make the mapping human-readable. However, mapping reverts to using a secure hashing for publisher domains if they are too long, and in the cases described below:
+Tous les domaines de l'éditeur correspondent à un préfixe de domaine unique. L'algorithme qui rend cela possible tente ainsi de rendre le mappage lisible par l'homme. Cependant, le mappage revient à utiliser un hachage sécurisé pour les domaines des éditeurs s'ils sont trop longs, et dans les cas décrits ci-dessous:
 
 ### Algorithme de base
 
-The basic algorithm for converting a publisher domain to a domain prefix is as follows:
+L'algorithme de base pour convertir un domaine d'éditeur en préfixe de domaine est le suivant:
 
 1. Décodage Punycode du domaine de l'éditeur. Voir [RFC 3492](https://tools.ietf.org/html/rfc3492)
-2. Replace any "`-`" (hyphen) character in the output of step 1 with "`--`" (two hyphens).
-3. Replace any "`.`" (dot) character in the output of step 2 with "`-`" (hyphen).
-4. If the output of step 3 has a "`-`" (hyphen) at both positions 3 and 4, then to the output of step 3, add a prefix of "`0-`" and add a suffix of "`-0`". See [#26205](https://github.com/ampproject/amphtml/issues/26205) for background.
-5. Punycode Encode the output of step 3. See [RFC 3492](https://tools.ietf.org/html/rfc3492)
+2. Remplacer tout caractère « `-` » (tiret) du résultat de l'étape 1 par « `--` » (deux tirets).
+3. Remplacer tout caractère « `.` » (point) du résultat de l'étape 2 par « `-` » (tiret).
+4. Si le résultat de l'étape 3 a un « `-` » (tiret) aux positions 3 et 4, alors ajouter un préfixe « `0-` » et un suffixe « `-0` » au résultat de l'étape 3. Voir [# 26205](https://github.com/ampproject/amphtml/issues/26205) pour le contexte.
+5. Encodage Punycode du résultat de l'étape 3. Voir [RFC 3492](https://tools.ietf.org/html/rfc3492)
 
 Quelques exemples de l'algorithme de base :
 
@@ -139,28 +139,28 @@ Un préfixe de domaine n'est pas une étiquette DNS valide s'il contient plus de
 L'algorithme de secours pour convertir un domaine d'éditeur en préfixe de domaine est le suivant :
 
 1. Hachage du domaine de l'éditeur à l'aide de SHA256.
-2. Base32 Escape the output of step 1.
-3. Remove the last 4 characters from the output of step 2, which are always `=` (equals) characters.
+2. Échappement Base32 du résultat de l'étape 1.
+3. Suppression des 4 derniers caractères du résultat de l'étape 2, qui sont toujours des caractères `=` (égal).
 
-The fallback algorithm will produce a 52 character string such as the following with no `-` (hyphen): `v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq`.
+L'algorithme de secours produira une chaîne de 52 caractères telle que celle ci-après, sans `-` (tiret): `v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq` .
 
 ### Algorithme combiné
 
-The combined algorithm is:
+L'algorithme combiné consiste à:
 
-1. Run the Basic Algorithm. If the output is a valid DNS label, append the Cache domain suffix and return, for example `example-com.cdn.ampproject.org`. Otherwise continue to step 2.
-2. Run the Fallback Algorithm. Append the Cache domain suffix and return, for example: `v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq.cdn.ampproject.org`
+1. Exécuter l'algorithme de base. Si le résultat est une étiquette DNS valide, ajouter le suffixe de domaine de cache et renvoyer, par exemple, `example-com.cdn.ampproject.org`. Sinon, passer à l'étape 2.
+2. Exécuter l'algorithme de secours. Ajout du suffixe de domaine du cache et renvoyer, par exemple: `v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq.cdn.ampproject.org`
 
-## URL Path
+## Chemin d'URL
 
 Le « chemin » d'une URL sur le cache AMP est toujours composé d'un ou de plusieurs répertoires de préfixes, tels que `/c`, suivis d'un infixe `/s` uniquement si l'URL de l'éditeur est http `s`, suivi de l'URL du document de l'éditeur sans le protocole.
 
 {{ image('/static/img/docs/guides/cache-url-path.jpg', 1688, 312, layout='intrinsic', alt='Image displaying cached URL formats') }}
 
-The prefix directories, such as `/c` correspond to different types of serving that an AMP Cache may perform. Different AMP Caches may support different serving types, and this is not an exhaustive list:
+Les répertoires de préfixes, tels que `/c` correspondent à différents types de services qu'un cache AMP peut effectuer. Différents caches AMP peuvent prendre en charge différents types de diffusion, la liste suivante n'est pas exhaustive:
 
 - `/c` - <strong>C</strong>ontent : il s'agit d'un document AMP fourni comme page autonome qui peut être liée directement dans certaines interfaces.
-- `/v` - <strong>V</strong>iewer: This is also an AMP document, but is served in an [AMP Viewer](https://amp.dev/documentation/guides-and-tutorials/integrate/integrate-with-apps/#implementing-an-amp-viewer) which is a frame environment that displays an AMP document in the context of a Search Result Page or other interface.
+- `/v` - <strong>V</strong>iewer : il s'agit également d'un document AMP, mais fourni dans une [visionneuse AMP](https://amp.dev/documentation/guides-and-tutorials/integrate/integrate-with-apps/#implementing-an-amp-viewer) qui est un environnement cadre qui affiche un document AMP dans le cadre d'une page de résultats de recherche ou d'une autre interface.
 - `/wp` - <strong>W</strong>eb <strong>P</strong>ackage : il s'agit d'un document AMP fourni comme un [échange signé](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/signed-exchange/), une technologie Web Package. Ces URL agissent comme des redirections vers l'origine de l'éditeur.
 - `/cert` - <strong>Cert</strong>ificate : il s'agit d'un certificat public à utiliser avec un [échange signé](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/signed-exchange/).
 - `/i` - <strong>I</strong>mage : il s'agit d'une image fournie par le cache AMP, généralement en tant que sous-ressource de document.
@@ -184,20 +184,20 @@ Commencez par supprimer le préfixe de protocole (`https://`) et le suffixe de d
 - `www-example-com`
 - `v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq`
 
-Next, check to see if the “domain prefix” contains at least one ‘`-`’ (hyphen). Containing one or more hyphens is the most common case by far. If the “domain prefix” does not contain at least one ‘`-`’ (hyphen), the AMP Cache Origin cannot be reversed directly. Instead, if you know the set of possible publisher domains, you can create the set of AMP Cache Origins using the Domain Name algorithm further above in this document. You can then validate against the fixed set.
+Ensuite, vérifiez si le « préfixe de domaine » contient au moins un « `-` » (tiret). La présence d'un ou de plusieurs traits d'union est de loin le cas le plus courant. Si le « préfixe de domaine » ne contient pas au moins un « `-` » (tiret), l'origine du cache AMP ne peut pas être inversée directement. Au lieu de cela, si vous connaissez l'ensemble des domaines d'éditeur possibles, vous pouvez créer l'ensemble des origines du cache AMP à l'aide de l'algorithme de nom de domaine présenté plus haut dans ce document. Vous pouvez ensuite valider par rapport à l'ensemble fixe.
 
 Le reste de l'algorithme suppose que le « préfixe de domaine » contient au moins un « `-` » (tiret).
 
-1. If the domain prefix starts with `xn--`, punycode decode the “domain prefix”. For example `xn---com-p33b41770a` becomes `⚡😊-com`. See [RFC 3492](https://tools.ietf.org/html/rfc3492) for punycode.
+1. Si le préfixe de domaine commence par `xn--`, procédez à un décodage punycode du « préfixe de domaine ». Par exemple, `xn---com-p33b41770a` devient `⚡😊-com`. Voir [RFC 3492](https://tools.ietf.org/html/rfc3492) pour le punycode.
 2. Si le préfixe de domaine commence par « `0-` » et se termine par « `-0` », supprimez à la fois le préfixe « `0-` » et le suffixe « -0 ».
 3. Parcourez les caractères générés à l'étape 2 dans l'ordre, en les émettant comme rencontré. Lorsque vous rencontrez un « `-` » (tiret), jetez un œil au caractère suivant. Si le caractère suivant est également un « `-` » (tiret), ignorez les deux caractères de l'entrée et émettez un seul « `-` » (tiret). Si le caractère suivant est un autre caractère, ignorez uniquement le « `-` » (tiret) actuel et émettez un « `.` » (point). Par exemple, `a--b-example-com` devient `ab.example.com` .
-4. Punycode encode the result of Step 3. See [RFC 3492](https://tools.ietf.org/html/rfc3492) for punycode.
+4. Faites un encodage Punycode du résultat de l'étape 3. Voir [RFC 3492](https://tools.ietf.org/html/rfc3492) pour punycode.
 
-The result of Step 4 will be the Publisher Domain. The protocol is unavailable from the domain itself, but is either `http` or `https`. The port is always the default for the protocol.
+Le résultat de l'étape 4 sera le domaine de l'éditeur. Le protocole n'est pas disponible à partir du domaine lui-même, mais est `http` ou `https`. Le port est toujours le port par défaut du protocole.
 
 ## Gestion des redirections et des erreurs
 
-Here are some examples for how the AMP Cache handles redirects and errors:
+Voici quelques exemples de la manière dont le cache AMP gère les redirections et les erreurs:
 
 **Redirections**
 
