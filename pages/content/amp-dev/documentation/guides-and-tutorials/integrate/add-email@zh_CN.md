@@ -44,7 +44,6 @@ Content-Type: text/html; charset="UTF-8"
 
 <span>Hello World in HTML!</span>
 --001a114634ac3555ae05525685ae
-
 ```
 
 [tip type="important"] 某些电子邮件客户端仅呈现最后的 MIME 部分。为了确保电子邮件得到呈现，请将 `text/x-amp-html` MIME 部分置于 `text/html` MIME 部分之前。[/tip]
