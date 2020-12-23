@@ -1,7 +1,7 @@
 ---
-$title: 축하합니다!
-$order: 4
-description: "AMP 및 비 AMP 페이지에서 지원되는 AMPHTML 광고 제작을 완료하셨습니다! 이번 튜토리얼에서 학습한 내용은 다음과 같습니다: 유효한 AMPHTML 광고 제작..."
+"$title": 축하합니다!
+"$order": '4'
+description: 'AMP 및 비 AMP 페이지에서 지원되는 AMPHTML 광고 제작을 완료하셨습니다! 이번 튜토리얼에서 학습한 내용은 다음과 같습니다: 유효한 AMPHTML 광고 제작...'
 ---
 
 AMP 및 비 AMP 페이지에서 지원되는 AMPHTML 광고 제작을 완료하셨습니다!
