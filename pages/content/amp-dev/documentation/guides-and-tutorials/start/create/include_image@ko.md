@@ -15,4 +15,4 @@ contributors:
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-[sourcecode:html] <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img> [/sourcecode]
+[tip type="read-on"] **읽어보기 –**`<img>`와 같은 태그를 [`<amp-img>`](../../../../documentation/components/reference/amp-img.md)로 대체하는 이유와 지원되는 태그 개수를 알아보려면 [이미지 및 동영상 삽입](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)을 참조하세요. [/tip]
