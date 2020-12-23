@@ -1,7 +1,11 @@
 ---
-$title: AMP 캐시 URL 형식 및 요청 처리
-$order: 9
-toc: false
+"$title": AMP 캐시 URL 형식 및 요청 처리
+"$order": '9'
+toc: 'false'
+formats:
+- websites
+- stories
+- ads
 author: Gregable
 contributors:
 - sebastianbenz
@@ -15,11 +19,8 @@ contributors:
 
  URL 계산기를 활용하여 URL을 AMP 캐시 버전으로 변환할 수 있습니다.
 
-<div>
-<amp-iframe title="AMP Cache tool" height="104" layout="fixed-height" sandbox="allow-scripts" src="/static/samples/files/amp-url-converter.html?url=https://amp.dev/index.amp.html">
-  <div placeholder></div>
-</amp-iframe>
-</div>
+<div><amp-iframe title="AMP Cache tool" height="104" layout="fixed-height" sandbox="allow-scripts" src="/static/samples/files/amp-url-converter.html?url=https://amp.dev/index.amp.html">
+  <div placeholder></div></amp-iframe></div>
 
 [tip type="tip"] [AMP-Toolbox Cache URL](https://github.com/ampproject/amp-toolbox/tree/master/packages/cache-url) [Node.js](https://nodejs.org) 모듈을 사용하면 원본 URL을 AMP 캐시 URL 형식으로 변환할 수 있습니다. [/tip]
 
@@ -116,8 +117,8 @@ The length of any one label is limited to between 1 and 63 octets.  A full domai
    </td>
   </tr>
   <tr>
-   <td> <code>xn--57hw060o.com</code> (⚡😊.com)</td>
-   <td> <code>xn---com-p33b41770a</code> (⚡😊-com)</td>
+   <td> <code>xn--57hw060o.com</code> (⚡😊.com)    </td>
+   <td> <code>xn---com-p33b41770a</code> (⚡😊-com)    </td>
   </tr>
   <tr>
    <td>
