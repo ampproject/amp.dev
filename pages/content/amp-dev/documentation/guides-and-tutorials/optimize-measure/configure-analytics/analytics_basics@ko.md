@@ -85,7 +85,45 @@ AMP 플랫폼 통합의 일환으로 공급업체는 사전 정의된 [`amp-anal
 AMP 애널리틱스를 활용하면 어떤 애널리틱스 공급업체를 사용해도 상단의 내용을 쉽게 구현할 수 있습니다. 예를 들어 Google Analytics의 [전체 사이트 태그](https://developers.google.com/gtagjs/)는 하단의 코드 조각처럼 표시됩니다.
 
 ```html
-<amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
+<amp-analytics type="gtag" data-credentials="include">
+ <script type="application/json">
+  {
+    "vars": {
+      "gtag_id":"YOUR_GOOGLE_ANALYTICS_ID",
+      "config": {
+        "YOUR_GOOGLE_ANALYTICS_ID": {
+          "groups":"default"
+        }
+      }
+    },
+    "triggers": {
+      "storyProgress": {
+        "on":"story-page-visible",
+        "vars": {
+          "event_name":"custom",
+          "event_action":"story_progress",
+          "event_category":"${title}",
+          "event_label":"${storyPageId}",
+          "send_to": [
+            "YOUR_GOOGLE_ANALYTICS_ID"
+          ]
+        }
+      },
+      "storyEnd": {
+        "on":"story-last-page-visible",
+        "vars": {
+          "event_name":"custom",
+          "event_action":"story_complete",
+          "event_category":"${title}",
+          "send_to": [
+            "YOUR_GOOGLE_ANALYTICS_ID"
+          ]
+        }
+      }
+    }
+  }
+ </script>
+</amp-analytics>
 ```
 
 이러한 기본 구성만으로 AMP 스토리에서 완전하게 작동하는 구성을 생성할 수 있습니다.
@@ -99,24 +137,7 @@ AMP 애널리틱스를 활용하면 어떤 애널리틱스 공급업체를 사�
 <a><code data-md-type="codespan">amp-pixel</code></a> 및 <a><code data-md-type="codespan">amp-analytics</code></a> 컴포넌트는 모든 표준 URL 변수 대체을 허용합니다(<a class="" href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">AMP HTML 변수 대체</a> 참조). 다음 예시에서는 페이지 조회수 요청이 URL로 전송되며, 현재 AMP 문서의 기본 URL, 제목, <a class="" href="https://gitlocalize.com/repo/4863/ko/pages/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md#user-identification">클라이언트 ID</a>도 함께 전송됩니다.
 
 ```html
-<amp-analytics>
-
-<script type="application/json">
-
-  {"requests":
-    {"pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}",
-  },
-  "vars":
-    {"account":
-  "ABC123", },"triggers":
-    {"someEvent":
-      {"on": "visible",
-      "request": "pageview",
-      "vars":
-        {"title":
-"My homepage", } } } }</script>
-
-</amp-analytics>
+<amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
 ```
 
 <a><code>amp-pixel</code></a> 태그는 간소하므로 플랫폼에서 정의된 변수나 AMP 런타임이 AMP 페이지에서 파싱할 수 있는 변수만 삽입될 수 있습니다. 상단 예시의 경우 플랫폼에서 <code>canonicalURL</code> 및 <code>clientId(site-user-id)</code> 값이 채워집니다. <a><code>amp-analytics</code></a> 태그에는 <a><code>amp-pixel</code></a>과 동일한 변수 및 태그 구성 내에 고유하게 정의된 변수를 삽입할 수 있습니다.
@@ -126,7 +147,27 @@ AMP 애널리틱스를 활용하면 어떤 애널리틱스 공급업체를 사�
 다음 [<code>amp-analytics</code>](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) 예시에서 페이지 조회수 요청은 변수 대체를 통해 추출된 추가 데이터와 함께 지정된 URL로 전송됩니다. 이 데이터 중 일부는 플랫폼에서 제공되며 일부는 <a><code>amp-analytics</code></a> 구성 내에서 인라인으로 정의됩니다.
 
 ```html
-<amp-pixel src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"></amp-pixel>
+<amp-analytics>
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
+      },
+      "vars": {
+        "account":"ABC123"
+      },
+      "triggers": {
+        "someEvent": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage"
+          }
+        }
+      }
+    }
+  </script>
+</amp-analytics>
 ```
 
 상단 예시의 경우 <code>account</code> 및 <code>title</code> 변수가 <a><code>amp-analytics</code></a> 구성에서 정의됩니다. <code>canonicalUrl</code> 및 <code>clientId</code> 변수는 구성에서 정의되지 않기 때문에 이러한 변수의 값은 플랫폼에서 대체됩니다.
