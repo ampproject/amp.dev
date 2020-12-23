@@ -137,7 +137,7 @@ AMPHTML では、HTML メールと同様に、ピクセル追跡テクニック�
 - [AMP `CLIENT_ID`](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics#user-identification)
 - [`amp-analytics`](https://amp.dev/documentation/components/amp-analytics)
 - [`amp-pixel`](https://amp.dev/documentation/components/amp-pixel)
-- [AMP Variable Substitution](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics_basics/#variable-substitution)
+- [変数置換 ](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics_basics/#variable-substitution)
 
 ### コンポーネント固有の考慮事項 <a name="component-specific-considerations"></a>
 
