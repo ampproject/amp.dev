@@ -51,6 +51,18 @@ AMP 网页中的广告是使用 [`amp-ad`](../../../../documentation/components/
 将以下脚本**添加**到 `<head>` 标记中：
 
 ```html
+<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+```
+
+**刷新**网页后，您应该会看到两个测试广告：
+
+{{ image('/static/img/docs/tutorials/tut-advanced-ads.png', 376, 606, align='center half', caption='测试广告') }}
+
+[tip type="important"] **重要提示**：您的开发者控制台中可能会存在一些错误，例如 <code>Mixed Content</code> 或 `XMLHttpRequest cannot load`。前一个错误可能与 A9 广告相关，因为它加载的所有内容并非都是安全的。对于在 AMP 网页上投放的所有广告而言，这是一项值得注意的要求。[/tip]
+
+下文中的这两个 [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) 很好地例证了 [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) 组件为支持广告平台功能而提供的灵活性。在本例中，我们（使用 DoubleClick 信息中心）将两个 DoubleClick 测试广告配置为仅在某些国家/地区展示——第一个广告仅在英国展示，第二个广告仅在美国展示。请尝试在 AMP 文档中**添加**这两项地理位置定位广告配置（将其放在您先前添加的广告下方）：
+
+```html
 <amp-ad
   width="300"
   height="250"
@@ -66,26 +78,6 @@ AMP 网页中的广告是使用 [`amp-ad`](../../../../documentation/components/
   data-slot="/35096353/amptesting/geo/us">
   <div fallback>No ad appeared because you're not browsing from the US!</div>
 </amp-ad>
-```
-
-**刷新**网页后，您应该会看到两个测试广告：
-
-{{ image('/static/img/docs/tutorials/tut-advanced-ads.png', 376, 606, align='center half', caption='测试广告') }}
-
-[tip type="important"] **重要提示**：您的开发者控制台中可能会存在一些错误，例如 <code>Mixed Content</code> 或 `XMLHttpRequest cannot load`。前一个错误可能与 A9 广告相关，因为它加载的所有内容并非都是安全的。对于在 AMP 网页上投放的所有广告而言，这是一项值得注意的要求。[/tip]
-
-下文中的这两个 [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) 很好地例证了 [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) 组件为支持广告平台功能而提供的灵活性。在本例中，我们（使用 DoubleClick 信息中心）将两个 DoubleClick 测试广告配置为仅在某些国家/地区展示——第一个广告仅在英国展示，第二个广告仅在美国展示。请尝试在 AMP 文档中**添加**这两项地理位置定位广告配置（将其放在您先前添加的广告下方）：
-
-```html
-<amp-youtube
-  data-videoid="npum8JsITQE"
-  layout="responsive"
-  width="480"
-  height="270">
-  <div fallback>
-    <p>The video could not be loaded.</p>
-  </div>
-</amp-youtube>
 ```
 
 **刷新**一下网页，看看效果吧。以下屏幕截图是在加拿大截取的，因此没有加载上述任一广告：
@@ -111,7 +103,15 @@ AMP 网页中的广告是使用 [`amp-ad`](../../../../documentation/components/
 我们来试着在此文档中嵌入一个 YouTube 视频。请在您的 AMP 文档中**添加**以下代码（使其紧跟在 `<header>` 后面，即您刚才添加的 [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) 上方）：
 
 ```html
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<amp-youtube
+  data-videoid="npum8JsITQE"
+  layout="responsive"
+  width="480"
+  height="270">
+  <div fallback>
+    <p>The video could not be loaded.</p>
+  </div>
+</amp-youtube>
 ```
 
 **刷新**网页。您看到的不会是视频，而是以下文字：*无法加载该视频。*
@@ -145,18 +145,18 @@ AMP 网页中的广告是使用 [`amp-ad`](../../../../documentation/components/
 首先，将以下 JavaScript 请求添加到文档的 `<head>` 标记中：
 
 ```html
+<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+```
+
+现在，在您的报道中**添加**下述代码以嵌入推文：
+
+```html
 <amp-twitter
   width="486"
   height="657"
   layout="responsive"
   data-tweetid="638793490521001985">
 </amp-twitter>
-```
-
-现在，在您的报道中**添加**下述代码以嵌入推文：
-
-```html
-<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
 ```
 
 `data-tweetid` 属性是特定平台所需的自定义属性的另一个示例。在本例中，Twitter 将 `data-tweetid` 属性的值与某条特定推文关联起来。
@@ -180,16 +180,14 @@ AMP 提供了另一个组件来专门应对这种情况，即 [`amp-fit-text`](.
 我们来试一试。首先，将该组件的库**添加**到 `<head>` 标记中：
 
 ```html
-<amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-  Big, bold article quote goes here.
-</amp-fit-text>
+<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
 ```
 
 将以下内容添加到网页中：
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-  Hello!
+  Big, bold article quote goes here.
 </amp-fit-text>
 ```
 
@@ -199,7 +197,7 @@ AMP 提供了另一个组件来专门应对这种情况，即 [`amp-fit-text`](.
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-   And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+  Hello!
 </amp-fit-text>
 ```
 
