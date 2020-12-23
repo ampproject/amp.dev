@@ -32,7 +32,11 @@ Shadow AMP ライブラリは、`async` 属性を指定して読み込むこと�
 
 Shadow AMP ライブラリが使用可能になったかどうかは、グローバル `AMP` 変数が使用できるかどうかで判断できます。Shadow AMP では、「[関数を非同期で読み込む方法](http://mrcoles.com/blog/google-analytics-asynchronous-tracking-how-it-work/)」を使用します。次のコードを挿入することを検討してください。
 
-[sourcecode:javascript] (window.AMP = window.AMP || []).push(function(AMP) { // AMP is now available. }); [/sourcecode]
+[sourcecode:javascript]
+(window.AMP = window.AMP || []).push(function(AMP) {
+  // AMP is now available.
+});
+[/sourcecode]
 
 コードが正常に動作し、いくつかのコールバックが追加されれば、AMP は使用可能な状態になっています。以下にその理由を説明します。
 
@@ -101,7 +105,10 @@ fetchDocument(url).then(function(doc) {
 
 クリーンアップに最適なタイミングは、ユーザーがプログレッシブウェブアプリ内で AMP から AMP にナビゲートするときです。以前レンダリングした AMP ページを破棄する際は、必ず次のような形で AMP に伝えてください。
 
-[sourcecode:javascript] // ampedDoc is the reference returned from AMP.attachShadowDoc ampedDoc.close(); [/sourcecode]
+[sourcecode:javascript]
+// ampedDoc is the reference returned from AMP.attachShadowDoc
+ampedDoc.close();
+[/sourcecode]
 
 これにより、このドキュメントをもう使用しないことが AMP に伝わり、メモリや CPU のオーバーヘッドが解放されます。
 
