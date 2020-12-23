@@ -147,7 +147,10 @@ several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the inv
 
 AMP ページを作成する際の参考として、[minimum_valid_amp.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/minimum_valid_amp.html) を検討してみましょう。
 
-[sourcecode:console] $ amphtml-validator minimum_valid_amp.html minimum_valid_amp.html: PASS [/sourcecode]
+[sourcecode:console]
+$ amphtml-validator minimum_valid_amp.html
+minimum_valid_amp.html: PASS
+[/sourcecode]
 
 コマンドラインツールには、色の切り替え、JSON 出力の表示、特定のバージョンの Validator JavaScript の実行（デフォルトでは、最新の公開スクリプトを実行します）などの追加の機能があります。
 
