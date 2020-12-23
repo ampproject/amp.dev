@@ -1,8 +1,10 @@
 ---
-$title: アナリティクスによりエンゲージメントをトラッキングする
+"$title": アナリティクスによるエンゲージメントのトラッキング
+"$order": '4'
+description: Analytics platforms are commonly integrated into websites through inline JavaScript snippets and function calls, which trigger events that are sent back to the analytics system.
 ---
 
-アナリティクス プラットフォームは、インライン JavaScript スニペットと関数呼び出しを使用してウェブサイトに統合するのが一般的で、ウェブサイトでイベントがトリガーされると、このメカニズムによってアナリティクス システムに通知されます。AMP は、複数のアナリティクス パートナー向けに、柔軟な JSON 設定構文を提供してこのプロセスを再現しています。
+アナリティクスプラットフォームは、インライン JavaScript スニペットと関数呼び出しを使用してウェブサイトに統合するのが一般的で、ウェブサイトでイベントがトリガーされると、このメカニズムによってアナリティクスシステムに通知されます。AMP は、複数のアナリティクスパートナー向けに、柔軟な JSON 構成構文を提供してこのプロセスを再現しています。
 
 以下は、従来の JavaScript 主導の Google アナリティクスによるトラッキングの例です。これを [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) JSON 形式に書き換えますが、まずは従来のアプローチを見てみましょう。
 
