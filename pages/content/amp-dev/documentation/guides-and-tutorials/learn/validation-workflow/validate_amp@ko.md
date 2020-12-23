@@ -38,7 +38,7 @@ AMP 검사기는 <a href="https://validator.ampproject.org/">validator.ampprojec
 
 ### 브라우저 확장 프로그램
 
-The AMP Validator can be accessed directly from your browser's toolbar using a browser extension. As you browse, it will automatically validate each AMP page visited and gives a visual indication of the validity of the page as a colored icon.
+AMP 검사기는 브라우저 확장 프로그램을 통해 브라우저 툴바에서 바로 액세스할 수 있습니다. 이 확장 프로그램은 사용자가 탐색하면서 방문한 모든 AMP 페이지의 유효성을 자동으로 검사하고 색상 아이콘으로 페이지의 유효성을 시각적으로 표시합니다.
 
 <table>
   <tr>
@@ -70,7 +70,7 @@ AMP 검사기 확장 프로그램은 [Chrome](https://chrome.google.com/webstore
 
 [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) 또는 [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator)(Gulp 플러그인) 등의 AMP 검사기 NPM 패키지를 사용하여 AMP 검사기를 빌드하고 테스트 파이프라인의 일부로 통합할 수 있습니다. 예를 들어, AMP 검사기 NPM 패키지로 통합 테스트를 진행하거나 해당 패키지를 프로덕션 단계의 AMP 페이지의 유효성을 검사하는 예약된 작업에 응용할 수 있습니다.
 
-##### Example: Validating an AMP HTML file
+##### 예 : AMP HTML 파일 유효성 검사
 
 이 예에서는 [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) NPM 패키지를 사용하여 AMP HTML 파일의 유효성을 검사합니다. 유효성 검사 상태는 콘솔로 전달됩니다.
 
@@ -187,8 +187,7 @@ AMP 유효성 검사 서비스에서 페이지의 오류를 감지한 경우 타
 
 
 
-- Web Interface
-    <amp-img src="/static/img/docs/validator_webui_imgerror.png" width="676" height="58" layout="responsive" alt="AMP error: The tag 'img' may only appear as a descendant of tag'noscript'. Did you mean 'amp-img'? line 11, column 2"></amp-img>
+- 웹 인터페이스
 
 
 
