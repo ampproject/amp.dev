@@ -1,5 +1,11 @@
 ---
-$title: 시각적 AMP 스토리 작성하기
+"$title": Create your first Web Story
+"$order": '0'
+description: 이 가이드에서는 AMP에서 시각적으로 눈길을 끄는 스토리를 작성하는 데 사용할 수 있는 amp-story 구성요소를 소개합니다. 이 가이드를 ...
+"$hidden": 'true'
+formats:
+- stories
+author: bpaduch
 ---
 
 [video src="/static/video/tut_pets-story-complete.mp4" caption="Completed AMP story." poster="/static/img/docs/tutorials/amp_story/story_poster.png"]
@@ -14,7 +20,3 @@ $title: 시각적 AMP 스토리 작성하기
 - 페이지를 볼 때 재생되는 오디오 추가
 - 페이지의 요소를 애니메이션으로 표시
 - 스토리 마지막 부분에 관련 링크를 추가하여 독자의 콘텐츠 몰입도 유지
-
-[tip type="note"]
- [`amp-story`](../../../../documentation/components/reference/amp-story.md) 구성요소는 아직 **실험 단계**에 있습니다.
-[/tip]
