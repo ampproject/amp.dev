@@ -1,10 +1,20 @@
 ---
-$title: 分析ツールと AMP の統合
-order: 1
+"$title": 分析ツールと AMP の統合
+order: '1'
+formats:
+- websites
+- stories
 teaser:
-  text:  概要
-toc: true
+  text: 概要
+toc: 'true'
 ---
+
+<!--
+This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md.
+Please do not change this file.
+If you have found a bug or an issue please
+have a look and request a pull request there.
+-->
 
 ## 概要 <a name="overview"></a>
 
@@ -51,11 +61,10 @@ toc: true
 
 エンドポイントアプローチは、前のセクションで説明した標準アプローチと同じです。config アプローチには、サイト運営者固有の amp-analytics の構成を作成する作業があり、互換性のあるすべてのアナリティクスパッケージが含まれます。サイト運営者は、以下のような構文を使用して構成を含めます。
 
-[sourcecode:html] <amp-analytics config="https://my-awesome-tag-manager.example.com/user-id.json"
-
->
->
-
+[sourcecode:html]
+<amp-analytics
+  config="https://my-awesome-tag-manager.example.com/user-id.json"
+></amp-analytics>
 [/sourcecode]
 
 このアプローチを使用する場合は、サイト運営者向けの AMP アナリティクスの統合に関するドキュメントを参照してください。
@@ -64,6 +73,6 @@ toc: true
 
 - ディープダイブ: [Why not just use an iframe?](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/why-not-iframe.md)
 - ディープダイブ: [Managing non-authenticated user state with AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)
-- [amp-analytics サンプル](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
+- [amp-analytics sample](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
 - [amp-analytics](https://amp.dev/documentation/components/amp-analytics) リファレンスドキュメント
 - [amp-analytics variables](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) リファレンスドキュメント
