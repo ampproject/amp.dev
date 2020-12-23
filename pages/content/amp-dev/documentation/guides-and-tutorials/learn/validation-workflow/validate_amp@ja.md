@@ -38,7 +38,7 @@ AMP Validator のウェブインターフェースには、<a href="https://vali
 
 ### ブラウザの拡張機能
 
-The AMP Validator can be accessed directly from your browser's toolbar using a browser extension. As you browse, it will automatically validate each AMP page visited and gives a visual indication of the validity of the page as a colored icon.
+ブラウザの拡張機能を使用すると、AMP Validator にブラウザのツールバーから直接アクセスできるようになります。ブラウザでページを表示すると、アクセスした各 AMP ページが自動的に検証され、ページの妥当性が色付きのアイコンで視覚的に示されます。
 
 <table>
   <tr>
@@ -70,7 +70,7 @@ AMP Validator 拡張機能は、[Chrome](https://chrome.google.com/webstore/deta
 
 AMP Validator の NPM パッケージを使用すると、AMP の検証をビルドやテストのパイプラインの一部として統合することができます。[amphtml-validator](https://www.npmjs.com/package/amphtml-validator) または [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator)（gulp プラグイン）のいずれかのパッケージをご利用いただけます。たとえば、AMP Validator の NPM パッケージを統合テストやスケジュールタスク内で使用して、本番環境の AMP ページを検証できます。
 
-##### Example: Validating an AMP HTML file
+##### 例: AMP HTML ファイルの検証
 
 この例では、AMP HTML ファイルの検証を [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) NPM パッケージを使用して実施します。検証のステータスはコンソールに出力されます。
 
@@ -210,7 +210,7 @@ AMP 検証サービスでページに問題があることが検出されると�
 
 1. エラーが発生した HTML ドキュメント内の場所（行と列）。インターフェースによっては、クリック可能になっていて、その場所がハイライト表示されます。このケースでは、行 11、列 2 で問題が発生しています。
 2. エラーに関する説明。このケースでは、`<img>` タグが使用されていますが、本来は [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) タグを使用すべきであることが示されています。
-3. A link to a relevant document about the error. In this case the documentation for the [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) tag. Not all errors generate documentation links.
+3. エラーに関連するドキュメントへのリンク。このケースでは、[`<amp-img>`](../../../../documentation/components/reference/amp-img.md) タグに関するドキュメントです。すべてのエラーにドキュメントのリンクが表示されるわけではありません。
 
 [仕様](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)をよく確認したところ、`<img>` タグが使用されているところで、本来は [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) タグを使用すべきであることがわかりました。
 
