@@ -208,7 +208,7 @@ HTML 태그는 AMP HTML에서 변경없이 사용할 수 있습니다. 특정 �
   </tr>
   <tr>
     <td width="30%">noscript</td>
-    <td>Allowed. Can be used anywhere in the document. If specified, the content inside the <code><noscript></code> element displays if JavaScript is disabled by the user.</td>
+    <td>Allowed. Can be used anywhere in the document. If specified, the content inside the <code>&lt;noscript></code> element displays if JavaScript is disabled by the user.</td>
   </tr>
   <tr>
     <td width="30%">base</td>
@@ -216,11 +216,11 @@ HTML 태그는 AMP HTML에서 변경없이 사용할 수 있습니다. 특정 �
   </tr>
   <tr>
     <td width="30%">img</td>
-    <td>Replaced with <code>amp-img</code>.<br>         Please note: <code><img></code> is a <a href="https://www.w3.org/TR/html5/syntax.html#void-elements">Void Element according to HTML5</a>, so it does not have an end tag. However, <code><amp-img></code> does have an end tag <code></amp-img></code>.</td>
+    <td>Replaced with <code>amp-img</code>.<br>         Please note: <code>&lt;img></code> is a <a href="https://www.w3.org/TR/html5/syntax.html#void-elements">Void Element according to HTML5</a>, so it does not have an end tag. However, <code>&lt;amp-img></code> does have an end tag <code>&lt;/amp-img></code>.</td>
   </tr>
     <tr>
     <td width="30%">picture</td>
-    <td>Prohibited. Serve different image formats by using the <a href="https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders?format=websites">fallback</a> attribute or provide multiple <a href="https://amp.dev/documentation/components/amp-img#attributes"><code>srcset</code> on <code><amp-img></code></a>.</td>
+    <td>Prohibited. Serve different image formats by using the <a href="https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders?format=websites">fallback</a> attribute or provide multiple <a href="https://amp.dev/documentation/components/amp-img#attributes"><code>srcset</code> on <code>&lt;amp-img></code></a>.</td>
   </tr>
   <tr>
     <td width="30%">video</td>
@@ -267,7 +267,7 @@ HTML 태그는 AMP HTML에서 변경없이 사용할 수 있습니다. 특정 �
   </tr>
   <tr>
     <td width="30%">input elements</td>
-    <td>Mostly allowed with <a href="https://amp.dev/documentation/components/amp-form#inputs-and-fields">exception of some input types</a>, namely, <code><input type=button></code>, <code><button type=image></code> are invalid. Related tags are also allowed: <code><fieldset></code>, <code><label></code>
+    <td>Mostly allowed with <a href="https://amp.dev/documentation/components/amp-form#inputs-and-fields">exception of some input types</a>, namely, <code>&lt;input type="button"></code>, <code>&lt;button type="image"></code> are invalid. Related tags are also allowed: <code>&lt;fieldset></code>, <code>&lt;label></code>
 </td>
   </tr>
   <tr>
@@ -283,7 +283,7 @@ HTML 태그는 AMP HTML에서 변경없이 사용할 수 있습니다. 특정 �
   <tr>
     <td width="30%">link</td>
     <td>
-<code>rel</code> values registered on <a href="http://microformats.org/wiki/existing-rel-values">microformats.org</a> are allowed. If a <code>rel</code> value is missing from our allowlist, <a href="https://github.com/ampproject/amphtml/issues/new">please submit an issue</a>. <code>stylesheet</code> and other values like <code>preconnect</code>, <code>prerender</code> and <code>prefetch</code> that have side effects in the browser are disallowed. There is a special case for fetching stylesheets from allowlisted font providers.</td>
+<a>microformats.org</a>에 등록된 <code>rel</code> 값은 허용됨. <code>rel</code> 값이 허용 목록에서 누락된 경우, <a href="https://github.com/ampproject/amphtml/issues/new">이슈를 제출해 주세요</a>. <code>stylesheet</code> 및  <code>preconnect</code>, <code>prerender</code>, <code>prefetch</code>처럼 브라우저에 부작용을 초래하는 기타 값은 허용되지 않습니다. 허용 목록에 포함된 글꼴 제공 업체에서 스타일시트를 가져오는 특수한 사례가 있습니다.</td>
   </tr>
   <tr>
     <td width="30%">meta</td>
@@ -302,7 +302,7 @@ HTML 태그는 AMP HTML에서 변경없이 사용할 수 있습니다. 특정 �
   </tr>
 </table>
 
-Validator implementations should use an allowlist based on the HTML5 specification with the above tags removed. See [AMP Tag Addendum](https://github.com/ampproject/amphtml/blob/master/spec/amp-tag-addendum.md).
+유효성 검사기 구현 시 HTML5 사양에 기반하며 상단의 태그들은 제거된 허용 목록을 사용해야 합니다. [AMP 태그 부록](https://github.com/ampproject/amphtml/blob/master/spec/amp-tag-addendum.md)을 참조하세요.
 
 ### 코멘트<a name="comments"></a>
 
@@ -370,9 +370,9 @@ To prevent usage of attribute selectors to circumvent class name limitations it 
 
 #### 속성<a name="properties"></a>
 
-AMP only allows transitions and animations of properties that can be GPU accelerated in common browsers. We currently allow: `opacity`, `transform` (also `-vendorPrefix-transform`).
+AMP는 일반 브라우저에서 GPU 가속화가 지원되는 속성의 트랜지션 및 애니메이션만 허용합니다. 현재 허용되는 목록은 다음과 같습니다: `opacity`, `transform`(`-vendorPrefix-transform`도 허용).
 
-In the following examples `<property>` needs to be in the allowed list above.
+다음 예시에서 `<property>`는 상단의 허용 목록에 포함되어야 합니다.
 
 - `transition <property>` (또한 -vendorPrefix-transition)
 - `@keyframes name { from: {<property>: value} to {<property: value>} }` (또한 `@-vendorPrefix-keyframes` )
@@ -408,7 +408,7 @@ In the following examples `<property>` needs to be in the allowed list above.
 
 ### 맞춤 글꼴<a name="custom-fonts"></a>
 
-Authors may include stylesheets for custom fonts. The 2 supported methods are link tags pointing to allowlisted font providers and `@font-face` inclusion.
+작성자는 사용자 지정 글꼴용 스타일시트도 포함할 수 있습니다. 지원되는 2가지 방식은 허용 목록의 글꼴 제공 업체로 연결되는 태그 링크 및 `@font-face` 사용입니다.
 
 예:
 
@@ -419,7 +419,7 @@ Authors may include stylesheets for custom fonts. The 2 supported methods are li
 />
 [/sourcecode]
 
-Font providers can be allowlisted if they support CSS-only integrations and serve over HTTPS. The following origins are currently allowed for font serving via link tags:
+폰트 제공 업체가 CSS 전용 통합을 지원하거나 HTTPS를 통해 지원되는 경우 허용 목록에 포함할 수 있습니다. 현재 태그 링크를 통한 글꼴 제공 시 허용되는 출처는 다음과 같습니다.
 
 - Fonts.com : `https://fast.fonts.net`
 - Google 글꼴 : `https://fonts.googleapis.com`
@@ -434,13 +434,13 @@ Authors are free to include all custom fonts via an `@font-face` CSS instruction
 
 AMP 런타임은 모든 AMP 문서 내에서 실행되는 자바 스크립트의 일부입니다. AMP 맞춤 요소에 대한 구현을 제공하고, 리소스로드 및 우선 순위를 관리하며, 개발 중에 사용할 AMP HTML 용 런타임 유효성 검사기를 선택적으로 포함합니다.
 
-The AMP runtime is loaded via the mandatory <code><script src="https://cdn.ampproject.org/v0.js"></script></code> tag in the AMP document <code></code>.
+AMP 런타임은 AMP 문서의 필수 `<script src="https://cdn.ampproject.org/v0.js"></script>` 태그를 통해로드됩니다.<code></code> .
 
 AMP 런타임은 모든 페이지의 개발 모드에 배치 할 수 있습니다. 개발 모드는 삽입 된 페이지에서 AMP 유효성 검사를 트리거하여 유효성 검사 상태와 모든 오류를 자바 스크립트 개발자 콘솔에 내 보냅니다. 개발 모드는 페이지 URL에 `#development=1` 을 추가하여 실행할 수 있습니다.
 
 ## 자원<a name="resources"></a>
 
-Resources such as images, videos, audio files or ads must be included into an AMP HTML file through custom elements such as `<amp-img>`. We call them "managed resources" because whether and when they will be loaded and displayed to the user is decided by the AMP runtime.
+AMP HTML 파일에 이미지, 동영상, 오디오 파일 또는 광고와 같은 리소스를 포함할 시에는 `<amp-img>` 등의 사용자 지정 요소를 사용해야 합니다. 사용자에게 리소스가 로드 및 표시되는 여부와 그 시점이 AMP 런타임을 통해 결정되므로 "관리되는 리소스"라고 지칭합니다.
 
 AMP 런타임의로드 동작에 대한 특별한 보장은 없지만 일반적으로 리소스를 충분히 빠르게로드하여 사용자가 가능한 경우보고 싶어하는 시간에로드되도록해야합니다. 런타임은 현재 뷰포트에있는 리소스의 우선 순위를 지정하고 뷰포트의 변경 사항을 예측하고 그에 따라 리소스를 미리로드해야합니다.
 
@@ -448,7 +448,7 @@ AMP 런타임은 언제든지 현재 뷰포트에없는 리소스를 언로드�
 
 ## AMP 구성 요소<a name="amp-components"></a>
 
-AMP HTML uses custom elements called "AMP components" to substitute built-in resource-loading tags such as `<img>` and `<video>` and to implement features with complex interactions such as image lightboxes or carousels.
+AMP HTML은 “AMP 컴포넌트”라는 사용자 지정 요소를 활용하여 `<img>` 및 `<video>` 등의 기본 제공 리로스 로딩 태그를 대체하고 이미지 라이트박스 또는 캐러셀 등의 복잡한 인터랙션 기능을 구현합니다.
 
 지원되는 구성 요소에 대한 자세한 내용은 [AMP 구성 요소 사양](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-components.md) 을 참조하세요.
 
