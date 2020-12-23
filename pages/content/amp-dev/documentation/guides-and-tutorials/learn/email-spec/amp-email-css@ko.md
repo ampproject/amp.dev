@@ -1,9 +1,11 @@
 ---
-$title: 이메일용 AMP 지원 CSS
-order: 5
+"$title": 이메일용 AMP 지원 CSS
+order: '5'
+formats:
+- email
 teaser:
   text: 이 문서는 현재 AMP 이메일에서 지원되는 CSS 기능을 간략하게 설명합니다.
-toc: true
+toc: 'true'
 ---
 
 <!--
@@ -51,18 +53,18 @@ limitations under the License.
 
 ### 단순 선택자 <a name="simple-selectors"></a>
 
-- [유형 선택자](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) `elementname`
-- [클래스 선택자](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) `.classname`
-- [ID 선택자](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) `<a></a><a>#idname</a>`
-- [전체 선택자](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) `<a>*</a>`
-- [속성 선택자](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) `[attr=value]`
+- [Type selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) `elementname`
+- [Class selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) `.classname`
+- [ID selector](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) `#idname`
+- [Universal selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) `*`
+- [Attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) `[attr=value]`
 
 ### 결합자 <a name="combinators"></a>
 
-- [인접 형제 결합자 ](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator) `A + B`
-- [일반 형제 결합자 ](https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator) `A ~ B`
-- [자식 결합자](https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator) `A > B`
-- [자손 결합자](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator) `A B`
+- [Adjacent sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator) `A + B`
+- [General sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator) `A ~ B`
+- [Child combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator) `A > B`
+- [Descendant combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator) `A B`
 
 ### 의사 클래스 <a name="pseudo-classes"></a>
 
