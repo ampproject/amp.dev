@@ -37,7 +37,7 @@ formats:
 
 ### 手順 3: 広告ユニットのサイズを指定する
 
-Add the `width` and `height` attributes to the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)  tag.  This specifies the size of the ad on your AMP page:
+`<amp-ad>` タグに `width` 属性と <code>height</code> 属性を追加します。こうした属性を追加することで、AMP ページ上の広告のサイズを指定できます。
 
 ```html
 <amp-ad type="a9">
