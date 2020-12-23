@@ -26,4 +26,4 @@ Les annonces AMPHTML sont similaires aux annonces HTML traditionnelles, sauf qu'
 
 - [Ad Creator de Celtra](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*coming soon*) [/tip]
+- Adobe Animate (*bientôt disponible*)[/tip]
