@@ -354,10 +354,8 @@ AMP クライアント ID がマッピングに見つからない場合は、マ
     <th><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
   </tr>
   <tr>
-    <td>
-<code>$prospective_identifier</code>(generated just-in-time when analytics ping is received)</td>
-    <td>
-<code>$amp_client_id</code> (came from analytics ping)</td>
+    <td> <code>$prospective_identifier</code>（アナリティクス ping を受信するときにジャストインタイムで生成）</td>
+    <td> <code>$amp_client_id</code>（アナリティクス ping の ID）</td>
   </tr>
 </table>
 
