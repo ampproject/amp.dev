@@ -1,7 +1,12 @@
 ---
-$title: AMP 용어
-$order: 2
+"$title": AMP 용어
+"$order": '2'
 description: AMP 용어 가이드라인
+formats:
+- websites
+- stories
+- ads
+- email
 author: CrystalOnScript
 ---
 
@@ -68,12 +73,12 @@ author: CrystalOnScript
    </td>
   </tr>
   <tr>
-   <td>AMP 스토리</td>
+   <td>웹 스토리</td>
    <td>AMP로 작성된 스토리 웹 경험.</td>
    <td>
 <ul>
-      <li>AMP 스토리 형식은 무료이며 오픈 웹의 일부입니다.</li>
-<li>AMP 스토리는 빠르게 로딩되는 전면 경험을 통해 독자의 몰입을 유도합니다.</li>
+      <li>웹 스토리 형식은 무료이며 오픈 웹의 일부입니다.</li>
+<li>웹 스토리는 빠르게 로딩되는 전면 경험을 통해 독자의 몰입을 유도합니다.</li>
 </ul>
    </td>
   </tr>
