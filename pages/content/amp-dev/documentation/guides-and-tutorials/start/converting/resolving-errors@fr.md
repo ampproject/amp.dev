@@ -10,8 +10,7 @@ Dans cette section, nous allons parcourir et résoudre les erreurs de validation
 
 Nous allons commencer par corriger l'erreur suivante:
 
-<pre class="error-text">The mandatory tag 'meta charset=utf-8' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'meta charset=utf-8' is missing or incorrect.</pre>
 
 Pour afficher correctement le texte, AMP nécessite que vous spécifiiez le jeu de caractères de la page. Les informations du jeu de caractères meta doivent également être le premier enfant de la balise `<head>`. Cette balise doit être la première afin d'éviter de réinterpréter le contenu qui a été ajouté avant la balise du jeu de caractères meta.
 
@@ -27,8 +26,7 @@ Pour afficher correctement le texte, AMP nécessite que vous spécifiiez le jeu 
 
 Maintenant, regardons traitons suivante:
 
-<pre class="error-text">The mandatory tag 'link rel=canonical' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'link rel=canonical' is missing or incorrect.</pre>
 
 Chaque document AMP doit avoir un lien qui fait référence à sa version « canonique ». Nous irons en détail sur les pages canoniques et sur les différentes approches des liens canoniques dans l'étape [Rendre votre page visible](discoverable.md) de ce tutoriel.
 
@@ -54,9 +52,7 @@ Maintenant, **rechargez** la page. Bien qu'il reste encore beaucoup d'erreurs à
 
 AMP nécessite un attribut sur l'élément racine `<html>` d'une page pour déclarer la page en tant que document AMP.
 
-<pre class="error-text">The mandatory attribute '⚡' is missing in tag 'html ⚡ for top-level html'
-The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory attribute '⚡' is missing in tag 'html ⚡ for top-level html'<br>The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.</pre>
 
 Les erreurs ci-dessus peuvent être résolues en ajoutant simplement l'attribut `⚡ `à la balise `<html>` comme ceci:
 
@@ -78,8 +74,7 @@ Maintenant, rechargez la page et vérifiez que les deux erreurs ont disparu.
 
 Ensuite, traitons l'erreur suivante:
 
-<pre class="error-text">The mandatory tag 'meta name=viewport' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'meta name=viewport' is missing or incorrect.</pre>
 
 AMP nécessite de définir les valeurs `width` et `minimum-scale` pour la fenêtre. Ces valeurs doivent être définies respectivement en tant que `device-width` et `1`. La fenêtre est une balise standard incluse dans la section `<head>` d'une page HTML.
 
@@ -97,8 +92,7 @@ Comme précédemment, **rechargez** la page et vérifiez si l'erreur a disparu.
 
 L'erreur suivante est liée à notre utilisation des feuilles de style:
 
-<pre class="error-text">The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invalid value 'base.css'.
-</pre>
+<pre class="error-text">The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invalid value 'base.css'.</pre>
 
 Plus précisément, cette erreur concerne la balise de lien de feuille de style suivante dans notre balise `<head>`:
 
@@ -131,8 +125,7 @@ Encore une fois, **rechargez** la page et vérifiez que l'erreur de feuille de s
 
 Si les feuilles de style peuvent être retravaillées de manière raltivement aisée avec AMP en intégrant le CSS, il n'en va pas de même pour JavaScript.
 
-<pre class="error-text">The tag 'script' is disallowed except in specific forms.
-</pre>
+<pre class="error-text">The tag 'script' is disallowed except in specific forms.</pre>
 
 En général, les scripts AMP ne sont autorisés que s'ils respectent deux exigences majeures:
 
@@ -173,10 +166,7 @@ Maintenant, **rechargez** la page et vérifiez que l'erreur de script a disparu.
 
 Les erreurs suivantes font référence à un code standard manquant:
 
-<pre class="error-text">The mandatory tag 'noscript enclosure for boilerplate' is missing or incorrect.
-The mandatory tag 'head > style : boilerplate' is missing or incorrect.
-The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.
-</pre>
+<pre class="error-text">The mandatory tag 'noscript enclosure for boilerplate' is missing or incorrect.<br>The mandatory tag 'head > style : boilerplate' is missing or incorrect.<br>The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.</pre>
 
 Chaque document AMP nécessite le modèle de code AMP suivant:
 
@@ -192,8 +182,7 @@ La balise `<style amp-boilerplate>` masque initialement le contenu du corps jusq
 
 AMP ne prend pas en charge les équivalents HTML par défaut pour l'affichage des médias, ce qui explique l'erreur suivante:
 
-<pre class="error-text">The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
-</pre>
+<pre class="error-text">The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?</pre>
 
 AMP possède un composant web spécialement conçu pour remplacer la balise `<img>`: il s'agit de la balise [`<amp-img>`](../../../../documentation/components/reference/amp-img.md):
 
@@ -203,9 +192,7 @@ AMP possède un composant web spécialement conçu pour remplacer la balise `<im
 
 **Remplacez** la balise `<img>` avec la balise [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) ci-dessus et exécutez à nouveau le validateur. Vous devriez recevoir plusieurs nouvelles erreurs:
 
-<pre class="error-text">Layout not supported: container
-The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
-</pre>
+<pre class="error-text">Layout not supported: container<br>The implied layout 'CONTAINER' is not supported by tag 'amp-img'.</pre>
 
 Pourquoi la balise [`amp-img`](../../../../documentation/components/reference/amp-img.md) a-t-elle déclenché une autre erreur? Parce que [`amp-img`](../../../../documentation/components/reference/amp-img.md) n'est pas un substitut direct de la balise img HTML traditionnelle. D'autres exigences s'appliquent lors de l'utilisation de [`amp-img`](../../../../documentation/components/reference/amp-img.md).
 
@@ -313,8 +300,7 @@ Votre document AMP devrait maintenant ressembler à ceci:
 
 Actualisez la page et regardez le résultat de la console. Le message suivant devrait vous accueillir:
 
-<pre class="success-text">AMP validation successful.
-</pre>
+<pre class="success-text">AMP validation successful.</pre>
 
 ### Questions fréquemment posées
 
