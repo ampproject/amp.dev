@@ -48,7 +48,7 @@ AMPHTML 广告素材需要采用与 AMP 网页不同且更简单的[样板](../.
 <style amp4ads-boilerplate>body{visibility:hidden}</style>
 ```
 
-To style your AMPHTML ad, your CSS must be embedded inline in the AMPHTML document using <code><style amp-custom></style> </code>tags in the <code></code> section. As we're rendering a basic image ad, we don't require any CSS, so we won't add these tags.
+要为您的 AMPHTML 广告设置样式，必须在 AMPHTML 文档中内嵌您的 CSS，方法是在 <code><head></code> 部分中使用 <code><style amp-custom></style></code> 标记。由于我们呈现的是基本图片广告，不需要任何 CSS，因此我们暂不添加这些标记。
 
 [tip type="note"] **注**：对于 AMPHTML 广告，内嵌样式表的最大大小为 *20 KB*。详细了解 [AMPHTML 广告规范中的 CSS 要求](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#css)。[/tip]
 
