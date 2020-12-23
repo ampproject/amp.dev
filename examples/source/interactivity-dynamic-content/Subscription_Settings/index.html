@@ -324,20 +324,33 @@ formats:
     <!--
       #### Step 6: Icon Dropdown
 
-      Styling the `select` element itself to look like an icon using only CSS supported by email clients isn't feasible. Instead, we'll hide the `select` element's persistent user interface, which shows the element's current value, and show a different icon for each dropdown state in its place, but keep the element's ephemeral dropdown, what you see on click.
+      Styling the `select` element itself to look like an icon using only CSS supported by email clients isn't feasible. Instead, we'll hide the `select` element's persistent user interface (the box showing the current value), and show a different icon for each dropdown state in its place. However, we'll keep the dropdown shown on click.
 
-      Fortunately, styling `select` affects the persistent user interface while styling `option` affects the ephemeral dropdown. We can use this fact to hide the former, but keep the latter. Of the three common choices for hiding an element using CSS ([`display: none;`, `visibility: hidden;`, and `opacity: 0;`](https://magnusbenoni.com/difference-between-display-visibility-opacity)), `opacity: 0;` is most suited because we want to keep the element in the tab order as well as keep receiving its click events:
+      Fortunately, styling `select` affects the persistent user interface while styling `option` affects the dropdown. We can use this fact to hide the former, but keep the latter. Of the three common choices for hiding an element using CSS ([`display: none;`, `visibility: hidden;`, and `opacity: 0;`](https://magnusbenoni.com/difference-between-display-visibility-opacity)), `opacity: 0;` is most suited because we want to keep the element in the tab order as well as keep receiving its click events:
       ```css
       .subscription-select {
         opacity: 0;
         cursor: pointer;
       }
       ```
-      We also set `cursor: pointer;` for the `select` element because it looks more like a button now.
+      We also set `cursor: pointer;` for the `select` element because it looks like a button now.
 
-      The next step is to create a new icon-based user interface and position it _behind_ the invisible `select` user interface (in terms of stacking order) so that when a user tries to click on one of our icons they'll actually be clicking on the invisible `select` element and triggering its events! We'll keep our new icons behind the `select` element by placing the icon's code before the `select` element's code (see [Stacking without the `z-index` property](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/Stacking_without_z-index)).
+      The next step is to create a new icon-based user interface. We start with a `div` element containing an [`amp-img`](/documentation/components/amp-img) component for each subscription setting. The `div` element is annotated with the following `icon` CSS class, which hides all of the images by default:
+      ```css
+      .icon > * {
+        visibility: hidden;
+      }
+      ```
 
-      We use the `relative` and `absolute` CSS classes are to position the `select` element above the icons, and use the `icon-size` class to ensure the element's click target bounding box is the same size as the icons:
+      The `amp-img` component corresponding to the current state of the `select` element is made visible using the following `visible` CSS class:
+      ```css
+      .visible {
+        visibility: visible;
+      }
+      ```
+      If the `select` element's value has not changed, then we determine the current state of the `select` element from the `isSelected` fields in the `amp-list` response. Otherwise, we determine the current state from the `currentSubscription` state variable.
+
+      Although at most one `amp-img` component is visible at a time, each component still takes up space on the page. This means that the components will be positioned one below the other by default. Using the `display` property instead of the `visibility` property would fix this issue, but it would cause the icon to flicker between subscription setting changes because AMP does not preload `amp-img` components that start out as `display: none;`. Instead, we use the following `relative` and `absolute` CSS classes to stack the `amp-img` component on top of each other on the z axis:
       ```css
       .relative {
         position: relative;
@@ -350,33 +363,31 @@ formats:
         bottom: 0;
         left: 0;
       }
+      ```
+      Note that the stacking order of the `amp-img` components relative to each other doesn't matter because at most one is visible at a time.
 
+       We also use these CSS classes to position the icons _behind_ the invisible `select` user interface so that when a user tries to click on one of our icons they'll actually be clicking on the invisible `select` element and triggering its events! We keep our new icons behind the `select` element by placing the icon's code before the `select` element's code (see [Stacking without the `z-index` property](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/Stacking_without_z-index)).
+
+      We ensure the `select` element's click target bounding box is the same size as the icons using the following `icon-sized` CSS class:
+      ```css
       .icon-sized {
         width: 30px;
         height: 30px;
       }
       ```
 
-      TODO: explain these classes and the rest of the icon code
+      Screen readers can get all of the information they need from the `select` element so we make the icons invisible to screen readers using the [`aria-hidden` attribute](https://www.w3.org/TR/wai-aria/#aria-hidden).
+
+      Finally, we display an outline around the icons when the `select` element is focused using the [`:focus-within` pseudo selector](https://css-tricks.com/almanac/selectors/f/focus-within):
       ```css
-      .disabled {
-        opacity: 0.3;
-      }
-
-      .icon > * {
-        visibility: hidden;
-      }
-
-      .visible {
-        visibility: visible;
-      }
-
       .icon-container:focus-within {
         outline-offset: 2px;
         outline: 1px solid black;
         outline: -webkit-focus-ring-color auto 1px;
       }
       ```
+
+      And we're done!
     -->
     <amp-list src="<% base_path %>/subscription" binding="refresh" items="." single-item layout="fill">
       <template type="amp-mustache">
@@ -393,7 +404,7 @@ formats:
               {{#options}}
                 <amp-img width="30" height="30" src="/static/samples/img/{{value}}.png"
                    class="{{#isSelected}}visible {{/isSelected}}absolute"
-                   [class]="(currentSubscription == '{{value}}' ? 'visible ' : ' ') + 'absolute'">
+                   [class]="((currentSubscription || '{{currentSubscription}}') == '{{value}}' ? 'visible ' : ' ') + 'absolute'">
                 </amp-img>
               {{/options}}
             </div>
