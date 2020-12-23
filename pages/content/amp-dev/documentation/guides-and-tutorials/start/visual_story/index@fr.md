@@ -1,7 +1,7 @@
 ---
-"$title": Create your first Web Story
+"$title": Créer votre première story Web
 "$order": '0'
-description: "In this tutorial, we'll introduce you to the amp-story component, which you can use to create visually engaging Web Stories with AMP. By the end of this tutorial, you'll ..."
+description: Dans ce tutoriel, nous vous présenterons le composant amp-story, que vous pouvez utiliser pour créer des stories Web visuellement attrayantes avec AMP. Au terme de ce tutoriel, vous ...
 "$hidden": 'true'
 formats:
 - stories
@@ -14,9 +14,9 @@ In this tutorial, we'll introduce you to the [`amp-story`](../../../../documenta
 
 ## Vous apprendrez à :
 
-- Create a multi-page story by using the [`amp-story`](../../../../documentation/components/reference/amp-story.md) component
+- Créer une story de plusieurs pages à l'aide du composant [`amp-story`](../../../../documentation/components/reference/amp-story.md)
 - Créer des effets visuels avec plusieurs couches dans une page
 - Disposer des éléments dans une page à l'aide de modèles de couche
-- Add audio that plays while a page is viewed
+- Ajouter du contenu audio qui joue lorsqu'une page est affichée
 - Animer des éléments sur une page
-- Keep readers engaged with your content by adding related links to the end of the story
+- Maintenir l'intérêt des lecteurs envers votre contenu en ajoutant des liens connexes à la fin de la story
