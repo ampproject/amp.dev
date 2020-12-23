@@ -4,10 +4,7 @@ order: '3'
 formats:
 - ads
 teaser:
-  text: |2-
-
- "_If you'd like to propose changes to the standard, please comment on the"
-    [Intent
+  text: 표준에 대한 변경 사항을 제안하고 싶다면 [구현 목적] 문서에 코멘트를 남겨주세요.
 toc: 'true'
 ---
 
