@@ -1,23 +1,28 @@
 ---
-$title: 制作实时博客
+"$title": 制作实时博客
+"$order": '102'
+description: Live blogs are web pages that are updated frequently throughout an on-going event, such as a sporting event or an election. In AMP, you can implement a live blog by using ...
+tutorial: 'true'
+formats:
+- websites
+author: kul3r4
+contributors:
+- bpaduch
 ---
 
 实时博客是在整个持续性事件（如体育赛事或选举）中频繁更新的网页。在 AMP 中，您可以使用 [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 组件实现实时博客。
 
 本教程简要概述了 [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 组件，并重点介绍了实时博客的一些实现细节，例如[分页](#pagination)和[深层链接](#deeplinking)。我们将使用 AMP By Example 的[实时博客示例](live_blog.md)来说明如何在 AMP 中实现实时博客。
 
-[tip type="success"]
-
 请使用 [LiveBlogPosting](http://schema.org/LiveBlogPosting) 元数据标记，以便让您的博客能够与第三方平台功能集成。
-
-[/tip]
 
 {{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample.png', 700, 1441, align='right third') }}
 
 ## amp-live-list
 
-[`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 组件会定期轮询主文档以查找新内容，并在出现新条目后更新用户的浏览器。这意味着每当需要添加新博文时，CMS 都应该更新主文档，以便将更新内容添加到网页的正文和[元数据](../../../documentation/examples/documentation/Live_Blog.html#metadata)部分。
-博客的初始代码如下所示：
+[`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 组件会定期轮询主文档以查找新内容，并在出现新条目后更新用户的浏览器。这意味着每当需要添加新博文时，CMS 都应该更新主文档，以便将更新内容添加到网页的正文和[元数据](../../../documentation/examples/documentation/Live_Blog.html#metadata)部分。 博客的初始代码如下所示：
+
+这是该博客的初始代码如下所示：
 
 ```html
 <amp-live-list id="my-live-list"
