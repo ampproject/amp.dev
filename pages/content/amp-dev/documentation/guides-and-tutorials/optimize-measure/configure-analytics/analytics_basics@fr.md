@@ -86,7 +86,45 @@ Beaucoup aimeraient mesurer chaque nouvelle [`<amp-story-page>`](../../../../doc
 AMP Analytics facilite la mise en œuvre de ce qui précède à l'aide de n'importe quel fournisseur d'analyse. Par exemple, avec le [Global Site Tag](https://developers.google.com/gtagjs/) Google Analytics, l'on obtiendra l'extrait ci-dessous.
 
 ```html
-<amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
+<amp-analytics type="gtag" data-credentials="include">
+ <script type="application/json">
+  {
+    "vars": {
+      "gtag_id":"YOUR_GOOGLE_ANALYTICS_ID",
+      "config": {
+        "YOUR_GOOGLE_ANALYTICS_ID": {
+          "groups":"default"
+        }
+      }
+    },
+    "triggers": {
+      "storyProgress": {
+        "on":"story-page-visible",
+        "vars": {
+          "event_name":"custom",
+          "event_action":"story_progress",
+          "event_category":"${title}",
+          "event_label":"${storyPageId}",
+          "send_to": [
+            "YOUR_GOOGLE_ANALYTICS_ID"
+          ]
+        }
+      },
+      "storyEnd": {
+        "on":"story-last-page-visible",
+        "vars": {
+          "event_name":"custom",
+          "event_action":"story_complete",
+          "event_category":"${title}",
+          "send_to": [
+            "YOUR_GOOGLE_ANALYTICS_ID"
+          ]
+        }
+      }
+    }
+  }
+ </script>
+</amp-analytics>
 ```
 
 Cette configuration par défaut devrait vous donner une configuration de travail complète pour une story AMP.
@@ -100,27 +138,7 @@ Si vous souhaitez aller au-delà de ce que la configuration par défaut peut vou
 Les composants [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) et [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) autorisent toutes les substitutions de variables d'URL standard (voir [Substitutions de variables HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)). Dans l'exemple suivant, la demande de vue de page est envoyée à l'URL, avec l'URL canonique du document AMP actuel, son titre et un [ID client](analytics_basics.md#user-identification):
 
 ```html
-<amp-analytics>
-<script type="application/json">
-{
-  "requests": {
-    "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}",
-  },
-  "vars": {
-    "account": "ABC123",
-  },
-  "triggers": {
-    "someEvent": {
-      "on": "visible",
-      "request": "pageview",
-      "vars": {
-        "title": "My homepage",
-      }
-    }
-  }
-}
-</script>
-</amp-analytics>
+<amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
 ```
 
 En raison de sa simplicité, la balise [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) ne peut inclure que des variables définies par la plateforme ou que le runtime AMP peut analyser à partir de la page AMP. Dans l'exemple ci-dessus, la plateforme renseigne les valeurs pour `canonicalURL` et `clientId(site-user-id)`. La balise [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) peut inclure les mêmes variables que [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md), ainsi que des variables définies de manière unique dans la configuration de la balise.
@@ -130,7 +148,27 @@ Utilisez le format `${varName}` dans une chaîne de requête pour une page ou un
 Dans l'exemple suivant sur [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), la demande de vue de page est envoyée à l'URL, avec des données supplémentaires extraites des substitutions de variables, certaines étant fournies par la plateforme et d'autres définies en de façon intégrée, dans la configuration de [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md):
 
 ```html
-<amp-pixel src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"></amp-pixel>
+<amp-analytics>
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
+      },
+      "vars": {
+        "account":"ABC123"
+      },
+      "triggers": {
+        "someEvent": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage"
+          }
+        }
+      }
+    }
+  </script>
+</amp-analytics>
 ```
 
 Dans l'exemple ci-dessus, les variables `account` et `title` sont définis dans la configuration [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). Les variables `canonicalUrl` et `clientId` ne sont pas définies dans la configuration, leurs valeurs sont donc remplacées par la plateforme.
