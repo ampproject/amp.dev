@@ -33,9 +33,9 @@ limitations under the License.
 
 以下是 AMP 电子邮件中当前支持的 [AMP 组件](https://amp.dev/documentation/components/?format=email)列表。这些组件分为以下几类：
 
-- [Dynamic Content](#dynamic-content)
-- [Layout](#layout)
-- [Media](#media)
+- [动态内容 ](#dynamic-content)
+- [布局](#layout)
+- [媒体](#media)
 
 ## 动态内容 <a name="dynamic-content"></a>
 
@@ -52,7 +52,7 @@ limitations under the License.
 
 元素 | 说明
 --- | ---
-[layout attributes](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/#layout-attributes) | 布局行为由布局特性确定。
+[布局属性 ](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/#layout-attributes) | 布局行为由布局特性确定。
 [`<amp-accordion>`](https://amp.dev/documentation/components/amp-accordion) | 一个有助于显示/隐藏不同部分的界面元素。
 [`<amp-carousel>`](https://amp.dev/documentation/components/amp-carousel) | 轮播界面组件。
 [`<amp-fit-text>`](https://amp.dev/documentation/components/amp-fit-text) | 用于在特定区域内适配文本的辅助组件。
