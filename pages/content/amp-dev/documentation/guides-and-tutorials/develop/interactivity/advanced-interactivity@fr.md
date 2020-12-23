@@ -1,7 +1,7 @@
 ---
 "$title": "Comment améliorer l'interactivité"
 "$order": '2'
-description: 'The starter code provides a pretty bare user experience. There are a couple ways we can improve it\: - Add an indicator that displays the ...'
+description: "Le code de démarrage offre une expérience utilisateur assez simple. Il existe plusieurs façons de l'améliorer - Ajouter un indicateur qui affiche le ..."
 ---
 
 Le code de démarrage offre une expérience utilisateur assez simple. Il existe plusieurs façons de l'améliorer:
@@ -181,7 +181,7 @@ Ajoutez une action « on » à [`amp-selector`](../../../../documentation/compon
     on="select:AMP.setState({selected: {sku: event.targetOption}})">
 ```
 
-[tip type="tip"] **TIP –** This could also be done by adding `on="tap:AMP.setState(...)` actions to each [`amp-img`](../../../../documentation/components/reference/amp-img.md) child inside the [`amp-selector`](../../../../documentation/components/reference/amp-selector.md). One of the great things about [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) is that it simplifies markup in ways like this. [/tip]
+[tip type="tip"] **ASTUCE -** Cela est également possible en ajoutant des actions `on="tap:AMP.setState(...)` à chaque enfant [`amp-img`](../../../../documentation/components/reference/amp-img.md) dans [`amp-selector`](../../../../documentation/components/reference/amp-selector.md). L'un des principaux avantages de [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) est qu'il simplifie le balisage comme dans ce cas. [/tip]
 
 ### Comment lier les éléments de l'image
 
