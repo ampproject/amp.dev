@@ -1,6 +1,6 @@
 ---
 "$title": Supported CSS
-description: "Like all web pages, AMP pages are styled with CSS, but you can't reference external stylesheets with the exception of custom fonts. Also certain styles are disallowed ..."
+description: 모든 웹페이지와 마찬가지로 AMP 페이지는 CSS로 스타일이 지정되지만 사용자 지정 글꼴을 제외한 외부 스타일시트는 참조할 수 없습니다. 또한 특정 스타일은 허용되지 않습니다...
 formats:
 - websites
 - email
@@ -54,7 +54,7 @@ contributors:
 
 ## 제한된 스타일
 
-These allowed styles should restrict values to the following for an optimal performance:
+성능 최적화를 위해 허용된 스타일에서 다음의 값은 제한해야 합니다.
 
 <table>
   <thead>
@@ -115,4 +115,4 @@ AMP pages can’t include external stylesheets, with the exception of custom fon
 </head>
 {% endraw %}[/sourcecode]
 
-To see how the above translates into formatted AMP HTML, view the source for any page in [amp.dev](https://amp.dev/). (In Chrome, right-click and `View Page Source`.)
+위의 예시가 AMP HTML 형식에서 어떻게 표시되는지 확인하려면 [amp.dev](https://amp.dev/)에서 아무 페이지나 눌러 소스를 확인해보세요(Chrome의 경우 마우스 오른쪽 버튼 클릭 후 `페이지 소스 보기`).
