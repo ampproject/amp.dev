@@ -4,10 +4,7 @@ order: '3'
 formats:
 - 广告
 teaser:
-  text: |2-
-
- "_If you'd like to propose changes to the standard, please comment on the"
-    [Intent
+  text: _如果您想对标准提出更改建议，请在 [Intent
 toc: 'true'
 ---
 
