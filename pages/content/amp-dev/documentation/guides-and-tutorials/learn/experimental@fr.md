@@ -26,8 +26,8 @@ La version AMP Dev Channel **peut être moins stable** et contenir des fonctionn
 
 L'activation de Dev Channel est idéale pour:
 
-- test and play with new features not yet available to all users.
-- use in quality assurance (QA) to ensure that your site is compatible with the next version of AMP.
+- tester et jouer avec de nouvelles fonctionnalités qui ne sont pas encore disponibles pour tous les utilisateurs.
+- une utilisation dans l'assurance qualité (QA) pour vous assurer que votre site est compatible avec la prochaine version d'AMP.
 
 Si vous trouvez un problème qui ne semble se produire que dans la version Dev Channel d'AMP, [signalez un problème](https://github.com/ampproject/amphtml/issues/new) avec une description. Incluez toujours une URL vers une page qui reproduit le problème.
 
