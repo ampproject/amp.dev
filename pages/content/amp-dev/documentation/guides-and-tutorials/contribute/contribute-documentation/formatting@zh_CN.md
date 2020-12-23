@@ -100,43 +100,41 @@ amp.dev 是使用 AMP 构建的！因此，我们的图片必须符合 [`amp-img
 
 有些文档可能与多种 AMP 格式相关，但某些格式可能需要进一步说明或与其他格式不相关的信息。您可以通过将它们封装到以下短代码中来筛选这些部分。
 
-<div class="ap-m-code-snippet"><pre>&lsqb;filter formats="websites"]
+<div class="ap-m-code-snippet"><pre>&amp;lsqb;filter formats="websites"]
 This is only visible for [websites](?format=websites).
-&lsqb;/filter]
+&amp;lsqb;/filter]
 
-&lsqb;filter formats="websites"]
+&amp;lsqb;filter formats="websites"]
 This is only visible for [websites](?format=websites).
-&lsqb;/filter]
+&amp;lsqb;/filter]
 
-&lsqb;filter formats="websites, email"]
-This is visible for [websites](?format=websites) & [email](?format=email).
-&lsqb;/filter]
+&amp;lsqb;filter formats="websites, email"]
+This is visible for [websites](?format=websites) &amp; [email](?format=email).
+&amp;lsqb;/filter]
 
-&lsqb;filter formats="stories"]
+&amp;lsqb;filter formats="stories"]
 This is visible for [stories](?format=stories).
-&lsqb;/filter]
-</pre></div>
+&amp;lsqb;/filter]</pre></div>
 
 ## 提示
 
 您可以通过将文本封装到以下短代码中来添加提示和标注：
 
-<div class="ap-m-code-snippet"><pre>&lsqb;tip type="default"]
+<div class="ap-m-code-snippet"><pre>&amp;lsqb;tip type="default"]
 Default tip
 [/tip]
 
-&lsqb;tip type="important"]
+&amp;lsqb;tip type="important"]
 Important
 [/tip]
 
-&lsqb;tip type="note"]
+&amp;lsqb;tip type="note"]
 Note
 [/tip]
 
-&lsqb;tip type="read-on"]
+&amp;lsqb;tip type="read-on"]
 Read-on
-[/tip]
-</pre></div>
+[/tip]</pre></div>
 
 ## 代码段
 
@@ -152,8 +150,7 @@ Read-on
 
 ```js
   // code sample
-```
-</pre></div>
+```</pre></div>
 
 如果您的代码包含双大括号（在使用 [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md?format=websites) 模板时经常出现这种情况），则必须封装代码部分：
 
