@@ -32,7 +32,11 @@ author: pbakaus
 
 您要观察的信号是全局 `AMP` 变量的可用性，并且 Shadow AMP 会使用“[异步函数加载方式](http://mrcoles.com/blog/google-analytics-asynchronous-tracking-how-it-work/)”来帮助您进行观察。您可以考虑使用如下代码：
 
-[sourcecode:javascript] (window.AMP = window.AMP || []).push(function(AMP) { // AMP is now available. }); [/sourcecode]
+[sourcecode:javascript]
+(window.AMP = window.AMP || []).push(function(AMP) {
+  // AMP is now available.
+});
+[/sourcecode]
 
 此代码会正常运行，而且以这种方式添加的任何数量的回调都确实会在 AMP 可用时触发，但为什么会这样呢？
 
@@ -101,7 +105,10 @@ fetchDocument(url).then(function(doc) {
 
 很可能会发生的情况是：用户会在您的渐进式 Web 应用中从一个 AMP 网页导航到另一个 AMP 网页。在舍弃之前呈现的 AMP 网页时，请始终确保将此事告知 AMP，所需代码如下所示：
 
-[sourcecode:javascript] // ampedDoc is the reference returned from AMP.attachShadowDoc ampedDoc.close(); [/sourcecode]
+[sourcecode:javascript]
+// ampedDoc is the reference returned from AMP.attachShadowDoc
+ampedDoc.close();
+[/sourcecode]
 
 这样即可让 AMP 知道您已不再使用此文档，同时也可释放内存并降低 CPU 开销。
 
