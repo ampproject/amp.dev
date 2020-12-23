@@ -1,6 +1,6 @@
 ---
 formats:
-- 使您的网页可被轻松发现
+- websites
 "$title": 使您的页面可被轻松发现
 "$titles":
   teaser: 使您的页面可被轻松发现
