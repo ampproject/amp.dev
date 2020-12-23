@@ -20,7 +20,7 @@ author: CrystalOnScript
 - `<meta charset="utf-8">` タグを `<head>` タグの最初の子要素にする。
 - `<script async src="https://cdn.ampproject.org/v0.js"></script>` タグを `<head>` タグに含める。このスクリプトを `<head>` の 2 番目の子要素にするのがベストプラクティスです。
 - `<head>` タグに ` <link rel="canonical" href="page/url">` タグを含め、href をウェブストーリーの URL にポイントする。
-- Contain a `<meta name="viewport" content="width=device-width">` tag inside the `<head>` tag. It's also recommended to include initial-scale=1.
+- `<head>` タグ内に `<meta name="viewport" content="width=device-width">` タグを含める。initial-scale=1 を含めることも推奨されます。
 - `<head>` タグ内に [AMP ボイラープレート](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites)コードを含める。
 
 AMP ウェブページと AMP を使って作成されたウェブストーリーの違いは、[`amp-story`](https://amp.dev/documentation/components/amp-story/?format=stories) コンポーネントにあります。これがドキュメントの `<body>` の直下にある唯一の子要素であり、`standalone` 属性を含める必要があります。すべてのウェブストーリー、レイヤー、および要素は、`<amp-story>` タグ内に定義されます。
