@@ -1,7 +1,7 @@
 ---
 "$title": Comment générer rentabiliser votre page AMP avec des publicités
 "$order": '0'
-description: This guide provides instructions and best practices for displaying ads on your AMP pages. So, to display ads in AMP, you need to add the custom amp-ad component...
+description: Ce guide fournit des instructions et des bonnes pratiques pour afficher des annonces sur vos pages AMP. Ainsi, pour afficher des publicités dans AMP, vous devez ajouter le composant amp-ad personnalisé...
 formats:
 - websites
 ---
@@ -37,7 +37,7 @@ Dans cet exemple, nous ajoutons un espace publicitaire pour diffuser des annonce
 
 ### Étape 3: spécifiez la taille du bloc d'annonce
 
-Add the `width` and `height` attributes to the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)  tag.  This specifies the size of the ad on your AMP page:
+Ajoutez les attributs `width` et `height` à la balise [`amp-ad`](../../../../documentation/components/reference/amp-ad.md). Cela spécifie la taille de l'annonce sur votre page AMP:
 
 ```html
 <amp-ad type="a9">
@@ -47,7 +47,7 @@ Add the `width` and `height` attributes to the [`amp-ad`](../../../../documentat
 
 ### Étape 4: définissez les paramètres du réseau publicitaire
 
-Each network has specific data attributes they require to serve ads.  Refer to the ad network's [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) documentation and add the attributes that are needed In the following example,  the a9 network requires additional parameters to specify the size of the ad, and other details:
+Chaque réseau possède des attributs de données spécifiques dont il a besoin pour diffuser des annonces. Consultez la documentation [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) du réseau publicitaire et ajoutez les attributs nécessaires. Dans l'exemple suivant, le réseau a9 demande des paramètres supplémentaires pour spécifier la taille de l'annonce et d'autres détails:
 
 ```html
 <amp-ad type="a9"
@@ -122,25 +122,25 @@ Voici quelques conseils pour optimiser l'efficacité des annonces sur vos pages 
 - **Sur les pages AMP, fixez les prix de votre inventaire publicitaire** comme vous le faites sur les pages non AMP. Surveillez les performances et ajustez les prix en conséquence.
 - **Assurez-vous que tous les canaux de demande publicitaire sont en concurrence** pour l'inventaire publicitaire sur vos pages AMP afin de stimuler la concurrence.
 
-### Ad types: Serve the best types of ads
+### Types d'annonces: diffusez les meilleurs types d'annonces
 
-- **Avoid heavy creatives** per [IAB guidelines](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf).
-- **Avoid interstitials** or other ad formats that cause the content to reflow on ad load.
-- **Optimize for viewability** by setting the data-loading-strategy to prefer-viewability-over-views.
-- **Place ads in your video content** via [supported players](../../../../documentation/components/index.html#media) or [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) to enable revenue on all types of content.
-- **Implement native ads** to compete with display ads using multi-sized ad requests, adding demand pressure while providing your readers with a premium user experience.
+- **Évitez les publicités lourdes** conformément aux [directives IAB](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf).
+- **Évitez les interstitiels** ou autres formats d'annonces qui provoquent la rediffusion du contenu lors du chargement des annonces.
+- **Optimisez la visibilité** en définissant la stratégie de chargement des données sur préférer la visibilité par rapport aux vues.
+- **Placez des annonces dans votre contenu vidéo** via les [lecteurs pris en charge](../../../../documentation/components/index.html#media) ou [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) pour générer des revenus sur tous les types de contenu.
+- **Implémentez des annonces natives** pour concurrencer les annonces graphiques à l'aide de demandes d'annonces de multi-tailles, ce qui augmente la pression de la demande tout en offrant à vos lecteurs une expérience utilisateur optimale.
 
-### Innovation: Offer the most engaging ad products
+### Innovation: proposez les produits publicitaires les plus attrayants
 
-- **Implement ads on ancillary AMP pages** to generate incremental revenue:
-    - [Ads in a carousel](../../../../documentation/examples/documentation/Carousel_Ad.html)
-    - [Ads in a lightbox](../../../../documentation/examples/documentation/Lightbox_Ad.html)
-    - ... and [more](../../../../documentation/examples/index.html)
-- **Implement new formats for direct sold ads** to equip your sales team with high-impact, innovative ad products:
-    - [Sticky Ads](../../../../documentation/examples/documentation/amp-sticky-ad.html)
-    - [Flying Carpet](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
+- **implémentez des publicités sur les pages AMP auxiliaires** pour générer des revenus supplémentaires:
+    - [Annonces dans un carrousel](../../../../documentation/examples/documentation/Carousel_Ad.html)
+    - [Annonces dans une lightbox](../../../../documentation/examples/documentation/Lightbox_Ad.html)
+    - ... et [plus](../../../../documentation/examples/index.html)
+- **Implémentez de nouveaux formats d'annonces à vente directe** pour équiper votre équipe de vente de produits publicitaires innovants à fort impact:
+    - [Annonces collantes](../../../../documentation/examples/documentation/amp-sticky-ad.html)
+    - [Tapis volant](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
 
-## Additional resources
+## Ressources supplémentaires
 
-- [AMPHTML ad templates](../../../../documentation/examples/index.html)
-- [Demo: Shows how to add `amp-ad` to your AMP page](../../../../documentation/components/reference/amp-ad.md)
+- [Modèles d'annonces AMPHTML](../../../../documentation/examples/index.html)
+- [Démo: comment ajouter `amp-ad` à votre page AMP](../../../../documentation/components/reference/amp-ad.md)
