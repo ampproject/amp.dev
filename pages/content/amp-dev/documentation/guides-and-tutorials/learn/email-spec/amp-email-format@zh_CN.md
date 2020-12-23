@@ -66,7 +66,7 @@ AMP 电子邮件必须
 - <a name="scrpt"></a>在其 head 标记内包含 `<script async src="https://cdn.ampproject.org/v0.js"></script>`。[🔗](#scrpt)
 - <a name="boilerplate"></a>在其 head 标记内包含 amp4email 样板 (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) 以在 AMP JS 加载完成前隐藏内容。[🔗](#boilerplate)
 
-The entire AMPHTML markup must not exceed 200,000 bytes.
+整个 AMPHTML 标记不得超过 200,000 个字节。
 
 ## 结构和渲染 <a name="structure-and-rendering"></a>
 
