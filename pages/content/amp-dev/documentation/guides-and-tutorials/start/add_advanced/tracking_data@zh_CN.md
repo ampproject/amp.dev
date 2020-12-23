@@ -1,7 +1,7 @@
 ---
 "$title": 通过分析跟踪互动
 "$order": '4'
-description: Analytics platforms are commonly integrated into websites through inline JavaScript snippets and function calls, which trigger events that are sent back to the analytics system.
+description: 分析平台通常通过内嵌 JavaScript 代码段和函数调用集成到网站中，这些代码段和函数调用可以触发能够发送回分析系统的事件。
 ---
 
 分析平台通常通过内嵌 JavaScript 代码段和函数调用集成到网站中，这些代码段和函数调用可以触发能够发送回分析系统的事件。AMP 提供了灵活的 JSON 配置语法，可以对多个分析合作伙伴复制此过程。
