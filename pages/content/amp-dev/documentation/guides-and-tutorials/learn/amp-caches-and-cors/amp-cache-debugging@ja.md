@@ -1,8 +1,12 @@
 ---
-$title: AMP キャッシュ問題のデバッグ
-order: 8
+"$title": AMP キャッシュ問題のデバッグ
+order: '8'
+formats:
+- websites
+- stories
+- ads
 teaser:
-  text:  AMP キャッシュでドキュメントが破損しているのはなぜですか？
+  text: AMP キャッシュでドキュメントが破損しているのはなぜですか？
 ---
 
 <!--
@@ -19,7 +23,7 @@ have a look and request a pull request there.
 特定のドキュメントが元のドキュメントと同じように表示され、動作するにも関わらす、キャッシュで表示するとそうでない場合（[元の URL を Google の AMP キャッシュにマッピングするには](https://developers.google.com/amp/cache/overview#amp-cache-url-format)）は、以下をお試しください。
 
 1. ブラウザの開発者/エラーツールコンソールを開き、表示されるエラーや警告を解決します。
-2. [AMPBench](https://ampbench.appspot.com/) を通じてドキュメントを実行し、予期されないエラーや警告をすべて解決します。
+2. Run the document through [an AMP document validator](https://search.google.com/test/amp) and resolve any unexpected errors or warnings.
 
 これらの手順に従っても問題が解決しない場合は、以下の表を確認してください。
 
@@ -35,7 +39,7 @@ have a look and request a pull request there.
   <tbody>
     <tr>
       <td>ウェブフォントが表示されない（フォールバックフォントが使用される）</td>
-      <td>フォントプロバイダのホワイトリストに AMP キャッシュが含まれていない。</td>
+      <td>The AMP Cache is not allowlisted by the font provider.</td>
       <td>フォントプロバイダに連絡し、<a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">すべてのキャッシュ</a>を allowlist に含めるように依頼してください。</td>
     </tr>
     <tr>
@@ -46,16 +50,14 @@ have a look and request a pull request there.
     <tr>
       <td rowspan="2">アセット（フォントや画像など）が表示されない</td>
       <td>アセットの MIME タイプが誤って配信されている。</td>
-      <td>
-<a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">許可される MIME タイプ</a>を指定してください。</td>
+      <td> <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">許可される MIME タイプ</a>を指定してください。</td>
     </tr>
     <tr>
       <td>AMP キャッシュからアセットにアクセスできない。</td>
       <td>AMP キャッシュがアセットにアクセスできることと、IP アドレスやユーザーエージェントなどによってブロックされていないことを確認してください（<a href="https://support.google.com/webmasters/answer/1061943?hl=en">Google のクローラーが使用するエージェントのリスト</a>）。</td>
     </tr>
     <tr>
-      <td>
-<code><amp-form></amp-form></code>、<code><amp-list></amp-list></code> などの動的要素が期待通りに動作しない。</td>
+      <td> <code><amp-form></amp-form></code>、<code><amp-list></amp-list></code> などの動的要素が期待通りに動作しない。</td>
       <td>CORS ヘッダーが破損または欠落している。</td>
       <td>これらのコンポーネントは、AMP キャッシュからオリジンにクロスオリジンリクエストを発行します。デフォルトでは、これらのリクエストはブラウザによってブロックされています。これらのリクエストを許可するには、<a href="https://amp.dev/documentation/guides-and-tutorials/amp-cors-requests.html">すべてのキャッシュ</a>を allowlist に追加する <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS ヘッダー</a>を発行してください。</td>
     </tr>
@@ -66,4 +68,5 @@ have a look and request a pull request there.
     </tr>
 </tbody>
 </table>
+
 </table>
