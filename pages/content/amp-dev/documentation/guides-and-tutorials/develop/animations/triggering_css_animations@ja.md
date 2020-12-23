@@ -1,6 +1,10 @@
 ---
-$title: "CSS アニメーションとトランジションのトリガ"
-description: "ページ上の CSS アニメーションのトリガは、JavaScript を使ってクラスを追加または削除することで行われます。AMP ページでは、toggleClass アクションを使用して、同じ動作を達成できます。"
+"$title": CSS アニメーションとトランジションのトリガ
+"$order": '1'
+description: ページ上の CSS アニメーションのトリガは、JavaScript を使ってクラスを追加または削除することで行われます。AMP ページでは、toggleClass アクションを使用して、同じ動作を達成できます。
+formats:
+- websites
+- ads
 ---
 
 CSS アニメーションは、ウェブ要素をある CSS スタイル構成から別の構成にトランジションすることができます。ブラウザは、定義済みのアニメーションを読み込み時に開始できますが、イベントでトリガされる CSS アニメーションは、[クラスの追加と削除によって行われます](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)。AMP では、これら両方の種類のアニメーションをサポートしています。
@@ -70,6 +74,7 @@ elementName.toggleClass(class="className")
 
 ```html
  <div id="hamburger" tabindex=1 role=button on="tap:hamburger.toggleClass(class='close')">
+
 ```
 
 `force` 属性を追加すると、`toggleClass` アクションをほかの要素にも適用して 2 つのクラス間を切り替えることができます。
@@ -90,7 +95,6 @@ elementName.toggleClass(class="className")
 [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) を使用すると、状態が指定された任意の数の CSS クラスを追加・削除することができます。
 
 [example preview="top-frame" playground="true"]
-
 ```html
 <head>
   <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
@@ -155,7 +159,6 @@ elementName.toggleClass(class="className")
   </button>
 </body>
 ```
-
 [/example]
 
 複数のクラスのアニメーションを定義するには、まず、ドキュメントの `head` にある `<style amp-custom>` タグに CSS クラスのリストを追加します。
