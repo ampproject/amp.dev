@@ -19,9 +19,9 @@ author: CrystalOnScript
 기본[`amp-animation`](../../../../documentation/components/reference/amp-animation.md)은 다음과 같은 주요 부분으로 구성된 JSON 객체입니다.
 
 - 컴포넌트가 애니메이션을 적용하는 요소 또는 `selector`.
-- [Timing Properties](../../../../documentation/components/reference/amp-animation.md#timing-properties)
-- [Keyframes](../../../../documentation/components/reference/amp-animation.md#keyframes)
-- [Trigger](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
+- [타이밍 속성](../../../../documentation/components/reference/amp-animation.md#timing-properties)
+- [키 프레임](../../../../documentation/components/reference/amp-animation.md#keyframes)
+- [트리거](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
 
 ```
 <amp-animation layout="nodisplay" id="exampleAnimation">
