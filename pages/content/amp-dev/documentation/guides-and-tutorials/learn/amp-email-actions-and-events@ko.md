@@ -131,18 +131,15 @@ AMP는 모든 HTML 요소(AMP 요소 포함)에서 리스닝할 수 있는 `tap`
   </tr>
   <tr>
     <td rowspan="3"><code>change</code></td>
-    <td rowspan="3">Fired when the value of the element is changed and committed.       <p>       Data properties mirror those in <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#Properties">HTMLInputElement</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement#Properties">HTMLSelectElement</a>.</p>     </td>
+    <td rowspan="3">요소 값이 변경되고 커밋될 시 발생합니다.       <p>       데이터 속성은  <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#Properties">HTMLInputElement</a> 및 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement#Properties">HTMLSelectElement</a>에 해당 항목을 미러링합니다.</p>
+</td>
     <td><code>input</code></td>
     <td>
-      <pre>event.min
-event.max
-event.value
-event.valueAsNumber</pre>
+      <pre>event.min<br>event.max<br>event.value<br>event.valueAsNumber</pre>
     </td>
   </tr>
   <tr>
-    <td>
-<code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
+    <td> <code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
 </td>
     <td>
       <code>event.checked</code>
@@ -151,9 +148,7 @@ event.valueAsNumber</pre>
   <tr>
     <td><code>select</code></td>
     <td>
-      <pre>event.min
-event.max
-event.value</pre>
+      <pre>event.min<br>event.max<br>event.value</pre>
     </td>
   </tr>
   <tr>
@@ -205,8 +200,7 @@ event.value</pre>
   <tr>
     <td><code>slideChange</code></td>
     <td>캐러셀의 현재 슬라이드가 변경될 시 발생합니다.</td>
-    <td><pre>// Slide number.
-event.index</pre></td>
+    <td><pre>// Slide number.<br>event.index</pre></td>
   </tr>
 </table>
 
@@ -239,8 +233,7 @@ event.index</pre></td>
     <th width="40%">데이터</th>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(신뢰도 낮음)</td>
     <td>데이터 가져오기 실패 시 발생합니다.</td>
     <td>없음</td>
   </tr>
@@ -257,10 +250,7 @@ event.index</pre></td>
   <tr>
     <td><code>select</code></td>
     <td>옵션이 선택 또는 선택 해제되었을 시 발생합니다.</td>
-    <td><pre>// Target element's "option" attribute value.
-event.targetOption
-// Array of "option" attribute values of all selected elements.
-event.selectedOptions</pre></td>
+    <td><pre>// Target element's "option" attribute value.<br>event.targetOption<br>// Array of "option" attribute values of all selected elements.<br>event.selectedOptions</pre></td>
   </tr>
 </table>
 
@@ -293,8 +283,7 @@ event.selectedOptions</pre></td>
     <th width="40%">데이터</th>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(신뢰도 낮음)</td>
     <td>데이터 가져오기 실패 시 발생합니다.</td>
     <td>없음</td>
   </tr>
@@ -316,14 +305,12 @@ event.selectedOptions</pre></td>
   <tr>
     <td><code>submit-success</code></td>
     <td>양식 제출 응답이 성공적으로 완료될 경우 발생합니다.</td>
-    <td><pre>// Response JSON.
-event.response</pre></td>
+    <td><pre>// Response JSON.<br>event.response</pre></td>
   </tr>
   <tr>
     <td><code>submit-error</code></td>
     <td>양식 제출 응답이 오류일 경우 발생합니다.</td>
-    <td><pre>// Response JSON.
-event.response</pre></td>
+    <td><pre>// Response JSON.<br>event.response</pre></td>
   </tr>
   <tr>
     <td><code>valid</code></td>
@@ -352,11 +339,11 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>show</code></td>
-    <td>Shows the target element. If an     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a     result, it gains focus.</td>
+    <td>대상 요소를 표시합니다.     결과적으로 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> 요소</a>가 표시되면 포커스를 받습니다.</td>
   </tr>
   <tr>
     <td><code>toggleVisibility</code></td>
-    <td>Toggles the visibility of the target element. If an     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a     result, it gains focus.</td>
+    <td>대상 요소의 가시성 옵션을 변경합니다.     결과적으로 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> 요소</a>가 표시되면 포커스를 받습니다.</td>
   </tr>
   <tr>
     <td><code>toggleClass(class=STRING, force=BOOLEAN)</code></td>
@@ -364,7 +351,7 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>focus</code></td>
-    <td>Makes the target element gain focus. To lose focus, <code>focus</code>     on another element (usually parent element). We strongly advise against     losing focus by focusing on <code>body</code>/<code>documentElement</code>     for accessibility reasons.</td>
+    <td>대상 요소가 포커스를 얻습니다. 포커스를 제거하려면 다른 요소에 <code>focus</code>를 적용합니다(일반적으로 상위 요소). 포커스 제거 시에는 접근성을 고려하여 <code>body</code>/<code>documentElement</code>에 포커스를 적용하는 것이 권장됩니다.</td>
   </tr>
 </table>
 
@@ -377,7 +364,8 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>toggle(section=STRING)</code></td>
-    <td>Toggles the <code>expanded</code> and <code>collapsed</code> states of <code>amp-accordion</code> sections. When called with no arguments, it toggles all sections of the accordion. Trigger on a specific section by providing the section id: <code>on="tap:myAccordion.toggle(section='section-id')"</code>.   </td>
+    <td>
+<code>amp-accordion</code> 섹션의 <code>expanded</code> 및<code>collapsed</code> 상태를 전환합니다. 인수 없이 호출되면 아코디언의 모든 섹션 옵션을 전환합니다. 다음과 같이 섹션 ID를 제공하면 특정 섹션에서 트리거됩니다: <code>on="tap:myAccordion.toggle(section=</code>.</td>
 </tr>
   <tr>
     <td><code>expand(section=STRING)</code></td>
@@ -446,8 +434,7 @@ event.response</pre></td>
 <code>amp-list</code> 레이아웃을 <code>layout="CONTAINTER"</code>로 업데이트하여 <a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">동적 크기 변경</a>을 허용합니다.</td>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td> <code>fetch-error</code>(신뢰도 낮음)</td>
     <td>데이터 가져오기 실패 시 발생합니다.</td>
     <td>없음</td>
   </tr>
@@ -474,7 +461,7 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>toggle(index=INTEGER, value=BOOLEAN)</code></td>
-    <td>Toggles the application of the `selected`. If the select attribute is absent, this action adds it. If the select attribute is present, this action removes it.     You may force and keep an add or remove by including a boolean value in the `value` argument. A value of `true` will force add the `selected` attribute and not remove it if already present. A value of  `false` will remove the attribute, but not add it if absent.   </td>
+    <td>`selected` 항목의 적용 옵션을 전환합니다. 선택한 속성이 없으면 이 액션이 속성을 추가합니다. 선택한 속성이 있으면 액션이 속성을 제거합니다. `value` 인수에 불 값을 포함하여 추가 또는 제거를 강제하거나 유지할 수 있습니다. `true` 값은 `selected` 속성 추가를 강제하고 이미 해당 속성이 있는 경우 제거하지 않습니다. `false` 값은 속성을 제거하지만 속성이 없는 경우 추가하지 않습니다.</td>
   </tr>
 </table>
 
