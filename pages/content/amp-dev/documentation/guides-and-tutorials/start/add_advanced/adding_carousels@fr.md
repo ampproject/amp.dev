@@ -1,20 +1,20 @@
 ---
-"$title": Adding carousels
+"$title": Ajouter des carrousels
 "$order": '3'
 description: "Les carrousels constituent une autre caractéristique commune des pages mobiles. Vous pouvez facilement ajouter des carrousels aux pages AMP à l'aide du composant amp-carousel."
 ---
 
 Les carrousels constituent une autre caractéristique commune des pages mobiles. Vous pouvez facilement ajouter des carrousels aux pages AMP à l'aide du composant [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md). Commençons par un exemple simple, comme un carrousel d'images.
 
-## Simple image carousel
+## Carrousel d'images simple
 
-Remember to include the [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) component library by **adding** the following JavaScript request to the `<head>` tag of your document:
+N'oubliez pas d'inclure la bibliothèque de composants [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) en **ajoutant** la requête JavaScript suivante dans la section `<head>` de votre document :
 
 ```html
 <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
 ```
 
-Next, let's embed a simple carousel of images with a responsive layout and a predefined width and height. **Add** the following to your page:
+Ensuite, intégrons un simple carrousel d'images avec une mise en page réactive et une largeur et une hauteur prédéfinies. **Ajoutez** ce qui suit à votre page :
 
 ```html
 <amp-carousel layout="fixed-height" height="168" type="carousel" >
@@ -24,7 +24,7 @@ Next, let's embed a simple carousel of images with a responsive layout and a pre
 </amp-carousel>
 ```
 
-**Refresh** your page and you should see a carousel:
+**Actualisez** votre page et vous devriez voir un carrousel :
 
 {{ image('/static/img/docs/tutorials/tut-advanced-carousel-simple.png', 412, 403, align='center half', caption='Simple images carousel') }}
 
@@ -32,13 +32,13 @@ Le composant [`amp-carousel`](../../../../documentation/components/reference/amp
 
 Pour ce faire, commencez par **modifier** le `type` du composant [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) du `carrousel` sur `slides`, **modifiez** la `mise en page` en `responsive` et **configurez** la valeur `width` à 300 (en vous assurant qu'il y ait à la fois une valeur `height` et une valeur `width` définies). **Ajoutez** l'attribut `"layout=responsive"` aux enfants [`amp-img`](../../../../documentation/components/reference/amp-img.md) du composant [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md).
 
-**Reload** your page. Now, instead of a scrolling list of elements you’ll see one element at a time. Try **swiping** horizontally to move through the elements. If you swipe to the third element you won’t be able to swipe any further.
+**Rechargez** votre page. Maintenant, au lieu d'une liste déroulante d'éléments, vous verrez un élément à la fois. Essayez de faire **glisser votre doigt** horizontalement pour vous déplacer à travers les éléments. Si vous glissez vers le troisième élément, vous ne pourrez plus balayer.
 
-Next, **add** the `loop` attribute. **Refresh** the page and try swiping to the left immediately. The carousel loops endlessly.
+Ensuite, **ajoutez** l'attribut `loop`. **Actualisez** la page et essayez immédiatement de faire glisser votre doigt vers la gauche. Le carrousel tourne à l'infini.
 
-Lastly, let’s make this carousel autoplay at a rate of every 2 seconds. **Add** the `autoplay` attribute and the `delay` attribute with a value of `2000` (e.g., `delay="2000"`) to the [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md).
+Enfin, faisons en sorte que ce carrousel soit lu automatiquement à intervalle de 2 secondes. **Ajoutez** l'attribut `autoplay` et l'attribut `delay` avec une valeur de `2000` (par exemple, `delay="2000"`) au composant [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md).
 
-Your final result should look something like this:
+Votre résultat final devrait ressembler à ceci :
 
 ```html
 <amp-carousel layout="responsive" width="300" height="168" type="slides" autoplay delay="2000" loop>
@@ -48,15 +48,15 @@ Your final result should look something like this:
 </amp-carousel>
 ```
 
-**Refresh** the page and give it a spin!
+**Actualisez** la page et essayez-la !
 
 [tip type="note"] **REMARQUE -** Vous avez peut-être remarqué que lorsque le composant [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) avait le type `carousel` nous avons utilisé le type de mise en page `fixed-height`. Les types de mise en page pris en charge pour le type `carousel` sont limités. Par exemple, le type `carousel` ne prend pas en charge la mise en page `responsive`. Comme son nom l'indique, les éléments à hauteur fixe prennent l'espace dont ils disposent, mais gardent la hauteur inchangée. Pour les éléments à hauteur fixe, vous devez définir l'attribut `height`, tandis que l'attribut `width` doit être `auto` ou non défini. [/tip]
 
-## Mixed carousel content
+## Contenu de carrousel mixte
 
-Image carousels are great but what if we want more complex content to appear in our carousel? Let’s try mixing things up a little by placing an ad, some text, and an image all in a single carousel. Can [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) really handle such a mixture all at once? Absolutely!
+Les carrousels d'images sont excellents, mais que se passe-t-il si nous voulons que des contenus plus complexes apparaissent dans notre carrousel ? Essayons de mélanger un peu les choses en plaçant une annonce, un texte et une image dans un même carrousel. Le composant [`amp-carrousel`](../../../../documentation/components/reference/amp-carousel.md) peut-il vraiment gérer un tel mélange à la fois ? Absolument !
 
-First, let’s **add** this style to your `<style amp-custom>` to ensure the [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md) and [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) components work together safely:
+Tout d'abord, **ajoutons** ce style à votre `<style amp-custom>` pour vous assurer que les composants [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md) et [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) fonctionnent ensemble en toute sécurité :
 
 ```css
 amp-fit-text {
@@ -64,7 +64,7 @@ amp-fit-text {
 }
 ```
 
-Now, **replace** your simple carousel with this:
+Maintenant, **remplacez** votre carrousel simple par ceci :
 
 ```html
 <amp-carousel layout="fixed-height" height="250" type="carousel" >
@@ -86,6 +86,6 @@ Now, **replace** your simple carousel with this:
 
 {{ image('/static/img/docs/tutorials/tut-advanced-carousel-complex.gif', 412, 403, align='center half', caption='A carousel of mixed content') }}
 
-To learn more, see the [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) component reference documentation.
+Pour en savoir plus, consultez la documentation de référence du composant [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md).
 
 [tip type="note"] **REMARQUE -** Dans notre dernier exemple, vous avez peut-être remarqué que le composant [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) comprenait un enfant `div` avec l'attribut `placeholder`. Plus tôt dans le tutoriel, nous avons rencontré un scénario similaire avec [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) utilisant un `fallback`. Quelle est la différence entre le carcatère de remplacement et la solution de secours (fallback) ? Les éléments `Fallback` apparaissent lorsque le chargement de l'élément parent échoue, c'est-à-dire si aucune annonce n'est disponible. Les éléments `placeholder` apparaissent à la place de l'élément parent pendant son chargement. En un sens, ces éléments terminent le processus de chargement de l'élément parent. Pour en savoir plus, consultez le guide [Caractères de remplacement et solutions de secours](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md). [/tip]
