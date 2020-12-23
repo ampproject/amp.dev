@@ -1,7 +1,7 @@
 ---
-"$title": Layout & media queries
+"$title": レイアウトとメディアクエリ
 "$order": '1'
-description: "AMP supports both media queries & element queries, plus comes with a powerful, built-in way to control the layout of individual elements. The layout attribute makes working with ..."
+description: AMPは、メディアクエリとメディアクエリの両方をサポートしています。さらに、要素クエリには、個々の要素のレイアウトを制御するための強力な組み込みの方法が付属しています。レイアウト属性を使用すると、...
 formats:
 - websites
 - email
@@ -96,7 +96,7 @@ AMP は**メディアクエリ**と**要素クエリ**の両方をサポート�
   </tbody>
 </table>
 
-[tip type="tip"] **TIP –** Visit the [Demonstrating AMP layouts](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html) page to see how the various layouts respond to screen resizing. [/tip]
+[tip type = "tip"] **ヒント– **[ AMPレイアウトのデモンストレーション{/ a1}ページにアクセスして、さまざまなレイアウトが画面のサイズ変更にどのように反応するかを確認してください. [/ヒント]](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html)
 
 ### width や height が定義されていない場合 <a name="what-if-width-and-height-are-undefined"></a>
 
