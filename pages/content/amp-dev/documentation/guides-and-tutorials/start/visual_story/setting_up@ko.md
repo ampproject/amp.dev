@@ -1,5 +1,8 @@
 ---
-$title: 설정
+"$title": Setting up
+"$order": '1'
+description: 개발 환경 설정 1단계. 코드 다운로드. 튜토리얼에서 사용할 샘플 코드를 ZIP 파일로 다운로드하거나 다음의 git를 통해 다운로드합니다...
+author: bpaduch
 ---
 
 ## 사전 준비
@@ -34,10 +37,6 @@ $title: 설정
 http://localhost:8000/pets-completed.html
 ```
 
-[tip type="important"]
-
-URL이 `localhost`에서 제공되는지 확인하십시오. 그렇지 않으면 AMP 스토리가 제대로 동작하지 않을 수 있으며 `"source" "must start with "https://" or "//" or be relative and served from either https or from localhost.`라는 오류가 표시될 수 있습니다.
-
-[/tip]
+[tip type="important"]URL이 `localhost`에서 제공되는지 확인하십시오. 그렇지 않으면 AMP 스토리가 제대로 동작하지 않을 수 있으며 `"source" "must start with "https://" or "//" or be relative and served from either https or from localhost.`라는 오류가 표시될 수 있습니다.[/tip]
 
 완성된 스토리를 클릭해 보면서 어떤 스토리를 만들게 될지 파악해 보십시오.
