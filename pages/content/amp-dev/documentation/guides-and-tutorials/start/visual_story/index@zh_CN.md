@@ -1,5 +1,11 @@
 ---
-$title: 创建一个视觉效果丰富的 AMP 故事
+"$title": Create your first Web Story
+"$order": '0'
+description: 在本教程中，我们将向您介绍 amp-story 组件，您可以利用该组件在 AMP 中创建引人入胜的故事。待学完本教程后 ...
+"$hidden": 'true'
+formats:
+- stories
+author: bpaduch
 ---
 
 [video src="/static/video/tut_pets-story-complete.mp4" caption="Completed AMP story." poster="/static/img/docs/tutorials/amp_story/story_poster.png"]
@@ -14,7 +20,3 @@ $title: 创建一个视觉效果丰富的 AMP 故事
 - 添加会在用户浏览网页时播放的音频
 - 为网页上的元素添加动画效果
 - 在故事末尾添加相关链接，吸引浏览者关注您的内容
-
-[tip type="note"]
- [`amp-story`](../../../../documentation/components/reference/amp-story.md) 组件是**实验性**组件。
-[/tip]
