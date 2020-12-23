@@ -18,7 +18,7 @@ Un <a>cache AMP</a> est un réseau de distribution de contenu (CDN) basé sur un
 2. Permettre aux pages AMP d'être préchargées efficacement et en toute sécurité.
 3. Effectuer des optimisations supplémentaires des performances du contenu, avantageuses pour l'utilisateur.
 
-[tip type="note"] AMP email documents are exempt from the AMP cache. [/tip]
+[tip type="note"] Les e-mails AMP sont exempts du cache AMP. [/tip]
 
 Apprenez-en davantage sur les caches AMP dans la vidéo YouTube ci-dessous ou dans l'article de blog [Pourquoi les caches AMP existent-ils](https://medium.com/@pbakaus/why-amp-caches-exist-cd7938da2456).
 
@@ -61,7 +61,7 @@ By using the AMP format, you are making your content available to be cached by A
 
     - Google AMP Cache URL example: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
-[tip type="note"] **NOTE –** The AMP Cache URL is not a user-facing URL, that is, users wouldn't typically request content via those URLs. [/tip]
+[tip type="note"] **REMARQUE -** L'URL du cache AMP n'est pas une URL destinée à l'utilisateur, c'est-à-dire que les utilisateurs ne demandent généralement pas de contenu via ces URL. [/tip]
 
 - **Ajout de l'éditeur** : les éditeurs peuvent spécifiquement ajouter la page AMP au cache AMP.  Cette option est applicable uniquement pour le cache AMP de Google (voir [Cache Google AMP : mise à jour du contenu AMP](https://developers.google.com/amp/cache/update-cache)).
 
