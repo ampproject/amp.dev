@@ -51,7 +51,8 @@ AMPHTML 광고는 AMP 페이지에서 빠르고 효과적인 광고를 렌더링
 </tr></thead>
 <tbody>
 <tr>
-<td>Must use <code><html ⚡4ads></code> or <code><html amp4ads></code> as its enclosing tags.</td>
+<td>
+<code>&lt;html ⚡4ads></code> 또는 <code>&lt;html amp4ads></code> 유형을 사용해야 함.</td>
 <td>검사기가 광고 문서를 일반 AMP 문서 또는 제한된 AMPHTML 문서로 식별하여 적절히 배정할 수 있습니다.</td>
 </tr>
 <tr>
@@ -59,25 +60,27 @@ AMPHTML 광고는 AMP 페이지에서 빠르고 효과적인 광고를 렌더링
 <td>교차 출처 iframes에서 지원되는 AMPHTML 광고에 적합한 맞춤형 런타임 동작을 사용할 수 있습니다.</td>
 </tr>
 <tr>
-<td>Must not include a <code><link rel="canonical"></code> tag.</td>
+<td>
+<code>&lt;link rel="canonical"></code> 태그 포함 불가.</td>
 <td>광고에 "비 AMP 정규 버전"이 없고 독립적인 검색 인덱싱이 지원되지 않으므로 자체 참조가 유용하지 않습니다.</td>
 </tr>
 <tr>
-<td>Can include optional meta tags in HTML head as identifiers, in the format of <code><meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code>. Those meta tags must be placed before the <code>amp4ads-v0.js</code> script. The value of <code>vendor</code> and <code>id</code> are strings containing only [0-9a-zA-Z_-]. The value of <code>type</code> is either <code>creative-id</code> or <code>impression-id</code>.</td>
-<td>Those custom identifiers can be used to identify the impression or the creative. They can be helpful for reporting and debugging.<br><br><p>Example:</p>
+<td>
+<code>&lt;meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code> 형식의 경우 HTML 헤드에 선택적 메타 태그를 식별자로 포함 가능. 이러한 메타 태그는 <code>amp4ads-v0.js</code> 스크립트보다 먼저 표시되어야 함. <code>vendor</code> 및<code>id</code>의 값은 [0-9a-zA-Z_-]만이 포함된 문자열. <code>type</code> 값은 <code>creative-id</code> 또는 <code>impression-id</code>.</td>
+<td>사용자 지정 식별자는 효과 또는 광고를 식별하는 데 사용할 수 있습니다. 보고 또는 디버깅에 도움을 줄 수 있습니다. <br><br><p>예시:</p>
 <pre>
-<meta name="amp4ads-id"
+&lt;meta name="amp4ads-id"
   content="vendor=adsense,type=creative-id,id=1283474">
-<meta name="amp4ads-id"
+&lt;meta name="amp4ads-id"
   content="vendor=adsense,type=impression-id,id=xIsjdf921S"></pre>
 </td>
 </tr>
 <tr>
 <td>
-<code><amp-analytics></code> viewability tracking may only target the full-ad selector, via  <code>"visibilitySpec": { "selector": "amp-ad" }</code> as defined in <a href="https://github.com/ampproject/amphtml/issues/4018">Issue #4018</a> and <a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a>. In particular, it may not target any selectors for elements within the ad creative.</td>
-<td>In some cases, AMPHTML ads may choose to render an ad creative in an iframe.In those cases, host page analytics can only target the entire iframe anyway, and won’t have access to any finer-grained selectors.<br><br> <p>Example:</p> <pre>
-<amp-analytics id="nestedAnalytics">
-  <script type="application/json">
+<code>&lt;amp-analytics></code> 가시성 추적은 <a>Issue #4018</a> 및 <a href="https://github.com/ampproject/amphtml/issues/4018">PR #4368</a>에 정의된 것처럼 <code>"visibilitySpec": { "selector": "amp-ad" }</code>를 통해 전체 광고 선택자만을 대상으로 함. 특히 광고의 요소 선택자는 대상으로 할 수 없음.</td>
+<td>일부 사례에서 AMPHTML 광고가 iframe에서 광고를 렌더링하도록 선택할 수 있습니다. 이런 경우 호스트 페이지 분석은 전체 iframe만을 대상으로 하며 더욱 세밀하게 조정된 선택자에 대한 액세스는 허용되지 않습니다. <br><br> <p>예시:</p> <pre>
+&lt;amp-analytics id="nestedAnalytics">
+  &lt;script type="application/json">
   {
     "requests": {
       "visibility": "https://example.com/nestedAmpAnalytics"
@@ -90,9 +93,10 @@ AMPHTML 광고는 AMP 페이지에서 빠르고 효과적인 광고를 렌더링
       }
     }
   }
-  </script>
-</amp-analytics>
-</pre> <p>This configuration sends a request to the <code>https://example.com/nestedAmpAnalytics</code> URL when 50% of the enclosing ad has been continuously visible on the screen for 1 second.</p> </td>
+  &lt;/script>
+&lt;/amp-analytics>
+</pre> <p>이러한 구성은 감싸는 광고의 50%가 1초간 지속적으로 표시될 경우 <code>https://example.com/nestedAmpAnalytics</code> URL로 요청을 전송합니다.</p>
+</td>
 </tr>
 </tbody>
 </table>
