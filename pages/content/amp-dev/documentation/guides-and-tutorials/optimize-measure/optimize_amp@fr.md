@@ -22,7 +22,7 @@ Les pages AMP chargent rapidement par défaut, mais vous pouvez implémenter des
 
 Par exemple, en appliquant les techniques d'optimisation suivantes:
 
-- [Optimized AMP runtime loading](#optimize-the-amp-runtime-loading)
+- [Optimiser le chargement du runtime AMP](#optimize-the-amp-runtime-loading)
 - [Préchargement de l'image du héros](#preload-hero-images) (la taille de l'image/l'encodage lui-même n'a pas été modifié)
 - [Optimisation de polices personnalisées](#optimize-custom-fonts) (dans ce cas, les polices Google)
 
@@ -70,7 +70,7 @@ Examinons cela étape par étape:
 
 2. Ensuite, préchargez la balise du runtime AMP `v0.js` `<script>` avec `<lien as=script href=https://cdn.ampproject.org/v0.js rel=preload>`. Le téléchargement du runtime AMP devrait commencer dès que possible car le [modèle AMP](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) cache le document via `body { visibility:hidden }` jusqu'à ce que le runtime AMP soit chargé. Le préchargement du runtime AMP indique au navigateur de télécharger le script avec une priorité plus élevée. Consultez la section [affichage côté serveur](#server-side-rendering) pour savoir comment éviter cela. {amp-img6} {/amp-img6}
 
-3. If your page includes render-delaying extensions (e.g., amp-experiment, amp-dynamic-css-classes, amp-story), preload those extensions as they're required by the AMP runtime for rendering the page.
+3. Si votre page comprend des extensions de retard d'affichage (par exemple, amp-experiment, amp-dynamic-css-classes, amp-story), préchargez ces extensions car elles sont requises par le runtime AMP pour afficher la page.
 
 [sourcecode:html]
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-custom-css-0.1.js">
@@ -81,7 +81,7 @@ Examinons cela étape par étape:
 
 [sourcecode:html]<link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>[/sourcecode]
 
-1. Load the AMP runtime:
+1. Chargez le runtime AMP:
 
 [sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
 
@@ -200,12 +200,12 @@ Avec AMP, vous pouvez faire plusieurs choses pour optimiser le chargement de vos
 
 - Si possible, utilisez [font-display: optional](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display): cela n'utilisera la police que si elle se trouve déjà dans le cache, et utilise la police système si votre police personnalisée n'a pas encore été chargée.
 - Optimisez vos polices Web (par exemple, fournissez des polices personnalisées à l'aide de WOFF2).
-- Preload custom fonts:
+- Préchargez les polices personnalisées:
 
 [sourcecode:html]
 <link rel="preload" as="font" href="/bundles/app/fonts/helveticaneue-roman-webfont.woff2" >[/sourcecode]
 
-- If you are using Google fonts, or any other font provider with unknown font URLs, preconnect the respective font server:
+- Si vous utilisez Google Fonts ou tout autre fournisseur de polices avec des URL de polices inconnues, préconnectez le serveur de polices respectif:
 
 [sourcecode:html]
  <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
