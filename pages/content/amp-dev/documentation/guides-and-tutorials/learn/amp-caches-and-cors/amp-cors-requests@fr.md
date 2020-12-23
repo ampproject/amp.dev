@@ -38,27 +38,27 @@ De nombreux composants et extensions AMP tirent parti des points de terminaison 
 
 <div class="noshowtoc"></div>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true">
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#why-do-i-need-cors-for-my-own-origin-" data-md-type="link">Why do I need CORS for my own origin?</a></li>
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#utilizing-cookies-for-cors-requests" data-md-type="link">Utilizing cookies for CORS requests</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#why-do-i-need-cors-for-my-own-origin-" data-md-type="link">Pourquoi ai-je besoin de CORS pour ma propre origine ?</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#utilizing-cookies-for-cors-requests" data-md-type="link">Utilisation de cookies pour les requêtes CORS</a></li>
 <li data-md-type="list_item" data-md-list-type="unordered">
-<p data-md-type="paragraph"><a href="#cors-security-in-amp" data-md-type="link">CORS security in AMP</a></p>
+<p data-md-type="paragraph"><a href="#cors-security-in-amp" data-md-type="link">Sécurité CORS avec AMP</a></p>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true"><li data-md-type="list_item" data-md-list-type="unordered">
-<p data-md-type="paragraph"><a href="#verify-cors-requests" data-md-type="link">Verify CORS requests</a></p>
+<p data-md-type="paragraph"><a href="#verify-cors-requests" data-md-type="link">Vérifier les requêtes CORS</a></p>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true">
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#1-allow-requests-for-specific-cors-origins" data-md-type="link">1) Allow requests for specific CORS origins</a></li>
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#2-allow-same-origin-requests" data-md-type="link">2) Allow same-origin requests</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#1-allow-requests-for-specific-cors-origins" data-md-type="link">1) Autoriser les requêtes pour des origines CORS spécifiques</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#2-allow-same-origin-requests" data-md-type="link">2) Autoriser les requêtes de même origine</a></li>
 </ul>
 </li></ul>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true">
 <li data-md-type="list_item" data-md-list-type="unordered">
-<p data-md-type="paragraph"><a href="#send-cors-response-headers" data-md-type="link">Send CORS response headers</a></p>
+<p data-md-type="paragraph"><a href="#send-cors-response-headers" data-md-type="link">Envoyer des en-têtes de réponse CORS</a></p>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true"><li data-md-type="list_item" data-md-list-type="unordered"><a href="#access-control-allow-origin-origin" data-md-type="link">Access-Control-Allow-Origin: </a></li></ul>
 </li>
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#processing-state-changing-requests" data-md-type="link">Processing state changing requests</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#processing-state-changing-requests" data-md-type="link">Traitement des requêtes de changement d'état</a></li>
 </ul>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true">
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#example-walkthrough-handing-cors-requests-and-responses" data-md-type="link">Example walkthrough: Handing CORS requests and responses</a></li>
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#testing-cors-in-amp" data-md-type="link">Testing CORS in AMP</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#example-walkthrough-handing-cors-requests-and-responses" data-md-type="link">Exemple de procédure pas à pas : traitement des requêtes et des réponses CORS</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#testing-cors-in-amp" data-md-type="link">Tester CORS dans AMP</a></li>
 </ul>
 </li>
 </ul>
@@ -161,7 +161,7 @@ Cet en-tête est une exigence <a href="https://www.w3.org/TR/cors/">W3 CORS Spec
 
 Bien que la spécification W3 CORS permette de renvoyer la valeur de <code>*</code> dans la réponse, pour une sécurité améliorée, vous devez :
 
-- If the `Origin` header is present, validate and echo the value of the <code><code data-md-type="codespan">Origin</code> header.
+- Si l'en-tête `Origin` est présent, valider et transmettre la valeur de l'en-tête <code>Origin</code>.
 
 ### Traitement des requêtes de changement d'état <a name="processing-state-changing-requests"></a>
 
