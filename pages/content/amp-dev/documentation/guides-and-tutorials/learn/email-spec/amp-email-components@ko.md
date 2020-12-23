@@ -33,9 +33,9 @@ limitations under the License.
 
 아래 내용은 현재 AMP 이메일 메시지에서 지원되는 {0}AMP 컴포넌트{/0} 목록입니다. 컴포넌트는 다음과 같은 카테고리로 분류됩니다.
 
-- [Dynamic Content](#dynamic-content)
-- [Layout](#layout)
-- [Media](#media)
+- [동적 콘텐츠 ](#dynamic-content)
+- [레이아웃](#layout)
+- [미디어](#media)
 
 ## 동적 콘텐츠 <a name="dynamic-content"></a>
 
@@ -52,7 +52,7 @@ limitations under the License.
 
 요소 | 설명
 --- | ---
-[layout attributes](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/#layout-attributes) | 레이아웃 동작은 레이아웃 속성에 따라 결정됩니다.
+[레이아웃 속성](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/#layout-attributes) | 레이아웃 동작은 레이아웃 속성에 따라 결정됩니다.
 [`<amp-accordion>`](https://amp.dev/documentation/components/amp-accordion) | 다른 섹션의 표시/숨김 처리를 원활하게 지원하는 UI 요소.
 [`<amp-carousel>`](https://amp.dev/documentation/components/amp-carousel) | 캐러셀 UI 컴포넌트.
 [`<amp-fit-text>`](https://amp.dev/documentation/components/amp-fit-text) | 특정 영역에 맞춰 텍스트를 설정하는 헬퍼 컴포넌트.
