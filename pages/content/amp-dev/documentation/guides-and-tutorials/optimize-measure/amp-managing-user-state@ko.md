@@ -354,10 +354,8 @@ Next, examine the mapping table to try and find the same value in the "alias" co
     <th><strong>User ID on AMP page that’s NOT on publisher origin ("alias")</strong></th>
   </tr>
   <tr>
-    <td>
-<code>$prospective_identifier</code>(generated just-in-time when analytics ping is received)</td>
-    <td>
-<code>$amp_client_id</code> (came from analytics ping)</td>
+    <td> <code>$prospective_identifier</code>(핑 수신 시점에 JIT 방식으로 생성됨)</td>
+    <td> <code>$amp_client_id</code> (분석 핑에서 발생)</td>
   </tr>
 </table>
 
