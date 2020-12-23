@@ -1,5 +1,5 @@
 ---
-"$title": AMP Boilerplate Code
+"$title": AMP 样板代码
 order: '9'
 formats:
 - websites
@@ -33,10 +33,10 @@ limitations under the License.
 
 ## `head > style[amp-boilerplate]` 和 `noscript > style[amp-boilerplate]` <a name="head--styleamp-boilerplate-and-noscript--styleamp-boilerplate"></a>
 
-AMP HTML documents must contain the following boilerplate in their `head` tag. Validation is currently done with regular expressions, so it's important to keep mutations as minimal as possible. Currently, the allowed mutations are:
+AMP HTML 文档的 `head` 标记中必须包含以下样板。目前，需要通过正则表达式执行验证，因此，必须确保变更尽可能少。目前允许的变更包括：
 
-1. Inserting arbitrary whitespace immediately after the `style` tag opens, and immediately before it closes
-2. Replacing any space in the snippet below with arbitrary whitespace.
+1. 在 `style` 标记内部紧邻开头和结尾处插入任意空白字符
+2. 将以下代码段中的任何空格替换为任意空白字符。
 
 <!-- prettier-ignore-start -->
 
@@ -46,4 +46,4 @@ AMP HTML documents must contain the following boilerplate in their `head` tag. V
 
 <!-- prettier-ignore-end -->
 
-[tip] You can use the [boilerplate generator](https://amp.dev/boilerplate) to quickly setup a basic skeleton for your AMP page. It also provides snippets for structured data, to create a PWA and more! [/tip]
+[tip] 您可以使用[样板生成器](https://amp.dev/boilerplate)为 AMP 网页快速设置基本框架。它还提供了结构化数据的代码段，用于创建 PWA 等！[/tip]
