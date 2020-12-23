@@ -151,7 +151,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-img>
 ```
 
-Will produce the following nested `img ` tag:
+次のネストされた`img`タグを生成します。
 
 ```html
 <img decoding="async"
