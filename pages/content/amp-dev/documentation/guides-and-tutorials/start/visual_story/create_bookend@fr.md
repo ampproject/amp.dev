@@ -55,18 +55,18 @@ There are various components that you can use to display related content and lin
 <tbody>
   <tr>
     <td>heading</td>
-    <td>Allows you to specify a heading to group articles.   <pre class="nopreline">
+    <td>Vous permet de spécifier un en-tête pour regrouper des articles.   <pre class="nopreline">
   {
     "type": "heading",
     "text": "More to read"
   },
   </pre>     <br>     <figure class="alignment-wrapper half">
       <amp-img src="/static/img/docs/tutorials/amp_story/bookend_heading.png" width="720" height="140" layout="responsive" alt="bookend heading"></amp-img>
-    </figure>     </td>
+    </figure></td>
   </tr>
   <tr>
     <td>small</td>
-    <td>Allows you to link to related articles with the option to include an associated small image.   <pre class="nopreline">
+    <td>Vous permet de créer un lien vers des articles connexes avec la possibilité d'inclure une petite image associée.   <pre class="nopreline">
   {
     "type": "small",
     "title": "Learn about cats",
@@ -75,11 +75,12 @@ There are various components that you can use to display related content and lin
   },
   </pre>     <br>     <pre data-md-type="custom_pre"><figure class="alignment-wrapper half">
       <amp-img src="/static/img/docs/tutorials/amp_story/bookend_small.png" width="720" height="267" layout="responsive" alt="bookend small article"></amp-img>
-    </figure></pre>   </td>
+    </figure></pre>
+</td>
   </tr>
   <tr>
     <td>landscape</td>
-    <td>Allows you to link to articles or other content, like videos. The image associated with this type is larger and in landscape format.   <pre class="nopreline">
+    <td>Vous permet de créer un lien vers des articles ou d'autres contenus, tels que des vidéos. L'image associée à ce type est plus grande et au format paysage.   <pre class="nopreline">
   {
     "type": "landscape",
     "title": "Learn about border collies",
@@ -89,11 +90,12 @@ There are various components that you can use to display related content and lin
   },
   </pre>     <br>     <pre data-md-type="custom_pre"><figure class="alignment-wrapper half">
       <amp-img src="/static/img/docs/tutorials/amp_story/bookend_landscape.png" width="720" height="647" layout="responsive" alt="bookend landscape article"></amp-img>
-    </figure></pre>     </td>
+    </figure></pre>
+</td>
   </tr>
   <tr>
     <td>portrait</td>
-    <td>Allows you to link to stories or other content.  The image associated with this type is larger and in portrait format.   <pre class="nopreline">
+    <td>Vous permet de créer des liens vers des stories ou d'autres contenus. L'image associée à ce type est plus grande et au format portrait.   <pre class="nopreline">
   {
     "type": "portrait",
     "title": "Learn about macaws",
@@ -103,11 +105,12 @@ There are various components that you can use to display related content and lin
   },
   </pre>     <br>     <pre data-md-type="custom_pre"><figure class="alignment-wrapper half">
       <amp-img src="/static/img/docs/tutorials/amp_story/bookend_portrait.png" width="720" height="1018" layout="responsive" alt="bookend portrait article"></amp-img>
-    </figure></pre>     </td>
+    </figure></pre>
+</td>
   </tr>
   <tr>
     <td>cta-link</td>
-    <td>Allows you to specify calls to action links that are displayed as buttons (e.g., read more, Subscribe).   <pre class="nopreline">
+    <td>Vous permet de spécifier des liens d'appels à l'action qui s'affichent sous forme de boutons (par exemple, en savoir plus, S'abonner).   <pre class="nopreline">
   {
     "type": "cta-link",
     "links": [
@@ -119,7 +122,8 @@ There are various components that you can use to display related content and lin
   }
   </pre>     <br>     <pre data-md-type="custom_pre"><figure class="alignment-wrapper half">
       <amp-img src="/static/img/docs/tutorials/amp_story/bookend_cta.png" width="720" height="137" layout="responsive" alt="bookend cta"></amp-img>
-    </figure></pre>     </td>
+    </figure></pre>
+</td>
   </tr>
 </tbody>
 </table>
