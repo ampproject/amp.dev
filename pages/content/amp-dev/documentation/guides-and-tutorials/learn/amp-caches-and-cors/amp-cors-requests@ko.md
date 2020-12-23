@@ -79,7 +79,7 @@ limitations under the License.
 하지만 사용자는 AMP 페이지에 어떻게 들어왔나요? 사용자가 액세스하는 페이지는 캐시된 페이지인가요? 사용자는 AMP 페이지에 직접 액세스하는 것보다 다른 플랫폼을 통해 페이지를 발견했을 가능성이 높습니다. 예를 들어 Google 검색은 Google AMP 캐시를 사용하여 AMP 페이지를 빠르게 렌더링합니다. 즉 이러한 페이지는 Google AMP 캐시를 통해 지원되는 캐시된 페이지이며 도메인이 *다른* 것입니다. 사용자가 페이지의 가격을 업데이트하기 위해 버튼을 클릭하면 캐시된 AMP 페이지는 출처 도메인 페이지로 요청이 전송하여 가격을 불러옵니다. 하지만 출처 간 가격은 일치하지 않습니다(캐시 -> 출처 도메인). 이와 같은 교차 출처 요청을 허용하려면 CORS를 처리해야 합니다. 그렇지 않으면 요청은 실패하게 됩니다.
 
 <amp-img alt="CORS and Cache" layout="responsive" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png" width="809" height="391">
-  <noscript>     <img alt="CORS and Cache" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png">   </noscript></amp-img>
+  <noscript><img alt="CORS 및 캐시" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png"></noscript></amp-img>
 
 **자, 그럼 이제 어떻게 해야 할까요?**
 
@@ -195,7 +195,7 @@ W3 CORS 사양은 응답에서 <code>*</code> 값이 반환되는 것을 허용�
 예시를 통해 이 시나리오를 검토하도록 하겠습니다. 예시에서 이름이 `article-amp.html.`인 AMP 페이지를 호스팅하는 `example.com` 사이트를 관리합니다. 이 AMP 페이지에는 `amp-list`가 포함되어 `example.com`에서 호스팅되는 `data.json` 파일의 동적 데이터를 검색할 수 있습니다. 이때 AMP 페이지에서 가져온 `data.json` 파일로 요청을 처리하려 합니다. 출처가 동일한 AMP 페이지(캐시되지 않음) 또는 출처가 다른 AMP 페이지(캐시됨)에서 이러한 요청이 전송될 수 있습니다.
 
 <amp-img alt="CORS example" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png" width="629" height="433">
-  <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png">   </noscript></amp-img>
+  <noscript><img alt="CORS 예" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png"></noscript></amp-img>
 
 ### 허용된 출처 <a name="allowed-origins"></a>
 
@@ -279,7 +279,7 @@ function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
 다음 시나리오에서 `article-amp.html` 페이지는 `data.json` 파일을 요청합니다. 출처는 동일합니다.
 
 <amp-img alt="CORS example - scenario 1" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png" width="657" height="155">
-  <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png">   </noscript></amp-img>
+  <noscript><img alt="CORS 예" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png"></noscript></amp-img>
 
 이 요청을 검사하면 다음 정보를 확인할 수 있습니다.
 
@@ -303,7 +303,7 @@ Access-Control-Allow-Origin: https://example.com
 다음 시나리오에서 Google AMP 캐시에 캐시된 `article-amp.html` 페이지는 `data.json` 파일을 요청합니다. 출처는 다릅니다.
 
 <amp-img alt="CORS example - scenario 2" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png" width="657" height="155">
-  <noscript>     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png">   </noscript></amp-img>
+  <noscript><img alt="CORS 예" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png"></noscript></amp-img>
 
 이 요청을 검사하면 다음 정보를 확인할 수 있습니다.
 
@@ -360,7 +360,7 @@ function assertFontCors(req, res, opt_validMethods, opt_exposeHeaders) {
 예를 들어 `https://example.com/amp.html`에서 /some/font.ttf를 로드하려면 원본 서버는 아래와 같이 Access-Control-Allow-Origin를 통해 응답해야 합니다.
 
 <amp-img alt="CORS font example" layout="responsive" src="https://amp.dev/static/img/docs/cors-font.jpg" width="2268" height="1594">
-  <noscript>     <img alt="CORS font example" src="https://amp.dev/static/img/docs/cors-font.jpg">   </noscript></amp-img>
+  <noscript><img alt="CORS 글꼴 예" src="https://amp.dev/static/img/docs/cors-font.jpg"></noscript></amp-img>
 
 [tip type="note"] 모든 출처에서 글꼴 파일에 액세스할 수 있는 경우  `Access-Control-Allow-Origin` 와일드 카드를 통해 응답할 수 있으며 AMP 캐시도 그 값을 에코 처리하여 `Access-Control-Allow-Origin: *`로 응답하게 됩니다. 이미 이 설정을 사용 중이라면 변경은 필요하지 않습니다. [/tip]
 
