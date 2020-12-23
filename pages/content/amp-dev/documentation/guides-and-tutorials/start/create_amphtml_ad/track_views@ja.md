@@ -1,6 +1,6 @@
 ---
-$title: 広告ビューの追跡
-$order: 2
+"$title": 広告ビューの追跡
+"$order": '2'
 description: AMPHTML 広告内で、amp-pixel または amp-analytics コンポーネントを使用してメトリクスを追跡できます。この基本的なサンプルでは、ページビューを追跡する機能を追加します
 ---
 
