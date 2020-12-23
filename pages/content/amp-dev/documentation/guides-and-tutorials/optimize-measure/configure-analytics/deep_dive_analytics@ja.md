@@ -56,16 +56,16 @@ formats:
 
 AMP は、一般的なデータ収集方法として次の 2 つをサポートするように設計されています。
 
-- Ingestion by a publisher-owned endpoint for in-house analytics systems.
-- Ingestion by a vendor-owned endpoint for interoperability with a vendor solution (for example, [Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html), [Chartbeat](http://support.chartbeat.com/docs/), [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)).
+- サイト運営者所有のエンドポイントによる収集（アナリティクスシステムを社内で運用している場合）
+- ベンダー所有のエンドポイントによる収集（[Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html)、[Chartbeat](http://support.chartbeat.com/docs/)、[Google アナリティクス](https://developers.google.com/analytics/devguides/collection/amp-analytics/)などのベンダーソリューションと相互運用する場合）
 
-アナリティクス データをアナリティクス プロバイダに送信するには、 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) タグに `type` 属性を指定します。 値は、 [アナリティクス ベンダー](analytics-vendors.md)の一覧に記載されている各ベンダーの値を指定します。
+アナリティクスデータをアナリティクスプロバイダに送信するには、 <a><code>amp-analytics</code></a> タグに `type` 属性を指定します。 値は、[アナリティクスベンダー](analytics-vendors.md)の一覧に記載されている各ベンダーの値を指定します。
 
-For example: `<amp-analytics type="googleanalytics">` sends analytics data to the third-party analytics provider, Google Analytics. To send data to a publisher-owned endpoint, simply don’t include the `type` attribute; the analytics data is sent to the defined endpoints for each [request](deep_dive_analytics.md).
+たとえば `<amp-analytics type="googleanalytics">` とした場合、アナリティクスデータはサードパーティアナリティクスプロバイダである Google アナリティクスに送信されます。一方、サイト運営者所有のエンドポイントにデータを送信する場合は、`type` 属性を指定しません。各[リクエスト](deep_dive_analytics.md)のアナリティクスデータは、定義されたエンドポイントに送信されるようになります。
 
-アナリティクス ベンダーの設定を行うと、手早く [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) を使い始めることができます。 詳細については、ご利用のベンダーのドキュメントや ヘルプリソースをご確認ください。 AMP を統合済みのベンダーの一覧と、 各ベンダーのドキュメントへのリンクは、 前述の [アナリティクス ベンダー](analytics-vendors.md)の一覧をご覧ください。
+アナリティクスベンダーの設定を行うと、手早く [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) を使い始めることができます。詳細については、ご利用のベンダーのドキュメントやヘルプリソースをご覧ください。AMP を統合済みのベンダーの一覧と、 各ベンダーのドキュメントへのリンクは、 前述の[アナリティクスベンダー](analytics-vendors.md)の一覧をご覧ください。
 
-アナリティクス ベンダーの 方は、 [自身のアナリティクス設定を AMP HTML に統合する](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)方法についての説明をご確認ください。
+アナリティクスベンダーの 方は、 [自社のアナリティクス設定を AMP HTML に統合する](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)方法についての説明をご覧ください。
 
 ## リモート設定を読み込む: config 属性
 
