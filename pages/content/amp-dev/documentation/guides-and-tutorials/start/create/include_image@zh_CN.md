@@ -15,4 +15,4 @@ contributors:
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-[sourcecode:html] <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img> [/sourcecode]
+[tip type="read-on"] **延伸阅读**：如需了解我们为何要将诸如 `<img>` 等标记替换为 [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) 以及有多少标记可用，请参阅[添加图片和视频](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)。[/tip]
