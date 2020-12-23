@@ -238,18 +238,14 @@ Web ストーリー動画は常に縦方向表示（ポートレートビュー�
   </thead>
   <tbody>
     <tr>
-     <td>
-<a href="https://www.ffmpeg.org/about.html">FFmpeg</a>
-     </td>
+     <td><a href="https://www.ffmpeg.org/about.html">FFmpeg</a></td>
      <td>推奨される最適化:       <ul>         <li>MP4: <code>-crf 23</code>
 </li>         <li>WEBM: <code>-b:v 1M</code>
 </li>       </ul>
 </td>
     </tr>
     <tr>
-     <td>
-<a href="https://libav.org/avconv.html">avconv</a>
-     </td>
+     <td><a href="https://libav.org/avconv.html">avconv</a></td>
      <td>推奨される最適化:       <ul>         <li>MP4: <code>-crf 23</code>
 </li>         <li>WEBM: <code>-b:v 1M</code>
 </li>       </ul>
