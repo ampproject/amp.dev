@@ -22,6 +22,8 @@ contributors:
 
 `placeholder` 속성으로 표시된 요소는 상위 AMP 요소의 플레이스홀더 역할을 합니다. 지정된 경우 `placeholder` 요소는 AMP 요소의 직접 하위 요소여야 합니다. `placeholder`로 표시된 요소는 항상 상위 AMP 요소를 `fill`합니다.
 
+[example preview="inline" playground="true" imports="amp-anim:0.1"]
+```html
 <amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
   layout="responsive"
   width="400"
@@ -31,7 +33,8 @@ contributors:
     layout="fill">
   </amp-img>
 </amp-anim>
-
+```
+[/example]
 
 기본적으로 AMP 요소의 리소스가 다운로드되거나 초기화되지 않아도 플레이스홀더는 AMP 요소에 즉시 표시됩니다. 준비가 완료되면 AMP 요소는 일반적으로 플레이스홀더를 숨기고 콘텐츠를 표시합니다.
 
