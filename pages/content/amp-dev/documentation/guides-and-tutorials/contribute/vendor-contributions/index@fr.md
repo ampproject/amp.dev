@@ -107,6 +107,6 @@ Une contribution de niveau 3 introduit un nouveau composant spécifique au tiers
 - Rédiger et proposer une revue de conception.
 - Les tests doivent pouvoir réparer le défaut.
 - Corriger ou demander de l'aide en cas de défaut de composant.
-- Provide thorough documentation with code samples.
+- Fournir de la documentation avec des exemples de code.
 - Maintenir et mettre à jour la documentation.
 - Fournir un canal d'assistance aux développeurs AMP pour demander de l'aide.
