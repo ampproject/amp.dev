@@ -94,7 +94,7 @@ amphtmlValidator.getInstance().then(function (validator) {
 });
 ```
 
-##### Example: Using a gulp task to validate AMP HTML
+##### 예: Gulp 작업을 활용한 AMP HTML 유효성 검사
 
 이 예에서는 모든 AMP HTML 파일의 유효성을 검사하는 Gulp 작업을 사용합니다. AMP 유효성 평가 오류가 있는 경우 작업이 종료되며 오류 코드 (1)이 표시됩니다.
 
