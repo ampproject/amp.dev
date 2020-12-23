@@ -461,9 +461,7 @@ URL을 통해 정보가 제공되며 해당 정보를 처리하고자 할 경우
 
 *Updates to AMP page:* Use the Query Parameter substitution feature in your amp-analytics configuration to obtain the `ref_id` identifier value within the URL. The Query Parameter feature takes a parameter that indicates the "key" of the desired key-value pair in the URL and returns the corresponding value. Use the Client ID feature as we have been doing to get the identifier for the AMP page context.
 
-[sourcecode:http]
-https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}
-[/sourcecode]
+[sourcecode:http] https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)} [/sourcecode]
 
 네트워크에서 전송될 경우 실제 값은 대체됩니다.
 
