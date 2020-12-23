@@ -32,7 +32,11 @@ AMP에 시간과 노력을 투자했지만 아직 프로그레시브 웹 앱을 
 
 전역 `AMP` 변수를 사용할 수 있는지, 그림자 AMP에서 이 변수 사용에 도움을 줄 수 있는 '[비동기 함수 로드 접근방식](http://mrcoles.com/blog/google-analytics-asynchronous-tracking-how-it-work/)'을 사용하는지 확인해야 합니다. 다음 코드를 살펴보세요.
 
-[sourcecode:javascript] (window.AMP = window.AMP || []).push(function(AMP) { // 이제 AMP를 사용할 수 있습니다. }); [/sourcecode]
+[sourcecode:javascript]
+(window.AMP = window.AMP || []).push(function(AMP) {
+  // AMP is now available.
+});
+[/sourcecode]
 
 이 코드는 제대로 작동합니다. 또한 이 방식으로 추가된 콜백은 몇 개가 됐든지 AMP를 사용할 준비가 될 경우 제대로 실행될 것입니다. 그 이유는 무엇일까요?
 
@@ -101,7 +105,10 @@ fetchDocument(url).then(function(doc) {
 
 사용자는 프로그레시브 웹 앱 내에서 AMP 사이를 이동할 가능성이 높습니다. 따라서 이전에 렌더링한 AMP 페이지를 삭제할 때는 항상 다음과 같이 AMP에 해당 내용을 알려주세요.
 
-[sourcecode:javascript] // ampedDoc은 AMP.attachShadowDoc에서 반환된 참조입니다. ampedDoc.close(); [/sourcecode]
+[sourcecode:javascript]
+// ampedDoc is the reference returned from AMP.attachShadowDoc
+ampedDoc.close();
+[/sourcecode]
 
 이를 통해 이 문서를 더 이상 사용하지 않을 것이라고 AMP에 알리면 메모리 및 CPU의 오버헤드를 줄일 수 있습니다.
 
