@@ -16,12 +16,7 @@ Nous spécifions une méthode POST et une action XHR, car les actions non XHR ne
 
 Voici un exemple de réponse JSON:
 
-[sourcecode:json]
-{"Datetime":"09:34:21",
-"User":"Charlie",
-"Text":"Hello!",
-"UserImg":"/img/ic_account_box_black_48dp_1x.png"}
-[/sourcecode]
+[sourcecode:json] {"Datetime":"09:34:21", "User":"Charlie", "Text":"Hello!", "UserImg":"/img/ic_account_box_black_48dp_1x.png"} [/sourcecode]
 
 Le composant amp-form affichera simplement ces valeurs dans la page à l'aide du modèle [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md):
 
