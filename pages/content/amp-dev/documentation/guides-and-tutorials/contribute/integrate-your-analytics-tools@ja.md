@@ -1,5 +1,5 @@
 ---
-"$title": 分析ツールと AMP の統合
+"$title": Integrate your analytics tool with AMP
 order: '1'
 formats:
 - websites
@@ -73,6 +73,6 @@ have a look and request a pull request there.
 
 - ディープダイブ: [Why not just use an iframe?](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/why-not-iframe.md)
 - ディープダイブ: [Managing non-authenticated user state with AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)
-- [amp-analytics sample](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
+- [amp-analytics サンプル](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
 - [amp-analytics](https://amp.dev/documentation/components/amp-analytics) リファレンスドキュメント
 - [amp-analytics variables](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) リファレンスドキュメント
