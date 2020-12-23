@@ -159,7 +159,7 @@ Avant de commencer à ajouter du code, passons en revue l'exemple de page [artic
 </html>
 ```
 
-This is a simple AMP page that passes both [AMP validation](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) and the [schema.org](http://schema.org/) structured data validation. If this page were deployed on a news website, users can discover the page through rich experiences in Search Engine Result Pages (e.g., the Top stories carousel in Google Search).
+Il s'agit d'une page AMP simple qui passe à la fois la [validation AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) et la validation des données structurées [schema.org](http://schema.org/). Si cette page a été déployée sur un site Internet d'actualités, les utilisateurs peuvent découvrir la page à travers des expériences riches dans les pages de résultats du moteur de recherche (par exemple, les carrousel des stories les plus populaires dans la recherche Google).
 
 ## Activation du validateur AMP
 
@@ -180,9 +180,9 @@ Ouvrez la [console de développement](https://developer.chrome.com/devtools/docs
 
 [tip] Vous pouvez utiliser plusieurs autres outils pour valider votre page AMP, comme :
 
-- The [AMP Validator extension for Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc)
-- The [AMP Validator extension for Opera](https://addons.opera.com/en-gb/extensions/details/amp-validator/)
-- The [AMP Validator Web Interface](https://validator.ampproject.org/)
+- L'[extension Validateur AMP pour Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc)
+- L'[extension Validateur AMP pour Opera](https://addons.opera.com/en-gb/extensions/details/amp-validator/)
+- L'[interface Web Validateur AMP](https://validator.ampproject.org/)
 - ... et beaucoup plus
 
 Apprenez-en davantage dans le guide [Valider les pages AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md). [/tip]
