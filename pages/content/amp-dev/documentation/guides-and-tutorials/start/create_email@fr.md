@@ -1,7 +1,7 @@
 ---
-"$title": Create your first AMP Email
+"$title": Créer votre premier e-mail AMP
 "$order": '0'
-description: Learn what makes AMP emails different by creating your first email.
+description: Découvrez ce qui différencie les e-mails AMP en créant votre premier e-mail.
 tutorial: 'true'
 formats:
 - email
@@ -14,7 +14,7 @@ AMP pour e-mail est compatible avec les e-mails existants. La version AMP du mes
 
 Conseil : pour obtenir une liste des plateformes de messagerie (ESP), clients et fournisseurs qui prennent en charge AMP e-mail, reportez-vous à la section [Plateformes de messagerie prises en charge](../../../support/faq/email-support.md) dans la FAQ.
 
-Follow this tutorial to build and send your first dynamic email powered by AMP. You can view the finished code [here](https://gist.github.com/CrystalOnScript/988c3f0a2eb406da27e9d9bf13a8bf73).
+Suivez ce tutoriel pour créer et envoyer votre premier e-mail dynamique optimisé par AMP. Vous pouvez voir le code terminé [ici](https://gist.github.com/CrystalOnScript/988c3f0a2eb406da27e9d9bf13a8bf73).
 
 # Commencez avec le modèle AMP
 
@@ -39,23 +39,23 @@ Le Playground AMP prend en charge le format AMP pour e-mail, ce qui vous permet 
 </html>
 ```
 
-It contains all the required markup and the minimum code to be a valid AMP email. Also note the many other examples of valid email templates in the drop down list on the top right drop down menu.
+Il contient tout le balisage requis et le code minimum pour constituer un e-mail AMP valide. Notez également les nombreux autres exemples de modèles de courrier électronique valides dans la liste déroulante du menu déroulant en haut à droite.
 
-Let's take a moment to call out some notable differences from classic HTML emails:
+Prenons un moment pour souligner quelques différences notables par rapport aux e-mails HTML classiques :
 
-- AMP emails must identify themselves as such by including `⚡4email`, or `amp4email`, in the html tag.
-- The `<head>` tag must also contain a `<script>` tag that loads the AMP runtime. `<script async src="https://cdn.ampproject.org/v0.js"></script>`
+- Les e-mails AMP doivent s'identifier comme tels en incluant `⚡4email`, ou `amp4email`, dans la balise html.
+- La section `<head>` doit également contenir un `<script>` qui charge le moteur d'exécution AMP. `<script async src="https://cdn.ampproject.org/v0.js"></script>`
 - Un modèle passe-partout CSS pour masquer initialement le contenu jusqu'à ce qu'AMP soit chargé. `<style amp4email-boilerplate>body{visibility:hidden}</style>`
 
-If you have worked with emails before, the idea of placing a script into an email may set off alarm bells in your head! Rest assured, email providers who support AMP emails enforce fierce security checks that only allow vetted AMP scripts to run in their clients. This enables dynamic and interactive features to run directly in the recipients mailboxes with no security vulnerabilities! Read more about the required markup for AMP Emails here.
+Si vous avez déjà travaillé avec des e-mails, l'idée de placer un script dans un e-mail peut déclencher une alarme dans votre tête ! Rassurez-vous, les fournisseurs de messagerie qui prennent en charge les e-mails AMP appliquent des contrôles de sécurité féroces qui n'autorisent que les scripts AMP approuvés à s'exécuter dans leurs clients. Cela permet aux fonctionnalités dynamiques et interactives de s'exécuter directement dans les boîtes aux lettres des destinataires sans aucune vulnérabilité de sécurité ! En savoir plus sur le balisage requis pour les e-mails AMP ici.
 
-[tip type="important"] Only AMP scripts for [supported components](/content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-components.md) can be included in AMP Emails. [/tip]
+[tip type="important"] Seuls les scripts AMP des [composants pris en charge](/content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-components.md) peuvent être inclus dans les e-mails AMP. [/tip]
 
-# Include an image
+# Inclure une image
 
-Most HTML tags that are used in emails can be used in AMP emails. However, some tags, such as the `<img>` tag are replaced with an AMP equivalent, [`<amp-img>`](/content/amp-dev/documentation/components/reference/amp-img.md).
+La plupart des balises HTML utilisées dans les e-mails peuvent être utilisées dans les e-mails AMP. Cependant, certaines balises, telles que `<img>` sont remplacées par un équivalent AMP, [`<amp-img>`](/content/amp-dev/documentation/components/reference/amp-img.md).
 
-The `<amp-img>` tag requires the width and height of an image is defined and unlike `<img>`, `<amp-img>` has to be explicitly closed via `</amp-img>`.
+La balise `<amp-img>` nécessite que la largeur et la hauteur d'une image soient définies et contrairement à `<img>`, `<amp-img>` doit être explicitement fermé via `</amp-img>`.
 
 ```html
 <amp-img src="https://link/to/img.jpg"
@@ -65,13 +65,13 @@ The `<amp-img>` tag requires the width and height of an image is defined and unl
 </amp-img>
 ```
 
-Additionally, GIF files are supported through [`<amp-anim>`](/content/amp-dev/documentation/components/reference/amp-anim.md).
+De plus, les fichiers GIF sont pris en charge via [`<amp-anim>`](/content/amp-dev/documentation/components/reference/amp-anim.md).
 
-Since emails are not hosted on your server, URLs must use absolute paths in AMP emails and must be HTTPS.
+Étant donné que les e-mails ne sont pas hébergés sur votre serveur, les URL doivent utiliser des chemins absolus dans les e-mails AMP et doivent être HTTPS.
 
 [Placekitten](https://placekitten.com/) est un site Web qui utilise des images de chatons comme caractères de remplacement. Ils vous permettent de choisir la taille d'une image directement dans l'URL !
 
-We can include an image in our first email by adding the code below.
+Nous pouvons inclure une image dans notre premier e-mail en ajoutant le code ci-dessous.
 
 ```html
 <body>
@@ -83,9 +83,9 @@ We can include an image in our first email by adding the code below.
 </body>
 ```
 
-## Make it responsive
+## Rendez l'ensemble réactif
 
-Emails are viewed across a variety of devices and screen sizes, and AMP comes with a built-in layout system! With the [`amp-layout`](/content/amp-dev/documentation/components/reference/amp-layout.md) system and media queries, implementing responsive emails is easy. To size our placed kitten image to the appropriate screens, add the `layout="responsive"` attribute to your `<amp-image>`.
+Les e-mails sont affichés sur une variété d'appareils et de tailles d'écran, et AMP est livré avec un système de mise en page intégré ! Avec le système [`amp-layout`](/content/amp-dev/documentation/components/reference/amp-layout.md) et les requêtes multimédias, la mise en œuvre d'e-mails réactifs est facile. Pour dimensionner notre image de chaton placée sur les écrans appropriés, ajoutez l'attribut `layout="responsive"` à votre `<amp-image>` .
 
 [tip type="read-on"] [En savoir plus sur le fonctionnement d'AMP avec les requêtes de mise en page et multimédias](/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md). [/tip]
 
@@ -95,7 +95,7 @@ Emails are viewed across a variety of devices and screen sizes, and AMP comes wi
 
 Agrandissez et réduisez la fenêtre du navigateur pour voir l'image se redimensionner ! Consultez la [liste des composants spécifiques à la mise en page pris en charge ici](../../../documentation/guides-and-tutorials/learn/email-spec/amp-email-components.md#layout).
 
-# Modify presentation and layout
+# Modifier la présentation et la mise en page
 
 Une image, c'est bien, mais que faire si nous voulons en afficher davantage ? AMP pour e-mail prend en charge les éléments de mise en page, tels que les accordéons et les barres latérales.
 
@@ -103,15 +103,15 @@ Une image, c'est bien, mais que faire si nous voulons en afficher davantage ? AM
 
 <!-- [Read here for full list of supported layout elements](). -->
 
-For this tutorial, we're going to use [`<amp-carousel>`](/content/amp-dev/documentation/components/reference/amp-carousel.md) to display photos of cats up for adoption.
+Pour ce tutoriel, nous allons utiliser [`<amp-carousel>`](/content/amp-dev/documentation/components/reference/amp-carousel.md) pour afficher des photos de chats à adopter.
 
-Add the `amp-carousel` script to the head of your email.
+Ajoutez le script `amp-carousel` en tête de votre e-mail.
 
 ```html
   <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
 ```
 
-Then wrap our first image in the `<amp-carousel>` tags.
+Ensuite, enveloppez notre première image dans les balises `<amp-carousel>`.
 
 ```html
 <amp-carousel layout="responsive"
@@ -122,9 +122,9 @@ Then wrap our first image in the `<amp-carousel>` tags.
 </amp-carousel>
 ```
 
-You might notice that nothing has changed, and that's a good thing! Our carousel has been given the attribute `type=slides`, which means it will show one photo at a time. Since we've only placed one photo within the tags it doesn't give the user slider arrows.
+Vous remarquerez peut-être que rien n'a changé, et c'est une bonne chose ! Notre carrousel a reçu l'attribut `type=slides`, ce qui signifie qu'il affichera une photo à la fois. Puisque nous n'avons placé qu'une seule photo dans les balises, cela ne fournit pas de flèches de curseur à l'utilisateur.
 
-Next, replace the place kitten image with our AMP cats up for adoption inside your `<amp-carousel>`.
+Ensuite, remplacez l'image du chaton par nos chats AMP à adopter dans votre `<amp-carousel>`.
 
 ```html
 <amp-carousel id="carousel-with-preview"
@@ -140,13 +140,13 @@ Next, replace the place kitten image with our AMP cats up for adoption inside yo
  </amp-carousel>
 ```
 
-You should now be able to change photos by clicking the navigation arrows on the left or right hand sides of the carousel!
+Vous devriez maintenant pouvoir changer de photo en cliquant sur les flèches de navigation sur les côtés gauche ou droit du carrousel !
 
-## Send with style
+## Envoyer avec un style
 
-AMP allows for styling in the head of the document within the `<style amp-custom>` tag. Additionally, previously banned CSS classes and pseudo-classes are now usable. [Read the full list here](/content/amp-dev/documentation/guides-and-tutorials/learn/email_fundamentals.md#emails-with-style).
+AMP permet de styliser la tête du document dans `<style amp-custom>`. De plus, les classes CSS et pseudo-classes précédemment interdites sont désormais utilisables. [Lisez la liste complète ici](/content/amp-dev/documentation/guides-and-tutorials/learn/email_fundamentals.md#emails-with-style).
 
-Let's update `Hello, AMP4EMAIL world` to a real title.
+Mettons à jour `Hello, AMP4EMAIL world` comme un vrai titre.
 
 ```html
 <body>
@@ -155,7 +155,7 @@ Let's update `Hello, AMP4EMAIL world` to a real title.
 </body>
 ```
 
-And then add some styling into the head.
+Et puis ajoutons un peu de style dans la tête.
 
 ```html
 <head>
@@ -175,17 +175,17 @@ And then add some styling into the head.
 </head>
 ```
 
-# Add Dynamic Capabilities
+# Ajouter des capacités dynamiques
 
 En général, les e-mails autorisent uniquement du contenu statique. Grâce à AMP, les e-mails sont ouverts à un tout nouveau monde de possibilités ! Les utilisateurs peuvent désormais répondre aux [formulaires](/content/amp-dev/documentation/components/reference/amp-form.md), obtenir le [contenu mis à jour dynamiquement](/content/amp-dev/documentation/components/reference/amp-list.md) et interagir avec le contenu.
 
-In this tutorial, we'll use [`<amp-bind>`](/content/amp-dev/documentation/components/reference/amp-bind.md) to display our adoptable cat's name and a description when the user is on that cat's slide. Start by including the `amp-bind` script in the head of your email.
+Dans ce tutoriel, nous utiliserons [`<amp-bind>`](/content/amp-dev/documentation/components/reference/amp-bind.md) pour afficher le nom de notre chat à adopter et une description lorsque l'utilisateur consulte la diapositive de ce chat. Commencez par inclure le script `amp-bind` dans la tête de votre e-mail.
 
 ```html
  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 ```
 
-Next, we'll declare an AMP bind variable "myState" as a JSON string inside an [`<amp-state>`](/content/amp-dev/documentation/components/reference/amp-bind.md#state) tag. Since we have four cat photos, we'll include state for all four.
+Ensuite, nous déclarerons une variable de liaison AMP "myState" en tant que chaîne JSON dans une [`<amp-state>`](/content/amp-dev/documentation/components/reference/amp-bind.md#state). Puisque nous avons quatre photos de chat, nous inclurons l'état pour les quatre.
 
 ```html
 <body>
@@ -228,9 +228,9 @@ Next, we'll declare an AMP bind variable "myState" as a JSON string inside an [`
 </amp-carousel>
 ```
 
-This code set the state of `currentCat` to match the cat photo at the carousel index. So if we are at slide `event.index=2`, the state will map to the item in index 2 of the array.
+Ce code définit l'état de `currentCat` pour qu'il corresponde à la photo du chat dans l'index du carrousel. Donc, si nous sommes à la diapositive `event.index=2`, l'état correspondra à l'élément dans l'index 2 du tableau.
 
-The only thing left is to display our cat's name and descriptions. Add the following code under the closing `amp-carousel` tag.
+La seule chose qui reste à faire est d'afficher le nom et les descriptions de notre chat. Ajoutez le code suivant sous la balise de fermeture `amp-carousel`.
 
 ```html
 </amp-carousel>
@@ -241,11 +241,11 @@ The only thing left is to display our cat's name and descriptions. Add the follo
 </div>
 ```
 
-The `amp-bind` extension uses [expressions](/content/amp-dev/documentation/components/reference/amp-bind.md#expressions) and [bindings](/content/amp-dev/documentation/components/reference/amp-bind.md#bindings) to change content dynamically. The code example above uses the `[text]` binding to update the text within the `<span>` tag each time the state is changed by evaluating the `"myState.cats[currentCat].name"` expression.
+L'extension `amp-bind` utilise des [expressions](/content/amp-dev/documentation/components/reference/amp-bind.md#expressions) et des [liaisons](/content/amp-dev/documentation/components/reference/amp-bind.md#bindings) pour modifier le contenu de manière dynamique. L'exemple de code ci-dessus utilise la liaison `[text]` pour mettre à jour le texte dans `<span>` chaque fois que l'état est modifié en évaluant `"myState.cats[currentCat].name"`.
 
-[tip type="note"] For performance and to avoid the risk of unexpected content jumping, amp-bind does not evaluate expressions on page load. This means that the visual elements should be given a default state and not rely amp-bind for initial render. [/tip]
+[tip type="note"] Pour les performances et pour éviter le risque de saut de contenu inattendu, amp-bind n'évalue pas les expressions lors du chargement de la page. Cela signifie que les éléments visuels doivent avoir un état par défaut et ne pas compter sur amp-bind pour le rendu initial. [/tip]
 
-Don't forget to add our cat descriptions after the `</div>` tag!
+N'oubliez pas d'ajouter nos descriptions de chats après `</div>` !
 
 ```html
   </div>
@@ -254,14 +254,14 @@ Don't forget to add our cat descriptions after the `</div>` tag!
 </body>
 ```
 
-Now, when you change the cat photo in the carousel, their name and description should update too!
+Désormais, lorsque vous modifiez la photo du chat dans le carrousel, son nom et sa description doivent également être mis à jour !
 
-# Send your AMP email
+# Envoyer votre e-mail AMP
 
-To learn how to send your email to your inbox, [read more about testing AMP emails](/content/amp-dev/documentation/guides-and-tutorials/develop/testing_amp_emails.md)
+Pour savoir comment envoyer votre e-mail dans votre boîte de réception, consultez [en savoir plus sur le test des e-mails AMP](/content/amp-dev/documentation/guides-and-tutorials/develop/testing_amp_emails.md)
 
 <!-- TODO: Add Screen Shot. Emails sent from tool are not currently displaying. Only receiving information on how to enable AMP emails, but then getting blank messages. -->
 
-Congratulations! You've sent your first AMP email!
+Félicitations ! Vous avez envoyé votre premier e-mail AMP !
 
 Pour les étapes suivantes, consultez [en savoir plus sur les principes de base d'AMP pour e-mail](/content/amp-dev/documentation/guides-and-tutorials/learn/email_fundamentals.md).
