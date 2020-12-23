@@ -17,17 +17,17 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-- [Release Channels](#release-channels)
-    - [Nightly](#nightly)
-    - [Weekly](#weekly)
-        - [Experimental and Beta channels](#experimental-and-beta-channels)
-    - [Long-Term Stable (lts)](#long-term-stable-lts)
-- [Determining if your change is in a release](#determining-if-your-change-is-in-a-release)
-- [Release Cadence](#release-cadence)
-    - [Detailed schedule](#detailed-schedule)
-    - [Release Freezes](#release-freezes)
+- [릴리스 채널 ](#release-channels)
+    - [야간 빌드](#nightly)
+    - [주간 ](#weekly)
+        - [베타 및 실험 버전 채널 ](#experimental-and-beta-channels)
+    - [장기 안정(LTS) ](#long-term-stable-lts)
+- [릴리스에 변경 사항 포함 여부 확인 ](#determining-if-your-change-is-in-a-release)
+- [릴리스 주기](#release-cadence)
+    - [상세 일정 ](#detailed-schedule)
+    - [릴리스 프리즈](#release-freezes)
 
-A new release of AMP is pushed to all AMP pages every week on Tuesday. **Once a change in AMP is merged into the master branch of the amphtml repository, it will typically take 1-2 weeks for the change to be live for all users.**
+AMP 신규 릴리스는 매주 화요일 AMP 페이지에 푸시됩니다. **AMP 변경 사항이 amphtml 저장소에 병합된 후 모든 사용자에게 공개되기까지 일반적으로 약 1-2주가 소요됩니다.**
 
 ## 릴리스 채널 <a name="release-channels"></a>
 
@@ -73,13 +73,13 @@ AMP 런타임 및 확장자는 다양한 *릴리스 채널*을 통해 제공됩�
 
 **LTS** 릴리스 채널은 1달 간격으로 이전의 **안정** 빌드를 제공합니다. 매월 두 번째 월요일에 현재 **안정** 릴리스가 **LTS**로 이동합니다. 이 채널은 모든  AMP 퍼블리셔에게 권장되지는 않으며, 특정 웹 페이지를 **LTS** 채널로 선택하여 웹사이트 QA 수행 주기의 빈도를 줄이려는 퍼블리셔에게 적합합니다(<a href="https://github.com/ampproject/amphtml/blob/master/contributing/lts-release.md" data-md-type="link">**LTS** 읽어보기</a> 참조).
 
-If the second Monday of the month falls on a holiday, the promotion will be performed after the end of the [release freeze](#release-freezes).
+해당 월의 두번째 월요일이 휴일인 경우에는 LTS 채널로 이동이 [릴리스 프리즈](#release-freezes) 종료 이후 수행됩니다.
 
 중요: **LTS** 릴리스 채널을 사용하는 퍼블리셔는 새로 도입된 기능을 사용할 수 없습니다. 그 이유는 **LTS** 릴리스의 더 긴 주기로 인해 [`ampproject/amphtml`](https://github.com/ampproject/amphtml)의 `HEAD`보다 최대 7주 늦어질 수 있기 때문입니다. 선택한 릴리스 주기에 변경 사항이 반영될지 확인하려면 [릴리스에 변경 사항 포함 여부 확인](#determining-if-your-change-is-in-a-release) 섹션을 참조하세요.
 
 ## 릴리스에 변경 사항 포함 여부 확인 <a name="determining-if-your-change-is-in-a-release"></a>
 
-[*Type: Release* GitHub issues](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) are used to track the status of current and past releases; from the initial cut, to testing via **experimental**/**beta** channels, to eventual release via the **stable** and **lts** channels. Announcements about releases are made on the [AMP Slack #release channel](https://amphtml.slack.com/messages/C4NVAR0H3/) ([sign up for Slack](https://bit.ly/amp-slack-signup)).
+[*Type: Release* GitHub 이슈는](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) 최근 및 이전 릴리스 상태를 추적하는 데 사용됩니다. 초기 컷부터 **실험 버전**/**베타** 채널을 통한 테스팅, **안정** 및 **LTS** 채널을 통한 최종 릴리스까지 상태를 추적할 수 있습니다. 릴리스 관련 공지는 [AMP Slack #release 채널](https://amphtml.slack.com/messages/C4NVAR0H3/)에서 제공됩니다([Slack 가입하기](https://bit.ly/amp-slack-signup)).
 
 다음 중 한 가지 방법을 사용하여 해당 빌드에 어떤 변경 사항이 포함되었는지 확인할 수 있습니다.
 
@@ -93,7 +93,7 @@ If the second Monday of the month falls on a holiday, the promotion will be perf
 AMP 새 버전을 푸시하여 모두에게 공개하는 빈도를 결정하는 데 있어 고려해야 할 요소는 다음과 같습니다.
 
 - AMP로 제작된 수백만 개의 사이트/수십억 개의 페이지 안정성
-- cache-busting that might happen when we push a new version
+- 새 버전을 푸시할 때 발생할 수 있는 캐시 버스팅
 - 새 기능을 빠르게 완성하려는 열망
 
 이와 같은 모든 요소를 고려하여 푸시 주기는 1-2주로 결정되었습니다. 지금까지는 합리적인 타협점이었다고 생각되지만 향후 지속적으로 모든 사항을 점검하고 변경할 수도 있습니다.
@@ -102,7 +102,7 @@ AMP 새 버전을 푸시하여 모두에게 공개하는 빈도를 결정하는 
 
 복합적인 상황으로 인해 지연이 발생할 수 있지만 최대한 이 일정을 고수하고자 합니다. 모든 릴리스의 최신 상태는 [*Type: Release* GitHub 이슈](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) 및 [AMP Slack #release 채널](https://amphtml.slack.com/messages/C4NVAR0H3/)에서 추적할 수 있습니다([Slack 가입하기](https://bit.ly/amp-slack-signup)).
 
-- Tuesday @ [11am Pacific](https://www.google.com/search?q=11am+pacific+in+current+time+zone): new **experimental** and **beta** release builds are created from the [latest master build that passes all of our tests](https://travis-ci.com/ampproject/amphtml/branches) and are pushed to users who opted into the [AMP Experimental Channel](#amp-experimental-and-beta-channels) or [AMP Beta Channel](#amp-experimental-and-beta-channels), respectively.
+- 화요일 [오전 11시(태평양 표준시 기준)](https://www.google.com/search?q=11am+pacific+in+current+time+zone): <a>모든 테스트를 통과한 최신 마스터 빌드</a>에서 신규 **실험 버전** 및 <strong>베타</strong> 릴리스 빌드가 생성되어 [AMP 실험 버전 채널](#amp-experimental-and-beta-channels) 또는 [AMP 베타 채널](#amp-experimental-and-beta-channels) 옵션을 선택한 사용자에게 각각 푸시됩니다.
 - 수요일: *실험 버전 채널* 및 *베타 채널* 사용자의 버그 리포트를 확인하고 아무 문제가 없을 시 **베타**를 1%의 AMP 페이지로 푸시합니다.
 - 목요일-월요일: *실험 버전 채널* 및 *베타 채널* 사용자와 **실험 버전**/**베타** 빌드가 포함된 1% 페이지의 오류 발생률을 지속적으로 모니터링합니다.
 - 다음 주 화요일: **베타** 빌드가 **안정**으로 완전히 이동합니다(즉, 모든 AMP 페이지에서 해당 빌드를 사용합니다).
@@ -121,10 +121,10 @@ N번째 주에 릴리스 1주간의 릴리스 프리즈가 발표된 경우:
 
 릴리스 프리즈 발생 원인은 다음과 같습니다.
 
-- Times when there are not enough people available to push the AMP release to **stable** and monitor it. Currently, most of the people performing AMP releases are based in the United States, so this will usually be the weeks of the major US holidays of Independence Day (July 4), Thanksgiving (fourth Thursday in November), Christmas (25 December), and New Year's Eve/Day (December 31/January 1).
+- AMP 릴리스를 **안정** 상태로 푸시하고 모니터링할 인원이 충분하지 않은 경우. 현재 AMP 릴리스를 수행하는 담당자의 대다수는 미국에 거주하므로 릴리스 프리즈는 다음과 같은 미국의 주요 휴일에 발생합니다: 독립기념일(7월 4일), 추수감사절(11월 4번째 목요일), 크리스마스(12월 25일) 및 새해전야/새해 첫날(12월 31일/1월 1일).
 - [기술 결정 위원회(TSC)](https://github.com/ampproject/meta-tsc)나 릴리스 수행 담당자가 결정한 바에 따른 보안 또는 사생활 침해 문제 등이 발생한 긴급 상황.
-- Other situations when the stability of the codebase is deemed to be particularly important as determined by the TSC.
+- TSC에서 결정한 바에 따라 각별히 중요하다고 간주되는 코드베이스 안정성 문제가 발생한 경우.
 
-In all cases, except emergencies, the release freezes will be announced at least one month in advance.
+긴급 상황을 제외한 모든 경우에 릴리스 프리즈는 적어도 한 달 전에 발표됩니다.
 
 추가 공지가 없는 한 릴리스 프리즈는 코드 프리즈를 의미하지 않습니다. 릴리스 프리즈 기간에도 코드를 계속 작성, 검토 및 병합할 수 있습니다.
