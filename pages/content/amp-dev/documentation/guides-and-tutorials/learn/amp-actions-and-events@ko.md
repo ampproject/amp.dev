@@ -398,11 +398,11 @@ AMP는 모든 HTML 요소(AMP 요소 포함)에서 리스닝할 수 있는 `tap`
   </tr>
   <tr>
     <td><code>play</code></td>
-    <td>Plays the audio. Is a no-op if the <code><amp-audio></code> element is a descendant of <code><amp-story></code>.</td>
+    <td>오디오를 재생합니다. <code>&lt;/amp-audio></code> 요소가 <code>&lt;amp-story></code>의 하위 요소일 경우 무연산 명령어입니다.</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
-    <td>Pauses the audio. Is a no-op if the <code><amp-audio></code> element is a descendant of <code><amp-story></code>.</td>
+    <td>오디오를 정지합니다. <code>&lt;/amp-audio></code> 요소가 <code>&lt;amp-story></code>의 하위 요소일 경우 무연산 명령어입니다.</td>
   </tr>
 </table>
 
