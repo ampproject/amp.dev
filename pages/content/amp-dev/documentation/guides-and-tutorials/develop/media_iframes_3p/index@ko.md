@@ -129,7 +129,7 @@ The [`amp-anim`](../../../../documentation/components/reference/amp-anim.md) 요
 
 직접 HTML5 오디오 파일 삽입에만 이 요소를 사용하세요. AMP 페이지에 삽입되는 모든 외부 리소스와 같이, 이 요소는 `src` 속성으로 지정한 오디오 리소스를 AMP가 결정한 시간에 레이지 로드합니다.
 
-Include a fallback, if the browser doesn't support HTML5 audio, for example:
+브라우저가 HTML5 오디오를 지원하지 않는 경우 대체를 포함합니다. 예를 들면 다음과 같습니다.
 
 [example preview="inline" playground="true" imports="amp-audio:0.1"]
 ```html
