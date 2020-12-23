@@ -19,9 +19,9 @@ author: CrystalOnScript
 基本 [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) 是由以下关键部分构成的 JSON 对象：
 
 - 组件要以动画形式呈现的元素，或者 `selector`。
-- [Timing Properties](../../../../documentation/components/reference/amp-animation.md#timing-properties)
-- [Keyframes](../../../../documentation/components/reference/amp-animation.md#keyframes)
-- [Trigger](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
+- [时间属性](../../../../documentation/components/reference/amp-animation.md#timing-properties)
+- [關鍵幀](../../../../documentation/components/reference/amp-animation.md#keyframes)
+- [触发器](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
 
 ```
 <amp-animation layout="nodisplay" id="exampleAnimation">
@@ -259,9 +259,9 @@ author: CrystalOnScript
 ```
 [/example]
 
-- Declaring a variable, `--duration`, and giving it the value of two seconds.
-- Setting the `duration` to the var `--duration`'s value.
-- Calculating the delay applied to each element with the class `.card`.
+- 声明变量 `--duration`，并为其指定两秒的值。
+- 将 `duration` 设置为变量 `--duration` 的值。
+- 计算满足选择器 `.card` 要求的每个元素要应用的延迟时间。
     1. [`length()` 扩展组件](../../../../documentation/components/reference/amp-animation.md#css-length()-extension)计算已选择的 `.card` 元素数量
     2. 该长度减去每个 `.card` 的 [index()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension)
     3. 得到的值再乘以变量 `--duration`
