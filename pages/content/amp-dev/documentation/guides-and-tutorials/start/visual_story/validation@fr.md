@@ -1,11 +1,11 @@
 ---
-"$title": Validating your AMP HTML
+"$title": Valider votre code HTML AMP
 "$order": '8'
-description: Whenever you create an AMP page, you should always validate that your AMP HTML is correct. There are [several methods that you can use to validate your AMP pages ...
+description: Chaque fois que vous créez une page AMP, vous devez toujours vérifier que votre code HTML AMP est correct. Il existe [plusieurs méthodes que vous pouvez utiliser pour valider vos pages AMP ...
 author: bpaduch
 ---
 
-Because Web Stories are built with AMP, you should always validate that your AMP HTML is correct. There are [several methods that you can use to validate AMP pages](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md). In this tutorial, we'll enable the AMP Validator by turning on the developer mode.  To turn on the developer mode, add the following fragment identifier to your URL and reload the page:
+Étant donné que les stories Web sont créées avec AMP, vous devez toujours vérifier que votre code HTML AMP est correct. Il existe [plusieurs méthodes que vous pouvez utiliser pour valider les pages AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md). Dans ce tutoriel, nous allons activer le validateur AMP en activant le mode développeur. Pour activer le mode développeur, ajoutez l'identifiant de fragment suivant à votre URL et rechargez la page :
 
 ```text
 #development=1
