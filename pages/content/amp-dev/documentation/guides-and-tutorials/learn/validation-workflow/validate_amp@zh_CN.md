@@ -94,7 +94,7 @@ amphtmlValidator.getInstance().then(function (validator) {
 });
 ```
 
-##### Example: Using a gulp task to validate AMP HTML
+##### 示例：使用 gulp 任务验证 AMP HTML
 
 在本示例中，我们的 gulp 任务可验证所有 AMP HTML 文件。如果存在 AMP 验证错误，该任务将退出并显示错误代码 (1)。
 
