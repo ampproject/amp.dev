@@ -1,5 +1,5 @@
 ---
-"$title": Actions and events
+"$title": Actions et événements
 order: '0'
 formats:
 - websites
@@ -36,7 +36,7 @@ limitations under the License.
 
 L'attribut `on` est utilisé pour installer des gestionnaires d'événements sur des éléments. Les événements pris en charge dépendent de l'élément.
 
-The value for the syntax is a simple domain-specific language of the form:
+La valeur de la syntaxe est un langage simple spécifique au domaine du formulaire:
 
 [sourcecode:javascript]
 eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
@@ -45,18 +45,18 @@ Consultez le tableau ci-dessous pour une description détaillée de la syntaxe.
 
 <table>
   <tr>
-    <th width="30%">Syntax</th>
+    <th width="30%">Syntaxe</th>
     <th width="18%">Requis?</th>
     <th width="42%">Description</th>
   </tr>
   <tr>
     <td><code>eventName</code></td>
-    <td>yes</td>
-    <td>This is the name of the event that an element exposes.</td>
+    <td>Oui</td>
+    <td>C'est le nom de l'événement qu'un élément expose.</td>
   </tr>
   <tr>
     <td><code>targetId</code></td>
-    <td>yes</td>
+    <td>Oui</td>
     <td>C'est l'identifiant du DOM de l'élément ou une <a href="#special-targets">cible spéciale</a> prédéfinie sur laquelle vous souhaitez exécuter une action en réponse à l'événement. Dans l'exemple suivant, <code>targetId</code> représente l'identifiant du DOM de la cible <code>amp-lightbox</code>, <code>photo-slides</code>.     <pre><amp-lightbox id="photo-slides"></amp-lightbox>
 <button on="tap:photo-slides">Show Images</button></pre>
 </td>
@@ -80,23 +80,23 @@ Consultez le tableau ci-dessous pour une description détaillée de la syntaxe.
   </tr>
 </table>
 
-## Handling multiple events <a name="handling-multiple-events"></a>
+## Gérer plusieurs événements <a name="handling-multiple-events"></a>
 
 Vous pouvez écouter plusieurs événements sur un élément en séparant les événements par un point-virgule `;`.
 
-Example: `on="submit-success:lightbox1;submit-error:lightbox2"`
+Exemple: `on="submit-success:lightbox1;submit-error:lightbox2"`
 
-## Multiple actions for one event <a name="multiple-actions-for-one-event"></a>
+## Plusieurs actions pour un événement <a name="multiple-actions-for-one-event"></a>
 
-You can execute multiple actions in sequence for the same event by separating the actions with a comma ','.
+Vous pouvez exécuter plusieurs actions en séquence pour le même événement en séparant les actions par une virgule «,».
 
-Example: `on="tap:target1.actionA,target2.actionB"`
+Exemple: `on="tap:target1.actionA,target2.actionB"`
 
 ## Événements et actions définis de manière globale <a name="globally-defined-events-and-actions"></a>
 
-AMP defines a `tap` event globally that you can listen to on any HTML element (including AMP elements).
+AMP définit globalement un événement `tap` que vous pouvez écouter sur n'importe quel élément HTML (y compris les éléments AMP).
 
-AMP also defines the `hide`, `show` and `toggleVisibility` actions globally that you can trigger on any HTML element.
+AMP définit également globalement les actions `hide` , `show` et `toggleVisibility` que vous pouvez déclencher sur n'importe quel élément HTML.
 
 [tip type="note"]
 
@@ -113,9 +113,9 @@ L'exemple suivant est possible dans AMP:
 
 [/tip]
 
-## Element-specific events <a name="element-specific-events"></a>
+## Événements spécifiques aux éléments <a name="element-specific-events"></a>
 
-### * - all elements <a name="---all-elements"></a>
+### * - tous les éléments <a name="---all-elements"></a>
 
 <table>
   <tr>
@@ -128,13 +128,13 @@ L'exemple suivant est possible dans AMP:
   </tr>
 </table>
 
-### Input elements <a name="input-elements"></a>
+### Éléments d'entrée <a name="input-elements"></a>
 
 <table>
   <tr>
     <th width="20%">Événement</th>
     <th width="30%">Description</th>
-    <th width="40%">Elements</th>
+    <th width="40%">Éléments</th>
     <th>Données</th>
   </tr>
   <!-- change -->
@@ -212,7 +212,7 @@ L'exemple suivant est possible dans AMP:
   </tr>
 </table>
 
-### amp-lightbox <a name="amp-lightbox"></a>
+### amp-lightbox <a name="amp-lightbox-1"></a>
 
 <table>
   <tr>
@@ -252,7 +252,7 @@ L'exemple suivant est possible dans AMP:
   </tr>
 </table>
 
-### amp-selector <a name="amp-selector"></a>
+### amp-selector <a name="amp-selector-1"></a>
 
 <table>
   <tr>
@@ -267,7 +267,7 @@ L'exemple suivant est possible dans AMP:
   </tr>
 </table>
 
-### amp-sidebar <a name="amp-sidebar"></a>
+### amp-sidebar <a name="amp-sidebar-1"></a>
 
 <table>
   <tr>
@@ -361,9 +361,9 @@ L'exemple suivant est possible dans AMP:
   </tr>
 </table>
 
-## Element-specific actions <a name="element-specific-actions"></a>
+## Actions spécifiques aux éléments <a name="element-specific-actions"></a>
 
-### * (all elements) <a name="-all-elements"></a>
+### * (tous les éléments) <a name="-all-elements"></a>
 
 <table>
   <tr>
@@ -422,15 +422,15 @@ L'exemple suivant est possible dans AMP:
   </tr>
   <tr>
     <td><code>play</code></td>
-    <td>Plays the animation.</td>
+    <td>Lit l'animation.</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
-    <td>Pauses the animation.</td>
+    <td>Met l'animation en pause.</td>
   </tr>
   <tr>
     <td><code>stop</code></td>
-    <td>Stops the animation.</td>
+    <td>Arrête l'animation.</td>
   </tr>
   <tr>
     <td><code>seekTo(time=INTEGER)</code></td>
@@ -472,7 +472,7 @@ L'exemple suivant est possible dans AMP:
   </tr>
   <tr>
     <td><code>goToSlide(index=INTEGER)</code></td>
-    <td>Advances the carousel to a specified slide index.</td>
+    <td>Fait avancer le carrousel jusqu'à un index de diapositive spécifié.</td>
   </tr>
   <tr>
     <td><code>toggleAutoplay(toggleOn=true|false)</code></td>
@@ -493,7 +493,7 @@ L'exemple suivant est possible dans AMP:
   </tr>
 </table>
 
-### amp-lightbox <a name="amp-lightbox-1"></a>
+### amp-lightbox <a name="amp-lightbox"></a>
 
 <table>
   <tr>
@@ -502,15 +502,15 @@ L'exemple suivant est possible dans AMP:
   </tr>
   <tr>
     <td><code>open (default)</code></td>
-    <td>Opens the lightbox.</td>
+    <td>Ouvre la lightbox.</td>
   </tr>
   <tr>
     <td><code>close</code></td>
-    <td>Closes the lightbox.</td>
+    <td>Ferme la lightbox.</td>
   </tr>
 </table>
 
-### amp-lightbox-gallery <a name="amp-lightbox-gallery"></a>
+### amp-lightbox-galerie <a name="amp-lightbox-gallery"></a>
 
 <table>
   <tr>
@@ -545,11 +545,11 @@ L'exemple suivant est possible dans AMP:
   </tr>
   <tr>
     <td><code>update (default)</code></td>
-    <td>Updates the DOM items to show updated content.</td>
+    <td>Met à jour les éléments DOM pour afficher le contenu mis à jour.</td>
   </tr>
 </table>
 
-### amp-selector <a name="amp-selector-1"></a>
+### amp-selector <a name="amp-selector"></a>
 
 <table>
   <tr>
@@ -558,7 +558,7 @@ L'exemple suivant est possible dans AMP:
   </tr>
   <tr>
     <td><code>clear</code></td>
-    <td>Clears all selections from a defined <code>amp-selector</code>.</td>
+    <td>Efface toutes les sélections d'un <code>amp-selector</code> défini.</td>
   </tr>
   <tr>
     <td><code>selectUp(delta=INTEGER)</code></td>
@@ -574,7 +574,7 @@ L'exemple suivant est possible dans AMP:
   </tr>
 </table>
 
-### amp-sidebar <a name="amp-sidebar-1"></a>
+### amp-sidebar <a name="amp-sidebar"></a>
 
 <table>
   <tr>
@@ -583,11 +583,11 @@ L'exemple suivant est possible dans AMP:
   </tr>
   <tr>
     <td><code>open (default)</code></td>
-    <td>Opens the sidebar.</td>
+    <td>Ouvre la barre latérale.</td>
   </tr>
   <tr>
     <td><code>close</code></td>
-    <td>Closes the sidebar.</td>
+    <td>Ferme la barre latérale.</td>
   </tr>
   <tr>
     <td><code>toggle</code></td>
@@ -617,13 +617,13 @@ L'exemple suivant est possible dans AMP:
   </tr>
   <tr>
     <td><code>dismiss (default)</code></td>
-    <td>Hides the referenced user notification element.</td>
+    <td>Masque l'élément de notification utilisateur référencé.</td>
   </tr>
 </table>
 
-### Video elements <a name="video-elements"></a>
+### Éléments vidéo <a name="video-elements"></a>
 
-The actions below are supported in the following AMP video elements: `amp-video`, `amp-youtube`, `amp-3q-player`, `amp-brid-player`, `amp-dailymotion`, `amp-delight-player`, `amp-ima-video`.
+Les actions ci-dessous sont prises en charge dans les éléments vidéo AMP suivants: `amp-video` , `amp-youtube` , `amp-3q-player` , `amp-brid-player` , `amp-dailymotion` , `amp-delight-player` , `amp-ima-video` .
 
 <table>
   <tr>
@@ -632,11 +632,11 @@ The actions below are supported in the following AMP video elements: `amp-video`
   </tr>
   <tr>
     <td><code>play</code></td>
-    <td>Plays the video.</td>
+    <td>Lit la vidéo.</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
-    <td>Pauses the video.</td>
+    <td>Met la vidéo en pause.</td>
   </tr>
   <tr>
     <td><code>mute</code></td>
@@ -644,11 +644,11 @@ The actions below are supported in the following AMP video elements: `amp-video`
   </tr>
   <tr>
     <td><code>unmute</code></td>
-    <td>Unmutes the video.</td>
+    <td>Active le son de la vidéo.</td>
   </tr>
   <tr>
     <td><code>fullscreencenter</code></td>
-    <td>Takes the video to fullscreen.</td>
+    <td>Met la vidéo en plein écran.</td>
   </tr>
 </table>
 
@@ -661,7 +661,7 @@ The actions below are supported in the following AMP video elements: `amp-video`
   </tr>
   <tr>
     <td><code>clear</code></td>
-    <td>Clears any values in the form's inputs.</td>
+    <td>Efface toutes les valeurs dans les entrées du formulaire.</td>
   </tr>
   <tr>
     <td><code>submit</code></td>
@@ -669,11 +669,11 @@ The actions below are supported in the following AMP video elements: `amp-video`
   </tr>
 </table>
 
-## Special targets <a name="special-targets"></a>
+## Cibles spéciales <a name="special-targets"></a>
 
 Les cibles suivantes sont fournies par le système AMP et ont des exigences particulières:
 
-### Target: AMP <a name="target-amp"></a>
+### Cible: AMP <a name="target-amp"></a>
 
 La cible `AMP` est fournie par le runtime AMP et implémente des actions de niveau supérieur qui s'appliquent à l'ensemble du document.
 
@@ -702,11 +702,11 @@ La cible `AMP` est fournie par le runtime AMP et implémente des actions de nive
   </tr>
   <tr>
     <td><code>print</code></td>
-    <td>Opens the Print Dialog to print the current page.</td>
+    <td>Ouvre la boîte de dialogue Imprimer pour imprimer la page actuelle.</td>
   </tr>
   <tr>
-    <td>scrollTo(id=STRING, duration=INTEGER, position=STRING)</td>
-    <td>Scrolls to the provided element ID on the current page.</td>
+    <td>scrollTo (id = STRING, durée = INTEGER, position = STRING)</td>
+    <td>Fait défiler jusqu'à l'ID d'élément fourni sur la page actuelle.</td>
   </tr>
   <tr>
     <td>optoutOfCid</td>
@@ -735,7 +735,7 @@ La cible `AMP` est fournie par le runtime AMP et implémente des actions de nive
 
 <sup>1</sup> Lorsqu'elles sont utilisées avec <a href="#multiple-actions-for-one-event">plusieurs actions</a>, les actions suivantes attendront que <code>setState()</code> ou <code>pushState()</code> se termine avant l'appel. Un seul <code>setState()</code> ou <code>pushState()</code> est autorisé par événement.
 
-### Target: amp-access <a name="target-amp-access"></a>
+### Cible: amp-access <a name="target-amp-access"></a>
 
 La cible `amp-access` est fournie par le composant [amp-access](https://amp.dev/documentation/components/amp-access.html).
 
