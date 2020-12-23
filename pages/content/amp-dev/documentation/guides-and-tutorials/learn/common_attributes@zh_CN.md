@@ -1,7 +1,7 @@
 ---
 "$title": 常见属性
 "$order": '1'
-description: AMP provides a set of common attributes that are extended to many AMP components (and HTML elements). This document describes each of the common attributes.
+description: AMP 提供了一系列可供很多 AMP 组件（和 HTML 元素）使用的常见属性。本文档将逐一介绍每种常见属性。
 toc: 'true'
 ---
 
