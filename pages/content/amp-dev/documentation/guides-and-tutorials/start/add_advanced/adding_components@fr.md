@@ -1,7 +1,7 @@
 ---
 "$title": Ajout de composants AMP étendus
 "$order": '2'
-description: 'AMP’s component system allows you to quickly build efficient and responsive features into your articles with minimal effort. The AMP HTML library has three classifications for AMP components: ...'
+description: 'Le système de composants AMP vous permet d''intégrer rapidement des fonctionnalités efficaces et réactives dans vos articles avec un minimum d''effort. La bibliothèque HTML AMP a trois classifications pour les composants AMP : ...'
 ---
 
 Le système de composants AMP vous permet d'intégrer rapidement des fonctionnalités efficaces et réactives dans vos articles avec un minimum d'effort. La bibliothèque HTML AMP comporte trois classifications pour les composants AMP :
@@ -12,11 +12,11 @@ Le système de composants AMP vous permet d'intégrer rapidement des fonctionnal
 
 - **expérimental** : ce sont des composants qui sont publiés mais qui ne sont pas encore prêts pour une large utilisation. Les développeurs peuvent choisir d'utiliser ces fonctionnalités avant qu'elles ne soient entièrement publiées. En savoir plus sur les [fonctionnalités expérimentales](../../../../documentation/guides-and-tutorials/learn/experimental.md).
 
-Our sample already uses a built-in component, [`amp-img`](../../../../documentation/components/reference/amp-img.md), and we explored how that component relates to the AMP layout system in the ["Convert your HTML to AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md) tutorial.  Now, let's add some commonly-used **extended** AMP components to our news article.
+Notre exemple utilise déjà un composant intégré, [`amp-img`](../../../../documentation/components/reference/amp-img.md), et nous avons exploré comment ce composant est lié au système de mise en page AMP dans le tutoriel ["Convertir votre HTML en AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md). Maintenant, ajoutons quelques composants AMP **étendus** couramment utilisés à notre article de presse.
 
 ## Monétiser avec des annonces
 
-Ads in AMP are constructed by using the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component. The [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component allows you to configure ads in several ways, such as the width, height and layout mode. However, many ad platforms require additional configuration, such as the account ID for the ad network, which ad should be served, or options for targeting the advertising. These options are easily specified in the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component by using HTML attributes.
+Les annonces dans AMP sont créées à l'aide du composant [`amp-ad`](../../../../documentation/components/reference/amp-ad.md). Le composant [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) vous permet de configurer les annonces de plusieurs manières, telles que la largeur, la hauteur et le mode de mise en page. Cependant, de nombreuses plateformes publicitaires nécessitent une configuration supplémentaire, telle que l'ID de compte du réseau publicitaire, l'annonce à diffuser ou les options de ciblage de la publicité. Ces options sont facilement spécifiées dans le composant [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) à l'aide d'attributs HTML.
 
 Jetez un œil à cet exemple d'annonce **DoubleClick** :
 
@@ -31,7 +31,7 @@ Jetez un œil à cet exemple d'annonce **DoubleClick** :
 
 Comme vous pouvez le voir, c'est une configuration très simple. Prenez note de l'attribut `type`, qui informe le composant [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) de la plateforme publicitaire que nous voulons utiliser. Dans ce cas, nous souhaitons utiliser la plateforme [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md). Nous avons donc spécifié `doubleclick` comme valeur.
 
-The `data-slot` attribute is more unique. In [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), any attributes that start with  `data-` are vendor-specific attributes. This means that not all vendors will necessarily require this particular attribute, nor will they necessarily react if it is supplied. For example, compare the **DoubleClick** example from above with the following test ad from the [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md) platform:
+L'attribut `data-slot` est plus spécifique. Dans [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), tous les attributs qui commencent par `data-` sont des attributs spécifiques au fournisseur. Cela signifie que tous les fournisseurs n'auront pas nécessairement besoin de cet attribut particulier, et ne réagiront nécessairement pas s'il est fourni. Par exemple, comparez l'exemple **DoubleClick** ci-dessus avec l'annonce test suivante de la plateforme [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md) :
 
 ```html
 <amp-ad
@@ -58,9 +58,9 @@ N'oubliez pas que tous les composants ne sont pas inclus dans le fichier JavaScr
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ads.png', 376, 606, align='center half', caption='Test ads') }}
 
-[tip type="important"] **IMPORTANT –** You might have some errors in your developer console, such as `Mixed Content` or `XMLHttpRequest cannot load`. The former error is likely related to the A9 advertisement because not all the content it loads is secure. This is a notable requirement for all ads served on AMP. [/tip]
+[tip type="important"] **IMPORTANT -** Il se peut que vous rencontriez des erreurs dans votre console de développement, telles que `Mixed Content` ou `XMLHttpRequest cannot load`. La première erreur est probablement liée à l'annonce A9 car tout le contenu qu'elle charge n'est pas sécurisé. Il s'agit d'une exigence notable pour toutes les annonces diffusées sur AMP. [/tip]
 
-The two [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)s below provide an example of the flexibility [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) provides for supporting ad platform features.  In this case we've configured (using DoubleClick's dashboard) two DoubleClick test ads to only show in certain countries--the first will show only in the UK and the second will show only in the US.  Try **adding** these two geotargeting ad configurations in the AMP document below the ads you added earlier:
+Les deux [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) ci-dessous fournissent un exemple de la flexibilité qu'offre [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) dans la prise en charge des fonctionnalités de la plateforme publicitaire. Dans ce cas, nous avons configuré (à l'aide du tableau de bord de DoubleClick) deux annonces de test DoubleClick pour qu'elles ne soient diffusées que dans certains pays, la première ne s'affichera qu'au Royaume-Uni et la seconde uniquement aux États-Unis. Essayez **d'ajouter** ces deux configurations de ciblage géographique d'annonces dans le document AMP sous les annonces que vous avez ajoutées précédemment :
 
 ```html
 <amp-ad
@@ -84,15 +84,15 @@ The two [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)s be
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='Test ads') }}
 
-[tip type="note"] **NOTE –**  You might notice that inside these [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) tags are additional `div` tags with an attribute named `fallback` on them. Can you guess what the `fallback` attribute denotes? It informs AMP’s loading system to only show the contents of that element when the parent element fails to load successfully. Learn more in [Placeholders & fallbacks](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md). [/tip]
+[tip type="note"] **REMARQUE -** Vous remarquerez peut-être qu'à l'intérieur de ces balises [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) se trouvent des balises `div` supplémentaires avec un attribut nommé `fallback`. Pouvez-vous deviner ce que signifie l'attribut de `fallback` ? Il informe le système de chargement d'AMP d'afficher uniquement le contenu de cet élément lorsque l'élément parent ne parvient pas à se charger. En savoir plus sur les [caractères de remplacement et les solutions de secours](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md). [/tip]
 
-[tip type="read-on"] **READ ON –** To see the latest supported ad networks, read the reference documentation for the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component. [/tip]
+[tip type="read-on"] **LIRE -** Pour voir les derniers réseaux publicitaires pris en charge, lisez la documentation de référence du composant [`amp-ad`](../../../../documentation/components/reference/amp-ad.md). [/tip]
 
-[tip type="note"] **NOTE –**  No ad network-provided JavaScript is allowed to run inside the AMP document. Instead, the AMP runtime loads an iframe from a different origin (via an iframe sandbox) as the AMP document and executes the ad network’s JS inside that iframe sandbox. [/tip]
+[tip type="note"] **REMARQUE -** Aucun JavaScript fourni par le réseau publicitaire n'est autorisé à s'exécuter à l'intérieur du document AMP. Au lieu de cela, le moteur d'exécution AMP charge un iframe d'une origine différente (via un bac à sable d'iframe) en tant que document AMP et exécute le JS du réseau publicitaire dans le bac à sable de cette iframe. [/tip]
 
-Our AMP document now includes text, an image, and an advertisement embedded on the page, which are all key ingredients to telling a story and monetizing your content. However, modern websites often include more functionality than simply pictures and text.
+Notre document AMP comprend désormais du texte, une image et une annonce intégrée à la page, qui sont tous des ingrédients clés pour raconter une histoire et monétiser votre contenu. Cependant, les sites Web modernes incluent souvent plus de fonctionnalités que de simples images et du texte.
 
-Let’s take our AMP document to the next level and add more advanced web functionality that is commonly found on news articles, like:
+Faisons passer notre document AMP au niveau supérieur et ajoutons des fonctionnalités Web plus avancées que celles que l'on trouve couramment dans les articles de presse, comme :
 
 - Des vidéos Youtube
 - Des tweets
@@ -120,7 +120,7 @@ Même si votre navigateur peut afficher des vidéos YouTube sans problème, vous
 
 N'oubliez pas que tous les composants ne sont pas inclus dans le fichier JavaScript de la bibliothèque AMP principale. Nous devons inclure une demande JavaScript supplémentaire pour le composant YouTube.
 
-[tip type="note"] **NOTE –**  If you still have your developer console open and `#development=1` in your URL, you'll see an AMP validator error at this point reminding you to add the [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) JavaScript and a link to documentation that will tell you the `script` tag to add. [/tip]
+[tip type="note"] **REMARQUE -** Si votre console de développement est toujours ouverte et `#development=1` se trouve dans votre URL, vous verrez une erreur de validation AMP à ce stade vous rappelant d'ajouter le JavaScript [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) et un lien à la documentation qui vous indiquera la balise de `script` à ajouter. [/tip]
 
 **Ajoutez** le script suivant à la section `<head>` :
 
@@ -132,7 +132,7 @@ N'oubliez pas que tous les composants ne sont pas inclus dans le fichier JavaScr
 
 {{ image('/static/img/docs/tutorials/tut-advanced-youtube.png', 412, 618, align='center half', caption='Embedded Youtube video') }}
 
-As with the other elements on the page, we specified the `width` and `height` of the video so that the AMP layout system can calculate the aspect ratio. Also, we set the `layout` to `responsive`, so the video fills the width of its parent element.
+Comme pour les autres éléments de la page, nous avons spécifié la largeur `width` et la hauteur `height` de la vidéo afin que le système de mise en page AMP puisse calculer les proportions. En outre, nous définissons la mise en page `layout` sur `responsive`, de sorte que la vidéo remplisse la largeur de son élément parent.
 
 Pour en savoir plus sur l'intégration de vidéos YouTube, lisez la documentation du composant [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md). Pour encore plus de composants vidéo et multimédia, consultez la [liste des composants AMP multimédias](../../../../documentation/components/index.html#media).
 
@@ -171,7 +171,7 @@ Pour en savoir plus sur l'intégration de tweets Twitter, lisez la documentation
 
 ## Mettre en évidence une citation d'article
 
-A common feature in news articles is to highlight particularly engaging snippets of text from the article. For example, a quotation from a particular source or an important fact might be repeated in a larger font to attract the reader's attention.
+Une caractéristique commune dans les articles de presse est de mettre en évidence des extraits de texte particulièrement intéressants de l'article. Par exemple, une citation d'une source particulière ou un fait important peut être répété dans une police plus grande pour attirer l'attention du lecteur.
 
 Cependant, tous les extraits de texte n'ont pas nécessairement la même longueur de caractères, ce qui peut rendre difficile l'équilibrage d'une taille de police plus grande avec la quantité d'espace que le texte utilise sur la page.
 
@@ -211,4 +211,4 @@ Ou, que faire si la citation est plus longue ?
 
 En guise de dernière expérience avec [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md), essayez de créer un court texte, tel que "Bonjour", avec une hauteur beaucoup plus grande (par exemple, une valeur de 400) en conservant la valeur d'attribut max-font-size de 42. À quoi ressemblerait la page résultante ? Le texte est-il centré verticalement ? Ou bien, la hauteur de la balise [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md) diminue-t-elle pour s'adapter à la taille de police maximale ? Avec ce que vous savez déjà sur le système de mise en page d'AMP, essayez de répondre à la question avant de jouer avec le code !
 
-You can learn more about [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md) from [AMP by Example's live demo](../../../../documentation/examples/documentation/amp-fit-text.html).
+Vous pouvez en apprendre davantage au sujet de [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md) depuis la [démonstration en direct d'AMP](../../../../documentation/examples/documentation/amp-fit-text.html).
