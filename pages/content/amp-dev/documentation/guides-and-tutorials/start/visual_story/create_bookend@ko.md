@@ -1,5 +1,8 @@
 ---
-$title: 북엔드 만들기
+"$title": Creating the bookend
+"$order": '7'
+description: "모든 페이지를 추가했으므로 이제 스토리의 마지막 화면인 '북엔드'에 대해 살펴보겠습니다.  마지막 화면에서는 스토리를 마무리하고, 사용자가 ..."
+author: bpaduch
 ---
 
 모든 페이지를 추가했으므로 이제 스토리의 마지막 화면인 '북엔드'에 대해 살펴보겠습니다.  마지막 화면에서는 스토리를 마무리하고, 사용자가 스토리를 공유하거나 게시자 사이트의 다른 콘텐츠를 자세히 살펴볼 수 있도록 소셜 공유 기능 또는 관련 링크를 제공합니다.
@@ -8,7 +11,7 @@ $title: 북엔드 만들기
 
 `<amp-story-bookend>` 태그는 [`amp-story`](../../../../documentation/components/reference/amp-story.md)의 마지막 태그여야 합니다. 따라서 종료 `</amp-story>` 태그 바로 앞에 `<amp-story-bookend></amp-story-bookend>`를 **추가**합니다.  `amp-story-bookend` 태그에서 `src` 속성을 `bookend.json` 파일로 지정하고 `layout="nodisplay"`를 설정합니다.
 
-```html hl_lines="2"
+```html
   </amp-story-page>
   <amp-story-bookend src="bookend.json" layout="nodisplay"></amp-story-bookend>
 </amp-story>
@@ -45,101 +48,83 @@ JSON 파일에 대해 살펴보겠습니다.  텍스트 에디터에서 [bookend
 관련 콘텐츠와 링크를 표시하는 데 사용할 수 있는 다양한 구성 요소가 있습니다. 각 구성 요소는 타입 속성으로 지정됩니다. 사용 가능한 구성 요소에 대해 살펴보겠습니다.
 
 <table>
-<thead>
-<tr>
-  <th width="20%">타입</th>
-  <th>설명</th>
-</tr>
-<tr>
-  <td>heading</td>
-  <td>자료를 그룹화할 제목을 지정할 수 있습니다.
-<pre class="nopreline">
-{
-  "type": "heading",
-  "text": "More to read"
-},
-</pre>
-  <br>
-  <figure class="alignment-wrapper half">
-    <amp-img src="/static/img/docs/tutorials/amp_story/bookend_heading.png" width="720" height="140" layout="responsive" alt="북엔드 제목"></amp-img>
-  </figure>
-  </td>
-</tr>
-<tr>
-  <td>small</td>
-  <td>연결된 작은 이미지를 포함하는 옵션을 사용하여 관련 자료에 연결할 수 있습니다.
-<pre class="nopreline">
-{
-  "type": "small",
-  "title": "Learn about cats",
-  "url": "https://wikipedia.org/wiki/Cat",
-  "image": "assets/bookend_cats.jpg"
-},
-</pre>
-  <br>
-  <figure class="alignment-wrapper half">
-    <amp-img src="/static/img/docs/tutorials/amp_story/bookend_small.png" width="720" height="267" layout="responsive" alt="북엔드 작은 자료"></amp-img>
-  </figure>
-</td>
-</tr>
-<tr>
-  <td>landscape</td>
-  <td>동영상 같은 다른 콘텐츠나 자료에 연결할 수 있습니다. 가로 모드 타입에 연결된 이미지는 가로로 더 큰 형식으로 되어 있습니다.
-<pre class="nopreline">
-{
-  "type": "landscape",
-  "title": "Learn about border collies",
-  "url": "https://wikipedia.org/wiki/Border_Collie",
-  "image": "assets/bookend_dogs.jpg",
-  "category": "Dogs"
-},
-</pre>
-  <br>
-  <figure class="alignment-wrapper half">
-    <amp-img src="/static/img/docs/tutorials/amp_story/bookend_landscape.png" width="720" height="647" layout="responsive" alt="북엔드 가로 모드 자료"></amp-img>
-  </figure>
-  </td>
-</tr>
-<tr>
-  <td>portrait</td>
-  <td>스토리 또는 다른 콘텐츠에 연결할 수 있습니다.  세로 모드 타입에 연결된 이미지는 세로로 더 큰 형식으로 되어 있습니다.
-<pre class="nopreline">
-{
-  "type": "portrait",
-  "title": "Learn about macaws",
-  "url": "https://wikipedia.org/wiki/Macaw",
-  "image": "assets/bookend_birds.jpg",
-  "category": "birds"
-},
-</pre>
-  <br>
-  <figure class="alignment-wrapper half">
-    <amp-img src="/static/img/docs/tutorials/amp_story/bookend_portrait.png" width="720" height="1018" layout="responsive" alt="북엔드 세로 모드 자료"></amp-img>
-  </figure>
-  </td>
-</tr>
-<tr>
-  <td>cta-link</td>
-  <td>버튼으로 표시되는 클릭 유도문안 링크를 지정할 수 있습니다(예: 자세히 알아보기, 구독).
-<pre class="nopreline">
-{
-  "type": "cta-link",
-  "links": [
-    {
-      "text": "Learn more",
-      "url": "https://amp.dev/about/stories.html"
-    }
-  ]
-}
-</pre>
-  <br>
-  <figure class="alignment-wrapper half">
-    <amp-img src="/static/img/docs/tutorials/amp_story/bookend_cta.png" width="720" height="137" layout="responsive" alt="북엔드 cta"></amp-img>
-  </figure>
-  </td>
-</tr>
-</thead>
+<thead><tr>
+  <th width="20%">Type</th>
+  <th>Description</th>
+</tr></thead>
 <tbody>
+  <tr>
+    <td>heading</td>
+    <td>자료를 그룹화할 제목을 지정할 수 있습니다.   <pre class="nopreline">
+  {
+    "type": "heading",
+    "text": "More to read"
+  },
+  </pre>     <br>     <figure class="alignment-wrapper half">
+      <amp-img src="/static/img/docs/tutorials/amp_story/bookend_heading.png" width="720" height="140" layout="responsive" alt="bookend heading"></amp-img>
+    </figure></td>
+  </tr>
+  <tr>
+    <td>small</td>
+    <td>연결된 작은 이미지를 포함하는 옵션을 사용하여 관련 자료에 연결할 수 있습니다.   <pre class="nopreline">
+  {
+    "type": "small",
+    "title": "Learn about cats",
+    "url": "https://wikipedia.org/wiki/Cat",
+    "image": "assets/bookend_cats.jpg"
+  },
+  </pre>     <br>     <pre data-md-type="custom_pre"><figure class="alignment-wrapper half">
+      <amp-img src="/static/img/docs/tutorials/amp_story/bookend_small.png" width="720" height="267" layout="responsive" alt="bookend small article"></amp-img>
+    </figure></pre>
+</td>
+  </tr>
+  <tr>
+    <td>landscape</td>
+    <td>동영상 같은 다른 콘텐츠나 자료에 연결할 수 있습니다. 가로 모드 타입에 연결된 이미지는 가로로 더 큰 형식으로 되어 있습니다.   <pre class="nopreline">
+  {
+    "type": "landscape",
+    "title": "Learn about border collies",
+    "url": "https://wikipedia.org/wiki/Border_Collie",
+    "image": "assets/bookend_dogs.jpg",
+    "category": "Dogs"
+  },
+  </pre>     <br>     <pre data-md-type="custom_pre"><figure class="alignment-wrapper half">
+      <amp-img src="/static/img/docs/tutorials/amp_story/bookend_landscape.png" width="720" height="647" layout="responsive" alt="bookend landscape article"></amp-img>
+    </figure></pre>
+</td>
+  </tr>
+  <tr>
+    <td>portrait</td>
+    <td>스토리 또는 다른 콘텐츠에 연결할 수 있습니다.  세로 모드 타입에 연결된 이미지는 세로로 더 큰 형식으로 되어 있습니다.   <pre class="nopreline">
+  {
+    "type": "portrait",
+    "title": "Learn about macaws",
+    "url": "https://wikipedia.org/wiki/Macaw",
+    "image": "assets/bookend_birds.jpg",
+    "category": "birds"
+  },
+  </pre>     <br>     <pre data-md-type="custom_pre"><figure class="alignment-wrapper half">
+      <amp-img src="/static/img/docs/tutorials/amp_story/bookend_portrait.png" width="720" height="1018" layout="responsive" alt="bookend portrait article"></amp-img>
+    </figure></pre>
+</td>
+  </tr>
+  <tr>
+    <td>cta-link</td>
+    <td>버튼으로 표시되는 클릭 유도문안 링크를 지정할 수 있습니다(예: 자세히 알아보기, 구독).   <pre class="nopreline">
+  {
+    "type": "cta-link",
+    "links": [
+      {
+        "text": "Learn more",
+        "url": "https://amp.dev/about/stories.html"
+      }
+    ]
+  }
+  </pre>     <br>     <pre data-md-type="custom_pre"><figure class="alignment-wrapper half">
+      <amp-img src="/static/img/docs/tutorials/amp_story/bookend_cta.png" width="720" height="137" layout="responsive" alt="bookend cta"></amp-img>
+    </figure></pre>
+</td>
+  </tr>
 </tbody>
 </table>
 
