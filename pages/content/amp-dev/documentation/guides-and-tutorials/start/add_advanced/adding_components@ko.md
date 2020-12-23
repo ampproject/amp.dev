@@ -51,6 +51,18 @@ AMP 광고는 [`amp-ad`](../../../../documentation/components/reference/amp-ad.m
 `<head>` 태그에 아래 스크립트를 <strong>추가</strong>하세요.
 
 ```html
+<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+```
+
+페이지를 <strong>새로고침</strong>하면 테스트 광고 두 개가 표시됩니다.
+
+{{ image('/static/img/docs/tutorials/tut-advanced-ads.png', 376, 606, align='center half', caption='Test ads') }}
+
+[tip type="important"] <strong>중요 –</strong> 개발자 콘솔에서 <code>Mixed Content</code> 또는 <code>XMLHttpRequest cannot load</code> 등의 오류가 발생할 수 있습니다. <code>Mixed Content</code> 오류는 A9 광고와 관련되었을 가능성이 높으며 로드된 콘텐츠 중 안전하지 않은 콘텐츠가 있기 때문에 발생합니다. AMP로 광고를 게재할 때 항상 이러한 오류를 주의해야 합니다. [/tip]
+
+아래 두 개의 <a><code>amp-ad</code></a>를 통해 <a><code>amp-ad</code></a>에서 광고 플랫폼 기능을 지원하도록 제공되는 유연성을 확인할 수 있습니다. 이 예시의 경우 DoubleClick의 대시보드를 사용하여 특정 국가에서만 표시되는 두 개의 DoubleClick 테스트 광고를 구성했습니다. 첫 번째 광고는 영국에서만 표시되며 두 번째 광고는 미국에서만 표시됩니다. 앞서 추가한 광고 아래에 AMP 문서의 두 가지 지역 타겟팅 광고 구성을 <strong>추가</strong>해 보세요.
+
+```html
 <amp-ad
   width="300"
   height="250"
@@ -66,26 +78,6 @@ AMP 광고는 [`amp-ad`](../../../../documentation/components/reference/amp-ad.m
   data-slot="/35096353/amptesting/geo/us">
   <div fallback>No ad appeared because you're not browsing from the US!</div>
 </amp-ad>
-```
-
-페이지를 <strong>새로고침</strong>하면 테스트 광고 두 개가 표시됩니다.
-
-{{ image('/static/img/docs/tutorials/tut-advanced-ads.png', 376, 606, align='center half', caption='Test ads') }}
-
-[tip type="important"] <strong>중요 –</strong> 개발자 콘솔에서 <code>Mixed Content</code> 또는 <code>XMLHttpRequest cannot load</code> 등의 오류가 발생할 수 있습니다. <code>Mixed Content</code> 오류는 A9 광고와 관련되었을 가능성이 높으며 로드된 콘텐츠 중 안전하지 않은 콘텐츠가 있기 때문에 발생합니다. AMP로 광고를 게재할 때 항상 이러한 오류를 주의해야 합니다. [/tip]
-
-아래 두 개의 <a><code>amp-ad</code></a>를 통해 <a><code>amp-ad</code></a>에서 광고 플랫폼 기능을 지원하도록 제공되는 유연성을 확인할 수 있습니다. 이 예시의 경우 DoubleClick의 대시보드를 사용하여 특정 국가에서만 표시되는 두 개의 DoubleClick 테스트 광고를 구성했습니다. 첫 번째 광고는 영국에서만 표시되며 두 번째 광고는 미국에서만 표시됩니다. 앞서 추가한 광고 아래에 AMP 문서의 두 가지 지역 타겟팅 광고 구성을 <strong>추가</strong>해 보세요.
-
-```html
-<amp-youtube
-  data-videoid="npum8JsITQE"
-  layout="responsive"
-  width="480"
-  height="270">
-  <div fallback>
-    <p>The video could not be loaded.</p>
-  </div>
-</amp-youtube>
 ```
 
 페이지를 <strong>새로고침</strong>하고 확인해 보세요. 다음 스크린샷은 캐나다에서 캡처하였으며, 두 광고 모두 로드되지 않습니다.
@@ -111,7 +103,15 @@ AMP 광고는 [`amp-ad`](../../../../documentation/components/reference/amp-ad.m
 문서에 YouTube 동영상을 삽입해 보겠습니다. AMP 문서의 <code><header></code> 바로 뒤(앞서 추가한 <a><code>amp-ad</code></a> 위)에 다음 코드를 <strong>추가</strong>하세요.
 
 ```html
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<amp-youtube
+  data-videoid="npum8JsITQE"
+  layout="responsive"
+  width="480"
+  height="270">
+  <div fallback>
+    <p>The video could not be loaded.</p>
+  </div>
+</amp-youtube>
 ```
 
 페이지를 <strong>새로고침</strong>하면 동영상 대신 <em>“동영상을 로드할 수 없습니다.”</em>라는 메시지가 표시됩니다.
@@ -145,12 +145,7 @@ YouTube 동영상 삽입과 관련한 자세한 정보는 [`amp-youtube`](../../
 먼저 문서의 <code><head></code> 태그에 다음 JavaScript 요청을 추가합니다.
 
 ```html
-<amp-twitter
-  width="486"
-  height="657"
-  layout="responsive"
-  data-tweetid="638793490521001985">
-</amp-twitter>
+<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
 ```
 
 이제 다음 코드를 기사에 <strong>추가</strong>하여 트윗을 삽입합니다.
@@ -180,9 +175,7 @@ AMP는 이러한 상황을 위해 특별히 제작된 <a><code>amp-fit-text</cod
 직접 해보겠습니다. 먼저 <code><head></code> 태그에 컴포넌트 라이브러리를 <strong>추가</strong>합니다.
 
 ```html
-<amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-  Big, bold article quote goes here.
-</amp-fit-text>
+<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
 ```
 
 페이지에 다음 코드를 추가합니다.
