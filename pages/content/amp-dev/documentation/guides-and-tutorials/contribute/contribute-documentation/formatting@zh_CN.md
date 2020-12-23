@@ -94,8 +94,7 @@ description: For web experiences requiring a high amount of customization AMP ha
 
 amp.dev 是使用 AMP 构建的！因此，我们的图片必须符合 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 标准。构建过程使用以下语法将图像转换为正确的 `amp-img` 格式。
 
-<div class="ap-m-code-snippet"><pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}
-</pre></div>
+<div class="ap-m-code-snippet"><pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}</pre></div>
 
 ## 筛选部分
 
@@ -158,12 +157,7 @@ Read-on
 
 如果您的代码包含双大括号（在使用 [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md?format=websites) 模板时经常出现这种情况），则必须封装代码部分：
 
-<div class="ap-m-code-snippet"><pre>```html
-{% raw	%}
-  // code with double curly braces
-{% endraw	%}
-```
-</pre></div>
+<div class="ap-m-code-snippet"><pre>```html<br>{% raw	%}<br>  // code with double curly braces<br>{% endraw	%}<br>```</pre></div>
 
 ### 列表中的代码段
 
@@ -448,7 +442,6 @@ Python-Markdown 存在一些限制。在列表中添加代码段时，请使用�
 
 ```html
 ## Example section <a name="example-section"></a>
-
 ```
 
 您只能在锚点中使用字母、数字、短划线和下划线。请使用与标题相匹配或描述该部分的英语短锚点名称。确保锚点名称在文档中唯一。
@@ -496,15 +489,15 @@ Python-Markdown 存在一些限制。在列表中添加代码段时，请使用�
    </td>
   </tr>
   <tr>
-   <td>hello-world-tutorial.md    </td>
-   <td>hello_world_tutorial.md    </td>
+   <td>hello-world-tutorial.md</td>
+   <td>hello_world_tutorial.md</td>
   </tr>
   <tr>
-   <td>website-fundamentals.md    </td>
-   <td>websiteFundamentals.md    </td>
+   <td>website-fundamentals.md</td>
+   <td>websiteFundamentals.md</td>
   </tr>
   <tr>
-   <td>actions-and-events.md    </td>
-   <td>actionsandevents.md    </td>
+   <td>actions-and-events.md</td>
+   <td>actionsandevents.md</td>
   </tr>
 </table>
