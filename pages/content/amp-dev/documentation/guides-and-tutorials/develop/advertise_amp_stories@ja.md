@@ -1,7 +1,7 @@
 ---
-"$title": Advertise in Web Stories
+"$title": Web ストーリーの広告
 "$order": '3'
-description: Web Stories are a full-screen tappable experience that immerses readers in the content. Advertising with AMP Story ads allows for seamless and disruption-free ...
+description: Web ストーリーは、読者にコンテンツへの没入感を与える、タップ可能な全画面表示エクスペリエンスです。AMPストーリー広告を使用した広告は、シームレスで中断のない...
 formats:
 - ストーリー
 author: CrystalOnScript
@@ -15,7 +15,7 @@ Web ストーリーは、単一の [`amp-story-auto-ads`](../../../documentation
 
 [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) は、[`amp-ad`](../../../documentation/components/reference/amp-ad.md) コンポーネントのラッパーで、ユーザーがストーリーのコンテンツを消費する間に 1 つ以上の広告を動的に挿入します。最高のユーザーエクスペリエンスを確保するために、以下のことが行われます。
 
-1. Ads are pre-rendered by the Web Stories runtime, then inserted. This guarantees that the users will never be shown a blank or unloaded ad.
+1. 広告は、Web ストーリーランタイムによて事前にレンダリングされた上で挿入されます。そのため、空の広告や読み込み途中の広告がユーザーに表示されることがありません。
 
 2. 広告の掲載密度は、画面が広告で飽和されないように、コンテンツの比率によって最適化されます。ユーザーが読み進める過程でいつどこに広告が挿入されるかは、[`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) コンポーネントによって決定されます。
 
@@ -75,4 +75,4 @@ Web ストーリー内での広告の掲載にご興味がある広告主の方�
 
 サイト運営者も、独自のアドサーバーをセットアップすれば、カスタム広告を配置することができます。[そのプロセスは、こちらで説明しています](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md#publisher-placed-ads)。
 
-[tip type="note"] Read [Traffic custom creatives in Web Stories](https://support.google.com/admanager/answer/9038178) for information about uploading ads to Google Ad Manager and checkout our guide on [Best practices for creating an AMP Story ad](story_ads_best_practices.md). [/tip]
+[tip type="note"] Google アドマネージャーに広告をアップロードする方法については、「[Web ストーリーでカスタムクリエイティブをトラフィックする](https://support.google.com/admanager/answer/9038178)」を参照してください。また、[AMP ストーリー広告作成のベストプラクティス](story_ads_best_practices.md)に関するガイドも確認してください。[/tip]
