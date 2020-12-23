@@ -1,13 +1,13 @@
 ---
 "$title": "Animation d'éléments"
 "$order": '6'
-description: You can further enhance a Web Story by applying animation entrances to elements inside a page. For example, you can make your title fly in from ...
+description: "Vous pouvez encore améliorer une story Web en appliquant des entrées d'animation aux éléments d'une page. Par exemple, vous pouvez faire apparaître votre titre..."
 components:
 - anim
 author: bpaduch
 ---
 
-You can further enhance a Web Story by applying animation entrances to elements inside a page. For example, you can make your title fly in from the left, or drop into the page, or fade in, and so on.  The AMP story framework provides the following preset animations to use in a Web Story:
+Vous pouvez encore améliorer une story Web en appliquant des entrées d'animation aux éléments d'une page. Par exemple, vous pouvez faire apparaître votre titre depuis la gauche, ou le faire glisser dans la page, ou le faire apparaître en fondu, etc. La structure de la story AMP fournit les animations prédéfinies suivantes à utiliser dans une story Web :
 
 <table>
 <thead><tr>
@@ -121,7 +121,7 @@ Pour appliquer une entrée d'animation sur un élément, vous devez spécifier <
 
 [tip type="note"] Explore the different animation effects by adding the `animate-in="<animation preset>"` attribute to elements on your story pages. [/tip]
 
-## Animation timing
+## Définition du temps de l'animation
 
 Each animation preset has a built-in default time value for:
 
@@ -144,7 +144,7 @@ Vous pouvez personnaliser la temporisation d'une animation en modifiant le déla
 
 ## Animation de notre dernière page
 
-Our last Web Story page is comprised of two layers: the first layer is a collage of animal images and the second layer displays some banner text.  To create this page, **add** the following code just after your previous story page:
+La dernière page de notre story Web est composée de deux couches : la première couche est un collage d'images d'animaux et la deuxième couche affiche du texte de bannière. Pour créer cette page, **ajoutez** le code suivant juste après la page précédente de votre histoire :
 
 ```html
 <amp-story-page id="page5">
@@ -174,7 +174,7 @@ Our last Web Story page is comprised of two layers: the first layer is a collage
 </amp-story-page>
 ```
 
-Reload the AMP story in your browser, and verify that the page renders correctly and looks like this:
+Rechargez la story AMP dans votre navigateur et vérifiez que la page s'affiche correctement et ressemble à ceci :
 
 {{ image('/static/img/docs/tutorials/amp_story/pg5-collage.png', 720, 1280, align='center third', alt='Static page 5' ) }}
 
@@ -188,7 +188,7 @@ Nous allons commencer par animer l'entrée du texte de la bannière et la faire 
 Pets can lower your stress levels!</p>
 ```
 
-Reload your story page in your browser, and verify that the banner whooshes in.
+Rechargez la page de votre story dans votre navigateur et vérifiez que la bannière apparaisse.
 
 Ensuite, faisons apparaître toutes les images en fondu. Ajoutez `animate-in="fade-in"` à chacun des éléments [`amp-img`](../../../../documentation/components/reference/amp-img.md) pour que le code ressemble à ceci :
 
@@ -215,9 +215,9 @@ Ensuite, faisons apparaître toutes les images en fondu. Ajoutez `animate-in="fa
 </amp-img>
 ```
 
-If you refresh and reload the page, each of the images fade in.  That's great but you can barely notice the effect because all the images fade in at the same time! We can improve the visual effect by changing the timing of these animations.
+Si vous actualisez et rechargez la page, chacune des images s'estompe. C'est excellent mais vous pouvez à peine remarquer l'effet car toutes les images s'estompent en même temps ! Nous pouvons améliorer l'effet visuel en modifiant les valeurs temporelles de ces animations.
 
-Let's delay the entrance of the first image so that it comes in close to when the text banner finishes entering, say .4s. The remaining three images can come .2s after the previous image's entrance. For each of the [`amp-img`](../../../../documentation/components/reference/amp-img.md) elements, add `animate-in-delay=""` with the appropriate time delay value. Your code should look like this:
+Retardons l'entrée de la première image pour qu'elle se rapproche du moment où la bannière de texte termine son entrée, disons 0,4 s. Les trois images restantes peuvent venir 0,2 s après l'entrée de l'image précédente. Pour chacun des éléments [`amp-img`](../../../../documentation/components/reference/amp-img.md), ajoutez `animate-in-delay=""` avec la valeur de délai appropriée. Votre code doit ressembler à ceci :
 
 ```html
 <amp-img src="assets/cat.jpg"
@@ -251,4 +251,4 @@ Refresh and reload your story.  Your last page should look like this:
 
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Page 5 collage', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 
-There are a lot of possibilities with animations in Web Stories  (e.g., combining animations, chaining animations), and this tutorial scratches only the surface. To learn more about animations, see the [`amp-story`](../../../../documentation/components/reference/amp-story.md) reference documentation.
+Il existe de nombreuses possibilités avec les animations dans les stories Web (par exemple, combiner des animations, enchaîner des animations), et ce tutoriel ne fait que donner un aperçu superficiel. Pour en savoir plus sur les animations, consultez la documentation de référence de [`amp-story`](../../../../documentation/components/reference/amp-story.md).
