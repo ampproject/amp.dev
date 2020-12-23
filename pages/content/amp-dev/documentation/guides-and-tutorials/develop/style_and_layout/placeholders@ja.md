@@ -22,6 +22,8 @@ contributors:
 
 `placeholder` 属性が指定された要素は、 親 AMP 要素のプレースホルダとして機能します。 指定する場合、`placeholder` 要素は AMP 要素の直接の子にする必要があります。 `placeholder` として指定された要素は常に親 AMP 要素に入れられます（`fill`）。
 
+[example preview="inline" playground="true" imports="amp-anim:0.1"]
+```html
 <amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
   layout="responsive"
   width="400"
@@ -31,7 +33,8 @@ contributors:
     layout="fill">
   </amp-img>
 </amp-anim>
-
+```
+[/example]
 
 デフォルトでは、AMP 要素のリソースがダウンロードまたは初期化されていない場合でも、 プレースホルダが AMP 要素にすぐに表示されます。 AMP 要素の準備ができると、通常その要素がプレースホルダを非表示にしてコンテンツを表示します。
 
