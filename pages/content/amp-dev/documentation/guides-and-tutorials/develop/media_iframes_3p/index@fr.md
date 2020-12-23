@@ -129,7 +129,7 @@ Incluez une ressource audio dans votre page, en utilisant l'élément [`amp-audi
 
 Utilisez cet élément uniquement pour l'intégration directe de fichiers audio HTML5. Comme toutes les ressources externes intégrées dans une page AMP, l'élément assure le chargement différé de la ressource audio spécifiée par l'attribut `src`, à un moment déterminé par AMP.
 
-Include a fallback, if the browser doesn't support HTML5 audio, for example:
+Incluez une solution de secours, si le navigateur ne prend pas en charge l'audio HTML5, par exemple:
 
 [example preview="inline" playground="true" imports="amp-audio:0.1"]
 ```html
