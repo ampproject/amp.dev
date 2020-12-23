@@ -1,5 +1,5 @@
 ---
-"$title": AMP for Ads specification
+"$title": AMP 广告规范
 order: '3'
 formats:
 - 广告
@@ -46,21 +46,21 @@ AMPHTML 广告是一种在 AMP 网页上快速高效渲染广告的机制。为�
 
 <table>
 <thead><tr>
-  <th>Rule</th>
-  <th>Rationale</th>
+  <th>规则</th>
+  <th>理由</th>
 </tr></thead>
 <tbody>
 <tr>
 <td>Must use <code><html ⚡4ads></code> or <code><html amp4ads></code> as its enclosing tags.</td>
-<td>Allows validators to identify a creative document as either a general AMP doc or a restricted AMPHTML ad doc and to dispatch appropriately.</td>
+<td>允许验证工具将广告素材文档识别为常规 AMP 文档或受限的 AMPHTML 广告文档并进行相应分发。</td>
 </tr>
 <tr>
 <td>Must include <code><script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script></code> as the runtime script instead of <code>https://cdn.ampproject.org/v0.js</code>.</td>
-<td>Allows tailored runtime behaviors for AMPHTML ads served in cross-origin iframes.</td>
+<td>允许在跨源 iframe 中投放的 AMPHTML 广告存在量身定制的运行时行为。</td>
 </tr>
 <tr>
 <td>Must not include a <code><link rel="canonical"></code> tag.</td>
-<td>Ad creatives don't have a "non-AMP canonical version" and won't be independently search-indexed, so self-referencing would be useless.</td>
+<td>广告素材没有“非 AMP 规范版本”，不会独立编制搜索索引，因此，自引用没有任何用处。</td>
 </tr>
 <tr>
 <td>Can include optional meta tags in HTML head as identifiers, in the format of <code><meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code>. Those meta tags must be placed before the <code>amp4ads-v0.js</code> script. The value of <code>vendor</code> and <code>id</code> are strings containing only [0-9a-zA-Z_-]. The value of <code>type</code> is either <code>creative-id</code> or <code>impression-id</code>.</td>
@@ -119,30 +119,30 @@ AMPHTML 广告素材需要与[常规 AMP 文档](https://github.com/ampproject/a
 
 <table>
 <thead><tr>
-  <th>Rule</th>
-  <th>Rationale</th>
+  <th>规则</th>
+  <th>理由</th>
 </tr></thead>
 <tbody>
   <tr>
     <td>广告素材 CSS 中不允许使用 <code>position:fixed</code> 和 <code>position:sticky</code>。</td>
     <td>
-<code>position:fixed</code> breaks out of shadow DOM, which AMPHTML ads depend on. lso, ads in AMP are already not allowed to use fixed position.</td>
+<code>position:fixed</code> 超出了 AMPHTML 广告所依赖的影子 DOM 的范围。目前还不允许 AMP 中的本地共享对象广告使用固定位置。</td>
   </tr>
   <tr>
     <td>不允许使用 <code>touch-action</code>。</td>
-    <td>An ad that can manipulate <code>touch-action</code> can interfere with    the user's ability to scroll the host document.</td>
+    <td>如果广告可以操作 <code>touch-action</code>，则该广告会干扰用户滚动托管文档。</td>
   </tr>
   <tr>
-    <td>Creative CSS is limited to 20,000 bytes.</td>
-    <td>Large CSS blocks bloat the creative, increase network    latency, and degrade page performance. </td>
+    <td>广告素材 CSS 最多可以包含 20,000 字节。</td>
+    <td>大型 CSS 块会使广告素材膨胀，增加网络延迟，以及降低页面性能。</td>
   </tr>
   <tr>
-    <td>Transition and animation are subject to additional restrictions.</td>
-    <td>AMP must be able to control all animations belonging to an    ad, so that it can stop them when the ad is not on screen or system resources are very low.</td>
+    <td>过渡和动画受其他限制影响。</td>
+    <td>AMP 必须能够对属于广告的所有动画进行控制，这样才能在广告未显示在屏幕上或者系统资源运行速度缓慢时将动画停止。</td>
   </tr>
   <tr>
-    <td>Vendor-specific prefixes are considered aliases for the same symbol    without the prefix for the purposes of validation.  This means that if    a symbol <code>foo</code> is prohibited by CSS validation rules, then the symbol <code>-vendor-foo</code> will also be prohibited.</td>
-    <td>Some vendor-prefixed properties provide equivalent functionality to properties that are otherwise prohibited or constrained under these rules.<br><br><p>Example: <code>-webkit-transition</code> and <code>-moz-transition</code> are both considered aliases for <code>transition</code>.  They will only be allowed in contexts where bare <code>transition</code> would be allowed (see <a href="#selectors">Selectors</a> section below).</p>
+    <td>供应商特有的前缀被视为用于进行验证且无前缀的相同符号的别名。这意味着，如果 CSS 验证规则不允许使用符号 <code>foo</code>，则也不允许使用 <code>-vendor-foo</code> 符号。</td>
+    <td>有些以供应商为前缀的属性具有的功能与这些规则所禁用或限制的属性相同。<br><br><p>示例：<code>-webkit-transition</code> 和 <code>-moz-transition</code> 均被视为 <code>transition</code> 的别名。它们只能在允许使用 <code>transition</code> 的语境下使用（请参阅下文的<a href="#selectors">选择器</a>部分）。</p>
 </td>
   </tr>
 </tbody>
@@ -154,11 +154,11 @@ AMPHTML 广告素材需要与[常规 AMP 文档](https://github.com/ampproject/a
 
 `transition` 和 `animation` 属性只能在以下选择器中使用：
 
-- Contain only `transition`, `animation`, `transform`, `visibility`, or `opacity` properties.
+- 仅包含 `transition`、`animation`、`transform`、`visibility` 或 `opacity` 属性。
 
-    *Rationale:* This allows the AMP runtime to remove this class from context to deactivate animations, when necessary for page performance.
+    *理由*：这将支持 AMP 运行时从语境中移除此类，以便在必要时停用动画，从而提高页面性能。
 
-**Good**
+**效果良好**
 
 [sourcecode:css]
 .box {
@@ -167,9 +167,9 @@ AMPHTML 广告素材需要与[常规 AMP 文档](https://github.com/ampproject/a
 }
 [/sourcecode]
 
-**Bad**
+**效果欠佳**
 
-Property not allowed in CSS class.
+不允许在 CSS 类中使用属性。
 
 [sourcecode:css]
 .box {
@@ -179,23 +179,23 @@ Property not allowed in CSS class.
 }
 [/sourcecode]
 
-##### Transitionable and animatable properties <a name="transitionable-and-animatable-properties"></a>
+##### 可过渡和可添加动画效果的属性 <a name="transitionable-and-animatable-properties"></a>
 
-The only properties that may be transitioned are opacity and transform. ([Rationale](http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/))
+只有 opacity 和 transform 属性可以进行过渡。（[理由](http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)）
 
-**Good**
+**效果良好**
 
 [sourcecode:css]
 transition: transform 2s;
 [/sourcecode]
 
-**Bad**
+**效果欠佳**
 
 [sourcecode:css]
 transition: background-color 2s;
 [/sourcecode]
 
-**Good**
+**效果良好**
 
 [sourcecode:css]
 @keyframes turn {
@@ -209,7 +209,7 @@ transition: background-color 2s;
 }
 [/sourcecode]
 
-**Bad**
+**效果欠佳**
 
 [sourcecode:css]
 @keyframes slidein {
@@ -225,9 +225,9 @@ transition: background-color 2s;
 }
 [/sourcecode]
 
-### Allowed AMP extensions and builtins <a name="allowed-amp-extensions-and-builtins"></a>
+### 允许使用的 AMP 扩展项和内置标记 <a name="allowed-amp-extensions-and-builtins"></a>
 
-The following are *allowed* AMP extension modules and AMP built-in tags in an AMPHTML ad creative. Extensions or builtin tags not explicitly listed are prohibited.
+*允许*在 AMPHTML 广告素材中使用以下 AMP 扩展模块和 AMP 内置标记。只能使用明确列出的扩展项或内置标记。
 
 - [amp-accordion](https://amp.dev/documentation/components/amp-accordion)
 - [amp-ad-exit](https://amp.dev/documentation/components/amp-ad-exit)
@@ -251,31 +251,31 @@ The following are *allowed* AMP extension modules and AMP built-in tags in an AM
 - [amp-social-share](https://amp.dev/documentation/components/amp-social-share)
 - [amp-video](https://amp.dev/documentation/components/amp-video)
 
-Most of the omissions are either for performance or to make AMPHTML ads simpler to analyze.
+忽略的大部分标记是出于性能考虑或者是为了简化 AMPHTML 广告的分析。
 
-*Example:* `<amp-ad>` is omitted from this list. It is explicitly disallowed because allowing an `<amp-ad>` inside an `<amp-ad>` could potentially lead to unbounded waterfalls of ad loading, which does not meet AMPHTML ads performance goals.
+*示例*：上述列表中未列出 `<amp-ad>`。明确禁止的原因在于，如果允许在 `<amp-ad>` 内放入 `<amp-ad>`，可能会导致生成不受控制的广告加载瀑布流，从而无法满足 AMPHTML 广告的性能目标。
 
-*Example:* `<amp-iframe>` is omitted from this list. It is disallowed because ads could use it to execute arbitrary Javascript and load arbitrary content. Ads wanting to use such capabilities should return `false` from their [a4aRegistry](https://github.com/ampproject/amphtml/blob/master/ads/_a4a-config.js#L40) entry and use the existing '3p iframe' ad rendering mechanism.
+*示例*：上述列表中未列出 `<amp-iframe>`。禁止的原因在于，广告可以使用该标记执行任意 Javascript 并加载任意内容。如果广告想使用此类功能，它们应当在 [a4aRegistry](https://github.com/ampproject/amphtml/blob/master/ads/_a4a-config.js#L40) 条目中返回 <code>false</code>，并使用现有的“3p iframe”广告渲染机制。
 
-*Example:* `<amp-facebook>`, `<amp-instagram>`, `<amp-twitter>`, and `<amp-youtube>` are all omitted for the same reason as `<amp-iframe>`: They all create iframes and can potentially consume unbounded resources in them.
+*示例*：上述列表中未列出 `<amp-facebook>`、`<amp-instagram>`、`<amp-twitter>` 和 `<amp-youtube>`，原因与 `<amp-iframe>` 相同：这些标记全部都会创建 iframe，并且可能会在 iframe 中占用无限多的资源。
 
-*Example:* `<amp-ad-network-*-impl>` are omitted from this list. The `<amp-ad>` tag handles delegation to these implementation tags; creatives should not attempt to include them directly.
+*示例*：上述列表中未列出 `<amp-ad-network-*-impl>`。`<amp-ad>` 标记会处理对这些实现标记的委托；广告素材不应当尝试直接包含这些实现标记。
 
-*Example:* `<amp-lightbox>` is not yet included because even some AMPHTML ads creatives may be rendered in an iframe and there is currently no mechanism for an ad to expand beyond an iframe. Support may be added for this in the future, if there is demonstrated desire for it.
+*示例*：尚未包括 `<amp-lightbox>` 的原因在于，有些 AMPHTML 广告素材甚至可能会在 iframe 中进行渲染，目前还没有机制可以支持广告扩展到 iframe 范围外。以后可能会增加这方面的支持，前提是存在相应的需求。
 
-### HTML tags <a name="html-tags"></a>
+### HTML 标记 <a name="html-tags"></a>
 
-The following are *allowed* tags in an AMPHTML ads creative. Tags not explicitly allowed are prohibited. This list is a subset of the general [AMP tag addendum allowlist](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md). Like that list, it is ordered consistent with HTML5 spec in section 4 [The Elements of HTML](http://www.w3.org/TR/html5/single-page.html#html-elements).
+*允许*在 AMPHTML 广告素材中使用以下标记。只能使用明确允许的标记。以下列表是常规 [AMP 标记附录许可名单](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md)的一部分。与许可名单一样，以下列表按照 HTML5 规范中的第 4 节 [HTML 的元素](http://www.w3.org/TR/html5/single-page.html#html-elements)排序。
 
-Most of the omissions are either for performance or because the tags are not HTML5 standard. For example, `<noscript>` is omitted because AMPHTML ads depends on JavaScript being enabled, so a `<noscript>` block will never execute and, therefore, will only bloat the creative and cost bandwidth and latency. Similarly, `<acronym>`, `<big>`, et al. are prohibited because they are not HTML5 compatible.
+出于性能考虑或者是因为标记不符合 HTML5 标准，大部分标记均未列出。例如，未列出 `<noscript>` 的原因在于，AMPHTML 广告依赖于启用的 JavaScript，因此，`<noscript>` 块从不执行，只会使广告素材膨胀，占用带宽并增加延迟。同样地，也不允许使用 `<acronym>`、`<big>` 等标记，因为它们与 HTML5 标准不兼容。
 
-#### 4.1 The root element <a name="41-the-root-element"></a>
+#### 4.1 根元素 <a name="41-the-root-element"></a>
 
 4.1.1 `<html>`
 
-- Must use types `<html ⚡4ads>` or `<html amp4ads>`
+- 必须使用 `<html ⚡4ads>` 或 `<html amp4ads>` 类型
 
-#### 4.2 Document metadata <a name="42-document-metadata"></a>
+#### 4.2 文档元数据 <a name="42-document-metadata"></a>
 
 4.2.1 `<head>`
 
@@ -283,53 +283,53 @@ Most of the omissions are either for performance or because the tags are not HTM
 
 4.2.4 `<link>`
 
-- `<link rel=...>` tags are disallowed, except for `<link rel=stylesheet>`.
+- 不允许使用 `<link rel=...>` 标记，但 `<link rel=stylesheet>` 除外。
 
-- **Note:** Unlike in general AMP, `<link rel="canonical">` tags are prohibited.
+- **注**：与常规 AMP 不同的是，不允许使用 `<link rel="canonical">` 标记。
 
     4.2.5 `<style>` 4.2.6 `<meta>`
 
-#### 4.3 Sections <a name="43-sections"></a>
+#### 4.3 版块 <a name="43-sections"></a>
 
-4.3.1 `<body>` 4.3.2 `<article>` 4.3.3 `<section>` 4.3.4 `<nav>` 4.3.5 `<aside>` 4.3.6 `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, and `<h6>` 4.3.7 `<header>` 4.3.8 `<footer>` 4.3.9 `<address>`
+4.3.1 `<body>` 4.3.2 `<article>` 4.3.3 `<section>` 4.3.4 `<nav>` 4.3.5 `<aside>` 4.3.6 `<h1>`、`<h2>`、`<h3>`、`<h4>`、`<h5>` 和 `<h6>` 4.3.7 `<header>` 4.3.8 `<footer>` 4.3.9 `<address>`
 
-#### 4.4 Grouping Content <a name="44-grouping-content"></a>
+#### 4.4 内容分组 <a name="44-grouping-content"></a>
 
 4.4.1 `<p>` 4.4.2 `<hr>` 4.4.3 `<pre>` 4.4.4 `<blockquote>` 4.4.5 `<ol>` 4.4.6 `<ul>` 4.4.7 `<li>` 4.4.8 `<dl>` 4.4.9 `<dt>` 4.4.10 `<dd>` 4.4.11 `<figure>` 4.4.12 `<figcaption>` 4.4.13 `<div>` 4.4.14 `<main>`
 
-#### 4.5 Text-level semantics <a name="45-text-level-semantics"></a>
+#### 4.5 文本级语义 <a name="45-text-level-semantics"></a>
 
-4.5.1 `<a>` 4.5.2 `<em>` 4.5.3 `<strong>` 4.5.4 `<small>` 4.5.5 `<s>` 4.5.6 `<cite>` 4.5.7 `<q>` 4.5.8 `<dfn>` 4.5.9 `<abbr>` 4.5.10 `<data>` 4.5.11 `<time>` 4.5.12 `<code>` 4.5.13 `<var>` 4.5.14 `<samp>` 4.5.15 `<kbd >` 4.5.16 `<sub>` and `<sup>` 4.5.17 `<i>` 4.5.18 `<b>` 4.5.19 `<u>` 4.5.20 `<mark>` 4.5.21 `<ruby>` 4.5.22 `<rb>` 4.5.23 `<rt>` 4.5.24 `<rtc>` 4.5.25 `<rp>` 4.5.26 `<bdi>` 4.5.27 `<bdo>` 4.5.28 `<span>` 4.5.29 `<br>` 4.5.30 `<wbr>`
+4.5.1 `<a>` 4.5.2 `<em>` 4.5.3 `<strong>` 4.5.4 `<small>` 4.5.5 `<s>` 4.5.6 `<cite>` 4.5.7 `<q>` 4.5.8 `<dfn>` 4.5.9 `<abbr>` 4.5.10 `<data>` 4.5.11 `<time>` 4.5.12 `<code>` 4.5.13 `<var>` 4.5.14 `<samp>` 4.5.15 `<kbd >` 4.5.16 `<sub>` and `<sup>` 4.5.17 `<i>` 4.5.18 `<b>` 4.5.19 `<u>` 4.5.20 `<mark>` 4.5.21 `<ruby>` 4.5.22 `<rb>` 4.5.23 `<rt>` 4.5.24 `<rtc>` 4.5.25 `<rp>` 4.5.26 `<bdi>` 4.5.27 `<bdo>` 4.5.28 `<span>` 4.5.29 `<br>` 4.5.30 `<wbr>` <a></a>
 
-#### 4.6 Edits <a name="46-edits"></a>
+#### 4.6 编辑 <a name="46-edits"></a>
 
 4.6.1 `<ins>` 4.6.2 `<del>`
 
-#### 4.7 Embedded Content <a name="47-embedded-content"></a>
+#### 4.7 嵌入式内容 <a name="47-embedded-content"></a>
 
-- Embedded content is supported only via AMP tags, such as `<amp-img>` or `<amp-video>`.
+- 只能使用 `<amp-img>` 或 `<amp-video>` 等 AMP 标记支持嵌入式内容。
 
 #### 4.7.4 `<source>` <a name="474-source"></a>
 
 #### 4.7.18 SVG <a name="4718-svg"></a>
 
-SVG tags are not in the HTML5 namespace. They are listed below without section ids.
+SVG 标记不属于 HTML5 命名空间。以下列出的 SVG 标记没有板块 ID。
 
 `<svg>``<g>``<path>``<glyph>``<glyphref>``<marker>``<view>``<circle>``<line>``<polygon>``<polyline>``<rect>``<text>``<textpath>``<tref>``<tspan>``<clippath>``<filter>``<lineargradient>``<radialgradient>``<mask>``<pattern>``<vkern>``<hkern>``<defs>``<use>``<symbol>``<desc>``<title>`
 
-#### 4.9 Tabular data <a name="49-tabular-data"></a>
+#### 4.9 表格数据 <a name="49-tabular-data"></a>
 
 4.9.1 `<table>` 4.9.2 `<caption>` 4.9.3 `<colgroup>` 4.9.4 `<col>` 4.9.5 `<tbody>` 4.9.6 `<thead>` 4.9.7 `<tfoot>` 4.9.8 `<tr>` 4.9.9 `<td>` 4.9.10 `<th>`
 
-#### 4.10 Forms <a name="410-forms"></a>
+#### 4.10 表单 <a name="410-forms"></a>
 
 4.10.8 `<button>`
 
-#### 4.11 Scripting <a name="411-scripting"></a>
+#### 4.11 脚本 <a name="411-scripting"></a>
 
-- Like a general AMP document, the creative's `<head>` tag must contain a `<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>` tag.
-- Unlike general AMP, `<noscript>` is prohibited.
-    - *Rationale:* Since AMPHTML ads requires Javascript to be enabled to function at all, `<noscript>` blocks serve no purpose in AMPHTML ads and only cost network bandwidth.
-- Unlike general AMP, `<script type="application/ld+json">` is prohibited.
-    - *Rationale:* JSON LD is used for structured data markup on host pages, but ad creatives are not standalone documents and don't contain structured data. JSON LD blocks in them would just cost network bandwidth.
-- All other scripting rules and exclusions are carried over from general AMP.
+- 与常规 AMP 文档一样，广告素材的 `<head>` 标记必须包含 `<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>` 标记。
+- 与常规 AMP 不同，不允许使用 `<noscript>`。
+    - *理由*：由于 AMPHTML 广告需要启用 Javascript 才能工作，`<noscript>` 块在 AMPHTML 广告中不起任何作用，只会占用网络带宽。
+- 与常规 AMP 不同，不允许使用 `<script type="application/ld+json">`。
+    - *理由*：JSON LD 用于托管页面上的结构化数据标记，但广告素材不是独立的文档，并且不包含结构化数据。JSON LD 块本身只会占用网络带宽。
+- 所有其他脚本规则和排除对象与常规 AMP 相同。
