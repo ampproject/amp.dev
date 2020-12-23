@@ -70,7 +70,7 @@ AMP 运行时的[速度进行了优化](../../../about/how-amp-works.html)，如
 
 2. 接着，使用 `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>` 预加载 AMP 运行时 `v0.js` `<script>` 标记。AMP 运行时应当尽快开始下载，因为 [AMP 样板](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md)使用 `body { visibility:hidden }` 隐藏文档，直到 AMP 运行时已加载。预加载 AMP 运行时是告知浏览器按较高的优先级下载该脚本。请参阅[服务器端呈现](#server-side-rendering)，了解如何避免此问题。{amp-img6} {/amp-img6}
 
-3. If your page includes render-delaying extensions (e.g., amp-experiment, amp-dynamic-css-classes, amp-story), preload those extensions as they're required by the AMP runtime for rendering the page.
+3. 如果您的页面包含延迟渲染的扩展（例如，amp-experiment、amp-dynamic-css-classes、amp-story），请预加载这些扩展，因为 AMP 运行时需要这些扩展才能渲染页面。
 
 [sourcecode:html]
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-custom-css-0.1.js">
@@ -81,7 +81,7 @@ AMP 运行时的[速度进行了优化](../../../about/how-amp-works.html)，如
 
 [sourcecode:html]<link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>[/sourcecode]
 
-1. Load the AMP runtime:
+1. 加载 AMP 运行时：
 
 [sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
 
@@ -200,12 +200,12 @@ AMP 运行时的[速度进行了优化](../../../about/how-amp-works.html)，如
 
 - 尽可能使用 [font-display: optional](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)：仅当缓存中已经有相应字体时，此标记才会使用该字体；如果尚未加载自定义字体，此标记会改用系统字体。
 - 优化网络字体（例如，使用 WOFF2 支持自定义字体）。
-- Preload custom fonts:
+- 预加载自定义字体：
 
 [sourcecode:html]
 <link rel="preload" as="font" href="/bundles/app/fonts/helveticaneue-roman-webfont.woff2" >[/sourcecode]
 
-- If you are using Google fonts, or any other font provider with unknown font URLs, preconnect the respective font server:
+- 如果使用的是 Google 字体，或者任何其他含有未知字体网址的字体提供者，请预连接相应的字体服务器：
 
 [sourcecode:html]
  <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
