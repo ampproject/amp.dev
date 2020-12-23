@@ -16,7 +16,12 @@ XHR이 아닌 액션은 AMP의 POST 메소드에서 허용되지 않으므로, P
 
 JSON 응답 예제입니다:
 
-[sourcecode:json] {"Datetime":"09:34:21", "User":"Charlie", "Text":"Hello!", "UserImg":"/img/ic_account_box_black_48dp_1x.png"} [/sourcecode]
+[sourcecode:json]
+{"Datetime":"09:34:21",
+"User":"Charlie",
+"Text":"Hello!",
+"UserImg":"/img/ic_account_box_black_48dp_1x.png"}
+[/sourcecode]
 
 양식 컴포넌트는 단순히 [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md) 템플릿을 이용하여 페이지 내의 값을 표현합니다.
 
