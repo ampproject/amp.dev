@@ -307,11 +307,7 @@ Access-Control-Allow-Origin: https://example.com
 
 이 요청을 검사하면 다음 정보를 확인할 수 있습니다.
 
-[sourcecode:text]
-Request URL: https://example.com/data.json
-Request Method: GET
-Origin: https://example-com.cdn.ampproject.org
-[/sourcecode]
+[sourcecode:text] Request URL: https://example.com/data.json Request Method: GET Origin: https://example-com.cdn.ampproject.org [/sourcecode]
 
 요청에 `Origin` 헤더가 포함되므로 허용된 출처에서 받은 요청임이 확인됩니다. 허용된 출처의 요청이므로 허용할 수 있습니다.
 
