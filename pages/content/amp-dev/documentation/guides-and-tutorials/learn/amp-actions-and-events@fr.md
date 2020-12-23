@@ -71,12 +71,14 @@ Consultez le tableau ci-dessous pour une description détaillée de la syntaxe.
   <tr>
     <td><code>arg=value</code></td>
     <td>Non</td>
-    <td>Some actions, if documented, may accept arguments. The arguments are defined between parentheses in <code>key=value</code> notation. The accepted values are:       <ul>         <li>simple unquoted strings: <code>simple-value</code>
-</li>         <li>quoted strings: <code>"string value"</code> or <code>'string value'</code>
-</li>         <li>boolean values: <code>true</code> or <code>false</code>
-</li>         <li>numbers: <code>11</code> or <code>1.1</code>
-</li>         <li>dot-syntax reference to event data: <code>event.someDataVariableName</code>
-</li>       </ul>     </td>
+    <td>Certaines actions, si elles sont documentées, peuvent accepter des arguments. Les arguments sont définis entre parenthèses dans la notation <code>key=value</code> . Les valeurs acceptées sont: <ul>
+<li> chaînes simples sans guillemets: <code>simple-value</code> </li>
+<li> chaînes entre guillemets: <code>"string value"</code> ou <code>'string value'</code> </li>
+<li> valeurs booléennes: <code>true</code> ou <code>false</code> </li>
+<li> nombres: <code>11</code> ou <code>1.1</code> </li>
+<li> référence de syntaxe de point aux données d'événement: <code>event.someDataVariableName</code> </li>
+</ul>
+</td>
   </tr>
 </table>
 
@@ -148,8 +150,7 @@ L'exemple suivant est possible dans AMP:
     </td>
   </tr>
   <tr>
-    <td>
-<code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
+    <td> <code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
 </td>
     <td>
       <code>event.checked</code>
@@ -245,8 +246,7 @@ L'exemple suivant est possible dans AMP:
     <td>Met à jour la disposition de <code>amp-list</code> vers <code>layout="CONTAINTER"</code> pour permettre <a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">le redimensionnement dynamique</a>.</td>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td>	<code>fetch-error</code> (confiance basse)</td>
     <td>Se déclenche lorsque la récupération des données échoue.</td>
     <td>Aucune</td>
   </tr>
@@ -296,8 +296,7 @@ L'exemple suivant est possible dans AMP:
     <th width="40%">Données</th>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td>	<code>fetch-error</code> (confiance basse)</td>
     <td>Se déclenche lorsque la récupération des données échoue.</td>
     <td>Aucune</td>
   </tr>
@@ -313,16 +312,16 @@ L'exemple suivant est possible dans AMP:
   </tr>
   <tr>
     <td>
-<code>firstPlay</code>(low-trust)</td>
+<code>firstPlay</code> (faible confiance)</td>
     <td>Se déclenche quand l'utilisateur lit la vidéo pour la première fois. Sur les vidéos en lecture automatique, il se déclenche dès que l'utilisateur interagit avec la vidéo. Cet événement a un niveau de confiance bas, ce qui signifie qu'il ne peut pas déclencher la plupart des actions; seules les actions ayant un niveau de confiance bas telles que les actions <code>amp-animation</code> peuvent être exécutées.</td>
     <td></td>
   </tr>
   <tr>
     <td>
-<code>timeUpdate</code>(low-trust)</td>
+<code>timeUpdate</code> (faible confiance)</td>
     <td>Se déclenche lorsque la position de lecture d'une vidéo a changé. La fréquence de l'événement est contrôlée par AMP et est actuellement réglée à 1 seconde d'intervalle. Cet événement a un niveau de confiance bas, ce qui signifie qu'il ne peut pas déclencher la plupart des actions; seules les actions ayant un niveau de confiance bas telles que les actions <code>amp-animation</code> peuvent être exécutées.</td>
     <td>
-<code>{time, percent}</code><code>time</code> indicates the current time in seconds, <code>percent</code> is a number between 0 and 1 and indicates current position as percentage of total time.</td>
+<code>{time, percent}</code> <code>time</code> indique l'heure actuelle en secondes, <code>percent</code> est un nombre compris entre 0 et 1 et indique la position actuelle en pourcentage du temps total.</td>
   </tr>
 </table>
 
@@ -380,7 +379,7 @@ L'exemple suivant est possible dans AMP:
   </tr>
   <tr>
     <td><code>toggleVisibility</code></td>
-    <td>Toggles the visibility of the target element. If an     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a     result, it gains focus.</td>
+    <td>Active / désactive la visibilité de l'élément cible. Si un <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus">élément de <code>autofocus</code></a> devient visible en conséquence, il obtient la mise au point.</td>
   </tr>
   <tr>
     <td><code>toggleClass(class=STRING, force=BOOLEAN)</code></td>
@@ -392,7 +391,7 @@ L'exemple suivant est possible dans AMP:
   </tr>
   <tr>
     <td><code>focus</code></td>
-    <td>Makes the target element gain focus. To lose focus, <code>focus</code>     on another element (usually parent element). We strongly advise against     losing focus by focusing on <code>body</code>/<code>documentElement</code>     for accessibility reasons.</td>
+    <td>Rend l'élément cible gagnant le focus. Pour perdre le focus, <code>focus</code> sur un autre élément (généralement l'élément parent). Nous déconseillons fortement de perdre le focus en nous concentrant sur <code>body</code> / <code>documentElement</code> pour des raisons d'accessibilité.</td>
   </tr>
 </table>
 
@@ -451,7 +450,7 @@ L'exemple suivant est possible dans AMP:
   </tr>
   <tr>
     <td><code>toggle(section=STRING)</code></td>
-    <td>Toggles the <code>expanded</code> and <code>collapsed</code> states of <code>amp-accordion</code> sections. When called with no arguments, it toggles all sections of the accordion. Trigger on a specific section by providing the section id: <code>on="tap:myAccordion.toggle(section='section-id')"</code>.   </td>
+    <td>Change les états <code>expanded</code> et <code>collapsed</code> des sections <code>amp-accordion</code>. Lorsque l'action est appelée sans argument, elle fait basculer toutes les sections de l'accordéon. Déclenchez sur une section spécifique en fournissant l'ID de section: <code>on="tap:myAccordion.toggle(section='section-id')"</code>.</td>
 </tr>
   <tr>
     <td><code>expand(section=STRING)</code></td>
@@ -570,7 +569,7 @@ L'exemple suivant est possible dans AMP:
   </tr>
   <tr>
     <td><code>toggle(index=INTEGER, value=BOOLEAN)</code></td>
-    <td>Toggles the application of the `selected`. If the select attribute is absent, this action adds it. If the select attribute is present, this action removes it.     You may force and keep an add or remove by including a boolean value in the `value` argument. A value of `true` will force add the `selected` attribute and not remove it if already present. A value of  `false` will remove the attribute, but not add it if absent.   </td>
+    <td>Change l'application de `selected`. Si l'attribut de sélection est absent, cette action l'ajoute. Si l'attribut de sélection est présent, cette action le supprime. Vous pouvez forcer la conservation d'un ajout ou d'une suppression en incluant une valeur booléenne dans l'argument `value`. Une valeur `true` forcera l'ajout de l'attribut `selected` et ne le supprimera pas s'il est déjà présent. Une valeur de `false` supprimera l'attribut, mais ne l'ajoutera pas s'il est absent.</td>
   </tr>
 </table>
 
