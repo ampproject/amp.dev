@@ -45,7 +45,7 @@ contributors:
 - 콘텐츠를 로드하지 못한 경우(예: 트윗이 삭제됨)
 - 이미지 유형이 지원되지 않는 경우(예: WebP는 모든 브라우저에서 지원되지 않음)
 
-You can set the `fallback` attribute on *any* HTML element, not just AMP elements. If specified, the `fallback` element must be a direct child of the AMP element.
+`fallback` 속성은 AMP 요소뿐 아니라 *모든* HTML 요소에도 설정할 수 있습니다. 지정된 경우 `fallback` 요소는 AMP 요소의 직접 하위 요소여야 합니다.
 
 ##### 예: 지원되지 않는 기능
 
