@@ -10,7 +10,7 @@ description: 与登录按钮相似，是否显示退出按钮取决于 amp-acces
 <button amp-access="loggedIn" amp-access-hide tabindex="0" on="tap:amp-access.login-sign-out" class="button-primary comment-button">Logout</button>
 [/sourcecode]
 
-[sourcecode:html] <button amp-access="loggedIn" amp-access-hide="" tabindex="0" on="tap:amp-access.login-sign-out" class="button-primary comment-button">Logout</button> [/sourcecode]
+当您点击 Logout 按钮后，系统会将您定向到您在 [`amp-access`](../../../../documentation/components/reference/amp-access.md) JSON 配置中指定的网址（作为登录对象的一部分）：
 
 [sourcecode:json]
 {
@@ -21,4 +21,4 @@ description: 与登录按钮相似，是否显示退出按钮取决于 amp-acces
 }
 [/sourcecode]
 
-当您点击“退出”按钮后，系统会将您定向到您在 [`amp-access`](../../../../documentation/components/reference/amp-access.md) JSON 配置中指定的网址（作为登录对象的一部分）：
+与登录相似，当 AMPByExample 服务器收到退出请求后，它会使用由 AMP 库自动添加的返回网址查询参数并通过附加 `#success=true` 重定向到该网址。此时，您已经返回初始网页；之前为登录页面创建的 AMPByExample Cookie（名为 `ABE_LOGGED_IN`）现在将被清除。
