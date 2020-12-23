@@ -66,7 +66,7 @@ AMP 이메일의 필수 요건은 다음과 같습니다.
 - <a name="scrpt"></a>헤드 태그 내에 `<script async src="https://cdn.ampproject.org/v0.js"></script>` 태그 사용. [🔗](#scrpt)
 - AMP JS 로드 시까지 우선 콘텐츠를 숨김 처리하려면 헤드 태그 내에 <a name="boilerplate"></a>amp4email 상용구 사용(`<style amp4email-boilerplate>body{visibility:hidden}</style>`) [🔗](#boilerplate)
 
-The entire AMPHTML markup must not exceed 200,000 bytes.
+전체 AMPHTML 마크업은 200,000 바이트를 초과할 수 없습니다.
 
 ## 구조 및 렌더링 <a name="structure-and-rendering"></a>
 
