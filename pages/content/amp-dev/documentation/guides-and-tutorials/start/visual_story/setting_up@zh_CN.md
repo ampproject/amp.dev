@@ -1,7 +1,7 @@
 ---
 "$title": Setting up
 "$order": '1'
-description: 'Set up your development environment: Step 1. Download the code. Download the sample code for the tutorial either as a ZIP file or via git ...'
+description: 设置开发环境 第 1 步：下载代码。以 ZIP 文件格式或通过 git 下载本教程的示例代码…
 author: bpaduch
 ---
 
@@ -37,6 +37,6 @@ author: bpaduch
 http://localhost:8000/pets-completed.html
 ```
 
-[tip type="important"] **IMPORTANT –** Make sure the URL serves from `localhost` otherwise the Web Story might not load correctly, and you may encounter errors like `"source" "must start with "https://" or "//" or be relative and served from either https or from localhost.` [/tip]
+[tip type="important"] **重要提示**：请确保该网址是从 <code>localhost</code> 提供的，否则 AMP 故事可能会无法正确加载，而且您可能会遇到诸如此类的错误：`"source" "must start with "https://" or "//" or be relative and served from either https or from localhost.`[/tip]
 
 点击浏览故事的完成版，了解我们将要创作什么样的内容。
