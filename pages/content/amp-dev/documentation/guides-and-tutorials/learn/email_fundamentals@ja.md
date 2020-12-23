@@ -1,8 +1,10 @@
 ---
-$title: AMP for Email の基礎
-$order: 1
+"$title": AMP for Email の基礎
+"$order": '1'
 description: 有効な AMP メールを記述し始めるために知っておく必要のあること。
 author: CrystalOnScript
+formats:
+- email
 ---
 
 AMP を使用し慣れている方には朗報です！AMP for Email は AMP HTML ライブラリのサブセットにすぎません。AMP のことをよく知らない方にも朗報です！有効な AMP メールを記述し始めるために知っておく必要のあることすべてが、このガイドで説明されています！
