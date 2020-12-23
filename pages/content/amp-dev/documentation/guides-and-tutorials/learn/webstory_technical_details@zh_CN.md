@@ -20,7 +20,7 @@ author: CrystalOnScript
 - 包含 `<meta charset="utf-8">` 标记，作为 `<head>` 标记的第一个子项。
 - 在 `<head>` 标记内包含 `<script async src="https://cdn.ampproject.org/v0.js"></script>` 标记。最佳做法是，应尽早在 `<head>` 中包含该脚本。
 - 在 `<head>` 内包含 ` <link rel="canonical" href="page/url">` 标记，其中 href 指向网页故事网址。
-- Contain a `<meta name="viewport" content="width=device-width">` tag inside the `<head>` tag. It's also recommended to include initial-scale=1.
+- 在 `<head>` 标记内包含 `<meta name="viewport" content="width=device-width">` 标记。另外，还建议包含 initial-scale=1。
 - 在 `<head>` 标记内包含 [AMP 样板](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites)代码。
 
 使用 AMP 构建的 AMP 网页与网页故事之间的区别在于 [`amp-story`](https://amp.dev/documentation/components/amp-story/?format=stories) 组件。它是文档 `<body>` 的唯一直接子项，且必须包含 `standalone` 特性。所有网页故事页面、层和元素都在 `<amp-story>` 标记内定义。
