@@ -17,17 +17,17 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-- [Release Channels](#release-channels)
-    - [Nightly](#nightly)
-    - [Weekly](#weekly)
-        - [Experimental and Beta channels](#experimental-and-beta-channels)
-    - [Long-Term Stable (lts)](#long-term-stable-lts)
-- [Determining if your change is in a release](#determining-if-your-change-is-in-a-release)
-- [Release Cadence](#release-cadence)
-    - [Detailed schedule](#detailed-schedule)
-    - [Release Freezes](#release-freezes)
+- [Canaux de publication ](#release-channels)
+    - [Nocturne ](#nightly)
+    - [Hebdomadaire ](#weekly)
+        - [Canal bêta et canal expérimental ](#experimental-and-beta-channels)
+    - [Stable à long terme (lts) ](#long-term-stable-lts)
+- [Comment déterminer si une version comporte votre modification ](#determining-if-your-change-is-in-a-release)
+- [Rythme de publication ](#release-cadence)
+    - [Calendrier détaillé ](#detailed-schedule)
+    - [Gels de publication ](#release-freezes)
 
-A new release of AMP is pushed to all AMP pages every week on Tuesday. **Once a change in AMP is merged into the master branch of the amphtml repository, it will typically take 1-2 weeks for the change to be live for all users.**
+Une nouvelle version d'AMP est diffusée sur toutes les pages AMP chaque mardi. **Une fois qu'une modification d'AMP est fusionnée dans la branche principale du référentiel amphtml, il faudra généralement 1 à 2 semaines pour que la modification soit active pour tous les utilisateurs.**
 
 ## Canaux de publication <a name="release-channels"></a>
 
@@ -73,13 +73,13 @@ Le *canal expérimental* **peut être moins stable** et contenir des fonctionnal
 
 Le canal de version **lts** fournit une version **stable** précédente pour des intervalles d'un mois. Le deuxième lundi de chaque mois, la version **stable** actuelle est devient la version **lts**. Ce canal n'est pas recommandé pour tous les éditeurs AMP. Il est prévu pour que les éditeurs qui souhaitent effectuer un cycle d'assurance qualité sur leur site Web moins fréquemment puissent le faire en activant des pages Web spécifiques dans le canal **lts** (voir le <a href="https://github.com/ampproject/amphtml/blob/master/contributing/lts-release.md" data-md-type="link">readme **lts**</a>).
 
-If the second Monday of the month falls on a holiday, the promotion will be performed after the end of the [release freeze](#release-freezes).
+Dans le cas où le deuxième lundi du mois tombe un jour férié, la promotion sera effectuée après la fin du [gel de publication](#release-freezes).
 
 Important: les éditeurs utilisant le canal de publication **lts** ne doivent pas utiliser les fonctionnalités nouvellement introduites. En raison du cycle plus long, la version **lts** peut accuser jusqu'à sept semaines de retard sur la `HEAD` de [`ampproject/amphtml`](https://github.com/ampproject/amphtml). Consultez la section [Comment déterminer si une version comporte votre modification](#determining-if-your-change-is-in-a-release) pour valider si une modification sera prête avec le cycle de publication choisi.
 
 ## Comment déterminer si une version comporte votre modification <a name="determining-if-your-change-is-in-a-release"></a>
 
-[*Type: Release* GitHub issues](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) are used to track the status of current and past releases; from the initial cut, to testing via **experimental**/**beta** channels, to eventual release via the **stable** and **lts** channels. Announcements about releases are made on the [AMP Slack #release channel](https://amphtml.slack.com/messages/C4NVAR0H3/) ([sign up for Slack](https://bit.ly/amp-slack-signup)).
+[ Les tickets GitHub *Type: publication*](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) sont utilisés pour suivre le statut des versions actuelles et passées; de la coupe initiale au testage via les canaux **expérimental**/**bêta** à l'éventuelle publication via les canaux **stable** et **lts**. Les annonces de publication se font sur le [canal AMP Slack "release](https://amphtml.slack.com/messages/C4NVAR0H3/) ([s'inscrire sur Slack](https://bit.ly/amp-slack-signup)).
 
 Vous pouvez déterminer les modifications apportées à une version donnée en utilisant l'une des méthodes suivantes:
 
@@ -93,7 +93,7 @@ Nous faisons très attention à notre rythme de publication.
 Pour déterminer à quelle fréquence publier de nouvelles versions d'AMP, nous devons peser de nombreux facteurs, notamment:
 
 - la stabilité pour les millions de sites/milliards de pages créés avec AMP
-- cache-busting that might happen when we push a new version
+- les accidents de cache qui peuvent se produire lorsque nous publions une nouvelle version
 - le désir de sortir rapidement de nouvelles fonctionnalités
 
 Après avoir examiné tous ces facteurs, nous sommes arrivés à un cycle de publication de 1 à 2 semaines. Jusqu'à présent, ce cycle constitue pour nous un compromis raisonnable, mais nous continuerons d'évaluer tous ces facteurs et pourrons peut-être apporter des changements à l'avenir.
@@ -102,7 +102,7 @@ Après avoir examiné tous ces facteurs, nous sommes arrivés à un cycle de pub
 
 Nous essayons de respecter ce calendrier aussi étroitement que possible, même si certaines complications entraînent souvent des retards. Vous pouvez suivre le dernier statut de n'importe quelle publication dans les [tickets GitHub*Type: Release*](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) et le [canal AMP Slack #release](https://amphtml.slack.com/messages/C4NVAR0H3/) ([s'inscrire sur Slack](https://bit.ly/amp-slack-signup)).
 
-- Tuesday @ [11am Pacific](https://www.google.com/search?q=11am+pacific+in+current+time+zone): new **experimental** and **beta** release builds are created from the [latest master build that passes all of our tests](https://travis-ci.com/ampproject/amphtml/branches) and are pushed to users who opted into the [AMP Experimental Channel](#amp-experimental-and-beta-channels) or [AMP Beta Channel](#amp-experimental-and-beta-channels), respectively.
+- Mardi @ [11h Pacifique](https://www.google.com/search?q=11am+pacific+in+current+time+zone): de nouvelles versions **expérimentales** et **bêta** sont créées à partir de la [dernière version principale qui a réussi tous nos tests](https://travis-ci.com/ampproject/amphtml/branches) et sont transmises aux utilisateurs AMP qui ont activé le [canal expérimental AMP](#amp-experimental-and-beta-channels) ou [le canal AMP bêta](#amp-experimental-and-beta-channels), respectivement.
 - Mercredi: nous examinons les rapports de bogues des utilisateurs du *canal expérimental* et du *canal bêta* et si tout est en ordre, nous publions la version **bêta** sur 1% des pages AMP
 - Jeudi-lundi: nous continuons à surveiller les taux d'erreur et les rapports de bogues pour les utilisateurs du *canal expérimental* et du *canal bêta* et le 1% de pages dotées des versions **expérimentale** ou **bêta**
 - Mardi de la semaine suivante: la version **bêta** est entièrement transformée en version  **stable** (c'est-à-dire que toutes les pages AMP utiliseront désormais cette version)
@@ -121,10 +121,10 @@ Si un gel de publication d'une semaine est annoncé pour la semaine N:
 
 Un gel des publication peut se produire en raison de:
 
-- Times when there are not enough people available to push the AMP release to **stable** and monitor it. Currently, most of the people performing AMP releases are based in the United States, so this will usually be the weeks of the major US holidays of Independence Day (July 4), Thanksgiving (fourth Thursday in November), Christmas (25 December), and New Year's Eve/Day (December 31/January 1).
+- un manque de personnes disponibles pour transformer la version AMP en version **stable** et la surveiller. Actuellement, la plupart des personnes qui exécutent des publications AMP sont basées aux États-Unis, ce sont donc généralement les semaines des principales fêtes américaines: Independence Day (4 juillet), Thanksgiving (quatrième jeudi de novembre), Noël (25 décembre) et Saint-Sylvestre/jour de l'an (31 décembre/1er janvier).
 - Une situation d'urgence, telle qu'un problème de sécurité ou de confidentialité tel que déterminé par le [Comité de pilotage technique (TSC)](https://github.com/ampproject/meta-tsc) ou les personnes effectuant la publication.
-- Other situations when the stability of the codebase is deemed to be particularly important as determined by the TSC.
+- D'autres situations où la stabilité de la base de code est considérée comme particulièrement importante, tel que déterminé par le TSC.
 
-In all cases, except emergencies, the release freezes will be announced at least one month in advance.
+Dans tous les cas, sauf en cas d'urgence, le gel de publication sera annoncé au moins un mois à l'avance.
 
 Notez que sauf indication contraire, un gel de publication n'implique pas un gel du code. Le code peut encore être écrit, révisé et fusionné pendant un gel de publication.
