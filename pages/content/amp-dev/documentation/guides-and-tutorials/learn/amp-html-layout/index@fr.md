@@ -1,5 +1,5 @@
 ---
-"$title": AMPHTML Layout System
+"$title": Système de mise en page AMPHTML
 order: '1'
 formats:
 - websites
@@ -39,7 +39,7 @@ L'objectif principal du système de mise en page est de garantir que les éléme
 
 Dans cet esprit, le système de mise en page AMP est conçu pour prendre en charge des mises en page peu nombreuses mais flexibles qui offrent de bonnes garanties de performances. Ce système repose sur un ensemble d'attributs tels que `layout`, `width`, `height`, `sizes` et `heights` pour exprimer les besoins de mise en page et de dimensionnement de l'élément.
 
-## Behavior <a name="behavior"></a>
+## Comportement <a name="behavior"></a>
 
 Un élément AMP non conteneur (p. ex., `layout != container`) démarre dans le mode non résolu/non construit dans lequel tous ses enfants sont masqués à l’exception d’un caractère de remplacement (voir l'attribut `placeholder`). La charge utile de JavaScript et de données nécessaire à la construction complète de l’élément peut encore être en téléchargement et en cours d’initialisation, mais l’exécution AMP sait déjà comment dimensionner et disposer l’élément en s’appuyant uniquement sur les classes CSS et les attributs `layout`, `width`, `height` et `media`. Dans la plupart des cas, un caractère de remplacement `placeholder`, s’il est spécifié, est dimensionné et positionné pour prendre tout l’espace de l’élément.
 
@@ -49,22 +49,22 @@ L’élément est dimensionné et affiché en fonction des attributs `layout`, `
 
 Si l'élément n'a pas été configuré correctement dans PROD, il ne sera pas du tout affiché et en mode DEV, le runtime affichera l'élément avec état d'erreur. Les erreurs possibles incluent des valeurs invalides ou non prises en charge des attributs `layout`, `width` et `height`.
 
-## Layout Attributes <a name="layout-attributes"></a>
+## Attributs de mise en page <a name="layout-attributes"></a>
 
-### `width` and `height` <a name="width-and-height"></a>
+### `width` et `height` <a name="width-and-height"></a>
 
-Depending on the value of the `layout` attribute, AMP component elements must have a `width` and `height` attribute that contains an integer pixel value. Actual layout behavior is determined by the `layout` attribute as described below.
+En fonction de la valeur de l'attribut `layout`, les éléments du composant AMP doivent avoir un attribut `width` et `height` qui contient une valeur de pixel entière. Le comportement de mise en page réel est déterminé par l'attribut `layout` comme décrit ci-dessous.
 
 Dans quelques cas, si l'attribut `width` ou `height` n'est pas spécifié, le runtime AMP peut définir ces valeurs par défaut comme suit :
 
-- `amp-pixel`: Both `width` and `height` are defaulted to 0.
-- `amp-audio`: The default `width` and `height` are inferred from browser.
+- `amp-pixel` : `width` et `height` sont réglés par défaut sur 0.
+- `amp-audio` : les valeurs par défaut de `width` et `height` sont déduites du navigateur.
 
 ### `layout` <a name="layout"></a>
 
 AMP fournit un ensemble de mises en page qui spécifient le comportement d'un composant AMP dans la mise en page du document. Vous pouvez spécifier une mise en page pour un composant en ajoutant l'attribut `layout` avec l'une des valeurs spécifiées dans le tableau ci-dessous.
 
-**Example**: A simple responsive image, where width and height are used to determine the aspect ratio.
+**Exemple** : une image adaptative simple, où la largeur et la hauteur sont utilisées pour déterminer le rapport hauteur/largeur.
 
 [sourcecode:html]
 <amp-img
@@ -76,18 +76,18 @@ AMP fournit un ensemble de mises en page qui spécifient le comportement d'un co
 ></amp-img>
 [/sourcecode]
 
-Supported values for the `layout` attribute:
+Valeurs prises en charge pour l'attribut `layout` :
 
 <table>
   <thead>
     <tr>
-      <th width="30%">Value</th>
-      <th>Behavior  and  Requirements</th>
+      <th width="30%">Valeur</th>
+      <th>Comportement et exigences</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Not present</td>
+      <td>Absente</td>
       <td>Si aucune valeur n'est spécifiée, la mise en page du composant est déduite comme suit : <ul> <li>Si l'attribut <code>height</code> est présent et que <code>width</code> est absent ou défini sur <code>auto</code>, une mise en page <code>fixed-height</code> est supposée.</li> <li>Si <code>width</code> et <code>height</code> sont présents avec un attribut <code>sizes</code> ou <code>heights</code>, une mise en page <code>responsive</code> est supposé.</li> <li>Si <code>width</code> et <code>height</code> sont présents, une mise en page <code>fixed</code> est supposée.</li> <li>Si <code>width</code> et <code>height</code> sont absents, une mise en page <code>container</code> est supposée.</li> </ul>
 </td>
     </tr>
@@ -101,19 +101,19 @@ Supported values for the `layout` attribute:
     </tr>
     <tr>
       <td><code>fixed</code></td>
-      <td>The element has a fixed width and height with no responsiveness supported. The <code>width</code> and <code>height</code> attributes must be present. The only exceptions are the <code>amp-pixel</code> and <code>amp-audio</code> components. </td>
+      <td>L'élément a une largeur et une hauteur fixes sans prise en charge de la réactivité. Les attributs <code>width</code> et <code>height</code> doivent être présents. Les seules exceptions sont les composants <code>amp-pixel</code> et <code>amp-audio</code>.</td>
     </tr>
     <tr>
       <td><code>fixed-height</code></td>
-      <td>The element takes the space available to it but keeps the height unchanged. This layout works well for elements such as <code>amp-carousel</code> that involves content positioned horizontally. The <code>height</code> attribute must be present. The <code>width</code> attribute must not be present or must be equal to <code>auto</code>. </td>
+      <td>L'élément prend l'espace dont il dispose mais garde la hauteur inchangée. Cette mise en page fonctionne bien pour des éléments tels que <code>amp-carousel</code> qui impliquent un contenu positionné horizontalement. L'attribut <code>height</code> doit être présent. L'attribut <code>width</code> ne doit pas être présent ou doit être égal à <code>auto</code>.</td>
     </tr>
     <tr>
       <td><code>flex-item</code></td>
-      <td>The element and other elements in its parent with layout type <code>flex-item</code> take the parent container's remaining space when the parent is a flexible container (i.e., <code>display: flex</code>). The <code>width</code> and <code>height</code> attributes are not required.</td>
+      <td>L'élément et les autres éléments de son parent avec le type de mise en page <code>flex-item</code> prennent l'espace restant du conteneur parent lorsque le parent est un conteneur flexible (<code>display: flex</code>). Les attributs <code>width</code> et <code>height</code> ne sont pas obligatoires.</td>
     </tr>
     <tr>
       <td><code>intrinsic</code></td>
-      <td>The element takes the space available to it and resizes its height automatically to the aspect ratio given by the <code>width</code> and <code>height</code> attributes <em>until</em> it reaches the element's size defined by the `width` and `height` attributes passed to the <code>amp-img</code>, or reaches a CSS constraint, such as `max-width`. The width and height attributes must be present. This layout works very well for most AMP elements, including <code>amp-img</code>, <code>amp-carousel</code>, etc. The available space depends on the parent element and can also be customized using <code>max-width</code> CSS. This layout differs from <code>responsive</code> by having an intrinsic height and width. This is most apparent inside a floated element where a <code>responsive</code> layout will render 0x0 and an <code>intrinsic</code> layout will inflate to the smaller of its natural size or any CSS constraint.</td>
+      <td>L'élément prend l'espace dont il dispose et redimensionne automatiquement sa hauteur au rapport hauteur/largeur donné par les attributs <code>width</code> et <code>height</code> <em>jusqu'à</em> ce qu'il atteigne la taille d'élément définie par les attributs width et height transmis à <code>amp-img</code>, ou atteigne une contrainte CSS, telle que max-width. Les attributs width et height doivent être présents. Cette mise en page fonctionne très bien pour la plupart des éléments AMP, y compris <code>amp-img</code>, <code>amp-carousel</code>, etc. L'espace disponible dépend de l'élément parent et peut également être personnalisé à l'aide du CSS <code>max-width</code>. Cette mise en page diffère de <code>responsive</code> par sa hauteur et sa largeur intrinsèques. Cela est plus évident dans un élément flottant où une mise en page <code>responsive</code> rendra 0x0 et une mise en page <code>intrinsic</code> gonflera jusqu'à la plus petite valeur de sa taille naturelle ou de toute contrainte CSS.</td>
     </tr>
     <tr>
       <td><code>nodisplay</code></td>
@@ -121,7 +121,7 @@ Supported values for the `layout` attribute:
     </tr>
     <tr>
       <td><code>responsive</code></td>
-      <td>The element takes the space available to it and resizes its height automatically to the aspect ratio given by the <code>width</code> and <code>height</code> attributes. This layout works very well for most AMP elements, including <code>amp-img</code>, <code>amp-video</code>, etc.  The available space depends on the parent element and can also be customized using <code>max-width</code> CSS. The <code>width</code> and <code>height</code> attributes must be present.<p><strong>Note</strong>: Elements with <code>"layout=responsive"</code> have no intrinsic size. The size of the element is determined from its container element. To ensure your AMP element displays, you must specify a width and height for the  containing element. Do not specify <code>"display:table"</code> on the containing element as this overrides the display of the AMP element, rendering the AMP element invisible.</p>
+      <td>L’élément prend l’espace disponible et redimensionne automatiquement sa hauteur au rapport d’aspect donné par les attributs <code>width</code> et <code>height</code>. Cette mise en page fonctionne très bien pour la plupart des éléments AMP, y compris <code>amp-img</code>, <code>amp-video</code>, etc. L’espace disponible dépend de l’élément parent et peut également être personnalisé à l’aide du CSS <code>max-width</code>. Les attributs <code>width</code> et <code>height</code> doivent être présents.<p><strong>Remarque</strong> : les éléments avec <code>"layout=responsive"</code> n’ont pas de taille intrinsèque. La taille de l’élément est déterminée à partir de son élément conteneur. Pour garantir que votre élément AMP s’affiche, vous devez spécifier une largeur et une hauteur pour l’élément contenant. Ne spécifiez pas <code>"display:table"</code> sur l’élément contenant, car cela remplace l’affichage de l’élément AMP, et rend l’élément AMP invisible.</p>
 </td>
     </tr>
   </tbody>
@@ -129,13 +129,13 @@ Supported values for the `layout` attribute:
 
 ### `sizes` <a name="sizes"></a>
 
-All AMP elements that support the `responsive` layout, also support the `sizes` attribute. The value of this attribute is a sizes expression as described in the [img sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), but extended to all elements, not just images. In short, the `sizes` attribute describes how the width of the element is calculated depending on the media conditions.
+Tous les éléments AMP qui prennent en charge la mise en page `responsive` prennent également en charge l’attribut `sizes`. La valeur de cet attribut est une expression de tailles décrite dans [img sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), mais étendue à tous les éléments, pas seulement aux images. En bref, l’attribut `sizes` décrit comment la largeur de l’élément est calculée en fonction des conditions du média.
 
 Lorsque l'attribut `sizes` est spécifié avec les attributs `width` et `height`, l'attribut `layout` est défini par défaut sur `responsive`.
 
-**Example**: Using the `sizes` attribute
+**Exemple** : utilisation de l'attribut `sizes`
 
-In the following example, if the viewport is wider than `320px`, the image will be 320px wide, otherwise, it will be 100vw wide (100% of the viewport width).
+Dans l'exemple suivant, si la fenêtre est plus large que `320px`, l'image aura une largeur de 320px, sinon elle aura une largeur de 100vw (100 % de la largeur de la fenêtre).
 
 [sourcecode:html]
 <amp-img
@@ -150,11 +150,11 @@ In the following example, if the viewport is wider than `320px`, the image will 
 
 ### `disable-inline-width` <a name="disable-inline-width"></a>
 
-The `sizes` attribute on its own will set an inline `width` style on the element. When pairing `disable-inline-width` with `sizes`, the AMP element will propagate the value of `sizes` to the element's underlying tag, as with the `img` nested inside an `amp-img`, **without** setting the inline `width` as `sizes` typically does on its own in AMP.
+L'attribut `sizes` définira un style intégré `width` sur l'élément. Lors de l'association de `disable-inline-width` avec `sizes`, l'élément AMP propage la valeur `sizes` vers la balise sous-jacente de l'élément, comme avec `img` imbriqué dans un `amp-img`, **sans** définir la valeur de `width` intégrée comme `sizes` le fait généralement dans AMP.
 
-**Example**: Using the `disable-inline-width` attribute
+**Exemple** : utilisation de l'attribut `disable-inline-width`
 
-In the following example, the width of the `<amp-img>` element is unaffected, and `sizes` is only used to select one of the sources from the `srcset`.
+Dans l'exemple suivant, la largeur de l'élément `<amp-img>` n'est pas affectée et l'attribut `sizes` n'est utilisé que pour sélectionner l'une des sources du `srcset`.
 
 [sourcecode:html]
 <amp-img
@@ -170,16 +170,16 @@ In the following example, the width of the `<amp-img>` element is unaffected, an
 
 ### `heights` <a name="heights"></a>
 
-All AMP elements that support the `responsive` layout, also support the `heights` attribute. The value of this attribute is a sizes expression based on media expressions as similar to the [img sizes attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), but with two key differences:
+Tous les éléments AMP qui prennent en charge la mise en page `responsive` prennent également en charge l'attribut `heights`. La valeur de cet attribut est une expression des tailles basée sur des expressions de média similaires à l'attribut [img sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), mais avec deux différences clés :
 
-1. It applies to the height, not the width of the element.
-2. Percent values are allowed, e.g. `86%`. If a percent value is used, it indicates the percentage of the element's width.
+1. Elle s'applique à la hauteur et non à la largeur de l'élément.
+2. Les valeurs en pourcentage sont autorisées, par exemple `86%`. Si une valeur de pourcentage est utilisée, elle indique le pourcentage de la largeur de l'élément.
 
-When the `heights` attribute is specified along with `width` and `height`, the `layout` is defaulted to `responsive`.
+Lorsque l'attribut `heights` est spécifié avec `width` et `height`, `layout` est défini par défaut sur `responsive`.
 
-**Example**: Using the `heights` attribute
+**Exemple** : utilisation de l'attribut `heights`
 
-In the following example, the height of the image will default to 80% of the width, but if the viewport is wider than `500px`, the height is capped at `200px`. Because the `heights` attribute is specified along with `width` and `height`, the layout defaults to `responsive`.
+Dans l'exemple suivant, la hauteur de l'image sera fixée par défaut à 80 % de la largeur, mais si la fenêtre est plus large que `500px`, la hauteur sera limitée à `200px`. Étant donné que l'attribut `heights` est spécifié avec `width` et `height`, la mise en page sera par défaut `responsive`.
 
 [sourcecode:html]
 <amp-img
@@ -195,7 +195,7 @@ In the following example, the height of the image will default to 80% of the wid
 
 La plupart des éléments AMP prennent en charge l'attribut `media`. La valeur de `media` est une requête multimédia. Si la requête ne correspond pas, l'élément n'est pas du tout rendu, et ses ressources et éventuellement les ressources de ses enfants ne seront pas récupérées. Si la fenêtre du navigateur change de taille ou d'orientation, les requêtes média sont réévaluées et les éléments sont masqués et affichés en fonction des nouveaux résultats.
 
-**Example**: Using the `media` attribute
+**Exemple** : utilisation de l'attribut `media`
 
 Dans l'exemple suivant, nous avons 2 images avec des requêtes médias mutuellement exclusives. En fonction de la largeur de l'écran, l'une des deux images sera récupérée et rendue. L'attribut `media` est disponible sur tous les éléments AMP, il peut donc être utilisé avec des éléments non illustrés, tels que des annonces.
 
@@ -238,83 +238,83 @@ L'attribut `fallback` peut être défini sur n'importe quel élément HTML, pas 
 
 ### `noloading` <a name="noloading"></a>
 
-The `noloading` attribute indicates whether the "loading indicator" should be turned off for this element. Many AMP elements are allow-listed to show a "loading indicator", which is a basic animation that shows that the element has not yet fully loaded. The elements can opt out of this behavior by adding this attribute.
+L'attribut `noloading` indique si l'indicateur de chargement doit être désactivé pour cet élément. De nombreux éléments AMP sont autorisés à afficher un indicateur de chargement, qui est une animation de base indiquant que l'élément n'est pas encore complètement chargé. Les éléments peuvent désactiver ce comportement en ajoutant cet attribut.
 
-## (tl;dr) Summary of Layout Requirements & Behaviors <a name="tldr-summary-of-layout-requirements--behaviors"></a>
+## (tl;dr) Résumé des exigences et des comportements de mise en page <a name="tldr-summary-of-layout-requirements--behaviors"></a>
 
-The following table describes the acceptable parameters, CSS classes, and styles used for the `layout` attribute. Note that:
+Le tableau suivant décrit les paramètres acceptables, les classes CSS et les styles utilisés pour l'attribut `layout`. Notez que :
 
-1. Any CSS class marked prefixed with `-amp-` and elements prefixed with `i-amp-` are considered to be internal to AMP and their use in user stylesheets is not allowed. They are shown here simply for informational purposes.
-2. Even though `width` and `height` are specified in the table as required, the default rules may apply as is the case with `amp-pixel` and `amp-audio`.
+1. Toute classe CSS marquée avec le préfixe `-amp-` et tout élément avec le préfixe `i-amp-` sont considérés comme internes à AMP et leur utilisation dans les feuilles de style des utilisateurs n'est pas autorisée. Ils sont présentés ici simplement à titre informatif.
+2. Même si `width` et `height` sont spécifiés dans le tableau selon les besoins, les règles par défaut peuvent s'appliquer comme c'est le cas avec `amp-pixel` et `amp-audio`.
 
 <table>
   <thead>
     <tr>
-      <th width="21%">Layout</th>
-      <th width="20%">Width/<br>Height Required?</th>
-      <th width="20%">Defines Size?</th>
-      <th width="20%">Additional Elements</th>
-      <th width="19%">CSS "display"</th>
+      <th width="21%">Mise en page</th>
+      <th width="20%">Largeur/ <br> hauteur requise ?</th>
+      <th width="20%">Définit la taille ?</th>
+      <th width="20%">Éléments supplémentaires</th>
+      <th width="19%">Affichage CSS</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><code>container</code></td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
+      <td>Non</td>
+      <td>Non</td>
+      <td>Non</td>
       <td><code>block</code></td>
     </tr>
     <tr>
       <td><code>fill</code></td>
-      <td>No</td>
-      <td>Yes, parent's size.</td>
-      <td>No</td>
+      <td>Non</td>
+      <td>Oui, la taille des parents.</td>
+      <td>Non</td>
       <td><code>block</code></td>
     </tr>
     <tr>
       <td><code>fixed</code></td>
-      <td>Yes</td>
-      <td>Yes, specified by <code>width</code> and <code>height</code>.</td>
-      <td>No</td>
+      <td>Oui</td>
+      <td>Oui, spécifié par <code>width</code> et <code>height</code>.</td>
+      <td>Non</td>
       <td><code>inline-block</code></td>
     </tr>
     <tr>
       <td><code>fixed-height</code></td>
       <td>
-<code>height</code> only; <code>width</code> can be <code>auto</code>
+<code>height</code> seulement ; <code>width</code> peut être <code>auto</code>
 </td>
-      <td>Yes, specified by the parent container and <code>height</code>.</td>
-      <td>No</td>
+      <td>Oui, spécifié par le conteneur parent et <code>height</code>.</td>
+      <td>Non</td>
       <td><code>block</code></td>
     </tr>
     <tr>
       <td><code>flex-item</code></td>
-      <td>No</td>
-      <td>No</td>
-      <td>Yes, based on parent container.</td>
+      <td>Non</td>
+      <td>Non</td>
+      <td>Oui, en fonction du conteneur parent.</td>
       <td><code>block</code></td>
     </tr>
     <tr>
       <td><code>intrinsic</code></td>
-      <td>Yes</td>
-      <td>Yes, based on parent container and aspect ratio of <code>width:height</code>.</td>
-      <td>Yes, <code>i-amphtml-sizer</code>.</td>
+      <td>Oui</td>
+      <td>Oui, en fonction du conteneur parent et du rapport largeur/hauteur <code>width:height</code>.</td>
+      <td>Oui, <code>i-amphtml-sizer</code>.</td>
       <td>
-<code>block</code> (behaves like a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element" rel="nofollow">replaced element</a>)</td>
+<code>block</code> (se comporte comme un <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element" rel="nofollow">élément remplacé</a>)</td>
     </tr>
     <tr>
       <td><code>nodisplay</code></td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
+      <td>Non</td>
+      <td>Non</td>
+      <td>Non</td>
       <td><code>none</code></td>
     </tr>
     <tr>
       <td><code>responsive</code></td>
-      <td>Yes</td>
-      <td>Yes, based on parent container and aspect ratio of <code>width:height</code>.</td>
-      <td>Yes, <code>i-amphtml-sizer</code>.</td>
+      <td>Oui</td>
+      <td>Oui, en fonction du conteneur parent et du rapport largeur/hauteur <code>width:height</code>.</td>
+      <td>Oui, <code>i-amphtml-sizer</code>.</td>
       <td><code>block</code></td>
     </tr>
   </tbody>
