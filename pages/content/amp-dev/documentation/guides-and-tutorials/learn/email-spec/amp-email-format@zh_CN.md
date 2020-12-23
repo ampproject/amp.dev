@@ -137,7 +137,7 @@ AMPHTML 支持使用像素跟踪技术跟踪电子邮件打开状态，与常规
 - [AMP `CLIENT_ID`](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics#user-identification)
 - [`amp-analytics`](https://amp.dev/documentation/components/amp-analytics)
 - [`amp-pixel`](https://amp.dev/documentation/components/amp-pixel)
-- [AMP Variable Substitution](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics_basics/#variable-substitution)
+- [变量替换 ](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics_basics/#variable-substitution)
 
 ### 组件特定的考虑事项 <a name="component-specific-considerations"></a>
 
