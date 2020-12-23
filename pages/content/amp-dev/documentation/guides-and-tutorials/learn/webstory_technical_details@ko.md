@@ -139,12 +139,12 @@ AMP 웹 페이지 및 AMP로 작성된 웹 스토리의 차이점은 [`amp-story
 
 <table>
   <tr>
-   <td>MP4    </td>
-   <td>-crf 23    </td>
+   <td>MP4</td>
+   <td>-crf 23</td>
   </tr>
   <tr>
-   <td>WEBM    </td>
-   <td>-b:v 1M    </td>
+   <td>WEBM</td>
+   <td>-b:v 1M</td>
   </tr>
 </table>
 
@@ -159,11 +159,11 @@ HLS 세그먼트의 경우 지속 시간을 10초 이하로 유지하는 것이 
 <table>
   <tr>
    <td>MP4, HLS 및 DASH</td>
-   <td>H.264    </td>
+   <td>H.264</td>
   </tr>
   <tr>
-   <td>WEBM    </td>
-   <td>VP9    </td>
+   <td>WEBM</td>
+   <td>VP9</td>
   </tr>
 </table>
 
