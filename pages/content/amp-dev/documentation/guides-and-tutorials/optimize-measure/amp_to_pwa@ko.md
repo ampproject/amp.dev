@@ -1,8 +1,10 @@
 ---
-$title: AMP 사이트를 PWA로 전환하기
-$order: 10
+"$title": AMP 사이트를 PWA로 전환하기
+"$order": '10'
 description: PWA는 브라우저 내의 리소스를 캐싱하여 사용자에게 데이터, 애셋 및 오프라인 페이지를 제공하며 참여를 유도하고 정보를 전달합니다.
-tutorial: true
+tutorial: 'true'
+formats:
+- websites
 author: crystalonscript
 ---
 
@@ -70,6 +72,21 @@ AMP 웹사이트는 [`<amp-install-serviceworker>`](../../../documentation/compo
 
 <title>installing service worker</title> <script type='text/javascript'> if('serviceWorker' in navigator) { navigator.serviceWorker.register('./sw.js'); }; </script> [/sourcecode]
 
+[tip type="important"] **중요–** 사이트의 모든 콘텐츠를 캐싱하려면 서비스 워커가 루트 디렉토리(`/sw.js`)에서 제공되어야 합니다. [/tip]
+
+`<amp-install-serviceworker>`는 iframe을 생성하고 `data-iframe-src` 파일을 실행하여 서비스 워커를 설치합니다. `install-sw.html` 파일을 생성한 후 다음 코드를 추가하세요.
+
+[sourcecode:html]
+
+<!doctype html>
+<title>installing service worker</title>
+<script type='text/javascript'>
+ if('serviceWorker' in navigator) {
+   navigator.serviceWorker.register('./sw.js');
+ };
+</script>
+[/sourcecode]
+
 iframe이 브라우저에 AMP 서비스 워커 파일을 등록합니다.
 
 # 캐시할 항목 맞춤 설정
@@ -117,7 +134,7 @@ AMP를 사용한 PWA 생성을 성공적으로 완료하셨습니다! 이번 튜
 - [웹 앱 매니페스트](https://developers.google.com/web/fundamentals/web-app-manifest/) 생성
 - [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md)를 사용하여 AMP에 서비스 워커 설치
 - [AMP 서비스 워커](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html) 맞춤 설정
-- [링크 미리 가져오기 ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
+- [Prefetch links ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
 - 오프라인 페이지 생성
 
 [서비스 워커](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html) 및 [오프라인 UX 고려 사항](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux)에 대해 자세히 읽어보세요. [분석을 통해 참여를 유도하는 방법](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.html)을 학습하고 [AMP 페이지에 기본 분석을 설정하는 방법](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/tracking-engagement.html)에 대한 튜토리얼도 살펴보세요.
