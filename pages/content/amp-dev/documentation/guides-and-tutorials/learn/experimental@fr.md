@@ -16,13 +16,13 @@ Les développeurs et les utilisateurs peuvent choisir d'utiliser ces fonctionnal
 
 {% set experimental_components = g.docs ('/ content / amp-dev / documentation / components / reference') | selectattr ('experimental') | list%} {% if experimental_components | length%} Voici une liste de composants qui sont actuellement en état expérimental et sont prêts à être testés par les développeurs pour les premiers commentaires des utilisateurs:
 
-<ul> {% for component in experimental_components %}   <li><a href="%7B%7B%20component.url.path%20%7D%7D">{{ component.title }}</a></li> {% endfor %} </ul> {% endif %}
+<ul><br>{% for component in experimental_components %}<br>  <li><a href="{{ component.url.path }}">{{ component.title }}</a></li><br>{% endfor %}<br></ul><br>{% endif %}
 
 ## Activation d'AMP Dev Channel
 
 AMP Dev CHannel est un moyen d'activer l'utilisation sur un navigateur d'une version plus récente des bibliothèques AMP JS.
 
-The AMP Dev Channel release **may be less stable** and it may contain features not available to all users. Opt into this option if you'd like to help test new versions of AMP, report bugs or build documents that require a new feature that is not yet available to everyone.
+La version AMP Dev Channel **peut être moins stable** et contenir des fonctionnalités non disponibles pour tous les utilisateurs. Activez cette option si vous souhaitez aider à tester de nouvelles versions d'AMP, signaler des bogues ou créer des documents qui nécessitent une nouvelle fonctionnalité qui n'est pas encore disponible pour tout le monde.
 
 L'activation de Dev Channel est idéale pour:
 
@@ -82,7 +82,7 @@ Les essais d'origine offrent la possibilité de mettre en œuvre et de bénéfic
 
 {% set trial_components = g.docs('/content/amp-dev/documentation/components/reference')|selectattr('origin_trial')|list %} {% if trial_components|length %} Les composants de la liste suivante peuvent être actuellement testés via un essai d'origine:
 
-<ul> {% for component in trial_components %}   <li><a href="%7B%7B%20component.url.path%20%7D%7D">{{ component.title }}</a></li> {% endfor %} </ul> {% endif %}
+<ul><br>{% for component in trial_components %}<br>  <li><a href="{{ component.url.path }}">{{ component.title }}</a></li><br>{% endfor %}<br></ul><br>{% endif %}
 
 ### Activer un essai d'origine
 
