@@ -1,5 +1,5 @@
 ---
-"$title": Creating the bookend
+"$title": Création du serre-livre
 "$order": '7'
 description: Maintenant que vous avez ajouté toutes vos pages, regardons le dernier écran de la story, le serre-livre. Ce dernier écran résume la story ...
 author: bpaduch
