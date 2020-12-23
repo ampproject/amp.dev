@@ -23,7 +23,7 @@ have a look and request a pull request there.
 특정 문서가 원본에서는 예상대로 표시되고 작동하지만 캐시를 통해 볼 때([원본 URL을 Google AMP 캐시로 매핑하는 방법](https://developers.google.com/amp/cache/overview#amp-cache-url-format)) 오류가 발생한 경우 다음과 같은 조치를 취해보세요.
 
 1. 브라우저의 개발자/오류 도구 콘솔을 열고 표시되는 모든 오류 및 경고를 해결합니다
-2. Run the document through [an AMP document validator](https://search.google.com/test/amp) and resolve any unexpected errors or warnings.
+2. [AMPBench](https://search.google.com/test/amp)를 사용해 문서를 실행하고 예기치 않은 모든 오류 또는 경고를 해결합니다.
 
 이와 같은 조치를 취한 후에도 문제가 지속될 경우 아래 표를 확인해 주세요.
 
@@ -39,7 +39,7 @@ have a look and request a pull request there.
   <tbody>
     <tr>
       <td>웹 폰트가 표시되지 않음(폴백 폰트 사용)</td>
-      <td>The AMP Cache is not allowlisted by the font provider.</td>
+      <td>폰트 제공 업체가 AMP 캐시를 화이트리스트에 지정하지 않음.</td>
       <td>폰트 제공 업체에 문의하여 <a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">모든 캐시</a>를 허용 목록에 추가하도록 요청.</td>
     </tr>
     <tr>
