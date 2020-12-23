@@ -415,11 +415,11 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>play</code></td>
-    <td>Plays the audio. Is a no-op if the <code><amp-audio></code> element is a descendant of <code><amp-story></code>.</td>
+    <td>オーディオを再生します。<code>&lt;amp-audio></code> 要素が <code>&lt;amp-story></code> の子である場合は no-op です。</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
-    <td>Pauses the audio. Is a no-op if the <code><amp-audio></code> element is a descendant of <code><amp-story></code>.</td>
+    <td>オーディオを一時停止します。<code>&lt;amp-audio></code> 要素が <code>&lt;amp-story></code> の子である場合は no-op です。</td>
   </tr>
 </table>
 
