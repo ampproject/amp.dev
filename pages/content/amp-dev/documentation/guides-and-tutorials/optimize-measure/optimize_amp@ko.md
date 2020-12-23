@@ -70,7 +70,7 @@ AMP 페이지의 `<head>` 섹션에 권장되는 정렬은 다음과 같습니�
 
 2. 다음으로 `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>`를 활용해 AMP 런타임 `v0.js` `<script>` 태그를 미리 로드합니다. AMP 런타임이 로드될 때까지 [AMP 상용구는](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) `body { visibility:hidden }`를 통해 문서를 숨김 처리하므로 AMP 런타임은 최대한 빨리 다운로드를 시작해야 합니다.  AMP 런타임을 미리 로드할 경우 브라우저에서 우선순위가 더 높은 스크립트를 다운로드하도록 지시할 수 있습니다. 이를 방지하는 방법을 알아보려면 [server-side-rendering](#server-side-rendering)을 참조하세요. {amp-img6} {/amp-img6}
 
-3. If your page includes render-delaying extensions (e.g., amp-experiment, amp-dynamic-css-classes, amp-story), preload those extensions as they're required by the AMP runtime for rendering the page.
+3. 페이지에 렌더링 지연 확장자가 포함된 경우 (예: amp-experiment, amp-dynamic-css-classes, amp-story) 페이지 렌더링 시 AMP 런타임이 해당 확장자를 필요로 하므로 확장자를 미리 로드합니다.
 
 [sourcecode:html]
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-custom-css-0.1.js">
@@ -81,7 +81,7 @@ AMP 페이지의 `<head>` 섹션에 권장되는 정렬은 다음과 같습니�
 
 [sourcecode:html]<link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>[/sourcecode]
 
-1. Load the AMP runtime:
+1. AMP 런타임을로드합니다:
 
 [sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
 
@@ -200,12 +200,12 @@ AMP를 사용하면 글꼴 로딩을 최적화하는 데 수행할 수 있는 �
 
 - 가능하다면 [font-display: optional](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)을 사용하세요. 이미 캐시에 포함된 글꼴만을 사용하고 사용자 지정 글꼴이 로드되지 않을 경우 시스템 글꼴로 폴백합니다.
 - 웹 글꼴을 최적화합니다(예: WOFF2를 사용해 사용자 지정 글꼴 지원).
-- Preload custom fonts:
+- 사용자 정의 글꼴 미리로드:
 
 [sourcecode:html]
 <link rel="preload" as="font" href="/bundles/app/fonts/helveticaneue-roman-webfont.woff2" >[/sourcecode]
 
-- If you are using Google fonts, or any other font provider with unknown font URLs, preconnect the respective font server:
+- Google Fonts를 사용하거나 알 수 없는 글꼴 URL을 지원하는 기타 글꼴 제공업체를 사용할 경우 각 폰트 서버를 사전 연결합니다:
 
 [sourcecode:html]
  <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
