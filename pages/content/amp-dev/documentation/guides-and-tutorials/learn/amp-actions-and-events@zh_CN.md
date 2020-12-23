@@ -394,11 +394,11 @@ AMP 还定义了全局 `hide`、`show` 和 `toggleVisibility` 操作，您可以
   </tr>
   <tr>
     <td><code>play</code></td>
-    <td>Plays the audio. Is a no-op if the <code><amp-audio></code> element is a descendant of <code><amp-story></code>.</td>
+    <td>播放音频。如果 <code>&lt;amp-audio></code> 元素是 <code>&lt;amp-story></code> 的子级，则该操作为空操作。</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
-    <td>Pauses the audio. Is a no-op if the <code><amp-audio></code> element is a descendant of <code><amp-story></code>.</td>
+    <td>暂停音频。如果 <code>&lt;amp-audio></code> 元素是 <code>&lt;amp-story></code> 的子级，则该操作为空操作。</td>
   </tr>
 </table>
 
