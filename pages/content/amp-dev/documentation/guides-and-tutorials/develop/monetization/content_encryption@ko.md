@@ -1,8 +1,10 @@
 ---
-$title: 클라이언트 측 암호화를 통해 구독 콘텐츠 보호하기
-$titles:
-  teaser: 클라이언트 측 암호화를 통해 구독 콘텐츠 보호하기
-$order: 10
+formats:
+- websites
+"$title": 클라이언트 측 암호화를 통해 구독 콘텐츠 보호하기
+"$titles":
+  teaser: Protect your subscription content with client-side encryption.
+"$order": '10'
 description: 프리미엄 구독자 검증 및 클라이언트 측 콘텐츠 복호화를 구현하여 콘텐츠 암호화 문제를 해결하세요. 이러한 솔루션을 활용하면 프리미엄 액세스 권한이 있는 사용자는 새 페이지를 로드하거나 백엔드 응답을 기다릴 필요 없이 콘텐츠 복호화를 실행할 수 있습니다.
 author: CrystalOnScript
 ---
