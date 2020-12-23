@@ -21,9 +21,9 @@ La conception Web interactive consiste à créer des pages Web fluides qui répo
 
 Dans ce guide, nous allons vous montrer comment vous pouvez facilement implémenter ces fondamentaux d'interactivité dans AMP:
 
-- [Controlling the viewport](#controlling-the-viewport)
-- [Creating a responsive layout](#creating-a-responsive-layout)
-- [Scaling media](#scaling-media-for-the-page)
+- [Contrôle de la fenêtre](#controlling-the-viewport)
+- [Création d'une mise en page interactive](#creating-a-responsive-layout)
+- [Mise à l'échelle des médias](#scaling-media-for-the-page)
 
 [video src='https://www.youtube.com/watch?v=XDvbJ2apaiA' caption='Learn about responsive design in AMP from this video.']
 
@@ -37,7 +37,7 @@ Mais quelles valeurs devez-vous utiliser? Eh bien, dans AMP, tout est déjà fai
 <meta name="viewport" content="width=device-width" />
 ```
 
-These are the typical viewport settings that you'd use for a responsive site. Although `initial-scale=1` isn't required for a valid AMP page, it's recommended because it sets the zoom level to 1 when the page is first loaded. [/filter]
+Ce sont là les paramètres de fenêtre typiques que vous utiliseriez pour un site interactif. Bien que `initial-scale=1` ne soit pas requis pour une page AMP valide, il est recommandé, car il définit le niveau de zoom sur 1 lorsque la page est chargée pour la première fois. [/filter]
 
 [filter formats="email"] Cette section s'applique uniquement aux sites Internet, annonces et stories AMP. [/filter]
 
@@ -117,9 +117,9 @@ Il existe de nombreux types de vidéos que vous pouvez ajouter à vos pages AMP.
 
 Les images constituent une grande partie d'une page Web (environ [65% des octets de la page](http://httparchive.org/interesting.php#bytesperpage)). Au minimum, vos images doivent être visibles sur différentes tailles et orientations d'écran (c'est-à-dire que l'utilisateur n'a pas à faire défiler, pincer/zoomer pour voir l'image entière). Cela se fait facilement dans AMP via l'attribut `"layout=responsive"` (voir [Comment inclure des images dans AMP](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md) ). En plus de l'image interactive de base, vous souhaiterez peut-être diffuser plusieurs ressources image dans le but de:
 
-- [Serve crisp images for the right resolution](#serving-crisp-images-for-the-right-resolution)
-- [Change the art direction of an image](#changing-the-art-direction-of-an-image)
-- [Provide optimized image formats](#providing-optimized-images)
+- [Diffuser des images nettes pour la bonne résolution](#serving-crisp-images-for-the-right-resolution)
+- [Changer la conception artistique d'une image](#changing-the-art-direction-of-an-image)
+- [Comment fournir des images optimisées](#providing-optimized-images)
 
 #### Diffuser des images nettes pour la bonne résolution <a name="serving-crisp-images-for-the-right-resolution"></a>
 
@@ -157,7 +157,7 @@ Dans l'exemple suivant, nous avons plusieurs fichiers image avec les mêmes prop
 
 [/example]
 
-For example, say we have a device that has a viewport width of 412 px and a DPR of 2.6. Based on the code above, the image must be displayed at 75% of the viewport width, so the browser chooses an image close to 803 px (412 _ .75 _ 2.6), which happens to be `apple-800.jpg`.
+Par exemple, disons que nous avons un appareil qui a une largeur de fenêtre de 412 px et un DPR de 2,6. Sur la base du code ci-dessus, l'image doit être affichée à 75% de la largeur de la fenêtre, de sorte que le navigateur choisit une image proche de 803 px (412 _ 7,5 _ 2,6), qui se trouve être `apple-800.jpg`.
 
 [tip type="read-on"] **LIRE –** Pour plus de détails sur l'utilisation des attributs srcset et sizes dans AMP, consultez le guide [Conception avec les attributs srcset, sizes et heights](art_direction.md). [/tip]
 
@@ -215,8 +215,8 @@ En HTML, vous pouvez diffuser différents formats d'image en utilisant la balise
 
 Dans AMP, il existe deux façons de diffuser des images optimisées:
 
-- Developers using image formats that are not widely supported, such as WebP, can configure their server to process browser `Accept` headers and respond with image bytes and the appropriate [`Content-Type` header](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/). This avoids the browser from downloading image types it does not support. Read more about [content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation).[sourcecode:html]  Accept: image/webp,image/apng,image/_,_/\*;q=0.8  [/sourcecode]
-- Provide nested image fallbacks, such as the example below.
+- Les développeurs qui utilisent des formats d'image qui ne sont pas largement pris en charge, comme WebP, peuvent configurer leur serveur pour traiter les en-têtes `Accept` du navigateur et répondre avec des octets d'image et [l'en-tête `Content-Type`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/) approprié. Cela évite au navigateur de télécharger des types d'images qu'il ne prend pas en charge. Pour en savoir plus sur la  [négociation de contenu](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation).[sourcecode:html] Accept: image/webp,image/apng,image/<em>,</em>/*;q=0.8 [/sourcecode]
+- En fournissant des images de secours imbriquées, comme dans l'exemple ci-dessous.
 
 ##### Exemple: comment diffuser différents formats d'image
 
@@ -261,6 +261,6 @@ Voici quelques exemples qui, nous l'espérons, vous inspireront pour créer des 
 
 #### Conçu par AMP
 
-- [Examples](../../../../documentation/examples/index.html)
-- [Templates](../../../../documentation/templates/index.html)
+- [Exemples](../../../../documentation/examples/index.html)
+- [Modèles](../../../../documentation/templates/index.html)
 - [AMP Conf Workshop Codelab: Making beautiful AMPs](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)
