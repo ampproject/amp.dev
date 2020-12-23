@@ -87,7 +87,45 @@ AMP プラットフォームを統合するにあたり、データの取得や�
 AMP アナリティクスでは、アナリティクスベンダーを使って上記のケースを簡単に実装することができます。たとえば、Google アナリティクスの [グローバルサイトタグ](deep_dive_analytics.md#variable-substitution-ordering) を使うと、下のスニペットのようになります。
 
 ```html
-<amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
+<amp-analytics type="gtag" data-credentials="include">
+ <script type="application/json">
+  {
+    "vars": {
+      "gtag_id":"YOUR_GOOGLE_ANALYTICS_ID",
+      "config": {
+        "YOUR_GOOGLE_ANALYTICS_ID": {
+          "groups":"default"
+        }
+      }
+    },
+    "triggers": {
+      "storyProgress": {
+        "on":"story-page-visible",
+        "vars": {
+          "event_name":"custom",
+          "event_action":"story_progress",
+          "event_category":"${title}",
+          "event_label":"${storyPageId}",
+          "send_to": [
+            "YOUR_GOOGLE_ANALYTICS_ID"
+          ]
+        }
+      },
+      "storyEnd": {
+        "on":"story-last-page-visible",
+        "vars": {
+          "event_name":"custom",
+          "event_action":"story_complete",
+          "event_category":"${title}",
+          "send_to": [
+            "YOUR_GOOGLE_ANALYTICS_ID"
+          ]
+        }
+      }
+    }
+  }
+ </script>
+</amp-analytics>
 ```
 
 このデフォルト構成であれば、AMP ストーリーで完全に機能する構成を得られます。
@@ -101,27 +139,7 @@ AMP アナリティクスでは、アナリティクスベンダーを使って�
 <a><code data-md-type="codespan">amp-pixel</code></a> と <a><code data-md-type="codespan">amp-analytics</code></a> の両方のコンポーネントでは、すべての標準的な URL 変数置換を利用できます（<a>AMP HTML 変数の置換</a>を参照してください）。以下の例では、ページビューリクエストは、現在の AMP ドキュメントの正規 URL、そのタイトル、および<a>クライアント ID</a> とともに URL に送信されます。
 
 ```html
-<amp-analytics>
-<script type="application/json">
-{
-  "requests": {
-    "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}",
-  },
-  "vars": {
-    "account": "ABC123",
-  },
-  "triggers": {
-   "someEvent": {
-     "on": "visible",
-      "request": "pageview",
-      "vars": {
-        "title": "My homepage",
-      }
-    }
-  }
-}
-</script>
-</amp-analytics>
+<amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
 ```
 
 その単純な構造により、<a><code>amp-pixel</code></a> タグは、プラットフォームによって定義される変数か、AMP ランタイムが AMP ページからパースできる変数のみしか含むことができません。上記の例では、プラットフォームが <code>canonicalURL</code> と <code>clientId(site-user-id)</code> の両方に対する値を入力しています。<a><code>amp-analytics</code></a> タグは、<a><code>amp-pixel</code></a> と同じ変数のほか、タグ構成内に一意に定義された変数も含めることができます。
@@ -131,7 +149,27 @@ AMP アナリティクスでは、アナリティクスベンダーを使って�
 次の [<code>amp-analytics</code>](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) の例では、ページビューリクエストは、<a><code>amp-analytics</code></a> 構成内の、変数置換から抽出された追加データ、プラットフォームが提供するデータ、インラインで定義されるデータとともに URL に送信されます。
 
 ```html
-<amp-pixel src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"></amp-pixel>
+<amp-analytics>
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
+      },
+      "vars": {
+        "account":"ABC123"
+      },
+      "triggers": {
+        "someEvent": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage"
+          }
+        }
+      }
+    }
+  </script>
+</amp-analytics>
 ```
 
 上記の例では、変数、<code>account</code> および <code>title</code> は <a><code>amp-analytics</code></a> 構成内に定義されています。<code>canonicalUrl</code> と <code>clientId</code> 変数は構成に定義されていないため、値はプラットフォームによって置換されます。
