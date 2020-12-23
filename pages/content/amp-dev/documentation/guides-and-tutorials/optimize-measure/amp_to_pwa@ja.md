@@ -180,7 +180,7 @@ AMP で PWA を作成しました。このチュートリアルでは、以下�
 - [ウェブアプリマニフェスト](https://developers.google.com/web/fundamentals/web-app-manifest/)の作成
 - [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) による AMP へのサービスワーカーのインストール
 - [AMP サービスワーカー](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html)のカスタマイズ
-- [Prefetch links ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
+- [リンクのプリフェッチ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
 - オフラインページの作成
 
 さらに、[サービスワーカー](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html)と[オフライン UX に関する考慮事項](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux)をお読みください。[分析によるエンゲージメントの追跡](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.html)方法を学習し、[AMP ページ用の基本分析の構成方法](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/tracking-engagement.html)を説明したチュートリアルを実行してください。
