@@ -1,5 +1,5 @@
 ---
-"$title": AMP for Ads specification
+"$title": AMP for Ads の仕様
 order: '3'
 formats:
 - ads
@@ -43,21 +43,21 @@ AMPHTML 広告は、高速で高性能の広告を AMP ページにレンダリ�
 
 <table>
 <thead><tr>
-  <th>Rule</th>
-  <th>Rationale</th>
+  <th>ルール</th>
+  <th>根拠</th>
 </tr></thead>
 <tbody>
 <tr>
 <td>Must use <code><html ⚡4ads></code> or <code><html amp4ads></code> as its enclosing tags.</td>
-<td>Allows validators to identify a creative document as either a general AMP doc or a restricted AMPHTML ad doc and to dispatch appropriately.</td>
+<td>バリデータは、クリエイティブドキュメントを一般的な AMP ドキュメントか制限された AMPHTML 広告ドキュメントのどちらであるかを識別し、適宜ディスパッチできるようにします。</td>
 </tr>
 <tr>
 <td>Must include <code><script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script></code> as the runtime script instead of <code>https://cdn.ampproject.org/v0.js</code>.</td>
-<td>Allows tailored runtime behaviors for AMPHTML ads served in cross-origin iframes.</td>
+<td>クロスオリジンの iframe に配信される AMPHTML 広告のランタイムの動作をカスタマイズできます。</td>
 </tr>
 <tr>
 <td>Must not include a <code><link rel="canonical"></code> tag.</td>
-<td>Ad creatives don't have a "non-AMP canonical version" and won't be independently search-indexed, so self-referencing would be useless.</td>
+<td>広告クリエイティブには「non-AMP canonical version」がなく、検索用に個別にインデックス化されないため、自己参照が無意味になります。</td>
 </tr>
 <tr>
 <td>Can include optional meta tags in HTML head as identifiers, in the format of <code><meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code>. Those meta tags must be placed before the <code>amp4ads-v0.js</code> script. The value of <code>vendor</code> and <code>id</code> are strings containing only [0-9a-zA-Z_-]. The value of <code>type</code> is either <code>creative-id</code> or <code>impression-id</code>.</td>
@@ -116,31 +116,31 @@ AMPHTML 広告クリエイティブには、[一般的な AMP ドキュメント
 
 <table>
 <thead><tr>
-  <th>Rule</th>
-  <th>Rationale</th>
+  <th>ルール</th>
+  <th>根拠</th>
 </tr></thead>
 <tbody>
   <tr>
     <td>クリエイティブ CSS では、<code>position:fixed</code> と <code>position:sticky</code> は使用禁止。</td>
-    <td>
-<code>position:fixed</code> breaks out of shadow DOM, which AMPHTML ads depend on. lso, ads in AMP are already not allowed to use fixed position.</td>
+    <td> <code>position:fixed</code> は、AMPHTML 広告が依存するシャドー DOM から抜け出します。またすでに、AMP で定位置を使用することは許可されていません。</td>
   </tr>
   <tr>
     <td>
 <code>touch-action</code> は使用禁止。</td>
-    <td>An ad that can manipulate <code>touch-action</code> can interfere with    the user's ability to scroll the host document.</td>
+    <td>
+<code>touch-action</code> を操作できる広告では、ユーザーはホストドキュメントをスクロールできません。</td>
   </tr>
   <tr>
-    <td>Creative CSS is limited to 20,000 bytes.</td>
-    <td>Large CSS blocks bloat the creative, increase network    latency, and degrade page performance. </td>
+    <td>クリエイティブ CSS は 20,000 バイトに制限されています。</td>
+    <td>大規模な CSS ブロックによってクリエイティブが増幅するため、ネットワークレイテンシが増加し、ページのパフォーマンスが低下してしまいます。</td>
   </tr>
   <tr>
-    <td>Transition and animation are subject to additional restrictions.</td>
-    <td>AMP must be able to control all animations belonging to an    ad, so that it can stop them when the ad is not on screen or system resources are very low.</td>
+    <td>トランジションやアニメーションは、その他の追加制限に基づきます。</td>
+    <td>AMP は、広告が画面上にない場合やシステムリソースが非常に少ない場合にアニメーションを停止できるように、広告に属するすべてのアニメーションを制御できる必要があります。</td>
   </tr>
   <tr>
-    <td>Vendor-specific prefixes are considered aliases for the same symbol    without the prefix for the purposes of validation.  This means that if    a symbol <code>foo</code> is prohibited by CSS validation rules, then the symbol <code>-vendor-foo</code> will also be prohibited.</td>
-    <td>Some vendor-prefixed properties provide equivalent functionality to properties that are otherwise prohibited or constrained under these rules.<br><br><p>Example: <code>-webkit-transition</code> and <code>-moz-transition</code> are both considered aliases for <code>transition</code>.  They will only be allowed in contexts where bare <code>transition</code> would be allowed (see <a href="#selectors">Selectors</a> section below).</p>
+    <td>検証目的により、ベンダー特有のプレフィクスは、プレフィクスのない同一のシンボルのエイリアスとしてみなされます。つまり、シンボル <code>foo</code> が CSS 検証ルールで禁止されている場合、シンボル <code>-vendor-foo</code> も禁止されることになります。</td>
+    <td>一部のベンダー特有のプレフィクスを伴うプロパティは、これらのルールで禁止または制限されたプロパティと同等の機能を提供します。<br><br><p>例: <code>-webkit-transition</code> および <code>-moz-transition</code> は共に、<code>transition</code> のエイリアスとみなされます。これらは、ベア <code>transition</code> が許可されるコンテキストのみで許可されます（以下の「<a href="#selectors">セレクタ</a>」セクションを参照してください）。</p>
 </td>
   </tr>
 </tbody>
@@ -152,11 +152,11 @@ AMPHTML 広告クリエイティブには、[一般的な AMP ドキュメント
 
 `transition` と `animation` プロパティは、以下に該当するセレクタのみで許可されています。
 
-- Contain only `transition`, `animation`, `transform`, `visibility`, or `opacity` properties.
+- `transition`、`animation`, `transform`、`visibility`、または `opacity` プロパティのみを含むセレクタ。
 
-    *Rationale:* This allows the AMP runtime to remove this class from context to deactivate animations, when necessary for page performance.
+    *根拠:* ページのパフォーマンスを得るために、必要に応じてAMP ランタイムはコンテキストからこのクラスを削除して、アニメーションを無効化することができます。
 
-**Good**
+**良い例**
 
 [sourcecode:css]
 .box {
@@ -165,9 +165,9 @@ AMPHTML 広告クリエイティブには、[一般的な AMP ドキュメント
 }
 [/sourcecode]
 
-**Bad**
+**悪い例**
 
-Property not allowed in CSS class.
+許可されていないプロパティが CSS クラスに含まれます。
 
 [sourcecode:css]
 .box {
@@ -177,23 +177,23 @@ Property not allowed in CSS class.
 }
 [/sourcecode]
 
-##### Transitionable and animatable properties <a name="transitionable-and-animatable-properties"></a>
+##### トランジショナブルおよびアニメータブルプロパティ <a name="transitionable-and-animatable-properties"></a>
 
-The only properties that may be transitioned are opacity and transform. ([Rationale](http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/))
+トランジション可能なプロパティは、opacity と transform のみです。（[根拠](http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)）
 
-**Good**
+**良い例**
 
 [sourcecode:css]
 transition: transform 2s;
 [/sourcecode]
 
-**Bad**
+**悪い例**
 
 [sourcecode:css]
 transition: background-color 2s;
 [/sourcecode]
 
-**Good**
+**良い例**
 
 [sourcecode:css]
 @keyframes turn {
@@ -207,7 +207,7 @@ transition: background-color 2s;
 }
 [/sourcecode]
 
-**Bad**
+**悪い例**
 
 [sourcecode:css]
 @keyframes slidein {
@@ -223,9 +223,9 @@ transition: background-color 2s;
 }
 [/sourcecode]
 
-### Allowed AMP extensions and builtins <a name="allowed-amp-extensions-and-builtins"></a>
+### 許可されている AMP 拡張機能とビルトイン <a name="allowed-amp-extensions-and-builtins"></a>
 
-The following are *allowed* AMP extension modules and AMP built-in tags in an AMPHTML ad creative. Extensions or builtin tags not explicitly listed are prohibited.
+以下のリストには、AMPHTML 広告クリエイティブでの使用が*許可されている* AMP 拡張機能モジュールと AMP ビルトインタグです。ここに明示的に示されていない拡張機能またはビルトインタグの使用は禁止されています。
 
 - [amp-accordion](https://amp.dev/documentation/components/amp-accordion)
 - [amp-ad-exit](https://amp.dev/documentation/components/amp-ad-exit)
@@ -249,31 +249,31 @@ The following are *allowed* AMP extension modules and AMP built-in tags in an AM
 - [amp-social-share](https://amp.dev/documentation/components/amp-social-share)
 - [amp-video](https://amp.dev/documentation/components/amp-video)
 
-Most of the omissions are either for performance or to make AMPHTML ads simpler to analyze.
+上記に含まれていないもののほとんどは、パフォーマンスを維持するため、または AMPHTML 広告を分析しやすくするために含まれていません。
 
-*Example:* `<amp-ad>` is omitted from this list. It is explicitly disallowed because allowing an `<amp-ad>` inside an `<amp-ad>` could potentially lead to unbounded waterfalls of ad loading, which does not meet AMPHTML ads performance goals.
+*例:* `<amp-ad>` はこのリストに含まれていません。`<amp-ad>` で `<amp-ad>` を使用した場合、際限のないウォーターフォール式の広告読み込みが発生する可能性があり、AMPHTML 広告のパフォーマンスの目標にそぐわないため、これは明示的に許可されていません。
 
-*Example:* `<amp-iframe>` is omitted from this list. It is disallowed because ads could use it to execute arbitrary Javascript and load arbitrary content. Ads wanting to use such capabilities should return `false` from their [a4aRegistry](https://github.com/ampproject/amphtml/blob/master/ads/_a4a-config.js#L40) entry and use the existing '3p iframe' ad rendering mechanism.
+*例:* `<amp-iframe>` はこのリストに含まれていません。広告がこれを使用して任意の JavaScript を実行し、任意のコンテンツを読みこむ可能性があるためです。広告がこのような機能を使用しようとすると、<a>a4aRegistry</a> エントリから <code>false</code> が返され、既存の '3p iframe' 広告表示メカニズムが使用されます。
 
-*Example:* `<amp-facebook>`, `<amp-instagram>`, `<amp-twitter>`, and `<amp-youtube>` are all omitted for the same reason as `<amp-iframe>`: They all create iframes and can potentially consume unbounded resources in them.
+*例:* `<amp-facebook>`、`<amp-instagram>`、`<amp-twitter>`、および `<amp-youtube>` は、`<amp-iframe>` と同じ理由でリストに含まれていません。これらは  iframe を作成して、リソースを際限なく消費する可能性があります。
 
-*Example:* `<amp-ad-network-*-impl>` are omitted from this list. The `<amp-ad>` tag handles delegation to these implementation tags; creatives should not attempt to include them directly.
+*例:* `<amp-ad-network-*-impl>` はこのリストに含まれていません。`<amp-ad>` タグはこれらの実装タグへの移譲を処理します。クリエイティブはこれらのタグを直接含めてはいけません。
 
-*Example:* `<amp-lightbox>` is not yet included because even some AMPHTML ads creatives may be rendered in an iframe and there is currently no mechanism for an ad to expand beyond an iframe. Support may be added for this in the future, if there is demonstrated desire for it.
+*例:* `<amp-lightbox>` は、このリストにまだ含まれていません。AMPHTML 広告クリエイティブが iframe 内に表示されても、iframe を超えて拡大する仕組みがまだ広告に備わっていないためです。この機能の要望が示されれば、そのサポートが将来的に追加される可能性はあります。
 
-### HTML tags <a name="html-tags"></a>
+### HTML タグ <a name="html-tags"></a>
 
-The following are *allowed* tags in an AMPHTML ads creative. Tags not explicitly allowed are prohibited. This list is a subset of the general [AMP tag addendum allowlist](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md). Like that list, it is ordered consistent with HTML5 spec in section 4 [The Elements of HTML](http://www.w3.org/TR/html5/single-page.html#html-elements).
+以下は、AMPHTML 広告クリエイティブでの使用が*許可されている*タグです。明示的に示されていないタグの使用は禁止されています。このリストは、一般的な [AMP タグの allowlist 付録](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md) のサブセットです。そのリストと同様に、HTML5 仕様書のセクション 4「[The Elements of HTML](http://www.w3.org/TR/html5/single-page.html#html-elements)」に従って記載されています。
 
-Most of the omissions are either for performance or because the tags are not HTML5 standard. For example, `<noscript>` is omitted because AMPHTML ads depends on JavaScript being enabled, so a `<noscript>` block will never execute and, therefore, will only bloat the creative and cost bandwidth and latency. Similarly, `<acronym>`, `<big>`, et al. are prohibited because they are not HTML5 compatible.
+以下に記載されていないもののほとんどは、パフォーマンスを維持するため、またはタグが HTML5 標準ではないため記載されていません。たとえば、`<noscript>` は、AMPHTML 広告が有効化される JavaScript に依存しており、`<noscript>` ブロックは決して実行されることがなく、したがってクリエイティブを増幅し、帯域幅とレイテンシに影響を及ぼすため、以下には含まれていません。同様に、`<acronym>`、`<big>` などは、HTML5 対応ではないため禁止されています。
 
-#### 4.1 The root element <a name="41-the-root-element"></a>
+#### 4.1 ルート要素<a name="41-the-root-element"></a>
 
 4.1.1 `<html>`
 
-- Must use types `<html ⚡4ads>` or `<html amp4ads>`
+- `<html ⚡4ads>` または `<html amp4ads>` を使用する必要があります
 
-#### 4.2 Document metadata <a name="42-document-metadata"></a>
+#### 4.2 ドキュメントのメタデータ <a name="42-document-metadata"></a>
 
 4.2.1 `<head>`
 
@@ -281,53 +281,53 @@ Most of the omissions are either for performance or because the tags are not HTM
 
 4.2.4 `<link>`
 
-- `<link rel=...>` tags are disallowed, except for `<link rel=stylesheet>`.
+- `<link rel=...>` タグは使用できませんが、`<link rel=stylesheet>` はこの対象ではありません。
 
-- **Note:** Unlike in general AMP, `<link rel="canonical">` tags are prohibited.
+- **注意:** 一般的な AMP とは異なり、`<link rel="canonical">` タグは禁止されています。
 
     4.2.5 `<style>` 4.2.6 `<meta>`
 
-#### 4.3 Sections <a name="43-sections"></a>
+#### 4.3 セクション <a name="43-sections"></a>
 
 4.3.1 `<body>` 4.3.2 `<article>` 4.3.3 `<section>` 4.3.4 `<nav>` 4.3.5 `<aside>` 4.3.6 `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, and `<h6>` 4.3.7 `<header>` 4.3.8 `<footer>` 4.3.9 `<address>`
 
-#### 4.4 Grouping Content <a name="44-grouping-content"></a>
+#### 4.4 グループ化コンテンツ <a name="44-grouping-content"></a>
 
 4.4.1 `<p>` 4.4.2 `<hr>` 4.4.3 `<pre>` 4.4.4 `<blockquote>` 4.4.5 `<ol>` 4.4.6 `<ul>` 4.4.7 `<li>` 4.4.8 `<dl>` 4.4.9 `<dt>` 4.4.10 `<dd>` 4.4.11 `<figure>` 4.4.12 `<figcaption>` 4.4.13 `<div>` 4.4.14 `<main>`
 
-#### 4.5 Text-level semantics <a name="45-text-level-semantics"></a>
+#### 4.5 テキストレベルのセマンティクス <a name="45-text-level-semantics"></a>
 
 4.5.1 `<a>` 4.5.2 `<em>` 4.5.3 `<strong>` 4.5.4 `<small>` 4.5.5 `<s>` 4.5.6 `<cite>` 4.5.7 `<q>` 4.5.8 `<dfn>` 4.5.9 `<abbr>` 4.5.10 `<data>` 4.5.11 `<time>` 4.5.12 `<code>` 4.5.13 `<var>` 4.5.14 `<samp>` 4.5.15 `<kbd >` 4.5.16 `<sub>` and `<sup>` 4.5.17 `<i>` 4.5.18 `<b>` 4.5.19 `<u>` 4.5.20 `<mark>` 4.5.21 `<ruby>` 4.5.22 `<rb>` 4.5.23 `<rt>` 4.5.24 `<rtc>` 4.5.25 `<rp>` 4.5.26 `<bdi>` 4.5.27 `<bdo>` 4.5.28 `<span>` 4.5.29 `<br>` 4.5.30 `<wbr>`
 
-#### 4.6 Edits <a name="46-edits"></a>
+#### 4.6 編集 <a name="46-edits"></a>
 
 4.6.1 `<ins>` 4.6.2 `<del>`
 
-#### 4.7 Embedded Content <a name="47-embedded-content"></a>
+#### 4.7 埋め込みコンテンツ <a name="47-embedded-content"></a>
 
-- Embedded content is supported only via AMP tags, such as `<amp-img>` or `<amp-video>`.
+- 埋め込みコンテンツは、`<amp-img>` または `<amp-video>` といった AMP タグ経由でのみサポートされます。
 
 #### 4.7.4 `<source>` <a name="474-source"></a>
 
 #### 4.7.18 SVG <a name="4718-svg"></a>
 
-SVG tags are not in the HTML5 namespace. They are listed below without section ids.
+SVG タグは HTML5 名前空間にありません。セクション ID 無しで記載されています。
 
 `<svg>``<g>``<path>``<glyph>``<glyphref>``<marker>``<view>``<circle>``<line>``<polygon>``<polyline>``<rect>``<text>``<textpath>``<tref>``<tspan>``<clippath>``<filter>``<lineargradient>``<radialgradient>``<mask>``<pattern>``<vkern>``<hkern>``<defs>``<use>``<symbol>``<desc>``<title>`
 
-#### 4.9 Tabular data <a name="49-tabular-data"></a>
+#### 4.9 表形式データ <a name="49-tabular-data"></a>
 
 4.9.1 `<table>` 4.9.2 `<caption>` 4.9.3 `<colgroup>` 4.9.4 `<col>` 4.9.5 `<tbody>` 4.9.6 `<thead>` 4.9.7 `<tfoot>` 4.9.8 `<tr>` 4.9.9 `<td>` 4.9.10 `<th>`
 
-#### 4.10 Forms <a name="410-forms"></a>
+#### 4.10 フォーム <a name="410-forms"></a>
 
 4.10.8 `<button>`
 
-#### 4.11 Scripting <a name="411-scripting"></a>
+#### 4.11 スクリプティング <a name="411-scripting"></a>
 
-- Like a general AMP document, the creative's `<head>` tag must contain a `<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>` tag.
-- Unlike general AMP, `<noscript>` is prohibited.
-    - *Rationale:* Since AMPHTML ads requires Javascript to be enabled to function at all, `<noscript>` blocks serve no purpose in AMPHTML ads and only cost network bandwidth.
-- Unlike general AMP, `<script type="application/ld+json">` is prohibited.
-    - *Rationale:* JSON LD is used for structured data markup on host pages, but ad creatives are not standalone documents and don't contain structured data. JSON LD blocks in them would just cost network bandwidth.
-- All other scripting rules and exclusions are carried over from general AMP.
+- 一般的な AMP ドキュメントと同様に、クリエイティブの `<head>` タグには、`<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>` タグが含まれている必要があります。
+- 一般的な AMP とは異なり、`<noscript>` は禁止されています。
+    - *根拠:* AMPHTML 広告が’機能するには、Javascript が必ず必要です。AMPHTML 広告の `<noscript>` ブロックには意味がないため、ネットワーク帯域幅を浪費してしまいます。
+- 一般的な AMP とは異なり、`<script type="application/ld+json">` は禁止されています。
+    - *根拠:* ホストページでは構造化データのマークアップに JSON LD が使用されていますが、広告クリエイティブはスタンドアロンドキュメントではなく、構造化データを持ちません。JSON LD ブロックは、ネットワーク帯域幅を浪費してしまいます。
+- その他すべてのスクリプティングルールと除外については、一般的な AMP の内容が適用されます。
