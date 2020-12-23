@@ -180,9 +180,9 @@ http://localhost:8000/article.amp.html#development=1
 
 [tip] 您也可以使用其他工具验证您的 AMP 网页，例如：
 
-- The [AMP Validator extension for Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc)
-- The [AMP Validator extension for Opera](https://addons.opera.com/en-gb/extensions/details/amp-validator/)
-- [AMP 验证工具网络界面](https://validator.ampproject.org/)
+- [适用于 Chrome 的 AMP 验证工具扩展程序](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc)
+- [适用于 Opera 的 AMP 验证工具扩展程序](https://addons.opera.com/zh-cn/extensions/details/amp-validator/)
+- [AMP 验证工具网页界面](https://validator.ampproject.org/)
 - …等等
 
 要想了解详情，请参阅[验证 AMP 网页](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)指南。 [/tip]
