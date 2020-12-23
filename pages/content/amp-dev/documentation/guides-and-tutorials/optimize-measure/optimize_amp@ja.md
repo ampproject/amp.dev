@@ -22,7 +22,7 @@ AMP ページはデフォルトで高速に読み込めるようになってい�
 
 たとえば、以下の最適化テクニックを適用することができます。
 
-- [Optimized AMP runtime loading](#optimize-the-amp-runtime-loading)
+- [AMP ランタイム読み込みの最適化](#optimize-the-amp-runtime-loading)
 - [ヒーロー画像のプリロード](#preload-hero-images)（画像のサイズ/エンコーディング自体は未変更）
 - [カスタムフォントの最適化](#optimize-custom-fonts)（画像のサイズ/エンコーディング自体は未変更）
 
@@ -70,7 +70,7 @@ AMP では、`<head>` セクションに許可されるマークアップを制�
 
 2. 次に、`<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>` で AMP ランタイム `v0.js` `<script>` タグをプリロードします。[AMP ボイラープレート](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) は AMP ランタイムが読み込まれるまで `body { visibility:hidden }` 経由でドキュメントを非表示にするため、AMP ランタイムはできるだけ早い段階でダウンロードし始めます。AMP ランタイムをプリロードすると、ブラウザに最優先でスクリプトをダウンロードするように指示されます。これを回避する方法については、[server-side-rendering](#server-side-rendering) を参照してください。{amp-img6} {/amp-img6}
 
-3. If your page includes render-delaying extensions (e.g., amp-experiment, amp-dynamic-css-classes, amp-story), preload those extensions as they're required by the AMP runtime for rendering the page.
+3. ページにレンダリングを遅延させる拡張機能（amp-experiment、amp-dynamic-css-classes、amp-story など）が含まれる場合、AMP ランタイムがページをレンダリングするにはその拡張機能が必要であるため、拡張機能をプリロードします。
 
 [sourcecode:html]
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-custom-css-0.1.js">
@@ -81,7 +81,7 @@ AMP では、`<head>` セクションに許可されるマークアップを制�
 
 [sourcecode:html]<link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>[/sourcecode]
 
-1. Load the AMP runtime:
+1. AMP ランタイムを読み込みます。
 
 [sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
 
@@ -200,12 +200,12 @@ AMP では、フォントの読み込みを最適化する方法がいくつか�
 
 - 可能であれば、[font-display: optional](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display) を使用します。この場合、すでにキャッシュに存在するフォントのみが使用され、カスタムフォントがまだ読み込まれていない場合は、システムフォントにフォールバックします。
 - ウェブフォントを最適化します（WOFF2 を使ってカスタムフォントを配信するなど）。
-- Preload custom fonts:
+- カスタムフォントを以下のようにプリロードします。
 
 [sourcecode:html]
 <link rel="preload" as="font" href="/bundles/app/fonts/helveticaneue-roman-webfont.woff2" >[/sourcecode]
 
-- If you are using Google fonts, or any other font provider with unknown font URLs, preconnect the respective font server:
+- Google フォントを使用している場合、またはフォント URL が不明なフォントプロバイダーを使用している場合は、各フォントサーバーに事前に接続（preconnect）します。
 
 [sourcecode:html]
  <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
