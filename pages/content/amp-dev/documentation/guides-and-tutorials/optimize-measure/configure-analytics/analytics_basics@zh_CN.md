@@ -85,7 +85,45 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[`amp-p
 借助 AMP 分析，您可以使用任何分析供应商轻松地实现上述分析。例如，对于 Google Analytics（分析）的[全局网站代码](https://developers.google.com/gtagjs/)，配置将如以下片段所示。
 
 ```html
-<amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
+<amp-analytics type="gtag" data-credentials="include">
+ <script type="application/json">
+  {
+    "vars": {
+      "gtag_id":"YOUR_GOOGLE_ANALYTICS_ID",
+      "config": {
+        "YOUR_GOOGLE_ANALYTICS_ID": {
+          "groups":"default"
+        }
+      }
+    },
+    "triggers": {
+      "storyProgress": {
+        "on":"story-page-visible",
+        "vars": {
+          "event_name":"custom",
+          "event_action":"story_progress",
+          "event_category":"${title}",
+          "event_label":"${storyPageId}",
+          "send_to": [
+            "YOUR_GOOGLE_ANALYTICS_ID"
+          ]
+        }
+      },
+      "storyEnd": {
+        "on":"story-last-page-visible",
+        "vars": {
+          "event_name":"custom",
+          "event_action":"story_complete",
+          "event_category":"${title}",
+          "send_to": [
+            "YOUR_GOOGLE_ANALYTICS_ID"
+          ]
+        }
+      }
+    }
+  }
+ </script>
+</amp-analytics>
 ```
 
 此默认配置应该会为您提供一个完整的有效 AMP 故事配置。
@@ -99,29 +137,7 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[`amp-p
 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 和 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 组件均允许所有标准网址变量替换（请参阅 [AMP HTML 变量替换](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)）。在以下示例中，网页浏览请求将随当前 AMP 文档的规范网址、其标题以及[客户端 ID](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) 一起发送到相应网址：
 
 ```html
-<amp-analytics>
-
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}",
-  },
-  "vars": {
-    "account": "ABC123",
-  },
-  "triggers": {
-    "someEvent": {
-      "on": "visible",
-      "request": "pageview",
-      "vars": {
-        "title": "My homepage",
-      }
-    }
-  }
-}
-</script>
-
-</amp-analytics>
+<amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
 ```
 
 由于 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 标记的简单性，它只可包括平台定义的变量或 AMP 运行时可从 AMP 网页中解析的变量。在上面的示例中，平台会填充 `canonicalURL` 和 `clientId(site-user-id)` 的值。 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 标记可包括与 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 相同的变量，以及标记配置内唯一定义的变量。
@@ -131,7 +147,27 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[`amp-p
 在以下 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 示例中，网页浏览请求将发送到相应网址，其中还包含从变量替换中提取的其他数据（某些由平台提供，某些在 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 配置中直接定义）：
 
 ```html
-<amp-pixel src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"></amp-pixel>
+<amp-analytics>
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
+      },
+      "vars": {
+        "account":"ABC123"
+      },
+      "triggers": {
+        "someEvent": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage"
+          }
+        }
+      }
+    }
+  </script>
+</amp-analytics>
 ```
 
 在上面的示例中，变量 `account` 和 `title` 是在 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 配置中定义的。变量 `canonicalUrl` 和 `clientId` 不是在配置中定义的，因此它们的值将被平台替换。
