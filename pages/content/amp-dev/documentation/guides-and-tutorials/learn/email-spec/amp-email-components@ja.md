@@ -33,9 +33,9 @@ limitations under the License.
 
 以下は、現在 AMP メールメッセージでサポートされている AMP コンポーネントのリストです。コンポーネントは次のカテゴリに分類されています。
 
-- [Dynamic Content](#dynamic-content)
-- [Layout](#layout)
-- [Media](#media)
+- [動的コンテンツ ](#dynamic-content)
+- [レイアウト ](#layout)
+- [レイアウト ](#media)
 
 ## 動的コンテンツ <a name="dynamic-content"></a>
 
@@ -52,7 +52,7 @@ limitations under the License.
 
 要素 | 説明
 --- | ---
-[layout attributes](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/#layout-attributes) | レイアウトの動作は、レイアウト属性によって決定します。
+[レイアウト属性 ](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/#layout-attributes) | レイアウトの動作は、レイアウト属性によって決定します。
 [`<amp-accordion>`](https://amp.dev/documentation/components/amp-accordion) | さまざまなセクションの表示/非表示を簡単に行えるようにする UI 要素です。
 [`<amp-carousel>`](https://amp.dev/documentation/components/amp-carousel) | カルーセル UI コンポーネント。
 [`<amp-fit-text>`](https://amp.dev/documentation/components/amp-fit-text) | テキストを特定の領域に適合させるためのヘルパーコンポーネント。
