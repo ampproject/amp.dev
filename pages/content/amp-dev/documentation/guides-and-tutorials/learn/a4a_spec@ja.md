@@ -4,10 +4,7 @@ order: '3'
 formats:
 - ads
 teaser:
-  text: |2-
-
- "_If you'd like to propose changes to the standard, please comment on the"
-    [Intent
+  text: 標準への変更を提案する場合は、Intent to Implement としてコメントを
 toc: 'true'
 ---
 
@@ -109,11 +106,11 @@ AMPHTML 広告クリエイティブには、[一般的な AMP ドキュメント
 </style>
 [/sourcecode]
 
-*Rationale:* The `amp-boilerplate` style hides body content until the AMP runtime is ready and can unhide it. If Javascript is disabled or the AMP runtime fails to load, the default boilerplate ensures that the content is eventually displayed regardless. In AMPHTML ads, however, if Javascript is entirely disabled, AMPHTML ads won't run and no ad will ever be shown, so there is no need for the `<noscript>` section. In the absence of the AMP runtime, most of the machinery that AMPHTML ads rely on (e.g., analytics for visibility tracking or `amp-img` for content display) won't be available, so it's better to display no ad than a malfunctioning one.
+<em>根拠:</em> <code>amp-boilerplate</code> スタイルは、AMP ランタイムの準備が整うまで body コンテンツを非表示に、準備ができたらそれを表示します。Javascript が無効化されているか AMP ランタイムが読み込みに失敗すると、デフォルトのボイラープレートによって、準備の可否にかかわらず最終的にコンテンツが表示されます。ただし、AMPHTML 広告では Javascript が完全に無効化されているため、AMPHTML 広告は実行せず、広告が表示されることがありません。したがって、<code><noscript></code> セクションは不要と言えます。AMP ランタイムが存在しない場合、AMPHTML 広告が依存する機構のほとんど（可視性追跡またはコンテンツ表示用の <code>amp-img</code> の分析など）は利用できないため、正しく機能しない広告を表示するよりも、広告を何も表示しない方が賢明と言えます。
 
-Finally, the AMPHTML ad boilerplate uses `amp-a4a-boilerplate` rather than `amp-boilerplate` so that validators can easily identify it and produce more accurate error messages to help developers.
+最後に、AMPHTML 広告ボイラープレートは、<code>amp-boilerplate</code> ではなく <code>amp-a4a-boilerplate</code> を使用するため、バリデータはそれを簡単に識別子、開発者が理解しやすいより正確なエラーを発することができます。
 
-Note that the same rules about mutations to the boilerplate text apply as in the [general AMP boilerplate](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md).
+ボイラープレートテキストには、<a>一般的な AMP ボイラープレート</a>と同じミューテーションに関するルールが適用されることに注意してください。
 
 ### CSS <a name="css"></a>
 
@@ -153,7 +150,7 @@ Note that the same rules about mutations to the boilerplate text apply as in the
 
 ##### セレクタ <a name="selectors"></a>
 
-The `transition` and `animation` properties are only allowed on selectors that:
+`transition` と `animation` プロパティは、以下に該当するセレクタのみで許可されています。
 
 - Contain only `transition`, `animation`, `transform`, `visibility`, or `opacity` properties.
 
