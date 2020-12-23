@@ -238,16 +238,12 @@ Il existe différents outils que vous pouvez utiliser pour encoder des vidéos e
   </thead>
   <tbody>
     <tr>
-     <td>
-<a href="https://www.ffmpeg.org/about.html">FFmpeg</a>
-     </td>
+     <td><a href="https://www.ffmpeg.org/about.html">FFmpeg</a></td>
      <td>Optimisations recommandées:       <ul>         <li>Pour MP4, utilisez <code>-crf 23</code>.</li>         <li>Pour WEBM, utilisez <code>-b:v 1M</code>.</li>       </ul>
 </td>
     </tr>
     <tr>
-     <td>
-<a href="https://libav.org/avconv.html">avconv</a>
-     </td>
+     <td><a href="https://libav.org/avconv.html">avconv</a></td>
      <td>Optimisations recommandées:       <ul>         <li>Pour MP4, utilisez <code>-crf 23</code>.</li>         <li>Pour WEBM, utilisez <code>-b:v 1M</code>.</li>       </ul>
 </td>
     </tr>
