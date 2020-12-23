@@ -38,27 +38,27 @@ limitations under the License.
 
 <div class="noshowtoc"></div>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true">
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#why-do-i-need-cors-for-my-own-origin-" data-md-type="link">Why do I need CORS for my own origin?</a></li>
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#utilizing-cookies-for-cors-requests" data-md-type="link">Utilizing cookies for CORS requests</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#why-do-i-need-cors-for-my-own-origin-" data-md-type="link">自分のオリジンに CORS を使用する必要があるのはなぜですか？</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#utilizing-cookies-for-cors-requests" data-md-type="link">CORS リクエストに cookie を使用する</a></li>
 <li data-md-type="list_item" data-md-list-type="unordered">
-<p data-md-type="paragraph"><a href="#cors-security-in-amp" data-md-type="link">CORS security in AMP</a></p>
+<p data-md-type="paragraph"><a href="#cors-security-in-amp" data-md-type="link">AMP における CORS セキュリティ</a></p>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true"><li data-md-type="list_item" data-md-list-type="unordered">
-<p data-md-type="paragraph"><a href="#verify-cors-requests" data-md-type="link">Verify CORS requests</a></p>
+<p data-md-type="paragraph"><a href="#verify-cors-requests" data-md-type="link">CORS リクエストの検証</a></p>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true">
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#1-allow-requests-for-specific-cors-origins" data-md-type="link">1) Allow requests for specific CORS origins</a></li>
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#2-allow-same-origin-requests" data-md-type="link">2) Allow same-origin requests</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#1-allow-requests-for-specific-cors-origins" data-md-type="link">1) 特定委の CORS オリジンのリクエストを許可する</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#2-allow-same-origin-requests" data-md-type="link">2) same-origin リクエストを許可する</a></li>
 </ul>
 </li></ul>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true">
 <li data-md-type="list_item" data-md-list-type="unordered">
-<p data-md-type="paragraph"><a href="#send-cors-response-headers" data-md-type="link">Send CORS response headers</a></p>
+<p data-md-type="paragraph"><a href="#send-cors-response-headers" data-md-type="link">CORS レスポンスヘッダーの送信</a></p>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true"><li data-md-type="list_item" data-md-list-type="unordered"><a href="#access-control-allow-origin-origin" data-md-type="link">Access-Control-Allow-Origin: </a></li></ul>
 </li>
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#processing-state-changing-requests" data-md-type="link">Processing state changing requests</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#processing-state-changing-requests" data-md-type="link">状態が変化するリクエストの処理</a></li>
 </ul>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true">
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#example-walkthrough-handing-cors-requests-and-responses" data-md-type="link">Example walkthrough: Handing CORS requests and responses</a></li>
-<li data-md-type="list_item" data-md-list-type="unordered"><a href="#testing-cors-in-amp" data-md-type="link">Testing CORS in AMP</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#example-walkthrough-handing-cors-requests-and-responses" data-md-type="link">サンプルウォークスルー: CORS リクエストとレスポンスの処理</a></li>
+<li data-md-type="list_item" data-md-list-type="unordered"><a href="#testing-cors-in-amp" data-md-type="link">AMP での CORS のテスト</a></li>
 </ul>
 </li>
 </ul>
@@ -161,7 +161,7 @@ CORS リクエストを検証した後に生成される HTTP レスポンスに
 
 W3 CORS 仕様書では、レスポンスで <code>*</code> の値を返すことを許可していますが、セキュリティを改善するために、以下のようにする必要があります。
 
-- If the `Origin` header is present, validate and echo the value of the <code><code data-md-type="codespan">Origin</code> header.
+- `Origin` ヘッダーが存在する場合は、<code>Origin</code> ヘッダーの値を検証してエコーする。
 
 ### 状態が変化するリクエストの処理 <a name="processing-state-changing-requests"></a>
 
