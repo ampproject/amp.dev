@@ -244,7 +244,6 @@ Retardons l'entrée de la première image pour qu'elle se rapproche du moment o�
     animate-in="fade-in"
     animate-in-delay="1s">
 </amp-img>
-
 ```
 
 Refresh and reload your story.  Your last page should look like this:
