@@ -1,6 +1,6 @@
 ---
 formats:
-- 페이지를 검색할 수 있도록 설정
+- websites
 "$title": 검색 가능한 페이지로 설정
 "$titles":
   teaser: 검색 가능한 페이지로 설정
@@ -25,7 +25,7 @@ teaser:
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-AMP 페이지에 다음을 추가합니다.
+그리고 이것은 AMP 페이지에 :
 
 [sourcecode:html]
 
