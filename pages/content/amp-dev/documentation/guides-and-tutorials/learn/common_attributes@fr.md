@@ -1,7 +1,7 @@
 ---
-"$title": Common element attributes
+"$title": "Attributs d'élément communs"
 "$order": '1'
-description: AMP provides a set of common attributes that are extended to many AMP components (and HTML elements). This document describes each of the common attributes.
+description: "AMP fournit un ensemble d'attributs communs qui sont étendus à de nombreux composants AMP (et éléments HTML). Ce document décrit chacun des attributs communs."
 toc: 'true'
 ---
 
@@ -25,14 +25,14 @@ Pour plus d'informations, consultez la section [Caractères de remplacement et s
 
 ## heights
 
-All AMP elements that support the `responsive` layout, also support the `heights` attribute. The value of this attribute is a sizes expression based on media expressions, similar to the [sizes attribute on `img` tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) but with two key differences:
+Tous les éléments AMP qui prennent en charge la mise en page `responsive`, prennent également en charge l'attribut `heights`. La valeur de cet attribut est une expression de tailles basée sur des expressions de médias, similaire à [ l'attribut de tailles sur les balises `img`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) mais avec deux différences essentielles:
 
 1. La valeur s'applique à la hauteur et non à la largeur de l'élément.
 2. Les valeurs en pourcentage sont autorisées. Une valeur en pourcentage indique le pourcentage de la largeur de l'élément. Par exemple, une valeur de `80%` indique que la hauteur de l'élément correspondra à 80% de la largeur de l'élément.
 
 Remarque: lorsque l'attribut `heights` est spécifié avec la `width` et la `height` , la `layout` est définie par défaut sur `responsive` .
 
-Example:
+Exemple:
 
 ```html
 <amp-img src="amp.png"
@@ -41,7 +41,7 @@ Example:
 </amp-img>
 ```
 
-For more information, see [Art direction with srcset, sizes & heights](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md).
+Pour plus d'informations, consultez la section [Direction artistique avec srcset, tailles et hauteurs](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md).
 
 ## layout
 
@@ -151,7 +151,7 @@ Exemple:
 </amp-img>
 ```
 
-Will produce the following nested `img ` tag:
+Donnera la balise imbriquée `img ` suivante:
 
 ```html
 <img decoding="async"
