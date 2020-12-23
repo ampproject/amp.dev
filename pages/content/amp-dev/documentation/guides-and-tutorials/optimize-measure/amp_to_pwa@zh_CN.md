@@ -20,7 +20,7 @@ author: crystalonscript
 
 [tip type="default"] **提示**：针对快速网络服务器，请运行 `python -m SimpleHTTPServer`。[/tip]
 
-You should be able to view the landing page for Lyrical Lyghtning, the Mobile Music Magic festival. It has one link on the homepage to view the schedule and which stage the bands are on.
+您应该能够查看名为“Lyrical Lightning”的移动魔术音乐节的着陆页。它的首页上包含一个链接，可供查看乐队的演出日程和舞台。
 
 {{ image('/static/img/docs/tutorials/tut-lyricallyghtning.png', 594, 558, alt='PWA 图片' ) }}
 
@@ -180,7 +180,7 @@ assets: []
 - 创建 [Web 应用清单](https://developers.google.com/web/fundamentals/web-app-manifest/)
 - 使用 [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) 在 AMP 中安装 Service Worker
 - 自定义 [AMP Service Worker ](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html)
-- [Prefetch links ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
+- [预提取链接](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
 - 创建离线网页
 
 阅读有关 [Service Worker](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html) 和[离线 UX 注意事项](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux)的更多信息。了解如何[基于分析跟踪互动](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.html)并遵循有关[如何配置 AMP 网页的基本分析](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/tracking-engagement.html)的教程。
