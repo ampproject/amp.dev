@@ -1,5 +1,8 @@
 ---
-$title: 설정
+"$title": Setting up
+"$order": '0'
+description: 이 튜토리얼을 시작하기 전 필요한 사항은 다음과 같습니다. - HTML, CSS, JavaScript 기본 지식...
+"$parent": "/content/docs/interaction_dynamic/interactivity.md"
 ---
 
 ## 기본 요건
@@ -30,7 +33,7 @@ cd advanced-interactivity-in-amp
 npm install
 ```
 
-## 3단계: 개발 서버 실행
+### Step 3. Run the development server
 
 다음과 같이 node.js로 개발 서버를 시작합니다.
 
