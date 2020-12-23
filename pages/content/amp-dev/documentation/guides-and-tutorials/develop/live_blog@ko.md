@@ -1,10 +1,10 @@
 ---
 "$title": 라이브 블로그 만들기
 "$order": '102'
-description: Live blogs are web pages that are updated frequently throughout an on-going event, such as a sporting event or an election. In AMP, you can implement a live blog by using ...
+description: '라이브 블로그는 스포츠 행사나 선거 같은 이벤트가 진행되는 동안 수시로 업데이트되는 웹페이지입니다. AMP에서는 '
 tutorial: 'true'
 formats:
-- websites
+- 웹사이트
 author: kul3r4
 contributors:
 - bpaduch
