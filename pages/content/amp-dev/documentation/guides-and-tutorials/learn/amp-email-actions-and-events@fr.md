@@ -54,7 +54,7 @@ Consultez le tableau ci-dessous pour une description de chaque partie de la synt
   </tr>
   <tr>
     <td><code>targetId</code></td>
-    <td>yes</td>
+    <td>oui</td>
     <td>This is the DOM id for the element, or a predefined <a href="#special-targets">special target</a> you'd like to execute an action on  in response to the event. In the following example, the <code>targetId</code> is the DOM id of the <code>amp-lightbox</code> target, <code>photo-slides</code>.     <pre><amp-lightbox id="photo-slides"></amp-lightbox>
 <button on="tap:photo-slides">Show Images</button></pre>     </td>
   </tr>
@@ -68,12 +68,14 @@ Consultez le tableau ci-dessous pour une description de chaque partie de la synt
   <tr>
     <td><code>arg=value</code></td>
     <td>non</td>
-    <td>Some actions, if documented, may accept arguments. The arguments are defined between parentheses in <code>key=value</code> notation. The accepted values are:       <ul>         <li>simple unquoted strings: <code>simple-value</code>
-</li>         <li>quoted strings: <code>"string value"</code> or <code>'string value'</code>
-</li>         <li>boolean values: <code>true</code> or <code>false</code>
-</li>         <li>numbers: <code>11</code> or <code>1.1</code>
-</li>         <li>dot-syntax reference to event data: <code>event.someDataVariableName</code>
-</li>       </ul>     </td>
+    <td>Certaines actions, si elles sont documentées, peuvent accepter des arguments. Les arguments sont définis entre parenthèses dans la notation <code>key=value</code> . Les valeurs acceptées sont: <ul>
+<li> chaînes simples sans guillemets: <code>simple-value</code> </li>
+<li> chaînes entre guillemets: <code>"string value"</code> ou <code>'string value'</code> </li>
+<li> valeurs booléennes: <code>true</code> ou <code>false</code> </li>
+<li> nombres: <code>11</code> ou <code>1.1</code> </li>
+<li> référence de syntaxe de point aux données d'événement: <code>event.someDataVariableName</code> </li>
+</ul>
+</td>
   </tr>
 </table>
 
@@ -140,15 +142,11 @@ L'exemple suivant est possible dans AMP:
 </td>
     <td><code>input</code></td>
     <td>
-      <pre>event.min
-event.max
-event.value
-event.valueAsNumber</pre>
+      <pre>event.min<br>event.max<br>event.value<br>event.valueAsNumber</pre>
     </td>
   </tr>
   <tr>
-    <td>
-<code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
+    <td> <code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
 </td>
     <td>
       <code>event.checked</code>
@@ -157,9 +155,7 @@ event.valueAsNumber</pre>
   <tr>
     <td><code>select</code></td>
     <td>
-      <pre>event.min
-event.max
-event.value</pre>
+      <pre>event.min<br>event.max<br>event.value</pre>
     </td>
   </tr>
   <tr>
@@ -207,8 +203,7 @@ event.value</pre>
   <tr>
     <td><code>slideChange</code></td>
     <td>Se déclenche lorsque la diapositive actuelle du carrousel change.</td>
-    <td><pre>// Slide number.
-event.index</pre></td>
+    <td><pre>// Slide number.<br>event.index</pre></td>
   </tr>
 </table>
 
@@ -241,8 +236,7 @@ event.index</pre></td>
     <th width="40%">Données</th>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td>	<code>fetch-error</code> (confiance basse)</td>
     <td>Se déclenche lorsque la récupération des données échoue.</td>
     <td>Aucune</td>
   </tr>
@@ -259,10 +253,7 @@ event.index</pre></td>
   <tr>
     <td><code>select</code></td>
     <td>Se déclenche lorsqu'une option est sélectionnée ou désélectionnée.</td>
-    <td><pre>// Target element's "option" attribute value.
-event.targetOption
-// Array of "option" attribute values of all selected elements.
-event.selectedOptions</pre></td>
+    <td><pre>// Target element's "option" attribute value.<br>event.targetOption<br>// Array of "option" attribute values of all selected elements.<br>event.selectedOptions</pre></td>
   </tr>
 </table>
 
@@ -295,8 +286,7 @@ event.selectedOptions</pre></td>
     <th width="40%">Données</th>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td>	<code>fetch-error</code> (confiance basse)</td>
     <td>Se déclenche lorsque la récupération des données échoue.</td>
     <td>Aucune</td>
   </tr>
@@ -318,14 +308,12 @@ event.selectedOptions</pre></td>
   <tr>
     <td><code>submit-success</code></td>
     <td>Se déclenche lorsque le formulaire affiche une réponse d'envoi réussie.</td>
-    <td><pre>// Response JSON.
-event.response</pre></td>
+    <td><pre>// Response JSON.<br>event.response</pre></td>
   </tr>
   <tr>
     <td><code>submit-error</code></td>
     <td>Se déclenche lorsque le formulaire marque une erreur d'envoi.</td>
-    <td><pre>// Response JSON.
-event.response</pre></td>
+    <td><pre>// Response JSON.<br>event.response</pre></td>
   </tr>
   <tr>
     <td><code>valid</code></td>
@@ -354,11 +342,11 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>show</code></td>
-    <td>Shows the target element. If an     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a     result, it gains focus.</td>
+    <td>Affiche l'élément cible. Si un élément <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus">élément de <code>autofocus</code></a> devient visible en conséquence, il obtient la mise au point.</td>
   </tr>
   <tr>
     <td><code>toggleVisibility</code></td>
-    <td>Toggles the visibility of the target element. If an     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a     result, it gains focus.</td>
+    <td>Active / désactive la visibilité de l'élément cible. Si un <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus">élément de <code>autofocus</code></a> devient visible en conséquence, il obtient la mise au point.</td>
   </tr>
   <tr>
     <td><code>toggleClass(class=STRING, force=BOOLEAN)</code></td>
@@ -366,7 +354,7 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>focus</code></td>
-    <td>Makes the target element gain focus. To lose focus, <code>focus</code>     on another element (usually parent element). We strongly advise against     losing focus by focusing on <code>body</code>/<code>documentElement</code>     for accessibility reasons.</td>
+    <td>Rend l'élément cible gagnant le focus. Pour perdre le focus, <code>focus</code> sur un autre élément (généralement l'élément parent). Nous déconseillons fortement de perdre le focus en nous concentrant sur <code>body</code> / <code>documentElement</code> pour des raisons d'accessibilité.</td>
   </tr>
 </table>
 
@@ -379,7 +367,7 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>toggle(section=STRING)</code></td>
-    <td>Toggles the <code>expanded</code> and <code>collapsed</code> states of <code>amp-accordion</code> sections. When called with no arguments, it toggles all sections of the accordion. Trigger on a specific section by providing the section id: <code>on="tap:myAccordion.toggle(section='section-id')"</code>.   </td>
+    <td>Change les états <code>expanded</code> et <code>collapsed</code> des sections <code>amp-accordion</code>. Lorsque l'action est appelée sans argument, elle fait basculer toutes les sections de l'accordéon. Déclenchez sur une section spécifique en fournissant l'ID de section: <code>on="tap:myAccordion.toggle(section='section-id')"</code>.</td>
 </tr>
   <tr>
     <td><code>expand(section=STRING)</code></td>
@@ -447,8 +435,7 @@ event.response</pre></td>
     <td>Met à jour la mise en page de <code>amp-list</code> vers <code>layout="CONTAINTER"</code> pour permettre <a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">le redimensionnement dynamique</a>.</td>
   </tr>
   <tr>
-    <td>
-<code>fetch-error</code>(low-trust)</td>
+    <td>	<code>fetch-error</code> (confiance basse)</td>
     <td>Se déclenche lorsque la récupération des données échoue.</td>
     <td>Aucune</td>
   </tr>
@@ -475,7 +462,7 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>toggle(index=INTEGER, value=BOOLEAN)</code></td>
-    <td>Toggles the application of the `selected`. If the select attribute is absent, this action adds it. If the select attribute is present, this action removes it.     You may force and keep an add or remove by including a boolean value in the `value` argument. A value of `true` will force add the `selected` attribute and not remove it if already present. A value of  `false` will remove the attribute, but not add it if absent.   </td>
+    <td>Change l'application de `selected`. Si l'attribut de sélection est absent, cette action l'ajoute. Si l'attribut de sélection est présent, cette action le supprime. Vous pouvez forcer la conservation d'un ajout ou d'une suppression en incluant une valeur booléenne dans l'argument `value`. Une valeur `true` forcera l'ajout de l'attribut `selected` et ne le supprimera pas s'il est déjà présent. Une valeur de `false` supprimera l'attribut, mais ne l'ajoutera pas s'il est absent.</td>
   </tr>
 </table>
 
