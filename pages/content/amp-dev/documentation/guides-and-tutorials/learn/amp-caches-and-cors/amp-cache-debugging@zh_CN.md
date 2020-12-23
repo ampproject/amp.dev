@@ -23,7 +23,7 @@ have a look and request a pull request there.
 如果某个特定文档在来源中的显示和行为正常，但在通过缓存（请参阅[如何将来源网址映射到 Google 的 AMP 缓存](https://developers.google.com/amp/cache/overview#amp-cache-url-format)）查看时出现问题，请尝试以下操作：
 
 1. 打开浏览器的开发者/错误工具控制台，并解决显示的任何错误或警告。
-2. Run the document through [an AMP document validator](https://search.google.com/test/amp) and resolve any unexpected errors or warnings.
+2. 通过 [AMPBench](https://search.google.com/test/amp) 运行文档，并解决任何意外错误或警告。
 
 如果完成这些步骤后仍有问题，请检查下表。
 
@@ -39,7 +39,7 @@ have a look and request a pull request there.
   <tbody>
     <tr>
       <td>网页字体不显示（使用后备字体）</td>
-      <td>The AMP Cache is not allowlisted by the font provider.</td>
+      <td>字体提供商未将 AMP 缓加入白名单。</td>
       <td>请与字体提供商联系，要求他们将<a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">所有缓存</a>加入白名单。</td>
     </tr>
     <tr>
