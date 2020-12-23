@@ -31,7 +31,7 @@ Les applications Web progressives permettent une interactivité et un engagement
 
 AMP a la possibilité d'installer le Service Worker de votre application Web progressive à partir d'une page AMP, et ce, même si cette page AMP est servie à partir d'un AMP Cache! Si cela est fait correctement, un lien menant à votre PWA (à partir de l'une de vos pages AMP) se chargera de manière quasi instantanée, comme au premier chargement de la page AMP.
 
-[tip type="tip"] **TIP –** If you're not familiar with Service Worker yet, I greatly recommend Jake Archibald’s [Udacity course](https://www.udacity.com/course/offline-web-applications--ud899). [/tip]
+[tip type="tip"] **CONSEIL -** Si vous n'êtes pas encore familier avec Service Worker, je recommande vivement le [cours Udacity de](https://www.udacity.com/course/offline-web-applications--ud899) Jake Archibald. [/tip]
 
 Tout d'abord, installez le Service Worker sur toutes vos pages AMP à l'aide de [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md), en incluant d'abord le composant via son script dans l'attribut `<head>` de votre page:
 
@@ -71,7 +71,7 @@ self.addEventListener('install', function(event) {
 });
 [/sourcecode]
 
-[tip type="tip"] **TIP –** There are easier ways to deal with a Service Worker. Take a look at the [Service Worker helper libraries](https://github.com/GoogleChrome/sw-helpers). [/tip]
+[tip type="tip"] **CONSEIL -** Il existe des moyens plus simples d'utiliser un Service Worker. Jetez un œil aux [bibliothèques d'assistance Service Worker](https://github.com/GoogleChrome/sw-helpers). [/tip]
 
 ## Diriger tous les liens d'une page AMP vers la PWA
 
@@ -114,4 +114,4 @@ AMP résout ce problème grâce à la technique appelée [réécriture d'URL de 
 
 Une fois ces attributs en place, tous les clics suivants sur une page AMP dirigeront vers votre PWA, quel que soit le Service Worker.
 
-[tip type="read-on"] **READ ON –** You've already come so far – why not reuse your existing AMP pages to build your PWA? [Here's how](amp-in-pwa.md). [/tip]
+[tip type="read-on"] **LIRE LA SUITE -** Vous êtes déjà arrivé si loin; pourquoi ne pas réutiliser vos pages AMP existantes pour créer votre PWA? [Voici comment](amp-in-pwa.md). [/tip]
