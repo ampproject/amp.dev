@@ -1,5 +1,7 @@
 ---
-$title: スターター コードを確認する
+"$title": スターターコードの確認
+"$order": '1'
+description: コードの追加を開始する前に、サンプルの article.amp.html ページを確認してみましょう。次のような内容です。 ...
 ---
 
 コードの追加を開始する前に、サンプルの [article.amp.html](https://github.com/googlecodelabs/accelerated-mobile-pages-advanced/blob/master/article.amp.html) ページを確認してみましょう。次のような内容です。
@@ -159,12 +161,13 @@ $title: スターター コードを確認する
 
 これは、[AMP 検証](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)と [schema.org](http://schema.org/) の構造化データ検証の両方を渡す、単純な AMP ページです。ニュースのウェブサイトにこのページを掲載した場合、ユーザーは検索エンジンの結果ページのリッチ エクスペリエンス（Google 検索のトップニュース カルーセルなど）からこのページを見つけることができます。
 
-## AMP 検証ツールを有効にする
+## AMP Validator を有効にする
 
-ページを変更する前に、有効な AMP HTML を扱っていることがわかるように、[AMP 検証ツール](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)を有効にしましょう。URL に次のフラグメント識別子を**追加**します。
+ページを変更する前に、有効な AMP HTML を扱っていることがわかるように、[AMP Validator](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) を有効にしましょう。URL に次のフラグメント識別子を**追加**します。
 
 ```text
-#development=1
+# development=1
+
 ```
 
 例:
@@ -175,21 +178,19 @@ http://localhost:8000/article.amp.html#development=1
 
 Chrome（または任意のブラウザ）で [Developer Console](https://developer.chrome.com/devtools/docs/console) を開いて、AMP エラーがないことを確認します。
 
-[tip]
-AMP ページを検証するには、他のツールも使用できます。次のようなツールがあります。
+[tip] AMP ページを検証するには、他のツールも使用できます。次のようなツールがあります。
 
 - [AMP 検証ツール拡張機能（Chrome 用）](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc)
 - [AMP 検証ツール拡張機能（Opera 用）](https://addons.opera.com/en-gb/extensions/details/amp-validator/)
-- [AMP 検証ツール ウェブ インターフェース](https://validator.ampproject.org/)
-  その他
+- [AMP Validator ウェブインターフェース](https://validator.ampproject.org/)
+- ... その他
 
-詳しくは、[AMP ページを検証する](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)のガイドをご覧ください。
-[/tip]
+詳しくは、[AMP ページの検証](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)のガイドをご覧ください。 [/tip]
 
 {{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='Nexus 5X 端末でのシミュレーション') }}
 
-## モバイル エクスペリエンスをシミュレーションする
+## モバイルエクスペリエンスのシミュレーション
 
-このページはモバイル端末向けに設計されているので、ブラウザのデベロッパー ツールでモバイル端末での表示を**シミュレーション**してみましょう。たとえば、Chrome デベロッパー ツールでは、モバイル端末アイコンをクリックし、メニューからモバイル端末を選択します。
+このページはモバイル端末向けに設計されているので、ブラウザの開発者ツールでモバイル端末での表示を**シミュレーション**してみましょう。たとえば、Chrome デベロッパー ツールでは、モバイル端末アイコンをクリックし、メニューからモバイル端末を選択します。
 
 これで、ページの操作を開始できるようになりました。AMP コンポーネントをページに追加してみましょう。
