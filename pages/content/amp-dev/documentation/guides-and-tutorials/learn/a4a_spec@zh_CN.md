@@ -51,33 +51,33 @@ AMPHTML 广告是一种在 AMP 网页上快速高效渲染广告的机制。为�
 </tr></thead>
 <tbody>
 <tr>
-<td>Must use <code><html ⚡4ads></code> or <code><html amp4ads></code> as its enclosing tags.</td>
+<td>必须使用 <code>&lt;html ⚡4ads></code> 或 <code>&lt;html amp4ads></code> 作为封闭标记。</td>
 <td>允许验证工具将广告素材文档识别为常规 AMP 文档或受限的 AMPHTML 广告文档并进行相应分发。</td>
 </tr>
 <tr>
-<td>Must include <code><script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script></code> as the runtime script instead of <code>https://cdn.ampproject.org/v0.js</code>.</td>
+<td>必须包含 <code>&lt;script async src="https://cdn.ampproject.org/amp4ads-v0.js">&lt;/script></code> 而不是 <code>https://cdn.ampproject.org/v0.js</code> 作为运行时脚本。</td>
 <td>允许在跨源 iframe 中投放的 AMPHTML 广告存在量身定制的运行时行为。</td>
 </tr>
 <tr>
-<td>Must not include a <code><link rel="canonical"></code> tag.</td>
+<td>不得包含 <code>&lt;link rel="canonical"></code> 标记。</td>
 <td>广告素材没有“非 AMP 规范版本”，不会独立编制搜索索引，因此，自引用没有任何用处。</td>
 </tr>
 <tr>
-<td>Can include optional meta tags in HTML head as identifiers, in the format of <code><meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code>. Those meta tags must be placed before the <code>amp4ads-v0.js</code> script. The value of <code>vendor</code> and <code>id</code> are strings containing only [0-9a-zA-Z_-]. The value of <code>type</code> is either <code>creative-id</code> or <code>impression-id</code>.</td>
-<td>Those custom identifiers can be used to identify the impression or the creative. They can be helpful for reporting and debugging.<br><br><p>Example:</p>
+<td>可以在 HTML head 中包含可选的元标记，作为标识符，格式为：<code>&lt;meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code>。这些元标记必须放在 <code>amp4ads-v0.js</code>  脚本前面。<code>vendor</code> 和 <code>id</code> 的值是仅包含 [0-9a-zA-Z_-] 的字符串。<code>type</code> 的值为 <code>creative-id</code> 或 <code>impression-id</code>。</td>
+<td>这些自定义标识符可用于标识展示或广告素材，并且有助于报告和调试。<br><br><p>示例：</p>
 <pre>
-<meta name="amp4ads-id"
+&lt;meta name="amp4ads-id"
   content="vendor=adsense,type=creative-id,id=1283474">
-<meta name="amp4ads-id"
+&lt;meta name="amp4ads-id"
   content="vendor=adsense,type=impression-id,id=xIsjdf921S"></pre>
 </td>
 </tr>
 <tr>
 <td>
-<code><amp-analytics></code> viewability tracking may only target the full-ad selector, via  <code>"visibilitySpec": { "selector": "amp-ad" }</code> as defined in <a href="https://github.com/ampproject/amphtml/issues/4018">Issue #4018</a> and <a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a>. In particular, it may not target any selectors for elements within the ad creative.</td>
-<td>In some cases, AMPHTML ads may choose to render an ad creative in an iframe.In those cases, host page analytics can only target the entire iframe anyway, and won’t have access to any finer-grained selectors.<br><br> <p>Example:</p> <pre>
-<amp-analytics id="nestedAnalytics">
-  <script type="application/json">
+<code>&lt;amp-analytics></code> 可见度跟踪只能通过 <a href="https://github.com/ampproject/amphtml/issues/4018">问题 #4018</a> 和 <a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a> 中定义的 <code>"visibilitySpec": { "selector": "amp-ad" }</code> 来定位完整广告选择器。特别需要说明的是，它无法定位广告素材中元素的任何选择器。</td>
+<td>在某些情况下，AMPHTML 广告可能选择在 iframe 中渲染广告素材。这种情况下，托管页面分析只能定位整个 iframe，而无法访问任何细粒度更高的选择器。<br><br> <p>示例：</p> <pre>
+&lt;amp-analytics id="nestedAnalytics">
+  &lt;script type="application/json">
   {
     "requests": {
       "visibility": "https://example.com/nestedAmpAnalytics"
@@ -90,9 +90,10 @@ AMPHTML 广告是一种在 AMP 网页上快速高效渲染广告的机制。为�
       }
     }
   }
-  </script>
-</amp-analytics>
-</pre> <p>This configuration sends a request to the <code>https://example.com/nestedAmpAnalytics</code> URL when 50% of the enclosing ad has been continuously visible on the screen for 1 second.</p> </td>
+  &lt;/script>
+&lt;/amp-analytics>
+</pre> <p>如果所属广告的一半已在屏幕上持续显示 1 秒，则此配置会将请求发送到网址 <code>https://example.com/nestedAmpAnalytics</code>。</p>
+</td>
 </tr>
 </tbody>
 </table>
