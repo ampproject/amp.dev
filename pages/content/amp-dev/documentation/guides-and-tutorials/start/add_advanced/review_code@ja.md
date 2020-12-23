@@ -180,8 +180,8 @@ Chrome（または任意のブラウザ）で [Developer Console](https://develo
 
 [tip] AMP ページを検証するには、他のツールも使用できます。次のようなツールがあります。
 
-- [AMP 検証ツール拡張機能（Chrome 用）](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc)
-- [AMP 検証ツール拡張機能（Opera 用）](https://addons.opera.com/en-gb/extensions/details/amp-validator/)
+- [AMP Validator 拡張機能（Chrome 用）](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc)
+- [AMP Validator 拡張機能（Opera 用）](https://addons.opera.com/en-gb/extensions/details/amp-validator/)
 - [AMP Validator ウェブインターフェース](https://validator.ampproject.org/)
 - ... その他
 
