@@ -128,17 +128,30 @@ gulp.task('default', ['amphtml:validate'], function () {
 
 이제 실제 AMP HTML 페이지의 유효성 검사를 수행해보겠습니다.
 
-[sourcecode:console] $ amphtml-validator https://amp.dev/ https://amp.dev/: PASS [/sourcecode]
+[sourcecode:console]
+$ amphtml-validator https://amp.dev/
+https://amp.dev/: PASS
+[/sourcecode]
 
 당연히 이 페이지는 유효한 AMP HTML입니다. 그러므로 유효하지 않은 페이지인 [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html)에서 검사를 실행해보겠습니다. `amphtml-validator` 명령어를 실행하려면 페이지의 URL 또는 로컬 파일 이름을 제공합니다. [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html)을 다운로드하여 파일에 저장하고 다음을 실행합니다.
 
-[sourcecode:console] $ amphtml-validator several_errors.html several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='. several_errors.html:26:2 The tag 'script' is disallowed except in specific forms. several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. https://amp.dev/documentation/components/amp-img.html several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. https://amp.dev/documentation/components/amp-ad.html ... [/sourcecode]
+[sourcecode:console]
+$ amphtml-validator several_errors.html
+several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
+several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
+several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})
+several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
+...
+[/sourcecode]
 
 오류 메시지의 형식은 파일 이름, 행, 열, 메시지로 구성되어 있으며 종종 AMP HTML 참조 링크가 뒤에 이어집니다. Emacs(컴파일 명령어와 편집 모드가 있음)를 포함한 일부 편집기는 이 형식을 해석할 수 있으며 원본 파일에서 오류로 이동할 수 있게 해줍니다.
 
 나만의 AMP 페이지를 만들려면 먼저 [minimum_valid_amp.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/minimum_valid_amp.html)로 시작해 보세요.
 
-[sourcecode:console] $ amphtml-validator minimum_valid_amp.html minimum_valid_amp.html: PASS [/sourcecode]
+[sourcecode:console]
+$ amphtml-validator minimum_valid_amp.html
+minimum_valid_amp.html: PASS
+[/sourcecode]
 
 명령줄 도구는 색상 사용 해제, JSON 출력 인쇄, 특정 버전의 검사기 Javascript 실행(기본적으로 가장 최근에 게시된 스크립트를 실행함) 등의 추가 기능을 제공합니다.
 
