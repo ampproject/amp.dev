@@ -55,7 +55,7 @@ AMP HTML ドキュメントに関するルール
 `<meta charset="utf-8">` タグを `<head>` タグの最初の子要素にする。 | ページのエンコードを識別します。
 `<script async src="https://cdn.ampproject.org/v0.js"></script>` タグを `<head>` タグの 2 番目の子要素にする。 | AMP JS ライブラリを含めて読み込みます。
 `<head>` タグ内に `<link rel="canonical" href="$SOME_URL">` タグを含める。 | この AMP HTML ドキュメントの通常の HTML バージョンを指定するか、そのような HTML バージョンが存在しない場合は、このドキュメント自体を指定します。詳しくは、[ページを検出可能にする](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md)をご覧ください。
-Contain a `<meta name="viewport" content="width=device-width"> It's also recommended to include `initial-scale=1`. | レスポンシブなビューポートを指定します。詳しくは、[レスポンシブな AMP ページの作成](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md)をご覧ください。
+<code><meta name="viewport" content="width=device-width"></code> タグを含める。initial-scale=1 を含めることも推奨されます。 | レスポンシブなビューポートを指定します。詳しくは、[レスポンシブな AMP ページの作成](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md)をご覧ください。
 `<head>` タグ内に [AMP ボイラープレート コード](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md)を含める。 | AMP JS が読み込まれるまで、最初はコンテンツを非表示にするための CSS ボイラープレートです。
 
 ## 省略できるメタデータ
