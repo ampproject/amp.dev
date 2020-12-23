@@ -41,7 +41,7 @@ Ajoutez ensuite ce qui suit quelque part dans votre `<body>` (modifiez-le pour p
 
 Si l'utilisateur navigue vers vos pages AMP sur votre origine (par opposition au premier clic, qui est généralement fourni à partir d'un cache AMP), le service worker prendra le relais et pourra faire une [myriade de choses intéressantes](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux).
 
-## The AMP Service Worker
+## Le service worker AMP
 
 Si vous êtes ici, c'est que vous créez des pages avec AMP. L'équipe AMP se soucie énormément de donner la priorité à l'utilisateur et de lui offrir une expérience Web de classe mondiale. Pour que ces expériences restent cohérentes, l'équipe AMP a créé un service worker spécialement pour AMP!
 
