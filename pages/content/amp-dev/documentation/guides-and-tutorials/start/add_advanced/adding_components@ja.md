@@ -51,6 +51,18 @@ AMP の広告は、[`amp-ad`](../../../../documentation/components/reference/amp
 次のスクリプトを `<head>` タグに<strong>追加</strong>します。
 
 ```html
+<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+```
+
+ページを<strong>更新</strong>すると、2 つのテスト広告が表示されるはずです。
+
+{{ image('/static/img/docs/tutorials/tut-advanced-ads.png', 376, 606, align='center half', caption='テスト広告') }}
+
+[tip type="important"] <strong>重要:</strong> 場合によっては、<code>Mixed Content</code> や <code>XMLHttpRequest cannot load</code> などのエラーがデベロッパーコンソールに出力されることがあります。前者のエラーは、A9 広告に関係している可能性があります。A9 広告では、セキュリティで保護されていないコンテンツが読み込まれる場合がありますが、AMP では、広告はすべてセキュリティで保護されていることが要求されます。[/tip]
+
+[`amp-ad`](../../../../documentation/components/reference/amp-ad.md) コンポーネントは、広告プラットフォームの機能を柔軟にサポートします。それを示す <a><code data-md-type="codespan">amp-ad</code></a> コンポーネントの 2 つの設定例を見てみましょう。以下では、DoubleClick のダッシュボードを使用して、特定の国のユーザーにだけ表示される DoubleClick 広告を 2 つ設定しています。1 つ目の広告は英国のユーザーにだけ表示され、2 つ目の広告は米国のユーザーにだけ表示されます。先ほど AMP ドキュメントに追加した広告の下に、次の 2 つの地域ターゲティング広告設定を<strong>追加</strong>してみてください。
+
+```html
 <amp-ad
   width="300"
   height="250"
@@ -66,26 +78,6 @@ AMP の広告は、[`amp-ad`](../../../../documentation/components/reference/amp
   data-slot="/35096353/amptesting/geo/us">
   <div fallback>No ad appeared because you're not browsing from the US!</div>
 </amp-ad>
-```
-
-ページを<strong>更新</strong>すると、2 つのテスト広告が表示されるはずです。
-
-{{ image('/static/img/docs/tutorials/tut-advanced-ads.png', 376, 606, align='center half', caption='テスト広告') }}
-
-[tip type="important"] <strong>重要:</strong> 場合によっては、<code>Mixed Content</code> や <code>XMLHttpRequest cannot load</code> などのエラーがデベロッパーコンソールに出力されることがあります。前者のエラーは、A9 広告に関係している可能性があります。A9 広告では、セキュリティで保護されていないコンテンツが読み込まれる場合がありますが、AMP では、広告はすべてセキュリティで保護されていることが要求されます。[/tip]
-
-[`amp-ad`](../../../../documentation/components/reference/amp-ad.md) コンポーネントは、広告プラットフォームの機能を柔軟にサポートします。それを示す <a><code data-md-type="codespan">amp-ad</code></a> コンポーネントの 2 つの設定例を見てみましょう。以下では、DoubleClick のダッシュボードを使用して、特定の国のユーザーにだけ表示される DoubleClick 広告を 2 つ設定しています。1 つ目の広告は英国のユーザーにだけ表示され、2 つ目の広告は米国のユーザーにだけ表示されます。先ほど AMP ドキュメントに追加した広告の下に、次の 2 つの地域ターゲティング広告設定を<strong>追加</strong>してみてください。
-
-```html
-<amp-youtube
-  data-videoid="npum8JsITQE"
-  layout="responsive"
-  width="480"
-  height="270">
-  <div fallback>
-    <p>The video could not be loaded.</p>
-  </div>
-</amp-youtube>
 ```
 
 ページを<strong>更新</strong>して、表示内容を確認してください。次のスクリーンショットはカナダ国内でキャプチャされたものですが、どちらの広告も表示されていません。
@@ -111,7 +103,15 @@ AMP の広告は、[`amp-ad`](../../../../documentation/components/reference/amp
 では、YouTube 動画を AMP ドキュメントに埋め込んでみましょう。AMP ドキュメントの <code><header></code> の直後（先ほど追加した 2 つの <a><code>amp-ad</code></a> の上）に次のコードを<strong>追加</strong>します。
 
 ```html
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<amp-youtube
+  data-videoid="npum8JsITQE"
+  layout="responsive"
+  width="480"
+  height="270">
+  <div fallback>
+    <p>The video could not be loaded.</p>
+  </div>
+</amp-youtube>
 ```
 
 ページを<strong>更新</strong>します。動画の代わりに、<em>「動画を読み込めませんでした。」</em>というテキストが表示されるはずです。
@@ -145,18 +145,18 @@ Twitter に投稿されたツイートをそのまま埋め込む機能も、ニ
 次の JavaScript リクエストをドキュメントの <code><head></code> タグに追加しましょう。
 
 ```html
+<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+```
+
+続いて、ツイートの埋め込み先となる記事に次のコードを<strong>追加</strong>します。
+
+```html
 <amp-twitter
   width="486"
   height="657"
   layout="responsive"
   data-tweetid="638793490521001985">
 </amp-twitter>
-```
-
-続いて、ツイートの埋め込み先となる記事に次のコードを<strong>追加</strong>します。
-
-```html
-<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
 ```
 
 <code>data-tweetid</code> 属性も、特定のプラットフォームで必要となるカスタム属性です。Twitter は、`data-tweetid` 属性の値を特定のツイートに関連付けます。
@@ -180,16 +180,14 @@ AMP には、この問題を解決するための専用のコンポーネント�
 実際に試してみましょう。まず、次のようにコンポーネントのライブラリを <code><head></code> タグに<strong>追加</strong>します。
 
 ```html
-<amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-  Big, bold article quote goes here.
-</amp-fit-text>
+<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
 ```
 
 次の内容をページに追加します。
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-  Hello!
+  Big, bold article quote goes here.
 </amp-fit-text>
 ```
 
@@ -199,7 +197,7 @@ AMP には、この問題を解決するための専用のコンポーネント�
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-   And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+  Hello!
 </amp-fit-text>
 ```
 
