@@ -149,9 +149,7 @@ AMP 还定义了全局 `hide`、`show` 和 `toggleVisibility` 操作，您可以
   <tr>
     <td><code>select</code></td>
     <td>
-      <pre>event.min
-event.max
-event.value</pre>
+      <pre>event.min<br>event.max<br>event.value</pre>
     </td>
   </tr>
   <tr>
@@ -199,8 +197,7 @@ event.value</pre>
   <tr>
     <td><code>slideChange</code></td>
     <td>在轮播的当前幻灯片更改时触发。</td>
-    <td><pre>// Slide number.
-event.index</pre></td>
+    <td><pre>// Slide number.<br>event.index</pre></td>
   </tr>
 </table>
 
@@ -250,10 +247,7 @@ event.index</pre></td>
   <tr>
     <td><code>select</code></td>
     <td>选择或取消选择选项时触发。</td>
-    <td><pre>// Target element's "option" attribute value.
-event.targetOption
-// Array of "option" attribute values of all selected elements.
-event.selectedOptions</pre></td>
+    <td><pre>// Target element's "option" attribute value.<br>event.targetOption<br>// Array of "option" attribute values of all selected elements.<br>event.selectedOptions</pre></td>
   </tr>
 </table>
 
@@ -308,14 +302,12 @@ event.selectedOptions</pre></td>
   <tr>
     <td><code>submit-success</code></td>
     <td>提交表单成功时触发。</td>
-    <td><pre>// Response JSON.
-event.response</pre></td>
+    <td><pre>// Response JSON.<br>event.response</pre></td>
   </tr>
   <tr>
     <td><code>submit-error</code></td>
     <td>提交表单出错时触发。</td>
-    <td><pre>// Response JSON.
-event.response</pre></td>
+    <td><pre>// Response JSON.<br>event.response</pre></td>
   </tr>
   <tr>
     <td><code>valid</code></td>
