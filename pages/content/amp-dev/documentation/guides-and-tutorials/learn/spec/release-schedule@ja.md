@@ -17,17 +17,17 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-- [Release Channels](#release-channels)
-    - [Nightly](#nightly)
-    - [Weekly](#weekly)
-        - [Experimental and Beta channels](#experimental-and-beta-channels)
-    - [Long-Term Stable (lts)](#long-term-stable-lts)
-- [Determining if your change is in a release](#determining-if-your-change-is-in-a-release)
-- [Release Cadence](#release-cadence)
-    - [Detailed schedule](#detailed-schedule)
-    - [Release Freezes](#release-freezes)
+- [リリースチャンネル ](#release-channels)
+    - [ナイトリー ](#nightly)
+    - [ウィークリー ](#weekly)
+        - [ベータおよび実験的チャンネル ](#experimental-and-beta-channels)
+    - [長期安定版（LTS）](#long-term-stable-lts)
+- [変更内容がリリースに含まれるかを確認する ](#determining-if-your-change-is-in-a-release)
+- [リリースケイデンス ](#release-cadence)
+    - [詳細スケジュール ](#detailed-schedule)
+    - [リリースフリーズ ](#release-freezes)
 
-A new release of AMP is pushed to all AMP pages every week on Tuesday. **Once a change in AMP is merged into the master branch of the amphtml repository, it will typically take 1-2 weeks for the change to be live for all users.**
+AMP の新規リリースは、毎週火曜日にすべての AMP ページにプッシュされます。**AMP への変更が amphtml リポジトリのマスターブランチにマージされてから変更がすべてのユーザーに対してライブになるまでには、通常 1～2 週間かかります。**
 
 ## リリースチャンネル <a name="release-channels"></a>
 
@@ -73,13 +73,13 @@ PR が以下のいずれかのリリースチャンネルに含まれている�
 
 **LTS** リリースチャンネルは、1 か月間隔で、前の**安定**ビルドを提供します。毎月第 2 月曜日、現在の**安定**リリースは **LTS** に昇格されます。これは、すべての AMP サイト運営者に推奨されるチャンネルではなく、ウェブサイトでの QA サイクルをあまり頻繁に実施する意思のないサイト運営者が、特定のウェブページを **LTS** チャンネルにオプトインして実施できるように提供されているチャンネルです（<a href="https://github.com/ampproject/amphtml/blob/master/contributing/lts-release.md" data-md-type="link">**LTS** の Readme</a> を参照してください)。
 
-If the second Monday of the month falls on a holiday, the promotion will be performed after the end of the [release freeze](#release-freezes).
+月の第 2 月曜日が休日である場合は、[リリースフリーズ](#release-freezes)の終了後に昇格されます。
 
 重要: **LTS** リリースチャンネルを使用するサイト運営者は、新たに導入される機能を使用してはいけません。サイクルの期間がより長期であるため、**LTS** リリースは `ampproject/amphtml` の `HEAD` から最大 7 週間遅れている可能性があります。変更内容が選択したリリースサイクルで使用できるかどうかを検証するには、「[変更内容がリリースに含まれているかどうかを確認する](#determining-if-your-change-is-in-a-release)」セクションを参照してください。
 
 ## 変更内容がリリースに含まれるかを確認する <a name="determining-if-your-change-is-in-a-release"></a>
 
-[*Type: Release* GitHub issues](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) are used to track the status of current and past releases; from the initial cut, to testing via **experimental**/**beta** channels, to eventual release via the **stable** and **lts** channels. Announcements about releases are made on the [AMP Slack #release channel](https://amphtml.slack.com/messages/C4NVAR0H3/) ([sign up for Slack](https://bit.ly/amp-slack-signup)).
+[*Type: Release* GitHub issues](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) は、初期カットから、**実験的**/**ベータ**チャンネルでのテスト、**安定**および **LTS** チャンネルでのリリースの評価まで、現行または過去のリリースのステータスを追跡するために使用されます。リリースに関する告知は、[AMP Slack #release channel](https://amphtml.slack.com/messages/C4NVAR0H3/) で行われます（[Slack に登録](https://bit.ly/amp-slack-signup)）。
 
 あるビルドのどの変更が含まれるかを判断するには、以下のいずれかを使用します。
 
@@ -93,7 +93,7 @@ If the second Monday of the month falls on a holiday, the promotion will be perf
 AMP の新規バージョンをどれくらいの頻度で全ユーザーに対してプッシュするかを判断するには、以下のような多くの要因を考慮しなければなりません。
 
 - AMP を使って構築された何百万ものサイトや、何十億ものページの安定性
-- cache-busting that might happen when we push a new version
+- 新規バージョンをプッシュする際に発生する可能性のあるキャッシュ無効化
 - 新機能を素早く公開したいという願望
 
 こういった要因をすべて考慮したうえで、プッシュサイクルを 1～2 週間に決定しました。これまでのところ、これが合理的な妥協として成り立っていますが、こういった要因を継続して評価し、将来的に変更を適用することも考えられます。
@@ -102,7 +102,7 @@ AMP の新規バージョンをどれくらいの頻度で全ユーザーに対�
 
 このスケジュールにできるだけ緊密に従うように努めていますが、複雑化すれば遅延が生じる可能性もあります。リリースの最新ステータスは、「[*Type: Release* GitHub issues](https://github.com/ampproject/amphtml/labels/Type%3A%20Release)」および [AMP Slack #release channel](https://amphtml.slack.com/messages/C4NVAR0H3/)（[Slack に登録](https://bit.ly/amp-slack-signup)）で追跡することができます。
 
-- Tuesday @ [11am Pacific](https://www.google.com/search?q=11am+pacific+in+current+time+zone): new **experimental** and **beta** release builds are created from the [latest master build that passes all of our tests](https://travis-ci.com/ampproject/amphtml/branches) and are pushed to users who opted into the [AMP Experimental Channel](#amp-experimental-and-beta-channels) or [AMP Beta Channel](#amp-experimental-and-beta-channels), respectively.
+- 火曜日[午前 11 時（米国太平洋時間）](https://www.google.com/search?q=11am+pacific+in+current+time+zone): 新しい**実験的**および**ベータ**リリースが[すべてのテストに合格した最新のマスタービルド](https://travis-ci.com/ampproject/amphtml/branches)から構築され、[AMP 実験的チャンネル](#amp-experimental-and-beta-channels)または [AMP ベータチャンネル](#amp-experimental-and-beta-channels)にオプトインしている AMP ユーザーにプッシュされます。
 - 水曜日: *実験的チャンネル*および*ベータチャンネル*ユーザーのバグレポートを確認し、すべてが良好であれば、AMP ページの 1% に対して**ベータ**をプッシュします。
 - 木曜日から月曜日: *実験的チャンネル*および*ベータチャンネル*ユーザー、および**実験的**/**ベータ**ビルドを使用する 1% のページのエラー率とバグレポートを監視し続けます。
 - 翌週の火曜日: **ベータ**ビルドは**安定**ビルドに昇格されます（すべての AMP ページで個のビルドを使用できるようになります）。
@@ -121,10 +121,10 @@ AMP の本番リリースを省略する場合がたまにあり、これをリ�
 
 リリースフリーズには、以下のような原因があります。
 
-- Times when there are not enough people available to push the AMP release to **stable** and monitor it. Currently, most of the people performing AMP releases are based in the United States, so this will usually be the weeks of the major US holidays of Independence Day (July 4), Thanksgiving (fourth Thursday in November), Christmas (25 December), and New Year's Eve/Day (December 31/January 1).
+- AMP リリースを**安定**にプッシュしてそれを監視するのに十分な人員が確保されない時期。現在、AMP リリースを実施している人員のほとんどが米国を拠点としているため、通常、米国の独立記念日（7 月4 日）、サンクスギビング（11 月第 4 木曜日）、クリスマス（12 月 25 日）、および大晦日と元日（12 月 31 日/ 1 月 1 日）といった主な米国の祝日が発生する週です。
 - [技術運営委員会（TSC）](https://github.com/ampproject/meta-tsc)またはリリースを実施する人員によって、セキュリティやプライバシーに関する問題などの緊急事態が認められた場合。
-- Other situations when the stability of the codebase is deemed to be particularly important as determined by the TSC.
+- TSC によってコードベースの安定性が特別に重要であると判定された場合など。
 
-In all cases, except emergencies, the release freezes will be announced at least one month in advance.
+緊急時を除くすべてのケースでは、少なくとも 1 か月前にリリースフリーズを告知しています。
 
 リリースフリーズは、そのように指定がない限りコードフリーズではありません。リリースフリーズ中、コードの記述、レビュー、およびマージはそのまま続行することができます。
