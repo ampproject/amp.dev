@@ -47,7 +47,7 @@ AMP 페이지에 광고를 게재하기 위해 컴포넌트를 추가하는 단�
 
 ### 4단계: 광고 네트워크 매개변수 설정
 
-Each network has specific data attributes they require to serve ads.  Refer to the ad network's [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) documentation and add the attributes that are needed In the following example,  the a9 network requires additional parameters to specify the size of the ad, and other details:
+각 네트워크에는 광고를 게재하는 데 필요한 특정 데이터 속성이 있습니다. 광고 네트워크의 <amp-ad> 문서를 참조하여 필요한 속성을 추가하세요. 다음 예에서 a9 네트워크에서는 광고 크기 및 기타 세부정보를 지정하기 위한 추가 매개변수를 요구합니다.
 
 ```html
 <amp-ad type="a9"
@@ -86,7 +86,7 @@ Each network has specific data attributes they require to serve ads.  Refer to t
 </amp-ad>
 ```
 
-축하합니다! 이제 AMP 페이지에 광고가 게재됩니다.
+축하합니다! 이제 AMP 페이지에 광고를 게재하고 있습니다!
 
 ## 직접 판매 AMPHTML 광고 게재
 
