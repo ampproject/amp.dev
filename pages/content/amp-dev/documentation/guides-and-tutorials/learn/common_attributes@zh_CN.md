@@ -151,7 +151,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-img>
 ```
 
-Will produce the following nested `img ` tag:
+将产生以下嵌套的` img `标签：
 
 ```html
 <img decoding="async"
