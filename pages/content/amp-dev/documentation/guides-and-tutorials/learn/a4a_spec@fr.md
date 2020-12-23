@@ -1,5 +1,5 @@
 ---
-"$title": AMP for Ads specification
+"$title": Spécification AMP pour les annonces
 order: '3'
 formats:
 - ads
@@ -46,21 +46,21 @@ En outre, les publicités doivent respecter les règles suivantes:
 
 <table>
 <thead><tr>
-  <th>Rule</th>
-  <th>Rationale</th>
+  <th>Règle</th>
+  <th>Logique</th>
 </tr></thead>
 <tbody>
 <tr>
 <td>Doit utiliser les types <code>&lt;html ⚡4ads></code> ou <code>&lt;html amp4ads></code> comme ses balises englobantes.</td>
-<td>Allows validators to identify a creative document as either a general AMP doc or a restricted AMPHTML ad doc and to dispatch appropriately.</td>
+<td>Permet aux validateurs d'identifier un document publicitaire en tant que document AMP général ou en tant que document publicitaire AMPHTML restreint et de l'envoyer en conséquence.</td>
 </tr>
 <tr>
 <td>Doit inclure <code>&lt;script async src="https://cdn.ampproject.org/amp4ads-v0.js"></code> comme script d'exécution au lieu de <code>https://cdn.ampproject.org/v0.js</code>.</td>
-<td>Allows tailored runtime behaviors for AMPHTML ads served in cross-origin iframes.</td>
+<td>Permet des comportements d'exécution personnalisés pour les annonces AMP HTML diffusées dans des iframes d'origine croisée.</td>
 </tr>
 <tr>
 <td>Ne doit pas inclure une balise Ne doit pas inclure une balise <code>&lt;link rel="canonical"></code>.</td>
-<td>Ad creatives don't have a "non-AMP canonical version" and won't be independently search-indexed, so self-referencing would be useless.</td>
+<td>Les créations publicitaires n'ont pas de « version canonique non AMP » et ne seront pas indexées de manière indépendante par la recherche. L'auto-référencement serait donc inutile.</td>
 </tr>
 <tr>
 <td>Peut inclure des métabalises facultatives dans l'en-tête HTML comme identifiants, au format <code>&lt;meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code>. Ces métabalises doivent être placées avant le script <code>amp4ads-v0.js</code>. Les valeurs de <code>vendor</code> et <code>id</code> sont des chaînes de caractères contenant uniquement [0-9a-zA-Z_-]. La valeur de <code>type</code> est soit <code>creative-id</code> soit <code>impression-id</code>.</td>
@@ -120,32 +120,32 @@ Notez que les mêmes règles concernant les mutations du modèle de texte s'appl
 
 <table>
 <thead><tr>
-  <th>Rule</th>
-  <th>Rationale</th>
+  <th>Règle</th>
+  <th>Logique</th>
 </tr></thead>
 <tbody>
   <tr>
     <td>
 <code>position:fixed</code> et <code>position:sticky</code> sont interdites dans un CSS de publicité.</td>
     <td>
-<code>position:fixed</code> breaks out of shadow DOM, which AMPHTML ads depend on. lso, ads in AMP are already not allowed to use fixed position.</td>
+<code>position:fixed</code> crée une rupture avec le shadow DOM dont dépendent les annonces AMPHTML. De plus, les annonces dans AMP ne sont déjà pas autorisées à utiliser une position fixe.</td>
   </tr>
   <tr>
     <td>
 <code>touch-action</code> est interdite.</td>
-    <td>An ad that can manipulate <code>touch-action</code> can interfere with    the user's ability to scroll the host document.</td>
+    <td>Une annonce qui peut manipuler <code>touch-action</code> peut interférer avec la capacité de l'utilisateur à faire défiler le document hôte.</td>
   </tr>
   <tr>
-    <td>Creative CSS is limited to 20,000 bytes.</td>
-    <td>Large CSS blocks bloat the creative, increase network    latency, and degrade page performance. </td>
+    <td>Le CSS de publicité est limité à 20 000 octets.</td>
+    <td>Les gros blocs CSS gonflent la publicité, augmentent la latence du réseau et dégradent les performances de la page.</td>
   </tr>
   <tr>
-    <td>Transition and animation are subject to additional restrictions.</td>
-    <td>AMP must be able to control all animations belonging to an    ad, so that it can stop them when the ad is not on screen or system resources are very low.</td>
+    <td>Les transitions et animation sont soumises à des restrictions supplémentaires.</td>
+    <td>AMP doit pouvoir contrôler toutes les animations appartenant à une annonce, afin de pouvoir les arrêter lorsque l'annonce n'est pas à l'écran ou que les ressources système sont très faibles.</td>
   </tr>
   <tr>
-    <td>Vendor-specific prefixes are considered aliases for the same symbol    without the prefix for the purposes of validation.  This means that if    a symbol <code>foo</code> is prohibited by CSS validation rules, then the symbol <code>-vendor-foo</code> will also be prohibited.</td>
-    <td>Some vendor-prefixed properties provide equivalent functionality to properties that are otherwise prohibited or constrained under these rules.<br><br><p>Example: <code>-webkit-transition</code> and <code>-moz-transition</code> are both considered aliases for <code>transition</code>.  They will only be allowed in contexts where bare <code>transition</code> would be allowed (see <a href="#selectors">Selectors</a> section below).</p>
+    <td>Les préfixes spécifiques au fournisseur sont considérés comme des alias pour le même symbole sans le préfixe à des fins de validation. Cela signifie que si un symbole <code>foo</code> est interdit par les règles de validation CSS, alors le symbole <code>-vendor-foo</code> sera également interdit.</td>
+    <td>Certaines propriétés préfixées par le fournisseur fournissent des fonctionnalités équivalentes à des propriétés qui sont autrement interdites ou contraintes en vertu de ces règles. <br><br><p> Exemple: <code>-webkit-transition</code> et <code>-moz-transition</code> sont tous deux considérés comme des alias de <code>transition</code>. Ils ne seront autorisés que dans des contextes où <code>transition</code> seul serait autorisé (voir la section <a href="#selectors">Sélecteurs</a> ci-dessous).</p>
 </td>
   </tr>
 </tbody>
@@ -157,11 +157,11 @@ Notez que les mêmes règles concernant les mutations du modèle de texte s'appl
 
 Les propriétés `transition` et `animation` ne sont autorisées que sur les sélecteurs qui:
 
-- Contain only `transition`, `animation`, `transform`, `visibility`, or `opacity` properties.
+- Contiennent uniquement les propriétés `transition`, `animation`, `transform`, `visibility` ou `opacity`.
 
-    *Rationale:* This allows the AMP runtime to remove this class from context to deactivate animations, when necessary for page performance.
+    *Logique:* cela permet au runtime AMP de supprimer cette classe du contexte pour désactiver les animations, si nécessaire pour les performances de la page.
 
-**Good**
+**Bon**
 
 [sourcecode:css]
 .box {
@@ -170,9 +170,9 @@ Les propriétés `transition` et `animation` ne sont autorisées que sur les sé
 }
 [/sourcecode]
 
-**Bad**
+**Mauvais**
 
-Property not allowed in CSS class.
+Propriété non autorisée dans la classe CSS.
 
 [sourcecode:css]
 .box {
@@ -182,23 +182,23 @@ Property not allowed in CSS class.
 }
 [/sourcecode]
 
-##### Transitionable and animatable properties <a name="transitionable-and-animatable-properties"></a>
+##### Propriétés avec possibilité de transition et d'animation <a name="transitionable-and-animatable-properties"></a>
 
-The only properties that may be transitioned are opacity and transform. ([Rationale](http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/))
+Les seules propriétés qui acceptent une transition sont l'opacité et la transformation. ( [Logique](http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/) )
 
-**Good**
+**Bon**
 
 [sourcecode:css]
 transition: transform 2s;
 [/sourcecode]
 
-**Bad**
+**Mauvais**
 
 [sourcecode:css]
 transition: background-color 2s;
 [/sourcecode]
 
-**Good**
+**Bon**
 
 [sourcecode:css]
 @keyframes turn {
@@ -212,7 +212,7 @@ transition: background-color 2s;
 }
 [/sourcecode]
 
-**Bad**
+**Mauvais**
 
 [sourcecode:css]
 @keyframes slidein {
@@ -228,9 +228,9 @@ transition: background-color 2s;
 }
 [/sourcecode]
 
-### Allowed AMP extensions and builtins <a name="allowed-amp-extensions-and-builtins"></a>
+### Extensions et fonctions intégrées AMP autorisées <a name="allowed-amp-extensions-and-builtins"></a>
 
-The following are *allowed* AMP extension modules and AMP built-in tags in an AMPHTML ad creative. Extensions or builtin tags not explicitly listed are prohibited.
+Les modules d'extension AMP et les balises intégrées AMP suivants sont *autorisés* dans une création publicitaire AMPHTML. Les extensions ou balises intégrées non explicitement répertoriées sont interdites.
 
 - [amp-accordion](https://amp.dev/documentation/components/amp-accordion)
 - [amp-ad-exit](https://amp.dev/documentation/components/amp-ad-exit)
@@ -254,31 +254,31 @@ The following are *allowed* AMP extension modules and AMP built-in tags in an AM
 - [amp-social-share](https://amp.dev/documentation/components/amp-social-share)
 - [amp-video](https://amp.dev/documentation/components/amp-video)
 
-Most of the omissions are either for performance or to make AMPHTML ads simpler to analyze.
+La plupart des omissions sont liées aux performances ou permettent de simplifier l'analyse des publicités AMPHTML.
 
-*Example:* `<amp-ad>` is omitted from this list. It is explicitly disallowed because allowing an `<amp-ad>` inside an `<amp-ad>` could potentially lead to unbounded waterfalls of ad loading, which does not meet AMPHTML ads performance goals.
+*Exemple:* `<amp-ad>` est omis de cette liste. Cela est explicitement interdit, car autoriser un `<amp-ad>` dans `<amp-ad>` pourrait potentiellement entraîner des cascades de chargement d'annonces illimitées, ce qui ne répond pas aux objectifs de performances des annonces AMPHTML.
 
-*Example:* `<amp-iframe>` is omitted from this list. It is disallowed because ads could use it to execute arbitrary Javascript and load arbitrary content. Ads wanting to use such capabilities should return `false` from their [a4aRegistry](https://github.com/ampproject/amphtml/blob/master/ads/_a4a-config.js#L40) entry and use the existing '3p iframe' ad rendering mechanism.
+*Exemple:* `<amp-iframe>` est omis de cette liste. Il est interdit car les annonces pourraient l'utiliser pour exécuter du Javascript arbitraire et charger du contenu arbitraire. Les annonces souhaitant utiliser de telles fonctionnalités doivent renvoyer `false` partir de leur entrée [a4aRegistry](https://github.com/ampproject/amphtml/blob/master/ads/_a4a-config.js#L40) et utiliser le mécanisme de diffusion d'annonce '3p iframe' existant.
 
-*Example:* `<amp-facebook>`, `<amp-instagram>`, `<amp-twitter>`, and `<amp-youtube>` are all omitted for the same reason as `<amp-iframe>`: They all create iframes and can potentially consume unbounded resources in them.
+*Exemple:* `<amp-facebook>` , `<amp-instagram>` , `<amp-twitter>` et `<amp-youtube>` sont tous omis pour la même raison que `<amp-iframe>`: ils créent tous des iframes et peuvent potentiellement consommer des ressources illimitées.
 
-*Example:* `<amp-ad-network-*-impl>` are omitted from this list. The `<amp-ad>` tag handles delegation to these implementation tags; creatives should not attempt to include them directly.
+*Exemple:* `<amp-ad-network-*-impl>` sont omis de cette liste. La balise `<amp-ad>` gère la délégation à ces balises d'implémentation; les publicités ne doivent pas tenter de les inclure directement.
 
-*Example:* `<amp-lightbox>` is not yet included because even some AMPHTML ads creatives may be rendered in an iframe and there is currently no mechanism for an ad to expand beyond an iframe. Support may be added for this in the future, if there is demonstrated desire for it.
+*Exemple:* `<amp-lightbox>` n'est pas encore inclus, car certaines créations publicitaires AMPHTML peuvent même être diffusées dans une iframe et il n'existe actuellement aucun mécanisme permettant à une annonce de se développer au-delà d'une iframe. Si le besoin se fait ressentir, nous pourrons ajouter la prise en charge de cet élément prochainement.
 
-### HTML tags <a name="html-tags"></a>
+### Balises HTML <a name="html-tags"></a>
 
-The following are *allowed* tags in an AMPHTML ads creative. Tags not explicitly allowed are prohibited. This list is a subset of the general [AMP tag addendum allowlist](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md). Like that list, it is ordered consistent with HTML5 spec in section 4 [The Elements of HTML](http://www.w3.org/TR/html5/single-page.html#html-elements).
+Les balises suivantes sont *&nbsp;autorisées* dans une création publicitaire AMPHTML. Les balises non explicitement autorisées sont interdites. Cette liste est un sous-ensemble de la [ liste générale des balises AMP autorisées](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md). Comme cette liste, elle est ordonnée conformément aux spécifications HTML5 de la section 4 [Les éléments du HTML](http://www.w3.org/TR/html5/single-page.html#html-elements).
 
-Most of the omissions are either for performance or because the tags are not HTML5 standard. For example, `<noscript>` is omitted because AMPHTML ads depends on JavaScript being enabled, so a `<noscript>` block will never execute and, therefore, will only bloat the creative and cost bandwidth and latency. Similarly, `<acronym>`, `<big>`, et al. are prohibited because they are not HTML5 compatible.
+La plupart des omissions sont liées aux performances ou au fait que les balises ne sont pas au standard HTML5. Par exemple, `<noscript>` est omis car les annonces AMPHTML dépendent de l'activation de JavaScript. Par conséquent, un bloc `<noscript>` ne s'exécutera jamais et, par conséquent, ne fera que gonfler la publicité, consommer la bande passante et empirer la latence. De même, `<acronym>`, `<big>` , et autres sont interdits car ils ne sont pas compatibles HTML5.
 
-#### 4.1 The root element <a name="41-the-root-element"></a>
+#### 4.1 L'élément racine <a name="41-the-root-element"></a>
 
 4.1.1 `<html>`
 
-- Must use types `<html ⚡4ads>` or `<html amp4ads>`
+- Doit utiliser les types `<html ⚡4ads>` ou `<html amp4ads>`
 
-#### 4.2 Document metadata <a name="42-document-metadata"></a>
+#### 4.2 Métadonnées du document <a name="42-document-metadata"></a>
 
 4.2.1 `<head>`
 
@@ -286,9 +286,9 @@ Most of the omissions are either for performance or because the tags are not HTM
 
 4.2.4 `<link>`
 
-- `<link rel=...>` tags are disallowed, except for `<link rel=stylesheet>`.
+- Les balises `<link rel=...>` ne sont pas autorisées, à l'exception de `<link rel=stylesheet>`.
 
-- **Note:** Unlike in general AMP, `<link rel="canonical">` tags are prohibited.
+- **Remarque:** contrairement à l'AMP général, les balises `<link rel="canonical">` sont interdites.
 
     4.2.5 `<style>` 4.2.6 `<meta>`
 
@@ -296,43 +296,43 @@ Most of the omissions are either for performance or because the tags are not HTM
 
 4.3.1 `<body>` 4.3.2 `<article>` 4.3.3 `<section>` 4.3.4 `<nav>` 4.3.5 `<aside>` 4.3.6 `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, and `<h6>` 4.3.7 `<header>` 4.3.8 `<footer>` 4.3.9 `<address>`
 
-#### 4.4 Grouping Content <a name="44-grouping-content"></a>
+#### 4.4 Regroupement du contenu <a name="44-grouping-content"></a>
 
 4.4.1 `<p>` 4.4.2 `<hr>` 4.4.3 `<pre>` 4.4.4 `<blockquote>` 4.4.5 `<ol>` 4.4.6 `<ul>` 4.4.7 `<li>` 4.4.8 `<dl>` 4.4.9 `<dt>` 4.4.10 `<dd>` 4.4.11 `<figure>` 4.4.12 `<figcaption>` 4.4.13 `<div>` 4.4.14 `<main>`
 
-#### 4.5 Text-level semantics <a name="45-text-level-semantics"></a>
+#### 4.5 Sémantique au niveau du texte <a name="45-text-level-semantics"></a>
 
 4.5.1 `<a>` 4.5.2 `<em>` 4.5.3 `<strong>` 4.5.4 `<small>` 4.5.5 `<s>` 4.5.6 `<cite>` 4.5.7 `<q>` 4.5.8 `<dfn>` 4.5.9 `<abbr>` 4.5.10 `<data>` 4.5.11 `<time>` 4.5.12 `<code>` 4.5.13 `<var>` 4.5.14 `<samp>` 4.5.15 `<kbd >` 4.5.16 `<sub>` and `<sup>` 4.5.17 `<i>` 4.5.18 `<b>` 4.5.19 `<u>` 4.5.20 `<mark>` 4.5.21 `<ruby>` 4.5.22 `<rb>` 4.5.23 `<rt>` 4.5.24 `<rtc>` 4.5.25 `<rp>` 4.5.26 `<bdi>` 4.5.27 `<bdo>` 4.5.28 `<span>` 4.5.29 `<br>` 4.5.30 `<wbr>`
 
-#### 4.6 Edits <a name="46-edits"></a>
+#### 4.6 Modifications <a name="46-edits"></a>
 
 4.6.1 `<ins>` 4.6.2 `<del>`
 
-#### 4.7 Embedded Content <a name="47-embedded-content"></a>
+#### 4.7 Contenu intégré <a name="47-embedded-content"></a>
 
-- Embedded content is supported only via AMP tags, such as `<amp-img>` or `<amp-video>`.
+- Le contenu intégré est pris en charge uniquement via les balises AMP, telles que `<amp-img>` ou `<amp-video>`.
 
 #### 4.7.4 `<source>` <a name="474-source"></a>
 
 #### 4.7.18 SVG <a name="4718-svg"></a>
 
-SVG tags are not in the HTML5 namespace. They are listed below without section ids.
+Les balises SVG ne sont pas dans l'espace de noms HTML5. Ils sont répertoriés ci-dessous sans ID de section.
 
 `<svg>``<g>``<path>``<glyph>``<glyphref>``<marker>``<view>``<circle>``<line>``<polygon>``<polyline>``<rect>``<text>``<textpath>``<tref>``<tspan>``<clippath>``<filter>``<lineargradient>``<radialgradient>``<mask>``<pattern>``<vkern>``<hkern>``<defs>``<use>``<symbol>``<desc>``<title>`
 
-#### 4.9 Tabular data <a name="49-tabular-data"></a>
+#### 4.9 Données tabulaires <a name="49-tabular-data"></a>
 
 4.9.1 `<table>` 4.9.2 `<caption>` 4.9.3 `<colgroup>` 4.9.4 `<col>` 4.9.5 `<tbody>` 4.9.6 `<thead>` 4.9.7 `<tfoot>` 4.9.8 `<tr>` 4.9.9 `<td>` 4.9.10 `<th>`
 
-#### 4.10 Forms <a name="410-forms"></a>
+#### 4.10 Formulaires <a name="410-forms"></a>
 
 4.10.8 `<button>`
 
-#### 4.11 Scripting <a name="411-scripting"></a>
+#### 4.11 Script <a name="411-scripting"></a>
 
-- Like a general AMP document, the creative's `<head>` tag must contain a `<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>` tag.
-- Unlike general AMP, `<noscript>` is prohibited.
-    - *Rationale:* Since AMPHTML ads requires Javascript to be enabled to function at all, `<noscript>` blocks serve no purpose in AMPHTML ads and only cost network bandwidth.
-- Unlike general AMP, `<script type="application/ld+json">` is prohibited.
-    - *Rationale:* JSON LD is used for structured data markup on host pages, but ad creatives are not standalone documents and don't contain structured data. JSON LD blocks in them would just cost network bandwidth.
-- All other scripting rules and exclusions are carried over from general AMP.
+- À l'instar d'un document AMP général, l'élément `<head>` de la publicité doit contenir une balise `<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>`.
+- Contrairement à l'AMP général, `<noscript>` est interdit.
+    - *Logique: étant* donné que les annonces AMPHTML nécessitent l'activation de Javascript pour fonctionner, les blocs `<noscript>` ne servent à rien dans les annonces AMPHTML et ne font que consommer la bande passante du réseau.
+- Contrairement à l'AMP général, `<script type="application/ld+json">` est interdit.
+    - *Logique:* JSON LD est utilisé pour le balisage des données structurées sur les pages hôtes, mais les créations publicitaires ne sont pas des documents autonomes et ne contiennent pas de données structurées. Les blocs JSON LD qu'ils contiennent ne feraient que consommer la bande passante.
+- Toutes les autres règles et exclusions de script et sont tirées de l'AMP général.
