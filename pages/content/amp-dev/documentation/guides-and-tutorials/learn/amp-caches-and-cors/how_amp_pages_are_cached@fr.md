@@ -12,7 +12,7 @@ Dans ce document, vous découvrirez le rôle du cache AMP dans l'écosystème AM
 
 ## Qu'est-ce qu'un cache AMP ?
 
-An AMP Cache is a proxy-based content delivery network (CDN) for delivering valid AMP documents. AMP Caches are designed to:
+Un <a>cache AMP</a> est un réseau de distribution de contenu (CDN) basé sur un proxy pour la diffusion de documents AMP valides. Les caches AMP sont conçus pour:
 
 1. Serve only valid AMP pages.
 2. Permettre aux pages AMP d'être préchargées efficacement et en toute sécurité.
@@ -55,7 +55,7 @@ Cached AMP pages are accessed by platforms (like Google Search, Google News, and
 
 By using the AMP format, you are making your content available to be cached by AMP Caches. There are a few ways that your AMP page can end up in an AMP Cache:
 
-- **Platform discovery**:  Platforms discover your AMP content via the `<html ⚡>` or `<html amp>` tag and cache the content. For example, Google Search crawls content; for any identified and valid AMP pages, the content is added to the Google AMP Cache.
+- **Découverte de plateformes** : les plateformes découvrent votre contenu AMP via l abalise `<html ⚡>` ou `<html amp>` et mettent le contenu en cache. Par exemple, la recherche Google explore le contenu ; pour toutes les pages AMP identifiées et valides, le contenu est ajouté au cache Google AMP.
 
 - **Cache URL request**: Platforms can specifically request an AMP page by using the AMP Cache URL format.  The AMP Cache acts as a reverse proxy, therefore, when the platform accesses the page, it results in the page being cached automatically.
 
