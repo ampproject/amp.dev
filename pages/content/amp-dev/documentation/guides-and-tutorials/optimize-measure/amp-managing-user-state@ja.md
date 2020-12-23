@@ -121,7 +121,7 @@ AMP キャッシュの場合と同様、AMP ビューアのドメインは、サ
 **To enable this and any experience involving user state, all contexts the user traverses must share their individually-maintained state with each other.** "Perfect!", you say, with the idea to share the cookie values with user identifiers across these contextual boundaries. One wrinkle: even though each of these contexts displays content controlled by the same publisher, they each see the other as a third-party because each context lives on different domains.
 
 <amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png" width="1030" height="868">
-  <noscript>     <img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png">   </noscript></amp-img>
+  <noscript><img alt="多くのコンテキストで表示されるAMPの機能は、それらのコンテキストのそれぞれが識別子用の独自のストレージを持っていることを意味します" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png"></noscript></amp-img>
 
 次の議論からわかるように、cookie を操作する際にサードパーティであれば、ユーザーのブラウザ設定がどのように構成されているかによって、問題となることがあります。特に、特定の状況でサードパーティ cookie がブロックされている場合、コンテキスト間での情報共有が行えなくなります。一方、サードパーティ cookie の操作が許可されている場合は、情報を共有することができます。
 
@@ -143,7 +143,7 @@ AMP キャッシュの場合と同様、AMP ビューアのドメインは、サ
 以下の技術ガイダンスを説明するにあたり、**ユーザー状態**をユーザーを表す安定した **ID** にバインドすることを前提とします。ID を `n34ic982n2386n30` とした場合、サーバー側で `n34ic982n2386n30` を、買い物かごの内容、以前に読んだ記事のリスト、または使用事例に応じたその他のデータなどのユーザー状態情報に関連付けます。
 
 <amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
-  <noscript>     <img alt="A single identifier could be used to manage user state for many use cases" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png">   </noscript></amp-img>
+  <noscript><img alt="単一の識別子を使用して、多くのユースケースのユーザー状態を管理できます" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png"></noscript></amp-img>
 
 このドキュメントの残りでは、わかりやすいように、ID を示す文字列をドル記号（`$`）の後に読みやすい名前をつなげた形式で示します。次にその例を示します。
 
@@ -380,7 +380,7 @@ AMP クライアント ID がマッピングに見つからない場合は、マ
 このタスクでは、ユーザーが**リンクまたはフォーム送信によって**あるページから別のページにコンテキストをまたがって移動する場合に役立つ追加の最適化方法を説明します。このような状況において、以下に説明する実装を行うと、コンテキスト間でユーザー状態を管理するための完全に有効なスキームをセットアップすることができます。
 
 <amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
-  <noscript>     <img alt="Links can be used to pass the identifier information of one context into another (linked) context" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png">   </noscript></amp-img>
+  <noscript><img alt="リンクを使用して、あるコンテキストの識別子情報を別の（リンクされた）コンテキストに渡すことができます" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png"></noscript></amp-img>
 
 ##### 置換機能を使用する <a name="using-substitution-features"></a>
 
@@ -433,7 +433,7 @@ https://example.com/step2.html?ref_id=$amp_client_id
 [/sourcecode]
 
 <amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
-  <noscript>     <img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png">   </noscript></amp-img>
+  <noscript><img alt="AMPビューアコンテキストの識別子をリンク経由でパブリッシャーオリジンコンテキストに渡す方法の例" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png"></noscript></amp-img>
 
 ユーザーが、URL パラメータとしてまたはヘッダー内に `ref_id` 値を含むページにアクセスすると、ページ自体が公開する ID（cookie 値）とともに `ref_id` ID を同時処理することができます。両方をアナリティクス ping に含めることで、アナリティクスサーバーは両方の値を同時に操作し、それらが関連していることを理解した上で、バックエンドにこの関係を反映させます。次の手順では、このやり方を説明します。
 
@@ -457,7 +457,7 @@ https://example.com/step2.html?ref_id=$amp_client_id
 ランディングページで処理するには、そのページが AMP ページであるか非 AMP ページであるかによって、アプローチが異なります。
 
 <amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
-  <noscript>     <img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png">   </noscript></amp-img>
+  <noscript><img alt="URLを介して提供された以前のコンテキストからの識別子と現在のコンテキストからの識別子を含む分析pingを構築する方法の例" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
 
 *Updates to AMP page:* Use the Query Parameter substitution feature in your amp-analytics configuration to obtain the `ref_id` identifier value within the URL. The Query Parameter feature takes a parameter that indicates the "key" of the desired key-value pair in the URL and returns the corresponding value. Use the Client ID feature as we have been doing to get the identifier for the AMP page context.
 
@@ -497,9 +497,7 @@ https://analytics.example.com/ping?type=pageview&orig_user_id=$amp_client_id&use
   <li>パラメータを読み取って取り除いたコードがデータを保存した場所にアクセスできること。</li>
 </ul>
 <p>非 AMP ページでこれを実現するには、次の JavaScript を含めます。これは、URL からすべてのクエリパラメータを削除する JavaScript です。</p>
-<pre>var href = location.href.replace(/\?[^{{'[% raw %]'}}#]{{'{% endraw %}'}}+/, '');
-history.replaceState(null, null, href);
-</pre>
+<pre>var href = location.href.replace(/\?[^{{'[% raw %]'}}#]{{'{% endraw %}'}}+/, '');<br>history.replaceState(null, null, href);</pre>
 <p>削除するクエリパラメータを減らすように、必要に応じてこれを変更してください。</p>
 </blockquote>
 
