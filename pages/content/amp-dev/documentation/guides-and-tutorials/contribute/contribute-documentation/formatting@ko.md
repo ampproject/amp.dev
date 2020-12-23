@@ -100,43 +100,41 @@ amp.dev는 AMP로 작성되었습니다! 그렇기에 이미지는 [`amp-img`](.
 
 일부 문서는 여러 AMP 형식과 연관되었을 수 있지만 이러한 형식에는 다른 것들과 연관성 없는 추가 설명 또는 정보가 필요할 수도 있습니다. 다음 숏코드로 섹션을 래핑하여 필터링할 수 있습니다.
 
-<div class="ap-m-code-snippet"><pre>&lsqb;filter formats="websites"]
+<div class="ap-m-code-snippet"><pre>&amp;lsqb;filter formats="websites"]
 This is only visible for [websites](?format=websites).
-&lsqb;/filter]
+&amp;lsqb;/filter]
 
-&lsqb;filter formats="websites"]
+&amp;lsqb;filter formats="websites"]
 This is only visible for [websites](?format=websites).
-&lsqb;/filter]
+&amp;lsqb;/filter]
 
-&lsqb;filter formats="websites, email"]
-This is visible for [websites](?format=websites) & [email](?format=email).
-&lsqb;/filter]
+&amp;lsqb;filter formats="websites, email"]
+This is visible for [websites](?format=websites) &amp; [email](?format=email).
+&amp;lsqb;/filter]
 
-&lsqb;filter formats="stories"]
+&amp;lsqb;filter formats="stories"]
 This is visible for [stories](?format=stories).
-&lsqb;/filter]
-</pre></div>
+&amp;lsqb;/filter]</pre></div>
 
 ## 팁
 
 다음 숏코드에 텍스트를 래핑하여 팁과 콜아웃을 추가할 수 있습니다.
 
-<div class="ap-m-code-snippet"><pre>&lsqb;tip type="default"]
+<div class="ap-m-code-snippet"><pre>&amp;lsqb;tip type="default"]
 Default tip
 [/tip]
 
-&lsqb;tip type="important"]
+&amp;lsqb;tip type="important"]
 Important
 [/tip]
 
-&lsqb;tip type="note"]
+&amp;lsqb;tip type="note"]
 Note
 [/tip]
 
-&lsqb;tip type="read-on"]
+&amp;lsqb;tip type="read-on"]
 Read-on
-[/tip]
-</pre></div>
+[/tip]</pre></div>
 
 ## 코드 조각
 
@@ -152,8 +150,7 @@ Read-on
 
 ```js
   // code sample
-```
-</pre></div>
+```</pre></div>
 
 [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md?format=websites) 템플릿을 활용하면 자주 그렇듯 코드에 중괄호가 두 개 포함된 경우 코드 부분을 래핑해야 합니다.
 
