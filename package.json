@@ -77,7 +77,7 @@
 		"express": "4.17.1",
 		"express-formidable": "1.2.0",
 		"gcp-metadata": "4.2.1",
-		"helmet-csp": "3.2.0",
+		"helmet-csp": "3.3.1",
 		"http-proxy": "1.18.1",
 		"iltorb": "2.4.5",
 		"ioredis": "4.19.4",
