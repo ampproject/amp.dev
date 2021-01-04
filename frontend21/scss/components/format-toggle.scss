@@ -9,7 +9,7 @@
     z-index: 3;
     display: flex;
     align-items: center;
-    width: 100%;
+    width: calc(100% - 44px);
     min-height: 34px;
     padding: 5px 8px;
     overflow: hidden;

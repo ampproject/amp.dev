@@ -1,11 +1,9 @@
 .#{prefix(null, 'content')} {
   grid-column: 4 / 12;
   z-index: 1;
-  margin-top: 25px;
-  margin-bottom: 55px;
+  margin: 25px 0 55px 60px;
   position: relative;
   width: 100%;
-  margin-left: auto;
   padding: 10px 60px 60px 60px;
   background: color('white');
   box-shadow: 0 10px 60px 0 transparentize(color('black'), 0.9);
@@ -26,5 +24,6 @@
 
   .--sidebaropen & {
     width: calc(100% - 250px);
+    margin-left: auto;
   }
 }
