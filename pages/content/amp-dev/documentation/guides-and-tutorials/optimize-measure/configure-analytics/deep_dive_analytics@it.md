@@ -161,7 +161,7 @@ Ad esempio, il seguente elemento [`amp-analytics`](../../../../documentation/com
 }
 ```
 
-[tip type = "important"] **IMPORTANTE:** l'approccio precedente è consigliato solo per le pagine AMP e non per gli annunci AMPHTML. Poiché la priorità dell'analisi è inferiore rispetto al contenuto della pagina, si consiglia di tenere traccia dei clic utilizzando un reindirizzamento del browser per evitare la perdita di clic. [/tip]
+[tip type="important"] **IMPORTANTE:** l'approccio precedente è consigliato solo per le pagine AMP e non per gli annunci AMPHTML. Poiché la priorità dell'analisi è inferiore rispetto al contenuto della pagina, si consiglia di tenere traccia dei clic utilizzando un reindirizzamento del browser per evitare la perdita di clic. [/tip]
 
 AMP supporta le seguenti configurazioni di attivazione:
 
@@ -200,7 +200,7 @@ AMP supporta le seguenti configurazioni di attivazione:
   </tbody>
 </table>
 
-[tip type = "important"] **IMPORTANTE:** I trigger di una configurazione con precedenza inferiore vengono sovrascritti dai trigger con lo stesso nome di una configurazione con precedenza maggiore (vedere [Ordine di sostituzione delle variabili](deep_dive_analytics.md#variable-substitution-ordering)). [/tip]
+[tip type="important"] **IMPORTANTE:** I trigger di una configurazione con precedenza inferiore vengono sovrascritti dai trigger con lo stesso nome di una configurazione con precedenza maggiore (vedere [Ordine di sostituzione delle variabili](deep_dive_analytics.md#variable-substitution-ordering)). [/tip]
 
 ### Come vengono inviati i dati: attributo transport
 

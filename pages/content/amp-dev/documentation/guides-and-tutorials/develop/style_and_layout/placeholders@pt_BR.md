@@ -3,15 +3,15 @@
 "$order": '3'
 descriptions: No espírito do desempenho percebido e melhoria progressiva, é uma prática recomendada no AMP fornecer placeholders e fallbacks sempre que possível.
 formats:
-- sites
-- e-mail
-- anúncios
-- histórias
+  - websites
+  - email
+  - ads
+  - stories
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 No espírito do desempenho percebido e melhoria progressiva, é uma prática recomendada no AMP fornecer placeholders e fallbacks sempre que possível.
@@ -33,6 +33,7 @@ O elemento com o atributo `placeholder` atua como um marcador de posição para 
     layout="fill">
   </amp-img>
 </amp-anim>
+```
 [/example]
 
 Por default, o placeholder é mostrado imediatamente para o elemento AMP, mesmo que os recursos desse elemento não tenham sido inicializados nem baixados. Depois de pronto, o elemento AMP geralmente oculta o placeholder e mostra o conteúdo.
@@ -64,6 +65,7 @@ No exemplo abaixo, o atributo `fallback` é usado para comunicar ao usuário que
     <p>This browser does not support the video element.</p>
   </div>
 </amp-video>
+```
 [/example]
 
 ##### Exemplo: como exibir diferentes formatos de imagem

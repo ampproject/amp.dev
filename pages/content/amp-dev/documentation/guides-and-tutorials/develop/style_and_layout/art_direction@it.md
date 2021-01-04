@@ -58,7 +58,7 @@ Si consideri il seguente esempio:
 
 L'attributo `sizes` definisce la larghezza dell'elemento pari al 50% della dimensione della finestra di visualizzazione, quando tale dimensione è maggiore di 650 pixel. Ad esempio, se la finestra di visualizzazione è di 800 pixel, la larghezza dell'elemento sarà di 400 pixel. Quindi il browser seleziona la risorsa `srcset` relativa a 400 pixel, assumendo che la proporzione pixel del dispositivo sia 1, che in questo caso è  `hummingbird-narrow.jpg` (320 pixel).
 
-[tip type = "important"] **IMPORTANTE:** Quando l'attributo sizes è specificato insieme a larghezza e altezza, il layout predefinito è `responsive`. [/tip]
+[tip type="important"] **IMPORTANTE:** Quando l'attributo sizes è specificato insieme a larghezza e altezza, il layout predefinito è `responsive`. [/tip]
 
 Maggiori informazioni sull'[attributo AMP `sizes` sono disponibili qui](../../../../documentation/guides-and-tutorials/learn/common_attributes.md).
 

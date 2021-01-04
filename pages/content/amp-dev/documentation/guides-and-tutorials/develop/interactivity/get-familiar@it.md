@@ -83,7 +83,7 @@ Una pagina AMP essenziale ha il seguente aspetto:
 </html>
 ```
 
-[tipi] Si può utilizzare il [generatore boilerplate](https://amp.dev/boilerplate) per definire rapidamente la struttura di base per le pagine AMP. Tale strumento fornisce anche frammenti per dati strutturati, per creare PWA (progressive web app) e molto altro! [/tip]
+[tip] Si può utilizzare il [generatore boilerplate](https://amp.dev/boilerplate) per definire rapidamente la struttura di base per le pagine AMP. Tale strumento fornisce anche frammenti per dati strutturati, per creare PWA (progressive web app) e molto altro! [/tip]
 
 ## Componenti AMP
 

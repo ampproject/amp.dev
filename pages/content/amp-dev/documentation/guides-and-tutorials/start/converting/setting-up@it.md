@@ -40,7 +40,7 @@ Per testare la pagina di esempio, dobbiamo accedere ai file da un server web. Es
 - [Apache](https://httpd.apache.org/docs/2.4/getting-started.html)
 - [nginx](http://nginx.org/)
 
-[tip type ="note"] **NOTA: ** Si consiglia vivamente di utilizzare HTTPS negli ambienti di produzione. HTTPS ha diversi vantaggi oltre alla semplice sicurezza, comprese le funzioni SEO. Ulteriori informazioni su questo argomento sono disponibili in questo [post del blog di Google Webmaster](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html). [/tip]
+[tip type="note"] **NOTA: ** Si consiglia vivamente di utilizzare HTTPS negli ambienti di produzione. HTTPS ha diversi vantaggi oltre alla semplice sicurezza, comprese le funzioni SEO. Ulteriori informazioni su questo argomento sono disponibili in questo [post del blog di Google Webmaster](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html). [/tip]
 
 Dopo aver configurato il server web locale, accedere all'articolo di esempio nel browser da [questo URL](http://localhost:8000/article.html):
 

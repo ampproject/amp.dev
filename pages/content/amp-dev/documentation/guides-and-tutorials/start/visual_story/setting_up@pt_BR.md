@@ -34,7 +34,7 @@ Para testar nossa história de exemplo, é preciso acessar os arquivos por meio 
 Após configurar seu servidor da Web local, <a href="http://localhost:8000/pets-completed.html">acesse este URL</a> para ver como será a história completa ao final deste tutorial:
 
 ```html
-[tip type="important"]<br>http://localhost:8000/pets-completed.html
+http://localhost:8000/pets-completed.html
 ```
 
 [tip type="important"]<br />O URL precisa ser disponibilizado por <code>localhost</code>. Caso contrário, a história AMP não será carregada corretamente, e talvez você veja erros como `"source" "must start with "https://" or "//" or be relative and served from either https or from localhost.`<br />[/tip]

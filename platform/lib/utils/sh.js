@@ -44,9 +44,7 @@ function sh(commandLine, ...options) {
   const command = fragments[0];
   const args = fragments.splice(1);
 
-  if (!opts.quiet) {
-    console.log(`$ ${command} ${args.join(' ')}`);
-  }
+  console.log(`$ ${command} ${args.join(' ')}`);
   return new Promise((resolve, reject) => {
     const process = spawn(command, args, {cwd: opts.workingDir});
     let result = '';
@@ -60,9 +58,7 @@ function sh(commandLine, ...options) {
     });
 
     process.stderr.on('data', (data) => {
-      if (!opts.quiet) {
-        console.log(`${data.toString()}`);
-      }
+      console.log(`${data.toString()}`);
     });
 
     process.on('close', (code) => {
@@ -73,9 +69,7 @@ function sh(commandLine, ...options) {
       resolve(result);
     });
   }).then((result) => {
-    if (!opts.quiet) {
-      console.log(message);
-    }
+    console.log(message);
     return result;
   });
 }

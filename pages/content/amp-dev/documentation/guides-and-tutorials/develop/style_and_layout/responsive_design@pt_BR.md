@@ -3,16 +3,16 @@
 "$order": '5'
 description: O Web design responsivo é a criação de páginas web fáceis de usar e que atendam às necessidades dos usuários. Essas páginas se ajustam ao tamanho e à orientação da tela do dispositivo. Com AMP, é muito fácil conseguir ...
 formats:
-- sites
-- e-mail
-- anúncios
-- histórias
+  - websites
+  - email
+  - ads
+  - stories
 components:
-- iframe
-- youtube
+  - iframe
+  - youtube
 author: bpaduch
 contributors:
-- pbakaus
+  - pbakaus
 ---
 
 ## Introdução
