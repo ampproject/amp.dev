@@ -2,23 +2,29 @@
 
 {% block main %}
 <main id="main" class="--sidebaropen">
-  <amp-animation  id="sidebarToggleAnim" layout="nodisplay">
+  <amp-animation  id="sidebarToggleAnimEnter" layout="nodisplay">
     <script type="application/json">
       {
-        "duration": "750ms",
+        "selector": "#sidebar-toggle-label",
+        "duration": "180ms",
         "fill": "both",
-        "animations": [
-          {
-            "selector": "#sidebar-toggle-label",
-            "keyframes": { "opacity": "var(--value)" }
-          },
-          {
-            "selector": "#sidebar-toggle-background",
-            "delay": "100ms",
-            "duration": "650ms",
-            "keyframes": { "transform": "scaleX(var(--value))" }
-          }
-        ]
+        "keyframes": {
+          "transform": "translateX(-15px)" ,
+          "opacity": "0"
+        }
+      }
+    </script>
+  </amp-animation>
+  <amp-animation  id="sidebarToggleAnimExit" layout="nodisplay">
+    <script type="application/json">
+      {
+        "selector": "#sidebar-toggle-label",
+        "duration": "180ms",
+        "fill": "both",
+        "keyframes": {
+          "transform": "translateX(0)" ,
+          "opacity": "1"
+        }
       }
     </script>
   </amp-animation>
@@ -28,7 +34,7 @@
 
     <div class="ap-content">
       <div class="ap-content-sidebar-observer">
-        <amp-position-observer on="exit:sidebarToggleAnim.start(--value=1); enter:sidebarToggleAnim.start(--value=0)"
+        <amp-position-observer on="enter:sidebarToggleAnimEnter.start; exit:sidebarToggleAnimExit.start"
             intersection-ratio="0.01"
             layout="nodisplay">
         </amp-position-observer>

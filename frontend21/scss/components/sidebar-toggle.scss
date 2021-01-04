@@ -28,28 +28,30 @@
     transition: transform .3s ease-in-out;
   }
 
-  #sidebar-toggle-background {
+  #sidebar-toggle-label {
     position: absolute;
     top: 0;
     left: 30px;
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 0;
-    border-radius: 4px;
+    padding: 5px 10px 5px 6px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
     transform-origin: left;
-    opacity: 0;
-    transform: scaleX(0);
     background: color('blue-ribbon');
     transition: transform .3s ease-in-out;
+  }
+
+  &:focus #sidebar-toggle-label {
+    top: -1px;
+    height: calc(100% + 2px);
   }
 
   .--sidebaropen & {
     flex-direction: row;
 
-    #sidebar-toggle-background {
-      transform: scaleX(1);
-      padding: 5px 10px;
+    #sidebar-toggle-label {
       opacity: 1;
     }
 
