@@ -1,5 +1,8 @@
 ---
-$title: 恭喜！
+"$title": Congratulations!
+"$order": '9'
+description: 您已成功完成了您的首个 AMP 故事！在本教程中，您学会了： - 使用 amp-story 组件创建一个多页故事
+author: bpaduch
 ---
 
 您已成功完成了您的首个 AMP 故事！
@@ -19,9 +22,3 @@ $title: 恭喜！
 
 - [`amp-story`](../../../../documentation/components/reference/amp-story.md)
 - [AMP 故事最佳做法](../../../../documentation/guides-and-tutorials/start/create_successful_stories.md)
-
-[tip type="note"]
-
-[`amp-story`](../../../../documentation/components/reference/amp-story.md) 组件是**实验性**组件。若想报名参加试用活动，以便使用此组件的原始试用版发布网页，请访问 <a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a>。
-
-[/tip]
