@@ -81,8 +81,12 @@ formats:
 
     Note: Because server-side filtering is mandatory in the email format, it is wise to pair the `src` and `query` attributes
     in order to passed user inputs to a statically generated endpoint. For example if a `src="https://example.com` and `query="q"`, then a user who types in `abc` will get the fetch JSON result from `https://example.com?q=abc`.
+
+    Note: that the `data-amp-autocomplete-opt-in` attribute has
+    to be included to amp4email amp documents
     -->
     <amp-autocomplete
+      data-amp-autocomplete-opt-in
       min-characters="1"
       src="<% hosts.platform %>/documentation/examples/api/autosuggest/search_list"
       query="q"
@@ -134,6 +138,7 @@ formats:
     ```
   -->
     <amp-autocomplete
+      data-amp-autocomplete-opt-in
       min-characters="0"
       src="<% hosts.platform %>/documentation/examples/api/autosuggest/cities"
       query="q"
@@ -159,6 +164,7 @@ formats:
   -->
     <div>
       <amp-autocomplete
+        data-amp-autocomplete-opt-in
         inline="+"
         min-characters="1"
         src="<% hosts.platform %>/documentation/examples/api/autosuggest/characters"
