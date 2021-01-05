@@ -1,15 +1,10 @@
 .#{prefix(null, 'sidebar')} {
-  grid-column: 2/4;
-  z-index: 90;
-  position: sticky;
-  left: 0;
-  top: 20px;
-  width: 0;
-  max-height: 100%;
-  margin-top: 35px;
-  margin-bottom: 55px;
+  width: 100%;
+  max-width: 90vw;
+  padding: 0 20px;
+  background: color('white');
 
-  &-container {
+  &-toolbar {
     max-width: 0;
     position: sticky;
     top: 80px;
@@ -17,11 +12,27 @@
     max-height: calc(100vh - 110px);
     transform: translateX(20px);
     transition: transform .3s;
+
+    &-container {
+      grid-column: 2/4;
+      z-index: 90;
+      position: sticky;
+      left: 0;
+      top: 20px;
+      width: 0;
+      max-height: 100%;
+      margin-top: 35px;
+      margin-bottom: 55px;
+    }
   }
 
   &-scroll-container {
     overflow-y: scroll;
-    max-height: calc(100vh - 110px - 44px);
+    max-height: 100vh;
+
+    @include respond-to('medium') {
+      max-height: calc(100vh - 110px - 44px);
+    }
   }
 
   &-nav-list {
@@ -65,7 +76,7 @@
     }
   }
 
-  .--sidebaropen &-container {
+  .--sidebaropen &-toolbar {
     max-width: 400px;
     transform: translateX(0);
   }

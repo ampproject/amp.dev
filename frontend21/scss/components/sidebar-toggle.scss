@@ -60,9 +60,18 @@
     }
   }
 
-  &:focus &-label {
-    top: -1px;
-    height: calc(100% + 2px);
+  &.--mobile {
+    @include respond-to('medium') {
+      display: none;
+    }
+  }
+
+  &.--desktop {
+    display: none;
+
+    @include respond-to('medium') {
+      display: flex;
+    }
   }
 
   .--sidebaropen & {
