@@ -1,6 +1,10 @@
 ---
-$title: Debug masalah Cache AMP
-order: 8
+"$title": Debug masalah Cache AMP
+order: '8'
+formats:
+- websites
+- stories
+- ads
 teaser:
   text: Mengapa dokumen saya rusak di cache AMP?
 ---
@@ -19,7 +23,7 @@ Dokumen AMP yang valid biasanya tampil dan berperilaku sama pada Cache AMP sebag
 Jika suatu dokumen tertentu tampil dan berperilaku sebagaimana di asal Anda, namun tidak demikian saat dilihat melalui cache [(cara memetakan URL asal pada Cache AMP Google](https://developers.google.com/amp/cache/overview#amp-cache-url-format)), cobalah yang berikut ini:
 
 1. Buka konsol alat eror/pengembang browser Anda, lalu atasi eror atau peringatan apa pun yang muncul.
-2. Jalankan dokumen tersebut melalui [AMPBench](https://ampbench.appspot.com/), lalu atasi eror atau peringatan yang tidak tak terduga.
+2. Jalankan dokumen tersebut melalui [AMPBench](https://search.google.com/test/amp), lalu atasi eror atau peringatan yang tidak tak terduga.
 
 Jika Anda masih mengalami masalah setelah mengikuti langkah-langkah ini, periksalah tabel di bawah ini.
 
@@ -64,4 +68,5 @@ Jika Anda masih mengalami masalah setelah mengikuti langkah-langkah ini, periksa
     </tr>
 </tbody>
 </table>
+
 </table>

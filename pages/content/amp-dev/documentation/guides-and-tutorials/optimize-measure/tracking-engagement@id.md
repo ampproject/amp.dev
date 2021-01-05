@@ -1,8 +1,12 @@
 ---
-$title: Cara mengonfigurasi analitik dasar untuk halaman AMP Anda
-$order: 100
+"$title": Cara mengonfigurasi analitik dasar untuk halaman AMP Anda
+"$order": '100'
 description: Platform analitis pada umumnya diintegrasikan ke dalam situs web melalui snippet JavaScript dan panggilan fungsi inline, ini memicu peristiwa yang dikirimkan kembali ke sistem analitis.
-tutorial: true
+tutorial: 'true'
+formats:
+- websites
+- stories
+- ads
 ---
 
 Platform analitis pada umumnya diintegrasikan ke dalam situs web melalui snippet (cuplikan) JavaScript dan panggilan fungsi inline, ini memicu peristiwa yang dikirimkan kembali ke sistem analitis. AMP menyediakan sintaksis konfigurasi JSON yang fleksibel untuk mengulangi proses ini untuk beberapa mitra analitis.

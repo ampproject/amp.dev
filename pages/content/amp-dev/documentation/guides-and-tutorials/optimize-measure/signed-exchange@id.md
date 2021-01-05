@@ -1,6 +1,8 @@
 ---
-$title: Menyajikan AMP dengan menggunakan komunikasi bertanda tangan
-$order: 4
+"$title": Menyajikan AMP dengan menggunakan komunikasi bertanda tangan
+"$order": '4'
+formats:
+- websites
 author: CrystalOnScript
 ---
 
@@ -40,8 +42,10 @@ Agar dapat menghasilkan sertifikat ini, Otoritas Sertifikat (CA) akan membutuhka
 
 ```sh
 # generate private key (if necessary)
+
 $ openssl ecparam -out ampbyexample-packager.key -name prime256v1 -genkey
 # generate CSR (the file ampbyexample-packager.csr)
+
 $ openssl req -new -key ampbyexample-packager.key -nodes -out ampbyexample-packager.csr -subj "/C=US/ST=California/L=Mountain View/O=Google LLC/CN=ampbyexample.com"
 ```
 
@@ -197,4 +201,5 @@ Di dalam konsol DevTools, di bawah bilah `network`, Anda akan dapat melihat `sig
 
 Berikut ini adalah daftar CDN dan penyedia pengelolaan (hosting) yang menawarkan dukungan unik untuk komunikasi bertanda tangan. Menggunakan salah satu dari ini adalah cara termudah untuk memulai dengan komunikasi bertanda tangan:
 
+- [AMP Packager Google Cloud Click-to-Deploy Installer](https://console.cloud.google.com/marketplace/details/google/amp-packager?filter=solution-type:k8s) [AMP Packager](https://github.com/ampproject/amppackager#amp-packager) adalah alat untuk meningkatkan URL AMP dengan menyajikan AMP menggunakan Komunikasi Bertanda Tangan. Bacalah selengkapnya di [Blog AMP](https://blog.amp.dev/2020/11/23/amp-packager-is-now-available-on-google-cloud-marketplace/).
 - [URL Asli AMP Cloudflare](https://www.cloudflare.com/website-optimization/amp-real-url/). [Cloudflare](https://www.cloudflare.com/) adalah satu dari jaringan terbesar dunia. Saat ini, bisnis, nirlaba, blogger, dan siapa pun yang ada di internet mempunyai situs web dan aplikasi yang lebih cepat dan lebih aman berkat Cloudflare.

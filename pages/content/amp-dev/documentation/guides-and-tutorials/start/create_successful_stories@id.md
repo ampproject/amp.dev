@@ -1,8 +1,10 @@
 ---
-$title: Praktik terbaik untuk membuat Cerita Web yang sukses
-$order: 1
+"$title": Praktik terbaik untuk membuat Cerita Web yang sukses
+"$order": '1'
 description: Praktik terbaik untuk membuat Cerita Web yang sukses
-$category: Awal
+"$category": Start
+formats:
+- stories
 author: CrystalOnScript
 ---
 
@@ -133,8 +135,7 @@ Gunakan gambar layar penuh dan format potret dengan resolusi yang bagus (828 x 1
   <amp-video layout="responsive" poster="/static/img/docs/guides/storiesbp/do-background-still.jpg" width="1440" height="630" loop autoplay noaudio>
     <source src="/static/img/docs/guides/storiesbp/do-background.webm" type="video/webm"></source>
     <source src="/static/img/docs/guides/storiesbp/do-background.mp4" type="video/mp4"></source>
-  </amp-video>
-</figure>
+  </amp-video></figure>
 
 Hindari foto yang dipotong untuk menjadi lanskap.
 

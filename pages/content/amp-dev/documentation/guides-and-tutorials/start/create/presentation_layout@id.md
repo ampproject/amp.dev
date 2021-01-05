@@ -1,10 +1,15 @@
 ---
-$title: Memodifikasi Presentasi dan Layout
+"$title": Memodifikasi presentasi dan tata letak
+"$order": '3'
+description: "Halaman AMP adalah halaman web; pengaturan gaya apa pun pada halaman dan elemennya dilakukan dengan menggunakan properti CSS yang umum. Elemen gaya menggunakan pemilih kelas atau elemen ...."
+author: pbakaus
+contributors:
+- bpaduch
 ---
 
 ## Memodifikasi presentasi
 
-AMP adalah laman web, setiap penerapan gaya pada halaman dan elemen-elemennya dilakukan menggunakan properti CSS umum. Elemen gaya menggunakan pemilih kelas atau elemen dalam stylesheet sisipan dalam `<head>` yang disebut dengan `<style amp-custom>`:
+Halaman AMP adalah halaman web; pengaturan gaya apa pun pada halaman dan elemennya dilakukan dengan menggunakan properti CSS yang umum. Elemen gaya menggunakan pemilih kelas atau elemen dalam lembar gaya sematan dalam `<head>`, bernama `<style amp-custom>`:
 
 [sourcecode:html]
 <style amp-custom>
@@ -19,10 +24,10 @@ AMP adalah laman web, setiap penerapan gaya pada halaman dan elemen-elemennya di
 </style>
 [/sourcecode]
 
-Setiap halaman AMP hanya bisa memiliki satu sylesheet yang disematkan, dan ada pemilih tertentu yang tidak bisa Anda gunakan. [Ketahui semua tentang penggayaan](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).
+Setiap halaman AMP hanya bisa memiliki lembar gaya inline dan satu lembar gaya yang disematkan, namun ada pemilih tertentu yang tidak boleh Anda gunakan. [Pelajari semua tentang pengaturan gaya](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).
 
-## Mengontrol layout
+## Mengontrol tata letak
 
-AMP mengikuti aturan yang lebih ketat saat melayout elemen pada halaman. Pada halaman HTML biasa, Anda hampir pasti menggunakan CSS secara eksklusif untuk melayout elemen. Namun karena alasan kinerja, AMP mewajibkan semua elemen untuk memiliki set ukuran eksplisit dari get-go.
+AMP mengikuti aturan yang lebih ketat saat menata letak elemen pada halaman. Pada halaman HTML biasa, Anda hampir pasti menggunakan CSS secara eksklusif untuk menata letak elemen. Namun, karena alasan kinerja, AMP mewajibkan semua elemen agar memiliki ukuran yang eksplisit yang ditetapkan sejak awal.
 
-Ketahui tentang cara AMP merender dan melayout halaman dan cara Anda bisa memodifikasi layout dalam [Cara Mengontrol Layout](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md).
+[tip type="read-on"] **BACA –** Pelajari selengkapnya tentang bagaimana AMP merender dan mengatur tata letak halaman dan bagaimana Anda dapat mengubah tata letak dalam [kueri Tata Letak & Media](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md). [/tip]
