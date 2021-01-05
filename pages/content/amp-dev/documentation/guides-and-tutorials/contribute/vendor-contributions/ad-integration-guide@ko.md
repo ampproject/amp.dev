@@ -1,9 +1,11 @@
 ---
-$title: 광고 기술을 AMP에 통합하기
-order: 3
+"$title": 광고 기술을 AMP에 통합하기
+order: '3'
+formats:
+- ads
 teaser:
   text: AMP HTML 통합을 고려하는 광고 기술 제공업체라면 아래 가이드라인을 확인해 보세요
-toc: true
+toc: 'true'
 ---
 
 <!--
@@ -25,11 +27,17 @@ AMP HTML 통합을 고려하는 광고 기술 제공업체라면 아래 가이�
 
 예시: Amazon A9 서버는 다음 구문을 통해 호출할 수 있습니다.
 
-[sourcecode:html] <amp-ad width="300" height="250" type="a9" data-aax_size="300x250" data-aax_pubname="test123" data-aax_src="302"
-
+[sourcecode:html]
+<amp-ad
+  width="300"
+  height="250"
+  type="a9"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
 >
-
- [/sourcecode]
+</amp-ad>
+[/sourcecode]
 
 `type` 다음의 각 속성은 Amazon A9 서버에서 광고를 전달하는 데 필요한 매개변수에 종속된다는 점에 유의하세요. [a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) 파일은 `https://c.amazon-adsystem.com/aax2/assoc.js` URL을 통해 A9 서버를 호출하는 JavaScript 호출을 생성하고자 매개변수가 매핑된 방식을 보여줍니다. AMP 광고 태그로 전달되는 관련 매개변수는 URL에 추가되어 광고를 반환합니다.
 
@@ -59,11 +67,17 @@ AMP HTML 통합을 고려하는 광고 기술 제공업체라면 아래 가이�
 
 다음 코드를 통해 Brightcove 플레이어를 호출할 수 있습니다.
 
-[sourcecode:html] <amp-brightcove data-account="1290862519001" data-video-id="ref:amp-docs-sample" data-player="S1Tt8cgaM" layout="responsive" width="480" height="270"
-
+[sourcecode:html]
+<amp-brightcove
+  data-account="1290862519001"
+  data-video-id="ref:amp-docs-sample"
+  data-player="S1Tt8cgaM"
+  layout="responsive"
+  width="480"
+  height="270"
 >
-
- [/sourcecode]
+</amp-brightcove>
+[/sourcecode]
 
 Brightcove와 같은 AMP 태그를 개발하는 방법은 다음 [Pull 요청](https://github.com/ampproject/amphtml/pull/1052)을 참조하세요.
 

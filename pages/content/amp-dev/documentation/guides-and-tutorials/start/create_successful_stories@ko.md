@@ -1,8 +1,10 @@
 ---
-$title: 성공적인 웹 스토리 제작 모범 사례
-$order: 1
+"$title": 성공적인 웹 스토리 제작 모범 사례
+"$order": '1'
 description: 성공적인 웹 스토리 제작 모범 사례
-$category: 시작
+"$category": Start
+formats:
+- stories
 author: CrystalOnScript
 ---
 
@@ -133,8 +135,7 @@ author: CrystalOnScript
   <amp-video layout="responsive" poster="/static/img/docs/guides/storiesbp/do-background-still.jpg" width="1440" height="630" loop autoplay noaudio>
     <source src="/static/img/docs/guides/storiesbp/do-background.webm" type="video/webm"></source>
     <source src="/static/img/docs/guides/storiesbp/do-background.mp4" type="video/mp4"></source>
-  </amp-video>
-</figure>
+  </amp-video></figure>
 
 가로형으로 잘린 사진은 추천하지 않습니다.
 
@@ -340,7 +341,7 @@ author: CrystalOnScript
 
 ### 전략적 임베딩
 
-임베딩을 통해 관련성 높고 아름답게 표현된 추가적 깊이를 더할 수 있습니다. 연관된 콘텐츠를 임베딩에 포함하여 스토리의 일부로 통합해 보세요. 임베딩의 상호작용성을 허용해야 할 수도 있습니다.
+임베딩을 통해 관련성 높고 아름답게 표현된 추가적 깊이를 더할 수 있습니다. 연관된 콘텐츠를 임베딩에 포함하여 스토리의 일부로 통합해 보세요. 임베딩 요소를 인터랙티브하게 구성해야 할 수도 있습니다.
 
 <table>
   <tr>

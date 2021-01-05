@@ -1,5 +1,8 @@
 ---
-$title: 축하합니다!
+"$title": Congratulations!
+"$order": '9'
+description: 첫 번째 AMP 스토리가 완료되었습니다. 이 가이드에서 배운 내용은 다음과 같습니다. amp-story 구성요소를 사용하여 여러 페이지로 된 스토리 작성
+author: bpaduch
 ---
 
 첫 번째 AMP 스토리가 완료되었습니다.
@@ -19,9 +22,3 @@ $title: 축하합니다!
 
 - [`amp-story`](../../../../documentation/components/reference/amp-story.md)
 - [AMP 스토리 권장사항](../../../../documentation/guides-and-tutorials/start/create_successful_stories.md)
-
-[tip type="note"]
-
-[`amp-story`](../../../../documentation/components/reference/amp-story.md) 구성요소는 아직 **실험 단계**에 있습니다. 이 구성요소를 사용하여 페이지를 게시하기 위한 Origin Trial에 가입하려면 <a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a>을 방문하세요.
-
-[/tip]
