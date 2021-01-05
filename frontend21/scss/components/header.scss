@@ -1,7 +1,7 @@
 .#{prefix(null, 'header')} {
   $header: &;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(24, 1fr);
   grid-gap: 15px;
   position: sticky;
   top: 0;
@@ -23,7 +23,7 @@
   }
 
   &-main {
-    grid-column: 2/12;
+    grid-column: 4/22;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;

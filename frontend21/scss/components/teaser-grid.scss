@@ -2,6 +2,10 @@
   display: grid;
   grid-template-columns: repeat(12,1fr);
   align-items: stretch;
-  grid-column-gap: 30px;
+  grid-column-gap: 10px;
   margin-top: 20px;
+
+  @include respond-to('medium') {
+    grid-column-gap: 30px;
+  }
 }

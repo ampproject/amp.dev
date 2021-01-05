@@ -1,10 +1,9 @@
 .#{prefix(null, 'content')} {
-  grid-column: 4 / 12;
   z-index: 1;
-  margin: 25px 0 55px 0;
   position: relative;
   width: 100%;
-  padding: 10px 10px 60px 10px;
+  margin: 25px 0 55px 0;
+  padding: 10px 15px 60px 15px;
   background: color('white');
   box-shadow: 0 10px 60px 0 transparentize(color('black'), 0.9);
 

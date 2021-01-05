@@ -7,6 +7,7 @@
     &-title {
       position: sticky;
       top: 28px;
+      z-index: 1;
       margin: 0;
       padding-top: 60px;
       padding-bottom: 20px;
@@ -19,33 +20,56 @@
 
   &-link {
     display: flex;
-    align-items: center;
-    height: 42px;
+    flex-direction: column;
+    padding: 10px 0;
     border-bottom: 1px solid transparentize(color('black'), 0.95);
     color: color('river-bed');
 
+    @include respond-to('medium') {
+      flex-direction: row;
+      align-items: center;
+      height: 42px;
+    }
+
     &-formats {
+      position: absolute;
+      right: 0;
       display: flex;
-      width: 8%;
+
+      @include respond-to('medium') {
+        position: relative;
+        width: 8%;
+      }
 
       .#{prefix(null, 'tag')} {
-        max-width: 8px;
-        max-height: 8px;
-        margin-right: 4px;
-        border-radius: 50%;
+
+        @include respond-to('medium') {
+          max-width: 8px;
+          max-height: 8px;
+          margin-right: 4px;
+          border-radius: 50%;
+        }
       }
     }
 
     &-title {
-      width: 40%;
       font-family: $fontFamilyCode;
       font-size: 14px;
+      margin-bottom: 7px;
+
+      @include respond-to('medium') {
+        width: 40%;
+        margin-bottom: 0;
+      }
     }
 
     &-description {
-      width: 52%;
       font-size: 12px;
       font-weight: normal;
+
+      @include respond-to('medium') {
+        width: 52%;
+      }
     }
 
     &:hover {
