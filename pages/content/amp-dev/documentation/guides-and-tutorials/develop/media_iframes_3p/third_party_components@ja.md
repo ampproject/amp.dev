@@ -1,17 +1,29 @@
 ---
-$title: サードパーティ コンテンツを追加する
+"$title": サードパーティコンテンツを含める
+"$order": '9'
+description: ページにサードパーティコンテンツを含める方法について...
+formats:
+- websites
+components:
+- iframe
+- facebook
+author: Meggin
+contributors:
+- pbakaus
+- bpaduch
 ---
 
-ページにサードパーティ コンテンツを追加する方法について説明します。
+ページにサードパーティコンテンツを含める方法について説明します。
 
-## ツイートを埋め込む
+## ツイートの埋め込み
 
 ページに Twitter のツイートを埋め込むには、[`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) 要素を使用します。
 
-ページにツイートを追加するには、最初に次のスクリプトを `<head>` に追加します。
+ページにツイートを埋め込むには、最初に次のスクリプトを `<head>` に含めます。
 
 [sourcecode:html]
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script async custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
 [/sourcecode]
 
 現在、ツイートは自動的に、用意されたサイズに合わせて均等に拡大縮小されますが、そのために標準の外観から少し外れる場合があります。用意された幅と高さを手動で調整するか、または、media 属性を使用して、画面の幅に基づくアスペクト比を選択してください。
@@ -26,19 +38,20 @@ $title: サードパーティ コンテンツを追加する
 ```
 [/example]
 
-ヒント: その他の [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) の例については、[AMP By Example](../../../../documentation/examples/documentation/amp-twitter.html) をご覧ください。
+[tip type="tip"] <strong>ヒント:</strong> その他の [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) の例については、[AMP By Example](../../../../documentation/examples/documentation/amp-twitter.html) をご覧ください。[/tip]
 
-## Instagram を埋め込む
+## Instagram の埋め込み
 
 ページに Instagram を埋め込むには、[`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) 要素を使用します。
 
 Instagram を埋め込むには、最初に次のスクリプトを `<head>` に追加します。
 
 [sourcecode:html]
-<script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+<script async custom-element="amp-instagram"
+  src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
 [/sourcecode]
 
-Instagram の写真 URL にある data-shortcode を指定します。たとえば、`https://instagram.com/p/fBwFP` の場合、`fBwFP` が data-shortcode です。また、Instagram ではレスポンシブ レイアウトに対して固定のアスペクト比を使用しているため、幅と高さの値は共通になります。
+Instagram の写真 URL にある data-shortcode を指定します。たとえば、`https://instagram.com/p/fBwFP` の場合、`fBwFP` が data-shortcode です。また、Instagram ではレスポンシブレイアウトに対して固定のアスペクト比を使用しているため、幅と高さの値は共通になります。
 
 [example preview="inline" playground="true" imports="amp-instagram:0.1"]
 ```html
@@ -50,32 +63,31 @@ Instagram の写真 URL にある data-shortcode を指定します。たとえ�
 ```
 [/example]
 
-ヒント: その他の [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) の例については、[AMP By Example](../../../../documentation/examples/documentation/amp-instagram.html) をご覧ください。
+[tip type="tip"] <strong>ヒント:</strong> その他の [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) の例については、[AMP By Example](../../../../documentation/examples/documentation/amp-instagram.html) をご覧ください。[/tip]
 
-## Facebook の投稿や動画を表示する
+## Facebook の投稿や動画の表示
 
 Facebook の投稿や動画をページに表示するには、[`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) 要素を使用します。
 
 `<head>` に次のスクリプトを追加する必要があります。
 
 [sourcecode:html]
-<script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
+<script async custom-element="amp-facebook"
+  src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
 [/sourcecode]
 
 ##### 例 - 投稿を埋め込む
 
 ソースコード:
+
 ```html
 <amp-facebook width="486" height="657"
     layout="responsive"
     data-href="https://www.facebook.com/zuck/posts/10102593740125791">
 </amp-facebook>
 ```
-プレビュー:
-<amp-facebook width="486" height="657"
-    layout="responsive"
-    data-href="https://www.facebook.com/zuck/posts/10102593740125791">
-</amp-facebook>
+
+プレビュー: <amp-facebook width="486" height="657" layout="responsive" data-href="https://www.facebook.com/zuck/posts/10102593740125791"> </amp-facebook>
 
 ##### 例 - 動画を埋め込む
 
@@ -88,23 +100,20 @@ Facebook の投稿や動画をページに表示するには、[`amp-facebook`](
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 ```
-プレビュー:
-<amp-facebook width="476" height="316"
-    layout="responsive"
-    data-embed-as="video"
-    data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
-</amp-facebook>
 
-ヒント: その他の [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) の例については、[AMP By Example](../../../../documentation/examples/documentation/amp-facebook.html) をご覧ください。
+プレビュー: <amp-facebook width="476" height="316" layout="responsive" data-embed-as="video" data-href="https://www.facebook.com/nasaearth/videos/10155187938052139"> </amp-facebook>
 
-## YouTube 動画を追加する
+[tip type="tip"] <strong>ヒント:</strong> その他の [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) の例については、[AMP By Example](../../../../documentation/examples/documentation/amp-facebook.html) をご覧ください。[/tip]
 
-YouTube 動画をページに追加するには、[`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) 要素を使用します。
+## YouTube 動画の埋め込み
+
+YouTube 動画をページに埋め込むには、[`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) 要素を使用します。
 
 `<head>` に次のスクリプトを追加する必要があります。
 
 [sourcecode:html]
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script async custom-element="amp-youtube"
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 [/sourcecode]
 
 YouTube の `data-videoid` は YouTube 動画ページの URL で見つかります。たとえば、`https://www.youtube.com/watch?v=Z1q71gFeRqM` の場合、`Z1q71gFeRqM` が動画 ID です。
@@ -121,9 +130,9 @@ YouTube の `data-videoid` は YouTube 動画ページの URL で見つかりま
 ```
 [/example]
 
-ヒント: その他の [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) の例については、[AMP By Example](../../../../documentation/examples/documentation/amp-youtube.html) をご覧ください。
+[tip type="tip"] <strong>ヒント:</strong> その他の [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) の例については、[AMP By Example](../../../../documentation/examples/documentation/amp-youtube.html) をご覧ください。[/tip]
 
-## 広告を表示する
+## 広告の表示
 
 ページに広告を表示するには、[`amp-ad`](../../../../documentation/components/reference/amp-ad.md) 要素を使用します。HTTPS 経由で配信される広告のみがサポートされています。
 
@@ -160,6 +169,6 @@ YouTube の `data-videoid` は YouTube 動画ページの URL で見つかりま
 ```
 [/example]
 
-AMP はさまざまな広告ネットワークに対応しています。詳細なリストについては、[リファレンス](../../../../documentation/components/reference/amp-ad.md#supported-ad-networks)をご覧ください。
+AMP はさまざまな広告ネットワークに対応しています。詳細なリストについては、[<code>amp-ad</code>](../../../../documentation/components/reference/amp-ad.md#supported-ad-networks) をご覧ください。
 
-参照: 広告について詳しくは、[AMP での広告の掲載](../../../../documentation/guides-and-tutorials/develop/monetization/index.md) に関するガイドをご覧ください。
+[tip type="read-on"] <strong>参考情報:</strong> 広告について詳しくは、[AMP での広告の配信](../../../../documentation/guides-and-tutorials/develop/monetization/index.md)に関するガイドをご覧ください。[/tip]

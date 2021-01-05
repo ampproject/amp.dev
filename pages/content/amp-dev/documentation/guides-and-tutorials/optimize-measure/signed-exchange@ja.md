@@ -1,6 +1,8 @@
 ---
-$title: Signed Exchange を使った AMP の配信
-$order: 4
+"$title": Signed Exchange を使った AMP の配信
+"$order": '4'
+formats:
+- websites
 author: CrystalOnScript
 ---
 
@@ -40,8 +42,10 @@ Signed Exchange を生成するには、`CanSignHttpExchanges` 拡張子の付�
 
 ```sh
 # generate private key (if necessary)
+
 $ openssl ecparam -out ampbyexample-packager.key -name prime256v1 -genkey
 # generate CSR (the file ampbyexample-packager.csr)
+
 $ openssl req -new -key ampbyexample-packager.key -nodes -out ampbyexample-packager.csr -subj "/C=US/ST=California/L=Mountain View/O=Google LLC/CN=ampbyexample.com"
 ```
 
@@ -197,4 +201,5 @@ DevTools コンソールの `Network` タブで、`type` 列の下に `signed-ex
 
 以下は、すぐに使用できる Signed Exchange サポートを提供している CDN とホスティングプロバイダのリストです。いずれかを使用することで、Signed Exchange を簡単に使用することができます。
 
+- [AMP Packager Google Cloud Click-to-Deploy Installer](https://console.cloud.google.com/marketplace/details/google/amp-packager?filter=solution-type:k8s) [AMP Packager](https://github.com/ampproject/amppackager#amp-packager) は、Signed Exchange を使って AMP を配信することで、AMP URL を改善するツールです。詳細については、[AMP ブログ](https://blog.amp.dev/2020/11/23/amp-packager-is-now-available-on-google-cloud-marketplace/) をお読みください。
 - [Cloudflare AMP Real URL](https://www.cloudflare.com/website-optimization/amp-real-url/): [Cloudflare](https://www.cloudflare.com/) は、世界最大規模のネットワークです。今日、企業、非営利団体、ブロガー、およびインターネットプレゼンスのある誰もが、Cloudflare のおかげで、より高速で安全なウェブサイトとアプリの提供を実現しています。

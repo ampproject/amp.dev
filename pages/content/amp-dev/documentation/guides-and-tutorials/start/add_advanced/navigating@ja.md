@@ -1,17 +1,19 @@
 ---
-$title: サイトのナビゲーション
+"$title": Navigating your site
+"$order": '5'
+description: モバイルサイトには通常、サイトのナビゲーションメニューを設けます。こうしたメニューにはさまざまな形式があります。このチュートリアルでは、AMP ページでのナビゲーション ...
 ---
 
-モバイルサイトには通常、サイトのナビゲーション メニューを設けます。こうしたメニューにはさまざまな形式があります。このチュートリアルでは、AMP ページでのナビゲーションの表示について、以下のような例を試してみましょう。
+モバイルサイトには通常、サイトのナビゲーションメニューを設けます。こうしたメニューにはさまざまな形式があります。このチュートリアルでは、AMP ページでのナビゲーションの表示について、以下のような例を試してみましょう。
 
 - ホームページに戻るリンク: 最も簡単な方法
 - ナビゲーションのサイドバー: [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) コンポーネントを使用
 
 ## ホームに戻るリンク
 
-ウェブサイト内をユーザーが移動できるようにするには、通常ホームページに設けるナビゲーション機能にどこからでも戻れるようにする方法が最も簡単です。
+ユーザーがウェブサイトの通常のナビゲーションオプションにアクセスできるようにするには、ホームページにユーザーを戻すのが最も簡単です。
 
-リンクを含めた下記のバージョンで `<header>` タグを**置き換える**方法を試します。
+`<header>` タグをリンクを含めた以下のバージョンに**置き換える**方法を試します。
 
 ```html
 <header class="headerbar">
@@ -22,7 +24,7 @@ $title: サイトのナビゲーション
 </header>
 ```
 
-下記のスタイルルールをインライン CSS に**追加**します。
+以下のスタイルルールをインライン CSS に**追加**します。
 
 ```css
 .home-button {
@@ -55,7 +57,7 @@ article {
 
 ## サイドバーでの移動
 
-ナビゲーションの一般的な方法は、メニュー アイコンを追加して、クリックするとナビゲーションのリンク一式が（ページの横に）表示されるようにすることです。AMP では、こうしたナビゲーションを [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) コンポーネントを使って作成できます。
+ナビゲーションの一般的な方法は、メニューアイコンを追加して、クリックするとナビゲーションのリンク一式が（ページの横に）表示されるようにすることです。AMP では、こうしたナビゲーションを [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) コンポーネントを使って作成できます。
 
 まず、[`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) コンポーネントの JavaScript を `<head>` タグに**追加**します。
 
@@ -63,7 +65,7 @@ article {
 <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
 ```
 
-次に、メニュー アイコンが表示されるようにします。このアイコンがタップされると、サイドバーが開きます。`<header>` を次のコードで**置き換えて**、ホームアイコンの代わりに ["ハンバーガー"](https://en.wikipedia.org/wiki/Hamburger_button) アイコンを表示します。
+次に、メニュー アイコンが表示されるようにします。このアイコンがタップされると、サイドバーが開きます。`<header>` を次のコードに**置き換えて**、ホームアイコンの代わりに ["ハンバーガー"](https://en.wikipedia.org/wiki/Hamburger_button) アイコンを表示します。
 
 ```html
 <header class="headerbar">
@@ -74,7 +76,7 @@ article {
 
 上記のコードではサイドバーを `toggle`（切り替える）のに、[`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) 要素の [`on`](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) アクション属性を使用しています。サイドバー要素は `sidebar1` ID で識別されます。では、サイドバーを追加しましょう。
 
-下記の HTML を `</header>` のすぐ後に**追加**します。
+以下の HTML を `</header>` のすぐ後に**追加**します。
 
 ```html
 <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
@@ -87,9 +89,9 @@ article {
 </amp-sidebar>
 ```
 
-サイドバーは非表示ですが、ユーザーがハンバーガー アイコンをタップすると、画面の左側にメニューが表示されます。メニューを閉じるには、X アイコンをタップします。
+サイドバーは非表示ですが、ユーザーがハンバーガーアイコンをタップすると、画面の左側にメニューが表示されます。メニューを閉じるには、X アイコンをタップします。
 
-最後に、下記のスタイルルールをインライン CSS に**追加**します。
+最後に、以下のスタイルルールをインライン CSS に**追加**します。
 
 ```css
 .hamburger {
@@ -112,8 +114,8 @@ article {
 }
 ```
 
-では、作成したサイドバーを確認しましょう。AMP ページを**更新**して再読み込みします。次のように表示されます。
+では、作成したサイドバーを確認しましょう。AMP ページを**更新**して再読み込みすると、次のように表示されます。
 
-{{ image('/static/img/docs/tutorials/tut-advanced-navigate-sidebar.gif', 412, 384, align='center half', caption='サイドバー メニューのナビゲーション') }}
+{{ image('/static/img/docs/tutorials/tut-advanced-navigate-sidebar.gif', 412, 384, align='center half', caption='サイドバーメニューのナビゲーション') }}
 
-ページの見栄えがよくなりました。では、仕上げとしてフォントをカスタマイズします。
+ページの見栄えがよくなりました。では、仕上げとしてカスタムフォントを追加しましょう。

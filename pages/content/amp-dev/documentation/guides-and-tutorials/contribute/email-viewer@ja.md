@@ -1,7 +1,9 @@
 ---
-$title: AMP ビューアを使ったメールのレンダリング
-$order: 5
+"$title": AMP ビューアを使ったメールのレンダリング
+"$order": '5'
 author: alabiaga
+formats:
+- email
 ---
 
 AMP for Email のサポートを考えていえるメールクライアントは、[AMP ビューア](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md)を使用して送信者の AMP メールをホストする必要があります。[AMP ビューアライブラリ](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration)を使って構築されたビューアは、AMP ドキュメントをカプセル化し、postMessage を介して AMP ドキュメントと双方向通信を行う[機能を](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/CAPABILITIES.md)有効化します。これらの機能には、メールの可視性の制御の許可、ほかのメトリックのリレー、およびメールから発行される XHR リクエストの安全性を確保する手段の提供が含まれます。
@@ -64,8 +66,7 @@ Viewer.prototype.ssrRenderAmpListTemplate_ = (data) => Promise.resolve({
 
 以下の図では、`viewerRenderTemplate` 機能を使用したメールクライアントビューアの AMP ドキュメントが [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email) テンプレートのレンダリングをどのように処理できるかという、より実世界に沿った例を示しています。
 
-<amp-img alt="Viewer render template diagram" layout="responsive" width="372" height="279" src="/static/img/docs/viewer_render_template_diagram.png">
-</amp-img>
+<amp-img alt="Viewer render template diagram" layout="responsive" width="372" height="279" src="/static/img/docs/viewer_render_template_diagram.png"></amp-img>
 
 AMP ランタイムは [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email) コンポーネントデータのフェッチリクエストをビューアにプロキシし、このビューアはそれをメールクライアントに転送します。サーバーはさまざまなサービスを通じてこの URL と URL フェッチの結果をフィードし、おそらく URL の妥当性、URL から返されたデータのコンテンツを検査した上で、そのデータで [mustache](https://mustache.github.io/) テンプレートをレンダリングします。そして、レンダリングされたテンプレートを返して、以下の JSON レスポンス形式でビューアに返送します。
 
