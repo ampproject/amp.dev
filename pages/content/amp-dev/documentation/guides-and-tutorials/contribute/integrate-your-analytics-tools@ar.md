@@ -1,10 +1,20 @@
 ---
-$title: تكامل أداة التحليلات لديك مع AMP
-order: 1
+"$title": تكامل أداة التحليلات لديك مع AMP
+order: '1'
+formats:
+- websites
+- stories
 teaser:
   text: نظرة عامة
-toc: true
+toc: 'true'
 ---
+
+<!--
+This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md.
+Please do not change this file.
+If you have found a bug or an issue please
+have a look and request a pull request there.
+-->
 
 ## نظرة عامة <a></a>
 
@@ -16,7 +26,6 @@ toc: true
 
 - تحديد أنواع [المتغيرات](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) و[الطلبات](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-analytics.md#requests) التي ستحتاجها في مستند AMP HTML لخدمة التحليلات لديك.
 - تحديد ما إذا كانت الوظيفة الإضافية للتجميع مطلوبة لإنشاء عنوان url النهائي في حالة استخدام الطلبات بسلوك التجميع.
-- تحديد المشغلات التي تؤدي إلى إرسال طلبات التحليلات من صفحة قد تكون ذات صلة بخدمتك.
 - الوضع في الحسبان ما إذا كنت ستقوم [بتتبع المستخدمين عبر](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md) سياقات AMP للطرف الأول والطرف الثالث وطريقة القيام بذلك.
 - تحديد طريقة تعامل لوحة بيانات التحليلات مع زيارات AMP.
 - تحديد أي وظائف مفقودة في `amp-analytics`، و[طلبات الملفات](https://github.com/ampproject/amphtml/issues/new) للميزات المطلوبة.
@@ -38,11 +47,10 @@ toc: true
     3. مثال في المرجع [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html).
     4. اختبار في الملف [extensions/amp-analytics/0.1/test/vendor-requests.json ](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../extensions/amp-analytics/0.1/test/vendor-requests.json).
     5. أضف خدمة التحليلات إلى قائمة البائعين المدعومين في ملف[extensions/amp-analytics/0.1/analytics-vendors-list.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./analytics-vendors-list.md). وضمِّن النوع والوصف والرابط في وثائق الاستخدام الخاصة بك.
-3. إذا كان مطلوبًا مكونًا إضافيًا للدفعة الجديدة، فيرجى الرجوع إلى إضافة مكون إضافي للدفعة للحصول على إرشادات.
-4. اختبر المثال الجديد الذي أدخلته في [amples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html) للتأكد من أن النتائج من المثال تسير على النحو المتوقع. على سبيل المثال، يتم جمع البيانات المطلوبة وعرضها في لوحة معلومات التحليلات الخاصة بك.
-5. أرسل طلب سحب مع هذا التصحيح، مع الإشارة إلى إصدار انتواء التنفيذ.
-6. حدِّث وثائق استخدام الخدمة الخاصة بك وأبلغ عملاءك.
-7. يوصى بشدة بإجراء [اختبار تكامل خارج مخزون AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../3p/README.md#adding-proper-integration-tests).
+3. اختبر المثال الجديد الذي أدخلته في [amples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html) للتأكد من أن النتائج من المثال تسير على النحو المتوقع. على سبيل المثال، يتم جمع البيانات المطلوبة وعرضها في لوحة معلومات التحليلات الخاصة بك.
+4. أرسل طلب سحب مع هذا التصحيح، مع الإشارة إلى إصدار انتواء التنفيذ.
+5. حدِّث وثائق استخدام الخدمة الخاصة بك وأبلغ عملاءك.
+6. يوصى بشدة بإجراء [اختبار تكامل خارج مخزون AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../3p/README.md#adding-proper-integration-tests).
 
 ## مديرو العلامات <a name="tag-managers"></a>
 
@@ -53,11 +61,10 @@ toc: true
 
 يُعد نهج نقطة النهاية النهج القياسي نفسه المفصل في القسم السابق. فيما يتكون نهج التكوين من إنشاء تكوين فريد لـ amp-analytics خاصًا بكل ناشر ويتضمن جميع حزم التحليلات المتوافقة. وقد يقوم الناشر بتضمين التكوين باستخدام بنية مشابهة لما يلي:
 
-[sourcecode:html] <amp-analytics config="https://my-awesome-tag-manager.example.com/user-id.json"
-
->
->
-
+[sourcecode:html]
+<amp-analytics
+  config="https://my-awesome-tag-manager.example.com/user-id.json"
+></amp-analytics>
 [/sourcecode]
 
 لاتباع هذا النهج، راجع الوثائق لتكامل الناشرين مع تحليلات AMP.
