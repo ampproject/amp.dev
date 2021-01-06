@@ -100,7 +100,7 @@
 		"uuid": "8.3.2",
 		"ws": "7.4.2",
 		"web-push": "3.4.4",
-		"amphtml-validator": "1.0.33"
+		"amphtml-validator": "1.0.34"
 	},
 	"devDependencies": {
 		"@ampproject/toolbox-cache-url": "2.7.2",
