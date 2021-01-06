@@ -1,17 +1,26 @@
 ---
-$title: Marcadores e substitutos
+"$title": Placeholders e fallbacks
+"$order": '3'
+descriptions: No espírito do desempenho percebido e melhoria progressiva, é uma prática recomendada no AMP fornecer placeholders e fallbacks sempre que possível.
+formats:
+  - websites
+  - email
+  - ads
+  - stories
+components:
+  - iframe
+author: pbakaus
+contributors:
+  - bpaduch
 ---
 
-Uma prática recomendada para melhorar o desempenho e fazer aprimoramento progressivo do seu material é usar marcadores e substitutos nas AMP sempre que possível.
+No espírito do desempenho percebido e melhoria progressiva, é uma prática recomendada no AMP fornecer placeholders e fallbacks sempre que possível.
 
-Se você fizer isso, alguns elementos até reduzirão as restrições. Por exemplo, se você usar um marcador para [`<amp-iframe>`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder), ele poderá ser usado na parte superior da página. Isso não seria possível sem o marcador.
+Se você fizer isso, alguns elementos até reduzirão as restrições. Por exemplo, se você usar um placeholder para [`<amp-iframe>`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder), ele poderá ser usado na parte superior da página. Isso não seria possível sem o placeholder.
 
-## Marcadores
+## Placeholders
 
-O elemento com o atributo `placeholder` atua
-como um marcador para o elemento AMP pai.
-Se um elemento `placeholder` for especificado, ele terá que ser um filho direto do elemento AMP.
-Os elementos marcados como `placeholder` sempre terão a função `fill` em relação ao elemento AMP pai.
+O elemento com o atributo `placeholder` atua como um marcador de posição para o elemento AMP pai. Se um elemento `placeholder` for especificado, ele terá que ser um filho direto do elemento AMP. Os elementos marcados como `placeholder` sempre terão a função `fill` em relação ao elemento AMP pai.
 
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
 ```html
@@ -27,24 +36,17 @@ Os elementos marcados como `placeholder` sempre terão a função `fill` em rela
 ```
 [/example]
 
-Por padrão, o marcador do elemento AMP é mostrado imediatamente,
-mesmo que os recursos desse elemento não tenham sido inicializados nem transferidos por download.
-Depois de pronto, o elemento AMP geralmente oculta o marcador e mostra o conteúdo.
+Por default, o placeholder é mostrado imediatamente para o elemento AMP, mesmo que os recursos desse elemento não tenham sido inicializados nem baixados. Depois de pronto, o elemento AMP geralmente oculta o placeholder e mostra o conteúdo.
 
-[tip type="note"]
+[tip type="note"] <strong>OBSERVAÇÃO –</strong>  O placeholder não precisa ser um elemento AMP. Qualquer elemento HTML pode ter essa função.[/tip]
 
-O marcador não precisa ser um elemento AMP.
-Qualquer elemento HTML pode ter essa função.
+## Fallbacks <a name="fallbacks"></a>
 
-[/tip]
+É possível especificar o atributo `fallback` em um elemento para indicar um substituto:
 
-## Substitutos <a name="fallbacks"></a>
-
-É possível especificar o atributo `fallback` em um elemento para indicar o comportamento de substituto:
-
-* de qualquer elemento incompatível com o navegador;
-* se o conteúdo não for carregado, por exemplo, tweet excluído;
-* se o tipo de imagem não for compatível. Por exemplo, o WebP não é compatível com todos os navegadores.
+- para qualquer elemento incompatível com o navegador;
+- se o conteúdo não for carregado, por exemplo, tweet excluído;
+- se o tipo de imagem não for compatível. Por exemplo, o WebP não é compatível com todos os navegadores.
 
 O atributo `fallback` pode ser definido em *qualquer* elemento HTML, e não somente em elementos AMP. Quando especificado, o elemento `fallback` precisa ser um filho direto do elemento AMP.
 
@@ -68,7 +70,7 @@ No exemplo abaixo, o atributo `fallback` é usado para comunicar ao usuário que
 
 ##### Exemplo: como exibir diferentes formatos de imagem
 
-No exemplo abaixo, o atributo `fallback` é usado para instruir o navegador a usar o arquivo JPEG se o formato WebP não for compatível. 
+No exemplo abaixo, o atributo `fallback` é usado para instruir o navegador a usar o arquivo JPEG se o formato WebP não for compatível.
 
 [example preview="inline" playground="true"]
 ```html
@@ -87,24 +89,17 @@ No exemplo abaixo, o atributo `fallback` é usado para instruir o navegador a us
 ```
 [/example]
 
-## Interação entre marcadores e substitutos
+## Interação entre placeholders e fallbacks
 
-No caso dos componentes AMP que dependem de conteúdo dinâmico (por exemplo, [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) e [`amp-list`](../../../../documentation/components/reference/amp-list.md)), a interação entre marcadores e substitutos é a seguinte:
+No caso dos componentes AMP que dependem de conteúdo dinâmico (por exemplo, [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) e [`amp-list`](../../../../documentation/components/reference/amp-list.md)), a interação entre placeholders e fallbacks é a seguinte:
 
 <ol>
-  <li>O marcador é exibido durante o carregamento do conteúdo.</li>
-  <li>Quando o conteúdo for carregado, o marcador será ocultado para a exibição do conteúdo.</li>
-  <li>Quando ocorrer uma falha no carregamento do conteúdo:
-    <ol>
-      <li>Se houver um elemento substituto, ele será exibido.</li>
-      <li>Caso contrário, o marcador continuará em exibição.</li>
-    </ol>
-  </li>
+  <li>O placeholder é exibido durante o carregamento do conteúdo.</li>
+  <li>Quando o conteúdo for carregado, o placeholder será ocultado para a exibição do conteúdo.</li>
+  <li>Quando ocorrer uma falha no carregamento do conteúdo:     <ol>       <li>Se houver um elemento de fallback, ele será exibido.</li>       <li>Caso contrário, o placeholder continuará em exibição.</li>     </ol>
+</li>
 </ol>
 
 ## Ocultar indicadores de carregamento
 
-Muitos elementos AMP são colocados na lista de permissões para mostrar um "indicador de carregamento",
-uma animação básica indicando que o elemento ainda não foi totalmente carregado.
-É possível desativar esse comportamento nos elementos com a inclusão do atributo `noloading`.
- 
+Muitos elementos AMP são colocados na lista de permissões para mostrar um "indicador de carregamento", uma animação básica indicando que o elemento ainda não foi totalmente carregado. É possível desativar esse comportamento nos elementos com a inclusão do atributo `noloading`.

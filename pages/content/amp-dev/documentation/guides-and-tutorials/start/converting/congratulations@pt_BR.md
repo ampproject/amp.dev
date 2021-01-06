@@ -1,17 +1,19 @@
 ---
-$title: Parabéns!
+"$title": Congratulations!
+"$order": '4'
+description: 'Você terminou o tutorial e conseguiu converter um documento HTML em um documento AMP. Neste tutorial, você aprendeu a: - Reconhecer as diferenças entre AMP e ...'
 ---
 
 Você terminou o tutorial e conseguiu converter um documento HTML em um documento AMP.
 
 Neste tutorial, você aprendeu a:
 
-- reconhecer as diferenças entre AMP e páginas HTML tradicionais;
-- dominar os princípios básicos de um site AMP;
-- converter uma página HTML tradicional em um HTML para AMP;
-- validar uma página AMP;
-- vincular seu conteúdo AMP;
-- adicionar dados estruturados para mecanismos de pesquisa.
+- Reconhecer as diferenças entre AMP e páginas HTML tradicionais;
+- Dominar os princípios básicos de um site AMP;
+- Converter uma página HTML tradicional em AMP HTML;
+- Validar uma página AMP;
+- Vincular seu conteúdo AMP;
+- Adicionar dados estruturados para mecanismos de pesquisa.
 
 ## Próximas etapas
 

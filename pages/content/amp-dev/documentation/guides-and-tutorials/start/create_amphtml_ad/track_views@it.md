@@ -1,7 +1,7 @@
 ---
-$title: Monitoraggio della visualizzazione di annunci
-$order: 2
-description: All'interno degli annunci AMPHTML è possibile raccogliere dati metrici, utilizzando i componenti amp-pixel o amp-analytics. Aggiungeremo al nostro esempio di base la possibilità di monitorare le visualizzazioni di pagina ...
+"$title": Monitoraggio della visualizzazione di annunci
+"$order": '2'
+description: "All'interno degli annunci AMPHTML è possibile raccogliere dati metrici, utilizzando i componenti amp-pixel o amp-analytics. Aggiungeremo al nostro esempio di base la possibilità di monitorare le visualizzazioni di pagina ..."
 ---
 
 All'interno degli annunci AMPHTML è possibile raccogliere dati metrici, utilizzando i componenti [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) o [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). Aggiungeremo al nostro esempio di base la possibilità di monitorare le visualizzazioni di pagina usando il componente [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) e di inserire il collegamento a un URL che registra le visualizzazioni (in questo caso, un URL fittizio):

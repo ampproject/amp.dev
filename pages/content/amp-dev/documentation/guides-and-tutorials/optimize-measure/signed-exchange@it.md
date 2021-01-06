@@ -1,6 +1,8 @@
 ---
-$title: Offerta di contenuti AMP utilizzando scambi firmati
-$order: 4
+"$title": Offerta di contenuti AMP utilizzando scambi firmati
+"$order": '4'
+formats:
+- websites
 author: CrystalOnScript
 ---
 
@@ -40,8 +42,10 @@ Per generare il certificato, l'autorità di certificazione (CA) avrà bisogno di
 
 ```sh
 # generate private key (if necessary)
+
 $ openssl ecparam -out ampbyexample-packager.key -name prime256v1 -genkey
 # generate CSR (the file ampbyexample-packager.csr)
+
 $ openssl req -new -key ampbyexample-packager.key -nodes -out ampbyexample-packager.csr -subj "/C=US/ST=California/L=Mountain View/O=Google LLC/CN=ampbyexample.com"
 ```
 
@@ -197,4 +201,5 @@ Nella scheda `network` della console DevTools, sarà possibile vedere l'indicazi
 
 Segue un elenco di CDN e fornitori di servizi di hosting che già supportano scambi firmati. Il loro utilizzo è il modo più semplice per iniziare con gli scambi firmati:
 
+- [AMP Packager Google Cloud Click-to-Deploy Installer](https://console.cloud.google.com/marketplace/details/google/amp-packager?filter=solution-type:k8s) [AMP Packager](https://github.com/ampproject/amppackager#amp-packager) è uno strumento che permette di migliorare gli URL AMP, fornendo contenuti AMP tramite Scambi firmati. Ulteriori informazioni sono disponibili sul [Blog AMP](https://blog.amp.dev/2020/11/23/amp-packager-is-now-available-on-google-cloud-marketplace/).
 - [URL reali di Cloudflare AMP](https://www.cloudflare.com/website-optimization/amp-real-url/). [Cloudflare](https://www.cloudflare.com/) è una delle reti più grandi al mondo. Oggi, aziende, organizzazioni non-profit, blogger e chiunque abbia una presenza su Internet può contare su siti web e app più veloci e sicuri grazie a Cloudflare.

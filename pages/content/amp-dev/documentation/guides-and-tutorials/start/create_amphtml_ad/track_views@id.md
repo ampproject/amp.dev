@@ -1,6 +1,6 @@
 ---
-$title: Melacak penayangan iklan
-$order: 2
+"$title": Melacak penayangan iklan
+"$order": '2'
 description: Di dalam iklan HTML AMP, Anda dapat melacak metrik dengan menggunakan komponen amp-pixel atau amp-analytics. Di dalam sampel dasar, kita akan menambahkan kemampuan untuk melacak tampilan halaman ....
 ---
 

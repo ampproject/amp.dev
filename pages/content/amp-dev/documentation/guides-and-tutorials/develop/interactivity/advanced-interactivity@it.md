@@ -1,6 +1,7 @@
 ---
-$title: "Miglioramento dell'interattività"
-description: "Il codice di avvio fornisce un''esperienza d''uso piuttosto limitata. Ci sono un paio di modi in cui possiamo migliorarlo: Aggiungere un indicatore che mostri ..."
+"$title": "Miglioramento dell'interattività"
+"$order": '2'
+description: 'Il codice di avvio fornisce un''esperienza d''uso piuttosto limitata. Ci sono un paio di modi in cui possiamo migliorarlo\: Aggiungere un indicatore che mostri ...'
 ---
 
 Il codice di avvio fornisce un'esperienza d'uso piuttosto limitata. Ci sono un paio di modi in cui possiamo migliorarlo:

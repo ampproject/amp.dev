@@ -1,9 +1,11 @@
 ---
-$title: 이메일용 AMP 지원 CSS
-order: 5
+"$title": 이메일용 AMP 지원 CSS
+order: '5'
+formats:
+- email
 teaser:
   text: 이 문서는 현재 AMP 이메일에서 지원되는 CSS 기능을 간략하게 설명합니다.
-toc: true
+toc: 'true'
 ---
 
 <!--
@@ -53,8 +55,8 @@ limitations under the License.
 
 - [유형 선택자](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) `elementname`
 - [클래스 선택자](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) `.classname`
-- [ID 선택자](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) `<a></a><a>#idname</a>`
-- [전체 선택자](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) `<a>*</a>`
+- [ID 선택자](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) `#idname`
+- [전체 선택자](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) `*`
 - [속성 선택자](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) `[attr=value]`
 
 ### 결합자 <a name="combinators"></a>

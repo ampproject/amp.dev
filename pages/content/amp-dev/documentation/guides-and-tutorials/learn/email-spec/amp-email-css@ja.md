@@ -1,9 +1,11 @@
 ---
-$title: AMP for Email 対応 CSS
-order: 5
+"$title": AMP for Email 対応 CSS
+order: '5'
+formats:
+- email
 teaser:
   text: このドキュメントでは、AMP メール内で現在サポートされている CSS 機能を概説します。
-toc: true
+toc: 'true'
 ---
 
 <!--

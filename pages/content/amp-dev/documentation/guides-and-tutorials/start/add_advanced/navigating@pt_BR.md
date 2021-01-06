@@ -1,11 +1,13 @@
 ---
-$title: Navegar pelo seu site
+"$title": Navigating your site
+"$order": '5'
+description: A maioria dos sites para dispositivos móveis tem um menu de navegação. Esses menus podem ter várias formas. Neste tutorial, testaremos os seguintes exemplos de ...
 ---
 
 A maioria dos sites para dispositivos móveis tem um menu de navegação. Esses menus podem ter várias formas. Neste tutorial, testaremos os seguintes exemplos de como apresentar a navegação nas páginas AMP:
 
-- Incluir um link para sua página inicial é a opção mais simples.
-- Outra possibilidade é adicionar uma barra de navegação lateral com o componente [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md).
+- Incluir um link para sua página inicial: a opção mais simples.
+- Adicionar uma barra de navegação lateral usando o componente [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md).
 
 ## Link para a página inicial
 
@@ -22,7 +24,7 @@ Experimente **substituir** sua tag `<header>` por esta versão com um link:
 </header>
 ```
 
-Depois, **adicione** estas regras de estilo ao CSS in-line:
+Depois, **adicione** estas regras de estilo ao CSS inline:
 
 ```css
 .home-button {
@@ -49,13 +51,13 @@ Agora, **atualize** a página. Você verá um link para `homepage.html` no canto
 
 {{ image('/static/img/docs/tutorials/tut-advanced-navigate-home.png', 412, 190, align='center half', caption='Navegação com ícone da página inicial') }}
 
-É possível substituir esse link pelo URL da página inicial do seu site e permitir que os usuários naveguem para outras seções por meio da navegação existente.
+É possível substituir este link pela URL da página inicial do seu site para permitir que os usuários naveguem para outras seções por meio da navegação existente.
 
 Essa é a forma mais fácil de aproveitar os elementos existentes de navegação do seu site. A seguir, veremos uma opção muito usada para a navegação em sites.
 
 ## Navegação com uma barra lateral
 
-Uma técnica comum de navegação é adicionar um ícone de menu que, ao receber um clique, mostra vários links de navegação na lateral da página. Nas AMP, é possível criar esse tipo de navegação com o componente [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md).
+Uma técnica comum de navegação é adicionar um ícone de menu que, ao receber um clique, mostra vários links de navegação na lateral da página. Nas páginas AMP, é possível criar esse tipo de navegação com o componente [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md).
 
 Primeiro, é preciso **adicionar** o JavaScript do componente [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) à tag `<head>`:
 
@@ -63,7 +65,7 @@ Primeiro, é preciso **adicionar** o JavaScript do componente [`amp-sidebar`](..
 <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
 ```
 
-Em seguida, queremos exibir um ícone de menu.  Quando tocado, ele abrirá a barra lateral. **Substitua** o `<header>` pelo seguinte código para exibir um ícone de ["hambúrguer"](https://en.wikipedia.org/wiki/Hamburger_button) (página em inglês) em vez de um representando a página inicial:
+Em seguida, queremos exibir um ícone de menu.  Quando tocado, ele abrirá a barra lateral. **Substitua** o `<header>` pelo seguinte código para exibir um ícone de ["hambúrguer"](https://en.wikipedia.org/wiki/Hamburger_button) em vez de um representando a página inicial:
 
 ```html
 <header class="headerbar">
@@ -87,9 +89,9 @@ No código acima, `alternamos` a barra lateral usando o atributo de ação [`on`
 </amp-sidebar>
 ```
 
-A barra ficará oculta, mas quando o usuário tocar no ícone de hambúrguer, o menu será exibido no lado esquerdo da tela.  Para fechar o menu, o usuário pode tocar no ícone de X.
+A barra ficará oculta, mas quando o usuário tocar no ícone de hambúrguer, o menu será exibido no lado esquerdo da tela.  Para fechar o menu, o usuário pode tocar no ícone X.
 
-Por fim, **adicione** estas regras de estilo ao CSS in-line:
+Por fim, **adicione** estas regras de estilo ao CSS inline:
 
 ```css
 .hamburger {

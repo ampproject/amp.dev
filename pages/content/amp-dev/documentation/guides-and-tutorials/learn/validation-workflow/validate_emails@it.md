@@ -1,7 +1,9 @@
 ---
-$title: Convalida delle email AMP
-$order: 1
+"$title": Convalida delle email AMP
+"$order": '1'
 author: CrystalOnScript
+formats:
+- email
 ---
 
 Le e-mail AMP dipendono dalla libreria AMP JS per consentire agli utenti coinvolgenti esperienze interattive e dinamiche. Per questo motivo, i fornitori di posta elettronica richiedono la convalida dei messaggi e-mail. La convalida dei markup AMP garantisce che le e-mail siano sicure e soddisfino in pieno gli standard di esperienza d'uso richiesti dall'utente.

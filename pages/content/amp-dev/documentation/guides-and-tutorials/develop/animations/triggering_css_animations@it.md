@@ -1,6 +1,10 @@
 ---
-$title: Attivazione di animazioni e transizioni CSS
-description: L'attivazione delle animazioni CSS sulle pagine si basa sull'aggiunta e la rimozione di classi, eseguita tramite JavaScript. Lo stesso risultato può essere ottenuto sulle pagine AMP utilizzando l'azione toggleClass ...
+"$title": Attivazione di animazioni e transizioni CSS
+"$order": '1'
+description: "L'attivazione delle animazioni CSS sulle pagine si basa sull'aggiunta e la rimozione di classi, eseguita tramite JavaScript. Lo stesso risultato può essere ottenuto sulle pagine AMP utilizzando l'azione toggleClass ..."
+formats:
+- websites
+- ads
 ---
 
 Le animazioni CSS consentono agli elementi web di passare da una configurazione di stile CSS all'altra. Il browser può avviare animazioni definite al caricamento, ma le animazioni CSS attivate da eventi si [basano sull'aggiunta e sulla rimozione di classi](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations). AMP supporta entrambi i tipi di animazione.
@@ -90,7 +94,6 @@ Se è necessario rimuovere una classe ed impedirne altre applicazioni, occorre a
 Si possono aggiungere e rimuovere tutte le classi CSS con stati che occorre, utilizzando [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
 
 [example preview="top-frame" playground="true"]
-
 ```html
 <head>
   <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
@@ -155,7 +158,6 @@ Si possono aggiungere e rimuovere tutte le classi CSS con stati che occorre, uti
   </button>
 </body>
 ```
-
 [/example]
 
 Per pefinire più animazioni di classe, occorre aggiungere dapprima un elenco delle classi CSS all'interno del tag `<style amp-custom>` nella sezione `head` del documento:

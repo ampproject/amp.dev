@@ -1,7 +1,11 @@
 ---
-$title: AMP キャッシュ URL 形式とリクエスト処理
-$order: 9
-toc: false
+"$title": AMP キャッシュ URL 形式とリクエスト処理
+"$order": '9'
+toc: 'false'
+formats:
+- websites
+- stories
+- ads
 author: Gregable
 contributors:
 - sebastianbenz
@@ -15,11 +19,8 @@ Google AMP キャッシュは、可能な場合、各 AMP ドキュメントの�
 
 この URL 換算式を使用することで、URL を AMP キャッシュバージョンに変換することができます。
 
-<div>
-<amp-iframe title="AMP Cache tool" height="104" layout="fixed-height" sandbox="allow-scripts" src="/static/samples/files/amp-url-converter.html?url=https://amp.dev/index.amp.html">
-  <div placeholder></div>
-</amp-iframe>
-</div>
+<div><amp-iframe title="AMP Cache tool" height="104" layout="fixed-height" sandbox="allow-scripts" src="/static/samples/files/amp-url-converter.html?url=https://amp.dev/index.amp.html">
+  <div placeholder></div></amp-iframe></div>
 
 [tip type="tip"] [AMP-Toolbox Cache URL](https://github.com/ampproject/amp-toolbox/tree/master/packages/cache-url) [Node.js](https://nodejs.org) モジュールを使用すると、URL をオリジンから AMP キャッシュの URL 形式に変換することができます。 [/tip]
 

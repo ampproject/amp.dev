@@ -1,6 +1,11 @@
 ---
-$title: Introduzione alle animazioni complesse
+"$title": Introduzione alle animazioni complesse
+"$order": '2'
 description: AMP offre diversi componenti specifici per le animazioni che non possono essere gestite aggiungendo e rimuovendo classi. Tali componenti applicano i principi dei contenuti AMP alle animazioni ...
+formats:
+- websites
+- ads
+author: CrystalOnScript
 ---
 
 AMP offre diversi componenti specifici per le animazioni che non possono essere gestite [aggiungendo e rimuovendo classi](triggering_css_animations.md). Tali componenti applicano i principi dei contenuti AMP alle animazioni: sono veloci, efficienti e privilegiano la qualità dell'esperienza utente. AMP limita le proprietà CSS consentite all'interno dei fotogrammi principali, ma garantisce vantaggi quali controllo fine, animazioni senza interruzioni e compatibilità su numerosi browser senza necessità di adattamenti aggiuntivi.
@@ -82,13 +87,12 @@ La realizzazione di animazioni tramite [`amp-animation`](../../../../documentati
 Gli elementi dello stesso tag o classe possono avere proprietà di temporizzazione specificate e sovrascrivere i valori di variabili definite nell'animazione principale.
 
 [example preview="top-frame" playground="true" imports="amp-animation"]
-
 ```html
 <body>
-  <h1>Ciao mondo!</h1>
-  <h1>Ciao mondo!</h1>
-  <h1 id="helloMe">Ciao mondo!</h1>
-  <h1>Ciao mondo!</h1>
+  <h1>Hello World!</h1>
+  <h1>Hello World!</h1>
+  <h1 id="helloMe">Hello World!</h1>
+  <h1>Hello World!</h1>
   <amp-animation layout="nodisplay" id="animateThis">
     <script type="application/json">
       {
@@ -115,7 +119,6 @@ Gli elementi dello stesso tag o classe possono avere proprietà di temporizzazio
   </button>
 </body>
 ```
-
 [/example]
 
 ### Animazioni concatenate
@@ -207,7 +210,6 @@ Per creare animazioni più grandi, è possibile fare in modo che le animazioni a
 L'uso delle [espressioni `var()` e `calc()`](../../../../documentation/components/reference/amp-animation.md) insieme alle [estensioni CSS](../../../../documentation/components/reference/amp-animation.md#css-extensions) permette di scrivere animazioni complesse e temporizzate che funzionano con un numero qualsiasi di elementi. Ciò consente di animare con facilità e fluidità dati dinamici e generati dagli utenti.
 
 [example preview="top-frame" playground="true"]
-
 ```html
 <head>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
@@ -255,8 +257,7 @@ L'uso delle [espressioni `var()` e `calc()`](../../../../documentation/component
   </div>
 </body>
 ```
-
-[/example] Questo esempio svolge le seguenti operazioni:
+[/example]
 
 - Dichiara una variabile `--duration` e le assegna il valore di due secondi.
 - Imposta la `duration` al valore della variabile `--duration`.
@@ -274,7 +275,6 @@ Aprire l'animazione nel playground AMP e aggiungere altri elementi [`amp-img`](.
 Le animazioni possono comprendere attributi [`conditions`](../../../../documentation/components/reference/amp-animation.md#conditions) che permettono di realizzare effetti personalizzati. Le animazioni possono essere adattate a schermi di tutte le dimensioni con la [condition `media`](../../../../documentation/components/reference/amp-animation.md#media-query) e possono garantire la compatibilità all'indietro con precedenti versioni del browser attivando le [conditions `supports`](../../../../documentation/components/reference/amp-animation.md#supports-condition) in un'istruzione [`switch`](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement).
 
 [example preview="top-frame" playground="true"]
-
 ```html
 <head>
  <style amp-custom>
@@ -334,7 +334,7 @@ Le animazioni possono comprendere attributi [`conditions`](../../../../documenta
     }
   </script>
 </amp-animation>
-
+    
   <div class="rain">
     <div class="drop"></div>
     <div class="drop right"></div>
@@ -348,5 +348,4 @@ Le animazioni possono comprendere attributi [`conditions`](../../../../documenta
   <button on="tap:mediaAnimation.start">Start</button>
 </body>
 ```
-
 [/example]

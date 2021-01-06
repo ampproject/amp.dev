@@ -1,9 +1,11 @@
 ---
-$title: CSS yang Didukung AMP untuk Email
-order: 5
+"$title": CSS yang Didukung AMP untuk Email
+order: '5'
+formats:
+- email
 teaser:
   text: Dokumen ini menguraikan fitur-fitur CSS yang saat ini didukung di dalam email AMP.
-toc: true
+toc: 'true'
 ---
 
 <!--
@@ -51,7 +53,7 @@ Menggunakan `<link rel="stylesheet" href="...">` tidak diizinkan di bagian mana 
 
 ### Pemilih sederhana <a name="simple-selectors"></a>
 
-- [Pemilih jenis](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) `elementname`
+- [Pemilih kelas](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) `.classname`
 - [Pemilih kelas](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) `.classname`
 - [Pemilih ID](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) `#idname`
 - [Pemilih universal](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) `*`

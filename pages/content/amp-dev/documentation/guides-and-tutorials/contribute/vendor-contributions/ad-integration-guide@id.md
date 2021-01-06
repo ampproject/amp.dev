@@ -1,9 +1,11 @@
 ---
-$title: Integrasikan teknologi iklan Anda ke dalam AMP
-order: 3
+"$title": Integrasikan teknologi iklan Anda ke dalam AMP
+order: '3'
+formats:
+- ads
 teaser:
   text: Jika Anda adalah penyedia teknologi iklan yang ingin berintegrasi dengan HTML AMP, silakan baca panduan di bawah ini.
-toc: true
+toc: 'true'
 ---
 
 <!--
@@ -25,11 +27,17 @@ Karena AMP tidak mengizinkan penayang untuk mengeksekusi JavaScript sesuka hati,
 
 Contohnya : Server A9 Amazon dapat diminta dengan menggunakan sintaks berikut ini:
 
-[sourcecode:html] <amp-ad width="300" height="250" type="a9" data-aax_size="300x250" data-aax_pubname="test123" data-aax_src="302"
-
+[sourcecode:html]
+<amp-ad
+  width="300"
+  height="250"
+  type="a9"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
 >
-
- [/sourcecode]
+</amp-ad>
+[/sourcecode]
 
 Harap ketahui bahwa setiap atribut yang mengikuti `type` bergantung pada parameter yang diharapkan server A9 Amazon agar dapat menyampaikan sebuah iklan. Berkas [a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) memperlihatkan cara parameter dipetakan pada pembuatan panggilan JavaScript yang meminta server A9 melalui URL `https://c.amazon-adsystem.com/aax2/assoc.js`. Parameter terkait yang dilewati oleh tag iklan AMP dilampirkan pada URL untuk menghasilkan sebuah iklan.
 
@@ -59,11 +67,17 @@ Sebuah pemutar video yang bekerja pada halaman HTML biasa tidak akan bekerja di 
 
 Sebuah pemutar Brightcove dapat dipanggil dengan yang berikut ini:
 
-[sourcecode:html] <amp-brightcove data-account="1290862519001" data-video-id="ref:amp-docs-sample" data-player="S1Tt8cgaM" layout="responsive" width="480" height="270"
-
+[sourcecode:html]
+<amp-brightcove
+  data-account="1290862519001"
+  data-video-id="ref:amp-docs-sample"
+  data-player="S1Tt8cgaM"
+  layout="responsive"
+  width="480"
+  height="270"
 >
-
- [/sourcecode]
+</amp-brightcove>
+[/sourcecode]
 
 Untuk mengetahui instruksi tentang cara membuat tag amp, seperti Brightcove, buka [permintaan penarikan ini](https://github.com/ampproject/amphtml/pull/1052).
 

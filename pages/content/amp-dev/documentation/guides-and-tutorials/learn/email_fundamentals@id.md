@@ -1,8 +1,10 @@
 ---
-$title: Dasar-Dasar AMP untuk Email
-$order: 1
+"$title": Dasar-Dasar AMP untuk Email
+"$order": '1'
 description: Semua yang perlu Anda ketahui untuk mulai menulis Email AMP yang valid.
 author: CrystalOnScript
+formats:
+- email
 ---
 
 Jika Anda akrab dengan AMP, ada kabar baik! AMP untuk Email hanyalah sebagian kecil dari perpustakaan HTML AMP. Jika Anda tidak akrab dengan AMP, ada kabar baik juga! Panduan ini akan menyediakan semua yang Anda butuhkan untuk bisa memulai menulis Email AMP yang valid!

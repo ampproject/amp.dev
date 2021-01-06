@@ -1,6 +1,6 @@
 ---
-$title: 광고 뷰 추적하기
-$order: 2
+"$title": 광고 뷰 추적하기
+"$order": '2'
 description: AMPHTML 광고에서 amp-pixel 또는 amp-analytics 컴포넌트를 사용하여 메트릭을 추적할 수 있습니다. 기본 예제에서 페이지뷰 추적 기능을 추가해보겠습니다...
 ---
 

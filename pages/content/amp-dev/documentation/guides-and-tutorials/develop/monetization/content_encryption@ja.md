@@ -1,8 +1,10 @@
 ---
-$title: クライアント側暗号化でサブスクリプションコンテンツを保護する
-$titles:
-  teaser: クライアント側暗号化でサブスクリプションコンテンツを保護する。
-$order: 10
+formats:
+- websites
+"$title": クライアント側暗号化でサブスクリプションコンテンツを保護する
+"$titles":
+  teaser: Protect your subscription content with client-side encryption.
+"$order": '10'
 description: プレミアムサブスクライバ認証とコンテンツ解読をクライアント側に実装することで、コンテンツ暗号化の問題を解決します。このソリューションでは、プレミアムアクセスを持つユーザーが、新しいページの読み込みやバックエンドの応答を待機することなく、コンテンツを解読できるようになります。
 author: CrystalOnScript
 ---

@@ -1,10 +1,12 @@
 ---
-$title: 熟悉入门代码
+"$title": 熟悉入门代码
+"$order": '1'
+description: AMP 网页是一种为实现可靠性能而设置了某些限制的 HTML 网页。AMP 网页具有一些特殊标记，其作用是将网页标识为 AMP 网页。
 ---
 
 ## AMP 样板
 
-AMP 网页是一种为实现可靠性能而设置了某些限制条件的 HTML 网页。AMP 网页具有一些特殊的标记，其作用是将网页标识为 AMP 网页。
+AMP 网页是一种为实现可靠性能而设置了某些限制的 HTML 网页。AMP 网页具有一些特殊标记，其作用是将网页标识为 AMP 网页。
 
 AMP 网页的基本框架如下所示：
 
@@ -81,9 +83,11 @@ AMP 网页的基本框架如下所示：
 </html>
 ```
 
+[tip] 您可以使用[样板生成器](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html)为 AMP 网页快速设置基本框架。它还提供了结构化数据的代码段，用于创建 PWA 等！[/tip]
+
 ## AMP 组件
 
-本教程的入门代码 ([`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html)) 是基于 AMP 网页的基本框架构建而成的，不仅添加了网页内容（图片、文字等），还添加了若干 AMP 组件（如下所示）：
+本教程的入门代码 ([`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html)) 基于 AMP 网页的基本框架构建而成，不仅添加了网页内容（图片、文字等），还添加了若干 AMP 组件：
 
 ```html
 <script
@@ -110,16 +114,16 @@ AMP 网页的基本框架如下所示：
 
 AMP 组件可提供额外的功能和界面组件，为 AMP 网页增添丰富的互动方式。入门代码使用了以下 AMP 组件：
 
-- [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)：用于实现图片轮换展示内容，以展示相应商品的多个视图。
-- [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md)：用于实现模板化系统，以呈现来自 [`amp-form`](../../../../documentation/components/reference/amp-form.md) 的服务器响应。
-- [`amp-form`](../../../../documentation/components/reference/amp-form.md)：用于为 AMP 网页所需的 `<form>` 元素添加特殊功能。
-- [`amp-selector`](../../../../documentation/components/reference/amp-selector.md)：用于提供一种语义方式，以从一组元素中选择一个或多个元素。可用作 [`amp-form`](../../../../documentation/components/reference/amp-form.md) 的输入源。
+- [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)：图片轮播界面，可以展示商品的多个视图。
+- [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md)：模板系统，用于呈现来自 amp-form 的服务器响应。
+- [`amp-form`](../../../../documentation/components/reference/amp-form.md)：为 AMP 网页所需的 `<form>` 元素添加特殊功能。
+- [`amp-selector`](../../../../documentation/components/reference/amp-selector.md)：提供一种语义方式，以从一组元素中选择一个或多个元素。可用作 amp-form 的输入源。
 
-## 基本的互动方式
+## 基本互动
 
-入门代码可提供一些基本的互动方式：
+入门代码可提供一些基本互动：
 
-- 图片轮换展示内容 ([`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)) 可展示相应商品的多个视图。
-- 相应商品可被添加到用户的购物车中（通过 [`amp-form`](../../../../documentation/components/reference/amp-form.md)）- 用户只需点按网页底部的“加入购物车”按钮即可完成此操作。
+- 图片轮播界面 ([`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)) 可以展示商品的多个视图。
+- 用户只需点按网页底部的“Add to cart”按钮即可将商品添加到购物车中（通过 [`amp-form`](../../../../documentation/components/reference/amp-form.md)）。
 
-**试试看**：滑动图片轮换展示内容，然后点按“加入购物车”按钮。
+**试试看**：滑动图片轮播界面，然后点按“Add to cart”按钮。

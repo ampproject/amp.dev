@@ -1,6 +1,8 @@
 ---
-$title: Configurazione
-description: "Prima di iniziare questa esercitazione, hai bisogno di quanto segue: una conoscenza di base di HTML, CSS e JavaScript, una comprensione di base dei principali concetti AMP ..."
+"$title": Configurazione
+"$order": '0'
+description: 'Prima di iniziare questa esercitazione, hai bisogno di quanto segue: una conoscenza di base di HTML, CSS e JavaScript, una comprensione di base dei principali concetti AMP ...'
+"$parent": "/content/docs/fundamentals/add_advanced.md"
 ---
 
 ## Prerequisiti

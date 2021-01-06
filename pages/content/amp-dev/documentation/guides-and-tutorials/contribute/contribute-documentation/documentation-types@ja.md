@@ -1,9 +1,14 @@
 ---
-$title: ドキュメントの種類
-$order: 1
+"$title": ドキュメントの種類
+"$order": '1'
 description: amp.dev で貢献が許可されるドキュメントの種類
+formats:
+- websites
+- stories
+- ads
+- email
 author: CrystalOnScript
-toc: false
+toc: 'false'
 ---
 
 以下は、amp.dev で貢献が許可されるドキュメントの種別に関する簡単なアウトラインです。

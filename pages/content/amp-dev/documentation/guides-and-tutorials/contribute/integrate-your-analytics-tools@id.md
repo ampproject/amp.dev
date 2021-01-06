@@ -1,10 +1,20 @@
 ---
-$title: Mengintegrasikan alat analitis Anda dengan AMP
-order: 1
+"$title": Mengintegrasikan alat analitis Anda dengan AMP
+order: '1'
+formats:
+- websites
+- stories
 teaser:
   text: Gambaran Umum
-toc: true
+toc: 'true'
 ---
+
+<!--
+This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md.
+Please do not change this file.
+If you have found a bug or an issue please
+have a look and request a pull request there.
+-->
 
 ## Gambaran Umum <a name="overview"></a>
 
@@ -51,11 +61,10 @@ Layanan manajemen tag mempunyai dua pilihan untuk berintegrasi dengan Analitis A
 
 Pendekatan endpoint sama dengan pendekatan standar yang diuraikan di dalam bagian sebelumnya. Pendekatan konfig berisi tentang pembuatan konfigurasi unik untuk amp-analytics yang spesifik untuk setiap penayang dan menyertakan semua paket analitis mereka yang kompatibel. Penayang akan menyertakan konfigurasi yang menggunakan sintaks yang serupa dengan ini:
 
-[sourcecode:html] <amp-analytics config="https://my-awesome-tag-manager.example.com/user-id.json"
-
->
->
-
+[sourcecode:html]
+<amp-analytics
+  config="https://my-awesome-tag-manager.example.com/user-id.json"
+></amp-analytics>
 [/sourcecode]
 
 Untuk mengambil pendekatan ini, kaji dokumentasi untuk integrasi penayang dengan Analitis AMP.

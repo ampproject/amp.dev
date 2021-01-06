@@ -1,7 +1,11 @@
 ---
-$title: "복잡한 애니메이션 입문"
-$order: 2
-description: "클래스 추가 및 제거로는 구동할 수 없는 애니메이션을 위해 AMP는 여러 애니메이션 전용 컴포넌트를 제공합니다. 이러한 컴포넌트는 AMP의 원리를 애니메이션에 적용하여..."
+"$title": 복잡한 애니메이션 입문
+"$order": '2'
+description: 클래스 추가 및 제거로는 구동할 수 없는 애니메이션을 위해 AMP는 여러 애니메이션 전용 컴포넌트를 제공합니다. 이러한 컴포넌트는 AMP의 원리를 애니메이션에 적용하여...
+formats:
+- websites
+- ads
+author: CrystalOnScript
 ---
 
 [클래스 추가 및 제거](triggering_css_animations.md)로는 구동할 수 없는 애니메이션을 위해 AMP는 여러 애니메이션 전용 컴포넌트를 제공합니다. 이러한 컴포넌트는 AMP의 원리를 애니메이션에 적용하여 빠르고 효율적이며 사용자 중심의 애니메이션을 지원합니다. AMP는 키 프레임 내에서 허용되는 CSS 속성을 제한하지만 세밀한 제어, 끊김 없는 애니메이션, 추가 작업이 필요 없는 크로스 브라우저 호환성 등의 장점이 있습니다.
@@ -83,7 +87,6 @@ CSS를 사용하면 트랜지션을 통해 어떤 상태에서 다른 상태로 
 동일한 태그 또는 클래스의 요소는 지정된 타이밍 속성을 가질 수 있으며 최상위 애니메이션에 정의된 변수 값을 재정의할 수 있습니다.
 
 [example preview="top-frame" playground="true" imports="amp-animation"]
-
 ```html
 <body>
   <h1>Hello World!</h1>
@@ -116,7 +119,6 @@ CSS를 사용하면 트랜지션을 통해 어떤 상태에서 다른 상태로 
   </button>
 </body>
 ```
-
 [/example]
 
 ### 연결된 애니메이션
@@ -208,7 +210,6 @@ CSS를 사용하면 트랜지션을 통해 어떤 상태에서 다른 상태로 
 [`var()`, `calc()` 표현식](../../../../documentation/components/reference/amp-animation.md)을  [CSS 확장자](../../../../documentation/components/reference/amp-animation.md#css-extensions)와 함께 사용하면 여러 요소로 작동하는 복잡하고 시간 제한이 있는 애니메이션을 작성할 수 있습니다. 이러한 방식은 동적인 사용자 생성 데이터에 애니메이션을 간편하고 유연하게 적용할 수 있도록 지원합니다.
 
 [example preview="top-frame" playground="true"]
-
 ```html
 <head>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
@@ -256,8 +257,7 @@ CSS를 사용하면 트랜지션을 통해 어떤 상태에서 다른 상태로 
   </div>
 </body>
 ```
-
-[/example] 이 예시는 다음을 통해 구현됩니다.
+[/example]
 
 - 변수 및 `--duration` 선언 후 값을 2초로 지정.
 - 변수의 `--duration` 값에 `duration` 설정.
@@ -275,7 +275,6 @@ CSS를 사용하면 트랜지션을 통해 어떤 상태에서 다른 상태로 
 애니메이션에 [`conditions`](../../../../documentation/components/reference/amp-animation.md#conditions)를 포함하여 사용자 지정 효과를 적용할 수 있습니다. [`media` 조건](../../../../documentation/components/reference/amp-animation.md#media-query)을 통해 모든 화면 크기에 맞춰 애니메이션을 조정하고 [`switch` 문](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement)의 [`supports` 조건](../../../../documentation/components/reference/amp-animation.md#supports-condition)을 활용하여 역방향 브라우저 호환성을 지원합니다.
 
 [example preview="top-frame" playground="true"]
-
 ```html
 <head>
  <style amp-custom>
@@ -335,7 +334,7 @@ CSS를 사용하면 트랜지션을 통해 어떤 상태에서 다른 상태로 
     }
   </script>
 </amp-animation>
-
+    
   <div class="rain">
     <div class="drop"></div>
     <div class="drop right"></div>
@@ -349,5 +348,4 @@ CSS를 사용하면 트랜지션을 통해 어떤 상태에서 다른 상태로 
   <button on="tap:mediaAnimation.start">Start</button>
 </body>
 ```
-
 [/example]

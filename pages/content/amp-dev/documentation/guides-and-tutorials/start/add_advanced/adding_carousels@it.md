@@ -1,7 +1,7 @@
 ---
-$title: Aggiunta di sequenze
-$order: 3
-description: Un'altra funzione comunemente utilizzata nelle pagine per dispositivi mobili sono le sequenze. Possono essere facilmente aggiunte alle pagine AMP utilizzando il componente amp-carousel.
+"$title": Aggiunta di sequenze
+"$order": '3'
+description: "Un'altra funzione comunemente utilizzata nelle pagine per dispositivi mobili sono le sequenze. Possono essere facilmente aggiunte alle pagine AMP utilizzando il componente amp-carousel."
 ---
 
 Un'altra funzione comunemente utilizzata nelle pagine per dispositivi mobili sono le sequenze. Possono essere facilmente aggiunte alle pagine AMP utilizzando il componente [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md). Cominciamo con un semplice esempio, come una sequenza di immagini.
