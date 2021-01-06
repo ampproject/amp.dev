@@ -60,22 +60,24 @@ module.exports = (env, argv) => {
         ),
       }),
       new FileManagerPlugin({
-        onEnd: {
-          copy: [
-            {
-              source: './dist/pixi.html',
-              destination:
-                '../frontend/templates/views/partials/pixi/webpack.j2',
-            },
-            {
-              source: './dist/*.js',
-              destination: '../dist/static/page-experience/',
-            },
-            {
-              source: './dist/*.map',
-              destination: '../dist/static/page-experience/',
-            },
-          ],
+        events: {
+          onEnd: {
+            copy: [
+              {
+                source: './dist/pixi.html',
+                destination:
+                  '../frontend/templates/views/partials/pixi/webpack.j2',
+              },
+              {
+                source: './dist/*.js',
+                destination: '../dist/static/page-experience/',
+              },
+              {
+                source: './dist/*.map',
+                destination: '../dist/static/page-experience/',
+              },
+            ],
+          },
         },
       }),
       new CleanWebpackPlugin({
