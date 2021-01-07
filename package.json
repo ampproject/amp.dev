@@ -93,7 +93,7 @@
 		"nunjucks": "3.2.2",
 		"p-queue": "6.6.2",
 		"randomstring": "1.1.5",
-		"rcs-core": "3.5.1",
+		"rcs-core": "3.6.0",
 		"rss-to-json": "1.1.2",
 		"shrink-ray-current": "4.1.2",
 		"signale": "1.4.0",
