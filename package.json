@@ -113,7 +113,7 @@
 		"@babel/preset-env": "7.12.11",
 		"@babel/runtime": "7.12.5",
 		"absolutify": "0.1.0",
-		"archiver": "5.1.0",
+		"archiver": "5.2.0",
 		"babel-eslint": "10.1.0",
 		"babel-loader": "8.2.2",
 		"clean-css": "4.2.3",
