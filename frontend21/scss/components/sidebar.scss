@@ -1,7 +1,7 @@
 .#{prefix(null, 'sidebar')} {
   width: 100%;
   max-width: 90vw;
-  padding: 0 20px;
+  padding: 30px 20px 0 20px;
   background: color('white');
 
   &-toolbar {
@@ -28,7 +28,7 @@
 
   &-scroll-container {
     overflow-y: scroll;
-    max-height: 100vh;
+    max-height: calc(100vh - 74px);
 
     @include respond-to('medium') {
       max-height: calc(100vh - 110px - 44px);
