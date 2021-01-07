@@ -23,13 +23,17 @@
   }
 
   &-main {
-    grid-column: 4/22;
+    grid-column: 2/24;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
     width: 100%;
     height: 50px;
     margin: 0 auto;
+
+    @include respond-to('large') {
+      grid-column: 4 / 22;
+    }
   }
 
   &-home {
