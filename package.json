@@ -131,7 +131,7 @@
 		"file-loader": "6.2.0",
 		"filemanager-webpack-plugin": "3.0.0",
 		"globby": "11.0.1",
-		"google-closure-compiler": "20201207.0.0",
+		"google-closure-compiler": "20210106.0.0",
 		"gulp": "4.0.2",
 		"gulp-amphtml-validator": "1.0.6",
 		"gulp-once": "2.1.1",
