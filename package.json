@@ -81,7 +81,7 @@
 		"http-proxy": "1.18.1",
 		"iltorb": "2.4.5",
 		"ioredis": "4.19.4",
-		"js-yaml": "3.14.1",
+		"js-yaml": "4.0.0",
 		"json-tree-view": "0.4.12",
 		"linkifyjs": "2.1.9",
 		"lru-cache": "6.0.0",
