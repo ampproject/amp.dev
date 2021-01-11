@@ -16,7 +16,6 @@
 require('module-alias/register');
 
 const DEFAULT_VERSION = '0.1';
-const LATEST_VERSION = 'latest';
 const VERSION_PATTERN = /\d\.\d/;
 
 const {GitHubImporter, DEFAULT_REPOSITORY} = require('./gitHubImporter');
@@ -224,11 +223,21 @@ class ComponentReferenceImporter {
     const tag = this._findExtensionTag(extension.name) || {};
     const script = this._findExtensionScript(extension.name) || {};
 
-    spec.version = spec.version.filter((version) => version != LATEST_VERSION);
+    // Parse available versions from file system
+    const versions = new Set();
+    for (const file of extension.files) {
+      const path = file.substring(`extensions/${spec.name}/`.length);
+      const match = path.match(/^(\d+\.\d+)\//);
+      if (match) {
+        versions.add(match[1]);
+      }
+    }
+    spec.version = Array.from(versions);
+
+    // Calculate the latest version
     spec.version = spec.version.sort((version1, version2) => {
       return parseFloat(version1) > parseFloat(version2);
     });
-
     const latestVersion = spec.version[spec.version.length - 1];
 
     // Skip versions for which there is no dedicated doc

@@ -33,7 +33,7 @@ Tutti i martedì avviene la distribuzione push di una nuova versione AMP a tutte
 
 Il sistema runtime e le estensioni AMP sono forniti attraverso una serie di vari *canali di rilascio*. Ciascun canale è finalizzato a realizzare uno scopo degli sviluppatori e del Progetto AMP HTML stesso. Consultare la [sezione frequenze di rilascio](#release-cadence) per maggiori informazioni su modalità e tempi secondo i quali i codici nell'archivio  [`ampproject/amphtml`](https://github.com/ampproject/amphtml) sono compilati nei build di rilascio.
 
-Per determinare se una richiesta pull è stata inclusa in uno dei seguenti canali di rilascio, cercare le etichette GitHub *PR Use: In Canary*, *PR Use: In production* o *PR Use: In LTS* (consultare la sezione che spiega come [Individuare se una modifica è compresa in un rilascio](#Determining-if-your-change-is-in-a-release) per maggiori dettagli).
+Per determinare se una richiesta pull è stata inclusa in uno dei seguenti canali di rilascio, cercare le etichette GitHub *PR Use: In Canary*, *PR Use: In production* o *PR Use: In LTS* (consultare la sezione che spiega come [Individuare se una modifica è compresa in un rilascio](#determining-if-your-change-is-in-a-release) per maggiori dettagli).
 
 ### Notturno <a name="nightly"></a>
 
@@ -75,7 +75,7 @@ Il canale di rilascio **lts** mette a disposizione il rilascio di un precedente 
 
 Se il secondo lunedì del mese cade in un giorno festivo, la promozione dei rilasci verrà eseguita al termine del [blocco dei rilasci](#release-freezes).
 
-Importante: gli editori che utilizzano il canale di rilascio **lts** non dovrebbero utilizzare le nuove funzionalità introdotte. A causa del ciclo di gestione più lungo cui sono sottoposti, i rilasci **its** possono essere dal punto di vista funzionale fino a sette settimane indietro rispetto alla versione `HEAD` di [`ampproject/amphtml`](https://github.com/ampproject/amphtml). Per verificare se una modifica sarà pronta nel ciclo di rilascio scelto, consultare la sezione con le informazioni per [individuare se una modifica è compresa in un rilascio](#Determining-if-your-change-is-in-a-release).
+Importante: gli editori che utilizzano il canale di rilascio **lts** non dovrebbero utilizzare le nuove funzionalità introdotte. A causa del ciclo di gestione più lungo cui sono sottoposti, i rilasci **its** possono essere dal punto di vista funzionale fino a sette settimane indietro rispetto alla versione `HEAD` di [`ampproject/amphtml`](https://github.com/ampproject/amphtml). Per verificare se una modifica sarà pronta nel ciclo di rilascio scelto, consultare la sezione con le informazioni per [individuare se una modifica è compresa in un rilascio](#determining-if-your-change-is-in-a-release).
 
 ## Individuare se una modifica è compresa in un rilascio <a name="determining-if-your-change-is-in-a-release"></a>
 
