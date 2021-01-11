@@ -45,17 +45,6 @@ formats:
     ></script>
 
     <style amp-custom>
-      :root {
-        --space-1: 0.5rem; /* 8px */
-        --space-2: 1rem; /* 16px */
-        --space-3: 1.5rem; /* 24px */
-        --space-4: 2rem; /* 32px */
-
-        --color-text-light: #fff;
-        --color-primary: #005af0;
-        --box-shadow-1: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
-          0 1px 1px -1px rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-      }
       .custom {
         padding-top: 4px;
         font: 10pt 'Courier New', Courier, monospace;
@@ -82,11 +71,8 @@ formats:
     Note: Because server-side filtering is mandatory in the email format, it is wise to pair the `src` and `query` attributes
     in order to passed user inputs to a statically generated endpoint. For example if a `src="https://example.com` and `query="q"`, then a user who types in `abc` will get the fetch JSON result from `https://example.com?q=abc`.
 
-    Note: that the `data-amp-autocomplete-opt-in` attribute has
-    to be included to amp4email amp documents
     -->
     <amp-autocomplete
-      data-amp-autocomplete-opt-in
       min-characters="1"
       src="<% hosts.platform %>/documentation/examples/api/autosuggest/search_list"
       query="q"
@@ -138,7 +124,6 @@ formats:
     ```
   -->
     <amp-autocomplete
-      data-amp-autocomplete-opt-in
       min-characters="0"
       src="<% hosts.platform %>/documentation/examples/api/autosuggest/cities"
       query="q"
@@ -164,7 +149,6 @@ formats:
   -->
     <div>
       <amp-autocomplete
-        data-amp-autocomplete-opt-in
         inline="+"
         min-characters="1"
         src="<% hosts.platform %>/documentation/examples/api/autosuggest/characters"
