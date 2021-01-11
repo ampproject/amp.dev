@@ -12,10 +12,10 @@ markdown:
   extensions:
   - kind: sourcecode
     classes: True
-    class_name: ap-m-code-snippet
+    class_name: ap-m-code-snippet ap-code-snippet
   - kind: markdown.extensions.codehilite
     classes: True
-    class_name: ap-m-code-snippet
+    class_name: ap-m-code-snippet ap-code-snippet
   - kind: markdown.extensions.extra
   - kind: markdown.extensions.sane_lists
 

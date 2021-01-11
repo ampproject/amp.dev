@@ -1,0 +1,61 @@
+.#{prefix(null, 'component-intro')} {
+  $componentIntro: &;
+
+  &-row {
+    padding: 15px;
+    background-color: color('white');
+    border: 1px solid color('iron');
+
+    & + & {
+      margin-top: 10px;
+    }
+
+    &-inline {
+      @media (min-width: 768px) {
+        display: flex;
+        align-items: baseline;
+      }
+    }
+  }
+
+  &-headline {
+    font-size: 16px;
+    margin: 0 0 10px;
+
+    #{$componentIntro}-row-inline & {
+      white-space: nowrap;
+      margin-right: 10px;
+    }
+  }
+
+  &-text {
+    margin: 5px 0;
+  }
+
+  &-list {
+    max-height: 142px;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &-item {
+      display: block;
+      margin-bottom: 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      @media (min-width: 768px) {
+        width: 50%;
+        padding-right: 12px;
+      }
+    }
+
+    .expanded & {
+      max-height: none;
+    }
+  }
+}

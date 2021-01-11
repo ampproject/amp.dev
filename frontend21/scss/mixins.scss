@@ -50,3 +50,26 @@
     fill: currentColor;
   }
 }
+
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: color('oslo-gray');
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+}
+
+@mixin unset-button {
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}

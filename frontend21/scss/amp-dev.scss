@@ -26,6 +26,10 @@
 @import 'components/teaser-grid.scss';
 @import 'components/teaser-component.scss';
 @import 'components/table-component.scss';
+@import 'components/component-intro.scss';
+@import 'components/code-snippet.scss';
+@import 'components/copy-script.scss';
+@import 'components/clip.scss';
 @import 'components/tag.scss';
 @import 'components/filter-bubbles-list.scss';
 @import 'components/pill.scss';
@@ -92,6 +96,17 @@ button {
   -webkit-appearance: none;
 }
 
+code, p code {
+  display: inline;
+  padding: 2px 4px;
+  font-family: $fontFamilyCode;
+  font-weight: 500;
+  word-break: normal;
+  color: color('black');
+  background: color('iron');
+  font-size: .9em;
+}
+
 ul {
   padding: 0;
   list-style: none;
@@ -99,6 +114,7 @@ ul {
 
 li {
   padding: 0;
+  line-height: 1.63;
 }
 
 select {
@@ -112,7 +128,7 @@ figure {
 }
 
 figcaption {
-  margin-top: 20px;
+  margin-top: 0.3em;
   margin-left: auto;
   font-size: 14px;
   line-height: 1.71;
