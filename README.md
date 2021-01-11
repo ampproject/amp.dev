@@ -1,6 +1,6 @@
 # amp.dev
 
-[![Build Status](https://travis-ci.org/ampproject/amp.dev.svg?branch=future)](https://travis-ci.org/ampproject/amp.dev)
+[![Build Status](https://travis-ci.com/ampproject/amp.dev.svg?branch=future)](https://travis-ci.com/ampproject/amp.dev)
 
 The official homepage of the AMP Project.
 
