@@ -40,7 +40,7 @@
     background: color('white');
     box-shadow: 0 2px 10px 0 rgba(0,0,0,0.07);
 
-    & + div.#{molecule('code-snippet')} {
+    & + div.#{prefix(null, 'code-snippet')} {
       @media (min-height: 768px) {
         min-height: 0;
       }
@@ -76,7 +76,7 @@
         height: auto;
         margin: 0;
         z-index: 1;
-        box-shadow: 0 40px 40px -15px rgba(0,0,0,0.5);
+        box-shadow: 0 40px 40px -15px transparentize(color('black'), 0.5);
       }
     }
 
@@ -101,7 +101,7 @@
       position: absolute;
       left: auto;
       top: auto;
-      background: #fff;
+      background: color('white');
       transform-origin: top;
 
       &::before {
@@ -135,7 +135,7 @@
       padding: 0 15%;
     }
 
-    & + div.#{molecule('code-snippet')} {
+    & + div.#{prefix(null, 'code-snippet')} {
       position: relative;
       width: 100%;
       min-height: 0;
@@ -167,13 +167,13 @@
     padding: 0;
     margin: 0;
 
-    @media (min-width: 768px) {
+    @include respond-to('small') {
       width: auto;
       left: 60%;
-      background-color: darken(color('charade'), 2%);
+      background: darken(color('charade'), 2%);
     }
 
-    @media (max-width: 767px) {
+    @include respond-to('small') {
       overflow: hidden;
       pointer-events: none;
 
@@ -191,7 +191,7 @@
     }
 
     &-sizer {
-      @media (max-width: 767px) {
+      @include respond-to('small') {
         display:none;
       }
     }
@@ -201,11 +201,11 @@
       max-height: 100%;
       right: 15px;
       top: auto;
-      background-color: white;
+      background: white;
 
-      @media (max-width: 767px) {
+      @include respond-to('small') {
         position: static;
-        background: #fff;
+        background: color('white');
         pointer-events: none;
         transform: translateY(100%);
         transition: transform .2s cubic-bezier(0,0,.3,1);
@@ -218,13 +218,13 @@
       }
 
       &-portrait {
-        @media (min-width: 768px) {
+        @include respond-to('small') {
           width: calc(100% - 30px);
         }
       }
 
       &-landscape {
-        @media (min-width: 768px) {
+        @include respond-to('small') {
           width: calc(172% - 30px);
           box-shadow: -10px 10px 0 rgba(darken(color('charade'), 2%), .75);
         }
@@ -239,26 +239,26 @@
 
   &.top-frame,
   &.side-frame {
-    .#{molecule('code-snippet')} {
+    .#{prefix(null, 'code-snippet')} {
       min-height: 150px;
       max-height: 450px;
     }
   }
 
   &.side-frame {
-    .#{molecule('code-snippet')} {
+    .#{prefix(null, 'code-snippet')} {
       width: 100%;
       margin: 0;
       background: none;
 
-      @media (min-width: 768px) {
+      @include respond-to('small') {
         width: 60%;
         min-height: 580px;
       }
 
-      @media (min-width: 1024px) { min-height: 738px; }
-      @media (min-width: 1280px) { min-height: 842px; }
-      @media (min-width: 1441px) { min-height: 746px; }
+      @include respond-to('medium') { min-height: 738px; }
+      @include respond-to('large') { min-height: 842px; }
+      @include respond-to('max') { min-height: 746px; }
     }
   }
 }

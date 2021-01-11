@@ -15,7 +15,7 @@
 @import '../atoms/_text.scss';
 @import '../atoms/_button.scss';
 
-.#{organism('code-preview')} {
+.#{prefix(null, 'code-preview')} {
   position: relative;
   margin: 1rem 0;
   background: color('charade');
