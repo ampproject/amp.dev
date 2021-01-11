@@ -56,7 +56,7 @@ async function _importWorkingGroup(client, wg) {
     return Promise.resolve();
   }
   try {
-    meta = yaml.safeLoad(meta);
+    meta = yaml.load(meta);
   } catch (e) {
     log.error(
       `Failed loading ${DEFAULT_ORGANISATION}/${wg.name}/METADATA.yaml`,
