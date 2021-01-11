@@ -75,7 +75,7 @@ class RecentGuides {
       guides.sort((a, b) => (a.date > b.date ? -1 : 1));
       fs.writeFileSync(
         DEST_FILE,
-        yaml.safeDump(guides, {
+        yaml.dump(guides, {
           lineWidth: 'none',
         })
       );

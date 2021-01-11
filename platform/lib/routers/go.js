@@ -29,7 +29,7 @@ const GO_LINKS_DEFINITION = join(__dirname, '../../config/go-links.yaml');
 // eslint-disable-next-line new-cap
 const go = express.Router();
 
-const goLinks = initGoLinks(yaml.safeLoad(readFileSync(GO_LINKS_DEFINITION)));
+const goLinks = initGoLinks(yaml.load(readFileSync(GO_LINKS_DEFINITION)));
 
 go.use((request, response, next) => {
   const requestPath = request.path.replace(/\/?$/, '');

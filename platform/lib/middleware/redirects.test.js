@@ -14,9 +14,9 @@ const UNIT_TEST_REDIRECTS = `
 
 jest.mock('js-yaml');
 const yaml = require('js-yaml');
-const {safeLoad} = jest.requireActual('js-yaml');
-const unitTestRedirects = safeLoad(UNIT_TEST_REDIRECTS);
-yaml.safeLoad.mockReturnValue(unitTestRedirects);
+const {load} = jest.requireActual('js-yaml');
+const unitTestRedirects = load(UNIT_TEST_REDIRECTS);
+yaml.load.mockReturnValue(unitTestRedirects);
 
 const app = express();
 const router = require('./redirects.js');
