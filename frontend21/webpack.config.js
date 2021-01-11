@@ -84,7 +84,7 @@ module.exports = (env, argv) => {
             copy: [
               {
                 source: './dist/base.html',
-                destination: '../pages/views/2021',
+                destination: '../pages/views/2021/',
               },
               {
                 source: './dist/static/**/*',
