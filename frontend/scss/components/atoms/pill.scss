@@ -11,12 +11,12 @@
   padding: 5px 10px;
   border: none;
   border-radius: 25px;
-  background: color('white');
+  background: var(--background-color, safeColor('white'));
   @include txt;
   @include txt-2;
   @include txt-strong;
   @include filter-bubble-shadow-regular;
-  color: safeColor('light-gray');
+  color: var(--color, safeColor('light-gray'));
   font-family: 'Noto Sans', sans-serif;
   transition: background-color .2s ease-in, color .2s ease-in, box-shadow .25s ease-in;
   cursor: pointer;
