@@ -28,7 +28,7 @@ const fs = require('fs');
 const LRU = require('lru-cache');
 const gcpMetadata = require('gcp-metadata');
 
-const buildInfo = yaml.safeLoad(
+const buildInfo = yaml.load(
   fs.readFileSync(utils.project.paths.BUILD_INFO_PATH, 'utf8')
 );
 

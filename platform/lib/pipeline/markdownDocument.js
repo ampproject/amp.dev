@@ -253,7 +253,7 @@ class MarkdownDocument {
         // Strip out limiters from frontmatter string to be able to parse it
         // and then use it as initial fill for the actual properties
         frontmatter = frontmatter.replace(/---/g, '');
-        return yaml.safeLoad(frontmatter);
+        return yaml.load(frontmatter);
       }
     } else {
       throw Error('contents does not contain a frontmatter block.');
@@ -418,7 +418,7 @@ class MarkdownDocument {
    */
   save(path) {
     let content = '';
-    const frontmatter = `---\n${yaml.safeDump(this._frontmatter, {
+    const frontmatter = `---\n${yaml.dump(this._frontmatter, {
       'skipInvalid': true,
     })}---\n\n`;
     content += frontmatter;
