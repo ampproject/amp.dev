@@ -31,7 +31,7 @@ class ComponentReferenceDocument extends MarkdownDocument {
     this.title = extension.name;
     this.version = extension.version;
     this.versions = extension.versions;
-    this.latestVersion = extension.versions[extension.versions.length - 1];
+    this.latestVersion = extension.latestVersion;
 
     // Force enable TOC for all component docs
     this.toc = true;

@@ -17,6 +17,7 @@ require('module-alias/register');
 
 const DEFAULT_VERSION = '0.1';
 const VERSION_PATTERN = /\d\.\d/;
+const LATEST_VERSION = 'latest';
 
 const {GitHubImporter, DEFAULT_REPOSITORY} = require('./gitHubImporter');
 const {BUILT_IN_COMPONENTS} = require('@lib/common/AmpConstants.js');
@@ -232,7 +233,14 @@ class ComponentReferenceImporter {
     const tag = this._findExtensionTag(extension.name) || {};
     const script = this._findExtensionScript(extension.name) || {};
 
-    // Parse available versions from file system
+    // Determine the latest version based on the validator rules
+    spec.version = spec.version.filter((version) => version != LATEST_VERSION);
+    spec.version = spec.version.sort((version1, version2) => {
+      return parseFloat(version1) > parseFloat(version2);
+    });
+    spec.latestVersion = spec.version[spec.version.length - 1];
+
+    // Parse all available versions from the file system (even unreleased ones)
     const versions = new Set();
     for (const file of extension.files) {
       const path = file.substring(`extensions/${spec.name}/`.length);
@@ -243,15 +251,13 @@ class ComponentReferenceImporter {
     }
     spec.version = Array.from(versions);
 
-    // Calculate the latest version
-    spec.version = spec.version.sort((version1, version2) => {
-      return parseFloat(version1) > parseFloat(version2);
-    });
-    const latestVersion = spec.version[spec.version.length - 1];
-
     // Skip versions for which there is no dedicated doc
     spec.version = spec.version.filter((version) => {
-      return !!this._getGitHubPath(extension, version, latestVersion);
+      return !!this._getGitHubPath(
+        extension,
+        version,
+        spec.version[spec.version.length - 1]
+      );
     });
 
     const extensionMetas = [];
@@ -263,7 +269,12 @@ class ComponentReferenceImporter {
         tag: tag,
         version: version,
         versions: spec.version,
-        githubPath: this._getGitHubPath(extension, version, latestVersion),
+        latestVersion: spec.latestVersion,
+        githubPath: this._getGitHubPath(
+          extension,
+          version,
+          spec.version[spec.version.length - 1]
+        ),
       });
     }
 
