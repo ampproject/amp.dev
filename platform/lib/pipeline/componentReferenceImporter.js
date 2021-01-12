@@ -16,7 +16,6 @@
 require('module-alias/register');
 
 const DEFAULT_VERSION = '0.1';
-const LATEST_VERSION = 'latest';
 const VERSION_PATTERN = /\d\.\d/;
 
 const {GitHubImporter, DEFAULT_REPOSITORY} = require('./gitHubImporter');
