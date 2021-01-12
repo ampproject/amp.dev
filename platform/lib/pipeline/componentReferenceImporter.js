@@ -168,10 +168,19 @@ class ComponentReferenceImporter {
    * @return {Promise}
    */
   async _listExtensionFiles(extension) {
-    const root = await this.githubImporter_.listDirectory(extension.path);
+    const fetchFromMaster = config.fetchFromMaster.includes(extension.name);
+    const root = await this.githubImporter_.listDirectory(
+      extension.path,
+      DEFAULT_REPOSITORY,
+      fetchFromMaster
+    );
     let tree = root.map((file) => {
       if (file.match(VERSION_PATTERN)) {
-        return this.githubImporter_.listDirectory(file);
+        return this.githubImporter_.listDirectory(
+          file,
+          DEFAULT_REPOSITORY,
+          fetchFromMaster
+        );
       }
 
       return Promise.resolve([file]);
@@ -284,7 +293,6 @@ class ComponentReferenceImporter {
     // The documentation for other versions is most likely located in
     // its version directory
     gitHubPath = path.join(extension.path, version, fileName);
-    console.log(gitHubPath);
     if (extension.files.includes(gitHubPath)) {
       return gitHubPath;
     }
