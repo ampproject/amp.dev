@@ -1,17 +1,17 @@
 ---
-"$title": 플레이스홀더 및 대체 콘텐츠
-"$order": '3'
+$title: 플레이스홀더 및 대체 콘텐츠
+$order: 3
 descriptions: 인지된 성능 및 점진적 개선을 위해 가능한 경우 AMP 모범 사례로 플레이스홀더 및 대체 콘텐츠를 제공합니다.
 formats:
-- 웹사이트
-- 이메일
-- 광고
-- 스토리
+  - websites
+  - email
+  - ads
+  - stories
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 인지된 성능 및 점진적 개선을 위해 가능한 경우 AMP 모범 사례로 플레이스홀더 및 대체 콘텐츠를 제공합니다.
