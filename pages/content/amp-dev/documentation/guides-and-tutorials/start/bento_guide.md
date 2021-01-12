@@ -17,7 +17,7 @@ Use a subset of AMP components as standalone elements in non-AMP pages with Bent
 
 # Use Bento components in non-AMP pages
 
-Bento components are available for experimental use in the developer preview. After enabling the Bento experimental 
+Bento components are available for experimental use in the developer preview.
 
 
 ## Enable Bento Experiment 
@@ -36,7 +36,7 @@ You can enable all Bento components by including the script below:
 ```
 
 
-Or enable a single Bento component by including the script below. Ensure you replace `bento-foo` with the desired supported component name given on its documentation page:
+Or enable a single Bento component by including the script below. Ensure you replace `bento-foo` with the desired [supported component](#available-bento-components) name given on its documentation page:
 
 
 ```
@@ -54,9 +54,9 @@ Or enable a single Bento component by including the script below. Ensure you rep
 You must include the AMP runtime script and import the logic for each individual Bento component desired.
 
 ```
-<script async src="https://cdn.ampproject.org/v0.js">&lt;/script>
+<script async src="https://cdn.ampproject.org/v0.js"></script>
 
-<script async custom-element="amp-bento" src="https://cdn.ampproject.org/v0/amp-bento-1.0.js">&lt;/script>
+<script async custom-element="amp-bento" src="https://cdn.ampproject.org/v0/amp-bento-1.0.js"></script>
 ``` 
 
 Read each Bento component’s reference documentation for implementation details.
@@ -64,7 +64,7 @@ Read each Bento component’s reference documentation for implementation details
 
 # Available Bento components 
 
-The components listed below are supported in Bento AMP:
+Bento supported AMP components are listed below:
 
 
 
@@ -89,7 +89,7 @@ The components listed below are supported in Bento AMP:
 
 # Working with experiments
 
-Bento AMP implementation is still in experimental mode and available through the developer preview. The AMP team welcomes developer feedback through [GitHub](https://github.com/ampproject/amphtml/issues) and our [Slack](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) channel. Please reach out with any questions or issues. 
+Bento AMP is in experimental mode and available through the developer preview. The AMP team welcomes developer feedback through [GitHub](https://github.com/ampproject/amphtml/issues) and our [Slack](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) channel. Please reach out with any questions or issues. 
 
 
 ## Page experience
