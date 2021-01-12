@@ -114,4 +114,4 @@ AMP memecahkan masalah ini dengan sesuatu yang disebut [penulisan ulang URL cang
 
 Ketika semua atribut ini diterapkan, semua klik berikutnya di AMP akan mengarah ke PWA Anda, terlepas dari pekerja layanan apa pun.
 
-[tip type = "read-on"] **BACA –** Anda sudah sejauh ini – mengapa tidak menggunakan kembali halaman AMP Anda yang sudah ada untuk membuat PWA? [Begini caranya](amp-in-pwa.md). [/tip]
+[tip type="read-on"] **BACA –** Anda sudah sejauh ini – mengapa tidak menggunakan kembali halaman AMP Anda yang sudah ada untuk membuat PWA? [Begini caranya](amp-in-pwa.md). [/tip]

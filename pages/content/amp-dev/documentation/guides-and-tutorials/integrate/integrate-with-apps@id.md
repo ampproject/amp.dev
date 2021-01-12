@@ -28,7 +28,7 @@ This is a message with links to an <a href="https://www-example-org.cdn.ampproje
 article with AMP version</a> and an <a href="www.example.org/b"> article without AMP version</a>.
 ```
 
-[tip type = "tip"] **KIAT –** Pertimbangkan untuk memberi pengguna opsi untuk melihat versi non-AMP, bukan versi AMP, melalui pengaturan preferensi di aplikasi Anda. [/tip]
+[tip type="tip"] **KIAT –** Pertimbangkan untuk memberi pengguna opsi untuk melihat versi non-AMP, bukan versi AMP, melalui pengaturan preferensi di aplikasi Anda. [/tip]
 
 ### Cara mentransformasi tautan
 
@@ -38,7 +38,7 @@ Ada tiga cara untuk mentransformasi tautan secara terprogram:
 2. **Waktu-baca sisi-server (digunakan sebagian orang)**: Ambil URL AMP melalui API URL AMP Google sebelum meneruskan konten ke klien. Seperti disebutkan di atas, teruskan kedua URL (AMP dan non-AMP) ke klien karena URL asli mungkin diperlukan untuk berbagi. Metode ini dapat berguna untuk layanan dengan penyebaran terbatas.
 3. **Sisi-klien (jika sisi-server tidak memungkinkan)**: Ambil URL AMP melalui API URL AMP Google dari klien. Gunakan pendekatan ini jika transformasi URL sisi-server tidak memungkinkan (contoh: untuk aplikasi pertukaran pesan yang menggunakan enkripsi menyeluruh). Pastikan untuk memicu transformasi URL segera setelah konten tersedia, sebelum terjadi interaksi pengguna.
 
-[tip type = "important"] **PENTING –** Jangan pernah minta URL AMP melalui API AMP Google sebagai hasil dari interaksi pengguna karena hal itu menurunkan kinerja aplikasi Anda saat memasukkan permintaan jaringan tambahan. Sebaliknya, gunakan salah satu dari tiga pendekatan yang dijelaskan di atas. [/tip]
+[tip type="important"] **PENTING –** Jangan pernah minta URL AMP melalui API AMP Google sebagai hasil dari interaksi pengguna karena hal itu menurunkan kinerja aplikasi Anda saat memasukkan permintaan jaringan tambahan. Sebaliknya, gunakan salah satu dari tiga pendekatan yang dijelaskan di atas. [/tip]
 
 #### API URL AMP Google
 
@@ -101,7 +101,7 @@ Kami merekomendasikan penggunaan Cache AMP karena alasan berikut ini:
 - Berkas AMP asli mungkin bukan lagi AMP yang valid, yang dapat mengakibatkan pengalaman pengguna yang buruk. Dalam hal ini, Cache AMP menayangkan versi valid terakhir dari berkas AMP.
 - Penayang yang tidak jujur dapat menayangkan dua dokumen berbeda ke crawler Cache AMP dan kepada pengguna Anda. Penggunaan Cache AMP menjamin bahwa pengguna akan selalu melihat berkas AMP yang sama dengan yang di Cache.
 
-[tip type = "important"] **PENTING –** Saat menayangkan halaman AMP melalui Cache AMP, berikan pengalaman penampil yang dengan jelas menunjukkan asal AMP dan menawarkan kemungkinan bagi pengguna untuk membagikan URL kanonis (kunjungi juga dua bagian berikut ini untuk mengetahui informasi selengkapnya tentang hal ini). [/tip]
+[tip type="important"] **PENTING –** Saat menayangkan halaman AMP melalui Cache AMP, berikan pengalaman penampil yang dengan jelas menunjukkan asal AMP dan menawarkan kemungkinan bagi pengguna untuk membagikan URL kanonis (kunjungi juga dua bagian berikut ini untuk mengetahui informasi selengkapnya tentang hal ini). [/tip]
 
 ## Menerapkan Penampil AMP
 

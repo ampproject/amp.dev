@@ -171,4 +171,4 @@ Jika didukung oleh jaringan iklan, sertakan `placeholder` yang akan ditampilkan 
 
 AMP mendukung berbagai jaringan iklan. Kunjungi [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) untuk melihat daftar lengkap.
 
-[tip type = "read-on"] **BACA –** Pelajari lebih lanjut tentang iklan di panduan [Menayangkan Iklan di AMP](../../../../documentation/guides-and-tutorials/develop/monetization/index.md). [/tip]
+[tip type="read-on"] **BACA –** Pelajari lebih lanjut tentang iklan di panduan [Menayangkan Iklan di AMP](../../../../documentation/guides-and-tutorials/develop/monetization/index.md). [/tip]
