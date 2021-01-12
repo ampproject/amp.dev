@@ -27,7 +27,7 @@ Pelajari lebih lanjut tentang [Aplikasi Web Progresif (PWA)](https://developers.
 
 Halaman AMP dapat menggunakan banyak fitur PWA dengan kemampuan sendiri, dengan syarat disajikan dari asal Anda (domain situs Anda), berlawanan dengan Cache AMP. Ini berarti bahwa fitur-fitur PWA tidak akan aktif saat mengonsumsi Halaman AMP di dalam suatu platform, seperti Google atau Bing, namun mereka akan ikut dalam proses selanjutnya, atau jika pengguna bernavigasi ke halaman AMP Anda secara langsung.
 
-[tip type = "read-on"] **BACA –** Pelajari cara [mengaktifkan fitur-fitur PWA](../../../documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md) untuk Halaman AMP Anda. [/tip]
+[tip type="read-on"] **BACA –** Pelajari cara [mengaktifkan fitur-fitur PWA](../../../documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md) untuk Halaman AMP Anda. [/tip]
 
 ## AMP sebagai pintu masuk ke PWA Anda
 
@@ -35,7 +35,7 @@ Nilai jual AMP yang unik adalah **penayangan hampir instan**, keunggulan yang me
 
 Strategi yang bagus adalah membuat pintu masuk ke situs sebagai halaman AMP, lalu menyiapkan PWA di belakang layar dan beralih menggunakannya dalam perjalanan selanjutnya.
 
-[tip type = "read-on"] **BACA –** Pelajari cara [menghubungkan AMP ke PWA](../../../documentation/guides-and-tutorials/integrate/amp-to-pwa.md) melalui [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md). [/tip]
+[tip type="read-on"] **BACA –** Pelajari cara [menghubungkan AMP ke PWA](../../../documentation/guides-and-tutorials/integrate/amp-to-pwa.md) melalui [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md). [/tip]
 
 ## AMP sebagai sumber data untuk PWA Anda
 
@@ -43,4 +43,4 @@ Salah satu fitur utama Halaman AMP adalah kemudahan dan keamanan penyematannya, 
 
 Jika membuat Aplikasi Web Progresif, Anda dapat menerima manfaat yang sama dan mengurangi kerumitan klien serta backend secara drastis dengan **menggunakan kembali Halaman AMP Anda sebagai sumber data untuk PWA Anda**.
 
-[tip type = "read-on"] **BACA –** Pelajari cara [menggunakan halaman AMP dalam PWA](../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md). [/tip]
+[tip type="read-on"] **BACA –** Pelajari cara [menggunakan halaman AMP dalam PWA](../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md). [/tip]

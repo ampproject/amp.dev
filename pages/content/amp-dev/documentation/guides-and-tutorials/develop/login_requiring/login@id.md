@@ -49,7 +49,7 @@ Jika melihat lagi kode HTML tombol dengan menggunakan `on="tap:amp-access.login-
 
 [/sourcecode]
 
-[tip type = "note"] **CATATAN –** Perhatikan bahwa mungkin untuk mendefinisikan URL yang berbeda di dalam node masuk, dalam hal ini kita mendefinisikan `sign-in`, kemudian kita akan mendefinisikan `sign-out`. [/tip]
+[tip type="note"] **CATATAN –** Perhatikan bahwa mungkin untuk mendefinisikan URL yang berbeda di dalam node masuk, dalam hal ini kita mendefinisikan `sign-in`, kemudian kita akan mendefinisikan `sign-out`. [/tip]
 
 Halaman masuk merupakan halaman non-AMP tempat kita mengisi nilai masuk dan kata sandi supaya mudah. Perhatikan penggunaan jenis input tersembunyi `returnURL`, yang diisi oleh server AMPByExample melalui penyediaan templat sisi server. Server membaca nilai ini dari parameter yang disebut `return`, yang secara otomatis ditambahkan oleh perpustakaan AMP ke URL masuk (sign-in).
 
