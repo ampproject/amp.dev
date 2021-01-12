@@ -93,6 +93,7 @@ async function getStatusId(checkPromises, recommendationsPromise) {
     }
     return 'all-passed';
   } catch (err) {
+    console.error('Failed to determine final status', err);
     return 'generic-error';
   }
 }
