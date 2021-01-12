@@ -11,7 +11,7 @@ author: CrystalOnScript
 
 Use AMP's well-tested, cross browser compatible and accessible components everywhere with Bento AMP. Bento AMP allows you to use AMP components in non-AMP pages without needing to commit to fully valid AMP! Bento allows you to take components and place them in implementations with frameworks and CMSs that don't support AMP. 
 
-Bento AMP enables you to insert highly performant and tested web components, such as carousels and media embeds, anywhere you need. It's the grab-and-go of web elements.
+Bento AMP enables you to insert highly performant and tested web components, such as carousels and media embeds, anywhere you need. Developers can use Bento components for one-off cases, such as adding a carousel to an otherwise non-AMP page. Bento is also a way of testing out AMP components to see if the path to valid AMP is right for your use case.
 
 [tip type="important"]
  Bento is only available [experimentally](../learn/experimental.md). Read our [Blog Post](TODO) for information on future plans and how to get involved! 
