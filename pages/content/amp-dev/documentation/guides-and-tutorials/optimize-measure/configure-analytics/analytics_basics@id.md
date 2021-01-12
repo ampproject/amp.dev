@@ -17,7 +17,7 @@ Jika Anda mencari perilaku seperti [piksel pelacakan](https://en.wikipedia.org/w
 
 Untuk sebagian besar solusi analitik, gunakan [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). Pelacakan tampilan halaman juga dapat berfungsi di [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). Namun, Anda juga dapat melacak keterlibatan pengguna dengan jenis konten halaman apa pun, termasuk klik pada tautan dan tombol. [filter formats="websites"] Selain itu, Anda dapat mengukur seberapa jauh halaman yang telah digulir oleh pengguna, apakah pengguna berinteraksi dengan media sosial atau tidak, dan aktivitas lainnya. [/filter] [filter formats="stories"] Anda juga dapat mengukur sejauh apa pengguna mengetuk pada cerita, dan apakah pengguna tersebut berinteraksi dengan elemen-elemen interaktif. [/filter]
 
-[tip type = "read-on"] Lihat [Mendalami Analitik AMP](deep_dive_analytics.md). [/tip]
+[tip type="read-on"] Lihat [Mendalami Analitik AMP](deep_dive_analytics.md). [/tip]
 
 Sebagai bagian dari proses integrasi dengan platform AMP, penyedia telah menawarkan konfigurasi [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) yang telah ditentukan sehingga mempermudah pengambilan dan pemrosesan data ke alat pelacakannya. Buka dokumentasi vendor dari daftar [Vendor Analitik](analytics-vendors.md).
 

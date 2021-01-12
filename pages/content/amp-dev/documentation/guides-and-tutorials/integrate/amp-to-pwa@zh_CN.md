@@ -1,9 +1,9 @@
 ---
-"$title": 通过 AMP 网页预加载 PWA
-"$order": '1'
+$title: 通过 AMP 网页预加载 PWA
+$order: 1
 description: 推荐采取的策略：将一个 AMP 网页作为您网站的进入点，然后让 PWA 在后台做好准备并切换到…
 formats:
-- websites
+  - websites
 author: pbakaus
 ---
 
@@ -71,7 +71,7 @@ self.addEventListener('install', function(event) {
 });
 [/sourcecode]
 
-[tip type="tip"] <strong>提示</strong>：您也可以采用更简单的方式设置 Service Worker。请查看 [Service Worker 辅助工具库](https://github.com/GoogleChrome/sw-helpers)。
+[tip type="tip"] <strong>提示</strong>：您也可以采用更简单的方式设置 Service Worker。请查看 [Service Worker 辅助工具库](https://github.com/GoogleChrome/sw-helpers)。[/tip]
 
 ## 将 AMP 网页上的所有链接都指向 PWA
 

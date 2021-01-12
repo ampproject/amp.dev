@@ -47,4 +47,4 @@ AMP 网页不得包含外部样式表（自定义字体除外）。您可以通�
 </style>
 [/sourcecode]
 
-[tip type="note"] <strong>注</strong>：使用 `@font-face` 添加的字体必须通过 HTTP 或 HTTPS 架构提取。
+[tip type="note"] <strong>注</strong>：使用 `@font-face` 添加的字体必须通过 HTTP 或 HTTPS 架构提取。[/tip]

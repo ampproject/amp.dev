@@ -1,16 +1,16 @@
 ---
-"$title": Include third-party content
-"$order": '9'
-description: 페이지에서 써드 파티 컴포넌트를 가져오는 법에 대해서 다룹니다 ...
+$title: Include third-party content
+$order: 9
+description: '페이지에서 써드 파티 컴포넌트를 가져오는 법에 대해서 다룹니다 ...'
 formats:
-- 웹사이트
+    - websites
 components:
-- iframe
-- facebook
+  - iframe
+  - facebook
 author: Meggin
 contributors:
-- pbakaus
-- bpaduch
+  - pbakaus
+  - bpaduch
 ---
 
 페이지에서 써드 파티 컴포넌트를 가져오는 법에 대해서 다룹니다.

@@ -49,7 +49,7 @@ description: 首次到达该网页时，您会看到 2 条评论和一个登录�
 
 [/sourcecode]
 
-[tip type="note"] <strong>注</strong>：请注意，您可以在登录节点内定义不同的网址。在此示例中，我们定义的是 `sign-in`，稍后我们将定义 `sign-out`。
+[tip type="note"] <strong>注</strong>：请注意，您可以在登录节点内定义不同的网址。在此示例中，我们定义的是 `sign-in`，稍后我们将定义 `sign-out`。[/tip]
 
 登录页面是一个非 AMP 网页，为方便起见，我们会在该页面上填充登录名值和密码值。请注意，我们使用了 `returnURL` 隐藏输入类型，该类型是由 AMPByExample 服务器通过服务器端模板进行填充的。该服务器会从名为 `return` 的参数（由 AMP 库自动添加到登录网址）中读取此值。
 

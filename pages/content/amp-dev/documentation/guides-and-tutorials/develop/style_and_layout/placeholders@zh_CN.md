@@ -1,17 +1,17 @@
 ---
-"$title": 占位符和后备
-"$order": '3'
+$title: 占位符和后备
+$order: 3
 descriptions: 为了提高感知性能并使其不断增强，在 AMP 中，最佳做法是尽可能使用占位符和后备。
 formats:
-- 网站
-- 电子邮件
-- 广告
-- 故事
+  - websites
+  - email
+  - ads
+  - stories
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 为了提高感知性能并使其不断增强，在 AMP 中，最佳做法是尽可能使用占位符和后备。
