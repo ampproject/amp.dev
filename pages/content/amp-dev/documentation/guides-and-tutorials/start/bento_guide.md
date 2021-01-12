@@ -56,13 +56,13 @@ You must include the AMP runtime script and import the logic for each individual
 ```
 <script async src="https://cdn.ampproject.org/v0.js"></script>
 
-<script async custom-element="amp-bento" src="https://cdn.ampproject.org/v0/amp-bento-1.0.js"></script>
+<script async custom-element="amp-bento-component-name" src="https://cdn.ampproject.org/v0/amp-bento-1.0.js"></script>
 ``` 
 
 Read each Bento component’s reference documentation for implementation details.
 
 
-# Available Bento components 
+# Available Bento components  <a name="available-bento-components"></a>
 
 Bento supported AMP components are listed below:
 
@@ -73,7 +73,7 @@ Bento supported AMP components are listed below:
 *   [amp-inline-gallery](../../../documentation/components/reference/amp-inline-gallery.md)
     *   amp-inline-gallery-pagination
     *   amp-inline-gallery-thumbnails
-*   [amp-stream-gallery](TODO)
+*   [amp-stream-gallery](../../../documentation/components/reference/amp-stream-gallery.md)
 *   [amp-date-countdown](../../../documentation/components/reference/amp-date-countdown.md)
 *   [amp-date-display](../../../documentation/components/reference/amp-date-display.md)
 *   [amp-fit-text](../../../documentation/components/reference/amp-fit-text.md)
@@ -85,7 +85,6 @@ Bento supported AMP components are listed below:
 *   Video components
     *   [amp-video](../../../documentation/components/reference/amp-video.md)
     *   [amp-youtube](../../../documentation/components/reference/amp-youtube.md)
-    *   [amp-video-iframe](../../../documentation/components/reference/amp-video-iframe.md)
 
 # Working with experiments
 
