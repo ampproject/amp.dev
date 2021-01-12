@@ -284,6 +284,7 @@ class ComponentReferenceImporter {
     // The documentation for other versions is most likely located in
     // its version directory
     gitHubPath = path.join(extension.path, version, fileName);
+    console.log(gitHubPath);
     if (extension.files.includes(gitHubPath)) {
       return gitHubPath;
     }
