@@ -1,10 +1,10 @@
 ---
-"$title": 深入介绍 AMP Analytics（分析）
-"$order": '1'
+$title: 深入介绍 AMP Analytics（分析）
+$order: 1
 description: 本指南深入介绍 amp-analytics 组件，我们将一个 amp-analytics 配置示例拆分为以下这些关键组成要素逐个讲解。
 formats:
-- 网站
-- 故事
+  - websites
+  - stories
 ---
 
 本指南深入介绍 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)，我们将一个 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 配置示例拆分为以下这些关键组成要素逐个讲解：
@@ -50,7 +50,7 @@ formats:
 </amp-analytics>
 ```
 
-上面的示例代码纯粹是为了帮助您学习，绝不是真实示例。如果您正在与分析服务提供商合作，上面的示例便很可能没什么意义；提供商的配置不会这么复杂。请查阅您的[分析服务提供商的文档](analytics-vendors.md)，了解其配置示例。[/tip]
+上面的示例代码纯粹是为了帮助您学习，绝不是真实示例。如果您正在与分析服务提供商合作，上面的示例便很可能没什么意义；提供商的配置不会这么复杂。请查阅您的[分析服务提供商的文档](analytics-vendors.md)，了解其配置示例。
 
 ## 将分析数据发送到何处：type 属性
 
