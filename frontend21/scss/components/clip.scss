@@ -1,4 +1,4 @@
-.#{molecule('clip')} {
+.#{prefix(null, 'clip')} {
   $clip: &;
   position: relative;
 

@@ -43,7 +43,7 @@
   {% if examples[doc.title] %}
   [% if format in {{ examples[doc.title]|map(attribute='formats')|sum(start=[])|unique|list|tojson }} %]
   <div class="ap-component-intro-row">
-    <div id="examples" class="ap-m-clip">
+    <div id="examples" class="ap-clip">
       <h4 class="ap-component-intro-headline">{{ _('Examples') }}</h4>
       <div class="ap-component-intro-list">
         [% set examples = {{ examples[doc.title]|tojson }} %]
@@ -58,9 +58,9 @@
       </div>
 
       [% if examplesCount > 6 %]
-      <button id="examples-expand" class="ap-m-clip-expand" on="tap:examples.toggleClass(class='expanded', force=true),examples-expand.hide()">
+      <button id="examples-expand" class="ap-clip-expand" on="tap:examples.toggleClass(class='expanded', force=true),examples-expand.hide()">
         {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
-        <svg class="ap-m-clip-expand-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+        <svg class="ap-clip-expand-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
       </button>
       [% endif %]
     </div>

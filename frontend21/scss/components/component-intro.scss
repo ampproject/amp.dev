@@ -1,5 +1,6 @@
 .#{prefix(null, 'component-intro')} {
   $componentIntro: &;
+  margin-top: 20px;
 
   &-row {
     padding: 15px;

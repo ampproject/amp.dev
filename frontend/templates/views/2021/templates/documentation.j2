@@ -43,7 +43,12 @@
       </div>
       {% include 'views/2021/partials/sidebar-toggle.j2' %}
 
+      {% include 'views/2021/partials/breadcrumbs.j2' %}
+
+      {% if doc.category %}
+      <h1>{{ doc.title }}</h1>
       {% include 'views/2021/partials/component-intro.j2' %}
+      {% endif %}
 
       {{ doc.html|render|safe }}
     </div>
