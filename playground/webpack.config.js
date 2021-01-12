@@ -1,11 +1,13 @@
+const webpack = require('webpack');
 const path = require('path');
-const ClosurePlugin = require('closure-webpack-plugin');
+
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const config = require('../platform/config/shared.json');
 
@@ -15,15 +17,33 @@ module.exports = (env, argv) => {
   return {
     entry: path.join(__dirname, 'src/app.js'),
     output: {
-      filename: '[name].[hash].js',
+      filename: '[name].[contenthash].js',
       chunkFilename: '[name].[chunkhash].bundle.js',
       sourceMapFilename: '[name].map',
       publicPath: '',
+      path: path.join(__dirname, 'dist')
+    },
+    devtool: devMode ? 'inline-source-map' : false,
+    resolve: {
+      fallback: {
+        crypto: require.resolve('crypto-es'),
+        util: require.resolve('util/util.js'),
+        stream: require.resolve('stream-browserify'),
+        process: require.resolve('process/browser.js'),
+      }
     },
     optimization: {
       minimizer: [
-        new ClosurePlugin({mode: 'STANDARD'}, {}),
-        new OptimizeCSSAssetsPlugin({}),
+        new TerserPlugin({
+          terserOptions: {
+            ecma: '2015',
+            compress: {
+              defaults: true,
+              unsafe: true,
+            }
+          }
+        }),
+        new CssMinimizerWebpackPlugin(),
       ],
       splitChunks: {
         cacheGroups: {
@@ -43,6 +63,11 @@ module.exports = (env, argv) => {
       },
     },
     plugins: [
+      new webpack.ProvidePlugin({
+        process: require('process/browser.js'),
+        util: require('util/util.js'),
+        JSONTreeView: require('json-tree-view')
+      }),
       new CopyWebpackPlugin({
         patterns: [{from: path.join(__dirname, 'static/')}],
       }),
@@ -79,13 +104,6 @@ module.exports = (env, argv) => {
     ],
     module: {
       rules: [
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          use: {
-            loader: 'babel-loader',
-          },
-        },
         {
           test: /\.hbs$/,
           loader: 'handlebars-loader',

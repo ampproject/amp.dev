@@ -13,7 +13,7 @@
 // limitations under the License.
 
 import './state-view.scss';
-import JSONTreeView from 'json-tree-view';
+// import JSONTreeView from 'json-tree-view';
 import 'json-tree-view/example/build/devtools.css';
 import events from '../events/events.js';
 import * as Button from '../button/button.js';
