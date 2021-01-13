@@ -21,6 +21,8 @@ const {lint, LintMode} = require('@ampproject/toolbox-linter');
 const cheerio = require('cheerio');
 const log = require('@lib/utils/log')('Pixi API');
 const RateLimitedFetch = require('@lib/utils/rateLimitedFetch');
+const GA_TRACKING_ID = require('../../platform/config/shared.json')
+  .gaTrackingId;
 
 const rateLimitedFetch = new RateLimitedFetch({
   requestHeaders: {
@@ -88,6 +90,34 @@ const execChecks = async (url) => {
   };
 };
 
+const logAnalytics = async (url) => {
+  try {
+    const data = {
+      // Google Analytics API version - 1 is the only one
+      v: 1,
+      // Tracking ID - our GA info
+      tid: GA_TRACKING_ID,
+      // Client ID - required, but no need to track personalized info so everyone is the same ID
+      cid: 'pixi_search',
+      t: 'event',
+      // Anonymize IP - set to true
+      aip: 1,
+      // Application Name - for easier searching in GA
+      an: 'pixi',
+      // Event Action - required value
+      ea: 'lint',
+      // Event Label - where the URL is stored
+      el: new URL(url).host,
+    };
+
+    return fetch(
+      `http://www.google-analytics.com/collect?${new URLSearchParams(data)}`
+    );
+  } catch (e) {
+    log.error('Unable to log', e.stack);
+  }
+};
+
 // eslint-disable-next-line new-cap
 const api = express.Router();
 
@@ -97,6 +127,7 @@ api.get('/lint', async (request, response) => {
 
   const fetchUrl = request.query.url;
   try {
+    await logAnalytics(fetchUrl);
     const checkResult = await execChecks(fetchUrl);
     const result = {
       status: 'ok',
