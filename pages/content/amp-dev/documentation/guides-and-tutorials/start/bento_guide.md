@@ -100,69 +100,6 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-fit-t
   <head>
     <meta charset="utf-8" />
     <title>AMP Public Radio</title>
-    <link rel="canonical" href="self.html" />
-    <meta
-      name="viewport"
-      content="width=device-width,minimum-scale=1,initial-scale=1"
-    />
-    <style amp-boilerplate>
-      body {
-        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-      }
-      @-webkit-keyframes -amp-start {
-        from {
-          visibility: hidden;
-        }
-        to {
-          visibility: visible;
-        }
-      }
-      @-moz-keyframes -amp-start {
-        from {
-          visibility: hidden;
-        }
-        to {
-          visibility: visible;
-        }
-      }
-      @-ms-keyframes -amp-start {
-        from {
-          visibility: hidden;
-        }
-        to {
-          visibility: visible;
-        }
-      }
-      @-o-keyframes -amp-start {
-        from {
-          visibility: hidden;
-        }
-        to {
-          visibility: visible;
-        }
-      }
-      @keyframes -amp-start {
-        from {
-          visibility: hidden;
-        }
-        to {
-          visibility: visible;
-        }
-      }
-    </style>
-    <noscript
-      ><style amp-boilerplate>
-        body {
-          -webkit-animation: none;
-          -moz-animation: none;
-          -ms-animation: none;
-          animation: none;
-        }
-      </style></noscript
-    >
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script
       async
@@ -180,7 +117,7 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-fit-t
         AMP.toggleExperiment("amp-fit-text-bento", true);
       });
     </script>
-    <style amp-custom>
+    <style>
       body {
         font-family: sans-serif;
         padding: 10%;
@@ -218,6 +155,12 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-fit-t
       .article-img {
         border-top-right-radius: 5px 5px;
         border-bottom-right-radius: 5px 5px;
+        display: inline-block;
+        width: 100%;
+        height: auto;
+        max-width: 700px;
+        max-height: 393px;
+        aspect-ratio: 700px / 393px;
       }
       a {
         text-decoration: none;
@@ -270,13 +213,10 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-fit-t
               </amp-fit-text>
             </a>
           </div>
-          <amp-img
+          <img
             class="article-img"
-            width="700"
-            height="393"
             src="https://media.npr.org/assets/img/2020/12/02/virtualschooling_npr_carsonmcnamara_update_wide-9b3a04c62be660616532d546f47645280f977892.jpg?s=700"
-            layout="intrinsic"
-          ></amp-img>
+          >
         </article>
         <article class="article-slide">
           <div class="article-description">
@@ -292,13 +232,12 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-fit-t
               </amp-fit-text>
             </a>
           </div>
-          <amp-img
+          <img
             class="article-img"
             width="700"
             height="393"
             src="https://media.npr.org/assets/img/2020/12/03/vaccine_wide-479daadfcb96b7c8a0b614d7aab152d43018e877.jpg?s=600"
-            layout="intrinsic"
-          ></amp-img>
+          >
         </article>
         <article class="article-slide">
           <div class="article-description">
@@ -313,13 +252,12 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-fit-t
               >
             </a>
           </div>
-          <amp-img
+          <img
             class="article-img"
             width="700"
             height="393"
             src="https://media.npr.org/assets/img/2020/12/03/dua_wide-41767488aed1f75828f980b6b41339a0c65d4964.jpg?s=600"
-            layout="intrinsic"
-          ></amp-img>
+          >
         </article>
         <article class="article-slide">
           <div class="article-description">
@@ -335,13 +273,13 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-fit-t
               </amp-fit-text>
             </a>
           </div>
-          <amp-img
+          <img
             class="article-img"
             width="700"
             height="393"
             src="https://media.npr.org/assets/img/2020/12/03/time201207_koty.coverfinal_wide-a7cff22dc41f55823d394817f2c1a0acfc105a66.jpg?s=600"
             layout="intrinsic"
-          ></amp-img>
+          >
         </article>
         <article class="article-slide">
           <div class="article-description">
@@ -357,13 +295,12 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-fit-t
               </amp-fit-text>
             </a>
           </div>
-          <amp-img
+          <img
             class="article-img"
             width="700"
             height="393"
             src="https://media.npr.org/assets/img/2020/12/03/corrigan2020_wide-26e0b93fd657db854e1ba2bdb7b18539ca72ecfa-s1100-c85.jpg"
-            layout="intrinsic"
-          ></amp-img>
+          >
         </article>
       </amp-base-carousel>
     </div>
@@ -373,16 +310,34 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-fit-t
 
 See the [demo in action on Glitch](TODO).
 
+# Managing events
+
+Fully valid AMP installs event listeners on elements via the [`on` attribute](../learn/amp-actions-and-events.md) with the event and responding action as values. Bento AMP does not adhere to this rules. Instead, the AMP team will provide a JS API to manage and react to events. 
+
+During the developer preview, you can register component events and respond with defined actions using following syntax:
+
+`el.getApi().then(api => api.play())`
+
+The code below triggers [`amp-base-carousel`'s next action](../../../documentation/components/reference/amp-base-carousel.md#next) when executed. 
+
+```js
+const carousel = $('amp--base-carousel');
+const apiPromise = carousel.getApi();
+apiPromise.then(api => {
+  api.next();
+})
+```
+
 # Working with experiments
 
 Bento AMP is in experimental mode and available through the developer preview. The AMP team welcomes developer feedback through [GitHub](https://github.com/ampproject/amphtml/issues) and our [Slack](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) channel. Please reach out with any questions or issues. 
 
 
-## Page experience
+# Page experience
 
 Bento components are designed to be highly performant and contribute to an excellent page experience. Developers are highly encouraged to [file issues](https://github.com/ampproject/amphtml/issues) if they see contradictory results.  
 
 
-## AMP caches and validation
+# AMP caches and validation
 
 Using Bento components during the limited developer preview makes your web page an invalid AMP page. Therefore, your doc and any Bento components are not added to any AMP caches.
