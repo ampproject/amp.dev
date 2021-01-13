@@ -32,6 +32,10 @@
     margin: 0 auto;
 
     @include respond-to('large') {
+      grid-column: 3 / 23;
+    }
+
+    @include respond-to('max') {
       grid-column: 4 / 22;
     }
   }

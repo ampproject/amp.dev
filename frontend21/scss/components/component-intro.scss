@@ -12,7 +12,7 @@
     }
 
     &-inline {
-      @media (min-width: 768px) {
+      @include respond-to('small') {
         display: flex;
         align-items: baseline;
       }
@@ -37,7 +37,7 @@
     max-height: 142px;
     overflow: hidden;
 
-    @media (min-width: 768px) {
+    @include respond-to('small') {
       display: flex;
       flex-wrap: wrap;
     }
@@ -49,7 +49,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
 
-      @media (min-width: 768px) {
+      @include respond-to('small') {
         width: 50%;
         padding-right: 12px;
       }

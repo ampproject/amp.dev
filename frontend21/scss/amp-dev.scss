@@ -47,7 +47,7 @@ main {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @include respond-to('medium') {
+  @include respond-to('large') {
     grid-gap: 30px;
   }
 }
@@ -57,7 +57,11 @@ main {
   display: flex;
   grid-column: 2 / 24;
 
-  @include respond-to('medium') {
+  @include respond-to('large') {
+    grid-column: 3 / 23;
+  }
+
+  @include respond-to('max') {
     grid-column: 4 / 22;
   }
 }
@@ -68,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  @media (min-width: 768px) {
+  @include respond-to('small') {
     font-size: 52px;
   }
 }
