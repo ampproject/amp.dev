@@ -292,18 +292,16 @@ class ComponentReferenceImporter {
     let gitHubPath;
     const fileName = `${extension.name}.md`;
 
-    // Best guess: if the version equals the latest version the documentation
-    // is located in the root of the extension directory
-    if (version == latestVersion) {
-      gitHubPath = path.join(extension.path, fileName);
-      if (extension.files.includes(gitHubPath)) {
-        return gitHubPath;
-      }
-    }
-
     // The documentation for other versions is most likely located in
     // its version directory
     gitHubPath = path.join(extension.path, version, fileName);
+    if (extension.files.includes(gitHubPath)) {
+      return gitHubPath;
+    }
+
+    // Best guess: if the version equals the latest version the documentation
+    // is located in the root of the extension directory
+    gitHubPath = path.join(extension.path, fileName);
     if (extension.files.includes(gitHubPath)) {
       return gitHubPath;
     }
