@@ -1,11 +1,10 @@
 .#{prefix(null, 'sidebar')} {
-  width: 100%;
-  max-width: 90vw;
+  width: 90vw;
   padding: 30px 20px 0 20px;
   background: color('white');
 
   &-toolbar {
-    max-width: 0;
+    width: 0;
     position: sticky;
     top: 80px;
     margin-top: 35px;

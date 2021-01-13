@@ -29,7 +29,7 @@
   .--sidebaropen & {
     width: 100%;
 
-    @include respond-to('medium') {
+    @include respond-to('small') {
       margin-left: 30px;
       width: calc(100% - 250px);
     }
