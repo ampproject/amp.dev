@@ -288,7 +288,7 @@ class ComponentReferenceImporter {
    * @param  {String} latestVersion
    * @return {String|null}
    */
-  _getGitHubPath(extension, version, latestVersion) {
+  _getGitHubPath(extension, version) {
     let gitHubPath;
     const fileName = `${extension.name}.md`;
 
