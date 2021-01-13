@@ -9,9 +9,9 @@ formats:
 author: CrystalOnScript
 ---
 
-Use AMP's well-tested, cross browser compatible and accessible components everywhere with Bento AMP. Bento AMP allows you to use AMP components in non-AMP pages without needing to commit to fully valid AMP! Bento allows you to take components and place them in implementations with frameworks and CMSs that don't support AMP. 
+Use AMP's well-tested, cross-browser compatible and accessible components anywhere on the web with Bento AMP. Bento AMP allows you to use AMP components in non-AMP pages without needing to commit to fully valid AMP! Bento allows you to take components and place them in implementations with frameworks and CMSs that don't support AMP. 
 
-Bento AMP enables you to insert highly performant and tested web components, such as carousels and media embeds, anywhere you need. Developers can use Bento components for one-off cases, such as adding a carousel to an otherwise non-AMP page. Bento is also a way of testing out AMP components to see if the path to valid AMP is right for your use case.
+Bento AMP enables you to insert highly performant and tested web components, such as carousels and media embeds, anywhere you need. Developers can use Bento components for one-off cases, such as adding a carousel to an otherwise non-AMP page. Bento lets you test out AMP components to see if the path to valid AMP is right for your use case.
 
 [tip type="important"]
  Bento is only available [experimentally](../learn/experimental.md). Read our [Blog Post](TODO) for information on future plans and how to get involved! 
@@ -21,14 +21,14 @@ Bento AMP enables you to insert highly performant and tested web components, suc
 
 Bento components are available for experimental use in the developer preview. This means you must enable the experimental flag either in the document or the console. This is no different from other [experiments in AMP](../learn/experimental.md). 
 
-The risk of using the Bento experiment is also the same. The AMP teams reserves the right to change the API drastically based on feedback. Changes are necessary to improve features.
+Keep an eye out for announcements and updates. While Bento AMP is in developer preview, the team will continue to make necessary changes to the API to improve features.
 
 
 ## Enable Bento Experiment 
 
 Bento components are available experimentally and you must [enable experimental features](../learn/experimental.md).
 
-You can enable all Bento components by including the script below:
+Enable the Bento experiment by including the script below:
 
 
 ```
@@ -39,20 +39,6 @@ You can enable all Bento components by including the script below:
 </script>
 ```
 
-
-Or enable a single Bento component by including the script below. Ensure you replace `bento-foo` with the desired [supported component](#available-bento-components) name given on its documentation page:
-
-
-```
-<script>
-  (self.AMP = self.AMP || []).push(function (AMP) {
-    AMP.toggleExperiment('bento-foo', true);
-  });
-</script>
-```
-
-
-
 ## Import AMP runtime and Bento component logic
 
 You must include the AMP runtime script and import the logic for each individual Bento component desired.
@@ -62,6 +48,10 @@ You must include the AMP runtime script and import the logic for each individual
 
 <script async custom-element="amp-bento-component-name" src="https://cdn.ampproject.org/v0/amp-bento-1.0.js"></script>
 ``` 
+
+[tip type="note"]
+Eliminating the need for the AMP runtime script is a high priority for Bento AMP. Follow this progress on the [Bento roadmap](../../../../community/roadmap/?category=bento#status-updates).
+[/tip]
 
 Read each Bento component’s reference documentation for implementation details.
 
@@ -112,9 +102,8 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-fit-t
       src="https://cdn.ampproject.org/v0/amp-fit-text-1.0.js"
     ></script>
     <script>
-      (self.AMP = self.AMP || []).push(function(AMP) {
-        AMP.toggleExperiment("amp-base-carousel-bento", true);
-        AMP.toggleExperiment("amp-fit-text-bento", true);
+      (self.AMP = self.AMP || []).push(function (AMP) {
+        AMP.toggleExperiment('bento', true);
       });
     </script>
     <style>
@@ -312,7 +301,7 @@ See the [demo in action on Glitch](TODO).
 
 # Managing events
 
-Fully valid AMP installs event listeners on elements via the [`on` attribute](../learn/amp-actions-and-events.md) with the event and responding action as values. Bento AMP does not adhere to this rules. Instead, the AMP team will provide a JS API to manage and react to events. 
+Fully valid AMP installs event listeners on elements via the [`on` attribute](../learn/amp-actions-and-events.md) with the event and responding action as values. Bento AMP does not rely on this attribute. Instead, the AMP team will provide a JS API to manage and react to events. 
 
 During the developer preview, you can register component events and respond with defined actions using following syntax:
 
@@ -340,4 +329,4 @@ Bento components are designed to be highly performant and contribute to an excel
 
 # AMP caches and validation
 
-Using Bento components during the limited developer preview makes your web page an invalid AMP page. Therefore, your doc and any Bento components are not added to any AMP caches.
+Using Bento components during the limited developer preview makes your web page an invalid AMP page. Therefore, your doc and any Bento components are not served by any AMP caches.
