@@ -1,8 +1,10 @@
 ---
-$title: Melindungi konten langganan Anda dengan enkripsi pihak klien
-$titles:
-  teaser: Melindungi konten langganan Anda dengan enkripsi pihak klien.
-$order: 10
+formats:
+- websites
+"$title": Melindungi konten langganan Anda dengan enkripsi pihak klien
+"$titles":
+  teaser: Protect your subscription content with client-side encryption.
+"$order": '10'
 description: Selesaikan masalah enkripsi konten ini dengan menerapkan validasi pelanggan premium dan dekripsi konten pada pihak atau sisi klien. Dengan solusi ini, pengguna dengan akses premium akan dapat mendekripsi konten tanpa perlu memuat halaman baru atau menunggu backend untuk menanggapi!
 author: CrystalOnScript
 ---

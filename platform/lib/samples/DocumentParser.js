@@ -142,7 +142,7 @@ class DocumentParser {
         if (trimmedLine.endsWith('--->')) {
           this.inMetadata = false;
           try {
-            this.document.metadata = yaml.safeLoad(this.metadata);
+            this.document.metadata = yaml.load(this.metadata);
           } catch (err) {
             throw new Error(
               'There is an error in the YAML frontmatter in ' +

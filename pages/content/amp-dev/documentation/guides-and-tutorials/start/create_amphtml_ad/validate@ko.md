@@ -1,6 +1,6 @@
 ---
-$title: AMPHTML 구문 유효성 검사
-$order: 3
+"$title": AMPHTML 구문 유효성 검사
+"$order": '3'
 description: 광고가 적절히 렌더링되는지 확인하려면 AMPHTML 구문의 유효성을 검사해야 합니다. 브라우저에서 AMP 검사기를 열고 HTML 형식으로 AMP4ADS가 선택되었는지 확인하세요.
 ---
 

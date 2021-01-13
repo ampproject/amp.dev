@@ -1,18 +1,22 @@
 ---
-$title: 사용 사례
+"$title": 활용 사례
+"$order": '2'
+description: 이 가이드에서 사용자 참여도 추적의 일반적인 활용 사례를 확인할 수 있습니다. 참고 – 활용 사례를 추가하고 싶으신가요? AMP 팀에 알려주세요.
+formats:
+- websites
 ---
 
-이 가이드에서는 사용자 참여를 추적하기 위한 일반적인 사용 사례를 확인할 수 있습니다.
+이 가이드에서 사용자 참여도 추적의 일반적인 활용 사례를 확인할 수 있습니다.
 
-참고: 사용 사례를 추가하고 싶으신가요? [Google에 알려 주세요.](https://github.com/ampproject/docs/issues/new) 또는 [기여 방법](../../../../documentation/guides-and-tutorials/contribute/index.md) 에서 별도의 사용 사례를 제공하는 방법을 확인할 수 있습니다.
+[tip type="note"] <strong>참고 –</strong> 활용 사례를 추가하고 싶으신가요? [AMP 팀에 알려주세요.](https://github.com/ampproject/docs/issues/new) 또는 [기여 방법](../../../../documentation/guides-and-tutorials/contribute/index.md)을 읽고 직접 활용 사례를 제공하는 방법을 알아보세요. [/tip]
 
-## 페이지 조회수 추적하기
+## 페이지 조회수 추적
 
 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 및 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 를 사용하여 페이지 조회수를 추적하는 방법을 알아보세요.
 
 ### amp-pixel 사용
 
-다음과 같이 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 을 사용하여 페이지뷰 데이터를 지정된 URL 로 전송합니다.
+다음과 같이 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)을 사용하여 조회수 데이터를 지정된 URL로 전송합니다.
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>
@@ -20,7 +24,7 @@ $title: 사용 사례
 
 ### amp-analytics 사용 - 공급업체 없음
 
-다음과 같이 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 를 사용하여 페이지뷰 데이터를 지정된 URL 로 전송합니다.
+다음과 같이 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)를 사용하여 조회수 데이터를 지정된 URL로 전송합니다.
 
 ```html
 <amp-analytics>
@@ -45,7 +49,7 @@ $title: 사용 사례
 
 ### amp-analytics 사용 - googleanalytics
 
-Google 애널리틱스로 페이지뷰 데이터를 전송하세요 ([Google 애널리틱스에서 페이지 추적하기](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking) 참조).
+Google Analytics로 조회수 데이터를 전송하세요([Google Analytics에서 페이지 추적](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking) 참조).
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics1">
@@ -65,13 +69,13 @@ Google 애널리틱스로 페이지뷰 데이터를 전송하세요 ([Google 애
 </amp-analytics>
 ```
 
-## 페이지 클릭수 추적하기 <a name="tracking-page-clicks"></a>
+## 페이지 클릭수 추적 <a name="tracking-page-clicks"></a>
 
-[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 를 사용하여 페이지 클릭수를 추적하고 지정된 URL 또는 [Google 애널리틱스](https://developers.google.com/analytics/devguides/collection/amp-analytics/) 로 이벤트 데이터를 전송하는 방법을 알아보세요.
+[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 를 사용하여 페이지 클릭수를 추적하고 지정된 URL 또는 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)로 이벤트 데이터를 전송하는 방법을 알아보세요.
 
-### 지정된 URL 로 데이터 전송하기
+### 지정된 URL로 데이터 전송
 
-다음 예에서는 `selector` 속성을 사용하여 지정된 URL 로 `click` 이벤트를 전송합니다. 이벤트는 사용자가 링크 (`<a href>`) 를 클릭할 때마다 전송됩니다.
+다음 예시에서는 `selector` 속성을 사용하여 지정된 URL로 `click` 이벤트를 전송합니다. 이벤트는 사용자가 링크 (`<a href>`) 를 클릭할 때마다 전송됩니다.
 
 ```html
 <amp-analytics>
@@ -100,9 +104,9 @@ Google 애널리틱스로 페이지뷰 데이터를 전송하세요 ([Google 애
 </amp-analytics>
 ```
 
-### Google 애널리틱스로 데이터 전송하기
+### Google Analytics로 데이터 전송
 
-다음 예에서는 `trigger` 의 `selector` 속성을 사용하여 특정 요소가 클릭될 때 Google 애널리틱스로 `click` 이벤트를 전송합니다 ([Google 애널리틱스에서 AMP 이벤트 추적하기](https://developers.google.com/analytics/devguides/collection/amp-analytics/#event_tracking) 참조).
+다음 예시에서는 `trigger`의 `selector` 속성을 사용하여 특정 요소가 클릭될 때 Google Analytics로 `click` 이벤트를 전송합니다([Google Analytics에서 AMP 이벤트 추적](https://developers.google.com/analytics/devguides/collection/amp-analytics/#event_tracking) 참조).
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics3">
@@ -127,9 +131,9 @@ Google 애널리틱스로 페이지뷰 데이터를 전송하세요 ([Google 애
 </amp-analytics>
 ```
 
-## 스크롤 추적하기 <a name="tracking-scrolling"></a>
+## 스크롤 추적 <a name="tracking-scrolling"></a>
 
-[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 를 사용하여 페이지 스크롤을 추적합니다. 다음 예에서는 `scrollspec` 속성을 사용하여 페이지가 수직으로 25%, 50%, 90% 스크롤되었을 때 지정된 URL 로 `scroll` 이벤트를 전송합니다. 또한 페이지가 `scroll` 너비의 90% 만큼 수평으로 스크롤되었을 때도 이벤트가 전송됩니다.
+[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)를 사용하여 페이지 스크롤을 추적합니다. 다음 예시에서는 `scrollspec` 속성을 통해 페이지가 수직으로 25%, 50%, 90% 스크롤되었을 경우 지정된 URL에 `scroll` 이벤트를 전송합니다. 또한 페이지가 `scroll` 너비의 90%만큼 수평으로 스크롤되었을 경우에도 이벤트가 전송됩니다.
 
 ```html
 <amp-analytics>
@@ -155,13 +159,13 @@ Google 애널리틱스로 페이지뷰 데이터를 전송하세요 ([Google 애
 </amp-analytics>
 ```
 
-## 소셜 상호작용 추적하기 <a name="tracking-social-interactions"></a>
+## 소셜 상호작용 추적 <a name="tracking-social-interactions"></a>
 
-[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 를 사용하여 소셜 상호작용을 추적하고 지정된 URL 또는 [Google 애널리틱스](https://developers.google.com/analytics/devguides/collection/amp-analytics/) 로 이벤트 데이터를 전송하는 방법을 알아보세요.
+[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)를 사용하여 소셜 상호작용을 추적하고 지정된 URL 또는 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)로 이벤트 데이터를 전송하는 방법을 알아보세요.
 
-### 지정된 URL 로 데이터 전송하기
+### 지정된 URL로 데이터 전송
 
-다음 예에서는 `selector` 속성을 사용하여 지정된 URL로 `click` 이벤트를 전송합니다. 이벤트는 사용자가 트윗 (`#tweet-link`) 을 클릭할 때마다 전송됩니다.
+다음 예시에서는 `selector` 속성을 사용하여 지정된 URL로 `click` 이벤트를 전송합니다. 이벤트는 사용자가 트윗(`#tweet-link`)을 클릭할 때마다 전송됩니다.
 
 ```html
 <amp-analytics>
@@ -189,9 +193,9 @@ Google 애널리틱스로 페이지뷰 데이터를 전송하세요 ([Google 애
 </amp-analytics>
 ```
 
-### Google 애널리틱스로 데이터 전송하기
+### Google Analytics로 데이터 전송
 
-다음 예에서는 `trigger` 의 `selector` 속성을 사용하여 특정 소셜 버튼이 클릭될 때 이벤트를 전송합니다 ([Google 애널리틱스에서 AMP 소셜 상호작용 추적하기](https://developers.google.com/analytics/devguides/collection/amp-analytics/#social_interactions) 참조).
+다음 예시에서는 `trigger`의 `selector` 속성을 사용하여 특정 소셜 버튼이 클릭될 때 이벤트를 전송합니다([Google Analytics에서 AMP 소셜 상호작용 추적](https://developers.google.com/analytics/devguides/collection/amp-analytics/#social_interactions) 참조).
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics4">

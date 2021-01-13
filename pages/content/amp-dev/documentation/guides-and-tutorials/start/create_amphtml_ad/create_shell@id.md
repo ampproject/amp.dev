@@ -1,7 +1,7 @@
 ---
-$title: Membuat shell untuk iklan
-$order: 0
-description: "Dengan menggunakan editor teks favorit Anda, buat berkas HTML berjudul my-amphtml-ad.html. Salin markah HTML berikut ini ke dalam berkas tersebut: ..."
+"$title": Membuat shell untuk iklan
+"$order": '0'
+description: 'Dengan menggunakan editor teks favorit Anda, buat berkas HTML berjudul my-amphtml-ad.html. Salin markah HTML berikut ini ke dalam berkas tersebut: ...'
 ---
 
 [HTML yang diperlukan untuk sebuah iklan HTML AMP](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) adalah varian dari [HTML AMP yang diperlukan untuk halaman AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md). Mari lebih mendalami kode yang dibutuhkan dengan membuat shell iklan HTML AMP kita.
@@ -48,7 +48,7 @@ Kreatif iklan HTML AMP membutuhkan baris gaya [boilerplate](../../../../document
 <style amp4ads-boilerplate>body{visibility:hidden}</style>
 ```
 
-Untuk membuat iklan HTML AMP Anda bergaya, CSS Anda harus disematkan inline di dalam dokumen HTML AMP dengan menggunakan tag `<style amp-custom></style> `di dalam bagian `<head>`. Karena kita merender atau memuat iklan gambar dasar, kita tidak membutuhkan CSS apa pun, jadi kita tidak akan menambahkan tag-tag ini.
+Untuk membuat iklan HTML AMP Anda bergaya, CSS Anda harus disematkan inline di dalam dokumen HTML AMP dengan menggunakan tag <code><style amp-custom></style> </code>di dalam bagian <code><head></code>. Karena kita merender atau memuat iklan gambar dasar, kita tidak membutuhkan CSS apa pun, jadi kita tidak akan menambahkan tag-tag ini.
 
 [tip type="note"] **CATATAN –** Untuk iklan HTML AMP, ukuran maksimum untuk sebuah lembar gaya inline adalah *20 kilobyte*. Pelajari lebih lanjut tentang [persyaratan CSS di dalam spek iklan HTML AMP](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#css). [/tip]
 

@@ -1,8 +1,10 @@
 ---
-$title: Mendaftar untuk distribusi pengirim
-$order: 1
+"$title": Mendaftar untuk distribusi pengirim
+"$order": '1'
 description: Mendaftar untuk distribusi pengirim email AMP
-$category: Awal
+"$category": Start
+formats:
+- email
 author: CrystalOnScript
 ---
 
@@ -18,7 +20,7 @@ Anda harus menunjukkan pemahaman dan kepatuhan terhadap format email AMP. Email 
 
 Kirimkan email AMP siap buat ke alamat berikut ini:
 
-- amphtmltest@outlook.com
+- ampverification@yahoo.com
 - postmaster_amp@corp.mail.ru
 - ampforemail.whitelisting@gmail.com
 
@@ -32,20 +34,16 @@ Anda harus mematuhi setiap kebijakan privasi.
 
 **Gmail**
 
-[Syarat & Ketentuan Google](https://policies.google.com/privacy)
+[GooglePrivacy & Terms](https://policies.google.com/privacy)
 
 **Mail.ru**
 
-- [Pengguna yang Non-penduduk Rusia](https://help.mail.ru/engmail-help/privacy)
-- [Pengguna yang penduduk Rusia](https://agent.mail.ru/legal/privacypolicy/en)
+- [Non-Russian based users](https://help.mail.ru/engmail-help/privacy)
+- [Russian based users](https://agent.mail.ru/legal/privacypolicy/en)
 
-**Microsoft**
+**Verizon Media (Yahoo Mail)**
 
-[Pernyataan Privasi Microsoft](https://privacy.microsoft.com/en-us/privacystatement)
-
-**Yahoo! Mail - Verizon Media**
-
-- [Kebijakan Privasi Verizon Media - AS](https://www.verizonmedia.com/policies/us/en/verizonmedia/privacy/index.html)
+- [Verizon Media Privacy Policy - US](https://www.verizonmedia.com/policies/us/en/verizonmedia/privacy/index.html)
 - Untuk negara-negara lain, silakan lihat [di sini](https://www.verizonmedia.com/policies/).
 
 # Konfirmasi

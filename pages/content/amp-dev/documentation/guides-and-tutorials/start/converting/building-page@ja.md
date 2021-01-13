@@ -1,15 +1,15 @@
 ---
-$title: 通常の HTML ページを作成する
+"$title": 通常の HTML ページの作成
+"$order": '1'
+description: プロジェクトディレクトリには、article.html というファイルが保存されています。このファイルは、これから作成しようとしている AMP ページの元になるニュース記事です。...
 ---
 
-プロジェクト ディレクトリには、[`article.html`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/article.html) というファイルが保存されています。このファイルは、これから作成しようとしている AMP ページの元になるニュース記事です。
+プロジェクトディレクトリには、[`article.html`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/article.html) というファイルが保存されています。このファイルは、これから作成しようとしている AMP ページの元になるニュース記事です。
 
-1.  `article.html` ファイルに記述されているすべてのコードを**コピー**して、新しいファイルに貼り付けます。
-2.  新しいファイルを `article.amp.html` として**保存**します。
+1. `article.html` ファイルに記述されているすべてのコードを**コピー**して、新しいファイルに貼り付けます。
+2. 新しいファイルを `article.amp.html` として**保存**します。
 
-[tip type="note"]
-AMP ファイルの名前は、必ずしも `.amp.html` とする必要はありません。AMP ファイルには任意の拡張子を設定できます。AMP ページを正規バージョンと区別する方法としては、URL にパラメータを追加するのが一般的です。たとえば、`http://publisher.com/article.html?amp` のようにします。
-[/tip]
+[tip type="note"] <strong>注意:</strong>  AMP ファイルの名前は、必ずしも `.amp.html` とする必要はありません。実際、AMP ファイルには任意の拡張子を設定できます。AMP ページを正規バージョンと区別する方法としては、URL にパラメータを追加するのが一般的です。たとえば、`http://publisher.com/article.html?amp` のようにします。 [/tip]
 
 `article.amp.html` ファイルは、次のような内容になっているはずです。
 
@@ -50,15 +50,15 @@ AMP ライブラリを追加するには、`<head>` タグの末尾に次の行�
 <script async src="https://cdn.ampproject.org/v0.js"></script>
 ```
 
-[http://localhost:8000/article.amp.html](http://localhost:8000/article.amp.html) にある新しい `article.amp.html` ページをブラウザで**読み込み**、Chrome（または任意のブラウザ）で[デベロッパー コンソール](https://developer.chrome.com/devtools/docs/console)を開きます。
+[http://localhost:8000/article.amp.html](http://localhost:8000/article.amp.html) にある新しい `article.amp.html` ページをブラウザで**読み込み**、Chrome（または任意のブラウザ）で[開発者コンソール](https://developer.chrome.com/devtools/docs/console)を開きます。
 
-デベロッパー コンソールの [Console] タブで JavaScript の出力を確認すると、次のログエントリが確認できるはずです。
+開発者コンソールの［Console］タブで JavaScript の出力を確認すると、次のログエントリを確認できるはずです。
 
 ```text
 Powered by AMP ⚡ HTML
 ```
 
-AMP ライブラリに含まれる [AMP 検証ツール](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)を使用すると、有効な AMP ドキュメントへの変換が行われない原因となっている箇所を確認できます。AMP 検証ツールを**有効**にするため、次のフラグメント識別子をドキュメント URL に追加します。
+AMP ライブラリに含まれる [AMP Validator](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) を使用すると、有効な AMP ドキュメントへの変換が行われない原因となっている箇所を確認できます。AMP Validator を**有効**にするため、次のフラグメント識別子をドキュメント URL に追加します。
 
 ```text
 #development=1
@@ -70,7 +70,7 @@ AMP ライブラリに含まれる [AMP 検証ツール](../../../../documentati
 http://localhost:8000/article.amp.html#development=1
 ```
 
-次のような複数の検証エラーがデベロッパー コンソールに表示されるはずです（ブラウザでページを手動更新することが必要な場合もあります）。
+次のような複数の検証エラーが開発者コンソールに表示されるはずです（ブラウザでページを手動更新することが必要な場合もあります）。
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-validation-errors.png', 905, 427, align='', caption='サンプルで発生した AMP 検証エラー') }}
 

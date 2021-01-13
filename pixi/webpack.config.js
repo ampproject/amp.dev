@@ -25,6 +25,13 @@ module.exports = (env, argv) => {
     },
     devtool: mode == 'development' ? 'cheap-module-source-map' : false,
     plugins: [
+      new CleanWebpackPlugin({
+        dry: false,
+        dangerouslyAllowCleanPatternsOutsideProject: true,
+        cleanOnceBeforeBuildPatterns: [
+          path.join(process.cwd(), '../dist/static/page-experience'),
+        ],
+      }),
       new HtmlWebpackPlugin({
         template: path.join(__dirname, 'src/ui/page-experience.hbs'),
         filename: './pixi.html',
@@ -60,30 +67,32 @@ module.exports = (env, argv) => {
         ),
       }),
       new FileManagerPlugin({
-        onEnd: {
-          copy: [
-            {
-              source: './dist/pixi.html',
-              destination:
-                '../frontend/templates/views/partials/pixi/webpack.j2',
-            },
-            {
-              source: './dist/*.js',
-              destination: '../dist/static/page-experience/',
-            },
-            {
-              source: './dist/*.map',
-              destination: '../dist/static/page-experience/',
-            },
-          ],
+        events: {
+          // Blocked by https://github.com/gregnb/filemanager-webpack-plugin/issues/89
+          // Would allow removeal of clean-webpack-plugin
+          // onStart: {
+          //   delete: [
+          //     '../dist/static/page-experience/',
+          //   ]
+          // },
+          onEnd: {
+            copy: [
+              {
+                source: './dist/pixi.html',
+                destination:
+                  '../frontend/templates/views/partials/pixi/webpack.j2',
+              },
+              {
+                source: './dist/*.js',
+                destination: '../dist/static/page-experience/',
+              },
+              {
+                source: './dist/*.map',
+                destination: '../dist/static/page-experience/',
+              },
+            ],
+          },
         },
-      }),
-      new CleanWebpackPlugin({
-        dry: false,
-        dangerouslyAllowCleanPatternsOutsideProject: true,
-        cleanAfterEveryBuildPatterns: [
-          path.join(process.cwd(), '../dist/static/page-experience'),
-        ],
       }),
     ],
     module: {

@@ -1,9 +1,11 @@
 ---
-$title: AMP メールの構造とレンダリング
-order: 2
+"$title": AMP メールの構造とレンダリング
+order: '2'
+formats:
+- email
 teaser:
-  text: メールは MIME ツリーとして構造化されています。この MIME ツリーにはメッセージ本文とメールの添付ファイルが含まれます。
-toc: true
+  text: 'メールは '
+toc: 'true'
 ---
 
 <!--
@@ -29,13 +31,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-メールは <a>MIME ツリー</a>として構造化されています。この MIME ツリーにはメッセージ本文とメールの添付ファイルが含まれます。
+メールは MIME ツリーとして構造化されています。この MIME ツリーにはメッセージ本文とメールの添付ファイルが含まれます。
 
 メール内に AMP を埋め込むには、コンテンツタイプ `text/x-amp-html` の新しい MIME パートを `multipart/alternative` の子孫として追加します。既存の `text/html` または `text/plain` パートとともに存在する必要があります。こうすることで、メールメッセージがすべてのクライアントで機能するようにすることができます。
 
-<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/master/spec/img/amp-email-mime-parts.png">
-<noscript data-md-type="raw_html" data-segment-id="8724406"><img data-md-type="raw_html" alt="AMP for Email MIMEパーツ図" src="../img/amp-email-mime-parts.png"></noscript>
-</amp-img>
+<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/master/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"><img data-md-type="raw_html" alt="AMP for Email MIMEパーツ図" src="../img/amp-email-mime-parts.png"></noscript></amp-img>
 
 `multipart/alternative` サブタイプについての詳細は、[RFC 1521, section 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3) を参照してください。
 

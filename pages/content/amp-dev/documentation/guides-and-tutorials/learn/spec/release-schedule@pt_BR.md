@@ -33,7 +33,7 @@ Uma nova versão do AMP é enviada a todas as páginas AMP todas as semanas às 
 
 O runtime AMP e as extensões são fornecidos através de uma variedade de *canais de lançamento*. Cada canal serve a um propósito específico para desenvolvedores e para o próprio projeto AMP HTML. Veja a [seção cadência de lançamentos](#release-cadence) para uma descrição mais detalhada de como e quando o código do repositório [`ampproject/amphtml`](https://github.com/ampproject/amphtml) torna-se parte dos builds de lançamento.
 
-Para determinar se um PR (pull request) foi incluído em algum dos seguintes canais de lançamento, procure pelos rótulos do GitHub *PR Use: In Canary*, *PR Use: In Production* ou *PR Use: In LTS* (veja a seção [determinando se sua alteração está em um lançamento](#Determining-if-your-change-is-in-a-release) para mais detalhes).
+Para determinar se um PR (pull request) foi incluído em algum dos seguintes canais de lançamento, procure pelos rótulos do GitHub *PR Use: In Canary*, *PR Use: In Production* ou *PR Use: In LTS* (veja a seção [determinando se sua alteração está em um lançamento](#determining-if-your-change-is-in-a-release) para mais detalhes).
 
 ### Noturno (nightly) <a name="nightly"></a>
 
