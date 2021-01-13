@@ -111,7 +111,7 @@ const logAnalytics = async (url) => {
     };
 
     return fetch(
-      `http://www.google-analytics.com/collect?${new URLSearchParams(data)}`
+      `https://www.google-analytics.com/collect?${new URLSearchParams(data)}`
     );
   } catch (e) {
     log.error('Unable to log', e.stack);
@@ -127,7 +127,7 @@ api.get('/lint', async (request, response) => {
 
   const fetchUrl = request.query.url;
   try {
-    await logAnalytics(fetchUrl);
+    logAnalytics(fetchUrl);
     const checkResult = await execChecks(fetchUrl);
     const result = {
       status: 'ok',
