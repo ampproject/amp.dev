@@ -1,31 +1,4 @@
 {
 	"only": [],
-	"fetchFromMaster": [
-		"amp-access-laterpay",
-		"amp-accordion",
-		"amp-app-banner",
-		"amp-base-carousel",
-		"amp-bind",
-		"amp-carousel",
-		"amp-consent",
-		"amp-date-countdown",
-		"amp-date-display",
-		"amp-fit-text",
-		"amp-inline-gallery",
-		"amp-inline-gallery-pagination",
-		"amp-inline-gallery-thumbnails",
-		"amp-instagram",
-		"amp-lightbox",
-		"amp-list",
-		"amp-script",
-		"amp-selector",
-		"amp-social-share",
-		"amp-story",
-		"amp-stream-gallery",
-		"amp-subscriptions",
-		"amp-timeago",
-		"amp-video",
-		"amp-video-iframe",
-		"amp-youtube"
-	]
+	"fetchFromMaster": ["amp-youtube", "amp-access-laterpay", "amp-app-banner", "amp-script", "amp-carousel", "amp-consent", "amp-bind", "amp-story", "amp-subscriptions", "amp-list", "amp-script"]
 }
