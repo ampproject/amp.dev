@@ -303,23 +303,22 @@ class ComponentReferenceImporter {
     let gitHubPath;
     const fileName = `${extension.name}.md`;
 
-    // The documentation for other versions is most likely located in
-    // its version directory
+    // Check if there is a directory for the version of the component that
+    // holds the fitting documentation
     gitHubPath = path.join(extension.path, version, fileName);
     if (extension.files.includes(gitHubPath)) {
       return gitHubPath;
     }
 
-    // Best guess: if the version equals the latest version the documentation
-    // is located in the root of the extension directory
+    // Otherwise assume the doc in the extension root is valid
+    // for all versions of this component (Full AMP and Bento)
     gitHubPath = path.join(extension.path, fileName);
     if (extension.files.includes(gitHubPath)) {
       return gitHubPath;
     }
 
     // If no file can be found at the first location it means the extension
-    // doesn't follow the pattern in which the latest version documented
-    // is in the root of the extension
+    // doesn't follow the above patterns and needs to be fixed manually
     log.warn(`No document found for ${extension.name} v${version}`);
     return null;
   }
