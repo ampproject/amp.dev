@@ -129,7 +129,7 @@ You must use Tink to decrypt document keys in your authorizer. To decrypt with T
 
 Your HybridDecrypt/Authorizer deployment should roughly match your key rotation schedule. This creates availability of all generated keys to the HybridDecrypt client.
 
-Tink has extensive [documentation](https://github.com/google/tink/tree/master/docs) and [examples](https://github.com/google/tink/tree/master/examples) in C++, Java, Go, and Javascript to help you get started on your server-side implementation.
+Tink has extensive [documentation](https://github.com/google/tink/tree/master/docs) and [examples](https://github.com/google/tink/tree/master/examples) in C++, Java, Go, and Python to help you get started on your server-side implementation.
 
 ### Request management
 
