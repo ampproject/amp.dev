@@ -51,10 +51,10 @@ class ComponentReferenceImporter {
 
   async import() {
     log.await('Cleaning previously imported extension docs ...');
-    // await del([
-    //   `${DESTINATION_BASE_PATH}/*.md`,
-    //   `!${DESTINATION_BASE_PATH}/*@*.md`,
-    // ]);
+    await del([
+      `${DESTINATION_BASE_PATH}/*.md`,
+      `!${DESTINATION_BASE_PATH}/*@*.md`,
+    ]);
     this.validatorRules = await validatorRules.fetch();
     // Gives the contents of ampproject/amphtml/extensions
     this.extensions = await this._listExtensions();
