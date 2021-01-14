@@ -51,10 +51,10 @@ class ComponentReferenceImporter {
 
   async import() {
     log.await('Cleaning previously imported extension docs ...');
-    await del([
-      `${DESTINATION_BASE_PATH}/*.md`,
-      `!${DESTINATION_BASE_PATH}/*@*.md`,
-    ]);
+    // await del([
+    //   `${DESTINATION_BASE_PATH}/*.md`,
+    //   `!${DESTINATION_BASE_PATH}/*@*.md`,
+    // ]);
     this.validatorRules = await validatorRules.fetch();
     // Gives the contents of ampproject/amphtml/extensions
     this.extensions = await this._listExtensions();
@@ -66,18 +66,28 @@ class ComponentReferenceImporter {
 
   /**
    * Fetches the list of available extensions from GitHub
-   * @return {Promise} [description]
+   * @return {Promise}
    */
   async _listExtensions() {
     let extensions = await this.githubImporter_.fetchJson('extensions');
     // As inside /extensions each component has its own folder, filter
-    // down by directory
+    // down by directory. At the same time filter out directories which
+    // are safe to ignore as they are not holding a public-facing extension
+    // and check if only some components are configured to be imported
     extensions = extensions[0].filter((file) => {
-      if (!config.only.length) {
-        return file.type === 'dir';
+      if (file.type !== 'dir') {
+        return false;
       }
 
-      return file.type === 'dir' && config.only.includes(file.name);
+      if (config.only.length && !config.only.includes(file.name)) {
+        return false;
+      }
+
+      if (file.name.endsWith('-impl') || file.name.endsWith('-polyfill')) {
+        return false;
+      }
+
+      return true;
     });
 
     return extensions;
