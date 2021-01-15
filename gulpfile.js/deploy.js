@@ -405,7 +405,7 @@ exports.gcloudSetup = gcloudSetup;
 exports.deploy = series(
   verifyTag,
   imageUpload,
-  instanceTemplatesClean,
+//  instanceTemplatesClean,
   instanceTemplateCreate,
   updateStart
 );
