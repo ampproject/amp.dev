@@ -45,13 +45,24 @@
 
       {% include 'views/2021/partials/breadcrumbs.j2' %}
 
-      {% if doc.category %}
-      <h1>{{ doc.title }}</h1>
-      {% include 'views/2021/partials/component-intro.j2' %}
-      {% endif %}
+      <div class="ap-content-wrapper">
+        <div>
+          {% if doc.category %}
+          <h1>{{ doc.title }}</h1>
+          {% include 'views/2021/partials/component-intro.j2' %}
+          {% endif %}
+          {{ doc.html|render|safe }}
+        </div>
 
-      {{ doc.html|render|safe }}
+        <div class="ap-toc-toolbar">
+          <span id="toc-toolbar" class="ap-toc-toolbar-container"></span>
+        </div>
+
+
+      </div>
     </div>
+
+    {% include 'views/2021/partials/toc.j2' %}
   </div>
 </main>
 {% endblock %}

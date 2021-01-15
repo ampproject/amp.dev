@@ -9,13 +9,25 @@
 
   @include respond-to('medium') {
     margin: 25px 0 55px 55px;
-    padding: 10px 60px 60px 50px;
+    padding: 10px 20px 60px 50px;
   }
 
   &-sidebar-observer {
     position: absolute;
     top: calc(100vh - 50px);
     height: calc(100% - 100vh);
+  }
+
+  &-wrapper {
+    display: flex;
+
+    & > div {
+      width: 100%;
+
+      @include respond-to('medium') {
+        max-width: calc(100% - 280px);
+      }
+    }
   }
 
   h1 {

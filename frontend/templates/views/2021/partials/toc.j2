@@ -1,0 +1,20 @@
+{% set empty_toc = doc.format.toc == '<div class="toc">\n<ul></ul>\n</div>\n' or not doc.format.toc %}
+{% set hide_toc = (doc.toc == False or doc.collection.toc == False) %}
+
+{% if not empty_toc and not hide_toc %}
+<amp-sidebar id="toc" class="ap-toc" layout="nodisplay" side="right">
+  <nav toolbar="(min-width: 768px)" toolbar-target="toc-toolbar">
+    <span class="ap-toc-title">Table of contents</span>
+    <div class="ap-toc-scroll-container">
+      {# Unwrap TOC from useless markup and strip first level #}
+      {% set toc = doc.format.toc.replace('<div class="toc">\n<ul>\n', '<ul>').replace('\n</ul>\n</div>', '</ul>') %}
+      {{ doc.format.filter_toc(toc)|safe }}
+    </div>
+  </nav>
+</amp-sidebar>
+
+<button class="ap-toc-toggle" on="tap:toc.toggle">
+  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sidebar-toggle"></use></svg>
+  <span>{{ _('Table of contents') }}</span>
+</button>
+{% endif %}

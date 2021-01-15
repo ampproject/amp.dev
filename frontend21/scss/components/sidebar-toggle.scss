@@ -7,7 +7,7 @@
   flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 50vw;
   height: 45px;
   padding-left: 2px;
   font-family: $fontFamilyHeadline;
@@ -61,7 +61,7 @@
   }
 
   &.--mobile {
-    @include respond-to('medium') {
+    @include respond-to('small') {
       display: none;
     }
   }
