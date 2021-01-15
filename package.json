@@ -166,7 +166,7 @@
 		"sass-loader": "10.1.1",
 		"striptags": "3.1.1",
 		"style-loader": "2.0.0",
-		"supertest": "6.0.1",
+		"supertest": "6.1.1",
 		"svg-spritemap-webpack-plugin": "3.8.3",
 		"through2": "4.0.2",
 		"url-loader": "4.1.1",
