@@ -22,13 +22,13 @@
     border-radius: 0;
   }
 
-  @media (min-width: 768px) {
+  @include respond-to('small') {
     max-width: 100%;
     margin-right: -30px;
   }
 
   pre {
-    font-family: 'Fira Mono', monospace;
+    $fontFamilyCode: Fira Mono, monospace;
     white-space: pre;
     font-size: 0.9rem;
   }

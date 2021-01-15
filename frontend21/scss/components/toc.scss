@@ -91,6 +91,7 @@
     svg {
       width: 1.2em;
       height: 1.2em;
+      margin-left: 10px;
 
       @include respond-to('medium') {
         transform: rotate(-90deg);

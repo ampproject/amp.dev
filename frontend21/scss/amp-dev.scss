@@ -110,6 +110,12 @@ code, p code {
   font-size: .9em;
 }
 
+code {
+  max-width: 100%;
+  overflow: hidden;
+  word-break: break-word;
+}
+
 ul {
   padding: 0;
   list-style: none;
