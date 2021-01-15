@@ -1,7 +1,9 @@
 ---
-$title: Utilizzo di AMP Viewer per il rendering di e-mail
-$order: 5
+"$title": Utilizzo di AMP Viewer per il rendering di e-mail
+"$order": '5'
 author: alabiaga
+formats:
+- email
 ---
 
 I client di posta elettronica che intendono supportare AMP per e-mail devono utilizzare [AMP Viewer](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) per ospitare le e-mail AMP dei propri mittenti. Un visualizzatore creato con la [libreria AMP Viewer](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration) incapsula un documento AMP e abilita delle [funzionalità](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/CAPABILITIES.md) che consentono la comunicazione bidirezionale con il documento AMP tramite postMessage. Queste funzionalità includono il controllo della visibilità delle e-mail, l'inoltro delle metriche dell'utente e la fornitura di strumenti che garantiscono la sicurezza delle richieste XHR fatte dall'e-mail.
@@ -64,8 +66,7 @@ Questo è un esempio banale in cui non vi è alcuna dipendenza dalla libreria [m
 
 Il diagramma seguente mostra un esempio più reale di come un documento AMP in un visualizzatore client di posta elettronica con funzionalità `viewerRenderTemplate` potrebbe gestire il rendering del modello [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email).
 
-<amp-img alt="Viewer render template diagram" layout="responsive" width="372" height="279" src="/static/img/docs/viewer_render_template_diagram.png">
-</amp-img>
+<amp-img alt="Viewer render template diagram" layout="responsive" width="372" height="279" src="/static/img/docs/viewer_render_template_diagram.png"></amp-img>
 
 Il sistema runtime AMP invierà tramite proxy la richiesta di prelievo dei dati del componente [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email) al visualizzatore, che a sua volta inoltrerà questa richiesta a un server client di posta elettronica. Il server fornirà questo URL e i risultati dell'URL recuperato attraverso vari servizi, con l'eventuale controllo della validità dell'URL, il contenuto dei dati restituiti da tale URL ed eseguirà il rendering dei modelli [mustache](https://mustache.github.io/) con tali dati. Restituirà quindi il risultato del rendering di tale modello e lo rimanderà al visualizzatore nel seguente formato di risposta JSON.
 

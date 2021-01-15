@@ -1,9 +1,11 @@
 ---
-$title: AMP への広告テクノロジーの統合
-order: 3
+"$title": AMP への広告テクノロジーの統合
+order: '3'
+formats:
+- ads
 teaser:
   text: AMP HTML の統合を検討中の広告テクノロジープロバイダーは、以下のガイドラインをお読みください。
-toc: true
+toc: 'true'
 ---
 
 <!--
@@ -25,11 +27,17 @@ AMP では、サイト運営者が任意の JavaScript を実行できないよ�
 
 たとえば、Amazon A9 サーバーは、以下の構文を使って呼び出すことができます。
 
-[sourcecode:html] <amp-ad width="300" height="250" type="a9" data-aax_size="300x250" data-aax_pubname="test123" data-aax_src="302"
-
+[sourcecode:html]
+<amp-ad
+  width="300"
+  height="250"
+  type="a9"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
 >
-
- [/sourcecode]
+</amp-ad>
+[/sourcecode]
 
 `type` の後に続く各属性は、広告を配信するために Amazon の A9 サーバーが期待するパラメーターに依存しています。[a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) ファイルには、`https://c.amazon-adsystem.com/aax2/assoc.js` URL を介して A9 サーバーを呼び出す JavaScript 呼び出しにパラメーターがどのようにマッピングされているかが示されています。AMP 広告タグによって渡される対応するパラメーターは、広告を返すための URL にアペンドされます。
 
@@ -59,11 +67,17 @@ AMP では、サイト運営者が任意の JavaScript を実行できないよ�
 
 Brightcove プレーヤーは、以下のようにして呼び出すことができます。
 
-[sourcecode:html] <amp-brightcove data-account="1290862519001" data-video-id="ref:amp-docs-sample" data-player="S1Tt8cgaM" layout="responsive" width="480" height="270"
-
+[sourcecode:html]
+<amp-brightcove
+  data-account="1290862519001"
+  data-video-id="ref:amp-docs-sample"
+  data-player="S1Tt8cgaM"
+  layout="responsive"
+  width="480"
+  height="270"
 >
-
- [/sourcecode]
+</amp-brightcove>
+[/sourcecode]
 
 Brightcove のような amp タグを開発する手順については、[こちらのプルリクエスト](https://github.com/ampproject/amphtml/pull/1052)を参照してください。
 

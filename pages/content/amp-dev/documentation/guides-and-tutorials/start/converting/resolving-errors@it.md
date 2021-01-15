@@ -1,7 +1,7 @@
 ---
-$title: Risoluzione degli errori di convalida
-$order: 2
-description: "In questa sezione esamineremo e risolveremo gli errori di convalida della nostra pagina AMP. Nota: gli errori potrebbero essere visualizzati in un ordine diverso a seconda della console."
+"$title": Risoluzione degli errori di convalida
+"$order": '2'
+description: '"In questa sezione esamineremo e risolveremo gli errori di convalida della nostra pagina AMP. Nota: gli errori potrebbero essere visualizzati in un ordine diverso a seconda della console."'
 ---
 
 In questa sezione esamineremo e risolveremo gli errori di convalida della nostra pagina AMP. Nota: gli errori potrebbero essere visualizzati in un ordine diverso a seconda della console.
@@ -100,7 +100,7 @@ In particolare, questo errore è relativo al seguente tag di collegamento del fo
 <link href="base.css" rel="stylesheet" />
 ```
 
-Il problema è che questo link è un riferimento a un foglio di stile esterno. Per velocizzare i tempi di caricamento dei documenti AMP, non è possibile includervi fogli di stile esterni. Tutte le regole di stile devono essere incorporate nel documento AMP utilizzando i tag `<style amp-custom></style>` o definendo stili inline.
+Il problema è che questo link è un riferimento a un foglio di stile esterno. Per velocizzare i tempi di caricamento dei documenti AMP, non è possibile includervi fogli di stile esterni. Tutte le regole di stile devono essere incorporate nel documento AMP utilizzando i tag <code><style amp-custom></style></code> o definendo stili inline.
 
 ```html
 <style amp-custom>

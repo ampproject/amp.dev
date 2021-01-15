@@ -1,7 +1,10 @@
 ---
-$title: Pengantar untuk animasi kompleks
-$order: 2
+"$title": Pengantar untuk animasi kompleks
+"$order": '2'
 description: Untuk animasi yang tidak dapat digerakkan dengan menambahkan dan menghapus kelas, AMP menawarkan beberapa komponen yang spesifik untuk animasi. Komponen-komponen ini menerapkan prinsip-prinsip AMP pada animasi ....
+formats:
+- websites
+- ads
 author: CrystalOnScript
 ---
 
@@ -84,7 +87,6 @@ Membuat suatu animasi dalam [`amp-animation`](../../../../documentation/componen
 Elemen tag atau kelas yang sama dapat mempunyai properti penghitungan waktu yang ditentukan dan menimpa nilai-nilai variabel yang telah ditentukan pada animasi tingkat atas.
 
 [example preview="top-frame" playground="true" imports="amp-animation"]
-
 ```html
 <body>
   <h1>Hello World!</h1>
@@ -117,7 +119,6 @@ Elemen tag atau kelas yang sama dapat mempunyai properti penghitungan waktu yang
   </button>
 </body>
 ```
-
 [/example]
 
 ### Animasi berantai
@@ -209,7 +210,6 @@ Untuk animasi yang lebih besar, animasi di dalam susunan `animations` mampu meru
 Dengan menggunakan [ekspresi `var()` dan `calc()`](../../../../documentation/components/reference/amp-animation.md) bersama [ekstensi CSS](../../../../documentation/components/reference/amp-animation.md#css-extensions), Anda dapat menulis animasi yang kompleks dan terjadwal yang berfungsi dengan berapa pun jumlah elemen. Ini memungkinkan data yang dibuat pengguna dan data yang dinamis dapat dianimasi dengan mudah dan mulus.
 
 [example preview="top-frame" playground="true"]
-
 ```html
 <head>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
@@ -257,8 +257,7 @@ Dengan menggunakan [ekspresi `var()` dan `calc()`](../../../../documentation/com
   </div>
 </body>
 ```
-
-[/example] Contoh ini berfungsi dengan:
+[/example]
 
 - Menyatakan sebuah variabel, `--duration`, dan memberinya nilai selama dua detik.
 - Menetapkan `duration` pada nilai `--duration` variabel.
@@ -276,7 +275,6 @@ Buka animasi di AMP playground dan tambahkan lebih banyak elemen [`amp-img`](../
 Animasi dapat menyertakan [`conditions`](../../../../documentation/components/reference/amp-animation.md#conditions) yang mengizinkan efek yang disesuaikan. Sesuaikan animasi dengan ukuran layar apa pun melalui [kondisi `media`](../../../../documentation/components/reference/amp-animation.md#media-query) dan dukung kompatibilitas browser mundur dengan mengaktifkan [kondisi `supports`](../../../../documentation/components/reference/amp-animation.md#supports-condition) dalam sebuah [pernyataan `switch`](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement).
 
 [example preview="top-frame" playground="true"]
-
 ```html
 <head>
  <style amp-custom>
@@ -350,5 +348,4 @@ Animasi dapat menyertakan [`conditions`](../../../../documentation/components/re
   <button on="tap:mediaAnimation.start">Start</button>
 </body>
 ```
-
 [/example]

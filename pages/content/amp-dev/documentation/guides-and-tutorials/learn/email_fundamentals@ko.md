@@ -1,8 +1,10 @@
 ---
-$title: 이메일용 AMP 기초
-$order: 1
+"$title": 이메일용 AMP 기초
+"$order": '1'
 description: 올바른 AMP 이메일 작성을 시작하기 위해 알아야 할 모든 것.
 author: CrystalOnScript
+formats:
+- email
 ---
 
 AMP에 익숙하시다면 좋은 소식이 있습니다! 이메일용 AMP는 AMP HTML 라이브러리의 하위 집합에 불과하다는 것이죠! AMP를 잘 모르셔도 괜찮습니다! 이 가이드에서 올바른 AMP 이메일 작성을 시작하는 데 필요한 모든 것을 알려드릴 테니까요!

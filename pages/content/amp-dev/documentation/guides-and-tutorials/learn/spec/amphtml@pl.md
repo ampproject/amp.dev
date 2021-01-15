@@ -285,7 +285,7 @@ Znaczników HTML można używać w AMP HTML bez żadnych zmian. Niektóre znaczn
     <td>Atrybutu <code>http-equiv</code> można użyć w przypadku określonych dozwolonych wartości; szczegółowe informacje zawiera <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">specyfikacja walidatora AMP</a>.</td>
   </tr>
   <tr>
-    <td width="30%"><code><a name="ancr"></a>a</code></td>
+    <td width="30%"><code><a id="ancr"></a>a</code></td>
     <td>Wartość atrybutu <code>href</code> nie może zaczynać się od <code>javascript:</code>. Jeśli jest ustawiony, atrybut <code>target</code> musi mieć wartość <code>_blank</code>. W przeciwnym razie dozwolony. <a href="#ancr">🔗</a>
 </td>
   </tr>

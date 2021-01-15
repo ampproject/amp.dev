@@ -1,6 +1,6 @@
 ---
-$title: 広告用シェルの作成
-$order: 0
+"$title": 広告用シェルの作成
+"$order": '0'
 description: 使い慣れているテキストエディタで、my-amphtml-ad.html という HTML ファイルを作成します。以下の HTML マークアップをそのファイルにコピーします。
 ---
 
@@ -48,7 +48,7 @@ AMPHTML 広告クリエイティブには、AMP ページとは異なる非常�
 <style amp4ads-boilerplate>body{visibility:hidden}</style>
 ```
 
-AMPHTML 広告にスタイルを指定するには、`<head>` セクションに `<style amp-custom></style>` を使用し、CSS をインラインで AMPHTML ドキュメントに埋め込む必要があります。ここでは基本的な画像広告をレンダリングしており、CSS は必要ないため、このタグは追加しません。
+AMPHTML 広告にスタイルを指定するには、<code><head></code> セクションに <code><style amp-custom></style></code> を使用し、CSS をインラインで AMPHTML ドキュメントに埋め込む必要があります。ここでは基本的な画像広告をレンダリングしており、CSS は必要ないため、このタグは追加しません。
 
 [tip type="note"] **注意–** AMPHTML 広告におけるインラインスタイルシートの最大サイズは *20 キロバイト*です。詳細は、[AMPHTML 広告仕様の CSS 要件](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#css)を参照してください。 [/tip]
 

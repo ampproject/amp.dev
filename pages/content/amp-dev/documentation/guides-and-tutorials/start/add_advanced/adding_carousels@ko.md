@@ -1,5 +1,7 @@
 ---
-$title: 캐러셀 추가
+"$title": Adding carousels
+"$order": '3'
+description: 또 다른 모바일 페이지의 일반적인 특징은 캐러셀입니다.  amp-carousel 구성요소를 사용하여 AMP 페이지에 캐러셀을 쉽게 추가할 수 있습니다.
 ---
 
 또 다른 모바일 페이지의 일반적인 특징은 캐러셀입니다.  [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) 구성요소를 사용하여 AMP 페이지에 캐러셀을 쉽게 추가할 수 있습니다. 이미지 캐러셀과 같은 간단한 예로 시작해 보겠습니다.
@@ -48,9 +50,7 @@ $title: 캐러셀 추가
 
 페이지를 **새로고침**하여 테스트해 보세요.
 
-[tip type="note"]
-[`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)의 유형이 `carousel`일 때 `fixed-height` 레이아웃 유형을 사용한다는 것을 눈치채셨을 것입니다.  `carousel` 유형에 지원되는 레이아웃 유형은 제한되어 있습니다. 예를 들어 `carousel` 유형은 `responsive` 레이아웃을 지원하지 않습니다.  이름에서 알 수 있듯이 fixed-height 요소는 사용할 수 있는 공간을 차지하지만 높이는 변하지 않고 유지됩니다. fixed-height 요소의 경우 `height` 속성은 정의하고 `width` 속성은 `auto`로 설정하거나 설정하지 않아야 합니다.
-[/tip]
+[tip type="note"] [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)의 유형이 `carousel`일 때 `fixed-height` 레이아웃 유형을 사용한다는 것을 눈치채셨을 것입니다.  `carousel` 유형에 지원되는 레이아웃 유형은 제한되어 있습니다. 예를 들어 `carousel` 유형은 `responsive` 레이아웃을 지원하지 않습니다.  이름에서 알 수 있듯이 fixed-height 요소는 사용할 수 있는 공간을 차지하지만 높이는 변하지 않고 유지됩니다. fixed-height 요소의 경우 `height` 속성은 정의하고 `width` 속성은 `auto`로 설정하거나 설정하지 않아야 합니다. [/tip]
 
 ## 혼합 캐러셀 콘텐츠
 
@@ -88,8 +88,4 @@ amp-fit-text {
 
 자세히 알아보려면 [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) 구성요소 참조 문서를 확인하세요.
 
-[tip type="note"]
-
 마지막 예를 보면 [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) 구성요소에 하위 `div` 요소와 `placeholder` 속성이 포함되어 있습니다. 이전 가이드에서 `fallback`을 사용한 [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)가 포함된 비슷한 시나리오를 본 적이 있습니다. placeholder와 fallback 요소의 차이는 무엇일까요? `Fallback` 요소는 상위 요소를 로드할 수 없을 때(예: 표시할 광고가 없는 경우) 표시됩니다. 반면에 `placeholder` 요소는 상위 요소를 로드하는 중에 상위 요소 대신 표시됩니다. 어떤 의미에서 이러한 요소는 상위 요소의 로드 과정 전후에 표시됩니다. [자리표시자 및 대체 동작](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md) 가이드에서 자세히 알아볼 수 있습니다.
-
-[/tip]

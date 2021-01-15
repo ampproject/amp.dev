@@ -1,17 +1,19 @@
 ---
-$title: Navegando por su sitio
+"$title": Navegación por su sitio
+"$order": '5'
+description: La mayoría de los sitios web para móviles incluyen un menú de navegación del sitio. Estos menús pueden tener muchas formas diferentes. En este tutorial, veremos los siguientes ejemplos para...
 ---
 
-La mayoría de los sitios web para móviles incluyen un menú de navegación del sitio. Estos menús pueden tomar muchas formas diferentes. En este tutorial, probaremos los siguientes ejemplos para presentar la navegación en las páginas de AMP:
+La mayoría de los sitios web para móviles incluyen un menú de navegación del sitio. Estos menús pueden tomar muchas formas diferentes. En este tutorial, veremos los siguientes ejemplos para presentar la navegación en las páginas de AMP:
 
-- Un enlace a su página de inicio - la opción más simple.
+- Un enlace a su página de inicio - La opción más simple.
 - Una barra de navegación lateral utilizando el componente [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md)
 
-## Link de vuelta al home
+## Enlace para volver a Inicio
 
-La forma más sencilla de conseguir que los usuarios accedan a las opciones de navegación habituales de su sitio web es simplemente enviarlos de vuelta a su página principal!
+La forma más sencilla de lograr que los usuarios accedan a las opciones de navegación habituales de su sitio web es simplemente enviarlos de vuelta a su página principal.
 
-Intente **agregar** este enlace HTML a la etiqueta `<header>`:
+Trate de **reemplazar** su etiqueta `<header>` con esta versión que incluye un enlace:
 
 ```html
 <header class="headerbar">
@@ -49,13 +51,13 @@ Ahora **actualice** la página. Debería ver un enlace en la esquina superior iz
 
 {{ image('/static/img/docs/tutorials/tut-advanced-navigate-home.png', 412, 190, align='center half', caption='Icono de navigacion al home') }}
 
-Este enlace se puede reemplazar por la URL de la página principal de su sitio web para permitir a sus usuarios navegar a otras partes de su sitio a través de la navegación de su sitio web actual.
+Este enlace se puede reemplazar por la URL de la página principal de su sitio web para permitir que sus usuarios naveguen a otras partes del mismo mediante la navegación de su sitio web actual.
 
 Este es el enfoque más sencillo que aprovecha la navegación de su sitio web existente. A continuación, exploraremos una opción popular para la navegación del sitio.
 
-## Navegar con una barra lateral
+## Navegación con una barra lateral
 
-Una técnica de navegación común es agregar un icono de menú que al hacer clic en el botón muestra un conjunto de enlaces de navegación (desde el lado de la página). En AMP, podemos crear dicha navegación con el componente [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md).
+Una técnica de navegación común es agregar un icono de menú en el que al hacer clic, muestra un conjunto de enlaces de navegación (desde el lado de la página). En AMP podemos crear dicha navegación con el componente [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md).
 
 Primero, debemos **agregar** el componente [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) de JavaScript a la etiqueta `<head>`:
 
@@ -63,7 +65,7 @@ Primero, debemos **agregar** el componente [`amp-sidebar`](../../../../documenta
 <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
 ```
 
-A continuación, queremos mostrar un icono de menú. Cuando se pulsa el icono, se abrirá la barra lateral. **Reemplace** el `<header>` con el código siguiente para mostrar un icono de ["hamburger"](https://en.wikipedia.org/wiki/Hamburger_button) en lugar de un icono de inicio:
+A continuación, queremos mostrar un icono de menú. Cuando se pulse el icono, se abrirá la barra lateral. **Reemplace** el `<header>` con el código siguiente para mostrar un icono de ["hamburguesa"](https://en.wikipedia.org/wiki/Hamburger_button) en vez de un icono de inicio:
 
 ```html
 <header class="headerbar">
@@ -72,7 +74,7 @@ A continuación, queremos mostrar un icono de menú. Cuando se pulsa el icono, s
 </header>
 ```
 
-En el código anterior,  `toggle` la barra lateral a través del atributo de acción [`on`](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) en el elemento de barra lateral de amplificador, que se identifica por el ID `sidebar1`. Vamos a agregar la barra lateral.
+En el código anterior,  `toggle` la barra lateral mediante el atributo de acción [`on`](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) en el elemento <code>amp-sidebar</code>, que se identifica con el ID `sidebar1`. Agreguemos la barra lateral.
 
 **Agregue** el siguiente HTML justo después del `</header>`:
 
@@ -87,9 +89,9 @@ En el código anterior,  `toggle` la barra lateral a través del atributo de acc
 </amp-sidebar>
 ```
 
-Nuestra barra lateral estará oculta, pero cuando el usuario toque el icono de la hamburguesa, el menú aparecerá desde el lado izquierdo de la pantalla. Para cerrar el menú, el usuario puede tocar el icono X.
+Nuestra barra lateral estará oculta, pero cuando el usuario pulse el icono de hamburguesa, el menú aparecerá en el lado izquierdo de la pantalla. Para cerrar el menú, el usuario puede tocar el icono X.
 
-Finalmente, **agregue** estas reglas de estilo a su CSS:
+Por último, **agregue** estas reglas de estilo a su CSS:
 
 ```css
 .hamburger {
@@ -112,8 +114,8 @@ Finalmente, **agregue** estas reglas de estilo a su CSS:
 }
 ```
 
-Bueno, veamos nuestra barra lateral. **Actualiza** y vuelve a cargar tu página de AMP. Debería ver algo como esto:
+Muy bien, ahora veamos nuestra barra lateral. **Actualice** y vuelva a cargar su página de AMP. Debería ver algo como esto:
 
 {{ image('/static/img/docs/tutorials/tut-advanced-navigate-sidebar.gif', 412, 384, align='center half', caption='Navegación por el menú de la barra lateral') }}
 
-Nuestra página se ve muy bien! Añadamos un toque final: una fuente personalizada!
+¡Nuestra página se ve muy bien! Agreguemos un toque final - ¡Una fuente personalizada!

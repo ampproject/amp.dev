@@ -10,12 +10,9 @@ RUN groupadd -r amppkg && useradd --no-log-init -r -g amppkg amppkg
 WORKDIR /amppkg
 
 COPY amppkg.toml /amppkg
-# Copy whatever certs are available in the certs/ directory (both encrypted and
-# unencrypted) into the container. (./decrypt.sh will NOOP if any *.pem exist.)
+# Copy whatever certs are available in the certs/ directory  into the container. 
 COPY certs/*pem* /amppkg/
-COPY decrypt.sh /amppkg
 
-RUN chmod +x /amppkg/decrypt.sh
 RUN chown -R amppkg:amppkg /amppkg
 
 # Install the AMP packager
@@ -23,4 +20,4 @@ RUN go get github.com/ampproject/amppackager/cmd/amppkg
 
 USER amppkg
 EXPOSE 8080
-CMD [ "bash", "-c", "./decrypt.sh && exec amppkg -config /amppkg/amppkg.toml" ]
+CMD [ "bash", "-c", "exec amppkg -config /amppkg/amppkg.toml" ]

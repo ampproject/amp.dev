@@ -1,6 +1,6 @@
 ---
-$title: Riepilogo
-$order: 4
+"$title": Riepilogo
+"$order": '4'
 description: Congratulazioni! Hai appena creato una pagina interattiva di commercio elettronico per i dati dei prodotti con taglie e prezzi variabili per ogni SKU, recuperabili a richiesta da un endpoint JSON remoto.
 ---
 

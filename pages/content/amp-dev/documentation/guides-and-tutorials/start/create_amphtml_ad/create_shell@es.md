@@ -1,7 +1,7 @@
 ---
-$title: Cómo crear la estructura para un anuncio
-$order: 0
-description: "Con ayuda de su editor de texto favorito, genere un archivo HTML llamado my-amphtml-ad.html. Posteriormente, copie los siguientes marcadores HTML en ese archivo: ..."
+"$title": Cómo crear la estructura para un anuncio
+"$order": '0'
+description: 'Con ayuda de su editor de texto favorito, genere un archivo HTML llamado my-amphtml-ad.html. Posteriormente, copie los siguientes marcadores HTML en ese archivo: ...'
 ---
 
 El [HTML que necesite para un anuncio](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) es una variante del [AMP HTML que necesita para crear una página de AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md). Debemos acostumbrarnos a utilizar el código que sea necesario para generar la estructura de nuestro anuncio AMP HTML.
@@ -48,7 +48,7 @@ Los creativos de los anuncios AMP HTML requieren de un [código reutilizable](..
 <style amp4ads-boilerplate>body{visibility:hidden}</style>
 ```
 
-Si desea establecer el estilo de su anuncio AMP HTML, su CSS debe estar integrado en el documento AMP HTML mediante las etiquetas `<style amp-custom></style> ` en la sección `<head>`. Como estamos renderizando un anuncio con una imagen básica, no se necesita ninguna CSS así que no agregaremos estas etiquetas.
+Si desea establecer el estilo de su anuncio AMP HTML, su CSS debe estar integrado en el documento AMP HTML mediante las etiquetas <code><style amp-custom></style> </code> en la sección <code><head></code>. Como estamos renderizando un anuncio con una imagen básica, no se necesita ninguna CSS así que no agregaremos estas etiquetas.
 
 [tip type="note"] **NOTA –** Para los anuncios AMP HTML, el tamaño máximo para una hoja de estilos integrados en el código es de *20 kilobytes*. Puede obtener más información sobre [los requisitos de las CSS en las especificaciones para los anuncios AMP HTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#css). [/tip]
 

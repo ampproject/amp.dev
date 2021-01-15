@@ -38,7 +38,7 @@ limitations under the License.
 
 <div class="noshowtoc"></div>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true">
-<li data-md-type="list_item" data-md-list-type="unordered">Зачем применять CORS в пределах моего собственного источника? <a href="#why-do-i-need-cors-for-my-own-origin-" data-md-type="link"></a>
+<li data-md-type="list_item" data-md-list-type="unordered">Зачем применять CORS в пределах моего собственного источника? <a href="#why-do-i-need-cors-for-my-own-origin" data-md-type="link"></a>
 </li>
 <li data-md-type="list_item" data-md-list-type="unordered"><a href="#utilizing-cookies-for-cors-requests" data-md-type="link">Использование файлов cookie в CORS-запросах</a></li>
 <li data-md-type="list_item" data-md-list-type="unordered">
@@ -66,7 +66,7 @@ limitations under the License.
 </ul>
 <div data-md-type="block_html"></div>
 
-## Зачем применять CORS в пределах моего собственного источника? <a name="why-do-i-need-cors-for-my-own-origin"></a>
+## Зачем применять CORS в пределах моего собственного источника? <a id="why-do-i-need-cors-for-my-own-origin"></a>
 
 Вам может быть непонятно, зачем использовать CORS в запросах к вашему собственному источнику. Давайте рассмотрим это подробнее.
 
@@ -88,7 +88,7 @@ limitations under the License.
 1. Для AMP-страниц, загружающих динамические данные, — убедитесь, что вы протестировали кешированную версию страницы; *не ограничивайтесь тестированием на своем собственном домене* (см. раздел [Тестирование CORS в AMP](#testing-cors-in-amp) ниже).
 2. Следуйте приведенным в данном документе инструкциям по обработке CORS-запросов и CORS-ответов.
 
-## <a name="utilizing-cookies-for-cors-requests">Использование файлов cookie в CORS-запросах</a>
+## <a id="utilizing-cookies-for-cors-requests">Использование файлов cookie в CORS-запросах</a>
 
 Большинство компонентов AMP, которые используют CORS-запросы, либо автоматически устанавливают [режим учетных данных,](https://fetch.spec.whatwg.org/#concept-request-credentials-mode) либо позволяют автору при желании включить его. Например, компонент [`amp-list`](https://amp.dev/documentation/components/amp-list) получает динамическое содержимое из конечной точки CORS JSON и позволяет автору устанавливать режим учетных данных с помощью атрибута `credentials`.
 
@@ -120,7 +120,7 @@ limitations under the License.
 
 Если вы используете в своем бэкенде Node, вы можете использовать [промежуточное ПО AMP CORS](https://www.npmjs.com/package/amp-toolbox-cors), которое является частью [AMP Toolbox](https://github.com/ampproject/amp-toolbox).
 
-### <a name="verify-cors-requests">Проверка  CORS-запросов</a>
+### <a id="verify-cors-requests">Проверка  CORS-запросов</a>
 
 Когда ваша конечная точка получает CORS-запрос:
 
@@ -141,7 +141,7 @@ limitations under the License.
 
 - [Обзор Google AMP Cache](https://developers.google.com/amp/cache/overview) [/tip]
 
-#### <a name="2-allow-same-origin-requests">2) Разрешайте запросы в пределах одного источника</a>
+#### <a id="2-allow-same-origin-requests">2) Разрешайте запросы в пределах одного источника</a>
 
 <span id="allow-same-origin-requests"></span>
 
@@ -153,7 +153,7 @@ AMP-Same-Origin: true
 
 Этот специальный заголовок отправляется средой выполнения AMP, когда запрос XHR не выходит за рамки одного источника (то есть если он выполняется из некешированного документа). Запросы, в которых есть заголовок `AMP-Same-Origin:true`, следует разрешать.
 
-### <a name="send-cors-response-headers">Отправка заголовков CORS-ответа</a>
+### <a id="send-cors-response-headers">Отправка заголовков CORS-ответа</a>
 
 Отправляемый после проверки CORS-запроса HTTP-ответ должен содержать следующие заголовки:
 
@@ -165,7 +165,7 @@ AMP-Same-Origin: true
 
 - Если заголовок `Origin` присутствует, проверьте корректность значения заголовка <code>Origin</code>, после чего продублируйте его в ответе.
 
-### <a name="processing-state-changing-requests">Обработка запросов, меняющих состояние</a>
+### <a id="processing-state-changing-requests">Обработка запросов, меняющих состояние</a>
 
 [tip type="important"] Выполните эти проверки *перед* обработкой запроса. Данная процедура помогает обеспечить защиту от атак CSRF и позволяет избежать обработки запросов из ненадежных источников. [/tip]
 

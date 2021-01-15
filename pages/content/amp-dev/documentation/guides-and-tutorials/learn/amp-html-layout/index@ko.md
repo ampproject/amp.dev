@@ -1,8 +1,13 @@
 ---
-$title: AMPHTML 레이아웃 시스템
-order: 1
+"$title": AMPHTML 레이아웃 시스템
+order: '1'
+formats:
+- websites
+- email
+- stories
+- ads
 teaser:
-  text:  개요
+  text: '개요 '
 ---
 
 <!--
@@ -28,7 +33,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-## 개요 <a name="overview"></a>
+## 개요
 
 레이아웃 시스템의 주요 목표는 JavaScript 및 데이터 호출과 같은 원격 리소스가 완료되기 전 런타임이 요소의 크기를 추론할 수 있도록 AMP 요소가 레이아웃을 표시하게 지원하는 것입니다. 이를 통해 렌더링 및 스크롤 시 끊김 현상을 현저히 줄일 수 있으므로 중요합니다.
 
@@ -61,11 +66,14 @@ AMP는 문서 레이아웃에서 AMP 컴포넌트의 동작 방식을 지정하�
 
 **예시**: 가로세로비를 결정하는 데 너비와 높이가 사용되는 간단한 반응형 이미지.
 
-[sourcecode:html] <amp-img src="/img/amp.jpg" width="1080" height="610" layout="responsive" alt="an image"
-
->
->
-
+[sourcecode:html]
+<amp-img
+  src="/img/amp.jpg"
+  width="1080"
+  height="610"
+  layout="responsive"
+  alt="an image"
+></amp-img>
 [/sourcecode]
 
 `layout` 속성에 지원되는 값:
@@ -80,11 +88,7 @@ AMP는 문서 레이아웃에서 AMP 컴포넌트의 동작 방식을 지정하�
   <tbody>
     <tr>
       <td>없음</td>
-      <td>값이 지정되지 않았거나 컴포넌트 레이아웃이 다음과 같이 추론된 경우:         <ul>           <li>
-<code>height</code>는 있지만 <code>width</code>가 없거나 <code>auto</code>로 설정된 경우에는 <code>fixed-height</code> 레이아웃이 추정됩니다.</li>           <li>
-<code>width</code> 및 <code>height</code> 속성이<code>sizes</code> 또는 <code>heights</code> 속성과 함께 있을 경우 <code>responsive</code> 레이아웃이 추정됩니다.</li>           <li>
-<code>width</code> 및 <code>height</code> 속성이 있으면  <code>fixed</code> 레이아웃이 추정됩니다.</li>           <li> <code>width</code> 및 <code>height</code> 속성이 없으면 <code>container</code> 레이아웃이 추정됩니다.</li>         </ul>
-</td>
+      <td>값이 지정되지 않았거나 컴포넌트 레이아웃이 다음과 같이 추론된 경우:         <ul>           <li> <code>height</code>는 있지만 <code>width</code>가 없거나 <code>auto</code>로 설정된 경우에는 <code>fixed-height</code> 레이아웃이 추정됩니다.</li>           <li> <code>width</code> 및 <code>height</code> 속성이<code>sizes</code> 또는 <code>heights</code> 속성과 함께 있을 경우 <code>responsive</code> 레이아웃이 추정됩니다.</li>           <li> <code>width</code> 및 <code>height</code> 속성이 있으면  <code>fixed</code> 레이아웃이 추정됩니다.</li>           <li> <code>width</code> 및 <code>height</code> 속성이 없으면 <code>container</code> 레이아웃이 추정됩니다.</li>         </ul> </td>
     </tr>
     <tr>
       <td><code>container</code></td>
@@ -116,8 +120,7 @@ AMP는 문서 레이아웃에서 AMP 컴포넌트의 동작 방식을 지정하�
     </tr>
     <tr>
       <td><code>responsive</code></td>
-      <td>요소는 사용 가능한 공간에 위치하며 <code>width</code> 및 <code>height</code> 속성으로 제공된 가로세로비에 맞춰 높이를 자동으로 변경합니다. 이 레이아웃은 <code>amp-img</code>, <code>amp-video</code> 등을 비롯한 대부분의 AMP 요소에 적합합니다. 사용 가능한 공간은 상위 요소에 따라 다르며 <code>max-width</code> CSS를 사용하여 맞춤 설정할 수 있습니다. <code>width</code> 및 <code>height</code> 속성은 반드시 필요합니다.<p><strong>참고</strong>: <code>"layout=responsive"</code>를 사용하는 요소는 고유 크기가 없습니다. 요소의 크기는 컨테이너 요소에 따라 결정됩니다. AMP 요소를 표시하려면 포함하는 요소의 너비와 높이를 지정해야 합니다. 포함하는 요소에 <code>"display:table"</code>을 지정하지 않습니다. 지정할 경우 AMP 요소 표시가 재정의되어 AMP 요소가 표시되지 않게 렌더링됩니다.</p>
-</td>
+      <td>요소는 사용 가능한 공간에 위치하며 <code>width</code> 및 <code>height</code> 속성으로 제공된 가로세로비에 맞춰 높이를 자동으로 변경합니다. 이 레이아웃은 <code>amp-img</code>, <code>amp-video</code> 등을 비롯한 대부분의 AMP 요소에 적합합니다. 사용 가능한 공간은 상위 요소에 따라 다르며 <code>max-width</code> CSS를 사용하여 맞춤 설정할 수 있습니다. <code>width</code> 및 <code>height</code> 속성은 반드시 필요합니다.<p><strong>참고</strong>: <code>"layout=responsive"</code>를 사용하는 요소는 고유 크기가 없습니다. 요소의 크기는 컨테이너 요소에 따라 결정됩니다. AMP 요소를 표시하려면 포함하는 요소의 너비와 높이를 지정해야 합니다. 포함하는 요소에 <code>"display:table"</code>을 지정하지 않습니다. 지정할 경우 AMP 요소 표시가 재정의되어 AMP 요소가 표시되지 않게 렌더링됩니다.</p> </td>
     </tr>
   </tbody>
 </table>
@@ -132,11 +135,16 @@ AMP는 문서 레이아웃에서 AMP 컴포넌트의 동작 방식을 지정하�
 
 다음 예시에서 뷰포트 너비가 `320px`보다 클 경우 이미지 너비는 320px이며 이외의 경우 100vw입니다(뷰포트 너비의 100%).
 
-[sourcecode:html] <amp-img src="https://acme.org/image1.png" width="400" height="300" layout="responsive" sizes="(min-width: 320px) 320px, 100vw"
-
+[sourcecode:html]
+<amp-img
+  src="https://acme.org/image1.png"
+  width="400"
+  height="300"
+  layout="responsive"
+  sizes="(min-width: 320px) 320px, 100vw"
 >
-
- [/sourcecode]
+</amp-img>
+[/sourcecode]
 
 ### `disable-inline-width` <a name="disable-inline-width"></a>
 
@@ -146,11 +154,17 @@ AMP는 문서 레이아웃에서 AMP 컴포넌트의 동작 방식을 지정하�
 
 다음 사례에서 `<amp-img>` 요소의 너비는 영향받지 않으며 `sizes`는 `srcset`의 출처 중 하나를 선택하는 데만 사용됩니다.
 
-[sourcecode:html] <amp-img src="https://acme.org/image1.png" width="400" height="300" layout="responsive" sizes="(min-width: 320px) 320px, 100vw" disable-inline-width
-
+[sourcecode:html]
+<amp-img
+  src="https://acme.org/image1.png"
+  width="400"
+  height="300"
+  layout="responsive"
+  sizes="(min-width: 320px) 320px, 100vw"
+  disable-inline-width
 >
-
- [/sourcecode]
+</amp-img>
+[/sourcecode]
 
 ### `heights` <a name="heights"></a>
 
@@ -165,11 +179,15 @@ AMP는 문서 레이아웃에서 AMP 컴포넌트의 동작 방식을 지정하�
 
 이 예시에서 이미지의 높이는 기본적으로 너비의 80%로 지정되지만 뷰포트 너비가 `500px`보다 클 경우 최대 높이는 `200px`입니다. `heights` 속성이 `width` 및 `height`와 함께 지정되므로 레이아웃은 기본적으로 `responsive`로 설정됩니다.
 
-[sourcecode:html] <amp-img src="https://acme.org/image1.png" width="320" height="256" heights="(min-width:500px) 200px, 80%"
-
+[sourcecode:html]
+<amp-img
+  src="https://acme.org/image1.png"
+  width="320"
+  height="256"
+  heights="(min-width:500px) 200px, 80%"
 >
-
- [/sourcecode]
+</amp-img>
+[/sourcecode]
 
 ### `media` <a name="media"></a>
 
@@ -179,31 +197,42 @@ AMP는 문서 레이아웃에서 AMP 컴포넌트의 동작 방식을 지정하�
 
 다음 예시에서는 상호배타적 미디어 쿼리가 포함된 이미지 2개를 사용합니다. 화면 너비에 따라 이미지 2개 중 하나를 가져와 렌더링합니다. `media` 속성은 모든 AMP 요소에서 지원되므로 광고처럼 이미지가 아닌 요소와 함께 사용될 수 있습니다.
 
-[sourcecode:html] <amp-img media="(min-width: 650px)" src="wide.jpg" width="466" height="355" layout="responsive"
-
->
->
-
-<amp-img media="(max-width: 649px)" src="narrow.jpg" width="527" height="193" layout="responsive"
-
->
->
-
+[sourcecode:html]
+<amp-img
+  media="(min-width: 650px)"
+  src="wide.jpg"
+  width="466"
+  height="355"
+  layout="responsive"
+></amp-img>
+<amp-img
+  media="(max-width: 649px)"
+  src="narrow.jpg"
+  width="527"
+  height="193"
+  layout="responsive"
+></amp-img>
 [/sourcecode]
 
 ### `placeholder` <a name="placeholder"></a>
 
 `placeholder` 속성은 AMP 요소만이 아닌 모든 HTML 요소에 설정될 수 있습니다. `placeholder` 속성은 이 속성으로 표시된 요소가 상위 AMP 요소의 플레이스홀더 역할을 한다는 점을 나타냅니다. 지정된 경우 플레이스홀더 요소는 AMP 요소의 직접 하위 요소여야 합니다. 기본적으로 AMP 요소의 리소스가 다운로드 또는 초기화되지 않은 경우에도 AMP 요소에 플레이스홀더가 표시됩니다. 일반적으로 준비가 완료되면 AMP 요소는 플레이스홀더를 숨기고 콘텐츠를 표시합니다. 플레이스홀더와 관련한 정확한 동작은 요소의 구현에 따라 결정됩니다.
 
-[sourcecode:html] <amp-anim src="animated.gif" width="466" height="355" layout="responsive"> <amp-img placeholder="" src="preview.png" layout="fill"></amp-img> </amp-anim> [/sourcecode]
+[sourcecode:html]
+<amp-anim src="animated.gif" width="466" height="355" layout="responsive">
+  <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+</amp-anim>
+[/sourcecode]
 
 ### `fallback` <a name="fallback"></a>
 
 `fallback` 속성은 AMP 요소만이 아닌 모든 HTML 요소에 설정될 수 있습니다. 폴백 속성이 설정되면 요소는 브라우저에서 해당 요소가 지원되지 않는다는 점을 사용자에게 알릴 수 있습니다. 지정된 경우 폴백 요소는 AMP 요소의 직접 하위 요소여야 합니다. 폴백과과 관련한 정확한 동작은 요소의 구현에 따라 결정됩니다.
 
-[sourcecode:html] <amp-anim src="animated.gif" width="466" height="355" layout="responsive"></amp-anim>
-
-  <div fallback="">Cannot play animated images on this device.</div>  [/sourcecode]
+[sourcecode:html]
+<amp-anim src="animated.gif" width="466" height="355" layout="responsive">
+  <div fallback>Cannot play animated images on this device.</div>
+</amp-anim>
+[/sourcecode]
 
 ### `noloading` <a name="noloading"></a>
 

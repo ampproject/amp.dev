@@ -1,22 +1,20 @@
 ---
-$title: Elementi animati
-$order: 6
-description: Per migliorare ulteriormente una storia web, è possibile applicare elementi animati all'interno di una pagina. Ad esempio, puoi far entrare il titolo da ...
+"$title": Elementi animati
+"$order": '6'
+description: "Per migliorare ulteriormente una storia web, è possibile applicare elementi animati all'interno di una pagina. Ad esempio, puoi far entrare il titolo da ..."
 components:
-- animazioni
+- anim
 author: bpaduch
 ---
 
 Per migliorare ulteriormente una storia web, è possibile applicare elementi animati all'interno di una pagina. Ad esempio, puoi far entrare il titolo in una pagina da sinistra, spostarlo nella pagina, farlo dissolvere ecc. Il framework delle storie AMP fornisce le seguenti animazioni preimpostate da utilizzare nelle storie web:
 
 <table>
-<thead>
-<tr>
+<thead><tr>
   <th width="50%">Animazioni preimpostate</th>
   <th width="25%">Durata predefinita (ms)</th>
   <th width="25%">Ritardo predefinito (ms)</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr>
   <td><code>drop</code></td>

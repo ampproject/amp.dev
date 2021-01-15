@@ -1,7 +1,9 @@
 ---
-$title: Inclusione di iframe
-$order: 10
+"$title": Inclusione di iframe
+"$order": '10'
 description: Scopri come visualizzare e includere contenuti multimediali nelle tue pagine e come utilizzare iframe per visualizzare contenuti avanzati superando le limitazioni di AMP.
+formats:
+- websites
 components:
 - iframe
 author: pbakaus
@@ -10,7 +12,7 @@ contributors:
 - bpaduch
 ---
 
-Scopri come visualizzare e includere contenuti multimediali nelle tue pagine e come utilizzare iframe per visualizzare contenuti avanzati superando le limitazioni di AMP.
+Learn how to display include media content in your pages, and how to use iframes to display advanced content outside of AMP's limitations.
 
 ## Elementi di base
 
@@ -30,9 +32,8 @@ Gli iframe sono particolarmente utili in AMP per visualizzare contenuti non supp
 Per includere un elemento [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) in una pagina, occore prima includere il seguente script nella sezione `<head>`, che si occupa di caricare il codice aggiuntivo per il componente esteso:
 
 [sourcecode:html]
-
-<script async custom-element="amp-iframe"<br>  src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
-
+<script async custom-element="amp-iframe"
+  src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 [/sourcecode]
 
 ### Scrittura dei markup
@@ -67,9 +68,7 @@ Esempio con segnaposto:
 
 Il risultato del rendering sarà:
 
-<amp-iframe width="400" height="225" sandbox="allow-scripts allow-same-origin" layout="responsive" src="https://giphy.com/embed/OWabwoEn7ezug">
-<amp-img placeholder layout="fill" src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"></amp-img>
-</amp-iframe>
+<amp-iframe width="400" height="225" sandbox="allow-scripts allow-same-origin" layout="responsive" src="https://giphy.com/embed/OWabwoEn7ezug"><amp-img placeholder layout="fill" src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"></amp-img></amp-iframe>
 
 ## Esempi
 

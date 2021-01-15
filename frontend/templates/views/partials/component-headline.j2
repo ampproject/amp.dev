@@ -13,15 +13,26 @@
 {% endif %}
 </h1>
 
-{% if doc.experimental or doc.deprecated %}
+{% if doc.experimental or doc.deprecated or doc.bento %}
 <div class="ap--component-tags">
 {% if doc.experimental %}
   {% do doc.styles.addCssFile('css/components/atoms/pill.css') %}
-  <div class="ap-a-pill ap-a-pill-small ap-a-pill-meta">{{ _('Experimental') }}</div>
+  <div class="ap-a-pill ap-a-pill-small ap-a-pill-meta">
+    {{ _('Experimental') }}
+  </div>
 {% endif %}
 {% if doc.deprecated %}
   {% do doc.styles.addCssFile('css/components/atoms/pill.css') %}
-  <div class="ap-a-pill ap-a-pill-small ap-a-pill-meta">{{ _('Deprecated') }}</div>
+  <div class="ap-a-pill ap-a-pill-small ap-a-pill-meta">
+    {{ _('Deprecated') }}
+  </div>
+{% endif %}
+{% if doc.bento %}
+  {% do doc.styles.addCssFile('css/components/atoms/pill.css') %}
+  <div class="ap-a-pill ap-a-pill-small" style="--background-color:
+  #D45A5A; --color: #FFF;">
+    {{ _('Bento') }}
+  </div>
 {% endif %}
 </div>
 {% endif %}

@@ -1,7 +1,9 @@
 ---
-$title: Menggunakan Penampil AMP untuk merender email
-$order: 5
+"$title": Menggunakan Penampil AMP untuk merender email
+"$order": '5'
 author: alabiaga
+formats:
+- email
 ---
 
 Klien email yang ingin mendukung AMP untuk Email harus menggunakan [Penampil AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) untuk mengelola email AMP pengirim mereka. Penampil yang dibuat dengan [perpustakaan Penampil AMP](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration) menyelubungi dokumen AMP dan memungkinkan [kemampuan](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/CAPABILITIES.md) yang mengizinkan komunikasi dua arah dengan dokumen AMP melalui postMessage. Kemampuan ini meliputi pemberian kontrol atas visibilitas email, penyampaian metrik pengguna, dan menyediakan alat untuk memastikan keamanan permintaan XHR yang dibuat dari email.
@@ -64,8 +66,7 @@ Ini adalah contoh kecil di mana tidak ada ketergantungan perpustakaan [misai (mu
 
 Diagram di bawah ini menggambarkan contoh yang lebih nyata tentang cara dokumen AMP di dalam penampil klien email dengan kemampuan `viewerRenderTemplate` dapat menangani perenderan templat [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email).
 
-<amp-img alt="Viewer render template diagram" layout="responsive" width="372" height="279" src="/static/img/docs/viewer_render_template_diagram.png">
-</amp-img>
+<amp-img alt="Viewer render template diagram" layout="responsive" width="372" height="279" src="/static/img/docs/viewer_render_template_diagram.png"></amp-img>
 
 Runtime AMP akan mewakili permintaan pengambilan data komponen [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email) ke penampil, yang pada gilirannya akan meneruskan permintaan ini ke server klien email. Server akan mengumpan URL ini dan hasil pengambilan URL melalui berbagai layanan, mungkin memeriksa validitas URL, konten data yang dihasilkan dari URL itu, dan merender templat [misai (mustache)](https://mustache.github.io/) dengan data itu. Lalu, templat yang dirender akan dikembalikan dan dikirimkan kembali ke penampil di dalam format tanggapan JSON berikut ini.
 

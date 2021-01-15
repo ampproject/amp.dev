@@ -1,7 +1,9 @@
 ---
-$title: Cómo validar los correos electrónicos de AMP
-$order: 1
+"$title": Cómo validar los correos electrónicos de AMP
+"$order": '1'
 author: CrystalOnScript
+formats:
+- email
 ---
 
 Los correos electrónicos de AMP dependen de la biblioteca AMP JS para habilitar numerosas experiencias dinámicas e interactivas para los lectores. Debido a esto, los proveedores del correo electrónico necesitan validar sus mensajes. Las etiquetas de AMP válidas garantizan que los correos electrónicos sean seguros y superen los estándares de la experiencia del usuario.

@@ -1,8 +1,10 @@
 ---
-$title: Menguji email AMP
-$order: 2
-$category: Kembangkan
+"$title": Menguji email AMP
+"$order": '2'
+"$category": Develop
 description: Pastikan pengalaman pengguna yang sangat baik dengan menguji email AMP Anda sebelum mengirimkannya kepada audiens yang lebih banyak.
+formats:
+- email
 author: fstanis
 ---
 
@@ -30,7 +32,3 @@ Pengguna Gmail dapat menggunakan [Playground AMP untuk Email Gmail](https://amp.
 [Email AMP Mail.ru](https://postmaster.mail.ru/amp) menyediakan informasi tentang cara mengaktifkan pengujian di akun Mail.ru Anda.
 
 Pengguna Mail.ru dapat menggunakan [AMP Playground Mail.ru](https://postmaster.mail.ru/amp/playground.html) untuk mengirimkan email kepada diri mereka sendiri untuk diuji.
-
-### Outlook.com
-
-Dokumentasi Outlook.com mempunyai panduan [Memulai dengan AMP untuk Email](https://docs.microsoft.com/en-us/outlook/amphtml/get-started) yang menjelaskan cara menulis dan menguji email AMP.

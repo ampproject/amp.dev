@@ -1,8 +1,10 @@
 ---
-$title: 優れたウェブストーリーを作成するためのベストプラクティス
-$order: 1
+"$title": 優れたウェブストーリーを作成するためのベストプラクティス
+"$order": '1'
 description: 優れたウェブストーリーを作成するためのベストプラクティス
-$category: スタート
+"$category": Start
+formats:
+- stories
 author: CrystalOnScript
 ---
 
@@ -133,8 +135,7 @@ author: CrystalOnScript
   <amp-video layout="responsive" poster="/static/img/docs/guides/storiesbp/do-background-still.jpg" width="1440" height="630" loop autoplay noaudio>
     <source src="/static/img/docs/guides/storiesbp/do-background.webm" type="video/webm"></source>
     <source src="/static/img/docs/guides/storiesbp/do-background.mp4" type="video/mp4"></source>
-  </amp-video>
-</figure>
+  </amp-video></figure>
 
 ランドスケープのクロップ写真は避けましょう。
 

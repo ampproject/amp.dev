@@ -1,6 +1,11 @@
 ---
-$title: "複雑なアニメーションの基礎"
-description: "クラスの追加や削除によって操作できないアニメーション向けに、AMP はアニメーション固有のコンポーネントをいくつか提供しています。これらのコンポーネントはアニメーションに AMP の原則を提供し..."
+"$title": 複雑なアニメーションの基礎
+"$order": '2'
+description: クラスの追加や削除によって操作できないアニメーション向けに、AMP はアニメーション固有のコンポーネントをいくつか提供しています。これらのコンポーネントはアニメーションに AMP の原則を提供し...
+formats:
+- websites
+- ads
+author: CrystalOnScript
 ---
 
 [クラスの追加や削除](triggering_css_animations.md)によって操作できないアニメーション向けに、AMP はアニメーション固有のコンポーネントをいくつか提供しています。これらのコンポーネントは、アニメーションに AMP の原則を適用し、高速化、効率化、およびユーザー中心のエクスペリエンスを提供します。AMP はキーフレーム内で使用できる CSS プロパティを制限していますが、ほかに作業を施すことなく、細かい制御、シームレスなアニメーション、およびクロスブラウザの互換性などのメリットを提供しています。
@@ -82,7 +87,6 @@ CSS では、トランジションを使用して、状態間を変化させる�
 タグまたはクラスが同じ要素には、タイミングプロパティを指定し、トップレベルのアニメーションに定義された変数の値をオーバーライドすることができます。
 
 [example preview="top-frame" playground="true" imports="amp-animation"]
-
 ```html
 <body>
   <h1>Hello World!</h1>
@@ -115,7 +119,6 @@ CSS では、トランジションを使用して、状態間を変化させる�
   </button>
 </body>
 ```
-
 [/example]
 
 ### チェーンアニメーション
@@ -207,7 +210,6 @@ CSS では、トランジションを使用して、状態間を変化させる�
 [CSS extensions](../../../../documentation/components/reference/amp-animation.md#css-extensions) とともに [`var()` と `calc()` expressions](../../../../documentation/components/reference/amp-animation.md) を使用すると、任意の数の要素で動作する複雑な時限式アニメーションを記述することができます。この方法を使えば、動的なユーザー生成データを簡単かつ滑らかにアニメーションすることができます。
 
 [example preview="top-frame" playground="true"]
-
 ```html
 <head>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
@@ -255,8 +257,7 @@ CSS では、トランジションを使用して、状態間を変化させる�
   </div>
 </body>
 ```
-
-[/example] この例は、次のようにして動作しています。
+[/example]
 
 - 変数 `--duration` を宣言し、値を 2 秒にします。
 - var `--duration` の値に `duration` を設定します。
@@ -274,7 +275,6 @@ CSS では、トランジションを使用して、状態間を変化させる�
 アニメーションには、カスタム効果を可能にする [`conditions`](../../../../documentation/components/reference/amp-animation.md#conditions) を含めることができます。[`media` 条件](../../../../documentation/components/reference/amp-animation.md#media-query)を使って任意の画面サイズに対応し、ブラウザの下位互換をサポートするアニメーションを作成するには、[`switch` 文](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement)で [`supports` 条件](../../../../documentation/components/reference/amp-animation.md#supports-condition)を使用します。
 
 [example preview="top-frame" playground="true"]
-
 ```html
 <head>
  <style amp-custom>
@@ -334,7 +334,7 @@ CSS では、トランジションを使用して、状態間を変化させる�
     }
   </script>
 </amp-animation>
-
+    
   <div class="rain">
     <div class="drop"></div>
     <div class="drop right"></div>
@@ -348,5 +348,4 @@ CSS では、トランジションを使用して、状態間を変化させる�
   <button on="tap:mediaAnimation.start">Start</button>
 </body>
 ```
-
 [/example]

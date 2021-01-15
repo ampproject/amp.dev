@@ -1,8 +1,10 @@
 ---
-$title: Convierta su sitio AMP en una Aplicación Web Progresiva (PWA)
-$order: 10
+"$title": Convierta su sitio AMP en una Aplicación Web Progresiva (PWA)
+"$order": '10'
 description: Al almacenar en el caché los recursos dentro del navegador, una Aplicación Web Progresiva (PWA) será capaz de proporcionar datos, activos y páginas sin conexión al usuario para que siga colaborando y se mantenga informado.
-tutorial: true
+tutorial: 'true'
+formats:
+- websites
 author: crystalonscript
 ---
 
@@ -18,7 +20,7 @@ Utilice un servidor web local para obtener una vista previa del sitio web.
 
 [tip type="default"] **SUGERENCIA –** Para que el servidor web sea más rápido, ejecute `python -m SimpleHTTPServer`. [/tip]
 
-Debería ser capaz de ver la página de destino Lyrical Lightning, del festival Mobile Music Magic. Esta incluye un enlace en la página de inicio para consultar el horario y los escenarios donde se presentarán las bandas.
+You should be able to view the landing page for Lyrical Lyghtning, the Mobile Music Magic festival. It has one link on the homepage to view the schedule and which stage the bands are on.
 
 {{ image('/static/img/docs/tutorials/tut-lyricallyghtning.png', 594, 558, alt='Image of PWA' ) }}
 
@@ -30,7 +32,29 @@ El [manifiesto web de la aplicación](https://developers.google.com/web/fundamen
 
 Agregue un archivo titulado `manifest.json` en su repositorio con el siguiente código:
 
-[sourcecode:JSON] { "short_name": "LyLy", "name": "Lyrical Lyghtning", "icons": [ { "src": "./images/amplogo192.png", "type": "image/png", "sizes": "192x192" }, { "src": "./images/amplogo512.png", "type": "image/png", "sizes": "512x512" } ], "start_url": "/index.html", "background_color": "#222325", "display": "standalone", "scope": "/", "theme_color": "#222325" } [/sourcecode]
+[sourcecode:JSON]
+{
+"short_name": "LyLy",
+"name": "Lyrical Lyghtning",
+"icons": [
+{
+"src": "./images/amplogo192.png",
+"type": "image/png",
+"sizes": "192x192"
+},
+{
+"src": "./images/amplogo512.png",
+"type": "image/png",
+"sizes": "512x512"
+}
+],
+"start_url": "/index.html",
+"background_color": "#222325",
+"display": "standalone",
+"scope": "/",
+"theme_color": "#222325"
+}
+[/sourcecode]
 
 # Agregar el Service Worker en AMP
 
@@ -42,7 +66,10 @@ El AMP Service Worker [almacena en el caché los scripts de AMP](https://github.
 
 Cree un archivo llamado `sw.js` y agregue el siguiente código:
 
-[sourcecode:js] importScripts('https://cdn.ampproject.org/sw/amp-sw.js'); AMP_SW.init(); [/sourcecode]
+[sourcecode:js]
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+AMP_SW.init();
+[/sourcecode]
 
 Con solo dos líneas de código, comienza la importación de AMP Service Worker a su Service Worker y se inicializa.
 
@@ -52,23 +79,35 @@ Los sitios web de AMP utilizan el componente [`<amp-install-serviceworker>`](../
 
 Coloque la etiqueta del script que se necesita en el encabezado de `index.html` y el elemento `<amp-install-serviceworker>` dentro de `<body>`:
 
-[sourcecode:html] …
+[sourcecode:html]
+…
 
-<script async="" custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 
-… ... {amp-install-serviceworker0} {/amp-install-serviceworker0}
+…
+...
+<amp-install-serviceworker src="/sw.js"
+           data-iframe-src="install-sw.html"
+           layout="nodisplay">
+</amp-install-serviceworker>
 
+</body>
+[/sourcecode]
 
+[tip type="important"] **Important –** The service worker should be served from the root directory (`/sw.js`) to be able to cache all the content of your site. [/tip]
 
-[tip type="important"] **Importante:** El service worker debe alojarse desde el directorio raíz (`/sw.js `) para poder almacenar en el caché todo el contenido de su sitio. [/tip]
-
-El componente `<amp-install-serviceworker>` instala el service worker mediante la creación de un iframe y la ejecución del archivo `data-iframe-src`. Entonces, cree el archivo `install-sw.html` y agregue el siguiente código:
+The `<amp-install-serviceworker>` installs the service worker by creating an iframe and running the `data-iframe-src` file. Create the `install-sw.html` file and add the following code:
 
 [sourcecode:html]
 
 <!doctype html>
-
-<title>installing service worker</title> <script type="text/javascript"><br> if('serviceWorker' in navigator) {<br>   navigator.serviceWorker.register('./sw.js');<br> };<br></script> [/sourcecode]
+<title>installing service worker</title>
+<script type='text/javascript'>
+ if('serviceWorker' in navigator) {
+   navigator.serviceWorker.register('./sw.js');
+ };
+</script>
+[/sourcecode]
 
 El iframe registra el archivo AMP Service Worker en el navegador.
 
@@ -82,7 +121,15 @@ En nuestra aplicación del festival de música se almacenarán en el caché los 
 
 Puede configurar el AMP Service Worker para [almacenar activos en el caché](https://github.com/ampproject/amp-sw/tree/master/src/modules/asset-caching), tales como imágenes, videos y fuentes. En este caso, lo usaremos para almacenar en el caché nuestra imagen de fondo y el logotipo de AMP. Para ello, abra el archivo `sw.js` y actualícelo mediante el siguiente código:
 
-[sourcecode:js] importScripts('https://cdn.ampproject.org/sw/amp-sw.js'); AMP_SW.init({ assetCachingOptions: [{ regexp: /.(png|jpg)/, cachingStrategy: 'CACHE_FIRST' }] }); [/sourcecode]
+[sourcecode:js]
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+AMP_SW.init({
+assetCachingOptions: [{
+regexp: /\.(png|jpg)/,
+cachingStrategy: 'CACHE_FIRST'
+}]
+});
+[/sourcecode]
 
 En él especificaremos que la estrategia de almacenamiento en el caché será [Cache first](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-falling-back-to-network). Lo cual quiere decir que la aplicación intentará extraer imágenes desde Cache first antes de solicitar cualquier otra cosa desde la red. Esto es especialmente útil para esta aplicación ya que no actualizaremos nuestra imagen de fondo ni el logotipo de AMP.
 
@@ -90,13 +137,29 @@ En él especificaremos que la estrategia de almacenamiento en el caché será [C
 
 Mediante el AMP Service Worker se cargarán previamente los enlaces que cuenten con el atributo `data-rel=prefetch`. Esto permite que los usuarios visualicen páginas sin conexión incluso si todavía no han visitado las páginas. Entonces, agregaremos el atributo a nuestra etiqueta del enlace para `lineup.html`.
 
-[sourcecode:html] ... <a href="/lineup.html" data-rel="prefetch">Consulte el código completo</a> ... [/sourcecode]
+[sourcecode:html]
+...
+<a href="/lineup.html" data-rel="prefetch">See Full Lineup</a>
+...
+[/sourcecode]
 
 # Cómo mostrar una página sin conexión
 
 Para lidiar con los casos inesperados o hacer clic en los enlaces de las páginas que no cargamos previamente, agregaremos una página sin conexión para ofrecer una experiencia de usuario que sea consistente y “sobre la marca”, en vez de mostrar una página sin conexión genérica en el navegador. Descargue [ `offline.html` aquí](/static/files/tutorials/offline.zip) y actualice `sw.js` mediante el siguiente código:
 
-[sourcecode:js] importScripts('https://cdn.ampproject.org/sw/amp-sw.js'); AMP_SW.init({ assetCachingOptions: [{ regexp: /.(png|jpg)/, cachingStrategy: 'CACHE_FIRST' }], offlinePageOptions: { url: '/offline.html', assets: [] } }); [/sourcecode]
+[sourcecode:js]
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+AMP_SW.init({
+assetCachingOptions: [{
+regexp: /\.(png|jpg)/,
+cachingStrategy: 'CACHE_FIRST'
+}],
+offlinePageOptions: {
+url: '/offline.html',
+assets: []
+}
+});
+[/sourcecode]
 
 # Cómo probar su PWA
 

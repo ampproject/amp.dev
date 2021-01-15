@@ -20,7 +20,7 @@ have a look and request a pull request there.
 - [Релизные каналы](#release-channels)
     - [Канал Nightly](#nightly)
     - [Еженедельные каналы](#weekly)
-        - [Каналы Experimental и Beta](#experimental-and-beta-channels)
+        - [Каналы Experimental и Beta](#beta-and-experimental-channels)
     - [Долгосрочный стабильный канал (lts)](#long-term-stable-lts)
 - [Как определить, попало ли ваше изменение в релиз](#determining-if-your-change-is-in-a-release)
 - [Периодичность выхода релизов](#release-cadence)
@@ -33,7 +33,7 @@ have a look and request a pull request there.
 
 Среда выполнения AMP и расширения для AMP распространяются по ряду различных *релизных каналов*. Каждый канал служит определенной цели как для разработчиков, так и для самого проекта AMP HTML. Подробнее о том, как и когда код из репозитория [`ampproject/amphtml`](https://github.com/ampproject/amphtml) попадает в релизные сборки, читайте в [разделе о периодичности выхода релизов](#release-cadence).
 
-Определить, вошел ли тот или иной пул-реквест в один из релизных каналов, перечисленных ниже, можно по меткам *PR Use: In Canary*, *PR Use: In Production* или *PR Use: In LTS* на GitHub (подробности смотрите в разделе о том, [как определить, попало ли ваше изменение в релиз](#Determining-if-your-change-is-in-a-release)).
+Определить, вошел ли тот или иной пул-реквест в один из релизных каналов, перечисленных ниже, можно по меткам *PR Use: In Canary*, *PR Use: In Production* или *PR Use: In LTS* на GitHub (подробности смотрите в разделе о том, [как определить, попало ли ваше изменение в релиз](#determining-if-your-change-is-in-a-release)).
 
 ### Канал Nightly <a name="nightly"></a>
 
@@ -75,7 +75,7 @@ have a look and request a pull request there.
 
 Если второй понедельник месяца является праздничным днем, публикация сборки происходит по окончании [заморозки релиза](#release-freezes).
 
-Важно: издатели, которые выбрали релизный канал **lts**, не смогут использовать недавно добавленные функции. Из-за более длительного релизного цикла сборка на канале **lts** может отставать от текущей (`HEAD`) версии в репозитории [`ampproject/amphtml`](https://github.com/ampproject/amphtml) на срок до семи недель. О том, как узнать о доступности того или иного изменения в рамках выбранного вами релизного цикла, читайте в разделе [Как определить, попало ли ваше изменение в релиз](#Determining-if-your-change-is-in-a-release).
+Важно: издатели, которые выбрали релизный канал **lts**, не смогут использовать недавно добавленные функции. Из-за более длительного релизного цикла сборка на канале **lts** может отставать от текущей (`HEAD`) версии в репозитории [`ampproject/amphtml`](https://github.com/ampproject/amphtml) на срок до семи недель. О том, как узнать о доступности того или иного изменения в рамках выбранного вами релизного цикла, читайте в разделе [Как определить, попало ли ваше изменение в релиз](#determining-if-your-change-is-in-a-release).
 
 ## Как определить, попало ли ваше изменение в релиз <a name="determining-if-your-change-is-in-a-release"></a>
 
@@ -102,7 +102,7 @@ have a look and request a pull request there.
 
 Мы стараемся как можно точнее следовать этому графику, хотя из-за осложнений могут возникать задержки. Вы можете отслеживать текущее состояние любого релиза при помощи [задач с параметром *Type: Release* в GitHub](https://github.com/ampproject/amphtml/labels/Type%3A%20Release), а также на [канале #release проекта AMP в Slack](https://amphtml.slack.com/messages/C4NVAR0H3/) ([зарегистрироваться в Slack можно по этой ссылке](https://bit.ly/amp-slack-signup)).
 
-- Вторник, [11:00 по тихоокеанскому времени](https://www.google.com/search?q=11am+pacific+in+current+time+zone): на основе [последней сборки из ветки master, которая проходит все наши тесты](https://travis-ci.org/ampproject/amphtml/branches), создаются новые сборки **experimental** и **beta**, которые затем распространяются среди пользователей AMP, присоединившихся к каналам [Experimental](#amp-experimental-and-beta-channels) и [Beta](#amp-experimental-and-beta-channels) соответственно.
+- Вторник, [11:00 по тихоокеанскому времени](https://www.google.com/search?q=11am+pacific+in+current+time+zone): на основе [последней сборки из ветки master, которая проходит все наши тесты](https://travis-ci.org/ampproject/amphtml/branches), создаются новые сборки **experimental** и **beta**, которые затем распространяются среди пользователей AMP, присоединившихся к каналам [Experimental](#beta-and-experimental-channels) и [Beta](#beta-and-experimental-channels) соответственно.
 - Среда: мы проверяем отчеты об ошибках от пользователей на каналах *Experimental* и *Beta* и, если проблем не обнаружено, активируем сборку **beta** для 1 процента AMP-страниц.
 - Четверг — понедельник: мы продолжаем следить за данными о частоте возникновения ошибок и отчетами об ошибках, поступающими от пользователей на каналах *Experimental* и *Beta*, а также с 1 процента страниц, использующих сборки **experimental** и **beta**.
 - Вторник следующей недели: сборка **beta** публикуется на канале **stable** (т. е. все AMP-страницы теперь будут использовать эту сборку).

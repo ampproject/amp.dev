@@ -133,7 +133,7 @@ async function getMetaForWorkigGroup(workingGroup) {
     log.warn(`.. ${workingGroup.name} - METADATA.yaml not found`);
   }
   try {
-    meta = yaml.safeLoad(meta);
+    meta = yaml.load(meta);
   } catch (e) {
     log.error(
       `.. ${workingGroup.name} - Failed loading ${DEFAULT_ORGANISATION}` +

@@ -1,7 +1,10 @@
 ---
-$title: "CSS 애니메이션 및 트랜지션 트리거"
-$order: 1
-description: "페이지의 CSS 애니메이션 트리거는 JavaScript로 지원되는 클래스 추가 및 제거에 의존합니다. toggleClass 액션을 사용하여 AMP 페이지의 동일한 동작을 수행할 수도 있습니다..."
+"$title": CSS 애니메이션 및 트랜지션 트리거
+"$order": '1'
+description: 페이지의 CSS 애니메이션 트리거는 JavaScript로 지원되는 클래스 추가 및 제거에 의존합니다. toggleClass 액션을 사용하여 AMP 페이지의 동일한 동작을 수행할 수도 있습니다...
+formats:
+- websites
+- ads
 ---
 
 CSS 애니메이션은 웹 요소가 하나의 CSS 스타일 구성에서 다른 구성으로 전환하는 트랜지션을 지원합니다. 브라우저는 로드 시 정의된 애니메이션을 시작할 수 있지만 CSS 애니메이션을 트리거한 이벤트는 [클래스 추가 및 제거에 의존합니다](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations). AMP는 두 가지 애니메이션 유형을 모두 지원합니다.
@@ -67,7 +70,7 @@ AMP 액션 `toggleClass`를 활용하면 정의된 요소에 클래스를 추가
 elementName.toggleClass(class="className")
 ```
 
-애니메이션 햄버거 메뉴와 같이 사용자 인터랙션을 허용할 동일한 요소에서 클래스를 변경할 수 있습니다.
+애니메이션 햄버거 메뉴와 같이 사용자 인터랙션을 허용할 동일한 요소에서 클래스를 전환할 수 있습니다.
 
 ```html
  <div id="hamburger" tabindex=1 role=button on="tap:hamburger.toggleClass(class='close')">
@@ -91,7 +94,6 @@ elementName.toggleClass(class="className")
 [`amp-bind`](../../../../documentation/components/reference/amp-bind.md)를 사용하여 상태가 지정된 CSS 클래스를 개수에 상관없이 추가 또는 제거할 수 있습니다.
 
 [example preview="top-frame" playground="true"]
-
 ```html
 <head>
   <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
@@ -156,7 +158,6 @@ elementName.toggleClass(class="className")
   </button>
 </body>
 ```
-
 [/example]
 
 우선 문서 `head`의 `<style amp-custom>` 태그에 CSS 클래스 목록을 추가하여 여러 클래스 애니메이션을 정의합니다.

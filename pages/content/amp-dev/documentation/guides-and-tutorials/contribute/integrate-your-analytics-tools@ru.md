@@ -9,13 +9,6 @@ teaser:
 toc: 'true'
 ---
 
-<!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md.
-Please do not change this file.
-If you have found a bug or an issue please
-have a look and request a pull request there.
--->
-
 ##  Обзор
 
 Если вы — владелец инструмента SaaS («программное обеспечение как услуга»), позволяющего издателям лучше анализировать свой трафик и посетителей, вы можете интегрировать свой сервис в `amp-analytics`. Такая интеграция позволит вашим клиентам изучать характер трафика на своих страницах AMP HTML.
@@ -25,7 +18,6 @@ have a look and request a pull request there.
 Прежде чем вы сможете добавить свой аналитический сервис в среду выполнения AMP HTML, вам может потребоваться выполнить следующее:
 
 - Определите типы [переменных](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) и [запросов,](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-analytics.md#requests) которые понадобятся вашей службе аналитики в документе AMP HTML.
-- Определите, требуется ли подключаемый модуль пакетной обработки для создания конечного URL-адреса при использовании запросов с пакетным поведением.
 - Определите триггеры, которые будут инициировать отправку со страницы необходимых вашему сервису аналитических запросов.
 - Подумайте, будете ли вы [отслеживать пользователей при переходе между собственным](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md) и сторонними контекстами AMP, и если да, то каким образом.
 - Определите, как ваша панель аналитики будет обрабатывать AMP-трафик.
@@ -48,11 +40,10 @@ have a look and request a pull request there.
     3. Пример в справочном файле [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html).
     4. Тест в файле [extensions/amp-analytics/0.1/test/vendor-requests.json](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../extensions/amp-analytics/0.1/test/vendor-requests.json).
     5. Добавьте свой аналитический сервис в список поддерживаемых поставщиков в файле [extensions/amp-analytics/0.1/analytics-vendors-list.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./analytics-vendors-list.md). Укажите его тип, описание и ссылку на документацию по использованию.
-3. При необходимости, новый пакетный плагин. См. инструкции в разделе [Добавление пакетного плагина](#add-batch-plugin).
-4. Протестируйте новый пример, который вы поместили в [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html), чтобы убедиться, что обращения из примера работают должным образом — например, что необходимые данные собираются и отображаются на инструментальной панели вашего аналитического сервиса.
-5. Отправьте пул-реквест с этим патчем, указав ссылку на задачу Intent-To-Implement.
-6. Обновите документацию по использованию вашего сервиса и проинформируйте своих клиентов.
-7. Настоятельно рекомендуется [проводить интеграционный тест вне репозитория AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../3p/README.md#adding-proper-integration-tests).
+3. Протестируйте новый пример, который вы поместили в [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html), чтобы убедиться, что обращения из примера работают должным образом — например, что необходимые данные собираются и отображаются на инструментальной панели вашего аналитического сервиса.
+4. Отправьте пул-реквест с этим патчем, указав ссылку на задачу Intent-To-Implement.
+5. Обновите документацию по использованию вашего сервиса и проинформируйте своих клиентов.
+6. Настоятельно рекомендуется [проводить интеграционный тест вне репозитория AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../3p/README.md#adding-proper-integration-tests).
 
 ## Менеджеры тегов <a name="tag-managers"></a>
 

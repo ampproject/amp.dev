@@ -1,6 +1,6 @@
 ---
-$title: Convalida della sintassi AMPHTML
-$order: 3
+"$title": Convalida della sintassi AMPHTML
+"$order": '3'
 description: Per garantire la corretta visualizzazione degli annunci, occorre convalidarne la sintassi AMPHTML. Nel browser, aprire lo strumento di convalida AMP e verificare di aver selezionato AMP4ADS come formato HTML.
 ---
 

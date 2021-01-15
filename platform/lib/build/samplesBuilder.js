@@ -282,7 +282,7 @@ class SamplesBuilder {
 
     const platformHost = config.getHost(config.hosts.platform);
     const websocketHost = config.getHost(config.hosts.websocket);
-    
+
     const parsedSample = await abe.parseSample(samplePath, {
       'base_path': `${platformHost}${this._getBaseRoute(sample)}`,
       'canonical': `${platformHost}${this._getDocumentationRoute(sample)}`,
@@ -572,7 +572,7 @@ class SamplesBuilder {
     // Build actual file needed for Grow to render the documentation
     manual.contents = Buffer.from([
       '---',
-      yaml.safeDump(header, {'lineWidth': 500}),
+      yaml.dump(header, {'lineWidth': 500}),
       // Add example manually as constructors may not be quoted
       `example: !g.json /${DOCUMENTATION_POD_PATH}/${manual.stem}.json`,
       // ... and some additional information that is used by the example teaser
@@ -611,7 +611,7 @@ class SamplesBuilder {
       }};
     }
 
-    return yaml.safeDump(teaserData, {'lineWidth': 500});
+    return yaml.dump(teaserData, {'lineWidth': 500});
   }
 
   /**
@@ -774,7 +774,7 @@ class SamplesBuilder {
     preview.isPreview = true;
     preview.contents = Buffer.from([
       '---',
-      yaml.safeDump({
+      yaml.dump({
         '$title': parsedSample.document.title,
         '$view': PREVIEW_TEMPLATE,
         '$category': this._getCategory(sample),

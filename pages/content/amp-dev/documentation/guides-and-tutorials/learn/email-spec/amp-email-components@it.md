@@ -1,7 +1,11 @@
 ---
-$title: Componenti supportati da AMP per e-mail
+"$title": Componenti supportati da AMP per e-mail
+order: '3'
+formats:
+- email
 teaser:
-  text: "Di seguito è riportato l''elenco dei componenti AMP attualmente supportati nei messaggi e-mail AMP. Tali componenti sono raggruppati nelle seguenti categorie:"
+  text: 'Di seguito è riportato l''elenco dei componenti AMP attualmente supportati nei messaggi e-mail AMP. Tali componenti sono raggruppati nelle seguenti categorie:'
+toc: 'true'
 ---
 
 <!--
@@ -33,7 +37,7 @@ Di seguito è riportato l'elenco dei [componenti AMP](https://amp.dev/documentat
 - [Layout](#layout)
 - [Contenuti multimediali](#media)
 
-## <a name="dynamic-content">Contenuti dinamici</a>
+## <a id="dynamic-content">Contenuti dinamici</a>
 
 Elemento | Descrizione
 --- | ---

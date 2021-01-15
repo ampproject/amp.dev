@@ -17,7 +17,7 @@ imports="amp-list,amp-carousel,amp-bind,amp-lightbox-gallery" ]
 
 ```html
 <!doctype html>
-<html ⚡ lang="en"
+<html ⚡ lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">

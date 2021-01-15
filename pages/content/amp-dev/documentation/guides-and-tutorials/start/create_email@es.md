@@ -1,8 +1,10 @@
 ---
-$title: Cómo crear su primer correo electrónico de AMP
-$order: 0
+"$title": Cómo crear su primer correo electrónico de AMP
+"$order": '0'
 description: Descubra qué hace diferentes a los correos electrónicos de AMP al crear su primer correo electrónico.
-tutorial: true
+tutorial: 'true'
+formats:
+- email
 author: CrystalOnScript
 ---
 

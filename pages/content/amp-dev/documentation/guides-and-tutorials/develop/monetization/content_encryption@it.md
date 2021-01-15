@@ -1,8 +1,10 @@
 ---
-$title: Protezione dei contenuti degli utenti con la crittografia lato client
-$titles:
-  teaser: Protezione dei contenuti degli utenti con la crittografia lato client.
-$order: 10
+formats:
+- websites
+"$title": Protezione dei contenuti degli utenti con la crittografia lato client
+"$titles":
+  teaser: Protect your subscription content with client-side encryption.
+"$order": '10'
 description: Tutti i problemi di crittografia dei contenuti possono essere risolti implementando procedure di verifica degli abbonati premium e la decrittografia dei contenuti sul lato client. Con questa soluzione, gli utenti con accesso premium potranno decrittografare i contenuti senza dover caricare una nuova pagina o attendere la risposta di un backend!
 author: CrystalOnScript
 ---
@@ -24,7 +26,7 @@ Per implementare la decrittografia sul lato client, occorre combinare procedure 
 1. Creare una chiave simmetrica casuale per ogni documento, assegnando a ogni documento una chiave *univoca*. {{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='Chiavi univoche per ciascun documento.') }}
 2. Crittografare i contenuti premium con la chiave simmetrica del suo documento. {{ image('/static/img/docs/guides/cse/cse3.jpg', 130, 243, align='', layout='intrinsic', alt='Usare la chiave del documento per crittografare i contenuti premium.') }} La chiave simmetrica permette di usare la stessa chiave per crittografare e decrittografare i contenuti. {{ image('/static/img/docs/guides/cse/cse4.jpg', 188, 141, align='', layout='intrinsic', alt='La stessa chiave permette di crittografare e decrittografare i contenuti.') }}
 3. Crittografare la chiave del documento con una chiave pubblica, usando un protocollo di [crittografia ibrido](https://en.wikipedia.org/wiki/Hybrid_cryptosystem) per crittografare le chiavi simmetriche. {{ image('/static/img/docs/guides/cse/cse5.jpg', 309, 114, align='', layout='intrinsic', alt='Un protocollo di crittografia ibrido permette di crittografare la chiave simmetrica con una chiave pubblica.') }}
-4. Usare i componenti [`<amp-subscriptions>`](https://amp.dev/documentation/components/amp-subscriptions/) e/o [`<amp-subscriptions-google>`](https://amp.dev/documentation/components/amp-subscriptions-google/?format=websites) per memorizzare la chiave del documento crittografato  all'interno del documento AMP, insieme ai contenuti premium crittografati. {{ image('/static/img/docs/guides/cse/cse6.jpg', 264, 261, align='', layout='intrinsic', alt='Entrambe la chiavi sono memorizzate all\'interno del documento AMP.') }}
+4. Usare i componenti [`<amp-subscriptions>`](https://amp.dev/documentation/components/amp-subscriptions/) e/o [`<amp-subscriptions-google>`](https://amp.dev/documentation/components/amp-subscriptions-google/?format=websites) per memorizzare la chiave del documento crittografato  all\'interno del documento AMP, insieme ai contenuti premium crittografati. {{ image('/static/img/docs/guides/cse/cse6.jpg', 264, 261, align='', layout='intrinsic', alt='Entrambe la chiavi sono memorizzate all\'interno del documento AMP.') }}
 
 Il documento AMP conserva la chiave crittografata al suo interno. Ciò impedisce il disaccoppiamento del documento crittografato dalla chiave che lo decodifica.
 

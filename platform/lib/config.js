@@ -203,7 +203,7 @@ class Config {
     Object.assign(options, this.options);
 
     let podspec = fs.readFileSync(GROW_CONFIG_TEMPLATE_PATH, 'utf-8');
-    podspec = yaml.safeLoad(podspec);
+    podspec = yaml.load(podspec);
 
     // disable sitemap (useful for test builds)
     if (options.noSitemap) {

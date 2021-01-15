@@ -1,8 +1,13 @@
 ---
-$title: AMPHTML のレイアウトシステム
-order: 1
+"$title": AMPHTML のレイアウトシステム
+order: '1'
+formats:
+- websites
+- email
+- stories
+- ads
 teaser:
-  text: 概要
+  text: '概要 '
 ---
 
 <!--
@@ -28,7 +33,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-## 概要 <a name="overview"></a>
+## 概要
 
 レイアウトシステムの第一の目標は、JavaScript やデータ呼び出しなどのリモートリソースが完了する前に、ランタイムが要素のサイズを推論できるように、AMP 要素がレイアウトを表現できるようにすることです。レンダリングとスクロールの素早い方向転換を大幅に減らすことができるため、重要なことです。
 
@@ -61,11 +66,14 @@ AMP は、AMP コンポーネントがドキュメントレイアウト内でど
 
 **例**: アスペクト比の決定に width と height が使用された単純なレスポンシブ画像。
 
-[sourcecode:html] <amp-img src="/img/amp.jpg" width="1080" height="610" layout="responsive" alt="画像"
-
->
->
-
+[sourcecode:html]
+<amp-img
+  src="/img/amp.jpg"
+  width="1080"
+  height="610"
+  layout="responsive"
+  alt="an image"
+></amp-img>
 [/sourcecode]
 
 以下は、`layout` 属性でサポートされている値です。
@@ -80,12 +88,7 @@ AMP は、AMP コンポーネントがドキュメントレイアウト内でど
   <tbody>
     <tr>
       <td>なし</td>
-      <td>値が指定されていない場合、コンポーネントのレイアウトは次のように推論されます。         <ul>           <li>
-<code>height</code> が存在し、<code>width</code> が欠落しているか <code>auto</code> に設定されている場合、<code>fixed-height</code> レイアウトが使用されます。</li>           <li>
-<code>width</code> と <code>height</code> が <code>sizes</code> または <code>heights</code> 属性とともに存在する場合、<code>responsive</code> レイアウトが使用されます。</li>           <li>
-<code>width</code> と <code>height</code> が存在する場合、<code>fixed</code> レイアウトが使用されます。</li>           <li>
-<code>width</code> と <code>height</code> が欠落している場合、<code>container</code> レイアウトが使用されます。</li>         </ul>
-</td>
+      <td>値が指定されていない場合、コンポーネントのレイアウトは次のように推論されます。         <ul>           <li> <code>height</code> が存在し、<code>width</code> が欠落しているか <code>auto</code> に設定されている場合、<code>fixed-height</code> レイアウトが使用されます。</li>           <li> <code>width</code> と <code>height</code> が <code>sizes</code> または <code>heights</code> 属性とともに存在する場合、<code>responsive</code> レイアウトが使用されます。</li>           <li> <code>width</code> と <code>height</code> が存在する場合、<code>fixed</code> レイアウトが使用されます。</li>           <li> <code>width</code> と <code>height</code> が欠落している場合、<code>container</code> レイアウトが使用されます。</li>         </ul> </td>
     </tr>
     <tr>
       <td><code>container</code></td>
@@ -105,8 +108,7 @@ AMP は、AMP コンポーネントがドキュメントレイアウト内でど
     </tr>
     <tr>
       <td><code>flex-item</code></td>
-      <td>
-<code>flex-item</code> レイアウトが指定された要素とそのような親要素に含まれる子要素は、親要素がフレキシブルコンテナ（<code>display: flex</code>）である場合の親コンテナの残りのスペースを使用します。<code>width</code> と <code>height</code> 属性は不要です。</td>
+      <td> <code>flex-item</code> レイアウトが指定された要素とそのような親要素に含まれる子要素は、親要素がフレキシブルコンテナ（<code>display: flex</code>）である場合の親コンテナの残りのスペースを使用します。<code>width</code> と <code>height</code> 属性は不要です。</td>
     </tr>
     <tr>
       <td><code>intrinsic</code></td>
@@ -118,8 +120,7 @@ AMP は、AMP コンポーネントがドキュメントレイアウト内でど
     </tr>
     <tr>
       <td><code>responsive</code></td>
-      <td>要素は利用可能なスペースを使用し、高さは <code>width</code> と <code>height</code> 属性によって指定されたアスペクト比に自動設定されます。このレイアウトは、<code>amp-img</code> や <code>amp-video</code> などを含むほとんどの AMP 要素に最適です。利用できるスペースは親要素によって決まりますが、<code>max-width</code> CSS を使ってカスタマイズすることもできます。<code>width</code> と <code>height</code> 属性を使用する必要があります。<p><strong>注意</strong>: <code>"layout=responsive"</code> を使用する要素には固有のサイズはありません。要素のサイズはそのコンテナ要素によって決定されます。AMP 要素が確実に表示されるようにするには、コンテナ要素の幅と高さを指定しておく必要があります。コンテナ要素に <code>"display:table"</code> を指定すると、AMP 要素の表示がオーバーライドされ、AMP 要素が非表示状態でレンダリングされます。</p>
-</td>
+      <td>要素は利用可能なスペースを使用し、高さは <code>width</code> と <code>height</code> 属性によって指定されたアスペクト比に自動設定されます。このレイアウトは、<code>amp-img</code> や <code>amp-video</code> などを含むほとんどの AMP 要素に最適です。利用できるスペースは親要素によって決まりますが、<code>max-width</code> CSS を使ってカスタマイズすることもできます。<code>width</code> と <code>height</code> 属性を使用する必要があります。<p><strong>注意</strong>: <code>"layout=responsive"</code> を使用する要素には固有のサイズはありません。要素のサイズはそのコンテナ要素によって決定されます。AMP 要素が確実に表示されるようにするには、コンテナ要素の幅と高さを指定しておく必要があります。コンテナ要素に <code>"display:table"</code> を指定すると、AMP 要素の表示がオーバーライドされ、AMP 要素が非表示状態でレンダリングされます。</p> </td>
     </tr>
   </tbody>
 </table>
@@ -134,11 +135,16 @@ AMP は、AMP コンポーネントがドキュメントレイアウト内でど
 
 以下の例では、ビューポートの幅が `320px` より大きい場合に、画像の幅は 320px になり、そうでない場合は、100vw（ビューポートの幅の 100%）になります。
 
-[sourcecode:html] <amp-img src="https://acme.org/image1.png" width="400" height="300" layout="responsive" sizes="(min-width: 320px) 320px, 100vw"
-
+[sourcecode:html]
+<amp-img
+  src="https://acme.org/image1.png"
+  width="400"
+  height="300"
+  layout="responsive"
+  sizes="(min-width: 320px) 320px, 100vw"
 >
-
- [/sourcecode]
+</amp-img>
+[/sourcecode]
 
 ### `disable-inline-width` <a name="disable-inline-width"></a>
 
@@ -148,11 +154,17 @@ AMP は、AMP コンポーネントがドキュメントレイアウト内でど
 
 以下の例では、`<amp-img>` 要素の幅は影響されず、`sizes` は、`srcset` のソースの 1 つを選択するためだけに使用されます。
 
-[sourcecode:html] <amp-img src="https://acme.org/image1.png" width="400" height="300" layout="responsive" sizes="(min-width: 320px) 320px, 100vw" disable-inline-width
-
+[sourcecode:html]
+<amp-img
+  src="https://acme.org/image1.png"
+  width="400"
+  height="300"
+  layout="responsive"
+  sizes="(min-width: 320px) 320px, 100vw"
+  disable-inline-width
 >
-
- [/sourcecode]
+</amp-img>
+[/sourcecode]
 
 ### `heights` <a name="heights"></a>
 
@@ -167,11 +179,15 @@ AMP は、AMP コンポーネントがドキュメントレイアウト内でど
 
 以下の例では、画像の高さは幅の 80% になりますが、ビューポートの幅が `500px` より大きい場合、高さは最大 `200px` になります。`heights` 属性が `width` と `height` とともに指定されているため、レイアウトは `responsive` になります。
 
-[sourcecode:html] <amp-img src="https://acme.org/image1.png" width="320" height="256" heights="(min-width:500px) 200px, 80%"
-
+[sourcecode:html]
+<amp-img
+  src="https://acme.org/image1.png"
+  width="320"
+  height="256"
+  heights="(min-width:500px) 200px, 80%"
 >
-
- [/sourcecode]
+</amp-img>
+[/sourcecode]
 
 ### `media` <a name="media"></a>
 
@@ -181,31 +197,42 @@ AMP は、AMP コンポーネントがドキュメントレイアウト内でど
 
 以下の例では、相互に排他的なメディアクエリを使用する 2 つの画像を使用しています。画面の幅に応じて、これらのうち 1 つの画像がフェッチされ、レンダリングされます。`media` 属性はすべての AMP 要素で利用できるため、広告などの画像以外の要素にも使用することができます。
 
-[sourcecode:html] <amp-img media="(min-width: 650px)" src="wide.jpg" width="466" height="355" layout="responsive"
-
->
->
-
-<amp-img media="(max-width: 649px)" src="narrow.jpg" width="527" height="193" layout="responsive"
-
->
->
-
+[sourcecode:html]
+<amp-img
+  media="(min-width: 650px)"
+  src="wide.jpg"
+  width="466"
+  height="355"
+  layout="responsive"
+></amp-img>
+<amp-img
+  media="(max-width: 649px)"
+  src="narrow.jpg"
+  width="527"
+  height="193"
+  layout="responsive"
+></amp-img>
 [/sourcecode]
 
 ### `placeholder` <a name="placeholder"></a>
 
 `placeholder` 属性は、AMP 要素にだけでなく、あらゆる HTML 要素に設定することができます。`placeholder` 属性は、この属性でマークされた要素が親 AMP 要素のプレースホルダとして機能することを示します。示されている場合、プレースホルダは AMP 要素の直接の子要素である必要があります。デフォルトでは、AMP 要素のリソースがまだダウンロード済みまたは初期化済みでない場合であっても、プレースホルダがすぐに表示されるようになっています。準備が整うと、通常、AMP 要素はプレースホルダを非表示にしてコンテンツを表示しますが、プレースホルダに関する実際の動作は、要素の実装によって異なります。
 
-[sourcecode:html] <amp-anim src="animated.gif" width="466" height="355" layout="responsive"> <amp-img placeholder="" src="preview.png" layout="fill"></amp-img> </amp-anim> [/sourcecode]
+[sourcecode:html]
+<amp-anim src="animated.gif" width="466" height="355" layout="responsive">
+  <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+</amp-anim>
+[/sourcecode]
 
 ### `fallback` <a name="fallback"></a>
 
 `fallback` 属性は、AMP 要素にだけでなく、あらゆる HTML 要素にも設定することができます。フォールバックは、要素がユーザーに対し、ブラウザが要素をサポートしていないことを伝えることのできる方法です。指定されている場合、フォールバック要素は AMP 要素の直接の子要素である必要があります。フォールバックに関する実際の動作は、要素の実装によって異なります。
 
-[sourcecode:html] <amp-anim src="animated.gif" width="466" height="355" layout="responsive"></amp-anim>
-
-  <div fallback="">このデバイスでは、アニメーション画像を再生できません。</div>  [/sourcecode]
+[sourcecode:html]
+<amp-anim src="animated.gif" width="466" height="355" layout="responsive">
+  <div fallback>Cannot play animated images on this device.</div>
+</amp-anim>
+[/sourcecode]
 
 ### `noloading` <a name="noloading"></a>
 
@@ -268,8 +295,7 @@ AMP は、AMP コンポーネントがドキュメントレイアウト内でど
       <td><code>intrinsic</code></td>
       <td>はい</td>
       <td>はい。親コンテナと<code>width:height</code> のアスペクト比に基づく。</td>
-      <td>はい。<code>i-amphtml-sizer</code>
-</td>
+      <td>はい。<code>i-amphtml-sizer</code> </td>
       <td> <code>block</code>（<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element" rel="nofollow">置換要素</a>のように動作する）</td>
     </tr>
     <tr>
@@ -283,8 +309,7 @@ AMP は、AMP コンポーネントがドキュメントレイアウト内でど
       <td><code>responsive</code></td>
       <td>はい</td>
       <td>はい。親コンテナと<code>width:height</code> のアスペクト比に基づく。</td>
-      <td>はい。<code>i-amphtml-sizer</code>
-</td>
+      <td>はい。<code>i-amphtml-sizer</code> </td>
       <td><code>block</code></td>
     </tr>
   </tbody>

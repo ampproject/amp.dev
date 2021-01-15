@@ -1,9 +1,12 @@
 ---
-$title: Integrazione di strumenti di analisi in AMP
-order: 1
+"$title": Integrazione di strumenti di analisi in AMP
+order: '1'
+formats:
+- websites
+- stories
 teaser:
   text: Informazioni generali
-toc: true
+toc: 'true'
 ---
 
 <!--
@@ -60,11 +63,10 @@ I servizi di gestione dei tag hanno due opzioni per l'integrazione con AMP Analy
 
 L'approccio endpoint è uguale all'approccio standard descritto nella sezione precedente. L'approccio di configurazione consiste nel creare una configurazione univoca per amp-analytics specifica per ciascun editore, che include tutti i loro pacchetti di strumenti di analisi compatibili. Ciascun editore deve includere la configurazione utilizzando una sintassi simile a questa:
 
-[sourcecode:html] <amp-analytics config="https://my-awesome-tag-manager.example.com/user-id.json"
-
->
->
-
+[sourcecode:html]
+<amp-analytics
+  config="https://my-awesome-tag-manager.example.com/user-id.json"
+></amp-analytics>
 [/sourcecode]
 
 Per adottare questo approccio, consultare la documentazione per l'integrazione dei servizi degli editori con AMP Analytics.

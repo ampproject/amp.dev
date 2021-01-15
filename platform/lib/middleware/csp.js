@@ -50,7 +50,7 @@ module.exports = (req, res, next) => {
       'https://cdn.ampproject.org/rtv/',
       ...getDynamicHosts(),
     ],
-    reportUri: ['https://csp-collector.appspot.com/csp/amp'],
+    reportUri: ['/csp-report'],
   };
 
   // Allow unsafe-inline for examples
@@ -61,6 +61,6 @@ module.exports = (req, res, next) => {
   // Add security headers.
   contentSecurityPolicy({
     directives,
-    reportOnly: false,
+    reportOnly: true,
   })(req, res, next);
 };

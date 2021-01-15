@@ -28,6 +28,7 @@ const webSocketServer = require('@examples/socket-server/socket-server');
 
 const routers = {
   boilerplate: require('../../boilerplate/backend/'),
+  cspReport: require('@lib/routers/cspReport.js'),
   example: {
     api: require('@examples'),
     embeds: require('@lib/routers/example/embeds.js'),
@@ -36,16 +37,16 @@ const routers = {
     experiments: require('@lib/routers/example/experiments.js'),
     inline: require('@lib/routers/inlineExamples.js'),
   },
-  log: require('@lib/routers/runtimeLog.js'),
   go: require('@lib/routers/go.js'),
+  growPages: require('@lib/routers/growPages.js').growPages,
   growSharedPages: require('@lib/routers/growSharedPages.js'),
   growXmls: require('@lib/routers/growXmls.js'),
-  growPages: require('@lib/routers/growPages.js').growPages,
   healthCheck: require('@lib/routers/healthCheck.js').router,
+  log: require('@lib/routers/runtimeLog.js'),
   notFound: require('@lib/routers/notFound.js'),
   packager: require('@lib/routers/packager.js'),
-  playground: require('../../playground/backend/'),
   pixi: require('../../pixi/backend/'),
+  playground: require('../../playground/backend/'),
   search: require('@lib/routers/search.js'),
   static: require('@lib/routers/static.js'),
   templates: require('@lib/routers/templates.js'),
@@ -167,6 +168,7 @@ class Platform {
   }
 
   _configureRouters() {
+    this.server.use(routers.cspReport);
     this.server.use(routers.packager);
     this.server.use(routers.thumbor);
     this.server.use(routers.whoAmI);

@@ -1,5 +1,8 @@
 ---
-$title: 設定
+"$title": Setting up
+"$order": '1'
+description: 開発環境のセットアップ ステップ 1. コードをダウンロードする チュートリアル用のサンプルコードを、ZIP ファイルとして、または git コマンドを使ってダウンロードします。
+author: bpaduch
 ---
 
 ## 必要な準備
@@ -34,10 +37,6 @@ $title: 設定
 http://localhost:8000/pets-completed.html
 ```
 
-[tip type="important"]
-
-URL は必ず `localhost` から提供されるようにしてください。そうでない場合、AMP ストーリーが正しく読み込まれず、次のようなエラーが発生する可能性があります: `"source" "must start with "https://" or "//" or be relative and served from either https or from localhost.`
-
-[/tip]
+[tip type="important"]URL は必ず <code>localhost</code> から提供されるようにしてください。そうでない場合、AMP ストーリーが正しく読み込まれず、次のようなエラーが発生する可能性があります: <code>"source" "must start with "https://" or "//" or be relative and served from either https or from localhost.</code> [/tip]
 
 クリックしながら完成したストーリー全体を見返し、このコンポーネントの仕組みを把握するようにしてください。

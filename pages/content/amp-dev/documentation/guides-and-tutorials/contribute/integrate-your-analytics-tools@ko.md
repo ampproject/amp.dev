@@ -1,9 +1,12 @@
 ---
-$title: AMP를 활용한 분석 도구 통합
-order: 1
+"$title": AMP를 활용한 분석 도구 통합
+order: '1'
+formats:
+- websites
+- stories
 teaser:
-  text:  개요
-toc: true
+  text: '개요 '
+toc: 'true'
 ---
 
 <!--
@@ -13,7 +16,7 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-## 개요 <a name="overview"></a>
+## 개요
 
 트래픽 및 방문자에 대한 퍼블리셔의 이해를 개선하기 위한 SaaS 도구를 운영하는 경우 서비스와 `amp-analytics` 통합을 고려하실 수 있습니다. 이러한 통합은 고객이 AMP HTML 페이지의 트래픽 패턴을 확인하는 데 유용합니다.
 
@@ -22,7 +25,6 @@ have a look and request a pull request there.
 분석 서비스를 AMP HTML 런타임에 추가하기 전 준비해야 할 사항은 다음과 같습니다.
 
 - 분석 서비스의 AMP HTML 문서에 필요한 [변수](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) 및 [요청](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-analytics.md#requests)의 종류를 확인합니다.
-- 배칭 동작이 있는 요청을 사용할 경우 최종 URL 구성에 배칭 플러그인 함수가 필요한지 판단합니다.
 - 서비스와 관련한 페이지에서 전송되는 분석 요청을 발생시키는 트리거를 확인합니다.
 - 퍼스트 파티 및 타사 AMP 컨텍스트에서의 [사용자 추적](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md) 여부 및 방식을 고려합니다.
 - 분석 대시보드에서 AMP 트래픽을 처리하는 방식을 규정합니다.
@@ -45,11 +47,10 @@ have a look and request a pull request there.
     3. [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html) 참조의 예제.
     4. [extensions/amp-analytics/0.1/test/vendor-requests.json ](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../extensions/amp-analytics/0.1/test/vendor-requests.json) 파일의 테스트.
     5. [extensions/amp-analytics/0.1/analytics-vendors-list.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./analytics-vendors-list.md) 파일의 지원되는 공급 업체 목록에 분석 서비스를 추가합니다. 유형, 설명, 사용 문서 링크를 포함합니다.
-3. 새 배치 플러그인이 필요한 경우 [배치 플러그인 추가](#add-batch-plugin) 페이지의 설명을 검토하세요.
-4. [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html)에 추가된 신규 예제를 테스트하여 기능이 예상대로 작동하는지 확인합니다. 예를 들어, 필요한 데이터가 수집되어 분석 대시보드에 표시되는지 확인합니다.
-5. 이 패치로 Pull 요청을 제출하고 Intent-To-Implement 이슈를 참조합니다.
-6. 서비스 사용 문서를 업데이트하고 고객에게 정보를 제공합니다.
-7. [AMP 저장소 외부의 통합 테스트](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../3p/README.md#adding-proper-integration-tests)를 유지하시길 권장합니다.
+3. [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html)에 추가된 신규 예제를 테스트하여 기능이 예상대로 작동하는지 확인합니다. 예를 들어, 필요한 데이터가 수집되어 분석 대시보드에 표시되는지 확인합니다.
+4. 이 패치로 Pull 요청을 제출하고 Intent-To-Implement 이슈를 참조합니다.
+5. 서비스 사용 문서를 업데이트하고 고객에게 정보를 제공합니다.
+6. [AMP 저장소 외부의 통합 테스트](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../3p/README.md#adding-proper-integration-tests)를 유지하시길 권장합니다.
 
 ## 태그 관리자 <a name="tag-managers"></a>
 
@@ -60,11 +61,10 @@ have a look and request a pull request there.
 
 엔드포인트 접근 방식은 이전 섹션에서 자세히 설명해드린 표준 접근 방식과 동일합니다. 구성 접근 방식은 각 퍼블리셔 전용의 고유한 amp-analytics 구성을 생성하고 호환 가능한 분석 패키지를 모두 포함합니다. 퍼블리셔는 다음과 유사한 구문을 사용하여 구성을 포함할 수 있습니다.
 
-[sourcecode:html] <amp-analytics config="https://my-awesome-tag-manager.example.com/user-id.json"
-
->
->
-
+[sourcecode:html]
+<amp-analytics
+  config="https://my-awesome-tag-manager.example.com/user-id.json"
+></amp-analytics>
 [/sourcecode]
 
 이 접근 방식을 취하려면 퍼블리셔의 AMP 분석 통합과 관련한 문서를 검토하세요.

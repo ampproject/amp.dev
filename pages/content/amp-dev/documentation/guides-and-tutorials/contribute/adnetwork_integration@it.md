@@ -1,7 +1,9 @@
 ---
-$title: Integrazione con contenuti  AMP per pubblicare annunci
-$order: 5
+"$title": Integrazione con contenuti  AMP per pubblicare annunci
+"$order": '5'
 description: Questa guida si rivolge ai fornitori di reti per inserzionisti, che desiderano integrare contenuti AMP per la pubblicazione di annunci su pagine AMP.
+formats:
+- ads
 ---
 
 Questa guida si rivolge ai fornitori di reti per inserzionisti, che desiderano integrare contenuti AMP per la pubblicazione di annunci su pagine AMP.

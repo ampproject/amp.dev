@@ -1,7 +1,9 @@
 ---
-$title: 이메일용 AMP - 이메일 공급 업체 통합
-$order: 5
+"$title": 이메일용 AMP - 이메일 공급 업체 통합
+"$order": '5'
 description: 이메일 클라이언트 및 공급 업체를 위한 AMP 통합 정보.
+formats:
+- email
 ---
 
 현재 저희 팀에서 이메일용 AMP 통합과 관련한 종합 가이드를 작성하고 있습니다.

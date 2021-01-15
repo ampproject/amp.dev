@@ -1,7 +1,9 @@
 ---
-$title: التكامل مع AMP لعرض الإعلانات المرئية
-$order: 5
+"$title": التكامل مع AMP لعرض الإعلانات المرئية
+"$order": '5'
 description: هذا الدليل مخصص لشبكات الإعلانات التي ترغب في التكامل مع AMP لعرض الإعلانات المرئية على صفحات AMP.
+formats:
+- ads
 ---
 
 هذا الدليل مخصص لشبكات الإعلانات التي ترغب في التكامل مع AMP لعرض الإعلانات المرئية على صفحات AMP.
@@ -48,8 +50,8 @@ description: هذا الدليل مخصص لشبكات الإعلانات الت
 
 لعرض إعلانات AMPHTML من خادم الإعلانات لديك، يجب عليك توفير تكامل الإحضار السريع الذي يتضمن:
 
-1. دعم اتصالات شبكة SSL.
-2. توفير JavaScript لإنشاء طلب الإعلان (أمثلة على عمليات التنفيذ: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) و[DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
+1. Supporting SSL network communication.
+2. Providing JavaScript to build the ad request (example implementations: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) & [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
 3. التحقق من صحة وتوقيع المواد الإبداعية من خلال خدمة التحقق من الصحة. إذ يوفر [Cloudflare](https://blog.cloudflare.com/firebolt/) خدمة التحقق من إعلان AMP، مما يمكِّن أي مزود إعلانات مستقل من تقديم إعلانات أسرع وأخف وأكثر جاذبية.
 
 للحصول على الإرشادات حول إنشاء تكامل الإحضار السريع، راجع [دليل تنفيذ شبكة الإحضار السريع](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).

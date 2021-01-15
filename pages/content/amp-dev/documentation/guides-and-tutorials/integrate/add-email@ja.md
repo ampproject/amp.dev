@@ -1,7 +1,9 @@
 ---
-$title: 既存のメールへの AMP の追加
-$order: 1
+"$title": 既存のメールへの AMP の追加
+"$order": '1'
 author: CrystalOnScript
+formats:
+- email
 ---
 
 AMP for Email 形式は、新しい MIME パートとして組み込まれます。AMP for Email をサポートするプロバイダにメールが送信されれば表示されますが、そうでなくでも心配はいりません！プロバイダは HTML またはプレーンテキストのフォールバックを表示します。このガイドを使用して、メールに AMP を含めましょう。

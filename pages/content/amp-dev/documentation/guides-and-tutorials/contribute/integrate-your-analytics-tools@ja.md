@@ -1,9 +1,12 @@
 ---
-$title: 分析ツールと AMP の統合
-order: 1
+"$title": Integrate your analytics tool with AMP
+order: '1'
+formats:
+- websites
+- stories
 teaser:
-  text:  概要
-toc: true
+  text: 概要
+toc: 'true'
 ---
 
 <!--
@@ -22,7 +25,6 @@ have a look and request a pull request there.
 分析サービスを AMP HTML ランタイムに追加する前に、以下の内容を実施する必要があります。
 
 - 分析サービスを使用する上で AMP HTML ドキュメントに必要となる[変数](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)と[リクエスト](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-analytics.md#requests)の種類を特定する。
-- バッチリクエストを使用する場合、最終的な URL を構築するためにバッチ処理プラグイン関数が必要かどうかを判断する。
 - サービスに関連するページから分析リクエストが送信されるようにするトリガーを特定する。
 - ファーストパーティとサードパーティ AMP のコンテキストで[ユーザーを追跡する](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)かどうか、そしてその方法を検討する。
 - 分析ダッシュボードが AMP トラフィックをどのように処理するかを確認する。
@@ -45,11 +47,10 @@ have a look and request a pull request there.
     3. [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html) リファレンス内の例。
     4. [extensions/amp-analytics/0.1/test/vendor-requests.json ](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../extensions/amp-analytics/0.1/test/vendor-requests.json) ファイルのテスト。
     5. [extensions/amp-analytics/0.1/analytics-vendors-list.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./analytics-vendors-list.md) ファイルの対応ベンダーリストに分析サービスを追加します。種類、説明、および使用方法のドキュメントへのリンクを含めてください。
-3. 新しいバッチプラグインが必要な場合は、その手順について、「[バッチプラグインの追加](#add-batch-plugin)」を参照してください。
-4. [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html) に配置した新しい例をテストし、この例のヒット数が期待通りに動作していることを確認します。たとえば、必要なデータが収集され、分析ダッシュボードに表示されることを確認します。
-5. Intent-To-Implement 課題を参照する、このパッチのプルリクエストを提出します。
-6. サービスの使用方法ドキュメントを更新し、顧客に伝えます。
-7. [AMP リポの外部で統合テスト](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../3p/README.md#adding-proper-integration-tests)を管理することを強くお勧めします。
+3. [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html) に配置した新しい例をテストし、この例のヒット数が期待通りに動作していることを確認します。たとえば、必要なデータが収集され、分析ダッシュボードに表示されることを確認します。
+4. Intent-To-Implement 課題を参照する、このパッチのプルリクエストを提出します。
+5. サービスの使用方法ドキュメントを更新し、顧客に伝えます。
+6. [AMP リポの外部で統合テスト](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../3p/README.md#adding-proper-integration-tests)を管理することを強くお勧めします。
 
 ## タグマネージャー <a name="tag-managers"></a>
 
@@ -60,11 +61,10 @@ have a look and request a pull request there.
 
 エンドポイントアプローチは、前のセクションで説明した標準アプローチと同じです。config アプローチには、サイト運営者固有の amp-analytics の構成を作成する作業があり、互換性のあるすべてのアナリティクスパッケージが含まれます。サイト運営者は、以下のような構文を使用して構成を含めます。
 
-[sourcecode:html] <amp-analytics config="https://my-awesome-tag-manager.example.com/user-id.json"
-
->
->
-
+[sourcecode:html]
+<amp-analytics
+  config="https://my-awesome-tag-manager.example.com/user-id.json"
+></amp-analytics>
 [/sourcecode]
 
 このアプローチを使用する場合は、サイト運営者向けの AMP アナリティクスの統合に関するドキュメントを参照してください。

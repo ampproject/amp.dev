@@ -1,15 +1,28 @@
 ---
-$title: 画像や動画を含める
+"$title": 画像や動画を含める
+"$order": '8'
+description: 通常の HTML ページと同じように、AMP では画像、動画、音声を埋め込むことができます。通常の HTML と AMP コンポーネントの違いと、こうしたコンポーネントを...
+formats:
+- websites
+- stories
+- email
+- ads
+components:
+- iframe
+author: pbakaus
+contributors:
+- Meggin
+- bpaduch
 ---
 
 通常の HTML ページと同じように、AMP でも **画像** 、**動画** 、**音声を埋め込むことができます内容。** 通常の HTML と AMP のコンポーネントの違いと、こうしたコンポーネントをページに含める方法について解説します。
 
-##  Why not `<img>`、`<video>`、`<audio>` を使用しない理由
+## Why not `<img>`、`<video>`、`<audio>` を使用しない理由
 
 AMP は、メディアの表示に使用されるデフォルトの HTML タグ（`<img>`など）には対応していません。次の理由で、同等のコンポーネントが用意されています。
 
-*  アセットの読み込み前にページのレイアウトを把握しなければならない（[最初のビューポートのプリロードに対応](../../../../about/how-amp-works.html#size-all-resources-statically) するために不可欠）
-*  ネットワーク リクエストを管理して、[リソースの遅延読み込みと優先順位付けを効果的に行えるように](../../../../about/how-amp-works.html#prioritize-resource-loading) しなければならない
+- アセットの読み込み前にページのレイアウトを把握しなければならない（[最初のビューポートのプリロードに対応](../../../../about/how-amp-works.html#size-all-resources-statically) するために不可欠）
+- ネットワーク リクエストを管理して、[リソースの遅延読み込みと優先順位付けを効果的に行えるように](../../../../about/how-amp-works.html#prioritize-resource-loading) しなければならない
 
 注: こうしたタグの使用は、非対応ですが、*will* 表示には有効です。ただし、AMP で [ページの検証](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) が行われないので、AMP のメリットをすべて利用することはできなくなります。
 
@@ -47,7 +60,7 @@ As `<amp-img>` は JavaScript に依存するので、ユーザーがスクリ�
 
 ### 高度なレイアウト
 
- AMP では、標準の CSS や HTML を使う場合よりもかなり簡単に、完全にレスポンシブな画像を作成できます。最も基本的な形式では、必要な作業は次のように `layout="responsive" `を追加することだけです。
+AMP では、標準の CSS や HTML を使う場合よりもかなり簡単に、完全にレスポンシブな画像を作成できます。最も基本的な形式では、必要な作業は次のように `layout="responsive" `を追加することだけです。
 
 [example preview="inline" playground="true"]
 ```html
@@ -86,7 +99,7 @@ The [`amp-anim`](../../../../documentation/components/reference/amp-anim.md) 要
 ```
 [/example]
 
-注: このコンポーネントを使用するには、`<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` をページの先頭に追加します。
+注: このコンポーネントを使用するには、<code><script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script></code> をページの先頭に追加します。
 
 ## 動画
 
@@ -136,4 +149,4 @@ The [`amp-anim`](../../../../documentation/components/reference/amp-anim.md) 要
 ```
 [/example]
 
-注: このコンポーネントを使用するには、`<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` をページの先頭に追加します。
+注: このコンポーネントを使用するには、<code><script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script></code> をページの先頭に追加します。

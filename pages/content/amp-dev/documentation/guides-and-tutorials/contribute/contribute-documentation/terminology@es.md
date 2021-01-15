@@ -1,7 +1,12 @@
 ---
-$title: Terminología de AMP
-$order: 2
+"$title": Terminología de AMP
+"$order": '2'
 description: Recomendaciones sobre la terminología que debe seguirse en AMP
+formats:
+- sitios web
+- historias
+- anuncios
+- correo electrónico
 author: CrystalOnScript
 ---
 
@@ -19,7 +24,7 @@ author: CrystalOnScript
   </tr>
   <tr>
    <td>AMP</td>
-   <td>Es el nombre oficial del marco de trabajo para el componente web de código abierto. Accelerated Mobile Pages fue la expansión de AMP. El término, ahora obsoleto, es una definición demasiado limitada para describir a AMP: debido a que AMP ya no solo controla las páginas, ahora podrá crear anuncios, correos electrónicos e historias con él.</td>
+   <td>Es el nombre oficial del marco de trabajo para el componente web de código abierto. <br>Las Páginas móviles aceleradas fueron la expansión de AMP. El término, ahora obsoleto, es una definición demasiado limitada para describir a AMP: debido a que AMP no solo controla las páginas, ahora podrá crear anuncios, correos electrónicos e historias con ella.</td>
    <td>
 <ul>
       <li>AMP controla todas las descargas de recursos.</li>
@@ -39,7 +44,7 @@ author: CrystalOnScript
   </tr>
   <tr>
    <td>Sitios web de AMP</td>
-   <td>Se refiere a los sitios web que han sido desarrollados mediante el Framework AMP.</td>
+   <td>Se refiere a los sitios web que fueron desarrollados mediante el marco de trabajo de AMP.</td>
    <td>
 <ul>
       <li>Los sitios web de AMP son rápidos, dinámicos, y en ellos se sitúa al usuario como una prioridad.</li>
@@ -49,7 +54,7 @@ author: CrystalOnScript
   </tr>
   <tr>
    <td>Componentes de AMP</td>
-   <td>Se refiere a una característica en particular (los “componentes web“) que solamente funcionan* cuando se utilizan en una página controlada por AMP, y cuentan con su propia notación HTML. Entre los ejemplos se incluyen: amp-form, amp-img, amp-video, etc.</td>
+   <td>Se refiere a unas características en particular (los “componentes web“) que solamente funcionan* cuando se utilizan en una página controlada por AMP, y cuentan con su propia notación HTML. Entre los ejemplos se incluyen: amp-form, amp-img, amp-video, etc.</td>
    <td>
 <ul>
       <li>Los componentes de AMP que están integrados, como amp-img, amp-video y amp-pixel ya se incluyen en la biblioteca básica.</li>
@@ -68,21 +73,21 @@ author: CrystalOnScript
    </td>
   </tr>
   <tr>
-   <td>Historia/historias de AMP</td>
+   <td>Historia web / historias web</td>
    <td>Una experiencia en la web gracias a la historia creada con AMP.</td>
    <td>
 <ul>
-      <li>El formato para crear la historia de AMP es gratuito y también es parte de la web abierta.</li>
-<li>Las historias de AMP permiten que los lectores tengan experiencias inmersivas en una pantalla de tamaño completo y que cargan rápidamente.</li>
+      <li>El formato para crear historias web es gratuito y también es parte de la web abierta.</li>
+<li>Las historias de Web permiten que los lectores tengan experiencias inmersivas en una pantalla de tamaño completo y que cargan rápidamente.</li>
 </ul>
    </td>
   </tr>
   <tr>
    <td>Anuncios de AMP</td>
-   <td>Es un anuncio que se desarrolló siguiendo las especificaciones para anuncios de AMPHTML.</td>
+   <td>Son anuncios que se desarrollaron siguiendo las especificaciones para anuncios de AMPHTML.</td>
    <td>
 <ul>
-      <li>Los anuncios de AMP mejoran significativamente la web para dispositivos móviles gracias a su diseño inteligente y las funciones de carga previa.</li>
+      <li>Los anuncios de AMP mejoran significativamente la web para dispositivos móviles gracias a su diseño inteligente y las funciones precargadas.</li>
 </ul>
    </td>
   </tr>

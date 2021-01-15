@@ -32,7 +32,7 @@ creation:
       fit: contain
     formats:
       - email
-  - name: Mailmondo
+  - name: Mailmodo
     url: https://mailmodo.com
     type: Email Editor
     description: Create AMP emails with inline forms so that your users can take actions right inside the email. Just like an app!
@@ -126,6 +126,16 @@ creation:
       height: 3
     formats:
       - stories
+  - name: Web Stories for WordPress
+    description: Web Stories for WordPress provides story creation capabilities in a user-friendly, WYSIWYG tool.
+    url: https://wp.stories.google/
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/webstoriesforwordpress.png
+      width: 5
+      height: 3
+    formats:
+      - stories
   - name: Visual Stories
     description: Multi-site, multi-author blogging tools and WYSIWYG editor to create Web Stories on your own domain.
     url: https://visualstories.com
@@ -166,14 +176,24 @@ creation:
       height: 400
     formats:
       - stories
-  - name: Web Stories for WordPress
-    description: Web Stories for WordPress provides story creation capabilities in a user-friendly, WYSIWYG tool.
-    url: https://wp.stories.google/
+  - name: StorifyMe
+    description: StorifyMe stands out as all-in-one Web Stories platform. Made for brands & individuals, tailored for e-commerce, marketers and publishers.
+    url: https://storifyme.com/
+    type:  WYSIWYG Editor
+    image:
+      src: /static/img/tools/storifyme.jpg
+      width: 1600
+      height: 800
+    formats:
+      - stories
+  - name: Viqeo Studio
+    description: Viqeo is the all-in-one video platform for creating Videos, Web Stories, Lessons and Onboardings.
+    url: https://viqeo.tv/
     type: WYSIWYG Editor
     image:
-      src: /static/img/tools/webstoriesforwordpress.png
-      width: 5
-      height: 3
+      src: /static/img/tools/viqeostudio.png
+      width: 800
+      height: 400
     formats:
       - stories
   - name: Unbounce
@@ -274,6 +294,26 @@ platforms:
       height: 407
     formats:
       - stories
+  - name: Mail.ru AMP Playground
+    type: Testing
+    description: Draft AMP emails, see a live preview, and have your emails sent to your Mail.ru account.
+    url: https://postmaster.mail.ru/amp/
+    image:
+      src: /static/img/tools/mailru_playground.png
+      width: 1000
+      height: 691
+    formats:
+      - email
+  - name: 8b Website Builder
+    type: Website Builder
+    description: Easy-to-use online AMP website builder to create lightning-fast web pages in a visual way.
+    url: https://8b.com/
+    image:
+      src: /static/img/tools/8b.jpg
+      width: 800
+      height: 400
+    formats:
+      - websites
 developer:
   - name: AMP Validator
     official: true

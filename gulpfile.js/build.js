@@ -540,7 +540,7 @@ function persistBuildInfo(done) {
     },
   };
 
-  fs.writeFile(project.paths.BUILD_INFO, yaml.safeDump(buildInfo), done);
+  fs.writeFile(project.paths.BUILD_INFO, yaml.dump(buildInfo), done);
 }
 
 exports.clean = clean;

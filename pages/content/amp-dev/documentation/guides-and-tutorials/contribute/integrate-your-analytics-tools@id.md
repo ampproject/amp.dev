@@ -1,9 +1,12 @@
 ---
-$title: Mengintegrasikan alat analitis Anda dengan AMP
-order: 1
+"$title": Mengintegrasikan alat analitis Anda dengan AMP
+order: '1'
+formats:
+- websites
+- stories
 teaser:
   text: Gambaran Umum
-toc: true
+toc: 'true'
 ---
 
 <!--
@@ -22,7 +25,6 @@ Jika Anda mengoperasikan perangkat lunak sebagai alat layanan untuk penayang aga
 Sebelum Anda dapat menambahkan layanan analitis Anda ke runtime HTML AMP, Anda mungkin perlu untuk:
 
 - Mengidentifikasi jenis [variabel](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) dan [permintaan](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-analytics.md#requests) yang akan Anda butuhkan di dalam dokumen HTML AMP untuk layanan analitis Anda.
-- Menentukan apakah fungsi plugin pelompokan (batching) diperlukan untuk membuat URL final jika menggunakan permintaan dengan perilaku pelompokan.
 - Mengidentifikasi pemicu yang akan menghasilkan permintaan analitis dikirimkan dari halaman yang relevan dengan layanan Anda.
 - Mempertimbangkan jika dan bagaimana Anda akan [melacak pengguna](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md) konteks AMP pihak pertama dan pihak ketiga.
 - Menentukan cara dasbor analitis Anda menangani lalu lintas AMP
@@ -45,11 +47,10 @@ Sebelum Anda dapat menambahkan layanan analitis Anda ke runtime HTML AMP, Anda m
     3. Contoh dalam referensi [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html).
     4. Pengujian dalam berkas [extensions/amp-analytics/0.1/test/vendor-requests.json ](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../extensions/amp-analytics/0.1/test/vendor-requests.json).
     5. Tambahkan layanan analitis Anda ke daftar vendor yang didukung dalam berkas [extensions/amp-analytics/0.1/analytics-vendors-list.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./analytics-vendors-list.md). Sertakan jenis, deskripsi, dan tautan ke dokumentasi penggunaan Anda.
-3. Jika plugin lompok (batch) baru diperlukan. Silakan rujuk [Menambahkan Plugin Lompok (Batch)](#add-batch-plugin) untuk mengetahui instruksinya.
-4. Uji contoh baru yang Anda masukkan ke [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html) untuk memastikan bahwa hasil dari contoh bekerja sesuai harapan. Contohnya, data yang diperlukan dikumpulkan dan ditampilkan di dasbor analitis Anda.
-5. Kirimkan Pull Request (Permintaan Perubahan) dengan patch ini, dengan merujuk masalah Rencana yang Ingin Diterapkan.
-6. Perbarui dokumentasi penggunaan layanan Anda dan sampaikan kepada pelanggan Anda.
-7. Sangat direkomendasikan untuk mempertahankan [uji integrasi di luar repo AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../3p/README.md#adding-proper-integration-tests).
+3. Uji contoh baru yang Anda masukkan ke [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html) untuk memastikan bahwa hasil dari contoh bekerja sesuai harapan. Contohnya, data yang diperlukan dikumpulkan dan ditampilkan di dasbor analitis Anda.
+4. Kirimkan Pull Request (Permintaan Perubahan) dengan patch ini, dengan merujuk masalah Rencana yang Ingin Diterapkan.
+5. Perbarui dokumentasi penggunaan layanan Anda dan sampaikan kepada pelanggan Anda.
+6. Sangat direkomendasikan untuk mempertahankan [uji integrasi di luar repo AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../3p/README.md#adding-proper-integration-tests).
 
 ## Manajer Tag <a name="tag-managers"></a>
 
@@ -60,11 +61,10 @@ Layanan manajemen tag mempunyai dua pilihan untuk berintegrasi dengan Analitis A
 
 Pendekatan endpoint sama dengan pendekatan standar yang diuraikan di dalam bagian sebelumnya. Pendekatan konfig berisi tentang pembuatan konfigurasi unik untuk amp-analytics yang spesifik untuk setiap penayang dan menyertakan semua paket analitis mereka yang kompatibel. Penayang akan menyertakan konfigurasi yang menggunakan sintaks yang serupa dengan ini:
 
-[sourcecode:html] <amp-analytics config="https://my-awesome-tag-manager.example.com/user-id.json"
-
->
->
-
+[sourcecode:html]
+<amp-analytics
+  config="https://my-awesome-tag-manager.example.com/user-id.json"
+></amp-analytics>
 [/sourcecode]
 
 Untuk mengambil pendekatan ini, kaji dokumentasi untuk integrasi penayang dengan Analitis AMP.

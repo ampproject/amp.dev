@@ -1,7 +1,7 @@
 ---
-$title: Cómo crear un anuncio gráfico
-$order: 1
-description: "Nuestro anuncio consiste en una imagen sencilla con un hipervínculo hacia el sitio anunciado. Para mostrar la imagen utilizaremos la etiqueta amp-img. Este es el código: ..."
+"$title": Cómo crear un anuncio gráfico
+"$order": '1'
+description: 'Nuestro anuncio consiste en una imagen sencilla con un hipervínculo hacia el sitio anunciado. Para mostrar la imagen utilizaremos la etiqueta amp-img. Este es el código: ...'
 ---
 
 En el interior del `<body>` que se encuentra en el documento de su anuncio AMPHTML, puede incluir las etiquetas HTML y AMP. Sin embargo, no todas las etiquetas están permitidas. Consulte las [especificaciones del anuncio AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#allowed-amp-extensions-and-builtins) para obtener una lista con las etiquetas que pueden utilizarse.

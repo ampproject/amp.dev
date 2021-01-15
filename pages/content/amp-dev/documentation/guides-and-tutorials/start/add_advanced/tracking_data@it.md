@@ -1,10 +1,10 @@
 ---
-$title: Tracciamento dell'engagement tramite strumenti di analisi
-$order: 4
+"$title": "Tracciamento dell'engagement tramite strumenti di analisi"
+"$order": '4'
 description: Le piattaforme di analisi sono comunemente integrate nei siti web tramite frammenti JavaScript inline e chiamate a funzioni, che attivano eventi poi reinviati al sistema di analisi.
 ---
 
-Analytics platforms are commonly integrated into websites through inline JavaScript snippets and function calls, which trigger events that are sent back to the analytics system. AMP provides a flexible JSON configuration syntax to replicate this process for several analytics partners.
+Le piattaforme di analisi sono comunemente integrate nei siti web tramite frammenti JavaScript inline e chiamate a funzioni, che attivano eventi poi reinviati al sistema di analisi. AMP fornisce una sintassi di configurazione JSON flessibile per replicare questo processo su diverse piattaforme di analisi.
 
 Quello che segue è un esempio del tradizionale tracciamento di Google Analytics basato su JavaScript. Lo riscriveremo nel formato JSON di [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), ma prima diamo un
 
