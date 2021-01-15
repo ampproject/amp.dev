@@ -23,7 +23,6 @@ const AMP_OPTIMIZER_CONFIG = require('@lib/utils/ampOptimizerConfig.js');
 const {readFileSync} = require('fs');
 const {join} = require('path');
 
-const FourOhFour = readFileSync(join(pagePath(), '404.html'), 'utf-8');
 const optimizer = AmpOptimizer.create(AMP_OPTIMIZER_CONFIG);
 let optimized;
 
@@ -31,6 +30,7 @@ module.exports = async (req, res) => {
   setMaxAge(res, 60 * 10); // ten minutes
   if (req.headers.accept && req.headers.accept.includes('text/html')) {
     if (!optimized) {
+      const FourOhFour = readFileSync(join(pagePath(), '404.html'), 'utf-8');
       optimized = await optimizer.transformHtml(FourOhFour);
     }
 
