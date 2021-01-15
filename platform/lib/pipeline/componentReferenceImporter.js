@@ -264,11 +264,7 @@ class ComponentReferenceImporter {
 
     // Skip versions for which there is no dedicated doc
     spec.version = spec.version.filter((version) => {
-      return !!this._getGitHubPath(
-        extension,
-        version,
-        spec.version[spec.version.length - 1]
-      );
+      return !!this._getGitHubPath(extension, version);
     });
 
     const extensionMetas = [];
@@ -281,11 +277,7 @@ class ComponentReferenceImporter {
         version: version,
         versions: spec.version,
         latestVersion: spec.latestVersion,
-        githubPath: this._getGitHubPath(
-          extension,
-          version,
-          spec.version[spec.version.length - 1]
-        ),
+        githubPath: this._getGitHubPath(extension, version),
       });
     }
 
