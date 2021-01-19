@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const ClosurePlugin = require('closure-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 const config = require('./config.js');
@@ -25,13 +24,6 @@ module.exports = (env, argv) => {
     },
     devtool: mode == 'development' ? 'cheap-module-source-map' : false,
     plugins: [
-      new CleanWebpackPlugin({
-        dry: false,
-        dangerouslyAllowCleanPatternsOutsideProject: true,
-        cleanOnceBeforeBuildPatterns: [
-          path.join(process.cwd(), '../dist/static/page-experience'),
-        ],
-      }),
       new HtmlWebpackPlugin({
         template: path.join(__dirname, 'src/ui/page-experience.hbs'),
         filename: './pixi.html',
@@ -68,13 +60,16 @@ module.exports = (env, argv) => {
       }),
       new FileManagerPlugin({
         events: {
-          // Blocked by https://github.com/gregnb/filemanager-webpack-plugin/issues/89
-          // Would allow removeal of clean-webpack-plugin
-          // onStart: {
-          //   delete: [
-          //     '../dist/static/page-experience/',
-          //   ]
-          // },
+          onStart: {
+            delete: [
+              {
+                source: '../dist/static/page-experience/',
+                options: {
+                  force: true,
+                }
+              }
+            ]
+          },
           onEnd: {
             copy: [
               {
