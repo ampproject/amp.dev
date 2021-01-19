@@ -48,7 +48,7 @@ You must include the AMP runtime script and import the logic for each individual
 ``` 
 
 [tip type="note"]
-Eliminating the need for the AMP runtime script is a high priority for Bento AMP. Follow this progress on the [Bento roadmap](../../../../community/roadmap/?category=bento#status-updates).
+Eliminating need for the AMP runtime script is a high priority for Bento AMP. Follow our progress on the [Bento roadmap](../../../../community/roadmap/?category=bento#status-updates).
 [/tip]
 
 Read each Bento component’s reference documentation for implementation details.
