@@ -66,9 +66,9 @@ module.exports = (env, argv) => {
                 source: '../dist/static/page-experience/',
                 options: {
                   force: true,
-                }
-              }
-            ]
+                },
+              },
+            ],
           },
           onEnd: {
             copy: [
