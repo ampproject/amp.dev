@@ -9,9 +9,7 @@ formats:
 author: CrystalOnScript
 ---
 
-Use AMP's well-tested, cross-browser compatible and accessible components anywhere on the web with Bento AMP. Bento AMP allows you to use AMP components in non-AMP pages without needing to commit to fully valid AMP! Bento allows you to take components and place them in implementations with frameworks and CMSs that don't support AMP. 
-
-Bento AMP enables you to insert highly performant and tested web components, such as carousels and media embeds, anywhere you need. Developers can use Bento components for one-off cases, such as adding a carousel to an otherwise non-AMP page. Bento lets you test out AMP components to see if the path to valid AMP is right for your use case.
+Use AMP's well-tested, cross-browser compatible and accessible components anywhere on the web with Bento AMP. Bento AMP allows you to use AMP components in non-AMP pages without needing to commit to fully valid AMP! You can take these components and place them in implementations with frameworks and CMSs that don't support AMP. Bento also lets you test out AMP components to see if the path to valid AMP is right for your use case.
 
 [tip type="important"]
  Bento is only available [experimentally](../learn/experimental.md). Read our [Blog Post](TODO) for information on future plans and how to get involved! 
@@ -19,7 +17,7 @@ Bento AMP enables you to insert highly performant and tested web components, suc
 
 # Use Bento components in non-AMP pages
 
-Bento components are available for experimental use in the developer preview. This means you must enable the experimental flag either in the document or the console. This is no different from other [experiments in AMP](../learn/experimental.md). 
+Bento components are still in development and APIs might change. However, they're available for experimental use in a developer preview. This means you must enable the experimental flag either in the document or the console. This is no different from other [experiments in AMP](../learn/experimental.md). 
 
 Keep an eye out for announcements and updates. While Bento AMP is in developer preview, the team will continue to make necessary changes to the API to improve features.
 
@@ -55,6 +53,23 @@ Eliminating the need for the AMP runtime script is a high priority for Bento AMP
 
 Read each Bento component’s reference documentation for implementation details.
 
+## Interacting with Bento components
+
+Fully valid AMP installs event listeners on elements via the [`on` attribute](../learn/amp-actions-and-events.md) with the event and responding action as values. Bento AMP does not rely on this attribute. Instead, the AMP team will provide a JS API to manage and react to events. 
+
+During the developer preview, you can register component events and respond with defined actions using following syntax:
+
+`el.getApi().then(api => api.play())`
+
+The code below triggers [`amp-base-carousel`'s next action](../../../documentation/components/reference/amp-base-carousel.md#next) when executed. 
+
+```js
+const carousel = $('amp-base-carousel');
+const apiPromise = carousel.getApi();
+apiPromise.then(api => {
+  api.next();
+})
+```
 
 # Available Bento components  <a name="available-bento-components"></a>
 
@@ -62,23 +77,23 @@ Bento supported AMP components are listed below:
 
 
 
-*   [amp-accordion](../../../documentation/components/reference/amp-accordion.md)
-*   [amp-base-carousel](../../../documentation/components/reference/amp-base-carousel.md)
-*   [amp-inline-gallery](../../../documentation/components/reference/amp-inline-gallery.md)
+*   [amp-accordion](../../../documentation/components/reference/amp-accordion-v1.0.md)
+*   [amp-base-carousel](../../../documentation/components/reference/amp-base-carousel-v1.0.md)
+*   [amp-inline-gallery](../../../documentation/components/reference/amp-inline-gallery-v1.0.md)
     *   amp-inline-gallery-pagination
     *   amp-inline-gallery-thumbnails
-*   [amp-stream-gallery](../../../documentation/components/reference/amp-stream-gallery.md)
-*   [amp-date-countdown](../../../documentation/components/reference/amp-date-countdown.md)
-*   [amp-date-display](../../../documentation/components/reference/amp-date-display.md)
-*   [amp-fit-text](../../../documentation/components/reference/amp-fit-text.md)
-*   [amp-instagram](../../../documentation/components/reference/amp-instagram.md)
-*   [amp-lightbox](../../../documentation/components/reference/amp-lightbox.md)
-*   [amp-selector](../../../documentation/components/reference/amp-selector.md)
-*   [amp-social-share](../../../documentation/components/reference/amp-social-share.md)
-*   [amp-timeago](../../../documentation/components/reference/amp-timeago.md)
+*   [amp-stream-gallery](../../../documentation/components/reference/amp-stream-gallery-v1.0.md)
+*   [amp-date-countdown](../../../documentation/components/reference/amp-date-countdown-v1.0.md)
+*   [amp-date-display](../../../documentation/components/reference/amp-date-display-v1.0.md)
+*   [amp-fit-text](../../../documentation/components/reference/amp-fit-text-v1.0.md)
+*   [amp-instagram](../../../documentation/components/reference/amp-instagram-v1.0.md)
+*   [amp-lightbox](../../../documentation/components/reference/amp-lightbox-v1.0.md)
+*   [amp-selector](../../../documentation/components/reference/amp-selector-v1.0.md)
+*   [amp-social-share](../../../documentation/components/reference/amp-social-share-v1.0.md)
+*   [amp-timeago](../../../documentation/components/reference/amp-timeago-v1.0.md)
 *   Video components
-    *   [amp-video](../../../documentation/components/reference/amp-video.md)
-    *   [amp-youtube](../../../documentation/components/reference/amp-youtube.md)
+    *   [amp-video](../../../documentation/components/reference/amp-video-v1.0.md)
+    *   [amp-youtube](../../../documentation/components/reference/amp-youtube-v1.0.md)
 
 # Bento in action
 
@@ -298,24 +313,6 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-fit-t
 ```
 
 See the [demo in action on Glitch](TODO).
-
-# Managing events
-
-Fully valid AMP installs event listeners on elements via the [`on` attribute](../learn/amp-actions-and-events.md) with the event and responding action as values. Bento AMP does not rely on this attribute. Instead, the AMP team will provide a JS API to manage and react to events. 
-
-During the developer preview, you can register component events and respond with defined actions using following syntax:
-
-`el.getApi().then(api => api.play())`
-
-The code below triggers [`amp-base-carousel`'s next action](../../../documentation/components/reference/amp-base-carousel.md#next) when executed. 
-
-```js
-const carousel = $('amp--base-carousel');
-const apiPromise = carousel.getApi();
-apiPromise.then(api => {
-  api.next();
-})
-```
 
 # Working with experiments
 
