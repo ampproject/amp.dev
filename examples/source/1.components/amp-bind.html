@@ -118,10 +118,10 @@ author: choumx
         In this sample, both greetings bind to different `amp-state` variables. One is initialized via an JSON string inside an `amp-state` element, the other is not. When the user triggers an `AMP.setState(...)` action, both bindings will be evaluated resulting in the first binding displaying a `null` value.
       -->
       <div>
-        <amp-state id="myText"><script type="application/json"> "World" </script></amp-state>
+        <amp-state id="myInitText"><script type="application/json"> "World" </script></amp-state>
           <div>1. Hello <span [text]="undefinedText">World</span></div>
-          <div>2. Hello <span [text]="myText">World</span></div>
-          <button on="tap:AMP.setState({ myText: 'AMP' })">Change state</button>
+          <div>2. Hello <span [text]="myInitText">World</span></div>
+          <button on="tap:AMP.setState({ myInitText: 'AMP' })">Change state</button>
       </div>
 
       <!--
