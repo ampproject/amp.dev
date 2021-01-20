@@ -32,12 +32,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 test('Errors on a GET', (done) => {
-  request(app).get('/fezSurveyResponse').expect(405).end(done);
+  request(app).get('/fez-survey-response').expect(405).end(done);
 });
 
 _test('Validates the POSTed object', (done) => {
   request(app)
-    .post('/fezSurveyResponse')
+    .post('/fez-survey-response')
     .set('Accept', 'application/json')
     .send({
       'bad': 'version',
@@ -45,7 +45,7 @@ _test('Validates the POSTed object', (done) => {
     .expect(422)
     .then(() => {
       request(app)
-        .post('/fezSurveyResponse')
+        .post('/fez-survey-response')
         .set('Accept', 'application/json')
         .send({
           'bad': 'version',
@@ -55,7 +55,7 @@ _test('Validates the POSTed object', (done) => {
           // TODO: this needs to be mocked so that we aren't
           // actually hitting the API
           request(app)
-            .post('/fezSurveyResponse')
+            .post('/fez-survey-response')
             .set('Accept', 'application/json')
             .send(VALID_RESPONSE)
             .expect(200)
@@ -67,7 +67,7 @@ _test('Validates the POSTed object', (done) => {
 // TODO make this actually function
 _test('Submits the data to a backend', (done) => {
   request(app)
-    .post('/fezSurveyResponse')
+    .post('/fez-survey-response')
     .set('Accept', 'application/json')
     .send(VALID_RESPONSE)
     .then(/* do... something */)
