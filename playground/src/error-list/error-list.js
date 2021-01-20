@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,119 +12,116 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-require('./error-list.scss');
-
 import events from '../events/events.js';
+import modes from '../modes/';
+
 import * as Button from '../button/button.js';
 import * as Validator from '../validator/validator.js';
+import * as ErrorListItem from './error-list-item.js';
+import FlyIn from '../fly-in/fly-in.js';
 
-export const EVENT_ERROR_SELECTED = 'error-selected';
+import './error-list.scss';
+import template from './error-list.hbs';
 
-export function createErrorList(container, trigger) {
-  return new ErrorList(container, trigger);
+export function createErrorList() {
+  const target = document.getElementById('error-list');
+
+  if (modes.IS_DEFAULT) {
+    const trigger = document.getElementById('error-indicator');
+    return new FlyInErrorList(target, trigger);
+  } else if (modes.IS_VALIDATOR) {
+    return new InlineErrorList(target);
+  }
 }
 
-const DESKTOP_WIDTH = 1024;
-
+/**
+ * The basic error list that takes care of creating a list of errors
+ * by using a validation result provided by Validator
+ */
 class ErrorList {
-  constructor(container, trigger) {
-    this.container = container;
-    this.trigger = Button.from(trigger, this.toggle.bind(this));
-    // configure validator
-    events.subscribe(Validator.EVENT_NEW_VALIDATION_RESULT, (validationResult) => {
-      this.update(validationResult);
-      window.requestIdleCallback(() => {
-        if (validationResult === Validator.NO_VALIDATOR) {
-          this.trigger.setHtml('valid');
-          this.trigger.disable();
-          return;
-        }
-        this.trigger.enable();
-        if (validationResult.status == 'PASS') {
-          this.trigger.disable();
-          return;
-        }
-        this.trigger.enable();
-        this.trigger.setHtml(
-            validationResult.errors.length +
-          ' Error' +
-          (validationResult.errors.length > 1 ? 's' : ''));
-      });
-    });
-  }
-
-  update(validationResult) {
-    this.validationResult = validationResult;
-    window.requestIdleCallback(() => {
-      /* eslint-disable max-len */
-      this.container.innerHTML =
-        `
-        <div class="title">
-        <button class="button close">
-          <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-            <path d="M0 0h24v24H0z" fill="none"/>
-          </svg>
-        </button>
-        <h2>Validation Result</h2>
-        </div>
-        <ul>${validationResult.errors.map(this.renderError).join('')}</ul>
-        `;
-      /* eslint-enable max-len */
-      if (validationResult.errors.length === 0) {
-        this.container.classList.toggle('show', false);
+  /**
+   * @param {Element} target Where the error list items get rendered into
+   */
+  constructor(target) {
+    events.subscribe(
+      Validator.EVENT_NEW_VALIDATION_RESULT,
+      (validationResult) => {
+        this.validationResult = validationResult;
+        this.render();
       }
-    });
+    );
+
+    target.insertAdjacentHTML('beforeend', template());
+
+    this.list = target.querySelector('ul');
   }
 
-  renderError(error, index) {
-    return `<li class="validation-error ${error.icon}" data-index="${index}">
-            <div>
-              <div class="message">${error.message}</div>
-              <div class="category">${error.category}</div>
-              <div class="location">line ${error.line}, column ${error.col}</div>
-            </div>
-      </li>`;
-  }
-
-  toggle(e) {
-    if (this.container.classList.contains('show')) {
-      this.hideErrorList(e);
-    } else {
-      this.showErrorList(e);
+  render() {
+    this.list.innerHTML = '';
+    for (const e of this.validationResult.errors) {
+      ErrorListItem.createErrorListItem(this.list, e);
     }
   }
+}
 
-  hideErrorList() {
-    document.body.removeEventListener('click', this.onItemClickHandler, false);
-    this.container.classList.toggle('show', false);
+/**
+ * The error list as a fly-in as used for the Playground
+ * with a trigger button that shows the current error count
+ * @extends FlyIn
+ */
+class FlyInErrorList extends FlyIn {
+  constructor(target, trigger) {
+    super(target);
+
+    this.target = target;
+    this.trigger = Button.from(trigger, this.toggle.bind(this));
+    this.errorList = new ErrorList(this.content);
+
+    events.subscribe(
+      Validator.EVENT_NEW_VALIDATION_RESULT,
+      (validationResult) => {
+        window.requestIdleCallback(() => {
+          if (validationResult === Validator.NO_VALIDATOR) {
+            this.trigger.setHtml('valid');
+            this.trigger.disable();
+            return;
+          }
+
+          this.trigger.enable();
+          this.trigger.removeClass('valid', 'warning', 'error');
+
+          const errorCount = validationResult.errors.length;
+          const plurality = errorCount > 1 ? 's' : '';
+
+          if (validationResult.status == 'FAIL') {
+            this.trigger.addClass('error');
+            this.trigger.setHtml(`${errorCount}<span>Error${plurality}</span>`);
+            return;
+          }
+          if (errorCount > 0) {
+            this.trigger.addClass('warning');
+            this.trigger.setHtml(
+              `${errorCount}<span>Warning${plurality}</span>`
+            );
+            return;
+          }
+
+          this.trigger.addClass('valid');
+          this.trigger.setHtml('valid');
+        });
+      }
+    );
   }
+}
 
-  showErrorList(e) {
-    e.stopPropagation();
-    this.onItemClickHandler = this.onItemClick.bind(this);
-    document.body.addEventListener('click', this.onItemClickHandler, false);
-    this.container.classList.toggle('show', true);
-  }
-
-  onItemClick(e) {
-    if (!this.validationResult) {
-      return;
-    }
-    const target = e.target.closest('li.validation-error');
-    if (!target) {
-      this.hideErrorList();
-      return;
-    }
-    const index = target.dataset.index;
-    const error = this.validationResult.errors[index];
-    if (!error) {
-      return;
-    }
-    e.stopPropagation();
-    if (window.innerWidth < DESKTOP_WIDTH) {
-      this.hideErrorList();
-    }
-    events.publish(EVENT_ERROR_SELECTED, error);
+/**
+ * The error list as used for the validator
+ */
+class InlineErrorList {
+  /**
+   * @param {Element} target
+   */
+  constructor(target) {
+    this.errorList = new ErrorList(target);
   }
 }

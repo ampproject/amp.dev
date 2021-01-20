@@ -1,0 +1,224 @@
+<!---
+author: mszylkowski
+--->
+
+
+<!--
+  ## Introduction
+
+  The [`amp-story-interactive`](/documentation/components/amp-story-interactive/?format=stories) component provides customizable immersive quizzes and polls for Web Stories. 
+  
+  In this guide we build a Web Story with quizzes that reports the answers to a results element. The result element shows different categories based on correct quiz answers. 
+-->
+
+<!-- -->
+<!doctype html>
+<html ⚡ lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="This is an interactive story with quizzes.">
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0/amp-story-1.0.js">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+    <!-- To begin, import `amp-story-interactive` along your other stories imports. -->
+    <script async custom-element="amp-story-interactive" src="https://cdn.ampproject.org/v0/amp-story-interactive-0.1.js"></script>
+    <!-- We will also link analytics to track statistics -->
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <style amp-custom>
+
+    .center {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 22em;
+      font-size: 0.23em;
+    }
+
+    #quiz-1 {
+      --interactive-prompt-text-color: rgb(112, 238, 96);
+      --interactive-accent-color: green;
+    }
+
+    #quiz-2 {
+      --interactive-accent-color: rgb(9, 63, 4);
+    }
+
+    #quiz-3 {
+        --interactive-prompt-background: linear-gradient(120deg, dodgerblue, blue);
+    }
+
+    #results-1 {
+      --interactive-prompt-text-color: white;
+      --interactive-accent-color: rgb(5, 99, 221);
+    }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <link rel="canonical" href=".">
+    <title>Interactive quizzes with results</title>
+  </head>
+  <body>
+    <amp-story standalone
+      publisher="Stories Format"
+      title="Soccer facts"
+      poster-portrait-src="./last_supper.jpg"
+      publisher-logo-src="https://amp.dev/static/img/icons/icon-512x512.png">
+      <!-- Add your [amp-analytics](https://amp.dev/documentation/components/amp-analytics/?format=stories) configuration to the story. We will be using the `${storyInteractiveId}` and `${storyInteractiveResponse}` to gather additional information on the responses. A complete list of vars can be found in the [documentation](/documentation/components/amp-story-interactive?format=stories) -->
+      <amp-analytics id="my-analytics">
+        <script type="application/json">
+          {
+            "requests": {
+              "interactive": "https://example.com/interactive?id=${storyInteractiveId}&response=${storyInteractiveResponse}"
+            },
+            "triggers": {
+              "interactiveSelected": {
+                "on": "story-interactive",
+                "request": "interactive"
+              }
+            }
+          }
+        </script>
+      </amp-analytics>
+      <!-- 
+        ## Overview
+
+        We will create an interactive experience that tells you how much you know about soccer.
+        
+        For this to work, we will use an `amp-story-interactive-results` element to display the user's quiz results. This element shows a correctness percentage and corresponding category for the user. 
+
+        ## Define the quizzes
+        
+        To add a quiz, we have to specify some attributes:
+
+        - `option-{1/2/3/4}-text` will be used to pass the options to the poll
+        - `option-{1/2/3/4}-confetti` will be used to pass the emojis that will explode when the option is selected. You should only give confetti to the correct option, as we don't want to trigger the animation if the option selected is not correct. Give it a try and select "Uruguay" to see the effect in motion!
+        - `prompt-text` and `prompt-size` will determine the content and size of the question. We'll make it large sine the content is short.
+        - `theme` and `chip-style` will change the way the poll looks.
+        - `option-{1/2/3/4}-correct` is used to show what option is the correct one.
+
+        In this case, we added a transparent quiz with green prompt text, and enable `option-3-correct`.
+
+        [tip type="important"]Quizzes can have 2-4 options, so it will fit all types of questions with one correct answer.[/tip]
+      
+      -->
+      <amp-story-page id="page-quiz-1">
+        <amp-story-grid-layer template="fill" style="background-color: black">
+          <amp-img style="opacity:0.7"
+            layout="fixed" width="1600" height="1200"
+            src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=20"/>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="fill" aspect-ratio="4:6">
+          <div animate-in="scale-fade-up">
+            <amp-story-interactive-quiz
+              id="quiz-1" class="center"
+              prompt-text="Who won the first soccer world cup?"
+              endpoint="https://amp.dev/documentation/examples/components/amp-story-interactive-poll/results"
+              prompt-size="large" chip-style="transparent"
+              option-1-text="Spain"
+              option-2-text="Brazil"
+              option-3-text="Uruguay" option-3-correct option-3-confetti="⚽"
+              option-4-text="Germany">
+            </amp-story-interactive-quiz>
+          </div>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <!--
+        Now we can create another quiz with the same attributes.
+        For this quiz, we will set the accent color to green: `--interactive-accent-color:rgb(9, 63, 4);`, which will color the prompt background and quiz accents with it. In this scenario we will not use a transparent style since the background is more detailed.
+
+        [tip type="read-on"]You can have more granular control over the prompt, accent and background by using the CSS variables and attributes. Learn how in the [documentation](/documentation/components/amp-story-interactive?format=stories).[/tip]
+      -->
+      <amp-story-page id="page-quiz-2">
+        <amp-story-grid-layer template="fill">
+          <amp-img
+            layout="fixed" width="1600" height="1200"
+            src="https://images.unsplash.com/photo-1527871252447-4ce32da643c6?q=20"/>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="fill" aspect-ratio="4:6">
+          <div animate-in="scale-fade-up">
+            <amp-story-interactive-quiz
+              id="quiz-2"
+              prompt-text="What country won the most soccer world cups?"
+              endpoint="https://amp.dev/documentation/examples/components/amp-story-interactive-poll/results"
+              class="center"
+              prompt-size="large"
+              option-1-text="Spain"
+              option-2-text="Brazil" option-2-correct option-2-confetti="⚽"
+              option-3-text="Uruguay"
+              option-4-text="Germany">
+            </amp-story-interactive-quiz>
+          </div>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <!-- And let's make a third one just to train muscle memory.
+      
+      Adding gradients to the prompt-background is a great way to enhance the visuals of your elements, for instance.
+      
+      `--interactive-prompt-background: linear-gradient(120deg, var(--color-1), var(--color-2));`
+
+      [tip type="note"]If you want to see all the available styles, check the [documentation](/documentation/components/amp-story-interactive?format=stories) or [example story](/documentation/examples/components/amp-story-interactive/story).[/tip]
+      
+      -->
+      <amp-story-page id="page-quiz-3">
+        <amp-story-grid-layer template="fill">
+          <amp-img
+            layout="fixed" width="1600" height="1200"
+            src="https://images.unsplash.com/photo-1531266752426-aad472b7bbf4?q=20"/>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="fill" aspect-ratio="4:6">
+          <div animate-in="scale-fade-up">
+            <amp-story-interactive-quiz
+               id="quiz-3"
+               prompt-text="Where are FIFA headquarters?"
+               endpoint="https://amp.dev/documentation/examples/components/amp-story-interactive-poll/results"
+               class="center"
+               prompt-size="large"
+               option-1-text="Germany"
+               option-2-text="USA"
+               option-3-text="Switzerland" option-3-correct option-3-confetti="🌐"
+               option-4-text="Spain">
+            </amp-story-interactive-quiz>
+          </div>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <!-- 
+        ## Link to the results
+        We must configure thresholds for each state in the `amp-story-interactive-results`. This allows it to calculate and display the user's results from their quiz selections.
+
+        When users answer the quizzes, an internal state saves the percentage of correct answers and checks what `results-threshold` fits the percentage calculated. Then it shows the category, description and image of the calculated state.
+
+        If you go back to the other pages and answer the quizzes (in the story below), you'll see how the results change state and percentage shown when you go back to the results page. Here we create 2 states: "Expert" for users that answer all the questions correctly, and "Fan" for users that miss one or more questions. Try to get all the answers correctly on the story below, and see how the element changes to show the "Expert" category.
+
+        [tip type="read-on"]You can add up to 4 states on the `amp-story-interactive-results` element, and include images for the different states. For an example of a results element with image, check the guide on how to make a [Web Story with polls](/documentation/examples/components/amp-story-interactive-poll/?format=stories)[/tip]
+      -->
+      <amp-story-page id="page-results">
+        <amp-story-grid-layer template="fill">
+          <amp-img
+            layout="fixed" width="1600" height="1200"
+            src="https://images.unsplash.com/photo-1527871369852-eb58cb2b54e2?q=20"/>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="fill" aspect-ratio="4:6">
+          <div animate-in="scale-fade-up">
+            <amp-story-interactive-results
+               id="results-1" class="center"
+               prompt-text="You are a soccer"
+               option-1-results-category="Fan" option-1-text="You might not be the most knowledgeable, but enjoy watching games every now and then" option-1-results-threshold="0"
+               option-2-results-category="Expert" option-2-text="You know everything about soccer, be proud of it!" option-2-results-threshold="80">
+            </amp-story-interactive-results>
+          </div>
+        </amp-story-grid-layer>
+      </amp-story-page>
+    </amp-story>
+  </body>
+</html>
+
+<!--
+  # More resources
+
+  If you want to learn more about all the interactive experiences for Web Stories, head over to the [documentation](/documentation/components/amp-story-interactive?format=stories) or check out the guide on how to make a [story with polls](/documentation/examples/components/amp-story-interactive-poll/?format=stories) instead.
+-->

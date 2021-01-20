@@ -4,7 +4,7 @@ $title: Desteklenen Düzenler
 
 Kullandığınız öğeleri duyarlı yapın; `layout=responsive` kodunu ekleyin.
 
-## Düzen özniteliği için desteklenen değerler
+## Düzen özniteliği için desteklenen değerler <a name="the-layout-attribute"></a>
 
 Varsayılan olarak, duyarlı düzenler kullanın.
 
@@ -52,14 +52,14 @@ Düzen özniteliğine ilişkin desteklenen değerlerin tam listesini aşağıda 
   </tbody>
 </table>
 
-### Genişlik ve yükseklik tanımlanmamışsa ne olur?
+### Genişlik ve yükseklik tanımlanmamışsa ne olur? <a name="what-if-width-and-height-are-undefined"></a>
 
 Birkaç örnekte, `width` veya `height` belirtilmemişse AMP çalışma zamanı bunları aşağıdaki gibi varsayılan değerlerine ayarlayabilir:
 
 * [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): Genişlik ve yükseklik varsayılan olarak 0 değerine ayarlanır.
 * [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): Varsayılan genişlik ve yükseklik tarayıcıdan belirlenir.
 
-### Düzen özniteliği tanımlanmamışsa ne olur?
+### Düzen özniteliği tanımlanmamışsa ne olur? <a name="what-if-the-layout-attribute-isnt-specified"></a>
 
 Düzen davranışı aşağıdaki gibi belirlenir:
 
@@ -74,6 +74,8 @@ Diğer web sitelerinde olduğu gibi sayfa düzeninin nasıl görüneceğini ve n
 Tarayıcı penceresinin boyutu veya yönü değiştiğinde, medya sorguları yeniden değerlendirilir ve öğeler, yeni sonuçlara göre gizlenir ve gösterilir.
 
 [Duyarlılık için CSS medya sorguları kullanma](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=tr) konusundan medya sorguları uygulayarak düzeni kontrol etme hakkında daha fazla bilgi edinebilirsiniz.
+
+<a name="element-media-queries"></a>
 
 AMP'de bulunan duyarlı tasarım için fazladan bir özellik `media` özniteliğidir.
 Bu öznitelik her AMP öğesinde kullanılabilir; genel stil sayfanızdaki medya sorgularına benzer bir şekilde çalışır ancak yalnızca tek bir sayfadaki belirli bir öğeyi etkiler.

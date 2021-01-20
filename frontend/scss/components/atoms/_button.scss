@@ -25,34 +25,35 @@ none
 @import 'components/atoms/_headline.scss';
 
 @mixin unset-button {
+  -webkit-appearance: none;
   background-color: transparent;
   border: none;
   padding: 0;
 }
 
 @mixin btn {
-	@include hl;
+  @include hl;
   font-size: 1em;
-	@include color-white;
-	display: inline-block;
-	max-width: 100%;
-	width: auto;
-	height: auto;
-	padding: 0.75em 1.75em;
-	margin: 0;
-	text-decoration: none;
-	text-align: center;
+  @include color-white;
+  display: inline-block;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  padding: 0.75em 1.75em;
+  margin: 0;
+  text-decoration: none;
+  text-align: center;
   border-radius: 3px;
-	background-color: color('blue-ribbon');
+  background-color: color('blue-ribbon');
   border: none;
   cursor: pointer;
   box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.25);
   transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 
-	&:hover {
+  &:hover {
     transform: translateY(-0.125em);
     box-shadow: 0 25px 20px -15px rgba(0, 0, 0, 0.15);
-	}
+  }
 
   @media (min-width: 768px) {
     padding: 1em 2em;

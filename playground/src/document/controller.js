@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,11 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import {Base64} from 'js-base64';
 import * as PlaygroundDocument from './document.js';
 import * as Button from '../button/button.js';
 
 import navigationWarning from '../navigation-warning/navigation-warning.js';
-import embedMode from '../embed-mode/';
+import modes from '../modes/';
 import params from '../params/base.js';
 import events from '../events/events.js';
 import snackbar from '../snackbar/base.js';
@@ -39,13 +40,10 @@ export default class DocumentController {
       }
     });
     this._configureStatemachine();
+    events.subscribe(EVENT_INPUT_CHANGE, () => this.srcDoc.update());
     events.subscribe(
-        EVENT_INPUT_CHANGE,
-        () => this.srcDoc.update()
-    );
-    events.subscribe(
-        PlaygroundDocument.EVENT_DOCUMENT_STATE_CHANGED,
-        this._onStateChange.bind(this)
+      PlaygroundDocument.EVENT_DOCUMENT_STATE_CHANGED,
+      this._onStateChange.bind(this)
     );
     win.addEventListener('hashchange', this._onHashChange.bind(this), false);
     // TODO find a better place for key handling
@@ -58,28 +56,33 @@ export default class DocumentController {
 
   _configureStatemachine() {
     this.statemachine = new Map()
-        .set(PlaygroundDocument.READ_ONLY, this._stateReadOnly)
-        .set(PlaygroundDocument.DIRTY, this._stateDirty)
-        .set(PlaygroundDocument.SAVED, this._stateSaved);
+      .set(PlaygroundDocument.READ_ONLY, this._stateReadOnly)
+      .set(PlaygroundDocument.DIRTY, this._stateDirty)
+      .set(PlaygroundDocument.SAVED, this._stateSaved);
   }
 
   _setupDocument(runtime) {
     this.docUrl = params.get('url');
     this.docId = this._getDocumentId();
+    const docHash = params.getHash('share');
     let promise;
     if (this.docUrl) {
       promise = this.srcDoc.fetchUrl(this.docUrl);
     } else if (this.docId) {
       promise = this.srcDoc.fetchDocument(this.docId);
+    } else if (docHash) {
+      promise = Promise.resolve(Base64.decode(docHash));
+      this.win.location.hash = '';
     } else {
       promise = Promise.resolve(runtime.template);
     }
-    return promise.then((content) => this.editor.setSource(content))
-        .catch((err) => {
-          console.error(err);
-          snackbar.show('Could not fetch document.');
-          this.editor.setSource(runtime.template);
-        });
+    return promise
+      .then((content) => this.editor.setSource(content))
+      .catch((err) => {
+        console.error(err);
+        snackbar.show('Could not fetch document.');
+        this.editor.setSource(runtime.template);
+      });
   }
 
   _getDocumentId() {
@@ -97,52 +100,57 @@ export default class DocumentController {
     params.replace('url', '');
     this.docId = docId;
     const path = this.win.location.pathname.replace(REGEX_DOC_ID, '/');
-    const newLocation = path + URL_DOC_ID_PREFIX + docId + this.win.location.hash;
+    const newLocation =
+      path + URL_DOC_ID_PREFIX + docId + this.win.location.hash;
     this.win.history.replaceState(null, null, newLocation);
   }
 
   show() {
     this.saveButton = Button.from(
-        this.win.document.getElementById('save-document'),
-        this.save.bind(this)
+      this.win.document.getElementById('save-document'),
+      this.save.bind(this)
     );
     this.forkButton = Button.from(
-        this.win.document.getElementById('fork-document'),
-        this.fork.bind(this)
+      this.win.document.getElementById('fork-document'),
+      this.fork.bind(this)
     );
     this._onStateChange(this.srcDoc.state, true);
   }
 
   fork() {
     this.forkButton.disable();
-    this.srcDoc.fork()
-        .then((docId) => {
-          this._setDocumentId(docId);
-          this.forkButton.enable();
-          snackbar.show('Document forked');
-        })
-        .catch((err) => {
-          console.error(err);
-          this.forkButton.enable();
-          snackbar.show('Could not fork document');
-        });
+    this.srcDoc
+      .fork()
+      .then((docId) => {
+        this._setDocumentId(docId);
+        this.forkButton.enable();
+        snackbar.show('Document forked');
+      })
+      .catch((err) => {
+        console.error(err);
+        this.forkButton.enable();
+        snackbar.show('Could not fork document');
+      });
   }
 
   save() {
-    if (this.srcDoc.state !== PlaygroundDocument.DIRTY &&
-        this.srcDoc.state !== PlaygroundDocument.READ_ONLY) {
+    if (
+      this.srcDoc.state !== PlaygroundDocument.DIRTY &&
+      this.srcDoc.state !== PlaygroundDocument.READ_ONLY
+    ) {
       return;
     }
     this.saveButton.disable();
-    this.srcDoc.save(this.editor.getSource())
-        .then((docId) => {
-          this._setDocumentId(docId);
-        })
-        .catch((err) => {
-          console.error(err);
-          this.saveButton.enable();
-          snackbar.show('Could not save document');
-        });
+    this.srcDoc
+      .save(this.editor.getSource())
+      .then((docId) => {
+        this._setDocumentId(docId);
+      })
+      .catch((err) => {
+        console.error(err);
+        this.saveButton.enable();
+        snackbar.show('Could not save document');
+      });
   }
 
   _onHashChange() {
@@ -164,9 +172,7 @@ export default class DocumentController {
 
   _stateSaved(disableSnackbar) {
     navigationWarning.disable();
-    this.saveButton
-        .setHtml('Saved')
-        .disable();
+    this.saveButton.setHtml('Saved').disable();
     if (disableSnackbar) {
       return;
     }
@@ -174,19 +180,16 @@ export default class DocumentController {
   }
 
   _stateDirty() {
-    if (!embedMode.isActive) {
+    if (!modes.IS_EMBED) {
       navigationWarning.enable();
     }
-    this.saveButton.show()
-        .setHtml('Save')
-        .enable();
+    this.saveButton.show().setHtml('Save').enable();
   }
 
   _stateReadOnly() {
-    if (!embedMode.isActive) {
+    if (!modes.IS_EMBED) {
       navigationWarning.enable();
     }
-    this.saveButton.hide()
-        .disable();
+    this.saveButton.hide().disable();
   }
 }

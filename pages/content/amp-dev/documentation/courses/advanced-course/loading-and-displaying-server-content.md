@@ -103,7 +103,7 @@ So what's the main takeaway from our video site example? When developing a site 
 
 To start working with `<amp-list>`, let's recreate a small piece of a video site: the recommended video collection. Our collection of recommended videos is going to have six videos selected for our users by our server. We'll use `<amp-youtube>` for the videos on our site. While our site is contacting the server to retrieve the video information, we're going to use skeleton loading to show structure to our users and to indicate that something is happening.
 
-We're not going to build this product page inside of our Chico's Cheese Bikes project. Instead, you can use [this](https://glitch.com/edit/#!/snapdragon-melody) Glitch as a starting point for this exercise. **Note**: Don't forget to remix it so you can edit! The Glitch contains:
+We're not going to build this product page inside of our Chico's Cheese Bikes project. Instead, you can use <a href="https://glitch.com/edit/#!/snapdragon-melody" target="_blank">this Glitch</a> as a starting point for this exercise. **Note**: Don't forget to remix it so you can edit! The Glitch contains:
 
 * Some basic CSS and HTML to lay out the recommended video page.
 
@@ -163,7 +163,7 @@ Once you've finished, your page should look like this:
 
 ### Solution
 
-The solution can be found in [this](https://glitch.com/edit/#!/potent-custard) Glitch example. The portion of the page containing the changes should look like this:
+The solution can be found in <a href="https://glitch.com/edit/#!/potent-custard" target="_blank">this Glitch</a> example. The portion of the page containing the changes should look like this:
 
 [sourcecode:html]
 {% raw %}<main>
@@ -367,7 +367,7 @@ Recommended style guidelines:
 
 Once you’ve finished, your page should look like this:
 
-{{ image('/static/img/courses/advanced/image7.png', 1512, 1162, caption='The result') }}
+{{ image('/static/img/courses/advanced/image7.png', 504, 387, caption='The result') }}
 
 ### Solution
 
@@ -519,7 +519,7 @@ So what's the main takeaway from our video site example? When developing a site 
 ## Exercise 3: Recreate a Video Site
 
 To start working with `<amp-list>`, let's recreate a small piece of a video site: the recommended video collection. Our collection of recommended videos is going to have six videos selected for our users by our server. We'll use `<amp-youtube>` for the videos on our site. While our site is contacting the server to retrieve the video information, we're going to use skeleton loading to show structure to our users and to indicate that something is happening.
-We're not going to build this product page inside of our Chico's Cheese Bikes project. Instead, you can use [this](https://glitch.com/edit/#!/snapdragon-melody) Glitch as a starting point for this exercise. Note: Don't forget to remix it so you can edit! The Glitch contains:
+We're not going to build this product page inside of our Chico's Cheese Bikes project. Instead, you can use <a href="https://glitch.com/edit/#!/snapdragon-melody" target="_blank">this Glitch</a> as a starting point for this exercise. Note: Don't forget to remix it so you can edit! The Glitch contains:
 
 - Some basic CSS and HTML to lay out the recommended video page.
 
@@ -580,7 +580,7 @@ Once you've finished, your page should look like this:
 
 ### Solution
 
-The solution can be found in [this](https://glitch.com/edit/#!/potent-custard) Glitch example. The portion of the page containing the changes should look like this:
+The solution can be found in <a href="https://glitch.com/edit/#!/potent-custard" target="_blank">this Glitch</a> example. The portion of the page containing the changes should look like this:
 
 [sourcecode:html]
 {% raw %}<main>

@@ -90,7 +90,7 @@ To add a default value for a bound property, include the property both with and 
 <p [class]="messageClass" class="text-color-blue">Hello AMP!</p>
 {% endraw %}[/sourcecode]
 
-So far, we’ve used basic expressions that directly referenced a single state variable, but we can get more elaborate. Expressions are a subset of JavaScript. They can include static values such as numbers or strings, state variables, and a set of white-listed functions. The [documentation](../../../documentation/components/reference/amp-bind.md#expressions) gives a rundown of the values that can be added to an expression.
+So far, we’ve used basic expressions that directly referenced a single state variable, but we can get more elaborate. Expressions are a subset of JavaScript. They can include static values such as numbers or strings, state variables, and a set of allow-listed functions. The [documentation](../../../documentation/components/reference/amp-bind.md#expressions) gives a rundown of the values that can be added to an expression.
 
 The value of a bound property is set to the value that's returned when an expression is evaluated. For example, this code shows how to create an error message during account creation. The following case checks whether a user's two entered passwords match:
 
@@ -132,7 +132,7 @@ Using the [documentation](../../../documentation/components/reference/amp-bind.m
 
 Once you have finished, the result should look like this:
 
-{{ image('/static/img/courses/advanced/image4.png', 752, 1336, align='center third', caption='Image of the styled thumbnail carousel') }}
+{{ image('/static/img/courses/advanced/image4.png', 225, 400, align='center third', caption='Image of the styled thumbnail carousel') }}
 
 ### Solution
 
@@ -183,7 +183,7 @@ Remember to include the `<amp-bind>` library in the `<head>`:
 
 Binding and state management are important to e-commerce pages. Imagine going to a shopping site looking to buy a new t-shirt. You search through the lists of options before settling on a style and brand that you really like. Navigating to the product page, you see lists of additional options. You might be able to select among different fits, sizes, or colors.
 
-{{ image('/static/img/courses/advanced/image12.png', 1999, 1001, align='center', caption='Online shopping product page example') }}
+{{ image('/static/img/courses/advanced/image12.png', 550, 275, align='center', caption='Online shopping product page example') }}
 
 Often, as we select these options, the page changes to match our selection. The picture might update to a green women’s shirt or to a red men’s shirt. The price might change as we pick a different t-shirt fit or size. Other options might be sold out entirely, causing an error message to appear!
 
@@ -199,7 +199,7 @@ Our next goal is to recreate a basic online product page such as the one we disc
 
 {{ image('/static/img/courses/advanced/image5.png', 1180, 942,  align='center', caption='The example product page we’re building') }}
 
-We’re not going to build this product page inside of our Chico’s Cheese Bikes shop project. Instead, you can use [this](https://glitch.com/~rustic-musician) Glitch as a starting point for this exercise. **Note**: Don’t forget to remix it so you can edit! The Glitch contains:
+We’re not going to build this product page inside of our Chico’s Cheese Bikes shop project. Instead, you can use <a href="https://glitch.com/~rustic-musician" target="_blank">this Glitch</a> as a starting point for this exercise. **Note**: Don’t forget to remix it so you can edit! The Glitch contains:
 
 * Some basic CSS and HTML to layout the static product page.
 
@@ -382,7 +382,7 @@ To add a default value for a bound property, include the property both with and 
 <p [class]="messageClass" class="text-color-blue">Hello AMP!</p>
 {% endraw %}[/sourcecode]
 
-So far, we've used basic expressions that directly referenced a single state variable, but we can get more elaborate. Expressions are a subset of JavaScript. They can include static values such as numbers or strings, state variables, and a set of white-listed functions. The [documentation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#expressions) gives a rundown of the values that can be added to an expression.
+So far, we've used basic expressions that directly referenced a single state variable, but we can get more elaborate. Expressions are a subset of JavaScript. They can include static values such as numbers or strings, state variables, and a set of allow-listed functions. The [documentation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#expressions) gives a rundown of the values that can be added to an expression.
 
 For example, this code shows how to create an error message during account creation. The following case checks whether a user's two entered passwords match:
 
@@ -483,7 +483,7 @@ Our next goal is to recreate a basic online product page like the one we discuss
 
 {{ image('/static/img/courses/advanced/image5.png', 1180, 942,  align='center', caption='The example product page we\'re building') }}
 
-We're not going to build this product page inside of our Chico's Cheese Bikes shop project. Instead, you can use [this](https://glitch.com/~rustic-musician) Glitch as a starting point for this exercise. **Note**: Don't forget to remix it so you can edit! The Glitch contains:
+We're not going to build this product page inside of our Chico's Cheese Bikes shop project. Instead, you can use <a href="https://glitch.com/~rustic-musician" target="_blank">this Glitch</a> as a starting point for this exercise. **Note**: Don't forget to remix it so you can edit! The Glitch contains:
 
 - Some basic CSS and HTML to layout the static product page.
 

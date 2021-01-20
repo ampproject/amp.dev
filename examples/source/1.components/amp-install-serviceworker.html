@@ -8,7 +8,7 @@ author: ymotongpoo
 <!--
   ## Introduction
 
-  The [`amp-install-serviceworker`](/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md) component enables service worker installation via same origin or via the Google AMP Cache.
+  The [`amp-install-serviceworker`](/content/amp-dev/documentation/components/reference/amp-install-serviceworker-v0.1.md) component enables service worker installation via same origin or via the Google AMP Cache.
 
   [Service workers](https://github.com/slightlyoff/ServiceWorker/blob/master/explainer.md) can run in the background even when the browser is closed, cache required contents in advance of rendering time, send notifications to users, and more.
 
@@ -16,11 +16,11 @@ author: ymotongpoo
 
   Service Workers are currently available in [Chrome, Edge, Firefox, Opera and Safari](https://jakearchibald.github.io/isserviceworkerready/).
 
-  Read on: [Workbox](https://developers.google.com/web/tools/workbox/) is a great library for implementing service workers.
+  Tip: The AMP Project provides a drop in [service Worker](https://github.com/ampproject/amp-sw) to help your AMP pages gain network resiliency in one line.
 -->
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 <head>
   <meta charset="utf-8">
   <title>amp-install-serviceworker</title>
@@ -31,7 +31,7 @@ author: ymotongpoo
   -->
   <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
   <link rel="canonical" href="<% canonical %>">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 </head>
 <body>
@@ -45,8 +45,8 @@ author: ymotongpoo
     Tip: If you don't want to provide a special minimal document to install a sevice worker, you can simply link to the AMP document on your own origin.
   -->
   <amp-install-serviceworker
-      src="/sw.js"
-      data-iframe-src="<% hosts.platform %>/sw.html"
+      src="/serviceworker.js"
+      data-iframe-src="<% hosts.platform %>/serviceworker.html"
       layout="nodisplay">
   </amp-install-serviceworker>
   <!--

@@ -1,6 +1,8 @@
 ---
 $title: Example with HTML comments
 $order: 10
+$sitemap:
+  enabled: False
 ---
 
 Start

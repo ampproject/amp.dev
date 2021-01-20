@@ -20,6 +20,7 @@ const path = require('path');
 const project = require('@lib/utils/project');
 
 const {GitHubImporter, log} = require('./gitHubImporter');
+const MarkdownDocument = require('./markdownDocument');
 
 // Where to save the documents to
 const DESTINATION_BASE_PATH = project.absolute('pages/content/amp-dev');
@@ -44,12 +45,25 @@ class SpecImporter {
     const importedDocs = [];
     for (const importDoc of importDocs) {
       try {
-        const doc = await this.githubImporter_.fetchDocument(importDoc.from, importDoc.repo, true);
-        doc.path = path.join(DESTINATION_BASE_PATH, importDoc.to);
-        doc.title = importDoc.title;
-        doc.order = importDoc.order;
+        const contents = await this.githubImporter_.fetchFile(
+          importDoc.from,
+          importDoc.repo,
+          true
+        );
+
+        const doc = new MarkdownDocument(
+          path.join(DESTINATION_BASE_PATH, importDoc.to),
+          contents,
+          {
+            $title: importDoc.title,
+            order: importDoc.order,
+            formats: importDoc.formats,
+          }
+        );
+
+        // Explicitly disable inline TOC for spec documents
         doc.toc = importDoc.toc;
-        doc.formats = importDoc.formats;
+
         const baseURL = `https://github.com/${importDoc.repo}/blob/master/`;
         doc.importURL = baseURL + importDoc.from;
 
@@ -58,6 +72,7 @@ class SpecImporter {
 
         const relativeBase = `${baseURL}${path.dirname(importDoc.from)}`;
         doc.rewriteRelativePaths(relativeBase);
+        doc.addExplicitAnchors();
 
         importedDocs.push(doc.save());
       } catch (err) {

@@ -1,6 +1,6 @@
 ---
 $title: Enable experimental features
-$order: 5
+$order: 3
 description: 'AMP experimental components are released features not yet ready for wide use, so they are protected by an experimental status.'
 formats:
   - websites
@@ -81,7 +81,7 @@ Document can choose to opt in a certain experiments. To do that, place a meta ta
 </head>
 ```
 
-By doing so, the specified experiments will be enabled for all visitors of the document. However, not all experiments allow document-level opt-in. For a full list of whitelisted experiments, see the `allow-doc-opt-in` attribute in the project's [`prod-config.json`](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/prod-config.json) file. Note that document opt-in can be overridden by user opt-out.
+By doing so, the specified experiments will be enabled for all visitors of the document. However, not all experiments allow document-level opt-in. For a full list of allowlisted experiments, see the `allow-doc-opt-in` attribute in the project's [`prod-config.json`](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/prod-config.json) file. Note that document opt-in can be overridden by user opt-out.
 
 ## Origin trials
 

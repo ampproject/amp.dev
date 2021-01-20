@@ -13,3 +13,33 @@ teaser:
     alt: Bike Shop
 
   download_url: '/static/files/templates/e-commerce.zip'
+  template_demo_home: 'websites/e-commerce/templates/landing.amp.html'
+  template_github_home: 'websites/e-commerce'
+ 
+document:
+  pages: /content/amp-dev/documentation/templates/bikeshop/pages
+  description: The Bike Shop e-commerce template includes the core pages of a typical e-commerce site.
+
+url:
+  path: '/documentation/templates/bikeshop'
+
+stage:
+  layout: all
+  devices:
+    - image_src: '/static/img/templates/bikeshop/pages/bikeshop-landing-desktop-above.jpg'
+      width: 4
+      height: 3
+      type: desktop
+      alt: image
+
+    - image_src: '/static/img/templates/bikeshop/pages/bikeshop-cart-tablet-above.jpg'
+      width: 3
+      height: 4
+      type: tablet
+      alt: image
+
+    - image_src: '/static/img/templates/bikeshop/pages/bikeshop-landing-mobile-above.jpg'
+      width: 1
+      height: 2
+      type: mobile
+      alt: image

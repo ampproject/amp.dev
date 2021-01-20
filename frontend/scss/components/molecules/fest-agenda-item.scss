@@ -1,0 +1,121 @@
+/*
+
+######################
+### MOLECULE: agenda-item ###
+######################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_color.scss';
+
+.#{molecule('agenda-item')} {
+  @include txt;
+  @include txt-lrg;
+  display: flex;
+  text-align: left;
+  padding-left: 10px;
+
+  &-speakers {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-left: -75px;
+    min-width: 65px;
+  }
+
+  &-image {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+      border-radius: 50%;
+
+      &:nth-child(even) {
+        margin-left: 15px;
+      }
+
+      &:nth-child(odd) {
+        margin-left: -15px;
+      }
+    }
+
+  }
+
+  &-time {
+    @include txt-font-accent;
+    width: 50px;
+    margin-right: 25px;
+    padding-right: 15px;
+    color: color('charade');
+  }
+
+  &-dory {
+    background: color('bittersweet');
+    padding: 0.4em;
+    border-radius: 0.2em;
+    color: color('white');
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.25);
+    margin-top: 1rem;
+    display: inline-block;
+  }
+
+  &-description {
+    position: relative;
+    width: 80%;
+    border-left: 2px solid color('blue-ribbon');
+    padding: 0 0 25px 25px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      margin-top: 8px;
+      height: 8px;
+      width: 8px;
+      left: -5px;
+      background: color('blue-ribbon');
+    }
+
+    &.session, &.keynote, &.panel {
+
+      &:before {
+        left: -10px;
+        background: color('white');
+        height: 14px;
+        width: 14px;
+        margin-top: 4px;
+        border: 2px solid color('blue-ribbon');
+      }
+    }
+
+    &.keynote {
+      color: color('blue-ribbon');
+    }
+
+    &-title {
+      @include txt;
+      @include txt-lrg;
+      @include txt-font-accent;
+      color: color('charade');
+
+      &.break {
+        color: fade_out(color('charade'), 0.5);
+      }
+    }
+
+    &-text {
+      @include txt;
+    }
+
+    &-speaker {
+      @include txt;
+      color: color('blue-ribbon');
+    }
+  }
+}

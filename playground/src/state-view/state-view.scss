@@ -1,0 +1,20 @@
+@import 'base.scss';
+
+@keyframes HIGHLIGHT {
+  from {
+    background: color('lav-magenta');
+  }
+  to {
+    background: transparent;
+  }
+}
+
+#state-view {
+  width: 50%;
+  max-width: 780px;
+
+  .highlight {
+    border-radius: 2px;
+    animation: HIGHLIGHT 1s ease-out;
+  }
+}

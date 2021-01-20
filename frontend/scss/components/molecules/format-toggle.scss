@@ -76,35 +76,33 @@
     }
   }
 
-    &-link-websites {
-
-      &:hover, &.#{molecule('format-toggle')}-selected  {
-        @include gradient-websites; color: color('white');
-        .#{atom('ico')} { fill: color('white'); }
-      }
+  &-link-websites {
+    &:hover, &.#{molecule('format-toggle')}-selected  {
+      @include gradient-websites; color: color('white');
+      .#{atom('ico')} { fill: color('white'); }
     }
+  }
 
-    &-link-stories {
-      &:hover, &.#{molecule('format-toggle')}-selected {
-        @include gradient-stories; color: color('pigment-indigo');
-        .#{atom('ico')} { fill: color('pigment-indigo'); }
-      }
+  &-link-stories {
+    &:hover, &.#{molecule('format-toggle')}-selected {
+      @include gradient-stories; color: color('charade');
+      .#{atom('ico')} { fill: color('charade'); }
     }
+  }
 
-    &-link-ads {
-      &:hover, &.#{molecule('format-toggle')}-selected {
-        @include gradient-ads; color: color('white');
-        .#{atom('ico')} { fill: color('white'); }
-      }
+  &-link-ads {
+    &:hover, &.#{molecule('format-toggle')}-selected {
+      @include gradient-ads; color: color('white');
+      .#{atom('ico')} { fill: color('white'); }
     }
+  }
 
-    &-link-email {
-
-      &:hover, &.#{molecule('format-toggle')}-selected {
-        @include gradient-e-mails; color: color('ultramarine');
-        .#{atom('ico')} { fill: color('ultramarine'); }
-      }
+  &-link-email {
+    &:hover, &.#{molecule('format-toggle')}-selected {
+      @include gradient-e-mails; color: color('charade');
+      .#{atom('ico')} { fill: color('charade'); }
     }
+  }
 
   &-angle {
     margin-right: 0;

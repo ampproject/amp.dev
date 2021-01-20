@@ -85,7 +85,7 @@ AMP requiere la definición de una `width` y un `minimum-scale` para la ventana 
 Para resolver el error de viewport, agregue el siguiente fragmento HTML a la etiqueta `<head>`:
 
 ```html
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="viewport" content="width=device-width">
 ```
 Los valores especificados para `width` y `minimum-scale` son los valores requeridos en AMP. Definir `initial-scale` no es obligatorio, pero es comúnmente incluido en el desarrollo web móvil y se recomienda. Puede obtener más información sobre la ventana gráfica y el diseño de respuesta en [Configure the Viewport](https://developers.google.com/speed/docs/insights/ConfigureViewport).
 
@@ -255,7 +255,7 @@ Ahora su documento de AMP debe ser algo como esto:
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
 
     <link rel="canonical" href="/article.html">
     <link rel="shortcut icon" href="amp_favicon.png">
@@ -315,5 +315,5 @@ AMP validation successful.
 ### Preguntas frecuentes
 
 - [What is DOM reflow?](http://stackoverflow.com/a/27637245)
-- [¿Qué ocurre si el atributo layout no está definido?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#¿qué-ocurre-si-el-atributo-layout-no-está-definido?)
-- [¿Qué ocurre si width y height no están definidos?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#¿qué-ocurre-si-width-y-height-no-están-definidos?)
+- [¿Qué ocurre si el atributo layout no está definido?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isnt-specified)
+- [¿Qué ocurre si width y height no están definidos?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-width-and-height-are-undefined)

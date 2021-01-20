@@ -15,12 +15,18 @@
  */
 
 const cheerio = require('cheerio');
+const amphtmlValidator = require('amphtml-validator');
 const {htmlContent} = require('@lib/utils/cheerioHelper');
+const config = require('@lib/config.js');
 const formats = require('./formats');
 
+const host = config.hosts.platform;
+const FORMATS_REGEXP = /@formats\(([^)]+)\)/;
+
 class FormatTransform {
-  constructor(formats) {
+  constructor(formats, validator) {
     this.formats = formats;
+    this.validator = validator;
   }
 
   supportsFormat(target) {
@@ -42,15 +48,36 @@ class FormatTransform {
     if (!this.supportsFormat(target)) {
       throw new Error(`Unsupported transform format: ${target}`);
     }
-    const {transforms} = this.formats[target];
-    const $ = cheerio.load(input);
+    const {transforms, validatorRuntime} = this.formats[target];
+    const $ = cheerio.load(input, {decodeEntities: false});
+    this.applyCommentFormatFilters_($, target);
     for (const selector of Object.keys(transforms)) {
       const elements = $(selector);
       elements.each((i, el) => {
         this.transformElement_($(el), transforms[selector]);
       });
     }
-    return htmlContent($);
+    const content = htmlContent($);
+
+    const result = {transformedContent: content};
+    if (validatorRuntime) {
+      const fixedContent = this.prepareForValidator_(content);
+      const validation = this.validator.validateString(
+        fixedContent,
+        validatorRuntime
+      );
+      result.validationResult = validation;
+    }
+    return result;
+  }
+
+  prepareForValidator_(content) {
+    // The validator enforces HTTPS for some formats - if the host is localhost,
+    // validation will fail, so we need to feed it "fake" HTTPS links.
+    if (host.scheme !== 'http') {
+      return content;
+    }
+    return content.replace(/http:/g, 'https:');
   }
 
   transformElement_(el, transform) {
@@ -67,6 +94,59 @@ class FormatTransform {
       throw new Error(`Invalid transformation: ${transform}`);
     }
   }
+
+  applyCommentFormatFilters_($, target) {
+    const process = (node) => {
+      if (node.type === 'comment') {
+        this.parseCommentNode_(node, target);
+      } else if (node.children) {
+        for (const child of node.children) {
+          process(child);
+        }
+      }
+    };
+    const root = $('html').get(0);
+    process(root);
+  }
+
+  parseCommentNode_(comment, target) {
+    const filters = this.findCommentFormatFilters_(comment.data);
+    comment.data = comment.data.replace(FORMATS_REGEXP, '');
+    if (!filters || filters.has(target)) {
+      return;
+    }
+
+    comment.type = null;
+    comment.data = null;
+
+    let next = comment.next;
+    while (next) {
+      const type = next.type;
+      next.type = null;
+      next.data = null;
+
+      if (type !== 'text') {
+        break;
+      }
+      next = next.next;
+    }
+  }
+
+  findCommentFormatFilters_(text) {
+    const match = text.match(FORMATS_REGEXP);
+    if (!match) {
+      return null;
+    }
+    return new Set(match[1].split(',').map((e) => e.trim()));
+  }
 }
 
-module.exports = new FormatTransform(formats);
+const instance = amphtmlValidator
+  .getInstance()
+  .then((validator) => new FormatTransform(formats, validator));
+
+async function getInstance() {
+  return instance;
+}
+
+module.exports = {getInstance};

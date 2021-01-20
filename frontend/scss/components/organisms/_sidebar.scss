@@ -6,6 +6,45 @@
 @import 'components/atoms/_color.scss';
 @import 'components/atoms/_text.scss';
 
+@mixin sidebar-ampsidebar {
+  width: 100%;
+  max-width: 90vw;
+  background: color('whisper');
+}
+
+@mixin sidebar-ampsidebar-toolbar {
+  top: 86px;
+  height: 100vh;
+  max-height: calc(100vh - 86px);
+
+  @media (min-width: 768px){
+    position: -webkit-sticky;
+    position: sticky;
+    overflow: auto;
+  }
+
+  & > ul {
+    -webkit-overflow-scrolling: touch;
+    margin: 0;
+    padding: 0;
+
+    @media (min-width: 768px){
+      overflow: auto;
+      max-height: 100%;
+    }
+
+    @include scrollbar;
+
+    &::-webkit-scrollbar-thumb {
+      background-color: transparentize(color('black'), 0.9);
+    }
+  }
+}
+
+@mixin sidebar-wrapper {
+  max-width: 100%;
+}
+
 @mixin sidebar {
 
   @media (min-width: 768px) {
@@ -111,6 +150,7 @@
   padding: 0;
   margin: 0;
   background: none transparent;
+  border: none;
   cursor: pointer;
 }
 

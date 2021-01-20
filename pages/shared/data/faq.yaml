@@ -1,7 +1,7 @@
 overview:
   - title: What is the Accelerated Mobile Pages project?
     answer: |
-      The Accelerated Mobile Pages (“AMP”) Project is an open source initiative that came out of discussions between publishers and technology companies about the need to improve the entire mobile content ecosystem for everyone -- publishers, consumer platforms, advertisers, creators, and users.
+      The Accelerated Mobile Pages (AMP) Project is an open source initiative that came out of discussions between publishers and technology companies about the need to improve the entire mobile content ecosystem for everyone -- publishers, consumer platforms, advertisers, creators, and users.
 
       Today, the expectation is that content should load super fast and be easy to explore. The reality is that content can take several seconds to load, or, because the user abandons the slow page, never fully loads at all. Accelerated Mobile Pages are web pages designed to load near instantaneously -- they are a step towards a better mobile web for all.
   - title: What are the benefits of Accelerated Mobile Pages?
@@ -90,6 +90,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/adfox.md
       - label: Ad Generation
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/adgeneration.md
+      - label: AdGlare
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/adglare.md
       - label: Adhese
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/adhese.md
       - label: Adincube
@@ -190,6 +192,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/google/doubleclick.md
       - label: eADV
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/eadv.md
+      - label: Epeex
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/epeex.md
       - label: E-Planning
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/eplanning.md
       - label: Ezoic
@@ -220,6 +224,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/holder.md
       - label: I-Mobile
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/imobile.md
+      - label: Idealmedia
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/idealmedia.md
       - label: Imonomy
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/imonomy.md
       - label: iBillboard
@@ -244,6 +250,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/kixer.md
       - label: Kuadio
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/kuadio.md
+      - label: Lentainform
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/lentainform.md
       - label: Ligatus
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/ligatus.md
       - label: LockerDome
@@ -264,6 +272,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/medyanet.md
       - label: Meg
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/meg.md
+      - label: MGID
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/mgid.md
       - label: MicroAd
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/microad.md
       - label: MixiMedia
@@ -416,110 +426,6 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/zedo.md
       - label: Zucks
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/zucks.md
-  - title: Analytics
-    id: analytics
-    list:
-      - label: Acquia Lift
-        url: https://docs.acquia.com/lift
-      - label: Adobe Analytics
-        url: https://marketing.adobe.com/resources/help/en_US/sc/implement/accelerated-mobile-pages.html
-      - label: AFS Analytics
-        url: https://www.afsanalytics.com/articles/developers/
-      - label: Alexa Internet
-        url: https://support.alexa.com/hc/en-us/sections/200063374-Certified-Site-Metrics
-      - label: AT Internet
-        url: http://developers.atinternet-solutions.com/javascript-en/advanced-features-javascript-en/accelerated-mobile-pages-amp-javascript-en/
-      - label: Baidu Analytics
-        url: http://tongji.baidu.com/web/help/article?id=268&amp;type=0
-      - label: Burt
-        url: http://burtcorp.com
-      - label: Chartbeat
-        url: http://support.chartbeat.com/docs/integrations.html#amp
-      - label: Clicky Web Analytics
-        url: https://clicky.com/help/apps-plugins
-      - label: comScore
-        url: http://www.comscore.com
-      - label: Cxense
-        url: https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration
-      - label: Dynatrace
-        url: https://www.dynatrace.com/technologies/web/amp-monitoring/
-      - label: EPICA
-        url: https://www.epica.ai/
-      - label: Eulerian Analytics
-        url: https://eulerian.wiki
-      - label: Facebook Pixel
-        url: https://www.facebook.com/business/a/facebook-pixel
-      - label: Gemius
-        url: https://www.gemius.com
-      - label: Google Ads
-        url: https://support.google.com/adwords/answer/1722054?hl=en
-      - label: Google Analytics
-        url: https://developers.google.com/analytics/devguides/collection/amp-analytics/
-      - label: Google Tag Manager
-        url: https://developers.google.com/google-ads/amp/landing-pages#google_tag_manager
-      - label: INFOnline / IVW
-        url: https://www.infonline.de
-      - label: Keen
-        url: https://keen.io/docs/api/
-      - label: Krux
-        url: https://konsole.zendesk.com/hc/en-us/articles/216596608
-      - label: Linkpulse
-        url: http://docs.linkpulse.com
-      - label: Lotame
-        url: https://mylotame.force.com/s/article/Google-AMP
-      - label: Médiamétrie
-        url: http://www.mediametrie.com/
-      - label: mediarithmics
-        url: https://developer.mediarithmics.com/
-      - label: Moat Analytics
-        url: https://moat.com/analytics
-      - label: Mobify
-        url: https://docs.mobify.com/amp-sdk/latest/guides/amp-analytics/
-      - label: mParticle
-        url: http://docs.mparticle.com/?javascript#amp
-      - label: New Relic
-        url: https://docs.newrelic.com/docs/browser/new-relic-browser/installation/monitor-amp-pages-new-relic-browser
-      - label: Nielsen
-        url: https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API
-      - label: Nielsen Marketing Cloud
-        url: http://www.nielsen.com/us/en/solutions/capabilities/nielsen-marketing-cloud.html
-      - label: OEWA
-        url: https://www.oewa.at
-      - label: Parsely
-        url: http://parsely.com/docs/integration/tracking/google-amp.html
-      - label: Permutive
-        url: http://support.permutive.com
-      - label: Piano
-        url: http://vx.piano.io/javascript-tracking-amp
-      - label: Pinpoll
-        url: https://pinpoll.com/
-      - label: Pressboard
-        url: http://help.pressboard.ca/publisher-resources/getting-started/implementing-google-amp
-      - label: Quantcast Measurement
-        url: https://www.quantcast.com/help/guides/
-      - label: Retargetly
-        url: https://retargetlydmp.zendesk.com/hc/es-419/articles/360012932034-Implementacion-del-tag-contenedor-AMP-Pages-
-      - label: Segment
-        url: https://segment.com/docs/spec/
-      - label: SOASTA mPulse
-        url: https://www.soasta.com/mPulse
-      - label: SimpleReach
-        url: http://docs.simplereach.com/dev-guide/implementation/google-amp-implementation
-      - label: Snowplow Analytics
-        url: https://github.com/snowplow/snowplow/wiki/Google-AMP-Tracker
-      - label: Rambler/TOP-100
-        url: https://top100.rambler.ru/docs
-      - label: TEA Analytics
-      - label: Top.Mail.Ru
-        url: https://help.mail.ru/top/amp-analytics
-      - label: Umeng+ Analytics
-        url: http://dev.umeng.com/udplus/js-sdkdoc#5
-      - label: Treasure Data
-        url: https://docs.treasuredata.com/articles/javascript-sdk-google-amp
-      - label: Webtrekk
-        url: https://supportcenter.webtrekk.com/en/public/amp-analytics.html
-      - label: Yandex Metrica
-        url: https://yandex.com/support/metrica/code/install-counter-amp.xml
   - title: Content Platforms
     id: content-platforms
     list:
@@ -580,6 +486,8 @@ platform_and_vendor_partners:
         url: https://www.quintype.com/
       - label: Rabbit
         url: https://gomobile.jp/rabbit/
+      - label: RebelMouse
+        url: https://www.rebelmouse.com/AMP/
       - label: Squarespace
         url: https://support.squarespace.com/hc/en-us/articles/223766868-Using-AMP-with-Squarespace
       - label: Textpattern
@@ -631,6 +539,37 @@ platform_and_vendor_partners:
         url: https://vine.co/
       - label: YouTube
         url: https://www.youtube.com/
+  - title: Real Time Config
+    id: rtc
+    list:
+      - label: APS (Amazon Publishing Service)
+        url: https://aps.amazon.com/aps/index.html
+      - label: Automatad
+        url: https://automatad.com/
+      - label: Criteo
+        url: https://www.criteo.com/
+      - label: FLUX
+        url: https://flux-g.com/
+      - label: IndexExchange
+        url: https://www.indexexchange.com/
+      - label: Lotame
+        url: https://www.lotame.com/
+      - label: Media.net
+        url: https://www.media.net/
+      - label: PubMatic OpenWrap
+        url: https://pubmatic.com/
+      - label: Rubicon
+        url: https://rubiconproject.com/
+      - label: Salesforce
+        url: https://www.salesforce.com/
+      - label: Yieldbot
+        url: https://www.nexx.tv/
+      - label: Kargo
+        url: https://kargo.com/
+      - label: Xandr (formerly Appnexus)
+        url: https://www.xandr.com/
+      - label: Yieldlab
+        url: https://www.yieldlab.com/
 supported_browsers:
   - title: Chrome
     img: /static/img/platforms/chrome.png
@@ -644,3 +583,85 @@ supported_browsers:
     img: /static/img/platforms/opera.png
   - title: UC Browser
     img: /static/img/platforms/uc_browser.png
+email:
+  clients:
+    title: Email Clients
+    list:
+      - label: Gmail
+        url: https://developers.google.com/gmail/ampemail/
+        image:
+          src: /static/img/email-clients/gmail.png
+      - label: Mail.ru
+        url: https://postmaster.mail.ru/amp
+        image:
+          src: /static/img/email-clients/mailru.png
+      - label: Yahoo Mail
+        url: https://developer.verizonmedia.com/mail/amp-for-email/
+        image:
+          src: /static/img/email-clients/yahoo-mail.png
+  partners:
+    - title: Email Platforms and Service Providers (ESPs)
+      id: esp
+      list:
+        - label: Adobe Campaign Classic
+          url: https://www.adobe.com/marketing/campaign.html
+        - label: Amazon Pinpoint
+          url: https://aws.amazon.com/pinpoint/
+        - label: Amazon Simple Email Service (SES)
+          url: https://aws.amazon.com/ses/
+        - label: AWeber
+          url: https://www.aweber.com/
+        - label: Blueshift
+          url: https://blueshift.com/
+        - label: Braze
+          url: https://www.braze.com/
+        - label: Cheetah Digital
+          url: https://www.cheetahdigital.com/
+        - label: Clang
+          url: https://www.e-village.com/clang/
+        - label: Copernica
+          url: https://www.copernica.com/
+        - label: Customer.io
+          url: https://customer.io/
+        - label: dotdigital
+          url: https://dotdigital.com/
+        - label: Elastic Email
+          url: https://elasticemail.com/
+        - label: eSputnik
+          url: https://esputnik.com/
+        - label: ExpressPigeon
+          url: https://expresspigeon.com/amp-dynamic-email
+        - label: Iterable
+          url: https://iterable.com/
+        - label: Klaviyo
+          url: https://www.klaviyo.com/
+        - label: MagNews
+          url: https://www.magnews.com/
+        - label: Mailrelay
+          url: https://mailrelay.com/
+        - label: Mapp Cloud
+          url: https://mapp.com/
+        - label: Maileon
+          url: https://www.maileon.com
+        - label: Mailgun
+          url: https://www.mailgun.com/
+        - label: Mailkit
+          url: https://www.mailkit.com/
+        - label: MessageGears
+          url: https://messagegears.com/
+        - label: MindBox
+          url: https://mindbox.cloud/
+        - label: MoonMail
+          url: https://www.moonmail.io
+        - label: Pepipost
+          url: https://pepipost.com/
+        - label: SendPulse
+          url: https://sendpulse.com/
+        - label: SocketLabs
+          url: https://www.socketlabs.com/
+        - label: SparkPost
+          url: https://www.sparkpost.com/
+        - label: Tripolis
+          url: https://www.tripolis.com/
+        - label: Twilio SendGrid
+          url: https://www.twilio.com/sendgrid

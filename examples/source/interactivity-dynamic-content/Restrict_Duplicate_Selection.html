@@ -1,0 +1,79 @@
+<!---
+author: elisameyer
+tags:
+  - dynamic-content
+--->
+
+<!--
+
+## Introduction
+
+This is a sample showing how to restrict duplicate selection of items in `amp-list`. This uses
+`amp-selector` in combination with `amp-bind` to check whether or not an item is currently in
+the list (populated by `fruits` list).
+
+If the fruit you select is already in the `fruits` list, the `fruits` list doesn't change.
+
+If the fruit you select is not already in the `fruits` list then it's added to the end
+of the list.
+-->
+<!doctype html>
+<html ⚡ lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Restrict Duplicate Selection</title>
+  <link rel="canonical" href="<% canonical %>">
+  <meta name="viewport" content="width=device-width" />
+  <script async="" src="https://cdn.ampproject.org/v0.js"></script>
+  <!-- ## Setup -->
+  <!-- Import the `amp-bind` component to hold the selected fruits -->
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <!-- Import the `amp-list` component to import the list of fruits to select from -->
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+  <!-- Import the `amp-selector` component so user can choose fruits -->
+  <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+  <!-- The `amp-mustache` component is required if using `amp-selector` with `amp-list` -->
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+
+<body>
+  <h2> Restrict Duplicate Selection Example </h2>
+  <!-- ## Implementation -->
+  <!--
+      We use the `amp-state` element to create a list that's initially empty but will update once user selects fruits. User selects fruits from `amp-list` element (imported from fruits.json file).
+
+      Every time the user tries to select a fruit, the `amp-selector` element will validate whether or not fruit is already in `fruits` list.
+      If fruit is not already in the list, `amp-selector` will change the state of the `fruits` list with the new fruit at end. If fruit is in `fruit-selected` list, the list stays the same.
+    -->
+  <div>
+    <amp-state id="fruits">
+      <script type="application/json">
+        []
+      </script>
+    </amp-state>
+    <p>
+      Pick your favorite fruites from this list <br> You can only add new fruits to the list, you can't add the same fruit
+      multiple times.
+    </p>
+    <div style="resize: horizontal; overflow: auto;">
+      <p [text]="fruits">Select fruits!</p>
+    </div>
+    <amp-list src="/static/samples/json/fruits.json" height="242" items="." single-item>
+      <template type="amp-mustache">
+        <ul>
+          <amp-selector on="select:AMP.setState({fruits: fruits.includes(event.targetOption) ? fruits : fruits.concat([event.targetOption])})">
+            {{#items}}
+              <li option="{{name}}" role="button" tabindex="0">
+                {{name}}
+              </li>
+            {{/items}}
+          </amp-selector>
+        </ul>
+      </template>
+    </amp-list>
+  </div>
+</body>
+
+</html>

@@ -194,7 +194,7 @@ Buna ilişkin ayrıntılı ileti aşağıdakilerden biri olabilir:
 <table>
    <tr>
   	<td class="col-thirty"><strong>Kod</strong></td>
-  	<td><span class="notranslate">CDATA_VIOLATES_BLACKLIST</span></td>
+  	<td><span class="notranslate">CDATA_VIOLATES_DENYLIST</span></td>
   </tr>
    <tr>
   	<td class="col-thirty"><strong>Biçim</strong></td>
@@ -208,7 +208,7 @@ Buna ilişkin ayrıntılı ileti aşağıdakilerden biri olabilir:
 
 Belirli CSS verileri, önemli CSS AMP kurallarını doğrulamak için kara listeye eklenmiştir.
 
-Aşağıda, kara listeye alınan CSS verilerinin listesini görebilirsiniz (ayrıca, [AMP doğrulayıcı spesifikasyonunda `blacklisted_cdata_regex` öğesine de bakın](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)):
+Aşağıda, kara listeye alınan CSS verilerinin listesini görebilirsiniz (ayrıca, [AMP doğrulayıcı spesifikasyonunda `disallowed_cdata_regex` öğesine de bakın](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)):
 
 * `"\\.i?-amp-"` ("CSS -amp- sınıf adı öneki")
 * `"!important"`
@@ -552,7 +552,7 @@ Benzersiz etiketlerin tam listesi bilinmektedir:
 * `<body>`
 * `<script src="https://cdn.ampproject.org/v0.js">`
 
-## Stil ve düzen hataları
+## Stil ve düzen hataları <a name="stil-ve-düzen-hataları"></a>
 
 Stil ve düzen hatalarına ayrıntılı bir şekilde girmeden önce, [stil](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md) ve [düzenin](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) AMP'de nasıl çalıştığının anlaşılması iyi olur. AMP sayfaları birer HTML sayfası olduğundan stil, herhangi bir HTML sayfasıyla büyük ölçüde aynıdır.
 Ancak, sayfaların hızlı yüklenmesini sağlayan bazı kısıtlamalar söz konusudur ve AMP doğrulayıcı, bu kısıtlamaları uygular.

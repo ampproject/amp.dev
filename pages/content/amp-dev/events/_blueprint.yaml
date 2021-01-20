@@ -5,8 +5,7 @@ $localization:
   path: /{locale}/events/{base}.html
 $order: 4
 
-index: /content/amp-dev/events/amp-conf-2019.html
+index: /content/amp-dev/events/amp-fest-2020.html
 flyout:
-    - /content/amp-dev/events/amp-conf-2019.html
-    - /content/amp-dev/events/amp-cs-2019.html
+    - /content/amp-dev/events/amp-fest-2020.html
     - /content/amp-dev/events/amp-roadshow.html

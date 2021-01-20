@@ -14,8 +14,6 @@ section_links:
 ---
 {% do doc.styles.addCssFile('css/components/templates/events.css') %}
 {% do doc.styles.addCssFile('/css/components/molecules/jumbo.css') %}
-{% do doc.amp_dependencies.add('amp-youtube', '0.1') %}
-{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
 
 
 <section class="ap--stage ap--container-fluid">
@@ -23,10 +21,10 @@ section_links:
     <div class="ap-o-stage ap-o-stage-websites all">
       <div class="ap--container-fluid">
         <div class="ap-o-stage-content ap-o-stage-content-roadshow">
-          <h1 class="ap-o-stage-content-headline">AMP Roadshow</h1>
-          <h2 class="ap-o-stage-content-subline">Come join us in your city for a free, inclusive dev workshop with the AMP team.</h2>
+          <h1 class="ap-o-stage-content-headline">{{ _('AMP Roadshow') }}</h1>
+          <h2 class="ap-o-stage-content-subline">{{ _('Come join us in your city for a free, inclusive dev workshop with the AMP team.') }}</h2>
           {% do doc.styles.addCssFile('/css/components/atoms/button.css') %}
-          <a href="#Cities" class="ap-o-stage-content-button ap-a-btn">Sign Up</a>
+          <a href="#Cities" class="ap-o-stage-content-button ap-a-btn">{{ _('Sign Up') }}</a>
         </div>
       </div>
     </div>
@@ -38,24 +36,10 @@ section_links:
     </div>
 </section>
 
-<section class="ap--container-fluid">
-  {% do doc.styles.addCssFile('css/components/organisms/jumpto-list.css') %}
-  {% do doc.styles.addCssFile('css/components/molecules/jumpto-item.css') %}
-
-  <div class="ap-o-jumpto">
-    <div class="ap--container">
-      <div class="ap-o-jumpto-content">
-        <p class="ap-o-jumpto-text">Jump To:</p>
-        <ul class="ap-o-jumpto-list">
-          {% for link in doc.section_links %}
-            <li class="ap-m-jumpto-item">
-              <a href="#{{ link }}"class="ap-m-jumpto-item-link">{{ link }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </div>
+<section class="ap--container">
+  {% with text=_('Jump to:') %}
+  {% include '/views/partials/jumpto.j2' %}
+  {% endwith %}
 </section>
 
 <section id="Cities" class="ap--container">
@@ -64,7 +48,7 @@ section_links:
   {% do doc.styles.addCssFile('css/components/molecules/visited-city.css') %}
 
   <div class="ap-o-cities ap--content-wide">
-    <h3 class="ap-o-cities-headline">Cities</h3>
+    <h3 class="ap-o-cities-headline">{{ _('Cities') }}</h3>
 
     {% if doc.pod.env.dev %}
     {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
@@ -120,7 +104,7 @@ section_links:
               {% do doc.icons.useIcon('/icons/cities-map-pin.svg') %}
               <div class="ap-a-ico ap-o-cities-map-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cities-map-pin"></use></svg></div>
             </div>
-            <div class="ap-o-cities-map-tooltip">{{ place.title }}</div>
+            <div class="ap-o-cities-map-tooltip">{{ _(place.title) }}</div>
           </div>
           {% endif %}
         {% endfor %}
@@ -131,7 +115,7 @@ section_links:
           {% set row = place.coords.split('x')[1]|int + 1 %}
           <div class="ap-o-cities-map-grid-cell" style="grid-column: {{col}}; grid-row: {{row}};">
             <div class="ap-o-cities-map-pin ap-o-cities-map-pin-past"></div>
-            <div class="ap-o-cities-map-tooltip">{{ place.title }}</div>
+            <div class="ap-o-cities-map-tooltip">{{ _(place.title) }}</div>
           </div>
           {% endif %}
         {% endfor %}
@@ -144,9 +128,21 @@ section_links:
       </div>
     </div>
 
-    <span class="ap-o-cities-sub-headline">Where we're going next</span>
+    {% if doc.roadshow.nextstop %}
+    <span class="ap-o-cities-sub-headline">{{ _('Where we’re going next') }}</span>
+    <div class="ap-m-tip ap-m-tip-important">
+      <div class="ap-m-tip-content">
+        {% do doc.icons.useIcon('icons/warning.svg') %}
+        <div class="ap-a-ico ap-m-tip-icon">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning"></use></svg>
+        </div>
+        <p>{{ _('Due to concerns around coronavirus (COVID-19), and in accordance with health guidance from the <a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html" target="_blank" rel="noopener noreferrer">CDC</a>, <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" target="_blank" rel="noopener noreferrer">WHO</a>, and other health authorities, we have decided to postpone AMP roadshow events until further notice. We very much look forward to seeing you all as soon as we can!<br><br>Please see <a href="https://blog.amp.dev/2020/03/05/an-update-on-amp-conf/">here</a> for an update on AMP Conf 2020.') }} </p>
+      </div>
+    </div>
+    {% endif %}
 
     <div class="ap-o-cities-next-events">
+      {% if doc.roadshow.nextstop %}
       <div class="ap-o-cities-next-events-list">
 
       {% for nextstop in doc.roadshow.nextstop %}
@@ -176,35 +172,30 @@ section_links:
                 {% do doc.icons.useIcon('/icons/map.svg') %}
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#map"></use></svg>
               </div>
-              {{ nextstop.location }}
+              {{ _(nextstop.location) }}
             </div>
           </div>
         </div>
       {% endfor %}
-
       </div>
+      {% endif %}
+
       <div class="ap-o-cities-next-events-checkback">
-        <p>Your city isn't on the list? Check back soon for additional dates and cities. Or...</p>
-        <h4>Want the AMP Roadshow to visit your area?</h4>
-        <p>That's very kind. Fill out
-            <a href="https://docs.google.com/forms/d/14B75eV89S1KaceNTG46ranAOPCj3wCLzgD3mxuGeUtU/viewform" target="_blank">this form</a>
-            and we’ll see what we can do!
-        </p>
-        <h4>Want to host your own AMP Roadshow?</h4>
-        <p>Why not? Fill out
-          <a href="https://docs.google.com/forms/d/1PMWCq1MTqg-AslvBMvMlU_ozjyZK7WZ-4fUVs0UlheE/viewform" target="_blank">this form</a>,
-          and we’ll share with you our talks and all the materials you need to do it yourself!
-        </p>
+        <p>{{ _('Your city isn’t on the list? Check back soon for additional dates and cities. Or...') }}</p>
+        <h4>{{ _('Want the AMP Roadshow to visit your area?') }}</h4>
+        <p>{{ _('That’s very kind. Fill out <a href="https://docs.google.com/forms/d/14B75eV89S1KaceNTG46ranAOPCj3wCLzgD3mxuGeUtU/viewform" target="_blank">this form</a> and we’ll see what we can do!') }}</p>
+        <h4>{{ _('Want to host your own AMP Roadshow?') }}</h4>
+        <p>{{ _('Why not? Fill out <a href="https://docs.google.com/forms/d/1PMWCq1MTqg-AslvBMvMlU_ozjyZK7WZ-4fUVs0UlheE/viewform" target="_blank">this form</a>, and we’ll share with you our talks and all the materials you need to do it yourself!') }}</p>
       </div>
     </div>
 
-    <h4 class="ap-o-cities-sub-headline">Where we've been</h4>
+    <h4 class="ap-o-cities-sub-headline">{{ _('Where we’ve been') }}</h4>
     <ul class="ap-o-cities-visited-list">
 
       {% for visited in doc.roadshow.past|sort(True, attribute='date') %}
         <li class="ap-m-visited-city">
           <div class="ap-m-visited-city-group">
-            <div class="ap-m-visited-city-title">{{ visited.title }}</div>
+            <div class="ap-m-visited-city-title">{{ _(visited.title) }}</div>
             <div class="ap-m-visited-city-date">{{ visited.date|datetime('MMM d, Y') }}</div>
           </div>
         </li>
@@ -222,9 +213,8 @@ section_links:
   <div class="ap-o-agenda">
     <div class="ap-o-agenda-block">
       <div class="ap-o-agenda-content">
-        <h3 class="ap-o-agenda-content-headline">Agenda</h3>
-        <p class="ap-o-agenda-content-sub-text">The agenda is designed to enable you to build even more beautiful, interactive and canonical AMP pages. We welcome both newcomers to AMP and those who already ship AMP pages.
-        <span>This is a sample agenda – schedule varies based on the city.</span>
+        <h3 class="ap-o-agenda-content-headline">{{ _('Agenda') }}</h3>
+        <p class="ap-o-agenda-content-sub-text">{{ _('The agenda is designed to enable you to build even more beautiful, interactive and canonical AMP pages. We welcome both newcomers to AMP and those who already ship AMP pages. <span>This is a sample agenda – schedule varies based on the city.</span>') }}
         <p>
 
         <ul class="ap-o-agenda-content-list">
@@ -241,13 +231,13 @@ section_links:
                   {% endif %}
                   <div class="ap-m-agenda-item-time">{{ agenda_item.time }}</div>
                   <div class="ap-m-agenda-item-description  {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">
-                  <div class="ap-m-agenda-item-description-title  {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">{{ agenda_item.title }}</div>
+                  <div class="ap-m-agenda-item-description-title  {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">{{ _(agenda_item.title) }}</div>
                   {% if speaker %}
                     <div class="ap-m-agenda-item-description-speaker">{{ speaker.name }}</div>
                   {% endif %}
 
                   {% if agenda_item.description %}
-                    <div class="ap-m-agenda-item-description-text">{{ agenda_item.description }}</div>
+                    <div class="ap-m-agenda-item-description-text">{{ _(agenda_item.description) }}</div>
                   {% endif %}
                   </div>
                 </li>
@@ -264,18 +254,18 @@ section_links:
   {% do doc.styles.addCssFile('css/components/molecules/roadshow-pillar.css') %}
 
   <div class="ap-o-roadshow-content">
-    <div class="ap-o-roadshow-content-headline">Content</div>
-    <div class="ap-o-roadshow-content-description">We'll cover a lot of ground in the few hours we have together. To enable you to build full-fledged AMP sites, the roadshow will deep dive into four big pillars:</div>
+    <div class="ap-o-roadshow-content-headline">{{ _('Content') }}</div>
+    <div class="ap-o-roadshow-content-description">{{ _('We’ll cover a lot of ground in the few hours we have together. To enable you to build full-fledged AMP sites, the roadshow will deep dive into four big pillars:') }}</div>
     <div class="ap-o-roadshow-content-pillar-list">
 
       {% for pillar in doc.roadshow.pillars %}
         <div class="ap-m-roadshow-pillar">
           <div class="ap-m-roadshow-pillar-headline">
-            {{ pillar.pillar }}
+            {{ _(pillar.pillar) }}
           </div>
           {% for content in pillar.contents %}
           <div class="ap-m-roadshow-pillar-points">
-            {{ content }}
+            {{ _(content) }}
           </div>
           {% endfor %}
         </div>
@@ -290,8 +280,8 @@ section_links:
 
   <div class="ap-m-amplify">
     <div class="ap-m-amplify-content">
-      <h3 class="ap-m-amplify-content-headline">Amplify Live!</h3>
-      <div class="ap-m-amplify-content-subline">During "Amplify live!", we'll be on stage exploring the most interesting AMP challenges, allowing you to either follow along or do your own thing, like one of the many AMP codelabs. Bring your laptop!</div>
+      <h3 class="ap-m-amplify-content-headline">{{ _('Amplify Live!') }}</h3>
+      <div class="ap-m-amplify-content-subline">{{ _('During "Amplify live!", we’ll be on stage exploring the most interesting AMP challenges, allowing you to either follow along or do your own thing, like one of the many AMP codelabs. Bring your laptop!') }}</div>
     </div>
   </div>
 
@@ -300,14 +290,14 @@ section_links:
 <section id="FAQ" class="ap--container">
   {% do doc.styles.addCssFile('css/components/molecules/faq.css') %}
   <div class="ap-m-faq">
-    <h3 class="ap-m-faq-headline">Frequently Asked Questions</h3>
+    <h3 class="ap-m-faq-headline">{{ _('Frequently Asked Questions') }}</h3>
     <div class="ap-m-faq-content">
-      <div class="ap-m-faq-content-question">Does it cost anything?</div>
-      <div class="ap-m-faq-content-answer">No - tickets are free of charge.</div>
-       <div class="ap-m-faq-content-question">Who is the event for?</div>
-      <div class="ap-m-faq-content-answer">Web developers and designers with an interest in AMP--whether you've had experience using AMP and want to create better experiences, you're curious about how you can use AMP to improve your site, or you want to contribute to AMP to make it better for everyone.</div>
-       <div class="ap-m-faq-content-question">Am I all set after registering?</div>
-      <div class="ap-m-faq-content-answer">We expect that in some cities more people will be interested in attending than we can accommodate, so we will be confirming attendees on a case-by-case basis.</div>
+      <div class="ap-m-faq-content-question">{{ _('Does it cost anything?') }}</div>
+      <div class="ap-m-faq-content-answer">{{ _('No - tickets are free of charge.') }}</div>
+      <div class="ap-m-faq-content-question">{{ _('Who is the event for?') }}</div>
+      <div class="ap-m-faq-content-answer">{{ _('Web developers and designers with an interest in AMP--whether you’ve had experience using AMP and want to create better experiences, you’re curious about how you can use AMP to improve your site, or you want to contribute to AMP to make it better for everyone.') }}</div>
+      <div class="ap-m-faq-content-question">{{ _('Am I all set after registering?') }}</div>
+      <div class="ap-m-faq-content-answer">{{ _('We expect that in some cities more people will be interested in attending than we can accommodate, so we will be confirming attendees on a case-by-case basis.') }}</div>
     </div>
   </div>
 </section>

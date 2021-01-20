@@ -6,12 +6,35 @@
   {% include '/views/partials/sidebar-toggle-button.j2' %}
   {% include '/views/partials/breadcrumbs.j2' %}
 
-  {% if doc.title and doc.view in ['/views/detail/docs-detail.j2', ] %}
+  {% if doc.title and doc.view in ['/views/detail/docs-detail.j2'] %}
   <h1>{{ doc.title }}</h1>
   {% endif %}
 
+  {% set formats = ['ads', 'email', 'stories', 'websites'] %}
+  {% if (doc.formats|sort or formats) != formats %}
+  {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
+  [% set availableFormats = {{ doc.formats|tojson }} %]
+  [% if not availableFormats.includes(format) %]
+  <div class="ap-m-tip">
+    <div class="ap-a-ico ap-m-tip-icon">
+      {% do doc.icons.useIcon('icons/warning-sign.svg') %}
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-sign"></use></svg>
+    </div>
 
-  {# Add the level toggle button, if the document hast a level: true in the frontmatter #}
+    <div class="ap-m-tip-content">
+      <p>{{ _('Important: this documentation is not applicable to your currently selected format') }} <b>[= format =]</b>!</p>
+    </div>
+  </div>
+  [% endif %]
+  {% endif %}
+
+  {% if doc.title and doc.view in ['/views/detail/component-detail.j2'] %}
+  {% include '/views/partials/component-headline.j2' %}
+
+  {% include '/views/partials/component-intro.j2' %}
+  {% endif %}
+
+  {# Adds the level toggle button if leveled: true is set in the frontmatter #}
   {% if doc.leveled %}
   {% include '/views/partials/level-toggle.j2' %}
   {% endif %}

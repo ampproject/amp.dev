@@ -1,0 +1,72 @@
+.#{prefix(null, 'pie-charts')} {
+  margin-bottom: 50px;
+
+  &-chart {
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    margin-left: auto;
+    border-radius: 50%;
+    background: color('iron');
+
+    &:nth-child(odd) {
+      --size: 180px;
+      @include respond-to('medium') { --size: 340px; }
+    }
+
+    &:nth-child(even) {
+      margin-left: 0;
+      margin-top: -10%;
+      --size: 160px;
+
+      @include respond-to('medium') {
+        margin-top: -5%;
+        --size: 240px;
+      }
+    }
+
+    &-clip {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: var(--size);
+      height: var(--size);
+      clip: rect(0, var(--size), var(--size), calc(var(--size)/2));
+    }
+
+    &-part {
+      position: absolute;
+      width: var(--size);
+      height: var(--size);
+      clip: rect(0, calc(var(--size)/2), var(--size), 0);
+      border-radius: 50%;
+      background: color('blue-ribbon');
+    }
+
+    &-overlay {
+      position: absolute;
+      top: 15%;
+      left: 15%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 70%;
+      height: 70%;
+      border-radius: 50%;
+      background: color('white');
+      box-shadow: shadows('center');
+      text-align: center;
+      line-height: 1.1;
+      font-weight: bold;
+      color: color('charade');
+
+      span {
+        font-size: 45px;
+
+        @include respond-to('medium') {
+          font-size: 65px;
+        }
+      }
+    }
+  }
+}

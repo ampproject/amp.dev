@@ -1,12 +1,19 @@
 {
-  "extends": "google",
+  "extends": [
+		"google",
+		"prettier"
+	],
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
+  "plugins": [
+    "prettier"
+  ],
   "rules": {
     "max-len": [2, 100, {
-      "ignoreComments": true,
+			"ignoreComments": true,
+			"ignoreRegExpLiterals": true,
       "ignoreUrls": true,
       "tabWidth": 2
     }],
@@ -25,7 +32,7 @@
       "argsIgnorePattern": "(^reject$|^_$)",
       "varsIgnorePattern": "(^_$)"
     }],
-    "quotes": [2, "single"],
+    "prettier/prettier": 2,
     "require-jsdoc": 0,
     "valid-jsdoc": 0,
     "prefer-arrow-callback": 1,

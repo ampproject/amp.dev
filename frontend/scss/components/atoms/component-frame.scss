@@ -29,7 +29,7 @@ format modifiers for differen color rendering (e.g. websites -> blue border, ads
     position: absolute;
     left: -3px;
     top: -3px;
-    border: 3px solid color('doger-blue');
+    border: 3px solid color('robins-egg');
 
     @media (min-width: 768px) {
       left: -4px;
@@ -55,7 +55,7 @@ format modifiers for differen color rendering (e.g. websites -> blue border, ads
     bottom: 100%;
     padding: 3px 6px;
     font-size: 8px;
-    background-color: color('doger-blue');
+    background-color: color('robins-egg');
 
     @media (min-width: 768px) {
       left: -4px;
@@ -74,7 +74,7 @@ format modifiers for differen color rendering (e.g. websites -> blue border, ads
 }
 
 @mixin component-frame-websites {
-  &:before { border-color: color('doger-blue'); }
+  &:before { border-color: color('robins-egg'); }
   &:after { @include gradient-websites; }
 }
 
@@ -84,7 +84,7 @@ format modifiers for differen color rendering (e.g. websites -> blue border, ads
 }
 
 @mixin component-frame-ads {
-  &:before { border-color: color('lavender-magenta'); }
+  &:before { border-color: color('lav-magenta'); }
   &:after { @include gradient-ads; }
 }
 

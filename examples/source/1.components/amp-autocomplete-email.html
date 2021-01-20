@@ -1,0 +1,183 @@
+<!---
+author: caroqliu
+preview: amp4email
+formats:
+  - email
+--->
+<!--
+  ## Introduction
+
+  An autocomplete-enabled input field suggests completed results corresponding to the user input as they type into the input field.
+  This feature can help the user to carry out their task more quickly.
+
+  Data can be fetched from a JSON endpoint.
+-->
+<!-- -->
+<!DOCTYPE html>
+<html ⚡4email lang="en" data-css-strict>
+  <head>
+    <meta charset="utf-8" />
+    <!-- The AMP runtime.-->
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <!-- The AMP for Email boilerplate.  -->
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+    <!--
+    ## Setup
+
+    Import the `amp-autocomplete` component.
+  -->
+    <script
+      async
+      custom-element="amp-autocomplete"
+      src="https://cdn.ampproject.org/v0/amp-autocomplete-0.1.js"
+    ></script>
+    <!--
+  Import the `amp-mustache` component for content templating and rendering of responses.
+  -->
+    <script
+      async
+      custom-template="amp-mustache"
+      src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+    ></script>
+
+    <style amp-custom>
+      .custom {
+        padding-top: 4px;
+        font: 10pt 'Courier New', Courier, monospace;
+      }
+      .profile-pic {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        margin-left: -5px;
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Basic usage</h2>
+    <!--
+    ## Basic usage
+
+    An `amp-autocomplete` must always have an **input field** specified with an `input` or `textarea` tag and a datasource.
+    When a user types into this input field, relevant suggestions will automatically appear below the input field.
+
+    A **datasource** must be a JSON object containing an array property `items` and can be provided as remote data through the `src` attribute.
+
+    Note: Because server-side filtering is mandatory in the email format, it is wise to pair the `src` and `query` attributes
+    in order to passed user inputs to a statically generated endpoint. For example if a `src="https://example.com` and `query="q"`, then a user who types in `abc` will get the fetch JSON result from `https://example.com?q=abc`.
+
+    -->
+    <amp-autocomplete
+      min-characters="1"
+      src="<% hosts.platform %>/documentation/examples/api/autosuggest/search_list"
+      query="q"
+    >
+      <input type="search" name="queryInput" />
+      <template type="amp-mustache">
+        <div data-value="{{.}}">
+          {{.}}
+        </div>
+      </template>
+    </amp-autocomplete>
+
+    <h2>Suggesting rich content</h2>
+    <!--
+    ## Suggesting rich content
+
+    More complicated data can be passed into autocompleted with an array of JsonObjects in "items".
+
+    ```json
+    { "items" : [
+        {
+            "value" : "Albany",
+            "state" : "New York",
+            "areaCode" : 518,
+            "population" : 98251
+        }, {
+            "value" : "Annapolis",
+            "state" : "Maryland",
+            "areaCode" : 410,
+            "population" : 39321
+        }, {
+            "value" : "Trenton",
+            "state" : "New Jersey",
+            "areaCode" : 609,
+            "population" : 84964
+        }
+    ] }
+    ```
+
+    The corresponding display of these data in the `amp-autocomplete` can be specified through a template.
+
+    ```html
+    <template type="amp-mustache" id="amp-template-custom">
+      <div class="city-item" data-value="{{value}}, {{state}}">
+        <div>{{value}}, {{state}}</div>
+        <div class="custom-population">Population: {{population}}</div>
+      </div>
+    </template>
+    ```
+  -->
+    <amp-autocomplete
+      min-characters="0"
+      src="<% hosts.platform %>/documentation/examples/api/autosuggest/cities"
+      query="q"
+    >
+      <input type="search" name="city" />
+      <template type="amp-mustache" id="amp-template-custom">
+        <div class="city-item" data-value="{{value}}, {{state}}">
+          <div>{{value}}, {{state}}</div>
+          <div class="custom">Population: {{population}}</div>
+        </div>
+      </template>
+    </amp-autocomplete>
+
+    <h2>Inline autocomplete</h2>
+    <!--
+    ## Displaying suggestions inline
+
+    Suggestions can be triggered on a specified character token in an `amp-autocomplete` for multiple autosuggestions in a single input by using the `inline` attribute.
+
+    The token for triggering the autosuggestion must be the provided value for the `inline` attribute. For example, if `inline="+"`, then when the `+` token is entered by the user,
+    any relevant suggestions will be displayed. Otherwise, the field will behave the same as an unenhanced input field. The `inline` attribute does not support the empty string,
+    or `""` as a legitimate token value on `amp-autocomplete`.
+  -->
+    <div>
+      <amp-autocomplete
+        inline="+"
+        min-characters="1"
+        src="<% hosts.platform %>/documentation/examples/api/autosuggest/characters"
+        query="q"
+      >
+        <textarea
+          autoexpand
+          rows="2"
+          cols="50"
+          placeholder="Type your message here"
+          name="message"
+        ></textarea>
+        <template type="amp-mustache">
+          <div class="close-friends" data-value="{{ email }}">
+            <amp-img
+              class="profile-pic"
+              height="30"
+              width="30"
+              layout="responsive"
+              alt="Profile picture of AMP logo"
+              src="<% hosts.platform %>/static/samples/img/favicon.png"
+            ></amp-img>
+            <div class="info">
+              <div>{{ name }}</div>
+              <div class="custom">{{ email }}</div>
+            </div>
+          </div>
+        </template>
+      </amp-autocomplete>
+    </div>
+  </body>
+</html>

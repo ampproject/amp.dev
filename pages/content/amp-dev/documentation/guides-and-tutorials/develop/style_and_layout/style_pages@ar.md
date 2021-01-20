@@ -4,7 +4,7 @@ $title: لغة CSS المعتمدة
 
 مثل كل صفحات الويب، يتم تحديد أنماط صحفات AMP باستخدام لغة CSS،
 ولكن لا يمكنك الإشارة إلى أوراق الأنماط الخارجية
-(باستثناء [الخطوط المخصصة](#استثناء-الخطوط-المخصصة)).
+(باستثناء [الخطوط المخصصة](#the-custom-fonts-exception)).
 وهناك أيضًا أنماط معيّنة غير مسموح بها نظرًا لأغراض متعلقة بالأداء؛
 فسمات الأنماط المضمّنة غير مسموح بها.
 
@@ -22,7 +22,7 @@ $title: لغة CSS المعتمدة
 
 [/tip]
 
-## استخدام معالجات CSS التمهيدية
+## استخدام معالجات CSS التمهيدية <a name="using-css-preprocessors"></a>
 
 يعمل الناتج الناشئ عن المعالجات التمهيدية في AMP تمامًا مثل أي صفحة ويب أخرى.
 على سبيل المثال، يستخدم الموقع [amp.dev](https://amp.dev/) لغة
@@ -40,9 +40,10 @@ $title: لغة CSS المعتمدة
 وهكذا يمكن أن تتضمن العديد من الصفحات في الموقع مقاطع فيديو youtube مضمّنة.
 
 [sourcecode:html] {% raw %}
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
   <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 
@@ -118,7 +119,7 @@ $title: لغة CSS المعتمدة
   </tbody>
 </table>
 
-## خصائص النقل والصور المتحركة المدرجة بالقائمة البيضاء
+## خصائص النقل والصور المتحركة المدرجة بالقائمة البيضاء <a name="the-custom-fonts-exception"></a>
 
 لا يسمح AMP سوى بعمليات النقل والرسوم المتحركة للخصائص
 التي يمكن تسريعها من خلال وحدة معالجة الرسومات في برامج التصفّح الشائعة.
@@ -127,14 +128,14 @@ $title: لغة CSS المعتمدة
 
 في الأمثلة التالية، يجب أن تكون `<property>` في القائمة البيضاء:
 
-* `transition <property> (Also -vendorPrefix-transition)`
-* @ `@keyframes name { from: {<property>: value} to {<property: value>} } (also @-vendorPrefix-keyframes)`
+- `transition <property> (Also -vendorPrefix-transition)`
+- @ `@keyframes name { from: {<property>: value} to {<property: value>} } (also @-vendorPrefix-keyframes)`
 
 لا يمكن تحديد نمط الخاصية `overflow` (و`overflow-y`, `overflow-x`)
 كـ “auto” أو “scroll”.
 ولا يمكن أن يكون لدى أي عنصر محدد بواسط المستخدم في مستند AMP شريط تمرير.
 
-## استثناء الخطوط المخصصة
+## استثناء الخطوط المخصصة <a name="استثناء-الخطوط-المخصصة"></a>
 
 لا يمكن أن تحتوي صفحات AMP على أوراق أنماط خارجية، باستثناء الخطوط المخصصة.
 تتمثل الطريقتان المتوافقتان مع الإشارة إلى الخطوط المخصصة
@@ -145,12 +146,13 @@ $title: لغة CSS المعتمدة
 وفي الوقت الحالي، لا تحوي القائمة البيضاء سوى هذه الأصول
 حيث يُسمح لها بعرض الخطوط من خلال علامات الروابط:
 
-* [https://fast.fonts.net](https://fast.fonts.net)
-* [https://fonts.googleapis.com](https://fonts.googleapis.com)
+- [https://fast.fonts.net](https://fast.fonts.net)
+- [https://fonts.googleapis.com](https://fonts.googleapis.com)
 
 نموذج لعلامة رابط تشير إلى مقدم خطوط مدرج بالقائمة البيضاء، وهو Google Fonts:
 
 [sourcecode:html]
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 [/sourcecode]
 

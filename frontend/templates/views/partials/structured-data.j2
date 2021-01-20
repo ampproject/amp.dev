@@ -60,7 +60,7 @@
 {% set title_prefix = _('Success Story: ') %}
 {% endif %}
 
-<title>{{ title_prefix }}{{ title }} - amp.dev</title>
+<title>{{title_prefix|e}}{{title|e}} - amp.dev</title>
 
 {% if description %}
 <meta name="description" content="{{ description }}">
@@ -103,7 +103,7 @@
 {% if description %}
 <meta name="twitter:description" content="{{ description }}">
 {% endif %}
-<meta name="twitter:title" content="{{ title_prefix }}{{ title }}">
+<meta name="twitter:title" content="{{ title_prefix|e }}{{ title|replace('<', '')|replace('>', '')|e }}">
 <meta name="twitter:creator" content="@ampproject">
 <meta name="twitter:site" content="@ampproject">
 <meta name="twitter:image" content="{{ base_url }}{{ sharing_images.wide }}">
@@ -117,4 +117,4 @@
 {# meta tags for amp.dev search filtering #}
 {% set supported_formats = ','.join(doc.formats or doc.collection.formats or ['websites', 'stories', 'ads', 'email']) %}
 <meta name="supported-amp-formats" content="{{supported_formats}}">
-<meta name="page-locale" content="{{doc.locale}}">
+<meta name="page-locale" content="{{doc.pod.amp_dev.get_represented_locales(doc)}}">

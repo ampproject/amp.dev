@@ -7,7 +7,7 @@
             "classes": "cover",
             "alt-text": "Popular producer.",
             "width": 409, "height": 305, "layout": "responsive",
-            "src": "../../img/land-see/content/shoe-designer-2-resize-medium.jpg"
+            "src": "../img/land-see/content/shoe-designer-centered.jpg"
           }
         ],
         "post-classes": "land-see-pre-animate land-see-post-item land-see-post-item-wide land-see-post-featured col land-see-story",

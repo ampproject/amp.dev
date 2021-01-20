@@ -18,7 +18,7 @@ Below is a brief outline of the types of documentation contributions accepted on
 - [Concept guide](documentation-types.md?format=websites#concept-guide)
 - [Reference documentation](documentation-types.md?format=websites#reference-documentation)
 
-## Introductory tutorial
+## Introductory tutorial <a name="introductory-tutorial"></a>
 
 Introductory tutorials help the developer understand the general idea of the technology. It starts them off coding and ends with a complete basic “Hello World” project. Introductory tutorials demonstrate how to build a key feature of AMP in a step-by-step process. Pair Introductory tutorials with inline code samples and/or a downloadable sample that requires minimal tweaks by the developer to run.
 
@@ -70,7 +70,7 @@ amp.dev examples:
 
 
 
-## Advanced tutorial
+## Advanced tutorial <a name="advanced-tutorial"></a>
 
 Advanced tutorials help developers accomplish a specific task. It assumes the developer has some familiarity with AMP. It should demonstrate how to build an experience, integrate a feature, or address implementation tasks. 
 
@@ -108,14 +108,13 @@ amp.dev examples:
   </tr>
 </table>
 
-## Introductory guide
+## Introductory guide <a name="introductory-guide"></a>
 
 An introductory guide provides an overview of relevant information to get started with AMP. It should identify the feature, describe what it is, and finish with what it does. Introductory guides introduce a developer to the basic requirements of the feature without directing them to implement it. If you’re walking through a process step by step with code samples, you’re probably writing a tutorial. If you're outlining all the programmatic elements for an AMP component, you're probably writing a reference document.
 
 amp.dev examples:
 - [AMP email fundamentals](../../../../documentation/guides-and-tutorials/learn/email_fundamentals.md?format=email)
 - [Common element attributes](../../../../documentation/guides-and-tutorials/learn/common_attributes.md?format=websites)
-- [Best practices for creating an AMP story](../../../../documentation/guides-and-tutorials/develop/amp_story_best_practices.md?format=stories)
 
 <table>
   <tr>
@@ -151,14 +150,14 @@ amp.dev examples:
   </tr>
 </table>
 
-## Concept guide
+## Concept guide <a name="concept-guide"></a>
 
 Concept guides help developers build a deeper understanding of AMP. A concept guide is like a topographic map. It shows the various trails in the area with details such as elevation changes, but it doesn’t prescribe a specific route through the terrain. Explain what a feature is and how it functions rather than how to build a feature.
 
 amp.dev examples:
 
 - [Animate & transition](../../../../documentation/guides-and-tutorials/develop/animations/triggering_css_animations.md?format=websites)
-- [Track engagement with analytics](../../../../documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/index.md?format=websites)
+- [Track engagement with analytics](../../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md?format=websites)
 - [Style & layout](../../../../documentation/guides-and-tutorials/develop/style_and_layout/index.md?format=websites)
 
 <table>
@@ -195,7 +194,7 @@ amp.dev examples:
   </tr>
 </table>
 
-## Reference documentation
+## Reference documentation <a name="reference-documentation"></a>
 
 Reference documentation lists all the programmatic elements for an AMP component. It provides detailed behavioral information and is designed for scanning. Reference documentation should include exemplary code samples and demonstrate use-cases.   
 

@@ -3,6 +3,7 @@
 preview: default
 teaserImage: '/static/samples/img/teaser/hello_world.jpg'
 author: sebastianbenz
+disableTransform: true
 
 --->
 
@@ -15,7 +16,7 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
 <!-- Doctype declaration is required. -->
 <!doctype html>
 <!-- This tells everyone that this is an AMP file. `<html amp>` works too. -->
-<html ⚡>
+<html ⚡ lang="en">
 <!-- ## Head -->
 <!-- -->
 <head>
@@ -31,7 +32,7 @@ An AMP HTML tutorial - learn the different building blocks of an AMP HTML file. 
   <!--
     AMP HTML files require a viewport declaration. It's recommended to include initial-scale=1.
   -->
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <!--
     CSS must be embedded inline.
   -->

@@ -1,3 +1,6 @@
+@import '_functions.scss';
+@import '_variables.scss';
+
 @mixin default-section-padding {
 	padding-left: 30px;
 	padding-right: 30px;
@@ -26,7 +29,6 @@
 @mixin benefit-card-right-shadow {
 box-shadow: 0 25px 50px 0 rgba(0,0,0,0.21);
 }
-
 
 @mixin stage-button-shadow-regular {
   box-shadow: 0 15px 25px 0 rgba(0,0,0,0.25);
@@ -78,18 +80,6 @@ box-shadow: 0 25px 50px 0 rgba(0,0,0,0.21);
 
 @mixin flyout {
   box-shadow: 0 10px 25px 0 rgba(0,0,0,0.2);
-}
-
-@mixin turbo-pizazz {
-	background: linear-gradient(45deg, color('pizazz'), color('turbo'));
-}
-
-@mixin emerald-doger {
-	background: linear-gradient(45deg, color('emerald'), color('doger-blue'));
-}
-
-@mixin river-ebony {
-	background: linear-gradient(45deg, color('river-bed'), color('ebony-clay'));
 }
 
 @mixin heroEnterAnimation {
@@ -152,4 +142,20 @@ box-shadow: 0 25px 50px 0 rgba(0,0,0,0.21);
 	    transform: translate3d(0, -2.3%, 0);
 	  }
 	}
+}
+
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: color('oslo-gray');
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
 }

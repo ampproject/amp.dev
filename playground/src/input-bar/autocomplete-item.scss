@@ -1,0 +1,28 @@
+@import '_variables.scss';
+@import '_functions.scss';
+@import 'components/atoms/_text.scss';
+
+.autocomplete-item {
+  width: 100%;
+  padding: 7px 15px 7px 25px;
+  border: 0;
+  border-bottom: 1px solid color('iron');
+  background: transparent;
+  @include txt;
+  @include txt-2;
+  font-family: Noto Sans;
+  text-align: left;
+  cursor: pointer;
+
+  strong {
+    color: color('black');
+  }
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  &:focus {
+    background: color('athens-gray');
+  }
+}

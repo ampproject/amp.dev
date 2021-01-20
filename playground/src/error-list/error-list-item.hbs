@@ -1,0 +1,11 @@
+<li class="error-list-item validation-error {{ icon }}">
+  <div>
+    <p class="message">
+      {{ message }}
+      {{#if specUrl}}
+      <a href="{{ specUrl }}" target="_blank" rel="noopener">Learn&nbsp;more</a>
+      {{/if}}
+    </p>
+    <div class="location">Line {{ line }}, Column {{ col }}</div>
+  </div>
+</li>

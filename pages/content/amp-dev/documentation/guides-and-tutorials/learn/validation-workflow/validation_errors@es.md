@@ -194,7 +194,7 @@ Este caso se describe con uno de los siguientes mensajes detallados:
 <table>
    <tr>
   	<td class="col-thirty"><strong>Código</strong></td>
-  	<td>CDATA_VIOLATES_BLACKLIST</td>
+  	<td>CDATA_VIOLATES_DENYLIST</td>
   </tr>
    <tr>
   	<td class="col-thirty"><strong>Formato</strong></td>
@@ -208,7 +208,7 @@ Este caso se describe con uno de los siguientes mensajes detallados:
 
 Los datos de CSS específicos se han incluido en la lista negra para validar reglas fundamentales de AMP para CSS.
 
-A continuación puedes consultar la lista de datos CSS incluidos en la lista negra (consulta también <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">`blacklisted_cdata_regex` en la especificación del validador de AMP</a>):
+A continuación puedes consultar la lista de datos CSS incluidos en la lista negra (consulta también <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">`disallowed_cdata_regex` en la especificación del validador de AMP</a>):
 
 * `"\\.i?-amp-"` ("prefijo de nombre de clase -amp- CSS")
 * `"!important"`
@@ -548,7 +548,7 @@ La lista completa de etiquetas únicas es la siguiente:
 * `<body>`
 * `<script src="https://cdn.ampproject.org/v0.js">`
 
-## Errores de estilo y de diseño
+## Errores de estilo y de diseño <a name="style-and-layout-errors"></a>
 
 Antes de entrar en los errores de [estilo](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md) y de [diseño](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md), hay que entender cómo funcionan en AMP. Como las páginas AMP son páginas HTML, el estilo es prácticamente el mismo que el de cualquier página HTML.
 Sin embargo, para garantizar que las páginas se carguen rápidamente, presentan algunas restricciones que el validador de AMP se encarga de hacer cumplir.

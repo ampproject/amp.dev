@@ -1,18 +1,22 @@
 ---
-$title: 使用事例
+"$title": Use cases
+"$order": '2'
+description: このガイドでは、ユーザーエンゲージメントをトラッキングするための一般的な使用事例をご紹介します。注意 – 使用事例の追加を希望される場合はお知らせください。
+formats:
+- websites
 ---
 
-このガイドでは、ユーザー エンゲージメントをトラッキングするための一般的な使用事例をご紹介します。
+このガイドでは、ユーザーエンゲージメントをトラッキングするための一般的な使用事例をご紹介します。
 
-注: 使用事例の追加を希望される場合は、[Google までお知らせください。](https://github.com/ampproject/docs/issues/new)ご自分の使用事例を公開することもできます。詳しくは、[公開方法についての記事](../../../../documentation/guides-and-tutorials/contribute/index.md)をご覧ください。
+[tip type="note"]  <strong>注意 –</strong> 使用事例の追加を希望される場合は[お知らせください。](../../../../documentation/guides-and-tutorials/contribute/index.md)ご自分の使用事例を公開することもできます。詳しくは、<a>公開方法</a>をご覧ください。[/tip]
 
-## ページビューをトラッキングする
+## ページビューのトラッキング
 
 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) と [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) を使用してページビューをトラッキングする方法について説明します。
 
-### amp-pixel を使用する
+### <code>amp-pixel</code> を使用する
 
-以下の例では、指定の URL にページビュー データを送信する際に [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) を使用しています。
+[ ` amp-pixel {/ code1} {/ a0}を使用して、指定されたURLにページビューデータを送信します。`](../../../../documentation/components/reference/amp-pixel.md)
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>
@@ -45,7 +49,7 @@ $title: 使用事例
 
 ### amp-analytics を使用する（googleanalytics）
 
-以下の例では、Google アナリティクスにページビュー データを送信しています（[Google アナリティクスのページ トラッキング](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)もご覧ください）。
+以下の例では、Google アナリティクスにページビュー データを送信しています（[Google アナリティクスのページトラッキング](https://developers.google.com/analytics/devguides/collection/amp-analytics/#page_tracking)もご覧ください）。
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics1">
@@ -65,10 +69,9 @@ $title: 使用事例
 </amp-analytics>
 ```
 
-## ページクリックをトラッキングする
+## ページクリックのトラッキング <a name="tracking-page-clicks"></a>
 
-ページクリックを [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
-を使用してトラッキングし、イベントデータを指定の URL と [Google アナリティクス](https://developers.google.com/analytics/devguides/collection/amp-analytics/)に送信する方法について説明します。
+ソーシャルインタラクションをトラッキングするには、[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) を使用して、イベントデータを指定の URL と [Google アナリティクス](https://developers.google.com/analytics/devguides/collection/amp-analytics/)に送信します。
 
 ### 指定の URL にデータを送信する
 
@@ -102,7 +105,7 @@ $title: 使用事例
 
 ### Google アナリティクスにデータを送信する
 
-以下の例では、`trigger` の `selector` 属性を使用して、特定の要素がクリックされたときに `click` イベントを Google アナリティクスに送信します（[Google アナリティクスの AMP イベント トラッキング](https://developers.google.com/analytics/devguides/collection/amp-analytics/#event_tracking)もご覧ください）。
+以下の例では、`trigger` の `selector` 属性を使用して、特定の要素がクリックされたときに `click` イベントを Google アナリティクスに送信します（[Google アナリティクスの AMP イベントトラッキング](https://developers.google.com/analytics/devguides/collection/amp-analytics/#event_tracking)もご覧ください）。
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics3">
@@ -127,9 +130,9 @@ $title: 使用事例
 </amp-analytics>
 ```
 
-## スクロールをトラッキングする
+## スクロールのトラッキング <a name="tracking-scrolling"></a>
 
-ページ スクロールをトラッキングするには [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)  を使用します。以下の例では、`scrollspec` 属性を使用して、ユーザーがページを垂直方向に 25%、50%、90% スクロールしたときに、指定の URL に `scroll` イベントが送信されるようにしています。また、ページを水平方向に `scroll` 幅の 90% スクロールしたときにもイベントが発生します。
+ページスクロールをトラッキングするには [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) を使用します。以下の例では、`scrollspec` 属性を使用して、ユーザーがページを垂直方向に 25%、50%、90% スクロールしたときに、指定の URL に `scroll` イベントが送信されるようにしています。また、ページを水平方向に `scroll` 幅の 90% スクロールしたときにもイベントが発生します。
 
 ```html
 <amp-analytics>
@@ -155,10 +158,9 @@ $title: 使用事例
 </amp-analytics>
 ```
 
-## ソーシャル インタラクションをトラッキングする
+## ソーシャルインタラクションのトラッキング <a name="tracking-social-interactions"></a>
 
-ソーシャル インタラクションをトラッキングするには、[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
-を使用して、イベントデータを指定の URL と [Google アナリティクス](https://developers.google.com/analytics/devguides/collection/amp-analytics/)に送信します。
+ソーシャルインタラクションをトラッキングするには、[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) を使用して、イベントデータを指定の URL と [Google アナリティクス](https://developers.google.com/analytics/devguides/collection/amp-analytics/)に送信します。
 
 ### 指定の URL にデータを送信する
 
@@ -192,7 +194,7 @@ $title: 使用事例
 
 ### Google アナリティクスにデータを送信する
 
-以下の例では、`trigger` の `selector` 属性を使用して、特定のソーシャル ボタンがクリックされたときにイベントを送信します（[Google アナリティクスの AMP ソーシャル インタラクション トラッキング](https://developers.google.com/analytics/devguides/collection/amp-analytics/#social_interactions)もご覧ください）。
+以下の例では、`trigger` の `selector` 属性を使用して、特定のソーシャルボタンがクリックされたときにイベントを送信します（[Google アナリティクスの AMP ソーシャルインタラクションのトラッキング](https://developers.google.com/analytics/devguides/collection/amp-analytics/#social_interactions)もご覧ください）。
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics4">

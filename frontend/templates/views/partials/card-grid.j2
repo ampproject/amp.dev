@@ -5,7 +5,7 @@
       {% do doc.icons.useIcon('/icons/' + item.icon_name + '.svg') %}
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ item.icon_name }}"></use></svg>
     </div>
-    <h4 class="ap-o-card-grid-card-headline">{{ item.headline }}</h4>
+    <h4 class="ap-o-card-grid-card-headline">{{ _(item.headline) }}</h4>
     {% if item.text %}
     <p class="ap-o-card-grid-card-copy">{{item.text}}</p>
     {% endif %}
@@ -22,6 +22,9 @@
       <span class="ap-m-lnk-text">{{ link.text }}</span>
     </a>
     {% endfor %}
+    {% if item.button %}
+    <a href="{{ item.button.url }}" class="ap-a-btn">{{ item.button.text }}</a>
+    {% endif %}
   </div>
   {% endfor %}
 {% elif card_grid_items_custom %}
@@ -40,6 +43,7 @@
     {% endif %}
     {% for link in item.links %}
     {% set link = g.doc(link, locale=doc.locale) %}
+    {% if link.exists %}
     <a href="{{ link.url.path }}"
       class="ap-m-lnk">
       <div class="ap-a-ico ap-m-lnk-icon">
@@ -48,6 +52,7 @@
       </div>
       <span class="ap-m-lnk-text">{{ link.title }}</span>
     </a>
+    {% endif %}
     {% endfor %}
   </div>
   {% endfor %}

@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -45,7 +45,10 @@ class Menu {
   show() {
     this._setActiveRuntime();
     this._menu.classList.toggle('hide', false);
-    setTimeout(() => this.doc.body.addEventListener('click', this._clickHandler, false), 10);
+    setTimeout(
+      () => this.doc.body.addEventListener('click', this._clickHandler, false),
+      10
+    );
   }
 
   hide() {
@@ -72,15 +75,18 @@ class Menu {
   }
 
   _buildRuntimeSection() {
-    return runtimes.values.map((runtime) =>
-      `<label><input type="radio" name="runtime" id="${runtime.id}">${runtime.name}</label>`
-    ).join('');
+    return runtimes.values
+      .map(
+        (runtime) =>
+          `<label><input type="radio" name="runtime" id="${runtime.id}">${runtime.name}</label>`
+      )
+      .join('');
   }
 
   _registerActions() {
     this._menu.querySelectorAll('input[name=runtime]').forEach((input) => {
-      input.addEventListener('change',
-          (e) => events.publish(EVENT_SET_RUNTIME, runtimes.get(e.target.id))
+      input.addEventListener('change', (e) =>
+        events.publish(EVENT_SET_RUNTIME, runtimes.get(e.target.id))
       );
     });
   }

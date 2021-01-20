@@ -1,6 +1,7 @@
 ---
 $title: AMP for Email Fundamentals
 $order: 1
+description: 'Everything you need to know to get started writing valid AMP Emails.'
 author: CrystalOnScript
 formats:
   - email
@@ -14,7 +15,7 @@ AMP Emails look like classic HTML emails, but with a few differences. Below is t
 
 ```html
 <!doctype html>
-<html ⚡4email>
+<html ⚡4email data-css-strict>
 <head>
   <meta charset="utf-8">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -87,7 +88,7 @@ Additionally, it supports an optional `placeholder` child to display while the `
 </amp-anim>
 ```
 
-## Emails, with style
+## Emails, with style <a name="emails-with-style"></a>
 
 Like all email clients, AMP allows for inline `style` attributes, but also supports CSS within the `<style amp-custom>` tag inside the head of the email.
 
@@ -105,112 +106,90 @@ Like all email clients, AMP allows for inline `style` attributes, but also suppo
 ...
 </head>
 ```
+
+Like HTML emails, AMP for Email supports a limited subset of CSS selectors and properties.
+
+See [AMP for Email Supported CSS](/content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-css.md)
+for a full list of CSS allowed across email clients that support AMP.
+
 [tip type="important"]
-    AMP enforces a size limit of 50,000 bytes for styling.
-[/tip]    
+    AMP enforces a size limit of 75,000 bytes for styling.
+[/tip]
 
 ## Allowed AMP Components
 
-The dynamic, visual, and interactivity features of AMP components is what takes AMP Emails into the future of email. The AMP Email components sub-sect is divided into dynamic content and layout elements.
+The dynamic, visual, and interactivity features of AMP components is what takes AMP Emails into the future of email.
 
-### Dynamic Content
+The full [list of supported components in AMP for Email](/content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-components.md)
+is available as part of the AMP for Email spec.
 
-<table>
-  <tr>
-   <td>ELEMENT
-   </td>
-   <td>DESCRIPTION
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>[amp-form](../../../documentation/components/reference/amp-form.md?format=email)</code>
-   </td>
-   <td>Form element. The action-xhr attribute must be used in place of the regular action attribute. Can be used in conjunction with <code>[&lt;template type="amp-mustache"&gt;](../../../documentation/components/reference/amp-mustache.md?format=email)</code> to render a response.
-   </td>
-  </tr>
-  <tr>
-   <td><code>[amp-selector](../../../documentation/components/reference/amp-selector.md?format=email)</code>
-   </td>
-   <td>Represents a control that presents a menu of options and lets the user choose from it.
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>[amp-bind](../../../documentation/components/reference/amp-bind.md?format=email)</code> and <code>amp-state</code>
-   </td>
-   <td>
-    Simple scripting language in AMP that allows the manipulation of a state machine for interactions between elements. Can also be used to add behavior on certain events.
-    <code>amp-state</code> is used to remotely fetch the initial state machine values.
-    <strong>Note:</strong> It is prohibited to bind to <code>[href]</code> or <code>[src]</code>. It is also prohibited to use the <code>AMP.print</code>, <code>AMP.navigateTo</code> and <code>AMP.goBack</code> actions.
-   </td>
-  </tr>
-  <tr>
-   <td><code>[amp-list](../../../documentation/components/reference/amp-list.md?format=email)</code>
-   </td>
-   <td>
-    Remotely fetches JSON data that will be rendered by an <code>[&lt;amp-mustache&gt;](../../../documentation/components/reference/amp-mustache.md?format=email)</code>.
-    <strong>Note:</strong> Binding to the <code>[src]</code> attribute is not allowed. Including user credentials with <code>credentials="include"</code> is also prohibited.
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>[&lt;template type="amp-mustache"&gt;](../../../documentation/components/reference/amp-mustache.md?format=email)</code>
-   </td>
-   <td>A Mustache template markup to render the results of an <code>amp-list</code> call and the <code>&lt;div submit-success&gt;</code> and <code>&lt;div submit-error&gt;</code> of <code>amp-form</code>.
-   </td>
-  </tr>
-</table>
+## Authenticating requests
 
-### Layout Elements
+Dynamic personalized email content often requires authenticating the user. However, to protect user data all HTTP requests made from inside AMP emails may be proxied and stripped of cookies.
 
-<table>
-  <tr>
-   <td>ELEMENT
-   </td>
-   <td>DESCRIPTION
-   </td>
-  </tr>
-  <tr>
-   <td><code>[amp-accordion](../../../documentation/components/reference/amp-accordion.md?format=email)</code>
-   </td>
-   <td>A UI element that facilitates showing/hiding different sections.
-   </td>
-  </tr>
-  <tr>
-   <td><code>[amp-carousel](../../../documentation/components/reference/amp-carousel.md?format=email)</code>
-   </td>
-   <td>A carousel UI component.
-   </td>
-  </tr>
-  <tr>
-   <td><code>[amp-sidebar](../../../documentation/components/reference/amp-sidebar.md?format=email)</code>
-   </td>
-   <td>A sidebar for navigational purposes.
-   </td>
-  </tr>
-  <tr>
-   <td><code>[amp-image-lightbox](../../../documentation/components/reference/amp-image-lightbox.md?format=email)</code>
-   </td>
-   <td>A lightbox for containing images.
-   </td>
-  </tr>
-  <tr>
-   <td><code>[amp-lightbox](../../../documentation/components/reference/amp-lightbox.md?format=email)</code>
-   </td>
-   <td>A lightbox for containing content.
-   </td>
-  </tr>
-  <tr>
-   <td><code>[amp-fit-text](../../../documentation/components/reference/amp-fit-text.md?format=email)</code>
-   </td>
-   <td>A helper component for fitting text within a certain area.
-   </td>
-  </tr>
-  <tr>
-   <td><code>[amp-timeago](../../../documentation/components/reference/amp-timeago.md?format=email)</code>
-   </td>
-   <td>Provides a convenient way of rendering timestamps.
-   </td>
-  </tr>
-</table>
+To authenticate requests made from AMP emails, you may use access tokens.
+
+### Access tokens
+
+You can use access tokens to authenticate the user. Access tokens are supplied and checked by the email sender. The sender uses the tokens to ensure that only those with access to the AMP email can make the requests contained within that email. Access tokens must be cryptographically secure and time- and scope-limited. They are included within the URL of the request.
+
+This example demonstrates using `<amp-list>` to display authenticated data:
+
+```html
+<amp-list
+  src="https://example.com/endpoint?token=REPLACE_WITH_YOUR_ACCESS_TOKEN"
+  height="300"
+>
+  <template type="amp-mustache">
+    ...
+  </template>
+</amp-list>
+```
+
+Similarly when using `<amp-form>`, place your access token in the `action-xhr` URL.
+
+```html
+<form
+  action-xhr="https://example.com/endpoint?token=REPLACE_WITH_YOUR_ACCESS_TOKEN"
+  method="post"
+>
+  <input type="text" name="data" />
+  <input type="submit" value="Send" />
+</form>
+```
+
+#### Example
+
+The following example considers a hypothetical note-taking service that lets logged-in users to add notes to their account and view them later. The service wants to send an email to a user, `jane@example.com`, that includes a list of notes they previously took. The list of the current user's notes is available at the endpoint `https://example.com/personal-notes` in JSON format.
+
+Before sending the email, the service generates a cryptographically secure limited-use access token for `jane@example.com: A3a4roX9x`. The access token is included in the field name `exampletoken` inside the URL query:
+
+```html
+<amp-list
+  src="https://example.com/personal-notes?exampletoken=A3a4roX9x"
+  height="300"
+>
+  <template type="amp-mustache">
+    <p>{{note}}</p>
+  </template>
+</amp-list>
+```
+
+The endpoint `https://example.com/personal-notes` is responsible for validating the exampletoken parameter and finding the user associated with the token.
+
+### Limited Use Access Tokens
+
+Limited-Use Access Tokens provide protection from request spoofing and [replay attacks](https://en.wikipedia.org/wiki/Replay_attack), ensuring that the action is performed by the user the message was sent to. Protection is achieved by adding a unique token parameter to the request parameters and verifying it when the action is invoked.
+
+The token parameter should be generated as a key that can only be used for a specific action and a specific user. Before the requested action is performed, you should check that the token is valid and matches the one you generated for the user. If the token matches then the action can be performed and the token becomes invalid for future requests.
+
+Access tokens should be sent to the user as part of the url property of the HttpActionHandler. For instance, if your application handles approval requests at `http://www.example.com/approve?requestId=123`, you should consider including an additional `accessToken` parameter to it and listen to requests sent to `http://www.example.com/approve?requestId=123&accessToken=xyz`.
+
+The combination `requestId=123` and `accessToken=xyz` is the one that you have to generate in advance, making sure that the `accessToken` cannot be deduced from the `requestId`. Any approval request with `requestId=123` and no `accessToken` or with a `accessToken` not equal to `xyz` should be rejected. Once this request gets through, any future request with the same id and access token should be rejected too.
+
+## Testing in different email clients
+
+Email clients that support AMP for Email provide their own documentation and testing tools to help you with your integration.
+
+See [Testing AMP Emails](/content/amp-dev/documentation/guides-and-tutorials/develop/testing_amp_emails.md)
+for more information and links to email client-specific documentation.

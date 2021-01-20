@@ -23,22 +23,31 @@ const {sh} = require('@lib/utils/sh');
 const {project} = require('@lib/utils');
 const signale = require('signale');
 const growReferenceChecker = require('@lib/tools/growReferenceChecker');
+const log = require('@lib/utils/log')('Linter');
 
 function lintNode() {
   return sh('npm run lint:node');
 }
 
 function lintYaml() {
-  return gulp.src(`${project.paths.ROOT}/**/*.{yaml,yml}`)
-      .pipe(through.obj(async (file, encoding, callback) => {
-        try {
-          yaml.safeLoad(file.contents);
-          callback();
-        } catch (e) {
-          signale.fatal(`Error parsing YAML: ${file.relative}`, e);
-          callback(e);
+  return gulp.src(`${project.paths.ROOT}/**/*.{yaml,yml}`).pipe(
+    through.obj(async (file, encoding, callback) => {
+      try {
+        if (file.contents.includes(' !g.')) {
+          log.warn(
+            `Can not validate ${file.relative} as it contains custom constructors`
+          );
+        } else {
+          yaml.load(file.contents);
         }
-      }));
+
+        callback();
+      } catch (e) {
+        signale.fatal(`Error parsing YAML: ${file.relative}`, e);
+        callback(e);
+      }
+    })
+  );
 }
 
 function lintGrow() {

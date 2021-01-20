@@ -34,14 +34,17 @@ const maxAgePerMimeType = [
 const defaultMaxAge = maxAge('1m');
 
 module.exports = (request, response, next) => {
-  const mimeType = mime.lookup(request.path) ||
+  const mimeType =
+    mime.lookup(request.path) ||
     extractMimeFromAcceptHeader(request.headers.accept);
   if (!mimeType) {
     setMaxAge(response, defaultMaxAge);
     next();
     return;
   }
-  const maxAgeMapping = maxAgePerMimeType.find((mapping) => mapping[0].test(mimeType));
+  const maxAgeMapping = maxAgePerMimeType.find((mapping) =>
+    mapping[0].test(mimeType)
+  );
   const maxAge = maxAgeMapping ? maxAgeMapping[1] : defaultMaxAge;
   if (maxAge === IMMUTABLE) {
     setImmutable(response);

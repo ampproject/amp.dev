@@ -65,21 +65,21 @@ author: CrystalOnScript
   <tr>
    <td>AMP cache
    </td>
-   <td>A cache that support AMP. 
+   <td>A cache that supports AMP. 
    </td>
    <td><ul>
       <li>When an AMP cache serves your page, it isn’t loaded from your site’s origin. 
-      <li>Google and Cloudflare both have AMP caches. </li></ul>
+      <li>Google and Bing both have AMP caches. </li></ul>
    </td>
   </tr>
   <tr>
-   <td>AMP story / AMP stories 
+   <td>Web Story / Web Stories 
    </td>
    <td>A story web experience built with AMP. 
    </td>
    <td><ul>
-      <li>The AMP story format is free and part of the open web.
-      <li>AMP stories immerse readers in fast-loading full-screen experiences.  </li></ul>
+      <li>The Web Story format is free and part of the open web.
+      <li>Web Stories immerse readers in fast-loading full-screen experiences.  </li></ul>
    </td>
   </tr>
   <tr>
@@ -119,4 +119,3 @@ author: CrystalOnScript
    </td>
   </tr>
 </table>
-

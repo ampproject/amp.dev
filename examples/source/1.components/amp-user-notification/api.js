@@ -70,6 +70,6 @@ function dismissNotification(notificationId, userId) {
     DISMISSED_NOTIFICATIONS[userId] = user;
   }
   user[notificationId] = true;
-};
+}
 
 module.exports = examples;

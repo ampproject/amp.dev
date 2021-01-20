@@ -6,16 +6,16 @@ author: levidurfee
 <!--
   ## Introduction
 
-  The [`amp-gist`](/content/amp-dev/documentation/components/reference/amp-gist.md) component allows embedding of an entire gist or a single file. The `fixed-height` layout is the only supported layout, and it requires the `height` attribute. **You must provide the actual height of the gist**, and you can find this on the gist page by inspecting the element with developer tools (e.g. Chrome Dev Tools). Visit [GitHub Gist](https://gist.github.com/) to create a Gist.
+  The [`amp-gist`](/content/amp-dev/documentation/components/reference/amp-gist-v0.1.md) component allows embedding of an entire gist or a single file. The `fixed-height` layout is the only supported layout, and it requires the `height` attribute. **You must provide the actual height of the gist**, and you can find this on the gist page by inspecting the element with developer tools (e.g. Chrome Dev Tools). Visit [GitHub Gist](https://gist.github.com/) to create a Gist.
 -->
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 <head>
   <meta charset="utf-8">
   <title>amp-gist</title>
   <link rel="canonical" href="<% canonical %>">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <!-- ## Setup -->
   <!-- Import the amp-gist component -->
@@ -38,7 +38,7 @@ author: levidurfee
     height="241">
   </amp-gist>
 
-  <!-- ## Selecing a specific file -->
+  <!-- ## Selecting a specific file -->
   <!-- Embed one file out of a gist using the `data-file` attribute. The `data-file` attribute is optional. -->
   <amp-gist
     data-gistid="a19e811dcd7df10c4da0931641538497"

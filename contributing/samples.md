@@ -1,14 +1,14 @@
-## Creating a new sample
+## Creating a New Sample
 
 Samples live in `examples/source`. Pick one of the existing category folders.
 
-If your sample can live in a single html file, create a new `*.html` in  one of the sample category folders:
+If your sample can live in a single HTML file, create a new `*.html` in one of the sample category folders:
 
 ```shell
 $ vim examples/source/1.components/amp-awesome.html
 ```
 
-If your sample requires a custom backend API, create a new folder which is going to contain both, your sample html file, which must be named `index.html` and your api implementation `api.js`.
+If your sample requires a custom backend API, create a new folder that is to contain both, your sample HTML file, which must be named `index.html`, and your API implementation, which must be named `api.js`.
 
 ```shell
 $ mkdir examples/source/1.components/amp-awesome
@@ -16,25 +16,25 @@ $ vim examples/source/1.components/amp-awesome/index.html
 $ vim examples/source/1.components/amp-awesome/api.js
 ```
 
-If your sample, does not fit into one of the existing categories, please [create an issue](https://github.com/ampproject/docs/issues/new) first and ask for feedback.
+If your sample, does not fit into one of the existing categories, please [open an issue](https://github.com/ampproject/docs/issues/new) first and ask for feedback.
 
 [Here is a sample template](https://gist.github.com/sebastianbenz/45d3dae499f35dedb65e01546356ff7a) you can use to get started.
 
 ## Frontmatter
 
-Samples can define additional metadata (such as author name or supported AMP formats) via a YAML frontmatter. Here is a template to get you started:
+Samples can define additional metadata, such as author name or supported AMP formats, via a YAML frontmatter. Here is a template to get you started:
 
 ```
 <!---
-author: your-github-user-name
+author: your-github-username
 formats:
   - websites
 --->
 ```
 
-**Note the triple dash `<!---`!**. Also make sure to list all supported formats (websites,ads,email,stories).
+**Note the triple dash comment (`<!---`).** Also, make sure to list all supported formats (websites, ads, email, stories).
 
-You must list all the supported AMP formats for your sample. If your sample is specific AMP format, define that single format.
+You must list all the supported AMP formats that your sample supports. If your sample is for a specific AMP format, define that single format.
 
 ```
 formats
@@ -50,28 +50,31 @@ experiments:
 
 Other supported flags are:
 
+**`validAmp`:** marks the sample as intentionally invalid AMP skipping validation during build.
+
 ```yaml
-**validAmp:** marks the sample as intentionally invalid AMP skipping validation during build.
 validAmp # [default: true]
   - true
   - false
 ```
 
-**draft:** marks the sample as draft and it won't be linked from the homepage, but is still accessible via URL.
+**`draft`:** marks the sample as draft so it won't be linked to from the homepage, but will still be accessible via URL.
+
 ```yaml
 draft # [default: true]
   - true
   - false
 ```
 
-**landscape (only for AMP Stories):** use landscape mode previews.
+**`landscape` (only for AMP Stories):** use landscape mode previews.
 ```yaml
 draft # [default: false]
   - true
   - false
 ```
 
-**tags:** for assign the sample to multiple categories.
+**`tags`:** assign the sample to multiple categories.
+
 ```yaml
 tags # [default: '']
   - ads-analytics
@@ -92,7 +95,7 @@ Add documentation to your sample's code by wrapping text in HTML comments:
 <amp-img src="img/image1.jpg" width="200" height="100" layout="responsive"></amp-img>
 ```
 
-This works for elements in the header as well:
+This works for elements in the `<head>` as well:
 
 ```html
 <head>
@@ -126,7 +129,7 @@ Nesting comments are not supported:
 </div>
 ```
 
-If your comment spans multiple elements, wrap these in an single `div` without any attributes. The enclosing `div` tag will be hidden in source code listings:
+If your comment spans multiple elements, wrap these in a single `<div>` without any attributes. The enclosing `<div>` tag will be hidden in source code listings:
 
 ```html
 <!-- The enclosing `div` will be hidden in source code listings. -->
@@ -140,7 +143,7 @@ If your comment spans multiple elements, wrap these in an single `div` without a
 
 #### Sample Styling
 
-Sometimes it's good to add a little bit more styling to a sample (e.g. to separate a button from an input field). To make sure that all samples have a consistent styling, please use the following CSS variables to style specific elements in your sample:
+Sometimes it's good to add a little bit more styling to a sample (e.g., to separate a button from an input field). To make sure that all samples have a consistent styling, please use the following CSS variables to style specific elements in your sample:
 
 ```
 :root {
@@ -171,7 +174,7 @@ You can use them to style your samples like this:
 }
 ```
 
-Only add the ones that you need to the sample. These CSS variable declarations will be added automatically to your sample, if you use `gulp create ...` to create the sample.
+Only add the ones that you need for the sample. These CSS variable declarations will be automatically added to your sample if you use `npx gulp create ...` to create the sample.
 
 **Colors**
 
@@ -183,7 +186,7 @@ Only add the ones that you need to the sample. These CSS variable declarations w
 
 #### Formatting
 
-You can use [markdown](https://help.github.com/articles/github-flavored-markdown/) to format your documentation:
+You can use [Markdown](https://help.github.com/articles/github-flavored-markdown/) to format your documentation:
 
 ```html
 <!--
@@ -213,7 +216,7 @@ Warning! This might go wrong.
 
 #### Hints
 
-If you'd like to add additional information about a single element inside a section, use the `<!--~ hint syntax ~-->`:
+If you'd like to provide additional information about a single element inside a section, use the `<!--~ hint syntax ~-->`:
 
 ```html
 <!-- A comment about the form. -->
@@ -233,9 +236,7 @@ This will make the `<input>` element clickable, with the additional explanation 
 
 #### Filtering
 
-If a section is only applicable to one format, use `@format(comma-separated-list)`
-anywhere in the section comment to indicate that section is only applicable to
-the format(s) listed.
+If a section is only applicable to one format, use `@format(comma-separated-list)` anywhere in the section comment to indicate that section is only applicable to the format(s) listed.
 
 ```html
 <!--
@@ -250,9 +251,9 @@ the format(s) listed.
 
 Before writing your own API endpoint, please take a look at the [existing generic API endpoints](https://github.com/ampproject/docs/tree/future/examples/api), maybe you can re-use one of them.
 
-Sample specific backend endpoints live in a JS file inside the sample folder. They are implemented via [Express routing](https://expressjs.com/en/guide/routing.html). You can address your API endpoints relative to your sample location, e.g. `<amp-list src="you-api-route' ...>`.
+Sample specific backend endpoints live in a JS file inside the sample folder. They are implemented via [Express routing](https://expressjs.com/en/guide/routing.html). You can address your API endpoints relative to your sample's location, e.g. `<amp-list src="you-api-route' ...>`.
 
-Here is a template to get you started.
+Here is a template to get you started:
 
 ```
 /**

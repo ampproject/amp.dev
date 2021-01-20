@@ -26,9 +26,12 @@ const POD_BASE_PATH = path.join(__dirname, '../../../pages/');
 
 // Which documents to check for broken references
 /* eslint-disable max-len */
-const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/guides-and-tutorials/**/*.md';
-const COMPONENTS_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/components';
-const TUTORIAL_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/guides-and-tutorials';
+const PAGES_SRC =
+  POD_BASE_PATH + 'content/amp-dev/documentation/guides-and-tutorials/**/*.md';
+const COMPONENTS_SRC =
+  POD_BASE_PATH + 'content/amp-dev/documentation/components';
+const TUTORIAL_SRC =
+  POD_BASE_PATH + 'content/amp-dev/documentation/guides-and-tutorials';
 const EXAMPLE_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/examples';
 /* eslint-enable max-len */
 
@@ -49,34 +52,44 @@ class ComponentReferenceLinker {
   async start() {
     return new Promise((resolve, reject) => {
       let stream = gulp.src(PAGES_SRC, {'read': true, 'base': './'});
-      stream = stream.pipe(through.obj((doc, encoding, callback) => {
-        stream.push(this._check(doc));
-        callback();
-      }));
+      stream = stream.pipe(
+        through.obj((doc, encoding, callback) => {
+          stream.push(this._check(doc));
+          callback();
+        })
+      );
 
       stream.pipe(gulp.dest('./'));
       stream.on('end', () => {
         // Write missing references in file
-        let referenceText = 'Missing references: ' + this._missingReferences.length;
+        let referenceText =
+          'Missing references: ' + this._missingReferences.length;
         for (const reference of this._missingReferences) {
           referenceText = referenceText.concat(
-              '\n\n',
-              reference.document,
-              '\n-> ',
-              reference.result,
-              '\n-> Type: ',
-              reference.link.type,
-              ' - Name: ',
-              reference.link.name
+            '\n\n',
+            reference.document,
+            '\n-> ',
+            reference.result,
+            '\n-> Type: ',
+            reference.link.type,
+            ' - Name: ',
+            reference.link.name
           );
         }
-        fs.writeFile(POD_BASE_PATH + 'content/missing.txt', referenceText, (err) => {
-          if (err) throw err;
-        });
+        fs.writeFile(
+          POD_BASE_PATH + 'content/missing.txt',
+          referenceText,
+          (err) => {
+            if (err) throw err;
+          }
+        );
 
         this._log.complete('Linked all component references!');
-        this._log.complete('Saved ', this._missingReferences.length,
-            ' missing references in content/missing.txt');
+        this._log.complete(
+          'Saved ',
+          this._missingReferences.length,
+          ' missing references in content/missing.txt'
+        );
         resolve();
       });
     });
@@ -92,7 +105,9 @@ class ComponentReferenceLinker {
     console.log();
     this._log.await('Inspecting doc:', doc.relative);
 
-    const results = Array.from(new Set(content.match(/\[[^\]]*?]\((?!\{)(.*?)\)(?=(\s|\.|\,))/gm)));
+    const results = Array.from(
+      new Set(content.match(/\[[^\]]*?]\((?!\{)(.*?)\)(?=(\s|\.|\,))/gm))
+    );
     for (const result of results) {
       const link = this._linkType(result);
       if (link.type == null) {
@@ -101,19 +116,49 @@ class ComponentReferenceLinker {
 
       switch (link.type) {
         case 'example':
-          content = this._handleFile(doc.relative, content, result, link, EXAMPLE_SRC);
+          content = this._handleFile(
+            doc.relative,
+            content,
+            result,
+            link,
+            EXAMPLE_SRC
+          );
           break;
         case 'componentOverview':
-          content = this._handleFile(doc.relative, content, result, link, COMPONENTS_SRC);
+          content = this._handleFile(
+            doc.relative,
+            content,
+            result,
+            link,
+            COMPONENTS_SRC
+          );
           break;
         case 'exampleOverview':
-          content = this._handleFile(doc.relative, content, result, link, EXAMPLE_SRC);
+          content = this._handleFile(
+            doc.relative,
+            content,
+            result,
+            link,
+            EXAMPLE_SRC
+          );
           break;
         case 'component':
-          content = this._handleFile(doc.relative, content, result, link, COMPONENTS_SRC);
+          content = this._handleFile(
+            doc.relative,
+            content,
+            result,
+            link,
+            COMPONENTS_SRC
+          );
           break;
         case 'tutorial':
-          content = this._handleFile(doc.relative, content, result, link, TUTORIAL_SRC);
+          content = this._handleFile(
+            doc.relative,
+            content,
+            result,
+            link,
+            TUTORIAL_SRC
+          );
           break;
         default:
           this._log.error('--> Type undifined', result);
@@ -138,27 +183,60 @@ class ComponentReferenceLinker {
     }
 
     /* eslint-disable max-len */
-    const exampleMatch = result.match(/ampbyexample\.com\/((?:[^\/]+\/)*)([^\/]+)\/\)/m);
+    const exampleMatch = result.match(
+      /ampbyexample\.com\/((?:[^\/]+\/)*)([^\/]+)\/\)/m
+    );
     // eslint-disable-next-line no-unused-vars
     const [example, path, exampleName] = exampleMatch || [];
     if (exampleName) {
-      return {'type': 'example', 'name': exampleName, 'text': linkText.text, 'id': linkText.id};
+      return {
+        'type': 'example',
+        'name': exampleName,
+        'text': linkText.text,
+        'id': linkText.id,
+      };
     }
-    const componentOverview = result.match(/\[.*?\]\((\/\w+)?\/docs\/reference\/components\.html(#\w+)?\)/gm);
+    const componentOverview = result.match(
+      /\[.*?\]\((\/\w+)?\/docs\/reference\/components\.html(#\w+)?\)/gm
+    );
     if (componentOverview) {
-      return {'type': 'componentOverview', 'name': 'index', 'text': linkText.text, 'id': linkText.id};
+      return {
+        'type': 'componentOverview',
+        'name': 'index',
+        'text': linkText.text,
+        'id': linkText.id,
+      };
     }
-    const exampleOverview = result.match(/\[.*?\]\((\/\w+)?https:\/\/ampbyexample\.com(#\w+)?\)/gm);
+    const exampleOverview = result.match(
+      /\[.*?\]\((\/\w+)?https:\/\/ampbyexample\.com(#\w+)?\)/gm
+    );
     if (exampleOverview) {
-      return {'type': 'exampleOverview', 'name': 'index', 'text': linkText.text, 'id': linkText.id};
+      return {
+        'type': 'exampleOverview',
+        'name': 'index',
+        'text': linkText.text,
+        'id': linkText.id,
+      };
     }
     const componentName = result.match(/amp-\w*(-\w*)*/m);
     if (componentName) {
-      return {'type': 'component', 'name': componentName[0], 'text': linkText.text, 'id': linkText.id};
+      return {
+        'type': 'component',
+        'name': componentName[0],
+        'text': linkText.text,
+        'id': linkText.id,
+      };
     }
-    const tutorialName = result.match(/(?!\](.*?)\/docs\/\w+\/)(\w+-)*\w+(?=\.html)/m);
+    const tutorialName = result.match(
+      /(?!\](.*?)\/docs\/\w+\/)(\w+-)*\w+(?=\.html)/m
+    );
     if (tutorialName) {
-      return {'type': 'tutorial', 'name': tutorialName[0], 'text': linkText.text, 'id': linkText.id};
+      return {
+        'type': 'tutorial',
+        'name': tutorialName[0],
+        'text': linkText.text,
+        'id': linkText.id,
+      };
     }
     /* eslint-enable max-len */
     return {};
@@ -166,7 +244,7 @@ class ComponentReferenceLinker {
 
   _linkText(result) {
     const section = result.match(/#\w*(-.*)?(?=\))/gm);
-    const sectionId = ((section !== null) ? section[0].replace(/\s/g, '') : '');
+    const sectionId = section !== null ? section[0].replace(/\s/g, '') : '';
     const text = result.match(/\[(.*?)]/gm);
     if (text !== null) {
       return {'text': text, 'id': sectionId};
@@ -177,12 +255,22 @@ class ComponentReferenceLinker {
   _handleFile(docPath, content, result, link, src) {
     if (this._fileExistsAtPath(link, src) !== undefined) {
       while (content.includes(result)) {
-        const placeholder = this._createPlaceholder(result, this._getReferencePath(link, path));
-        return content.replace(result, this._createPlaceholder(result, placeholder));
+        const placeholder = this._createPlaceholder(
+          result,
+          this._getReferencePath(link, path)
+        );
+        return content.replace(
+          result,
+          this._createPlaceholder(result, placeholder)
+        );
       }
       this._log.start('--> Valid ' + link.type + ' replaced:', result);
     } else {
-      this._missingReferences.push({'document': docPath, 'result': result, 'link': link});
+      this._missingReferences.push({
+        'document': docPath,
+        'result': result,
+        'link': link,
+      });
       this._log.error('--> No valid ' + link.type + ' found in:', result);
     }
     return content;
@@ -195,7 +283,7 @@ class ComponentReferenceLinker {
   }
 
   _createPlaceholder(result, newReference) {
-    const placeholder =`<!--${this._hash(result)}-->`;
+    const placeholder = `<!--${this._hash(result)}-->`;
     if (!this._placeholders[placeholder]) {
       this._placeholders[placeholder] = newReference;
     }
@@ -221,9 +309,15 @@ class ComponentReferenceLinker {
     const existingFiles = this._getFiles(src);
     for (const filePath of existingFiles) {
       // eslint-disable-next-line max-len
-      if (filePath.toLowerCase().includes(`/${link.name}.html`) || filePath.toLowerCase().includes(`/${link.name}.md`)) {
+      if (
+        filePath.toLowerCase().includes(`/${link.name}.html`) ||
+        filePath.toLowerCase().includes(`/${link.name}.md`)
+      ) {
         // eslint-disable-next-line max-len
-        path = filePath.replace(POD_BASE_PATH + 'content/amp-dev/documentation/', '');
+        path = filePath.replace(
+          POD_BASE_PATH + 'content/amp-dev/documentation/',
+          ''
+        );
       }
     }
     return path;

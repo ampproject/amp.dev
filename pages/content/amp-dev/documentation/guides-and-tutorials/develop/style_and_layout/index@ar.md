@@ -45,11 +45,12 @@ $title: إنشاء صفحات AMP تفاعلية
 على سبيل المثال:
 
 [sourcecode:html]
+
 <!doctype html>
   <head>
     <meta charset="utf-8">
     <link rel="canonical" href="hello-world.html">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <style amp-custom>
       /* any custom style goes here. */
@@ -65,6 +66,7 @@ $title: إنشاء صفحات AMP تفاعلية
       }
     </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
+
   </head>
 [/sourcecode]
 
@@ -76,6 +78,7 @@ $title: إنشاء صفحات AMP تفاعلية
 باستخدام خصائص CSS الشائعة. على سبيل المثال:
 
 [sourcecode:html]
+
 <body>
   <p>Hello, Kitty.</p>
   <amp-img
@@ -116,12 +119,12 @@ $title: إنشاء صفحات AMP تفاعلية
 استخدم أداة التحقق من صحة صفحات AMP لاختبار
 لغة CSS وقيم التنسيق بالصفحة.
 
-تعمل أداة التحقق من الصحة على التأكد من عدم تجاوز لغة CSS للصفحة حد 50000 بايت،
+تعمل أداة التحقق من الصحة على التأكد من عدم تجاوز لغة CSS للصفحة حد 75000 بايت،
 وتتحقق من الأنماط الغير مسموح بها، كما تتأكد من توافق
 تنسيق الصفحة وصحته.
 راجع أيضًا هذه القائمة الكاملة من [أخطاء الأنماط والتنسيقات](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md).
 
-نموذج لخطأ في وحدة التحكم لصفحة بها لغة CSS تتجاوز حد 50000 بايت:
+نموذج لخطأ في وحدة التحكم لصفحة بها لغة CSS تتجاوز حد 75000 بايت:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 

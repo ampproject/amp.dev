@@ -15,7 +15,7 @@ author: zhouyx
   <head>
     <meta charset="utf-8">
   <title>Scrollbound Animation Ad</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
     <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
     <script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
@@ -23,7 +23,7 @@ author: zhouyx
     <style amp4ads-boilerplate>body{visibility:hidden}</style>
     <!-- ## Summary-->
     <!--
-    Sample AMPHTML ad using [amp-position-observer](/content/amp-dev/documentation/components/reference/amp-position-observer.md), and [amp-animation](/content/amp-dev/documentation/components/reference/amp-animation.md) to create an interactive ad.
+    Sample AMPHTML ad using [amp-position-observer](/content/amp-dev/documentation/components/reference/amp-position-observer-v0.1.md), and [amp-animation](/content/amp-dev/documentation/components/reference/amp-animation-v0.1.md) to create an interactive ad.
     -->
     <!-- ## Styling -->
     <!--
@@ -105,7 +105,7 @@ author: zhouyx
   <body>
     <!-- ## Animations -->
     <!--
-    The animations are implemented using [amp-animation](/content/amp-dev/documentation/components/reference/amp-animation.md) which is an AMP component that uses [Web Animations API](https://www.w3.org/TR/web-animations/) to support both __time__ and __scroll__ based animations.
+    The animations are implemented using [amp-animation](/content/amp-dev/documentation/components/reference/amp-animation-v0.1.md) which is an AMP component that uses [Web Animations API](https://www.w3.org/TR/web-animations/) to support both __time__ and __scroll__ based animations.
     -->
     <amp-animation id="adAnim" layout="nodisplay">
       <script type="application/json">
@@ -134,7 +134,7 @@ author: zhouyx
 
     <!-- ## Scrollbound Animations -->
     <!--
-    The scrollbound animations are implemented using [amp-position-observer](/content/amp-dev/documentation/components/reference/amp-position-observer.md) which is an AMP component that
+    The scrollbound animations are implemented using [amp-position-observer](/content/amp-dev/documentation/components/reference/amp-position-observer-v0.1.md) which is an AMP component that
     Monitors the position of an element within the viewport as a user scrolls, and dispatches enter, exit and scroll events that can be used with other components
     -->
     <amp-position-observer

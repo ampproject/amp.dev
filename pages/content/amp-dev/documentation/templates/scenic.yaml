@@ -13,3 +13,33 @@ teaser:
     alt: The Scenic
 
   download_url: '/static/files/templates/themes_1.zip'
+  template_demo_home: 'websites/themes_1/templates/template_1_article.amp.html'
+  template_github_home: 'websites/themes_1'
+ 
+document:
+  pages: /content/amp-dev/documentation/templates/themes_1/pages
+  description: 'Example blog theme, "The Scenic".'
+
+url:
+  path: '/documentation/templates/themes_1'
+
+stage:
+  layout: all
+  devices:
+    - image_src: '/static/img/templates/themes_1/pages/themes_1-desktop-above.jpg'
+      width: 4
+      height: 3
+      type: desktop
+      alt: image
+
+    - image_src: '/static/img/templates/themes_1/pages/themes_1-tablet-above.jpg'
+      width: 3
+      height: 4
+      type: tablet
+      alt: image
+
+    - image_src: '/static/img/templates/themes_1/pages/themes_1-mobile-above.jpg'
+      width: 1
+      height: 2
+      type: mobile
+      alt: image

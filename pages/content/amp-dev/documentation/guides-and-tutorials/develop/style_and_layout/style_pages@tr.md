@@ -2,7 +2,7 @@
 $title: Desteklenen CSS
 ---
 
-Tüm web sayfaları gibi AMP sayfalarının stili de CSS ile belirlenir, ancak ([özel yazı tipleri](#özel-yazı-tipleri-istisnası) haricinde) harici stil sayfalarını referans alamazsınız.
+Tüm web sayfaları gibi AMP sayfalarının stili de CSS ile belirlenir, ancak ([özel yazı tipleri](#the-custom-fonts-exception) haricinde) harici stil sayfalarını referans alamazsınız.
 Ayrıca, performans üzerindeki etkilerinden dolayı belirli stillere izin verilmez; satır içi stil özniteliklerine izin verilmemektedir.
 
 Tüm stiller, dokümanın head bölümünde yer almalıdır (bkz. [Sayfaya stil ekleme](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)).
@@ -11,7 +11,7 @@ Ancak, içeriğinizi daha iyi yönetmek amacıyla statik sayfalar oluşturmak i�
 **Not:** Duyarlı sayfaları yazmayı makul bir düzeyde kolaylaştırmak için AMP bileşenleri varsayılan stillerle birlikte gelir.
 Bu stiller, [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css) içinde tanımlanır.
 
-## CSS ön işlemcilerini kullanma
+## CSS ön işlemcilerini kullanma <a name="using-css-preprocessors"></a>
 
 Ön işlemcilerin oluşturduğu çıktı, diğer web sayfalarında olduğu gibi AMP'de sorunsuz bir şekilde çalışır.
 Örneğin, [amp.dev](https://amp.dev/) sitesi [Sass](http://sass-lang.com/)'ı kullanır.
@@ -22,9 +22,10 @@ Bu stiller, [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/am
 Diğerlerinin yanı sıra [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) için özel öğe komut dosyasını da içerir. Böylece, sitedeki birçok sayfaya yerleşik YouTube videoları eklenebilir.
 
 [sourcecode:html] {% raw %}
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
   <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 
@@ -95,32 +96,33 @@ Aşağıdaki stillere AMP sayfalarında izin verilmez:
   </tbody>
 </table>
 
-## Beyaz listedeki geçiş ve animasyon özellikleri
+## Beyaz listedeki geçiş ve animasyon özellikleri <a name="the-custom-fonts-exception"></a>
 
 AMP yalnızca yaygın kullanılan tarayıcılarda GPU hızlandırmalı olabilecek geçiş ve animasyon özelliklerine izin verir.
 AMP projesi şu anda `opacity`, `transform` ve `-vendorPrefix-transform` özelliklerini beyaz listeye almıştır.
 
 Aşağıdaki örneklerde, `<property>` etiketinin beyaz listede olması gerekir:
 
-* `transition <property> (Also -vendorPrefix-transition)`
-* @ `@keyframes name { from: {<property>: value} to {<property: value>} } (also @-vendorPrefix-keyframes)`
+- `transition <property> (Also -vendorPrefix-transition)`
+- @ `@keyframes name { from: {<property>: value} to {<property: value>} } (also @-vendorPrefix-keyframes)`
 
 `overflow` özelliğinin (ve `overflow-y`, `overflow-x`) stili <span class="notranslate">“auto”</span> veya <span class="notranslate">“scroll”</span> olarak belirlenemez.
 AMP dokümanlarında hiçbir kullanıcı tanımlı öğenin kaydırma çubuğu olamaz.
 
-## Özel yazı tipleri istisnası
+## Özel yazı tipleri istisnası <a name="özel-yazı-tipleri-istisnası"></a>
 
 AMP sayfaları harici stil sayfaları içeremez. Bunun tek istisnası özel yazı tipleridir.
 Özel yazı tiplerine referansta bulunmak için desteklenen iki yöntem, beyaz listedeki yazı tipi sağlayıcılarını işaret eden bağlantı etiketlerini ve `@font-face` öğesini dahil etmektir.
 
 Yazı tipi sağlayıcıları, yalnızca CSS entegrasyonlarını desteklediklerinde ve HTTPS üzerinde sunum yaptıklarında beyaz listeye eklenebilir. Şu anda yalnızca aşağıdaki kaynaklar beyaz listeye alınmıştır ve bağlantı etiketleri aracılığıyla yazı tipi sunumu için bu kaynaklara izin verilmektedir:
 
-* [https://fast.fonts.net](https://fast.fonts.net)
-* [https://fonts.googleapis.com](https://fonts.googleapis.com)
+- [https://fast.fonts.net](https://fast.fonts.net)
+- [https://fonts.googleapis.com](https://fonts.googleapis.com)
 
 Beyaz listedeki Google Fonts yazı tipi sağlayıcısını işaret eden örnek bağlantı etiketi:
 
 [sourcecode:html]
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 [/sourcecode]
 

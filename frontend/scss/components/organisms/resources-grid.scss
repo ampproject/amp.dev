@@ -21,9 +21,11 @@
 .#{organism('resources-grid')} {
   &-cards {
     display: grid;
-    grid-gap: 0;
-    grid-column-gap: 30px;
     grid-template-columns: repeat(12, 1fr);
+
+    @media (min-width: 600px) {
+      grid-column-gap: 30px;
+    }
   }
 
   h2 {
@@ -39,7 +41,7 @@
     background-color: color('white');
     box-shadow: 6px 9px 40px 0 transparentize(color('black'), 0.85);
     transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-    grid-column: span 11;
+    grid-column: span 12;
 
 
     @media (min-width: 600px) {

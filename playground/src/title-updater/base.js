@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -26,8 +26,12 @@ class TitleUpdater {
     this.win.requestIdleCallback(() => {
       const match = text.match(/<title[^>]*>([^<]+)<\/title>/im);
       const snippetTitle = match ? match[1] : this.extractTitleFromUrl_();
-      this.titleLabel.textContent = snippetTitle;
-      this.titleLabel.classList.toggle('hidden', false);
+
+      if (this.titleLabel) {
+        this.titleLabel.textContent = snippetTitle;
+        this.titleLabel.classList.toggle('hidden', false);
+      }
+
       this.win.document.title = snippetTitle + ' - ' + this.originalTitle;
     });
   }
@@ -44,9 +48,9 @@ class TitleUpdater {
     string = this.stripFileExtension_(string);
     string = string.replace(/_/g, ' ');
     string = decodeURIComponent(string);
-    string = string.replace(/%27/g, '\'');
+    string = string.replace(/%27/g, "'");
     return string;
-  };
+  }
 
   stripTrailingSlash_(string) {
     if (!string.endsWith('/')) {

@@ -20,7 +20,15 @@ const nunjucks = require('nunjucks');
 const config = require('../config.js');
 const growPageLoader = require('../common/growPageLoader');
 const LRU = require('lru-cache');
+const {
+  getFormatFromRequest,
+  SUPPORTED_FORMATS,
+} = require('../amp/formatHelper.js');
+const {SupportedFormatsExtension} = require('./SupportedFormatsExtension.js');
+const {importBlog} = require('./ImportBlogFilter.js');
+const {importYouTubeChannel} = require('./ImportYouTubeChannel.js');
 
+const ALLOWED_LEVEL = ['beginner', 'advanced'];
 let templates = null;
 
 /**
@@ -29,23 +37,27 @@ let templates = null;
  * @param  {expressjs.Request} request
  * @return {Object}
  */
-function createRequestContext(request={'query': {}}, context={}) {
-  const ALLOWED_FORMATS = ['websites', 'stories', 'ads', 'email'];
-  const ALLOWED_LEVEL = ['beginner', 'advanced'];
+function createRequestContext(
+  request = {'query': {}, 'path': ''},
+  context = {}
+) {
+  context.requestPath = request.path;
+  context.query = request.query;
 
-  if (!ALLOWED_FORMATS.includes(request.query.format)) {
-    context.format = ALLOWED_FORMATS[0];
-    context.forceFiltered = true;
-  } else {
-    context.format = request.query.format;
-  }
+  // Store the initially requested format to be able
+  // to match user request against available formats
+  context.requestedFormat = SUPPORTED_FORMATS.includes(request.query.format)
+    ? request.query.format
+    : '';
+  // Then normalize what might be set by the user and set a
+  // sensible default for the templates
+  context.format = getFormatFromRequest(request);
 
   if (ALLOWED_LEVEL.includes(request.query.level)) {
     context.level = request.query.level;
   } else {
     context.level = ALLOWED_LEVEL[0];
   }
-
   context.category = (request.query.category || '').toLowerCase();
 
   return context;
@@ -79,7 +91,21 @@ class Templates {
         variableEnd: '=]',
         commentStart: '[#',
         commentEnd: '#]',
-      }});
+      },
+    });
+
+    // Add extensions and filters to determine default document format at runtime
+    this.nunjucksEnv_.addExtension(
+      'SupportedFormatsExtension',
+      new SupportedFormatsExtension()
+    );
+
+    this.nunjucksEnv_.addFilter('importBlog', importBlog, true);
+    this.nunjucksEnv_.addFilter(
+      'importYouTubeChannel',
+      importYouTubeChannel,
+      true
+    );
 
     // One locale has ~860 pages with each weighing ~92KB. The cache therefore
     // maxes out at ~224MB to be safe

@@ -33,11 +33,16 @@ examples.get('/calculate-mortgage-xhr', (request, response) => {
 });
 
 function calculateMonthlyPayment(mortgageForm = {}) {
-  const monthlyInterestRateDecimal = (mortgageForm.interest / 12) / 100;
+  const monthlyInterestRateDecimal = mortgageForm.interest / 12 / 100;
   const numberOfMonthlyPayments = mortgageForm.period * 12;
   const amountBorrowed = mortgageForm.price - mortgageForm.deposit;
   // eslint-disable-next-line max-len
-  return ((monthlyInterestRateDecimal * amountBorrowed * Math.pow((1+monthlyInterestRateDecimal), numberOfMonthlyPayments)) / (Math.pow((1+monthlyInterestRateDecimal), numberOfMonthlyPayments) - 1)).toFixed(2);
+  return (
+    (monthlyInterestRateDecimal *
+      amountBorrowed *
+      Math.pow(1 + monthlyInterestRateDecimal, numberOfMonthlyPayments)) /
+    (Math.pow(1 + monthlyInterestRateDecimal, numberOfMonthlyPayments) - 1)
+  ).toFixed(2);
 }
 
 function parseMortgageForm(request) {

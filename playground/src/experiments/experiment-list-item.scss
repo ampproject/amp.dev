@@ -1,0 +1,16 @@
+@import '_variables.scss';
+@import '_functions.scss';
+
+.experiments-list-item {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid color('oslo-gray');
+
+  &-delete {
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+  }
+}

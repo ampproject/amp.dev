@@ -137,7 +137,7 @@ $title: نظرة عميقة على AMP Analytics
 وتكون القيم في عناوين URL البعيدة في قمة ذلك الترتيب
 (انظر [ترتيب استبدال المتغير](deep_dive_analytics.md).
 
-## السمات Requests وtriggers وtransports
+## السمات Requests وtriggers وtransports <a name="requests-triggers--transports"></a>
 
 تحدّد السمة `requests` "ماهية البيانات التي يتم إرسالها"
 (على سبيل المثال، `pageviews`، و`events`)،
@@ -153,7 +153,7 @@ $title: نظرة عميقة على AMP Analytics
 (يمكنك أيضًا القراءة بشأن هذه التهيئات في
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
 
-### ماهية البيانات التي يتم إرسالها: السمة requests
+### ماهية البيانات التي يتم إرسالها: السمة requests <a name="what-data-gets-sent-requests-attribute"></a>
 
 يتم استخدام <span dir="ltr" class="nowrap">`request-name`</span> في تهيئة المشغل لتحديد
 الطلب الذي ينبغي إرساله ردًا على حدث خاص.
@@ -236,11 +236,11 @@ $title: نظرة عميقة على AMP Analytics
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (مطلوب)</td>
-      <td data-th="Description">اسم الطلب الذي سيتم إرساله (على النحو المحدد في <a href="deep_dive_analytics.md#ماهية-البيانات-التي-يتم-إرسالها:-السمة-requests">الطلبات</a>).</td>
+      <td data-th="Description">اسم الطلب الذي سيتم إرساله (على النحو المحدد في <a href="deep_dive_analytics.md#what-data-gets-sent-requests-attribute">الطلبات</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">كائن يحتوي على أزواج قيمة مفتاح للاستخدام في تجاوز <code>vars</code> المحدد في تهيئة المستوى الأعلى، أو لتحديد <code>vars</code> فريد لهذا المشغل (انظر أيضًا <a href="deep_dive_analytics.md#ترتيب-استبدال-المتغير">ترتيب استبدال المتغير</a>).</td>
+      <td data-th="Description">كائن يحتوي على أزواج قيمة مفتاح للاستخدام في تجاوز <code>vars</code> المحدد في تهيئة المستوى الأعلى، أو لتحديد <code>vars</code> فريد لهذا المشغل (انظر أيضًا <a href="deep_dive_analytics.md#variable-substitution-ordering">ترتيب استبدال المتغير</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (مطلوب عند تعيين <code>on</code> على <code>click</code>)</td>
@@ -314,7 +314,7 @@ $title: نظرة عميقة على AMP Analytics
 }
 ```
 
-## ترتيب استبدال المتغير
+## ترتيب استبدال المتغير <a name="variable-substitution-ordering"></a>
 
 تملأ AMP المتغيرات بالقيم بترتيب يستند إلى الأسبقية:
 

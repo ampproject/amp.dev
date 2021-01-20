@@ -19,12 +19,12 @@ author: sebastianbenz
   -->
   <!-- -->
   <!doctype html>
-  <html ⚡>
+  <html ⚡ lang="en">
     <head>
       <meta charset="utf-8">
       <title>Checkout Flow</title>
       <link rel="canonical" href="<% canonical %>">
-      <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+      <meta name="viewport" content="width=device-width">
       <script async src="https://cdn.ampproject.org/v0.js"></script>
 
       <!-- ## Setup -->
@@ -83,6 +83,7 @@ author: sebastianbenz
               width: 100vw;
               max-width: 700px;
               padding: var(--space-2);
+              box-sizing: border-box;
             }
             .checkout-flow-sample > * + *,
             #checkout-form > * + * {
@@ -178,7 +179,7 @@ author: sebastianbenz
                   single-item
                   layout="fixed-height"
                   credentials="include"
-                  src="shoppingcart?clientId=CLIENT_ID(cart)"
+                  src="<% base_path %>/shoppingcart?clientId=CLIENT_ID(cart)"
                   [src]="shoppingCart.src"
                   binding="no">
           <template type="amp-mustache">
@@ -220,8 +221,12 @@ author: sebastianbenz
         <section [class]="checkoutSuccess ? 'hide' : 'checkout-section'" class="checkout-section">
           <h3> Add a promotional code </h3>
           <form  method="post"
-                 action-xhr="apply-code"
-                 on="submit-success:AMP.setState({shoppingCart: {src: 'shoppingcart?clientId=CLIENT_ID(cart)&' + random()}})"
+                 action-xhr="<% base_path %>/apply-code"
+                 on="submit-success:AMP.setState({
+                        shoppingCart: {
+                          src: '<% base_path %>/shoppingcart?clientId=CLIENT_ID(cart)&' + random()
+                        }
+                     })"
                  target="_top">
             <input name="clientId"
                    type="hidden"
@@ -239,7 +244,7 @@ author: sebastianbenz
           <form  id="checkout-form"
                  method="post"
                  [hidden]="checkoutSuccess"
-                 action-xhr="apply-code"
+                 action-xhr="<% base_path %>/apply-code"
                  on="submit-success:AMP.setState({checkoutSuccess: true})"
                  target="_top">
 

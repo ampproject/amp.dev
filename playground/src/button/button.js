@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,6 +15,10 @@
 import buttonTemplate from './button.hbs';
 
 export function from(element, onClickHandler) {
+  if (!element) {
+    return;
+  }
+
   element.addEventListener('click', onClickHandler);
   return new Button(element.parentNode, element);
 }
@@ -62,12 +66,16 @@ class Button {
     return this;
   }
 
-  addClass(clazz) {
-    this._element.classList.toggle(clazz, true);
+  addClass(...classes) {
+    this._element.classList.add(...classes);
     return this;
   }
 
-  removeClass(clazz) {
-    this._element.classList.toggle(clazz, false);
+  removeClass(...classes) {
+    this._element.classList.remove(...classes);
+  }
+
+  toggleClass(_class, force) {
+    this._element.classList.toggle(_class, force);
   }
 }

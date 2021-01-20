@@ -23,7 +23,6 @@
 
 .#{molecule('teaser-highlight-guides')} {
 
-
   .#{molecule('teaser')} {
     position: relative;
     grid-column: span 12;
@@ -39,7 +38,7 @@
 
     &-highlighted {
       box-shadow: 0 15px 30px 0 transparentize(color('black'), 0.85);
-      border: solid 1px #e8e8e8;
+      padding-top: 1px;
       margin-bottom: 20px;
 
       @media (min-width: 1024px) {
@@ -60,11 +59,10 @@
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       align-items: start;
-      grid-column-gap: 30px;
-    }
 
-    &-double-teaser {
-      margin-bottom: 20px;
+      @media (min-width: 1024px) {
+        grid-column-gap: 30px;
+      }
     }
 
     &-tags {
@@ -114,11 +112,11 @@
     .guide-tag {
       display: inline-flex;
       align-items: center;
-      margin-top: 33px;
+      margin-top: 20px;
       margin-bottom: 20px;
       padding: 4px 10px;
       border-radius: 12px;
-      background-color: color('concrete');
+      background-color: color('athens-gray');
 
       &-icon {
         fill: color('blue-ribbon');
@@ -150,6 +148,21 @@
       &-text {
         font-weight: bold;
         font-size: 10px;
+      }
+    }
+  }
+}
+.#{molecule('teaser-highlight-guides')}-recent {
+  .#{molecule('teaser')} {
+    transition: none;
+
+    &-highlighted {
+      box-shadow: none;
+      border: 1px solid color('iron');
+
+      &:hover {
+        transform: none;
+        box-shadow: none;
       }
     }
   }

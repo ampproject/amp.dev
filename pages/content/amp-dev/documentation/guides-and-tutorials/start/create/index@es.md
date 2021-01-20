@@ -1,5 +1,14 @@
 ---
-$title: Crea tu primera página AMP
+"$title": Cree su primera página AMP
+"$order": '0'
+description: "¿No está seguro de cómo empezar? En este tutorial, aprenderá a crear una página AMP HTML básica, organizarla, validar su cumplimiento con AMP y, finalmente,..."
+formats:
+- websites
+numbered: '0'
+"$hidden": 'true'
+author: pbakaus
+contributors:
+- bpaduch
 ---
 
-¿No estás seguro de cómo empezar? En este tutorial, aprenderás a crear una página AMP HTML básica, organizarla, validar su cumplimiento con AMP y, finalmente, prepararla para su publicación y distribución.
+¿No está seguro de cómo empezar? En este tutorial, aprenderá a crear una página AMP HTML básica, organizarla, validar su cumplimiento con AMP y, finalmente, prepararla para su publicación y distribución.

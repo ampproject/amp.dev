@@ -1,0 +1,176 @@
+{% do doc.styles.addCssFile('/css/components/organisms/search.css') %}
+
+{% do doc.icons.useIcon('/icons/magnifier.svg') %}
+{% do doc.icons.useIcon('icons/internal.svg') %}
+{% do doc.icons.useIcon('/icons/close.svg') %}
+
+
+{# Do not set absolute URLs for development as binding to [src]
+   explicitly checks for https:// #}
+{% set base_url = podspec.base_urls.platform if podspec.env.name != 'development' else '' %}
+
+<amp-state id="query" src="{{ base_url }}/search/latest-query"></amp-state>
+<amp-state id="clear" [src]="clear ? '{{ base_url }}/search/clear-latest-query' : ''"></amp-state>
+
+<amp-lightbox id="searchLightbox"
+              class="ap-o-search"
+              layout="nodisplay"
+              on="lightboxOpen:searchInput.focus,AMP.setState({clear: false});
+                  lightboxClose:searchTriggerOpen.focus"
+              scrollable>
+  <div class="ap-o-search-escaper" role="button" tabindex="0" on="tap:searchLightbox.close"></div>
+  <div class="ap-o-search-container">
+
+    <div class="ap-m-search-trigger ap-m-search-trigger-close"
+         on="tap:searchLightbox.close,AMP.setState({clear: true, query: null})"
+         role="button"
+         tabindex="0">
+      <div class="ap-a-ico ap-m-search-trigger-icon">
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
+      </div>
+    </div>
+
+    <div class="ap-o-search-field">
+      <form action-xhr="{{ base_url }}/documentation/examples/api/echo"
+            class="ap-o-search-form"
+            id="searchForm"
+            method="POST"
+            on="submit:AMP.setState({ query: throttledValue }),searchResult.focus,searchList.changeToLayoutContainer"
+            target="_top">
+        <amp-autocomplete class="ap-o-search-autocomplete"
+                          filter="substring"
+                          min-characters="1"
+                          on="select:AMP.setState({ query: event.value })"
+                          submit-on-enter="false"
+                          src="{{ base_url }}/search/autosuggest"
+        >
+          <div class="ap-a-ico ap-o-search-input-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#magnifier"></use></svg>
+          </div>
+          <input id="searchInput"
+                 class="ap-o-search-input"
+                 name="q"
+                 placeholder="{{_('What are you looking for?')}}"
+                 on="input-throttled:AMP.setState({ throttledValue: event.value })"
+                 [value]="query == null ? '' : query"
+                 required
+          >
+          <button class="ap-o-search-submit" type="submit" name="search-submit" disabled [disabled]="!throttledValue">{{_('Search')}}</button>
+        </amp-autocomplete>
+      </form>
+
+      <div class="ap-o-search-result" id="searchResult" tabindex="-1">
+        <amp-state id="search"
+                  src="{{ base_url }}/search/highlights?locale={{ doc.locale }}"
+                  [src]="query == null || clear ? '{{ base_url }}/search/highlights?locale={{ doc.locale }}' : '{{ base_url }}/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"></amp-state>
+        <amp-list id="searchList"
+                  src="{{ base_url }}/search/highlights?locale={{ doc.locale }}"
+                  [src]="query == null || clear ? '{{ base_url }}/search/highlights?locale={{ doc.locale }}' : '{{ base_url }}/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"
+                  binding="no"
+                  items="."
+                  height="80vh"
+                  layout="fixed-height"
+                  load-more="auto"
+                  load-more-bookmark="nextUrl"
+                  reset-on-refresh
+                  single-item
+        >
+
+          <template type="amp-mustache" id="searchResultTemplate">
+            <div class="ap-o-search-result-list">
+              {{'{{^prevUrl}}'}}
+              {{'{{#result.components.length}}'}}
+              <h4 class="ap-o-search-result-category">
+                {{-'{{#initial}}'}}{{_('Important Components')}}{{'{{/initial}}'-}}
+                {{-'{{^initial}}'}}{{_('Components')}}{{'{{/initial}}'-}}
+              </h4>
+              {{'{{/result.components.length}}'}}
+              {{'{{/prevUrl}}'}}
+              {{'{{#result.components}}'}}
+              <div class="ap-o-search-result-item ap-o-search-result-item-highlight">
+                <a class="ap-o-search-result-link" href="{{'{{url}}'}}">
+                  <h4 class="ap-o-search-result-title">
+                    {{-'{{#initial}}'}}&lt;{{'{{title}}'}}&gt;{{'{{/initial}}'-}}
+                    {{-'{{^initial}}'}}{{'{{title}}'}}{{'{{/initial}}'-}}
+                  </h4>
+                  <p class="ap-o-search-result-description">{{'{{description}}'}}</p>
+                </a>
+                {{'{{#exampleUrl}}'}}
+                <div class="ap-o-search-result-linklist">
+                  <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-example ap-m-lnk" href="{{'{{exampleUrl}}'}}">
+                    <div class="ap-a-ico ap-m-lnk-icon">
+                      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+                    </div>
+                    <span class="ap-m-lnk-text">{{_('Open example')}}</span>
+                  </a>
+                  {{'{{#playgroundUrl}}'}}
+                  <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-playground ap-m-lnk" href="{{'{{playgroundUrl}}'}}" target="_blank">
+                    <div class="ap-a-ico ap-m-lnk-icon">
+                      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+                    </div>
+                    <span class="ap-m-lnk-text">{{_('Open in playground')}}</span>
+                  </a>
+                  {{'{{/playgroundUrl}}'}}
+                </div>
+                {{'{{/exampleUrl}}'}}
+              </div>
+              {{'{{/result.components}}'}}
+
+              {{'{{^prevUrl}}'}}
+              {{'{{#result.pages.length}}'}}
+              <h4 class="ap-o-search-result-category">
+                {{-'{{#initial}}'}}{{_('Popular Articles')}}{{'{{/initial}}'-}}
+                {{-'{{^initial}}'}}{{_('Results')}}{{'{{/initial}}'-}}
+              </h4>
+              {{'{{/result.pages.length}}'}}
+              {{'{{/prevUrl}}'}}
+              {{'{{#result.pages}}'}}
+              <div class="ap-o-search-result-item">
+                <a class="ap-o-search-result-link" href="{{'{{url}}'}}">
+                  <h4 class="ap-o-search-result-title">{{'{{title}}'}}</h4>
+                  <p class="ap-o-search-result-description">{{'{{description}}'}}</p>
+                </a>
+              </div>
+              {{'{{/result.pages}}'}}
+
+              {{'{{#result.isTruncated}}'}}
+              <div class="ap-o-search-result-hint">
+                {{_('Although there are {hits} hits in total we cannot show more than 100.', hits='{'+'{result.totalResults}'+'}')}}
+              </div>
+              {{'{{/result.isTruncated}}'}}
+            </div>
+          </template>
+
+          <amp-list-load-more load-more-button>
+            <div class="ap-o-search-result-load-button" overflow>
+              <button class="ap-a-btn">{{_('Load more')}}</button>
+            </div>
+          </amp-list-load-more>
+
+          <amp-list-load-more class="ap-o-search-result-hint" load-more-failed>
+            {{_('Something went wrong while trying to load more search results.')}}<br>
+            {{_('We apologize for the inconvenience caused.')}}<br>
+            {{_('Please try again later.')}}
+          </amp-list-load-more>
+
+          <div class="ap-o-search-result-error" fallback>
+            <h2 class="ap-o-search-result-error-smiley">{{';('}}</h2>
+            <h3 class="ap-o-search-result-error-headline">{{ _('Something went wrong…') }}</h3>
+            <p class="ap-o-search-result-error-copy">
+              {{ _('…while trying to load the search results.') }}<br>
+              {{ _('We apologize for the inconvenience caused.') }}<br>
+              {{_('Please try again later.')}}
+            </p>
+          </div>
+        </amp-list>
+
+        <div class="ap-o-search-result-error" [hidden]="search.initial == true || search.result.totalResults != 0" hidden>
+          <h2 class="ap-o-search-result-error-shruggie">{{'¯\_(ツ)_/¯'}}</h2>
+          <h3 class="ap-o-search-result-error-headline">{{ _('No results found.') }}</h3>
+          <p class="ap-o-search-result-error-copy">{{ _('We could not find any results matching your search query.') }}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</amp-lightbox>

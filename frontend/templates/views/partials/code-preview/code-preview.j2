@@ -22,30 +22,6 @@
     </script>
   </amp-state>
 
-  <amp-animation id="fadeAnimation{{ preview.index }}" layout="nodisplay">
-    <script type="application/json">{
-      "selector": ".ap-o-code-preview-top-preview-{{ preview.index }} amp-iframe",
-      "duration": 250,
-      "delay": 250,
-      "fill": "backwards",
-      "easing": "linear",
-      "keyframes": {
-        "opacity": ["0", "1"]
-      }
-    }</script>
-  </amp-animation>
-  <amp-animation id="morphAnimation{{ preview.index }}" layout="nodisplay">
-    <script type="application/json">{
-      "selector": ".ap-o-code-preview-top-preview-{{ preview.index }} .ap-o-code-preview-preview-iframe-background",
-      "duration": 250,
-      "fill": "both",
-      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
-      "keyframes": {
-        "transform": ["scale(.5625, 1.7778)", "scale(1, 1)"]
-      }
-    }</script>
-  </amp-animation>
-
   <div class="ap-o-code-preview-top-preview ap-o-code-preview-top-preview-{{ preview.index }}">
 
     <div class="ap-o-code-preview-controls">
@@ -55,9 +31,7 @@
                   AMP.setState({orientation{{ preview.index }}: false}),
                   iframeContainer{{ preview.index }}.toggleClass(class='ap-o-code-preview-preview-iframe-landscape'),
                   iframeContainer{{ preview.index }}.toggleClass(class='ap-o-code-preview-preview-iframe-portrait'),
-                  fadeAnimation{{ preview.index }}.restart,
-                  morphAnimation{{ preview.index }}.restart,
-                  morphAnimation{{ preview.index }}.reverse">
+                  bgContainer{{ preview.index }}.toggleClass(class='initial-{{ initial_orientation }}', force=false)">
         <div class="ap-a-ico ap-o-code-preview-controls-icon">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#orientation-toggle"></use></svg>
         </div>
@@ -68,8 +42,7 @@
                   AMP.setState({orientation{{ preview.index }}: true}),
                   iframeContainer{{ preview.index }}.toggleClass(class='ap-o-code-preview-preview-iframe-portrait'),
                   iframeContainer{{ preview.index }}.toggleClass(class='ap-o-code-preview-preview-iframe-landscape'),
-                  fadeAnimation{{ preview.index }}.restart,
-                  morphAnimation{{ preview.index }}.restart">
+                  bgContainer{{ preview.index }}.toggleClass(class='initial-{{ initial_orientation }}', force=false)">
         <div class="ap-a-ico ap-o-code-preview-controls-icon">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#orientation-toggle"></use></svg>
         </div>
@@ -92,7 +65,7 @@
                   frameborder="0">
         <div placeholder></div>
       </amp-iframe>
-      <div class="ap-o-code-preview-preview-iframe-background"></div>
+      <div id="bgContainer{{ preview.index }}" class="ap-o-code-preview-preview-iframe-background initial-{{ initial_orientation }}"></div>
     </div>
   </div>
   {% endif %}

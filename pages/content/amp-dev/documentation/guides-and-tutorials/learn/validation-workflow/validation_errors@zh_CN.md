@@ -263,7 +263,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 <table>
    <tr>
                 <td class="col-thirty"><strong>代码</strong></td>
-                <td>CDATA_VIOLATES_BLACKLIST</td>
+                <td>CDATA_VIOLATES_DENYLIST</td>
   </tr>
    <tr>
                 <td class="col-thirty"><strong>格式</strong></td>
@@ -279,7 +279,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 以便验证基本的 CSS AMP 规则。
 
 下面列出了已列入黑名单的 CSS 数据
-（另请参阅 [AMP 验证工具规范中的 `blacklisted_cdata_regex`](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)）：
+（另请参阅 [AMP 验证工具规范中的 `disallowed_cdata_regex`](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)）：
 
 * `"\\.i?-amp-"`（“CSS -amp- 类名称前缀”）
 * `"!important"`
@@ -634,7 +634,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 * `<body>`
 * `<script src="https://cdn.ampproject.org/v0.js">`
 
-## 样式和布局错误
+## 样式和布局错误 <a name="style-and-layout-errors"></a>
 
 在深入了解样式和布局错误之前，
 有必要先了解一下 AMP 中
@@ -672,13 +672,13 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
   </tr>
    <tr>
                 <td class="col-thirty"><strong>更正</strong></td>
-                <td>将样式表的大小缩减到 50000 字节以下。</td>
+                <td>将样式表的大小缩减到 75000 字节以下。</td>
   </tr>
 </table>
 
 当 AMP 验证工具经过衡量发现
 `<style amp-custom>` 中的样式内容大小超出
-上限（50000 字节）时，就会出现这种错误。
+上限（75000 字节）时，就会出现这种错误。
 
 ### CSS 语法错误
 
@@ -857,7 +857,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 当指定布局的属性值无效时，就会出现这种错误。
 要了解触发此错误的原因，
 您需要熟悉
-[不同的布局行为](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#size-and-position-elements)。
+[不同的布局行为](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute)。
 
 假设您将布局设为 `fixed-height`，
 并同时为 `height` 和 `width` 添加了数字值。
@@ -901,7 +901,7 @@ AMP 网页不能包含模板语法，
 您的源文件中可以包含模板，
 但前提是此类文件生成的输出内容中不包含模板
 （另请参阅
-[使用 CSS 预处理器](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md#use-css-preprocessors))）。
+[使用 CSS 预处理器](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md#using-css-preprocessors))）。
 
 ### 属性包含模板语法
 

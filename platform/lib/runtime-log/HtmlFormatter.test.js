@@ -47,7 +47,9 @@ test('linkifies URLs', async () => {
     params: [],
   };
   const message = await formatter.apply(logRequest);
-  expect(message).toBe('see <a href="https://example.com">https://example.com</a>');
+  expect(message).toBe(
+    'see <a href="https://example.com">https://example.com</a>'
+  );
 });
 
 test('throws exception if log not available', async () => {
@@ -65,4 +67,3 @@ test('throws exception if log not available', async () => {
   }
   expect(error).toBe(expectedError);
 });
-

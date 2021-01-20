@@ -1,0 +1,100 @@
+{
+  "comparisonData": {
+    "heading": [
+      {
+        "headingName": "Texture",
+        "rowAndSubHeading": [
+          {
+            "fruitData": [
+              {
+                "colData": "Great Crunch"
+              },
+              {
+                "colData": "No Crunch"
+              }
+            ],
+            "rowLabel": "Crunchiness"
+          },
+          {
+            "fruitData": [
+              {
+                "colData": "Watery"
+              },
+              {
+                "colData": "Pasty"
+              }
+            ],
+            "rowLabel": "Mouth Feel"
+          }
+        ]
+      },
+      {
+        "headingName": "Flavor",
+        "rowAndSubHeading": [
+          {
+            "fruitData": [
+              {
+                "colData": "Can be slightly sour, varies from apple to apple"
+              },
+              {
+                "colData": "Not sour if ripe"
+              }
+            ],
+            "rowLabel": "Sourness"
+          },
+          {
+            "fruitData": [
+              {
+                "colData": "Balance between sweet and sour, 'tart'"
+              },
+              {
+                "colData": "Very sweet"
+              }
+            ],
+            "rowLabel": "Sweetness"
+          }
+        ]
+      },
+      {
+        "headingName": "Nutrition",
+        "rowAndSubHeading": [
+          {
+            "fruitData": [
+              {
+                "colData": "17g"
+              },
+              {
+                "colData": "15g"
+              }
+            ],
+            "rowLabel": "Sugar"
+          },
+          {
+            "fruitData": [
+              {
+                "colData": "5g"
+              },
+              {
+                "colData": "3g"
+              }
+            ],
+            "rowLabel": "Fiber"
+          }
+        ]
+      }
+    ]
+  },
+  "competitorFruit": [
+    {
+    "imageURL": "https://cdn.glitch.com/cbcdd9ba-70f9-4d53-a19d-486e4b70f73f%2F440px-Cavendish_Banana_DS.jpg?v=1578089065672",
+    "subType": "Cavendish",
+    "fruit": "Banana"
+    }
+  ],
+  "primaryFruit":
+  {
+      "imageURL": "https://cdn.glitch.com/cbcdd9ba-70f9-4d53-a19d-486e4b70f73f%2F440px-Fuji_apples.jpg?v=1578089067947",
+      "subType": "Fuji",
+      "fruit": "Apple"
+    }
+}

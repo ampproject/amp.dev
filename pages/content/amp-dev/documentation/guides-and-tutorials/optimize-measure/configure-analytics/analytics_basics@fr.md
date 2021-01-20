@@ -1,95 +1,53 @@
 ---
-$title: "Analytics: les bases"
+"$title": 'Analytics: principes de base'
+"$order": '0'
+description: 'AMP fournit deux composants pour répondre à vos besoins d''analyse et de mesure: amp-pixel et amp-analytics. Les deux options envoient des données d''analyse à un point de terminaison défini.'
+formats:
+- websites
+- stories
 ---
 
 Commencez ici pour tout savoir sur les bases des analyses AMP.
 
-## Utiliser amp-pixel ou amp-analytics ?
+## Utiliser amp-pixel ou amp-analytics ? <a name="use-amp-pixel-or-amp-analytics"></a>
 
-AMP fournit deux composants pour répondre à vos besoins d'analyse et de mesure :
-[`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) et
-[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
-Ces deux options envoient les données d'analyse à un point d'extrémité prédéfini.
+AMP fournit deux composants pour répondre à vos besoins d'analyse et de mesure : [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) et [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). Ces deux options envoient les données d'analyse à un point de terminaison prédéfini.
 
-Si vous recherchez des comportements comme un simple
-[pixel de suivi](https://en.wikipedia.org/wiki/Web_beacon#Implementation)
-le composant [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) fournit un suivi de base des vues de page ;
-les données sur les vues de page sont envoyées à une URL donnée.
-Certaines intégrations avec un fournisseur peuvent appeler ce composant,
-auquel cas elles indiqueront le point d'extrémité exact de l'URL.
+Si vous recherchez des comportements comme un simple [pixel de suivi](https://en.wikipedia.org/wiki/Web_beacon#Implementation) le composant [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) fournit un suivi de base des vues de page ; les données sur les vues de page sont envoyées à une URL donnée. Certaines intégrations avec un fournisseur peuvent appeler ce composant, auquel cas elles indiqueront le point de terminaison exact de l'URL.
 
-Pour la plupart des solutions d'analyse, utilisez [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
-Le suivi des vues de page fonctionne également avec [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
-Ce composant vous permet aussi de suivre l'engagement des utilisateurs avec n'importe quel type de contenu sur les pages,
-y compris les clics sur des liens et des boutons.
-Vous pouvez également mesurer jusqu'où l'utilisateur a fait défiler la page,
-savoir s'il a interagi ou non avec des réseaux sociaux et bien plus encore
-(voir
-[AMP Analytics dans le détail](deep_dive_analytics.md)).
+Pour la plupart des solutions d'analyse, utilisez [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). Le suivi des vues de page fonctionne également avec [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). Ce composant vous permet aussi de suivre l'engagement des utilisateurs avec n'importe quel type de contenu sur les pages, y compris les clics sur des liens et des boutons. [filter formats="websites"] Vous pouvez également mesurer jusqu'où l'utilisateur a fait défiler la page, savoir s'il a interagi ou non avec des réseaux sociaux et bien plus encore. [/filter] [filter formats="stories"] Vous pouvez aussi voir jusqu'où l'utilisateur est allé dans une story et s'il a utilisé les éléments interactifs. [/filter]
 
-Dans le cadre de l'intégration avec la plateforme AMP,
-des fournisseurs ont proposé des configurations [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) prédéfinies,
-de sorte à faciliter considérablement la capture des données et leur transmission à leurs outils de suivi.
-Accédez à la documentation des fournisseurs depuis la
-[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
+[tip type="read-on"] Voir [Analyses AMP: approfondissement](../../../../documentation/components/reference/amp-analytics.md). [/tip]
 
-Dans vos pages, vous pouvez utiliser à la fois [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) et [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) :
-[`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) pour un simple suivi des vues de page
-et [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) pour tout le reste.
-Vous pouvez également ajouter chaque balise plusieurs fois.
-Si vous travaillez avec plusieurs fournisseurs de solutions d'analyse,
-vous aurez besoin d'une balise par solution.
-Rappelez-vous que plus les pages AMP sont simples, mieux c'est pour les utilisateurs.
-Donc si vous n'avez pas besoin de balises supplémentaires, ne les utilisez pas.
+Dans le cadre de l'intégration avec la plateforme AMP, des fournisseurs ont proposé des configurations [`amp-analytics`](../../../../documentation/components/reference/amp-pixel.md) prédéfinies, de sorte à faciliter l'enregistrement des données et leur transmission à leurs outils de suivi. Accédez à la documentation des fournisseurs depuis la liste [Fournisseurs d'analyses](../../../../documentation/components/reference/amp-analytics.md).
+
+Dans vos pages, vous pouvez utiliser à la fois [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) et [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md): <a><code>amp-pixel</code></a> pour un simple suivi des vues de page et <a><code>amp-analytics</code></a> pour tout le reste. Vous pouvez également ajouter chaque balise plusieurs fois. Si vous travaillez avec plusieurs fournisseurs de solutions d'analyse, vous aurez besoin d'une balise par solution. Rappelez-vous que plus les pages AMP sont simples, mieux c'est pour les utilisateurs. Donc si vous n'avez pas besoin de balises supplémentaires, ne les utilisez pas.
 
 ## Créer une configuration d'analyse simple
 
-Découvrez comment créer une configuration
-[`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) et
-[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) simple.
+Apprenez à créer une configuration simple [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) et [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
 
-### Configuration simple de la balise amp-pixel
+### Configuration simple de <code>amp-pixel</code>
 
-Pour créer une configuration simple de la balise [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md),
-insérez un code du type suivant dans le corps de votre page AMP :
+Pour créer une configuration simple de la balise <a><code>amp-pixel</code></a>, insérez un code du type suivant dans le corps de votre page AMP:
 
 ```html
 <amp-pixel src="https://foo.com/pixel?RANDOM"></amp-pixel>
 ```
 
-Dans cet exemple,
-les données sur les vues de page sont envoyées à l'URL définie, accompagnées d'un numéro aléatoire.
-La variable `RANDOM` est l'une des nombreuses
-[variables de substitution de la plateforme AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
-En savoir plus sur la
-[substitution des variables](analytics_basics.md#substitution-de-variables).
+Dans cet exemple, les données sur les vues de page sont envoyées à l'URL définie, accompagnées d'un numéro aléatoire. La variable <code>RANDOM</code> est l'une des nombreuses <a>variables de substitution de la plateforme AMP</a>. En savoir plus sur la [substitution des variables](../../../../documentation/components/reference/amp-analytics.md) ici.
 
-Le composant [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)
-étant intégré,
-vous n'avez pas besoin d'une déclaration d'inclusion comme avec
-les composants étendus d'AMP, notamment [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
-Vous devez néanmoins placer la balise [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) aussi près que possible
-du début du corps de la page, c'est-à-dire de la balise `<body>`.
-En effet, le pixel de suivi ne se déclenche que lorsque la balise est affichée.
-Si la balise [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) est positionnée près du bas de la page,
-il pourrait ne pas se déclencher.
+Le composant [`amp-pixel`](../../../../documentation/components/reference/amp-analytics.md) étant intégré, vous n'avez pas besoin d'une déclaration d'inclusion comme avec les composants étendus d'AMP, notamment <a><code data-md-type="codespan">amp-analytics</code></a>. Vous devez néanmoins placer la balise [<code>amp-pixel</code>](../../../../documentation/components/index.html) aussi près que possible du début du corps de la page, c'est-à-dire de la balise <code><body></code>. En effet, le pixel de suivi ne se déclenche que lorsque la balise est affichée. Si la balise <a><code>amp-pixel</code></a> est positionnée près du bas de la page, il pourrait ne pas se déclencher.
 
-### Configuration simple de la balise amp-analytics
+### Configuration simple de <code>amp-analytics</code>
 
-Pour créer une configuration simple de la balise
-[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md),
-vous devez d'abord inclure la déclaration `custom-element`
-après la balise `<head>` du document AMP (voir également
-[Déclaration d'inclusion de composant](../../../../documentation/components/index.html)) :
+Pour créer une configuration simple de la balise [`amp-analytics`](../../../../documentation/components/reference/amp-pixel.md), vous devez d'abord inclure la déclaration <code>custom-element</code> après la balise <code><head></code> du document AMP (voir également <a>Déclaration d'inclusion de composant</a>) :
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 ```
 
-L'exemple suivant est similaire à l'[`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md).
-À chaque fois qu'une page est visible,
-l'événement est déclenché et
-envoie les données sur les vues de page à une URL définie, accompagnées d'un identifiant aléatoire :
+L'exemple suivant est similaire à <a>l'exemple de <code data-md-type="codespan">amp-pixel</code></a>. À chaque fois qu'une page est visible, l'événement est déclenché et envoie les données sur les vues de page à une URL définie, accompagnées d'un identifiant aléatoire:
 
 ```html
 <amp-analytics>
@@ -111,131 +69,130 @@ envoie les données sur les vues de page à une URL définie, accompagnées d'un
 
 Dans l'exemple ci-dessus, nous avons défini une requête appelée pageview sur `https://foo.com/pixel?RANDOM`. Comme nous l'avons indiqué plus tôt, RANDOM est remplacé par un numéro aléatoire. La requête ressemblera donc à `https://foo.com/pixel?0.23479283687235653498734`.
 
-Lorsque la page devient visible
-(tel que spécifié par l'utilisation du mot clé de déclenchement `visible`),
-un événement est déclenché et la requête `pageview` est envoyée.
-L'attribut triggers détermine à quel moment la requête pageview est déclenchée.
-En savoir plus sur les [requêtes et déclencheurs](deep_dive_analytics.md#les-attributs-requests,-triggers-et-transport).
+Lorsque la page devient visible (tel que spécifié par l'utilisation du mot clé de déclenchement <code>visible</code>), un événement est déclenché et la requête `pageview` est envoyée. L'attribut triggers détermine à quel moment la requête pageview est déclenchée. En savoir plus sur les [requêtes et déclencheurs](../../../../documentation/components/reference/amp-analytics.md).
 
-## Substitution de variables
+[filter formats="stories"]
 
-Tant le composant [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) que le composant
-[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
-permettent toutes les substitutions de variable URL standard (voir
-[Substitution de variable AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)).).
-Dans l'exemple suivant,
-la requête pageview est envoyée à l'URL,
-accompagnée de l'URL canonique du document AMP, de son titre et d'un
-[ID client](analytics_basics.md#identification-des-utilisateurs) :
+## Configuration par défaut des stories AMP
+
+L'expérience utilisateur typique des sites Web est différente de celle des stories. Sur un site Web, un utilisateur peut lire le titre, faire défiler la page jusqu'en bas, interagir avec un formulaire avant de cliquer sur un lien vers la page suivante. Les stories occupent la fenêtre complète et les utilisateurs utilisent le toucher plutôt que le défilement pour avancer.
+
+{{ image('/static/img/docs/guides/analytics-pages.png', 660, 501, alt='Image of PWA' ) }}
+
+Beaucoup aimeraient mesurer chaque nouvelle [`<amp-story-page>`](../../../../documentation/components/reference/amp-story-page.md) dans la story comme une nouvelle page vue parce que le contenu d'un écran à l'autre est sensiblement différent. Cependant, la page n'est qu'un élément d'une story complète - et un utilisateur a généralement besoin de voir de nombreuses pages d'une story pour avoir une idée complète de la story. Ainsi, la question de savoir comment nous comptons quelque chose d'aussi simple qu'une vue de page a d'énormes implications pour notre approche analytique.
+
+{{ image('/static/img/docs/guides/analytics-setup-stories.png', 1037, 528, alt='Image of PWA' ) }}
+
+AMP Analytics facilite la mise en œuvre de ce qui précède à l'aide de n'importe quel fournisseur d'analyse. Par exemple, avec le [Global Site Tag](https://developers.google.com/gtagjs/) Google Analytics, l'on obtiendra l'extrait ci-dessous.
+
+```html
+<amp-analytics type="gtag" data-credentials="include">
+ <script type="application/json">
+  {
+    "vars": {
+      "gtag_id":"YOUR_GOOGLE_ANALYTICS_ID",
+      "config": {
+        "YOUR_GOOGLE_ANALYTICS_ID": {
+          "groups":"default"
+        }
+      }
+    },
+    "triggers": {
+      "storyProgress": {
+        "on":"story-page-visible",
+        "vars": {
+          "event_name":"custom",
+          "event_action":"story_progress",
+          "event_category":"${title}",
+          "event_label":"${storyPageId}",
+          "send_to": [
+            "YOUR_GOOGLE_ANALYTICS_ID"
+          ]
+        }
+      },
+      "storyEnd": {
+        "on":"story-last-page-visible",
+        "vars": {
+          "event_name":"custom",
+          "event_action":"story_complete",
+          "event_category":"${title}",
+          "send_to": [
+            "YOUR_GOOGLE_ANALYTICS_ID"
+          ]
+        }
+      }
+    }
+  }
+ </script>
+</amp-analytics>
+```
+
+Cette configuration par défaut devrait vous donner une configuration de travail complète pour une story AMP.
+
+Si vous souhaitez aller au-delà de ce que la configuration par défaut peut vous offrir, lisez [Analytics pour vos stories AMP](https://blog.amp.dev/2019/08/28/analytics-for-your-amp-stories/?_gl=1*pw0bu5*_ga*MzM1MjQ0ODE5LjE1NjUwMzU1MTg) pour trouver des cas d'utilisation plus avancés avec Google Analytics.
+
+[/filter]
+
+## Substitution des variables <a name="user-identification"></a>
+
+Les composants [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) et [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) autorisent toutes les substitutions de variables d'URL standard (voir [Substitutions de variables HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)). Dans l'exemple suivant, la demande de vue de page est envoyée à l'URL, avec l'URL canonique du document AMP actuel, son titre et un [ID client](analytics_basics.md#user-identification):
 
 ```html
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
 ```
 
-En raison de sa simplicité,
-la balise [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) ne peut inclure que des variables définies par la plateforme
-ou que l'exécution AMP peut analyser depuis la page AMP.
-Dans l'exemple ci-dessus,
-la plateforme fournit les valeurs à la fois pour
-`canonicalURL` et pour `clientId(site-user-id)`.
-La balise [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) peut inclure les mêmes variables que la balise [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md),
-ainsi que des variables uniques définies dans la configuration de la balise.
+En raison de sa simplicité, la balise [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) ne peut inclure que des variables définies par la plateforme ou que le runtime AMP peut analyser à partir de la page AMP. Dans l'exemple ci-dessus, la plateforme renseigne les valeurs pour `canonicalURL` et `clientId(site-user-id)`. La balise [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) peut inclure les mêmes variables que [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md), ainsi que des variables définies de manière unique dans la configuration de la balise.
 
-Utilisez le format `${varName}` dans une chaîne de requête pour une variable
-définie par la page ou la plateforme.
-La balise `amp-analytics` va remplacer le modèle par sa valeur réelle
-au moment de la construction de la demande d'analyse (voir également
-[Variables prises en charge par la balise `amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
+Utilisez le format `${varName}` dans une chaîne de requête pour une page ou une variable définie par la plateforme. La balise [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) remplacera le modèle par sa valeur réelle au moment de la construction de la demande d'analyse (voir également [Variables prises en charge dans `amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
 
-Dans l'exemple suivant pour la balise [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md),
-la requête pageview est envoyée à l'URL
-avec les données supplémentaires extraites des substitutions de variable,
-certaines données fournies par la plateforme
-et certaines données définies en ligne
-dans la configuration de la balise [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) :
+Dans l'exemple suivant sur [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), la demande de vue de page est envoyée à l'URL, avec des données supplémentaires extraites des substitutions de variables, certaines étant fournies par la plateforme et d'autres définies en de façon intégrée, dans la configuration de [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md):
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-  "requests": {
-    "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}",
-  },
-  "vars": {
-    "account": "ABC123",
-  },
-  "triggers": {
-    "someEvent": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
+      },
       "vars": {
-        "title": "My homepage",
+        "account":"ABC123"
+      },
+      "triggers": {
+        "someEvent": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage"
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
-Dans l'exemple ci-dessus,
-les variables `account` et `title` sont définies
-dans la configuration de la balise [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
-La variables `canonicalUrl` et `clientId` n'étant pas définies dans la configuration,
-leurs valeurs sont substituées par la plateforme.
+Dans l'exemple ci-dessus, les variables `account` et `title` sont définis dans la configuration [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). Les variables `canonicalUrl` et `clientId` ne sont pas définies dans la configuration, leurs valeurs sont donc remplacées par la plateforme.
 
-**Important :** La substitution des variables est flexible ;
-vous pouvez avoir les mêmes variables définies à différentes endroits,
-et l'exécution AMP analysera les valeurs dans leur ordre de priorité
-(voir [Ordonnancement de la substitution des variables](deep_dive_analytics.md#ordonnancement-de-la-substitution-des-variables)).
+[tip type="important"] **IMPORTANT - **La substitution des variables est flexible; vous pouvez définir les mêmes variables à différents emplacements, et le runtime AMP analysera les valeurs dans cet ordre de priorité (voir [Ordre de substitution des variables](deep_dive_analytics.md#variable-substitution-ordering) ). [/tip]
 
-## Identification des utilisateurs
+## Identification des utilisateurs <a name="user-identification"></a>
 
-Les sites Web utilisent des cookies pour stocker des informations spécifiques à un utilisateur dans le navigateur.
-Les cookies peuvent servir à indiquer qu'un utilisateur a déjà visité un site Web.
-Dans AMP,
-les pages peuvent être fournies soit depuis le site Web d'un éditeur, soit depuis un cache
-(comme Google AMP Cache).
-Il est probable que le site Web de l'éditeur et le cache aient des domaines différents.
-Pour des raisons de sécurité,
-les navigateurs limitent souvent l'accès aux cookies d'un autre domaine
-(voir également
-[Suivi des utilisateurs de différentes origines](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/cross-origin-tracking.md)).
+Les sites Web utilisent des cookies pour stocker des informations spécifiques sur un utilisateur dans le navigateur. Les cookies peuvent être utilisés pour indiquer qu'un utilisateur a déjà visité un site. Dans AMP, les pages peuvent être diffusées à partir du site Web d'un éditeur ou d'un cache (comme Google AMP Cache). Le site Web de l'éditeur et le cache sont susceptibles d'avoir des domaines différents. Pour des raisons de sécurité, les navigateurs peuvent (et vont souvent) limiter l'accès aux cookies d'un autre domaine (voir aussi [Suivi des utilisateurs selon les origines](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)).
 
-Par défaut,
-AMP gère l'émission d'un ID client que l'on accède à la page depuis le site Web original de l'éditeur ou via un cache.
-L'ID client généré par AMP est composé du préfixe `"amp-"`
-suivi d'une chaîne aléatoire encodée`base64`, et reste le même
-pour un utilisateur qui consulte plusieurs fois une même page.
+Par défaut, AMP gère la fourniture d'un ID client, que la page soit accessible depuis le site Web d'origine de l'éditeur ou via un cache. L'ID client généré par AMP a une valeur de `"amp-"` suivi d'une chaîne aléatoire encodée en `base64` et reste le même pour l'utilisateur si ce même utilisateur visite à nouveau.
 
-AMP gère la lecture et l'écriture de l'ID client dans tous les cas.
-Cela s'avère particulièrement utile lorsqu'une page est fournie
-via un cache ou consultée en dehors du contexte d'affichage
-du site Web original de l'éditeur.
-Dans ce cas, l'accès aux cookies du site de l'éditeur n'est pas disponible.
+AMP gère la lecture et l'écriture de l'ID client dans tous les cas. Cela est particulièrement notable dans le cas où une page est diffusée via un cache ou affichée en dehors du contexte de visualisation du site d'origine de l'éditeur. Dans ce cas, l'accès aux cookies du site de l'éditeur n'est pas disponible.
 
-Lorsqu'une page AMP est fournie à partir du site de l'éditeur,
-le framework de l'ID client qu'utilise AMP peut être informé d'un cookie
-de rappel à rechercher et à utiliser.
-Dans ce cas,
-l'argument `cid-scope-cookie-fallback-name` de la variable `clientId`
-est interprété comme un nom de cookie.
-Le format est soit
-`CLIENT_ID(cid-scope-cookie-fallback-name)`, soit
-`${clientId(cid-scope-cookie-fallback-name)}`.
+Lorsqu'une page AMP est diffusée à partir du site d'un éditeur, le cadre d'ID client utilisé par AMP peut être informé d'un cookie de secours à rechercher et à utiliser. Dans ce cas, l'argument `cid-scope-cookie-fallback-name` de la variable `clientId` est interprété comme un nom de cookie. Le formatage peut apparaître sous la forme `CLIENT_ID(cid-scope-cookie-fallback-name)` ou `${clientId(cid-scope-cookie-fallback-name)}`.
 
-Par exemple :
+Par exemple:
 
 ```html
 <amp-pixel src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"></amp-pixel>
 ```
 
-Si AMP détecte que ce cookie est défini,
-la substitution de l'ID client renvoie la valeur du cookie.
-Si AMP détecte que ce cookie n'est pas défini,
-il génère une valeur commençant par `amp-`,
-suivi d'une chaîne aléatoire encodée base64.
+Si AMP constate que ce cookie est défini, la substitution d'ID client renverra la valeur du cookie. Si l'AMP trouve que ce cookie n'est pas défini, alors AMP générera une valeur de la forme `amp-` suivie d'une chaîne aléatoire encodée en base64.
 
-Pour en savoir plus sur la substitution d'ID client,
-notamment comment ajouter un ID facultatif de notification de l'utilisateur, voir
-[Variables prises en charge dans les analyses AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
+En savoir plus sur la substitution d'ID client, y compris comment ajouter un ID de notification utilisateur facultatif, dans [Variables prises en charge dans l'analyse AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
+
+En savoir plus: plus de détails sur l'analyse dans [AMP Analytics: approfondissement](deep_dive_analytics.md) et [les cas d'utilisation](use_cases.md).

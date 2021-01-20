@@ -38,65 +38,6 @@
     }
   }
 
-  &-navigation {
-    position: sticky;
-    position: -webkit-sticky;
-    top: 50px;
-    left: 0;
-    margin: 0 -60px;
-    padding: 20px 60px;
-    background-color: color('white');
-    z-index: 11;
-    box-shadow: 0 3px 5px 0 transparentize(color('black'), 0.93);
-    line-height: 2;
-
-    h2 {
-      margin: 1rem 0;
-    }
-
-    &-links {
-      display: flex;
-      flex-direction: row;
-      overflow-x: scroll;
-
-      &::-webkit-scrollbar {
-        width: 2px;
-        height: 2px;
-        padding-bottom: 8px;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background-color: #cecece;
-      }
-
-      @media (min-width: 1024px) {
-        flex-wrap: wrap;
-      }
-
-      a {
-        @include txt-2;
-        padding: 0 40px 8px 0;
-        font-weight: bold;
-        white-space: nowrap;
-        color: color('blue-ribbon');
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-  &-navigation-shadow {
-    position: sticky;
-    position: -webkit-sticky;
-    top: 40px;
-    left: 0;
-    height: 10px;
-    width: 100%;
-    z-index: 19;
-    background-color: white;
-  }
-
   &-row {
     position: relative;
     display: flex;
@@ -108,16 +49,13 @@
   @media (min-width: 768px) {
     &-row {
       display: grid;
-      grid-template-columns: 5% 40% 55%;
+      grid-template-columns: 2% 43% 55%;
       justify-content: start;
 
       &-components {
         display: grid;
         grid-template-columns: 15% 45% 40%;
         justify-content: start;
-      }
-      &-components:hover {
-        background-color: color('wild-sand');
       }
 
       .ap-m-teaser-placeholder{
@@ -129,27 +67,31 @@
     }
   }
 
-  @media (min-width: 1024px){
+  @media (min-width: 1024px) {
     &-row {
       &-components {
-        grid-template-columns: 10% 40% 55%;
+        grid-template-columns: 8% 40% 52%;
       }
     }
   }
 
-  &-link{
+  &-link {
     display: block;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid transparentize(color('black'), 0.95);
+
+    &:hover {
+      background: color('athens-gray');
+    }
   }
 
   &-link:nth-of-type(1) {
-    border-top: 1px solid rgba(0,0,0,0.05);
+    border-top: 1px solid transparentize(color('black'), 0.95);
   }
 
   &-tags {
     @include teaser-tag-zero;
 
-    & > .ap-m-tag:not(:last-of-type) {
+    & > .#{molecule('tag')}:not(:last-of-type) {
       margin-right: 5px;
     }
   }
@@ -165,7 +107,7 @@
       align-self: center;
       position: relative;
 
-      & > .ap-m-tag {
+      & > .#{molecule('tag')} {
         border-radius: 50%;
         min-width: 8px;
         margin-right: 3px;
@@ -174,38 +116,34 @@
   }
 
   &-name {
-    background: none;
     display: flex;
     justify-self: start;
+    align-items: center;
     height: 100%;
     padding-top: 10px;
-    align-items: center;
-
-    &-example:hover {
-      background-color: color('whisper');
-    }
+    background: none;
 
     &-title {
-      @include txt-mono;
-      font-weight: bold;
-      font-size: 0.875em;
-      color: color('river-bed');
       margin: 0;
+      @include txt-mono;
+      font-size: 0.875em;
+      font-weight: bold;
+      color: color('river-bed');
     }
   }
 
   @media (min-width: 768px) {
     &-name {
-      padding-top: 0;
       width: 100%;
-      padding-left: 35px;
+      padding-left: 15px;
+      padding-top: 0;
     }
   }
 
   &-info {
     padding: 11px 0;
 
-    .ap-m-table-component-used-components {
+    .#{molecule('table-component')}-used-components {
       code {
         color: color('charade');
       }
@@ -215,38 +153,37 @@
   &-copy {
     @include txt-3;
     display: block;
-    line-height: 1.6em;
     margin: 0;
-    color: color('river-bed');
+    line-height: 1.6em;
     font-weight: normal;
+    color: color('river-bed');
   }
 
   &-components {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
     justify-content: space-between;
+    width: 100%;
 
-    .#{molecule('table-component')}{
-      &-link{
+    .#{molecule('table-component')} {
+      &-link {
         display: flex;
-        width: 50%;
-        padding-right: 30px;
+        width: 100%;
         border: none;
 
-        &:nth-of-type(2n) {
-          border-left: 2px solid rgba(0,0,0,0.05);
-          padding-left: 30px;
-          padding-right: 0;
+        @media (min-width: 768px) {
+          width: calc(50% - 30px);
+          margin-right: 30px;
         }
 
         &:nth-child(1), &:nth-child(2) {
-          .#{molecule('table-component')}{
+          .#{molecule('table-component')} {
             &-row {
               border-top: 1px solid transparentize(color('black'), 0.95);
             }
           }
         }
+
         @media (min-width: 768px) {
           .#{molecule('tag')} {
             &:empty {
@@ -257,14 +194,8 @@
       }
       &-row {
         grid-template-columns: 5% 85%;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
         padding: 10px 0;
-      }
-
-      &-name {
-        &-example:hover {
-          background-color: inherit;
-        }
+        border-bottom: 1px solid transparentize(color('black'), 0.95);
       }
     }
   }

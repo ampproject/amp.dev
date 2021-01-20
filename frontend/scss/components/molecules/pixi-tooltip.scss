@@ -1,0 +1,156 @@
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+@import 'components/atoms/_button.scss';
+
+.#{molecule('tooltip')} {
+  $tooltip: &;
+  position: relative;
+
+  &-background {
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background: safeColor('black');
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+    @media (min-width: 575px) {
+      background-color: transparent;
+    }
+  }
+
+  &-toggle {
+    @include unset-button;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: safeColor('light-gray');
+    }
+
+    #{$tooltip}.active &,
+    &:hover {
+      svg {
+        fill: safeColor('dark-gray');
+      }
+    }
+  }
+
+  &-close {
+    @include unset-button;
+    height: 30px;
+    width: 30px;
+    margin-left: auto;
+    margin-left: 5px;
+    padding: 5px;
+
+    svg {
+      cursor: pointer;
+      max-width: 20px;
+      max-height: 20px;
+      fill: safeColor('blue');
+    }
+  }
+
+  &-tip {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 90%;
+    height: 100%;
+    margin-top: 25px;
+    padding: 110px 16px 24px 24px;
+    font-size: 14px;
+    line-height: 1.57;
+    background: safeColor('white');
+    pointer-events: none;
+    filter: drop-shadow(0 0 20px transparentize(color('black'), 0.8));
+
+    @media (min-width: 575px) {
+      position: absolute;
+      top: 25px;
+      flex-direction: row-reverse;
+      align-items: flex-start;
+      width: 300px;
+      height: auto;
+      padding: 24px 16px 24px 24px;
+      transform: translateX(7%);
+    }
+
+    @media (min-width: 1024px) {
+      transform: translateX(20%);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      right: calc(20% - 30px);
+      width: 0;
+      height: 0;
+      border: 15px solid transparent;
+      border-top: 0;
+      border-bottom-color: color('white');
+      right: calc(17% - 30px);
+
+      @media (min-width: 1024px) {
+        right: calc(30% - 30px);
+      }
+    }
+
+    h3 {
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid safeColor('light-gray');
+      font-size: 26px;
+
+      @media (min-width: 575px) {
+        display: none;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .rtl &,
+    .invert & {
+      direction: ltr;
+
+      @media (min-width: 575px) {
+        transform: translateX(70%);
+      }
+
+      &:after {
+        left: calc(30% - 30px);
+      }
+    }
+  }
+
+  &.active {
+    #{$tooltip}-tip {
+      opacity: 1;
+      pointer-events: all;
+      display: flex;
+    }
+
+    & + #{$tooltip}-background {
+      pointer-events: all;
+      opacity: 0.7;
+    }
+  }
+}

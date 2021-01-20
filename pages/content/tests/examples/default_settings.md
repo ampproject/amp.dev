@@ -2,6 +2,8 @@
 $title: Default settings
 $description: Example with default settings (preview=none, playground=true)
 $order: 1
+$sitemap:
+  enabled: False
 ---
 
 Start

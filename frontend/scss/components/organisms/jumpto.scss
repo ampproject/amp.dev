@@ -1,0 +1,75 @@
+/*
+
+########################
+### ORGANISM: jumpto ###
+########################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+
+.#{organism('jumpto')} {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media (min-width: 768px) {
+    grid-column: 3 / -1;
+    margin-bottom: 32px;
+  }
+
+  .#{utility('center')} & {
+    grid-column: 1 / -1;
+    align-items: center;
+  }
+
+  &-text {
+    @include txt;
+    margin-bottom: 0.5em;
+  }
+
+  &-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: color('white');
+    border-radius: 4px;
+    @include jumpto-list-shadow;
+
+    @media (max-width: 767px) {
+      width: 100%;
+      margin: 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+  }
+
+  &-item {
+    white-space: nowrap;
+    border-right: 1px solid color('iron');
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  &-link {
+    display: inline-block;
+    @include txt;
+    @include txt-font-accent;
+    font-size: 0.75em;
+    padding: 20px 15px;
+
+    @media (min-width: 768px) {
+      @include txt-1;
+      padding: 15px 30px;
+    }
+  }
+}

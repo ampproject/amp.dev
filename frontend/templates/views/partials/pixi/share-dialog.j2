@@ -1,0 +1,36 @@
+{% do doc.styles.addCssFile('css/components/molecules/pixi-share-dialog.css') %}
+
+{% set base_url = podspec.base_urls.platform + '/' + doc.locale.language if doc.locale.language != 'en' else podspec.base_urls.platform %}
+
+<amp-lightbox id="share-dialog" layout="nodisplay" on="lightboxClose:share-button.focus">
+  <div class="ap-m-share-dialog"
+      role="dialog" aria-labelledby="share-dialog-title" aria-describedby="share-dialog-title">
+    <div class="ap-m-share-dialog-container">
+      <button class="ap-m-share-dialog-container-close"
+          on="tap:share-dialog.close"
+          type="button"
+          name="button"
+          tabindex="0"
+          aria-label="{{ pixi.staticText.shareDialog.close }}">
+        {% do doc.icons.useIcon('icons/close.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
+      </button>
+      <h2 id="share-dialog-title">{{ pixi.staticText.shareDialog.headline }}</h2>
+      <input class="ap-m-share-dialog-container-textarea"
+          type="text"
+          value="{{ doc.url }}"
+          [value]="'{{ doc.url }}?url=' + pixi.shareUrlQuery"
+          readonly>
+      <amp-iframe class="ap-m-share-dialog-container-copy-button"
+          title="{{ pixi.staticText.shareDialog.copyToClipboard }}"
+          width="300px"
+          height="75"
+          layout="fixed"
+          sandbox="allow-scripts"
+          src="{{ base_url }}/shared/copy-pixi-url/"
+          [src]="'{{ base_url }}/shared/copy-pixi-url/#' + '{{ (doc.url|string + '?url=')|urlencode }}' + pixi.shareUrlQuery">
+        <div placeholder></div>
+      </amp-iframe>
+    </div>
+  </div>
+</amp-lightbox>

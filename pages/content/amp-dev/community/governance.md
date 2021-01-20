@@ -1,12 +1,14 @@
 ---
 $title: Governance
-toc: true
-$order: 2
+order: 2
 formats:
   - websites
   - email
   - stories
   - ads
+teaser:
+  text: ' Glossary'
+toc: true
 ---
 
 <!--
@@ -18,7 +20,7 @@ have a look and request a pull request there.
 
 
 
-## Glossary
+## Glossary <a name="glossary"></a>
 
 * **Advisory Committee (AC).**  A group of people with representation from a variety of AMP's constituencies including Users, End-users and Collaborators who provide advice to the Technical Steering Committee.
 
@@ -32,17 +34,17 @@ have a look and request a pull request there.
 
 * **Technical Steering Committee (TSC).**  A group of people who set AMP's technical & product direction.
 
-* <strong id=wg>Working Groups (WG)</strong>.  A group of people who have a familiarity and interest in a given area; may be cross-cutting (e.g. "Documentation") or focused on a given area (e.g. "Ads & Analytics" or "Runtime").  These are formally recognized by the TSC, but may form informally.
+* <strong id=wg>Working Groups (WG)</strong>.  A group of people who have a familiarity and interest in a given area; may be cross-cutting (e.g. "Documentation") or focused on a given area (e.g. "Monetization" or "Performance"). These are formally recognized by the TSC, but may form informally.
 
-## Governance Structures
+## Governance Structures <a name="governance-structures"></a>
 
-### Advisory Committee (AC)
+### Advisory Committee (AC) <a name="advisory-committee-ac"></a>
 
-#### Role
+#### Role <a name="role"></a>
 
-The Advisory Committee provides perspective and advice to the Technical Steering Committee.
+The Advisory Committee provides perspective and advice to the Technical Steering Committee. This advice is non-binding.
 
-#### Membership
+#### Membership <a name="membership"></a>
 * Membership on the Advisory Committee shall include representatives from major AMP constituencies (Collaborators, Contributors, Users and End-Users) who are committed to fulfilling [AMP's vision and mission](https://www.ampproject.org/about/mission/).
 * Membership on the Advisory Committee is not time limited.
 * The target size of the Advisory Committee is 6-12 members, but there is no fixed size.
@@ -50,10 +52,11 @@ The Advisory Committee provides perspective and advice to the Technical Steering
 * No more than ⅓ of the Advisory Committee should be from one employer.
 * The Advisory Committee will designate a Facilitator from among its members for the purposes of facilitating the consensus-based decision-making process.
 
-### Technical Steering Committee (TSC)
+### Technical Steering Committee (TSC) <a name="technical-steering-committee-tsc"></a>
 
-#### Role
+#### Role <a name="role-1"></a>
 
+* Technical leadership of the AMP project is delegated to the TSC by the OpenJS Cross Project Council (CPC) in accordance with the [AMP Charter](https://github.com/ampproject/meta/blob/master/CHARTER.md).
 * The TSC's primary role is setting AMP's technical & product direction based on the [project guidelines](https://www.ampproject.org/about/amp-design-principles/).
 * Creates a product roadmap in consultation with the Working Groups.
 * Creates Working Groups and sets the initial membership & initial Facilitator of the Working Groups.  The TSC may initiate the creation of Working Groups or a group of people with a common interest may request recognition as a Working Group.
@@ -61,10 +64,12 @@ The Advisory Committee provides perspective and advice to the Technical Steering
 * Sets and maintains the project guidelines.
 * Sets and maintains the project’s feature and bug fix process.
 * Enforces the Code of Conduct.
-* The TSC may designate entities to perform legal, security and privacy reviews of AMP code/features.
+* Approves changes to the AMP Charter and this document in coordination with the OpenJS CPC as described in the [AMP Charter](https://github.com/ampproject/meta/blob/master/CHARTER.md).
+* The TSC may designate entities to perform security and privacy reviews of AMP code/features.
+* The TSC may escalate legal questions to the Foundation. 
 * Decisions within the TSC follow the decision-making policy, and are facilitated by the Facilitator or their designate.
 
-#### Membership
+#### Membership <a name="membership-1"></a>
 
 * The TSC shall be composed of members with significant experience contributing to AMP on a technical and product level.
 * Membership on the TSC is not time-limited.
@@ -74,25 +79,25 @@ The Advisory Committee provides perspective and advice to the Technical Steering
 * Entities (such as a company) may be granted seats on the TSC.  In these cases certain conditions may be placed on the seat (such as maintaining committed resources to the project). The entity may designate the individual representing the entity at the TSC and may change this individual at their discretion.
 * The TSC will designate a Facilitator from among its members for the purposes of facilitating the consensus-based decision-making process.
 
-### Working Groups
+### Working Groups <a name="working-groups"></a>
 
-#### Role
+#### Role <a name="role-2"></a>
 * A Working Group is a segment of the community with knowledge/interest in specific areas of AMP (e.g. UI, Runtime, Infrastructure, documentation) recognized by the TSC.
 * The TSC defines each Working Group's mandate, which may include responsibility for certain AMP features, systems and/or code.  A Working Group generally operates independently on the area(s) in which it has a mandate while adhering to AMP's [project guidelines](https://github.com/ampproject/amphtml/tree/master/contributing), [vision/mission](https://www.ampproject.org/about/mission/) and [technical/product roadmaps](https://github.com/ampproject/amphtml/projects/43).
 * Each Working Group is made up of a set of Collaborators with knowledge/interest in that particular area + other interested parties.
 * Each Working Group's Facilitator is responsible for:
-  * Facilitating consensus-based decisions within the Working Group.
-  * Representing the Working Group to the TSC.
-  * Choosing designate(s) from within the Working Group for these responsibilities as needed.
+    * Facilitating consensus-based decisions within the Working Group.
+    * Representing the Working Group to the TSC.
+    * Choosing designate(s) from within the Working Group for these responsibilities as needed.
 * Decisions within Working Groups follow the decision-making policy, and are facilitated by the Facilitator or their designate.
 
-#### Membership
+#### Membership <a name="membership-2"></a>
 * The TSC creates Working Groups and assigns initial members.  Membership should include some Committers but may include other interested parties.
 * A Working Group may add or remove members and change the Facilitator by using the consensus-based approach.
 * It is acceptable & expected that groups of people with a common interest will work together without requiring a formal Working Group.  These groups may choose to be officially recognized as a Working Group by making a proposal (including its purpose and proposed membership) to the TSC.
 * The TSC may disband/reorganize Working Groups as needed.
 
-## Decision making policy
+## Decision making policy <a name="decision-making-policy"></a>
 
 * Decisions in AMP's Advisory Committee, TSC and Working Groups should be made using a [consensus-based approach](https://en.wikipedia.org/wiki/Consensus-seeking_decision-making) (similar to the [approach used by Node.js](https://nodejs.org/en/about/governance/#consensus-seeking-process) and [JS Foundation](https://github.com/JSFoundation/TAC/blob/master/TAC-Charter.md#section-8-decision-making)).
   * When discussions have appeared to reach a consensus, the Facilitator will ask if there are any objections to the apparent consensus.  A member may call a vote to finalize a decision, but this should only happen as a last resort.  With the agreement of two other members of the group the vote will be held, otherwise the consensus-seeking process will continue.
@@ -110,9 +115,9 @@ The Advisory Committee provides perspective and advice to the Technical Steering
 
 * The Advisory Committee, TSC and Working Groups may hold calls, video conferences, and face to face meetings. These meetings shall be announced sufficiently in advance with a published agenda. A mechanism by which the community can propose items for the agenda shall be provided.
 
-## Contributor License Agreement
+## Contributor License Agreement <a name="contributor-license-agreement"></a>
 
-* The AMP Project requires all Owners, Collaborators, and Contributors who open a pull request to either sign an individual Contributor License Agreement (CLA) or be covered by a corporate CLA in order to protect contributors and users in issues of intellectual property.
+* The AMP Project requires all Owners, Collaborators, and Contributors who open a pull request to either accept the terms of an individual Contributor License Agreement (CLA) or be covered by a corporate CLA in order to protect contributors and users in issues of intellectual property.
 
 * TSC members which aren't already covered by an individual or corporate CLA are required to be covered upon joining the TSC.
 

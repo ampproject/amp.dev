@@ -12,11 +12,11 @@ author: zhouyx
 -->
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 <head>
   <meta charset="utf-8">
   <link rel="canonical" href="<% canonical %>">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <title>External User Consent Flow</title>
   <!-- ## Setup -->
@@ -68,12 +68,10 @@ author: zhouyx
   -->
   <amp-consent id="myUserConsent" layout="nodisplay">
     <script type="application/json">{
-      "consents": {
-          "consent1": {
-            "checkConsentHref": "/documentation/examples/api/get-consent",
-            "promptUI": "myConsentFlow"
-          }
-      },
+      "consentInstanceId": "iframe-consent",
+      "checkConsent": "remote",
+      "checkConsentHref": "/documentation/examples/api/get-consent",
+      "promptUI": "myConsentFlow",
       "postPromptUI": "post-consent-ui"
     }</script>
     <div id="myConsentFlow" class="popupOverlay">
@@ -81,7 +79,7 @@ author: zhouyx
         <amp-iframe
           layout="fill"
           sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
-            src="<% hosts.api %>/iframe/external-consent-iframe.html">
+            src="/static/samples/files/external-consent-iframe.html">
             <div placeholder>Loading</div>
         </amp-iframe>
       </div>

@@ -1,0 +1,1 @@
+Wykres rozkładu wyników stron pokazuje odsetek stron mających wyniki mieszczące się w granicach progów Dobrze, Wymaga poprawy i Źle. Aby zaliczyć testy Core Web Vitals, strona powinna mieć > 75% wizyt mieszczących się w kategorii Dobrze.

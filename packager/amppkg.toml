@@ -95,6 +95,7 @@ ProjectId = 'amp-dev-230314'
     # "?". Defaults to ".*". The below example disallows non-empty query strings
     # (though a single "?" is allowed).
     # QueryRE = ""
+    QueryRE = ".*"
 
     # The fragment portion of the URL (i.e. the '#' and everything after) must
     # be empty. There is no way to configure this.

@@ -1,0 +1,72 @@
+.#{prefix(null, 'text-media')} {
+  $text-media: &;
+  display: flex;
+  flex-direction: column;
+
+  @include respond-to('small') {
+    flex-direction: row;
+  }
+
+  &-col {
+    margin-bottom: 20px;
+
+    @include respond-to('small') {
+      width: 50%;
+      min-width: 300px;
+
+      &:last-child {
+        margin: 0 0 0 8%;
+      }
+
+      &:only-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &.--thirds {
+    #{$text-media}-col {
+      @include respond-to('small') {
+        &:first-child {
+          width: 30%;
+        }
+
+        &:last-child {
+          width: 62%;
+        }
+      }
+    }
+  }
+
+  &.--reverse {
+    flex-direction: column-reverse;
+
+    @include respond-to('small') {
+      flex-direction: row-reverse;
+
+      #{$text-media}-col {
+        &:first-child {
+          margin: 0 0 0 8%;
+        }
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &.--mobile-reverse {
+    flex-direction: column-reverse;
+
+    @include respond-to('small') {
+      flex-direction: row;
+    }
+  }
+
+  &.--center {
+    @include respond-to('small') {
+      align-items: center;
+    }
+  }
+}

@@ -7,14 +7,14 @@ author: sebastianbenz
 --->
 
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 
 <head>
   <meta charset="utf-8">
   <title>AMP for E-Commerce Getting Started</title>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <link rel="canonical" href="<% canonical %>">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <meta name="amp-experiment-token" content="HfmyLgNLmblRg3Alqy164Vywr">
   <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
   <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
@@ -62,7 +62,7 @@ author: sebastianbenz
 
     ## Product pages
 
-    It's possible with AMP to create beautiful and interactive product pages. [This sample](/documentation/examples/e-commerce/product_page/preview/) demonstrates how to build a complex product page with dynamic product configuration and an add-to-cart flow. With the introduction of [amp-bind](/content/amp-dev/documentation/components/reference/amp-bind.md) it's now possible to create truly interactive AMP pages: it can be used to coordinate page state based on user interaction to show and hide arbitrary `div`s.
+    It's possible with AMP to create beautiful and interactive product pages. [This sample](/documentation/examples/e-commerce/product_page/preview/) demonstrates how to build a complex product page with dynamic product configuration and an add-to-cart flow. With the introduction of [amp-bind](/content/amp-dev/documentation/components/reference/amp-bind-v0.1.md) it's now possible to create truly interactive AMP pages: it can be used to coordinate page state based on user interaction to show and hide arbitrary `div`s.
 
     <div class="ap-o-code-preview-preview-iframe">
       <amp-iframe class="ap-o-code-preview-iframe" src="<% hosts.preview %>/documentation/examples/e-commerce/product_page" width="440" height="732" sandbox="allow-scripts allow-popups allow-same-origin" frameborder="0"></amp-iframe>
@@ -96,7 +96,7 @@ author: sebastianbenz
 
     Read on: The (AMP) cache follows a "stale-while-revalidate" model. It uses the origin's caching headers, such as `Max-Age`, as hints in deciding whether a particular document or resource is stale. When a user makes a request for something that is stale, that request causes a new copy to be fetched, so that the next user gets fresh content. [Learn more about caching in AMP](https://developers.google.com/amp/cache/overview)
 
-    If it's critical that users never see stale data **or** that data is never older than 15s then additional steps are required. Product pricing or availability are typical examples for when this is the case. To ensure that users always see the latest content, you can use the [amp-list](/content/amp-dev/documentation/components/reference/amp-list.md) component which will fetch and render content directly from your server.
+    If it's critical that users never see stale data **or** that data is never older than 15s then additional steps are required. Product pricing or availability are typical examples for when this is the case. To ensure that users always see the latest content, you can use the [amp-list](/content/amp-dev/documentation/components/reference/amp-list-v0.1.md) component which will fetch and render content directly from your server.
 
     Here is a sample how to render product name and price using amp-list:
   -->
@@ -131,7 +131,7 @@ author: sebastianbenz
     **Best Practice:** use multiple `amp-list` instances with a single shared JSON endpoint to benefit from the AMP runtimes request caching and avoid multiple requests to this JSON endpoints.
 
 
-    Another approach is to use [amp-bind](/content/amp-dev/documentation/components/reference/amp-bind.md) with a JSON endpoint, This works well if up-to-date data needs to be available after an user interaction, for example, a hotel page displays room availability when the user selects specific dates.
+    Another approach is to use [amp-bind](/content/amp-dev/documentation/components/reference/amp-bind-v0.1.md) with a JSON endpoint, This works well if up-to-date data needs to be available after an user interaction, for example, a hotel page displays room availability when the user selects specific dates.
   -->
   <div>
     <amp-state id="products" src="/static/samples/json/products.json"></amp-state>
@@ -177,7 +177,7 @@ author: sebastianbenz
 
     ## Analytics
 
-    Make sure to measure how users engage with your AMP Pages using [amp-analytics](/content/amp-dev/documentation/components/reference/amp-analytics.md). **Important:** test your analytics integration and make sure that AMP traffic is correctly attributed, in particular if the AMP is served from a different origin. For testing, you can [load your AMPs via the Google AMP Cache](https://amp.dev/documentation/examples/guides/using_the_google_amp_cache/).
+    Make sure to measure how users engage with your AMP Pages using [amp-analytics](/content/amp-dev/documentation/components/reference/amp-analytics-v0.1.md). **Important:** test your analytics integration and make sure that AMP traffic is correctly attributed, in particular if the AMP is served from a different origin. For testing, you can [load your AMPs via the Google AMP Cache](https://amp.dev/documentation/examples/guides/using_the_google_amp_cache/).
 
     Note: Treat your AMPs as a different platform similar to like you would treat an email campaign. Make sure to properly attribute links from your AMPs back to your website.
   -->

@@ -22,8 +22,8 @@
             </a>
           </li>
           <li class="ap-o-footer-follow-item">
-            <a class="ap-a-ico ap-o-footer-follow-icon" href="https://amphtml.wordpress.com/" rel="noopener">
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#wordpress" title="Wordpress"></use></svg>
+            <a class="ap-a-ico ap-o-footer-follow-icon" href="https://blog.amp.dev/" rel="noopener">
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#wordpress" title="WordPress"></use></svg>
             </a>
           </li>
           <li class="ap-o-footer-follow-item">
@@ -64,11 +64,18 @@
           <li class="ap-o-footer-nav-item"><a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path }}" class="ap-o-footer-nav-link"><div class="ap-a-ico ap-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>{{_('Contribute')}}</a></li>
           <li class="ap-o-footer-nav-item"><a href="{{ g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path }}" class="ap-o-footer-nav-link"><div class="ap-a-ico ap-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>{{_('Roadmap')}}</a></li>
         </ul>
+        <h5 class="ap-o-footer-nav-title">OpenJS Foundation</h5>
+        <ul class="ap-o-footer-nav-menu">
+          <li class="ap-o-footer-nav-item"><a class="ap-o-footer-nav-link" href="https://openjsf.org" rel="noopener"><div class="ap-a-ico ap-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>The OpenJS Foundation</a></li>
+          <li class="ap-o-footer-nav-item"><a class="ap-o-footer-nav-link" href="https://bylaws.openjsf.org" rel="noopener"><div class="ap-a-ico ap-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>{{_('OpenJS Foundation Bylaws')}}</a></li>
+          <li class="ap-o-footer-nav-item"><a class="ap-o-footer-nav-link" href="https://trademark-policy.openjsf.org" rel="noopener"><div class="ap-a-ico ap-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>{{_('Trademark Policy')}}</a></li>
+          <li class="ap-o-footer-nav-item"><a class="ap-o-footer-nav-link" href="https://trademark-list.openjsf.org" rel="noopener"><div class="ap-a-ico ap-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>{{_('Trademark List')}}</a></li>
+        </ul>
       </div>
       <div class="ap-o-footer-nav-column">
         <h5 class="ap-o-footer-nav-title">{{_('Events')}}</h5>
         <ul class="ap-o-footer-nav-menu">
-          <li class="ap-o-footer-nav-item"><a href="{{ g.doc('/content/amp-dev/events/amp-conf-2019.html', locale=doc.locale).url.path }}" class="ap-o-footer-nav-link"><div class="ap-a-ico ap-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>{{_('AMP Conf 2019')}}</a></li>
+          <li class="ap-o-footer-nav-item"><a href="https://blog.amp.dev/2020/02/20/amp-conf-2020-return-to-nyc/" class="ap-o-footer-nav-link"><div class="ap-a-ico ap-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>{{_('AMP Conf 2020')}}</a></li>
           <li class="ap-o-footer-nav-item"><a href="{{ g.doc('/content/amp-dev/events/amp-cs-2019.html', locale=doc.locale).url.path }}" class="ap-o-footer-nav-link"><div class="ap-a-ico ap-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>{{_('AMP Contributor Summit 2019')}}</a></li>
         </ul>
         <h5 class="ap-o-footer-nav-title">{{_('AMP Brand Materials')}}</h5>
@@ -79,12 +86,20 @@
       </div>
     </div>
     <div class="ap-o-footer-line-bottom">
+      <div class="ap-o-footer-openjsf">
+        <amp-img src="/static/img/logo-openjsf.svg" alt="{{_('Logo of the OpenJS Foundation')}}" width="315" height="100" layout="responsive"></amp-img>
+      </div>
       <ul class="ap-o-footer-legal-nav-menu">
-        <li class="ap-o-footer-legal-nav-item"><a class="ap-o-footer-legal-nav-link" href="https://www.google.com/intl/en/policies/privacy/" rel="noopener">{{_('Privacy Policy')}}</a></li>
+        <li class="ap-o-footer-legal-nav-item"><a class="ap-o-footer-legal-nav-link" href="https://terms-of-use.openjsf.org" rel="noopener">{{_('Terms of Use')}}</a></li>
+        <li class="ap-o-footer-legal-nav-item"><a class="ap-o-footer-legal-nav-link" href="https://privacy-policy.openjsf.org" rel="noopener">{{_('Privacy Policy')}}</a></li>
+        <li class="ap-o-footer-legal-nav-item"><a class="ap-o-footer-legal-nav-link" href="https://www.linuxfoundation.org/cookies" rel="noopener">{{_('Cookie Policy')}}</a></li>
       </ul>
-      <div class="ap-o-footer-copyright">&copy; 2019 AMP Open Source Project</div>
     </div>
-
+    <div class="ap-o-footer-copyright">
+      {{ _('&copy; <a href="https://openjsf.org">OpenJS Foundation</a> and AMP Project contributors. All rights reserved. The <a href="https://openjsf.org">OpenJS Foundation</a> has registered trademarks and uses trademarks. For a list of trademarks of the <a href="https://openjsf.org">OpenJS Foundation</a>, please see our <a href="https://trademark-policy.openjsf.org">Trademark Policy</a> and <a href="https://trademark-list.openjsf.org">Trademark List</a>. Trademarks and logos not indicated on the <a href="https://trademark-list.openjsf.org">list of OpenJS Foundation trademarks</a> are trademarks&trade; or registered&reg; trademarks of their respective holders. Use of them does not imply any affiliation with or endorsement by them.') }}
+      <br><br>
+      {{ _('The services available at <a href="https://cdn.ampproject.org">cdn.ampproject.org</a> are provided by Google and the respective <a href="https://policies.google.com/privacy?hl=en">privacy policy</a> applies.') }}
+    </div>
   </div>
 
 </footer>
@@ -93,6 +108,7 @@
 {% set cache_key = 'footer' + doc.locale.get_language_name() %}
 {% if not doc.pod.amp_dev.template_cache.get(cache_key) %}
 {% do doc.pod.amp_dev.template_cache.add(cache_key, footer()) %}
+{{ footer() }}
 {% else %}
 {# The icons need to be added outside the cached partial #}
 {% do doc.icons.useIcon('icons/twitter.svg') %}

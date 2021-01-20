@@ -1,20 +1,25 @@
 {
-	"name": "production",
-	"hosts": {
-		"pages": {
-			"scheme": "https",
-			"host": "amp.dev",
-			"port": ""
-		},
-		"api": {
-			"scheme": "https",
-			"host": "amp-dev-staging.appspot.com",
-			"port": ""
-		},
-		"platform": {
-			"scheme": "https",
-			"host": "amp.dev",
-			"port": ""
+  "name": "production",
+  "hosts": {
+    "pages": {
+      "scheme": "https",
+      "host": "amp.dev",
+      "port": ""
+    },
+    "api": {
+      "scheme": "https",
+      "host": "amp-dev-staging.appspot.com",
+      "port": ""
+    },
+    "platform": {
+      "scheme": "https",
+      "host": "amp.dev",
+      "port": ""
+    },
+    "websocket": {
+      "scheme": "wss",
+      "host": "amp.dev",
+      "port": ""
     },
     "playground": {
       "scheme": "https",
@@ -42,8 +47,31 @@
     },
     "packager": {
       "scheme": "http",
-      "host": "ig-amp-dev-packager-n37h.c.amp-dev-230314.internal",
+      "host": "ig-amp-dev-packager-2632.c.amp-dev-230314.internal",
+      "port": "8080"
+    },
+    "thumbor": {
+      "scheme": "http",
+      "host": "ig-amp-dev-thumbor-8gnv.c.amp-dev-230314.internal",
       "port": "8080"
     }
-	}
+  },
+  "redis": {
+    "europe-west2": {
+      "host": "10.156.30.203",
+      "port": "6379"
+    },
+    "us-east1": {
+      "host": "10.64.29.227",
+      "port": "6379"
+    },
+    "asia-northeast1": {
+      "host": "10.232.55.123",
+      "port": "6379"
+    },
+    "us-west3": {
+      "host": "10.171.90.147",
+      "port": "6379"
+    }
+  }
 }

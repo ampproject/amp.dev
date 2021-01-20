@@ -1,0 +1,94 @@
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import '../atoms/_text.scss';
+
+$height: 60px;
+
+.#{molecule('format-filter-hint')} {
+  $root: &;
+
+  &-banner {
+    display: none;
+  }
+
+  &.amp-active ~ &-banner {
+    height: $height;
+    max-width: 2020px;
+    margin: 0 auto;
+    color: color('white');
+    background-color: color('charade');
+    @include txt-2;
+    z-index: 100;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
+
+    #{$root}-banner {
+      &-content {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        max-width: 1440px;
+        padding: 12px 15px;
+        margin: 0 auto;
+
+        &:after {
+          position: absolute;
+          content: "";
+          top: 60px;
+          left: 50px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 16px 12px 0;
+          border-color: #29323c transparent transparent;
+        }
+      }
+
+      &-note {
+        flex: 1 0;
+        padding-right: 10px;
+      }
+
+      &-formats {
+        display: none;
+        flex: 1 0 auto;
+        @media (min-width: 768px) {
+          display: flex;
+        }
+      }
+
+      &-format {
+        cursor: pointer;
+        max-width: 150px;
+        margin-right: 10px;
+        margin-bottom: 0;
+
+        &:after {
+          display: none;
+        }
+      }
+
+      &-dismiss {
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;
+        background-color: color('white');
+        border: 0;
+        cursor: pointer;
+
+        svg {
+          fill: color('blue-ribbon');
+          width: 110%;
+          height: 110%;
+        }
+      }
+    }
+  }
+}

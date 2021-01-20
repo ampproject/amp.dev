@@ -1,4 +1,3 @@
-{% do doc.amp_dependencies.add('amp-accordion', '0.1') %}
 {% do doc.styles.addCssFile('css/components/organisms/accordion.css') %}
 
 <div class="ap-o-accordion">
@@ -7,7 +6,7 @@
     <section {% if section.id %}id="{{section.id}}"{% endif %}>
       <header class="ap-o-accordion-header">
         <div class="ap-o-accordion-title">
-          <h4>{{section.title}}</h4>
+          <h4>{{ _(section.title) }}</h4>
           <div class="ap-a-ico">
             {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
@@ -16,16 +15,16 @@
       </header>
       <div class="ap-o-accordion-content">
         {% if section.answer %}
-        {{section.answer|markdown|safe}}
+        {{ _(section.answer|markdown|safe)}}
         {% endif %}
         {% if section.list %}
         <ol class="ap-o-accordion-list">
           {% for item in section.list %}
           <li class="ap-o-accordion-list-item">
               {% if item.url %}
-              <a href="{{item.url}}">{{item.label}}</a>
+              <a href="{{item.url}}">{{ _(item.label) }}</a>
               {% else %}
-              {{item.label}}
+              {{ _(item.label) }}
               {% endif %}
           </li>
           {% endfor %}

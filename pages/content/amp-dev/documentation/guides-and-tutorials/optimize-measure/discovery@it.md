@@ -28,7 +28,7 @@ Se hai soltanto una pagina, che è una pagina AMP, devi comunque aggiungervi l'e
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-## Integrare con piattaforme di terze parti utilizzando metadati aggiuntivi
+## Integrare con piattaforme di terze parti utilizzando metadati aggiuntivi <a name="integrate-with-third-party-platforms-through-additional-metadata"></a>
 
 A volte un sito di terze parti (in cui è incorporata la tua pagina AMP o che include link che rimandano alla tua pagina) ha bisogno di avere ulteriori informazioni sulla tua pagina oltre a sapere che si tratta di una pagina AMP. Una piattaforma potrebbe porre diverse domande sulla tua pagina, ad esempio per sapere se si tratta di un articolo, di un video oppure se esistono uno screenshot e una breve descrizione.
 

@@ -19,7 +19,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const SampleRenderer = require('@examples/lib/SampleRenderer');
 const {createRequestContext} = require('@lib/templates/index.js');
-const uuid = require('uuid');
+const {v4: uuidv4} = require('uuid');
 const nunjucks = require('nunjucks');
 const path = require('path');
 
@@ -32,8 +32,9 @@ const EVENTS = {};
 const USER_CHANGE_LISTENERS = {};
 const GLOBAL_ANALYTICS = '__all_users__';
 const EXPIRES = 60 * 60 * 24 * 365; // 1 year
-const embedFilePath = path.join(__dirname, 'embed.html');
-const analyticsTemplate = nunjucks.compile(`
+const embedFilePath = path.resolve(__dirname, 'embed.html');
+const analyticsTemplate = nunjucks.compile(
+  `
     <table>
     <tr>
       <th>Event</th>
@@ -46,13 +47,17 @@ const analyticsTemplate = nunjucks.compile(`
     {% else %}
       No data available.
     {% endfor %}
-    </table>`.replace(/\n/g, ''));
+    </table>`.replace(/\n/g, '')
+);
 
 SampleRenderer.use(examples, (request, response, template) => {
   let user = request.cookies[AMP_ANALYTICS_COOKIE];
   if (!user) {
-    user = uuid.v4();
-    response.cookie(AMP_ANALYTICS_COOKIE, user, {maxAge: EXPIRES, httpOnly: true});
+    user = uuidv4();
+    response.cookie(AMP_ANALYTICS_COOKIE, user, {
+      maxAge: EXPIRES,
+      httpOnly: true,
+    });
   }
   response.send(template.render(createRequestContext(request, {user})));
 });
@@ -75,20 +80,22 @@ function pingHandler(request, response) {
     return;
   }
   response.sendStatus(200);
-};
+}
 
 function embedHandler(request, response) {
   const account = request.query.account;
   const user = request.query.user;
   const analytics = forUser(account, user);
   const host = request.protocol + '://' + request.get('host');
-  response.send(nunjucks.render(embedFilePath, {
-    host,
-    account,
-    user,
-    data: analytics,
-  }));
-};
+  response.send(
+    nunjucks.render(embedFilePath, {
+      host,
+      account,
+      user,
+      data: analytics,
+    })
+  );
+}
 
 function embedListenHandler(request, response) {
   const account = request.query.account;
@@ -102,9 +109,10 @@ function embedListenHandler(request, response) {
     'Cache-Control': 'no-cache',
   });
 
-  const onNewAnalyticsData = function(userData) {
+  const onNewAnalyticsData = function (userData) {
     const content = analyticsTemplate.render({data: userData});
     response.write('data: ' + content + '\n\n');
+    response.flush();
   };
 
   const userData = forUser(account, user);
@@ -114,7 +122,7 @@ function embedListenHandler(request, response) {
   request.on('close', () => {
     removeUserListener(user, onNewAnalyticsData);
   });
-};
+}
 
 /**
  * Add user analytics change listener.
@@ -126,7 +134,7 @@ function addUserListener(userId, callback) {
     USER_CHANGE_LISTENERS[userId] = listeners;
   }
   listeners.push(callback);
-};
+}
 
 /**
  * Remove user analytics change listener.
@@ -141,7 +149,7 @@ function removeUserListener(userId, callback) {
     return;
   }
   listeners.splice(index, 1);
-};
+}
 
 /**
  * Returns analytics for the given user and account.
@@ -186,7 +194,7 @@ function inc(data, event) {
   if (!eventCount) {
     eventCount = 0;
   }
-  return data[event] = eventCount + 1;
+  data[event] = eventCount + 1;
 }
 
 function notifyListeners(user, data) {

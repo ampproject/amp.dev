@@ -1,22 +1,17 @@
 <!---
-
-experiments:
-  - amp-inputmask
 preview: default
 author: cvializ
-
 --->
 
 <!--
   ## Introduction
 
-  Input masks automatically add formatting characters to user input, and prevent users from typing input that doesn't match the mask. For example, an input mask on a telephone field automatically adds special characters like `(`, `)` and `-`, and users can type only the numbers needed while the mask prevents them from typing incorrect characters.
+The [`amp-inputmask`](/content/amp-dev/documentation/components/reference/amp-inputmask.md) component enables input masks for form fields in AMP documents. Input masks automatically add formatting characters to user input, and prevent users from typing input that doesn't match the mask. For example, an input mask on a telephone field automatically adds special characters like `(`, `)` and `-`, and users can type only the numbers needed while the mask prevents them from typing incorrect characters.
 
-The [`amp-inputmask` component](https://github.com/ampproject/amphtml/blob/master/extensions/amp-inputmask/README.md) enables input masks for form fields in AMP documents.
 -->
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 <head>
   <meta charset="utf-8">
   <title>amp-inputmask</title>
@@ -35,7 +30,7 @@ The [`amp-inputmask` component](https://github.com/ampproject/amphtml/blob/maste
     uses it to render the `submit-success` message.
   -->
   <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 </head>
 <body>
@@ -43,7 +38,7 @@ The [`amp-inputmask` component](https://github.com/ampproject/amphtml/blob/maste
    <!--
      The `mask` attribute specifies the characters that users are allowed to input, and any special characters that can be automatically added by the mask. Here, the user may enter a Canadian postal code.
 
-     In the mask, `L` allows the user to enter an alphabetic character. `0` denotes a numeric character. `_` is a literal space character. See the full mask specification at [the `amp-inputmask` documentation](https://github.com/ampproject/amphtml/blob/master/extensions/amp-inputmask/README.md)
+     In the mask, `L` allows the user to enter an alphabetic character. `0` denotes a numeric character. `_` is a literal space character. See the full mask specification at [the `amp-inputmask` documentation](/content/amp-dev/documentation/components/reference/amp-inputmask.md)
    -->
   <form class="sample-form" method="post" action-xhr="/documentation/examples/api/postal" target="_top">
     <label>Postal code: <input name="code" mask="L0L_0L0" placeholder="A1A 1A1"></label>
@@ -60,7 +55,7 @@ The [`amp-inputmask` component](https://github.com/ampproject/amphtml/blob/maste
     If the `mask-output` attribute is set to `"alphanumeric"`, `amp-inputmask` will add a hidden input with only the alphanumeric characters from the original input. The default value is `"raw"`
    -->
   <form class="sample-form" method="post" action-xhr="/documentation/examples/api/phone" target="_top">
-    <label>Phone: <input name="code" mask="+\1_(000)_000-0000" placeholder="+1 (555) 555-5555" mask-output="alphanumeric"></label>
+    <label>Phone: <input name="code" type="tel" mask="+\1_(000)_000-0000" placeholder="+1 (555) 555-5555" mask-output="alphanumeric"></label>
     <input type="submit">
     <div submit-success>
       <template type="amp-mustache">

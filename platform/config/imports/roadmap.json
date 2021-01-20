@@ -1,0 +1,17 @@
+{
+  "colors": {
+    "components": "#48525C",
+    "amp4email": "#A6E22E",
+    "infra": "#00DCC0",
+    "outreach": "#E1EB64",
+    "runtime": "#09A600",
+    "stories": "#FFDC00",
+    "caching": "#EC6600",
+    "viewers": "#FF7272",
+    "analytics": "#5500D7",
+    "ads": "#EB49E1",
+    "performance": "#C80000",
+    "bento": "#45184B"
+  },
+  "fallbackColor": "#005AF0"
+}

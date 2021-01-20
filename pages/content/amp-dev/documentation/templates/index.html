@@ -41,7 +41,6 @@ stage:
       alt: image
 ---
 {% do doc.styles.addCssFile('css/components/templates/template.css') %}
-{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
 
 <main class="ap--main ap-t-template">
   <section class="ap--stage ap--container-fluid">
@@ -75,7 +74,6 @@ stage:
             {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
             <div class="ap-m-ghost-frame-{{device.type}} {{device.direction}}">
               {% if device.video_src %}
-              {% do doc.amp_dependencies.add('amp-video', '0.1') %}
               <amp-video
                 width="{{device.width}}"
                 height="{{device.height}}"
@@ -113,17 +111,18 @@ stage:
     </div>
 
     {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
+    {% do doc.styles.addCssFile('css/components/atoms/pill.css', -100) %}
     <div class="ap-o-filter-bubbles-list">
-      <button class="ap-m-filter-bubble filtered"
-        [class]="activeFilter.chosenFilter == 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
+      <button class="ap-a-pill filtered"
+        [class]="activeFilter.chosenFilter == 'none' ? 'ap-a-pill filtered' : 'ap-a-pill'"
         on="tap:AMP.setState({ activeFilter: {chosenFilter: 'none' } })">
-        All
+        {{ _('All') }}
       </button>
       {% for category, stories in categories %}
-      <button class="ap-m-filter-bubble"
-        [class]="activeFilter.chosenFilter == '{{ category|slug }}' && chosenFilter != 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
+      <button class="ap-a-pill"
+        [class]="activeFilter.chosenFilter == '{{ category|slug }}' && chosenFilter != 'none' ? 'ap-a-pill filtered' : 'ap-a-pill'"
         on="tap:AMP.setState({ activeFilter: {chosenFilter: '{{ category|slug }}' } })">
-        {{ category }}
+        {{ _(category) }}
       </button>
       {% endfor %}
     </div>

@@ -6,11 +6,11 @@ author: sebastianbenz
 <!--
   ## Introduction
 
-  The [amp-carousel](/content/amp-dev/documentation/components/reference/amp-carousel.md) component allows displaying multiple similar pieces of content along a horizontal axis.
+  The [amp-carousel](/content/amp-dev/documentation/components/reference/amp-carousel-v0.2.md) component allows displaying multiple similar pieces of content along a horizontal axis.
 -->
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 <head>
   <meta charset="utf-8">
   <title>amp-carousel</title>
@@ -19,7 +19,7 @@ author: sebastianbenz
   <!-- Import the carousel component in the header. -->
   <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
   <link rel="canonical" href="<% canonical %>">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <style amp-custom>
     .blue-box, .red-box, .green-box {
@@ -28,20 +28,23 @@ author: sebastianbenz
     }
     .blue-box {
       background: blue;
+      color: #fff;
     }
     .green-box {
       background: green;
+      color: #fff;
     }
     .red-box {
       background: red;
+      color: #111;
     }
     #custom-button .amp-carousel-button-prev {
       left: 5%;
-      background-image: url('data:image/svg+xml;charset=utf-8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path  d="M14,7.4 L9.4,12 L14,16.6" fill="none" stroke="#fff" stroke-width="2px" stroke-linejoin="round" stroke-linecap="round" /></svg>');
+      background-image: url('<% hosts.platform %>/static/samples/img/carousel-arrow-left.png');
     }
     #custom-button .amp-carousel-button-next {
       right: 5%;
-      background-image: url('data:image/svg+xml;charset=utf-8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path  d="M10,7.4 L14.6,12 L10,16.6" fill="none" stroke="#fff" stroke-width="2px" stroke-linejoin="round" stroke-linecap="round" /></svg>');
+      background-image: url('<% hosts.platform %>/static/samples/img/carousel-arrow-right.png');
     }
   </style>
 </head>
@@ -49,7 +52,7 @@ author: sebastianbenz
 
   <!-- ## Basic Usage -->
   <!-- Use `type="carousel"` to display a list of images as a continuous strip. -->
-  <amp-carousel height="300" layout="fixed-height" type="carousel">
+  <amp-carousel height="300" layout="fixed-height" type="carousel" role="region" aria-label="Basic usage carousel">
     <amp-img src="/static/samples/img/image1.jpg" width="400" height="300" alt="a sample image"></amp-img>
     <amp-img src="/static/samples/img/image2.jpg" width="400" height="300" alt="another sample image"></amp-img>
     <amp-img src="/static/samples/img/image3.jpg" width="400" height="300" alt="and another sample image"></amp-img>
@@ -57,15 +60,15 @@ author: sebastianbenz
 
   <!-- ## Slides -->
   <!-- Use `type="slides"` to display a list of images as slides. -->
-  <amp-carousel width="400" height="300" layout="responsive" type="slides">
+  <amp-carousel width="400" height="300" layout="responsive" type="slides" role="region" aria-label="type='slides' carousel">
     <amp-img src="/static/samples/img/image1.jpg" width="400" height="300" layout="responsive" alt="a sample image"></amp-img>
     <amp-img src="/static/samples/img/image2.jpg" width="400" height="300" layout="responsive" alt="another sample image"></amp-img>
     <amp-img src="/static/samples/img/image3.jpg" width="400" height="300" layout="responsive" alt="and another sample image"></amp-img>
   </amp-carousel>
 
   <!-- ## Autoplay -->
-  <!-- The `autoplay` attribute (type=slides only) advances the slide to the next slide without user interaction, by default it will advance a slide in 5000 millisecond intervals (5 seconds) and can be overridden by the `delay` attribute.  -->
-  <amp-carousel width="400" height="300" layout="responsive" type="slides" autoplay delay="2000">
+  <!-- The `autoplay` attribute (`type="slides"` only) advances the slide to the next slide without user interaction, by default it will advance a slide in 5000 millisecond intervals (5 seconds) and can be overridden by the `delay` attribute.  -->
+  <amp-carousel width="400" height="300" layout="responsive" type="slides" autoplay delay="2000" role="region" aria-label="Carousel with autoplay">
     <amp-img src="/static/samples/img/image1.jpg" width="400" height="300" layout="responsive" alt="a sample image"></amp-img>
     <amp-img src="/static/samples/img/image2.jpg" width="400" height="300" layout="responsive" alt="another sample image"></amp-img>
     <amp-img src="/static/samples/img/image3.jpg" width="400" height="300" layout="responsive" alt="and another sample image"></amp-img>
@@ -74,7 +77,7 @@ author: sebastianbenz
   <!-- ## Buttons -->
   <!-- By default, carousel buttons use inlined SVGs as background-images.
     You may override these with your own SVGs or images by using `.amp-carousel-button-prev` and `.amp-carousel-button-next` classes. -->
-  <amp-carousel id="custom-button" width="400" height="300" layout="responsive" type="slides" autoplay delay="2000">
+  <amp-carousel id="custom-button" width="400" height="300" layout="responsive" type="slides" autoplay delay="2000" role="region" aria-label="Carousel with custom button styles">
     <amp-img src="/static/samples/img/image1.jpg" width="400" height="300" layout="responsive" alt="a sample image"></amp-img>
     <amp-img src="/static/samples/img/image2.jpg" width="400" height="300" layout="responsive" alt="another sample image"></amp-img>
     <amp-img src="/static/samples/img/image3.jpg" width="400" height="300" layout="responsive" alt="and another sample image"></amp-img>
@@ -82,7 +85,7 @@ author: sebastianbenz
 
   <!-- ## Supported Contents  -->
   <!-- Each of these nodes may also have arbitrary HTML children.  -->
-  <amp-carousel height="300" layout="fixed-height" type="slides">
+  <amp-carousel height="300" layout="fixed-height" type="slides" role="region" aria-label="Carousel with arbitrary HTML content">
     <div>
       <div class="blue-box">
         This is a blue box.

@@ -16,6 +16,8 @@
 
 const path = require('path');
 
+const DIST_DIR = 'dist';
+
 /**
  * Helper method to make it possible to use absolute project paths
  * @param  {String} relativePath A relative path
@@ -48,7 +50,7 @@ function pagePath(relativePath) {
 const paths = {
   ROOT: absolute('.'),
   BUILD: absolute('build'),
-  DIST: absolute('dist'),
+  DIST: absolute(DIST_DIR),
   ICONS: absolute('frontend/icons'),
   TEMPLATES: absolute('templates'),
   FRONTEND_TEMPLATES: absolute('frontend/templates'),
@@ -56,14 +58,20 @@ const paths = {
   CSS: absolute('pages/css'),
   GROW_POD: absolute('pages'),
   GROW_BUILD_DEST: absolute('build/pages'),
-  PAGES_DEST: absolute('dist/pages'),
+  PAGES_DEST: absolute(`${DIST_DIR}/pages`),
   INLINE_EXAMPLES_DEST: absolute('dist/inline-examples'),
   PAGES_SRC: absolute('pages/content/amp-dev'),
-  STATICS_DEST: absolute('dist/static'),
+  STATICS_DEST: absolute(`${DIST_DIR}/static`),
   BUILD_INFO: absolute('platform/config/build-info.yaml'),
+  GUIDES_PATH_RELATIVE: '/content/amp-dev/documentation/guides-and-tutorials/',
+  RECENT_GUIDES_DEST: 'pages/shared/data/recent-guides.yaml',
+  BUILD_INFO_PATH: absolute('platform/config/build-info.yaml'),
+  THUMBOR_ROOT: absolute('thumbor'),
+  THUMBOR_IMAGE_INDEX: absolute(`${DIST_DIR}/static/imageIndex.json`),
 };
 
 module.exports = {
+  DIST_DIR,
   absolute,
   relative,
   pagePath,

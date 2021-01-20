@@ -27,8 +27,9 @@ const TEMPLATES_DIR = '../templates';
 const NODE_MODULES = '../../node_modules';
 const STYLES = path.join(TEMPLATES_DIR, 'styles');
 
-const INCLUDE_PATHS = [FRONTEND_DIR, NODE_MODULES, STYLES].map((dir) => path.join(__dirname, dir));
-
+const INCLUDE_PATHS = [FRONTEND_DIR, NODE_MODULES, STYLES].map((dir) =>
+  path.join(__dirname, dir)
+);
 
 Handlebars.registerHelper('scss', (scssPath) => {
   for (const includePath of INCLUDE_PATHS) {
@@ -38,7 +39,9 @@ Handlebars.registerHelper('scss', (scssPath) => {
         file: templatePath,
         includePaths: INCLUDE_PATHS,
       });
-      return new Handlebars.SafeString(result.css.toString().replace('@charset "UTF-8";', ''));
+      return new Handlebars.SafeString(
+        result.css.toString().replace('@charset "UTF-8";', '')
+      );
     }
   }
   throw new Error('File not found ' + scssPath);
@@ -98,15 +101,16 @@ function replaceEndTag(match) {
 
 function findPartials(dir) {
   const partialFiles = io.listFiles(dir, [], true);
-  return partialFiles.map((f) => {
-    const name = f.replace(dir, '');
-    const content = io.readFile(f, 'utf-8');
-    return [name, content];
-  })
-      .reduce((obj, prop) => {
-        obj[prop[0]] = prop[1];
-        return obj;
-      }, {});
+  return partialFiles
+    .map((f) => {
+      const name = f.replace(dir, '');
+      const content = io.readFile(f, 'utf-8');
+      return [name, content];
+    })
+    .reduce((obj, prop) => {
+      obj[prop[0]] = prop[1];
+      return obj;
+    }, {});
 }
 module.exports.find = findTemplates;
 module.exports.render = renderTemplate;

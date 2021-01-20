@@ -13,13 +13,20 @@
 # Ensure you do not use shortcuts that would shadow real contents
 # Add new entries in alphabetical order in the format /path/to/old/url: /path/to/new/url
 
-/ads: /about/ads
+/ads: /about/ads/
+/amp-optimizer: /documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/
 /docs: /documentation/guides-and-tutorials/
-/email: /about/email
+/email: /about/email/
 /learn: /documentation/courses/
+/optimizer: /documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/
+/pageexperience: /page-experience
+/pixi: /page-experience
 /samples: /documentation/examples/
-/stories: /about/stories
-/websites: /about/websites
+/stories: /about/stories/
+/vitals: /page-experience
+/web-vitals: /page-experience
+/websites: /about/websites/
+/webvitals: /page-experience
 
 ### Other redirects
 # Put here redirects for pages that have been moved, etc
@@ -27,10 +34,15 @@
 
 /documentation/examples/interactivity-dynamic-content/autosuggest_form/: /documentation/examples/components/amp-autocomplete/
 /documentation/examples/interactivity-dynamic-content/simple_autosuggest/: /documentation/examples/components/amp-autocomplete/
-/documentation/guides-and-tutorials/learn/amp-email-format: /documentation/guides-and-tutorials/learn/email-spec/amp-email-format
+/documentation/guides-and-tutorials/learn/amp-email-format: /documentation/guides-and-tutorials/learn/email-spec/amp-email-format/
+/documentation/guides-and-tutorials/contribute/ad-integration-guide/: /documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide/
+/documentation/guides-and-tutorials/contribute/integrate-your-tech/: /documentation/guides-and-tutorials/contribute/vendor-contributions/
+/documentation/guides-and-tutorials/develop/amp_story_best_practices/: /documentation/guides-and-tutorials/start/create_successful_stories/
 /documentation/guides-and-tutorials/optimize-measure/configure-analytics/: /documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/
-/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors: /documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics-vendors
-/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics: /documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics_basics
-/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics: /documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/deep_dive_analytics
-/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases: /documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/use_cases
-/community/platform-and-vendor-partners: /support/faq/platform-and-vendor-partners
+/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors: /documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics-vendors/
+/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics: /documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics_basics/
+/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics: /documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/deep_dive_analytics/
+/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases: /documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/use_cases/
+/community/platform-and-vendor-partners: /support/faq/platform-and-vendor-partners/
+/examples/source/user-consent/basic_user_consent_flow: /examples/source/user-consent/client_side_user_consent_flow/
+/documentation/guides-and-tutorials/optimize-and-measure/server-side-rendering/: /documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/

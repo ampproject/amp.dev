@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -13,14 +13,17 @@
 // limitations under the License.
 
 // install serviceWorker
-if ('requestIdleCallback' in window && !window.parent && navigator.serviceWorker) {
+if (
+  'requestIdleCallback' in window &&
+  !window.parent &&
+  navigator.serviceWorker
+) {
   window.onload = () => {
     window.requestIdleCallback(() => {
       console.log('registering service worker');
-      navigator.serviceWorker.register('/serviceworker.js')
-          .catch((err) => {
-            console.error('Unable to register service worker.', err);
-          });
+      navigator.serviceWorker.register('/serviceworker.js').catch((err) => {
+        console.error('Unable to register service worker.', err);
+      });
     });
   };
 }

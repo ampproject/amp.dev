@@ -1,0 +1,137 @@
+/*
+
+######################################
+### MOLECULES: info-button #####
+######################################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_color.scss';
+@import 'components/atoms/_text';
+
+
+$borderSize: 5px;
+
+%pseudo-base {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+
+.#{molecule('info-button')} {
+  &:focus {
+    outline: none;
+  }
+
+  &-on, &-off {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    z-index: 10;
+  }
+
+  &-on {
+    &:focus {
+      z-index: 0;
+    }
+    &:focus + div {
+      z-index: 10;
+    }
+    &:focus ~ .#{molecule('tip')}, &:hover ~ .#{molecule('tip')} {
+      display: block;
+    }
+  }
+  &-off {
+    z-index: 0;
+    &:focus  ~ .#{molecule('tip')} {
+      display: none;
+    }
+  }
+}
+
+.#{molecule('tip')} {
+  display: none;
+  position: absolute;
+  left: 5px;
+  top: 95%;
+  width: 98%;
+  height: auto;
+  margin-bottom: 50px;
+  padding: 20px;
+  background-color: color('white');
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.1);
+
+  &-content {
+    h4 {
+      @include txt-1;
+      margin: 0 0 0.75em;
+    }
+
+    p,
+    ul,
+    ol {
+      @include txt-2;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &-default {
+    margin: 0;
+    border-bottom: $borderSize solid color('japan-laurel');
+    border-right: none;
+    border-radius: 0 $borderSize $borderSize 0;
+    word-break: break-word;
+    @media(min-width: 768px) {
+      border-right: $borderSize solid color('japan-laurel');
+      border-bottom: none;
+    }
+
+    &:before {
+      @extend %pseudo-base;
+      top: -12px;
+      left: calc(100% - 37px);
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-bottom: 12px solid color('white');
+
+      @media (min-width: 768px) {
+        left: calc(100% - 30px);
+      }
+      @media (min-width: 1024px) {
+        top: 10px;
+        left: -12px;
+        border-top: 12px solid transparent;
+        border-right: 12px solid color('white');
+        border-bottom: 12px solid transparent;
+        border-left: 0;
+      }
+    }
+  }
+
+  @media(min-width: 1024px) {
+    top: 5px;
+    left: 99%;
+    width: 50%;
+    z-index: 1;
+
+    &-default {
+    }
+  }
+
+  @media(min-width: 1440px) {
+    width: 70%;
+  }
+}

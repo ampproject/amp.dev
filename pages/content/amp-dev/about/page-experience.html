@@ -1,0 +1,118 @@
+---
+$title: Page Experience
+$view: /views/2021/base.html
+---
+
+<main>
+  <section class="ap-section --col-4-15">
+    <div class="ap-text-block">
+      <h1>{{ _('Page experience success with AMP') }}</h1>
+      <p><a href="https://developers.google.com/search/docs/guides/page-experience">Page experience</a> is a set of signals from Google that measure how users perceive their experience interacting with a web page beyond its pure information value.<br><a href="https://ai.googleblog.com/2009/06/speed-matters.html">Google's internal studies</a> and <a href="https://blog.chromium.org/2020/05/the-science-behind-web-vitals.html">industry research</a> found that users prefer sites with a great page experience. A high page experience score helps your content surface to users in places like the <a href="https://support.google.com/news/publisher-center/answer/9607026?hl=en">top stories feature</a>, and encourages them to return to your site.</p>
+      <p><strong>AMP is a straightforward way to a high page experience score. </strong>Domains built with AMP are 5 times more likely to pass* <a href="https://web.dev/vitals/">Core Web Vitals</a> metrics than non-AMP!</p>
+    </div>
+    <a href="{{g.doc('/content/amp-dev/page-experience.html', locale=doc.locale).url.path}}" class="ap-button">{{ _('Check your page') }}</a>
+  </section>
+
+  <section class="ap-section --col-3-22">
+    <div class="ap-text-media">
+      <div class="ap-text-media-col">
+        <amp-animation id="fillAnim" layout="nodisplay">
+          <script type="application/json">
+            {
+              "duration": "0.7s",
+              "fill": "both",
+              "easing": "cubic-bezier(.73,1.59,.63,.85)",
+              "animations": [
+                {
+                  "selector": "#chart60 .ap-pie-charts-chart-clip:nth-child(2), #chart60 .ap-pie-charts-chart-part",
+                  "keyframes": {"transform": "rotate(108deg)"}
+                },
+                {
+                  "selector": "#chart12 .ap-pie-charts-chart-clip:nth-child(2), #chart12 .ap-pie-charts-chart-part",
+                  "keyframes": {"transform": "rotate(23deg)"}
+                }
+              ]
+            }
+          </script>
+        </amp-animation>
+
+        <amp-position-observer intersection-ratios="0.8" on="enter:fillAnim.start" layout="nodisplay">
+        </amp-position-observer>
+
+        <figure class="ap-pie-charts">
+          <div id="chart60" class="ap-pie-charts-chart">
+            <div class="ap-pie-charts-chart-clip">
+              <div class="ap-pie-charts-chart-part"></div>
+            </div>
+            <div class="ap-pie-charts-chart-clip">
+              <div class="ap-pie-charts-chart-part"></div>
+            </div>
+            <div class="ap-pie-charts-chart-overlay">
+              <span>60%</span>
+              <aside>AMP<br>domains</aside>
+            </div>
+          </div>
+          <div id="chart12" class="ap-pie-charts-chart">
+            <div class="ap-pie-charts-chart-clip">
+              <div class="ap-pie-charts-chart-part"></div>
+            </div>
+            <div class="ap-pie-charts-chart-clip">
+              <div class="ap-pie-charts-chart-part"></div>
+            </div>
+            <div class="ap-pie-charts-chart-overlay">
+              <span>12%</span>
+              <aside>non-AMP<br>domains</aside>
+            </div>
+          </div>
+          <figcaption>Domains built with AMP are 5 times more likely to pass* Core Web Vitals metrics than non-AMP!<br><span>*where „passing“ means 75% of pages in the domain passed</span></figcaption>
+        </figure>
+
+      </div>
+      <div class="ap-text-media-col">
+        <div class="ap-text-block">
+          <h3>AMP is a straightforward way to a high page experience score</h3>
+          <p>AMP is flexible and customizable while still enforcing restrictions that provide a reliable user experience. This makes it easy to build feature-rich pages without sacrificing performance. AMP also comes with tools to test your site and apply optimizations.</p>
+        </div>
+        <div class="ap-text-block">
+          <h3>Measure AMP page performance</h3>
+          <p>Ensure your AMP pages are exceeding your page experience goals with the <a href="{{g.doc('/content/amp-dev/page-experience.html', locale=doc.locale).url.path}}?_gl=1*8x4tg9*_ga*YW1wLUdKZEw3Q1dzRVZVTWxFZTYwU2FwR0E.">AMP Page Experience Guide</a>. This tool provides AMP-specific feedback to improve page experience metrics.</p>
+          <p>If your AMP page fails and the tool provides no feedback, it will prompt you to file an issue. A dedicated AMP team member will follow up for personal support to address any problems.</p>
+          <p>Read <a href="https://blog.amp.dev/2020/10/13/meet-amps-page-experience-guide/">Meet AMP's Page Experience Guide blog post</a> to learn more about the tool!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ap-section --fullscreen">
+    {% do doc.icons.useIcon('icons/highlight-stripes.svg') %}
+    <aside class="ap-highlight-stripes"></aside>
+  </section>
+
+  <section class="ap-section --col-4-23">
+    <div class="ap-text-media --thirds --center --mobile-reverse">
+      <div class="ap-text-media-col">
+        <div class="ap-text-block">
+          <h2>{{ _('Get started with AMP') }}</h2>
+          <p>AMP is open-source! This means it's already supported on many CMS', such as <a href="https://amp-wp.org/">WordPress,</a> and integrated with framework favorites like <a href="https://blog.amp.dev/2020/07/28/introducing-the-eleventy-amp-plugin/">Eleventy</a> and <a href="https://nextjs.org/docs/api-reference/next/amp">Next.js</a>.<br><br>If you're working with a custom solution, use <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-optimizer-guide/index.md', locale=doc.locale).url.path}}?format=websites">AMP optimizers</a> on your build-system, server, or hosting environment.</p>
+        </div>
+        <a href="{{g.doc('/content/amp-dev/documentation/index.html', locale=doc.locale).url.path}}" class="ap-m-lnk ap-m-lnk-square">
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ap-m-lnk-text">{{ _('Build your first AMP page') }}</span>
+        </a>
+      </div>
+      <div class="ap-text-media-col">
+        <figure>
+          <amp-img alt="{{ _('Supported CMS’ and frameworks') }}"
+              src="/static/img/frameworks.jpg"
+              width="714"
+              height="288"
+              layout="responsive">
+          </amp-img>
+        </figure>
+      </div>
+    </div>
+  </section>
+</main>

@@ -26,4 +26,13 @@ examples.post('/get-consent', (request, response) => {
   });
 });
 
+examples.post('/get-consent-server-side', (request, response) => {
+  response.json({
+    expireCache: true,
+    consentRequired: true,
+    consentStateValue: 'accepted',
+    consentString: 'example-string',
+  });
+});
+
 module.exports = examples;

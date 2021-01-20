@@ -1,6 +1,5 @@
 {% set empty_toc = doc.format.toc == '<div class="toc">\n<ul></ul>\n</div>\n' or not doc.format.toc %}
 {% set hide_toc = (doc.toc == False or doc.collection.toc == False) %}
-{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
 
 {% if not empty_toc and not hide_toc %}
 {% do doc.icons.useIcon('icons/contentmenu.svg') %}
@@ -10,7 +9,7 @@
 
   <div class="ap-o-toc" [class]="contentmenuopen ? 'ap-o-toc contentmenuopen' : 'ap-o-toc'">
     <label class="ap-o-toc-toggle" for="toc" on="tap:AMP.setState({contentmenuopen: !contentmenuopen})" role="contentmenutrigger" tabindex="0">
-      <span class="ap-o-toc-hl">Table of contents</span>
+      <span class="ap-o-toc-hl">{{ _('Table of contents') }}</span>
       {# The icons direction depends on the inputs checked state #}
       <span class="nav-icon">
         {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
@@ -20,7 +19,7 @@
     <input class="ap-a-sidebar-toggle-input ap-a-sidebar-toggle-input-toc" type="checkbox" name="toc" id="toc" autocomplete="off">
     {# Unwrap TOC from useless markup and strip first level #}
     {% set toc = doc.format.toc.replace('<div class="toc">\n<ul>\n', '<ul>').replace('\n</ul>\n</div>', '</ul>') %}
-    {{ toc|safe }}
+    {{ doc.format.filter_toc(toc)|safe }}
   </div>
 </section>
 {% endif %}

@@ -62,13 +62,13 @@ AMP 网页中不允许出现以下样式：
   </tbody>
 </table>
 
-## 自定义字体属于例外情况
+## 自定义字体属于例外情况 <a name="the-custom-fonts-exception"></a>
 
 AMP 网页不能包含外部样式表，但是自定义字体除外。
 
 其他资料: 详细了解 [AMP 中的自定义字体](custom_fonts.md)。
 
-## 使用 CSS 预处理器
+## 使用 CSS 预处理器 <a name="using-css-preprocessors"></a>
 
 预处理器生成的输出内容在 AMP 网页中的效果和在其他网页中的效果一样。例如，[amp.dev](https://amp.dev/)
 网站使用 [Sass](http://sass-lang.com/)。（我们使用 [Grow](http://grow.io/) 来构建构成 [amp.dev](https://amp.dev/) 网站的静态 AMP 网页。）
@@ -77,9 +77,10 @@ AMP 网页不能包含外部样式表，但是自定义字体除外。
 包含所有必要的 AMP 标记和内嵌的 CSS（来自 `*.scss` 源文件）。 它还包含 [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) 的自定义元素脚本，以及其他内容，以便网站上的很多网页都可以包含嵌入式 YouTube 视频。
 
 [sourcecode:html]{% raw %}
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
   <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 

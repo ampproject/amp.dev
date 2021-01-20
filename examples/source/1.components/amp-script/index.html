@@ -1,0 +1,658 @@
+<!---
+standaloneSnippets: true
+preview: true
+author:
+- morss
+- sebastianbenz
+--->
+
+<!--
+  ## Introduction
+
+  The `amp-script` component allows you to run custom JavaScript.
+  Your code runs in a Web Worker, and certain restrictions apply.
+-->
+
+<!-- -->
+<!DOCTYPE html>
+<html ⚡ lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>amp-script</title>
+    <link rel="canonical" href="self.html" />
+    <meta name="viewport" content="width=device-width" />
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <!--
+
+      ## Setup
+
+      First, you need to import the `amp-script` extension.
+    -->
+    <script
+      async
+      custom-element="amp-script"
+      src="https://cdn.ampproject.org/v0/amp-script-0.1.js"
+    ></script>
+    <style amp-custom>
+      .sample {
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 16px;
+        padding: 8px;
+      }
+
+      .sample button {
+        background-color: #005af0;
+        font-weight: 700;
+        color: white;
+        border: none;
+        outline: none;
+        border-radius: 12px;
+        padding: 8px 16px;
+        margin: 8px 0;
+      }
+
+      .sample button[disabled] {
+        background-color: #ccc;
+        color: #666;
+      }
+
+      #validated-input {
+        height: 26px;
+        width: 225px;
+        padding: 6px;
+        box-sizing: border-box;
+      }
+
+      .answer-text {
+        color: #555;
+        font-weight: bold;
+      }
+
+      #translated-greeting {
+        margin: 0;
+        padding-left: 4px;
+        color: #555;
+      }
+
+      .fruit-button {
+        position: relative;
+        top: -60px;
+      }
+
+      #carousel-sample p {
+        margin-left: 16px;
+      }
+
+      #carousel-button {
+        top: -100px;
+      }
+
+      #live-blog-start {
+        margin-top: 0;
+      }
+
+      #live-blog-area {
+        border: 2px solid #ccc;
+        height: 150px;
+        overflow-y: scroll;
+      }
+
+      #live-blog-area .time {
+        color: #666;
+        font-weight: bold;
+      }
+    </style>
+
+    <!--
+      For inline scripts, you need to generate a script hash.
+      Use the `data-ampdevmode` attribute to disable this requirement during development.
+      Visit [the documentation](/content/amp-dev/documentation/components/reference/amp-script-v0.1.md#script-hash) to learn more.
+    -->
+    <meta
+      name="amp-script-src"
+      content="sha384-iER2Cy-P1498h1B-1f3ngpVEa9NG1xIxKqg0rNkRX0e7p5s0GYdit1MRKsELIQe8 sha384-UPY0FmlOzIjSqWqMgbuaEbqIdvpGY_FzCuTAyoLdrFJb2NYf8cPWJlugA0rUbXjL
+    sha384-tvoKljCwTSMId8wpKdpz8LLZ0LX4CYPO5SHE3naqBMSpjiAXs7nqAFyDqcIyKLnu
+    sha384-28AuuOPww1R3yKdaPfiLgMoR1IpWmqwZNYtMnTVwAJuPX_HpIe6qSXPBC-E5I0Sd
+    sha384-fZQaBxFzBabP2yhhZpkYc4zA35clMkPK72glImLl0jGgLy_m9VjzZVhOdGJ52uhK"
+    />
+  </head>
+
+  <body>
+    <!--
+      ## Loading a script from a URL
+
+      To load your script from a URL, use the `src` attribute. This example loads and runs a script called `hello.js`.
+      Valid AMP requires all URLs to be absolute and use `https`.
+
+      Here's the script in `hello-world.js`:
+
+      ```js
+      const button = document.getElementById('hello-url');
+
+      button.addEventListener('click', () => {
+        const h1 = document.createElement('h1');
+        h1.textContent = 'Hello World!';
+        document.body.appendChild(h1);
+      });
+      ```
+
+      And here's the HTML:
+    -->
+
+    <amp-script
+      layout="container"
+      src="<% hosts.platform %>/documentation/examples/components/amp-script/hello-world.js"
+      class="sample"
+    >
+      <button id="hello-url">Say hello!</button>
+    </amp-script>
+
+    <!--
+      ## Using an inline script
+
+      You can also include a script inline and reference it by `id`.
+      Note that, on the script, you need to set `type=text/plain` and `target=amp-script`.
+    -->
+    <div>
+      <amp-script layout="container" script="hello-world" class="sample">
+        <button id="hello-inline">Say hello!</button>
+      </amp-script>
+
+      <script id="hello-world" type="text/plain" target="amp-script">
+        const button = document.getElementById('hello-inline');
+
+        button.addEventListener('click', () => {
+          const h1 = document.createElement('h1');
+          h1.textContent = 'Hello World!';
+          document.body.appendChild(h1);
+        });
+      </script>
+    </div>
+    <!-- [tip type="note"]
+    `amp-script` passes its children to your script as the virtual DOM - not the entire DOM. To your script, those children *are* the DOM.
+    Thus, `document.body` refers to what's inside the `amp-script` tag, not the actual `body`. `document.body.appendChild(...)` actually adds an element inside the `amp-script` element.
+    [/tip]
+    -->
+    <!--
+        ## Using the fetch API
+
+        `amp-script` supports the fetch API.
+        `amp-script` allows us to update the page on load if it knows that the script can't change the component's height. Here, we use `fixed-height` layout, and we specify the `height` in an HTML attribute. See [the documentation](/content/amp-dev/documentation/components/reference/amp-script-v0.1.md#script-hash) for details.
+    -->
+    <div>
+      <amp-script
+        layout="fixed-height"
+        height="36"
+        script="time-script"
+        class="sample"
+      >
+        <div>
+          The time at page load was: <span id="time" class="answer-text"></span>
+        </div>
+      </amp-script>
+
+      <script id="time-script" type="text/plain" target="amp-script">
+        const fetchCurrentTime = async () => {
+          const response = await fetch('<% hosts.platform %>/documentation/examples/api/time');
+          const data = await response.json();
+          const span = document.getElementById('time');
+          span.textContent = data.time;
+        }
+
+        fetchCurrentTime();
+      </script>
+    </div>
+
+    <!--
+        ## Multiple fetches
+
+        In a container whose size can change, your code can make DOM changes until 5 seconds after the final `fetch()` completes. This example makes multiple calls to a slow API. It displays the result from each call when it returns.
+    -->
+    <div>
+      <amp-script layout="container" script="multi-fetch-script" class="sample">
+        <button id="multi-fetch">How slow is our API?</button>
+      </amp-script>
+      <script id="multi-fetch-script" type="text/plain" target="amp-script">
+        const randomTime = () =>  Math.floor(Math.random() * 10) + 5;
+
+        const button = document.getElementById('multi-fetch');
+
+        function tripleFetch() {
+          for (let i =0; i < 3; i++) {
+            fetch('<% hosts.platform %>/documentation/examples/api/slow-text?delay=' + randomTime())
+              .then(response => response.text())
+              .then(insertText);
+          }
+        }
+
+        function insertText(text) {
+          const div = document.createElement('div');
+          div.textContent = text;
+          document.body.appendChild(div);
+        }
+
+        button.addEventListener('click', tripleFetch);
+      </script>
+    </div>
+
+    <!--
+      ## Data source for `amp-list`
+      An `<amp-script>` function can serve as the data source for an `<amp-list>`.
+        - Use `exportFunction()` to make the function visible to the `<amp-list>`.
+        - Specify the script and the function in the `src` attribute of the `<amp-list>`. Use the form `src="amp-script:{scriptID}:functionName"`, where `{scriptID}` is the `id` of the `<amp-script>` and `{functionName}` is the name of the exported function.
+        - You can use the `nodom` attribute in the `<amp-script>` to indicate that the `<amp-script>` won't need a DOM. This improves performance, because `amp-script` doesn't need to load or execute its virtual DOM implementation.
+    -->
+    <div class="sample">
+      <amp-script
+        id="dataFunctions"
+        script="amp-list-source-script"
+        nodom
+      ></amp-script>
+      <script id="amp-list-source-script" type="text/plain" target="amp-script">
+        function fetchData() {
+          return fetch('<% hosts.platform %>/static/samples/json/todo.json')
+            .then(response => response.json())
+            .then(transformData);
+        }
+
+        function transformData(json) {
+          let newEntries =
+            json.items.map(
+              entry => (entry.done ? 'Already done: ' : 'To do: ') + entry.title
+            );
+          return { items: newEntries };
+        }
+
+        exportFunction('fetchData', fetchData);
+      </script>
+
+      <amp-list
+        width="auto"
+        height="70"
+        layout="fixed-height"
+        src="amp-script:dataFunctions.fetchData"
+      >
+        <template type="amp-mustache">
+          <div>{{.}}</div>
+        </template>
+      </amp-list>
+    </div>
+
+    <!--
+      ## Using a WebSocket for live updates
+      `amp-script` supports WebSockets. This example simulates a live blog.
+    -->
+    <div>
+      <amp-script
+        layout="fixed-height"
+        height="200"
+        script="live-blog-script"
+        class="sample"
+        sandbox="allow-forms"
+      >
+        <button id="live-blog-start">Start live blog</button>
+        <div id="live-blog-area"></div>
+      </amp-script>
+
+      <script id="live-blog-script" type="text/plain" target="amp-script">
+        const button = document.getElementById('live-blog-start');
+        const blogDiv = document.getElementById('live-blog-area');
+
+        button.addEventListener("click", () => {
+          button.setAttribute('disabled', '');
+          button.textContent = 'Live blog begun';
+          const socket = new WebSocket('<% hosts.websocket %>/documentation/examples/api/socket/live-blog');
+
+          socket.onmessage = event => {
+            let newDiv = document.createElement('div');
+            let time = new Date().toLocaleTimeString();
+            newDiv.innerHTML = `<span class="time">${time}: </span><span>${event.data}</span>`;
+            blogDiv.appendChild(newDiv);
+          };
+        });
+      </script>
+    </div>
+
+    <!-- 
+        ## Showing live data
+
+        You can also use `setInterval()` or `setTimeout` to get fresh data.
+    -->
+    <div>
+      <amp-script
+        layout="fixed-height"
+        height="36"
+        script="live-time-script"
+        class="sample"
+      >
+        <div>
+          The current time is: <span id="live-time" class="answer-text"></span>
+        </div>
+      </amp-script>
+
+      <script id="live-time-script" type="text/plain" target="amp-script">
+        const span = document.getElementById('live-time');
+
+        const fetchCurrentTime = async () => {
+          const response = await fetch('<% hosts.platform %>/documentation/examples/api/time');
+          const data = await response.json();
+          span.textContent = data.time;
+        }
+
+        setInterval(fetchCurrentTime, 1000);
+      </script>
+    </div>
+    <!--
+        ## Custom form validation
+
+        You can also use `amp-script` to implement custom form validation. This script enables the button when the input field contains only capital letters.
+    -->
+    <div>
+      <amp-script
+        layout="container"
+        script="form-validation-script"
+        sandbox="allow-forms"
+        class="sample"
+      >
+        <input
+          id="validated-input"
+          placeholder="Only uppercase letters allowed..."
+        />
+        <button id="validated-input-submit" disabled>Submit</button>
+      </amp-script>
+
+      <script id="form-validation-script" type="text/plain" target="amp-script">
+        const submitButton = document.getElementById('validated-input-submit');
+        const validatedInput = document.getElementById('validated-input');
+
+        function allUpper() {
+          let isValid = /^[A-Z]+$/.test(validatedInput.value);
+
+          if (isValid) {
+            submitButton.removeAttribute('disabled');
+          } else {
+            submitButton.setAttribute('disabled', '');
+          }
+        }
+
+        validatedInput.addEventListener('input', allUpper);
+      </script>
+    </div>
+    <!--
+        ## Detecting the operating system
+        Your script has access to global objects like `navigator`. This script uses this object to try to guess your device's operating system. 
+    -->
+    <div>
+      <amp-script
+        layout="fixed-height"
+        height="36"
+        script="user-agent-script"
+        class="sample"
+      >
+        <div>
+          Your operating system is:
+          <span id="operating-system" class="answer-text"></span>
+        </div>
+      </amp-script>
+
+      <script id="user-agent-script" type="text/plain" target="amp-script">
+        // Adapted with gratitude from https://stackoverflow.com/a/38241481
+
+        function getOS() {
+          const userAgent = navigator.userAgent,
+                platform = navigator.platform,
+                macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+                windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+                iosPlatforms = ['iPhone', 'iPad', 'iPod'];
+
+          if (macosPlatforms.includes(platform)) {
+            return 'Mac OS';
+          } else if (iosPlatforms.includes(platform)) {
+            return 'iOS';
+          } else if (windowsPlatforms.includes(platform)) {
+            return 'Windows';
+          } else if (/Android/.test(userAgent)) {
+            return 'Android';
+          } else if (/Linux/.test(platform)) {
+            return 'Linux';
+          }
+
+          return 'Unknown';
+        }
+
+        const span = document.getElementById('operating-system');
+        span.textContent = getOS();
+      </script>
+    </div>
+    <!--
+        ## Personalization
+        Similarly, you can use the `navigator` object, or other means, to personalize content for your user. The following script detects the browser's language and displays a localized greeting.
+    -->
+    <div>
+      <amp-script
+        layout="fixed-height"
+        height="40"
+        script="translation-script"
+        class="sample"
+      >
+        <h2 id="translated-greeting"></h2>
+      </amp-script>
+
+      <script id="translation-script" type="text/plain" target="amp-script">
+        const translationMap = {
+          'en': 'Hello',
+          'fr': 'Bonjour',
+          'es': 'Hola',
+          'hi': 'हैलो',
+          'zh': '你好',
+          'pr': 'Olá'
+        };
+
+        const lang = navigator.language.slice(0, 2);
+        const translation = translationMap[lang];
+        if (!translation) {
+          translation = "Couldn't recognize your language. So: Saluton";
+        }
+
+        let greeting = document.getElementById('translated-greeting');
+        greeting.innerHTML = translation + '!';
+      </script>
+    </div>
+    <!--
+        ## Interacting with `<amp-state>`
+        Your script can use state variables and binding to affect the area outside the `<amp-script>` component.
+        Here, when a button is clicked, we set a state variable's value to an image URL.
+        That state variable is bound to the `src` attribute of an `<amp-img>`.
+     -->
+    <div>
+      <amp-state id="imgSrc">
+        <script type="application/json">
+          "product1_640x426.jpg"
+        </script>
+      </amp-state>
+      <amp-img
+        layout="responsive"
+        height="426"
+        width="640"
+        src="<% hosts.platform %>/static/samples/img/product1_640x426.jpg"
+        [src]="'<% hosts.platform %>/static/samples/img/' + imgSrc"
+      ></amp-img>
+      <amp-script layout="container" script="state-script" class="sample">
+        <button id="apple-button" class="fruit-button">Apple</button>
+        <button id="orange-button" class="fruit-button">Orange</button>
+      </amp-script>
+
+      <script id="state-script" type="text/plain" target="amp-script">
+        const appleButton = document.getElementById('apple-button');
+        const orangeButton = document.getElementById('orange-button');
+
+        appleButton.addEventListener(
+          'click',
+          () => AMP.setState({imgSrc: 'product1_640x426.jpg'})
+        );
+
+        orangeButton.addEventListener(
+          'click',
+          () => AMP.setState({imgSrc: 'product2_640x426.jpg'})
+        );
+      </script>
+    </div>
+    <!--
+        ## Interacting with AMP components
+        Your script can use state variables and binding to communicate with an AMP component.
+        Bind an attribute in the component to an expression containing a state variable.
+        When your script modifies that state variable, the change will propagate to the component.
+        Similarly, if an AMP component changes the state variable's value, your script can get the new value.
+        This script powers a button that sends an image carousel in a random direction.
+    -->
+    <div id="carousel-sample">
+      <amp-carousel
+        type="slides"
+        layout="responsive"
+        width="450"
+        height="300"
+        controls
+        loop
+        [slide]="slideIndex"
+        on="slideChange: AMP.setState({slideIndex: event.index})"
+      >
+        <amp-img
+          src="<% hosts.platform %>/static/inline-examples/images/image1.jpg"
+          layout="responsive"
+          width="450"
+          height="300"
+        ></amp-img>
+        <amp-img
+          src="<% hosts.platform %>/static/inline-examples/images/image2.jpg"
+          layout="responsive"
+          width="450"
+          height="300"
+        ></amp-img>
+        <amp-img
+          src="<% hosts.platform %>/static/inline-examples/images/image3.jpg"
+          layout="responsive"
+          width="450"
+          height="300"
+        ></amp-img>
+      </amp-carousel>
+      <p>Slide <span [text]="slideIndex + 1">1</span> of 3</p>
+
+      <amp-script layout="container" script="carousel-script" class="sample">
+        <button id="carousel-button" class="fruit-button">
+          Random direction
+        </button>
+      </amp-script>
+
+      <script id="carousel-script" type="text/plain" target="amp-script">
+        const button = document.getElementById('carousel-button');
+
+        async function randomSlideDirection() {
+          let oldSlide = Number(await AMP.getState('slideIndex'));
+          let addend = Math.ceil(Math.random() * 2);
+          let newSlide = (oldSlide + addend) % 3;
+          AMP.setState({slideIndex: newSlide});
+        }
+
+        button.addEventListener('click', randomSlideDirection);
+      </script>
+    </div>
+    <!--
+        ## Local storage
+        Your script has access to the Web Storage API. This lets you persist user information between browser sessions.
+        Here, we use `localStorage` to track a username.
+        If you set the username, then reload this page, the username will remain set.
+    -->
+    <div>
+      <amp-script
+        layout="fixed-height"
+        script="local-storage-script"
+        height="110"
+        class="sample"
+      >
+        <div>
+          <span>Current username: </span>
+          <b id="username-display"></b>
+        </div>
+        <div>
+          <label>Enter new username:</label>
+          <input id="username-input" type="text" maxlength="20" />
+        </div>
+        <button id="username-submit">Submit</button>
+      </amp-script>
+      <script id="local-storage-script" type="text/plain" target="amp-script">
+        const submit = document.getElementById('username-submit');
+        const input = document.getElementById('username-input');
+        const display = document.getElementById('username-display');
+
+        const oldUsername = localStorage.getItem('username');
+        display.textContent = oldUsername ? oldUsername : '(not set)';
+
+        function setUsername() {
+          const newUsername = input.value;
+          localStorage.setItem('username', newUsername);
+          display.textContent = newUsername;
+        }
+
+        submit.addEventListener('click', setUsername);
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,6 +1,7 @@
 <!---
 
   teaserImage: '/static/samples/img/teaser/combobox.jpg'
+  preview: default
 
   --->
 
@@ -9,14 +10,15 @@
 
     This sample demonstrastes a classic dropdown combo, with a text field which filters the dropdown elements according to the user's input. The options are rendered via `amp-autocomplete`.
   -->
+  <!-- -->
   <!doctype html>
-  <html ⚡>
+  <html ⚡ lang="en">
     <head>
       <title>ComboBox</title>
       <meta charset="utf-8">
       <link rel="canonical" href="<% canonical %>">
 
-      <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+      <meta name="viewport" content="width=device-width">
       <script async src="https://cdn.ampproject.org/v0.js"></script>
       <!-- ## Setup -->
       <!--The `amp-autocomplete` component is used for suggesting according to the user's input.-->
@@ -88,10 +90,13 @@
 
           Finally, the combobox can be triggered via a button that focuses the input field: `<button on="tap:combo-input.focus">`.
         -->
-        <form action-xhr="/documentation/examples/api/echo">
+        <form method="post" action-xhr="/documentation/examples/api/echo">
           <amp-autocomplete class="combo-box" filter="token-prefix" min-characters="0">
             <input id="combo-input" type="text">
-            <button on="tap:combo-input.focus">
+            <button hidden id="close" on="tap:open.show, close.hide">
+              <i class="arrow"></i>
+            </button>
+            <button id="open" on="tap:combo-input.focus, open.hide, close.show">
               <i class="arrow"></i>
             </button>
             <script type="application/json">

@@ -49,7 +49,7 @@ resources_cards:
     icon: guides-documents
     link: /content/amp-dev/documentation/guides-and-tutorials/index.html
   - title: Components
-    description: The complete documented AMP library and its referencees.
+    description: The complete documented AMP library and its references.
     icon: code
     link: /content/amp-dev/documentation/components/index.html
   - title: Examples
@@ -66,7 +66,6 @@ resources_cards:
     link: /content/amp-dev/documentation/tools.html
 
 ---
-{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
 {% do doc.styles.addCssFile('/css/components/templates/overview.css') %}
 
 
@@ -80,8 +79,8 @@ resources_cards:
           <div class="ap--overview-title">
             <div class="ap-m-overview-title">
               {% include '/views/partials/breadcrumbs.j2' %}
-              <h1>{{ doc.title }}</h1>
-              <p>Whether you are a publisher, e-commerce company, storyteller, advertiser or email sender, AMP makes it easy to create great experiences on the web. Use AMP to build:</p>
+              <h1>{{ _(doc.title) }}</h1>
+              <p>{{ _('Whether you are a publisher, e-commerce company, storyteller, advertiser or email sender, AMP makes it easy to create great experiences on the web. Use AMP to build:') }}</p>
             </div>
           </div>
         </section>
@@ -98,8 +97,8 @@ resources_cards:
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ card.type }}"></use>
                     </svg>
                   </div>
-                  <h4 class="ap-o-format-cards-card-headline">{{ card.title }}</h4>
-                  <p class="ap-o-format-cards-card-copy">{{ card.description }}</p>
+                  <h4 class="ap-o-format-cards-card-headline">{{ _(card.title) }}</h4>
+                  <p class="ap-o-format-cards-card-copy">{{ _(card.description) }}</p>
                 </div>
                 <div class="ap-o-format-cards-card-link ap-m-lnk">
                   <div class="ap-a-ico ap-m-lnk-icon">
@@ -108,7 +107,7 @@ resources_cards:
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
                     </svg>
                   </div>
-                  <span class="ap-m-lnk-text">{{ card.link.text }}</span>
+                  <span class="ap-m-lnk-text">{{ _(card.link.text) }}</span>
                 </div>
               </a>
               {% endfor %}
@@ -117,14 +116,14 @@ resources_cards:
         </section>
 
         {% do doc.styles.addCssFile('/css/components/organisms/resources-overview.css') %}
-        <amp-state id="filter" class="" layout="container" hidden="" aria-hidden="true">
+        <amp-state id="filter">
           <script type="application/json">
             {
               "format": "[= format =]"
             }
           </script>
         </amp-state>
-        <amp-state id="formatText" class="" layout="container" hidden="" aria-hidden="true">
+        <amp-state id="formatText">
           <script type="application/json">
             {
               "format": "[= format =]"
@@ -141,8 +140,8 @@ resources_cards:
               <div class="ap-format-content">
                 <div class="ap-info-box">
                   <div class="ap-info-box-text">
-                    <h4>Choose your destination</h4>
-                    <p>Throughout the AMP documentation you will find a switch on the upper left side to quickly change the AMP format you’re working on.</p>
+                    <h4>{{ _('Choose your destination') }}</h4>
+                    <p>{{ _('Throughout the AMP documentation you will find a switch on the upper left side to quickly change the AMP format you’re working on.') }}</p>
                   </div>
                   <div class="ap-format-toggle">
                     {% for format in doc.resources_formats %}
@@ -154,7 +153,7 @@ resources_cards:
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format }}"></use>
                         </svg>
                       </span>
-                      <span>{{ format }}</span>
+                      <span>{{ _(format) }}</span>
                     </button>
                     {% endfor %}
                   </div>
@@ -171,18 +170,15 @@ resources_cards:
                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ card.icon }}"></use>
                         </svg>
                       </div>
-                      <h4 class="ap-o-resources-grid-card-headline">{{ card.title }}</h4>
-                      <p class="ap-o-resources-grid-card-copy">{{ card.description }}</p>
+                      <h4 class="ap-o-resources-grid-card-headline">{{ _(card.title) }}</h4>
+                      <p class="ap-o-resources-grid-card-copy">{{ _(card.description) }}</p>
                     </a>
                     {% endfor %}
 
                     <div class="ap-o-resources-grid-card-tip">
                       <div class="ap-m-tip-content">
-                        <h4>CMS User?</h4>
-                        <p>AMP integrates with many publishing platforms and content management systems! Find the full list under <a
-                          href="../support/faq/platform-and-vendor-partners.md">Platform
-                          and Vendor Partners.</a>
-                        </p>
+                        <h4>{{ _('CMS User?') }}</h4>
+                        <p>{{ _('AMP integrates with many publishing platforms and content management systems! Find the full list under <a href="../support/faq/platform-and-vendor-partners.md">Platform and Vendor Partners.</a>') }}</p>
                       </div>
                     </div>
                   </div>
@@ -195,17 +191,24 @@ resources_cards:
         {% do doc.styles.addCssFile('/css/components/organisms/video-slider.css') %}
         <section class="ap--section">
           <div class="ap--video-slider">
-            <h2 class="ap-o-video-slider-text">Featured Videos</h2>
-            <p class="ap-o-video-slider-text">See the latest videos about AMP and find out more on our <a href="https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw">YouTube Channel.</a></p>
-            {% with %}
-            {% set youtube_video_ids = [
-            '4f9KU5VJpOU',
-            'axwrgJGkrNU',
-            'NySyeCLrnSA'
-            ]
-            %}
-            {% include '/views/partials/video-carousel.j2' %}
-            {% endwith %}
+            <h2 class="ap-o-video-slider-text">{{ _('Featured Videos') }}</h2>
+            <p class="ap-o-video-slider-text">{{ _('See the latest videos about AMP and find out more on our <a href="https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw">YouTube Channel.</a>') }}</p>
+            [% set youTubeChannelPosts = []|importYouTubeChannel %]
+            [% if youTubeChannelPosts|length %]
+            <amp-carousel class="ap-o-video-slider-carousel"
+                type="carousel"
+                height="300"
+                layout="fixed-height"
+                controls=0>
+              [% for post in youTubeChannelPosts %]
+              <amp-youtube data-videoid="[=post.id=]"
+                  width="391"
+                  height="220"
+                  layout="fixed">
+              </amp-youtube>
+              [% endfor %]
+            </amp-carousel>
+            [% endif %]
           </div>
         </section>
 
@@ -213,11 +216,8 @@ resources_cards:
         <section class="ap--section-fullscreen">
           <div class="ap--banner">
             <div class="ap-o-banner">
-              <h2 class="ap-o-banner-headline">Get Involved</h2>
-              <p class="ap-o-banner-copy">AMP is proudly an open source project with an active community of contributors. We welcome and appreciate documentation and translation contributions! Check out our community section to join our mission to
-                make
-                the web suck less.
-              </p>
+              <h2 class="ap-o-banner-headline">{{ _('Get Involved') }}</h2>
+              <p class="ap-o-banner-copy">{{ _('AMP is proudly an open source project with an active community of contributors. We welcome and appreciate documentation and translation contributions! Check out our community section to join our mission.') }}</p>
             </div>
           </div>
         </section>

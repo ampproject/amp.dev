@@ -24,6 +24,7 @@ MAINTENANCE.md
 README.md
 CONTRIBUTING.md
 packager/
+thumbor/
 
 # The complete frontend and pages folders aren't needed on App Engine
 /frontend/
@@ -41,3 +42,12 @@ platform/pages*
 !/boilerplate/backend
 !/boilerplate/dist
 !/boilerplate/lib
+
+# Infrastructure
+contributing
+jest.config.js
+smoke-tests
+renovate.json
+gulpfile.js
+scripts
+tests

@@ -1,0 +1,115 @@
+<!---
+
+teaserImage: '/static/samples/img/teaser/geolocation-based_consent_flow.jpg'
+author:
+  - micajuine-ho
+  - sebastianbenz
+
+--->
+
+<!--
+  ## Introduction
+
+  Sometimes is necessary to rely on external servers for consent due to needing to sync user consent between multiple platforms. This sample demonstrates
+  how you can use [`amp-consent`](/content/amp-dev/documentation/components/reference/amp-consent.md) to achieve this. In this sample we'll build a
+  consent dialog that will only show based upon the consent state from external servers.
+-->
+<!-- -->
+<!doctype html>
+<html ⚡ lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="canonical" href="<% canonical %>">
+  <meta name="viewport" content="width=device-width">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <title>Server Side User Consent Flow</title>
+  <!-- ## Setup -->
+  <!--
+  We need to import the `amp-consent` extension...
+  -->
+  <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <style amp-custom>
+    :root {
+      --space-2: 1rem;   /* 16px */
+      --space-3: 1.5rem; /* 24px */
+    }
+    .consentPopup {
+      padding: var(--space-3);
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 5px;
+      position: relative;
+      max-width: 700px;
+      width: 95%;
+    }
+    .consentPopup > h2, /* overwrite ABE style */
+    .consentPopup > * {
+      margin: 0;
+      margin-bottom: var(--space-2);
+    }
+    .consentPopup > button {
+      margin-right: var(--space-2);
+    }
+    .popupOverlay {
+      height: 100vh;
+      width: 100vw;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 5% 0;
+    }
+    .dismiss-button {
+      position: absolute;
+      right: var(--space-3);
+      top: var(--space-2);
+      cursor: pointer;
+    }
+    #post-consent-ui {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: var(--space-3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ## Defining the consent flow -->
+  <!--
+    We define a basic server-side consent flow, similar to [this sample](/content/amp-dev/documentation/examples/documentation/Client_Side_User_Consent_Flow.html). The flow should only trigger when the server responds that `consentRequired` is `true` and there is no `consentStateValue` or `consentString` for this user.
+
+    When a user lands on the AMP page, `amp-consent` will check localstorage for an existing consent state. 
+    If a consent state exists, it will unblock all components. Otherwise, it will wait for the response from `checkConsentHref` (because `consentRequired` is set to 'remote') to determine if consent is required/if there is an existing consent state. If there is an existing consent state, `amp-consent` will use that value and unblock. Otherwise, it will show the `promptUi`.
+
+    A recommended design for sites that can manage their own consent (via external page) is to respond with the following response: 
+    ```json
+    {
+      "consentRequired": true,
+      "consentStateValue": "accepted"/"rejected"/"unknown",
+      "consentString": "example-string"
+    }
+    ```
+    Tip: Use [`expireCache: true`](/content/amp-dev/documentation/components/reference/amp-consent.md#expireCache), in your response to clear localStorage consent decision if you need to update it for syncing purposes. Additonally, [`onUpdateHref`](/content/amp-dev/documentation/components/reference/amp-consent.md#onupdatehref) can be used when users are managing their consent directly on the page.
+
+  -->
+  <amp-consent id="myUserConsent" layout="nodisplay">
+    <script type="application/json">{
+      "consentInstanceId": "server-side-consent",
+      "consentRequired": "remote",
+      "checkConsentHref": "<% hosts.platform %>/documentation/examples/api/get-consent-server-side",
+      "promptUI": "myConsentFlow"
+    }</script>
+    <div id="myConsentFlow" class="popupOverlay">
+      <div class="consentPopup">
+        <div class="dismiss-button" role="button" tabindex="0" on="tap:myUserConsent.dismiss">X</div>
+        <h2>Headline</h2>
+        <p>If the server says you have not made a consent decision, we require you to make a choice.</p>
+        <button on="tap:myUserConsent.accept">Accept</button>
+        <button on="tap:myUserConsent.reject">Reject</button>
+      </div>
+    </div>
+    <div id="post-consent-ui">
+      <button on="tap:myUserConsent.prompt()">Update Consent</button>
+    </div>
+  </amp-consent>
+</body>
+</html>

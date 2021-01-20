@@ -31,6 +31,7 @@ jobs:
     name: Check code, import documents, build samples, playground & boilerplate
     before_script:
     - scripts/unbuffer.sh gulp buildSamples
+    - scripts/unbuffer.sh gulp buildComponentVersions
     - scripts/unbuffer.sh npm test
     script:
     - if [ $TRAVIS_BRANCH == "future" ] && [ $TRAVIS_PULL_REQUEST == "false" ]; then scripts/unbuffer.sh gulp buildPrepare; fi
@@ -41,6 +42,11 @@ jobs:
     - pip install grow==0.7.4 --user
     name: Build Pages (EN)
     script: scripts/unbuffer.sh gulp buildPages --locales en
+  - stage: build
+    env: APP_ENV=staging
+    install: *1
+    name: Build Pages (DE)
+    script: scripts/unbuffer.sh gulp buildPages --locales de
   - stage: build
     env: APP_ENV=staging
     install: *1
@@ -96,6 +102,16 @@ jobs:
     install: *1
     name: Build Pages (CN)
     script: scripts/unbuffer.sh gulp buildPages --locales zh_CN
+  - stage: build
+    env: APP_ENV=staging
+    install: *1
+    name: Build Pages (PL)
+    script: scripts/unbuffer.sh gulp buildPages --locales pl
+  - stage: build
+    env: APP_ENV=staging
+    install: *1
+    name: Build Pages (VN)
+    script: scripts/unbuffer.sh gulp buildPages --locales vi
   - stage: deploy
     env: APP_ENV=staging
     before_script:

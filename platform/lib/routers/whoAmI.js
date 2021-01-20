@@ -22,14 +22,14 @@ const fs = require('fs');
 const utils = require('@lib/utils');
 const config = require('@lib/config');
 
-const BUILD_INFO_PATH = utils.project.absolute('platform/config/build-info.yaml');
-
 // eslint-disable-next-line new-cap
 const whoAmI = express.Router();
 const info = {
   'environment': config.environment,
   'instance': process.env.GAE_INSTANCE,
-  'build': yaml.safeLoad(fs.readFileSync(BUILD_INFO_PATH, 'utf8')),
+  'build': yaml.load(
+    fs.readFileSync(utils.project.paths.BUILD_INFO_PATH, 'utf8')
+  ),
 };
 
 whoAmI.get('/who-am-i', (request, response) => {

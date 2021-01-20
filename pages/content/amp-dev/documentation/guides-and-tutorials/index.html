@@ -36,42 +36,13 @@ highlight_guides:
     - /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md
     - /content/amp-dev/documentation/guides-and-tutorials/develop/animations/introduction_to_animations.md
   email:
-    - /content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index.md
     - /content/amp-dev/documentation/guides-and-tutorials/start/create_email.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md
+    - /content/amp-dev/documentation/guides-and-tutorials/develop/testing_amp_emails.md
     - /content/amp-dev/documentation/guides-and-tutorials/learn/email_fundamentals.md
     - /content/amp-dev/documentation/guides-and-tutorials/develop/amp_email_best_practices.md
+    - /content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-format.md
 
-recent_guides:
-  websites:
-    - /content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index.md
-    - /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md
-    - /content/amp-dev/documentation/guides-and-tutorials/develop/animations/introduction_to_animations.md
-  stories:
-    - /content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index.md
-    - /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md
-  ads:
-    - /content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md
-    - /content/amp-dev/documentation/guides-and-tutorials/develop/animations/introduction_to_animations.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md
-  email:
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md
-    - /content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/email_fundamentals.md
-    - /content/amp-dev/documentation/guides-and-tutorials/develop/amp_email_best_practices.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md
-    - /content/amp-dev/documentation/guides-and-tutorials/start/create_email.md
+recent_guides: !g.yaml /shared/data/recent-guides.yaml
 
 guides:
   start:
@@ -193,7 +164,7 @@ guides:
         {% do doc.icons.useIcon('icons/internal.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
       </div>
-      <span class="ap-m-lnk-text">Style & layout</span>
+      <span class="ap-m-lnk-text">{{ _('Style & layout') }}</span>
     </a>
   </div>
   {% do doc.styles.addCssFile('/css/components/molecules/tip.css') %}
@@ -269,7 +240,7 @@ guides:
         {% do doc.icons.useIcon('icons/internal.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
       </div>
-      <span class="ap-m-lnk-text">Style & layout</span>
+      <span class="ap-m-lnk-text">{{ _('Style & layout') }}</span>
     </a>
   </div>
   [% endif %]
@@ -336,7 +307,7 @@ guides:
         {% do doc.icons.useIcon('icons/internal.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
       </div>
-      <span class="ap-m-lnk-text">Style & layout</span>
+      <span class="ap-m-lnk-text">{{ _('Style & layout') }}</span>
     </a>
   </div>
   [% endif %]
@@ -366,42 +337,52 @@ guides:
     </div>
   </div>
 </section>
+{% if doc.recent_guides %}
 <section class="ap--section">
-  <div class="ap-m-teaser-highlight-guides">
+  <div class="ap-m-teaser-highlight-guides ap-m-teaser-highlight-guides-recent">
     <h2>Recent Guides & Tutorials</h2>
+
     <div class="ap-m-teaser-container">
-      {% for format in doc.recent_guides %}
-      [% if format == '{{ format }}' %]
-        {% set columns = doc.recent_guides[format] %}
-        {% for columns in doc.recent_guides[format]|slice(3)%}
-        <div class="ap-m-teaser ap-m-teaser-column-box">
-          {% for teaser_doc in columns %}
-          {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
-            [% if format in '{{ teaser_doc.formats }}' %]
-              {% with highlightedTeaser = True %}
-              {% include 'views/partials/teaser.j2' %}
-              {% endwith %}
-            [% endif %]
-          {% endfor %}
-        </div>
-        {% endfor%}
-      [% endif%]
+      [% set counter = 0 %]
+      <div class="ap-m-teaser ap-m-teaser-column-box">
+      {% for guide in doc.recent_guides %}
+        {% set teaser_doc = g.doc(guide.path, locale=doc.locale) %}
+        [% if format in '{{ teaser_doc.formats }}' and counter < 6 %]
+
+          [% set counter = counter + 1 %]
+          [% if counter is odd and counter != 1 %]
+          </div><div class="ap-m-teaser ap-m-teaser-column-box">
+          [% endif %]
+
+          {% with highlightedTeaser = True %}
+          {% include 'views/partials/teaser.j2' %}
+          {% endwith %}
+        [% endif %]
       {% endfor %}
+      </div>
     </div>
   </div>
 </section>
+{% endif %}
 
 {% do doc.styles.addCssFile('/css/components/organisms/video-slider.css') %}
 <section class="ap--video-slider">
   <h2 class="ap-o-video-slider-text">Featured Videos</h2>
   <p class="ap-o-video-slider-text">See the latest videos about AMP and find out more on our <a href="https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw">YouTube Channel.</a></p>
-  {% with %}
-  {% set youtube_video_ids = [
-    '4f9KU5VJpOU',
-    'axwrgJGkrNU',
-    'NySyeCLrnSA'
-    ]
-  %}
-  {% include '/views/partials/video-carousel.j2' %}
-  {% endwith %}
+  [% set youTubeChannelPosts = []|importYouTubeChannel %]
+  [% if youTubeChannelPosts|length %]
+  <amp-carousel class="ap-o-video-slider-carousel"
+      type="carousel"
+      height="300"
+      layout="fixed-height"
+      controls=0>
+    [% for post in youTubeChannelPosts %]
+    <amp-youtube data-videoid="[=post.id=]"
+        width="391"
+        height="220"
+        layout="fixed">
+    </amp-youtube>
+    [% endfor %]
+  </amp-carousel>
+  [% endif %]
 </section>

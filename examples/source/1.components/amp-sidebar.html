@@ -8,14 +8,14 @@ author: juliantoledo
 <!--
   ## Introduction
 
-  The [`amp-sidebar`](/content/amp-dev/documentation/components/reference/amp-sidebar.md) component provides a way to display meta content intended for temporary access (navigation links, buttons, menus, etc.). The sidebar can be revealed by a button tap while the main content remains visually underneath. However, optional attributes that accept media queries can be used to display meta content in other parts of the site. Child `<nav toolbar="(media query)" toolbar-target="elementID">` will create `toolbar` elements that allow for content within the sidebar to be displayed on other parts of the main content.
+  The [`amp-sidebar`](/content/amp-dev/documentation/components/reference/amp-sidebar-v0.1.md) component provides a way to display meta content intended for temporary access (navigation links, buttons, menus, etc.). The sidebar can be revealed by a button tap while the main content remains visually underneath. However, optional attributes that accept media queries can be used to display meta content in other parts of the site. Child `<nav toolbar="(media query)" toolbar-target="elementID">` will create `toolbar` elements that allow for content within the sidebar to be displayed on other parts of the main content.
 
   Note: You must be able to resize your browser window in order to notice the effects of** `toolbar` **elements. In this example,** `toolbar` **elements are best viewed by resiving your window from mobile to desktop.
 -->
 
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 <head>
   <meta charset="utf-8">
   <title>amp-sidebar</title>
@@ -27,11 +27,13 @@ author: juliantoledo
   <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
   <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
   <link rel="canonical" href="<% canonical %>">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <style amp-custom>
     :root {
+      --space-1: 0.5rem;
       --space-2: 1rem;   /* 16px */
+      --space-4: 2rem;
     }
     .sample-sidebar {
       width: 250px;
@@ -42,10 +44,13 @@ author: juliantoledo
     }
     .sample-sidebar li,
     nav[toolbar] li {
-      margin-bottom: var(--space-2);
-      margin-left: 0;
-      margin-right: var(--space-2);
+      margin: var(--space-2);
+      margin-left: var(--space-4);
       list-style: none;
+    }
+    amp-sidebar ul, nav[toolbar] ul {
+      display: block;
+      padding-left: 0;
     }
     .previewOnly {
       margin: var(--space-2);
@@ -53,91 +58,174 @@ author: juliantoledo
     #sidebar-right nav.amp-sidebar-toolbar-target-shown {
         display: none;
     }
+    button {
+      margin-left: var(--space-2);
+    }
+    header {
+      background-color: lightgray;
+      padding-bottom: var(--space-2);
+    }
+    .hamburger {
+      top: 0;
+      right: 0;
+      position: absolute;
+    }
+    h1 {
+      padding: var(--space-1);
+      margin: 0;
+      font-size: 2em;
+    }
+    .desktop-sidebar {
+      background-color: lightblue;
+    }
+    @media (min-width: 784px) {
+      .hamburger {
+        display: none;
+      }
+      main {
+        display: flex;
+        flex-direction: row;
+      }
+      aside {
+        width: 300px;
+      }
+    }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Header</h1>
+    <button
+      class="hamburger"
+      on='tap:sidebar-desktop.toggle'
+      aria-label="Click to open sidebar">
+      =
+    </button>
+  </header>
+  <main>
+    <aside id="target-element-desktop" class="desktop-sidebar">
+      <h1>Desktop Sidebar</h1>
+    </aside>
+    <article>
+      <h1>Main Content</h1>
+      <p class="previewOnly">
+      Please resize the browser window to view the responsiveness for `amp-sidebar`'s toolbar.
+      </p>
+      <h2 class="previewOnly">Basic usage</h2>
+      <!-- ## Basic usage -->
+      <!--
+        The `amp-sidebar` should be a direct child of the `<body>`. It must have a layout of `nodisplay`.  `amp-sidebar` supports the following actions: `toggle`, `open` and `close`.
+      -->
+      <div>
+        <amp-sidebar id="sidebar" class="sample-sidebar" layout="nodisplay" side="right">
+          <h3>Sidebar</h3>
+          <button on="tap:sidebar.close">Close sidebar</button>
+          <button on="tap:sidebar.toggle">Toggle sidebar</button>
+        </amp-sidebar>
+        <button on="tap:sidebar.toggle">Toggle sidebar</button>
+        <button on="tap:sidebar.open">Open sidebar</button>
+      </div>
 
-  <p class="previewOnly">
-  Please resize the browser window to view the responsiveness for `amp-sidebar`'s toolbar.
-  </p>
-  <h2 class="previewOnly">Basic usage</h2>
-  <!-- ## Basic usage -->
+      <h2 class="previewOnly">Toolbar</h2>
+      <!-- ## Toolbar -->
+      <!--
+        `toolbar` enables elements within the `amp-sidebar` to be displayed on other parts of the `<body>`. This is useful for responsive design, including navigation bars, social footers, etc.
+
+        `toolbar` elements have their own requirements:
+
+        - The sidebar may implement toolbars by adding `nav` elements with the `toolbar` attribute and `toolbar-target` attribute.
+        - The `nav` element must be a child of `<amp-sidebar>` and follow this format: `<nav toolbar="(media-query)" toolbar-target="elementID">`.
+        - The `nav` containing the toolbar attribute must only contain a single `<ul>` element, that contains `<li>` elements.
+        - The `<li>` elements may contain any valid HTML elements (supported by AMP), or any of the AMP elements that `<amp-sidebar>` supports.
+        - Toolbar behavior is only applied while the `toolbar` attribute media-query is valid. Also, an element with the `toolbar-target` attribute id must exist on the page for the toolbar to be applied.
+      -->
+      <div>
+        <amp-sidebar id="sidebar-left" class="sample-sidebar" layout="nodisplay" side="left">
+          <h3>Sidebar</h3>
+          <button on="tap:sidebar-left.close">Close sidebar</button>
+          <nav toolbar="(min-width: 784px)" toolbar-target="target-element-left">
+            <ul>
+              <li>Nav item 1</li>
+              <li>Nav item 2</li>
+            </ul>
+          </nav>
+          <ul>
+            <li>Nav item 3</li>
+            <li>Nav item 4</li>
+          </ul>
+        </amp-sidebar>
+        <button on="tap:sidebar-left.toggle">Toggle sidebar</button>
+        <div id="target-element-left">
+        </div>
+      </div>
+
+      <h2 class="previewOnly">Styled toolbar</h2>
+      <!-- ## Styled toolbar -->
+      <!--
+        The `toolbar` element within the `<amp-sidebar>` element, will have classes applied to the element depending if the `toolbar-target` element is shown or hidden. This is useful for applying different styles on the `toolbar` element and the `toolbar-target` element. The classes are `amp-sidebar-toolbar-target-shown`, and `amp-sidebar-toolbar-target-hidden`. The class `amp-sidebar-toolbar-target-shown` is applied to the `toolbar` element when the `toolbar-target` element is shown. The class `amp-sidebar-toolbar-target-hidden` is applied to the `toolbar` element when the `toolbar-target` element is hidden.
+
+        ```css
+        .amp-sidebar-toolbar-target-shown {
+          display: none;
+        }
+        ```
+        -->
+        <div>
+          <amp-sidebar id="sidebar-right" class="sample-sidebar" layout="nodisplay" side="right">
+            <h3>Sidebar</h3>
+            <button on="tap:sidebar-right.close">Close sidebar</button>
+            <nav toolbar="(min-width: 784px)" toolbar-target="target-element-right">
+              <ul>
+                <li>Nav item 1</li>
+                <li>Nav item 2</li>
+              </ul>
+            </nav>
+            <ul>
+              <li>Nav item 3</li>
+              <li>Nav item 4</li>
+            </ul>
+          </amp-sidebar>
+          <button on="tap:sidebar-right.toggle">Toggle sidebar</button>
+          <div id="target-element-right">
+          </div>
+        </div>
+    </article>
+  </main>
+  <!-- ## Desktop Sidebar -->
   <!--
-    The `amp-sidebar` should be a direct child of the `<body>`. It must have a layout of `nodisplay`.  `amp-sidebar` supports the following actions: `toggle`, `open` and `close`.
-  -->
-  <div>
-    <amp-sidebar id="sidebar" class="sample-sidebar" layout="nodisplay" side="right">
-      <h3>Sidebar</h3>
-      <button on="tap:sidebar.close">Close sidebar</button>
-      <button on="tap:sidebar.toggle">Toggle sidebar</button>
-    </amp-sidebar>
-    <button on="tap:sidebar.toggle">Toggle sidebar</button>
-    <button on="tap:sidebar.open">Open sidebar</button>
-  </div>
+    The amp-sidebar can be used as a permanent navigation bar on the main page.  The toolbar target (aside element) is defined as a left hand navigation element on the page.
+    ```html
+    <main>
+      <aside id="target-element-desktop" class="desktop-sidebar">...
+      </aside>
+    </main>
+    ```
 
-  <h2 class="previewOnly">Toolbar</h2>
-  <!-- ## Toolbar -->
-  <!--
-    `toolbar` enables elements within the `amp-sidebar` to be displayed on other parts of the `<body>`. This is useful for responsive design, including navigation bars, social footers, etc.
-
-    `toolbar` elements have their own requirements:
-
-    - The sidebar may implement toolbars by adding `nav` elements with the `toolbar` attribute and `toolbar-target` attribute.
-    - The `nav` element must be a child of `<amp-sidebar>` and follow this format: `<nav toolbar="(media-query)" toolbar-target="elementID">`.
-    - The `nav` containing the toolbar attribute must only contain a single `<ul>` element, that contains `<li>` elements.
-    - The `<li>` elements may contain any valid HTML elements (supported by AMP), or any of the AMP elements that `<amp-sidebar>` supports.
-    - Toolbar behavior is only applied while the `toolbar` attribute media-query is valid. Also, an element with the `toolbar-target` attribute id must exist on the page for the toolbar to be applied.
-  -->
-  <div>
-    <amp-sidebar id="sidebar-left" class="sample-sidebar" layout="nodisplay" side="left">
-      <h3>Sidebar</h3>
-      <button on="tap:sidebar-left.close">Close sidebar</button>
-      <nav toolbar="(min-width: 784px)" toolbar-target="target-element-left">
-        <ul>
-          <li>Nav item 1</li>
-          <li>Nav item 2</li>
-        </ul>
-      </nav>
-      <ul>
-        <li>Nav item 3</li>
-        <li>Nav item 4</li>
-      </ul>
-    </amp-sidebar>
-    <button on="tap:sidebar-left.toggle">Toggle sidebar</button>
-    <div id="target-element-left">
-    </div>
-  </div>
-
-  <h2 class="previewOnly">Styled toolbar</h2>
-  <!-- ## Styled toolbar -->
-  <!--
-    The `toolbar` element within the `<amp-sidebar>` element, will have classes applied to the element depending if the `toolbar-target` element is shown or hidden. This is useful for applying different styles on the `toolbar` element and the `toolbar-target` element. The classes are `amp-sidebar-toolbar-target-shown`, and `amp-sidebar-toolbar-target-hidden`. The class `amp-sidebar-toolbar-target-shown` is applied to the `toolbar` element when the `toolbar-target` element is shown. The class `amp-sidebar-toolbar-target-hidden` is applied to the `toolbar` element when the `toolbar-target` element is hidden.
-
+    Using a media query, the toolbar target can be made visible only when the browser window is greater than a certain width.  Using CSS flex on the parent element of the target allows us to position the target on the left side of the page.
     ```css
-    .amp-sidebar-toolbar-target-shown {
-      display: none;
+    @media (min-width: 784px) {
+      main {
+        display: flex;
+        flex-direction: row;
+      }
     }
     ```
-    -->
-    <div>
-      <amp-sidebar id="sidebar-right" class="sample-sidebar" layout="nodisplay" side="right">
-        <h3>Sidebar</h3>
-        <button on="tap:sidebar-right.close">Close sidebar</button>
-        <nav toolbar="(min-width: 784px)" toolbar-target="target-element-right">
-          <ul>
-            <li>Nav item 1</li>
-            <li>Nav item 2</li>
-          </ul>
-        </nav>
+    
+    The amp-sidebar uses the nav toolbar target to populate it's content into this navigation element.  It identifies the nav toolbar target by matching the `id` attribute (defined in the aside element above) with the `toolbar-target` attribute within the `nav` element.
+  -->
+  <div>
+    <amp-sidebar id="sidebar-desktop" class="desktop-sidebar" layout="nodisplay" side="left">
+      <h1>Desktop Sidebar</h1>
+      <button on="tap:sidebar-desktop.close">Close sidebar</button>
+      <nav toolbar="(min-width: 784px)" toolbar-target="target-element-desktop">
         <ul>
-          <li>Nav item 3</li>
-          <li>Nav item 4</li>
+          <li>Nav item A</li>
+          <li>Nav item B</li>
+          <li>Nav item C</li>
+          <li>Nav item D</li>
         </ul>
-      </amp-sidebar>
-      <button on="tap:sidebar-right.toggle">Toggle sidebar</button>
-      <div id="target-element-right">
-      </div>
-    </div>
-
-    </body>
+      </nav>
+    </amp-sidebar>
+  </div>
+</body>
 </html>

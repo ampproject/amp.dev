@@ -1,8 +1,9 @@
 ---
-$title: 共通の属性
+"$title": 一般的な要素属性
+"$order": '1'
+description: AMP には、さまざまな AMP コンポーネント（および HTML 要素）に拡張される共通の属性を使用できます。ここでは、そうした共通の属性それぞれについて説明します。
+toc: 'true'
 ---
-
-[TOC]
 
 AMP には、さまざまな AMP コンポーネント（および HTML 要素）に拡張される共通の属性を使用できます。ここでは、そうした共通の属性それぞれについて説明します。
 
@@ -14,11 +15,11 @@ AMP には、さまざまな AMP コンポーネント（および HTML 要素�
 
 例:
 
-[sourcecode:html]
+```html
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive" >
-  <div fallback>この端末ではアニメーション画像は再生できません。</div>
+  <div fallback>Cannot play animated images on this device.</div>
 </amp-anim>
-[/sourcecode]
+```
 
 詳しくは、[プレースホルダとフォールバック](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md) をご覧ください。
 
@@ -26,20 +27,19 @@ AMP には、さまざまな AMP コンポーネント（および HTML 要素�
 
 `responsive` レイアウトに対応する AMP 要素はすべて、`heights` 属性にも対応しています。この属性の値は、メディアの式に基づくサイズの式です。[`img` タグの sizes 属性](https://developer.mozilla.org/ja/docs/Web/HTML/Element/img) と似ていますが、大きな違いが 2 つあります。
 
-
 1. この値は、要素の幅ではなく高さに適用されます。
 2. パーセントの値を使用できます。パーセント値は要素の幅の割合を示すものです。たとえば、`80%` という値は、要素の高さが幅の 80% になることを示しています。
 
 メモ: `heights` 属性を `width` および `height` と一緒に指定すると、`layout` はデフォルトで `responsive` に設定されます。
 
-例:
+例：
 
-[sourcecode:html]
+```html
 <amp-img src="amp.png"
     width="320" height="256"
     heights="(min-width:500px) 200px, 80%">
 </amp-img>
-[/sourcecode]
+```
 
 詳しくは、[srcset、sizes、heights を使った画像読み込みについての説明](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md) をご覧ください。
 
@@ -49,24 +49,24 @@ AMP では、一連の [レイアウト](../../../documentation/guides-and-tutor
 
 例:
 
-[sourcecode:html]
+```html
 <amp-img src="/img/amp.jpg"
     width="1080"
     height="610"
     layout="responsive"
-    alt="画像">
+    alt="an image">
 </amp-img>
-[/sourcecode]
+```
 
 詳しくは、[レイアウトとメディアクエリ](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) および [レイアウトの仕様](amp-html-layout/index.md) をご覧ください。
 
-## media
+## media <a name="media"></a>
 
 すべての AMP 要素は `media` 属性に対応しています。`media` の値はメディアクエリです。クエリが一致しない場合、該当の要素はレンダリングされず、そのリソースは（場合によってはその子リソースも）取得されません。ブラウザ ウィンドウのサイズや向きが変わると、メディアクエリが再評価されて、その新しい結果を基に、要素が表示されるか非表示になるかが決まります。
 
 例:
 
-[sourcecode:html]
+```html
 <amp-img
     media="(min-width: 650px)"
     src="wide.jpg"
@@ -77,7 +77,7 @@ AMP では、一連の [レイアウト](../../../documentation/guides-and-tutor
     src="narrow.jpg"
     width="527"
     height="193" layout="responsive"></amp-img>
-[/sourcecode]
+```
 
 詳しくは、[レイアウトとメディアクエリ](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#element-media-queries) をご覧ください。
 
@@ -89,14 +89,14 @@ AMP では、一連の [レイアウト](../../../documentation/guides-and-tutor
 
 例:
 
-[sourcecode:html]
+```html
 <amp-img src="card.jpg"
     noloading
     height="190"
     width="297"
     layout="responsive">
 </amp-img>
-[/sourcecode]
+```
 
 ## on
 
@@ -106,18 +106,18 @@ AMP では、一連の [レイアウト](../../../documentation/guides-and-tutor
 
 構文:
 
-[sourcecode:text]
+```text
 eventName:targetId[.methodName[(arg1=value, arg2=value)]]
-[/sourcecode]
+```
 
 例:
 
-[sourcecode:html]
-<button on="tap:my-lightbox">ライトボックスを開く</button>
+```html
+<button on="tap:my-lightbox">Open lightbox</button>
 <amp-lightbox id="my-lightbox" layout="nodisplay">
   ...
 </amp-lightbox>
-[/sourcecode]
+```
 
 詳しくは、[AMP のアクションとイベントについてのページ](amp-actions-and-events.md) をご覧ください。
 
@@ -129,11 +129,11 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 
 例:
 
-[sourcecode:html]
+```html
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
   <amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
-[/sourcecode]
+```
 
 詳しくは、[プレースホルダとフォールバック](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md) をご覧ください。
 
@@ -143,28 +143,37 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 
 例:
 
-[sourcecode:html]
+```html
 <amp-img src="amp.png"
     width="400" height="300"
     layout="responsive"
     sizes="(min-width: 320px) 320px, 100vw">
 </amp-img>
-[/sourcecode]
+```
+
+次のネストされた`img`タグを生成します。
+
+```html
+<img decoding="async"
+    src="amp.png"
+    sizes="(min-width: 320px) 320px, 100vw"
+    class="i-amphtml-fill-content i-amphtml-replaced-content">
+```
 
 詳しくは、[srcset、sizes、heights を使った画像読み込みについての説明](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md) をご覧ください。
 
-## width と height
+## <code>width</code> と <code>height</code> <a></a>
 
 一部の [レイアウト](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) では、AMP コンポーネントに、整数のピクセル値を含む `width` と `height` の属性を指定する必要があります。
 
 例:
 
-[sourcecode:html]
+```html
 <amp-anim width="245"
     height="300"
     src="/img/cat.gif"
-    alt="猫のアニメーション">
+    alt="cat animation">
 </amp-anim>
-[/sourcecode]
+```
 
 詳しくは、[レイアウトとメディアクエリ](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) および [レイアウトの仕様](amp-html-layout/index.md) をご覧ください。

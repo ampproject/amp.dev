@@ -1,0 +1,57 @@
+@import '_variables.scss';
+@import '_functions.scss';
+
+@import 'components/atoms/_text.scss';
+
+.validation-result {
+
+  &-card {
+    display: flex;
+    background-color: color('white');
+    padding: 25px;
+    margin-bottom: 50px;
+    border-radius: 4px;
+    box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.93);
+
+    h2 {
+      @include txt-font-accent;
+      @include txt-1;
+      margin-top: 0;
+    }
+
+    svg {
+      display: block;
+      flex: 1 0 auto;
+      width: 40px;
+      height: 40px;
+      margin-right: 24px;
+    }
+
+    &.valid {
+
+      strong {
+        color: color('japan-laurel');
+      }
+    }
+
+    &.invalid {
+
+      strong {
+        color: color('guardsman-red');
+      }
+    }
+  }
+
+  & > * {
+    transition: opacity 0.3s ease, transform 0.5s ease;
+  }
+
+  &.loading > * {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  &.loading + #error-list {
+    opacity: 0;
+  }
+}

@@ -5,8 +5,6 @@ $titles:
 $view: /views/custom.j2
 description: 'Whether you are a publisher, e-commerce company, storyteller, advertiser or email sender, AMP makes it easy to create great experiences on the web. Use AMP to build websites, stories, ads and emails.'
 
-news: !g.yaml /shared/data/blog.yaml
-
 benefits: !g.yaml /shared/data/benefits.yaml
 
 format_explainer:
@@ -52,9 +50,6 @@ success_stories:
   - !g.doc /content/amp-dev/about/success-stories/carved.yaml
 ---
 {% do doc.styles.addCssFile('css/components/templates/home.css') %}
-{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
-{% do doc.amp_dependencies.add('amp-animation', '0.1') %}
-{% do doc.amp_dependencies.add('amp-iframe', '0.1') %}
 
 <main class="ap--main ap-t-home">
   {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
@@ -62,21 +57,19 @@ success_stories:
     <div class="ap-o-stage">
       <div class="ap--container-fluid">
         <div class="ap-o-stage-content">
-            <h1 class="ap-o-stage-content-headline">AMP is a web component framework to easily create <span style="white-space: nowrap;">user-first</span><br> {% include 'views/partials/rolling-formats.j2' %}</h1>
-            <a href="documentation/guides-and-tutorials/index.html" class="ap-o-stage-content-button ap-a-btn">Get started</a>
+          <h1 class="ap-o-stage-content-headline">{{ _('AMP is a web component framework to easily create <span style="white-space: nowrap;">user-first</span><br>') }} {% include 'views/partials/rolling-formats.j2' %}</h1>
+          <a href="documentation/index.html" class="ap-o-stage-content-button ap-a-btn">{{ _('Get started') }}</a>
         </div>
       </div>
     </div>
 
     {% with %}
     {% set case_band_images = [
-      {"src": "/static/img/case-band-image-2.jpg", "width": "519", "height": "931"},
-      {"src": "/static/img/case-band-image-1.png", "width": "711", "height": "826"},
-      {"src": "/static/img/case-band-image-5.jpg", "width": "923", "height": "592"},
-      {"src": "/static/img/case-band-image-4.png", "width": "738", "height": "890"},
-      {"src": "/static/img/case-band-image-3.jpg", "width": "860", "height": "554"},
-      {"src": "/static/img/case-band-image-6.jpg", "width": "531", "height": "467"},
-      {"src": "/static/img/case-band-image-7.jpg", "width": "478", "height": "828"}
+      {"src": "/static/img/case-band-image-2.jpg", "width": "106", "height": "190"},
+      {"src": "/static/img/case-band-image-1.png", "width": "131", "height": "152"},
+      {"src": "/static/img/case-band-image-5.jpg", "width": "180", "height": "115"},
+      {"src": "/static/img/case-band-image-4.jpg", "width": "144", "height": "214"},
+      {"src": "/static/img/case-band-image-3.jpg", "width": "162", "height": "104"}
       ]
     %}
     {% include 'views/partials/case-band.j2' %}
@@ -87,16 +80,18 @@ success_stories:
     {% do doc.styles.addCssFile('css/components/organisms/news.css') %}
     {% do doc.styles.addCssFile('css/components/molecules/copy.css') %}
 
+    [% set posts = []|importBlog %]
+    [% if posts|length %]
     <div class="ap-m-copy">
-      <h2>The latest news</h2>
-      <p>Don't want to miss any of the great stuff that happens around AMP? Then always be first in line and subscribe to our newsletter!</p>
+      <h2>{{ _('The latest news') }}</h2>
+      <p>{{ _('Don\'t want to miss any of the great stuff that happens around AMP? Then always be first in line and subscribe to our newsletter!') }}</p>
 
       <a class="ap-m-lnk ap-m-lnk-square ap--newsletter-double" href="https://services.google.com/fb/forms/ampnewsletter-doubleopt-in/">
         <div class="ap-a-ico ap-m-lnk-icon">
           {% do doc.icons.useIcon('icons/external.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
         </div>
-        <span class="ap-m-lnk-text">Subscribe</span>
+        <span class="ap-m-lnk-text">{{ _('Subscribe') }}</span>
       </a>
 
       <a class="ap-m-lnk ap-m-lnk-square ap--newsletter" href="https://services.google.com/fb/forms/ampnewsletter/">
@@ -104,42 +99,47 @@ success_stories:
           {% do doc.icons.useIcon('icons/external.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
         </div>
-        <span class="ap-m-lnk-text">Subscribe</span>
+        <span class="ap-m-lnk-text">{{ _('Subscribe') }}</span>
       </a>
     </div>
 
     <div class="ap-o-news">
-      <div class="ap-o-news-list">
-        {% for news in doc.news.entries %}
-        <a class="ap-o-news-item" href="{{ news.url }}">
+      <amp-carousel class="ap-o-news-list"
+          height="460"
+          layout="fixed-height"
+          type="carousel"
+          role="region"
+          aria-label="{{ _('News') }}">
+        [% for post in posts %]
+        <a class="ap-o-news-item" href="[= post.url =]">
           <div class="ap-o-news-card">
-            <div class="ap-o-news-title">{{ news.title }}</div>
+            <div class="ap-o-news-title">[= post.title =]</div>
             <div class="ap-o-news-image">
-              {% if news.image and news.image != '' %}
-              <amp-img
-                class="ap--media"
-                src="{{ news.image }}"
-                layout="responsive"
-                width="16"
-                height="9"
-                alt="{{ news.title }}">
+              [% if post.image and post.image != '' and not post.image.includes('AMP_Blog_Square') %]
+              <amp-img class="ap--media"
+                  src="[= post.image =]"
+                  layout="responsive"
+                  width="160"
+                  height="90"
+                  alt="[= post.title =]">
               </amp-img>
-              {% else %}
+              [% else %]
               <div class="ap-o-news-icon">
                 <div class="ap-a-ico">
                   {% do doc.icons.useIcon('icons/news.svg') %}
                   <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#news"></use></svg>
                 </div>
               </div>
-              {% endif %}
+              [% endif %]
             </div>
-            <h5 class="ap-o-news-headline">{{ news.headline }}</h5>
-            <div class="ap-o-news-date">{{ news.date }}</div>
+            <h5 class="ap-o-news-headline">[= post.headline|safe =]</h5>
+            <div class="ap-o-news-date">[= post.date =]</div>
           </div>
         </a>
-        {% endfor %}
-      </div>
+        [% endfor %]
+      </amp-carousel>
     </div>
+    [% endif %]
   </section>
 
   <section class="ap--format-explainer">
@@ -211,8 +211,8 @@ success_stories:
         {% for format in doc.format_explainer %}
         <div class="ap-o-format-explainer-content-{{ format.name }} ap-m-copy {{ 'active' if loop.index == 1 }}"
           [class]="chosenFormat.activeFormat == '{{ format.name }}' ? 'ap-o-format-explainer-content-{{ format.name }} ap-m-copy active' : 'ap-o-format-explainer-content-{{ format.name }} ap-m-copy'">
-          <h2 class="ap-o-format-explainer-headline">{{ format.headline }}</h2>
-          <p class="ap-o-format-explainer-copy">{{ format.description }}</p>
+          <h2 class="ap-o-format-explainer-headline">{{ _(format.headline) }}</h2>
+          <p class="ap-o-format-explainer-copy">{{ _(format.description) }}</p>
         </div>
         {% endfor %}
       </div>
@@ -227,7 +227,7 @@ success_stories:
             {% do doc.icons.useIcon('icons/amp-' + format.name + '.svg') %}
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
           </div>
-          <span class="ap-o-format-explainer-button-text">AMP {{ format.name }}</span>
+          <span class="ap-o-format-explainer-button-text">AMP {{ _(format.name) }}</span>
         </button>
         {% endfor %}
       </div>
@@ -241,7 +241,7 @@ success_stories:
               {% do doc.icons.useIcon('icons/internal.svg') %}
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
             </div>
-            <span class="ap-m-lnk-text">Learn more about AMP {{ format.name }}</span>
+            <span class="ap-m-lnk-text">{{ _('Learn more about AMP') }} {{ format.name }}</span>
           </a>
         </div>
         {% endfor %}
@@ -253,19 +253,18 @@ success_stories:
     {% do doc.styles.addCssFile('css/components/organisms/sampler.css') %}
     {% set playground_url = doc.pod.podspec.base_urls.playground %}
 
-    {# Can't use |tojson filter here since URLs need to be built #}
+    {% set sampler = [] %}
+    {% for sample in doc.sampler %}
+      {% do sampler.append({
+        'title': sample.title,
+        'url': sample.url,
+        'embedUrl': playground_url + '/embed?mode=responsive&url=' + (playground_url + sample.url)|urlencode + '&line=' + sample.line,
+        'standaloneUrl': playground_url + '/?url=' + (playground_url + sample.url)|urlencode + '&line=' + sample.line,
+      }) %}
+    {% endfor %}
     <amp-state id="sampler">
       <script type="application/json">
-      [{% for sample in doc.sampler %}
-        {% set embed_url = playground_url + '/embed?mode=responsive&line=' + sample.line + '&url=' + sample.url %}
-        {% set standalone_url = playground_url + '/?url=' + sample.url %}
-        {
-          "title": "{{ sample.title }}",
-          "url": "{{ sample.url|safe }}",
-          "embedUrl": "{{ embed_url|safe }}",
-          "standaloneUrl": "{{ standalone_url|safe }}"
-        }{{ "," if not loop.last }}
-      {% endfor %}]
+        {{ sampler|tojson }}
       </script>
     </amp-state>
     <amp-state id="activeSample">
@@ -280,13 +279,13 @@ success_stories:
           {% do doc.icons.useIcon('icons/logo.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
         </div>
-        <h2>AMP in action</h2>
+        <h2>{{ _('AMP in action') }}</h2>
       </div>
     </div>
 
     <div class="ap--container-fluid">
       <div class="ap-m-copy">
-        <p>AMP is an open-source HTML framework that provides a straightforward way to create web pages that are fast, smooth-loading and prioritize the user-experience above all else. Can't believe it? Try it out for yourself in the playground below:</p>
+        <p>{{ _('AMP is an open-source HTML framework that provides a straightforward way to create web pages that are fast, smooth-loading and prioritize the user-experience above all else. Can\'t believe it? Try it out for yourself in the playground below:') }}</p>
       </div>
 
       <div class="ap-o-sampler">
@@ -334,7 +333,7 @@ success_stories:
               {% do doc.icons.useIcon('icons/internal.svg') %}
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
             </div>
-            <span class="ap-m-lnk-text">Open in AMP Playground</span>
+            <span class="ap-m-lnk-text">{{ _('Open in AMP Playground') }}</span>
           </a>
         </div>
       </div>
@@ -347,7 +346,7 @@ success_stories:
 
       <div class="ap-o-benefits-overview-list ap-o-benefits-overview-list-developers">
 
-        <h2>Business Benefits</h2>
+        <h2>{{ _('Business Benefits') }}</h2>
 
         {% for benefit in doc.benefits.home.business %}
 
@@ -357,8 +356,8 @@ success_stories:
             <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ benefit.icon }}"></use></svg>
           </div>
           <div class="ap-m-benefit-text">
-            <span class="ap-m-benefit-text-headline">{{ benefit.headline }}</span>
-            <span class="ap-m-benefit-text-copy">{{ benefit.text }}</span>
+            <span class="ap-m-benefit-text-headline">{{ _(benefit.headline) }}</span>
+            <span class="ap-m-benefit-text-copy">{{ _(benefit.text) }}</span>
           </div>
         </div>
 
@@ -367,7 +366,7 @@ success_stories:
 
       <div class="ap-o-benefits-overview-list ap-o-benefits-overview-list-business">
 
-        <h2>Developer Benefits</h2>
+        <h2>{{ _('Developer Benefits') }}</h2>
 
         {% for benefit in doc.benefits.home.developer %}
 
@@ -377,8 +376,8 @@ success_stories:
             <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ benefit.icon }}"></use></svg>
           </div>
           <div class="ap-m-benefit-text">
-            <span class="ap-m-benefit-text-headline">{{ benefit.headline }}</span>
-            <span class="ap-m-benefit-text-copy">{{ benefit.text }}</span>
+            <span class="ap-m-benefit-text-headline">{{ _(benefit.headline) }}</span>
+            <span class="ap-m-benefit-text-copy">{{ _(benefit.text) }}</span>
           </div>
         </div>
 
@@ -386,12 +385,12 @@ success_stories:
       </div>
 
       <div class="ap-o-benefits-overview-link">
-        <a href="documentation/guides-and-tutorials/index.html" class="ap-m-lnk ap-m-lnk-square">
+        <a href="documentation/index.html" class="ap-m-lnk ap-m-lnk-square">
           <div class="ap-a-ico ap-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           </div>
-          <span class="ap-m-lnk-text">Get started with AMP</span>
+          <span class="ap-m-lnk-text">{{ _('Get started with AMP') }}</span>
         </a>
       </div>
 
@@ -406,21 +405,21 @@ success_stories:
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use></svg>
        </div>
         <div class="ap-a-img ap-a-img-static">
-          <amp-img class="ap--media" src="/static/img/success-stories/washington_post/washington_post_logo.png" layout="responsive" height="197" width="1280" alt="placeholder" />
+          <amp-img src="/static/img/success-stories/washington_post/washington_post_logo.png" layout="responsive" height="23" width="150" alt="placeholder" />
         </div>
       </div>
       <div class="ap-m-quote-quote">
         <blockquote>
-          <p class="ap-a-txt">As a source for breaking news and information, AMP stories allows us to showcase our quality journalism when there are multiple elements we want to bring together. Combining reporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage.</p>
+          <p class="ap-a-txt">{{ _('As a source for breaking news and information, Web Stories allow us to showcase our quality journalism when there are multiple elements we want to bring together. Combining reporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage.') }}</p>
         </blockquote>
-        <p>Greg Manifold, Design Director of The Washington Post</p>
+        <p>{{ _('Greg Manifold, Design Director of The Washington Post') }}</p>
 
         <a href="about/success-stories/washingtonpost.yaml" class="ap-m-lnk">
           <div class="ap-a-ico ap-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           </div>
-          <span class="ap-m-lnk-text">Read Success Story</span>
+          <span class="ap-m-lnk-text">{{ _('Read Success Story') }}</span>
         </a>
       </div>
     </div>
@@ -428,7 +427,8 @@ success_stories:
 
   <section class="ap--case-grid">
     <div class="ap--container">
-      <h1 class="ap-o-case-grid-headline">Build anything with AMP.</h1>
+      <h1 class="ap-o-case-grid-headline">{{ _('Build anything with AMP.') }}</h1>
+
     </div>
 
     <div class="ap--container-fluid">
@@ -459,15 +459,15 @@ success_stories:
     </div>
 
     <div class="ap-m-copy">
-      <h2>Explore AMP<br/> success stories</h2>
-      <p>Don't take our word for it - read case studies from your industry and see how AMP has produced positive results.</p>
+      <h2>{{ _('Explore AMP<br/> success stories') }}</h2>
+      <p>{{ _('Don\'t take our word for it - read case studies from your industry and see how AMP has produced positive results.') }}</p>
 
       <a href="about/success-stories/index.html" class="ap-m-lnk ap-m-lnk-square">
         <div class="ap-a-ico ap-m-lnk-icon">
           {% do doc.icons.useIcon('icons/internal.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
         </div>
-        <span class="ap-m-lnk-text">See all success stories</span>
+        <span class="ap-m-lnk-text">{{ _('See all success stories') }}</span>
       </a>
     </div>
   </section>
@@ -475,7 +475,7 @@ success_stories:
   {% do doc.styles.addCssFile('css/components/molecules/shift-card.css') %}
   <section class="ap--shift-cards">
     <div class="ap--container">
-      <h2 class="ap--shift-cards-headline">By the community,<br/>for the community</h2>
+      <h2 class="ap--shift-cards-headline">{{ _('By the community,<br/>for the community') }}</h2>
     </div>
 
     <div class="ap--shift-cards-grid ap--container">
@@ -484,31 +484,29 @@ success_stories:
         <a class="ap-m-shift-card-linking" href="https://github.com/orgs/ampproject/people">
           <div class="ap-m-shift-card-image">
             <amp-img
-              class="ap--media"
               src="/static/img/dummy-collabo-image-1.png"
               layout="responsive"
-              width="16"
-              height="9">
+              width="365"
+              height="205">
             </amp-img>
           </div>
-          <h3 class="ap-m-shift-card-headline">Many ways for you to contribute</h3>
-          <p class="ap-m-shift-card-copy">The AMP Project would not be possible without help from all members of the community whether you are a developer, content creator or provider of services relevant to AMP.</p>
+          <h3 class="ap-m-shift-card-headline">{{ _('Many ways for you to contribute') }}</h3>
+          <p class="ap-m-shift-card-copy">{{ _('The AMP Project would not be possible without help from all members of the community whether you are a developer, content creator or provider of services relevant to AMP.') }}</p>
         </a>
       </div>
 
       <div class="ap-m-shift-card ap-m-shift-card-shadow ap-m-shift-card-hover ap-m-shift-card-2">
-        <a class="ap-m-shift-card-linking" href="https://github.com/ampproject/docs/issues">
+        <a class="ap-m-shift-card-linking" href="https://github.com/ampproject/amphtml/issues">
           <div class="ap-m-shift-card-image">
             <amp-img
-              class="ap--media"
               src="/static/img/dummy-collabo-image-2.png"
               layout="responsive"
-              width="16"
-              height="9">
+              width="365"
+              height="205">
             </amp-img>
           </div>
-          <h3 class="ap-m-shift-card-headline">Reporting issues with AMP</h3>
-          <p class="ap-m-shift-card-copy">If you have feedback or are experiencing technical issues with AMP, please file it using the issue tracker.</p>
+          <h3 class="ap-m-shift-card-headline">{{ _('Reporting issues with AMP') }}</h3>
+          <p class="ap-m-shift-card-copy">{{ _('If you have feedback or are experiencing technical issues with AMP, please file it using the issue tracker.') }}</p>
         </a>
       </div>
 
@@ -518,9 +516,9 @@ success_stories:
   <section class="ap--get-started ap--container">
     {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
     <div class="ap-m-copy ap-m-copy-center">
-      <h2>Build your first AMP page now</h2>
-      <p>You don’t need to download AMP and no installation is required.<br/> Because it is a open-source project, it is free!</p>
-      <a href="documentation/guides-and-tutorials/index.html" class="ap-a-btn">Get started</a>
+      <h2>{{ _('Build your first AMP page now') }}</h2>
+      <p>{{ _('You don’t need to download AMP and no installation is required.<br/> Because it is an open-source project, it is free!') }}</p>
+      <a href="documentation/guides-and-tutorials/index.html" class="ap-a-btn">{{ _('Get started') }}</a>
     </div>
   </section>
 </main>

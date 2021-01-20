@@ -9,7 +9,7 @@ leveled: true
 
 It’s our team’s first day building out our Chico’s Cheese Bike site. So far, the site is a basic HTML page, with a header containing the title of our site, an image of one of our bikes, and some marketing text.
 
-{{ image('/static/img/courses/beginner/image17.png', 824, 790,  align='center half', caption='Our basic HTML website') }}
+{{ image('/static/img/courses/beginner/image17.png', 275, 263,  align='center half', caption='Our basic HTML website') }}
 
 In your Glitch project, open index.html and verify that the HTML looks like this:
 
@@ -104,7 +104,7 @@ And don’t worry: This message might seem unclear now, but it’s an easy fix. 
 
 For any other validation error entries, click the link labeled “Learn more.” This link takes you directly from the error description to the corresponding AMP documentation that will assist you in fixing the issue.
 
-{{ image('/static/img/courses/beginner/image21.webp', 1024, 684, align='center', caption='AMP documentation reached via the “Learn more” link in the AMP Validator.') }}
+{{ image('/static/img/courses/beginner/image21.png', 512, 342, align='center', caption='AMP documentation reached via the “Learn more” link in the AMP Validator.') }}
 
 [tip type="read-on"]
 **Note**: Can’t figure out how to correct an error based on the Debug and Learn More options in the AMP Validator extension? Read the full listing of validation errors and suggested corrective actions [here](../../../documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md).
@@ -126,7 +126,7 @@ The following tags are required in AMP pages. Valid AMP pages must:
 
 - Contain a `<meta charset="utf-8">` tag as the first child of their `<head>` tag.
 
-- Contain a `<meta name="viewport" content="width=device-width,minimum-scale=1">` tag inside their `<head>` tag. **Note**: It's also recommended to include `initial-scale=1`.
+- Contain a `<meta name="viewport" content="width=device-width">` tag inside their `<head>` tag. **Note**: It's also recommended to include `initial-scale=1`.
 
 The following rules are specifically for setting up the AMP runtime. Valid AMP pages must also:
 
@@ -157,7 +157,7 @@ CSS customizes the look of your websites. You will almost always add custom styl
 
 - An AMP page may only have one`<style amp-custom>` tag (decorated style tag).
 
-- The page can include no more than 50K of CSS.
+- The page can include no more than 75K of CSS.
 
 - The `!important` rule is restricted.
 
@@ -179,7 +179,7 @@ To practice adding custom styles to your AMP page, add the following `<style amp
 </style>
 {% endraw %}[/sourcecode]
 
-{{ image('/static/img/courses/beginner/image10.png', 738, 1290, align='center third', caption='Custom CSS affecting our page.') }}
+{{ image('/static/img/courses/beginner/image10.png', 185, 323, align='center third', caption='Custom CSS affecting our page.') }}
 
 ## Exercise 2: Converting the rest of our HTML Page
 
@@ -193,7 +193,7 @@ Using the [documentation](../../../documentation/guides-and-tutorials/start/crea
 
 ### Solution
 
-The solution can be found in [this](https://glitch.com/~hungry-modem) Glitch example. The portion of the page containing the changes should look like this:
+The solution can be found in <a href="https://glitch.com/~hungry-modem" target="_blank">this Glitch</a> example. The portion of the page containing the changes should look like this:
 
 [sourcecode:html]
 {% raw %}<head>
@@ -240,7 +240,7 @@ It's our team's first day building out our Chico's Cheese Bike site. So far, the
 
 {{ image('/static/img/courses/beginner/image17.png', 824, 790,  align='center half', caption='Our basic HTML website') }}
 
-In [your](https://glitch.com/edit/#!/nosy-leech) Glitch project, open `index.html` and verify that the HTML looks like this:
+In <a href="https://glitch.com/edit/#!/nosy-leech" target="_blank">your</a> Glitch project, open `index.html` and verify that the HTML looks like this:
 
 [sourcecode:html]
 {% raw %}<!DOCTYPE html>
@@ -350,7 +350,7 @@ The following tags are required in AMP pages. Valid AMP pages must:
 
 - Contain a `<meta charset="utf-8">` tag as the first child of their `<head>` tag.
 
-- Contain a `<meta name="viewport" content="width=device-width,minimum-scale=1">` tag inside their `<head>` tag. **Note**: It's also recommended to include `initial-scale=1`.
+- Contain a `<meta name="viewport" content="width=device-width"> **Note**: It's also recommended to include `initial-scale=1`.
 
 The following rules are specifically for setting up the AMP runtime. Valid AMP pages must also:
 
@@ -374,7 +374,7 @@ The following rules are specifically for setting up the AMP runtime. Valid AMP p
 The AMP boilerplate must be copied and pasted as-is. The code is minified above, but it also works if you are using an auto-formatter on your code, such as Prettier. Make sure not to change the order of text inside of the tags above or change the values. If you want to know more about what these tags in the AMP boilerplate mean and why they are important, you can read about them in the [appendix]({{g.doc('/content/amp-dev/documentation/courses/beginning-course/appendix.md', locale=doc.locale).url.path}}).
 
 [tip type="note"]
-**Note**: You can simply start your future AMP pages with [this](/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup/) boilerplate. The code is minified above, but it also works if you are using an auto-formatter on your code, such as Prettier. Make sure not to change the order of text inside of the tags above or change the values. If you want to know more about what these tags in the AMP boilerplate mean and why they are important, you can read about them in the [appendix]({{g.doc('/content/amp-dev/documentation/courses/beginning-course/appendix.md', locale=doc.locale).url.path}}).
+**Note**: You can simply start your future AMP pages with [this](/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md) boilerplate. The code is minified above, but it also works if you are using an auto-formatter on your code, such as Prettier. Make sure not to change the order of text inside of the tags above or change the values. If you want to know more about what these tags in the AMP boilerplate mean and why they are important, you can read about them in the [appendix]({{g.doc('/content/amp-dev/documentation/courses/beginning-course/appendix.md', locale=doc.locale).url.path}}).
 [/tip]
 
 ## CSS and AMP
@@ -385,7 +385,7 @@ To ensure good performance and to let AMP do what it needs to, AMP places some r
 
 - An AMP page may only have one`<style amp-custom>` tag (decorated style tag).
 
-- The page can include no more than 50K of CSS.
+- The page can include no more than 75K of CSS.
 
 - The `!important` rule is restricted.
 
@@ -417,7 +417,7 @@ Using the [documentation]({{g.doc('/content/amp-dev/documentation/guides-and-tut
 
 ### Solution
 
-The solution can be found in [this](https://glitch.com/~hungry-modem) Glitch example. The portion of the page containing the changes should look like this:
+The solution can be found in <a href="https://glitch.com/~hungry-modem" target="_blank">this Glitch</a> example. The portion of the page containing the changes should look like this:
 
 [sourcecode:html]
 {% raw %}<head>

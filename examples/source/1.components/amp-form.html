@@ -8,14 +8,14 @@ author: kul3r4
 <!--
   ## Introduction
 
-  The [amp-form](/content/amp-dev/documentation/components/reference/amp-form.md) extension allows
+  The [`amp-form`](/content/amp-dev/documentation/components/reference/amp-form-v0.1.md) extension allows
   the usage of forms and input fields in an AMP document. `amp-form` allows HTTP and XHR (XMLHttpRequest) form submissions. An HTTP form submission loads a new page, while an XHR form submission doesn't require a page reload.
 
   The `amp-form` extension also allows you to render success and error responses with the `submit-success` and `submit-error` special attributes. For details on usage, see the [amp-form documentation on Success/Error response rendering](/content/amp-dev/documentation/components/reference/amp-form.md#success/error-response-rendering).
 -->
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 <head>
   <meta charset="utf-8">
   <title>amp-form</title>
@@ -30,7 +30,7 @@ author: kul3r4
   -->
   <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
   <link rel="canonical" href="<% canonical %>">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <style amp-custom>
   :root {
@@ -60,14 +60,17 @@ author: kul3r4
 </head>
 <body>
   <h2 class="sample-heading">Form Submission with Page Reload</h2>
-  <!-- ## Form submission with page reload -->
   <!--
+    ## Form submission with page reload
+
     Use the `action` attribute to specify a server-endpoint which should handle the form input. This works only for `GET` requests. The URL must be HTTPS.
     The following sample uses `type="search"` to emulate a search. The search button will trigger a page reload.
 
     Read [security considerations](https://github.com/ampproject/amphtml/blob/master/extensions/amp-form/amp-form.md#security-considerations) for best practices when to use `GET` or `POST`.
 
     You can find the code for the server endpoint used in this demo at [/examples/api/amp-form.js](https://github.com/ampproject/docs/blob/future/examples/api/amp-form.js).
+
+    @formats(websites)
   -->
   <form class="sample-form" method="GET" action="/documentation/examples/api/submit-form" target="_top">
     <input type="search" placeholder="Search..." name="search">
@@ -77,7 +80,7 @@ author: kul3r4
   <h2 class="sample-heading">Form Submission with Page Update</h2>
   <!-- ## Form submission with client-side rendering -->
   <!--
-    Use the `action-xhr` attribute to submit the form via XMLHttpRequest (XHR). You can use [amp-mustache](/content/amp-dev/documentation/components/reference/amp-mustache.md) templates to client side render the POST response. It's possible to show custom success or error messages, using data sent by the server endpoint as JSON. For example, if the server sends `{"foo": "bar"}`, you can use use `{{foo}}` in the template to render `bar`.
+    Use the `action-xhr` attribute to submit the form via XMLHttpRequest (XHR). You can use [amp-mustache](/content/amp-dev/documentation/components/reference/amp-mustache-v0.2.md) templates to client side render the POST response. It's possible to show custom success or error messages, using data sent by the server endpoint as JSON. For example, if the server sends `{"foo": "bar"}`, you can use use `{{foo}}` in the template to render `bar`.
 
     The `amp-form` component displays `submit-success` or `submit-error` elements based on the response and renders the template data inside these two elements. The `submit-success` and `submit-error` elements must be direct children of `form`.
   -->
@@ -200,8 +203,9 @@ author: kul3r4
   </form>
 
   <h2 class="sample-heading">Form Verification: <code>as-you-go</code></h2>
-  <!-- ## Form verification -->
   <!--
+    ## Form verification
+
     Form verification enables asynchronous validation of form fields. As a user fills out a form with verification enabled, `amp-form` sends the fields to the `verify-xhr` URL to check their values using logic on the server. If an error is found, such as a username being taken, it will show as a validation error in the form. Read <a href="/content/amp-dev/documentation/components/reference/amp-form.md#verification">here</a> for complete documentation.
 
     Use the `verify-xhr` attribute to enable the form verification feature.
@@ -209,6 +213,8 @@ author: kul3r4
     Form verification can combine with custom error reporting using `visible-when-invalid="customError"`. When amp-form receives errors from the XHR response, it sets the `customError` validity on offending elements. Since AMP uses the [HTML5 Form Constraint Validation API](https://www.w3.org/TR/html5/forms.html#the-constraint-validation-api), it is easy for form verification errors to interact with standard form validation messages.
 
     In the `submit-error` template, you can choose how to render verification error message using the `verifyErrors` list. These will only display if the user submits the form before the asynchronous verification response completes.
+
+    @formats(websites)
   -->
   <form class="sample-form" method="post"
         action-xhr="/documentation/examples/api/verify-form-input-text-xhr"
@@ -274,7 +280,7 @@ author: kul3r4
 
   <!-- ## Input type=date -->
   <!--
-    `amp-form` supports all HTML5 form types with the exception of file and image. It's recommended to use the [`amp-date-picker`](/content/amp-dev/documentation/components/reference/amp-date-picker.md) component for input fields that should contain a date.
+    `amp-form` supports all HTML5 form types with the exception of file and image. It's recommended to use the [`amp-date-picker`](/content/amp-dev/documentation/components/reference/amp-date-picker-v0.1.md) component for input fields that should contain a date.
   -->
   <form class="sample-form" method="post" action-xhr="/documentation/examples/api/submit-form-xhr" target="_top">
     <input name="select-date" type="date" value="2020-12-30">
@@ -475,9 +481,12 @@ author: kul3r4
       </div>
     </form>
     <h2 class="sample-heading">Input type="password"</h2>
-    <!-- ## Input type=password -->
     <!--
+      ## Input type=password
+
       Use `type="password"` for hidden text inputs inside secure `POST` forms.
+
+      @formats(websites)
     -->
     <form class="sample-form" method="post"
       action-xhr="/documentation/examples/api/submit-form-xhr" target="_top">

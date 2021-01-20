@@ -1,0 +1,102 @@
+<!---
+
+author: elisameyer
+
+--->
+<!--
+  ## Introduction
+
+  This example shows how to create recaptcha input using just amp-bind.
+-->
+<!-- -->
+<!doctype html>
+<html ⚡="">
+  <head>
+    <title>amp-bind-recaptcha</title>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <link rel="canonical" href="<% canonical %>">
+    <meta name="viewport" content="width=device-width">
+    <!-- Import `amp-bind` so recaptcha can have multiple states -->
+    <script
+      async
+      custom-element="amp-bind"
+      src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+    ></script>
+    <!-- Recaptcha input used to verify user for `amp-form` -->
+    <script
+      async
+      custom-element="amp-form"
+      src="https://cdn.ampproject.org/v0/amp-form-0.1.js"
+    ></script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  </head>
+  <body>
+    <header>
+      <ol>
+        <li>Type anything in textbox below</li>
+        <li>Answer recaptcha equation correctly</li>
+        <li>Select submit</li>
+      </ol>
+      If you don't know the answer to the equation presented you can refresh the
+      recaptcha equation.
+    </header>
+    <!-- ## Implementation -->
+    <!-- The `amp-state` below defines three different states that the recaptcha equation could be.
+      -->
+    <amp-state id="captcha">
+      <script type="application/json">
+        {
+           "state1": {
+                 "result": "10",
+                 "condition": "+",
+                 "captchaCorrect": "6"
+
+           },
+           "state2": {
+                 "result": "2",
+                 "condition": "-",
+                 "captchaCorrect": "6"
+           },
+           "state3": {
+                 "result": "8",
+                 "condition": "*",
+                 "captchaCorrect": "2"
+           }
+         }
+      </script>
+    </amp-state>
+    <!-- ## Form -->
+    <!-- 
+       Recaptcha forces users to provide the correct input using the `[pattern]` requirement. The `[pattern]` updates dynamically as the state changes. In order for the recaptcha to work on first pass, disable the input until the `amp-bind` `'state'` variable is set (i.e. `[disabled]="!state"`). As another workaround, you could set a default pattern (without brackets) and have the `[pattern]` update as user refreshes the conditional. Upon refresh the `'state'` is updated to provide a new equation.
+    -->
+    <form action="https://www.google.com/" method="get" target="_top">
+      <input
+        name="s"
+        placeholder="Type Anything"
+        type="text"
+        on="input-debounced:AMP.setState({state: 'state1'})"
+        required
+      />
+        <input
+          [disabled]="!state"
+          disabled
+          type="text"
+          name=""
+          [pattern]="captcha[state].captchaCorrect"
+          title="AMP recaptcha input"
+          required
+        />
+        <span [text]="captcha[state].condition">+</span>
+        <span>4</span>
+        <span>=</span>
+        <span [text]="captcha[state].result">10</span>
+        <span on="tap:AMP.setState({state: (state == 'state1' ? 'state2' : state == 'state2' ? 'state3': 'state1')})"
+          role="button"
+          tabindex="0"
+        >
+        <amp-img src="https://fonts.gstatic.com/s/i/materialicons/autorenew/v4/24px.svg" width="24" height="24"></amp-img>
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

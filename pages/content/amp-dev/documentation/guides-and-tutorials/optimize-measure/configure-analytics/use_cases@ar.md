@@ -72,7 +72,7 @@ $title: حالات الاستخدام
 </amp-analytics>
 ```
 
-## تتبع النقرات على الصفحة
+## تتبع النقرات على الصفحة <a name="تتبع-النقرات-على-الصفحة"></a>
 
 تعرّف على كيفية تتبع النقرات على الصفحة باستخدام
 [<span dir="ltr" class="nowrap">amp-analytics</span>](../../../../documentation/components/reference/amp-analytics.md)،
@@ -140,7 +140,7 @@ $title: حالات الاستخدام
 </amp-analytics>
 ```
 
-## تتبع التمرير
+## تتبع التمرير <a name="تتبع-التمرير"></a>
 
 تتبع التمرير عبر الصفحة باستخدام [<span dir="ltr" class="nowrap">amp-analytics</span>](../../../../documentation/components/reference/amp-analytics.md).
 يستخدم النموذج التالي السمة `scrollspec` لإرسال حدث `scroll`
@@ -172,7 +172,7 @@ $title: حالات الاستخدام
 </amp-analytics>
 ```
 
-## تتبع التفاعلات الاجتماعية
+## تتبع التفاعلات الاجتماعية <a name="تتبع-التفاعلات-الاجتماعية"></a>
 
 تعرّف على كيفية تتبع التفاعلات الاجتماعية باستخدام
 [<span dir="ltr" class="nowrap">amp-analytics</span>](../../../../documentation/components/reference/amp-analytics.md)،

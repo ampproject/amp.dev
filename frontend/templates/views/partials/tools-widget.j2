@@ -7,8 +7,20 @@
 <section class="ap--content">
   <div class="ap--container-fluid">
     <div class="ap-m-copy ap-m-copy-left-small">
-      <h1 id="tools">{% if format == 'email' %}Start sending AMP Emails{% else %}Start creating {{ format }}{% endif %}</h1>
-      <h5>Pick one of several editors to start creating {{ format }} without any coding involved.</h5>
+        {% if format == 'ads' %}
+          <h1 id="tools">{{ _('Start creating ads') }}</h1>
+          <h5>{{ _('Pick one of several editors to start creating ads without any coding involved.', fmt=format) }}</h5>
+        {% elif format == 'email' %}
+          <h1 id="tools">{{ _('Start sending AMP Emails') }}</h1>
+          <h5>{{ _('Pick one of several editors to start creating email without any coding involved.', fmt=format) }}</h5>
+        {% elif format == 'stories' %}
+          <h1 id="tools">{{ _('Start creating stories') }}</h1>
+          <h5>{{ _('Pick one of several editors to start creating stories without any coding involved.', fmt=format) }}</h5>
+          <p>{{ _('Looking to get your Story creation resource listed? <a href="https://github.com/ampproject/amp.dev/issues/new?assignees=&labels=&template=story_creation_tool.md&title=">Create a request here!</a>') }}</p> 
+        {% elif format == 'websites' %}
+          <h1 id="tools">{{ _('Start creating websites') }}</h1>
+          <h5>{{ _('Pick one of several editors to start creating websites without any coding involved.', fmt=format) }}</h5>
+        {% endif %}
     </div>
   </div>
 </section>
@@ -33,7 +45,7 @@
           {% do doc.icons.useIcon('icons/internal.svg') %}
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
         </div>
-        <span class="ap-m-lnk-text">Discover all tools</span>
+        <span class="ap-m-lnk-text">{{ _('Discover all tools') }}</span>
       </a>
     </div>
   </div>

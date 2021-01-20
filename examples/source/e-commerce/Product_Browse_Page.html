@@ -9,16 +9,16 @@ author: aghassemi
 
   <!-- ## Introduction -->
 
-  <!-- This is a sample template for a news article in AMP. It demonstrates the usage of AMP components which works well in news articles. Examples include social sharing, image galleries, personalized content, ads, and more. -->
+  <!-- This is a sample template for a Product Browse Page. It demonstrates the usage of AMP components which works well in e-commerce websites. Examples include social sharing, image galleries, personalized content, ads, and more. -->
   <!-- -->
   <!doctype html>
-  <html ⚡>
+  <html ⚡ lang="en">
     <head>
       <meta charset="utf-8">
       <title>Product Browse Page</title>
       <script async src="https://cdn.ampproject.org/v0.js"></script>
       <!--
-        Additionally used AMP components must be imported in the header. Import `amp-carousel` to create a list of auto advancing promotions.
+        Additionally used AMP components must be imported in the header. Import `amp-carousel` to create a list of auto advancing products.
       -->
       <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
       <!-- Import `amp-list` to implement auto suggest search -->
@@ -40,7 +40,7 @@ author: aghassemi
       <!-- Import `amp-selector` to implement auto suggest search -->
       <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
       <link rel="canonical" href="<% canonical %>">
-      <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+      <meta name="viewport" content="width=device-width">
       <style amp-custom>
           :root {
             --color-text-light: #fff;
@@ -211,7 +211,7 @@ author: aghassemi
         <a href="#">More</a>
       </amp-sidebar>
       <!-- ## Header with search -->
-      <!-- AMP supports forms, which means you can directly integrate a product search into your AMPs. Here we implemented autosuggest, try searching for "Apple" and you should be able to select "Apple". Take a look at [autosuggest sample](/advanced/autosuggest/) for more details how autosuggest is implemented.
+      <!-- AMP supports forms, which means you can directly integrate a product search into your AMPs. Here we implemented autocomplete, try searching for "Apple" and you should be able to select "Apple". Take a look at [autosuggest sample](/documentation/examples/interactivity-dynamic-content/autosuggest_form/) for more details how autosuggest is implemented.
 
       AMP doesn't support custom Javascript, but you can use CSS3 animations to enrich your page. The expanding text field when the search box is focused is implemented with CSS only. -->
       <div class="header">
@@ -302,7 +302,7 @@ author: aghassemi
       </div>
       <!-- ## A hero slider -->
       <!-- The `amp-carousel` component can be used to quickly create full-bleed, auto-advancing slideshows showcasing your latest promotions. We
-        use the [amp-fit-text](/content/amp-dev/documentation/components/reference/amp-fit-text.md) component for the slide headers to automatically size the text to fit into the carousel. -->
+        use the [amp-fit-text](/content/amp-dev/documentation/components/reference/amp-fit-text-v0.1.md) component for the slide headers to automatically size the text to fit into the carousel. -->
       <amp-carousel id="hero-images" width="1024" height="480" layout="responsive" type="slides" autoplay>
         <a href="#">
           <amp-img src="/static/samples/img/product_hero1_1024x683.jpg" layout="fill" alt="product hero 1" attribution="visualhunt"></amp-img>

@@ -1,0 +1,1 @@
+Ini adalah perbedaan skor untuk halaman yang diberikan di asal dan mitra cache AMP-nya, jika ada. Status "Tidak ada" dilaporkan jika halaman asal memiliki kinerja yang sebanding dengan halaman yang disimpan di dalam cache, sedangkan status "---" dilaporkan jika tidak ada data yang tersedia tentang halaman yang disimpan di dalam cache.

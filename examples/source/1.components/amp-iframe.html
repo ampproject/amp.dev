@@ -6,13 +6,13 @@ author: sebastianbenz
 <!--
   ## Introduction
 
-  Use [amp-iframe](/content/amp-dev/documentation/components/reference/amp-iframe.md) for embedding content into AMP files via iframe. Useful for displaying content otherwise not (yet) supported by AMP.
+  Use [`amp-iframe`](/content/amp-dev/documentation/components/reference/amp-iframe-v0.1.md) for embedding content into AMP files via iframe. Useful for displaying content otherwise not (yet) supported by AMP.
 
-  Note: We're using [Vimeo](https://vimeo.com/) embeds here for an example, but any kind of content works. If you're interested in embedding Vimeo in AMP, it's recommended that you use the provided [`amp-vimeo` component](/content/amp-dev/documentation/components/reference/amp-vimeo.md) instead.
+  Note: We're using [Vimeo](https://vimeo.com/) embeds here for an example, but any kind of content works. If you're interested in embedding Vimeo in AMP, it's recommended that you use the provided [`amp-vimeo` component](/content/amp-dev/documentation/components/reference/amp-vimeo-v0.1.md) instead.
 -->
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 <head>
   <meta charset="utf-8">
   <title>amp-iframe</title>
@@ -22,14 +22,14 @@ author: sebastianbenz
   <!-- You can use the `amp-bind` extension to dynamically change an iframe src. -->
   <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
   <link rel="canonical" href="<% canonical %>">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <style amp-custom>
-#sample-resizable-iframe div[overflow] {
-  text-align: center;
-  background: #f9f7f7;
-  line-height: 36px;
-}
+    #sample-resizable-iframe div[overflow] {
+      text-align: center;
+      background: #f9f7f7;
+      line-height: 36px;
+    }
   </style>
 </head>
 <body>

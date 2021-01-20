@@ -17,12 +17,12 @@ author: sebastianbenz
 -->
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
   <head>
     <meta charset="utf-8">
     <title>Favorite Button</title>
     <link rel="canonical" href="<% canonical %>">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <!-- ## Setup -->
     <!-- We use the `amp-list` component to dynamically render the initial state of the favorite button. -->
@@ -137,7 +137,7 @@ author: sebastianbenz
     -->
     <amp-state id="favorite"
                credentials="include"
-               src="favorite">
+               src="<% base_path %>/favorite">
     </amp-state>
 
     <!--
@@ -160,7 +160,7 @@ author: sebastianbenz
     -->
     <form class="favorite-button"
           method="post"
-          action-xhr="favorite"
+          action-xhr="<% base_path %>/favorite"
           target="_top"
           on="submit:AMP.setState({
                         favorite: !favorite
@@ -175,7 +175,7 @@ author: sebastianbenz
                 credentials="include"
                 items="."
                 single-item
-                src="favorite"
+                src="<% base_path %>/favorite"
                 binding="always">
         <template type="amp-mustache">
           <input type="submit"
@@ -204,7 +204,7 @@ author: sebastianbenz
     -->
     <amp-state id="favoriteWithCount"
                credentials="include"
-               src="favorite-with-count">
+               src="<% base_path %>/favorite-with-count">
     </amp-state>
     <!--
     The implementation is similar to the previous sample, but also updates the count when the button is clicked
@@ -221,7 +221,7 @@ author: sebastianbenz
     -->
     <form class="favorite-button"
           method="post"
-          action-xhr="favorite-with-count"
+          action-xhr="<% base_path %>/favorite-with-count"
           target="_top"
           on="submit:AMP.setState({
                    previousFavoriteWithCount: favoriteWithCount,
@@ -242,7 +242,7 @@ author: sebastianbenz
                 items="."
                 single-item
                 noloading
-                src="favorite-with-count"
+                src="<% base_path %>/favorite-with-count"
                 binding="always">
         <template type="amp-mustache">
           <div class="favorite-container">

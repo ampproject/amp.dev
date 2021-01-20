@@ -1,6 +1,4 @@
 {% extends '/layouts/default.j2' %}
-{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
-{% do doc.amp_dependencies.add('amp-iframe', '0.1') %}
 {% do doc.styles.addCssFile('/css/components/atoms/format-backgrounds.css') %}
 
 {% block header %}
@@ -36,21 +34,40 @@
 {% block main %}
 {% do doc.styles.addCssFile('/css/components/organisms/preview-pane.css') %}
 <main class="ap--preview-pane">
-  {% if not doc.example.document.isAmpAds %}
-  {% do doc.styles.addCssFile('/css/components/molecules/device-toggle.css') %}
-  <div class="ap-m-device-toggle">
-    {% set devices = ['mobile', 'tablet', 'desktop'] %}
+  <div class="ap--preview-pane-header">
+    <div class="ap--preview-pane-header-spacer"></div>
 
-    {% for device in devices %}
-    {% do doc.icons.useIcon('/icons/device-' + device + '.svg') %}
-    <button class="ap-m-device-toggle-button {% if device == 'mobile' %}active{% endif %}" [class]="device.selected == '{{ device }}' ? 'ap-m-device-toggle-button active' : 'ap-m-device-toggle-button'" on="tap:AMP.setState({device: {selected: '{{ device }}'}})">
-      <svg class="ap-a-ico ap-m-device-toggle-icon">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#device-{{ device }}"></use>
-      </svg>
-    </button>
-    {% endfor %}
+    {% if not doc.example.document.isAmpAds %}
+    {% do doc.styles.addCssFile('/css/components/molecules/device-toggle.css') %}
+    <div class="ap-m-device-toggle">
+      {% set devices = ['mobile', 'tablet', 'desktop'] %}
+
+      {% for device in devices %}
+      {% do doc.icons.useIcon('/icons/device-' + device + '.svg') %}
+      <button class="ap-m-device-toggle-button {% if device == 'mobile' %}active{% endif %}" [class]="device.selected == '{{ device }}' ? 'ap-m-device-toggle-button active' : 'ap-m-device-toggle-button'" on="tap:AMP.setState({device: {selected: '{{ device }}'}})">
+        <svg class="ap-a-ico ap-m-device-toggle-icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#device-{{ device }}"></use>
+        </svg>
+      </button>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {# Render widget to toggle experiments if there are any #}
+    {% if doc.example.document.metadata.experiments %}
+    <div class="ap-m-experiments">
+      <amp-iframe layout="fixed-height"
+                  height="66"
+                  sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-presentation allow-top-navigation"
+                  allowfullscreen
+                  allowpaymentrequest
+                  frameborder="0"
+                  src="{{ podspec.base_urls.preview }}/shared/experiments/?experiments={{doc.example.document.metadata.experiments|join(',')}}">
+        <div placeholder=""></div>
+      </amp-iframe>
+    </div>
+    {% endif %}
   </div>
-  {% endif %}
 
   {% set base_class = 'ap-o-preview-pane ap-o-preview-pane-' + doc.formats[0] %}
   <div class="{{ base_class }} ap-o-preview-pane-mobile" [class]="'{{ base_class }} ap-o-preview-pane-' + device.selected" {% if doc.example.document.metadata.width and doc.example.document.isAmpAds %} style="min-width: {{ doc.example.document.metadata.width }}px;"{% endif %}>

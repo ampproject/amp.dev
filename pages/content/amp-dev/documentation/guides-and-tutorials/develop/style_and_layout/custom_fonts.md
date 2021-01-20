@@ -12,7 +12,7 @@ author: pbakaus
 AMP pages can’t include external stylesheets, with the exception of custom fonts.
 You can embed custom fonts into your page in two ways:
 
-1. Through a `<link>` tag (white-listed font providers only)
+1. Through a `<link>` tag (allow-listed font providers only)
 2. Via `@font-face` (no restrictions, all fonts allowed)
 
 ### 1. Using `<link>`
@@ -23,7 +23,7 @@ Use a `<link>` tag (usually in the head of your page), like so:
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 [/sourcecode]
 
-The following origins are whitelisted and allowed for font serving via link tags:
+The following origins are allowlisted and allowed for font serving via link tags:
 
 * Typography.com: **https://cloud.typography.com**
 * Fonts.com: **https://fast.fonts.net**

@@ -21,7 +21,7 @@ To get the most from these courses, you should have a basic understanding of HTM
 
 ## Follow the Code With Glitch
 
-To complete the code examples included in these courses, we will be using [Glitch](https://glitch.com/). Glitch is an online code editor that allows you to create and view websites without the need to install anything on your computer. It also allows you to create a server, all within the Glitch interface.
+To complete the code examples included in these courses, we will be using <a href="https://glitch.com/" target="_blank">Glitch</a>. Glitch is an online code editor that allows you to create and view websites without the need to install anything on your computer. It also allows you to create a server, all within the Glitch interface.
 
 The Glitch code editor environment looks like this:
 
@@ -31,17 +31,17 @@ The red box above indicates the online editor where you will be typing HTML and 
 
 Throughout these courses, you will need various images to complete the exercises. All of the images you need to complete these courses are contained within our Glitch projects. To view the images in your project, click on the assets entry in the list of files on the left-hand side of the Glitch editor. To get the link to any single image, select the image from the list of assets on the right-hand side. Click the “copy” button next to the URL in the pop-up that appears. You can then use that link anywhere an image is needed.
 
-{{ image('/static/img/courses/beginner/image8.png', 1686, 936,  align='center', caption='The assets view in Glitch') }}
+{{ image('/static/img/courses/beginner/image8.png', 843, 468,  align='center', caption='The assets view in Glitch') }}
 
-{{ image('/static/img/courses/beginner/image12.png', 1484, 1416,  align='center', caption='The details pop-up (including URL) for an image in the assets collection') }}
+{{ image('/static/img/courses/beginner/image12.png', 371, 354,  align='center', caption='The details pop-up (including URL) for an image in the assets collection') }}
 
 In this course, we will start with a basic HTML page. We have created an empty project on Glitch containing a few images, server code that you’ll need later, and an index.html file with a title and a single image.
 
-Open [this](https://glitch.com/edit/#!/nosy-leech) project to begin. Click the “Remix This” button on the top right-hand side to create a new project that you can edit. You can continue to use this editor for this and future courses. Each future course will also give you the opportunity to start with a reference version of the solution to that point.
+Open <a href="https://glitch.com/edit/#!/nosy-leech" target="_blank">this project</a> to begin. Click the “Remix This” button on the top right-hand side to create a new project that you can edit. You can continue to use this editor for this and future courses. Each future course will also give you the opportunity to start with a reference version of the solution to that point.
 
 You don’t have to use Glitch to complete these trainings. However, some of the code required to complete the exercises is only contained in the Glitch samples. If you’d like to use another editor, you may still need to use the Glitch samples to find this code.
 
-## Setting Up The AMP Validator
+## Setting Up The AMP Validator <a name="setting-up-the-amp-validator"></a>
 
 To detect errors in our AMP pages, we have a valuable tool at our fingertips: the AMP Validator. Writing valid AMP pages is key to accessing the framework’s full benefits. The AMP Validator can be accessed in two ways: via a Chrome extension, or by adding a parameter to our URL so that our AMP page uses the built-in validator. For the purposes of this course, we suggest you use the Chrome extension, as it’s easier to use and access while you build your site.
 
@@ -55,7 +55,7 @@ Throughout our three courses, you will build a website for Chico’s Cheese Bicy
 
 {{ image('/static/img/courses/beginner/image14.png', 311, 550, align='center third', caption='How the site looks at the end of the Advanced Course') }}
 
-You can click on [this](https://nice-consonant.glitch.me/) link to see a live preview. Take a look around the site. We have videos, a registration form, an image carousel, and ways to share our site on social media. Open the navigation menu by clicking on the icon made of three lines (also called a “hamburger menu icon”) in the upper-left corner. Once the menu expands, click on the link “Our Products” to navigate to a list of products. Try sorting the list of products by price and filtering the list of products by product category.
+You can click on <a href="https://nice-consonant.glitch.me/" target="_blank">this link</a> to see a live preview. Take a look around the site. We have videos, a registration form, an image carousel, and ways to share our site on social media. Open the navigation menu by clicking on the icon made of three lines (also called a “hamburger menu icon”) in the upper-left corner. Once the menu expands, click on the link “Our Products” to navigate to a list of products. Try sorting the list of products by price and filtering the list of products by product category.
 
 We chose Chico’s site as our model because it offers a collection of features we commonly see on popular websites today. It was built entirely using AMP. Over the course of these lessons, you’re going to build this site from scratch.
 [/filter]
@@ -66,7 +66,7 @@ This course is designed for developers who want to build performant websites or 
 
 ## Follow the Code With Glitch
 
-To complete the code examples included in these courses, we will be using [Glitch](https://glitch.com/). Glitch is an online code editor that allows you to create and view websites without running a server on your computer. Instead, your server lives within Glitch!
+To complete the code examples included in these courses, we will be using <a href="https://glitch.com/" target="_blank">Glitch</a>. Glitch is an online code editor that allows you to create and view websites without running a server on your computer. Instead, your server lives within Glitch!
 
 The Glitch code editor environment looks like this:
 
@@ -82,7 +82,7 @@ Throughout these courses, you will need various images to complete the exercises
 
 In this course, we will start with a basic HTML page. We have created an empty project on Glitch containing a few images, server code that you’ll need later, and an `index.html` file with a title and a single image.
 
-Open [this](https://glitch.com/edit/#!/nosy-leech) project to begin. Click the "Remix This" button on the top right-hand side to create a new project that you can edit. You can continue to use this editor for this and future courses. Each future course will also give you the opportunity to start with a reference version of the solution to that point.
+Open <a href="https://glitch.com/edit/#!/nosy-leech" target="_blank">this project</a> to begin. Click the "Remix This" button on the top right-hand side to create a new project that you can edit. You can continue to use this editor for this and future courses. Each future course will also give you the opportunity to start with a reference version of the solution to that point.
 
 You don’t have to use Glitch to complete these trainings. However, some of the code required to complete the exercises is only contained in the Glitch samples. If you’d like to use another editor, you may still need to use the Glitch samples to find this code.
 
@@ -100,7 +100,7 @@ Throughout our three courses, you will build a website for Chico’s Cheese Bicy
 
 {{ image('/static/img/courses/beginner/image14.png', 311, 550, align='center third', caption='How the site looks at the end of the Advanced Course') }}
 
-You can click on [this](https://nice-consonant.glitch.me/) link to see a live preview. Choose "Our Products" in the menu to see the product page.
+You can click on <a href="https://nice-consonant.glitch.me/" target="_blank">this link</a> to see a live preview. Choose "Our Products" in the menu to see the product page.
 
 We chose Chico’s site as our model because it offers a collection of features we commonly see on popular websites today. It was built entirely using AMP. Over the course of these lessons, you’re going to build this site from scratch.
 [/filter]

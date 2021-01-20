@@ -1,0 +1,384 @@
+---
+$title: Interactive Release Calendar
+---
+{% do doc.styles.addCssFile('/css/components/organisms/release-schedule.css') %}
+
+<p>This interactive calendar visualizes the process via which new code that is merged into the <a href="https://github.com/ampproject/amphtml">amphtml GitHub repository</a> progresses through time to reach publishers, developers, and end-users.</p>
+<p>For a detailed description of the various release channels, see <a href="/content/amp-dev/documentation/guides-and-tutorials/learn/spec/release-schedule.md">AMP Release Schedule</a>. There is also a <a href="./release-schedule-accessible.html">screen-reader accessible</a> version of this page.</p>
+
+<amp-script id="calendar-container" layout="fixed-height" height="1000" script="calendar-script">
+  <div class="calendar desktop" data-direction="initialized">
+    <div class="box header">Week</div>
+    <div class="box header day-sunday">Sunday</div>
+    <div class="box header day-monday">Monday</div>
+    <div class="box header day-tuesday">Tuesday</div>
+    <div class="box header day-wednesday">Wednesday</div>
+    <div class="box header day-thursday">Thursday</div>
+    <div class="box header day-friday">Friday</div>
+    <div class="box header day-saturday">Saturday</div>
+
+    <div class="box instructions week-1-instructions" data-week="1"><span class="touch-only">Tap</span><span class="no-touch-only">Hover</span> on days above to see when the code merged on that day will be available on each release channel</div>
+    <div class="box instructions week-5-instructions" data-week="5"><span class="touch-only">Tap</span><span class="no-touch-only">Hover</span> on days below to see when the latest code merge occurred so as to be included in each release channel</div>
+
+    <div class="box sidebar week-1" data-week="1">
+      <span class="top">N</span>
+      <span class="bottom">Last week of the previous month</span>
+    </div>
+    <div class="box sidebar week-2" data-week="2">
+      <span class="top">N+1</span>
+      <span class="bottom">N-3</span>
+    </div>
+    <div class="box sidebar week-3" data-week="3">
+      <span class="top">N+2</span>
+      <span class="bottom">N-2</span>
+    </div>
+    <div class="box sidebar week-4" data-week="4">
+      <span class="top">N+3</span>
+      <span class="bottom">N-1</span>
+    </div>
+    <div class="box sidebar week-5" data-week="5">
+      <span class="top">2<sup>nd</sup> week of the next month</span>
+      <span class="bottom">N</span>
+    </div>
+
+    <div class="box sidebar ellipsis ellipsis-top">⋮</div>
+
+    <div class="box ellipsis ellipsis-top">⋮</div>
+    <div class="box ellipsis ellipsis-top">⋮</div>
+    <div class="box ellipsis ellipsis-top">⋮</div>
+    <div class="box ellipsis ellipsis-top">⋮</div>
+    <div class="box ellipsis ellipsis-top">⋮</div>
+    <div class="box ellipsis ellipsis-top">⋮</div>
+    <div class="box ellipsis ellipsis-top">⋮</div>
+
+    <div class="box sidebar ellipsis ellipsis-bottom">⋮</div>
+
+    <div class="box ellipsis ellipsis-bottom">⋮</div>
+    <div class="box ellipsis ellipsis-bottom">⋮</div>
+    <div class="box ellipsis ellipsis-bottom">⋮</div>
+    <div class="box ellipsis ellipsis-bottom">⋮</div>
+    <div class="box ellipsis ellipsis-bottom">⋮</div>
+    <div class="box ellipsis ellipsis-bottom">⋮</div>
+    <div class="box ellipsis ellipsis-bottom">⋮</div>
+
+    <div class="box content week-1 day-sunday" data-week="1" data-day="sunday"></div>
+    <div class="box content week-1 day-monday" data-week="1" data-day="monday"></div>
+    <div class="box content week-1 day-tuesday" data-week="1" data-day="tuesday"></div>
+    <div class="box content week-1 day-wednesday" data-week="1" data-day="wednesday"></div>
+    <div class="box content week-1 day-thursday" data-week="1" data-day="thursday"></div>
+    <div class="box content week-1 day-friday" data-week="1" data-day="friday"></div>
+    <div class="box content week-1 day-saturday" data-week="1" data-day="saturday"></div>
+
+    <div class="box content week-2 day-sunday" data-week="2" data-day="sunday"></div>
+    <div class="box content week-2 day-monday" data-week="2" data-day="monday"></div>
+    <div class="box content week-2 day-tuesday" data-week="2" data-day="tuesday"></div>
+    <div class="box content week-2 day-wednesday" data-week="2" data-day="wednesday"></div>
+    <div class="box content week-2 day-thursday" data-week="2" data-day="thursday"></div>
+    <div class="box content week-2 day-friday" data-week="2" data-day="friday"></div>
+    <div class="box content week-2 day-saturday" data-week="2" data-day="saturday"></div>
+
+    <div class="box content week-3 day-sunday" data-week="3" data-day="sunday"></div>
+    <div class="box content week-3 day-monday" data-week="3" data-day="monday"></div>
+    <div class="box content week-3 day-tuesday" data-week="3" data-day="tuesday"></div>
+    <div class="box content week-3 day-wednesday" data-week="3" data-day="wednesday"></div>
+    <div class="box content week-3 day-thursday" data-week="3" data-day="thursday"></div>
+    <div class="box content week-3 day-friday" data-week="3" data-day="friday"></div>
+    <div class="box content week-3 day-saturday" data-week="3" data-day="saturday"></div>
+
+    <div class="box content week-4 day-sunday" data-week="4" data-day="sunday"></div>
+    <div class="box content week-4 day-monday" data-week="4" data-day="monday"></div>
+    <div class="box content week-4 day-tuesday" data-week="4" data-day="tuesday"></div>
+    <div class="box content week-4 day-wednesday" data-week="4" data-day="wednesday"></div>
+    <div class="box content week-4 day-thursday" data-week="4" data-day="thursday"></div>
+    <div class="box content week-4 day-friday" data-week="4" data-day="friday"></div>
+    <div class="box content week-4 day-saturday" data-week="4" data-day="saturday"></div>
+
+    <div class="box content week-5 day-sunday" data-week="5" data-day="sunday"></div>
+    <div class="box content week-5 day-monday" data-week="5" data-day="monday"></div>
+    <div class="box content week-5 day-tuesday" data-week="5" data-day="tuesday"></div>
+    <div class="box content week-5 day-wednesday" data-week="5" data-day="wednesday"></div>
+    <div class="box content week-5 day-thursday" data-week="5" data-day="thursday"></div>
+    <div class="box content week-5 day-friday" data-week="5" data-day="friday"></div>
+    <div class="box content week-5 day-saturday" data-week="5" data-day="saturday"></div>
+  </div>
+</amp-script>
+
+<amp-script id="calendar-container-mobile" layout="fixed-height" height="550" script="calendar-script">
+  <div class="calendar mobile" data-direction="initialized">
+    <div class="box header">Week</div>
+    <div class="box header day-sunday">Sunday</div>
+    <div class="box header day-monday">Monday</div>
+    <div class="box header day-tuesday">Tuesday</div>
+    <div class="box header day-wednesday">Wednesday</div>
+    <div class="box header day-thursday">Thursday</div>
+    <div class="box header day-friday">Friday</div>
+    <div class="box header day-saturday">Saturday</div>
+
+    <div class="box instructions week-1-instructions" data-week="1"><span class="touch-only">Tap</span><span class="no-touch-only">Hover</span> on days above to see when the code merged on that day will be available on each release channel</div>
+    <div class="box instructions week-5-instructions" data-week="5"><span class="touch-only">Tap</span><span class="no-touch-only">Hover</span> on days below to see when the latest code merge occurred so as to be included in each release channel</div>
+
+    <div class="box sidebar week-1" data-week="1">
+      <span class="top">N</span>
+      <span class="bottom">Last week of the previous month</span>
+    </div>
+    <div class="box sidebar week-2" data-week="2">
+      <span class="top">N+1</span>
+      <span class="bottom">N-3</span>
+    </div>
+    <div class="box sidebar week-3" data-week="3">
+      <span class="top">N+2</span>
+      <span class="bottom">N-2</span>
+    </div>
+    <div class="box sidebar week-4" data-week="4">
+      <span class="top">N+3</span>
+      <span class="bottom">N-1</span>
+    </div>
+    <div class="box sidebar week-5" data-week="5">
+      <span class="top">2<sup>nd</sup> week of the next month</span>
+      <span class="bottom">N</span>
+    </div>
+
+    <div class="box sidebar ellipsis ellipsis-top">⋮</div>
+
+    <div class="box ellipsis ellipsis-top">⋮</div>
+    <div class="box ellipsis ellipsis-top">⋮</div>
+    <div class="box ellipsis ellipsis-top">⋮</div>
+    <div class="box ellipsis ellipsis-top">⋮</div>
+    <div class="box ellipsis ellipsis-top">⋮</div>
+    <div class="box ellipsis ellipsis-top">⋮</div>
+    <div class="box ellipsis ellipsis-top">⋮</div>
+
+    <div class="box sidebar ellipsis ellipsis-bottom">⋮</div>
+
+    <div class="box ellipsis ellipsis-bottom">⋮</div>
+    <div class="box ellipsis ellipsis-bottom">⋮</div>
+    <div class="box ellipsis ellipsis-bottom">⋮</div>
+    <div class="box ellipsis ellipsis-bottom">⋮</div>
+    <div class="box ellipsis ellipsis-bottom">⋮</div>
+    <div class="box ellipsis ellipsis-bottom">⋮</div>
+    <div class="box ellipsis ellipsis-bottom">⋮</div>
+
+    <div class="box content week-1 day-sunday" data-week="1" data-day="sunday"></div>
+    <div class="box content week-1 day-monday" data-week="1" data-day="monday"></div>
+    <div class="box content week-1 day-tuesday" data-week="1" data-day="tuesday"></div>
+    <div class="box content week-1 day-wednesday" data-week="1" data-day="wednesday"></div>
+    <div class="box content week-1 day-thursday" data-week="1" data-day="thursday"></div>
+    <div class="box content week-1 day-friday" data-week="1" data-day="friday"></div>
+    <div class="box content week-1 day-saturday" data-week="1" data-day="saturday"></div>
+
+    <div class="box content week-2 day-sunday" data-week="2" data-day="sunday"></div>
+    <div class="box content week-2 day-monday" data-week="2" data-day="monday"></div>
+    <div class="box content week-2 day-tuesday" data-week="2" data-day="tuesday"></div>
+    <div class="box content week-2 day-wednesday" data-week="2" data-day="wednesday"></div>
+    <div class="box content week-2 day-thursday" data-week="2" data-day="thursday"></div>
+    <div class="box content week-2 day-friday" data-week="2" data-day="friday"></div>
+    <div class="box content week-2 day-saturday" data-week="2" data-day="saturday"></div>
+
+    <div class="box content week-3 day-sunday" data-week="3" data-day="sunday"></div>
+    <div class="box content week-3 day-monday" data-week="3" data-day="monday"></div>
+    <div class="box content week-3 day-tuesday" data-week="3" data-day="tuesday"></div>
+    <div class="box content week-3 day-wednesday" data-week="3" data-day="wednesday"></div>
+    <div class="box content week-3 day-thursday" data-week="3" data-day="thursday"></div>
+    <div class="box content week-3 day-friday" data-week="3" data-day="friday"></div>
+    <div class="box content week-3 day-saturday" data-week="3" data-day="saturday"></div>
+
+    <div class="box content week-4 day-sunday" data-week="4" data-day="sunday"></div>
+    <div class="box content week-4 day-monday" data-week="4" data-day="monday"></div>
+    <div class="box content week-4 day-tuesday" data-week="4" data-day="tuesday"></div>
+    <div class="box content week-4 day-wednesday" data-week="4" data-day="wednesday"></div>
+    <div class="box content week-4 day-thursday" data-week="4" data-day="thursday"></div>
+    <div class="box content week-4 day-friday" data-week="4" data-day="friday"></div>
+    <div class="box content week-4 day-saturday" data-week="4" data-day="saturday"></div>
+
+    <div class="box content week-5 day-sunday" data-week="5" data-day="sunday"></div>
+    <div class="box content week-5 day-monday" data-week="5" data-day="monday"></div>
+    <div class="box content week-5 day-tuesday" data-week="5" data-day="tuesday"></div>
+    <div class="box content week-5 day-wednesday" data-week="5" data-day="wednesday"></div>
+    <div class="box content week-5 day-thursday" data-week="5" data-day="thursday"></div>
+    <div class="box content week-5 day-friday" data-week="5" data-day="friday"></div>
+    <div class="box content week-5 day-saturday" data-week="5" data-day="saturday"></div>
+  </div>
+</amp-script>
+
+<script id="calendar-script" type="text/plain" target="amp-script">
+  const channels = {
+    '1': {
+      'sunday': {
+        'nightly': ['1', 'monday'],
+        'opt-in': ['2', 'tuesday'],
+        'beta': ['2', 'wednesday'],
+        'stable': ['3', 'tuesday'],
+        'lts': ['5', 'monday'],
+      },
+      'monday': {
+        'nightly': ['1', 'tuesday'],
+        'opt-in': ['2', 'tuesday'],
+        'beta': ['2', 'wednesday'],
+        'stable': ['3', 'tuesday'],
+        'lts': ['5', 'monday'],
+      },
+      'tuesday': {
+        'nightly': ['1', 'wednesday'],
+        'opt-in': ['2', 'tuesday'],
+        'beta': ['2', 'wednesday'],
+        'stable': ['3', 'tuesday'],
+        'lts': ['5', 'monday'],
+      },
+      'wednesday': {
+        'nightly': ['1', 'thursday'],
+        'opt-in': ['2', 'tuesday'],
+        'beta': ['2', 'wednesday'],
+        'stable': ['3', 'tuesday'],
+        'lts': ['5', 'monday'],
+      },
+      'thursday': {
+        'nightly': ['1', 'friday'],
+        'opt-in': ['2', 'tuesday'],
+        'beta': ['2', 'wednesday'],
+        'stable': ['3', 'tuesday'],
+        'lts': ['5', 'monday'],
+      },
+      'friday': {
+        'nightly': ['2', 'monday'],
+        'opt-in': ['3', 'tuesday'],
+        'beta': ['3', 'wednesday'],
+        'stable': ['4', 'tuesday'],
+        'lts': ['5', 'monday'],
+      },
+      'saturday': {
+        'nightly': ['2', 'monday'],
+        'opt-in': ['3', 'tuesday'],
+        'beta': ['3', 'wednesday'],
+        'stable': ['4', 'tuesday'],
+        'lts': ['5', 'monday'],
+      },
+    },
+    '5': {
+      'sunday': {
+        'lts': ['1', 'thursday'],
+        'stable': ['2', 'thursday'],
+        'opt-in-beta': ['3', 'thursday'],
+        'nightly': ['4', 'thursday'],
+      },
+      'monday': {
+        'lts': ['1', 'thursday'],
+        'stable': ['2', 'thursday'],
+        'opt-in-beta': ['3', 'thursday'],
+        'nightly': ['5', 'sunday'],
+      },
+      'tuesday': {
+        'lts': ['1', 'thursday'],
+        'stable': ['2', 'thursday'],
+        'beta': ['3', 'thursday'],
+        'opt-in': ['4', 'thursday'],
+        'nightly': ['5', 'monday'],
+      },
+      'wednesday': {
+        'lts': ['1', 'thursday'],
+        'stable': ['3', 'thursday'],
+        'opt-in-beta': ['4', 'thursday'],
+        'nightly': ['5', 'tuesday'],
+      },
+      'thursday': {
+        'lts': ['1', 'thursday'],
+        'stable': ['3', 'thursday'],
+        'opt-in-beta': ['4', 'thursday'],
+        'nightly': ['5', 'wednesday'],
+      },
+      'friday': {
+        'lts': ['1', 'thursday'],
+        'stable': ['3', 'thursday'],
+        'opt-in-beta': ['4', 'thursday'],
+        'nightly': ['5', 'thursday'],
+      },
+      'saturday': {
+        'lts': ['1', 'thursday'],
+        'stable': ['3', 'thursday'],
+        'opt-in-beta': ['4', 'thursday'],
+        'nightly': ['5', 'thursday'],
+      },
+    },
+  };
+
+  const descriptions = {
+    '1': {
+      'selected': 'Code merged on this day…',
+      'nightly': '…is available on the `nightly` on this day,',
+      'opt-in': '…for `opt-in` to the experimental and beta on this day,',
+      'beta': '…on 1% traffic `beta` and `experimental` on this day,',
+      'stable': '…on `stable` on this day,',
+      'lts': '…and as `lts` on this day.',
+    },
+    '5': {
+      'selected': '…on the selected day',
+      'lts': 'code merged on this day is available as `lts` …',
+      'stable': 'code merged on this day is available as `stable` …',
+      'beta': 'code merged on this day is available as `beta` and `experimental` …',
+      'opt-in-beta': 'code merged on this day is available for `opt-in`, 1% `beta`, and `experimental` …',
+      'opt-in': 'code merged on this day is available as `opt-in` …',
+      'nightly': 'code merged on this day is available as `nightly` …',
+    }
+  };
+
+  function createSpan(text) {
+    const span = document.createElement('span');
+    text.split(/`(.+?)`/g).forEach((part, index) => {
+      if (index % 2 === 0) {
+        span.appendChild(document.createTextNode(part));
+      } else {
+        const code = document.createElement('code');
+        code.textContent = part;
+        span.appendChild(code);
+      }
+    });
+    return span;
+  };
+
+  document.querySelectorAll('.content')
+    .filter(elm => elm.classList.contains('week-1') || elm.classList.contains('week-5'))
+    .forEach(elm => {
+      elm.addEventListener('mouseenter', event => {
+        document.querySelectorAll('.content').forEach(elm => {
+          while (elm.firstChild) {
+            elm.firstChild.remove();
+          }
+        });
+
+        const selectedWeek = elm.getAttribute('data-week');
+        const selectedDay = elm.getAttribute('data-day');
+        document.querySelectorAll('.calendar').forEach(el => {
+          el.setAttribute(
+            'data-direction',
+            selectedWeek == '1' ? 'top' : 'bottom');
+        });
+
+        event.currentTarget.textContent = descriptions[selectedWeek].selected;
+        for (let [channel, [channelWeek, channelDay]] of Object.entries(channels[selectedWeek][selectedDay])) {
+          const channelElm = document.querySelectorAll('.content')
+            .filter(
+                elm => elm.getAttribute('data-week') === channelWeek
+                && elm.getAttribute('data-day') === channelDay
+            )[0];
+
+          while (channelElm.firstChild) {
+            channelElm.firstChild.remove();
+          }
+
+          channelElm.appendChild(createSpan(descriptions[selectedWeek][channel]));
+          channelElm.classList.add(channel);
+        }
+      });
+
+      elm.addEventListener('mouseleave', event => {
+        event.currentTarget.textContent = '';
+        for (const channel of ['nightly', 'opt-in', 'beta', 'opt-in-beta', 'stable', 'lts']) {
+          document.querySelectorAll(`.${channel}`).forEach(elm => {
+            elm.classList.remove(channel);
+            while (elm.firstChild) {
+              elm.firstChild.remove();
+            }
+          });
+        }
+      });
+    });
+</script>

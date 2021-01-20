@@ -76,7 +76,7 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 	align-items: center;
 	height: 50px;
 	padding: 0 1.25em;
-	@include river-ebony;
+	@include gradient-dark;
 }
 
 @mixin teaser-header-title {

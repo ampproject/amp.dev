@@ -18,36 +18,21 @@
 
 const express = require('express');
 const project = require('@lib/utils/project');
+const {
+  getFormatFromRequest,
+  DEFAULT_FORMAT,
+} = require('../amp/formatHelper.js');
 
 // eslint-disable-next-line new-cap
 const inlineExamples = express.Router();
-
-/**
- * Inspects a incoming request (either proxied or not) for its GET args
- * and URL and checks if its valid to filter and if so has a valid filter
- * @param  {expressjs.Request} request
- * @return {null|String}       A valid filter
- */
-function getFilteredFormat(request) {
-  const QUERY_PARAMETER_NAME = 'format';
-  const ALLOWED_FORMATS = ['websites', 'stories', 'ads', 'email'];
-
-  const activeFormat = request.query[QUERY_PARAMETER_NAME] || 'websites';
-  if (ALLOWED_FORMATS.indexOf(activeFormat.toLowerCase()) == -1) {
-    // If the format to filter by is invalid or none use websites
-    return 'websites';
-  }
-
-  return activeFormat;
-}
 
 const staticMiddleware = express.static(project.paths.INLINE_EXAMPLES_DEST, {
   'extensions': ['html'],
 });
 
 inlineExamples.get('/*', async (request, response, next) => {
-  const format = getFilteredFormat(request);
-  if (format && format !== 'websites') {
+  const format = getFormatFromRequest(request);
+  if (format && format !== DEFAULT_FORMAT) {
     request.url = request.path.replace('.html', `.${format}.html`);
   }
   return staticMiddleware(request, response, next);

@@ -1,0 +1,140 @@
+{% if doc.formats %}
+[% supportedFormats formats={{ doc.formats|tojson }} %]
+{% endif %}
+
+{% macro filter(formats='websites, ads, stories, email', level='advanced, beginner') -%}
+{% if not formats.strip() and not level.strip() %}
+{{ caller() }}
+{% else %}
+{% set formats = formats.split(',') %}
+{% set level = level.split(',') %}
+[% if format in {{ formats|map('trim')|list|tojson }} and level in {{ level|map('trim')|list|tojson }} %]
+{{ caller() }}
+[% endif %]
+{% endif %}
+{%- endmacro %}
+
+{% macro tip(title, type='note') -%}
+{% with %}
+{% set text = caller() %}
+{% include '/views/partials/tip.j2' %}
+{% endwith %}
+{%- endmacro %}
+
+{% macro image(src, width, height, layout='responsive', alt='', caption='', align='', margin='', shadow=True) -%}
+<figure class="alignment-wrapper {{ align }} margin-{{ margin }} {{'shadow' if shadow}}">
+  <amp-img src="{{ src }}" width="{{ width }}" height="{{ height }}" layout="{{ layout }}" alt="{{ alt }}"></amp-img>
+  {% if caption %}<figcaption>{{ caption }}</figcaption>{% endif %}
+</figure>
+{%- endmacro %}
+
+{% macro anim(src, width, height, poster, layout='responsive', alt='', align='', margin='') -%}
+
+<figure class="alignment-wrapper {{ align }} margin-{{ margin }}">
+  <amp-anim src="{{ src }}" width="{{ width }}" height="{{ height }}" layout="{{ layout }}" alt="{{ alt }}"><amp-img placeholder width="{{ width }}" height="{{ height }}" src="{{ poster }}"></amp-img></amp-anim>
+</figure>
+{%- endmacro %}
+
+<!DOCTYPE html>
+<html lang="{{ doc.locale }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    {% if podspec.env.name == 'development' %}
+    <link rel="shortcut icon" href="/static/img/favicon-local.png"/>
+    {% else %}
+    <link rel="shortcut icon" href="/static/img/favicon.png"/>
+    {% endif %}
+
+    <meta name="theme-color" content="#005af0"/>
+
+    <link rel="canonical" href="{{ doc.url }}"/>
+    <link rel="alternate" hreflang="x-default" href="{{ doc.localize(podspec.default_locale).url }}"/>
+    {% for locale in doc.locales if not locale == doc.locale %}
+    {% set localized_doc = doc.localize(locale) %}
+    {# If the document really is localized cross-reference it #}
+    {% if '@' in localized_doc.pod_path or not doc.pod_path.startswith('/content/amp-dev/documentation') %}
+    <link rel="alternate" hreflang="{{ locale }}" href="{{ localized_doc.url }}"/>
+    {% endif %}
+    {% endfor %}
+
+    {# Do not index untranslated content #}
+    {% if not '@' in doc.pod_path and not doc.locale == podspec.default_locale %}
+    <meta name="robots" content="noindex,follow"/>
+    {% endif %}
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+    <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+      {% block styles %}
+      {# Some basic styling should always be present #}
+      {% do doc.styles.addCssFile('css/base.css', -5) %}
+      {% do doc.styles.addCssFile('css/components/atoms/headline.css', -4) %}
+      {% do doc.styles.addCssFile('css/components/atoms/text.css', -3) %}
+      {% do doc.styles.addCssFile('css/components/atoms/anchor.css', -2) %}
+      {% do doc.styles.addCssFile('css/components/molecules/link.css', -2) %}
+      {% do doc.styles.addCssFile('css/components/atoms/icon.css', -1) %}
+      {% endblock %}
+
+      {{ doc.styles.emit() }}
+
+      <%
+      print(htmlWebpackPlugin.files.css.map((cssFile) => compilation.assets[cssFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()
+      ).join(''));
+      %>
+    </style>
+
+    {# Do not index untranslated content #}
+    {% if not '@' in doc.pod_path and not doc.locale == podspec.default_locale %}
+    <meta name="robots" content="noindex,follow"/>
+    {% endif %}
+
+    {# Add SEO and sharing tags #}
+    {% include 'views/partials/structured-data.j2' %}
+
+    <link rel="manifest" href="/manifest.json">
+  </head>
+
+  {% block body %}
+  <body class="[= 'ap--' + format if format =]">
+  {% endblock %}
+    {% block icons %}
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+        {{ doc.icons.emit() }}
+      </defs>
+    </svg>
+    {% endblock %}
+
+    {% block header %}
+    {% include 'views/2021/partials/header.j2' %}
+    {% endblock %}
+
+    {% include 'views/partials/search.j2' %}
+
+    {{ doc.html|render|safe }}
+
+    {% block footer %}
+    {% include 'views/partials/footer.j2' %}
+    {% endblock %}
+
+    {# Add hint that we might use help to translate untranslated docs #}
+    {% if not '@' in doc.pod_path and not doc.locale == podspec.default_locale and doc.pod_path.startswith('/content/amp-dev/documentation') %}
+    {% do doc.styles.addCssFile('/css/components/organisms/translation-hint.css') %}
+    <aside class="ap-o-translation-hint">
+      <p class="ap-o-translation-hint-wrapper">{{ _('Sadly this page isn\'t translated yet, but will be shortly - check back soon!') }}</p>
+    </aside>
+    {% endif %}
+
+    {% block analytics %}
+    {% include 'views/partials/analytics.j2' %}
+    {% include 'views/partials/consent.j2' %}
+    {% endblock %}
+
+    {% block serviceWorker %}
+    {% include 'views/partials/service-worker.j2' %}
+    {% endblock %}
+  </body>
+</html>

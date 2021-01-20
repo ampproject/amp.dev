@@ -10,12 +10,129 @@
 {% endblock %}
 
 {% block main %}
-{% include 'views/partials/sidebar.j2' %}
 {% include 'views/partials/sidebar-toggle-observer.j2' %}
 <main class="ap--main ap-t-template">
-  <div class="ap--container">
-    {% include 'views/partials/sidebar-toggle.j2' %}
-    {% include 'views/partials/content.j2' %}
-  </div>
+  <section class="ap--stage ap--container-fluid">
+    {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
+
+    {% if doc.stage and doc.stage.layout %}
+      {% set layout = doc.stage.layout %}
+    {% else %}
+      {% set layout = '' %}
+    {% endif %}
+
+    <div class="ap-o-stage ap-o-stage-websites {{ layout }}">
+      <div class="ap--container-fluid">
+        <div class="ap-o-stage-content">
+          <h2 class="ap-o-stage-content-subline">{{ doc.category }}</h2>
+          <h1 class="ap-o-stage-content-headline">{{ doc.title }}</h1>
+        </div>
+      </div>
+    </div>
+
+    {# ghost frame block #}
+    {% if doc.stage %}
+      {% do doc.styles.addCssFile('css/components/organisms/ghost-frame-block.css') %}
+      <div class="ap-o-ghost-frame-block">
+        {% for device in doc.stage.devices %}
+          {% if device %}
+            {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-desktop.css') %}
+            {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-tablet.css') %}
+            {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
+            <div class="ap-m-ghost-frame-{{device.type}} {{device.direction}}">
+              {% if device.video_src %}
+              <amp-video
+                width="{{device.width}}"
+                height="{{device.height}}"
+                layout="responsive"
+                src="{{device.video_src}}"
+                poster="{{device.poster_src}}"
+                artwork="{{device.artwork_src}}"
+                title="{{device.video_title}}"
+                artist="{{device.video_artist}}"
+                album="{{device.video_album}}"
+                controls
+                autoplay
+                loop>
+              </amp-video>
+              {% else %}
+              <amp-img
+                alt="{{device.alt}}"
+                height="{{device.height}}"
+                layout="responsive"
+                src="{{device.image_src}}"
+                width="{{device.width}}">
+              </amp-img>
+              {% endif%}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </section>
+
+  {% if doc.document and doc.document.pages %}
+    {% set collection = g.collection(doc.document.pages).list_docs(locale=doc.locale) %}
+  {% endif %}
+
+  {% do doc.icons.useIcon('icons/external.svg') %}
+
+  <section class="ap--intro ap--container">
+    <div class="ap--content">
+      {% if doc.document %}
+      <p>{{ doc.document.description }}</p>
+      {% endif %}
+
+      <div class="ap-o-link-group">
+        {% do doc.styles.addCssFile('css/components/organisms/link-group.css') %}
+        {% if doc.teaser.download_url %}
+          <a href="{{ doc.teaser.download_url }}" rel="noopener" class="ap-m-lnk">
+            <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+            <span class="ap-m-lnk-text">{{ _('Download ZIP') }}</span>
+          </a>
+        {% endif %}
+        {% if doc.teaser.demo_url or doc.teaser.template_demo_home %}
+          {% if doc.teaser.demo_url %}
+            {% set demo_url = doc.teaser.demo_url %}
+          {% else %}
+            {% set demo_url = '/documentation/templates/preview/' + doc.teaser.template_demo_home %}
+          {% endif %}
+          <a href="{{ demo_url }}" rel="noopener" class="ap-m-lnk">
+            <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+            <span class="ap-m-lnk-text">{{ _('View Demo') }}</span>
+          </a>
+        {% endif %}
+        {% if doc.teaser.github_url or doc.teaser.template_github_home %}
+          {% if doc.teaser.github_url %}
+            {% set github_url = doc.teaser.github_url %}
+          {% else %}
+            {% set github_url = 'https://github.com/ampproject/amp.dev/tree/future/templates/' + doc.teaser.template_github_home %}
+          {% endif %}
+          <a href="{{ github_url }}" rel="noopener" class="ap-m-lnk">
+            <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+            <span class="ap-m-lnk-text">{{ _('View code on GitHub') }}</span>
+          </a>
+        {% endif %}
+      </div>
+
+      {% if collection %}
+      <h2>Pages</h2>
+      {% endif %}
+    </div>
+  </section>
+
+  {% if collection %}
+    <section class="ap--teaser-grid ap--container">
+      <div class="ap-o-teaser-grid">
+        <div class="ap-o-teaser-grid-list">
+          {% for teaser_doc in collection %}
+            {% include '/views/partials/teaser.j2' %}
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
 </main>
+{% include 'views/partials/sidebar.j2' %}
 {% endblock %}

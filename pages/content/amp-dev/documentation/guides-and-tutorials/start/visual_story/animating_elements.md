@@ -1,13 +1,13 @@
 ---
 $title: Animating elements
 $order: 6
-description: 'You can further enhance an AMP story by applying animation entrances to elements inside a page. For example, you can make your title fly in from ...'
+description: 'You can further enhance a Web Story by applying animation entrances to elements inside a page. For example, you can make your title fly in from ...'
 components:
     - anim
 author: bpaduch
 ---
 
-You can further enhance an AMP story by applying animation entrances to elements inside a page. For example, you can make your title fly in from the left, or drop into the page, or fade in, and so on.  The AMP story framework provides the following preset animations:
+You can further enhance a Web Story by applying animation entrances to elements inside a page. For example, you can make your title fly in from the left, or drop into the page, or fade in, and so on.  The AMP story framework provides the following preset animations to use in a Web Story:
 
 <table>
 <thead>
@@ -142,13 +142,13 @@ You can customize the timing of an animation by changing the delay or duration t
       animate-in-delay="0.3s"
       animate-in-duration="0.5s">
     I'm going to fly into the page from the left!
-  </div>
+  </p>
 </amp-story-page>
 ```
 
 ## Animating our last page
 
-Our last AMP story page is comprised of two layers: the first layer is a collage of animal images and the second layer displays some banner text.  To create this page, **add** the following code just after your previous story page:
+Our last Web Story page is comprised of two layers: the first layer is a collage of animal images and the second layer displays some banner text.  To create this page, **add** the following code just after your previous story page:
 
 ```html
 <amp-story-page id="page5">
@@ -254,4 +254,4 @@ Refresh and reload your story.  Your last page should look like this:
 
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Page 5 collage', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 
-There are a lot of possibilities with animations in AMP stories  (e.g., combining animations, chaining animations), and this tutorial scratches only the surface. To learn more about animations, see the [`amp-story`](../../../../documentation/components/reference/amp-story.md) reference documentation.
+There are a lot of possibilities with animations in Web Stories  (e.g., combining animations, chaining animations), and this tutorial scratches only the surface. To learn more about animations, see the [`amp-story`](../../../../documentation/components/reference/amp-story.md) reference documentation.

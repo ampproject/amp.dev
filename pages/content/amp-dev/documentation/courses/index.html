@@ -16,10 +16,22 @@ flyout:
   icon: learn
 ---
 {% do doc.styles.addCssFile('css/components/templates/courses-overview.css') %}
+{% do doc.styles.addCssFile('css/components/molecules/copy.css') %}
 
 <section class="ap--section ap--intro">
-  <h1>Learn Web Development with AMP</h1>
-  <p>These three free courses are in use in schools and training programs around the world. Now you can take them here, online, on our site. Suitable for beginners and experienced web developers alike, they will take you from zero to AMP!</p>
+  <h1>{{ _('Learn Web Development with AMP') }}</h1>
+  <p>
+  {{ _('AMP can help you create fast websites more quickly!') }}
+    <ul>
+      <li>{{ _('If you’re <b>an experienced web developer</b>, you can create rich, fast sites with less code.') }}</li>
+      <li>{{ _('If you’re <b>a new web developer</b>, AMP helps you learn web development. If you know some HTML and CSS, you can use AMP to make an interactive website!') }}</li>
+    </ul>
+  </p>
+  <div class="ap-m-copy ap-m-copy-center">
+    <a href="https://amp.dev/documentation/courses/beginning-course/course-introduction/?format=websites&amp;level=beginner" class="ap-a-btn">
+      {{ _('Get started') }}
+    </a>
+  </div>
 </section>
 
 {% do doc.styles.addCssFile('/css/components/organisms/teaser-grid.css') %}
@@ -39,17 +51,17 @@ flyout:
 
 <section class="ap--result">
   <div class="ap--section">
-    <amp-img
-      alt="Part of what is built"
+    <amp-img alt="Screenshot of the site you'll build"
       height="368"
       layout="responsive"
       src="/static/img/courses/site/image7-small.png"
-      width="207"
-    ></amp-img>
+      width="207">
+    </amp-img>
   </div>
   <div class="ap--section">
-    <h2>About the courses</h2>
-    <p>Beginning web developers will learn to create modern websites with AMP. Experienced developers will discover how to use AMP to create beautiful, interactive sites while writing less JavaScript. During the course, students build a lovely site for Chico's Cheese Bicycles.</p>
+    <h2>{{ _('About the courses') }}</h2>
+    <p>{{ _('These three free courses are in use in schools and training programs around the world. Now you can take them here, online, on our site. Suitable for beginners and experienced web developers alike, they will take you from zero to AMP!') }}</p>
+    <p>{{ _('During this course, you’ll build a sample site for Chico’s famous, and fictional, Cheese Bicycles.') }}</p>
   </div>
 </section>
 
@@ -62,22 +74,18 @@ flyout:
   {
     "icon_name": "students",
     "headline": "Students",
-    "links": [
-      {
-        "url": g.doc('/content/amp-dev/documentation/courses/beginning-course/index.md', locale=doc.locale).url.path,
-        "text": "Start coursework now"
-      }
-    ]
+    "button": {
+      "url": g.doc('/content/amp-dev/documentation/courses/beginning-course/index.md', locale=doc.locale).url.path,
+      "text": "Learn AMP"
+    }
   },
   {
     "icon_name": "teachers",
     "headline": "Teachers",
-    "links": [
-      {
-        "url":g.doc('/content/amp-dev/documentation/courses/teachers.md', locale=doc.locale).url.path,
-        "text": "Download resources for your classroom"
-      }
-    ]
+    "button": {
+      "url": g.doc('/content/amp-dev/documentation/courses/teachers.md', locale=doc.locale).url.path,
+      "text": "Teach AMP"
+    }
   }
 ]
 %}
@@ -88,19 +96,19 @@ flyout:
 
 <section class="ap--requirements">
   <div class="ap--section">
-    <h4>Requirements</h4>
+    <h4>{{ _('Requirements') }}</h4>
     <ul>
-      <li>Internet connection</li>
-      <li><a href="https://www.google.com/chrome/" target="_blank">Chrome browser</a>, ideally, to use the <a href="https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc" target="_blank">AMP Validator extension</a></li>
-      <li>We use the online editor <a href="https://glitch.com/" target="_blank">Glitch</a>. No IDE or local web server needed!</li>
+      <li>{{ _('Internet connection') }}</li>
+      <li>{{ _('<a href="https://www.google.com/chrome/" target="_blank">Chrome browser</a>, ideally, to use the <a href="https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc" target="_blank">AMP Validator extension</a>') }}</li>
+      <li>{{ _('We use the online editor <a href="https://glitch.com/" target="_blank">Glitch</a>. No IDE or local web server needed!') }}</li>
     </ul>
   </div>
 
   <div class="ap--section">
-    <h4>Prerequisites</h4>
+    <h4>{{ _('Prerequisites') }}</h4>
     <ul>
-      <li>basic knowledge of HTML and CSS</li>
-      <li>for the advanced course, JavaScript expressions and simple JSON</li>
+      <li>{{ _('basic knowledge of HTML and CSS') }}</li>
+      <li>{{ _('for the advanced course, JavaScript expressions and simple JSON') }}</li>
     </ul>
   </div>
 </section>
@@ -108,20 +116,13 @@ flyout:
 
 {% do doc.styles.addCssFile('/css/components/organisms/video-slider.css') %}
 <section class="ap--video-slider">
-  <h2 class="ap-o-video-slider-text">Take the Video Course</h2>
-  <p class="ap-o-video-slider-text">The Beginning Course can be now be taken by video on <a href="https://www.youtube.com/playlist?list=PLXTOW_XMsIDS45GB-eBV5s_M9EGIXMjI_" target="_blank">our YouTube channel!</a></p>
+  <h2 class="ap-o-video-slider-text">{{ _('Take the Video Courses') }}</h2>
+  <p class="ap-o-video-slider-text">{{ _('All three courses can be now be taken by video on <a href="https://www.youtube.com/playlist?list=PLXTOW_XMsIDS45GB-eBV5s_M9EGIXMjI_" target="_blank">our YouTube channel!</a>') }}</p>
   {% with %}
   {% set youtube_video_ids = [
     'qWpZbADJlgE',
-    'r17dpxNvmD0',
-    'An8UvqofDpI',
-    'DHyZ9-88f-M',
-    'NOXketij53E',
-    '5lKb-7v8kno',
-    'iPce45363gc',
-    'Q1aJ03sEs6U',
-    '--KQJWkQfzw',
-    'ON_O3vvj1lc'
+    'X3DybgZgN9k',
+    'v_HIPRR9E4Q'
     ]
   %}
   {% include '/views/partials/video-carousel.j2' %}

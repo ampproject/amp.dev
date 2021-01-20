@@ -1,37 +1,150 @@
 speakers:
     TBA:
       name: To Be Announced
-      company: AMP Contributors Summit
+      company: AMP Contributor Summit
       bio:
       pic: /static/img/amp-conf/speakers/amp.png
 
 agenda:
   day_1:
-    - title: "Track 1: New Contributor Day"
-      description: If you're a new contributor, we invite you to learn everything required to contribute on this optional program before Day 1.
-      time: "0900"
-    - title: "Track: Hackathon"
-      description: If you're not a new contributor but already in town on Day 0, come join us on a fun hackathon with the AMP team. More details coming soon!
-      time: "0900"
+    - title: "Registration & breakfast"
+      description: "Location: 111 8th Avenue, New York, NY. Enter the 8th Avenue lobby and look for people with AMP Contributor Summit badges at the Events desk near the Chase."
+      time: "8:00a"
+    - title: "Welcome & ice breaker"
+      description: "We'll kick off the Hackathon / New Contributor Workshop with an opportunity to meet the other attendees."
+      time: "9:00"
+    - title: "Hackathon / new contributor keynote"
+      description: "Note that all talks are optional; experienced contributors should feel free to code in the main room or our separate quiet room."
+      time: "9:30"
+    - title: "AMP design principles"
+      description:
+      time: "10:00"
+    - title: "Basic end-to-end contribution to AMP Project/GitHub"
+      description:
+      time: "10:15"
+    - title: "Coffee break"
+      description:
+      time: "10:30"
+    - title: "Contributing the new version of the amp-sidebar component"
+      description:
+      time: "10:45"
+    - title: "Find your team"
+      description:
+      time: "11:15"
+    - title: "Code jam / hackathon"
+      description:
+      time: "11:30"
+    - title: "Lunch"
+      description:
+      time: "12:00p"
+    - title: "Hackathon / guided contributions"
+      description: Make your first (or just most recent) contribution to AMP.  For new contributors we'll have people on hand to help guide you.  We'll have a few lightning talks at the top of each hour on writing performant and accessible code and on getting through a design review.
+      time: "1:00"
+    - title: "Wrap up and demos"
+      description:
+      time: "4:30"
+    - title: "Hackathon / new contributor dinner"
+      description: "Location TBA"
+      time: "6:00"
   day_2:
-    - title: "Talks"
-      time: "0900"
-      type: session
-      speakers:
+    - title: "Registration & breakfast"
+      description: "Location: 85 10th Avenue, New York, NY. Enter the 10th Avenue lobby and look for people with AMP Contributor Summit badges at the registration desk."
+      time: "8:00a"
+    - title: "Welcome & keynote"
       description:
+      time: "9:00"
+    - title: "Intro to amp-script: Bring your own JavaScript"
+      description:
+      time: "9:30"
+    - title: "Break"
+      description:
+      time: "10:00"
     - title: "Breakouts"
-      time: "1500"
-      type: panel
-      speakers:
+      description: "Topics include the future of amp-script, Chrome metrics for measuring AMP, and AMP First and the AMP Optimizer."
+      time: "10:15"
+    - title: "Break"
       description:
+      time: "11:15"
+    - title: "AMP: A user driven component roadmap"
+      description:
+      time: "11:30"
+    - title: "Bento AMP update"
+      description:
+      time: "12:00p"
+    - title: "Lunch"
+      description:
+      time: "12:30"
+    - title: "AMP as a framework"
+      description:
+      time: "1:30"
+    - title: "Contributing to amp.dev: What, when, and how!"
+      description:
+      time: "2:00"
+    - title: "Break"
+      description:
+      time: "2:30"
+    - title: "Breakouts"
+      description: "Topics include making AMP as a framework, getting started contributing content, AMP ads, and AMP (and AMP Stories) in WordPress, the WordPress Way."
+      time: "2:45"
+    - title: "Break"
+      description:
+      time: "3:45"
+    - title: "AMP devtools: The 2019 new hotness"
+      description:
+      time: "4:00"
+    - title: "The magic behind how AMP validates and transforms its source code"
+      description:
+      time: "4:30"
+    - title: "Party"
+      description: "Location TBA.  Light food and drinks will be provided."
+      time: "6:00"
+
   day_3:
-    - title: "Talks"
-      time: "0900"
-      type: session
-      speakers:
+    - title: "Breakfast"
+      description: "Location: 111 8th Avenue, New York, NY. Enter the 8th Avenue lobby and look for people with AMP Contributor Summit badges at the Events desk near the Chase."
+      time: "8:00a"
+    - title: "Sustaining an ever-growing AMP component library"
       description:
+      time: "9:00"
+    - title: "How amp-story works with, and in spite of, AMP"
+      description:
+      time: "9:30"
+    - title: "Break"
+      description:
+      time: "10:00"
     - title: "Breakouts"
-      time: "1500"
-      type: panel
-      speakers:
+      description: "Topics include managing a super-sized GitHub repository, tooling for AMP Stories, Next.js and contributing to AMP Start 2.0 and increasing community engagement."
+      time: "10:15"
+    - title: "Break"
       description:
+      time: "11:15"
+    - title: "Governance update"
+      description:
+      time: "11:30"
+    - title: "AMP Technical Steering Committee (TSC) panel"
+      description:
+      time: "12:00p"
+    - title: "Lunch"
+      description:
+      time: "12:30"
+    - title: "Signed exchanges: Bring your own URL"
+      description:
+      time: "1:30"
+    - title: "Life of an AMP email: From code to your email client's inbox"
+      description:
+      time: "2:00"
+    - title: "Break"
+      description:
+      time: "2:30"
+    - title: "Breakouts"
+      description: "Topics include AMP4Email, measuring everything using AMP analytics, bringing an open source mindset to a product lifecycle and making AMP work with JavaScript frameworks."
+      time: "2:45"
+    - title: "Break"
+      description:
+      time: "3:45"
+    - title: "Breakouts recap"
+      description:
+      time: "4:00"
+    - title: "Summit wrap up"
+      description: "Light snacks and drinks will be provided."
+      time: "4:30"

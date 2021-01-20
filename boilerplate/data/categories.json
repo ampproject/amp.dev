@@ -93,7 +93,7 @@
     "checkbox": true,
     "options": [
       {
-        "id": "googleFonts", 
+        "id": "googleFonts",
         "formats": [ "websites", "stories", "ads"],
         "label": "Google Fonts",
         "values": [
@@ -172,6 +172,74 @@
         "label": "<a href=\"https://developers.google.com/search/docs/data-types/recipe\">Recipe</a>",
         "default": false
       }
+    ]
+  },
+	{
+    "label": "Language",
+    "categoryId": "language-select",
+    "formats": [ "websites" ],
+    "select": true,
+    "options": [
+			{
+    		"id": "",
+    		"label": "-",
+    		"default": true
+    	},
+    	{
+    		"id": "en-us",
+    		"label": "English (US)",
+    		"default": false
+    	},
+    	{
+    		"id": "en-uk",
+    		"label": "English (UK)",
+    		"default": false
+    	},
+    	{
+    		"id": "ar",
+    		"label": "Arabic",
+    		"default": false
+    	},
+    	{
+    		"id": "it",
+    		"label": "Italian",
+    		"default": false
+    	},
+    	{
+    		"id": "id",
+    		"label": "Indonesian",
+    		"default": false
+    	},
+    	{
+    		"id": "ja",
+    		"label": "Japanese",
+    		"default": false
+    	},
+    	{
+    		"id": "ko",
+    		"label": "Korean",
+    		"default": false
+    	},
+    	{
+    		"id": "pt",
+    		"label": "Portuguese",
+    		"default": false
+    	},
+    	{
+    		"id": "ru",
+    		"label": "Russian",
+    		"default": false
+    	},
+    	{
+    		"id": "tr",
+    		"label": "Turkish",
+    		"default": false
+    	},
+    	{
+    		"id": "zh",
+    		"label": "Chinese",
+    		"default": false
+    	}
     ]
   },
   {

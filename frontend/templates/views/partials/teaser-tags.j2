@@ -1,0 +1,16 @@
+{% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
+
+<div class="ap-m-teaser-tags">
+  {% if 'websites' in formats %}
+  <div class="ap-m-tag ap-m-tag-websites"></div>
+  {% endif %}
+  {% if 'stories' in formats %}
+  <div class="ap-m-tag ap-m-tag-stories"></div>
+  {% endif %}
+  {% if 'ads' in formats %}
+  <div class="ap-m-tag ap-m-tag-ads"></div>
+  {% endif %}
+  {% if 'email' in formats or 'emails' in formats %}
+  <div class="ap-m-tag ap-m-tag-email"></div>
+  {% endif %}
+</div>

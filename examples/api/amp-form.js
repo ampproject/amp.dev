@@ -21,13 +21,26 @@ const upload = multer();
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
+examples.use(
+  express.urlencoded({
+    extended: false,
+  })
+);
 
 const ERROR_CASE_AMP_FORM = 'error';
 
 examples.get('/submit-form', submitForm);
 examples.post('/submit-form-xhr', upload.none(), submitFormXHR);
-examples.post('/submit-form-input-text-xhr', upload.none(), submitFormXHRInputText);
-examples.post('/verify-form-input-text-xhr', upload.none(), verifyFormXHRInputText);
+examples.post(
+  '/submit-form-input-text-xhr',
+  upload.none(),
+  submitFormXHRInputText
+);
+examples.post(
+  '/verify-form-input-text-xhr',
+  upload.none(),
+  verifyFormXHRInputText
+);
 
 function submitForm(request, response) {
   response.redirect(303, '/static/samples/files/amp-form-success.html');

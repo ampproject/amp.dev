@@ -16,6 +16,11 @@
 			"host": "amp-dev-staging.appspot.com",
 			"port": ""
     },
+		"websocket": {
+			"scheme": "wss",
+			"host": "amp-dev-staging.appspot.com",
+			"port": ""
+    },
     "playground": {
       "scheme": "https",
       "subdomain": "playground-dot-amp-dev-staging",
@@ -44,6 +49,17 @@
       "scheme": "https",
       "host": "amp-dev-sxg.appspot.com",
       "port": ""
+    },
+		"thumbor": {
+      "scheme": "https",
+      "host": "thumbor-dot-amp-dev-staging.appspot.com",
+      "port": ""
     }
+	},
+	"redis": {
+		"us-central1": {
+			"host": "10.139.214.155",
+			"port": "6379"
+		}
 	}
 }

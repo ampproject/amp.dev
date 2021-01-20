@@ -1,0 +1,60 @@
+<!---
+
+author: elisameyer
+
+--->
+<!--
+  ## Introduction
+
+  This example shows how you can sanitize user input for a URL with an
+  `amp-bind-macro` call.
+-->
+<!-- -->
+<!doctype html>
+<html ⚡="">
+  <head>
+    <title>amp-bind-macro</title>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <link rel="canonical" href="<% canonical %>">
+    <meta name="viewport" content="width=device-width">
+    <!-- ## Setup -->
+    <!-- Import the `amp-bind` component to use `amp-bind-macro`. -->
+    <script
+      async
+      custom-element="amp-bind"
+      src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+    ></script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  </head>
+  <body>
+    <h1>
+      AMP bind macro text sanitization
+    </h1>
+    <!-- ## Implementation -->
+    <!-- the `replaceSpace` expression defined in `amp-bind-macro` replaces spaces in user input with `s/ /%20/`
+          and sets all letters to lowercase to match url format for Google search -->
+    <div>
+    <amp-bind-macro
+      id="replaceSpace"
+      arguments="str"
+      expression="str.toLowerCase().split(' ').join('%20')"
+    >
+    </amp-bind-macro>
+
+    <p>
+      Type in something you want to search with spaces
+    </p>
+    <input
+      type="text"
+      placeholder="Search Query"
+      on="input-throttled:AMP.setState({ argumentString: event.value })"
+    />
+      <p
+        [text]="'You have create a sanitized link: https://www.google.com/search?q=' + replaceSpace(argumentString)"
+      >
+        Your sanitized link will display here. You can copy and paste into search bar to test.
+      </p>
+      </div>
+  </body>
+</html>

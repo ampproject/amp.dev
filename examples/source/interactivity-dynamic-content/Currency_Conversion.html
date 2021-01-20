@@ -1,0 +1,72 @@
+<!---
+
+author: philkrie
+
+--->
+<!-- ## Introduction
+  This example shows how to use [`amp-bind`](/documentation/components/amp-bind) to filter JSON data on select of option in select dropdown.
+-->
+<!-- -->
+
+<!DOCTYPE html>
+<html ⚡="">
+
+<head>
+  <meta charset="utf-8">
+  <title>
+    Currency Conversion
+  </title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script async="" src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <link rel="canonical" href="<% canonical %>">
+  <meta name="viewport" content="width=device-width">
+  <!-- ## Setup -->
+  <!-- We include `amp-bind` to track the state -->
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+
+<body>
+  <!--
+  ## Implementation
+
+  This example uses a public currency endpoint to populate `amp-state`. The default value is `EUR` (euro) and we convert the currency values by updating `amp-state` when the user changes the dropdown to a different currency.
+  -->
+  <div>
+    <amp-state id="currencyFilter" src="https://api.exchangeratesapi.io/latest"></amp-state>
+    <amp-state id="defState">
+      <script type="application/json">
+        {
+          "currencyRate": 1,
+          "currencyDecimal": 2,
+          "currencyCode": "EUR"
+        }
+      </script>
+    </amp-state>
+    <select on="change:AMP.setState({
+                  defState: {
+                    currencyRate: event.value == 'EUR' ? 1 : currencyFilter.rates[event.value], 
+                    currencyCode: event.value
+                  }
+                })">
+      <option value="CAD">CAD</option>
+      <option value="EUR" selected="">EUR</option>
+      <option value="HKD">HKD</option>
+      <option value="ISK">ISK</option>
+      <option value="USD">USD</option>
+      <option value="GBP">GBP</option>
+      <option value="RUB">RUB</option>
+      <option value="INR">INR</option>
+    </select>
+      <h3>Banana</h3>
+      <div>
+        <span [text]="defState.currencyCode">EUR</span>
+        <span [text]="(2*defState.currencyRate).toFixed(defState.currencyDecimal)">2.00</span>
+      </div>  
+      <amp-img src="https://cdn.glitch.com/cbcdd9ba-70f9-4d53-a19d-486e4b70f73f%2F440px-Cavendish_Banana_DS.jpg?v=1578089065672" height="112" width="112" layout="fixed" title="banana"></amp-img>
+     </div>
+</body>
+
+</html>

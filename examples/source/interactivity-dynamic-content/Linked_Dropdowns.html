@@ -13,13 +13,14 @@ author: cvializ
 -->
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
+
 <head>
   <title>Linked Dropdowns</title>
   <link rel="canonical" href="<% canonical %>">
 
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <!-- ## Setup -->
   <!-- First we include `amp-bind` to track the page state and update the `<amp-list>` data source. -->
@@ -28,13 +29,82 @@ author: cvializ
   <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
   <!-- Finally, we include `amp-mustache` to render the mustache templates inside the `<amp-list>`s. -->
   <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+  <!-- For the last snippet, we show how to implement a linked list with `amp-form` using the `get` method -->
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
 
-  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <style amp-boilerplate>
+    body {
+      -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      animation: -amp-start 8s steps(1, end) 0s 1 normal both
+    }
+
+    @-webkit-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @-moz-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @-ms-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @-o-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+  </style><noscript>
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: none;
+        -moz-animation: none;
+        -ms-animation: none;
+        animation: none
+      }
+    </style>
+  </noscript>
 
   <style amp-custom>
     :root {
       --space-2: 1rem;
     }
+
     .linked-dropdown label {
       font-weight: bold;
     }
@@ -47,12 +117,14 @@ author: cvializ
     .linked-dropdown select {
       width: 200px;
     }
+
     .linked-dropdown amp-list {
       margin: var(--space-2);
       min-width: 320px;
     }
   </style>
 </head>
+
 <body>
   <!-- ## Implementation -->
   <!--
@@ -61,20 +133,16 @@ author: cvializ
     When the user selects a value in the first dropdown, `amp-bind` updates the `cities` state value. This updates second `<amp-list>`'s `[src]` binding, and it renders its template using the data in the `cities` array.
   -->
   <div class="linked-dropdown">
-    <amp-list layout="fixed-height"
-              height="25"
-              src="/static/samples/json/linked_dropdowns.json"
-              binding="refresh"
-              single-item items="." noloading>
+    <amp-list layout="fixed-height" height="25" src="/static/samples/json/linked_dropdowns.json" binding="refresh" single-item items="." noloading>
       <template type="amp-mustache">
         <label for="country">Country:</label>
         <select id="country" on="change: AMP.setState({
                                             cities: dropdown.countries.filter(x => x.name == event.value)[0]
                                           })">
-        <option value="">Choose a country</option>
-        {{#countries}}
-        <option value="{{name}}">{{name}}</option>
-        {{/countries}}
+          <option value="">Choose a country</option>
+          {{#countries}}
+            <option value="{{name}}">{{name}}</option>
+          {{/countries}}
         </select>
       </template>
       <div placeholder role="listitem">
@@ -84,18 +152,14 @@ author: cvializ
         </select>
       </div>
     </amp-list>
-    <amp-list layout="fixed-height"
-              height="25"
-              [src]="cities || '/static/samples/json/linked_dropdowns.json'"
-              src="/static/samples/json/linked_dropdowns.json"
-              binding="refresh"
-              single-item items="."
-              noloading>
+    <amp-list layout="fixed-height" height="25" [src]="cities || '/static/samples/json/linked_dropdowns.json'" src="/static/samples/json/linked_dropdowns.json" binding="refresh" single-item items="." noloading>
       <template type="amp-mustache">
         <label for="city">City:</label>
         <select [disabled]="!cities" disabled id="city">
           <option value="">Choose a city</option>
-          {{#cities}}<option value="{{.}}">{{.}}</option>{{/cities}}
+          {{#cities}}
+            <option value="{{.}}">{{.}}</option>
+          {{/cities}}
         </select>
       </template>
       <div placeholder role="listitem">
@@ -107,6 +171,52 @@ author: cvializ
     </amp-list>
     <amp-state id="dropdown" src="/static/samples/json/linked_dropdowns.json"></amp-state>
   </div>
+  <!-- ## Implementation with `amp-form` using `get` method -->
+  <!--
+    Here we show the same example within the `amp-form` element.
 
+    We want to pass selected values into `action` url, as found in the `action` field in the `amp-form` component. In order to do this, we must include `data-allow-initialization` and `name="query parameter"` (in this case `q` for Google search) fields in each `select` statement. See [amp-form](/documentation/components/amp-form) for more details.
+
+    To redirect user after they've selected values, you must include a `Submit` button to close off the form. Once user selects the `Submit` button, they will be directed to the action url with attached queries.
+  -->
+  <div class="linked-dropdown-form">
+    <form data-initialize-from-url id="formResetSample" class="field" action="https://www.google.com" method="get" target="_top">
+      <amp-list layout="fixed-height" height="25" src="/static/samples/json/linked_dropdowns.json" binding="refresh" single-item items="." noloading>
+        <template type="amp-mustache">
+          <label for="country">Country:</label>
+          <select id="country" on="change: AMP.setState({
+                                          citiesForm: dropdown.countries.filter(x => x.name == event.value)[0]
+                                        })" name="q" data-allow-initialization>
+            <option value="">Choose a country</option>
+            {{#countries}}
+              <option value="{{name}}">{{name}}</option>
+            {{/countries}}
+          </select>
+        </template>
+        <div placeholder role="listitem">
+          <label for="country">Country:</label>
+          <select disabled>
+            <option value="">Choose a country</option>
+          </select>
+        </div>
+      </amp-list>
+      <amp-list layout="fixed-height" height="25" [src]="citiesForm || '/static/samples/json/linked_dropdowns.json'" src="/static/samples/json/linked_dropdowns.json" binding="refresh" single-item items="." noloading>
+        <template type="amp-mustache">
+          <label for="city">City:</label>
+          <select [disabled]="!citiesForm" disabled id="city" on="change: AMP.setState({city: event.value})" name="q" data-allow-initialization>
+            <option value="">Choose a city</option>
+            {{#citiesForm}}
+              <option value="{{.}}">{{.}}</option>
+            {{/citiesForm}}
+          </select>
+        </template>
+      </amp-list>
+      <amp-state id="dropdown" src="/static/samples/json/linked_dropdowns.json"></amp-state>
+      <button on="select:formResetSample.submit">
+        Submit
+      </button>
+    </form>
+  </div>
 </body>
+
 </html>

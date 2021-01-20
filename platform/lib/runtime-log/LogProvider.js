@@ -27,7 +27,7 @@ const MAX_CACHE_SIZE = 10;
  * Fetches and caches the runtime log.
  */
 class LogProvider {
-  constructor(fetch=nodeFetch) {
+  constructor(fetch = nodeFetch) {
     this.fetch_ = fetch;
     this.cache_ = new LRU(MAX_CACHE_SIZE);
   }

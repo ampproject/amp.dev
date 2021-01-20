@@ -1,0 +1,97 @@
+$title: ameba.jp
+$category: social-media
+$date: 2019-12-02
+description: Ameba がブログ記事ランキングページを AMP Stories として公開
+
+formats:
+  - stories
+
+teaser:
+  image:
+    src: '/static/img/success-stories/ameba/ameba-teaser.jpg'
+    width: 1
+    height: 1
+    alt: An ameba.jp desktop AMP story
+  logo:
+    src: '/static/img/success-stories/ameba/ameba-logo.png'
+    width: 164
+    height: 50
+    alt: Ameba
+  text: Ameba がブログ記事ランキングページを AMP Stories として公開
+
+stage:
+  headline: Ameba がブログ記事ランキングページを AMP Stories として公開
+  subline: DEC 2, 2019
+  layout: all
+  logo:
+    image_src: '/static/img/success-stories/ameba/ameba-logo.png'
+    width: 164
+    height: 50
+    alt: Ameba
+  devices:
+    - image_src: '/static/img/success-stories/ameba/ameba-screen-desktop-1.jpg'
+      width: 1413
+      height: 1001
+      type: desktop
+      alt: An ameba.jp desktop AMP story
+    - video_src: '/static/img/success-stories/ameba/ameba-video.mp4'
+      poster_src: '/static/img/success-stories/ameba/ameba-poster.jpg'
+      width: 563
+      height: 1001
+      type: mobile
+
+kpis:
+  - value: 20%
+    text: クリック率
+
+  - value: 53%
+    text: 読了率
+
+  - value: 1.5x
+    text: 平均滞在時間
+
+contents:
+  - layout: text
+    text: "「21世紀を代表する会社を創る」というビジョンに基づき、メディア、インターネット広告、ゲーム、投資育成という大きく4つの分野で事業を展開するサイバーエージェント。<br><br>主力サービスのひとつであるAmebaブログでは、早くからブログ記事をAMP化し、検索結果での表示を最適化してきました。主な目的は、表示速度の改善によるユーザー体験の向上であり、その結果、メディア指標や広告指標が改善されました。AMPキャッシュに登録されている記事数は2000万を超えており、表示速度指標のSpeed Indexは57%改善、広告 CPMが49%向上という成果をあげました。<br><br>この度、よりブログコンテンツを魅力的に提供するために、昨今モバイルを中心に受け入れられているストーリー形式でのランキングコンテンツを提供し始めました。利用者の満足度を測るため、KPIには、各ページからブログ記事へのクリック率とストーリーの完了率を定義しました。"
+
+  - layout: text-media
+    image_src: '/static/img/success-stories/ameba/ameba-screen-2.jpg'
+    width: 563
+    height: 1001
+    type: mobile
+    alt: An ameba.jp AMP story
+    headline: Solution
+    text: "<ul>
+      <li>AMPで提供されているコンポーネントを利用して簡単にストーリー形式でコンテンツが作成できました</li>
+      <li>既存のリスト形式用に提供されているデータをそのまま流用して、ファッション、食べ物、教育など185ジャンルのAMP Storiesを作成し、毎日更新しています</li>
+      <li>自動ページ送り機能であるauto-advance-after属性を利用して、まるで動画を見ているかのように眺めているだけでコンテンツを消費できるようにしました</li>
+      <li>目標とするKPIを達成するため、また自動的にAMP Storiesを生成できるように複数パターンのレイアウト、アニメーションを用意し、試行錯誤しました</li>
+    </ul>"
+    direction: right-flat
+
+  - layout: quote
+    quote: "検索結果での表示速度向上のためにAMPを導入し始めましたが、その開かれた技術仕様やベストプラクティスを組み合わせた実装から多くの可能性があると感じました。今や多くの機能が追加され、 AMPだけでも多くのパターンのWebサイトを作ることができ、その進化は驚異的です。<br><br>なかでもAMP Storiesは、モバイル時代に適した形でコンテンツを配信でき、良質なブログ記事を保持するAmebaとは相性がいいものです。KPIの結果が示すように、利用者の評価も得られており、今後も引き続き投資していく予定です。"
+    image_src: '/static/img/success-stories/ameba/ameba-logo.png'
+    width: 164
+    height: 50
+    alt: ameba.jp
+    author: 原 一成, Tech Lead of Ameba
+
+  - layout: text-media
+    image_src: '/static/img/success-stories/ameba/ameba-screen-3.jpg'
+    width: 563
+    height: 1001
+    type: mobile
+    alt: An ameba.jp AMP story
+    headline: Result
+    text: "リリース直後の数値では、各ページからブログ記事へのCTRは20%、ストーリーの完了率は50%を記録しました。これは、半数以上の利用者がストーリー形式のコンテンツに満足し、また、それぞれのブログ記事に興味をもったことを意味します。さらに、ストーリー形式のページは、既存のリスト形式に比べ滞在時間が1.5倍になりました。"
+    direction: left
+    background: gradient
+
+  - layout: quote
+    quote: "SEOにおいても検索者のユーザー体験を向上させることは重要なことだと考えており、そのためにはAMPやAMP Storiesは非常に有効な手段だと考えています。<br><br>また、それらは通常のオーガニックサーチだけでなく、Google Discoverとの相性も良く広い意味での”Googleからのトラフィック”の増加が期待できると考えています。 Googleの検索プロダクトは当然ですがGoogleで検索するユーザーのユーザー体験を向上させるものであることから、SEOの観点からも今後も積極的に取り組んでいくつもりです。"
+    image_src: '/static/img/success-stories/ameba/ameba-logo.png'
+    width: 164
+    height: 50
+    alt: ameba.jp
+    author: 木村 賢, SEO Manager of Ameba

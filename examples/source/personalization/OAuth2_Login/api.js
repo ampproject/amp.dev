@@ -127,7 +127,7 @@ const FACEBOOK_CONFIG = {
 async function getOAuthConfig(providerConfig = {}) {
   if (!Object.getOwnPropertyNames(providerConfig).length) {
     return;
-  };
+  }
 
   if (oauthConfig[providerConfig.provider]) {
     return oauthConfig[providerConfig.provider];
@@ -144,35 +144,63 @@ examples.get('/status', oAuthStatus);
 examples.get('/logout', logOut);
 examples.all('/login/google', async (request, response) => {
   oauthConfig.google = await getOAuthConfig(GOOGLE_CONFIG);
-  oauthConfig.google.authCodeUrl = GOOGLE_CONFIG.authCodeUrl(oauthConfig.google);
+  oauthConfig.google.authCodeUrl = GOOGLE_CONFIG.authCodeUrl(
+    oauthConfig.google
+  );
   loginForConfig(request, response, oauthConfig.google, GOOGLE_CONFIG.provider);
 });
 examples.all('/callback/google', async (request, response) => {
   oauthConfig.google = await getOAuthConfig(GOOGLE_CONFIG);
   oauthConfig.google.tokenUrl = GOOGLE_CONFIG.tokenUrl(oauthConfig.google);
-  callbackForConfig(request, response, oauthConfig.google, GOOGLE_CONFIG.provider);
+  callbackForConfig(
+    request,
+    response,
+    oauthConfig.google,
+    GOOGLE_CONFIG.provider
+  );
 });
 
 examples.all('/login/github', async (request, response) => {
   oauthConfig.github = await getOAuthConfig(GITHUB_CONFIG);
-  oauthConfig.github.authCodeUrl = GITHUB_CONFIG.authCodeUrl(oauthConfig.github);
+  oauthConfig.github.authCodeUrl = GITHUB_CONFIG.authCodeUrl(
+    oauthConfig.github
+  );
   loginForConfig(request, response, oauthConfig.github, GITHUB_CONFIG.provider);
 });
 examples.all('/callback/github', async (request, response) => {
   oauthConfig.github = await getOAuthConfig(GITHUB_CONFIG);
   oauthConfig.github.tokenUrl = GITHUB_CONFIG.tokenUrl(oauthConfig.github);
-  callbackForConfig(request, response, oauthConfig.github, GITHUB_CONFIG.provider);
+  callbackForConfig(
+    request,
+    response,
+    oauthConfig.github,
+    GITHUB_CONFIG.provider
+  );
 });
 
 examples.all('/login/facebook', async (request, response) => {
   oauthConfig.facebook = await getOAuthConfig(FACEBOOK_CONFIG);
-  oauthConfig.facebook.authCodeUrl = FACEBOOK_CONFIG.authCodeUrl(oauthConfig.facebook);
-  loginForConfig(request, response, oauthConfig.facebook, FACEBOOK_CONFIG.provider);
+  oauthConfig.facebook.authCodeUrl = FACEBOOK_CONFIG.authCodeUrl(
+    oauthConfig.facebook
+  );
+  loginForConfig(
+    request,
+    response,
+    oauthConfig.facebook,
+    FACEBOOK_CONFIG.provider
+  );
 });
 examples.all('/callback/facebook', async (request, response) => {
   oauthConfig.facebook = await getOAuthConfig(FACEBOOK_CONFIG);
-  oauthConfig.facebook.tokenUrl = FACEBOOK_CONFIG.tokenUrl(oauthConfig.facebook);
-  callbackForConfig(request, response, oauthConfig.facebook, FACEBOOK_CONFIG.provider);
+  oauthConfig.facebook.tokenUrl = FACEBOOK_CONFIG.tokenUrl(
+    oauthConfig.facebook
+  );
+  callbackForConfig(
+    request,
+    response,
+    oauthConfig.facebook,
+    FACEBOOK_CONFIG.provider
+  );
 });
 
 /**
@@ -187,8 +215,10 @@ function loginForConfig(request, response, providerConfig, provider) {
     returnUrl: request.query.return || '',
   });
 
-  response.redirect(`${providerConfig.authCodeUrl}&redirect_uri=${config.hosts.preview.base}` +
-      `/documentation/examples/personalization/oauth2_login/callback/${provider}`);
+  response.redirect(
+    `${providerConfig.authCodeUrl}&redirect_uri=${config.hosts.preview.base}` +
+      `/documentation/examples/personalization/oauth2_login/callback/${provider}`
+  );
 }
 
 /**
@@ -214,10 +244,12 @@ async function callbackForConfig(request, response, providerConfig, provider) {
   let name;
   // Try to get the accessToken
   try {
-    accessToken = await fetchJson(`${providerConfig.tokenUrl.url}&code=${code}&` +
-      `redirect_uri=${config.hosts.preview.base}` +
-      `/documentation/examples/personalization/oauth2_login/callback/${provider}`,
-    providerConfig.tokenUrl.options);
+    accessToken = await fetchJson(
+      `${providerConfig.tokenUrl.url}&code=${code}&` +
+        `redirect_uri=${config.hosts.preview.base}` +
+        `/documentation/examples/personalization/oauth2_login/callback/${provider}`,
+      providerConfig.tokenUrl.options
+    );
   } catch (err) {
     response.clearCookie(OAUTH_COOKIE_NAME);
     response.redirect(generateReturnUrl(returnUrl, false));
@@ -228,7 +260,9 @@ async function callbackForConfig(request, response, providerConfig, provider) {
   try {
     name = await fetchJson(USERINFO_ENDPOINT[provider].url, {
       headers: {
-        'Authorization': USERINFO_ENDPOINT[provider].headers(accessToken.access_token),
+        'Authorization': USERINFO_ENDPOINT[provider].headers(
+          accessToken.access_token
+        ),
       },
     });
   } catch (err) {
@@ -237,10 +271,14 @@ async function callbackForConfig(request, response, providerConfig, provider) {
     return;
   }
 
-  const cookie = {...{}, ...request.cookies[OAUTH_COOKIE_NAME], ...{
-    loggedInWith: provider,
-    name: name[USERINFO_ENDPOINT[provider].propertyName],
-  }};
+  const cookie = {
+    ...{},
+    ...request.cookies[OAUTH_COOKIE_NAME],
+    ...{
+      loggedInWith: provider,
+      name: name[USERINFO_ENDPOINT[provider].propertyName],
+    },
+  };
   response.cookie(OAUTH_COOKIE_NAME, cookie);
   response.redirect(generateReturnUrl(cookie.returnUrl, !!name));
 }
@@ -261,7 +299,9 @@ async function fetchJson(url, options = {}) {
 }
 
 function oAuthStatus(request, response) {
-  const name = request.cookies[OAUTH_COOKIE_NAME] ? request.cookies[OAUTH_COOKIE_NAME].name : '';
+  const name = request.cookies[OAUTH_COOKIE_NAME]
+    ? request.cookies[OAUTH_COOKIE_NAME].name
+    : '';
   response.json({
     loggedIn: !!name,
     name,

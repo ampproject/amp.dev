@@ -25,12 +25,14 @@ const examples = express.Router();
 
 examples.use(formidableMiddleware());
 examples.use(cookieParser());
-examples.use(sessions({
-  cookieName: 'session',
-  secret: 'ampdev-shopping-cart',
-  duration: 24 * 60 * 60 * 1000, // 24 hours
-  activeDuration: 1000 * 60 * 5, // 5 minutes
-}));
+examples.use(
+  sessions({
+    cookieName: 'session',
+    secret: 'ampdev-shopping-cart',
+    duration: 24 * 60 * 60 * 1000, // 24 hours
+    activeDuration: 1000 * 60 * 5, // 5 minutes
+  })
+);
 
 examples.post('/add-to-cart', addToCartHandlerPost);
 examples.get('/add-to-cart', addToCartHandlerGet);
@@ -45,24 +47,39 @@ function addToCartHandlerPost(req, res) {
   if (req.headers['amp-same-origin'] !== 'true') {
     // transfrom POST into GET and redirect to /add_to_cart, to complete the request from the origin, with access to the session.
     const queryString = new URLSearchParams({...cartItem, origin}).toString();
-    res.header('AMP-Redirect-To', req.protocol + '://' + req.get('host') +
-        `/documentation/examples/e-commerce/add_to_cart?${queryString}`);
+    res.header(
+      'AMP-Redirect-To',
+      req.protocol +
+        '://' +
+        req.get('host') +
+        `/documentation/examples/e-commerce/add_to_cart?${queryString}`
+    );
   } else {
     // Complete the request from the origin
     updateShoppingCartOnSession(req, cartItem);
-    res.header('AMP-Redirect-To', req.protocol + '://' + req.get('host') +
-        '/documentation/examples/e-commerce/shopping_cart/');
+    res.header(
+      'AMP-Redirect-To',
+      req.protocol +
+        '://' +
+        req.get('host') +
+        '/documentation/examples/e-commerce/shopping_cart/'
+    );
   }
 
   res.json({});
-};
+}
 
 function addToCartHandlerGet(req, res) {
   const cartItem = createCartItem(req);
 
   updateShoppingCartOnSession(req, cartItem);
-  res.redirect(req.protocol + '://' + req.get('host') + '/documentation/examples/e-commerce/shopping_cart/');
-};
+  res.redirect(
+    req.protocol +
+      '://' +
+      req.get('host') +
+      '/documentation/examples/e-commerce/shopping_cart/'
+  );
+}
 
 function createCartItem(req) {
   return {
@@ -91,7 +108,7 @@ function cartItemsHandler(req, res) {
   shoppingCartResponse.items.push(shoppingCart);
 
   res.send(shoppingCartResponse);
-};
+}
 
 function deleteCartItemHandler(req, res) {
   const id = req.fields.id;
@@ -109,7 +126,7 @@ function deleteCartItemHandler(req, res) {
   }
 
   res.send(shoppingCartResponse);
-};
+}
 
 function updateShoppingCartOnSession(req, cartItem) {
   let shoppingCart = req.session.shoppingCart;
@@ -133,7 +150,7 @@ class ShoppingCart {
   addItem(item) {
     // check if item exists in cart before pushing
     const foundItem = this.cartItems.filter((elem) => {
-      return (elem.id == item.id && elem.size == item.size);
+      return elem.id == item.id && elem.size == item.size;
     });
 
     if (foundItem.length > 0) {
@@ -143,7 +160,7 @@ class ShoppingCart {
     }
 
     this.isEmpty = false;
-  };
+  }
 
   removeItem(id, size) {
     for (let i = 0; i < this.cartItems.length; i++) {
@@ -156,7 +173,7 @@ class ShoppingCart {
         }
       }
     }
-  };
+  }
 }
 
 module.exports = examples;

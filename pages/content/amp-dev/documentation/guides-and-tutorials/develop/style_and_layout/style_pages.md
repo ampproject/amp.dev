@@ -30,7 +30,7 @@ But you can use CSS preprocessors and templating to build static pages
 to better manage your content.
 
 [tip type="note"]
-**NOTE –**  AMP components come with default styles to make authoring responsive pages reasonably easy. These styles are defined in the [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
+**NOTE –** AMP components come with default styles to make authoring responsive pages reasonably easy. These styles are defined in the [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
 [/tip]
 
 ## Disallowed styles
@@ -55,8 +55,8 @@ The following styles aren’t allowed in AMP pages:
       <td data-th="Description">Disallowed with the exception of <a href="#the-custom-fonts-exception">custom fonts</a>.</td>
     </tr>
     <tr>
-      <td data-th="Banned style"><code>-amp-</code> class and <code>i-amp-</code> tag names</td>
-      <td data-th="Description">Class names, in author stylesheets, may not start with the string <code>-amp-</code>. These are reserved for internal use by the AMP runtime. It follows, that the user's stylesheet may not reference CSS selectors for <code>-amp-</code> classes and <code>i-amp</code> tags.</td>
+      <td data-th="Banned style"><code>i-amphtml-</code> class and <code>i-amphtml-</code> tag names.</td>
+      <td data-th="Description">The validator disallows class and tags names with the following regex `(^|\W)i-amphtml-`. These are reserved for internal use by the AMP framework. It follows, that the user's stylesheet may not reference CSS selectors for <code>i-amphtml-</code> classes and tags.</td>
     </tr>
   </tbody>
 </table>
@@ -84,7 +84,7 @@ These allowed styles should restrict values to the following for an optimal perf
   </tbody>
 </table>
 
-## The custom fonts exception
+## The custom fonts exception <a name="the-custom-fonts-exception"></a>
 
 AMP pages can’t include external stylesheets, with the exception of custom fonts.
 
@@ -92,7 +92,7 @@ AMP pages can’t include external stylesheets, with the exception of custom fon
 **READ ON –** Learn more about [custom fonts in AMP](custom_fonts.md).
 [/tip]
 
-## Using CSS preprocessors
+## Using CSS preprocessors <a name="using-css-preprocessors"></a>
 
 The generated output of preprocessors works just as well in AMP as any other web page.
 For example, the [amp.dev](https://amp.dev/) site uses
@@ -110,9 +110,10 @@ It also includes the custom element script for
 so that many pages across the site can include embedded youtube videos.
 
 [sourcecode:html]{% raw %}
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
   <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 

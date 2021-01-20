@@ -6,11 +6,11 @@ author: sebastianbenz
 <!--
   ## Introduction
 
-  The [`amp-lightbox`](/content/amp-dev/documentation/components/reference/amp-lightbox.md) component allows for a “lightbox” or similar experience - where upon user interaction a component expands to fill the viewport, until it is closed again by the user.
+  The [`amp-lightbox`](/content/amp-dev/documentation/components/reference/amp-lightbox-v0.1.md) component allows for a “lightbox” or similar experience - where upon user interaction a component expands to fill the viewport, until it is closed again by the user.
 -->
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 <head>
   <meta charset="utf-8">
   <title>amp-lightbox</title>
@@ -21,7 +21,7 @@ author: sebastianbenz
   <!-- You can combine the lightbox component with `amp-bind`. -->
   <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
   <link rel="canonical" href="<% canonical %>">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <style amp-custom>
     .lightbox {
@@ -62,13 +62,14 @@ author: sebastianbenz
   -->
 
   <!-- ## Combination with amp-bind -->
-  <!-- `amp-lightbox` can be opened as a result of `amp-bind` evaluations by binding a boolean value to the `open` attribute. -->
+  <!-- `amp-lightbox` can be opened as a result of `amp-bind` evaluations by binding a boolean value to the `open` attribute. Note that we're also listening to the `lightboxClose` event to reset the state of the variable. -->
   <div>
-    <amp-lightbox id="my-bindable-lightbox" [open]="showLightbox" layout="nodisplay">
+    <amp-lightbox id="my-bindable-lightbox" [open]="showLightbox" layout="nodisplay" 
+      on="lightboxClose:AMP.setState({showLightbox: false})">
       <div class="lightbox"
            role="button"
            tabindex="0"
-           on="tap:AMP.setState({showLightbox: false})">
+           on="tap:my-bindable-lightbox.close">
         <h1>Hello World!</h1>
       </div>
     </amp-lightbox>

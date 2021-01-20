@@ -16,7 +16,7 @@
 .#{organism('resources-overview')} {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(24, 1fr);
+  grid-template-columns: repeat(24, minmax(0, 1fr));
   margin: 11em 0 0;
   padding: 3em 0;
 
@@ -47,7 +47,7 @@
       @include gradient-stories;
 
       .#{organism('resources-grid')} h2 {
-        color: color('ultramarine');
+        @include color-stories;
       }
     }
 
@@ -55,7 +55,7 @@
       @include gradient-ads;
 
       .#{organism('resources-grid')} h2 {
-        color: color('white');
+        @include color-ads;
       }
     }
 
@@ -63,7 +63,7 @@
       @include gradient-e-mails;
 
       .#{organism('resources-grid')} h2 {
-        color: color('ultramarine');
+        @include color-e-mails;
       }
     }
   }
@@ -71,13 +71,13 @@
   &-websites .#{organism('resources-grid')} h2,
   &-ads .#{organism('resources-grid')} h2 {
     transition: color 0.3s cubic-bezier(.25, .1, .25, 1);
-    color: color('white');
+    @include color-websites;
   }
 
   &-email .#{organism('resources-grid')} h2,
   &-stories .#{organism('resources-grid')} h2 {
     transition: color 0.3s cubic-bezier(.25, .1, .25, 1);
-    color: color('ultramarine');
+    @include color-stories;
   }
 
   .ap-format-content {
@@ -135,6 +135,10 @@
           background: color('athens-gray');
           transition: transform 0.3s cubic-bezier(.25,.1,.25,1), box-shadow 0.3s cubic-bezier(.25,.1,.25,1);
 
+          @media (max-width: 400px) {
+            width: 100%;
+          }
+
           .#{atom('ico')} {
             width: 20px;
             height: 20px;
@@ -154,40 +158,40 @@
           &-websites.active,
           &-websites:hover {
             @include gradient-websites;
-            color: color('white');
+            @include color-websites;
 
             .#{atom('ico')} {
-              fill: color('white');
+              @include fill-websites;;
             }
           }
 
           &-stories.active,
           &-stories:hover {
             @include gradient-stories;
-            color: color('ultramarine');
+            @include color-stories;
 
             .#{atom('ico')} {
-              fill: color('ultramarine');
+              @include fill-stories;
             }
           }
 
           &-ads.active,
           &-ads:hover {
             @include gradient-ads;
-            color: color('white');
+            @include color-ads;
 
             .#{atom('ico')} {
-              fill: color('white');
+              @include fill-ads;
             }
           }
 
           &-email.active,
           &-email:hover {
             @include gradient-e-mails;
-            color: color('ultramarine');
+            @include color-e-mails;
 
             .#{atom('ico')} {
-              fill: color('ultramarine');
+              @include fill-e-mails;
             }
           }
         }

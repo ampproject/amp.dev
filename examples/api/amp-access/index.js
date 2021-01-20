@@ -24,9 +24,11 @@ const path = require('path');
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 examples.use(cookieParser());
-examples.use(express.urlencoded({
-  extended: true,
-}));
+examples.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 
 const AMP_ACCESS_COOKIE = 'ABE_LOGGED_IN';
 const VALID_USERS = {
@@ -36,12 +38,15 @@ const VALID_USERS = {
 const POWER_USERS = {
   'Jane@gmail.com': true,
 };
-const EXPIRATION_DATE = 24*60*60*1000; // 1 day in ms
+const EXPIRATION_DATE = 24 * 60 * 60 * 1000; // 1 day in ms
 const LOGIN_FILE_PATH = path.join(__dirname, 'login.html');
 
 examples.get('/authorization', handleAuthorization);
 examples.get('/login', handleLogin);
 examples.get('/logout', handleLogout);
+examples.post('/pingback', (req, res) => {
+  res.status(200);
+});
 examples.post('/submit', handleSubmit);
 
 function handleAuthorization(request, response) {
@@ -88,7 +93,11 @@ function handleSubmit(request, response) {
     response.status(401).send('Invalid email');
     return;
   }
-  response.cookie(AMP_ACCESS_COOKIE, {email}, {expires: new Date(Date.now() + EXPIRATION_DATE)});
+  response.cookie(
+    AMP_ACCESS_COOKIE,
+    {email},
+    {expires: new Date(Date.now() + EXPIRATION_DATE)}
+  );
   let returnUrl = request.body.returnurl;
   if (!isValidURL(returnUrl)) {
     response.status(500).send('Invalid return URL');
@@ -100,7 +109,9 @@ function handleSubmit(request, response) {
 
 function isValidURL(url) {
   const a = URL.parse(url);
-  return (a.host && a.protocol && (a.protocol === 'http:' || a.protocol === 'https:'));
+  return (
+    a.host && a.protocol && (a.protocol === 'http:' || a.protocol === 'https:')
+  );
 }
 
 module.exports = examples;

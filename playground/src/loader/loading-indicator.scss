@@ -1,0 +1,16 @@
+%loading-indicator {
+  pointer-events: none;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 45px;
+    height: 45px;
+    margin: 100px auto auto auto;
+    padding: 1px;
+    border: 3px solid color('iron');
+    border-radius: 50%;
+    border-left-color: transparent;
+    animation: rotate 1.5s linear infinite;
+  }
+}

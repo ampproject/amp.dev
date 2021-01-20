@@ -101,14 +101,14 @@ section.#{utility('tools')} {
     }
   }
 
-  .#{molecule('filter-bubble')} {
+  .#{atom('pill')} {
     position: relative;
     display: inline-block;
     padding: 5px 20px;
     margin: 0;
     font-size: 12px;
     font-family: 'Noto Sans', sans-serif;
-    color: color('silver');
+    color: color('iron');
     background: color('white');
     transition: 200ms;
     box-shadow: 0 5px 25px 0px rgba(0,0,0,0.25);
@@ -130,23 +130,39 @@ section.#{utility('tools')} {
     &.hover,
     &.active {
       &.websites {
-        @include gradient-websites; color: color('white');
-        .#{atom('ico')} { fill: color('white'); }
+        @include gradient-websites;
+        @include color-websites;
+
+        .#{atom('ico')} {
+          @include fill-websites;
+        }
       }
 
       &.stories {
-        @include gradient-stories; color: color('pigment-indigo');
-        .#{atom('ico')} { fill: color('pigment-indigo'); }
+        @include gradient-stories;
+        @include color-stories;
+
+        .#{atom('ico')} {
+          @include fill-stories;
+        }
       }
 
       &.ads {
-        @include gradient-ads; color: color('white');
-        .#{atom('ico')} { fill: color('white'); }
+        @include gradient-ads;
+        @include color-ads;
+
+        .#{atom('ico')} {
+          @include fill-ads;
+        }
       }
 
       &.email {
-        @include gradient-e-mails; color: color('ultramarine');
-        .#{atom('ico')} { fill: color('ultramarine'); }
+        @include gradient-e-mails;
+        @include color-e-mails;
+
+        .#{atom('ico')} {
+          @include fill-e-mails;
+        }
       }
     }
 
@@ -154,6 +170,10 @@ section.#{utility('tools')} {
       display: inline-flex;
       margin: 0 2px 2px 0;
       vertical-align: middle;
+    }
+
+    &-text {
+      margin-right: 8px;
     }
 
     &-reset {

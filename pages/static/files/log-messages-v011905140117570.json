@@ -1062,7 +1062,7 @@
     "message": "Ignoring unsupported replacement"
   },
   "4U": {
-    "message": "Ignoring link replacement %s because the link does not go to the document's source, canonical, or whitelisted origin."
+    "message": "Ignoring link replacement %s because the link does not go to the document's source, canonical, or allowlisted origin."
   },
   "4V": {
     "message": "Illegal replacement of the protocol: "
@@ -2088,7 +2088,7 @@
     "message": "unknown animation type: must have \"animation\", \"animations\" or \"keyframes\" field"
   },
   "be": {
-    "message": "Property is not whitelisted for animation: %s"
+    "message": "Property is not allowlisted for animation: %s"
   },
   "bf": {
     "message": "Both \"selector\" and \"target\" are not allowed"
@@ -2190,7 +2190,7 @@
     "message": "Parentless anchor with BEFORE/AFTER position."
   },
   "bM": {
-    "message": "Placement inside blacklisted ancestor: %s"
+    "message": "Placement inside denylisted ancestor: %s"
   },
   "bN": {
     "message": "unable to fulfill ad strategy"

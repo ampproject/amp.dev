@@ -1,7 +1,17 @@
 {% do doc.styles.addCssFile('/css/components/molecules/banner.css') %}
 <div class="ap-m-banner">
-  <a href="https://blog.amp.dev/2019/07/10/amp-contributor-summit-2019-applications-now-open/" class="ap-m-banner-link">
+  <a id="top-banner"
+     class="ap-m-banner-link"
+     target="_blank"
+     href="https://go.amp.dev/devx-survey">
     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-    {{ _('AMP Contributor Summit 2019 Applications Now Open') }}
+    {{ _('Do you build things with AMP? Fill out the AMP Developer Survey!') }}
   </a>
+  
+{% if banner_closeable %}
+  <button class="ap-m-banner-dismiss" on="tap:{{ banner_notification_id }}.dismiss">
+    {% do doc.icons.useIcon('/icons/close.svg') %}
+    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
+  </button>
+{% endif %}
 </div>

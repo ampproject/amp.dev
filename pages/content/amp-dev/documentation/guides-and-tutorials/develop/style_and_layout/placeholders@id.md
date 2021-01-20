@@ -1,17 +1,26 @@
 ---
-$title: Placeholder & fallback
+"$title": Bakal tempat & fallback
+"$order": '3'
+descriptions: "In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible."
+formats:
+- websites
+- email
+- ads
+- stories
+components:
+- iframe
+author: pbakaus
+contributors:
+- bpaduch
 ---
 
-Dalam upaya meningkatkan performa dan progressive enhancement yang dirasakan, salah satu praktik terbaik dalam AMP adalah menyediakan placeholder dan fallback di mana pun dimungkinkan.
+In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible.
 
-Beberapa elemen bahkan akan memberikan reward berupa kelonggaran pembatasan jika Anda menyediakan placeholder dan fallback - misalnya, jika Anda menyediakan placeholder untuk [`<amp-iframe>`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder), elemen tersebut dapat digunakan di dekat bagian atas halaman (yang tidak akan berfungsi tanpa placeholder)
+Beberapa elemen bahkan akan memberikan hadiah berupa kelonggaran pembatasan jika Anda menyediakan bakal tempat dan fallback - contohnya, jika Anda menyediakan bakal tempat untuk [`<amp-iframe>`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder), elemen tersebut dapat digunakan di dekat bagian atas halaman (yang tidak akan berfungsi tanpa bakal tempat).
 
-## Placeholder
+## Bakal tempat (placeholder)
 
-Elemen yang ditandai dengan atribut `placeholder` berfungsi
-sebagai placeholder untuk elemen AMP induk.
-Jika ditentukan, elemen `placeholder` harus merupakan turunan langsung dari elemen AMP itu.
-Elemen yang ditandai sebagai `placeholder` akan selalu `fill` (mengisi) elemen AMP induk.
+Elemen yang ditandai dengan atribut `placeholder` berfungsi sebagai bakal tempat untuk elemen AMP induk. Jika ditentukan, elemen `placeholder` harus merupakan anak langsung dari elemen AMP itu. Elemen yang ditandai sebagai `placeholder` akan selalu `fill` (mengisi) elemen AMP induk.
 
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
 ```html
@@ -27,30 +36,23 @@ Elemen yang ditandai sebagai `placeholder` akan selalu `fill` (mengisi) elemen A
 ```
 [/example]
 
-Secara default, placeholder langsung ditampilkan untuk elemen AMP,
-meskipun resource elemen AMP tersebut belum didownload atau diinisialisasi.
-Setelah siap, elemen AMP biasanya menyembunyikan placeholder-nya dan menampilkan kontennya.
+Sebagai standar, bakal tempat langsung ditampilkan untuk elemen AMP, meskipun sumber daya elemen AMP tersebut belum diunduh atau diawali. Setelah siap, elemen AMP biasanya menyembunyikan bakal tempatnya dan menampilkan kontennya.
 
-[tip type="note"]
+Bakal tempat tidak harus berupa elemen AMP; elemen HTML apa pun dapat berfungsi sebagai bakal tempat.
 
-Placeholder tidak harus berupa elemen AMP;
-elemen HTML apa pun dapat berfungsi sebagai placeholder.
+## Fallback <a name="fallbacks"></a>
 
-[/tip]
+Anda dapat menentukan atribut `fallback` pada sebuah elemen untuk mengindikasikan perilaku fallback:
 
-## Fallback
+- for any element the browser doesn’t support
+- jika konten gagal dimuat (cth.: tweet yang telah dihapus)
+- if the image type is unsupported (e.g., WebP isn't supported in all browsers)
 
-Anda dapat menentukan atribut `fallback` pada sebuah elemen untuk menunjukkan perilaku fallback:
+Anda dapat menetapkan atribut `fallback` pada elemen HTML *apa pun*, bukan hanya elemen AMP. Jika ditetapkan, elemen `fallback` harus merupakan anak (turunan) langsung dari elemen AMP.
 
-* untuk elemen apa pun yang tidak didukung oleh browser
-* jika konten gagal dimuat (misalnya tweet dihapus)
-* jika jenis gambar tidak didukung (misalnya WebP tidak didukung di semua browser)
+##### Contoh: Fitur yang tidak didukung
 
-Anda dapat menetapkan atribut `fallback` pada elemen HTML *apa pun*, bukan hanya di elemen AMP. Jika ditentukan, elemen `fallback` harus berupa turunan langsung dari elemen AMP.
-
-##### Contoh: Fitur tidak didukung
-
-Pada contoh berikut, kami menggunakan atribut `fallback` untuk memberi tahu pengguna bahwa browser tidak mendukung fitur tertentu:
+Dalam contoh berikut ini, kita menggunakan atribut `fallback` untuk menyampaikan kepada pengguna bahwa browser tidak mendukung fitur tertentu:
 
 [example preview="inline" playground="true" imports="amp-video:0.1"]
 ```html
@@ -68,7 +70,7 @@ Pada contoh berikut, kami menggunakan atribut `fallback` untuk memberi tahu peng
 
 ##### Contoh: Menampilkan format gambar yang berbeda
 
-Pada contoh berikut, kami menggunakan atribut `fallback` untuk memberi tahu browser agar menggunakan file JPEG jika format WebP tidak didukung. 
+Dalam contoh berikut ini, kita menggunakan atribut `fallback` untuk memberi tahu browser agar menggunakan berkas JPEG jika format WebP tidak didukung.
 
 [example preview="inline" playground="true"]
 ```html
@@ -87,24 +89,17 @@ Pada contoh berikut, kami menggunakan atribut `fallback` untuk memberi tahu brow
 ```
 [/example]
 
-## Interaksi placeholder dan fallback
+## Interaksi bakal tempat dan fallback
 
-Untuk komponen AMP yang mengandalkan konten dinamis (misalnya [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md), [`amp-list`](../../../../documentation/components/reference/amp-list.md)), interaksi fallback dan placeholder beroperasi sebagai berikut:
+Untuk komponen AMP yang mengandalkan konten dinamis (cth.: [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md), [`amp-list`](../../../../documentation/components/reference/amp-list.md)), interaksi fallback dan bakal tempat terjadi sebagai berikut:
 
 <ol>
-  <li>Tampilkan placeholder saat konten sedang dimuat.</li>
-  <li>Jika konten berhasil dimuat, sembunyikan placeholder dan tampilkan konten.</li>
-  <li>Jika konten gagal dimuat:
-    <ol>
-      <li>Jika ada elemen fallback, tampilkan fallback.</li>
-      <li>Jika tidak, lanjutkan menampilkan placeholder.</li>
-    </ol>
-  </li>
+  <li>Tampilkan bakal tempat saat konten sedang dimuat.</li>
+  <li>Jika konten berhasil dimuat, sembunyikan bakal tempat dan tampilkan konten.</li>
+  <li>Jika konten gagal dimuat: <ol> <li>Jika ada elemen fallback, tampilkan fallback.</li> <li>Jika tidak, lanjutkan menampilkan bakal tempat.</li> </ol>
+</li>
 </ol>
 
 ## Menyembunyikan indikator pemuatan
 
-Banyak elemen AMP diberi akses untuk menampilkan "indikator pemuatan",
-yaitu animasi dasar yang menunjukkan bahwa elemen belum dimuat sepenuhnya.
-Elemen dapat memilih keluar dari perilaku ini dengan menambahkan atribut `noloading`.
- 
+Banyak elemen AMP yang masuk ke dalam daftar elemen yang diizinkan untuk menampilkan "indikator pemuatan", yaitu animasi dasar yang menunjukkan bahwa elemen belum dimuat sepenuhnya. Elemen dapat memilih menolak perilaku ini dengan menambahkan atribut `noloading`.

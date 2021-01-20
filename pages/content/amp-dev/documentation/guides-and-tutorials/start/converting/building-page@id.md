@@ -1,22 +1,24 @@
 ---
-$title: Membuat halaman HTML reguler
+"$title": Membuat halaman HTML reguler
+"$order": '1'
+description: Di direktori proyek, Anda akan menemukan berkas bernama article.html. Ini adalah artikel berita yang kita buatkan halaman setara AMP untuk ....
 ---
 
-Di direktori project, Anda akan menemukan file dengan nama [`article.html`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/article.html). Ini adalah artikel berita yang kita buatkan halaman setara AMP-nya.
+Di direktori project, Anda akan menemukan berkas bernama [`article.html`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/article.html). Ini adalah artikel berita yang kita buatkan halaman setara AMP.
 
-1.  **Salin** seluruh kode dari file `article.html` kemudian tempel ke file baru.
-2.  **Simpan** file baru sebagai `article.amp.html`.
+1. **Salin** seluruh kode dari berkas `article.html`, kemudian tempel ke berkas baru.
+2. **Simpan** berkas baru sebagai `article.amp.html`.
 
-Catatan: Anda tidak perlu memberi nama file AMP sebagai `.amp.html`. Bahkan, file AMP dapat memiliki ekstensi apa pun yang Anda inginkan. Penayang umumnya membedakan halaman AMP dari versi kanonisnya menggunakan parameter dalam URL. Misalnya:  `http://publisher.com/article.html?amp`.
+[tip type="note"] **CATATAN –** Anda tidak perlu menama berkas AMP Anda sebagai `.amp.html`. Malah, berkas AMP dapat memiliki ekstensi apa pun yang Anda inginkan. Sangat umum melihat penayang membedakan halaman AMP dari versi kanonisnya dengan menggunakan parameter di URL. Contoh: `http://publisher.com/article.html?amp`. [/tip]
 
-File `article.amp.html` Anda akan terlihat seperti berikut:
+Berkas `article.amp.html` Anda akan terlihat seperti yang berikut ini:
 
 ```html
 <!doctype html>
 <html lang="en">
   <head>
 
-    <title>Artikel Berita</title>
+    <title>News Article</title>
 
     <link href="base.css" rel="stylesheet" />
 
@@ -24,10 +26,10 @@ File `article.amp.html` Anda akan terlihat seperti berikut:
   </head>
   <body>
     <header>
-      Situs Berita
+      News Site
     </header>
     <article>
-      <h1>Nama Artikel</h1>
+      <h1>Article Name</h1>
 
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
     </article>
@@ -40,44 +42,44 @@ Ini adalah halaman yang sengaja disederhanakan dengan elemen artikel berita stat
 
 Artikel versi AMP milik kita hanya salinan dari artikel asli saat ini. Mari mengonversinya menjadi AMP.
 
-Untuk memulai, kita akan menambahkan file library AMP.  Selain membuat file baru Anda menjadi halaman AMP yang valid, kita juga perlu melihat bagaimana library AMP dapat membantu kita untuk mencari tahu apa yang perlu dilakukan untuk memperbaikinya.
+Untuk memulai, kita akan menambahkan berkas perpustakaan AMP. Selain membuat berkas baru Anda menjadi halaman AMP yang valid, kita juga perlu melihat bagaimana perpustakaan AMP dapat membantu kita untuk mencari tahu apa yang perlu dilakukan untuk memperbaikinya.
 
-Untuk menyertakan library AMP, **tambahkan** baris berikut ke bagian bawah tag `<head>`:
+Untuk menyertakan perpustakaan AMP, **tambahkan** baris berikut ini ke bagian bawah tag `<head>`:
 
 ```html
 <script async src="https://cdn.ampproject.org/v0.js"></script>
 ```
 
-**Muat** halaman `article.amp.html` baru pada browser Anda di [http://localhost:8000/article.amp.html](http://localhost:8000/article.amp.html) kemudian, **buka** [Developer Console](https://developer.chrome.com/devtools/docs/console) di Chrome (atau browser pilihan Anda).
+**Muat** halaman `article.amp.html` baru pada browser Anda di [http://localhost:8000/article.amp.html](http://localhost:8000/article.amp.html), kemudian **buka** [Konsol Pengembang](https://developer.chrome.com/devtools/docs/console) di Chrome (atau browser pilihan Anda).
 
-Saat memeriksa output JavaScript di Developer Console (pastikan Anda telah memilih tab Console), Anda akan melihat entri log berikut:
+Saat memeriksa output JavaScript di Konsol Pengembang (pastikan Anda telah memilih tab Konsol), Anda akan melihat entri catatan riwayat (log) berikut ini:
 
 ```text
-Diberdayakan oleh AMP ⚡ HTML
+Powered by AMP ⚡ HTML
 ```
 
-Library AMP menyertakan [validator AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) yang akan memberi tahu Anda jika ada sesuatu yang mencegah halaman Anda menjadi dokumen AMP yang valid.  **Aktifkan** validator AMP dengan menambahkan ID fragmen berikut ke URL dokumen Anda:
+Perpustakaan AMP menyertakan [validator AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) yang akan memberi tahu Anda jika ada sesuatu yang mencegah halaman Anda menjadi dokumen AMP yang valid. **Aktifkan** validator AMP dengan menambahkan pengenal fragmen berikut ini ke URL dokumen Anda:
 
 ```text
 #development=1
 ```
 
-Misalnya:
+Contohnya:
 
 ```text
 http://localhost:8000/article.amp.html#development=1
 ```
 
-Di Developer Console, Anda akan menerima beberapa error validasi (Anda mungkin perlu memuat ulang halaman di browser secara manual untuk melihat ini):
+Di Konsol Pengembang, Anda akan mengalami beberapa eror validasi (Anda mungkin perlu menyegarkan halaman di browser secara manual untuk melihat ini):
 
-{{ image('/static/img/docs/tutorials/tut-convert-html-validation-errors.png', 905, 427, align='', caption='Error validasi AMP untuk sampel kami') }}
+{{ image('/static/img/docs/tutorials/tut-convert-html-validation-errors.png', 905, 427, align='', caption='Eror validasi AMP untuk sampel kami') }}
 
-Untuk menjadikannya dokumen AMP yang valid, kita perlu memperbaiki semua error ini--yang sebenarnya akan kita lakukan dalam codelab ini.
+Untuk menjadikannya dokumen AMP yang valid, kita perlu memperbaiki semua eror ini, dan ini sebenarnya akan kita lakukan dalam codelab ini.
 
-Sebelum melakukannya, mari **simulasikan** pengalaman perangkat seluler di Developer Tools browser karena kita bekerja dengan artikel berita seluler.  Misalnya, di DevTools Chrome, klik ikon ponsel, lalu pilih perangkat seluler dari menu.
+Sebelum melakukannya, mari **simulasikan** pengalaman perangkat seluler di alat pengembang browser karena kita bekerja dengan artikel berita seluler. Contoh: di DevTools Chrome, klik ikon ponsel, lalu pilih perangkat seluler dari menu.
 
-Anda akan melihat resolusi simulasi seluler di browser seperti berikut:
+Anda akan melihat resolusi simulasi seluler di browser Anda, seperti berikut ini:
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-nexus5.png', 436, 812, align='third center', caption='Simulasi seluler halaman AMP kami') }}
 
-Sekarang kita siap untuk mulai bekerja! Mari periksa error validasi satu per satu dan lihat bagaimana mereka berkaitan dengan AMP.
+Sekarang kita siap untuk mulai bekerja! Mari periksa eror validasi satu per satu dan lihat bagaimana mereka berkaitan dengan AMP.

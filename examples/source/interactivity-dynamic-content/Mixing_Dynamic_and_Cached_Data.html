@@ -2,6 +2,7 @@
 
 teaserImage: '/static/samples/img/teaser/mixing_dynamic_and_cached_data.jpg'
 author: kul3r4
+disableTransform: true
 
 --->
 
@@ -11,7 +12,7 @@ author: kul3r4
 -->
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 <head>
   <meta charset="utf-8">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -27,7 +28,7 @@ author: kul3r4
   <link rel="canonical" href="<% canonical %>">
   <title>Mixing Dynamic and Cached Data</title>
 
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
 
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
@@ -35,7 +36,7 @@ author: kul3r4
 <body>
   <!-- ## How to implement dynamic and cached product data details -->
   <!--
-  For product details such a descriptionb or title, where are unlikely to change frequently, you don't need to do anything special.
+  For product details such a description or title, where are unlikely to change frequently, you don't need to do anything special.
   To ensure that users always see the latest content, you can use the `amp-list` component which will fetch and render content directly from your server.
    -->
    <div>
@@ -54,7 +55,7 @@ author: kul3r4
 
   By checking the network tab of the Chrome dev console, you can check that this second `amp-list` does not cause a second network call.
 
-  Since we are using a [service-worker](/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md) you may see two similar calls one after the other to the same endpoint, so to better verify this behaviour, go to Application -> Service workers and click on Unregister.-->
+  Since we are using a [service-worker](/content/amp-dev/documentation/components/reference/amp-install-serviceworker-v0.1.md) you may see two similar calls one after the other to the same endpoint, so to better verify this behaviour, go to Application -> Service workers and click on Unregister.-->
   <amp-list height="24"
             layout="fixed-height"
             src="/static/samples/json/product.json"

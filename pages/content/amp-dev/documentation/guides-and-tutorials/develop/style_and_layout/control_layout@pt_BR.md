@@ -35,7 +35,7 @@ Veja demonstrações ao vivo lado a lado de [`amp-img`](../../../../documentatio
 
 [/tip]
 
-## O atributo layout
+## O atributo layout <a name="the-layout-attribute"></a>
 
 Com o atributo `layout`, é fácil controlar a forma que cada elemento
 será exibido na tela. Vários desses recursos podem ser usados com CSS puro. No entanto,
@@ -103,7 +103,7 @@ Acesse a página [Demonstração de layouts AMP](../../../../documentation/guide
 
 [/tip]
 
-### O que acontece se a largura e a altura não estiverem definidas?
+### O que acontece se a largura e a altura não estiverem definidas? <a name="what-if-width-and-height-are-undefined"></a>
 
 Em alguns casos, se o atributo `width` ou `height` não estiver especificado,
 o ambiente de tempo de execução de AMP poderá usar o seguinte padrão para esses valores:
@@ -111,7 +111,7 @@ o ambiente de tempo de execução de AMP poderá usar o seguinte padrão para es
 * [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): o valor padrão da largura e da altura será 0.
 * [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): o valor padrão da largura e da altura é inferido a partir do navegador.
 
-### E se o atributo <code>layout</code> não estiver definido?
+### E se o atributo <code>layout</code> não estiver definido? <a name="what-if-the-layout-attribute-isnt-specified"></a>
 
 Se o atributo <code>layout</code> não tiver sido especificado, a página AMP tentará inferir ou adivinhar
 o valor adequado:
@@ -159,7 +159,7 @@ Saiba mais sobre como controlar o layout aplicando consultas de mídia em [Usar 
 
 [/tip]
 
-### Consultas de mídia do elemento
+### Consultas de mídia do elemento <a name="element-media-queries"></a>
 
 Outro recurso extra para a geração de um design responsivo disponibilizado na AMP é o atributo `media`.
 Esse atributo pode ser usado em cada elemento de AMP.

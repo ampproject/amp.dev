@@ -14,12 +14,12 @@ author: sebastianbenz
 -->
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 <head>
   <meta charset="utf-8">
   <title>Multi Page Flow</title>
   <link rel="canonical" href="<% canonical %>">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <!-- ## Setup -->
   <!-- We use `amp-bind` to coordinate the page transitions... -->
@@ -493,9 +493,12 @@ By default, the Continue button is disabled. Only when the step is completed (in
   continue
 </button>
 ```
+We've enclosed the vertical stepper in a submittable form. Upon `Submit`, the user will see that their selections are in the URL parameter string.
 
 Here is the full example:
 -->
+<div>
+<form class="multistep-form" method="get" action="#" target="_top">
   <div class="stepper vertical">
     <button class="step-title step-active"
         [class]="currentStep > 0 ? 'step-title' : 'step-title step-active'"
@@ -554,14 +557,17 @@ Here is the full example:
         <amp-selector on="select:AMP.setState({fruitSelected: true})" class="poll" name="fruit-poll">
           <div option="apple">Apple</div>
           <div option="banana">Banana</div>
-          <div option="cheery">Cheery</div>
+          <div option="cheery">Cherry</div>
         </amp-selector>
         <button disabled [disabled]="!fruitSelected"
                 on="tap:AMP.pushState({ currentStep: currentStep + 1 })">
           continue
         </button>
       </div>
-    </section>
+    </section> 
+    </div>
+  <input type="submit" value="Submit">
+  </form>
   </div>
 
   <h2 class="preview-only">Stepper with Sliding Animation</h2>

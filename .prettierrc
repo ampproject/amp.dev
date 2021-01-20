@@ -1,0 +1,20 @@
+{
+  "bracketSpacing": false,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "quoteProps": "preserve",
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {"parser": "markdown"}
+    },
+    {
+      "files": [".eslintrc", ".prettierrc", "*.json"],
+      "options": {"parser": "json"}
+    },
+    {
+      "files": [".travis.yml", "*.yaml", "*.yml"],
+      "options": {"parser": "yaml"}
+    }
+  ]
+}

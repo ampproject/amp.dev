@@ -1,0 +1,28 @@
+{% do doc.styles.addCssFile('css/components/molecules/input-bar.css') %}
+
+<section id="input-bar" class="ap-m-input-bar">
+  <h2 class="ap-m-input-bar-title">{{ pixi.staticText.inputBar.headline }}</h2>
+  <div class="ap-m-input-bar-container">
+    <div class="ap-m-input-bar-input">
+      <input id="input-field"
+        class="ap-m-input-bar-input-field"
+        type="url"
+        name="pixi-url"
+        placeholder="{{ pixi.staticText.inputBar.fieldPlaceholder }}"
+        value="[= query.url =]"
+        aria-label="{{ pixi.staticText.inputBar.fieldPlaceholder }}">
+    </div>
+    <button id="input-submit"
+        class="ap-m-input-bar-submit"
+        on="tap:pixi-checks.scrollTo(duration=300)"
+        name="button">
+      {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
+      <svg>
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use>
+      </svg>
+      <span class="ap-m-input-bar-submit-title">{{ pixi.staticText.inputBar.button }}</span>
+      {% include 'views/partials/pixi/analyzing-dots.j2' %}
+    </button>
+  </div>
+  <label id="input-label" class="ap-m-input-bar-label">&nbsp;</label>
+</section>

@@ -1,0 +1,72 @@
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+  (window.AMP = window.AMP || []).push(function(AMP) {
+
+    function areAllExperimentsEnabled() {
+      for (var i = 0; i < experiments.length; i++) {
+        console.log('isExperimentOn ' + experiments[i] + ':' + AMP.isExperimentOn(experiments[i]));
+        if (!AMP.isExperimentOn(experiments[i])) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    function enableExperiments() {
+      for (var i = 0; i < experiments.length; i++) {
+        if (!AMP.isExperimentOn(experiments[i])) {
+          AMP.toggleExperiment(experiments[i]);
+        }
+      }
+
+      reloadPage();
+    }
+
+    function disableExperiments() {
+      for (var i = 0; i < experiments.length; i++) {
+        if (AMP.isExperimentOn(experiments[i])) {
+          AMP.toggleExperiment(experiments[i]);
+        }
+      }
+
+      reloadPage();
+    }
+
+    function reloadPage() {
+      if (self==top) {
+        location.reload();
+      } else {
+        setTimeout(function () {
+          document.querySelector('.ap-m-experiments-controls').hidden = true;
+          document.querySelector('.ap-m-experiments-reload-hint').hidden = false;
+        }, 250);
+      }
+    }
+
+    // enable active experiment button
+    var experimentToggle = document.getElementById('experiments-toggle');
+    var indicator = document.getElementById('indicator');
+    if (!areAllExperimentsEnabled()) {
+      experimentToggle.addEventListener('click', enableExperiments);
+      indicator.classList.add('off');
+    } else {
+      experimentToggle.checked = true;
+      experimentToggle.addEventListener('click', disableExperiments);
+      indicator.classList.add('on');
+    }
+
+    // Set appropriate state on channel indicator
+    if (!window.AMP_CONFIG.canary) {
+      document.getElementById('prod-channel').classList.add('active');
+    } else {
+      document.getElementById('dev-channel').classList.add('active');
+    }
+
+    // Inform inspecting user that this intenioally invalid AMP
+    if (window.location.hash.includes('development=1')) {
+      console.log('This sample is intentionally not valid AMP.');
+    }
+  });
+});
+</script>

@@ -2,86 +2,189 @@
 $title: Roadmap
 $order: 2
 $view: /views/custom.j2
-roadmap: !g.json /content/amp-dev/community/roadmap.json
+roadmap: !g.json /shared/data/roadmap.json
+
 ---
 {% do doc.styles.addCssFile('css/components/templates/roadmap.css') %}
-{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
 
 <main class="ap--main ap-t-roadmap">
-  <div class="ap--container">
-    <div class="ap-o-roadmap">
-
-      <amp-state id="roadmapfilter">
-        <script type="application/json">
-          {
-            "activefilter": "all"
-          }
-        </script>
-      </amp-state>
-
-      {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
-
-      <section class="ap--content">
-        <h1>The AMP Project Roadmap</h1>
-        <div class="ap-m-tip ap-m-tip-note">
-          <div class="ap-m-tip-content">
-            {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
-            <p>This is a high level overview suitable for all audiences. For a more detailed developer view, <a href="https://github.com/ampproject/amphtml/projects/43">head to GitHub.</a></p>
-          </div>
+  <section class="ap--stage ap--container-fluid">
+    {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
+    <div class="ap-o-stage">
+      <div class="ap--container-fluid">
+        <div class="ap-o-stage-content">
+          <h1 class="ap-o-stage-content-headline">{{ _('The AMP Project Roadmap') }}</h1>
         </div>
-
-
-        <!-- Filter bubbles -->
-        {% do doc.icons.useIcon('icons/close.svg') %}
-        <div class="ap-o-roadmap-filter-list all" [class]="roadmapfilter.activefilter != 'all' ? 'ap-o-roadmap-filter-list filtered' : 'ap-o-roadmap-filter-list all' ">
-          {% for label in doc.roadmap.labels %}
-
-          <button class="ap-m-filter-bubble {{ label | slug}} active" on="tap:AMP.setState({roadmapfilter: {activefilter: '{{ label | slug}}' } })"
-          [class]="roadmapfilter.activefilter == 'all' || roadmapfilter.activefilter == '{{label|slug}}' ? 'ap-m-filter-bubble {{ label | slug}} active' : 'ap-m-filter-bubble {{ label | slug}}'">
-            {{ label }}
-            <span tabindex="-1" role="reset" class="ap-m-filter-bubble-reset" [class]="roadmapfilter.activefilter == '{{ label | slug}}' ? 'ap-m-filter-bubble-reset show': 'ap-m-filter-bubble-reset'" on="tap:AMP.setState({roadmapfilter: {activefilter: 'all' }})">
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
-            </span>
-          </button>
-
-          {% endfor %}
+        <div class="ap-o-stage-image">
+          {% do doc.icons.useIcon('icons/roadmap-header.svg') %}
+          <svg style="height: 80%; width: 100%;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#roadmap-header"></use></svg>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <div class="ap-o-roadmap-tiles ap--container-fluid">
-        <!-- Columns -->
-        {% do doc.icons.useIcon('icons/notepad.svg') %}
-        {% do doc.icons.useIcon('icons/wrench.svg') %}
-        {% do doc.icons.useIcon('icons/dolly.svg') %}
+  <section class="ap-t-roadmap-intro">
+    <p class="ap-t-roadmap-intro-text">The ongoing development of AMP is conducted in <a href="{{ g.doc('/content/amp-dev/community/working-groups/access-subscriptions.yaml', locale=doc.locale).url.path }}">working groups</a>, each with knowledge or interest in a specific area of AMP.<br><br>To make their work visible to the community all groups provide regular status updates with details of what they have accomplished and what's up next.</p>
 
-        {% for column in doc.roadmap.columns %}
-        <div class="ap-o-roadmap-tiles-list">
-          <div class="ap-a-ico">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{% if loop.index == 1 %}notepad{% elif loop.index == 2 %}wrench{% elif loop.index == 3 %}dolly{% endif %}"></use></svg>
-          </div>
-          <h4>{{ column.name }}</h4>
-          <ul>
-            {% for card in column.cards %}
-            <li class="ap-o-roadmap-tiles-item ap-m-copy active {% if card.issue.labels[0] %}{% for label in card.issue.labels %}{{ label.name | slug}} {% endfor %}{% endif %}"
-            [class]= "{% if card.issue.labels[0] %}{% for label in card.issue.labels %}roadmapfilter.activefilter == '{{ label.name | slug}}' ||{% endfor %}{% endif %} roadmapfilter.activefilter == 'all' ? 'ap-o-roadmap-tiles-item ap-m-copy active ' : 'ap-o-roadmap-tiles-item ap-m-copy '"
-            >
-              <a class="ap-o-roadmap-tiles-link" href="{{ card.issue.url }}">
-                <div class="ap-o-roadmap-tiles-title">{{ card.issue.title|markdown|safe }}</div>
-              </a>
-              <div class="ap-o-roadmap-tiles-description">{{ card.issue.description|markdown|safe }}</div>
-              <div class="ap-o-roadmap-tiles-categories">
-                {% if card.issue.labels[0] %}
-                  {% for label in card.issue.labels %}
-                  <button class="ap-m-filter-bubble {{ label.name | slug }} active" on="tap:AMP.setState({roadmapfilter: {activefilter: '{{ label.name | slug}}' }})">{{ label.name }}</button>
-                  {% endfor %}
-                {% endif %}
-              </div>
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
+    {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
+    <div class="ap-m-tip">
+      <div class="ap-a-ico ap-m-tip-icon">
+        {% do doc.icons.useIcon('icons/speech-bubble.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#speech-bubble"></use></svg>
+      </div>
+
+      <div class="ap-m-tip-content">
+        <p>{{ _('All of the updates listed here are available as issues on GitHub and we\'d love you to join the conversation there!') }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ap-t-roadmap-filter" id="status-updates">
+    {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
+    {% do doc.styles.addCssFile('css/components/atoms/pill.css', -200) %}
+    {% do doc.icons.useIcon('icons/close.svg') %}
+
+    <h2 class="ap-t-roadmap-filter-headline">{{ _('Select working groups') }}</h2>
+    <div class="ap-t-roadmap-filter-list">
+      <a class="ap-a-pill reset [% if not category %]active[% endif %]"
+          href="{{ doc.url.path }}#status-updates"
+          style="color: #005AF0;">
+        <span class="ap-a-pill-text">{{ _('All') }}</span>
+      </a>
+      {% for group in doc.roadmap.working_groups %}
+      <a class="ap-a-pill {{ group.slug }} [% if category == '{{ group.slug }}' %]active[% endif %]"
+          href="{{ doc.url.path }}?category={{ group.slug }}#status-updates"
+          style="color: {{ group.color }}">
+        <span class="ap-a-pill-text">{{ group.title }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="ap-t-roadmap-container">
+    <div class="ap-t-roadmap-navigation">
+      <div class="ap-t-roadmap-navigation-list">
+        {% for quarter in doc.roadmap.quarters.ordered %}
+
+        [% set roadmap_quarter = {{ doc.roadmap.quarters.working_groups[quarter]|tojson }} %]
+        [% if not category or roadmap_quarter.includes(category) %]
+        <amp-animation id="anim-{{ quarter|slug }}" layout="nodisplay">
+          <script type="application/json">
+            {
+              "duration": ".3s",
+              "fill": "both",
+              "direction": "alternate",
+              "animations": [
+                {
+                  "selector": ".nav-item-title",
+                  "keyframes": {
+                    "opacity": ".3"
+                  }
+                },
+                {
+                  "selector": "#nav-item-{{ quarter|slug }}",
+                  "keyframes": {
+                    "opacity": "1"
+                  }
+                },
+                {
+                  "selector": ".nav-item-timeline",
+                  "keyframes": {
+                    "opacity": "0"
+                  }
+                },
+                {
+                  "selector": "#nav-item-timeline-{{ quarter|slug }}",
+                  "keyframes": {
+                    "opacity": "1"
+                  }
+                }
+              ]
+            }
+          </script>
+        </amp-animation>
+        <button class="ap-t-roadmap-navigation-list-item"
+            on="tap:{{ 'status-updates' if loop.first else quarter|slug }}.scrollTo(duration=500)">
+          <h3 class="ap-t-roadmap-navigation-list-item-title nav-item-title"
+              id="nav-item-{{ quarter|slug }}">
+            {{ quarter }}
+          </h3>
+          <span class="ap-t-roadmap-navigation-list-item-timeline nav-item-timeline"
+              id="nav-item-timeline-{{ quarter|slug }}">
+          </span>
+        </button>
+        [% endif %]
+
         {% endfor %}
       </div>
     </div>
-  </div>
+
+    <div class="ap-t-roadmap-list">
+      {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
+      [% set quarters = {{ doc.roadmap.quarters.working_groups|tojson }} %]
+      [% set currenQuarter = 'undefined' %]
+
+      {% for issue in doc.roadmap.issues %}
+      [% if not category or category == '{{ issue.wg_slug }}' %]
+      <div class="ap-t-roadmap-list-item"
+          id="{{ issue.wg_slug }}-{{ issue.number }}">
+
+        [% if currenQuarter != '{{ issue.quarter }}' %]
+        [% if not category or quarters['{{ issue.quarter }}'].includes(category) %]
+        [% set currenQuarter = '{{ issue.quarter }}' %]
+        <amp-position-observer intersection-ratios=".95"
+            target="{{ issue.quarter|slug }}"
+            on="enter:anim-{{ issue.quarter|slug }}.start"
+            layout="nodisplay">
+        </amp-position-observer>
+        <aside class="ap-t-roadmap-list-item-quarter" id="{{ issue.quarter|slug }}">
+          <h3>{{ issue.quarter }}</h3>
+        </aside>
+        [% endif %]
+        [% endif %]
+
+        <aside class="ap-t-roadmap-list-item-scroll-spacer"
+            id="scroll-{{ issue.wg_slug }}-{{ issue.number }}">
+        </aside>
+        {% if not loop.last %}
+        <span class="ap-t-roadmap-list-item-timeline ap-t-roadmap-list-item-timeline--vertical"></span>
+        {% endif %}
+        <span class="ap-t-roadmap-list-item-timeline ap-t-roadmap-list-item-timeline--horizontal">
+          <span class="ap-t-roadmap-list-item-timeline-dot"></span>
+        </span>
+        <div class="ap-t-roadmap-list-item-issue">
+          <span class="ap-t-roadmap-list-item-issue-color" style="background: {{ issue.wg_color }}"></span>
+          <div class="ap-t-roadmap-list-item-issue-header">
+            <h4 class="ap-t-roadmap-list-item-issue-header-title">{{ issue.wg_title }}</h4>
+            <span class="ap-t-roadmap-list-item-issue-header-subtitle">Status Update {{ issue.status_update }}</span>
+          </div>
+          <div class="ap-t-roadmap-list-item-issue-body">
+            {% for column in issue.body|slice(2) %}
+            <div class="ap-t-roadmap-list-item-issue-body-column">
+              {% for paragraph in column %}
+              {{ paragraph|markdown|safe }}
+              {% endfor %}
+              <a href="{{ issue.html_url }}" class="ap-m-lnk" target="_blank" rel="noopener">
+                <div class="ap-a-ico ap-m-lnk-icon">
+                  {% do doc.icons.useIcon('icons/internal.svg') %}
+                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+                </div>
+                <span class="ap-m-lnk-text">{{ _('All details on GitHub') }}</span>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="ap-t-roadmap-list-item-issue-toggle"
+              on="tap:{{ issue.wg_slug }}-{{ issue.number }}.toggleClass(class='expanded'), scroll-{{ issue.wg_slug }}-{{ issue.number }}.scrollTo(duration=250)"
+              role="button"
+              tabindex="0">
+            <svg class="ap-t-roadmap-list-item-issue-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+          </div>
+        </div>
+      </div>
+      [% endif %]
+      {% endfor %}
+    </div>
+  </section>
+
 </main>

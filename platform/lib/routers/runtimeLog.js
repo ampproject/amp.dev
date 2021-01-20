@@ -18,6 +18,7 @@
 
 const express = require('express');
 const LogFormatter = require('../runtime-log/HtmlFormatter.js');
+const log = require('@lib/utils/log')('Runtime Log');
 const robots = require('./robots');
 
 const {Templates} = require('../templates/');
@@ -41,12 +42,15 @@ runtimeLog.get('/', async (request, response) => {
   try {
     const messageTemplate = await Templates.get('message.html');
     const html = await logFormatter.apply(message);
-    response.send(messageTemplate.render({
-      title: 'Log',
-      text: html,
-    }));
+    response.send(
+      messageTemplate.render({
+        title: 'Log',
+        text: html,
+        requestPath: request.path,
+      })
+    );
   } catch (error) {
-    console.error('retrieving runtime log', error);
+    log.error('Retrieving runtime log failed:', error);
     response.status(404).send('Message not found');
   }
 });
@@ -54,9 +58,9 @@ runtimeLog.get('/', async (request, response) => {
 runtimeLog.use(robots('allow_all.txt'));
 
 function isValidLogRequest(logRequest) {
-  return regexIsNumber.test(logRequest.version) && regexIsNumber.test(logRequest.id);
+  return (
+    regexIsNumber.test(logRequest.version) && regexIsNumber.test(logRequest.id)
+  );
 }
 
-
 module.exports = runtimeLog;
-

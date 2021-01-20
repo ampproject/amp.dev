@@ -329,7 +329,7 @@ agenda:
       speakers:
         - leviclancy
         - ballakhadang
-    - title: "What's next in AMP"
+    - title: "What’s next in AMP"
       description: "In this presentation, we wrap up the day with a summary of all of the key focus areas for AMP and talk about what the extended roadmap looks like."
       time: "1715"
       type: session

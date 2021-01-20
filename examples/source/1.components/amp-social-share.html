@@ -6,11 +6,11 @@ author: paul-matthews
 <!--
   ## Introduction
 
-  The [`amp-social-share`](/content/amp-dev/documentation/components/reference/amp-social-share.md) component provides a common interface for share buttons, styled to complement each other.
+  The [`amp-social-share`](/content/amp-dev/documentation/components/reference/amp-social-share-v0.1.md) component provides a common interface for share buttons, styled to complement each other.
 -->
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 <head>
   <meta charset="utf-8">
   <title>amp-social-share</title>
@@ -25,7 +25,7 @@ author: paul-matthews
   -->
   <link rel="canonical" href="<% canonical %>">
 
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
   <!-- ## Styling -->
@@ -57,19 +57,19 @@ author: paul-matthews
 
   <!-- ## Basic usage -->
   <!--
-    Embed the [`amp-social-share`](/content/amp-dev/documentation/components/reference/amp-social-share.md) widget choosing a share type from the [supported types](/documentation/components/amp-social-share#pre-configured-providers).
+    Embed the [`amp-social-share`](/content/amp-dev/documentation/components/reference/amp-social-share-v0.1.md) widget choosing a share type from the [supported types](/documentation/components/amp-social-share#pre-configured-providers).
 
     `amp-social-share` with `type="facebook"` requires to specify the [facebook app id](https://developers.facebook.com/apps) via `data-attribution`.
   -->
   <div>
-    <amp-social-share type="email"></amp-social-share>
-    <amp-social-share type="facebook" data-param-app_id="254325784911610"></amp-social-share>
-    <amp-social-share type="linkedin"></amp-social-share>
-    <amp-social-share type="pinterest" data-param-media="https://amp.dev/static/samples/img/amp.jpg"></amp-social-share>
-    <amp-social-share type="tumblr"></amp-social-share>
-    <amp-social-share type="twitter"></amp-social-share>
-    <amp-social-share type="whatsapp"></amp-social-share>
-    <amp-social-share type="line"></amp-social-share>
+    <amp-social-share type="email" aria-label="Share by email"></amp-social-share>
+    <amp-social-share type="facebook" aria-label="Share on Facebook" data-param-app_id="254325784911610"></amp-social-share>
+    <amp-social-share type="linkedin" aria-label="Share on LinkedIn"></amp-social-share>
+    <amp-social-share type="pinterest" aria-label="Share on Pinterest" data-param-media="https://amp.dev/static/samples/img/amp.jpg"></amp-social-share>
+    <amp-social-share type="tumblr" aria-label="Share on Tumblr"></amp-social-share>
+    <amp-social-share type="twitter" aria-label="Share on Twitter"></amp-social-share>
+    <amp-social-share type="whatsapp" aria-label="Share on WhatsApp"></amp-social-share>
+    <amp-social-share type="line" aria-label="Share on Line"></amp-social-share>
   </div>
 
   <!-- ## Configuration -->
@@ -89,7 +89,8 @@ author: paul-matthews
     height="40"
     data-param-text="Check out these AMP Examples!"
     data-param-url="https://amp.dev/documentation/examples/"
-    data-param-attribution="AMPhtml">
+    data-param-attribution="AMPhtml"
+    aria-label="Share on LinkedIn">
   </amp-social-share>
 
   <!-- ## Custom style -->
@@ -102,38 +103,38 @@ author: paul-matthews
     * `background-position` (when using `background-image`), set to `center`.
     * `background-size` (when using `background-image`), set to `contain`.
   -->
-  <amp-social-share type="linkedin" class="custom-style">
+  <amp-social-share type="linkedin" aria-label="Share on LinkedIn" class="custom-style">
   </amp-social-share>
 
   <!-- ## Round icons -->
   <!-- For example, you can tweak the background size, color and border radius to achieve a rounded look where all icons have use the same color scheme. Reference the `.rounded` css class from the Styling section above for the effect below. -->
 
   <div>
-    <amp-social-share class="rounded" type="email" width="48" height="48"></amp-social-share>
-    <amp-social-share class="rounded" type="facebook" data-param-app_id="254325784911610" width="48" height="48"></amp-social-share>
-    <amp-social-share class="rounded" type="linkedin" width="48" height="48"></amp-social-share>
-    <amp-social-share class="rounded" type="pinterest" data-param-media="https://amp.dev/static/samples/img/amp.jpg" width="48" height="48"></amp-social-share>
-    <amp-social-share class="rounded" type="tumblr" width="48" height="48"></amp-social-share>
-    <amp-social-share class="rounded" type="twitter" width="48" height="48"></amp-social-share>
-    <amp-social-share class="rounded" type="whatsapp" width="48" height="48"></amp-social-share>
-    <amp-social-share class="rounded" type="line" width="48" height="48"></amp-social-share>
+    <amp-social-share class="rounded" aria-label="Share by email " type="email" width="48" height="48"></amp-social-share>
+    <amp-social-share class="rounded" aria-label="Share on Facebook" type="facebook" data-param-app_id="254325784911610" width="48" height="48"></amp-social-share>
+    <amp-social-share class="rounded" aria-label="Share on LinkedIn" type="linkedin" width="48" height="48"></amp-social-share>
+    <amp-social-share class="rounded" aria-label="Share on Pinterest" type="pinterest" data-param-media="https://amp.dev/static/samples/img/amp.jpg" width="48" height="48"></amp-social-share>
+    <amp-social-share class="rounded" aria-label="Share on Tumblr" type="tumblr" width="48" height="48"></amp-social-share>
+    <amp-social-share class="rounded" aria-label="Share on Twitter" type="twitter" width="48" height="48"></amp-social-share>
+    <amp-social-share class="rounded" aria-label="Share on WhatsApp" type="whatsapp" width="48" height="48"></amp-social-share>
+    <amp-social-share class="rounded" aria-label="Share on Line" type="line" width="48" height="48"></amp-social-share>
   </div>
 
 
   <!-- ## Sharing media via Pinterest -->
   <!-- Use `data-param-media` to share media via Pinterest. -->
-  <amp-social-share type="pinterest" data-param-media="https://amp.dev/static/samples/img/amp.jpg"></amp-social-share>
+  <amp-social-share type="pinterest" aria-label="Share on Pinterest" data-param-media="https://amp.dev/static/samples/img/amp.jpg"></amp-social-share>
 
-  <!-- ## Native share dialog (Chrome on Android) -->
+  <!-- ## Native share dialog -->
   <!--
 
-  The `system` type will display a native share UI if the user is viewing the AMP document using Chrome on Android. (The only supported browser as of February 2018.)
+  The `system` type will display a native share UI if the user is viewing the AMP document using a browser that supports the Web Share API.
 
   Here's what it looks like in Chrome on Android:
 
   <amp-img alt="Animation showing native sharing sheet appearing" src="/static/samples/img/system-share.gif" width="270" height="480"></amp-img>
   -->
-  <amp-social-share type="system"></amp-social-share>
+  <amp-social-share type="system" aria-label="Share"></amp-social-share>
 
   <!--
   This type supports one option: if `data-mode="replace"` is specified, then all other share icons will be suppressed. (That is, the only share icon the user will see is the system share icon.)

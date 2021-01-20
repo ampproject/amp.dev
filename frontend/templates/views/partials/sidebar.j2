@@ -1,16 +1,108 @@
-{% do doc.amp_dependencies.add('amp-sidebar', '0.1') %}
+{% if type == 'component' %}
+{% do doc.styles.addCssFile('css/components/organisms/sidebar-component.css') %}
+{% else %}
+{% do doc.styles.addCssFile('css/components/organisms/sidebar-default.css') %}
+{% endif %}
+
+{% macro components_sidebar() %}
+{% set components = g.collection('/content/amp-dev/documentation/components/reference').list_docs(locale=doc.locale) %}
+{% set scope = namespace(initial=components[0].title[4]) %}
+<ul class="nav-list level-1">
+  <li class="nav-item level-1">
+    <ul class="nav-list level-2">
+      <li class="nav-link">{{ scope.initial|upper }}</li>
+      {% for component in components if component.is_current %}
+
+      {% set initial = component.title[4] %}
+      {% if scope.initial != initial %}
+      {% set scope.initial = initial %}
+    </ul>
+  </li>
+  <li class="nav-item level-1">
+    <ul class="nav-list level-2">
+      <li class="nav-link">{{ scope.initial|upper }}</li>
+      {% endif %}
+      [% set active = requestPath == '{{ component.url.path }}' %]
+      {# The latest document might not support a format, hence we have to check if any version supports a format #}
+      {% set formats = [component.formats] %}
+      {% if component.versions|count > 1 %}
+      {% for version in component.versions %}
+      {% set versionDoc = g.doc('/content/amp-dev/documentation/components/reference/' + component.title + '-v' + version + '.md') %}
+      {% do formats.append(versionDoc.formats) %}
+      {% endfor %}
+      {% endif %}
+
+      [% if format in {{ formats|sum(start=[])|unique|list|tojson }} %]
+      <li class="nav-item level-2 [% if active %]active[% endif %]" [% if active %]autoscroll[% endif %]>
+        <a class="nav-link" href="{{ component.url.path }}">{{ component.title }}</a>
+      </li>
+      [% endif %]
+      {% endfor %}
+    </ul>
+  </li>
+</ul>
+{% endmacro %}
+
 <amp-sidebar id="sidebar-left"
   class="ap--ampsidebar"
   layout="nodisplay"
   side="left">
-  <nav toolbar="(min-width: 768px)"
-    toolbar-target="ap--sidebar-content">
+  <nav class="ap--ampsidebar-toolbar"
+       toolbar="(min-width: 768px)"
+       toolbar-target="ap--sidebar-content">
     <ul>
       {% include '/views/partials/format-toggle.j2' %}
-      <section class="ap-o-sidebar-section">
-        {% do doc.styles.addCssFile('css/components/organisms/sidebar.css') %}
+      <div class="ap-o-sidebar-{{ type if type and type != 'example' else 'default' }}">
+
         <div class="ap-o-sidebar">
           <div class="nav">
+
+          {# Custom content for example-sidebar #}
+          {% if type == 'example' %}
+            {% set categories = g.categories('/content/amp-dev/documentation/examples/documentation', locale=doc.locale) %}
+            {% for category, examples in categories %}
+            [% if format in {{ examples|map(attribute='formats')|sum(start=[])|unique|list|tojson }} %]
+            <ul class="nav-list level-1">
+              <li class="nav-item{{ ' active' if doc.category == category }} level-1">
+                <span class="nav-link">
+                  {% set categoryName = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
+                  <span>{{ _(categoryName) }}</span>
+                </span>
+                <input class="nav-trigger" type="checkbox"{{ ' checked' if doc.category == category }}>
+                <div class="nav-icon">
+                  <svg class="ap-a-ico">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use>
+                  </svg>
+                </div>
+                <ul class="nav-list level-2">
+                  {% for example in examples %}
+                  {% if not example.draft or doc.pod.env.dev %}
+                  [% if format in {{ example.formats|tojson }} %]
+                  {% set active = true if example == doc %}
+                  <li class="nav-item{{ ' active' if active }} level-2"{{ ' autoscroll' if active }}>
+                    <a class="nav-link" href="{{ example.url.path }}">{{ example.title }}</a>
+                  </li>
+                  [% endif %]
+                  {% endif %}
+                  {% endfor %}
+                </ul>
+              </li>
+            </ul>
+            [% endif %]
+            {% endfor %}
+
+          {# Custom content for component-sidebar #}
+          {% elif type == 'component' %}
+          {% set sidebar_cache_key = 'components_sidebar' + doc.locale.get_language_name() %}
+          {% if not doc.pod.amp_dev.template_cache.get(sidebar_cache_key) %}
+          {% do doc.pod.amp_dev.template_cache.add(sidebar_cache_key, components_sidebar()) %}
+          {{ components_sidebar() }}
+          {% else %}
+          {{ doc.pod.amp_dev.template_cache.get(sidebar_cache_key)|safe }}
+          {% endif %}
+          {# Content for default sidebar #}
+          {% else %}
+
             {% macro nav_tree(root, iteration=1, depth=None) -%}
             {% if not depth or iteration <= depth %}
             <ul class="nav-list level-{{ iteration }}">
@@ -35,7 +127,7 @@
 
                 {% set formats = collection.formats or [] %}
                 [% if format in {{ formats|tojson }} %]
-                <li class="nav-item level-{{ iteration }} {% if activeCollection %}active {% endif %}">
+                <li class="nav-item{{ ' active' if activeCollection }} level-{{ iteration }}">
                   {% set collection_index = '/content/' + collection.collection_path + '/index.md' %}
                   {% if doc.pod.file_exists(collection_index) %}
                   {% set collection_index = g.doc(collection_index, locale=doc.locale) %}
@@ -65,7 +157,7 @@
                     {% endif %}
                   </span>
                   {% endif %}
-                  <input class="nav-trigger" {% if activeCollection or (iteration == 1 and doc.view == "/views/overview/guides.j2") %}checked {% endif %} type="checkbox"/>
+                  <input class="nav-trigger" type="checkbox"{{ ' checked' if activeCollection or (iteration == 1 and doc.view == "/views/overview/guides.j2") }}/>
                   <div class="nav-icon">
                     {% if iteration==1 %}
                     {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
@@ -85,11 +177,11 @@
                 {% set formats = document.formats or document.collection.formats or [] %}
                 {% set activeDocument = true if document.url == doc.url %}
                 [% if format in {{ formats|tojson }} %]
-                <li {% if activeDocument %}autoscroll {% endif %} class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %}">
+                <li class="nav-item{{ ' active' if activeDocument }} level-{{ iteration }}"{{ ' autoscroll' if activeDocument }}>
                   {# If the document is part of a tutorial render progress #}
                   {% if document.collection.tutorial %}
                   {% do doc.styles.addCssFile('/css/components/molecules/tutorial-progress.css') %}
-                  <div class="ap-m-tutorial-progress {% if doc.order > document.order and doc.collection == document.collection %}ap-m-tutorial-progress-finished{% endif %}"></div>
+                  <div class="ap-m-tutorial-progress {{ ' ap-m-tutorial-progress-finished' if doc.order > document.order and doc.collection == document.collection }}"></div>
                   {% endif %}
 
                   <a class="nav-link" href="{{ document.url.path }}">
@@ -113,9 +205,12 @@
             {% set split_path = doc.collection.collection_path.split('/') %}
             {% set current_path = '/'.join(split_path[:3]) %}
             {{ nav_tree(root=g.collection(current_path)) }}
+
+          {% endif %}
+
           </div>
         </div>
-      </section>
+      </div>
     </ul>
   </nav>
 </amp-sidebar>

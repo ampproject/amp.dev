@@ -6,54 +6,42 @@
 
 ### INFO:
 
-The tip molecule includes headline and text atoms.
-It has 4 different modifiers for different use-cases.
-
-### MODIFIERS:
-
-default
-	Green border on the right and triangle outside the lower left corner.
-
-note
-	Blue border on the right and triangle inside the lower right corner.
-
-important
-	Red border on the right and cutted triangles inside the left corners.
-
-read-on
-	Yellow border on the right and ribbon shape outside the lower right corner.
+The tip molecule shows text alongside a contextual icon
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import 'extends';
+@import 'functions';
+@import 'mixins';
+@import 'variables';
 
-@import '../atoms/_text.scss';
-@import '../atoms/_icon.scss';
-
-$cornerSize: 40px;
-$borderSize: 5px;
-
-%pseudo-base {
-  content: '';
-  width: 0;
-  height: 0;
-  position: absolute;
-}
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_icon.scss';
 
 .#{molecule('tip')} {
-  width: 100%;
-  height: auto;
-  position: relative;
-  padding: $cornerSize/2 ($cornerSize - 10px);
-  margin-bottom: 50px;
-  background-color: color('white');
-  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  background-color: color('athens-gray');
+
+  @media (min-width: 768px) {
+    padding: 30px;
+  }
 
   code {
     white-space: normal;
+  }
+
+  &-icon {
+    width: 36px;
+    height: 36px;
+    margin-top: 5px;
+    margin-right: 14px;
+
+    @media (min-width: 768px) {
+      margin-right: 26px;
+    }
   }
 
   &-content {
@@ -72,123 +60,5 @@ $borderSize: 5px;
       }
     }
 
-  }
-
-  &-icon {
-    @include ico;
-    @include ico-1;
-    float: left;
-    margin-right: 5px;
-  }
-
-  &-default {
-    border-right: $borderSize solid color('malachite');
-    border-radius: 0 $borderSize $borderSize 0;
-    word-break: break-word;
-    margin: 50px 0 0 0;
-
-    &:before {
-      @extend %pseudo-base;
-      left: 0;
-      bottom: 100%;
-      border-bottom: ($cornerSize/1.6) solid white;
-      border-right: ($cornerSize/1.6) solid transparent;
-      border-left: 0 solid white;
-    }
-  }
-
-  &-note {
-    width: calc(100% - #{$cornerSize});
-
-    &:before {
-      @extend %pseudo-base;
-      left: 100%;
-      bottom: 0;
-      border-top: $cornerSize solid color('blue-ribbon');
-      border-left: 0px solid color('blue-ribbon');
-      border-right: $cornerSize solid transparent;
-    }
-
-    &:after {
-      @extend %pseudo-base;
-      width: $cornerSize - $borderSize;
-      height: calc(100% - #{$cornerSize});
-      left: 100%;
-      top: 0;
-      background-color: color('white');
-      border-right: $borderSize solid color('blue-ribbon');
-      border-radius: 0 $borderSize 0 0;
-    }
-  }
-
-  &-important {
-    width: calc(100% - #{$cornerSize/2});
-    margin-left: $cornerSize/2;
-    padding-left: ($cornerSize/2 - 10px);
-    border-right: $borderSize solid color('red');
-    border-radius: 0 $borderSize $borderSize 0;
-
-    h4 {
-      color: color('red')
-    }
-
-    p {
-      margin-top: 0;
-    }
-
-    .#{molecule('tip')} {
-      &-content:before {
-        @extend %pseudo-base;
-        width: $cornerSize/2;
-        height: calc(100% - #{$cornerSize});
-        right: 100%;
-        top: $cornerSize/2;
-        background-color: color('white');
-      }
-
-      &-icon {
-        fill: red;
-      }
-    }
-
-    &:before,
-    &:after {
-      @extend %pseudo-base;
-      right: 100%;
-      top: 0;
-      border-top: $cornerSize/2 solid transparent;
-      border-left: 0px solid transparent;
-      border-right: $cornerSize/2 solid white;
-    }
-
-    &:after {
-      top: auto;
-      bottom: 0;
-      border-top: none;
-      border-bottom: $cornerSize/2 solid transparent;
-      border-left: 0px solid transparent;
-      border-right: $cornerSize/2 solid white;
-    }
-  }
-
-  &-read-on {
-    border-right: $borderSize solid color('turbo');
-    border-radius: 0 $borderSize 0 0;
-
-    &:before,
-    &:after {
-      @extend %pseudo-base;
-      top: 100%;
-      right: -$borderSize;
-      border-top: $cornerSize solid color('turbo');
-      border-left: 0px solid color('turbo');
-      border-right: $cornerSize solid transparent;
-    }
-
-    &:after {
-      border-top: $cornerSize solid color('turbo');
-      border-right: 0px solid color('turbo');
-      border-left: $cornerSize solid transparent;
-    }
   }
 }

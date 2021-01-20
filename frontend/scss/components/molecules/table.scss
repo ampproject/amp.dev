@@ -54,14 +54,14 @@ thead {
 
     th {
       padding: 20px;
-      border-bottom: 1px solid color('silver');
+      border-bottom: 1px solid color('iron');
     }
   }
 }
 
 tbody {
   tr {
-    border-bottom: 1px solid color('silver');
+    border-bottom: 1px solid color('iron');
 
     &:nth-child(odd) {
       background-color: rgba(255, 255, 255, 0.5);
@@ -69,7 +69,7 @@ tbody {
     }
 
     td:nth-child(1) {
-      border-right: 1px solid color('silver');
+      border-right: 1px solid color('iron');
     }
   }
 

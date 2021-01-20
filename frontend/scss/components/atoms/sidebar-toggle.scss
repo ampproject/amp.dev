@@ -88,18 +88,18 @@ $originalEasing: cubic-bezier(0,0,.21,1);
     }
 
     .label-title {
-      position: absolute;
       left: 32px;
-      white-space: nowrap;
-      padding: 5px 10px 5px 5px;
-      opacity: 0;
-      margin-left: -5px;
-      border-radius: 0 4px 4px 0;
-      background: color('blue-ribbon');
-      height: 35px;
       display: flex;
       align-items: center;
+      height: 35px;
+      margin-left: -5px;
+      padding: 5px 10px 5px 5px;
+      white-space: nowrap;
+      border-radius: 0 4px 4px 0;
+      background: color('blue-ribbon');
       box-shadow: 0 10px 20px -5px rgba(0,0,0,0.25);
+      transform: scale3d(0, 1, 1);
+      transform-origin: left;
       transition: transform $originalSpeed $originalEasing;
     }
   }

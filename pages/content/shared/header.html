@@ -8,5 +8,8 @@ $sitemap:
   </defs>
 </svg>
 
+{% with language_selector = False %}
 {% include 'views/partials/header.j2' %}
+{% endwith %}
 {% include 'views/partials/burger-menu.j2' %}
+{% include 'views/partials/search.j2' %}

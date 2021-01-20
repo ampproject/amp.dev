@@ -25,9 +25,6 @@ kpis:
     success_story: !g.doc /content/amp-dev/about/success-stories/teads.yaml
 ---
 
-{% do doc.amp_dependencies.add('amp-video', '0.1') %}
-{% do doc.amp_dependencies.add('amp-fx-collection', '0.1') %}
-
 <section class="ap--stage ap--container-fluid">
   {% do doc.styles.addCssFile('css/components/organisms/stage-ads.css') %}
   <div class="ap-o-stage">
@@ -38,12 +35,12 @@ kpis:
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bolt-solid"></use></svg>
           </div>
 
-          <h2 class="ap-o-stage-content-subline">AMP Ads</h2>
-          <h1 class="ap-o-stage-content-headline">Use AMP to build and serve lightning fast, safe ads to pages and stories.</h1>
+          <h2 class="ap-o-stage-content-subline">{{ _('AMP Ads') }}</h2>
+          <h1 class="ap-o-stage-content-headline">{{ _('Use AMP to build and serve lightning fast, safe ads to pages and stories.') }}</h1>
 
           {% do doc.styles.addCssFile('/css/components/atoms/button.css') %}
-          <a href="../documentation/guides-and-tutorials/start/create_amphtml_ad/index.md?format=ads" class="ap-o-stage-content-button ap-a-btn">Start developing</a>
-          <a href="#tools" class="ap-o-stage-content-button ap-a-btn">Explore tools</a>
+          <a href="../documentation/guides-and-tutorials/start/create_amphtml_ad/index.md?format=ads" class="ap-o-stage-content-button ap-a-btn">{{ _('Start developing') }}</a>
+          <a href="#tools" class="ap-o-stage-content-button ap-a-btn">{{ _('Explore tools') }}</a>
        </div>
     </div>
   </div>
@@ -54,17 +51,17 @@ kpis:
 <section class="ap--content">
   <div class="ap--container">
     <div class="ap-m-copy ap-m-copy-left" amp-fx="fade-in fly-in-left" data-margin-start="5%" data-duration="1s" data-fly-in-distance="5%">
-      <h1>AMP<br> Ads</h1>
-      <h5>These days, if it isn’t instant - it's not fast enough. Even the most memorable creative won’t serve its purpose if the ad is slow and disruptive for a user.</h5>
-      <p>AMP is fundamentally changing the way ads are built, delivered and measured on the web, making them faster and minimizing disruptions for users. This increases viewability and click-through rates to improve monetization, making everyone happy: users, publishers and advertisers alike.</p>
-      <p>Advertising continues to be the cornerstone of every publisher’s business model; AMP is fundamentally changing the way ads are built and delivered on the web by supporting ads that are fast, safe, compelling and effective for users.</p>
+      <h1>{{ _('AMP<br> Ads') }}</h1>
+      <h5>{{ _('These days, if it isn’t instant - it’s not fast enough. Even the most memorable creative won’t serve its purpose if the ad is slow and disruptive for a user.') }}</h5>
+      <p>{{ _('AMP is fundamentally changing the way ads are built, delivered and measured on the web, making them faster and minimizing disruptions for users. This increases viewability and click-through rates to improve monetization, making everyone happy: users, publishers and advertisers alike.') }}</p>
+      <p>{{ _('Advertising continues to be the cornerstone of every publisher’s business model; AMP is fundamentally changing the way ads are built and delivered on the web by supporting ads that are fast, safe, compelling and effective for users.') }}</p>
       <div class="ap-o-component-visual-link">
         <a href="../documentation/guides-and-tutorials/index.html?format=ads" class="ap-m-lnk ap-m-lnk-square">
           <div class="ap-a-ico ap-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           </div>
-          <span class="ap-m-lnk-text">Get Started</span>
+          <span class="ap-m-lnk-text">{{ _('Get Started') }}</span>
         </a>
       </div>
     </div>
@@ -74,19 +71,19 @@ kpis:
 <section class="ap--content">
     <div class="ap--container">
       <div class="ap-m-copy ap-m-copy-left" amp-fx="fade-in fly-in-left" data-duration="1s" data-fly-in-distance="5%">
-      <h1>A faster way to grow your business</h1>
-      <p>A growing number of publishers and advertisers are adopting AMP to deliver faster and more engaging content to their users. As your clients embrace the speed of AMP and more users consume content on AMP pages, ensure that your business is positioned for the future and integrate your technology with AMP. Speeding up ads is the fastest way to boost performance.</p>
-      <p>AMP ads greatly improve the mobile internet through their intelligent design and pre-loading features. This leads to increased traffic, higher sales conversion rates and more pages per visit - delivering the value you’re looking for in your ads.</p>
-      <p>Although AMP pages support traditional HTML ads, these ads can be slow to load. To make ads themselves as fast as the rest of the AMP page, you can build ads in AMPHTML.</p>
-      <p>AMPHTML ads load as fast as content, increasing viewability and enticing engagement. AMPHTML ads are only delivered after being validated, ensuring that the ads are free of malware.</p>
-      <p>Ads created with AMPHTML are served on both AMP and non-AMP pages. By building an ad with AMP, you can deliver a memorable brand experience everywhere without worrying about speed and platform compatibility.</p>
+        <h1>{{ _('A faster way to grow your business') }}</h1>
+        <p>{{ _('A growing number of publishers and advertisers are adopting AMP to deliver faster and more engaging content to their users. As your clients embrace the speed of AMP and more users consume content on AMP pages, ensure that your business is positioned for the future and integrate your technology with AMP. Speeding up ads is the fastest way to boost performance.') }}</p>
+        <p>{{ _('AMP ads greatly improve the mobile internet through their intelligent design and pre-loading features. This leads to increased traffic, higher sales conversion rates and more pages per visit - delivering the value you’re looking for in your ads.') }}</p>
+        <p>{{ _('Although AMP pages support traditional HTML ads, these ads can be slow to load. To make ads themselves as fast as the rest of the AMP page, you can build ads in AMPHTML.') }}</p>
+        <p>{{ _('AMPHTML ads load as fast as content, increasing viewability and enticing engagement. AMPHTML ads are only delivered after being validated, ensuring that the ads are free of malware.') }}</p>
+        <p>{{ _('Ads created with AMPHTML are served on both AMP and non-AMP pages. By building an ad with AMP, you can deliver a memorable brand experience everywhere without worrying about speed and platform compatibility.') }}</p>
       <div class="ap-o-component-visual-link">
         <a href="../documentation/guides-and-tutorials/start/create_amphtml_ad/index.md" class="ap-m-lnk ap-m-lnk-square">
           <div class="ap-a-ico ap-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           </div>
-          <span class="ap-m-lnk-text">Get Started</span>
+          <span class="ap-m-lnk-text">{{ _('Get Started') }}</span>
         </a>
       </div>
       </div>
@@ -122,7 +119,7 @@ kpis:
           {% do doc.icons.useIcon('icons/exclamation.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#exclamation"></use></svg>
         </div>
-        <h1 class="ap-m-headline-icon-hl">The benefits of AMP ads</h1>
+        <h1 class="ap-m-headline-icon-hl">{{ _('The benefits of AMP ads') }}</h1>
       </div>
     </div>
 
@@ -135,8 +132,8 @@ kpis:
             <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ benefit.icon }}"></use></svg>
           </div>
           <div class="ap-m-benefit-text">
-            <span class="ap-m-benefit-text-headline">{{ benefit.headline }}</span>
-            <span class="ap-m-benefit-text-copy"> {{ benefit.text }}</span>
+            <span class="ap-m-benefit-text-headline">{{ _(benefit.headline) }}</span>
+            <span class="ap-m-benefit-text-copy"> {{ _(benefit.text) }}</span>
           </div>
         </div>
 
@@ -153,8 +150,8 @@ kpis:
             <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ benefit.icon }}"></use></svg>
           </div>
           <div class="ap-m-benefit-text">
-            <span class="ap-m-benefit-text-headline">{{ benefit.headline }}</span>
-            <span class="ap-m-benefit-text-copy"> {{ benefit.text }}</span>
+            <span class="ap-m-benefit-text-headline">{{ _(benefit.headline) }}</span>
+            <span class="ap-m-benefit-text-copy"> {{ _(benefit.text) }}</span>
           </div>
         </div>
 
@@ -168,7 +165,7 @@ kpis:
           {% do doc.icons.useIcon('icons/internal.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
         </div>
-        <span class="ap-m-lnk-text">Read on about AMP ads</span>
+        <span class="ap-m-lnk-text">{{ _('Read on about AMP ads') }}</span>
       </a>
     </div>
 
@@ -185,16 +182,16 @@ kpis:
     </div>
     <div class="ap-m-quote-quote">
       <blockquote>
-        <p class="ap-a-txt">They load way faster. Users pick up on every small delay, and when the ads load fast, this has a very positive impact on their perception and advertiser performance.<p>
+        <p class="ap-a-txt">{{ _('They load way faster. Users pick up on every small delay, and when the ads load fast, this has a very positive impact on their perception and advertiser performance.') }}<p>
       </blockquote>
-      <p>Shaun Zacharia, President & Co-Founder, Triplelift.</p>
+      <p>{{ _('Shaun Zacharia, President & Co-Founder, Triplelift.') }}</p>
 
       <a href="success-stories/triplelift.yaml" class="ap-m-lnk">
         <div class="ap-a-ico ap-m-lnk-icon">
           {% do doc.icons.useIcon('icons/internal.svg') %}
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
         </div>
-        <span class="ap-m-lnk-text">Read Success Story</span>
+        <span class="ap-m-lnk-text">{{ _('Read Success Story') }}</span>
       </a>
     </div>
   </div>
@@ -203,17 +200,17 @@ kpis:
 <section class="ap--content">
   <div class="ap--container">
     <div class="ap-m-copy ap-m-copy-left" amp-fx="fade-in fly-in-left" data-margin-start="5%" data-duration="1s" data-fly-in-distance="5%">
-      <h1>AMP for advertisers</h1>
-      <h5>Grow engagement and increase conversions with faster experiences</h5>
-      <p>The average mobile site takes 19 seconds to load over a 3G connection. Coupled with the fact that conversions fall by 12% for every additional second a webpage takes to load, you can safely assume two things: speed equals performance, and most advertiser campaigns have room to improve. That’s where you come in. As an SSP, DSP, analytics provider, or anything in between, embracing speed means improving campaign performance, delivering quality user experiences, and establishing yourself as the adtech platform for the fast web. Join the hundreds of technology platforms currently supporting the open source AMP ecosystem. </p>
-      <p>AMP offers a way for you to give users a faster experience everywhere: on ads, landing pages or on your entire website. AMP ads help users engage with your brand and improve the performance of your campaigns. When your target audience lands on an AMP page, they get what they’re looking for in the moment they’re looking for it. The net result – they’re more likely to be engaged with and receptive to your brand’s messages, and more likely to take the actions you’re guiding them towards like completing a purchase.</p>
+      <h1>{{ _('AMP for advertisers') }}</h1>
+      <h5>{{ _('Grow engagement and increase conversions with faster experiences') }}</h5>
+      <p>{{ _('The average mobile site takes 19 seconds to load over a 3G connection. Coupled with the fact that conversions fall by 12% for every additional second a webpage takes to load, you can safely assume two things: speed equals performance, and most advertiser campaigns have room to improve. That’s where you come in. As an SSP, DSP, analytics provider, or anything in between, embracing speed means improving campaign performance, delivering quality user experiences, and establishing yourself as the adtech platform for the fast web. Join the hundreds of technology platforms currently supporting the open source AMP ecosystem.') }}</p>
+      <p>{{ _('AMP offers a way for you to give users a faster experience everywhere: on ads, landing pages or on your entire website. AMP ads help users engage with your brand and improve the performance of your campaigns. When your target audience lands on an AMP page, they get what they’re looking for in the moment they’re looking for it. The net result – they’re more likely to be engaged with and receptive to your brand’s messages, and more likely to take the actions you’re guiding them towards like completing a purchase.') }}</p>
       <div class="ap-o-component-visual-link">
         <a href="../documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md" class="ap-m-lnk ap-m-lnk-square">
           <div class="ap-a-ico ap-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
           </div>
-          <span class="ap-m-lnk-text">Get Started</span>
+          <span class="ap-m-lnk-text">{{ _('Get Started') }}</span>
         </a>
       </div>
     </div>
@@ -225,13 +222,13 @@ kpis:
 
   <div class="ap--container">
     <div class="ap-m-copy ap-m-copy-left" amp-fx="fade-in fly-in-left" data-margin-start="5%" data-duration="1s" data-fly-in-distance="5%">
-      <h1>What’s the difference between an AMPHTML ad and a regular ad? Seconds.</h1>
+      <h1>{{ _('What’s the difference between an AMPHTML ad and a regular ad? Seconds.') }}</h1>
     </div>
   </div>
 
   <div class="ap--shift-cards-grid ap--container">
     <div class="ap-m-shift-card ap-m-shift-card-1 small">
-      <div class="ap-m-shift-card-title">AMPHTML Ad</div>
+      <div class="ap-m-shift-card-title">{{ _('AMPHTML Ad') }}</div>
       {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
       <div class="ap-m-ghost-frame-mobile">
         <amp-video
@@ -247,7 +244,7 @@ kpis:
       </div>
     </div>
     <div class="ap-m-shift-card ap-m-shift-card-2 small">
-      <div class="ap-m-shift-card-title">Regular Ad</div>
+      <div class="ap-m-shift-card-title">{{ _('Regular Ad') }}</div>
       <div class="ap-m-ghost-frame-mobile">
         <amp-video
           width="410"

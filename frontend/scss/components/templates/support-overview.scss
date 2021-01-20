@@ -1,0 +1,49 @@
+/*
+
+##################################
+### TEMPLATE: support overview ###
+##################################
+
+### INFO:
+
+*/
+@import '_extends';
+@import '_functions';
+@import '_mixins';
+@import '_variables';
+
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_color.scss';
+@import 'components/atoms/_headline.scss';
+
+@import 'components/templates/_default.scss';
+
+.#{template('overview')} {
+  background-color: color('whisper');
+
+  .#{utility('container')} {
+    @include container;
+  }
+
+  .#{utility('content')} {
+    display: grid;
+    grid-column: 1 / 25;
+    grid-template-columns: repeat(24, minmax(0, 1fr));
+    width: 100%;
+    background-color: color('white');
+    padding-bottom: 4em;
+    @include content-shadow;
+  }
+
+  .#{utility('section')} {
+    grid-column: 2 / 23;
+
+    @media (min-width: 600px) {
+      grid-column: 3 / 23;
+    }
+
+    &-fullscreen {
+      grid-column: 1 / 25;
+    }
+  }
+}

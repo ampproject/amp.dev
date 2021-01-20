@@ -30,7 +30,7 @@ const config = {
 const commentsCache = new LRU(config);
 
 class Comment {
-  constructor(text, user, date=new Date().getTime()) {
+  constructor(text, user, date = new Date().getTime()) {
     this.text = text;
     this.user = user;
     this.date = new Date(date);
@@ -39,8 +39,16 @@ class Comment {
 
 const USER = 'Mark';
 const defaultComments = [
-  new Comment('This is the first comment', 'Alice', new Date('2006-01-02 15:04')),
-  new Comment('This is the second comment', 'Bob', new Date('2006-01-02 15:34')),
+  new Comment(
+    'This is the first comment',
+    'Alice',
+    new Date('2006-01-02 15:04')
+  ),
+  new Comment(
+    'This is the second comment',
+    'Bob',
+    new Date('2006-01-02 15:34')
+  ),
 ];
 
 examples.get('/comments', handleComments);

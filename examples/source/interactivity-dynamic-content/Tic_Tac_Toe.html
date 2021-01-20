@@ -17,89 +17,89 @@ This is a sample showing how to implement Tic-Tac-Toe. This includes:
 
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
   <head>
     <meta charset="utf-8">
     <title>Tic-Tac-Toe</title>
     <link rel="canonical" href="<% canonical %>">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <!-- ## Setup -->
     <!-- `amp-bind` is required for interactive gameplay. -->
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
     <style amp-custom>
-.board-component {
-    margin: 5em auto;
-    max-width: 800px;
-    padding: 0 1em;
-}
-.results-component .hide {
-    display: none;
-}
-.results-component .show {
-    display: show;
-}
-.board-component table {
-    margin: auto;
-    border: 0;
-    border-collapse: collapse;
-}
-.board-component td {
-    border: 0;
-    padding: 0;
-}
-.board-component .cell {
-    width: 5.25em;
-    height: 5.25em;
-    border-color: #5ADAFD;
-    border-style: solid;
-    border: 0;
-}
-.board-component .cell-vert {
-    border-left: 0.25em solid #5ADAFD;
-    border-right: 0.25em solid #5ADAFD; 
-}
-.board-component .cell-horiz {
-    border-top: 0.25em solid #5ADAFD;
-    border-bottom: 0.25em solid #5ADAFD; 
-}
-.board-component .win {
-    background: lightgrey;
-}
-.board-component .in-play {
-    background: none;
-}
-.board-component .grid-button {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    box-shadow: none;
-    border-radius: 0px;
-    font-size: 2em;
-    padding: 0;
-    margin: 0;
-}
-.board-component .grid-button:active {
-    border: 0;
-}
-.reset-component {
-    margin: 2em auto;
-    display: flex;
-    justify-content: center;
-}
-.reset-component .reset-button {
-    font-size: 1rem;
-    line-height: 1.125rem;
-    padding: .7em .8em;
-    text-decoration: none;
-    white-space: nowrap;
-    word-wrap: normal;
-    vertical-align: middle;
-    cursor: pointer;
-    background-color: #fff;
-    color: #5ADAFD;
-    border: 1px solid #5ADAFD
-}
+      .board-component {
+        margin: 5em auto;
+        max-width: 800px;
+        padding: 0 1em;
+      }
+      .results-component .hide {
+        display: none;
+      }
+      .results-component .show {
+        display: show;
+      }
+      .board-component table {
+        margin: auto;
+        border: 0;
+        border-collapse: collapse;
+      }
+      .board-component td {
+        border: 0;
+        padding: 0;
+      }
+      .board-component .cell {
+        width: 5.25em;
+        height: 5.25em;
+        border-color: #5ADAFD;
+        border-style: solid;
+        border: 0;
+      }
+      .board-component .cell-vert {
+        border-left: 0.25em solid #5ADAFD;
+        border-right: 0.25em solid #5ADAFD;
+      }
+      .board-component .cell-horiz {
+        border-top: 0.25em solid #5ADAFD;
+        border-bottom: 0.25em solid #5ADAFD;
+      }
+      .board-component .win {
+        background: lightgrey;
+      }
+      .board-component .in-play {
+        background: none;
+      }
+      .board-component .grid-button {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        box-shadow: none;
+        border-radius: 0px;
+        font-size: 2em;
+        padding: 0;
+        margin: 0;
+      }
+      .board-component .grid-button:active {
+        border: 0;
+      }
+      .reset-component {
+        margin: 2em auto;
+        display: flex;
+        justify-content: center;
+      }
+      .reset-component .reset-button {
+        font-size: 1rem;
+        line-height: 1.125rem;
+        padding: .7em .8em;
+        text-decoration: none;
+        white-space: nowrap;
+        word-wrap: normal;
+        vertical-align: middle;
+        cursor: pointer;
+        background-color: #fff;
+        color: #5ADAFD;
+        border: 1px solid #5ADAFD
+      }
     </style>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
     <noscript>
@@ -108,28 +108,27 @@ This is a sample showing how to implement Tic-Tac-Toe. This includes:
 
   </head>
   <body>
-  <!-- ## Initial game state -->
-  <!-- We use an `amp-state` called `gameState` to keep the state of play. Additionally, some state values are not initialized but are explained below: -->
-  <!--
-           *   `currentPlayer`: Can be 1 or -1, for ⚡ and O respectively.
-           *   `board`: Stores the state of the board. This object has 9 properties, from `a` to `i`, for the tiles from top-left to bottom-right.
-           *   `tr`,`mr`,`br`,`lc`,`mc`,`rc`,`fd`,`bd`: Read as **T**op **R**ow, **M**iddle **R**ow, and so on, these 8 values hold the _tallies_ towards each of the possible winning states.
+    <!-- ## Initial game state -->
+    <!-- We use an `amp-state` called `gameState` to keep the state of play. Additionally, some state values are not initialized but are explained below: -->
+    <!--
+             *   `currentPlayer`: Can be 1 or -1, for ⚡ and O respectively.
+             *   `board`: Stores the state of the board. This object has 9 properties, from `a` to `i`, for the tiles from top-left to bottom-right.
+             *   `tr`,`mr`,`br`,`lc`,`mc`,`rc`,`fd`,`bd`: Read as **T**op **R**ow, **M**iddle **R**ow, and so on, these 8 values hold the _tallies_ towards each of the possible winning states.
+    -->
+    <amp-state id="gameState">
+      <script type="application/json">
+        {
+          "currentPlayer": 1,
+          "displayValues": {
+            "-1": "O",
+            "1": "⚡"
+          }
+        }
+      </script>
+    </amp-state>
 
-  -->
-  <amp-state id="gameState">
-    <script type="application/json">
-    {
-      "currentPlayer": 1,
-      "displayValues": {
-        "-1": "O",
-        "1": "⚡"
-      }
-    }
-    </script>
-  </amp-state>
-
-  <!-- ## Showing a win -->
-  <!-- To detect a win, we check whether any of the tallies has reached positive or negative 3. -->
+    <!-- ## Showing a win -->
+    <!-- To detect a win, we check whether any of the tallies has reached positive or negative 3. -->
     <div class="results-component">
       <h1 [class]="max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3 ? 'hide' : 'show'">Let's play!</h1>
       <h1 [class]="max(tr,br,lc,rc,fd,bd,mc,mr) == 3 ? 'show' : 'hide'" class='hide'>⚡ wins!!!</h1>
@@ -151,169 +150,199 @@ This is a sample showing how to implement Tic-Tac-Toe. This includes:
     -->
     <div class="board-component">
       <table>
-          <tr>
-            <td class="cell"><button on="tap:AMP.setState({
-                      tr: tr + gameState.currentPlayer,
-                      lc: lc + gameState.currentPlayer,
-                      bd: bd + gameState.currentPlayer,
-                      board: {
-                        a: gameState.displayValues[gameState.currentPlayer]
-                      },
-                      gameState: {
-                        currentPlayer: gameState.currentPlayer * -1
-                      }
-                    })" [text]='board.a ? board.a : ""'
-                        [class]='max(abs(tr),abs(lc),abs(bd)) == 3 ? "grid-button win" : "grid-button in-play"'
-                        [disabled]='board.a || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3'
-                        class='grid-button in-play'
-            ></button></td> 
-            <td class="cell cell-vert"><button on="tap:AMP.setState({
-                      tr: tr + gameState.currentPlayer,
-                      mc: mc + gameState.currentPlayer,
-                      board: {
-                        b: gameState.displayValues[gameState.currentPlayer]
-                      },
-                      gameState: {
-                        currentPlayer: gameState.currentPlayer * -1
-                      }
-                    })" [text]='board.b ? board.b : ""'
-                        [class]='max(abs(tr),abs(mc)) == 3 ? "grid-button win" : "grid-button in-play"' 
-                        [disabled]='board.b || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3'
-                        class='grid-button in-play'
-            ></button></td> 
-            <td class="cell"><button on="tap:AMP.setState({
-                      tr: tr + gameState.currentPlayer,
-                      rc: rc + gameState.currentPlayer,
-                      fd: fd + gameState.currentPlayer,
-                      board: {
-                        c: gameState.displayValues[gameState.currentPlayer]
-                      },
-                      gameState: {
-                        currentPlayer: gameState.currentPlayer * -1
-                      }
-                    })" [text]='board.c ? board.c : ""'
-                        [class]='max(abs(tr),abs(rc),abs(fd)) == 3 ? "grid-button win" : "grid-button in-play"'
-                        [disabled]='board.c || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3'
-                        class='grid-button in-play'
-            ></button></td> 
-          </tr>
-          <tr>
-            <td class="cell cell-horiz"><button on="tap:AMP.setState({
-                      mr: mr + gameState.currentPlayer,
-                      lc: lc + gameState.currentPlayer,
-                      board: {
-                        d: gameState.displayValues[gameState.currentPlayer]
-                      },
-                      gameState: {
-                        currentPlayer: gameState.currentPlayer * -1
-                      }
-                    })" [text]='board.d ? board.d : ""'
-                        [class]='max(abs(mr),abs(lc)) == 3 ? "grid-button win" : "grid-button in-play"'
-                        [disabled]='board.d || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3'
-                        class='grid-button in-play'
-            ></button></td> 
-            <td class="cell cell-horiz cell-vert"><button on="tap:AMP.setState({
-                      mr: mr + gameState.currentPlayer,
-                      mc: mc + gameState.currentPlayer,
-                      fd: fd + gameState.currentPlayer,
-                      bd: bd + gameState.currentPlayer,
-                      board: {
-                        e: gameState.displayValues[gameState.currentPlayer]
-                      },
-                      gameState: {
-                        currentPlayer: gameState.currentPlayer * -1
-                      }
-                    })" [text]='board.e ? board.e : ""'
-                        [class]='max(abs(mr),abs(mc),abs(fd),abs(bd)) == 3 ? "grid-button win" : "grid-button in-play"'
-                        [disabled]='board.e || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3'
-                        class='grid-button in-play'
-            ></button></td> 
-            <td class="cell cell-horiz"><button on="tap:AMP.setState({
-                      mr: mr + gameState.currentPlayer,
-                      rc: rc + gameState.currentPlayer,
-                      board: {
-                        f: gameState.displayValues[gameState.currentPlayer]
-                      },
-                      gameState: {
-                        currentPlayer: gameState.currentPlayer * -1
-                      }
-                    })" [text]='board.f ? board.f : ""'
-                        [class]='max(abs(mr),abs(rc)) == 3 ? "grid-button win" : "grid-button in-play"'
-                        [disabled]='board.f || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3'
-                        class='grid-button in-play'
-            ></button></td>  
-          </tr>
-          <tr>
-            <td class="cell"><button on="tap:AMP.setState({
-                      br: br + gameState.currentPlayer,
-                      lc: lc + gameState.currentPlayer,
-                      fd: fd + gameState.currentPlayer,
-                      board: {
-                        g: gameState.displayValues[gameState.currentPlayer]
-                      },
-                      gameState: {
-                        currentPlayer: gameState.currentPlayer * -1
-                      }
-                    })" [text]='board.g ? board.g : ""'
-                        [class]='max(abs(br),abs(lc),abs(fd)) == 3 ? "grid-button win" : "grid-button in-play"' 
-                        [disabled]='board.g || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3'
-                        class='grid-button in-play'
-            ></button></td> 
-            <td class="cell cell-vert"><button on="tap:AMP.setState({
-                      br: br + gameState.currentPlayer,
-                      mc: mc + gameState.currentPlayer,
-                      board: {
-                        h: gameState.displayValues[gameState.currentPlayer]
-                      },
-                      gameState: {
-                        currentPlayer: gameState.currentPlayer * -1
-                      }
-                    })" [text]='board.h ? board.h : ""'
-                        [class]='max(abs(br),abs(mc)) == 3 ? "grid-button win" : "grid-button in-play"'
-                        [disabled]='board.h || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3'
-                        class='grid-button in-play'
-            ></button></td>  
-            <td class="cell"><button on="tap:AMP.setState({
-                      br: br + gameState.currentPlayer,
-                      rc: rc + gameState.currentPlayer,
-                      bd: bd + gameState.currentPlayer,
-                      board: {
-                        i: gameState.displayValues[gameState.currentPlayer]
-                      },
-                      gameState: {
-                        currentPlayer: gameState.currentPlayer * -1
-                      }
-                    })" [text]='board.i ? board.i : ""'
-                        [class]='max(abs(br),abs(rc), abs(bd)) == 3 ? "grid-button win" : "grid-button in-play"'
-                        [disabled]='board.i || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3'
-                        class='grid-button in-play'
-            ></button></td>  
-          </tr>
-        </table>
-      </div>
-      <!-- ## Resetting the game state -->
-      <!-- To start a new game, the `board` and 8 tallies are reset to `null` and the `currentPlayer` reset to `⚡`. -->
-      <div class="reset-component">
-        <button class="reset-button" on='tap:AMP.setState({
-                      "gameState": {
-                        "currentPlayer": 1,
-                        "displayValues": {
-                          "-1": "O",
-                          "1": "⚡"
-                        }
-                      },
-                      tr: null,
-                      mr: null,
-                      br: null,
-                      lc: null,
-                      mc: null,
-                      rc: null,
-                      fd: null,
-                      bd: null,
-                      board: null
-                    })'>Restart game</button>
-      </div>
-      <!-- ## Top tips-->
-      <!-- Put ⚡ in the center square! -->
+        <tr>
+          <td class="cell">
+            <button on="tap:AMP.setState({
+                          tr: tr + gameState.currentPlayer,
+                          lc: lc + gameState.currentPlayer,
+                          bd: bd + gameState.currentPlayer,
+                          board: {
+                            a: gameState.displayValues[gameState.currentPlayer]
+                          },
+                          gameState: {
+                            currentPlayer: gameState.currentPlayer * -1
+                          }
+                        })"
+              [text]="board.a ? board.a : ''"
+              [class]="max(abs(tr),abs(lc),abs(bd)) == 3 ? 'grid-button win' : 'grid-button in-play'"
+              [disabled]="board.a || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3"
+              class="grid-button in-play">
+            </button>
+          </td>
+          <td class="cell cell-vert">
+            <button on="tap:AMP.setState({
+                          tr: tr + gameState.currentPlayer,
+                          mc: mc + gameState.currentPlayer,
+                          board: {
+                            b: gameState.displayValues[gameState.currentPlayer]
+                          },
+                          gameState: {
+                            currentPlayer: gameState.currentPlayer * -1
+                          }
+                        })"
+              [text]="board.b ? board.b : ''"
+              [class]="max(abs(tr),abs(mc)) == 3 ? 'grid-button win' : 'grid-button in-play'"
+              [disabled]="board.b || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3"
+              class="grid-button in-play">
+            </button>
+          </td>
+          <td class="cell">
+            <button on="tap:AMP.setState({
+                          tr: tr + gameState.currentPlayer,
+                          rc: rc + gameState.currentPlayer,
+                          fd: fd + gameState.currentPlayer,
+                          board: {
+                            c: gameState.displayValues[gameState.currentPlayer]
+                          },
+                          gameState: {
+                            currentPlayer: gameState.currentPlayer * -1
+                          }
+                        })"
+              [text]="board.c ? board.c : ''"
+              [class]="max(abs(tr),abs(rc),abs(fd)) == 3 ? 'grid-button win' : 'grid-button in-play'"
+              [disabled]="board.c || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3"
+              class="grid-button in-play">
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="cell cell-horiz">
+            <button on="tap:AMP.setState({
+                          mr: mr + gameState.currentPlayer,
+                          lc: lc + gameState.currentPlayer,
+                          board: {
+                            d: gameState.displayValues[gameState.currentPlayer]
+                          },
+                          gameState: {
+                            currentPlayer: gameState.currentPlayer * -1
+                          }
+                        })"
+              [text]="board.d ? board.d : ''"
+              [class]="max(abs(mr),abs(lc)) == 3 ? 'grid-button win' : 'grid-button in-play'"
+              [disabled]="board.d || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3"
+              class="grid-button in-play">
+            </button>
+          </td>
+          <td class="cell cell-horiz cell-vert">
+            <button on="tap:AMP.setState({
+                          mr: mr + gameState.currentPlayer,
+                          mc: mc + gameState.currentPlayer,
+                          fd: fd + gameState.currentPlayer,bd: bd + gameState.currentPlayer,
+                          board: {
+                            e: gameState.displayValues[gameState.currentPlayer]
+                          },
+                          gameState: {
+                            currentPlayer: gameState.currentPlayer * -1
+                          }
+                        })"
+              [text]="board.e ? board.e : ''"
+              [class]="max(abs(mr),abs(mc),abs(fd),abs(bd)) == 3 ? 'grid-button win' : 'grid-button in-play'"
+              [disabled]="board.e || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3"
+              class="grid-button in-play">
+            </button>
+          </td>
+          <td class="cell cell-horiz">
+            <button on="tap:AMP.setState({
+                          mr: mr + gameState.currentPlayer,
+                          rc: rc + gameState.currentPlayer,
+                          board: {
+                            f: gameState.displayValues[gameState.currentPlayer]
+                          },
+                          gameState: {
+                            currentPlayer: gameState.currentPlayer * -1
+                          }
+                        })"
+              [text]="board.f ? board.f : ''"
+              [class]="max(abs(mr),abs(rc)) == 3 ? 'grid-button win' : 'grid-button in-play'"
+              [disabled]="board.f || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3"
+              class="grid-button in-play">
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="cell">
+            <button on="tap:AMP.setState({
+                          br: br + gameState.currentPlayer,
+                          lc: lc + gameState.currentPlayer,
+                          fd: fd + gameState.currentPlayer,
+                          board: {
+                            g: gameState.displayValues[gameState.currentPlayer]
+                          },
+                          gameState: {
+                            currentPlayer: gameState.currentPlayer * -1
+                          }
+                        })"
+              [text]="board.g ? board.g : ''"
+              [class]="max(abs(br),abs(lc),abs(fd)) == 3 ? 'grid-button win' : 'grid-button in-play'"
+              [disabled]="board.g || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3"
+              class="grid-button in-play">
+            </button>
+          </td>
+          <td class="cell cell-vert">
+            <button on="tap:AMP.setState({
+                          br: br + gameState.currentPlayer,
+                          mc: mc + gameState.currentPlayer,
+                          board: {
+                            h: gameState.displayValues[gameState.currentPlayer]
+                          },
+                          gameState: {
+                            currentPlayer: gameState.currentPlayer * -1
+                          }
+                        })"
+              [text]="board.h ? board.h : ''"
+              [class]="max(abs(br),abs(mc)) == 3 ? 'grid-button win' : 'grid-button in-play'"
+              [disabled]="board.h || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3"
+              class="grid-button in-play">
+            </button>
+          </td>
+          <td class="cell">
+            <button on="tap:AMP.setState({
+                          br: br + gameState.currentPlayer,
+                          rc: rc + gameState.currentPlayer,
+                          bd: bd + gameState.currentPlayer,
+                          board: {
+                            i: gameState.displayValues[gameState.currentPlayer]
+                          },
+                          gameState: {
+                            currentPlayer: gameState.currentPlayer * -1
+                          }
+                        })"
+              [text]="board.i ? board.i : ''"
+              [class]="max(abs(br),abs(rc), abs(bd)) == 3 ? 'grid-button win' : 'grid-button in-play'"
+              [disabled]="board.i || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3"
+              class="grid-button in-play">
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ## Resetting the game state -->
+    <!-- To start a new game, the `board` and 8 tallies are reset to `null` and the `currentPlayer` reset to `⚡`. -->
+    <div class="reset-component">
+      <button class="reset-button"
+              on="tap:AMP.setState({
+                  gameState: {
+                    currentPlayer: 1,
+                    displayValues: {
+                      '-1': 'O',
+                      '1': '⚡'
+                    }
+                  },
+                  tr: null,
+                  mr: null,
+                  br: null,
+                  lc: null,
+                  mc: null,
+                  rc: null,
+                  fd: null,
+                  bd: null,
+                  board: null
+                })">
+        Restart game
+      </button>
+    </div>
+    <!-- ## Top tips-->
+    <!-- Put ⚡ in the center square! -->
   </body>
 </html>

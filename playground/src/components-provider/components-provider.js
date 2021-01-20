@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-const COMPONENTS_URL = '/api/amp-component-versions';
+const COMPONENTS_URL = '/static/files/component-versions.json';
 
 export function createComponentsProvider() {
   return new ComponentsProvider(window);
@@ -27,14 +27,14 @@ class ComponentsProvider {
           headers: new Headers({'x-requested-by': 'playground'}),
         });
         fetch(request)
-            .then((r) => r.json())
-            .then((data) => {
-              resolve(data);
-            })
-            .catch(() => {
-              console.warn('Failed to fetch AMP component versions mapping');
-              resolve({});
-            });
+          .then((r) => r.json())
+          .then((data) => {
+            resolve(data);
+          })
+          .catch(() => {
+            console.warn('Failed to fetch AMP component versions mapping');
+            resolve({});
+          });
       });
     });
   }

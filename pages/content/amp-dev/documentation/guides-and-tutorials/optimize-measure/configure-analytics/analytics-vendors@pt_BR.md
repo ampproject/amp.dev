@@ -43,7 +43,7 @@ Os fornecedores que quiserem integrar os serviços ao [`amp-analytics`](../../..
 
 <hr>
 
-## Fornecedores
+## Fornecedores <a name="vendors"></a>
 
 ### Acquia Lift
 
@@ -141,7 +141,7 @@ Valor do atributo de tipo: `googleadwords`
 
 Adiciona compatibilidade com o remarketing e o acompanhamento de conversões do Google AdWords. Veja mais detalhes na seção da Central de Ajuda do Google AdWords sobre [acompanhamento de conversões](https://support.google.com/adwords/answer/1722054?hl=pt-BR) e [remarketing](https://support.google.com/adwords/answer/2453998?hl=pt-BR). As duas tags podem ser usadas independentemente uma da outra.
 
-### Google Analytics
+### Google Analytics <a name="google-analytics"></a>
 
 Valor do atributo de tipo: `googleanalytics`
 

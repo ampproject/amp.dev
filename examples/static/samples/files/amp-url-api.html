@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
     <link rel="stylesheet" href="https://ampbyexample.com/css/ampstart.css">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <style>
       body {
         font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
@@ -69,7 +69,7 @@ function sendAmpUrlRequest() {
  */
 function sendApiRequest(urls, callback) {
   try {
-    var url = 'https://content-acceleratedmobilepageurl.googleapis.com/v1/ampUrls:batchGet?key=AIzaSyAM68IyT1bLVrlAU1172bspF-mZ93IdmsY';
+    var url = 'https://content-acceleratedmobilepageurl.googleapis.com/v1/ampUrls:batchGet?key=AIzaSyC1Bh5HwhrB6Ai2U4aXfsmhgy2zWOHS0Xk';
     var xhr = createRequest('POST', url);
     xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
     xhr.onload = function () {

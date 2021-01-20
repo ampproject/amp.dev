@@ -25,6 +25,13 @@
   .#{molecule('tip')} {
     max-width: 60%;
 
+    &-important {
+      max-width: none;
+      width: auto;
+      margin: 50px 0;
+      margin-left: 20px;
+    }
+
     button {
       float: right;
     }
@@ -178,7 +185,7 @@
 
       &:checked {
         border-radius: 100%;
-        background-color: color('red');
+        background-color: color('guardsman-red');
         box-shadow: none;
       }
     }
@@ -213,7 +220,7 @@
     text-align: center;
     padding-bottom: 60px;
     margin-bottom: 40px;
-    border-bottom: 1px solid color('gallery');
+    border-bottom: 1px solid color('iron');
 
     &-list {
       display: flex;

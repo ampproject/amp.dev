@@ -4,14 +4,14 @@ home:
       text: AMP pages load near instantly, enabling you to offer a consistently fast experience across all devices and platforms.
       icon: ux-improvement
     - headline: Building AMP pages is easy and reduces developer overhead
-      text: You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal.
+      text: You can often convert your entire archive in days especially if you use a popular CMS such as WordPress or Drupal.
       icon: star
     - headline: 'AMP can be applied across various web touch points'
       text: 'Used by popular and global platforms like Google, Bing and Twitter, AMP allows you to ensure users from all these surfaces get an unparalleled, often instantaneous and native-feeling experience by defaulting to AMP pages when available.'
       icon: interaction
   developer:
     - headline: Maintain flexibility and control and reduce complexity in your code
-      text: You can use CSS to customize your styling, dynamic data to fetch the freshest data where needed, to build the best possible userexperience for your customers.
+      text: You can use CSS to customize your styling, dynamic data to fetch the freshest data where needed, to build the best possible user experience for your customers.
       icon: content-modules
     - headline: Building blocks that ensure performance
       text: It takes a lot of time and effort to build a great website. AMP components are already optimized for the best performance.
@@ -25,7 +25,7 @@ websites:
       text: AMP pages load near instantly – across all devices and platforms.
       icon: content-modules
     - headline: Building AMP pages is easy
-      text: You can often convert your entire archive in days – especially when using common CMS like Wordpress or Drupal.
+      text: You can often convert your entire archive in days – especially when using common CMS like WordPress or Drupal.
       icon: components
     - headline: AMP can be applied across various web touch points
       text: Used by global platforms like Google, Bing and Twitter, AMP allows users a native-feeling experience across all platforms by defaulting to AMP pages when available.
@@ -46,23 +46,23 @@ stories:
       text: Supports analytics and bookend capabilities for viral sharing and monetization.
       icon: storytelling
     - headline: Fast loading times
-      text: AMP stories are lightening fast so that your audience stays engaged and entertained.
+      text: Web Stories are lightening fast so that your audience stays engaged and entertained.
       icon: speedometer
     - headline: Immersive storytelling
-      text: AMP stories is a new and modern way to reach existing readers.
+      text: Web Stories are a new and modern way to reach existing readers.
       icon: pie-chart-money
     - headline: Robust Advertising Support
-      text: AMP Stories enables monetization capability for publishers using full-screen immersive story ads and using affiliate links. For advertisers, Stories is a way to reach a unique audience within a new storytelling experience.
+      text: Web Stories enable monetization capability for publishers using full-screen immersive story ads and using affiliate links. For advertisers, Stories is a way to reach a unique audience within a new storytelling experience.
       icon: circle-arrows-money
   developer:
     - headline: Create beautiful and engaging content easily
-      text: AMP stories make the production of stories as easy as possible from a technical perspective.
+      text: Web Stories make the production of stories as easy as possible from a technical perspective.
       icon: code-architecture
     - headline: Creative flexibility for editorial freedom and branding
-      text: The AMP stories format comes with preset but flexible layout templates, standardized UI controls, and components for sharing and adding follow-on content.
+      text: The Web Stories format comes with preset but flexible layout templates, standardized UI controls, and components for sharing and adding follow-on content.
       icon: components
     - headline: Sharable and linkable on the open web
-      text: AMP stories are part of the open web and can be shared and embedded across sites and apps without being confined to a single ecosystem.
+      text: Web Stories are part of the open web and can be shared and embedded across sites and apps without being confined to a single ecosystem.
       icon: share
 ads:
   business:

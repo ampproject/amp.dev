@@ -6,6 +6,11 @@
         "Brisbane",
         "Melbourne",
         "Sydney"
+      ],
+      "citiesForm": [
+        "Perth",
+        "Adelaide",
+        "Cairns"
       ]
     },
     {
@@ -15,6 +20,12 @@
         "Hamburg",
         "Munich",
         "Frankfurt"
+      ],
+      "citiesForm": [
+        "Düsseldorf",
+        "Stuttgart",
+        "Cologne",
+        "Dortmund"
       ]
 
     },
@@ -24,6 +35,11 @@
         "Agra",
         "Bangalore",
         "Hyderabad"
+      ],
+      "citiesForm": [
+        "Dehli",
+        "Kolkata",
+        "Mumbai"
       ]
     },
     {
@@ -32,6 +48,11 @@
         "George Town",
         "Johor Bahru",
         "Kuala Lumpur"
+      ],
+      "citiesForm": [
+        "Kuching",
+        "Ipoh",
+        "Malacca"
       ]
 
     },
@@ -41,6 +62,11 @@
         "Auckland",
         "Christchurch",
         "Dunedin"
+      ],
+      "citiesForm": [
+        "Wellington",
+        "Hamilton",
+        "Tauranga"
       ]
 
     },
@@ -50,6 +76,11 @@
         "Jeddah",
         "Mecca",
         "Riyadh"
+      ],
+      "citiesForm": [
+        "Medina",
+        "Dammam",
+        "Tabuk"
       ]
 
     },
@@ -59,6 +90,11 @@
         "Cape Town",
         "Durban",
         "Johannesburg"
+      ],
+      "citiesForm": [
+        "Port Elizabeth",
+        "Pretoria",
+        "Soweto"
       ]
 
     },
@@ -68,6 +104,11 @@
         "Birmingham",
         "Leeds",
         "London"
+      ],
+      "citiesForm": [
+        "Manchester",
+        "Edinburgh",
+        "Bristol"
       ]
 
     },
@@ -77,6 +118,11 @@
         "Chicago",
         "Houston",
         "New York"
+      ],
+      "citiesForm": [
+        "Baltimore",
+        "San Francisco",
+        "Austin"
       ]
 
     }

@@ -9,17 +9,17 @@ author: tcorley
 <!--
   ## Introduction
 
-  This is an implementation of tab panels that uses [`amp-selector`](/content/amp-dev/documentation/components/reference/amp-selector.md). Tabs and tab panels are positioned via `flexbox` and `amp-selector` uses the `selected` attribute to show/hide the correct tab panel and style the selected tab.
+  This is an implementation of tab panels that uses [`amp-selector`](/content/amp-dev/documentation/components/reference/amp-selector-v0.1.md). Tabs and tab panels are positioned via `flexbox` and `amp-selector` uses the `selected` attribute to show/hide the correct tab panel and style the selected tab.
 -->
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 
 <head>
     <meta charset="utf-8">
   <title>Tab Panels with amp-selector</title>
     <link rel="canonical" href="<% canonical %>">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <!-- ## Setup -->
     <!-- Import `amp-selector` component in the header which we'll use to implement the tab switching. -->
@@ -104,7 +104,7 @@ author: tcorley
 
       The tab content is positioned below the tab button using a flex layout.
     -->
-    <amp-selector class="tabs-with-flex" role="tablist">
+    <amp-selector class="tabs-with-flex" role="tablist" keyboard-select-mode="focus">
       <div id="tab1" role="tab" aria-controls="tabpanel1" option selected>Tab one</div>
       <div id="tabpanel1" role="tabpanel" aria-labelledby="tab1">Tab one content... </div>
       <div id="tab2" role="tab" aria-controls="tabpanel2" option>Tab two</div>
@@ -123,7 +123,7 @@ author: tcorley
       <button on="tap:myTabs.toggle(index=1, value=true)">Select tab 2</button>
       <button on="tap:myTabs.toggle(index=2, value=true)">Select tab 3</button>
 
-      <amp-selector id="myTabs" class="tabs-with-flex" role="tablist">
+      <amp-selector id="myTabs" class="tabs-with-flex" role="tablist" keyboard-select-mode="focus">
         <div id="sample2-tab1" role="tab" aria-controls="sample2-tabpanel1" option selected>Tab one</div>
         <div id="sample2-tabpanel1" role="tabpanel" aria-labelledby="sample2-tab1">Tab one content... </div>
         <div id="sample2-tab2" role="tab" aria-controls="sample2-tabpanel2" option>Tab two</div>
@@ -141,7 +141,7 @@ author: tcorley
      -->
     <div>
       <amp-selector class="tabs-with-selector" role="tablist"
-        on="select:myTabPanels.toggle(index=event.targetOption, value=true)">
+        on="select:myTabPanels.toggle(index=event.targetOption, value=true)" keyboard-select-mode="focus">
         <div id="sample3-tab1" role="tab" aria-controls="sample3-tabpanel1" option="0" selected>Tab one</div>
         <div id="sample3-tab2" role="tab" aria-controls="sample3-tabpanel2" option="1">Tab two</div>
         <div id="sample3-tab3" role="tab" aria-controls="sample3-tabpanel3" option="2">Tab three</div>

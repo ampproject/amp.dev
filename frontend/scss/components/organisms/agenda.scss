@@ -42,7 +42,7 @@
       padding: 10px 30px 15px;
       margin-bottom: 0;
       flex-grow: 1;
-      color: fade_out(color('limed-spruce'), 0.57);
+      color: fade_out(color('charade'), 0.57);
       background: color('athens-gray');
 
       small {
@@ -58,7 +58,7 @@
         @include agenda-button-shadow;
         border: none;
         color: color('white');
-        background: color('carnation');
+        background: color('bittersweet');
         border-radius: 4px 4px 0 0;
 
         &+.#{organism('agenda')} {

@@ -1,42 +1,47 @@
 ---
-$title: Mejora la fidelización del usuario
+"$title": Mejore la participación del usuario
+"$order": '6'
+description: A continuación le proporcionamos algunos consejos rápidos para mejorar la participación del usuario con AMP. Ayude a los lectores a identificarle con una marca consistente y un contenido enriquecido, tanto en las páginas de AMP como en las que no lo son.
+formats:
+- websites
 ---
-Aquí hay algunos consejos rápidos para mejorar la fidelización del usuario con AMP.
 
-### Ayude a los lectores a identificarle con una marca coherente y contenido enriquecido en páginas de AMP y no AMP.
+A continuación le proporcionamos algunos consejos rápidos para mejorar la participación del usuario con AMP.
 
-- **Refleje su marca en las páginas de AMP.** Utilice el mismo esquema y diseño (es decir, colores, espaciado, tipos de estilo) tanto en sus páginas AMP como en sus páginas no AMP para asegurarse de que sus páginas son reconocibles y legítimas.
+### Ayude a que los lectores le identifiquen con una marca consistente y un contenido enriquecido, tanto en las páginas de AMP como en las que no lo son.
 
-- **Represente el contenido más atractivo** al convertir sus páginas. Incluya elementos clave como imágenes, videos, datos incorporados, datos estructurados, comentarios y medios sociales. Obtenga información sobre [Incluir contenido de terceros](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/third_party_components.md).
+- **Refleje su marca en las páginas de AMP.** Utilice el mismo esquema y diseño (por ejemplo, colores, espaciado, estilos), tanto en sus páginas AMP como en las que no lo son, para garantizar que sus páginas sean reconocibles y legítimas.
 
-- **Mantenga actualizadas las páginas de AMP.** Puedes actualizar dinámicamente los blogs en vivo con [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md).
+- **Muestre el contenido más atractivo** al convertir sus páginas. Incluya elementos clave como imágenes, videos, datos integrados, datos estructurados, comentarios y redes sociales. Obtenga información sobre cómo [Incluir contenido de terceros](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/third_party_components.md).
 
-### Optimizar el compromiso y la retención de los usuarios
+- **Mantenga actualizadas sus páginas de AMP.** Puede actualizar dinámicamente los blogs en vivo con [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md).
 
-- **Proporcione experiencias interactivas** en sus páginas AMP. Utilice componentes como [`amp-carousel`](../../../documentation/components/reference/amp-carousel.md) para crear ricos carruseles de imágenes y [`amp-iframe`](../../../documentation/components/reference/amp-iframe.md) para incorporar elementos interactivos que AMP no soporte nativamente.
+### Optimice el compromiso y la participación de los usuarios
 
-- **Crear viajes de usuario personalizados.** Ofrezca un botón de inicio de sesión, y si tienes contenido para usuarios con membresía paga, implemente sus reglas y ofertas usando [`amp-access`](../../../documentation/components/reference/amp-access.md).
+- **Proporcione experiencias interactivas** en sus páginas de AMP. Utilice componentes como [`amp-carousel`](../../../documentation/components/reference/amp-carousel.md) para crear ricos carruseles de imágenes y [`amp-iframe`](../../../documentation/components/reference/amp-iframe.md) para incorporar elementos interactivos que AMP no soporte nativamente.
 
-- **Extienda los viajes hacia adelante.** Enlace a artículos relacionados o sugeridos y otras secciones relevantes de su sitio.
+- **Cree experiencias personalizadas para el usuario.** Proporcione un botón de inicio de sesión, y si incluye contenido para usuarios con membresía de pago, implemente sus reglas y ofertas utilizando [`amp-access`](../../../documentation/components/reference/amp-access.md).
 
-- **Personalice el contenido** incluyendo recomendaciones a través de [`amp-list`](../../../documentation/components/reference/amp-list.md).
+- **Amplíe la experiencia de forma progresiva.** Genere enlaces a artículos relacionados o sugeridos y a otras secciones relevantes de su sitio.
 
-- **Implementar un menú** con [`amp-sidebar`](../../../documentation/components/reference/amp-sidebar.md) para animar a los usuarios a navegar por el resto de su sitio.
+- **Personalice el contenido** incluyendo recomendaciones mediante [`amp-list`](../../../documentation/components/reference/amp-list.md).
 
-- **Ayude a los lectores a compartir su contenido** con [`amp-social-share`](../../../documentation/components/reference/amp-social-share.md) y sus propios botones sociales.
+- **Implemente un menú** con [`amp-sidebar`](../../../documentation/components/reference/amp-sidebar.md) para animar a los usuarios a navegar por el resto de su sitio.
 
-- **Cultive nuevas interacciones** como la generación de leads, la suscripción a boletines y el soporte de comentarios con [`amp-form`](../../../documentation/components/reference/amp-form.md).
+- **Ayude a los lectores a compartir su contenido** con [`amp-social-share`](../../../documentation/components/reference/amp-social-share.md) y sus propios botones para compartir contenido.
 
-- **Apunte a tipos de anuncios que ofrezcan una buena experiencia de lectura.** Explore los formatos de anuncios de AMP como, por ejemplo, el [`amp-sticky-ad`](../../../documentation/components/reference/amp-sticky-ad.md) y el [`amp-fx-flying-carpet`](../../../documentation/components/reference/amp-fx-flying-carpet.md). Siga las [mejores prácticas de monetización de anuncios](../../../documentation/guides-and-tutorials/develop/monetization/index.md).
+- **Fomente nuevas interacciones** como la generación de leads, la suscripción a boletines y el soporte para comentarios con [`amp-form`](../../../documentation/components/reference/amp-form.md).
 
-- **Impulsa las descargas de la aplicación.** Incluir un enlace de instalación de aplicación en un banner con [`amp-app-banner`](../../../documentation/components/reference/amp-app-banner.md).
+- **Apunte a tipos de anuncios que ofrezcan una buena experiencia de lectura.** Explore los formatos de anuncios de AMP como, por ejemplo, [`amp-sticky-ad`](../../../documentation/components/reference/amp-sticky-ad.md) y [`amp-fx-flying-carpet`](../../../documentation/components/reference/amp-fx-flying-carpet.md). Siga las [prácticas recomendadas](../../../documentation/guides-and-tutorials/develop/monetization/index.md) para la monetización de anuncios.
 
-- **Asegúrese de una rápida transición** a su sitio no-AMP de aplicación web progresiva (PWA) para los lectores. Utilice [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) para llenar el caché.
+- **Impulse las descargas de la aplicación.** Incluya un enlace de instalación de la aplicación en un banner con [`amp-app-banner`](../../../documentation/components/reference/amp-app-banner.md).
 
-### Participe en el proyecto AMP de código abierto para ayudar a dar forma a su desarrollo
+- **Garantice una rápida transición** a su sitio de aplicación web progresiva (PWA) que no sea de AMP para los lectores. Utilice [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) para llenar el caché.
 
-- **Mira el AMP roadmap** para actualizaciones y características en [roadmap](../../../community/roadmap.html).
+### Participe en el proyecto AMP de código abierto para dar forma a su desarrollo
+
+- **Vea el plan de trabajo de AMP** para obtener actualizaciones y funciones en [el plan de trabajo](../../../community/roadmap.html).
 
 - **Involúcrese**. Contribuya con el código fuente, errores de archivos o comentarios en [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Comparta su opinión sobre AMP en [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
 
-- **Aprenda** cómo usar los componentes AMP con [Examples](../../../documentation/examples/index.html).
+- **Aprenda** a usar los componentes AMP con [Ejemplos](../../../documentation/examples/index.html).

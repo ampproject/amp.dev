@@ -23,7 +23,7 @@
   @include txt;
   @include txt-1;
   @include color-white;
-  @include river-ebony;
+  @include gradient-dark;
 }
 
 .#{organism('footer')} {
@@ -148,12 +148,25 @@
 
   &-line-bottom {
     display: flex;
+    flex-direction: column;
     padding-top: 4em;
 
-    @media (max-width: 767px) {
-      flex-direction: column;
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: flex-end;
     }
   }
+
+    &-openjsf {
+      width: 50%;
+      max-width: 200px;
+      margin-bottom: 40px;
+      margin-right: auto;
+
+      @media (min-width: 768px) {
+        margin-bottom: 0;
+      }
+    }
 
   &-legal-nav {
     &-menu {
@@ -177,10 +190,11 @@
   &-copyright {
     display: block;
     @include txt-2;
-    @include txt-strong;
+    margin-top: 2em;
+    color: color('iron');
 
-    @media (min-width: 768px) {
-      padding: 0 2em;
+    a {
+      color: color('whisper');
     }
   }
 }

@@ -1,0 +1,165 @@
+<!---
+
+author: elisameyer
+
+--->
+<!--
+  ## Introduction
+
+  This code snippet shows how you can dynamically update data in `amp-accordion `sections using `amp-bind` and `amp-list`.
+-->
+<!-- -->
+<!DOCTYPE html>
+<html ⚡="">
+  <head>
+    <title>Dynamic Accordion</title>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <link rel="canonical" href="<% canonical %>">
+    <meta name="viewport" content="width=device-width">
+    <!-- ## Setup -->
+    <!-- Import the `amp-accordion` component to display content in accordion. -->
+    <script
+      async
+      custom-element="amp-accordion"
+      src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"
+    ></script>
+    <!-- Import the `amp-bind` component to update accordion state based on user input. -->
+    <script
+      async
+      custom-element="amp-bind"
+      src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+    ></script>
+    <!-- Import the `amp-list` component to dynamically display the names of hot or cold countries. -->
+    <script
+      async
+      custom-element="amp-list"
+      src="https://cdn.ampproject.org/v0/amp-list-0.1.js"
+    ></script>
+    <!-- Import the `amp-mustache` component to dynamically display items from `amp-list`. -->
+    <script
+      async
+      custom-template="amp-mustache"
+      src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+    ></script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  </head>
+  <body>
+      <h2>
+        Select which climate you prefer
+      </h2>
+      <!-- ## Implementation -->
+      <!--
+          The `input` section sets `amp-state` as `{climate: 1}` if 'Hot' is selected and `{climate: 2}` if 'Cold' is selected.
+          The `amp-accordion` is hidden by default, but displayed if climate != 0 (so either hot or cold must be selected).
+        -->
+        <div>
+          <input
+            type="radio"
+            id="f-option1"
+            name="selector1"
+            role="button"
+            tabindex="0"
+            on="change:AMP.setState({climate:(event.checked) ? 1 : 0})"
+          />
+          <label for="f-option1">Warm</label>
+          <input
+            type="radio"
+            id="f-option2"
+            name="selector1"
+            on="change:AMP.setState({climate: (event.checked) ? 2 : 0})"
+            role="button"
+            tabindex="0"
+          />
+          <label for="f-option2">Cold</label>
+          </div>
+          <!-- ## Accordion -->
+          <!--
+          Each `amp-accordion` section is a different continent, therefore the `climateCountries` data also must be filtered by continent. This filtering is done in the `[src]` section of `amp-list`. Additionally, height is dynamically set based on number of items in filtered state.
+
+          The `src` for `climateCountries` is dynamic based on user input. If `{climate == 1}` then `climateCountries` data is pulled from the hot.json file. Else, if `{climate == 2}` then climateCountries data is pulled from the cold.json file
+        -->
+      <div id="accordion" [hidden]="climate == 0" hidden>
+        <p>The accordion below lists countries, organized by continent, that match the climate you chose. </p>
+        <amp-state
+          id="climateCountries"
+          [src]="climate == 1 ? '/static/samples/json/hot.json': climate == 2 ? '/static/samples/json/cold.json': ''"
+        >
+        </amp-state>
+        <amp-accordion>
+          <section>
+            <h4>
+              Asia
+            </h4>
+              <amp-list
+                layout="fixed-height"
+                height="0"
+                binding="refresh"
+                [src]="climateCountries.countries.filter(country => country.continent == 'Asia')"
+                [is-layout-container]="true"
+              >
+                <template type="amp-mustache">
+                  <ul>
+                    <span>{{Name}}</span>
+                  </ul>
+                </template>
+              </amp-list>
+          </section>
+          <section>
+            <h4>
+              Europe
+            </h4>
+              <amp-list
+                layout="fixed-height"
+                height="0"
+                binding="refresh"
+                [src]="climateCountries.countries.filter(country => country.continent == 'Europe')"
+                [is-layout-container]="true"
+              >
+                <template type="amp-mustache">
+                  <ul>
+                    <span>{{Name}}</span>
+                  </ul>
+                </template>
+              </amp-list>
+          </section>
+          <section>
+            <h4>
+              South America
+            </h4>
+              <amp-list
+                layout="fixed-height"
+                height="0"
+                binding="refresh"
+                [src]="climateCountries.countries.filter(country => country.continent == 'South America')"
+                [is-layout-container]="true"
+              >
+                <template type="amp-mustache">
+                  <ul>
+                    <span>{{Name}}</span>
+                  </ul>
+                </template>
+              </amp-list>
+          </section>
+          <section>
+            <h4>
+              North America
+            </h4>
+              <amp-list
+                layout="fixed-height"
+                height="0"
+                binding="refresh"
+                [src]="climateCountries.countries.filter(country => country.continent == 'North America')"
+                [is-layout-container]="true"
+              >
+                <template type="amp-mustache">
+                  <ul>
+                    <span>{{Name}}</span>
+                  </ul>
+                </template>
+              </amp-list>
+          </section>
+        </amp-accordion>
+      </div>
+  </body>
+</html>

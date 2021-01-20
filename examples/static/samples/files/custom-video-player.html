@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Custom Video Player</title>
+        <link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet" />
+      
+        <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+        <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+        <script async src="https://cdn.ampproject.org/video-iframe-integration-v0.js"></script>
+
+      </head>
+      
+      <body>
+        
+        <video
+          id="my-video"
+          class="video-js"
+          controls
+          preload="auto"
+          height="210"
+          width="370"
+          poster="https://amp.dev/static/samples/img/bird.jpg"
+          data-setup='{"fluid": true}'>
+              
+              <source src="https://amp.dev/static/samples/video/bird-video.mp4" type="video/mp4" />
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a
+                web browser that
+                <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+              </p>
+              
+        </video>
+      
+        <script src="https://vjs.zencdn.net/7.6.6/video.js"></script>
+        <script>
+          // Wait for API to initialize
+          (window.AmpVideoIframe = window.AmpVideoIframe || [])
+              .push(function(ampIntegration) {
+                var myVideo = document.querySelector('#my-video');
+
+                // Listen to element that uses Video.JS.
+                ampIntegration.listenTo('videojs', myVideo);
+              });
+        </script>
+      </body>
+</html>

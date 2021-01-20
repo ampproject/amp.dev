@@ -1,0 +1,108 @@
+<!---
+- author: tomayac
+- formats
+  - websites
+  - stories
+--->
+
+<!--
+  ## Introduction
+
+  This sample demonstrates how to use dark mode. It shows both `prefers-color-scheme`
+  as well as a manual toggle for people on non-supporting browsers.
+  You can read more about `prefers-color-scheme` in the article
+  https://web.dev/prefers-color-scheme.
+-->
+
+<!-- -->
+<!doctype html>
+<html ⚡ lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="canonical" href="./Dark_Mode_Toggle.html">
+    <meta name="viewport" content="width=device-width">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>Dark Mode</title>
+    <style amp-custom>
+      /**
+       * We need a global wrapper since we work with the adjacent selector below.
+       * The wrapper needs to cover the entire viewport.
+       */
+      .wrapper {
+        --padding: 0.25rem;
+
+        color: black;
+        background-color: white;
+        padding: var(--padding);
+      }
+
+      /**
+       * If the user states they prefer dark, obey.
+       * Don't offer the option to override.
+       */
+      @media (prefers-color-scheme: dark) {
+        .wrapper, .wrapper h1 {
+          color: white;
+          background-color: black;
+        }
+
+        #dark-mode-checkbox,
+        #dark-mode-label {
+          display: none;
+        }
+      }
+
+      /**
+       * If the checkbox is checked, all adjacent siblings will be in dark mode.
+       * This will only be possible if the user doesn't prefer dark,
+       * or on browsers that don't understand `prefers-color-scheme`.
+       */
+      #dark-mode-checkbox:checked ~ * {
+        color: white;
+        background-color: black;
+      }
+
+      /**
+       * Position these absolutely so they don't "consume" space.
+       */
+      #dark-mode-checkbox,
+      #dark-mode-label {
+        position: absolute;
+      }
+
+      /**
+       * Don't display the ugly checkbox. On a real site, you could style the label
+       * as a button and work with the `:checked ::before` selector of the checkbox
+       * to convey the state.
+       */
+      #dark-mode-checkbox {
+        display: none;
+      }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  </head>
+  <body>
+    <!-- Everything _adjacent_ to this checkbox can be styled, leave it here in the DOM tree. -->
+    <div>
+      <input id="dark-mode-checkbox" type=checkbox>
+      <label id="dark-mode-label" for="dark-mode-checkbox">Turn on dark mode</label>
+      <div class="wrapper">
+        <h1>Dark Mode Sample</h1>
+        <ul>
+          <li>
+            On browsers that support <code>prefers-color-scheme</code> and report the user prefers <code>dark</code>,
+            just obey and don't give the user an override option, since they clearly state they like dark.
+          </li>
+          <li>
+            On browsers that support <code>prefers-color-scheme</code> and report the user prefers <code>light</code>
+            or <code>no-preference</code>, offer the option to toggle dark mode manually.
+          </li>
+          <li>
+            On browsers that don't support <code>prefers-color-scheme</code>,
+            offer the option to toggle dark mode manually.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

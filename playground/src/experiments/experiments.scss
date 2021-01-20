@@ -1,0 +1,15 @@
+@import '_variables.scss';
+@import '_functions.scss';
+
+#experiments-view {
+  .fly-in-content {
+    overflow: hidden;
+  }
+
+  .experiments-list {
+    max-height: 70%;
+    padding: 0;
+    overflow-y: auto;
+    list-style: none;
+  }
+}

@@ -60,7 +60,7 @@ Por exemplo:
 
 Para saber mais, consulte [Consultas de mídia e layout](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) e a [Especificação de layout](amp-html-layout/index.md).
 
-## mídia
+## mídia <a name="media"></a>
 
 Todos os elementos AMP são compatíveis com o atributo `media`. O valor de `media` é uma consulta de mídia. Se a consulta não for correspondente, o elemento não será renderizado e os recursos dele, o que provavelmente inclui os recursos derivados, não serão buscados. Se a janela do navegador mudar de tamanho ou de orientação, as consultas de mídia serão reavaliadas e os elementos serão ocultados e mostrados com base nos novos resultados.
 

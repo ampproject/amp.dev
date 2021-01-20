@@ -16,6 +16,11 @@
       "host": "localhost",
       "port": "8080"
     },
+    "websocket": {
+      "scheme": "ws",
+      "host": "localhost",
+      "port": "8080"
+    },
     "playground": {
       "scheme": "http",
       "subdomain": "playground",
@@ -44,6 +49,11 @@
       "scheme": "https",
       "host": "amp-dev-sxg.appspot.com",
       "port": ""
+    },
+    "thumbor": {
+      "scheme": "http",
+      "host": "localhost",
+      "port": "8088"
     }
   }
 }

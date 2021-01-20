@@ -10,10 +10,6 @@ section_links:
   - よくある質問
 ---
 {% do doc.styles.addCssFile('css/components/templates/events.css') %}
-{% do doc.amp_dependencies.add('amp-youtube', '0.1') %}
-{% do doc.amp_dependencies.add('amp-selector', '0.1') %}
-{% do doc.amp_dependencies.add('amp-lightbox', '0.1') %}
-{% do doc.amp_dependencies.add('amp-iframe', '0.1') %}
 
 <section class="ap--stage ap--container-fluid">
     {% do doc.styles.addCssFile('css/components/organisms/stage-amp-conf.css') %}
@@ -37,22 +33,11 @@ section_links:
     </div>
 </section>
 
-{% do doc.styles.addCssFile('css/components/organisms/jumpto-list.css') %}
-{% do doc.styles.addCssFile('css/components/molecules/jumpto-item.css') %}
-<div class="ap-o-jumpto">
-  <div class="ap--container">
-    <div class="ap-o-jumpto-content">
-      <p class="ap-o-jumpto-text">Learn more about</p>
-      <ul class="ap-o-jumpto-list">
-        {% for link in doc.section_links %}
-          <li class="ap-m-jumpto-item">
-            <a href="#{{ link }}"class="ap-m-jumpto-item-link">{{ link }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
-</div>
+<section class="ap--container">
+  {% with text=_('Learn more about:') %}
+  {% include '/views/partials/jumpto.j2' %}
+  {% endwith %}
+</section>
 
 <section class="ap--container">
   <p class="ap--content-default">
@@ -120,7 +105,7 @@ section_links:
   </div>
 
   <div class="ap--content-x-wide">
-    <amp-selector role="tablist" selected layout="container" class="ap--flex-container">
+    <amp-selector role="tablist" layout="container" class="ap--flex-container">
 
         <div class="ap-o-agenda-selector-button" role="tab" tabindex="0" option="a">1日目</div>
 
@@ -315,23 +300,21 @@ section_links:
     </div>
 </section>
 
-<section class="ap--container">
-  {% do doc.styles.addCssFile('css/components/organisms/jumpto-list.css') %}
-  {% do doc.styles.addCssFile('css/components/molecules/jumpto-item.css') %}
-
-  <div class="ap-o-jumpto ap--container">
-    <div class="ap-o-jumpto-content ap--inline-footer">
-      <ul class="ap-o-jumpto-list">
-        <li class="ap-m-jumpto-item">
-          <a class="ap-m-jumpto-item-link" href="code-of-conduct.html">行動規範</a>
-        </li>
-        <li class="ap-m-jumpto-item">
-          <a class="ap-m-jumpto-item-link" href="accessibility.html">アクセシビリティ</a>
-        </li>
-        <li class="ap-m-jumpto-item">
-          <a class="ap-m-jumpto-item-link" href="mailto:amp-conf@google.com">お問い合わせ</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+<section class="ap--container ap--center">
+  {% with list = [
+        { "label": "行動規範",
+          "url": "code-of-conduct.html"
+        },
+        {
+          "label": "アクセシビリティ",
+          "url": "accessibility.html"
+        },
+        {
+          "label": "お問い合わせ",
+          "url": "mailto:amp-conf@google.com"
+        }
+      ]
+    %}
+  {% include '/views/partials/jumpto.j2' %}
+  {% endwith %}
 </section>

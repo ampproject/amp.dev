@@ -16,20 +16,97 @@
 
 'use strict';
 
-const {sh} = require('@lib/utils/sh');
+const {extractCommandFragments} = require('@lib/utils/sh');
+const {spawn} = require('child_process');
 const {project} = require('@lib/utils');
+const log = require('@lib/utils/log')('Grow');
+
+// Messages printed by Grow used to determine log levels
+const MESSAGES = {
+  START_SUCCESSFUL: 'Grow started successfully.',
+  ERROR_1: 'Traceback (most recent call last):',
+  ERROR_2: 'Found an error',
+  ERROR_3: 'Error: ',
+  WARNING: 'Warning:',
+  COMPONENT_VERSIONS: 'component-versions.json',
+};
+
+/**
+ * Handles all messages logged by Grow and decides which log level
+ * to use to print them to the user as all messages are logged to stderr
+ * by Grow
+ * @param  {Buffer} data
+ * @return {String}
+ */
+function handler(data, resolve, reject) {
+  const message = data.toString().trim();
+
+  // Only valid once but needed to have a proper control flow during
+  // development as Grow starting should be awaited before the user
+  // can access the platform
+  if (message == MESSAGES.START_SUCCESSFUL) {
+    log.success(message);
+    resolve();
+    return message;
+  }
+
+  if (message.includes(MESSAGES.WARNING)) {
+    log.warn(message);
+    return message;
+  }
+
+  if (message.includes(MESSAGES.COMPONENT_VERSIONS)) {
+    log.warn(
+      'The component-versions.json seems to be missing.',
+      'Run `gulp buildComponentVersions` and try again.'
+    );
+  }
+
+  if (
+    message.includes(MESSAGES.ERROR_1) ||
+    message.includes(MESSAGES.ERROR_2) ||
+    message.includes(MESSAGES.ERROR_3)
+  ) {
+    log.error(message);
+    return message;
+  }
+
+  log.info(message);
+  return message;
+}
 
 /**
  * Will execute grow in the configured pod path "project.paths.GROW_POD"
- * @param args the arguments for grow in a string
+ * @param growCommand the arguments for grow in a string
  */
-function exec(args) {
-  return sh(
-      // to support local execution where grow is often not in the path, we add the default install path ~/bin
-      ['sh', '-c', `PATH=$PATH:~/bin && grow ${args}`],
-      {
-        workingDir: project.paths.GROW_POD,
-      });
+function exec(growCommand) {
+  const fragments = extractCommandFragments([
+    'sh',
+    '-c',
+    `PATH=$PATH:~/bin && grow ${growCommand}`,
+  ]);
+  const command = fragments[0];
+  const args = fragments.splice(1);
+
+  return new Promise((resolve, reject) => {
+    const process = spawn(command, args, {cwd: project.paths.GROW_POD});
+
+    process.stdout.on('data', (data) => {
+      handler(data, resolve, reject);
+    });
+
+    process.stderr.on('data', (data) => {
+      handler(data, resolve, reject);
+    });
+
+    process.on('close', (code) => {
+      if (code !== 0) {
+        reject(new Error(`Grow exited with code ${code}`));
+        return;
+      }
+      resolve();
+    });
+  });
 }
 
 module.exports = exec;

@@ -3,9 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width">
 
-    <title>AMP Playground</title>
+    <title>
+      {{^htmlWebpackPlugin.options.validator}}
+      AMP Playground
+      {{/htmlWebpackPlugin.options.validator}}
+      {{#htmlWebpackPlugin.options.validator}}
+      AMP Validator
+      {{/htmlWebpackPlugin.options.validator}}
+    </title>
 
     <link rel="shortcut icon" href="/static/img/favicon.png">
     <!-- Disable tap highlight on IE -->
@@ -29,29 +36,34 @@
     <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
     <meta name="msapplication-TileColor" content="#ffffff">
 
+    <!-- Origin Trial for Dynamic Autoplay Delegation -->
+    <meta http-equiv="origin-trial" content="AviuuiVhVdQ3GpVtxSpyMT+XsL/qGGYmyiyLvYSKPL3rRDLipe/ard5x+DXVlrATtolwX75VtpSKc9IEzLDd4AkAAABmeyJvcmlnaW4iOiJodHRwczovL2FtcC5kZXY6NDQzIiwiZmVhdHVyZSI6IkV4cGVyaW1lbnRhbEF1dG9wbGF5RHluYW1pY0RlbGVnYXRpb24iLCJleHBpcnkiOjE1NzA1Nzg0NDF9">
+
     <!-- Color the status bar on mobile devices -->
     <meta name="theme-color" content="#ffffff">
 
-    {{^htmlWebpackPlugin.options.embed}}
-    <link rel="preload" href="https://amp.dev/static/fonts/noto-sans-v7-latin-regular.woff2" as="font" crossorigin>
-    <link rel="preload" href="https://amp.dev/static/fonts/noto-sans-v7-latin-700.woff2" as="font" crossorigin>
-    <link rel="preload" href="https://amp.dev/static/fonts/poppins-v5-latin-700.woff2" as="font" crossorigin>
-    <link rel="preload" href="https://amp.dev/static/fonts/fira-mono-v7-latin-500.woff2" as="font" crossorigin>
-    {{/htmlWebpackPlugin.options.embed}}
-
     <script async src="https://www.googletagmanager.com/gtag/js?id={{htmlWebpackPlugin.options.gaTrackingId}}"></script>
   </head>
-  <body {{#htmlWebpackPlugin.options.embed}}class="embed"{{/htmlWebpackPlugin.options.embed}}>
+  <body class="{{#htmlWebpackPlugin.options.embed}}embed{{/htmlWebpackPlugin.options.embed}}{{#htmlWebpackPlugin.options.validator}}validator{{/htmlWebpackPlugin.options.validator}}">
     <header class="ap-o-header">
-    <a class="ap-o-header-icon hide-on-mobile" href=".">
-      <svg viewBox="0 0 30 30" id="logo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch --><g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Group-2"><path d="M0,15 C0,23.2841667 6.71583335,30 15,30 C23.2845834,30 30,23.2841667 30,15 C30,6.71583331 23.2845834,0 15,0 C6.71583335,0 0,6.71583331 0,15 Z" id="White-Fill-Copy" fill="#FFFFFF"></path><path d="M13.8508333,24.0979167 L12.7108333,24.0979167 L13.8379167,17.2745833 L10.3475,17.2795833 C10.3475,17.2795833 10.3145833,17.2804167 10.29875,17.2804167 C9.98458332,17.2804167 9.72958334,17.0254167 9.72958334,16.71125 C9.72958334,16.57625 9.85541665,16.3479167 9.85541665,16.3479167 L16.1270833,5.88833331 L17.28625,5.89291666 L16.1308334,12.7270833 L19.6391667,12.7229167 C19.6391667,12.7229167 19.6770834,12.7220833 19.695,12.7220833 C20.0091667,12.7220833 20.26375,12.9766667 20.26375,13.29125 C20.26375,13.41875 20.2141667,13.5308333 20.1429167,13.6258333 L13.8508333,24.0979167 Z M15,0 C6.71583335,0 0,6.71583331 0,15 C0,23.2841667 6.71583335,30 15,30 C23.2845834,30 30,23.2841667 30,15 C30,6.71583331 23.2845834,0 15,0 Z" id="Main-Copy" fill="#005AF0" fill-rule="nonzero"></path></g></g></svg>
-      <span class="ap-o-header-text ap-o-header-icon-text uppercase">AMP</span>
-      <span class="ap-o-header-text ap-o-header-uppercase">Playground</span>
-    </a>
+      <a class="ap-o-header-icon {{^htmlWebpackPlugin.options.validator}}hide-on-mobile{{/htmlWebpackPlugin.options.validator}}" href=".">
+        <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 15c0 8.284 6.716 15 15 15 8.285 0 15-6.716 15-15 0-8.284-6.715-15-15-15C6.716 0 0 6.716 0 15z" fill="#FFF"/><path d="M13.85 24.098h-1.14l1.128-6.823-3.49.005h-.05a.57.57 0 01-.568-.569c0-.135.125-.363.125-.363l6.272-10.46 1.16.005-1.156 6.834 3.508-.004h.056c.314 0 .569.254.569.568 0 .128-.05.24-.121.335L13.85 24.098zM15 0C6.716 0 0 6.716 0 15c0 8.284 6.716 15 15 15 8.285 0 15-6.716 15-15 0-8.284-6.715-15-15-15z" fill="#005AF0" fill-rule="nonzero"/></g></svg>
+        <span class="ap-o-header-text ap-o-header-icon-text uppercase">AMP</span>
+        <span class="ap-o-header-text ap-o-header-uppercase">
+          {{^htmlWebpackPlugin.options.validator}}
+          Playground
+          {{/htmlWebpackPlugin.options.validator}}
+          {{#htmlWebpackPlugin.options.validator}}
+          Validator
+          {{/htmlWebpackPlugin.options.validator}}
+        </span>
+      </a>
 
+      {{^htmlWebpackPlugin.options.validator}}
       <div id="document-title" tabindex="0" role="button" class="ap-o-header-text caret-right hidden">Untitled</div>
+      {{/htmlWebpackPlugin.options.validator}}
+
       <div id="toolbar">
-        {{> button/button.hbs id="error-indicator" class="elevation-2dp" text="Valid" disabled=true}}
         {{> button/button.hbs id="save-document" class="hidden" class2="underline" hideOnMobile=true  text="Save"}}
         {{> button/button.hbs id="fork-document" class="border" text="Fork" hideOnMobile=true }}
 
@@ -64,23 +76,49 @@
         <a class="uppercase hide-on-mobile caret-right" href="https://amp.dev">amp.dev</a>
       </div>
     </header>
-    <div id="error-list" class="elevation-8dp"></div>
     <main>
-    <section id="source" class="panel active">
-      <div class="panel-header hide-on-mobile">
+    <section id="source" class="panel panel--dark active">
+      {{^htmlWebpackPlugin.options.validator}}
+      {{! Playground panel }}
+      <div class="panel-header">
         <div id="runtime-select"></div>
-        <div class="flex-right">
-        {{> button/button.hbs id="format-source" class="" ariaLabel="format source code" text="{  }"}}
-        </div>
+        {{> button/button.hbs id="error-indicator" text="Valid" disabled=true}}
+        {{> button/button.hbs id="share-toggle" text="Share"}}
+        {{> button/button.hbs id="import-toggle" class="hide-on-mobile" text="Import"}}
+        {{> button/button.hbs id="format-source" ariaLabel="format source code" text="Format"}}
       </div>
+      {{/htmlWebpackPlugin.options.validator}}
+      {{#htmlWebpackPlugin.options.validator}}
+      {{! Validator panel }}
+      <div class="panel-header">
+        <div id="runtime-select"></div>
+        {{> button/button.hbs id="format-source" ariaLabel="format source code" text="Format"}}
+      </div>
+      {{/htmlWebpackPlugin.options.validator}}
+
+
       {{> loader/loader.hbs theme="light"}}
     </section>
     <div id="drag"></div>
-    <section id="preview" class="panel">
+
+    {{^htmlWebpackPlugin.options.validator}}
+    <section id="preview" class="panel panel--light">
       {{> loader/loader.hbs }}
       <div class="panel-header">
-        <div id="preview-header-close" aria-label="close preview" title="close preview" tabindex="0" role="button">✕</div>
-        <div id="preview-header-refresh" aria-label="refresh preview" title="refresh preview" class="button flex-right" tabindex="0" role="button">
+        <div id="preview-header-close" class="button" aria-label="close preview" title="close preview" tabindex="0" role="button">✕</div>
+        <div id="preview-header-state" class="button" aria-label="toggle state" title="toggle state" tabindex="0" role="button" disabled>
+          <span>State</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 22" width="35" height="22">
+            <path d="M6.696 21.204v-.234c-.696-.288-1.275-.804-1.737-1.548-.462-.744-.693-1.686-.693-2.826 0-.492.06-1.122.18-1.89a9.688 9.688 0 00.162-1.62c0-1.392-.666-2.214-1.998-2.466v-.036c.684-.132 1.188-.405 1.512-.819.324-.414.486-.969.486-1.665 0-.444-.054-.99-.162-1.638-.12-.744-.18-1.362-.18-1.854 0-1.14.231-2.082.693-2.826C5.421 1.038 6 .522 6.696.234V0h-2.88c-.3.144-.63.393-.99.747s-.681.864-.963 1.53c-.282.666-.423 1.467-.423 2.403 0 .468.06 1.086.18 1.854.108.648.162 1.2.162 1.656 0 1.116-.594 1.74-1.782 1.872v1.08c.648.06 1.107.267 1.377.621s.405.771.405 1.251c0 .456-.054 1.008-.162 1.656-.12.768-.18 1.386-.18 1.854 0 .936.141 1.737.423 2.403.282.666.603 1.176.963 1.53.36.354.69.603.99.747h2.88zm12.276-3.906V14.22h-3.186v3.078h3.186zm4.356 0V14.22h-3.186v3.078h3.186zm-8.73 0V14.22h-3.186v3.078h3.186zm16.416 3.906c.3-.144.63-.393.99-.747s.681-.864.963-1.53c.282-.666.423-1.467.423-2.403 0-.468-.06-1.086-.18-1.854-.12-.72-.18-1.272-.18-1.656 0-.492.141-.924.423-1.296.282-.372.741-.564 1.377-.576v-1.08c-.636-.024-1.095-.219-1.377-.585a2.048 2.048 0 01-.423-1.287c0-.384.06-.936.18-1.656.12-.768.18-1.386.18-1.854 0-.936-.141-1.737-.423-2.403-.282-.666-.603-1.176-.963-1.53-.36-.354-.69-.603-.99-.747h-2.88v.234c.432.18.834.492 1.206.936.372.444.669.987.891 1.629a6.32 6.32 0 01.333 2.079c0 .492-.06 1.11-.18 1.854a10.252 10.252 0 00-.162 1.638c0 .612.162 1.101.486 1.467.324.366.828.615 1.512.747v.036c-1.332.252-1.998.984-1.998 2.196 0 .456.054.996.162 1.62.12.768.18 1.398.18 1.89a6.32 6.32 0 01-.333 2.079c-.222.642-.519 1.185-.891 1.629-.372.444-.774.756-1.206.936v.234h2.88z"/>
+          </svg>
+        </div>
+        <div id="preview-header-experiments" class="button" aria-label="toggle experiments" title="toggle experiments" tabindex="0" role="button">
+          <span>Experiments</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 25" width="23" height="25">
+            <path fill="#20202A" d="M22.393 18.795L16.068 8.393a1.7 1.7 0 01-.211-.825V2.511h.281c.668 0 1.23-.538 1.23-1.256 0-.681-.562-1.255-1.23-1.255H6.862c-.668 0-1.23.574-1.23 1.255 0 .682.562 1.256 1.23 1.256h.281v5.093c0 .287-.07.574-.21.825L.606 18.831a4.059 4.059 0 00-.104 4.089C1.205 24.21 2.505 25 3.945 25h15.11c1.44 0 2.74-.79 3.443-2.08.703-1.327.668-2.834-.105-4.125zM13.397 2.51v5.093c0 .753.211 1.47.598 2.116l1.335 2.224a7.84 7.84 0 01-2.143-.538 10.778 10.778 0 00-4.78-.753l.563-.933a4.086 4.086 0 00.597-2.116V2.511h3.83zm6.958 19.19a1.503 1.503 0 01-1.336.788H3.91a1.502 1.502 0 01-1.335-.789c-.21-.502-.21-1.112.105-1.578l3.971-6.492c1.757-.718 3.725-.682 5.727.107 1.336.503 2.636.79 3.936.79.21 0 .386-.036.597-.036l3.409 5.631c.316.466.316 1.076.035 1.578z"/>
+          </svg>
+        </div>
+        <div id="preview-header-refresh" class="button" aria-label="refresh preview" title="refresh preview" tabindex="0" role="button">
           <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
             <path d="M0 0h24v24H0z" fill="none"/>
@@ -91,7 +129,28 @@
         <div class="preview-sizer"></div>
         <iframe frameborder="0" id="previewIframe" title="AMP Playground Output" class="fadein" style="width: 375px; height: 667px;"></iframe>
       </div>
+
     </section>
+    {{/htmlWebpackPlugin.options.validator}}
+    {{#htmlWebpackPlugin.options.validator}}
+    <section id="validation" class="panel">
+      <h1>Validate your AMP page</h1>
+
+      <div id="import-view"></div>
+      <div id="validation-result" class="validation-result"></div>
+      <div id="error-list"></div>
+    </section>
+    {{/htmlWebpackPlugin.options.validator}}
+
     </main>
+
+    {{^htmlWebpackPlugin.options.validator}}
+    <div id="error-list" class="fly-in fly-in--right fly-in--error" data-title="Validation errors"></div>
+    <div id="share-view" class="fly-in fly-in--left fly-in--share fly-in--lightbox" data-title="Share"></div>
+    <div id="state-view" class="fly-in fly-in--left fly-in--state fly-in--lightbox" data-title="AMP State"></div>
+    <div id="import-view" class="fly-in fly-in--left fly-in--import fly-in--lightbox" data-title="Import"></div>
+    <div id="experiments-view" class="fly-in fly-in--left fly-in--experiments fly-in--lightbox" data-title="Experiments"></div>
+    <div id="fly-in-background"></div>
+    {{/htmlWebpackPlugin.options.validator}}
   </body>
 </html>

@@ -94,7 +94,7 @@ Per correggere questi errori visita la pagina di riferimento del componente este
   </tr>
 </table>
 
-Esiste una whitelist dei tag, ma non esiste un elenco definitivo di tutti i tag non consentiti; tuttavia, la [specifica AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md) definisce un insieme approssimativo dei tag non consentiti.
+Esiste una allowlist dei tag, ma non esiste un elenco definitivo di tutti i tag non consentiti; tuttavia, la [specifica AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md) definisce un insieme approssimativo dei tag non consentiti.
 
 ### Attributo obbligatorio mancante
 
@@ -156,10 +156,10 @@ Ad esempio, spesso questo errore viene generato se vengono rilevati valori non v
   </tr>
 </table>
 
-Esiste una whitelist degli attributi, ma non esiste un elenco definitivo di tutti gli attributi non consentiti.
+Esiste una allowlist degli attributi, ma non esiste un elenco definitivo di tutti gli attributi non consentiti.
 Per controllare gli attributi supportati per ogni tag specifico, cerca il tag HTML, quindi il valore `attrs` nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
-Oltre agli attributi specifici di ogni tag presenti in una whitelist, tutti i tag AMP possono utilizzare qualsiasi attributo presente nella whitelist `$GLOBAL_ATTRS`; è possibile utilizzare anche tutti gli attributi con il prefisso `"data-"`.
+Oltre agli attributi specifici di ogni tag presenti in una allowlist, tutti i tag AMP possono utilizzare qualsiasi attributo presente nella allowlist `$GLOBAL_ATTRS`; è possibile utilizzare anche tutti gli attributi con il prefisso `"data-"`.
 
 ### Testo obbligatorio mancante o errato
 
@@ -178,7 +178,7 @@ Oltre agli attributi specifici di ogni tag presenti in una whitelist, tutti i ta
   </tr>
 </table>
 
-Gli elementi CDATA sono i dati sui contenuti racchiusi tra tag HTML di inizio e di fine; attualmente vengono valutati utilizzando sia whitelist sia blacklist.
+Gli elementi CDATA sono i dati sui contenuti racchiusi tra tag HTML di inizio e di fine; attualmente vengono valutati utilizzando sia allowlist sia denylist.
 I tag con elementi CDATA obbligatori includono:
 
 [sourcecode:html]
@@ -210,7 +210,7 @@ I messaggi dettagliati relativi a questo errore possono essere i seguenti:
 <table>
    <tr>
   	<td class="col-thirty"><strong>Codice</strong></td>
-  	<td>CDATA_VIOLATES_BLACKLIST</td>
+  	<td>CDATA_VIOLATES_DENYLIST</td>
   </tr>
    <tr>
   	<td class="col-thirty"><strong>Formato</strong></td>
@@ -222,9 +222,9 @@ I messaggi dettagliati relativi a questo errore possono essere i seguenti:
   </tr>
 </table>
 
-Alcuni dati CSS specifici sono stati inseriti in una blacklist per convalidare le regole AMP CSS essenziali.
+Alcuni dati CSS specifici sono stati inseriti in una denylist per convalidare le regole AMP CSS essenziali.
 
-Di seguito è riportato l'elenco di dati CSS inseriti nella blacklist (vedi anche <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">`blacklisted_cdata_regex` nella specifica dello strumento di convalida AMP</a>):
+Di seguito è riportato l'elenco di dati CSS inseriti nella denylist (vedi anche <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">`disallowed_cdata_regex` nella specifica dello strumento di convalida AMP</a>):
 
 * `"\\.i?-amp-"` ("prefisso nome classe CSS -amp-")
 * `"!important"`
@@ -568,7 +568,7 @@ L'elenco completo di tag univoci è noto ed è riportato di seguito:
 * `<body>`
 * `<script src="https://cdn.ampproject.org/v0.js">`
 
-## Errori di stile e layout
+## Errori di stile e layout <a name="errori-di-stile-e-layout"></a>
 
 Prima di approfondire gli errori di stile e layout, è opportuno capire come funzionano [l'applicazione di stili](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md) e il [layout](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) in AMP. Poiché le pagine AMP sono pagine HTML, l'applicazione di stili è molto simile a quella delle pagine HTML.
 Esistono però alcune limitazioni per garantire il rapido caricamento delle pagine; tali limitazioni vengono applicate dallo strumento di convalida AMP.

@@ -47,7 +47,9 @@ function handleShoppingCart(request, response) {
 
 function writeShoppingCart(request, response, clientId) {
   const discount = discounts.get(clientId) || 0;
-  const total = (SHOPPING_CART_TOTAL - SHOPPING_CART_TOTAL * discount).toFixed(2);
+  const total = (SHOPPING_CART_TOTAL - SHOPPING_CART_TOTAL * discount).toFixed(
+    2
+  );
   const cart = {
     items: [
       {

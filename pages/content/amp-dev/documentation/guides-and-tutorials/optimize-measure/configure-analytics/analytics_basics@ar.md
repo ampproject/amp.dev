@@ -4,7 +4,7 @@ $title: "Analytics: الأساسيات"
 
 ابدأ من هنا للتعرّف على أساسيات تحليلات AMP.
 
-## هل تستخدم <span dir="ltr" class="nowrap">amp-pixel</span> أو <span dir="ltr" class="nowrap">amp-analytics</span>؟
+## هل تستخدم <span dir="ltr" class="nowrap">amp-pixel</span> أو <span dir="ltr" class="nowrap">amp-analytics</span>؟ <a name="use-amp-pixel-or-amp-analytics"></a>
 
 توفر AMP مكونين للوفاء باحتياجاتك بخصوص التحليلات والقياس:
 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) وأيضًا
@@ -117,7 +117,7 @@ $title: "Analytics: الأساسيات"
 تحدد السمة triggers متى يتم تنشيط طلب مشاهدة الصفحة.
 تعرّف على المزيد بشأن السمتين [requests وtriggers](deep_dive_analytics.md).
 
-## استبدال المتغير
+## استبدال المتغير <a name="variable-substitution"></a>
 
 يسمح كلّ من المكون [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) وكذلك
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) بكل
@@ -126,7 +126,7 @@ $title: "Analytics: الأساسيات"
 في النموذج التالي،
 يتم إرسال طلب مشاهدة الصفحة إلى عنوان URL،
 مع عنوان URL المتعارف عليه لمستند AMP الحالي، وعنوانه، فضلاً عن
-[رقم تعريف العميل](analytics_basics.md#هوية-المستخدم):
+[رقم تعريف العميل](analytics_basics.md#user-identification):
 
 ```html
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
@@ -189,7 +189,7 @@ $title: "Analytics: الأساسيات"
 وسوف يحلل وقت تشغيل AMP القيم بهذا الترتيب المستند إلى الأسبقية
 (انظر [ترتيب استبدال المتغير](deep_dive_analytics.md).
 
-## هوية المستخدم
+## هوية المستخدم <a name="user-identification"></a>
 
 تستخدم مواقع الويب ملفات تعريف الارتباط لتخزين المعلومات الخاصة بمستخدم ما في المتصفح.
 يمكن استخدام ملفات تعريف الارتباط للإخبار بأن مستخدمًا ما زار موقع ويب من قبل.

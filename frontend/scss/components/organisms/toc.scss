@@ -1,9 +1,9 @@
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
-@import '../atoms/_color.scss';
-@import '../atoms/_text.scss';
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+@import 'components/atoms/_color.scss';
+@import 'components/atoms/_text.scss';
 
 @import '../organisms/_sidebar.scss';
 
@@ -18,6 +18,8 @@
 }
 
 .#{organism('toc')} {
+  --spacing-top: 90px;
+
   position: relative;
   z-index: 1;
   top: 0;
@@ -31,12 +33,10 @@
   padding: 15px;
   margin-bottom: 10px;
 
-  &::-webkit-scrollbar {
-    width: 2px;
-  }
+  @include scrollbar;
 
   &::-webkit-scrollbar-thumb {
-    background-color: rgba(color('black'), 0.10);
+    background-color: transparentize(color('black'), 0.9);
   }
 
   @media (min-width: 768px) {
@@ -50,12 +50,13 @@
     padding: 0 10px 0 0;
     margin: 0;
     height: auto;
-    top: 90px;
+    top: var(--spacing-top);
     right: auto;
+    padding-bottom: var(--spacing-top);
     background: none;
     box-shadow: none;
     overflow-y: scroll;
-    max-height: calc(100vh - 90px);
+    max-height: calc(100vh - var(--spacing-top));
   }
 
   &-hl {

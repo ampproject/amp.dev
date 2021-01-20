@@ -1,5 +1,7 @@
 ---
 $title@: Platform and Technology Company Involvement
+$titles:
+  breadcrumb: Platform Involvement
 $order: 2
 teaser:
   image:

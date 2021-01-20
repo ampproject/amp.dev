@@ -29,14 +29,25 @@ pages/content/amp-dev/documentation/examples/*/**
 !pages/content/amp-dev/documentation/examples/*/**/_blueprint.yaml
 pages/content/amp-dev/documentation/components/reference/*.md
 !pages/content/amp-dev/documentation/components/reference/*@*.md
-pages/routescache.json
 examples/static/samples/samples.json
+pages/content/amp-dev/community/working-groups/*.yaml
+!pages/content/amp-dev/community/working-groups/_blueprint.yaml
+pages/content/amp-dev/community/working-groups/*.json
+pages/routescache.json
+pages/shared/data/componentSamples.json
+pages/shared/data/roadmap.json
 
 # Ignore files created during build process
 platform/pages*
 platform/static
 platform/config/build-info.yaml
+thumbor/static
+frontend/templates/views/partials/pixi/webpack.j2
 
 # Ignore pipeline cache
 .cache/**/*
 !.cache/.gitkeep
+
+# Ignore certs from being accidentally committed
+packager/certs/*pem
+packager/certs/*pem.enc

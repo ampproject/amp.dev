@@ -1,3 +1,7 @@
+{% if doc.formats %}
+[% supportedFormats formats={{ doc.formats|tojson }} %]
+{% endif %}
+
 {% macro filter(formats='websites, ads, stories, email', level='advanced, beginner') -%}
 {% if not formats.strip() and not level.strip() %}
 {{ caller() }}
@@ -17,15 +21,15 @@
 {% endwith %}
 {%- endmacro %}
 
-{% macro image(src, width, height, layout='responsive', alt='', caption='', align='', margin='') -%}
-<figure class="alignment-wrapper {{ align }} margin-{{ margin }}">
+{% macro image(src, width, height, layout='responsive', alt='', caption='', align='', margin='', shadow=True) -%}
+<figure class="alignment-wrapper {{ align }} margin-{{ margin }} {{'shadow' if shadow}}">
   <amp-img src="{{ src }}" width="{{ width }}" height="{{ height }}" layout="{{ layout }}" alt="{{ alt }}"></amp-img>
   {% if caption %}<figcaption>{{ caption }}</figcaption>{% endif %}
 </figure>
 {%- endmacro %}
 
 {% macro anim(src, width, height, poster, layout='responsive', alt='', align='', margin='') -%}
-{% do doc.amp_dependencies.add('amp-anim', '0.1') %}
+
 <figure class="alignment-wrapper {{ align }} margin-{{ margin }}">
   <amp-anim src="{{ src }}" width="{{ width }}" height="{{ height }}" layout="{{ layout }}" alt="{{ alt }}"><amp-img placeholder width="{{ width }}" height="{{ height }}" src="{{ poster }}"></amp-img></amp-anim>
 </figure>
@@ -50,7 +54,7 @@
     {% for locale in doc.locales if not locale == doc.locale %}
     {% set localized_doc = doc.localize(locale) %}
     {# If the document really is localized cross-reference it #}
-    {% if '@' in localized_doc.pod_path %}
+    {% if '@' in localized_doc.pod_path or not doc.pod_path.startswith('/content/amp-dev/documentation') %}
     <link rel="alternate" hreflang="{{ locale }}" href="{{ localized_doc.url }}"/>
     {% endif %}
     {% endfor %}
@@ -63,12 +67,10 @@
     {# Add SEO and sharing tags #}
     {% include 'views/partials/structured-data.j2' %}
 
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+    {# Origin Trial for Dynamic Autoplay Delegation #}
+    <meta http-equiv="origin-trial" content="AviuuiVhVdQ3GpVtxSpyMT+XsL/qGGYmyiyLvYSKPL3rRDLipe/ard5x+DXVlrATtolwX75VtpSKc9IEzLDd4AkAAABmeyJvcmlnaW4iOiJodHRwczovL2FtcC5kZXY6NDQzIiwiZmVhdHVyZSI6IkV4cGVyaW1lbnRhbEF1dG9wbGF5RHluYW1pY0RlbGVnYXRpb24iLCJleHBpcnkiOjE1NzA1Nzg0NDF9">
 
-    <link rel="preload" href="/static/fonts/noto-sans-v7-latin-regular.woff2" as="font" crossorigin>
-    <link rel="preload" href="/static/fonts/noto-sans-v7-latin-700.woff2" as="font" crossorigin>
-    <link rel="preload" href="/static/fonts/poppins-v5-latin-700.woff2" as="font" crossorigin>
-    <link rel="preload" href="/static/fonts/fira-mono-v7-latin-500.woff2" as="font" crossorigin>
+    <meta name="viewport" content="width=device-width"/>
 
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
     <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -108,6 +110,8 @@
     {% include 'views/partials/burger-menu.j2' %}
     {% endblock %}
 
+    {% include 'views/partials/search.j2' %}
+
     {% block main %}
     {# Only render the grid toggle during development #}
     {% include 'views/partials/content.j2' %}
@@ -117,11 +121,11 @@
     {% include 'views/partials/footer.j2' %}
     {% endblock %}
 
-    {# For untranslated content add hint that we might use help to translate it #}
-    {% if not '@' in doc.pod_path and not doc.locale == podspec.default_locale %}
+    {# Add hint that we might use help to translate untranslated docs #}
+    {% if not '@' in doc.pod_path and not doc.locale == podspec.default_locale and doc.pod_path.startswith('/content/amp-dev/documentation') %}
     {% do doc.styles.addCssFile('/css/components/organisms/translation-hint.css') %}
     <aside class="ap-o-translation-hint">
-      <p class="ap-o-translation-hint-wrapper">{{ _('Sadly this page isn\'t translated yet, but we could use some help doing so. See the <a href="/documentation/guides-and-tutorials/contribute/translations">translation guide</a> on how you can contribute.') }}</p>
+      <p class="ap-o-translation-hint-wrapper">{{ _('Sadly this page isn\'t translated yet, but will be shortly - check back soon!') }}</p>
     </aside>
     {% endif %}
 

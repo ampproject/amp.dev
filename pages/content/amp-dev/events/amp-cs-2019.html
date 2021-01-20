@@ -13,10 +13,6 @@ section_links:
   - FAQ
 ---
 {% do doc.styles.addCssFile('css/components/templates/events.css') %}
-{% do doc.amp_dependencies.add('amp-youtube', '0.1') %}
-{% do doc.amp_dependencies.add('amp-selector', '0.1') %}
-{% do doc.amp_dependencies.add('amp-lightbox', '0.1') %}
-{% do doc.amp_dependencies.add('amp-iframe', '0.1') %}
 
 <section class="ap--stage ap--container-fluid">
     {% do doc.styles.addCssFile('css/components/organisms/stage-cs.css') %}
@@ -27,29 +23,17 @@ section_links:
 
             <h2 class="ap-o-stage-content-subline">October 8 - 10</h2>
             <h1 class="ap-o-stage-content-headline">AMP Contributor Summit 2019</h1>
-            <h2 class="ap-o-stage-content-subline">New York City</h2>
+            <h2 class="ap-o-stage-content-subline">New York City, USA</h2>
         </div>
       </div>
     </div>
 </section>
 
-{% do doc.styles.addCssFile('css/components/organisms/jumpto-list.css') %}
-{% do doc.styles.addCssFile('css/components/molecules/jumpto-item.css') %}
-
-<div class="ap-o-jumpto">
-  <div class="ap--container">
-    <div class="ap-o-jumpto-content">
-      <p class="ap-o-jumpto-text">Learn more about</p>
-      <ul class="ap-o-jumpto-list">
-        {% for link in doc.section_links %}
-          <li class="ap-m-jumpto-item">
-            <a href="#{{ link }}"class="ap-m-jumpto-item-link">{{ link }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
-</div>
+<section class="ap--container">
+  {% with text=_('Learn more about:') %}
+  {% include '/views/partials/jumpto.j2' %}
+  {% endwith %}
+</section>
 
 <section class="ap--container">
   <p class="ap--content-default">
@@ -68,7 +52,7 @@ section_links:
   <div class="ap--content-x-wide">
     <amp-selector role="tablist" layout="container" class="ap--flex-container">
 
-        <div class="ap-o-agenda-selector-button ampcs" selected role="tab" tabindex="0" option="a">Day 0<small>Optional</small></div>
+        <div class="ap-o-agenda-selector-button ampcs" selected role="tab" tabindex="0" option="a">Tuesday, Oct. 8th<small>Hackathon / New Contributor Workshop (Optional)</small></div>
 
         <div class="ap-o-agenda">
           <div class="ap--container ampconf-agenda">
@@ -127,7 +111,7 @@ section_links:
           </div>
         </div>
 
-        <div class="ap-o-agenda-selector-button ampcs" role="tab" tabindex="0" option="b">Day 1<small>Talks + Breakouts</small></div>
+        <div class="ap-o-agenda-selector-button ampcs" role="tab" tabindex="0" option="b">Wednesday, Oct. 9th<small>Talks + Breakouts</small></div>
 
         <div class="ap-o-agenda">
           <div class="ap--container ampconf-agenda">
@@ -188,7 +172,7 @@ section_links:
           </div>
         </div>
 
-        <div class="ap-o-agenda-selector-button ampcs" role="tab" tabindex="0" option="b">Day 2<small>Talks + Breakouts</small></div>
+        <div class="ap-o-agenda-selector-button ampcs" role="tab" tabindex="0" option="b">Thursday, Oct. 10th<small>Talks + Breakouts</small></div>
 
         <div class="ap-o-agenda">
           <div class="ap--container ampconf-agenda">
@@ -293,15 +277,25 @@ section_links:
     <div class="ap--container">
       <div class="ap-m-conf-location-visual">
         <h3 class="ap-m-conf-location-headline">Location</h3>
-        <div class="ap-m-conf-location-map">
-          <amp-iframe width="330" height="330" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" layout="responsive" frameborder="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.305935303!2d-74.25986548248684!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1561145688463!5m2!1sen!2sin"></amp-iframe>
-        </div>
-      </div>
-      <div class="ap-m-conf-location-content">
+
         <p class="ap-m-conf-location-content-text">
-          New York City, New York, USA
+          The summit will be held at Google NYC.  The summit will be in different buildings depending on the day--make sure you go to the right building and lobby!
         </p>
+        <p class="ap-m-conf-location-content-text">
+          Please bring a photo ID to comply with building security policies.  Please note that the summit is only open to registered attendees.
+        </p>
+        <ul>
+          <li class="ap-m-conf-location-content-text">
+          Tuesday @ <a href="https://goo.gl/maps/ERvhnggy6MKjBpjz9">111 8th Avenue, New York, NY</a>.  Enter the main 8th Avenue lobby (near the Chase) and head to the Events section near the back.  Look for people with AMP Contributor Summit badges.
+          </li>
+          <li class="ap-m-conf-location-content-text">
+            Wednesday @ <a href="https://goo.gl/maps/kH779dQEdLjC967H9">85 10th Avenue, New York, NY</a>.  Enter the 10th Avenue lobby and use the elevator to go to the 3rd floor.  When you exit the elevator on the 3rd floor you will be near the summit location; look for people with AMP Contributor Summit badges.
+          </li>
+          <li class="ap-m-conf-location-content-text">
+            Thursday @ <a href="https://goo.gl/maps/ERvhnggy6MKjBpjz9">111 8th Avenue, New York, NY</a>.  Enter the main 8th Avenue lobby (near the Chase) and head to the Events section near the back.  Look for people with AMP Contributor Summit badges.
+          </li>
       </div>
+
     </div>
   </div>
 </section>
@@ -313,6 +307,12 @@ section_links:
       <div class="ap-m-faq-content">
         <p class="ap-m-faq-content-question">How do I register to attend?</p>
         <p class="ap-m-faq-content-answer">Due to the limited amount of space, we use an application process for attendees.  The application period for this summit has now closed.</p>
+        <p class="ap-m-faq-content-question">Where is the summit being held?</p>
+        <p class="ap-m-faq-content-answer">The summit will be held at the Google NYC office, but will be in different buildings depending on the day.  See the <a href="#Location">Location</a> section for details.</p>
+        <p class="ap-m-faq-content-question">What hotel should I stay at?</p>
+        <p class="ap-m-faq-content-answer">We do not have a block of hotel rooms for summit attendees, so you are free to stay at your preferred hotel.  Many attendees are staying at the <a href="https://www.dreamhotels.com/downtown/default-en.html">Dream Downtown</a> and <a href="https://www.themaritimehotel.com/">The Maritime</a> as they are right across the street from the summit location.</p>
+        <p class="ap-m-faq-content-question">Will food be provided?</p>
+        <p class="ap-m-faq-content-answer">Yes!  We'll provide breakfast and lunch every day during the summit.  We'll also have events at the end of each day with dinner or snacks/drinks; see the agenda for details.</p>
         <p class="ap-m-faq-content-question">Does it cost anything?</p>
         <p class="ap-m-faq-content-answer">No - tickets are free of charge.</p>
         <p class="ap-m-faq-content-question">Who is the event for?</p>
@@ -328,23 +328,21 @@ section_links:
     </div>
 </section>
 
-<section class="ap--container">
-  {% do doc.styles.addCssFile('css/components/organisms/jumpto-list.css') %}
-  {% do doc.styles.addCssFile('css/components/molecules/jumpto-item.css') %}
-
-  <div class="ap-o-jumpto ap--container">
-    <div class="ap-o-jumpto-content ap--inline-footer">
-      <ul class="ap-o-jumpto-list">
-        <li class="ap-m-jumpto-item">
-          <a class="ap-m-jumpto-item-link" href="code-of-conduct.html">Code of Conduct</a>
-        </li>
-        <li class="ap-m-jumpto-item">
-          <a class="ap-m-jumpto-item-link" href="accessibility.html">Accessibility</a>
-        </li>
-        <li class="ap-m-jumpto-item">
-          <a class="ap-m-jumpto-item-link" href="mailto:wg-outreach@amp.dev">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+<section class="ap--container ap--center">
+  {% with list = [
+      { "label": "Code of Conduct",
+        "url": "code-of-conduct.html"
+      },
+      {
+        "label": "Accessibility",
+        "url": "accessibility.html"
+      },
+      {
+        "label": "Contact",
+        "url": "mailto:wg-outreach@amp.dev"
+      }
+    ]
+  %}
+  {% include '/views/partials/jumpto.j2' %}
+  {% endwith %}
 </section>

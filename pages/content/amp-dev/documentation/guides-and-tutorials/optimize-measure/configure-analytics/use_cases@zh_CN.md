@@ -10,7 +10,7 @@ $title: 使用情形
 
 了解如何使用 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 和 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 跟踪网页浏览量。
 
-### 使用 amp-pixel
+### 使用 amp-pixel <a name="使用-amp-pixel"></a>
 
 使用 [`amp-pixel` 将网页浏览量数据发送到指定网址](../../../../documentation/components/reference/amp-pixel.md)：
 
@@ -65,7 +65,7 @@ $title: 使用情形
 </amp-analytics>
 ```
 
-## 跟踪网页点击次数
+## 跟踪网页点击次数 <a name="tracking-page-clicks"></a>
 
 了解如何使用 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)，通过将事件数据发送到指定网址和 [Google Analytics（分析）来跟踪网页点击次数](https://developers.google.com/analytics/devguides/collection/amp-analytics/)。
 
@@ -126,7 +126,7 @@ $title: 使用情形
 </amp-analytics>
 ```
 
-## 跟踪滚动操作
+## 跟踪滚动操作 <a name="tracking-scrolling"></a>
 
 使用 [`amp-analytics` 跟踪网页滚动操作](../../../../documentation/components/reference/amp-analytics.md)。下面的示例使用 `scrollspec` 属性，在网页垂直滚动 25%、50% 和 90% 时将 `scroll` 事件发送到指定网址。 在网页水平滚动达到 `scroll` 宽度的 90% 时，该事件也会被触发：
 
@@ -155,7 +155,7 @@ $title: 使用情形
 </amp-analytics>
 ```
 
-## 跟踪社交互动
+## 跟踪社交互动 <a name="tracking-social-interactions"></a>
 
 了解如何使用 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)、通过将事件数据发送到指定网址和 [Google Analytics（分析）来跟踪社交互动](https://developers.google.com/analytics/devguides/collection/amp-analytics/)。
 

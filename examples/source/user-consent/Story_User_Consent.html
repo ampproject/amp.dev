@@ -14,11 +14,11 @@ author: sebastianbenz
 -->
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 <head>
   <meta charset="utf-8">
   <link rel="canonical" href="<% canonical %>">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <title>User Consent</title>
 
@@ -98,22 +98,27 @@ author: sebastianbenz
       <!--
       The `amp-consent` component supports specifying a CORS endpoint via the `checkConsentHref` attribute, which the component queries via a POST request to determine if the consent UI specified for it needs to be shown. The response should look like this:
       ```json
-      {
-        "promptIfUnknown": [true|false]
-      }
+        {
+          "consentRequired": boolean (required),
+          "consentStateValue": enum (accepted/rejected/unknown) (optional),
+          "consentString": string (optional),
+          "expireCache": boolean (default false),
+        }
       ```
       The response will indicate if the consent needs to be shown or not. If it needs to be shown, the element with the id given in `promptUI` will be displayed. For AMP Stories, you can specify [consent title, message and a list of vendors](/content/amp-dev/documentation/components/reference/amp-consent.md#prompt-ui-for-stories) inside a nested `amp-story-consent` element.
       -->
       <amp-consent id="myConsent" layout="nodisplay">
         <script type="application/json">
           {
-             "consents": {
-                "myConsent": {
-                   "checkConsentHref": "https://ampbyexample.com/samples_templates/consent/getConsent",
-                   "promptUI": "consentUI"
-                 }
+            "consents": {
+              "myConsent": {
+                "consentInstanceId": "my-amp-story-consent",
+                "consentRequired": "remote",
+                "checkConsentHref": "/documentation/examples/api/get-consent",
+                "promptUI": "consentUI"
               }
-           }
+            }
+          }
         </script>
         <amp-story-consent id="consentUI" layout="nodisplay">
           <script type="application/json">

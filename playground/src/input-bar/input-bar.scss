@@ -1,0 +1,122 @@
+@import '_variables.scss';
+@import '_functions.scss';
+@import 'components/atoms/_text.scss';
+@import '../loader/loading-indicator.scss';
+
+.input {
+  &-help-text {
+    @include txt;
+    @include txt-2;
+  }
+
+  &-bar {
+    display: flex;
+    height: 40px;
+    border-radius: 4px;
+    box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.8);
+
+    &-field {
+      display: block;
+      height: 100%;
+      width: 100%;
+      padding: 0 14px;
+      border: 0;
+      border-radius: 4px 0 0 4px;
+      font-family: Noto Sans;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    &-submit {
+      cursor: pointer;
+      @include txt-font-accent;
+      min-width: 100px;
+      margin: 0;
+      border: 0;
+      border-radius: 0 4px 4px 0;
+      text-align: center;
+      font-size: 16px;
+      text-transform: uppercase;
+      color: color('white');
+      background-color: color('blue-ribbon');
+
+      &.loading {
+        font-size: 0;
+        background: color('iron');
+
+        @extend %loading-indicator;
+        &:after {
+          width: 22px;
+          height: 22px;
+          margin: auto;
+          border-width: 2px;
+        }
+      }
+    }
+
+    &-label {
+      @include txt;
+      @include txt-2;
+      display: block;
+      color: color('guardsman-red');
+      opacity: 0;
+      transition: transform .3s ease, opacity .2s ease;
+
+      &.show {
+        opacity: 1;
+        transform: translate3d(0, 10px, 0);
+      }
+    }
+
+    &-autocomplete {
+      position: absolute;
+      width: calc(100% - 50px);
+      height: 60%;
+      margin-top: 0;
+      border-radius: 4px;
+      box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transition: .3s;
+      pointer-events: none;
+
+      &.active {
+        pointer-events: all;
+        opacity: 1;
+        background: color('white');
+        transform: translate3d(0, 10px, 0);
+      }
+
+      &-header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 15px 15px 15px 25px;
+        white-space: nowrap;
+        border-bottom: 1px solid color('iron');
+
+        h4 {
+          margin: 0;
+        }
+
+        &-close {
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          width: 22px;
+          height: 22px;
+        }
+      }
+
+      &-list {
+        max-height: calc(100% - 54px);
+        overflow-y: auto;
+        padding: 0;
+      }
+
+      aside {
+        margin-top: 35%;
+        text-align: center;
+      }
+    }
+  }
+}

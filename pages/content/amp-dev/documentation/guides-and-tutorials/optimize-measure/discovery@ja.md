@@ -1,22 +1,34 @@
 ---
-$title: ページが検出されるようにする
+formats:
+- ウェブサイト
+"$title": ページを検出可能にする
+"$titles":
+  teaser: ページを検出可能にする
+"$order": '5'
+description: ニュース記事のように、同じページに対して AMP バージョンと非 AMP バージョンの両方のページを用意する場合を考えましょう。たとえば、Google 検索 ...
+teaser:
+  icon: 検出
+  text: 検索エンジンがどのようにしてサイトの AMP バージョンを検出しているのかを学習します。
+  label: もっと詳しく知る
 ---
 
-たとえばニュース記事などで、同じページの非 AMP バージョンと AMP バージョンの両方を用意したい場合があります。Google 検索がそのページの非 AMP バージョンを検出した場合、AMP バージョンがあることをどのように認識するのでしょうか。この問題について検討してみましょう。
+たとえばニュース記事などで、同じページの非 AMP バージョンと AMP バージョンの両方を用意する場合があります。Google 検索がそのページの非 AMP バージョンを検出した場合、AMP バージョンがあることをどのように認識するのでしょうか。この問題について検討してみましょう。
 
-### &lt;link&gt; でページをリンクする
+### <link> でページをリンクする
 
-この問題を解決するには、`<head>` 内の `<link>` タグを使用して、AMP ページに関する情報を非 AMP ページに、非 AMP ページに関する情報を AMP ページに追加します。
+この問題を解決するには、`<head>` 内の `<link>` タグを使用して、AMP ページに関する情報と非 AMP ページに関する情報を互いのページに追加します。
 
 非 AMP ページには次のタグを追加します。
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-AMP ページには次のタグを追加します。
+そして AMP ページには次のタグを追加します。
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
@@ -25,16 +37,15 @@ AMP ページには次のタグを追加します。
 一方のページだけが存在し、そのページが AMP ページである場合でも、そのページに正規のリンク、つまりそのページ自体を指すリンクを追加する必要があります。
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-[tip type="read-on"]
-Google が AMP ページを検出する方法について詳しくは、[Google 検索での AMP ページに関するガイドライン](https://support.google.com/webmasters/answer/6340290)をご確認ください。
-[/tip]
+[tip type="read-on"] <strong>参考情報 –</strong> Google が AMP ページを検出する方法について詳しくは、「[Google 検索での AMP ページに関するガイドライン](https://support.google.com/webmasters/answer/6340290)」をご確認ください。 [/tip]
 
-## 追加のメタデータでサードパーティ プラットフォームと統合する
+## 追加のメタデータでサードパーティプラットフォームと統合する <a name="integrate-with-third-party-platforms-through-additional-metadata"></a>
 
-サードパーティのサイト（AMP ページを埋め込んだサイトや、AMP ページへのリンクが含まれるサイトなど）では、あなたのページが AMP ページであること以外に、ページに関する詳しい情報が必要となる場合があります。例えば、「ニュース記事かどうか」、「動画かどうか」、「スクリーンショットや短い説明があるか」などのようなページに関する情報が、プラットフォームから求められます。
+サードパーティのサイト（AMP ページを埋め込んだサイトや、AMP ページへのリンクが含まれるサイトなど）では、あなたのページが AMP ページであること以外に、ページに関する詳しい情報が必要となる場合があります。たとえば、「ニュース記事かどうか」、「動画かどうか」、「スクリーンショットや短い説明があるか」などのようなページに関する情報が、プラットフォームから求められます。
 
 これは AMP ページだけでなく、すべてのウェブページに当てはまります。このようなメタデータを任意とするプラットフォームもありますが、必須である場合、**適切なメタデータを提供しなければ、そのプラットフォームでコンテンツへのリンクは表示されません**。コンテンツを表示するプラットフォームで必要とされる適切なメタデータを、必ず提供するようにしてください。
 
@@ -45,6 +56,7 @@ Google が AMP ページを検出する方法について詳しくは、[Google 
 例:
 
 [sourcecode:html]
+
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -76,18 +88,16 @@ Google が AMP ページを検出する方法について詳しくは、[Google 
     }
   }
 </script>
+
 [/sourcecode]
 
 [ampproject の examples フォルダ](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples)には、代替の HTML 属性構文など、このほかにもサンプルが用意されています。
 
-[tip type="read-on"] 構造化データについて詳しくは、次の関連資料をご確認ください。
+[tip type="read-on"] 構造化データについて詳しくは、次の関連資料をご覧ください。
 
-* トップニュース カルーセルやレシピカードなど、[コンテンツを構造化して Google 検索のリッチリザルトに表示されるようにする方法](https://developers.google.com/search/docs/guides/mark-up-content)をご確認ください。
-* [Google 構造化データ テストツール](https://developers.google.com/structured-data/testing-tool/)を使用して構造化データをテストする方法をご確認ください。
-[/tip]
+- [コンテンツを構造化して Google 検索のリッチリザルトに表示されるようにする方法](https://developers.google.com/search/docs/guides/mark-up-content)（トップニュースのカルーセルやレシピカードなど）をご確認ください。
+- [Google 構造化データ テストツール](https://developers.google.com/structured-data/testing-tool/)を使用して構造化データをテストする方法をご確認ください。 [/tip]
 
 ### より多くのプラットフォームに対応するその他のメタデータ
 
-コンテンツを検出、配信可能にするその他の方法については、[ウェブの基礎サイト内のソーシャルによる検出ガイド](https://developers.google.com/web/fundamentals/discovery-and-monetization/social-discovery/)をご確認ください。
- 
- 
+コンテンツを検出、配信可能にするその他の方法については、[Web Fundamentals の「ソーシャルディスカバリー」](https://developers.google.com/web/fundamentals/discovery-and-monetization/social-discovery/)をご覧ください。

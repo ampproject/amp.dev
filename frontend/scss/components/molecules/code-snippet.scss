@@ -18,25 +18,27 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
 @import 'components/atoms/_text.scss';
 
 .#{molecule('code-snippet')} {
+  display: flex;
   overflow-x: auto;
   margin: 1.1rem 0 0 0;
   padding: 0 1em;
   color: color('white');
   line-height: 1.3em;
-  background: color('ebony-clay');
+  background: color('charade');
   font-size: 0.9em;
 
-  &::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
+  &::after {
+    content: '\00a0\00a0\00a0\00a0\00a0';
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
+
+  @include scrollbar;
 
   &::-webkit-scrollbar-thumb {
-    background-color: color('oslo-gray');
-  }
-
-  &::-webkit-scrollbar-corner {
-    background-color: transparent;
+    border-radius: 0;
   }
 
   @media (min-width: 768px) {

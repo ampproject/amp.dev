@@ -1,0 +1,211 @@
+{% extends '/layouts/default.j2' %}
+
+{% block styles %}
+{{ super() }}
+
+{% do doc.styles.addCssFile('css/components/templates/working-group.css') %}
+{% endblock %}
+
+{% block main %}
+
+  <main class="ap--main ap-t-working-groups">
+
+  <section class="ap--stage ap--container-fluid">
+    {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
+
+    <div class="ap-o-stage">
+      <div class="ap--container-fluid">
+        <div class="ap-o-stage-content">
+          <h1 class="ap-o-stage-content-headline">{{ _('Working Groups') }}</h1>
+          <h2 class="ap-o-stage-content-subline">{{ _('Encouraging More Voices in AMP') }}</h2>
+        </div>
+        <div class="ap-o-stage-image">
+          <amp-img alt="AMP Working Group"
+              media="(min-width: 670px)"
+              width="800"
+              height="435"
+              src="/static/img/working-groups-top-desktop.png"
+              layout="responsive">
+          </amp-img>
+          <amp-img alt="AMP Working Group"
+              media="(max-width: 669px)"
+              width="600"
+              height="669"
+              src="/static/img/working-groups-top.png"
+              layout="responsive">
+          </amp-img>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ap-o-wg">
+    <section class="ap-o-wg-intro">
+      <p>{{ _('An AMP Working Group is a segment of the community with knowledge/interest in specific area of AMP. Working Groups are created by AMP’s Technical Steering Committee.') }}</p>
+      <p>{{ _('Most Working Groups provide bi-weekly status updates and present quarterly high-level updates in round-robin fashion at Design Reviews.') }}</p>
+      <h4>{{ _('AMP’s Working Groups are:') }}</h4>
+    </section>
+    <section class="ap-o-wg-content">
+      <div class="ap-o-wg-nav">
+        <ul>
+          {% for group in g.collection('/content/amp-dev/community/working-groups').list_docs(locale=doc.locale) %}
+          <li class="ap-o-wg-nav-bubble {% if group.data.name in doc.pod_path %} active {% endif %}">
+            <a href="{{ g.doc('/content/amp-dev/community/working-groups/' + group.data.name, locale=doc.locale).url.path }}">{{ _(group.data.full_name) }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="ap-o-wg-content-container">
+        <div class="ap-o-wg-group">
+          <div class="ap-o-wg-group-icon">
+            <div class="ap-a-ico">
+              {% do doc.icons.useIcon('icons/wrench.svg') %}
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#wrench"></use></svg>
+            </div>
+          </div>
+
+          <section class="ap-o-wg-group-section ap-o-wg-group-description">
+            <p>{{ _('Working Group') }}</p>
+            <h2>{{ _(doc.data.full_name) }}</h2>
+            <p>{{ _(doc.data.description|markdown|safe) }}</p>
+            <p>{{ _('The facilitator of {name} is: ', name=doc.data.full_name) }}<a href="https://github.com/{{ doc.data.facilitator.login }}" target="_blank"  rel="noopener" >@{{ doc.data.facilitator.login }}</a></p>
+          </section>
+
+          {% if doc.data.issues %}
+          <section class="ap-o-wg-group-section">
+            <h3>{{ _('Current Issues') }}</h3>
+            {% if doc.data.issues|length > 3 %}
+            <input type="checkbox" id="load-issues-checkbox"/>
+            {% endif %}
+            <div class="ap-o-wg-group-issues">
+              {% for issue in doc.data.issues %}
+              <a href={{ issue.html_url }} class="ap-o-wg-issue" target="_blank" rel="noopener">
+                <div class="ap-o-wg-issue-icon">
+                  <div class="ap-a-ico">
+                    {% do doc.icons.useIcon('icons/exclamation.svg') %}
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#exclamation"></use></svg>
+                  </div>
+                </div>
+                <div class="ap-o-wg-issue-text">
+                  <div class="ap-o-wg-issue-text-title">
+                    <h4>{{ issue.title }}</h4>
+                    {% for label in issue.labels %}
+                    <div class="ap-o-wg-gh-label" style="color: #{{ label.txt_color }}; background-color: #{{ label.background_color }};">
+                      {{ label.name }}
+                    </div>
+                    {% endfor %}
+                  </div>
+                  <p>#{{ issue.number }} opened on {{ issue.created_at }} by @{{ issue.author }}</p>
+                </div>
+              </a>
+              {% endfor %}
+            </div>
+            {% if doc.data.issues|length > 3 %}
+            <label class="ap-a-btn ap-o-wg-load-btn" for="load-issues-checkbox">
+              <span>{{ _('View all') }}</span>
+            </label>
+            {% endif %}
+          </section>
+          {% endif %}
+
+          <section class="ap-o-wg-group-section">
+            <h3>{{ _('Members') }}</h3>
+            <div class="ap-o-wg-grid">
+              <a href="https://github.com/{{ doc.data.facilitator.login }}" target="_blank" rel="noopener" class="ap-o-wg-member active">
+                <amp-img class="ap-o-wg-member-img"
+                    src="https://github.com/{{ doc.data.facilitator.login }}.png?size=72"
+                    width="72"
+                    height="72"
+                    layout="responsive">
+                </amp-img>
+                <div class="ap-o-wg-member-text">
+                  <h4>{{ doc.data.facilitator.name }}</h4>
+                  <span>@{{ doc.data.facilitator.login }}</span>
+                  <p>Facilitator</p>
+                </div>
+              </a>
+              {% if doc.data.members %}
+              {% for member in doc.data.members %}
+              <a href="https://github.com/{{ member.login }}" target="_blank" rel="noopener" class="ap-o-wg-member">
+                <amp-img class="ap-o-wg-member-img"
+                    src="https://github.com/{{ member.login }}.png"
+                    width="72"
+                    height="72"
+                    layout="responsive">
+                </amp-img>
+                <div class="ap-o-wg-member-text">
+                  <h4>{{ member.name }}</h4>
+                  <span>@{{ member.login }}</span>
+                </div>
+              </a>
+              {% endfor %}
+              {% endif %}
+            </div>
+          </section>
+
+          {% if doc.data.communication %}
+          <section class="ap-o-wg-group-section">
+            <h3>{{ _('Communication Channels') }}</h3>
+            {% for item in doc.data.communication %}
+            <div class="ap-o-wg-channel">
+              <div class="ap-o-wg-channel-icon ap-o-wg-channel-icon-{{ item.channel }}">
+                <div class="ap-a-ico ap-m-lnk-icon">
+                  {% do doc.icons.useIcon('icons/' + item.channel + '.svg') %}
+                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ item.channel }}"></use></svg>
+                </div>
+              </div>
+              <div class="ap-o-wg-channel-text">
+                <h4>{{ item.name }}</h4>
+                {% for el in item.content %}
+                <p>{{ el.item|markdown|safe }}</p>
+                {% endfor %}
+
+                {% if (item.channel == 'slack' or item.channel == 'github') %}
+                <div class="ap-o-wg-btn ap-o-wg-btn-{{ item.channel }}">
+                  <a class="ap-m-lnk" href="{% if item.channel == 'slack' %}https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877{% else %}{{ doc.html_url }}{% endif %}" target="_blank" rel="noopener">
+                    <div class="ap-a-ico">
+                      {% do doc.icons.useIcon('icons/' + item.channel + '.svg') %}
+                      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ item.channel }}"></use></svg>
+                    </div>
+                    <span>{% if item.channel == 'slack' %}Add to Slack{% else %}Go to GitHub{% endif %}</span>
+                  </a>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+            {% endfor %}
+          </section>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+    <section class="ap-o-wg-related">
+      <h2>{{ _('Other ways to get involved with AMP') }}</h2>
+      <div class="ap-o-wg-related-item">
+        <h3>{{ _('Contribute to AMP') }}</h3>
+        <p>{{ _('The AMP Project would not be possible without help from all members of the community whether you are a developer, content creator or provider of services relevant to AMP There are many ways for you to contribute.') }}</p>
+        <div class="ap-o-benefits-overview-link">
+          <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path }}" class="ap-m-lnk ap-m-lnk-square">
+            <div class="ap-a-ico ap-m-lnk-icon">
+              {% do doc.icons.useIcon('icons/internal.svg') %}
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+            </div>
+            <span class="ap-m-lnk-text">{{ _('Contribute') }}</span>
+          </a>
+        </div>
+      </div>
+      <div class="ap-o-wg-related-item">
+        <h3>{{ _('Governance Body') }}</h3>
+        <p>{{ _('Learn more about the Advisory Committee and Technical Steering Committee.') }}</p>
+          <a href="{{ g.doc('/content/amp-dev/community/governance.md', locale=doc.locale).url.path }}" class="ap-m-lnk ap-m-lnk-square">
+            <div class="ap-a-ico ap-m-lnk-icon">
+              {% do doc.icons.useIcon('icons/internal.svg') %}
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+            </div>
+            <span class="ap-m-lnk-text">{{ _('Governance') }}</span>
+          </a>
+        </div>
+    </section>
+  </div>
+</main>
+{% endblock %}

@@ -1,5 +1,7 @@
 ---
-$title: 유효성 검사 오류 해결
+"$title": 유효성 검사 오류 해결
+"$order": '2'
+description: 이 섹션에서는 AMP 페이지의 AMP 유효성 검사 오류 및 해결 방법을 살펴봅니다. 콘솔에 따라 오류가 아래와 다른 순서로 나타날 수 있습니다.
 ---
 
 이 섹션에서는 AMP 페이지에 있는 AMP 유효성 검사 오류 및 해결 방법을 살펴봅니다.  콘솔에 따라 오류가 아래와 다른 순서로 나타날 수 있습니다.
@@ -40,12 +42,12 @@ The mandatory tag 'link rel=canonical' is missing or incorrect.
 <link rel="canonical" href="/article.html">
 ```
 
-[tip type="note"]
-독립된 표준 AMP 페이지도 만들 수 있습니다. 여전히 표준 링크는 필요하며 AMP 문서 자체를 가리켜야 합니다.
+[tip type="note"] 독립된 표준 AMP 페이지도 만들 수 있습니다. 여전히 표준 링크는 필요하며 AMP 문서 자체를 가리켜야 합니다.
 
 ```html
 <link rel="canonical" href="article.amp.html">
 ```
+
 [/tip]
 
 이제 페이지를 **새로고침**합니다. 아직 수정해야 할 오류가 많지만 표준 링크 오류는 모두 사라졌습니다.
@@ -67,12 +69,12 @@ The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 
 이제 페이지를 새로고침하고 두 오류가 모두 사라졌는지 확인합니다.
 
-[tip type="note"]
-`⚡`을 지정하는 것이 권장되는 방법이지만 다음과 같이 `⚡` 속성 자리에 `amp` 속성을 사용할 수도 있습니다.
+[tip type="note"] `⚡`을 지정하는 것이 권장되는 방법이지만 다음과 같이 `⚡` 속성 자리에 `amp` 속성을 사용할 수도 있습니다.
 
 ```html
 <html amp lang="en">
 ```
+
 [/tip]
 
 ## 표시 영역 지정
@@ -88,7 +90,7 @@ AMP에서는 표시 영역의 `width` 및 `minimum-scale`을 정의해야 합니
 표시 영역 오류를 해결하려면 다음의 HTML 스니펫을 `<head>` 태그에 추가합니다.
 
 ```html
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="viewport" content="width=device-width">
 ```
 
 `width` 및 `minimum-scale`에 지정된 값은 AMP에서 요구되는 값입니다. `initial-scale` 정의는 필수 항목은 아니지만 모바일 웹 개발 과정에 일반적으로 포함되며 권장되는 사항입니다. [표시 영역 구성](https://developers.google.com/speed/docs/insights/ConfigureViewport)에서 표시 영역 및 반응형 디자인에 관해 자세히 알아볼 수 있습니다.
@@ -109,7 +111,7 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 <link href="base.css" rel="stylesheet" />
 ```
 
-문제는 외부 스타일시트를 참조한 데서 발생합니다. 문서를 가능한 한 빨리 로드하기 위해 AMP에는 외부 스타일시트를 포함할 수 없습니다. 대신 모든 스타일시트 규칙은 `<style amp-custom></style>` 태그를 사용하여 AMP 문서에 인라인으로 추가되어야 합니다.
+문제는 외부 스타일시트를 참조한 데서 발생합니다. 문서를 가능한 한 빨리 로드하기 위해 AMP에는 외부 스타일시트를 포함할 수 없습니다. 대신 모든 스타일시트 규칙은 <code><style amp-custom></style></code> 태그를 사용하여 AMP 문서에 인라인으로 추가되어야 합니다.
 
 ```html
 <style amp-custom>
@@ -121,18 +123,14 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 
 이제 오류를 해결해 보겠습니다.
 
-1.  `<head>`에서 외부 스타일시트를 가리키는 `<link>` 태그를 **삭제**하고 이를 인라인 `<style amp-custom></style>` 태그로 교체합니다. 스타일 태그의 `amp-custom` 속성은 필수입니다.
+1. `<head>`에서 외부 스타일시트를 가리키는 `<link>` 태그를 **삭제**하고 이를 인라인 `<style amp-custom></style>` 태그로 교체합니다. 스타일 태그의 `amp-custom` 속성은 필수입니다.
 2. [`base.css`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.css) 파일에 있는 모든 스타일을 **복사**하여 `<style amp-custom></style>` 태그에 붙여넣습니다.
 
 다시 한번 페이지를 **새로고침**하고 스타일시트 오류가 사라졌는지 확인합니다.
 
-[tip type="note"]
-인라인 스타일링이 필요할 뿐 아니라 모든 스타일링 정보의 파일 크기가 50KB로 제한됩니다. AMP 페이지에 CSS를 인라인 처리하기 전에 [SASS](http://sass-lang.com/)와 같은 CSS 사전 처리기를 사용하여 CSS를 축소해야 합니다.
-[/tip]
+[tip type="note"] 인라인 스타일링이 필요할 뿐 아니라 모든 스타일링 정보의 파일 크기가 75KB로 제한됩니다. AMP 페이지에 CSS를 인라인 처리하기 전에 [SASS](http://sass-lang.com/)와 같은 CSS 사전 처리기를 사용하여 CSS를 축소해야 합니다. [/tip]
 
-[tip type="important"]
-전체 AMP 문서에 대해 스타일 태그를 1개만 사용할 수 있습니다. AMP 페이지에서 참조하는 외부 스타일시트가 여러 개인 경우 이러한 스타일시트를 하나의 규칙 세트로 조합해야 합니다. AMP에서 어떤 CSS 규칙이 유효한지 알아보려면 [지원되는 CSS](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md)를 확인하세요.
-[/tip]
+[tip type="important"] 전체 AMP 문서에 대해 스타일 태그를 1개만 사용할 수 있습니다. AMP 페이지에서 참조하는 외부 스타일시트가 여러 개인 경우 이러한 스타일시트를 하나의 규칙 세트로 조합해야 합니다. AMP에서 어떤 CSS 규칙이 유효한지 알아보려면 [지원되는 CSS](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md)를 확인하세요. [/tip]
 
 ## 타사 자바스크립트 제외
 
@@ -144,17 +142,15 @@ The tag 'script' is disallowed except in specific forms.
 
 일반적으로 AMP에서 스크립트는 두 가지 주요 요구사항을 따르는 경우에만 허용됩니다.
 
-1.  모든 자바스크립트는 비동기식이어야 합니다(즉, 스크립트 태그에 `async` 속성을 포함해야 함).
-2.  AMP 라이브러리 및 페이지에 있는 AMP 구성요소용으로 자바스크립트를 사용해야 합니다.
+1. 모든 자바스크립트는 비동기식이어야 합니다(즉, 스크립트 태그에 `async` 속성을 포함해야 함).
+2. AMP 라이브러리 및 페이지에 있는 AMP 구성요소용으로 자바스크립트를 사용해야 합니다.
 
 이와 같은 요구사항으로 인해 다음에 명시된 경우를 제외하고는 AMP에서 모든 사용자 생성/타사 자바스크립트의 사용이 사실상 배제됩니다.
 
-[tip type="note"]
-사용자 생성/타사 스크립트 사용 제한의 유일한 예외는 다음과 같습니다.
+[tip type="note"] 사용자 생성/타사 스크립트 사용 제한의 유일한 예외는 다음과 같습니다.
 
-1.  스크립트가 페이지에 메타데이터를 추가하거나 AMP 구성요소를 구성합니다. 이러한 스크립트에는 `application/ld+json` 또는 `application/json` 유형 속성이 포함됩니다.
-2.  스크립트가 iframes에 포함되어 있습니다.  iframe에 자바스크립트를 포함하는 일은 최후의 수단으로 생각해야 합니다. 가능하다면 자바스크립트 기능은 [AMP 구성요소](../../../../documentation/components/index.html)를 사용하여 대체해야 합니다. 다음 섹션에서 첫 번째 AMP 구성요소를 살펴보겠습니다.
-[/tip]
+1. 스크립트가 페이지에 메타데이터를 추가하거나 AMP 구성요소를 구성합니다. 이러한 스크립트에는 `application/ld+json` 또는 `application/json` 유형 속성이 포함됩니다.
+2. 스크립트가 iframes에 포함되어 있습니다.  iframe에 자바스크립트를 포함하는 일은 최후의 수단으로 생각해야 합니다. 가능하다면 자바스크립트 기능은 [AMP 구성요소](../../../../documentation/components/index.html)를 사용하여 대체해야 합니다. 다음 섹션에서 첫 번째 AMP 구성요소를 살펴보겠습니다. [/tip]
 
 외부 [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) 파일을 열어 보세요. 무엇이 표시되나요? 이 파일에는 자바스크립트 코드가 없어야 하며 다음과 같은 정보의 주석만 포함되어 있어야 합니다.
 
@@ -262,9 +258,7 @@ AMP는 사용자가 지정한 너비와 높이에 따라 해당 요소의 가로
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption='이미지가 반응합니다!') }}
 
-[tip type="read-on"]
-[AMP 레이아웃 사양](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md)에서 AMP 레이아웃 시스템에 관해 자세하게 알아보세요.
-[/tip]
+[tip type="read-on"] [AMP 레이아웃 사양](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md)에서 AMP 레이아웃 시스템에 관해 자세하게 알아보세요. [/tip]
 
 ## 성공입니다.
 
@@ -275,7 +269,7 @@ AMP는 사용자가 지정한 너비와 높이에 따라 해당 요소의 가로
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
 
     <link rel="canonical" href="/article.html">
     <link rel="shortcut icon" href="amp_favicon.png">
@@ -335,5 +329,5 @@ AMP validation successful.
 ### 자주 묻는 질문(FAQ)
 
 - [DOM 리플로우란 무엇인가요?](http://stackoverflow.com/a/27637245)
-- [레이아웃 속성이 지정되지 않은 경우에는 어떻게 하나요?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isn’t-specified?)
-- [너비와 높이가 정의되지 않은 경우에는 어떻게 하나요?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-width-and-height-are-undefined?)
+- [레이아웃 속성이 지정되지 않은 경우에는 어떻게 하나요?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isnt-specified)
+- [너비와 높이가 정의되지 않은 경우에는 어떻게 하나요?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-width-and-height-are-undefined)

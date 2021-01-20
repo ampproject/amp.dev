@@ -40,10 +40,10 @@ AMP アナリティクスでは、1 回の測定で得たデータを複数の U
 その際には、次の点を考慮してください。
 
 * ページビューのみをトラッキングするか、その他のユーザー エンゲージメント パターンもトラッキングするか
-（[amp-pixel と amp-analytics](../../../../documentation/components/reference/amp-pixel.md#amp-pixel-または-amp-analytics-を使う) についての説明もご確認ください）。
+（[amp-pixel と amp-analytics](../../../../documentation/components/reference/amp-pixel.md#use-amp-pixel-or-amp-analytics) についての説明もご確認ください）。
 * ユーザー、コンテンツ、端末、ブラウザについて、
-どのようなデータを収集するか（[変数置換](analytics_basics.md#置換変数)についての説明もご確認ください）。
-* ユーザーをどのように識別するか（[ユーザーの識別](analytics_basics.md#ユーザー認証)についての説明もご確認ください）。
+どのようなデータを収集するか（[変数置換](analytics_basics.md#variable-substitution)についての説明もご確認ください）。
+* ユーザーをどのように識別するか（[ユーザーの識別](analytics_basics.md#user-identification)についての説明もご確認ください）。
 
 [tip type="read-on"]
 

@@ -35,7 +35,7 @@ AMP 不仅同时支持**媒体查询**和**元素查询**，还内置了强大�
 
 [/tip]
 
-## layout 属性
+## layout 属性 <a name="the-layout-attribute"></a>
 
 通过 `layout` 属性，您能够按元素轻松控制
 元素在屏幕上的呈现方式。虽然其中的很多操作也可完全靠 CSS 来完成，但
@@ -97,7 +97,7 @@ AMP 不仅同时支持**媒体查询**和**元素查询**，还内置了强大�
   </tbody>
 </table>
 
-### 如果未定义宽度和高度，会怎样？
+### 如果未定义宽度和高度，会怎样？ <a name="what-if-width-and-height-are-undefined"></a>
 
 在少数情况下，如果未指定 `width` 或 `height`，
 AMP runtime 会将这些值默认如下：
@@ -105,7 +105,7 @@ AMP runtime 会将这些值默认如下：
 * [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)：宽度和高度均默认为 0。
 * [`amp-audio`](../../../../documentation/components/reference/amp-audio.md)：根据浏览器推断出默认宽度和高度。
 
-### 如果未指定 <code>layout</code> 属性，会怎样？
+### 如果未指定 <code>layout</code> 属性，会怎样？<a name="what-if-the-layout-attribute-isnt-specified"></a>
 
 如果未指定 <code>layout</code> 属性，AMP 会尝试推断或猜测
 相应值：
@@ -153,7 +153,7 @@ AMP runtime 会将这些值默认如下：
 
 [/tip]
 
-### 元素媒体查询
+### 元素媒体查询 <a name="element-media-queries"></a>
 
 AMP 中另外一种可用于自适应设计的功能是 `media` 属性。
 该属性可在任何 AMP 元素中使用；

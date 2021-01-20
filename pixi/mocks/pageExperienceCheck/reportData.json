@@ -1,0 +1,102 @@
+{
+	"pageExperience": {
+		"fieldData": {
+			"isAllFast": true,
+			"lcp": {
+				"unit": {
+					"name": "s",
+					"conversion": 1000,
+					"digits": 1
+				},
+				"data": {
+					"numericValue": 2372,
+					"category": "FAST",
+					"proportion": 0.7753324868864865
+				}
+			},
+			"fid": {
+				"unit": {
+					"name": "ms",
+					"conversion": 1,
+					"digits": 0
+				},
+				"data": {
+					"numericValue": 2,
+					"category": "FAST",
+					"proportion": 0.9918542336548767
+				}
+			},
+			"cls": {
+				"unit": {
+					"name": "",
+					"conversion": 100,
+					"digits": 2
+				},
+				"data": {
+					"numericValue": 7,
+					"category": "FAST",
+					"proportion": 0.816381257056831
+				}
+			}
+		},
+		"labData": {
+			"isAllFast": true,
+			"lcp": {
+				"unit": {
+					"name": "s",
+					"conversion": 1000,
+					"digits": 1
+				},
+				"data": {
+					"numericValue": 2495.517406396801,
+					"proportion": {
+						"fast": 2500,
+						"average": 4000,
+						"slow": 6000
+					},
+					"category": "FAST"
+				}
+			},
+			"tbt": {
+				"unit": {
+					"name": "ms",
+					"conversion": 1,
+					"digits": 0
+				},
+				"data": {
+					"numericValue": 296.4999999999998,
+					"proportion": {
+						"fast": 300,
+						"average": 600,
+						"slow": 900
+					},
+					"category": "FAST"
+				}
+			},
+			"cls": {
+				"unit": {
+					"name": "",
+					"conversion": 1,
+					"digits": 2
+				},
+				"data": {
+					"numericValue": 0,
+					"proportion": {
+						"fast": 0.1,
+						"average": 0.25,
+						"slow": 0.4
+					},
+					"category": "FAST"
+				}
+			}
+		},
+		"source": "fieldData"
+	},
+	"textCompression": true,
+	"fastServerResponse": true,
+	"usesAppropriatelySizedImages": false,
+	"usesOptimizedImages": false,
+	"usesWebpImages": false,
+	"fastFontDisplay": false,
+	"minifiedCss": true
+}

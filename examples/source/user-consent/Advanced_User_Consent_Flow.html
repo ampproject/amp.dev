@@ -1,7 +1,9 @@
 <!---
 
 teaserImage: '/static/samples/img/teaser/advanced_user_consent_flow.jpg'
-author: sebastianbenz
+author:
+  - micajuine-ho
+  - sebastianbenz
 
 --->
 
@@ -16,11 +18,11 @@ author: sebastianbenz
 -->
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 <head>
   <meta charset="utf-8">
   <link rel="canonical" href="<% canonical %>">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <title>Advanced User Consent Flow</title>
   <!-- ## Setup -->
@@ -85,24 +87,27 @@ author: sebastianbenz
 
   <!-- ## Basic usage -->
   <!--
-  The `amp-consent` component allows to specify the required user consent for this page. A CORS endpoints can be specified via the `checkConsentHref` attribute. This endpoint will be queried via a POST request to determine if the consent UI specified for it needs to be shown. The response should look like this:
+  The [`amp-consent`](/content/amp-dev/documentation/components/reference/amp-consent.md) component allows you to specify the required user consent for this page using the required `consentRequired` flag. A CORS endpoint can be specified via the `checkConsentHref` attribute which will be checked via a POST request. The response should look like this:
 
   ```json
   {
-    "promptIfUnknown": boolean (true/false)
+    "consentRequired": boolean (required),
+    "consentStateValue": enum (accepted/rejected/unknown) (optional),
+    "consentString": string (optional),
+    "expireCache": boolean (default false),
   }
   ```
 
-  The response will indicate if the consent needs to be shown or not. If it needs to be shown, the element with the id given in `promptUI` will be displayed.
+  The response will indicate if the element with the id given in `promptUI` will be displayed.
+ 
+  `amp-consent` will first check localstorage for an existing consent decision and use it if present. Otherwise it will show the `promptUi`, if configured and `consentRequired` is `true`. If `consentRequired` is set to false, `amp-consent will immediately unblock all elements. 
   -->
   <amp-consent id="myConsent" layout="nodisplay">
         <script type="application/json">{
-          "consents": {
-            "consent1": {
-              "checkConsentHref": "/documentation/examples/api/get-consent",
-              "promptUI": "consentDialog"
-            }
-          },
+          "consentInstanceId": "advanced-consent",
+          "consentRequired": "remote",
+          "checkConsentHref": "/documentation/examples/api/get-consent",
+          "promptUI": "consentDialog",
           "postPromptUI": "post-consent-ui"
         }</script>
         <div class="lightbox" id="consentDialog">

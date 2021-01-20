@@ -1,6 +1,6 @@
 # Writing documentation and guides
 
-This document holds all the information that is relevant to maintain and contribute the content for each if its packages.
+This document holds all the information required to maintain and contribute relevant content for each of its packages.
 
 ## Collections
 Pages inside [Grow](https://grow.io/docs/) are stored in so called collections. A collection is established by creating a *_blueprint.yaml* in a directory. The following fields are evaluated by the amp.dev setup:

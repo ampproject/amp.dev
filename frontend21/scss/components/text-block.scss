@@ -1,0 +1,16 @@
+.#{prefix(null, 'text-block')} {
+  max-width: 690px;
+  margin-bottom: 50px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  h1, h2, h3, h4 {
+    max-width: 90%;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+}

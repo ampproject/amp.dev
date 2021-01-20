@@ -4,104 +4,181 @@
   The [`amp-recaptcha-input`](https://amp.dev/documentation/components/amp-recaptcha-input.html) component appends a [reCAPTCHA v3](https://developers.google.com/recaptcha/docs/v3) token to AMP form submissions. `amp-recaptcha-input` does this by creating an iframe to load the reCAPTCHA v3 api script using the provided site key, and calling `grecaptcha.execute` with the provided site key and action.
 -->
 <!-- -->
-<!doctype html>
-<html ⚡>
-<head>
-  <meta charset="utf-8">
-  <title>amp-recaptcha-input</title>
-  <link rel="canonical" href="<%host.platform%>/components/amp-recaptcha-input/">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <!-- ## Setup -->
+<!DOCTYPE html>
+<html ⚡ lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>amp-recaptcha-input</title>
+    <link
+      rel="canonical"
+      href="<%host.platform%>/components/amp-recaptcha-input/"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <!-- ## Setup -->
     <!-- Import the amp-recaptcha-input component, on an AMP Page using [AMP Form](https://amp.dev/documentation/components/amp-form) -->
-  <script async custom-element="amp-recaptcha-input" src="https://cdn.ampproject.org/v0/amp-recaptcha-input-0.1.js"></script>
-  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
-  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-<style amp-custom>
-  :root {
-    --color-primary: #005AF0;
-    --color-error: #B00020;
+    <script
+      async
+      custom-element="amp-recaptcha-input"
+      src="https://cdn.ampproject.org/v0/amp-recaptcha-input-0.1.js"
+    ></script>
+    <script
+      async
+      custom-element="amp-form"
+      src="https://cdn.ampproject.org/v0/amp-form-0.1.js"
+    ></script>
+    <script
+      async
+      custom-template="amp-mustache"
+      src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+    ></script>
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
+    <style amp-custom>
+      :root {
+        --color-primary: #005af0;
+        --color-error: #b00020;
 
-    --space-1: .5rem;  /* 8px */
-    --space-2: 1rem;   /* 16px */
-  }
+        --space-1: 0.5rem; /* 8px */
+        --space-2: 1rem; /* 16px */
+      }
 
-  #amp-recaptcha-input-form {
-    width: 100%;
-    padding: var(--space-1);
-  }
+      #amp-recaptcha-input-form {
+        width: 100%;
+        padding: var(--space-1);
+      }
 
-  #amp-recaptcha-input-form.amp-form-submit-success [submit-success],
-  #amp-recaptcha-input-form.amp-form-submit-error [submit-error]{
-    width: 100%;
-    margin-top: var(--space-2);
-  }
+      #amp-recaptcha-input-form.amp-form-submit-success [submit-success],
+      #amp-recaptcha-input-form.amp-form-submit-error [submit-error] {
+        width: 100%;
+        margin-top: var(--space-2);
+      }
 
-  #amp-recaptcha-input-form.amp-form-submit-success [submit-success] {
-    color: var(--color-primary);
-  }
+      #amp-recaptcha-input-form.amp-form-submit-success [submit-success] {
+        color: var(--color-primary);
+      }
 
-  #amp-recaptcha-input-form.amp-form-submit-success [submit-success] div {
-    margin-top: var(--space-1);
-    margin-bottom: var(--space-1);
-    word-break: break-all;
-  }
+      #amp-recaptcha-input-form.amp-form-submit-success [submit-success] div {
+        margin-top: var(--space-1);
+        margin-bottom: var(--space-1);
+        word-break: break-all;
+      }
 
-  #amp-recaptcha-input-form.amp-form-submit-error [submit-error] {
-    color: var(--color-error);
-  }
+      #amp-recaptcha-input-form.amp-form-submit-error [submit-error] {
+        color: var(--color-error);
+      }
 
-  #amp-recaptcha-input-form > fieldset {
-    margin-top: var(--space-1);
-  }
+      #amp-recaptcha-input-form > fieldset {
+        margin-top: var(--space-1);
+      }
 
-  .loading-message {
-    display: none;
-    margin-top: var(--space-1);
-  }
+      .loading-message {
+        display: none;
+        margin-top: var(--space-1);
+      }
 
-  #amp-recaptcha-input-form.amp-form-submitting > .loading-message {
-    display: block;
-  }
-</style>
-
-</head>
-<body>
-
-  <!-- ## Basic usage -->
+      #amp-recaptcha-input-form.amp-form-submitting > .loading-message {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ## Basic usage -->
     <!-- POST Form request, that responds with the resolved recaptcha items. See the [reference documentation](https://amp.dev/documentation/components/amp-recaptcha-input.html) for a walkthrough on the corresponding `grecaptcha` calls. -->
-  <form id="amp-recaptcha-input-form" method="POST" action-xhr="/documentation/examples/components/amp-recaptcha-input/api/recaptcha" target="_top">
-    <fieldset>
-      <label>
-        <span>Search for</span>
-        <input type="search" name="term" required>
-      </label>
-      <input name="submit-button" type="submit" value="Search">
-      <amp-recaptcha-input layout="nodisplay" name="recaptcha_token" data-sitekey="6LfcQ7IUAAAAAIv1KcgqyExGK0v8dLJtvV_Q6xD-" data-action="recaptcha_example">
-      </amp-recaptcha-input>
-    </fieldset>
+    <form
+      id="amp-recaptcha-input-form"
+      method="POST"
+      action-xhr="<% base_path %>/api/recaptcha"
+      target="_top"
+    >
+      <fieldset>
+        <label>
+          <span>Search for</span>
+          <input type="search" name="term" required />
+        </label>
+        <input name="submit-button" type="submit" value="Search" />
+        <amp-recaptcha-input
+          layout="nodisplay"
+          name="recaptcha_token"
+          data-sitekey="6LfcQ7IUAAAAAIv1KcgqyExGK0v8dLJtvV_Q6xD-"
+          data-action="recaptcha_example"
+        >
+        </amp-recaptcha-input>
+      </fieldset>
 
-    <div class="loading-message">
-      Loading...
-    </div>
+      <div class="loading-message">Loading...</div>
 
-    <div submit-success>
-      <template type="amp-mustache">
-        <h1>You searched for: {{term}}</h1>
-        <div><b>Score:</b> {{score}}</div>
-        <div><b>Recaptcha token:</b> {{recaptcha_token}}</div>
-        <div><b>Action:</b> {{action}}</div>
-      </template>
-    </div>
+      <div submit-success>
+        <template type="amp-mustache">
+          <h1>You searched for: {{term}}</h1>
+          <div><b>Score:</b> {{score}}</div>
+          <div><b>Recaptcha token:</b> {{recaptcha_token}}</div>
+          <div><b>Action:</b> {{action}}</div>
+        </template>
+      </div>
 
-    <div submit-error>
-      <template type="amp-mustache">
-        <h1>Error! Please check the JS Console in your dev tools.</h1>
-        <p>{{message}}</p>
-      </template>
-    </div>
-  </form>
-
-</body>
+      <div submit-error>
+        <template type="amp-mustache">
+          <h1>Error! Please check the JS Console in your dev tools.</h1>
+          <p>{{message}}</p>
+        </template>
+      </div>
+    </form>
+  </body>
 </html>

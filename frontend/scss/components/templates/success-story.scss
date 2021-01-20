@@ -7,37 +7,36 @@
 ### INFO:
 
 */
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import "../../extends";
+@import "../../functions";
+@import "../../mixins";
+@import "../../variables";
 
-@import '../atoms/_color.scss';
-@import '../atoms/_headline.scss';
-@import '../atoms/_text.scss';
+@import "../atoms/_color.scss";
+@import "../atoms/_headline.scss";
+@import "../atoms/_text.scss";
 
-@import '../molecules/copy';
-@import '../molecules/quote';
-@import '../molecules/text-media.scss';
+@import "../molecules/copy";
+@import "../molecules/quote";
+@import "../molecules/text-media.scss";
 
-@import '../organisms/text-media-block.scss';
+@import "../organisms/text-media-block.scss";
 
-@import '../templates/_default.scss';
+@import "../templates/_default.scss";
 
 body {
-  background-color: color('whisper');
+  background-color: color("whisper");
 }
 
-.#{template('success-story')} {
+.#{template("success-story")} {
   overflow: hidden;
   perspective: 80rem;
 
-
-  .#{utility('container')} {
+  .#{utility("container")} {
     @include container;
   }
 
-  .#{utility('container-fluid')} {
+  .#{utility("container-fluid")} {
     @include container-fluid;
 
     @media (max-width: 767px) {
@@ -45,7 +44,7 @@ body {
     }
   }
 
-  .#{utility('content')} {
+  .#{utility("content")} {
     @include content;
 
     grid-column: 1;
@@ -57,10 +56,10 @@ body {
     }
   }
 
-  .#{utility('stage')} {
+  .#{utility("stage")} {
     padding: 0 0 3em;
 
-    @media (min-width: 768px ){
+    @media (min-width: 768px) {
       padding-bottom: 10vw;
     }
 
@@ -69,7 +68,7 @@ body {
       height: auto;
     }
 
-    .#{organism('stage-content')} {
+    .#{organism("stage-content")} {
       grid-column: 4 / 13;
 
       @media (max-width: 767px) {
@@ -85,12 +84,12 @@ body {
         @include hl;
         @include hl-h1;
         margin-top: 0;
-        color: color('white');
+        color: color("white");
       }
     }
   }
 
-  .#{organism('teaser-grid')} {
+  .#{organism("teaser-grid")} {
     grid-column: 4 / 22;
     width: 100%;
     margin-bottom: 7em;
@@ -114,7 +113,7 @@ body {
         margin: 0;
       }
 
-      .#{molecule('teaser')}{
+      .#{molecule("teaser")} {
         grid-column: 1;
         margin: 0;
 
@@ -125,12 +124,12 @@ body {
     }
   }
 
-  .#{organism('filter-bubbles-list')}{
+  .#{organism("filter-bubbles-list")} {
     padding: 30px 0 60px 0;
   }
 
-  .#{organism('text-media-block')} {
-    padding-bottom: 5rem;
+  .#{organism("text-media-block")} {
+    padding-bottom: 40px;
 
     h2 {
       margin-top: 1rem;
@@ -145,39 +144,37 @@ body {
       flex-direction: column;
       justify-content: center;
       position: relative;
-      z-index:1;
+      z-index: 1;
 
       li {
-        font-family: 'Noto Sans';
+        font-family: "Noto Sans";
         line-height: 1.6em;
         font-weight: normal;
-        color: #48525C;
+        color: #48525c;
       }
     }
 
     .media {
-      .#{molecule('ghost-frame-tablet')}{
+      .#{molecule("ghost-frame-tablet")} {
         max-width: 80%;
-
       }
 
-      .#{molecule('ghost-frame-mobile')}{
+      .#{molecule("ghost-frame-mobile")} {
         max-width: 100%;
         margin-left: 15%;
       }
     }
 
-    .#{molecule('lnk')} {
+    .#{molecule("lnk")} {
       margin-top: 30px;
     }
 
     @media (max-width: 767px) {
-      padding-bottom: 8.75rem;
-
       .media {
         display: flex;
         justify-content: center;
         width: 100%;
+        padding-bottom: 5.75rem;
       }
     }
 
@@ -185,20 +182,24 @@ body {
       grid-column: 1;
       flex-direction: column;
       position: relative;
+      width: 100%;
 
-      @media (min-width: 768px){
+      @media (min-width: 768px) {
         grid-column-start: 9;
         grid-column-end: 25;
       }
 
-      @media (min-width: 1024px){
+      @media (min-width: 1024px) {
         grid-column-start: 7;
         grid-column-end: 19;
       }
+
+      .#{utility("media")} {
+        width: 100%;
+      }
     }
 
-
-    .#{utility('quote')} {
+    .#{utility("quote")} {
       padding: 8rem 0;
 
       @media (max-width: 767px) {
@@ -210,7 +211,7 @@ body {
       &:nth-child(odd) {
         display: flex;
 
-        .text  {
+        .text {
           order: 2;
         }
         + .media {

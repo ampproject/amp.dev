@@ -9,8 +9,8 @@ formats:
 teaser:
   image:
     src: '/static/img/success-stories/teads/teaser_teads.jpg'
-    width: 1
-    height: 1
+    width: 240
+    height: 240
     alt: Teads
   logo:
     src: '/static/img/success-stories/teads/teads_logo.png'
@@ -27,8 +27,8 @@ stage:
   devices:
 
     - image_src: '/static/img/success-stories/teads/amp_teads.jpg'
-      width: 3
-      height: 5
+      width: 120
+      height: 200
       type: mobile
       alt: Teads
 
@@ -74,8 +74,8 @@ contents:
 
   - layout: text-media
     image_src: '/static/img/success-stories/teads/amp_teads.jpg'
-    width: 3
-    height: 5
+    width: 120
+    height: 200
     type: mobile
     alt: Teads
     text: The Teads team worked closely with the AMP Project’s leads, sharing their unique expertise in outstream video. They also adjusted their ad format, which was originally designed to expand into view as the user scrolled down the page and collapse away after the video ended. Because this functionality caused paragraphs to shift on the screen, it diverged from the AMP Project’s design principles. The AMP’d version of the ad would always be open, keeping the page layout consistent and creating a more seamless user experience.<br><br>Results have been so positive that Teads rolled out the change to non-AMP’d pages as well. “We have since modified the behavior of our formats outside of the AMP HTML environment – on desktop, mobile web, and in-app – to be consistent with AMP HTML,” Mr. Shih says.

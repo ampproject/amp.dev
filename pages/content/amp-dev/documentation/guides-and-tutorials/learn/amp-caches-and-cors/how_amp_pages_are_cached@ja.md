@@ -19,7 +19,7 @@ AMP キャッシュについて詳しくは、下記の YouTube 動画やブロ�
 現在、2 つの AMP キャッシュ プロバイダがあります。
 
 - [Google AMP キャッシュ](https://developers.google.com/amp/cache/)
-- [Cloudflare AMP キャッシュ](https://amp.cloudflare.com/)
+- [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 AMP はオープン エコシステムであり、AMP プロジェクトでは AMP キャッシュの開発を積極的に奨励しています。AMP キャッシュの作成について詳しくは、[AMP キャッシュ ガイドライン](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)をご覧ください。
 
@@ -37,7 +37,7 @@ AMP はオープン エコシステムであり、AMP プロジェクトでは A
 
 ## キャッシュされた AMP ページのリクエスト元
 
-キャッシュされた AMP ページには、プラットフォーム（Google 検索、Google ニュース、Cloudflare など）やモバイルアプリがアクセスします。モバイルアプリは、URL を介して（Google の [AMP URL API](https://developers.google.com/amp/cache/use-amp-url) をご覧ください）、または、プログレッシブ ウェブアプリのクロスオリジン XHR によって（[AMP を埋め込んでデータソースとして使用する](../../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md)をご覧ください）、キャッシュされた AMP コンテンツにリンクすることができます。
+キャッシュされた AMP ページには、プラットフォーム（Google 検索、Google ニュース、Bing など）やモバイルアプリがアクセスします。モバイルアプリは、URL を介して（Google の [AMP URL API](https://developers.google.com/amp/cache/use-amp-url) をご覧ください）、または、プログレッシブ ウェブアプリのクロスオリジン XHR によって（[AMP を埋め込んでデータソースとして使用する](../../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md)をご覧ください）、キャッシュされた AMP コンテンツにリンクすることができます。
 
 <amp-img src="/static/img/docs/platforms_accessing_cache.png"
          width="1054" height="356" layout="responsive"
@@ -50,7 +50,6 @@ AMP 形式を使用することで、コンテンツは AMP キャッシュに�
 * **プラットフォームによる検出**: プラットフォームが `<html ⚡>` タグや `<html amp>` タグを介して AMP コンテンツを検出し、そのコンテンツをキャッシュします。たとえば、Google 検索はコンテンツをクロールします。有効な AMP ページを特定した場合、そのコンテンツは Google AMP キャッシュに追加されます。
 
 * **キャッシュ URL リクエスト**: プラットフォームは AMP キャッシュ URL の形式を使用して、AMP ページを明確にリクエストすることができます。AMP キャッシュはリバース プロキシとして機能するため、プラットフォームがページにアクセスすると、ページは自動的にキャッシュされることになります。
-    - Cloudflare AMP キャッシュ URL の例: `https://amp.cloudflare.com/c/foo.com/amp_document.html`
     - Google AMP キャッシュ URL の例: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
 注: AMP キャッシュ URL はユーザーに表示される URL ではありません。つまり、通常、ユーザーがその URL を介してコンテンツをリクエストすることはありません。
@@ -61,4 +60,4 @@ AMP 形式を使用することで、コンテンツは AMP キャッシュに�
 
 * [AMP プロジェクトの AMP キャッシュ ガイドライン](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)
 * [Google AMP キャッシュの概要](https://developers.google.com/amp/cache/overview)
-* [Cloudflare AMP キャッシュに関するドキュメント](https://amp.cloudflare.com/)
+* [[Bing AMP Cache Documentation](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)

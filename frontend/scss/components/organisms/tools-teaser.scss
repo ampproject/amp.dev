@@ -96,10 +96,21 @@ section.#{utility('tools')} {
           font-size: 19px;
         }
 
-        &-websites { fill: color('white'); }
-        &-stories { fill: color('pigment-indigo'); }
-        &-ads { fill: color('white'); }
-        &-email { fill: color('ultramarine'); }
+        &-websites {
+          @include fill-websites;
+        }
+
+        &-stories {
+          @include fill-stories;
+        }
+
+        &-ads {
+          @include fill-ads;
+        }
+
+        &-email {
+          @include fill-e-mails;
+        }
       }
 
       .#{molecule('teaser')}:hover {
@@ -152,7 +163,7 @@ section.#{utility('tools')} {
 
       .#{molecule('teaser-card-essential')}{
         .#{molecule('teaser-card')}{
-          background-color: color('limed-spruce');
+          background-color: color('charade');
 
           .#{molecule('teaser-content')} > * {
             color: #fff;
@@ -160,7 +171,7 @@ section.#{utility('tools')} {
 
           .#{molecule('teaser-logo')} {
             fill: #fff;
-            background-color: color('limed-spruce');
+            background-color: color('charade');
 
             &::before {
               background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 70 28'%3E%3Cpath d='M35 0.4v0c-20.5 0-11.8 26.6-35 26.6v1h70v-1c-23.2 0-14.5-26.6-35-26.6z' fill='%23333D47'/%3E%3C/svg%3E");
@@ -176,7 +187,7 @@ section.#{utility('tools')} {
         padding: 0 120px 0 15px;
         @include txt-3;
         color: color('river-bed');
-        border-top: 2px solid color('gallery');
+        border-top: 2px solid color('iron');
 
         &-essential {
           color: #fff;

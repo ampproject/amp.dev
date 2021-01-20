@@ -43,7 +43,10 @@ class Subdomain {
     if (config.isDevMode() || config.isLocalMode()) {
       middleware = await this.startDevServer_(hostConfig, router);
     } else {
-      middleware = this.createSubdomainMiddleware_(hostConfig.subdomain, router);
+      middleware = this.createSubdomainMiddleware_(
+        hostConfig.subdomain,
+        router
+      );
     }
     router.get('*', this.redirectOn404_.bind(this));
     return middleware;
@@ -54,12 +57,22 @@ class Subdomain {
       let subdomainApp = this.subdomainApps_[hostConfig.subdomain];
       if (!subdomainApp) {
         subdomainApp = express();
-        subdomainApp.use(cors());
-        subdomainApp.use(ampCors({
-          email: true,
-        }));
+        subdomainApp.disable('x-powered-by');
+        subdomainApp.use(
+          cors({
+            origin: true,
+            credentials: true,
+          })
+        );
+        subdomainApp.use(
+          ampCors({
+            email: true,
+          })
+        );
         subdomainApp.listen(hostConfig.port, () => {
-          signale.info(`${hostConfig.subdomain} dev server listening on ${hostConfig.port}`);
+          signale.info(
+            `${hostConfig.subdomain} dev server listening on ${hostConfig.port}`
+          );
           // return a dummy middleware
           resolve((request, response, next) => next());
         });
@@ -91,9 +104,12 @@ class Subdomain {
   async redirectOn404_(request, response) {
     const referrer = request.get('Referrer') || config.hosts.platform.base;
     // assume request was initiated by a document-relative path
-    let destination = this.resolveUrl_(request.originalUrl.substring(1), referrer);
+    let destination = this.resolveUrl_(request.originalUrl, referrer);
     // perform a head request to check if destination exists
-    if (destination.pathname.startsWith('/static/') || !await this.exists_(destination)) {
+    if (
+      destination.pathname.startsWith('/static/') ||
+      !(await this.exists_(destination))
+    ) {
       // assume a root-relative path
       destination = this.resolveUrl_(request.originalUrl, referrer);
     }
@@ -131,4 +147,4 @@ class Subdomain {
   }
 }
 
-module.exports = new Subdomain;
+module.exports = new Subdomain();

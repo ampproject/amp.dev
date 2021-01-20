@@ -6,7 +6,7 @@ Dokumen ini mencantumkan daftar vendor analisis yang menyediakan konfigurasi ter
 
 Untuk mengirim data analisis ke vendor pihak ketiga:
 
-1. Pada tag [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), tambahkan atribut `type` dan setel nilainya sesuai vendor yang ditentukan, seperti dijelaskan pada bagian [*Vendor*](#vendor) di bawah.
+1. Pada tag [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), tambahkan atribut `type` dan setel nilainya sesuai vendor yang ditentukan, seperti dijelaskan pada bagian [*Vendor*](#vendors) di bawah.
 2. Tentukan data yang ingin Anda ambil dan pantau, dan tetapkan detail tersebut dalam data konfigurasi. Lihat dokumentasi vendor untuk mengetahui cara mengambil data analisis.
 
 Pada contoh berikut, kita akan mengirim data pageview ke [Google Analytics](#google-analytics), sebuah penyedia analisis pihak ketiga yang memiliki konfigurasi terpasang untuk [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
@@ -43,7 +43,7 @@ Vendor yang ingin mengintegrasikan layanannya dengan [`<amp-analytics>`](../../.
 
 <hr>
 
-## Vendor
+## Vendor <a name="vendors"></a>
 
 ### Acquia Lift
 
@@ -141,7 +141,7 @@ Nilai atribut type: `googleadwords`
 
 Menambahkan dukungan untuk tracking konversi dan pemasaran ulang Google AdWords. Lihat detail selengkapnya di pusat bantuan AdWords untuk [tracking konversi](https://support.google.com/adwords/answer/1722054?hl=id) dan [pemasaran ulang](https://support.google.com/adwords/answer/2453998?hl=id). Kedua tag ini dapat digunakan independen satu sama lain.
 
-### Google Analytics
+### Google Analytics <a name="google-analytics"></a>
 
 Nilai atribut type: `googleanalytics`
 

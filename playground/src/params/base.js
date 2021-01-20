@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,13 +19,20 @@ class Params {
     this.win = win;
   }
 
-  get(key, alt) {
-    const params = new URLSearchParams(this.win.location.search);
-    let result = params.get(key);
-    if (!result) {
-      result = alt;
+  getHash(key, alt) {
+    const hash = this.win.location.hash;
+    if (!hash) {
+      return alt;
     }
-    return result;
+    const keyString = `#${key}=`;
+    if (!hash.startsWith(keyString)) {
+      return alt;
+    }
+    return hash.substring(keyString.length);
+  }
+
+  get(key, alt) {
+    return this._getValue(this.win.location.search, key, alt);
   }
 
   replace(key, value) {
@@ -48,6 +55,15 @@ class Params {
       paramsString = '?' + params.toString();
     }
     return this.win.location.pathname + paramsString;
+  }
+
+  _getValue(string, key, alt) {
+    const params = new URLSearchParams(string);
+    let result = params.get(key);
+    if (!result) {
+      result = alt;
+    }
+    return result;
   }
 }
 

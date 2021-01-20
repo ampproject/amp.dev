@@ -21,6 +21,10 @@
   left: 0;
   bottom: 0;
 
+  @media (max-width: 767px) {
+    display: none
+  }
+
   &-wrapper {
     @include txt;
     @include txt-2;
@@ -28,7 +32,7 @@
     margin: 0 auto;
     padding: 1em 30px;
     background-color: color('white');
-    border-top: 5px solid color('turbo');
+    border-top: 5px solid color('school-bus');
     box-shadow: 0 -2px 10px 0 rgba(0,0,0,0.07);
   }
 

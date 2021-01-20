@@ -6,7 +6,6 @@ $view: /views/overview/custom-content.j2
 ---
 {% do doc.styles.addCssFile('css/components/templates/custom-content.css') %}
 {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
-{% do doc.amp_dependencies.add('amp-youtube', '0.1') %}
 
 <section class="ap--container">
   {% do doc.styles.addCssFile('/css/components/molecules/jumbo.css') %}
@@ -15,8 +14,8 @@ $view: /views/overview/custom-content.j2
       {% do doc.icons.useIcon('/icons/code-architecture.svg') %}
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#code-architecture"></use></svg>
     </div>
-    <h1 class="ap-m-jumbo-headline">How AMP works</h1>
-    <p class="ap-m-jumbo-copy">The following optimizations combined are the reason AMP pages are so fast they appear to load instantly. There are 7 reasons in total - but if that's still too much to read, simply watch the explainer video:</p>
+    <h1 class="ap-m-jumbo-headline">{{ _('How AMP works') }}</h1>
+    <p class="ap-m-jumbo-copy">{{ _('The following optimizations combined are the reason AMP pages are so fast they appear to load instantly. There are 7 reasons in total - but if that’s still too much to read, simply watch the explainer video:') }}</p>
 
     {% do doc.styles.addCssFile('css/components/atoms/video.css') %}
     <figure class="ap-a-video">
@@ -26,22 +25,22 @@ $view: /views/overview/custom-content.j2
 
   {% do doc.styles.addCssFile('/css/components/molecules/copy.css') %}
   <div class="ap-m-copy ap-m-copy-left-small">
-    <h2>Execute all AMP JavaScript asynchronously</h2>
-    <p>JavaScript is powerful, it can modify just about every aspect of the page, but it can also block DOM construction and delay page rendering (see also <a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript">Adding interactivity with JavaScript</a>). To keep JavaScript from delaying page rendering, AMP allows only asynchronous JavaScript. </p>
-    <p>AMP pages can’t include any author-written JavaScript. Instead of using JavaScript, interactive page features are handled in custom AMP elements. The custom AMP elements may have JavaScript under the hood, but they’re carefully designed to make sure they don’t cause performance degradation. </p>
-    <p>While third-party JS is allowed in iframes, it cannot block rendering. For example, if third-party JS uses the <a href="http://www.stevesouders.com/blog/2012/04/10/dont-docwrite-scripts/">super-bad-for-performance <code>document.write</code> API</a>, it does not block rendering the main page.</p>
+    <h2>{{ _('Execute all AMP JavaScript asynchronously') }}</h2>
+    <p>{{ _('JavaScript is powerful, it can modify just about every aspect of the page, but it can also block DOM construction and delay page rendering (see also <a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript">Adding interactivity with JavaScript</a>). To keep JavaScript from delaying page rendering, AMP allows only asynchronous JavaScript.') }} </p>
+    <p>{{ _('AMP components may have JavaScript under the hood, but they’re carefully designed to make sure they don’t cause performance degradation. ') }}</p>
+    <p>{{ _('While custom JS is allowed in <a href="../documentation/components/reference/amp-script.md"><code>amp-script</code></a>, and third-party JS is allowed in iframes, it cannot block rendering. For example, if third-party JS uses the <a href="http://www.stevesouders.com/blog/2012/04/10/dont-docwrite-scripts/">super-bad-for-performance <code>document.write</code> API</a>, it does not block rendering the main page.') }}</p>
   </div>
 
   <div class="ap-m-copy ap-m-copy-center-small">
-    <h2>Size all resources statically</h2>
-    <p>External resources such as images, ads or iframes must state their size in the HTML so that AMP can determine each element’s size and position before resources are downloaded. AMP loads the layout of the page without waiting for any resources to download. </p>
-    <p>AMP uncouples document layout from resource layout. Only one HTTP request is needed to layout the entire doc (<a href="#font-triggering-must-be-efficient">+fonts</a>). Since AMP is optimized to avoid expensive style recalculations and layouts in the browser, there won’t be any re-layout when resources load.</p>
+    <h2>{{ _('Size all resources statically') }}</h2>
+    <p>{{ _('External resources such as images, ads or iframes must state their size in the HTML so that AMP can determine each element’s size and position before resources are downloaded. AMP loads the layout of the page without waiting for any resources to download. ') }}</p>
+    <p>{{ _('AMP uncouples document layout from resource layout. Only one HTTP request is needed to layout the entire doc (<a href="#font-triggering-must-be-efficient">+fonts</a>). Since AMP is optimized to avoid expensive style recalculations and layouts in the browser, there won’t be any re-layout when resources load.') }}</p>
   </div>
 
   <div class="ap-m-copy ap-m-copy-right-small">
-    <h2>Don’t let extension mechanisms block rendering</h2>
-    <p>AMP doesn’t let extension mechanisms block page rendering. AMP supports extensions for things like <a href="../documentation/components/reference/amp-lightbox.md">lightboxes</a>, <a href="../documentation/components/reference/amp-instagram.md">instagram embeds</a>, <a href="../documentation/components/reference/amp-twitter.md">tweets</a>, etc. While these require additional HTTP requests, those requests do not block page layout and rendering. </p>
-    <p>Any page that uses a custom script must tell the AMP system that it will eventually have a custom tag. For example, the <a href="../documentation/components/reference/amp-iframe.md"><code>amp-iframe</code></a> script tells the system that there will be an <code>amp-iframe</code> tag. AMP creates the iframe box before it even knows what it will include:</p>
+    <h2>{{ _('Don’t let extension mechanisms block rendering') }}</h2>
+    <p>{{ _('AMP doesn’t let extension mechanisms block page rendering. AMP supports extensions for things like <a href="../documentation/components/reference/amp-lightbox.md">lightboxes</a>, <a href="../documentation/components/reference/amp-instagram.md">instagram embeds</a>, <a href="../documentation/components/reference/amp-twitter.md">tweets</a>, etc. While these require additional HTTP requests, those requests do not block page layout and rendering.') }}</p>
+    <p>{{ _('Any page that uses a custom script must tell the AMP system that it will eventually have a custom tag. For example, the <a href="../documentation/components/reference/amp-iframe.md"><code>amp-iframe</code></a> script tells the system that there will be an <code>amp-iframe</code> tag. AMP creates the iframe box before it even knows what it will include:') }}</p>
 
     {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
     {% set code_snippet = '<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>' %}
@@ -50,49 +49,49 @@ $view: /views/overview/custom-content.j2
   </div>
 
   <div class="ap-m-copy ap-m-copy-left-small">
-    <h2>Keep all third-party JavaScript out of the critical path</h2>
-    <p>Third-party JS likes to use synchronous JS loading. They also like to <code>document.write</code> more sync scripts. For example, if you have five ads on your page, and each of them cause three synchronous loads, each with a 1 second latency connection, you’re in 15 seconds of load time just for JS loading. </p>
-    <p>AMP pages allow third-party JavaScript but only in sandboxed iframes. By restricting them to iframes, they can’t block the execution of the main page. Even if they trigger multiple style re-calculations, their tiny iframes have very little DOM. </p>
-    <p>The time it takes to do style-recalculations and layouts are restricted by DOM size, so the iframe recalculations are very fast compared to recalculating styles and layout for the page.</p>
+    <h2>{{ _('Keep all third-party JavaScript out of the critical path') }}</h2>
+    <p>{{ _('Third-party JS likes to use synchronous JS loading. They also like to <code>document.write</code> more sync scripts. For example, if you have five ads on your page, and each of them cause three synchronous loads, each with a 1 second latency connection, you’re in 15 seconds of load time just for JS loading.') }}</p>
+    <p>{{ _('AMP pages allow third-party JavaScript but only in sandboxed iframes. By restricting them to iframes, they can’t block the execution of the main page. Even if they trigger multiple style re-calculations, their tiny iframes have very little DOM. ') }}</p>
+    <p>{{ _('The time it takes to do style-recalculations and layouts are restricted by DOM size, so the iframe recalculations are very fast compared to recalculating styles and layout for the page.') }}</p>
   </div>
 
   <div class="ap-m-copy ap-m-copy-center-small">
-    <h2>All CSS must be inline and size-bound</h2>
-    <p>CSS blocks all rendering, it blocks page load, and it tends to get bloated. In AMP HTML pages, only inline styles are allowed. This removes 1 or often more HTTP requests from the critical rendering path compared to most web pages. </p>
-    <p>Also, the inline style sheet has a maximum size of 50 kilobytes. While this size is big enough for very sophisticated pages, it still requires the page author to practice good CSS hygiene.</p>
+    <h2>{{ _('All CSS must be inline and size-bound') }}</h2>
+    <p>{{ _('CSS blocks all rendering, it blocks page load, and it tends to get bloated. In AMP HTML pages, only inline styles are allowed. This removes 1 or often more HTTP requests from the critical rendering path compared to most web pages. ') }}</p>
+    <p>{{ _('Also, the inline style sheet has a maximum size of 50 kilobytes. While this size is big enough for very sophisticated pages, it still requires the page author to practice good CSS hygiene.') }}</p>
   </div>
 
   <div class="ap-m-copy ap-m-copy-right-small">
-    <h2>Font triggering must be efficient</h2>
-    <p>Web fonts are super large, so <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization">web font optimization</a> is crucial to performance. On a typical page that has a few sync scripts and a few external style sheets, the browser waits and waits to start downloading these huge fonts until all this happens. </p>
-    <p>The AMP system declares zero HTTP requests until fonts start downloading. This is only possible because all JS in AMP has the async attribute and only inline style sheets are allowed; there’s no HTTP requests blocking the browser from downloading fonts.</p>
+    <h2>{{ _('Font triggering must be efficient') }}</h2>
+    <p>{{ _('Web fonts are super large, so <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization">web font optimization</a> is crucial to performance. On a typical page that has a few sync scripts and a few external style sheets, the browser waits and waits to start downloading these huge fonts until all this happens.') }}</p>
+    <p>{{ _('The AMP system declares zero HTTP requests until fonts start downloading. This is only possible because all JS in AMP has the async attribute and only inline style sheets are allowed; there’s no HTTP requests blocking the browser from downloading fonts.') }}</p>
   </div>
 
   <div class="ap-m-copy ap-m-copy-left-small">
-    <h2>Minimize style recalculations</h2>
-    <p>Each time you measure something, it triggers style recalculations which are expensive because the browser has to layout the entire page. In AMP pages, all DOM reads happen first before all the writes. This ensures there’s the max of one recalc of styles per frame. </p>
-    <p>Learn more about impact of style and layout recalculations on <a href="https://developers.google.com/web/fundamentals/performance/rendering/">rendering performance</a>.</p>
+    <h2>{{ _('Minimize style recalculations') }}</h2>
+    <p>{{ _('Each time you measure something, it triggers style recalculations which are expensive because the browser has to layout the entire page. In AMP pages, all DOM reads happen first before all the writes. This ensures there’s the max of one recalc of styles per frame. ') }}</p>
+    <p>{{ _('Learn more about impact of style and layout recalculations on <a href="https://developers.google.com/web/fundamentals/performance/rendering/">rendering performance</a>.') }}</p>
   </div>
 
   <div class="ap-m-copy ap-m-copy-center-small">
-    <h2>Only run GPU-accelerated animations</h2>
-    <p>The only way to have fast optimizations is to run them on the GPU. GPU knows about layers, it knows how to perform some things on these layers, it can move them, it can fade them, but it can’t update the page layout; it will hand that task over to the browser, and that’s not good. </p>
-    <p>The rules for animation-related CSS ensure that animations can be GPU-accelerated. Specifically, AMP only allows animating and transitioning on transform and opacity so that page layout isn’t required. Learn more about <a href="https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count">using transform and opacity for animation changes</a>.</p>
+    <h2>{{ _('Only run GPU-accelerated animations') }}</h2>
+    <p>{{ _('The only way to have fast optimizations is to run them on the GPU. GPU knows about layers, it knows how to perform some things on these layers, it can move them, it can fade them, but it can’t update the page layout; it will hand that task over to the browser, and that’s not good.') }}</p>
+    <p>{{ _('The rules for animation-related CSS ensure that animations can be GPU-accelerated. Specifically, AMP only allows animating and transitioning on transform and opacity so that page layout isn’t required. Learn more about <a href="https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count">using transform and opacity for animation changes</a>.') }}</p>
   </div>
 
   <div class="ap-m-copy ap-m-copy-left-small">
-    <h2>Prioritize resource loading</h2>
-    <p>AMP controls all resource downloads: it prioritizes resource loading, loading only what’s needed, and prefetches lazy-loaded resources. </p>
-    <p>When AMP downloads resources, it optimizes downloads so that the currently most important resources are downloaded first. Images and ads are only downloaded if they are likely to be seen by the user, above the fold, or if the user is likely to quickly scroll to them. </p>
-    <p>AMP also prefetches lazy-loaded resources. Resources are loaded as late as possible, but prefetched as early as possible. That way things load very fast but CPU is only used when resources are actually shown to users.</p>
+    <h2>{{ _('Prioritize resource loading') }}</h2>
+    <p>{{ _('AMP controls all resource downloads: it prioritizes resource loading, loading only what’s needed, and prefetches lazy-loaded resources.') }}</p>
+    <p>{{ _('When AMP downloads resources, it optimizes downloads so that the currently most important resources are downloaded first. Images and ads are only downloaded if they are likely to be seen by the user, above the fold, or if the user is likely to quickly scroll to them.') }}</p>
+    <p>{{ _('AMP also prefetches lazy-loaded resources. Resources are loaded as late as possible, but prefetched as early as possible. That way things load very fast but CPU is only used when resources are actually shown to users.') }}</p>
   </div>
 
   <div class="ap-m-copy ap-m-copy-right-small">
-    <h2>Load pages in an instant</h2>
-    <p>The new <a href="http://www.w3.org/TR/resource-hints/#dfn-preconnect">preconnect API</a> is used heavily to ensure HTTP requests are as fast as possible when they are made. With this, a page can be rendered before the user explicitly states they’d like to navigate to it; the page might already be available by the time the user actually selects it, leading to instant loading. </p>
-    <p>While prerendering can be applied to all web content, it can also use up a lot of bandwidth and CPU. AMP is optimized to reduce both of these factors. Prerendering only downloads resources above the fold and prerendering doesn’t render things that might be expensive in terms of CPU. </p>
-    <p>When AMP documents get prerendered for instant loading, only resources above the fold are actually downloaded. When AMP documents get prerendered for instant loading, resources that might use a lot of CPU (like third-party iframes) do not get downloaded. </p>
-    <p>Learn more about <a href="https://medium.com/@cramforce/why-amp-html-does-not-take-full-advantage-of-the-preload-scanner-7e7f788aa94e">why AMP HTML doesn’t take full advantage of the preload scanner</a>.</p>
+    <h2>{{ _('Load pages in an instant') }}</h2>
+    <p>{{ _('The new <a href="http://www.w3.org/TR/resource-hints/#dfn-preconnect">preconnect API</a> is used heavily to ensure HTTP requests are as fast as possible when they are made. With this, a page can be rendered before the user explicitly states they’d like to navigate to it; the page might already be available by the time the user actually selects it, leading to instant loading.') }}</p>
+    <p>{{ _('While prerendering can be applied to all web content, it can also use up a lot of bandwidth and CPU. AMP is optimized to reduce both of these factors. Prerendering only downloads resources above the fold and prerendering doesn’t render things that might be expensive in terms of CPU.') }}</p>
+    <p>{{ _('When AMP documents get prerendered for instant loading, only resources above the fold are actually downloaded. When AMP documents get prerendered for instant loading, resources that might use a lot of CPU (like third-party iframes) do not get downloaded.') }}</p>
+    <p>{{ _('Learn more about <a href="https://medium.com/@cramforce/why-amp-html-does-not-take-full-advantage-of-the-preload-scanner-7e7f788aa94e">why AMP HTML doesn’t take full advantage of the preload scanner</a>.') }}</p>
   </div>
 
 </section>

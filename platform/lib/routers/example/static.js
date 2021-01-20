@@ -20,7 +20,6 @@ const express = require('express');
 const project = require('@lib/utils/project');
 const robots = require('@lib/routers/robots');
 
-
 // eslint-disable-next-line new-cap
 const staticRouter = express.Router();
 staticRouter.use('/static', express.static(project.paths.STATICS_DEST));

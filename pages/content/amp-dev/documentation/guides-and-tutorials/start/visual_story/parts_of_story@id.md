@@ -1,15 +1,18 @@
 ---
-$title: Memahami bagian dari artikel AMP
+"$title": Memahami bagian dari cerita AMP
+"$order": '2'
+description: Sebuah Cerita Web adalah pengalaman bercerita dengan visual dan layar penuh yang menyampaikan informasi dengan gambar, video, grafik, audio, dan masih banyak lagi. Ini sangat cocok bagi pengguna ....
+author: bpaduch
 ---
 
-Artikel AMP adalah fitur bercerita visual dengan layar penuh yang menyampaikan informasi dengan gambar, video, grafik, audio, dan lainnya. Fitur ini sangat cocok untuk pengguna yang menginginkan konten berukuran kecil tetapi kaya secara visual.  
+Sebuah Cerita Web adalah pengalaman bercerita dengan visual dan layar penuh yang menyampaikan informasi dengan gambar, video, grafik, audio, dan masih banyak lagi. Ini sangat cocok bagi pengguna yang menginginkan konten berukuran mungil dengan visual yang kaya.
 
-Bahan dasar yang termasuk dalam artikel AMP adalah masing-masing **halaman**. Masing-masing halaman ini terdiri dari **lapisan** individual yang berisi **elemen** AMP dan HTML dasar.
+Bahan-bahan dasar yang digunakan di dalam sebuah Cerita Web adalah **halaman-halaman** terpisah. Halaman-halaman ini, pada gilirannya, terdiri atas **lapisan-lapisan** terpisah yang berisi **elemen-elemen** HTML dan AMP dasar.
 
 {{ image('/static/img/docs/tutorials/amp_story/story_parts.png', 1047, 452, align='center ninety') }}
 
-Masing-masing bahan tersebut diubah menjadi komponen AMP, tempat artikel diwakili oleh [`amp-story`](../../../../documentation/components/reference/amp-story.md), halaman diwakili oleh `amp-story-page`, dan lapisan diwakili oleh `amp-story-grid-layer`.
+Masing-masing bahan tersebut diterjemahkan menjadi komponen AMP, di mana cerita diwakili oleh [`amp-story`](../../../../documentation/components/reference/amp-story.md), halaman ini diwakili oleh `amp-story-page`, dan lapisan diwakili oleh `amp-story-grid-layer`.
 
 {{ image('/static/img/docs/amp-story-tag-hierarchy.png', 557, 355, align='center seventyfive' ) }}
 
-Mari mulai membuat artikel kita dengan penampung [`amp-story`](../../../../documentation/components/reference/amp-story.md).
+Mari mulai membuat Cerita Web kita dengan wadah [`amp-story`](../../../../documentation/components/reference/amp-story.md).

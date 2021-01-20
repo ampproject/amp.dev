@@ -57,7 +57,7 @@
   .#{utility('divider')} {
     width: 100%;
     margin: 25px 0 50px;
-    border-bottom: 1px solid color('silver');
+    border-bottom: 1px solid color('iron');
 
     @media (min-width: 768px) {
       grid-column: 6 / 19;
@@ -197,8 +197,8 @@
       @include box-shadow;
 
       align-items: center;
-      background: color('ebony-clay');
-      background: linear-gradient(225deg, color('ebony-clay') 0%, color('river-bed') 75%);
+      background: color('charade');
+      background: linear-gradient(225deg, color('charade') 0%, color('river-bed') 75%);
       display: flex;
       justify-content: center;
       left: 0;

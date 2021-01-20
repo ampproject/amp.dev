@@ -1,0 +1,1 @@
+Biểu đồ phân phối điểm trang cho thấy phần trăm các trang cso điểm trong ngưỡng Tốt, Cần cải thiện và Tồi. Để vượt qua Core Web Vitals (Các chỉ số thiết yếu về trang web), trang của bạn phải có >75% lượt truy cập trong ngưỡng Tốt.

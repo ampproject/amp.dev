@@ -62,22 +62,23 @@ Os estilos a seguir são permitidos. Contudo, há restrições em relação à c
   </tbody>
 </table>
 
-## Exceção: fontes personalizadas
+## Exceção: fontes personalizadas <a name="the-custom-fonts-exception"></a>
 
 As páginas AMP não podem incluir folhas de estilos externas, exceto fontes personalizadas.
 
 Continue lendo: Saiba mais sobre [fontes personalizadas nas AMP](custom_fonts.md).
 
-## Como usar pré-processadores de CSS
+## Como usar pré-processadores de CSS <a name="using-css-preprocessors"></a>
 
 O resultado gerado pelos pré-processadores é tão bom nas AMP como em qualquer outra página da Web. Por exemplo, o site [amp.dev](https://amp.dev/) usa [Sass](http://sass-lang.com/). Usamos [Grow](http://grow.io/) para criar as páginas AMP estáticas que compõem o site [amp.dev](https://amp.dev/).
 
 Tome cuidado com o que você inclui ao usar os pré-processadores. Carregue somente aquilo que as páginas usam. Por exemplo, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) inclui toda a marcação das AMP necessária e a CSS in-line dos arquivos de origem `*.scss`. Isso também inclui o script do elemento personalizado para [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md), entre outros, fazendo com que diversas páginas do site possam incluir vídeos incorporados do YouTube.
 
 [sourcecode:html]{% raw %}
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
   <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 

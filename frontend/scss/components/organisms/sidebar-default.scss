@@ -1,0 +1,144 @@
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_color.scss';
+@import 'components/atoms/_text.scss';
+
+@import 'components/organisms/_sidebar.scss';
+
+.#{utility('ampsidebar')} {
+  @include sidebar-ampsidebar;
+
+  &-toolbar {
+    @include sidebar-ampsidebar-toolbar;
+  }
+}
+
+.#{organism('sidebar-default')} {
+  @include sidebar-wrapper;
+
+  .#{organism('sidebar')} {
+    @include sidebar;
+  }
+
+  .nav {
+    @include sidebar-nav;
+
+    &-list {
+      @include sidebar-nav-list;
+
+      &.level-1 {
+        @include sidebar-nav-list-level-1;
+      }
+
+      .nav-list {
+        @include sidebar-nav-list-sublevels;
+      }
+    }
+
+    &-item {
+      @include sidebar-nav-item;
+
+      &.level-1 {
+        @include sidebar-nav-item-level-1;
+
+        .nav-link {
+          @include sidebar-nav-link-level-1;
+        }
+
+        .nav-trigger,
+        .nav-icon {
+          @include sidebar-nav-trigger-level-1;
+        }
+
+        .nav-icon .#{atom('ico')} {
+          @include sidebar-nav-icon-level-1;
+        }
+      }
+
+      &.level-2 {
+        .nav-link {
+          @include sidebar-nav-link-level-2;
+        }
+
+        .nav-trigger,
+        .nav-icon {
+          @include sidebar-nav-trigger-level-2;
+        }
+
+        .nav-icon .#{atom('ico')} {
+          @include sidebar-nav-icon-level-2;
+        }
+      }
+
+      &.level-3 {
+        margin-left: 24px;
+
+        .nav-link {
+          @include sidebar-nav-link-level-3;
+        }
+
+        &.active {
+          background: rgba(51,61,71,0.1);
+          border-radius: 4px;
+        }
+      }
+
+      &.active > .nav-link {
+        @include sidebar-nav-link-active;
+      }
+
+      &:hover > .nav-link {
+        @include sidebar-nav-link-hover;
+      }
+    }
+
+    &-item-tutorial-divider {
+      @include sidebar-nav-item-tutorial-divider;
+
+      &:first-child {
+        display: none;
+      }
+
+      &:last-child {
+        display: none;
+      }
+    }
+
+    &-link {
+      @include sidebar-nav-link;
+    }
+
+    &-link-lastword {
+      @include sidebar-nav-link-lastword;
+    }
+
+    &-icon,
+    &-trigger {
+      @include sidebar-nav-trigger;
+    }
+
+    &-trigger {
+      @include sidebar-nav-trigger-state;
+
+      &:focus {
+        outline: 1px dotted #212121;
+        outline: 5px auto -webkit-focus-ring-color;
+      }
+    }
+
+    &-icon .#{atom('ico')} {
+      @include sidebar-nav-icon;
+    }
+
+    &-type-icon {
+      @include sidebar-type-icon;
+    }
+
+    span.nav-link + .nav-trigger {
+      width: calc(100% + 15px);
+    }
+  }
+}

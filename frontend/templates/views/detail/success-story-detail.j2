@@ -19,7 +19,7 @@
           <div class="ap-o-stage-content">
             {% if doc.stage.logo %}
             <div class="ap-a-img ap-a-img-static stage-logo">
-              <amp-img class="ap--media" src="{{doc.stage.logo.image_src}}" layout="responsive" height="{{ doc.stage.logo.height }}" width="{{ doc.stage.logo.width }}" alt="placeholder" />
+              <amp-img src="{{doc.stage.logo.image_src}}" layout="responsive" height="{{ doc.stage.logo.height }}" width="{{ doc.stage.logo.width }}" alt="placeholder" />
             </div>
             {% endif %}
             {% if doc.stage.subline %}
@@ -44,7 +44,6 @@
               <div class="ap-m-ghost-frame-{{device.type}} {{device.direction}}">
                 {% if device.video_src %}
                 {% if device.video_id %}
-                {% do doc.amp_dependencies.add('amp-vimeo', '0.1') %}
                 <amp-vimeo
                   data-videoid="{{device.video_id}}"
                   layout="responsive"
@@ -52,7 +51,6 @@
                   height="9">
                 </amp-vimeo>
                 {% else %}
-                {% do doc.amp_dependencies.add('amp-video', '0.1') %}
                 <amp-video
                     width="{{device.width}}"
                     height="{{device.height}}"
@@ -63,7 +61,6 @@
                     title="{{device.video_title}}"
                     artist="{{device.video_artist}}"
                     album="{{device.video_album}}"
-                    class="ap--media"
                     controls
                     autoplay
                     loop>
@@ -71,7 +68,6 @@
                   {% endif %}
                 {% else %}
                   <amp-img
-                    class="ap--media"
                     alt="{{device.alt}}"
                     height="{{device.height}}"
                     layout="responsive"
@@ -139,7 +135,6 @@
                 <div class="ap-m-ghost-frame-{{content.type}} {{content.direction}}">
                 {% if content.video_src %}
                 {% if content.video_id %}
-                {% do doc.amp_dependencies.add('amp-vimeo', '0.1') %}
                 <amp-vimeo
                   data-videoid="{{content.video_id}}"
                   layout="responsive"
@@ -147,9 +142,7 @@
                   height="{{content.height}}">
                 </amp-vimeo>
                 {% else %}
-                {% do doc.amp_dependencies.add('amp-video', '0.1') %}
                 <amp-video
-                    class="ap--media"
                     width="{{content.width}}"
                     height="{{content.height}}"
                     layout="responsive"
@@ -163,7 +156,6 @@
                 {% endif %}
                 {% else %}
                   <amp-img
-                    class="ap--media"
                     alt="{{content.alt}}"
                     height="{{content.height}}"
                     layout="responsive"
@@ -189,16 +181,14 @@
 
         {# layout: media #}
         {% if content.layout == 'media' %}
-          <div class="ap-o-text-media-block">
-            {% if content.type %}
-              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-desktop.css') %}
-              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-tablet.css') %}
-              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
-              <div class="ap-m-ghost-frame-{{content.type}} {{content.direction}}">
+        {% if content.type %}
+        <div class="ap-o-text-media-block">
+          {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-desktop.css') %}
+          {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-tablet.css') %}
+          {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
+            <div class="ap-m-ghost-frame-{{content.type}} {{content.direction}}">
               {% if content.type.video_src %}
-              {% do doc.amp_dependencies.add('amp-video', '0.1') %}
               <amp-video
-                  class="ap--media"
                   width="{{content.width}}"
                   height="{{content.height}}"
                   layout="responsive"
@@ -210,18 +200,44 @@
                   album="{{content.video_album}}">
               </amp-video>
               {% else %}
-                <amp-img
-                  class="ap--media"
-                  alt="{{content.alt}}"
-                  height="{{content.height}}"
-                  layout="responsive"
-                  src="{{content.image_src}}"
-                  width="{{content.width}}">
-                </amp-img>
-                {% endif %}
-              </div>
+              <amp-img
+                alt="{{content.alt}}"
+                height="{{content.height}}"
+                layout="responsive"
+                src="{{content.image_src}}"
+                width="{{content.width}}">
+              </amp-img>
+              {% endif %}
+            </div>
+        </div>
+        {% else %}
+        <div class="ap--container-fluid">
+          <div class="ap-o-text-media-block ap-o-text-media-block-center">
+            {% if content.video_src %}
+            <amp-video
+                controls
+                width="{{content.width}}"
+                height="{{content.height}}"
+                layout="responsive"
+                src="{{content.video_src}}"
+                poster="{{content.poster_src}}"
+                artwork="{{content.artwork_src}}"
+                title="{{content.video_title}}"
+                artist="{{content.video_artist}}"
+                album="{{content.video_album}}">
+            </amp-video>
+            {% elif content.image_src %}
+            <amp-img
+                alt="{{content.alt}}"
+                height="{{content.height}}"
+                layout="responsive"
+                src="{{content.image_src}}"
+                width="{{content.width}}">
+            </amp-img>
             {% endif %}
           </div>
+        </div>
+        {% endif %}
         {% endif %}
 
         {# layout: quote #}
@@ -235,7 +251,7 @@
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use></svg>
               </div>
                 <div class="ap-a-img ap-a-img-static fixed-container">
-                  <amp-img class="ap--media contain" src="{{content.image_src}}" layout="fill" alt="placeholder" />
+                  <amp-img class="contain" src="{{content.image_src}}" layout="fill" alt="placeholder" />
                 </div>
             </div>
             <div class="ap-m-quote-quote">
@@ -243,6 +259,7 @@
                 <p class="ap-a-txt">{{content.quote|safe}}</p>
               </blockquote>
               <p>{{content.author|safe}}</p>
+                {% if story_url %}
                 <a href="{{story_url}}" class="ap-m-lnk">
                   <div class="ap-a-ico ap-m-lnk-icon">
                     {% do doc.icons.useIcon('icons/internal.svg') %}
@@ -250,6 +267,7 @@
                   </div>
                   <span class="ap-m-lnk-text">Read success story</span>
                 </a>
+                {% endif %}
               </div>
             </div>
           </section>
@@ -277,7 +295,6 @@
               {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
               <div class="ap-m-ghost-frame-{{content.type}} {{content.direction}}">
                 <amp-img
-                  class="ap--media"
                   layout="responsive"
                   height="{{content.height}}"
                   width="{{content.width}}"

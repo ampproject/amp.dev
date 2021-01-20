@@ -1,0 +1,50 @@
+.#{prefix(null, 'section')} {
+  grid-column: 2 / 12;
+  width: 100%;
+  margin-top: 100px;
+
+  &:first-child {
+    margin-top: 80px;
+
+    @include respond-to('large') {
+      margin-top: 140px;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 100px;
+
+    @include respond-to('large') {
+      margin-bottom: 150px;
+    }
+  }
+
+  &.--col-4-15 {
+    @include respond-to('small') {
+      grid-column: 2 / 10;
+    }
+    @include respond-to('large') {
+      grid-column: 3 / 10;
+    }
+  }
+
+  &.--col-3-22 {
+    @include respond-to('large') {
+      grid-column: 2 / 11;
+    }
+  }
+
+  &.--col-4-23 {
+    @include respond-to('small') {
+      grid-column: 2 / 12;
+    }
+    @include respond-to('large') {
+      grid-column: 3 / 12;
+    }
+  }
+
+  &.--fullscreen {
+    margin: 0;
+    grid-column: 1 / -1;
+  }
+}

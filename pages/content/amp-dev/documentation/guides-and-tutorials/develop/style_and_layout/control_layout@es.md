@@ -35,7 +35,7 @@ Puedes ver demostraciones comparativas en directo de [`amp-img`](../../../../doc
 
 [/tip]
 
-## El atributo "layout"
+## El atributo "layout" <a name="the-layout-attribute"></a>
 
 El atributo `layout` te permite controlar fácilmente cómo deben renderizarse
 los diferentes elementos en pantalla. Muchos de estos aspectos también pueden controlarse solo con CSS, pero
@@ -103,7 +103,7 @@ Para ver cómo responden los diferentes diseños al redimensionamiento de la pan
 
 [/tip]
 
-### ¿Qué ocurre si la altura y la anchura no están definidas?
+### ¿Qué ocurre si la altura y la anchura no están definidas? <a name="what-if-width-and-height-are-undefined"></a>
 
 En algunos casos, si no se han proporcionado los atributos `width` o `height`,
 el tiempo de ejecución de AMP puede asignarles un valor predeterminado del siguiente modo:
@@ -111,7 +111,7 @@ el tiempo de ejecución de AMP puede asignarles un valor predeterminado del sigu
 * [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): el valor predeterminado de anchura y altura es 0.
 * [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): el navegador infiere la anchura y la altura predeterminadas.
 
-### ¿Qué sucede si no se ha proporcionado el atributo <code>layout</code>?
+### ¿Qué sucede si no se ha proporcionado el atributo <code>layout</code>? <a name="what-if-the-layout-attribute-isnt-specified"></a>
 
 Si no se indica el atributo <code>layout</code>, AMP intenta inferir o adivinar
 el valor adecuado:
@@ -159,7 +159,7 @@ Obtén más información sobre cómo controlar el diseño con media queries en e
 
 [/tip]
 
-### Media queries de elementos
+### Media queries de elementos <a name="element-media-queries"></a>
 
 Una función adicional de diseño adaptable disponible en AMP es el atributo `media`.
 Este atributo se puede usar en todos los elementos AMP;

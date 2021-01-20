@@ -1,149 +1,174 @@
 [
-  {
-    "title": "Governance",
-    "order": 2,
+	{
+		"title": "Governance",
+		"order": 2,
 		"repo": "ampproject/meta",
 		"from": "GOVERNANCE.md",
-    "to": "community/governance.md",
-    "toc": true,
-    "formats": ["websites","email","stories", "ads"]
-  },
-  {
-    "title": "AMP HTML Specification",
-    "order": 3,
+		"to": "community/governance.md",
+		"toc": true,
+		"formats": ["websites","email","stories", "ads"]
+	},
+	{
+		"title": "AMP HTML Specification",
+		"order": 8,
 		"repo": "ampproject/amphtml",
 		"from": "spec/amp-html-format.md",
-    "to": "documentation/guides-and-tutorials/learn/spec/amphtml.md",
-    "formats": ["websites"]
-  },
-  {
-    "title": "AMP Boilerplate Code",
-    "order": 3,
+		"to": "documentation/guides-and-tutorials/learn/spec/amphtml.md",
+		"formats": ["websites"]
+	},
+	{
+		"title": "AMP Boilerplate Code",
+		"order": 9,
 		"repo": "ampproject/amphtml",
 		"from": "spec/amp-boilerplate.md",
-    "to": "documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md",
-    "formats": ["websites", "stories"]
-  },
-  {
-    "title": "AMPHTML Layout System",
-    "order": 1,
+		"to": "documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md",
+		"formats": ["websites", "stories"]
+	},
+	{
+		"title": "AMP Release Schedule",
+		"order": 10,
+		"repo": "ampproject/amphtml",
+		"from": "contributing/release-schedule.md",
+		"to": "documentation/guides-and-tutorials/learn/spec/release-schedule.md",
+		"formats": ["websites", "email", "stories", "ads"]
+	},
+	{
+		"title": "AMPHTML Layout System",
+		"order": 1,
 		"repo": "ampproject/amphtml",
 		"from": "spec/amp-html-layout.md",
-    "to": "documentation/guides-and-tutorials/learn/amp-html-layout/index.md",
-    "formats": ["websites","email","stories", "ads"]
-  },
-  {
-    "title": "Actions and events",
-    "order": 7,
+		"to": "documentation/guides-and-tutorials/learn/amp-html-layout/index.md",
+		"formats": ["websites","email","stories", "ads"]
+	},
+	{
+		"title": "Actions and events",
+		"order": 0,
 		"repo": "ampproject/amphtml",
 		"from": "spec/amp-actions-and-events.md",
-    "to": "documentation/guides-and-tutorials/learn/amp-actions-and-events.md",
-    "formats": ["websites","email","stories", "ads"]
-  },
-  {
-    "title": "Debug AMP Cache issues",
-    "order": 8,
+		"to": "documentation/guides-and-tutorials/learn/amp-actions-and-events.md",
+		"formats": ["websites","stories", "ads"]
+	},
+	{
+		"title": "Actions and events in AMP email",
+		"order": 0,
+		"repo": "ampproject/amphtml",
+		"from": "spec/amp-email-actions-and-events.md",
+		"to": "documentation/guides-and-tutorials/learn/amp-email-actions-and-events.md",
+		"formats": ["email"]
+	},
+	{
+		"title": "Debug AMP Cache issues",
+		"order": 8,
 		"repo": "ampproject/amphtml",
 		"from": "spec/amp-cache-debugging.md",
-    "to": "documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-debugging.md",
-    "formats": ["websites", "stories", "ads"]
-  },
-  {
-    "title": "CORS in AMP",
-    "order": 12,
+		"to": "documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-debugging.md",
+		"formats": ["websites", "stories", "ads"]
+	},
+	{
+		"title": "CORS in AMP",
+		"order": 12,
 		"repo": "ampproject/amphtml",
 		"from": "spec/amp-cors-requests.md",
-    "to": "documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md",
-    "toc": true,
-    "formats": ["websites","email","stories", "ads"]
-  },
-  {
-    "title": "Help",
-    "order": 1,
+		"to": "documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md",
+		"toc": true,
+		"formats": ["websites","email","stories", "ads"]
+	},
+	{
+		"title": "Help",
+		"order": 1,
 		"repo": "ampproject/amphtml",
 		"from": "SUPPORT.md",
-    "to": "support/index.md",
-    "group": 1,
-    "formats": ["websites","email","stories", "ads"]
-  },
-  {
-    "title": "Integrate your ad technologies into AMP",
-    "order": 3,
+		"to": "support/index.md",
+		"group": 1,
+		"formats": ["websites","email","stories", "ads"]
+	},
+	{
+		"title": "Integrate your ad technologies into AMP",
+		"order": 3,
 		"repo": "ampproject/amphtml",
 		"from": "ads/_integration-guide.md",
-    "to": "documentation/guides-and-tutorials/contribute/ad-integration-guide.md",
-    "toc": true,
-    "formats": ["ads"]
-  },
-  {
-    "title": "AMP for Ads specification",
-    "order": 3,
+		"to": "documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md",
+		"toc": true,
+		"formats": ["ads"]
+	},
+	{
+		"title": "AMP for Ads specification",
+		"order": 3,
 		"repo": "ampproject/amphtml",
 		"from": "extensions/amp-a4a/amp-a4a-format.md",
-    "to": "documentation/guides-and-tutorials/learn/a4a_spec.md",
-    "toc": true,
-    "formats": ["ads"]
-  },
-  {
-    "title": "Integrate your analytics tool with AMP",
-    "order": 1,
+		"to": "documentation/guides-and-tutorials/learn/a4a_spec.md",
+		"toc": true,
+		"formats": ["ads"]
+	},
+	{
+		"title": "Integrate your analytics tool with AMP",
+		"order": 1,
 		"repo": "ampproject/amphtml",
 		"from": "extensions/amp-analytics/integrating-analytics.md",
-    "to": "documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md",
-    "toc": true,
-    "formats": ["websites", "stories"]
-  },
-  {
-    "title": "Manage non-authenticated user state with AMP",
-    "order": 2,
+		"to": "documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md",
+		"toc": true,
+		"formats": ["websites", "stories"]
+	},
+	{
+		"title": "Manage non-authenticated user state with AMP",
+		"order": 2,
 		"repo": "ampproject/amphtml",
 		"from": "spec/amp-managing-user-state.md",
-    "to": "documentation/guides-and-tutorials/optimize-measure/amp-managing-user-state.md",
-    "formats": ["websites"]
-  },
-  {
-    "title": "AMP for Email Format",
-    "order": 1,
+		"to": "documentation/guides-and-tutorials/optimize-measure/amp-managing-user-state.md",
+		"formats": ["websites"]
+	},
+	{
+		"title": "AMP for Email Format",
+		"order": 1,
 		"repo": "ampproject/amphtml",
 		"from": "spec/email/amp-email-format.md",
-    "to": "documentation/guides-and-tutorials/learn/email-spec/amp-email-format.md",
-    "toc": true,
-    "formats": ["email"]
-  },
-  {
-    "title": "Structure and rendering of AMP emails",
-    "order": 2,
+		"to": "documentation/guides-and-tutorials/learn/email-spec/amp-email-format.md",
+		"toc": true,
+		"formats": ["email"]
+	},
+	{
+		"title": "Structure and rendering of AMP emails",
+		"order": 2,
 		"repo": "ampproject/amphtml",
 		"from": "spec/email/amp-email-structure.md",
-    "to": "documentation/guides-and-tutorials/learn/email-spec/amp-email-structure.md",
-    "toc": true,
-    "formats": ["email"]
-  },
-  {
-    "title": "AMP for Email Supported Components",
-    "order": 3,
+		"to": "documentation/guides-and-tutorials/learn/email-spec/amp-email-structure.md",
+		"toc": true,
+		"formats": ["email"]
+	},
+	{
+		"title": "AMP for Email Supported Components",
+		"order": 3,
 		"repo": "ampproject/amphtml",
 		"from": "spec/email/amp-email-components.md",
-    "to": "documentation/guides-and-tutorials/learn/email-spec/amp-email-components.md",
-    "toc": true,
-    "formats": ["email"]
-  },
-  {
-    "title": "AMP for Email Supported HTML",
-    "order": 4,
+		"to": "documentation/guides-and-tutorials/learn/email-spec/amp-email-components.md",
+		"toc": true,
+		"formats": ["email"]
+	},
+	{
+		"title": "AMP for Email Supported HTML",
+		"order": 4,
 		"repo": "ampproject/amphtml",
 		"from": "spec/email/amp-email-html.md",
-    "to": "documentation/guides-and-tutorials/learn/email-spec/amp-email-html.md",
-    "toc": true,
-    "formats": ["email"]
-  },
-  {
-    "title": "AMP for Email Supported CSS",
-    "order": 5,
+		"to": "documentation/guides-and-tutorials/learn/email-spec/amp-email-html.md",
+		"toc": true,
+		"formats": ["email"]
+	},
+	{
+		"title": "AMP for Email Supported CSS",
+		"order": 5,
 		"repo": "ampproject/amphtml",
 		"from": "spec/email/amp-email-css.md",
-    "to": "documentation/guides-and-tutorials/learn/email-spec/amp-email-css.md",
-    "toc": true,
-    "formats": ["email"]
-  }
+		"to": "documentation/guides-and-tutorials/learn/email-spec/amp-email-css.md",
+		"toc": true,
+		"formats": ["email"]
+	},
+	{
+		"title": "Analytics Vendors",
+		"order": 3,
+		"description": "This document lists analytics vendors that have built-in configurations for use with the amp-analytics component. To send analytics data to a third-party vendor.",
+		"repo": "ampproject/amphtml",
+		"from": "extensions/amp-analytics/analytics-vendors-list.md",
+		"to": "documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md",
+		"formats": ["websites", "stories", "ads"]
+	}
 ]

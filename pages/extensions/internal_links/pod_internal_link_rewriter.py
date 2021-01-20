@@ -1,6 +1,7 @@
 import os
 import re
 import traceback
+from component_version_resolver import ComponentVersionResolver
 from grow.pods.pods import Pod
 from grow.documents.document import Document
 from grow.cache.object_cache import ObjectCache
@@ -9,19 +10,25 @@ from grow.cache.object_cache import ObjectCache
 LINK_PATTERN = re.compile(r'<a\s+(?:[^>]+\s)?href\s*=\s*"((?:[^"#?](?!:))*?[^"/])((?:\?[^"]*)?(?:#[^"]*)?)"',
                           re.IGNORECASE)
 
+# paths to static files should not be rewritten
+STATIC_PATH = '/static'
 
 class PodInternalLinkRewriter(object):
 
   pod = None  # type: Pod
 
-  def __init__(self, doc, link_cache):
+  def __init__(self, doc, link_cache, component_version_resolver):
     """
     :type doc: Document
+    :type pod: Pod
     :type link_cache: ObjectCache
+    :type component_version_resolver: ComponentVersionResolver
     """
     self.doc = doc
     self.pod = doc.pod
+    self.locale = doc.locale
     self.link_cache = link_cache
+    self.component_version_resolver = component_version_resolver
 
   def rewrite_pod_internal_links(self, content):
     """
@@ -68,21 +75,44 @@ class PodInternalLinkRewriter(object):
     return result
 
   def get_site_link(self, internal_link):
+    # Static files are located inside the pod which will make Grow
+    # create virtual docs when calling get_doc with such a path.
+    # This will make doc.exists equal True while doc.url.path only returns
+    # garbage. To work around this only further check for docs in '/content'
+    if internal_link.startswith(STATIC_PATH) or '{{' in internal_link or '[=' in internal_link:
+      return internal_link
+
     internal_path = internal_link
     if not internal_path.startswith('/'):
       internal_path = os.path.abspath(os.path.join(
         PodInternalLinkRewriter.get_folder(self.doc.pod_path), internal_path))
 
-    result = self.link_cache.get(internal_path)
+    cache_key = '{}:{}'.format(self.locale, internal_path)
+    result = self.link_cache.get(cache_key)
     if not result:
-      target_doc = self.pod.get_doc(internal_path, self.doc.locale)
+      target_doc = self.pod.get_doc(internal_path, self.locale)
       if not target_doc.exists:
-        result = internal_link
+        result = self.get_latest_component_doc_link(internal_path)
+        if not result:
+          result = internal_link
       else:
         result = target_doc.url.path
-      self.link_cache.add(internal_path, result)
+      self.link_cache.add(cache_key, result)
 
     return result
+
+  def get_latest_component_doc_link(self, absolute_component_path):
+    """
+    :param absolute_component_path:
+    :return: The link for the latest version if the path is a component doc
+    """
+    if self.component_version_resolver:
+      version_path = self.component_version_resolver.\
+        find_latest_for_component_with_no_version(absolute_component_path)
+      if version_path:
+        version_doc = self.pod.get_doc(version_path, self.locale)
+        return version_doc.url.path
+    return None
 
   @staticmethod
   def get_folder(path):

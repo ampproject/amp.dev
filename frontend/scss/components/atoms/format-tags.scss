@@ -19,7 +19,7 @@
 
   &-stories {
     @include gradient-stories;
-    color: color('pigment-indigo');
+    @include color-stories;
   }
 
   &-ads {
@@ -28,6 +28,6 @@
 
   &-email {
     @include gradient-e-mails;
-    color: color('ultramarine');
+    @include color-e-mails;
   }
 }

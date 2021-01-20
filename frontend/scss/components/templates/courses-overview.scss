@@ -55,6 +55,14 @@
     @media (min-width: 930px) {
       margin: 0 60px;
     }
+
+    .#{molecule('lnk')} {
+      padding: 1em 0 1em;
+
+      &-text {
+        font-size: 1rem;
+      }
+    }
   }
 
   .#{utility('sidebar')} {

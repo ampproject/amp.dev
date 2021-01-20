@@ -1,7 +1,12 @@
 ---
-$title: Últimos pasos antes de la publicación
+"$title": Últimos pasos antes de la publicación
+"$order": '6'
+description: "¡Felicidades! Probó su página de forma local y solucionó los errores de validación. Esto significa que está listo para lanzar su primera página AMP."
+author: pbakaus
+contributors:
+- bpaduch
 ---
 
-¡Felicitaciones! Probaste tu página de forma local y solucionaste los errores de validación. Esto significa que estás listo para lanzar tu primera página AMP.
+¡Felicidades! Probó su página de forma local y solucionó los errores de validación. Esto significa que está listo para lanzar su primera página AMP.
 
-Obtén información acerca de cómo funciona AMP y cómo se comportan todos los elementos explorando el panel de navegación de la izquierda. Para obtener información general acerca de las herramientas que te pueden ayudar a preparar tu producción de contenido, consulta [Primeros pasos para tu flujo de trabajo de desarrollo](https://developers.google.com/web/tools/setup/).
+Obtenga información sobre cómo funciona AMP y cómo se comportan todos los elementos explorando el panel de navegación que se encuentra a la izquierda. Para obtener información general acerca de las herramientas que pueden ayudarle a preparar la producción de su contenido, consulte el artículo [Primeros pasos para el flujo de trabajo de su desarrollo](https://developers.google.com/web/tools/setup/).

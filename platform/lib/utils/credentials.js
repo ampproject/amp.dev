@@ -44,7 +44,10 @@ function get(key) {
 
   if (!config.isProdMode() && !config.isStageMode()) {
     return Promise.reject(
-        new Error(`Environment variable ${ENV_PREFIX}${key.toUpperCase()} is not set.`));
+      new Error(
+        `Environment variable ${ENV_PREFIX}${key.toUpperCase()} is not set.`
+      )
+    );
   }
 
   return new Promise((resolve, reject) => {
@@ -55,6 +58,10 @@ function get(key) {
         return;
       }
 
+      if (!entity) {
+        reject(new Error(`empty entity for key ${key}`));
+        return;
+      }
       resolve(entity.credential);
     });
   });

@@ -1,0 +1,59 @@
+$view: /layouts/blank.j2
+$sitemap:
+  enabled: false
+---
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="robot" content="noindex,nofollow">
+  <style>
+    {% do doc.styles.addCssFile('/css/components/atoms/icon.css') %}
+    {{ doc.styles.emit() }}
+    html, body { background: none transparent; width: 24px; height: 24px; overflow: hidden; }
+    body { margin: 0; cursor: pointer; transition: transform .3s; }
+    svg { fill: #005af0; }
+    input { opacity: 0; pointer-events: none; }
+    .copy-script-icon--default, .copy-script-icon--success { position: absolute; top: 3px; transition: transform .3s; }
+    .copy-script-icon--success { opacity: 0; }
+    .success { transform: translate3d(0, 2px, 0); }
+    .success .copy-script-icon--default { opacity: 0; transform: scale3d(0, 0.3, 0); }
+    .success .copy-script-icon--success { opacity: 1; }
+  </style>
+</head>
+<body>
+  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      {{ doc.icons.emit() }}
+    </defs>
+  </svg>
+  <div class="ap-a-ico copy-script-icon--default">
+    {% do doc.icons.useIcon('/icons/clipboard.svg') %}
+    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clipboard"></use></svg>
+  </div>
+  <div class="ap-a-ico copy-script-icon--success">
+    {% do doc.icons.useIcon('/icons/checkmark.svg') %}
+    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checkmark"></use></svg>
+  </div>
+  <input id="script-tag">
+  <script>
+    const animationDuration = 1200;
+    const scriptTag = document.getElementById('script-tag');
+    const stringToCopy = decodeURIComponent(window.location.hash.substr(1));
+
+    scriptTag.value = stringToCopy;
+
+    document.addEventListener('click', () => {
+      scriptTag.select();
+      scriptTag.setSelectionRange(0, 99999);
+      document.execCommand('copy');
+
+      document.body.classList.add('success');
+      setTimeout(function() {
+        document.body.classList.remove('success');
+      }, animationDuration);
+    });
+  </script>
+</body>
+</html>

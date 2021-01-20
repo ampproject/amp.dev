@@ -1,0 +1,105 @@
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_color.scss';
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_headline.scss';
+
+@import 'components/organisms/_sidebar.scss';
+
+.#{utility('ampsidebar')} {
+  @include sidebar-ampsidebar;
+
+  &-toolbar {
+    @include sidebar-ampsidebar-toolbar;
+  }
+}
+
+.#{organism('sidebar-component')} {
+  @include sidebar-wrapper;
+
+  .#{organism('sidebar')} {
+    @include sidebar;
+  }
+
+  .nav {
+    @include sidebar-nav;
+
+    &-list {
+      @include sidebar-nav-list;
+
+      &.level-1 {
+        @include sidebar-nav-list-level-1;
+      }
+
+      .nav-list {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+      }
+    }
+
+    &-item {
+      @include sidebar-nav-item;
+
+      &.level-1 {
+        pointer-events: none;
+
+        .nav-link {
+          @include hl;
+          @include hl-h2;
+          padding: 0;
+          margin: 0;
+          line-height: 1;
+          word-break: break-all;
+          pointer-events: auto;
+          color: color('iron');
+
+          /* Used to hide empty letter lists */
+          &:only-child:not(a) {
+            margin: -20px;
+            font-size: 0;
+            pointer-events: none;
+            z-index: -1;
+          }
+        }
+
+        & > .nav-link {
+          padding-top: 10px;
+          pointer-events: none;
+          z-index: 1;
+          transition: color 0.15s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        &.active > .nav-link {
+          color: color('oslo-gray');
+        }
+
+        &:hover > .nav-link {
+          color: color('oslo-gray');
+        }
+      }
+
+      &.level-2 {
+        .nav-link {
+          @include sidebar-nav-link-level-2;
+          padding: 3px 25px 3px 0;
+          margin: 0;
+        }
+      }
+
+      &.active > .nav-link {
+        @include sidebar-nav-link-active;
+      }
+
+      &:hover > .nav-link {
+        @include sidebar-nav-link-hover;
+      }
+    }
+
+    &-link {
+      @include sidebar-nav-link;
+    }
+  }
+}

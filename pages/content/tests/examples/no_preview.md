@@ -1,6 +1,8 @@
 ---
 $title: No preview
 $order: 4
+$sitemap:
+  enabled: False
 ---
 
 Start

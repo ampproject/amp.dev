@@ -10,6 +10,39 @@ creation:
       height: 506
     formats:
       - ads
+  - name: BEE
+    url: https://beefree.io/bee-plugin/
+    type: Embeddable Email Builder
+    description: Add beautiful, effective email creation into your SaaS application, including interactive content powered by AMP.
+    image:
+      src: /static/img/tools/bee.png
+      width: 440
+      height: 209
+      fit: contain
+    formats:
+      - email
+  - name: Dyspatch Email Builder
+    url: https://www.dyspatch.io/
+    type: Email Production
+    description: Save time by creating HTML and AMP emails simultaneously with the Dyspatch drag-and-drop email builder.
+    image:
+      src: /static/img/tools/dyspatch.png
+      width: 600
+      height: 96
+      fit: contain
+    formats:
+      - email
+  - name: Mailmodo
+    url: https://mailmodo.com
+    type: Email Editor
+    description: Create AMP emails with inline forms so that your users can take actions right inside the email. Just like an app!
+    image:
+      src: /static/img/tools/mailmondo.png
+      width: 659
+      height: 122
+      fit: contain
+    formats:
+      - email
   - name: Stripo Email Editor
     url: https://stripo.email/amp-support/
     type: Email Templates Editor
@@ -18,6 +51,17 @@ creation:
       src: /static/img/tools/stripo.png
       width: 442
       height: 184
+      fit: contain
+    formats:
+      - email
+  - name: Plumrocket AMP Email
+    url: https://store.plumrocket.com/amp-email-magento2-extension.html
+    type: Magento Extension
+    description: Send engaging AMP Emails from Magento ecommerce platform. Use built-in templates for transactional and promotional dynamic emails.
+    image:
+      src: /static/img/tools/plumrocket-amp-email.jpg
+      width: 440
+      height: 209
       fit: contain
     formats:
       - email
@@ -41,17 +85,6 @@ creation:
       height: 549
     formats:
       - ads
-  - name: AMP Stories for WordPress (Beta)
-    official: true
-    description: The AMP for WordPress plugin now comes with a fully integrated story editor.
-    url: https://github.com/ampproject/amp-wp/wiki/AMP-Stories-Experimental
-    type: WYSIWYG Editor
-    image:
-      src: /static/img/tools/amp_stories_for_wordpress.jpg
-      width: 700
-      height: 402
-    formats:
-      - stories
   - name: Google Web Designer
     description: Create engaging, interactive AMPHTML Ad compliant designs and motion graphics that can run on any device.
     url: https://support.google.com/webdesigner/answer/7529856?hl=en
@@ -93,6 +126,76 @@ creation:
       height: 3
     formats:
       - stories
+  - name: Web Stories for WordPress
+    description: Web Stories for WordPress provides story creation capabilities in a user-friendly, WYSIWYG tool.
+    url: https://wp.stories.google/
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/webstoriesforwordpress.png
+      width: 5
+      height: 3
+    formats:
+      - stories
+  - name: Visual Stories
+    description: Multi-site, multi-author blogging tools and WYSIWYG editor to create Web Stories on your own domain.
+    url: https://visualstories.com
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/visualstories.png
+      width: 5
+      height: 3
+    formats:
+      - stories
+  - name: Tappable
+    description: The collaborative Web Stories builder. Design immersive Stories, publish on a blazing fast CDN and measure engagement with zero-config analytics.
+    url: https://tappable.co
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/tappable.svg
+      width: 5
+      height: 3
+    formats:
+      - stories
+  - name: Product Stories
+    description: eCommerce tool for the automatic generation of Web Stories from product information.
+    url: https://productstories.pro/
+    type: Templated Editor
+    image:
+      src: /static/img/tools/productstories.png
+      width: 5
+      height: 3
+    formats:
+      - stories
+  - name: Join Stories
+    description: Long Story short, Join Stories is the fastest and easiest Story creation tool.
+    url: https://www.join-stories.com/
+    type:  WYSIWYG Editor
+    image:
+      src: /static/img/tools/joinstories.jpg
+      width: 800
+      height: 400
+    formats:
+      - stories
+  - name: StorifyMe
+    description: StorifyMe stands out as all-in-one Web Stories platform. Made for brands & individuals, tailored for e-commerce, marketers and publishers.
+    url: https://storifyme.com/
+    type:  WYSIWYG Editor
+    image:
+      src: /static/img/tools/storifyme.jpg
+      width: 1600
+      height: 800
+    formats:
+      - stories
+  - name: Viqeo Studio
+    description: Viqeo is the all-in-one video platform for creating Videos, Web Stories, Lessons and Onboardings.
+    url: https://viqeo.tv/
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/viqeostudio.png
+      width: 800
+      height: 400
+    formats:
+      - stories
   - name: Unbounce
     description: Unbounce is a platform to create landing pages, website popups, and sticky bars.
     url: https://unbounce.com
@@ -113,11 +216,21 @@ platforms:
     url: https://amp-wp.org/
     image:
       src: /static/img/tools/amp_for_wordpress.jpg
-      width: 700
-      height: 499
+      width: 800
+      height: 400
     formats:
       - websites
       - stories
+  - name: AMP for Magento
+    type: CMS
+    description: Convert Magento website into lightning fast eСommerce store powered by AMP technology.
+    url: https://store.plumrocket.com/accelerated-mobile-pages-magento2-extension.html
+    image:
+      src: /static/img/tools/plumrocket-amp-magento.jpg
+      width: 440
+      height: 209
+    formats:
+      - websites
   - name: Bold by Quintype
     type: CMS
     description: Bold by Quintype is a headless CMS built for enterprise publishers with built-in support for AMP.
@@ -150,16 +263,6 @@ platforms:
     formats:
       - websites
       - stories
-  - name: Gmail Playground
-    type: Testing
-    description: Draft AMP emails, see a live preview, and have your emails sent to your own Gmail account for testing.
-    url: https://developers.google.com/gmail/ampemail/testing-dynamic-email
-    image:
-      src: /static/img/tools/gmail_playground.png
-      width: 1000
-      height: 619
-    formats:
-      - email
   - name: Jumprope
     description: Platform to share and discover how-to stories that includes a creation tool on your phone to help you create how-to stories.
     url: https://www.jumprope.com/
@@ -169,6 +272,17 @@ platforms:
       width: 1500
       height: 1000
     formats:
+      - stories
+  - name: RebelMouse
+    description: Build AMP sites, posts, and stories. Win search, social, and email. Fast. Flexible. Secure. Modern.
+    url: https://www.rebelmouse.com/AMP/
+    type: Content Platform
+    image:
+      src: /static/img/tools/rebelmouse.jpg
+      width: 800
+      height: 400
+    formats:
+      - websites
       - stories
   - name: Tick. Done.
     description: Platform to share and discover how-to stories that includes a creation tool on your phone to help you create how-to stories.
@@ -190,6 +304,16 @@ platforms:
       height: 691
     formats:
       - email
+  - name: 8b Website Builder
+    type: Website Builder
+    description: Easy-to-use online AMP website builder to create lightning-fast web pages in a visual way.
+    url: https://8b.com/
+    image:
+      src: /static/img/tools/8b.jpg
+      width: 800
+      height: 400
+    formats:
+      - websites
 developer:
   - name: AMP Validator
     official: true
@@ -238,6 +362,17 @@ developer:
       src: /static/img/tools/amp_toolbox.jpg
       width: 700
       height: 527
+    formats:
+      - websites
+  - name: AMP Page Experience Guide
+    official: true
+    type: Optimization
+    description: Analyze and learn how to optimize your AMP pages for Google\'s page experience ranking signal
+    url: /page-experience/
+    image:
+      src: /static/img/tools/page-experience-guide.jpg
+      width: 800
+      height: 400
     formats:
       - websites
   - name: AMP Bench
@@ -347,65 +482,60 @@ developer:
       height: 1303
     formats:
       - websites
+  - name: SendTest.Email
+    description: Preview your email campaign's HTML, AMPHTML, and text versions before sending, in a real email client.
+    url: https://sendtest.email
+    type: Development
+    image:
+      src: /static/img/tools/sendtestemail.png
+      width: 700
+      height: 346
+      fit: contain
+    formats:
+      - email
+  - name: AMP Story Ad Preview Tool
+    official: true
+    type: Development
+    description: A tool to help for prototyping ads to be served in AMP Stories. Choose from pre-existing templates to get started.
+    url: https://ampstoryads.web.app
+    image:
+      src: /static/img/tools/amp-story-ad-preview.jpg
+      width: 1024
+      height: 831
+    formats:
+      - ads
+      - stories
+  - name: NodemailerApp
+    type: Development
+    description: NodemailerApp is an email debugging app that includes a local SMTP server and renders AMP for Email emails.
+    url: https://nodemailer.com/app/
+    image:
+      src: /static/img/tools/nodemailer.jpg
+      width: 800
+      height: 600
+    formats:
+      - email
+  - name: Ampify.io
+    url: https://www.ampify.io/
+    type: Development Platform
+    description: Fast and accurate conversion of dynamic websites to AMP. SaaS based for easy deployment. Supports all technologies.
+    image:
+      src: /static/img/tools/ampify.svg
+      width: 1500
+      height: 1000
+      fit: contain
+      bgcolor: "#55BFA7"
+    formats:
+      - websites
 providers:
-  - name: Amazon Simple Email Service (SES)
-    url: https://aws.amazon.com/ses/
-    type: Email Service
-    description: Cloud-based email sending service designed to help digital marketers and application developers send emails.
-    formats:
-      - email
-  - name: AWeber
-    url: https://www.aweber.com/
-    type: Email Service
-    description: Aweber's platform and API allows you to create and send emails your customers will love.
+  - name: WompMobile
+    url: https://www.wompmobile.com/amp-experience-platform/
+    type: Development
+    description: WompMobile is an Accelerator Platform to develop, validate, launch and manage AMP experiences. Built-in tools monitor for errors, ensure validation, purge the AMP cache, and create Signed-Exchange and Server-Side-Rendered AMPs.
     image:
-      src: /static/img/tools/aweber.png
-      width: 335
-      height: 70
+      src: /static/img/tools/wompmobile-logo.png
+      width: 440
+      height: 110
       fit: contain
     formats:
-      - email
-  - name: Sparkpost
-    url: https://www.sparkpost.com/
-    type: Email Service
-    description: Delivery and Analytics for Better Email Performance.
-    image:
-      src: /static/img/tools/sparkpost.png
-      width: 1034
-      height: 269
-      fit: contain
-    formats:
-      - email
-  - name: Twilio Sendgrid
-    url: https://www.twilio.com/sendgrid
-    type: Email Service
-    description: Reach customers using a flexible email API and marketing tools to increase customer engagement.
-    image:
-      src: /static/img/tools/sendgrid.png
-      width: 348
-      height: 148
-      fit: contain
-    formats:
-      - email
-  - name: Mailgun
-    url: https://www.mailgun.com/
-    type: Email Service
-    description: Mailgun's leading API-based email delivery service allows you to send dynamic email effortlessly.
-    image:
-      src: /static/img/tools/mailgun.png
-      width: 2430
-      height: 672
-      fit: contain
-    formats:
-      - email
-  - name: Clang
-    url: https://www.e-village.com/clang/
-    type: Email Service
-    description: Clang is a complete omnichannel marketing platform for email marketing and marketing automation.
-    image:
-      src: /static/img/tools/clang.png
-      width: 254
-      height: 255
-      fit: contain
-    formats:
-      - email
+      - websites

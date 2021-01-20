@@ -2,23 +2,25 @@
 $title: Top frame preview
 $order: 11
 formats:
- - websites
- - email
- - stories
- - ads
+  - websites
+  - email
+  - stories
+  - ads
+$sitemap:
+  enabled: False
 ---
 
 Start
 
 [example preview="top-frame" playground="true" template="amp-mustache" orientation="landscape"
-         imports="amp-list,amp-carousel,amp-bind,amp-lightbox-gallery" ]
+imports="amp-list,amp-carousel,amp-bind,amp-lightbox-gallery" ]
 
 ```html
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="viewport" content="width=device-width">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <link rel="canonical" href="/static/samples/standalone/amp-website.html">
   <title>AMP Website Demo</title>

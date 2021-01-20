@@ -36,15 +36,22 @@
   /* The following elements are not inside the burger-menu itself */
   &-label {
     position: fixed;
-    z-index: 17;
+    z-index: 1001;
     top: 12px;
     right: 20px;
     cursor: pointer;
+
     &.mainmenuopen {
       z-index: 1004;
     }
+
     .has-banner + & {
       top: calc(12px + #{$bannerHeight});
+    }
+
+    amp-user-notification[hidden] + .has-banner + &,
+    .amp-hidden + .has-banner + & {
+      top: 12px;
     }
 
     @media (min-width: 768px) {
@@ -72,7 +79,11 @@
   }
 
   &.mainmenuopen ~ .ap--main {
-    max-height: calc(100vh - #{$mobileHeaderHeight} - #{$bannerHeight});
+    max-height: calc(100vh - #{$mobileHeaderHeight});
+
+    .has-banner + & {
+      max-height: calc(100vh - #{$mobileHeaderHeight} - #{$bannerHeight});
+    }
   }
 
   &.mainmenuopen ~ .ap--footer {
@@ -124,6 +135,7 @@
         padding: 0;
         margin: 0;
         background: none transparent;
+        border: none;
         cursor: pointer;
         -webkit-appearance: none;
 
@@ -136,12 +148,12 @@
             display: block;
           }
           & + .nav-icon .#{atom('ico')} {
-            transform: rotate(-90deg);
+            transform: rotate(0);
           }
         }
         & + .nav-icon .#{atom('ico')} {
           display: inline-block;
-          transform: rotate(0);
+          transform: rotate(-90deg);
         }
       }
 

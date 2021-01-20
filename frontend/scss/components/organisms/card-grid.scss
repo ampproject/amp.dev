@@ -47,7 +47,7 @@
     margin: 18px 0;
     position: relative;
     width: 100%;
-    border-bottom: 1px solid color('alto');
+    border-bottom: 1px solid color('iron');
 
     @media (min-width: 600px) {
       max-width: 48%;
@@ -85,6 +85,10 @@
         margin-top: 0;
         margin: 25px 0 0 0;
       }
+    }
+
+    .ap-a-btn {
+      margin-top: 20px;
     }
   }
 

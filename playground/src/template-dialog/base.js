@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -37,11 +37,11 @@ class TemplateDialog {
   open(runtime) {
     this.runtime = runtime;
     this.fetchTemplates()
-        .then((sitemap) => this.renderTemplates(sitemap))
-        .catch((err) => {
-          console.log(err);
-          this.callback.onError('Could not fetch templates');
-        });
+      .then((sitemap) => this.renderTemplates(sitemap))
+      .catch((err) => {
+        console.log(err);
+        this.callback.onError('Could not fetch templates');
+      });
   }
 
   close() {
@@ -57,20 +57,24 @@ class TemplateDialog {
     }
     this.templates = fetch(SITEMAP_URL, {
       mode: 'cors',
-    }).then((response) => {
-      this.button.enable();
-      return response.json();
-    }).catch((err) => {
-      console.error(err);
-      this.templates = null;
-    });
+    })
+      .then((response) => {
+        this.button.enable();
+        return response.json();
+      })
+      .catch((err) => {
+        console.error(err);
+        this.templates = null;
+      });
     return this.templates;
   }
 
   renderTemplates(sitemap) {
     const root = this.doc.createElement('div');
     root.addEventListener('click', this._onListItemClick.bind(this));
-    const heading = this.doc.createRange().createContextualFragment(dialogHeader);
+    const heading = this.doc
+      .createRange()
+      .createContextualFragment(dialogHeader);
     root.appendChild(heading);
     root.setAttribute('id', 'templates');
     const searchStrings = [];
@@ -114,16 +118,18 @@ class TemplateDialog {
     this.close();
     fetch(url, {
       mode: 'cors',
-    }).then((response) => response.text())
-        .then((body) => {
-          this.callback.onSuccess({
-            url,
-            content: this.makeLinksAbsolute(url, body),
-          });
-        }).catch((err) => {
-          console.error(err);
-          this.callback.onError('Could not fetch template');
+    })
+      .then((response) => response.text())
+      .then((body) => {
+        this.callback.onSuccess({
+          url,
+          content: this.makeLinksAbsolute(url, body),
         });
+      })
+      .catch((err) => {
+        console.error(err);
+        this.callback.onError('Could not fetch template');
+      });
   }
 
   makeLinksAbsolute(url, body) {
@@ -142,24 +148,29 @@ class TemplateDialog {
 
   selectTemplatesForRuntime(sitemap) {
     let templates = null;
-    if (this.runtime.id === 'amphtml') {
-      templates = sitemap['websites'];
-    } else if (this.runtime.id === 'amp4ads') {
-      templates = sitemap['ads'];
-    } else if (this.runtime.id === 'amp4stories') {
-      templates = sitemap['stories'];
-    } else if (this.runtime.id === 'amp4email') {
-      templates = sitemap['email'];
+
+    if (sitemap) {
+      if (this.runtime.id === 'amphtml') {
+        templates = sitemap['websites'];
+      } else if (this.runtime.id === 'amp4ads') {
+        templates = sitemap['ads'];
+      } else if (this.runtime.id === 'amp4stories') {
+        templates = sitemap['stories'];
+      } else if (this.runtime.id === 'amp4email') {
+        templates = sitemap['email'];
+      }
     }
 
     if (templates && templates.categories && templates.categories.length) {
       return templates;
     } else {
       return {
-        categories: [{
-          name: 'No templates available',
-          examples: [],
-        }],
+        categories: [
+          {
+            name: 'No templates available',
+            examples: [],
+          },
+        ],
       };
     }
   }

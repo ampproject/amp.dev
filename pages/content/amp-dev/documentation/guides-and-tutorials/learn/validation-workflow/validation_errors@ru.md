@@ -194,7 +194,7 @@ CDATA – это контент между открывающим и закры
 <table>
    <tr>
   	<td class="col-thirty"><strong>Код</strong></td>
-  	<td><span class="notranslate">CDATA_VIOLATES_BLACKLIST</span></td>
+  	<td><span class="notranslate">CDATA_VIOLATES_DENYLIST</span></td>
   </tr>
    <tr>
   	<td class="col-thirty"><strong>Формат</strong></td>
@@ -208,7 +208,7 @@ CDATA – это контент между открывающим и закры
 
 Определенные данные CSS были внесены в черный список, чтобы проверить соответствие важным правилам CSS для AMP.
 
-Черный список данных CSS (см. также [`blacklisted_cdata_regex` в спецификации валидатора AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)):
+Черный список данных CSS (см. также [`disallowed_cdata_regex` в спецификации валидатора AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)):
 
 * `"\\.i?-amp-"` ("префикс имени для класса -amp- в CSS")
 * `"!important"`
@@ -552,7 +552,7 @@ CDATA – это контент между открывающим и закры
 * `<body>`
 * `<script src="https://cdn.ampproject.org/v0.js">`
 
-## Ошибки стиля и дизайна
+## Ошибки стиля и дизайна <a name="style-and-layout-errors"></a>
 
 Прежде чем переходить к разбору ошибок, следует понять, как на AMP-страницах работают [стили](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md) и [шаблоны](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md). Поскольку AMP-страницы имеют формат HTML, они во многом похожи на обычные HTML-страницы.
 Но существует ряд ограничений, которые обеспечивают быструю загрузку контента.

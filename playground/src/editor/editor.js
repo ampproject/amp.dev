@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -38,17 +38,24 @@ require('./editor.scss');
 
 const DEFAULT_DEBOUNCE_RATE = 500;
 const HINT_IGNORE_ENDS = new Set([
-  ';', ',',
+  ';',
+  ',',
   ')',
-  '`', '"', '\'',
+  '`',
+  '"',
+  "'",
   '>',
-  '{', '}',
-  '[', ']',
+  '{',
+  '}',
+  '[',
+  ']',
 ]);
 const HINTS_URL = 'amphtml-hint.json';
 
 export const EVENT_INPUT_CHANGE = 'editor-input-change';
 export const EVENT_INPUT_NEW = 'editor-input-new';
+export const EVENT_UPDATE_EDITOR_CONTENT = 'event-update-editor-content';
+export const EVENT_UPDATE_CURSOR_FOCUS = 'event-focus-line';
 
 export function createEditor(container) {
   return new Editor(container, window);
@@ -63,6 +70,12 @@ class Editor {
     this.errorMarkers = [];
     this.loader = new Loader(this.container, 'light');
     this.amphtmlHints = this.fetchHintsData();
+
+    events.subscribe(EVENT_UPDATE_EDITOR_CONTENT, this.setSource.bind(this));
+    events.subscribe(
+      EVENT_UPDATE_CURSOR_FOCUS,
+      this.setCursorAndFocus.bind(this)
+    );
   }
 
   createCodeMirror() {
@@ -72,7 +85,7 @@ class Editor {
       mode: 'text/html',
       selectionPointer: true,
       styleActiveLine: true,
-      lineNumbers: false,
+      lineNumbers: true,
       showCursorWhenSelecting: true,
       cursorBlinkRate: 300,
       autoCloseBrackets: true,
@@ -160,7 +173,11 @@ class Editor {
         const message = marker.appendChild(document.createElement('span'));
         message.appendChild(document.createTextNode(error.message));
         marker.className = 'gutter-' + error.icon;
-        this.codeMirror.setGutterMarker(error.line - 1, 'CodeMirror-error-markers', marker);
+        this.codeMirror.setGutterMarker(
+          error.line - 1,
+          'CodeMirror-error-markers',
+          marker
+        );
       });
     });
   }
@@ -188,6 +205,7 @@ class Editor {
 
   loadHints(validator) {
     this.amphtmlHints.then((hints) => {
+      // eslint-disable-next-line no-unused-vars
       for (const key of Object.keys(CodeMirror.htmlSchema)) {
         delete CodeMirror.htmlSchema[key];
       }
@@ -203,14 +221,16 @@ class Editor {
   fetchHintsData() {
     return new Promise((resolve, reject) => {
       window.requestIdleCallback(() => {
-        fetch(HINTS_URL).then((response) => {
-          if (response.status !== 200) {
-            return reject(new Error(`Error code ${response.status}`));
-          }
-          resolve(response.json());
-        }).catch((err) => {
-          reject(err);
-        });
+        fetch(HINTS_URL)
+          .then((response) => {
+            if (response.status !== 200) {
+              return reject(new Error(`Error code ${response.status}`));
+            }
+            resolve(response.json());
+          })
+          .catch((err) => {
+            reject(err);
+          });
       });
     });
   }

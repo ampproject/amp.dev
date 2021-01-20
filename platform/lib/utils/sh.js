@@ -25,7 +25,6 @@ const DEFAULT_OPTIONS = {
   quiet: false,
 };
 
-
 /**
  * Executes a shell command.
  *
@@ -85,13 +84,10 @@ function extractOptions(params) {
 
 function extractCommandFragments(command) {
   if (typeof command === 'string') {
-    return command.replace(/\s+/gm, ' ')
-        .trim()
-        .split(' ');
+    return command.replace(/\s+/gm, ' ').trim().split(' ');
   }
   return command;
 }
-
 
 function isString(obj) {
   return obj && obj.length > 0 && typeof obj[0] === 'string';
@@ -99,4 +95,5 @@ function isString(obj) {
 
 module.exports = {
   sh,
+  extractCommandFragments,
 };

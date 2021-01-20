@@ -22,18 +22,19 @@ teaser:
 
 
 highlighted_components:
-  - /content/amp-dev/documentation/components/reference/amp-analytics.md
-  - /content/amp-dev/documentation/components/reference/amp-autocomplete.md
-  - /content/amp-dev/documentation/components/reference/amp-carousel.md
-  - /content/amp-dev/documentation/components/reference/amp-ad.md
-  - /content/amp-dev/documentation/components/reference/amp-list.md
-  - /content/amp-dev/documentation/components/reference/amp-story.md
+  - /content/amp-dev/documentation/components/reference/amp-analytics-v0.1.md
+  - /content/amp-dev/documentation/components/reference/amp-autocomplete-v0.1.md
+  - /content/amp-dev/documentation/components/reference/amp-carousel-v0.2.md
+  - /content/amp-dev/documentation/components/reference/amp-ad-v0.1.md
+  - /content/amp-dev/documentation/components/reference/amp-list-v0.1.md
+  - /content/amp-dev/documentation/components/reference/amp-story-v1.0.md
+
+recent_components:
 
 ---
 {% do doc.styles.addCssFile('/css/components/templates/component-overview.css') %}
 
 {% block main %}
-{% include 'views/partials/component-sidebar.j2' %}
 {% include 'views/partials/sidebar-toggle-observer.j2' %}
 <main class="ap--main ap-t-component-overview">
   <div class="ap--container">
@@ -107,15 +108,31 @@ highlighted_components:
           </div>
         </div>
       </section>
+      {% if doc.recent_components %}
+      <section class="ap--section">
+        <h2>Recent Components</h2>
+        <div class="ap-m-teaser-component ap-m-teaser-component-recent">
+          <div class="ap-m-teaser-container">
+            {% for teaser_doc in doc.recent_components %}
+            {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
+              [% if format in '{{ teaser_doc.formats }}'%]
+                {% with highlightedTeaser = True %}
+                {% include 'views/partials/teaser.j2' %}
+                {% endwith %}
+              [% endif %]
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+      {% endif %}
 
-      <section class="ap-m-table-component-container">
+      <section id="filter" class="ap-m-table-component-container">
         {% set categories = g.categories('/content/amp-dev/documentation/components/reference', locale=doc.locale) %}
         {% do doc.styles.addCssFile('/css/components/molecules/table-component.css') %}
+        {% set filter_categories = categories|map(attribute=0)|list|tojson %}
 
-
-        <h2>Categories</h2>
+        <h2>Filter by category</h2>
         {% include 'views/partials/category-filter.j2'%}
-
 
         {% for category, docs in categories %}
         {% set scope = namespace(categoryFormats = []) %}
@@ -125,21 +142,40 @@ highlighted_components:
           {% set scope.categoryFormats = scope.categoryFormats + formats %}
         {% endfor %}
 
+        [% if not {{ filter_categories }}.includes(category) or {{ filter_categories }}.includes(category) and category == '{{ category|slug }}' %]
         {% set category_name = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
-        <div [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ category|slug }}'">
-          <div id="{{ category }}" class="ap-m-table-component">
-            [% if format in '{{ scope.categoryFormats|unique|list|tojson }}' %]
+        <div id="{{ category }}" class="ap-m-table-component">
+            {% if category %}
             <h4 id="{{ category }}">{{ _(category_name) }}</h4>
-            [% endif %]
-            {% for component in docs %}
-            <a class="ap-m-table-component-link" href="{{ component.url.path }}" [% if format not in '{{ component.formats }}' and forcedFiltered != true %]hidden[% endif %]>
+            {% endif %}
+            {% for component in docs if component.is_current %}
+            {# The latest document might not support a format, hence we have to check if any version supports a format #}
+            {% set formats = [component.formats] %}
+            {% if component.versions|count > 1 %}
+            {% for version in component.versions %}
+            {% set versionDoc = g.doc('/content/amp-dev/documentation/components/reference/' + component.title + '-v' + version + '.md') %}
+            {% do formats.append(versionDoc.formats) %}
+            {% endfor %}
+            {% endif %}
+            {% set formats = formats|sum(start=[])|unique|list %}
+
+            <a class="ap-m-table-component-link" href="{{ component.url.path }}" [% if format not in {{ formats|tojson }} and forcedFiltered != true %]hidden[% endif %]>
               <div class="ap-m-table-component-row-components">
-                {% if component.formats %}
+                {% if formats %}
                 {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
                 <div class="ap-m-table-component-tags">
-                  {% for format in component.formats %}
-                  <div class="ap-m-tag ap-m-tag-{{ format }} ap-m-table-component-tag"></div>
-                  {% endfor %}
+                  {% if 'websites' in formats %}
+                  <div class="ap-m-tag ap-m-tag-websites ap-m-table-component-tag"></div>
+                  {% endif %}
+                  {% if 'stories' in formats %}
+                  <div class="ap-m-tag ap-m-tag-stories ap-m-table-component-tag"></div>
+                  {% endif %}
+                  {% if 'ads' in formats %}
+                  <div class="ap-m-tag ap-m-tag-ads ap-m-table-component-tag"></div>
+                  {% endif %}
+                  {% if 'email' in formats or 'emails' in formats %}
+                  <div class="ap-m-tag ap-m-tag-email ap-m-table-component-tag"></div>
+                  {% endif %}
                 </div>
                 {% else %}
                 <p></p>
@@ -154,10 +190,13 @@ highlighted_components:
             </a>
             {% endfor %}
           </div>
-        </div>
+        [% endif %]
         {% endfor %}
       </section>
     </section>
   </div>
 </main>
+{% with type = 'component' %}
+{% include 'views/partials/sidebar.j2' %}
+{% endwith %}
 {% endblock %}

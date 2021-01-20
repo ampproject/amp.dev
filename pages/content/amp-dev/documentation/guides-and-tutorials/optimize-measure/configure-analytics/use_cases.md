@@ -74,7 +74,7 @@ Send pageview data to Google Analytics
 </amp-analytics>
 ```
 
-## Tracking page clicks
+## Tracking page clicks <a name="tracking-page-clicks"></a>
 
 Learn how to track page clicks using
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md),
@@ -142,7 +142,7 @@ to send a `click` event to Google Analytics when a particular element is clicked
 </amp-analytics>
 ```
 
-## Tracking scrolling
+## Tracking scrolling <a name="tracking-scrolling"></a>
 
 Track page scrolling using [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
 The following example uses the `scrollspec` attribute to send a `scroll` event
@@ -174,7 +174,7 @@ to 90% of `scroll` width:
 </amp-analytics>
 ```
 
-## Tracking social interactions
+## Tracking social interactions <a name="tracking-social-interactions"></a>
 
 Learn how to track social interactions using
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md),

@@ -6,16 +6,16 @@ author: sebastianbenz
 <!--
   ## Introduction
 
-  [`amp-selector`](/content/amp-dev/documentation/components/reference/amp-selector.md) lets the user choose from a list of options. The contents of the options isn't limited to just text.
+  [`amp-selector`](/content/amp-dev/documentation/components/reference/amp-selector-v0.1.md) lets the user choose from a list of options. The contents of the options isn't limited to just text.
 -->
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 <head>
   <meta charset="utf-8">
   <title>amp-selector</title>
   <link rel="canonical" href="<% canonical %>">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <!-- ## Setup -->
   <!--
@@ -59,9 +59,6 @@ author: sebastianbenz
   border-right: 2px solid var(--color-primary);
   height: 60px;
 }
-.radio-selector [option][selected] {
-  outline: none;
-}
 .radio-selector [option] {
   display: flex;
   align-items: center;
@@ -101,11 +98,11 @@ author: sebastianbenz
   `amp-selector` defaults to single selection. The `option` is required for all selectable elements, for example, the divider in the following sample cannot be selected.
   -->
   <amp-selector class="sample-selector" layout="container">
-    <amp-img src="/static/samples/img/landscape_sea_300x199.jpg"  width="90" height="60" option="1"></amp-img>
-    <amp-img src="/static/samples/img/landscape_desert_300x200.jpg" width="90" height="60" option="2"></amp-img>
+    <amp-img src="/static/samples/img/landscape_sea_300x199.jpg" alt="Image 1" width="90" height="60" option="1"></amp-img>
+    <amp-img src="/static/samples/img/landscape_desert_300x200.jpg" alt="Image 2" width="90" height="60" option="2"></amp-img>
     <div class="divider inline-block mx1"></div>
-    <amp-img src="/static/samples/img/landscape_ship_300x200.jpg" width="90" height="60" option="3"></amp-img>
-    <amp-img src="/static/samples/img/landscape_village_300x200.jpg" width="90" height="60" option="4"></amp-img>
+    <amp-img src="/static/samples/img/landscape_ship_300x200.jpg" alt="Image 3" width="90" height="60" option="3"></amp-img>
+    <amp-img src="/static/samples/img/landscape_village_300x200.jpg" alt="Image 4" width="90" height="60" option="4"></amp-img>
   </amp-selector>
 
   <!-- ## Multi select -->
@@ -113,10 +110,10 @@ author: sebastianbenz
   Add the attribute `multiple` to enable multi selection.
   -->
   <amp-selector layout="container" class="sample-selector" multiple>
-    <amp-img src="/static/samples/img/landscape_sea_300x199.jpg"  width="90" height="60" option="1"></amp-img>
-    <amp-img src="/static/samples/img/landscape_desert_300x200.jpg" width="90" height="60" option="2"></amp-img>
-    <amp-img src="/static/samples/img/landscape_ship_300x200.jpg" width="90" height="60" option="3"></amp-img>
-    <amp-img src="/static/samples/img/landscape_village_300x200.jpg" width="90" height="60" option="4"></amp-img>
+    <amp-img src="/static/samples/img/landscape_sea_300x199.jpg" alt="Image 1"  width="90" height="60" option="1"></amp-img>
+    <amp-img src="/static/samples/img/landscape_desert_300x200.jpg" alt="Image 2" width="90" height="60" option="2"></amp-img>
+    <amp-img src="/static/samples/img/landscape_ship_300x200.jpg" alt="Image 3" width="90" height="60" option="3"></amp-img>
+    <amp-img src="/static/samples/img/landscape_village_300x200.jpg" alt="Image 4" width="90" height="60" option="4"></amp-img>
   </amp-selector>
 
   <!-- ## Disable and pre-select attributes -->
@@ -127,10 +124,10 @@ author: sebastianbenz
   * `selected`: pre-select an element.
   -->
   <amp-selector layout="container" class="sample-selector" multiple>
-    <amp-img src="/static/samples/img/landscape_sea_300x199.jpg"  width="90" height="60" option="1"></amp-img>
-    <amp-img src="/static/samples/img/landscape_desert_300x200.jpg" width="90" height="60" option="2" selected></amp-img>
-    <amp-img src="/static/samples/img/landscape_ship_300x200.jpg" width="90" height="60" option="3"></amp-img>
-    <amp-img src="/static/samples/img/landscape_village_300x200.jpg" width="90" height="60" option="4" disabled></amp-img>
+    <amp-img src="/static/samples/img/landscape_sea_300x199.jpg" alt="Image 1"  width="90" height="60" option="1"></amp-img>
+    <amp-img src="/static/samples/img/landscape_desert_300x200.jpg" alt="Image 2" width="90" height="60" option="2" selected></amp-img>
+    <amp-img src="/static/samples/img/landscape_ship_300x200.jpg" alt="Image 3" width="90" height="60" option="3"></amp-img>
+    <amp-img src="/static/samples/img/landscape_village_300x200.jpg" alt="Image 4" width="90" height="60" option="4" disabled></amp-img>
   </amp-selector>
 
   <!-- ## Disabled amp-selector -->
@@ -138,10 +135,47 @@ author: sebastianbenz
   Add the attribute `disabled` to disable the whole selector.
   -->
   <amp-selector layout="container" class="sample-selector" disabled>
-    <amp-img src="/static/samples/img/landscape_sea_300x199.jpg"  width="90" height="60"></amp-img>
-    <amp-img src="/static/samples/img/landscape_desert_300x200.jpg" width="90" height="60"></amp-img>
-    <amp-img src="/static/samples/img/landscape_ship_300x200.jpg" width="90" height="60"></amp-img>
-    <amp-img src="/static/samples/img/landscape_village_300x200.jpg" width="90" height="60"></amp-img>
+    <amp-img src="/static/samples/img/landscape_sea_300x199.jpg" alt="Image 1"  width="90" height="60"></amp-img>
+    <amp-img src="/static/samples/img/landscape_desert_300x200.jpg" alt="Image 2" width="90" height="60"></amp-img>
+    <amp-img src="/static/samples/img/landscape_ship_300x200.jpg" alt="Image 3" width="90" height="60"></amp-img>
+    <amp-img src="/static/samples/img/landscape_village_300x200.jpg" alt="Image 4" width="90" height="60"></amp-img>
+  </amp-selector>
+
+  <!-- ## Keyboard select modes -->
+  <!--
+  Add the attribute `keyboard-select-mode` to opt into a pre-defined user interaction pattern for `amp-selector`. 
+  By default the value is 'NONE' and displays the following behavior.
+  -->
+  <amp-selector layout="container" keyboard-select-mode="none" class="sample-selector" disabled>
+    <amp-img src="/static/samples/img/landscape_sea_300x199.jpg" alt="Image 1"  width="90" height="60"></amp-img>
+    <amp-img src="/static/samples/img/landscape_desert_300x200.jpg" alt="Image 2" width="90" height="60"></amp-img>
+    <amp-img src="/static/samples/img/landscape_ship_300x200.jpg" alt="Image 3" width="90" height="60"></amp-img>
+    <amp-img src="/static/samples/img/landscape_village_300x200.jpg" alt="Image 4" width="90" height="60"></amp-img>
+  </amp-selector>
+
+  <!-- ### Keyboard select mode: Focus -->
+  <!--
+  Add the attribute `keyboard-select-mode="focus"` so the Tab key gives focus to `amp-selector`. 
+  The user navigates between items with the arrow keys. Must press space or enter to change the selection.
+  -->
+  <amp-selector layout="container" keyboard-select-mode="focus" class="sample-selector">
+    <amp-img src="/static/samples/img/landscape_sea_300x199.jpg" alt="Image 1"  width="90" height="60"></amp-img>
+    <amp-img src="/static/samples/img/landscape_desert_300x200.jpg" alt="Image 2" width="90" height="60"></amp-img>
+    <amp-img src="/static/samples/img/landscape_ship_300x200.jpg" alt="Image 3" width="90" height="60"></amp-img>
+    <amp-img src="/static/samples/img/landscape_village_300x200.jpg" alt="Image 4" width="90" height="60"></amp-img>
+  </amp-selector>
+
+
+  <!-- ### Keyboard select mode: Select -->
+  <!--
+  Add the attribute `keyboard-select-mode="focus"` so the Tab key gives focus to `amp-selector`. 
+  The selection changes as the user navigates options with arrow keys.
+  -->
+  <amp-selector layout="container" keyboard-select-mode="select" class="sample-selector">
+    <amp-img src="/static/samples/img/landscape_sea_300x199.jpg" alt="Image 1"  width="90" height="60"></amp-img>
+    <amp-img src="/static/samples/img/landscape_desert_300x200.jpg" alt="Image 2" width="90" height="60"></amp-img>
+    <amp-img src="/static/samples/img/landscape_ship_300x200.jpg" alt="Image 3" width="90" height="60"></amp-img>
+    <amp-img src="/static/samples/img/landscape_village_300x200.jpg" alt="Image 4" width="90" height="60"></amp-img>
   </amp-selector>
 
   <!-- ## Actions -->
@@ -150,10 +184,10 @@ author: sebastianbenz
   -->
   <div>
     <amp-selector id="actionsSample" layout="container" class="sample-selector" multiple>
-      <amp-img src="/static/samples/img/landscape_sea_300x199.jpg"  width="90" height="60" option="1"></amp-img>
-      <amp-img src="/static/samples/img/landscape_desert_300x200.jpg" width="90" height="60" option="2"></amp-img>
-      <amp-img src="/static/samples/img/landscape_ship_300x200.jpg" width="90" height="60" option="3" selected></amp-img>
-      <amp-img src="/static/samples/img/landscape_village_300x200.jpg" width="90" height="60" option="4"></amp-img>
+      <amp-img src="/static/samples/img/landscape_sea_300x199.jpg" alt="Image 1"  width="90" height="60" option="1"></amp-img>
+      <amp-img src="/static/samples/img/landscape_desert_300x200.jpg" alt="Image 2" width="90" height="60" option="2"></amp-img>
+      <amp-img src="/static/samples/img/landscape_ship_300x200.jpg" alt="Image 3" width="90" height="60" option="3" selected></amp-img>
+      <amp-img src="/static/samples/img/landscape_village_300x200.jpg" alt="Image 4" width="90" height="60" option="4"></amp-img>
       <amp-img src="/static/samples/img/landscape_trees_300x225.jpg" width="90" height="60" option="5" selected></amp-img>
       <amp-img src="/static/samples/img/landscape_green_300x200.jpg" width="90" height="60" option="6"></amp-img>
     </amp-selector>
@@ -183,9 +217,12 @@ author: sebastianbenz
     <div>All selected option(s): <code [text]="allSelectedOptions.join(', ')">a</code></div>
   </div>
 
-  <!-- ## Forms -->
   <!--
-Inside a form, `amp-selector` behaves like a radio-button/checkbox group and submits the selected value(s) against the name of the amp-selector. Here we've styled an `amp-selector` to function like a radio list. Using `amp-selector` for this has the advantage that bindings using [`amp-bind`](/documentation/components/reference/amp-bind.html) are easier to implement.
+    ## Forms
+
+    Inside a form, `amp-selector` behaves like a radio-button/checkbox group and submits the selected value(s) against the name of the amp-selector. Here we've styled an `amp-selector` to function like a radio list. Using `amp-selector` for this has the advantage that bindings using [`amp-bind`](/documentation/components/reference/amp-bind.html) are easier to implement.
+
+    @formats(websites)
   -->
 <form action="#" method="get" target="_top">
   <amp-selector class="radio-selector" layout="container" name="my-selector">

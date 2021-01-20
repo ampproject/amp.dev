@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 {% if not example.has_tag_in_head('title') %}
-  <title>{{export.title|e}} - {{_('Example')}} {{example.index}}</title>
+  <title>{{export.title|e}} - {{_('Example')|e}} {{example.index|e}}</title>
 {% else %}
   <title>{{example.get_tag_content(example.head, 'title')|e}}</title>
 {% endif %}
@@ -16,7 +16,7 @@
 {% if example.template and not example.has_import_in_head(example.template) %}
   <script custom-template="{{example.template.name}}" src="https://cdn.ampproject.org/v0/{{example.template.name}}-{{example.template.version}}.js" async></script>
 {% endif %}
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
 {% if example.custom_style %}
   <style amp-custom>

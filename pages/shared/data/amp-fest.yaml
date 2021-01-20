@@ -1,0 +1,89 @@
+agenda:
+  day_1:
+    - title: Keynote
+      time: "9AM PT"
+      speakers:
+        - Malte Ubl, Google
+        - Joey Rozier, Google
+        - Crystal Lambert, Google
+        - Vamsee Jasti, Google
+      description: "Join us as we celebrate 5 years of AMP and learn about the latest ways the AMP community is working to make the web better for everyone – publishers, platforms, advertisers, creators, and of course, users. In this keynote you’ll get an overview of what’s new in the world of AMP, but be sure to watch the other talks to take a deeper dive into each of the topics covered"
+
+    - title: The Road To Great Page Experiences
+      speakers:
+        - Ben Morss, Google
+      description: "Google Search recently announced a new Search ranking signal centered around page experience. In this talk from Ben Morss, you’ll learn all about how AMP puts developers and publishers on the well-lit path to creating and maintaining great page experiences for their users as a cost-effective solution."
+
+    - title: "AMP As A Service: Productive Web Development"
+      speakers:
+        - Naina Raisinghani, Google
+      description: "Building and maintaining a great page experience for your website is challenging. In this talk you’ll learn how AMP takes the pain out of web development by providing out-of-the-box solutions that help developers cut costs and save time."
+
+    - title: Accessibility In AMP
+      speakers:
+        - Caroline Liu, Google
+      description: "We all know web accessibility is important, but it's also hard. Learn about AMP's overarching accessibility principles, and how we are strengthening our accessibility foundations across all formats to become the best suited framework to help you provide an accessible user experience out of the box."
+
+    - title: Success with WordPress, Powered By AMP
+      speakers:
+        - Alberto Medina, Google
+      description: "AMP is a powerful and cost-effective tool which makes it easier for everyone to build great-performing sites. In this talk you will learn about the official AMP Plugin for WordPress, how it can help you build great performing sites, and how it delivers on the promise of enabling AMP content publishing in WordPress in a way that is fully and seamlessly integrated with the standard content publishing mechanisms of the WordPress platform."
+
+    - title: How AMP Speeds Up The Production Process For Agencies
+      speakers:
+        - Thomas Feldhaus, Jung von Matt
+      description: "The demand for an appealing presentation of content on the web while providing excellent usability, built-in performance and accessibility has increased dramatically in recent years. In this talk from Thomas Feldhaus, the managing director of JvM TECH, you’ll learn how agencies can use AMP to accelerate development processes while ensuring a consistently high quality of execution."
+
+    - title: 5 Ways Recruit Maintains High Performance And Productivity Using AMP
+      speakers:
+        - Yosuke Furukawa, Recruit
+      description: "While there are many options of frameworks to build a website in the year of 2020, Recruit released a brand new website powered by AMP. The talk will walk through the tips of building an AMP First website covering framework topics such as Next.js, all the way to operational strategies like off-cache AMP."
+
+    - title: "UnoTV: From Mobile First to AMP First"
+      speakers:
+        - Violeta Rosales, UnoTV
+      description: "Uno TV is the number one digital native news outlet in Mexico with more than 13 million unique users per month. After more than 3 years of working with AMP as part of its content distribution strategy, and months of evaluating the implications of moving away from a mobile-first approach, Uno TV decided to move to a full AMP First website. In this talk you will learn about Uno TV's transition to AMP First, as well as the benefits and challenges the news outlet faced as an ad-based news website."
+
+    - title: "WordPress.com - democratizing performance with AMP"
+      speakers:
+        - Jason Caldwell, Automattic
+      description: "In this talk from Jason Caldwell, the Growth Engineering Lead at Automattic, you’ll learn all about how going AMP First helped WordPress.com boost conversion rates, lower acquisition costs, and improve the performance of key WordPress.com landing pages."
+
+    - title: "Televisa: Our Journey To AMP"
+      speakers:
+        - Antonio González de Leon, Televisa
+      description: "There are many lessons newer publishers and developers can learn from veterans of the media industry. In this talk you will learn how Televisa, one of the biggest media organizations in the Spanish-speaking market, began its journey towards AMP and eventually went AMP First. Antonio González de León is the CTO at Televisa Digital in Mexico City. He has over 20 years of experience in media and technology."
+
+    - title: What's Next In AMP?
+      speakers:
+        - Naina Raisinghani, Google
+      description: "The AMP Project has seen amazing growth since it was first introduced 5 years ago. In this talk you’ll learn about the progress being made on exciting new projects like Bento AMP, as well as learn more about the key focus areas for AMP websites in 2020 and beyond."
+
+    - title: An Update On Web Stories
+      speakers:
+        - Varun Rao, Google
+      description: "Web Stories are a new and modern way for immersive storytelling on the open web. Web Stories continues to see great momentum as they are adopted by publishers and creators all across the web ecosystem. In this talk you’ll learn about the awesome new capabilities coming to Web Stories and the ways in which you can make them a rich part of your site experience."
+
+    - title: Web Stories For WordPress
+      speakers:
+        - Pascal Birchler, Google
+      description: "Web Stories are a new and modern way for immersive storytelling on the open web. With our new visual editor, we're bringing first-class Web Stories support to WordPress. This free tool allows users to easily create beautiful, engaging stories that follow best practices. In this talk you will learn all about Web Stories for WordPress, its benefits for content creators using the platform, and how this new editor fits into the overall Web Stories ecosystem. We will also take a sneak peek under the hood of the WordPress plugin and get to know how it is powered by the Web Story format, as well as the various ways it uses the AMP components at hand."
+
+
+    - title: An Update On AMP For Email
+      speakers:
+        - Jon Harmer, Google
+        - Rachel Boyles, Salesforce
+        - Nirmal Thangaraj, Yahoo
+      description: "AMP for Email has been commercially available for more than a year and a half and continues to delight users and improve business results with new use cases for dynamic email every day. In this talk you’ll learn about what's new for AMP For Email, Gmail, and hear from the newest email clients and senders supporting AMP."
+
+    - title: Sender Success With AMP For Email
+      speakers:
+        - Sefunmi Osinaike, Copper
+        - Dmitry Kudrenko, Stripo
+        - Leo Koster, VOGSY
+        - Jason Maynard, Guru
+      description: "AMP for Email is helping all kinds of businesses cut costs, save time, and delight their customers with rich, dynamic email experiences. In this talk you’ll hear from several email senders who are seeing amazing results bringing dynamic email to their users."
+
+
+

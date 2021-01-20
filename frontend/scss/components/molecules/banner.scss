@@ -15,6 +15,19 @@
 @import 'components/atoms/_headline.scss';
 
 .#{molecule('banner')} {
+  $root: &;
+  &-user-notification {
+    display: none;
+
+    & ~ header #{$root} {
+      display: none;
+    }
+
+    &.amp-active ~ header #{$root} {
+      display: flex;
+    }
+  }
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,6 +58,22 @@
     z-index: 999;
     width: 100%;
     color: color('black');
-    background: color('turbo');
+    background: color('school-bus');
+  }
+
+  &-dismiss {
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    background-color: color('white');
+    border: 0;
+    cursor: pointer;
+    margin: 0 8px;
+
+    svg {
+      fill: color('blue-ribbon');
+      width: 110%;
+      height: 110%;
+    }
   }
 }

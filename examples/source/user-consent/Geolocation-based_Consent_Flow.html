@@ -1,33 +1,35 @@
 <!---
 
 teaserImage: '/static/samples/img/teaser/geolocation-based_consent_flow.jpg'
-author: sebastianbenz
+author:
+  - micajuine-ho
+  - sebastianbenz
 
 --->
 
 <!--
   ## Introduction
 
-  Sometimes is necessary to ask only users from specific countries for consent. This sample demonstrates
+  Sometimes is necessary to ask only users from specific countries or regions for consent. This sample demonstrates
   how you can use `amp-consent` together with `amp-geo` to achieve this. In this sample we'll build a
-  consent dialog that will only show for users from the EU.
+  consent dialog that will show for users from U.S. California and another consent dialog that will show for users in the EEA (a predefined country group).
 -->
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 <head>
-  <meta charset="utf-8">
+<meta charset="utf-8">
   <link rel="canonical" href="<% canonical %>">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <title>Geolocation-based Consent Flow</title>
   <!-- ## Setup -->
   <!--
-  We need to import both, the `amp-consent` ...
+  We need to import both, the [`amp-consent`](/content/amp-dev/documentation/components/reference/amp-consent.md) ...
   -->
   <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
   <!--
-  ... and the `amp-geo` extension.
+  ... and the [`amp-geo`](/content/amp-dev/documentation/components/reference/amp-geo.md) extension.
   -->
   <script async custom-element="amp-geo" src="https://cdn.ampproject.org/v0/amp-geo-0.1.js"></script>
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -65,6 +67,18 @@ author: sebastianbenz
       top: var(--space-2);
       cursor: pointer;
     }
+    /* defaults */
+    .default:after {
+      content: 'not in the preset group. No consent is required.';
+    }
+    /* override */
+    .amp-geo-group-eea .default:after {
+      content: 'in the preset-eea group. Consent was required.';
+    }
+    /* override */
+    .amp-geo-group-usca .default:after {
+      content: 'in the preset-us-ca group. Consent was required.';
+    }
     #post-consent-ui {
       display: flex;
       justify-content: center;
@@ -75,51 +89,105 @@ author: sebastianbenz
 </head>
 <body>
   <!-- ## Setting up amp-geo -->
-  <!-- First we need to setup the [`amp-geo`](/content/amp-dev/documentation/components/reference/amp-geo.md) extension. We'll use the present `eea` which includes all countries of the European Economic Area. -->
+  <!-- First we need to setup the [`amp-geo`](/content/amp-dev/documentation/components/reference/amp-geo-v0.1.md) extension. We'll use the iso code `us` which represents the United States, [`preset-eea`](/content/amp-dev/documentation/components/reference/amp-geo-v0.1.md#preset-country-groups), and [`unknown`](/content/amp-dev/documentation/components/reference/amp-geo-v0.1.md#operation)-->
   <amp-geo layout="nodisplay">
     <script type="application/json">
       {
         "ISOCountryGroups": {
-          "eu": [ "preset-eea" ]
+          "eea": [ "preset-eea", "unknown" ],
+          "usca": [ "preset-us-ca" ]
         }
       }
     </script>
   </amp-geo>
 
+
   <!-- ## Defining the consent flow -->
   <!--
-    We define a basic consent flow, similar to [this sample](/content/amp-dev/documentation/examples/documentation/Basic_User_Consent_Flow.html). he flow should only trigger for users in the EU, so we set the flag: `"promptIfUnknownForGeoGroup": "eu"`.
+    The flow should rely on amp-geo to determine which config to show based upon the user's location, so we set the flag: [`geoOverride`](/content/amp-dev/documentation/components/reference/amp-consent.md#geoOverride).
+
+    If amp-geo finds that the user is in the US California group, then the contents of the corresponding config will override the top-level consent config (and same for EEA).
+
+    Our final config for an EEA (and unknown) user would look like this:
+    ```json
+    {
+      "consentInstanceId": "world-wide-consent",
+      "consentRequired": true,
+      "promptUI": "eea-consent-ui",
+      "postPromptUI": "post-consent-ui"
+    }
+    ```
+    Since `consentRequired` is `true` and `promptUI` is configured, `amp-consent` will show the prompt if no localstorage decision is found.
+
+    Our final config for a US California user would look like this:
+    ```json
+    {
+      "consentInstanceId": "world-wide-consent",
+      "consentRequired": true,
+      "promptUI": "usca-consent-ui",
+      "postPromptUI": "post-consent-ui"
+    }
+    ```
+
+    And our final config for a user in neither of those geo groups would be:
+    ```json
+    {
+      "consentInstanceId": "world-wide-consent",
+      "consentRequired": false,
+      "postPromptUI": "post-consent-ui"
+    }
+    ```
+    Localstorage decision will be used if it exists, otherwise, since `consentRequired` is `false`, `amp-consent` will not do anything.
   -->
   <amp-consent id="myUserConsent" layout="nodisplay">
-    <script type="application/json">{
-      "consents": {
-          "eu": {
-            "promptIfUnknownForGeoGroup": "eu",
-            "promptUI": "myConsentFlow"
+      <script type="application/json">{
+        "consentInstanceId": "world-wide-consent",
+        "consentRequired": false,
+        "geoOverride": {
+          "eea": {
+            "promptUI": "eea-consent-ui",
+            "consentRequired": true
+          },
+          "usca": {
+            "consentRequired": true,
+            "promptUI": "usca-consent-ui"
           }
-      },
-      "postPromptUI": "post-consent-ui"
-    }</script>
-    <div id="myConsentFlow" class="popupOverlay">
-      <div class="consentPopup">
-        <div class="dismiss-button" role="button" tabindex="0" on="tap:myUserConsent.dismiss">X</div>
-        <h2>Headline</h2>
-        <p>This is an important message requiring you to make a choice if you're based in the EU.</p>
-        <button on="tap:myUserConsent.accept">Accept</button>
-        <button on="tap:myUserConsent.reject">Reject</button>
+        },
+        "postPromptUI": "post-consent-ui"
+      }</script>
+      <div id="eea-consent-ui" class="popupOverlay">
+        <div class="consentPopup">
+          <div class="dismiss-button" role="button" tabindex="0" on="tap:myUserConsent.dismiss">X</div>
+          <h2>Headline</h2>
+          <p>This is an important message requiring you to make a choice if you're based in the EEA.</p>
+          <button on="tap:myUserConsent.accept">Accept</button>
+          <button on="tap:myUserConsent.reject">Reject</button>
+        </div>
       </div>
-    </div>
-    <div id="post-consent-ui">
-      <button on="tap:myUserConsent.prompt()">Update Consent</button>
-    </div>
-  </amp-consent>
+      <div id="usca-consent-ui" class="popupOverlay">
+          <div class="consentPopup">
+            <div class="dismiss-button" role="button" tabindex="0" on="tap:myUserConsent.dismiss">X</div>
+            <h2>Headline</h2>
+            <p>This is an important message requiring you to make a choice if you're based in the U.S. California.</p>
+            <button on="tap:myUserConsent.accept">Accept</button>
+            <button on="tap:myUserConsent.reject">Reject</button>
+          </div>
+        </div>
+      <div id="post-consent-ui">
+        <button on="tap:myUserConsent.prompt()">Update Consent</button>
+      </div>
+    </amp-consent>
+
+    <div>You are <span class="default"></span></div>
+
 
   <!-- ## Testing -->
   <!--
   You can test different behaviors by appending custom country codes to the URL and enabling the `dev-channel` [here](https://cdn.ampproject.org/experiments.html), for example:
-
-  - EU: [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow/#amp-geo=de](/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html#amp-geo=de)
-  -  non-EU: [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow/#amp-geo=us](/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html#amp-geo=us)
+  - US California: [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow#amp-geo=us%20us-ca](/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html#amp-geo=us%20us-ca)
+  - US (Not California): [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow#amp-geo=us](/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html#amp-geo=us)
+  - EEA: [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow#amp-geo=de](/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html#amp-geo=de)
+  - Neither: [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow#amp-geo=td](/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html#amp-geo=td)
   -->
 
 </body>

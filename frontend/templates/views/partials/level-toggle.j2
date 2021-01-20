@@ -1,3 +1,4 @@
+{% do doc.styles.addCssFile('css/components/molecules/info-button.css') %}
 {% do doc.styles.addCssFile('css/components/molecules/level-toggle.css') %}
 {% set level = doc.level %}
 {% set url = doc.url.path %}
@@ -33,16 +34,18 @@
     <h5 class="disabled-headline">Expert mode off</h5>
     [% endif %]
   </div>
-  <div class="info-button" on="tap:AMP.setState({visible: !visible})" role="button" tabindex="0">
+  <div class="ap-m-info-button">
+    <div class="ap-m-info-button-on" tabindex="0"></div>
+    <div class="ap-m-info-button-off" tabindex="-1"></div>
   {% do doc.icons.useIcon('/icons/questionmark.svg') %}
     <svg>
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#questionmark"></use>
     </svg>
-  </div>
-  <div hidden [hidden]="!visible" class="ap-m-tip ap-m-tip-default">
-    <div class="ap-m-tip-content">
-      <h4>Expert mode</h4>
-      <p>Use expert mode to hide web development guidance that's intended for beginners.</p>
+    <div class="ap-m-tip ap-m-tip-default">
+      <div class="ap-m-tip-content">
+        <h4>Expert mode</h4>
+        <p>Use expert mode to hide web development guidance that's intended for beginners.</p>
+      </div>
     </div>
   </div>
 </div>

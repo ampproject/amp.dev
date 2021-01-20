@@ -1,7 +1,7 @@
 number: null
-at: 2019-07-15T08:03:12.456Z
-by: Sebastian Benz
-environment: production
+at: 2020-02-18T16:01:49.916Z
+by: Patrick Kettner
+environment: local
 commit:
-  sha: 7b1b22b844ec7c04da2e51b8fc6d847959ae9a0a
-  message: "✨ Migrate oauth backend (#2392)\n\n* ✨ Migrate oauth backend\r\n\r\n* ♻️ Merge handlers into one\r\n\r\n* ♻️ Use async/await pattern\r\n\r\n* ♻️ Remove try/catch block"
+  sha: 2d8d5869e
+  message: "guidelines for creating a successful story narrative and technical resources  (#3479)\n\n* initial push\r\n\r\n* small fix\r\n\r\n* small fixes\r\n\r\n* fixed links and such\r\n\r\n* fixed link!"

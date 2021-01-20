@@ -9,7 +9,7 @@
 <div class="ap-o-teaser-grid">
 
   {% if headline %}
-  <h2>{{ headline }}</h2>
+  <h2>{{ _(headline) }}</h2>
   {% endif %}
 
   <div class="ap-o-teaser-grid-list ap-o-teaser-grid-list-count-{{ teasers|count }}">
@@ -24,7 +24,7 @@
 
         {% if teaser.image %}
         <div class="ap-a-img ap-m-teaser-image">
-          <amp-img src="{{ teaser.image.src }}" layout="responsive" width="{{ teaser.image.width }}" height="{{ teaser.image.height }}" alt="{{ teaser.image.alt }}"></amp-img>
+          <amp-img src="{{ teaser.image.src }}" layout="responsive" width="{{ teaser.image.width }}" height="{{ teaser.image.height }}" alt="{{ _(teaser.image.alt) }}"></amp-img>
         </div>
         {% endif %}
 
@@ -39,14 +39,14 @@
           {% endif %}
 
           <div class="ap-m-teaser-content">
-            <h4 class="ap-m-teaser-headline">{{ teaser.headline }}</h4>
+            <h4 class="ap-m-teaser-headline">{{ _(teaser.headline) }}</h4>
             {% if teaser.video %}
             <div class="ap-m-teaser-video-length">
               {% do doc.icons.useIcon('icons/play.svg') %}
               <div class="ap-a-ico ap-m-teaser-video-length-icon">
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#play"></use></svg>
               </div>
-              <span class="ap-m-teaser-video-length-text">{{ teaser.video.length }}</span>
+              <span class="ap-m-teaser-video-length-text">{{ _(teaser.video.length) }}</span>
             </div>
           {% endif %}
           </div>
@@ -66,7 +66,7 @@
       <a href="{{ teaser.doc.url|relative }}">
         {% if teaser.destination %}
         {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
-        <div class="ap-m-tag ap-m-tag-{{ teaser.destination }} ap-m-teaser-tag">{{ teaser.destination }}</div>
+        <div class="ap-m-tag ap-m-tag-{{ teaser.destination }} ap-m-teaser-tag">{{ _(teaser.destination) }}</div>
         {% endif %}
 
         <div class="ap-m-teaser-card">
@@ -75,7 +75,7 @@
           </div>
         </div>
         <div class="ap-m-teaser-content">
-          <h4 class="ap-m-teaser-headline">{{ teaser.headline }}</h4>
+          <h4 class="ap-m-teaser-headline">{{ _(teaser.headline) }}</h4>
         </div>
       </a>
     </div>
@@ -94,12 +94,12 @@
         <div class="ap-m-teaser-card">
           {% if teaser.image %}
           <div class="ap-a-img ap-m-teaser-image">
-            <amp-img src="{{ teaser.image.src }}" layout="responsive" width="{{ teaser.image.width }}" height="{{ teaser.image.height }}" alt="{{ teaser.image.alt }}"></amp-img>
+            <amp-img src="{{ teaser.image.src }}" layout="responsive" width="{{ teaser.image.width }}" height="{{ teaser.image.height }}" alt="{{ _(teaser.image.alt) }}"></amp-img>
           </div>
           {% endif %}
 
           <div class="ap-m-teaser-content">
-            <h4 class="ap-m-teaser-headline">{{ teaser.headline }}</h4>
+            <h4 class="ap-m-teaser-headline">{{ _(teaser.headline) }}</h4>
           </div>
         </div>
       </a>
@@ -163,8 +163,8 @@
               {% endfor %}
             </div>
             {% endif %}
-            <h4 class="ap-m-teaser-headline">{{ teaser.headline }}</h4>
-            <p class="ap-m-teaser-copy">{{ teaser.text }}</p>
+            <h4 class="ap-m-teaser-headline">{{ _(teaser.headline) }}</h4>
+            <p class="ap-m-teaser-copy">{{ _(teaser.text) }}</p>
           </div>
         </div>
       </a>
@@ -189,11 +189,11 @@
           {% endif %}
 
           <div class="ap-m-teaser-header">
-            <h4 class="ap-m-teaser-header-title">{{ teaser.headline }}</h4>
+            <h4 class="ap-m-teaser-header-title">{{ _(teaser.headline) }}</h4>
           </div>
 
           <div class="ap-m-teaser-content">
-            <p class="ap-m-teaser-copy">{{ teaser.text }}</p>
+            <p class="ap-m-teaser-copy">{{ _(teaser.text) }}</p>
           </div>
         </div>
       </a>
@@ -208,7 +208,7 @@
     <div class="ap-a-ico ap-m-lnk-icon">
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
     </div>
-    <span class="ap-m-lnk-text">{{ cta.text }}</span>
+    <span class="ap-m-lnk-text">{{ _(cta.text) }}</span>
   </a>
   {% endif %}
 </div>

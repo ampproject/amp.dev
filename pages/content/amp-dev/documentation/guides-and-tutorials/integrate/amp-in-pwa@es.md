@@ -1,64 +1,69 @@
 ---
-$title: Insertar y utilizar AMP como fuente de datos
+"$title": Inserción y uso de AMP como fuente de datos
+"$order": '1'
+description: Si ya utiliza AMP pero aún no ha creado una aplicación web progresiva, sus páginas AMP podrían simplificar radicalmente el desarrollo de dicha aplicación.
+formats:
+- websites
+author: pbakaus
 ---
 
-Si ya utilizas AMP pero todavía no has creado una aplicación web progresiva, tus páginas AMP podrían simplificar drásticamente el desarrollo de esta aplicación. Con esta guía aprenderás a utilizar AMP en aplicaciones web progresivas y como fuente de datos.
+Si ya utiliza AMP pero aún no ha creado una aplicación web progresiva, sus páginas AMP podrían simplificar radicalmente el desarrollo de dicha aplicación. Con esta guía aprenderá a utilizar AMP en aplicaciones web progresivas y como fuente de datos.
 
 ## Transición de JSON a AMP
 
-En la mayoría de los casos, una aplicación web progresiva es una aplicación de una sola página que se conecta a una API JSON utilizando Ajax. Luego, esta API devuelve, por un lado, conjuntos de datos para gestionar la navegación y, por otro, el contenido real para renderizar los artículos.
+En la mayoría de los casos, una aplicación web progresiva es una aplicación de una sola página que se conecta a una API JSON utilizando Ajax. Después, esta API devuelve, por un lado, conjuntos de datos para administrar la navegación y, por otro, el contenido real para renderizar los artículos.
 
-En este punto, se convierte el contenido sin renderizar en código HTML que pueda usarse y se renderiza en un cliente. Este procedimiento suele ser costoso y, a menudo, difícil de mantener. Una buena alternativa sería reutilizar las páginas AMP que ya tengas como fuentes de datos, y en este caso lo mejor de todo es que puedes hacerlo fácilmente en pocas líneas de código gracias a la tecnología AMP.
+En este punto, se convierte el contenido sin renderizar en código HTML que pueda usarse y se renderiza en un cliente. Este procedimiento suele ser costoso y, a menudo, difícil de mantener. Una buena alternativa sería reutilizar las páginas AMP que ya tenga como fuentes de datos. Lo mejor de todo es que puede hacerlo fácilmente con unas cuantas líneas de código gracias a la tecnología AMP.
 
-##  Incluye "Shadow AMP" en tu aplicación web progresiva
+## Incluya "Shadow AMP" en su aplicación web progresiva
 
-En primer lugar, hay que incluir la versión especial de AMP "Shadow AMP" en la aplicación web progresiva. Sí, lo has entendido bien, tienes que cargar la biblioteca AMP en la página de nivel superior, pero no te preocupes, no va a controlar el contenido del nivel superior. Solo se pasarán a AMP las partes de la página que indiques.
+En primer lugar, se debe incluir la versión especial de AMP "Shadow AMP" en la aplicación web progresiva. Sí, es correcto, debe cargar la biblioteca AMP en la página de nivel superior, pero esto no controlará el contenido del nivel superior, solo "amplificará" las secciones de la página que indique.
 
-Incluye Shadow AMP en la cabecera de tu página, así:
+Incluya Shadow AMP en la cabecera de su página de la siguiente manera:
 
 [sourcecode:html]
 <!-- Asynchronously load the AMP-with-Shadow-DOM runtime library. -->
 <script async src="https://cdn.ampproject.org/shadow-v0.js"></script>
 [/sourcecode]
 
-### ¿Cómo sabes que la API de Shadow AMP está lista para utilizar?
+### ¿Cómo saber si la API de Shadow AMP está lista para usarse?
 
-Te recomendamos que cargues la biblioteca de Shadow AMP con el atributo `async`. Sin embargo, al hacerlo, tienes que adoptar un cierto enfoque para saber cuándo se termina de cargar completamente la biblioteca y puedes usarla.
+Le recomendamos que cargue la biblioteca de Shadow AMP con el atributo `async`. Sin embargo, al hacerlo, debe adoptar cierto enfoque para saber cuándo se cargó completamente la biblioteca y ya está lista para utilizarla.
 
-La señal que hay que observar es la disponibilidad de la variable global `AMP`. Shadow AMP utiliza un "[enfoque de carga de función asíncrona](http://mrcoles.com/blog/google-analytics-asynchronous-tracking-how-it-work/)" para facilitarlo. Echa un vistazo al código que se incluye a continuación:
+La señal que debe observar es la disponibilidad de la variable global `AMP`, y Shadow AMP utiliza un "[enfoque de carga de función asíncrona](http://mrcoles.com/blog/google-analytics-asynchronous-tracking-how-it-work/)" para facilitarlo. Dele un vistazo al código que se incluye a continuación:
 
 [sourcecode:javascript]
 (window.AMP = window.AMP || []).push(function(AMP) {
-  // AMP está disponible.
+  // AMP is now available.
 });
 [/sourcecode]
 
-Este código funcionará y todas las devoluciones de llamada añadidas de esta forma se activarán en cuanto AMP esté disponible, pero ¿por qué motivo?
+Este código funcionará y todas las devoluciones de llamada que se hayan agregado de esta forma se activarán en cuanto AMP esté disponible, pero ¿por qué?
 
-El código se puede leer así:
+El código puede leerse así:
 
-  1. Si "window.AMP" no existe, crea una matriz vacía que ocupe su posición.
-  2. A continuación, envía una función de devolución de llamada a la matriz, que debe ejecutarse en cuanto AMP esté disponible.
+1. Si "window.AMP" no existe, crea una matriz vacía que ocupe su posición.
+2. A continuación, envía una función de devolución de llamada a la matriz que debe ejecutarse en cuanto AMP esté disponible.
 
-Funciona porque la biblioteca Shadow AMP, después de cargarse, se da cuenta de que ya hay una matriz de devoluciones de llamada en `window.AMP`, y procesa toda la cola. Si ejecutas la misma función más tarde, seguirá funcionando porque `window.AMP` se sustituye por Shadow AMP y por un método `push` personalizado que sencillamente activa la devolución de llamada al momento.
+Funciona porque la biblioteca Shadow AMP, después de cargarse, se da cuenta de que ya hay una matriz de devoluciones de llamada en `window.AMP` y procesa toda la cola. Si posteriormente ejecuta la misma función, seguirá funcionando porque `window.AMP` se sustituye por Shadow AMP y por un método `push` personalizado que sencillamente activa la devolución de la llamada al instante.
 
-Nota: Para que el código de ejemplo sea viable, te recomendamos que lo incluyas en un objeto Promise. De este modo, puedes usar este objeto siempre que vayas a trabajar con la API de AMP. Consulta nuestro [código de muestra React](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20).
+[tip type="tip"] <strong>Nota:</strong> Para que el código de ejemplo sea viable, le recomendamos que lo incluya en un objeto Promise. De este modo, podrá usar este objeto siempre que trabaje con la API de AMP. Consulte nuestro [código de muestra React](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20) para ver un ejemplo. [/tip]
 
-## Gestionar la navegación por una aplicación web progresiva
+## Administración de la navegación en su aplicación web progresiva
 
-Este paso todavía se tiene que implementar de forma manual. Al fin y al cabo, tú decides cómo quieres presentar los enlaces al contenido en tu estructura de navegación. ¿En listas? ¿En tarjetas?
+Este paso aún debe implementarse de forma manual. Al fin y al cabo, usted decide cómo desea presentar los enlaces al contenido en su estructura de navegación. ¿En forma de listas? ¿En tarjetas?
 
-Por lo general, obtendrás una respuesta JSON que devolverá URL ordenadas con algunos metadatos. Al final deberías tener una devolución de llamada de función que se activa cuando el usuario hace clic en uno de los enlaces y dicha llamada debería incluir la URL de la página AMP solicitada. Si ya la tienes, puedes ir al último paso.
+Por lo general, obtendrá una respuesta JSON que devolverá URL ordenadas con algunos metadatos. Al final debe obtener una devolución de llamada de función que se activa cuando el usuario hace clic en uno de los enlaces y dicha llamada debería incluir la URL de la página AMP solicitada. Si ya la tiene, puede ir al último paso.
 
-## Utilizar la API Shadow AMP para renderizar un insertado de página
+## Uso de la API Shadow AMP para renderizar la inserción de una página
 
-Por último, cuando quieres mostrar contenido después de que el usuario inicie una acción, toca obtener el documento AMP pertinente y dejar que Shadow AMP lo haga todo a partir de ahora. En primer lugar, implementa una función parecida a esta para obtener la página:
+Por último, cuando desee mostrar contenido después de que el usuario inicie una acción, es  momento de obtener el documento AMP correspondiente y dejar que Shadow AMP haga todo a partir de ahora. En primer lugar, implemente una función similar a esta para obtener la página:
 
 [sourcecode:javascript]
 function fetchDocument(url) {
 
-  // fetch() no permite recuperar documentos,
-  // por lo que recurrimos al siempre fiable XMLHttpRequest.
+  // unfortunately fetch() does not support retrieving documents,
+  // so we have to resort to good old XMLHttpRequest.
   var xhr = new XMLHttpRequest();
 
   return new Promise(function(resolve, reject) {
@@ -66,7 +71,7 @@ function fetchDocument(url) {
     xhr.responseType = 'document';
     xhr.setRequestHeader('Accept', 'text/html');
     xhr.onload = function() {
-      // .responseXML contiene un objeto Document listo para usarse
+      // .responseXML contains a ready-to-use Document object
       resolve(xhr.responseXML);
     };
     xhr.send();
@@ -74,50 +79,50 @@ function fetchDocument(url) {
 }
 [/sourcecode]
 
-Importante: Para simplificar el código anterior, nos hemos saltado la corrección de errores. Asegúrate de detectar y corregir errores y, posteriormente, comprueba que no se hayan incluido nuevos.
+[tip type="important"] <strong>IMPORTANTE:</strong> Para simplificar el código anterior, nos hemos saltado la corrección de errores. Asegúrate de detectar y corregir errores y, posteriormente, comprueba que no se hayan incluido nuevos. [/tip]
 
-Ahora que ya tenemos el objeto `Document` listo para usar, vamos a dejar que AMP tome el control y lo renderice. Consigue una referencia al elemento DOM que pueda usarse de contenedor del documento AMP y, a continuación, llama a `AMP.attachShadowDoc()` como se muestra a continuación:
+Ahora que ya tenemos el objeto `Document` listo para usarse, dejaremos que AMP tome el control y lo renderice. Obtenga una referencia al elemento DOM que pueda usarse como contenedor del documento AMP y después llame a `AMP.attachShadowDoc()`, tal como se muestra a continuación:
 
 [sourcecode:javascript]
-// Aquí iría cualquier elemento DOM
+// This can be any DOM element
 var container = document.getElementById('container');
 
-// La página AMP que quieres mostrar
+// The AMP page you want to display
 var url = "https://my-domain/amp/an-article.html";
 
-// Usa nuestro método fetchDocument para obtener el documento
+// Use our fetchDocument method to get the doc
 fetchDocument(url).then(function(doc) {
-  // Deja que AMP tome el control y renderice la página
+  // Let AMP take over and render the page
   var ampedDoc = AMP.attachShadowDoc(container, doc, url);
 });
 [/sourcecode]
 
-Nota: Antes de pasar el documento a AMP, hay que eliminar los elementos de página, como los encabezados o los pies de página, que solo tienen sentido si se muestra la página AMP de forma independiente, pero no si está insertada.
+[tip type="tip"] <strong>Nota:</strong> Antes de pasar el documento a AMP, debe eliminar los elementos de la página, como los encabezados o los pies de página, que solo tienen sentido si se muestra la página AMP de forma independiente, pero no en modo de inserción. [/tip]
 
-¡Y ya está! Tu página AMP se renderiza como un elemento secundario de tu aplicación web progresiva global.
+¡Y listo! Su página AMP se renderizará como un elemento secundario de su aplicación web progresiva global.
 
-## Déjalo todo limpio
+## Deje todo limpio
 
-Es posible que tus usuarios naveguen de una AMP a otra con tu aplicación web progresiva. Al descartar la anterior página AMP renderizada, asegúrate de indicárselo a AMP, por ejemplo, así:
+Es posible que sus usuarios naveguen de una AMP a otra con su aplicación web progresiva. Al descartar la página AMP renderizada anterior, asegúrese de indicarlo a AMP, por ejemplo, de la siguiente manera:
 
 [sourcecode:javascript]
-// ampedDoc es la referencia devuelta por AMP.attachShadowDoc
+// ampedDoc is the reference returned from AMP.attachShadowDoc
 ampedDoc.close();
 [/sourcecode]
 
-De esta forma le indicas a AMP que no vas a utilizar más este documento y se libera espacio en la memoria y recursos en la CPU.
+De esta forma le indica a AMP que no utilizará más este documento y se libera espacio en la memoria y recursos en la CPU.
 
-## ¿Quieres verlo en acción?
+## ¿Quiere verlo en acción?
 
 [video src="/static/img/docs/pwamp_react_demo.mp4" width="620" height="1100" loop="true", controls="true"]
 
-Puedes ver el funcionamiento del patrón de páginas AMP en una aplicación web progresiva en la página de demostración [Muestra de React](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa) que hemos creado. Incluye transiciones fluidas durante la navegación y se presenta con un sencillo componente React que realiza los pasos que se han explicado anteriormente. Tiene las ventajas de ambas tecnologías: la flexibilidad y personalización de JavaScript en la aplicación web progresiva y la gestión de contenidos de AMP.
+Puede ver el funcionamiento del patrón de páginas AMP en una aplicación web progresiva en la página de demostración [Muestra de React](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa) que creamos. Incluye transiciones fluidas durante la navegación y se presenta con un sencillo componente React que realiza los pasos que se explicaron anteriormente. Posee las ventajas de ambas tecnologías: la flexibilidad y personalización de JavaScript en la aplicación web progresiva y la administración de contenidos de AMP.
 
-* Toma el código fuente de este enlace: [https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa).
-* Utiliza el componente React independiente de npm: [https://www.npmjs.com/package/react-amp-document](https://www.npmjs.com/package/react-amp-document).
-* Mira cómo funciona en esta página: [https://choumx.github.io/amp-pwa/](https://choumx.github.io/amp-pwa/) (preferiblemente, en el teléfono o en una simulación de dispositivos móviles).
+- Tome el código fuente de este enlace: [https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa).
+- Utilice el componente React independiente de npm: [https://www.npmjs.com/package/react-amp-document](https://www.npmjs.com/package/react-amp-document).
+- Vea cómo funciona en esta página: [https://choumx.github.io/amp-pwa/](https://choumx.github.io/amp-pwa/) (de preferencia en el teléfono o en una simulación para dispositivos móviles).
 
-También puedes consultar una muestra de páginas AMP y PWA con un framework Polymer. Esta muestra utiliza [amp-viewer](https://github.com/PolymerLabs/amp-viewer/) para insertar páginas AMP.
+También puede ver ejemplos de páginas AMP y PWA utilizando un framework Polymer. Esta muestra utiliza [amp-viewer](https://github.com/PolymerLabs/amp-viewer/) para insertar páginas AMP.
 
-* Toma el código fuente de este enlace: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp).
-* Mira cómo funciona en esta página: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/).
+- Tome el código fuente de este enlace: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp).
+- Vea cómo funciona aquí: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/).

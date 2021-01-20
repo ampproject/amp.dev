@@ -5,33 +5,113 @@ description: 'An AMP page is an HTML page with some restrictions for reliable pe
 ---
 
 ## AMP boilerplate
+
 An AMP page is an HTML page with some restrictions for reliable performance. AMP pages have a bit of special markup that identifies it as an AMP page.
 
 A bare bones AMP page looks like this:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html amp>
- <head>
-   <meta charset="utf-8">
-   <link rel="canonical" href="hello-world.html">
-   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-   <script async src="https://cdn.ampproject.org/v0.js"></script>
- </head>
- <body>Hello World!</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="canonical" href="hello-world.html" />
+    <meta name="viewport" content="width=device-width" />
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+    Hello World!
+  </body>
 </html>
 ```
+
+[tip]
+You can use the [boilerplate generator](https://amp.dev/boilerplate) to quickly setup a basic skeleton for your AMP page. It also provides snippets for structured data, to create a PWA and more!
+[/tip]
 
 ## AMP components
 
 The tutorial's starter code ([`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html)) builds off the bare bones AMP page with its page content (images, text, etc.) as well as including a few AMP components:
 
 ```html
-<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
-<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
-<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-<script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+<script
+  async
+  custom-element="amp-carousel"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+></script>
+<script
+  async
+  custom-template="amp-mustache"
+  src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"
+></script>
+<script
+  async
+  custom-element="amp-form"
+  src="https://cdn.ampproject.org/v0/amp-form-0.1.js"
+></script>
+<script
+  async
+  custom-element="amp-selector"
+  src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"
+></script>
 ```
 
 AMP components offer additional functionality and UI components that add rich interactivity to AMP pages. The starter code uses the following AMP components:

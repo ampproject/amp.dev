@@ -16,7 +16,7 @@ This sample showcases how to build a product page in AMP HTML.
 -->
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 <head>
     <meta charset="utf-8">
   <title>Product Page</title>
@@ -38,18 +38,11 @@ This sample showcases how to build a product page in AMP HTML.
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 
     <link rel="canonical" href="<% canonical %>">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <style amp-custom>
     <%>css/product.css%>
     #product-description {
       clear: both;
-    }
-
-    .ap-o-sampler--tab {
-      cursor: pointer;
-      padding: 1.125em 1.75em;
-      border-right: 1px solid color('bright-gray');
-      background: color('ebony-clay');
     }
 
     amp-lightbox {
@@ -457,7 +450,7 @@ This sample showcases how to build a product page in AMP HTML.
       </amp-lightbox>
     <!-- ## Slides preview Gallery -->
     <!--On desktop we've added a film strip like slide preview. Each product colour has its own image gallery and slide preview.
-    We use [amp-bind](/content/amp-dev/documentation/components/reference/amp-bind.md) to update the page selecting the gallery and image preview
+    We use [amp-bind](/content/amp-dev/documentation/components/reference/amp-bind-v0.1.md) to update the page selecting the gallery and image preview
     corresponding to the selected colour. We realized the color selection by using `amp-selector`. Find more the doc and info in The Product Page section below.
 
     The green colour is the default color for the gallery when the page loads.
@@ -598,7 +591,7 @@ This sample showcases how to build a product page in AMP HTML.
 
   </div>
   <!-- ## Product Configuration -->
-  <!-- We use the `amp-state` component (part of [amp-bind](/content/amp-dev/documentation/components/reference/amp-bind.md))
+  <!-- We use the `amp-state` component (part of [amp-bind](/content/amp-dev/documentation/components/reference/amp-bind-v0.1.md))
       to configure the product price depending on the color and the size. We also configure the `defaultSize`
       for each product when you switch between colours and the size you previously selected is not available for the new color -->
   <amp-state id="product">
@@ -643,7 +636,7 @@ This sample showcases how to build a product page in AMP HTML.
   </amp-state>
 
     <!-- ## Product price -->
-    <!-- We use [amp-bind](/content/amp-dev/documentation/components/reference/amp-bind.md) to update the price of the product
+    <!-- We use [amp-bind](/content/amp-dev/documentation/components/reference/amp-bind-v0.1.md) to update the price of the product
       depending on the selected colour.
 
     We bind the `text` attribute to the value of expression `product[product.selectedColor].sizes[product.selectedSize]`. `product` is the id `amp-state` json described in the Product Configuration section.
@@ -658,7 +651,7 @@ This sample showcases how to build a product page in AMP HTML.
         <span [text]="product[product.selectedColor].sizes[product.selectedSize]">$5.99</span>
     </p>
 
-    <!-- ## Product page -->
+    <!-- ## Product page <a name="add-to-cart-button"></a>-->
     <!-- The add-to-cart action action is implemented using  [amp-form](/documentation/components/reference/amp-form/). In our sample we use the [amp-selector](/components/amp-selector.html) for selecting different product properties.
     Pressing the `ADD TO CART` button adds the product to a shopping cart page using the properties you have selected. Notice that the button URL contains the query `clientId={{ClientId}}`.
     If an item is successfully added to the shopping cart, we redirect the user to the shopping cart page.

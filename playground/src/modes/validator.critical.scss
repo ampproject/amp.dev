@@ -1,0 +1,72 @@
+@import '_mixins.scss';
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_color.scss';
+
+.validator {
+  main {
+    flex-direction: row-reverse;
+    margin-left: 0;
+    @media (min-width: 768px) {
+      margin-right: 8px;
+    }
+
+    &:after {
+      bottom: auto;
+      right: auto;
+      left: 0;
+      top: 0;
+      width: 20%;
+      max-width: 175px;
+      height: 25%;
+      clip-path: polygon(100% 0, 0 0, 0 100%);
+      @include gradient-websites;
+      @media (min-width: 768px) {
+        width: 20%;
+        height: 30%;
+      }
+    }
+  }
+
+  #source {
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  #validation {
+    padding: 55px 20px;
+    overflow-y: auto;
+    @media (min-width: 786px) {
+      padding: 55px 5px 55px 55px;
+    }
+    @media (min-width: 1000px) {
+      padding: 55px;
+    }
+
+    @media (min-width: 1920px) {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 55px 150px;
+    }
+  }
+
+  h1 {
+    @include txt-font-accent;
+    @include txt-hl;
+    font-size: 32px;
+    color: color('charade');
+  }
+
+  .error-list {
+    height: auto;
+    transition: opacity 0.3s ease;
+  }
+
+  .error-list-empty {
+    display: none!important;
+  }
+
+  #import-view {
+    margin-bottom: 40px;
+  }
+}

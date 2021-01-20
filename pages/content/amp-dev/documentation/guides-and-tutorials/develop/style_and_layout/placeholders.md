@@ -47,7 +47,7 @@ Once ready, the AMP element typically hides its placeholder and shows the conten
 **NOTE –**  The placeholder doesn’t have to be an AMP element; any HTML element can act as the placeholder.
 [/tip]
 
-## Fallbacks
+## Fallbacks <a name="fallbacks"></a>
 
 You can specify the `fallback` attribute on an element to indicate the fallback behavior:
 
@@ -113,6 +113,6 @@ For AMP components that rely on dynamic content (e.g., [`amp-twitter`](../../../
 
 ## Hiding loading indicators
 
-Many AMP elements are whitelisted to show a "loading indicator",
+Many AMP elements are allowlisted to show a "loading indicator",
 which is a basic animation that shows that the element has not yet fully loaded.
 Elements can opt out of this behavior by adding the `noloading` attribute.

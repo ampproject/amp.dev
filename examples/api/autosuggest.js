@@ -21,7 +21,6 @@ const upload = multer();
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
-const MAX_RESULT_SIZE = 4;
 const US_CAPITAL_CITIES = [
   'Montgomery, Alabama',
   'Juneau, Alaska',
@@ -74,32 +73,94 @@ const US_CAPITAL_CITIES = [
   'Madison, Wisconsin',
   'Cheyenne, Wyoming',
 ];
+const US_CAPITAL_CITIES_RICH = [
+  {
+    'city': 'Albany',
+    'state': 'New York',
+    'areaCode': 518,
+    'population': 98251,
+  },
+  {
+    'city': 'Annapolis',
+    'state': 'Maryland',
+    'areaCode': 410,
+    'population': 39321,
+  },
+  {
+    'city': 'Trenton',
+    'state': 'New Jersey',
+    'areaCode': 609,
+    'population': 84964,
+  },
+];
+const CHARACTERS = [
+  {'email': 'harrypotter@hogwarts.edu', 'name': 'Harry Potter'},
+  {
+    'email': 'albusdumbledore@hogwarts.edu',
+    'name': 'Albus Dumbledore',
+  },
+  {
+    'email': 'voldemort@deatheater.org',
+    'name': 'Tom Marvolo Riddle',
+  },
+  {'email': 'severussnape@hogwarts.edu', 'name': 'Severus Snape'},
+  {'email': 'siriusblack@hogwarts.edu', 'name': 'Sirius Black'},
+  {
+    'email': 'hermionegranger@hogwarts.edu',
+    'name': 'Hermione Granger',
+  },
+  {'email': 'ronweasley@hogwarts.edu', 'name': 'Ron Weasley'},
+  {'email': 'dracomalfoy@hogwarts.edu', 'name': 'Draco Malfoy'},
+  {
+    'email': 'nevillelongbottom@hogwarts.edu',
+    'name': 'Neville Longbottom',
+  },
+  {'email': 'rubeushagrid@hogwarts.edu', 'name': 'Rubeus Hagrid'},
+  {'email': 'dobby@hogwarts.edu', 'name': 'Dobby'},
+  {
+    'email': 'bellatrixlestrange@deatheater.org',
+    'name': 'Bellatrix Lestrange',
+  },
+  {
+    'email': 'minervamcgonagall@hogwarts.edu',
+    'name': 'Minerva McGonagall',
+  },
+];
 
 examples.get('/autosuggest/search_list', upload.none(), handleSearchRequest);
+examples.get('/autosuggest/cities', upload.none(), handleCitySearchRequest);
+examples.get(
+  '/autosuggest/characters',
+  upload.none(),
+  handleCharacterSearchRequest
+);
 examples.post('/autosuggest/address', upload.none(), handleAddressRequest);
 
 function handleSearchRequest(request, response) {
   const query = request.query ? request.query.q : '';
+  const results = US_CAPITAL_CITIES.filter((key) =>
+    key.toUpperCase().includes(query.toUpperCase())
+  );
+  response.json({items: results});
+}
 
-  let results = US_CAPITAL_CITIES.filter((key) => {
-    return key.toUpperCase().includes(query.toUpperCase());
-  });
+function handleCitySearchRequest(request, response) {
+  const query = request.query ? request.query.q : '';
+  const results = US_CAPITAL_CITIES_RICH.filter(
+    (key) =>
+      key.city.toUpperCase().includes(query.toUpperCase()) ||
+      key.state.toUpperCase().includes(query.toUpperCase())
+  );
+  response.json({items: results});
+}
 
-  if (results.length > MAX_RESULT_SIZE) {
-    results = results.slice(0, MAX_RESULT_SIZE);
-  }
-
-  const items = ({
-    items: [
-      {
-        query,
-        results,
-      },
-    ],
-  });
-
-  response.json(items);
-};
+function handleCharacterSearchRequest(request, response) {
+  const query = request.query ? request.query.q : '';
+  const results = CHARACTERS.filter((key) =>
+    key.name.toUpperCase().includes(query.toUpperCase())
+  );
+  response.json({items: results});
+}
 
 function handleAddressRequest(request, response) {
   const city = request.body ? request.body.city : '';
@@ -114,6 +175,6 @@ function handleAddressRequest(request, response) {
   response.json({
     result,
   });
-};
+}
 
 module.exports = examples;

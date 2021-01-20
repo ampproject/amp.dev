@@ -1,0 +1,14 @@
+{% do doc.styles.addCssFile('css/components/organisms/jumpto.css') %}
+
+<div class="ap-o-jumpto">
+  {% if text %}<p class="ap-o-jumpto-text">{{ text }}</p>{% endif %}
+  <ul class="ap-o-jumpto-list">
+    {% for item in (doc.section_links if not list else list) %}
+    <li class="ap-o-jumpto-item">
+      <a class="ap-o-jumpto-link" href="{{ '#' + item if not list else item.url }}">
+        {{- _(item if not list else item.label) -}}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

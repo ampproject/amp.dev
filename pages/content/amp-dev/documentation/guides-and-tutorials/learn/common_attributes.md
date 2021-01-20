@@ -1,6 +1,6 @@
 ---
 $title: Common element attributes
-$order: 2
+$order: 1
 description: 'AMP provides a set of common attributes that are extended to many AMP components (and HTML elements). This document describes each of the common attributes.'
 toc: true
 ---
@@ -21,7 +21,7 @@ Example:
 </amp-anim>
 ```
 
-For more information, see [Placeholders & fallbacks](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md#the-layout-attribute).
+For more information, see [Placeholders & fallbacks](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ## heights
 
@@ -61,7 +61,7 @@ Example:
 
 For more information, see [Layout & Media queries](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) and the [Layout Spec](amp-html-layout/index.md).
 
-## media
+## media <a name="media"></a>
 
 Most AMP elements support the `media` attribute. The value of `media` is a media query. If the query does not match, the element is not rendered and its resources and potentially its child resources will not be fetched. If the browser window changes size or orientation, the media queries are re-evaluated and elements are hidden and shown based on the new results.
 
@@ -136,11 +136,11 @@ Example:
 </amp-anim>
 ```
 
-For more information, see [Placeholders & fallbacks](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md#the-layout-attribute).
+For more information, see [Placeholders & fallbacks](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ## sizes
 
-All AMP elements that support the `responsive` layout, also support the `sizes` attribute. The value of the AMP `sizes` attribute is a sizes expression that selects the defined size corresponding to the media query based on the current window size. <strong>Additionally, AMP sets an inline style for `width` on the element</strong>. 
+All AMP elements that support the `responsive` layout, also support the `sizes` attribute. The value of the AMP `sizes` attribute is a sizes expression that selects the defined size corresponding to the media query based on the current window size. <strong>Additionally, AMP sets an inline style for `width` on the element</strong>.
 
 Example:
 
@@ -155,9 +155,9 @@ Example:
 Will produce the following nested `img ` tag:
 
 ```html
-<img decoding="async" 
-    src="amp.png" 
-    sizes="(min-width: 320px) 320px, 100vw" 
+<img decoding="async"
+    src="amp.png"
+    sizes="(min-width: 320px) 320px, 100vw"
     class="i-amphtml-fill-content i-amphtml-replaced-content">
 ```
 

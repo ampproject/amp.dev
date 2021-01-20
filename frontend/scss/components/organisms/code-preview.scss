@@ -18,7 +18,7 @@
 .#{organism('code-preview')} {
   position: relative;
   margin: 1rem 0;
-  background: color('ebony-clay');
+  background: color('charade');
 
   &-controls {
     width: 100%;
@@ -82,14 +82,6 @@
       }
     }
 
-    &.landscape {
-      display: block;
-      amp-iframe {
-        width: auto;
-        height: auto;
-      }
-    }
-
     &-portrait,
     &-landscape {
       width: 100%;
@@ -138,10 +130,15 @@
 
     &-portrait &-background {
       width: 177.78%;
+      transform: scale(.5625, 1.7778);
     }
 
     &-landscape &-background {
       width: 100%;
+    }
+
+    &-background.initial-portrait {
+      transform: scale(.5625, 1.7778);
     }
   }
 
@@ -159,20 +156,19 @@
       position: relative;
       width: 100%;
       min-height: 0;
+      padding: 1em 1em 0;
       margin-top: 0;
-      padding-bottom: 2em;
+    }
 
-      &::before {
-        content: '';
-        display: block;
-        width: calc(100% + 2em);
-        height: 2em;
-        position: sticky;
-        position: -webkit-sticky;
-        top: 0;
-        margin-left: -1em;
-        background: linear-gradient(0deg, rgba(color('ebony-clay'), 0) 0%, color('ebony-clay') 50%);
-      }
+    &::after {
+      content: '';
+      display: block;
+      width: calc(100% - 4px);
+      height: 2em;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: linear-gradient(0deg, rgba(color('charade'), 0) 0%, color('charade') 50%);
     }
   }
 
@@ -191,7 +187,7 @@
     @media (min-width: 768px) {
       width: auto;
       left: 60%;
-      background-color: darken(color('ebony-clay'), 2%);
+      background-color: darken(color('charade'), 2%);
     }
 
     @media (max-width: 767px) {
@@ -247,7 +243,7 @@
       &-landscape {
         @media (min-width: 768px) {
           width: calc(172% - 30px);
-          box-shadow: -10px 10px 0 rgba(darken(color('ebony-clay'), 2%), .75);
+          box-shadow: -10px 10px 0 rgba(darken(color('charade'), 2%), .75);
         }
       }
     }

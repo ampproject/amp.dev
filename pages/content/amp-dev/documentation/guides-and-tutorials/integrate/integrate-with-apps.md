@@ -121,7 +121,7 @@ AMP Caches are designed to:
 Currently, there are two AMP Cache providers:
 
 *   [Google AMP Cache](https://developers.google.com/amp/cache/)
-*   [Cloudflare AMP Cache](https://amp.cloudflare.com/)
+*   [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 This gives two choices to display an AMP file in an app by using either:
 
@@ -168,7 +168,7 @@ Here are some general best practices for implementing an AMP Viewer:
 *   In webView-based viewers, enable third-party cookies.
 *   Set a referrer for your platform/app.
 
-### Sharing AMP Content
+### Sharing AMP Content <a name="sharing-amp-content"></a>
 
 When sharing an AMP document from within a platform's AMP Viewer, the platform
 should share the canonical URL when technically possible. For example, if the

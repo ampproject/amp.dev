@@ -1,7 +1,7 @@
 ---
-$title: Add translations
+$title: Contribute translations
 $order: 2
-description: "AMP's mission includes making the web a welcoming and accessible place for everyone, and we are unable to obtain this goal without localized documentation. Translating AMP documentation is an essential process that aids the AMP community's success and health."
+description: "AMP's mission includes making the web a welcoming and accessible place for everyone, and we are unable to reach this goal without localized documentation. Translating AMP documentation is an essential process that aids the AMP community's success and health."
 
 formats:
   - websites
@@ -11,9 +11,7 @@ formats:
 ---
 Welcome to the AMP Translation Initiative!
 
-AMP's mission includes making the web a welcoming and accessible place for everyone, and we are unable to obtain this goal without localized documentation. Translating AMP documentation is an essential process that aids the AMP community's success and health.
-
-The AMP Translation Initiative is working to create a network of native speakers to ensure our documentation is localized with clarity and efficiency. We can't thank you for taking an interest in AMP and your assistance in making the web a content ecosystem for everyone.
+AMP's mission includes making the web a welcoming and accessible place for everyone! This goal is unreachable without localized documentation. The AMP translation initiative is creating a network of native speaking translators. This ensures efficient and clear localized documentation. We can't thank you enough for your contribution in making the web an ecosystem for everyone.
 
 ## Ways to Contribute
 
@@ -24,7 +22,7 @@ The AMP Translation Initiative is working to create a network of native speakers
 
 ## Get Started
 
-AMP has an ongoing internal translation process for documentation. We are working with contributors to form a communication line that describes what files are being translated and which ones require external assistance.
+AMP has an ongoing internal translation process for documentation. We are working with translation contributors on an effective communication line. This describes what files are in need to external help.
 
 ### Currently, our process is:
 
@@ -41,7 +39,7 @@ AMP has an ongoing internal translation process for documentation. We are workin
         - Yes! Please translate this!
         - Thanks for your interest, but the internal team or a volunteer is currently working on this document. You will be added as a reviewer before it goes live.
 
-Some volunteer translators have created channels on Slack where a localized documentation tracker has been created. We encourage you to join and introduce yourself! Join the [AMP Slack Channel here](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877).
+Some translation contributions participate in Slack channels. We encourage you to join and introduce yourself! Join the [AMP Slack Channel here](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877).
 
 ### Creating localized files
 
@@ -61,6 +59,7 @@ The [amp.dev](https://amp.dev/) website differentiates localized files by suffix
 | Brazilian Portuguese | `@pt_BR`       |
 | Russian              | `@ru`          |
 | Turkish              | `@tr`          |
+| Vietnamese           | `@vi`          |
 | Chinese              | `@zh_CN`       |
 
 

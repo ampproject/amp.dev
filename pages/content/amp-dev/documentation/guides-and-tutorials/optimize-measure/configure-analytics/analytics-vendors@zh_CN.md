@@ -43,7 +43,7 @@ $title: 分析工具供应商
 
 <hr>
 
-## 供应商
+## 供应商 <a name="vendors"></a>
 
 ### Acquia Lift
 
@@ -141,7 +141,7 @@ type 属性值：`googleadwords`
 
 添加对 Google AdWords 转化跟踪和再营销功能的支持。要详细了解[转化跟踪](https://support.google.com/adwords/answer/1722054?hl=zh-CN)和[再营销](https://support.google.com/adwords/answer/2453998?hl=zh-CN)，请访问 AdWords 帮助中心。这两种代码均可独立使用。
 
-### Google Analytics
+### Google Analytics <a name="google-analytics"></a>
 
 type 属性值：`googleanalytics`
 

@@ -28,7 +28,7 @@ Si vous n'avez qu'une seule page et qu'il s'agit d'une page AMP, vous devez tout
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-## Intégrer des plates-formes tierces grâce à des métadonnées supplémentaires
+## Intégrer des plates-formes tierces grâce à des métadonnées supplémentaires <a name="integrate-with-third-party-platforms-through-additional-metadata"></a>
 
 Parfois, un site tiers (qui intègre votre page AMP ou comprend des liens vers cette dernière) ne peut se contenter de savoir que votre page est une page AMP. Il lui faut plus d'informations. Les questions qu'une plate-forme peut poser sur votre page sont par exemple "S'agit-il d'un article d'actualités ?", "Ou d'une vidéo ?" ou encore "Est-ce possible d'obtenir une capture d'écran et une courte description du contenu ?".
 

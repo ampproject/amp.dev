@@ -22,7 +22,9 @@ const options = require('mri')(process.argv.slice(2));
 const yaml = require('js-yaml');
 const utils = require('./utils');
 
-const GROW_CONFIG_TEMPLATE_PATH = utils.project.absolute('platform/config/podspec.yaml');
+const GROW_CONFIG_TEMPLATE_PATH = utils.project.absolute(
+  'platform/config/podspec.yaml'
+);
 const GROW_CONFIG_DEST = utils.project.absolute('pages/podspec.yaml');
 
 const ENV_DEV = 'development';
@@ -30,8 +32,11 @@ const ENV_STAGE = 'staging';
 const ENV_PROD = 'production';
 const ENV_LOCAL = 'local';
 
+const DEFAULT_LOCALE = 'en';
+
 const AVAILABLE_LOCALES = [
   'en',
+  'de',
   'fr',
   'ar',
   'es',
@@ -43,6 +48,8 @@ const AVAILABLE_LOCALES = [
   'ru',
   'tr',
   'zh_CN',
+  'pl',
+  'vi',
 ];
 
 class Config {
@@ -50,11 +57,17 @@ class Config {
     if (environment === 'test') {
       environment = ENV_DEV;
       this.test = true;
+
+      // Config doesn't use the log util as this relies on config. Therefore
+      // the main signale instance gets disabled here
+      signale.disable();
     } else {
       this.test = false;
     }
     signale.info(`Config: environment=${environment} test=${this.test}`);
-    const env = require(utils.project.absolute(`platform/config/environments/${environment}.json`));
+    const env = require(utils.project.absolute(
+      `platform/config/environments/${environment}.json`
+    ));
 
     this.environment = env.name;
     this.hosts = env.hosts;
@@ -68,7 +81,11 @@ class Config {
       this.hostNames.add(hostName);
     });
 
-    this.shared = require(utils.project.absolute('platform/config/shared.json'));
+    this.redis = env.redis || {};
+
+    this.shared = require(utils.project.absolute(
+      'platform/config/shared.json'
+    ));
 
     // Globally initialize command line arguments for use across all modules
     this.options = options;
@@ -110,12 +127,19 @@ class Config {
   }
 
   /**
-   * Returns an array with the locale ids.
+   * Returns an array with all the locale ids.
    * (e.g. 'en', 'pt_BR', ...)
-   * These locale ids are used
+   * The default locale is included.
    */
   getAvailableLocales() {
     return AVAILABLE_LOCALES.slice(0); // clone our internal array
+  }
+
+  /**
+   * Returns the default locale (e.g. 'en')
+   */
+  getDefaultLocale() {
+    return DEFAULT_LOCALE;
   }
 
   /**
@@ -125,7 +149,7 @@ class Config {
    */
   getHost(hostConfig) {
     let url = `${hostConfig.scheme}://`;
-    const isLocalhost = (hostConfig.host === 'localhost');
+    const isLocalhost = hostConfig.host === 'localhost';
     if (isLocalhost || !hostConfig.subdomain) {
       url += hostConfig.host;
     } else {
@@ -143,6 +167,10 @@ class Config {
    * @return {String} The absolute URL
    */
   absoluteUrl(hostConfig, url) {
+    // The URL uses a template, don't process it.
+    if (url.indexOf('<%') > -1) {
+      return url;
+    }
     return new URL(url, this.getHost(hostConfig)).toString();
   }
 
@@ -175,7 +203,7 @@ class Config {
     Object.assign(options, this.options);
 
     let podspec = fs.readFileSync(GROW_CONFIG_TEMPLATE_PATH, 'utf-8');
-    podspec = yaml.safeLoad(podspec);
+    podspec = yaml.load(podspec);
 
     // disable sitemap (useful for test builds)
     if (options.noSitemap) {
@@ -233,6 +261,7 @@ class Config {
       signale.info('Add path filter for grow ', filter);
     }
 
+    podspec.localization.default_locale = DEFAULT_LOCALE;
     podspec.localization.locales = AVAILABLE_LOCALES;
     // Check if specific languages have been configured to be built
     if (options.locales) {
@@ -243,12 +272,12 @@ class Config {
         process.exit(1);
       }
 
-      // we need the blacklist filter, because otherwise the sitemap will not be created
+      // we need the denylist filter, because otherwise the sitemap will not be created
       const skippedLocales = AVAILABLE_LOCALES.filter((locale) => {
         return !locales.includes(locale);
       });
       podspec.deployments.default['filters'] = {
-        'type': 'blacklist',
+        'type': 'denylist',
         'locales': skippedLocales,
       };
 
@@ -258,6 +287,8 @@ class Config {
   }
 }
 
-const config = new Config(options.env || process.env.APP_ENV || process.env.NODE_ENV);
+const config = new Config(
+  options.env || process.env.APP_ENV || process.env.NODE_ENV
+);
 
 module.exports = config;

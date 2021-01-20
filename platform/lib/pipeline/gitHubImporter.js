@@ -14,16 +14,23 @@
  * limitations under the License.
  */
 
+const config = require('../config.js');
 const octonode = require('octonode');
+const {default: PQueue} = require('p-queue');
 const {Signale} = require('signale');
 
-const Document = require('./markdownDocument');
-
+const LOCAL_AMPHTML = process.env.AMP_LOCAL_AMPHTML;
 const CLIENT_TOKEN = process.env.AMP_DOC_TOKEN;
 const CLIENT_SECRET = process.env.AMP_DOC_SECRET;
 const CLIENT_ID = process.env.AMP_DOC_ID;
 
-const DEFAULT_REPOSITORY = 'ampproject/amphtml';
+/* The GitHub organisation where the repositories imported from are located */
+const DEFAULT_ORGANISATION = 'ampproject';
+const DEFAULT_REPOSITORY = `${DEFAULT_ORGANISATION}/amphtml`;
+
+const MAX_CONCURRENT_OPS = config.options['queue-imports']
+  ? 6
+  : Number.POSITIVE_INFINITY;
 
 const log = new Signale({
   'interactive': false,
@@ -32,9 +39,11 @@ const log = new Signale({
 
 function checkCredentials() {
   if (!CLIENT_TOKEN && !(CLIENT_SECRET && CLIENT_ID)) {
-    log.fatal('Please provide either a GitHub personal access token (AMP_DOC_TOKEN) or ' +
-      'GitHub application id/secret (AMP_DOC_ID and AMP_DOC_SECRET). See README.md for more ' +
-      'information.');
+    log.fatal(
+      'Please provide either a GitHub personal access token (AMP_DOC_TOKEN) or ' +
+        'GitHub application id/secret (AMP_DOC_ID and AMP_DOC_SECRET). See README.md for more ' +
+        'information.'
+    );
 
     throw new Error('Error: No GitHub credentials provided.');
   }
@@ -42,12 +51,14 @@ function checkCredentials() {
 
 class GitHubImporter {
   constructor() {
-    this._log = log;
     checkCredentials();
-    this._github = octonode.client(CLIENT_TOKEN || {
-      'id': CLIENT_ID,
-      'secret': CLIENT_SECRET,
-    });
+    this._queue = new PQueue({concurrency: MAX_CONCURRENT_OPS});
+    this._github = octonode.client(
+      CLIENT_TOKEN || {
+        'id': CLIENT_ID,
+        'secret': CLIENT_SECRET,
+      }
+    );
   }
 
   /**
@@ -56,74 +67,116 @@ class GitHubImporter {
    * @param  {Boolean} master true if document should be fetched from master
    * @return {Object} A object containing all information
    */
-  async fetchJson(filePath, repo=DEFAULT_REPOSITORY, master=false) {
+  async fetchJson(filePath, repo = DEFAULT_REPOSITORY, master = false) {
     return this.fetchContents_(filePath, repo, master);
   }
 
   /**
-   * Downloads a path/document from GitHub and returns its contents
+   * Fetches all files contained in a directory flattened down to
+   * a simple array
    * @param  {String} path Path to the file
    * @param  {Boolean} master true if document should be fetched from master
-   * @return {Document} A document object containing all information
+   * @return {Object} A object containing all information
+   * @return {Array}
    */
-  async fetchDocument(filePath, repo=DEFAULT_REPOSITORY, master=false) {
-    const data = await this.fetchContents_(filePath, repo, master);
-    if (data && data.content !== undefined && !data.content.length) {
-      this._log.info(`${filePath} is empty. Skipping ...`);
-      return '';
-    }
-
-    const buf = Buffer.from(data[0].content || data, 'base64').toString();
-    return new Document(filePath, buf);
+  async listDirectory(filePath, repo = DEFAULT_REPOSITORY, master = false) {
+    const data = await this.fetchJson(filePath, repo, master);
+    return data[0].map((file) => {
+      return file.path;
+    });
   }
 
-  async fetchContents_(filePath, repo=DEFAULT_REPOSITORY, master=false) {
+  /**
+   * Downloads a file from Github and returns its contents.
+   * @param  {String} path Path to the file
+   * @param  {Boolean} master true if document should be fetched from master
+   * @return {String} A string containing the file
+   */
+  async fetchFile(filePath, repo = DEFAULT_REPOSITORY, master = false) {
+    const data = await this.fetchContents_(
+      filePath,
+      repo,
+      master,
+      LOCAL_AMPHTML
+    );
+    const str = Buffer.from(data[0].content || data, 'base64').toString();
+    return str;
+  }
+
+  async fetchContents_(
+    filePath,
+    repo = DEFAULT_REPOSITORY,
+    master = false,
+    local = false
+  ) {
+    let request = Promise.resolve();
+
     if (!filePath) {
-      return Promise.reject(new Error('Can not download from undefined path.'));
+      request = Promise.reject(
+        new Error('Can not download from undefined path.')
+      );
+    } else if (local) {
+      // TODO: https://github.com/ampproject/amp.dev/issues/2965
+      request = Promise.reject(
+        new Error('Importing from a local path is currently not implemented.')
+      );
+    } else if (master || repo !== DEFAULT_REPOSITORY) {
+      request = await this._queue.add(() => {
+        log.await(`Downloading ${filePath} from remote master...`);
+        return this._github.repo(repo).contentsAsync(filePath);
+      });
+    } else {
+      const tag = await this._fetchLatestReleaseTag();
+      request = await this._queue.add(() => {
+        log.await(`Downloading ${filePath} from remote [${tag}]...`);
+        return this._github.repo(repo).contentsAsync(filePath, tag);
+      });
     }
 
-    if (master || repo !== DEFAULT_REPOSITORY) {
-      this._log.await(`Downloading ${filePath} from remote master...`);
-      return this._github.repo(repo).contentsAsync(filePath);
-    }
-
-    const branch = await this._fetchLatestReleaseTag();
-    this._log.await(`Downloading ${filePath} from remote [${branch}]...`);
-    return this._github.repo(repo).contentsAsync(filePath, branch);
+    return request;
   }
 
   _fetchLatestReleaseTag() {
     if (this.latestReleaseTag_) {
       return this.latestReleaseTag_;
     }
-    this._log.await('Fetching latest release tag ...');
+    log.await('Fetching latest release tag ...');
 
     this.latestReleaseTag_ = new Promise((resolve, reject) => {
-      this._github.get('/repos/ampproject/amphtml/releases/latest', {}, (err, status, body) => {
-        if (body.tag_name) {
-          resolve(body.tag_name);
-        } else {
-          this._log.fatal('Was not able to retrieve latest AMP release from GitHub.');
-          reject(err);
+      this._github.get(
+        '/repos/ampproject/amphtml/releases/latest',
+        {},
+        (err, status, body) => {
+          if (body.tag_name) {
+            resolve(body.tag_name);
+          } else {
+            log.fatal(
+              'Was not able to retrieve latest AMP release from GitHub.'
+            );
+            reject(err);
+          }
         }
+      );
+    })
+      .then((latestReleaseTag) => {
+        log.success(`Fetched latest release tag: ${latestReleaseTag}`);
+        return latestReleaseTag;
+      })
+      .catch((err) => {
+        log.fatal(err);
+        return null;
       });
-    }).then((latestReleaseTag) => {
-      this._log.success(`Fetched latest release tag: ${latestReleaseTag}`);
-      return latestReleaseTag;
-    }).catch((err) => {
-      this._log.fatal(err);
-      return null;
-    });
     return this.latestReleaseTag_;
   }
 }
 
 module.exports = {
   CLIENT_TOKEN,
-  CLIENT_SECRET: CLIENT_SECRET,
+  CLIENT_SECRET,
   CLIENT_ID,
   log,
   checkCredentials,
   GitHubImporter,
+  DEFAULT_ORGANISATION,
   DEFAULT_REPOSITORY,
 };

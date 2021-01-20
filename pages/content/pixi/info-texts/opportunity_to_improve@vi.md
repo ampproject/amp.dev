@@ -1,0 +1,1 @@
+Đây là chênh lệch điểm số cho trang được cung cấp trên nguồn gốc và phiên bản AMP trong bộ nhớ đệm nếu có. Một trạng thái "None" (Không có) nghĩa là trang nguồn gốc đã có hiệu năng tương đương so với bản lưu trong bộ nhớ đệm, còn trạng thái "---" nghĩa là không có dữ liệu nào về trang được lưu trong bộ nhớ đệm.

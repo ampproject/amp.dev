@@ -4,11 +4,12 @@ $order: 0
 description: 'AMP provides two components to meet your analytics and measurement needs: amp-pixel and amp-analytics. Both options send analytics data to a defined endpoint.'
 formats:
   - websites
+  - stories
 ---
 
 Start here to learn the basics about AMP analytics.
 
-## Use amp-pixel or amp-analytics?
+## Use amp-pixel or amp-analytics? <a name="use-amp-pixel-or-amp-analytics"></a>
 
 AMP provides two components to meet your analytics and measurement needs:
 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) and
@@ -26,10 +27,18 @@ For most analytics solutions, use [`amp-analytics`](../../../../documentation/co
 Page view tracking works in [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) too.
 But you can also track user engagement with any type of page content,
 including clicks on links and buttons.
+[filter formats="websites"]
 And you can measure how far on the page the user scrolled,
 whether or not the user engaged with social media, and more.
+[/filter]
+[filter formats="stories"]
+And you can measure how far into a story the user tapped,
+and if the user engaged with interactive elements.
+[/filter]
 
-Learn more: See [Deep Dive into AMP Analytics](deep_dive_analytics.md).
+[tip type="read-on"]
+See [Deep Dive into AMP Analytics](deep_dive_analytics.md).
+[/tip]
 
 As part of integrating with the AMP platform,
 providers have offered pre-defined [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) configurations
@@ -96,17 +105,17 @@ sends the pageview data to a defined URL along with a random ID:
 ```html
 <amp-analytics>
 <script type="application/json">
-{
-  "requests": {
-    "pageview": "https://foo.com/pixel?RANDOM",
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
+  {
+    "requests": {
+      "pageview": "https://foo.com/pixel?RANDOM"
+    },
+    "triggers": {
+      "trackPageview": {
+        "on": "visible",
+        "request": "pageview"
+      }
     }
   }
-}
 </script>
 </amp-analytics>
 ```
@@ -119,7 +128,67 @@ an event triggers and the `pageview` request is sent.
 The triggers attribute determines when the pageview request fires.
 Learn more about [requests and triggers](deep_dive_analytics.md).
 
-## Variable substitution
+[filter formats="stories"]
+## AMP story default configuration 
+A typical user-journey for a website is very different from stories. On a website a user might read the headline, scroll to the bottom of the page, interact with a form before clicking on a link to the next page. Stories occupy the full viewport and users do not scroll but tap to move forward.
+
+{{ image('/static/img/docs/guides/analytics-pages.png', 660, 501, alt='Image of PWA' ) }}
+
+Many would like to measure each new [`<amp-story-page>`](../../../../documentation/components/reference/amp-story-page.md) in the story as a new pageview because the content from screen to screen is substantially different. However, the page is just a single element in a full story — and a user usually needs to see many story pages to get a full sense of the story. Thus, the question of how we count something as simple as the pageview has enormous implications for our analytics approach.
+
+{{ image('/static/img/docs/guides/analytics-setup-stories.png', 1037, 528, alt='Image of PWA' ) }}
+
+AMP Analytics makes it easy to implement the above using any analytics vendor. For instance, with Google Analytics’ [Global Site Tag](https://developers.google.com/gtagjs/) will look like the below snippet. 
+
+```html
+<amp-analytics type="gtag" data-credentials="include">
+ <script type="application/json">
+  {
+    "vars": {
+      "gtag_id":"YOUR_GOOGLE_ANALYTICS_ID",
+      "config": {
+        "YOUR_GOOGLE_ANALYTICS_ID": {
+          "groups":"default"
+        }
+      }
+    },
+    "triggers": {
+      "storyProgress": {
+        "on":"story-page-visible",
+        "vars": {
+          "event_name":"custom",
+          "event_action":"story_progress",
+          "event_category":"${title}",
+          "event_label":"${storyPageId}",
+          "send_to": [
+            "YOUR_GOOGLE_ANALYTICS_ID"
+          ]
+        }
+      },
+      "storyEnd": {
+        "on":"story-last-page-visible",
+        "vars": {
+          "event_name":"custom",
+          "event_action":"story_complete",
+          "event_category":"${title}",
+          "send_to": [
+            "YOUR_GOOGLE_ANALYTICS_ID"
+          ]
+        }
+      }
+    }
+  }
+ </script>
+</amp-analytics>
+```
+
+This default config should give you a complete working configuration for an AMP story. 
+
+If you’re interested in going beyond what the default config can give you, read [Analytics for your AMP Stories](https://blog.amp.dev/2019/08/28/analytics-for-your-amp-stories/?_gl=1*pw0bu5*_ga*MzM1MjQ0ODE5LjE1NjUwMzU1MTg) to find more advanced use cases with Google Analytics.
+
+[/filter]
+
+## Variable substitution <a name="variable-substitution"></a>
 
 Both the [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) and
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) components
@@ -158,25 +227,25 @@ within the [`amp-analytics`](../../../../documentation/components/reference/amp-
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-  "requests": {
-    "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}",
-  },
-  "vars": {
-    "account": "ABC123",
-  },
-  "triggers": {
-    "someEvent": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
+      },
       "vars": {
-        "title": "My homepage",
+        "account":"ABC123"
+      },
+      "triggers": {
+        "someEvent": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage"
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -190,7 +259,7 @@ so their values get substituted by the platform.
 **IMPORTANT –** Variable substitution is flexible; you can have the same variables defined in different locations, and the AMP runtime will parse the values in this order of precedence (see [Variable substitution ordering](deep_dive_analytics.md#variable-substitution-ordering)).
 [/tip]
 
-## User identification
+## User identification <a name="user-identification"></a>
 
 Websites use cookies to store information specific to a user in the browser.
 Cookies can be used to tell that a user has visited a site before.

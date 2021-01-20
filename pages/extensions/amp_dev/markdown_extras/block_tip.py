@@ -7,7 +7,7 @@ TIP_TRIGGER = '[tip'
 TIP_START_TAG_PATTERN = re.compile(r'(\[tip( type=\"(.*?)\")?\])',
                                    re.MULTILINE)
 TIP_END_TAG_PATTERN = '[/tip]'
-ALLOWED_TYPES = ['default', 'note', 'important', 'read-on']
+ALLOWED_TYPES = ['default', 'important', 'read-on']
 
 def trigger(original_body, content):
     if TIP_TRIGGER in original_body:

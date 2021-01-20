@@ -10,7 +10,7 @@ Dica: É muito fácil tornar os elementos responsivos nas AMP. Simplesmente colo
 
 [video src='https://www.youtube.com/watch?v=y6kA3u3GIws' caption='Veja o que a equipe da UpperQuad tem a dizer sobre a reforma do site AMPproject e os desafios de usar AMP pela primeira vez.']
 
-## Adicionar estilos a uma página
+## Adicionar estilos a uma página <a name="add-styles-to-a-page"></a>
 
 Adicione todos os CSS dentro de uma tag `<style amp-custom>` no cabeçalho do documento. Por exemplo:
 

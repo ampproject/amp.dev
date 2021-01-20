@@ -18,7 +18,9 @@
 const express = require('express');
 const {setMaxAge} = require('@lib/utils/cacheHelpers');
 const utils = require('@lib/utils');
-const rooms = require(utils.project.absolute('/examples/static/samples/json/rooms.json'));
+const rooms = require(utils.project.absolute(
+  '/examples/static/samples/json/rooms.json'
+));
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
@@ -36,7 +38,10 @@ examples.get('/rooms', (request, response) => {
 
   if (arriving && leaving) {
     result = rooms.filter((room) => {
-      return !(arriving <= new Date(room.booked.to) && leaving >= new Date(room.booked.from));
+      return !(
+        arriving <= new Date(room.booked.to) &&
+        leaving >= new Date(room.booked.from)
+      );
     });
   }
 

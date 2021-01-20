@@ -1,5 +1,5 @@
 $title@: Support
-$view: /views/meta.j2
+$view: /views/overview/support.j2
 $path: /support/{base}.html
 $localization:
   path: /{locale}/support/{base}.html

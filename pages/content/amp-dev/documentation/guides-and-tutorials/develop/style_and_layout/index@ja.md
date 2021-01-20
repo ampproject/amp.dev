@@ -10,7 +10,7 @@ AMP HTML のスタイルとレイアウトには、通常の HTML と同じよ�
 
 [video src='https://www.youtube.com/watch?v=y6kA3u3GIws' caption='初めて AMP を利用するにあたっての課題など、UpperQuad における AMP プロジェクトでのサイト再設計に関する話をご覧になれます。']
 
-## ページにスタイルを追加する
+## ページにスタイルを追加する <a name="add-styles-to-a-page"></a>
 
 すべての CSS は、ドキュメントの `<head>` の `<style amp-custom>` タグ内に追加します。次の例をご覧ください。
 
@@ -80,9 +80,9 @@ AMP では、`srcset` 属性と `sizes` 属性の両方がサポートされて�
 
 AMP 検証ツールを使用すると、ページの CSS やレイアウトの値をテストできます。
 
-AMP 検証ツールは、ページの CSS が上限の 50,000 バイトを超えていないか、許可されていないスタイルはないか、ページのレイアウトがサポートされているか、形式は正しいか、などを検証します。チェックできるエラーの一覧については、[スタイルとレイアウトのエラー](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md#style-and-layout-errors)をご覧ください。
+AMP 検証ツールは、ページの CSS が上限の 75,000 バイトを超えていないか、許可されていないスタイルはないか、ページのレイアウトがサポートされているか、形式は正しいか、などを検証します。チェックできるエラーの一覧については、[スタイルとレイアウトのエラー](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md#style-and-layout-errors)をご覧ください。
 
-CSS が上限の 50,000 バイトを超えた場合、コンソールには次のように表示されます。
+CSS が上限の 75,000 バイトを超えた場合、コンソールには次のように表示されます。
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 

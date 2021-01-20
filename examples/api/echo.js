@@ -24,6 +24,12 @@ const {setImmutable, setNoCache} = require('@lib/utils/cacheHelpers');
 const examples = express.Router();
 
 examples.get('/echo', (request, response) => {
+  if (request.header('Content-Type') != 'application/json') {
+    response
+      .status(400)
+      .send('Requests must set content-type=application/json');
+    return;
+  }
   setImmutable(response);
   response.json(request.query);
 });

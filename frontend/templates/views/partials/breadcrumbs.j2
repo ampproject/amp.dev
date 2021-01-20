@@ -16,10 +16,10 @@ and the current page title #}
     </span>
 
     {% if not doc.collection.bucket %}
-      <a class="ap-m-breadcrumbs-crumb" href="{{ guides_and_tutorials.url.path }}">{{ guides_and_tutorials.titles('navigation') }}</a>
+      <a class="ap-m-breadcrumbs-crumb" href="{{ guides_and_tutorials.url.path }}">{{ _(guides_and_tutorials.titles('navigation')) }}</a>
     {% endif %}
     {% if doc.collection.bucket %}
-      <div class="ap-m-breadcrumbs-crumb">{{ guides_and_tutorials.titles('navigation') }}</div>
+      <div class="ap-m-breadcrumbs-crumb">{{ _(guides_and_tutorials.titles('navigation')) }}</div>
     {% endif %}
 
   {% endif %}
@@ -43,7 +43,7 @@ and the current page title #}
   </span>
 
   {% set examples = g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale) %}
-  <div class="ap-m-breadcrumbs-crumb">{{ examples.titles('navigation') }}</div>
+  <a class="ap-m-breadcrumbs-crumb" href="{{ examples.url.path }}">{{ _(examples.titles('navigation')) }}</a>
 </nav>
 
 {% elif doc.pod_path.startswith('/content/amp-dev/documentation/components') %}
@@ -56,7 +56,7 @@ and the current page title #}
   </span>
 
   {% set components = g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale) %}
-  <div class="ap-m-breadcrumbs-crumb">{{ components.titles('navigation') }}</div>
+  <a class="ap-m-breadcrumbs-crumb" href="{{ components.url.path }}">{{ _(components.titles('navigation')) }}</a>
 </nav>
 
 {% elif doc.pod_path.startswith('/content/amp-dev/documentation/courses') %}
@@ -70,10 +70,10 @@ and the current page title #}
 
   {% set courses = g.doc('/content/amp-dev/documentation/courses/index.html', locale=doc.locale) %}
   {% if not doc.collection.bucket %}
-    <a class="ap-m-breadcrumbs-crumb" href="{{ courses.url.path }}">{{ courses.titles('navigation') }}</a>
+    <a class="ap-m-breadcrumbs-crumb" href="{{ courses.url.path }}">{{ _(courses.titles('navigation')) }}</a>
   {% endif %}
   {% if doc.collection.bucket %}
-    <div class="ap-m-breadcrumbs-crumb">{{ courses.titles('navigation') }}</div>
+    <div class="ap-m-breadcrumbs-crumb">{{ _(courses.titles('navigation')) }}</div>
   {% endif %}
 
 
@@ -82,7 +82,7 @@ and the current page title #}
     <svg class="ap-a-ico ap-m-breadcrumbs-angle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
   </span>
 
-  <div class="ap-m-breadcrumbs-crumb">{{ doc.collection.title }}</div>
+  <div class="ap-m-breadcrumbs-crumb">{{ _(doc.collection.title) }}</div>
   {% endif %}
 </nav>
 
@@ -95,18 +95,24 @@ and the current page title #}
     <svg class="ap-a-ico ap-m-breadcrumbs-angle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
   </span>
 
-  <div class="ap-m-breadcrumbs-crumb">{{ get_started.titles('navigation') }}</div>
+  <div class="ap-m-breadcrumbs-crumb">{{ _(get_started.titles('navigation')) }}</div>
 </nav>
 
 {% elif doc.pod_path.startswith('/content/amp-dev/support') %}
 <nav class="ap-m-breadcrumbs">
   {% set support = g.doc('/content/amp-dev/support/index.md', locale=doc.locale) %}
   <a class="ap-m-breadcrumbs-crumb" href="{{ support.url.path }}">{{ _('Support') }}</a>
+
   <span class="ap-m-breadcrumbs-divider">
     <svg class="ap-a-ico ap-m-breadcrumbs-angle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
   </span>
-  {% set faq = g.doc('/content/amp-dev/support/faq/index.html', locale=doc.locale) %}
-  <a class="ap-m-breadcrumbs-crumb" href="{{ faq.url.path }}">{{ faq.titles('navigation') }}</a>
+
+  {# Use breadcrumb title if it exists #}
+  {% if doc.titles('breadcrumb') %}
+    <div class="ap-m-breadcrumbs-crumb">{{ _(doc.titles('breadcrumb')) }}</div>
+  {% else %}
+    <div class="ap-m-breadcrumbs-crumb">{{ _(doc.title) }}</div>
+  {% endif %}
 </nav>
 {% endif %}
 {% endif %}

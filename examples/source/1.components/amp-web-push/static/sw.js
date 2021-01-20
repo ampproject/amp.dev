@@ -1,5 +1,5 @@
 /**
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2019 The AMP HTML Authors. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,110 +12,20 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- **/
+ */
 
-importScripts('/sw-toolbox/sw-toolbox.js');
 importScripts('https://cdn.rawgit.com/jakearchibald/idb/97e4e878/lib/idb.js');
 
-const config = {
-  offlinePage: '/offline.html',
-};
-
-config.filesToCache = [
-  '/',
-  config.offlinePage,
-];
-
-/**
- * VAPID Keys for Webpush
- */
 const applicationServerPublicKey =
-'BA99vy78Qu4vuByBMUZ1W5J0H7ngllFJhF9GcjbS_GJM9iD7uXIm-dQj7nXvisXHI6372ga3mZR3kFdS9MYTdSA';
+  'BA99vy78Qu4vuByBMUZ1W5J0H7ngllFJhF9GcjbS_GJM9iD7uXIm-dQj7nXvisXHI6372ga3mZR3kFdS9MYTdSA';
 const convertedVapidKey = urlB64ToUint8Array(applicationServerPublicKey);
-
-function sendWebPushHandler() {
-  return idb.open('web-push-db', 1).then((db) => {
-    const tx = db.transaction(['web-push-subcription'], 'readonly');
-    const store = tx.objectStore('web-push-subcription');
-
-    return store.get(1).then((subscriptionJSON) => {
-      const options = {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-          'Origin': 'https://amp.dev',
-        },
-        body: subscriptionJSON.data,
-      };
-      return fetch('https://demo-amp-web-push.glitch.me/send-push', options);
-    });
-  });
-}
-
-toolbox.options.debug = false;
-toolbox.router.default = toolbox.networkFirst;
-toolbox.router.get('/(.*)', ampByExampleHandler, {
-  origin: self.location.origin,
-});
-// network first amp runtime
-toolbox.router.get('/(.*)', toolbox.networkFirst, {
-  origin: 'https://cdn.ampproject.org',
-});
-// handle 'send push' request form form
-toolbox.router.post('/send-push', sendWebPushHandler, {
-  origin: self.location.origin,
-});
-
-toolbox.precache(config.filesToCache);
-
-// Cache the page registering the service worker. Without this, the
-// "first" page the user visits is only cached on the second visit,
-// since the first load is uncontrolled.
-toolbox.precache(
-    clients.matchAll({
-      includeUncontrolled: true,
-    }).then((l) => {
-      return l.map((c) => c.url);
-    })
-);
-
-// Make sure the SW the page we register() is the service we use.
-self.addEventListener('install', () => self.skipWaiting());
-
-// Claim clients so that the very first page load is controlled by a service
-// worker. (Important for responding correctly in offline state.)
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
-      // Initialize IndexedDB, to store VAPID keys for Webpush functionality.
-      idb.open('web-push-db', 1, (upgradeDB) => {
-        upgradeDB.createObjectStore('web-push-subcription', {
-          keyPath: 'id',
-        });
-      }).then(() => self.clients.claim())
-  );
-});
-
-// Listens to push events, and displays a notification, using the payload text.
-self.addEventListener('push', (event) => {
-  const options = {
-    body: event.data.text(),
-    icon: 'img/amp_logo_pink.svg',
-    vibrate: [100, 50, 100],
-    data: {
-      dateOfArrival: Date.now(),
-      primaryKey: 1,
-    },
-  };
-  event.waitUntil(
-      self.registration.showNotification('Push Notification', options)
-  );
-});
+const WEB_PUSH_DB = 'web-push-db';
+const WEB_PUSH_SUBSCRIPTION = 'web-push-subscription';
+const WEB_PUSH_SUBSCRIPTION_ID = 1;
 
 /**
-  This section contains code related to the amp-web-push functionality.
-  The service worker accepts window messages (listened to via the service
-  worker's 'message' handler), performs some action, and
+  On this section, the service worker accepts window messages (listened
+  to via the service worker's 'message' handler), performs some action, and
   replies with a result.
   The service worker listens to postMessage() messages sent from a lightweight
   invisible iframe on the canonical origin. The AMP page sends messages to this
@@ -178,26 +88,30 @@ self.addEventListener('message', (event) => {
  */
 function onMessageReceivedSubscriptionState() {
   let retrievedPushSubscription = null;
-  self.registration.pushManager.getSubscription()
-      .then((pushSubscription) => {
-        retrievedPushSubscription = pushSubscription;
-        if (!pushSubscription) {
-          return null;
-        } else {
-          return self.registration.pushManager.permissionState(
-              pushSubscription.options
-          );
-        }
-      }).then((permissionStateOrNull) => {
-        if (permissionStateOrNull == null) {
-          broadcastReply(WorkerMessengerCommand.AMP_SUBSCRIPTION_STATE, false);
-        } else {
-          const isSubscribed = !!retrievedPushSubscription &&
-                    permissionStateOrNull === 'granted';
-          broadcastReply(WorkerMessengerCommand.AMP_SUBSCRIPTION_STATE,
-              isSubscribed);
-        }
-      });
+  self.registration.pushManager
+    .getSubscription()
+    .then((pushSubscription) => {
+      retrievedPushSubscription = pushSubscription;
+      if (!pushSubscription) {
+        return null;
+      } else {
+        return self.registration.pushManager.permissionState(
+          pushSubscription.options
+        );
+      }
+    })
+    .then((permissionStateOrNull) => {
+      if (permissionStateOrNull == null) {
+        broadcastReply(WorkerMessengerCommand.AMP_SUBSCRIPTION_STATE, false);
+      } else {
+        const isSubscribed =
+          !!retrievedPushSubscription && permissionStateOrNull === 'granted';
+        broadcastReply(
+          WorkerMessengerCommand.AMP_SUBSCRIPTION_STATE,
+          isSubscribed
+        );
+      }
+    });
 }
 
 /**
@@ -216,13 +130,15 @@ function onMessageReceivedSubscribe() {
           https://github.com/web-push-libs/web-push, convert the VAPID key to a
           UInt8 array and supply it to applicationServerKey
      */
-  self.registration.pushManager.subscribe({
-    userVisibleOnly: true,
-    applicationServerKey: convertedVapidKey,
-  }).then((pushSubscription) => {
-    persistSubscriptionLocally(pushSubscription);
-    broadcastReply(WorkerMessengerCommand.AMP_SUBSCRIBE, null);
-  });
+  self.registration.pushManager
+    .subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: convertedVapidKey,
+    })
+    .then((pushSubscription) => {
+      persistSubscriptionLocally(pushSubscription);
+      broadcastReply(WorkerMessengerCommand.AMP_SUBSCRIBE, null);
+    });
 }
 
 /**
@@ -230,13 +146,14 @@ function onMessageReceivedSubscribe() {
   The broadcast value is null (not used in the AMP page).
  */
 function onMessageReceivedUnsubscribe() {
-  self.registration.pushManager.getSubscription()
-      .then((subscription) => subscription.unsubscribe())
-      .then(() => {
-        clearLocalDatabase();
-        // OPTIONALLY IMPLEMENT: Forward the unsubscription to your server here
-        broadcastReply(WorkerMessengerCommand.AMP_UNSUBSCRIBE, null);
-      });
+  self.registration.pushManager
+    .getSubscription()
+    .then((subscription) => subscription.unsubscribe())
+    .then(() => {
+      clearLocalDatabase();
+      // OPTIONALLY IMPLEMENT: Forward the unsubscription to your server here
+      broadcastReply(WorkerMessengerCommand.AMP_UNSUBSCRIBE, null);
+    });
 }
 
 /**
@@ -245,16 +162,102 @@ function onMessageReceivedUnsubscribe() {
  * @param {!JsonObject} payload
  */
 function broadcastReply(command, payload) {
-  self.clients.matchAll()
-      .then((clients) => {
-        for (const client of clients) {
-          client. /* OK*/ postMessage({
-            command,
-            payload,
-          });
-        }
+  self.clients.matchAll().then((clients) => {
+    for (const client of clients) {
+      client./* OK*/ postMessage({
+        command,
+        payload,
       });
+    }
+  });
 }
+
+/**
+  This section of the ServiceWorker deals with SW events: initializing the DB where tokens will be persisted,
+  sending the request for push notifcations to the endpoint, and listening to push events.
+ */
+
+/**
+  Using skipWaiting() to force the waiting service worker to become the active service worker.
+ */
+self.addEventListener('install', () => self.skipWaiting());
+
+/**
+  Creates the DB to store subscription objects and calls clients.claim(), to allow an active
+  service worker to set itself as the controller for all clients within its scope.
+ */
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    (async () => {
+      await idb.open(WEB_PUSH_DB, 1, (upgradeDB) => {
+        upgradeDB.createObjectStore(WEB_PUSH_SUBSCRIPTION, {
+          keyPath: 'id',
+        });
+      });
+      self.clients.claim();
+    })()
+  );
+});
+
+/**
+  Listens to push events, and displays a notification, using the payload text.
+ */
+self.addEventListener('push', (event) => {
+  const options = {
+    body: event.data.text(),
+    vibrate: [100, 50, 100],
+    data: {
+      dateOfArrival: Date.now(),
+      primaryKey: 1,
+    },
+  };
+  event.waitUntil(
+    self.registration.showNotification('Push Notification', options)
+  );
+});
+
+/**
+  Intercepts the /send-push request: retrieves the subscription object from indexedDB, and passes it to an endpoint
+  so WebPush messages can be sent.
+  Any other request goes to the network directly.
+ */
+self.addEventListener('fetch', (event) => {
+  if (
+    event.request.url.includes(
+      '/documentation/examples/components/amp-web-push/send-push'
+    )
+  ) {
+    event.respondWith(
+      (async () => {
+        const db = await idb.open(WEB_PUSH_DB, 1);
+        const tx = db.transaction([WEB_PUSH_SUBSCRIPTION], 'readonly');
+        const store = tx.objectStore(WEB_PUSH_SUBSCRIPTION);
+
+        const subscriptionJSON = await store.get(WEB_PUSH_SUBSCRIPTION_ID);
+        const options = {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: subscriptionJSON.data,
+        };
+
+        return fetch(
+          self.location.origin +
+            '/documentation/examples/components/amp-web-push/send-push',
+          options
+        );
+      })()
+    );
+  } else {
+    event.respondWith(
+      (async () => {
+        return fetch(event.request);
+      })()
+    );
+  }
+});
 
 /**
   Helper functions for IndexedDB management.
@@ -262,37 +265,35 @@ function broadcastReply(command, payload) {
 /**
   Persists the subscription object in IndexedDB.
  */
-function persistSubscriptionLocally(subscription) {
+async function persistSubscriptionLocally(subscription) {
   const subscriptionJSON = JSON.stringify(subscription);
-  idb.open('web-push-db', 1).then((db) => {
-    const tx = db.transaction(['web-push-subcription'], 'readwrite');
-    tx.objectStore('web-push-subcription').put({
-      id: 1,
-      data: subscriptionJSON,
-    });
-    return tx.complete;
+  const db = await idb.open(WEB_PUSH_DB, 1);
+  const tx = db.transaction([WEB_PUSH_SUBSCRIPTION], 'readwrite');
+  tx.objectStore(WEB_PUSH_SUBSCRIPTION).put({
+    id: WEB_PUSH_SUBSCRIPTION_ID,
+    data: subscriptionJSON,
   });
+  return tx.complete;
 }
 
 /**
   Clears the local database (called after a user unsubscribes).
  */
-function clearLocalDatabase() {
-  idb.open('web-push-db', 1).then((db) => {
-    const tx = db.transaction(['web-push-subcription'], 'readwrite');
-    tx.objectStore('web-push-subcription').clear();
-    return tx.complete;
-  });
+async function clearLocalDatabase() {
+  const db = await idb.open(WEB_PUSH_DB, 1);
+  const tx = db.transaction([WEB_PUSH_SUBSCRIPTION], 'readwrite');
+  tx.objectStore(WEB_PUSH_SUBSCRIPTION).clear();
+  return tx.complete;
 }
 
 /**
 Helper method to convert the VAPID key to a UInt8 array and supply it to applicationServerKey.
 */
 function urlB64ToUint8Array(base64String) {
-  const padding = '='.repeat((4 - base64String.length % 4) % 4);
+  const padding = '='.repeat((4 - (base64String.length % 4)) % 4);
   const base64 = (base64String + padding)
-      .replace(/\-/g, '+')
-      .replace(/_/g, '/');
+    .replace(/\-/g, '+')
+    .replace(/_/g, '/');
 
   const rawData = self.atob(base64);
   const outputArray = new Uint8Array(rawData.length);

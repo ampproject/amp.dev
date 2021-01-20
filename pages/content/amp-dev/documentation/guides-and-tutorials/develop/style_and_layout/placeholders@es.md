@@ -4,7 +4,7 @@ $title: Marcadores de posición y respaldos
 
 En cuanto al rendimiento percibido y la mejora progresiva, en AMP se recomienda incluir marcadores de posición y respaldos donde sea posible.
 
-Algunos elementos incluso te recompensarán por hacerlo suavizando algunas restricciones; por ejemplo, si incluyes un marcador de posición en ['<amp-iframe>'](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder), podrás utilizarlo cerca de la parte superior de la página, cosa que no podrías hacer de otro modo.
+Algunos elementos incluso te recompensarán por hacerlo suavizando algunas restricciones; por ejemplo, si incluyes un marcador de posición en [`<amp-iframe>`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder), podrás utilizarlo cerca de la parte superior de la página, cosa que no podrías hacer de otro modo.
 
 ## Marcadores de posición
 
@@ -38,7 +38,7 @@ pueden ser cualquier elemento HTML.
 
 [/tip]
 
-## Respaldos
+## Respaldos <a name="fallbacks"></a>
 
 Puedes incluir el atributo `fallback` en elementos para indicar qué comportamiento de respaldo debe seguirse en estos casos:
 
@@ -68,7 +68,7 @@ En el ejemplo siguiente, utilizamos el atributo `fallback` para comunicar a los 
 
 ##### Ejemplo: servir formatos de imagen diferentes
 
-En el ejemplo siguiente, con el atributo `fallback` indicamos al navegador que utilice el archivo JPEG si no admite el formato WebP. 
+En el ejemplo siguiente, con el atributo `fallback` indicamos al navegador que utilice el archivo JPEG si no admite el formato WebP.
 
 [example preview="inline" playground="true"]
 ```html
@@ -107,4 +107,3 @@ En el caso de los componentes AMP que dependen de contenido dinámico (por ejemp
 Muchos elementos AMP están incluidos en la lista blanca para mostrar un "indicador de carga",
 que es una animación básica que muestra que el elemento aún no se ha cargado completamente.
 Los elementos pueden excluirse de este comportamiento añadiéndoles el atributo `noloading`.
- 

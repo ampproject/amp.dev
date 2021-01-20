@@ -1,0 +1,16 @@
+runtime: custom
+env: flex
+service: thumbor
+manual_scaling:
+  instances: 1
+
+liveness_check:
+  path: /healthcheck
+readiness_check:
+  app_start_timeout_sec: 500
+  path: /healthcheck
+
+resources:
+  cpu: 1
+  memory_gb: 2
+  disk_size_gb: 30

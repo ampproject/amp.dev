@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ export const NO_VALIDATOR = {
   status: 'NO_VALIDATOR',
 };
 
-export const EVENT_NEW_VALIDATION_RESULT = 'event-validator-new-validation-result';
+export const EVENT_NEW_VALIDATION_RESULT =
+  'event-validator-new-validation-result';
 
 export function createValidator() {
   return new Validator();
@@ -49,7 +50,10 @@ class Validator {
         events.publish(EVENT_NEW_VALIDATION_RESULT, NO_VALIDATOR);
         return;
       }
-      const validationResult = amp.validator.validateString(string, this.runtime.validator);
+      const validationResult = amp.validator.validateString(
+        string,
+        this.runtime.validator
+      );
       this.processErrors(validationResult);
       events.publish(EVENT_NEW_VALIDATION_RESULT, validationResult);
     });

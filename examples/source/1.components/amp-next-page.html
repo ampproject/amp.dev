@@ -1,36 +1,23 @@
-<!---
-
-preview: default
-hidePreview: true
-experiments:
-  - amp-next-page
-author: peterjosling
-
-
---->
-
 <!--
   ## Introduction
 
  [`amp-next-page`](/documentation/components/amp-next-page) allows you to add an infinite scroll style experience to your AMP pages.
 
-  Note: For performance reasons `amp-next-page` will currently load and display a maximum of three pages on screen at once, so cannot be used to provide a true infinite scroll.
-
 -->
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 <head>
   <meta charset="utf-8">
   <link rel="canonical" href="<% canonical %>">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <title>amp-next-page</title>
   <!-- ## Setup -->
   <!--
     Import the `amp-next-page` component.
   -->
-  <script async custom-element="amp-next-page" src="https://cdn.ampproject.org/v0/amp-next-page-0.1.js"></script>
+  <script async custom-element="amp-next-page" src="https://cdn.ampproject.org/v0/amp-next-page-1.0.js"></script>
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
     <style amp-custom>
@@ -74,43 +61,37 @@ author: peterjosling
 
   <!-- ## Basic usage -->
   <!--
-    This sample uses the `amp-next-page` component to load other sample pages. It defines a custom separator and uses the `hideSelectors` feature to remove footer and sidebar.
+    This sample uses the `amp-next-page` component to load other sample pages. It defines a custom separator.
   -->
   <amp-next-page>
     <script type="application/json">
-      {
-        "pages": [
-          {
-            "title": "amp-img",
-            "image": "<% hosts.backend %>/img/social.png",
-	          "ampUrl": "<% hosts.backend %>/components/amp-img/"
-          },
-          {
-            "title": "amp-bind",
-            "image": "<% hosts.backend %>/img/social.png",
-	          "ampUrl": "<% hosts.backend %>/components/amp-bind/"
-          },
-          {
-            "title": "amp-accordion",
-            "image": "<% hosts.backend %>/img/social.png",
-	          "ampUrl": "<% hosts.backend %>/components/amp-accordion/"
-          },
-          {
-            "title": "amp-lightbox-gallery",
-            "image": "<% hosts.backend %>/img/social.png",
-	          "ampUrl": "<% hosts.backend %>/components/amp-lightbox-gallery/"
-          },
-          {
-            "title": "amp-list",
-            "image": "<% hosts.backend %>/img/social.png",
-	          "ampUrl": "<% hosts.backend %>/components/amp-list/"
-          }
-        ],
-        "hideSelectors": [
-          "footer",
-          "aside"
-        ]
-      }
+      [
+        {
+          "title": "amp-img",
+          "image": "<% hosts.preview %>/static/samples/img/amp.jpg",
+          "url": "<% hosts.playground %>/documentation/examples/components/amp-img/"
+        },
+        {
+          "title": "amp-bind",
+          "image": "<% hosts.preview %>/static/samples/img/amp.jpg",
+          "url": "<% hosts.playground %>/documentation/examples/components/amp-bind/"
+        },
+        {
+          "title": "amp-accordion",
+          "image": "<% hosts.preview %>/static/samples/img/amp.jpg",
+          "url": "<% hosts.playground %>/documentation/examples/components/amp-accordion/"
+        },
+        {
+          "title": "amp-lightbox-gallery",
+          "image": "<% hosts.preview %>/static/samples/img/amp.jpg",
+          "url": "<% hosts.playground %>/documentation/examples/components/amp-lightbox-gallery/"
+        },
+        {
+          "title": "amp-list",
+          "image": "<% hosts.preview %>/static/samples/img/amp.jpg",
+          "url": "<% hosts.playground %>/documentation/examples/components/amp-list/"
+        }
+      ]
     </script>
     <div class="amp-next-page-sample-separator" separator>
       amp-next-page separator

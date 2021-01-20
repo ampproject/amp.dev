@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,11 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import events from '../events/events.js';
+import * as Runtimes from '../runtime/runtimes.js';
 import dimensions from './dimensions.json';
 import params from '../params/base.js';
 import debounce from '../debounce/debounce.js';
 import createLoader from '../loader/base.js';
-import embedMode from '../embed-mode/';
+import modes from '../modes/';
+import * as StateView from '../state-view/state-view.js';
+import * as Experiment from '../experiments/experiments.js';
 
 const PARAM_MODE = 'mode';
 const PARAM_WIDTH = 'width';
@@ -24,7 +28,11 @@ const PARAM_HEIGHT = 'height';
 
 const MOBILE_BREAK_POINT = 767;
 
+export const EVENT_AMP_BIND_READY = 'event-amp-bind-ready';
+export const EVENT_AMP_BIND_NEW_STATE = 'event-amp-bind-new-state';
+
 export function createPreview(container) {
+  if (!container) return;
   return new Preview(container, document, createLoader(container));
 }
 
@@ -36,9 +44,22 @@ class Preview {
     this.previewContainer = container.querySelector('#preview-container');
     this.panelHeader = container.querySelector('.panel-header');
     this.createHeader();
+
+    events.subscribe(StateView.EVENT_AMP_BIND_REQUEST_STATE, () => {
+      this.getAmpState().then((state) => {
+        events.publish(EVENT_AMP_BIND_NEW_STATE, state);
+      });
+    });
+
+    events.subscribe(
+      Experiment.EVENT_TOGGLE_EXPERIMENT,
+      debounce(this.toggleExperiment.bind(this), 200)
+    );
+
+    events.subscribe(Runtimes.EVENT_SET_RUNTIME, this._onSetRuntime.bind(this));
   }
 
-  setRuntime(runtime) {
+  _onSetRuntime(runtime) {
     if (this.runtime === runtime) {
       return;
     }
@@ -46,7 +67,7 @@ class Preview {
     if (!this.runtime) {
       this.initDimensionFromParamsOrUseDefault(runtime);
     }
-    if (embedMode.isActive) {
+    if (modes.IS_EMBED) {
       this.dimension.width = '100%';
       this.dimension.height = '100%';
     }
@@ -81,7 +102,9 @@ class Preview {
     if (!label) {
       return null;
     }
-    return this.dimensions.find((d) => d.label.toLowerCase() === label.toLowerCase());
+    return this.dimensions.find(
+      (d) => d.label.toLowerCase() === label.toLowerCase()
+    );
   }
 
   updateParams() {
@@ -91,7 +114,9 @@ class Preview {
   }
 
   createHeader() {
-    const refreshButton = this.container.querySelector('#preview-header-refresh');
+    const refreshButton = this.container.querySelector(
+      '#preview-header-refresh'
+    );
     refreshButton.addEventListener('click', this.reload.bind(this));
   }
 
@@ -137,15 +162,23 @@ class Preview {
     const div = this.doc.createElement('div');
     div.setAttribute('id', 'preview-custom-dimension');
     div.appendChild(
-        this.createSizeInput(PARAM_WIDTH, params.get(PARAM_WIDTH, 320), (width) => {
+      this.createSizeInput(
+        PARAM_WIDTH,
+        params.get(PARAM_WIDTH, 320),
+        (width) => {
           this.dimension.width = width;
-        })
+        }
+      )
     );
     div.appendChild(this.doc.createTextNode('✕'));
     div.appendChild(
-        this.createSizeInput(PARAM_HEIGHT, params.get(PARAM_HEIGHT, 250), (height) => {
+      this.createSizeInput(
+        PARAM_HEIGHT,
+        params.get(PARAM_HEIGHT, 250),
+        (height) => {
           this.dimension.height = height;
-        })
+        }
+      )
     );
     return div;
   }
@@ -173,7 +206,10 @@ class Preview {
   }
 
   toggleCustomSizeInput() {
-    this.customSizeInput.classList.toggle('hidden', this.dimension.label !== 'Custom');
+    this.customSizeInput.classList.toggle(
+      'hidden',
+      this.dimension.label !== 'Custom'
+    );
   }
 
   createIframe() {
@@ -182,8 +218,11 @@ class Preview {
     iframe.setAttribute('id', 'previewIframe');
     iframe.setAttribute('title', 'AMP Playground Output');
     iframe.setAttribute('allowpaymentrequest', '');
-    iframe.setAttribute('sandbox', 'allow-scripts allow-forms allow-same-origin allow-popups ' +
-      'allow-popups-to-escape-sandbox allow-presentation allow-top-navigation');
+    iframe.setAttribute(
+      'sandbox',
+      'allow-scripts allow-forms allow-same-origin allow-popups ' +
+        'allow-popups-to-escape-sandbox allow-presentation allow-top-navigation'
+    );
     iframe.setAttribute('allowfullscreen', true);
     iframe.classList.add('elevation-4dp');
     return iframe;
@@ -233,11 +272,36 @@ class Preview {
     childDoc.write('');
     childDoc.write(this.documentString);
     childDoc.close();
+    // Enable development mode for preview iframe
+    childWindow.location.hash = '#development=1';
+    childWindow.console.error = () => {};
+
     (childWindow.AMP = childWindow.AMP || []).push(() => {
+      const checkStateIntervalID = childWindow.setInterval(() => {
+        if (this.ampStateReady()) {
+          childWindow.clearInterval(checkStateIntervalID);
+          childWindow.document.addEventListener(
+            'click',
+            this.requestState.bind(this)
+          );
+          childWindow.document.addEventListener(
+            'keyup',
+            this.requestState.bind(this)
+          );
+          events.publish(EVENT_AMP_BIND_READY, true);
+        } else {
+          events.publish(EVENT_AMP_BIND_READY, false);
+        }
+      }, 100);
+      setTimeout(() => {
+        childWindow.clearInterval(checkStateIntervalID);
+      }, 3000);
+
       this.restoreState(this.previewIframe, this.state);
       this.loader.hide();
-      const oldIframes = [].slice.call(this.previewContainer.querySelectorAll('iframe'))
-          .filter((e) => e !== this.previewIframe);
+      const oldIframes = [].slice
+        .call(this.previewContainer.querySelectorAll('iframe'))
+        .filter((e) => e !== this.previewIframe);
       oldIframes.forEach((e) => {
         e.classList.add('fadeout');
       });
@@ -245,8 +309,29 @@ class Preview {
     });
   }
 
+  ampStateReady() {
+    const childWindow = this.getIframeWindow(this.previewIframe);
+    return childWindow.AMP.printState ? true : false;
+  }
+
+  requestState() {
+    if (this.ampStateReady()) {
+      this.getAmpState().then((state) => {
+        events.publish(EVENT_AMP_BIND_NEW_STATE, state);
+      });
+    }
+  }
+
+  toggleExperiment(experiment, force) {
+    const childWindow = this.getIframeWindow(this.previewIframe);
+    childWindow.AMP.toggleExperiment(experiment, force);
+    this.reload();
+  }
+
   getIframeWindow(iframeElement) {
-    return iframeElement.contentWindow || iframeElement.contentDocument.parentWindow;
+    return (
+      iframeElement.contentWindow || iframeElement.contentDocument.parentWindow
+    );
   }
 
   clearPlaceholders() {
@@ -280,5 +365,27 @@ class Preview {
     if (state.scroll) {
       win.scrollTo(state.scroll.x, state.scroll.y);
     }
+  }
+
+  getAmpState() {
+    const iframe = document.getElementById('previewIframe');
+    const childWindow = this.getIframeWindow(iframe);
+    const _info = childWindow.console.info;
+
+    return new Promise((resolve, reject) => {
+      childWindow.console.info = (tag, state) => {
+        if (tag == '[amp-bind]') {
+          resolve(state);
+        } else {
+          reject(new Error('Requesting AMP state failed'));
+        }
+      };
+      setTimeout(() => {
+        childWindow.AMP.printState();
+      }, 100);
+    }).then((state) => {
+      childWindow.console.info = _info;
+      return state;
+    });
   }
 }

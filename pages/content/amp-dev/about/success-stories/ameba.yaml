@@ -1,0 +1,97 @@
+$title: ameba.jp
+$category: social-media
+$date: 2019-12-02
+description: Ameba launched their article landing pages as AMP Stories
+
+formats:
+  - stories
+
+teaser:
+  image:
+    src: '/static/img/success-stories/ameba/ameba-teaser.jpg'
+    width: 1
+    height: 1
+    alt: An ameba.jp desktop AMP story
+  logo:
+    src: '/static/img/success-stories/ameba/ameba-logo.png'
+    width: 164
+    height: 50
+    alt: Ameba
+  text: To provide their blog content in a more attractive format, Ameba launched their article landing pages as AMP Stories
+
+stage:
+  headline: Ameba launched their article landing pages as AMP Stories
+  subline: DEC 2, 2019
+  layout: all
+  logo:
+    image_src: '/static/img/success-stories/ameba/ameba-logo.png'
+    width: 164
+    height: 50
+    alt: Ameba
+  devices:
+    - image_src: '/static/img/success-stories/ameba/ameba-screen-desktop-1.jpg'
+      width: 1413
+      height: 1001
+      type: desktop
+      alt: An ameba.jp desktop AMP story
+    - video_src: '/static/img/success-stories/ameba/ameba-video.mp4'
+      poster_src: '/static/img/success-stories/ameba/ameba-poster.jpg'
+      width: 563
+      height: 1001
+      type: mobile
+
+kpis:
+  - value: 20%
+    text: CTR
+
+  - value: 53%
+    text: Completion ratio
+
+  - value: 1.5x
+    text: Avg. time on page
+
+contents:
+  - layout: text
+    text: 'Based on the company vision of “Creating a company that represents the 21st century,” CyberAgent runs their business in four major fields: media, Internet advertisement, games, and start-up investment development.<br><br>Ameba blog, one of their main media services, has been optimizing its user experience by converting blog articles into AMP pages from the very beginning of the AMP project launch. The main goal is to improve their page speed and optimize business performance such as ads CPM, PV and so on. Having over 20 million AMP pages, they see the pages loading 57% faster in Speed Index and have succeeded in improving the CPM to 149%.<br><br>To provide their blog content in a more attractive format, Ameba recently launched their article landing pages as AMP Stories since the “stories” format has become increasingly popular among the next generation of users who spend most of their time on mobile. The main KPI was around hitting high CTR for attachments, as well as optimizing blogs for completion rate. You can see their AMP Stories <a href="https://blogger.ameba.jp/ampstories/genres/bento/blog-ranking.html">here</a>.'
+
+  - layout: text-media
+    image_src: '/static/img/success-stories/ameba/ameba-screen-2.jpg'
+    width: 563
+    height: 1001
+    type: mobile
+    alt: An ameba.jp AMP story
+    headline: Solution
+    text: "<ul>
+      <li>Leveraged the default AMP components as much as possible to accelerate development</li>
+      <li>Re-used the existing landing pages as the single source of truth to automatically publish stories for 185 categories, which would become 185 individual stories, and keep it maintainable at the same time</li>
+      <li>Followed the best practices for creating an AMP Story and used the auto-advance-after attribute to automatically transition to the next page to let users watch content just like a video channel</li>
+      <li>Built a template with an A/B test approach to micro-optimize performance (in order to achieve the KPIs) and also publish at scale</li>
+    </ul>"
+    direction: right-flat
+
+  - layout: quote
+    quote: "In particular, AMP Stories is one of the best formats for the Ameba blog since we maintain high-quality blog posts and deliver the content in an innovative way to a mobile-first audience. As the KPI results show, our users tend to favor the stories format and we will continue to invest in these in the future."
+    image_src: '/static/img/success-stories/ameba/ameba-logo.png'
+    width: 164
+    height: 50
+    alt: ameba.jp
+    author: Kazunari Hara, Tech Lead of Ameba
+
+  - layout: text-media
+    image_src: '/static/img/success-stories/ameba/ameba-screen-3.jpg'
+    width: 563
+    height: 1001
+    type: mobile
+    alt: An ameba.jp AMP story
+    headline: Result
+    text: "Soon after the product release, CTR for AMP stories attachments marked 20% and AMP stories completion rate (whether users are swiping through the entire story or not) is now at 53%, which means that more than half of the users are fully engaging with the content and also showing interest in knowing more about the individual items. In addition, Avg Time On Page metric improved by 1.5x compared to the existing HTML ranking page."
+    direction: left
+    background: gradient
+
+  - layout: quote
+    quote: "From a webmaster point of view, it’s also important to improve user experience. AMP and AMP Stories are one of the best approaches to achieve that goal.<br><br>In addition, we can expect more traffic by leveraging these formats not only from organic search but also through Google Discover. We are planning to invest more in AMP/AMP Stories in the future in order to improve user experience."
+    image_src: '/static/img/success-stories/ameba/ameba-logo.png'
+    width: 164
+    height: 50
+    alt: ameba.jp
+    author: Satoshi Kimura, SEO Manager of Ameba

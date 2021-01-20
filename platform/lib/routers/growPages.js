@@ -22,7 +22,10 @@ const LRU = require('lru-cache');
 const config = require('@lib/config');
 const {Templates, createRequestContext} = require('@lib/templates/index.js');
 const AmpOptimizer = require('@ampproject/toolbox-optimizer');
-const CssTransformer = require('@lib/utils/cssTransformer');
+const AMP_OPTIMIZER_CONFIG = require('@lib/utils/ampOptimizerConfig.js');
+const pageCache = require('@lib/utils/pageCache');
+const signale = require('signale');
+const {promisify} = require('util');
 
 /* Potential path stubs that are used to find a matching file */
 const AVAILABLE_STUBS = ['.html', '/index.html', '', '/'];
@@ -171,14 +174,9 @@ function rewriteLinks(canonical, html, format, level) {
 // eslint-disable-next-line new-cap
 const growPages = express.Router();
 
-const optimizer = AmpOptimizer.create({
-  transformations: [
-    CssTransformer,
-    ...AmpOptimizer.TRANSFORMATIONS_AMP_FIRST,
-  ],
-});
+const optimizer = AmpOptimizer.create(AMP_OPTIMIZER_CONFIG);
 
-// only match urls with slash at the end or html extension or no extension
+// Only match urls with slash at the end or html extension or no extension
 growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
   const url = ensureUrlScheme(req.originalUrl);
   if (url.pathname !== req.path) {
@@ -186,28 +184,38 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
     return;
   }
 
+  // Check if the page has been cached
+  const cachedPage = await pageCache.get(req.originalUrl);
+  if (cachedPage) {
+    res.send(cachedPage);
+    return;
+  }
+
+  const templateContext = createRequestContext(req);
+
   const template = await loadTemplate(url.pathname);
   if (!template) {
     next();
     return;
   }
 
-  const templateContext = createRequestContext(req);
+  template.renderAsync = promisify(template.render);
   let renderedTemplate = null;
   try {
-    renderedTemplate = template.render(templateContext);
+    renderedTemplate = await template.renderAsync(templateContext);
   } catch (e) {
     // If there was a rendering error show the unrendered template with line
     // count to the user to figure out what's wrong
     if (config.isDevMode()) {
       res.set('content-type', 'text/plain');
       res.send(
-          `SSR error: ${e}\n\n` +
+        `SSR error: ${e}\n\n` +
           template.tmplStr
-              .split('\n')
-              .map((line, index) => `${index + 1} ${line}`)
-              .join('\n'));
-      console.error(e);
+            .split('\n')
+            .map((line, index) => `${index + 1} ${line}`)
+            .join('\n')
+      );
+      signale.error(e);
       return;
     }
 
@@ -218,17 +226,41 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
   // The documentation pages rely on passing along their currently
   // selected format via GET paramters. The static URLs need to be rewritten
   // for this use case
-  renderedTemplate = rewriteLinks(url.pathname, renderedTemplate,
-      templateContext.format, templateContext.level);
+  renderedTemplate = rewriteLinks(
+    url.pathname,
+    renderedTemplate,
+    templateContext.format,
+    templateContext.level
+  );
 
   // Pipe the rendered template through the AMP optimizer
   try {
-    renderedTemplate = await optimizer.transformHtml(renderedTemplate);
+    const optimize = req.query.optimize !== 'false';
+    if (optimize) {
+      const experimentEsm = !!req.query.esm || false;
+      const preloadHeroImage =
+        req.query.hero === undefined ? true : !!req.query.hero;
+      const params = {
+        experimentEsm,
+        preloadHeroImage,
+      };
+      renderedTemplate = await optimizer.transformHtml(
+        renderedTemplate,
+        params
+      );
+    }
   } catch (e) {
-    console.error('[OPTIMIZER]', e);
+    signale.error('[OPTIMIZER]', e);
   }
 
   res.send(renderedTemplate);
+
+  // Cache the optimized and rendered page
+  pageCache.set(req.originalUrl, renderedTemplate);
 });
 
-module.exports = growPages;
+module.exports = {
+  loadTemplate,
+  ensureUrlScheme,
+  growPages,
+};

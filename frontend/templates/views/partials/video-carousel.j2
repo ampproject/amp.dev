@@ -1,16 +1,13 @@
-{% do doc.amp_dependencies.add('amp-carousel', '0.1') %}
-{% do doc.amp_dependencies.add('amp-youtube', '0.1') %}
 <amp-carousel class="ap-o-video-slider-carousel"
-  height="300"
-  layout="fixed-height"
-  controls=0
-  type="carousel">
-  {% for youtube_video_id in youtube_video_ids %}
-      <amp-youtube
-          data-videoid={{ youtube_video_id }}
-          width="391"
-          height="220"
-          layout="fixed">
-      </amp-youtube>
+    height="300"
+    layout="fixed-height"
+    controls=0
+    type="carousel">
+  {% for id in youtube_video_ids %}
+  <amp-youtube data-videoid="{{ id }}"
+      width="391"
+      height="220"
+      layout="fixed">
+  </amp-youtube>
   {% endfor %}
 </amp-carousel>

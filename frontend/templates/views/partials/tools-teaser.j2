@@ -1,5 +1,6 @@
 {% do doc.styles.addCssFile('css/components/molecules/teaser-success-story.css') %}
-<div class="ap-m-teaser ap-m-teaser-success-story ap-m-teaser-card-{{ tool.type|lower }} {% for format in tool.formats %} ap--{{ format }}{% endfor %}" [hidden]="activeFilter.chosenFilter != 'none' && !{{ tool.formats }}.includes(activeFilter.chosenFilter)">
+<div [% if requestedFormat not in '{{tool.formats}}' %]hidden[% endif %]
+    class="ap-m-teaser ap-m-teaser-success-story ap-m-teaser-card-{{ tool.type|lower }} {% for format in tool.formats %} ap--{{ format }}{% endfor %}">
   {% if tool.formats and tool.formats|length == 1 and not format %}
   {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
   <div class="ap-m-tag ap-m-tag-{{ tool.formats[0] }} ap-m-teaser-tag" role="filter" tabindex="0"
@@ -7,7 +8,7 @@
     <div class="ap-m-teaser-tag-icon ap-m-teaser-tag-{{tool.formats[0]}} ap-a-ico">
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{tool.formats[0]}}"></use></svg>
     </div>
-    {{ tool.formats[0]|title }}
+    {{ _(tool.formats[0]|title) }}
   </div>
   {% endif %}
   <a href="{{ tool.url }}">
@@ -15,7 +16,7 @@
       {% set teaser = tool or {} %}
       {% if teaser.video %}
       <div class="ap-a-img ap-m-teaser-image">
-        <amp-video class="ap--media" src="{{ teaser.video.src }}" layout="responsive" width="2" height="1" poster="{{ teaser.image.src }}" autoplay muted loop></amp-video>
+        <amp-video src="{{ teaser.video.src }}" layout="responsive" width="2" height="1" poster="{{ teaser.image.src }}" autoplay muted loop></amp-video>
       </div>
       {% elif teaser.image %}
       <div class="ap-a-img ap-m-teaser-image{% if teaser.image.fit %} {{teaser.image.fit}}{% endif %}" {% if teaser.image.bgcolor %}style="background-color: {{teaser.image.bgcolor}};"{% endif %}>
@@ -24,27 +25,31 @@
       {% endif %}
 
       <div>
-          <div class="ap-m-teaser-content">
-            {% if teaser.logo %}
-            <div class="ap-a-img ap-m-teaser-logo fixed-container">
-              <amp-img class="contain" src="{{ teaser.logo.src }}" layout="fill" alt="{{ teaser.logo.alt }}"></amp-img>
-            </div>
-            {% endif %}
-
-            <h4 class="ap-m-teaser-headline">
-            {%- if teaser.official %}{% do doc.icons.useIcon('/icons/logo-transparent.svg') -%}
-              <div class="ap-m-teaser-logo ap-a-ico"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-transparent"></use></svg></div>
-            {%- endif -%}
-            {{- teaser.name -}}
-            </h4>
-            {% if teaser.description %}
-            <p>{{ teaser.description }}</p>
-            {% endif %}
+        <div class="ap-m-teaser-content">
+          {% if teaser.logo %}
+          <div class="ap-a-img ap-m-teaser-logo fixed-container">
+            <amp-img class="contain" src="{{ teaser.logo.src }}" layout="fill" alt="{{ teaser.logo.alt }}"></amp-img>
           </div>
-
-          {% if teaser.type %}
-          <div class="ap-m-teaser-type ap-m-teaser-type-{{ tool.type|lower }}">{{ teaser.type }}</div>
           {% endif %}
+
+          <h4 class="ap-m-teaser-headline">
+          {%- if teaser.official %}{% do doc.icons.useIcon('/icons/logo-transparent.svg') -%}
+            <div class="ap-m-teaser-logo ap-a-ico"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-transparent"></use></svg></div>
+          {%- endif -%}
+          {% if teaser.name %}
+          {{- _(teaser.name) -}}
+          {% elif teaser.label %}
+          {{- _(teaser.label) -}}
+          {% endif %}
+          </h4>
+          {% if teaser.description %}
+          <p>{{ _(teaser.description) }}</p>
+          {% endif %}
+        </div>
+
+        {% if teaser.type %}
+        <div class="ap-m-teaser-type ap-m-teaser-type-{{ tool.type|lower }}">{{ _(teaser.type) }}</div>
+        {% endif %}
       </div>
 
     </div>

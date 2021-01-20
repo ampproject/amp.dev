@@ -1,0 +1,23 @@
+{% do doc.styles.addCssFile('css/components/molecules/pixi-basic-metric.css') %}
+
+<div id="{{ basic_metric.id }}" class="ap-m-pixi-basic-metric" dir="{{ doc.locale.text_direction }}">
+  <h3 class="ap-m-pixi-basic-metric-title">
+    {{ basic_metric.title }}
+    <br>
+    <label class="ap-m-pixi-basic-metric-status">
+      {% if not basic_metric.status %}
+      {{ pixi.scriptText.status.analyzing }}
+      {% include 'views/partials/pixi/analyzing-dots.j2' %}
+      {% else %}
+      {{ basic_metric.status }}
+      {% endif %}
+    </label>
+  </h3>
+
+  {% with tooltip = {
+    'id': basic_metric.id,
+    'invert': basic_metric.invert_tooltip
+  } %}
+  {% include 'views/partials/pixi/tooltip.j2' %}
+  {% endwith %}
+</div>

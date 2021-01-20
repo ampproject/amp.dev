@@ -60,7 +60,7 @@ Ejemplo:
 
 Para obtener más información, consulta [Diseño y media queries](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) y las [especificaciones de diseño](amp-html-layout/index.md).
 
-## media
+## media <a name="media"></a>
 
 Todos los elementos AMP admiten el atributo `media`. El valor de `media` es una media query. Si la consulta no coincide, el elemento no se renderiza y no se obtienen sus recursos ni los potenciales recursos secundarios. Si la ventana del navegador cambia de tamaño o de orientación, las media queries se vuelven a evaluar y los elementos se ocultan y se muestran en función de los nuevos resultados.
 

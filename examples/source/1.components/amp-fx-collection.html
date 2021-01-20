@@ -6,13 +6,13 @@ author: aghassemi
 <!--
   ## Introduction
 
-  The [amp-fx-collection](/content/amp-dev/documentation/components/reference/amp-fx-collection.md) extension provides a collection of preset visual effects, such as parallax that can be easily enabled on any element via `amp-fx` attribute.
+  The [`amp-fx-collection`](/content/amp-dev/documentation/components/reference/amp-fx-collection-v0.1.md) component provides a collection of preset visual effects, such as parallax that can be easily enabled on any element via `amp-fx` attribute.
 
   Currently, only the parallax effect is supported. More effects such as fade-in, slide-in and more are planned to be supported soon. `amp-fx-collection` replaces the now-deprecated `amp-fx-parallax` component.
 -->
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 <head>
   <meta charset="utf-8">
   <title>amp-fx-collection</title>
@@ -23,7 +23,7 @@ author: aghassemi
   -->
   <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
   <link rel="canonical" href="<% canonical %>">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <!--
     ## Styles
@@ -158,8 +158,8 @@ author: aghassemi
     Scroll triggered fly-in effect can be added to any element by adding `amp-fx="fly-in-bottom"`, `amp-fx="fly-in-top"`, `amp-fx="fly-in-left"` or `amp-fx="fly-in-right"` attribute to an element.
 
     This is a scroll triggered timed animation, i.e., once the element is within the viewport a timed animation will start that translates the element along the X/Y axis. You can control the animation via the following attributes:
-    * `data-duration` - This is the duration over which the animation takes places. The default value is determined by your device size to allow for the best preset values across mobile, tablet and desktop devices. For more details on this read the documentation on the [`data-duration`](/content/amp-dev/documentation/components/reference/amp-fx-collection.md) property.
-    * `data-fly-in-distance` - This parameter determines the percent of viewport over which the translation is to take place. The default value is determined by your device size to allow for the best preset values across mobile, tablet and desktop devices. For more details on this read the documentation on the [`data-fly-in-distance`](/content/amp-dev/documentation/components/reference/amp-fx-collection.md) property.
+    * `data-duration` - This is the duration over which the animation takes places. The default value is determined by your device size to allow for the best preset values across mobile, tablet and desktop devices. For more details on this read the documentation on the [`data-duration`](/content/amp-dev/documentation/components/reference/amp-fx-collection-v0.1.md) property.
+    * `data-fly-in-distance` - This parameter determines the percent of viewport over which the translation is to take place. The default value is determined by your device size to allow for the best preset values across mobile, tablet and desktop devices. For more details on this read the documentation on the [`data-fly-in-distance`](/content/amp-dev/documentation/components/reference/amp-fx-collection-v0.1.md) property.
     * `data-easing` - This parameter lets you vary the animation's speed over the course of its duration. The default is `ease-in` which is `cubic-bezier(0.40, 0.00, 0.40, 1.00)`. You can also choose from one of the presets available:
       * “linear” - cubic-bezier(0.00, 0.00, 1.00, 1.00),
       * “ease-in-out” - cubic-bezier(0.80, 0.00, 0.20, 1.00),

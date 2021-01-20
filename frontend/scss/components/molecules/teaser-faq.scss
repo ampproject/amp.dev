@@ -24,10 +24,11 @@
     margin: 0 0 2rem;
 
     & > a {
-      @include teaser-linking;
+      position: relative;
       height: 100%;
       display: flex;
       flex-direction: column;
+      transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 
       &:hover {
         @include teaser-linking-hover;
@@ -75,7 +76,7 @@
       left: 0;
       top: 0;
       width: 100%;
-      background: linear-gradient(225deg, color('ebony-clay') 0%, color('river-bed') 75%);
+      background: linear-gradient(225deg, color('charade') 0%, color('river-bed') 75%);
 
       .#{atom('ico')} {
         @include ico-10;

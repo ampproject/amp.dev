@@ -25,9 +25,12 @@ const EMBEDS_DEST = utils.project.absolute('/dist/examples/embeds/');
 const exampleEmbeds = express.Router();
 const staticEmbeds = express.static(EMBEDS_DEST);
 
-exampleEmbeds.use('/documentation/examples/:category/:name/embed', (request, response, next) => {
-  request.url = `/${request.params.category}/${request.params.name}.html`;
-  staticEmbeds(request, response, next);
-});
+exampleEmbeds.use(
+  '/documentation/examples/:category/:name/embed',
+  (request, response, next) => {
+    request.url = `/${request.params.category}/${request.params.name}.html`;
+    staticEmbeds(request, response, next);
+  }
+);
 
 module.exports = exampleEmbeds;

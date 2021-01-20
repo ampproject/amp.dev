@@ -234,7 +234,7 @@ limitations under the License.
 <table>
    <tr>
   	<td class="col-thirty"><strong>الشفرة</strong></td>
-  	<td>CDATA_VIOLATES_BLACKLIST</td>
+  	<td>CDATA_VIOLATES_DENYLIST</td>
   </tr>
    <tr>
   	<td class="col-thirty"><strong>التنسيق</strong></td>
@@ -250,7 +250,7 @@ limitations under the License.
 للتحقق من صحة قواعد CSS AMP الأساسية.
 
 في ما يلي قائمة بيانات CSS المدرجة بالقائمة السوداء
-(راجع أيضًا <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">`blacklisted_cdata_regex` في مواصفات أداة التحقق من صحة صفحات AMP</a>):
+(راجع أيضًا <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">`disallowed_cdata_regex` في مواصفات أداة التحقق من صحة صفحات AMP</a>):
 
 * ‎`"\\.i?-amp-"` ("CSS -amp- class name prefix"‎)‎
 * `"!important"`
@@ -648,13 +648,13 @@ limitations under the License.
   </tr>
    <tr>
   	<td class="col-thirty"><strong>الإصلاح</strong></td>
-  	<td>تقليل حجم ورقة الأنماط لتكون أقل من 50000 بايت.</td>
+  	<td>تقليل حجم ورقة الأنماط لتكون أقل من 75000 بايت.</td>
   </tr>
 </table>
 
 تعرض أداة التحقق من صحة صفحات AMP هذا الخطأ
 عند قياسها لحجم محتوى الأنماط
-ضمن `<style amp-custom>` وتجاوزه لحد 50000 بايت.
+ضمن `<style amp-custom>` وتجاوزه لحد 75000 بايت.
 
 ### خطأ في بنية CSS
 
@@ -832,7 +832,7 @@ limitations under the License.
 يحدث هذا الخطأ عندما تكون قيمة السمة غير صالحة للتنسيق المحدد.
 لاستيعاب سبب ظهور هذا الخطأ،
 ينبغي التعرّف على
-[السلوكيات المختلفة للتنسيقات]{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
+[السلوكيات المختلفة للتنسيقات](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md).
 
 لنفرض أنك عيّنت التنسيق ليكون `fixed-height` و
 وضمّنت القيم الرقمية لكل من `height` و`width`.

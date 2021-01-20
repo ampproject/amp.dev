@@ -13,10 +13,6 @@ section_links:
   - FAQ
 ---
 {% do doc.styles.addCssFile('css/components/templates/events.css') %}
-{% do doc.amp_dependencies.add('amp-youtube', '0.1') %}
-{% do doc.amp_dependencies.add('amp-selector', '0.1') %}
-{% do doc.amp_dependencies.add('amp-lightbox', '0.1') %}
-{% do doc.amp_dependencies.add('amp-iframe', '0.1') %}
 
 <section class="ap--stage ap--container-fluid">
     {% do doc.styles.addCssFile('css/components/organisms/stage-amp-conf.css') %}
@@ -40,23 +36,11 @@ section_links:
     </div>
 </section>
 
-{% do doc.styles.addCssFile('css/components/organisms/jumpto-list.css') %}
-{% do doc.styles.addCssFile('css/components/molecules/jumpto-item.css') %}
-
-<div class="ap-o-jumpto">
-  <div class="ap--container">
-    <div class="ap-o-jumpto-content">
-      <p class="ap-o-jumpto-text">Learn more about</p>
-      <ul class="ap-o-jumpto-list">
-        {% for link in doc.section_links %}
-          <li class="ap-m-jumpto-item">
-            <a href="#{{ link }}"class="ap-m-jumpto-item-link">{{ link }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
-</div>
+<section class="ap--container">
+  {% with text=_('Learn more about:') %}
+  {% include '/views/partials/jumpto.j2' %}
+  {% endwith %}
+</section>
 
 <section class="ap--container">
   <p class="ap--content-default">
@@ -69,15 +53,22 @@ section_links:
   <div class="ap--content-x-wide">
     <h2 class="ap-o-video-slider-text">Discover all exciting news from Day 1</h2>
     <p class="ap-o-video-slider-text">You couldn't make it to Tokyo but still want to know about all the exciting things happening around AMP? Checkout the highlights of Day 1 and even witness the AMP team unleashing the kraken!</p>
-    {% with %}
-    {% set youtube_video_ids = [
-      '1vwOFt9FBm4',
-      'sYXkVOiz77I',
-      'BrDBsS1Sko0',
-      ]
-    %}
-    {% include '/views/partials/video-carousel.j2' %}
-    {% endwith %}
+    [% set youTubeChannelPosts = []|importYouTubeChannel %]
+    [% if youTubeChannelPosts|length %]
+    <amp-carousel class="ap-o-video-slider-carousel"
+        type="carousel"
+        height="300"
+        layout="fixed-height"
+        controls=0>
+      [% for post in youTubeChannelPosts %]
+      <amp-youtube data-videoid="[=post.id=]"
+          width="391"
+          height="220"
+          layout="fixed">
+      </amp-youtube>
+      [% endfor %]
+    </amp-carousel>
+    [% endif %]
 
     <a href="https://www.youtube.com/watch?v=W7T5tMgrrFs&list=PLXTOW_XMsIDSY0USlzgoaIkRyPcHklrEl" class="ap-m-lnk ap-m-lnk-square">
       <div class="ap-a-ico ap-m-lnk-icon">
@@ -328,23 +319,21 @@ section_links:
     </div>
 </section>
 
-<section class="ap--container">
-  {% do doc.styles.addCssFile('css/components/organisms/jumpto-list.css') %}
-  {% do doc.styles.addCssFile('css/components/molecules/jumpto-item.css') %}
-
-  <div class="ap-o-jumpto ap--container">
-    <div class="ap-o-jumpto-content ap--inline-footer">
-      <ul class="ap-o-jumpto-list">
-        <li class="ap-m-jumpto-item">
-          <a class="ap-m-jumpto-item-link" href="code-of-conduct.html">Code of Conduct</a>
-        </li>
-        <li class="ap-m-jumpto-item">
-          <a class="ap-m-jumpto-item-link" href="accessibility.html">Accessibility</a>
-        </li>
-        <li class="ap-m-jumpto-item">
-          <a class="ap-m-jumpto-item-link" href="mailto:amp-conf@google.com">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+<section class="ap--container ap--center">
+  {% with list = [
+      { "label": "Code of Conduct",
+        "url": "code-of-conduct.html"
+      },
+      {
+        "label": "Accessibility",
+        "url": "accessibility.html"
+      },
+      {
+        "label": "Contact",
+        "url": "mailto:amp-conf@google.com"
+      }
+    ]
+  %}
+  {% include '/views/partials/jumpto.j2' %}
+  {% endwith %}
 </section>

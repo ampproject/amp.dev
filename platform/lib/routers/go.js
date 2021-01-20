@@ -18,6 +18,7 @@
 const yaml = require('js-yaml');
 const express = require('express');
 const config = require('@lib/config.js');
+const log = require('@lib/utils/log')('Go Links');
 const {join} = require('path');
 const {readFileSync} = require('fs');
 const URL = require('url').URL;
@@ -28,16 +29,20 @@ const GO_LINKS_DEFINITION = join(__dirname, '../../config/go-links.yaml');
 // eslint-disable-next-line new-cap
 const go = express.Router();
 
-const goLinks = initGoLinks(yaml.safeLoad(readFileSync(GO_LINKS_DEFINITION)));
+const goLinks = initGoLinks(yaml.load(readFileSync(GO_LINKS_DEFINITION)));
 
 go.use((request, response, next) => {
+  const requestPath = request.path.replace(/\/?$/, '');
   let target;
-  if (goLinks.simple[request.path]) {
-    target = goLinks.simple[request.path];
+
+  if (goLinks.simple[requestPath]) {
+    target = goLinks.simple[requestPath];
   } else {
-    const match = goLinks.regex.find((regex) => request.path.match(regex.pattern));
+    const match = goLinks.regex.find((regex) =>
+      requestPath.match(regex.pattern)
+    );
     if (match) {
-      target = request.path.replace(match.pattern, match.url);
+      target = requestPath.replace(match.pattern, match.url);
     }
   }
 
@@ -52,7 +57,7 @@ go.use((request, response, next) => {
     response.redirect(targetUrl.toString());
     return;
   } catch (error) {
-    console.log(error);
+    log.error(error);
     notFound(request, response, next);
   }
 });

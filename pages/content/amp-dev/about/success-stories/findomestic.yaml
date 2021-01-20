@@ -1,0 +1,78 @@
+$title: Findomestic
+$category: finance
+$date: 2020-02-24
+description: Findomestic helps users find the banking product they need right from their email.
+
+formats:
+  - email
+
+teaser:
+  image:
+    src: '/static/img/success-stories/findomestic/findomestic-teaser.jpg'
+    width: 1
+    height: 1
+    alt: The Findomestic AMP email
+  logo:
+    src: '/static/img/success-stories/findomestic/findomestic-logo.png'
+    width: 300
+    height: 92
+    alt: Findomestic
+  text: Findomestic helps users find the banking products right from their email
+
+stage:
+  headline: Findomestic helps users find the banking product they need right from their email.
+  subline: FEB 24, 2020
+  layout: mobile
+  logo:
+    image_src: '/static/img/success-stories/findomestic/findomestic-logo.png'
+    width: 300
+    height: 92
+    alt: Findomestic
+  devices:
+    - video_src: '/static/img/success-stories/findomestic/findomestic-video.mp4'
+      poster_src: '/static/img/success-stories/findomestic/findomestic-screen-1.jpg'
+      width: 750
+      height: 1308
+      type: mobile
+
+kpis:
+  - value: '+128%'
+    text: Open Rate
+
+  - value: '+133%'
+    text: Click Rate
+
+contents:
+  - layout: text
+    text: "Findomestic is a consumer credit company that has been in business since 1984, working responsibly towards its stakeholders to create shared value and foster mutual benefit. The company makes credit, savings, and insurance products available to families in accordance with its principles of responsibility and sustainability - all values that lie at the core of Findomestic's choices."
+
+  - layout: text-media
+    image_src: '/static/img/success-stories/findomestic/findomestic-screen-2.jpg'
+    width: 750
+    height: 1308
+    type: mobile
+    alt: The Findomestic AMP email
+    headline: Goals
+    text: "Findomestic’s ultimate goal was to improve the performance of their emails as a conversion channel by providing an innovative user experience for generating leads. They saw the potential to differentiate their communications with dynamic email and identified AMP for email as the ideal solution."
+    direction: right-flat
+
+  - layout: text
+    headline: Solution
+    text: 'Findomestic set out to create an experience that would allow the user to interact with their web systems and get back real time results based on their actions, all while providing a UX consistent with the Findomestic ecosystem.<br><br>The introduction of AMP for email allows recipients to interact with components within the email itself without ever leaving their inbox. This allows the user to choose the banking product they need right from their email.'
+
+  - layout: text
+    headline: Results
+    text: "MagNews’ Email Marketing is a scalable SaaS solution that Findomestic uses for the creation, management and integration of multichannel marketing campaigns. In this latest joint project, Magnews added new functionality: AMP for email, a protocol that transforms email communications into a true interactive email experience.
+    <br><br>It is an entirely new way to interact with email, which enabled Findomestic to build an offer and provide a call to action directly within a single interface.
+    Findomestic decided to adopt AMP for email to allow users to calculate the financing rate of a new loan directly from their inbox, thus creating an upselling opportunity for Findomestic.<br><br>After opening an AMP email, users can choose a project by clicking an icon. A user can then edit the size of the loan they want to receive and Findomestic’s algorithm produces the amount due with interest rates. All this happens inside the email without the need to be redirected to an external landing page with possible delays or connection issues. Therefore,  the calculation tool has zero latency as it's all embedded in the email."
+
+  - layout: quote
+    quote: "AMP for email enabled us to provide a better experience for Findomestic users, making their experience both faster and more interactive. We’re still exploring new approaches to understand which content is the most effective, however we are already able to see significant improvements in all metrics."
+    image_src: '/static/img/success-stories/findomestic/findomestic-logo.png'
+    width: 300
+    height: 92
+    alt: Findomestic
+    author: Andrea Paci, UX Designer, Findomestic Banca
+
+  - layout: text
+    text: "To test out AMP for email, Findomestic conducted an experiment. First, they identified a cluster of email users. They then separated that group into a control and experimental group.<br><br><ul><li>The first segment was the control group, or Group A. They received the standard email, an HTML version graphically similar to the AMP version but without interactive elements. The email showed the best loan offer and a main CTA, which directed users to Findomestic’s systems, allowing users to calculate the best offer on their website.</li><li>The experimental group, or Group B, received the dynamic AMP version of Findomestic’s email. Using the AMP version (seen in the image below), users can interact with multiple elements. Users can choose what their loan is for (holidays, furniture, etc.), from directly inside their inbox and immediately obtaining a preview of the best available offer.</li></ul>According to Findomestic, this new implementation achieved notable results. A/B split testing on Black Friday communications led to:<ul><li>An Open Rate increase of 128% (35.4% for the AMP email vs. 15.5% for the classic email)</li><li>A Click Rate increase of 133% (1.4% for the AMP email vs 0.6% for the classic email)</li></ul>Interestingly, users opened the email the dynamic email several times. Findomestic assumes that the dynamic nature of the email attracted the user's attention and encouraged them to play with the content of the email, even after it was opened the first time.<br><br>Although the numbers speak for themselves, this wasn't the only improvement Findomestic observed. The analysis conducted on these first results convinced Findomestic to continue with their experiments and to extend the AMP for email technology to their entire email process.<br><br>Thanks to AMP for email, Findomestic was able to build a continuous and seamless brand-customer relationship experience that was dynamic, innovative, and impactful."

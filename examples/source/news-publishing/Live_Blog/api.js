@@ -30,32 +30,77 @@ const MAX_BLOG_ITEMS_NUMBER_PER_PAGE = 5;
 const BLOG_ID_PREFIX = 'post';
 const IMG_PATH = '/static/samples/img/';
 const AMP_LIVE_LIST_COOKIE_NAME = 'ABE_AMP_LIVE_LIST_STATUS';
-const EXPIRATION_DATE = 24*60*60*1000; // 1 day in ms
+const EXPIRATION_DATE = 24 * 60 * 60 * 1000; // 1 day in ms
 const blogs = [
-  newPost('Green landscape', 'A green landscape with trees.', 'landscape_green_1280x853.jpg', 1),
-  newPost('Mountains', 'Mountains reflecting on a lake.', 'landscape_mountains_1280x657.jpg', 2),
-  newPost('Road leading to a lake', 'A road leading to a lake with mountains on the back.',
-      'landscape_lake_1280x857.jpg', 3),
-  newPost('Forested hills', 'Forested hills with a grey sky in the background.',
-      'landscape_trees_1280x960.jpg', 4),
-  newPost('Scattered houses', 'Scattered houses in a mountain village.',
-      'landscape_village_1280x853.jpg', 5),
+  newPost(
+    'Green landscape',
+    'A green landscape with trees.',
+    'landscape_green_1280x853.jpg',
+    1
+  ),
+  newPost(
+    'Mountains',
+    'Mountains reflecting on a lake.',
+    'landscape_mountains_1280x657.jpg',
+    2
+  ),
+  newPost(
+    'Road leading to a lake',
+    'A road leading to a lake with mountains on the back.',
+    'landscape_lake_1280x857.jpg',
+    3
+  ),
+  newPost(
+    'Forested hills',
+    'Forested hills with a grey sky in the background.',
+    'landscape_trees_1280x960.jpg',
+    4
+  ),
+  newPost(
+    'Scattered houses',
+    'Scattered houses in a mountain village.',
+    'landscape_village_1280x853.jpg',
+    5
+  ),
   newPost('Canyon', 'A deep canyon.', 'landscape_canyon_1280x1700.jpg', 6),
-  newPost('Desert', 'A desert with mountains in the background.',
-      'landscape_desert_1280x853.jpg', 7),
-  newPost('Houses', 'Colorful houses on a street.', 'landscape_houses_1280x803.jpg', 8),
-  newPost('Blue sea', 'Blue sea surrounding a cave.', 'landscape_sea_1280x848.jpg', 9),
-  newPost('Sailing ship', 'A ship sailing the sea at sunset.', 'landscape_ship_1280x853.jpg', 10),
+  newPost(
+    'Desert',
+    'A desert with mountains in the background.',
+    'landscape_desert_1280x853.jpg',
+    7
+  ),
+  newPost(
+    'Houses',
+    'Colorful houses on a street.',
+    'landscape_houses_1280x803.jpg',
+    8
+  ),
+  newPost(
+    'Blue sea',
+    'Blue sea surrounding a cave.',
+    'landscape_sea_1280x848.jpg',
+    9
+  ),
+  newPost(
+    'Sailing ship',
+    'A ship sailing the sea at sunset.',
+    'landscape_ship_1280x853.jpg',
+    10
+  ),
 ];
 
 SampleRenderer.use(router, async (request, response, template) => {
   // set max-age to 15 s - the minimum refresh time for an amp-live-list
   setMaxAge(response, 15);
   const newStatus = await updateStatus(request, response);
-  response.send(template.render(createRequestContext(
-      request,
-      await createLiveBlogSample(request, newStatus)
-  )));
+  response.send(
+    template.render(
+      createRequestContext(
+        request,
+        await createLiveBlogSample(request, newStatus)
+      )
+    )
+  );
 });
 
 async function createLiveBlogSample(request, newStatus = 0) {
@@ -67,9 +112,14 @@ async function createLiveBlogSample(request, newStatus = 0) {
   const blogItems = await getBlogEntries(newStatus);
   const firstBlogId = await getFirstBlogId(request);
   const firstItemIndex = await getBlogEntryIndexFromID(firstBlogId, blogItems);
-  const lengthCurrentPageBlog = Math.min(blogItems.length,
-      firstItemIndex+MAX_BLOG_ITEMS_NUMBER_PER_PAGE);
-  const nextPageId = await getNextPageId(firstItemIndex+MAX_BLOG_ITEMS_NUMBER_PER_PAGE, blogItems);
+  const lengthCurrentPageBlog = Math.min(
+    blogItems.length,
+    firstItemIndex + MAX_BLOG_ITEMS_NUMBER_PER_PAGE
+  );
+  const nextPageId = await getNextPageId(
+    firstItemIndex + MAX_BLOG_ITEMS_NUMBER_PER_PAGE,
+    blogItems
+  );
   const prevPageId = await getPrevPageId(firstItemIndex);
   const prefix = await buildPrefixPaginationUrl(origin, request.baseUrl);
   const nextPageUrl = await buildPaginationURL(prefix, nextPageId);
@@ -105,9 +155,9 @@ function readStatus(request) {
 
 function writeStatus(response, newValue) {
   response.cookie(
-      AMP_LIVE_LIST_COOKIE_NAME,
-      {value: newValue},
-      {expires: new Date(Date.now() + EXPIRATION_DATE)}
+    AMP_LIVE_LIST_COOKIE_NAME,
+    {value: newValue},
+    {expires: new Date(Date.now() + EXPIRATION_DATE)}
   );
 }
 
@@ -115,12 +165,12 @@ function getBlogEntries(size) {
   const returnArray = [];
   for (let i = 0; i < size; i++) {
     returnArray.push(
-        newPost(
-            blogs[i].heading,
-            blogs[i].text,
-            blogs[i].img.split(IMG_PATH)[1],
-            i + 1
-        )
+      newPost(
+        blogs[i].heading,
+        blogs[i].text,
+        blogs[i].img.split(IMG_PATH)[1],
+        i + 1
+      )
     );
   }
   return returnArray;
@@ -138,7 +188,7 @@ function buildPaginationURL(urlPrefix, pageId) {
 }
 
 function getPageNumberFromProductIndex(index) {
-  return (index / MAX_BLOG_ITEMS_NUMBER_PER_PAGE) + 1;
+  return index / MAX_BLOG_ITEMS_NUMBER_PER_PAGE + 1;
 }
 
 function getBlogEntryIndexFromID(id, blogItems = []) {
@@ -157,15 +207,19 @@ function getNextPageId(nextPageFirstItemIndex, blogItems = []) {
 
 function getPrevPageId(firstItemIndex) {
   if (firstItemIndex >= MAX_BLOG_ITEMS_NUMBER_PER_PAGE) {
-    return `${BLOG_ID_PREFIX}${firstItemIndex-MAX_BLOG_ITEMS_NUMBER_PER_PAGE+1}`;
+    return `${BLOG_ID_PREFIX}${
+      firstItemIndex - MAX_BLOG_ITEMS_NUMBER_PER_PAGE + 1
+    }`;
   }
   return '';
 }
 
 function getFirstBlogId(request) {
-  const firstItemIndex = !!request.query.from ? request.query.from : `${BLOG_ID_PREFIX}1`;
+  const firstItemIndex = !!request.query.from
+    ? request.query.from
+    : `${BLOG_ID_PREFIX}1`;
   return Number(firstItemIndex.split(BLOG_ID_PREFIX)[1]);
-};
+}
 
 function newPost(heading, text, img, id) {
   return {
@@ -185,7 +239,7 @@ function createMetaData(origin, baseUrl) {
     result.push({
       '@type': 'BlogPosting',
       'headline': blogs[i].heading,
-      'url': urlPrefix + BLOG_ID_PREFIX + (i+1),
+      'url': urlPrefix + BLOG_ID_PREFIX + (i + 1),
       'datePublished': blogs[i].timestamp,
       'author': {
         '@type': 'Person',

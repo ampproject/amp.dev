@@ -20,20 +20,19 @@ contributors:
 Styling and layout on AMP HTML pages is very similar to normal HTML pages – in
 both cases, you'll use CSS.
 
-However, AMP limits some use of CSS for performance and usability reasons, while
-expanding responsive design capabilities with features like [placeholders & fallbacks](placeholders.md),
+For performance and usability reasons, AMP [limits some CSS styles](style_pages.md) and total bytes to 75,000 per page. However, AMP expands responsive design capabilities with features like [placeholders & fallbacks](placeholders.md),
 [advanced art direction via srcset](art_direction.md) and the [layout attribute](control_layout.md) for better control over how your elements display.
 
 [tip type="tip"]
 **TIP –** It is super easy to make elements responsive in AMP. Just put `layout="responsive"` on them. To learn more about Responsive Design in AMP, head to [Create Responsive AMP Pages](responsive_design.md).
 [/tip]
 
-[video src='https://www.youtube.com/watch?v=y6kA3u3GIws' caption='Watch UpperQuad talk about the AMPproject site redesign, including the challenges of using AMP for the first time.']
+## Add styles to a page <a name="add-styles-to-a-page"></a>
+Each AMP page has a 75,000 byte CSS limit. Styles defined in the head of the document and inline count towards this limit. 
 
-## Add styles to a page
+### Define styles in head 
 
-Add your CSS inside a `<style amp-custom>` tag in the head of the document.
-For example:
+Define CSS within the `<style amp-custom>` tag inside the head of the document. There is only one `<style amp-custom>` tag allowed on each AMP page. 
 
 [sourcecode:html]
 <!doctype html>
@@ -56,12 +55,8 @@ For example:
   </head>
 [/sourcecode]
 
-[tip type="important"]
-**IMPORTANT –** Make sure there’s only one `<style amp-custom>` tag on your page, as more than one isn’t allowed in AMP.
-[/tip]
-
-Define component styles with class or element selectors
-using common CSS properties. For example:
+Style AMP components and HTML elements with class or selectors
+using common CSS properties:
 
 [sourcecode:html]
 <body>
@@ -78,17 +73,18 @@ using common CSS properties. For example:
 </body>
 [/sourcecode]
 
-[tip type="important"]
-**IMPORTANT –**: Check that your styles are supported in AMP; some styles aren't for performance reasons (see also [Supported CSS](style_pages.md)).
-[/tip]
+### Define inline styles
 
-If needed, AMP also allows inline styles. For example:
+AMP allows inline styles:
 
 [sourcecode:html]
 <body>
   <p style="color:pink;margin-left:30px;">Hello, Kitty.</p>
 </body>
 [/sourcecode]
+
+Each instance of an inline style has a 1,000 byte limit. Inline styles count toward the total 75,000 byte limit. 
+
 
 ## Layout elements responsively
 
@@ -126,12 +122,12 @@ AMP supports both `srcset` and `sizes` attributes to give you fine grained contr
 Use the AMP validator to test
 your page's CSS and layout values.
 
-The validator confirms that your page’s CSS doesn’t exceed 50,000 bytes limit,
+The validator confirms that your page’s CSS doesn’t exceed 75,000 bytes limit,
 checks for disallowed styles, and ensures that the page's layout
 is supported and correctly formatted.
 See also this complete list of [Style and layout errors](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md#style-and-layout-errors).
 
-Example error in console for page with CSS that exceeds the 50,000 bytes limit:
+Example error in console for page with CSS that exceeds the 75,000 bytes limit:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 

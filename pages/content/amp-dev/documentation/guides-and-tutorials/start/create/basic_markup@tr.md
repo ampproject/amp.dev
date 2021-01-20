@@ -12,7 +12,7 @@ Bunu kopyalayın veya .html uzantılı bir dosyaya kaydedin.
     <meta charset="utf-8">
     <title>Hello, AMPs</title>
     <link rel="canonical" href="{{doc.url}}">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -44,7 +44,7 @@ AMP HTML belgeleri şu özelliklere sahip olmalıdır:
   - `<head>` ve `<body>` etiketleri içermelidir (HTML›de isteğe bağlıdır).
   - Başında AMP HTML belgesinin düzenli HTML sürümünü ya da böyle bir HTML versiyonu mevcut değilse kendisini gösteren bir `<link rel="canonical" href="$SOME_URL">` etiketi içerir.
   - Baş etiketin ilk ürünü olarak `<meta charset="utf-8">` etiketini içerir.
-  - Baş etiketin içerisinde bir `<meta name="viewport" content="width=device-width,minimum-scale=1">` etiketi içerir. initial-scale=1›in de eklenmesi önerilir.
+  - Baş etiketin içerisinde bir `<meta name="viewport" content="width=device-width">1›in de eklenmesi önerilir.
   - Başında en son öge olarak`<script async src="https://cdn.ampproject.org/v0.js"></script>` etiketini içerir (Buna AMP JS kitaplığı da eklenip yüklenir).
   - `<head>` etiketinde aşağıdakileri içerir:
     `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`

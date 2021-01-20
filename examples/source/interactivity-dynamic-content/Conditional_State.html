@@ -1,0 +1,52 @@
+<!---
+author: elisameyer
+--->
+
+<!--
+  ## Introduction
+  This snippet demonstrates how to create a simple `amp-state` with conditions.
+-->
+<!-- -->
+<!doctype html>
+<html ⚡ lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="canonical" href="<% canonical %>">
+  <meta name="viewport" content="width=device-width">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <title>Conditional State</title>
+  <!--
+    ## Setup
+    We use `amp-bind` to create a dynamic `amp-state`.
+  -->
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+
+  <!--
+    ## Basic usage
+    The `charState` is set by the`AMP.setState` block in the `input` component. We check whether the state of user input has changed by using [input-throttled](https://amp.dev/documentation/examples/components/amp-bind/#debounce-input-events). If the state of input has changed, we check current the number of characters in the input (`event.value.length`) is. The number of characters determines what `charState` will be set. The item between the `?` question mark and the `:` colon meets the stated condition. The item after the `:` colon is given for anything that does not meet the stated condition. It is possible to have multiple conditions within the same `AMP.setState` block.
+
+    When a user types < 10 characters in the `input` section, they see the message "There are under 10 characters, type more!".
+
+    When a user types > 10 characters in the `input` section, they see the message "You have typed over 10 characters, you can stop now.".
+  -->
+<div>
+<p
+  [text]="charState"
+>
+  Try typing a few characters into the textbox.
+</p>
+<input
+  type="textbox"
+  on="input-throttled:AMP.setState({
+        charState: event.value.length < 10 ?  
+          'There are under 10 characters, type more!' : 
+          'You have typed over 10 characters, you can stop now.'
+        })"
+/>
+</div>
+
+</body>
+</html>

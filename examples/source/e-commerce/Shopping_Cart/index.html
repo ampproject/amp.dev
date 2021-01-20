@@ -4,7 +4,7 @@ author: demianrenzulli
 
 --->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 <head>
   <meta charset="utf-8">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -14,7 +14,7 @@ author: demianrenzulli
   <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
   <title>Shopping Cart</title>
   <link rel="canonical" href="<% canonical %>">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <style amp-custom>
     .shopping-cart {
@@ -59,7 +59,7 @@ author: demianrenzulli
         2. Clicking on the "remove" button, updates an state object (`cartItem`), which, in turn, update two hidden fields on the form `form-cart-delete`, and also triggers a form submission. This form will call the server to update the cart, and update the `cartItemsList` object with the response.
         2. The `amp-list` component contains the expression `[src]="cartItemsList.items"`, so that, when the `cartItemsList` object changes, as a result of the previous action, the list gets refreshed with the content of the updated cart.
         -->
-        <amp-list credentials="include" layout="responsive" height="100px" width="500px" src="<% hosts.platform %>/documentation/examples/e-commerce/shopping_cart/cart-items" [src]="cartItemsList.items" binding="no">
+        <amp-list credentials="include" layout="responsive" height="100px" width="500px" src="<% base_path %>/cart-items" [src]="cartItemsList.items" binding="no">
             <template type="amp-mustache" id="cart-items">
                 {{#isEmpty}}
                 <h3>Your Basket is Empty. </h3>
@@ -90,7 +90,7 @@ author: demianrenzulli
     1. The form contains two hidden input fields, bound to the `cartItem` object's variables. When the remove button is clicked, this object gets updated with the details of the item to remove from cart, so the form can send them on the call to the server.
     2. The form updates the `cartItemsList` with the response from the server, so that  `amp-list` can be refreshed with the contents of the updated cart.
     -->
-    <form id="form-cart-delete" method="POST" target="_top" action-xhr="<% hosts.platform %>/documentation/examples/e-commerce/shopping_cart/delete-cart-item" on="submit-success: AMP.setState({
+    <form id="form-cart-delete" method="POST" target="_top" action-xhr="<% base_path %>/delete-cart-item" on="submit-success: AMP.setState({
                 cartItemsList: event.response
             })" novalidate="">
         <input type="hidden" name="id" value="" [value]="cartItem.id">

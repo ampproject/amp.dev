@@ -7,7 +7,7 @@
             "classes": "cover",
             "alt-text": "Build a killer outfit.",
             "width": 196, "height": 249, "layout": "responsive",
-            "src": "../../img/land-see/content/retail-shop-370px.jpg"
+            "src": "../img/land-see/content/retail-shop-370px.jpg"
           }
         ],
         "post-classes": "land-see-post-item",
@@ -23,7 +23,7 @@
             "classes": "cover",
             "alt-text": "Feel the sand on your feet, not your wardrobe weight.",
             "width": 196, "height": 187, "layout": "responsive",
-            "src": "../../img/land-see/content/travel-accessories-outfits-2-400px.jpg"
+            "src": "../img/land-see/content/travel-accessories-outfits-2-400px.jpg"
           }
         ],
         "post-classes": "land-see-post-item",

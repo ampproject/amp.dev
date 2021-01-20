@@ -1,0 +1,38 @@
+<h1>
+{{doc.title}}
+{% if doc.versions and doc.versions|count > 1 %}
+<div class="ap--versions">
+  <select class="ap--versions-toggle" on="change:AMP.navigateTo(url=event.value)">
+    {% for v in doc.versions|reverse %}
+    <option {% if v == doc.version %} selected {% endif %} value="../{{doc.title}}{% if v != doc.latest_version %}-v{{v}}{% endif %}/?format=[= format =]">
+      {{v}}
+    </option>
+    {% endfor %}
+  </select>
+</div>
+{% endif %}
+</h1>
+
+{% if doc.experimental or doc.deprecated or doc.bento %}
+<div class="ap--component-tags">
+{% if doc.experimental %}
+  {% do doc.styles.addCssFile('css/components/atoms/pill.css') %}
+  <div class="ap-a-pill ap-a-pill-small ap-a-pill-meta">
+    {{ _('Experimental') }}
+  </div>
+{% endif %}
+{% if doc.deprecated %}
+  {% do doc.styles.addCssFile('css/components/atoms/pill.css') %}
+  <div class="ap-a-pill ap-a-pill-small ap-a-pill-meta">
+    {{ _('Deprecated') }}
+  </div>
+{% endif %}
+{% if doc.bento %}
+  {% do doc.styles.addCssFile('css/components/atoms/pill.css') %}
+  <div class="ap-a-pill ap-a-pill-small" style="--background-color:
+  #D45A5A; --color: #FFF;">
+    {{ _('Bento') }}
+  </div>
+{% endif %}
+</div>
+{% endif %}

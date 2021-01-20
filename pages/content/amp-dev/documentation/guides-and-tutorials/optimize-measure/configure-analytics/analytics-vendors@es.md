@@ -43,7 +43,7 @@ Los proveedores que quieran integrar su servicio con [`<amp-analytics>`](../../.
 
 <hr>
 
-## Proveedores
+## Proveedores <a name="vendors"></a>
 
 ### Acquia Lift
 
@@ -141,7 +141,7 @@ Escribe el valor de atributo: `googleadwords`
 
 Permite añadir compatibilidad con el seguimiento de conversiones y el remarketing de Google AdWords. Puedes encontrar más información en el Centro de Ayuda de AdWords para el [seguimiento de conversiones](https://support.google.com/adwords/answer/1722054?hl=es) y [remarketing](https://support.google.com/adwords/answer/2453998?hl=es). Se pueden utilizar ambas etiquetas de forma independiente.
 
-### Google Analytics
+### Google Analytics <a name="google-analytics"></a>
 
 Escribe el valor de atributo: `googleanalytics`
 

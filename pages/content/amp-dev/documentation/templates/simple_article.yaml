@@ -13,3 +13,33 @@ teaser:
     alt: Simple Article
 
   download_url: '/static/files/templates/article.zip'
+  template_demo_home: 'websites/article/templates/article.amp.html'
+  template_github_home: 'websites/article'
+ 
+document:
+  pages: /content/amp-dev/documentation/templates/article/pages
+  description: Simple article template.
+
+url:
+  path: '/documentation/templates/article'
+
+stage:
+  layout: all
+  devices:
+    - image_src: '/static/img/templates/article/pages/article-desktop-above.jpg'
+      width: 4
+      height: 3
+      type: desktop
+      alt: image
+
+    - image_src: '/static/img/templates/article/pages/article-tablet-above.jpg'
+      width: 3
+      height: 4
+      type: tablet
+      alt: image
+
+    - image_src: '/static/img/templates/article/pages/article-mobile-above.jpg'
+      width: 1
+      height: 2
+      type: mobile
+      alt: image

@@ -48,8 +48,7 @@
         var query = getQueryParams(document.location.search);
         var account = query.account;
         var user = query.user;
-        var source = new EventSource('/documentation/examples/components/amp-analytics/embed/listen?account=' + account + '&user=' + user);
-        console.log('adding event listener for ' + account + ' and ' + user);
+        var source = new EventSource('https://amp.dev/documentation/examples/components/amp-analytics/embed/listen?account=' + account + '&user=' + user);
         source.onmessage = function(e) {
           updateAnalyticsData(e.data);
           updateTimestamp();

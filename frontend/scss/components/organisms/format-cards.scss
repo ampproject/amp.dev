@@ -20,15 +20,18 @@
 
 .#{organism('format-cards')} {
   display: grid;
-  grid-column-gap: 30px;
   grid-template-columns: repeat(12, 1fr);
   align-items: stretch;
   margin-top: 20px;
 
+  @media (min-width: 600px) {
+    grid-column-gap: 30px;
+  }
+
   &-card {
     $format-card: &;
     position: relative;
-    grid-column: span 11;
+    grid-column: span 12;
     margin: 25px 0 0;
     border-radius: 10px;
     background-color: color('white');
@@ -98,11 +101,11 @@
     &-stories {
       #{$format-card}-copy,
       #{$format-card}-headline {
-        color: color('ultramarine');
+        @include color-stories;
       }
 
       #{$format-card}-icon {
-        fill: color('ultramarine');
+        @include fill-stories;
       }
     }
 

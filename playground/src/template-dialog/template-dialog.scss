@@ -1,5 +1,3 @@
-@import 'base.scss';
-
 .textfield-fullwidth {
   input {
     width: 100%;
@@ -7,6 +5,7 @@
     padding: 0;
     resize: none;
     border: none !important;
+    -webkit-appearance: none;
     font-size: 1rem;
     &:focus {
       outline: none;
@@ -41,7 +40,7 @@
     list-style-type: none;
     cursor: pointer;
     &:hover, &:active {
-      background-color: color('wild-sand');
+      background-color: color('athens-gray');
     }
     &.filtered {
       display: none;

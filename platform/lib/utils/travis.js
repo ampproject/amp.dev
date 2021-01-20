@@ -18,7 +18,6 @@
 
 require('module-alias/register');
 
-
 /**
  * Returns true if called inside a Travis environment
  * @return {Boolean}

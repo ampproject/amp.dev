@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -13,9 +13,11 @@
 // limitations under the License.
 
 import events from '../events/events.js';
+import * as Importer from '../importer/importer.js';
 
 const ROOT = '/document/';
 export const EVENT_DOCUMENT_STATE_CHANGED = 'playground-document-state-changed';
+export const EVENT_RECEIVE_URL_CONTENT = 'event-new-url-content';
 
 export const DIRTY = 'dirty';
 export const SAVED = 'saved';
@@ -30,13 +32,19 @@ class PlaygroundDocument {
     this.win = win;
     this.state = SAVED;
     this.docId = '';
+
+    events.subscribe(
+      Importer.EVENT_REQUEST_URL_CONTENT,
+      this.fetchUrl.bind(this)
+    );
   }
 
   fetchUrl(url) {
     const headers = new Headers();
     headers.append('x-requested-by', 'playground');
     headers.append('Content-Type', 'text/html');
-    return fetch('/api/fetch?url=' + url, {
+
+    const request = fetch('/api/fetch?url=' + url, {
       mode: 'cors',
       headers,
     }).then((response) => {
@@ -46,6 +54,9 @@ class PlaygroundDocument {
       this._changeState(READ_ONLY);
       return response.text();
     });
+
+    events.publish(EVENT_RECEIVE_URL_CONTENT, url, request);
+    return request;
   }
 
   fetchDocument(docId) {
@@ -54,21 +65,21 @@ class PlaygroundDocument {
       mode: 'cors',
       credentials: 'include',
     })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Failed fetching document');
-          }
-          return response.json();
-        })
-        .then((jsonDocument) => {
-          if (jsonDocument.readOnly) {
-            this._changeState(READ_ONLY);
-            this.docId = '';
-          } else {
-            this.docId = jsonDocument.id;
-          }
-          return jsonDocument.content;
-        });
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed fetching document');
+        }
+        return response.json();
+      })
+      .then((jsonDocument) => {
+        if (jsonDocument.readOnly) {
+          this._changeState(READ_ONLY);
+          this.docId = '';
+        } else {
+          this.docId = jsonDocument.id;
+        }
+        return jsonDocument.content;
+      });
   }
 
   update() {
@@ -89,11 +100,12 @@ class PlaygroundDocument {
       method: 'POST',
       body: snippet,
       credentials: 'include',
-    }).then((response) => response.json())
-        .then((data) => {
-          this._changeState(SAVED);
-          return data.id;
-        });
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        this._changeState(SAVED);
+        return data.id;
+      });
   }
 
   _changeState(newState) {

@@ -14,13 +14,13 @@ author: kul3r4
 -->
 <!-- -->
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 <head>
   <meta charset="utf-8">
   <title>Using the Google AMP Cache</title>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <link rel="canonical" href="<% canonical %>">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 </head>
 <body>
@@ -31,7 +31,6 @@ When possible, the Google AMP Cache will create a subdomain for each AMP documen
 
 Here is AMP Cache URL for `https://amp.dev/about/websites/`:
 
-{% do doc.amp_dependencies.add('amp-iframe', '0.1') %}
 <div>
 <amp-iframe title="Google AMP Cache tool" height="105" layout="fixed-height" sandbox="allow-scripts allow-popups" src="/static/samples/files/amp-url-converter.html?url=https://amp.dev/about/websites/">
 <div placeholder></div>
@@ -48,7 +47,13 @@ The converted AMP Cache URL consists of the following parts:
 
 It is OK for URLs to include parameters in the query string, simply include these in the AMP Cache URL as well.
 
-Example: [https://amp-dev.cdn.ampproject.org/c/s/amp.dev/documentation/examples/api/g/timestamp?value=Hello%20World](https://amp-dev.cdn.ampproject.org/c/s/amp.dev/documentation/examples/api/g/timestamp?value=Hello%20World).
+Example: [https://amp-dev.cdn.ampproject.org/c/s/amp.dev/documentation/examples/api/query?value=Hello%20World](https://amp-dev.cdn.ampproject.org/c/s/amp.dev/documentation/examples/api/query?value=Hello%20World).
+
+## Cache updates
+
+The AMP Cache uses a [one-behind caching model](https://developers.google.com/amp/cache/overview#google-amp-cache-updates) which can be controlled by the [`max-age` cache directive](https://developer.mozilla.org/de/docs/Web/HTTP/Headers/Cache-Control). You can test the behavior with this sample page, which will prints the current date at serving time:
+
+Max-age 15s: [https://amp-dev.cdn.ampproject.org/c/s/amp.dev/documentation/examples/api/query?maxage=15](https://amp-dev.cdn.ampproject.org/c/s/amp.dev/documentation/examples/api/query?maxage=15).
 
 ## Redirect & Error Handling
 

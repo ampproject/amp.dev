@@ -24,9 +24,11 @@ const credentials = require('@lib/utils/credentials');
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 examples.use(express.json());
-examples.use(express.urlencoded({
-  extended: true,
-}));
+examples.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 
 const RECAPTCHA_SECRET = 'recaptcha_secret';
 
@@ -55,14 +57,18 @@ examples.post('/api/recaptcha', upload.array(), async (req, res) => {
     params.append('response', req.body.recaptcha_token);
     params.append('remoteip', req.ip);
 
-    const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-      method: 'POST',
-      body: params,
-    }).then((response) => response.json());
+    const response = await fetch(
+      'https://www.google.com/recaptcha/api/siteverify',
+      {
+        method: 'POST',
+        body: params,
+      }
+    ).then((response) => response.json());
 
     if (!response.success) {
       res.status(500).json({
-        message: 'Error on recaptcha server verification. Uncessful response from recaptcha.',
+        message:
+          'Error on recaptcha server verification. Uncessful response from recaptcha.',
       });
       return;
     }

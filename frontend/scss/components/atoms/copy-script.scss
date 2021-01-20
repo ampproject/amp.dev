@@ -1,0 +1,29 @@
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+.#{atom('copy-script')} {
+  display: flex;
+  align-items: center;
+
+  code {
+    overflow-x: scroll;
+    flex: 1 0;
+    margin: 6px 8px 6px 0;
+    padding: 4px 6px;
+    white-space: nowrap;
+    background: color('iron');
+    font-size: 12.6px;
+
+    @include scrollbar;
+
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 0px;
+    }
+  }
+}

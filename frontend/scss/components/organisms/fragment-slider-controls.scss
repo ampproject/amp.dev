@@ -30,7 +30,7 @@
     @include slider-button-shadow;
     transition: 400ms;
     overflow: hidden;
-    background-color: color('concrete');
+    background-color: color('athens-gray');
     &:hover {
       cursor: pointer;
       box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.2);

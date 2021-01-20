@@ -62,9 +62,9 @@ class CustomHtmlLexer(RegexLexer):
       (r'\s+', Text),
       (r'\{%.*?%\}', Text),
       (r'\{\{.*?\}\}', Text),
-      (r'([\w:-]+\s*)(=)(\s*)', bygroups(Name.Attribute, Operator, Text),
+      (r'([\w:-]+\s*|\[[\w:-]+\]\s*)(=)(\s*)', bygroups(Name.Attribute, Operator, Text),
        'attr'),
-      (r'[\w:-]+', Name.Attribute),
+      (r'[\w:-]+|\[[\w:-]+\]', Name.Attribute),
       (r'(/?)(\s*)(>)', bygroups(Punctuation, Text, Punctuation), '#pop'),
     ],
     'script-content': [

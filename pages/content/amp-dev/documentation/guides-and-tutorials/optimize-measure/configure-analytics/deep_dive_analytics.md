@@ -4,6 +4,7 @@ $order: 1
 description: 'This guide dives deep into the amp-analytics component, breaking up a sample amp-analytics configuration into these key building blocks.'
 formats:
   - websites
+  - stories
 ---
 
 This guide dives deep into the
@@ -140,7 +141,7 @@ to the account value in the remote URL (`"account": "UA-XXXXX-Y"`):
 **IMPORTANT –** AMP doesn’t validate against multiple uses of the same variable. Values get populated following a variable substitution order of preference, and values in remote URLs are top of that order (see [Variable substitution ordering](deep_dive_analytics.md#variable-substitution-ordering)).
 [/tip]
 
-## Requests, triggers & transports
+## Requests, triggers & transports <a name="requests-triggers--transports"></a>
 
 The `requests` attribute defines ‘what data gets sent’
 (for example, `pageviews`, `events`),
@@ -156,7 +157,7 @@ Read on to find out more about these configurations.
 (You can also read about these configurations in the
 [`amp-analytics` reference](../../../../documentation/components/reference/amp-analytics.md)
 
-### What data gets sent: requests attribute
+### What data gets sent: requests attribute <a name="what-data-gets-sent-requests-attribute"></a>
 
 The `request-name` is used in the trigger configuration to specify
 what request should be sent in response to a pariticular event.
@@ -321,7 +322,7 @@ then it will be used; otherwise, no request gets sent.
 }
 ```
 
-## Variable substitution ordering
+## Variable substitution ordering <a name="variable-substitution-ordering"></a>
 
 AMP populates variables with values in an order of precedence:
 

@@ -1,27 +1,71 @@
 # Use via: go.amp.dev/ads
 # Add new entries in alphabetical order
-/ads: /about/ads
+/ads: /about/ads/
+/ampdevmode: https://github.com/ampproject/amphtml/issues/20974
+/amp-email-register: https://docs.google.com/forms/d/e/1FAIpQLSdso95e7UDLk_R-bnpzsAmuUMDQEMUgTErcfGGItBDkghHU2A/viewform?gxids=7628
+/amp-optimizer: /documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/
+/amp-packager: https://github.com/ampproject/amppackager
 /amp-pwa-amp: https://blog.amp.dev/2018/06/19/the-shadow-reader-improved/
+/amp-script-apis: https://github.com/ampproject/worker-dom/blob/main/web_compat_table.md
+/ampcs: /events/amp-cs-2019/#Schedule
 /auto-sw: https://github.com/ampproject/amp-sw/
+/axios-case-study: https://blog.amp.dev/2020/04/07/people-behind-the-code-the-axios-ascent/
 /camp-code: https://github.com/ampproject/samples/tree/master/amp-camp
-/cors: /documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests
+/cherry-picks: https://github.com/ampproject/amphtml/blob/master/contributing/contributing-code.md#Cherry-picks
+/components: https://amp.dev/documentation/components/
+/contribute: https://amp.dev/documentation/guides-and-tutorials/contribute/
+/contribute/code: https://github.com/ampproject/amphtml/blob/master/contributing/contributing-code.md
+/contribute/code-samples: /documentation/guides-and-tutorials/contribute/contribute-documentation/formatting/?format=websites#preview-code-samples
+/contribute/docs: /documentation/guides-and-tutorials/contribute/contribute-documentation/
+/contribute/samples: /documentation/examples/
+/contribute/translations: /documentation/guides-and-tutorials/contribute/translations/
+/cors: /documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests/
+/design-reviews: https://github.com/ampproject/amphtml/issues?q=is%3Aissue+is%3Aopen+design+review+utc+in%3Atitle
+/devx-survey: https://google.qualtrics.com/jfe/form/SV_1FA0wBp7elD7Xa5
 /docs: /documentation/guides-and-tutorials/
-/email: /about/email
-/email-tools: /documentation/tools
-/governance: /community/governance
+/docsgfi: https://github.com/ampproject/amp.dev/issues?q=is:open+is:issue+label:%22good+first+issue%22
+/eleventy: https://github.com/ampproject/eleventy-plugin-amp
+/email: /about/email/
+/email-registration: https://docs.google.com/forms/d/e/1FAIpQLSdso95e7UDLk_R-bnpzsAmuUMDQEMUgTErcfGGItBDkghHU2A/viewform?gxids=7628
+/email-support: /support/faq/email-support/
+/email-tools: /documentation/tools/?format=email
+/email-viewer: https://github.com/ampproject/amp-email-viewer
+/github: https://github.com/ampproject/amphtml
+/governance: /community/governance/
+/i2i: https://github.com/ampproject/amphtml/issues/new?assignees=&labels=INTENT+TO+IMPLEMENT&template=intent-to-implement--i2i-.md&title=I2I:%20%3Cyour%20change/update%3E
 /io-email: /documentation/examples/interactivity-dynamic-content/conference_survey_email/
 /learn: /documentation/courses/
-/optimize-amp: https://blog.amp.dev/2018/10/08/how-to-make-amp-even-faster/
-/publishing-checklist: /documentation/guides-and-tutorials/optimize-and-measure/publishing_checklist
-/samples: /documentation/examples/
+/learn-advanced: /documentation/guides-and-tutorials/start/add_advanced/
+/learn-email: /documentation/guides-and-tutorials/learn/email_fundamentals/?format=email
+/learn-first: /documentation/guides-and-tutorials/start/create/
+/learn-interact: /documentation/guides-and-tutorials/develop/interactivity/
+/learn-script: /documentation/guides-and-tutorials/develop/custom-javascript-tutorial/
+/learn-story: /documentation/guides-and-tutorials/start/visual_story/?format=stories
+/learn-pwa: https://codelabs.developers.google.com/codelabs/amp-pwa-workbox/
+/nextjs: https://nextjs.org/docs/advanced-features/amp-support/introduction
+/optimize: /documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/
+/optimizer: /documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/
+/optimize-amp: /documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/
+/optimize-guide: /documentation/guides-and-tutorials/optimize-and-measure/optimize_amp/
+/owners: https://ampproject-owners-bot.appspot.com/tree
+/publishing-checklist: /documentation/guides-and-tutorials/optimize-and-measure/publishing_checklist/
+/reftemplate: https://docs.google.com/document/d/1lRFcErFBnqsuv6W9mZsfYk2qnXO9nPzMkeog4Xtunl8/edit?usp=sharing
+/service: https://blog.amp.dev/2020/06/29/amp-as-a-service-2020-roadmap/ 
 /shopify-apps: https://blog.amp.dev/2019/04/15/shopify-apps-make-amp-easy-and-effective-for-ecommerce
-/stories-best-practices: /documentation/guides-and-tutorials/develop/amp_story_best_practices
-/stories: /about/stories
-/sxg: /documentation/guides-and-tutorials/optimize-and-measure/signed-exchange
+/stories-best-practices: /documentation/guides-and-tutorials/develop/amp_story_best_practices/
+/stories: /about/stories/
+/sxg: /documentation/guides-and-tutorials/optimize-and-measure/signed-exchange/
 /templates: /documentation/templates/
-/tools: /documentation/tools
-/vision-mission: /about/mission-and-vision
-/websites: /about/websites
+/test-email: /documentation/guides-and-tutorials/develop/testing_amp_emails/?format=email
+/twitter-devx-survey: https://google.qualtrics.com/jfe/form/SV_2fZ0z843nw0CBOR
+/tools: /documentation/tools/
+/validate: /documentation/guides-and-tutorials/learn/validation-workflow/validate_amp/
+/verizonmedia: https://developer.verizonmedia.com/mail/amp-for-email/
+/vision-mission: /about/mission-and-vision/
+/websites: /about/websites/
+/wg: https://github.com/ampproject/meta/tree/master/working-groups
+/wg-updates: https://github.com/search?o=desc&q=org%3Aampproject+label%3A%22Type%3A+Status+Update%22&s=created&
+/wordpress: https://amp-wp.org/
 
 # Regex-based entries
 ^/c/amp-([a-z-]+)$:
@@ -29,4 +73,10 @@
   useRegex: true
 ^/e/amp-([a-z-]+)$:
   url: /documentation/examples/components/amp-$1/
+  useRegex: true
+^/pr/([0-9]+)$:
+  url: https://github.com/ampproject/amphtml/pull/$1
+  useRegex: true
+^/issue/([0-9]+)$:
+  url: https://github.com/ampproject/amphtml/issues/$1
   useRegex: true

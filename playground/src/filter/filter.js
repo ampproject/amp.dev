@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,7 +23,10 @@ export default class Filter {
     this.search = wade(strings);
     this.elements = elements;
     this.input = input;
-    this.input.addEventListener('input', debounce(this.doFilter.bind(this), 200));
+    this.input.addEventListener(
+      'input',
+      debounce(this.doFilter.bind(this), 200)
+    );
   }
 
   doFilter() {

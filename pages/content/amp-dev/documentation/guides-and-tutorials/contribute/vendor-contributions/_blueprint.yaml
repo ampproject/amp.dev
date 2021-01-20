@@ -1,0 +1,12 @@
+$view: /views/detail/docs-detail.j2
+$path: /documentation/guides-and-tutorials/contribute/vendor-contributions/{base}.html
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials/contribute/vendor-contributions/{base}.html
+$title@: Third party contributions
+$order: 2
+
+formats:
+  - websites
+  - stories
+  - email
+  - ads

@@ -29,15 +29,16 @@ loadRouters('api', '/api');
 /* auto import all routers defined in this dir */
 loadRouters('source');
 
-function loadRouters(root, prefix='') {
+function loadRouters(root, prefix = '') {
   const routers = [];
   const rootDir = resolve(join(__dirname, root));
   listFiles(rootDir, routers, true);
-  routers.filter((path) => path.endsWith('.js') && !path.includes('/static/'))
-      .forEach((path) => {
-        const route = join(prefix, getRoute(rootDir, path));
-        examples.use('/documentation/examples' + route, require(path));
-      });
+  routers
+    .filter((path) => path.endsWith('.js') && !path.includes('/static/'))
+    .forEach((path) => {
+      const route = join(prefix, getRoute(rootDir, path));
+      examples.use('/documentation/examples' + route, require(path));
+    });
 }
 
 function getRoute(rootDir, filePath) {

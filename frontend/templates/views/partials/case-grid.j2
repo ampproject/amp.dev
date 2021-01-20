@@ -6,7 +6,7 @@
     'headline': _('Too much choice'),
     'url': 'https://amp-article.herokuapp.com/',
     'img': {
-      'src': '/static/img/case-grid-choices.jpg', 'width': 744, 'height': 818
+      'src': '/static/img/case-grid-choices.jpg', 'width': 200, 'height': 220
     }
   },
   {
@@ -14,7 +14,7 @@
     'headline': _('Parallax Storytelling in AMP'),
     'url': 'https://amp-article.herokuapp.com/',
     'img': {
-      'src': '/static/img/case-grid-data.jpg', 'width': 936, 'height': 686
+      'src': '/static/img/case-grid-data.jpg', 'width': 135, 'height': 99
     }
   },
   {
@@ -22,7 +22,7 @@
     'headline': _('Editorial AMP Article'),
     'url': 'https://amp-article.herokuapp.com/',
     'img': {
-      'src': '/static/img/case-grid-education.jpg', 'width': 1004, 'height': 662
+      'src': '/static/img/case-grid-education.jpg', 'width': 189, 'height': 125
     }
   },
   {
@@ -30,7 +30,7 @@
     'headline': _('Band Page in AMP'),
     'url': 'https://amp-concert.herokuapp.com/',
     'img': {
-      'src': '/static/img/case-grid-band.jpg', 'width': 1072, 'height': 920
+      'src': '/static/img/case-grid-band.jpg', 'width': 140, 'height': 121
     }
   }
 ] %}
@@ -50,9 +50,7 @@
           <span class="ap-m-lnk-text">{{ _('Open Use Case') }}</span>
         </span>
       </div>
-      <amp-img class="ap--media" src="{{ case.img.src }}.webp" layout="responsive" width="{{ case.img.width }}" height="{{ case.img.height }}" alt="{{ _('Screenshot of use case:') }} {{ case.headline }}">
-        <amp-img fallback class="ap--media" src="{{ case.img.src }}" layout="responsive" width="{{ case.img.width }}" height="{{ case.img.height }}">
-      </amp-img>
+      <amp-img src="{{ case.img.src }}" layout="responsive" width="{{ case.img.width }}" height="{{ case.img.height }}" alt="{{ _('Screenshot of use case:') }} {{ case.headline }}"></amp-img>
     </a>
   </div>
   {% endfor %}

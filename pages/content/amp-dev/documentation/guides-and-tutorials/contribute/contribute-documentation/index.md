@@ -1,6 +1,7 @@
 ---
-$title: Get started
+$title: Contribute Documentation
 $order: 0
+$hidden: true
 description: 'Get started contributing documentation to amp.dev'
 formats:
   - websites
@@ -31,4 +32,4 @@ If you see out of date, misplaced, or incorrect information, you can fix it! We 
 
 ## Writing documentation  
 
-Want a guide or tutorial but don’t see it on amp.dev? You can write it! Start by reviewing the [types of documentation we accept](https://docs.google.com/document/d/1C3ZyrqybWkL7co0BzC5fkgGjaT1Bv1uvrDYFFmZ26NQ/edit) and [submitting a documentation proposal](https://docs.google.com/document/d/1crPU7KoFYqpXAewYzbQm7RkU7hz-UiYEcqE8cso7Yc4/edit#heading=h.vg7gibbb5yw). Once your proposal has been accepted, get familiar with the[ AMP terminology guide](formatting.md?format=websites) and [documentation formatting guidelines](https://docs.google.com/document/d/1esM3fMlh_n8chjAyPYm6ljDjb2j0wjBHUqJuIFAP01g/edit#heading=h.4poc86duk583). Look [here for information on contributing examples](https://github.com/ampproject/amp.dev/blob/future/contributing/samples.md).
+Want a guide or tutorial but don’t see it on amp.dev? You can write it! Start by reviewing the [types of documentation we accept](documentation-types.md) and [submitting a documentation proposal](https://github.com/ampproject/amp.dev/issues/new?assignees=&labels=&template=--content-proposal-.md&title=Content+proposal+). Once your proposal has been accepted, get familiar with the[ AMP terminology guide](formatting.md?format=websites) and [documentation formatting guidelines](formatting.md). Look [here for information on contributing examples](https://github.com/ampproject/amp.dev/blob/future/contributing/samples.md).

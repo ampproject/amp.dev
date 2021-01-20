@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-class EventBus {
+export class EventBus {
   constructor() {
     this._observers = new Map();
   }
@@ -25,10 +25,10 @@ class EventBus {
     });
   }
 
-  publish(channel, data) {
+  publish(channel, ...data) {
     if (!channel) throw new Error('empty channel');
     this._observersForChannel(channel).forEach((o) => {
-      o(data);
+      o(...data);
     });
   }
 
@@ -43,4 +43,3 @@ class EventBus {
 }
 
 export default new EventBus();
-

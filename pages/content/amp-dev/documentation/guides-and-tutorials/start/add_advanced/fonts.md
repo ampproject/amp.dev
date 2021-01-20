@@ -1,14 +1,14 @@
 ---
 $title: Adding fonts
 $order: 6
-description: 'You can embed custom fonts into your AMP page in two ways: 1. Through a <link> tag: for white-listed font providers only. 2. By using ...'
+description: 'You can embed custom fonts into your AMP page in two ways: 1. Through a <link> tag: for allow-listed font providers only. 2. By using ...'
 ---
 
 In AMP, to keep the load times of documents as fast as possible, you cannot include external stylesheets. However, there is one exception to this rule&mdash;**fonts**.
 
 You can embed custom fonts into your AMP page in two ways:
 
-1. Through a `<link>` tag: for white-listed font providers only.
+1. Through a `<link>` tag: for allow-listed font providers only.
 2. By using the `@font-face` CSS rule: there are no restrictions, all fonts are allowed.
 
 In this tutorial, we'll use a `<link>` tag to add fonts to our page. **Add** a stylesheet link in the `<head>` to request the Raleway font:

@@ -1,0 +1,59 @@
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+
+.#{atom('pill')} {
+  display: inline-block;
+  margin: 5px 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 25px;
+  background: var(--background-color, safeColor('white'));
+  @include txt;
+  @include txt-2;
+  @include txt-strong;
+  @include filter-bubble-shadow-regular;
+  color: var(--color, safeColor('light-gray'));
+  font-family: 'Noto Sans', sans-serif;
+  transition: background-color .2s ease-in, color .2s ease-in, box-shadow .25s ease-in;
+  cursor: pointer;
+
+  @media (min-width: 550px) {
+    padding: 5px 20px;
+    margin: 5px 10px;
+  }
+
+  @media (min-width: 768px) {
+    margin: 5px;
+    padding: 5px 20px;
+  }
+
+  &:hover, &.filtered {
+    @include filter-bubble-shadow-selected;
+    background: safeColor('blue');
+    color: safeColor('white');
+  }
+
+  &-link {
+    color: safeColor('blue');
+  }
+
+  &-small {
+    padding: 2px 12px;
+  }
+
+  &-flat {
+    box-shadow: none;
+    background-color: color('athens-gray');
+  }
+
+  &-meta {
+    box-shadow: none;
+    background-color: color('river-bed');
+    color: safeColor('white');
+    pointer-events: none;
+  }
+}

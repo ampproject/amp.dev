@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -31,20 +31,22 @@
 /*
  * @see https://developers.google.com/web/updates/2015/08/using-requestidlecallback
  */
-window.requestIdleCallback = window.requestIdleCallback ||
-  function(func) {
+window.requestIdleCallback =
+  window.requestIdleCallback ||
+  function (func) {
     return setTimeout(() => {
       const start = Date.now();
       func({
         didTimeout: false,
-        timeRemaining: function() {
+        timeRemaining: function () {
           return Math.max(0, 50 - (Date.now() - start));
         },
       });
     }, 1);
   };
 
-window.cancelIdleCallback = window.cancelIdleCallback ||
-  function(id) {
+window.cancelIdleCallback =
+  window.cancelIdleCallback ||
+  function (id) {
     clearTimeout(id);
   };

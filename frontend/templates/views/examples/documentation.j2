@@ -4,46 +4,40 @@
 {% block head %}
 {{ super() }}
 
+{% if not doc.example.document.metadata.hidePreview %}
+{{ doc.example.document.head|safe }}
+{% endif %}
+
 {# Always include amp-bind for the header and TOC if the sample doesn't include it #}
 {% if 'amp-bind' not in doc.used_components or not inline_preview %}
-{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
 {% endif %}
 
 {# Include all components needed for sidebar #}
 {% if 'amp-sidebar' not in doc.used_components or not inline_preview %}
-{% do doc.amp_dependencies.add('amp-sidebar', '0.1') %}
 {% endif %}
 {% if 'amp-animation' not in doc.used_components or not inline_preview %}
-{% do doc.amp_dependencies.add('amp-animation', '0.1') %}
 {% endif %}
 {% if 'amp-position-observer' not in doc.used_components or not inline_preview %}
-{% do doc.amp_dependencies.add('amp-position-observer', '0.1') %}
 {% endif %}
 
 {% if 'amp-consent' not in doc.used_components or not inline_preview %}
-{% do doc.amp_dependencies.add('amp-consent', '0.1') %}
 {% if 'amp-geo' not in doc.used_components or not inline_preview %}
-{% do doc.amp_dependencies.add('amp-geo', '0.1') %}
 {% endif %}
 {% endif %}
 {% if 'amp-analytics' not in doc.used_components or not inline_preview %}
-{% do doc.amp_dependencies.add('amp-analytics', '0.1') %}
 {% endif %}
 
 {# Include amp-install-serviceworker #}
 {% if 'amp-install-serviceworker' not in doc.used_components or not inline_preview %}
-{% do doc.amp_dependencies.add('amp-install-serviceworker', '0.1') %}
 {% endif %}
 
 {# Include amp-iframe for story previews #}
 {% if doc.example.document.isAmpStory %}
-{% do doc.amp_dependencies.add('amp-iframe', '0.1') %}
 {% endif %}
 
 {# Include other AMP dependencies if needed for preview #}
 {% if inline_preview %}
 {% for used_component in doc.used_components %}
-{% do doc.amp_dependencies.add(used_component, doc.used_components[used_component].version, doc.used_components[used_component].type) %}
 {% endfor %}
 {% endif %}
 {% endblock %}
@@ -64,13 +58,13 @@
 {% block body %}
 {% set body_tag = doc.example.document.body %}
 {% set available_formats = ' '.join(doc.formats or doc.collection.formats or ['websites', 'stories', 'ads', 'email']) %}
-{{ (body_tag.replace('>', ' data-available-formats="' + available_formats + '">'))|safe }}
+{{ (body_tag.replace('>', ' data-available-formats="' + available_formats + '" class="[= \'ap--\' + format if format =]">'))|safe }}
 {{ doc.example.document.elementsAfterBody|safe }}
 {% endblock %}
 
 {% block main %}
-{% include 'views/partials/example-sidebar.j2' %}
 {% include 'views/partials/sidebar-toggle-observer.j2' %}
+{% include 'views/partials/format-filter-hint.j2' %}
 <main class="ap--main ap-t-examples-manual">
   <div class="ap--container">
     {% include 'views/partials/sidebar-toggle.j2' %}
@@ -118,31 +112,11 @@
       <h1 class="ap--title" id="{{ doc.example.document.title|slug }}">{{ doc.example.document.title }}</h1>
 
       {# Render widget to toggle experiments if there are any #}
-      {% set experiments = doc.example.document.metadata.experiments %}
-      {% if experiments %}
-      {% do doc.styles.addCssFile('/css/components/molecules/experiments.css', 100) %}
-      <section class="ap-m-experiments">
-        <h3>Experimental</h3>
-        <p>{{ _('This example uses the following experimental feature:') }} {% for experiment in experiments %}<code>{{ experiment }}</code>{% endfor %}. {{ _('Enable the experiment via the button below. Some components require the AMP Dev Channel to be enabled as well.') }} Learn more about <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path }}">experimental features</a>.</p>
-
-        <ul class="ap-m-experiments-controls">
-          <li class="ap-m-experiments-control">
-            <label class="ap-m-experiments-label" for="experiments-toggle">Enable Experiment</label>
-            <input class="ap-m-experiments-toggle" id="experiments-toggle" type="checkbox">
-            <aside class="ap-m-experiments-indicator">
-              <div id="indicator"></div>
-            </aside>
-          </li>
-
-          <li class="ap-m-experiments-control">
-            <div class="ap-m-experiments-label">AMP Version</div>
-            <a class="ap-m-experiments-channel" target="_blank" href="https://cdn.ampproject.org/experiments.html">
-              <span class="ap-m-experiments-channel-name" id="prod-channel">PROD</span>
-              <span class="ap-m-experiments-channel-name" id="dev-channel">DEV</span>
-            </a>
-          </li>
-        </ul>
-      </section>
+      {% if doc.example.document.metadata.experiments %}
+      {% with experiments = doc.example.document.metadata.experiments %}
+      <script>const experiments = {{ experiments|tojson }}</script>
+      {% include '/views/partials/experiments/experiments.j2' %}
+      {% endwith %}
       {% endif %}
 
       {# Check if the sample has a demo button as then this is the primary CTA #}
@@ -239,71 +213,9 @@
     {% include 'views/partials/author.j2' %}
   </div>
 </main>
-
-{% if doc.example.document.metadata.experiments %}
-{% set experiments = doc.example.document.metadata.experiments %}
-<script>
-document.addEventListener("DOMContentLoaded", function(event) {
-  (window.AMP = window.AMP || []).push(function(AMP) {
-
-    function areAllExperimentsEnabled() {
-      {% for experiment in experiments %}
-      console.log('isExperimentOn {{ experiment }}:' + AMP.isExperimentOn('{{ experiment }}'));
-      if (!AMP.isExperimentOn('{{ experiment }}')) {
-        return false;
-      }
-      {% endfor %}
-
-      return true;
-    }
-
-    function enableExperiments() {
-      {% for experiment in experiments %}
-      if (!AMP.isExperimentOn('{{ experiment }}')) {
-        AMP.toggleExperiment('{{ experiment }}');
-      }
-      {% endfor %}
-
-      location.reload();
-    }
-
-    function disableExperiments() {
-      {% for experiment in experiments %}
-      if (AMP.isExperimentOn('{{ experiment }}')) {
-        AMP.toggleExperiment('{{ experiment }}');
-      }
-      {% endfor %}
-
-      location.reload();
-    }
-
-    // enable active experiment button
-    var experimentToggle = document.getElementById('experiments-toggle');
-    var indicator = document.getElementById('indicator');
-    if (!areAllExperimentsEnabled()) {
-      experimentToggle.addEventListener('click', enableExperiments);
-      indicator.classList.add('off');
-    } else {
-      experimentToggle.checked = true;
-      experimentToggle.addEventListener('click', disableExperiments);
-      indicator.classList.add('on');
-    }
-
-    // Set appropriate state on channel indicator
-    if (!window.AMP_CONFIG.canary) {
-      document.getElementById('prod-channel').classList.add('active');
-    } else {
-      document.getElementById('dev-channel').classList.add('active');
-    }
-
-    // Inform inspecting user that this intenioally invalid AMP
-    if (window.location.hash.includes('development=1')) {
-      console.log('This sample is intentionally not valid AMP.');
-    }
-  });
-});
-</script>
-{% endif %}
+{% with type = 'example' %}
+{% include 'views/partials/sidebar.j2' %}
+{% endwith %}
 {% endblock %}
 
 {% block serviceWorker %}

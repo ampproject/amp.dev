@@ -1,11 +1,13 @@
 ---
 $title: AMPHTML Layout System
-$order: 1
+order: 1
 formats:
   - websites
   - email
   - stories
   - ads
+teaser:
+  text: ' Overview'
 ---
 
 <!--
@@ -35,7 +37,7 @@ limitations under the License.
 
 
 
-## Overview
+## Overview <a name="overview"></a>
 
 The main goal of the layout system is to ensure that AMP elements can express their layout
 so that the runtime is able to infer sizing of elements before any remote resources, such as
@@ -47,7 +49,7 @@ that provide good performance guarantees. This system relies on a set of attribu
 as `layout`, `width`, `height`, `sizes` and `heights` to express the element's layout and
 sizing needs.
 
-## Behavior
+## Behavior <a name="behavior"></a>
 
 A non-container AMP element (i.e., `layout != container`) starts up in the unresolved/unbuilt mode in which
 all of its children are hidden except for a placeholder (see `placeholder` attribute). The JavaScript
@@ -72,28 +74,31 @@ during rendering or scrolling or post download.
 If the element has been configured incorrectly, in PROD it will not be rendered at all and in DEV mode the runtime will render the element in the error state. Possible errors include invalid or unsupported
 values of `layout`, `width` and `height` attributes.
 
-## Layout Attributes
+## Layout Attributes <a name="layout-attributes"></a>
 
-### `width` and `height`
+### `width` and `height` <a name="width-and-height"></a>
 
 Depending on the value of the `layout` attribute, AMP component elements must have a `width` and `height` attribute that contains an integer pixel value. Actual layout behavior is determined by the `layout` attribute as described below.
 
 In a few cases, if `width` or `height` are not specified, the AMP runtime can default these values as follows:
-- `amp-pixel`: Both `width` and `height` are defaulted to 0.
-- `amp-audio`: The default `width` and `height` are inferred from browser.
 
-### `layout`
+-   `amp-pixel`: Both `width` and `height` are defaulted to 0.
+-   `amp-audio`: The default `width` and `height` are inferred from browser.
+
+### `layout` <a name="layout"></a>
 
 AMP provides a set of layouts that specify how an AMP component behaves in the document layout. You can specify a layout for a component by adding the `layout` attribute with one of the values specified in the table below.
 
 **Example**: A simple responsive image, where width and height are used to determine the aspect ratio.
 
 [sourcecode:html]
-<amp-img src="/img/amp.jpg"
-    width="1080"
-    height="610"
-    layout="responsive"
-    alt="an image"></amp-img>
+<amp-img
+  src="/img/amp.jpg"
+  width="1080"
+  height="610"
+  layout="responsive"
+  alt="an image"
+></amp-img>
 [/sourcecode]
 
 Supported values for the `layout` attribute:
@@ -139,7 +144,7 @@ Supported values for the `layout` attribute:
     </tr>
     <tr>
       <td><code>intrinsic</code></td>
-      <td>The element takes the space available to it and resizes its height automatically to the aspect ratio given by the <code>width</code> and <code>height</code> attributes <em>until</em> it reaches the element's natural size or reaches a CSS constraint (e.g., max-width). The width and height attributes must be present. This layout works very well for most AMP elements, including <code>amp-img</code>, <code>amp-carousel</code>, etc. The available space depends on the parent element and can also be customized using <code>max-width</code> CSS. This layout differs from <code>responsive</code> by having an intrinsic height and width. This is most apparent inside a floated element where a <code>responsive</code> layout will render 0x0 and an <code>intrinsic</code> layout will inflate to the smaller of its natural size or any CSS constraint.</td>
+      <td>The element takes the space available to it and resizes its height automatically to the aspect ratio given by the <code>width</code> and <code>height</code> attributes <em>until</em> it reaches the element's size defined by the `width` and `height` attributes passed to the <code>amp-img</code>, or reaches a CSS constraint, such as `max-width`. The width and height attributes must be present. This layout works very well for most AMP elements, including <code>amp-img</code>, <code>amp-carousel</code>, etc. The available space depends on the parent element and can also be customized using <code>max-width</code> CSS. This layout differs from <code>responsive</code> by having an intrinsic height and width. This is most apparent inside a floated element where a <code>responsive</code> layout will render 0x0 and an <code>intrinsic</code> layout will inflate to the smaller of its natural size or any CSS constraint.</td>
     </tr>
     <tr>
       <td><code>nodisplay</code></td>
@@ -152,9 +157,9 @@ Supported values for the `layout` attribute:
   </tbody>
 </table>
 
-### `sizes`
+### `sizes` <a name="sizes"></a>
 
-All AMP elements that support the `responsive` layout, also support the  `sizes` attribute. The value of this attribute is a sizes expression
+All AMP elements that support the `responsive` layout, also support the `sizes` attribute. The value of this attribute is a sizes expression
 as described in the [img sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), but extended to all elements, not just images. In short, the `sizes` attribute describes how the width of the element is calculated depending on the media conditions.
 
 When the `sizes` attribute is specified along with `width` and `height`, the `layout` is defaulted to `responsive`.
@@ -164,21 +169,44 @@ When the `sizes` attribute is specified along with `width` and `height`, the `la
 In the following example, if the viewport is wider than `320px`, the image will be 320px wide, otherwise, it will be 100vw wide (100% of the viewport width).
 
 [sourcecode:html]
-<amp-img src="https://acme.org/image1.png"
-    width="400" height="300"
-    layout="responsive"
-    sizes="(min-width: 320px) 320px, 100vw">
+<amp-img
+  src="https://acme.org/image1.png"
+  width="400"
+  height="300"
+  layout="responsive"
+  sizes="(min-width: 320px) 320px, 100vw"
+>
 </amp-img>
 [/sourcecode]
 
-### `heights`
+### `disable-inline-width` <a name="disable-inline-width"></a>
+
+The `sizes` attribute on its own will set an inline `width` style on the element. When pairing `disable-inline-width` with `sizes`, the AMP element will propagate the value of `sizes` to the element's underlying tag, as with the `img` nested inside an `amp-img`, **without** setting the inline `width` as `sizes` typically does on its own in AMP.
+
+**Example**: Using the `disable-inline-width` attribute
+
+In the following example, the width of the `<amp-img>` element is unaffected, and `sizes` is only used to select one of the sources from the `srcset`.
+
+[sourcecode:html]
+<amp-img
+  src="https://acme.org/image1.png"
+  width="400"
+  height="300"
+  layout="responsive"
+  sizes="(min-width: 320px) 320px, 100vw"
+  disable-inline-width
+>
+</amp-img>
+[/sourcecode]
+
+### `heights` <a name="heights"></a>
 
 All AMP elements that support the `responsive` layout, also support the `heights` attribute.
 The value of this attribute is a sizes expression based on media expressions
 as similar to the [img sizes attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), but with two key differences:
 
- 1. It applies to the height, not the width of the element.
- 2. Percent values are allowed, e.g. `86%`. If a percent value is used, it indicates the percentage of the element's width.
+1.  It applies to the height, not the width of the element.
+2.  Percent values are allowed, e.g. `86%`. If a percent value is used, it indicates the percentage of the element's width.
 
 When the `heights` attribute is specified along with `width` and `height`, the `layout` is defaulted to `responsive`.
 
@@ -186,15 +214,17 @@ When the `heights` attribute is specified along with `width` and `height`, the `
 
 In the following example, the height of the image will default to 80% of the width, but if the viewport is wider than `500px`, the height is capped at `200px`. Because the `heights` attribute is specified along with `width` and `height`, the layout defaults to `responsive`.
 
-
 [sourcecode:html]
-<amp-img src="https://acme.org/image1.png"
-    width="320" height="256"
-    heights="(min-width:500px) 200px, 80%">
+<amp-img
+  src="https://acme.org/image1.png"
+  width="320"
+  height="256"
+  heights="(min-width:500px) 200px, 80%"
+>
 </amp-img>
 [/sourcecode]
 
-### `media`
+### `media` <a name="media"></a>
 
 Most AMP elements support the `media` attribute. The value of `media` is a media query. If the query does not match, the element is not rendered at all and its resources and potentially its child resources will not be fetched. If the browser window changes size or orientation, the media queries are re-evaluated and elements are hidden and shown based on the new results.
 
@@ -204,43 +234,47 @@ In the following example, we have 2 images with mutually exclusive media queries
 
 [sourcecode:html]
 <amp-img
-    media="(min-width: 650px)"
-    src="wide.jpg"
-    width=466
-    height=355 layout="responsive" ></amp-img>
+  media="(min-width: 650px)"
+  src="wide.jpg"
+  width="466"
+  height="355"
+  layout="responsive"
+></amp-img>
 <amp-img
-    media="(max-width: 649px)"
-    src="narrow.jpg"
-    width=527
-    height=193 layout="responsive" ></amp-img>
+  media="(max-width: 649px)"
+  src="narrow.jpg"
+  width="527"
+  height="193"
+  layout="responsive"
+></amp-img>
 [/sourcecode]
 
-### `placeholder`
+### `placeholder` <a name="placeholder"></a>
 
 The `placeholder` attribute can be set on any HTML element, not just AMP elements. The `placeholder` attribute indicates that the element marked with this attribute acts as a placeholder for the parent AMP element. If specified, a placeholder element must be a direct child of the AMP element. By default, the placeholder is immediately shown for the AMP element, even if the AMP element's resources have not been downloaded or initialized. Once ready, the AMP element typically hides its placeholder and shows the content. The exact behavior with respect to the placeholder is up to the element's implementation.
 
 [sourcecode:html]
-<amp-anim src="animated.gif" width=466 height=355 layout="responsive" >
+<amp-anim src="animated.gif" width="466" height="355" layout="responsive">
   <amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
 [/sourcecode]
 
-### `fallback`
+### `fallback` <a name="fallback"></a>
 
-The `fallback` attribute can be set on any HTML element, not just AMP elements. A fallback is a convention that allows the element to communicate to the reader that the browser does not support the element. If specified, a fallback element must be a direct child of the AMP element. The exact behavior with respect to the  fallback is up to the element's implementation.
+The `fallback` attribute can be set on any HTML element, not just AMP elements. A fallback is a convention that allows the element to communicate to the reader that the browser does not support the element. If specified, a fallback element must be a direct child of the AMP element. The exact behavior with respect to the fallback is up to the element's implementation.
 
 [sourcecode:html]
-<amp-anim src="animated.gif" width=466 height=355 layout="responsive" >
+<amp-anim src="animated.gif" width="466" height="355" layout="responsive">
   <div fallback>Cannot play animated images on this device.</div>
 </amp-anim>
 [/sourcecode]
 
-### `noloading`
+### `noloading` <a name="noloading"></a>
 
-The `noloading` attribute indicates whether the "loading indicator" should be turned off for this element. Many AMP elements are white-listed to show a "loading indicator", which is a basic animation that shows that the element has not yet fully loaded. The elements can opt out of this behavior by adding
+The `noloading` attribute indicates whether the "loading indicator" should be turned off for this element. Many AMP elements are allow-listed to show a "loading indicator", which is a basic animation that shows that the element has not yet fully loaded. The elements can opt out of this behavior by adding
 this attribute.
 
-## (tl;dr) Summary of Layout Requirements & Behaviors
+## (tl;dr) Summary of Layout Requirements & Behaviors <a name="tldr-summary-of-layout-requirements--behaviors"></a>
 
 The following table describes the acceptable parameters, CSS classes, and styles used for the `layout` attribute. Note that:
 

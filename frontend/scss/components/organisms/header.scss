@@ -23,7 +23,7 @@
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 17;
+  z-index: 1001;
   background-color: color('white');
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.07);
 
@@ -48,7 +48,7 @@
 .#{organism('header')} {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   max-width: 1460px;
   padding: 10px 0 0 20px;
@@ -65,6 +65,7 @@
     top: 10px;
     display: flex;
     align-items: center;
+    margin-right: auto;
     padding-bottom: 10px;
     overflow: hidden;
 
@@ -290,7 +291,13 @@
         }
       }
     }
-
   }
+}
 
+#blm-banner {
+  background: #111;
+  color: #eee;
+  display: block;
+  text-align: center;
+  padding: 0.5em
 }

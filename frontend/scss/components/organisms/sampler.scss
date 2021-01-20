@@ -11,6 +11,10 @@
 .#{utility('sampler')} {
   margin-bottom: 7em;
 
+  @media (max-width: 320px) {
+    display: none
+  }
+
   @media (min-width: 768px) {
     margin-bottom: 8vw;
   }
@@ -68,17 +72,17 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     white-space: nowrap;
-    background: color('ebony-clay');
+    background: color('charade');
   }
 
   &-tab {
     cursor: pointer;
     padding: 1.125em 1.75em;
-    border-right: 1px solid color('bright-gray');
-    background: color('ebony-clay');
+    border-right: 1px solid color('river-bed');
+    background: color('charade');
 
     &.active {
-      background: color('bright-gray');
+      background: color('river-bed');
 
       span {
         opacity: 1;

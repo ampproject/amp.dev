@@ -49,6 +49,45 @@ body {
   .#{utility('toc')} + .#{utility('content')} {
     @include content-with-sidebar;
   }
+
+  .#{utility('versions')} {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    background: color('white');
+    border: 1px solid color('iron');
+    margin-top: 5px;
+
+    &-toggle {
+      border: 0;
+      padding: 0 32px 0 8px;
+      background: color('white');
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 8px;
+      width: 16px;
+      height: 35px;
+      background: color('white');
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='%2320202A'%3E%3Cpath d='M59.863 17.14l4.137 5.488-32 24.232-32-24.232 4.137-5.488 27.863 21.108z'%3E%3C/path%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      pointer-events: none;
+    }
+  }
+
+  .#{utility('component-tags')} {
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
+  }
 }
 
 @media (min-width: 768px){

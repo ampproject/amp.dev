@@ -11,12 +11,12 @@ author: zhouyx
 --->
 
 <!doctype html>
-<html ⚡4ads>
+<html ⚡4ads lang="en">
 
 <head>
   <meta charset="utf-8">
   <title>Scrollbound Video Ad</title>
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
@@ -27,7 +27,7 @@ author: zhouyx
 
   <!-- ## Summary-->
   <!--
-    Sample AMPHTML ad using [amp-animation](/content/amp-dev/documentation/components/reference/amp-animation.md), [amp-video](/content/amp-dev/documentation/components/reference/amp-video.md), [amp-img](/content/amp-dev/documentation/components/reference/amp-img.md) and [amp-position-observer](/content/amp-dev/documentation/components/reference/amp-position-observer.md) to create an ad that animates based on scrolling.
+    Sample AMPHTML ad using [amp-animation](/content/amp-dev/documentation/components/reference/amp-animation-v0.1.md), [amp-video](/content/amp-dev/documentation/components/reference/amp-video-v0.1.md), [amp-img](/content/amp-dev/documentation/components/reference/amp-img-vundefined.md) and [amp-position-observer](/content/amp-dev/documentation/components/reference/amp-position-observer-v0.1.md) to create an ad that animates based on scrolling.
 
 
     ![Demo of this example](https://cloud.githubusercontent.com/assets/2099009/26071260/4cfddfa2-395c-11e7-86d0-bb22fe0581eb.gif)
@@ -161,7 +161,7 @@ author: zhouyx
   <!--
     There are two types of scrollbound animations that occur in this sample: **scaling** of the video container and **parallax** movement of the background image.
 
-    The animations are implemented using [amp-animation](/content/amp-dev/documentation/components/reference/amp-animation.md) which is an AMP component that uses [Web Animations API](https://www.w3.org/TR/web-animations/)
+    The animations are implemented using [amp-animation](/content/amp-dev/documentation/components/reference/amp-animation-v0.1.md) which is an AMP component that uses [Web Animations API](https://www.w3.org/TR/web-animations/)
   -->
   <amp-animation layout="nodisplay" id="videoAnim">
     <script type="application/json">
@@ -198,7 +198,7 @@ author: zhouyx
 
   <!-- ## Scrollbound Animations -->
   <!--
-  The scrollbound animations are implemented using [amp-position-observer](/content/amp-dev/documentation/components/reference/amp-position-observer.md) which is an AMP component that Monitors the position of an element within the viewport as a user scrolls, and dispatches enter, exit and scroll events that can be used with other components
+  The scrollbound animations are implemented using [amp-position-observer](/content/amp-dev/documentation/components/reference/amp-position-observer-v0.1.md) which is an AMP component that Monitors the position of an element within the viewport as a user scrolls, and dispatches enter, exit and scroll events that can be used with other components
   -->
   <amp-position-observer
     intersection-ratios="1"

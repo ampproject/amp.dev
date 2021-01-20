@@ -1,0 +1,9 @@
+{% do doc.styles.addCssFile('/css/components/molecules/experiments.css', 100) %}
+<section class="ap-m-experiments">
+  <h3>Experimental</h3>
+  <p>{{ _('This example uses the following experimental feature:') }} {% for experiment in experiments %}<code>{{ experiment }}</code>{% endfor %}. {{ _('Enable the experiment via the button below. Some components require the AMP Dev Channel to be enabled as well.') }} Learn more about <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path }}">experimental features</a>.</p>
+
+  {% include '/views/partials/experiments/experiments-controls.j2' %}
+</section>
+
+{% include '/views/partials/experiments/experiments-script.j2' %}

@@ -30,7 +30,7 @@
       @include txt-2;
     }
 
-    &.#{molecule('nav-link')}-active {
+    &.active {
       text-decoration: underline;
     }
   }
@@ -39,7 +39,7 @@
     color: color('blue-ribbon');
   }
 
-  &-active {
+  &.active {
     font-weight: bold;
     color: color('blue-ribbon');
   }

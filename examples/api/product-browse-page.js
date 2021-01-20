@@ -20,9 +20,9 @@ const utils = require('@lib/utils');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
-const products = require(
-    utils.project.absolute('/examples/static/samples/json/related_products.json')
-);
+const products = require(utils.project.absolute(
+  '/examples/static/samples/json/related_products.json'
+));
 const productNames = products.items.map((item) => {
   return item.name;
 });
@@ -35,12 +35,21 @@ examples.get('/json/more_related_products_page', handleLoadMoreRequest);
 
 function handleSearchRequest(request, response) {
   const searchQuery = request.query.search;
-  response.redirect(301, `${request.protocol}://${request.get('host')}${request.baseUrl}?SEARCH=${searchQuery}`);
+  response.redirect(
+    301,
+    `${request.protocol}://${request.get('host')}${
+      request.baseUrl
+    }?SEARCH=${searchQuery}`
+  );
 }
 
 function handleProductsRequest(request, response) {
-  const productQuery = !!request.query.searchProduct ? request.query.searchProduct : '';
-  const colorQuery = !!request.query.searchColor ? request.query.searchColor : '';
+  const productQuery = !!request.query.searchProduct
+    ? request.query.searchProduct
+    : '';
+  const colorQuery = !!request.query.searchColor
+    ? request.query.searchColor
+    : '';
 
   // find products that match the query
   const responseProducts = findProducts(productQuery, colorQuery);
@@ -66,8 +75,10 @@ function findProducts(name = '', color = 'all') {
   name = name.toLowerCase();
 
   return products.items.filter((prod) => {
-    return prod.name.toLowerCase().includes(name) &&
-          (prod.color.toLowerCase().includes(color) || color === 'all');
+    return (
+      prod.name.toLowerCase().includes(name) &&
+      (prod.color.toLowerCase().includes(color) || color === 'all')
+    );
   });
 }
 
@@ -80,17 +91,20 @@ function handleProductsAutosuggestRequest(request, response) {
   });
 
   response.json({
-    items: [{
-      query,
-      results: filteredStrs.splice(0, 4),
-    }],
+    items: [
+      {
+        query,
+        results: filteredStrs.splice(0, 4),
+      },
+    ],
   });
 }
 
 function handleLoadMoreRequest(request, response) {
   const moreItemsPageIndex = request.query.moreItemsPageIndex;
   const productsFile = require(utils.project.absolute(
-      `/examples/static/samples/json/more_related_products_page${moreItemsPageIndex}.json`));
+    `/examples/static/samples/json/more_related_products_page${moreItemsPageIndex}.json`
+  ));
 
   hasMorePages = Number(moreItemsPageIndex) !== 1;
 

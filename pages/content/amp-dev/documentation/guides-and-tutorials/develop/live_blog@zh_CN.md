@@ -1,23 +1,28 @@
 ---
-$title: 制作实时博客
+"$title": 制作实时博客
+"$order": '102'
+description: 实时博客是在整个持续性事件（如体育赛事或选举）中频繁更新的网页。在 AMP 中，您可以使用 ...
+tutorial: 'true'
+formats:
+- websites
+author: kul3r4
+contributors:
+- bpaduch
 ---
 
 实时博客是在整个持续性事件（如体育赛事或选举）中频繁更新的网页。在 AMP 中，您可以使用 [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 组件实现实时博客。
 
 本教程简要概述了 [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 组件，并重点介绍了实时博客的一些实现细节，例如[分页](#pagination)和[深层链接](#deeplinking)。我们将使用 AMP By Example 的[实时博客示例](live_blog.md)来说明如何在 AMP 中实现实时博客。
 
-[tip type="success"]
-
 请使用 [LiveBlogPosting](http://schema.org/LiveBlogPosting) 元数据标记，以便让您的博客能够与第三方平台功能集成。
-
-[/tip]
 
 {{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample.png', 700, 1441, align='right third') }}
 
 ## amp-live-list
 
-[`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 组件会定期轮询主文档以查找新内容，并在出现新条目后更新用户的浏览器。这意味着每当需要添加新博文时，CMS 都应该更新主文档，以便将更新内容添加到网页的正文和[元数据](../../../documentation/examples/documentation/Live_Blog.html#metadata)部分。
-博客的初始代码如下所示：
+[`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 组件会定期轮询主文档以查找新内容，并在出现新条目后更新用户的浏览器。这意味着每当需要添加新博文时，CMS 都应该更新主文档，以便将更新内容添加到网页的正文和[元数据](../../../documentation/examples/documentation/Live_Blog.html#metadata)部分。 博客的初始代码如下所示：
+
+这是该博客的初始代码如下所示：
 
 ```html
 <amp-live-list id="my-live-list"
@@ -44,7 +49,7 @@ $title: 制作实时博客
 
 现在，您已熟悉 [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 组件；接下来，我们来了解下如何实现更复杂的实时博客。请继续阅读，详细了解分页的实现方法和深层链接的工作原理。
 
-### 分页
+### 分页 <a name="pagination"></a>
 
 较长的博客可以使用分页来提升性能，方法是限制一个网页上显示的博客条目的数量。要实现分页，请在 [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 组件中添加 `<div pagination></div>`，然后插入分页所需的任何标记（例如，页码或指向下一页和上一页的链接）。
 
@@ -75,7 +80,7 @@ $title: 制作实时博客
 
 您可以将“已停用”属性添加到托管的网页以阻止轮询机制。在实时博客示例中，我们在服务器端模板中执行此行为；如果请求的网页不是第一个网页，我们就会将“已停用”属性添加到 [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 组件。
 
-### 深层链接
+### 深层链接 <a name="deeplinking"></a>
 
 在您发布博文时，务必要能够深层链接到该博文，以便启用分享等功能。借助 [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md)，您只需使用博客条目的 `id` 即可实现深层链接。例如，点击 [https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3](../../../documentation/examples/previews/Live_Blog.html#post3) 可以直接转到 ID 为 `post3` 的博文。
 

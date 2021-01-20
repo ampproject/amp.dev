@@ -1,10 +1,15 @@
 ---
-$title: Sunum ve Düzeni Değiştirin
+"$title": Sunum ve Yerleşimi Değiştirme
+"$order": '3'
+description: "AMP'ler web sayfalarıdır; sayfa ve ögelerinde yapılacak biçimlendirmeler yaygın CSS özellikleri kullanılarak yapılmaktadır ..."
+author: pbakaus
+contributors:
+- bpaduch
 ---
 
 ## Sunumu değiştirin
 
-AMP›ler web sayfalarıdır; sayfa ve ögelerinde yapılacak biçimlendirmeler yaygın CSS özellikleri kullanılarak yapılmaktadır. `<head>` içerisinde `<style amp-custom>` adı verilen bir satır içi stil sayfasında yer alan sınıf veya öge selektörleri kullanan biçim ögeleri:
+AMP'ler web sayfalarıdır; sayfa ve ögelerinde yapılacak biçimlendirmeler yaygın CSS özellikleri kullanılarak yapılmaktadır. `<head>` içerisinde `<style amp-custom>` adı verilen bir satır içi stil sayfasında yer alan sınıf veya öge selektörleri kullanan biçim ögeleri:
 
 [sourcecode:html]
 <style amp-custom>
@@ -21,8 +26,8 @@ AMP›ler web sayfalarıdır; sayfa ve ögelerinde yapılacak biçimlendirmeler 
 
 Her AMP sayfasında yalnızca tek bir yerleştirilmiş stil sayfası olabilir ve kullanmanıza izin verilmeyen belli selektörler vardır. [Biçimlendirme hakkında her şeyi öğrenin](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).
 
-## Düzeni kontrol edin
+## Yerleşimi kontrol edin
 
 AMP sayfadaki ögeleri düzenlerken daha sıkı kurallar takip eder. Normal bir HTML sayfasında, ögeleri düzenlemek için neredeyse özel olarak CSS kullanırsınız. Ancak performans nedenlerinden dolayı, AMP tüm ögelerin en başından beri özel bir boyuta ayarlanmış olmasını gerektirir.
 
-AMP›nin bir sayfayı nasıl işlediği ve düzenlediği, ayrıca [Düzeni Kontrol Etme](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) bölümünden düzeni nasıl değiştirebileceğiniz hakkında her şeyi öğrenin.
+AMP'nin bir sayfayı nasıl işlediği ve düzenlediği, ayrıca [Düzeni Kontrol Etme](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) bölümünden yerleşimi nasıl değiştirebileceğiniz hakkında her şeyi öğrenin.

@@ -43,9 +43,9 @@ module.exports = (env, argv) => {
       },
     },
     plugins: [
-      new CopyWebpackPlugin([
-        {from: path.join(__dirname, 'static/')},
-      ]),
+      new CopyWebpackPlugin({
+        patterns: [{from: path.join(__dirname, 'static/')}],
+      }),
       new MiniCssExtractPlugin({
         filename: devMode ? '[name].css' : '[name].[contenthash].css',
         chunkFilename: devMode ? '[id].css' : '[name].[contenthash].css',
@@ -53,15 +53,22 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         template,
         filename: './index.html',
-        inlineSource: 'critical\..+$',
+        inlineSource: 'critical..+$',
         gaTrackingId: config.gaTrackingId,
       }),
       new HtmlWebpackPlugin({
         template,
         filename: './embed.html',
-        inlineSource: 'critical\..+$',
+        inlineSource: 'critical..+$',
         gaTrackingId: config.gaTrackingId,
         embed: true,
+      }),
+      new HtmlWebpackPlugin({
+        template,
+        filename: './validator.html',
+        inlineSource: 'critical..+$',
+        gaTrackingId: config.gaTrackingId,
+        validator: true,
       }),
       new HtmlWebpackInlineSourcePlugin(HtmlWebpackPlugin),
       new PreloadWebpackPlugin({
@@ -95,8 +102,10 @@ module.exports = (env, argv) => {
             {
               loader: 'sass-loader',
               options: {
+                sassOptions: {
+                  includePaths: [path.join(__dirname, '../frontend/scss')],
+                },
                 sourceMap: true,
-                includePaths: [path.join(__dirname, '../frontend/scss')],
               },
             },
           ],

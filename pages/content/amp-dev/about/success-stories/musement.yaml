@@ -1,0 +1,95 @@
+$title: Musement
+$category: e-commerce
+$date: 2019-12-02
+description: With the addition of AMP pages to the purchase funnel, Musement’s performance continues to improve...
+formats:
+  - websites
+
+teaser:
+  image:
+    src: "/static/img/success-stories/musement/musement-teaser.jpg"
+    width: 1
+    height: 1
+    alt: Musement
+  logo:
+    src: "/static/img/success-stories/musement/musement-logo.jpg"
+    width: 271
+    height: 46
+    alt: Musement
+  text: Musement’s mobile-first design helps users navigate 70% faster
+
+stage:
+  headline: Musement’s mobile-first design helps users navigate 70% faster
+  subline: DEC 2, 2019
+  layout: mobile
+  devices:
+    - image_src: "/static/img/success-stories/musement/musement-screen-1.jpg"
+      width: 750
+      height: 1308
+      type: mobile
+      alt: musement.com Screenshot
+
+kpis:
+  - value: 27%
+    text: More revenue per visit from PPC campaigns
+
+  - value: 15%
+    text: Higher conversion rate from PPC campaigns
+
+  - value: -79%
+    text: Mobile load time
+
+contents:
+  - layout: text
+    headline: About Musement
+    text: "<ul><li>Online platform for discovering and booking activities, shows, tours, and events</li><li>Over 1,000 destinations in 70 countries</li><li>Founded in 2013</li><li>Acquired by TUI Group in September 2018</li><li>Headquarters in Milan</li></ul>"
+
+  - layout: media
+    video_src: "/static/img/success-stories/musement/musement-video.mp4"
+    poster_src: "/static/img/success-stories/musement/musement-poster.jpg"
+    width: 1280
+    height: 720
+
+  - layout: text
+    headline: Goals
+    text: "<ul><li>Make it easier and faster for users to find events and attractions</li><li>Drive click-through and conversion rates</li><li>Improve return on investment and margin per sale</li></ul>"
+
+  - layout: text
+    headline: Approach
+    text: "<ul><li>Tested AMP pages globally</li><li>Analysed existing site performance against AMP</li><li>Rolled out AMP to more than 30,000 landing pages</li></ul>"
+
+  - layout: text-media
+    image_src: "/static/img/success-stories/musement/musement-screen-2.jpg"
+    width: 750
+    height: 1334
+    type: mobile
+    alt: Musement
+    headline: Rundown
+    text: "Musement helps travellers discover experiences all over the world.Their main objective is driving bookings for the countless activities, shows, tours, and events available through the site and app.The team wanted to find ways to make it easier and faster for people to find events and attractions, believing that this would deliver on Musement’s main KPIs: return on investment and margin per sale."
+    direction: right-flat
+
+  - layout: text
+    text:
+      "To drive performance, Musement was already using data-driven attribution to give the appropriate value to each touchpoint in the conversion path. They were also using Smart Bidding to bid on hundreds of thousands of keywords across several accounts with one clear return on ad spend objective.
+      To take their performance a step further, the team set out to explore the impact that faster page load times would have on their click-through rate and ultimately their conversion rate. They decided to test AMP, an open-source project that helps to create web pages that load quickly.
+      The very first AMP page they created mirrored the most transactional page type on the website: an attraction page. Of all of Musement’s marketing campaigns, 93% are directed to pages of this type."
+
+  - layout: text-media
+    image_src: "/static/img/success-stories/musement/musement-screen-3.jpg"
+    width: 750
+    height: 1334
+    type: mobile
+    alt: Musement
+    text:
+      Early A/B testing indicated the potential positive impact of AMP on the business. Although previous improvements had reduced the full page load time of venue pages to 8.6 seconds, creating the same page in AMP slashed the load time to just 1.8 seconds.
+      Analysing these results with the business intelligence team enabled Musement to push development across all mobile traffic in a relatively short time. The team worked to automate the rollout of AMP using Vue.JS, an open-source JavaScript framework for building user interfaces and single-page applications. Over the course of three months, Musement developed more than 30,000 AMP landing pages.
+      A/B testing showed that AMP pages delivered a 15% better conversion rate. Musement also noticed that AMP boosted their average revenue per visit by 27%, an outcome they hadn’t expected. The team hypothesised that faster loading times meant users were able to browse more events with higher price points.
+    direction: left-flat
+
+  - layout: quote
+    quote: AMP enabled us to drastically improve the experience on Musement for users using mobile devices. By making their experience both faster and smoother, we were able to see significant improvements in nearly all metrics.
+    alt: Musement
+    author: Lucia Testa, Head of Paid Media, Musement
+
+  - layout: text
+    text: With the addition of AMP pages to the purchase funnel, Musement’s performance continues to improve. As a result, the team is now planning to move the entire purchase funnel to AMP for paid marketing campaigns.

@@ -55,7 +55,7 @@ In the following example, we created a responsive [`amp-iframe`](../../../../doc
 </amp-iframe>
 ```
 
-## Using placeholders
+## Using placeholders <a name="using-placeholders"></a>
 
 You can display an [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) at the top of a document, provided the [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) contains an element with the `placeholder` attribute, (for example, an [`amp-img`](../../../../documentation/components/reference/amp-img.md) element) which would be rendered as a placeholder until the iframe is ready to be displayed.
 
