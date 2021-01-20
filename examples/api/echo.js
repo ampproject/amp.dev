@@ -24,7 +24,29 @@ const {setImmutable, setNoCache} = require('@lib/utils/cacheHelpers');
 const examples = express.Router();
 
 examples.get('/echo', (request, response) => {
-  if (request.header('Content-Type') != 'application/json') {
+  if (request.header('AMP-Email-Sender')) {
+    response
+      .set('AMP-Email-Allow-Sender', request.header('AMP-Email-Sender'))
+      .json(request.query);
+  } else if (request.header('Origin')) {
+    const requestOrigin = request.header('Origin');
+    const senderEmail = request.query && request.query.__amp_source_origin;
+
+    if (senderEmail === undefined) {
+      response
+        .status(400)
+        .send('Requests must set the __amp_source_origin query parameter.');
+    }
+
+    response
+      .set('Access-Control-Allow-Origin', requestOrigin)
+      .set('AMP-Access-Control-Allow-Source-Origin', senderEmail)
+      .set(
+        'Access-Control-Expose-Headers',
+        'AMP-Access-Control-Allow-Source-Origin'
+      )
+      .json(request.query);
+  } else if (request.header('Content-Type') != 'application/json') {
     response
       .status(400)
       .send('Requests must set content-type=application/json');
