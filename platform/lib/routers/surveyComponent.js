@@ -21,41 +21,41 @@ const express = require('express');
 const log = require('@lib/utils/log')('Survey Component Response');
 const {GoogleSpreadsheet} = require('google-spreadsheet');
 const Doc = new GoogleSpreadsheet(process.env.SURVEY_RESPONSE_SHEET_ID);
-const surveyEndpoint = '/fezSurveyResponse';
+const surveyEndpoint = '/fez-survey-response';
+
+const schema = Joi.object({
+  survey: Joi.string().required().min(1),
+  questions: Joi.array()
+    .required()
+    .items(
+      Joi.object({
+        text: Joi.string().min(1).required(),
+        answer: Joi.alternatives()
+          .try(
+            Joi.string().min(1).max(200),
+            Joi.array().items(Joi.string().min(1).max(200)),
+            null
+          )
+          .required(),
+      })
+    )
+    .min(1),
+  url: Joi.string().uri().required(),
+  shownAt: Joi.string().isoDate().required(),
+  originalText: Joi.string().optional(),
+});
+
+const schemaOptions = {
+  abortEarly: false,
+  stripUnknown: true,
+};
 
 function validateRequest(req, res, next) {
   if (req.method !== 'POST') {
     return res.sendStatus(405);
   }
 
-  const schema = Joi.object({
-    survey: Joi.string().required().min(1),
-    questions: Joi.array()
-      .required()
-      .items(
-        Joi.object({
-          text: Joi.string().min(1).required(),
-          answer: Joi.alternatives()
-            .try(
-              Joi.string().min(1).max(200),
-              Joi.array().items(Joi.string().min(1).max(200)),
-              null
-            )
-            .required(),
-        })
-      )
-      .min(1),
-    url: Joi.string().uri().required(),
-    shownAt: Joi.string().isoDate().required(),
-    originalText: Joi.string().optional(),
-  });
-
-  const options = {
-    abortEarly: false,
-    stripUnknown: true,
-  };
-
-  const {error, value} = schema.validate(req.body, options);
+  const {error, value} = schema.validate(req.body, schemaOptions);
 
   if (error) {
     res
