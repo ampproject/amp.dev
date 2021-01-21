@@ -127,15 +127,21 @@ author: choumx
       <!--
         ## Remote state
 
-      The `amp-state` element can pull in state from a remote JSON endpoint using the `src` attribute. Here we bind an `amp-list`'s `[src]` attribute to `amp-state` data returned by an JSON endpoint. Also note how we calculate the `amp-list`'s `[height]` based on the number of elements. The button triggers an empty `AMP.setState()` action to trigger `amp-bind` expressions to evaluate.
+      The `amp-state` element can pull in state from a remote JSON endpoint using the `src` attribute. Here we bind an `amp-list`'s `[src]` attribute to `amp-state` data returned by an JSON endpoint. Also note how we calculate the `amp-list`'s `[height]` based on the number of elements. The button triggers an empty `AMP.setState()` action to trigger `amp-bind` expressions to evaluate. If you don't see the placeholder items in the example, the amp-state has already been evaluated. Please refresh the page to see the example in action.
 
       @formats(websites)
       -->
       <div>
+        <amp-state id="placeholderState">
+          <script type="application/json">
+            {"items": [{"url": "#", "title": "Placeholder1"},{"url": "#", "title": "Placeholder2"}]}
+          </script>
+        </amp-state>
         <amp-state id="myRemoteState" src="/static/samples/json/websites.json"></amp-state>
         <amp-list layout="fixed-height"
-                  height="0"
+                  height="44"
                   [height]="22 * myRemoteState.items.length"
+                  src="amp-state:placeholderState"
                   [src]="myRemoteState.items"
                   binding="no">
           <template type="amp-mustache">
