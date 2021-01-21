@@ -48,10 +48,15 @@ You must include the AMP runtime script and import the logic for each individual
 ``` 
 
 [tip type="note"]
-Eliminating need for the AMP runtime script is a high priority for Bento AMP. Follow our progress on the [Bento roadmap](../../../../community/roadmap/?category=bento#status-updates).
+Eliminating need for the AMP runtime script is a high priority for Bento AMP. Follow our progress on the [Bento roadmap](../../../community/roadmap.html?category=bento#status-updates).
 [/tip]
 
 Read each Bento component’s reference documentation for implementation details.
+
+## Layout and styling
+
+Fully valid AMP pages use the AMP layout system to infer sizing of elements to create a page structure before downloading any remote resources. This is important since this significantly reduces rendering and scrolling jank. However, Bento use imports components into less controlled environments, increasing the risk of content shifting. For the best page load experience, take the following measures:
+  
 
 ## Interacting with Bento components
 
@@ -63,12 +68,26 @@ During the developer preview, you can register component events and respond with
 
 The code below triggers [`amp-base-carousel`'s next action](../../../documentation/components/reference/amp-base-carousel.md#next) when executed. 
 
-```js
-const carousel = $('amp-base-carousel');
-const apiPromise = carousel.getApi();
-apiPromise.then(api => {
-  api.next();
-})
+```
+<button id="next-button">
+      Next Slide
+    </button>
+    <script>
+    let nextButton = document.getElementById('next-button')
+    function nextSlide(){
+      const carousel = document.querySelector('amp-base-carousel');
+      customElements
+        .whenDefined('amp-base-carousel')
+        .then(() => {
+          return carousel.getApi();
+        })
+        .then((api) => {
+          // Make the carousel go to the next slide
+          api.next();
+      });
+    }
+    nextButton.addEventListener("click", nextSlide())
+    </script>
 ```
 
 # Available Bento components  <a name="available-bento-components"></a>
