@@ -81,7 +81,7 @@ Fully valid AMP installs event listeners on elements via the [`on` attribute](..
 ```
 await customElements.whenDefined('amp-bento-component');
 const api = await component.getApi();
-api.event();
+api.callMethod();
 ```
 
 The example below triggers [`amp-base-carousel`'s next action](../../../documentation/components/reference/amp-base-carousel.md#next) when the user clicks the Next Slide button.
