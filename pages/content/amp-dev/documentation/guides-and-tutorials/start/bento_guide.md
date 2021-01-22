@@ -12,7 +12,7 @@ author: CrystalOnScript
 Use AMP's well-tested, cross-browser compatible and accessible components anywhere on the web with Bento AMP. Bento AMP allows you to use AMP components in non-AMP pages without needing to commit to fully valid AMP! You can take these components and place them in implementations with frameworks and CMSs that don't support AMP. Bento also lets you test out AMP components to see if the path to valid AMP is right for your use case.
 
 [tip type="important"]
- Bento is only available [experimentally](../learn/experimental.md). Read our [Blog Post](TODO) for information on future plans and how to get involved! 
+ Bento is only available [experimentally](../learn/experimental.md). Read our [Blog Post]() for information on future plans and how to get involved! 
 [/tip]
 
 # Use Bento components in non-AMP pages
@@ -55,30 +55,82 @@ Read each Bento component’s reference documentation for implementation details
 
 ## Layout and styling
 
-Bento components need to be layout using standard CSS to avoid [content shifts](https://web.dev/cls/). 
+Bento components require a small CSS library (??kb) to appear properly without content shifts on load [content shifts](https://web.dev/cls/). Include the following script tag in your document or import it into your build process.
+
+```
+<style src="..."></style>
+```
+
+Include additional standard CSS to further define layouts and styles. Here are a few strategies on how you can layout Bento components using CSS:
+
+### Fixed layout
+
+```css
+.fixed-layout {
+    display: inline-block;
+    width: xpx;
+    height: xpx;
+}
+```
+
+### Container layout
+
+```css
+.container-layout {
+...
+}
+```
+
+### Responsive layout with a fixed aspect ratio
+
+```css
+.responsive-layout {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: width / height;
+}
+```
+
+### Fill layout
+
+```css
+.fill-layout {
+...
+}
+```
+
+### Flex layout
+
+```css
+.flex-layout {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    max-height: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    min-width: 100%;
+}
+```
+
+### Grid layout
+
+```css
+.grid-layout {
+...
+}
+```
 
 [tip type="note"]
 
 Bento components don't support [AMP's layout](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/). 
 
 [/tip]
-
-For the best page load experience give AMP components defined `width`/`height` and apply them as styles.
-
-```css
-<style>
-    amp-base-carousel {
-    display: block;
-    height: 400px;
-    width: 600px;
-    overflow: hidden;
-    }
-    amp-accordion {
-    width: 600px;
-    }
-</style>
-```
-
 
 ## Interacting with Bento components
 
@@ -159,95 +211,65 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-accor
 ```
 <!DOCTYPE html>
 <html ⚡>
-  <head>
-    <meta charset="utf-8" />
-    <title>AMP Public Radio</title>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script
-      async
-      custom-element="amp-base-carousel"
-      src="https://cdn.ampproject.org/v0/amp-base-carousel-1.0.js"
-    ></script>
-    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-1.0.js"></script>
-    <script>
-      ((self.AMP = self.AMP || []).push(function (AMP) {
-        AMP.toggleExperiment('bento', true);
-      }));
-    </script>
-    <style>
+<head>
+  <meta charset="utf-8" />
+  <title>AMP Public Radio</title>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-base-carousel" src="https://cdn.ampproject.org/v0/amp-base-carousel-1.0.js"></script>
+  <script>
+    (self.AMP = self.AMP || []).push(function(AMP) {
+      AMP.toggleExperiment("bento", true);
+    });
+  </script>
+  <style>
       amp-base-carousel {
         display: block;
         height: 400px;
         width: 600px;
         overflow: hidden;
       }
-      amp-accordion {
-        width: 600px;
-      }
     </style>
-  </head>
-  <body>
-    <h1>Bento AMP Components</h1>
-      <p>
-        This demo includes the following components and configurations:
-        <ul>
-          <li>`amp-base-carousel` with looping and autoadvancing on 5s interval</li>
-          <li>`amp-accordion` with three expandable sections</li>
-        </ul>
-      </p>
-      <amp-base-carousel
-        id="my-carousel"
-        class="carousel-style"
-        controls="never"
-        loop
-        auto-advance
-        auto-advance-interval="5000"
-      >
-      <img
-          class="article-img"
-          width="1024"
-          height="682"
-          src="https://raw.githubusercontent.com/ampproject/amp.dev/future/examples/static/samples/img/green_apple_1_1024x682.jpg"
-        >
-      <img
-          class="article-img"
-          width="1024"
-          height="682"
-          src="https://raw.githubusercontent.com/ampproject/amp.dev/future/examples/static/samples/img/golden_apple1_1024x682.jpg"
-        >
-        <img
-            class="article-img"
-            width="1024"
-            height="682"
-            src="https://raw.githubusercontent.com/ampproject/amp.dev/future/examples/static/samples/img/product2_1024x682.jpg"
-          >
-      </amp-base-carousel>
-    <button id="previous-button">
-      Previous Slide
-    </button>
-    <button id="next-button">
-      Next Slide
-    </button>
-    <script>
-        const nextButton = document.querySelector('#next-button');
-        const prevButton = document.querySelector('#previous-button');  
-        const carousel = document.querySelector('amp-base-carousel');
-        
-        customElements
-        .whenDefined('amp-base-carousel')
-        .then(() => {
-            return carousel.getApi();
-        })
-        .then((api) => {
-            nextButton.addEventListener('click', () => api.next());
-            prevButton.addEventListener('click', () => api.prev());
-        });
-    </script>
-  </body>
+</head>
+<body>
+  <h1>Bento AMP Components</h1>
+  <p>
+    This demo includes amp-base-carousel with looping and autoadvancing on 5s
+    intervals. The two buttons demonstrate how to apply the events provided
+    through the amp-base-carousel API to elements external to the Bento
+    component.
+  </p>
+  <amp-base-carousel id="my-carousel" controls="never" loop auto-advance auto-advance-interval="5000">
+    <img width="600px" height="400px" src="https://amp.dev/static/samples/img/green_apple_1_1024x682.jpg" />
+    <img width="600px" height="400px" src="https://amp.dev/static/samples/img/golden_apple1_1024x682.jpg" />
+    <img width="600px" height="400px" src="https://amp.dev/static/samples/img/product2_1024x682.jpg" />
+  </amp-base-carousel>
+  <button id="previous-button">
+    Previous Slide
+  </button>
+  <button id="next-button">
+    Next Slide
+  </button>
+  <script>
+    async function nextSlide() {
+      const carousel = await document.querySelector('amp-base-carousel')
+      const api = await carousel.getApi();
+      api.next();
+    }
+    async function prevSlide() {
+      const carousel = await document.querySelector('amp-base-carousel')
+      const api = await carousel.getApi();
+      api.prev();
+    }
+    const nextButton = document.querySelector('#next-button');
+    const prevButton = document.querySelector('#previous-button');
+    nextButton.addEventListener('click', nextSlide);
+    prevButton.addEventListener('click', prevSlide);
+  </script>
+</body>
 </html>
 ```
 
-See the [demo in action on Glitch](TODO).
+See the [demo in action on Glitch](https://glitch.com/edit/#!/bento-carousel-demo).
 
 # Working with experiments
 
