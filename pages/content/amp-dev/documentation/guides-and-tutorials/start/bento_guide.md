@@ -55,7 +55,23 @@ Read each Bento component’s reference documentation for implementation details
 
 ## Layout and styling
 
-Fully valid AMP pages use the AMP layout system to infer sizing of elements to create a page structure before downloading any remote resources. This is important since this significantly reduces rendering and scrolling jank. However, Bento use imports components into less controlled environments, increasing the risk of content shifting. For the best page load experience, take the following measures:
+Fully valid AMP pages use the AMP layout system to infer sizing of elements to create a page structure before downloading any remote resources. This is important since this significantly reduces rendering and scrolling jank. However, Bento use imports components into less controlled environments, increasing the risk of content shifting. 
+
+For the best page load experience give AMP components defined `width`/`height` and apply them as styles.
+
+```css
+<style>
+    amp-base-carousel {
+    display: block;
+    height: 400px;
+    width: 600px;
+    overflow: hidden;
+    }
+    amp-accordion {
+    width: 600px;
+    }
+</style>
+```
 
 
 ## Interacting with Bento components
@@ -122,32 +138,36 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-accor
       custom-element="amp-base-carousel"
       src="https://cdn.ampproject.org/v0/amp-base-carousel-1.0.js"
     ></script>
-    <script 
-        async 
-        custom-element="amp-accordion" 
-        src="https://cdn.ampproject.org/v0/amp-accordion-1.0.js"
-    ></script>
+    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-1.0.js"></script>
     <script>
       ((self.AMP = self.AMP || []).push(function (AMP) {
         AMP.toggleExperiment('bento', true);
       }));
     </script>
+    <style>
+      amp-base-carousel {
+        display: block;
+        height: 400px;
+        width: 600px;
+        overflow: hidden;
+      }
+      amp-accordion {
+        width: 600px;
+      }
+    </style>
   </head>
   <body>
     <h1>Bento AMP Components</h1>
-    <div class="article-body">
       <p>
         This demo includes the following components and configurations:
         <ul>
-          <li>amp-base-carousel with looping and autoadvancing on 5s interval</li>
-          <li>amp-fit-text set to exactly 20px font size (headlines)</li>
+          <li>`amp-base-carousel` with looping and autoadvancing on 5s interval</li>
+          <li>`amp-accordion` with three expandable sections</li>
         </ul>
       </p>
-      <h1>Read More</h1>
       <amp-base-carousel
         id="my-carousel"
-        height="400"
-        width="600"
+        class="carousel-style"
         controls="never"
         loop
         auto-advance
@@ -187,7 +207,7 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-accor
         <h2>Section 2</h2>
         <div>Content in section 2.</div>
       </section>
-      <section expanded>
+      <section>
         <h2>Section 3</h2>
         <img
             class="article-img"
@@ -198,20 +218,20 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-accor
       </section>
     </amp-accordion>
     <script>
-        const nextButton = document.querySelector('#next-button');
-        const prevButton = document.querySelector('#previous-button');  
-        const carousel = document.querySelector('amp-base-carousel');
-        customElements
-        .whenDefined('amp-base-carousel')
-        .then(() => {
-            return carousel.getApi();
-        })
-        .then((api) => {
-            nextButton.addEventListener('click', () => api.next());
-            prevButton.addEventListener('click', () => api.prev());
-        });
+    const nextButton = document.querySelector('#next-button');
+    const prevButton = document.querySelector('#previous-button');  
+    const carousel = document.querySelector('amp-base-carousel');
+      
+    customElements
+      .whenDefined('amp-base-carousel')
+      .then(() => {
+        return carousel.getApi();
+      })
+      .then((api) => {
+        nextButton.addEventListener('click', () => api.next());
+        prevButton.addEventListener('click', () => api.prev());
+      });
     </script>
-    </div>
   </body>
 </html>
 ```
