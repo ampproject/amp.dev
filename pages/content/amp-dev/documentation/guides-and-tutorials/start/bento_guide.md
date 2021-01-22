@@ -76,9 +76,15 @@ For the best page load experience give AMP components defined `width`/`height` a
 
 ## Interacting with Bento components
 
-Fully valid AMP installs event listeners on elements via the [`on` attribute](../learn/amp-actions-and-events.md) with the event and responding action as values. Bento AMP does not rely on this attribute. Instead, the AMP team will provide a JS API to manage and react to events.
+Fully valid AMP installs event listeners on elements via the [`on` attribute](../learn/amp-actions-and-events.md) with the event and responding action as values. Bento AMP does not rely on this attribute. Instead, you can access individual component APIs to manage and react to events. Access to component actions and events follows this syntax:
 
-During the developer preview, you can register component events and respond with defined actions. The code below triggers [`amp-base-carousel`'s next action](../../../documentation/components/reference/amp-base-carousel.md#next) when executed.
+```
+await customElements.whenDefined('amp-bento-component');
+const api = await component.getApi();
+api.event();
+```
+
+The example below triggers [`amp-base-carousel`'s next action](../../../documentation/components/reference/amp-base-carousel.md#next) when the user clicks the Next Slide button.
 
 ```
 <amp-base-carousel>...</amp-base-carousel>
@@ -99,6 +105,9 @@ During the developer preview, you can register component events and respond with
     });
 </script>
 ```
+
+Read each component's reference documentation for a full list of available actions and events and their implementation details. 
+
 
 # Available Bento components  <a name="available-bento-components"></a>
 
