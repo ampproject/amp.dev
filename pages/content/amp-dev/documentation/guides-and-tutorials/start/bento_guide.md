@@ -56,45 +56,37 @@ Read each Bento component’s reference documentation for implementation details
 ## Layout and styling
 
 Fully valid AMP pages use the AMP layout system to infer sizing of elements to create a page structure before downloading any remote resources. This is important since this significantly reduces rendering and scrolling jank. However, Bento use imports components into less controlled environments, increasing the risk of content shifting. For the best page load experience, take the following measures:
-  
+
 
 ## Interacting with Bento components
 
-Fully valid AMP installs event listeners on elements via the [`on` attribute](../learn/amp-actions-and-events.md) with the event and responding action as values. Bento AMP does not rely on this attribute. Instead, the AMP team will provide a JS API to manage and react to events. 
+Fully valid AMP installs event listeners on elements via the [`on` attribute](../learn/amp-actions-and-events.md) with the event and responding action as values. Bento AMP does not rely on this attribute. Instead, the AMP team will provide a JS API to manage and react to events.
 
-During the developer preview, you can register component events and respond with defined actions using following syntax:
-
-`el.getApi().then(api => api.play())`
-
-The code below triggers [`amp-base-carousel`'s next action](../../../documentation/components/reference/amp-base-carousel.md#next) when executed. 
+During the developer preview, you can register component events and respond with defined actions. The code below triggers [`amp-base-carousel`'s next action](../../../documentation/components/reference/amp-base-carousel.md#next) when executed.
 
 ```
+<amp-base-carousel>...</amp-base-carousel>
 <button id="next-button">
-      Next Slide
-    </button>
-    <script>
-    let nextButton = document.getElementById('next-button')
-    function nextSlide(){
-      const carousel = document.querySelector('amp-base-carousel');
-      customElements
-        .whenDefined('amp-base-carousel')
-        .then(() => {
-          return carousel.getApi();
-        })
-        .then((api) => {
-          // Make the carousel go to the next slide
-          api.next();
-      });
-    }
-    nextButton.addEventListener("click", nextSlide())
-    </script>
+    Next Slide
+</button>
+<script>
+    const nextButton = document.querySelector('#next-button');
+    const carousel = document.querySelector('amp-base-carousel');
+    customElements
+    .whenDefined('amp-base-carousel')
+    .then(() => {
+        return carousel.getApi();
+    })
+    .then((api) => {
+        nextButton.addEventListener('click', () => api.next());
+        prevButton.addEventListener('click', () => api.prev());
+    });
+</script>
 ```
 
 # Available Bento components  <a name="available-bento-components"></a>
 
 Bento supported AMP components are listed below:
-
-
 
 *   [amp-accordion](../../../documentation/components/reference/amp-accordion-v1.0.md)
 *   [amp-base-carousel](../../../documentation/components/reference/amp-base-carousel-v1.0.md)
@@ -116,7 +108,7 @@ Bento supported AMP components are listed below:
 
 # Bento in action
 
-The example below demonstrates how to include `amp-base-carousel` and `amp-fit-text` in a non-AMP HTML page.
+The example below demonstrates how to include `amp-base-carousel` and `amp-accordion` in a non-AMP HTML page.
 
 ```
 <!DOCTYPE html>
@@ -130,68 +122,19 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-fit-t
       custom-element="amp-base-carousel"
       src="https://cdn.ampproject.org/v0/amp-base-carousel-1.0.js"
     ></script>
-    <script
-      async
-      custom-element="amp-fit-text"
-      src="https://cdn.ampproject.org/v0/amp-fit-text-1.0.js"
+    <script 
+        async 
+        custom-element="amp-accordion" 
+        src="https://cdn.ampproject.org/v0/amp-accordion-1.0.js"
     ></script>
     <script>
-      (self.AMP = self.AMP || []).push(function (AMP) {
+      ((self.AMP = self.AMP || []).push(function (AMP) {
         AMP.toggleExperiment('bento', true);
-      });
+      }));
     </script>
-    <style>
-      body {
-        font-family: sans-serif;
-        padding: 10%;
-        max-width: 600px;
-      }
-      .article-slide {
-        height: 100%;
-        display: flex;
-        border: 1px solid lightgrey;
-        border-radius: 5px;
-        box-sizing: border-box;
-      }
-      .article-description {
-        min-width: 40%;
-        padding: 16px;
-        padding-left: 60px;
-      }
-      .article-description h2 {
-        font-weight: 400;
-        letter-spacing: 1.08px;
-        text-transform: uppercase;
-        font-size: 12pt;
-        color: grey;
-        margin: 8px;
-      }
-      .article-description amp-fit-text {
-        color: #333;
-        font-weight: 700;
-        margin: 8px;
-      }
-      .article-description amp-fit-text:hover,
-      .article-description h2:hover {
-        color: steelblue;
-      }
-      .article-img {
-        border-top-right-radius: 5px 5px;
-        border-bottom-right-radius: 5px 5px;
-        display: inline-block;
-        width: 100%;
-        height: auto;
-        max-width: 700px;
-        max-height: 393px;
-        aspect-ratio: 700px / 393px;
-      }
-      a {
-        text-decoration: none;
-      }
-    </style>
   </head>
   <body>
-    <h1>Article headline</h1>
+    <h1>Bento AMP Components</h1>
     <div class="article-body">
       <p>
         This demo includes the following components and configurations:
@@ -200,132 +143,74 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-fit-t
           <li>amp-fit-text set to exactly 20px font size (headlines)</li>
         </ul>
       </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-        ullamcorper turpis vel commodo scelerisque. Phasellus luctus nunc ut
-        elit cursus, et imperdiet diam vehicula. Duis et nisi sed urna blandit
-        bibendum et sit amet erat. Suspendisse potenti. Curabitur consequat
-        volutpat arcu nec elementum. Etiam a turpis ac libero varius
-        condimentum. Maecenas sollicitudin felis aliquam tortor vulputate, ac
-        posuere velit semper.
-      </p>
-      <p>
-        Fusce pretium tempor justo, vitae consequat dolor maximus eget. Aliquam
-        iaculis tincidunt quam sed maximus. Suspendisse faucibus ornare sodales.
-        Nullam id dolor vitae arcu consequat ornare a et lectus. Sed tempus eget
-        enim eget lobortis. Mauris sem est, accumsan sed tincidunt ut, sagittis
-        vel arcu. Nullam in libero nisi.
-      </p>
-      <h1>More Stories from NPR</h1>
+      <h1>Read More</h1>
       <amp-base-carousel
-        height="150"
+        id="my-carousel"
+        height="400"
+        width="600"
+        controls="never"
         loop
         auto-advance
         auto-advance-interval="5000"
       >
-        <article class="article-slide">
-          <div class="article-description">
-            <a href="https://www.npr.org/sections/education/">
-              <h2>Education</h2>
-            </a>
-            <a
-              href="https://www.npr.org/2020/12/04/938050723/5-things-weve-learned-about-virtual-school-in-2020"
-            >
-              <amp-fit-text height="70" min-font-size="20" max-font-size="20">
-                5 Things We've Learned About Virtual School In 2020
-              </amp-fit-text>
-            </a>
-          </div>
-          <img
+      <img
+          class="article-img"
+          width="1024"
+          height="682"
+          src="https://raw.githubusercontent.com/ampproject/amp.dev/future/examples/static/samples/img/green_apple_1_1024x682.jpg"
+        >
+      <img
+          class="article-img"
+          width="1024"
+          height="682"
+          src="https://raw.githubusercontent.com/ampproject/amp.dev/future/examples/static/samples/img/golden_apple1_1024x682.jpg"
+        >
+        <img
             class="article-img"
-            src="https://media.npr.org/assets/img/2020/12/02/virtualschooling_npr_carsonmcnamara_update_wide-9b3a04c62be660616532d546f47645280f977892.jpg?s=700"
+            width="1024"
+            height="682"
+            src="https://raw.githubusercontent.com/ampproject/amp.dev/future/examples/static/samples/img/product2_1024x682.jpg"
           >
-        </article>
-        <article class="article-slide">
-          <div class="article-description">
-            <a href="https://www.npr.org/sections/health/">
-              <h2>Health</h2>
-            </a>
-            <a
-              href="https://www.npr.org/sections/health-shots/2020/12/03/942446185/uks-approval-of-pfizer-vaccine-should-give-people-hope-vaccine-expert-says"
-            >
-              <amp-fit-text height="70" min-font-size="20" max-font-size="20">
-                U.K.'s Approval Of Pfizer Vaccine Should 'Give People Hope,'
-                Vaccine Expert Says
-              </amp-fit-text>
-            </a>
-          </div>
-          <img
-            class="article-img"
-            width="700"
-            height="393"
-            src="https://media.npr.org/assets/img/2020/12/03/vaccine_wide-479daadfcb96b7c8a0b614d7aab152d43018e877.jpg?s=600"
-          >
-        </article>
-        <article class="article-slide">
-          <div class="article-description">
-            <a href="https://www.npr.org/sections/music-videos/">
-              <h2>Music Videos</h2>
-            </a>
-            <a
-              href="https://www.npr.org/2020/12/04/942186930/dua-lipa-tiny-desk-home-concert"
-            >
-              <amp-fit-text height="70" min-font-size="20" max-font-size="20"
-                >Dua Lipa: Tiny Desk (Home) Concert</amp-fit-text
-              >
-            </a>
-          </div>
-          <img
-            class="article-img"
-            width="700"
-            height="393"
-            src="https://media.npr.org/assets/img/2020/12/03/dua_wide-41767488aed1f75828f980b6b41339a0c65d4964.jpg?s=600"
-          >
-        </article>
-        <article class="article-slide">
-          <div class="article-description">
-            <a href="https://www.npr.org/sections/national/">
-              <h2>National</h2>
-            </a>
-            <a
-              href="https://www.npr.org/2020/12/03/942034617/time-names-its-kid-of-the-year-water-testing-scientist-gitanjali-rao"
-            >
-              <amp-fit-text height="70" min-font-size="20" max-font-size="20">
-                'Time' Names Its Kid Of The Year: Water-Testing Scientist
-                Gitanjali Rao
-              </amp-fit-text>
-            </a>
-          </div>
-          <img
-            class="article-img"
-            width="700"
-            height="393"
-            src="https://media.npr.org/assets/img/2020/12/03/time201207_koty.coverfinal_wide-a7cff22dc41f55823d394817f2c1a0acfc105a66.jpg?s=600"
-            layout="intrinsic"
-          >
-        </article>
-        <article class="article-slide">
-          <div class="article-description">
-            <a href="https://www.npr.org/sections/book-reviews/">
-              <h2>Book Reviews</h2>
-            </a>
-            <a
-              href="https://www.npr.org/2020/12/04/941982629/maureen-corrigans-10-books-that-will-connect-you-in-a-socially-distant-year"
-            >
-              <amp-fit-text height="70" min-font-size="20" max-font-size="20">
-                Maureen Corrigan's 10 Books That Will Connect You In A Socially
-                Distant Year
-              </amp-fit-text>
-            </a>
-          </div>
-          <img
-            class="article-img"
-            width="700"
-            height="393"
-            src="https://media.npr.org/assets/img/2020/12/03/corrigan2020_wide-26e0b93fd657db854e1ba2bdb7b18539ca72ecfa-s1100-c85.jpg"
-          >
-        </article>
       </amp-base-carousel>
+    <button id="previous-button">
+      Previous Slide
+    </button>
+    <button id="next-button">
+      Next Slide
+    </button>
+    <amp-accordion id="my-accordion" disable-session-states>
+      <section>
+        <h2>Section 1</h2>
+        <p>Content in section 1.</p>
+      </section>
+      <section>
+        <h2>Section 2</h2>
+        <div>Content in section 2.</div>
+      </section>
+      <section expanded>
+        <h2>Section 3</h2>
+        <img
+            class="article-img"
+            width="1024"
+            height="682"
+            src="https://raw.githubusercontent.com/ampproject/amp.dev/future/examples/static/samples/img/product2_1024x682.jpg"
+          >
+      </section>
+    </amp-accordion>
+    <script>
+        const nextButton = document.querySelector('#next-button');
+        const prevButton = document.querySelector('#previous-button');  
+        const carousel = document.querySelector('amp-base-carousel');
+        customElements
+        .whenDefined('amp-base-carousel')
+        .then(() => {
+            return carousel.getApi();
+        })
+        .then((api) => {
+            nextButton.addEventListener('click', () => api.next());
+            prevButton.addEventListener('click', () => api.prev());
+        });
+    </script>
     </div>
   </body>
 </html>
