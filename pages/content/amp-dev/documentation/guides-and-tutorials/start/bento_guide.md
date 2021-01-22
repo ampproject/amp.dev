@@ -134,11 +134,12 @@ Bento components don't support [AMP's layout](https://amp.dev/documentation/guid
 
 ## Interacting with Bento components
 
-Bento components have individual APIs that grant access to component actions and events. Access to component APIs and invoking events use the following syntax:
+Bento components have individual APIs that grant access to component actions and events. Access to component APIs and invoking events use the following syntax and required for each desired component:
 
 ```
 await customElements.whenDefined('amp-bento-component');
-const api = await component.getApi();
+const element = document.querySelector('bento-element');
+const api = await element.getApi();
 api.callMethod();
 ```
 
@@ -170,7 +171,7 @@ The example below triggers [`amp-accordion`'s toggle action](../../../documentat
 </button>
 <script>
   const toggleAccordion = async () => {
-    const accordion = document.querySelector('#myAccordion');
+    const accordion = document.querySelector('#my-accordion');
     const api = await accordion.getApi();
     api.toggle();
   }
@@ -208,7 +209,7 @@ Bento supported AMP components are listed below:
 
 The example below demonstrates how to include `amp-base-carousel` and `amp-accordion` in a non-AMP HTML page.
 
-```
+```html
 <!DOCTYPE html>
 <html ⚡>
 <head>
@@ -251,12 +252,12 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-accor
   </button>
   <script>
     async function nextSlide() {
-      const carousel = await document.querySelector('amp-base-carousel')
+      const carousel = document.querySelector('amp-base-carousel')
       const api = await carousel.getApi();
       api.next();
     }
     async function prevSlide() {
-      const carousel = await document.querySelector('amp-base-carousel')
+      const carousel = document.querySelector('amp-base-carousel')
       const api = await carousel.getApi();
       api.prev();
     }
