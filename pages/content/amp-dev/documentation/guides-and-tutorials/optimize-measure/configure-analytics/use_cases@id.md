@@ -8,7 +8,7 @@ formats:
 
 Panduan ini menyediakan sejumlah contoh penggunaan umum untuk melacak keterlibatan pengguna:
 
-[tip type = "note"] **CATATAN –** Ingin menambahkan contoh penggunaan? [Beri tahu kami.](https://github.com/ampproject/docs/issues/new) Atau Anda juga dapat menyumbangkan contoh penggunaan Anda sendiri, kunjungi [Cara Berkontribusi](../../../../documentation/guides-and-tutorials/contribute/index.md). [/tip]
+[tip type="note"] **CATATAN –** Ingin menambahkan contoh penggunaan? [Beri tahu kami.](https://github.com/ampproject/docs/issues/new) Atau Anda juga dapat menyumbangkan contoh penggunaan Anda sendiri, kunjungi [Cara Berkontribusi](../../../../documentation/guides-and-tutorials/contribute/index.md). [/tip]
 
 ## Melacak jumlah kunjungan halaman
 

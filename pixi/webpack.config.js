@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const ClosurePlugin = require('closure-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 const config = require('./config.js');
@@ -61,6 +60,16 @@ module.exports = (env, argv) => {
       }),
       new FileManagerPlugin({
         events: {
+          onStart: {
+            delete: [
+              {
+                source: '../dist/static/page-experience/',
+                options: {
+                  force: true,
+                },
+              },
+            ],
+          },
           onEnd: {
             copy: [
               {
@@ -79,13 +88,6 @@ module.exports = (env, argv) => {
             ],
           },
         },
-      }),
-      new CleanWebpackPlugin({
-        dry: false,
-        dangerouslyAllowCleanPatternsOutsideProject: true,
-        cleanAfterEveryBuildPatterns: [
-          path.join(process.cwd(), '../dist/static/page-experience'),
-        ],
       }),
     ],
     module: {

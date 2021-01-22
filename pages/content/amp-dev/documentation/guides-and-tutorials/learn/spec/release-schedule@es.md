@@ -33,7 +33,7 @@ Cada martes un nuevo lanzamiento se envía a todas las páginas de AMP. **Una ve
 
 Las extensiones y el tiempo de ejecución de AMP se proporcionan a través de diferentes *canales de lanzamientos*. Cada canal tiene un objetivo para los desarrolladores y para el propio proyecto AMP HTML. Consulte la [sección cadencia de los lanzamientos](#release-cadence) para obtener un desglose más detallado sobre cómo y cuándo el código del repositorio [`ampproject/amphtml`](https://github.com/ampproject/amphtml) se convierte en validaciones automáticas para los lanzamientos.
 
-Para determinar si las Relaciones públicas (RP) se incluyeron en alguno de los siguientes canales de lanzamientos, busque las etiquetas de GitHub *Uso de RP: en Canary*, *Uso de RP: en production*, o *Uso de RP: en LTS* (para obtener más información, consulte la sección [Cómo determinar si su modificación se encuentra en un lanzamiento](#Determining-if-your-change-is-in-a-release)).
+Para determinar si las Relaciones públicas (RP) se incluyeron en alguno de los siguientes canales de lanzamientos, busque las etiquetas de GitHub *Uso de RP: en Canary*, *Uso de RP: en production*, o *Uso de RP: en LTS* (para obtener más información, consulte la sección [Cómo determinar si su modificación se encuentra en un lanzamiento](#determining-if-your-change-is-in-a-release)).
 
 ### Nocturnos <a name="nightly"></a>
 
@@ -75,7 +75,7 @@ En el canal de lanzamiento **lts** se proporciona una validación automática **
 
 En caso de que el segundo lunes del mes sea un día no laboral, la promoción se realizará una vez que finalice la [congelación del lanzamiento](#release-freezes).
 
-Importante: los editores que utilicen el canal de lanzamiento **lts** no deben utilizar funciones que se hayan introducido recientemente. Debido a que implican un proceso más largo, el lanzamiento **lts** puede retrasarse hasta siete semanas en el `HEAD` de [`ampproject/amphtml`](https://github.com/ampproject/amphtml). Consulte la sección sobre [Cómo determinar si su modificación se encuentra en un lanzamiento](#Determining-if-your-change-is-in-a-release) para confirmar si un cambio estará listo con el proceso de lanzamiento que seleccionó.
+Importante: los editores que utilicen el canal de lanzamiento **lts** no deben utilizar funciones que se hayan introducido recientemente. Debido a que implican un proceso más largo, el lanzamiento **lts** puede retrasarse hasta siete semanas en el `HEAD` de [`ampproject/amphtml`](https://github.com/ampproject/amphtml). Consulte la sección sobre [Cómo determinar si su modificación se encuentra en un lanzamiento](#determining-if-your-change-is-in-a-release) para confirmar si un cambio estará listo con el proceso de lanzamiento que seleccionó.
 
 ## Cómo determinar si su modificación se encuentra en un lanzamiento <a name="determining-if-your-change-is-in-a-release"></a>
 

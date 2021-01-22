@@ -123,7 +123,7 @@ Selain itu, kita perlu memperbarui status standar elemen yang relevan:
 </amp-selector>
 ```
 
-[tip type = "note"] **CATATAN -** [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) tidak berjalan saat pemuatan halaman -- hanya sebagai respons terhadap tindakan pengguna yang eksplisit. Ini memastikan pemuatan halaman awal secara konsisten cepat di seluruh halaman, terlepas dari penggunaan [`amp-bind`](../../../../documentation/components/reference/amp-bind.md). [/tip]
+[tip type="note"] **CATATAN -** [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) tidak berjalan saat pemuatan halaman -- hanya sebagai respons terhadap tindakan pengguna yang eksplisit. Ini memastikan pemuatan halaman awal secara konsisten cepat di seluruh halaman, terlepas dari penggunaan [`amp-bind`](../../../../documentation/components/reference/amp-bind.md). [/tip]
 
 ## Harga baju variabel
 
@@ -140,7 +140,7 @@ Toko AMPPAREL kita tidak biasa karena harga baju berbeda berdasarkan warna DAN u
 
 Perhatikan bahwa kita tidak menginisialisasi nilai `selectedSize` melalui elemen `amp-state#selected`. Hal ini karena kita sengaja tidak memberikan ukuran standar yang dipilih, dan ingin mendorong pengguna untuk memilih ukuran.
 
-[tip type = "tip"] **KIAT –** `AMP.setState()` dapat digunakan untuk menentukan variabel baru selain untuk mengubah variabel yang sudah ada. Ekspresi akan mengevaluasi variabel yang tidak ditentukan menjadi `null`. [/tip]
+[tip type="tip"] **KIAT –** `AMP.setState()` dapat digunakan untuk menentukan variabel baru selain untuk mengubah variabel yang sudah ada. Ekspresi akan mengevaluasi variabel yang tidak ditentukan menjadi `null`. [/tip]
 
 Tambahkan elemen `<span>` baru yang mencakup label harga dan ubah teks standarnya menjadi "---" karena tidak ada pilihan ukuran standar.
 

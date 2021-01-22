@@ -63,7 +63,7 @@ async function getStatusId(checkPromises, recommendationsPromise) {
     const pagePassedAll =
       pageExperience[dataType].isAllFast && passedOtherCriteria;
 
-    if (cacheExperience && cacheExperience[dataType] !== undefined) {
+    if (cacheExperience && cacheExperience[dataType]) {
       const cachePassedAll =
         cacheExperience[dataType].isAllFast && passedOtherCriteria;
       if (cachePassedAll && !pagePassedAll) {
@@ -93,6 +93,7 @@ async function getStatusId(checkPromises, recommendationsPromise) {
     }
     return 'all-passed';
   } catch (err) {
+    console.error('Failed to determine final status', err);
     return 'generic-error';
   }
 }
