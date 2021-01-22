@@ -198,6 +198,21 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-accor
     <button id="next-button">
       Next Slide
     </button>
+    <script>
+        const nextButton = document.querySelector('#next-button');
+        const prevButton = document.querySelector('#previous-button');  
+        const carousel = document.querySelector('amp-base-carousel');
+        
+        customElements
+        .whenDefined('amp-base-carousel')
+        .then(() => {
+            return carousel.getApi();
+        })
+        .then((api) => {
+            nextButton.addEventListener('click', () => api.next());
+            prevButton.addEventListener('click', () => api.prev());
+        });
+    </script>
     <amp-accordion id="my-accordion" disable-session-states>
       <section>
         <h2>Section 1</h2>
@@ -217,20 +232,17 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-accor
           >
       </section>
     </amp-accordion>
-    <script>
-    const nextButton = document.querySelector('#next-button');
-    const prevButton = document.querySelector('#previous-button');  
-    const carousel = document.querySelector('amp-base-carousel');
-      
-    customElements
-      .whenDefined('amp-base-carousel')
-      .then(() => {
-        return carousel.getApi();
-      })
-      .then((api) => {
-        nextButton.addEventListener('click', () => api.next());
-        prevButton.addEventListener('click', () => api.prev());
-      });
+    <button id="toggle">
+    Click
+  </button>
+  <script>
+    const toggleAccordion = async () => {
+    const accordion = document.querySelector('#myAccordion')
+    const api = await accordion.getApi();
+    api.toggle();
+    }
+    const toggleButton = document.querySelector('#toggle')
+    toggleButton.addEventListener('click', toggleAccordion)
     </script>
   </body>
 </html>
