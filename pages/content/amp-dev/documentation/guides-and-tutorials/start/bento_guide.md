@@ -37,25 +37,31 @@ Enable the Bento experiment by including the script below:
 </script>
 ```
 
-## Import AMP runtime and Bento component logic
+## Import AMP runtime and Bento component script
 
-You must include the AMP runtime script and import the logic for each individual Bento component desired.
+You must include the AMP runtime script and import the component script for each individual Bento component desired.
 
 ```
 <script async src="https://cdn.ampproject.org/v0.js"></script>
 
-<script async custom-element="amp-bento-component-name" src="https://cdn.ampproject.org/v0/amp-bento-1.0.js"></script>
+<script async custom-element="amp-bento-component-name" src="https://cdn.ampproject.org/v0/amp-bento-component-name-1.0.js"></script>
 ``` 
 
 [tip type="note"]
-Eliminating need for the AMP runtime script is a high priority for Bento AMP. Follow our progress on the [Bento roadmap](../../../community/roadmap.html?category=bento#status-updates).
+To make Bento components load event faster, eliminating need for the AMP runtime script is a high priority for Bento AMP. Follow our progress on the [Bento roadmap](../../../community/roadmap.html?category=bento#status-updates).
 [/tip]
 
 Read each Bento component’s reference documentation for implementation details.
 
 ## Layout and styling
 
-Fully valid AMP pages use the AMP layout system to infer sizing of elements to create a page structure before downloading any remote resources. This is important since this significantly reduces rendering and scrolling jank. However, Bento use imports components into less controlled environments, increasing the risk of content shifting. 
+Bento components need to be layout using standard CSS to avoid [content shifts](https://web.dev/cls/). 
+
+[tip type="note"]
+
+Bento components don't support [AMP's layout](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/). 
+
+[/tip]
 
 For the best page load experience give AMP components defined `width`/`height` and apply them as styles.
 
@@ -76,7 +82,7 @@ For the best page load experience give AMP components defined `width`/`height` a
 
 ## Interacting with Bento components
 
-Fully valid AMP installs event listeners on elements via the [`on` attribute](../learn/amp-actions-and-events.md) with the event and responding action as values. Bento AMP does not rely on this attribute. Instead, you can access individual component APIs to manage and react to events. Access to component actions and events follows this syntax:
+Bento components have individual APIs that grant access to component actions and events. Access to component APIs and invoking events use the following syntax:
 
 ```
 await customElements.whenDefined('amp-bento-component');
@@ -84,29 +90,44 @@ const api = await component.getApi();
 api.callMethod();
 ```
 
-The example below triggers [`amp-base-carousel`'s next action](../../../documentation/components/reference/amp-base-carousel.md#next) when the user clicks the Next Slide button.
+[tip type="note"]
+
+Fully valid AMP installs event listeners on elements via the [`on` attribute](../learn/amp-actions-and-events.md) with the event and responding action as values. Bento AMP does not rely on this attribute. Instead, use component APIs to manage and react to events.
+
+[/tip]
+
+The example below triggers [`amp-accordion`'s toggle action](../../../documentation/components/reference/amp-accordion.md#toggle) when the user clicks the "Toggle Accordion" button.
 
 ```
-<amp-base-carousel>...</amp-base-carousel>
-<button id="next-button">
-    Next Slide
+<amp-accordion id="my-accordion" disable-session-states>
+  <section>
+    <h2>Section 1</h2>
+    <p>Content in section 1.</p>
+  </section>
+  <section>
+    <h2>Section 2</h2>
+    <div>Content in section 2.</div>
+  </section>
+  <section>
+    <h2>Section 3</h2>
+    <img class="article-img" width="1024" height="682" src="https://raw.githubusercontent.com/ampproject/amp.dev/future/examples/static/samples/img/product2_1024x682.jpg">
+  </section>
+</amp-accordion>
+<button id="toggle">
+  Toggle Accordion
 </button>
 <script>
-    const nextButton = document.querySelector('#next-button');
-    const carousel = document.querySelector('amp-base-carousel');
-    customElements
-    .whenDefined('amp-base-carousel')
-    .then(() => {
-        return carousel.getApi();
-    })
-    .then((api) => {
-        nextButton.addEventListener('click', () => api.next());
-        prevButton.addEventListener('click', () => api.prev());
-    });
+  const toggleAccordion = async () => {
+    const accordion = document.querySelector('#myAccordion')
+    const api = await accordion.getApi();
+    api.toggle();
+  }
+  const toggleButton = document.querySelector('#toggle')
+  toggleButton.addEventListener('click', toggleAccordion)
 </script>
 ```
 
-Read each component's reference documentation for a full list of available actions and events and their implementation details. 
+Read each [component's reference documentation](#available-bento-components) for a full list of available actions and events. 
 
 
 # Available Bento components  <a name="available-bento-components"></a>
@@ -221,37 +242,6 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-accor
             nextButton.addEventListener('click', () => api.next());
             prevButton.addEventListener('click', () => api.prev());
         });
-    </script>
-    <amp-accordion id="my-accordion" disable-session-states>
-      <section>
-        <h2>Section 1</h2>
-        <p>Content in section 1.</p>
-      </section>
-      <section>
-        <h2>Section 2</h2>
-        <div>Content in section 2.</div>
-      </section>
-      <section>
-        <h2>Section 3</h2>
-        <img
-            class="article-img"
-            width="1024"
-            height="682"
-            src="https://raw.githubusercontent.com/ampproject/amp.dev/future/examples/static/samples/img/product2_1024x682.jpg"
-          >
-      </section>
-    </amp-accordion>
-    <button id="toggle">
-    Click
-  </button>
-  <script>
-    const toggleAccordion = async () => {
-    const accordion = document.querySelector('#myAccordion')
-    const api = await accordion.getApi();
-    api.toggle();
-    }
-    const toggleButton = document.querySelector('#toggle')
-    toggleButton.addEventListener('click', toggleAccordion)
     </script>
   </body>
 </html>
