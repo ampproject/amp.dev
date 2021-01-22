@@ -170,12 +170,12 @@ The example below triggers [`amp-accordion`'s toggle action](../../../documentat
 </button>
 <script>
   const toggleAccordion = async () => {
-    const accordion = document.querySelector('#myAccordion')
+    const accordion = document.querySelector('#myAccordion');
     const api = await accordion.getApi();
     api.toggle();
   }
-  const toggleButton = document.querySelector('#toggle')
-  toggleButton.addEventListener('click', toggleAccordion)
+  const toggleButton = document.querySelector('#toggle');
+  toggleButton.addEventListener('click', toggleAccordion);
 </script>
 ```
 
@@ -213,7 +213,7 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-accor
 <html ⚡>
 <head>
   <meta charset="utf-8" />
-  <title>AMP Public Radio</title>
+  <title>Bento Carousel Example</title>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <script async custom-element="amp-base-carousel" src="https://cdn.ampproject.org/v0/amp-base-carousel-1.0.js"></script>
   <script>
