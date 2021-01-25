@@ -14,7 +14,7 @@ Les développeurs et les utilisateurs peuvent choisir d'utiliser ces fonctionnal
 
 [tip type="important"] Il existe un risque que certaines expériences ne soient jamais livrées en tant que fonctionnalités sur le Projet AMP. [/tip]
 
-{% set experimental_components = g.docs ('/ content / amp-dev / documentation / components / reference') | selectattr ('experimental') | list%} {% if experimental_components | length%} Voici une liste de composants qui sont actuellement en état expérimental et sont prêts à être testés par les développeurs pour les premiers commentaires des utilisateurs:
+{% set experimental_components = g.docs ('/content/amp-dev/documentation/components/reference') | selectattr ('experimental') | list%} {% if experimental_components | length%} Voici une liste de composants qui sont actuellement en état expérimental et sont prêts à être testés par les développeurs pour les premiers commentaires des utilisateurs:
 
 <ul><br>{% for component in experimental_components %}<br>  <li><a href="{{ component.url.path }}">{{ component.title }}</a></li><br>{% endfor %}<br></ul><br>{% endif %}
 

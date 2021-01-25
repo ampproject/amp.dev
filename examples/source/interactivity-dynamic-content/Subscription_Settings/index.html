@@ -195,7 +195,7 @@ formats:
 
       The `name` attribute of the `select` element is set to `nextSubscription`. `nextSubscription` is the name of the form data field where the server expects the user's new subscription setting to be in the POST request (see the [Server section](<% base_path %>/#server)) and the `select` element contains the user's selected subscription setting.
 
-      Finally, we trigger the form submission when the `select` element's value changes. We do so by using the [`on` attribute](/documentation/guides-and-tutorials/learn/common_attributes#on) to attach an event handler to the `select` element's [`change` event](/documentation/guides-and-tutorials/learn/amp-actions-and-events#input-elements), invoking the `form` element's [`submit` action]. [`submit` action](/documentation/guides-and-tutorials/learn/amp-actions-and-events#form_1). Note that we gave the `form` element an `id` so that we could refer to it in the event handler.
+      Finally, we trigger the form submission when the `select` element's value changes. We do so by using the [`on` attribute](/documentation/guides-and-tutorials/learn/common_attributes#on) to attach an event handler to the `select` element's [`change` event](/documentation/guides-and-tutorials/learn/amp-actions-and-events#input-elements), invoking the `form` element's [`submit` action](/documentation/guides-and-tutorials/learn/amp-actions-and-events#form_1). Note that we gave the `form` element an `id` so that we could refer to it in the event handler.
 
       You can test the code by selecting a new subscription setting and refreshing the page. The `select` element's subscription setting on page load is now the one you selected!
     -->

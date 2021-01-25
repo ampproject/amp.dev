@@ -33,7 +33,7 @@ have a look and request a pull request there.
 
 AMP 运行时和扩展项通过各种不同的*发布渠道*提供。每种渠道均服务于开发者和 AMP HTML 项目本身的需求。请参阅[发布节奏](#release-cadence)部分，查看 [`ampproject/amphtml`](https://github.com/ampproject/amphtml) 仓库内的代码如何以及何时应用到发布构建的详细明细表。
 
-要确定某个拉取请求是否已包含在以下任何发布渠道中，请查找 GitHub 标签 *PR Use: In Canary*、*PR Use: In Production* 或 *PR Use: In LTS*（有关更多详细信息，请参阅[确定您的变更是否包含在某一版本中](#Determining-if-your-change-is-in-a-release)部分）。
+要确定某个拉取请求是否已包含在以下任何发布渠道中，请查找 GitHub 标签 *PR Use: In Canary*、*PR Use: In Production* 或 *PR Use: In LTS*（有关更多详细信息，请参阅[确定您的变更是否包含在某一版本中](#determining-if-your-change-is-in-a-release)部分）。
 
 ### 每夜 <a name="nightly"></a>
 
@@ -75,7 +75,7 @@ AMP 运行时和扩展项通过各种不同的*发布渠道*提供。每种渠�
 
 如果每个月的第二个周一为节假日，将在[发布冻结](#release-freezes)结束后执行升级。
 
-重要提示：使用 **lts** 发布渠道的发布商不应使用新引入的功能。由于周期较长，**lts** 版本可能落后于 [`ampproject/amphtml`](https://github.com/ampproject/amphtml) 的 `HEAD` 长达七周时间。请参阅[确定您的变更是否包含在某一版本中](#Determining-if-your-change-is-in-a-release)部分，验证变更能否在您选择的发布周期内实现。
+重要提示：使用 **lts** 发布渠道的发布商不应使用新引入的功能。由于周期较长，**lts** 版本可能落后于 [`ampproject/amphtml`](https://github.com/ampproject/amphtml) 的 `HEAD` 长达七周时间。请参阅[确定您的变更是否包含在某一版本中](#determining-if-your-change-is-in-a-release)部分，验证变更能否在您选择的发布周期内实现。
 
 ## 确定您的变更是否包含在某一版本中 <a name="determining-if-your-change-is-in-a-release"></a>
 

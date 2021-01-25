@@ -25,7 +25,7 @@ Iframe sangat bermanfaat di AMP untuk menampilkan konten yang tidak didukung di 
 - Harus minimal **600 piksel** atau **75%** viewport pertama yang jauh dari bagian atas (kecuali untuk iframe yang menggunakan <a><code>placeholder</code></a>).
 - Hanya dapat meminta referensi melalui HTTPS, dan tidak boleh memiliki asal yang sama dengan wadah, kecuali permintaan tidak mengharuskan izinkan-asal-yang-sama (allow-same-origin).
 
-[tip type = "read-on"] **BACA –** Pelajari lebih lanjut dalam [spesifikasi lengkap untuk `amp-iframe`](../../../../documentation/components/reference/amp-iframe.md). [/tip]
+[tip type="read-on"] **BACA –** Pelajari lebih lanjut dalam [spesifikasi lengkap untuk `amp-iframe`](../../../../documentation/components/reference/amp-iframe.md). [/tip]
 
 ### Menyertakan skrip
 
@@ -52,7 +52,7 @@ Di dalam contoh berikut ini, kita membuat [`amp-iframe`](../../../../documentati
 
 Anda dapat menampilkan [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) di bagian atas dokumen, sepanjang [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) berisi elemen dengan atribut `placeholder`, (contoh: elemen [`amp-img`](../../../../documentation/components/reference/amp-img.md)) yang akan dirender sebagai bakal tempat sampai iframe siap ditampilkan.
 
-[tip type = "read-on"] **BACA –**: Pelajari lebih lanjut tentang bakal tempat di [Iframe dengan bakal tempat](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder). [/tip]
+[tip type="read-on"] **BACA –**: Pelajari lebih lanjut tentang bakal tempat di [Iframe dengan bakal tempat](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder). [/tip]
 
 Contoh dengan bakal tempat:
 

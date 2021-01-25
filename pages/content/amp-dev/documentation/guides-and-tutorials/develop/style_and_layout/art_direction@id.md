@@ -33,7 +33,7 @@ Dalam contoh sederhana ini, `srcset` menentukan gambar yang akan digunakan berda
 ```
 [/example]
 
-[tip type = "note"] **CATATAN –** AMP mendukung srcset dengan deskriptor `w` di semua browser. [/tip]
+[tip type="note"] **CATATAN –** AMP mendukung srcset dengan deskriptor `w` di semua browser. [/tip]
 
 Pelajari lebih lanjut tentang cara membuat gambar responsif dengan menggunakan `srcset` dalam [Menggunakan Gambar Responsif (Sekarang)](http://alistapart.com/article/using-responsive-images-now).
 
@@ -58,7 +58,7 @@ Pertimbangkan contoh berikut ini:
 
 Atribut `sizes` menentukan lebar elemen menjadi 50% dari ukuran viewport jika viewport berukuran 650px atau lebih. Contoh, jika viewport berukuran 800px, lebar elemen diatur pada 400px. Kemudian, browser akan memilih sumber daya `srcset` yang relatif dengan 400px, dengan asumsi bahwa rasio piksel perangkat adalah 1, yang dalam kasus ini adalah `hummingbird-narrow.jpg` (320px).
 
-[tip type = "important"] **PENTING –** Jika atribut ukuran ditentukan bersama dengan lebar dan tinggi, tata letak distandarkan pada `responsive`. [/tip]
+[tip type="important"] **PENTING –** Jika atribut ukuran ditentukan bersama dengan lebar dan tinggi, tata letak distandarkan pada `responsive`. [/tip]
 
 Baca lebih lanjut tentang [atribut `sizes` AMP di sini](../../../../documentation/guides-and-tutorials/learn/common_attributes.md).
 

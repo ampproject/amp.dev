@@ -47,4 +47,4 @@ Atau, Anda dapat menggunakan [`@font-face`](https://developer.mozilla.org/en-US/
 </style>
 [/sourcecode]
 
-[tip type = "note"] **CATATAN –** Font yang disertakan melalui `@font-face` harus diambil melalui skema HTTP atau HTTPS. [/tip]
+[tip type="note"] **CATATAN –** Font yang disertakan melalui `@font-face` harus diambil melalui skema HTTP atau HTTPS. [/tip]

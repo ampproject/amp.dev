@@ -1,17 +1,17 @@
 ---
-"$title": プレースホルダとフォールバック
-"$order": '3'
+$title: プレースホルダとフォールバック
+$order: 3
 descriptions: 認識されているパフォーマンスと進行中の機能強化を考慮すると、可能な場合には、プレースホルダとフォールバックを AMP に使用することがベストプラクティスと言えます。
 formats:
-- ウェブサイト
-- メール
-- 広告
-- ストーリー
+  - websites
+  - email
+  - ads
+  - stories
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 認識されているパフォーマンスと進行中の機能強化を考慮すると、可能な場合には、プレースホルダとフォールバックを AMP に使用することがベストプラクティスと言えます。
