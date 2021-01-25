@@ -2,6 +2,12 @@
   "items": [
     {
       "animal": "dog"
+    },
+    {
+      "animal": "cat"
+    },
+    {
+      "animal": "parrot"
     }
   ]
 }
