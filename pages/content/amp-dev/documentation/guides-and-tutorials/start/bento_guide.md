@@ -39,11 +39,14 @@ Enable the Bento experiment by including the script below:
 
 ## Import AMP runtime and Bento component script
 
-You must include the AMP runtime script and import the component script for each individual Bento component desired.
+You must include the AMP runtime script and import the component script for each individual Bento component desired. We also recommend importing the component's CSS stylesheet for the best user experience.
 
 ```
+<!-- AMP runtime script -->
 <script async src="https://cdn.ampproject.org/v0.js"></script>
-
+<!-- Bento component stylesheet -->
+<link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-bento-component-name-1.0.css">
+<!-- Bento component script -->
 <script async custom-element="amp-bento-component-name" src="https://cdn.ampproject.org/v0/amp-bento-component-name-1.0.js"></script>
 ``` 
 
@@ -55,10 +58,13 @@ Read each Bento component’s reference documentation for implementation details
 
 ## Layout and styling
 
-Bento components require a small CSS library (??kb) to appear properly without content shifts on load [content shifts](https://web.dev/cls/). Include the following script tag in your document or import it into your build process.
+Each Bento component has a small CSS library you must include to guarantee proper loading without [content shifts](https://web.dev/cls/). Because of order-based specificity, you must manually ensure that stylesheets are included before any custom styles.
 
 ```
-<style src="..."></style>
+<link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-bento-component-name-1.0.css">
+<style>
+ custom styles
+</style> 
 ```
 
 Include additional standard CSS to further define layouts and styles. Here are a few strategies on how you can layout Bento components using CSS:
@@ -151,7 +157,8 @@ Fully valid AMP installs event listeners on elements via the [`on` attribute](..
 
 The example below triggers [`amp-accordion`'s toggle action](../../../documentation/components/reference/amp-accordion.md#toggle) when the user clicks the "Toggle Accordion" button.
 
-```
+[example preview="top-frame" playground="false" imports="amp-accordion"]
+```html
 <amp-accordion id="my-accordion" disable-session-states>
   <section>
     <h2>Section 1</h2>
@@ -179,6 +186,7 @@ The example below triggers [`amp-accordion`'s toggle action](../../../documentat
   toggleButton.addEventListener('click', toggleAccordion);
 </script>
 ```
+[/example]
 
 Read each [component's reference documentation](#available-bento-components) for a full list of available actions and events. 
 
