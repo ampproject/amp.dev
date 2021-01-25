@@ -49,7 +49,7 @@ When the form is submitted for the first time, the `amp-list` is hidden and the 
     Note: Use a placeholder to make the loading state look the same as the submitting state for the form.
   -->
   <div>
-    <form id="animal-form" method="get" action-xhr="<% hosts.platform %>/documentation/examples/api/echo">
+    <form id="animal-form" method="post" action-xhr="<% hosts.platform %>/documentation/examples/api/echo">
       <div>
         <p>Select an animal to update the server response.</p>
         <select name="animal" on="change:animal-form.submit,animal-list.hide">
