@@ -21,13 +21,23 @@
   {% endif %}
 
   {% if doc.scripts %}
-  <div class="ap-o-component-intro-row" id="component-scripts">
-    <h4 class="ap-o-component-intro-headline">{{ _('Required Scripts') }}
-      {% if doc.bento %}
-      <span role="button" tabindex="0" class="ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link filtered" [class]="bento ? 'ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link ' : 'ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link filtered'" on="tap:AMP.setState({ 'bento': false })">AMP</span>
-      <span role="button" tabindex="0" class="ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link" [class]="bento ? 'ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link filtered' : 'ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link'" on="tap:AMP.setState({ 'bento': true })">Bento (Standalone)</span>
-      {% endif %}
-    </h4>
+  <div class="ap-o-component-intro-row ap-o-component-intro-row-inline">
+    <h4 class="ap-o-component-intro-headline">{{ _('Required Scripts') }}</h4>
+    {% if doc.bento %}
+    <div class="ap-o-component-intro-filter">
+      <label>
+      <input type="radio" name="format-switch"
+        class="ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link filtered"
+        [class]="bento ? 'ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link ' : 'ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link filtered'"
+        on="tap:AMP.setState({ 'bento': false })" checked>AMP
+        </label>
+      <label>
+      <input type="radio" name="format-switch"
+        class="ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link"
+        [class]="bento ? 'ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link filtered' : 'ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link'"
+        on="tap:AMP.setState({ 'bento': true })">Bento (Standalone)</label>
+    </div>
+    {% endif %}
 
     {% do doc.styles.addCssFile('css/components/atoms/copy-script.css') %}
     {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}

@@ -6,13 +6,14 @@
 .#{atom('copy-script')} {
   display: flex;
   align-items: center;
+  flex-basis: 100%;
 
   pre {
     overflow-x: scroll;
     flex: 1 0;
     margin: 6px 8px 6px 0;
     padding: 4px 6px;
-    white-space: pre;
+    white-space: wrap;
     background: color('iron');
     font-size: 12.6px;
 
