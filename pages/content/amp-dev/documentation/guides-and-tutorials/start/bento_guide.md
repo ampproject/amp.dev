@@ -79,14 +79,6 @@ Include additional standard CSS to further define layouts and styles. Here are a
 }
 ```
 
-### Container layout
-
-```css
-.container-layout {
-...
-}
-```
-
 ### Responsive layout with a fixed aspect ratio
 
 ```css
@@ -134,14 +126,6 @@ Depending on element context.
 }
 ```
 
-### Grid layout
-
-```css
-.grid-layout {
-...
-}
-```
-
 [tip type="note"]
 
 Bento components don't support [AMP's layout system](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/). 
@@ -167,7 +151,18 @@ Fully valid AMP installs event listeners on elements via the [`on` attribute](..
 
 The example below triggers [`amp-accordion`'s toggle action](../../../documentation/components/reference/amp-accordion.md#toggle) when the user clicks the "Toggle Accordion" button.
 
+[example preview="top-frame" playground="false"]
 ```html
+<head>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-accordion-1.0.css">
+    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-1.0.js"></script>
+</head>
+<script>
+  (self.AMP = self.AMP || []).push(function (AMP) {
+    AMP.toggleExperiment('bento', true);
+  });
+</script>
 <amp-accordion id="my-accordion" disable-session-states>
   <section>
     <h2>Section 1</h2>
@@ -179,7 +174,7 @@ The example below triggers [`amp-accordion`'s toggle action](../../../documentat
   </section>
   <section>
     <h2>Section 3</h2>
-    <img class="article-img" width="1024" height="682" src="https://raw.githubusercontent.com/ampproject/amp.dev/future/examples/static/samples/img/product2_1024x682.jpg">
+    <img width="150px" height="100px" src="https://amp.dev/static/samples/img/product2_1024x682.jpg" />
   </section>
 </amp-accordion>
 <button id="toggle">
@@ -195,6 +190,7 @@ The example below triggers [`amp-accordion`'s toggle action](../../../documentat
   toggleButton.addEventListener('click', toggleAccordion);
 </script>
 ```
+[/example]
 
 Read each [component's reference documentation](#available-bento-components) for a full list of available actions and events. 
 
@@ -225,9 +221,10 @@ Bento supported AMP components are listed below:
 
 The example below demonstrates how to include `amp-base-carousel` and `amp-accordion` in a non-AMP HTML page.
 
+[example preview="top-frame" playground="false"]
 ```html
 <!DOCTYPE html>
-<html ⚡>
+<html>
 <head>
   <meta charset="utf-8" />
   <title>Bento Carousel Example</title>
@@ -241,24 +238,17 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-accor
   <style>
       amp-base-carousel {
         display: block;
-        height: 400px;
-        width: 600px;
+        height: 100px;
+        width: 150px;
         overflow: hidden;
       }
     </style>
 </head>
 <body>
-  <h1>Bento AMP Components</h1>
-  <p>
-    This demo includes amp-base-carousel with looping and autoadvancing on 5s
-    intervals. The two buttons demonstrate how to apply the events provided
-    through the amp-base-carousel API to elements external to the Bento
-    component.
-  </p>
   <amp-base-carousel id="my-carousel" controls="never" loop auto-advance auto-advance-interval="5000">
-    <img width="600px" height="400px" src="https://amp.dev/static/samples/img/green_apple_1_1024x682.jpg" />
-    <img width="600px" height="400px" src="https://amp.dev/static/samples/img/golden_apple1_1024x682.jpg" />
-    <img width="600px" height="400px" src="https://amp.dev/static/samples/img/product2_1024x682.jpg" />
+    <img width="150px" height="100px" src="https://amp.dev/static/samples/img/green_apple_1_1024x682.jpg" />
+    <img width="150px" height="100px" src="https://amp.dev/static/samples/img/golden_apple1_1024x682.jpg" />
+    <img width="150px" height="100px" src="https://amp.dev/static/samples/img/product2_1024x682.jpg" />
   </amp-base-carousel>
   <button id="previous-button">
     Previous Slide
@@ -268,12 +258,14 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-accor
   </button>
   <script>
     async function nextSlide() {
-      const carousel = document.querySelector('amp-base-carousel')
+      const carousel = document.querySelector('amp-base-carousel');
+      await customElements.whenDefined('amp-base-carousel');
       const api = await carousel.getApi();
       api.next();
     }
     async function prevSlide() {
-      const carousel = document.querySelector('amp-base-carousel')
+      const carousel = document.querySelector('amp-base-carousel');
+      await customElements.whenDefined('amp-base-carousel');
       const api = await carousel.getApi();
       api.prev();
     }
@@ -285,8 +277,7 @@ The example below demonstrates how to include `amp-base-carousel` and `amp-accor
 </body>
 </html>
 ```
-
-See the [demo in action on Glitch](https://glitch.com/edit/#!/bento-carousel-demo).
+[/example]
 
 # Working with experiments
 
