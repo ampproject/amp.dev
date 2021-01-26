@@ -81,7 +81,7 @@ class ComponentReferenceImporter {
         growDoc.bentoPath = bentoComponent.path;
       }
       try {
-        growDoc.save(growDoc.path);
+        await growDoc.save(growDoc.path);
       } catch (e) {
         log.error(`Failed to write ${growDoc.path}`, e);
       }
