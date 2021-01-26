@@ -2,9 +2,15 @@
 <div class="ap-o-component-intro">
   {% if doc.bentoPath and not doc.bento %}
   {% do doc.icons.useIcon('icons/speech-bubble.svg') %}
-{% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
-  <div class="ap-m-tip"> <div class="ap-a-ico ap-m-tip-icon"> <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#speech-bubble"></use></svg> </div> <div class="ap-m-tip-content">You can now use this component outside valid AMP documents using the <a href="{{ doc.bentoPath }}">experimental Bento version of this component</a>. Learn more in our <a href="../../guides-and-tutorials/start/bento_guide.md">Bento guide</a>.</div>
-</div>
+  {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
+  <div class="ap-m-tip">
+    <div class="ap-a-ico ap-m-tip-icon">
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#speech-bubble"> </use></svg>
+    </div>
+    <div class="ap-m-tip-content">
+      You can now use this component outside valid AMP documents using the <a href="{{ doc.bentoPath }}">experimental Bento version of this component</a>. Learn more in our <a href="../../guides-and-tutorials/start/bento_guide.md">Bento guide</a>.
+    </div>
+  </div>
   {% endif %}
   {% if doc.teaser %}
   <div class="ap-o-component-intro-row">
