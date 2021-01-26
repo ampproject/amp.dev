@@ -1,26 +1,26 @@
 {% do doc.styles.addCssFile('css/components/organisms/component-intro.css') %}
 <div class="ap-o-component-intro">
-  {% if doc.teaser %}
-  <div class="ap-o-component-intro-row">
-    <h4 class="ap-o-component-intro-headline">{{ _('Description') }}</h4>
-    <p class="ap-o-component-intro-text">{{ doc.teaser.text }}</p>
-  </div>
-  {% endif %}
+  {% if doc.teaser %}
+  <div class="ap-o-component-intro-row">
+    <h4 class="ap-o-component-intro-headline">{{ _('Description') }}</h4>
+    <p class="ap-o-component-intro-text">{{ doc.teaser.text }}</p>
+  </div>
+  {% endif %}
 
-  {% if doc.scripts %}
-  <div class="ap-o-component-intro-row" id="component-scripts">
-    <h4 class="ap-o-component-intro-headline">{{ _('Required Scripts') }}
+  {% if doc.scripts %}
+  <div class="ap-o-component-intro-row" id="component-scripts">
+    <h4 class="ap-o-component-intro-headline">{{ _('Required Scripts') }}
       {% if doc.bento %}
       <span role="button" tabindex="0" class="ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link filtered" [class]="bento ? 'ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link ' : 'ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link filtered'" on="tap:AMP.setState({ 'bento': false })">AMP</span>
       <span role="button" tabindex="0" class="ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link" [class]="bento ? 'ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link filtered' : 'ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link'" on="tap:AMP.setState({ 'bento': true })">Bento (Standalone)</span>
       {% endif %}
     </h4>
 
-    {% do doc.styles.addCssFile('css/components/atoms/copy-script.css') %}
-    {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
-    {% for script in doc.scripts %}
-    {% set bentoScript =  (script.js + '\n' + script.css) %}
-    <div class="ap-a-copy-script" [hidden]="bento">
+    {% do doc.styles.addCssFile('css/components/atoms/copy-script.css') %}
+    {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
+    {% for script in doc.scripts %}
+    {% set bentoScript =  (script.js + '\n' + script.css) %}
+    <div class="ap-a-copy-script" [hidden]="bento">
       <pre>{{ script.js|e }}</pre>
       <amp-iframe
         width="24"
@@ -28,66 +28,66 @@
         layout="fixed"
         sandbox="allow-scripts"
         src="{{ podspec.base_urls.platform }}/shared/copy-script/#{{ script.js|urlencode }}">
-        <div placeholder></div>
-      </amp-iframe>
-    </div>
-    {% if doc.bento %}
-    <div class="ap-a-copy-script" hidden [hidden]="!bento">
+        <div placeholder></div>
+      </amp-iframe>
+    </div>
+    {% if doc.bento %}
+    <div class="ap-a-copy-script" hidden [hidden]="!bento">
       <pre>{{ bentoScript|e }}</pre>
 <amp-iframe width="24"
     height="24"
     layout="fixed"
     sandbox="allow-scripts"
     src="{{ podspec.base_urls.platform }}/shared/copy-script/#{{ bentoScript|safe|urlencode }}">
-        <div placeholder></div>
-      </amp-iframe>
-    </div>
-    {% endif %}
-    {% endfor %}
-  </div>
-  {% endif %}
+        <div placeholder></div>
+      </amp-iframe>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
 
-  {% if doc.layouts %}
-  <div class="ap-o-component-intro-row ap-o-component-intro-row-inline">
-    <h4 class="ap-o-component-intro-headline">{{ _('Supported Layouts') }}</h4>
+  {% if doc.layouts %}
+  <div class="ap-o-component-intro-row ap-o-component-intro-row-inline">
+    <h4 class="ap-o-component-intro-headline">{{ _('Supported Layouts') }}</h4>
 
-    <div>
-      {% do doc.styles.addCssFile('css/components/atoms/pill.css') %}
-      {% for item in doc.layouts %}
-      <a class="ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link" href="/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html#{{ item }}">{{ item }}</a>
-      {% endfor %}
-    </div>
-  </div>
-  {% endif %}
+    <div>
+      {% do doc.styles.addCssFile('css/components/atoms/pill.css') %}
+      {% for item in doc.layouts %}
+      <a class="ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link" href="/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html#{{ item }}">{{ item }}</a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
 
-  {% set examples = g.json('/shared/data/componentSamples.json') %}
-  {# Check if there are examples for the current component #}
-  {% if examples[doc.title] %}
-  [% if format in {{ examples[doc.title]|map(attribute='formats')|sum(start=[])|unique|list|tojson }} %]
-  <div class="ap-o-component-intro-row">
-    {% do doc.styles.addCssFile('css/components/molecules/clip.css') %}
-    <div id="examples" class="ap-m-clip">
-      <h4 class="ap-o-component-intro-headline">{{ _('Examples') }}</h4>
-      <div class="ap-o-component-intro-list">
-        [% set examples = {{ examples[doc.title]|tojson }} %]
-        [% set examplesCount = 0 %]
+  {% set examples = g.json('/shared/data/componentSamples.json') %}
+  {# Check if there are examples for the current component #}
+  {% if examples[doc.title] %}
+  [% if format in {{ examples[doc.title]|map(attribute='formats')|sum(start=[])|unique|list|tojson }} %]
+  <div class="ap-o-component-intro-row">
+    {% do doc.styles.addCssFile('css/components/molecules/clip.css') %}
+    <div id="examples" class="ap-m-clip">
+      <h4 class="ap-o-component-intro-headline">{{ _('Examples') }}</h4>
+      <div class="ap-o-component-intro-list">
+        [% set examples = {{ examples[doc.title]|tojson }} %]
+        [% set examplesCount = 0 %]
 
-        [% for example in examples %]
-        [% if example.formats.includes(format) %]
-        [% set examplesCount = examplesCount + 1 %]
-        <a class="ap-o-component-intro-list-item" href="[= example.url =]">[= example.title =]</a>
-        [% endif %]
-        [% endfor %]
-      </div>
+        [% for example in examples %]
+        [% if example.formats.includes(format) %]
+        [% set examplesCount = examplesCount + 1 %]
+        <a class="ap-o-component-intro-list-item" href="[= example.url =]">[= example.title =]</a>
+        [% endif %]
+        [% endfor %]
+      </div>
 
-      [% if examplesCount > 6 %]
-      <button id="examples-expand" class="ap-m-clip-expand" on="tap:examples.toggleClass(class='expanded', force=true),examples-expand.hide()">
-        {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
-        <svg class="ap-m-clip-expand-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
-      </button>
-      [% endif %]
-    </div>
-  </div>
-  [% endif %]
-  {% endif %}
+      [% if examplesCount > 6 %]
+      <button id="examples-expand" class="ap-m-clip-expand" on="tap:examples.toggleClass(class='expanded', force=true),examples-expand.hide()">
+        {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
+        <svg class="ap-m-clip-expand-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+      </button>
+      [% endif %]
+    </div>
+  </div>
+  [% endif %]
+  {% endif %}
 </div>
