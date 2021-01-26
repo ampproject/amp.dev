@@ -142,6 +142,10 @@ class ComponentReferenceDocument extends MarkdownDocument {
     });
   }
 
+  get bento() {
+    return this._frontmatter['bento'] || false;
+  }
+
   get version() {
     return this._frontmatter['version'];
   }

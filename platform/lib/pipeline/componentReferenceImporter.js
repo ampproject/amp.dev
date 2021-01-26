@@ -21,6 +21,8 @@ const LATEST_VERSION = 'latest';
 
 const {GitHubImporter, DEFAULT_REPOSITORY} = require('./gitHubImporter');
 const {BUILT_IN_COMPONENTS} = require('@lib/common/AmpConstants.js');
+const {STATICS_DEST} = require('@lib/utils/project.js').paths;
+const fs = require('fs').promises;
 const path = require('path');
 const del = require('del');
 const validatorRules = require('@ampproject/toolbox-validator-rules');
@@ -60,8 +62,26 @@ class ComponentReferenceImporter {
     this.extensions = await this._listExtensions();
 
     log.start('Beginning to import extension docs ...');
-    await this._importExtensions();
-    log.complete('Finished importing extension docs!');
+    const importedExtensions = await this._importExtensions();
+    const bentoComponents = [];
+    for (const growDoc of importedExtensions.flat()) {
+      if (growDoc && growDoc.bento) {
+        bentoComponents.push({
+          name: growDoc.title,
+          path:
+            growDoc.servingPath ||
+            `/documentation/components/${growDoc.title}-v${growDoc.version}/`,
+          version: growDoc.version,
+        });
+      }
+    }
+    fs.writeFile(
+      path.join(STATICS_DEST, 'bento-components.json'),
+      JSON.stringify(bentoComponents, null, 2),
+      'utf-8'
+    );
+
+    log.complete('Finished importing extension docs!', bentoComponents);
   }
 
   /**
@@ -109,7 +129,7 @@ class ComponentReferenceImporter {
       imports.push(this._importBuiltIn(builtIn));
     }
 
-    await Promise.all(imports);
+    return Promise.all(imports);
   }
 
   async _importBuiltIn(name) {
@@ -360,7 +380,8 @@ class ComponentReferenceImporter {
         fileContents,
         extension
       );
-      await doc.save(docPath);
+      doc.save(docPath);
+      return doc;
     } catch (e) {
       log.error('Could not create doc for: ', extension.name, e);
     }
