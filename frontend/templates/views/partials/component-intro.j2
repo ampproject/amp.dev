@@ -19,18 +19,20 @@
     {% do doc.styles.addCssFile('css/components/atoms/copy-script.css') %}
     {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
     {% for script in doc.scripts %}
-    {% set bentoScript =  script.js + '\n' + script.css %}
-    <div class="ap-a-copy-script" [hidden]="bento"><pre>{{ script|e }}</pre><amp-iframe
+    {% set bentoScript =  (script.js + '\n' + script.css) %}
+    <div class="ap-a-copy-script" [hidden]="bento">
+      <pre>{{ script.js|e }}</pre><amp-iframe
           width="24"
           height="24"
           layout="fixed"
           sandbox="allow-scripts"
-          src="{{ podspec.base_urls.platform }}/shared/copy-script/#{{ script|urlencode }}">
+          src="{{ podspec.base_urls.platform }}/shared/copy-script/#{{ script.js|urlencode }}">
         <div placeholder></div>
       </amp-iframe>
     </div>
     {% if doc.bento %}
-    <div class="ap-a-copy-script" hidden [hidden]="!bento"><pre>{{ bentoScript|e }}</pre><amp-iframe width="24"
+    <div class="ap-a-copy-script" hidden [hidden]="!bento">
+      <pre>{{ bentoScript|e }}</pre><amp-iframe width="24"
           height="24"
           layout="fixed"
           sandbox="allow-scripts"
