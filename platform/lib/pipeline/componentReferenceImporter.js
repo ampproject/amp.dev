@@ -21,7 +21,7 @@ const LATEST_VERSION = 'latest';
 
 const {GitHubImporter, DEFAULT_REPOSITORY} = require('./gitHubImporter');
 const {BUILT_IN_COMPONENTS} = require('@lib/common/AmpConstants.js');
-const {STATICS_DEST} = require('@lib/utils/project.js').paths;
+const {BENTO_COMPONENTS_LIST} = require('@lib/utils/project.js').paths;
 const fs = require('fs').promises;
 const path = require('path');
 const del = require('del');
@@ -62,11 +62,11 @@ class ComponentReferenceImporter {
     this.extensions = await this._listExtensions();
 
     log.start('Beginning to import extension docs ...');
-    const importedExtensions = await this._importExtensions();
-    const bentoComponents = [];
-    for (const growDoc of importedExtensions.flat()) {
+    const importedExtensions = (await this._importExtensions()).flat();
+    const bentoComponents = new Map();
+    for (const growDoc of importedExtensions) {
       if (growDoc && growDoc.bento) {
-        bentoComponents.push({
+        bentoComponents.set(growDoc.title, {
           name: growDoc.title,
           path:
             growDoc.servingPath ||
@@ -75,13 +75,20 @@ class ComponentReferenceImporter {
         });
       }
     }
+    for (const growDoc of importedExtensions) {
+      const bentoComponent = bentoComponents.get(growDoc.title);
+      if (bentoComponent) {
+        growDoc.bentoPath = bentoComponent.path;
+      }
+      growDoc.save(growDoc.path);
+    }
     fs.writeFile(
-      path.join(STATICS_DEST, 'bento-components.json'),
-      JSON.stringify(bentoComponents, null, 2),
+      BENTO_COMPONENTS_LIST,
+      JSON.stringify(Array.from(bentoComponents.values), null, 2),
       'utf-8'
     );
 
-    log.complete('Finished importing extension docs!', bentoComponents);
+    log.complete('Finished importing extension docs!');
   }
 
   /**
@@ -380,7 +387,6 @@ class ComponentReferenceImporter {
         fileContents,
         extension
       );
-      doc.save(docPath);
       return doc;
     } catch (e) {
       log.error('Could not create doc for: ', extension.name, e);
