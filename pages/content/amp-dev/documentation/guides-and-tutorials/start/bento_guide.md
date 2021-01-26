@@ -219,7 +219,7 @@ Bento supported AMP components are listed below:
 
 # Bento in action
 
-The example below demonstrates how to include `amp-base-carousel` and `amp-accordion` in a non-AMP HTML page.
+The example below demonstrates how to include `amp-base-carousel` and use the `next` and `prev` actions in a non-AMP HTML page.
 
 [example preview="top-frame" playground="false"]
 ```html
