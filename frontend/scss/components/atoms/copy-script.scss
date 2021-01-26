@@ -7,12 +7,12 @@
   display: flex;
   align-items: center;
 
-  code {
+  pre {
     overflow-x: scroll;
     flex: 1 0;
     margin: 6px 8px 6px 0;
     padding: 4px 6px;
-    white-space: nowrap;
+    white-space: pre;
     background: color('iron');
     font-size: 12.6px;
 
