@@ -92,35 +92,45 @@ Include additional standard CSS to further define layouts and styles. Here are a
 ```css
 .responsive-layout {
     display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: width / height;
+    aspect-ratio: width/height;
 }
 ```
+
+[tip type="note"]
+`aspect-ratio` is a new CSS feature. If you are not seeing the desired results, [try this fallback method](https://jsbin.com/yusenup/edit?html,css,output).
+[/tip]
 
 ### Fill layout
 
+Either:
+
 ```css
 .fill-layout {
-...
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 ```
+
+Or:
+
+```css
+.fill-layout {
+    width: 100%;
+    height: 100%;
+}
+```
+
+Depending on element context.
 
 ### Flex layout
 
 ```css
 .flex-layout {
     display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-    max-height: 100%;
-    max-width: 100%;
-    min-height: 100%;
-    min-width: 100%;
+    flex: 1 1 auto;
 }
 ```
 
@@ -134,7 +144,7 @@ Include additional standard CSS to further define layouts and styles. Here are a
 
 [tip type="note"]
 
-Bento components don't support [AMP's layout](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/). 
+Bento components don't support [AMP's layout system](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/). 
 
 [/tip]
 
@@ -157,7 +167,6 @@ Fully valid AMP installs event listeners on elements via the [`on` attribute](..
 
 The example below triggers [`amp-accordion`'s toggle action](../../../documentation/components/reference/amp-accordion.md#toggle) when the user clicks the "Toggle Accordion" button.
 
-[example preview="top-frame" playground="false" imports="amp-accordion"]
 ```html
 <amp-accordion id="my-accordion" disable-session-states>
   <section>
@@ -186,7 +195,6 @@ The example below triggers [`amp-accordion`'s toggle action](../../../documentat
   toggleButton.addEventListener('click', toggleAccordion);
 </script>
 ```
-[/example]
 
 Read each [component's reference documentation](#available-bento-components) for a full list of available actions and events. 
 
