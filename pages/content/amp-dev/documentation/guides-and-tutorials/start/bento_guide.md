@@ -12,7 +12,7 @@ author: CrystalOnScript
 Use AMP's well-tested, cross-browser compatible and accessible components anywhere on the web with Bento AMP. Bento AMP allows you to use AMP components in non-AMP pages without needing to commit to fully valid AMP! You can take these components and place them in implementations with frameworks and CMSs that don't support AMP. Bento also lets you test out AMP components to see if the path to valid AMP is right for your use case.
 
 [tip type="important"]
- Bento is only available [experimentally](../learn/experimental.md). Read our [Blog Post]() for information on future plans and how to get involved! 
+ Bento is only available [experimentally](../learn/experimental.md). Read our [Blog Post](https://blog.amp.dev/2021/01/27/bento/) for information on future plans and how to get involved! 
 [/tip]
 
 # Use Bento components in non-AMP pages
