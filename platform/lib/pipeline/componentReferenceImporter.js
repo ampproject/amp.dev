@@ -80,7 +80,11 @@ class ComponentReferenceImporter {
       if (bentoComponent) {
         growDoc.bentoPath = bentoComponent.path;
       }
-      growDoc.save(growDoc.path);
+      try {
+        growDoc.save(growDoc.path);
+      } catch (e) {
+        log.error(`Failed to write ${growDoc.path}`, e);
+      }
     }
     fs.writeFile(
       BENTO_COMPONENTS_LIST,
@@ -380,17 +384,7 @@ class ComponentReferenceImporter {
     }
 
     const docPath = path.join(DESTINATION_BASE_PATH, fileName);
-
-    try {
-      const doc = new ComponentReferenceDocument(
-        docPath,
-        fileContents,
-        extension
-      );
-      return doc;
-    } catch (e) {
-      log.error('Could not create doc for: ', extension.name, e);
-    }
+    return new ComponentReferenceDocument(docPath, fileContents, extension);
   }
 }
 
