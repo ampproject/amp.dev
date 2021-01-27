@@ -56,6 +56,10 @@ Read each Bento component’s reference documentation for implementation details
 
 Each Bento component has a small CSS library you must include to guarantee proper loading without [content shifts](https://web.dev/cls/). Because of order-based specificity, you must manually ensure that stylesheets are included before any custom styles.
 
+[tip type="note"]
+For the best rendering performance inline the Bento component CSS directly into the page to avoid a render-blocking request to `cdn.ampproject.org` on page load.
+[/tip]
+
 ```
 <link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-bento-component-name-1.0.css">
 <style>
@@ -63,13 +67,11 @@ Each Bento component has a small CSS library you must include to guarantee prope
 </style>
 ```
 
-Tip: For the best rendering performance inline the Bento component CSS directly into the page to avoid a render-blocking request to `cdn.ampproject.org` on page load.
-
-Include additional standard CSS to further define layouts and styles. Here are a few strategies on how you can layout Bento components using CSS:
-
-[tip type="note"]
+[tip type="important"]
 Bento components don't support [AMP's layout system](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/).
 [/tip]
+
+You can style and layout Bento components using standard CSS. Here are a few strategies on how you can layout Bento components using CSS:
 
 ### Fixed layout
 
