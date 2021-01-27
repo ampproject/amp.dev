@@ -26,16 +26,13 @@
     {% if doc.bento %}
     <div class="ap-o-component-intro-filter">
       <label>
-      <input type="radio" name="format-switch"
-        class="ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link filtered"
-        [class]="bento ? 'ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link ' : 'ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link filtered'"
-        on="tap:AMP.setState({ 'bento': false })" checked>AMP
-        </label>
+        <input type="radio" name="format-switch"
+          on="tap:bento-script.hide,amp-script.show" checked>AMP
+      </label>
       <label>
-      <input type="radio" name="format-switch"
-        class="ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link"
-        [class]="bento ? 'ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link filtered' : 'ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link'"
-        on="tap:AMP.setState({ 'bento': true })">Bento (Standalone)</label>
+        <input type="radio" name="format-switch"
+          on="tap:amp-script.hide,bento-script.show">Bento (Standalone)
+      </label>
     </div>
     {% endif %}
 
@@ -43,7 +40,7 @@
     {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
     {% for script in doc.scripts %}
     {% set bentoScript =  (script.js + '\n' + script.css) %}
-    <div class="ap-a-copy-script" [hidden]="bento">
+    <div id="amp-script" class="ap-a-copy-script">
       <pre>{{ script.js|e }}</pre>
       <amp-iframe
         width="24"
@@ -55,7 +52,7 @@
       </amp-iframe>
     </div>
     {% if doc.bento %}
-    <div class="ap-a-copy-script" hidden [hidden]="!bento">
+    <div id="bento-script" class="ap-a-copy-script" hidden>
       <pre>{{ bentoScript|e }}</pre>
 <amp-iframe width="24"
     height="24"
