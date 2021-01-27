@@ -375,17 +375,6 @@ developer:
       height: 400
     formats:
       - websites
-  - name: AMP Bench
-    official: true
-    type: Debugging
-    description: Validation tool that offers additional debug information on top of the AMP validator.
-    url: https://ampbench.appspot.com
-    image:
-      src: /static/img/tools/ampbench.jpg
-      width: 5
-      height: 3
-    formats:
-      - websites
   - name: AMP Insights
     official: true
     type: Debugging
