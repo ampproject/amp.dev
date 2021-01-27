@@ -26,6 +26,7 @@
       @media (min-width: 768px) {
         display: flex;
         align-items: baseline;
+        flex-wrap: wrap;
       }
     }
   }
@@ -41,6 +42,13 @@
 
     .active {
       color: blue;
+    }
+  }
+
+  &-filter {
+    margin-left: auto;
+    * {
+      @include txt-2;
     }
   }
 

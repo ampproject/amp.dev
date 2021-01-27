@@ -9,7 +9,7 @@
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#speech-bubble"> </use></svg>
     </div>
     <div class="ap-m-tip-content">
-      You can now use this component outside valid AMP documents using the <a href="{{ doc.bentoPath }}">experimental Bento version of this component</a>. <!--Learn more in our <a href="../../guides-and-tutorials/start/bento_guide.md">Bento guide</a>.-->
+      You can now use this component outside valid AMP documents using the <a href="{{ doc.bentoPath }}">experimental Bento version of this component</a>. Learn more in our <a href="../../guides-and-tutorials/start/bento_guide.md">Bento guide</a>.
     </div>
   </div>
   {% endif %}
@@ -21,19 +21,26 @@
   {% endif %}
 
   {% if doc.scripts %}
-  <div class="ap-o-component-intro-row" id="component-scripts">
-    <h4 class="ap-o-component-intro-headline">{{ _('Required Scripts') }}
-      {% if doc.bento %}
-      <span role="button" tabindex="0" class="ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link filtered" [class]="bento ? 'ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link ' : 'ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link filtered'" on="tap:AMP.setState({ 'bento': false })">AMP</span>
-      <span role="button" tabindex="0" class="ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link" [class]="bento ? 'ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link filtered' : 'ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link'" on="tap:AMP.setState({ 'bento': true })">Bento (Standalone)</span>
-      {% endif %}
-    </h4>
+  <div class="ap-o-component-intro-row ap-o-component-intro-row-inline">
+    <h4 class="ap-o-component-intro-headline">{{ _('Required Scripts') }}</h4>
+    {% if doc.bento %}
+    <div class="ap-o-component-intro-filter">
+      <label>
+        <input type="radio" name="format-switch"
+          on="tap:bento-script.hide,amp-script.show" checked>AMP
+      </label>
+      <label>
+        <input type="radio" name="format-switch"
+          on="tap:amp-script.hide,bento-script.show">Bento (Standalone)
+      </label>
+    </div>
+    {% endif %}
 
     {% do doc.styles.addCssFile('css/components/atoms/copy-script.css') %}
     {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
     {% for script in doc.scripts %}
     {% set bentoScript =  (script.js + '\n' + script.css) %}
-    <div class="ap-a-copy-script" [hidden]="bento">
+    <div id="amp-script" class="ap-a-copy-script">
       <pre>{{ script.js|e }}</pre>
       <amp-iframe
         width="24"
@@ -45,7 +52,7 @@
       </amp-iframe>
     </div>
     {% if doc.bento %}
-    <div class="ap-a-copy-script" hidden [hidden]="!bento">
+    <div id="bento-script" class="ap-a-copy-script" hidden>
       <pre>{{ bentoScript|e }}</pre>
 <amp-iframe width="24"
     height="24"
