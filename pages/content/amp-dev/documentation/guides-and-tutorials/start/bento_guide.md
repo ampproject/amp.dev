@@ -211,9 +211,9 @@ Bento supported AMP components are listed below:
 - [amp-accordion](../../../documentation/components/reference/amp-accordion-v1.0.md)
 - [amp-base-carousel](../../../documentation/components/reference/amp-base-carousel-v1.0.md)
 - [amp-inline-gallery](../../../documentation/components/reference/amp-inline-gallery-v1.0.md)
-  - amp-inline-gallery-pagination
-  - amp-inline-gallery-thumbnails
-- [amp-stream-gallery](../../../documentation/components/reference/amp-stream-gallery-v1.0.md)
+    - [amp-inline-gallery-pagination](../../../documentation/components/reference/amp-inline-gallery-v1.0.md#amp-inline-gallery-pagination-attributes)
+    - [amp-inline-gallery-thumbnails](../../../documentation/components/reference/amp-inline-gallery-v1.0.md#include-thumbnails)
+- [amp-stream-gallery](https://github.com/ampproject/amphtml/blob/master/extensions/amp-stream-gallery/amp-stream-gallery.md)
 - [amp-date-countdown](../../../documentation/components/reference/amp-date-countdown-v1.0.md)
 - [amp-date-display](../../../documentation/components/reference/amp-date-display-v1.0.md)
 - [amp-fit-text](../../../documentation/components/reference/amp-fit-text-v1.0.md)
@@ -223,8 +223,8 @@ Bento supported AMP components are listed below:
 - [amp-social-share](../../../documentation/components/reference/amp-social-share-v1.0.md)
 - [amp-timeago](../../../documentation/components/reference/amp-timeago-v1.0.md)
 - Video components
-  - [amp-video](../../../documentation/components/reference/amp-video-v1.0.md)
-  - [amp-youtube](../../../documentation/components/reference/amp-youtube-v1.0.md)
+    - [amp-video](../../../documentation/components/reference/amp-video-v1.0.md)
+    - [amp-youtube](../../../documentation/components/reference/amp-youtube-v1.0.md)
 
 # Bento in action
 
