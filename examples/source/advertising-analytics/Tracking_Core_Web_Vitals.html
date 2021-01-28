@@ -31,7 +31,13 @@ author: micajuineho
 
   <!-- ## Using `amp-analytics` to track Core Web Vitals -->
   <!--
-    You can add the core web vital macros (${largestContentfulPaint}, ${cumulativeLayoutShift}, ${firstInputDelay}) to any of your analytics requests. These macros will resolve asynchronously and can be attached to any trigger. These macros can only be accessed through `amp-analytics`.
+The `amp-analytics` component provides the following macros:
+
+* [Largest Contentful Pain](https://web.dev/lcp/): `${largestContentfulPaint}`
+* [Cumulative Layout Shift](https://web.dev/cls/): `${cumulativeLayoutShift}`
+* [First Input Delay](https://web.dev/fid/): `${firstInputDelay}`
+
+These macros can attach to any triggers and resolve asynchronously. 
   -->
   <div>
     <amp-analytics>
