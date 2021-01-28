@@ -312,7 +312,7 @@ The example below demonstrates how to include `amp-base-carousel` and use the `n
 
 Bento AMP is in experimental mode and available through the developer preview. The AMP team welcomes developer feedback through [GitHub](https://github.com/ampproject/amphtml/issues) and our [Slack](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) channel. Please reach out with any questions or issues.
 
-Currently, Bento requires use of the [latests browsers](https://updatemybrowser.org/), but will support later versions at production release.
+Currently, Bento requires use of the [latests browsers](https://updatemybrowser.org/), but will support more versions at production release.
 
 # Page experience
 
