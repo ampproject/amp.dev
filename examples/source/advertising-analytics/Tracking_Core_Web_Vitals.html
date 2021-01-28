@@ -74,9 +74,13 @@ These macros can attach to any triggers and resolve asynchronously.
   <amp-analytics type="googleanalytics">
     <script type="application/json">
       {
-        "vars": {
-          "account": "UA-73836974-1"
-        },
+          "vars": {
+             "gtag_id": "UA-XXXXXXXXX-X",
+             "config": {
+               "UA-XXXXXXXXX-X": {
+                  "groups": "default"
+               }
+             },
         "triggers": {
           "default pageview": {
             "on": "visible",
