@@ -12,7 +12,7 @@ author: CrystalOnScript
 Use AMP's well-tested, cross-browser compatible and accessible components anywhere on the web with Bento AMP. Bento AMP allows you to use AMP components in non-AMP pages without needing to commit to fully valid AMP! You can take these components and place them in implementations with frameworks and CMSs that don't support AMP. Bento also lets you test out AMP components to see if the path to valid AMP is right for your use case.
 
 [tip type="important"]
-Bento is only available [experimentally](../learn/experimental.md). Read our [Blog Post](https://blog.amp.dev/2021/01/28/bento/) for information on future plans and how to get involved!
+Bento is available [experimentally](../learn/experimental.md) and only works on the [latest browsers](https://updatemybrowser.org/). Read our [Blog Post](https://blog.amp.dev/2021/01/28/bento/) for information on future plans and how to get involved!
 [/tip]
 
 Bento components are still in development and APIs might change. However, they're available for experimental use in a developer preview. This means you must enable the experimental flag either in the document or the console. This is no different from other [experiments in AMP](../learn/experimental.md).
@@ -311,6 +311,8 @@ The example below demonstrates how to include `amp-base-carousel` and use the `n
 # Working with experiments
 
 Bento AMP is in experimental mode and available through the developer preview. The AMP team welcomes developer feedback through [GitHub](https://github.com/ampproject/amphtml/issues) and our [Slack](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) channel. Please reach out with any questions or issues.
+
+Currently, Bento requires use of the [latests browsers](https://updatemybrowser.org/), but will support more versions at production release.
 
 # Page experience
 
