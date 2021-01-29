@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const ClosurePlugin = require('closure-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -19,6 +20,9 @@ module.exports = (env, argv) => {
       chunkFilename: '[name].[chunkhash].bundle.js',
       sourceMapFilename: '[name].map',
       publicPath: '',
+    },
+    node: {
+      global: false,
     },
     optimization: {
       minimizer: [
@@ -43,6 +47,9 @@ module.exports = (env, argv) => {
       },
     },
     plugins: [
+      new webpack.DefinePlugin({
+        global: '(typeof globalThis ? globalThis : self)',
+      }),
       new CopyWebpackPlugin({
         patterns: [{from: path.join(__dirname, 'static/')}],
       }),
