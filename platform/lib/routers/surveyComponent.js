@@ -19,27 +19,35 @@
 const Joi = require('joi');
 const express = require('express');
 const log = require('@lib/utils/log')('Survey Component Response');
+const credentials = require('@lib/utils/credentials');
 const {GoogleSpreadsheet} = require('google-spreadsheet');
-const Doc = new GoogleSpreadsheet(process.env.SURVEY_RESPONSE_SHEET_ID);
 const surveyEndpoint = '/fez-survey-response';
+let Doc = undefined;
+let SURVEY_RESPONSE_SHEET_ID;
+let GOOGLE_SERVICE_ACCOUNT_EMAIL;
+let GOOGLE_PRIVATE_KEY;
 
 const schema = Joi.object({
   survey: Joi.string().required().min(1),
-  questions: Joi.array()
-    .required()
-    .items(
-      Joi.object({
-        text: Joi.string().min(1).required(),
-        answer: Joi.alternatives()
-          .try(
-            Joi.string().min(1).max(200),
-            Joi.array().items(Joi.string().min(1).max(200)),
-            null
-          )
-          .required(),
-      })
-    )
-    .min(1),
+  questions: Joi.when('dismissed', {
+    is: false,
+    then: Joi.array()
+      .items(
+        Joi.object({
+          text: Joi.string().min(1).required(),
+          answer: Joi.alternatives()
+            .try(
+              Joi.string().min(1).max(200),
+              Joi.array().items(Joi.string().min(1).max(200)),
+              null
+            )
+            .required(),
+        })
+      )
+      .required()
+      .min(1),
+  }),
+  dismissed: Joi.boolean().optional(),
   url: Joi.string().uri().required(),
   shownAt: Joi.string().isoDate().required(),
   originalText: Joi.string().optional(),
@@ -70,10 +78,20 @@ function validateRequest(req, res, next) {
 }
 
 async function getDoc() {
-  if (Doc._rawProperties === null) {
+  if (Doc === undefined) {
+    SURVEY_RESPONSE_SHEET_ID = await credentials.get(
+      'SURVEY_RESPONSE_SHEET_ID'
+    );
+    GOOGLE_SERVICE_ACCOUNT_EMAIL = await credentials.get(
+      'GOOGLE_SERVICE_ACCOUNT_EMAIL'
+    );
+    GOOGLE_PRIVATE_KEY = await credentials.get('GOOGLE_PRIVATE_KEY');
+
+    Doc = new GoogleSpreadsheet(SURVEY_RESPONSE_SHEET_ID);
+
     await Doc.useServiceAccountAuth({
-      client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-      private_key: process.env.GOOGLE_PRIVATE_KEY,
+      client_email: GOOGLE_SERVICE_ACCOUNT_EMAIL,
+      private_key: GOOGLE_PRIVATE_KEY,
     });
 
     await Doc.loadInfo();
@@ -93,6 +111,7 @@ async function uploadAnswer(req, res) {
         title: survey.survey,
         headerValues: [
           survey.questions.map((q) => q.originalText || q.text),
+          'dismissed',
           'url',
           'shown at',
         ].flat(),
@@ -100,6 +119,7 @@ async function uploadAnswer(req, res) {
     }
 
     const row = {
+      'dismissed': !!survey.dismissed,
       'url': survey.url,
       'shown at': survey.shownAt,
     };
