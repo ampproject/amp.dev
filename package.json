@@ -65,9 +65,10 @@
 		"@ampproject/toolbox-cache-list": "2.7.4",
 		"@ampproject/toolbox-cors": "2.7.4",
 		"@ampproject/toolbox-linter": "2.7.5",
-		"@ampproject/toolbox-optimizer": "2.7.5",
+		"@ampproject/toolbox-optimizer": "2.7.6",
 		"@google-cloud/datastore": "6.3.1",
 		"acorn": "8.0.5",
+		"amphtml-validator": "1.0.34",
 		"casual": "1.6.2",
 		"cheerio": "1.0.0-rc.3",
 		"client-sessions": "0.8.0",
@@ -81,6 +82,7 @@
 		"http-proxy": "1.18.1",
 		"iltorb": "2.4.5",
 		"ioredis": "4.19.4",
+		"jimp": "0.16.1",
 		"js-yaml": "4.0.0",
 		"json-tree-view": "0.4.12",
 		"linkifyjs": "2.1.9",
@@ -98,9 +100,8 @@
 		"shrink-ray-current": "4.1.2",
 		"signale": "1.4.0",
 		"uuid": "8.3.2",
-		"ws": "7.4.2",
 		"web-push": "3.4.4",
-		"amphtml-validator": "1.0.34"
+		"ws": "7.4.2"
 	},
 	"devDependencies": {
 		"@ampproject/toolbox-cache-url": "2.7.2",
