@@ -244,6 +244,11 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
         experimentEsm,
         preloadHeroImage,
       };
+      // Enable blurred placeholders and render all stage images for homepage
+      if (req.path === '/') {
+        params.blurredPlaceholders = true;
+        params.maxHeroImageCount = 5;
+      }
       renderedTemplate = await optimizer.transformHtml(
         renderedTemplate,
         params
