@@ -71,7 +71,7 @@ Videos are highly engaging to readers, definitely include as many as possible in
 Web Stories are consumed in portrait mode, so keep in mind the following:
 
 *   Shot video in high-end mobile devices when possible.
-*   Shot at 480p.
+*   Shot at 720p rotated (1280h x 720w).
 *   Shot in at least 24 frames per second.
 
 <table>
@@ -139,7 +139,7 @@ Ensure your content is accessible. Resize videos to make room for text and capti
 
 ### Images
 
-Use full screen, portrait images with good resolution (828 x 1,792).
+Use full screen, portrait images with good resolution (720w x 1280h).
 
 <figure class="alignment-wrapper margin-">
   <amp-video layout="responsive" poster="/static/img/docs/guides/storiesbp/do-background-still.jpg" width="1440" height="630" loop autoplay noaudio>
