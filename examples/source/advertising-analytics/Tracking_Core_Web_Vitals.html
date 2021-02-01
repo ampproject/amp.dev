@@ -1,0 +1,101 @@
+<!---
+
+hidePreview: 'true'
+teaserImage: '/static/samples/img/teaser/core-web-vitals.png'
+author: micajuineho
+
+--->
+
+<!--
+  ## Introduction
+
+  AMP developers can measure [Core Web Vitals](https://blog.amp.dev/2020/05/06/amp-web-vitals-a-better-web-together/) metrics through the `amp-analytics` component. Use variable substitution to add these metrics to any outgoing requests made by `amp-analytics`.
+
+  Learn more about `amp-analytics` in our guide [Analytics: the basics](/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md).
+-->
+<!-- -->
+<!doctype html>
+<html ⚡ lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="canonical" href="<% canonical %>">
+  <meta name="viewport" content="width=device-width">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <title>Tracking Core Web Vitals</title>
+  <!-- ## Setup -->
+  <!--  Import the amp-analytics component in the header. -->
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+<body>
+
+  <!-- ## Using `amp-analytics` to track Core Web Vitals -->
+  <!--
+The `amp-analytics` component provides the following macros:
+
+* [Largest Contentful Pain](https://web.dev/lcp/): `${largestContentfulPaint}`
+* [Cumulative Layout Shift](https://web.dev/cls/): `${cumulativeLayoutShift}`
+* [First Input Delay](https://web.dev/fid/): `${firstInputDelay}`
+
+These macros can attach to any triggers and resolve asynchronously. 
+  -->
+  <div>
+    <amp-analytics>
+      <script type="application/json">
+        {
+          "requests": {
+            "event": "<% base_path %>/ping?user=[= user =]&account=ampdev&event=${eventId}",
+            "pageview": "${event}&lcp=${lcp}&fid=${fid}&cls=${cls}"
+          },
+          "triggers": {
+            "trackPageview": {
+              "on": "visible",
+              "request": "pageview",
+              "vars": {
+                "eventId": "pageview",
+                "lcp": "${largestContentfulPaint}",
+                "cls": "${cumulativeLayoutShift}",
+                "fid": "${firstInputDelay}"
+              }
+            }
+          }
+        }
+      </script>
+    </amp-analytics>
+  </div>
+
+
+  <!--
+  ## Tracking Core Web Vitals in AMP using Google Analytics
+  -->
+  <!--
+  Analytics must be configured in the body. Here we use Google Analytics to track pageviews and use the `extraUrlParams` feature to append the Core Web Vitals to the request URL.
+  -->
+  <amp-analytics type="googleanalytics">
+    <script type="application/json">
+      {
+        "vars": {
+           "gtag_id": "UA-XXXXXXXXX-X",
+           "config": {
+             "UA-XXXXXXXXX-X": {
+                "groups": "default"
+             }
+           }
+        },
+        "triggers": {
+          "default pageview": {
+            "on": "visible",
+            "request": "pageview",
+            "vars": {
+              "title": "{{title}}"
+            },
+            "extraUrlParams": {
+              "lcp": "${largestContentfulPaint}",
+              "cls": "${cumulativeLayoutShift}",
+              "fid": "${firstInputDelay}"
+            }
+          }
+        }
+      }
+    </script>
+  </amp-analytics>
