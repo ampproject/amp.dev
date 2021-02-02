@@ -77,7 +77,7 @@ function validateRequest(req, res, next) {
   }
 }
 
-async function getDoc() {
+async function getOrCreateSpreadsheet() {
   if (Doc === undefined) {
     SURVEY_RESPONSE_SHEET_ID = await credentials.get(
       'SURVEY_RESPONSE_SHEET_ID'
@@ -100,39 +100,50 @@ async function getDoc() {
   return Doc;
 }
 
+async function getOrCreateSheet(surveyName) {
+  const doc = await getOrCreateSpreadsheet();
+  let sheet = doc.sheetsByTitle[surveyName];
+
+  if (!sheet) {
+    sheet = await doc.addSheet({
+      title: survey.survey,
+      headerValues: [
+        survey.questions.map((q) => q.originalText || q.text),
+        'dismissed',
+        'url',
+        'shown at',
+      ].flat(),
+    });
+  }
+
+  return sheet;
+}
+
+function addSurveyResponse(survey) {
+  const row = {
+    'dismissed': !!survey.dismissed,
+    'url': survey.url,
+    'shown at': survey.shownAt,
+  };
+
+  survey.questions.forEach((q) => {
+    const text = q.originalText || q.text;
+    const answer = Array.isArray(q.answer) ? q.answer.join('\n') : q.answer;
+    row[text] = answer;
+  });
+
+  return row;
+}
+
 async function uploadAnswer(req, res) {
   try {
-    const survey = req.body;
-    const doc = await getDoc();
-    let sheet = doc.sheetsByTitle[survey.survey];
+    const surveyResponse = req.body;
+    const surveySheet = getOrCreateSheet(surveyResponse.survey);
+    const row = addSurveyResponse(surveyResponse);
 
-    if (!sheet) {
-      sheet = await doc.addSheet({
-        title: survey.survey,
-        headerValues: [
-          survey.questions.map((q) => q.originalText || q.text),
-          'dismissed',
-          'url',
-          'shown at',
-        ].flat(),
-      });
-    }
-
-    const row = {
-      'dismissed': !!survey.dismissed,
-      'url': survey.url,
-      'shown at': survey.shownAt,
-    };
-
-    survey.questions.forEach((q) => {
-      const text = q.originalText || q.text;
-      const answer = Array.isArray(q.answer) ? q.answer.join('\n') : q.answer;
-      row[text] = answer;
-    });
-
-    await sheet.addRow(row);
-    await sheet.saveUpdatedCells();
-    log.complete(`saved response for ${survey.survey}`);
+    await surveySheet.addRow(row);
+    await surveySheet.saveUpdatedCells();
+    log.complete(`saved response for ${surveyResponse.survey}`);
 
     res.sendStatus(200);
   } catch (error) {
