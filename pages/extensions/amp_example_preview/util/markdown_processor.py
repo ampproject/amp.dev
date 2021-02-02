@@ -1,8 +1,8 @@
-from example_extractor import SourceCodeExtractor
-from example_exporter import ExampleExporter
-from preview import ExamplePreview
-from amp_component_versions import get_component
-from constants import ATTRIBUTE_EXAMPLE_TEMPLATES, ATTRIBUTE_EXAMPLE_IMPORTS, ATTRIBUTE_HAS_INLINE_PREVIEW
+from .example_extractor import SourceCodeExtractor
+from .example_exporter import ExampleExporter
+from .preview import ExamplePreview
+from .amp_component_versions import get_component
+from .constants import ATTRIBUTE_EXAMPLE_TEMPLATES, ATTRIBUTE_EXAMPLE_IMPORTS, ATTRIBUTE_HAS_INLINE_PREVIEW
 
 EXAMPLE_TRIGGER = '[example'
 

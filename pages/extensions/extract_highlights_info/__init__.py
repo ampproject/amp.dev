@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from grow import extensions
-from page_info_collector import PageInfoCollector
+from .page_info_collector import PageInfoCollector
 
 CONFIG_INPUT_FILE = 'input_file'
 CONFIG_OUTPUT_FOLDER = 'output_folder'

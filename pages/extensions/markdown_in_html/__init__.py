@@ -3,7 +3,7 @@ from grow import extensions
 from grow.documents import document_format
 from grow.extensions import hooks
 from markdown.extensions import extra
-from html_block_processor import HtmlBlockProcessor
+from .html_block_processor import HtmlBlockProcessor
 
 CLEAR_EXTRA_EXTENSIONS_FLAG = 'prevent_markdown_extra_auto_loading_other'
 

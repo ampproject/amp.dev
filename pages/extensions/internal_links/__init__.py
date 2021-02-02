@@ -1,8 +1,8 @@
 from grow import extensions
 from grow.documents import static_document
 from grow.extensions import hooks
-from pod_internal_link_rewriter import PodInternalLinkRewriter
-from component_version_resolver import ComponentVersionResolver
+from .pod_internal_link_rewriter import PodInternalLinkRewriter
+from .component_version_resolver import ComponentVersionResolver
 
 class PodInternalLinkPostRenderHook(hooks.PostRenderHook):
   """Handle the post-render hook."""

@@ -1,6 +1,6 @@
 import StringIO
 from pygments.formatters import html
-from jinja2_expression_unescape import unescape_in_expressions
+from .jinja2_expression_unescape import unescape_in_expressions
 
 
 class CustomHtmlFormatter(html.HtmlFormatter):

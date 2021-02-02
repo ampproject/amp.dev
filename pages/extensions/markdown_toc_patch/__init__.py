@@ -1,1 +1,1 @@
-from markdown_toc_patch import *
+from .markdown_toc_patch import *

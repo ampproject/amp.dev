@@ -2,9 +2,9 @@ import os
 import urlparse
 import errno
 from grow.documents import document
-from constants import FORMAT_TYPE_IDS, DEFAULT_FORMAT
-from example_document import ExampleDocument
-from templates import load_template
+from .constants import FORMAT_TYPE_IDS, DEFAULT_FORMAT
+from .example_document import ExampleDocument
+from .templates import load_template
 
 
 TEMPLATE_PATH = 'layouts/example-pages/'
