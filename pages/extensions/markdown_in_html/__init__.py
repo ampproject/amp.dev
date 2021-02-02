@@ -52,7 +52,7 @@ class MarkdownInHtmlExtension(extensions.BaseExtension):
   def __init__(self, pod, config):
     super(MarkdownInHtmlExtension, self).__init__(pod, config)
 
-    if config.__contains__(CLEAR_EXTRA_EXTENSIONS_FLAG) and config.get(CLEAR_EXTRA_EXTENSIONS_FLAG):
+    if config.get(CLEAR_EXTRA_EXTENSIONS_FLAG, None):
       # Clear the markdown extra extensions to prevent auto loading unwanted extensions
       extra.extensions = []
 
