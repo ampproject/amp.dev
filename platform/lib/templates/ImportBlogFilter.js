@@ -16,6 +16,8 @@
 
 'use strict';
 
+const {REMOTE_STATIC_MOUNT} = require('@lib/routers/thumbor.js');
+
 const POST_COUNT = 6;
 const BLOG_PATH = `https://blog.amp.dev/wp-json/wp/v2/posts?per_page=${POST_COUNT}&_embed`;
 const DEFAULT_IMG = 'AMP_Blog_Square.jpg';
@@ -43,7 +45,10 @@ async function importBlog(value, callback) {
     const mediaDetails = featuredMedia && featuredMedia[0].media_details;
     let imageUrl = '';
     if (mediaDetails && !mediaDetails.file.endsWith(DEFAULT_IMG)) {
-      imageUrl = mediaDetails.sizes.medium.source_url;
+      // Mount image URLs to the virtual static directory
+      imageUrl = `${REMOTE_STATIC_MOUNT}?url=${encodeURIComponent(
+        mediaDetails.sizes.medium.source_url
+      )}`;
     }
 
     posts.push({

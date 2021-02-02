@@ -20,6 +20,7 @@ const AmpCaches = require('@ampproject/toolbox-cache-list');
 const {lint, LintMode} = require('@ampproject/toolbox-linter');
 const cheerio = require('cheerio');
 const log = require('@lib/utils/log')('Pixi API');
+const fetch = require('node-fetch');
 const RateLimitedFetch = require('@lib/utils/rateLimitedFetch');
 const GA_TRACKING_ID = require('../../platform/config/shared.json')
   .gaTrackingId;
