@@ -65,7 +65,7 @@ thumborRouter.get(imagePaths, (request, response, next) => {
   if (request.url.includes(REMOTE_STATIC_MOUNT)) {
     imageUrl = new URL(request.query.url);
   } else {
-    imageUrl.searchParams.get('original', 'true');
+    imageUrl.searchParams.set('original', 'true');
   }
 
   const thumborUrl = new URL(request.url, config.hosts.platform.base);
