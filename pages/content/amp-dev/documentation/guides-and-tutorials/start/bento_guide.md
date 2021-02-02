@@ -136,7 +136,7 @@ Bento components have individual APIs that grant access to component actions and
 
 ```
 await customElements.whenDefined('amp-bento-component');
-const element = document.querySelector('bento-element');
+const element = document.querySelector('amp-bento-component');
 const api = await element.getApi();
 api.callMethod();
 ```
@@ -191,6 +191,7 @@ The example below triggers [`amp-accordion`'s toggle action](../../../documentat
 <button id="toggle">Toggle Accordion</button>
 <script>
   const toggleAccordion = async () => {
+    await customElements.whenDefined('amp-accordion');
     const accordion = document.querySelector('#my-accordion');
     const api = await accordion.getApi();
     api.toggle();

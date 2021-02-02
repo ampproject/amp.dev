@@ -20,6 +20,7 @@ const AmpOptimizer = require('@ampproject/toolbox-optimizer');
 const CssTransformer = require('@lib/utils/cssTransformer');
 
 const optimizerConfig = {
+  imageBasePath: 'pages',
   imageOptimizer,
   transformations: [
     HeadDedupTransformer,
