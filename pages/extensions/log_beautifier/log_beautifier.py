@@ -34,15 +34,10 @@ def print_server_ready_message(pod, host, port):
     logger.LOGGER.info('Grow started successfully.')
 
     messages = manager.ServerMessages()
-    messages.add_message('Pod:', pod.root, colors.HIGHLIGHT)
-    messages.add_message('Server:', url_root, colors.HIGHLIGHT)
 
     # Trigger the dev manager message hook.
     extra_urls = pod.extensions_controller.trigger(
         'dev_manager_message', messages.add_message, url_base, url_root) or []
-
-    messages.add_message(
-        'Ready.', 'Press ctrl-c to quit.', colors.SUCCESS, colors.SUCCESS)
 
     return (url_root, extra_urls)
 
