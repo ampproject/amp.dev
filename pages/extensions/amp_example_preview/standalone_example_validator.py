@@ -143,7 +143,7 @@ class ExampleExportValidator:
   def get_validation_errors(self, validator_output):
     errors = []
     validations = json.loads(validator_output)
-    for path, result in validations.iteritems():
+    for path, result in validations.items():
       if result['status'] == 'FAIL':
         error_message = self.get_error_text_pattern(path)
         for error in result['errors']:
