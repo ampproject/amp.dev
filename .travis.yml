@@ -18,10 +18,7 @@ before_install:
     gcloud auth activate-service-account --key-file=.staging.key.json
 stages:
   - preparation
-  - name: build
-    if: branch = future AND type != pull_request
-  - name: deploy
-    if: branch = future AND type != pull_request
+  - build
 jobs:
   include:
     - stage: preparation
