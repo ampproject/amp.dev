@@ -1,7 +1,7 @@
 import logging
 
 from grow import extensions
-from grow.common import logger, colors
+from grow.common import logger
 from grow.server import manager
 
 logger._get_logger = logger.get_logger
