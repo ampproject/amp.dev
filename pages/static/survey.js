@@ -95,8 +95,6 @@ Fez.prototype._attachListeners = function () {
   });
 
   dismiss.addEventListener('click', this.submit);
-
-  setTimeout(this.nextSlide, 500);
 };
 
 Fez.prototype.nextSlide = async function () {
@@ -158,11 +156,13 @@ Fez.prototype.submit = async function (dismissed) {
 
 Fez.prototype.remove = function (dismissed) {
   form.style.height = 0;
+  const ZERO_SECONDS = 0;
+  const TWO_AND_A_HALF_SECONDS = 2500;
   setTimeout(
     () => {
       form.parentNode.innerHTML = '';
     },
-    dismissed ? 0 : 2500
+    dismissed ? ZERO_SECONDS : TWO_AND_A_HALF_SECONDS
   );
 };
 
