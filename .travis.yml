@@ -7,8 +7,6 @@ addons:
   apt:
     packages:
       - expect-dev
-      - python3.5-complete
-      - python3-pip
 cache:
   - pip
   - npm
@@ -36,7 +34,17 @@ jobs:
       env: APP_ENV=staging
       install: &1
         - npm ci
-        - pip3 install grow==1.0.0 --user
+        - python --version
+        - PYENV_VERSION=1.2.20
+        - PYTHON_VERSION=3.7.8
+        - pushd $(pyenv root)
+        - git fetch
+        - git checkout v$PYENV_VERSION
+        - pyenv install -v $PYTHON_VERSION
+        - popd
+        - pyenv global $PYTHON_VERSION
+        - python --version
+        - pip install grow==1.0.0 --user
       name: Build Pages (EN)
       script: scripts/unbuffer.sh gulp buildPages --locales en --travis-build 22810
   # - stage: build
