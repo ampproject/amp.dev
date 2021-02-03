@@ -45,6 +45,7 @@ jobs:
         - pyenv global $PYTHON_VERSION
         - python --version
         - pip install grow==1.0.0 --user
+        - export CLOUDSDK_PYTHON=/usr/bin/python
       name: Build Pages (EN)
       script: scripts/unbuffer.sh gulp buildPages --locales en --travis-build 22810
   # - stage: build
