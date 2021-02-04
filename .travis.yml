@@ -19,6 +19,7 @@ before_install:
 stages:
   - preparation
   - build
+  - deploy
 jobs:
   include:
     - stage: preparation
@@ -48,80 +49,80 @@ jobs:
         - export CLOUDSDK_PYTHON=/usr/bin/python
       name: Build Pages (EN)
       script: scripts/unbuffer.sh gulp buildPages --locales en
-  # - stage: build
-  #   env: APP_ENV=staging
-  #   install: *1
-  #   name: Build Pages (DE)
-  #   script: scripts/unbuffer.sh gulp buildPages --locales de
-  # - stage: build
-  #   env: APP_ENV=staging
-  #   install: *1
-  #   name: Build Pages (FR)
-  #   script: scripts/unbuffer.sh gulp buildPages --locales fr
-  # - stage: build
-  #   env: APP_ENV=staging
-  #   install: *1
-  #   name: Build Pages (AR)
-  #   script: scripts/unbuffer.sh gulp buildPages --locales ar
-  # - stage: build
-  #   env: APP_ENV=staging
-  #   install: *1
-  #   name: Build Pages (ES)
-  #   script: scripts/unbuffer.sh gulp buildPages --locales es
-  # - stage: build
-  #   env: APP_ENV=staging
-  #   install: *1
-  #   name: Build Pages (IT)
-  #   script: scripts/unbuffer.sh gulp buildPages --locales it
-  # - stage: build
-  #   env: APP_ENV=staging
-  #   install: *1
-  #   name: Build Pages (ID)
-  #   script: scripts/unbuffer.sh gulp buildPages --locales id
-  # - stage: build
-  #   env: APP_ENV=staging
-  #   install: *1
-  #   name: Build Pages (JA)
-  #   script: scripts/unbuffer.sh gulp buildPages --locales ja
-  # - stage: build
-  #   env: APP_ENV=staging
-  #   install: *1
-  #   name: Build Pages (KO)
-  #   script: scripts/unbuffer.sh gulp buildPages --locales ko
-  # - stage: build
-  #   env: APP_ENV=staging
-  #   install: *1
-  #   name: Build Pages (BR)
-  #   script: scripts/unbuffer.sh gulp buildPages --locales pt_BR
-  # - stage: build
-  #   env: APP_ENV=staging
-  #   install: *1
-  #   name: Build Pages (RU)
-  #   script: scripts/unbuffer.sh gulp buildPages --locales ru
-  # - stage: build
-  #   env: APP_ENV=staging
-  #   install: *1
-  #   name: Build Pages (TR)
-  #   script: scripts/unbuffer.sh gulp buildPages --locales tr
-  # - stage: build
-  #   env: APP_ENV=staging
-  #   install: *1
-  #   name: Build Pages (CN)
-  #   script: scripts/unbuffer.sh gulp buildPages --locales zh_CN
-  # - stage: build
-  #   env: APP_ENV=staging
-  #   install: *1
-  #   name: Build Pages (PL)
-  #   script: scripts/unbuffer.sh gulp buildPages --locales pl
-  # - stage: build
-  #   env: APP_ENV=staging
-  #   install: *1
-  #   name: Build Pages (VN)
-  #   script: scripts/unbuffer.sh gulp buildPages --locales vi
-  # - stage: deploy
-  #   env: APP_ENV=staging
-  #   before_script:
-  #   - scripts/unbuffer.sh gulp buildFinalize
-  #   - scripts/unbuffer.sh npm run smoke-test
-  #   script:
-  #   - gcloud app deploy --project=amp-dev-staging --quiet --version=1
+  - stage: build
+    env: APP_ENV=staging
+    install: *1
+    name: Build Pages (DE)
+    script: scripts/unbuffer.sh gulp buildPages --locales de
+  - stage: build
+    env: APP_ENV=staging
+    install: *1
+    name: Build Pages (FR)
+    script: scripts/unbuffer.sh gulp buildPages --locales fr
+  - stage: build
+    env: APP_ENV=staging
+    install: *1
+    name: Build Pages (AR)
+    script: scripts/unbuffer.sh gulp buildPages --locales ar
+  - stage: build
+    env: APP_ENV=staging
+    install: *1
+    name: Build Pages (ES)
+    script: scripts/unbuffer.sh gulp buildPages --locales es
+  - stage: build
+    env: APP_ENV=staging
+    install: *1
+    name: Build Pages (IT)
+    script: scripts/unbuffer.sh gulp buildPages --locales it
+  - stage: build
+    env: APP_ENV=staging
+    install: *1
+    name: Build Pages (ID)
+    script: scripts/unbuffer.sh gulp buildPages --locales id
+  - stage: build
+    env: APP_ENV=staging
+    install: *1
+    name: Build Pages (JA)
+    script: scripts/unbuffer.sh gulp buildPages --locales ja
+  - stage: build
+    env: APP_ENV=staging
+    install: *1
+    name: Build Pages (KO)
+    script: scripts/unbuffer.sh gulp buildPages --locales ko
+  - stage: build
+    env: APP_ENV=staging
+    install: *1
+    name: Build Pages (BR)
+    script: scripts/unbuffer.sh gulp buildPages --locales pt_BR
+  - stage: build
+    env: APP_ENV=staging
+    install: *1
+    name: Build Pages (RU)
+    script: scripts/unbuffer.sh gulp buildPages --locales ru
+  - stage: build
+    env: APP_ENV=staging
+    install: *1
+    name: Build Pages (TR)
+    script: scripts/unbuffer.sh gulp buildPages --locales tr
+  - stage: build
+    env: APP_ENV=staging
+    install: *1
+    name: Build Pages (CN)
+    script: scripts/unbuffer.sh gulp buildPages --locales zh_CN
+  - stage: build
+    env: APP_ENV=staging
+    install: *1
+    name: Build Pages (PL)
+    script: scripts/unbuffer.sh gulp buildPages --locales pl
+  - stage: build
+    env: APP_ENV=staging
+    install: *1
+    name: Build Pages (VN)
+    script: scripts/unbuffer.sh gulp buildPages --locales vi
+  - stage: deploy
+    env: APP_ENV=staging
+    before_script:
+    - scripts/unbuffer.sh gulp buildFinalize
+    - scripts/unbuffer.sh npm run smoke-test
+    script:
+    - gcloud app deploy --project=amp-dev-staging --quiet --version=1
