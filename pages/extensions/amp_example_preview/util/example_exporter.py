@@ -112,5 +112,5 @@ class ExampleExporter(object):
         pass
       else:
         raise
-    with open(file_path, mode='w') as fp:
+    with open(file_path, mode='wb') as fp:
       fp.write(content)

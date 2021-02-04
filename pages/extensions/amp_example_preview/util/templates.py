@@ -16,7 +16,7 @@ def load_template(path_in_pod, doc):
   # use the env from grow with all functions present
   env = doc.pod.render_pool.get_jinja_env(doc.locale)['env']
 
-  with open(template_path, 'r') as template_file:
+  with open(template_path, 'rb') as template_file:
     file_contents = template_file.read().decode('utf-8')
     template = env.from_string(file_contents)
     return template

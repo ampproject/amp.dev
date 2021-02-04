@@ -81,7 +81,7 @@ class ExampleExportValidator:
 
   @staticmethod
   def load_file_content(path):
-    with open(path, 'r') as markdown_file:
+    with open(path, 'rb') as markdown_file:
       file_contents = markdown_file.read().decode('utf-8')
       return file_contents
 
