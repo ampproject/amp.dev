@@ -50,7 +50,7 @@ const routers = {
   search: require('@lib/routers/search.js'),
   static: require('@lib/routers/static.js'),
   templates: require('@lib/routers/templates.js'),
-  thumbor: require('@lib/routers/thumbor.js'),
+  thumbor: require('@lib/routers/thumbor.js').thumborRouter,
   whoAmI: require('@lib/routers/whoAmI.js'),
 };
 
