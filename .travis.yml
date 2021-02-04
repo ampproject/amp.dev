@@ -22,33 +22,33 @@ stages:
   - deploy
 jobs:
   include:
-    - stage: preparation
-      env: APP_ENV=staging
-      name: Check code, import documents, build samples, playground & boilerplate
-      before_script:
-        - scripts/unbuffer.sh gulp buildSamples
-        - scripts/unbuffer.sh gulp buildComponentVersions
-        - scripts/unbuffer.sh npm test
-      script:
-        - scripts/unbuffer.sh gulp buildPrepare
-    - stage: build
-      env: APP_ENV=staging
-      install: &1
-        - npm ci
-        - python --version
-        - PYENV_VERSION=1.2.20
-        - PYTHON_VERSION=3.7.8
-        - pushd $(pyenv root)
-        - git fetch
-        - git checkout v$PYENV_VERSION
-        - pyenv install -v $PYTHON_VERSION
-        - popd
-        - pyenv global $PYTHON_VERSION
-        - python --version
-        - pip install grow==1.0.0 --user
-        - export CLOUDSDK_PYTHON=/usr/bin/python
-      name: Build Pages (EN)
-      script: scripts/unbuffer.sh gulp buildPages --locales en
+  - stage: preparation
+    env: APP_ENV=staging
+    name: Check code, import documents, build samples, playground & boilerplate
+    before_script:
+      - scripts/unbuffer.sh gulp buildSamples
+      - scripts/unbuffer.sh gulp buildComponentVersions
+      - scripts/unbuffer.sh npm test
+    script:
+      - scripts/unbuffer.sh gulp buildPrepare
+  - stage: build
+    env: APP_ENV=staging
+    install: &1
+      - npm ci
+      - python --version
+      - PYENV_VERSION=1.2.20
+      - PYTHON_VERSION=3.7.8
+      - pushd $(pyenv root)
+      - git fetch
+      - git checkout v$PYENV_VERSION
+      - pyenv install -v $PYTHON_VERSION
+      - popd
+      - pyenv global $PYTHON_VERSION
+      - python --version
+      - pip install grow==1.0.0 --user
+      - export CLOUDSDK_PYTHON=/usr/bin/python
+    name: Build Pages (EN)
+    script: scripts/unbuffer.sh gulp buildPages --locales en
   - stage: build
     env: APP_ENV=staging
     install: *1
