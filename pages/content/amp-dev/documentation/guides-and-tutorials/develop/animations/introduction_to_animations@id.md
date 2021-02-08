@@ -14,14 +14,14 @@ Gunakan amp-animation jika Anda perlu mengontrol pemutaran secara ketat serta me
 
 ## Membuat animasi AMP dasar
 
-Komponen [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) memungkinkan penggunaan [API Animasi Web](https://www.w3.org/TR/web-animations/) di dalam AMP.
+Komponen [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) memungkinkan penggunaan [API Animasi Web](https://www.w3.org/TR/web-animations/) di dalam AMP.
 
-Sebuah [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) dasar adalah objek JSON yang terbuat dari bagian-bagian penting berikut ini:
+Sebuah [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) dasar adalah objek JSON yang terbuat dari bagian-bagian penting berikut ini:
 
 - Elemen komponen beranimasi, atau `selector`.
-- [Properti Penghitungan Waktu](../../../../documentation/components/reference/amp-animation.md#timing-properties)
-- [Keyframe](../../../../documentation/components/reference/amp-animation.md#keyframes)
-- [Pemicu](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
+- [Properti Penghitungan Waktu](/content/amp-dev/documentation/components/reference/amp-animation.md#timing-properties)
+- [Keyframe](/content/amp-dev/documentation/components/reference/amp-animation.md#keyframes)
+- [Pemicu](/content/amp-dev/documentation/components/reference/amp-animation.md#triggering-animation)
 
 ```
 <amp-animation layout="nodisplay" id="exampleAnimation">
@@ -41,23 +41,23 @@ Sebuah [`amp-animation`](../../../../documentation/components/reference/amp-anim
 
 ### Pemilih
 
-Serupa dengan CSS, komponen [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) menautkan properti animasi ke elemen dengan menyatakan nama, kelas, atau ID elemen di dalam bidang `"selector"` Komponen tersebut menganimasi setiap elemen dengan jenis tag atau nama kelas yang dinyatakan. Gunakan sebuah ID untuk memastikan Anda menganimasi elemen tunggal.
+Serupa dengan CSS, komponen [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) menautkan properti animasi ke elemen dengan menyatakan nama, kelas, atau ID elemen di dalam bidang `"selector"` Komponen tersebut menganimasi setiap elemen dengan jenis tag atau nama kelas yang dinyatakan. Gunakan sebuah ID untuk memastikan Anda menganimasi elemen tunggal.
 
 ### Properti penghitungan waktu
 
-[Properti penghitungan waktu](../../../../documentation/components/reference/amp-animation.md#timing-properties) mengontrol berapa lama animasi berlangsung, berapa kali diputar, dan keyframe arah mana yang bekerja.
+[Properti penghitungan waktu](/content/amp-dev/documentation/components/reference/amp-animation.md#timing-properties) mengontrol berapa lama animasi berlangsung, berapa kali diputar, dan keyframe arah mana yang bekerja.
 
 Tidak diperlukan properti penghitungan waktu, namun animasi mungkin tidak berjalan jika properti yang terkait dengan waktu dan tampilan tidak ada, seperti `duration` dan `fill`.
 
 ### Keyframe
 
-Meskipun CSS mengizinkan Anda untuk melakukan morfing dari satu status ke yang lainnya melalui transisi, Anda harus menyatakan properti animasi sebagai keyframe untuk menerapkan [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) (serupa dengan [animasi CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)). Untuk memastikan pemutaran yang mulus dan kompatibilitas lintas browser, [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) [membatasi apa properti keyframe](../../../../documentation/components/reference/amp-animation.md#allow-listed-properties-for-keyframes) yang dapat digunakan pada properti GPU yang dipercepat yang tidak menyebabkan pengulangan tata letak dan dapat menganimasi pada [utas kompositor](https://dev.chromium.org/developers/design-documents/compositor-thread-architecture). Ini mencegah animasi mengganggu AMP dan [merender proses](https://developers.google.com/web/updates/2018/09/inside-browser-part3#javascript_can_block_the_parsing) browser.
+Meskipun CSS mengizinkan Anda untuk melakukan morfing dari satu status ke yang lainnya melalui transisi, Anda harus menyatakan properti animasi sebagai keyframe untuk menerapkan [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md#allow-listed-properties-for-keyframes) yang dapat digunakan pada properti GPU yang dipercepat yang tidak menyebabkan pengulangan tata letak dan dapat menganimasi pada [utas kompositor](https://dev.chromium.org/developers/design-documents/compositor-thread-architecture). Ini mencegah animasi mengganggu AMP dan [merender proses](https://developers.google.com/web/updates/2018/09/inside-browser-part3#javascript_can_block_the_parsing) browser.
 
-[tip type="note"] Keyframe didefinisikan secara langsung di dalam sebuah [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) atau dirujuk dari [`<amp style-keyframe>`](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#keyframes-stylesheet) sepanjang mereka mengikuti pembatasan properti. Baca selengkapnya [di sini tentang keyframe di dalam `amp-animation`](../../../../documentation/components/reference/amp-animation.md#keyframes). [/tip]
+[tip type="note"] Keyframe didefinisikan secara langsung di dalam sebuah [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md#keyframes). [/tip]
 
 ### Pemicu
 
-Pemicu memulai urutan animasi. Ekstensi [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) dimulai baik saat `<body>` menjadi terlihat di halaman atau dengan menghubungkannya ke sebuah [peristiwa atau tindakan AMP](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)
+Pemicu memulai urutan animasi. Ekstensi [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) dimulai baik saat `<body>` menjadi terlihat di halaman atau dengan menghubungkannya ke sebuah [peristiwa atau tindakan AMP](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)
 
 Pemicuan saat `<body>` dapat dilihat berguna ketika animasi seharusnya berjalan begitu halaman memuat karena ia muncul “di atas lipatan”, atau dalam viewport pertama halaman tersebut. Pemicu animasi melalui visibilitas dengan menambahkan `trigger="visibility"` sebagai atribut pada komponen.
 
@@ -68,7 +68,7 @@ Pemicuan saat `<body>` dapat dilihat berguna ketika animasi seharusnya berjalan 
 </amp-animation>
 ```
 
-Animasi terhubung ke suatu tindakan atau peristiwa dengan memberi komponen [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) sebuah `id` dan menautkan `id` tersebut ke pemicu peristiwa yang diinginkan, seperti mengetuk sebuah tombol.
+Animasi terhubung ke suatu tindakan atau peristiwa dengan memberi komponen [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) sebuah `id` dan menautkan `id` tersebut ke pemicu peristiwa yang diinginkan, seperti mengetuk sebuah tombol.
 
 ```
 <amp-animation layout="nodisplay" id="exampleAnimation">
@@ -80,7 +80,7 @@ Animasi terhubung ke suatu tindakan atau peristiwa dengan memberi komponen [`amp
 
 ## Membuat animasi yang kompleks
 
-Membuat suatu animasi dalam [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) memungkinkan kontrol mendetail yang melampaui kegiatan memulai dan menghentikan animasi: ini juga dapat menjeda, membalik, dan mengarahkan ke titik yang spesifik. Anda bahkan dapat merangkai beberapa animasi bersama dan menganimasi elemen dalam suatu urutan.
+Membuat suatu animasi dalam [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) memungkinkan kontrol mendetail yang melampaui kegiatan memulai dan menghentikan animasi: ini juga dapat menjeda, membalik, dan mengarahkan ke titik yang spesifik. Anda bahkan dapat merangkai beberapa animasi bersama dan menganimasi elemen dalam suatu urutan.
 
 ### Subtarget
 
@@ -126,7 +126,7 @@ Elemen tag atau kelas yang sama dapat mempunyai properti penghitungan waktu yang
 
 ### Animasi berantai
 
-Beberapa animasi dapat terhubung untuk membentuk urutan yang panjang. Anda dapat membuat efek terjadwal, seperti hamparan pada video, dengan menulis animasi dalam susunan `animations` dalam komponen [`amp-animation`](../../../../documentation/components/reference/amp-animation.md).
+Beberapa animasi dapat terhubung untuk membentuk urutan yang panjang. Anda dapat membuat efek terjadwal, seperti hamparan pada video, dengan menulis animasi dalam susunan `animations` dalam komponen [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md).
 
 ```
 <amp-animation id="overlaysAnim" layout="nodisplay">
@@ -162,7 +162,7 @@ Beberapa animasi dapat terhubung untuk membentuk urutan yang panjang. Anda dapat
 
 Pengaturan ini memutar setiap animasi selama 3 detik dalam satu urutan.
 
-Untuk animasi yang lebih besar, animasi di dalam susunan `animations` mampu merujuk komponen [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) lain.
+Untuk animasi yang lebih besar, animasi di dalam susunan `animations` mampu merujuk komponen [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) lain.
 
 ```
 <amp-animation id="addEnergy" layout="nodisplay">
@@ -210,7 +210,7 @@ Untuk animasi yang lebih besar, animasi di dalam susunan `animations` mampu meru
 
 ### Menganimasi jumlah elemen yang tidak diketahui
 
-Dengan menggunakan [ekspresi `var()` dan `calc()`](../../../../documentation/components/reference/amp-animation.md) bersama [ekstensi CSS](../../../../documentation/components/reference/amp-animation.md#css-extensions), Anda dapat menulis animasi yang kompleks dan terjadwal yang berfungsi dengan berapa pun jumlah elemen. Ini memungkinkan data yang dibuat pengguna dan data yang dinamis dapat dianimasi dengan mudah dan mulus.
+Dengan menggunakan [ekspresi `var(/content/amp-dev/documentation/components/reference/amp-animation.md#css-extensions), Anda dapat menulis animasi yang kompleks dan terjadwal yang berfungsi dengan berapa pun jumlah elemen. Ini memungkinkan data yang dibuat pengguna dan data yang dinamis dapat dianimasi dengan mudah dan mulus.
 
 [example preview="top-frame" playground="true"]
 
@@ -283,8 +283,8 @@ Dengan menggunakan [ekspresi `var()` dan `calc()`](../../../../documentation/com
 - Menyatakan sebuah variabel, `--duration`, dan memberinya nilai selama dua detik.
 - Menetapkan `duration` pada nilai `--duration` variabel.
 - Menghitung penundaan yang diterapkan pada setiap elemen dengan yang memenuhi `.card` pemilih.
-  1. [Ekstensi `length()` ](<../../../../documentation/components/reference/amp-animation.md#css-length()-extension>) menghitung berapa jumlah elemen `.card` yang dipilih
-  2. Panjang lalu mengurangi setiap [indeks()](<../../../../documentation/components/reference/amp-animation.md#css-index()-extension>)`.card`
+  1. [Ekstensi `length(/content/amp-dev/documentation/components/reference/amp-animation.md#css-length()-extension>) menghitung berapa jumlah elemen `.card` yang dipilih
+  2. Panjang lalu mengurangi setiap [indeks(/content/amp-dev/documentation/components/reference/amp-animation.md#css-index()-extension>)`.card`
   3. Nilai hasil dikalikan dengan `--duration` variabel
   4. Total jumlah final diterapkan dalam detik pada penundaan elemen itu
 - Animasi diterapkan pada setiap elemen secara terpisah sehingga kartu diacak satu demi satu, bukan sekaligus.
@@ -293,7 +293,7 @@ Buka animasi di AMP playground dan tambahkan lebih banyak elemen [`amp-img`](../
 
 ### Tampak bagus, di mana pun
 
-Animasi dapat menyertakan [`conditions`](../../../../documentation/components/reference/amp-animation.md#conditions) yang mengizinkan efek yang disesuaikan. Sesuaikan animasi dengan ukuran layar apa pun melalui [kondisi `media`](../../../../documentation/components/reference/amp-animation.md#media-query) dan dukung kompatibilitas browser mundur dengan mengaktifkan [kondisi `supports`](../../../../documentation/components/reference/amp-animation.md#supports-condition) dalam sebuah [pernyataan `switch`](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement).
+Animasi dapat menyertakan [`conditions`](/content/amp-dev/documentation/components/reference/amp-animation.md#animation-switch-statement).
 
 [example preview="top-frame" playground="true"]
 
