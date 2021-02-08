@@ -23,6 +23,7 @@ const HttpProxy = require('http-proxy');
 const log = require('@lib/utils/log')('Thumbor');
 
 const SECURITY_KEY = 'unsafe';
+const REMOTE_STATIC_MOUNT = '/static/remote/';
 
 const proxyOptions = {
   target: config.hosts.thumbor.base,
@@ -33,9 +34,12 @@ const proxy = HttpProxy.createProxyServer(proxyOptions);
 // eslint-disable-next-line new-cap
 const thumborRouter = express.Router();
 
-const imagePaths = config.shared.thumbor.fileExtensions.map((extension) => {
-  return join('/static/', '/**/', `*.${extension}`);
-});
+const imagePaths = [
+  ...config.shared.thumbor.fileExtensions.map((extension) => {
+    return join('/static/', '/**/', `*.${extension}`);
+  }),
+  REMOTE_STATIC_MOUNT,
+];
 
 const DISABLE_THUMBOR = false;
 
@@ -45,7 +49,7 @@ thumborRouter.get(imagePaths, (request, response, next) => {
     return;
   }
 
-  const imageUrl = new URL(request.url, config.hosts.platform.base);
+  let imageUrl = new URL(request.url, config.hosts.platform.base);
   const imageWidth = imageUrl.searchParams.get('width');
   imageUrl.searchParams.delete('width');
 
@@ -56,7 +60,13 @@ thumborRouter.get(imagePaths, (request, response, next) => {
     return;
   }
 
-  imageUrl.searchParams.set('original', 'true');
+  // We allow certain remote images to be optimized;
+  // they mount on the virtual /static/remote
+  if (request.url.includes(REMOTE_STATIC_MOUNT)) {
+    imageUrl = new URL(request.query.url);
+  } else {
+    imageUrl.searchParams.set('original', 'true');
+  }
 
   const thumborUrl = new URL(request.url, config.hosts.platform.base);
   thumborUrl.pathname =
@@ -74,4 +84,7 @@ thumborRouter.get(imagePaths, (request, response, next) => {
   });
 });
 
-module.exports = thumborRouter;
+module.exports = {
+  thumborRouter,
+  REMOTE_STATIC_MOUNT,
+};

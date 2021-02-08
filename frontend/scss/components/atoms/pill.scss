@@ -56,4 +56,9 @@
     color: safeColor('white');
     pointer-events: none;
   }
+
+  &-bento {
+    background-color: color('chestnut-rose');
+    color: safeColor('white');
+  }
 }

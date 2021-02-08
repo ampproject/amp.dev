@@ -23,53 +23,64 @@
     }
 
     &-inline {
-
       @media (min-width: 768px) {
         display: flex;
         align-items: baseline;
+        flex-wrap: wrap;
       }
     }
   }
 
-    &-headline {
-      font-size: 16px;
-      margin: 0 0 10px 0;
+  &-headline {
+    font-size: 16px;
+    margin: 0 0 10px 0;
 
-      #{$root}-row-inline & {
-        white-space: nowrap;
-        margin-right: 10px;
-      }
+    #{$root}-row-inline & {
+      white-space: nowrap;
+      margin-right: 10px;
     }
 
-    &-text {
-      margin: 5px 0;
+    .active {
+      color: blue;
+    }
+  }
+
+  &-filter {
+    margin-left: auto;
+    * {
+      @include txt-2;
+    }
+  }
+
+  &-text {
+    margin: 5px 0;
+  }
+
+  &-list {
+    max-height: 142px;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
     }
 
-    &-list {
-      max-height: 142px;
+    &-item {
+      display: block;
+      margin-bottom: 6px;
+      @include txt-2;
+      white-space: nowrap;
       overflow: hidden;
+      text-overflow: ellipsis;
 
       @media (min-width: 768px) {
-        display: flex;
-        flex-wrap: wrap;
-      }
-
-      &-item {
-        display: block;
-        margin-bottom: 6px;
-        @include txt-2;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-
-        @media (min-width: 768px) {
-          width: 50%;
-          padding-right: 12px;
-        }
-      }
-
-      .expanded & {
-        max-height: none;
+        width: 50%;
+        padding-right: 12px;
       }
     }
+
+    .expanded & {
+      max-height: none;
+    }
+  }
 }
