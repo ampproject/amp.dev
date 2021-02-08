@@ -372,6 +372,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/sunmedia.md
       - label: Swoop
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/swoop.md
+      - label: TcsEmotion
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/tcsemotion.md
       - label: Teads
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/teads.md
       - label: TripleLift
