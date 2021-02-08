@@ -24,6 +24,7 @@ The tip molecule shows text alongside a contextual icon
   margin-bottom: 20px;
   border-radius: 4px;
   background-color: color('athens-gray');
+  border: 1px solid color('iron');
 
   @media (min-width: 768px) {
     padding: 30px;
