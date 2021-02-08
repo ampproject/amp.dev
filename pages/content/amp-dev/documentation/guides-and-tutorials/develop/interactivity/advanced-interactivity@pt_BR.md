@@ -1,6 +1,6 @@
 ---
-"$title": Improving the interactivity
-"$order": '2'
+'$title': Improving the interactivity
+$order: 2
 description: 'O código inicial oferece uma experiência do usuário bastante crua. Há algumas maneiras de aprimorá-lo\: - Adicionar um indicador que mostre o ...'
 ---
 
@@ -18,8 +18,11 @@ O [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) é um
 Abra o arquivo [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html) (em inglês) e adicione o seguinte script à lista de componentes AMP na seção `<head>` da página:
 
 ```html
-<script async custom-element="amp-bind"
-    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script
+  async
+  custom-element="amp-bind"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+></script>
 ```
 
 ## Adicionar o indicador de slide
@@ -43,7 +46,7 @@ Vamos inicializar uma variável de estado para acompanhar o índice do slide em 
 É possível acessar os dados dos elementos [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) usando o código associado. Por exemplo, podemos fazer referência a essa variável com o seguinte fragmento de expressão:
 
 ```javascript
-selected.slide // Avalia para 0.
+selected.slide; // Avalia para 0.
 ```
 
 ### Atualizar o estado do slide
@@ -51,8 +54,13 @@ selected.slide // Avalia para 0.
 Em seguida, vamos atualizar essa variável quando o usuário mudar os slides no carrossel. Para isso, adicionamos a seguinte ação `"on"` ao elemento [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) existente:
 
 ```html
-<amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
-    on="slideChange:AMP.setState({selected: {slide: event.index}})">
+<amp-carousel
+  type="slides"
+  layout="fixed-height"
+  height="250"
+  id="carousel"
+  on="slideChange:AMP.setState({selected: {slide: event.index}})"
+></amp-carousel>
 ```
 
 Agora, sempre que o slide exibido em [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) mudar, a ação `AMP.setState` será chamada com o seguinte argumento:
@@ -60,14 +68,14 @@ Agora, sempre que o slide exibido em [`amp-carousel`](../../../../documentation/
 ```javascript
 {
   selected: {
-    slide: event.index
+    slide: event.index;
   }
 }
 ```
 
 A expressão `event.index` é avaliada com o novo índice de slide, e a ação `AMP.setState()` combina o literal desse objeto com o estado atual. Isso substituirá o valor atual de `selected.slide` pelo valor de `event.index`.
 
-[tip type="tip"] <strong>DICA –</strong>  `AMP.setState()` faz uma combinação direta dos literais de objetos aninhados. Para mais detalhes, consulte a documentação de [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).[/tip]
+[tip type="tip"] <strong>DICA –</strong> `AMP.setState()` faz uma combinação direta dos literais de objetos aninhados. Para mais detalhes, consulte a documentação de [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).[/tip]
 
 ### Vincular os elementos do indicador
 
@@ -105,7 +113,7 @@ Tente adicionar uma funcionalidade para que, quando o usuário tocar no ponto in
 
 ## Mudar as imagens no carrossel
 
-É bom ver imagens de camisas de cores diferentes quando mudamos a cor selecionada. Com o [`amp-bind`](../../../../documentation/components/reference/amp-bind.md)  podemos fazer isso vinculando `[src]` aos elementos [`amp-img`](../../../../documentation/components/reference/amp-img.md) em [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md).
+É bom ver imagens de camisas de cores diferentes quando mudamos a cor selecionada. Com o [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) podemos fazer isso vinculando `[src]` aos elementos [`amp-img`](../../../../documentation/components/reference/amp-img.md) em [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md).
 
 ### Inicializar o estado do SKU
 
@@ -177,8 +185,10 @@ Ao adicionar outra variável de estado que rastreie o SKU selecionado, podemos v
 Adicione uma ação "on" ao [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) para atualizar a variável `selected.sku` sempre que uma cor nova for selecionada:
 
 ```html
-<amp-selector name="color"
-    on="select:AMP.setState({selected: {sku: event.targetOption}})">
+<amp-selector
+  name="color"
+  on="select:AMP.setState({selected: {sku: event.targetOption}})"
+></amp-selector>
 ```
 
 [tip type="tip"] <strong>DICA –</strong> Você também pode fazer isso adicionando ações `on="tap:AMP.setState(...)` a cada elemento filho de [`amp-img`](../../../../documentation/components/reference/amp-img.md) em [`amp-selector`](../../../../documentation/components/reference/amp-selector.md). Uma das vantagens do [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) é que ele simplifica a marcação dessa forma.[/tip]
@@ -189,12 +199,24 @@ Em seguida, adicione mapeamentos aos elementos [`amp-img`](../../../../documenta
 
 ```html
 <!-- Update the `src` of each <amp-img> when the `selected.sku` variable changes. -->
-<amp-img width=200 height=250 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=300 height=375 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=400 height=500 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
+<amp-img
+  width="200"
+  height="250"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="300"
+  height="375"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="400"
+  height="500"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
 ```
 
 [tip type="tip"] <strong>OBSERVAÇÃO –</strong> Na prática, é provável que cada imagem do carrossel tenha um "src" diferente. Você pode fazer isto substituindo a imagem única por um array de imagens. Para simplificar, este tutorial usa uma imagem única em diferentes ampliações.[/tip]

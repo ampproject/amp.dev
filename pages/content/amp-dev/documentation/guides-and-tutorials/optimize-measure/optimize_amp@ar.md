@@ -1,10 +1,10 @@
 ---
-"$title": تحسين صفحات AMP المستضافة الخاصة بك
-"$order": '7'
+'$title': تحسين صفحات AMP المستضافة الخاصة بك
+$order: 7
 description: وقت تشغيل AMP تم تحسينه للحصول على السرعة وإذا عُرضت صفحات AMP الخاصة بك بواسطة ذاكرة AMP للتخزين المؤقت، فهي محسّنة بالكامل وتوفر أعلى أداء تحميل ...
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 
@@ -73,6 +73,7 @@ author: sebastianbenz
 3. إذا كانت صفحتك تحتوي على إضافات تأخير العرض (على سبيل المثال، amp-experience وamp-dynamic-css-class وamp-story)، فحمِّل هذه الإضافات مسبقًا كما هو مطلوب في وقت تشغيل AMP لعرض الصفحة.
 
 [sourcecode:html]
+
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-custom-css-0.1.js">
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/story-1.0.js">[/sourcecode]
@@ -150,7 +151,7 @@ author: sebastianbenz
 </amp-video>
 [/sourcecode]
 
-فقط تأكد من وضع عِبارات التحميل المسبق *بعد* تصريح منفذ العرض لأن المتصفح يحتاج إلى أبعاد منفذ العرض لتحديد عرض الشاشة:
+فقط تأكد من وضع عِبارات التحميل المسبق _بعد_ تصريح منفذ العرض لأن المتصفح يحتاج إلى أبعاد منفذ العرض لتحديد عرض الشاشة:
 
 [sourcecode:html]
 
@@ -203,11 +204,13 @@ author: sebastianbenz
 - التحميل المسبق لخطوط مخصصة:
 
 [sourcecode:html]
+
 <link rel="preload" as="font" href="/bundles/app/fonts/helveticaneue-roman-webfont.woff2" >[/sourcecode]
 
 - If you are using Google fonts, or any other font provider with unknown font URLs, preconnect the respective font server:
 
 [sourcecode:html]
+
  <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
 [/sourcecode]
 

@@ -1,12 +1,12 @@
 ---
-"$title": Daftar periksa penayangan AMP
-"$order": '0'
+'$title': Daftar periksa penayangan AMP
+$order: 0
 description: Desain web yang responsif adalah tentang membangun halaman web yang cair yang menanggapi kebutuhan pengguna Anda—Halaman yang pas dengan ukuran dan orientasi layar pengguna. Anda dapat mencapai ....
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 Ikuti daftar periksa ini untuk memberi situs Anda pengalaman AMP maksimal!

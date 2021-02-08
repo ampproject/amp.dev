@@ -1,6 +1,6 @@
 ---
-"$title": Выход
-"$order": '3'
+'$title': Выход
+$order: 3
 description: Как и в случае с кнопкой входа, присутствие кнопки выхода определяется состоянием компонента amp-access...
 ---
 
@@ -15,9 +15,9 @@ description: Как и в случае с кнопкой входа, прису�
 [sourcecode:json]
 {
 "login": {
-  "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
-  "sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
-  }
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
+"sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
+}
 }
 [/sourcecode]
 

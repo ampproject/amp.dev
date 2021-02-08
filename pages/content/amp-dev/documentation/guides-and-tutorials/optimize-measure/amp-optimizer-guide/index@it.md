@@ -1,11 +1,11 @@
 ---
-"$title": Utilizzo di ottimizzatori AMP
-"$order": '2'
-"$hidden": 'true'
+'$title': Utilizzo di ottimizzatori AMP
+$order: 2
+'$hidden': 'true'
 description: "Gli ottimizzatori AMP sono strumenti che rendono possibili le ottimizzazioni delle cache AMP anche sul tuo sito. L'utilizzo di un ottimizzatore AMP permette di creare  pagine efficienti, che garantiscono risultati conformi ai requisiti Core Web Vitals. Questa guida spiega come utilizzare al meglio un ottimizzatore AMP per migliorare le proprie pagine AMP."
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

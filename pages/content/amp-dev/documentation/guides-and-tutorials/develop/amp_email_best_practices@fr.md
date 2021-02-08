@@ -1,9 +1,9 @@
 ---
-"$title": 'AMP pour e-mails: bonnes pratiques'
-"$order": '1'
-"$category": Develop
+'$title': 'AMP pour e-mails: bonnes pratiques'
+$order: 1
+'$category': Develop
 formats:
-- email
+  - email
 ---
 
 AMP offre de nouveaux types passionnants de contenus immersifs et attrayants dans les e-mails! Lors de la conception d'e-mails, gardez à l'esprit les bonnes pratiques suivantes pour vous assurer que vos e-mails sont performants et fiables sur toutes les plateformes et qu'ils fonctionnent comme vos utilisateurs le souhaitent.

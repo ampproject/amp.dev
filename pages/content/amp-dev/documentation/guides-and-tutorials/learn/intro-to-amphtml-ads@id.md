@@ -1,14 +1,14 @@
 ---
-"$title": Pengantar untuk iklan HTML AMP
-"$order": '1'
+'$title': Pengantar untuk iklan HTML AMP
+$order: 1
 description: Iklan HTML AMP adalah cara yang lebih cepat, ringan, dan aman untuk beriklan di web. Meskipun halaman AMP mendukung iklan HTML tradisional, iklan ini bisa lambat dimuat.
 formats:
-- ads
+  - ads
 ---
 
 ## Apa yang dimaksud dengan iklan HTML AMP?
 
-Iklan HTML AMP adalah cara yang lebih cepat, ringan, dan aman untuk beriklan di web. Meskipun halaman AMP mendukung iklan HTML tradisional, iklan ini bisa dimuat dengan lambat. Agar iklan dapat dimuat secepat elemen lain di halaman AMP, Anda dapat membuat iklan dalam HTML AMP. Iklan HTML AMP hanya ditayangkan setelah divalidasi, untuk memastikan iklan sudah aman dan memiliki kinerja yang baik. Yang terpenting, iklan ini dapat ditayangkan di mana pun di internet, *bukan hanya di halaman AMP*.
+Iklan HTML AMP adalah cara yang lebih cepat, ringan, dan aman untuk beriklan di web. Meskipun halaman AMP mendukung iklan HTML tradisional, iklan ini bisa dimuat dengan lambat. Agar iklan dapat dimuat secepat elemen lain di halaman AMP, Anda dapat membuat iklan dalam HTML AMP. Iklan HTML AMP hanya ditayangkan setelah divalidasi, untuk memastikan iklan sudah aman dan memiliki kinerja yang baik. Yang terpenting, iklan ini dapat ditayangkan di mana pun di internet, _bukan hanya di halaman AMP_.
 
 Iklan HTML AMP ditulis dalam HTML AMP sesuai dengan [spesifikasi iklan HTML AMP](a4a_spec.md) (sebuah variasi HTML AMP + CSS). Ini berarti bahwa iklan tidak lagi dapat menjalankan JavaScript secara acak, yang secara tradisional menjadi penyebab utama kinerja iklan yang buruk. Oleh karena itu, seperti halnya AMP inti, contoh penggunaan JavaScript iklan inti dibuat langsung ke dalam project Sumber Terbuka AMP yang menjamin perilaku iklan yang baik.
 
@@ -73,11 +73,11 @@ Jika Anda adalah agensi kreatif, Anda harus membuat iklan sesuai dengan [spesifi
 
 - [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*coming soon*)
+- Adobe Animate (_coming soon_)
 
 ### Jaringan/server iklan
 
-Untuk menayangkan iklan AMPHTML ke halaman AMP, Anda perlu membuat ekstensi [`amp-ad`](../../../documentation/components/reference/amp-ad.md) untuk jaringan Anda (kecuali Anda telah memilikinya) yang menggunakan [implementasi permintaan iklan Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Untuk mengetahui detailnya, lihat [Berintegrasi dengan AMP untuk menayangkan iklan display](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md).  Perlu diingat bahwa tidak diperlukan integrasi khusus untuk menayangkan AMPHTML ke halaman non-AMP.
+Untuk menayangkan iklan AMPHTML ke halaman AMP, Anda perlu membuat ekstensi [`amp-ad`](../../../documentation/components/reference/amp-ad.md) untuk jaringan Anda (kecuali Anda telah memilikinya) yang menggunakan [implementasi permintaan iklan Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md). Untuk mengetahui detailnya, lihat [Berintegrasi dengan AMP untuk menayangkan iklan display](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md). Perlu diingat bahwa tidak diperlukan integrasi khusus untuk menayangkan AMPHTML ke halaman non-AMP.
 
 ## Membuat iklan HTML AMP
 
@@ -87,7 +87,7 @@ Untuk menayangkan iklan AMPHTML ke halaman AMP, Anda perlu membuat ekstensi [`am
 
 - [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*coming soon*)
+- Adobe Animate (_coming soon_)
 
 ### Memvalidasi sintaksis iklan HTML AMP
 

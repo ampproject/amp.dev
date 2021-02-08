@@ -1,9 +1,9 @@
 ---
-"$title": AMP 电子邮件最佳做法
-"$order": '1'
-"$category": Develop
+'$title': AMP 电子邮件最佳做法
+$order: 1
+'$category': Develop
 formats:
-- email
+  - email
 ---
 
 AMP 支持在电子邮件中加入一些令人兴奋的新型内容，这些内容极具吸引力并且是沉浸式内容！设计电子邮件时，遵循以下最佳做法可以确保电子邮件高效、在各种平台上均可靠，并且效果符合用户的预期。

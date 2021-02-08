@@ -1,10 +1,10 @@
 ---
-"$title": Cómo optimizar las páginas que están alojadas en AMP
-"$order": '7'
+'$title': Cómo optimizar las páginas que están alojadas en AMP
+$order: 7
 description: El tiempo de ejecución de AMP está optimizado para ser más rápido y en caso de que sus páginas de AMP estén alojadas en un caché de AMP, se optimizarán totalmente y le proporcionarán el mayor rendimiento durante la carga...
 formats:
-- sitios web
-- historias
+  - sitios web
+  - historias
 author: sebastianbenz
 ---
 
@@ -74,7 +74,7 @@ Pero, vayamos paso a paso:
 
 4. Utilice [preconnect](https://www.igvita.com/2015/08/17/eliminating-roundtrips-with-preconnect/) para acelerar la conexión a otro origen en el que no se conoce de antemano la URL completa del recurso, por ejemplo, al utilizar Google Fonts:
 
-    [sourcecode:html]<link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>[/sourcecode]
+   [sourcecode:html]<link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>[/sourcecode]
 
 5. [sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
 
@@ -147,7 +147,7 @@ Por cierto, el mismo enfoque funciona para [`amp-video`](../../../documentation/
 </amp-video>
 [/sourcecode]
 
-Solo asegúrese de clasificar los estados de precarga *después* de la afirmación de la ventana de visualización, porque el navegador necesita las dimensiones de la ventana de visualización para determinar el ancho de la pantalla:
+Solo asegúrese de clasificar los estados de precarga _después_ de la afirmación de la ventana de visualización, porque el navegador necesita las dimensiones de la ventana de visualización para determinar el ancho de la pantalla:
 
 [sourcecode:html]
 
@@ -199,6 +199,7 @@ Con AMP, hay algunas cosas que puede hacer para optimizar la carga de fuentes ([
 - Optimice sus fuentes web (por ejemplo, aloje fuentes personalizadas mediante WOFF2).
 
 [sourcecode:html]
+
 <link rel="preload" as="font" href="/bundles/app/fonts/helveticaneue-roman-webfont.woff2" >[/sourcecode]
 
 - Si utiliza Google fonts o cualquier otro proveedor de fuentes con URL de fuentes desconocidas, conecte previamente el servidor de fuentes correspondiente: PLACEHOLDER_START10PLACEHOLDER_END

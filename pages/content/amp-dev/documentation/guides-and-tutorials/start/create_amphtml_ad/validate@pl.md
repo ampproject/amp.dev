@@ -1,6 +1,6 @@
 ---
-"$title": Walidacja składni reklamy AMPHTML
-"$order": '3'
+'$title': Walidacja składni reklamy AMPHTML
+$order: 3
 description: Aby zapewnić prawidłowe renderowanie reklam, należy sprawdzić poprawność składni AMPHTML. Otwórz narzędzie AMP Validator w przeglądarce i upewnij się, że wybranym formatem HTML jest AMP4ADS.
 ---
 

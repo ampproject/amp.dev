@@ -1,11 +1,11 @@
 ---
-"$title": Comment ajouter des polices personnalisées
-"$order": '6'
+'$title': Comment ajouter des polices personnalisées
+$order: 6
 description: "Les pages AMP ne peuvent pas inclure de feuilles de style externes, à l'exception des polices personnalisées. Vous pouvez intégrer des polices personnalisées dans votre page de deux manières ..."
 formats:
-- websites
-- ads
-- stories
+  - websites
+  - ads
+  - stories
 author: pbakaus
 ---
 
@@ -19,6 +19,7 @@ Les pages AMP ne peuvent pas inclure de feuilles de style externes, à l'excepti
 Utilisez une balise `<link>` (généralement dans l'en-tête de votre page), comme ceci:
 
 [sourcecode:html]
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 [/sourcecode]
 
@@ -35,6 +36,7 @@ Les origines suivantes sont répertoriées et autorisées pour la diffusion de p
 Vous pouvez également utiliser [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) dans votre feuille de style AMP:
 
 [sourcecode:html]
+
 <style amp-custom>
   @font-face {
     font-family: "Bitstream Vera Serif Bold";
@@ -45,6 +47,7 @@ Vous pouvez également utiliser [`@font-face`](https://developer.mozilla.org/en-
     font-family: "Bitstream Vera Serif Bold", serif;
   }
 </style>
+
 [/sourcecode]
 
-[tip type="note"] **REMARQUE –**  les polices ajoutées via `@font-face` doivent être récupérées via HTTP ou HTTPS. [/tip]
+[tip type="note"] **REMARQUE –** les polices ajoutées via `@font-face` doivent être récupérées via HTTP ou HTTPS. [/tip]

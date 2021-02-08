@@ -1,9 +1,9 @@
 ---
-"$title": دمج AMP مع تطبيقك
-"$order": '2'
+'$title': دمج AMP مع تطبيقك
+$order: 2
 description: هذا الدليل مخصص لمطوري تطبيقات الهواتف المحمولة والويب الذين يرغبون في دمج صفحات AMP والارتباط بها. على سبيل المثال، تدبر في تطبيق دردشة للهاتف المحمول...
 formats:
-- websites
+  - websites
 ---
 
 هذا الدليل مخصص لمطوري تطبيقات الهواتف المحمولة والويب الذين يرغبون في دمج صفحات AMP والارتباط بها. على سبيل المثال، تدبر في تطبيق دردشة للهاتف المحمول من شأنه تحميل إصدار AMP من عنوان URL مشترك لتحقيق تجربة أسرع للمستخدمين.
@@ -47,10 +47,12 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 على سبيل المثال، بالنسبة لقائمة معينة من عناوين URL:
 
 ```json
-{"urls": [
-  "https://www.example.org/article-with-amp-version",
-  "http://www.example.com/no-amp-version.html"
-]}
+{
+  "urls": [
+    "https://www.example.org/article-with-amp-version",
+    "http://www.example.com/no-amp-version.html"
+  ]
+}
 ```
 
 يحتوي نص الاستجابة على إقران عنوان URL بصفحات AMP بتنسيق JSON:
@@ -74,7 +76,7 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 }
 ```
 
-[tip type="note"] **ملحوظة–**  لا يمكن استرداد عناوين URL لصفحات AMP الموجودة في ذاكرات التخزين المؤقت غير التابعة لـ Google عبر واجهة برمجة تطبيقات عناوين URL لصفحات AMP. مع ذلك، يمكنك بسهولة اشتقاق عنوان URL المخزن مؤقتًا من عنوان URL المعروض لصفحات AMP (ampURL). [/tip]
+[tip type="note"] **ملحوظة–** لا يمكن استرداد عناوين URL لصفحات AMP الموجودة في ذاكرات التخزين المؤقت غير التابعة لـ Google عبر واجهة برمجة تطبيقات عناوين URL لصفحات AMP. مع ذلك، يمكنك بسهولة اشتقاق عنوان URL المخزن مؤقتًا من عنوان URL المعروض لصفحات AMP (ampURL). [/tip]
 
 ## استخدام ذاكرة التخزين المؤقت لصفحات AMP
 

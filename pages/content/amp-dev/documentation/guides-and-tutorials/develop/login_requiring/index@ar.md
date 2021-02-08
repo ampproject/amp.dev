@@ -1,11 +1,11 @@
 ---
-"$title": إنشاء صفحة AMP تتطلب تسجيل الدخول
-"$order": '0'
+'$title': إنشاء صفحة AMP تتطلب تسجيل الدخول
+$order: 0
 description: قد تكون بعض تفاعلات المستخدم مع الصفحة، مثل ترك تعليق، مشروطة بتدفق تسجيل الدخول. يمكنك تنفيذ تدفق تسجيل الدخول ...
 numbered: '1'
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 قد تكون بعض تفاعلات المستخدم مع الصفحة، مثل ترك تعليق، مشروطة بتدفق تسجيل الدخول. يمكنك تنفيذ تدفق تسجيل الدخول مع AMP عن طريق استخدام المكون [`amp-access`](../../../../documentation/components/reference/amp-access.md) جنبًا إلى جنب مع المكون [`amp-form`](../../../../documentation/components/reference/amp-form.md).

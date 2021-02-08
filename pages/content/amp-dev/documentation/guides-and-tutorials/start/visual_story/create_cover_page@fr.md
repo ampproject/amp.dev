@@ -1,7 +1,7 @@
 ---
-"$title": Création de la page de garde
-"$order": '4'
-description: 'Pour créer une page, ajoutez l''élément <amp-story-page> en tant qu''enfant d''amp-story. Attribuez un identifiant unique à la page. Pour notre première page, qui est la page de garde, attribuons un identifiant unique de couverture : ...'
+'$title': Création de la page de garde
+$order: 4
+description: "Pour créer une page, ajoutez l'élément <amp-story-page> en tant qu'enfant d'amp-story. Attribuez un identifiant unique à la page. Pour notre première page, qui est la page de garde, attribuons un identifiant unique de couverture : ..."
 author: bpaduch
 ---
 
@@ -10,13 +10,14 @@ Une page dans une story Web est représentée par le composant `<amp-story-page>
 Pour créer une page, **ajoutez** l'élément `<amp-story-page>` en tant qu'enfant d'[`amp-story`](../../../../documentation/components/reference/amp-story.md). **Attribuez** un identifiant unique à la page. Pour notre première page, qui est la page de couverture, attribuons un identifiant unique de `cover` :
 
 ```html
-<amp-story standalone
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-    poster-portrait-src="assets/cover.jpg">
-   <amp-story-page id="cover">
-   </amp-story-page>
+<amp-story
+  standalone
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+>
+  <amp-story-page id="cover"> </amp-story-page>
 </amp-story>
 ```
 
@@ -40,9 +41,12 @@ Créez la couche en ajoutant l'élément `<amp-story-grid-layer>` en tant qu'enf
 ```html
 <amp-story-page id="cover">
   <amp-story-grid-layer template="fill">
-    <amp-img src="assets/cover.jpg"
-        width="720" height="1280"
-        layout="responsive">
+    <amp-img
+      src="assets/cover.jpg"
+      width="720"
+      height="1280"
+      layout="responsive"
+    >
     </amp-img>
   </amp-story-grid-layer>
 </amp-story-page>
@@ -105,7 +109,7 @@ Pour la couche 2, nous voulons que le titre et la signature soient dans la parti
 
 ```html
 <amp-story-grid-layer>
- <!--our first layer -->
+  <!--our first layer -->
 </amp-story-grid-layer>
 <amp-story-grid-layer template="vertical">
   <h1>The Joy of Pets</h1>

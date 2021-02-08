@@ -1,10 +1,10 @@
 ---
-"$title": Node.js AMP Optimizer 가이드
-"$order": '2'
+'$title': Node.js AMP Optimizer 가이드
+$order: 2
 description: 이 가이드에서는 AMP Optimizer의 Node.js 버전을 설정하고 사용하는 방법을 설명합니다.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 
@@ -65,7 +65,7 @@ exports.default = build;
 
 ### 렌더 타임
 
-동적 페이지의 경우 서버에서 페이지를 렌더링해야 할 경우가 많습니다. 이런 경우에 페이지 렌더링 후 AMP Optimizer를 실행할 수 있습니다.  [Express.js](https://expressjs.com/) 서버로의 샘플 통합을 확인하세요. AMP 최적화를 Express 라우터로 통합하는 한 가지 방식은 템플릿이 [렌더링된](https://expressjs.com/en/api.html#app.render) 후 콜백하는 것입니다.
+동적 페이지의 경우 서버에서 페이지를 렌더링해야 할 경우가 많습니다. 이런 경우에 페이지 렌더링 후 AMP Optimizer를 실행할 수 있습니다. [Express.js](https://expressjs.com/) 서버로의 샘플 통합을 확인하세요. AMP 최적화를 Express 라우터로 통합하는 한 가지 방식은 템플릿이 [렌더링된](https://expressjs.com/en/api.html#app.render) 후 콜백하는 것입니다.
 
 ```js
 const express = require('express');

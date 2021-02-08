@@ -1,12 +1,12 @@
 ---
-"$title": Lista kontrolna publikowania AMP
-"$order": '0'
+'$title': Lista kontrolna publikowania AMP
+$order: 0
 description: Projektowanie responsywnych stron internetowych polega na budowaniu płynnie działających stron internetowych, które reagują na potrzeby użytkownika — stron dopasowanych do wielkości i orientacji ekranu urządzenia. Możesz osiągnąć...
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 Postępuj zgodnie z tą listą kontrolną, aby zapewnić najpełniejsze doświadczenie AMP w witrynie!

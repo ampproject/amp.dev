@@ -1,6 +1,6 @@
 ---
-"$title": Selamat!
-"$order": '4'
+'$title': Selamat!
+$order: 4
 description: 'Anda telah menyelesaikan tutorial dan berhasil mengonversi dokumen HTML menjadi dokumen AMP. Di dalam tutorial ini, Anda belajar untuk: - Mengenali perbedaan antara AMP dan ....'
 ---
 

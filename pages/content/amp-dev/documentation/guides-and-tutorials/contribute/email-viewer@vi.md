@@ -1,9 +1,9 @@
 ---
-"$title": Sử dụng AMP Viewer để render email
-"$order": '5'
+'$title': Sử dụng AMP Viewer để render email
+$order: 5
 author: alabiaga
 formats:
-- email
+  - email
 ---
 
 Các trình khách email muốn hỗ trợ AMP cho Email nên sử dụng [AMP Viewer](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) để lưu trữ các email AMP của người gửi. Một trình xem được xây dựng với [Thư viện AMP Viewer](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration) sẽ bọc lấy một tài liệu AMP và hỗ trợ các [chức năng](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/CAPABILITIES.md) cho phép giao tiếp hai chiều với tài liệu AMP thông qua postMessage. Các chức năng này bao gồm cấp quyền kiểm soát hiển thị email, chuyển tiếp thông số người dùng và cung cấp các cách để đảm bảo sự an toàn cho các yêu cầu XHR được thực hiện từ email.
@@ -24,9 +24,11 @@ Giao thức được sử dụng để giao tiếp giữa trình xem và tài li
 // The viewer iframe that will host the amp doc.
 viewerIframe = document.createElement('iframe');
 viewerIframe.contentWindow.onMessage = (xhrRequestIntercepted) => {
-   const blob = new Blob([JSON.stringify({body: 'hello'}, null, 2)], {type: 'application/json'});
-   const response = new Reponse(blob, {status: 200});
-   return response;
+  const blob = new Blob([JSON.stringify({body: 'hello'}, null, 2)], {
+    type: 'application/json',
+  });
+  const response = new Reponse(blob, {status: 200});
+  return response;
 };
 ```
 
@@ -35,7 +37,7 @@ viewerIframe.contentWindow.onMessage = (xhrRequestIntercepted) => {
 Cho phép tiếp quản XHR bằng cách bật chức năngxhrInterceptor của trình xem khi khởi động. Hãy xem ví dụ cho trình xem về cách thực hiện việc này và một ví dụ về tiếp quản XHR. Sau đó, tài liệu AMP cần được bật và cho phép tiếp quản XHR. Các tài liệu bật chức năng này bằng cách thêm thuộc tính `allow-xhr-interception` vào thẻ `<html amp4email>`. Trình khách email phải đặt thuộc tính này trên tài liệu AMP trước khi render bởi nó cố tình được đặt là một thuộc tính không hợp lệ và sẽ được gắn cờ như vậy trong quá trình xác thực tài liệu AMP.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email allow-xhr-interception>
   ...
 </html>
@@ -45,21 +47,22 @@ Cho phép tiếp quản XHR bằng cách bật chức năngxhrInterceptor của 
 
 Chức năng `viewerRenderTemplate` cho phép trình xem quản lý việc render khuôn mẫu [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email) và [`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=email). Khi bật chức năng này, thời gian chạy AMP sẽ gửi trung gian một yêu cầu chứa lệnh gọi XHR gốc, dữ liệu khuôn mẫu và mọi chi tiết khác cần để render nội dung thành phần cho trình xem. Việc này cho phép trình xem kiểm tra nội dung dữ liệu điểm cuối và quản lý việc render [mustache](https://mustache.github.io/) của các khuôn mẫu nhằm xác minh và khử trùng dữ liệu. Lưu ý rằng nếu chức năng này được bật cùng với xhrInterceptor, trong thành phần amp-form và amp-list, chức năng `viewerRenderTemplate` gửi trung gian các yêu cầu đến trình xem sẽ được ưu tiên hơn xhrInterceptor.
 
-Ví dụ [viewer.html](https://github.com/ampproject/amphtml/blob/master/examples/viewer.html) cho thấy cách một người có thể xử lý thông điệp `viewerRenderTemplate` được gửi từ tài liệu AMP. Trong ví dụ đó, Viewer.prototype.processRequest_ sẽ bắt thông điệp `viewerRenderTemplate` và tùy vào loại thành phần amp có sẵn trong yêu cầu, gửi trả HTML để được render trong định dạng JSON sau đó.
+Ví dụ [viewer.html](https://github.com/ampproject/amphtml/blob/master/examples/viewer.html) cho thấy cách một người có thể xử lý thông điệp `viewerRenderTemplate` được gửi từ tài liệu AMP. Trong ví dụ đó, Viewer.prototype.processRequest\_ sẽ bắt thông điệp `viewerRenderTemplate` và tùy vào loại thành phần amp có sẵn trong yêu cầu, gửi trả HTML để được render trong định dạng JSON sau đó.
 
 ```js
-Viewer.prototype.ssrRenderAmpListTemplate_ = (data) => Promise.resolve({
-  "html":
-    "<div role='list' class='i-amphtml-fill-content i-amphtml-replaced-content'>"
-      + "<div class='product' role='listitem'>Apple</div>"
-      + "</div>",
-  "body" : "",
-  "init" : {
-    "headers": {
-      "Content-Type": "application/json",
-    }
-  }
-});
+Viewer.prototype.ssrRenderAmpListTemplate_ = (data) =>
+  Promise.resolve({
+    'html':
+      "<div role='list' class='i-amphtml-fill-content i-amphtml-replaced-content'>" +
+      "<div class='product' role='listitem'>Apple</div>" +
+      '</div>',
+    'body': '',
+    'init': {
+      'headers': {
+        'Content-Type': 'application/json',
+      },
+    },
+  });
 ```
 
 Đây là một ví dụ nhỏ về trường hợp không có phụ thuộc thư viện [mustache](https://mustache.github.io/) hay khử trùng nội dung.
@@ -74,9 +77,9 @@ Thời gian chạy AMP sẽ gửi trung gian yêu cầu truy xuất dữ liệu 
 {
   "html": "<div role='list' class='i-amphtml-fill-content i-amphtml-replaced-content'> <div class='product' role='listitem'>List item 1</div> <div class='product' role='listitem'>List item 2</div> </div>",
   "body": "",
-  "init" : {
+  "init": {
     "headers": {
-      "Content-Type": "application/json",
+      "Content-Type": "application/json"
     }
   }
 }

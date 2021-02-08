@@ -1,6 +1,6 @@
 ---
-"$title": Connexion
-"$order": '1'
+'$title': Connexion
+$order: 1
 description: La première fois que vous atterrissez sur la page, vous voyez 2 commentaires et un bouton de connexion. Si vous recherchez le bouton de connexion dans le code, vous trouverez ...
 ---
 
@@ -12,6 +12,7 @@ Si vous recherchez le bouton de connexion dans le code, vous trouverez:
 
 [sourcecode:html]
 <span amp-access="NOT loggedIn" role="button" tabindex="0" amp-access-hide>
+
   <h5>Please login to comment</h5>
   <button on="tap:amp-access.login-sign-in" class="button-primary comment-button">Login</button>
 </span>
@@ -20,6 +21,7 @@ Si vous recherchez le bouton de connexion dans le code, vous trouverez:
 Le comportement des attributs liés à [`amp-access`](../../../../documentation/components/reference/amp-access.md) dépend la configuration apportée sur toute la page pour [`amp-access`](../../../../documentation/components/reference/amp-access.md), soit la suivante dans notre cas:
 
 [sourcecode:html]
+
 <script id="amp-access" type="application/json">
   {
     "authorization": "https://ampbyexample.com/samples_templates/comment_section/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
@@ -34,6 +36,7 @@ Le comportement des attributs liés à [`amp-access`](../../../../documentation/
     }
   }
 </script>
+
 [/sourcecode]
 
 Le point de terminaison pour l'autorisation est déployé dans AMPByExemple. Il est de la responsabilité de l'éditeur de la première page de fournir ce point de terminaison. Dans ce cas d'exemple, par souci de simplicité, nous avons implémenté une logique de base de sorte que lorsque cette demande est reçue, le serveur lit la valeur d'un cookie nommé `ABE_LOGGED_IN`. Si le cookie est absent, nous renvoyons une réponse JSON contenant `loggedIn = false`. Par conséquent, la première fois qu'un utilisateur accède à la page, cette demande renvoie `loggedIn = false` et le bouton de connexion s'affiche.
@@ -42,9 +45,9 @@ En observant à nouveau le code HTML du bouton, nous utilisons `on="tap:amp-acce
 
 [sourcecode:json]
 {
-	"login": {
-    "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
-  }
+"login": {
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
+}
 }
 
 [/sourcecode]

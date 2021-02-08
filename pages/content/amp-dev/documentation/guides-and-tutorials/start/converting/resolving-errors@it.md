@@ -1,6 +1,6 @@
 ---
-"$title": Risoluzione degli errori di convalida
-"$order": '2'
+'$title': Risoluzione degli errori di convalida
+$order: 2
 description: '"In questa sezione esamineremo e risolveremo gli errori di convalida della nostra pagina AMP. Nota: gli errori potrebbero essere visualizzati in un ordine diverso a seconda della console."'
 ---
 
@@ -35,13 +35,13 @@ Ai fini di questa esercitazione, considereremo come versione canonica della pagi
 **Aggiungere** il seguente codice sotto il tag `<meta charset="utf-8"/>`:
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 [tip type="note"] Si può creare una pagina AMP canonica senza versione HTML standard. Il collegamento canonico è ancora obbligatorio, ma in questo caso dovrà puntare all'articolo AMP stesso:
 
 ```html
-<link rel="canonical" href="article.amp.html">
+<link rel="canonical" href="article.amp.html" />
 ```
 
 [/tip]
@@ -57,7 +57,7 @@ Le pagine AMP richiedono un attributo nell'elemento `<html>` radice per dichiara
 Gli errori precedenti possono essere risolti semplicemente aggiungendo l'attributo `⚡` al tag `<html>` in questo modo:
 
 ```html
-<html ⚡ lang="en">
+<html ⚡ lang="en"></html>
 ```
 
 Ora ricaricando la pagina, entrambi gli errori saranno scomparsi.
@@ -65,7 +65,7 @@ Ora ricaricando la pagina, entrambi gli errori saranno scomparsi.
 [tip type="note"] Anche se l'indicazione dell'attributo `⚡` è l'approccio consigliato, è anche possibile utilizzare l'attributo `amp` al posto di `⚡`, come di seguito indicato:
 
 ```html
-<html amp lang="en">
+<html amp lang="en"></html>
 ```
 
 [/tip]
@@ -81,7 +81,7 @@ La sintassi AMP richiede la definizione degli attributi `width` e `minimum-scale
 Per risolvere l'errore di visualizzazione, aggiungere il seguente frammento HTML al tag `<head>`:
 
 ```html
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width" />
 ```
 
 I valori specificati per gli attributi `width` e `minimum-scale` sono obbligatori in AMP. La definizione `initial-scale` non è obbligatoria, ma è comunemente inclusa nello sviluppo di pagine web per dispositivi mobili. Altre informazioni sulle finestre di visualizzazione e sulle strutture reattive sono disponibili nella sezione [Configurazione della finestra di viusliazzazione](https://developers.google.com/speed/docs/insights/ConfigureViewport).
@@ -104,9 +104,7 @@ Il problema è che questo link è un riferimento a un foglio di stile esterno. P
 
 ```html
 <style amp-custom>
-
-/* The content from base.css */
-
+  /* The content from base.css */
 </style>
 ```
 
@@ -171,7 +169,63 @@ I seguenti errori fanno riferimento alla mancanza di codice boilerplate:
 Ogni documento AMP richiede il seguente codice boilerplate AMP:
 
 ```html
-<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<style amp-boilerplate>
+  body {
+    -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+  }
+  @-webkit-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-moz-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-ms-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-o-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }</style
+><noscript
+  ><style amp-boilerplate>
+    body {
+      -webkit-animation: none;
+      -moz-animation: none;
+      -ms-animation: none;
+      animation: none;
+    }
+  </style></noscript
+>
 ```
 
 **Aggiungere** il codice boilerplate in fondo al tag `<head>` del documento.
@@ -220,7 +274,7 @@ Cosa ha portato a dedurre un tipo `container`? Perché non abbiamo indicato l'at
 
 Aggiornare la pagina e controllare il validatore; non si dovrebbe più vedere alcun errore!
 
-Ora abbiamo un documento AMP valido, ma l'immagine non ha un bell'aspetto perché non è ben posizionata nella pagina. Per impostazione predefinita, indicando l'altezza e la larghezza per un elemento [`amp-img`](../../../../documentation/components/reference/amp-img.md), il sistema AMP aggiusterà le dimensioni di conseguenza. Ma non sarebbe ancora meglio se AMP ridimensionasse l'immagine per adattarsi in modo *dinamico* alla pagina, indipendentemente dalle dimensioni dello schermo?
+Ora abbiamo un documento AMP valido, ma l'immagine non ha un bell'aspetto perché non è ben posizionata nella pagina. Per impostazione predefinita, indicando l'altezza e la larghezza per un elemento [`amp-img`](../../../../documentation/components/reference/amp-img.md), il sistema AMP aggiusterà le dimensioni di conseguenza. Ma non sarebbe ancora meglio se AMP ridimensionasse l'immagine per adattarsi in modo _dinamico_ alla pagina, indipendentemente dalle dimensioni dello schermo?
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-not-responsive.png', 412, 660, align='center third', caption="Our image isn't responsive.") }}
 
@@ -229,7 +283,12 @@ Fortunatamente AMP può calcolare le proporzioni degli elementi dalla larghezza 
 Cerchiamo di **impostare** un attributo layout di tipo `responsive` in modo che la nostra immagini si adatti:
 
 ```html
-<amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+<amp-img
+  src="mountains.jpg"
+  layout="responsive"
+  width="266"
+  height="150"
+></amp-img>
 ```
 
 Ecco fatto! La nostra immagine ha le proporzioni corrette e riempie in modo dinamico la larghezza dello schermo.
@@ -243,18 +302,75 @@ Ecco fatto! La nostra immagine ha le proporzioni corrette e riempie in modo dina
 Ora il tuo documento AMP dovrebbe assomigliare a questo:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width" />
 
-    <link rel="canonical" href="/article.html">
-    <link rel="shortcut icon" href="amp_favicon.png">
+    <link rel="canonical" href="/article.html" />
+    <link rel="shortcut icon" href="amp_favicon.png" />
 
     <title>News Article</title>
 
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
     <style amp-custom>
       body {
         width: auto;
@@ -284,15 +400,21 @@ Ora il tuo documento AMP dovrebbe assomigliare a questo:
     <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
-    <header>
-      News Site
-    </header>
+    <header>News Site</header>
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
 
-      <amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+      <amp-img
+        src="mountains.jpg"
+        layout="responsive"
+        width="266"
+        height="150"
+      ></amp-img>
     </article>
   </body>
 </html>

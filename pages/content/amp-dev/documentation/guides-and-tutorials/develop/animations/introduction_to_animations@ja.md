@@ -1,10 +1,10 @@
 ---
-"$title": 複雑なアニメーションの基礎
-"$order": '2'
+'$title': 複雑なアニメーションの基礎
+$order: 2
 description: クラスの追加や削除によって操作できないアニメーション向けに、AMP はアニメーション固有のコンポーネントをいくつか提供しています。これらのコンポーネントはアニメーションに AMP の原則を提供し...
 formats:
-- websites
-- ads
+  - websites
+  - ads
 author: CrystalOnScript
 ---
 
@@ -87,6 +87,7 @@ CSS では、トランジションを使用して、状態間を変化させる�
 タグまたはクラスが同じ要素には、タイミングプロパティを指定し、トップレベルのアニメーションに定義された変数の値をオーバーライドすることができます。
 
 [example preview="top-frame" playground="true" imports="amp-animation"]
+
 ```html
 <body>
   <h1>Hello World!</h1>
@@ -99,7 +100,10 @@ CSS では、トランジションを使用して、状態間を変化させる�
         "selector": "h1",
         "duration": "3s",
         "fill": "both",
-        "keyframes": [{"transform": "translateX(0px)"}, {"transform": "translateX(50%)"}],
+        "keyframes": [
+          {"transform": "translateX(0px)"},
+          {"transform": "translateX(50%)"}
+        ],
         "subtargets": [
           {
             "index": 1,
@@ -114,11 +118,10 @@ CSS では、トランジションを使用して、状態間を変化させる�
       }
     </script>
   </amp-animation>
-  <button on="tap:animateThis.start">
-   start
-  </button>
+  <button on="tap:animateThis.start">start</button>
 </body>
 ```
+
 [/example]
 
 ### チェーンアニメーション
@@ -210,9 +213,14 @@ CSS では、トランジションを使用して、状態間を変化させる�
 [CSS extensions](../../../../documentation/components/reference/amp-animation.md#css-extensions) とともに [`var()` と `calc()` expressions](../../../../documentation/components/reference/amp-animation.md) を使用すると、任意の数の要素で動作する複雑な時限式アニメーションを記述することができます。この方法を使えば、動的なユーザー生成データを簡単かつ滑らかにアニメーションすることができます。
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
-  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-animation"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
+  ></script>
   <style amp-custom>
     .parent {
       perspective: 1000px;
@@ -241,31 +249,44 @@ CSS では、トランジションを使用して、状態間を変化させる�
         "iterations": "1",
         "fill": "both",
         "keyframes": [
-            {"transform": "translate3d(0px, 0px, 0px)"},
-            {"transform": "translate3d(50%, 0px, 100px)"},
-            {"transform": "translate3d(110%, 0px, 0px) rotateY(-20deg)"},
-            {"transform": "translate3d(50%, 0px, -100px)"},
-            {"transform": "translate3d(0px, 0px, -1px)"}
+          {"transform": "translate3d(0px, 0px, 0px)"},
+          {"transform": "translate3d(50%, 0px, 100px)"},
+          {"transform": "translate3d(110%, 0px, 0px) rotateY(-20deg)"},
+          {"transform": "translate3d(50%, 0px, -100px)"},
+          {"transform": "translate3d(0px, 0px, -1px)"}
         ]
       }
     </script>
   </amp-animation>
-  <div class="parent" on="tap:cardAdmin.start" tabindex=none role="animation">
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/7/70/3C.svg" layout="fill"></amp-img>
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/3H.svg" layout="fill"></amp-img>
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/KC.svg" layout="fill"></amp-img>
+  <div class="parent" on="tap:cardAdmin.start" tabindex="none" role="animation">
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/7/70/3C.svg"
+      layout="fill"
+    ></amp-img>
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/3/3a/3H.svg"
+      layout="fill"
+    ></amp-img>
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/e/e1/KC.svg"
+      layout="fill"
+    ></amp-img>
   </div>
 </body>
 ```
+
 [/example]
 
 - 変数 `--duration` を宣言し、値を 2 秒にします。
 - var `--duration` の値に `duration` を設定します。
 - セレクタ `.card`に一致する各要素に適用されたディレイを計算します。
-    1. [`length()` extension](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) を使って、選択された `.card` 要素を計算する
-    2. 長さは、`.card` の [index()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension) を差し引く
-    3. その結果の値を var `--duration` で乗算する
-    4. 要素のディレイに最終合計を秒で適用する
+  1. [`length()` extension](<../../../../documentation/components/reference/amp-animation.md#css-length()-extension>) を使って、選択された `.card` 要素を計算する
+  2. 長さは、`.card` の [index()](<../../../../documentation/components/reference/amp-animation.md#css-index()-extension>) を差し引く
+  3. その結果の値を var `--duration` で乗算する
+  4. 要素のディレイに最終合計を秒で適用する
 - カードが、すべて同時にではなく、順にシャッフルされるように、アニメーションが各要素に個別に適用されます。
 
 この動作をテストするために、AMP Playground でアニメーションを開いて、[`amp-img`](../../../../documentation/components/reference/amp-img) 要素をさらに追加してみてください。
@@ -275,9 +296,10 @@ CSS では、トランジションを使用して、状態間を変化させる�
 アニメーションには、カスタム効果を可能にする [`conditions`](../../../../documentation/components/reference/amp-animation.md#conditions) を含めることができます。[`media` 条件](../../../../documentation/components/reference/amp-animation.md#media-query)を使って任意の画面サイズに対応し、ブラウザの下位互換をサポートするアニメーションを作成するには、[`switch` 文](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement)で [`supports` 条件](../../../../documentation/components/reference/amp-animation.md#supports-condition)を使用します。
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
- <style amp-custom>
+  <style amp-custom>
     .drop {
       width: 20px;
       height: 20px;
@@ -291,50 +313,54 @@ CSS では、トランジションを使用して、状態間を変化させる�
       background: red;
     }
   </style>
-  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-animation"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
+  ></script>
 </head>
 <body>
-<amp-animation id="mediaAnimation" layout="nodisplay">
-  <script type="application/json">
-    {
-      "duration": "1s",
-      "iterations": "4",
-      "fill": "both",
-      "direction": "alternate",
-      "animations": [
-        {
-          "media": "(min-width: 300px)",
-          "selector": ".drop",
-          "keyframes": {
-            "transform": "translate(100vw)"
+  <amp-animation id="mediaAnimation" layout="nodisplay">
+    <script type="application/json">
+      {
+        "duration": "1s",
+        "iterations": "4",
+        "fill": "both",
+        "direction": "alternate",
+        "animations": [
+          {
+            "media": "(min-width: 300px)",
+            "selector": ".drop",
+            "keyframes": {
+              "transform": "translate(100vw)"
+            }
+          },
+          {
+            "media": "(max-width: 300px)",
+            "selector": ".drop",
+            "keyframes": {
+              "transform": "translate(50vw)"
+            }
+          },
+          {
+            "media": "(min-width: 300px)",
+            "selector": ".right",
+            "keyframes": {
+              "transform": "translate(-100vw)"
+            }
+          },
+          {
+            "media": "(max-width: 300px)",
+            "selector": ".right",
+            "keyframes": {
+              "transform": "translate(-50vw)"
+            }
           }
-        },
-        {
-          "media": "(max-width: 300px)",
-          "selector": ".drop",
-          "keyframes": {
-            "transform": "translate(50vw)"
-          }
-        },
-        {
-          "media": "(min-width: 300px)",
-          "selector": ".right",
-          "keyframes": {
-            "transform": "translate(-100vw)"
-          }
-        },
-        {
-          "media": "(max-width: 300px)",
-          "selector": ".right",
-          "keyframes": {
-            "transform": "translate(-50vw)"
-          }
-        }
-      ]
-    }
-  </script>
-</amp-animation>
-    
+        ]
+      }
+    </script>
+  </amp-animation>
+
   <div class="rain">
     <div class="drop"></div>
     <div class="drop right"></div>
@@ -348,4 +374,5 @@ CSS では、トランジションを使用して、状態間を変化させる�
   <button on="tap:mediaAnimation.start">Start</button>
 </body>
 ```
+
 [/example]

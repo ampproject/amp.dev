@@ -1,6 +1,6 @@
 ---
-"$title": Memperbaiki eror validasi
-"$order": '2'
+'$title': Memperbaiki eror validasi
+$order: 2
 description: Pada bagian ini, kita akan memeriksa dan memperbaiki eror validasi AMP dari halaman AMP kita. Harap ketahui bahwa eror mungkin muncul dalam urutan yang berbeda di konsol Anda.
 ---
 
@@ -39,13 +39,13 @@ Untuk tutorial ini, kita akan menggunakan artikel HTML asli yang dikonversi menj
 Lanjutkan dan **tambahkan** kode berikut ini di bawah tag `<meta charset="utf-8" />`:
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 [tip type="note"] Anda dapat membuat halaman AMP kanonis mandiri. Tautan kanonis masih diperlukan, tetapi harus mengarah ke artikel AMP itu sendiri:
 
 ```html
-<link rel="canonical" href="article.amp.html">
+<link rel="canonical" href="article.amp.html" />
 ```
 
 [/tip]
@@ -64,7 +64,7 @@ The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 Eror di atas ini dapat diatasi hanya dengan menambahkan atribut `⚡` ke tag `<html>`, seperti yang berikut ini:
 
 ```html
-<html ⚡ lang="en">
+<html ⚡ lang="en"></html>
 ```
 
 Sekarang, lanjutkan, muat ulang halaman, dan pastikan bahwa kedua eror tersebut sudah tidak ada.
@@ -72,7 +72,7 @@ Sekarang, lanjutkan, muat ulang halaman, dan pastikan bahwa kedua eror tersebut 
 [tip type="note"] Meskipun direkomendasikan untuk menentukan `⚡`, kita juga dapat menggunakan atribut `amp` untuk menggantikan atribut `⚡`, seperti yang berikut ini:
 
 ```html
-<html amp lang="en">
+<html amp lang="en"></html>
 ```
 
 [/tip]
@@ -90,7 +90,7 @@ AMP memerlukan definisi `width` dan `minimum-scale` untuk viewport. Nilai-nilai 
 Untuk memperbaiki eror viewport, tambahkan cuplikan HTML berikut ini ke tag `<head>`:
 
 ```html
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width" />
 ```
 
 Nilai-nilai untuk `width` dan `minimum-scale` wajib ditetapkan di AMP. Menetapkan `initial-scale` tidak wajib dilakukan, tetapi biasanya disertakan dalam pengembangan web seluler dan hal ini direkomendasikan. Anda dapat membaca selengkapnya tentang viewport dan desain yang responsif di [Mengonfigurasi Viewport](https://developers.google.com/speed/docs/insights/ConfigureViewport).
@@ -115,9 +115,7 @@ Masalahnya, ini adalah referensi lembar gaya eksternal. Di AMP, agar kecepatan w
 
 ```html
 <style amp-custom>
-
-/* The content from base.css */
-
+  /* The content from base.css */
 </style>
 ```
 
@@ -150,7 +148,7 @@ Ini secara efektif mengesampingkan penggunaan semua JavaScript buatan pengguna/p
 [tip type="note"] Pembatasan pada skrip buatan pengguna/pihak ketiga tidak berlaku untuk skrip berikut ini:
 
 1. Skrip yang menambahkan metadata ke halaman atau yang mengonfigurasi komponen AMP. Skrip ini akan memiliki atribut jenis `application/ld+json` atau `application/json`.
-2. Skrip yang disertakan dalam iframe.  Menyertakan JavaScript ke dalam iframe harus dianggap sebagai upaya terakhir. Jika memungkinkan, fungsi JavaScript harus diganti dengan menggunakan [Komponen AMP](../../../../documentation/components/index.html). Kita akan mempelajari komponen AMP pertama di bagian selanjutnya. [/tip]
+2. Skrip yang disertakan dalam iframe. Menyertakan JavaScript ke dalam iframe harus dianggap sebagai upaya terakhir. Jika memungkinkan, fungsi JavaScript harus diganti dengan menggunakan [Komponen AMP](../../../../documentation/components/index.html). Kita akan mempelajari komponen AMP pertama di bagian selanjutnya. [/tip]
 
 Coba buka berkas [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) eksternal. Apa yang Anda lihat? Berkas ini tidak boleh berisi kode JavaScript sama sekali dan hanya boleh menyertakan komentar tentang informasi sebagaimana berikut ini:
 
@@ -188,12 +186,68 @@ The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.
 Setiap dokumen AMP memerlukan kode boilerplate AMP berikut ini:
 
 ```html
-<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<style amp-boilerplate>
+  body {
+    -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+  }
+  @-webkit-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-moz-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-ms-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-o-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }</style
+><noscript
+  ><style amp-boilerplate>
+    body {
+      -webkit-animation: none;
+      -moz-animation: none;
+      -ms-animation: none;
+      animation: none;
+    }
+  </style></noscript
+>
 ```
 
 **Tambahkan** kode boilerplate ke bagian bawah tag `<head>` pada dokumen Anda.
 
-Tag `<style amp-boilerplate>`  awalnya menyembunyikan konten di bagian badan sampai perpustakaan JavaScript AMP dimuat, kemudian konten tersebut akan dirender. AMP melakukan ini untuk mencegah agar konten yang tanpa gaya tidak dirender, juga dikenal sebagai Flash Of Unstyled Content (FOUC). Ini membantu memastikan bahwa pengalaman pengguna terasa benar-benar instan karena konten halaman muncul sekaligus dan semua yang ada di paruh atas ditampilkan secara bersamaan. Tag kedua akan membalikkan logika ini jika JavaScript dinonaktifkan di browser.
+Tag `<style amp-boilerplate>` awalnya menyembunyikan konten di bagian badan sampai perpustakaan JavaScript AMP dimuat, kemudian konten tersebut akan dirender. AMP melakukan ini untuk mencegah agar konten yang tanpa gaya tidak dirender, juga dikenal sebagai Flash Of Unstyled Content (FOUC). Ini membantu memastikan bahwa pengalaman pengguna terasa benar-benar instan karena konten halaman muncul sekaligus dan semua yang ada di paruh atas ditampilkan secara bersamaan. Tag kedua akan membalikkan logika ini jika JavaScript dinonaktifkan di browser.
 
 ## Mengganti `<img>` dengan `<amp-img>`
 
@@ -242,7 +296,7 @@ Mengapa jenis `container` disimpulkan? Karena kita tidak menentukan atribut `hei
 
 Segarkan halaman dan periksa validator. Seharusnya sudah tidak muncul eror apa pun!
 
-Anda kini memiliki dokumen AMP yang valid, tetapi gambarnya tidak terlihat bagus karena diposisikan dengan tidak tepat pada halaman. Sebagai standar, jika Anda menentukan tinggi dan lebar untuk [`amp-img`](../../../../documentation/components/reference/amp-img.md), AMP akan memperbaiki dimensi sesuai dengan yang Anda tentukan. Namun, bukankah akan lebih baik jika AMP akan menskalakan gambar agar *secara responsif* meregang dan memenuhi halaman, berapa pun ukuran layarnya?
+Anda kini memiliki dokumen AMP yang valid, tetapi gambarnya tidak terlihat bagus karena diposisikan dengan tidak tepat pada halaman. Sebagai standar, jika Anda menentukan tinggi dan lebar untuk [`amp-img`](../../../../documentation/components/reference/amp-img.md), AMP akan memperbaiki dimensi sesuai dengan yang Anda tentukan. Namun, bukankah akan lebih baik jika AMP akan menskalakan gambar agar _secara responsif_ meregang dan memenuhi halaman, berapa pun ukuran layarnya?
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-not-responsive.png', 412, 660, align='center third', caption="Gambar tidak responsif.") }}
 
@@ -251,7 +305,12 @@ Untungnya, AMP dapat mengetahui rasio aspek elemen dari lebar & tinggi yang Anda
 **Tetapkan** atribut tata letak menjadi `responsive` agar gambar diskalakan dan diubah ukurannya:
 
 ```html
-<amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+<amp-img
+  src="mountains.jpg"
+  layout="responsive"
+  width="266"
+  height="150"
+></amp-img>
 ```
 
 Bagus! Gambar kita memiliki aspek rasio yang benar dan secara responsif memenuhi lebar layar.
@@ -265,18 +324,75 @@ Bagus! Gambar kita memiliki aspek rasio yang benar dan secara responsif memenuhi
 Sekarang dokumen AMP Anda akan terlihat seperti berikut ini:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width" />
 
-    <link rel="canonical" href="/article.html">
-    <link rel="shortcut icon" href="amp_favicon.png">
+    <link rel="canonical" href="/article.html" />
+    <link rel="shortcut icon" href="amp_favicon.png" />
 
     <title>Artikel Berita</title>
 
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
     <style amp-custom>
       body {
         width: auto;
@@ -306,15 +422,21 @@ Sekarang dokumen AMP Anda akan terlihat seperti berikut ini:
     <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
-    <header>
-      Situs Berita
-    </header>
+    <header>Situs Berita</header>
     <article>
       <h1>Nama Artikel</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
 
-      <amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+      <amp-img
+        src="mountains.jpg"
+        layout="responsive"
+        width="266"
+        height="150"
+      ></amp-img>
     </article>
   </body>
 </html>

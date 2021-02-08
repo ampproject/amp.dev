@@ -1,10 +1,10 @@
 ---
-"$title": Pratinjau dan validasi
-"$order": '5'
+'$title': Pratinjau dan validasi
+$order: 5
 description: 'Lihat pratinjau halaman AMP seperti Anda ingin melihat pratinjau situs HTML statis lainnya. Tidak ada langkah build (pembuatan) atau prapemrosesan yang diperlukan. Anda dapat memilih untuk: ....'
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## Pratinjau
@@ -12,7 +12,7 @@ contributors:
 Lihat pratinjau halaman AMP seperti Anda ingin melihat pratinjau situs HTML statis lainnya. Tidak ada langkah build (pembuatan) atau prapemrosesan yang diperlukan. Anda dapat memilih untuk:
 
 - **Membuka halaman secara langsung di browser dari sistem berkas** (elemen tertentu mungkin tidak berfungsi karena kegagalan XMLHttpRequests).
-- **Menggunakan server web lokal, seperti Apache 2 atau Nginx**. *(Kiat: Agar server web cepat, jalankan `python -m SimpleHTTPServer`.)*
+- **Menggunakan server web lokal, seperti Apache 2 atau Nginx**. _(Kiat: Agar server web cepat, jalankan `python -m SimpleHTTPServer`.)_
 
 ## Memvalidasi
 

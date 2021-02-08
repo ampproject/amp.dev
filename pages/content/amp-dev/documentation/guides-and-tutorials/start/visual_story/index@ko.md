@@ -1,10 +1,10 @@
 ---
-"$title": Create your first Web Story
-"$order": '0'
+'$title': Create your first Web Story
+$order: 0
 description: 이 가이드에서는 AMP에서 시각적으로 눈길을 끄는 스토리를 작성하는 데 사용할 수 있는 amp-story 구성요소를 소개합니다. 이 가이드를 ...
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- stories
+  - stories
 author: bpaduch
 ---
 

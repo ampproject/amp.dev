@@ -1,8 +1,8 @@
 ---
-"$title": Formato de AMP for Email
-order: '1'
+'$title': Formato de AMP for Email
+$order: 1
 formats:
-- email
+  - email
 teaser:
   text: 'Etiquetas necesarias '
 toc: 'true'
@@ -40,6 +40,7 @@ El formulario de AMP for Email proporciona [un subconjunto de componentes de AMP
 En el siguiente código se representa la cantidad mínima de etiquetas para generar un mensaje de correo electrónico que sea válido en AMP:
 
 [sourcecode:html]
+
 <!DOCTYPE html>
 <html ⚡4email data-css-strict>
   <head>
@@ -72,21 +73,21 @@ El total de etiquetas AMP HTML no debe exceder los 200,000 bytes.
 
 AMP for Email se basa en el subtipo [MIME](https://en.wikipedia.org/wiki/MIME) estándar `multipart/alternative` como se define en el [RFC 1521, sección 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
-*Para obtener más información, consulte [Estructura y renderización de los correos electrónicos en AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md).*
+_Para obtener más información, consulte [Estructura y renderización de los correos electrónicos en AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md)._
 
 ## Componentes que son compatibles con AMP <a name="supported-amp-components"></a>
 
-*Consulte el artículo [Componentes que son compatibles con AMP for Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md).*
+_Consulte el artículo [Componentes que son compatibles con AMP for Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)._
 
 ## Requisitos de HTML <a name="html-requirements"></a>
 
-*Consulte el artículo [Compatibilidad de HTML con AMP for Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md).*
+_Consulte el artículo [Compatibilidad de HTML con AMP for Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md)._
 
 ## Requisitos del CSS <a name="css-requirements"></a>
 
 ### Selectores y propiedades que son compatibles <a name="supported-selectors-and-properties"></a>
 
-*Consulte el artículo [Compatibilidad de CSS con AMP for Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md).*
+_Consulte el artículo [Compatibilidad de CSS con AMP for Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md)._
 
 ### Cómo especificar CSS en un documento de AMP <a name="specifying-css-in-an-amp-document"></a>
 
@@ -94,6 +95,7 @@ Todas las CSS que se encuentren en cualquier documento de AMP deben estar inclui
 
 [sourcecode:html]
 ...
+
 <style amp-custom>
   /* any custom styles go here. */
   body {
@@ -106,7 +108,9 @@ Todas las CSS que se encuentren en cualquier documento de AMP deben estar inclui
     background-color: grey;
   }
 </style>
+
 ...
+
 </head>
 [/sourcecode]
 

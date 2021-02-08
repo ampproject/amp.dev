@@ -1,9 +1,9 @@
 ---
-"$title": Cómo monetizar su página AMP con anuncios
-"$order": '0'
+'$title': Cómo monetizar su página AMP con anuncios
+$order: 0
 description: En esta guía se proporcionan instrucciones y prácticas recomendadas para mostrar anuncios en sus páginas AMP. Por ejemplo, para mostrar los anuncios en AMP, debe agregar el componente personalizado amp-ad...
 formats:
-- sitios web
+  - sitios web
 ---
 
 This guide provides instructions and best practices for displaying ads on your AMP pages.
@@ -21,7 +21,11 @@ Revisemos los pasos para agregar el componente que le permitirá mostrar anuncio
 El componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) es una extensión publicitaria personalizada de la biblioteca de AMP. Escondido en [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) se encuentra JavaScript personalizado que está cuidadosamente diseñado para optimizar el rendimiento. Para ejecutar el componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), debe agregar el JavaScript necesario para este componente en la sección `head` de su página AMP:
 
 ```html
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script
+  async
+  custom-element="amp-ad"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+></script>
 ```
 
 ### Paso 2: agregue la etiqueta amp-ad a su página AMP
@@ -31,8 +35,7 @@ Más de 100 [servidores y redes de publicidad](ads_vendors.md) ofrecen integraci
 En este ejemplo, estamos agregando un espacio publicitario para publicar anuncios de la red a9:
 
 ```html
-<amp-ad type="a9">
-</amp-ad>
+<amp-ad type="a9"> </amp-ad>
 ```
 
 ### Paso 3: especifique el tamaño del bloque de anuncios
@@ -40,9 +43,7 @@ En este ejemplo, estamos agregando un espacio publicitario para publicar anuncio
 Agregue los atributos `width` y `height` a la etiqueta [`amp-ad`](../../../../documentation/components/reference/amp-ad.md). En este se especifica el tamaño del anuncio en su página AMP:
 
 ```html
-<amp-ad type="a9">
-   width="300" height="250"
-</amp-ad>
+<amp-ad type="a9"> width="300" height="250" </amp-ad>
 ```
 
 ### Step 4: Set ad network parameters
@@ -50,11 +51,14 @@ Agregue los atributos `width` y `height` a la etiqueta [`amp-ad`](../../../../do
 Cada red tiene atributos de datos específicos que necesita para emitir anuncios. Consulte la documentación de la red publicitaria de [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) y agregue los atributos necesarios. En el siguiente ejemplo, la red a9 requiere parámetros adicionales para especificar el tamaño de los anuncios y otros detalles:
 
 ```html
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -63,12 +67,15 @@ Cada red tiene atributos de datos específicos que necesita para emitir anuncios
 Dependiendo de la red publicitaria, puede elegir mostrar un marcador de posición hasta que el anuncio esté disponible para su visualización. Esto proporciona una mejor experiencia al usuario al evitar lagunas. Para especificar un marcador de posición, agregue un elemento secundario con el atributo `placeholder`. Obtenga más información en [Marcadores de posición y respaldos](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ```html
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-   <amp-img placeholder src="placeholder-image.jpg"></amp-img>
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
+  <amp-img placeholder src="placeholder-image.jpg"></amp-img>
 </amp-ad>
 ```
 
@@ -77,12 +84,15 @@ Dependiendo de la red publicitaria, puede elegir mostrar un marcador de posició
 Dependiendo de la red publicitaria, puede elegir mostrar un elemento de respaldo si no hay ningún anuncio disponible para su publicación. Para especificar un respaldo, agregue un elemento secundario con el atributo `fallback`. Obtenga más información en [Marcadores de posición y respaldos](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ```html
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-   <amp-img fallback src="fallback-image.jpg"></amp-img>
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
+  <amp-img fallback src="fallback-image.jpg"></amp-img>
 </amp-ad>
 ```
 
@@ -133,12 +143,12 @@ Estos son algunos consejos para maximizar la eficacia de los anuncios en sus pá
 ### Innovación: ofrecer los productos publicitarios más atractivos
 
 - **Implemente anuncios en páginas AMP auxiliares ** para generar ingresos adicionales:
-    - [Anuncios en carrusel](../../../../documentation/examples/documentation/Carousel_Ad.html)
-    - [Anuncios lightbox](../../../../documentation/examples/documentation/Lightbox_Ad.html)
-    - ... y [muchas otras cosas más](../../../../documentation/examples/index.html)
+  - [Anuncios en carrusel](../../../../documentation/examples/documentation/Carousel_Ad.html)
+  - [Anuncios lightbox](../../../../documentation/examples/documentation/Lightbox_Ad.html)
+  - ... y [muchas otras cosas más](../../../../documentation/examples/index.html)
 - **Implemente nuevos formatos de anuncios de venta directa** para equipar a su equipo de ventas con productos publicitarios innovadores y de alto impacto:
-    - [Anuncios pegadizos](../../../../documentation/examples/documentation/amp-sticky-ad.html)
-    - [Alfombra voladora](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
+  - [Anuncios pegadizos](../../../../documentation/examples/documentation/amp-sticky-ad.html)
+  - [Alfombra voladora](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
 
 ## Recursos adicionales
 

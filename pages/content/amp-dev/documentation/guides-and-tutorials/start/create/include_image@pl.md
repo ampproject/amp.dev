@@ -1,10 +1,10 @@
 ---
-"$title": Dołączanie obrazu
-"$order": '2'
+'$title': Dołączanie obrazu
+$order: 2
 description: Większości znaczników HTML można używać bezpośrednio w AMP HTML, ale niektóre znaczniki, takie jak <img>, są zastępowane równoważnymi lub nieco ulepszonymi znacznikami niestandardowymi AMP HTML.
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 Większości znaczników HTML można używać bezpośrednio w AMP HTML, ale niektóre znaczniki, takie jak `<img>`, są zastępowane równoważnymi lub nieco ulepszonymi znacznikami niestandardowymi AMP HTML (a kilka sprawiających problemy znaczników jest całkowicie zakazanych, patrz [Znaczniki HTML w specyfikacji](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#html-tags)).

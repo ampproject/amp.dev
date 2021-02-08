@@ -1,8 +1,8 @@
 ---
-"$title": Структура и рендеринг AMP-писем
-order: '2'
+'$title': Структура и рендеринг AMP-писем
+$order: 2
 formats:
-- email
+  - email
 teaser:
   text: 'Сообщение электронной почты имеет структуру '
 toc: 'true'
@@ -45,7 +45,7 @@ limitations under the License.
 
 Помимо `text/x-amp-html`, в узле `multipart/alternative` должен быть хотя бы один не-AMP узел (`text/plain` или `text/html`). Он будет показан тем пользователям, чьи почтовые клиенты не поддерживают AMP или которые отключили отображение AMP в настройках своего почтового провайдера.
 
-Примечание. Некоторые почтовые клиенты [[1]](https://openradar.appspot.com/radar?id=6054696888303616) отображают только последний MIME-блок, поэтому мы рекомендуем размещать MIME-блок `text/x-amp-html` *перед* MIME-блоком `text/html`.
+Примечание. Некоторые почтовые клиенты [[1]](https://openradar.appspot.com/radar?id=6054696888303616) отображают только последний MIME-блок, поэтому мы рекомендуем размещать MIME-блок `text/x-amp-html` _перед_ MIME-блоком `text/html`.
 
 ### Особенности операций ответа и пересылки <a name="replyingforwarding-semantics"></a>
 

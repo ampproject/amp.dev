@@ -1,8 +1,8 @@
 ---
-"$title": AMP for Email 対応 CSS
-order: '5'
+'$title': AMP for Email 対応 CSS
+$order: 5
 formats:
-- email
+  - email
 teaser:
   text: このドキュメントでは、AMP メール内で現在サポートされている CSS 機能を概説します。
 toc: 'true'
@@ -327,13 +327,13 @@ limitations under the License.
 
 以下の CSS プロパティには追加の制限事項があります。
 
-プロパティ | 制限事項
---- | ---
-[`cursor`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor) | 許可される値は、`pointer` と `initial` のみです。
-[`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) | `url()` は許可されていません。
-[`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) | `opacity`、`transform`、`visibility`、および `offset-distance` のみをアニメーションできます。
-[`visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) | 許可されている値は `hidden`、`visible`、および `initial` のみです。
-[`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index) | -100 から 100 までの値のみを使用できます。
+| プロパティ                                                                  | 制限事項                                                                                      |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| [`cursor`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor)         | 許可される値は、`pointer` と `initial` のみです。                                             |
+| [`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)         | `url()` は許可されていません。                                                                |
+| [`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) | `opacity`、`transform`、`visibility`、および `offset-distance` のみをアニメーションできます。 |
+| [`visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) | 許可されている値は `hidden`、`visible`、および `initial` のみです。                           |
+| [`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)       | -100 から 100 までの値のみを使用できます。                                                    |
 
 ## @規則（アットマーク規則）<a name="at-rules"></a>
 
@@ -348,14 +348,14 @@ AMP for Email では、カスタムフォントを**使用できません**。
 以下は、`@media` クエリを介した条件付き適用規則の使用がサポートされている[メディア機能](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#Media_features)のリストです。
 
 - [`device-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-width)
-    - `max-device-width`
-    - `min-device-width`
+  - `max-device-width`
+  - `min-device-width`
 - [`hover`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover)
 - [`orientation`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/orientation)
 - [`pointer`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer)
 - [`resolution`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/resolution)
-    - `max-resolution`
-    - `min-resolution`
+  - `max-resolution`
+  - `min-resolution`
 - [`width`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/width)
-    - `max-width`
-    - `min-width`
+  - `max-width`
+  - `min-width`

@@ -1,10 +1,10 @@
 ---
-"$title": İlk AMP e-postanızı oluşturun
-"$order": '0'
+'$title': İlk AMP e-postanızı oluşturun
+$order: 0
 description: İlk e-postanızı oluşturarak AMP e-postalarının neyin farklı kıldığını öğrenin.
 tutorial: 'true'
 formats:
-- email
+  - email
 author: CrystalOnScript
 ---
 
@@ -21,21 +21,25 @@ AMP tarafından desteklenen ilk dinamik e-postanızı oluşturmak ve göndermek 
 AMP playground, E-posta için AMP biçimini destekler ve AMP e-postalarınızı geliştirmenize, test etmenize ve doğrulamanıza olanak tanır. [AMP Playground](https://playground.amp.dev/?runtime=amp4email)'u açın ve sol üst köşesindeki biçimin `AMP for Email` olarak ayarlandığından emin olun. Aşağıdaki kodu görmelisiniz:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email data-css-strict>
-<head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
-  <style amp-custom>
-    h1 {
-      margin: 1rem;
-    }
-  </style>
-</head>
-<body>
-  <h1>Hello, I am an AMP EMAIL!</h1>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+    <style amp-custom>
+      h1 {
+        margin: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello, I am an AMP EMAIL!</h1>
+  </body>
 </html>
 ```
 
@@ -53,15 +57,17 @@ Daha önce e-postalarla çalıştıysanız, bir e-postaya bir komut dosyası yer
 
 # Bir resim ekleyin
 
-E-postalarda kullanılan HTML etiketlerinin çoğu AMP e-postalarında kullanılabilir. Bununla birlikte, `<img>` etiketi gibi bazı etiketler, AMP eşdeğeri  [`<amp-img>`](/content/amp-dev/documentation/components/reference/amp-img.md) ile değiştirilir.
+E-postalarda kullanılan HTML etiketlerinin çoğu AMP e-postalarında kullanılabilir. Bununla birlikte, `<img>` etiketi gibi bazı etiketler, AMP eşdeğeri [`<amp-img>`](/content/amp-dev/documentation/components/reference/amp-img.md) ile değiştirilir.
 
 `<amp-img>` etiketi, görüntünün genişliğinin ve yüksekliğinin tanımlanmasını gerektirir. `<img>`'den farklı olarak `<amp-img>`, <code></amp-img></code> ile açıkça kapatılmalıdır.
 
 ```html
-<amp-img src="https://link/to/img.jpg"
-         alt="photo description"
-         width="100"
-         height="100">
+<amp-img
+  src="https://link/to/img.jpg"
+  alt="photo description"
+  width="100"
+  height="100"
+>
 </amp-img>
 ```
 
@@ -75,10 +81,12 @@ Aşağıdaki kodu ekleyerek ilk e-postamıza bir resim ekleyebiliriz.
 
 ```html
 <body>
-  <amp-img src="https://placekitten.com/800/400"
-           alt="Welcome"
-           width="800"
-           height="400">
+  <amp-img
+    src="https://placekitten.com/800/400"
+    alt="Welcome"
+    width="800"
+    height="400"
+  >
   </amp-img>
 </body>
 ```
@@ -108,17 +116,24 @@ Bu eğitimde, sahiplendirmek üzere kedilerin fotoğraflarını görüntülemek 
 E-postanızın başına `amp-carousel` komut dosyasını ekleyin.
 
 ```html
-  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script
+  async
+  custom-element="amp-carousel"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+></script>
 ```
 
 Ardından ilk görüntümüzü `<amp-carousel>` etiketlerine yerleştirin.
 
 ```html
-<amp-carousel layout="responsive"
-              width="800"
-              height="400"
-              type="slides">
-        <amp-img layout="fill" src="https://placekitten.com/800/400"  alt="Welcome" height="400" width="800"></amp-img>
+<amp-carousel layout="responsive" width="800" height="400" type="slides">
+  <amp-img
+    layout="fill"
+    src="https://placekitten.com/800/400"
+    alt="Welcome"
+    height="400"
+    width="800"
+  ></amp-img>
 </amp-carousel>
 ```
 
@@ -127,17 +142,35 @@ Hiçbir şeyin değişmediğini fark edebilirsiniz ve bu iyi bir şeydir! Resim 
 Ardından, yerleştirilen kedi yavrusu görüntüsünü, `<amp-carousel>` içinde sahiplendirmek için AMP kedilerinizle değiştirin.
 
 ```html
-<amp-carousel id="carousel-with-preview"
-    width="800"
-    height="400"
-    layout="responsive"
-    type="slides"
-    on="slideChange:AMP.setState({currentCat: event.index})">
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_caleb_woods.jpg"  alt="photo courtesy of Unsplash"></amp-img>
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_craig_mclaclan.jpg"  alt="photo courtesy of Unsplash"></amp-img>
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_lightscape.jpg"  alt="photo courtesy of Unsplash"></amp-img>
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_nick_karvounis.jpg"  alt="photo courtesy of Unsplash"></amp-img>
- </amp-carousel>
+<amp-carousel
+  id="carousel-with-preview"
+  width="800"
+  height="400"
+  layout="responsive"
+  type="slides"
+  on="slideChange:AMP.setState({currentCat: event.index})"
+>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_caleb_woods.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_craig_mclaclan.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_lightscape.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_nick_karvounis.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+</amp-carousel>
 ```
 
 Artık resim döngüsünün sol veya sağ tarafındaki gezinme oklarını tıklayarak fotoğrafları değiştirebilmelisiniz!
@@ -182,48 +215,55 @@ Klasik olarak, e-postalar yalnızca durağan içeriğe izin verir. AMP sayesinde
 Bu eğitimde, kullanıcı o kedinin slaytında olduğunda, sahiplendirilebilir kedimizin adını ve açıklamasını görüntülemek için [`<amp-bind>`](/content/amp-dev/documentation/components/reference/amp-bind.md) kullanacağız. `amp-bind` komut dosyasını e-postanızın başına ekleyerek başlayın.
 
 ```html
- <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script
+  async
+  custom-element="amp-bind"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+></script>
 ```
 
 Ardından, bir [`<amp-state>`](/content/amp-dev/documentation/components/reference/amp-bind.md#state) etiketi içinde bir JSON dizesi olarak bir "myState" AMP bind değişkenini tanımlayacağız. Dört kedi fotoğrafımız olduğu için, dördü için de durum ekleyeceğiz.
 
 ```html
 <body>
-<amp-state id="myState">
-  <script type="application/json">
-    {
-      "cats": [
-         {
-          "name": "Aakash",
-          "description": "Very sweet gentleman that is quite shy in a shelter environment. He may hide under his blanket upon initial approach, but he is an affectionate lovebug."
-        },
-        {
-          "name": "Filip",
-          "description": "Friendly and enjoys pets and head rubs. Is known to sit on keyboards and refuses to touch anything with catnip on it."
-        },
-        {
-          "name": "Julian",
-          "description": "Both bold and extremely sweet. Wastes no time in investigating new smells, objects, and places, but enjoys lazing in the sun!"
-        },
-        {
-          "name": "John",
-          "description": "This playful and spirited cat would like to be outside his kennel and will be so happy when he gets to his forever home with more room to move."
-        }
-      ]
-    }
-  </script>
-</amp-state>
+  <amp-state id="myState">
+    <script type="application/json">
+      {
+        "cats": [
+          {
+            "name": "Aakash",
+            "description": "Very sweet gentleman that is quite shy in a shelter environment. He may hide under his blanket upon initial approach, but he is an affectionate lovebug."
+          },
+          {
+            "name": "Filip",
+            "description": "Friendly and enjoys pets and head rubs. Is known to sit on keyboards and refuses to touch anything with catnip on it."
+          },
+          {
+            "name": "Julian",
+            "description": "Both bold and extremely sweet. Wastes no time in investigating new smells, objects, and places, but enjoys lazing in the sun!"
+          },
+          {
+            "name": "John",
+            "description": "This playful and spirited cat would like to be outside his kennel and will be so happy when he gets to his forever home with more room to move."
+          }
+        ]
+      }
+    </script>
+  </amp-state>
+</body>
 ```
 
 [AMP eylemleri ve olayları](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md) farklı durumları tetikler. Bizim durumumuzda, kullanıcı resim döngüsündeki gezinti oklarına tıkladığında durumu güncellemek istiyoruz. amp-carousel, `AMP.setState` kullanarak `currentCat` değişkenini güncelleyeceğimiz bir [`slideChange`](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp-carouseltypeslides) olayını tetikler.
 
 ```html
 <h1>Adorable Adoptable Animals</h1>
-<amp-carousel width="800"
-              height="400"
-              layout="responsive"
-              type="slides"
-              on="slideChange:AMP.setState({ currentCat: event.index} )">
+<amp-carousel
+  width="800"
+  height="400"
+  layout="responsive"
+  type="slides"
+  on="slideChange:AMP.setState({ currentCat: event.index} )"
+>
   ...
 </amp-carousel>
 ```

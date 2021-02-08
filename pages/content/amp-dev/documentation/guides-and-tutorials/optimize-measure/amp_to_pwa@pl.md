@@ -1,10 +1,10 @@
 ---
-"$title": Zmień swoją witrynę AMP w PWA
-"$order": '10'
+'$title': Zmień swoją witrynę AMP w PWA
+$order: 10
 description: Dzięki buforowaniu zasobów w przeglądarce PWA jest w stanie dostarczać użytkownikowi dane, zasoby i strony offline utrzymujące zaangażowanie i zapewniające informacje.
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: crystalonscript
 ---
 

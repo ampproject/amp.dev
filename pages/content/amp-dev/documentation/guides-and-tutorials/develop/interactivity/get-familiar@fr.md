@@ -1,6 +1,6 @@
 ---
-"$title": Initiation au code de démarrage
-"$order": '1'
+'$title': Initiation au code de démarrage
+$order: 1
 description: "Une page AMP est une page HTML dotée de certaines restrictions pour des performances fiables. Les pages AMP comportent un balisage légèrement spécial qui l'identifie en tant que page AMP."
 ---
 
@@ -90,10 +90,26 @@ Une page AMP simple ressemble à ceci:
 Le code de démarrage de ce tutoriel, ( [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html)), s'appuie sur une page AMP simple avec son contenu (images, texte, etc.) ainsi que sur quelques composants AMP:
 
 ```html
-<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
-<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
-<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-<script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+<script
+  async
+  custom-element="amp-carousel"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+></script>
+<script
+  async
+  custom-template="amp-mustache"
+  src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"
+></script>
+<script
+  async
+  custom-element="amp-form"
+  src="https://cdn.ampproject.org/v0/amp-form-0.1.js"
+></script>
+<script
+  async
+  custom-element="amp-selector"
+  src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"
+></script>
 ```
 
 Les composants AMP offrent des fonctionnalités supplémentaires et des composants d'interface utilisateur qui ajoutent une interactivité riche aux pages AMP. Le code de démarrage utilise les composants AMP suivants:

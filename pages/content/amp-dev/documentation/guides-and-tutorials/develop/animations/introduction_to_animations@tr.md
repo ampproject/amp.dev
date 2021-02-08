@@ -1,10 +1,10 @@
 ---
-"$title": Karmaşık animasyonlara giriş
-"$order": '2'
+'$title': Karmaşık animasyonlara giriş
+$order: 2
 description: '"Sınıflar ekleyerek ve kaldırarak yönetilemeyen animasyonlar için AMP, animasyona özgü birkaç bileşen sunar. Bu bileşenler, AMP''nin ilkelerini animasyonlara uygular: bunlar hızlı, verimli ve kullanıcı önceliğidir."'
 formats:
-- websites
-- ads
+  - websites
+  - ads
 author: CrystalOnScript
 ---
 
@@ -41,7 +41,7 @@ Temel bir [`amp-animation`](../../../../documentation/components/reference/amp-a
 
 ### Seçici
 
-CSS'ye çok benzer şekilde, [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) bileşeni,  `"selector"` alanında öğenin etiket adını, sınıfını veya kimliğini bildirerek animasyon özelliklerini öğeye bağlar. Bileşen, bildirilen etiket türü veya sınıf adıyla her öğeyi canlandırır. Tek bir öğeyi canlandırdığınızdan emin olmak için bir kimlik kullanın.
+CSS'ye çok benzer şekilde, [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) bileşeni, `"selector"` alanında öğenin etiket adını, sınıfını veya kimliğini bildirerek animasyon özelliklerini öğeye bağlar. Bileşen, bildirilen etiket türü veya sınıf adıyla her öğeyi canlandırır. Tek bir öğeyi canlandırdığınızdan emin olmak için bir kimlik kullanın.
 
 ### Zamanlama özelliği
 
@@ -87,6 +87,7 @@ Animasyon, [`amp-animation`](../../../../documentation/components/reference/amp-
 Aynı etiketin veya sınıfın öğeleri belirli zamanlama özelliklerine sahip olabilir ve üst düzey animasyonda tanımlanan değişkenlerin değerlerini geçersiz kılabilir.
 
 [example preview="top-frame" playground="true" imports="amp-animation"]
+
 ```html
 <body>
   <h1>Hello World!</h1>
@@ -99,7 +100,10 @@ Aynı etiketin veya sınıfın öğeleri belirli zamanlama özelliklerine sahip 
         "selector": "h1",
         "duration": "3s",
         "fill": "both",
-        "keyframes": [{"transform": "translateX(0px)"}, {"transform": "translateX(50%)"}],
+        "keyframes": [
+          {"transform": "translateX(0px)"},
+          {"transform": "translateX(50%)"}
+        ],
         "subtargets": [
           {
             "index": 1,
@@ -114,11 +118,10 @@ Aynı etiketin veya sınıfın öğeleri belirli zamanlama özelliklerine sahip 
       }
     </script>
   </amp-animation>
-  <button on="tap:animateThis.start">
-   start
-  </button>
+  <button on="tap:animateThis.start">start</button>
 </body>
 ```
+
 [/example]
 
 ### Zincirleme animasyonlar
@@ -210,9 +213,14 @@ Daha büyük animasyonlar için, `animations` dizisi içindeki animasyonlar diğ
 [CSS eklentileriyle](../../../../documentation/components/reference/amp-animation.md#css-extensions) birlikte [`var()` ve `calc()` eklentilerini](../../../../documentation/components/reference/amp-animation.md) kullanarak, herhangi bir sayıda öğeyle çalışan karmaşık ve zamanlanmış animasyonlar yazabilirsiniz. Bu, dinamik ve kullanıcı tarafından oluşturulan verilerin kolaylıkla ve akışkanlıkla canlandırılmasını sağlar.
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
-  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-animation"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
+  ></script>
   <style amp-custom>
     .parent {
       perspective: 1000px;
@@ -241,31 +249,44 @@ Daha büyük animasyonlar için, `animations` dizisi içindeki animasyonlar diğ
         "iterations": "1",
         "fill": "both",
         "keyframes": [
-            {"transform": "translate3d(0px, 0px, 0px)"},
-            {"transform": "translate3d(50%, 0px, 100px)"},
-            {"transform": "translate3d(110%, 0px, 0px) rotateY(-20deg)"},
-            {"transform": "translate3d(50%, 0px, -100px)"},
-            {"transform": "translate3d(0px, 0px, -1px)"}
+          {"transform": "translate3d(0px, 0px, 0px)"},
+          {"transform": "translate3d(50%, 0px, 100px)"},
+          {"transform": "translate3d(110%, 0px, 0px) rotateY(-20deg)"},
+          {"transform": "translate3d(50%, 0px, -100px)"},
+          {"transform": "translate3d(0px, 0px, -1px)"}
         ]
       }
     </script>
   </amp-animation>
-  <div class="parent" on="tap:cardAdmin.start" tabindex=none role="animation">
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/7/70/3C.svg" layout="fill"></amp-img>
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/3H.svg" layout="fill"></amp-img>
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/KC.svg" layout="fill"></amp-img>
+  <div class="parent" on="tap:cardAdmin.start" tabindex="none" role="animation">
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/7/70/3C.svg"
+      layout="fill"
+    ></amp-img>
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/3/3a/3H.svg"
+      layout="fill"
+    ></amp-img>
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/e/e1/KC.svg"
+      layout="fill"
+    ></amp-img>
   </div>
 </body>
 ```
+
 [/example]
 
 - Bir değişkeni `--duration` olarak bildirir ve iki saniyelik bir değer verir.
 - `duration` değerini var `--duration` değerine ayarlar.
 - `.card` seçicisine karşılık gelen her öğeye uygulanan gecikmeyi hesaplar.
-    1. [`length()` eklentisi](../../../../documentation/components/reference/amp-animation.md#css-length()-extension), kaç tane `.card` öğesinin seçildiğini hesaplar
-    2. Uzunluk daha sonra her `.card`'in [index()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension) çıkarır
-    3. Elde edilen değer var `--duration` ile çarpılır
-    4. Son toplam, bu öğenin gecikmesine saniyeler içinde uygulanır
+  1. [`length()` eklentisi](<../../../../documentation/components/reference/amp-animation.md#css-length()-extension>), kaç tane `.card` öğesinin seçildiğini hesaplar
+  2. Uzunluk daha sonra her `.card`'in [index()](<../../../../documentation/components/reference/amp-animation.md#css-index()-extension>) çıkarır
+  3. Elde edilen değer var `--duration` ile çarpılır
+  4. Son toplam, bu öğenin gecikmesine saniyeler içinde uygulanır
 - Animasyon, her bir öğeye ayrı ayrı uygulanır. Böylece kartlar aynı anda değil, birbiri ardına karıştırılır.
 
 AMP oyun alanında animasyonu açın ve bu davranışı test etmek için daha fazla [`amp-img`](../../../../documentation/components/reference/amp-img) öğesi ekleyin.
@@ -275,9 +296,10 @@ AMP oyun alanında animasyonu açın ve bu davranışı test etmek için daha fa
 Animasyonlar, özelleştirilmiş efektlere izin veren [`koşullar`](../../../../documentation/components/reference/amp-animation.md#conditions) içerebilir. Animasyonları [`media` koşulu](../../../../documentation/components/reference/amp-animation.md#media-query) aracılığıyla herhangi bir ekran boyutuna uyarlayın ve bir [`switch` ifadesindeki](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement) [`supports` koşullarını](../../../../documentation/components/reference/amp-animation.md#supports-condition) etkinleştirerek geriye dönük tarayıcı uyumluluğunu destekler.
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
- <style amp-custom>
+  <style amp-custom>
     .drop {
       width: 20px;
       height: 20px;
@@ -291,50 +313,54 @@ Animasyonlar, özelleştirilmiş efektlere izin veren [`koşullar`](../../../../
       background: red;
     }
   </style>
-  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-animation"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
+  ></script>
 </head>
 <body>
-<amp-animation id="mediaAnimation" layout="nodisplay">
-  <script type="application/json">
-    {
-      "duration": "1s",
-      "iterations": "4",
-      "fill": "both",
-      "direction": "alternate",
-      "animations": [
-        {
-          "media": "(min-width: 300px)",
-          "selector": ".drop",
-          "keyframes": {
-            "transform": "translate(100vw)"
+  <amp-animation id="mediaAnimation" layout="nodisplay">
+    <script type="application/json">
+      {
+        "duration": "1s",
+        "iterations": "4",
+        "fill": "both",
+        "direction": "alternate",
+        "animations": [
+          {
+            "media": "(min-width: 300px)",
+            "selector": ".drop",
+            "keyframes": {
+              "transform": "translate(100vw)"
+            }
+          },
+          {
+            "media": "(max-width: 300px)",
+            "selector": ".drop",
+            "keyframes": {
+              "transform": "translate(50vw)"
+            }
+          },
+          {
+            "media": "(min-width: 300px)",
+            "selector": ".right",
+            "keyframes": {
+              "transform": "translate(-100vw)"
+            }
+          },
+          {
+            "media": "(max-width: 300px)",
+            "selector": ".right",
+            "keyframes": {
+              "transform": "translate(-50vw)"
+            }
           }
-        },
-        {
-          "media": "(max-width: 300px)",
-          "selector": ".drop",
-          "keyframes": {
-            "transform": "translate(50vw)"
-          }
-        },
-        {
-          "media": "(min-width: 300px)",
-          "selector": ".right",
-          "keyframes": {
-            "transform": "translate(-100vw)"
-          }
-        },
-        {
-          "media": "(max-width: 300px)",
-          "selector": ".right",
-          "keyframes": {
-            "transform": "translate(-50vw)"
-          }
-        }
-      ]
-    }
-  </script>
-</amp-animation>
-    
+        ]
+      }
+    </script>
+  </amp-animation>
+
   <div class="rain">
     <div class="drop"></div>
     <div class="drop right"></div>
@@ -348,4 +374,5 @@ Animasyonlar, özelleştirilmiş efektlere izin veren [`koşullar`](../../../../
   <button on="tap:mediaAnimation.start">Start</button>
 </body>
 ```
+
 [/example]

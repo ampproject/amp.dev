@@ -1,13 +1,13 @@
 ---
-"$title": Contributi alla documentazione
-"$order": '0'
-"$hidden": 'true'
+'$title': Contributi alla documentazione
+$order: 0
+'$hidden': 'true'
 description: Come iniziare a contribuire alla documentazione di amp.dev
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 

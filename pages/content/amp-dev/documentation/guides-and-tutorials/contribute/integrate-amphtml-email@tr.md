@@ -1,9 +1,9 @@
 ---
-"$title": E-posta için AMP - E-posta Sağlayıcı entegrasyonu
-"$order": '5'
+'$title': E-posta için AMP - E-posta Sağlayıcı entegrasyonu
+$order: 5
 description: AMP ile entegrasyon için e-posta istemcileri ve sağlayıcıları için bilgiler.
 formats:
-- email
+  - email
 ---
 
 Şu anda E-posta için AMP'yi entegre etme konusunda kapsamlı bir kılavuz yazmak için çalışıyoruz.

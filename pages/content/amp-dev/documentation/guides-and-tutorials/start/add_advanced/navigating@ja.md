@@ -1,6 +1,6 @@
 ---
-"$title": Navigating your site
-"$order": '5'
+'$title': Navigating your site
+$order: 5
 description: モバイルサイトには通常、サイトのナビゲーションメニューを設けます。こうしたメニューにはさまざまな形式があります。このチュートリアルでは、AMP ページでのナビゲーション ...
 ---
 
@@ -18,9 +18,14 @@ description: モバイルサイトには通常、サイトのナビゲーショ�
 ```html
 <header class="headerbar">
   <a href="homepage.html">
-    <amp-img class="home-button" src="icons/home.png" width="36" height="36"></amp-img>
+    <amp-img
+      class="home-button"
+      src="icons/home.png"
+      width="36"
+      height="36"
+    ></amp-img>
   </a>
- <div class="site-name">News Site</div>
+  <div class="site-name">News Site</div>
 </header>
 ```
 
@@ -62,14 +67,20 @@ article {
 まず、[`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) コンポーネントの JavaScript を `<head>` タグに**追加**します。
 
 ```html
-<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+<script
+  async
+  custom-element="amp-sidebar"
+  src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"
+></script>
 ```
 
 次に、メニュー アイコンが表示されるようにします。このアイコンがタップされると、サイドバーが開きます。`<header>` を次のコードに**置き換えて**、ホームアイコンの代わりに ["ハンバーガー"](https://en.wikipedia.org/wiki/Hamburger_button) アイコンを表示します。
 
 ```html
 <header class="headerbar">
-  <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
+  <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">
+    ☰
+  </div>
   <div class="site-name">News Site</div>
 </header>
 ```
@@ -80,7 +91,15 @@ article {
 
 ```html
 <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
-  <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
+  <div
+    role="button"
+    aria-label="close sidebar"
+    on="tap:sidebar1.toggle"
+    tabindex="0"
+    class="close-sidebar"
+  >
+    ✕
+  </div>
   <ul class="sidebar">
     <li><a href="#">Example 1</a></li>
     <li><a href="#">Example 2</a></li>
@@ -103,7 +122,7 @@ article {
 }
 .sidebar > li {
   list-style: none;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 .sidebar a {
   text-decoration: none;

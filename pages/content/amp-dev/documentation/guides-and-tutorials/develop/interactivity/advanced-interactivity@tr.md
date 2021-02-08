@@ -1,6 +1,6 @@
 ---
-"$title": Etkileşimi geliştirme
-"$order": '2'
+'$title': Etkileşimi geliştirme
+$order: 2
 description: 'Başlangıç kodu oldukça basit bir kullanıcı deneyimi sağlar. Bunu iyileştirmenin birkaç yolu var\: - Geçerli slaydı ve toplam slayt sayısını gösteren bir gösterge ekleyin.'
 ---
 
@@ -18,8 +18,11 @@ Başlangıç kodu oldukça basit bir kullanıcı deneyimi sağlar. Bunu iyileşt
 [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html) dosyasını açın ve aşağıdaki komut dosyasını sayfanın `<head>` bölümündeki AMP bileşenleri listesine ekleyin:
 
 ```html
-<script async custom-element="amp-bind"
-    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script
+  async
+  custom-element="amp-bind"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+></script>
 ```
 
 ## Slayt göstergesi ekleme
@@ -43,7 +46,7 @@ Resim döngüsünde halihazırda görüntülenen slaydın dizinini takip etmek i
 [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) öğelerindeki verilere, ilişkili ID ile erişilebilir. Örneğin, bu değişkene aşağıdaki ifade parçası ile başvurabiliriz:
 
 ```javascript
-selected.slide // Evaluates to 0.
+selected.slide; // Evaluates to 0.
 ```
 
 ### Slayt durumunu güncelleme
@@ -51,8 +54,13 @@ selected.slide // Evaluates to 0.
 Ardından, kullanıcı mevcut [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) öğesine aşağıdaki `"on"` eylemini ekleyerek resim döngüsü üzerindeki slaytları değiştirdiğinde bu değişkeni güncelleyelim:
 
 ```html
-<amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
-    on="slideChange:AMP.setState({selected: {slide: event.index}})">
+<amp-carousel
+  type="slides"
+  layout="fixed-height"
+  height="250"
+  id="carousel"
+  on="slideChange:AMP.setState({selected: {slide: event.index}})"
+></amp-carousel>
 ```
 
 Şimdi, [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) için görüntülenen slayt değiştiğinde, `AMP.setState` eylemi aşağıdaki bağımsız değişkenle çağrılacaktır:
@@ -60,12 +68,12 @@ Ardından, kullanıcı mevcut [`amp-carousel`](../../../../documentation/compone
 ```javascript
 {
   selected: {
-    slide: event.index
+    slide: event.index;
   }
 }
 ```
 
-`event.index` ifadesi, yeni slayt dizini olarak değerlendirilir ve  `AMP.setState()` eylemi, bu nesneyi gerçek durumuyla birleştirir. Bu, `selected.slide`'in geçerli değerini `event.index` değeriyle değiştirir.
+`event.index` ifadesi, yeni slayt dizini olarak değerlendirilir ve `AMP.setState()` eylemi, bu nesneyi gerçek durumuyla birleştirir. Bu, `selected.slide`'in geçerli değerini `event.index` değeriyle değiştirir.
 
 [tip type="tip"] **İPUCU –** `AMP.setState()`, iç içe geçmiş nesne değişmezlerinin derin bir birleşimini gerçekleştirir. Daha fazla ayrıntı için [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) belgelerine bakın. [/tip]
 
@@ -177,8 +185,10 @@ Seçilen SKU'yu izleyen başka bir durum değişkeni eklersek, seçilen SKU değ
 [`amp-selector`](../../../../documentation/components/reference/amp-selector.md)'e, yeni bir renk seçildiğinde `selected.sku` değişkenini güncelleyen bir "on" eylemi ekleyin:
 
 ```html
-<amp-selector name="color"
-    on="select:AMP.setState({selected: {sku: event.targetOption}})">
+<amp-selector
+  name="color"
+  on="select:AMP.setState({selected: {sku: event.targetOption}})"
+></amp-selector>
 ```
 
 [tip type="tip"] **İPUCU –** Bu, [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) içindeki her bir [`amp-img`](../../../../documentation/components/reference/amp-img.md) alt öğesine `on="tap:AMP.setState(...)` eylemleri eklenerek de yapılabilir. [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) ile ilgili harika şeylerden biri, bu gibi şekillerde işaretlemeyi basitleştirmesidir. [/tip]
@@ -189,14 +199,26 @@ Ardından, [`amp-img`](../../../../documentation/components/reference/amp-img.md
 
 ```html
 <!-- Update the `src` of each <amp-img> when the `selected.sku` variable changes. -->
-<amp-img width=200 height=250 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=300 height=375 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=400 height=500 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
+<amp-img
+  width="200"
+  height="250"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="300"
+  height="375"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="400"
+  height="500"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
 ```
 
-[tip type="note"] **NOT –**  Uygulamada, resim döngüsü içindeki her görüntü muhtemelen farklı bir `src` sahip olacaktır. Bu, tek görüntüyü bir dizi görüntü ile değiştirerek yapılabilir. Basit olması için, bu öğretici farklı büyütmelerde tek bir görüntü kullanır. [/tip]
+[tip type="note"] **NOT –** Uygulamada, resim döngüsü içindeki her görüntü muhtemelen farklı bir `src` sahip olacaktır. Bu, tek görüntüyü bir dizi görüntü ile değiştirerek yapılabilir. Basit olması için, bu öğretici farklı büyütmelerde tek bir görüntü kullanır. [/tip]
 
 **Deneyin**: Sayfayı yenileyin ve gömlek için farklı bir renk seçin. Bunu yaptığınızda, resim döngüsündeki görüntüler seçilen renkteki gömlekleri gösterecek şekilde güncellenir.

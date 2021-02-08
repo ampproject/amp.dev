@@ -1,13 +1,13 @@
 ---
-"$title": Tích hợp công nghệ của bạn với AMP
-"$order": '0'
-"$hidden": 'true'
+'$title': Tích hợp công nghệ của bạn với AMP
+$order: 0
+'$hidden': 'true'
 description: Nếu bạn là một đơn vị cung cấp công nghệ cho các nhà phát hành hay nhà quảng cáo trên web, chúng tôi mời bạn bổ sung hỗ trợ cho AMP để các khách hàng của bạn có thể tiếp tục...
 formats:
-- websites
-- ads
-- stories
-- email
+  - websites
+  - ads
+  - stories
+  - email
 ---
 
 Cảm ơn bạn đã quan tâm đến việc đóng góp cho AMP! Chúng tôi rất coi trọng việc bạn tham gia để thúc đẩy một nền tảng web ưu tiên đến người dùng.

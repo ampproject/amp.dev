@@ -1,6 +1,6 @@
 ---
-"$title": Theo dõi các lượt xem quảng cáo
-"$order": '2'
+'$title': Theo dõi các lượt xem quảng cáo
+$order: 2
 description: Trong các quảng cáo AMPHTML, bạn có thể theo dõi các số liệu với thành phần amp-pixel hoặc amp-analytics. Trong đoạn code mẫu cơ bản của chúng ta, chúng ta sẽ bổ sung khả năng theo dõi lượt xem trang...
 ---
 
@@ -9,11 +9,14 @@ Trong các quảng cáo AMPHTML, bạn có thể theo dõi các số liệu vớ
 ```html
 <body>
   <a target="_blank" href="https://www.amp.dev">
-    <amp-img width="300" height="250"
-        alt="Learn amp"
-        src="/static/img/docs/ads/amp-300x250.png"></amp-img>
+    <amp-img
+      width="300"
+      height="250"
+      alt="Learn amp"
+      src="/static/img/docs/ads/amp-300x250.png"
+    ></amp-img>
   </a>
-<amp-pixel src="https://www.amp.dev/tracker/foo"></amp-pixel>
+  <amp-pixel src="https://www.amp.dev/tracker/foo"></amp-pixel>
 </body>
 ```
 

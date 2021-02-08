@@ -1,10 +1,10 @@
 ---
-"$title": Pengantar untuk animasi kompleks
-"$order": '2'
+'$title': Pengantar untuk animasi kompleks
+$order: 2
 description: Untuk animasi yang tidak dapat digerakkan dengan menambahkan dan menghapus kelas, AMP menawarkan beberapa komponen yang spesifik untuk animasi. Komponen-komponen ini menerapkan prinsip-prinsip AMP pada animasi ....
 formats:
-- websites
-- ads
+  - websites
+  - ads
 author: CrystalOnScript
 ---
 
@@ -87,6 +87,7 @@ Membuat suatu animasi dalam [`amp-animation`](../../../../documentation/componen
 Elemen tag atau kelas yang sama dapat mempunyai properti penghitungan waktu yang ditentukan dan menimpa nilai-nilai variabel yang telah ditentukan pada animasi tingkat atas.
 
 [example preview="top-frame" playground="true" imports="amp-animation"]
+
 ```html
 <body>
   <h1>Hello World!</h1>
@@ -99,7 +100,10 @@ Elemen tag atau kelas yang sama dapat mempunyai properti penghitungan waktu yang
         "selector": "h1",
         "duration": "3s",
         "fill": "both",
-        "keyframes": [{"transform": "translateX(0px)"}, {"transform": "translateX(50%)"}],
+        "keyframes": [
+          {"transform": "translateX(0px)"},
+          {"transform": "translateX(50%)"}
+        ],
         "subtargets": [
           {
             "index": 1,
@@ -114,11 +118,10 @@ Elemen tag atau kelas yang sama dapat mempunyai properti penghitungan waktu yang
       }
     </script>
   </amp-animation>
-  <button on="tap:animateThis.start">
-   start
-  </button>
+  <button on="tap:animateThis.start">start</button>
 </body>
 ```
+
 [/example]
 
 ### Animasi berantai
@@ -210,9 +213,14 @@ Untuk animasi yang lebih besar, animasi di dalam susunan `animations` mampu meru
 Dengan menggunakan [ekspresi `var()` dan `calc()`](../../../../documentation/components/reference/amp-animation.md) bersama [ekstensi CSS](../../../../documentation/components/reference/amp-animation.md#css-extensions), Anda dapat menulis animasi yang kompleks dan terjadwal yang berfungsi dengan berapa pun jumlah elemen. Ini memungkinkan data yang dibuat pengguna dan data yang dinamis dapat dianimasi dengan mudah dan mulus.
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
-  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-animation"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
+  ></script>
   <style amp-custom>
     .parent {
       perspective: 1000px;
@@ -241,31 +249,44 @@ Dengan menggunakan [ekspresi `var()` dan `calc()`](../../../../documentation/com
         "iterations": "1",
         "fill": "both",
         "keyframes": [
-            {"transform": "translate3d(0px, 0px, 0px)"},
-            {"transform": "translate3d(50%, 0px, 100px)"},
-            {"transform": "translate3d(110%, 0px, 0px) rotateY(-20deg)"},
-            {"transform": "translate3d(50%, 0px, -100px)"},
-            {"transform": "translate3d(0px, 0px, -1px)"}
+          {"transform": "translate3d(0px, 0px, 0px)"},
+          {"transform": "translate3d(50%, 0px, 100px)"},
+          {"transform": "translate3d(110%, 0px, 0px) rotateY(-20deg)"},
+          {"transform": "translate3d(50%, 0px, -100px)"},
+          {"transform": "translate3d(0px, 0px, -1px)"}
         ]
       }
     </script>
   </amp-animation>
-  <div class="parent" on="tap:cardAdmin.start" tabindex=none role="animation">
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/7/70/3C.svg" layout="fill"></amp-img>
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/3H.svg" layout="fill"></amp-img>
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/KC.svg" layout="fill"></amp-img>
+  <div class="parent" on="tap:cardAdmin.start" tabindex="none" role="animation">
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/7/70/3C.svg"
+      layout="fill"
+    ></amp-img>
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/3/3a/3H.svg"
+      layout="fill"
+    ></amp-img>
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/e/e1/KC.svg"
+      layout="fill"
+    ></amp-img>
   </div>
 </body>
 ```
+
 [/example]
 
 - Menyatakan sebuah variabel, `--duration`, dan memberinya nilai selama dua detik.
 - Menetapkan `duration` pada nilai `--duration` variabel.
 - Menghitung penundaan yang diterapkan pada setiap elemen dengan yang memenuhi `.card` pemilih.
-    1. [Ekstensi `length()` ](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) menghitung berapa jumlah elemen `.card` yang dipilih
-    2. Panjang lalu mengurangi setiap [indeks()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension)`.card`
-    3. Nilai hasil dikalikan dengan `--duration` variabel
-    4. Total jumlah final diterapkan dalam detik pada penundaan elemen itu
+  1. [Ekstensi `length()` ](<../../../../documentation/components/reference/amp-animation.md#css-length()-extension>) menghitung berapa jumlah elemen `.card` yang dipilih
+  2. Panjang lalu mengurangi setiap [indeks()](<../../../../documentation/components/reference/amp-animation.md#css-index()-extension>)`.card`
+  3. Nilai hasil dikalikan dengan `--duration` variabel
+  4. Total jumlah final diterapkan dalam detik pada penundaan elemen itu
 - Animasi diterapkan pada setiap elemen secara terpisah sehingga kartu diacak satu demi satu, bukan sekaligus.
 
 Buka animasi di AMP playground dan tambahkan lebih banyak elemen [`amp-img`](../../../../documentation/components/reference/amp-img) untuk menguji perilaku ini.
@@ -275,9 +296,10 @@ Buka animasi di AMP playground dan tambahkan lebih banyak elemen [`amp-img`](../
 Animasi dapat menyertakan [`conditions`](../../../../documentation/components/reference/amp-animation.md#conditions) yang mengizinkan efek yang disesuaikan. Sesuaikan animasi dengan ukuran layar apa pun melalui [kondisi `media`](../../../../documentation/components/reference/amp-animation.md#media-query) dan dukung kompatibilitas browser mundur dengan mengaktifkan [kondisi `supports`](../../../../documentation/components/reference/amp-animation.md#supports-condition) dalam sebuah [pernyataan `switch`](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement).
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
- <style amp-custom>
+  <style amp-custom>
     .drop {
       width: 20px;
       height: 20px;
@@ -291,50 +313,54 @@ Animasi dapat menyertakan [`conditions`](../../../../documentation/components/re
       background: red;
     }
   </style>
-  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-animation"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
+  ></script>
 </head>
 <body>
-<amp-animation id="mediaAnimation" layout="nodisplay">
-  <script type="application/json">
-    {
-      "duration": "1s",
-      "iterations": "4",
-      "fill": "both",
-      "direction": "alternate",
-      "animations": [
-        {
-          "media": "(min-width: 300px)",
-          "selector": ".drop",
-          "keyframes": {
-            "transform": "translate(100vw)"
+  <amp-animation id="mediaAnimation" layout="nodisplay">
+    <script type="application/json">
+      {
+        "duration": "1s",
+        "iterations": "4",
+        "fill": "both",
+        "direction": "alternate",
+        "animations": [
+          {
+            "media": "(min-width: 300px)",
+            "selector": ".drop",
+            "keyframes": {
+              "transform": "translate(100vw)"
+            }
+          },
+          {
+            "media": "(max-width: 300px)",
+            "selector": ".drop",
+            "keyframes": {
+              "transform": "translate(50vw)"
+            }
+          },
+          {
+            "media": "(min-width: 300px)",
+            "selector": ".right",
+            "keyframes": {
+              "transform": "translate(-100vw)"
+            }
+          },
+          {
+            "media": "(max-width: 300px)",
+            "selector": ".right",
+            "keyframes": {
+              "transform": "translate(-50vw)"
+            }
           }
-        },
-        {
-          "media": "(max-width: 300px)",
-          "selector": ".drop",
-          "keyframes": {
-            "transform": "translate(50vw)"
-          }
-        },
-        {
-          "media": "(min-width: 300px)",
-          "selector": ".right",
-          "keyframes": {
-            "transform": "translate(-100vw)"
-          }
-        },
-        {
-          "media": "(max-width: 300px)",
-          "selector": ".right",
-          "keyframes": {
-            "transform": "translate(-50vw)"
-          }
-        }
-      ]
-    }
-  </script>
-</amp-animation>
-    
+        ]
+      }
+    </script>
+  </amp-animation>
+
   <div class="rain">
     <div class="drop"></div>
     <div class="drop right"></div>
@@ -348,4 +374,5 @@ Animasi dapat menyertakan [`conditions`](../../../../documentation/components/re
   <button on="tap:mediaAnimation.start">Start</button>
 </body>
 ```
+
 [/example]

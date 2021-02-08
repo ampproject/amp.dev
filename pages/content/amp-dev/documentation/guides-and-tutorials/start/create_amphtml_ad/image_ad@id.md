@@ -1,6 +1,6 @@
 ---
-"$title": Membuat iklan gambar
-"$order": '1'
+'$title': Membuat iklan gambar
+$order: 1
 description: 'Iklan kita adalah gambar sederhana dengan hyperlink (hipertaut) ke situs yang diiklankan. Kita akan menampilkan gambar dengan menggunakan tag amp-img. Kodenya berikut ini: ...'
 ---
 
@@ -11,9 +11,12 @@ Iklan kita adalah gambar sederhana dengan hyperlink (hipertaut) ke situs yang di
 ```html
 <body>
   <a target="_blank" href="https://www.amp.dev">
-    <amp-img width="300" height="250"
-        alt="Learn amp"
-        src="/static/img/docs/ads/amp-300x250.png"></amp-img>
+    <amp-img
+      width="300"
+      height="250"
+      alt="Learn amp"
+      src="/static/img/docs/ads/amp-300x250.png"
+    ></amp-img>
   </a>
 </body>
 ```

@@ -1,6 +1,6 @@
 ---
-"$title": Logout
-"$order": '3'
+'$title': Logout
+$order: 3
 description: 与登录按钮相似，是否显示退出按钮取决于 amp-access 组件的状态…
 ---
 
@@ -15,9 +15,9 @@ description: 与登录按钮相似，是否显示退出按钮取决于 amp-acces
 [sourcecode:json]
 {
 "login": {
-  "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
-  "sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
-  }
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
+"sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
+}
 }
 [/sourcecode]
 

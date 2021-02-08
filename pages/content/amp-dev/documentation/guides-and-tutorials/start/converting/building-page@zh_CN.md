@@ -1,6 +1,6 @@
 ---
-"$title": 创建一个常规 HTML 网页
-"$order": '1'
+'$title': 创建一个常规 HTML 网页
+$order: 1
 description: 在项目目录中，您会看到一个名为 article.html 的文件。这是一篇新闻报道，我们将为它创建一个等效的 AMP 网页…
 ---
 
@@ -14,10 +14,9 @@ description: 在项目目录中，您会看到一个名为 article.html 的文�
 您的 `article.amp.html` 文件应该如下所示：
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-
     <title>News Article</title>
 
     <link href="base.css" rel="stylesheet" />
@@ -25,15 +24,16 @@ description: 在项目目录中，您会看到一个名为 article.html 的文�
     <script type="text/javascript" src="base.js"></script>
   </head>
   <body>
-    <header>
-      News Site
-    </header>
+    <header>News Site</header>
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
     </article>
-    <img src="mountains.jpg">
+    <img src="mountains.jpg" />
   </body>
 </html>
 ```

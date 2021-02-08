@@ -1,10 +1,10 @@
 ---
-"$title": Biện pháp thực hành tiên tiến nhất để tạo một quảng cáo Câu chuyện Web
-"$order": '16'
+'$title': Biện pháp thực hành tiên tiến nhất để tạo một quảng cáo Câu chuyện Web
+$order: 16
 description: Câu chuyện Web là một trải nghiệm tương tác toàn màn hình cho phép độc giả có thể đắm chìm vào nội dung. Các quảng cáo trong Câu chuyện Web nên có một thiết kế nhất quán và liền mạch với Web Stories UX.
 formats:
-- ads
-- stories
+  - ads
+  - stories
 ---
 
 Câu chuyện Web là một trải nghiệm tương tác toàn màn hình cho phép độc giả có thể đắm chìm vào nội dung. Các quảng cáo trong Câu chuyện Web nên có một thiết kế nhất quán và liền mạch với Web Stories UX. Việc này giúp đảm bảo trải nghiệm người dùng không bị gián đoạn hay gây bực bội. Hướng dẫn này minh họa cách để xây dựng quảng cáo cho Câu chuyện Web.
@@ -104,9 +104,9 @@ Nếu bạn cần hỗ trợ một danh sách nút CTA mới, hãy mở một [v
 
 Bạn có thể quy định một trong ba tùy chọn cho một trang đích đến của quảng cáo Câu chuyện Web.
 
-- `STORY`: •	Trang đích đến là một {1}câu chuyện được tài trợ.
-- `AMP`: •	Trang đích đến là một Trang AMP hợp lệ.
-- `NONAMP`: •	Mọi loại trang web khác.
+- `STORY`: • Trang đích đến là một {1}câu chuyện được tài trợ.
+- `AMP`: • Trang đích đến là một Trang AMP hợp lệ.
+- `NONAMP`: • Mọi loại trang web khác.
 
 ## Bố cục
 

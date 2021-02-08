@@ -1,15 +1,16 @@
 ---
-"$title": Tworzenie strony AMP HTML
-"$order": '1'
+'$title': Tworzenie strony AMP HTML
+$order: 1
 description: 'Użyj protokołu HTTPS: podczas tworzenia stron i treści AMP należy zdecydowanie rozważyć użycie protokołu HTTPS (zamiast HTTP). Chociaż protokół HTTPS nie jest wymagany dla samego dokumentu AMP...'
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 Poniższy kod ze znacznikami to przyzwoity punkt startowy lub kod standardowy. Skopiuj go i zapisz w pliku z rozszerzeniem .html.
 
 [sourcecode:html]
+
 <!doctype html>
 <html amp lang="en">
   <head>
@@ -47,16 +48,16 @@ Użyj protokołu HTTPS: podczas tworzenia stron i treści AMP należy zdecydowan
 
 Dokumenty AMP HTML muszą:
 
-Zasada | Opis
---- | ---
-Zaczynać się od deklaracji `<!doctype html>`. | Standard w przypadku HTML.
-Zawierać znacznik najwyższego poziomu `<html ⚡>` <br>(albo `<html amp>`). | Identyfikuje stronę jako treść AMP.
-Zawierać znaczniki `<head>` i `<body>`. | Opcjonalnie w HTML, ale nie w AMP.
-Zawierać znacznik `<meta charset="utf-8>` jako pierwszy element podrzędny znacznika `<head>`. | Identyfikuje kodowanie strony.
-Zawierać znacznik `<script async src="https://cdn.ampproject.org/v0.js"></script>` w sekcji `<head>`. Zgodnie z najlepszą praktyką należy dodać skrypt jak najwcześniej w sekcji `<head>`. | Zawiera i ładuje bibliotekę JS AMP.
-Zawierać znacznik `<link rel="canonical" href="$SOME_URL">` w sekcji `<head>`. | Wskazuje na zwykłą wersję HTML dokumentu AMP HTML lub na samą siebie, jeśli taka wersja HTML nie istnieje. Dowiedz się więcej z artykułu [Spraw, by Twoje strony można było odnaleźć](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md).
-Zawierać znacznik `<meta name="viewport" content="width=device-width">st dodanie również właściwości `initial-scale=1`. | Określa responsywne okienko na ekranie. Dowiedz się więcej z artykułu [Tworzenie responsywnych stron AMP](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).
-Zawierać [kod standardowy AMP](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) w sekcji `<head>`. | Kod standardowy CSS początkowo ma ukrywać zawartość do momentu załadowania JS AMP.
+| Zasada                                                                                                                                                                                     | Opis                                                                                                                                                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Zaczynać się od deklaracji `<!doctype html>`.                                                                                                                                              | Standard w przypadku HTML.                                                                                                                                                                                                                                           |
+| Zawierać znacznik najwyższego poziomu `<html ⚡>` <br>(albo `<html amp>`).                                                                                                                 | Identyfikuje stronę jako treść AMP.                                                                                                                                                                                                                                  |
+| Zawierać znaczniki `<head>` i `<body>`.                                                                                                                                                    | Opcjonalnie w HTML, ale nie w AMP.                                                                                                                                                                                                                                   |
+| Zawierać znacznik `<meta charset="utf-8>` jako pierwszy element podrzędny znacznika `<head>`.                                                                                              | Identyfikuje kodowanie strony.                                                                                                                                                                                                                                       |
+| Zawierać znacznik `<script async src="https://cdn.ampproject.org/v0.js"></script>` w sekcji `<head>`. Zgodnie z najlepszą praktyką należy dodać skrypt jak najwcześniej w sekcji `<head>`. | Zawiera i ładuje bibliotekę JS AMP.                                                                                                                                                                                                                                  |
+| Zawierać znacznik `<link rel="canonical" href="$SOME_URL">` w sekcji `<head>`.                                                                                                             | Wskazuje na zwykłą wersję HTML dokumentu AMP HTML lub na samą siebie, jeśli taka wersja HTML nie istnieje. Dowiedz się więcej z artykułu [Spraw, by Twoje strony można było odnaleźć](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md). |
+| Zawierać znacznik `<meta name="viewport" content="width=device-width">st dodanie również właściwości `initial-scale=1`.                                                                    | Określa responsywne okienko na ekranie. Dowiedz się więcej z artykułu [Tworzenie responsywnych stron AMP](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).                                                             |
+| Zawierać [kod standardowy AMP](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) w sekcji `<head>`.                                                            | Kod standardowy CSS początkowo ma ukrywać zawartość do momentu załadowania JS AMP.                                                                                                                                                                                   |
 
 ## Opcjonalne metadane
 

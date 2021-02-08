@@ -1,11 +1,11 @@
 ---
-"$title": Create a login-requiring AMP page
-"$order": '0'
+'$title': Create a login-requiring AMP page
+$order: 0
 description: 댓글 남기기 같은 사용자의 페이지 인터랙션에는 로그인 흐름이 필요할 수 있습니다. AMP로 로그인 흐름을 구현하는 데...
 numbered: '1'
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 댓글 남기기 같은 사용자의 페이지 인터랙션에는 로그인 흐름이 필요할 수 있습니다 [`amp-access`](../../../../documentation/components/reference/amp-form.md) 컴포넌트와 [`amp-form`](../../../../documentation/components/reference/amp-form.md) 컴포넌트를 함께 사용하여 AMP로 로그인 흐름을 구현할 수 있습니다.

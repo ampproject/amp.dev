@@ -1,9 +1,9 @@
 ---
-"$title": Memvalidasi Email AMP
-"$order": '1'
+'$title': Memvalidasi Email AMP
+$order: 1
 author: CrystalOnScript
 formats:
-- email
+  - email
 ---
 
 Email AMP bergantung pada perpustakaan AMP JS untuk mengaktifkan pengalaman kaya yang dinamis dan interaktif bagi pembaca. Karena alasan ini, penyedia email mengharuskan pesan Anda divalidasi. Markah AMP yang valid menjamin email aman dan melampaui standar pengalaman pengguna.

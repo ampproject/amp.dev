@@ -1,6 +1,6 @@
 ---
-"$title": Revisione del codice di avvio
-"$order": '1'
+'$title': Revisione del codice di avvio
+$order: 1
 description: 'Prima di iniziare ad aggiungere codice, esaminiamo la pagina di esempio article.amp.html, che dovrebbe essere la seguente: ...'
 ---
 

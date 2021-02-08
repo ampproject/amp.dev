@@ -1,6 +1,6 @@
 ---
-"$title": Add a comment
-"$order": '2'
+'$title': Add a comment
+$order: 2
 description: 此时，用户可以使用 amp-form 库添加评论。请注意，表单能否显示是有条件的（取决于amp-access 组件的状态）…
 ---
 
@@ -9,6 +9,7 @@ description: 此时，用户可以使用 amp-form 库添加评论。请注意，
 此时，用户可以使用 [`amp-form`](../../../../documentation/components/reference/amp-form.md) 库添加评论。请注意，表单能否显示是有条件的（取决于 [`amp-access`](../../../../documentation/components/reference/amp-access.md) 组件的状态）：
 
 [sourcecode:html]
+
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
 [/sourcecode]
 
@@ -21,6 +22,7 @@ description: 此时，用户可以使用 amp-form 库添加评论。请注意，
 表单组件会通过使用 [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md) 模板来仅将上述值显示在该网页内：
 
 [sourcecode:html]
+
 <div submit-success>
   <template type="amp-mustache">
     <div class="comment-user">
@@ -37,6 +39,7 @@ description: 此时，用户可以使用 amp-form 库添加评论。请注意，
 在此示例中，我们只检查评论的值是否不为空；如果评论的值为空，我们就会返回一个错误，而该错误会导致系统执行以下代码
 
 [sourcecode:html]
+
 <div submit-error>
   <template type="amp-mustache">
     Error! Looks like something went wrong with your comment, please try to submit it again.

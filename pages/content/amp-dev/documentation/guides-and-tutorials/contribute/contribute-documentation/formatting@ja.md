@@ -1,12 +1,12 @@
 ---
-"$title": 書式設定ガイドとチュートリアル
-"$order": '3'
+'$title': 書式設定ガイドとチュートリアル
+$order: 3
 description: amp.dev のファイルの書式設定要件
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 
@@ -145,10 +145,10 @@ Read-on
 ```
 
 ```css
-  // code sample
+// code sample
 ```
 
-```js
+````js
   // code sample
 ```</pre></div>
 
@@ -177,8 +177,10 @@ Python-Markdown にはいくつかの制限があります。リストにコー�
           template="<custom-template>"]
   ```html
     // code sample
-  ```
-  &lsqb;/example]</pre>
+````
+
+&lsqb;/example]</pre>
+
 </div>
 
 注意: プレビューは、Playground で開くと、現在選択されている形式に自動的に変換されます 🤯！
@@ -210,9 +212,11 @@ Python-Markdown にはいくつかの制限があります。リストにコー�
 これは次のように表示されます。
 
 [example preview="inline" playground="true"]
+
 ```html
 <div style="background: red; width: 200px; height: 200px;">Hello World</div>
 ```
+
 [/example]
 
 警告: インラインサンプルは、ページに直接埋め込まれるため、ページ上ですでにコンポーネントが使用されている場合（`amp-consent` など）に競合が発生する可能性があります。
@@ -248,10 +252,15 @@ Python-Markdown にはいくつかの制限があります。リストにコー�
 これは次のように表示されます。
 
 [example preview="top-frame"
-         playground="true"]
+playground="true"]
+
 ```html
 <head>
-  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-youtube"
+    src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+  ></script>
   <style amp-custom>
     body {
       background: red;
@@ -260,13 +269,16 @@ Python-Markdown にはいくつかの制限があります。リストにコー�
 </head>
 <body>
   <h1>Hello AMP</h1>
-  <amp-youtube width="480"
+  <amp-youtube
+    width="480"
     height="270"
     layout="responsive"
-    data-videoid="lBTCB7yLs8Y">
+    data-videoid="lBTCB7yLs8Y"
+  >
   </amp-youtube>
 </body>
 ```
+
 [/example]
 
 ### AMP ストーリー
@@ -311,38 +323,43 @@ AMP ストーリーのプレビューには、`preview="top-frame"` と `orienta
 これは次のように表示されます。
 
 [example preview="top-frame"
-         orientation="portrait"
-         playground="true"]
+orientation="portrait"
+playground="true"]
+
 ```html
-  <head>
-    <script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-    <style amp-custom>
-      body {
-        font-family: 'Roboto', sans-serif;
-      }
-      amp-story-page {
-        background: white;
-      }
-    </style>
-  </head>
-  <body>
-    <amp-story standalone>
-      <amp-story-page id="cover">
-        <amp-story-grid-layer template="vertical">
-          <h1>Hello World</h1>
-          <p>This is the cover page of this story.</p>
-        </amp-story-grid-layer>
-      </amp-story-page>
-      <amp-story-page id="page-1">
-        <amp-story-grid-layer template="vertical">
-          <h1>First Page</h1>
-          <p>This is the first page of this story.</p>
-        </amp-story-grid-layer>
-      </amp-story-page>
-    </amp-story>
-  </body>
+<head>
+  <script
+    async
+    custom-element="amp-story"
+    src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+  ></script>
+  <style amp-custom>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    amp-story-page {
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <amp-story standalone>
+    <amp-story-page id="cover">
+      <amp-story-grid-layer template="vertical">
+        <h1>Hello World</h1>
+        <p>This is the cover page of this story.</p>
+      </amp-story-grid-layer>
+    </amp-story-page>
+    <amp-story-page id="page-1">
+      <amp-story-grid-layer template="vertical">
+        <h1>First Page</h1>
+        <p>This is the first page of this story.</p>
+      </amp-story-grid-layer>
+    </amp-story-page>
+  </amp-story>
+</body>
 ```
+
 [/example]
 
 ### AMP メールの絶対 URL
@@ -364,15 +381,19 @@ AMP メールに <code>{{server_for_email}}</code> を埋め込む場合に、�
 これは次のように表示されます。
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <div class="resp-img">
-  <amp-img alt="flowers"
+  <amp-img
+    alt="flowers"
     src="{{server_for_email}}/static/inline-examples/images/flowers.jpg"
     layout="responsive"
     width="640"
-    height="427"></amp-img>
+    height="427"
+  ></amp-img>
 </div>
 ```
+
 [/example]
 
 ### mustache テンプレートのエスケープ処理
@@ -401,13 +422,19 @@ AMP メールに <code>{{server_for_email}}</code> を埋め込む場合に、�
 これは次のように表示されます。
 
 [example preview="top-frame"
-         playground="true"
-         imports="amp-list:0.1"
-         template="amp-mustache:0.2"]
+playground="true"
+imports="amp-list:0.1"
+template="amp-mustache:0.2"]
+
 ```html
-<amp-list width="auto" height="100" layout="fixed-height"
-  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
-  <template type="amp-mustache">{% raw %}
+<amp-list
+  width="auto"
+  height="100"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json"
+>
+  <template type="amp-mustache"
+    >{% raw %}
     <div class="url-entry">
       <a href="{{url}}">{{title}}</a>
     </div>
@@ -415,6 +442,7 @@ AMP メールに <code>{{server_for_email}}</code> を埋め込む場合に、�
   </template>
 </amp-list>
 ```
+
 [/example]
 
 ## リンク
@@ -422,7 +450,7 @@ AMP メールに <code>{{server_for_email}}</code> を埋め込む場合に、�
 標準的なマークダウンのリンク構文を使って、ほかのページにリンクすることができます。
 
 ```md
- [link](../../../courses/beginning-course/index.md)
+[link](../../../courses/beginning-course/index.md)
 ```
 
 amp.dev の別のページにリンクする場合、参照はそのターゲットファイルへの相対ファイルパスになります。
@@ -452,7 +480,7 @@ amp.dev の別のページにリンクする場合、参照はそのターゲッ
 コンポーネントドキュメント、ガイド、およびチュートリアルと例は、AMP ウェブサイトや AMP ストーリーなどの AMP 形式を使用してフィルタすることができます。そういったページにリンクする場合は、リンクに format パラメータを追加して、ターゲットにサポートされた形式を明示的に指定する必要があります。
 
 ```md
- [link](../../learn/amp-actions-and-events.md?format=websites)
+[link](../../learn/amp-actions-and-events.md?format=websites)
 ```
 
 このパラメータは、ページがサポートする**すべて**の形式をターゲットがサポートするとわかっている場合にのみ省略できます。
@@ -462,8 +490,8 @@ amp.dev の別のページにリンクする場合、参照はそのターゲッ
 コンポーネントリファレンスドキュメントへのリンクは、バージョン部分が省略されている場合、自動的に最新バージョンにポイントされます。あるバージョンに明示的にポイントする場合は、完全名を指定してください。
 
 ```md
- [latest version](../../../components/reference/amp-carousel.md?format=websites)
- [explicit version](../../../components/reference/amp-carousel-v0.2.md?format=websites)
+[latest version](../../../components/reference/amp-carousel.md?format=websites)
+[explicit version](../../../components/reference/amp-carousel-v0.2.md?format=websites)
 ```
 
 ## ドキュメント構造

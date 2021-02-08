@@ -1,10 +1,10 @@
 ---
-"$title": Melhores práticas para criar um anúncio de História Web
-"$order": '16'
+'$title': Melhores práticas para criar um anúncio de História Web
+$order: 16
 description: As Histórias Web são uma experiência de toque em tela inteira que envolve os leitores no conteúdo. Anúncios que aparecem em Histórias Web devem ter um design consistente e coeso com a experiência das Histórias Web.
 formats:
-- ads
-- stories
+  - ads
+  - stories
 ---
 
 As Histórias Web são uma experiência de toque em tela inteira que envolve os leitores no conteúdo. Anúncios que aparecem em Histórias Web devem ter um design consistente e coeso com a experiência das Histórias Web. Isto evita uma experiência do usuário áspera ou interruptiva. Este guia demonstra como criar um anúncio para Histórias Web.
@@ -104,7 +104,7 @@ Se for necessário suporte para algum novo enum de texto de botão CTA, por favo
 
 Você pode especificar uma dentre três opções para a página de destino de um anúncio de História Web.
 
-- `STORY`: A página de destino é uma  [história patrocinada](story_ads_best_practices.md#sponsored-story).
+- `STORY`: A página de destino é uma [história patrocinada](story_ads_best_practices.md#sponsored-story).
 - `AMP`: A página de destino é uma página AMP válida.
 - `NONAMP`: Qualquer outro tipo de página web.
 

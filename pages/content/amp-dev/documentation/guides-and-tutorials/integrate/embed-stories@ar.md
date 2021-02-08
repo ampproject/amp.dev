@@ -1,10 +1,10 @@
 ---
-"$title": تضمين القصص في صفحات الويب
-"$order": '3'
+'$title': تضمين القصص في صفحات الويب
+$order: 3
 description: يتيح لك مشغل قصص الويب تضمين القصص التي يمكن للمستخدمين الضغط أو النقر عليها داخل صفحة ويب. اتبع هذا الدليل خطوة بخطوة لتعلم الطريقة.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 ---
 
 تمثل القصص تجربة غامرة ملء الشاشة. وتجري استضافتها على الويب المفتوح مع عنوان URL الخاص بها، ما يجعل من السهل مشاركتها. ولكن، ماذا لو كنت تريد دمج القصص في الموقع الخاص بك، على سبيل المثال، داخل مدونة، أو في وصف منتج أو مقالة جديدة؟
@@ -16,6 +16,7 @@ formats:
 يمكنك تضمين قصص AMP داخل صفحة غير مدعومة من AMP، ما يسمح للمستخدمين بالضغط أو النقر فوق التجربة من دون مغادرة المستند المضيف!
 
 [example preview="top-frame" playground="false"]
+
 ```html
 <!doctype html>
     <head>
@@ -67,6 +68,7 @@ formats:
     </body>
 </html>
 ```
+
 [/example]
 
 ## تضمين مشغل قصص AMP
@@ -79,7 +81,11 @@ formats:
 
 ```html
 <script async src="https://cdn.ampproject.org/amp-story-player-v0.js"></script>
-<link href="https://cdn.ampproject.org/amp-story-player-v0.css" rel="stylesheet" type="text/css">
+<link
+  href="https://cdn.ampproject.org/amp-story-player-v0.css"
+  rel="stylesheet"
+  type="text/css"
+/>
 ```
 
 يقوم النص البرمجي الأول باستيراد منطق للمشغل ويقوم الثاني بتعيين النمط الافتراضي.
@@ -89,12 +95,13 @@ formats:
 قم بتضمين العنصر `<amp-story-player>` داخل المستند `body`. ثم حدد القصة المرغوبة من خلال وضع علامة `<a>` داخل عنصر `<amp-story-player>`. قم بالإشارة إلى `href` في موقع القصة. وقد يشير `href` إلى عنوان URL لقصة مستضافة أو مسار بديل. ضع عنوان القصة داخل علامات `<a>`.
 
 ```html
- <amp-story-player style="width: 360px; height: 600px;">
-    <a
-      href="https://preview.amp.dev/documentation/examples/introduction/stories_in_amp/">
-      Stories in AMP - Hello World
-    </a>
-  </amp-story-player>
+<amp-story-player style="width: 360px; height: 600px;">
+  <a
+    href="https://preview.amp.dev/documentation/examples/introduction/stories_in_amp/"
+  >
+    Stories in AMP - Hello World
+  </a>
+</amp-story-player>
 ```
 
 ### تحديد حجم المشغل
@@ -103,11 +110,11 @@ formats:
 
 ```html
 <body>
-...
+  ...
   <amp-story-player style="width: 360px; height: 600px;">
-...
+    ...
   </amp-story-player>
-...
+  ...
 </body>
 ```
 
@@ -118,9 +125,7 @@ formats:
 تعمل استجابة مشغل القصص مثل أي عنصر كتلة آخر. استخدم CSS للمحافظة على نسب أبعاد العرض والارتفاع، مثل المثال أدناه:
 
 ```html
-<amp-story-player style="width: 50vw; height: 83.35vw;">
-  ...
-</amp-story-player>
+<amp-story-player style="width: 50vw; height: 83.35vw;"> ... </amp-story-player>
 ```
 
 ### توفير عنصر نائب
@@ -130,7 +135,13 @@ formats:
 ```html
 <amp-story-player style="width: 50vw; height: 83.35vw;">
   <a href="https://www.example.com/story.html">
-    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover1.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes this story.
   </a>
 </amp-story-player>
@@ -145,11 +156,23 @@ formats:
 ```html
 <amp-story-player style="width: 360px; height: 600px;">
   <a href="https://www.example.com/story1.html">
-    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover1.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes story 1.
   </a>
   <a href="https://www.example.com/story2.html">
-    <img src="https://www.example.com/assets/cover2.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover2.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes story 2.
   </a>
 </amp-story-player>
@@ -160,13 +183,25 @@ formats:
 ```html
 <amp-story-player style="width: 360px; height: 600px;">
   <a href="https://www.example.com/story1.html">
-    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover1.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes story 1.
   </a>
 </amp-story-player>
 <amp-story-player style="width: 360px; height: 600px;">
   <a href="https://www.example.com/story2.html">
-    <img src="https://www.example.com/assets/cover2.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover2.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes story 2.
   </a>
 </amp-story-player>

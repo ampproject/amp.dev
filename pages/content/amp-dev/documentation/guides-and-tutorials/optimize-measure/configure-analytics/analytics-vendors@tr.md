@@ -1,10 +1,10 @@
 ---
-"$title": Analitik Sağlayıcıları
-order: '3'
+'$title': Analitik Sağlayıcıları
+$order: 3
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
   text: Bu belge, amp-analytics bileşeniyle kullanılmak üzere yerleşik yapılandırmalara sahip analytics sağlayıcılarını listeler.
 ---
@@ -114,13 +114,13 @@ Clicky Web Analytics için destek ekler. Clicky desteği eklemek için daha fazl
 
 Tür özellik değeri: `comscore`
 
-comScore Unified Digital Measurement™ sayfa görüntüleme analizi için destek ekler. comScore tarafından sağlanan *c2 id* ile *var* `c2` tanımlanmasını gerektirir. Daha fazla bilgi [comscore.com](http://www.comscore.com) adresinde bulunabilir.
+comScore Unified Digital Measurement™ sayfa görüntüleme analizi için destek ekler. comScore tarafından sağlanan _c2 id_ ile _var_ `c2` tanımlanmasını gerektirir. Daha fazla bilgi [comscore.com](http://www.comscore.com) adresinde bulunabilir.
 
 ### Cxense <a name="cxense"></a>
 
 Tür özellik değeri: `cxense`
 
-Cxense Insight analitiği için destek ekler. *var* `siteId` Cxense tarafından sağlanan *siteId* ile tanımlanmasını gerektirir. Daha fazla ayrıntı [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration) adresinde bulunabilir.
+Cxense Insight analitiği için destek ekler. _var_ `siteId` Cxense tarafından sağlanan _siteId_ ile tanımlanmasını gerektirir. Daha fazla ayrıntı [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration) adresinde bulunabilir.
 
 ### Deep.BI <a name="deepbi"></a>
 
@@ -130,7 +130,7 @@ Tür özellik değeri: `deepbi`
 
 Tür özellik değeri: `dynatrace`
 
-Dynatrace gerçek kullanıcı izleme için destek ekler. *var* `app` Dynatrace tarafından sağlanan *application id* ve *var* `tenant` ile Dynatrace tarafından sağlanan *ortam tanımlayıcısı* ile tanımlanmasını gerektirir. Dynatrace gerçek kullanıcı izlemesini eklemek için daha fazla ayrıntı [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/) adresinde bulunabilir.
+Dynatrace gerçek kullanıcı izleme için destek ekler. _var_ `app` Dynatrace tarafından sağlanan _application id_ ve _var_ `tenant` ile Dynatrace tarafından sağlanan _ortam tanımlayıcısı_ ile tanımlanmasını gerektirir. Dynatrace gerçek kullanıcı izlemesini eklemek için daha fazla ayrıntı [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/) adresinde bulunabilir.
 
 ### EPICA <a name="epica"></a>
 
@@ -142,7 +142,7 @@ EPICA sayfa görünümleri ve etkinlikleri için destek ekler. Daha fazla ayrın
 
 Tür özellik değeri: `euleriananalytics`
 
-Eulerian Technologies Analytics için destek ekler. *var* `analyticsHost` ile Eulerian yetkilendirilmiş etki alanıyla tanımlanmasını gerektirir. Daha fazla ayrıntı [eulerian.wiki](https://eulerian.wiki) adresinde bulunabilir.
+Eulerian Technologies Analytics için destek ekler. _var_ `analyticsHost` ile Eulerian yetkilendirilmiş etki alanıyla tanımlanmasını gerektirir. Daha fazla ayrıntı [eulerian.wiki](https://eulerian.wiki) adresinde bulunabilir.
 
 ### Facebook Pixel <a name="facebook-pixel"></a>
 
@@ -270,7 +270,7 @@ Tür özellik değeri: `marinsoftware`
 
 Tür özellik değeri: `mediametrie`
 
-Médiamétrie izleme sayfaları için destek ekler. *var* `serial` tanımlanmasını gerektirir. Vars `level1` ila `level4` isteğe bağlıdır. Daha fazla bilgi [mediametrie.com](http://www.mediametrie.com/) adresinde bulunabilir.
+Médiamétrie izleme sayfaları için destek ekler. _var_ `serial` tanımlanmasını gerektirir. Vars `level1` ila `level4` isteğe bağlıdır. Daha fazla bilgi [mediametrie.com](http://www.mediametrie.com/) adresinde bulunabilir.
 
 ### mediarithmics <a name="mediarithmics"></a>
 

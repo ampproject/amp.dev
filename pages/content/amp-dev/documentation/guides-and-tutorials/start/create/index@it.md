@@ -1,14 +1,14 @@
 ---
-"$title": Create your first AMP page
-"$order": '0'
+'$title': Create your first AMP page
+$order: 0
 description: Non sai bene come iniziare? Con questo tutorial scoprirai come creare una pagina AMP HTML di base, come prepararla e convalidarla in modo da renderla conforme al formato AMP e infine...
 formats:
-- websites
+  - websites
 numbered: '0'
-"$hidden": 'true'
+'$hidden': 'true'
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 Non sai bene come iniziare? Con questo tutorial scoprirai come creare una pagina AMP HTML di base, come prepararla e convalidarla in modo da renderla conforme al formato AMP e infine come predisporla per la pubblicazione e la distribuzione.

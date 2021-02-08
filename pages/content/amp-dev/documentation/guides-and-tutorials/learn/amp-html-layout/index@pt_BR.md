@@ -1,11 +1,11 @@
 ---
-"$title": Sistema de layout do AMPHTML
-order: '1'
+'$title': Sistema de layout do AMPHTML
+$order: 1
 formats:
-- websites
-- email
-- stories
-- ads
+  - websites
+  - email
+  - stories
+  - ads
 teaser:
   text: 'Visão geral '
 ---
@@ -33,7 +33,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-##  Visão geral
+## Visão geral
 
 O principal objetivo do sistema de layout é garantir que os elementos AMP possam expressar seu layout para que o runtime tenha condições de inferir o dimensionamento dos elementos antes que quaisquer recursos remotos, tais como JavaScript e chamadas de dados, tenham sido concluídos. Isto é importante já que reduz significativamente quaisquer interrupções na renderização e rolagem.
 
@@ -68,13 +68,14 @@ O AMP fornece um conjunto de layouts que especificam como um componente AMP irá
 
 [sourcecode:html]
 <amp-img
-  src="/img/amp.jpg"
-  width="1080"
-  height="610"
-  layout="responsive"
-  alt="an image"
-></amp-img>
-[/sourcecode]
+src="/img/amp.jpg"
+width="1080"
+height="610"
+layout="responsive"
+alt="an image"
+
+> </amp-img>
+> [/sourcecode]
 
 Valores suportados para o atributo `layout`:
 
@@ -139,18 +140,18 @@ No exemplo a seguir, se a viewport for mais larga que `320px`, a imagem terá 32
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="400"
-  height="300"
-  layout="responsive"
-  sizes="(min-width: 320px) 320px, 100vw"
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="400"
+height="300"
+layout="responsive"
+sizes="(min-width: 320px) 320px, 100vw"
+
+> </amp-img>
+> [/sourcecode]
 
 ### `disable-inline-width` <a name="disable-inline-width"></a>
 
-O atributo `sizes` por si só definirá um estilo inline  `width` no elemento. Ao combinar `disable-inline-width` com `sizes`, o elemento AMP propagará o valor de `sizes` para a tag subjacente do elemento, de forma similar a um `img` aninhado dentro de um `amp-img`, **sem** definir a `width` embutida como `sizes` geralmente faz por conta própria no AMP.
+O atributo `sizes` por si só definirá um estilo inline `width` no elemento. Ao combinar `disable-inline-width` com `sizes`, o elemento AMP propagará o valor de `sizes` para a tag subjacente do elemento, de forma similar a um `img` aninhado dentro de um `amp-img`, **sem** definir a `width` embutida como `sizes` geralmente faz por conta própria no AMP.
 
 **Exemplo**: Usando o atributo `disable-inline-width`
 
@@ -158,15 +159,15 @@ No exemplo a seguir, a largura do elemento `<amp-img>` não é afetada, e `sizes
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="400"
-  height="300"
-  layout="responsive"
-  sizes="(min-width: 320px) 320px, 100vw"
-  disable-inline-width
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="400"
+height="300"
+layout="responsive"
+sizes="(min-width: 320px) 320px, 100vw"
+disable-inline-width
+
+> </amp-img>
+> [/sourcecode]
 
 ### `heights` <a name="heights"></a>
 
@@ -183,13 +184,13 @@ No exemplo a seguir, a altura da imagem será padronizada em 80% da largura, mas
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="320"
-  height="256"
-  heights="(min-width:500px) 200px, 80%"
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="320"
+height="256"
+heights="(min-width:500px) 200px, 80%"
+
+> </amp-img>
+> [/sourcecode]
 
 ### `media` <a name="media"></a>
 
@@ -201,20 +202,21 @@ No exemplo a seguir, temos duas imagens com consultas de mídia mutuamente exclu
 
 [sourcecode:html]
 <amp-img
-  media="(min-width: 650px)"
-  src="wide.jpg"
-  width="466"
-  height="355"
-  layout="responsive"
-></amp-img>
-<amp-img
-  media="(max-width: 649px)"
-  src="narrow.jpg"
-  width="527"
-  height="193"
-  layout="responsive"
-></amp-img>
-[/sourcecode]
+media="(min-width: 650px)"
+src="wide.jpg"
+width="466"
+height="355"
+layout="responsive"
+
+> </amp-img>
+> <amp-img
+>   media="(max-width: 649px)"
+>   src="narrow.jpg"
+>   width="527"
+>   height="193"
+>   layout="responsive"
+> </amp-img>
+> [/sourcecode]
 
 ### `placeholder` <a name="placeholder"></a>
 
@@ -222,7 +224,7 @@ O atributo `placeholder` pode ser definido em qualquer elemento HTML, não apena
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
-  <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+<amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
 [/sourcecode]
 
@@ -232,6 +234,7 @@ O atributo `fallback` pode ser definido para qualquer elemento HTML, não apenas
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
+
   <div fallback>Cannot play animated images on this device.</div>
 </amp-anim>
 [/sourcecode]
@@ -244,7 +247,7 @@ O atributo `noloading` indica se o "indicador de carregamento" deve ser desativa
 
 A tabela a seguir descreve os parâmetros aceitos, classes CSS e estilos usados para o atributo `layout`. Observe que:
 
-1. Qualquer classe CSS marcada com o prefixo `-amp-`  e elementos com o prefixo `i-amp-` é considerada interna ao AMP e seu uso nas folhas de estilo do usuário não é permitido. Elas estão mostradas aqui simplesmente com finalidade informativa.
+1. Qualquer classe CSS marcada com o prefixo `-amp-` e elementos com o prefixo `i-amp-` é considerada interna ao AMP e seu uso nas folhas de estilo do usuário não é permitido. Elas estão mostradas aqui simplesmente com finalidade informativa.
 2. Embora `width` e `height` sejam especificados na tabela conforme necessário, as regras default podem ser aplicadas como é o caso de `amp-pixel` e `amp-audio`.
 
 <table>

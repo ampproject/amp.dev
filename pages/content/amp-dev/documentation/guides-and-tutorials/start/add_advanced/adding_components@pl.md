@@ -1,6 +1,6 @@
 ---
-"$title": Dodawanie rozszerzonych składników AMP
-"$order": '2'
+'$title': Dodawanie rozszerzonych składników AMP
+$order: 2
 description: System składników AMP pozwala na szybkie tworzenie wydajnych i elastycznych funkcji w artykułach przy minimalnym nakładzie pracy. Biblioteka AMP HTML ma trzy klasyfikacje składników AMP...
 ---
 
@@ -10,7 +10,7 @@ System składników AMP pozwala na szybkie tworzenie wydajnych i elastycznych fu
 
 - **rozszerzone**: są to rozszerzenia biblioteki podstawowej, które muszą być jawnie dodane do dokumentu jako elementy niestandardowe. Elementy niestandardowe wymagają specjalnych skryptów, dodawanych do sekcji `<head>` (np., `<script async custom-element="[`[`amp-video`](../../../../documentation/components/reference/amp-video.md)`...`).
 
-- **eksperymentalne**: są to składniki, które zostały dopuszczone do użytku, ale nie są jeszcze gotowe do szerokiego zastosowania. Programiści mogą zdecydować się na stosowanie tych funkcji, zanim zostaną one w pełni wydane.  Dowiedz się więcej z artykułu [Funkcje eksperymentalne](../../../../documentation/guides-and-tutorials/learn/experimental.md).
+- **eksperymentalne**: są to składniki, które zostały dopuszczone do użytku, ale nie są jeszcze gotowe do szerokiego zastosowania. Programiści mogą zdecydować się na stosowanie tych funkcji, zanim zostaną one w pełni wydane. Dowiedz się więcej z artykułu [Funkcje eksperymentalne](../../../../documentation/guides-and-tutorials/learn/experimental.md).
 
 Nasza próbka korzysta już z wbudowanego składnika [`amp-img`](../../../../documentation/components/reference/amp-img.md) i zbadaliśmy jak ten składnik odnosi się do systemu układu AMP w samouczku [Konwersja HTML na AMP](../../../../documentation/guides-and-tutorials/start/converting/index.md). Teraz dodajmy kilka powszechnie używanych **rozszerzonych** składników AMP do naszego artykułu informacyjnego.
 
@@ -25,7 +25,8 @@ Spójrz na ten przykład reklamy **DoubleClick**:
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/image/static">
+  data-slot="/35096353/amptesting/image/static"
+>
 </amp-ad>
 ```
 
@@ -40,7 +41,8 @@ Atrybut `data-slot` jest bardziej unikalny. W elementach [`amp-ad`](../../../../
   type="a9"
   data-aax_size="300x250"
   data-aax_pubname="test123"
-  data-aax_src="302">
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -51,7 +53,11 @@ Pamiętaj, że nie wszystkie składniki są zawarte w głównym pliku JavaScript
 **Dodaj** następujący skrypt w sekcji `<head>`:
 
 ```html
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script
+  async
+  custom-element="amp-ad"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+></script>
 ```
 
 **Odśwież** stronę, aby zobaczyć dwie testowe reklamy:
@@ -60,14 +66,15 @@ Pamiętaj, że nie wszystkie składniki są zawarte w głównym pliku JavaScript
 
 [tip type="important"] **WAŻNE —** możesz mieć w swojej konsoli programistycznej kilka błędów, takich jak `Mixed Content` lub `XMLHttpRequest cannot load`. Pierwszy błąd jest prawdopodobnie związany z reklamą A9, ponieważ nie wszystkie ładowane treści są bezpieczne. Jest to istotny wymóg, dotyczący wszystkich reklam obsługiwanych na platformie AMP. [/tip]
 
-Dwa elementy [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) poniżej stanowią przykład elastyczności, jaką składnik [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) zapewnia obsługowym funkcjom platformy reklamowej.  W tym przypadku skonfigurowaliśmy (za pomocą pulpitu nawigacyjnego DoubleClick) dwie reklamy testowe DoubleClick, które będą pokazywane tylko w niektórych krajach — pierwsza będzie pokazywana tylko w Wielkiej Brytanii, a druga tylko w USA.  Spróbuj **dodać** te dwie konfiguracje reklam z geotargetingiem w dokumencie AMP poniżej reklam dodanych wcześniej:
+Dwa elementy [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) poniżej stanowią przykład elastyczności, jaką składnik [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) zapewnia obsługowym funkcjom platformy reklamowej. W tym przypadku skonfigurowaliśmy (za pomocą pulpitu nawigacyjnego DoubleClick) dwie reklamy testowe DoubleClick, które będą pokazywane tylko w niektórych krajach — pierwsza będzie pokazywana tylko w Wielkiej Brytanii, a druga tylko w USA. Spróbuj **dodać** te dwie konfiguracje reklam z geotargetingiem w dokumencie AMP poniżej reklam dodanych wcześniej:
 
 ```html
 <amp-ad
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/uk">
+  data-slot="/35096353/amptesting/geo/uk"
+>
   <div fallback>No ad appeared because you're not browsing from the UK!</div>
 </amp-ad>
 
@@ -75,7 +82,8 @@ Dwa elementy [`amp-ad`](../../../../documentation/components/reference/amp-ad.md
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/us">
+  data-slot="/35096353/amptesting/geo/us"
+>
   <div fallback>No ad appeared because you're not browsing from the US!</div>
 </amp-ad>
 ```
@@ -107,14 +115,15 @@ Spróbujmy osadzić w dokumencie film z YouTube. **Dodaj** następujący kod tu�
   data-videoid="npum8JsITQE"
   layout="responsive"
   width="480"
-  height="270">
+  height="270"
+>
   <div fallback>
     <p>The video could not be loaded.</p>
   </div>
 </amp-youtube>
 ```
 
-**Odśwież** stronę. Zamiast filmu zobaczysz tekst: *The video could not be loaded.*
+**Odśwież** stronę. Zamiast filmu zobaczysz tekst: _The video could not be loaded._
 
 Nawet jeśli Twoja przeglądarka może bez problemu wyświetlać filmy z YouTube, i tak wyświetli ten błąd. Dlaczego? Wideo w rzeczywistości nie zostało załadowane, a raczej zawiódł sam składnik.
 
@@ -125,7 +134,11 @@ Pamiętaj, że nie wszystkie składniki są zawarte w głównym pliku JavaScript
 **Dodaj** następujący skrypt w sekcji `<head>`:
 
 ```html
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script
+  async
+  custom-element="amp-youtube"
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+></script>
 ```
 
 **Odśwież** stronę, aby zobaczyć film z YouTube:
@@ -145,7 +158,11 @@ Osadzanie wstępnie sforrmatowanych tweetów z Twittera jest częste w artykuła
 Zacznij od dodania następującego żądania JavaScript do sekcji `<head>` dokumentu:
 
 ```html
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script
+  async
+  custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+></script>
 ```
 
 Teraz w artykule **dodaj** ten kod w celu osadzenia tweeta:
@@ -155,7 +172,8 @@ Teraz w artykule **dodaj** ten kod w celu osadzenia tweeta:
   width="486"
   height="657"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
 
@@ -180,7 +198,11 @@ AMP zapewnia kolejny składnik specjalnie zaprojektowany na tego typu sytuacje, 
 Wypróbujmy go. Najpierw **dodaj** bibliotekę składnika do sekcji `<head>`:
 
 ```html
-<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+<script
+  async
+  custom-element="amp-fit-text"
+  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+></script>
 ```
 
 Dodaj do strony następujące elementy:
@@ -205,7 +227,11 @@ A jeśli cytat jest dłuższy?
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-   And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+  And the Raven, never flitting, still is sitting, still is sitting. On the
+  pallid bust of Pallas just above my chamber door; And his eyes have all the
+  seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming
+  throws his shadow on the floor; And my soul from out that shadow that lies
+  floating on the floor. Shall be lifted—nevermore!
 </amp-fit-text>
 ```
 

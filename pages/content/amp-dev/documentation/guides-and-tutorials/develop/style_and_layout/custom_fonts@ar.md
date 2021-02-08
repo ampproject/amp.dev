@@ -1,11 +1,11 @@
 ---
-"$title": إضافة خطوط مخصصة
-"$order": '6'
+'$title': إضافة خطوط مخصصة
+$order: 6
 description: لا يمكن أن تحتوي صفحات AMP على صفحات أنماط خارجية، باستثناء الخطوط المخصصة. ويمكنك تضمين الخطوط المخصصة في صفحتك بطريقتين ...
 formats:
-- websites
-- ads
-- stories
+  - websites
+  - ads
+  - stories
 author: pbakaus
 ---
 
@@ -19,6 +19,7 @@ author: pbakaus
 استخدم علامة `<link>` (عادة في رأس صفحتك)، مثل:
 
 [sourcecode:html]
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 [/sourcecode]
 
@@ -35,6 +36,7 @@ author: pbakaus
 بدلًا عن ذلك، يمكنك استخدام [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) ضمن صفحة الأنماط الخاصة بـ AMP لديك:
 
 [sourcecode:html]
+
 <style amp-custom>
   @font-face {
     font-family: "Bitstream Vera Serif Bold";
@@ -45,6 +47,7 @@ author: pbakaus
     font-family: "Bitstream Vera Serif Bold", serif;
   }
 </style>
+
 [/sourcecode]
 
-[tip type="note"] **ملحوظة –**  يجب إحضار الخطوط المضمنة في `@font-face` عبر مخطط HTTP أو HTTPS. [/tip]
+[tip type="note"] **ملحوظة –** يجب إحضار الخطوط المضمنة في `@font-face` عبر مخطط HTTP أو HTTPS. [/tip]

@@ -1,17 +1,17 @@
 ---
-"$title": Cómo contribuir
-"$titles":
+'$title': Cómo contribuir
+'$titles':
   navigation: Contribute
-"$path": "/documentation/guides-and-tutorials/contribute/index.html"
-"$localization":
-  path: "/{locale}/documentation/guides-and-tutorials/contribute/index.html"
-"$order": '0'
+'$path': '/documentation/guides-and-tutorials/contribute/index.html'
+'$localization':
+  path: '/{locale}/documentation/guides-and-tutorials/contribute/index.html'
+$order: 0
 description: El proyecto AMP no sería posible sin la ayuda de todos los miembros de la comunidad, ya sean desarrolladores, creadores de contenido o proveedores de servicios relacionados con AMP.
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 ---
 
 El proyecto AMP no sería posible sin la ayuda de todos los miembros de la comunidad, ya sean desarrolladores, creadores de contenido o proveedores de servicios relacionados con AMP. Puede contribuir a este proyecto de diversas formas.
@@ -38,7 +38,7 @@ El contenido de <a>amp.dev</a> consiste en cómo los desarrolladores aprenden a 
 
 Tenemos documentación de todo tipo, desde ejemplos del uso de AMP hasta tutoriales para que los desarrolladores inicien y guías para explorar las características de AMP.
 
-[amp.dev](../../../documentation/examples/index.html) es donde la mayoría de las personas se familiarizan con AMP.  Puede contribuir a la documentación en el [proyecto ampproject docs GitHub](https://github.com/ampproject/amp-by-example/). (¡Incluso puede hacer que <a>la página que está leyendo</a> sea mejor!
+[amp.dev](../../../documentation/examples/index.html) es donde la mayoría de las personas se familiarizan con AMP. Puede contribuir a la documentación en el [proyecto ampproject docs GitHub](https://github.com/ampproject/amp-by-example/). (¡Incluso puede hacer que <a>la página que está leyendo</a> sea mejor!
 
 Inicie leyendo nuestra [guía de contribución a los contenidos](https://github.com/ampproject/amphtml).
 

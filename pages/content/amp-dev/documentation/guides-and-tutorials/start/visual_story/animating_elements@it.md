@@ -1,9 +1,9 @@
 ---
-"$title": Elementi animati
-"$order": '6'
+'$title': Elementi animati
+$order: 6
 description: "Per migliorare ulteriormente una storia web, è possibile applicare elementi animati all'interno di una pagina. Ad esempio, puoi far entrare il titolo da ..."
 components:
-- anim
+  - anim
 author: bpaduch
 ---
 
@@ -133,10 +133,12 @@ Ogni animazione preimpostata ha integrato un valore di tempo predefinito per i s
 ```html
 <amp-story-page id="my-page">
   ...
-  <p class="my-element"
-      animate-in="fly-in-left"
-      animate-in-delay="0.3s"
-      animate-in-duration="0.5s">
+  <p
+    class="my-element"
+    animate-in="fly-in-left"
+    animate-in-delay="0.3s"
+    animate-in-duration="0.5s"
+  >
     I'm going to fly into the page from the left!
   </p>
 </amp-story-page>
@@ -150,21 +152,33 @@ L'ultima pagina della nostra storia web è composta da due livelli: il primo liv
 <amp-story-page id="page5">
   <amp-story-grid-layer template="vertical" class="noedge">
     <div class="wrapper">
-      <amp-img src="assets/cat.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/cat.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/dog.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/dog.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/bird.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/bird.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/rabbit.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/rabbit.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
     </div>
   </amp-story-grid-layer>
@@ -183,9 +197,9 @@ Ha un bell'aspetto, ma è tutto troppo statico! Aggiungiamo qualche animazione!
 Inizieremo animando l'entrata del banner di testo e lo faremo sfrecciare dalla parte destra della pagina. Aggiungere l'attributo `animate-in="whoosh-in-right"` all'elemento `<p>` in questo modo:
 
 ```html
-<p class="banner-text"
-  animate-in="whoosh-in-right">
-Pets can lower your stress levels!</p>
+<p class="banner-text" animate-in="whoosh-in-right">
+  Pets can lower your stress levels!
+</p>
 ```
 
 Ricaricare la pagina della storia nel browser e verificare che il banner sia visualizzato.
@@ -193,25 +207,37 @@ Ricaricare la pagina della storia nel browser e verificare che il banner sia vis
 Poi, facciamo in modo che tutte le immagini abbiano una dissolvenza. Aggiungere l'attributo `animate-in="fade-in"` a ciascuno degli elementi [`amp-img`](../../../../documentation/components/reference/amp-img.md) come nel seguente codice:
 
 ```html
-<amp-img src="assets/cat.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/cat.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/dog.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/dog.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/bird.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/bird.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/rabbit.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/rabbit.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
 ```
 
@@ -220,29 +246,41 @@ Aggiornando e ricaricando la pagina, ciascuna immagine avrà una dissolvenza. È
 Ritardiamo l'entrata della prima immagine in modo che sia vicina al banner di testo quando questo finisce di entrare, diciamo con un ritardo di 0.4 s. Le restanti tre immagini possono arrivare 0,2 s dopo l'ingresso dell'immagine precedente. Per ciascuno degli elementi [`amp-img`](../../../../documentation/components/reference/amp-img.md), aggiungiamo l'attributo `animate-in-delay=""` con un valore di ritardo opportuno. Il codice risultante dovrebbe essere simile al seguente:
 
 ```html
-<amp-img src="assets/cat.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="0.4s">
+<amp-img
+  src="assets/cat.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="0.4s"
+>
 </amp-img>
-<amp-img src="assets/dog.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="0.6s">
+<amp-img
+  src="assets/dog.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="0.6s"
+>
 </amp-img>
-<amp-img src="assets/bird.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay=".8s">
+<amp-img
+  src="assets/bird.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay=".8s"
+>
 </amp-img>
-<amp-img src="assets/rabbit.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="1s">
+<amp-img
+  src="assets/rabbit.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="1s"
+>
 </amp-img>
 ```
 

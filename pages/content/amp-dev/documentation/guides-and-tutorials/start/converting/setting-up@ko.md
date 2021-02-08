@@ -1,8 +1,8 @@
 ---
-"$title": Setting up
-"$order": '0'
+'$title': Setting up
+$order: 0
 description: 개발 환경 설정 1단계. 코드 다운로드. 튜토리얼에서 사용할 샘플 코드를 ZIP 파일로 다운로드하거나 다음의 git를 통해 다운로드합니다...
-"$parent": "/documentation/guides-and-tutorials/start/converting/setting-up.md"
+'$parent': '/documentation/guides-and-tutorials/start/converting/setting-up.md'
 ---
 
 ## 기본 요건

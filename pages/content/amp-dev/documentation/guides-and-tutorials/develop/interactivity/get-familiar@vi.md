@@ -1,6 +1,6 @@
 ---
-"$title": Làm quen với code bắt đầu
-"$order": '1'
+'$title': Làm quen với code bắt đầu
+$order: 1
 description: Một trang AMP là một trang HTML với một số hạn chế để đảm bảo hiệu năng ổn định. Các trang AMP có một số đánh dấu đặc biệt để xác định nó là một trang AMP.
 ---
 
@@ -90,10 +90,26 @@ Một trang AMP rất cơ bản trông như thế này:
 Code bắt đầu của bài thực hành này ([`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html)) được xây dựng trên trang AMP cơ bản với nội dung trang của nó (ảnh, văn bản, v.v.) và bao gồm một số thành phần AMP:
 
 ```html
-<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
-<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
-<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-<script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+<script
+  async
+  custom-element="amp-carousel"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+></script>
+<script
+  async
+  custom-template="amp-mustache"
+  src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"
+></script>
+<script
+  async
+  custom-element="amp-form"
+  src="https://cdn.ampproject.org/v0/amp-form-0.1.js"
+></script>
+<script
+  async
+  custom-element="amp-selector"
+  src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"
+></script>
 ```
 
 Các thành phần AMP cung cấp chức năng bổ sung và các thành phần UI để bổ sung khả năng tương tác đa dạng cho các trang AMP. Đoạn code bắt đầu sử dụng các thành phần AMP sau:

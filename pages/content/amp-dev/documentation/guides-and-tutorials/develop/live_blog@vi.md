@@ -1,13 +1,13 @@
 ---
-"$title": Tạo một blog trực tiếp
-"$order": '102'
+'$title': Tạo một blog trực tiếp
+$order: 102
 description: Blog trực tiếp là các trang web được cập nhật thường xuyên trong suốt một sự kiện đang diễn ra, ví dụ như một sự kiện thể thao hoặc một cuộc bầu cử. Trong AMP, bạn có thể triển khai một blog trực tiếp bằng cách sử dụng...
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: kul3r4
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 Blog trực tiếp là các trang web được cập nhật thường xuyên trong suốt một sự kiện đang diễn ra, ví dụ như một sự kiện thể thao hoặc một cuộc bầu cử. Trong AMP, bạn có thể triển khai một blog trực tiếp bằng cách sử dụng thành phần [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md).
@@ -25,9 +25,11 @@ Thành phần [`amp-live-list`](../../../documentation/components/reference/amp-
 Đoạn code ban đầu cho blog sẽ trông như thế này:
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">You have updates</button>
   <div items></div>
 </amp-live-list>
@@ -56,9 +58,11 @@ Các blog dài có thể sử dụng chia trang để cải thiện hiệu năng
 Với chia trang, một đoạn code đơn giản chúng ta đã sử dụng trước đây sẽ trở thành:
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">You have updates</button>
   <div items></div>
   <div pagination>
@@ -67,8 +71,8 @@ Với chia trang, một đoạn code đơn giản chúng ta đã sử dụng tr�
         <li>1</li>
         <li>Next</li>
       </ul>
-     </nav>
-   </div>
+    </nav>
+  </div>
 </amp-live-list>
 ```
 

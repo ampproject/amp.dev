@@ -1,6 +1,6 @@
 ---
-"$title": Opis części relacji AMP
-"$order": '2'
+'$title': Opis części relacji AMP
+$order: 2
 description: Relacja internetowa to pełnoekranowy storytelling wizualny, przekazujące informacje za pomocą obrazów, filmów, grafiki, dźwięku i innych elementów. Jest to idealne rozwiązanie dla użytkowników...
 author: bpaduch
 ---

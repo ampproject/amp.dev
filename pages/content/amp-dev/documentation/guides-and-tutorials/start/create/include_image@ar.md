@@ -1,10 +1,10 @@
 ---
-"$title": Include an image
-"$order": '2'
+'$title': Include an image
+$order: 2
 description: يمكن استخدام معظم علامات HTML مباشرةً في AMP HTML ولكن بعض العلامات مثل علامة <img> ، يتم استبدالها بعلامات AMP HTML مكافئة أو مخصصة محسنة بعض الشيء.
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 يمكن استخدام معظم علامات HTML مباشرةً في <span dir="ltr" class="nowrap">AMP HTML</span>، لكن بعض العلامات، مثل علامة `<img>`، يتم استبدالها بعلامات <span dir="ltr" class="nowrap">AMP HTML</span> مكافئة أو مخصصة محسّنة بعض الشيء (وتم حظر بضع العلامات المسببة للأخطاء حظرًا تامًا، انظر [علامات HTML في المواصفة](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)).

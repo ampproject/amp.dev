@@ -1,14 +1,14 @@
 ---
-"$title": Einführung in AMPHTML Ads
-"$order": '1'
+'$title': Einführung in AMPHTML Ads
+$order: 1
 description: AMPHTML Ads ermöglichen dir, schnellere, schlankere und sicherere Werbung im Web zu schalten. AMP Seiten unterstützen zwar auch herkömmliche HTML Ads, aber diese laden mitunter zu langsam.
 formats:
-- ads
+  - ads
 ---
 
 ## Was ist eine AMPHTML Ad?
 
-AMPHTML Ads ermöglichen dir, schnellere, schlankere und sicherere Werbung im Web zu schalten. AMP Seiten unterstützen zwar auch herkömmliche HTML Ads, aber diese laden mitunter zu langsam. Um die Ads an die Geschwindigkeit der restlichen AMP Seite anzupassen, kannst du sie in AMPHTML erstellen. AMPHTML Ads werden erst nach ihrer Validierung bereitgestellt, was die Sicherheit und Geschwindigkeit der Ads gewährleistet. Und nicht zuletzt können diese Ads *nicht nur auf AMP Seiten*, sondern überall im Web geschaltet werden.
+AMPHTML Ads ermöglichen dir, schnellere, schlankere und sicherere Werbung im Web zu schalten. AMP Seiten unterstützen zwar auch herkömmliche HTML Ads, aber diese laden mitunter zu langsam. Um die Ads an die Geschwindigkeit der restlichen AMP Seite anzupassen, kannst du sie in AMPHTML erstellen. AMPHTML Ads werden erst nach ihrer Validierung bereitgestellt, was die Sicherheit und Geschwindigkeit der Ads gewährleistet. Und nicht zuletzt können diese Ads _nicht nur auf AMP Seiten_, sondern überall im Web geschaltet werden.
 
 AMPHTML Ads werden unter Berücksichtigung der [AMPHTML Ad Spezifikation](a4a_spec.md) (einer Variante von AMP HTML + CSS) in AMP HTML geschrieben. Das bedeutet, dass Ads nicht mehr in der Lage sind, beliebiges JavaScript auszuführen, was in der Regel die Hauptursache für leistungsschwache Ads ist. Daher sind – genau wie die Kernversion von AMP – die JavaScript Use Cases für die Kernversionen der Ads in das AMP Open Source Projekt integriert. Das garantiert das erwünschte Verhalten der Ads.
 
@@ -73,11 +73,11 @@ Als Kreativagentur musst du bei der Erstellung von Ads die [AMPHTML Ad Spezifika
 
 - [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*kommt bald*)
+- Adobe Animate (_kommt bald_)
 
 ### Werbenetzwerke/Server
 
-Um AMPHTML Ads auf AMP Seiten bereitzustellen, musst du die Erweiterung [`amp-ad`](../../../documentation/components/reference/amp-ad.md) für dein Netzwerk erstellen (sofern nicht bereits erfolgt), welche die [Fast Fetch Implementierung für Ad Anfragen](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) verwendet. Einzelheiten dazu findest du unter [AMP integrieren, um Display Ads zu schalten](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md).  Beachte, dass für die Bereitstellung von AMPHTML an Seiten ohne AMP keine spezielle Integration erforderlich ist.
+Um AMPHTML Ads auf AMP Seiten bereitzustellen, musst du die Erweiterung [`amp-ad`](../../../documentation/components/reference/amp-ad.md) für dein Netzwerk erstellen (sofern nicht bereits erfolgt), welche die [Fast Fetch Implementierung für Ad Anfragen](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) verwendet. Einzelheiten dazu findest du unter [AMP integrieren, um Display Ads zu schalten](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md). Beachte, dass für die Bereitstellung von AMPHTML an Seiten ohne AMP keine spezielle Integration erforderlich ist.
 
 ## AMPHTML Ads erstellen
 
@@ -87,7 +87,7 @@ Um AMPHTML Ads auf AMP Seiten bereitzustellen, musst du die Erweiterung [`amp-ad
 
 - [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*kommt bald*)
+- Adobe Animate (_kommt bald_)
 
 ### AMPHTML Ad Syntax validieren
 

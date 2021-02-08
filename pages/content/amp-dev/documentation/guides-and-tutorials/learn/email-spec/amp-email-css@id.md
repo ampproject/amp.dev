@@ -1,8 +1,8 @@
 ---
-"$title": CSS yang Didukung AMP untuk Email
-order: '5'
+'$title': CSS yang Didukung AMP untuk Email
+$order: 5
 formats:
-- email
+  - email
 teaser:
   text: Dokumen ini menguraikan fitur-fitur CSS yang saat ini didukung di dalam email AMP.
 toc: 'true'
@@ -327,13 +327,13 @@ Menggunakan `<link rel="stylesheet" href="...">` tidak diizinkan di bagian mana 
 
 Properti CSS berikut ini mempunyai pembatasan tambahan:
 
-Properti | Pembatasan
---- | ---
-[`cursor`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor) | Nilai yang diizinkan hanya `pointer` dan `initial`.
-[`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) | `url()` tidak diizinkan.
-[`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) | Hanya `opacity`, `transform`, `visibility`, dan `offset-distance` yang boleh dianimasi.
-[`visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) | Nilai yang diizinkan hanya `hidden`, `visible`, dan `initial`.
-[`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index) | Hanya nilai dari -100 hingga 100 yang diizinkan.
+| Properti                                                                    | Pembatasan                                                                              |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| [`cursor`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor)         | Nilai yang diizinkan hanya `pointer` dan `initial`.                                     |
+| [`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)         | `url()` tidak diizinkan.                                                                |
+| [`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) | Hanya `opacity`, `transform`, `visibility`, dan `offset-distance` yang boleh dianimasi. |
+| [`visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) | Nilai yang diizinkan hanya `hidden`, `visible`, dan `initial`.                          |
+| [`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)       | Hanya nilai dari -100 hingga 100 yang diizinkan.                                        |
 
 ## At-rule <a name="at-rules"></a>
 
@@ -348,14 +348,14 @@ Font kustom **tidak** didukung di dalam AMP untuk Email.
 Daftar [fitur-fitur media](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#Media_features) yang didukung karena menerapkan aturan bersyarat melalui kueri `@media`.
 
 - [`device-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-width)
-    - `max-device-width`
-    - `min-device-width`
+  - `max-device-width`
+  - `min-device-width`
 - [`hover`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover)
 - [`orientation`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/orientation)
 - [`pointer`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer)
 - [`resolution`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/resolution)
-    - `max-resolution`
-    - `min-resolution`
+  - `max-resolution`
+  - `min-resolution`
 - [`width`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/width)
-    - `max-width`
-    - `min-width`
+  - `max-width`
+  - `min-width`

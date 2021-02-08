@@ -1,9 +1,9 @@
 ---
-"$title": 広告による AMP ページの収益化
-"$order": '0'
+'$title': 広告による AMP ページの収益化
+$order: 0
 description: このガイドでは、AMP ページで広告を表示する手順とベストプラクティスを紹介します。AMP で広告を表示するには、カスタム amp-ad コンポーネントを追加する必要があります...
 formats:
-- ウェブサイト
+  - ウェブサイト
 ---
 
 このガイドでは、AMP ページで広告を表示する手順とベストプラクティスを紹介します。
@@ -21,7 +21,11 @@ formats:
 <a><code data-md-type="codespan">amp-ad</code></a> コンポーネントは、AMP ライブラリのカスタム広告拡張機能で、内部的には <a><code>amp-ad</code></a> はパフォーマンスの最適化を重視して設計されたカスタム JavaScript です。<a><code>amp-ad</code></a> コンポーネントを実行するには、このコンポーネントに必須の JavaScript を AMP ページの <code>head</code> セクションに追加する必要があります。
 
 ```html
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script
+  async
+  custom-element="amp-ad"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+></script>
 ```
 
 ### 手順 2: AMP ページに amp-ad タグを追加する
@@ -31,8 +35,7 @@ formats:
 この例では、a9 ネットワークの広告を配信するための広告スロットを追加しています。
 
 ```html
-<amp-ad type="a9">
-</amp-ad>
+<amp-ad type="a9"> </amp-ad>
 ```
 
 ### 手順 3: 広告ユニットのサイズを指定する
@@ -40,9 +43,7 @@ formats:
 `<amp-ad>` タグに `width` 属性と <code>height</code> 属性を追加します。こうした属性を追加することで、AMP ページ上の広告のサイズを指定できます。
 
 ```html
-<amp-ad type="a9">
-   width="300" height="250"
-</amp-ad>
+<amp-ad type="a9"> width="300" height="250" </amp-ad>
 ```
 
 ### 手順 4: 広告ネットワークのパラメータを設定する
@@ -50,11 +51,14 @@ formats:
 各ネットワークには、広告を配信するために必要な固有のデータ属性があります。利用する広告ネットワークの [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) のドキュメントを参照して、必要な属性を追加してください。以下の例では、a9 ネットワークで必要とされる、広告のサイズなどの詳細を指定する追加のパラメータを設定しています。
 
 ```html
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -63,12 +67,15 @@ formats:
 広告ネットワークによっては、広告が表示可能となるまでの間プレースホルダを表示できます。プレースホルダを指定することで、空白のスペースが表示されるのを防ぎ、ユーザーエクスペリエンスを向上させることができます。プレースホルダを指定するには、`placeholder` 属性が設定された子要素を追加します。詳しくは、「[プレースホルダとフォールバック](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)」をご覧ください。
 
 ```html
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-   <amp-img placeholder src="placeholder-image.jpg"></amp-img>
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
+  <amp-img placeholder src="placeholder-image.jpg"></amp-img>
 </amp-ad>
 ```
 
@@ -77,12 +84,15 @@ formats:
 広告ネットワークによっては、配信できる広告がない場合にフォールバック要素を表示することができます。フォールバックを指定するには、`fallback` 属性が設定された子要素を追加します。詳しくは、「[プレースホルダとフォールバック](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)」をご覧ください。
 
 ```html
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-   <amp-img fallback src="fallback-image.jpg"></amp-img>
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
+  <amp-img fallback src="fallback-image.jpg"></amp-img>
 </amp-ad>
 ```
 
@@ -133,12 +143,12 @@ AMP ページで広告効果を最大化するためのヒントをいくつか�
 ### イノベーション: 魅力にあふれる広告商品を提供する
 
 - **付随的な AMP ページで広告を実装**することで増収を図ります。
-    - [カルーセル内の広告](../../../../documentation/examples/documentation/Carousel_Ad.html)
-    - [ライトボックス内の広告](../../../../documentation/examples/documentation/Lightbox_Ad.html)
-    - [その他](../../../../documentation/examples/index.html)
+  - [カルーセル内の広告](../../../../documentation/examples/documentation/Carousel_Ad.html)
+  - [ライトボックス内の広告](../../../../documentation/examples/documentation/Lightbox_Ad.html)
+  - [その他](../../../../documentation/examples/index.html)
 - **直接販売広告に新しい形態を導入**し、セールスチームが影響力の強い革新的な広告商品を販売できるようにします。
-    - [スティッキー広告](../../../../documentation/examples/documentation/amp-sticky-ad.html)
-    - [フライングカーペット](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
+  - [スティッキー広告](../../../../documentation/examples/documentation/amp-sticky-ad.html)
+  - [フライングカーペット](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
 
 ## その他のリソース
 

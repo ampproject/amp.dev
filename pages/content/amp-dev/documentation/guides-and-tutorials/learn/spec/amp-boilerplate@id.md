@@ -1,11 +1,11 @@
 ---
-"$title": Kode Boilerplate AMP
-order: '9'
+'$title': Kode Boilerplate AMP
+$order: 9
 formats:
-- websites
-- stories
+  - websites
+  - stories
 teaser:
-  text: " head > style[amp-boilerplate] dan noscript > style[amp-boilerplate]"
+  text: ' head > style[amp-boilerplate] dan noscript > style[amp-boilerplate]'
 ---
 
 <!--

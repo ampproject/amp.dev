@@ -1,6 +1,6 @@
 ---
-"$title": Lerne den Startercode kennen
-"$order": '1'
+'$title': Lerne den Startercode kennen
+$order: 1
 description: Eine AMP Seite ist eine HTML Seite, die bestimmte Einschränkungen hat, um zuverlässige Leistung zu garantieren. AMP Seiten haben ein spezielles Markup, das sie als AMP Seite identifiziert.
 ---
 

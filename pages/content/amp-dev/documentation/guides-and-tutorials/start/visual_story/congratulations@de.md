@@ -1,6 +1,6 @@
 ---
-"$title": Gratulation!
-"$order": '9'
+'$title': Gratulation!
+$order: 9
 description: Du hast erfolgreich deine erste AMP Story erstellt! In diesem Tutorial hast du gelernt, eine mehrseitige Story mithilfe der Komponente amp-story zu erstellen …
 author: bpaduch
 ---

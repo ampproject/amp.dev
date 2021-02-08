@@ -1,10 +1,10 @@
 ---
-"$title": Końcowe kroki przed publikacją
-"$order": '6'
+'$title': Końcowe kroki przed publikacją
+$order: 6
 description: Gratulacje! Strona została przetestowana lokalnie i wszystkie błędy walidacji zostały naprawione, co znaczy, że Twoja pierwsza strona AMP jest gotowa do wysyłki.
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 Gratulacje! Strona została przetestowana lokalnie i wszystkie błędy walidacji zostały naprawione, co znaczy, że Twoja pierwsza strona AMP jest gotowa do wysyłki.

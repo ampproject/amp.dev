@@ -1,6 +1,6 @@
 ---
-"$title": Building a regular HTML page
-"$order": '1'
+'$title': Building a regular HTML page
+$order: 1
 description: O diretório do projeto contém um arquivo chamado article.html. É para esse artigo que estamos criando uma página AMP equivalente ...
 ---
 
@@ -9,15 +9,14 @@ O diretório do projeto contém um arquivo chamado [`article.html`](https://gith
 1. **Copie** todo o código do arquivo `article.html` e cole-o em um novo arquivo.
 2. **Salve** o novo arquivo como `article.amp.html`.
 
-[tip type="note"] <strong>OBSERVAÇÃO –</strong> Não é preciso acrescentar `.amp.html` aos arquivos AMP. Eles podem ter qualquer extensão. Os editores normalmente adicionam parâmetros à URL para diferenciar as páginas AMP das versões canônicas (por exemplo,  `http://publisher.com/article.html?amp`).[/tip]
+[tip type="note"] <strong>OBSERVAÇÃO –</strong> Não é preciso acrescentar `.amp.html` aos arquivos AMP. Eles podem ter qualquer extensão. Os editores normalmente adicionam parâmetros à URL para diferenciar as páginas AMP das versões canônicas (por exemplo, `http://publisher.com/article.html?amp`).[/tip]
 
 Seu arquivo `article.amp.html` precisa ter a seguinte forma:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-
     <title>News Article</title>
 
     <link href="base.css" rel="stylesheet" />
@@ -25,15 +24,16 @@ Seu arquivo `article.amp.html` precisa ter a seguinte forma:
     <script type="text/javascript" src="base.js"></script>
   </head>
   <body>
-    <header>
-      News Site
-    </header>
+    <header>News Site</header>
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
     </article>
-    <img src="mountains.jpg">
+    <img src="mountains.jpg" />
   </body>
 </html>
 ```
@@ -58,7 +58,7 @@ Quando você verificar a saída do JavaScript no Developers Console, tendo selec
 Powered by AMP ⚡ HTML
 ```
 
-Um [validador AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) está incluído na biblioteca AMP. Ele mostrará se há algo impedindo sua página de ser um documento AMP válido.  **Ative** o validador ao adicionar este identificador de fragmento ao URL do seu documento:
+Um [validador AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) está incluído na biblioteca AMP. Ele mostrará se há algo impedindo sua página de ser um documento AMP válido. **Ative** o validador ao adicionar este identificador de fragmento ao URL do seu documento:
 
 ```text
 #development=1
@@ -76,7 +76,7 @@ Vários erros de validação aparecerão no console de desenvolvimento. Talvez s
 
 Para tornar o documento AMP válido, será preciso corrigir todos os erros. É isto que vamos fazer neste codelab.
 
-Antes, porém, vamos **simular** uma experiência em um dispositivo móvel nas ferramentas do desenvolvedor no navegador, já que estamos trabalhando com um artigo de notícias para dispositivos móveis.  Por exemplo, no Chrome DevTools, clique no ícone de smartphone e selecione um dispositivo móvel no menu.
+Antes, porém, vamos **simular** uma experiência em um dispositivo móvel nas ferramentas do desenvolvedor no navegador, já que estamos trabalhando com um artigo de notícias para dispositivos móveis. Por exemplo, no Chrome DevTools, clique no ícone de smartphone e selecione um dispositivo móvel no menu.
 
 Uma resolução simulada em dispositivo móvel, como a mostrada abaixo, aparecerá no navegador:
 

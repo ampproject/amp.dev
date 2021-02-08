@@ -1,6 +1,6 @@
 ---
-"$title": Validating your AMP HTML
-"$order": '8'
+'$title': Validating your AMP HTML
+$order: 8
 description: AMP ページを作成するたびに、AMP HTML が正しいことを必ず検証しましょう。［AMP ページの検証にはいくつかの方法を使用できます ...
 author: bpaduch
 ---

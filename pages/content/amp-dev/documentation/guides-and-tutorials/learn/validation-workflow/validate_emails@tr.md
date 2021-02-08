@@ -1,9 +1,9 @@
 ---
-"$title": AMP E-postalarını Doğrulama
-"$order": '1'
+'$title': AMP E-postalarını Doğrulama
+$order: 1
 author: CrystalOnScript
 formats:
-- email
+  - email
 ---
 
 AMP E-postaları, okuyucular için zengin etkileşimli ve dinamik deneyimler sağlamak için AMP JS kitaplığına dayanır. Bu nedenle, e-posta sağlayıcıları mesajlarınızın doğrulanmasını ister. Geçerli AMP işaretlemesi, e-postaların güvenli olduğunu ve kullanıcı deneyimi standartlarının ötesinde olduğunu garanti eder.

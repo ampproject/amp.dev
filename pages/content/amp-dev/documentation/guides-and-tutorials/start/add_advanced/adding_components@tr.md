@@ -1,6 +1,6 @@
 ---
-"$title": Genişletilmiş AMP bileşenleri ekleme
-"$order": '2'
+'$title': Genişletilmiş AMP bileşenleri ekleme
+$order: 2
 description: AMP bileşen sistemi, makalelerinize en az çaba ile hızlı bir şekilde verimli ve duyarlı özellikler oluşturmanıza olanak tanır. AMP HTML kütüphanesi, AMP bileşenleri için üç sınıflandırmaya sahiptir.
 ---
 
@@ -25,7 +25,8 @@ AMP'deki reklamlar [`amp-ad`](../../../../documentation/components/reference/amp
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/image/static">
+  data-slot="/35096353/amptesting/image/static"
+>
 </amp-ad>
 ```
 
@@ -40,7 +41,8 @@ Gördüğünüz gibi, bu çok basit bir yapılandırma. Kullanmak istediğimiz r
   type="a9"
   data-aax_size="300x250"
   data-aax_pubname="test123"
-  data-aax_src="302">
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -51,7 +53,11 @@ Tüm bileşenlerin çekirdek AMP kitaplığı JavaScript dosyasına dahil edilme
 Aşağıdaki komut dosyasını `<head>` etiketine **ekleyin**:
 
 ```html
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script
+  async
+  custom-element="amp-ad"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+></script>
 ```
 
 Sayfayı **yenileyin** ve iki test reklamı görmelisiniz:
@@ -67,7 +73,8 @@ Aşağıdaki iki [`amp-ad`](../../../../documentation/components/reference/amp-a
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/uk">
+  data-slot="/35096353/amptesting/geo/uk"
+>
   <div fallback>No ad appeared because you're not browsing from the UK!</div>
 </amp-ad>
 
@@ -75,7 +82,8 @@ Aşağıdaki iki [`amp-ad`](../../../../documentation/components/reference/amp-a
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/us">
+  data-slot="/35096353/amptesting/geo/us"
+>
   <div fallback>No ad appeared because you're not browsing from the US!</div>
 </amp-ad>
 ```
@@ -88,7 +96,7 @@ Sayfayı **yenileyin** ve bir göz atın. Aşağıdaki ekran görüntüsü Kanad
 
 [tip type="read-on"] **OKUYUN –** Desteklenen en son reklam ağlarını görmek için [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) bileşeninin referans belgelerini okuyun. [/tip]
 
-[tip type="note"] **NOT –**  AMP belgesinin içinde reklam ağı tarafından sağlanan JavaScript'in çalışmasına izin verilmez. Bunun yerine, AMP çalışma zamanı, AMP belgesi olarak farklı bir kaynaktan (bir iframe sanal alanı aracılığıyla) bir iframe yükler ve reklam ağının JS'sini bu iframe sanal alanının içinde yürütür. [/tip]
+[tip type="note"] **NOT –** AMP belgesinin içinde reklam ağı tarafından sağlanan JavaScript'in çalışmasına izin verilmez. Bunun yerine, AMP çalışma zamanı, AMP belgesi olarak farklı bir kaynaktan (bir iframe sanal alanı aracılığıyla) bir iframe yükler ve reklam ağının JS'sini bu iframe sanal alanının içinde yürütür. [/tip]
 
 AMP belgemiz artık bir hikaye anlatmak ve içeriğinizden para kazanmak için önemli bileşenler olan sayfaya gömülü metin, resim ve reklam içeriyor. Bununla birlikte, modern web siteleri genellikle sadece resim ve metinden daha fazla işlevsellik içerir.
 
@@ -107,25 +115,30 @@ Belgeye bir YouTube videosu yerleştirmeyi deneyelim. AMP belgenizdeki `<header>
   data-videoid="npum8JsITQE"
   layout="responsive"
   width="480"
-  height="270">
+  height="270"
+>
   <div fallback>
     <p>The video could not be loaded.</p>
   </div>
 </amp-youtube>
 ```
 
-Sayfayı **yenileyin**. Videonun yerine şu metni göreceksiniz: *"Video yüklenemedi."*
+Sayfayı **yenileyin**. Videonun yerine şu metni göreceksiniz: _"Video yüklenemedi."_
 
 Tarayıcınız YouTube videolarını sorunsuz bir şekilde gösterebilse bile, yine de bu hatayı alırsınız. Neden? Video aslında yüklenemedi, daha ziyade bileşenin kendisi başarısız oldu.
 
 Tüm bileşenlerin çekirdek AMP kitaplığı JavaScript dosyasına dahil edilmediğini unutmayın. YouTube bileşeni için ek bir JavaScript isteği eklememiz gerekiyor.
 
-[tip type="note"] **NOT –**  Geliştirici konsolunuz hala açıksa ve URL'nizde `#development=1` varsa, bu noktada [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) JavaScript'ini eklemenizi hatırlatan bir AMP validator hatası ve eklenecek `script` etiketini size bildiren belgelere bir bağlantı görürsünüz. [/tip]
+[tip type="note"] **NOT –** Geliştirici konsolunuz hala açıksa ve URL'nizde `#development=1` varsa, bu noktada [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) JavaScript'ini eklemenizi hatırlatan bir AMP validator hatası ve eklenecek `script` etiketini size bildiren belgelere bir bağlantı görürsünüz. [/tip]
 
 Aşağıdaki komut dosyasını `<head>` etiketine **ekleyin**:
 
 ```html
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script
+  async
+  custom-element="amp-youtube"
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+></script>
 ```
 
 Sayfayı **yenileyin** ve YouTube videosunu görmelisiniz:
@@ -145,7 +158,11 @@ Twitter'dan önceden biçimlendirilmiş tweet'leri yerleştirmek, haber makalele
 Belgenizin `<head>` etiketine aşağıdaki JavaScript isteğini ekleyerek başlayın:
 
 ```html
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script
+  async
+  custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+></script>
 ```
 
 Şimdi, makalenize Tweet yerleştirmek için bu kodu **ekleyin**:
@@ -155,7 +172,8 @@ Belgenizin `<head>` etiketine aşağıdaki JavaScript isteğini ekleyerek başla
   width="486"
   height="657"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
 
@@ -180,7 +198,11 @@ AMP, bu tür bir durum için özel olarak tasarlanmış başka bir bileşen sağ
 Bunu bir deneyelim. İlk olarak, bileşenin kitaplığını `<head>` etiketine **ekleyin**:
 
 ```html
-<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+<script
+  async
+  custom-element="amp-fit-text"
+  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+></script>
 ```
 
 Sayfanıza aşağıdakileri ekleyin:
@@ -205,7 +227,11 @@ Ya da alıntı daha uzunsa ne olur?
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-   And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+  And the Raven, never flitting, still is sitting, still is sitting. On the
+  pallid bust of Pallas just above my chamber door; And his eyes have all the
+  seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming
+  throws his shadow on the floor; And my soul from out that shadow that lies
+  floating on the floor. Shall be lifted—nevermore!
 </amp-fit-text>
 ```
 

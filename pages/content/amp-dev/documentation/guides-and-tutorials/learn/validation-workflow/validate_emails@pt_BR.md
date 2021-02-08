@@ -1,9 +1,9 @@
 ---
-"$title": Validação de e-mails AMP
-"$order": '1'
+'$title': Validação de e-mails AMP
+$order: 1
 author: CrystalOnScript
 formats:
-- email
+  - email
 ---
 
 Os e-mails AMP dependem da biblioteca JavaScript AMP para permitir ricas experiências interativas e dinâmicas para os leitores. Por esse motivo, os provedores de e-mail precisam que suas mensagens sejam validadas. A marcação AMP válida garante que os e-mails sejam seguros e superem os padrões de experiência esperados pelo usuário.

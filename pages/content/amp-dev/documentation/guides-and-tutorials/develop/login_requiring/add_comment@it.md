@@ -1,6 +1,6 @@
 ---
-"$title": Aggiunta di un commento
-"$order": '2'
+'$title': Aggiunta di un commento
+$order: 2
 description: "A questo punto, l'utente può aggiungere un commento utilizzando la libreria amp-form. Si noti come la presenza del modulo sia condizionale, a seconda dello stato del componente amp-access ..."
 ---
 
@@ -9,6 +9,7 @@ description: "A questo punto, l'utente può aggiungere un commento utilizzando l
 A questo punto, l'utente può aggiungere un commento utilizzando la libreria [`amp-form`](../../../../documentation/components/reference/amp-form.md). Si noti come la presenza del modulo sia condizionale, a seconda dello stato del componente [`amp-access`](../../../../documentation/components/reference/amp-access.md):
 
 [sourcecode:html]
+
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
 [/sourcecode]
 
@@ -26,6 +27,7 @@ Ecco l'esempio di una risposta JSON:
 Il componente modulo mostrerà semplicemente quei valori all'interno della pagina usando il modello [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md):
 
 [sourcecode:html]
+
 <div submit-success>
   <template type="amp-mustache">
     <div class="comment-user">
@@ -42,6 +44,7 @@ Il componente modulo mostrerà semplicemente quei valori all'interno della pagin
 In questo esempio, ci limitiamo a controllare che il valore del commento non sia vuoto; se il valore è vuoto, restituiamo un errore che causa l'esecuzione del codice seguente
 
 [sourcecode:html]
+
 <div submit-error>
   <template type="amp-mustache">
     Error! Looks like something went wrong with your comment, please try to submit it again.

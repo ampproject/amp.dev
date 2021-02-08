@@ -1,9 +1,9 @@
 ---
-"$title": Code soạn sẵn AMP
-order: '9'
+'$title': Code soạn sẵn AMP
+$order: 9
 formats:
-- websites
-- stories
+  - websites
+  - stories
 teaser:
   text: head > style[amp-boilerplate] và noscript > style[amp-boilerplate]
 ---

@@ -1,6 +1,6 @@
 ---
-"$title": Inicio de sesión
-"$order": '1'
+'$title': Inicio de sesión
+$order: 1
 description: La primera vez que accede a la página, nota que hay 2 comentarios y un botón de acceso. Si busca el botón de acceso en el código, encontrará...
 ---
 
@@ -12,6 +12,7 @@ Si busca el botón de acceso en el código, encontrará:
 
 [sourcecode:html]
 <span amp-access="NOT loggedIn" role="button" tabindex="0" amp-access-hide>
+
   <h5>Please login to comment</h5>
   <button on="tap:amp-access.login-sign-in" class="button-primary comment-button">Login</button>
 </span>
@@ -20,6 +21,7 @@ Si busca el botón de acceso en el código, encontrará:
 El comportamiento de los atributos relacionados con el componente [`amp-access`](../../../../documentation/components/reference/amp-access.md) depende de cómo se haya configurado dicho componente a nivel de página. En este caso, se trata de la siguiente configuración:
 
 [sourcecode:html]
+
 <script id="amp-access" type="application/json">
   {
     "authorization": "https://ampbyexample.com/samples_templates/comment_section/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
@@ -34,6 +36,7 @@ El comportamiento de los atributos relacionados con el componente [`amp-access`]
     }
   }
 </script>
+
 [/sourcecode]
 
 El punto de acceso de autorización, que debe proporcionar el editor de la página, se implementa como parte de AMPByExample. Para simplificar, en este ejemplo implementamos una lógica sencilla para que el servidor, al recibir esta solicitud, lea el valor de una cookie denominada `ABE_LOGGED_IN`. Si esta cookie no está presente, devolvemos una respuesta JSON con `loggedIn = false`. Como resultado, la primera vez que un usuario accede a la página, se devuelve `loggedIn = false` y se muestra el botón para iniciar sesión.
@@ -42,9 +45,9 @@ Si nos fijamos de nuevo en el código HTML de dicho botón, podemos ver que se u
 
 [sourcecode:json]
 {
-	"login": {
-    "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
-  }
+"login": {
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
+}
 }
 
 [/sourcecode]

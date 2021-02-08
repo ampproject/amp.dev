@@ -1,13 +1,13 @@
 ---
-"$title": المساهمة في المستندات
-"$order": '0'
-"$hidden": 'true'
+'$title': المساهمة في المستندات
+$order: 0
+'$hidden': 'true'
 description: بدء المساهمة في المستندات الخاصة بـ amp.dev
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 
@@ -33,4 +33,4 @@ author: CrystalOnScript
 
 ## كتابة المستندات
 
-هل تحتاج إلى دليل أو برنامج تدريبي ولكنك لا تجده على  amp.dev؟ يمكنك كتابته! ابدأ بمراجعة [أنواع المستندات التي نقبلها](documentation-types.md) و [إرسال اقتراح مستند](https://github.com/ampproject/amp.dev/issues/new?assignees=&labels=&template=--content-proposal-.md&title=Content+proposal+). بمجرد قبول الاقتراح الخاص بك، ستتمكن من معرفة [ دليل مصطلحات AMP](formatting.md?format=websites) و [أدلة تنسيق المستندات](formatting.md). انظر [هنا للحصول على معلومات حول أمثلة المساهمة](https://github.com/ampproject/amp.dev/blob/future/contributing/samples.md).
+هل تحتاج إلى دليل أو برنامج تدريبي ولكنك لا تجده على amp.dev؟ يمكنك كتابته! ابدأ بمراجعة [أنواع المستندات التي نقبلها](documentation-types.md) و [إرسال اقتراح مستند](https://github.com/ampproject/amp.dev/issues/new?assignees=&labels=&template=--content-proposal-.md&title=Content+proposal+). بمجرد قبول الاقتراح الخاص بك، ستتمكن من معرفة [ دليل مصطلحات AMP](formatting.md?format=websites) و [أدلة تنسيق المستندات](formatting.md). انظر [هنا للحصول على معلومات حول أمثلة المساهمة](https://github.com/ampproject/amp.dev/blob/future/contributing/samples.md).

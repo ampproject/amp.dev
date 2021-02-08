@@ -1,8 +1,8 @@
 ---
-"$title": AMP HTML Teknik Özellikleri
-order: '8'
+'$title': AMP HTML Teknik Özellikleri
+$order: 8
 formats:
-- websites
+  - websites
 teaser:
   text: AMP HTML, belirli temel performans özelliklerini garanti edecek şekilde haber makaleleri gibi içerik sayfaları yazmayı sağlayan bir HTML alt kümesidir.
 ---
@@ -46,7 +46,7 @@ Ayrıca, AMP HTML belgeleri bir web sunucusuna yüklenebilir ve diğer herhangi 
 
 AMP HTML, bir AMP HTML belgesinde bulunabilecek görüntü galerileri gibi gelişmiş işlevleri uygulamak için katkı olarak eklenmiş ancak merkezi olarak yönetilen ve barındırılan bir dizi özel öğe kullanır. Bu öğe dizisi, belgenin özel CSS kullanılarak stilize edilmesine izin verirken, belgenin performans hedeflerine ulaşması için özel öğeler aracılığıyla sağlananın ötesinde yazar tarafından oluşturulmuş JavaScript'e izin vermez.
 
- İçerik üreticileri AMP biçimini kullanarak AMP dosyalarındaki içeriği taranmaya (robots.txt kısıtlamalarına tabi olara), önbelleğe alınmaya ve üçüncü taraflarca görüntülenmeye uygun hale getiriyor.
+İçerik üreticileri AMP biçimini kullanarak AMP dosyalarındaki içeriği taranmaya (robots.txt kısıtlamalarına tabi olara), önbelleğe alınmaya ve üçüncü taraflarca görüntülenmeye uygun hale getiriyor.
 
 ## Performans <a name="performance"></a>
 
@@ -61,6 +61,7 @@ Tahmin edilebilir performans, AMP HTML için temel bir tasarım hedefidir. Önce
 ### Örnek belge <a name="sample-document"></a>
 
 [sourcecode:html]
+
 <!DOCTYPE html>
 <html ⚡>
   <head>
@@ -397,6 +398,7 @@ Yazarlar, `<style amp-custom>` etiketine ek olarak, özellikle ana kare animasyo
 Örnek:
 
 [sourcecode:html]
+
 <style amp-keyframes>
 @keyframes anim1 {}
 
@@ -414,6 +416,7 @@ Yazarlar, özel yazı tipleri için stil sayfaları ekleyebilir. Desteklenen 2 y
 Örnek:
 
 [sourcecode:html]
+
 <link
   rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Tangerine"
@@ -443,7 +446,7 @@ AMP çalışma zamanı, herhangi bir sayfa için bir geliştirme moduna yerleşt
 
 Resimler, videolar, ses dosyaları veya reklamlar gibi kaynaklar, `<amp-img>` gibi özel öğeler aracılığıyla bir AMP HTML dosyasına eklenmelidir. Bunlara "yönetilen kaynaklar" diyoruz çünkü bunların yüklenip yüklenmeyeceğine ve kullanıcıya ne zaman görüntüleneceğine AMP çalışma zamanı tarafından karar verilir.
 
-AMP çalışma zamanının yükleme davranışına ilişkin belirli bir garanti yoktur, ancak genellikle kaynakları yeterince hızlı yüklemeye çalışmalıdır, kullanıcı mümkünse bunları görmek istediği zaman, yüklenmiş  olmalıdırlar. Çalışma zamanı, şu anda görünüm alanında bulunan kaynaklara öncelik vermeli ve görünüm alanındaki değişiklikleri tahmin etmeye ve kaynakları buna göre önceden yüklemeye çalışmalıdır.
+AMP çalışma zamanının yükleme davranışına ilişkin belirli bir garanti yoktur, ancak genellikle kaynakları yeterince hızlı yüklemeye çalışmalıdır, kullanıcı mümkünse bunları görmek istediği zaman, yüklenmiş olmalıdırlar. Çalışma zamanı, şu anda görünüm alanında bulunan kaynaklara öncelik vermeli ve görünüm alanındaki değişiklikleri tahmin etmeye ve kaynakları buna göre önceden yüklemeye çalışmalıdır.
 
 AMP çalışma zamanı, herhangi bir zamanda, halihazırda görünüm alanında olmayan kaynakları kaldırmaya veya genel RAM tüketimini azaltmak için iframe'ler gibi kaynak kapsayıcılarını yeniden kullanmaya karar verebilir.
 
@@ -502,11 +505,13 @@ Genişletilmiş bileşenler, AMP çalışma zamanıyla birlikte gönderilmesi ge
 Genişletilmiş bileşenler, aşağıdaki gibi belgenin başlığına bir `<script>` etiketi eklenerek yüklenirler:
 
 [sourcecode:html]
+
 <script
   async
   custom-element="amp-carousel"
   src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
 ></script>
+
 [/sourcecode]
 
 `<script>` etiketi bir `async` özniteliğine ve öğe adına referans veren `custom-element` özniteliğine sahip olmalıdır.
@@ -536,11 +541,13 @@ Desteklenen şablonlarla ilgili ayrıntılar için [AMP şablon teknik özellikl
 Şablonlar, AMP çalışma zamanıyla birlikte gönderilmez ve genişletilmiş öğelerde olduğu gibi indirilmeleri gerekir. Genişletilmiş bileşenler, aşağıdaki gibi belgenin başlığına bir `<script>` etiketi eklenerek yüklenir:
 
 [sourcecode:html]
+
 <script
   async
   custom-template="amp-mustache"
   src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
 ></script>
+
 [/sourcecode]
 
 `<script>` etiketi bir `async` özniteliği içermeli ve şablon türüne referans veren bir `custom-template` özniteliğine sahip olmalıdır. Betik URL'si `https://cdn.ampproject.org` ile başlamalı ve çok sıkı `/v\d+/[a-z-]+-(latest|\d+|\d+\.\d+)\.js` örüntüsünü izlemelidir.
@@ -549,7 +556,7 @@ Desteklenen şablonlarla ilgili ayrıntılar için [AMP şablon teknik özellikl
 
 [sourcecode:html]
 <template type="amp-mustache" id="template1">
-  Hello {% raw %}{{you}}{% endraw %}!
+Hello {% raw %}{{you}}{% endraw %}!
 </template>
 [/sourcecode]
 
@@ -607,6 +614,7 @@ Standart bir belgenin alternatif bir temsili olan bir AMP belgesi mevcutsa, stan
 Örnek:
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html" />
 [/sourcecode]
 
@@ -615,12 +623,13 @@ AMP belgesinin kendisinin, "standart" ilişkiye sahip bir `link` etiketi aracıl
 Örnek:
 
 [sourcecode:html]
+
 <link
   rel="canonical"
   href="https://www.example.com/url/to/canonical/document.html"
 />
 [/sourcecode]
 
-(Tek bir kaynak aynı anda AMP *ve* standart belge ise, standart ilişki kendi kendisine işaret etmelidir - "amphtml" ilişkisi gerekmez.)
+(Tek bir kaynak aynı anda AMP _ve_ standart belge ise, standart ilişki kendi kendisine işaret etmelidir - "amphtml" ilişkisi gerekmez.)
 
 AMP tüketen sistemlerle en geniş uyumluluk için, JavaScript'i çalıştırmadan "amphtml" ilişkisini okumanın mümkün olması gerektiğini unutmayın. (Diğer bir deyişle, etiket ham HTML'de bulunmalı ve JavaScript aracılığıyla enjekte edilmemelidir.)

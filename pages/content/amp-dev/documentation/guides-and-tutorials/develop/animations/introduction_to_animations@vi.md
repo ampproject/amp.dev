@@ -1,10 +1,10 @@
 ---
-"$title": Giới thiệu về hoạt họa phức hợp
-"$order": '2'
+'$title': Giới thiệu về hoạt họa phức hợp
+$order: 2
 description: Đối với các hình hoạt họa không thể được thúc đẩy bằng cách thêm và xóa lớp, AMP cung cấp một số thành phần dành riêng cho hoạt họa. Các thành phần này áp dụng nguyên tắc của AMP cho hình hoạt họa...
 formats:
-- websites
-- ads
+  - websites
+  - ads
 author: CrystalOnScript
 ---
 
@@ -87,6 +87,7 @@ Việc xây dựng một hình hoạt họa trong [`amp-animation`](../../../../
 Các yếu tố có cùng thẻ hoặc lớp có thể có các thuộc tính hẹn giờ cụ thể và ghi đè các giá trị biến số được quy định trong hoạt họa cấp cao nhất.
 
 [example preview="top-frame" playground="true" imports="amp-animation"]
+
 ```html
 <body>
   <h1>Hello World!</h1>
@@ -99,7 +100,10 @@ Các yếu tố có cùng thẻ hoặc lớp có thể có các thuộc tính h�
         "selector": "h1",
         "duration": "3s",
         "fill": "both",
-        "keyframes": [{"transform": "translateX(0px)"}, {"transform": "translateX(50%)"}],
+        "keyframes": [
+          {"transform": "translateX(0px)"},
+          {"transform": "translateX(50%)"}
+        ],
         "subtargets": [
           {
             "index": 1,
@@ -114,11 +118,10 @@ Các yếu tố có cùng thẻ hoặc lớp có thể có các thuộc tính h�
       }
     </script>
   </amp-animation>
-  <button on="tap:animateThis.start">
-   start
-  </button>
+  <button on="tap:animateThis.start">start</button>
 </body>
 ```
+
 [/example]
 
 ### Chuỗi hoạt họa
@@ -210,9 +213,14 @@ Thiết lập này sẽ phát mỗi hình hoạt họa trong 3 giây trong một
 Thông qua việc sử dụng các [biểu thức `var()` và `calc()`](../../../../documentation/components/reference/amp-animation.md) cùng với [phần mở rộng CSS](../../../../documentation/components/reference/amp-animation.md#css-extensions), bạn có thể viết các hình hoạt họa phức hợp và hẹn giờ để hoạt động với số yếu tố bất kỳ. Điều này cho phép dữ liệu năng động do người dùng tạo có thể được hoạt họa một cách dễ dàng và trôi chảy.
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
-  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-animation"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
+  ></script>
   <style amp-custom>
     .parent {
       perspective: 1000px;
@@ -241,31 +249,44 @@ Thông qua việc sử dụng các [biểu thức `var()` và `calc()`](../../..
         "iterations": "1",
         "fill": "both",
         "keyframes": [
-            {"transform": "translate3d(0px, 0px, 0px)"},
-            {"transform": "translate3d(50%, 0px, 100px)"},
-            {"transform": "translate3d(110%, 0px, 0px) rotateY(-20deg)"},
-            {"transform": "translate3d(50%, 0px, -100px)"},
-            {"transform": "translate3d(0px, 0px, -1px)"}
+          {"transform": "translate3d(0px, 0px, 0px)"},
+          {"transform": "translate3d(50%, 0px, 100px)"},
+          {"transform": "translate3d(110%, 0px, 0px) rotateY(-20deg)"},
+          {"transform": "translate3d(50%, 0px, -100px)"},
+          {"transform": "translate3d(0px, 0px, -1px)"}
         ]
       }
     </script>
   </amp-animation>
-  <div class="parent" on="tap:cardAdmin.start" tabindex=none role="animation">
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/7/70/3C.svg" layout="fill"></amp-img>
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/3H.svg" layout="fill"></amp-img>
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/KC.svg" layout="fill"></amp-img>
+  <div class="parent" on="tap:cardAdmin.start" tabindex="none" role="animation">
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/7/70/3C.svg"
+      layout="fill"
+    ></amp-img>
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/3/3a/3H.svg"
+      layout="fill"
+    ></amp-img>
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/e/e1/KC.svg"
+      layout="fill"
+    ></amp-img>
   </div>
 </body>
 ```
+
 [/example]
 
 - Khai báo một biến số, `--duration`, và cho nó giá trị 2 giây.
 - Thiết lập `duration` (thời lượng) cho giá trị của var `--duration`.
 - Tính độ trễ được áp dụng cho từng yếu tố với lớp `.card`.
-    1. [Phần mở rộng `length()`](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) tính số yếu tố `.card` được chọn
-    2. Sau đó, độ dài sẽ trừ đi [index()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension) của từng `.card`
-    3. Giá trị kết quả sẽ được nhân với var `--duration`
-    4. Giá trị cuối cùng tính theo giây sẽ được áp dụng cho độ trễ của yếu tố
+  1. [Phần mở rộng `length()`](<../../../../documentation/components/reference/amp-animation.md#css-length()-extension>) tính số yếu tố `.card` được chọn
+  2. Sau đó, độ dài sẽ trừ đi [index()](<../../../../documentation/components/reference/amp-animation.md#css-index()-extension>) của từng `.card`
+  3. Giá trị kết quả sẽ được nhân với var `--duration`
+  4. Giá trị cuối cùng tính theo giây sẽ được áp dụng cho độ trễ của yếu tố
 - Hình hoạt họa này được áp dụng riêng cho từng yếu tố, để các thẻ được trộn tuần tự thay cho tất cả cùng lúc.
 
 Mở hình hoạt họa trong sân thực hành AMP và thêm các yếu tố [`amp-img`](../../../../documentation/components/reference/amp-img) để kiểm tra hành vi này.
@@ -275,9 +296,10 @@ Mở hình hoạt họa trong sân thực hành AMP và thêm các yếu tố [`
 Các hình hoạt họa có thể bao gồm [`conditions`](../../../../documentation/components/reference/amp-animation.md#conditions) (điều kiện) cho phép các yếu tố tùy chỉnh. Tùy chỉnh hình hoạt họa cho mọi kích cỡ màn hình thông qua [điều kiện `media` (đa phương tiện)](../../../../documentation/components/reference/amp-animation.md#media-query) và hỗ trợ tương thích ngược với các trình duyệt bằng cách bật [các điều kiện `supports` (hỗ trợ)](../../../../documentation/components/reference/amp-animation.md#supports-condition) trong một [tuyên bố `switch`](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement).
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
- <style amp-custom>
+  <style amp-custom>
     .drop {
       width: 20px;
       height: 20px;
@@ -291,50 +313,54 @@ Các hình hoạt họa có thể bao gồm [`conditions`](../../../../documenta
       background: red;
     }
   </style>
-  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-animation"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
+  ></script>
 </head>
 <body>
-<amp-animation id="mediaAnimation" layout="nodisplay">
-  <script type="application/json">
-    {
-      "duration": "1s",
-      "iterations": "4",
-      "fill": "both",
-      "direction": "alternate",
-      "animations": [
-        {
-          "media": "(min-width: 300px)",
-          "selector": ".drop",
-          "keyframes": {
-            "transform": "translate(100vw)"
+  <amp-animation id="mediaAnimation" layout="nodisplay">
+    <script type="application/json">
+      {
+        "duration": "1s",
+        "iterations": "4",
+        "fill": "both",
+        "direction": "alternate",
+        "animations": [
+          {
+            "media": "(min-width: 300px)",
+            "selector": ".drop",
+            "keyframes": {
+              "transform": "translate(100vw)"
+            }
+          },
+          {
+            "media": "(max-width: 300px)",
+            "selector": ".drop",
+            "keyframes": {
+              "transform": "translate(50vw)"
+            }
+          },
+          {
+            "media": "(min-width: 300px)",
+            "selector": ".right",
+            "keyframes": {
+              "transform": "translate(-100vw)"
+            }
+          },
+          {
+            "media": "(max-width: 300px)",
+            "selector": ".right",
+            "keyframes": {
+              "transform": "translate(-50vw)"
+            }
           }
-        },
-        {
-          "media": "(max-width: 300px)",
-          "selector": ".drop",
-          "keyframes": {
-            "transform": "translate(50vw)"
-          }
-        },
-        {
-          "media": "(min-width: 300px)",
-          "selector": ".right",
-          "keyframes": {
-            "transform": "translate(-100vw)"
-          }
-        },
-        {
-          "media": "(max-width: 300px)",
-          "selector": ".right",
-          "keyframes": {
-            "transform": "translate(-50vw)"
-          }
-        }
-      ]
-    }
-  </script>
-</amp-animation>
-    
+        ]
+      }
+    </script>
+  </amp-animation>
+
   <div class="rain">
     <div class="drop"></div>
     <div class="drop right"></div>
@@ -348,4 +374,5 @@ Các hình hoạt họa có thể bao gồm [`conditions`](../../../../documenta
   <button on="tap:mediaAnimation.start">Start</button>
 </body>
 ```
+
 [/example]

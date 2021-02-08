@@ -1,12 +1,12 @@
 ---
-"$title": "HTML'yi AMP'ye dönüştürme"
+'$title': "HTML'yi AMP'ye dönüştürme"
 formats:
-- websites
-"$titles":
+  - websites
+'$titles':
   teaser: Convert HTML to AMP
-"$order": '0'
+$order: 0
 description: "Bu öğreticide, AMP'nin temel kavramlarını ve AMP belgelerinin geleneksel HTML belgelerinden nasıl farklı olduğunu öğreneceksiniz. Bu öğreticinin sonunda..."
-"$hidden": 'true'
+'$hidden': 'true'
 teaser:
   icon: convert
   text: "Bu adım adım öğreticide HTML'yi AMP'ye nasıl dönüştüreceğinizi öğrenin."

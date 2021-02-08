@@ -1,8 +1,8 @@
 ---
-"$title": Поддержка CSS в AMP для писем
-order: '5'
+'$title': Поддержка CSS в AMP для писем
+$order: 5
 formats:
-- email
+  - email
 teaser:
   text: В данном документе дается описание функций CSS, которые на данный момент поддерживаются в AMP-письмах.
 toc: 'true'
@@ -327,13 +327,13 @@ AMP для писем **не** поддерживает внешние табл�
 
 В некоторых CSS-свойствах имеются дополнительные ограничения:
 
-Свойство | Ограничения
---- | ---
-[`cursor`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor) | Единственно допустимые значения — `pointer` и `initial`.
-[`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) | `url()` не допускается.
-[`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) | Анимировать можно только `opacity` , `transform`, `visibility` и `offset-distance`.
-[`visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) | Единственно допустимые значения: `hidden`, `visible` и `initial`.
-[`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index) | Допускаются только значения от -100 до 100.
+| Свойство                                                                    | Ограничения                                                                         |
+| --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| [`cursor`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor)         | Единственно допустимые значения — `pointer` и `initial`.                            |
+| [`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)         | `url()` не допускается.                                                             |
+| [`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) | Анимировать можно только `opacity` , `transform`, `visibility` и `offset-distance`. |
+| [`visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) | Единственно допустимые значения: `hidden`, `visible` и `initial`.                   |
+| [`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)       | Допускаются только значения от -100 до 100.                                         |
 
 ## At-правила <a name="at-rules"></a>
 
@@ -348,14 +348,14 @@ AMP для писем **не** поддерживает внешние табл�
 Ниже представлен список [мультимедийных функций](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#Media_features), которые поддерживаются при условном применении правил через запросы `@media`.
 
 - [`device-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-width)
-    - `max-device-width`
-    - `min-device-width`
+  - `max-device-width`
+  - `min-device-width`
 - [`hover`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover)
 - [`orientation`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/orientation)
 - [`pointer`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer)
 - [`resolution`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/resolution)
-    - `max-resolution`
-    - `min-resolution`
+  - `max-resolution`
+  - `min-resolution`
 - [`width`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/width)
-    - `max-width`
-    - `min-width`
+  - `max-width`
+  - `min-width`

@@ -1,12 +1,12 @@
 ---
-"$title": Contribute translations
-"$order": '2'
+'$title': Contribute translations
+$order: 2
 description: A missão do AMP inclui tornar a web um lugar mais acessível para todos, e não podemos atingir esse objetivo sem uma documentação localizada. A tradução da documentação AMP é um processo essencial que ajuda no sucesso e na saúde da comunidade AMP.
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 ---
 
 Bem-vindo à iniciativa de tradução AMP!
@@ -27,35 +27,35 @@ O AMP possui um processo interno contínuo de tradução da documentação. Esta
 ### Atualmente, nosso processo é o seguinte:
 
 1. Encontre um arquivo para traduzir.
-2. Crie um [Issue no GitHub](https://github.com/ampproject/docs/issues/new). * Declare para qual idioma você está traduzindo o documento. * Informe o nome do arquivo que você deseja traduzir ou atualizar. * Dê uma estimativa aproximada de quanto do arquivo você está traduzindo.
-    - Full File (Arquivo inteiro)
-    - Partial File (Arquivo parcial)
-    - Few Terms (Alguns termos) * Forneça uma estimativa geral de quanto tempo levará para concluir a tarefa de tradução. * Adicione [@CrystalOnScript](https://github.com/CrystalOnScript) para que ela possa fazer a triagem da solicitação de localização e informá-lo caso já exista alguém trabalhando na mesma tradução:
-    - Sim! Por favor, traduza isto!
-    - Obrigado pelo seu interesse, mas a equipe interna ou voluntário está trabalhando neste documento no momento. Você será adicionado como revisor antes que ele seja publicado.
+2. Crie um [Issue no GitHub](https://github.com/ampproject/docs/issues/new). _ Declare para qual idioma você está traduzindo o documento. _ Informe o nome do arquivo que você deseja traduzir ou atualizar. \* Dê uma estimativa aproximada de quanto do arquivo você está traduzindo.
+   - Full File (Arquivo inteiro)
+   - Partial File (Arquivo parcial)
+   - Few Terms (Alguns termos) _ Forneça uma estimativa geral de quanto tempo levará para concluir a tarefa de tradução. _ Adicione [@CrystalOnScript](https://github.com/CrystalOnScript) para que ela possa fazer a triagem da solicitação de localização e informá-lo caso já exista alguém trabalhando na mesma tradução:
+   - Sim! Por favor, traduza isto!
+   - Obrigado pelo seu interesse, mas a equipe interna ou voluntário está trabalhando neste documento no momento. Você será adicionado como revisor antes que ele seja publicado.
 
 Alguns tradutores participam de um canal do Slack. Nós encorajamos você a participar e se apresentar! Inscreva-se [no canal do AMP no Slack](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877).
 
 ### Criando arquivos localizados
 
-O site [amp.dev](https://amp.dev/) diferencia os arquivos localizados pelo sufixo do símbolo `@` seguido do código do idioma apropriado na tradução do documento. Por exemplo, `example.md` se tornaria  `example@ko.md` na sua tradução em Coreano.
+O site [amp.dev](https://amp.dev/) diferencia os arquivos localizados pelo sufixo do símbolo `@` seguido do código do idioma apropriado na tradução do documento. Por exemplo, `example.md` se tornaria `example@ko.md` na sua tradução em Coreano.
 
 #### sufixos de arquivos de tradução amp.dev
 
-Idioma | Sufixo
---- | :-:
-Árabe | `@ar`
-Espanhol | `@es`
-Francês | `@fr`
-Indonésio | `@id`
-Italiano | `@it`
-Japonês | `@ja`
-Koreano | `@ko`
-Português do Brasil | `@pt_BR`
-Russo | `@ru`
-Turco | `@tr`
-Vietnamita | `@vi`
-Chinês | `@zh_CN`
+| Idioma              |  Sufixo  |
+| ------------------- | :------: |
+| Árabe               |  `@ar`   |
+| Espanhol            |  `@es`   |
+| Francês             |  `@fr`   |
+| Indonésio           |  `@id`   |
+| Italiano            |  `@it`   |
+| Japonês             |  `@ja`   |
+| Koreano             |  `@ko`   |
+| Português do Brasil | `@pt_BR` |
+| Russo               |  `@ru`   |
+| Turco               |  `@tr`   |
+| Vietnamita          |  `@vi`   |
+| Chinês              | `@zh_CN` |
 
 ## Comunidades
 

@@ -1,6 +1,6 @@
 ---
-"$title": Realizzazione di una normale pagina HTML
-"$order": '1'
+'$title': Realizzazione di una normale pagina HTML
+$order: 1
 description: "Nella directory di progetto si trova un file denominato article.html. Si tratta della pagina di articoli per cui stiamo realizzando un'equivalente pagina AMP ..."
 ---
 
@@ -14,10 +14,9 @@ Nella directory di progetto si trova un file denominato [`article.html`](https:/
 Il file `article.amp.html` dovrebbe avere il seguente aspetto:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-
     <title>News Article</title>
 
     <link href="base.css" rel="stylesheet" />
@@ -25,15 +24,16 @@ Il file `article.amp.html` dovrebbe avere il seguente aspetto:
     <script type="text/javascript" src="base.js"></script>
   </head>
   <body>
-    <header>
-      News Site
-    </header>
+    <header>News Site</header>
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
     </article>
-    <img src="mountains.jpg">
+    <img src="mountains.jpg" />
   </body>
 </html>
 ```

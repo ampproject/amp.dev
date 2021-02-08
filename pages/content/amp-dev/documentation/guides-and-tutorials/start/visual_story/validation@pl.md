@@ -1,6 +1,6 @@
 ---
-"$title": Walidacja AMP HTML
-"$order": '8'
+'$title': Walidacja AMP HTML
+$order: 8
 description: Po utworzeniu każdej strony AMP należy sprawdzić, czy kod AMP HTML jest prawidłowy. Do sprawdzenia prawidłowości stron AMP można użyć kilku metod...
 author: bpaduch
 ---

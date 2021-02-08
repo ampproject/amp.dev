@@ -1,6 +1,6 @@
 ---
-"$title": Quảng bá trang của bạn
-"$order": '3'
+'$title': Quảng bá trang của bạn
+$order: 3
 description: Bạn cần thiết lập liên kết hai hướng để các công cụ tìm kiếm có thể hiểu mối quan hệ giữa tài liệu HTML chính thức với tài liệu AMP của chúng ta.
 ---
 
@@ -23,7 +23,7 @@ Vì mục đích của bài thực hành này, chúng tôi sẽ tập trung vào
 Chúng ta đã thực hiện bước đầu tiên để đạt được điều này trong tài liệu AMP của mình bằng cách bao gồm một thẻ liên kết trong phần `<head>` (đầu đề) để chỉ lại về trang chính thức:
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 Bước tiếp theo là liên kết bài viết chính thức với trang AMP. Việc này có thể được thực hiện bằng cách bao gồm một thẻ `<link rel="amphtml">` trong phần `<head>` của bài viết chính thức.
@@ -31,7 +31,7 @@ Bước tiếp theo là liên kết bài viết chính thức với trang AMP. V
 Trong tập tin `article.html`, **thêm** đoạn code sau vào phần `<head>`:
 
 ```html
-<link rel="amphtml" href="/article.amp.html">
+<link rel="amphtml" href="/article.amp.html" />
 ```
 
 Sơ đồ sau đây minh họa hướng của các thẻ liên kết:
@@ -47,40 +47,39 @@ Các trang AMP hợp lệ không cần cấu trúc dữ liệu [schema.org](http
 Ở bài viết tin tức của chúng ta, **thêm** cấu trúc dữ liệu sau đây vào cuối phần `<head>` trong tài liệu AMP của bạn:
 
 ```html
-
 <script type="application/ld+json">
-{
- "@context": "http://schema.org",
- "@type": "NewsArticle",
- "mainEntityOfPage":{
-   "@type":"WebPage",
-   "@id":"https://example.com/my-article.html"
- },
- "headline": "My First AMP Article",
- "image": {
-   "@type": "ImageObject",
-   "url": "https://example.com/article_thumbnail1.jpg",
-   "height": 800,
-   "width": 800
- },
- "datePublished": "2015-02-05T08:00:00+08:00",
- "dateModified": "2015-02-05T09:20:00+08:00",
- "author": {
-   "@type": "Person",
-   "name": "John Doe"
- },
- "publisher": {
-   "@type": "Organization",
-   "name": "⚡ AMP Times",
-   "logo": {
-     "@type": "ImageObject",
-     "url": "https://example.com/amptimes_logo.jpg",
-     "width": 600,
-     "height": 60
-   }
- },
- "description": "My first experience in an AMPlified world"
-}
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://example.com/my-article.html"
+    },
+    "headline": "My First AMP Article",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://example.com/article_thumbnail1.jpg",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2015-02-05T08:00:00+08:00",
+    "dateModified": "2015-02-05T09:20:00+08:00",
+    "author": {
+      "@type": "Person",
+      "name": "John Doe"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "⚡ AMP Times",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://example.com/amptimes_logo.jpg",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "My first experience in an AMPlified world"
+  }
 </script>
 ```
 

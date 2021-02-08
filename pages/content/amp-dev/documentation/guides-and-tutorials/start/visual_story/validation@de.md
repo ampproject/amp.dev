@@ -1,6 +1,6 @@
 ---
-"$title": AMP HTML validieren
-"$order": '8'
+'$title': AMP HTML validieren
+$order: 8
 description: Immer, wenn du eine AMP Seite erstellst, solltest du unbedingt prüfen, ob dein AMP HTML korrekt ist. Es gibt [mehrere Methoden, mit denen du deine AMP Seite validieren kannst …
 author: bpaduch
 ---

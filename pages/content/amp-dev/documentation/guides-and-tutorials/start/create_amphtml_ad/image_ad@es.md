@@ -1,6 +1,6 @@
 ---
-"$title": Cómo crear un anuncio gráfico
-"$order": '1'
+'$title': Cómo crear un anuncio gráfico
+$order: 1
 description: 'Nuestro anuncio consiste en una imagen sencilla con un hipervínculo hacia el sitio anunciado. Para mostrar la imagen utilizaremos la etiqueta amp-img. Este es el código: ...'
 ---
 
@@ -11,9 +11,12 @@ Nuestro anuncio consiste en una imagen sencilla con un hipervínculo hacia el si
 ```html
 <body>
   <a target="_blank" href="https://www.amp.dev">
-    <amp-img width="300" height="250"
-        alt="Learn amp"
-        src="/static/img/docs/ads/amp-300x250.png"></amp-img>
+    <amp-img
+      width="300"
+      height="250"
+      alt="Learn amp"
+      src="/static/img/docs/ads/amp-300x250.png"
+    ></amp-img>
   </a>
 </body>
 ```

@@ -1,9 +1,9 @@
 ---
-"$title": AMP 페이지에서 광고로 수익 창출하기
-"$order": '0'
+'$title': AMP 페이지에서 광고로 수익 창출하기
+$order: 0
 description: 이 가이드에서는 AMP 페이지에 광고를 게재하기 위한 안내와 권장 사항을 제공합니다. AMP 페이지에 광고를 게재하려면 사용자 지정 amp-ad 컴포넌트를 추가하여...
 formats:
-- 웹사이트
+  - 웹사이트
 ---
 
 이 가이드에서는 AMP 페이지에 광고를 게재하기 위한 안내와 권장사항을 제공합니다.
@@ -21,7 +21,11 @@ AMP 페이지에 광고를 게재하기 위해 컴포넌트를 추가하는 단�
 `<amp-ad>` 컴포넌트는 AMP 라이브러리의 사용자 지정 광고 확장자입니다. `<amp-ad>`는 성능 최적화를 위해 특별히 고안된 사용자 지정 JavaScript를 기반으로 합니다. `<amp-ad>` 컴포넌트를 실행하려면 AMP 페이지의 `head` 섹션에 이 컴포넌트의 필수 JavaScript를 추가해야 합니다.
 
 ```html
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script
+  async
+  custom-element="amp-ad"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+></script>
 ```
 
 ### 2단계: AMP 페이지에 amp-ad 태그 추가
@@ -31,8 +35,7 @@ AMP 페이지에 광고를 게재하기 위해 컴포넌트를 추가하는 단�
 이 예에서는 a9 네트워크의 광고를 게재하기 위해 광고 슬롯을 추가합니다.
 
 ```html
-<amp-ad type="a9">
-</amp-ad>
+<amp-ad type="a9"> </amp-ad>
 ```
 
 ### 3단계: 광고 단위 크기 지정
@@ -40,9 +43,7 @@ AMP 페이지에 광고를 게재하기 위해 컴포넌트를 추가하는 단�
 `<amp-ad>` 태그에 `width` 및 <code>height</code> 속성을 추가합니다. 이 속성은 AMP 페이지의 광고 크기를 지정합니다.
 
 ```html
-<amp-ad type="a9">
-   width="300" height="250"
-</amp-ad>
+<amp-ad type="a9"> width="300" height="250" </amp-ad>
 ```
 
 ### 4단계: 광고 네트워크 매개변수 설정
@@ -50,11 +51,14 @@ AMP 페이지에 광고를 게재하기 위해 컴포넌트를 추가하는 단�
 각 네트워크에는 광고를 게재하는 데 필요한 특정 데이터 속성이 있습니다. 광고 네트워크의 <amp-ad> 문서를 참조하여 필요한 속성을 추가하세요. 다음 예에서 a9 네트워크에서는 광고 크기 및 기타 세부정보를 지정하기 위한 추가 매개변수를 요구합니다.
 
 ```html
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -63,12 +67,15 @@ AMP 페이지에 광고를 게재하기 위해 컴포넌트를 추가하는 단�
 광고 네트워크에 따라 광고가 없는 경우 플레이스홀더를 표시하도록 선택할 수 있습니다. 이렇게 하면 공백을 방지하여 사용자 환경이 개선됩니다. 플레이스홀더를 지정하려면 `placeholder` 속성으로 하위 요소를 추가합니다. [플레이스홀더 및 대체 동작](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)에서 자세히 알아보세요.
 
 ```html
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-   <amp-img placeholder src="placeholder-image.jpg"></amp-img>
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
+  <amp-img placeholder src="placeholder-image.jpg"></amp-img>
 </amp-ad>
 ```
 
@@ -77,12 +84,15 @@ AMP 페이지에 광고를 게재하기 위해 컴포넌트를 추가하는 단�
 광고 네트워크에 따라 게재 가능한 광고가 없는 경우 대체 요소를 표시하도록 선택할 수 있습니다. 대체 동작을 지정하려면 `fallback` 속성으로 하위 요소를 추가하세요. [플레이스홀더 및 대체 동작](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)에서 자세히 알아보세요.
 
 ```html
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-   <amp-img fallback src="fallback-image.jpg"></amp-img>
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
+  <amp-img fallback src="fallback-image.jpg"></amp-img>
 </amp-ad>
 ```
 
@@ -90,7 +100,7 @@ AMP 페이지에 광고를 게재하기 위해 컴포넌트를 추가하는 단�
 
 ## 직접 판매 AMPHTML 광고 게재
 
-[`amp-ad`](../../../../documentation/components/reference/amp-ad.md) 컴포넌트는 지정한 네트워크에서 광고를 게재합니다. 광고 네트워크가 AMPHTML 광고를 지원할 경우 광고는 표준 HTML 광고 또는 AMPHTML 광고일 수 있습니다. AMPHTML 광고로 직접 판매 광고를 게재하려면 [AMPHTML 광고 사양](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md)의 요구 사항에 따라 AMP HTML로 광고를 제작하고  [AMPHTML 광고를 지원하는 광고 서버](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers)를 사용해야 합니다.
+[`amp-ad`](../../../../documentation/components/reference/amp-ad.md) 컴포넌트는 지정한 네트워크에서 광고를 게재합니다. 광고 네트워크가 AMPHTML 광고를 지원할 경우 광고는 표준 HTML 광고 또는 AMPHTML 광고일 수 있습니다. AMPHTML 광고로 직접 판매 광고를 게재하려면 [AMPHTML 광고 사양](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md)의 요구 사항에 따라 AMP HTML로 광고를 제작하고 [AMPHTML 광고를 지원하는 광고 서버](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers)를 사용해야 합니다.
 
 ## 광고 요청의 타겟팅 데이터 보강
 
@@ -133,12 +143,12 @@ AMP 페이지의 광고 효과를 극대화하기 위한 팁을 확인해 보세
 ### 혁신: 가장 좋은 성과를 내는 광고 제품 제공
 
 - **부속 AMP 페이지에 광고를 구현**하여 수익을 늘립니다.
-    - [캐러셀 광고](../../../../documentation/examples/documentation/Carousel_Ad.html)
-    - [라이트박스 광고](../../../../documentation/examples/documentation/Lightbox_Ad.html)
-    - ... [기타](../../../../documentation/examples/index.html)
+  - [캐러셀 광고](../../../../documentation/examples/documentation/Carousel_Ad.html)
+  - [라이트박스 광고](../../../../documentation/examples/documentation/Lightbox_Ad.html)
+  - ... [기타](../../../../documentation/examples/index.html)
 - **직접 판매 광고를 위한 새로운 형식을 구현**하여 영업팀에서 효과적이고 혁신적인 광고 제품을 활용할 수 있도록 하세요.
-    - [고정 광고](../../../../documentation/examples/documentation/amp-sticky-ad.html)
-    - [Flying Carpet](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
+  - [고정 광고](../../../../documentation/examples/documentation/amp-sticky-ad.html)
+  - [Flying Carpet](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
 
 ## 추가 리소스
 

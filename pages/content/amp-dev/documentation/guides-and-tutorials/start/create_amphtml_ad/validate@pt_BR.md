@@ -1,6 +1,6 @@
 ---
-"$title": Valide a sintaxe AMPHTML
-"$order": '3'
+'$title': Valide a sintaxe AMPHTML
+$order: 3
 description: Para garantir que seu anúncio será renderizado corretamente, você deve validar sua sintaxe AMPHTML. No seu navegador, abra o Validador AMP, e garanta que AMP4ADS seja o formato HTML selecionado.
 ---
 

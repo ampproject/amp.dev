@@ -1,17 +1,17 @@
 ---
-"$title": Imágenes adaptativas con srcset, sizes & heights
-"$order": '4'
+'$title': Imágenes adaptativas con srcset, sizes & heights
+$order: 4
 description: Utilice el atributo srcset para controlar los elementos basados en expresiones de medios variables. En particular, utilícelo con todas las etiquetas amp-img para especificar cuál...
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## srcset
@@ -21,16 +21,20 @@ Utilice el atributo `srcset` para controlar los elementos basados en expresiones
 En este ejemplo simple, `srcset` especifica cuál imagen se usará para el ancho de la pantalla. El descriptor `w` le dice al navegador el ancho que tendrá cada imagen en la lista:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   layout="responsive"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
-            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w">
+            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
+>
 </amp-img>
 ```
+
 [/example]
 
 [tip type="tip"] <strong>NOTA:</strong> AMP soporta srcset con el descriptor `w` en todos los navegadores web. [/tip]
@@ -44,16 +48,20 @@ También puede utilizar el atributo `sizes` junto con el atributo `srcset`. El a
 Considere el siguiente ejemplo:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
             {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
-  sizes="(min-width: 650px) 50vw, 100vw">
+  sizes="(min-width: 650px) 50vw, 100vw"
+>
 </amp-img>
 ```
+
 [/example]
 
 El atributo `sizes` define el ancho del elemento como el 50% del tamaño de la ventana gráfica cuando la ventana es mayor de 650px. Por ejemplo, si la ventana es de 800px, el ancho del elemento se establecerá en 400px. Después, el navegador seleccionará el recurso `srcset` relativo a 400px, suponiendo que la relación de píxeles del dispositivo sea 1, el cual, en este caso es `narrow.jpg` (320px).
@@ -69,19 +77,23 @@ Todos los elementos personalizados de AMP que permiten un diseño `responsive`, 
 1. Se aplica a la altura y no al ancho del elemento.
 2. Se permiten valores porcentuales, por ejemplo, `86%`. Si se utiliza un valor porcentual, indica el porcentaje de ancho del elemento.
 
-Cuando el atributo `heights` se especifica junto con `width` y `height`, el `layout`  predeterminado es `responsive`.
+Cuando el atributo `heights` se especifica junto con `width` y `height`, el `layout` predeterminado es `responsive`.
 
 Un ejemplo:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="AMP"
+<amp-img
+  alt="AMP"
   src="{{server_for_email}}/static/inline-examples/images/amp.jpg"
   width="320"
   height="256"
-  heights="(min-width:500px) 200px, 80%">
+  heights="(min-width:500px) 200px, 80%"
+>
 </amp-img>
 ```
+
 [/example]
 
 En este ejemplo, la altura del elemento predeterminado será del 80% del ancho, pero para la ventana de visualización más ancha que `500px` se limitará a `200px`.

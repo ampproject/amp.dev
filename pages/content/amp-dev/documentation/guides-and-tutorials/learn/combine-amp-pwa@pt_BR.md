@@ -1,11 +1,11 @@
 ---
-"$title": How AMP and PWA relate to each other
-"$order": '7'
+'$title': How AMP and PWA relate to each other
+$order: 7
 description: Os Progressive Web Apps (PWA) e as páginas AMP funcionam muito bem juntos. Em muitos casos, eles se complementam de uma forma ou de outra. Saiba como ...
 formats:
-- websites
+  - websites
 components:
-- youtube
+  - youtube
 author: pbakaus
 ---
 
@@ -31,7 +31,7 @@ As páginas AMP podem usar muitos recursos de PWA por conta própria, desde que 
 
 ## AMP como ponto de entrada no seu PWA
 
-Uma vantagem exclusiva das páginas AMP é a **exibição quase instantânea** - uma característica ideal para a primeira interação do usuário com seu site. As *Progressive Web Apps* permitem muito **mais interatividade e recursos que estimulam o engajamento**, mas o carregamento inicial é prejudicado porque o Service Worker do site, os recursos e o shell do app só serão processados rapidamente em carregamentos posteriores.
+Uma vantagem exclusiva das páginas AMP é a **exibição quase instantânea** - uma característica ideal para a primeira interação do usuário com seu site. As _Progressive Web Apps_ permitem muito **mais interatividade e recursos que estimulam o engajamento**, mas o carregamento inicial é prejudicado porque o Service Worker do site, os recursos e o shell do app só serão processados rapidamente em carregamentos posteriores.
 
 Uma boa estratégia é fazer com que o ponto de entrada do seu site seja uma página AMP, depois carregar o PWA em segundo plano e mudar para ele para o restante da navegação.
 

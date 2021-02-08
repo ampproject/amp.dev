@@ -1,9 +1,9 @@
 ---
-"$title": Cải thiện tương tác người dùng
-"$order": '6'
+'$title': Cải thiện tương tác người dùng
+$order: 6
 description: Đây là một số mẹo nhanh để cải thiện tương tác người dùng với AMP. Giúp người đọc nhận diện bạn với lối đặt thương hiệu nhất quán và nội dung phong phú ở mọi trang AMP và phi AMP
 formats:
-- websites
+  - websites
 ---
 
 Đây là một số mẹo nhanh để cải thiện tương tác người dùng với AMP.

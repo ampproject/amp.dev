@@ -1,10 +1,10 @@
 ---
-"$title": Fundamentos de AMP para E-mail
-"$order": '1'
+'$title': Fundamentos de AMP para E-mail
+$order: 1
 description: Tudo o que você precisa saber para começar a escrever E-mails AMP válidos.
 author: CrystalOnScript
 formats:
-- email
+  - email
 ---
 
 Se você conhece o AMP, temos ótimas notícias! O AMP para e-mails é simplesmente um subconjunto da biblioteca AMP HTML. Se você não conhece o AMP, também temos uma ótima notícia! Este guia contém tudo o que você precisa saber para começar a escrever E-mails para AMP válidos!
@@ -14,16 +14,20 @@ Se você conhece o AMP, temos ótimas notícias! O AMP para e-mails é simplesme
 Os E-mails AMP parecem e-mails HTML clássicos, mas com algumas poucas diferenças. Abaixo está o código mínimo necessário para fazer com que um e-mail seja um e-mail AMP válido.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email data-css-strict>
-<head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
-</head>
-<body>
-  Hello, AMP4EMAIL world.
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    Hello, AMP4EMAIL world.
+  </body>
 </html>
 ```
 
@@ -38,8 +42,12 @@ Os provedores de email que suportam os E-mails AMP configuraram verificações d
 
 ```html
 <head>
-...
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  ...
+  <style amp4email-boilerplate>
+    body {
+      visibility: hidden;
+    }
+  </style>
 </head>
 ```
 
@@ -132,9 +140,7 @@ Este exemplo demonstra o uso de `<amp-list>` para exibir dados autenticados:
   src="https://example.com/endpoint?token=REPLACE_WITH_YOUR_ACCESS_TOKEN"
   height="300"
 >
-  <template type="amp-mustache">
-    ...
-  </template>
+  <template type="amp-mustache"> ... </template>
 </amp-list>
 ```
 

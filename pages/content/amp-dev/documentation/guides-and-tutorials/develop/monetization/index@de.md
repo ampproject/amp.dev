@@ -1,9 +1,9 @@
 ---
-"$title": Monetarisierung deiner AMP Seite mit Ads
-"$order": '0'
+'$title': Monetarisierung deiner AMP Seite mit Ads
+$order: 0
 description: Dieser Leitfaden enthält Anweisungen und Best Practices zum Anzeigen von Ads auf deinen AMP Seiten.  Um Ads in AMP anzuzeigen, musst du zu deiner …
 formats:
-- websites
+  - websites
 ---
 
 Dieser Leitfaden enthält Anweisungen und Best Practices zum Anzeigen von Ads auf deinen AMP Seiten.
@@ -21,7 +21,11 @@ Sehen wir uns die Schritte zum Hinzufügen der Komponente an, damit du auf deine
 Die Komponente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) ist eine benutzerdefinierte Anzeigenerweiterung der AMP Bibliothek. Unter der Haube von [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) befindet sich benutzerdefiniertes JavaScript, das sorgfältig entwickelt wurde, um die Leistung zu optimieren. Um die Komponente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) auszuführen, musst du das für diese Komponente erforderliche JavaScript im `head` deiner AMP Seite einbinden:
 
 ```html
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script
+  async
+  custom-element="amp-ad"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+></script>
 ```
 
 ### Schritt 2: Füge das amp-ad Tag zu deiner AMP Seite hinzu
@@ -31,8 +35,7 @@ Die Komponente [`amp-ad`](../../../../documentation/components/reference/amp-ad.
 In diesem Beispiel fügen wir ein Ad Slot hinzu, um Ads aus dem a9 Netzwerk bereitzustellen:
 
 ```html
-<amp-ad type="a9">
-</amp-ad>
+<amp-ad type="a9"> </amp-ad>
 ```
 
 ### Schritt 3: Gib die Größe des Ad Abschnitts an
@@ -40,9 +43,7 @@ In diesem Beispiel fügen wir ein Ad Slot hinzu, um Ads aus dem a9 Netzwerk bere
 Füge die Attribute `width` und `height` zum [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) Tag hinzu. Damit gibst du die Größe der Ad auf deiner AMP Seite an:
 
 ```html
-<amp-ad type="a9">
-   width="300" height="250"
-</amp-ad>
+<amp-ad type="a9"> width="300" height="250" </amp-ad>
 ```
 
 ### Schritt 4: Lege die Parameter des Werbenetzwerks fest
@@ -50,11 +51,14 @@ Füge die Attribute `width` und `height` zum [`amp-ad`](../../../../documentatio
 Jedes Netzwerk hat bestimmte Datenattribute, die für die Bereitstellung von Ads erforderlich sind. Konsultiere die [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) Dokumentation des Werbenetzwerks und füge die erforderlichen Attribute hinzu. Im folgenden Beispiel fordert das a9 Netzwerk zusätzliche Parameter, um die Größe der Ad und andere Details anzugeben:
 
 ```html
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -63,12 +67,15 @@ Jedes Netzwerk hat bestimmte Datenattribute, die für die Bereitstellung von Ads
 Abhängig vom Werbenetzwerk kannst du einen Platzhalter anzeigen, bis die Ad angezeigt werden kann. Dies verbessert die Benutzererfahrung, da Leerräume vermieden werden. Um einen Platzhalter anzugeben, füge ein untergeordnetes Element mit dem Attribut `placeholder` hinzu. Weitere Infos findest du unter [Platzhalter & Fallbacks](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ```html
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-   <amp-img placeholder src="placeholder-image.jpg"></amp-img>
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
+  <amp-img placeholder src="placeholder-image.jpg"></amp-img>
 </amp-ad>
 ```
 
@@ -77,12 +84,15 @@ Abhängig vom Werbenetzwerk kannst du einen Platzhalter anzeigen, bis die Ad ang
 Abhängig vom Werbenetzwerk kannst du ein Fallback Element anzeigen, wenn keine Ad bereitgestellt werden kann. Um ein Fallback anzugeben, füge ein untergeordnetes Element mit dem Attribut `fallback` hinzu. Weitere Infos findest du unter [Platzhalter & Fallbacks](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ```html
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-   <amp-img fallback src="fallback-image.jpg"></amp-img>
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
+  <amp-img fallback src="fallback-image.jpg"></amp-img>
 </amp-ad>
 ```
 
@@ -127,18 +137,18 @@ Nachfolgend findest du einige Tipps, mit denen du die Effektivität von Ads auf 
 - **Vermeide schwere Creatives** gemäß den [IAB Leitfäden](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf).
 - **Vermeide Interstitials** oder andere Anzeigenformate, die dazu beim Laden der Ad zum Reflow von Inhalten führen.
 - **Optimiere die Sichtbarkeit**, indem du die dem Attribut "data-loading-strategy" den Wert "prefer-viewability-over-views" gibst.
-- **Platziere Ads in deinen Videoinhalten** über [unterstützte Player](../../../../documentation/components/index.html#media) oder [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md), um Umsätze für alle Inhaltsarten  zu erzielen.
+- **Platziere Ads in deinen Videoinhalten** über [unterstützte Player](../../../../documentation/components/index.html#media) oder [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md), um Umsätze für alle Inhaltsarten zu erzielen.
 - **Implementiere native Ads**, um mit Display Ads mit Anzeigenanforderungen in mehreren Größen zu konkurrieren. Dies erhöht den Nachfragedruck und bietet deinen Lesern eine erstklassige Nutzererfahrung.
 
 ### Innovation: Biete die attraktivsten Ads Produkte an
 
 - **Implementiere Ads auf zusätzlichen AMP Seiten**, um zusätzlichen Umsatz zu erzielen:
-    - [Ads in einem Carousel](../../../../documentation/examples/documentation/Carousel_Ad.html)
-    - [Ads in einer Lightbox](../../../../documentation/examples/documentation/Lightbox_Ad.html)
-    - … und [mehr](../../../../documentation/examples/index.html)
+  - [Ads in einem Carousel](../../../../documentation/examples/documentation/Carousel_Ad.html)
+  - [Ads in einer Lightbox](../../../../documentation/examples/documentation/Lightbox_Ad.html)
+  - … und [mehr](../../../../documentation/examples/index.html)
 - **Implementiere neue Formate für direkt verkaufte Ads**, um dein Verkaufsteam mit wirkungsvollen und innovativen Ads Produkten auszustatten:
-    - [Sticky Ads](../../../../documentation/examples/documentation/amp-sticky-ad.html)
-    - [Flying Carpet](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
+  - [Sticky Ads](../../../../documentation/examples/documentation/amp-sticky-ad.html)
+  - [Flying Carpet](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
 
 ## Zusätzliche Ressourcen
 

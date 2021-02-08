@@ -1,12 +1,12 @@
 ---
-"$title": Listas de verificación para las publicaciones de AMP
-"$order": '0'
+'$title': Listas de verificación para las publicaciones de AMP
+$order: 0
 description: El diseño web adaptable consiste en crear páginas web fluidas que respondan a las necesidades de su usuario, es decir, páginas que se adapten al tamaño y la orientación de la pantalla de su dispositivo. Puede lograr ...
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 ¡Siga esta lista de verificación para darle a su sitio la experiencia más completa con AMP!

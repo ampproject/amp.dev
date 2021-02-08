@@ -1,16 +1,16 @@
 ---
-"$title": 확장형 AMP 컴포넌트 추가
-"$order": '2'
+'$title': 확장형 AMP 컴포넌트 추가
+$order: 2
 description: AMP 컴포넌트 시스템을 이용하면 최소한의 노력으로 기사에 효율적인 반응형 기능을 빠르게 구성할 수 있습니다. AMP HTML 라이브러리의 AMP 컴포넌트는 3가지로 분류됩니다...
 ---
 
 AMP의 컴포넌트 시스템을 이용하면 최소한의 노력으로 기사에 효율적인 반응형 기능을 빠르게 구성할 수 있습니다. AMP HTML 라이브러리의 AMP 컴포넌트는 3가지로 분류됩니다.
 
-- **기본 제공**: 기본 AMP JavaScript 라이브러리(`<head>` 태그에 지정)에 포함된 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 및 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 등의 컴포넌트입니다.  이러한 컴포넌트는 AMP 문서에서 즉시 사용할 수 있습니다.
+- **기본 제공**: 기본 AMP JavaScript 라이브러리(`<head>` 태그에 지정)에 포함된 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 및 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 등의 컴포넌트입니다. 이러한 컴포넌트는 AMP 문서에서 즉시 사용할 수 있습니다.
 
 - **확장형**: 기본 라이브러리의 확장형이며, 사용자 지정 요소로 문서에 명시적으로 포함되어야 합니다. 사용자 지정 요소의 경우 특정 스크립트를 `<head>` 섹션에 추가해야 합니다(예: `<script async custom-element="`[`amp-video`](../../../../documentation/components/reference/amp-video.md)`...`).
 
-- **실험용**: 이미 출시되었지만 아직 폭넓게 사용할 수 없는 컴포넌트입니다. 개발자는 실험용 컴포넌트가 완전히 출시되기 전에 이러한 기능을 사용할 수 있습니다.  [실험적 기능](../../../../documentation/guides-and-tutorials/learn/experimental.md)에서 자세히 알아보세요.
+- **실험용**: 이미 출시되었지만 아직 폭넓게 사용할 수 없는 컴포넌트입니다. 개발자는 실험용 컴포넌트가 완전히 출시되기 전에 이러한 기능을 사용할 수 있습니다. [실험적 기능](../../../../documentation/guides-and-tutorials/learn/experimental.md)에서 자세히 알아보세요.
 
 예시에서 기본 제공 컴포넌트인 [`amp-img`](../../../../documentation/components/reference/amp-img.md)가 이미 사용되었으며 <a class="" href="https://gitlocalize.com/repo/4863/ko/pages/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md">"HTML를 AMP로 변환"</a> 가이드를 통해 해당 컴포넌트가 AMP 레이아웃 시스템과 어떤 관련이 있는지 살펴보았습니다. 이제 자주 사용되는 **확장형** AMP 컴포넌트를 뉴스 기사에 추가해보겠습니다.
 
@@ -25,7 +25,8 @@ AMP 광고는 [`amp-ad`](../../../../documentation/components/reference/amp-ad.m
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/image/static">
+  data-slot="/35096353/amptesting/image/static"
+>
 </amp-ad>
 ```
 
@@ -40,7 +41,8 @@ AMP 광고는 [`amp-ad`](../../../../documentation/components/reference/amp-ad.m
   type="a9"
   data-aax_size="300x250"
   data-aax_pubname="test123"
-  data-aax_src="302">
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -51,7 +53,11 @@ AMP 광고는 [`amp-ad`](../../../../documentation/components/reference/amp-ad.m
 `<head>` 태그에 아래 스크립트를 <strong>추가</strong>하세요.
 
 ```html
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script
+  async
+  custom-element="amp-ad"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+></script>
 ```
 
 페이지를 <strong>새로고침</strong>하면 테스트 광고 두 개가 표시됩니다.
@@ -67,7 +73,8 @@ AMP 광고는 [`amp-ad`](../../../../documentation/components/reference/amp-ad.m
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/uk">
+  data-slot="/35096353/amptesting/geo/uk"
+>
   <div fallback>No ad appeared because you're not browsing from the UK!</div>
 </amp-ad>
 
@@ -75,7 +82,8 @@ AMP 광고는 [`amp-ad`](../../../../documentation/components/reference/amp-ad.m
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/us">
+  data-slot="/35096353/amptesting/geo/us"
+>
   <div fallback>No ad appeared because you're not browsing from the US!</div>
 </amp-ad>
 ```
@@ -107,7 +115,8 @@ AMP 광고는 [`amp-ad`](../../../../documentation/components/reference/amp-ad.m
   data-videoid="npum8JsITQE"
   layout="responsive"
   width="480"
-  height="270">
+  height="270"
+>
   <div fallback>
     <p>The video could not be loaded.</p>
   </div>
@@ -120,12 +129,16 @@ AMP 광고는 [`amp-ad`](../../../../documentation/components/reference/amp-ad.m
 
 핵심 AMP 라이브러리 JavaScript 파일에 모든 컴포넌트가 포함된 것은 아니라는 점을 기억하세요. YouTube 컴포넌트에 JavaScript 요청을 추가해야 합니다.
 
-[tip type="note"]  <strong>참고 –</strong> 아직 개발자 콘솔이 열려 있고 URL에 `#development=1`이 포함된 경우, 해당 시점에 <a><code>amp-youtube</code></a> JavaScript를 추가하라는 AMP 검사기 오류와 추가할 <code>script</code> 태그를 확인할 수 있는 문서 링크가 표시됩니다. [/tip]
+[tip type="note"] <strong>참고 –</strong> 아직 개발자 콘솔이 열려 있고 URL에 `#development=1`이 포함된 경우, 해당 시점에 <a><code>amp-youtube</code></a> JavaScript를 추가하라는 AMP 검사기 오류와 추가할 <code>script</code> 태그를 확인할 수 있는 문서 링크가 표시됩니다. [/tip]
 
 <code><head></code> 태그에 아래 스크립트를 <strong>추가</strong>하세요.
 
 ```html
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script
+  async
+  custom-element="amp-youtube"
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+></script>
 ```
 
 페이지를 <strong>새로고침</strong>하면 YouTube 동영상이 표시됩니다.
@@ -145,13 +158,22 @@ YouTube 동영상 삽입과 관련한 자세한 정보는 [`amp-youtube`](../../
 먼저 문서의 <code><head></code> 태그에 다음 JavaScript 요청을 추가합니다.
 
 ```html
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script
+  async
+  custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+></script>
 ```
 
 이제 다음 코드를 기사에 <strong>추가</strong>하여 트윗을 삽입합니다.
 
 ```html
-<amp-twitter width="486" height="657" layout="responsive" data-tweetid="638793490521001985"></amp-twitter>
+<amp-twitter
+  width="486"
+  height="657"
+  layout="responsive"
+  data-tweetid="638793490521001985"
+></amp-twitter>
 ```
 
 <code>data-tweetid</code> 속성은 특정 플랫폼에 필요한 사용자 지정 속성의 또 다른 예입니다. 이 예시의 경우 Twitter에서 <code>data-tweetid</code> 속성의 값을 특정 트윗으로 연결합니다.
@@ -175,7 +197,11 @@ AMP는 이러한 상황을 위해 특별히 제작된 <a><code>amp-fit-text</cod
 직접 해보겠습니다. 먼저 <code><head></code> 태그에 컴포넌트 라이브러리를 <strong>추가</strong>합니다.
 
 ```html
-<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+<script
+  async
+  custom-element="amp-fit-text"
+  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+></script>
 ```
 
 페이지에 다음 코드를 추가합니다.
@@ -200,7 +226,11 @@ AMP는 이러한 상황을 위해 특별히 제작된 <a><code>amp-fit-text</cod
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-   And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+  And the Raven, never flitting, still is sitting, still is sitting. On the
+  pallid bust of Pallas just above my chamber door; And his eyes have all the
+  seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming
+  throws his shadow on the floor; And my soul from out that shadow that lies
+  floating on the floor. Shall be lifted—nevermore!
 </amp-fit-text>
 ```
 

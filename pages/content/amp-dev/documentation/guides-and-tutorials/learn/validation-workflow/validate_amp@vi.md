@@ -1,16 +1,16 @@
 ---
-"$title": Xác thực các trang AMP
-"$order": '0'
+'$title': Xác thực các trang AMP
+$order: 0
 description: Xem video của chúng tôi về các tùy chọn xác thực khác nhau. Ưu điểm chính của AMP không chỉ là giúp các trang của bạn tải nhanh hơn, mà là khiến trang của bạn...
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 ---
 
 [video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='Watch our video about the various validation options.']
 
-Ưu điểm chính của AMP không chỉ là giúp các trang của bạn tải nhanh hơn, mà là khiến trang của bạn vừa nhanh vừa *được xác thực*. Bằng cách này, các bên thứ ba như Twitter, Instagram hoặc Google Search có thể tự tin phục vụ các trang AMP cho độc giả theo nhiều cách khác nhau.
+Ưu điểm chính của AMP không chỉ là giúp các trang của bạn tải nhanh hơn, mà là khiến trang của bạn vừa nhanh vừa _được xác thực_. Bằng cách này, các bên thứ ba như Twitter, Instagram hoặc Google Search có thể tự tin phục vụ các trang AMP cho độc giả theo nhiều cách khác nhau.
 
 ## Làm thế nào tôi có thể kiểm tra rằng trang của mình có phải AMP hợp lệ hay không?
 
@@ -23,7 +23,7 @@ Ngoài việc xác thực AMP, bạn có thể cũng muốn xác nhận rằng t
 Bộ xác thực AMP đi kèm thư viện AMP JS và có sẵn trên mọi trang AMP ngay sau khi triển khai. Để xác thực:
 
 1. Mở trang AMP trong trình duyệt của bạn.
-2. Chèn "`#development=[1,actions,amp,amp4ads,amp4email]`" vào URL, ví dụ,  `http://localhost:8000/released.amp.html#development=1` là cách cũ để xác thực định dạng `AMP`. URL sau, `http://localhost:8000/released.amp.html#development=amp4email` sẽ xác thực tài liệu với thông số AMP cho email.
+2. Chèn "`#development=[1,actions,amp,amp4ads,amp4email]`" vào URL, ví dụ, `http://localhost:8000/released.amp.html#development=1` là cách cũ để xác thực định dạng `AMP`. URL sau, `http://localhost:8000/released.amp.html#development=amp4email` sẽ xác thực tài liệu với thông số AMP cho email.
 3. Mở [bảng điều khiển Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/debug/console/) và kiểm tra lỗi xác thực.
 
 Lỗi trên Bảng điều khiển Nhà phát triển sẽ có dạng như sau:
@@ -82,14 +82,15 @@ var fs = require('fs');
 amphtmlValidator.getInstance().then(function (validator) {
   var input = fs.readFileSync('index.html', 'utf8');
   var result = validator.validateString(input);
-  ((result.status === 'PASS') ? console.log : console.error)(result.status);
+  (result.status === 'PASS' ? console.log : console.error)(result.status);
   for (var ii = 0; ii < result.errors.length; ii++) {
     var error = result.errors[ii];
-    var msg = 'line ' + error.line + ', col ' + error.col + ': ' + error.message;
+    var msg =
+      'line ' + error.line + ', col ' + error.col + ': ' + error.message;
     if (error.specUrl !== null) {
       msg += ' (see ' + error.specUrl + ')';
     }
-    ((error.severity === 'ERROR') ? console.error : console.warn)(msg);
+    (error.severity === 'ERROR' ? console.error : console.warn)(msg);
   }
 });
 ```
@@ -103,18 +104,18 @@ const gulp = require('gulp');
 const gulpAmpValidator = require('gulp-amphtml-validator');
 
 const paths = {
-  src: 'src/*.html'
+  src: 'src/*.html',
 };
 
 gulp.task('amphtml:validate', () => {
-  return gulp.src(paths.src)
+  return gulp
+    .src(paths.src)
     .pipe(gulpAmpValidator.validate())
     .pipe(gulpAmpValidator.format())
     .pipe(gulpAmpValidator.failAfterError());
 });
 
-gulp.task('default', ['amphtml:validate'], function () {
-});
+gulp.task('default', ['amphtml:validate'], function () {});
 ```
 
 ### Công cụ Dòng lệnh
@@ -158,12 +159,12 @@ Công cụ dòng lệnh cung cấp các tính năng bổ sung bao gồm tắt m�
 [sourcecode:console]
 $ amphtml-validator --help
 
-  Usage: index [options] <fileOrUrlOrMinus...>
+Usage: index [options] <fileOrUrlOrMinus...>
 
-  Validates the files or urls provided as arguments. If "-" is
-  specified, reads from stdin instead.
+Validates the files or urls provided as arguments. If "-" is
+specified, reads from stdin instead.
 
-  Options:
+Options:
 
     -h, --help                  output usage information
     -V, --version               output the version number
@@ -178,6 +179,7 @@ $ amphtml-validator --help
               supporting color).
       "json"  emits json corresponding to the ValidationResult
               message in validator.proto.
+
 [/sourcecode]
 
 ## Điều gì xảy ra nếu trang của tôi không hợp lệ?
@@ -198,15 +200,9 @@ Nó sẽ tạo ra lỗi xác thực AMP này và được hiển thị trong cá
 
 - Bảng điều khiển Phát triển Trình duyệt {amp-img0}{/amp-img0}
 
-
-
 - Giao diện Web {amp-img0}{/amp-img0}
 
-
-
 - Phần mở rộng Trình duyệt {amp-img0}{/amp-img0}
-
-
 
 Mỗi công cụ đều cung cấp nhiều mảnh thông tin khác nhau:
 

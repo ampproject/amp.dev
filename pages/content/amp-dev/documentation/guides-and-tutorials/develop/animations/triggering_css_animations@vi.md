@@ -1,10 +1,10 @@
 ---
-"$title": Kích hoạt hình hoạt họa & chuyển tiếp CSS
-"$order": '1'
+'$title': Kích hoạt hình hoạt họa & chuyển tiếp CSS
+$order: 1
 description: Kích hoạt hình hoạt họa CSS trên các trang phụ thuộc vào việc thêm và xóa các lớp, và được thực hiện qua JavaScript. Bạn có thể đạt được hành vi này trên các trang AMP bằng cách sử dụng hành động toggleClass...
 formats:
-- websites
-- ads
+  - websites
+  - ads
 ---
 
 Các hình hoạt họa CSS cho phép yếu tố web chuyển tiếp giữa các cấu hình phong cách CSS khác nhau. Trình duyệt có thể bắt đầu các hình hoạt họa được định nghĩa khi tải, nhưng các hình hoạt họa CSS được kích hoạt bởi sự kiện [phụ thuộc vào việc thêm và xóa các lớp](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations). AMP hỗ trợ cả hai loại hoạt họa.
@@ -73,16 +73,25 @@ elementName.toggleClass(class="className")
 Bạn có thể chuyển đổi một lớp trên một yếu tố mà bạn muốn người dùng tương tác, ví dụ như menu hamburger có hình hoạt họa.
 
 ```html
- <div id="hamburger" tabindex=1 role=button on="tap:hamburger.toggleClass(class='close')">
+<div
+  id="hamburger"
+  tabindex="1"
+  role="button"
+  on="tap:hamburger.toggleClass(class='close')"
+></div>
 ```
 
 Hành động `toggleClass` cũng có thể được áp dụng cho các yếu tố khác và chuyển đổi giữa hai lớp bằng cách thêm thuộc tính `force`.
 
 ```html
-<button on="tap:magicBox.toggleClass(class='invisible', force=true),magicBox.toggleClass(class='visible', force=false)">
+<button
+  on="tap:magicBox.toggleClass(class='invisible', force=true),magicBox.toggleClass(class='visible', force=false)"
+>
   Disappear
 </button>
-<button on="tap:magicBox.toggleClass(class='visible', force=true),magicBox.toggleClass(class='invisible', force=false)">
+<button
+  on="tap:magicBox.toggleClass(class='visible', force=true),magicBox.toggleClass(class='invisible', force=false)"
+>
   Reappear
 </button>
 ```
@@ -94,9 +103,14 @@ Nếu bạn cần xóa một lớp và cấm nó được áp dụng lại, hãy
 Bạn có thể thêm và xóa số lớp CSS bất kỳ với các trạng thái sử dụng [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
-  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-bind"
+    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+  ></script>
   <style amp-custom>
     div {
       height: 100px;
@@ -113,13 +127,13 @@ Bạn có thể thêm và xóa số lớp CSS bất kỳ với các trạng thá
       opacity: 0;
     }
     .left {
-      transform: translatex(-50px)
+      transform: translatex(-50px);
     }
     .right {
-      transform: translatex(50px)
+      transform: translatex(50px);
     }
     button {
-      margin-top:  1rem;
+      margin-top: 1rem;
       margin-left: 1rem;
     }
   </style>
@@ -143,38 +157,31 @@ Bạn có thể thêm và xóa số lớp CSS bất kỳ với các trạng thá
       }
     </script>
   </amp-state>
-  <div [class]="magicBox[animateBox].className"> </div>
-  <button on="tap:AMP.setState({animateBox: 'invisibleBox'})">
-    Disappear
-  </button>
-  <button on="tap:AMP.setState({animateBox: 'visibleBox'})">
-    Reappear
-  </button>
-  <button on="tap:AMP.setState({animateBox: 'moveLeft'})">
-    Move Left
-  </button>
-  <button on="tap:AMP.setState({animateBox: 'moveRight'})">
-    Move Right
-  </button>
+  <div [class]="magicBox[animateBox].className"></div>
+  <button on="tap:AMP.setState({animateBox: 'invisibleBox'})">Disappear</button>
+  <button on="tap:AMP.setState({animateBox: 'visibleBox'})">Reappear</button>
+  <button on="tap:AMP.setState({animateBox: 'moveLeft'})">Move Left</button>
+  <button on="tap:AMP.setState({animateBox: 'moveRight'})">Move Right</button>
 </body>
 ```
+
 [/example]
 
 Định nghĩa hình hoạt họa nhiều lớp bằng cách thêm một danh sách các lớp CSS trong thẻ `<style amp-custom>` ở trong phần `head` (đầu mục) tài liệu.
 
 ```css
-    .visible {
-      opacity: 1;
-    }
-    .invisible {
-      opacity: 0;
-    }
-    .left {
-      transform: translatex(-50px)
-    }
-    .right {
-      transform: translatex(50px)
-    }
+.visible {
+  opacity: 1;
+}
+.invisible {
+  opacity: 0;
+}
+.left {
+  transform: translatex(-50px);
+}
+.right {
+  transform: translatex(50px);
+}
 ```
 
 Sau đó ghép đôi mỗi lớp với một trạng thái:
@@ -203,24 +210,16 @@ Sau đó ghép đôi mỗi lớp với một trạng thái:
 Và liên kết yếu tố với các lớp:
 
 ```html
-  <div [class]="magicBox[animateBox].className"> </div>
+<div [class]="magicBox[animateBox].className"></div>
 ```
 
 Các trạng thái sẽ thay đổi từ một hành động hoặc sự kiện AMP được liên kết. Ví dụ sau đây thay đổi trạng thái từ tương tác người dùng:
 
 ```html
-<button on="tap:AMP.setState({animateBox: 'invisibleBox'})">
-    Disappear
-</button>
-<button on="tap:AMP.setState({animateBox: 'visibleBox'})">
-    Reappear
-</button>
-<button on="tap:AMP.setState({animateBox: 'moveLeft'})">
-    Move Left
-</button>
-<button on="tap:AMP.setState({animateBox: 'moveRight'})">
-  Move Right
-</button>
+<button on="tap:AMP.setState({animateBox: 'invisibleBox'})">Disappear</button>
+<button on="tap:AMP.setState({animateBox: 'visibleBox'})">Reappear</button>
+<button on="tap:AMP.setState({animateBox: 'moveLeft'})">Move Left</button>
+<button on="tap:AMP.setState({animateBox: 'moveRight'})">Move Right</button>
 ```
 
 Việc sử dụng [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) bằng cách này sẽ thiết lập lớp thành lớp được định nghĩa một cách rõ ràng. Bạn sẽ không phải buộc nó xóa các lớp khác.

@@ -1,10 +1,10 @@
 ---
-"$title": Azioni ed eventi
-order: '0'
+'$title': Azioni ed eventi
+$order: 0
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
   text: '[tip type="note"]'
 ---
@@ -94,7 +94,7 @@ AMP permette inoltre di definire le azioni globali `hide`, `show` e `toggleVisib
 
 [tip type="note"]
 
-Un elemento può essere mostrato solo se in precedenza era stato nascosto da un'azione  `hide` o `toggleVisibility`, oppure usando l'attributo [`hidden`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden). L'azione `show` non  supporta elementi nascosti dall'attributo CSS `display:none` o dall'attributo AMP `layout=nodisplay`.
+Un elemento può essere mostrato solo se in precedenza era stato nascosto da un'azione `hide` o `toggleVisibility`, oppure usando l'attributo [`hidden`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden). L'azione `show` non supporta elementi nascosti dall'attributo CSS `display:none` o dall'attributo AMP `layout=nodisplay`.
 
 Ad esempio, in AMP è possibile la seguente struttura:
 
@@ -109,7 +109,7 @@ Ad esempio, in AMP è possibile la seguente struttura:
 
 ## Eventi specifici di un elemento <a name="element-specific-events"></a>
 
-### * - tutti gli elementi <a name="---all-elements"></a>
+### \* - tutti gli elementi <a name="---all-elements"></a>
 
 <table>
   <tr>
@@ -352,7 +352,7 @@ Ad esempio, in AMP è possibile la seguente struttura:
 
 ## Azioni specifiche di un elemento <a name="element-specific-actions"></a>
 
-### * (tutti gli elementi) <a name="-all-elements"></a>
+### \* (tutti gli elementi) <a name="-all-elements"></a>
 
 <table>
   <tr>
@@ -722,7 +722,7 @@ Il target `AMP` è fornito dal sistema di runtime AMP e implementa azioni di pri
   </tr>
 </table>
 
-<sup>1</sup>In caso di utilizzo con <a href="#multiple-actions-for-one-event">azioni multiple</a>, le azioni successive attenderanno il completamento di <code>setState()</code> o <code>pushState()</code> prima della chiamata. Per ogni evento è consentita una sola chiamata di <code>setState()</code> o  <code>pushState()</code>.
+<sup>1</sup>In caso di utilizzo con <a href="#multiple-actions-for-one-event">azioni multiple</a>, le azioni successive attenderanno il completamento di <code>setState()</code> o <code>pushState()</code> prima della chiamata. Per ogni evento è consentita una sola chiamata di <code>setState()</code> o <code>pushState()</code>.
 
 ### Target: amp-access <a name="target-amp-access"></a>
 

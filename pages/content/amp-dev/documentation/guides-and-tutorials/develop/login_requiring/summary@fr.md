@@ -1,6 +1,6 @@
 ---
-"$title": Résumé
-"$order": '4'
+'$title': Résumé
+$order: 4
 description: Dans ce tutoriel, nous avons vu comment combiner amp-access et amp-form pour créer une section de commentaire nécessitant une connexion.
 ---
 

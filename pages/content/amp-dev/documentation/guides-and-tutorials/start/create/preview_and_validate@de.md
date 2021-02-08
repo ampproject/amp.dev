@@ -1,10 +1,10 @@
 ---
-"$title": Vorschau und Validierung
-"$order": '5'
+'$title': Vorschau und Validierung
+$order: 5
 description: Zeige eine Vorschau der AMP Seite an, genau wie du eine Vorschau einer anderen, statischen HTML Website anzeigen würdest. Building oder Vorverarbeitung sind nicht …
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## Vorschau
@@ -12,7 +12,7 @@ contributors:
 Zeige eine Vorschau der AMP Seite an, genau wie du eine Vorschau einer anderen, statischen HTML Website anzeigen würdest. Building oder Vorverarbeitung sind nicht erforderlich. Es gibt folgende Möglichkeiten:
 
 - **Öffne die Seite direkt im Browser aus dem Dateisystem** (möglicherweise funktionieren bestimmte Elemente nicht, da XMLHttpRequests fehlschlägt).
-- **Verwende einen lokalen Webserver wie Apache 2 oder Nginx**. *(Tipp: Um schnell einen einfachen Webserver zu erstellen, führe `python -m SimpleHTTPServer` aus.)*
+- **Verwende einen lokalen Webserver wie Apache 2 oder Nginx**. _(Tipp: Um schnell einen einfachen Webserver zu erstellen, führe `python -m SimpleHTTPServer` aus.)_
 
 ## Validierung
 

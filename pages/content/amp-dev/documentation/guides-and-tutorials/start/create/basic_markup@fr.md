@@ -1,15 +1,16 @@
 ---
-"$title": Créer votre page AMP HTML
-"$order": '1'
-description: 'Utilisation de HTTPS: lors de la création de pages et de contenu AMP, il est fortement recommandé d''utiliser le protocole HTTPS (par rapport à HTTP). Bien que HTTPS ne soit pas requis pour le document AMP lui-même ou ...'
+'$title': Créer votre page AMP HTML
+$order: 1
+description: "Utilisation de HTTPS: lors de la création de pages et de contenu AMP, il est fortement recommandé d'utiliser le protocole HTTPS (par rapport à HTTP). Bien que HTTPS ne soit pas requis pour le document AMP lui-même ou ..."
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 Le balisage suivant est un bon point de départ, un modèle standard. Copiez et enregistrez ce qui suit dans un fichier .html.
 
 [sourcecode:html]
+
 <!doctype html>
 <html amp lang="en">
   <head>
@@ -47,16 +48,16 @@ Utilisation de HTTPS: lors de la création de pages et de contenu AMP, il est fo
 
 Les documents HTML AMP DOIVENT:
 
-Règle | Description
---- | ---
-Commencer par le type de document `<!doctype html>`. | Standard pour HTML.
-Contenir une balise `<html ⚡>` de niveau supérieur (`<html amp>` est également accepté). | Identifie la page en tant que contenu AMP.
-Contenir les balises `<head>` et `<body>` (facultatives dans HTML). | Facultatif pour HTML mais pas pour AMP.
-Contenir une balise `<meta charset="utf-8">` comme premier enfant de la balise head. | Identifie le codage de la page.
-Contenir une balise `<script async src="https://cdn.ampproject.org/v0.js"></script>` comme dernier élément de l'en-tête (inclut et charge la bibliothèque AMP JS). | Inclut et charge la bibliothèque AMP JS.
-Contenir une balise `<link rel="canonical" href="$SOME_URL">` dans l'en-tête qui pointe vers la version HTML standard du document AMP HTML ou vers le document lui-même si aucune version HTML n'existe. | Pointe vers la version HTML standard du document HTML AMP ou vers lui-même si une telle version HTML n'existe pas. Pour en savoir plus, consultez la section [Rendre votre page détectable](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md).
-Contenir une balise `<meta name="viewport" content="width=device-width">alement recommandé d'inclure initial-scale=1. | Spécifie une fenêtre réactive. Pour en savoir plus, consultez la section [Créer des pages AMP réactives](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).
-Contenir le [code du modèle AMP](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) dans la balise `<head>`. | Modèle CSS pour masquer initialement le contenu jusqu'à ce que AMP JS soit chargé.
+| Règle                                                                                                                                                                                                    | Description                                                                                                                                                                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Commencer par le type de document `<!doctype html>`.                                                                                                                                                     | Standard pour HTML.                                                                                                                                                                                                                                                        |
+| Contenir une balise `<html ⚡>` de niveau supérieur (`<html amp>` est également accepté).                                                                                                                | Identifie la page en tant que contenu AMP.                                                                                                                                                                                                                                 |
+| Contenir les balises `<head>` et `<body>` (facultatives dans HTML).                                                                                                                                      | Facultatif pour HTML mais pas pour AMP.                                                                                                                                                                                                                                    |
+| Contenir une balise `<meta charset="utf-8">` comme premier enfant de la balise head.                                                                                                                     | Identifie le codage de la page.                                                                                                                                                                                                                                            |
+| Contenir une balise `<script async src="https://cdn.ampproject.org/v0.js"></script>` comme dernier élément de l'en-tête (inclut et charge la bibliothèque AMP JS).                                       | Inclut et charge la bibliothèque AMP JS.                                                                                                                                                                                                                                   |
+| Contenir une balise `<link rel="canonical" href="$SOME_URL">` dans l'en-tête qui pointe vers la version HTML standard du document AMP HTML ou vers le document lui-même si aucune version HTML n'existe. | Pointe vers la version HTML standard du document HTML AMP ou vers lui-même si une telle version HTML n'existe pas. Pour en savoir plus, consultez la section [Rendre votre page détectable](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md). |
+| Contenir une balise `<meta name="viewport" content="width=device-width">alement recommandé d'inclure initial-scale=1.                                                                                    | Spécifie une fenêtre réactive. Pour en savoir plus, consultez la section [Créer des pages AMP réactives](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).                                                                    |
+| Contenir le [code du modèle AMP](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) dans la balise `<head>`.                                                                  | Modèle CSS pour masquer initialement le contenu jusqu'à ce que AMP JS soit chargé.                                                                                                                                                                                         |
 
 ## Métadonnées facultatives
 

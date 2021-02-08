@@ -1,8 +1,8 @@
 ---
-"$title": AMP e-postasında eylemler ve olaylar
-order: '0'
+'$title': AMP e-postasında eylemler ve olaylar
+$order: 0
 formats:
-- email
+  - email
 teaser:
   text: '[tip type="note"]'
 ---
@@ -107,7 +107,7 @@ Bir öğe ancak önceden `hide` veya `toggleVisibility` eylemiyle gizlenmişse y
 
 ## Öğeye özgü olaylar <a name="element-specific-events"></a>
 
-### * - tüm öğeler <a name="---all-elements"></a>
+### \* - tüm öğeler <a name="---all-elements"></a>
 
 <table>
   <tr>
@@ -326,7 +326,7 @@ Bir öğe ancak önceden `hide` veya `toggleVisibility` eylemiyle gizlenmişse y
 
 ## Öğeye özgü eylemler <a name="element-specific-actions"></a>
 
-### * (tüm öğeler) <a name="-all-elements"></a>
+### \* (tüm öğeler) <a name="-all-elements"></a>
 
 <table>
   <tr>

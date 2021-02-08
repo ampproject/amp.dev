@@ -1,10 +1,10 @@
 ---
-"$title": ページの検出と配信の準備
-"$order": '4'
+'$title': ページの検出と配信の準備
+$order: 4
 description: ニュース記事のように、同じページに対して AMP バージョンと非 AMP バージョンのページをそれぞれ用意したい場合を考えましょう。たておば、Google 検索 ...
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ニュース記事のように、同じページに対して AMP バージョンと非 AMP バージョンのページをそれぞれ用意したい場合を考えましょう。たとえば Google 検索で、あるページの非 AMP バージョンを検出した場合、そのページには AMP バージョンも存在することを知らせるにはどうしたらよいでしょうか。
@@ -16,12 +16,14 @@ contributors:
 以下を非 AMP ページに追加します。
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
 また、以下を AMP ページに追加します。
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
@@ -30,6 +32,7 @@ contributors:
 1 ページしか存在せず、それが AMP ページである場合も、正規のリンクを追加して単純に自身を指定する必要があります。
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 

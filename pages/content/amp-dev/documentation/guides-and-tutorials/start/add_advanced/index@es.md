@@ -1,10 +1,10 @@
 ---
-"$title": Agregue funciones avanzadas de AMP
-"$order": '0'
+'$title': Agregue funciones avanzadas de AMP
+$order: 0
 description: En este tutorial, se ampliarán sus conocimientos sobre los fundamentos de AMP y aprenderá cómo AMP maneja la publicidad, análisis, videos incrustados, integración con las redes sociales, carruseles y mucho más.
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='Artículo terminado') }}

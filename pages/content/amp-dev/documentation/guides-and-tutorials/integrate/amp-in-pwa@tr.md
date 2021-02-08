@@ -1,9 +1,9 @@
 ---
-"$title": "AMP'yi PWA'nız için bir veri kaynağı olarak kullanma"
-"$order": '1'
+'$title': "AMP'yi PWA'nız için bir veri kaynağı olarak kullanma"
+$order: 1
 description: "AMP'ye yatırım yaptıysanız ancak henüz Aşamalı Web Uygulaması (Progressive Web App) oluşturmadıysanız, AMP Sayfalarınız Aşamalı Web Uygulaması geliştirme sürecinizi önemli ölçüde basitleştirebilir."
 formats:
-- websites
+  - websites
 author: pbakaus
 ---
 
@@ -22,8 +22,10 @@ Daha sonra ham içeriği işleyebilir ve kullanılabilir HTML'e dönüştürebil
 Sayfanızın head bölümüne Gölge AMP'yi şu şekilde ekleyin:
 
 [sourcecode:html]
+
 <!-- Asynchronously load the AMP-with-Shadow-DOM runtime library. -->
 <script async src="https://cdn.ampproject.org/shadow-v0.js"></script>
+
 [/sourcecode]
 
 ### Gölge AMP'nin ne zaman kullanıma hazır olduğunu nasıl bilebilirsiniz?
@@ -34,7 +36,7 @@ Gözlemlenecek doğru sinyal, genel `AMP` değişkeninin mevcudiyetidir ve Gölg
 
 [sourcecode:javascript]
 (window.AMP = window.AMP || []).push(function(AMP) {
-  // AMP is now available.
+// AMP is now available.
 });
 [/sourcecode]
 
@@ -62,20 +64,20 @@ Son olarak, bir kullanıcı eyleminden sonra içerik göstermek istediğinizde, 
 [sourcecode:javascript]
 function fetchDocument(url) {
 
-  // unfortunately fetch() does not support retrieving documents,
-  // so we have to resort to good old XMLHttpRequest.
-  var xhr = new XMLHttpRequest();
+// unfortunately fetch() does not support retrieving documents,
+// so we have to resort to good old XMLHttpRequest.
+var xhr = new XMLHttpRequest();
 
-  return new Promise(function(resolve, reject) {
-    xhr.open('GET', url, true);
-    xhr.responseType = 'document';
-    xhr.setRequestHeader('Accept', 'text/html');
-    xhr.onload = function() {
-      // .responseXML contains a ready-to-use Document object
-      resolve(xhr.responseXML);
-    };
-    xhr.send();
-  });
+return new Promise(function(resolve, reject) {
+xhr.open('GET', url, true);
+xhr.responseType = 'document';
+xhr.setRequestHeader('Accept', 'text/html');
+xhr.onload = function() {
+// .responseXML contains a ready-to-use Document object
+resolve(xhr.responseXML);
+};
+xhr.send();
+});
 }
 [/sourcecode]
 
@@ -92,8 +94,8 @@ var url = "https://my-domain/amp/an-article.html";
 
 // Use our fetchDocument method to get the doc
 fetchDocument(url).then(function(doc) {
-  // Let AMP take over and render the page
-  var ampedDoc = AMP.attachShadowDoc(container, doc, url);
+// Let AMP take over and render the page
+var ampedDoc = AMP.attachShadowDoc(container, doc, url);
 });
 [/sourcecode]
 

@@ -1,6 +1,6 @@
 ---
-"$title": Einrichtung
-"$order": '1'
+'$title': Einrichtung
+$order: 1
 description: 'Richte zunächst deine Entwicklungsumgebung ein: Schritt 1. Lade den Code herunter. Lade den Beispielcode für das Tutorial entweder als ZIP Datei oder über git herunter …'
 author: bpaduch
 ---

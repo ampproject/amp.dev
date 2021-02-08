@@ -1,11 +1,11 @@
 ---
-"$title": Создание интерактивных AMP-страниц
-"$path": "/documentation/guides-and-tutorials/develop/interactivity/index.html"
-"$order": '0'
+'$title': Создание интерактивных AMP-страниц
+'$path': '/documentation/guides-and-tutorials/develop/interactivity/index.html'
+$order: 0
 description: В этом уроке вы узнаете, как использовать выражения и привязку данных для создания удивительных интерактивных AMP-страниц с помощью amp-bind ...
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/interactivity-final-page.jpg', 415, 738, align='right third', caption='Completed AMP page for this tutorial') }}

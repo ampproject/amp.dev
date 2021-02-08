@@ -1,6 +1,6 @@
 ---
-"$title": Wylogowanie
-"$order": '3'
+'$title': Wylogowanie
+$order: 3
 description: Podobnie jak w przypadku przycisku logowania, obecność przycisku wylogowania jest warunkowo zależna od stanu składnika amp-access...
 ---
 
@@ -15,9 +15,9 @@ Po kliknięciu przycisku wylogowania nastąpi przekierowanie do adresu URL podan
 [sourcecode:json]
 {
 "login": {
-  "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
-  "sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
-  }
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
+"sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
+}
 }
 [/sourcecode]
 

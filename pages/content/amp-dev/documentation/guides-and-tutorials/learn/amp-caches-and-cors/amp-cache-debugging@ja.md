@@ -1,10 +1,10 @@
 ---
-"$title": AMP キャッシュ問題のデバッグ
-order: '8'
+'$title': AMP キャッシュ問題のデバッグ
+$order: 8
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
   text: AMP キャッシュでドキュメントが破損しているのはなぜですか？
 ---

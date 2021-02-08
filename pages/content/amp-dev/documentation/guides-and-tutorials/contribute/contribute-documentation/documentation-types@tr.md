@@ -1,12 +1,12 @@
 ---
-"$title": Belgeleme türleri
-"$order": '1'
+'$title': Belgeleme türleri
+$order: 1
 description: amp.dev üzerinde kabul edilen belgeleme katkısı türleri
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 toc: 'false'
 ---

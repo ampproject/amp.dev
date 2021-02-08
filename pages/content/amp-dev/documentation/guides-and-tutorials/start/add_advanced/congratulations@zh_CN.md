@@ -1,6 +1,6 @@
 ---
-"$title": 恭喜！
-"$order": '7'
+'$title': 恭喜！
+$order: 7
 description: 您已顺利学完“添加高级 AMP 功能”教程，并成功探索了 AMP 的许多关键高级组件！
 ---
 

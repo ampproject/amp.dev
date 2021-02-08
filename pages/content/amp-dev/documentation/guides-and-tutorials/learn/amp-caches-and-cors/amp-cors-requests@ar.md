@@ -1,11 +1,11 @@
 ---
-"$title": اشتراك المصادر في الموارد في AMP
-order: '12'
+'$title': اشتراك المصادر في الموارد في AMP
+$order: 12
 formats:
-- websites
-- email
-- stories
-- ads
+  - websites
+  - email
+  - stories
+  - ads
 teaser:
   text: تستفيد العديد من مكونات AMP وملحقاته من نقاط النهاية عن بُعد باستخدام
 toc: 'true'
@@ -74,31 +74,33 @@ limitations under the License.
 
 لنفترض أن لديك صفحة AMP تسرد المنتجات بالأسعار، ومن أجل تحديث الأسعار على الصفحة؛ ينقر المستخدم على زر ما، والذي يسترد أحدث الأسعار من نقطة نهاية JSON (يتم ذلك عبر مكونamp-list). إذ إن JSON موجود في النطاق الخاص بك.
 
-حسنًا، لذا ستكون الصفحة *في النطاق الخاص بي* ويكون JSON *في النطاق الخاص بي*. لا أرى أي مشكلة!
+حسنًا، لذا ستكون الصفحة _في النطاق الخاص بي_ ويكون JSON _في النطاق الخاص بي_. لا أرى أي مشكلة!
 
-ولكن كيف وصل المستخدم إلى صفحة AMP الخاصة بك؟ هل هي صفحة يتم الوصول إليها لأنها مخزنة في ذاكرة التخزين المؤقت؟ من المحتمل جدًا أن المستخدم لديك لم يصل إلى صفحة AMP الخاصة بك مباشرةً، ولكن بدلًا عن ذلك؛ اكتشف صفحتك من خلال نظام أساسي آخر. على سبيل المثال، يستخدم بحث Google ذاكرة التخزين المؤقت لصفحات AMP من Google لعرض صفحات AMP بسرعة؛ هذه صفحات موجودة في ذاكرة تخزين مؤقت يتم عرضها من ذاكرة AMP للتخزين المؤقت من Google، وهو نطاق *مختلف*. وعندما ينقر المستخدم فوق الزر لتحديث الأسعار على صفحتك، ترسل صفحة AMP الموجودة في ذاكرة التخزين المؤقت طلبًا إلى نطاقك الأصلي للحصول على الأسعار، وهو ما يمثل عدم تطابق بين الأصول (ذاكرة التخزين المؤقت -> النطاق الأصلي). من أجل السماح بمثل هذه الطلبات متعددة المصادر، تحتاج إلى التعامل مع اشتراك المصادر في الموارد، وإلا سيفشل الطلب.
+ولكن كيف وصل المستخدم إلى صفحة AMP الخاصة بك؟ هل هي صفحة يتم الوصول إليها لأنها مخزنة في ذاكرة التخزين المؤقت؟ من المحتمل جدًا أن المستخدم لديك لم يصل إلى صفحة AMP الخاصة بك مباشرةً، ولكن بدلًا عن ذلك؛ اكتشف صفحتك من خلال نظام أساسي آخر. على سبيل المثال، يستخدم بحث Google ذاكرة التخزين المؤقت لصفحات AMP من Google لعرض صفحات AMP بسرعة؛ هذه صفحات موجودة في ذاكرة تخزين مؤقت يتم عرضها من ذاكرة AMP للتخزين المؤقت من Google، وهو نطاق _مختلف_. وعندما ينقر المستخدم فوق الزر لتحديث الأسعار على صفحتك، ترسل صفحة AMP الموجودة في ذاكرة التخزين المؤقت طلبًا إلى نطاقك الأصلي للحصول على الأسعار، وهو ما يمثل عدم تطابق بين الأصول (ذاكرة التخزين المؤقت -> النطاق الأصلي). من أجل السماح بمثل هذه الطلبات متعددة المصادر، تحتاج إلى التعامل مع اشتراك المصادر في الموارد، وإلا سيفشل الطلب.
 
 <amp-img alt="CORS and Cache" layout="responsive" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png" width="809" height="391">
   <noscript><img alt="CORS و Cache" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png"></noscript></amp-img>
 
 **حسنًا، ماذا عليَّ أن أفعل؟**
 
-1. بالنسبة إلى صفحات AMP التي تُحضِر بيانات ديناميكية، تأكد من اختبار النسخة الموجودة في ذاكرة التخزين المؤقت لتلك الصفحات؛ *لا تنفذ الاختبار على نطاقك الخاص فقط*. (راجع قسم [اختبار اشتراك المصادر في الموارد في AMP](#testing-cors-in-amp) أدناه)
+1. بالنسبة إلى صفحات AMP التي تُحضِر بيانات ديناميكية، تأكد من اختبار النسخة الموجودة في ذاكرة التخزين المؤقت لتلك الصفحات؛ _لا تنفذ الاختبار على نطاقك الخاص فقط_. (راجع قسم [اختبار اشتراك المصادر في الموارد في AMP](#testing-cors-in-amp) أدناه)
 2. اتبع التعليمات الواردة في هذا المستند للتعامل مع طلبات اشتراك المصادر في الموارد واستجاباته.
 
 ## استخدام ملفات تعريف الارتباط لطلبات اشتراك المصادر في الموارد <a name="utilizing-cookies-for-cors-requests"></a>
 
 تقوم معظم مكونات AMP التي تستخدم طلبات اشتراك المصادر في الموارد إما بتعيين [وضع بيانات الاعتماد](https://fetch.spec.whatwg.org/#concept-request-credentials-mode) تلقائيًا أو السماح للمصمم بتمكينه اختياريًا. على سبيل المثال، يُحضِر المكوِّن [`amp-list`](https://amp.dev/documentation/components/amp-list) المحتوى الديناميكي من نقطة نهاية JSON لاشتراك المصادر في الموارد، ويسمح للمصمم بتعيين وضع بيانات الاعتماد من خلال السمة `credentials`.
 
-*مثال: تضمين محتوى مخصص في amp-list عبر ملفات تعريف الارتباط*
+_مثال: تضمين محتوى مخصص في amp-list عبر ملفات تعريف الارتباط_
 
 [sourcecode:html]
 <amp-list
-  credentials="include"
-  src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)"
->
-  <template type="amp-mustache">
+credentials="include"
+src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)"
+
+>   <template type="amp-mustache">
+
     Your personal offer: ${% raw %}{{price}}{% endraw %}
+
   </template>
 </amp-list>
 [/sourcecode]
@@ -159,13 +161,13 @@ AMP-Same-Origin: true
 
 تعد هذه الترويسة أحد مطالب <a href="https://www.w3.org/TR/cors/">مواصفات اشتراك المصادر في الموارد لـ W3</a>، حيث يشير <code>origin</code> إلى الأصل الطالب الذي تم السماح به عبر ترويسة طلب <code>Origin</code> لاشتراك المصادر في الموارد (على سبيل المثال، <code>"https://<publisher's subdomain>.cdn.ampproject.org"</code>).
 
-على الرغم من أن مواصفات اشتراك المصادر في الموارد لـ W3 تسمح بإرجاع قيمة <code>*</code> في الاستجابة، يجب عليك من أجل تحسين الأمان:
+على الرغم من أن مواصفات اشتراك المصادر في الموارد لـ W3 تسمح بإرجاع قيمة <code>\*</code> في الاستجابة، يجب عليك من أجل تحسين الأمان:
 
 - إذا كانت ترويسة `Origin` موجودة، فتحقق من صحة قيمة الترويسة <code>Origin</code> وارتدادها.
 
 ### معالجة طلبات تغيير الحالات <a name="processing-state-changing-requests"></a>
 
-[tip type="important"] نفذ عمليات التحقق من الصحة هذه *قبل* معالجة الطلب. إذ يساعد التحقق من الصحة هذا على توفير الحماية ضد هجمات تزوير الطلب عبر المواقع، وتجنب معالجة طلبات المصادر غير الموثوق بها. [/tip]
+[tip type="important"] نفذ عمليات التحقق من الصحة هذه _قبل_ معالجة الطلب. إذ يساعد التحقق من الصحة هذا على توفير الحماية ضد هجمات تزوير الطلب عبر المواقع، وتجنب معالجة طلبات المصادر غير الموثوق بها. [/tip]
 
 وقبل معالجة الطلبات التي قد تغير حالة نظامك (على سبيل المثال، اشتراك المستخدم في قائمة بريدية أو إلغاء الاشتراك منها)، تحقق مما يلي:
 
@@ -173,10 +175,10 @@ AMP-Same-Origin: true
 
 1. إذا كان الأصل لا يتطابق مع إحدى القيم التالية، فتوقف وأعِد استجابة خطأ:
 
-    - `<publisher's domain>.cdn.ampproject.org`
-    - مصدر الناشر (يُعرف على أنه المصدر الخاص بك)
+   - `<publisher's domain>.cdn.ampproject.org`
+   - مصدر الناشر (يُعرف على أنه المصدر الخاص بك)
 
-    حينما تمثل `*` تطابق حرف بدل، وليس علامة نجمة فعلية ( * ).
+   حينما تمثل `*` تطابق حرف بدل، وليس علامة نجمة فعلية ( \* ).
 
 2. خلاف ذلك، ابدأ في معالجة الطلب.
 
@@ -227,15 +229,15 @@ Cache-Control: private, no-cache
 
 [sourcecode:text]
 IF CORS header present
-   IF origin IN allowed-origins
-      allow request & send response
-   ELSE
-      deny request
+IF origin IN allowed-origins
+allow request & send response
 ELSE
-   IF "AMP-Same-Origin: true"
-      allow request & send response
-   ELSE
-      deny request
+deny request
+ELSE
+IF "AMP-Same-Origin: true"
+allow request & send response
+ELSE
+deny request
 [/sourcecode]
 
 #### نموذج رمز اشتراك المصادر في الموارد <a name="cors-sample-code"></a>
@@ -244,31 +246,31 @@ ELSE
 
 [sourcecode:javascript]
 function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
-  var unauthorized = 'Unauthorized Request';
-  var origin;
-  var allowedOrigins = [
-    'https://example.com',
-    'https://example-com.cdn.ampproject.org',
-    'https://cdn.ampproject.org',
-  ];
-  var allowedSourceOrigin = 'https://example.com'; //publisher's origin
-  // If same origin
-  if (req.headers['amp-same-origin'] == 'true') {
-    origin = sourceOrigin;
-    // If allowed CORS origin & allowed source origin
-  } else if (
-    allowedOrigins.indexOf(req.headers.origin) != -1 &&
-    sourceOrigin == allowedSourceOrigin
-  ) {
-    origin = req.headers.origin;
-  } else {
-    res.statusCode = 403;
-    res.end(JSON.stringify({message: unauthorized}));
-    throw unauthorized;
-  }
+var unauthorized = 'Unauthorized Request';
+var origin;
+var allowedOrigins = [
+'https://example.com',
+'https://example-com.cdn.ampproject.org',
+'https://cdn.ampproject.org',
+];
+var allowedSourceOrigin = 'https://example.com'; //publisher's origin
+// If same origin
+if (req.headers['amp-same-origin'] == 'true') {
+origin = sourceOrigin;
+// If allowed CORS origin & allowed source origin
+} else if (
+allowedOrigins.indexOf(req.headers.origin) != -1 &&
+sourceOrigin == allowedSourceOrigin
+) {
+origin = req.headers.origin;
+} else {
+res.statusCode = 403;
+res.end(JSON.stringify({message: unauthorized}));
+throw unauthorized;
+}
 
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.setHeader('Access-Control-Allow-Origin', origin);
+res.setHeader('Access-Control-Allow-Credentials', 'true');
+res.setHeader('Access-Control-Allow-Origin', origin);
 }
 [/sourcecode]
 
@@ -331,7 +333,7 @@ Access-Control-Allow-Origin: https://example-com.cdn.ampproject.org
 عند تحميل صفحة AMP لـ `https://example.com/some/font.ttf` من السمة `@font-face src`، ستخزِّن ذاكرة AMP للتخزين المؤقت ملف الخط مؤقتًا وخدمة المورد على النحو التالي مع وجود حرف البدل `Access-Control-Allow-Origin`.
 
 - عنوان URL `https://example-com.cdn.ampproject.org/r/s/example.com/some/font.tff`
-- Access-Control-Allow-Origin: *
+- Access-Control-Allow-Origin: \*
 
 ### السلوك الجديد (أكتوبر 2019 وما بعده) <a name="new-behavior-october-2019-and-after"></a>
 
@@ -341,19 +343,19 @@ Access-Control-Allow-Origin: https://example-com.cdn.ampproject.org
 
 [sourcecode:javascript]
 function assertFontCors(req, res, opt_validMethods, opt_exposeHeaders) {
-  var unauthorized = 'Unauthorized Request';
-  var allowedOrigins = [
-    'https://example.com',
-    'https://example-com.cdn.ampproject.org',
-  ];
-  // If allowed CORS origin
-  if (allowedOrigins.indexOf(req.headers.origin) != -1) {
-    res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
-  } else {
-    res.statusCode = 403;
-    res.end(JSON.stringify({message: unauthorized}));
-    throw unauthorized;
-  }
+var unauthorized = 'Unauthorized Request';
+var allowedOrigins = [
+'https://example.com',
+'https://example-com.cdn.ampproject.org',
+];
+// If allowed CORS origin
+if (allowedOrigins.indexOf(req.headers.origin) != -1) {
+res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+} else {
+res.statusCode = 403;
+res.end(JSON.stringify({message: unauthorized}));
+throw unauthorized;
+}
 }
 [/sourcecode]
 
@@ -384,10 +386,10 @@ function assertFontCors(req, res, opt_validMethods, opt_exposeHeaders) {
 
 1. من المتصفح، افتح عنوان URL الذي ستستخدمه ذاكرة AMP للتخزين المؤقت من أجل الوصول إلى صفحة AMP. ويمكنك تحديد تنسيق عنوان URL لذاكرة التخزين المؤقت من [الأداة في AMP حسب المثال](https://amp.dev/documentation/examples/guides/using_the_google_amp_cache/).
 
-    على سبيل المثال:
+   على سبيل المثال:
 
-    - عنوان URL: `https://amp.dev/documentation/guides-and-tutorials/start/create/`
-    - تنسيق عنوان URL لذاكرة AMP  للتخزين المؤقت: `https://www-ampproject-org.cdn.ampproject.org/c/s/www.ampproject.org/docs/tutorials/create.html`
+   - عنوان URL: `https://amp.dev/documentation/guides-and-tutorials/start/create/`
+   - تنسيق عنوان URL لذاكرة AMP للتخزين المؤقت: `https://www-ampproject-org.cdn.ampproject.org/c/s/www.ampproject.org/docs/tutorials/create.html`
 
 2. افتح أدوات تطوير متصفحك وتحقق من عدم وجود أخطاء وأن جميع الموارد تم تحميلها تحميلًا صحيحًا.
 

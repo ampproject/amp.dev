@@ -1,6 +1,6 @@
 ---
-"$title": Erstelle eine Bildanzeige
-"$order": '1'
+'$title': Erstelle eine Bildanzeige
+$order: 1
 description: 'Unsere Ad ist ein einfaches Bild mit einem Hyperlink zur beworbenen Website. Wir zeigen das Bild mithilfe des Tags amp-img an. Hier ist der Code: …'
 ---
 
@@ -11,9 +11,12 @@ Unsere Ad ist ein einfaches Bild mit einem Hyperlink zur beworbenen Website. Wir
 ```html
 <body>
   <a target="_blank" href="https://www.amp.dev">
-    <amp-img width="300" height="250"
-        alt="Learn amp"
-        src="/static/img/docs/ads/amp-300x250.png"></amp-img>
+    <amp-img
+      width="300"
+      height="250"
+      alt="Learn amp"
+      src="/static/img/docs/ads/amp-300x250.png"
+    ></amp-img>
   </a>
 </body>
 ```

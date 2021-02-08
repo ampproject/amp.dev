@@ -1,10 +1,10 @@
 ---
-"$title": 복잡한 애니메이션 입문
-"$order": '2'
+'$title': 복잡한 애니메이션 입문
+$order: 2
 description: 클래스 추가 및 제거로는 구동할 수 없는 애니메이션을 위해 AMP는 여러 애니메이션 전용 컴포넌트를 제공합니다. 이러한 컴포넌트는 AMP의 원리를 애니메이션에 적용하여...
 formats:
-- websites
-- ads
+  - websites
+  - ads
 author: CrystalOnScript
 ---
 
@@ -87,6 +87,7 @@ CSS를 사용하면 트랜지션을 통해 어떤 상태에서 다른 상태로 
 동일한 태그 또는 클래스의 요소는 지정된 타이밍 속성을 가질 수 있으며 최상위 애니메이션에 정의된 변수 값을 재정의할 수 있습니다.
 
 [example preview="top-frame" playground="true" imports="amp-animation"]
+
 ```html
 <body>
   <h1>Hello World!</h1>
@@ -99,7 +100,10 @@ CSS를 사용하면 트랜지션을 통해 어떤 상태에서 다른 상태로 
         "selector": "h1",
         "duration": "3s",
         "fill": "both",
-        "keyframes": [{"transform": "translateX(0px)"}, {"transform": "translateX(50%)"}],
+        "keyframes": [
+          {"transform": "translateX(0px)"},
+          {"transform": "translateX(50%)"}
+        ],
         "subtargets": [
           {
             "index": 1,
@@ -114,11 +118,10 @@ CSS를 사용하면 트랜지션을 통해 어떤 상태에서 다른 상태로 
       }
     </script>
   </amp-animation>
-  <button on="tap:animateThis.start">
-   start
-  </button>
+  <button on="tap:animateThis.start">start</button>
 </body>
 ```
+
 [/example]
 
 ### 연결된 애니메이션
@@ -207,12 +210,17 @@ CSS를 사용하면 트랜지션을 통해 어떤 상태에서 다른 상태로 
 
 ### 요소 개수를 알 수 없는 애니메이션
 
-[`var()`, `calc()` 표현식](../../../../documentation/components/reference/amp-animation.md)을  [CSS 확장자](../../../../documentation/components/reference/amp-animation.md#css-extensions)와 함께 사용하면 여러 요소로 작동하는 복잡하고 시간 제한이 있는 애니메이션을 작성할 수 있습니다. 이러한 방식은 동적인 사용자 생성 데이터에 애니메이션을 간편하고 유연하게 적용할 수 있도록 지원합니다.
+[`var()`, `calc()` 표현식](../../../../documentation/components/reference/amp-animation.md)을 [CSS 확장자](../../../../documentation/components/reference/amp-animation.md#css-extensions)와 함께 사용하면 여러 요소로 작동하는 복잡하고 시간 제한이 있는 애니메이션을 작성할 수 있습니다. 이러한 방식은 동적인 사용자 생성 데이터에 애니메이션을 간편하고 유연하게 적용할 수 있도록 지원합니다.
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
-  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-animation"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
+  ></script>
   <style amp-custom>
     .parent {
       perspective: 1000px;
@@ -241,31 +249,44 @@ CSS를 사용하면 트랜지션을 통해 어떤 상태에서 다른 상태로 
         "iterations": "1",
         "fill": "both",
         "keyframes": [
-            {"transform": "translate3d(0px, 0px, 0px)"},
-            {"transform": "translate3d(50%, 0px, 100px)"},
-            {"transform": "translate3d(110%, 0px, 0px) rotateY(-20deg)"},
-            {"transform": "translate3d(50%, 0px, -100px)"},
-            {"transform": "translate3d(0px, 0px, -1px)"}
+          {"transform": "translate3d(0px, 0px, 0px)"},
+          {"transform": "translate3d(50%, 0px, 100px)"},
+          {"transform": "translate3d(110%, 0px, 0px) rotateY(-20deg)"},
+          {"transform": "translate3d(50%, 0px, -100px)"},
+          {"transform": "translate3d(0px, 0px, -1px)"}
         ]
       }
     </script>
   </amp-animation>
-  <div class="parent" on="tap:cardAdmin.start" tabindex=none role="animation">
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/7/70/3C.svg" layout="fill"></amp-img>
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/3H.svg" layout="fill"></amp-img>
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/KC.svg" layout="fill"></amp-img>
+  <div class="parent" on="tap:cardAdmin.start" tabindex="none" role="animation">
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/7/70/3C.svg"
+      layout="fill"
+    ></amp-img>
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/3/3a/3H.svg"
+      layout="fill"
+    ></amp-img>
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/e/e1/KC.svg"
+      layout="fill"
+    ></amp-img>
   </div>
 </body>
 ```
+
 [/example]
 
 - 변수 및 `--duration` 선언 후 값을 2초로 지정.
 - 변수의 `--duration` 값에 `duration` 설정.
 - 선택자 `.card`가 사용된 각 요소에 적용된 지연 계산.
-    1. [`length()` 확장자](../../../../documentation/components/reference/amp-animation.md#css-length()-extension)는 선택한 `.card` 요소 개수를 계산.
-    2. 길이에서 각 `.card`의 [index()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension) 빼기.
-    3. 결과 값에 변수 `--duration` 곱하기.
-    4. 최종 합은 해당 요소의 지연에 초 단위로 적용.
+  1. [`length()` 확장자](<../../../../documentation/components/reference/amp-animation.md#css-length()-extension>)는 선택한 `.card` 요소 개수를 계산.
+  2. 길이에서 각 `.card`의 [index()](<../../../../documentation/components/reference/amp-animation.md#css-index()-extension>) 빼기.
+  3. 결과 값에 변수 `--duration` 곱하기.
+  4. 최종 합은 해당 요소의 지연에 초 단위로 적용.
 - 애니메이션은 각 요소에 개별적으로 적용되므로 카드는 동시에 모두 섞이는 대신 하나씩 차례대로 섞입니다.
 
 이 동작을 검사하려면 AMP Playground에서 애니메이션을 열어 더 많은 [`amp-img`](../../../../documentation/components/reference/amp-img) 요소를 추가해 보세요.
@@ -275,9 +296,10 @@ CSS를 사용하면 트랜지션을 통해 어떤 상태에서 다른 상태로 
 애니메이션에 [`conditions`](../../../../documentation/components/reference/amp-animation.md#conditions)를 포함하여 사용자 지정 효과를 적용할 수 있습니다. [`media` 조건](../../../../documentation/components/reference/amp-animation.md#media-query)을 통해 모든 화면 크기에 맞춰 애니메이션을 조정하고 [`switch` 문](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement)의 [`supports` 조건](../../../../documentation/components/reference/amp-animation.md#supports-condition)을 활용하여 역방향 브라우저 호환성을 지원합니다.
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
- <style amp-custom>
+  <style amp-custom>
     .drop {
       width: 20px;
       height: 20px;
@@ -291,50 +313,54 @@ CSS를 사용하면 트랜지션을 통해 어떤 상태에서 다른 상태로 
       background: red;
     }
   </style>
-  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-animation"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
+  ></script>
 </head>
 <body>
-<amp-animation id="mediaAnimation" layout="nodisplay">
-  <script type="application/json">
-    {
-      "duration": "1s",
-      "iterations": "4",
-      "fill": "both",
-      "direction": "alternate",
-      "animations": [
-        {
-          "media": "(min-width: 300px)",
-          "selector": ".drop",
-          "keyframes": {
-            "transform": "translate(100vw)"
+  <amp-animation id="mediaAnimation" layout="nodisplay">
+    <script type="application/json">
+      {
+        "duration": "1s",
+        "iterations": "4",
+        "fill": "both",
+        "direction": "alternate",
+        "animations": [
+          {
+            "media": "(min-width: 300px)",
+            "selector": ".drop",
+            "keyframes": {
+              "transform": "translate(100vw)"
+            }
+          },
+          {
+            "media": "(max-width: 300px)",
+            "selector": ".drop",
+            "keyframes": {
+              "transform": "translate(50vw)"
+            }
+          },
+          {
+            "media": "(min-width: 300px)",
+            "selector": ".right",
+            "keyframes": {
+              "transform": "translate(-100vw)"
+            }
+          },
+          {
+            "media": "(max-width: 300px)",
+            "selector": ".right",
+            "keyframes": {
+              "transform": "translate(-50vw)"
+            }
           }
-        },
-        {
-          "media": "(max-width: 300px)",
-          "selector": ".drop",
-          "keyframes": {
-            "transform": "translate(50vw)"
-          }
-        },
-        {
-          "media": "(min-width: 300px)",
-          "selector": ".right",
-          "keyframes": {
-            "transform": "translate(-100vw)"
-          }
-        },
-        {
-          "media": "(max-width: 300px)",
-          "selector": ".right",
-          "keyframes": {
-            "transform": "translate(-50vw)"
-          }
-        }
-      ]
-    }
-  </script>
-</amp-animation>
-    
+        ]
+      }
+    </script>
+  </amp-animation>
+
   <div class="rain">
     <div class="drop"></div>
     <div class="drop right"></div>
@@ -348,4 +374,5 @@ CSS를 사용하면 트랜지션을 통해 어떤 상태에서 다른 상태로 
   <button on="tap:mediaAnimation.start">Start</button>
 </body>
 ```
+
 [/example]

@@ -1,6 +1,6 @@
 ---
-"$title": Adición de fuentes
-"$order": '6'
+'$title': Adición de fuentes
+$order: 6
 description: 'Puede incrustar fuentes personalizadas en su página AMP de dos maneras: 1. Mediante una etiqueta <link>: solo para proveedores de fuentes autorizados. 2. Utilizando...'
 ---
 
@@ -14,7 +14,11 @@ Puede incrustar fuentes personalizadas en su página AMP de dos maneras:
 En este tutorial, usaremos una etiqueta `<link>` para añadir fuentes a nuestra página. **Agregue** un enlace de hoja de estilo en `<head>` para solicitar la fuente Raleway:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://fonts.googleapis.com/css?family=Raleway"
+/>
 ```
 
 Ahora, **actualice** su selector CSS <code>body</code> para incluir una referencia a Raleway:

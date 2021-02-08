@@ -1,13 +1,13 @@
 ---
-"$title": Crie um mapa de assentos
-"$order": '104'
+'$title': Crie um mapa de assentos
+$order: 104
 description: Mapas de assentos são partes importantes de aplicativos Web para venda de ingressos, mas a implementação no AMP pode ser difícil. Continue lendo para aprender como implementar um mapa de assentos no AMP
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: kul3r4
 contributors:
-- pbakaus
+  - pbakaus
 ---
 
 Mapas de assentos são partes importantes de aplicativos Web para venda de ingressos, mas a implementação no AMP pode ser difícil. Continue lendo para aprender como implementar um mapa de assentos no AMP usando uma combinação de componentes AMP disponíveis.
@@ -60,7 +60,7 @@ O mapa de assentos é renderizado via [`amp-list`](../../../documentation/compon
 
 ## Aplicando estilos em assentos indisponíveis
 
-No exemplo acima,  `{% raw %}{{unavailable}}{% endraw %}` é o valor de um campo retornado pelo endpoint JSON e usado para aplicar um estilo num assento indisponível. Essa solução não permite remover atributos como `option="{{id}}"` se um assento estiver indisponível, pois o modelo não consegue empacotar os elementos `<html>` das páginas inteiras.
+No exemplo acima, `{% raw %}{{unavailable}}{% endraw %}` é o valor de um campo retornado pelo endpoint JSON e usado para aplicar um estilo num assento indisponível. Essa solução não permite remover atributos como `option="{{id}}"` se um assento estiver indisponível, pois o modelo não consegue empacotar os elementos `<html>` das páginas inteiras.
 
 Uma abordagem alternativa e mais detalhada é repetir as tags da seguinte maneira:
 
@@ -106,26 +106,27 @@ Para servir de referência, eis o HTML final para o mapa de assentos:
 
 [sourcecode:html]
 {% raw %}<div class="seatmap-container">
-  <amp-list layout="fill" src="/json/seats.json" binding="no" items="." single-item noloading>
-    <template type="amp-mustache">
-      <amp-pan-zoom layout="fill" class="seatmap">
-        <amp-selector multiple on="select:AMP.setState({
+<amp-list layout="fill" src="/json/seats.json" binding="no" items="." single-item noloading>
+<template type="amp-mustache">
+<amp-pan-zoom layout="fill" class="seatmap">
+<amp-selector multiple on="select:AMP.setState({
           selectedSeats: event.selectedOptions
         })" layout="fill">
-          <div class="svg-container">
-            <svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
-            {{#seats}}
-              <rect option="{{id}}" role="button"
+<div class="svg-container">
+<svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
+{{#seats}}
+<rect option="{{id}}" role="button"
                tabindex="0" class="seat {{unavailable}}"
               x="{{x}}" y="{{y}}"
               width="{{width}}" height="{{height}}"
               rx="{{rx}}" ry="{{ry}}"/>
-            {{/seats}}
-            </svg>
-          </div>
-        </amp-selector>
-      </amp-pan-zoom>
-    </template>
-  </amp-list>
+{{/seats}}
+</svg>
+</div>
+</amp-selector>
+</amp-pan-zoom>
+</template>
+</amp-list>
+
 </div>{% endraw %}
 [/sourcecode]

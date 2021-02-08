@@ -1,9 +1,9 @@
 ---
-"$title": Intro to AMPHTML ads
-"$order": '1'
+'$title': Intro to AMPHTML ads
+$order: 1
 description: AMPHTML 광고는 웹에서 광고하는 더 빠르고 가볍고 안전한 방법입니다. AMP 페이지는 기존 HTML 광고를 지원하지만 이러한 광고는로드 속도가 느릴 수 있습니다.
 formats:
-- ads
+  - ads
 ---
 
 ## AMP HTML 광고란 무엇인가요?
@@ -57,7 +57,7 @@ AMP HTML 광고는 유연하고 동적인 데다가 캐러셀, 시차 및 라이
 
 ### 게시자
 
-직접 판매 광고 형식을 AMP HTML로 게재하려면 [AMP HTML 광고 사양](a4a_spec.md)에 따라 광고를 만들고 AMP HTML 광고 게재를 지원하는 광고 서버를 사용하여 광고를 게재해야 합니다.  현재 AMP HTML 광고를 지원하는 광고 서버는 다음과 같습니다.
+직접 판매 광고 형식을 AMP HTML로 게재하려면 [AMP HTML 광고 사양](a4a_spec.md)에 따라 광고를 만들고 AMP HTML 광고 게재를 지원하는 광고 서버를 사용하여 광고를 게재해야 합니다. 현재 AMP HTML 광고를 지원하는 광고 서버는 다음과 같습니다.
 
 - DoubleClick for Publishers
 - TripleLift
@@ -73,21 +73,21 @@ AMP HTML 광고는 유연하고 동적인 데다가 캐러셀, 시차 및 라이
 
 - [Celtra Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate(*출시 예정*)
+- Adobe Animate(_출시 예정_)
 
 ### 광고 네트워크/서버
 
-AMP HTML 광고를 AMP 페이지에 게재하려면 네트워크에서 [빠른 가져오기 광고 요청 구현](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) 기능을 사용하는 `amp-ad` 확장자를 만들어야 합니다(없는 경우).  자세한 내용은 [AMP와 통합하여 디스플레이 광고 게재](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md)를 참조하세요.  비 AMP 페이지에 AMP HTML을 게재할 경우 특별한 통합이 필요하지 않습니다.
+AMP HTML 광고를 AMP 페이지에 게재하려면 네트워크에서 [빠른 가져오기 광고 요청 구현](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) 기능을 사용하는 `amp-ad` 확장자를 만들어야 합니다(없는 경우). 자세한 내용은 [AMP와 통합하여 디스플레이 광고 게재](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md)를 참조하세요. 비 AMP 페이지에 AMP HTML을 게재할 경우 특별한 통합이 필요하지 않습니다.
 
 ## AMP HTML 광고 만들기
 
-**처음부터 만들기**: AMP HTML 광고는 [AMP HTML 광고 사양](a4a_spec.md)을 준수해야 합니다.  데모 및 예시를 확인하려면 [AMP by Example](../../../documentation/examples/documentation/amp-ad.html)에서 오픈소스 AMP HTML 광고 템플릿을 확인하세요.
+**처음부터 만들기**: AMP HTML 광고는 [AMP HTML 광고 사양](a4a_spec.md)을 준수해야 합니다. 데모 및 예시를 확인하려면 [AMP by Example](../../../documentation/examples/documentation/amp-ad.html)에서 오픈소스 AMP HTML 광고 템플릿을 확인하세요.
 
 **도구 사용**: 다음 중 원하는 도구를 사용하여 AMP HTML 광고 소재를 만들 수 있습니다.
 
 - [Celtra Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate(*출시 예정*)
+- Adobe Animate(_출시 예정_)
 
 ### AMP HTML 광고 구문의 유효성 검사
 

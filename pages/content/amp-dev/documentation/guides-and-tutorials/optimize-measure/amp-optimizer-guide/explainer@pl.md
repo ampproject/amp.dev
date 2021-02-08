@@ -1,10 +1,10 @@
 ---
-"$title": Jak działa optymalizator AMP
-"$order": '1'
+'$title': Jak działa optymalizator AMP
+$order: 1
 description: Optymalizator AMP pobiera prawidłowy dokument AMPHTML jako dane wejściowe i przekształca go w wersję zoptymalizowaną poprzez zastosowanie dodatkowych optymalizacji, które byłyby uciążliwe do wykonania „ręcznie”. Ten przewodnik wyjaśnia szczegółowo, jak działa optymalizator AMP.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

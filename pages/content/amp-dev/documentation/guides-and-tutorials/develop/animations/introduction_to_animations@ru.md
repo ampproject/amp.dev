@@ -1,10 +1,10 @@
 ---
-"$title": Введение в сложные анимации
-"$order": '2'
-description: "AMP предлагает несколько компонентов, предназначенных специально для анимации, — это позволяет использовать анимацию, которая не может управляться добавлением и удалением классов. В работе с анимацией эти компоненты применяют принципы AMP:..."
+'$title': Введение в сложные анимации
+$order: 2
+description: 'AMP предлагает несколько компонентов, предназначенных специально для анимации, — это позволяет использовать анимацию, которая не может управляться добавлением и удалением классов. В работе с анимацией эти компоненты применяют принципы AMP:...'
 formats:
-- websites
-- ads
+  - websites
+  - ads
 author: CrystalOnScript
 ---
 
@@ -87,6 +87,7 @@ AMP предлагает несколько компонентов, предна
 Элементы одного тега или класса могут определять свои свойства воспроизведения, тем самым переопределяя значения переменных, определенных в анимации верхнего уровня.
 
 [example preview="top-frame" playground="true" imports="amp-animation"]
+
 ```html
 <body>
   <h1>Hello World!</h1>
@@ -99,7 +100,10 @@ AMP предлагает несколько компонентов, предна
         "selector": "h1",
         "duration": "3s",
         "fill": "both",
-        "keyframes": [{"transform": "translateX(0px)"}, {"transform": "translateX(50%)"}],
+        "keyframes": [
+          {"transform": "translateX(0px)"},
+          {"transform": "translateX(50%)"}
+        ],
         "subtargets": [
           {
             "index": 1,
@@ -114,11 +118,10 @@ AMP предлагает несколько компонентов, предна
       }
     </script>
   </amp-animation>
-  <button on="tap:animateThis.start">
-   start
-  </button>
+  <button on="tap:animateThis.start">start</button>
 </body>
 ```
+
 [/example]
 
 ### Последовательности анимаций
@@ -211,9 +214,14 @@ AMP предлагает несколько компонентов, предна
 Используя [выражения `var()` и `calc()`](../../../../documentation/components/reference/amp-animation.md) вместе с [расширениями CSS](../../../../documentation/components/reference/amp-animation.md#css-extensions), вы можете создавать сложные и синхронизированные анимации, работающие с любым количеством элементов. Это позволяет легко и плавно анимировать динамические и созданные пользователем данные.
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
-  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-animation"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
+  ></script>
   <style amp-custom>
     .parent {
       perspective: 1000px;
@@ -242,31 +250,44 @@ AMP предлагает несколько компонентов, предна
         "iterations": "1",
         "fill": "both",
         "keyframes": [
-            {"transform": "translate3d(0px, 0px, 0px)"},
-            {"transform": "translate3d(50%, 0px, 100px)"},
-            {"transform": "translate3d(110%, 0px, 0px) rotateY(-20deg)"},
-            {"transform": "translate3d(50%, 0px, -100px)"},
-            {"transform": "translate3d(0px, 0px, -1px)"}
+          {"transform": "translate3d(0px, 0px, 0px)"},
+          {"transform": "translate3d(50%, 0px, 100px)"},
+          {"transform": "translate3d(110%, 0px, 0px) rotateY(-20deg)"},
+          {"transform": "translate3d(50%, 0px, -100px)"},
+          {"transform": "translate3d(0px, 0px, -1px)"}
         ]
       }
     </script>
   </amp-animation>
-  <div class="parent" on="tap:cardAdmin.start" tabindex=none role="animation">
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/7/70/3C.svg" layout="fill"></amp-img>
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/3H.svg" layout="fill"></amp-img>
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/KC.svg" layout="fill"></amp-img>
+  <div class="parent" on="tap:cardAdmin.start" tabindex="none" role="animation">
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/7/70/3C.svg"
+      layout="fill"
+    ></amp-img>
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/3/3a/3H.svg"
+      layout="fill"
+    ></amp-img>
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/e/e1/KC.svg"
+      layout="fill"
+    ></amp-img>
   </div>
 </body>
 ```
+
 [/example]
 
 - Объявляет переменную `--duration` и присваивает ей значение «две секунды».
 - Назначает `duration` значение переменной `--duration`.
 - Вычисляет задержку, применяемую ко всем элементам, соответствующим стилю `.card` селектора.
-    1. Расширение [`length()`](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) вычисляет, сколько элементов `.card` было выбрано
-    2. После этого length вычитает <a>index()</a> каждого элемента <code>.card</code>
-    3. Полученное значение умножается на `--duration`
-    4. Окончательная сумма задается как значение задержки данного элемента в секундах
+  1. Расширение [`length()`](<../../../../documentation/components/reference/amp-animation.md#css-length()-extension>) вычисляет, сколько элементов `.card` было выбрано
+  2. После этого length вычитает <a>index()</a> каждого элемента <code>.card</code>
+  3. Полученное значение умножается на `--duration`
+  4. Окончательная сумма задается как значение задержки данного элемента в секундах
 - Анимация применяется к каждому элементу индивидуально, так что карты перемешиваются одна за другой, а не все одновременно.
 
 Откройте анимацию в песочнице AMP и добавьте дополнительные элементы [`amp-img`](../../../../documentation/components/reference/amp-img), чтобы протестировать это поведение.
@@ -276,9 +297,10 @@ AMP предлагает несколько компонентов, предна
 Для индивидуальной настройки анимаций в них можно включать специальные [`условия`](../../../../documentation/components/reference/amp-animation.md#conditions). Адаптируйте анимацию к любому размеру экрана с помощью [условия `media`](../../../../documentation/components/reference/amp-animation.md#media-query) и поддерживайте обратную совместимость с браузерами, включая [условия `supports`](../../../../documentation/components/reference/amp-animation.md#supports-condition) в оператор [`switch`](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement).
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
- <style amp-custom>
+  <style amp-custom>
     .drop {
       width: 20px;
       height: 20px;
@@ -292,50 +314,54 @@ AMP предлагает несколько компонентов, предна
       background: red;
     }
   </style>
-  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-animation"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
+  ></script>
 </head>
 <body>
-<amp-animation id="mediaAnimation" layout="nodisplay">
-  <script type="application/json">
-    {
-      "duration": "1s",
-      "iterations": "4",
-      "fill": "both",
-      "direction": "alternate",
-      "animations": [
-        {
-          "media": "(min-width: 300px)",
-          "selector": ".drop",
-          "keyframes": {
-            "transform": "translate(100vw)"
+  <amp-animation id="mediaAnimation" layout="nodisplay">
+    <script type="application/json">
+      {
+        "duration": "1s",
+        "iterations": "4",
+        "fill": "both",
+        "direction": "alternate",
+        "animations": [
+          {
+            "media": "(min-width: 300px)",
+            "selector": ".drop",
+            "keyframes": {
+              "transform": "translate(100vw)"
+            }
+          },
+          {
+            "media": "(max-width: 300px)",
+            "selector": ".drop",
+            "keyframes": {
+              "transform": "translate(50vw)"
+            }
+          },
+          {
+            "media": "(min-width: 300px)",
+            "selector": ".right",
+            "keyframes": {
+              "transform": "translate(-100vw)"
+            }
+          },
+          {
+            "media": "(max-width: 300px)",
+            "selector": ".right",
+            "keyframes": {
+              "transform": "translate(-50vw)"
+            }
           }
-        },
-        {
-          "media": "(max-width: 300px)",
-          "selector": ".drop",
-          "keyframes": {
-            "transform": "translate(50vw)"
-          }
-        },
-        {
-          "media": "(min-width: 300px)",
-          "selector": ".right",
-          "keyframes": {
-            "transform": "translate(-100vw)"
-          }
-        },
-        {
-          "media": "(max-width: 300px)",
-          "selector": ".right",
-          "keyframes": {
-            "transform": "translate(-50vw)"
-          }
-        }
-      ]
-    }
-  </script>
-</amp-animation>
-    
+        ]
+      }
+    </script>
+  </amp-animation>
+
   <div class="rain">
     <div class="drop"></div>
     <div class="drop right"></div>
@@ -349,4 +375,5 @@ AMP предлагает несколько компонентов, предна
   <button on="tap:mediaAnimation.start">Start</button>
 </body>
 ```
+
 [/example]

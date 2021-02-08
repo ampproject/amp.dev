@@ -1,10 +1,10 @@
 ---
-"$title": Preview and validate
-"$order": '5'
+'$title': Preview and validate
+$order: 5
 description: 'Prévisualisez la page AMP comme tout autre site HTML statique. Aucune étape de création ni aucun prétraitement ne sont requis. Vous pouvez: ...'
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## Prévisualiser
@@ -12,7 +12,7 @@ contributors:
 Prévisualisez la page AMP comme tout autre site HTML statique. Aucune étape de création ni aucun prétraitement ne sont requis. Vous pouvez:
 
 - **Ouvrir la page directement dans le navigateur à partir du système de fichiers** (certains éléments peuvent ne pas fonctionner en raison de l'échec de XMLHttpRequests).
-- **Utiliser un serveur Web local, tel qu'Apache 2 ou Nginx**. *(Conseil: Pour un serveur Web rapide, exécutez `python -m SimpleHTTPServer`.)*
+- **Utiliser un serveur Web local, tel qu'Apache 2 ou Nginx**. _(Conseil: Pour un serveur Web rapide, exécutez `python -m SimpleHTTPServer`.)_
 
 ## Valider
 

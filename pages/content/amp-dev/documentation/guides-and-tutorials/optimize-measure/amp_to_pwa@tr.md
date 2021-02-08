@@ -1,10 +1,10 @@
 ---
-"$title": "AMP sitenizi PWA'ya dönüştürme"
-"$order": '10'
+'$title': "AMP sitenizi PWA'ya dönüştürme"
+$order: 10
 description: PWA, tarayıcı içindeki kaynakları önbelleğe alarak kullanıcıları etkileşim içinde tutmak ve bilgilendirmek için veriler, varlıklar ve çevrimdışı sayfalar sunabilir.
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: crystalonscript
 ---
 
@@ -58,7 +58,7 @@ Aşağıdaki kodla bilgi havuzunuza `manifest.json` adlı bir dosya ekleyin:
 
 # AMP Hizmet Çalışanı ekleme
 
-Hizmet çalışanı, tarayıcınızın bir web sayfasından ayrı olarak arka planda çalıştırdığı, performansı iyileştirmek ve çevrimdışı işlevler sağlamak için istekleri önbelleğe alarak tarayıcı özelliklerini genişleten bir betiktir. Sıfırdan bir hizmet çalışanı oluşturmak mümkündür ancak bu, çok zaman alır. Workbox gibi kütüphaneler bunun için yardımcı olur, ancak AMP bir adım ileri giderek [AMP Hizmet Çalışanı](https://github.com/ampproject/amp-sw) sunar; AMP bu şekilde AMP Betiklerinin, varlıkların ve belgelerin önbelleğe alınması ve  [gezinme önyüklemesi](https://developers.google.com/web/updates/2017/02/navigation-preload) gibi ortak en iyi uygulamaların ayarlanması dahil birçok adımı otomatikleştirir.
+Hizmet çalışanı, tarayıcınızın bir web sayfasından ayrı olarak arka planda çalıştırdığı, performansı iyileştirmek ve çevrimdışı işlevler sağlamak için istekleri önbelleğe alarak tarayıcı özelliklerini genişleten bir betiktir. Sıfırdan bir hizmet çalışanı oluşturmak mümkündür ancak bu, çok zaman alır. Workbox gibi kütüphaneler bunun için yardımcı olur, ancak AMP bir adım ileri giderek [AMP Hizmet Çalışanı](https://github.com/ampproject/amp-sw) sunar; AMP bu şekilde AMP Betiklerinin, varlıkların ve belgelerin önbelleğe alınması ve [gezinme önyüklemesi](https://developers.google.com/web/updates/2017/02/navigation-preload) gibi ortak en iyi uygulamaların ayarlanması dahil birçok adımı otomatikleştirir.
 
 AMP Hizmet Çalışanı [AMP betiklerini](https://github.com/ampproject/amp-sw/tree/master/src/modules/amp-caching) ve [belgeleri](https://github.com/ampproject/amp-sw/tree/master/src/modules/document-caching) kurulumdan sonra kullanıcı istedikçe otomatik olarak önbelleğe alır. Temel AMP Hizmet Çalışanını ekleyerek işe başlayacağız.
 

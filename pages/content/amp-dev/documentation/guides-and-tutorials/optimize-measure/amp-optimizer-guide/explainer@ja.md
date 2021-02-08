@@ -1,10 +1,10 @@
 ---
-"$title": AMP オプティマイザの仕組み
-"$order": '1'
+'$title': AMP オプティマイザの仕組み
+$order: 1
 description: AMP オプティマイザは、有効な AMPHTML ドキュメントを入力として取り、「手作業」では面倒な最適化をさらに適用することで最適化バージョンに変換します。このガイドでは、AMP オプティマイザがどのように動作するのかを詳しく説明します。
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

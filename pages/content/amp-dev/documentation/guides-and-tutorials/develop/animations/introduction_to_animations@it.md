@@ -1,10 +1,10 @@
 ---
-"$title": Introduzione alle animazioni complesse
-"$order": '2'
+'$title': Introduzione alle animazioni complesse
+$order: 2
 description: AMP offre diversi componenti specifici per le animazioni che non possono essere gestite aggiungendo e rimuovendo classi. Tali componenti applicano i principi dei contenuti AMP alle animazioni ...
 formats:
-- websites
-- ads
+  - websites
+  - ads
 author: CrystalOnScript
 ---
 
@@ -87,6 +87,7 @@ La realizzazione di animazioni tramite [`amp-animation`](../../../../documentati
 Gli elementi dello stesso tag o classe possono avere proprietà di temporizzazione specificate e sovrascrivere i valori di variabili definite nell'animazione principale.
 
 [example preview="top-frame" playground="true" imports="amp-animation"]
+
 ```html
 <body>
   <h1>Hello World!</h1>
@@ -99,7 +100,10 @@ Gli elementi dello stesso tag o classe possono avere proprietà di temporizzazio
         "selector": "h1",
         "duration": "3s",
         "fill": "both",
-        "keyframes": [{"transform": "translateX(0px)"}, {"transform": "translateX(50%)"}],
+        "keyframes": [
+          {"transform": "translateX(0px)"},
+          {"transform": "translateX(50%)"}
+        ],
         "subtargets": [
           {
             "index": 1,
@@ -114,11 +118,10 @@ Gli elementi dello stesso tag o classe possono avere proprietà di temporizzazio
       }
     </script>
   </amp-animation>
-  <button on="tap:animateThis.start">
-   start
-  </button>
+  <button on="tap:animateThis.start">start</button>
 </body>
 ```
+
 [/example]
 
 ### Animazioni concatenate
@@ -210,9 +213,14 @@ Per creare animazioni più grandi, è possibile fare in modo che le animazioni a
 L'uso delle [espressioni `var()` e `calc()`](../../../../documentation/components/reference/amp-animation.md) insieme alle [estensioni CSS](../../../../documentation/components/reference/amp-animation.md#css-extensions) permette di scrivere animazioni complesse e temporizzate che funzionano con un numero qualsiasi di elementi. Ciò consente di animare con facilità e fluidità dati dinamici e generati dagli utenti.
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
-  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-animation"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
+  ></script>
   <style amp-custom>
     .parent {
       perspective: 1000px;
@@ -241,31 +249,44 @@ L'uso delle [espressioni `var()` e `calc()`](../../../../documentation/component
         "iterations": "1",
         "fill": "both",
         "keyframes": [
-            {"transform": "translate3d(0px, 0px, 0px)"},
-            {"transform": "translate3d(50%, 0px, 100px)"},
-            {"transform": "translate3d(110%, 0px, 0px) rotateY(-20deg)"},
-            {"transform": "translate3d(50%, 0px, -100px)"},
-            {"transform": "translate3d(0px, 0px, -1px)"}
+          {"transform": "translate3d(0px, 0px, 0px)"},
+          {"transform": "translate3d(50%, 0px, 100px)"},
+          {"transform": "translate3d(110%, 0px, 0px) rotateY(-20deg)"},
+          {"transform": "translate3d(50%, 0px, -100px)"},
+          {"transform": "translate3d(0px, 0px, -1px)"}
         ]
       }
     </script>
   </amp-animation>
-  <div class="parent" on="tap:cardAdmin.start" tabindex=none role="animation">
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/7/70/3C.svg" layout="fill"></amp-img>
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/3H.svg" layout="fill"></amp-img>
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/KC.svg" layout="fill"></amp-img>
+  <div class="parent" on="tap:cardAdmin.start" tabindex="none" role="animation">
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/7/70/3C.svg"
+      layout="fill"
+    ></amp-img>
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/3/3a/3H.svg"
+      layout="fill"
+    ></amp-img>
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/e/e1/KC.svg"
+      layout="fill"
+    ></amp-img>
   </div>
 </body>
 ```
+
 [/example]
 
 - Dichiara una variabile `--duration` e le assegna il valore di due secondi.
 - Imposta la `duration` al valore della variabile `--duration`.
 - Calcola il ritardo applicato a ciascun elemento in modo da soddisfare il selettore `.card`.
-    1. L'[estensione `length()`](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) calcola quanti elementi `.card` sono stati selezionati
-    2. Alla lunghezza viene poi sottratto il valore [index()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension) di ciascun elemento `.card`
-    3. Il valore risultante viene moltiplicato per la variabile `--duration`
-    4. Il totale finale viene applicato in secondi come ritardo per l'elemento in questione
+  1. L'[estensione `length()`](<../../../../documentation/components/reference/amp-animation.md#css-length()-extension>) calcola quanti elementi `.card` sono stati selezionati
+  2. Alla lunghezza viene poi sottratto il valore [index()](<../../../../documentation/components/reference/amp-animation.md#css-index()-extension>) di ciascun elemento `.card`
+  3. Il valore risultante viene moltiplicato per la variabile `--duration`
+  4. Il totale finale viene applicato in secondi come ritardo per l'elemento in questione
 - L'animazione viene applicata a ogni singolo elemento in modo che le carte vengano mescolate una dopo l'altra invece che tutte contemporaneamente.
 
 Aprire l'animazione nel playground AMP e aggiungere altri elementi [`amp-img`](../../../../documentation/components/reference/amp-img) per verificare il comportamento dell'esempio.
@@ -275,9 +296,10 @@ Aprire l'animazione nel playground AMP e aggiungere altri elementi [`amp-img`](.
 Le animazioni possono comprendere attributi [`conditions`](../../../../documentation/components/reference/amp-animation.md#conditions) che permettono di realizzare effetti personalizzati. Le animazioni possono essere adattate a schermi di tutte le dimensioni con la [condition `media`](../../../../documentation/components/reference/amp-animation.md#media-query) e possono garantire la compatibilità all'indietro con precedenti versioni del browser attivando le [conditions `supports`](../../../../documentation/components/reference/amp-animation.md#supports-condition) in un'istruzione [`switch`](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement).
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
- <style amp-custom>
+  <style amp-custom>
     .drop {
       width: 20px;
       height: 20px;
@@ -291,50 +313,54 @@ Le animazioni possono comprendere attributi [`conditions`](../../../../documenta
       background: red;
     }
   </style>
-  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-animation"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
+  ></script>
 </head>
 <body>
-<amp-animation id="mediaAnimation" layout="nodisplay">
-  <script type="application/json">
-    {
-      "duration": "1s",
-      "iterations": "4",
-      "fill": "both",
-      "direction": "alternate",
-      "animations": [
-        {
-          "media": "(min-width: 300px)",
-          "selector": ".drop",
-          "keyframes": {
-            "transform": "translate(100vw)"
+  <amp-animation id="mediaAnimation" layout="nodisplay">
+    <script type="application/json">
+      {
+        "duration": "1s",
+        "iterations": "4",
+        "fill": "both",
+        "direction": "alternate",
+        "animations": [
+          {
+            "media": "(min-width: 300px)",
+            "selector": ".drop",
+            "keyframes": {
+              "transform": "translate(100vw)"
+            }
+          },
+          {
+            "media": "(max-width: 300px)",
+            "selector": ".drop",
+            "keyframes": {
+              "transform": "translate(50vw)"
+            }
+          },
+          {
+            "media": "(min-width: 300px)",
+            "selector": ".right",
+            "keyframes": {
+              "transform": "translate(-100vw)"
+            }
+          },
+          {
+            "media": "(max-width: 300px)",
+            "selector": ".right",
+            "keyframes": {
+              "transform": "translate(-50vw)"
+            }
           }
-        },
-        {
-          "media": "(max-width: 300px)",
-          "selector": ".drop",
-          "keyframes": {
-            "transform": "translate(50vw)"
-          }
-        },
-        {
-          "media": "(min-width: 300px)",
-          "selector": ".right",
-          "keyframes": {
-            "transform": "translate(-100vw)"
-          }
-        },
-        {
-          "media": "(max-width: 300px)",
-          "selector": ".right",
-          "keyframes": {
-            "transform": "translate(-50vw)"
-          }
-        }
-      ]
-    }
-  </script>
-</amp-animation>
-    
+        ]
+      }
+    </script>
+  </amp-animation>
+
   <div class="rain">
     <div class="drop"></div>
     <div class="drop right"></div>
@@ -348,4 +374,5 @@ Le animazioni possono comprendere attributi [`conditions`](../../../../documenta
   <button on="tap:mediaAnimation.start">Start</button>
 </body>
 ```
+
 [/example]

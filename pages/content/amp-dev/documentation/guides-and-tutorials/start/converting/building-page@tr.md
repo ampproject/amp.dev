@@ -1,6 +1,6 @@
 ---
-"$title": Normal bir HTML sayfası oluşturma
-"$order": '1'
+'$title': Normal bir HTML sayfası oluşturma
+$order: 1
 description: "Proje dizininde, article.html adlı bir dosya bulacaksınız. Bu, AMP'ye eşdeğer bir sayfa oluşturduğumuz..."
 ---
 
@@ -14,10 +14,9 @@ Proje dizininde, [`article.html`](https://github.com/googlecodelabs/accelerated-
 `article.amp.html` dosyanız aşağıdaki gibi görünmelidir:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-
     <title>News Article</title>
 
     <link href="base.css" rel="stylesheet" />
@@ -25,15 +24,16 @@ Proje dizininde, [`article.html`](https://github.com/googlecodelabs/accelerated-
     <script type="text/javascript" src="base.js"></script>
   </head>
   <body>
-    <header>
-      News Site
-    </header>
+    <header>News Site</header>
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
     </article>
-    <img src="mountains.jpg">
+    <img src="mountains.jpg" />
   </body>
 </html>
 ```

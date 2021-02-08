@@ -1,8 +1,8 @@
 ---
-"$title": Các CSS được Hỗ trợ của AMP cho Email
-order: '5'
+'$title': Các CSS được Hỗ trợ của AMP cho Email
+$order: 5
 formats:
-- email
+  - email
 teaser:
   text: Tài liệu này nêu các tính năng CSS hiện đang được hỗ trợ trong các email AMP.
 toc: 'true'
@@ -327,13 +327,13 @@ Việc sử dụng `<link rel="stylesheet" href="...">` không được cho phé
 
 Các thuộc tính CSS sau có các hạn chế bổ sung:
 
-Thuộc tính | Hạn chế
---- | ---
-[`cursor`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor) | Các giá trị duy nhất được cho phép là `pointer` (con trỏ) và `initial` (ban đầu).
-[`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) | `url()` không được cho phép.
-[`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) | Chỉ `opacity` (độ mờ), `transform` (chuyển đổi), `visibility` (hiển thị) `và offset-distance` (bù khoảng cách) có thể được hoạt họa.
-[`visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) | Các giá trị duy nhất được cho phép là `hidden` (ẩn), `visible` (hiển thị) và `initial` (ban đầu).
-[`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index) | Chỉ các giá trị từ -100 đến 100 được cho phép.
+| Thuộc tính                                                                  | Hạn chế                                                                                                                              |
+| --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| [`cursor`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor)         | Các giá trị duy nhất được cho phép là `pointer` (con trỏ) và `initial` (ban đầu).                                                    |
+| [`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)         | `url()` không được cho phép.                                                                                                         |
+| [`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) | Chỉ `opacity` (độ mờ), `transform` (chuyển đổi), `visibility` (hiển thị) `và offset-distance` (bù khoảng cách) có thể được hoạt họa. |
+| [`visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) | Các giá trị duy nhất được cho phép là `hidden` (ẩn), `visible` (hiển thị) và `initial` (ban đầu).                                    |
+| [`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)       | Chỉ các giá trị từ -100 đến 100 được cho phép.                                                                                       |
 
 ## Quy tắc @ <a name="at-rules"></a>
 
@@ -348,14 +348,14 @@ Các phông chữ tùy chỉnh **không** được hỗ trợ trong AMP cho Emai
 Danh sách [các tính năng đa phương tiện](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#Media_features) được hỗ trợ để áp dụng có điều kiện các quy tắc thông qua truy vấn `@media`.
 
 - [`device-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-width)
-    - `max-device-width`
-    - `min-device-width`
+  - `max-device-width`
+  - `min-device-width`
 - [`hover`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover)
 - [`orientation`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/orientation)
 - [`pointer`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer)
 - [`resolution`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/resolution)
-    - `max-resolution`
-    - `min-resolution`
+  - `max-resolution`
+  - `min-resolution`
 - [`width`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/width)
-    - `max-width`
-    - `min-width`
+  - `max-width`
+  - `min-width`

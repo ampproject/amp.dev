@@ -1,9 +1,9 @@
 ---
-"$title": "Animation d'éléments"
-"$order": '6'
+'$title': "Animation d'éléments"
+$order: 6
 description: "Vous pouvez encore améliorer une story Web en appliquant des entrées d'animation aux éléments d'une page. Par exemple, vous pouvez faire apparaître votre titre..."
 components:
-- anim
+  - anim
 author: bpaduch
 ---
 
@@ -109,7 +109,7 @@ Vous pouvez encore améliorer une story Web en appliquant des entrées d'animati
 </tbody>
 </table>
 
-Pour appliquer une entrée d'animation sur un élément, vous devez spécifier <code>animate-in="<em data-md-type="raw_html"><animation data-md-type="raw_html" preset></animation></em>"</code> avec une des valeurs d'animation prédéfinie.  Par exemple, pour lâcher du texte dans une page, ajoutez `animate-in="drop"` à l'élément texte :
+Pour appliquer une entrée d'animation sur un élément, vous devez spécifier <code>animate-in="<em data-md-type="raw_html"><animation data-md-type="raw_html" preset></animation></em>"</code> avec une des valeurs d'animation prédéfinie. Par exemple, pour lâcher du texte dans une page, ajoutez `animate-in="drop"` à l'élément texte :
 
 ```html
 <amp-story-page id="page3">
@@ -133,10 +133,12 @@ Vous pouvez personnaliser la temporisation d'une animation en modifiant le déla
 ```html
 <amp-story-page id="my-page">
   ...
-  <p class="my-element"
-      animate-in="fly-in-left"
-      animate-in-delay="0.3s"
-      animate-in-duration="0.5s">
+  <p
+    class="my-element"
+    animate-in="fly-in-left"
+    animate-in-delay="0.3s"
+    animate-in-duration="0.5s"
+  >
     I'm going to fly into the page from the left!
   </p>
 </amp-story-page>
@@ -150,21 +152,33 @@ La dernière page de notre story Web est composée de deux couches : la premièr
 <amp-story-page id="page5">
   <amp-story-grid-layer template="vertical" class="noedge">
     <div class="wrapper">
-      <amp-img src="assets/cat.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/cat.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/dog.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/dog.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/bird.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/bird.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/rabbit.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/rabbit.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
     </div>
   </amp-story-grid-layer>
@@ -183,9 +197,9 @@ Rechargez la story AMP dans votre navigateur et vérifiez que la page s'affiche 
 Nous allons commencer par animer l'entrée du texte de la bannière et la faire apparaître à partir de la droite de la page. Ajoutez `animate-in="whoosh-in-right"` à l'élément `<p>` comme ceci :
 
 ```html
-<p class="banner-text"
-  animate-in="whoosh-in-right">
-Pets can lower your stress levels!</p>
+<p class="banner-text" animate-in="whoosh-in-right">
+  Pets can lower your stress levels!
+</p>
 ```
 
 Rechargez la page de votre story dans votre navigateur et vérifiez que la bannière apparaisse.
@@ -193,25 +207,37 @@ Rechargez la page de votre story dans votre navigateur et vérifiez que la banni
 Ensuite, faisons apparaître toutes les images en fondu. Ajoutez `animate-in="fade-in"` à chacun des éléments [`amp-img`](../../../../documentation/components/reference/amp-img.md) pour que le code ressemble à ceci :
 
 ```html
-<amp-img src="assets/cat.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/cat.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/dog.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/dog.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/bird.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/bird.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/rabbit.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/rabbit.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
 ```
 
@@ -220,33 +246,45 @@ Si vous actualisez et rechargez la page, chacune des images s'estompe. C'est exc
 Retardons l'entrée de la première image pour qu'elle se rapproche du moment où la bannière de texte termine son entrée, disons 0,4 s. Les trois images restantes peuvent venir 0,2 s après l'entrée de l'image précédente. Pour chacun des éléments [`amp-img`](../../../../documentation/components/reference/amp-img.md), ajoutez `animate-in-delay=""` avec la valeur de délai appropriée. Votre code doit ressembler à ceci :
 
 ```html
-<amp-img src="assets/cat.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="0.4s">
+<amp-img
+  src="assets/cat.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="0.4s"
+>
 </amp-img>
-<amp-img src="assets/dog.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="0.6s">
+<amp-img
+  src="assets/dog.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="0.6s"
+>
 </amp-img>
-<amp-img src="assets/bird.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay=".8s">
+<amp-img
+  src="assets/bird.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay=".8s"
+>
 </amp-img>
-<amp-img src="assets/rabbit.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="1s">
+<amp-img
+  src="assets/rabbit.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="1s"
+>
 </amp-img>
 ```
 
-Refresh and reload your story.  Your last page should look like this:
+Refresh and reload your story. Your last page should look like this:
 
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Page 5 collage', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 

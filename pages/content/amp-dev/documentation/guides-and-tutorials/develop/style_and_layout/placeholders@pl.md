@@ -1,17 +1,17 @@
 ---
-"$title": Elementy zastępcze i zasoby rezerwowe
-"$order": '3'
+'$title': Elementy zastępcze i zasoby rezerwowe
+$order: 3
 descriptions: "In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible."
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible.
@@ -23,17 +23,23 @@ Niektóre elementy nagrodzą Cię nawet za zrobienie tego poprzez rozluźnienie 
 Element oznaczony atrybutem `placeholder` działa jako element zastęp-czy nadrzędnego elementu AMP. Jeśli jest określony, element `placeholder` musi być bezpośrednio podrzędny wobec elementu AMP. Element oznaczony jako `placeholder` będzie zawsze wypełnieniem (`fill`) nadrzędnego elementu AMP.
 
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
+
 ```html
-<amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
+<amp-anim
+  src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
   layout="responsive"
   width="400"
-  height="300">
-  <amp-img placeholder
+  height="300"
+>
+  <amp-img
+    placeholder
     src="{{server_for_email}}/static/inline-examples/images/wavepool.png"
-    layout="fill">
+    layout="fill"
+  >
   </amp-img>
 </amp-anim>
 ```
+
 [/example]
 
 Domyślnie element zastępczy elementu AMP jest wyświetlany natychmiast, nawet jeśli zasoby elementu AMP nie zostały pobrane lub zainicjowane. Gdy element AMP jest już gotowy, zazwyczaj ukrywa swój element zastępczy i wyświetla zawartość.
@@ -48,13 +54,14 @@ Możesz określić atrybut `fallback` w elemencie, aby wskazać rezerwowy sposó
 - jeśli zawartość nie zostanie załadowana (np. usunięto tweet)
 - jeśli typ obrazu nie jest obsługiwany (np. WebP nie jest obsługiwany we wszystkich przeglądarkach)
 
-Atrybut `fallback` można ustawić w *dowolnym* elemencie HTML, nie tylko w elementach AMP. Element `fallback`, jeśli zostanie określony, musi być bezpośrednio podrzędny wobec elementu AMP.
+Atrybut `fallback` można ustawić w _dowolnym_ elemencie HTML, nie tylko w elementach AMP. Element `fallback`, jeśli zostanie określony, musi być bezpośrednio podrzędny wobec elementu AMP.
 
 ##### Przykład: nieobsługiwana funkcja
 
 W poniższym przykładzie używamy atrybutu `fallback`, aby poinformować użytkownika, że przeglądarka nie obsługuje danej funkcji:
 
 [example preview="inline" playground="true" imports="amp-video:0.1"]
+
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -66,6 +73,7 @@ W poniższym przykładzie używamy atrybutu `fallback`, aby poinformować użytk
   </div>
 </amp-video>
 ```
+
 [/example]
 
 ##### Przykład: serwowanie innych formatów obrazów
@@ -73,20 +81,26 @@ W poniższym przykładzie używamy atrybutu `fallback`, aby poinformować użytk
 W poniższym przykładzie używamy atrybutu `fallback`, aby poinformować przeglądarkę, że jeśli format WebP nie jest obsługiwany, ma użyć pliku JPEG.
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="Mountains"
+<amp-img
+  alt="Mountains"
   width="550"
   height="368"
   layout="responsive"
-  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
-  <amp-img alt="Mountains"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp"
+>
+  <amp-img
+    alt="Mountains"
     fallback
     width="550"
     height="368"
     layout="responsive"
-    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"
+  ></amp-img>
 </amp-img>
 ```
+
 [/example]
 
 ## Interakcja elementów zastępczych i zasobów rezerwowych

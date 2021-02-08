@@ -1,6 +1,6 @@
 ---
-"$title": Adición de un comentario
-"$order": '2'
+'$title': Adición de un comentario
+$order: 2
 description: En este momento, un usuario puede añadir un comentario utilizando la biblioteca amp-form. Observe cómo la presencia de la forma es condicional, dependiendo del estado del componente amp-access...
 ---
 
@@ -9,6 +9,7 @@ description: En este momento, un usuario puede añadir un comentario utilizando 
 En este momento, un usuario puede añadir un comentario utilizando la biblioteca [`amp-form`](../../../../documentation/components/reference/amp-form.md). Observe cómo la presencia de la forma es condicional, dependiendo del estado del componente [`amp-access`](../../../../documentation/components/reference/amp-access.md):
 
 [sourcecode:html]
+
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
 [/sourcecode]
 
@@ -21,6 +22,7 @@ Este es un ejemplo de respuesta JSON:
 Esos valores simplemente se mostrarán en la página utilizando la plantilla [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md):
 
 [sourcecode:html]
+
 <div submit-success>
   <template type="amp-mustache">
     <div class="comment-user">
@@ -37,6 +39,7 @@ Esos valores simplemente se mostrarán en la página utilizando la plantilla [`a
 En este ejemplo, solo comprobamos que el valor del comentario no esté vacío. En caso contrario, devolvemos un error que hace que se ejecute el código siguiente:
 
 [sourcecode:html]
+
 <div submit-error>
   <template type="amp-mustache">
     Error! Looks like something went wrong with your comment, please try to submit it again.

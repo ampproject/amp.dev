@@ -1,8 +1,8 @@
 ---
-"$title": セットアップ
-"$order": '0'
+'$title': セットアップ
+$order: 0
 description: このチュートリアルを始める前に、次のものが必要となります。 - HTML、CSS、JavaScript の基本的な知識 - お好みのブラウザ - お好みのテキストエディタ ...
-"$parent": "/content/docs/interaction_dynamic/interactivity.md"
+'$parent': '/content/docs/interaction_dynamic/interactivity.md'
 ---
 
 ## 前提条件

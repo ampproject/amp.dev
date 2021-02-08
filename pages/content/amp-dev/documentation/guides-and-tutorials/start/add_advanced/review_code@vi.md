@@ -1,6 +1,6 @@
 ---
-"$title": Xem lại mã bắt đầu
-"$order": '1'
+'$title': Xem lại mã bắt đầu
+$order: 1
 description: 'Trước khi chúng ta bắt đầu thêm mã, hãy cùng xem lại trang mẫu article.amp.html, có nội dung như sau: ...'
 ---
 

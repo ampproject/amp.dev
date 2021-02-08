@@ -1,8 +1,8 @@
 ---
-"$title": Configuration
-"$order": '0'
+'$title': Configuration
+$order: 0
 description: 'Avant de commencer ce tutoriel, vous aurez besoin des éléments suivants: des bases en HTML, CSS et JavaScript, un navigateur de votre choix, un éditeur de texte de ...'
-"$parent": "/content/docs/interaction_dynamic/interactivity.md"
+'$parent': '/content/docs/interaction_dynamic/interactivity.md'
 ---
 
 ## Prérequis
