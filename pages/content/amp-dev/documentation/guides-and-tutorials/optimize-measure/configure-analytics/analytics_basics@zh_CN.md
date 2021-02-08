@@ -15,7 +15,7 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[`amp-p
 
 如果您只是跟踪诸如简单的[跟踪像素](https://en.wikipedia.org/wiki/Web_beacon#Implementation)之类的行为，则可以使用 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 组件，它提供了基本的网页浏览跟踪功能；网页浏览数据将发送到定义的网址。某些与供应商的集成功能可能需要使用此组件，在这种情况下，这些集成功能将指定确切的网址端点。
 
-对于大多数分析解决方案，请使用 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)。[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 也提供了网页浏览跟踪功能。此外，您还可以跟踪用户与任何类型的网页内容的互动情况，包括链接点击和按钮点击。[filter formats="网站"]而且，您还可以衡量用户在网页上滚动浏览了多少内容、用户是否与社交媒体进行了互动等信息。[/filter] [filter formats="故事"]而且，您还可以衡量用户在故事中浏览了多少内容、用户是否与互动元素进行了互动。[/filter]
+对于大多数分析解决方案，请使用 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)。[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 也提供了网页浏览跟踪功能。此外，您还可以跟踪用户与任何类型的网页内容的互动情况，包括链接点击和按钮点击。[filter formats="websites"]而且，您还可以衡量用户在网页上滚动浏览了多少内容、用户是否与社交媒体进行了互动等信息。[/filter] [filter formats="stories"]而且，您还可以衡量用户在故事中浏览了多少内容、用户是否与互动元素进行了互动。[/filter]
 
 [tip type="read-on"] 请参阅[深入了解 AMP 分析](deep_dive_analytics.md)。[/tip]
 
@@ -73,7 +73,7 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[`amp-p
 
 当网页变得可见（使用触发器关键字 `visible` 指定）时，事件将触发，并发送 `pageview` 请求。触发器属性决定了 pageview 请求何时触发。详细了解[请求和触发器](deep_dive_analytics.md#requests-triggers--transports)。
 
-[filter formats="故事"]
+[filter formats="stories"]
 
 ## AMP 故事的默认配置
 
