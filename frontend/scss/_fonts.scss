@@ -3,7 +3,7 @@
   font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
   src: local('Noto Sans'), local('NotoSans'),
        url('https://amp.dev/static/fonts/noto-sans-v7-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
        url('https://amp.dev/static/fonts/noto-sans-v7-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
@@ -13,7 +13,7 @@
   font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: optional;
   src: local('Noto Sans Bold'), local('NotoSans-Bold'),
        url('https://amp.dev/static/fonts/noto-sans-v7-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
        url('https://amp.dev/static/fonts/noto-sans-v7-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
@@ -23,7 +23,7 @@
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: optional;
   src: local('Poppins Bold'), local('Poppins-Bold'),
        url('https://amp.dev/static/fonts/poppins-v5-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
        url('https://amp.dev/static/fonts/poppins-v5-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
@@ -33,7 +33,7 @@
   font-family: 'Fira Mono';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
   src: local('Fira Mono'), local('FiraMono'),
        url('https://amp.dev/static/fonts/fira-mono-v7-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
        url('https://amp.dev/static/fonts/fira-mono-v7-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
