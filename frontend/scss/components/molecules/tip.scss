@@ -46,6 +46,7 @@ The tip molecule shows text alongside a contextual icon
   }
 
   &-content {
+    @include txt-2;
     h4 {
       @include txt-1;
       margin: 0 0 0.75em;
