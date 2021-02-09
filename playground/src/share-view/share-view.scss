@@ -36,7 +36,7 @@
 
     @include txt;
     @include txt-2;
-    font-family: Noto Sans;
+    font-family: 'Noto Sans', system;
     color: color('oslo-gray');
   }
 
