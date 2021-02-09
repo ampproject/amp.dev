@@ -1,14 +1,14 @@
 ---
-"$title": Formato URL della cache AMP e gestione delle richieste
-"$order": '9'
+'$title': Formato URL della cache AMP e gestione delle richieste
+$order: 9
 toc: 'false'
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 author: Gregable
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 In questo documento imparerai a conoscere il formato URL della cache AMP e come essa gestisce le richieste.
@@ -27,7 +27,7 @@ Si può utilizzare questo calcolatore di URL per convertire un URL in una versio
 Questo documento descrive:
 
 - La struttura dell'URL su una cache AMP.
-- Come appariranno gli  URL su una cache AMP.
+- Come appariranno gli URL su una cache AMP.
 - Come riconvertire l'intestazione di un'origine AMP Cache per determinare il suo dominio di editore.
 
 ## Protocollo Nome Dominio

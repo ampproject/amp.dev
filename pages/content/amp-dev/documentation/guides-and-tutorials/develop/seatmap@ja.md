@@ -1,13 +1,13 @@
 ---
-"$title": シートマップの作成
-"$order": '104'
+'$title': シートマップの作成
+$order: 104
 description: シートマップは、チケット発行業者のウェブアプリの重要な要素ですが、AMP で実装するのは困難です。AMP でシートマップを実装する方法につい学習します。
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: kul3r4
 contributors:
-- pbakaus
+  - pbakaus
 ---
 
 シートマップは、チケット発行業者のウェブアプリの重要な要素ではありますが、AMP で実装するのは至難の業です。この記事では、提供されている AMP コンポーネントを組み合わせ、AMP でシートマップを実装する方法について学習します。
@@ -106,26 +106,27 @@ rect[selected].seat {
 
 [sourcecode:html]
 {% raw %}<div class="seatmap-container">
-  <amp-list layout="fill" src="/json/seats.json" binding="no" items="." single-item noloading>
-    <template type="amp-mustache">
-      <amp-pan-zoom layout="fill" class="seatmap">
-        <amp-selector multiple on="select:AMP.setState({
+<amp-list layout="fill" src="/json/seats.json" binding="no" items="." single-item noloading>
+<template type="amp-mustache">
+<amp-pan-zoom layout="fill" class="seatmap">
+<amp-selector multiple on="select:AMP.setState({
           selectedSeats: event.selectedOptions
         })" layout="fill">
-          <div class="svg-container">
-            <svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
-            {{#seats}}
-              <rect option="{{id}}" role="button"
+<div class="svg-container">
+<svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
+{{#seats}}
+<rect option="{{id}}" role="button"
                tabindex="0" class="seat {{unavailable}}"
               x="{{x}}" y="{{y}}"
               width="{{width}}" height="{{height}}"
               rx="{{rx}}" ry="{{ry}}"/>
-            {{/seats}}
-            </svg>
-          </div>
-        </amp-selector>
-      </amp-pan-zoom>
-    </template>
-  </amp-list>
+{{/seats}}
+</svg>
+</div>
+</amp-selector>
+</amp-pan-zoom>
+</template>
+</amp-list>
+
 </div>{% endraw %}
 [/sourcecode]

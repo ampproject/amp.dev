@@ -1,19 +1,19 @@
 ---
 formats:
-- websites
-- email
-- ads
-- stories
-"$path": "/documentation/guides-and-tutorials/develop/style_and_layout/index.html"
-"$localization":
-  path: "/{locale}/documentation/guides-and-tutorials/develop/style_and_layout/index.html"
-"$title": Style & layout
-"$order": '0'
+  - websites
+  - email
+  - ads
+  - stories
+'$path': '/documentation/guides-and-tutorials/develop/style_and_layout/index.html'
+'$localization':
+  path: '/{locale}/documentation/guides-and-tutorials/develop/style_and_layout/index.html'
+'$title': Style & layout
+$order: 0
 description: Das Styling und Layout von AMP HTML Seiten ist gewöhnlichen HTML Seiten sehr ähnlich. In beiden Fällen verwendest du CSS.
-"$hidden": 'true'
+'$hidden': 'true'
 author: pbakaus
 contributors:
-- Meggin
+  - Meggin
 ---
 
 Das Styling und Layout von AMP HTML Seiten ist gewöhnlichen HTML Seiten sehr ähnlich. In beiden Fällen verwendest du CSS.
@@ -31,6 +31,7 @@ Jede AMP Seite hat ein CSS Limit von 75.000 Byte. Styles, die im Header des Doku
 Define CSS within the `<style amp-custom>` tag inside the head of the document. There is only one `<style amp-custom>` tag allowed on each AMP page.
 
 [sourcecode:html]
+
 <!doctype html>
   <head>
     ...
@@ -48,12 +49,14 @@ Define CSS within the `<style amp-custom>` tag inside the head of the document. 
       }
     </style>
     ...
+
   </head>
 [/sourcecode]
 
 Gestalte AMP Komponenten und HTML Elemente mithilfe von Klassen oder Selektoren und verwende dafür allgemeine CSS Eigenschaften:
 
 [sourcecode:html]
+
 <body>
   <p>Hello, Kitty.</p>
   <amp-img
@@ -73,6 +76,7 @@ Gestalte AMP Komponenten und HTML Elemente mithilfe von Klassen oder Selektoren 
 AMP erlaubt inline Styles:
 
 [sourcecode:html]
+
 <body>
   <p style="color:pink;margin-left:30px;">Hello, Kitty.</p>
 </body>

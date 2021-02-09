@@ -1,12 +1,12 @@
 ---
-"$title": Déboguer les problèmes de cache AMP
-order: '8'
+'$title': Déboguer les problèmes de cache AMP
+$order: 8
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
-  text: " Pourquoi mon document est-il cassé sur un cache AMP ?"
+  text: ' Pourquoi mon document est-il cassé sur un cache AMP ?'
 ---
 
 <!--

@@ -1,8 +1,8 @@
 ---
-"$title": Интеграция ваших рекламных технологий с AMP
-order: '3'
+'$title': Интеграция ваших рекламных технологий с AMP
+$order: 3
 formats:
-- ads
+  - ads
 teaser:
   text: Инструкции, приведенные ниже, предназначены для провайдеров рекламных технологий, желающих выполнить интеграцию с AMP HTML.
 toc: 'true'
@@ -19,7 +19,7 @@ have a look and request a pull request there.
 
 ## Рекламный сервер <a name="ad-server"></a>
 
-*Примеры: DFP, A9*
+_Примеры: DFP, A9_
 
 Рекламный сервер предоставляет издателям специальную библиотеку JavaScript; издатели вставляют в свой код различные «рекламные сниппеты», которые задействуют JavaScript-библиотеку для загрузки рекламы и отображения ее на сайте издателя.
 
@@ -29,15 +29,15 @@ have a look and request a pull request there.
 
 [sourcecode:html]
 <amp-ad
-  width="300"
-  height="250"
-  type="a9"
-  data-aax_size="300x250"
-  data-aax_pubname="test123"
-  data-aax_src="302"
->
-</amp-ad>
-[/sourcecode]
+width="300"
+height="250"
+type="a9"
+data-aax_size="300x250"
+data-aax_pubname="test123"
+data-aax_src="302"
+
+> </amp-ad>
+> [/sourcecode]
 
 Обратите внимание, что атрибуты, следующие за `type`, используются для передачи параметров, необходимым серверу Amazon A9 для выдачи рекламы. В файле [a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) можно увидеть, как производится перенос параметров в JavaScript-вызов, который обращается к серверу A9 по URL-адресу `https://c.amazon-adsystem.com/aax2/assoc.js`. Передаваемые тегом AMP-рекламы параметры добавляются к URL-адресу для получения рекламного объявления с сервера.
 
@@ -45,7 +45,7 @@ have a look and request a pull request there.
 
 ## Система продажи рекламных площадей (SSP) или рекламная биржа <a name="supply-side-platform-ssp-or-an-ad-exchange"></a>
 
-*Примеры: Rubicon, Criteo ИЛИ Appnexus, Ad-Exchange*
+_Примеры: Rubicon, Criteo ИЛИ Appnexus, Ad-Exchange_
 
 Если ваша SSP хочет получать запросы непосредственно с веб-страницы издателя, следуйте описанной выше процедуре по интеграции с рекламным сервером. Добавление собственного значения `type` в тег amp-ad позволяет вам напрямую передавать тег издателю для непосредственного использования ваших тегов в AMP-страницах издателя.
 
@@ -53,7 +53,7 @@ have a look and request a pull request there.
 
 ## Рекламное агентство <a name="ad-agency"></a>
 
-*Примеры: Essence, Omnicom*
+_Примеры: Essence, Omnicom_
 
 Совместно с издателем следите за тем, чтобы ваши креативы были совместимы с AMP. Поскольку все креативы загружаются в элементы iframe, размер которых определяется при вызове рекламного объявления, также следите за тем, чтобы ваш креатив не пытался менять размер iframe.
 
@@ -61,7 +61,7 @@ have a look and request a pull request there.
 
 ## Видеопроигрыватель <a name="video-player"></a>
 
-*Примеры: Brightcove, Ooyala*
+_Примеры: Brightcove, Ooyala_
 
 Видеопроигрыватель, который работает на обычных HTML-страницах, не будет работать с AMP; требуется тег, позволяющий среде выполнения AMP загружать ваш проигрыватель. Компания Brightcove создала специальный тег [amp-brightcove](https://github.com/ampproject/amphtml/blob/master/extensions/amp-brightcove/amp-brightcove.md), который позволяет воспроизводить медиаконтент и рекламу на AMP-страницах.
 
@@ -69,21 +69,21 @@ have a look and request a pull request there.
 
 [sourcecode:html]
 <amp-brightcove
-  data-account="1290862519001"
-  data-video-id="ref:amp-docs-sample"
-  data-player="S1Tt8cgaM"
-  layout="responsive"
-  width="480"
-  height="270"
->
-</amp-brightcove>
-[/sourcecode]
+data-account="1290862519001"
+data-video-id="ref:amp-docs-sample"
+data-player="S1Tt8cgaM"
+layout="responsive"
+width="480"
+height="270"
+
+> </amp-brightcove>
+> [/sourcecode]
 
 Инструкции о том, как разработать свой amp-тег, подобный тегу Brightcove, см. в [этом пулреквесте](https://github.com/ampproject/amphtml/pull/1052).
 
 ## Сеть видеорекламы <a name="video-ad-network"></a>
 
-*Примеры: Tremor, Brightroll*
+_Примеры: Tremor, Brightroll_
 
 Если вы представляете сеть видеорекламы, согласуйте со своим издателем следующие требования:
 
@@ -92,7 +92,7 @@ have a look and request a pull request there.
 
 ## Платформа управления данными (DMP) <a name="data-management-platform-dmp"></a>
 
-*Примеры: KRUX, Bluekai*
+_Примеры: KRUX, Bluekai_
 
 См. раздел [Как оптимизировать пользовательскую конфигурацию рекламы](https://amp.dev/documentation/components/amp-ad#enhance-incoming-ad-configuration).
 
@@ -100,7 +100,7 @@ have a look and request a pull request there.
 
 ## Провайдер данных о видимости <a name="viewability-provider"></a>
 
-*Примеры: MOAT, Integral Ad Science*
+_Примеры: MOAT, Integral Ad Science_
 
 Как правило, провайдеры данных о видимости выполняют интеграцию с издателями посредством оберток креативов на рекламном сервере. Если это так, убедитесь, что обертка креатива загружает все ассеты по HTTPS.
 
@@ -110,6 +110,6 @@ have a look and request a pull request there.
 
 ## Платформа рекомендации контента <a name="content-recommendation-platform"></a>
 
-*Примеры: Taboola, Outbrain*
+_Примеры: Taboola, Outbrain_
 
 Как правило, работа платформ рекомендаций контента осуществляется через встроенный блок JavaScript на сайте издателя, однако такой подход не будет работать на AMP-страницах. Чтобы рекомендовать контент на AMP-страницах, советуем использовать [расширение `amp-embed`](https://amp.dev/documentation/components/amp-ad) для запроса сведений о контенте (см. пример [Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md)).

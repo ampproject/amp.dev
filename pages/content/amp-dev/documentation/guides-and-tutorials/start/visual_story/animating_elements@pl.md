@@ -1,9 +1,9 @@
 ---
-"$title": Animowanie elementów
-"$order": '6'
+'$title': Animowanie elementów
+$order: 6
 description: Możesz dodatkowo wzbogacić relację internetową poprzez zastosowanie animowanych wejść do elementów wewnątrz strony. Możesz na przykład sprawić, że Twój tytuł wleci z...
 components:
-- anim
+  - anim
 author: bpaduch
 ---
 
@@ -133,10 +133,12 @@ Możesz dostosować synchronizację animacji poprzez zmianę opóźnienia lub cz
 ```html
 <amp-story-page id="my-page">
   ...
-  <p class="my-element"
-      animate-in="fly-in-left"
-      animate-in-delay="0.3s"
-      animate-in-duration="0.5s">
+  <p
+    class="my-element"
+    animate-in="fly-in-left"
+    animate-in-delay="0.3s"
+    animate-in-duration="0.5s"
+  >
     I'm going to fly into the page from the left!
   </p>
 </amp-story-page>
@@ -150,21 +152,33 @@ Ostatnia strona naszej relacji internetowej składa się z dwóch warstw: pierws
 <amp-story-page id="page5">
   <amp-story-grid-layer template="vertical" class="noedge">
     <div class="wrapper">
-      <amp-img src="assets/cat.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/cat.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/dog.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/dog.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/bird.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/bird.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/rabbit.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/rabbit.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
     </div>
   </amp-story-grid-layer>
@@ -183,9 +197,9 @@ Wygląda świetnie, ale wszystko jest statyczne! Ożywmy ją animacją!
 Zaczniemy od animacji wejścia tekstu bannera „whoosh in” z prawej strony. Dodaj atrybut `animate-in="whoosh-in-right"` do elementu `<p>` w taki sposób:
 
 ```html
-<p class="banner-text"
-  animate-in="whoosh-in-right">
-Pets can lower your stress levels!</p>
+<p class="banner-text" animate-in="whoosh-in-right">
+  Pets can lower your stress levels!
+</p>
 ```
 
 Załaduj ponownie stronę relacji w przeglądarce i sprawdź, czy baner ma animację whoosh-in.
@@ -193,25 +207,37 @@ Załaduj ponownie stronę relacji w przeglądarce i sprawdź, czy baner ma anima
 Teraz sprawmy, że wszystkie obrazy stopniowo pojawią się na ekranie. Dodaj atrybut `animate-in="fade-in"` do każdego z elementów [`amp-img`](../../../../documentation/components/reference/amp-img.md), aby kod wyglądał tak:
 
 ```html
-<amp-img src="assets/cat.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/cat.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/dog.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/dog.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/bird.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/bird.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/rabbit.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/rabbit.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
 ```
 
@@ -220,29 +246,41 @@ Jeśli odświeżysz i załadujesz ponownie stronę, każdy z obrazów stopniowo 
 Opóźnijmy wejście pierwszego obrazu tak, aby zbliżył się do momentu, gdy skończy wchodzić baner tekstowy, powiedzmy o 0,4 sekundy. Pozostałe trzy obrazy mogą pojawiać się 0,2 sekundy po wejściu poprzedniego obrazu. Dla każdego z elementów [`amp-img`](../../../../documentation/components/reference/amp-img.md) dodaj atrybut `animate-in-delay=""`" z odpowiednią wartością opóźnienia. Twój kod powinien wyglądać tak:
 
 ```html
-<amp-img src="assets/cat.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="0.4s">
+<amp-img
+  src="assets/cat.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="0.4s"
+>
 </amp-img>
-<amp-img src="assets/dog.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="0.6s">
+<amp-img
+  src="assets/dog.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="0.6s"
+>
 </amp-img>
-<amp-img src="assets/bird.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay=".8s">
+<amp-img
+  src="assets/bird.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay=".8s"
+>
 </amp-img>
-<amp-img src="assets/rabbit.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="1s">
+<amp-img
+  src="assets/rabbit.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="1s"
+>
 </amp-img>
 ```
 

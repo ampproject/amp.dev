@@ -1,8 +1,8 @@
 ---
-"$title": Estructura y renderización en los correos electrónicos de AMP
-order: '2'
+'$title': Estructura y renderización en los correos electrónicos de AMP
+$order: 2
 formats:
-- email
+  - email
 teaser:
   text: 'El correo electrónico está estructurado como un '
 toc: 'true'
@@ -45,7 +45,7 @@ La sección `text/x-amp-html` debe estar anidada en un nodo `multipart/alternati
 
 El nodo `multipart/alternative` debe incluir por lo menos un nodo que no sea parte de AMP (`text/plain` o `text/html`) además del nodo `text/x-amp-html`. Esto se mostrará los usuarios cuyos clientes de correo electrónico no son compatibles con AMP o decidieron no participar mediante la configuración de su proveedor de correo electrónico.
 
-Nota: Algunos clientes de correo electrónico[[1]](https://openradar.appspot.com/radar?id=6054696888303616) solo renderizarán la última sección del MIME, por lo que le recomendamos que sitúe la sección `text/x-amp-html` *antes* de la sección del MIME `text/html`.
+Nota: Algunos clientes de correo electrónico[[1]](https://openradar.appspot.com/radar?id=6054696888303616) solo renderizarán la última sección del MIME, por lo que le recomendamos que sitúe la sección `text/x-amp-html` _antes_ de la sección del MIME `text/html`.
 
 ### Semántica de respuesta/reenvío <a name="replyingforwarding-semantics"></a>
 

@@ -1,12 +1,12 @@
 ---
-"$title": Checkliste für das AMP Publishing
-"$order": '0'
+'$title': Checkliste für das AMP Publishing
+$order: 0
 description: Mit responsivem Webdesign werden flüssige Webseiten erstellt, die auf die Bedürfnisse deiner Benutzer reagieren – Seiten, die der Größe und Ausrichtung …
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 Beachte diese Checkliste, damit deine Website ein umfassendes AMP Erlebnis bietet!

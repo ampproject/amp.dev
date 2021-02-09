@@ -1,6 +1,6 @@
 ---
-"$title": 広告用シェルの作成
-"$order": '0'
+'$title': 広告用シェルの作成
+$order: 0
 description: 使い慣れているテキストエディタで、my-amphtml-ad.html という HTML ファイルを作成します。以下の HTML マークアップをそのファイルにコピーします。
 ---
 
@@ -9,15 +9,14 @@ description: 使い慣れているテキストエディタで、my-amphtml-ad.ht
 使い慣れているテキストエディタで、**`my-amphtml-ad.html`** という HTML ファイルを作成します。以下の HTML マークアップをそのファイルにコピーします。
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>My amphtml ad</title>
-  <meta name="viewport" content="width=device-width">
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>My amphtml ad</title>
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body></body>
 </html>
 ```
 
@@ -28,10 +27,12 @@ description: 使い慣れているテキストエディタで、my-amphtml-ad.ht
 `<html>` タグに、`⚡4ads` 属性を追加します。この属性は、ドキュメントを AMPHTML 広告として識別するものです。または、`amp4ads` 属性を指定することもできます。これも有効です。
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4ads>
-<head>
-...
+  <head>
+    ...
+  </head>
+</html>
 ```
 
 [tip type="note"] **注意 –** AMP ページとは異なり、[AMPHTML 広告には `<link rel="canonical">` タグ](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#amphtml-ad-format-rules)は必要ありません。 [/tip]
@@ -45,7 +46,11 @@ AMPHTML 広告には独自の AMP ランタイムバージョンが必要であ�
 AMPHTML 広告クリエイティブには、AMP ページとは異なる非常に単純な[ボイラープレート](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#boilerplate)スタイル行が必要です。以下のコードを `<head>` セクションに追加します。
 
 ```html
-<style amp4ads-boilerplate>body{visibility:hidden}</style>
+<style amp4ads-boilerplate>
+  body {
+    visibility: hidden;
+  }
+</style>
 ```
 
 AMPHTML 広告にスタイルを指定するには、<code><head></code> セクションに <code><style amp-custom></style></code> を使用し、CSS をインラインで AMPHTML ドキュメントに埋め込む必要があります。ここでは基本的な画像広告をレンダリングしており、CSS は必要ないため、このタグは追加しません。
@@ -55,17 +60,20 @@ AMPHTML 広告にスタイルを指定するには、<code><head></code> セク�
 以下は、HTML ファイルの全コードです。
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4ads>
-<head>
-  <meta charset="utf-8">
-  <title>My amphtml ad</title>
-  <meta name="viewport" content="width=device-width">
-  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
-  <style amp4ads-boilerplate>body{visibility:hidden}</style>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>My amphtml ad</title>
+    <meta name="viewport" content="width=device-width" />
+    <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+    <style amp4ads-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body></body>
 </html>
 ```
 

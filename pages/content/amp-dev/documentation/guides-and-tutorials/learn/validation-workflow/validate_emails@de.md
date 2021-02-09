@@ -1,9 +1,9 @@
 ---
-"$title": Validierung von AMP E-Mails
-"$order": '1'
+'$title': Validierung von AMP E-Mails
+$order: 1
 author: CrystalOnScript
 formats:
-- email
+  - email
 ---
 
 AMP E-Mails sind von der AMP JS Bibliothek abhängig und können den Lesern dadurch umfassende interaktive und dynamische Erlebnisse bieten. Darum verlangen E-Mail Anbieter, dass deine Nachrichten validiert sind. Ein gültiges AMP Markup garantiert, dass E-Mails sicher sind und die Standards für Benutzerfreundlichkeit erfüllen.

@@ -1,10 +1,10 @@
 ---
-"$title": Introduzione alle animazioni complesse
-"$order": '2'
+'$title': Introduzione alle animazioni complesse
+$order: 2
 description: AMP offre diversi componenti specifici per le animazioni che non possono essere gestite aggiungendo e rimuovendo classi. Tali componenti applicano i principi dei contenuti AMP alle animazioni ...
 formats:
-- websites
-- ads
+  - websites
+  - ads
 author: CrystalOnScript
 ---
 
@@ -14,14 +14,14 @@ Il componente amp-animation può essere usato per controllare strettamente la ri
 
 ## Creazione di semplici animazioni AMP
 
-Il componente [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) consente l'utilizzo [dell'API Web Animation](https://www.w3.org/TR/web-animations/) in AMP.
+Il componente [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) consente l'utilizzo [dell'API Web Animation](https://www.w3.org/TR/web-animations/) in AMP.
 
-Un componente [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) è un semplice oggetto JSON composto dalle seguenti parti principali:
+Un componente [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) è un semplice oggetto JSON composto dalle seguenti parti principali:
 
 - L'elemento che il componente sta animando o l'elemento `selector`.
-- [Proprietà di temporizzazione](../../../../documentation/components/reference/amp-animation.md#timing-properties)
-- [Fotogrammi principali](../../../../documentation/components/reference/amp-animation.md#keyframes)
-- [Trigger](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
+- [Proprietà di temporizzazione](/content/amp-dev/documentation/components/reference/amp-animation.md#timing-properties)
+- [Fotogrammi principali](/content/amp-dev/documentation/components/reference/amp-animation.md#keyframes)
+- [Trigger](/content/amp-dev/documentation/components/reference/amp-animation.md#triggering-animation)
 
 ```
 <amp-animation layout="nodisplay" id="exampleAnimation">
@@ -41,23 +41,23 @@ Un componente [`amp-animation`](../../../../documentation/components/reference/a
 
 ### Selettore
 
-Analogamente agli elementi CSS, il componente [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) permette di collegare le proprietà dell'animazione all'elemento, dichiarando il nome del tag, la classe o l'ID dell'elemento nel campo `"selector"`. Il componente anima ogni elemento che presenta la dichiarazione del tipo di tag o del nome della classe. L'uso di un ID assicura la possibilità di animare i singoli elementi.
+Analogamente agli elementi CSS, il componente [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) permette di collegare le proprietà dell'animazione all'elemento, dichiarando il nome del tag, la classe o l'ID dell'elemento nel campo `"selector"`. Il componente anima ogni elemento che presenta la dichiarazione del tipo di tag o del nome della classe. L'uso di un ID assicura la possibilità di animare i singoli elementi.
 
 ### Proprietà di temporizzazione
 
-Le [proprietà di temporizzazione](../../../../documentation/components/reference/amp-animation.md#timing-properties) controllano la durata di un'animazione, il numero di volte in cui viene riprodotta e in quale ordine vengono eseguiti i fotogrammi principali.
+Le [proprietà di temporizzazione](/content/amp-dev/documentation/components/reference/amp-animation.md#timing-properties) controllano la durata di un'animazione, il numero di volte in cui viene riprodotta e in quale ordine vengono eseguiti i fotogrammi principali.
 
 Nessuna proprietà di temporizzazione è obbligatoria, ma un'animazione potrebbe non essere eseguita correttamente senza la definizione di proprietà relative ai tempi e alla visualizzazione, come `duration` e `fill`.
 
 ### Fotogrammi principali
 
-Così come gli oggetti CSS permettono di definire il passaggio da uno stato all'altro delle animazioni tramite transizioni, in AMP occorre dichiarare le proprietà dell'animazione sotto forma di fotogrammi principali da implementare con [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) (in modo analogo alle [animazioni CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)). Per garantire una riproduzione scorrevole e la compatibilità tra più browser, [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) [restringe le proprietà dei fotogrammi principali](../../../../documentation/components/reference/amp-animation.md#allow-listed-properties-for-keyframes) utilizzabili alle proprietà accelerate GPU che non richiedono una ridefinizione dei layout e sono in grado di effettuare animazioni sul [thread del programma di composizione](https://dev.chromium.org/developers/design-documents/compositor-thread-architecture). In tal modo le animazioni non interferiranno con i componenti AMP e con il [processo di rendering](https://developers.google.com/web/updates/2018/09/inside-browser-part3#javascript_can_block_the_parsing) del browser.
+Così come gli oggetti CSS permettono di definire il passaggio da uno stato all'altro delle animazioni tramite transizioni, in AMP occorre dichiarare le proprietà dell'animazione sotto forma di fotogrammi principali da implementare con [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md#allow-listed-properties-for-keyframes) utilizzabili alle proprietà accelerate GPU che non richiedono una ridefinizione dei layout e sono in grado di effettuare animazioni sul [thread del programma di composizione](https://dev.chromium.org/developers/design-documents/compositor-thread-architecture). In tal modo le animazioni non interferiranno con i componenti AMP e con il [processo di rendering](https://developers.google.com/web/updates/2018/09/inside-browser-part3#javascript_can_block_the_parsing) del browser.
 
-[tip type="note"] I fotogrammi principali vengono definiti direttamente in [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) o referenziati da [`<amp style-keyframe>`](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#keyframes-stylesheet) purché rispettino le limitazioni sulle proprietà utilizzabili. Maggiori informazioni sui [fotogrammi principali in `amp-animation`sono disponibili qui](../../../../documentation/components/reference/amp-animation.md#keyframes). [/tip]
+[tip type="note"] I fotogrammi principali vengono definiti direttamente in [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md#keyframes). [/tip]
 
 ### Trigger
 
-Il trigger è l'elemento che avvia la sequenza di animazione. L'estensione [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) viene avviata quando la sezione `<body>` diventa visibile sulla pagina o collegandola a [un'azione o a un evento AMP](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)
+Il trigger è l'elemento che avvia la sequenza di animazione. L'estensione [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) viene avviata quando la sezione `<body>` diventa visibile sulla pagina o collegandola a [un'azione o a un evento AMP](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)
 
 L'attivazione basata sulla visibilità della sezione `<body>` è utile quando l'animazione deve essere eseguita non appena la pagina viene caricata perché appare "above the fold" o all'interno della prima finestra di visualizzazione della pagina. Per attivare le animazioni in base alla visibilità, occorre aggiungere l'attributo `trigger="visibility"` al componente.
 
@@ -68,7 +68,7 @@ L'attivazione basata sulla visibilità della sezione `<body>` è utile quando l'
 </amp-animation>
 ```
 
-Le animazioni si collegano a un'azione o a un evento assegnando al componente [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) un `id` e collegando tale `id` al trigger dell'evento desiderato, ad esempio il tocco di un pulsante.
+Le animazioni si collegano a un'azione o a un evento assegnando al componente [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) un `id` e collegando tale `id` al trigger dell'evento desiderato, ad esempio il tocco di un pulsante.
 
 ```
 <amp-animation layout="nodisplay" id="exampleAnimation">
@@ -80,13 +80,14 @@ Le animazioni si collegano a un'azione o a un evento assegnando al componente [`
 
 ## Creazione di animazioni complesse
 
-La realizzazione di animazioni tramite [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) consente un controllo fine delle stesse che non si limita all'avvio e all'arresto dell'animazione: essa potrà anche essere messa in pausa, invertita e diretta in un punto specifico. Si possono persino concatenare più animazioni insieme e animare elementi in sequenza.
+La realizzazione di animazioni tramite [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) consente un controllo fine delle stesse che non si limita all'avvio e all'arresto dell'animazione: essa potrà anche essere messa in pausa, invertita e diretta in un punto specifico. Si possono persino concatenare più animazioni insieme e animare elementi in sequenza.
 
 ### Target secondari
 
 Gli elementi dello stesso tag o classe possono avere proprietà di temporizzazione specificate e sovrascrivere i valori di variabili definite nell'animazione principale.
 
 [example preview="top-frame" playground="true" imports="amp-animation"]
+
 ```html
 <body>
   <h1>Hello World!</h1>
@@ -99,7 +100,10 @@ Gli elementi dello stesso tag o classe possono avere proprietà di temporizzazio
         "selector": "h1",
         "duration": "3s",
         "fill": "both",
-        "keyframes": [{"transform": "translateX(0px)"}, {"transform": "translateX(50%)"}],
+        "keyframes": [
+          {"transform": "translateX(0px)"},
+          {"transform": "translateX(50%)"}
+        ],
         "subtargets": [
           {
             "index": 1,
@@ -114,16 +118,15 @@ Gli elementi dello stesso tag o classe possono avere proprietà di temporizzazio
       }
     </script>
   </amp-animation>
-  <button on="tap:animateThis.start">
-   start
-  </button>
+  <button on="tap:animateThis.start">start</button>
 </body>
 ```
+
 [/example]
 
 ### Animazioni concatenate
 
-Si possono collegare numerose animazioni per formare una sequenza più grande. In tal modo è possibile creare effetti temporizzati, ad esempio sovrimpressioni su video, inserendo le animazioni nell'array `animations` all'interno del componente [`amp-animation`](../../../../documentation/components/reference/amp-animation.md).
+Si possono collegare numerose animazioni per formare una sequenza più grande. In tal modo è possibile creare effetti temporizzati, ad esempio sovrimpressioni su video, inserendo le animazioni nell'array `animations` all'interno del componente [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md).
 
 ```
 <amp-animation id="overlaysAnim" layout="nodisplay">
@@ -159,7 +162,7 @@ Si possono collegare numerose animazioni per formare una sequenza più grande. I
 
 Questa configurazione riproduce ogni animazione per 3 secondi in sequenza.
 
-Per creare animazioni più grandi, è possibile fare in modo che le animazioni all'interno dell'array `animations` facciano riferimento ad altri componenti [`amp-animation`](../../../../documentation/components/reference/amp-animation.md).
+Per creare animazioni più grandi, è possibile fare in modo che le animazioni all'interno dell'array `animations` facciano riferimento ad altri componenti [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md).
 
 ```
 <amp-animation id="addEnergy" layout="nodisplay">
@@ -207,12 +210,17 @@ Per creare animazioni più grandi, è possibile fare in modo che le animazioni a
 
 ### Animazione di un numero sconosciuto di elementi
 
-L'uso delle [espressioni `var()` e `calc()`](../../../../documentation/components/reference/amp-animation.md) insieme alle [estensioni CSS](../../../../documentation/components/reference/amp-animation.md#css-extensions) permette di scrivere animazioni complesse e temporizzate che funzionano con un numero qualsiasi di elementi. Ciò consente di animare con facilità e fluidità dati dinamici e generati dagli utenti.
+L'uso delle [espressioni `var(/content/amp-dev/documentation/components/reference/amp-animation.md#css-extensions) permette di scrivere animazioni complesse e temporizzate che funzionano con un numero qualsiasi di elementi. Ciò consente di animare con facilità e fluidità dati dinamici e generati dagli utenti.
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
-  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-animation"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
+  ></script>
   <style amp-custom>
     .parent {
       perspective: 1000px;
@@ -241,43 +249,57 @@ L'uso delle [espressioni `var()` e `calc()`](../../../../documentation/component
         "iterations": "1",
         "fill": "both",
         "keyframes": [
-            {"transform": "translate3d(0px, 0px, 0px)"},
-            {"transform": "translate3d(50%, 0px, 100px)"},
-            {"transform": "translate3d(110%, 0px, 0px) rotateY(-20deg)"},
-            {"transform": "translate3d(50%, 0px, -100px)"},
-            {"transform": "translate3d(0px, 0px, -1px)"}
+          {"transform": "translate3d(0px, 0px, 0px)"},
+          {"transform": "translate3d(50%, 0px, 100px)"},
+          {"transform": "translate3d(110%, 0px, 0px) rotateY(-20deg)"},
+          {"transform": "translate3d(50%, 0px, -100px)"},
+          {"transform": "translate3d(0px, 0px, -1px)"}
         ]
       }
     </script>
   </amp-animation>
-  <div class="parent" on="tap:cardAdmin.start" tabindex=none role="animation">
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/7/70/3C.svg" layout="fill"></amp-img>
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/3H.svg" layout="fill"></amp-img>
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/KC.svg" layout="fill"></amp-img>
+  <div class="parent" on="tap:cardAdmin.start" tabindex="none" role="animation">
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/7/70/3C.svg"
+      layout="fill"
+    ></amp-img>
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/3/3a/3H.svg"
+      layout="fill"
+    ></amp-img>
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/e/e1/KC.svg"
+      layout="fill"
+    ></amp-img>
   </div>
 </body>
 ```
+
 [/example]
 
 - Dichiara una variabile `--duration` e le assegna il valore di due secondi.
 - Imposta la `duration` al valore della variabile `--duration`.
 - Calcola il ritardo applicato a ciascun elemento in modo da soddisfare il selettore `.card`.
-    1. L'[estensione `length()`](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) calcola quanti elementi `.card` sono stati selezionati
-    2. Alla lunghezza viene poi sottratto il valore [index()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension) di ciascun elemento `.card`
-    3. Il valore risultante viene moltiplicato per la variabile `--duration`
-    4. Il totale finale viene applicato in secondi come ritardo per l'elemento in questione
+  1. L'[estensione `length(/content/amp-dev/documentation/components/reference/amp-animation.md#css-length()-extension>) calcola quanti elementi `.card` sono stati selezionati
+  2. Alla lunghezza viene poi sottratto il valore [index(/content/amp-dev/documentation/components/reference/amp-animation.md#css-index()-extension>) di ciascun elemento `.card`
+  3. Il valore risultante viene moltiplicato per la variabile `--duration`
+  4. Il totale finale viene applicato in secondi come ritardo per l'elemento in questione
 - L'animazione viene applicata a ogni singolo elemento in modo che le carte vengano mescolate una dopo l'altra invece che tutte contemporaneamente.
 
 Aprire l'animazione nel playground AMP e aggiungere altri elementi [`amp-img`](../../../../documentation/components/reference/amp-img) per verificare il comportamento dell'esempio.
 
 ### Fai sempre le cose in grande
 
-Le animazioni possono comprendere attributi [`conditions`](../../../../documentation/components/reference/amp-animation.md#conditions) che permettono di realizzare effetti personalizzati. Le animazioni possono essere adattate a schermi di tutte le dimensioni con la [condition `media`](../../../../documentation/components/reference/amp-animation.md#media-query) e possono garantire la compatibilità all'indietro con precedenti versioni del browser attivando le [conditions `supports`](../../../../documentation/components/reference/amp-animation.md#supports-condition) in un'istruzione [`switch`](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement).
+Le animazioni possono comprendere attributi [`conditions`](/content/amp-dev/documentation/components/reference/amp-animation.md#animation-switch-statement).
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
- <style amp-custom>
+  <style amp-custom>
     .drop {
       width: 20px;
       height: 20px;
@@ -291,50 +313,54 @@ Le animazioni possono comprendere attributi [`conditions`](../../../../documenta
       background: red;
     }
   </style>
-  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-animation"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
+  ></script>
 </head>
 <body>
-<amp-animation id="mediaAnimation" layout="nodisplay">
-  <script type="application/json">
-    {
-      "duration": "1s",
-      "iterations": "4",
-      "fill": "both",
-      "direction": "alternate",
-      "animations": [
-        {
-          "media": "(min-width: 300px)",
-          "selector": ".drop",
-          "keyframes": {
-            "transform": "translate(100vw)"
+  <amp-animation id="mediaAnimation" layout="nodisplay">
+    <script type="application/json">
+      {
+        "duration": "1s",
+        "iterations": "4",
+        "fill": "both",
+        "direction": "alternate",
+        "animations": [
+          {
+            "media": "(min-width: 300px)",
+            "selector": ".drop",
+            "keyframes": {
+              "transform": "translate(100vw)"
+            }
+          },
+          {
+            "media": "(max-width: 300px)",
+            "selector": ".drop",
+            "keyframes": {
+              "transform": "translate(50vw)"
+            }
+          },
+          {
+            "media": "(min-width: 300px)",
+            "selector": ".right",
+            "keyframes": {
+              "transform": "translate(-100vw)"
+            }
+          },
+          {
+            "media": "(max-width: 300px)",
+            "selector": ".right",
+            "keyframes": {
+              "transform": "translate(-50vw)"
+            }
           }
-        },
-        {
-          "media": "(max-width: 300px)",
-          "selector": ".drop",
-          "keyframes": {
-            "transform": "translate(50vw)"
-          }
-        },
-        {
-          "media": "(min-width: 300px)",
-          "selector": ".right",
-          "keyframes": {
-            "transform": "translate(-100vw)"
-          }
-        },
-        {
-          "media": "(max-width: 300px)",
-          "selector": ".right",
-          "keyframes": {
-            "transform": "translate(-50vw)"
-          }
-        }
-      ]
-    }
-  </script>
-</amp-animation>
-    
+        ]
+      }
+    </script>
+  </amp-animation>
+
   <div class="rain">
     <div class="drop"></div>
     <div class="drop right"></div>
@@ -348,4 +374,5 @@ Le animazioni possono comprendere attributi [`conditions`](../../../../documenta
   <button on="tap:mediaAnimation.start">Start</button>
 </body>
 ```
+
 [/example]

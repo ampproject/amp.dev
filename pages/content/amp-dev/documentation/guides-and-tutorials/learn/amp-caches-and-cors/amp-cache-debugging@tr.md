@@ -1,10 +1,10 @@
 ---
-"$title": Hata Ayıklama AMP Önbellek sorunları
-order: '8'
+'$title': Hata Ayıklama AMP Önbellek sorunları
+$order: 8
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
   text: Belgem neden AMP önbelleğinde bozuk?
 ---

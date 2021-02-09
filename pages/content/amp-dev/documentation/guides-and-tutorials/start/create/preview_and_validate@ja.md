@@ -1,10 +1,10 @@
 ---
-"$title": Preview and validate
-"$order": '5'
+'$title': Preview and validate
+$order: 5
 description: AMP ページのプレビュー方法は静的な HTML サイトと同じです。構築手順や前処理は不要で、以下のいずれかの方法でプレビュー確認ができます。 ...
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## プレビュー

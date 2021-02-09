@@ -1,6 +1,6 @@
 ---
-"$title": 熟悉入门代码
-"$order": '1'
+'$title': 熟悉入门代码
+$order: 1
 description: AMP 网页是一种为实现可靠性能而设置了某些限制的 HTML 网页。AMP 网页具有一些特殊标记，其作用是将网页标识为 AMP 网页。
 ---
 

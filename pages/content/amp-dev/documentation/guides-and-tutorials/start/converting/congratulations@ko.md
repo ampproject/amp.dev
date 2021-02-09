@@ -1,6 +1,6 @@
 ---
-"$title": Congratulations!
-"$order": '4'
+'$title': Congratulations!
+$order: 4
 description: 이번 튜토리얼을 완료하고 성공적으로 HTML 문서를 AMP 문서로 변환하셨습니다. 이번 튜토리얼에서 학습한 내용은 다음과 같습니다. - AMP 페이지와 기존 HTML 페이지 간 차이점 이해
 ---
 

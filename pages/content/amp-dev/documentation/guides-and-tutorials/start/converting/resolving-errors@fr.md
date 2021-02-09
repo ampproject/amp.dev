@@ -1,6 +1,6 @@
 ---
-"$title": Résoudre les erreurs de validation
-"$order": '2'
+'$title': Résoudre les erreurs de validation
+$order: 2
 description: Dans cette section, nous allons parcourir et résoudre les erreurs de validation AMP de notre page AMP. Notez que les erreurs peuvent apparaître dans un ordre différent dans votre console.
 ---
 
@@ -35,13 +35,13 @@ Pour ce tutoriel, nous considérerons l'article HTML original que nous convertis
 **Ajoutez** le code suivant sous la balise `<meta charset="utf-8" />`:
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 [tip type="note"] Vous pouvez créer une page AMP canonique autonome. Le lien canonique est toujours nécessaire, mais doit pointer vers l'article AMP lui-même:
 
 ```html
-<link rel="canonical" href="article.amp.html">
+<link rel="canonical" href="article.amp.html" />
 ```
 
 [/tip]
@@ -57,7 +57,7 @@ AMP nécessite un attribut sur l'élément racine `<html>` d'une page pour décl
 Les erreurs ci-dessus peuvent être résolues en ajoutant simplement l'attribut `⚡ `à la balise `<html>` comme ceci:
 
 ```html
-<html ⚡ lang="en">
+<html ⚡ lang="en"></html>
 ```
 
 Maintenant, rechargez la page et vérifiez que les deux erreurs ont disparu.
@@ -65,7 +65,7 @@ Maintenant, rechargez la page et vérifiez que les deux erreurs ont disparu.
 [tip type="note"] Bien que la spécification de l'attribut `⚡` soit l'approche recommandée, il est également possible d'utiliser l'attribut `amp` à la place de l'attribut `⚡`, comme ceci:
 
 ```html
-<html amp lang="en">
+<html amp lang="en"></html>
 ```
 
 [/tip]
@@ -81,7 +81,7 @@ AMP nécessite de définir les valeurs `width` et `minimum-scale` pour la fenêt
 Pour résoudre l'erreur de fenêtre, ajoutez l'extrait de code HTML suivant à la balise `<head>`:
 
 ```html
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width" />
 ```
 
 Les valeurs spécifiées pour `width` et `minimum-scale` sont les valeurs requises dans AMP. La définition de `initial-scale` n'est pas obligatoire, mais elle est couramment incluse dans le développement Web mobile et elle est recommandée. Pour plus de détails sur la conception de la fenêtre et la conception interactive, consultez la section [Configurer la fenêtre](https://developers.google.com/speed/docs/insights/ConfigureViewport).
@@ -104,9 +104,7 @@ Le problème est qu'il s'agit d'une référence de feuille de style externe. Dan
 
 ```html
 <style amp-custom>
-
-/* The content from base.css */
-
+  /* The content from base.css */
 </style>
 ```
 
@@ -171,7 +169,63 @@ Les erreurs suivantes font référence à un code standard manquant:
 Chaque document AMP nécessite le modèle de code AMP suivant:
 
 ```html
-<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<style amp-boilerplate>
+  body {
+    -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+  }
+  @-webkit-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-moz-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-ms-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-o-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }</style
+><noscript
+  ><style amp-boilerplate>
+    body {
+      -webkit-animation: none;
+      -moz-animation: none;
+      -ms-animation: none;
+      animation: none;
+    }
+  </style></noscript
+>
 ```
 
 **Ajoutez** le modèle de code au bas de la balise `<head>` de votre document.
@@ -220,7 +274,7 @@ Pourquoi le type `container` a-t-il été déduit? Parce que nous n'avons pas sp
 
 Actualisez la page et vérifiez le validateur; vous ne devriez plus voir d'erreurs!
 
-Vous avez maintenant un document AMP valide, mais l'image reste un peu moche car elle est mal positionnée sur la page. Par défaut, lorsque vous spécifiez la hauteur et la largeur de [`amp-img`](../../../../documentation/components/reference/amp-img.md), AMP fixe les dimensions aux valeurs spécifiées, mais ne serait-il pas génial si AMP redimensionnait l'image pour l'étirer et l'adapter de manière *interactive* à la page, quelle que soit la taille de l'écran?
+Vous avez maintenant un document AMP valide, mais l'image reste un peu moche car elle est mal positionnée sur la page. Par défaut, lorsque vous spécifiez la hauteur et la largeur de [`amp-img`](../../../../documentation/components/reference/amp-img.md), AMP fixe les dimensions aux valeurs spécifiées, mais ne serait-il pas génial si AMP redimensionnait l'image pour l'étirer et l'adapter de manière _interactive_ à la page, quelle que soit la taille de l'écran?
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-not-responsive.png', 412, 660, align='center third', caption="Our image isn't responsive.") }}
 
@@ -229,7 +283,12 @@ Heureusement, AMP peut déterminer les proportions des éléments à partir de l
 **Définissons** l'attribut de mise en page sur `responsive` pour adapter l'échelle et les dimensions de notre image:
 
 ```html
-<amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+<amp-img
+  src="mountains.jpg"
+  layout="responsive"
+  width="266"
+  height="150"
+></amp-img>
 ```
 
 Voilà! Notre image est correctement dimensionnée et remplit de manière interactive la largeur de l'écran.
@@ -243,18 +302,75 @@ Voilà! Notre image est correctement dimensionnée et remplit de manière intera
 Votre document AMP devrait maintenant ressembler à ceci:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width" />
 
-    <link rel="canonical" href="/article.html">
-    <link rel="shortcut icon" href="amp_favicon.png">
+    <link rel="canonical" href="/article.html" />
+    <link rel="shortcut icon" href="amp_favicon.png" />
 
     <title>News Article</title>
 
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
     <style amp-custom>
       body {
         width: auto;
@@ -284,15 +400,21 @@ Votre document AMP devrait maintenant ressembler à ceci:
     <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
-    <header>
-      News Site
-    </header>
+    <header>News Site</header>
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
 
-      <amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+      <amp-img
+        src="mountains.jpg"
+        layout="responsive"
+        width="266"
+        height="150"
+      ></amp-img>
     </article>
   </body>
 </html>

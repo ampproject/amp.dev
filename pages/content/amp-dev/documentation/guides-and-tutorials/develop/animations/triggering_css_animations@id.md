@@ -1,10 +1,10 @@
 ---
-"$title": Memicu transisi & animasi CSS
-"$order": '1'
+'$title': Memicu transisi & animasi CSS
+$order: 1
 description: Memicu animasi CSS pada halaman mengandalkan penambahan dan penghapusan kelas, dilakukan melalui JavaScript. Anda bisa mendapatkan perilaku yang sama pada halaman AMP dengan menggunakan tindakan toggleClass ....
 formats:
-- websites
-- ads
+  - websites
+  - ads
 ---
 
 Animasi CSS memungkinkan elemen web untuk bertransisi dari satu konfigurasi gaya CSS ke yang lain. Browser dapat memulai animasi yang telah ditentukan saat dimuat, namun animasi CSS yang dipicu peristiwa [bergantung pada penambahan dan penghapusan kelas](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations). AMP mendukung kedua jenis animasi.
@@ -73,16 +73,25 @@ elementName.toggleClass(class="className")
 Anda dapat mengalihkan kelas pada elemen yang sama yang Anda inginkan berinteraksi dengan pengguna, seperti menu hamburger animasi.
 
 ```html
- <div id="hamburger" tabindex=1 role=button on="tap:hamburger.toggleClass(class='close')">
+<div
+  id="hamburger"
+  tabindex="1"
+  role="button"
+  on="tap:hamburger.toggleClass(class='close')"
+></div>
 ```
 
 Tindakan `toggleClass` dapat berlaku pada elemen lain serta beralih di antara dua kelas dengan menambahkan atribut `force`.
 
 ```html
-<button on="tap:magicBox.toggleClass(class='invisible', force=true),magicBox.toggleClass(class='visible', force=false)">
+<button
+  on="tap:magicBox.toggleClass(class='invisible', force=true),magicBox.toggleClass(class='visible', force=false)"
+>
   Disappear
 </button>
-<button on="tap:magicBox.toggleClass(class='visible', force=true),magicBox.toggleClass(class='invisible', force=false)">
+<button
+  on="tap:magicBox.toggleClass(class='visible', force=true),magicBox.toggleClass(class='invisible', force=false)"
+>
   Reappear
 </button>
 ```
@@ -94,9 +103,14 @@ Jika Anda perlu menghapus sebuah kelas dan tidak mengizinkan penerapan ulang, ta
 Anda dapat menambahkan dan menghapus berapa pun jumlah kelas CSS dengan status yang menggunakan [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
-  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-bind"
+    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+  ></script>
   <style amp-custom>
     div {
       height: 100px;
@@ -113,13 +127,13 @@ Anda dapat menambahkan dan menghapus berapa pun jumlah kelas CSS dengan status y
       opacity: 0;
     }
     .left {
-      transform: translatex(-50px)
+      transform: translatex(-50px);
     }
     .right {
-      transform: translatex(50px)
+      transform: translatex(50px);
     }
     button {
-      margin-top:  1rem;
+      margin-top: 1rem;
       margin-left: 1rem;
     }
   </style>
@@ -143,38 +157,31 @@ Anda dapat menambahkan dan menghapus berapa pun jumlah kelas CSS dengan status y
       }
     </script>
   </amp-state>
-  <div [class]="magicBox[animateBox].className"> </div>
-  <button on="tap:AMP.setState({animateBox: 'invisibleBox'})">
-    Disappear
-  </button>
-  <button on="tap:AMP.setState({animateBox: 'visibleBox'})">
-    Reappear
-  </button>
-  <button on="tap:AMP.setState({animateBox: 'moveLeft'})">
-    Move Left
-  </button>
-  <button on="tap:AMP.setState({animateBox: 'moveRight'})">
-    Move Right
-  </button>
+  <div [class]="magicBox[animateBox].className"></div>
+  <button on="tap:AMP.setState({animateBox: 'invisibleBox'})">Disappear</button>
+  <button on="tap:AMP.setState({animateBox: 'visibleBox'})">Reappear</button>
+  <button on="tap:AMP.setState({animateBox: 'moveLeft'})">Move Left</button>
+  <button on="tap:AMP.setState({animateBox: 'moveRight'})">Move Right</button>
 </body>
 ```
+
 [/example]
 
 Tentukan beberapa kelas animasi dengan terlebih dahulu menambahkan daftar kelas CSS dalam tag `<style amp-custom>` di dalam `head` dokumen:
 
 ```css
-    .visible {
-      opacity: 1;
-    }
-    .invisible {
-      opacity: 0;
-    }
-    .left {
-      transform: translatex(-50px)
-    }
-    .right {
-      transform: translatex(50px)
-    }
+.visible {
+  opacity: 1;
+}
+.invisible {
+  opacity: 0;
+}
+.left {
+  transform: translatex(-50px);
+}
+.right {
+  transform: translatex(50px);
+}
 ```
 
 Lalu, pasangkan setiap kelas dengan sebuah status:
@@ -203,24 +210,16 @@ Lalu, pasangkan setiap kelas dengan sebuah status:
 Dan tautkan elemen dengan kelas:
 
 ```html
-  <div [class]="magicBox[animateBox].className"> </div>
+<div [class]="magicBox[animateBox].className"></div>
 ```
 
 Status berubah dari peristiwa atau tindakan AMP yang tertaut. Contoh berikut ini mengubah status dari interaksi pengguna:
 
 ```html
-<button on="tap:AMP.setState({animateBox: 'invisibleBox'})">
-    Disappear
-</button>
-<button on="tap:AMP.setState({animateBox: 'visibleBox'})">
-    Reappear
-</button>
-<button on="tap:AMP.setState({animateBox: 'moveLeft'})">
-    Move Left
-</button>
-<button on="tap:AMP.setState({animateBox: 'moveRight'})">
-  Move Right
-</button>
+<button on="tap:AMP.setState({animateBox: 'invisibleBox'})">Disappear</button>
+<button on="tap:AMP.setState({animateBox: 'visibleBox'})">Reappear</button>
+<button on="tap:AMP.setState({animateBox: 'moveLeft'})">Move Left</button>
+<button on="tap:AMP.setState({animateBox: 'moveRight'})">Move Right</button>
 ```
 
 Menggunakan [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) dengan cara ini akan menetapkan kelas secara eksplisit pada kelas yang telah ditentukan. Anda tidak akan perlu menyuruhnya untuk menghapus kelas lain.

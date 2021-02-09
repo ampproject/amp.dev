@@ -1,9 +1,9 @@
 ---
-"$title": Utilisation de la visionneuse AMP pour afficher les e-mails
-"$order": '5'
+'$title': Utilisation de la visionneuse AMP pour afficher les e-mails
+$order: 5
 author: alabiaga
 formats:
-- email
+  - email
 ---
 
 Les clients de messagerie qui souhaitent prendre en charge AMP pour e-mails doivent utiliser la [visionneuse AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) pour héberger les e-mails AMP de leur expéditeur. Une visionneuse créée avec la [bibliothèque AMP Viewer](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration) encapsule un document AMP et active des [fonctionnalités](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/CAPABILITIES.md) permettant une communication bidirectionnelle avec le document AMP via postMessage. Ces capacités comprennent l'octroi du contrôle de la visibilité de l'e-mail, le relayage des métriques utilisateur et la fourniture de moyens d'assurer la sécurité des demandes XHR effectuées à partir de l'e-mail.
@@ -24,9 +24,11 @@ Le protocole utilisé pour la communication entre la visionneuse et le document 
 // The viewer iframe that will host the amp doc.
 viewerIframe = document.createElement('iframe');
 viewerIframe.contentWindow.onMessage = (xhrRequestIntercepted) => {
-   const blob = new Blob([JSON.stringify({body: 'hello'}, null, 2)], {type: 'application/json'});
-   const response = new Reponse(blob, {status: 200});
-   return response;
+  const blob = new Blob([JSON.stringify({body: 'hello'}, null, 2)], {
+    type: 'application/json',
+  });
+  const response = new Reponse(blob, {status: 200});
+  return response;
 };
 ```
 
@@ -35,7 +37,7 @@ viewerIframe.contentWindow.onMessage = (xhrRequestIntercepted) => {
 Activez l'interception xhr en activant la visionneuse dans la fonction xhrInterceptor lors de l'initialisation. Veuillez consulter l'exemple de la visionneuse pour savoir comment cela est fait et pour un exemple sur l'interception xhr. Vous devez donc autoriser l'interception XHR sur le document. Pour ce faire, vous devez ajouter l'attribut `allow-xhr-interception` à la balise `<html amp4email>`. Le client de messagerie doit définir cet attribut sur le document AMP avant le rendu car l'un est intentionnellement invalide et sera signalé comme tel lors de la validation du document AMP.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email allow-xhr-interception>
   ...
 </html>
@@ -43,23 +45,24 @@ Activez l'interception xhr en activant la visionneuse dans la fonction xhrInterc
 
 ## Rendu du modèle côté serveur de la visionneuse
 
-La fonction `viewerRenderTemplate` permet à la visionneuse de gérer le rendu des modèles [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email) et [`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=email). Lorsque cette fonction est activée, le runtime AMP transmet une requête contenant l'appel XHR original, les données du modèle et tout autre détail nécessaire pour le rendu du contenu du composant dans la visionneuse.  Cela permet à la visionneuse de vérifier le contenu des données du terminal et de gérer le rendu [moustache](https://mustache.github.io/) des modèles pour vérifier et nettoyer les données. Notez que si cette capacité est activée en même temps que xhrInterceptor, dans le composant amp-form et amp-list, la fonction `viewerRenderTemplate`, qui permet également d'envoyer des requêtes à la visionneuse, l'emportera sur celle de xhrInterceptor.
+La fonction `viewerRenderTemplate` permet à la visionneuse de gérer le rendu des modèles [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email) et [`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=email). Lorsque cette fonction est activée, le runtime AMP transmet une requête contenant l'appel XHR original, les données du modèle et tout autre détail nécessaire pour le rendu du contenu du composant dans la visionneuse. Cela permet à la visionneuse de vérifier le contenu des données du terminal et de gérer le rendu [moustache](https://mustache.github.io/) des modèles pour vérifier et nettoyer les données. Notez que si cette capacité est activée en même temps que xhrInterceptor, dans le composant amp-form et amp-list, la fonction `viewerRenderTemplate`, qui permet également d'envoyer des requêtes à la visionneuse, l'emportera sur celle de xhrInterceptor.
 
-L'exemple [viewer.html](https://github.com/ampproject/amphtml/blob/master/examples/viewer.html) montre comment on peut traiter le message `viewerRenderTemplate` envoyé par le document AMP. Dans cet exemple, Viewer.prototype.processRequest_ capte le message `viewerRenderTemplate` et, en fonction du type de composant amp disponible dans la requête, renvoie le html à afficher au format JSON suivant.
+L'exemple [viewer.html](https://github.com/ampproject/amphtml/blob/master/examples/viewer.html) montre comment on peut traiter le message `viewerRenderTemplate` envoyé par le document AMP. Dans cet exemple, Viewer.prototype.processRequest\_ capte le message `viewerRenderTemplate` et, en fonction du type de composant amp disponible dans la requête, renvoie le html à afficher au format JSON suivant.
 
 ```js
-Viewer.prototype.ssrRenderAmpListTemplate_ = (data) => Promise.resolve({
-  "html":
-    "<div role='list' class='i-amphtml-fill-content i-amphtml-replaced-content'>"
-      + "<div class='product' role='listitem'>Apple</div>"
-      + "</div>",
-  "body" : "",
-  "init" : {
-    "headers": {
-      "Content-Type": "application/json",
-    }
-  }
-});
+Viewer.prototype.ssrRenderAmpListTemplate_ = (data) =>
+  Promise.resolve({
+    'html':
+      "<div role='list' class='i-amphtml-fill-content i-amphtml-replaced-content'>" +
+      "<div class='product' role='listitem'>Apple</div>" +
+      '</div>',
+    'body': '',
+    'init': {
+      'headers': {
+        'Content-Type': 'application/json',
+      },
+    },
+  });
 ```
 
 Ceci est un exemple trivial où il n'y a pas de dépendance de bibliothèque de [moustache](https://mustache.github.io/) ou de nettoyage du contenu.
@@ -74,9 +77,9 @@ Le runtime AMP transmettrait par proxy la demande de récupération de données 
 {
   "html": "<div role='list' class='i-amphtml-fill-content i-amphtml-replaced-content'> <div class='product' role='listitem'>List item 1</div> <div class='product' role='listitem'>List item 2</div> </div>",
   "body": "",
-  "init" : {
+  "init": {
     "headers": {
-      "Content-Type": "application/json",
+      "Content-Type": "application/json"
     }
   }
 }

@@ -1,6 +1,6 @@
 ---
-"$title": Làm việc với dữ liệu từ xa
-"$order": '3'
+'$title': Làm việc với dữ liệu từ xa
+$order: 3
 description: Điều gì sẽ xảy ra nếu dữ liệu có thể ràng buộc của bạn quá lớn hoặc quá phức tạp để truy xuất khi tải trang? Hoặc nếu mỗi SKU có một mức giá mà...
 toc: 'true'
 ---
@@ -19,15 +19,15 @@ Bạn cũng có thể ràng buộc thuộc tính `src` cho yếu tố [`<amp-sta
 
 Hãy tận dụng khả năng truy xuất dữ liệu từ xa để tra cứu giá của các SKU trong mẫu của chúng ta. Máy chủ phát triển Express.js của chúng ta trong `app.js` đã có một điểm cuối `/shirts/sizesAndPrices?shirt=<sku>` mà khi được cho SKU của một chiếc áo, sẽ trả về các kích cỡ sẵn có và giá của mỗi kích cỡ. Nó gửi đi tín hiệu hồi đáp có độ trễ nhân tạo là 1 giây để giả lập độ trễ của mạng.
 
-Yêu cầu | Hồi đáp
---- | ---
-`GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}`
+| Yêu cầu                               | Hồi đáp                                      |
+| ------------------------------------- | -------------------------------------------- |
+| `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
 Tương tự dữ liệu JSON trong các yếu tố [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state), dữ liệu từ xa được trả về từ các truy xuất này được hợp nhất và cung cấp theo thuộc tính `id` của yếu tố. Ví dụ, dữ liệu được trả về từ hồi đáp mẫu ở trên có thể được truy xuất trong một biểu thức:
 
-Biểu thức | Kết quả
---- | ---
-`shirts['1001'].sizes['XS']` | `8.99`
+| Biểu thức                    | Kết quả |
+| ---------------------------- | ------- |
+| `shirts['1001'].sizes['XS']` | `8.99`  |
 
 ### Ràng buộc dữ liệu
 
@@ -36,7 +36,10 @@ Bây giờ, hãy áp dụng điều này vào ví dụ thương mại điện t�
 ```html
 <!-- When `selected.sku` changes, update the `src` attribute and fetch
      JSON at the new URL. Then, merge that data under `id` ("shirts"). -->
-<amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
+<amp-state
+  id="shirts"
+  [src]="'/shirts/sizesAndPrices?sku=' + selected.sku"
+></amp-state>
 ```
 
 ### Chỉ báo các kích cỡ không có sẵn
@@ -106,16 +109,22 @@ Và chúng ta sẽ cần cập nhật trạng thái mặc định của các y�
       </td>
       <!-- Add the 'unavailable' class to the next three <td> elements
            to be consistent with the available sizes of the default SKU. -->
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'"
+      >
         <div option="M">M</div>
       </td>
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'"
+      >
         <div option="L">L</div>
       </td>
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'"
+      >
         <div option="XL">XL</div>
       </td>
     </tr>
@@ -134,8 +143,10 @@ Cửa hàng AMPPAREL của chúng ta khá chi li ở điểm là giá áo phụ 
 ```html
 <!-- When an element is selected, set the `selectedSize` variable to the
      value of the "option" attribute of the selected element.  -->
-<amp-selector name="size"
-    on="select:AMP.setState({selectedSize: event.targetOption})">
+<amp-selector
+  name="size"
+  on="select:AMP.setState({selectedSize: event.targetOption})"
+></amp-selector>
 ```
 
 Lưu ý rằng chúng ta không kích hoạt giá trị của `selectedSize` thông qua yếu tố `amp-state#selected`. Đó là bởi chúng ta cố ý không cung cấp một kích cỡ mặc định và muốn buộc người dùng chọn một kích cỡ.
@@ -145,7 +156,8 @@ Lưu ý rằng chúng ta không kích hoạt giá trị của `selectedSize` th�
 Thêm một yếu tố `<span>` mới để bọc nhãn giá và đổi văn bản mặc định thành "---" bởi không có lựa chọn kích cỡ mặc định nào.
 
 ```html
-<h6>PRICE :
+<h6>
+  PRICE :
   <!-- Display the price of the selected shirt in the selected size if available.
        Otherwise, display the placeholder text '---'. -->
   <span [text]="shirts[selected.sku].sizes[selectedSize] || '---'">---</span>
@@ -163,9 +175,13 @@ Chúng ta sắp hoàn thành rồi! Hãy vô hiệu nút "Add to cart" (Thêm v�
      1. There is no selected size, OR
      2. The available sizes for the selected SKU haven't been fetched yet
 -->
-<input type="submit" value="ADD TO CART" disabled
-    class="mdl-button mdl-button--raised mdl-button--accent"
-    [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]">
+<input
+  type="submit"
+  value="ADD TO CART"
+  disabled
+  class="mdl-button mdl-button--raised mdl-button--accent"
+  [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]"
+/>
 ```
 
 **Thử ngay**: Nếu bạn chọn một kích cỡ không có sẵn, bạn không thể thêm nó vào giỏ hàng.

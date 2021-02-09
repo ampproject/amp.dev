@@ -1,6 +1,6 @@
 ---
-"$title": Устранение ошибок валидации
-"$order": '2'
+'$title': Устранение ошибок валидации
+$order: 2
 description: В этом разделе мы просмотрим и устраним ошибки валидации AMP на нашей AMP-странице. Обратите внимание, что порядок отображения ошибок в вашей консоли может отличаться.
 ---
 
@@ -35,13 +35,13 @@ description: В этом разделе мы просмотрим и устра�
 **Добавьте** после тега `<meta charset="utf-8" />` следующий код:
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 [tip type="note"] Вы можете создать самостоятельную каноническую AMP-страницу. При этом указать каноническую ссылку по-прежнему необходимо, но она должна указывать на саму AMP-статью:
 
 ```html
-<link rel="canonical" href="article.amp.html">
+<link rel="canonical" href="article.amp.html" />
 ```
 
 [/tip]
@@ -57,7 +57,7 @@ description: В этом разделе мы просмотрим и устра�
 Ошибки, приведенные выше, можно устранить, добавив в тег `<html>` атрибут `⚡`:
 
 ```html
-<html ⚡ lang="en">
+<html ⚡ lang="en"></html>
 ```
 
 Теперь перезагрузите страницу и убедитесь, что обе ошибки исчезли.
@@ -65,7 +65,7 @@ description: В этом разделе мы просмотрим и устра�
 [tip type="note"] Хотя рекомендуется использовать атрибут `⚡`, вместо `⚡` также можно указывать атрибут `amp`:
 
 ```html
-<html amp lang="en">
+<html amp lang="en"></html>
 ```
 
 [/tip]
@@ -81,7 +81,7 @@ description: В этом разделе мы просмотрим и устра�
 Чтобы устранить ошибку области просмотра, добавьте в тег `<head>` следующий HTML-код:
 
 ```html
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width" />
 ```
 
 Приведенные выше значения `width` и `minimum-scale` обязательны для AMP-страниц. Параметр `initial-scale` не является обязательным, но рекомендуется к использованию и обычно применяется на мобильных веб-страницах. Подробнее об области просмотра и адаптивном дизайне см. в разделе [Настройка области просмотра](https://developers.google.com/speed/docs/insights/ConfigureViewport).
@@ -104,9 +104,7 @@ description: В этом разделе мы просмотрим и устра�
 
 ```html
 <style amp-custom>
-
-/* The content from base.css */
-
+  /* The content from base.css */
 </style>
 ```
 
@@ -117,7 +115,7 @@ description: В этом разделе мы просмотрим и устра�
 
 И снова **перезагрузите** страницу и убедитесь, что ошибка, относящаяся к таблицам стилей, исчезла.
 
-[tip type="note"] **ПРИМЕЧАНИЕ.**  Помимо того, что стили должны быть встроены в код страницы, общий объем стилевой информации в файле не должен превышать 50 килобайт. Используйте препроцессоры, такие как [SASS](http://sass-lang.com/), чтобы сократить размер CSS перед встраиванием в код AMP-страницы. [/tip]
+[tip type="note"] **ПРИМЕЧАНИЕ.** Помимо того, что стили должны быть встроены в код страницы, общий объем стилевой информации в файле не должен превышать 50 килобайт. Используйте препроцессоры, такие как [SASS](http://sass-lang.com/), чтобы сократить размер CSS перед встраиванием в код AMP-страницы. [/tip]
 
 [tip type="important"] **ВАЖНО.** Во всем документе AMP может быть только один тег style. Если AMP-страница ссылается на несколько внешних таблиц стилей, необходимо объединить их в один набор правил. О том, какие правила CSS разрешены в AMP, читайте в статье [Поддерживаемые элементы CSS](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md). [/tip]
 
@@ -171,7 +169,63 @@ use of external JavaScript files.
 В каждом документе AMP обязательно должен присутствовать следующий шаблонный код:
 
 ```html
-<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<style amp-boilerplate>
+  body {
+    -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+  }
+  @-webkit-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-moz-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-ms-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-o-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }</style
+><noscript
+  ><style amp-boilerplate>
+    body {
+      -webkit-animation: none;
+      -moz-animation: none;
+      -ms-animation: none;
+      animation: none;
+    }
+  </style></noscript
+>
 ```
 
 **Добавьте** шаблонный код в конец тега `<head>` вашего документа.
@@ -220,7 +274,7 @@ AMP не поддерживает стандартные HTML-элементы �
 
 Обновите страницу и проверьте валидатор, чтобы удостовериться, что других ошибок на странице больше нет.
 
-Теперь ваш документ соответствует спецификации AMP, но изображение смотрится не очень красиво из-за неоптимального расположения на странице. По умолчанию, когда вы указываете высоту и ширину элемента [`amp-img`](../../../../documentation/components/reference/amp-img.md), AMP жестко фиксирует его размеры — но разве не здорово было бы, если бы AMP автоматически масштабировал изображение, *адаптируя* его под страницу вне зависимости от размера экрана?
+Теперь ваш документ соответствует спецификации AMP, но изображение смотрится не очень красиво из-за неоптимального расположения на странице. По умолчанию, когда вы указываете высоту и ширину элемента [`amp-img`](../../../../documentation/components/reference/amp-img.md), AMP жестко фиксирует его размеры — но разве не здорово было бы, если бы AMP автоматически масштабировал изображение, _адаптируя_ его под страницу вне зависимости от размера экрана?
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-not-responsive.png', 412, 660, align='center third', caption="Our image isn't responsive.") }}
 
@@ -229,7 +283,12 @@ AMP не поддерживает стандартные HTML-элементы �
 Давайте **установим** атрибут layout в значение `responsive`, чтобы изображение автоматически масштабировалось:
 
 ```html
-<amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+<amp-img
+  src="mountains.jpg"
+  layout="responsive"
+  width="266"
+  height="150"
+></amp-img>
 ```
 
 Теперь наше изображение имеет верное соотношение сторон и адаптивно заполняет всю ширину экрана.
@@ -243,18 +302,75 @@ AMP не поддерживает стандартные HTML-элементы �
 Теперь ваш документ AMP должен выглядеть примерно так:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width" />
 
-    <link rel="canonical" href="/article.html">
-    <link rel="shortcut icon" href="amp_favicon.png">
+    <link rel="canonical" href="/article.html" />
+    <link rel="shortcut icon" href="amp_favicon.png" />
 
     <title>News Article</title>
 
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
     <style amp-custom>
       body {
         width: auto;
@@ -284,15 +400,21 @@ AMP не поддерживает стандартные HTML-элементы �
     <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
-    <header>
-      News Site
-    </header>
+    <header>News Site</header>
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
 
-      <amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+      <amp-img
+        src="mountains.jpg"
+        layout="responsive"
+        width="266"
+        height="150"
+      ></amp-img>
     </article>
   </body>
 </html>

@@ -1,6 +1,6 @@
 ---
-"$title": Sitenizde gezinme
-"$order": '5'
+'$title': Sitenizde gezinme
+$order: 5
 description: Çoğu mobil web sitesi bir site gezinme menüsü içerir. Bu menüler çok farklı şekillerde olabilir. Bu öğreticide, AMP sayfalarında gezinme sunmak için aşağıdaki örnekleri deneyeceğiz.
 ---
 
@@ -18,9 +18,14 @@ Kullanıcılarınızın web sitenizin normal gezinme seçeneklerine erişmesini 
 ```html
 <header class="headerbar">
   <a href="homepage.html">
-    <amp-img class="home-button" src="icons/home.png" width="36" height="36"></amp-img>
+    <amp-img
+      class="home-button"
+      src="icons/home.png"
+      width="36"
+      height="36"
+    ></amp-img>
   </a>
- <div class="site-name">News Site</div>
+  <div class="site-name">News Site</div>
 </header>
 ```
 
@@ -62,14 +67,20 @@ Yaygın bir gezinme tekniği, tıklandığında bir dizi gezinme bağlantısın�
 İlk olarak, [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) bileşeninin Javascript'ini `<head>` etiketine **eklemeliyiz**:
 
 ```html
-<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+<script
+  async
+  custom-element="amp-sidebar"
+  src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"
+></script>
 ```
 
 Ardından, bir menü simgesi görüntülemek istiyoruz. Simgeye dokunulduğunda, kenar çubuğu açılır. Ev simgesi yerine ["hamburger"](https://en.wikipedia.org/wiki/Hamburger_button) simgesini görüntülemek için `<header>` öğesini aşağıdaki kodla **değiştirin**:
 
 ```html
 <header class="headerbar">
-  <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
+  <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">
+    ☰
+  </div>
   <div class="site-name">News Site</div>
 </header>
 ```
@@ -80,7 +91,15 @@ Aşağıdaki HTML'yi `</header>` öğesinden hemen sonra **ekleyin**:
 
 ```html
 <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
-  <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
+  <div
+    role="button"
+    aria-label="close sidebar"
+    on="tap:sidebar1.toggle"
+    tabindex="0"
+    class="close-sidebar"
+  >
+    ✕
+  </div>
   <ul class="sidebar">
     <li><a href="#">Example 1</a></li>
     <li><a href="#">Example 2</a></li>
@@ -103,7 +122,7 @@ Son olarak, bu stil kurallarını satır içi CSS'nize **ekleyin**:
 }
 .sidebar > li {
   list-style: none;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 .sidebar a {
   text-decoration: none;

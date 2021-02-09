@@ -1,8 +1,8 @@
 ---
-"$title": AMP メールの構造とレンダリング
-order: '2'
+'$title': AMP メールの構造とレンダリング
+$order: 2
 formats:
-- email
+  - email
 teaser:
   text: 'メールは '
 toc: 'true'

@@ -1,6 +1,6 @@
 ---
-"$title": お疲れ様でした！
-"$order": '4'
+'$title': お疲れ様でした！
+$order: 4
 description: AMP と非 AMP ページに配信できる AMPHTML 広告を作成できました！このチュートリアルでは、以下について学習しました。AMPHTML 広告の仕様に従って有効な AMPHTML 広告を...
 ---
 

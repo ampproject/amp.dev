@@ -1,8 +1,8 @@
 ---
-"$title": Thiết lập
-"$order": '0'
+'$title': Thiết lập
+$order: 0
 description: 'Trước khi bắt đầu bài thực hành này, bạn sẽ cần: - Kiến thức cơ bản về HTML, CSS và JavaScript - Kiến thức cơ bản về các khái niệm cốt lõi của AMP, xem...'
-"$parent": "/content/docs/fundamentals/add_advanced.md"
+'$parent': '/content/docs/fundamentals/add_advanced.md'
 ---
 
 ## Yêu cầu trước khi tiến hành

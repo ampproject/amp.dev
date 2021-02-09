@@ -1,10 +1,10 @@
 ---
-"$title": Gelişmiş AMP özellikleri ekleyin
-"$order": '0'
+'$title': Gelişmiş AMP özellikleri ekleyin
+$order: 0
 description: "Bu öğretici ile AMP'nin temellerini daha iyi anlayacak ve AMP'nin reklamları, analizleri, gömülü videoları, sosyal medya entegrasyonunu, döngüleri ve daha fazlasını nasıl işlediğini öğreneceksiniz."
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='Completed news article') }}
@@ -24,4 +24,4 @@ Bu öğretici ile AMP'nin temellerini daha iyi anlayacak ve AMP'nin reklamları,
 
 AMP spesifikasyonlarına uyan ve reklam, analiz, gömülü video, yerleşik sosyal medya, resim döngüsü ve bir site gezinme menüsünü içeren bir haber makalesi sayfası.
 
-[tip type="note"] **NOT –**  Bu öğretici ["HTML'nizi AMP'ye dönüştürme"](../../../../documentation/guides-and-tutorials/start/converting/index.md) öğreticisinde tanıtılan kavramların devamıdır. AMP'nin temel kavramları hakkında henüz temel bir anlayışa sahip değilseniz, lütfen ["HTML'nizi AMP'ye dönüştürün"](../../../../documentation/guides-and-tutorials/start/converting/index.md) öğreticisini deneyin. [/tip]
+[tip type="note"] **NOT –** Bu öğretici ["HTML'nizi AMP'ye dönüştürme"](../../../../documentation/guides-and-tutorials/start/converting/index.md) öğreticisinde tanıtılan kavramların devamıdır. AMP'nin temel kavramları hakkında henüz temel bir anlayışa sahip değilseniz, lütfen ["HTML'nizi AMP'ye dönüştürün"](../../../../documentation/guides-and-tutorials/start/converting/index.md) öğreticisini deneyin. [/tip]

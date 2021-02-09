@@ -1,7 +1,7 @@
 import os
 import re
 import traceback
-from component_version_resolver import ComponentVersionResolver
+from .component_version_resolver import ComponentVersionResolver
 from grow.pods.pods import Pod
 from grow.documents.document import Document
 from grow.cache.object_cache import ObjectCache

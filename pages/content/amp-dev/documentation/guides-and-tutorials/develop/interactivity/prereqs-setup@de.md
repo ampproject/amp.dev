@@ -1,8 +1,8 @@
 ---
-"$title": Einrichtung
-"$order": '0'
+'$title': Einrichtung
+$order: 0
 description: 'Dieses Tutorial setzt Folgendes voraus: - Grundkenntnisse in HTML, CSS und JavaScript - einen Browser deiner Wahl - einen Texteditor deiner Wahl'
-"$parent": "/content/docs/interaction_dynamic/interactivity.md"
+'$parent': '/content/docs/interaction_dynamic/interactivity.md'
 ---
 
 ## Voraussetzungen

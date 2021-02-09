@@ -1,9 +1,9 @@
 ---
-"$title": Kiếm tiền từ trang AMP của bạn với quảng cáo
-"$order": '0'
+'$title': Kiếm tiền từ trang AMP của bạn với quảng cáo
+$order: 0
 description: Hướng dẫn này cung cấp các chỉ đẫn và biện pháp thực hành tiên tiến nhất để hiển thị quảng cáo trên trang AMP của bạn. Vậy nên, để hiển thị quảng cáo trong AMP, bạn cần thêm thành phần amp-ad tùy chỉnh...
 formats:
-- websites
+  - websites
 ---
 
 Hướng dẫn này cung cấp các chỉ đẫn và biện pháp thực hành tiên tiến nhất để hiển thị quảng cáo trên trang AMP của bạn.
@@ -21,7 +21,11 @@ Hãy thực hiện các bước để thêm thành phần này, để bạn có 
 Thành phần [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) là một phần mở rộng quảng cáo tùy chỉnh cho thư viện AMP. Chạy ngầm bên dưới [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) là JavaScript tùy chỉnh, đã được thiết kế kỹ lưỡng để tối ưu hiệu năng. Để chạy thành phần [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), bạn phải thêm JavaScript cần thiết cho thành phần này vào phần `head` của trang AMP của mình:
 
 ```html
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script
+  async
+  custom-element="amp-ad"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+></script>
 ```
 
 ### Bước 2: Thêm thẻ amp-ad vào trang AMP của bạn
@@ -31,8 +35,7 @@ Có hơn 100 [máy chủ và mạng lưới quảng cáo](ads_vendors.md) cung c
 Trong ví dụ này, chúng ta cần thêm một ô quảng cáo để phục vụ quảng cáo từ mạng lưới a9:
 
 ```html
-<amp-ad type="a9">
-</amp-ad>
+<amp-ad type="a9"> </amp-ad>
 ```
 
 ### Bước 3: Quy định kích cỡ cho đơn vị quảng cáo
@@ -40,9 +43,7 @@ Trong ví dụ này, chúng ta cần thêm một ô quảng cáo để phục v�
 Thêm thuộc tính `width` và `height` vào thẻ [`amp-ad`](../../../../documentation/components/reference/amp-ad.md). Việc này sẽ quy định kích cỡ của quảng cáo trên trang AMP của bạn:
 
 ```html
-<amp-ad type="a9">
-   width="300" height="250"
-</amp-ad>
+<amp-ad type="a9"> width="300" height="250" </amp-ad>
 ```
 
 ### Bước 4: Thiết lập các tham số cho mạng lưới quảng cáo
@@ -50,11 +51,14 @@ Thêm thuộc tính `width` và `height` vào thẻ [`amp-ad`](../../../../docum
 Mỗi mạng lưới có các thuộc tính dữ liệu cụ thể mà họ cần để phục vụ quảng cáo. Tham khảo tài liệu [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) của mạng lưới quảng cáo và thêm các thuộc tính cần thiết. Trong ví dụ sau, mạng lưới a9 cần các tham số bổ sung để quy định kích cỡ của quảng cáo, cùng các chi tiết khác:
 
 ```html
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -63,12 +67,15 @@ Mỗi mạng lưới có các thuộc tính dữ liệu cụ thể mà họ cầ
 Tùy thuộc vào mạng lưới quảng cáo, bạn có thể chọn hiển thị một mã giữ chỗ cho đến khi quảng cáo có thể được xem. Việc này cung cấp một trải nghiệm người dùng tốt hơn bằng cách ngăn ngừa một không gian trống. Để quy định một mã giữ chỗ, hãy thêm một yếu tố con với thuộc tính `placeholder` (mã giữ chỗ). Tìm hiểu thêm trong [Mã giữ chỗ & phương án dự phòng](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ```html
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-   <amp-img placeholder src="placeholder-image.jpg"></amp-img>
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
+  <amp-img placeholder src="placeholder-image.jpg"></amp-img>
 </amp-ad>
 ```
 
@@ -77,12 +84,15 @@ Tùy thuộc vào mạng lưới quảng cáo, bạn có thể chọn hiển th�
 Tùy thuộc vào mạng lưới quảng cáo, bạn có thể chọn hiển thị một yếu tố phương án dự phòng nếu không có quảng cáo nào có thể được phục vụ. Để quy định một phương án dự phòng, hãy thêm một yếu tố con với thuộc tính `fallback` (phương án dự phòng). Tìm hiểu thêm trong [Mã giữ chỗ & phương án dự phòng](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ```html
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-   <amp-img fallback src="fallback-image.jpg"></amp-img>
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
+  <amp-img fallback src="fallback-image.jpg"></amp-img>
 </amp-ad>
 ```
 
@@ -133,12 +143,12 @@ Sau đây là một số mẹo để tối ưu hóa hiệu quả quảng cáo ch
 ### Đổi mới: Cung cấp các sản phẩm quảng cáo cuốn hút nhất
 
 - **Triển khai quảng cáo trên các trang AMP phụ trợ** để tạo doanh thu tăng dần:
-    - [Quảng cáo trong một băng chuyền](../../../../documentation/examples/documentation/Carousel_Ad.html)
-    - [Quảng cáo trong một lightbox](../../../../documentation/examples/documentation/Lightbox_Ad.html)
-    - ... và [nhiều hơn thế nữa](../../../../documentation/examples/index.html)
+  - [Quảng cáo trong một băng chuyền](../../../../documentation/examples/documentation/Carousel_Ad.html)
+  - [Quảng cáo trong một lightbox](../../../../documentation/examples/documentation/Lightbox_Ad.html)
+  - ... và [nhiều hơn thế nữa](../../../../documentation/examples/index.html)
 - **Triển khai các định dạng mới cho quảng cáo bán hàng trực tiếp** để trang bị cho đội ngũ bán hàng của bạn với những sản phẩm quảng cáo sáng tạo, tác động mạnh:
-    - [Quảng cáo Dính](../../../../documentation/examples/documentation/amp-sticky-ad.html)
-    - [Thảm bay](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
+  - [Quảng cáo Dính](../../../../documentation/examples/documentation/amp-sticky-ad.html)
+  - [Thảm bay](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
 
 ## Tài nguyên bổ sung
 

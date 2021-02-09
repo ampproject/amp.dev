@@ -1,8 +1,8 @@
 ---
-"$title": Konfigurowanie
-"$order": '0'
+'$title': Konfigurowanie
+$order: 0
 description: 'Do rozpoczęcia tego samouczka potrzebne są: - Podstawowa wiedza o HTML, CSS i JavaScript - Podstawowa wiedza o głównych koncepcjach AMP...'
-"$parent": "/content/docs/fundamentals/add_advanced.md"
+'$parent': '/content/docs/fundamentals/add_advanced.md'
 ---
 
 ## Wymagania wstępne
@@ -34,7 +34,7 @@ Katalog projektu zawiera kilka przykładowych plików zasobów oraz początkową
 
 ### Krok 2. Uruchom przykładową stronę
 
-Aby przetestować przykładową stronę AMP, musimy uzyskać dostęp do plików z serwera WWW. Tymczasowy lokalny serwer WWW do celów testowania można utworzyć na kilka sposobów.  Oto kilka opcji, wybierz najlepszą dla Ciebie:
+Aby przetestować przykładową stronę AMP, musimy uzyskać dostęp do plików z serwera WWW. Tymczasowy lokalny serwer WWW do celów testowania można utworzyć na kilka sposobów. Oto kilka opcji, wybierz najlepszą dla Ciebie:
 
 - [Aplikacja Google Chrome o nazwie Web Server for Chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
 - [Lokalny serwer HTTP w języku Python](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server#Running_a_simple_local_HTTP_server)

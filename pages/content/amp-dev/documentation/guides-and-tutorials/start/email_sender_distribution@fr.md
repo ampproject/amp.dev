@@ -1,10 +1,10 @@
 ---
-"$title": "S'inscrire à la distribution des expéditeurs"
-"$order": '1'
+'$title': "S'inscrire à la distribution des expéditeurs"
+$order: 1
 description: "S'inscrire à la distribution des expéditeurs d'e-mails AMP"
-"$category": Start
+'$category': Start
 formats:
-- email
+  - email
 author: CrystalOnScript
 ---
 

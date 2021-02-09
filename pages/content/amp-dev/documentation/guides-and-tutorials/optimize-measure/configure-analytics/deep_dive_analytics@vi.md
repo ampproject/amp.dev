@@ -1,10 +1,10 @@
 ---
-"$title": Đào sâu vào phân tích AMP
-"$order": '1'
+'$title': Đào sâu vào phân tích AMP
+$order: 1
 description: Hướng dẫn này đào sâu vào thành phần amp-analytics, tách gỡ ra một cấu hình mẫu của amp-analytics thành những khối dựng then chốt này.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 ---
 
 Hướng dẫn này đào sâu vào thành phần [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), tách gỡ một cấu hình mẫu của [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) thành những khối dựng then chốt này:
@@ -12,41 +12,44 @@ Hướng dẫn này đào sâu vào thành phần [`amp-analytics`](../../../../
 Phần còn lại của hướng dẫn này sử dụng mẫu cấu hình này, vốn dùng để theo dõi lượt xem trang và những nhấp chuột của người dùng, rồi gửi dữ liệu phân tích đến nhà cung cấp bên thứ ba, [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/):
 
 ```html
-<amp-analytics type="googleanalytics" config="https://example.com/analytics.account.config.json">
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
-    "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-  },
-  "vars": {
-    "account": "ABC123"
-  },
-  "extraUrlParams": {
-    "cd1": "AMP"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
-    },
-    "trackAnchorClicks": {
-      "on": "click",
-      "selector": "a",
-      "request": "event",
+<amp-analytics
+  type="googleanalytics"
+  config="https://example.com/analytics.account.config.json"
+>
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
+        "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
+      },
       "vars": {
-        "eventId": "42",
-        "eventLabel": "clicked on a link"
+        "account": "ABC123"
+      },
+      "extraUrlParams": {
+        "cd1": "AMP"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        },
+        "trackAnchorClicks": {
+          "on": "click",
+          "selector": "a",
+          "request": "event",
+          "vars": {
+            "eventId": "42",
+            "eventLabel": "clicked on a link"
+          }
+        }
+      },
+      "transport": {
+        "beacon": false,
+        "xhrpost": false,
+        "image": true
       }
     }
-  },
-  'transport': {
-    'beacon': false,
-    'xhrpost': false,
-    'image': true
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -76,7 +79,9 @@ Bạn không cần phải bao gồm toàn bộ cấu hình cho [`amp-analytics`]
 Bước đầu tiên để tải những cấu hình từ xa là bao gồm thuộc tính config trong thẻ [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md):
 
 ```html
-<amp-analytics config="https://example.com/analytics.account.config.json">
+<amp-analytics
+  config="https://example.com/analytics.account.config.json"
+></amp-analytics>
 ```
 
 Bước tiếp theo là tạo nội dung JSON ngụ trong URL từ xa. Trong ví dụ giản đơn này, phần cấu hình chứa đựng trong đối tượng JSON chỉ là giá trị của biến số cho tài khoản phân tích.
@@ -257,26 +262,26 @@ Trong ví dụ này, có một cấu hình từ xa, những biến số được
 
 ```html
 <amp-analytics config="http://example.com/config.json">
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(cid-scope)}",
-  },
-  "vars": {
-    "account": "ABC123",
-    "title": "Homepage"
-  },
-  "triggers": {
-    "some-event": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(cid-scope)}",
+      },
       "vars": {
-        "title": "My homepage",
-        "clientId": "my user"
+        "account": "ABC123",
+        "title": "Homepage"
+      },
+      "triggers": {
+        "some-event": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage",
+            "clientId": "my user"
+          }
       }
-  }
-}
-</script>
+    }
+  </script>
 </amp-analytics>
 ```
 

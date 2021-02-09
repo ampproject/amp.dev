@@ -1,8 +1,8 @@
 ---
-"$title": Menyiapkan
-"$order": '0'
+'$title': Menyiapkan
+$order: 0
 description: 'Menyiapkan lingkungan pengembangan Anda: Langkah ke-1. Mengunduh kode. Unduh kode sampel untuk tutorial, baik sebagai berkas ZIP maupun melalui git ....'
-"$parent": "/documentation/guides-and-tutorials/start/converting/setting-up.md"
+'$parent': '/documentation/guides-and-tutorials/start/converting/setting-up.md'
 ---
 
 ## Prasyarat

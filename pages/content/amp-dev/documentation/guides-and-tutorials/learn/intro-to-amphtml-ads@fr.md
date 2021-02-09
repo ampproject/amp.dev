@@ -1,14 +1,14 @@
 ---
-"$title": Introduction aux annonces AMPHTML
-"$order": '1'
+'$title': Introduction aux annonces AMPHTML
+$order: 1
 description: Les annonces AMPHTML sont un moyen plus rapide, plus léger et plus sûr de faire de la publicité sur le Web. Bien que les pages AMP prennent en charge les annonces HTML traditionnelles, ces annonces peuvent être lentes à charger.
 formats:
-- ads
+  - ads
 ---
 
 ## Qu'est-ce qu'une annonce AMPHTML?
 
-Les annonces AMPHTML sont un moyen plus rapide, plus léger et plus sûr de faire de la publicité sur le Web. Bien que les pages AMP prennent en charge les annonces HTML traditionnelles, ces annonces peuvent être lentes à charger. Pour rendre les annonces aussi rapides que le reste de la page AMP, vous pouvez créer des annonces en AMPHTML. Les annonces AMPHTML ne sont diffusées qu'après avoir été validées, garantissant ainsi la sécurité et la performance des annonces. Surtout, ces annonces peuvent être diffusées n'importe où sur le Web, *pas seulement sur les pages AMP*.
+Les annonces AMPHTML sont un moyen plus rapide, plus léger et plus sûr de faire de la publicité sur le Web. Bien que les pages AMP prennent en charge les annonces HTML traditionnelles, ces annonces peuvent être lentes à charger. Pour rendre les annonces aussi rapides que le reste de la page AMP, vous pouvez créer des annonces en AMPHTML. Les annonces AMPHTML ne sont diffusées qu'après avoir été validées, garantissant ainsi la sécurité et la performance des annonces. Surtout, ces annonces peuvent être diffusées n'importe où sur le Web, _pas seulement sur les pages AMP_.
 
 Les annonces AMPHTML sont rédigées en HTML AMPconformément aux [spécifications pour annonces AMPHTML](a4a_spec.md) (une variante de HTML AMP + CSS). Cela signifie que les annonces n'ont plus la capacité d'exécuter du JavaScript arbitraire, qui est traditionnellement la première cause des mauvaises performances publicitaires. Par conséquent, tout comme l'AMP de base, les cas d'utilisation JavaScript des annonces de base sont intégrés directement dans le projet AMP Open Source qui garantit un bon comportement des publicités.
 
@@ -73,7 +73,7 @@ Si vous êtes une agence publicitaire, vous devez créer les annonces conformém
 
 - [Ad Creator de Celtra](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*bientôt disponible*)
+- Adobe Animate (_bientôt disponible_)
 
 ### Réseaux/serveurs publicitaires
 
@@ -87,7 +87,7 @@ Pour diffuser des annonces AMPHTML sur des pages AMP, vous devez créer une exte
 
 - [Ad Creator de Celtra](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*bientôt disponible*)
+- Adobe Animate (_bientôt disponible_)
 
 ### Valider la syntaxe des annonces AMPHTML
 

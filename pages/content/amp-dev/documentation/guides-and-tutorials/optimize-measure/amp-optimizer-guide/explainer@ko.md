@@ -1,10 +1,10 @@
 ---
-"$title": AMP Optimizer 작동 원리
-"$order": '1'
+'$title': AMP Optimizer 작동 원리
+$order: 1
 description: AMP Optimizer는 유효한 AMPHTML 문서를 입력 값으로 사용하고 "수동으로" 실행하기엔 매우 복잡한 추가 최적화를 적용하여 최적화된 버전으로 변환합니다. 이 가이드는 AMP Optimizer 작동 원리를 자세히 설명합니다.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

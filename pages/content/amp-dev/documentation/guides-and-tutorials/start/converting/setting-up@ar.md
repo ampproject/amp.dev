@@ -1,8 +1,8 @@
 ---
-"$title": الإعداد
-"$order": '0'
+'$title': الإعداد
+$order: 0
 description: قم بإعداد بيئة التطوير الخاصة بك. الخطوة الأولى، قم بتنزيل الرمز. قم بتنزيل نموذج التعليمات البرمجية للبرنامج التعليمي إما كملف ZIP أو عبر git ...
-"$parent": "/documentation/guides-and-tutorials/start/converting/setting-up.md"
+'$parent': '/documentation/guides-and-tutorials/start/converting/setting-up.md'
 ---
 
 ## المتطلبات الأساسية
@@ -17,7 +17,7 @@ description: قم بإعداد بيئة التطوير الخاصة بك. الخ
 
 ### الخطوة 1. تنزيل الرمز
 
-قم بتنزيل مثال الرمز للبرنامج التعليمي سواء كـ  [ملف ZIP](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/archive/master.zip) أو عن طريق:
+قم بتنزيل مثال الرمز للبرنامج التعليمي سواء كـ [ملف ZIP](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/archive/master.zip) أو عن طريق:
 
 ```shell
 git clone https://github.com/googlecodelabs/accelerated-mobile-pages-foundations.git
@@ -33,7 +33,7 @@ cd accelerated-mobile-pages-foundations
 
 ### الخطوة 2. قم بتشغيل صفحة المثال
 
-لاختبار نموذج صفحة AMP، نحتاج إلى الوصول إلى الملفات من خادم ويب. ثمة عدة طرق لإنشاء خادم ويب محلي مؤقت لأغراض الاختبار.  فيما يلي بعض الخيارات، اختر الأنسب بالنسبة لك:
+لاختبار نموذج صفحة AMP، نحتاج إلى الوصول إلى الملفات من خادم ويب. ثمة عدة طرق لإنشاء خادم ويب محلي مؤقت لأغراض الاختبار. فيما يلي بعض الخيارات، اختر الأنسب بالنسبة لك:
 
 - [“خادم الويب لـ Chrome” أحد تطبيقات Google Chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
 - [خادم HTTP Python محلي](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server#Running_a_simple_local_HTTP_server)

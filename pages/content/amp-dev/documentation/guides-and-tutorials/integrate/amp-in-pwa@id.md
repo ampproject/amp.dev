@@ -1,9 +1,9 @@
 ---
-"$title": Menggunakan AMP sebagai sumber data untuk PWA Anda
-"$order": '1'
+'$title': Menggunakan AMP sebagai sumber data untuk PWA Anda
+$order: 1
 description: Jika Anda telah berinvestasi di AMP, tetapi belum membuat Aplikasi Web Progresif, Halaman AMP Anda dapat secara dramatis menyederhanakan pengembangan Aplikasi Web Progresif Anda.
 formats:
-- websites
+  - websites
 author: pbakaus
 ---
 
@@ -22,8 +22,10 @@ Langkah pertama adalah menyertakan AMP versi khusus yang kami sebut “AMP Bayan
 Sertakan AMP Bayangan di bagian atas halaman, seperti contoh berikut ini:
 
 [sourcecode:html]
+
 <!-- Asynchronously load the AMP-with-Shadow-DOM runtime library. -->
 <script async src="https://cdn.ampproject.org/shadow-v0.js"></script>
+
 [/sourcecode]
 
 ### Bagaimana Anda tahu kapan API AMP Bayangan siap digunakan?
@@ -34,7 +36,7 @@ Sinyal yang tepat yang harus diamati adalah ketersediaan variabel `AMP` global, 
 
 [sourcecode:javascript]
 (window.AMP = window.AMP || []).push(function(AMP) {
-  // AMP is now available.
+// AMP is now available.
 });
 [/sourcecode]
 
@@ -62,20 +64,20 @@ Akhirnya, jika Anda ingin menampilkan konten setelah ada tindakan dari pengguna,
 [sourcecode:javascript]
 function fetchDocument(url) {
 
-  // unfortunately fetch() does not support retrieving documents,
-  // so we have to resort to good old XMLHttpRequest.
-  var xhr = new XMLHttpRequest();
+// unfortunately fetch() does not support retrieving documents,
+// so we have to resort to good old XMLHttpRequest.
+var xhr = new XMLHttpRequest();
 
-  return new Promise(function(resolve, reject) {
-    xhr.open('GET', url, true);
-    xhr.responseType = 'document';
-    xhr.setRequestHeader('Accept', 'text/html');
-    xhr.onload = function() {
-      // .responseXML contains a ready-to-use Document object
-      resolve(xhr.responseXML);
-    };
-    xhr.send();
-  });
+return new Promise(function(resolve, reject) {
+xhr.open('GET', url, true);
+xhr.responseType = 'document';
+xhr.setRequestHeader('Accept', 'text/html');
+xhr.onload = function() {
+// .responseXML contains a ready-to-use Document object
+resolve(xhr.responseXML);
+};
+xhr.send();
+});
 }
 [/sourcecode]
 
@@ -92,8 +94,8 @@ var url = "https://my-domain/amp/an-article.html";
 
 // Use our fetchDocument method to get the doc
 fetchDocument(url).then(function(doc) {
-  // Let AMP take over and render the page
-  var ampedDoc = AMP.attachShadowDoc(container, doc, url);
+// Let AMP take over and render the page
+var ampedDoc = AMP.attachShadowDoc(container, doc, url);
 });
 [/sourcecode]
 

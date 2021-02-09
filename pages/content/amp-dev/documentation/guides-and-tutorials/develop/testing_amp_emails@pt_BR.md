@@ -1,10 +1,10 @@
 ---
-"$title": Testando e-mails AMP
-"$order": '2'
-"$category": Develop
+'$title': Testando e-mails AMP
+$order: 2
+'$category': Develop
 description: Garanta a melhor experiência do usuário possível testando seus e-mails AMP antes de enviá-los a um grande público.
 formats:
-- email
+  - email
 author: fstanis
 ---
 
@@ -13,9 +13,9 @@ Garanta a melhor experiência do usuário possível testando seus e-mails AMP an
 ## Checklist de testes
 
 1. Inclua uma versão HTML e/ou versão de texto simples do seu e-mail AMP. Clientes de e-mail que não suportam AMP mostrarão essa versão como reserva.
-2. Garanta a validade do seu AMP ao seguir os passos descritos em  [Validação de E-mails AMP](/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_emails.md).
-3. Consulte  [AMP para e-mail: CSS suportado](/content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-css.md) para ter a certeza que o CSS que você está usando é suportado em todos os clientes de e-mail.
-4. Experimente seu e-mail no  [Playground AMP](https://playground.amp.dev/?runtime=amp4email) e garanta que todos os recursos dinâmicos, como formulários, estejam funcionando corretamente.
+2. Garanta a validade do seu AMP ao seguir os passos descritos em [Validação de E-mails AMP](/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_emails.md).
+3. Consulte [AMP para e-mail: CSS suportado](/content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-css.md) para ter a certeza que o CSS que você está usando é suportado em todos os clientes de e-mail.
+4. Experimente seu e-mail no [Playground AMP](https://playground.amp.dev/?runtime=amp4email) e garanta que todos os recursos dinâmicos, como formulários, estejam funcionando corretamente.
 
 ## Testando clientes de e-mail específicos
 

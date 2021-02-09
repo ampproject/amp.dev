@@ -1,9 +1,9 @@
 ---
-"$title": Codice Boilerplate AMP
-order: '9'
+'$title': Codice Boilerplate AMP
+$order: 9
 formats:
-- websites
-- stories
+  - websites
+  - stories
 teaser:
   text: head > style[amp-boilerplate]
 ---
@@ -31,7 +31,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-##  head > style[amp-boilerplate] e noscript > style[amp-boilerplate]
+## head > style[amp-boilerplate] e noscript > style[amp-boilerplate]
 
 I documenti AMP HTML devono contenere il seguente boilerplate nel loro tag `head`. La convalida viene attualmente eseguita con espressioni regolari, quindi è importante ridurre al minimo le variazioni. Attualmente, le variazioni consentite sono:
 

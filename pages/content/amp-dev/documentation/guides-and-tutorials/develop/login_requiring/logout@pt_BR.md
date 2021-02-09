@@ -1,6 +1,6 @@
 ---
-"$title": Logout
-"$order": '3'
+'$title': Logout
+$order: 3
 description: Assim como o botão de login, a presença do botão de saída depende do estado do componente amp-access ...
 ---
 
@@ -15,9 +15,9 @@ Quando você clica no botão "Sair", é direcionado à URL especificada na confi
 [sourcecode:json]
 {
 "login": {
-  "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
-  "sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
-  }
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
+"sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
+}
 }
 [/sourcecode]
 

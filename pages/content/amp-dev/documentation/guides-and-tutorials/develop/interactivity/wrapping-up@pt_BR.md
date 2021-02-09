@@ -1,6 +1,6 @@
 ---
-"$title": Wrapping up
-"$order": '4'
+'$title': Wrapping up
+$order: 4
 description: Parabéns! Você acaba de criar uma página interativa de detalhes de produto para comércio eletrônico, com tamanhos variáveis e preços para cada SKU, baixados sob demanda a partir de um endpoint JSON.
 ---
 

@@ -1,10 +1,10 @@
 ---
-"$title": "Bonnes pratiques pour réussir la création d'une story Web"
-"$order": '1'
+'$title': "Bonnes pratiques pour réussir la création d'une story Web"
+$order: 1
 description: "Bonnes pratiques pour réussir la création d'une story Web"
-"$category": Start
+'$category': Start
 formats:
-- stories
+  - stories
 author: CrystalOnScript
 ---
 

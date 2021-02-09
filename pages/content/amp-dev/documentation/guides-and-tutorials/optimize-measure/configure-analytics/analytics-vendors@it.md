@@ -1,10 +1,10 @@
 ---
-"$title": Fornitori di strumenti di analisi
-order: '3'
+'$title': Fornitori di strumenti di analisi
+$order: 3
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
   text: Questo documento elenca i fornitori di strumenti di analisi che dispongono di configurazioni integrate da utilizzare con il componente amp-analytics.
 ---
@@ -118,13 +118,13 @@ Adds support for Clicky Web Analytics. More details for adding Clicky support ca
 
 Type attribute value: `comscore`
 
-Adds support for comScore Unified Digital Measurement™ pageview analytics. Requires defining *var* `c2` with comScore-provided *c2 id*. More information can be found at [comscore.com](http://www.comscore.com).
+Adds support for comScore Unified Digital Measurement™ pageview analytics. Requires defining _var_ `c2` with comScore-provided _c2 id_. More information can be found at [comscore.com](http://www.comscore.com).
 
 ### Cxense <a name="cxense"></a>
 
 Type attribute value: `cxense`
 
-Adds support for Cxense Insight analytics. Requires defining *var* `siteId` with Cxense-provided *siteId*. More details can be found at [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration).
+Adds support for Cxense Insight analytics. Requires defining _var_ `siteId` with Cxense-provided _siteId_. More details can be found at [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration).
 
 ### Deep.BI <a name="deepbi"></a>
 
@@ -134,7 +134,7 @@ Valore dell'attributo type: `deepbi`
 
 Type attribute value: `dynatrace`
 
-Fornisce supporto per il monitoraggio utenti in tempo reale di Dynatrace. Richiede la definizione di <em>var</em> <code>app</code> con un *ID applicazione* fornito da Dynatrace e di <var>var</var> <code>tenant</code> con un *identificatore di ambiente* fornito da Dynatrace. Maggiori dettagli per l'aggiunta del monitoraggio utenti in tempo reale di Dynatrace sono disponibili su [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/).
+Fornisce supporto per il monitoraggio utenti in tempo reale di Dynatrace. Richiede la definizione di <em>var</em> <code>app</code> con un _ID applicazione_ fornito da Dynatrace e di <var>var</var> <code>tenant</code> con un _identificatore di ambiente_ fornito da Dynatrace. Maggiori dettagli per l'aggiunta del monitoraggio utenti in tempo reale di Dynatrace sono disponibili su [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/).
 
 ### EPICA <a name="epica"></a>
 
@@ -146,7 +146,7 @@ Fornisce supporto per le visualizzazioni di pagina e gli eventi EPICA. Maggiori 
 
 Valore dell'attributo type: `euleriananalytics`
 
-Fornisce supporto per Eulerian Technologies Analytics. Richiede la definizione di *var* `analyticsHost` con dominio delegato da Eulerian. Maggiori informazioni sono disponibili su [eulerian.wiki](https://eulerian.wiki).
+Fornisce supporto per Eulerian Technologies Analytics. Richiede la definizione di _var_ `analyticsHost` con dominio delegato da Eulerian. Maggiori informazioni sono disponibili su [eulerian.wiki](https://eulerian.wiki).
 
 ### Facebook Pixel <a name="facebook-pixel"></a>
 
@@ -278,7 +278,7 @@ Valore dell'attributo type: `marinsoftware`
 
 Valore dell'attributo type: `mediametrie`
 
-Fornisce supporto per gli strumenti di tracciamento pagine di Médiamétrie. Richiede la definizione di *var* `serial`. Le variabili da `level1` a `level4` sono opzionali. Maggiori informazioni possono essere trovate su [mediametrie.com](http://www.mediametrie.com/).
+Fornisce supporto per gli strumenti di tracciamento pagine di Médiamétrie. Richiede la definizione di _var_ `serial`. Le variabili da `level1` a `level4` sono opzionali. Maggiori informazioni possono essere trovate su [mediametrie.com](http://www.mediametrie.com/).
 
 ### mediarithmics <a name="mediarithmics"></a>
 

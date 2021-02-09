@@ -1,10 +1,10 @@
 ---
-"$title": إضافة ميزات AMP متقدمة
-"$order": '0'
+'$title': إضافة ميزات AMP متقدمة
+$order: 0
 description: في هذا البرنامج التدريبي، سوف توسع فهمك لأسس AMP وتعرف كيف يتعامل AMP مع الإعلانات والتحليلات والفيديوهات المدمجة والتكامل مع وسائط التواصل الاجتماعي والعروض الدوارة وغيرها.
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='مقالة إخبارية مكتملة') }}
@@ -24,4 +24,4 @@ formats:
 
 صفحة مقالة إخبارية تتوافق مع مواصفات AMP وتشمل الإعلانات والتحليلات والفيديوهات المضمنة ووسائل التواصل الاجتماعي المضمنة والعروض الدوارة وقائمة تنقل في الموقع.
 
-[tip type="note"] **ملاحظة –**  يمثل هذا استمرارًا للمفاهيم المطروحة في البرنامج التعليمي ["تحويل HTML إلى AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md). إذا لم يكن لديك بالفعل فهم أساسي للمفاهيم الأساسية فيAMP، فيرجى تجربة البرنامج التدريبي ["تحويل HTML إلى AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md). [/tip]
+[tip type="note"] **ملاحظة –** يمثل هذا استمرارًا للمفاهيم المطروحة في البرنامج التعليمي ["تحويل HTML إلى AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md). إذا لم يكن لديك بالفعل فهم أساسي للمفاهيم الأساسية فيAMP، فيرجى تجربة البرنامج التدريبي ["تحويل HTML إلى AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md). [/tip]

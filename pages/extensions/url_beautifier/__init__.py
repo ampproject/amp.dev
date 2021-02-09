@@ -1,1 +1,1 @@
-from url_beautifier import *
+from .url_beautifier import *

@@ -1,9 +1,9 @@
 ---
-"$title": Mengintegrasikan AMP dengan aplikasi Anda
-"$order": '2'
+'$title': Mengintegrasikan AMP dengan aplikasi Anda
+$order: 2
 description: 'Panduan ini ditujukan untuk pengembang aplikasi web dan seluler yang ingin mengintegrasikan dan menautkan ke halaman AMP. Contoh: pertimbangkan aplikasi obrolan seluler ....'
 formats:
-- websites
+  - websites
 ---
 
 Panduan ini ditujukan untuk pengembang aplikasi web dan seluler yang ingin mengintegrasikan dan menautkan ke halaman AMP. Contoh: pertimbangkan aplikasi obrolan seluler yang memuat versi AMP dari sebuah URL bersama untuk memberikan pengalaman yang lebih cepat kepada pengguna.
@@ -47,10 +47,12 @@ Google menyediakan API URL AMP untuk mengambil URL HTML AMP yang cocok untuk daf
 Contoh: untuk daftar URL tertentu:
 
 ```json
-{"urls": [
-  "https://www.example.org/article-with-amp-version",
-  "http://www.example.com/no-amp-version.html"
-]}
+{
+  "urls": [
+    "https://www.example.org/article-with-amp-version",
+    "http://www.example.com/no-amp-version.html"
+  ]
+}
 ```
 
 Bagian badan respons berisi pemetaan URL AMP dalam format JSON:

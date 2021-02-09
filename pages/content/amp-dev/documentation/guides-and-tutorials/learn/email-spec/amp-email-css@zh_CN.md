@@ -1,8 +1,8 @@
 ---
-"$title": AMP 电子邮件支持的 CSS
-order: '5'
+'$title': AMP 电子邮件支持的 CSS
+$order: 5
 formats:
-- email
+  - email
 teaser:
   text: 本文档概述了 AMP 电子邮件内当前支持的 CSS 功能。
 toc: 'true'
@@ -327,13 +327,13 @@ AMP 电子邮件中**不**支持外部样式表。
 
 以下 CSS 属性具有其他限制：
 
-属性 | 限制
---- | ---
-[`cursor`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor) | 仅允许 `pointer` 和 `initial` 值。
-[`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) | 不允许 `url()` 。
-[`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) | 仅 `opacity`、`transform`、`visibility` 和 `offset-distance` 可添加动画效果。
-[`visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) | 仅允许 `hidden`、`visible` 和 `initial` 值。
-[`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index) | 仅允许 -100 至 100 之间的值。
+| 属性                                                                        | 限制                                                                          |
+| --------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| [`cursor`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor)         | 仅允许 `pointer` 和 `initial` 值。                                            |
+| [`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)         | 不允许 `url()` 。                                                             |
+| [`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) | 仅 `opacity`、`transform`、`visibility` 和 `offset-distance` 可添加动画效果。 |
+| [`visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) | 仅允许 `hidden`、`visible` 和 `initial` 值。                                  |
+| [`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)       | 仅允许 -100 至 100 之间的值。                                                 |
 
 ## @ 规则 <a name="at-rules"></a>
 
@@ -348,14 +348,14 @@ AMP 电子邮件中**不**支持自定义字体。
 支持通过 `@media` 查询来有条件地应用规则的[媒体功能](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#Media_features)列表。
 
 - [`device-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-width)
-    - `max-device-width`
-    - `min-device-width`
+  - `max-device-width`
+  - `min-device-width`
 - [`hover`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover)
 - [`orientation`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/orientation)
 - [`pointer`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer)
 - [`resolution`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/resolution)
-    - `max-resolution`
-    - `min-resolution`
+  - `max-resolution`
+  - `min-resolution`
 - [`width`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/width)
-    - `max-width`
-    - `min-width`
+  - `max-width`
+  - `min-width`

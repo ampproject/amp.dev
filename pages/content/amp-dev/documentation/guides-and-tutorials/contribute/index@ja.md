@@ -1,17 +1,17 @@
 ---
-"$title": 貢献方法
-"$titles":
+'$title': 貢献方法
+'$titles':
   navigation: Contribute
-"$path": "/documentation/guides-and-tutorials/contribute/index.html"
-"$localization":
-  path: "/{locale}/documentation/guides-and-tutorials/contribute/index.html"
-"$order": '0'
+'$path': '/documentation/guides-and-tutorials/contribute/index.html'
+'$localization':
+  path: '/{locale}/documentation/guides-and-tutorials/contribute/index.html'
+$order: 0
 description: AMP プロジェクトは、開発者、コンテンツクリエーター、AMP 関連サービスのプロバイダなど、コミュニティのあらゆるメンバーの協力のもとに成り立っています。プロジェクトには、さまざまな方法で貢献していただけます。
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 ---
 
 AMP プロジェクトは、開発者、コンテンツクリエイター、AMP 関連サービスのプロバイダなど、コミュニティのあらゆるメンバーご協力のもとに成り立っています。プロジェクトには、さまざまな方法で貢献していただけます。

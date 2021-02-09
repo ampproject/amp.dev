@@ -1,6 +1,6 @@
 ---
-"$title": Zusammenfassung
-"$order": '4'
+'$title': Zusammenfassung
+$order: 4
 description: In diesem Tutorial haben wir gelernt, amp-access und amp-form zu kombinieren, um einen Kommentarbereich zu erstellen, für den eine Anmeldung erforderlich ist.
 ---
 

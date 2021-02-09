@@ -1,12 +1,12 @@
 ---
-"$title": 格式指南和教程
-"$order": '3'
+'$title': 格式指南和教程
+$order: 3
 description: amp.dev 的文件格式要求
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 
@@ -145,10 +145,10 @@ Read-on
 ```
 
 ```css
-  // code sample
+// code sample
 ```
 
-```js
+````js
   // code sample
 ```</pre></div>
 
@@ -177,8 +177,10 @@ Python-Markdown 存在一些限制。在列表中添加代码段时，请使用�
           template="<custom-template>"]
   ```html
     // code sample
-  ```
-  &lsqb;/example]</pre>
+````
+
+&lsqb;/example]</pre>
+
 </div>
 
 注：在 Playground 中打开预览时，预览将自动转换为当前选定的格式 🤯！
@@ -210,9 +212,11 @@ Python-Markdown 存在一些限制。在列表中添加代码段时，请使用�
 实际效果如下：
 
 [example preview="inline" playground="true"]
+
 ```html
 <div style="background: red; width: 200px; height: 200px;">Hello World</div>
 ```
+
 [/example]
 
 警告：内嵌示例直接嵌入到网页中。如果网页上已经使用了组件（例如 `amp-consent`），则可能导致冲突。
@@ -248,10 +252,15 @@ Python-Markdown 存在一些限制。在列表中添加代码段时，请使用�
 实际效果如下：
 
 [example preview="top-frame"
-         playground="true"]
+playground="true"]
+
 ```html
 <head>
-  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-youtube"
+    src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+  ></script>
   <style amp-custom>
     body {
       background: red;
@@ -260,13 +269,16 @@ Python-Markdown 存在一些限制。在列表中添加代码段时，请使用�
 </head>
 <body>
   <h1>Hello AMP</h1>
-  <amp-youtube width="480"
+  <amp-youtube
+    width="480"
     height="270"
     layout="responsive"
-    data-videoid="lBTCB7yLs8Y">
+    data-videoid="lBTCB7yLs8Y"
+  >
   </amp-youtube>
 </body>
 ```
+
 [/example]
 
 ### AMP 故事
@@ -311,38 +323,43 @@ Python-Markdown 存在一些限制。在列表中添加代码段时，请使用�
 实际效果如下：
 
 [example preview="top-frame"
-         orientation="portrait"
-         playground="true"]
+orientation="portrait"
+playground="true"]
+
 ```html
-  <head>
-    <script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-    <style amp-custom>
-      body {
-        font-family: 'Roboto', sans-serif;
-      }
-      amp-story-page {
-        background: white;
-      }
-    </style>
-  </head>
-  <body>
-    <amp-story standalone>
-      <amp-story-page id="cover">
-        <amp-story-grid-layer template="vertical">
-          <h1>Hello World</h1>
-          <p>This is the cover page of this story.</p>
-        </amp-story-grid-layer>
-      </amp-story-page>
-      <amp-story-page id="page-1">
-        <amp-story-grid-layer template="vertical">
-          <h1>First Page</h1>
-          <p>This is the first page of this story.</p>
-        </amp-story-grid-layer>
-      </amp-story-page>
-    </amp-story>
-  </body>
+<head>
+  <script
+    async
+    custom-element="amp-story"
+    src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+  ></script>
+  <style amp-custom>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    amp-story-page {
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <amp-story standalone>
+    <amp-story-page id="cover">
+      <amp-story-grid-layer template="vertical">
+        <h1>Hello World</h1>
+        <p>This is the cover page of this story.</p>
+      </amp-story-grid-layer>
+    </amp-story-page>
+    <amp-story-page id="page-1">
+      <amp-story-grid-layer template="vertical">
+        <h1>First Page</h1>
+        <p>This is the first page of this story.</p>
+      </amp-story-grid-layer>
+    </amp-story-page>
+  </amp-story>
+</body>
 ```
+
 [/example]
 
 ### AMP 电子邮件的绝对网址
@@ -364,15 +381,19 @@ Python-Markdown 存在一些限制。在列表中添加代码段时，请使用�
 实际效果如下：
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <div class="resp-img">
-  <amp-img alt="flowers"
+  <amp-img
+    alt="flowers"
     src="{{server_for_email}}/static/inline-examples/images/flowers.jpg"
     layout="responsive"
     width="640"
-    height="427"></amp-img>
+    height="427"
+  ></amp-img>
 </div>
 ```
+
 [/example]
 
 ### 转义 mustache 模板
@@ -401,13 +422,19 @@ Python-Markdown 存在一些限制。在列表中添加代码段时，请使用�
 实际效果如下：
 
 [example preview="top-frame"
-         playground="true"
-         imports="amp-list:0.1"
-         template="amp-mustache:0.2"]
+playground="true"
+imports="amp-list:0.1"
+template="amp-mustache:0.2"]
+
 ```html
-<amp-list width="auto" height="100" layout="fixed-height"
-  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
-  <template type="amp-mustache">{% raw %}
+<amp-list
+  width="auto"
+  height="100"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json"
+>
+  <template type="amp-mustache"
+    >{% raw %}
     <div class="url-entry">
       <a href="{{url}}">{{title}}</a>
     </div>
@@ -415,6 +442,7 @@ Python-Markdown 存在一些限制。在列表中添加代码段时，请使用�
   </template>
 </amp-list>
 ```
+
 [/example]
 
 ## 链接
@@ -422,7 +450,7 @@ Python-Markdown 存在一些限制。在列表中添加代码段时，请使用�
 您可以使用标准的 markdown 链接语法链接到其他网页：
 
 ```md
- [link](../../../courses/beginning-course/index.md)
+[link](../../../courses/beginning-course/index.md)
 ```
 
 链接到 amp.dev 上的另一个网页时，引用将是目标文件的相对文件路径。
@@ -452,7 +480,7 @@ Python-Markdown 存在一些限制。在列表中添加代码段时，请使用�
 可以按 AMP 格式（例如 AMP 网站或 AMP 故事）筛选组件文档、指南、教程和示例。链接到此类网页时，应通过将格式参数附加到链接来显式指定目标支持的格式：
 
 ```md
- [link](../../learn/amp-actions-and-events.md?format=websites)
+[link](../../learn/amp-actions-and-events.md?format=websites)
 ```
 
 只有确定目标支持网页支持的**所有**格式时，您才能省略该参数。
@@ -462,8 +490,8 @@ Python-Markdown 存在一些限制。在列表中添加代码段时，请使用�
 如果您的链接省略了版本部分，则组件引用文档的链接将自动指向最新版本。当您希望明确指向某个版本时，请指定全名：
 
 ```md
- [latest version](../../../components/reference/amp-carousel.md?format=websites)
- [explicit version](../../../components/reference/amp-carousel-v0.2.md?format=websites)
+[latest version](../../../components/reference/amp-carousel.md?format=websites)
+[explicit version](../../../components/reference/amp-carousel-v0.2.md?format=websites)
 ```
 
 ## 文档结构

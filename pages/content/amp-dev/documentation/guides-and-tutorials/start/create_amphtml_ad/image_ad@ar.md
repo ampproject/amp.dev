@@ -1,6 +1,6 @@
 ---
-"$title": إنشاء الإعلان المصور
-"$order": '1'
+'$title': إنشاء الإعلان المصور
+$order: 1
 description: '"إعلاننا عبارة عن صورة بسيطة مع ارتباط تشعبي للموقع المعلن عنه؛ سنعرض الصورة باستخدام علامة amp-img. إليك الرمز: ..."'
 ---
 
@@ -11,9 +11,12 @@ description: '"إعلاننا عبارة عن صورة بسيطة مع ارتب�
 ```html
 <body>
   <a target="_blank" href="https://www.amp.dev">
-    <amp-img width="300" height="250"
-        alt="Learn amp"
-        src="/static/img/docs/ads/amp-300x250.png"></amp-img>
+    <amp-img
+      width="300"
+      height="250"
+      alt="Learn amp"
+      src="/static/img/docs/ads/amp-300x250.png"
+    ></amp-img>
   </a>
 </body>
 ```

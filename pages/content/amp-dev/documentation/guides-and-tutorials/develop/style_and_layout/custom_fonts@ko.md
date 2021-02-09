@@ -1,11 +1,11 @@
 ---
-"$title": 사용자 지정 글꼴 추가하기
-"$order": '6'
+'$title': 사용자 지정 글꼴 추가하기
+$order: 6
 description: AMP 페이지에는 외부 스타일시트를 포함할 수 없지만 사용자 지정 글꼴은 추가할 수 있습니다. 다음의 2가지 방법으로 페이지에 사용자 지정 글꼴을 삽입...
 formats:
-- websites
-- ads
-- stories
+  - websites
+  - ads
+  - stories
 author: pbakaus
 ---
 
@@ -19,6 +19,7 @@ AMP 페이지에는 외부 스타일시트를 포함할 수 없지만 사용자 
 다음과 같이 `<link>` 태그를 사용하세요(일반적으로 페이지 헤드에 삽입).
 
 [sourcecode:html]
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 [/sourcecode]
 
@@ -35,6 +36,7 @@ AMP 페이지에는 외부 스타일시트를 포함할 수 없지만 사용자 
 또는 AMP 스타일시트 내에서 [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face)를 사용할 수 있습니다.
 
 [sourcecode:html]
+
 <style amp-custom>
   @font-face {
     font-family: "Bitstream Vera Serif Bold";
@@ -45,6 +47,7 @@ AMP 페이지에는 외부 스타일시트를 포함할 수 없지만 사용자 
     font-family: "Bitstream Vera Serif Bold", serif;
   }
 </style>
+
 [/sourcecode]
 
 [tip type="note"] <strong>참고 –</strong> `@font-face`를 사용하여 삽입된 글꼴은 HTTP 또는 HTTPS 방식으로 가져와야 합니다. [/tip]

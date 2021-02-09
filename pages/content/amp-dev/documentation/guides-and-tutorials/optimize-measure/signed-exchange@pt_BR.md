@@ -1,8 +1,8 @@
 ---
-"$title": Sirva páginas AMP usando trocas HTTP assinadas
-"$order": '4'
+'$title': Sirva páginas AMP usando trocas HTTP assinadas
+$order: 4
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 ---
 
@@ -10,7 +10,7 @@ O AMP oferece benefícios de velocidade acima e além do formato através de té
 
 Uma [troca assinada](https://developers.google.com/web/updates/2018/11/signed-exchanges) é composta por um documento AMP válido e a URL original do conteúdo. Essas informações são protegidas por assinaturas digitais que vinculam o documento à sua URL com segurança. Isso permite que os navegadores exibam com segurança a URL original na barra de URL do navegador, em vez do nome do host da máquina que entregou os bytes ao navegador.
 
-O conteúdo AMP assinado é entregue *além do* (em vez de no lugar do) conteúdo AMP regular.
+O conteúdo AMP assinado é entregue _além do_ (em vez de no lugar do) conteúdo AMP regular.
 
 {{ image('/static/img/docs/guides/sxg/sxg.png', 411, 293, layout='responsive', alt='Image displaying URL from signed exchange', caption=' ', align='' ) }}
 
@@ -20,14 +20,14 @@ O conteúdo AMP assinado é entregue *além do* (em vez de no lugar do) conteúd
 
 Para implementar trocas assinadas, você deve atender aos seguintes requisitos:
 
-- Capacidade de configurar e controlar os cabeçalhos HTTP gerados pelo seu servidor. (A maior parte das soluções de hospedagem puramente baseadas na web, como o Blogger, *não* são compatíveis com trocas assinadas.)
+- Capacidade de configurar e controlar os cabeçalhos HTTP gerados pelo seu servidor. (A maior parte das soluções de hospedagem puramente baseadas na web, como o Blogger, _não_ são compatíveis com trocas assinadas.)
 - A capacidade de gerar trocas AMP assinadas, como através da execução do [`amppackager`](https://github.com/ampproject/amppackager/blob/master/README.md), como um [binário Go](https://golang.org/doc/install) ou em uma [máquina virtual Docker](https://docs.docker.com/machine/get-started/).
-    - O packager precisa ser atualizado a cada seis semanas.
+  - O packager precisa ser atualizado a cada seis semanas.
 - A capacidade de usar [Vary](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary) nos cabeçalhos `Accept` e `AMP-Cache-Transform` em servidores HTTP de ponta, retornando conteúdo diferente para a mesmo URL.
 - O sistema que executa o `amppackager` precisa ser capaz de fazer solicitações de saída para:
-    - A autoridade de certificação que emite seu certificado
-    - O servidor do editor que hospeda os documentos AMP a serem assinados
-    - `cdn.ampproject.org` para obter a versão atual do AMP
+  - A autoridade de certificação que emite seu certificado
+  - O servidor do editor que hospeda os documentos AMP a serem assinados
+  - `cdn.ampproject.org` para obter a versão atual do AMP
 - Um sistema de arquivos de armazenamento compartilhado persistente entre todas as instâncias de `amppackager` que estiverem em execução no mesmo data center.
 
 # Implementando trocas assinadas
@@ -143,7 +143,7 @@ format version: 1b3
 
 (Observe que a chave `-verify` não vai funcionar neste ponto porque os certificados necessários não estão no servidor `https://example.com/`.)
 
-Verifique que a resposta *sempre* inclua o cabeçalho `Vary` com o valor `Accept,AMP-Cache-Transform` (independentemente de o tipo MIME ser `text/html`, `application/signed-exchange`, ou algo diferente):
+Verifique que a resposta _sempre_ inclua o cabeçalho `Vary` com o valor `Accept,AMP-Cache-Transform` (independentemente de o tipo MIME ser `text/html`, `application/signed-exchange`, ou algo diferente):
 
 ```sh
 $ curl -si https://staging.example.com/ | less

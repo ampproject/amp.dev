@@ -1,9 +1,9 @@
 ---
-"$title": الإعلان في قصص الويب
-"$order": '3'
+'$title': الإعلان في قصص الويب
+$order: 3
 description: تعد قصص الويب تجربة ملء شاشة قابلة للنقر عليها وتجعل القراء ينغمرون في المحتوى. فيما يسمح الإعلان باستخدام قصة AMP بالتكامل السلس من دون انقطاع...
 formats:
-- stories
+  - stories
 author: CrystalOnScript
 ---
 
@@ -43,17 +43,17 @@ author: CrystalOnScript
 
 [sourcecode:html]
 <amp-story>
-  <amp-story-auto-ads>
-    <script type="application/json">
-      {
-        "ad-attributes": {
-          // ad server configuration
-        }
-      }
-    </script>
-  </amp-story-auto-ads>
-  <amp-story-page>
-  ...
+<amp-story-auto-ads>
+<script type="application/json">
+{
+"ad-attributes": {
+// ad server configuration
+}
+}
+</script>
+</amp-story-auto-ads>
+<amp-story-page>
+...
 </amp-story>
 [/sourcecode]
 
@@ -66,8 +66,8 @@ author: CrystalOnScript
 فيما يلي منصات الإعلانات التي تدعم حاليًا إعلانات قصص الويب:
 
 - مدير إعلانات Google
-    - [إعلانات Direct sold](https://support.google.com/admanager/answer/9038178)
-    - [إعلانات Programmatic](https://support.google.com/admanager/answer/9416436)
+  - [إعلانات Direct sold](https://support.google.com/admanager/answer/9038178)
+  - [إعلانات Programmatic](https://support.google.com/admanager/answer/9416436)
 - Google AdSense ستنضم قريبًا
 - يمكن تكامل منصات إعلانات أخرى (توصل معنا [لمزيد من التفاصيل عبر Github](https://github.com/ampproject/amphtml/issues/30769))
 

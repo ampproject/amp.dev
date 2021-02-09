@@ -1,8 +1,8 @@
 ---
-"$title": Działania i zdarzenia w poczcie elektronicznej AMP
-order: '0'
+'$title': Działania i zdarzenia w poczcie elektronicznej AMP
+$order: 0
 formats:
-- email
+  - email
 teaser:
   text: '[tip type="note"]'
 ---
@@ -108,7 +108,7 @@ Na przykład w AMP możliwe jest:
 
 ## Zdarzenia zależne od elementu <a name="element-specific-events"></a>
 
-### * - wszystkie elementy <a name="---all-elements"></a>
+### \* - wszystkie elementy <a name="---all-elements"></a>
 
 <table>
   <tr>
@@ -323,7 +323,7 @@ Na przykład w AMP możliwe jest:
 
 ## Działania zależne od elementu <a name="element-specific-actions"></a>
 
-### * - wszystkie elementy <a name="-all-elements"></a>
+### \* - wszystkie elementy <a name="-all-elements"></a>
 
 <table>
   <tr>

@@ -1,18 +1,18 @@
 ---
-"$title": Comment créer des pages AMP interactives
-"$order": '5'
+'$title': Comment créer des pages AMP interactives
+$order: 5
 description: "La conception Web interactive consiste à créer des pages Web fluides qui répondent aux besoins de vos utilisateurs, des pages adaptées à la taille et à l'orientation de l'écran de leur appareil. Vous pouvez y parvenir ..."
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 components:
-- iframe
-- youtube
+  - iframe
+  - youtube
 author: bpaduch
 contributors:
-- pbakaus
+  - pbakaus
 ---
 
 ## Introduction
@@ -45,7 +45,7 @@ Ce sont là les paramètres de fenêtre typiques que vous utiliseriez pour un si
 
 Dans le cadre de la conception interactive, vous pouvez utiliser des requêtes CSS [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) afin de personnaliser le style de votre page Web pour différentes dimensions d'écran sans avoir à modifier le contenu de la page. Dans AMP, vous pouvez continuer à utiliser ces mêmes requêtes CSS `@media`. De plus, pour avoir plus de contrôle sur un élément AMP, vous pouvez spécifier l'attribut `media` sur l'élément. Cela est particulièrement utile lorsque vous devez afficher ou masquer un élément sur la base d'une requête multimédia. Consultez la section [Modification de la conception d'une image](#changing-the-art-direction-of-an-image) pour un exemple qui utilise l'attribut `media`.
 
-Le redimensionnement de chaque élément en vue de s'adapter à un écran peut être délicat<sup><a href="#fn1" id="ref1">*</a></sup>. Cependant, dans AMP, vous pouvez facilement rendre un élément interactif en spécifiant simplement l'attribut `"layout=responsive"` ainsi que les attributs `width` et `height` de l'élément. Lorsque vous appliquez l'attribut `responsive` à un élément, celui-ci se redimensionne automatiquement à la largeur de son élément conteneur, et la hauteur change en fonction des proportions spécifiées par les attributs `width` et `height` de l'élément. Presque tous les éléments AMP prennent en charge la mis een page `responsive`; consultez la documentation de référence de l'élément pour voir les mises en page prises en compte.
+Le redimensionnement de chaque élément en vue de s'adapter à un écran peut être délicat<sup><a href="#fn1" id="ref1">\*</a></sup>. Cependant, dans AMP, vous pouvez facilement rendre un élément interactif en spécifiant simplement l'attribut `"layout=responsive"` ainsi que les attributs `width` et `height` de l'élément. Lorsque vous appliquez l'attribut `responsive` à un élément, celui-ci se redimensionne automatiquement à la largeur de son élément conteneur, et la hauteur change en fonction des proportions spécifiées par les attributs `width` et `height` de l'élément. Presque tous les éléments AMP prennent en charge la mis een page `responsive`; consultez la documentation de référence de l'élément pour voir les mises en page prises en compte.
 
 Même si vous pouvez facilement rendre les éléments interactifs avec `"layout=responsive"`, vous devez tout de même tenir compte de la façon dont vos éléments apparaissent sur toutes les tailles d'écran, y compris les ordinateurs de bureau et les tablettes. Une erreur courante consiste à permettre à une image de s'afficher en plein écran, ce qui étire l'image au-delà de sa taille prévue et entraîne une mauvaise expérience pour les utilisateurs d'écran large. Par défaut, les éléments avec `layout=responsive` occuperont toute la largeur du conteneur de l'élément, qui est souvent illimité en largeur (width=100%). Vous pouvez améliorer l'apparence des images en limitant simplement la largeur du conteneur de l'image. Par exemple, en définissant une règle "max-width" dans l'élément "body" ou "main", vous pouvez limiter toutes les images à une largeur maximale spécifique.
 
@@ -73,7 +73,7 @@ Cependant, nous ne voulons pas que l'image s'étire au-delà de sa taille prévu
 
 ```html
 <style amp-custom>
-.resp-img {
+  .resp-img {
     max-width: 700px;
   }
 </style>
@@ -125,7 +125,7 @@ Les images constituent une grande partie d'une page Web (environ [65% des octets
 
 Pour les écrans haute résolution (par exemple, écran Retina), vous devez fournir des images qui claires et nettes; cependant, vous ne souhaitez pas utiliser cette même image sur des appareils basse résolution, car cela entraînera un temps de chargement supplémentaire inutile. Dans les pages non AMP et AMP, vous pouvez diffuser l'image correcte pour la densité de pixels de l'écran en utilisant `srcset` avec le descripteur de largeur (`w`).
 
-[tip type="note"] **REMARQUE –**  le sélecteur srcset basé sur le DPR (`x`) fonctionne également; toutefois, pour plus de souplesse, nous recommandons d'utiliser le sélecteur `w`. Auparavant (dans l'ancienne proposition srcset), le descripteur `w` décrivait la largeur de la fenêtre, mais aujourd'hui il décrit la largeur du fichier source de l'image, ce qui permet à l'agent utilisateur de calculer la densité de pixels effective de chaque image et de choisir la bonne image à afficher. [/tip]
+[tip type="note"] **REMARQUE –** le sélecteur srcset basé sur le DPR (`x`) fonctionne également; toutefois, pour plus de souplesse, nous recommandons d'utiliser le sélecteur `w`. Auparavant (dans l'ancienne proposition srcset), le descripteur `w` décrivait la largeur de la fenêtre, mais aujourd'hui il décrit la largeur du fichier source de l'image, ce qui permet à l'agent utilisateur de calculer la densité de pixels effective de chaque image et de choisir la bonne image à afficher. [/tip]
 
 ##### Exemple: affichage d'une image nette qui s'adapte à l'écran
 
@@ -173,7 +173,7 @@ Dans l'exemple suivant, nous avons 3 images recadrées différentes d'un chat qu
 - 470 - 669 px, afficher `cat-medium.jpg` (450 x 340 px)
 - 469 px ou moins, afficher `cat-small.jpg` (226 x 340 px)
 
-[tip type="note"] **REMARQUE –**  Comme nous voulions que les images soient de taille fixe (sans inclinaison), nous n'avons pas spécifié de valeur de mise en page, qui sera fixée par défaut à `layout=fixed` car nous avons défini la largeur et la hauteur. Pour plus d'informations, voir [« Que faire si l'attribut layout n'est pas spécifié ? »](control_layout.md#what-if-the-layout-attribute-isnt-specified). [/tip]
+[tip type="note"] **REMARQUE –** Comme nous voulions que les images soient de taille fixe (sans inclinaison), nous n'avons pas spécifié de valeur de mise en page, qui sera fixée par défaut à `layout=fixed` car nous avons défini la largeur et la hauteur. Pour plus d'informations, voir [« Que faire si l'attribut layout n'est pas spécifié ? »](control_layout.md#what-if-the-layout-attribute-isnt-specified). [/tip]
 
 [example preview="top-frame" playground="true"]
 
@@ -215,7 +215,7 @@ En HTML, vous pouvez diffuser différents formats d'image en utilisant la balise
 
 Dans AMP, il existe deux façons de diffuser des images optimisées:
 
-- Les développeurs qui utilisent des formats d'image qui ne sont pas largement pris en charge, comme WebP, peuvent configurer leur serveur pour traiter les en-têtes `Accept` du navigateur et répondre avec des octets d'image et [l'en-tête `Content-Type`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/) approprié. Cela évite au navigateur de télécharger des types d'images qu'il ne prend pas en charge. Pour en savoir plus sur la  [négociation de contenu](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation).[sourcecode:html] Accept: image/webp,image/apng,image/<em>,</em>/*;q=0.8 [/sourcecode]
+- Les développeurs qui utilisent des formats d'image qui ne sont pas largement pris en charge, comme WebP, peuvent configurer leur serveur pour traiter les en-têtes `Accept` du navigateur et répondre avec des octets d'image et [l'en-tête `Content-Type`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/) approprié. Cela évite au navigateur de télécharger des types d'images qu'il ne prend pas en charge. Pour en savoir plus sur la [négociation de contenu](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation).[sourcecode:html] Accept: image/webp,image/apng,image/<em>,</em>/\*;q=0.8 [/sourcecode]
 - En fournissant des images de secours imbriquées, comme dans l'exemple ci-dessous.
 
 ##### Exemple: comment diffuser différents formats d'image

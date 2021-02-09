@@ -1,9 +1,9 @@
 ---
-"$title": Precargue su aplicación web progresiva (PWA) desde páginas AMP
-"$order": '1'
+'$title': Precargue su aplicación web progresiva (PWA) desde páginas AMP
+$order: 1
 description: Una buena estrategia es definir que una página AMP sea el punto de entrada de los usuarios a su sitio web, y después preparar la PWA en segundo plano y dirigirlos a...
 formats:
-- websites
+  - websites
 author: pbakaus
 ---
 
@@ -23,7 +23,7 @@ AMP es una solución ideal para las denominadas **páginas de producto**, las cu
 
 ### PWA para mejorar la interactividad y la participación
 
-Por otro lado, las aplicaciones web progresivas aumentan el grado de interactividad y de participación, pero no cuentan con las *características de primera carga instantánea* de una página AMP. Su característica principal es la tecnología Service Worker, un proxy del cliente que le permite almacenar en caché todo tipo de recursos para usarlos después en las páginas. Sin embargo, estos proxies solo se activan *después* de la primera carga.
+Por otro lado, las aplicaciones web progresivas aumentan el grado de interactividad y de participación, pero no cuentan con las _características de primera carga instantánea_ de una página AMP. Su característica principal es la tecnología Service Worker, un proxy del cliente que le permite almacenar en caché todo tipo de recursos para usarlos después en las páginas. Sin embargo, estos proxies solo se activan _después_ de la primera carga.
 
 {{ image('/static/img/docs/pwamp_comparison.png', 977, 549, align='', caption='Pros y contras de AMP frente a PWA.') }}
 
@@ -36,8 +36,10 @@ AMP puede instalar el componente Service Worker de su aplicación web progresiva
 Primero, instale el componente Service Worker en todas sus páginas AMP con [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md), incluyendo primero el componente mediante su script en el `<head>` de la página:
 
 [sourcecode:html]
+
 <script async custom-element="amp-install-serviceworker"
   src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+
 [/sourcecode]
 
 Después, agregue el siguiente código en la sección `<body>` (modifique lo necesario para dirigirlo a su componente Service Worker actual):
@@ -54,20 +56,20 @@ Y, finalmente, al instalar el service worker, almacene en caché todos los recur
 [sourcecode:javascript]
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
-  '/',
-  '/styles/main.css',
-  '/script/main.js'
+'/',
+'/styles/main.css',
+'/script/main.js'
 ];
 
 self.addEventListener('install', function(event) {
-  // Perform install steps
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(function(cache) {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-  );
+// Perform install steps
+event.waitUntil(
+caches.open(CACHE_NAME)
+.then(function(cache) {
+console.log('Opened cache');
+return cache.addAll(urlsToCache);
+})
+);
 });
 [/sourcecode]
 
@@ -83,14 +85,14 @@ En este caso tiene un sitio web canónico (que no es AMP) y genera páginas AMP 
 
 ### 2. Si su sitio web canónico es AMP
 
-*Si sus páginas canónicas *son* sus páginas AMP: Está creando todo el sitio web con la tecnología AMP y simplemente utiliza AMP como biblioteca (dato curioso: el sitio web que lee en este momento se creó de este modo). **Si es su caso, la mayoría de los enlaces de sus páginas AMP dirigen a otras páginas AMP.***
+*Si sus páginas canónicas *son\* sus páginas AMP: Está creando todo el sitio web con la tecnología AMP y simplemente utiliza AMP como biblioteca (dato curioso: el sitio web que lee en este momento se creó de este modo). **Si es su caso, la mayoría de los enlaces de sus páginas AMP dirigen a otras páginas AMP.\***
 
 Ahora puede implementar la PWA en una ruta independiente como `your-domain.com/pwa` y utilizar el componente Service Worker que ya está activo para **interceptar la navegación cuando un usuario haga clic en un enlace de una página AMP**:
 
 [sourcecode:javascript]
 self.addEventListener('fetch', event => {
-    if (event.request.mode === 'navigate') {
-      event.respondWith(fetch('/pwa'));
+if (event.request.mode === 'navigate') {
+event.respondWith(fetch('/pwa'));
 
       // Immediately start downloading the actual resource.
       fetch(event.request.url);

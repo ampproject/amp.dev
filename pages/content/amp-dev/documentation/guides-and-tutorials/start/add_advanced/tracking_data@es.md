@@ -1,6 +1,6 @@
 ---
-"$title": Seguimiento del compromiso mediante estadísticas
-"$order": '4'
+'$title': Seguimiento del compromiso mediante estadísticas
+$order: 4
 description: Las plataformas de análisis se integran comúnmente en sitios web mediante fragmentos JavaScript en línea y llamadas de función, los cuales activan eventos que se envían al sistema de análisis.
 ---
 
@@ -10,44 +10,63 @@ El siguiente es un ejemplo de seguimiento tradicional de Google Analytics basado
 
 ```html
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    (i[r] =
+      i[r] ||
+      function () {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    'script',
+    '//www.google-analytics.com/analytics.js',
+    'ga'
+  );
 
-ga('create', 'UA-XXXXX-Y', 'auto');
-ga('send', 'pageview');
+  ga('create', 'UA-XXXXX-Y', 'auto');
+  ga('send', 'pageview');
 </script>
 ```
 
 Este JavaScript es bastante simple, envía una notificación para hacer un seguimiento del evento pageview.
 
-Para replicar esta función en AMP, primero debemos **incluir** la biblioteca de componentes [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)  en el `<head>` de nuestro documento:
+Para replicar esta función en AMP, primero debemos **incluir** la biblioteca de componentes [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) en el `<head>` de nuestro documento:
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script
+  async
+  custom-element="amp-analytics"
+  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+></script>
 ```
 
 Después, **agregaremos** el componente [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) al final del <code>body</code> del documento:
 
 ```html
 <amp-analytics type="googleanalytics">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-YYYY-Y"
-  },
-  "triggers": {
-    "default pageview": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
       "vars": {
-        "title": "Name of the Article"
+        "account": "UA-YYYY-Y"
+      },
+      "triggers": {
+        "default pageview": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "Name of the Article"
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -61,31 +80,31 @@ Basándonos en el ejemplo anterior, podemos <strong>agregar</strong> otro dispar
 
 ```html
 <amp-analytics type="googleanalytics">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-YYYY-Y"
-  },
-  "triggers": {
-    "default pageview": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
       "vars": {
-        "title": "Name of the Article"
-      }
-    },
-    "click on #header trigger": {
-      "on": "click",
-      "selector": "#header",
-      "request": "event",
-      "vars": {
-        "eventCategory": "examples",
-        "eventAction": "clicked-header"
+        "account": "UA-YYYY-Y"
+      },
+      "triggers": {
+        "default pageview": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "Name of the Article"
+          }
+        },
+        "click on #header trigger": {
+          "on": "click",
+          "selector": "#header",
+          "request": "event",
+          "vars": {
+            "eventCategory": "examples",
+            "eventAction": "clicked-header"
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -93,6 +112,6 @@ Como puede adivinarse por el nombre de este nuevo activador, se accionará cuand
 
 Nota: En todos estos ejemplos de análisis, `“UA-YYYY-Y”` debe reemplazarse con el código de seguimiento de Google Analytics de su propio sitio web.
 
-[tip type="note"] **NOTA:**  <code>“UA-YYYY-Y”</code> es un ejemplo de cuenta de Google Analytics. Debe reemplazarse con el código de seguimiento de Google Analytics de su propio sitio web si utiliza este ejemplo en su sitio. [/tip]
+[tip type="note"] **NOTA:** <code>“UA-YYYY-Y”</code> es un ejemplo de cuenta de Google Analytics. Debe reemplazarse con el código de seguimiento de Google Analytics de su propio sitio web si utiliza este ejemplo en su sitio. [/tip]
 
 [tip type="tip"] **SUGERENCIA:** Si le interesa un sistema de seguimiento más sencillo, recomendamos que le dé un vistazo a [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md). Si solamente necesita realizar un seguimiento de las vistas de página, [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) es una solución más ligera que [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), ya que su único objetivo es resolver los requisitos habituales de los píxeles de seguimiento. Puede obtener más información en [Analytics: la guía básica](../../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md). [/tip]

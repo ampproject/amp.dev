@@ -1,8 +1,8 @@
 ---
-"$title": Kurulum
-"$order": '0'
+'$title': Kurulum
+$order: 0
 description: 'Bu öğreticiye başlamadan önce aşağıdakilere ihtiyacınız olacak: - Temel HTML, CSS ve JavaScript bilgisi - AMP’nin temel kavramlarının temel bir anlayışı'
-"$parent": "/content/docs/fundamentals/add_advanced.md"
+'$parent': '/content/docs/fundamentals/add_advanced.md'
 ---
 
 ## Ön koşullar

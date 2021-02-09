@@ -1,11 +1,11 @@
 ---
-"$title": AMP의 CORS
-order: '12'
+'$title': AMP의 CORS
+$order: 12
 formats:
-- websites
-- email
-- stories
-- ads
+  - websites
+  - email
+  - stories
+  - ads
 teaser:
   text: 여러 AMP 컴포넌트 및 확장자는 원격 엔드포인트를 활용할 수 있습니다.
 toc: 'true'
@@ -74,31 +74,33 @@ limitations under the License.
 
 가격이 표시된 제품이 나열된 AMP 페이지가 있다고 가정해보죠. 이때 사용자가 해당 페이지의 가격을 업데이트하려면 버튼을 클릭하여 JSON 엔드포인트에서 최신 가격을 검색해야 합니다(amp-list 컴포넌트로 수행됨). JSON은 내 도메인에 있습니다.
 
-그렇다면 페이지가 *내 도메인에 있고* JSON도 *내 도메인에 있습니다*. 아무 문제도 없는 듯하네요!
+그렇다면 페이지가 _내 도메인에 있고_ JSON도 _내 도메인에 있습니다_. 아무 문제도 없는 듯하네요!
 
-하지만 사용자는 AMP 페이지에 어떻게 들어왔나요? 사용자가 액세스하는 페이지는 캐시된 페이지인가요? 사용자는 AMP 페이지에 직접 액세스하는 것보다 다른 플랫폼을 통해 페이지를 발견했을 가능성이 높습니다. 예를 들어 Google 검색은 Google AMP 캐시를 사용하여 AMP 페이지를 빠르게 렌더링합니다. 즉 이러한 페이지는 Google AMP 캐시를 통해 지원되는 캐시된 페이지이며 도메인이 *다른* 것입니다. 사용자가 페이지의 가격을 업데이트하기 위해 버튼을 클릭하면 캐시된 AMP 페이지는 출처 도메인 페이지로 요청이 전송하여 가격을 불러옵니다. 하지만 출처 간 가격은 일치하지 않습니다(캐시 -> 출처 도메인). 이와 같은 교차 출처 요청을 허용하려면 CORS를 처리해야 합니다. 그렇지 않으면 요청은 실패하게 됩니다.
+하지만 사용자는 AMP 페이지에 어떻게 들어왔나요? 사용자가 액세스하는 페이지는 캐시된 페이지인가요? 사용자는 AMP 페이지에 직접 액세스하는 것보다 다른 플랫폼을 통해 페이지를 발견했을 가능성이 높습니다. 예를 들어 Google 검색은 Google AMP 캐시를 사용하여 AMP 페이지를 빠르게 렌더링합니다. 즉 이러한 페이지는 Google AMP 캐시를 통해 지원되는 캐시된 페이지이며 도메인이 _다른_ 것입니다. 사용자가 페이지의 가격을 업데이트하기 위해 버튼을 클릭하면 캐시된 AMP 페이지는 출처 도메인 페이지로 요청이 전송하여 가격을 불러옵니다. 하지만 출처 간 가격은 일치하지 않습니다(캐시 -> 출처 도메인). 이와 같은 교차 출처 요청을 허용하려면 CORS를 처리해야 합니다. 그렇지 않으면 요청은 실패하게 됩니다.
 
 <amp-img alt="CORS and Cache" layout="responsive" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png" width="809" height="391">
   <noscript><img alt="CORS 및 캐시" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png"></noscript></amp-img>
 
 **자, 그럼 이제 어떻게 해야 할까요?**
 
-1. 동적 데이터를 가져오는 AMP 페이지의 경우 해당 페이지의 캐시된 버전을 테스트해야 합니다. *내 도메인만 테스트하는 것이 아닙니다.*(아래에서 [AMP의 CORS 테스트](#testing-cors-in-amp) 섹션 참조)
+1. 동적 데이터를 가져오는 AMP 페이지의 경우 해당 페이지의 캐시된 버전을 테스트해야 합니다. _내 도메인만 테스트하는 것이 아닙니다._(아래에서 [AMP의 CORS 테스트](#testing-cors-in-amp) 섹션 참조)
 2. 이 문서의 설명에 따라 CORS 요청 및 응답을 처리합니다.
 
 ## CORS 요청에 쿠키 사용<a name="utilizing-cookies-for-cors-requests"></a>
 
 CORS 요청을 사용하는 대부분의 AMP 컴포넌트는 자동으로 [자격 증명 모드](https://fetch.spec.whatwg.org/#concept-request-credentials-mode)를 설정하거나 작성자가 해당 모드를 선택적으로 활성화하도록 허용합니다. 예를 들어 [`amp-list`](https://amp.dev/documentation/components/amp-list) 컴포넌트는 CORS JSON 엔드포인트에서 동적 콘텐츠를 가져오고 `credentials` 속성을 통해 작성자가 자격 증명 모드를 설정하도록 허용합니다.
 
-*예시: 쿠키를 통해 amp-list로 맞춤형 콘텐츠 포함*
+_예시: 쿠키를 통해 amp-list로 맞춤형 콘텐츠 포함_
 
 [sourcecode:html]
 <amp-list
-  credentials="include"
-  src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)"
->
-  <template type="amp-mustache">
+credentials="include"
+src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)"
+
+>   <template type="amp-mustache">
+
     Your personal offer: ${% raw %}{{price}}{% endraw %}
+
   </template>
 </amp-list>
 [/sourcecode]
@@ -107,7 +109,7 @@ CORS 요청을 사용하는 대부분의 AMP 컴포넌트는 자동으로 [자�
 
 ### 타사 쿠키 제한 <a name="third-party-cookie-restrictions"></a>
 
-AMP에서 자격 증명된  CORS 요청에도 브라우저에 지정된 제한과 동일한 타사 쿠키 제한이 적용됩니다. 이러한 제한은 브라우저와 플랫폼에 따라 다르지만 일부 브라우저에서는 사용자가 이전에  퍼스트 파티(최상위) 창의 원본에 방문했을 경우에만 원본에서 쿠키를 설정할 수 있습니다. 즉, 사용자가 원본 웹사이트를 직접 방문한 후에만 설정이 가능한 것입니다. 그렇기에 CORS를 통해 액세스한 서비스는 기본적으로 쿠키 설정이 가능하다고 가정할 수 없습니다.
+AMP에서 자격 증명된 CORS 요청에도 브라우저에 지정된 제한과 동일한 타사 쿠키 제한이 적용됩니다. 이러한 제한은 브라우저와 플랫폼에 따라 다르지만 일부 브라우저에서는 사용자가 이전에 퍼스트 파티(최상위) 창의 원본에 방문했을 경우에만 원본에서 쿠키를 설정할 수 있습니다. 즉, 사용자가 원본 웹사이트를 직접 방문한 후에만 설정이 가능한 것입니다. 그렇기에 CORS를 통해 액세스한 서비스는 기본적으로 쿠키 설정이 가능하다고 가정할 수 없습니다.
 
 ## AMP의 CORS 보안 <a name="cors-security-in-amp"></a>
 
@@ -159,13 +161,13 @@ CORS 요청 검증 후 발생한 HTTP 응답에는 다음 헤더가 포함되어
 
 이 헤더는 <a href="https://www.w3.org/TR/cors/">W3 CORS 사양</a>의 요구 사항이며 <code>origin</code>은 CORS <code>Origin</code> 요청 헤더를 통해 허용된 요청 출처를 의미합니다(예: <code>"https://<publisher's subdomain>.cdn.ampproject.org"</code>).
 
-W3 CORS 사양은 응답에서 <code>*</code> 값이 반환되는 것을 허용하지만 보안 강화를 위해 다음을 수행합니다.
+W3 CORS 사양은 응답에서 <code>\*</code> 값이 반환되는 것을 허용하지만 보안 강화를 위해 다음을 수행합니다.
 
 - `Origin` 헤더가 있을 경우 <code>Origin</code> 헤더의 값을 검증하고 에코 처리합니다.
 
 ### 상태 변경 요청 처리 <a name="processing-state-changing-requests"></a>
 
-[tip type="important"] 요청을 처리하기 *전* 이 검증을 수행합니다. 이 검증은 CSRF 공격에 대응하는 보호를 제공하고 신뢰할 수 없는 출처의 요청 처리를 방지하는 데 유용합니다. [/tip]
+[tip type="important"] 요청을 처리하기 _전_ 이 검증을 수행합니다. 이 검증은 CSRF 공격에 대응하는 보호를 제공하고 신뢰할 수 없는 출처의 요청 처리를 방지하는 데 유용합니다. [/tip]
 
 시스템 상태를 변경할 수 있는 요청을 처리하기 전(예: 사용자가 메일링 리스트에 등록하거나 등록을 해제한 경우) 다음 사항을 확인합니다.
 
@@ -173,10 +175,10 @@ W3 CORS 사양은 응답에서 <code>*</code> 값이 반환되는 것을 허용�
 
 1. 출처가 다음 값 중 하나와 일치하지 않는 경우 중단하고 오류 응답을 반환합니다.
 
-    - `<publisher's domain>.cdn.ampproject.org`
-    - 퍼블리셔의 출처(내 출처)
+   - `<publisher's domain>.cdn.ampproject.org`
+   - 퍼블리셔의 출처(내 출처)
 
-    `*`가 와일드카드 일치를 나타내지만 실제 별표 기호( * )는 아닌 경우.
+   `*`가 와일드카드 일치를 나타내지만 실제 별표 기호( \* )는 아닌 경우.
 
 2. 이외의 경우엔 요청을 처리합니다.
 
@@ -227,15 +229,15 @@ CORS 요청 및 응답을 처리하는 로직은 다음 의사 코드로 간소�
 
 [sourcecode:text]
 IF CORS header present
-   IF origin IN allowed-origins
-      allow request & send response
-   ELSE
-      deny request
+IF origin IN allowed-origins
+allow request & send response
 ELSE
-   IF "AMP-Same-Origin: true"
-      allow request & send response
-   ELSE
-      deny request
+deny request
+ELSE
+IF "AMP-Same-Origin: true"
+allow request & send response
+ELSE
+deny request
 [/sourcecode]
 
 #### CORS 샘플 코드 <a name="cors-sample-code"></a>
@@ -244,31 +246,31 @@ CORS 요청 및 응답을 처리하는 데 사용할 수 있는 샘플 JavaScrip
 
 [sourcecode:javascript]
 function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
-  var unauthorized = 'Unauthorized Request';
-  var origin;
-  var allowedOrigins = [
-    'https://example.com',
-    'https://example-com.cdn.ampproject.org',
-    'https://cdn.ampproject.org',
-  ];
-  var allowedSourceOrigin = 'https://example.com'; //publisher's origin
-  // If same origin
-  if (req.headers['amp-same-origin'] == 'true') {
-    origin = sourceOrigin;
-    // If allowed CORS origin & allowed source origin
-  } else if (
-    allowedOrigins.indexOf(req.headers.origin) != -1 &&
-    sourceOrigin == allowedSourceOrigin
-  ) {
-    origin = req.headers.origin;
-  } else {
-    res.statusCode = 403;
-    res.end(JSON.stringify({message: unauthorized}));
-    throw unauthorized;
-  }
+var unauthorized = 'Unauthorized Request';
+var origin;
+var allowedOrigins = [
+'https://example.com',
+'https://example-com.cdn.ampproject.org',
+'https://cdn.ampproject.org',
+];
+var allowedSourceOrigin = 'https://example.com'; //publisher's origin
+// If same origin
+if (req.headers['amp-same-origin'] == 'true') {
+origin = sourceOrigin;
+// If allowed CORS origin & allowed source origin
+} else if (
+allowedOrigins.indexOf(req.headers.origin) != -1 &&
+sourceOrigin == allowedSourceOrigin
+) {
+origin = req.headers.origin;
+} else {
+res.statusCode = 403;
+res.end(JSON.stringify({message: unauthorized}));
+throw unauthorized;
+}
 
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.setHeader('Access-Control-Allow-Origin', origin);
+res.setHeader('Access-Control-Allow-Credentials', 'true');
+res.setHeader('Access-Control-Allow-Origin', origin);
 }
 [/sourcecode]
 
@@ -327,7 +329,7 @@ Google AMP 캐시는 AMP HTML 문서, 이미지 및 글꼴을 캐싱하여 AMP �
 AMP 페이지가 `@font-face src` 속성의 `https://example.com/some/font.ttf`를 로딩할 시 AMP 캐시는 글꼴 파일을 캐싱하고 아래와 같이 `Access-Control-Allow-Origin` 와일드 카드를 통해 리소스를 지원합니다.
 
 - URL `https://example-com.cdn.ampproject.org/r/s/example.com/some/font.tff`
-- Access-Control-Allow-Origin: *
+- Access-Control-Allow-Origin: \*
 
 ### 새 동작(2019년 10월 이후) <a name="new-behavior-october-2019-and-after"></a>
 
@@ -337,19 +339,19 @@ AMP 페이지가 `@font-face src` 속성의 `https://example.com/some/font.ttf`�
 
 [sourcecode:javascript]
 function assertFontCors(req, res, opt_validMethods, opt_exposeHeaders) {
-  var unauthorized = 'Unauthorized Request';
-  var allowedOrigins = [
-    'https://example.com',
-    'https://example-com.cdn.ampproject.org',
-  ];
-  // If allowed CORS origin
-  if (allowedOrigins.indexOf(req.headers.origin) != -1) {
-    res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
-  } else {
-    res.statusCode = 403;
-    res.end(JSON.stringify({message: unauthorized}));
-    throw unauthorized;
-  }
+var unauthorized = 'Unauthorized Request';
+var allowedOrigins = [
+'https://example.com',
+'https://example-com.cdn.ampproject.org',
+];
+// If allowed CORS origin
+if (allowedOrigins.indexOf(req.headers.origin) != -1) {
+res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+} else {
+res.statusCode = 403;
+res.end(JSON.stringify({message: unauthorized}));
+throw unauthorized;
+}
 }
 [/sourcecode]
 
@@ -358,7 +360,7 @@ function assertFontCors(req, res, opt_validMethods, opt_exposeHeaders) {
 <amp-img alt="CORS font example" layout="responsive" src="https://amp.dev/static/img/docs/cors-font.jpg" width="2268" height="1594">
   <noscript><img alt="CORS 글꼴 예" src="https://amp.dev/static/img/docs/cors-font.jpg"></noscript></amp-img>
 
-[tip type="note"] 모든 출처에서 글꼴 파일에 액세스할 수 있는 경우  `Access-Control-Allow-Origin` 와일드 카드를 통해 응답할 수 있으며 AMP 캐시도 그 값을 에코 처리하여 `Access-Control-Allow-Origin: *`로 응답하게 됩니다. 이미 이 설정을 사용 중이라면 변경은 필요하지 않습니다. [/tip]
+[tip type="note"] 모든 출처에서 글꼴 파일에 액세스할 수 있는 경우 `Access-Control-Allow-Origin` 와일드 카드를 통해 응답할 수 있으며 AMP 캐시도 그 값을 에코 처리하여 `Access-Control-Allow-Origin: *`로 응답하게 됩니다. 이미 이 설정을 사용 중이라면 변경은 필요하지 않습니다. [/tip]
 
 2019년 10월 중순 변경 예정이며, 자체 호스팅 글꼴을 사용하는 모든 AMP 퍼블리셔는 이로 인해 영향받은 사항이 있는지 확인하시길 부탁드립니다.
 
@@ -380,10 +382,10 @@ AMP 페이지를 테스팅할 경우 AMP 페이지의 캐시된 버전 테스트
 
 1. AMP 캐시가 AMP 페이지에 액세스할 때 사용할 URL을 브라우저에서 엽니다. [예시별 AMP 도구](https://amp.dev/documentation/examples/guides/using_the_google_amp_cache/)에서 캐시 URL 형식을 확인할 수 있습니다.
 
-    예시는 다음과 같습니다.
+   예시는 다음과 같습니다.
 
-    - URL: `https://amp.dev/documentation/guides-and-tutorials/start/create/`
-    - AMP 캐시 URL 형식: `https://www-ampproject-org.cdn.ampproject.org/c/s/www.ampproject.org/docs/tutorials/create.html`
+   - URL: `https://amp.dev/documentation/guides-and-tutorials/start/create/`
+   - AMP 캐시 URL 형식: `https://www-ampproject-org.cdn.ampproject.org/c/s/www.ampproject.org/docs/tutorials/create.html`
 
 2. 브라우저의 개발 도구를 열어 오류가 없으며 모든 리소스가 적절히 로드되었음을 확인합니다.
 

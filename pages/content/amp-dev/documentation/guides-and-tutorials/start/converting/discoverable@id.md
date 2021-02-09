@@ -1,6 +1,6 @@
 ---
-"$title": Membuat halaman Anda dapat ditemukan
-"$order": '3'
+'$title': Membuat halaman Anda dapat ditemukan
+$order: 3
 description: Penautan dua arah ini perlu disiapkan agar mesin pencarian memahami hubungan antara dokumen kanonis HTML reguler dan dokumen AMP kita.
 ---
 
@@ -23,7 +23,7 @@ Untuk keperluan tutorial ini, kita akan berfokus pada contoh yang menunjukkan ba
 Kita sudah menyelesaikan langkah pertama untuk mencapai tahap ini dalam dokumen AMP kita dengan menyertakan tag tautan di `<head>` kembali ke halaman kanonis:
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 Langkah selanjutnya adalah menautkan artikel kanonis ke halaman AMP. Langkah ini bisa dilakukan dengan menyertakan tag `<link rel="amphtml">` ke bagian `<head>` di artikel kanonis.
@@ -31,7 +31,7 @@ Langkah selanjutnya adalah menautkan artikel kanonis ke halaman AMP. Langkah ini
 Di dalam berkas `article.html`, **tambahkan** kode berikut ini ke bagian `<head>`:
 
 ```html
-<link rel="amphtml" href="/article.amp.html">
+<link rel="amphtml" href="/article.amp.html" />
 ```
 
 Diagram berikut ini menggambarkan arah tag tautan:
@@ -48,38 +48,38 @@ Untuk artikel berita kita, **tambahkan** data terstruktur berikut ini ke bagian 
 
 ```html
 <script type="application/ld+json">
-{
-"@context": "http://schema.org",
-"@type": "NewsArticle",
-"mainEntityOfPage":{
-   "@type":"WebPage",
-   "@id":"https://example.com/my-article.html"
-},
-"headline": "My First AMP Article",
-"image": {
-   "@type": "ImageObject",
-   "url": "https://example.com/article_thumbnail1.jpg",
-   "height": 800,
-   "width": 800
-},
-"datePublished": "2015-02-05T08:00:00+08:00",
-"dateModified": "2015-02-05T09:20:00+08:00",
-"author": {
-   "@type": "Person",
-   "name": "John Doe"
-},
-"publisher": {
-   "@type": "Organization",
-   "name": "⚡ AMP Times",
-   "logo": {
-     "@type": "ImageObject",
-     "url": "https://example.com/amptimes_logo.jpg",
-     "width": 600,
-     "height": 60
-   }
-},
-"description": "My first experience in an AMPlified world"
-}
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://example.com/my-article.html"
+    },
+    "headline": "My First AMP Article",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://example.com/article_thumbnail1.jpg",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2015-02-05T08:00:00+08:00",
+    "dateModified": "2015-02-05T09:20:00+08:00",
+    "author": {
+      "@type": "Person",
+      "name": "John Doe"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "⚡ AMP Times",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://example.com/amptimes_logo.jpg",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "My first experience in an AMPlified world"
+  }
 </script>
 ```
 

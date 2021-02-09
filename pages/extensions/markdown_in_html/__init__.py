@@ -3,7 +3,7 @@ from grow import extensions
 from grow.documents import document_format
 from grow.extensions import hooks
 from markdown.extensions import extra
-from html_block_processor import HtmlBlockProcessor
+from .html_block_processor import HtmlBlockProcessor
 
 CLEAR_EXTRA_EXTENSIONS_FLAG = 'prevent_markdown_extra_auto_loading_other'
 
@@ -52,7 +52,7 @@ class MarkdownInHtmlExtension(extensions.BaseExtension):
   def __init__(self, pod, config):
     super(MarkdownInHtmlExtension, self).__init__(pod, config)
 
-    if config.has_key(CLEAR_EXTRA_EXTENSIONS_FLAG) and config.get(CLEAR_EXTRA_EXTENSIONS_FLAG):
+    if config.get(CLEAR_EXTRA_EXTENSIONS_FLAG, None):
       # Clear the markdown extra extensions to prevent auto loading unwanted extensions
       extra.extensions = []
 

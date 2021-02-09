@@ -1,6 +1,6 @@
 ---
-"$title": Setting up
-"$order": '1'
+'$title': Setting up
+$order: 1
 description: 開発環境のセットアップ ステップ 1. コードをダウンロードする チュートリアル用のサンプルコードを、ZIP ファイルとして、または git コマンドを使ってダウンロードします。
 author: bpaduch
 ---

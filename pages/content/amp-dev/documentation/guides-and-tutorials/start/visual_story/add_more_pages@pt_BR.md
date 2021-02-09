@@ -1,11 +1,11 @@
 ---
-"$title": Adding more pages
-"$order": '5'
+'$title': Adding more pages
+$order: 5
 description: Você já sabe como adicionar páginas a uma história AMP. Para incluir as próximas páginas da nossa história "A alegria de ter animais de estimação", o processo é bem parecido.
 author: bpaduch
 ---
 
-Você já sabe como adicionar páginas a uma história AMP. Para incluir as próximas páginas da nossa história "A alegria de ter animais de estimação", o processo é bem parecido. Com base nas informações abaixo, **crie as páginas restantes** usando o que você aprendeu até agora.  Se você tiver dúvidas, veja o código completo (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>) (em inglês).
+Você já sabe como adicionar páginas a uma história AMP. Para incluir as próximas páginas da nossa história "A alegria de ter animais de estimação", o processo é bem parecido. Com base nas informações abaixo, **crie as páginas restantes** usando o que você aprendeu até agora. Se você tiver dúvidas, veja o código completo (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>) (em inglês).
 
 [tip type="tip"] Cada página precisa de um atributo "id" exclusivo (por exemplo, `id="page1"`). [/tip]
 

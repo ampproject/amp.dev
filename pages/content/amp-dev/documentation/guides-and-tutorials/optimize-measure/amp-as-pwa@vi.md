@@ -1,12 +1,12 @@
 ---
-"$title": Dễ dàng truy cập ngoại tuyến và cải thiện hiệu năng
-"$order": '11'
-description: "Một Service Worker là một proxy phía máy khách và là trung gian giữa trang và máy chủ của bạn; Service Worker được sử dụng để xây dựng các trải nghiệm ngoại tuyến, tải nhanh..."
+'$title': Dễ dàng truy cập ngoại tuyến và cải thiện hiệu năng
+$order: 11
+description: 'Một Service Worker là một proxy phía máy khách và là trung gian giữa trang và máy chủ của bạn; Service Worker được sử dụng để xây dựng các trải nghiệm ngoại tuyến, tải nhanh...'
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 contributors:
-- pbakaus
+  - pbakaus
 ---
 
 [Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) cho phép tạo ra các trải nghiệm ngoại tuyến phong phú và trải nghiệm người dùng nhất quán trên nhiều cường độ tín hiệu mạng khác nhau. Thông qua việc lưu tài nguyên trong bộ nhớ đệm của trình duyệt, một ứng dụng web có thể cung cấp dữ liệu, tài sản và các trang ngoại tuyến cho người dùng để giúp họ gắn kết và cập nhật.
@@ -51,11 +51,11 @@ Nếu bạn đang ở đây, chắc hẳn bạn đang xây dựng các trang AMP
 
 Cài đặt Service Worker AMP với các bước tối thiểu:
 
-- [sourcecode:js]  importScripts('https://cdn.ampproject.org/sw/amp-sw.js');  [/sourcecode]
+- [sourcecode:js] importScripts('https://cdn.ampproject.org/sw/amp-sw.js'); [/sourcecode]
 
 - [sourcecode:js]
-      AMP_SW.init();
-      [/sourcecode]
+  AMP_SW.init();
+  [/sourcecode]
 
 - Xong.
 

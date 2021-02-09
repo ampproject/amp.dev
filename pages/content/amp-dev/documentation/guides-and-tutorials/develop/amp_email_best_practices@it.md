@@ -1,9 +1,9 @@
 ---
-"$title": Procedure consigliate per le e-mail AMP
-"$order": '1'
-"$category": Develop
+'$title': Procedure consigliate per le e-mail AMP
+$order: 1
+'$category': Develop
 formats:
-- email
+  - email
 ---
 
 Il sistema AMP consente l'impiego di nuovi tipi di contenuti coinvolgenti e interessanti nelle e-mail! Durante la progettazione di e-mail, può essere utile tenere presente le seguenti procedure consigliate per garantire le massime prestazioni e affidabilità di tali contenuti su tutte le piattaforme e il loro funzionamento secondo le aspettative degli utenti.
@@ -34,6 +34,6 @@ Verificare che il messaggio abbia una buona visualizzazione sugli schermi di tut
 Utilizzando AMP per la realizzazione di e-mail, può essere utile tenere presenti i seguenti suggerimenti e trucchi:
 
 - Il playground di AMP per e-mail non fa uso di proxy XHR, ma alcuni servizi di posta elettronica li impiegano.
-- La parte MIME AMP dovrebbe apparire prima della parte MIME HTML nella  e-mail per garantire la massima compatibilità tra i client e-mail.
+- La parte MIME AMP dovrebbe apparire prima della parte MIME HTML nella e-mail per garantire la massima compatibilità tra i client e-mail.
 - L'attributo `src` di [`amp-list`](../../../documentation/components/reference/amp-list.md?format=email), quello [`action-xhr`](../../../documentation/components/reference/amp-form.md?format=email#action-xhr) di [`amp-form`](../../../documentation/components/reference/amp-form.md?format=email) e quello `src` per [`amp-img`](../../../documentation/examples/documentation/amp-img.html?format=email) o l'attributo href di un tag `<a>` non possono essere modificati da [`amp-bind`](../../../documentation/examples/documentation/amp-bind.html?format=email).
 - I messaggi dovrebbero includere una versione HTML statica nel caso in cui un utente venga portato alla versione HTML del messaggio o se l'utente inoltra il messaggio.

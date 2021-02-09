@@ -1,12 +1,12 @@
 ---
-"$title": Types de documentation
-"$order": '1'
+'$title': Types de documentation
+$order: 1
 description: Types de contribution à la documentation acceptées sur amp.dev
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 toc: 'false'
 ---

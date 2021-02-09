@@ -1,12 +1,12 @@
 ---
-"$title": Congratulazioni!
-"$order": '4'
+'$title': Congratulazioni!
+$order: 4
 description: 'Sei riuscito a creare un annuncio AMPHTML, che può essere pubblicato su pagine AMP e non! In questa esercitazione, hai imparato a: creare un annuncio AMPHTML valido in base a ...'
 ---
 
 Sei riuscito a creare un annuncio AMPHTML, che può essere pubblicato su pagine AMP e non!
 
- In questa esercitazione, hai imparato a:
+In questa esercitazione, hai imparato a:
 
 - Creare annunci AMPHTML validi secondo le [specifiche degli annunci AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md)
 - Monitorare le visualizzazioni degli annunci utilizzando il componente [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)

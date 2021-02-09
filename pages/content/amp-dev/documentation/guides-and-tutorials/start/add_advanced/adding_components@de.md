@@ -1,6 +1,6 @@
 ---
-"$title": Erweiterte AMP Komponenten hinzufügen
-"$order": '2'
+'$title': Erweiterte AMP Komponenten hinzufügen
+$order: 2
 description: 'Mit dem AMP Komponentensystem kannst du schnell und mit minimalem Aufwand effiziente und responsive Features in deine Artikel integrieren. Die AMP HTML Bibliothek verfügt über drei Klassifizierungen für AMP Komponenten: ...'
 ---
 
@@ -25,7 +25,8 @@ Sieh dir dieses Beispiel eines **DoubleClick** Ads an:
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/image/static">
+  data-slot="/35096353/amptesting/image/static"
+>
 </amp-ad>
 ```
 
@@ -40,7 +41,8 @@ Das Attribut `data-slot` ist etwas spezieller. In [`amp-ad`](../../../../documen
   type="a9"
   data-aax_size="300x250"
   data-aax_pubname="test123"
-  data-aax_src="302">
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -51,7 +53,11 @@ Denke daran, dass nicht alle Komponenten in der JavaScript Datei mit der AMP Ker
 **Füge** dem Tag `<head>` das folgende Skript hinzu:
 
 ```html
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script
+  async
+  custom-element="amp-ad"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+></script>
 ```
 
 **Aktualisiere** die Seite. Jetzt sollten zwei Testanzeigen sichtbar sein:
@@ -67,7 +73,8 @@ Die beiden folgenden [`amp-ad`](../../../../documentation/components/reference/a
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/uk">
+  data-slot="/35096353/amptesting/geo/uk"
+>
   <div fallback>No ad appeared because you're not browsing from the UK!</div>
 </amp-ad>
 
@@ -75,7 +82,8 @@ Die beiden folgenden [`amp-ad`](../../../../documentation/components/reference/a
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/us">
+  data-slot="/35096353/amptesting/geo/us"
+>
   <div fallback>No ad appeared because you're not browsing from the US!</div>
 </amp-ad>
 ```
@@ -107,14 +115,15 @@ Versuchen wir, ein YouTube Video in das Dokument einzubetten. **Füge** dazu den
   data-videoid="npum8JsITQE"
   layout="responsive"
   width="480"
-  height="270">
+  height="270"
+>
   <div fallback>
     <p>The video could not be loaded.</p>
   </div>
 </amp-youtube>
 ```
 
-**Aktualisiere** die Seite. Anstelle des Videos wird folgender Text angezeigt: *"The video could not be loaded."*
+**Aktualisiere** die Seite. Anstelle des Videos wird folgender Text angezeigt: _"The video could not be loaded."_
 
 Du erhältst diesen Fehler, selbst wenn dein Browser YouTube Videos ohne Probleme anzeigen kann. Warum? Schuld ist nicht das Video, das nicht geladen werden konnte, sondern das Fehlschlagen der Komponente selbst.
 
@@ -125,7 +134,11 @@ Denke daran, dass nicht alle Komponenten in der JavaScript Datei mit der AMP Ker
 **Füge** im Tag `<head>` das folgende Skript ein:
 
 ```html
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script
+  async
+  custom-element="amp-youtube"
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+></script>
 ```
 
 **Aktualisiere** die Seite. Jetzt solltest du das YouTube Video sehen:
@@ -145,7 +158,11 @@ Die Einbettung vorformatierter Tweets von Twitter ist ein verbreitetes Feature i
 Füge zunächst zum Tag `<head>` deines Dokuments die folgende JavaScript Anforderung hinzu:
 
 ```html
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script
+  async
+  custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+></script>
 ```
 
 Nun kannst du in deinem Artikel den folgenden Code **hinzufügen**, um den Tweet einzubetten:
@@ -155,7 +172,8 @@ Nun kannst du in deinem Artikel den folgenden Code **hinzufügen**, um den Tweet
   width="486"
   height="657"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
 
@@ -180,7 +198,11 @@ AMP bietet eine weitere Komponente, die speziell für diese Art von Situation en
 Testen wir das. **Füge** zunächst die Bibliothek der Komponente zum Tag `<head>` hinzu:
 
 ```html
-<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+<script
+  async
+  custom-element="amp-fit-text"
+  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+></script>
 ```
 
 Füge deiner Seite Folgendes hinzu:
@@ -205,7 +227,11 @@ Und wenn es länger ist?
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-   And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+  And the Raven, never flitting, still is sitting, still is sitting. On the
+  pallid bust of Pallas just above my chamber door; And his eyes have all the
+  seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming
+  throws his shadow on the floor; And my soul from out that shadow that lies
+  floating on the floor. Shall be lifted—nevermore!
 </amp-fit-text>
 ```
 

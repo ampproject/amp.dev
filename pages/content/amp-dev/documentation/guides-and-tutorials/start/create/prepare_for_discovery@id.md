@@ -1,13 +1,13 @@
 ---
-"$title": Menyiapkan halaman Anda untuk pencarian dan distribusi
-"$order": '4'
+'$title': Menyiapkan halaman Anda untuk pencarian dan distribusi
+$order: 4
 description: 'Di dalam beberapa kasus, Anda mungkin ingin memiliki versi non-AMP dan AMP dari halaman yang sama, contohnya: artikel berita. Pertimbangkan ini: Jika Google Search ....'
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
-Di dalam beberapa kasus, Anda mungkin ingin memiliki versi non-AMP dan AMP dari halaman yang sama, contohnya: artikel berita. Pertimbangkan ini: Jika Google Search menemukan versi non-AMP halaman itu, *bagaimana Google Search mengetahui bahwa ada versi AMP "sandingan" halaman tersebut*?
+Di dalam beberapa kasus, Anda mungkin ingin memiliki versi non-AMP dan AMP dari halaman yang sama, contohnya: artikel berita. Pertimbangkan ini: Jika Google Search menemukan versi non-AMP halaman itu, _bagaimana Google Search mengetahui bahwa ada versi AMP "sandingan" halaman tersebut_?
 
 ## Menautkan halaman dengan `<link>`
 
@@ -16,12 +16,14 @@ Untuk menegaskan bahwa halaman non-AMP dan halaman AMP harus diperlakukan sebaga
 Tambahkan yang berikut ini ke halaman non-AMP:
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
 Tambahkan ini ke halaman AMP:
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
@@ -30,6 +32,7 @@ Tambahkan ini ke halaman AMP:
 Jika Anda hanya memiliki satu halaman, dan itu adalah halaman AMP, Anda masih harus menambahkan tautan kanonis ke halaman itu, yang kemudian hanya akan mengarah ke halaman itu sendiri:
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 

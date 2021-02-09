@@ -1,9 +1,9 @@
 ---
-"$title": Comment valider les e-mails AMP
-"$order": '1'
+'$title': Comment valider les e-mails AMP
+$order: 1
 author: CrystalOnScript
 formats:
-- email
+  - email
 ---
 
 Les e-mails AMP dépendent de la bibliothèque AMP JS pour offrir des expériences interactives, dynamiques et riches aux lecteurs. C'est pourquoi les fournisseurs de messagerie exigent que vos messages soient validés. Un balisage AMP valide garantit que vos e-mails sont sécurisés et dépassent les normes d'expérience utilisateur.

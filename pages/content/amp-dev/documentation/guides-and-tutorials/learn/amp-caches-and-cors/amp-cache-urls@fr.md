@@ -1,14 +1,14 @@
 ---
-"$title": "Format d'URL du cache AMP et traitement des demandes"
-"$order": '9'
+'$title': "Format d'URL du cache AMP et traitement des demandes"
+$order: 9
 toc: 'false'
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 author: Gregable
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 Dans ce document, vous découvrirez le format d'URL du cache AMP et la manière dont il gère les requêtes.

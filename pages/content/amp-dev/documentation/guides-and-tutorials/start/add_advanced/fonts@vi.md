@@ -1,6 +1,6 @@
 ---
-"$title": Thêm phông chữ
-"$order": '6'
+'$title': Thêm phông chữ
+$order: 6
 description: 'Bạn có thể nhúng các phông chữ tùy chỉnh vào trang AMP của mình theo 2 cách: 1. Thông qua một thẻ <link>: chỉ các nhà cung cấp phông chữ được cho phép. 2. Bằng cách sử dụng...'
 ---
 
@@ -14,7 +14,11 @@ Bạn có thể nhúng các phông chữ tùy chỉnh vào trang AMP của mình
 Trong bài thực hành này, chúng ta sẽ sử dụng một thẻ `<link>` để thêm phông chữ vào trang của mình. **Thêm** một liên kết stylesheet trong thẻ `<head>` để yêu cầu phông chữ Raleway:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://fonts.googleapis.com/css?family=Raleway"
+/>
 ```
 
 Bây giờ, **cập nhật** bộ chọn CSS `body` của bạn để bao gồm một tham chiếu đến Raleway:

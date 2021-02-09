@@ -1,10 +1,10 @@
 ---
-"$title": Convierta su sitio AMP en una Aplicación Web Progresiva (PWA)
-"$order": '10'
+'$title': Convierta su sitio AMP en una Aplicación Web Progresiva (PWA)
+$order: 10
 description: Al almacenar en el caché los recursos dentro del navegador, una Aplicación Web Progresiva (PWA) será capaz de proporcionar datos, activos y páginas sin conexión al usuario para que siga colaborando y se mantenga informado.
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: crystalonscript
 ---
 

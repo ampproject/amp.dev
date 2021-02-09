@@ -1,6 +1,6 @@
 ---
-"$title": 一般的な要素属性
-"$order": '1'
+'$title': 一般的な要素属性
+$order: 1
 description: AMP には、さまざまな AMP コンポーネント（および HTML 要素）に拡張される共通の属性を使用できます。ここでは、そうした共通の属性それぞれについて説明します。
 toc: 'true'
 ---
@@ -16,7 +16,7 @@ AMP には、さまざまな AMP コンポーネント（および HTML 要素�
 例:
 
 ```html
-<amp-anim src="animated.gif" width="466" height="355" layout="responsive" >
+<amp-anim src="animated.gif" width="466" height="355" layout="responsive">
   <div fallback>Cannot play animated images on this device.</div>
 </amp-anim>
 ```
@@ -35,9 +35,12 @@ AMP には、さまざまな AMP コンポーネント（および HTML 要素�
 例：
 
 ```html
-<amp-img src="amp.png"
-    width="320" height="256"
-    heights="(min-width:500px) 200px, 80%">
+<amp-img
+  src="amp.png"
+  width="320"
+  height="256"
+  heights="(min-width:500px) 200px, 80%"
+>
 </amp-img>
 ```
 
@@ -50,11 +53,13 @@ AMP では、一連の [レイアウト](../../../documentation/guides-and-tutor
 例:
 
 ```html
-<amp-img src="/img/amp.jpg"
-    width="1080"
-    height="610"
-    layout="responsive"
-    alt="an image">
+<amp-img
+  src="/img/amp.jpg"
+  width="1080"
+  height="610"
+  layout="responsive"
+  alt="an image"
+>
 </amp-img>
 ```
 
@@ -68,15 +73,19 @@ AMP では、一連の [レイアウト](../../../documentation/guides-and-tutor
 
 ```html
 <amp-img
-    media="(min-width: 650px)"
-    src="wide.jpg"
-    width="466"
-    height="355" layout="responsive"></amp-img>
+  media="(min-width: 650px)"
+  src="wide.jpg"
+  width="466"
+  height="355"
+  layout="responsive"
+></amp-img>
 <amp-img
-    media="(max-width: 649px)"
-    src="narrow.jpg"
-    width="527"
-    height="193" layout="responsive"></amp-img>
+  media="(max-width: 649px)"
+  src="narrow.jpg"
+  width="527"
+  height="193"
+  layout="responsive"
+></amp-img>
 ```
 
 詳しくは、[レイアウトとメディアクエリ](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#element-media-queries) をご覧ください。
@@ -90,11 +99,7 @@ AMP では、一連の [レイアウト](../../../documentation/guides-and-tutor
 例:
 
 ```html
-<amp-img src="card.jpg"
-    noloading
-    height="190"
-    width="297"
-    layout="responsive">
+<amp-img src="card.jpg" noloading height="190" width="297" layout="responsive">
 </amp-img>
 ```
 
@@ -114,9 +119,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 
 ```html
 <button on="tap:my-lightbox">Open lightbox</button>
-<amp-lightbox id="my-lightbox" layout="nodisplay">
-  ...
-</amp-lightbox>
+<amp-lightbox id="my-lightbox" layout="nodisplay"> ... </amp-lightbox>
 ```
 
 詳しくは、[AMP のアクションとイベントについてのページ](amp-actions-and-events.md) をご覧ください。
@@ -144,20 +147,25 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 例:
 
 ```html
-<amp-img src="amp.png"
-    width="400" height="300"
-    layout="responsive"
-    sizes="(min-width: 320px) 320px, 100vw">
+<amp-img
+  src="amp.png"
+  width="400"
+  height="300"
+  layout="responsive"
+  sizes="(min-width: 320px) 320px, 100vw"
+>
 </amp-img>
 ```
 
 次のネストされた`img`タグを生成します。
 
 ```html
-<img decoding="async"
-    src="amp.png"
-    sizes="(min-width: 320px) 320px, 100vw"
-    class="i-amphtml-fill-content i-amphtml-replaced-content">
+<img
+  decoding="async"
+  src="amp.png"
+  sizes="(min-width: 320px) 320px, 100vw"
+  class="i-amphtml-fill-content i-amphtml-replaced-content"
+/>
 ```
 
 詳しくは、[srcset、sizes、heights を使った画像読み込みについての説明](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md) をご覧ください。
@@ -169,10 +177,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 例:
 
 ```html
-<amp-anim width="245"
-    height="300"
-    src="/img/cat.gif"
-    alt="cat animation">
+<amp-anim width="245" height="300" src="/img/cat.gif" alt="cat animation">
 </amp-anim>
 ```
 

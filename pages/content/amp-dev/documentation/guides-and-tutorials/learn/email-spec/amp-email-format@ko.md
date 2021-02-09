@@ -1,8 +1,8 @@
 ---
-"$title": 이메일용 AMP 형식
-order: '1'
+'$title': 이메일용 AMP 형식
+$order: 1
 formats:
-- email
+  - email
 teaser:
   text: '필수 마크업 '
 toc: 'true'
@@ -40,6 +40,7 @@ AMP는 모바일 클라이언트에서 매우 빠른 웹 페이지를 개발하�
 다음 코드는 유효한 AMP 이메일 메시지를 구성하는 최소한의 마크업을 보여줍니다.
 
 [sourcecode:html]
+
 <!DOCTYPE html>
 <html ⚡4email>
   <head>
@@ -72,21 +73,21 @@ AMP 이메일의 필수 요건은 다음과 같습니다.
 
 이메일용 AMP는 [RFC 1521, 섹션 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3)에서 정의된 것처럼 표준 `multipart/alternative` [MIME](https://en.wikipedia.org/wiki/MIME) 서브타입에 의존합니다.
 
-*자세한 내용은 [AMP 이메일의 구조 및 렌더링](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md)을 참조하세요.*
+_자세한 내용은 [AMP 이메일의 구조 및 렌더링](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md)을 참조하세요._
 
 ## 지원되는 AMP 컴포넌트<a name="supported-amp-components"></a>
 
-*<a>이메일용 AMP 지원 컴포넌트</a>를 참조하세요.*
+_<a>이메일용 AMP 지원 컴포넌트</a>를 참조하세요._
 
 ## HTML 요구 사항<a name="html-requirements"></a>
 
-*[이메일용 AMP에서 지원되는 HTML](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md)을 참조하세요.*
+_[이메일용 AMP에서 지원되는 HTML](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md)을 참조하세요._
 
 ## CSS 요구 사항<a name="css-requirements"></a>
 
 ### 지원되는 선택자 및 속성 <a name="supported-selectors-and-properties"></a>
 
-*[이메일용 AMP에서 지원되는 CSS](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md)를 참조하세요.*
+_[이메일용 AMP에서 지원되는 CSS](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md)를 참조하세요._
 
 ### AMP 문서에 CSS 지정<a name="specifying-css-in-an-amp-document"></a>
 
@@ -94,6 +95,7 @@ AMP 문서의 모든 CSS는 헤더 내의 `<style amp-custom>`태그에 포함�
 
 [sourcecode:html]
 ...
+
 <style amp-custom>
   /* any custom styles go here. */
   body {
@@ -106,7 +108,9 @@ AMP 문서의 모든 CSS는 헤더 내의 `<style amp-custom>`태그에 포함�
     background-color: grey;
   }
 </style>
+
 ...
+
 </head>
 [/sourcecode]
 

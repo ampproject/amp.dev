@@ -1,10 +1,10 @@
 ---
-"$title": تشغيل رسوم CSS المتحركة وانتقالاتها
-"$order": '1'
+'$title': تشغيل رسوم CSS المتحركة وانتقالاتها
+$order: 1
 description: تشغيل رسوم CSS المتحركة في الصفحات التي تعتمد على إضافة الفئات وإزالتها، والمكتملة عبر JavaScript. ويمكنك تحقيق السلوك نفسه في صفحات AMP من خلال استخدام إجراء toggleClass ...
 formats:
-- websites
-- ads
+  - websites
+  - ads
 ---
 
 تمكِّن رسوم CSS المتحركة عناصر الويب من الانتقال من تكوين نمط CSS إلى آخر. ويمكن للمتصفح البدء في تحديد الرسوم المتحركة عند التنزيل، لكن الحدث الذي قام بتشغيل رسوم CSS المتحركة [يعتمد على إضافة الفئات وإزالتها](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations). فيما يدعم AMP نوعي الرسوم المتحركة كليهما.
@@ -73,16 +73,25 @@ elementName.toggleClass(class="className")
 يمكنك تبديل فئة في العنصر نفسه الذي ترغب في أن يتفاعل المستخدمون معه، مثل قائمة هامبرجر متحركة.
 
 ```html
- <div id="hamburger" tabindex=1 role=button on="tap:hamburger.toggleClass(class='close')">
+<div
+  id="hamburger"
+  tabindex="1"
+  role="button"
+  on="tap:hamburger.toggleClass(class='close')"
+></div>
 ```
 
 يمكن تطبيق الإجراء `toggleClass` على عناصر أخرى أيضًا والتبديل بين فئتين من خلال إضافة السمة `force`.
 
 ```html
-<button on="tap:magicBox.toggleClass(class='invisible', force=true),magicBox.toggleClass(class='visible', force=false)">
+<button
+  on="tap:magicBox.toggleClass(class='invisible', force=true),magicBox.toggleClass(class='visible', force=false)"
+>
   Disappear
 </button>
-<button on="tap:magicBox.toggleClass(class='visible', force=true),magicBox.toggleClass(class='invisible', force=false)">
+<button
+  on="tap:magicBox.toggleClass(class='visible', force=true),magicBox.toggleClass(class='invisible', force=false)"
+>
   Reappear
 </button>
 ```
@@ -94,9 +103,14 @@ elementName.toggleClass(class="className")
 يمكنك إضافة أي عدد من فئات CSS وإزالتها مع الحالات باستخدام [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
-  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-bind"
+    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+  ></script>
   <style amp-custom>
     div {
       height: 100px;
@@ -113,13 +127,13 @@ elementName.toggleClass(class="className")
       opacity: 0;
     }
     .left {
-      transform: translatex(-50px)
+      transform: translatex(-50px);
     }
     .right {
-      transform: translatex(50px)
+      transform: translatex(50px);
     }
     button {
-      margin-top:  1rem;
+      margin-top: 1rem;
       margin-left: 1rem;
     }
   </style>
@@ -143,38 +157,31 @@ elementName.toggleClass(class="className")
       }
     </script>
   </amp-state>
-  <div [class]="magicBox[animateBox].className"> </div>
-  <button on="tap:AMP.setState({animateBox: 'invisibleBox'})">
-    Disappear
-  </button>
-  <button on="tap:AMP.setState({animateBox: 'visibleBox'})">
-    Reappear
-  </button>
-  <button on="tap:AMP.setState({animateBox: 'moveLeft'})">
-    Move Left
-  </button>
-  <button on="tap:AMP.setState({animateBox: 'moveRight'})">
-    Move Right
-  </button>
+  <div [class]="magicBox[animateBox].className"></div>
+  <button on="tap:AMP.setState({animateBox: 'invisibleBox'})">Disappear</button>
+  <button on="tap:AMP.setState({animateBox: 'visibleBox'})">Reappear</button>
+  <button on="tap:AMP.setState({animateBox: 'moveLeft'})">Move Left</button>
+  <button on="tap:AMP.setState({animateBox: 'moveRight'})">Move Right</button>
 </body>
 ```
+
 [/example]
 
 حدد رسومات متحركة لفئات متعددة من خلال إضافة قائمة بفئات CSS أولًا ضمن العلامة `<style amp-custom>` في `head` الخاص بالمستند:
 
 ```css
-    .visible {
-      opacity: 1;
-    }
-    .invisible {
-      opacity: 0;
-    }
-    .left {
-      transform: translatex(-50px)
-    }
-    .right {
-      transform: translatex(50px)
-    }
+.visible {
+  opacity: 1;
+}
+.invisible {
+  opacity: 0;
+}
+.left {
+  transform: translatex(-50px);
+}
+.right {
+  transform: translatex(50px);
+}
 ```
 
 ثم أقرِن كل فئة بحالة:
@@ -203,24 +210,16 @@ elementName.toggleClass(class="className")
 وقم بربط العنصر بالفئات:
 
 ```html
-  <div [class]="magicBox[animateBox].className"> </div>
+<div [class]="magicBox[animateBox].className"></div>
 ```
 
 تتغير الحالات من إجراء أو حدث AMP مرتبط. ويغير المثال التالي الحالة من تفاعل المستخدم:
 
 ```html
-<button on="tap:AMP.setState({animateBox: 'invisibleBox'})">
-    Disappear
-</button>
-<button on="tap:AMP.setState({animateBox: 'visibleBox'})">
-    Reappear
-</button>
-<button on="tap:AMP.setState({animateBox: 'moveLeft'})">
-    Move Left
-</button>
-<button on="tap:AMP.setState({animateBox: 'moveRight'})">
-  Move Right
-</button>
+<button on="tap:AMP.setState({animateBox: 'invisibleBox'})">Disappear</button>
+<button on="tap:AMP.setState({animateBox: 'visibleBox'})">Reappear</button>
+<button on="tap:AMP.setState({animateBox: 'moveLeft'})">Move Left</button>
+<button on="tap:AMP.setState({animateBox: 'moveRight'})">Move Right</button>
 ```
 
 باستخدام [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) بهذه الطريقة، قم بتعيين الفئة على نحو صريح لتحديد الفئة، ولن تضطر إلى إخباره بإزالة الفئات الأخرى.

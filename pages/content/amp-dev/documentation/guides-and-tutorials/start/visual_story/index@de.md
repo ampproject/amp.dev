@@ -1,10 +1,10 @@
 ---
-"$title": Erstelle deine erste Web Story
-"$order": '0'
+'$title': Erstelle deine erste Web Story
+$order: 0
 description: In diesem Tutorial lernst du die Komponente amp-story kennen, mit der du optisch ansprechende Web Storys mit AMP erstellen kannst. Am Ende dieses Tutorials wirst du …
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- stories
+  - stories
 author: bpaduch
 ---
 

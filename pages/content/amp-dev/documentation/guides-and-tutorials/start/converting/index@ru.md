@@ -1,12 +1,12 @@
 ---
-"$title": Преобразование HTML в AMP
+'$title': Преобразование HTML в AMP
 formats:
-- websites
-"$titles":
+  - websites
+'$titles':
   teaser: Convert HTML to AMP
-"$order": '0'
+$order: 0
 description: В этом уроке вы узнаете о ключевых принципах AMP и о том, чем документы AMP отличаются от традиционных HTML-документов. В ходе урока...
-"$hidden": 'true'
+'$hidden': 'true'
 teaser:
   icon: convert
   text: Узнайте, как преобразовать HTML в AMP, ознакомившись с этим пошаговым уроком.

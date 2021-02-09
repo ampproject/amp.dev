@@ -1,6 +1,6 @@
 ---
-"$title": Gratulacje!
-"$order": '9'
+'$title': Gratulacje!
+$order: 9
 description: '"Twoja pierwsza relacja AMP jest gotowa! Dzięki temu samouczkowi wiesz już jak: - Utworzyć wielostronicową relację za pomocą składnika amp-story"'
 author: bpaduch
 ---

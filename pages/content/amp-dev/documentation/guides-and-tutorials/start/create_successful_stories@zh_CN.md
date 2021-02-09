@@ -1,10 +1,10 @@
 ---
-"$title": 创作成功的网页故事时的最佳做法
-"$order": '1'
+'$title': 创作成功的网页故事时的最佳做法
+$order: 1
 description: 创作成功的网页故事时的最佳做法
-"$category": Start
+'$category': Start
 formats:
-- stories
+  - stories
 author: CrystalOnScript
 ---
 

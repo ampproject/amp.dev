@@ -1,6 +1,6 @@
 ---
-"$title": 解决验证错误
-"$order": '2'
+'$title': 解决验证错误
+$order: 2
 description: 在本部分中，我们将讲解 AMP 网页中的 AMP 验证错误及其解决方法。请注意，这些错误可能会在您的控制台中以不同的顺序出现。
 ---
 
@@ -39,13 +39,13 @@ The mandatory tag 'link rel=canonical' is missing or incorrect.
 请将以下代码**添加**到 `<meta charset="utf-8" />` 标记下方：
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 [tip type="note"] 您可以创建独立的规范 AMP 网页。在这种情况下，规范链接仍是必需的，但应指向 AMP 报道本身：
 
 ```html
-<link rel="canonical" href="article.amp.html">
+<link rel="canonical" href="article.amp.html" />
 ```
 
 [/tip]
@@ -64,7 +64,7 @@ The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 只需将 `⚡` 属性添加到 `<html>` 标记，即可解决上述错误，如下所示：
 
 ```html
-<html ⚡ lang="en">
+<html ⚡ lang="en"></html>
 ```
 
 现在，请重新加载网页并检查这两个错误是否已消失。
@@ -72,7 +72,7 @@ The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 [tip type="note"] 虽然建议您指定 `⚡`，但您也可以使用 `amp` 属性来替代 `⚡` 属性，如下所示：
 
 ```html
-<html amp lang="en">
+<html amp lang="en"></html>
 ```
 
 [/tip]
@@ -90,7 +90,7 @@ AMP 要求您为视口定义 `width` 和 `minimum-scale`。这两个值必须分
 要解决视口错误，请将以下 HTML 代码段添加到 `<head>` 标记中：
 
 ```html
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width" />
 ```
 
 在 AMP 中，必须为 `width` 和 `minimum-scale` 指定值。定义 `initial-scale` 不是一项强制性要求，但在移动网站开发中通常都会指定此值，所以我们建议您也这么做。要详细了解视口和自适应设计，请参阅[配置视口](https://developers.google.com/speed/docs/insights/ConfigureViewport)。
@@ -115,9 +115,7 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 
 ```html
 <style amp-custom>
-
-/* The content from base.css */
-
+  /* The content from base.css */
 </style>
 ```
 
@@ -128,7 +126,7 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 
 和之前一样，**重新加载**网页并验证样式表错误是否已消失。
 
-[tip type="note"] **注**：除了必须采用内嵌样式以外，所有样式信息的文件大小还不能超过 50 KB 的上限。您应该先使用  [SASS](http://sass-lang.com/) 等 CSS 预处理器缩减您的 CSS 的大小，然后再将 CSS 内嵌到 AMP 网页中。[/tip]
+[tip type="note"] **注**：除了必须采用内嵌样式以外，所有样式信息的文件大小还不能超过 50 KB 的上限。您应该先使用 [SASS](http://sass-lang.com/) 等 CSS 预处理器缩减您的 CSS 的大小，然后再将 CSS 内嵌到 AMP 网页中。[/tip]
 
 [tip type="important"] <strong>重要提示</strong>：整个 AMP 文档中只能有一个样式标记。如果 AMP 网页引用了多个外部样式表，则您需要将这些样式表整理为一组规则。要了解哪些 CSS 规则在 AMP 中有效，请参阅[受支持的 CSS](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md)。[/tip]
 
@@ -188,7 +186,63 @@ The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.
 每个 AMP 文档都必须具有以下 AMP 样板代码：
 
 ```html
-<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<style amp-boilerplate>
+  body {
+    -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+  }
+  @-webkit-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-moz-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-ms-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-o-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }</style
+><noscript
+  ><style amp-boilerplate>
+    body {
+      -webkit-animation: none;
+      -moz-animation: none;
+      -ms-animation: none;
+      animation: none;
+    }
+  </style></noscript
+>
 ```
 
 将该样板代码**添加**到文档的 `<head>` 标记底部。
@@ -251,7 +305,12 @@ The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 我们将 layout 属性**设为** `responsive`，让图片能够缩放并调整大小：
 
 ```html
-<amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+<amp-img
+  src="mountains.jpg"
+  layout="responsive"
+  width="266"
+  height="150"
+></amp-img>
 ```
 
 瞧！图片采用了正确的宽高比，并以自适应的方式填满了屏幕的整个宽度。
@@ -265,18 +324,75 @@ The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 现在，您的 AMP 文档应该会大致如下所示：
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width" />
 
-    <link rel="canonical" href="/article.html">
-    <link rel="shortcut icon" href="amp_favicon.png">
+    <link rel="canonical" href="/article.html" />
+    <link rel="shortcut icon" href="amp_favicon.png" />
 
     <title>News Article</title>
 
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
     <style amp-custom>
       body {
         width: auto;
@@ -306,15 +422,21 @@ The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
     <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
-    <header>
-      News Site
-    </header>
+    <header>News Site</header>
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
 
-      <amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+      <amp-img
+        src="mountains.jpg"
+        layout="responsive"
+        width="266"
+        height="150"
+      ></amp-img>
     </article>
   </body>
 </html>

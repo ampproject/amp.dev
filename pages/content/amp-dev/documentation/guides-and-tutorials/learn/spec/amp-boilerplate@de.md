@@ -1,9 +1,9 @@
 ---
-"$title": AMP Boilerplate Code
-order: '9'
+'$title': AMP Boilerplate Code
+$order: 9
 formats:
-- websites
-- stories
+  - websites
+  - stories
 teaser:
   text: head > style[amp-boilerplate] und noscript > style[amp-boilerplate]
 ---

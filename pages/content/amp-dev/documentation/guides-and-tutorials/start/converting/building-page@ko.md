@@ -1,6 +1,6 @@
 ---
-"$title": Building a regular HTML page
-"$order": '1'
+'$title': Building a regular HTML page
+$order: 1
 description: 프로젝트 디렉토리에서 article.html라는 파일을 찾을 수 있습니다. 이 파일의 뉴스 기사를 AMP 페이지로...
 ---
 
@@ -14,10 +14,9 @@ description: 프로젝트 디렉토리에서 article.html라는 파일을 찾을
 `article.amp.html` 파일은 다음과 같이 표시되어야 합니다.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-
     <title>News Article</title>
 
     <link href="base.css" rel="stylesheet" />
@@ -25,15 +24,16 @@ description: 프로젝트 디렉토리에서 article.html라는 파일을 찾을
     <script type="text/javascript" src="base.js"></script>
   </head>
   <body>
-    <header>
-      News Site
-    </header>
+    <header>News Site</header>
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
     </article>
-    <img src="mountains.jpg">
+    <img src="mountains.jpg" />
   </body>
 </html>
 ```

@@ -1,8 +1,8 @@
 ---
-"$title": Struttura e rendering delle e-mail AMP
-order: '2'
+'$title': Struttura e rendering delle e-mail AMP
+$order: 2
 formats:
-- email
+  - email
 teaser:
   text: 'Le e-mail hanno la struttura di un '
 toc: 'true'
@@ -45,7 +45,7 @@ La parte `text/x-amp-html` deve essere innestata sotto un nodo `multipart/altern
 
 L'elemento `multipart/alternative` deve contenere almeno un nodo non AMP (`text/plain` o `text/html`) oltre al nodo `text/x-amp-html`. La parte non AMP verrà mostrata agli utenti i cui client di posta elettronica non supportano AMP o che hanno disattivato l'opzione tramite le impostazioni del proprio fornitore di posta elettronica.
 
-Nota: Alcuni client di posta elettronica [[1]](https://openradar.appspot.com/radar?id=6054696888303616) riproducono solo l'ultima parte MIME, quindi si consiglia di posizionare la parte MIME `text/x-amp-html` *prima* della parte MIME `text/html`.
+Nota: Alcuni client di posta elettronica [[1]](https://openradar.appspot.com/radar?id=6054696888303616) riproducono solo l'ultima parte MIME, quindi si consiglia di posizionare la parte MIME `text/x-amp-html` _prima_ della parte MIME `text/html`.
 
 ### Semantica delle funzioni di risposta/inoltro <a name="replyingforwarding-semantics"></a>
 

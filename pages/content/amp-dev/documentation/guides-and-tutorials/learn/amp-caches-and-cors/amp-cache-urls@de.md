@@ -1,14 +1,14 @@
 ---
-"$title": URL Format und Anfragenbearbeitung im AMP Cache
-"$order": '9'
+'$title': URL Format und Anfragenbearbeitung im AMP Cache
+$order: 9
 toc: 'false'
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 author: Gregable
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 In diesem Dokument erfährst du mehr über das URL Format des AMP Cache und über seine Verarbeitung von Anfragen.

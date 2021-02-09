@@ -1,8 +1,8 @@
 ---
-"$title": AMP 이메일의 구조 및 렌더링
-order: '2'
+'$title': AMP 이메일의 구조 및 렌더링
+$order: 2
 formats:
-- email
+  - email
 teaser:
   text: '이메일은 '
 toc: 'true'

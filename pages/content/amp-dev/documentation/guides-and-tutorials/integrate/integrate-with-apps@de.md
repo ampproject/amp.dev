@@ -1,9 +1,9 @@
 ---
-"$title": Integriere AMP in deine App
-"$order": '2'
+'$title': Integriere AMP in deine App
+$order: 2
 description: Dieser Leitfaden richtet sich an Entwickler von mobilen Apps und Web Apps, die AMP Seiten integrieren und auf diese verweisen möchten. Stelle dir beispielsweise eine mobile Chat App vor, …
 formats:
-- websites
+  - websites
 ---
 
 Dieser Leitfaden richtet sich an Entwickler von mobilen Apps und Web Apps, die AMP Seiten integrieren und auf diese verweisen möchten. Stelle dir beispielsweise eine mobile Chat App vor, die die AMP Version eines geteilten Links lädt, um Benutzern eine schnellere Erfahrung zu bieten.
@@ -47,10 +47,12 @@ Google stellt die AMP URL API bereit, um die passenden AMP HTML URLs für eine b
 Ein Beispiel mit einer vorgegebenen Liste von URLs:
 
 ```json
-{"urls": [
-  "https://www.example.org/article-with-amp-version",
-  "http://www.example.com/no-amp-version.html"
-]}
+{
+  "urls": [
+    "https://www.example.org/article-with-amp-version",
+    "http://www.example.com/no-amp-version.html"
+  ]
+}
 ```
 
 Der Body der Antwort enthält die AMP URL Zuordnung im JSON Format:

@@ -1,8 +1,8 @@
 ---
-"$title": AMP for Email 形式
-order: '1'
+'$title': AMP for Email 形式
+$order: 1
 formats:
-- email
+  - email
 teaser:
   text: '必要なマークアップ '
 toc: 'true'
@@ -35,11 +35,12 @@ AMP は、モバイルクライアント向けの超高速ウェブページを�
 
 AMP for Email 形式は、メールメッセージに使用できる [AMP コンポーネントのサブセット](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)です。AMP メールの受信者は、直接メール内で AMP コンポーネントを閲覧し、対話することができます。
 
-##  必要なマークアップ
+## 必要なマークアップ
 
 以下のコードは、有効な AMP メールメッセージを構成する最小限のマークアップを示します。
 
 [sourcecode:html]
+
 <!DOCTYPE html>
 <html ⚡4email>
   <head>
@@ -72,21 +73,21 @@ AMP メールメッセージには、以下の要件があります。
 
 AMP for Email は、[RFC 1521, section 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3) に定義される標準の `multipart/alternative` [MIME](https://en.wikipedia.org/wiki/MIME) サブタイプに依存しています。
 
-*詳細は、「[AMP メールの構造とレンダリング](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md)」を参照してください。*
+_詳細は、「[AMP メールの構造とレンダリング](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md)」を参照してください。_
 
 ## サポートされている AMP コンポーネント <a name="supported-amp-components"></a>
 
-*「[AMP for Email 対応コンポーネント](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)」を参照してください。*
+_「[AMP for Email 対応コンポーネント](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)」を参照してください。_
 
 ## HTML の要件 <a name="html-requirements"></a>
 
-*「[AMP for Email でサポートされている HTML](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md)」を参照してください。*
+_「[AMP for Email でサポートされている HTML](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md)」を参照してください。_
 
 ## CSS の要件 <a name="css-requirements"></a>
 
 ### サポートされているセレクタとプロパティ<a name="supported-selectors-and-properties"></a>
 
-*「[AMP for Email でサポートされている CSS](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md)」を参照してください。*
+_「[AMP for Email でサポートされている CSS](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md)」を参照してください。_
 
 ### AMP ドキュメントでの CSS の指定 <a name="specifying-css-in-an-amp-document"></a>
 
@@ -94,6 +95,7 @@ AMP ドキュメントのすべての CSS は、head 内の `<style amp-custom>`
 
 [sourcecode:html]
 ...
+
 <style amp-custom>
   /* any custom styles go here. */
   body {
@@ -106,7 +108,9 @@ AMP ドキュメントのすべての CSS は、head 内の `<style amp-custom>`
     background-color: grey;
   }
 </style>
+
 ...
+
 </head>
 [/sourcecode]
 

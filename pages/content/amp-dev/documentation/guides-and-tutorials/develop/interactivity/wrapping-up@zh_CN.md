@@ -1,6 +1,6 @@
 ---
-"$title": Wrapping up
-"$order": '4'
+'$title': Wrapping up
+$order: 4
 description: 恭喜！您刚才成功创建了一个具备以下特性的互动式电子商务商品详情页面：对于每个库存量单位 (SKU)，都提供了可从远程 JSON 端点按需提取的多种尺码和价格供用户选择。
 ---
 

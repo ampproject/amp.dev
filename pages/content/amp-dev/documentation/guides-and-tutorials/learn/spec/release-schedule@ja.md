@@ -1,13 +1,13 @@
 ---
-"$title": AMP のリリーススケジュール
-order: '10'
+'$title': AMP のリリーススケジュール
+$order: 10
 formats:
-- websites
-- email
-- stories
-- ads
+  - websites
+  - email
+  - stories
+  - ads
 teaser:
-  text: "- リリースチャンネル"
+  text: '- リリースチャンネル'
 ---
 
 <!--
@@ -18,22 +18,22 @@ have a look and request a pull request there.
 -->
 
 - [リリースチャンネル ](#release-channels)
-    - [ナイトリー ](#nightly)
-    - [ウィークリー ](#weekly)
-        - [ベータおよび実験的チャンネル ](#experimental-and-beta-channels)
-    - [長期安定版（LTS）](#long-term-stable-lts)
+  - [ナイトリー ](#nightly)
+  - [ウィークリー ](#weekly)
+    - [ベータおよび実験的チャンネル ](#experimental-and-beta-channels)
+  - [長期安定版（LTS）](#long-term-stable-lts)
 - [変更内容がリリースに含まれるかを確認する ](#determining-if-your-change-is-in-a-release)
 - [リリースケイデンス ](#release-cadence)
-    - [詳細スケジュール ](#detailed-schedule)
-    - [リリースフリーズ ](#release-freezes)
+  - [詳細スケジュール ](#detailed-schedule)
+  - [リリースフリーズ ](#release-freezes)
 
-AMP の新規リリースは、毎週火曜日にすべての AMP ページにプッシュされます。**AMP への変更が amphtml リポジトリのマスターブランチにマージされてから変更がすべてのユーザーに対してライブになるまでには、通常 1～2 週間かかります。**
+AMP の新規リリースは、毎週火曜日にすべての AMP ページにプッシュされます。**AMP への変更が amphtml リポジトリのマスターブランチにマージされてから変更がすべてのユーザーに対してライブになるまでには、通常 1 ～ 2 週間かかります。**
 
 ## リリースチャンネル <a name="release-channels"></a>
 
 AMP ランタイムと拡張機能は、さまざまな*リリースチャンネル*を通じて提供されます。各チャンネルには、開発者向けと AMP HTML プロジェクト自体向けの目的があります。[`ampproject/amphtml`](https://github.com/ampproject/amphtml) リポジトリのコードがリリースビルドに含まれる仕組みとタイミングに関する詳細は、[リリースケイデンスのセクション](#release-cadence)を参照してください。
 
-PR が以下のいずれかのリリースチャンネルに含まれているかどうかを判断するには、「*PR Use: In Canary*」、「*PR Use: In Production*」、または「*PR Use: In LTS*」という GitHub ラベルを確認してください（詳細は、「[変更内容がリリースに含まれるかを確認する](#determining-if-your-change-is-in-a-release)」セクションを参照してください）。
+PR が以下のいずれかのリリースチャンネルに含まれているかどうかを判断するには、「_PR Use: In Canary_」、「_PR Use: In Production_」、または「_PR Use: In LTS_」という GitHub ラベルを確認してください（詳細は、「[変更内容がリリースに含まれるかを確認する](#determining-if-your-change-is-in-a-release)」セクションを参照してください）。
 
 ### ナイトリー <a name="nightly"></a>
 
@@ -79,12 +79,12 @@ PR が以下のいずれかのリリースチャンネルに含まれている�
 
 ## 変更内容がリリースに含まれるかを確認する <a name="determining-if-your-change-is-in-a-release"></a>
 
-[*Type: Release* GitHub issues](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) は、初期カットから、**実験的**/**ベータ**チャンネルでのテスト、**安定**および **LTS** チャンネルでのリリースの評価まで、現行または過去のリリースのステータスを追跡するために使用されます。リリースに関する告知は、[AMP Slack #release channel](https://amphtml.slack.com/messages/C4NVAR0H3/) で行われます（[Slack に登録](https://bit.ly/amp-slack-signup)）。
+[_Type: Release_ GitHub issues](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) は、初期カットから、**実験的**/**ベータ**チャンネルでのテスト、**安定**および **LTS** チャンネルでのリリースの評価まで、現行または過去のリリースのステータスを追跡するために使用されます。リリースに関する告知は、[AMP Slack #release channel](https://amphtml.slack.com/messages/C4NVAR0H3/) で行われます（[Slack に登録](https://bit.ly/amp-slack-signup)）。
 
 あるビルドのどの変更が含まれるかを判断するには、以下のいずれかを使用します。
 
-- 各リリースビルドの [*Type: Release* GitHub issues](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) には、そのリリースに含まれる変更内容が記載された特定の[リリースページ](https://github.com/ampproject/amphtml/releases)へのリンクが含まれます。
-- [*PR Use: In Beta / Experimental*](https://github.com/ampproject/amphtml/issues?q=label%3A%22PR+use%3A+In+Beta+%2F+Experimental%22)、[*PR Use: In Stable*](https://github.com/ampproject/amphtml/issues?utf8=%E2%9C%93&q=label%3A%22PR%20use%3A%20In%20Production%22)、および [*PR Use: In LTS*](https://github.com/ampproject/amphtml/issues?utf8=%E2%9C%93&q=label%3A%22PR%20use%3A%20In%20LTS%22) ラベルは、PR が*ウィークリー*または **LTS** ビルドに昇格されると追加されます。ビルドが作成されるタイミングとラベルが追加されるタイミングには遅延が生じる場合があります。
+- 各リリースビルドの [_Type: Release_ GitHub issues](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) には、そのリリースに含まれる変更内容が記載された特定の[リリースページ](https://github.com/ampproject/amphtml/releases)へのリンクが含まれます。
+- [_PR Use: In Beta / Experimental_](https://github.com/ampproject/amphtml/issues?q=label%3A%22PR+use%3A+In+Beta+%2F+Experimental%22)、[_PR Use: In Stable_](https://github.com/ampproject/amphtml/issues?utf8=%E2%9C%93&q=label%3A%22PR%20use%3A%20In%20Production%22)、および [_PR Use: In LTS_](https://github.com/ampproject/amphtml/issues?utf8=%E2%9C%93&q=label%3A%22PR%20use%3A%20In%20LTS%22) ラベルは、PR が*ウィークリー*または **LTS** ビルドに昇格されると追加されます。ビルドが作成されるタイミングとラベルが追加されるタイミングには遅延が生じる場合があります。
 
 ## リリースケイデンス <a name="release-cadence"></a>
 
@@ -96,11 +96,11 @@ AMP の新規バージョンをどれくらいの頻度で全ユーザーに対�
 - 新規バージョンをプッシュする際に発生する可能性のあるキャッシュ無効化
 - 新機能を素早く公開したいという願望
 
-こういった要因をすべて考慮したうえで、プッシュサイクルを 1～2 週間に決定しました。これまでのところ、これが合理的な妥協として成り立っていますが、こういった要因を継続して評価し、将来的に変更を適用することも考えられます。
+こういった要因をすべて考慮したうえで、プッシュサイクルを 1 ～ 2 週間に決定しました。これまでのところ、これが合理的な妥協として成り立っていますが、こういった要因を継続して評価し、将来的に変更を適用することも考えられます。
 
 ### 詳細スケジュール <a name="detailed-schedule"></a>
 
-このスケジュールにできるだけ緊密に従うように努めていますが、複雑化すれば遅延が生じる可能性もあります。リリースの最新ステータスは、「[*Type: Release* GitHub issues](https://github.com/ampproject/amphtml/labels/Type%3A%20Release)」および [AMP Slack #release channel](https://amphtml.slack.com/messages/C4NVAR0H3/)（[Slack に登録](https://bit.ly/amp-slack-signup)）で追跡することができます。
+このスケジュールにできるだけ緊密に従うように努めていますが、複雑化すれば遅延が生じる可能性もあります。リリースの最新ステータスは、「[_Type: Release_ GitHub issues](https://github.com/ampproject/amphtml/labels/Type%3A%20Release)」および [AMP Slack #release channel](https://amphtml.slack.com/messages/C4NVAR0H3/)（[Slack に登録](https://bit.ly/amp-slack-signup)）で追跡することができます。
 
 - 火曜日[午前 11 時（米国太平洋時間）](https://www.google.com/search?q=11am+pacific+in+current+time+zone): 新しい**実験的**および**ベータ**リリースが[すべてのテストに合格した最新のマスタービルド](https://travis-ci.com/ampproject/amphtml/branches)から構築され、[AMP 実験的チャンネル](#amp-experimental-and-beta-channels)または [AMP ベータチャンネル](#amp-experimental-and-beta-channels)にオプトインしている AMP ユーザーにプッシュされます。
 - 水曜日: *実験的チャンネル*および*ベータチャンネル*ユーザーのバグレポートを確認し、すべてが良好であれば、AMP ページの 1% に対して**ベータ**をプッシュします。
@@ -121,7 +121,7 @@ AMP の本番リリースを省略する場合がたまにあり、これをリ�
 
 リリースフリーズには、以下のような原因があります。
 
-- AMP リリースを**安定**にプッシュしてそれを監視するのに十分な人員が確保されない時期。現在、AMP リリースを実施している人員のほとんどが米国を拠点としているため、通常、米国の独立記念日（7 月4 日）、サンクスギビング（11 月第 4 木曜日）、クリスマス（12 月 25 日）、および大晦日と元日（12 月 31 日/ 1 月 1 日）といった主な米国の祝日が発生する週です。
+- AMP リリースを**安定**にプッシュしてそれを監視するのに十分な人員が確保されない時期。現在、AMP リリースを実施している人員のほとんどが米国を拠点としているため、通常、米国の独立記念日（7 月 4 日）、サンクスギビング（11 月第 4 木曜日）、クリスマス（12 月 25 日）、および大晦日と元日（12 月 31 日/ 1 月 1 日）といった主な米国の祝日が発生する週です。
 - [技術運営委員会（TSC）](https://github.com/ampproject/meta-tsc)またはリリースを実施する人員によって、セキュリティやプライバシーに関する問題などの緊急事態が認められた場合。
 - TSC によってコードベースの安定性が特別に重要であると判定された場合など。
 

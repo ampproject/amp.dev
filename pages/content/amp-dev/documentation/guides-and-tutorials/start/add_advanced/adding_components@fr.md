@@ -1,7 +1,7 @@
 ---
-"$title": Ajout de composants AMP étendus
-"$order": '2'
-description: 'Le système de composants AMP vous permet d''intégrer rapidement des fonctionnalités efficaces et réactives dans vos articles avec un minimum d''effort. La bibliothèque HTML AMP a trois classifications pour les composants AMP : ...'
+'$title': Ajout de composants AMP étendus
+$order: 2
+description: "Le système de composants AMP vous permet d'intégrer rapidement des fonctionnalités efficaces et réactives dans vos articles avec un minimum d'effort. La bibliothèque HTML AMP a trois classifications pour les composants AMP : ..."
 ---
 
 Le système de composants AMP vous permet d'intégrer rapidement des fonctionnalités efficaces et réactives dans vos articles avec un minimum d'effort. La bibliothèque HTML AMP comporte trois classifications pour les composants AMP :
@@ -25,7 +25,8 @@ Jetez un œil à cet exemple d'annonce **DoubleClick** :
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/image/static">
+  data-slot="/35096353/amptesting/image/static"
+>
 </amp-ad>
 ```
 
@@ -40,7 +41,8 @@ L'attribut `data-slot` est plus spécifique. Dans [`amp-ad`](../../../../documen
   type="a9"
   data-aax_size="300x250"
   data-aax_pubname="test123"
-  data-aax_src="302">
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -51,7 +53,11 @@ N'oubliez pas que tous les composants ne sont pas inclus dans le fichier JavaScr
 **Ajoutez** le script suivant à la section `<head>` :
 
 ```html
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script
+  async
+  custom-element="amp-ad"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+></script>
 ```
 
 **Actualisez** la page et vous devriez voir deux annonces de test :
@@ -67,7 +73,8 @@ Les deux [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) ci
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/uk">
+  data-slot="/35096353/amptesting/geo/uk"
+>
   <div fallback>No ad appeared because you're not browsing from the UK!</div>
 </amp-ad>
 
@@ -75,7 +82,8 @@ Les deux [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) ci
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/us">
+  data-slot="/35096353/amptesting/geo/us"
+>
   <div fallback>No ad appeared because you're not browsing from the US!</div>
 </amp-ad>
 ```
@@ -107,14 +115,15 @@ Essayons d'incorporer une vidéo YouTube dans le document. **Ajoutez** le code s
   data-videoid="npum8JsITQE"
   layout="responsive"
   width="480"
-  height="270">
+  height="270"
+>
   <div fallback>
     <p>The video could not be loaded.</p>
   </div>
 </amp-youtube>
 ```
 
-**Actualisez** la page. Au lieu de la vidéo, vous verrez ce texte : *"La vidéo n'a pas pu être chargée."*
+**Actualisez** la page. Au lieu de la vidéo, vous verrez ce texte : _"La vidéo n'a pas pu être chargée."_
 
 Même si votre navigateur peut afficher des vidéos YouTube sans problème, vous recevrez toujours cette erreur. Pourquoi ? Le chargement de la vidéo n'a pas échoué, mais le composant lui-même a échoué.
 
@@ -125,7 +134,11 @@ N'oubliez pas que tous les composants ne sont pas inclus dans le fichier JavaScr
 **Ajoutez** le script suivant à la section `<head>` :
 
 ```html
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script
+  async
+  custom-element="amp-youtube"
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+></script>
 ```
 
 **Actualisez** la page et vous devriez voir la vidéo YouTube :
@@ -145,7 +158,11 @@ L'intégration de tweets préformatés de Twitter est une fonctionnalité couran
 Commencez par ajouter la requête JavaScript suivante à la section `<head>` de votre document :
 
 ```html
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script
+  async
+  custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+></script>
 ```
 
 Maintenant, dans votre article, **ajoutez** ce code pour intégrer le tweet :
@@ -155,7 +172,8 @@ Maintenant, dans votre article, **ajoutez** ce code pour intégrer le tweet :
   width="486"
   height="657"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
 
@@ -180,7 +198,11 @@ AMP fournit un autre composant spécialement conçu pour ce type de situation, i
 Essayons. Tout d'abord, **ajoutez** la bibliothèque du composant à la section `<head>` :
 
 ```html
-<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+<script
+  async
+  custom-element="amp-fit-text"
+  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+></script>
 ```
 
 Ajoutez ce qui suit à votre page :
@@ -205,7 +227,11 @@ Ou, que faire si la citation est plus longue ?
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-   And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+  And the Raven, never flitting, still is sitting, still is sitting. On the
+  pallid bust of Pallas just above my chamber door; And his eyes have all the
+  seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming
+  throws his shadow on the floor; And my soul from out that shadow that lies
+  floating on the floor. Shall be lifted—nevermore!
 </amp-fit-text>
 ```
 

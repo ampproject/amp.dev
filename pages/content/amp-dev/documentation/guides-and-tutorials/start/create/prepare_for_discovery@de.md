@@ -1,13 +1,13 @@
 ---
-"$title": Bereite deine Seite für das Auffinden und die Verteilung vor
-"$order": '4'
+'$title': Bereite deine Seite für das Auffinden und die Verteilung vor
+$order: 4
 description: In manchen Fällen ist es sinnvoll, sowohl eine AMP Version als auch eine Version ohne AMP derselben Seite zu haben, z. B. für einen Nachrichtenartikel …
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
-In manchen Fällen ist es sinnvoll, sowohl eine AMP Version als auch eine Version ohne AMP derselben Seite zu haben, z. B. für einen Nachrichtenartikel. Aber woher weiß die Google Suche nach dem Fund deiner traditionellen Seite eigentlich, *dass es auch eine "gekoppelte" AMP Version gibt*?
+In manchen Fällen ist es sinnvoll, sowohl eine AMP Version als auch eine Version ohne AMP derselben Seite zu haben, z. B. für einen Nachrichtenartikel. Aber woher weiß die Google Suche nach dem Fund deiner traditionellen Seite eigentlich, _dass es auch eine "gekoppelte" AMP Version gibt_?
 
 ## Verknüpfen von Seiten mit `<link>`
 
@@ -16,12 +16,14 @@ Um festzulegen, dass eine nicht-AMP Seite und eine AMP Seite als "gekoppelt" beh
 Füge Folgendes zu deiner nicht-AMP Seite hinzu:
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
 Und füge dies zu deiner AMP Seite hinzu:
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
@@ -30,6 +32,7 @@ Und füge dies zu deiner AMP Seite hinzu:
 Auch wenn du nur eine Seite hast und es eine AMP Seite ist, musst du den kanonischen Link hinzufügen, der in diesem Fall auf sich selbst verweist:
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 

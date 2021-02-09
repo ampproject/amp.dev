@@ -1,11 +1,11 @@
 ---
-"$title": How AMP pages are cached
-"$order": '0'
+'$title': How AMP pages are cached
+$order: 0
 description: 이 문서에서는 AMP 에코 시스템에서 AMP 캐시의 역할과 AMP 페이지가 캐시되는 방식에 대해 알아 봅니다.
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 ---
 
 이 문서에서는 AMP 에코 시스템에서의 AMP 캐시의 역할과 AMP 페이지의 캐시 처리 방법에 대해 설명합니다.
@@ -59,7 +59,7 @@ AMP 형식을 사용함으로써 콘텐츠가 AMP 캐시에 의해 캐시될 수
 
 - **캐시 URL 요청**: 플랫폼에서는 AMP 캐시 URL 형식을 사용하여 특별히 AMP 페이지를 요청할 수 있습니다. AMP 캐시는 역방향 프록시로 작동하므로 플랫폼이 페이지에 액세스할 경우 페이지가 자동으로 캐시됩니다.
 
-    - Google AMP Cache URL 예시: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
+  - Google AMP Cache URL 예시: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
 참고 : AMP 캐시 URL은 사용자를 대상으로하는 URL이 아니며, 사용자는 일반적으로 이러한 URL을 통해 콘텐츠를 요청하지 않습니다.
 

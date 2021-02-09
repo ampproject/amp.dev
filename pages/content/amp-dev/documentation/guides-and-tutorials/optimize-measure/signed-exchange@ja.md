@@ -1,8 +1,8 @@
 ---
-"$title": Signed Exchange を使った AMP の配信
-"$order": '4'
+'$title': Signed Exchange を使った AMP の配信
+$order: 4
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 ---
 
@@ -22,12 +22,12 @@ Signed Exchange を実装するには、以下の要件を満たす必要があ�
 
 - サーバーが生成する HTTP ヘッダーを構成して制御できること。（Blogger などの最も純粋なウェブベースのホスティングソリューションは、Signed Exchange との*互換性がありません*。）
 - [Go バイナリ](https://golang.org/doc/install)として、または [Docker VM](https://docs.docker.com/machine/get-started/) 内で [`amppackager`](https://github.com/ampproject/amppackager/blob/master/README.md) 実行するなどして AMP Signed Exchange を生成できること。
-    - packager は、6 週間ごとに更新する必要があります。
+  - packager は、6 週間ごとに更新する必要があります。
 - エッジ HTTP サーバーで、[Vary](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary) ヘッダーが `Accept` と `AMP-Cache-Transform` であり、同一の URL に対して異なるコンテンツを配信できること。
 - `amppackager` を実行しているシステムは、以下の項目にネットワークリクエスト送信できる必要があります。
-    - 証明書を発行する証明書発行機関
-    - 署名する AMP ドキュメントをホストするサイト運営者のサーバー
-    - AMP の現在のバージョンを取得する `cdn.ampproject.org`
+  - 証明書を発行する証明書発行機関
+  - 署名する AMP ドキュメントをホストするサイト運営者のサーバー
+  - AMP の現在のバージョンを取得する `cdn.ampproject.org`
 - 永続的なストレージファイルシステムが、同一のデータセンターで実行している `amppackager` のインスタンス間で共有されていること。
 
 # Signed Exchange の実装
@@ -80,7 +80,7 @@ MHcCAQEEINDgf1gprbdD6hM1ttmRC9+tOqJ+lNRtHwZahJIXfLADoAoGCCqGSM49
 -----END EC PRIVATE KEY-----
 ```
 
-**CertFile** は公開証明書です。DigiCert が証明書を提供した場合は、DigiCert が提供したオリジン固有の証明書と `DigiCertCA.crt` ファイルを結合して、CertFile をさs九生することができます。
+**CertFile** は公開証明書です。DigiCert が証明書を提供した場合は、DigiCert が提供したオリジン固有の証明書と `DigiCertCA.crt` ファイルを結合して、CertFile をさ s 九生することができます。
 
 ```txt
 -----BEGIN CERTIFICATE-----

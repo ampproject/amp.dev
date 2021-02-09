@@ -1,10 +1,10 @@
 ---
-"$title": 将 AMP 网站转换成 PWA
-"$order": '10'
+'$title': 将 AMP 网站转换成 PWA
+$order: 10
 description: 通过在浏览器中缓存资源，PWA 可以向用户提供数据、素材资源和离线网页，保证用户参与其中并获得相关信息。
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: crystalonscript
 ---
 

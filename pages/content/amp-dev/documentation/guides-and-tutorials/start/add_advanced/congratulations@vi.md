@@ -1,6 +1,6 @@
 ---
-"$title": Chúc mừng!
-"$order": '7'
+'$title': Chúc mừng!
+$order: 7
 description: Bạn đã hoàn thành bài thực hành "Thêm các tính năng AMP nâng cao" và đã sẵn sàng khám phá nhiều thành phần nâng cao chính yếu của AMP!
 ---
 

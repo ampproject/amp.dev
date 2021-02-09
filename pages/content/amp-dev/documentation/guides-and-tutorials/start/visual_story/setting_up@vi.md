@@ -1,6 +1,6 @@
 ---
-"$title": Thiết lập
-"$order": '1'
+'$title': Thiết lập
+$order: 1
 description: Thiết lập môi trường phát triển của bạn. Bước 1. Tải về đoạn code. Tải đoạn code mẫu cho bài thực hành dưới dạng tập tin ZIP hoặc qua git...
 author: bpaduch
 ---
@@ -20,7 +20,7 @@ Trước khi bắt đầu bài thực hành này, bạn sẽ cần những đi�
 
 1. Tải về đoạn code cho hướng dẫn này, vốn được nén thành một tập tin zip, từ URL sau: <a href="https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip">https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip</a>
 
-2. Giải nén nội dung trong tập tin zip đó. Trong thư mục **amp-pets-story** là các tập tin hình ảnh, video, âm thanh và dữ liệu mà ta sẽ dùng để tạo câu chuyện.  Tập tin **pets.html** là điểm khởi đầu cho câu chuyện. Phiên bản hoàn chỉnh của câu chuyện có thể tìm thấy trong tập tin [pets-completed.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html).
+2. Giải nén nội dung trong tập tin zip đó. Trong thư mục **amp-pets-story** là các tập tin hình ảnh, video, âm thanh và dữ liệu mà ta sẽ dùng để tạo câu chuyện. Tập tin **pets.html** là điểm khởi đầu cho câu chuyện. Phiên bản hoàn chỉnh của câu chuyện có thể tìm thấy trong tập tin [pets-completed.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html).
 
 #### Bước 2. Chạy trang mẫu
 

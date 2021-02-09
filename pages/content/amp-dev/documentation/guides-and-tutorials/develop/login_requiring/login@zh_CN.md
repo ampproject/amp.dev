@@ -1,6 +1,6 @@
 ---
-"$title": Login
-"$order": '1'
+'$title': Login
+$order: 1
 description: 首次到达该网页时，您会看到 2 条评论和一个登录按钮。如果在代码中查找登录按钮，您会找到以下内容…
 ---
 
@@ -12,6 +12,7 @@ description: 首次到达该网页时，您会看到 2 条评论和一个登录�
 
 [sourcecode:html]
 <span amp-access="NOT loggedIn" role="button" tabindex="0" amp-access-hide>
+
   <h5>Please login to comment</h5>
   <button on="tap:amp-access.login-sign-in" class="button-primary comment-button">Login</button>
 </span>
@@ -20,6 +21,7 @@ description: 首次到达该网页时，您会看到 2 条评论和一个登录�
 [`amp-access`](../../../../documentation/components/reference/amp-access.md) 相关属性的行为取决于 [`amp-access`](../../../../documentation/components/reference/amp-access.md) 的网页级配置，在此示例中如下所示：
 
 [sourcecode:html]
+
 <script id="amp-access" type="application/json">
   {
     "authorization": "https://ampbyexample.com/samples_templates/comment_section/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
@@ -34,6 +36,7 @@ description: 首次到达该网页时，您会看到 2 条评论和一个登录�
     }
   }
 </script>
+
 [/sourcecode]
 
 授权端点会被作为 AMPByExample 的一部分进行部署。网页发布商负责提供此端点。在此示例中，为简单起见，我们只实现了基本逻辑，以便服务器在收到此请求后读取名为 `ABE_LOGGED_IN` 的 Cookie 的值。如果该 Cookie 不存在，我们会返回包含 `loggedIn = false` 的 JSON 响应。因此，当用户首次到达该网页时，此请求会返回 `loggedIn = false`，并且网页上会显示登录按钮。
@@ -42,9 +45,9 @@ description: 首次到达该网页时，您会看到 2 条评论和一个登录�
 
 [sourcecode:json]
 {
-	"login": {
-    "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
-  }
+"login": {
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
+}
 }
 
 [/sourcecode]

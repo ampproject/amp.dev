@@ -1,14 +1,14 @@
 ---
-"$title": AMP Önbellek URL Biçimi ve İstek İşleme
-"$order": '9'
+'$title': AMP Önbellek URL Biçimi ve İstek İşleme
+$order: 9
 toc: 'false'
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 author: Gregable
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 Bu belgede, AMP Önbellek URL biçimi ve istekleri nasıl işlediği hakkında bilgi edineceksiniz.
@@ -184,7 +184,7 @@ Bir AMP Önbellek Kaynağı başlık değeri aşağıdaki örneklerden biri gibi
 - `www-example-com`
 - `v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq`
 
-Ardından, “etki alanı öneki”nin en az bir ‘`-`’ (kısa çizgi) içerip içermediğini kontrol edin. Bir veya daha fazla kısa çizgi içermesi en yaygın durumdur. "Etki alanı öneki" en az bir  ‘`-`’ (kısa çizgi) içermiyorsa, AMP Önbellek Kaynağı doğrudan tersine çevrilemez. Bunun yerine, olası yayıncı etki alanları kümesini biliyorsanız, bu belgede yukarıda belirtilen etki alanı adı algoritmasını kullanarak AMP Önbellek Kaynakları kümesini oluşturabilirsiniz. Daha sonra sabit kümeye karşı doğrulayabilirsiniz.
+Ardından, “etki alanı öneki”nin en az bir ‘`-`’ (kısa çizgi) içerip içermediğini kontrol edin. Bir veya daha fazla kısa çizgi içermesi en yaygın durumdur. "Etki alanı öneki" en az bir ‘`-`’ (kısa çizgi) içermiyorsa, AMP Önbellek Kaynağı doğrudan tersine çevrilemez. Bunun yerine, olası yayıncı etki alanları kümesini biliyorsanız, bu belgede yukarıda belirtilen etki alanı adı algoritmasını kullanarak AMP Önbellek Kaynakları kümesini oluşturabilirsiniz. Daha sonra sabit kümeye karşı doğrulayabilirsiniz.
 
 Algoritmanın geri kalanı, “etki alanı öneki”nin en az bir ‘`-`’ (kısa çizgi) içerdiğini varsayar.
 
@@ -193,7 +193,7 @@ Algoritmanın geri kalanı, “etki alanı öneki”nin en az bir ‘`-`’ (kı
 3. 2.adımda çıkarılan karakterleri sırayla tekrarlayın ve karşılaşıldığı gibi yayınlayın. Bir "`-`" (kısa çizgi) ile karşılaştığınızda, aşağıdaki karaktere bakın. Aşağıdaki karakter de bir "`-`" (kısa çizgi) ise, her iki karakteri de girdiden atlayın ve tek bir `-` "(kısa çizgi) verin. Aşağıdaki karakter başka bir karakter ise, yalnızca geçerli tek "`-`" (kısa çizgiyi) atlayın ve bir "`.`" (nokta) koyun. Örneğin, `a--b-example-com`, `a-b.example.com` olur.
 4. Punycode 3. adımın sonucunu kodlayın. Punycode için bkz. [RFC 3492](https://tools.ietf.org/html/rfc3492).
 
-4. Adımın sonucu Yayıncı Etki Alanı olacaktır. Protokol, etki alanının kendisinde kullanılamıyor, ancak ya `http` ya da `https`. Bağlantı noktası her zaman protokol için varsayılandır.
+5. Adımın sonucu Yayıncı Etki Alanı olacaktır. Protokol, etki alanının kendisinde kullanılamıyor, ancak ya `http` ya da `https`. Bağlantı noktası her zaman protokol için varsayılandır.
 
 ## Yönlendirme ve Hata İşleme
 

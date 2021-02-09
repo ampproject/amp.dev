@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from grow import extensions
-from custom_toc_tree_processor import CustomTocTreeProcessor
+from .custom_toc_tree_processor import CustomTocTreeProcessor
 
 
 class MarkdownTocPatchExtension(extensions.BaseExtension):

@@ -1,10 +1,10 @@
 ---
-"$title": Come funziona un ottimizzatore AMP
-"$order": '1'
+'$title': Come funziona un ottimizzatore AMP
+$order: 1
 description: "Un ottimizzatore AMP prende in input un documento AMPHTML valido e lo trasforma in una versione migliorata, applicando ulteriori ottimizzazioni che sarebbero scomode da eseguire manualmente. Questa guida spiega in dettaglio il funzionamento dell'ottimizzatore AMP."
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 
@@ -67,7 +67,7 @@ In caso di elementi `amp-img`, gli ottimizzatori AMP effettueranno il rendering 
 
 ### Ottimizzazione immagini
 
-Gli otttimizzatori AMP permettono di fornire immagini reattive ottimizzate, generando attributi  `srcset` specifici dei layout AMP in uso. Ad esempio, la seguente dichiarazione `amp-img`:
+Gli otttimizzatori AMP permettono di fornire immagini reattive ottimizzate, generando attributi `srcset` specifici dei layout AMP in uso. Ad esempio, la seguente dichiarazione `amp-img`:
 
 ```
 <amp-img src="image1.png" width="400" height="800" layout="responsive"></amp-img>

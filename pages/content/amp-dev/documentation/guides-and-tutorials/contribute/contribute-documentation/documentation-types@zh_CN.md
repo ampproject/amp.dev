@@ -1,12 +1,12 @@
 ---
-"$title": 文档类型
-"$order": '1'
+'$title': 文档类型
+$order: 1
 description: amp.dev 接受的文档贡献类型
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 toc: 'false'
 ---

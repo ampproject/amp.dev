@@ -1,10 +1,10 @@
 ---
 formats:
-- websites
-"$title": Proteja o conteúdo de suas assinaturas com criptografia lado-cliente
-"$titles":
+  - websites
+'$title': Proteja o conteúdo de suas assinaturas com criptografia lado-cliente
+'$titles':
   teaser: Protect your subscription content with client-side encryption.
-"$order": '10'
+$order: 10
 description: Solucione problemas de criptografia de conteúdo implementando validação de assinante premium e descriptografia de conteúdo no lado do cliente. Com esta solução, usuários com acesso premium poderão descriptografar conteúdo sem precisar carregar uma nova página ou esperar a resposta do back-end!
 author: CrystalOnScript
 ---
@@ -23,7 +23,7 @@ Resolva esses dois problemas implementando a validação de assinante premium e 
 
 Para implementar a descriptografia do lado do cliente, você combinará criptografia de chave simétrica com criptografia de chave pública da seguinte maneira:
 
-1. Crie uma chave simétrica aleatória para cada documento, concedendo a cada documento uma chave *unívoca*. {{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='Chaves unívocas para cada documento único.') }}
+1. Crie uma chave simétrica aleatória para cada documento, concedendo a cada documento uma chave _unívoca_. {{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='Chaves unívocas para cada documento único.') }}
 2. Criptografe o conteúdo premium com a chave simétrica do documento. {{ image('/static/img/docs/guides/cse/cse3.jpg', 130, 243, align='', layout='intrinsic', alt='Use a chave do documento para criptografar o conteúdo premium.') }} A chave é simétrica para permitir que a mesma chave criptografe e descriptografe o conteúdo. {{ image('/static/img/docs/guides/cse/cse4.jpg', 188, 141, align='', layout='intrinsic', alt='A mesma chave que criptografa o documento também o descriptografa.') }}
 3. Criptografe a chave do documento com uma chave pública, usando um protocolo de [criptografia híbrida](https://en.wikipedia.org/wiki/Hybrid_cryptosystem) para criptografar as chaves simétricas. {{ image('/static/img/docs/guides/cse/cse5.jpg', 309, 114, align='', layout='intrinsic', alt='Um protocolo de criptografia híbrida criptografa a chave simétrica com uma chave pública.') }}
 4. Usando o(s) componente(s) [`<amp-subscriptions>`](https://amp.dev/documentation/components/amp-subscriptions/) e/ou [`<amp-subscriptions-google>`](https://amp.dev/documentation/components/amp-subscriptions-google/?format=websites), armazene a chave do documento criptografado dentro do documento AMP, juntamente com o conteúdo premium criptografado. {{ image('/static/img/docs/guides/cse/cse6.jpg', 264, 261, align='', layout='intrinsic', alt='Ambas as chaves são armazenadas dentro do documento AMP.') }}
@@ -43,7 +43,7 @@ Siga os passos abaixo para integrar a manipulação de criptografia AMP ao seu s
 
 ## Passo 1: Crie um par de chaves pública/privada
 
-Para criptografar a chave simétrica do documento, você precisa ter seu próprio par de chaves pública/privada. A criptografia de chave pública é um protocolo de [criptografia híbrida](https://en.wikipedia.org/wiki/Hybrid_cryptosystem), especificamente um método de criptografia assimétrica ECIES [Curva elíptica P-256](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)) com um método de criptografia simétrica [AES-GCM](https://tools.ietf.org/html/rfc5288) (128 bits).
+Para criptografar a chave simétrica do documento, você precisa ter seu próprio par de chaves pública/privada. A criptografia de chave pública é um protocolo de [criptografia híbrida](https://en.wikipedia.org/wiki/Hybrid_cryptosystem), especificamente um método de criptografia assimétrica ECIES [Curva elíptica P-256](<https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)>) com um método de criptografia simétrica [AES-GCM](https://tools.ietf.org/html/rfc5288) (128 bits).
 
 É necessário que o tratamento de chaves públicas seja feito com [Tink](https://github.com/google/tink) usando [este tipo de chave assimétrica](https://github.com/subscriptions-project/encryption/blob/617f0911c9870dae900a232e2dc8ee9196677a89/golang/vendor/github.com/google/tink/go/hybrid/hybrid_key_templates.go#L32). Para criar seu par de chaves pública-privada, use uma das opções a seguir:
 
@@ -111,7 +111,7 @@ Criptografe o documento usando nosso [script](https://github.com/subscriptions-p
 
 Você precisa atualizar seu mecanismo de autorização para descriptografar as chaves do documento quando um usuário possuir as permissões corretas. O componente amp-subscriptions envia automaticamente a chave do documento criptografado para o mecanismo de autorização `"local"` através de um parâmetro de URL [“crypt=”](https://github.com/ampproject/amphtml/blob/4ebe3df7afb0a6d054bccfd6800421a149a20d55/extensions/amp-subscriptions/0.1/local-subscription-platform-remote.js#L70). Ele faz o seguinte:
 
-1. Processa a chave do documento obtida do campo JSON  `"local"`.
+1. Processa a chave do documento obtida do campo JSON `"local"`.
 2. Decodifica o documento.
 
 Você deve usar o Tink para decodificar as chaves do documento no seu mecanismo de autorização. Para decodificar com o Tink, instancie um cliente [HybridDecrypt](https://github.com/google/tink/blob/master/java/src/main/java/com/google/crypto/tink/HybridDecrypt.java) usando as chaves privadas geradas na seção Crie um par de chaves pública/privada. Faça isto na inicialização do servidor para o melhor desempenho.

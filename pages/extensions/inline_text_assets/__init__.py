@@ -1,1 +1,1 @@
-from inline_text_assets import *
+from .inline_text_assets import *

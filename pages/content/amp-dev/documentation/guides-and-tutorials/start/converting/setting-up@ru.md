@@ -1,8 +1,8 @@
 ---
-"$title": Подготовка
-"$order": '0'
+'$title': Подготовка
+$order: 0
 description: Подготовка среды разработки, шаг 1. Скачайте код. Скачайте код примера для данного урока либо в виде ZIP-файла, либо через git...
-"$parent": "/documentation/guides-and-tutorials/start/converting/setting-up.md"
+'$parent': '/documentation/guides-and-tutorials/start/converting/setting-up.md'
 ---
 
 ## Предварительные требования
@@ -40,7 +40,7 @@ cd accelerated-mobile-pages-foundations
 - [Apache](https://httpd.apache.org/docs/2.4/getting-started.html)
 - [nginx](http://nginx.org/)
 
-[tip type="note"] **ПРИМЕЧАНИЕ.**  Для реальных сайтов настоятельно рекомендуем использовать HTTPS. Помимо повышенной безопасности, HTTPS обладает преимуществами в других областях, таких как SEO. Подробнее читайте в [записи в блоге Google Webmaster](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html). [/tip]
+[tip type="note"] **ПРИМЕЧАНИЕ.** Для реальных сайтов настоятельно рекомендуем использовать HTTPS. Помимо повышенной безопасности, HTTPS обладает преимуществами в других областях, таких как SEO. Подробнее читайте в [записи в блоге Google Webmaster](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html). [/tip]
 
 После создания локального веб-сервера откройте статью-пример в браузере по [этому URL-адресу](http://localhost:8000/article.html):
 

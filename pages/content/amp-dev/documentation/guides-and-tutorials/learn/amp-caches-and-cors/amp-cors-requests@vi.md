@@ -1,11 +1,11 @@
 ---
-"$title": CORS trong AMP
-order: '12'
+'$title': CORS trong AMP
+$order: 12
 formats:
-- websites
-- email
-- stories
-- ads
+  - websites
+  - email
+  - stories
+  - ads
 teaser:
   text: Rất nhiều thành phần và phần mở rộng AMP tận dụng các điểm cuối từ xa bằng cách sử dụng
 toc: 'true'
@@ -76,7 +76,7 @@ Hãy cùng minh họa điều này bằng một ví dụ:
 
 Giả sử rằng bạn có một trang AMP liệt kê các sản phẩm kèm giá. Để cập nhật giá trên trang này, người dùng sẽ nhấn vào một nút để truy xuất giá mới nhất từ một điểm cuối JSON (thực hiện thông qua thành phần amp-list). JSON nằm trên tên miền của bạn.
 
-Vậy là, trang này nằm *trên tên miền của tôi* và JSON nằm *trên tên miền của tôi*. Tôi không thấy vấn đề gì!
+Vậy là, trang này nằm _trên tên miền của tôi_ và JSON nằm _trên tên miền của tôi_. Tôi không thấy vấn đề gì!
 
 À, nhưng làm thế nào người dùng của bạn có thể truy cập trang AMP của bạn? Liệu có một trang bộ nhớ đệm mà họ có thể truy cập? Nhiều khả năng người dùng của bạn đã không truy cập trực tiếp đến trang AMP của bạn, mà thay vào đó, họ khám phá trang của bạn thông qua một nền tảng khác. Ví dụ, Google Search sử dụng Bộ nhớ đệm AMP của Google để render nhanh các trang AMP; đây là các trang trong bộ nhớ đệm được phục vụ từ một Bộ nhớ đệm AMP của Google, nằm trên một tên miền khác. Khi người dùng của bạn nhấn vào nút để cập nhật giá trên trang của bạn, trang AMP trong bộ nhớ đệm này sẽ gửi một yêu cầu đến tên miền nguồn gốc của bạn để nhận giá, vốn không khớp giữa các nguồn gốc (bộ nhớ đệm -> tên miền nguồn gốc). Để cho phép các yêu cầu chéo nguồn gốc này, bạn cần xử lý CORS, nếu không, yêu cầu này sẽ thất bại.
 
@@ -85,22 +85,24 @@ Vậy là, trang này nằm *trên tên miền của tôi* và JSON nằm *trên
 
 **Được rồi, vậy tôi nên làm gì?**
 
-1. Đối với các trang AMP truy xuất dữ liệu động, hãy đảm bảo bạn kiểm tra phiên bản trong bộ nhớ đệm của các trang đó; *đừng chỉ kiểm tra trên tên miền của bạn*. (Xem phần [Kiểm tra CORS trong AMP](#testing-cors-in-amp) dưới đây)
+1. Đối với các trang AMP truy xuất dữ liệu động, hãy đảm bảo bạn kiểm tra phiên bản trong bộ nhớ đệm của các trang đó; _đừng chỉ kiểm tra trên tên miền của bạn_. (Xem phần [Kiểm tra CORS trong AMP](#testing-cors-in-amp) dưới đây)
 2. Làm theo các hướng dẫn trong tài liệu này để xử lý các yêu cầu và hồi đáp CORS.
 
 ## Sử dụng cookie cho các yêu cầu CORS <a name="utilizing-cookies-for-cors-requests"></a>
 
 Hầu hết các thành phần AMP sử dụng các yêu cầu CORS đều tự động thiết lập [chế độ chứng nhận](https://fetch.spec.whatwg.org/#concept-request-credentials-mode) hoặc cho phép tác giả bật nó như một tùy chọn. Ví dụ, thành phần[`amp-list`](https://amp.dev/documentation/components/amp-list) truy xuất nội dung động từ một điểm cuối CORS JSON, và cho phép tác giả thiết lập chế độ chứng nhận thông qua thuộc tính `credentials` (chứng nhận).
 
-*Ví dụ: Bao gồm nội dung cá nhân hóa trong một amp-list thông qua các cookie*
+_Ví dụ: Bao gồm nội dung cá nhân hóa trong một amp-list thông qua các cookie_
 
 [sourcecode:html]
 <amp-list
-  credentials="include"
-  src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)"
->
-  <template type="amp-mustache">
+credentials="include"
+src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)"
+
+>   <template type="amp-mustache">
+
     Your personal offer: ${% raw %}{{price}}{% endraw %}
+
   </template>
 </amp-list>
 [/sourcecode]
@@ -161,13 +163,13 @@ Sau khi xác minh yêu cầu CORS, kết quả hồi đáp HTTP phải chứa c�
 
 Đầu đề này là một yêu cầu <a href="https://www.w3.org/TR/cors/">Thông số W3 CORS</a>, ở đó <code>origin</code> (nguồn gốc) là nguồn gốc yêu cầu đã được cho phép thông qua đầu đề yêu cầu <code>Origin</code> CORS (ví dụ, <code>"https://<tên miền con của nhà phát hành>.cdn.ampproject.org"</code>).
 
-Tuy thông số W3 CORS cho phép giá trị <code>*</code> được trả về trong hồi đáp, để đảm bảo bảo mật, bạn nên:
+Tuy thông số W3 CORS cho phép giá trị <code>\*</code> được trả về trong hồi đáp, để đảm bảo bảo mật, bạn nên:
 
 - Nếu đầu đề `Origin` (Nguồn gốc) tồn tại, xác thực và lặp lại giá trị của đầu đề <code>Origin</code>.
 
 ### Xử lý các yêu cầu thay đổi trạng thái <a name="processing-state-changing-requests"></a>
 
-[tip type="important"] Thực hiện các kiểm tra xác thực này *trước khi* bạn xử lý yêu cầu. Việc xác thực này giúp bảo vệ chống lại các cuộc tấn công CSRF, và tránh việc xử lý yêu cầu từ các nguồn không được tin tưởng. [/tip]
+[tip type="important"] Thực hiện các kiểm tra xác thực này _trước khi_ bạn xử lý yêu cầu. Việc xác thực này giúp bảo vệ chống lại các cuộc tấn công CSRF, và tránh việc xử lý yêu cầu từ các nguồn không được tin tưởng. [/tip]
 
 Trước khi xử lý các yêu cầu có thể thay đổi trạng thái của hệ thống (ví dụ, một người dùng đăng ký hoặc bỏ đăng ký khỏi một danh sách nhận thư), kiểm tra những điều sau:
 
@@ -175,10 +177,10 @@ Trước khi xử lý các yêu cầu có thể thay đổi trạng thái của 
 
 1. Nếu nguồn gốc không khớp với một trong các giá trị sau đây, dừng và trả về một hồi đáp lỗi:
 
-    - `<tên miền của nhà phát hành>.cdn.ampproject.org`
-    - nguồn gốc của nhà phát hành (nghĩa là bạn)
+   - `<tên miền của nhà phát hành>.cdn.ampproject.org`
+   - nguồn gốc của nhà phát hành (nghĩa là bạn)
 
-    ở đó `*` là một kết quả khớp ký tự đại diện, chứ không phải là một dấu hoa thị thật ( * ).
+   ở đó `*` là một kết quả khớp ký tự đại diện, chứ không phải là một dấu hoa thị thật ( \* ).
 
 2. Nếu không, xử lý yêu cầu.
 
@@ -229,15 +231,15 @@ Lôgic xử lý các yêu cầu và hồi đáp CORS của chúng ta có thể �
 
 [sourcecode:text]
 IF CORS header present
-   IF origin IN allowed-origins
-      allow request & send response
-   ELSE
-      deny request
+IF origin IN allowed-origins
+allow request & send response
 ELSE
-   IF "AMP-Same-Origin: true"
-      allow request & send response
-   ELSE
-      deny request
+deny request
+ELSE
+IF "AMP-Same-Origin: true"
+allow request & send response
+ELSE
+deny request
 [/sourcecode]
 
 #### Code mẫu CORS <a name="cors-sample-code"></a>
@@ -246,31 +248,31 @@ ELSE
 
 [sourcecode:javascript]
 function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
-  var unauthorized = 'Unauthorized Request';
-  var origin;
-  var allowedOrigins = [
-    'https://example.com',
-    'https://example-com.cdn.ampproject.org',
-    'https://cdn.ampproject.org',
-  ];
-  var allowedSourceOrigin = 'https://example.com'; //publisher's origin
-  // If same origin
-  if (req.headers['amp-same-origin'] == 'true') {
-    origin = sourceOrigin;
-    // If allowed CORS origin & allowed source origin
-  } else if (
-    allowedOrigins.indexOf(req.headers.origin) != -1 &&
-    sourceOrigin == allowedSourceOrigin
-  ) {
-    origin = req.headers.origin;
-  } else {
-    res.statusCode = 403;
-    res.end(JSON.stringify({message: unauthorized}));
-    throw unauthorized;
-  }
+var unauthorized = 'Unauthorized Request';
+var origin;
+var allowedOrigins = [
+'https://example.com',
+'https://example-com.cdn.ampproject.org',
+'https://cdn.ampproject.org',
+];
+var allowedSourceOrigin = 'https://example.com'; //publisher's origin
+// If same origin
+if (req.headers['amp-same-origin'] == 'true') {
+origin = sourceOrigin;
+// If allowed CORS origin & allowed source origin
+} else if (
+allowedOrigins.indexOf(req.headers.origin) != -1 &&
+sourceOrigin == allowedSourceOrigin
+) {
+origin = req.headers.origin;
+} else {
+res.statusCode = 403;
+res.end(JSON.stringify({message: unauthorized}));
+throw unauthorized;
+}
 
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.setHeader('Access-Control-Allow-Origin', origin);
+res.setHeader('Access-Control-Allow-Credentials', 'true');
+res.setHeader('Access-Control-Allow-Origin', origin);
 }
 [/sourcecode]
 
@@ -333,7 +335,7 @@ Bộ nhớ đệm AMP của Google lưu các tài liệu, ảnh và phông chữ
 Khi một trang AMP đang tải `https://example.com/some/font.ttf` từ thuộc tính `@font-face src`, Bộ nhớ đệm AMP sẽ lưu tập tin phông chữ và phục vụ tài nguyên đó như dưới đây và với ký tự đại diện `Access-Control-Allow-Origin` (Kiểm soát-Truy cập-Cho phép-Nguồn gốc).
 
 - URL `https://example-com.cdn.ampproject.org/r/s/example.com/some/font.tff`
-- Access-Control-Allow-Origin: *
+- Access-Control-Allow-Origin: \*
 
 ### Hành vi mới (từ tháng 10 năm 2019 về sau) <a name="new-behavior-october-2019-and-after"></a>
 
@@ -343,19 +345,19 @@ Một việc triển khai mẫu sẽ là:
 
 [sourcecode:javascript]
 function assertFontCors(req, res, opt_validMethods, opt_exposeHeaders) {
-  var unauthorized = 'Unauthorized Request';
-  var allowedOrigins = [
-    'https://example.com',
-    'https://example-com.cdn.ampproject.org',
-  ];
-  // If allowed CORS origin
-  if (allowedOrigins.indexOf(req.headers.origin) != -1) {
-    res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
-  } else {
-    res.statusCode = 403;
-    res.end(JSON.stringify({message: unauthorized}));
-    throw unauthorized;
-  }
+var unauthorized = 'Unauthorized Request';
+var allowedOrigins = [
+'https://example.com',
+'https://example-com.cdn.ampproject.org',
+];
+// If allowed CORS origin
+if (allowedOrigins.indexOf(req.headers.origin) != -1) {
+res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+} else {
+res.statusCode = 403;
+res.end(JSON.stringify({message: unauthorized}));
+throw unauthorized;
+}
 }
 [/sourcecode]
 
@@ -386,10 +388,10 @@ Khi bạn đang kiểm tra các trang AMP của mình, hãy đảm bảo bạn b
 
 1. Từ trình duyệt của bạn, mở URL mà Bộ nhớ đệm AMP sẽ sử dụng để truy cập trang AMP của bạn. Bạn có thể xác định định dạng URL bộ nhớ đệm từ [công cụ này trên AMP By Example](https://amp.dev/documentation/examples/guides/using_the_google_amp_cache/).
 
-    Ví dụ:
+   Ví dụ:
 
-    - URL: `https://amp.dev/documentation/guides-and-tutorials/start/create/`
-    - Định dạng URL Bộ nhớ đệm AMP: `https://www-ampproject-org.cdn.ampproject.org/c/s/www.ampproject.org/docs/tutorials/create.html`
+   - URL: `https://amp.dev/documentation/guides-and-tutorials/start/create/`
+   - Định dạng URL Bộ nhớ đệm AMP: `https://www-ampproject-org.cdn.ampproject.org/c/s/www.ampproject.org/docs/tutorials/create.html`
 
 2. Mở công cụ phát triển trình duyệt của bạn và xác minh rằng không có lỗi nào và tất cả các tài nguyên đều được tải đúng cách.
 

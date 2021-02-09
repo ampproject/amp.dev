@@ -1,8 +1,8 @@
 ---
-"$title": Configuración
-"$order": '0'
+'$title': Configuración
+$order: 0
 description: Configure su entorno de desarrollo Paso 1. Descargue el código. Descargue el código de muestra del tutorial en un archivo ZIP o mediante git...
-"$parent": "/documentation/guides-and-tutorials/start/converting/setting-up.md"
+'$parent': '/documentation/guides-and-tutorials/start/converting/setting-up.md'
 ---
 
 ## Requisitos Previos

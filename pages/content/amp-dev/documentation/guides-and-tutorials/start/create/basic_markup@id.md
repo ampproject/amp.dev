@@ -1,15 +1,16 @@
 ---
-"$title": Membuat halaman HTML AMP Anda
-"$order": '1'
+'$title': Membuat halaman HTML AMP Anda
+$order: 1
 description: 'Gunakan HTTPS: Saat membuat konten dan halaman AMP, Anda harus benar-benar mempertimbangkan untuk menggunakan protokol HTTPS (vs. HTTP). Meskipun HTTPS tidak diperlukan untuk dokumen AMP itu sendiri atau ....'
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 Markah berikut ini merupakan titik awal atau boilerplate yang baik. Salin dan simpan ke dalam berkas berekstensi .html.
 
 [sourcecode:html]
+
 <!doctype html>
 <html amp lang="en">
   <head>
@@ -47,16 +48,16 @@ Gunakan HTTPS: Saat membuat konten dan halaman AMP, sebaiknya Anda memprioritask
 
 Dokumen HTML AMP HARUS:
 
-Aturan | Deskripsi
---- | ---
-Mulai dengan jenis dokumen `<!doctype html>`. | Standar untuk HTML.
-Berisi tag `<html ⚡>` level teratas <br>(`<html amp>` juga diterima). | Mengidentifikasi halaman sebagai konten AMP.
-Berisi tag `<head>` dan `<body>`. | Opsional pada HTML, tetapi tidak pada AMP.
-Berisi tag` <meta charset="utf-8">` sebagai anak atau turunan pertama dari tag `<head>` mereka. | Mengidentifikasi pengodean untuk halaman tersebut.
-Berisi tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` di dalam `<head>`-nya. Sebagai praktik terbaik, Anda seharusnya menyertakan skrip ini sedini mungkin di dalam <code><head></code>. | Menyertakan dan memuat perpustakan JS AMP.
-Berisi tag `<link rel="canonical" href="$SOME_URL">` di dalam `<head>`. | Mengarah ke versi HTML reguler dari dokumen HTML AMP, atau ke dokumen HTML AMP itu sendiri jika tidak ada versi HTML seperti itu. Pelajari lebih lanjut dalam [Membuat Halaman Anda Mudah Ditemukan](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md).
-Berisi tag `<meta name="viewport" content="width=device-width">`. Disarankan juga untuk menyertakan skala inisial=1. | Menentukan viewport yang responsif. Pelajari lebih lanjut dalam [Membuat Halaman AMP yang Responsif](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).
-Berisi [Kode boilerplate AMP](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) di tag `<head>`. | Boilerplate CSS awalnya menyembunyikan konten hingga JS AMP dimuat.
+| Aturan                                                                                                                                                                                                         | Deskripsi                                                                                                                                                                                                                                                                           |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Mulai dengan jenis dokumen `<!doctype html>`.                                                                                                                                                                  | Standar untuk HTML.                                                                                                                                                                                                                                                                 |
+| Berisi tag `<html ⚡>` level teratas <br>(`<html amp>` juga diterima).                                                                                                                                         | Mengidentifikasi halaman sebagai konten AMP.                                                                                                                                                                                                                                        |
+| Berisi tag `<head>` dan `<body>`.                                                                                                                                                                              | Opsional pada HTML, tetapi tidak pada AMP.                                                                                                                                                                                                                                          |
+| Berisi tag` <meta charset="utf-8">` sebagai anak atau turunan pertama dari tag `<head>` mereka.                                                                                                                | Mengidentifikasi pengodean untuk halaman tersebut.                                                                                                                                                                                                                                  |
+| Berisi tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` di dalam `<head>`-nya. Sebagai praktik terbaik, Anda seharusnya menyertakan skrip ini sedini mungkin di dalam <code><head></code>. | Menyertakan dan memuat perpustakan JS AMP.                                                                                                                                                                                                                                          |
+| Berisi tag `<link rel="canonical" href="$SOME_URL">` di dalam `<head>`.                                                                                                                                        | Mengarah ke versi HTML reguler dari dokumen HTML AMP, atau ke dokumen HTML AMP itu sendiri jika tidak ada versi HTML seperti itu. Pelajari lebih lanjut dalam [Membuat Halaman Anda Mudah Ditemukan](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md). |
+| Berisi tag `<meta name="viewport" content="width=device-width">`. Disarankan juga untuk menyertakan skala inisial=1.                                                                                           | Menentukan viewport yang responsif. Pelajari lebih lanjut dalam [Membuat Halaman AMP yang Responsif](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).                                                                                 |
+| Berisi [Kode boilerplate AMP](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) di tag `<head>`.                                                                                   | Boilerplate CSS awalnya menyembunyikan konten hingga JS AMP dimuat.                                                                                                                                                                                                                 |
 
 ## Metadata opsional
 
