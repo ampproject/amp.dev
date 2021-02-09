@@ -74,7 +74,7 @@
 		"client-sessions": "0.8.0",
 		"cookie-parser": "1.4.5",
 		"cors": "2.8.5",
-		"dropzone": "5.7.4",
+		"dropzone": "5.7.6",
 		"express": "4.17.1",
 		"express-formidable": "1.2.0",
 		"gcp-metadata": "4.2.1",
