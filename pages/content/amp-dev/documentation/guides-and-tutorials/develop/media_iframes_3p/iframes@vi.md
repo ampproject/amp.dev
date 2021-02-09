@@ -1,15 +1,15 @@
 ---
-"$title": Bao gồm các iframe
-"$order": '10'
+'$title': Bao gồm các iframe
+$order: 10
 description: Tìm hiểu cách để hiển thị các nội dung đa phương tiện trong trang của bạn, và cách sử dụng iframe để hiển thị các nội dung nâng cao bên ngoài giới hạn của AMP.
 formats:
-- websites
+  - websites
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- Meggin
-- bpaduch
+  - Meggin
+  - bpaduch
 ---
 
 Learn how to display include media content in your pages, and how to use iframes to display advanced content outside of AMP's limitations.
@@ -32,8 +32,10 @@ Iframe đặc biệt hữu ích trong AMP để hiển thị các nội dung kh�
 Để bao gồm một [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) trong trang của bạn, trước hết hãy bao gồm kịch bản sau trong phần `<head>` để tải thêm code cho thành phần mở rộng:
 
 [sourcecode:html]
+
 <script async custom-element="amp-iframe"
   src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+
 [/sourcecode]
 
 ### Viết đánh dấu
@@ -41,10 +43,13 @@ Iframe đặc biệt hữu ích trong AMP để hiển thị các nội dung kh�
 Trong ví dụ sau, chúng ta đã tạo một [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) hồi đáp để nhúng Google Maps thông qua [API Nhúng Google Maps](https://developers.google.com/maps/documentation/embed/guide):
 
 ```html
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    src="https://www.google.com/maps/embed/v1/place?key={YOUR API KEY}&q=europe">
+<amp-iframe
+  width="200"
+  height="100"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  src="https://www.google.com/maps/embed/v1/place?key={YOUR API KEY}&q=europe"
+>
 </amp-iframe>
 ```
 
@@ -57,12 +62,18 @@ Bạn có thể hiển thị một [`amp-iframe`](../../../../documentation/comp
 Ví dụ với mã giữ chỗ:
 
 ```html
-<amp-iframe width="400" height="225"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    src="https://giphy.com/embed/OWabwoEn7ezug">
-  <amp-img placeholder layout="fill"
-      src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"></amp-img>
+<amp-iframe
+  width="400"
+  height="225"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  src="https://giphy.com/embed/OWabwoEn7ezug"
+>
+  <amp-img
+    placeholder
+    layout="fill"
+    src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"
+  ></amp-img>
 </amp-iframe>
 ```
 

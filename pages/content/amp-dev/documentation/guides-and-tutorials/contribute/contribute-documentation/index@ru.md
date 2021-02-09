@@ -1,13 +1,13 @@
 ---
-"$title": Помогайте в создании документации
-"$order": '0'
-"$hidden": 'true'
+'$title': Помогайте в создании документации
+$order: 0
+'$hidden': 'true'
 description: Начните содействовать в создании документации на amp.dev
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 

@@ -1,13 +1,13 @@
 ---
-"$title": Create a live blog
-"$order": '102'
+'$title': Create a live blog
+$order: 102
 description: إن المدونات الحية عبارة عن صفحات ويب يتم تحديثها على نحو متكرر طوال حدث جارٍ، مثل حدث رياضي أو عملية اقتراع، ويمكنك في AMP تنفيذ مدونة حية من خلال استخدام...
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: kul3r4
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 إن المدونات الحية عبارة عن صفحات ويب يتم تحديثها على نحو متكرر طوال حدث جارٍ، مثل حدث رياضي أو عملية اقتراع، ويمكنك في AMP تنفيذ مدونة حية من خلال استخدام مكون [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md)
@@ -25,9 +25,11 @@ The [`amp-live-list`](../../../documentation/components/reference/amp-live-list.
 This is what the initial code for the blog could look like:
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">You have updates</button>
   <div items></div>
 </amp-live-list>
@@ -56,9 +58,11 @@ Long blogs could use pagination to improve performance by limiting the number of
 With pagination, the simple code we used earlier becomes:
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">You have updates</button>
   <div items></div>
   <div pagination>
@@ -67,8 +71,8 @@ With pagination, the simple code we used earlier becomes:
         <li>1</li>
         <li>Next</li>
       </ul>
-     </nav>
-   </div>
+    </nav>
+  </div>
 </amp-live-list>
 ```
 
@@ -78,7 +82,7 @@ It’s your responsibility to populate the navigation items correctly by updatin
 
 After the size of blog posts has exceeded the maximum number of items specified by `data-max-items-per-page`, the older blog items are displayed in the “Next” pages, for example on page 2. Given that the [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) polls the server at intervals to see if there is any change in the items, there's no need to poll the server if the user isn't on the first page.
 
-You can add the disabled attribute to  the hosted page to prevent the polling mechanism. In the live blog sample, we perform this behavior in  a server-side template; when the requested page is not the first one, we add the disabled attribute to the [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component.
+You can add the disabled attribute to the hosted page to prevent the polling mechanism. In the live blog sample, we perform this behavior in a server-side template; when the requested page is not the first one, we add the disabled attribute to the [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component.
 
 ### الربط العميق <a name="deeplinking"></a>
 

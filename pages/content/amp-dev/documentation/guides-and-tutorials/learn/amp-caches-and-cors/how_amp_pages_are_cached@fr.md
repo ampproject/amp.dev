@@ -1,11 +1,11 @@
 ---
-"$title": Comment les pages AMP sont mises en cache
-"$order": '0'
+'$title': Comment les pages AMP sont mises en cache
+$order: 0
 description: "Dans ce document, vous découvrirez le rôle du cache AMP dans l'écosystème AMP et comment votre page AMP est mise en cache."
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 ---
 
 Dans ce document, vous découvrirez le rôle du cache AMP dans l'écosystème AMP et comment votre page AMP est mise en cache.
@@ -35,7 +35,7 @@ AMP est un écosystème ouvert et le Projet AMP encourage activement le dévelop
 
 ## Comment choisir un cache AMP ?
 
-En tant qu'éditeur, vous ne choisissez pas un cache AMP, c'est en fait *la plateforme* liée à votre contenu qui choisit le cache AMP (le cas échéant) à utiliser.
+En tant qu'éditeur, vous ne choisissez pas un cache AMP, c'est en fait _la plateforme_ liée à votre contenu qui choisit le cache AMP (le cas échéant) à utiliser.
 
 Il s'agit d'une inversion du modèle typique où la diffusion du contenu est la responsabilité de l'éditeur. Cependant, ce modèle permet aux plateformes de fournir à leurs utilisateurs des performances de chargement prévisibles et, entre autres, leur permet de garantir les invariants de sécurité et de confidentialité requis pendant la phase de pré-affichage d'AMP. Pour en savoir plus sur les directives strictes de création de caches AMP, consultez les [directives relatives au cache AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
 
@@ -59,11 +59,11 @@ En utilisant le format AMP, vous rendez votre contenu disponible pour la mise en
 
 - **Requête d'URL de cache** : les plateformes peuvent demander spécifiquement une page AMP en utilisant le format d'URL du cache AMP. Le cache AMP agit comme un proxy inverse, par conséquent, lorsque la plateforme accède à la page, la page est automatiquement mise en cache.
 
-    - Exemple d'URL de Google AMP Cache : `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
+  - Exemple d'URL de Google AMP Cache : `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
 [tip type="note"] **REMARQUE -** L'URL du cache AMP n'est pas une URL destinée à l'utilisateur, c'est-à-dire que les utilisateurs ne demandent généralement pas de contenu via ces URL. [/tip]
 
-- **Ajout de l'éditeur** : les éditeurs peuvent spécifiquement ajouter la page AMP au cache AMP.  Cette option est applicable uniquement pour le cache AMP de Google (voir [Cache Google AMP : mise à jour du contenu AMP](https://developers.google.com/amp/cache/update-cache)).
+- **Ajout de l'éditeur** : les éditeurs peuvent spécifiquement ajouter la page AMP au cache AMP. Cette option est applicable uniquement pour le cache AMP de Google (voir [Cache Google AMP : mise à jour du contenu AMP](https://developers.google.com/amp/cache/update-cache)).
 
 ## Ressources supplémentaires
 

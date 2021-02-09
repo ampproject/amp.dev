@@ -1,11 +1,11 @@
 ---
-"$title": Attivazione funzionalità sperimentali
-"$order": '3'
+'$title': Attivazione funzionalità sperimentali
+$order: 3
 description: I componenti sperimentali AMP sono funzioni rilasciate ma non ancora pronte per un ampio utilizzo, quindi sono protette dallo stato sperimentale.
 formats:
-- siti web
-- storie
-- annunci
+  - siti web
+  - storie
+  - annunci
 ---
 
 I [componenti sperimentali AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments) sono funzioni rilasciate ma non ancora pronte per un ampio utilizzo, quindi sono protette dallo stato **sperimentale**.
@@ -29,7 +29,7 @@ L'attivazione del canale Dev permette di:
 - eseguire operazioni di test e verifica di nuove funzionalità non ancora disponibili per tutti gli utenti.
 - utilizzare nelle procedure di Quality Assurance (QA) per garantire che i siti siano compatibili con la successiva versione di AMP.
 
-Se trovi un problema che sembra verificarsi solo nella versione del canale  AMP Dev, [lo puoi segnalare](https://github.com/ampproject/amphtml/issues/new) con una descrizione del problema. Includi sempre un URL a una pagina che riproduce il problema.
+Se trovi un problema che sembra verificarsi solo nella versione del canale AMP Dev, [lo puoi segnalare](https://github.com/ampproject/amphtml/issues/new) con una descrizione del problema. Includi sempre un URL a una pagina che riproduce il problema.
 
 Per iscrivere il tuo browser al canale AMP Dev, accedi alla [pagina degli esperimenti AMP](https://cdn.ampproject.org/experiments.html) e attiva l'esperimento "Canale AMP Dev". Per ricevere informazioni sulle principali modifiche ad AMP, iscriviti alla mailing list [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
 
@@ -48,7 +48,7 @@ I componenti sperimentali attivati sono salvati in `localStorage` e sono possibi
 Per i contenuti forniti da domini non CDN, gli esperimenti possono essere attivati nella console di devtools utilizzando:
 
 ```js
-AMP.toggleExperiment('experiment')
+AMP.toggleExperiment('experiment');
 ```
 
 Qualsiasi file AMP che include funzioni sperimentali non supererà la [convalida AMP](validation-workflow/validate_amp.md). Rimuovere questi componenti sperimentali dai documenti AMP pronti per la produzione.
@@ -60,7 +60,7 @@ In ogni documento è possibile attivare gli esperimenti richiesti. A tale scopo,
 ```html
 <head>
   ...
-  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b">
+  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b" />
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   ...
@@ -89,7 +89,7 @@ Le prove sull'origine offrono l'opportunità di implementare e provare una nuova
 Includere il seguente tag `<meta>` nel tag `<head>` su ogni pagina che utilizza l'esperimento di prova sull'origine:
 
 ```html
-<meta name="amp-experiment-token" content="{copy your token here}">
+<meta name="amp-experiment-token" content="{copy your token here}" />
 ```
 
 Nota: `"amp-experiment-token"` è la stringa con il valore letterale, `"amp-experiment-token"`. Non è il token stesso (che va nell'attributo content) o il nome dell'esperimento.

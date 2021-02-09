@@ -1,8 +1,8 @@
 ---
-"$title": Thiết lập
-"$order": '0'
+'$title': Thiết lập
+$order: 0
 description: 'Trước khi bắt đầu bài thực hành này, bạn sẽ cần: - Kiến thức cơ bản về HTML, CSS và JavaScript - Một trình duyệt tùy theo bạn chọn - Một trình soạn văn bản...'
-"$parent": "/content/docs/interaction_dynamic/interactivity.md"
+'$parent': '/content/docs/interaction_dynamic/interactivity.md'
 ---
 
 ## Yêu cầu trước khi tiến hành

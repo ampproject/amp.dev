@@ -1,6 +1,6 @@
 ---
-"$title": AMP HTML 유효성 검사
-"$order": '8'
+'$title': AMP HTML 유효성 검사
+$order: 8
 description: 웹 스토리는 AMP로 제작되었으므로 항상 AMP HTML의 유효성을 검사해야 합니다. AMP 페이지의 유효성을 검사하는 몇 가지 방법이 있습니다...
 author: bpaduch
 ---

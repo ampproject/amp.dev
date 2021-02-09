@@ -1,13 +1,13 @@
 ---
-"$title": Kontribusikan Dokumentasi
-"$order": '0'
-"$hidden": 'true'
+'$title': Kontribusikan Dokumentasi
+$order: 0
+'$hidden': 'true'
 description: Memulai kontribusi dokumentasi untuk amp.dev
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 

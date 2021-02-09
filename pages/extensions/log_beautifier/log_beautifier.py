@@ -29,9 +29,17 @@ manager._print_server_ready_message = manager.print_server_ready_message
 def print_server_ready_message(pod, host, port):
     home_doc = pod.get_home_doc()
     root_path = home_doc.url.path if home_doc and home_doc.exists else '/'
-    url = 'http://{}:{}{}'.format(host, port, root_path)
+    url_base = 'http://{}:{}/'.format(host, port)
+    url_root = 'http://{}:{}{}'.format(host, port, root_path)
     logger.LOGGER.info('Grow started successfully.')
-    return url
+
+    messages = manager.ServerMessages()
+
+    # Trigger the dev manager message hook.
+    extra_urls = pod.extensions_controller.trigger(
+        'dev_manager_message', messages.add_message, url_base, url_root) or []
+
+    return (url_root, extra_urls)
 
 manager.print_server_ready_message = print_server_ready_message
 

@@ -1,13 +1,13 @@
 ---
-"$title": 创建座位图
-"$order": '104'
+'$title': 创建座位图
+$order: 104
 description: 座位图是票务平台网络应用的重要组成部分，但是在 AMP 中实现座位图相当困难。继续阅读以了解如何通过组合使用可用的 AMP 组件…
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: kul3r4
 contributors:
-- pbakaus
+  - pbakaus
 ---
 
 座位图是票务平台网络应用的重要组成部分，但是在 AMP 中实现座位图相当困难。继续阅读以了解如何通过组合使用可用的 AMP 组件在 AMP 中实现座位图。
@@ -106,26 +106,27 @@ rect[selected].seat {
 
 [sourcecode:html]
 {% raw %}<div class="seatmap-container">
-  <amp-list layout="fill" src="/json/seats.json" binding="no" items="." single-item noloading>
-    <template type="amp-mustache">
-      <amp-pan-zoom layout="fill" class="seatmap">
-        <amp-selector multiple on="select:AMP.setState({
+<amp-list layout="fill" src="/json/seats.json" binding="no" items="." single-item noloading>
+<template type="amp-mustache">
+<amp-pan-zoom layout="fill" class="seatmap">
+<amp-selector multiple on="select:AMP.setState({
           selectedSeats: event.selectedOptions
         })" layout="fill">
-          <div class="svg-container">
-            <svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
-            {{#seats}}
-              <rect option="{{id}}" role="button"
+<div class="svg-container">
+<svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
+{{#seats}}
+<rect option="{{id}}" role="button"
                tabindex="0" class="seat {{unavailable}}"
               x="{{x}}" y="{{y}}"
               width="{{width}}" height="{{height}}"
               rx="{{rx}}" ry="{{ry}}"/>
-            {{/seats}}
-            </svg>
-          </div>
-        </amp-selector>
-      </amp-pan-zoom>
-    </template>
-  </amp-list>
+{{/seats}}
+</svg>
+</div>
+</amp-selector>
+</amp-pan-zoom>
+</template>
+</amp-list>
+
 </div>{% endraw %}
 [/sourcecode]

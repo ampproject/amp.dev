@@ -1,10 +1,10 @@
 ---
-"$title": Füge erweiterte AMP Funktionen hinzu
-"$order": '0'
+'$title': Füge erweiterte AMP Funktionen hinzu
+$order: 0
 description: Dieses Tutorial erklärt die AMP Grundlagen. Hier erfährst du, wie AMP mit Werbung, Analytics, eingebetteten Videos, der Integration von sozialen Medien, Karussells und vielem mehr umgeht.
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='Fertiger Nachrichtenartikel') }}

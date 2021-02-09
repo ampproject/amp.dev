@@ -1,18 +1,18 @@
 ---
-"$title": Erstelle responsive AMP Seiten
-"$order": '5'
+'$title': Erstelle responsive AMP Seiten
+$order: 5
 description: Mit responsivem Webdesign werden flüssige Webseiten erstellt, die auf die Bedürfnisse deiner Benutzer reagieren – Seiten, die der Größe und Ausrichtung …
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 components:
-- iframe
-- youtube
+  - iframe
+  - youtube
 author: bpaduch
 contributors:
-- pbakaus
+  - pbakaus
 ---
 
 ## Einführung
@@ -45,7 +45,7 @@ Das sind die typischen Einstellungen des Viewports, die du für eine responsive 
 
 Responsives Design erlaubt die Verwendung von CSS [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) Abfragen, um das Styling deiner Webseite an verschiedene Bildschirmgrößen anzupassen, ohne den Inhalt der Seite ändern zu müssen. In AMP kannst du weiterhin dieselben CSS `@media` Abfragen verwenden. Um ein AMP Element genauer zu steuern, kannst du außerdem das Attribut `media` für das Element angeben. Das ist besonders nützlich, wenn du ein Element basierend auf einer Medienabfrage entweder einblenden oder ausblenden musst. Ein Beispiel für die Verwendung des Attributs `media` findest du im Abschnitt [Art Direction eines Bildes ändern](#changing-the-art-direction-of-an-image).
 
-Es kann schwierig sein, die Größe jedes Elements an einen Bildschirm anzupassen<sup><a id="ref1" href="#fn1">*</a></sup>.  In AMP kannst du ein Element jedoch problemlos responsiv machen, indem du einfach das Attribut `"layout=responsive"` zusammen mit den Attributen `width` und `height` des Elements angibst. Wenn du das Layout `responsive` auf ein Element anwendest, wird die Größe des Elements automatisch an die Breite seines Containerelements angepasst und die Höhe ändert sich entsprechend dem Seitenverhältnis, das durch die Attribute `width` und `height` des Elements angegeben ist. Fast alle AMP Elemente unterstützen das Layout `responsive`. In der Referenzdokumentation des Elements findest du Informationen zu den unterstützten Layouts.
+Es kann schwierig sein, die Größe jedes Elements an einen Bildschirm anzupassen<sup><a id="ref1" href="#fn1">\*</a></sup>. In AMP kannst du ein Element jedoch problemlos responsiv machen, indem du einfach das Attribut `"layout=responsive"` zusammen mit den Attributen `width` und `height` des Elements angibst. Wenn du das Layout `responsive` auf ein Element anwendest, wird die Größe des Elements automatisch an die Breite seines Containerelements angepasst und die Höhe ändert sich entsprechend dem Seitenverhältnis, das durch die Attribute `width` und `height` des Elements angegeben ist. Fast alle AMP Elemente unterstützen das Layout `responsive`. In der Referenzdokumentation des Elements findest du Informationen zu den unterstützten Layouts.
 
 Auch wenn du Elemente mithilfe von `"layout=responsive"` problemlos responsiv machen kannst, musst du berücksichtigen, wie deine Elemente auf unterschiedlichen Bildschirmgrößen angezeigt werden – einschließlich Desktop und Tablet. Ein häufiger Fehler liegt darin, dass einem Bild die gesamte Bildschirmbreite erlaubt wird, wodurch das Bild über die beabsichtigte Größe hinaus gedehnt wird. Das führt für Breitbildbenutzer zu einer schlechten Erfahrung. Standardmäßig nehmen Elemente mit `layout=responsive` die volle Breite des Elementcontainers ein, dessen Breite häufig nicht eingeschränkt ist (d. h. "width=100%"). Die Darstellung von Bildern lässt sich verbessern, indem du die Breite des Bildcontainers schlicht einschränkst. Wenn du beispielsweise eine "max-width" Regel für "body" oder "main" festlegst, kannst du alle Bilder auf eine bestimmte maximale Breite beschränken.
 
@@ -73,7 +73,7 @@ Wir möchten aber, dass das Bild nicht über die beabsichtigte Größe hinaus ge
 
 ```html
 <style amp-custom>
-.resp-img {
+  .resp-img {
     max-width: 700px;
   }
 </style>
@@ -170,7 +170,7 @@ Art Direction bezieht sich auf das Anpassen der visuellen Eigenschaften eines Bi
 Im folgenden Beispiel haben wir 3 verschiedene zugeschnittene Bilder einer Katze, die an verschiedenen Übergangspunkten angezeigt werden sollen. Ist die Breite des Viewports:
 
 - 670 px oder höher, dann zeige `cat-large.jpg` (650 x 340 px)
-- 470 – 669 px, dann zeige `cat-medium.jpg`  (450 x 340 px)
+- 470 – 669 px, dann zeige `cat-medium.jpg` (450 x 340 px)
 - 469 px oder kleiner, dann zeige `cat-small.jpg` (226 x 340 px)
 
 [tip type="note"] **HINWEIS:** Da wir wollen, dass die Bilder eine feste Größe haben (d. h. nicht verzerrt werden), haben wir keinen Layoutwert angegeben. Somit wird standardmäßig `layout=fixed` festgelegt, da wir die Breite und Höhe angegeben haben. Weitere Infos findest du unter ["Was, wenn das Attribut layout nicht angegeben ist?"](control_layout.md#what-if-the-layout-attribute-isnt-specified). [/tip]

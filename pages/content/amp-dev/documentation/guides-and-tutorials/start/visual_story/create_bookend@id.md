@@ -1,6 +1,6 @@
 ---
-"$title": Membuat bookend
-"$order": '7'
+'$title': Membuat bookend
+$order: 7
 description: Setelah Anda menambahkan semua halaman Anda, mari kita lihat layar terakhir dari cerita ini, bookend. Layar terakhir ini mengakhiri cerita ....
 author: bpaduch
 ---
@@ -21,7 +21,7 @@ Jika Anda memuat ulang browser dan menuju ke layar terakhir, Anda akan melihat b
 
 {{ image('/static/img/docs/tutorials/amp_story/bookend_full.gif', 398, 709, align='center third', alt='Bookend' ) }}
 
-Let's look at the JSON file.  Open the [bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json) file in your text editor.
+Let's look at the JSON file. Open the [bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json) file in your text editor.
 
 Every bookend screen requires a `bookendVersion`, which is `v1.0` for this tutorial:
 
@@ -43,7 +43,7 @@ Untuk tutorial ini, kita memilih Facebook, Twitter, dan email sebagai penyedia k
 
 {{ image('/static/img/docs/tutorials/amp_story/bookend_social_share.png', 720, 240, align='center half', alt='Bookend social share' ) }}
 
-The rest of the bookend screen is for related content.  All related content is contained in a `components` object.
+The rest of the bookend screen is for related content. All related content is contained in a `components` object.
 
 Ada berbagai komponen yang dapat Anda gunakan untuk menampilkan tautan dan konten terkait; setiap komponen ditentukan dengan atribut jenis. Mari kita lihat komponen yang tersedia:
 

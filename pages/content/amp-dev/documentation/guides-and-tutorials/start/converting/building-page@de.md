@@ -1,6 +1,6 @@
 ---
-"$title": Erstellung einer regulären HTML Seite
-"$order": '1'
+'$title': Erstellung einer regulären HTML Seite
+$order: 1
 description: Im Projektverzeichnis findest du die Datei article.html. Das ist der Nachrichtenartikel, für den wir eine Entsprechung in AMP erstellen …
 ---
 
@@ -9,15 +9,14 @@ Im Projektverzeichnis findest du die Datei [`article.html`](https://github.com/g
 1. **Kopiere** den gesamten Code aus der Datei `article.html` und füge ihn in eine neue Datei ein.
 2. **Speichere** die neue Datei als `article.amp.html`.
 
-[tip type="note"] **HINWEIS:** Deine AMP Dateien müssen nicht unbedingt `.amp.html` im Namen enthalten. AMP Dateien können eine beliebige Erweiterung haben. Publisher unterscheiden ihre AMP Seiten üblicherweise von den kanonischen Versionen, indem sie in der URL bestimmte Parameter verwenden. Zum Beispiel:  `http://publisher.com/article.html?amp`. [/tip]
+[tip type="note"] **HINWEIS:** Deine AMP Dateien müssen nicht unbedingt `.amp.html` im Namen enthalten. AMP Dateien können eine beliebige Erweiterung haben. Publisher unterscheiden ihre AMP Seiten üblicherweise von den kanonischen Versionen, indem sie in der URL bestimmte Parameter verwenden. Zum Beispiel: `http://publisher.com/article.html?amp`. [/tip]
 
 Deine Datei `article.amp.html` sollte wie folgt aussehen:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-
     <title>News Article</title>
 
     <link href="base.css" rel="stylesheet" />
@@ -25,15 +24,16 @@ Deine Datei `article.amp.html` sollte wie folgt aussehen:
     <script type="text/javascript" src="base.js"></script>
   </head>
   <body>
-    <header>
-      News Site
-    </header>
+    <header>News Site</header>
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
     </article>
-    <img src="mountains.jpg">
+    <img src="mountains.jpg" />
   </body>
 </html>
 ```

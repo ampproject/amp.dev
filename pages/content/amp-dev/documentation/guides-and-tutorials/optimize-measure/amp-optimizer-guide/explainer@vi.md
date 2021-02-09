@@ -1,10 +1,10 @@
 ---
-"$title": Cách hoạt động của Bộ tối ưu hoá AMP
-"$order": '1'
+'$title': Cách hoạt động của Bộ tối ưu hoá AMP
+$order: 1
 description: Một Bộ tối ưu hoá AMP tiếp nhận tài liệu HTML AMP hợp lệ làm đầu vào và chuyển nó thành một phiên bản được tối ưu hoá bằng cách áp dụng những tối ưu hoá bổ sung vốn cồng kềnh nếu làm thủ công. Hướng dẫn này giải thích chi tiết cách hoạt động của Bộ tối ưu hoá AMP.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

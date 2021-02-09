@@ -1,9 +1,9 @@
 ---
-"$title": Zabezpieczenie przed atakami stron trzecich
-"$order": '7'
+'$title': Zabezpieczenie przed atakami stron trzecich
+$order: 7
 description: Podejmij działania mające na celu ochronę stron AMP i użytkowników przed lukami w zabezpieczeniach w Internecie
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 ---
 

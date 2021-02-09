@@ -1,16 +1,16 @@
 ---
-"$title": Validate AMP pages
-"$order": '0'
+'$title': Validate AMP pages
+$order: 0
 description: Assista ao nosso vídeo sobre as várias opções de validação. A principal vantagem da tecnologia AMP não é simplesmente deixar as páginas mais rápidas, mas sim fazer isso de uma maneira que pode ser...
 formats:
-- sites
-- histórias
-- anúncios
+  - sites
+  - histórias
+  - anúncios
 ---
 
 [video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='Assista nosso vídeo sobre as várias opções de validação.']
 
-A principal vantagem da tecnologia AMP não é simplesmente deixar as páginas mais rápidas, mas sim fazer isso de uma maneira que pode ser *validada*. Assim, serviços de terceiros, tais como Twitter, Instagram ou a Busca do Google, podem ficar tranquilos ao disponibilizar páginas AMP para os leitores de maneiras cada vez mais interessantes.
+A principal vantagem da tecnologia AMP não é simplesmente deixar as páginas mais rápidas, mas sim fazer isso de uma maneira que pode ser _validada_. Assim, serviços de terceiros, tais como Twitter, Instagram ou a Busca do Google, podem ficar tranquilos ao disponibilizar páginas AMP para os leitores de maneiras cada vez mais interessantes.
 
 ## Como posso verificar se a minha página é uma AMP válida?
 
@@ -68,11 +68,11 @@ Extensão do Validador AMP para [Chrome](https://chrome.google.com/webstore/deta
 
 ### Pacotes de NPM para CI
 
-Você pode integrar a validação de AMP aos seus canais de desenvolvimento e testes usando os pacotes da NPM: [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) ou o plug-in Gulp [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator).  Por exemplo, você pode usar o pacote Validador AMP NPM em testes de integração ou numa tarefa programada para verificar as páginas AMP de produção.
+Você pode integrar a validação de AMP aos seus canais de desenvolvimento e testes usando os pacotes da NPM: [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) ou o plug-in Gulp [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator). Por exemplo, você pode usar o pacote Validador AMP NPM em testes de integração ou numa tarefa programada para verificar as páginas AMP de produção.
 
 ##### Exemplo: como validar um arquivo AMPHTML
 
-Neste exemplo, validamos um arquivo AMPHTML usando o pacote da NPM [amphtml-validator](https://www.npmjs.com/package/amphtml-validator).  O status de validação é enviado ao console.
+Neste exemplo, validamos um arquivo AMPHTML usando o pacote da NPM [amphtml-validator](https://www.npmjs.com/package/amphtml-validator). O status de validação é enviado ao console.
 
 ```javascript
 'use strict';
@@ -82,39 +82,40 @@ var fs = require('fs');
 amphtmlValidator.getInstance().then(function (validator) {
   var input = fs.readFileSync('index.html', 'utf8');
   var result = validator.validateString(input);
-  ((result.status === 'PASS') ? console.log : console.error)(result.status);
+  (result.status === 'PASS' ? console.log : console.error)(result.status);
   for (var ii = 0; ii < result.errors.length; ii++) {
     var error = result.errors[ii];
-    var msg = 'line ' + error.line + ', col ' + error.col + ': ' + error.message;
+    var msg =
+      'line ' + error.line + ', col ' + error.col + ': ' + error.message;
     if (error.specUrl !== null) {
       msg += ' (see ' + error.specUrl + ')';
     }
-    ((error.severity === 'ERROR') ? console.error : console.warn)(msg);
+    (error.severity === 'ERROR' ? console.error : console.warn)(msg);
   }
 });
 ```
 
 ##### Exemplo: como usar uma tarefa Gulp na validação de AMPHTML
 
-Neste exemplo, temos uma tarefa Gulp que valida todos os arquivos AMPHTML.  Se houver um erro de validação de AMP, a tarefa será encerrada com um código de erro (1).
+Neste exemplo, temos uma tarefa Gulp que valida todos os arquivos AMPHTML. Se houver um erro de validação de AMP, a tarefa será encerrada com um código de erro (1).
 
 ```javascript
 const gulp = require('gulp');
 const gulpAmpValidator = require('gulp-amphtml-validator');
 
 const paths = {
-  src: 'src/*.html'
+  src: 'src/*.html',
 };
 
 gulp.task('amphtml:validate', () => {
-  return gulp.src(paths.src)
+  return gulp
+    .src(paths.src)
     .pipe(gulpAmpValidator.validate())
     .pipe(gulpAmpValidator.format())
     .pipe(gulpAmpValidator.failAfterError());
 });
 
-gulp.task('default', ['amphtml:validate'], function () {
-});
+gulp.task('default', ['amphtml:validate'], function () {});
 ```
 
 ### Ferramenta de linha de comando
@@ -152,12 +153,12 @@ A ferramenta de linha de comando oferece recursos adicionais, incluindo desativa
 [sourcecode:console]
 $ amphtml-validator --help
 
-  Usage: index [options] <fileOrUrlOrMinus...>
+Usage: index [options] <fileOrUrlOrMinus...>
 
-  Validates the files or urls provided as arguments. If "-" is
-  specified, reads from stdin instead.
+Validates the files or urls provided as arguments. If "-" is
+specified, reads from stdin instead.
 
-  Options:
+Options:
 
     -h, --help                  output usage information
     -V, --version               output the version number
@@ -172,6 +173,7 @@ $ amphtml-validator --help
               supporting color).
       "json"  emits json corresponding to the ValidationResult
               message in validator.proto.
+
 [/sourcecode]
 
 ## O que acontece quando minha página não é válida?
@@ -192,15 +194,9 @@ Ela gera este erro de validação AMP, mostrado nessas diferentes ferramentas:
 
 - Console de desenvolvimento do navegador {amp-img0}{/amp-img0}
 
-
-
 - Interface web {amp-img0}{/amp-img0}
 
-
-
 - Extensão do navegador {amp-img0}{/amp-img0}
-
-
 
 Cada ferramenta fornece várias informações:
 

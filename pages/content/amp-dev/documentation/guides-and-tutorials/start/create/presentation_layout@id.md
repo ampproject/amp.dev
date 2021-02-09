@@ -1,10 +1,10 @@
 ---
-"$title": Memodifikasi presentasi dan tata letak
-"$order": '3'
-description: "Halaman AMP adalah halaman web; pengaturan gaya apa pun pada halaman dan elemennya dilakukan dengan menggunakan properti CSS yang umum. Elemen gaya menggunakan pemilih kelas atau elemen ...."
+'$title': Memodifikasi presentasi dan tata letak
+$order: 3
+description: 'Halaman AMP adalah halaman web; pengaturan gaya apa pun pada halaman dan elemennya dilakukan dengan menggunakan properti CSS yang umum. Elemen gaya menggunakan pemilih kelas atau elemen ....'
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## Memodifikasi presentasi
@@ -12,6 +12,7 @@ contributors:
 Halaman AMP adalah halaman web; pengaturan gaya apa pun pada halaman dan elemennya dilakukan dengan menggunakan properti CSS yang umum. Elemen gaya menggunakan pemilih kelas atau elemen dalam lembar gaya sematan dalam `<head>`, bernama `<style amp-custom>`:
 
 [sourcecode:html]
+
 <style amp-custom>
   /* any custom style goes here */
   body {
@@ -22,6 +23,7 @@ Halaman AMP adalah halaman web; pengaturan gaya apa pun pada halaman dan elemenn
     border: 1px solid black;
   }
 </style>
+
 [/sourcecode]
 
 Setiap halaman AMP hanya bisa memiliki lembar gaya inline dan satu lembar gaya yang disematkan, namun ada pemilih tertentu yang tidak boleh Anda gunakan. [Pelajari semua tentang pengaturan gaya](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).

@@ -1,11 +1,11 @@
 ---
-"$title": AMPHTML 레이아웃 시스템
-order: '1'
+'$title': AMPHTML 레이아웃 시스템
+$order: 1
 formats:
-- websites
-- email
-- stories
-- ads
+  - websites
+  - email
+  - stories
+  - ads
 teaser:
   text: '개요 '
 ---
@@ -68,13 +68,14 @@ AMP는 문서 레이아웃에서 AMP 컴포넌트의 동작 방식을 지정하�
 
 [sourcecode:html]
 <amp-img
-  src="/img/amp.jpg"
-  width="1080"
-  height="610"
-  layout="responsive"
-  alt="an image"
-></amp-img>
-[/sourcecode]
+src="/img/amp.jpg"
+width="1080"
+height="610"
+layout="responsive"
+alt="an image"
+
+> </amp-img>
+> [/sourcecode]
 
 `layout` 속성에 지원되는 값:
 
@@ -137,14 +138,14 @@ AMP는 문서 레이아웃에서 AMP 컴포넌트의 동작 방식을 지정하�
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="400"
-  height="300"
-  layout="responsive"
-  sizes="(min-width: 320px) 320px, 100vw"
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="400"
+height="300"
+layout="responsive"
+sizes="(min-width: 320px) 320px, 100vw"
+
+> </amp-img>
+> [/sourcecode]
 
 ### `disable-inline-width` <a name="disable-inline-width"></a>
 
@@ -156,15 +157,15 @@ AMP는 문서 레이아웃에서 AMP 컴포넌트의 동작 방식을 지정하�
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="400"
-  height="300"
-  layout="responsive"
-  sizes="(min-width: 320px) 320px, 100vw"
-  disable-inline-width
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="400"
+height="300"
+layout="responsive"
+sizes="(min-width: 320px) 320px, 100vw"
+disable-inline-width
+
+> </amp-img>
+> [/sourcecode]
 
 ### `heights` <a name="heights"></a>
 
@@ -173,7 +174,7 @@ AMP는 문서 레이아웃에서 AMP 컴포넌트의 동작 방식을 지정하�
 1. 요소의 너비가 아닌 높이에 적용됩니다.
 2. 퍼센트 값이 허용됩니다(예: `86%`). 퍼센트 값을 사용할 경우 요소의 너비 %를 나타냅니다.
 
-`heights` 속성이 `width` 및  `height`와 함께 지정될 경우 `layout`은 기본적으로 <code>responsive</code>로 설정됩니다.
+`heights` 속성이 `width` 및 `height`와 함께 지정될 경우 `layout`은 기본적으로 <code>responsive</code>로 설정됩니다.
 
 **예시**: `heights` 속성 사용
 
@@ -181,13 +182,13 @@ AMP는 문서 레이아웃에서 AMP 컴포넌트의 동작 방식을 지정하�
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="320"
-  height="256"
-  heights="(min-width:500px) 200px, 80%"
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="320"
+height="256"
+heights="(min-width:500px) 200px, 80%"
+
+> </amp-img>
+> [/sourcecode]
 
 ### `media` <a name="media"></a>
 
@@ -199,20 +200,21 @@ AMP는 문서 레이아웃에서 AMP 컴포넌트의 동작 방식을 지정하�
 
 [sourcecode:html]
 <amp-img
-  media="(min-width: 650px)"
-  src="wide.jpg"
-  width="466"
-  height="355"
-  layout="responsive"
-></amp-img>
-<amp-img
-  media="(max-width: 649px)"
-  src="narrow.jpg"
-  width="527"
-  height="193"
-  layout="responsive"
-></amp-img>
-[/sourcecode]
+media="(min-width: 650px)"
+src="wide.jpg"
+width="466"
+height="355"
+layout="responsive"
+
+> </amp-img>
+> <amp-img
+>   media="(max-width: 649px)"
+>   src="narrow.jpg"
+>   width="527"
+>   height="193"
+>   layout="responsive"
+> </amp-img>
+> [/sourcecode]
 
 ### `placeholder` <a name="placeholder"></a>
 
@@ -220,7 +222,7 @@ AMP는 문서 레이아웃에서 AMP 컴포넌트의 동작 방식을 지정하�
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
-  <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+<amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
 [/sourcecode]
 
@@ -230,6 +232,7 @@ AMP는 문서 레이아웃에서 AMP 컴포넌트의 동작 방식을 지정하�
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
+
   <div fallback>Cannot play animated images on this device.</div>
 </amp-anim>
 [/sourcecode]

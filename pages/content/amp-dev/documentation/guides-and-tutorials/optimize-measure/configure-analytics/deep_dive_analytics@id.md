@@ -1,10 +1,10 @@
 ---
-"$title": Mendalami analitik AMP
-"$order": '1'
+'$title': Mendalami analitik AMP
+$order: 1
 description: Panduan ini membahas lebih dalam tentang komponen amp-analytics, membagi sampel konfigurasi amp-analytics ke dalam blok-blok penyusun utama ini.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 ---
 
 Panduan ini membahas lebih dalam tentang komponen [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), membagi sampel konfigurasi [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) ke dalam blok-blok penyusun utama ini:
@@ -12,41 +12,44 @@ Panduan ini membahas lebih dalam tentang komponen [`amp-analytics`](../../../../
 Bagian lain di dalam panduan ini menggunakan sampel konfigurasi ini, yang melacak jumlah penayangan halaman dan klik pengguna pada tautan serta mengirimkan data analitik ke penyedia pihak ketiga, [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/):
 
 ```html
-<amp-analytics type="googleanalytics" config="https://example.com/analytics.account.config.json">
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
-    "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-  },
-  "vars": {
-    "account": "ABC123"
-  },
-  "extraUrlParams": {
-    "cd1": "AMP"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
-    },
-    "trackAnchorClicks": {
-      "on": "click",
-      "selector": "a",
-      "request": "event",
+<amp-analytics
+  type="googleanalytics"
+  config="https://example.com/analytics.account.config.json"
+>
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
+        "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
+      },
       "vars": {
-        "eventId": "42",
-        "eventLabel": "clicked on a link"
+        "account": "ABC123"
+      },
+      "extraUrlParams": {
+        "cd1": "AMP"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        },
+        "trackAnchorClicks": {
+          "on": "click",
+          "selector": "a",
+          "request": "event",
+          "vars": {
+            "eventId": "42",
+            "eventLabel": "clicked on a link"
+          }
+        }
+      },
+      "transport": {
+        "beacon": false,
+        "xhrpost": false,
+        "image": true
       }
     }
-  },
-  'transport': {
-    'beacon': false,
-    'xhrpost': false,
-    'image': true
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -76,7 +79,9 @@ Dengan begitu, Anda dapat melakukan beberapa hal, seperti memvariasikan konfigur
 Langkah pertama untuk memuat konfigurasi jarak jauh adalah dengan menyertakan atribut "config" ke dalam tag [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md):
 
 ```html
-<amp-analytics config="https://example.com/analytics.account.config.json">
+<amp-analytics
+  config="https://example.com/analytics.account.config.json"
+></amp-analytics>
 ```
 
 Langkah selanjutnya adalah membuat konten JSON yang berada di URL jarak jauh. Dalam contoh sederhana ini, konfigurasi yang berada dalam objek JSON hanya berupa nilai variabel untuk akun analitik.
@@ -256,26 +261,26 @@ Dalam contoh ini, terdapat konfigurasi jarak jauh, variabel yang ditentukan di l
 
 ```html
 <amp-analytics config="http://example.com/config.json">
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(cid-scope)}",
-  },
-  "vars": {
-    "account": "ABC123",
-    "title": "Homepage"
-  },
-  "triggers": {
-    "some-event": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(cid-scope)}",
+      },
       "vars": {
-        "title": "My homepage",
-        "clientId": "my user"
+        "account": "ABC123",
+        "title": "Homepage"
+      },
+      "triggers": {
+        "some-event": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage",
+            "clientId": "my user"
+          }
       }
-  }
-}
-</script>
+    }
+  </script>
 </amp-analytics>
 ```
 

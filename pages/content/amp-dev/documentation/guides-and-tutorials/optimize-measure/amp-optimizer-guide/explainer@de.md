@@ -1,10 +1,10 @@
 ---
-"$title": So funktioniert ein AMP Optimizer
-"$order": '1'
+'$title': So funktioniert ein AMP Optimizer
+$order: 1
 description: Ein AMP Optimizer nimmt ein gültiges AMPHTML Dokument als Eingabe und wandelt es in eine optimierte Version um. Dazu werden zusätzliche Optimierungen angewendet, deren manuelle Implementierung zu umständlich wäre. Dieser Leitfaden erläutert ausführlich die Funktionsweise des AMP Optimizers.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

@@ -16,7 +16,7 @@ class AutoDependencyInjector(object):
   def add_auto_imports(doc, content, amp_dependencies):
     """
     :type doc: document.Document
-    :type content: basestring
+    :type content: str
     :type amp_dependencies: AmpDependencies
     """
 
@@ -34,7 +34,7 @@ class AutoDependencyInjector(object):
   def should_do_auto_import(doc, content):
     """
     :type doc: document.Document
-    :type content: basestring
+    :type content: str
     :rtype: bool
     """
     # Do not run for empty documents
@@ -52,11 +52,11 @@ class AutoDependencyInjector(object):
       return False
 
     # Quick check if the page is really a AMP page
-    if not any(marker in content for marker in ['<html amp', '<html ⚡']):
+    if not any(marker in content for marker in ['<html amp'.encode('utf-8'), '<html ⚡'.encode('utf-8')]):
       return False
 
     # And has a head element
-    if '</head>' not in content:
+    if '</head>'.encode('utf-8') not in content:
       return False
 
     return True

@@ -1,6 +1,6 @@
 ---
-"$title": Congratulations!
-"$order": '9'
+'$title': Congratulations!
+$order: 9
 description: 'Anda telah berhasil menyelesaikan cerita AMP pertama Anda! Di dalam tutorial ini, Anda telah mempelajari cara: - Membuat cerita multi-halaman dengan menggunakan komponen amp-story'
 author: bpaduch
 ---

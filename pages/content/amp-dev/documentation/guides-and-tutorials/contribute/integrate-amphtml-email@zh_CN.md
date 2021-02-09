@@ -1,9 +1,9 @@
 ---
-"$title": AMP 电子邮件 - 电子邮件服务提供商集成
-"$order": '5'
+'$title': AMP 电子邮件 - 电子邮件服务提供商集成
+$order: 5
 description: 面向与 AMP 集成的电子邮件客户端和提供商的信息。
 formats:
-- email
+  - email
 ---
 
 我们目前正在编写一份关于集成 AMP 电子邮件的全面指南。

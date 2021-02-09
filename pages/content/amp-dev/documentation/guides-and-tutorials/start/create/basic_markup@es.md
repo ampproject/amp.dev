@@ -1,15 +1,16 @@
 ---
-"$title": Crear tu página AMP HTML
-"$order": '1'
+'$title': Crear tu página AMP HTML
+$order: 1
 description: 'Utilice HTTPS: cuando se crean páginas y contenidos AMP, debe considerar seriamente el uso del protocolo HTTPS (vs. HTTP). Aunque, HTTPS no es necesario para el documento AMP en sí o ...'
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 El siguiente código es un buen punto de partida o plantilla. Cópielo y guárdelo en un archivo con extensión .html.
 
 [sourcecode:html]
+
 <!doctype html>
 <html amp lang="en">
   <head>
@@ -39,7 +40,7 @@ El siguiente código es un buen punto de partida o plantilla. Cópielo y guárde
 
 Hasta ahora, el contenido del cuerpo es bastante claro, pero en el encabezado de la página hay mucho código adicional que no resulta tan obvio. Vamos a desglosar el código necesario.
 
-[tip type="note"] Cuando cree contenido y páginas AMP, valore de forma importante utilizar el protocolo HTTPS en lugar del HTTP. Si bien no es obligatorio tener HTTPS en el propio documento AMP ni en las imágenes o fuentes, hay muchas funciones de AMP que requieren HTTPS (por ejemplo, los videos, los iframes, etc). Por tanto, para asegurarte de que sus páginas AMP aprovechen al máximo todas las funciones de AMP, utilice el protocolo HTTPS.  Puede consultar más información sobre HTTPS en el artículo [Por qué HTTPS es importante](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https). [/tip]
+[tip type="note"] Cuando cree contenido y páginas AMP, valore de forma importante utilizar el protocolo HTTPS en lugar del HTTP. Si bien no es obligatorio tener HTTPS en el propio documento AMP ni en las imágenes o fuentes, hay muchas funciones de AMP que requieren HTTPS (por ejemplo, los videos, los iframes, etc). Por tanto, para asegurarte de que sus páginas AMP aprovechen al máximo todas las funciones de AMP, utilice el protocolo HTTPS. Puede consultar más información sobre HTTPS en el artículo [Por qué HTTPS es importante](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https). [/tip]
 
 [tip type="tip"] Utilice el [Generador de códigos repetitivos de AMP](/boilerplate) para comenzar rápidamente a crear nuevas páginas AMP. [/tip]
 
@@ -47,16 +48,16 @@ Hasta ahora, el contenido del cuerpo es bastante claro, pero en el encabezado de
 
 Los documentos de AMP HTML DEBEN:
 
-Regla | Descripción
---- | ---
-Empezar por el tipo de documento `<!doctype html>`. | Estándar de HTML.
-Incluir una etiqueta de nivel superior `<html ⚡>` <br>(`<html amp>` también se acepta). | Identifica la página como contenido de AMP.
-Incluir etiquetas `<head>` y `<body>`. | Opcional en HTML, pero no en AMP.
-Incluir una etiqueta `<meta charset="utf-8">` como la primera etiqueta secundaria de su etiqueta `<head>`. | Identifica la codificación de la página.
-Incluir una etiqueta `<script async src="https://cdn.ampproject.org/v0.js"></script>` como la segunda etiqueta secundaria de la etiqueta `<head>`. | Incluye y carga la biblioteca JS de AMP.
-Incluir una etiqueta `<link rel="canonical" href="$SOME_URL">` dentro de `<head>`. | Dirige a la versión HTML normal del documento AMP HTML o a sí misma si no existe dicha versión HTML. Consulta más información en el artículo sobre cómo [hacer que una página sea visible](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md).
-Contain a `<meta name="viewport" content="width=device-width"> It's also recommended to include `initial-scale=1`. | Especifique una ventana de visualización adaptable. Consulte más información en el artículo sobre cómo [crear páginas AMP adaptables](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).
-Incluir el [código de plantilla de AMP](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) en la etiqueta `<head>`. | La plantilla CSS para ocultar inicialmente el contenido hasta que se cargue AMP JS.
+| Regla                                                                                                                                              | Descripción                                                                                                                                                                                                                                                               |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Empezar por el tipo de documento `<!doctype html>`.                                                                                                | Estándar de HTML.                                                                                                                                                                                                                                                         |
+| Incluir una etiqueta de nivel superior `<html ⚡>` <br>(`<html amp>` también se acepta).                                                           | Identifica la página como contenido de AMP.                                                                                                                                                                                                                               |
+| Incluir etiquetas `<head>` y `<body>`.                                                                                                             | Opcional en HTML, pero no en AMP.                                                                                                                                                                                                                                         |
+| Incluir una etiqueta `<meta charset="utf-8">` como la primera etiqueta secundaria de su etiqueta `<head>`.                                         | Identifica la codificación de la página.                                                                                                                                                                                                                                  |
+| Incluir una etiqueta `<script async src="https://cdn.ampproject.org/v0.js"></script>` como la segunda etiqueta secundaria de la etiqueta `<head>`. | Incluye y carga la biblioteca JS de AMP.                                                                                                                                                                                                                                  |
+| Incluir una etiqueta `<link rel="canonical" href="$SOME_URL">` dentro de `<head>`.                                                                 | Dirige a la versión HTML normal del documento AMP HTML o a sí misma si no existe dicha versión HTML. Consulta más información en el artículo sobre cómo [hacer que una página sea visible](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md). |
+| Contain a `<meta name="viewport" content="width=device-width"> It's also recommended to include `initial-scale=1`.                                 | Especifique una ventana de visualización adaptable. Consulte más información en el artículo sobre cómo [crear páginas AMP adaptables](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).                                      |
+| Incluir el [código de plantilla de AMP](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) en la etiqueta `<head>`.     | La plantilla CSS para ocultar inicialmente el contenido hasta que se cargue AMP JS.                                                                                                                                                                                       |
 
 ## Metadatos opcionales
 

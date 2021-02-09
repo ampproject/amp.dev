@@ -1,12 +1,12 @@
 ---
-"$title": Debugowanie problemów z usługą buforowania AMP
-order: '8'
+'$title': Debugowanie problemów z usługą buforowania AMP
+$order: 8
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
-  text: " Dlaczego mój dokument jest uszkadzany na serwerze buforującym AMP?"
+  text: ' Dlaczego mój dokument jest uszkadzany na serwerze buforującym AMP?'
 ---
 
 <!--
@@ -16,7 +16,7 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-##  Dlaczego mój dokument jest uszkadzany na serwerze buforującym AMP? <a name="why-is-my-doc-broken-on-an-amp-cache"></a>
+## Dlaczego mój dokument jest uszkadzany na serwerze buforującym AMP? <a name="why-is-my-doc-broken-on-an-amp-cache"></a>
 
 Prawidłowe dokumenty AMP zazwyczaj wyglądają i działają na serwerach buforujących AMP tak samo, jak w źródle. Niektóre składniki i konfiguracje serwerów mogą jednak powodować problemy.
 

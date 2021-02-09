@@ -1,7 +1,7 @@
 ---
-"$title": Configuration
-"$order": '1'
-description: 'Configurez votre environnement de développement : Étape 1. Téléchargez le code. Téléchargez l''exemple de code du tutoriel sous forme de fichier ZIP ou via git ...'
+'$title': Configuration
+$order: 1
+description: "Configurez votre environnement de développement : Étape 1. Téléchargez le code. Téléchargez l'exemple de code du tutoriel sous forme de fichier ZIP ou via git ..."
 author: bpaduch
 ---
 
@@ -24,7 +24,7 @@ Avant de commencer ce tutoriel, vous aurez besoin des éléments suivants :
 
 #### Étape 2. Exécutez la page d'exemple
 
-To test our sample Web Story, we need to access the files from a web server. There are several ways to create a temporary local web server for the purposes of testing.  Here are some options, choose the one that works best for you:
+To test our sample Web Story, we need to access the files from a web server. There are several ways to create a temporary local web server for the purposes of testing. Here are some options, choose the one that works best for you:
 
 - [Application Google Chrome "Web Server for Chrome"](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
 - [Un serveur HTTP Python local](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server#Running_a_simple_local_HTTP_server)

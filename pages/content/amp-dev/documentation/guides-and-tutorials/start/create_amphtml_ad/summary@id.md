@@ -1,6 +1,6 @@
 ---
-"$title": Selamat!
-"$order": '4'
+'$title': Selamat!
+$order: 4
 description: "Anda telah berhasil membuat sebuah iklan HTML AMP yang dapat disajikan di halaman AMP dan non-AMP! Di dalam tutorial ini, Anda telah belajar untuk: •\tMembuat iklan HTML AMP yang valid sesuai dengan ...."
 ---
 

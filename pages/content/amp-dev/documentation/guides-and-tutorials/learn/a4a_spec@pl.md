@@ -1,8 +1,8 @@
 ---
-"$title": Specyfikacja AMP dla reklam
-order: '3'
+'$title': Specyfikacja AMP dla reklam
+$order: 3
 formats:
-- ads
+  - ads
 teaser:
   text: _Jeśli chcesz zaproponować zmiany w standardzie, umieść komentarz na [Intent
 toc: 'true'
@@ -31,7 +31,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-*Jeśli chcesz zaproponować zmiany w standardzie, umieść komentarz na stronie [Intent to Implement](https://github.com/ampproject/amphtml/issues/4264)*.
+_Jeśli chcesz zaproponować zmiany w standardzie, umieść komentarz na stronie [Intent to Implement](https://github.com/ampproject/amphtml/issues/4264)_.
 
 Reklamy AMPHTML to mechanizm służący do renderowania szybkich, wydajnych reklam na stronach AMP. Aby umożliwić szybkie i płynne renderowanie dokumentów reklamowych AMPHTML („kreacji AMP”) w przeglądarce i nie pogarszać komfortu użytkowania, kreacje AMP muszą być zgodne z zestawem reguł walidacji. Podobnie, w duchu [reguł formatu AMP](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml) reklamy AMPHTML mają dostęp do ograniczonego zestawu dozwolonych znaczników, możliwości i rozszerzeń.
 
@@ -99,14 +99,16 @@ Ponadto kreacje muszą być zgodne z następującymi regułami:
 Kreacje reklamowe AMPHTML wymagają innej i znacznie prostszej linii stylu boilerplate niż [ogólne dokumenty AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md):
 
 [sourcecode:html]
+
 <style amp4ads-boilerplate>
   body {
     visibility: hidden;
   }
 </style>
+
 [/sourcecode]
 
-*Uzasadnienie:* styl `amp-boilerplate` ukrywa zawartość sekcji body aż do momentu, gdy środowisko uruchomieniowe AMP jest gotowe i może ją pokazać. Jeśli obsługa JavaScript jest wyłączona lub załadowanie środowiska uruchomieniowego AMP nie powiodło się, domyślny gotowy kod zapewnia, że mimo to zawartość zostanie ostatecznie wyświetlona. Jeśli jednak JavaScript jest całkowicie wyłączony, reklamy AMPHTML nie będą uruchamiane i nigdy nie zostanie wyświetlona żadna reklama, więc nie ma potrzeby stosowania sekcji `<noscript>`. W przypadku braku środowiska uruchomieniowego AMP większość maszynerii, na której opierają się reklamy AMPHTML (jak analityka śledzenia widoczności lub składnik `amp-img` do wyświetlania treści) nie będzie dostępna, więc lepiej jest nie wyświetlać żadnej reklamy niż reklamę działającą wadliwie.
+_Uzasadnienie:_ styl `amp-boilerplate` ukrywa zawartość sekcji body aż do momentu, gdy środowisko uruchomieniowe AMP jest gotowe i może ją pokazać. Jeśli obsługa JavaScript jest wyłączona lub załadowanie środowiska uruchomieniowego AMP nie powiodło się, domyślny gotowy kod zapewnia, że mimo to zawartość zostanie ostatecznie wyświetlona. Jeśli jednak JavaScript jest całkowicie wyłączony, reklamy AMPHTML nie będą uruchamiane i nigdy nie zostanie wyświetlona żadna reklama, więc nie ma potrzeby stosowania sekcji `<noscript>`. W przypadku braku środowiska uruchomieniowego AMP większość maszynerii, na której opierają się reklamy AMPHTML (jak analityka śledzenia widoczności lub składnik `amp-img` do wyświetlania treści) nie będzie dostępna, więc lepiej jest nie wyświetlać żadnej reklamy niż reklamę działającą wadliwie.
 
 Wreszcie, w standardowym kodzie AMPHTML reklamy używany jest składnik `amp-a4a-boilerplate`, zamiast `amp-boilerplate`, aby walidatory mogły go z łatwością zidentyfikować i wygenerować dokładniejsze komunikaty o błędach, pomocne dla programistów.
 
@@ -151,14 +153,14 @@ Właściwości `transition` i `animation` są dozwolone tylko w selektorach, kt�
 
 - Zawierają tylko właściwości `transition`, `animation`, `transform`, `visibility` lub `opacity`.
 
-    *Uzasadnienie:* pozwala to na usunięcie tej klasy z kontekstu w celu dezaktywowania animacji, gdy jest to konieczne do działania strony.
+  _Uzasadnienie:_ pozwala to na usunięcie tej klasy z kontekstu w celu dezaktywowania animacji, gdy jest to konieczne do działania strony.
 
 **Dobrze**
 
 [sourcecode:css]
 .box {
-  transform: rotate(180deg);
-  transition: transform 2s;
+transform: rotate(180deg);
+transition: transform 2s;
 }
 [/sourcecode]
 
@@ -168,9 +170,9 @@ Właściwość niedozwolona w klasie CSS.
 
 [sourcecode:css]
 .box {
-  color: red; // non-animation property not allowed in animation selector
-  transform: rotate(180deg);
-  transition: transform 2s;
+color: red; // non-animation property not allowed in animation selector
+transform: rotate(180deg);
+transition: transform 2s;
 }
 [/sourcecode]
 
@@ -194,13 +196,13 @@ transition: background-color 2s;
 
 [sourcecode:css]
 @keyframes turn {
-  from {
-    transform: rotate(180deg);
-  }
+from {
+transform: rotate(180deg);
+}
 
-  to {
-    transform: rotate(90deg);
-  }
+to {
+transform: rotate(90deg);
+}
 }
 [/sourcecode]
 
@@ -208,21 +210,21 @@ transition: background-color 2s;
 
 [sourcecode:css]
 @keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 300%;
-  }
+from {
+margin-left: 100%;
+width: 300%;
+}
 
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
+to {
+margin-left: 0%;
+width: 100%;
+}
 }
 [/sourcecode]
 
 ### Dozwolone rozszerzenia i wbudowane obiekty AMP <a name="allowed-amp-extensions-and-builtins"></a>
 
-Poniżej widnieją *dozwolone* moduły rozszerzeń AMP i znaczniki AMP wbudowywane w reklamę AMPHTML. Rozszerzenia lub wbudowane znaczniki, których nie ma na liście, są zabronione.
+Poniżej widnieją _dozwolone_ moduły rozszerzeń AMP i znaczniki AMP wbudowywane w reklamę AMPHTML. Rozszerzenia lub wbudowane znaczniki, których nie ma na liście, są zabronione.
 
 - [amp-accordion](https://amp.dev/documentation/components/amp-accordion)
 - [amp-ad-exit](https://amp.dev/documentation/components/amp-ad-exit)
@@ -248,19 +250,19 @@ Poniżej widnieją *dozwolone* moduły rozszerzeń AMP i znaczniki AMP wbudowywa
 
 Większość pominięć wynika z kwestii wydajności albo uproszczenia analizy reklam AMPHTML.
 
-*Przykład:* `<amp-ad>` pominięto na tej liście. Jest jednoznacznie niedozwolony, ponieważ zezwalanie na `<amp-ad>` w `<amp-ad>` może doprowadzić do ładowania nieograniczonych kaskad reklam, które nie spełniają celów wydajnościowych reklam AMPHTML.
+_Przykład:_ `<amp-ad>` pominięto na tej liście. Jest jednoznacznie niedozwolony, ponieważ zezwalanie na `<amp-ad>` w `<amp-ad>` może doprowadzić do ładowania nieograniczonych kaskad reklam, które nie spełniają celów wydajnościowych reklam AMPHTML.
 
-*Przykład:* `<amp-iframe>` pominięto na tej liście. Jest niedozwolony, ponieważ reklamy mogą go użyć do wykonania dowolnego kodu JavaScript i załadowania dowolnej zawartości. Reklamy chcące korzystać z takich możliwości powinny zwracać wartość `false` ze swojego wpisu [a4aRegistry](https://github.com/ampproject/amphtml/blob/master/ads/_a4a-config.js#L40) i używać istniejącego mechanizmu renderowania reklam „3p iframe”.
+_Przykład:_ `<amp-iframe>` pominięto na tej liście. Jest niedozwolony, ponieważ reklamy mogą go użyć do wykonania dowolnego kodu JavaScript i załadowania dowolnej zawartości. Reklamy chcące korzystać z takich możliwości powinny zwracać wartość `false` ze swojego wpisu [a4aRegistry](https://github.com/ampproject/amphtml/blob/master/ads/_a4a-config.js#L40) i używać istniejącego mechanizmu renderowania reklam „3p iframe”.
 
-*Przykład:* `<amp-facebook>`, `<amp-instagram>`, `<amp-twitter>` i `<amp-youtube>` pominięto z tego samego powodu, co `<amp-iframe>`: wszystkie one tworzą ramki iframe i mogą w nich używać nieograniczonych zasobów.
+_Przykład:_ `<amp-facebook>`, `<amp-instagram>`, `<amp-twitter>` i `<amp-youtube>` pominięto z tego samego powodu, co `<amp-iframe>`: wszystkie one tworzą ramki iframe i mogą w nich używać nieograniczonych zasobów.
 
-*Przykład:* `<amp-ad-network-*-impl>` pominięto na tej liście. Znacznik `<amp-ad>` obsługuje delegację do tych znaczników implementacji; kreacje nie powinny próbować dołączać ich bezpośrednio.
+_Przykład:_ `<amp-ad-network-*-impl>` pominięto na tej liście. Znacznik `<amp-ad>` obsługuje delegację do tych znaczników implementacji; kreacje nie powinny próbować dołączać ich bezpośrednio.
 
-*Przykład:* `<amp-lightbox>` nie jest jeszcze uwzględniony, ponieważ nawet niektóre kreacje reklam AMPHTML mogą być renderowane w ramce iframe i obecnie nie ma mechanizmu, który umożliwiałby rozszerzenie reklamy poza ramkę iframe. Obsługa może zostać dodana w przyszłości, jeśli zostanie wykazane zapotrzebowanie na nią.
+_Przykład:_ `<amp-lightbox>` nie jest jeszcze uwzględniony, ponieważ nawet niektóre kreacje reklam AMPHTML mogą być renderowane w ramce iframe i obecnie nie ma mechanizmu, który umożliwiałby rozszerzenie reklamy poza ramkę iframe. Obsługa może zostać dodana w przyszłości, jeśli zostanie wykazane zapotrzebowanie na nią.
 
 ### Znaczniki HTML <a name="html-tags"></a>
 
-Poniżej znajdują się znaczniki *dozwolone* w kreacji reklamowej AMPHTML. Znaczniki, które nie są jawnie dozwolone, są zabronione. Ta lista jest podzbiorem ogólnej [listy dozwolonych znaczników AMPHTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md). Podobnie jak ta lista, są uporządkowane zgodnie ze specyfikacją HTML5 w sekcji 4 [Elementy HTML](http://www.w3.org/TR/html5/single-page.html#html-elements).
+Poniżej znajdują się znaczniki _dozwolone_ w kreacji reklamowej AMPHTML. Znaczniki, które nie są jawnie dozwolone, są zabronione. Ta lista jest podzbiorem ogólnej [listy dozwolonych znaczników AMPHTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md). Podobnie jak ta lista, są uporządkowane zgodnie ze specyfikacją HTML5 w sekcji 4 [Elementy HTML](http://www.w3.org/TR/html5/single-page.html#html-elements).
 
 Większość pominięć wynika z kwestii wydajności albo tego, że znaczniki nie są w standardzie HTML5. Na przykład `<noscript>` pominięto, ponieważ reklamy AMPHTML zależą od włączenia obsługi JavaScript, więc blok `<noscript>` nigdy nie jest wykonywany, zatem jedynie zaśmieca kreację, obciąża łącze i zwiększa latencję. Podobnie znaczniki `<acronym>`, `<big>` itd. są zabronione, ponieważ nie są zgodne z HTML5.
 
@@ -282,7 +284,7 @@ Większość pominięć wynika z kwestii wydajności albo tego, że znaczniki ni
 
 - **Uwaga:** w odróżnieniu od ogólnego AMP, znaczniki `<link rel="canonical">` są zabronione.
 
-    4.2.5 `<style>` 4.2.6 `<meta>`
+  4.2.5 `<style>` 4.2.6 `<meta>`
 
 #### 4.3 Sekcje <a name="43-sections"></a>
 
@@ -310,7 +312,7 @@ Większość pominięć wynika z kwestii wydajności albo tego, że znaczniki ni
 
 Tagi SVG nie znajdują się w przestrzeni nazw HTML5. Są one wymienione poniżej bez identyfikatorów sekcji.
 
-`<svg>``<g>``<path>``<glyph>``<glyphref>``<marker>``<view>``<circle>``<line>``<polygon>``<polyline>``<rect>``<text>``<textpath>``<tref>``<tspan>``<clippath>``<filter>``<lineargradient>``<radialgradient>``<mask>``<pattern>``<vkern>``<hkern>``<defs>``<use>``<symbol>``<desc>``<title>`
+` <svg>``<g>``<path>``<glyph>``<glyphref>``<marker>``<view>``<circle>``<line>``<polygon>``<polyline>``<rect>``<text>``<textpath>``<tref>``<tspan>``<clippath>``<filter>``<lineargradient>``<radialgradient>``<mask>``<pattern>``<vkern>``<hkern>``<defs>``<use>``<symbol>``<desc>``<title> `
 
 #### 4.9 Dane tabelaryczne <a name="49-tabular-data"></a>
 
@@ -324,7 +326,7 @@ Tagi SVG nie znajdują się w przestrzeni nazw HTML5. Są one wymienione poniże
 
 - Podobnie jak ogólny dokument AMP, znacznik `<head>` kreacji musi zawierać znacznik `<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>`.
 - W odróżnieniu od ogólnego AMP, znacznik `<noscript>` jest zabroniony.
-    - *Uzasadnienie:* reklamy AMPHTML wymagają do działania włączenia obsługi JavaScript, więc bloki `<noscript>` są bezcelowe w reklamach AMPHTML i jedynie obciążają sieć.
+  - _Uzasadnienie:_ reklamy AMPHTML wymagają do działania włączenia obsługi JavaScript, więc bloki `<noscript>` są bezcelowe w reklamach AMPHTML i jedynie obciążają sieć.
 - W odróżnieniu od ogólnego AMP, właściwość `<script type="application/ld+json">` jest zabroniona.
-    - *Uzasadnienie:* JSON LD jest używany do strukturalnego oznaczania danych na stronach hosta, ale kreacje reklamowe nie są samodzielnymi dokumentami i nie zawierają danych strukturalnych. Bloki JSON LD w nich tylko obciążałyby sieć.
+  - _Uzasadnienie:_ JSON LD jest używany do strukturalnego oznaczania danych na stronach hosta, ale kreacje reklamowe nie są samodzielnymi dokumentami i nie zawierają danych strukturalnych. Bloki JSON LD w nich tylko obciążałyby sieć.
 - Wszystkie inne reguły obsługi skryptów i wykluczenia są przeniesione z ogólnego AMP.

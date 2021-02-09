@@ -1,13 +1,13 @@
 ---
-"$title": Contribua com documentação
-"$order": '0'
-"$hidden": 'true'
+'$title': Contribua com documentação
+$order: 0
+'$hidden': 'true'
 description: Comece a contribuir com documentação para o amp.dev.
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 
@@ -19,7 +19,7 @@ Obrigado pelo seu interesse em contribuir para o projeto AMP. Seja bem-vindo à 
 
 O [amp.dev](https://amp.dev/) hospeda a nossa documentação e a equipe AMP colabora no [GitHub](https://github.com/ampproject). Siga o [README do repositório](https://github.com/ampproject/amp.dev) amp.dev para executar o amp.dev na sua máquina local. Isto é essencial para garantir a correta renderização e formatação dos ativos. No entanto, para pequenas correções como erros de digitação, você pode editar o arquivo diretamente no GitHub.
 
-Junte-se ao [grupo de trabalho](https://github.com/ampproject/wg-outreach) do [Projeto AMP no Slack](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877)  e diga-nos no que você está trabalhando!
+Junte-se ao [grupo de trabalho](https://github.com/ampproject/wg-outreach) do [Projeto AMP no Slack](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) e diga-nos no que você está trabalhando!
 
 Há muitas maneiras de contribuir com documentação para o amp.dev. Nós listamos algumas para ajudá-lo a começar. Se você gostaria de contribuir de uma maneira diferente, por favor, não hesite em [nos perguntar](https://github.com/ampproject/wg-outreach) se podemos aceitar!
 

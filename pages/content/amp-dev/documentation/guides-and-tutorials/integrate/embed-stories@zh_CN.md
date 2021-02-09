@@ -1,10 +1,10 @@
 ---
-"$title": 在网页中嵌入故事
-"$order": '3'
+'$title': 在网页中嵌入故事
+$order: 3
 description: '借助 '
 formats:
-- websites
-- stories
+  - websites
+  - stories
 ---
 
 故事是一种全屏沉浸式体验。它们使用自己的网址托管在开放网络上，方便用户共享。但是，如果您想将故事整合到自己的网站（例如博客、产品介绍或新闻报道）中，该如何操作呢？
@@ -16,6 +16,7 @@ formats:
 您可以在非 AMP 网页中嵌入 AMP 故事，让用户不离开主文档即可享受点按或点击体验！
 
 [example preview="top-frame" playground="false"]
+
 ```html
 <!doctype html>
     <head>
@@ -67,6 +68,7 @@ formats:
     </body>
 </html>
 ```
+
 [/example]
 
 ## 嵌入 AMP 故事播放器
@@ -79,7 +81,11 @@ formats:
 
 ```html
 <script async src="https://cdn.ampproject.org/amp-story-player-v0.js"></script>
-<link href="https://cdn.ampproject.org/amp-story-player-v0.css" rel="stylesheet" type="text/css">
+<link
+  href="https://cdn.ampproject.org/amp-story-player-v0.css"
+  rel="stylesheet"
+  type="text/css"
+/>
 ```
 
 第一个脚本用于导入播放器的逻辑，第二个脚本用于设置默认样式。
@@ -89,12 +95,13 @@ formats:
 在文档 `body` 中添加 `<amp-story-player>` 元素。然后，在 `<amp-story-player>` 元素中放置 `<a>` 标记，指定所需的故事。将 `href` 指向故事所在位置。`href` 可能会指向已托管故事的网址或者相对路径。将故事标题放入 `<a>` 标记。
 
 ```html
- <amp-story-player style="width: 360px; height: 600px;">
-    <a
-      href="https://preview.amp.dev/documentation/examples/introduction/stories_in_amp/">
-      Stories in AMP - Hello World
-    </a>
-  </amp-story-player>
+<amp-story-player style="width: 360px; height: 600px;">
+  <a
+    href="https://preview.amp.dev/documentation/examples/introduction/stories_in_amp/"
+  >
+    Stories in AMP - Hello World
+  </a>
+</amp-story-player>
 ```
 
 ### 确定播放器的大小
@@ -103,11 +110,11 @@ formats:
 
 ```html
 <body>
-...
+  ...
   <amp-story-player style="width: 360px; height: 600px;">
-...
+    ...
   </amp-story-player>
-...
+  ...
 </body>
 ```
 
@@ -118,9 +125,7 @@ formats:
 故事播放器的自适应性与任何其他块元素相同。使用 CSS 来保持宽高比，如下面的示例所示：
 
 ```html
-<amp-story-player style="width: 50vw; height: 83.35vw;">
-  ...
-</amp-story-player>
+<amp-story-player style="width: 50vw; height: 83.35vw;"> ... </amp-story-player>
 ```
 
 ### 提供占位符
@@ -130,7 +135,13 @@ formats:
 ```html
 <amp-story-player style="width: 50vw; height: 83.35vw;">
   <a href="https://www.example.com/story.html">
-    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover1.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes this story.
   </a>
 </amp-story-player>
@@ -145,11 +156,23 @@ formats:
 ```html
 <amp-story-player style="width: 360px; height: 600px;">
   <a href="https://www.example.com/story1.html">
-    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover1.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes story 1.
   </a>
   <a href="https://www.example.com/story2.html">
-    <img src="https://www.example.com/assets/cover2.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover2.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes story 2.
   </a>
 </amp-story-player>
@@ -160,13 +183,25 @@ formats:
 ```html
 <amp-story-player style="width: 360px; height: 600px;">
   <a href="https://www.example.com/story1.html">
-    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover1.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes story 1.
   </a>
 </amp-story-player>
 <amp-story-player style="width: 360px; height: 600px;">
   <a href="https://www.example.com/story2.html">
-    <img src="https://www.example.com/assets/cover2.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover2.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes story 2.
   </a>
 </amp-story-player>

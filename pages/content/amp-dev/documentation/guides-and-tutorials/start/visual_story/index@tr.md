@@ -1,10 +1,10 @@
 ---
-"$title": İlk Web Hikayenizi oluşturma
-"$order": '0'
+'$title': İlk Web Hikayenizi oluşturma
+$order: 0
 description: 'Bu öğreticide, AMP ile görsel olarak ilgi çekici Web Hikayeleri oluşturmak için kullanabileceğiniz '
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- stories
+  - stories
 author: bpaduch
 ---
 

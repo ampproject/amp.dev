@@ -1,17 +1,17 @@
 ---
-"$title": Gambar responsif dengan srcset, ukuran, & tinggi
-"$order": '4'
+'$title': Gambar responsif dengan srcset, ukuran, & tinggi
+$order: 4
 description: Gunakan atribut srcset untuk mengontrol aset elemen berdasarkan berbagai ekspresi media. Secara khusus, gunakan ini untuk semua tag amp-img untuk menentukan mana ...
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## srcset
@@ -21,16 +21,20 @@ Gunakan atribut `srcset` untuk mengontrol aset elemen berdasarkan berbagai ekspr
 Dalam contoh sederhana ini, `srcset` menentukan gambar yang akan digunakan berdasarkan lebar layar. Deskriptor `w` memberi tahu browser tentang lebar setiap gambar di dalam daftar:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   layout="responsive"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
-            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w">
+            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
+>
 </amp-img>
 ```
+
 [/example]
 
 [tip type="note"] **CATATAN –** AMP mendukung srcset dengan deskriptor `w` di semua browser. [/tip]
@@ -44,16 +48,20 @@ Anda juga dapat menggunakan atribut `sizes` (ukuran) AMP opsional bersama `srcse
 Pertimbangkan contoh berikut ini:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
             {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
-  sizes="(min-width: 650px) 50vw, 100vw">
+  sizes="(min-width: 650px) 50vw, 100vw"
+>
 </amp-img>
 ```
+
 [/example]
 
 Atribut `sizes` menentukan lebar elemen menjadi 50% dari ukuran viewport jika viewport berukuran 650px atau lebih. Contoh, jika viewport berukuran 800px, lebar elemen diatur pada 400px. Kemudian, browser akan memilih sumber daya `srcset` yang relatif dengan 400px, dengan asumsi bahwa rasio piksel perangkat adalah 1, yang dalam kasus ini adalah `hummingbird-narrow.jpg` (320px).
@@ -74,14 +82,18 @@ Jika atribut `heights` ditentukan beserta `width` dan `height`, `layout` distand
 Contoh:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="AMP"
+<amp-img
+  alt="AMP"
   src="{{server_for_email}}/static/inline-examples/images/amp.jpg"
   width="320"
   height="256"
-  heights="(min-width:500px) 200px, 80%">
+  heights="(min-width:500px) 200px, 80%"
+>
 </amp-img>
 ```
+
 [/example]
 
 Dalam contoh ini, standar tinggi elemen adalah 80% dari lebar, namun untuk viewport yang lebih lebar dari `500px`, akan dibatasi pada `200px`.

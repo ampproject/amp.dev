@@ -1,13 +1,13 @@
 ---
-"$title": Créer un blog en direct
-"$order": '102'
+'$title': Créer un blog en direct
+$order: 102
 description: "Les blogs en direct sont des pages Web qui sont fréquemment mises à jour tout au long d'un événement en cours, tel qu'un événement sportif ou une élection. Dans AMP, vous pouvez implémenter un blog en direct en utilisant ..."
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: kul3r4
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 Les blogs en direct sont des pages Web qui sont fréquemment mises à jour tout au long d'un événement en cours, tel qu'un événement sportif ou une élection. Dans AMP, vous pouvez implémenter un blog en direct en utilisant le composant [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md).
@@ -25,9 +25,11 @@ Le composant [`amp-live-list`](../../../documentation/components/reference/amp-l
 Voici à quoi pourrait ressembler le code initial du blog:
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">You have updates</button>
   <div items></div>
 </amp-live-list>
@@ -56,9 +58,11 @@ Les blogs longs peuvent utiliser la pagination pour améliorer les performances 
 Avec la pagination, le code simple que nous avons utilisé précédemment devient:
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">You have updates</button>
   <div items></div>
   <div pagination>
@@ -67,8 +71,8 @@ Avec la pagination, le code simple que nous avons utilisé précédemment devien
         <li>1</li>
         <li>Next</li>
       </ul>
-     </nav>
-   </div>
+    </nav>
+  </div>
 </amp-live-list>
 ```
 

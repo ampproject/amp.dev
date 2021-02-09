@@ -1,6 +1,6 @@
 ---
-"$title": Ein Bookend erstellen
-"$order": '7'
+'$title': Ein Bookend erstellen
+$order: 7
 description: 'Da du nun alle Seiten hinzugefügt hast, können wir uns die letzte Seite der Story ansehen: das Bookend. Diese letzte Seite schließt die Story ab …'
 author: bpaduch
 ---

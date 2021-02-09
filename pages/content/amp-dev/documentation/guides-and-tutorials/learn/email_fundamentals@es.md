@@ -1,10 +1,10 @@
 ---
-"$title": Conceptos básicos de AMP para correo electrónico
-"$order": '1'
+'$title': Conceptos básicos de AMP para correo electrónico
+$order: 1
 description: Todo lo que necesita saber para empezar a escribir correos electrónicos AMP válidos.
 author: CrystalOnScript
 formats:
-- email
+  - email
 ---
 
 ¡Hay buenas noticias si está familiarizado con AMP! AMP para correo electrónico es solo un subconjunto de la biblioteca HTML de AMP. ¡Si no está familiarizado con AMP también hay buenas noticias! ¡En esta guía se le brindará todo lo que necesite saber para comenzar a escribir correos electrónicos de AMP válidos!
@@ -14,16 +14,20 @@ formats:
 Los correos electrónicos de AMP son parecidos a los correos electrónicos HTML clásicos, pero presentan algunas diferencias. A continuación se muestra la cantidad mínima de etiquetas necesarias para convertir un correo electrónico en un correo electrónico de AMP válido.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email data-css-strict>
-<head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
-</head>
-<body>
-  Hello, AMP4EMAIL world.
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    Hello, AMP4EMAIL world.
+  </body>
 </html>
 ```
 
@@ -34,12 +38,16 @@ Los proveedores de correo electrónico que son compatibles con AMP para correo e
 - Definir las etiquetas `<head>` y `<body>`. Esto es opcional en HTML, ¡pero AMP mantiene las cosas perfectas!
 - Incluir una etiqueta `<meta charset="utf-8>` como primer elemento secundario de la etiqueta `<head>`. Esto identifica la codificación de la página.
 - La biblioteca de AMP se importa mediante una etiqueta `<script async src="https://cdn.ampproject.org/v0.js"></script>` colocada en `<head>`. ¡Sin ella, ninguna de las increíbles y dinámicas funciones obtenidas a través de AMP funcionará! Como práctica recomendada, esto debe incluirse lo antes posible en el `<head>`, directamente debajo de la etiqueta `<meta charset="utf-8">`.
-- Al principio,  oculte el contenido del correo electrónico hasta que se cargue la biblioteca de AMP colocando el modelo estándar de AMP para correo electrónico en el `<head>`.
+- Al principio, oculte el contenido del correo electrónico hasta que se cargue la biblioteca de AMP colocando el modelo estándar de AMP para correo electrónico en el `<head>`.
 
 ```html
 <head>
-...
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  ...
+  <style amp4email-boilerplate>
+    body {
+      visibility: hidden;
+    }
+  </style>
 </head>
 ```
 
@@ -132,9 +140,7 @@ Este ejemplo demuestra el uso de `<amp-list>` para mostrar datos autenticados:
   src="https://example.com/endpoint?token=REPLACE_WITH_YOUR_ACCESS_TOKEN"
   height="300"
 >
-  <template type="amp-mustache">
-    ...
-  </template>
+  <template type="amp-mustache"> ... </template>
 </amp-list>
 ```
 

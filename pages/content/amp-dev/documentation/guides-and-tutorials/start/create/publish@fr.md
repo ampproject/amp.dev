@@ -1,10 +1,10 @@
 ---
-"$title": Final steps before publishing
-"$order": '6'
+'$title': Final steps before publishing
+$order: 6
 description: Félicitations ! Vous avez testé votre page en local et corrigé toutes les erreurs de validation. Votre première page AMP est donc prête pour envoi.
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 Félicitations ! Vous avez testé votre page en local et corrigé toutes les erreurs de validation. Votre première page AMP est donc prête pour envoi.

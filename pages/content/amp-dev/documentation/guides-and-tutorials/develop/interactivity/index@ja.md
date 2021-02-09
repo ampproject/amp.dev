@@ -1,11 +1,11 @@
 ---
-"$title": インタラクティブ AMP ページの作成
-"$path": "/documentation/guides-and-tutorials/develop/interactivity/index.html"
-"$order": '0'
+'$title': インタラクティブ AMP ページの作成
+'$path': '/documentation/guides-and-tutorials/develop/interactivity/index.html'
+$order: 0
 description: このチュートリアルでは、データバインディングと式を使用して、amp-bind を使用した見栄えの良いインタラクティブ AMP ページを ...
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/interactivity-final-page.jpg', 415, 738, align='right third', caption='このチュートリアルで作成する AMP ページ') }}

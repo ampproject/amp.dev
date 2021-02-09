@@ -11,14 +11,14 @@ Jeśli chcesz ściśle kontrolować odtwarzanie, jak również precyzyjnie synch
 
 ## Tworzenie podstawowej animacji AMP
 
-Składnik [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) umożliwia stosowanie interfejsu [API Web Animation](https://www.w3.org/TR/web-animations/) w AMP.
+Składnik [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) umożliwia stosowanie interfejsu [API Web Animation](https://www.w3.org/TR/web-animations/) w AMP.
 
-Podstawowy składnik [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) to obiekt JSON utworzony z następujących głównych części:
+Podstawowy składnik [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) to obiekt JSON utworzony z następujących głównych części:
 
 - Elementu animowanego przez składnik, czyli `selector`.
-- [Właściwości synchronizacji](../../../../documentation/components/reference/amp-animation.md#timing-properties)
-- [Ramek kluczowych](../../../../documentation/components/reference/amp-animation.md#keyframes)
-- [Wyzwalacza](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
+- [Właściwości synchronizacji](/content/amp-dev/documentation/components/reference/amp-animation.md#timing-properties)
+- [Ramek kluczowych](/content/amp-dev/documentation/components/reference/amp-animation.md#keyframes)
+- [Wyzwalacza](/content/amp-dev/documentation/components/reference/amp-animation.md#triggering-animation)
 
 ```
 <amp-animation layout="nodisplay" id="exampleAnimation">
@@ -38,23 +38,23 @@ Podstawowy składnik [`amp-animation`](../../../../documentation/components/refe
 
 ### Pole selector
 
-Podobnie jak CSS, składnik [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) łączy właściwości animacji z elementem poprzez zadeklarowanie nazwy znacznika elementu, klasy lub identyfikatora w polu `"selector"`. Składnik animuje każdy element z zadeklarowaną nazwą typu znacznika lub nazwą klasy. Aby zapewnić animować pojedynczy element, użyj identyfikatora.
+Podobnie jak CSS, składnik [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) łączy właściwości animacji z elementem poprzez zadeklarowanie nazwy znacznika elementu, klasy lub identyfikatora w polu `"selector"`. Składnik animuje każdy element z zadeklarowaną nazwą typu znacznika lub nazwą klasy. Aby zapewnić animować pojedynczy element, użyj identyfikatora.
 
 ### Właściwości synchronizacji
 
-Właściwości [synchronizacji](../../../../documentation/components/reference/amp-animation.md#timing-properties) sterują czasem trwania animacji, czasem jej odtwarzania oraz kierunkiem wykonywania ramek kluczowych.
+Właściwości [synchronizacji](/content/amp-dev/documentation/components/reference/amp-animation.md#timing-properties) sterują czasem trwania animacji, czasem jej odtwarzania oraz kierunkiem wykonywania ramek kluczowych.
 
 Żadne właściwości synchronizacji nie są wymagane, ale animacja może nie działać, jeśli brakuje właściwości związanych z czasem i wyświetlaniem, takich jak `duration` i `fill`.
 
 ### Ramki kluczowe
 
-Chociaż CSS zezwala na płynną zmianę jednego stanu na drugi za pomocą przejść, musisz zadeklarować właściwości animacji jako ramki kluczowe, aby zaimplementować składnik [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) (podobnie do [animacji CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)). Aby zapewnić płynne odtwarzanie i zgodność z przeglądarkami internetowymi, składnik [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) [ogranicza właściwości ramek kluczowych](../../../../documentation/components/reference/amp-animation.md#allow-listed-properties-for-keyframes), które można wykorzystać do właściwości akcelerowanych przez GPU, które nie powodują powtórnego generowania układu i mogą animować w [wątku narzędzia tworzenia kompozycji](https://dev.chromium.org/developers/design-documents/compositor-thread-architecture). Zapobiega to ingerencji animacji w AMP i [proces renderowania](https://developers.google.com/web/updates/2018/09/inside-browser-part3#javascript_can_block_the_parsing) przeglądarki.
+Chociaż CSS zezwala na płynną zmianę jednego stanu na drugi za pomocą przejść, musisz zadeklarować właściwości animacji jako ramki kluczowe, aby zaimplementować składnik [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md#allow-listed-properties-for-keyframes), które można wykorzystać do właściwości akcelerowanych przez GPU, które nie powodują powtórnego generowania układu i mogą animować w [wątku narzędzia tworzenia kompozycji](https://dev.chromium.org/developers/design-documents/compositor-thread-architecture). Zapobiega to ingerencji animacji w AMP i [proces renderowania](https://developers.google.com/web/updates/2018/09/inside-browser-part3#javascript_can_block_the_parsing) przeglądarki.
 
-[tip type="note"] Ramki kluczowe są albo definiowane bezpośrednio w składniku [`{amp-animation`](../../../../documentation/components/reference/amp-animation.md), albo w odniesieniu do elementu [`<amp style-keyframe>`](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#keyframes-stylesheet), o ile przestrzegają ograniczeń właściwości. [Tutaj znajdziesz wiecej informacji o ramkach kluczowych w składniku `amp-animation`](../../../../documentation/components/reference/amp-animation.md#keyframes). [/tip]
+[tip type="note"] Ramki kluczowe są albo definiowane bezpośrednio w składniku [`{amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md#keyframes). [/tip]
 
 ### Wyzwalacz
 
-Wyzwalacz uruchamia sekwencję animacji. Rozszerzenie [` amp-animation`](../../../../documentation/components/reference/amp-animation.md) jest uruchamiane, gdy sekcja `<body>` staje się widoczna na stronie lub poprzez połączenie go z [działaniem lub zdarzeniem AMP](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md).
+Wyzwalacz uruchamia sekwencję animacji. Rozszerzenie [` amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) jest uruchamiane, gdy sekcja `<body>` staje się widoczna na stronie lub poprzez połączenie go z [działaniem lub zdarzeniem AMP](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md).
 
 Wyzwalanie przy widoczności sekcji `<body>` jest użyteczne, gdy animacja powinna zostać uruchomiona od razu po załadowaniu strony, ponieważ pojawia się „nad treścią” lub w pierwszym okienku ekranu na stronie. Animacje są uruchamiane przez widoczność, dzięki dodaniu do składnika atrybutu `trigger="visibility"`.
 
@@ -65,7 +65,7 @@ Wyzwalanie przy widoczności sekcji `<body>` jest użyteczne, gdy animacja powin
 </amp-animation>
 ```
 
-Animacje łączą się z działaniem lub zdarzeniem dzięki przypisaniu składnikowi [`</a>amp-animation`](../../../../documentation/components/reference/amp-animation.md) właściwości `id` i powiązaniu tego `id` z żądanym wyzwalaczem zdarzenia, takim jak dotknięcie przycisku.
+Animacje łączą się z działaniem lub zdarzeniem dzięki przypisaniu składnikowi [`</a>amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) właściwości `id` i powiązaniu tego `id` z żądanym wyzwalaczem zdarzenia, takim jak dotknięcie przycisku.
 
 ```
 <amp-animation layout="nodisplay" id="exampleAnimation">
@@ -77,7 +77,7 @@ Animacje łączą się z działaniem lub zdarzeniem dzięki przypisaniu składni
 
 ## Tworzenie złożonych animacji
 
-Utworzenie animacji w składniku [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) umożliwia szczegółowe sterowanie, wykraczające poza uruchamianie i zatrzymywanie animacji: można również wstrzymywać, odwracać i kierować do określonego punktu. Można nawet łączyć wiele animacji w łańcuchy i animować elementy w sekwencji.
+Utworzenie animacji w składniku [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) umożliwia szczegółowe sterowanie, wykraczające poza uruchamianie i zatrzymywanie animacji: można również wstrzymywać, odwracać i kierować do określonego punktu. Można nawet łączyć wiele animacji w łańcuchy i animować elementy w sekwencji.
 
 ### Cele cząstkowe
 
@@ -97,7 +97,10 @@ Elementy tego samego znacznika lub klasy mogą mieć określone właściwości s
         "selector": "h1",
         "duration": "3s",
         "fill": "both",
-        "keyframes": [{"transform": "translateX(0px)"}, {"transform": "translateX(50%)"}],
+        "keyframes": [
+          {"transform": "translateX(0px)"},
+          {"transform": "translateX(50%)"}
+        ],
         "subtargets": [
           {
             "index": 1,
@@ -112,9 +115,7 @@ Elementy tego samego znacznika lub klasy mogą mieć określone właściwości s
       }
     </script>
   </amp-animation>
-  <button on="tap:animateThis.start">
-   start
-  </button>
+  <button on="tap:animateThis.start">start</button>
 </body>
 ```
 
@@ -122,7 +123,7 @@ Elementy tego samego znacznika lub klasy mogą mieć określone właściwości s
 
 ### Łańcuchy animacji
 
-Wiele animacji można połączyć, aby utworzyć dużą sekwencję. Można tworzyć efekty czasowe, takie jak nakładki na film, wpisując animacje w tablicy `animations` w składniku [`amp-anmation`](../../../../documentation/components/reference/amp-animation.md).
+Wiele animacji można połączyć, aby utworzyć dużą sekwencję. Można tworzyć efekty czasowe, takie jak nakładki na film, wpisując animacje w tablicy `animations` w składniku [`amp-anmation`](/content/amp-dev/documentation/components/reference/amp-animation.md).
 
 ```
 <amp-animation id="overlaysAnim" layout="nodisplay">
@@ -158,7 +159,7 @@ Wiele animacji można połączyć, aby utworzyć dużą sekwencję. Można tworz
 
 Ta konfiguracja powoduje odtwarzanie każdej animacji w sekwencji przez 3 sekundy.
 
-W przypadku większych animacji, animacje w tablicy `animations` mogą odwoływać się do innych składników [`amp-animation`](../../../../documentation/components/reference/amp-animation.md).
+W przypadku większych animacji, animacje w tablicy `animations` mogą odwoływać się do innych składników [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md).
 
 ```
 <amp-animation id="addEnergy" layout="nodisplay">
@@ -206,13 +207,17 @@ W przypadku większych animacji, animacje w tablicy `animations` mogą odwoływa
 
 ### Animowanie nieznanej liczby elementów
 
-Używając wyrażeń [`var()` i `calc()` z ](../../../../documentation/components/reference/amp-animation.md)[rozszerzeniami CSS](../../../../documentation/components/reference/amp-animation.md#css-extensions), można pisać złożone, synchronizowane animacje, które działają z dowolną liczbą elementów. Pozwala to na łatwe i płynne animowanie danych dynamicznych i generowanych przez użytkownika.
+Używając wyrażeń [`var(/content/amp-dev/documentation/components/reference/amp-animation.md#css-extensions), można pisać złożone, synchronizowane animacje, które działają z dowolną liczbą elementów. Pozwala to na łatwe i płynne animowanie danych dynamicznych i generowanych przez użytkownika.
 
 [example preview="top-frame" playground="true"]
 
 ```html
 <head>
-  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-animation"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
+  ></script>
   <style amp-custom>
     .parent {
       perspective: 1000px;
@@ -241,19 +246,31 @@ Używając wyrażeń [`var()` i `calc()` z ](../../../../documentation/component
         "iterations": "1",
         "fill": "both",
         "keyframes": [
-            {"transform": "translate3d(0px, 0px, 0px)"},
-            {"transform": "translate3d(50%, 0px, 100px)"},
-            {"transform": "translate3d(110%, 0px, 0px) rotateY(-20deg)"},
-            {"transform": "translate3d(50%, 0px, -100px)"},
-            {"transform": "translate3d(0px, 0px, -1px)"}
+          {"transform": "translate3d(0px, 0px, 0px)"},
+          {"transform": "translate3d(50%, 0px, 100px)"},
+          {"transform": "translate3d(110%, 0px, 0px) rotateY(-20deg)"},
+          {"transform": "translate3d(50%, 0px, -100px)"},
+          {"transform": "translate3d(0px, 0px, -1px)"}
         ]
       }
     </script>
   </amp-animation>
-  <div class="parent" on="tap:cardAdmin.start" tabindex=none role="animation">
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/7/70/3C.svg" layout="fill"></amp-img>
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/3H.svg" layout="fill"></amp-img>
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/KC.svg" layout="fill"></amp-img>
+  <div class="parent" on="tap:cardAdmin.start" tabindex="none" role="animation">
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/7/70/3C.svg"
+      layout="fill"
+    ></amp-img>
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/3/3a/3H.svg"
+      layout="fill"
+    ></amp-img>
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/e/e1/KC.svg"
+      layout="fill"
+    ></amp-img>
   </div>
 </body>
 ```
@@ -263,23 +280,23 @@ Używając wyrażeń [`var()` i `calc()` z ](../../../../documentation/component
 - Zadeklarowanie zmiennej `duration` i nadanie jej wartości dwóch sekund.
 - Ustawienie właściwości `duration` na wartość zmiennej `--duration`.
 - Obliczenie opóźnienia zastosowanego do każdego elementu, który spełnia kryteria selektora `.card`.
-    1. [Rozszerzenie `length()`](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) oblicza liczbę wybranych elementów `.card`
-    2. Następnie length odejmuje od każdego elementu `.card` wartość [index()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension)
-    3. Otrzymana wartość jest mnożona przez wartość zmiennej `--duration`
-    4. Końcowa wartość w sekundach jest stosowana do opóźnienia tego elementu.
+  1. [Rozszerzenie `length(/content/amp-dev/documentation/components/reference/amp-animation.md#css-length()-extension) oblicza liczbę wybranych elementów `.card`
+  2. Następnie length odejmuje od każdego elementu `.card` wartość [index(/content/amp-dev/documentation/components/reference/amp-animation.md#css-index()-extension)
+  3. Otrzymana wartość jest mnożona przez wartość zmiennej `--duration`
+  4. Końcowa wartość w sekundach jest stosowana do opóźnienia tego elementu.
 - Animacja jest stosowana do każdego elementu z osobna, tak aby elementy cards były odtwarzane jeden po drugim, a nie wszystkie naraz.
 
 Otwórz animację w placu zabaw AMP i dodaj więcej elementów [`amp-img`](../../../../documentation/components/reference/amp-img), aby przetestować ten sposób działania.
 
 ### Wyglądają wspaniale, wszędzie.
 
-Animacje mogą zawierać warunki ([`conditions`](../../../../documentation/components/reference/amp-animation.md#conditions)), pozwalające na dostosowanie efektów. Możliwe jest dostosowywanie animacji do dowolnego rozmiaru ekranu za pomocą [warunku `media`](../../../../documentation/components/reference/amp-animation.md#media-query) i obsługa zgodności wstecznej z przeglądarkami poprzez włączenie [warunków ](../../../../documentation/components/reference/amp-animation.md#supports-condition)[`supports`](../../../../documentation/components/reference/amp-animation.md#supports-condition) w <a>instrukcji <code>switch</code></a>.
+Animacje mogą zawierać warunki (/content/amp-dev/documentation/components/reference/amp-animation.md#supports-condition) w <a>instrukcji <code>switch</code></a>.
 
 [example preview="top-frame" playground="true"]
 
 ```html
 <head>
- <style amp-custom>
+  <style amp-custom>
     .drop {
       width: 20px;
       height: 20px;
@@ -293,50 +310,54 @@ Animacje mogą zawierać warunki ([`conditions`](../../../../documentation/compo
       background: red;
     }
   </style>
-  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-animation"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
+  ></script>
 </head>
 <body>
-<amp-animation id="mediaAnimation" layout="nodisplay">
-  <script type="application/json">
-    {
-      "duration": "1s",
-      "iterations": "4",
-      "fill": "both",
-      "direction": "alternate",
-      "animations": [
-        {
-          "media": "(min-width: 300px)",
-          "selector": ".drop",
-          "keyframes": {
-            "transform": "translate(100vw)"
+  <amp-animation id="mediaAnimation" layout="nodisplay">
+    <script type="application/json">
+      {
+        "duration": "1s",
+        "iterations": "4",
+        "fill": "both",
+        "direction": "alternate",
+        "animations": [
+          {
+            "media": "(min-width: 300px)",
+            "selector": ".drop",
+            "keyframes": {
+              "transform": "translate(100vw)"
+            }
+          },
+          {
+            "media": "(max-width: 300px)",
+            "selector": ".drop",
+            "keyframes": {
+              "transform": "translate(50vw)"
+            }
+          },
+          {
+            "media": "(min-width: 300px)",
+            "selector": ".right",
+            "keyframes": {
+              "transform": "translate(-100vw)"
+            }
+          },
+          {
+            "media": "(max-width: 300px)",
+            "selector": ".right",
+            "keyframes": {
+              "transform": "translate(-50vw)"
+            }
           }
-        },
-        {
-          "media": "(max-width: 300px)",
-          "selector": ".drop",
-          "keyframes": {
-            "transform": "translate(50vw)"
-          }
-        },
-        {
-          "media": "(min-width: 300px)",
-          "selector": ".right",
-          "keyframes": {
-            "transform": "translate(-100vw)"
-          }
-        },
-        {
-          "media": "(max-width: 300px)",
-          "selector": ".right",
-          "keyframes": {
-            "transform": "translate(-50vw)"
-          }
-        }
-      ]
-    }
-  </script>
-</amp-animation>
-    
+        ]
+      }
+    </script>
+  </amp-animation>
+
   <div class="rain">
     <div class="drop"></div>
     <div class="drop right"></div>

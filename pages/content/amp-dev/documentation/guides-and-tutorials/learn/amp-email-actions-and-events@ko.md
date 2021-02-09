@@ -1,8 +1,8 @@
 ---
-"$title": AMP 이메일의 액션 및 이벤트
-order: '0'
+'$title': AMP 이메일의 액션 및 이벤트
+$order: 0
 formats:
-- email
+  - email
 teaser:
   text: '[tip type="note"]'
 ---
@@ -107,7 +107,7 @@ AMP는 모든 HTML 요소(AMP 요소 포함)에서 리스닝할 수 있는 `tap`
 
 ## 요소별 이벤트 <a name="element-specific-events"></a>
 
-### * - 모든 요소 <a name="---all-elements"></a>
+### \* - 모든 요소 <a name="---all-elements"></a>
 
 <table>
   <tr>
@@ -326,7 +326,7 @@ AMP는 모든 HTML 요소(AMP 요소 포함)에서 리스닝할 수 있는 `tap`
 
 ## 요소별 액션 <a name="element-specific-actions"></a>
 
-### * (모든 요소) <a name="-all-elements"></a>
+### \* (모든 요소) <a name="-all-elements"></a>
 
 <table>
   <tr>

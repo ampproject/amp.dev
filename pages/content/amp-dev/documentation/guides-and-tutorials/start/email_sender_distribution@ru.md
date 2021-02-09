@@ -1,10 +1,10 @@
 ---
-"$title": Регистрация в качестве отправителя
-"$order": '1'
+'$title': Регистрация в качестве отправителя
+$order: 1
 description: Для рассылки AMP-писем требуется регистрация в качестве отправителя
-"$category": Start
+'$category': Start
 formats:
-- email
+  - email
 author: CrystalOnScript
 ---
 

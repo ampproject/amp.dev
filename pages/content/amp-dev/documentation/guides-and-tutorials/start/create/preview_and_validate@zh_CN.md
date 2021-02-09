@@ -1,10 +1,10 @@
 ---
-"$title": 预览和验证
-"$order": '5'
+'$title': 预览和验证
+$order: 5
 description: 就像您预览任何其他静态 HTML 网站一样预览 AMP 网页。无需构建步骤或进行预处理。您可以执行以下任一操作：
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## 预览
@@ -12,7 +12,7 @@ contributors:
 就像您预览任何其他静态 HTML 网站一样预览 AMP 网页。无需构建步骤或进行预处理。您可以执行以下任一操作：
 
 - **通过文件系统在浏览器中直接打开网页**（某些元素可能会因为 XMLHttpRequests 失败而无法工作）。
-- **使用本地网络服务器，例如 Apache 2 或 Nginx**。*（提示：对于快速网络服务器，请运行 `python -m SimpleHTTPServer`。）*
+- **使用本地网络服务器，例如 Apache 2 或 Nginx**。_（提示：对于快速网络服务器，请运行 `python -m SimpleHTTPServer`。）_
 
 ## 验证
 

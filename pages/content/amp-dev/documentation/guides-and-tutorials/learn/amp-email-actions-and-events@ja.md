@@ -1,8 +1,8 @@
 ---
-"$title": AMP メールのアクションとイベント
-order: '0'
+'$title': AMP メールのアクションとイベント
+$order: 0
 formats:
-- email
+  - email
 teaser:
   text: '[tip type="note"]'
 ---
@@ -110,7 +110,7 @@ AMP は、HTML 要素（AMP 要素を含む）でリスンできる `tap` イベ
 
 ## 要素固有のイベント <a name="element-specific-events"></a>
 
-### * - すべての要素 <a name="---all-elements"></a>
+### \* - すべての要素 <a name="---all-elements"></a>
 
 <table>
   <tr>
@@ -329,7 +329,7 @@ AMP は、HTML 要素（AMP 要素を含む）でリスンできる `tap` イベ
 
 ## 要素固有のアクション <a name="element-specific-actions"></a>
 
-### * （すべての要素） <a name="-all-elements"></a>
+### \* （すべての要素） <a name="-all-elements"></a>
 
 <table>
   <tr>

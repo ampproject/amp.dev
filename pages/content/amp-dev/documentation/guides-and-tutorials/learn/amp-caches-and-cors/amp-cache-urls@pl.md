@@ -1,14 +1,14 @@
 ---
-"$title": Format adresu URL serwera buforującego AMP i obsługa żądań
-"$order": '9'
+'$title': Format adresu URL serwera buforującego AMP i obsługa żądań
+$order: 9
 toc: 'false'
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 author: Gregable
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 Ten dokument zawiera informacje o formacie adresu URL serwera buforującego AMP i sposobie obsługi żądań przez serwer buforujący AMP.

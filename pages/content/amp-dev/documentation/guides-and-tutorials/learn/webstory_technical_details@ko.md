@@ -1,10 +1,10 @@
 ---
-"$title": 웹 스토리 기술 세부 사항
-"$order": '1'
+'$title': 웹 스토리 기술 세부 사항
+$order: 1
 description: 웹 스토리 기술 세부 사항
-"$category": Develop
+'$category': Develop
 formats:
-- stories
+  - stories
 author: CrystalOnScript
 ---
 
@@ -26,35 +26,103 @@ author: CrystalOnScript
 AMP 웹 페이지 및 AMP로 작성된 웹 스토리의 차이점은 [`amp-story`](https://amp.dev/documentation/components/amp-story/?format=stories) 컴포넌트입니다. 이 컴포넌트는 문서 `<body>`의 유일한 하위 요소이며 `standalone` 속성을 포함해야 합니다. 모든 웹 스토리 페이지, 레이어 및 요소는 `<amp-story>` 태그에 정의됩니다.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Joy of Pets</title>
-    <link rel="canonical" href="pets.html">
-    <meta name="viewport" content="width=device-width">
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <link rel="canonical" href="pets.html" />
+    <meta name="viewport" content="width=device-width" />
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-video"
-        src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
-    <script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+    <script
+      async
+      custom-element="amp-video"
+      src="https://cdn.ampproject.org/v0/amp-video-0.1.js"
+    ></script>
+    <script
+      async
+      custom-element="amp-story"
+      src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+    ></script>
     <style amp-custom>
-    ...
+      ...;
     </style>
   </head>
   <body>
     <!-- Cover page -->
-    <amp-story standalone
-        title="Joy of Pets"
-        publisher="AMP tutorials"
-        publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-        poster-portrait-src="assets/cover.jpg">
+    <amp-story
+      standalone
+      title="Joy of Pets"
+      publisher="AMP tutorials"
+      publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+      poster-portrait-src="assets/cover.jpg"
+    >
       <amp-story-page id="cover">
         <amp-story-grid-layer template="fill">
-          <amp-img src="assets/cover.jpg"
-              width="720" height="1280"
-              layout="responsive">
+          <amp-img
+            src="assets/cover.jpg"
+            width="720"
+            height="1280"
+            layout="responsive"
+          >
           </amp-img>
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical">
@@ -67,11 +135,17 @@ AMP 웹 페이지 및 AMP로 작성된 웹 스토리의 차이점은 [`amp-story
       <amp-story-page id="page1">
         <amp-story-grid-layer template="vertical">
           <h1>Cats</h1>
-          <amp-img src="assets/cat.jpg"
-              width="720" height="1280"
-              layout="responsive">
+          <amp-img
+            src="assets/cat.jpg"
+            width="720"
+            height="1280"
+            layout="responsive"
+          >
           </amp-img>
-          <q>Dogs come when they're called. Cats take a message and get back to you. --Mary Bly</q>
+          <q
+            >Dogs come when they're called. Cats take a message and get back to
+            you. --Mary Bly</q
+          >
         </amp-story-grid-layer>
       </amp-story-page>
       ...
@@ -169,15 +243,21 @@ HLS 세그먼트의 경우 지속 시간을 10초 이하로 유지하는 것이 
 
 ### <source> vs src 지정</source>
 
-`<amp-video>` 컴포넌트에서 `<source>` 하위 요소를 사용하여 `src` 속성에 동영상 소스를 지정합니다.  `<source>` 요소를 사용하면 동영상 유형을 지정하고 백업 동영상 소스를 추가할 수 있습니다. MIME 유형을 지정하려면 `type` 속성을 사용해야 합니다. HLS 동영상의 경우 `application/x-mpegurl` 또는 `application/vnd.apple.mpegurl`을 사용합니다. 모든 기타 동영상 유형에는 `video/` MIME 접두어를 사용하고 `”video/mp4”` 등의 동영상 형식을 따릅니다.
+`<amp-video>` 컴포넌트에서 `<source>` 하위 요소를 사용하여 `src` 속성에 동영상 소스를 지정합니다. `<source>` 요소를 사용하면 동영상 유형을 지정하고 백업 동영상 소스를 추가할 수 있습니다. MIME 유형을 지정하려면 `type` 속성을 사용해야 합니다. HLS 동영상의 경우 `application/x-mpegurl` 또는 `application/vnd.apple.mpegurl`을 사용합니다. 모든 기타 동영상 유형에는 `video/` MIME 접두어를 사용하고 `”video/mp4”` 등의 동영상 형식을 따릅니다.
 
 ```html
-<amp-video id="video-page1" autoplay loop
-  layout="fill" poster="https://example.com/media/poster.jpg">
-  <source src="https://amp-example.com/media/movie.m3u8"
-    type="application/vnd.apple.mpegurl" />
-  <source src="https://amp-example.com/media/movie.mp4"
-    type="video/mp4" />
+<amp-video
+  id="video-page1"
+  autoplay
+  loop
+  layout="fill"
+  poster="https://example.com/media/poster.jpg"
+>
+  <source
+    src="https://amp-example.com/media/movie.m3u8"
+    type="application/vnd.apple.mpegurl"
+  />
+  <source src="https://amp-example.com/media/movie.mp4" type="video/mp4" />
 </amp-video>
 ```
 
@@ -186,7 +266,7 @@ HLS 세그먼트의 경우 지속 시간을 10초 이하로 유지하는 것이 
 amp-story-page로 공개되는 [`auto-advance-after`](https://amp.dev/documentation/components/amp-story-page/?format=stories#auto-advance-after-%5Boptional%5D) 속성은 사용자가 탭하지 않아도 스토리 페이지를 진행할지 여부와 그 시점을 지정합니다. 동영상 다음에 스토리를 진행하려면 동영상 ID에 해당 속성을 추가하세요.
 
 ```html
-<amp-story-page auto-advance-after="myvideo">
+<amp-story-page auto-advance-after="myvideo"></amp-story-page>
 ```
 
 ## 데스크톱 경험
@@ -196,11 +276,13 @@ amp-story-page로 공개되는 [`auto-advance-after`](https://amp.dev/documentat
 `<amp-story>` 컴포넌트에 `supports-landscape` 속성을 추가하여 데스크톱 지원 옵션을 선택할 수 있습니다.
 
 ```html
-<amp-story standalone
-    supports-landscape
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/icon.svg"
-    poster-portrait-src="assets/cover.jpg">
+<amp-story
+  standalone
+  supports-landscape
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+>
 </amp-story>
 ```

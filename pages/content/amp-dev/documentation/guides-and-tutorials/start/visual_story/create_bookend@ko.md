@@ -1,15 +1,15 @@
 ---
-"$title": Creating the bookend
-"$order": '7'
+'$title': Creating the bookend
+$order: 7
 description: "모든 페이지를 추가했으므로 이제 스토리의 마지막 화면인 '북엔드'에 대해 살펴보겠습니다.  마지막 화면에서는 스토리를 마무리하고, 사용자가 ..."
 author: bpaduch
 ---
 
-모든 페이지를 추가했으므로 이제 스토리의 마지막 화면인 '북엔드'에 대해 살펴보겠습니다.  마지막 화면에서는 스토리를 마무리하고, 사용자가 스토리를 공유하거나 게시자 사이트의 다른 콘텐츠를 자세히 살펴볼 수 있도록 소셜 공유 기능 또는 관련 링크를 제공합니다.
+모든 페이지를 추가했으므로 이제 스토리의 마지막 화면인 '북엔드'에 대해 살펴보겠습니다. 마지막 화면에서는 스토리를 마무리하고, 사용자가 스토리를 공유하거나 게시자 사이트의 다른 콘텐츠를 자세히 살펴볼 수 있도록 소셜 공유 기능 또는 관련 링크를 제공합니다.
 
 북엔드 화면의 정보는 `<amp-story-bookend>` 태그에 지정된 JSON 파일에서 가져옵니다. 이 가이드에서는 북엔드 데이터가 포함된 JSON 파일([bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json))이 이미 만들어져 있습니다.
 
-`<amp-story-bookend>` 태그는 [`amp-story`](../../../../documentation/components/reference/amp-story.md)의 마지막 태그여야 합니다. 따라서 종료 `</amp-story>` 태그 바로 앞에 `<amp-story-bookend></amp-story-bookend>`를 **추가**합니다.  `amp-story-bookend` 태그에서 `src` 속성을 `bookend.json` 파일로 지정하고 `layout="nodisplay"`를 설정합니다.
+`<amp-story-bookend>` 태그는 [`amp-story`](../../../../documentation/components/reference/amp-story.md)의 마지막 태그여야 합니다. 따라서 종료 `</amp-story>` 태그 바로 앞에 `<amp-story-bookend></amp-story-bookend>`를 **추가**합니다. `amp-story-bookend` 태그에서 `src` 속성을 `bookend.json` 파일로 지정하고 `layout="nodisplay"`를 설정합니다.
 
 ```html
   </amp-story-page>
@@ -21,7 +21,7 @@ author: bpaduch
 
 {{ image('/static/img/docs/tutorials/amp_story/bookend_full.gif', 398, 709, align='center third', alt='북엔드' ) }}
 
-JSON 파일에 대해 살펴보겠습니다.  텍스트 에디터에서 [bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json) 파일을 엽니다.
+JSON 파일에 대해 살펴보겠습니다. 텍스트 에디터에서 [bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json) 파일을 엽니다.
 
 모든 북엔드 화면에는 `bookendVersion`(이 가이드의 경우 `v1.0`)이 필요합니다.
 
@@ -43,7 +43,7 @@ JSON 파일에 대해 살펴보겠습니다.  텍스트 에디터에서 [bookend
 
 {{ image('/static/img/docs/tutorials/amp_story/bookend_social_share.png', 720, 240, align='center half', alt='북엔드 소셜 공유' ) }}
 
-북엔드 화면의 나머지는 관련 콘텐츠를 위한 부분입니다.  모든 관련 콘텐츠는 `components` 개체에 포함되어 있습니다.
+북엔드 화면의 나머지는 관련 콘텐츠를 위한 부분입니다. 모든 관련 콘텐츠는 `components` 개체에 포함되어 있습니다.
 
 관련 콘텐츠와 링크를 표시하는 데 사용할 수 있는 다양한 구성 요소가 있습니다. 각 구성 요소는 타입 속성으로 지정됩니다. 사용 가능한 구성 요소에 대해 살펴보겠습니다.
 
@@ -130,4 +130,4 @@ JSON 파일에 대해 살펴보겠습니다.  텍스트 에디터에서 [bookend
 
 북엔드 구성 요소에 대한 더 자세한 내용이 있습니다. [`amp-story`](../../../../documentation/components/reference/amp-story.md) 참조 문서를 확인하세요.
 
-스토리가 거의 완성되었습니다.  콘텐츠를 게시하기 전에 AMP HTML이 유효한지 확인하세요.
+스토리가 거의 완성되었습니다. 콘텐츠를 게시하기 전에 AMP HTML이 유효한지 확인하세요.

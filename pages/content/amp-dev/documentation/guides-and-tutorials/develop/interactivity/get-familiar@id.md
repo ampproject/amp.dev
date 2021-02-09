@@ -1,6 +1,6 @@
 ---
-"$title": Mempelajari kode pembuka
-"$order": '1'
+'$title': Mempelajari kode pembuka
+$order: 1
 description: Halaman AMP adalah halaman HTML dengan beberapa batasan untuk menghasilkan kinerja yang andal. Halaman AMP memiliki sedikit markah khusus yang mengidentifikasinya sebagai halaman AMP.
 ---
 

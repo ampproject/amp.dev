@@ -1,9 +1,9 @@
 ---
-"$title": Xác thực các Email AMP
-"$order": '1'
+'$title': Xác thực các Email AMP
+$order: 1
 author: CrystalOnScript
 formats:
-- email
+  - email
 ---
 
 AMP Email phụ thuộc vào thư viện AMP JS để cho phép các trải nghiệm tương tác phong phú và năng động cho độc giả. Vì lý do này, các nhà cung cấp dịch vụ email đòi hỏi các thư của bạn được xác thực. Các đánh dấu AMP hợp lệ đảm bảo rằng các email là an toàn và vượt quá tiêu chuẩn về trải nghiệm người dùng.

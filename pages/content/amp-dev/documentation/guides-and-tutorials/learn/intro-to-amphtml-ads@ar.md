@@ -1,14 +1,14 @@
 ---
-"$title": مقدمة لإعلانات AMPHTML
-"$order": '1'
+'$title': مقدمة لإعلانات AMPHTML
+$order: 1
 description: تُعد إعلانات AMPHTML طريقة أسرع وأبسط وأكثر أمانًا للإعلان على الويب. على الرغم من أن صفحات AMP تدعم إعلانات HTML التقليدية، فقد تكون هذه الإعلانات بطيئة في التحميل.
 formats:
-- ads
+  - ads
 ---
 
 ## ما هو إعلان AMPHTML؟
 
-تُعد إعلانات AMPHTML طريقة أسرع وأبسط وأكثر أمانًا للإعلان على الويب. على الرغم من أن صفحات AMP تدعم إعلانات HTML التقليدية، فقد تكون هذه الإعلانات بطيئة في التحميل. ولإنشاء الإعلانات بسرعة باقي صفحات AMP نفسها، يمكنك إنشاء إعلانات بتنسيق AMPHTML. ولا يتم عرض إعلانات AMPHTML إلا بعد التحقق من صحتها، مما يضمن أمان الإعلانات وفاعليتها. الأهم من ذلك كله، يمكن عرض هذه الإعلانات في أي مكان على الويب، *وليس على صفحات AMP فقط*.
+تُعد إعلانات AMPHTML طريقة أسرع وأبسط وأكثر أمانًا للإعلان على الويب. على الرغم من أن صفحات AMP تدعم إعلانات HTML التقليدية، فقد تكون هذه الإعلانات بطيئة في التحميل. ولإنشاء الإعلانات بسرعة باقي صفحات AMP نفسها، يمكنك إنشاء إعلانات بتنسيق AMPHTML. ولا يتم عرض إعلانات AMPHTML إلا بعد التحقق من صحتها، مما يضمن أمان الإعلانات وفاعليتها. الأهم من ذلك كله، يمكن عرض هذه الإعلانات في أي مكان على الويب، _وليس على صفحات AMP فقط_.
 
 فيما تتم كتابة إعلانات AMPHTML بلغة AMP HTML وفقًا [لمواصفات إعلانات AMPHTML](a4a_spec.md) (أحد أشكال AMP HTML + CSS). ,هذا يعني أن الإعلانات لم تعد قادرة على تشغيل JavaScript عشوائي، والذي يعد السبب الأول لضعف أداء الإعلان على نحو تقليدي. لذا، وعلى غرار AMP الأساسي تمامًا، تم دمج حالات استخدام JavaScript للإعلانات الأساسية في مشروع AMP مفتوح المصدر الذي يضمن السلوك الجيد من الإعلانات.
 
@@ -25,7 +25,7 @@ formats:
 
 ### التنسيقات
 
-تتميز إعلانات AMPHTML بالمرونة والديناميكية، مما يسمح بالعديد من التنسيقات الإبداعية مثل carousel وparallax وlightbox، على سبيل المثال لا الحصر. استفد من نماذج إعلانات AMPHTML  <a class="" href="https://gitlocalize.com/repo/4863/ar/pages/content/amp-dev/documentation/examples/index.html">مفتوحة المصدر في أمثلة </a>.
+تتميز إعلانات AMPHTML بالمرونة والديناميكية، مما يسمح بالعديد من التنسيقات الإبداعية مثل carousel وparallax وlightbox، على سبيل المثال لا الحصر. استفد من نماذج إعلانات AMPHTML <a class="" href="https://gitlocalize.com/repo/4863/ar/pages/content/amp-dev/documentation/examples/index.html">مفتوحة المصدر في أمثلة </a>.
 
 <table class="nocolor">
   <tr>
@@ -73,7 +73,7 @@ formats:
 
 - [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*قريبًا*)
+- Adobe Animate (_قريبًا_)
 
 ### خوادم/شبكات الإعلانات
 
@@ -87,7 +87,7 @@ formats:
 
 - [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*قريبًا*)
+- Adobe Animate (_قريبًا_)
 
 ### التحقق من صحة بناء جملة إعلانات AMPHTML
 
@@ -97,7 +97,7 @@ formats:
 - استخدام [أداة التحقق من صحة AMP](https://validator.ampproject.org/) للاختبار غير المتكرر.
 - الشراكة مع [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) واستخدام نقطة نهاية أداة التحقق العامة.
 
-[tip type="note"] **ملحوظة–**  لعرض إعلانات AMPHTML بسرعة على صفحات AMP (أي باستخدام العرض التفضيلي في الإحضار السريع)، يجب أن يكون بناء الجملة صحيحًا. وإذا كان بناء الجملة غير صحيح، فسيستمر عرض الإعلان، ولكن ليس بالسرعة نفسها. [/tip]
+[tip type="note"] **ملحوظة–** لعرض إعلانات AMPHTML بسرعة على صفحات AMP (أي باستخدام العرض التفضيلي في الإحضار السريع)، يجب أن يكون بناء الجملة صحيحًا. وإذا كان بناء الجملة غير صحيح، فسيستمر عرض الإعلان، ولكن ليس بالسرعة نفسها. [/tip]
 
 ## دعم إعلانات AMPHTML في RTB
 

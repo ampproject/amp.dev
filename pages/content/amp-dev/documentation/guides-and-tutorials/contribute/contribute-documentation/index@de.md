@@ -1,13 +1,13 @@
 ---
-"$title": Trage zur Dokumentation bei
-"$order": '0'
-"$hidden": 'true'
+'$title': Trage zur Dokumentation bei
+$order: 0
+'$hidden': 'true'
 description: 'So trägst du Dokumentation zu amp.dev bei: Erste Schritte'
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 

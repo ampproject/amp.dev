@@ -1,13 +1,13 @@
 ---
-"$title": 贡献文档
-"$order": '0'
-"$hidden": 'true'
+'$title': 贡献文档
+$order: 0
+'$hidden': 'true'
 description: 开始为 amp.dev 贡献文档
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 

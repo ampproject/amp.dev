@@ -1,10 +1,10 @@
 ---
-"$title": Дополнительные технические сведения о веб-историях
-"$order": '1'
+'$title': Дополнительные технические сведения о веб-историях
+$order: 1
 description: Дополнительные технические сведения о веб-историях
-"$category": Develop
+'$category': Develop
 formats:
-- stories
+  - stories
 author: CrystalOnScript
 ---
 
@@ -26,35 +26,103 @@ author: CrystalOnScript
 Разница между веб-страницей AMP и веб-историей, созданной с помощью AMP, заключается в наличии компонента [`amp-story`](https://amp.dev/documentation/components/amp-story/?format=stories). Это единственный непосредственный дочерний элемент тега `<body>`, и он должен содержать атрибут `standalone`. Определение всех страниц, слоев и элементов веб-историй размещается внутри тегов `<amp-story>`.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Joy of Pets</title>
-    <link rel="canonical" href="pets.html">
-    <meta name="viewport" content="width=device-width">
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <link rel="canonical" href="pets.html" />
+    <meta name="viewport" content="width=device-width" />
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-video"
-        src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
-    <script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+    <script
+      async
+      custom-element="amp-video"
+      src="https://cdn.ampproject.org/v0/amp-video-0.1.js"
+    ></script>
+    <script
+      async
+      custom-element="amp-story"
+      src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+    ></script>
     <style amp-custom>
-    ...
+      ...;
     </style>
   </head>
   <body>
     <!-- Cover page -->
-    <amp-story standalone
-        title="Joy of Pets"
-        publisher="AMP tutorials"
-        publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-        poster-portrait-src="assets/cover.jpg">
+    <amp-story
+      standalone
+      title="Joy of Pets"
+      publisher="AMP tutorials"
+      publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+      poster-portrait-src="assets/cover.jpg"
+    >
       <amp-story-page id="cover">
         <amp-story-grid-layer template="fill">
-          <amp-img src="assets/cover.jpg"
-              width="720" height="1280"
-              layout="responsive">
+          <amp-img
+            src="assets/cover.jpg"
+            width="720"
+            height="1280"
+            layout="responsive"
+          >
           </amp-img>
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical">
@@ -67,11 +135,17 @@ author: CrystalOnScript
       <amp-story-page id="page1">
         <amp-story-grid-layer template="vertical">
           <h1>Cats</h1>
-          <amp-img src="assets/cat.jpg"
-              width="720" height="1280"
-              layout="responsive">
+          <amp-img
+            src="assets/cat.jpg"
+            width="720"
+            height="1280"
+            layout="responsive"
+          >
           </amp-img>
-          <q>Dogs come when they're called. Cats take a message and get back to you. --Mary Bly</q>
+          <q
+            >Dogs come when they're called. Cats take a message and get back to
+            you. --Mary Bly</q
+          >
         </amp-story-grid-layer>
       </amp-story-page>
       ...
@@ -88,7 +162,7 @@ author: CrystalOnScript
 
 ### Цвет фона
 
-Укажите цвет фона для каждой страницы веб-истории. Наличие окрашенного фона — хороший запасной вариант на тот случай, если условия не позволяют пользователю загружать изображения или видеоконтент. Выберите цвет, который близок к основному фоновому цвету контента страницы, или используйте согласованную цветовую схему для всех страниц истории.  Для удобства чтения убедитесь, что цвет фона отличается от цвета текста.
+Укажите цвет фона для каждой страницы веб-истории. Наличие окрашенного фона — хороший запасной вариант на тот случай, если условия не позволяют пользователю загружать изображения или видеоконтент. Выберите цвет, который близок к основному фоновому цвету контента страницы, или используйте согласованную цветовую схему для всех страниц истории. Для удобства чтения убедитесь, что цвет фона отличается от цвета текста.
 
 Цвет фона для страниц веб-историй задается либо внутри тегов `<style amp-custom>` в элементе head, либо во встраиваемом виде размещается в компоненте [`<amp-story-page>`](https://amp.dev/documentation/components/amp-story-page/?format=stories).
 
@@ -172,12 +246,18 @@ author: CrystalOnScript
 Чтобы указать источник видео в компоненте `<amp-video>`, используйте дочерние элементы `<source>` вместо `src` — элемент `<source>` позволяет указать тип видео и добавить резервные источники видео. Необходимо также использовать атрибут `type`, чтобы указать MIME-тип. Используйте `application/x-mpegurl` или `application/vnd.apple.mpegurl` для видео HLS. Для других типов видео используйте MIME-префикс `video/`, за которым должен следовать формат видео, например `”video/mp4”`.
 
 ```html
-<amp-video id="video-page1" autoplay loop
-  layout="fill" poster="https://example.com/media/poster.jpg">
-  <source src="https://amp-example.com/media/movie.m3u8"
-    type="application/vnd.apple.mpegurl" />
-  <source src="https://amp-example.com/media/movie.mp4"
-    type="video/mp4" />
+<amp-video
+  id="video-page1"
+  autoplay
+  loop
+  layout="fill"
+  poster="https://example.com/media/poster.jpg"
+>
+  <source
+    src="https://amp-example.com/media/movie.m3u8"
+    type="application/vnd.apple.mpegurl"
+  />
+  <source src="https://amp-example.com/media/movie.mp4" type="video/mp4" />
 </amp-video>
 ```
 
@@ -186,7 +266,7 @@ author: CrystalOnScript
 Доступный в компоненте amp-story-page атрибут [`auto-advance-after`](https://amp.dev/documentation/components/amp-story-page/?format=stories#auto-advance-after-%5Boptional%5D) указывает, должна ли страница истории переходить на следующий этап без нажатия со стороны пользователя. Чтобы переходить после завершения видео, укажите в атрибуте идентификатор видео.
 
 ```html
-<amp-story-page auto-advance-after="myvideo">
+<amp-story-page auto-advance-after="myvideo"></amp-story-page>
 ```
 
 ## Версия для компьютеров
@@ -196,11 +276,13 @@ author: CrystalOnScript
 Чтобы включить поддержку горизонтального режима просмотра, добавьте в компонент `<amp-story>` атрибут `supports-landscape`.
 
 ```html
-<amp-story standalone
-    supports-landscape
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/icon.svg"
-    poster-portrait-src="assets/cover.jpg">
+<amp-story
+  standalone
+  supports-landscape
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+>
 </amp-story>
 ```

@@ -1,29 +1,33 @@
 ---
-"$title": Elementi di base su AMP per e-mail
-"$order": '1'
+'$title': Elementi di base su AMP per e-mail
+$order: 1
 description: Qui troverai tutto quello che devi sapere per iniziare a realizzare e-mail AMP valide.
 author: CrystalOnScript
 formats:
-- email
+  - email
 ---
 
-Se sei pratico di contenuti AMP,  abbiamo ottime notizie per te! AMP per E-mail è un semplice sottoinsieme della libreria AMP HTML. Anche se non hai conoscenze dei contenuti AMP, ci sono ottime notizie! Questa guida ti fornirà tutte le informazioni di cui avrai bisogno per iniziare a creare e-mail AMP valide!
+Se sei pratico di contenuti AMP, abbiamo ottime notizie per te! AMP per E-mail è un semplice sottoinsieme della libreria AMP HTML. Anche se non hai conoscenze dei contenuti AMP, ci sono ottime notizie! Questa guida ti fornirà tutte le informazioni di cui avrai bisogno per iniziare a creare e-mail AMP valide!
 
 ## Markup obbligatori
 
 Le e-mail AMP assomigliano alle e-mail HTML classiche, ma presentano alcune differenze. Lo schema seguente mostra la minima struttura di markup richiesti per realizzare un'e-mail AMP valida.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email data-css-strict>
-<head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
-</head>
-<body>
-  Hello, AMP4EMAIL world.
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    Hello, AMP4EMAIL world.
+  </body>
 </html>
 ```
 
@@ -38,8 +42,12 @@ I fornitori di servizi di posta elettronica che supportano le email AMP prevedon
 
 ```html
 <head>
-...
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  ...
+  <style amp4email-boilerplate>
+    body {
+      visibility: hidden;
+    }
+  </style>
 </head>
 ```
 
@@ -132,9 +140,7 @@ Questo esempio mostra un possibile utilizzo di `<amp-list>` per visualizzare i d
   src="https://example.com/endpoint?token=REPLACE_WITH_YOUR_ACCESS_TOKEN"
   height="300"
 >
-  <template type="amp-mustache">
-    ...
-  </template>
+  <template type="amp-mustache"> ... </template>
 </amp-list>
 ```
 

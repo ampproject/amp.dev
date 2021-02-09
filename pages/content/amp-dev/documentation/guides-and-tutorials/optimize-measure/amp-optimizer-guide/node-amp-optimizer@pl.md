@@ -1,10 +1,10 @@
 ---
-"$title": Przewodnik po optymalizatorze AMP opartym na Node.js
-"$order": '2'
+'$title': Przewodnik po optymalizatorze AMP opartym na Node.js
+$order: 2
 description: Ten przewodnik wyjaśnia jak skonfigurować i używać wersję optymalizatora AMP opartą na Node.js.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

@@ -1,10 +1,10 @@
 ---
-"$title": Руководство по AMP-оптимизатору для Node.js
-"$order": '2'
+'$title': Руководство по AMP-оптимизатору для Node.js
+$order: 2
 description: Это руководство рассказывает, как настроить и использовать версию AMP-оптимизатора для Node.js.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

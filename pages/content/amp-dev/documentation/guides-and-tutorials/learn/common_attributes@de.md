@@ -1,6 +1,6 @@
 ---
-"$title": Allgemeine Elementattribute
-"$order": '1'
+'$title': Allgemeine Elementattribute
+$order: 1
 description: AMP bietet eine Reihe allgemeiner Attribute, die in vielen AMP Komponenten (und HTML Elementen) eingesetzt werden können. Dieses Dokument beschreibt jedes der allgemeinen Attribute.
 toc: 'true'
 ---
@@ -16,7 +16,7 @@ Wird häufig verwendet mit: Bildern, Animationen, Audio und Videos
 Beispiel:
 
 ```html
-<amp-anim src="animated.gif" width="466" height="355" layout="responsive" >
+<amp-anim src="animated.gif" width="466" height="355" layout="responsive">
   <div fallback>Cannot play animated images on this device.</div>
 </amp-anim>
 ```
@@ -35,9 +35,12 @@ Hinweis: Wenn das Attribut `heights` zusammen mit `width` und `height` angegeben
 Beispiel:
 
 ```html
-<amp-img src="amp.png"
-    width="320" height="256"
-    heights="(min-width:500px) 200px, 80%">
+<amp-img
+  src="amp.png"
+  width="320"
+  height="256"
+  heights="(min-width:500px) 200px, 80%"
+>
 </amp-img>
 ```
 
@@ -50,11 +53,13 @@ AMP stellt eine Auswahl an [Layouts](../../../documentation/guides-and-tutorials
 Beispiel:
 
 ```html
-<amp-img src="/img/amp.jpg"
-    width="1080"
-    height="610"
-    layout="responsive"
-    alt="an image">
+<amp-img
+  src="/img/amp.jpg"
+  width="1080"
+  height="610"
+  layout="responsive"
+  alt="an image"
+>
 </amp-img>
 ```
 
@@ -68,15 +73,19 @@ Beispiel:
 
 ```html
 <amp-img
-    media="(min-width: 650px)"
-    src="wide.jpg"
-    width="466"
-    height="355" layout="responsive"></amp-img>
+  media="(min-width: 650px)"
+  src="wide.jpg"
+  width="466"
+  height="355"
+  layout="responsive"
+></amp-img>
 <amp-img
-    media="(max-width: 649px)"
-    src="narrow.jpg"
-    width="527"
-    height="193" layout="responsive"></amp-img>
+  media="(max-width: 649px)"
+  src="narrow.jpg"
+  width="527"
+  height="193"
+  layout="responsive"
+></amp-img>
 ```
 
 Weitere Informationen dazu findest du unter [Layout & Media Queries](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#element-media-queries).
@@ -90,11 +99,7 @@ Wird häufig verwendet mit: Bildern, Animationen, Videos und Ads.
 Beispiel:
 
 ```html
-<amp-img src="card.jpg"
-    noloading
-    height="190"
-    width="297"
-    layout="responsive">
+<amp-img src="card.jpg" noloading height="190" width="297" layout="responsive">
 </amp-img>
 ```
 
@@ -114,9 +119,7 @@ Beispiel:
 
 ```html
 <button on="tap:my-lightbox">Open lightbox</button>
-<amp-lightbox id="my-lightbox" layout="nodisplay">
-  ...
-</amp-lightbox>
+<amp-lightbox id="my-lightbox" layout="nodisplay"> ... </amp-lightbox>
 ```
 
 Weitere Informationen dazu findest du unter [Aktionen und Events in AMP](amp-actions-and-events.md).
@@ -144,20 +147,25 @@ Alle AMP Elemente, die das Layout `responsive` unterstützen, unterstützen auch
 Beispiel:
 
 ```html
-<amp-img src="amp.png"
-    width="400" height="300"
-    layout="responsive"
-    sizes="(min-width: 320px) 320px, 100vw">
+<amp-img
+  src="amp.png"
+  width="400"
+  height="300"
+  layout="responsive"
+  sizes="(min-width: 320px) 320px, 100vw"
+>
 </amp-img>
 ```
 
 Das resultiert im folgenden verschachtelten Tag vom Typ `img`:
 
 ```html
-<img decoding="async"
-    src="amp.png"
-    sizes="(min-width: 320px) 320px, 100vw"
-    class="i-amphtml-fill-content i-amphtml-replaced-content">
+<img
+  decoding="async"
+  src="amp.png"
+  sizes="(min-width: 320px) 320px, 100vw"
+  class="i-amphtml-fill-content i-amphtml-replaced-content"
+/>
 ```
 
 Weitere Informationen dazu findest du unter [Art Direction mit srcset, sizes und heights](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md).
@@ -169,10 +177,7 @@ Bei einigen [Layouts](../../../documentation/guides-and-tutorials/develop/style_
 Beispiel:
 
 ```html
-<amp-anim width="245"
-    height="300"
-    src="/img/cat.gif"
-    alt="cat animation">
+<amp-anim width="245" height="300" src="/img/cat.gif" alt="cat animation">
 </amp-anim>
 ```
 

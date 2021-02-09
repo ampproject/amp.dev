@@ -1,10 +1,10 @@
 ---
-"$title": 이미지 삽입하기
-"$order": '2'
+'$title': 이미지 삽입하기
+$order: 2
 description: 대부분의 HTML 태그는 AMP HTML에서 바로 사용할 수 있지만<img> 같은 일부 태그는 기존과 동일하거나 더 향상된 사용자 지정 AMP HTML 태그로 대체됩니다
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 대부분의 HTML 태그는 AMP HTML에서 바로 사용할 수 있지만, `<img>` 같은 일부 태그는 기존과 동일하거나 더 향상된 사용자 지정 AMP HTML 태그로 대체됩니다(또한 문제가 있는 일부 태그는 사용이 금지됩니다. [AMP 사양에서 허용되는 HTML 태그](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)들을 살펴보세요.)

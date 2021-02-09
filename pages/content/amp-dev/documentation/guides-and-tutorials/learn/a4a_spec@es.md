@@ -1,8 +1,8 @@
 ---
-"$title": Características que deben tener los anuncios de AMP
-order: '3'
+'$title': Características que deben tener los anuncios de AMP
+$order: 3
 formats:
-- ads
+  - ads
 teaser:
   text: _Si desea proponer cambios en el formato estándar, agregue un comentario en el artículo [Intent
 toc: 'true'
@@ -31,7 +31,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-*Si desea proponer cambios en el formato estándar, agregue un comentario en el artículo [Intento para implementarlo](https://github.com/ampproject/amphtml/issues/4264)*.
+_Si desea proponer cambios en el formato estándar, agregue un comentario en el artículo [Intento para implementarlo](https://github.com/ampproject/amphtml/issues/4264)_.
 
 Los anuncios AMPHTML son un mecanismo para renderizar anuncios rápidamente y de manera eficaz en las páginas de AMP. Para garantizar que los documentos de los anuncios AMPHTML ("Creativos de AMP") puedan renderizarse de forma rápida y sin contratiempos en el navegador, y que no afecten la experiencia del usuario, los creativos de AMP deben cumplir todo un conjunto de reglas para su validación. Al igual que las [reglas de formato para AMP](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml), los anuncios AMPHTML tienen acceso a un conjunto limitado de etiquetas, funciones y extensiones permitidas.
 
@@ -82,11 +82,13 @@ Adicionalmente, los creativos deben cumplir las siguientes reglas:
 Los creativos de los anuncios AMPHTML requieren de un código repetitivo diferente y con un estilo considerablemente más simple en comparación con lo que [hacen los documentos generales de AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md):
 
 [sourcecode:html]
+
 <style amp4ads-boilerplate>
   body {
     visibility: hidden;
   }
 </style>
+
 [/sourcecode]
 
 <em>Justificación: </em> El estilo <code>amp-boilerplate </code> oculta el contenido del cuerpo hasta que el tiempo de ejecución de AMP está listo y puede mostrarlo. Si Javascript está desactivado o el tiempo de ejecución de AMP no se carga, el texto estándar predeterminado garantiza que el contenido se seguirá mostrando independientemente. Sin embargo, en los anuncios AMPHTML, si Javascript está completamente deshabilitado, los anuncios AMPHTML no se ejecutarán y no se mostrará ningún anuncio, por lo que no es necesaria la sección <code><noscript></code>. En ausencia del tiempo de ejecución de AMP, la mayoría de la maquinaria en la que se basan los anuncios AMPHTML (por ejemplo, los análisis para el seguimiento de la visibilidad o <code>amp-img</code> para la visualización de contenido) no estarán disponibles, por lo que es preferible no mostrar ningún anuncio que uno defectuoso.
@@ -137,14 +139,14 @@ Las propiedades `transition` y `animation` solo se permiten en los seleccionador
 
 - Solo contienen las propiedades `transition`, `animation`, `transform`, `visibility`, u `opacity`.
 
-    *Justificación:* Esto permite que el tiempo de ejecución de AMP elimine esta clase de contexto para desactivar las animaciones, mientras sea necesario para el rendimiento de la página.
+  _Justificación:_ Esto permite que el tiempo de ejecución de AMP elimine esta clase de contexto para desactivar las animaciones, mientras sea necesario para el rendimiento de la página.
 
 **Correcto**
 
 [sourcecode:css]
 .box {
-  transform: rotate(180deg);
-  transition: transform 2s;
+transform: rotate(180deg);
+transition: transform 2s;
 }
 [/sourcecode]
 
@@ -154,9 +156,9 @@ Esta propiedad no esta permitida para la clase CSS.
 
 [sourcecode:css]
 .box {
-  color: red; // non-animation property not allowed in animation selector
-  transform: rotate(180deg);
-  transition: transform 2s;
+color: red; // non-animation property not allowed in animation selector
+transform: rotate(180deg);
+transition: transform 2s;
 }
 [/sourcecode]
 
@@ -180,13 +182,13 @@ transition: background-color 2s;
 
 [sourcecode:css]
 @keyframes turn {
-  from {
-    transform: rotate(180deg);
-  }
+from {
+transform: rotate(180deg);
+}
 
-  to {
-    transform: rotate(90deg);
-  }
+to {
+transform: rotate(90deg);
+}
 }
 [/sourcecode]
 
@@ -194,21 +196,21 @@ transition: background-color 2s;
 
 [sourcecode:css]
 @keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 300%;
-  }
+from {
+margin-left: 100%;
+width: 300%;
+}
 
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
+to {
+margin-left: 0%;
+width: 100%;
+}
 }
 [/sourcecode]
 
 ### Extensiones e incorporaciones permitidas en AMP <a name="allowed-amp-extensions-and-builtins"></a>
 
-Se *permiten* los siguientes módulos de extensiones de AMP y etiquetas integradas AMP en un anuncio creativo Se prohíben las extensiones o etiquetas incorporadas que no se enumeren explícitamente.
+Se _permiten_ los siguientes módulos de extensiones de AMP y etiquetas integradas AMP en un anuncio creativo Se prohíben las extensiones o etiquetas incorporadas que no se enumeren explícitamente.
 
 - [amp-accordion](https://amp.dev/documentation/components/amp-accordion)
 - [amp-ad-exit](https://amp.dev/documentation/components/amp-ad-exit)
@@ -234,19 +236,19 @@ Se *permiten* los siguientes módulos de extensiones de AMP y etiquetas integrad
 
 La mayoría de las omisiones son consecuencia ya sea del rendimiento o para que los anuncios AMPHTML sean más fáciles de analizar.
 
-*Por ejemplo:* `<amp-ad>` se omite de esta lista. Se prohíbe explícitamente porque permitiría que un `<amp-ad>` estuviera dentro de un `<amp-ad>` que potencialmente conduciría a cascadas ilimitadas de carga de anuncios, los cuales no cumplen con los objetivos de rendimiento para los anuncios de AMPHTML.
+_Por ejemplo:_ `<amp-ad>` se omite de esta lista. Se prohíbe explícitamente porque permitiría que un `<amp-ad>` estuviera dentro de un `<amp-ad>` que potencialmente conduciría a cascadas ilimitadas de carga de anuncios, los cuales no cumplen con los objetivos de rendimiento para los anuncios de AMPHTML.
 
-*Por ejemplo:* `<amp-iframe>` se omite de esta lista. Se prohíbe porque los anuncios podrían utilizarlo para ejecutar injustificadamente Javascript y cargar contenido arbitrario. Los anuncios que quieran utilizar esas funciones deben devolver `false` de su entrada [a4aRegistry](https://github.com/ampproject/amphtml/blob/master/ads/_a4a-config.js#L40) y utilizar el mecanismo actual de renderización de anuncios “3p iframe”.
+_Por ejemplo:_ `<amp-iframe>` se omite de esta lista. Se prohíbe porque los anuncios podrían utilizarlo para ejecutar injustificadamente Javascript y cargar contenido arbitrario. Los anuncios que quieran utilizar esas funciones deben devolver `false` de su entrada [a4aRegistry](https://github.com/ampproject/amphtml/blob/master/ads/_a4a-config.js#L40) y utilizar el mecanismo actual de renderización de anuncios “3p iframe”.
 
-*Por ejemplo:* `<amp-facebook>`, `<amp-instagram>`, `<amp-twitter>`, y `<amp-youtube>` se omiten por la misma razón que `<amp-iframe>`: Todos crean iframes y potencialmente pueden consumir recursos ilimitados en ellos mismos.
+_Por ejemplo:_ `<amp-facebook>`, `<amp-instagram>`, `<amp-twitter>`, y `<amp-youtube>` se omiten por la misma razón que `<amp-iframe>`: Todos crean iframes y potencialmente pueden consumir recursos ilimitados en ellos mismos.
 
-*Por ejemplo:* `<amp-ad-network-*-impl>` se omite de esta lista. La etiqueta `<amp-ad>` administra la autorización en estas etiquetas de implementación, los creativos no deben tratar de incluirlos inmediatamente.
+_Por ejemplo:_ `<amp-ad-network-*-impl>` se omite de esta lista. La etiqueta `<amp-ad>` administra la autorización en estas etiquetas de implementación, los creativos no deben tratar de incluirlos inmediatamente.
 
-*Por ejemplo:* `<amp-lightbox>` aún no se incluye porque todavía algunos creativos en los anuncios de AMPHTML pueden renderizarse en un iframe y actualmente no hay ningún mecanismo para que un anuncio se expanda más allá de un iframe. Próximamente puede agregarse la compatibilidad, si se existe el deseo de hacerlo.
+_Por ejemplo:_ `<amp-lightbox>` aún no se incluye porque todavía algunos creativos en los anuncios de AMPHTML pueden renderizarse en un iframe y actualmente no hay ningún mecanismo para que un anuncio se expanda más allá de un iframe. Próximamente puede agregarse la compatibilidad, si se existe el deseo de hacerlo.
 
 ### Etiquetas HTML <a name="html-tags"></a>
 
-Las siguientes etiquetas están *permitidas* en los creativos para los anuncios de AMPHTML. Están prohibidas las etiquetas que no están explícitamente permitidas. Esta lista es un subconjunto general en la [lista de elementos permitidos para la etiqueta de AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md). De esa forma la lista se ordena según las especificaciones para HTML5 que se encuentran en la sección 4 [Los elementos de HTML](http://www.w3.org/TR/html5/single-page.html#html-elements).
+Las siguientes etiquetas están _permitidas_ en los creativos para los anuncios de AMPHTML. Están prohibidas las etiquetas que no están explícitamente permitidas. Esta lista es un subconjunto general en la [lista de elementos permitidos para la etiqueta de AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md). De esa forma la lista se ordena según las especificaciones para HTML5 que se encuentran en la sección 4 [Los elementos de HTML](http://www.w3.org/TR/html5/single-page.html#html-elements).
 
 La mayoría de las omisiones se deben al rendimiento o porque las etiquetas no son estándares para HTML5. Por ejemplo, `<noscript>` se omite debido a que los anuncios de AMPHTML dependen de que JavaScript se haya habilitado, así que un bloque `<noscript>` nunca se ejecutará y, por lo tanto, solo obstaculizará al creativo, el costo del ancho de banda y los tiempos de espera. De forma similar, `<acronym>`, `<big>`, y otros están prohibidos debido a que no son compatibles con HTML5.
 
@@ -268,7 +270,7 @@ La mayoría de las omisiones se deben al rendimiento o porque las etiquetas no s
 
 - **Tenga en cuenta:** A diferencia del AMP general, las etiquetas `<link rel="canonical">` están prohibidas.
 
-    4.2.5 `<style>` 4.2.6 `<meta>`
+  4.2.5 `<style>` 4.2.6 `<meta>`
 
 #### 4.3 Secciones <a name="43-sections"></a>
 
@@ -296,7 +298,7 @@ La mayoría de las omisiones se deben al rendimiento o porque las etiquetas no s
 
 Las etiquetas de los SVG no están en el espacio de nombres de HTML5. Se detallan a continuación sin un ID de sección.
 
-`<svg>``<g>``<path>``<glyph>``<glyphref>``<marker>``<view>``<circle>``<line>``<polygon>``<polyline>``<rect>``<text>``<textpath>``<tref>``<tspan>``<clippath>``<filter>``<lineargradient>``<radialgradient>``<mask>``<pattern>``<vkern>``<hkern>``<defs>``<use>``<symbol>``<desc>``<title>`
+` <svg>``<g>``<path>``<glyph>``<glyphref>``<marker>``<view>``<circle>``<line>``<polygon>``<polyline>``<rect>``<text>``<textpath>``<tref>``<tspan>``<clippath>``<filter>``<lineargradient>``<radialgradient>``<mask>``<pattern>``<vkern>``<hkern>``<defs>``<use>``<symbol>``<desc>``<title> `
 
 #### 4.9 Tabla de datos <a name="49-tabular-data"></a>
 
@@ -310,7 +312,7 @@ Las etiquetas de los SVG no están en el espacio de nombres de HTML5. Se detalla
 
 - Al igual que un documento general de AMP, la etiqueta del creativo `<head>` debe incluir una etiqueta `<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>`.
 - A diferencia del AMP general, el `<noscript>` está prohibido.
-    - *Justificación:* Dado que los anuncios AMPHTML requieren que Javascript esté habilitado para funcionar, los bloques de `<noscript>` no tendrían ninguna utilidad en los anuncios de AMPHTML y su costo solo es el ancho de banda de la red.
+  - _Justificación:_ Dado que los anuncios AMPHTML requieren que Javascript esté habilitado para funcionar, los bloques de `<noscript>` no tendrían ninguna utilidad en los anuncios de AMPHTML y su costo solo es el ancho de banda de la red.
 - A diferencia del AMP general, el `<script type="application/ld+json">` está prohibido.
-    - *Justificación:* JSON LD se utiliza para marcar datos estructurados en páginas host, pero los creativos de los anuncios no son documentos independientes y no contienen datos estructurados. En los bloques JSON LD solo tendría costo el ancho de banda de la red.
+  - _Justificación:_ JSON LD se utiliza para marcar datos estructurados en páginas host, pero los creativos de los anuncios no son documentos independientes y no contienen datos estructurados. En los bloques JSON LD solo tendría costo el ancho de banda de la red.
 - Todas las demás exclusiones y reglas en los lenguajes de programación se transfieren del AMP general.

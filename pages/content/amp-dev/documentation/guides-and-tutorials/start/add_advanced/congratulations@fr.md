@@ -1,7 +1,7 @@
 ---
-"$title": Félicitations !
-"$order": '7'
-description: "Vous avez terminé le tutoriel \"Ajouter des fonctionnalités AMP avancées\" et découvert avec succès de nombreux composants avancés clés d'AMP !"
+'$title': Félicitations !
+$order: 7
+description: 'Vous avez terminé le tutoriel "Ajouter des fonctionnalités AMP avancées" et découvert avec succès de nombreux composants avancés clés d''AMP !'
 ---
 
 Vous avez terminé le tutoriel "Ajouter des fonctionnalités AMP avancées" et découvert avec succès de nombreux composants avancés clés d'AMP !

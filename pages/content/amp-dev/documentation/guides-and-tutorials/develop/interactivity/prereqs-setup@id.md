@@ -1,8 +1,8 @@
 ---
-"$title": Menyiapkan
-"$order": '0'
+'$title': Menyiapkan
+$order: 0
 description: 'Sebelum memulai tutorial ini, Anda memerlukan hal-hal berikut ini: - Pengetahuan dasar tentang HTML, CSS, dan JavaScript - Browser pilihan Anda - Editor teks ....'
-"$parent": "/content/docs/interaction_dynamic/interactivity.md"
+'$parent': '/content/docs/interaction_dynamic/interactivity.md'
 ---
 
 ## Prasyarat

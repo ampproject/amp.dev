@@ -1,13 +1,13 @@
 ---
-"$title": Zintegruj swoją technologię z AMP
-"$order": '0'
-"$hidden": 'true'
+'$title': Zintegruj swoją technologię z AMP
+$order: 0
+'$hidden': 'true'
 description: Jeśli jesteś dostawcą technologii dla wydawców lub reklamodawców w Internecie, zachęcamy do dodania obsługi AMP, aby Twoi klienci mogli nadal wykorzystywać Twoją technologię i ...
 formats:
-- websites
-- ads
-- stories
-- email
+  - websites
+  - ads
+  - stories
+  - email
 ---
 
 Dziękujemy za zainteresowanie udziałem w AMP Project! Ucieszy nas Twój wkład w uczynienie z Internetu platformy rozwijanej przez użytkowników.

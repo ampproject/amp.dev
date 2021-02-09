@@ -1,10 +1,10 @@
 ---
-"$title": AMP アナリティクスの詳細
-"$order": '1'
+'$title': AMP アナリティクスの詳細
+$order: 1
 description: このガイドでは、amp-analytics コンポーネントについて、amp-analytics の設定例を次に示す主な構成ブロックに分けて詳しく説明します。
 formats:
-- ウェブサイト
-- ストーリー
+  - ウェブサイト
+  - ストーリー
 ---
 
 このガイドでは、 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) コンポーネントについて、[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) の設定例を次に示す主な構成ブロックに分けて詳しく説明します。
@@ -12,41 +12,44 @@ formats:
 以降では、以下の設定例を使用します。この例は、ページビューとリンクのユーザークリックをトラッキングして、サードパーティプロバイダである [Google アナリティクス](https://developers.google.com/analytics/devguides/collection/amp-analytics/)にアナリティクスデータを送信します。
 
 ```html
-<amp-analytics type="googleanalytics" config="https://example.com/analytics.account.config.json">
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
-    "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-  },
-  "vars": {
-    "account": "ABC123"
-  },
-  "extraUrlParams": {
-    "cd1": "AMP"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
-    },
-    "trackAnchorClicks": {
-      "on": "click",
-      "selector": "a",
-      "request": "event",
+<amp-analytics
+  type="googleanalytics"
+  config="https://example.com/analytics.account.config.json"
+>
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
+        "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
+      },
       "vars": {
-        "eventId": "42",
-        "eventLabel": "clicked on a link"
+        "account": "ABC123"
+      },
+      "extraUrlParams": {
+        "cd1": "AMP"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        },
+        "trackAnchorClicks": {
+          "on": "click",
+          "selector": "a",
+          "request": "event",
+          "vars": {
+            "eventId": "42",
+            "eventLabel": "clicked on a link"
+          }
+        }
+      },
+      "transport": {
+        "beacon": false,
+        "xhrpost": false,
+        "image": true
       }
     }
-  },
-  'transport': {
-    'beacon': false,
-    'xhrpost': false,
-    'image': true
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -76,7 +79,9 @@ AMP ページに [`amp-analytics`](../../../../documentation/components/referenc
 リモート設定を読み込むには、まず <a><code>amp-analytics</code></a> タグに config 属性を追加します。
 
 ```html
-<amp-analytics config="https://example.com/analytics.account.config.json">
+<amp-analytics
+  config="https://example.com/analytics.account.config.json"
+></amp-analytics>
 ```
 
 次に、リモート URL に設置する JSON コンテンツを作成します。この例は簡略化されているため、JSON オブジェクトにはアナリティクスアカウントの変数値しか含まれていません。
@@ -161,7 +166,7 @@ Google アナリティクスなど一部のアナリティクス プロバイダ
 }
 ```
 
-[tip type="important"]  <strong>重要 –</strong> 上記の方法は、AMP ページについてのみ推奨され、AMPHTML 広告には推奨されません。アナリティクスの優先度はページのコンテンツよりも低いため、クリックのトラッキングには、クリックのロスを回避できるブラウザリダイレクトを使用することをお勧めします。[/tip]
+[tip type="important"] <strong>重要 –</strong> 上記の方法は、AMP ページについてのみ推奨され、AMPHTML 広告には推奨されません。アナリティクスの優先度はページのコンテンツよりも低いため、クリックのトラッキングには、クリックのロスを回避できるブラウザリダイレクトを使用することをお勧めします。[/tip]
 
 AMP では次のトリガー設定をサポートしています。
 
@@ -256,26 +261,26 @@ AMP は優先順位に従って、変数に値を代入します。
 
 ```html
 <amp-analytics config="http://example.com/config.json">
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(cid-scope)}",
-  },
-  "vars": {
-    "account": "ABC123",
-    "title": "Homepage"
-  },
-  "triggers": {
-    "some-event": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(cid-scope)}",
+      },
       "vars": {
-        "title": "My homepage",
-        "clientId": "my user"
+        "account": "ABC123",
+        "title": "Homepage"
+      },
+      "triggers": {
+        "some-event": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage",
+            "clientId": "my user"
+          }
       }
-  }
-}
-</script>
+    }
+  </script>
 </amp-analytics>
 ```
 

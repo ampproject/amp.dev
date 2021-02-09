@@ -1,6 +1,6 @@
 ---
-"$title": Chúc mừng!
-"$order": '4'
+'$title': Chúc mừng!
+$order: 4
 description: 'Bạn đã hoàn thành bài thực hành và chuyển đổi thành công một tài liệu HTML thành một tài liệu AMP. Trong bài thực hành này, bạn đã học cách để: - Nhận biết sự khác biệt giữa AMP và...'
 ---
 

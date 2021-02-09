@@ -1,11 +1,11 @@
 ---
-"$title": AMPHTML 布局系统
-order: '1'
+'$title': AMPHTML 布局系统
+$order: 1
 formats:
-- websites
-- email
-- stories
-- ads
+  - websites
+  - email
+  - stories
+  - ads
 teaser:
   text: '概述 '
 ---
@@ -68,13 +68,14 @@ AMP 提供了一组布局，用于指定 AMP 组件在文档布局中的行为�
 
 [sourcecode:html]
 <amp-img
-  src="/img/amp.jpg"
-  width="1080"
-  height="610"
-  layout="responsive"
-  alt="an image"
-></amp-img>
-[/sourcecode]
+src="/img/amp.jpg"
+width="1080"
+height="610"
+layout="responsive"
+alt="an image"
+
+> </amp-img>
+> [/sourcecode]
 
 `layout` 属性支持的值如下所示：
 
@@ -139,14 +140,14 @@ AMP 提供了一组布局，用于指定 AMP 组件在文档布局中的行为�
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="400"
-  height="300"
-  layout="responsive"
-  sizes="(min-width: 320px) 320px, 100vw"
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="400"
+height="300"
+layout="responsive"
+sizes="(min-width: 320px) 320px, 100vw"
+
+> </amp-img>
+> [/sourcecode]
 
 ### `disable-inline-width` <a name="disable-inline-width"></a>
 
@@ -158,15 +159,15 @@ AMP 提供了一组布局，用于指定 AMP 组件在文档布局中的行为�
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="400"
-  height="300"
-  layout="responsive"
-  sizes="(min-width: 320px) 320px, 100vw"
-  disable-inline-width
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="400"
+height="300"
+layout="responsive"
+sizes="(min-width: 320px) 320px, 100vw"
+disable-inline-width
+
+> </amp-img>
+> [/sourcecode]
 
 ### `heights` <a name="heights"></a>
 
@@ -183,13 +184,13 @@ AMP 提供了一组布局，用于指定 AMP 组件在文档布局中的行为�
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="320"
-  height="256"
-  heights="(min-width:500px) 200px, 80%"
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="320"
+height="256"
+heights="(min-width:500px) 200px, 80%"
+
+> </amp-img>
+> [/sourcecode]
 
 ### `media` <a name="media"></a>
 
@@ -201,20 +202,21 @@ AMP 提供了一组布局，用于指定 AMP 组件在文档布局中的行为�
 
 [sourcecode:html]
 <amp-img
-  media="(min-width: 650px)"
-  src="wide.jpg"
-  width="466"
-  height="355"
-  layout="responsive"
-></amp-img>
-<amp-img
-  media="(max-width: 649px)"
-  src="narrow.jpg"
-  width="527"
-  height="193"
-  layout="responsive"
-></amp-img>
-[/sourcecode]
+media="(min-width: 650px)"
+src="wide.jpg"
+width="466"
+height="355"
+layout="responsive"
+
+> </amp-img>
+> <amp-img
+>   media="(max-width: 649px)"
+>   src="narrow.jpg"
+>   width="527"
+>   height="193"
+>   layout="responsive"
+> </amp-img>
+> [/sourcecode]
 
 ### `placeholder` <a name="placeholder"></a>
 
@@ -222,7 +224,7 @@ AMP 提供了一组布局，用于指定 AMP 组件在文档布局中的行为�
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
-  <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+<amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
 [/sourcecode]
 
@@ -232,6 +234,7 @@ AMP 提供了一组布局，用于指定 AMP 组件在文档布局中的行为�
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
+
   <div fallback>Cannot play animated images on this device.</div>
 </amp-anim>
 [/sourcecode]

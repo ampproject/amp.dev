@@ -1,10 +1,10 @@
 ---
-"$title": Optimiere deine gehosteten AMP Seiten
-"$order": '7'
+'$title': Optimiere deine gehosteten AMP Seiten
+$order: 7
 description: Die AMP Runtime ist auf Geschwindigkeit optimiert. Wenn deine AMP Seiten von einem AMP Cache bereitgestellt werden, sind sie komplett optimiert und bieten die beste Ladeleistung …
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 
@@ -73,6 +73,7 @@ Das wollen wir uns Schritt für Schritt anschauen:
 3. Wenn deine Seite Erweiterungen enthält, die das Rendern verzögern (z. B. amp-experiment, amp-dynamic-css-classes, amp-story), lade diese Erweiterungen vor, da sie von der AMP Runtime zum Rendern der Seite benötigt werden.
 
 [sourcecode:html]
+
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-custom-css-0.1.js">
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/story-1.0.js">[/sourcecode]
@@ -150,7 +151,7 @@ Die gleiche Methode funktioniert übrigens für [`amp-video`](../../../documenta
 </amp-video>
 [/sourcecode]
 
-Stelle einfach sicher, dass die Preloadanweisungen *nach* der Viewportdeklaration platziert werden, da der Browser die Viewportabmessungen benötigt, um die Bildschirmbreite zu bestimmen:
+Stelle einfach sicher, dass die Preloadanweisungen _nach_ der Viewportdeklaration platziert werden, da der Browser die Viewportabmessungen benötigt, um die Bildschirmbreite zu bestimmen:
 
 [sourcecode:html]
 
@@ -203,11 +204,13 @@ Mit AMP kannst du einige Dinge tun, um das Laden von Schriftarten zu optimieren 
 - Laden Sie benutzerdefinierte Schriftarten vor:
 
 [sourcecode:html]
+
 <link rel="preload" as="font" href="/bundles/app/fonts/helveticaneue-roman-webfont.woff2" >[/sourcecode]
 
 - Falls du Google Fonts oder einen anderen Anbieter von Schriftarten mit unbekannten Font URLs verwendest, stelle mittels "preconnect" eine Verbindung zum entsprechenden Font Server her:
 
 [sourcecode:html]
+
  <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
 [/sourcecode]
 

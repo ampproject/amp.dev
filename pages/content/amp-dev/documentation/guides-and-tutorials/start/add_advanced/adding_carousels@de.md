@@ -1,6 +1,6 @@
 ---
-"$title": Karussells hinzufügen
-"$order": '3'
+'$title': Karussells hinzufügen
+$order: 3
 description: Karussells sind ein verbreitetes Feature auf mobilen Seiten. Mit der Komponente amp-carousel kannst du mühelos Karussells zu AMP Seiten hinzufügen.
 ---
 
@@ -11,13 +11,17 @@ Karussells sind ein verbreitetes Feature auf mobilen Seiten. Mit der Komponente 
 Vergiss nicht, die Bibliothek für die Komponente [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) einzufügen, indem du die folgende JavaScript Anforderung zum Tag `<head>` deines Dokuments **hinzufügst**:
 
 ```html
-<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script
+  async
+  custom-element="amp-carousel"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+></script>
 ```
 
 Jetzt können wir ein einfaches Bilderkarussell mit einem responsiven Layout und einer vordefinierten Breite und Höhe einbetten. Dazu musst du deiner Seite Folgendes **hinzufügen**:
 
 ```html
-<amp-carousel layout="fixed-height" height="168" type="carousel" >
+<amp-carousel layout="fixed-height" height="168" type="carousel">
   <amp-img src="mountains-1.jpg" width="300" height="168"></amp-img>
   <amp-img src="mountains-2.jpg" width="300" height="168"></amp-img>
   <amp-img src="mountains-3.jpg" width="300" height="168"></amp-img>
@@ -41,10 +45,33 @@ Richten wir das Karussell schließlich so ein, dass es alle 2 Sekunden automatis
 Dein Endergebnis sollte ungefähr so aussehen:
 
 ```html
-<amp-carousel layout="responsive" width="300" height="168" type="slides" autoplay delay="2000" loop>
-  <amp-img src="mountains-1.jpg" width="300" height="168" layout="responsive"></amp-img>
-  <amp-img src="mountains-2.jpg" width="300" height="168" layout="responsive"></amp-img>
-  <amp-img src="mountains-3.jpg" width="300" height="168" layout="responsive"></amp-img>
+<amp-carousel
+  layout="responsive"
+  width="300"
+  height="168"
+  type="slides"
+  autoplay
+  delay="2000"
+  loop
+>
+  <amp-img
+    src="mountains-1.jpg"
+    width="300"
+    height="168"
+    layout="responsive"
+  ></amp-img>
+  <amp-img
+    src="mountains-2.jpg"
+    width="300"
+    height="168"
+    layout="responsive"
+  ></amp-img>
+  <amp-img
+    src="mountains-3.jpg"
+    width="300"
+    height="168"
+    layout="responsive"
+  ></amp-img>
 </amp-carousel>
 ```
 
@@ -60,25 +87,28 @@ Zunächst solltest du diesen Stil zu deinem `<style amp-custom>` **hinzufügen**
 
 ```css
 amp-fit-text {
-    white-space: normal;
+  white-space: normal;
 }
 ```
 
 **Ersetze** nun dein einfaches Karussell durch Folgendes:
 
 ```html
-<amp-carousel layout="fixed-height" height="250" type="carousel" >
-    <amp-img src="blocky-mountains-1.jpg" width="300" height="250"></amp-img>
+<amp-carousel layout="fixed-height" height="250" type="carousel">
+  <amp-img src="blocky-mountains-1.jpg" width="300" height="250"></amp-img>
 
-    <amp-ad width="300" height="250"
-      type="doubleclick"
-      data-slot="/35096353/amptesting/image/static">
-        <div placeholder>This ad is still loading.</div>
-    </amp-ad>
+  <amp-ad
+    width="300"
+    height="250"
+    type="doubleclick"
+    data-slot="/35096353/amptesting/image/static"
+  >
+    <div placeholder>This ad is still loading.</div>
+  </amp-ad>
 
-    <amp-fit-text width="300" height="250" layout="fixed">
-        Big, bold article quote goes here.
-    </amp-fit-text>
+  <amp-fit-text width="300" height="250" layout="fixed">
+    Big, bold article quote goes here.
+  </amp-fit-text>
 </amp-carousel>
 ```
 

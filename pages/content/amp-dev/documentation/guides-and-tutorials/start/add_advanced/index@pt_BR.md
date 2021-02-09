@@ -1,10 +1,10 @@
 ---
-"$title": Add advanced AMP features
-"$order": '0'
+'$title': Add advanced AMP features
+$order: 0
 description: Neste tutorial, você desenvolverá seu conhecimento dos princípios básicos do AMP e verá como essa tecnologia lida com publicidade, análises, vídeos incorporados, integração de mídias sociais, carrosséis e muito mais.
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='Artigo de notícias concluído') }}

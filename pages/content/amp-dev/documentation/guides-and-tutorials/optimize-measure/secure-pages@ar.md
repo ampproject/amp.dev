@@ -1,9 +1,9 @@
 ---
-"$title": الحماية من هجمات الأطراف الخارجية
-"$order": '7'
+'$title': الحماية من هجمات الأطراف الخارجية
+$order: 7
 description: اتخاذ تدابير لحماية صفحات AMP والمستخدمين من الثغرات الأمنية على الويب
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 ---
 

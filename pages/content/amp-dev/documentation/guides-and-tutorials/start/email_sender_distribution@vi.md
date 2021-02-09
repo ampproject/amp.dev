@@ -1,10 +1,10 @@
 ---
-"$title": Đăng ký phân phối người gửi
-"$order": '1'
+'$title': Đăng ký phân phối người gửi
+$order: 1
 description: Đăng ký phân phối người gửi để gửi email AMP
-"$category": Start
+'$category': Start
 formats:
-- email
+  - email
 author: CrystalOnScript
 ---
 

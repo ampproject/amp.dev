@@ -1,9 +1,9 @@
 ---
-"$title": 将 AMP 与应用集成
-"$order": '2'
+'$title': 将 AMP 与应用集成
+$order: 2
 description: 本指南面向希望集成和链接到 AMP 网页的移动应用和网络应用开发者。例如，某移动聊天应用…
 formats:
-- websites
+  - websites
 ---
 
 本指南面向希望集成和链接到 AMP 网页的移动应用和网络应用开发者。例如，某移动聊天应用可以加载所分享网址的 AMP 版本，为用户带来更快的体验。
@@ -47,10 +47,12 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 例如，对于给定的网址列表：
 
 ```json
-{"urls": [
-  "https://www.example.org/article-with-amp-version",
-  "http://www.example.com/no-amp-version.html"
-]}
+{
+  "urls": [
+    "https://www.example.org/article-with-amp-version",
+    "http://www.example.com/no-amp-version.html"
+  ]
+}
 ```
 
 响应正文包含 JSON 格式的 AMP 网址映射：

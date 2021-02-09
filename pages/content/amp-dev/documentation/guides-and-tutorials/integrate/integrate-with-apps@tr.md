@@ -1,9 +1,9 @@
 ---
-"$title": "AMP'yi uygulamanıza entegre etme"
-"$order": '2'
+'$title': "AMP'yi uygulamanıza entegre etme"
+$order: 2
 description: Bu kılavuz, AMP sayfalarını entegre etmek ve onlara bağlantı vermek isteyen mobil ve web uygulaması geliştiricileri içindir. Örneğin, kullanıcılarına daha hızlı bir deneyim sağlamak için...
 formats:
-- websites
+  - websites
 ---
 
 Bu kılavuz, AMP sayfalarını entegre etmek ve onlara bağlantı vermek isteyen mobil ve web uygulaması geliştiricileri içindir. Örneğin, kullanıcılarına daha hızlı bir deneyim sağlamak için paylaşılan bir URL'nin AMP sürümünü yükleyen bir mobil sohbet uygulamasını düşünelim.
@@ -47,10 +47,12 @@ Google, AMP URL API'sini sunarak verili bir URL listesine karşılık gelen AMP 
 Örneğin, belirli bir URL listesi için:
 
 ```json
-{"urls": [
-  "https://www.example.org/article-with-amp-version",
-  "http://www.example.com/no-amp-version.html"
-]}
+{
+  "urls": [
+    "https://www.example.org/article-with-amp-version",
+    "http://www.example.com/no-amp-version.html"
+  ]
+}
 ```
 
 Yanıt gövdesi, AMP URL eşlemesini JSON biçiminde içerir:

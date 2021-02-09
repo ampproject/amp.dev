@@ -1,15 +1,15 @@
 ---
-"$title": Zapytania o układ i media
-"$order": '1'
+'$title': Zapytania o układ i media
+$order: 1
 description: AMP obsługuje zarówno zapytania o media, jak i o elementy, a do tego ma wbudowany, wydajny sposób kontroli układu poszczególnych elementów. Atrybut layout sprawia, że praca...
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 author: Meggin
 contributors:
-- pbakaus
+  - pbakaus
 ---
 
 AMP obsługuje zarówno **zapytania o media**, jak i **o elementy**, a do tego ma wbudowany, wydajny sposób kontroli **układu** poszczególnych elementów. Atrybut `layout` sprawia, że praca i tworzenie w pełni responsywnego projektu są o wiele łatwiejsze, niż gdyby używać samego CSS.

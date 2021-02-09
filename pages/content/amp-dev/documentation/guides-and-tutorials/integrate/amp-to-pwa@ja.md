@@ -1,9 +1,9 @@
 ---
-"$title": AMP ページから PWA の事前読み込み
-"$order": '1'
+'$title': AMP ページから PWA の事前読み込み
+$order: 1
 description: サイトのエントリポイントを AMP ページにして、その裏側で PWA を準備し、以降のページでは PWA に切り替える ...
 formats:
-- websites
+  - websites
 author: pbakaus
 ---
 
@@ -36,8 +36,10 @@ AMP では、プログレッシブウェブアプリの Service Worker を AMP �
 まず、[`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) を使用してすべての AMP ページに Service Worker をインストールします。つまり、次のようにスクリプトを使って、このコンポーネントをページの `<head>` に追加します。
 
 [sourcecode:html]
+
 <script async custom-element="amp-install-serviceworker"
   src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+
 [/sourcecode]
 
 次に、下記のコードを `<body>` 内に追加します（実際にお使いの Service Worker に変更してください）。
@@ -54,20 +56,20 @@ AMP では、プログレッシブウェブアプリの Service Worker を AMP �
 [sourcecode:javascript]
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
-  '/',
-  '/styles/main.css',
-  '/script/main.js'
+'/',
+'/styles/main.css',
+'/script/main.js'
 ];
 
 self.addEventListener('install', function(event) {
-  // Perform install steps
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(function(cache) {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-  );
+// Perform install steps
+event.waitUntil(
+caches.open(CACHE_NAME)
+.then(function(cache) {
+console.log('Opened cache');
+return cache.addAll(urlsToCache);
+})
+);
 });
 [/sourcecode]
 
@@ -89,8 +91,8 @@ self.addEventListener('install', function(event) {
 
 [sourcecode:javascript]
 self.addEventListener('fetch', event => {
-    if (event.request.mode === 'navigate') {
-      event.respondWith(fetch('/pwa'));
+if (event.request.mode === 'navigate') {
+event.respondWith(fetch('/pwa'));
 
       // Immediately start downloading the actual resource.
       fetch(event.request.url);

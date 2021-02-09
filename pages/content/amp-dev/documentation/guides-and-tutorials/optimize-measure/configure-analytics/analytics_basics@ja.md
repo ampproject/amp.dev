@@ -1,10 +1,10 @@
 ---
-"$title": 'アナリティクス: 基本'
-"$order": '0'
+'$title': 'アナリティクス: 基本'
+$order: 0
 description: AMP にはアナリティクスや測定に役立つ amp-pixel と amp-analytics という 2 つのコンポーネントがあります。どちらを使用してもアナリティクスのデータは指定したエンドポイントに送信されます。
 formats:
-- websites
-- stories
+  - websites
+  - stories
 ---
 
 このページで AMP アナリティクスの基本を学びましょう。
@@ -44,27 +44,30 @@ AMP プラットフォームを統合するにあたり、データの取得や�
 簡単な [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 構成を作成するには、まず `custom-element` 宣言を AMP ドキュメントの `<head>` 内に含める必要があります（[コンポーネントの包含宣言](../../../../documentation/components/index.html)もご覧ください）。
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script
+  async
+  custom-element="amp-analytics"
+  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+></script>
 ```
 
 以下の例は [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) と似ています。ページが表示されるたびにイベントの発行がトリガされ、ページビューデータがランダム ID とともに指定の URL に送信されます。
 
 ```html
 <amp-analytics>
-
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://foo.com/pixel?RANDOM",
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://foo.com/pixel?RANDOM"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
     }
-   }
-  }
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -88,43 +91,39 @@ AMP アナリティクスでは、アナリティクスベンダーを使って�
 
 ```html
 <amp-analytics type="gtag" data-credentials="include">
- <script type="application/json">
-  {
-    "vars": {
-      "gtag_id":"YOUR_GOOGLE_ANALYTICS_ID",
-      "config": {
-        "YOUR_GOOGLE_ANALYTICS_ID": {
-          "groups":"default"
-        }
-      }
-    },
-    "triggers": {
-      "storyProgress": {
-        "on":"story-page-visible",
-        "vars": {
-          "event_name":"custom",
-          "event_action":"story_progress",
-          "event_category":"${title}",
-          "event_label":"${storyPageId}",
-          "send_to": [
-            "YOUR_GOOGLE_ANALYTICS_ID"
-          ]
+  <script type="application/json">
+    {
+      "vars": {
+        "gtag_id": "YOUR_GOOGLE_ANALYTICS_ID",
+        "config": {
+          "YOUR_GOOGLE_ANALYTICS_ID": {
+            "groups": "default"
+          }
         }
       },
-      "storyEnd": {
-        "on":"story-last-page-visible",
-        "vars": {
-          "event_name":"custom",
-          "event_action":"story_complete",
-          "event_category":"${title}",
-          "send_to": [
-            "YOUR_GOOGLE_ANALYTICS_ID"
-          ]
+      "triggers": {
+        "storyProgress": {
+          "on": "story-page-visible",
+          "vars": {
+            "event_name": "custom",
+            "event_action": "story_progress",
+            "event_category": "${title}",
+            "event_label": "${storyPageId}",
+            "send_to": ["YOUR_GOOGLE_ANALYTICS_ID"]
+          }
+        },
+        "storyEnd": {
+          "on": "story-last-page-visible",
+          "vars": {
+            "event_name": "custom",
+            "event_action": "story_complete",
+            "event_category": "${title}",
+            "send_to": ["YOUR_GOOGLE_ANALYTICS_ID"]
+          }
         }
       }
     }
-  }
- </script>
+  </script>
 </amp-analytics>
 ```
 
@@ -139,7 +138,9 @@ AMP アナリティクスでは、アナリティクスベンダーを使って�
 <a><code data-md-type="codespan">amp-pixel</code></a> と <a><code data-md-type="codespan">amp-analytics</code></a> の両方のコンポーネントでは、すべての標準的な URL 変数置換を利用できます（<a>AMP HTML 変数の置換</a>を参照してください）。以下の例では、ページビューリクエストは、現在の AMP ドキュメントの正規 URL、そのタイトル、および<a>クライアント ID</a> とともに URL に送信されます。
 
 ```html
-<amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
+<amp-pixel
+  src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"
+></amp-pixel>
 ```
 
 その単純な構造により、<a><code>amp-pixel</code></a> タグは、プラットフォームによって定義される変数か、AMP ランタイムが AMP ページからパースできる変数のみしか含むことができません。上記の例では、プラットフォームが <code>canonicalURL</code> と <code>clientId(site-user-id)</code> の両方に対する値を入力しています。<a><code>amp-analytics</code></a> タグは、<a><code>amp-pixel</code></a> と同じ変数のほか、タグ構成内に一意に定義された変数も含めることができます。
@@ -153,10 +154,10 @@ AMP アナリティクスでは、アナリティクスベンダーを使って�
   <script type="application/json">
     {
       "requests": {
-        "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
       },
       "vars": {
-        "account":"ABC123"
+        "account": "ABC123"
       },
       "triggers": {
         "someEvent": {
@@ -189,7 +190,9 @@ AMP ページがサイト運営者のサイトから配信される場合、AMP 
 以下に例を示します。
 
 ```html
-<amp-pixel src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"></amp-pixel>
+<amp-pixel
+  src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"
+></amp-pixel>
 ```
 
 AMP が この cookie が設定されていることを認識すると、クライアント ID の置換によって、cookie の値が返されます。AMP がこの cookie の設定を認識しない場合、AMP は、`amp-` の後にランダムの base64 エンコード文字列が続く形式の値が生成されます。

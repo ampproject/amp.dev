@@ -1,12 +1,12 @@
 ---
-"$title": Congratulazioni!
-"$order": '4'
-description: 'Hai terminato l''esercitazione che ti ha permesso di convertire correttamente un documento HTML in un documento AMP. In questa esercitazione, hai imparato a: Riconoscere le differenze tra AMP e ...'
+'$title': Congratulazioni!
+$order: 4
+description: "Hai terminato l'esercitazione che ti ha permesso di convertire correttamente un documento HTML in un documento AMP. In questa esercitazione, hai imparato a: Riconoscere le differenze tra AMP e ..."
 ---
 
 Hai terminato l'esercitazione che ti ha permesso di convertire correttamente un documento HTML in un documento AMP.
 
- In questa esercitazione, hai imparato a:
+In questa esercitazione, hai imparato a:
 
 - Riconoscere le differenze tra pagine AMP e pagine HTML tradizionali
 - Comprendere i concetti base di un sito AMP

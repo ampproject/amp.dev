@@ -1,9 +1,9 @@
 ---
-"$title": Lade dein PWA aus deinen AMP Seiten vor
-"$order": '1'
+'$title': Lade dein PWA aus deinen AMP Seiten vor
+$order: 1
 description: Eine gute Strategie besteht darin, eine AMP Seite als Einstiegspunkt für deine Website zu erstellen, dann die PWA hinter den Kulissen …
 formats:
-- websites
+  - websites
 author: pbakaus
 ---
 
@@ -23,7 +23,7 @@ AMP ist eine ideale Lösung für sogenannte **Leaf Pages**. Das sind Contentseit
 
 ### PWA für reichhaltige Interaktivität und Engagement
 
-Progressive Web Apps ermöglichen eine viel größere Interaktivität und mehr Engagement. Ihnen fehlen jedoch die *Eigenschaften des sofortigen ersten Ladens* einer AMP Seite. Den Kern von PWA bildet die Technologie "Service Worker", ein clientseitiger Proxy, mit dem du alle Arten von Assets für deine Seiten zwischenspeichern kannst. Dieser Service Worker wird jedoch erst *nach* dem ersten Laden aktiviert.
+Progressive Web Apps ermöglichen eine viel größere Interaktivität und mehr Engagement. Ihnen fehlen jedoch die _Eigenschaften des sofortigen ersten Ladens_ einer AMP Seite. Den Kern von PWA bildet die Technologie "Service Worker", ein clientseitiger Proxy, mit dem du alle Arten von Assets für deine Seiten zwischenspeichern kannst. Dieser Service Worker wird jedoch erst _nach_ dem ersten Laden aktiviert.
 
 {{ image('/static/img/docs/pwamp_comparison.png', 977, 549, align='', caption='Vor- und Nachteile von AMP vs. PWA.') }}
 
@@ -36,8 +36,10 @@ AMP kann den Service Worker deiner Progressive Web App von einer AMP Seite aus i
 Installiere zunächst mithilfe von [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) den Service Worker auf allen deinen AMP Seiten. Binde dazu zuerst die Komponente über ihr Skript im Abschnitt `<head>` deiner Seite ein:
 
 [sourcecode:html]
+
 <script async custom-element="amp-install-serviceworker"
   src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+
 [/sourcecode]
 
 Füge dann irgendwo in deinem `<body>` Folgendes hinzu (passe es entsprechend an, um auf deinen tatsächlichen Service Worker zu verweisen):
@@ -54,20 +56,20 @@ Speichere dann bei der Installation des Service Workers alle Ressourcen, die die
 [sourcecode:javascript]
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
-  '/',
-  '/styles/main.css',
-  '/script/main.js'
+'/',
+'/styles/main.css',
+'/script/main.js'
 ];
 
 self.addEventListener('install', function(event) {
-  // Perform install steps
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(function(cache) {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-  );
+// Perform install steps
+event.waitUntil(
+caches.open(CACHE_NAME)
+.then(function(cache) {
+console.log('Opened cache');
+return cache.addAll(urlsToCache);
+})
+);
 });
 [/sourcecode]
 
@@ -83,14 +85,14 @@ In diesem Fall hast du eine kanonische Website (nicht-AMP) und generierst AMP Se
 
 ### 2. Deine kanonische Website ist AMP
 
-In diesem Fall *sind* deine kanonischen Seiten deine AMP Seiten: Du erstellst deine gesamte Website mit AMP und verwendest AMP einfach als Bibliothek (übrigens: Die Website, die du gerade liest, wurde auch auf diese Weise erstellt). **In diesem Szenario führen die meisten Links auf deinen AMP Seiten zu anderen AMP Seiten.**
+In diesem Fall _sind_ deine kanonischen Seiten deine AMP Seiten: Du erstellst deine gesamte Website mit AMP und verwendest AMP einfach als Bibliothek (übrigens: Die Website, die du gerade liest, wurde auch auf diese Weise erstellt). **In diesem Szenario führen die meisten Links auf deinen AMP Seiten zu anderen AMP Seiten.**
 
 Jetzt kannst du dein PWA auf einem separaten Pfad wie `your-domain.com/pwa` bereitstellen und den bereits laufenden Service Worker verwenden, **um die Browsernavigation abzufangen, wenn jemand einen Link auf der AMP Seite anklickt**:
 
 [sourcecode:javascript]
 self.addEventListener('fetch', event => {
-    if (event.request.mode === 'navigate') {
-      event.respondWith(fetch('/pwa'));
+if (event.request.mode === 'navigate') {
+event.respondWith(fetch('/pwa'));
 
       // Immediately start downloading the actual resource.
       fetch(event.request.url);

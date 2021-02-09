@@ -1,10 +1,10 @@
 ---
 formats:
-- websites
-"$title": Защитите содержимое подписки с помощью шифрования на стороне клиента
-"$titles":
+  - websites
+'$title': Защитите содержимое подписки с помощью шифрования на стороне клиента
+'$titles':
   teaser: Protect your subscription content with client-side encryption.
-"$order": '10'
+$order: 10
 description: Решайте проблемы с шифрованием контента, внедряя проверку платных подписчиков и расшифровку контента на стороне клиента. Благодаря такому решению пользователи с премиальным доступом смогут расшифровывать контент, не загружая новую страницу и не ожидая ответа от бэкенда.
 author: CrystalOnScript
 ---
@@ -23,7 +23,7 @@ author: CrystalOnScript
 
 Чтобы реализовать дешифровку на стороне клиента, нам потребуется совмещать криптографию с симметричным ключом с криптографией с открытым ключом. Это делается следующим образом:
 
-1. Для каждого документа создается случайный симметричный ключ, являющийся *уникальным* для документа. {{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='Unique keys for each unique document.') }}
+1. Для каждого документа создается случайный симметричный ключ, являющийся _уникальным_ для документа. {{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='Unique keys for each unique document.') }}
 2. Шифрование платного контента выполняется с помощью симметричного ключа документа. {{ image('/static/img/docs/guides/cse/cse3.jpg', 130, 243, align='', layout='intrinsic', alt='Use the document key to encrypt premium content.') }} Ключ является симметричным, чтобы обеспечить возможность шифровать и дешифровать содержимое с помощью одного и того же ключа. {{ image('/static/img/docs/guides/cse/cse4.jpg', 188, 141, align='', layout='intrinsic', alt='The same key that encrypts the document also decrypts it.') }}
 3. Ключ документа шифруется открытым ключом с применением протокола [гибридного шифрования](https://en.wikipedia.org/wiki/Hybrid_cryptosystem) симметричных ключей. {{ image('/static/img/docs/guides/cse/cse5.jpg', 309, 114, align='', layout='intrinsic', alt='A hybrid encryption protocol encrypts the symmetric key with a public key.') }}
 4. С помощью компонентов [`<amp-subscriptions>`](https://amp.dev/documentation/components/amp-subscriptions/) и/или [`<amp-subscriptions-google>`](https://amp.dev/documentation/components/amp-subscriptions-google/?format=websites) зашифрованный ключ документа сохраняется внутри документа AMP вместе с зашифрованным дополнительным контентом. {{ image('/static/img/docs/guides/cse/cse6.jpg', 264, 261, align='', layout='intrinsic', alt='Both keys are stored inside of the AMP document.') }}
@@ -43,7 +43,7 @@ author: CrystalOnScript
 
 ## Шаг 1. Создайте пару открытого и закрытого ключей
 
-Для шифрования симметричного ключа документа вам необходима собственная пара из открытого и закрытого ключей. Шифрование открытым ключом представляет собой [гибридную криптосистему](https://en.wikipedia.org/wiki/Hybrid_cryptosystem), а именно сочетание метода асимметричного шифрования по схеме ECIES ([с использованием эллиптической кривой P-256](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves))) с методом симметричного шифрования [AES-GCM](https://tools.ietf.org/html/rfc5288) (с использованием 128-битного ключа).
+Для шифрования симметричного ключа документа вам необходима собственная пара из открытого и закрытого ключей. Шифрование открытым ключом представляет собой [гибридную криптосистему](https://en.wikipedia.org/wiki/Hybrid_cryptosystem), а именно сочетание метода асимметричного шифрования по схеме ECIES ([с использованием эллиптической кривой P-256](<https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)>)) с методом симметричного шифрования [AES-GCM](https://tools.ietf.org/html/rfc5288) (с использованием 128-битного ключа).
 
 Работа с открытым ключом должна выполняться посредством библиотеки [Tink](https://github.com/google/tink) с применением [указанного по ссылке типа асимметричного ключа](https://github.com/subscriptions-project/encryption/blob/617f0911c9870dae900a232e2dc8ee9196677a89/golang/vendor/github.com/google/tink/go/hybrid/hybrid_key_templates.go#L32). Чтобы создать пару закрытого и открытого ключей, используйте один из следующих вариантов:
 

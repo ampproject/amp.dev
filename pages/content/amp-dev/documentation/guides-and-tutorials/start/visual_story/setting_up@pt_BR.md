@@ -1,6 +1,6 @@
 ---
-"$title": Setting up
-"$order": '1'
+'$title': Setting up
+$order: 1
 description: Como configurar seu ambiente de desenvolvimento Etapa 1. Baixe o código. Baixe o código de exemplo do tutorial como um arquivo ZIP ou via git ...
 author: bpaduch
 ---
@@ -20,11 +20,11 @@ Para usar este tutorial, você precisará do seguinte:
 
 1. Acesse o seguinte URL e faça o download do código para o tutorial, que é compactado como um arquivo ZIP: <a href="https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip">https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip</a>
 
-2. Extraia o conteúdo do arquivo ZIP.  No diretório **amp-pets-story** estão os arquivos de imagem, vídeo, áudio e dados que usaremos para criar nossa história.  O arquivo **pets.html** é nosso ponto de partida. Veja a versão completa da história no arquivo [pets-completed.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html).
+2. Extraia o conteúdo do arquivo ZIP. No diretório **amp-pets-story** estão os arquivos de imagem, vídeo, áudio e dados que usaremos para criar nossa história. O arquivo **pets.html** é nosso ponto de partida. Veja a versão completa da história no arquivo [pets-completed.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html).
 
 #### Etapa 2. Gerar a página de exemplo
 
-Para testar nossa história de exemplo, é preciso acessar os arquivos por meio de um servidor da Web. Existem várias maneiras de criar um servidor da Web temporário e local para fins de teste.  Estas são algumas opções, escolha a que funciona melhor para você:
+Para testar nossa história de exemplo, é preciso acessar os arquivos por meio de um servidor da Web. Existem várias maneiras de criar um servidor da Web temporário e local para fins de teste. Estas são algumas opções, escolha a que funciona melhor para você:
 
 - [Aplicativo do Google Chrome "Web Server for Chrome"](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
 - [um servidor HTTP Python local](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server#Running_a_simple_local_HTTP_server)

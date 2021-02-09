@@ -1,8 +1,8 @@
 ---
-"$title": Setting up
-"$order": '0'
+'$title': Setting up
+$order: 0
 description: 'Antes de comenzar este tutorial, necesitará lo siguiente: - Conocimientos básicos de HTML, CSS, y JavaScript - Un navegador de su elección - Un editor de texto de...'
-"$parent": "/content/docs/interaction_dynamic/interactivity.md"
+'$parent': '/content/docs/interaction_dynamic/interactivity.md'
 ---
 
 ## Requisitos previos

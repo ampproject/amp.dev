@@ -1,9 +1,9 @@
 ---
-"$title": Improve user engagement
-"$order": '6'
+'$title': Improve user engagement
+$order: 6
 description: Veja algumas dicas rápidas para melhorar o engajamento dos usuários com as páginas AMP. Ajude os leitores a lhe reconhecer através de um branding consistente e um conteúdo avançado em páginas AMP e não-AMP
 formats:
-- websites
+  - websites
 ---
 
 Veja algumas dicas rápidas para melhorar o engajamento dos usuários com as páginas AMP.

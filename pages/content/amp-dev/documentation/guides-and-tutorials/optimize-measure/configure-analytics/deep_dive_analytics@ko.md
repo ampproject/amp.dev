@@ -1,10 +1,10 @@
 ---
-"$title": AMP 분석 심층적으로 살펴보기
-"$order": '1'
+'$title': AMP 분석 심층적으로 살펴보기
+$order: 1
 description: 이 가이드에서는 amp-analytics 컴포넌트를 심층적으로 살펴보고 amp-analytics 구성 예시를 다음과 같은 주요 구성 요소로 나누어 봅니다.
 formats:
-- 웹사이트
-- 스토리
+  - 웹사이트
+  - 스토리
 ---
 
 이 가이드에서는 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 컴포넌트를 심층적으로 살펴보고 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 구성을 다음과 같은 주요 구성 요소로 나누어 봅니다.
@@ -12,41 +12,44 @@ formats:
 가이드의 나머지 부분에서는 이 구성 예시를 사용하여 페이지 조회 수와 사용자 링크 클릭 수를 추적하고 타사 제공업체인 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)로 분석 데이터를 전송합니다.
 
 ```html
-<amp-analytics type="googleanalytics" config="https://example.com/analytics.account.config.json">
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
-    "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-  },
-  "vars": {
-    "account": "ABC123"
-  },
-  "extraUrlParams": {
-    "cd1": "AMP"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
-    },
-    "trackAnchorClicks": {
-      "on": "click",
-      "selector": "a",
-      "request": "event",
+<amp-analytics
+  type="googleanalytics"
+  config="https://example.com/analytics.account.config.json"
+>
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
+        "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
+      },
       "vars": {
-        "eventId": "42",
-        "eventLabel": "clicked on a link"
+        "account": "ABC123"
+      },
+      "extraUrlParams": {
+        "cd1": "AMP"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        },
+        "trackAnchorClicks": {
+          "on": "click",
+          "selector": "a",
+          "request": "event",
+          "vars": {
+            "eventId": "42",
+            "eventLabel": "clicked on a link"
+          }
+        }
+      },
+      "transport": {
+        "beacon": false,
+        "xhrpost": false,
+        "image": true
       }
     }
-  },
-  'transport': {
-    'beacon': false,
-    'xhrpost': false,
-    'image': true
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -76,7 +79,9 @@ AMP 페이지에 [`amp-analytics`](../../../../documentation/components/referenc
 원격 구성을 로드하는 첫 번째 단계는 <a><code>amp-analytics</code></a> 태그에 config 속성을 포함하는 것입니다.
 
 ```html
-<amp-analytics config="https://example.com/analytics.account.config.json">
+<amp-analytics
+  config="https://example.com/analytics.account.config.json"
+></amp-analytics>
 ```
 
 다음으로 원격 URL에 포함된 JSON 콘텐츠를 만듭니다. 이 간단한 예에서 JSON 개체에 포함된 구성은 분석 계정의 변수 값일 뿐입니다.
@@ -256,26 +261,26 @@ AMP는 우선순위에 따라 변수 값을 채웁니다.
 
 ```html
 <amp-analytics config="http://example.com/config.json">
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(cid-scope)}",
-  },
-  "vars": {
-    "account": "ABC123",
-    "title": "Homepage"
-  },
-  "triggers": {
-    "some-event": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(cid-scope)}",
+      },
       "vars": {
-        "title": "My homepage",
-        "clientId": "my user"
+        "account": "ABC123",
+        "title": "Homepage"
+      },
+      "triggers": {
+        "some-event": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage",
+            "clientId": "my user"
+          }
       }
-  }
-}
-</script>
+    }
+  </script>
 </amp-analytics>
 ```
 

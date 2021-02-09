@@ -1,11 +1,11 @@
 ---
-"$title": Sistem Tata Letak HTML AMP
-order: '1'
+'$title': Sistem Tata Letak HTML AMP
+$order: 1
 formats:
-- websites
-- email
-- stories
-- ads
+  - websites
+  - email
+  - stories
+  - ads
 teaser:
   text: 'Gambaran Umum '
 ---
@@ -68,13 +68,14 @@ AMP menyediakan serangkaian tata letak yang menentukan cara komponen AMP berperi
 
 [sourcecode:html]
 <amp-img
-  src="/img/amp.jpg"
-  width="1080"
-  height="610"
-  layout="responsive"
-  alt="an image"
-></amp-img>
-[/sourcecode]
+src="/img/amp.jpg"
+width="1080"
+height="610"
+layout="responsive"
+alt="an image"
+
+> </amp-img>
+> [/sourcecode]
 
 Nilai-nilai yang didukung untuk atribut `layout`:
 
@@ -137,14 +138,14 @@ Di dalam contoh berikut ini, jika viewport lebih lebar dari `320px`, gambar akan
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="400"
-  height="300"
-  layout="responsive"
-  sizes="(min-width: 320px) 320px, 100vw"
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="400"
+height="300"
+layout="responsive"
+sizes="(min-width: 320px) 320px, 100vw"
+
+> </amp-img>
+> [/sourcecode]
 
 ### `disable-inline-width` <a name="disable-inline-width"></a>
 
@@ -156,15 +157,15 @@ Di dalam contoh berikut ini, lebar elemen `<amp-img>` tidak terpengaruh, dan `si
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="400"
-  height="300"
-  layout="responsive"
-  sizes="(min-width: 320px) 320px, 100vw"
-  disable-inline-width
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="400"
+height="300"
+layout="responsive"
+sizes="(min-width: 320px) 320px, 100vw"
+disable-inline-width
+
+> </amp-img>
+> [/sourcecode]
 
 ### `heights` <a name="heights"></a>
 
@@ -181,13 +182,13 @@ Di dalam contoh berikut ini, tinggi gambar akan distandarkan pada 80% dari lebar
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="320"
-  height="256"
-  heights="(min-width:500px) 200px, 80%"
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="320"
+height="256"
+heights="(min-width:500px) 200px, 80%"
+
+> </amp-img>
+> [/sourcecode]
 
 ### `media` <a name="media"></a>
 
@@ -199,20 +200,21 @@ Di dalam contoh berikut ini, ada 2 gambar dengan kueri media yang sama-sama eksk
 
 [sourcecode:html]
 <amp-img
-  media="(min-width: 650px)"
-  src="wide.jpg"
-  width="466"
-  height="355"
-  layout="responsive"
-></amp-img>
-<amp-img
-  media="(max-width: 649px)"
-  src="narrow.jpg"
-  width="527"
-  height="193"
-  layout="responsive"
-></amp-img>
-[/sourcecode]
+media="(min-width: 650px)"
+src="wide.jpg"
+width="466"
+height="355"
+layout="responsive"
+
+> </amp-img>
+> <amp-img
+>   media="(max-width: 649px)"
+>   src="narrow.jpg"
+>   width="527"
+>   height="193"
+>   layout="responsive"
+> </amp-img>
+> [/sourcecode]
 
 ### `placeholder` <a name="placeholder"></a>
 
@@ -220,7 +222,7 @@ Atribut `placeholder` dapat ditetapkan pada elemen HTML apa pun, bukan hanya ele
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
-  <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+<amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
 [/sourcecode]
 
@@ -230,6 +232,7 @@ Atribut `fallback` dapat ditetapkan pada elemen HTML apa pun, bukan hanya elemen
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
+
   <div fallback>Cannot play animated images on this device.</div>
 </amp-anim>
 [/sourcecode]
@@ -242,7 +245,7 @@ Atribut `noloading` mengindikasikan apakah “indikator pemuatan” harus dinona
 
 Tabel berikut ini menjelaskan tentang parameter yang dapat diterima, kelas CSS, dan berbagai gaya yang digunakan untuk atribut `layout`. Perhatikan bahwa:
 
-1. Kelas CSS apa pun yang ditandai dengan prefiks  `-amp-` dan elemen yang diberikan prefiks `i-amp-` dianggap internal untuk AMP dan penggunaannya di dalam stylesheet pengguna tidak diizinkan. Mereka diperlihatkan hanya untuk keperluan informasi.
+1. Kelas CSS apa pun yang ditandai dengan prefiks `-amp-` dan elemen yang diberikan prefiks `i-amp-` dianggap internal untuk AMP dan penggunaannya di dalam stylesheet pengguna tidak diizinkan. Mereka diperlihatkan hanya untuk keperluan informasi.
 2. Walaupun `width` dan `height` ditentukan di dalam tabel sebagaimana diperlukan, aturan default dapat berlaku sebagaimana dengan `amp-pixel` dan `amp-audio`.
 
 <table>

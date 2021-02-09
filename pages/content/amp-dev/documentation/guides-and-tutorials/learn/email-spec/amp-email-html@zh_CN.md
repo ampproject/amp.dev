@@ -1,8 +1,8 @@
 ---
-"$title": AMP 电子邮件支持的 HTML
-order: '4'
+'$title': AMP 电子邮件支持的 HTML
+$order: 4
 formats:
-- email
+  - email
 teaser:
   text: 注：此列表为非规范性列表，仅供参考。AMP 验证工具规则对于支持的
 toc: 'true'

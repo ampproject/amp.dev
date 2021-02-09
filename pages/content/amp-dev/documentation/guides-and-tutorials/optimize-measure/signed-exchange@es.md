@@ -1,8 +1,8 @@
 ---
-"$title": Cómo obtener los servicios de AMP mediante intercambios firmados
-"$order": '4'
+'$title': Cómo obtener los servicios de AMP mediante intercambios firmados
+$order: 4
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 ---
 
@@ -10,7 +10,7 @@ AMP proporciona beneficios que están relacionados con la velocidad, los cuales 
 
 Los [intercambios firmados](https://developers.google.com/web/updates/2018/11/signed-exchanges) están conformados por un documento válido de AMP y la URL original del contenido. Esta información está protegida por firmas digitales que vinculan de forma segura el documento con la URL que se solicitó. Esto permite que los navegadores muestren la URL original de forma segura en la barra de direcciones, en lugar de que aparezca el nombre del host en el equipo que suministró los bytes al navegador.
 
-*Además del* contenido firmado también se entrega el contenido habitual de AMP (de forma adicional y no en lugar de este).
+_Además del_ contenido firmado también se entrega el contenido habitual de AMP (de forma adicional y no en lugar de este).
 
 {{ image('/static/img/docs/guides/sxg/sxg.png', 411, 293, layout='responsive', alt='Image displaying URL from signed exchange', caption=' ', align='' ) }}
 
@@ -20,14 +20,14 @@ Los [intercambios firmados](https://developers.google.com/web/updates/2018/11/si
 
 Para implementar los intercambios firmados, es necesario que cumpla con los siguientes requisitos:
 
-- Contar con la capacidad de configurar y controlar los encabezados de HTTP generados por su servidor (la mayoría de las soluciones de alojamiento basadas en la web como Blogger *no* son compatibles con los intercambios firmados).
+- Contar con la capacidad de configurar y controlar los encabezados de HTTP generados por su servidor (la mayoría de las soluciones de alojamiento basadas en la web como Blogger _no_ son compatibles con los intercambios firmados).
 - Tener la capacidad de generar intercambios firmados en AMP, tales como ejecutar [`amppackager`](https://github.com/ampproject/amppackager/blob/master/README.md), en [Go binary](https://golang.org/doc/install), o dentro de una [máquina virtual Docker](https://docs.docker.com/machine/get-started/).
-    - El paquete debe actualizarse cada seis semanas.
+  - El paquete debe actualizarse cada seis semanas.
 - Tener la capacidad de [modificar](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary) los encabezados `Accept` y `AMP-Cache-Transform` en los servidores perimetrales HTTP, al devolver diferentes tipos de contenido para la misma URL.
 - El sistema que ejecuta el `amppackager` debe ser capaz de realizar solicitudes de salida en la red hacia:
-    - La autoridad emisora de certificados que expida su certificado.
-    - El servidor del editor que aloja los documentos de AMP para firmarlos.
-    - El `cdn.ampproject.org` para obtener la versión actual de AMP.
+  - La autoridad emisora de certificados que expida su certificado.
+  - El servidor del editor que aloja los documentos de AMP para firmarlos.
+  - El `cdn.ampproject.org` para obtener la versión actual de AMP.
 - Tener un sistema de archivos con almacenamiento continuo de acceso compartido entre todas las instancias del `amppackager` que se ejecuten en el mismo centro de datos.
 
 # Cómo implementar los intercambios firmados
@@ -127,7 +127,7 @@ La salida debe incluir esta línea:
 content-type: application/signed-exchange;v=b3
 ```
 
-[tip type="important"] El `v="1..100"` en la solicitud es un marcador de posición. Sin embargo, no se ajusta exactamente con este valor, en vez de eso, como [se describió en las instrucciones de instalación de amppackager](https://github.com/ampproject/amppackager/blob/master/README.md#productionizing), verifique que solamente haya un encabezado  `amp-cache-transform`, e ignore el valor. [/tip]
+[tip type="important"] El `v="1..100"` en la solicitud es un marcador de posición. Sin embargo, no se ajusta exactamente con este valor, en vez de eso, como [se describió en las instrucciones de instalación de amppackager](https://github.com/ampproject/amppackager/blob/master/README.md#productionizing), verifique que solamente haya un encabezado `amp-cache-transform`, e ignore el valor. [/tip]
 
 [tip type="important"] La versión de la cadena en la respuesta `v=b3` es de agosto del 2019. Esta versión se modificará. [/tip]
 
@@ -143,7 +143,7 @@ format version: 1b3
 
 (Tenga en cuenta que el interruptor `-verify` no funcionará en este momento porque los certificados que se necesitan no se encuentran en el servidor `https://example.com/`).
 
-Verifique que la respuesta incluya *siempre* el encabezado `Vary` con el valor `Accept,AMP-Cache-Transform` (independientemente de si el tipo MIME es `text/html`, `application/signed-exchange`, o algún otro):
+Verifique que la respuesta incluya _siempre_ el encabezado `Vary` con el valor `Accept,AMP-Cache-Transform` (independientemente de si el tipo MIME es `text/html`, `application/signed-exchange`, o algún otro):
 
 ```sh
 $ curl -si https://staging.example.com/ | less

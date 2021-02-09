@@ -1,6 +1,6 @@
 ---
-"$title": Tworzenie zwykłej strony HTML
-"$order": '1'
+'$title': Tworzenie zwykłej strony HTML
+$order: 1
 description: W katalogu projektu znajduje się plik o nazwie article.html. Jest to artykuł informacyjny, który tworzymy jako odpowiednik AMP...
 ---
 
@@ -9,15 +9,14 @@ W katalogu projektu znajduje się plik o nazwie [`article.html`](https://github.
 1. **Skopiuj** cały kod z pliku `article.html` i wklej go do nowego pliku.
 2. **Zapisz** nowy plik jako `article.amp.html`.
 
-[tip type="note"] **UWAGA —** nie musisz nadawać plikom AMP nazwy `.amp.html`. W rzeczywistości, pliki AMP mogą mieć dowolne rozszerzenie. Często zdarza się, że wydawcy odróżniają strony AMP od ich wersji kanonicznych, stosując parametry w adresie url. Przykład:  `http://publisher.com/article.html?amp`. [/tip]
+[tip type="note"] **UWAGA —** nie musisz nadawać plikom AMP nazwy `.amp.html`. W rzeczywistości, pliki AMP mogą mieć dowolne rozszerzenie. Często zdarza się, że wydawcy odróżniają strony AMP od ich wersji kanonicznych, stosując parametry w adresie url. Przykład: `http://publisher.com/article.html?amp`. [/tip]
 
 Plik `article.amp.html` powinien wyglądać tak:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-
     <title>News Article</title>
 
     <link href="base.css" rel="stylesheet" />
@@ -25,15 +24,16 @@ Plik `article.amp.html` powinien wyglądać tak:
     <script type="text/javascript" src="base.js"></script>
   </head>
   <body>
-    <header>
-      News Site
-    </header>
+    <header>News Site</header>
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
     </article>
-    <img src="mountains.jpg">
+    <img src="mountains.jpg" />
   </body>
 </html>
 ```
@@ -42,7 +42,7 @@ Jest to celowo uproszczona strona z typowymi elementami statycznymi artykułów 
 
 Nasza wersja AMP artykułu jest w tej chwili tylko kopią oryginalnego artykułu. Przekonwertujmy ją na AMP.
 
-Na początek dodamy plik biblioteki AMP.  Samo to nie sprawi jeszcze, że nowy plik stanie się prawidłową stroną AMP, ale zobaczymy poniżej jak biblioteka AMP może nam pomóc w ustaleniu, co musimy zrobić w tym celu.
+Na początek dodamy plik biblioteki AMP. Samo to nie sprawi jeszcze, że nowy plik stanie się prawidłową stroną AMP, ale zobaczymy poniżej jak biblioteka AMP może nam pomóc w ustaleniu, co musimy zrobić w tym celu.
 
 Aby dołączyć bibliotekę AMP, **dodaj** ten wiersz na końcu sekcji `<head>`:
 

@@ -1,12 +1,12 @@
 ---
-"$title": Łatwy dostęp offline i lepsza wydajność
-"$order": '11'
+'$title': Łatwy dostęp offline i lepsza wydajność
+$order: 11
 description: Usługowy proces roboczy Service Worker to bufor po stronie klienta, który znajduje się między stroną a serwerem i jest używany do budowania fantastycznych wrażeń offline, szybkiego ładowania...
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 contributors:
-- pbakaus
+  - pbakaus
 ---
 
 Procesy [service worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) umożliwiają zapewnianie bogatych treści offline i spójnych wrażeń użytkowników mimo różnych mocy sieci. Dzięki buforowaniu zasobów w przeglądarce aplikacja internetowa jest w stanie dostarczyć użytkownikowi dane, zasoby i strony offline, aby go zaangażować i poinformować.
@@ -54,14 +54,14 @@ Zainstaluj skrypt AMP Service Worker, wykonując te kroki:
 - Zaimportuj kod AMP Service Worker do pliku Service Worker.
 
 [sourcecode:js]
-  importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
-  [/sourcecode]
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+[/sourcecode]
 
 - Zainstaluj program Service Worker za pomocą następującego kodu.
 
 [sourcecode:js]
-  AMP_SW.init();
-  [/sourcecode]
+AMP_SW.init();
+[/sourcecode]
 
 - Gotowe.
 

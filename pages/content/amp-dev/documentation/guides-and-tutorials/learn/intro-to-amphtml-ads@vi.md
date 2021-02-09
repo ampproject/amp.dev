@@ -1,14 +1,14 @@
 ---
-"$title": Giới thiệu về quảng cáo AMPHTML
-"$order": '1'
+'$title': Giới thiệu về quảng cáo AMPHTML
+$order: 1
 description: Các quảng cáo AMPHTML là một cách nhanh, nhẹ và bảo mật hơn để quảng cáo trên web. Tuy các trang AMP vẫn hỗ trợ quảng cáo HTML truyền thống, tốc độ tải cho các quảng cáo này có thể chậm.
 formats:
-- ads
+  - ads
 ---
 
 ## Quảng cáo AMPHTML là gì?
 
-Các quảng cáo AMPHTML là một cách nhanh, nhẹ và bảo mật hơn để quảng cáo trên web. Tuy các trang AMP vẫn hỗ trợ quảng cáo HTML truyền thống, tốc độ tải cho các quảng cáo này có thể chậm. Để các quảng cáo có tốc độ nhanh như phần còn lại của trang AMP, bạn có thể tạo quảng cáo trong AMPHTML. Quảng cáo AMPHTML chỉ được hiển thị sau khi đã được xác thực, đảm bảo rằng chúng được bảo mật và có hiệu năng cao. Quan trọng nhất, các quảng cáo này có thể được cung cấp ở bất cứ đâu trên web, *không chỉ trên các trang AMP*.
+Các quảng cáo AMPHTML là một cách nhanh, nhẹ và bảo mật hơn để quảng cáo trên web. Tuy các trang AMP vẫn hỗ trợ quảng cáo HTML truyền thống, tốc độ tải cho các quảng cáo này có thể chậm. Để các quảng cáo có tốc độ nhanh như phần còn lại của trang AMP, bạn có thể tạo quảng cáo trong AMPHTML. Quảng cáo AMPHTML chỉ được hiển thị sau khi đã được xác thực, đảm bảo rằng chúng được bảo mật và có hiệu năng cao. Quan trọng nhất, các quảng cáo này có thể được cung cấp ở bất cứ đâu trên web, _không chỉ trên các trang AMP_.
 
 Các quảng cáo AMP được viết bằng AMP HTML theo [thông số quảng cáo AMPHTML](a4a_spec.md) (một biến thể của AMP HTML + CSS). Điều này có nghĩa các quảng cáo không còn có khả năng chạy JavaScript tùy chỉnh, vốn là lý do hàng đầu làm giảm hiệu năng quảng cáo. Do đó, cũng như AMP cốt lõi, các trường hợp sử dụng JavaScript quảng cáo cốt lõi được tích hợp vào trong dự án Mã nguồn mở AMP để đảm bảo các quảng cáo luôn có hành vi phù hợp.
 
@@ -73,7 +73,7 @@ Nếu bạn là một đơn vị thiết kế quảng cáo, bạn phải tạo q
 
 - [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*sắp có*)
+- Adobe Animate (_sắp có_)
 
 ### Mạng lưới/máy chủ quảng cáo
 
@@ -87,7 +87,7 @@ Nếu bạn là một đơn vị thiết kế quảng cáo, bạn phải tạo q
 
 - [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*sắp có*)
+- Adobe Animate (_sắp có_)
 
 ### Xác thực cú pháp quảng cáo AMPHTML
 

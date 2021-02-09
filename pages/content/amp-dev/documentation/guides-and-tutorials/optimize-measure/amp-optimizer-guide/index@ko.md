@@ -1,11 +1,11 @@
 ---
-"$title": AMP Optimizer 사용하기
-"$order": '2'
-"$hidden": 'true'
+'$title': AMP Optimizer 사용하기
+$order: 2
+'$hidden': 'true'
 description: AMP Optimizer는 AMP 캐시 최적화를 사이트에 통합하는 도구입니다. AMP Optimizer 사용은 우수한 페이지 환경을 제작하고 Core Web Vitals 컴플라이언스를 달성하는 데 중요합니다. 이 가이드는 AMP 페이지 최적화를 위한 AMP Optimizer의 모범 사용 사례를 설명합니다.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

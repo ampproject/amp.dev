@@ -1,10 +1,10 @@
 ---
 formats:
-- websites
-"$title": Bảo vệ nội dung trả phí của bạn với mã hóa phía máy khách
-"$titles":
+  - websites
+'$title': Bảo vệ nội dung trả phí của bạn với mã hóa phía máy khách
+'$titles':
   teaser: Protect your subscription content with client-side encryption.
-"$order": '10'
+$order: 10
 description: Giải các vấn đề mã hóa nội dung bằng cách triển khai xác thực thuê bao cao cấp và giải mã nội dung phía máy khách. Với giải pháp này, người dùng có quyền truy cập cao cấp sẽ có thể giải mã nội dung mà không cần tải một trang mới hoặc chờ backend hồi đáp!
 author: CrystalOnScript
 ---
@@ -43,7 +43,7 @@ Làm theo các bước dưới đây để tích hợp việc xử lý mã hóa 
 
 ## Bước 1: Tạo một cặp khóa công khai/riêng tư
 
-Để mã hóa khóa đối xứng của tài liệu, bạn cần có cặp khóa công khai/riêng tư của mình. Mã hóa cho khóa công khai là một giao thức [mã hóa lai](https://en.wikipedia.org/wiki/Hybrid_cryptosystem), cụ thể là phương pháp mã hóa bất đối xứng [P-256 Elliptic Curve](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)) ECIES với một phương pháp mã hóa đối xứng [AES-GCM](https://tools.ietf.org/html/rfc5288) (128-bit).
+Để mã hóa khóa đối xứng của tài liệu, bạn cần có cặp khóa công khai/riêng tư của mình. Mã hóa cho khóa công khai là một giao thức [mã hóa lai](https://en.wikipedia.org/wiki/Hybrid_cryptosystem), cụ thể là phương pháp mã hóa bất đối xứng [P-256 Elliptic Curve](<https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)>) ECIES với một phương pháp mã hóa đối xứng [AES-GCM](https://tools.ietf.org/html/rfc5288) (128-bit).
 
 Chúng ta cần việc xử lý khóa công khai được thực hiện bằng [Tink](https://github.com/google/tink) sử dụng [loại khóa bất đối xứng này](https://github.com/subscriptions-project/encryption/blob/617f0911c9870dae900a232e2dc8ee9196677a89/golang/vendor/github.com/google/tink/go/hybrid/hybrid_key_templates.go#L32). Để tạo cặp khóa riêng tư-công khai, hãy sử dụng:
 

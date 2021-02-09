@@ -1,10 +1,10 @@
 ---
-"$title": Hướng dẫn Bộ tối ưu hoá AMP phiên bản Node.js
-"$order": '2'
+'$title': Hướng dẫn Bộ tối ưu hoá AMP phiên bản Node.js
+$order: 2
 description: Hướng dẫn này giải thích cách thiết lập và sử dụng phiên bản Node.js của Bộ tối ưu hoá AMP.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

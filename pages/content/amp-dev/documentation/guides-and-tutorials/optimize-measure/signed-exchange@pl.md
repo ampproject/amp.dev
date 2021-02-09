@@ -1,8 +1,8 @@
 ---
-"$title": Serwowanie AMP za pomocą podpisanych wymian
-"$order": '4'
+'$title': Serwowanie AMP za pomocą podpisanych wymian
+$order: 4
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 ---
 
@@ -10,7 +10,7 @@ AMP zapewnia wykraczające poza format korzyści dotyczące szybkości dzięki t
 
 [Podpisana wymiana](https://developers.google.com/web/updates/2018/11/signed-exchanges) składa się z prawidłowego dokumentu AMP i oryginalnego adresu URL zawartości. Informacje te są chronione podpisami cyfrowymi, które w bezpieczny sposób wiążą dokument z jego deklarowanym adresem URL. Umożliwia to przeglądarkom bezpieczne wyświetlanie oryginalnego adresu URL na pasku adresu URL, zamiast nazwy hosta komputera, który dostarczył bajty do przeglądarki.
 
-Podpisana zawartość AMP jest dostarczana *dodatkowo do* (a nie zamiast) zwykłej zawartości AMP.
+Podpisana zawartość AMP jest dostarczana _dodatkowo do_ (a nie zamiast) zwykłej zawartości AMP.
 
 {{ image('/static/img/docs/guides/sxg/sxg.png', 411, 293, layout='responsive', alt='Image displaying URL from signed exchange', caption=' ', align='' ) }}
 
@@ -20,14 +20,14 @@ Podpisana zawartość AMP jest dostarczana *dodatkowo do* (a nie zamiast) zwykł
 
 Aby zaimplementować podpisane wymiany, musisz spełnić następujące wymagania:
 
-- Możliwość konfiguracji i kontroli nagłówków HTTP generowanych przez serwer. (Większość czysto internetowych rozwiązań hostingowych, takich jak Blogger, *nie* jest zgodna z podpisanymi wymianami).
+- Możliwość konfiguracji i kontroli nagłówków HTTP generowanych przez serwer. (Większość czysto internetowych rozwiązań hostingowych, takich jak Blogger, _nie_ jest zgodna z podpisanymi wymianami).
 - Możliwość generowania podpisanych wymian AMP, np. poprzez uruchomienie narzędzia [`amppackager`](https://github.com/ampproject/amppackager/blob/master/README.md) jako [pliku binarnego Go](https://golang.org/doc/install) lub na maszynie wirtualnej [Docker VM](https://docs.docker.com/machine/get-started/).
-    - Narzędzie do tworzenia pakietów należy aktualizować co sześć tygodni.
+  - Narzędzie do tworzenia pakietów należy aktualizować co sześć tygodni.
 - Możliwość stosowania nagłówków [Vary](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary) `Accept` i `AMP-Cache-Transform` na serwerach brzegowych HTTP, zwracających różne treści z tego samego adresu URL.
 - System z narzędziem `amppackager` musi być w stanie wykonywać wychodzące żądania sieciowe do:
-    - Urzędu CA wydającego Twój certyfikat
-    - Serwera wydawcy, na którym znajdują się dokumenty AMP do podpisania
-    - Domeny `cdn.ampproject.org` w celu uzyskiwania bieżącej wersji AMP
+  - Urzędu CA wydającego Twój certyfikat
+  - Serwera wydawcy, na którym znajdują się dokumenty AMP do podpisania
+  - Domeny `cdn.ampproject.org` w celu uzyskiwania bieżącej wersji AMP
 - Trwały system plików magazynu udostępnionego między wszystkimi wystąpieniami narzędzia `amppackera` działającymi w tym samym centrum danych.
 
 # Implementowanie podpisanych wymian
@@ -143,7 +143,7 @@ format version: 1b3
 
 (Pamiętaj, że przełącznik `-verify` nie będzie działać w tym momencie, ponieważ wymagane certyfikaty nie znajdują się na serwerze `https://example.com/`.)
 
-Sprawdź, czy odpowiedź *zawsze* zawiera nagłówek `Vary` o wartości `Accept,AMP-Cache-Transform` (bez względu na to, czy typ MIME to `text/html`, `application/signed-exchange`, czy jeszcze inny):
+Sprawdź, czy odpowiedź _zawsze_ zawiera nagłówek `Vary` o wartości `Accept,AMP-Cache-Transform` (bez względu na to, czy typ MIME to `text/html`, `application/signed-exchange`, czy jeszcze inny):
 
 ```sh
 $ curl -si https://staging.example.com/ | less

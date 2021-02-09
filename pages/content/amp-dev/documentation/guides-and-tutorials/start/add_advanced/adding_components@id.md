@@ -1,6 +1,6 @@
 ---
-"$title": Menambahkan komponen AMP yang diperluas
-"$order": '2'
+'$title': Menambahkan komponen AMP yang diperluas
+$order: 2
 description: 'Sistem komponen AMP memungkinkan Anda membuat fitur yang efisien dan responsif ke dalam artikel Anda dengan cepat dan mudah. Perpustakaan HTML AMP memiliki tiga klasifikasi untuk komponen AMP: ....'
 ---
 
@@ -25,13 +25,14 @@ Lihat contoh iklan **DoubleClick** ini:
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/image/static">
+  data-slot="/35096353/amptesting/image/static"
+>
 </amp-ad>
 ```
 
 Seperti yang Anda lihat, konfigurasi ini sangatlah mudah. Perhatikan atribut `type`, yang menunjukkan komponen [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) dari platform iklan yang ingin kita gunakan. Dalam kasus ini, kita ingin menggunakan platform [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md), sehingga kita menentukan `doubleclick` sebagai nilainya.
 
-`data-slot` adalah atribut yang lebih unik. Dalam [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), atribut apa pun yang diawali dengan  `data-` adalah atribut khusus vendor. Artinya, tidak semua vendor akan memerlukan atribut khusus ini, dan tidak semua vendor pula akan merespons jika atribut tersebut disediakan. Contohnya: bandingkan contoh **DoubleClick** di atas dengan iklan pengujian berikut ini dari platform [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md):
+`data-slot` adalah atribut yang lebih unik. Dalam [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), atribut apa pun yang diawali dengan `data-` adalah atribut khusus vendor. Artinya, tidak semua vendor akan memerlukan atribut khusus ini, dan tidak semua vendor pula akan merespons jika atribut tersebut disediakan. Contohnya: bandingkan contoh **DoubleClick** di atas dengan iklan pengujian berikut ini dari platform [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md):
 
 ```html
 <amp-ad
@@ -40,7 +41,8 @@ Seperti yang Anda lihat, konfigurasi ini sangatlah mudah. Perhatikan atribut `ty
   type="a9"
   data-aax_size="300x250"
   data-aax_pubname="test123"
-  data-aax_src="302">
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -51,7 +53,11 @@ Perlu diingat, tidak semua komponen disertakan di dalam berkas JavaScript perpus
 **Tambahkan** skrip berikut ini ke tag `<head>`:
 
 ```html
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script
+  async
+  custom-element="amp-ad"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+></script>
 ```
 
 **Segarkan** halaman, maka Anda akan melihat dua iklan percobaan:
@@ -67,7 +73,8 @@ Dua [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) di bawa
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/uk">
+  data-slot="/35096353/amptesting/geo/uk"
+>
   <div fallback>No ad appeared because you're not browsing from the UK!</div>
 </amp-ad>
 
@@ -75,7 +82,8 @@ Dua [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) di bawa
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/us">
+  data-slot="/35096353/amptesting/geo/us"
+>
   <div fallback>No ad appeared because you're not browsing from the US!</div>
 </amp-ad>
 ```
@@ -107,14 +115,15 @@ Mari kita coba menyematkan video YouTube ke dalam dokumen. **Tambahkan** kode be
   data-videoid="npum8JsITQE"
   layout="responsive"
   width="480"
-  height="270">
+  height="270"
+>
   <div fallback>
     <p>The video could not be loaded.</p>
   </div>
 </amp-youtube>
 ```
 
-**Segarkan** halaman. Sebagai ganti video, Anda akan melihat teks ini: *"Video tidak dapat dimuat".*
+**Segarkan** halaman. Sebagai ganti video, Anda akan melihat teks ini: _"Video tidak dapat dimuat"._
 
 Bahkan browser Anda dapat menampilkan video YouTube tanpa masalah, eror ini akan tetap muncul. Mengapa? Video tersebut sebenarnya tidak gagal dimuat, tetapi komponennya sendiri yang gagal.
 
@@ -125,7 +134,11 @@ Ingat, tidak semua komponen disertakan di dalam berkas JavaScript perpustakaan A
 **Tambahkan** skrip berikut ini ke tag `<head>`:
 
 ```html
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script
+  async
+  custom-element="amp-youtube"
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+></script>
 ```
 
 **Segarkan** halaman, maka Anda akan melihat video YouTube tersebut:
@@ -145,7 +158,11 @@ Menyematkan tweet yang telah diformat sebelumnya dari Twitter adalah fitur umum 
 Mulailah dengan menambahkan permintaan JavaScript berikut ini ke tag `<head>` dokumen Anda:
 
 ```html
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script
+  async
+  custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+></script>
 ```
 
 Di artikel Anda, **tambahkan** kode ini untuk menyematkan Tweet:
@@ -155,7 +172,8 @@ Di artikel Anda, **tambahkan** kode ini untuk menyematkan Tweet:
   width="486"
   height="657"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
 
@@ -180,7 +198,11 @@ AMP menyediakan komponen lain yang dirancang khusus untuk jenis situasi ini, dis
 Mari kita coba. Pertama, **tambahkan** perpustakaan komponen ke tag `<head>`:
 
 ```html
-<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+<script
+  async
+  custom-element="amp-fit-text"
+  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+></script>
 ```
 
 Tambahkan yang berikut ini ke halaman Anda:
@@ -205,7 +227,11 @@ Atau, bagaimana jika kutipannya lebih panjang?
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-   And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+  And the Raven, never flitting, still is sitting, still is sitting. On the
+  pallid bust of Pallas just above my chamber door; And his eyes have all the
+  seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming
+  throws his shadow on the floor; And my soul from out that shadow that lies
+  floating on the floor. Shall be lifted—nevermore!
 </amp-fit-text>
 ```
 

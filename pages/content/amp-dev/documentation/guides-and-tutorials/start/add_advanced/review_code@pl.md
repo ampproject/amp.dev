@@ -1,6 +1,6 @@
 ---
 '$title': Analiza kodu startowego
-'$order': '1'
+$order: 1
 description: Zanim zaczniemy dodawać kod, przeanalizujmy przykładową stronę article.amp.html, która powinna wyglądać następująco...
 ---
 

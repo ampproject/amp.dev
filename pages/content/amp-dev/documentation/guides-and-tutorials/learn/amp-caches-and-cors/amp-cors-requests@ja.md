@@ -1,11 +1,11 @@
 ---
-"$title": AMP における CORS
-order: '12'
+'$title': AMP における CORS
+$order: 12
 formats:
-- websites
-- email
-- stories
-- ads
+  - websites
+  - email
+  - stories
+  - ads
 teaser:
   text: 多くの AMP コンポーネントと拡張機能は、クロスオリジンリソースシェアリング（CORS）
 toc: 'true'
@@ -83,22 +83,24 @@ limitations under the License.
 
 **ではどうすればいいですか？**
 
-1. 動的データをフェッチする AMP ページの場合は、*自分のドメインでだけでなく*、キャッシュされたページも必ずテストしてください。（以下の「[AMP での CORS のテスト](#testing-cors-in-amp)」セクションを参照してください。）
+1. 動的データをフェッチする AMP ページの場合は、_自分のドメインでだけでなく_、キャッシュされたページも必ずテストしてください。（以下の「[AMP での CORS のテスト](#testing-cors-in-amp)」セクションを参照してください。）
 2. CORS リクエストとレスポンスの処理について、このドキュメントの指示に従ってください。
 
 ## CORS リクエストに cookie を使用する <a name="utilizing-cookies-for-cors-requests"></a>
 
 CORS リクエストを使用するほとんどの AMP コンポーネントは、[クレデンシャルモード](https://fetch.spec.whatwg.org/#concept-request-credentials-mode)を自動的に設定するか、作成者が任意に有効化することができます。たとえば、[`amp-list`](https://amp.dev/documentation/components/amp-list) コンポーネントは CORS JSON エンドポイントから動的コンテンツをフェッチし、作成者が `credentials` 属性を通じてクレデンシャルモードを設定することを許可します。
 
-*例: cookie を介して amp-list にパーソナライズコンテンツを含める*
+_例: cookie を介して amp-list にパーソナライズコンテンツを含める_
 
 [sourcecode:html]
 <amp-list
-  credentials="include"
-  src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)"
->
-  <template type="amp-mustache">
+credentials="include"
+src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)"
+
+>   <template type="amp-mustache">
+
     Your personal offer: ${% raw %}{{price}}{% endraw %}
+
   </template>
 </amp-list>
 [/sourcecode]
@@ -159,7 +161,7 @@ CORS リクエストを検証した後に生成される HTTP レスポンスに
 
 このヘッダーは、<code>origin</code> は CORS <code>Origin</code> リクエストヘッダーで許可されたリクエスト元のオリジン（<code>"https://<サイト運営者のサブドメイン>.cdn.ampproject.org"</code> など）を参照するという <a href="https://www.w3.org/TR/cors/">W3 CORS Spec</a> の要件です。
 
-W3 CORS 仕様書では、レスポンスで <code>*</code> の値を返すことを許可していますが、セキュリティを改善するために、以下のようにする必要があります。
+W3 CORS 仕様書では、レスポンスで <code>\*</code> の値を返すことを許可していますが、セキュリティを改善するために、以下のようにする必要があります。
 
 - `Origin` ヘッダーが存在する場合は、<code>Origin</code> ヘッダーの値を検証してエコーする。
 
@@ -173,10 +175,10 @@ W3 CORS 仕様書では、レスポンスで <code>*</code> の値を返すこ�
 
 1. オリジンが以下の値のいずれかに一致しない場合は、中断してエラーレスポンスを返します。
 
-    - `<publisher's domain>.cdn.ampproject.org`
-    - サイト運営者のオリジン（あなたのオリジン）
+   - `<publisher's domain>.cdn.ampproject.org`
+   - サイト運営者のオリジン（あなたのオリジン）
 
-    `*` は、ワイルドカード一致であり、実際のアスタリスク（*）ではありません。
+   `*` は、ワイルドカード一致であり、実際のアスタリスク（\*）ではありません。
 
 2. 含まれている場合は、リクエストを処理します。
 
@@ -227,15 +229,15 @@ CORS リクエストとレスポンスを処理するロジックは、以下の
 
 [sourcecode:text]
 IF CORS header present
-   IF origin IN allowed-origins
-      allow request & send response
-   ELSE
-      deny request
+IF origin IN allowed-origins
+allow request & send response
 ELSE
-   IF "AMP-Same-Origin: true"
-      allow request & send response
-   ELSE
-      deny request
+deny request
+ELSE
+IF "AMP-Same-Origin: true"
+allow request & send response
+ELSE
+deny request
 [/sourcecode]
 
 #### CORS サンプルコード <a name="cors-sample-code"></a>
@@ -244,31 +246,31 @@ ELSE
 
 [sourcecode:javascript]
 function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
-  var unauthorized = 'Unauthorized Request';
-  var origin;
-  var allowedOrigins = [
-    'https://example.com',
-    'https://example-com.cdn.ampproject.org',
-    'https://cdn.ampproject.org',
-  ];
-  var allowedSourceOrigin = 'https://example.com'; //publisher's origin
-  // If same origin
-  if (req.headers['amp-same-origin'] == 'true') {
-    origin = sourceOrigin;
-    // If allowed CORS origin & allowed source origin
-  } else if (
-    allowedOrigins.indexOf(req.headers.origin) != -1 &&
-    sourceOrigin == allowedSourceOrigin
-  ) {
-    origin = req.headers.origin;
-  } else {
-    res.statusCode = 403;
-    res.end(JSON.stringify({message: unauthorized}));
-    throw unauthorized;
-  }
+var unauthorized = 'Unauthorized Request';
+var origin;
+var allowedOrigins = [
+'https://example.com',
+'https://example-com.cdn.ampproject.org',
+'https://cdn.ampproject.org',
+];
+var allowedSourceOrigin = 'https://example.com'; //publisher's origin
+// If same origin
+if (req.headers['amp-same-origin'] == 'true') {
+origin = sourceOrigin;
+// If allowed CORS origin & allowed source origin
+} else if (
+allowedOrigins.indexOf(req.headers.origin) != -1 &&
+sourceOrigin == allowedSourceOrigin
+) {
+origin = req.headers.origin;
+} else {
+res.statusCode = 403;
+res.end(JSON.stringify({message: unauthorized}));
+throw unauthorized;
+}
 
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.setHeader('Access-Control-Allow-Origin', origin);
+res.setHeader('Access-Control-Allow-Credentials', 'true');
+res.setHeader('Access-Control-Allow-Origin', origin);
 }
 [/sourcecode]
 
@@ -331,7 +333,7 @@ Google AMP キャッシュは、AMP HTML ドキュメント、画像、および
 AMP ページが `@font-face src` 属性の `https://example.com/some/font.ttf` を読み込む際、AMP キャッシュはフォントファイルをキャッシュして、以下のように `Access-Control-Allow-Origin` にワイルドカードを使用してリソースを配信していました。
 
 - URL `https://example-com.cdn.ampproject.org/r/s/example.com/some/font.tff`
-- Access-Control-Allow-Origin: *
+- Access-Control-Allow-Origin: \*
 
 ### 新しい振る舞い（2019 年 10 月以降） <a name="new-behavior-october-2019-and-after"></a>
 
@@ -341,19 +343,19 @@ AMP ページが `@font-face src` 属性の `https://example.com/some/font.ttf` 
 
 [sourcecode:javascript]
 function assertFontCors(req, res, opt_validMethods, opt_exposeHeaders) {
-  var unauthorized = 'Unauthorized Request';
-  var allowedOrigins = [
-    'https://example.com',
-    'https://example-com.cdn.ampproject.org',
-  ];
-  // If allowed CORS origin
-  if (allowedOrigins.indexOf(req.headers.origin) != -1) {
-    res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
-  } else {
-    res.statusCode = 403;
-    res.end(JSON.stringify({message: unauthorized}));
-    throw unauthorized;
-  }
+var unauthorized = 'Unauthorized Request';
+var allowedOrigins = [
+'https://example.com',
+'https://example-com.cdn.ampproject.org',
+];
+// If allowed CORS origin
+if (allowedOrigins.indexOf(req.headers.origin) != -1) {
+res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+} else {
+res.statusCode = 403;
+res.end(JSON.stringify({message: unauthorized}));
+throw unauthorized;
+}
 }
 [/sourcecode]
 
@@ -384,10 +386,10 @@ AMP ページをテストする際は、AMP ページのキャッシュバージ
 
 1. ブラウザで、AMP ページにアクセスするために AMP キャッシュが 使用する URL を開きます。キャッシュ URL の形式は、こちらの [AMP By Example のツール](https://amp.dev/documentation/examples/guides/using_the_google_amp_cache/)で確認できます。
 
-    例:
+   例:
 
-    - URL: `https://amp.dev/documentation/guides-and-tutorials/start/create/`
-    - AMP キャッシュ URL 形式: `https://www-ampproject-org.cdn.ampproject.org/c/s/www.ampproject.org/docs/tutorials/create.html`
+   - URL: `https://amp.dev/documentation/guides-and-tutorials/start/create/`
+   - AMP キャッシュ URL 形式: `https://www-ampproject-org.cdn.ampproject.org/c/s/www.ampproject.org/docs/tutorials/create.html`
 
 2. ブラウザの開発ツールを開き、エラーがないこととすべてのリソースが正しく読み込まれることを確認します。
 
@@ -421,7 +423,7 @@ access-control-allow-methods: POST, GET, OPTIONS
 
 同一ドメインからではない （キャッシュ）CORS リクエストでは、リクエストの一部に `origin` ヘッダーが含まれます。
 
-以下は、Google AMP キャッシュにキャッシュされた AMP ページから  `examples.json` ファイルへのリクエストをテストするための curl コマンドです。
+以下は、Google AMP キャッシュにキャッシュされた AMP ページから `examples.json` ファイルへのリクエストをテストするための curl コマンドです。
 
 [sourcecode:shell]
 curl 'https://amp.dev/static/samples/json/examples.json' -H 'origin: https://ampbyexample-com.cdn.ampproject.org' -I

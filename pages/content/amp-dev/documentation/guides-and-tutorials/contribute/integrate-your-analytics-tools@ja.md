@@ -1,9 +1,9 @@
 ---
-"$title": Integrate your analytics tool with AMP
-order: '1'
+'$title': Integrate your analytics tool with AMP
+$order: 1
 formats:
-- websites
-- stories
+  - websites
+  - stories
 teaser:
   text: 概要
 toc: 'true'
@@ -30,23 +30,23 @@ have a look and request a pull request there.
 - 分析ダッシュボードが AMP トラフィックをどのように処理するかを確認する。
 - `amp-analytics` に欠落した機能がないかを確認し、必要な機能について[リクエストを提出](https://github.com/ampproject/amphtml/issues/new)する。
 - AMP アナリティクスは、あらかじめ構成されたエンドポイントに変数を送信します。既存のエンドポイントがない場合、その構築方法の概要について、[こちらのサンプル](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)を参照してください。
-    - `iframe` を除くすべてのトランスポートタイプでは、変数は HTTPS リクエストのクエリ文字列パラメータとして送信されます。
-    - `iframe` トランスポートタイプについては、変数は `window.postMessage` を通じて、作成された iframe に送信されます。この場合、メッセージは URL である必要はありません。このオプションは、MRC 認定ベンダーのみが利用できます。
+  - `iframe` を除くすべてのトランスポートタイプでは、変数は HTTPS リクエストのクエリ文字列パラメータとして送信されます。
+  - `iframe` トランスポートタイプについては、変数は `window.postMessage` を通じて、作成された iframe に送信されます。この場合、メッセージは URL である必要はありません。このオプションは、MRC 認定ベンダーのみが利用できます。
 - `amp-analytics` との統合によって、既存のポリシー（特にプライバシーポリシー）や契約にどのような影響が生まれる可能性があるかを検討する。
 
 ## AMP HTML ランタイムへの構成の追加 <a name="adding-your-configuration-to-the-amp-html-runtime"></a>
 
 1. 分析サービスを AMP HTML のランタイムに追加することを述べた [Intent-To-Implement（実装意図）の課題](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../CONTRIBUTING.md#contributing-features) を作成します。説明に **cc @ampproject/wg-analytics** を必ず含めてください。
 2. 以下の内容を実装するパッチを開発します。
-    1. 以下のような、デフォルト外のオプションを含めた新しい構成 json ファイル `${vendorName}.json` を vendors [フォルダ](https://github.com/ampproject/amphtml/tree/master/extensions/amp-analytics/0.1/vendors):
-        1. 追加のデフォルト変数用の `"vars": {}`。
-        2. サービスが使用するリクエスト用の `"requests": {}`。
-        3. 必要な場合は `"optout":`。現時点では、優れたオプトアウトシステムが用意されていないため、あなたに合ったものを設計できるように、お問い合わせください。
-        4. 必要な場合は `"warningMessage":`。コンソールにベンダーからの警告情報（説明や移行）を表示します。
-    2. iframe トランスポートを使用する場合は、`"*vendor-name*": "*url*"` を含む iframe-transport-vendors.js のANALYTICS_IFRAME_TRANSPORT_CONFIG に新しい行を追加します。
-    3. [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html) リファレンス内の例。
-    4. [extensions/amp-analytics/0.1/test/vendor-requests.json ](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../extensions/amp-analytics/0.1/test/vendor-requests.json) ファイルのテスト。
-    5. [extensions/amp-analytics/0.1/analytics-vendors-list.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./analytics-vendors-list.md) ファイルの対応ベンダーリストに分析サービスを追加します。種類、説明、および使用方法のドキュメントへのリンクを含めてください。
+   1. 以下のような、デフォルト外のオプションを含めた新しい構成 json ファイル `${vendorName}.json` を vendors [フォルダ](https://github.com/ampproject/amphtml/tree/master/extensions/amp-analytics/0.1/vendors):
+      1. 追加のデフォルト変数用の `"vars": {}`。
+      2. サービスが使用するリクエスト用の `"requests": {}`。
+      3. 必要な場合は `"optout":`。現時点では、優れたオプトアウトシステムが用意されていないため、あなたに合ったものを設計できるように、お問い合わせください。
+      4. 必要な場合は `"warningMessage":`。コンソールにベンダーからの警告情報（説明や移行）を表示します。
+   2. iframe トランスポートを使用する場合は、`"*vendor-name*": "*url*"` を含む iframe-transport-vendors.js の ANALYTICS_IFRAME_TRANSPORT_CONFIG に新しい行を追加します。
+   3. [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html) リファレンス内の例。
+   4. [extensions/amp-analytics/0.1/test/vendor-requests.json ](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../extensions/amp-analytics/0.1/test/vendor-requests.json) ファイルのテスト。
+   5. [extensions/amp-analytics/0.1/analytics-vendors-list.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./analytics-vendors-list.md) ファイルの対応ベンダーリストに分析サービスを追加します。種類、説明、および使用方法のドキュメントへのリンクを含めてください。
 3. [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html) に配置した新しい例をテストし、この例のヒット数が期待通りに動作していることを確認します。たとえば、必要なデータが収集され、分析ダッシュボードに表示されることを確認します。
 4. Intent-To-Implement 課題を参照する、このパッチのプルリクエストを提出します。
 5. サービスの使用方法ドキュメントを更新し、顧客に伝えます。
@@ -63,9 +63,10 @@ have a look and request a pull request there.
 
 [sourcecode:html]
 <amp-analytics
-  config="https://my-awesome-tag-manager.example.com/user-id.json"
-></amp-analytics>
-[/sourcecode]
+config="https://my-awesome-tag-manager.example.com/user-id.json"
+
+> </amp-analytics>
+> [/sourcecode]
 
 このアプローチを使用する場合は、サイト運営者向けの AMP アナリティクスの統合に関するドキュメントを参照してください。
 

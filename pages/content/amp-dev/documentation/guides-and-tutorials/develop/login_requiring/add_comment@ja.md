@@ -1,6 +1,6 @@
 ---
-"$title": コメントの追加
-"$order": '2'
+'$title': コメントの追加
+$order: 2
 description: ここで、ユーザーは amp-form ライブラリを使用してコメントを追加できます。フォームが存在するかどうかは、amp-access コンポーネントの状態によって決まることに注意してください ...
 ---
 
@@ -9,6 +9,7 @@ description: ここで、ユーザーは amp-form ライブラリを使用して
 ここで、ユーザーは [`amp-form`](../../../../documentation/components/reference/amp-form.md) ライブラリを使用してコメントを追加できます。フォームが存在するかどうかは、[`amp-access`](../../../../documentation/components/reference/amp-access.md) コンポーネントの状態によって決まることに注意してください。
 
 [sourcecode:html]
+
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
 [/sourcecode]
 
@@ -21,6 +22,7 @@ JSON レスポンスの例を次に示します。
 フォーム コンポーネントは、[`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md) テンプレートを使用して、ページ内に値を表示します。
 
 [sourcecode:html]
+
 <div submit-success>
   <template type="amp-mustache">
     <div class="comment-user">
@@ -37,6 +39,7 @@ JSON レスポンスの例を次に示します。
 この例では、コメントの値が空でないことのみをチェックしています。値が空の場合は、エラーが返されて次のコードが実行されます。
 
 [sourcecode:html]
+
 <div submit-error>
   <template type="amp-mustache">
     Error! Looks like something went wrong with your comment, please try to submit it again.

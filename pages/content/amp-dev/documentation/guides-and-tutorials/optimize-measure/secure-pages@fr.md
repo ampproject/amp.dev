@@ -1,9 +1,9 @@
 ---
-"$title": "Comment rester à l'abri des attaques tierces"
-"$order": '7'
+'$title': "Comment rester à l'abri des attaques tierces"
+$order: 7
 description: Prenez des mesures pour protéger vos pages AMP et vos utilisateurs contre les failles de sécurité sur le Web
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 ---
 

@@ -1,11 +1,11 @@
 ---
-"$title": AMP 상용구 코드
-order: '9'
+'$title': AMP 상용구 코드
+$order: 9
 formats:
-- websites
-- stories
+  - websites
+  - stories
 teaser:
-  text: " head > style[amp-boilerplate] 및 noscript > style[amp-boilerplate]"
+  text: ' head > style[amp-boilerplate] 및 noscript > style[amp-boilerplate]'
 ---
 
 <!--

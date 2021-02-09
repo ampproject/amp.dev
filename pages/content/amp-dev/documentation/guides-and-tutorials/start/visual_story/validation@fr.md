@@ -1,6 +1,6 @@
 ---
-"$title": Valider votre code HTML AMP
-"$order": '8'
+'$title': Valider votre code HTML AMP
+$order: 8
 description: Chaque fois que vous créez une page AMP, vous devez toujours vérifier que votre code HTML AMP est correct. Il existe [plusieurs méthodes que vous pouvez utiliser pour valider vos pages AMP ...
 author: bpaduch
 ---

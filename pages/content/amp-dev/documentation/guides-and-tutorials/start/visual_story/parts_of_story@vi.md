@@ -1,6 +1,6 @@
 ---
-"$title": Hiểu về những phần thuộc một câu chuyện AMP
-"$order": '2'
+'$title': Hiểu về những phần thuộc một câu chuyện AMP
+$order: 2
 description: Một Câu chuyện web là trải nghiệm kể chuyện bằng hình ảnh trải rộng toàn màn hình, trong đó thông tin được truyền tải bằng hình ảnh, video, đồ hoạ, âm thanh, v.v. Đây là chức năng hoàn hảo cho những người dùng ...
 author: bpaduch
 ---

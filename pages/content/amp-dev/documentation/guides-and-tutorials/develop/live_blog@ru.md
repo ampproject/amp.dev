@@ -1,13 +1,13 @@
 ---
-"$title": Создание живого блога
-"$order": '102'
+'$title': Создание живого блога
+$order: 102
 description: Живые блоги — это веб-страницы, которые часто обновляются в ходе текущих событий, таких как спортивные мероприятия или выборы. С помощью AMP вы можете создать живой блог, используя...
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: kul3r4
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 Прямые текстовые трансляции — это веб-страницы, которые часто обновляются в ходе текущих событий, таких как спортивные мероприятия или выборы. С помощью AMP вы можете создать прямую текстовую трансляцию, используя компонент [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md).
@@ -25,9 +25,11 @@ contributors:
 Вот как может выглядеть исходный код трансляции:
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">You have updates</button>
   <div items></div>
 </amp-live-list>
@@ -35,7 +37,7 @@ contributors:
 
 Let's look at this code:
 
-Each [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component requires a unique id as there could be more than one on a page.  In this example, we specified `my-live-list` as the unique id.
+Each [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component requires a unique id as there could be more than one on a page. In this example, we specified `my-live-list` as the unique id.
 
 Атрибут `data-poll-interval` указывает, как часто должна проводиться проверка наличия обновлений; если документ на сервере обновлен, обновление будет доступно пользователю на момент следующей проверки.
 
@@ -56,9 +58,11 @@ All blog posts in the [`amp-live-list`](../../../documentation/components/refere
 После добавления постраничной навигации простой код, который мы использовали ранее, приобретает следующий вид:
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">You have updates</button>
   <div items></div>
   <div pagination>
@@ -67,8 +71,8 @@ All blog posts in the [`amp-live-list`](../../../documentation/components/refere
         <li>1</li>
         <li>Next</li>
       </ul>
-     </nav>
-   </div>
+    </nav>
+  </div>
 </amp-live-list>
 ```
 
@@ -78,7 +82,7 @@ It’s your responsibility to populate the navigation items correctly by updatin
 
 After the size of blog posts has exceeded the maximum number of items specified by `data-max-items-per-page`, the older blog items are displayed in the “Next” pages, for example on page 2. Given that the [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) polls the server at intervals to see if there is any change in the items, there's no need to poll the server if the user isn't on the first page.
 
-You can add the disabled attribute to  the hosted page to prevent the polling mechanism. In the live blog sample, we perform this behavior in  a server-side template; when the requested page is not the first one, we add the disabled attribute to the [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component.
+You can add the disabled attribute to the hosted page to prevent the polling mechanism. In the live blog sample, we perform this behavior in a server-side template; when the requested page is not the first one, we add the disabled attribute to the [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component.
 
 ### Deeplinking <a name="deeplinking"></a>
 

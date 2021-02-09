@@ -1,13 +1,13 @@
 ---
-"$title": Tworzenie dokumentacji
-"$order": '0'
-"$hidden": 'true'
+'$title': Tworzenie dokumentacji
+$order: 0
+'$hidden': 'true'
 description: Zacznij dostarczać dokumentację do amp.dev
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 
@@ -17,7 +17,7 @@ Dziękujemy za zainteresowanie udziałem w projekcie AMP, zapraszamy do zespołu
 
 # Rozpoczęcie pracy
 
-Hostem naszej dokumentacji jest [amp.dev](https://amp.dev/), a zespół AMP współpracuje na [GitHub](https://github.com/ampproject). Postępuj zgodnie z [README  repozytorium amp.dev](https://github.com/ampproject/amp.dev), aby uruchomić amp.dev na komputerze lokalnym. Ma to zasadnicze znaczenie dla zapewnienia prawidłowego renderowania i formatowania zasobów. W przypadku prostych poprawek, takich jak literówki, można natomiast edytować plik bezpośrednio na GitHub.
+Hostem naszej dokumentacji jest [amp.dev](https://amp.dev/), a zespół AMP współpracuje na [GitHub](https://github.com/ampproject). Postępuj zgodnie z [README repozytorium amp.dev](https://github.com/ampproject/amp.dev), aby uruchomić amp.dev na komputerze lokalnym. Ma to zasadnicze znaczenie dla zapewnienia prawidłowego renderowania i formatowania zasobów. W przypadku prostych poprawek, takich jak literówki, można natomiast edytować plik bezpośrednio na GitHub.
 
 Dołącz do [grupy roboczej ds. współpracy zewnętrznej](https://github.com/ampproject/wg-outreach) [AMP Project Slack](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) i daj nam znać, nad czym pracujesz!
 

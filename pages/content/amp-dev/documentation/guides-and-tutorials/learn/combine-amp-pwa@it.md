@@ -1,11 +1,11 @@
 ---
-"$title": Rapporti tra contenuti AMP e PWA
-"$order": '7'
+'$title': Rapporti tra contenuti AMP e PWA
+$order: 7
 description: "Le app web progressive (PWA) e le pagine AMP funzionano perfettamente insieme. In effetti, in molti casi, si completano a vicenda in un modo o nell'altro. Ora impareremo a ..."
 formats:
-- websites
+  - websites
 components:
-- youtube
+  - youtube
 author: pbakaus
 ---
 
@@ -31,7 +31,7 @@ Le pagine AMP possono utilizzare molte funzionalità PWA in modo autonomo, a con
 
 ## Contenuti AMP come punto di accesso alle app PWA
 
-Un esclusivo punto di forza dei contenuti AMP è la **disponibilità quasi istantanea**, una caratteristica che rende il sistema AMP la soluzione perfetta per garantire agli utenti la prima interazione con il nostro sito web al meglio. *Le app web progressive* consentono **maggiore interattività e numerose funzionalità coinvolgenti**, ma il loro primo caricamento è spesso ostacolato dal fatto che il Processo di lavoro del sito, e quindi le sue risorse e la shell dell'app, possono solo accelerare la disponibilità dei caricamenti successivi.
+Un esclusivo punto di forza dei contenuti AMP è la **disponibilità quasi istantanea**, una caratteristica che rende il sistema AMP la soluzione perfetta per garantire agli utenti la prima interazione con il nostro sito web al meglio. _Le app web progressive_ consentono **maggiore interattività e numerose funzionalità coinvolgenti**, ma il loro primo caricamento è spesso ostacolato dal fatto che il Processo di lavoro del sito, e quindi le sue risorse e la shell dell'app, possono solo accelerare la disponibilità dei caricamenti successivi.
 
 Una buona strategia è quella di implementare il punto di accesso al proprio sito con una pagina AMP, quindi preparare l'app PWA dietro le quinte e passare ad essa per il prosieguo.
 

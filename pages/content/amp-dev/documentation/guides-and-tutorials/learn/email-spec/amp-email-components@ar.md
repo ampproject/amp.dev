@@ -1,8 +1,8 @@
 ---
-"$title": المكونات المدعومة مع AMP للبريد الإلكتروني
-order: '3'
+'$title': المكونات المدعومة مع AMP للبريد الإلكتروني
+$order: 3
 formats:
-- email
+  - email
 teaser:
   text: 'فيما يلي قائمة بمكونات AMP المدعومة حاليًا في رسائل AMP الإلكترونية. ويتم تجميع المكونات تحت الفئات التالية:'
 toc: 'true'
@@ -39,30 +39,30 @@ limitations under the License.
 
 ## المحتوى الديناميكي <a name="dynamic-content"></a>
 
-العنصر | الوصف
---- | ---
-[`<amp-form>`](https://amp.dev/documentation/components/amp-form) | عنصر النموذج. يجب استخدام سمة action-xhr بدلا من سمة الإجراء العادية. حيث يمكن استخدامها مع `<template type="amp-mustache">` لإظهار استجابة. <br><br>**ملاحظة: **غير مسموح [بإعادة التوجيه بعد الإرسال](https://amp.dev/documentation/components/amp-form/#redirecting-after-a-submission).
-[`<amp-selector>`](https://amp.dev/documentation/components/amp-selector) | عنصر واجهة مستخدم للاختيار المتعدد للاستخدام داخل نموذج.
-[`amp-bind`](https://amp.dev/documentation/components/amp-bind) و[`<amp-bind-macro>`](https://amp.dev/documentation/components/amp-bind#defining-macros-with-amp-bind-macro) | لغة نصوص برمجية بسيطة في AMP تسمح باستخدام تسلسل حالات للتفاعلات بين العناصر. ويمكن أيضًا استخدامها لإضافة سلوك في أحداث معينة.<br><br>**ملاحظة:** يحظر ربطها بـ `[href]` أو `[src]`. يحظر أيضًا استخدام إجراءات `AMP.print` و `AMP.navigateTo` و`AMP.goBack`.
-[`<amp-state>`](https://amp.dev/documentation/components/amp-bind#%3Camp-state%3E-specification) | يتم استخدام `<amp-state>` لتعريف الحالة الأولية المستخدمة من جانب `amp-bind`.<br><br>**ملاحظة:** لا يتم حاليا دعم السمة `src`.
-[`<amp-list>`](https://amp.dev/documentation/components/amp-list) | يجلب بيانات JSON عن بعد والتي سيتم عرضها بواسطة [`<amp-mustache>`](https://amp.dev/documentation/components/amp-mustache).<br><br>**ملاحظة:** غير مسموح الربط بسمة `[src]`. يحظر أيضًا تضمين بيانات اعتماد المستخدم مع `credentials="include"`.
-[`<template type="amp-mustache">`](https://amp.dev/documentation/components/amp-mustache) | لغة ترميز قالب شارب لعرض نتائج `amp-list`.
+| العنصر                                                                                                                                                                       | الوصف                                                                                                                                                                                                                                                                                       |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`<amp-form>`](https://amp.dev/documentation/components/amp-form)                                                                                                            | عنصر النموذج. يجب استخدام سمة action-xhr بدلا من سمة الإجراء العادية. حيث يمكن استخدامها مع `<template type="amp-mustache">` لإظهار استجابة. <br><br>**ملاحظة: **غير مسموح [بإعادة التوجيه بعد الإرسال](https://amp.dev/documentation/components/amp-form/#redirecting-after-a-submission). |
+| [`<amp-selector>`](https://amp.dev/documentation/components/amp-selector)                                                                                                    | عنصر واجهة مستخدم للاختيار المتعدد للاستخدام داخل نموذج.                                                                                                                                                                                                                                    |
+| [`amp-bind`](https://amp.dev/documentation/components/amp-bind) و[`<amp-bind-macro>`](https://amp.dev/documentation/components/amp-bind#defining-macros-with-amp-bind-macro) | لغة نصوص برمجية بسيطة في AMP تسمح باستخدام تسلسل حالات للتفاعلات بين العناصر. ويمكن أيضًا استخدامها لإضافة سلوك في أحداث معينة.<br><br>**ملاحظة:** يحظر ربطها بـ `[href]` أو `[src]`. يحظر أيضًا استخدام إجراءات `AMP.print` و `AMP.navigateTo` و`AMP.goBack`.                              |
+| [`<amp-state>`](https://amp.dev/documentation/components/amp-bind#%3Camp-state%3E-specification)                                                                             | يتم استخدام `<amp-state>` لتعريف الحالة الأولية المستخدمة من جانب `amp-bind`.<br><br>**ملاحظة:** لا يتم حاليا دعم السمة `src`.                                                                                                                                                              |
+| [`<amp-list>`](https://amp.dev/documentation/components/amp-list)                                                                                                            | يجلب بيانات JSON عن بعد والتي سيتم عرضها بواسطة [`<amp-mustache>`](https://amp.dev/documentation/components/amp-mustache).<br><br>**ملاحظة:** غير مسموح الربط بسمة `[src]`. يحظر أيضًا تضمين بيانات اعتماد المستخدم مع `credentials="include"`.                                             |
+| [`<template type="amp-mustache">`](https://amp.dev/documentation/components/amp-mustache)                                                                                    | لغة ترميز قالب شارب لعرض نتائج `amp-list`.                                                                                                                                                                                                                                                  |
 
 ## التخطيط <a name="layout"></a>
 
-العنصر | الوصف
---- | ---
-[سمات التخطيط](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/#layout-attributes) | يتحدد سلوك التخطيط بواسطة سمة التخطيط
-[`<amp-accordion>`](https://amp.dev/documentation/components/amp-accordion) | عنصر واجهة مستخدم لتسهيل عرض/إخفاء أقسام مختلفة.
-[`<amp-carousel>`](https://amp.dev/documentation/components/amp-carousel) | مكون واجهة مستخدم UI.
-[`<amp-fit-text>`](https://amp.dev/documentation/components/amp-fit-text) | مكون مساعدة لاحتواء النص داخل منطقة معينة.
-[`<amp-layout>`](https://amp.dev/documentation/components/amp-layout) | حاوية يمكن أن تتضمن نسبة أبعاد تبعًا للتخطيطات الاستجابة.
-[`<amp-sidebar>`](https://amp.dev/documentation/components/amp-sidebar) | شريط جانبي لأغراض التنقل.
-[`<amp-timeago>`](https://amp.dev/documentation/components/amp-timeago) | يوفر طريقة ملائمة لإظهار الطوابع الزمنية.
+| العنصر                                                                                                      | الوصف                                                     |
+| ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| [سمات التخطيط](https://amp.dev/documentation/guides-and-tutorials/learn/amp-html-layout/#layout-attributes) | يتحدد سلوك التخطيط بواسطة سمة التخطيط                     |
+| [`<amp-accordion>`](https://amp.dev/documentation/components/amp-accordion)                                 | عنصر واجهة مستخدم لتسهيل عرض/إخفاء أقسام مختلفة.          |
+| [`<amp-carousel>`](https://amp.dev/documentation/components/amp-carousel)                                   | مكون واجهة مستخدم UI.                                     |
+| [`<amp-fit-text>`](https://amp.dev/documentation/components/amp-fit-text)                                   | مكون مساعدة لاحتواء النص داخل منطقة معينة.                |
+| [`<amp-layout>`](https://amp.dev/documentation/components/amp-layout)                                       | حاوية يمكن أن تتضمن نسبة أبعاد تبعًا للتخطيطات الاستجابة. |
+| [`<amp-sidebar>`](https://amp.dev/documentation/components/amp-sidebar)                                     | شريط جانبي لأغراض التنقل.                                 |
+| [`<amp-timeago>`](https://amp.dev/documentation/components/amp-timeago)                                     | يوفر طريقة ملائمة لإظهار الطوابع الزمنية.                 |
 
 ## الوسائط <a name="media"></a>
 
-العنصر | الوصف
---- | ---
-[`<amp-img>`](https://amp.dev/documentation/components/amp-img) | مكون AMP يحل محل `<img>`.<br><br>**ملاحظة:** الربط بـ `[src]` غير مسموح به.
-[`<amp-anim>`](https://amp.dev/documentation/components/amp-anim) | ملفات GIF المدمجة.<br><br>**ملاحظة:** الربط بـ `[src]` غير مسموح به.
+| العنصر                                                            | الوصف                                                                       |
+| ----------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| [`<amp-img>`](https://amp.dev/documentation/components/amp-img)   | مكون AMP يحل محل `<img>`.<br><br>**ملاحظة:** الربط بـ `[src]` غير مسموح به. |
+| [`<amp-anim>`](https://amp.dev/documentation/components/amp-anim) | ملفات GIF المدمجة.<br><br>**ملاحظة:** الربط بـ `[src]` غير مسموح به.        |

@@ -1,9 +1,9 @@
 ---
-"$title": Web ストーリーの広告
-"$order": '3'
+'$title': Web ストーリーの広告
+$order: 3
 description: Web ストーリーは、読者にコンテンツへの没入感を与える、タップ可能な全画面表示エクスペリエンスです。AMPストーリー広告を使用した広告は、シームレスで中断のない...
 formats:
-- ストーリー
+  - ストーリー
 author: CrystalOnScript
 ---
 
@@ -43,17 +43,17 @@ Web ストーリーは、ページで直接 [`amp-ad`](../../../documentation/co
 
 [sourcecode:html]
 <amp-story>
-  <amp-story-auto-ads>
-    <script type="application/json">
-      {
-        "ad-attributes": {
-          // ad server configuration
-        }
-      }
-    </script>
-  </amp-story-auto-ads>
-  <amp-story-page>
-  ...
+<amp-story-auto-ads>
+<script type="application/json">
+{
+"ad-attributes": {
+// ad server configuration
+}
+}
+</script>
+</amp-story-auto-ads>
+<amp-story-page>
+...
 </amp-story>
 [/sourcecode]
 
@@ -66,8 +66,8 @@ Web ストーリーに広告を含めるには、サポートされているア�
 以下に、現在 Web ストーリー広告をサポートしている広告プラットフォームを示します。
 
 - Google アドマネージャー
-    - [直接販売広告](https://support.google.com/admanager/answer/9038178)
-    - [プログラマティック広告](https://support.google.com/admanager/answer/9416436)
+  - [直接販売広告](https://support.google.com/admanager/answer/9038178)
+  - [プログラマティック広告](https://support.google.com/admanager/answer/9416436)
 - Google アドセンス（近日対応）
 - その他の広告プラットフォームも統合可能（[GitHub で詳細](https://github.com/ampproject/amphtml/issues/30769)をお問い合わせください）
 

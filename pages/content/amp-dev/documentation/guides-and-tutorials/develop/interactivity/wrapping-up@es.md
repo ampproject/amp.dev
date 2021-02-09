@@ -1,7 +1,7 @@
 ---
-"$title": Conclusión
-"$order": '4'
-description: "¡Felicidades! Acaba de crear una página con detalles de productos para comercio electrónico interactivo, con tamaños y precios variables para cada SKU, obtenidos bajo demanda de un punto final JSON remoto."
+'$title': Conclusión
+$order: 4
+description: '¡Felicidades! Acaba de crear una página con detalles de productos para comercio electrónico interactivo, con tamaños y precios variables para cada SKU, obtenidos bajo demanda de un punto final JSON remoto.'
 ---
 
 ¡Felicidades! Acaba de crear una página con detalles de productos para comercio electrónico interactivo, con tamaños y precios variables para cada SKU, obtenidos bajo demanda de un punto final JSON remoto.

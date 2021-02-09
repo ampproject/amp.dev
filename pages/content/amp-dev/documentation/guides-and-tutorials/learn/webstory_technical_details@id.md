@@ -1,10 +1,10 @@
 ---
-"$title": Detail teknis Cerita Web
-"$order": '1'
+'$title': Detail teknis Cerita Web
+$order: 1
 description: Detail teknis Cerita Web
-"$category": Develop
+'$category': Develop
 formats:
-- stories
+  - stories
 author: CrystalOnScript
 ---
 
@@ -21,40 +21,108 @@ Cerita Web secara teknis adalah halaman web tunggal yang dibuat dengan AMP dan m
 - Berisi tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` di dalam `<head>`-nya. Sebagai praktik terbaik, Anda seharusnya menyertakan skrip ini sedini mungkin di dalam `<head>`.
 - Berisi tag` <link rel="canonical" href="page/url">` di dalam `<head>`-nya dengan href yang mengarah ke URL Cerita Web.
 - Berisi tag `<meta name="viewport" content="width=device-width">` di dalam `<head>`-nya. Disarankan juga untuk menyertakan skala inisial=1.
-- Berisi kode  [boilerplate AMP](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) di dalam tag `<head>`.
+- Berisi kode [boilerplate AMP](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) di dalam tag `<head>`.
 
 Perbedaan antara halaman web AMP dan Cerita Web yang dibuat dengan AMP adalah komponen [`amp-story`](https://amp.dev/documentation/components/amp-story/?format=stories). Ini adalah satu-satunya anak langsung dari `<body>` dokumen dan harus berisi atribut `standalone`. Semua halaman, lapisan, dan elemen Cerita Web ditentukan di dalam tag `<amp-story>`.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Joy of Pets</title>
-    <link rel="canonical" href="pets.html">
-    <meta name="viewport" content="width=device-width">
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <link rel="canonical" href="pets.html" />
+    <meta name="viewport" content="width=device-width" />
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-video"
-        src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
-    <script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+    <script
+      async
+      custom-element="amp-video"
+      src="https://cdn.ampproject.org/v0/amp-video-0.1.js"
+    ></script>
+    <script
+      async
+      custom-element="amp-story"
+      src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+    ></script>
     <style amp-custom>
-    ...
+      ...;
     </style>
   </head>
   <body>
     <!-- Cover page -->
-    <amp-story standalone
-        title="Joy of Pets"
-        publisher="AMP tutorials"
-        publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-        poster-portrait-src="assets/cover.jpg">
+    <amp-story
+      standalone
+      title="Joy of Pets"
+      publisher="AMP tutorials"
+      publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+      poster-portrait-src="assets/cover.jpg"
+    >
       <amp-story-page id="cover">
         <amp-story-grid-layer template="fill">
-          <amp-img src="assets/cover.jpg"
-              width="720" height="1280"
-              layout="responsive">
+          <amp-img
+            src="assets/cover.jpg"
+            width="720"
+            height="1280"
+            layout="responsive"
+          >
           </amp-img>
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical">
@@ -67,11 +135,17 @@ Perbedaan antara halaman web AMP dan Cerita Web yang dibuat dengan AMP adalah ko
       <amp-story-page id="page1">
         <amp-story-grid-layer template="vertical">
           <h1>Cats</h1>
-          <amp-img src="assets/cat.jpg"
-              width="720" height="1280"
-              layout="responsive">
+          <amp-img
+            src="assets/cat.jpg"
+            width="720"
+            height="1280"
+            layout="responsive"
+          >
           </amp-img>
-          <q>Dogs come when they're called. Cats take a message and get back to you. --Mary Bly</q>
+          <q
+            >Dogs come when they're called. Cats take a message and get back to
+            you. --Mary Bly</q
+          >
         </amp-story-grid-layer>
       </amp-story-page>
       ...
@@ -172,12 +246,18 @@ Jika Anda hanya dapat menyediakan format video tunggal, sediakan MP4. Jika mungk
 Gunakan elemen anak `<source>` dalam komponen `<amp-video>` untuk menentukan sumber video daripada atribut `src`. Menggunakan elemen `<source>` memungkinkan Anda untuk menentukan jenis video dan menambahkan sumber video cadangan. Anda harus menggunakan atribut `type` untuk menentukan jenis MIME. Gunakan `application/x-mpegurl` atau `application/vnd.apple.mpegurl` untuk video HLS. Untuk semua jenis video lain, gunakan awalan MIME `video/` dan ikuti dengan format video, seperti `”video/mp4”`.
 
 ```html
-<amp-video id="video-page1" autoplay loop
-  layout="fill" poster="https://example.com/media/poster.jpg">
-  <source src="https://amp-example.com/media/movie.m3u8"
-    type="application/vnd.apple.mpegurl" />
-  <source src="https://amp-example.com/media/movie.mp4"
-    type="video/mp4" />
+<amp-video
+  id="video-page1"
+  autoplay
+  loop
+  layout="fill"
+  poster="https://example.com/media/poster.jpg"
+>
+  <source
+    src="https://amp-example.com/media/movie.m3u8"
+    type="application/vnd.apple.mpegurl"
+  />
+  <source src="https://amp-example.com/media/movie.mp4" type="video/mp4" />
 </amp-video>
 ```
 
@@ -186,7 +266,7 @@ Gunakan elemen anak `<source>` dalam komponen `<amp-video>` untuk menentukan sum
 Atribut [`auto-advance-after`](https://amp.dev/documentation/components/amp-story-page/?format=stories#auto-advance-after-%5Boptional%5D) diekspos dengan amp-story-page yang menentukan jika dan kapan sebuah halaman cerita harus maju tanpa harus diketuk pengguna. Untuk maju setelah sebuah video, arahkan atribut ke ID video.
 
 ```html
-<amp-story-page auto-advance-after="myvideo">
+<amp-story-page auto-advance-after="myvideo"></amp-story-page>
 ```
 
 ## Pengalaman desktop
@@ -196,11 +276,13 @@ Format Cerita Web mendukung sebuah [pengalaman desktop opsional](https://github.
 Pilih dukungan desktop dengan menambahkan atribut `supports-landscape` ke komponen `<amp-story>`.
 
 ```html
-<amp-story standalone
-    supports-landscape
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/icon.svg"
-    poster-portrait-src="assets/cover.jpg">
+<amp-story
+  standalone
+  supports-landscape
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+>
 </amp-story>
 ```

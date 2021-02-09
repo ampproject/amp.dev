@@ -1,6 +1,6 @@
 ---
-"$title": Dodawanie kolejnych stron
-"$order": '5'
+'$title': Dodawanie kolejnych stron
+$order: 5
 description: Wiesz już jak dodawać strony do relacji internetowej, a dodawanie kolejnych stron do naszej relacji „The Joy of Pets” przebiega bardzo podobnie.
 author: bpaduch
 ---

@@ -1,10 +1,10 @@
 ---
-"$title": AMP Optimizer nasıl çalışır?
-"$order": '1'
-description: "AMP Optimizer, girdi olarak geçerli bir AMPHTML belgesini alır ve \"elle\" yapılması zahmetli olacak ek optimizasyonları uygulayarak onu optimize edilmiş bir sürüme dönüştürür. Bu kılavuz, AMP Optimizer'ın nasıl çalıştığını ayrıntılı olarak açıklıyor."
+'$title': AMP Optimizer nasıl çalışır?
+$order: 1
+description: 'AMP Optimizer, girdi olarak geçerli bir AMPHTML belgesini alır ve "elle" yapılması zahmetli olacak ek optimizasyonları uygulayarak onu optimize edilmiş bir sürüme dönüştürür. Bu kılavuz, AMP Optimizer''ın nasıl çalıştığını ayrıntılı olarak açıklıyor.'
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 
@@ -63,7 +63,7 @@ AMP Optimizer'ları, diğer kritik kaynakların bant genişliğini engellemekten
 
 AMP Optimizer'ları ayrıca `amp-img`, `amp-iframe` , `amp-video` veya `amp-video-iframe` öğeleri için hero görüntülerini otomatik olarak algılar ve görüntü `src` alanı için `link rel=preload` parçasını otomatik olarak enjekte eder. Otomatik algılama, ilk görünüm alanındaki büyük görüntüleri algılamak için HTML biçimlendirmesini ve görüntü yerleşimlerini analiz ederek çalışır.
 
-`amp-img` olduğunda, AMP  Optimizer'lar, `img` etiketini `amp-img` içinde sunucu tarafında da oluşturur. Bu işlem, tarayıcının görüntüyü AMP çalışma zamanı gerekmeden hemen oluşturmasını sağlar.
+`amp-img` olduğunda, AMP Optimizer'lar, `img` etiketini `amp-img` içinde sunucu tarafında da oluşturur. Bu işlem, tarayıcının görüntüyü AMP çalışma zamanı gerekmeden hemen oluşturmasını sağlar.
 
 ### Görüntü Optimizasyonu
 

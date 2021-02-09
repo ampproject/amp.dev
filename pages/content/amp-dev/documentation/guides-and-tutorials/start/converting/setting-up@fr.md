@@ -1,8 +1,8 @@
 ---
-"$title": Configuration
-"$order": '0'
+'$title': Configuration
+$order: 0
 description: "Configurez votre environnement de développement Étape 1. Téléchargez le code. Téléchargez l'exemple de code du tutoriel sous forme de fichier ZIP ou via git ..."
-"$parent": "/documentation/guides-and-tutorials/start/converting/setting-up.md"
+'$parent': '/documentation/guides-and-tutorials/start/converting/setting-up.md'
 ---
 
 ## Prérequis

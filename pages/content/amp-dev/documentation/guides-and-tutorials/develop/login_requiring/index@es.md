@@ -1,11 +1,11 @@
 ---
-"$title": Creación de páginas AMP que requieren inicio de sesión
-"$order": '0'
+'$title': Creación de páginas AMP que requieren inicio de sesión
+$order: 0
 description: Algunas interacciones del usuario con una página, como dejar un comentario, podrían estar condicionadas por un flujo de entrada. Puede implementar un flujo de inicio de sesión...
 numbered: '1'
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 Algunas interacciones del usuario con una página, como dejar un comentario, podrían estar condicionadas por un flujo de entrada. Con AMP puede implementar un flujo de inicio de sesión usando el componente [`amp-access`](../../../../documentation/components/reference/amp-access.md) combinado con el componente <a><code>amp-form</code></a>.

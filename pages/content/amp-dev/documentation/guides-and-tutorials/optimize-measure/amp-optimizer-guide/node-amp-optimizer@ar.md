@@ -1,10 +1,10 @@
 ---
-"$title": دليل أداة AMP Optimizer في Node.js
-"$order": '2'
+'$title': دليل أداة AMP Optimizer في Node.js
+$order: 2
 description: يشرح هذا الدليل كيفية إعداد Node.js واستخدام إصدار من "أداة AMP Optimizer".
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

@@ -1,8 +1,8 @@
 ---
-"$title": Einrichtung
-"$order": '0'
+'$title': Einrichtung
+$order: 0
 description: Richte deine Entwicklungsumgebung ein. Schritt 1. Lade den Code herunter. Lade den Beispielcode für das Tutorial entweder als ZIP Datei oder via git herunter …
-"$parent": "/documentation/guides-and-tutorials/start/converting/setting-up.md"
+'$parent': '/documentation/guides-and-tutorials/start/converting/setting-up.md'
 ---
 
 ## Voraussetzungen

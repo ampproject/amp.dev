@@ -1,12 +1,12 @@
 ---
-"$title": AMP 용어
-"$order": '2'
+'$title': AMP 용어
+$order: 2
 description: AMP 용어 가이드라인
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 

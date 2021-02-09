@@ -1,11 +1,11 @@
 ---
-"$title": '如何缓存 AMP 网页 '
-"$order": '0'
+'$title': '如何缓存 AMP 网页 '
+$order: 0
 description: 在本文档中，您将了解AMP缓存在AMP生态系统中的作用，以及如何缓存AMP页面。
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 ---
 
 在本文档中，您将了解“AMP 缓存”在 AMP 生态系统中的角色以及 AMP 网页是如何缓存的。
@@ -18,7 +18,7 @@ AMP 缓存是一种基于代理的内容传送网络 (CDN)，用于传送有效�
 2. 让 AMP 网页能够安全且高效地预加载。
 3. 对内容执行额外的性能优化措施，以提升用户体验。
 
-[tip type =“ note”] AMP电子邮件文档免于AMP缓存。 [/小费]
+[tip type =“ note”] AMP 电子邮件文档免于 AMP 缓存。 [/小费]
 
 要想详细了解 AMP 缓存，请观看下方的 YouTube 视频，或参阅博文 [Why AMP Caches Exist](https://medium.com/@pbakaus/why-amp-caches-exist-cd7938da2456)。
 
@@ -59,7 +59,7 @@ AMP 缓存不是由身为发布商的您来选择的 - 所要使用的 AMP 缓�
 
 - **缓存网址请求**：平台可通过使用 AMP 缓存网址格式有针对性地请求访问某个 AMP 网页。在这种情况下，AMP 缓存便是充当了反向代理；因此，当相应平台访问该网页时，系统就会自动缓存该网页。
 
-    - Google AMP 缓存网址示例：`https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
+  - Google AMP 缓存网址示例：`https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
 [tip type="note"]<strong>注意:</strong> AMP 缓存网址不是面向用户的网址，也就是说，用户通常不会通过这些网址来请求获取内容。[/tip]
 

@@ -1,6 +1,6 @@
 ---
-"$title": Setting up
-"$order": '1'
+'$title': Setting up
+$order: 1
 description: 'Menyiapkan lingkungan pengembangan Anda: Langkah ke-1. Unduh kodenya. Unduh kode sampel untuk tutorial, baik sebagai berkas ZIP atau melalui git ....'
 author: bpaduch
 ---

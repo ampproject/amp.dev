@@ -1,9 +1,9 @@
 ---
-"$title": Sicher vor Angriffen Dritter
-"$order": '7'
+'$title': Sicher vor Angriffen Dritter
+$order: 7
 description: Schütze deine AMP Seiten und Benutzer vor Sicherheitslücken im Web
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 ---
 

@@ -1,10 +1,10 @@
 ---
 formats:
-- sites
-"$title": Faça com que sua página seja descoberta
-"$titles":
+  - sites
+'$title': Faça com que sua página seja descoberta
+'$titles':
   teaser: Faça com que sua página seja descoberta
-"$order": '5'
+$order: 5
 description: 'Em alguns casos, você pode querer uma versão não-AMP e uma versão AMP da mesma página, por exemplo, no caso de um artigo de notícia. Considere o seguinte: se a Busca do Google ...'
 teaser:
   icon: discover

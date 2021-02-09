@@ -1,11 +1,11 @@
 ---
-"$title": Wechselwirkung zwischen AMP und PWA
-"$order": '7'
+'$title': Wechselwirkung zwischen AMP und PWA
+$order: 7
 description: Progressive Web Apps und AMP Seiten funktionieren hervorragend zusammen. In vielen Fällen können sie sich sogar ergänzen. Finde heraus, wie …
 formats:
-- websites
+  - websites
 components:
-- youtube
+  - youtube
 author: pbakaus
 ---
 
@@ -31,7 +31,7 @@ AMP Seiten können viele eigenständige PWA Funktionen nutzen, sofern sie nicht 
 
 ## AMP als Einstiegspunkt in deine PWA
 
-Das Besondere an AMP ist die **fast verzögerungsfreie Bereitstellung** – eine Eigenschaft, die AMP zur idealen Lösung für die erste Benutzerinteraktion mit deiner Website macht. *Progressive Web Apps* ermöglichen zwar **mehr Interaktivität und bieten Funktionen für zusätzliches Engagement**. Allerdings wird ihr erstmaliges Laden dadurch erschwert, dass der Service Worker der Website – und damit ihre Assets und die App Shell – die Bereitstellung nur beim nachfolgenden Laden beschleunigen.
+Das Besondere an AMP ist die **fast verzögerungsfreie Bereitstellung** – eine Eigenschaft, die AMP zur idealen Lösung für die erste Benutzerinteraktion mit deiner Website macht. _Progressive Web Apps_ ermöglichen zwar **mehr Interaktivität und bieten Funktionen für zusätzliches Engagement**. Allerdings wird ihr erstmaliges Laden dadurch erschwert, dass der Service Worker der Website – und damit ihre Assets und die App Shell – die Bereitstellung nur beim nachfolgenden Laden beschleunigen.
 
 Eine gute Strategie besteht darin, eine AMP Seite als Einstiegspunkt für deine Website zu erstellen, dann die PWA hinter den Kulissen zu starten und für die weitere Navigation der Benutzer durch die Website zur PWA zu wechseln.
 

@@ -1,17 +1,17 @@
 ---
-"$title": Как вы можете помочь?
-"$titles":
+'$title': Как вы можете помочь?
+'$titles':
   navigation: Contribute
-"$path": "/documentation/guides-and-tutorials/contribute/index.html"
-"$localization":
-  path: "/{locale}/documentation/guides-and-tutorials/contribute/index.html"
-"$order": '0'
+'$path': '/documentation/guides-and-tutorials/contribute/index.html'
+'$localization':
+  path: '/{locale}/documentation/guides-and-tutorials/contribute/index.html'
+$order: 0
 description: Проект AMP был бы невозможен без помощи всех членов сообщества, независимо от того, являетесь ли вы разработчиком, создателем контента или поставщиком услуг, связанных с AMP.
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 ---
 
 Проект AMP был бы невозможен без помощи всех членов сообщества, независимо от того, являетесь ли вы разработчиком, создателем контента или поставщиком услуг, связанных с AMP. Внести свой вклад в развитие проекта можно множеством способов.

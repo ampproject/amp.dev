@@ -1,6 +1,6 @@
 ---
-"$title": حل أخطاء التحقق من الصحة
-"$order": '2'
+'$title': حل أخطاء التحقق من الصحة
+$order: 2
 description: في هذا القسم، سنتناول أخطاء التحقق من صحة صفحات AMP ونحلها من صفحة AMP الخاصة بنا، ولاحظ أن الأخطاء قد تظهر بترتيب مختلف في وحدة التحكم الخاصة بك.
 ---
 
@@ -35,13 +35,13 @@ description: في هذا القسم، سنتناول أخطاء التحقق م�
 ابدأ و**أضف** الرمز التاليل أسفل العلامة `<meta charset="utf-8" />`:
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 [tip type="note"] يمكنك إنشاء صفحة AMP معيارية قائمة بذاتها، وما يزال الرابط المعياري مطلوبًا، ولكن يجب أن يشير إلى مقال AMP نفسه:
 
 ```html
-<link rel="canonical" href="article.amp.html">
+<link rel="canonical" href="article.amp.html" />
 ```
 
 [/tip]
@@ -57,7 +57,7 @@ description: في هذا القسم، سنتناول أخطاء التحقق م�
 ويمكن حل الأخطاء أعلاه ببساطة عن طريق إضافة السمة `⚡` إلى العلامة `<html>` على النحو التالي:
 
 ```html
-<html ⚡ lang="en">
+<html ⚡ lang="en"></html>
 ```
 
 والآن، تابع وأعد تحميل الصفحة وتحقق من اختفاء كلا الخطأين.
@@ -65,7 +65,7 @@ description: في هذا القسم، سنتناول أخطاء التحقق م�
 [tip type="note"] على الرغم من أن تحديد `⚡` يُعد الأسلوب الموصى به، فمن الممكن أيضًا استخدام السمة `amp` بدلًا عن السمة `⚡` مثل:
 
 ```html
-<html amp lang="en">
+<html amp lang="en"></html>
 ```
 
 [/tip]
@@ -81,7 +81,7 @@ description: في هذا القسم، سنتناول أخطاء التحقق م�
 لحل خطأ منفذ العرض، أضف مقتطف HTML التالي إلى علامة `<head>`:
 
 ```html
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width" />
 ```
 
 تُعد القيم المحددة لـ `width` و`minimum-scale` القيم المطلوبة في AMP، حيث إن تعريف `initial-scale` ليس إلزاميًا ولكنه مضمن بشكل شائع في تطوير الويب للهاتف المحمول وهو أمر موصى به. يمكنك قراءة المزيد حول منفذ العرض والتصميم سريع الاستجابة في [تهيئة منفذ العرض](https://developers.google.com/speed/docs/insights/ConfigureViewport).
@@ -104,9 +104,7 @@ description: في هذا القسم، سنتناول أخطاء التحقق م�
 
 ```html
 <style amp-custom>
-
-/* The content from base.css */
-
+  /* The content from base.css */
 </style>
 ```
 
@@ -171,7 +169,63 @@ use of external JavaScript files.
 يتطلب كل مستند AMP رمز الكود لـ AMP التالي:
 
 ```html
-<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<style amp-boilerplate>
+  body {
+    -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+  }
+  @-webkit-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-moz-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-ms-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-o-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }</style
+><noscript
+  ><style amp-boilerplate>
+    body {
+      -webkit-animation: none;
+      -moz-animation: none;
+      -ms-animation: none;
+      animation: none;
+    }
+  </style></noscript
+>
 ```
 
 **أضف** رمز الفقرة إلى الجزء السفلي من علامة `<head>` لمستندك.
@@ -220,7 +274,7 @@ use of external JavaScript files.
 
 قم بتحديث الصفحة وتحقق من أداة التحقق من الصحة؛ يجب ألا ترى أي أخطاء بعد الآن!
 
-والآن لديك مستند AMP صالح، لكن الصورة لا تبدو رائعة جدًا لأنها موضوعة على نحو غير ملائم على الصفحة. وبشكل افتراضي، عندما تحدد ارتفاع وعرض [`amp-img`](../../../../documentation/components/reference/amp-img.md)، فإن AMP ستصلح الأبعاد وفقًا لما تحدده؛ لكن ألن يكون الأمر رائعًا إذا كان حجم AMP الصورة يمتد *على نحو متجاوب* ويناسب الصفحة بغض النظر عن حجم الشاشة؟
+والآن لديك مستند AMP صالح، لكن الصورة لا تبدو رائعة جدًا لأنها موضوعة على نحو غير ملائم على الصفحة. وبشكل افتراضي، عندما تحدد ارتفاع وعرض [`amp-img`](../../../../documentation/components/reference/amp-img.md)، فإن AMP ستصلح الأبعاد وفقًا لما تحدده؛ لكن ألن يكون الأمر رائعًا إذا كان حجم AMP الصورة يمتد _على نحو متجاوب_ ويناسب الصفحة بغض النظر عن حجم الشاشة؟
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-not-responsive.png', 412, 660, align='center third', caption="Our image isn't responsive.") }}
 
@@ -229,7 +283,12 @@ use of external JavaScript files.
 دعنا **نعيِّن** سمة التنسيق إلى `response` بحيث يتم تغيير حجم الصورة ومقاييسها:
 
 ```html
-<amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+<amp-img
+  src="mountains.jpg"
+  layout="responsive"
+  width="266"
+  height="150"
+></amp-img>
 ```
 
 ها هي! صورتنا في نسبة العرض إلى الارتفاع الصحيحة وتملأ عرض الشاشة على نحو متجاوب.
@@ -243,18 +302,75 @@ use of external JavaScript files.
 الآن يجب أن يبدو مستند AMP على النحو التالي:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width" />
 
-    <link rel="canonical" href="/article.html">
-    <link rel="shortcut icon" href="amp_favicon.png">
+    <link rel="canonical" href="/article.html" />
+    <link rel="shortcut icon" href="amp_favicon.png" />
 
     <title>News Article</title>
 
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
     <style amp-custom>
       body {
         width: auto;
@@ -284,15 +400,21 @@ use of external JavaScript files.
     <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
-    <header>
-      News Site
-    </header>
+    <header>News Site</header>
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
 
-      <amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+      <amp-img
+        src="mountains.jpg"
+        layout="responsive"
+        width="266"
+        height="150"
+      ></amp-img>
     </article>
   </body>
 </html>

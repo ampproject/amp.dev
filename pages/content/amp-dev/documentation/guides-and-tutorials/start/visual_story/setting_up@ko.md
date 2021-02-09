@@ -1,6 +1,6 @@
 ---
-"$title": Setting up
-"$order": '1'
+'$title': Setting up
+$order: 1
 description: 개발 환경 설정 1단계. 코드 다운로드. 튜토리얼에서 사용할 샘플 코드를 ZIP 파일로 다운로드하거나 다음의 git를 통해 다운로드합니다...
 author: bpaduch
 ---
@@ -24,7 +24,7 @@ author: bpaduch
 
 #### 2단계: 예제 페이지 실행
 
-예제 스토리를 테스트하려면 웹 서버에서 파일에 액세스해야 합니다. 테스트에 사용할 임시 로컬 웹 서버를 만드는 방법에는 여러 가지가 있습니다.  아래에 몇 가지 옵션이 소개되어 있습니다. 가장 적합한 옵션을 선택하십시오.
+예제 스토리를 테스트하려면 웹 서버에서 파일에 액세스해야 합니다. 테스트에 사용할 임시 로컬 웹 서버를 만드는 방법에는 여러 가지가 있습니다. 아래에 몇 가지 옵션이 소개되어 있습니다. 가장 적합한 옵션을 선택하십시오.
 
 - ['Chrome용 웹 서버' Chrome 앱](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
 - [로컬 HTTP Python 서버](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server#Running_a_simple_local_HTTP_server)

@@ -1,10 +1,10 @@
 ---
-"$title": Biến website AMP của bạn thành một PWA
-"$order": '10'
+'$title': Biến website AMP của bạn thành một PWA
+$order: 10
 description: Bằng cách lưu vào bộ nhớ đệm những tài nguyên bên trong trình duyệt, PWA có thể cung ứng dữ liệu, tài sản và những trang ngoại tuyến để người dùng duy trì nối kết và trạng thái cập nhật với chúng.
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: crystalonscript
 ---
 

@@ -1,10 +1,10 @@
 ---
-"$title": Create your first Web Story
-"$order": '0'
+'$title': Create your first Web Story
+$order: 0
 description: 在本教程中，我们将向您介绍 amp-story 组件，您可以利用该组件在 AMP 中创建引人入胜的故事。待学完本教程后 ...
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- stories
+  - stories
 author: bpaduch
 ---
 

@@ -1,10 +1,10 @@
 ---
-"$title": Trasforma il tuo sito AMP in una PWA
-"$order": '10'
+'$title': Trasforma il tuo sito AMP in una PWA
+$order: 10
 description: "Memorizzando le risorse nella cache all'interno del browser, le PWA (Progressive Web Applications) sono in grado di fornire dati, risorse e pagine offline, mantenendo elevato il coinvolgimento e il contenuto informativo degli utenti."
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: crystalonscript
 ---
 
@@ -75,7 +75,7 @@ Queste due semplici righe di codice sono in grado di importare e inizializzare i
 
 ## Installazione automatica del processo di lavoro dei servizi sulle pagine AMP
 
-I siti web AMP utilizzano il componente [`<amp-install-serviceworker>`](../../../documentation/components/reference/amp-install-serviceworker.md) per installare in background il processo di lavoro sul browser, mentre l'utente sta usufruendo dei  contenuti del sito.
+I siti web AMP utilizzano il componente [`<amp-install-serviceworker>`](../../../documentation/components/reference/amp-install-serviceworker.md) per installare in background il processo di lavoro sul browser, mentre l'utente sta usufruendo dei contenuti del sito.
 
 Posizionare il tag dello script richiesto nell'intestazione di `index.html` e l'elemento `<amp-install-serviceworker>` all'interno della sezione `<body>`:
 

@@ -1,8 +1,8 @@
 ---
-"$title": AMP 电子邮件中的操作和事件
-order: '0'
+'$title': AMP 电子邮件中的操作和事件
+$order: 0
 formats:
-- 电子邮件
+  - 电子邮件
 teaser:
   text: '[tip type="note"]'
 ---
@@ -108,7 +108,7 @@ AMP 还定义了全局 `hide`、`show` 和 `toggleVisibility` 操作，您可以
 
 ## 元素特有的事件 <a name="element-specific-events"></a>
 
-### * - 所有元素 <a name="---all-elements"></a>
+### \* - 所有元素 <a name="---all-elements"></a>
 
 <table>
   <tr>
@@ -323,7 +323,7 @@ AMP 还定义了全局 `hide`、`show` 和 `toggleVisibility` 操作，您可以
 
 ## 元素特有的操作 <a name="element-specific-actions"></a>
 
-### *（所有元素） <a name="-all-elements"></a>
+### \*（所有元素） <a name="-all-elements"></a>
 
 <table>
   <tr>

@@ -1,11 +1,11 @@
 ---
-"$title": Kod standardowy AMP
-order: '9'
+'$title': Kod standardowy AMP
+$order: 9
 formats:
-- websites
-- stories
+  - websites
+  - stories
 teaser:
-  text: " head > style[amp-boilerplate] i noscript > style[amp-boilerplate]"
+  text: ' head > style[amp-boilerplate] i noscript > style[amp-boilerplate]'
 ---
 
 <!--

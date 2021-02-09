@@ -1,11 +1,11 @@
 ---
-"$title": Cấu hình công cụ phân tích
-"$order": '5'
-"$hidden": 'true'
+'$title': Cấu hình công cụ phân tích
+$order: 5
+'$hidden': 'true'
 description: Nếu bạn đang dùng Google Analytics làm nhà cung cấp công cụ phân tích của mình, hãy tìm hiểu cách thiết lập Google Analytics cơ bản cho AMP và cách liên kết nội dung AMP và phi AMP bằng ID Máy khách
 formats:
-- websites
-- stories
+  - websites
+  - stories
 ---
 
 [tip] **Mẹo –** Nếu bạn đang dùng Google Analytics làm nhà cung cấp công cụ phân tích của mình, hãy tìm hiểu [cách thiết lập Google Analytics cơ bản cho AMP](https://developers.google.com/analytics/devguides/collection/amp-analytics/#basic_setup_to_measure_page_views), và [cách liên kết nội dung AMP và không phải AMP bằng ID Máy khách](https://support.google.com/analytics/answer/7486764). [/tip]

@@ -1,6 +1,6 @@
 ---
-"$title": Understanding the parts of an AMP story
-"$order": '2'
+'$title': Understanding the parts of an AMP story
+$order: 2
 description: Uma História Web é uma experiência de narrativa visual em tela inteira que transmite informações com imagens, vídeos, gráficos, áudio e muito mais. É perfeita para usuários ...
 author: bpaduch
 ---

@@ -1,8 +1,8 @@
 ---
-"$title": 将广告技术集成到 AMP 中
-order: '3'
+'$title': 将广告技术集成到 AMP 中
+$order: 3
 formats:
-- ads
+  - ads
 teaser:
   text: 如果您是一家想要与 AMP HTML 集成的广告技术提供商，请参阅以下准则。
 toc: 'true'
@@ -19,7 +19,7 @@ have a look and request a pull request there.
 
 ## 广告服务器 <a name="ad-server"></a>
 
-*示例：DFP、A9*
+_示例：DFP、A9_
 
 作为广告服务器，您支持的发布商会添加您提供的 JavaScript 库，并且会设置各种“广告摘要”，这些摘要依赖 JavaScript 库来提取广告并在发布商的网站上呈现广告。
 
@@ -29,15 +29,15 @@ have a look and request a pull request there.
 
 [sourcecode:html]
 <amp-ad
-  width="300"
-  height="250"
-  type="a9"
-  data-aax_size="300x250"
-  data-aax_pubname="test123"
-  data-aax_src="302"
->
-</amp-ad>
-[/sourcecode]
+width="300"
+height="250"
+type="a9"
+data-aax_size="300x250"
+data-aax_pubname="test123"
+data-aax_src="302"
+
+> </amp-ad>
+> [/sourcecode]
 
 请注意，`type` 后面的任何属性都与 Amazon A9 服务器在投放广告时所需的参数相关。[a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) 文件显示了这些参数与发出 JavaScript 调用之间的映射关系，JavaScript 调用通过网址 `https://c.amazon-adsystem.com/aax2/assoc.js` 调用 A9 服务器。AMP 广告代码传递的相应参数将附加到该网址，以返回广告。
 
@@ -45,7 +45,7 @@ have a look and request a pull request there.
 
 ## 供应方平台 (SSP) 或 Ad Exchange <a name="supply-side-platform-ssp-or-an-ad-exchange"></a>
 
-*示例：Rubicon、Criteo OR Appnexus、Ad-Exchange*
+_示例：Rubicon、Criteo OR Appnexus、Ad-Exchange_
 
 作为销售方平台，如果您希望直接从发布商的网页上被调用，则需要按照上述与广告服务器集成的相关说明进行操作。将您自己的 `type` 值添加到 amp-ad 标记后，可以直接向发布商分发您的标记，这样，发布商便可将您的标记直接插入其 AMP 网页。
 
@@ -53,7 +53,7 @@ have a look and request a pull request there.
 
 ## 广告代理机构 <a name="ad-agency"></a>
 
-*示例：Essence、Omnicom*
+_示例：Essence、Omnicom_
 
 与发布商一起确保您开发的广告素材符合 AMP 的要求。由于所有广告素材均会投放到 iframe 中，而 iframe 的大小在调用广告时已经确定下来，因此，请确保广告素材不会尝试修改 iframe 的大小。
 
@@ -61,7 +61,7 @@ have a look and request a pull request there.
 
 ## 视频播放器 <a name="video-player"></a>
 
-*示例：Brightcove、Ooyala*
+_示例：Brightcove、Ooyala_
 
 常规 HTML 网页中的视频播放器无法在 AMP 中运行，因此，必须创建允许 AMP 运行时加载您的播放器的特定标记。Brightcove 创建了自定义标记 [amp-brightcove](https://github.com/ampproject/amphtml/blob/master/extensions/amp-brightcove/amp-brightcove.md)，用于在 AMP 网页中播放媒体和广告。
 
@@ -69,21 +69,21 @@ Brightcove 播放器的调用方式如下：
 
 [sourcecode:html]
 <amp-brightcove
-  data-account="1290862519001"
-  data-video-id="ref:amp-docs-sample"
-  data-player="S1Tt8cgaM"
-  layout="responsive"
-  width="480"
-  height="270"
->
-</amp-brightcove>
-[/sourcecode]
+data-account="1290862519001"
+data-video-id="ref:amp-docs-sample"
+data-player="S1Tt8cgaM"
+layout="responsive"
+width="480"
+height="270"
+
+> </amp-brightcove>
+> [/sourcecode]
 
 有关如何开发 Brightcove 等 amp 标记的说明，请参阅[此拉取请求](https://github.com/ampproject/amphtml/pull/1052)。
 
 ## 视频广告联盟 <a name="video-ad-network"></a>
 
-*示例：Tremor、Brightroll*
+_示例：Tremor、Brightroll_
 
 如果您是一家视频广告联盟，请与发布商一起确保做到以下两点：
 
@@ -92,7 +92,7 @@ Brightcove 播放器的调用方式如下：
 
 ## 数据管理平台 (DMP) <a name="data-management-platform-dmp"></a>
 
-*示例：KRUX、Bluekai*
+_示例：KRUX、Bluekai_
 
 了解[如何增强自定义广告配置](https://amp.dev/documentation/components/amp-ad#enhance-incoming-ad-configuration)。
 
@@ -100,7 +100,7 @@ Brightcove 播放器的调用方式如下：
 
 ## 可见度提供商 <a name="viewability-provider"></a>
 
-*示例：MOAT、Integral Ad Science*
+_示例：MOAT、Integral Ad Science_
 
 可见度提供商通常利用广告服务器的广告素材封装容器来与发布商集成。在这种情况下，请确保广告素材封装容器通过 HTTPS 加载所有素材资源。
 
@@ -110,6 +110,6 @@ Brightcove 播放器的调用方式如下：
 
 ## 内容建议平台 <a name="content-recommendation-platform"></a>
 
-*示例：Taboola、Outbrain*
+_示例：Taboola、Outbrain_
 
 适用于以下情况：您目前在发布商网站上嵌入了一些 JavaScript，但该方式在 AMP 网页上不起作用。如果您希望在 AMP 网页上向用户推荐内容，我们建议您使用 [`amp-embed` 扩展组件](https://amp.dev/documentation/components/amp-ad)请求内容详细信息。请参阅 [Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md) 示例。

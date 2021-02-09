@@ -1,6 +1,6 @@
 ---
-"$title": Xác thực AMP HTML của bạn
-"$order": '8'
+'$title': Xác thực AMP HTML của bạn
+$order: 8
 description: Bất kì khi nào bạn tạo một trang AMP, bạn luôn có thể xác thực AMP HTML của bạn là đúng. Có một số phương pháp mà bạn có thể dùng để xác thực các trang AMP của mình ...
 author: bpaduch
 ---

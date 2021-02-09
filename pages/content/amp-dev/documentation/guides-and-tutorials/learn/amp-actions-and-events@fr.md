@@ -1,10 +1,10 @@
 ---
-"$title": Actions et événements
-order: '0'
+'$title': Actions et événements
+$order: 0
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
   text: '[tip type="note"]'
 ---
@@ -117,7 +117,7 @@ L'exemple suivant est possible dans AMP:
 
 ## Événements spécifiques aux éléments <a name="element-specific-events"></a>
 
-### * - tous les éléments <a name="---all-elements"></a>
+### \* - tous les éléments <a name="---all-elements"></a>
 
 <table>
   <tr>
@@ -362,7 +362,7 @@ L'exemple suivant est possible dans AMP:
 
 ## Actions spécifiques aux éléments <a name="element-specific-actions"></a>
 
-### * (tous les éléments) <a name="-all-elements"></a>
+### \* (tous les éléments) <a name="-all-elements"></a>
 
 <table>
   <tr>

@@ -1,9 +1,9 @@
 ---
-"$title": Bảo mật trước những tấn công của bên thứ ba
-"$order": '7'
+'$title': Bảo mật trước những tấn công của bên thứ ba
+$order: 7
 description: Thực hiện những biện pháp nhằm bảo vệ các trang AMP của bạn cùng người dùng để tránh những lỗ hổng bảo mật trên web
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 ---
 

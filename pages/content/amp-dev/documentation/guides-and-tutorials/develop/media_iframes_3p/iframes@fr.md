@@ -1,15 +1,15 @@
 ---
-"$title": Comment inclure les iframes
-"$order": '10'
+'$title': Comment inclure les iframes
+$order: 10
 description: "Découvrez comment afficher vos pages avec du contenu multimédia et comment utiliser les iframes pour afficher du contenu avancé en dehors des limites d'AMP."
 formats:
-- websites
+  - websites
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- Meggin
-- bpaduch
+  - Meggin
+  - bpaduch
 ---
 
 Learn how to display include media content in your pages, and how to use iframes to display advanced content outside of AMP's limitations.
@@ -32,19 +32,24 @@ Les iframes sont particulièrement utiles dans AMP pour afficher du contenu non 
 Pour inclure une balise [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) dans votre page, commencez par inclure le script suivant dans la section `<head>` afin e charger le code supplémentaire pour le composant étendu:
 
 [sourcecode:html]
+
 <script async custom-element="amp-iframe"
   src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+
 [/sourcecode]
 
 ### Comment écrire le balisage
 
-Dans l'exemple suivant, nous avons créé une balise [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) réactive pour intégrer une carte Google Map via  [l'API d'intégration de Google Maps](https://developers.google.com/maps/documentation/embed/guide):
+Dans l'exemple suivant, nous avons créé une balise [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) réactive pour intégrer une carte Google Map via [l'API d'intégration de Google Maps](https://developers.google.com/maps/documentation/embed/guide):
 
 ```html
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    src="https://www.google.com/maps/embed/v1/place?key={YOUR API KEY}&q=europe">
+<amp-iframe
+  width="200"
+  height="100"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  src="https://www.google.com/maps/embed/v1/place?key={YOUR API KEY}&q=europe"
+>
 </amp-iframe>
 ```
 
@@ -57,12 +62,18 @@ Vous pouvez afficher une [`amp-iframe`](../../../../documentation/components/ref
 Exemple avec caractère de remplacement:
 
 ```html
-<amp-iframe width="400" height="225"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    src="https://giphy.com/embed/OWabwoEn7ezug">
-  <amp-img placeholder layout="fill"
-      src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"></amp-img>
+<amp-iframe
+  width="400"
+  height="225"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  src="https://giphy.com/embed/OWabwoEn7ezug"
+>
+  <amp-img
+    placeholder
+    layout="fill"
+    src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"
+  ></amp-img>
 </amp-iframe>
 ```
 

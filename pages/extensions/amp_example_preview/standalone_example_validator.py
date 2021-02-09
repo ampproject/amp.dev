@@ -81,7 +81,7 @@ class ExampleExportValidator:
 
   @staticmethod
   def load_file_content(path):
-    with open(path, 'r') as markdown_file:
+    with open(path, 'rb') as markdown_file:
       file_contents = markdown_file.read().decode('utf-8')
       return file_contents
 
@@ -143,7 +143,7 @@ class ExampleExportValidator:
   def get_validation_errors(self, validator_output):
     errors = []
     validations = json.loads(validator_output)
-    for path, result in validations.iteritems():
+    for path, result in validations.items():
       if result['status'] == 'FAIL':
         error_message = self.get_error_text_pattern(path)
         for error in result['errors']:

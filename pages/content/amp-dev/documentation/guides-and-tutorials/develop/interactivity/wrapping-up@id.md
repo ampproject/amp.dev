@@ -1,6 +1,6 @@
 ---
-"$title": Penutup
-"$order": '4'
+'$title': Penutup
+$order: 4
 description: Selamat! Anda baru saja membuat halaman detail produk niaga-e (e-commerce) interaktif dengan ukuran dan harga variabel untuk setiap SKU, diambil saat diminta dari titik akhir (endpoint) JSON jarak jauh.
 ---
 

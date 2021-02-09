@@ -1,12 +1,12 @@
 ---
-"$title": Kolay çevrimdışı erişim ve iyileştirilmiş performans
-"$order": '11'
+'$title': Kolay çevrimdışı erişim ve iyileştirilmiş performans
+$order: 11
 description: Hizmet Çalışanı, sayfanız ile sunucunuz arasında yer alan ve harika çevrimdışı deneyimler ve hızlı yüklenen uygulama kabuğu senaryoları oluşturmak ve anlık bildirimler göndermek için kullanılan...
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 contributors:
-- pbakaus
+  - pbakaus
 ---
 
 [Hizmet çalışanları](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API), çeşitli ağ güçlerinde zengin çevrimdışı deneyimler ve tutarlı kullanıcı deneyimleri sağlar. Bir web uygulaması, tarayıcı içindeki kaynakları önbelleğe alarak, kullanıcıların etkileşimlerini devam ettirmek ve bilgiler sunmak için veriler, varlıklar ve çevrimdışı sayfalar sağlayabilir.
@@ -51,11 +51,11 @@ Buradaysanız, AMP ile sayfalar oluşturuyorsunuz demektir. AMP ekibi, kullanıc
 
 AMP Hizmet Çalışanını minimum sayıda adımla kurun:
 
-- [sourcecode:js]  importScripts('https://cdn.ampproject.org/sw/amp-sw.js');  [/sourcecode]
+- [sourcecode:js] importScripts('https://cdn.ampproject.org/sw/amp-sw.js'); [/sourcecode]
 
 - [sourcecode:js]
-      AMP_SW.init();
-      [/sourcecode]
+  AMP_SW.init();
+  [/sourcecode]
 
 - Bitti.
 

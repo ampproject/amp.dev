@@ -1,9 +1,9 @@
 ---
-"$title": Animating elements
-"$order": '6'
+'$title': Animating elements
+$order: 6
 description: ページ内の要素の表示処理をアニメーション化することで、Web ストーリーの見栄えをさらに向上させることができます。たとえば、タイトルを画面の左からスライドインさせたり、ページにドロップインさせたり ...
 components:
-- anim
+  - anim
 author: bpaduch
 ---
 
@@ -150,21 +150,33 @@ author: bpaduch
 <amp-story-page id="page5">
   <amp-story-grid-layer template="vertical" class="noedge">
     <div class="wrapper">
-      <amp-img src="assets/cat.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/cat.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/dog.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/dog.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/bird.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/bird.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/rabbit.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/rabbit.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
     </div>
   </amp-story-grid-layer>
@@ -183,9 +195,9 @@ author: bpaduch
 まず、バナーテキストの表示処理をアニメーション化し、ページの右側からスライドインします。以下のように、`<p>` 要素に `animate-in="whoosh-in-right"` を追加します。
 
 ```html
-<p class="banner-text"
-  animate-in="whoosh-in-right">
-Pets can lower your stress levels!</p>
+<p class="banner-text" animate-in="whoosh-in-right">
+  Pets can lower your stress levels!
+</p>
 ```
 
 ブラウザでストーリー ページを再度読み込み、バナーがスライドインすることを確認してください。
@@ -193,25 +205,37 @@ Pets can lower your stress levels!</p>
 次に、すべての画像をフェードインします。以下のように、コードの各 <a><code>amp-img</code></a> 要素に `animate-in="fade-in"` を追加します。
 
 ```html
-<amp-img src="assets/cat.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/cat.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/dog.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/dog.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/bird.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/bird.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/rabbit.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/rabbit.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
 ```
 
@@ -220,31 +244,42 @@ Pets can lower your stress levels!</p>
 たとえば、最初の画像の表示処理を開始するタイミングを 0.4 秒（0.4s）遅延させて、テキストバナーの表示処理が完了する寸前に開始されるようにしましょう。残りの 3 枚の画像の表示処理は、直前の画像の表示処理が開始されてから 0.2 秒（0.2s）後に開始されるようにします。各 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 要素に、`animate-in-delay=""` 属性を使って適切な遅延の値を指定します。コードは以下のようになります。
 
 ```html
-<amp-img src="assets/cat.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="0.4s">
+<amp-img
+  src="assets/cat.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="0.4s"
+>
 </amp-img>
-<amp-img src="assets/dog.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="0.6s">
+<amp-img
+  src="assets/dog.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="0.6s"
+>
 </amp-img>
-<amp-img src="assets/bird.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay=".8s">
+<amp-img
+  src="assets/bird.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay=".8s"
+>
 </amp-img>
-<amp-img src="assets/rabbit.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="1s">
+<amp-img
+  src="assets/rabbit.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="1s"
+>
 </amp-img>
-
 ```
 
 ストーリーを更新して再度読み込みます。最後のページが以下のようになります。

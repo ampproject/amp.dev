@@ -1,6 +1,6 @@
 ---
-"$title": 커버 페이지 제작
-"$order": '4'
+'$title': 커버 페이지 제작
+$order: 4
 description: 페이지를 제작하려면 <amp-story-page> 요소를 amp-story의 하위 요소로 추가하고, 페이지에 고유 ID를 할당합니다. 첫 번째 페이지인 커버 페이지에는 다음과 같이 고유 ID를 할당...
 author: bpaduch
 ---
@@ -10,17 +10,18 @@ author: bpaduch
 페이지를 제작하려면 `<amp-story-page>` 요소를 [`amp-story`](../../../../documentation/components/reference/amp-story.md)의 하위 요소로 **추가**하고, 페이지에 고유 ID를 **할당**합니다. 첫 번째 페이지인 커버 페이지에는 다음과 같이 `cover`라는 고유 ID를 할당하겠습니다.
 
 ```html
-<amp-story standalone
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-    poster-portrait-src="assets/cover.jpg">
-   <amp-story-page id="cover">
-   </amp-story-page>
+<amp-story
+  standalone
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+>
+  <amp-story-page id="cover"> </amp-story-page>
 </amp-story>
 ```
 
-이제 커버 페이지를 위한 셸이 생겼습니다. 하지만 아직도 스토리가 유효하지 않습니다.  페이지 내에서 **레이어**를 하나 이상 지정해야 합니다. {{ image('/static/img/docs/tutorials/amp_story/cover_layers.png', 416, 679, alt='cover page has two layers', align='right third' ) }}
+이제 커버 페이지를 위한 셸이 생겼습니다. 하지만 아직도 스토리가 유효하지 않습니다. 페이지 내에서 **레이어**를 하나 이상 지정해야 합니다. {{ image('/static/img/docs/tutorials/amp_story/cover_layers.png', 416, 679, alt='cover page has two layers', align='right third' ) }}
 
 ## 페이지의 레이어
 
@@ -40,9 +41,12 @@ author: bpaduch
 ```html
 <amp-story-page id="cover">
   <amp-story-grid-layer template="fill">
-    <amp-img src="assets/cover.jpg"
-        width="720" height="1280"
-        layout="responsive">
+    <amp-img
+      src="assets/cover.jpg"
+      width="720"
+      height="1280"
+      layout="responsive"
+    >
     </amp-img>
   </amp-story-grid-layer>
 </amp-story-page>
@@ -108,7 +112,7 @@ author: bpaduch
 
 ```html
 <amp-story-grid-layer>
- <!--our first layer -->
+  <!--our first layer -->
 </amp-story-grid-layer>
 <amp-story-grid-layer template="vertical">
   <h1>The Joy of Pets</h1>

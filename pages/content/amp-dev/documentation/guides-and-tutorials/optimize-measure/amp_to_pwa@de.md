@@ -1,10 +1,10 @@
 ---
-"$title": Wandle deine AMP Website in eine PWA um
-"$order": '10'
+'$title': Wandle deine AMP Website in eine PWA um
+$order: 10
 description: Durch das Zwischenspeichern von Ressourcen im Browser kann eine PWA den Benutzern Daten, Assets und Offlineseiten bereitstellen, um sie zu unterhalten und zu informieren.
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: crystalonscript
 ---
 
