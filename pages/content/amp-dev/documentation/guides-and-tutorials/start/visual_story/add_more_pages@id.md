@@ -1,6 +1,6 @@
 ---
-"$title": Adding more pages
-"$order": '5'
+'$title': Adding more pages
+$order: 5
 description: Setelah kini Anda menguasai cara menambahkan halaman ke Cerita Web, cara menambahkan halaman berikutnya dalam cerita "The Joy of Pets" sangat mirip.
 author: bpaduch
 ---

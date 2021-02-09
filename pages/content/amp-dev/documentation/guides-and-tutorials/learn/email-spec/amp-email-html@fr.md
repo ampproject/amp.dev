@@ -1,10 +1,10 @@
 ---
-"$title": HTML pris en charge par AMP pour e-mail
-order: '4'
+'$title': HTML pris en charge par AMP pour e-mail
+$order: 4
 formats:
-- email
+  - email
 teaser:
-  text: 'Remarque: cette liste n''est pas normative et est fournie à titre indicatif uniquement. Les règles du validateur AMP prévalent'
+  text: "Remarque: cette liste n'est pas normative et est fournie à titre indicatif uniquement. Les règles du validateur AMP prévalent"
 toc: 'true'
 ---
 

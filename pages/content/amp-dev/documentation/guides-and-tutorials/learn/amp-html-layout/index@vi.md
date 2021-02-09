@@ -1,11 +1,11 @@
 ---
-"$title": Hệ thống Bố cục AMPHTML
-order: '1'
+'$title': Hệ thống Bố cục AMPHTML
+$order: 1
 formats:
-- websites
-- email
-- stories
-- ads
+  - websites
+  - email
+  - stories
+  - ads
 teaser:
   text: 'Tổng quan '
 ---
@@ -68,13 +68,14 @@ AMP cung cấp một nhóm bố cục quy định hoạt động của một th�
 
 [sourcecode:html]
 <amp-img
-  src="/img/amp.jpg"
-  width="1080"
-  height="610"
-  layout="responsive"
-  alt="an image"
-></amp-img>
-[/sourcecode]
+src="/img/amp.jpg"
+width="1080"
+height="610"
+layout="responsive"
+alt="an image"
+
+> </amp-img>
+> [/sourcecode]
 
 Các giá trị được hỗ trợ cho thuộc tính `layout` (bố cục):
 
@@ -139,14 +140,14 @@ Trong ví dụ sau, nếu màn hiển thị rộng hơn `320px`, ảnh sẽ rộ
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="400"
-  height="300"
-  layout="responsive"
-  sizes="(min-width: 320px) 320px, 100vw"
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="400"
+height="300"
+layout="responsive"
+sizes="(min-width: 320px) 320px, 100vw"
+
+> </amp-img>
+> [/sourcecode]
 
 ### `disable-inline-width` <a name="disable-inline-width"></a>
 
@@ -158,15 +159,15 @@ Trong ví dụ sau, chiều rộng của yếu tố `<amp-img>` không bị ản
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="400"
-  height="300"
-  layout="responsive"
-  sizes="(min-width: 320px) 320px, 100vw"
-  disable-inline-width
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="400"
+height="300"
+layout="responsive"
+sizes="(min-width: 320px) 320px, 100vw"
+disable-inline-width
+
+> </amp-img>
+> [/sourcecode]
 
 ### `heights` <a name="heights"></a>
 
@@ -183,13 +184,13 @@ Trong ví dụ sau, chiều cao của ảnh sẽ được đặt mặc định l
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="320"
-  height="256"
-  heights="(min-width:500px) 200px, 80%"
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="320"
+height="256"
+heights="(min-width:500px) 200px, 80%"
+
+> </amp-img>
+> [/sourcecode]
 
 ### `media` <a name="media"></a>
 
@@ -201,20 +202,21 @@ Trong ví dụ sau đây, chúng ta có 2 ảnh với các truy vấn đa phươ
 
 [sourcecode:html]
 <amp-img
-  media="(min-width: 650px)"
-  src="wide.jpg"
-  width="466"
-  height="355"
-  layout="responsive"
-></amp-img>
-<amp-img
-  media="(max-width: 649px)"
-  src="narrow.jpg"
-  width="527"
-  height="193"
-  layout="responsive"
-></amp-img>
-[/sourcecode]
+media="(min-width: 650px)"
+src="wide.jpg"
+width="466"
+height="355"
+layout="responsive"
+
+> </amp-img>
+> <amp-img
+>   media="(max-width: 649px)"
+>   src="narrow.jpg"
+>   width="527"
+>   height="193"
+>   layout="responsive"
+> </amp-img>
+> [/sourcecode]
 
 ### `placeholder` <a name="placeholder"></a>
 
@@ -222,7 +224,7 @@ Thuộc tính `placeholder` (mã giữ chỗ) có thể được thiết lập t
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
-  <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+<amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
 [/sourcecode]
 
@@ -232,6 +234,7 @@ Thuộc tính `fallback` (phương án dự phòng) có thể được thiết l
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
+
   <div fallback>Cannot play animated images on this device.</div>
 </amp-anim>
 [/sourcecode]

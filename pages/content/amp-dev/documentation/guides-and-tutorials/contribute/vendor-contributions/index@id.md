@@ -1,13 +1,13 @@
 ---
-"$title": Mengintegrasikan teknologi Anda dengan AMP
-"$order": '0'
-"$hidden": 'true'
+'$title': Mengintegrasikan teknologi Anda dengan AMP
+$order: 0
+'$hidden': 'true'
 description: Jika Anda adalah penyedia teknologi untuk penayang atau pengiklan di web, kami mengundang Anda untuk menambahkan dukungan ke AMP sehingga pelanggan Anda dapat terus memanfaatkan teknologi Anda dan ....
 formats:
-- websites
-- ads
-- stories
-- email
+  - websites
+  - ads
+  - stories
+  - email
 ---
 
 Terima kasih atas minat Anda dalam berkontribusi untuk AMP! Kami menghargai partisipasi Anda untuk menjadikan web sebagai platform forward pengguna.
@@ -44,7 +44,7 @@ Setelah memutuskan tingkat kontribusi yang sesuai dengan contoh penggunaan Anda,
 
 ## Kontribusi tingkat 1
 
-Ekstensi amp-ad digunakan untuk menayangkan iklan Display di halaman AMP. Lebih dari 90 penyedia teknologi iklan telah menambahkan dukungan ke AMP.  Untuk memulai, baca [ringkasan pengembangan](https://github.com/ampproject/amphtml/tree/master/ads#overview) atau lihat bagian [petunjuk developer](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) untuk menambahkan dukungan Anda ke ekstensi amp-ad. Bergantung pada teknologi iklan yang disediakan oleh perusahaan Anda, [petunjuk integrasi](ad-integration-guide.md) ini mungkin berguna.
+Ekstensi amp-ad digunakan untuk menayangkan iklan Display di halaman AMP. Lebih dari 90 penyedia teknologi iklan telah menambahkan dukungan ke AMP. Untuk memulai, baca [ringkasan pengembangan](https://github.com/ampproject/amphtml/tree/master/ads#overview) atau lihat bagian [petunjuk developer](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) untuk menambahkan dukungan Anda ke ekstensi amp-ad. Bergantung pada teknologi iklan yang disediakan oleh perusahaan Anda, [petunjuk integrasi](ad-integration-guide.md) ini mungkin berguna.
 
 Ada lebih dari 90 penyedia iklan yang telah menambahkan dukungan untuk fitur yang berkaitan dengan iklan seperti [`amp-ad`](../../../components/reference/amp-ad.md) . Berikut adalah contoh [pull request](https://github.com/ampproject/amphtml/pull/2299) dari jaringan iklan [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
 

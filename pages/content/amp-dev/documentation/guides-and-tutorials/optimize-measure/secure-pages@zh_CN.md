@@ -1,9 +1,9 @@
 ---
-"$title": 免受第三方攻击
-"$order": '7'
+'$title': 免受第三方攻击
+$order: 7
 description: 采取保护措施，使您的 AMP 网页和用户免受网络安全漏洞的侵害
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 ---
 

@@ -1,6 +1,6 @@
 ---
-"$title": Creating the cover page
-"$order": '4'
+'$title': Creating the cover page
+$order: 4
 description: 要创建网页，请将 <amp-story-page> 元素作为 amp-story 的子级添加。为网页分配一个唯一 ID。对于我们的第一页（即封面页），我们不妨分配唯一 ID cover…
 author: bpaduch
 ---
@@ -10,13 +10,14 @@ author: bpaduch
 要创建网页，请将 `<amp-story-page>` 元素作为 [`amp-story`](../../../../documentation/components/reference/amp-story.md) 的子级**添加**。为网页**分配**一个唯一 ID。对于我们的第一页（即封面页），我们不妨分配唯一 ID `cover`：
 
 ```html
-<amp-story standalone
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-    poster-portrait-src="assets/cover.jpg">
-   <amp-story-page id="cover">
-   </amp-story-page>
+<amp-story
+  standalone
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+>
+  <amp-story-page id="cover"> </amp-story-page>
 </amp-story>
 ```
 
@@ -40,9 +41,12 @@ author: bpaduch
 ```html
 <amp-story-page id="cover">
   <amp-story-grid-layer template="fill">
-    <amp-img src="assets/cover.jpg"
-        width="720" height="1280"
-        layout="responsive">
+    <amp-img
+      src="assets/cover.jpg"
+      width="720"
+      height="1280"
+      layout="responsive"
+    >
     </amp-img>
   </amp-story-grid-layer>
 </amp-story-page>
@@ -108,7 +112,7 @@ author: bpaduch
 
 ```html
 <amp-story-grid-layer>
-<!--our first layer -->
+  <!--our first layer -->
 </amp-story-grid-layer>
 <amp-story-grid-layer template="vertical">
   <h1>The Joy of Pets</h1>

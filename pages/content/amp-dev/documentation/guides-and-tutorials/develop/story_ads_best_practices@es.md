@@ -1,10 +1,10 @@
 ---
-"$title": Prácticas recomendadas para crear anuncios en las historias web
-"$order": '16'
+'$title': Prácticas recomendadas para crear anuncios en las historias web
+$order: 16
 description: Las historias web son una atractiva experiencia en pantalla completa que introduce a los lectores en el contenido. Los anuncios que aparecen en las historias web deben tener un diseño uniforme e integrarse con las historias web UX.
 formats:
-- anuncios
-- historias
+  - anuncios
+  - historias
 ---
 
 Las historias web son una atractiva experiencia en pantalla completa que introduce a los lectores en el contenido. Los anuncios que aparecen en las historias web deben tener un diseño uniforme e integrarse con las historias web UX. Esto evita que haya alteraciones o interrupciones en la experiencia que tiene el usuario. En esta guía se muestra cómo construir un anuncio para las historias web.
@@ -194,7 +194,7 @@ Si únicamente puede proporcionar un solo formato de video, proporcione el **MP4
 
 #### Resolución del video
 
-Los videos que aparecen en las historias web siempre son verticales  (por ejemplo, visualizaciones verticales), con una proporción esperada para el aspecto de 16:9. Utilice la resolución recomendada según el tipo de transmisión del video:
+Los videos que aparecen en las historias web siempre son verticales (por ejemplo, visualizaciones verticales), con una proporción esperada para el aspecto de 16:9. Utilice la resolución recomendada según el tipo de transmisión del video:
 
 <table>
   <thead>

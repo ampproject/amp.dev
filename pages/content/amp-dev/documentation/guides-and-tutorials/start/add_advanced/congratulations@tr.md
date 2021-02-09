@@ -1,6 +1,6 @@
 ---
-"$title": Tebrikler!
-"$order": '7'
+'$title': Tebrikler!
+$order: 7
 description: '"Gelişmiş AMP özellikleri ekleyin" öğreticisini tamamladınız ve AMP''nin birçok önemli gelişmiş bileşenini başarıyla keşfettiniz!'
 ---
 

@@ -1,6 +1,6 @@
 ---
-"$title": Creación de una página HTML normal
-"$order": '1'
+'$title': Creación de una página HTML normal
+$order: 1
 description: En el directorio del proyecto, encontrará un archivo denominado article.html. Este es el artículo de noticias para el que estamos creando en una página equivalente de AMP...
 ---
 
@@ -14,10 +14,9 @@ En el directorio del proyecto, encontrará un archivo denominado [`article.html`
 Su archivo `article.amp.html` debe tener el siguiente aspecto:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-
     <title>News Article</title>
 
     <link href="base.css" rel="stylesheet" />
@@ -25,15 +24,16 @@ Su archivo `article.amp.html` debe tener el siguiente aspecto:
     <script type="text/javascript" src="base.js"></script>
   </head>
   <body>
-    <header>
-      News Site
-    </header>
+    <header>News Site</header>
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
     </article>
-    <img src="mountains.jpg">
+    <img src="mountains.jpg" />
   </body>
 </html>
 ```
@@ -58,7 +58,7 @@ Cuando inspeccione la salida de JavaScript en la Consola del programador (asegú
 Powered by AMP ⚡ HTML
 ```
 
-La biblioteca de AMP incluye un <a>AMP validator</a> que le informará si algo impide que su página sea un documento válido de AMP.  <strong>Habilite</strong> el validador de AMP agregando este identificador de fragmentos a la URL de su documento:
+La biblioteca de AMP incluye un <a>AMP validator</a> que le informará si algo impide que su página sea un documento válido de AMP. <strong>Habilite</strong> el validador de AMP agregando este identificador de fragmentos a la URL de su documento:
 
 ```text
 #development=1

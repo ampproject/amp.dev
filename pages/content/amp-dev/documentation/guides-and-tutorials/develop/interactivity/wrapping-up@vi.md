@@ -1,6 +1,6 @@
 ---
-"$title": Hoàn tất
-"$order": '4'
+'$title': Hoàn tất
+$order: 4
 description: Chúc mừng! Bạn vừa tạo một trang chi tiết sản phẩm thương mại điện tử tương tác với nhiều kích cỡ và giá cả khác nhau cho mỗi SKU, được truy xuất theo yêu cầu từ một điểm cuối JSON từ xa.
 ---
 

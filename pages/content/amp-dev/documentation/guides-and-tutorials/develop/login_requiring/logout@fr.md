@@ -1,6 +1,6 @@
 ---
-"$title": Déconnexion
-"$order": '3'
+'$title': Déconnexion
+$order: 3
 description: "Comme pour le bouton de connexion, la présence du bouton de déconnexion est conditionnée par l'état du composant amp-access ..."
 ---
 
@@ -15,9 +15,9 @@ Lorsque vous cliquez sur le bouton de déconnexion, vous êtes dirigé vers l'UR
 [sourcecode:json]
 {
 "login": {
-  "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
-  "sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
-  }
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
+"sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
+}
 }
 [/sourcecode]
 

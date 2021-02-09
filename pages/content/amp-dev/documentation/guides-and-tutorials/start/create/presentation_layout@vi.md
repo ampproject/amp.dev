@@ -1,10 +1,10 @@
 ---
-"$title": Sửa đổi trình bày và bố cục
-"$order": '3'
-description: "Các trang AMP là các trang web; mọi phong cách cho trang và các yếu tố của nó đều được thực hiện sử dụng các đặc tính CSS thông dụng. Các yếu tố phong cách sử dụng bộ chọn lớp hoặc yếu tố..."
+'$title': Sửa đổi trình bày và bố cục
+$order: 3
+description: 'Các trang AMP là các trang web; mọi phong cách cho trang và các yếu tố của nó đều được thực hiện sử dụng các đặc tính CSS thông dụng. Các yếu tố phong cách sử dụng bộ chọn lớp hoặc yếu tố...'
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## Sửa đổi trình bày
@@ -12,6 +12,7 @@ contributors:
 Các trang AMP là các trang web; mọi phong cách cho trang và các yếu tố của nó đều được thực hiện sử dụng các đặc tính CSS thông dụng. Các yếu tố phong cách sử dụng bộ chọn lớp hoặc yếu tố trong một stylesheet nhúng trong phần `<head>`, gọi là `<style amp-custom>`:
 
 [sourcecode:html]
+
 <style amp-custom>
   /* any custom style goes here */
   body {
@@ -22,6 +23,7 @@ Các trang AMP là các trang web; mọi phong cách cho trang và các yếu t�
     border: 1px solid black;
   }
 </style>
+
 [/sourcecode]
 
 Mọi trang AMP đều chỉ có thể có một stylesheet nhúng duy nhất và các phong cách inline, nhưng có một số bộ chọn nhất định mà bạn không được phép sử dụng. [Tìm hiểu thêm về tạo phong cách](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).

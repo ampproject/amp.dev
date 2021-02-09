@@ -1,6 +1,6 @@
 ---
-"$title": Đăng nhập
-"$order": '1'
+'$title': Đăng nhập
+$order: 1
 description: Lần đầu tiên bạn vào trang, bạn có thể thấy 2 bình luận và một nút đăng nhập. Nếu bạn tìm nút đăng nhập trong code, bạn sẽ thấy...
 ---
 
@@ -12,6 +12,7 @@ Nếu bạn tìm nút đăng nhập trong code, bạn sẽ thấy:
 
 [sourcecode:html]
 <span amp-access="NOT loggedIn" role="button" tabindex="0" amp-access-hide>
+
   <h5>Please login to comment</h5>
   <button on="tap:amp-access.login-sign-in" class="button-primary comment-button">Login</button>
 </span>
@@ -20,6 +21,7 @@ Nếu bạn tìm nút đăng nhập trong code, bạn sẽ thấy:
 Hành vi của các thuộc tính liên quan đến [`amp-access`](../../../../documentation/components/reference/amp-access.md) phụ thuộc vào một cấu hình toàn trang cho [`amp-access`](../../../../documentation/components/reference/amp-access.md), trong trường hợp của chúng ta:
 
 [sourcecode:html]
+
 <script id="amp-access" type="application/json">
   {
     "authorization": "https://ampbyexample.com/samples_templates/comment_section/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
@@ -34,6 +36,7 @@ Hành vi của các thuộc tính liên quan đến [`amp-access`](../../../../d
     }
   }
 </script>
+
 [/sourcecode]
 
 Điểm cuối xác thực được triển khai như một phần của AMPByExample. Nhà phát hành trang web có trách nhiệm cung cấp điểm cuối này. Trong trường hợp mẫu này, để đơn giản, chúng ta đã triển khai lôgic cơ bản rằng khi yêu cầu này được tiếp nhận, máy chủ sẽ đọc giá trị của một cookie tên là `ABE_LOGGED_IN`. Nếu cookie không có ở đó, chúng ta sẽ trả về một hồi đáp JSON chứa `loggedIn = false`. Do đó, lần đầu tiên người dùng vào trang, yêu cầu này sẽ trả về `loggedIn = false` và nút đăng nhập sẽ được hiển thị.
@@ -42,9 +45,9 @@ Nhìn lại mã HTML của nút này, bằng cách sử dụng `on="tap:amp-acce
 
 [sourcecode:json]
 {
-	"login": {
-    "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
-  }
+"login": {
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
+}
 }
 
 [/sourcecode]

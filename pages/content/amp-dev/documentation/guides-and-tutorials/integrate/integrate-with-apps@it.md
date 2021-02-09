@@ -1,16 +1,16 @@
 ---
-"$title": Integrazione di AMP nelle app
-"$order": '2'
+'$title': Integrazione di AMP nelle app
+$order: 2
 description: "Questa guida si rivolge agli sviluppatori di app mobili e per web, che desiderano fare uso e fornire collegamenti a pagine AMP. Ad esempio, consideriamo un'app di chat per dispositivi mobili ..."
 formats:
-- websites
+  - websites
 ---
 
 Questa guida si rivolge agli sviluppatori di app mobili e per web, che desiderano fare uso e fornire collegamenti a pagine AMP. Ad esempio, consideriamo un'app di chat per dispositivi mobili che carica la versione AMP di un URL condiviso per garantire agli utenti un'esperienza d'uso più veloce.
 
 ## Conversione dei collegamenti in formato AMP
 
-Con AMP è possibile eseguire il rendering quasi istantaneo di siti web esterni all'interno di app web native o per dispositivi mobili. Puoi farlo abbinando gli URL dei tuoi contenuti agli URL AMP corrispondenti (se ne esistono) e aprendo la versione AMP invece di quella originale. A questo scopo,  puoi utilizzare strumenti come [l'API URL AMP di Google](https://developers.google.com/amp/cache/use-amp-url).
+Con AMP è possibile eseguire il rendering quasi istantaneo di siti web esterni all'interno di app web native o per dispositivi mobili. Puoi farlo abbinando gli URL dei tuoi contenuti agli URL AMP corrispondenti (se ne esistono) e aprendo la versione AMP invece di quella originale. A questo scopo, puoi utilizzare strumenti come [l'API URL AMP di Google](https://developers.google.com/amp/cache/use-amp-url).
 
 Ad esempio, il seguente messaggio può essere trasformato per consentire la gestione di versioni AMP sostituendo tutti gli URL con le rispettive versioni AMP (se esistenti). Per ridurre i tempi di caricamento e garantire che l'AMP generato sia valido, è necessario collegarsi alle pagine AMP memorizzate nella cache AMP.
 
@@ -36,7 +36,7 @@ Esistono tre modi per trasformare sistematicamente i collegamenti:
 
 1. **Al momento della scrittura lato server (consigliato)**: questo metodo recupera l'URL tramite l'API URL AMP di Google al momento della scrittura di un URL e archivia gli URL AMP sul lato server. Quindi passa entrambi gli URL al client perché l'URL originale potrebbe essere necessario per la condivisione. Questo è l'approccio consigliato perché ci sono meno richieste di rete sul lato client. Quando si adotta questo approccio, è importante sottoporre a scansione periodica (ad esempio, tutti i giorni) i collegamenti per le versioni AMP poiché sempre più siti web adottano il formato AMP.
 2. **Al momento della lettura lato server (usato da alcuni)**: questo metodo recupera l'URL AMP tramite l'API URL AMP di Google prima di passare il contenuto al client. Come accennato in precedenza, occorre passare entrambi gli URL (AMP e non AMP) al client perché l'URL originale potrebbe essere necessario per la condivisione. Questo metodo può essere utile per i servizi a basso fan out.
-3. **Lato client (se il lato server non è possibile)**: questo metodo  recupera l'URL AMP tramite API URL AMP di Google dal client. Utilizzare questo approccio se la trasformazione dell'URL sul lato server non è possibile (ad esempio, per app di messaggistica che utilizzano la crittografia end-to-end). Assicurarsi di attivare la trasformazione dell'URL non appena il contenuto è disponibile, prima che abbia luogo qualsiasi interazione con l'utente.
+3. **Lato client (se il lato server non è possibile)**: questo metodo recupera l'URL AMP tramite API URL AMP di Google dal client. Utilizzare questo approccio se la trasformazione dell'URL sul lato server non è possibile (ad esempio, per app di messaggistica che utilizzano la crittografia end-to-end). Assicurarsi di attivare la trasformazione dell'URL non appena il contenuto è disponibile, prima che abbia luogo qualsiasi interazione con l'utente.
 
 [tip type="important"] **IMPORTANTE:** non richiedere mai gli URL AMP tramite API AMP di Google dopo le interazioni con l'utente, perché ciò peggiora le prestazioni dell'app in quanto introduce una richiesta di rete aggiuntiva. Utilizzare invece uno dei tre approcci sopra descritti. [/tip]
 
@@ -47,10 +47,12 @@ Google fornisce l'API URL AMP per recuperare gli URL HTML AMP corrispondenti a u
 Ad esempio, per un dato elenco di URL:
 
 ```json
-{"urls": [
-  "https://www.example.org/article-with-amp-version",
-  "http://www.example.com/no-amp-version.html"
-]}
+{
+  "urls": [
+    "https://www.example.org/article-with-amp-version",
+    "http://www.example.com/no-amp-version.html"
+  ]
+}
 ```
 
 Il corpo della risposta contiene la mappatura degli URL AMP in formato JSON:

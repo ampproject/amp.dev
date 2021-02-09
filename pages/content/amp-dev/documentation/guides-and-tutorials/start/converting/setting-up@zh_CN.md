@@ -1,8 +1,8 @@
 ---
-"$title": 设置
-"$order": '0'
+'$title': 设置
+$order: 0
 description: 设置开发环境 第 1 步：下载代码。以 ZIP 文件格式或通过 git 下载本教程的示例代码…
-"$parent": "/documentation/guides-and-tutorials/start/converting/setting-up.md"
+'$parent': '/documentation/guides-and-tutorials/start/converting/setting-up.md'
 ---
 
 ## 前提条件

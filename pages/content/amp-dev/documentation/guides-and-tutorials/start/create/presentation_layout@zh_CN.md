@@ -1,10 +1,10 @@
 ---
-"$title": 修改呈现形式和布局
-"$order": '3'
+'$title': 修改呈现形式和布局
+$order: 3
 description: AMP 网页是一些网页；网页及其元素的任何样式设置操作都是使用常见 CSS 属性完成的。使用类或 <head> 中名为 <style amp-custom> 的嵌入式样式表中…
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## 修改呈现形式
@@ -12,6 +12,7 @@ contributors:
 AMP 网页是一些网页；网页及其元素的任何样式设置操作都是使用常见 CSS 属性完成的。使用类或 `<head>` 中名为 `<style amp-custom>` 的嵌入式样式表中的元素选择器来设置元素的样式：
 
 [sourcecode:html]
+
 <style amp-custom>
   /* any custom style goes here */
   body {
@@ -22,6 +23,7 @@ AMP 网页是一些网页；网页及其元素的任何样式设置操作都是�
     border: 1px solid black;
   }
 </style>
+
 [/sourcecode]
 
 每个 AMP 网页都只能有一个嵌入式样式表和一些内嵌样式，并且还有一部分不允许您使用的选择器。[了解所有样式设置的相关信息](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md)。

@@ -1,11 +1,11 @@
 ---
-"$title": Comment créer une page AMP nécessitant une connexion
-"$order": '0'
+'$title': Comment créer une page AMP nécessitant une connexion
+$order: 0
 description: Sur une page, les interactions des utilisateurs, tels que les commentaires, peuvent être conditionnées un processus de connexion. Vous pouvez implémenter un processus de connexion ...
 numbered: '1'
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 Sur une page, les interactions des utilisateurs, tels que les commentaires, peuvent être conditionnées un processus de connexion. Vous pouvez implémenter un processus de connexion avec AMP en utilisant le composant [`amp-access`](../../../../documentation/components/reference/amp-access.md) que vous associez au composant [`amp-form`](../../../../documentation/components/reference/amp-form.md).

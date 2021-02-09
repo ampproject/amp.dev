@@ -1,8 +1,8 @@
 ---
-"$title": Menyiapkan
-"$order": '0'
+'$title': Menyiapkan
+$order: 0
 description: 'Sebelum memulai tutorial ini, Anda memerlukan yang berikut ini: - Pengetahuan dasar tentang HTML, CSS, dan JavaScript - Pemahaman dasar tentang konsep inti AMP, lihat ....'
-"$parent": "/content/docs/fundamentals/add_advanced.md"
+'$parent': '/content/docs/fundamentals/add_advanced.md'
 ---
 
 ## Prasyarat

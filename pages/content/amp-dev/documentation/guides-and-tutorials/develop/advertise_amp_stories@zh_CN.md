@@ -1,9 +1,9 @@
 ---
-"$title": 在网页故事中进行广告宣传
-"$order": '3'
+'$title': 在网页故事中进行广告宣传
+$order: 3
 description: 网页故事是一种可点按的全屏体验，能够使读者沉浸在内容中。在 AMP 故事中投放广告，可以毫无违和感地无缝整合…
 formats:
-- 故事
+  - 故事
 author: CrystalOnScript
 ---
 
@@ -11,7 +11,7 @@ author: CrystalOnScript
 
 ## 广告展示位置
 
-网页故事使用一个  [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) 组件来指示广告数量和展示位置。
+网页故事使用一个 [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) 组件来指示广告数量和展示位置。
 
 [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) 是 [`amp-ad`](../../../documentation/components/reference/amp-ad.md) 组件的封装容器，可以在用户浏览故事内容时动态插入一个或多个广告。为了确保用户获得最佳体验，请执行以下操作：
 
@@ -43,17 +43,17 @@ author: CrystalOnScript
 
 [sourcecode:html]
 <amp-story>
-  <amp-story-auto-ads>
-    <script type="application/json">
-      {
-        "ad-attributes": {
-          // ad server configuration
-        }
-      }
-    </script>
-  </amp-story-auto-ads>
-  <amp-story-page>
-  ...
+<amp-story-auto-ads>
+<script type="application/json">
+{
+"ad-attributes": {
+// ad server configuration
+}
+}
+</script>
+</amp-story-auto-ads>
+<amp-story-page>
+...
 </amp-story>
 [/sourcecode]
 
@@ -66,8 +66,8 @@ author: CrystalOnScript
 目前，支持网页故事广告的广告平台包括：
 
 - Google Ad Manager <a name="google-ad-manager"></a>
-    - [直接销售广告](https://support.google.com/admanager/answer/9038178)
-    - [程序化广告](https://support.google.com/admanager/answer/9416436)
+  - [直接销售广告](https://support.google.com/admanager/answer/9038178)
+  - [程序化广告](https://support.google.com/admanager/answer/9416436)
 - 即将推出的 Google AdSense
 - 可以整合其他广告平台（有关[详细信息](https://github.com/ampproject/amphtml/issues/30769)，请通过 GitHub 联系我们）
 

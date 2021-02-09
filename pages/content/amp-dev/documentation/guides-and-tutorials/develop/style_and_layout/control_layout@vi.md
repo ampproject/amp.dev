@@ -1,15 +1,15 @@
 ---
-"$title": Bố cục & truy vấn đa phương tiện
-"$order": '1'
-description: "AMP hỗ trợ cả 2 loại truy vấn đa phương tiện & truy vấn yếu tố, cùng với một phương thức tích hợp sẵn mạnh mẽ để kiểm soát bố cục của các yếu tố riêng lẻ. Thuộc tính layout (bố cục) cho phép làm việc và..."
+'$title': Bố cục & truy vấn đa phương tiện
+$order: 1
+description: 'AMP hỗ trợ cả 2 loại truy vấn đa phương tiện & truy vấn yếu tố, cùng với một phương thức tích hợp sẵn mạnh mẽ để kiểm soát bố cục của các yếu tố riêng lẻ. Thuộc tính layout (bố cục) cho phép làm việc và...'
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 author: Meggin
 contributors:
-- pbakaus
+  - pbakaus
 ---
 
 AMP hỗ trợ cả 2 loại **truy vấn đa phương tiện** & **truy vấn yếu tố**, cùng với một phương thức tích hợp sẵn mạnh mẽ để kiểm soát **bố cục** của các yếu tố riêng lẻ. Thuộc tính `layout` (bố cục) cho phép làm việc và tạo các thiết kế hoàn toàn tương thích một cách dễ dàng hơn rất nhiều so với chỉ sử dụng CSS.

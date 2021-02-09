@@ -1,10 +1,10 @@
 ---
-"$title": Create your first Web Story
-"$order": '0'
+'$title': Create your first Web Story
+$order: 0
 description: このチュートリアルでは、amp-story コンポーネントを紹介します。このコンポーネントを使用すると、AMP で視覚的な訴求力のあるストーリーを作成できます。このチュートリアルの終了時には ...
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- stories
+  - stories
 author: bpaduch
 ---
 

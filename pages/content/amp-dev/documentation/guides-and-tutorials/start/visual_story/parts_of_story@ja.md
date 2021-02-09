@@ -1,6 +1,6 @@
 ---
-"$title": Understanding the parts of an AMP story
-"$order": '2'
+'$title': Understanding the parts of an AMP story
+$order: 2
 description: ウェブストーリーは、画像、動画、グラフィックス、音声などを使って全画面で視覚的に情報を伝えるストーリーテリングを提供します。分かりやすく ...
 author: bpaduch
 ---

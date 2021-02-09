@@ -1,9 +1,9 @@
 ---
-"$title": Защита от сторонних атак
-"$order": '7'
+'$title': Защита от сторонних атак
+$order: 7
 description: Примите меры для защиты ваших AMP-страниц и пользователей от сетевых уязвимостей
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 ---
 

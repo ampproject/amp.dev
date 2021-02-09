@@ -1,10 +1,10 @@
 ---
-"$title": Quản lý trạng thái người dùng chưa xác thực với AMP
-order: '2'
+'$title': Quản lý trạng thái người dùng chưa xác thực với AMP
+$order: 2
 formats:
-- websites
+  - websites
 teaser:
-  text: "**Mục lục**"
+  text: '**Mục lục**'
 ---
 
 <!--
@@ -34,12 +34,12 @@ limitations under the License.
 
 - [Nền](#background)
 - [Hướng dẫn triển khai](#implementation-guide)
-    - [Trước khi bắt đầu](#before-getting-started)
-    - [Tác vụ 1: Đối với các trang không phải AMP trên nguồn gốc của nhà phát hành, thiết lập một mã định danh và gửi ping phân tích](#task1)
-    - [Tác vụ 2: Đối với các trang AMP, thiết lập một mã định danh và gửi ping phân tích bằng cách bao gồm ID Máy khách thay thế trong các lệnh ping amp-analytics](#task2)
-    - [Tác vụ 3: Xử lý các ping phân tích từ các trang trên nguồn gốc của nhà phát hành](#task3)
-    - [Tác vụ 4: Xử lý ping phân tích từ bộ nhớ đệm AMP hoặc ngữ cảnh hiển thị của trình xem AMP và thiết lập các sơ đồ mã định danh (nếu cần)](#task4)
-    - [Tác vụ 5: Sử dụng ID Máy khách trong liên kết và biểu mẫu được gửi đi](#task5)
+  - [Trước khi bắt đầu](#before-getting-started)
+  - [Tác vụ 1: Đối với các trang không phải AMP trên nguồn gốc của nhà phát hành, thiết lập một mã định danh và gửi ping phân tích](#task1)
+  - [Tác vụ 2: Đối với các trang AMP, thiết lập một mã định danh và gửi ping phân tích bằng cách bao gồm ID Máy khách thay thế trong các lệnh ping amp-analytics](#task2)
+  - [Tác vụ 3: Xử lý các ping phân tích từ các trang trên nguồn gốc của nhà phát hành](#task3)
+  - [Tác vụ 4: Xử lý ping phân tích từ bộ nhớ đệm AMP hoặc ngữ cảnh hiển thị của trình xem AMP và thiết lập các sơ đồ mã định danh (nếu cần)](#task4)
+  - [Tác vụ 5: Sử dụng ID Máy khách trong liên kết và biểu mẫu được gửi đi](#task5)
 - [Các biện pháp thực hành được đặc biệt khuyến nghị](#strongly-recommended-practices)
 
 Trạng thái người dùng là một khái niệm quan trọng trên các trang web ngày nay. Hãy cân nhắc trường hợp sử dụng sau, có được bằng cách quản lý trạng thái người dùng:
@@ -114,7 +114,7 @@ Các nhà phát hành phải chuẩn bị để quản lý trạng thái ngườ
 
 Tuy nhiên, các nhà phát hành trang AMP có thể vô ý thiết kế các hành trình người dùng liên quan đến nhiều ngữ cảnh khác nhau. Hãy nhìn lại trường hợp sử dụng giỏ hàng trước đây của chúng ta và bổ sung một số chi tiết để biến nó thành một **câu chuyện người dùng** đầy đủ:
 
-> *Vào ngày 1, người dùng khám phá một trang AMP từ Example Inc. thông qua Google Tìm kiếm. Google Tìm kiếm tải các trang AMP trong một trình xem AMP. Trong khi xem trang này, người dùng thêm 4 sản phẩm vào giỏ hàng của họ nhưng không thanh toán. 2 tuần sau, vào ngày 15, người dùng nhớ đến 4 sản phẩm mà họ đã cân nhắc mua và quyết định bây giờ là lúc để mua. Họ truy cập trang chủ của Example Inc. tại  `https://example.com` một cách trực tiếp (đó là một trang chủ không phải AMP), và thấy 4 sản phẩm của họ vẫn được lưu trong giỏ hàng.*
+> _Vào ngày 1, người dùng khám phá một trang AMP từ Example Inc. thông qua Google Tìm kiếm. Google Tìm kiếm tải các trang AMP trong một trình xem AMP. Trong khi xem trang này, người dùng thêm 4 sản phẩm vào giỏ hàng của họ nhưng không thanh toán. 2 tuần sau, vào ngày 15, người dùng nhớ đến 4 sản phẩm mà họ đã cân nhắc mua và quyết định bây giờ là lúc để mua. Họ truy cập trang chủ của Example Inc. tại `https://example.com` một cách trực tiếp (đó là một trang chủ không phải AMP), và thấy 4 sản phẩm của họ vẫn được lưu trong giỏ hàng._
 
 Trong tình huống này, người dùng nhận được một trải nghiệm giỏ hàng nhất quán, ngay cả khi họ đã chuyển từ một ngữ cảnh trình xem AMP sang ngữ cảnh nguồn gốc của nhà phát hành—và một khoảng thời gian đã trôi qua giữa 2 sự kiện này. Trải nghiệm này rất hợp lý, và nếu bạn đang thiết kế một trải nghiệm mua sắm, bạn nên hỗ trợ nó, vậy làm thế nào bạn có thể biến nó thành hiện thực?
 
@@ -136,7 +136,7 @@ Sau khi thiết lập nền tảng, chúng ta sẽ xem xét một chủ đề v�
 **Phần #2: Sử dụng ID Máy khách trong liên kết và biểu mẫu được gửi đi:** Trong Tác vụ 5, bạn sẽ học được lợi thế của việc điều hướng liên kết và/hoặc gửi đi biểu mẫu để truyền tải thông tin ID Máy khách AMP qua nhiều ranh giới ngữ cảnh khác nhau, ở đó người dùng điều hướng trực tiếp từ trang này sang trang kia.
 
 > **CHÚ Ý:**
-> Hướng dẫn triển khai sau đây tư vấn về việc sử dụng và làm việc với cookie. Hãy tham vấn  [Các biện pháp thực hành được đặc biệt khuyến nghị ](#strongly-recommended-practices) để biết các đề xuất quan trọng cần lưu ý.
+> Hướng dẫn triển khai sau đây tư vấn về việc sử dụng và làm việc với cookie. Hãy tham vấn [Các biện pháp thực hành được đặc biệt khuyến nghị ](#strongly-recommended-practices) để biết các đề xuất quan trọng cần lưu ý.
 
 ### Trước khi bắt đầu <a name="before-getting-started"></a>
 
@@ -178,23 +178,26 @@ Vì mục đích của ví dụ này, hãy giả sử rằng bạn đã đặt m
 **Trường hợp #1: Lần truy cập ban đầu.** Sau khi vừa đến trang không phải AMP, sẽ không có cookie nào. Nếu bạn kiểm tra cookie trước khi nó được đặt, bạn sẽ không thấy giá trị nào được đặt trong cookie tương ứng với `uid`:
 
 [sourcecode:bash]
+
 > document.cookie
-  ""
-[/sourcecode]
+> ""
+> [/sourcecode]
 
 Cookie sẽ được đặt ở một thời điểm nào đó trong lần tải ban đầu, vậy nên nếu bạn làm việc này sau khi trang được tải, bạn sẽ thấy một giá trị đã được đặt:
 
 [sourcecode:bash]
+
 > document.cookie
-  "uid=$publisher_origin_identifier"
-[/sourcecode]
+> "uid=$publisher_origin_identifier"
+> [/sourcecode]
 
 **Trường hợp #2: Lần truy cập không phải ban đầu.** Sẽ có một cookie đã được đặt từ trước rồi. Do đó, nếu bạn mở bảng điều khiển nhà phát triển trên trang này, bạn sẽ thấy:
 
 [sourcecode:bash]
+
 > document.cookie
-  "uid=$publisher_origin_identifier"
-[/sourcecode]
+> "uid=$publisher_origin_identifier"
+> [/sourcecode]
 
 ##### Gửi đi ping phân tích <a name="send-analytics-pings"></a>
 
@@ -279,8 +282,8 @@ Khi chúng ta thiết lập ping phân tích trong [Tác vụ 2](#task2) để t
 
 Cân nhắc luồng sau:
 
-1. Một người dùng truy cập **trang AMP trong một ngữ cảnh hiển thị trình xem AMP** như  `https://google.com/amp/s/example.com/article.amp.html`. Bởi trình xem AMP không thể truy cập cookie `uid` trên nguồn gốc của nhà phát hành, một giá trị ngẫu nhiên là `$amp_client_id` sẽ được tạo để xác định người dùng.
-2. Sau đó, người dùng này sẽ truy cập **một trang trên nguồn gốc của nhà phát hành `https://example.com`**. Như đã mô tả trong [Tác vụ 3](#task3), người dùng này được xác định bằng  `$publisher_origin_identifier`.
+1. Một người dùng truy cập **trang AMP trong một ngữ cảnh hiển thị trình xem AMP** như `https://google.com/amp/s/example.com/article.amp.html`. Bởi trình xem AMP không thể truy cập cookie `uid` trên nguồn gốc của nhà phát hành, một giá trị ngẫu nhiên là `$amp_client_id` sẽ được tạo để xác định người dùng.
+2. Sau đó, người dùng này sẽ truy cập **một trang trên nguồn gốc của nhà phát hành `https://example.com`**. Như đã mô tả trong [Tác vụ 3](#task3), người dùng này được xác định bằng `$publisher_origin_identifier`.
 
 Ở đây, (1) và (2) có thể xuát hiện trên các nguồn gốc (hay ngữ cảnh) khác nhau. Do đó, không có trạng thái chung và `$amp_client_id` sẽ khác với `$publisher_origin_identifier`. Vậy, ảnh hưởng của nó như thế nào? (1) là một phiên xem trang đơn trông như của một người dùng và (2) là một phiên xem trang đơn khác trông như của một người dùng khác. **Về mặt cơ bản, tuy người dùng đã duy trì tương tác với nội dung của `https://example.com`, chúng ta đã đếm thừa người dùng và người dùng trong (1) trông như được nảy lại (một lượt xem trang đơn).**
 
@@ -340,7 +343,7 @@ Trong ví dụ ở trên, chúng ta tìm thấy một hồ sơ đã tồn tại.
 
 Mặt khác, nếu ID Máy khách AMP không được tìm thấy trong một sơ đồ, chúng ta cần tạo một sơ đồ:
 
-1. Tạo một **mã định danh cho nguồn gốc của nhà phát hành tiềm năng**. Hãy gọi nó là  `$prospective_identifier` trong các ví dụ sau đây. Giá trị này nên được tạo theo cách bạn thiết lập nó trên nguồn gốc của nhà phát hành, như được mô tả trong [Tác vụ 1](#task1) ở trên.
+1. Tạo một **mã định danh cho nguồn gốc của nhà phát hành tiềm năng**. Hãy gọi nó là `$prospective_identifier` trong các ví dụ sau đây. Giá trị này nên được tạo theo cách bạn thiết lập nó trên nguồn gốc của nhà phát hành, như được mô tả trong [Tác vụ 1](#task1) ở trên.
 2. Tiếp theo, cố [thiết lập](https://en.wikipedia.org/wiki/HTTP_cookie#Setting_a_cookie) mã định danh cho nguồn gốc của nhà phát hành tiềm năng là một cookie trên nguồn gốc của nhà phát hành. Việc này sẽ thành công nếu cookie của bên thứ ba có thể được ghi, nếu không, nó sẽ thất bại.
 3. Sau đó, lưu trữ cặp {mã định danh cho nguồn gốc của nhà phát hành tiềm năng, ID Máy khách AMP}.
 
@@ -387,30 +390,33 @@ Lối tiếp cận của chúng ta sẽ tận dụng 2 loại [biến số AMP t
 
 [sourcecode:html]
 <a
-  href="https://example.com/step2.html?ref_id=CLIENT_ID(uid)"
-  data-amp-replace="CLIENT_ID"
-></a>
-[/sourcecode]
+href="https://example.com/step2.html?ref_id=CLIENT_ID(uid)"
+data-amp-replace="CLIENT_ID"
+
+> </a>
+> [/sourcecode]
 
 **Giải pháp thay thế để truyền ID Máy khách cho các liên kết đầu ra:** Định nghĩa thuộc tính truy vấn mới `ref_id` như một phần của thuộc tính dữ liệu `data-amp-addparams` và cho các truy vấn cần tham số thay thế, cung cấp các thông tin đó như một phần của `data-amp-replace`. Với lối tiếp cận này, URL trông sẽ gọn gàng và các tham số được quy định trên `data-amp-addparams` sẽ được bổ sung động
 
 [sourcecode:html]
 <a
-  href="https://example.com/step2.html"
-  data-amp-addparams="ref_id=CLIENT_ID(uid)"
-  data-amp-replace="CLIENT_ID"
-></a>
-[/sourcecode]
+href="https://example.com/step2.html"
+data-amp-addparams="ref_id=CLIENT_ID(uid)"
+data-amp-replace="CLIENT_ID"
+
+> </a>
+> [/sourcecode]
 
 Để truyền nhiều tham số truy vấn thông qua `data-amp-addparams`, phân tách chúng bằng `&` như sau
 
 [sourcecode:html]
 <a
-  href="https://example.com/step2.html"
-  data-amp-addparams="ref_id=CLIENT_ID(uid)&pageid=p123"
-  data-amp-replace="CLIENT_ID"
-></a>
-[/sourcecode]
+href="https://example.com/step2.html"
+data-amp-addparams="ref_id=CLIENT_ID(uid)&pageid=p123"
+data-amp-replace="CLIENT_ID"
+
+> </a>
+> [/sourcecode]
 
 **Để cập nhật đầu vào biểu mẫu cho việc sử dụng một ID Máy khách thay thế:** Định nghĩa tên cho trường nhập liệu, ví dụ như `orig_user_id`. Quy định `default-value` của trường biểu mẫu làm giá trị của ID Máy khách AMP thay thế:
 
@@ -456,7 +462,7 @@ Nếu thông tin này có sẵn trong URL và bạn muốn xử lý nó, có m�
 <amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
   <noscript><img alt="Ví dụ về cách tạo một ping phân tích có chứa một số nhận dạng từ ngữ cảnh trước đó được cung cấp qua URL và một số nhận dạng từ ngữ cảnh hiện tại" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
 
-*Cập nhật cho trang AMP:* Sử dụng tính năng thay thế Tham số Truy vấn trong cấu hình amp-analytics của bạn để thu giá trị mã định danh `ref_id` trong URL. Tính năng Tham số Truy vấn nhận một tham số chỉ báo “khóa” của cặp giá trị khóa mong muốn trong URL và trả về giá trị tương ứng. Sử dụng tính năng ID Máy khách như bình thường để nhận mã định danh cho ngữ cảnh trang AMP.
+_Cập nhật cho trang AMP:_ Sử dụng tính năng thay thế Tham số Truy vấn trong cấu hình amp-analytics của bạn để thu giá trị mã định danh `ref_id` trong URL. Tính năng Tham số Truy vấn nhận một tham số chỉ báo “khóa” của cặp giá trị khóa mong muốn trong URL và trả về giá trị tương ứng. Sử dụng tính năng ID Máy khách như bình thường để nhận mã định danh cho ngữ cảnh trang AMP.
 
 [sourcecode:http]
 https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}
@@ -483,7 +489,7 @@ https://analytics.example.com/ping?type=pageview&orig_user_id=$amp_client_id&use
 
 Chúng tôi khuyến nghị xác thực các giá trị tham số truy vấn bằng các bước được nêu trong phần [Xác thực tham số](#parameter-validation) dưới đây.
 
-*Cập nhật cho trang không phải AMP:* Tương tự, trên một trang không phải AMP được phục vụ từ nguồn gốc của nhà phát hành, truy xuất và truyền tải giá trị `ref_id` có trong URL. Xác thực giá trị bằng cách làm theo các bước được nêu trong phần [Xác thực tham số](#parameter-validation) dưới đây. Sau đó, xây dựng các lệnh ping phân tích sẽ bao gồm cả `orig_user_id` được rút ra từ `ref_id` và `user_id` được dựa trên giá trị của mã định danh cookie của bên thứ nhất.
+_Cập nhật cho trang không phải AMP:_ Tương tự, trên một trang không phải AMP được phục vụ từ nguồn gốc của nhà phát hành, truy xuất và truyền tải giá trị `ref_id` có trong URL. Xác thực giá trị bằng cách làm theo các bước được nêu trong phần [Xác thực tham số](#parameter-validation) dưới đây. Sau đó, xây dựng các lệnh ping phân tích sẽ bao gồm cả `orig_user_id` được rút ra từ `ref_id` và `user_id` được dựa trên giá trị của mã định danh cookie của bên thứ nhất.
 
 <blockquote>
 <p><strong>QUAN TRỌNG:</strong></p>

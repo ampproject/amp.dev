@@ -1,13 +1,13 @@
 ---
-"$title": Cómo crear un mapa de asientos
-"$order": '104'
+'$title': Cómo crear un mapa de asientos
+$order: 104
 description: Los mapas de asientos son una parte importante de las aplicaciones web para emitir boletos, pero puede ser complicado implementarlos en AMP. Continúe leyendo para saber cómo implementar un mapa de asientos en AMP.
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: kul3r4
 contributors:
-- pbakaus
+  - pbakaus
 ---
 
 Los mapas de asientos son una parte importante de las aplicaciones web para emitir boletos, pero puede ser complicado implementarlos en AMP. Continúe leyendo para saber cómo implementar un mapa de asientos en AMP mediante una combinación de los componentes que están disponibles en AMP.
@@ -94,7 +94,7 @@ Si no cuenta con una división en la envoltura y en su lugar le agrega un margen
 Cuando los usuarios hacen clic en diferentes asientos, es posible hacer un seguimiento del `id` de los asientos seleccionados mediante una variable utilizando `amp-state`, ya sea:
 
 - Agregando una expresión [`amp-bind`](../../../documentation/components/reference/amp-bind.md) para cada asiento con el fin de incluir el asiento que se seleccionó en una lista.
-- O usando [`amp-selector`](../../../documentation/components/reference/amp-selector.md) con la acción  `on="select:AMP.setState({selectedSeats: event.selectedOptions})"` para que todos los asientos seleccionados se agreguen a una lista.
+- O usando [`amp-selector`](../../../documentation/components/reference/amp-selector.md) con la acción `on="select:AMP.setState({selectedSeats: event.selectedOptions})"` para que todos los asientos seleccionados se agreguen a una lista.
 
 Aunque el primer enfoque no necesita del componente adicional [`amp-selector`](../../../documentation/components/reference/amp-selector.md), este puede hacer que el mapa de asientos sea muy lento porque todas las expresiones [`amp-bind`](../../../documentation/components/reference/amp-bind.md) serán evaluadas cuando se seleccione/anule cada asiento.
 
@@ -106,26 +106,27 @@ Como referencia, aquí puede consultar el HTML final para el mapa de asientos:
 
 [sourcecode:html]
 {% raw %}<div class="seatmap-container">
-  <amp-list layout="fill" src="/json/seats.json" binding="no" items="." single-item noloading>
-    <template type="amp-mustache">
-      <amp-pan-zoom layout="fill" class="seatmap">
-        <amp-selector multiple on="select:AMP.setState({
+<amp-list layout="fill" src="/json/seats.json" binding="no" items="." single-item noloading>
+<template type="amp-mustache">
+<amp-pan-zoom layout="fill" class="seatmap">
+<amp-selector multiple on="select:AMP.setState({
           selectedSeats: event.selectedOptions
         })" layout="fill">
-          <div class="svg-container">
-            <svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
-            {{#seats}}
-              <rect option="{{id}}" role="button"
+<div class="svg-container">
+<svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
+{{#seats}}
+<rect option="{{id}}" role="button"
                tabindex="0" class="seat {{unavailable}}"
               x="{{x}}" y="{{y}}"
               width="{{width}}" height="{{height}}"
               rx="{{rx}}" ry="{{ry}}"/>
-            {{/seats}}
-            </svg>
-          </div>
-        </amp-selector>
-      </amp-pan-zoom>
-    </template>
-  </amp-list>
+{{/seats}}
+</svg>
+</div>
+</amp-selector>
+</amp-pan-zoom>
+</template>
+</amp-list>
+
 </div>{% endraw %}
 [/sourcecode]

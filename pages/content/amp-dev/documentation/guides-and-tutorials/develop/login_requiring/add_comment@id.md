@@ -1,6 +1,6 @@
 ---
-"$title": Menambahkan komentar
-"$order": '2'
+'$title': Menambahkan komentar
+$order: 2
 description: Pada tahap ini, pengguna dapat menambahkan komentar menggunakan amp-form, perpustakaan. Perhatikan bagaimana keberadaan formulir bersifat bersyarat, bergantung pada status komponen amp-access ....
 ---
 
@@ -9,6 +9,7 @@ description: Pada tahap ini, pengguna dapat menambahkan komentar menggunakan amp
 Pada tahap ini, pengguna dapat menambahkan komentar menggunakan perpustakaan `amp-form`. Perhatikan bagaimana keberadaan formulir bersifat bersyarat, bergantung pada status komponen [`amp-access`](../../../../documentation/components/reference/amp-access.md):
 
 [sourcecode:html]
+
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
 [/sourcecode]
 
@@ -21,6 +22,7 @@ Berikut ini adalah contoh respons JSON:
 Komponen formulir hanya akan menampilkan nilai di dalam halaman dengan menggunakan templat [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md):
 
 [sourcecode:html]
+
 <div submit-success>
   <template type="amp-mustache">
     <div class="comment-user">
@@ -37,6 +39,7 @@ Komponen formulir hanya akan menampilkan nilai di dalam halaman dengan menggunak
 Di dalam contoh ini, kita hanya memeriksa apakah nilai komentar tidak kosong. Jika nilainya kosong, kita menampilkan eror yang menyebabkan kode berikut ini dijalankan:
 
 [sourcecode:html]
+
 <div submit-error>
   <template type="amp-mustache">
     Error! Looks like something went wrong with your comment, please try to submit it again.

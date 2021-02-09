@@ -1,8 +1,8 @@
 ---
-"$title": Das Format AMP für E-Mail
-order: '1'
+'$title': Das Format AMP für E-Mail
+$order: 1
 formats:
-- email
+  - email
 teaser:
   text: 'Erforderliches Markup '
 toc: 'true'
@@ -40,6 +40,7 @@ Das Format AMP für E-Mail bietet [ein Subset von AMP Komponenten](https://githu
 Der folgende Code zeigt das minimale Markup, aus der eine gültige AMP E-Mail Nachricht besteht:
 
 [sourcecode:html]
+
 <!DOCTYPE html>
 <html ⚡4email>
   <head>
@@ -72,21 +73,21 @@ Das gesamte AMPHTML Markup darf nicht größer sein als 200.000 Bytes.
 
 AMP für E-Mail basiert auf dem standardmäßigen `multipart/alternative` [MIME](https://en.wikipedia.org/wiki/MIME) Untertyp, definiert in [RFC 1521, Abschnitt 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
-*Weitere Informationen dazu findest du in [Struktur und Rendering von AMP E-Mails](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md).*
+_Weitere Informationen dazu findest du in [Struktur und Rendering von AMP E-Mails](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md)._
 
 ## Unterstützte AMP Komponenten <a name="supported-amp-components"></a>
 
-*Siehe [AMP für E-Mail: Unterstützte Komponenten](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md).*
+_Siehe [AMP für E-Mail: Unterstützte Komponenten](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)._
 
 ## HTML Anforderungen <a name="html-requirements"></a>
 
-*Siehe [AMP für E-Mail: Unterstütztes HTML](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md).*
+_Siehe [AMP für E-Mail: Unterstütztes HTML](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md)._
 
 ## CSS Anforderungen <a name="css-requirements"></a>
 
 ### Unterstützte Selektoren und Eigenschaften <a name="supported-selectors-and-properties"></a>
 
-*Siehe [AMP für E-Mail: Unterstütztes CSS](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md).*
+_Siehe [AMP für E-Mail: Unterstütztes CSS](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md)._
 
 ### Angabe von CSS in einem AMP Dokument <a name="specifying-css-in-an-amp-document"></a>
 
@@ -94,6 +95,7 @@ Das gesamte CSS in einem AMP Dokument muss im Tag `<style amp-custom>` im Header
 
 [sourcecode:html]
 ...
+
 <style amp-custom>
   /* any custom styles go here. */
   body {
@@ -106,7 +108,9 @@ Das gesamte CSS in einem AMP Dokument muss im Tag `<style amp-custom>` im Header
     background-color: grey;
   }
 </style>
+
 ...
+
 </head>
 [/sourcecode]
 

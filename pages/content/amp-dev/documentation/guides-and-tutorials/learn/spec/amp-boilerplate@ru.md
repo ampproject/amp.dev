@@ -1,11 +1,11 @@
 ---
-"$title": Шаблонный код AMP
-order: '9'
+'$title': Шаблонный код AMP
+$order: 9
 formats:
-- websites
-- stories
+  - websites
+  - stories
 teaser:
-  text: " head > style[amp-boilerplate] и noscript > style[amp-boilerplate]"
+  text: ' head > style[amp-boilerplate] и noscript > style[amp-boilerplate]'
 ---
 
 <!--

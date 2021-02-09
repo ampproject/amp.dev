@@ -1,10 +1,10 @@
 ---
-"$title": Mendaftar untuk distribusi pengirim
-"$order": '1'
+'$title': Mendaftar untuk distribusi pengirim
+$order: 1
 description: Mendaftar untuk distribusi pengirim email AMP
-"$category": Start
+'$category': Start
 formats:
-- email
+  - email
 author: CrystalOnScript
 ---
 

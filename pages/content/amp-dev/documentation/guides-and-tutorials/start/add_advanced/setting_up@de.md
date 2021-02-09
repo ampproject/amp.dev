@@ -1,8 +1,8 @@
 ---
-"$title": Einrichtung
-"$order": '0'
+'$title': Einrichtung
+$order: 0
 description: 'Dieses Tutorial setzt Folgendes voraus: - Grundkenntnisse in HTML, CSS und JavaScript '
-"$parent": "/content/docs/fundamentals/add_advanced.md"
+'$parent': '/content/docs/fundamentals/add_advanced.md'
 ---
 
 ## Voraussetzungen

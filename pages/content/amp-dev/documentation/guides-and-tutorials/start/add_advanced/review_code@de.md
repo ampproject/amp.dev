@@ -1,6 +1,6 @@
 ---
-"$title": Besprechung des Startercodes
-"$order": '1'
+'$title': Besprechung des Startercodes
+$order: 1
 description: Bevor wir beginnen, Code hinzuzufügen, sehen wir uns die Beispielseite article.amp.html an. Sie sollte …
 ---
 

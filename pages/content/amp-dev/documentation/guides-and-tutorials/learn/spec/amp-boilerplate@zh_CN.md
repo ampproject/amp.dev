@@ -1,11 +1,11 @@
 ---
-"$title": AMP 样板代码
-order: '9'
+'$title': AMP 样板代码
+$order: 9
 formats:
-- websites
-- stories
+  - websites
+  - stories
 teaser:
-  text: " head > style[amp-boilerplate] 和 noscript > style[amp-boilerplate]"
+  text: ' head > style[amp-boilerplate] 和 noscript > style[amp-boilerplate]'
 ---
 
 <!--

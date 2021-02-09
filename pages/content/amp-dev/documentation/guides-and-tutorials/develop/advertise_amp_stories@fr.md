@@ -1,9 +1,9 @@
 ---
-"$title": Annonces dans les stories Web
-"$order": '3'
+'$title': Annonces dans les stories Web
+$order: 3
 description: "Les stories Web s'affichent en plein écran et plongent les lecteurs dans le contenu. La diffusion de stories publicitaires permet une intégration fluide et sans interruption ..."
 formats:
-- stories
+  - stories
 author: CrystalOnScript
 ---
 
@@ -43,17 +43,17 @@ Les stories Web ne peuvent pas prendre en charge un attribut [`amp-ad`](../../..
 
 [sourcecode:html]
 <amp-story>
-  <amp-story-auto-ads>
-    <script type="application/json">
-      {
-        "ad-attributes": {
-          // ad server configuration
-        }
-      }
-    </script>
-  </amp-story-auto-ads>
-  <amp-story-page>
-  ...
+<amp-story-auto-ads>
+<script type="application/json">
+{
+"ad-attributes": {
+// ad server configuration
+}
+}
+</script>
+</amp-story-auto-ads>
+<amp-story-page>
+...
 </amp-story>
 [/sourcecode]
 
@@ -66,8 +66,8 @@ Le moyen le plus simple d'inclure des annonces dans votre story Web Story consis
 Les serveurs publicitaires qui prennent actuellement en charge les annonces Web Story sont:
 
 - Google Ad Manager <a name="google-ad-manager"></a>
-    - [Annonces à vente directe](https://support.google.com/admanager/answer/9038178)
-    - [Annonces programmatiques](https://support.google.com/admanager/answer/9416436)
+  - [Annonces à vente directe](https://support.google.com/admanager/answer/9038178)
+  - [Annonces programmatiques](https://support.google.com/admanager/answer/9416436)
 - Google AdSense bientôt disponible
 - Possibilité d'intégrer d'autres plateformes (contactez-nous pour plus de [détails via Github](https://github.com/ampproject/amphtml/issues/30769))
 

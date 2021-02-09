@@ -1,6 +1,6 @@
 ---
-"$title": Félicitations!
-"$order": '4'
+'$title': Félicitations!
+$order: 4
 description: 'Vous avez créé avec succès une annonce AMPHTML qui peut être diffusée sur des pages AMP et non AMP! Dans ce tutoriel, vous avez appris à: Créer une annonce AMPHTML valide selon ...'
 ---
 

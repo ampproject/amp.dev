@@ -1,11 +1,11 @@
 ---
-"$title": Experimentelle Funktionen aktivieren
-"$order": '3'
+'$title': Experimentelle Funktionen aktivieren
+$order: 3
 description: Experimentelle AMP Komponenten sind veröffentlichte Funktionen, die noch nicht für den breiten Einsatz bereit sind. Zur Sicherheit tragen sie daher den Status "geschützt".
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 ---
 
 [Experimentelle AMP Komponenten](https://github.com/ampproject/amphtml/tree/master/tools/experiments) sind veröffentlichte Funktionen, die noch nicht für den breiten Einsatz bereit sind. Zur Sicherheit tragen sie daher den Status **geschützt**.
@@ -48,7 +48,7 @@ Deine Opt-ins bei Experimenten werden unter `localStorage` gespeichert. Es wird 
 Für Inhalte, die von nicht-CDN Domänen bereitgestellt werden, können Experimente mit dem folgenden Befehl in der devtools Konsole umgeschaltet werden:
 
 ```js
-AMP.toggleExperiment('experiment')
+AMP.toggleExperiment('experiment');
 ```
 
 Für jede AMP Datei, die experimentelle Funktionen enthält, schlägt die [AMP Validierung](validation-workflow/validate_amp.md) fehl. Entferne die experimentellen Komponenten für produktionsfertige AMP Dokumente.
@@ -60,7 +60,7 @@ Für Dokumente sind Opt-ins bei bestimmten Experimenten möglich. Platziere dazu
 ```html
 <head>
   ...
-  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b">
+  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b" />
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   ...
@@ -89,7 +89,7 @@ Origin Trials die Möglichkeit, eine neue Funktion zu implementieren und zu nutz
 Füge auf jeder Seite, die am Origin Trial teilnimmt, das folgende Tag vom Typ `<meta>` innerhalb von `<head>` ein:
 
 ```html
-<meta name="amp-experiment-token" content="{copy your token here}">
+<meta name="amp-experiment-token" content="{copy your token here}" />
 ```
 
 Bitte beachte: `"amp-experiment-token"` bedeutet hier die Literalzeichenfolge `"amp-experiment-token"`. Es sind weder das Token selbst (dieses wird im Attribut "content" platziert) noch der Name des Experiments gemeint.

@@ -1,17 +1,17 @@
 ---
-"$title": 借助 srcset、sizes 和 heights 属性制作自适应图片
-"$order": '4'
+'$title': 借助 srcset、sizes 和 heights 属性制作自适应图片
+$order: 4
 description: 您可以使用 srcset 属性通过不同的媒体表达式来控制元素的素材资源。尤其是，您可以将其用于所有 amp-img 标记，以指定…
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## srcset
@@ -21,16 +21,20 @@ contributors:
 在这个简单的示例中，`srcset` 指定不同屏幕宽度下所用的图片。`w` 描述符可将列表中每张图片的宽度告知浏览器：
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   layout="responsive"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
-            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w">
+            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
+>
 </amp-img>
 ```
+
 [/example]
 
 [tip type="note"] <strong>注</strong>：AMP 在所有浏览器上都支持具有 `w` 描述符的 srcset。[/tip]
@@ -44,16 +48,20 @@ contributors:
 请查看以下示例：
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
             {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
-  sizes="(min-width: 650px) 50vw, 100vw">
+  sizes="(min-width: 650px) 50vw, 100vw"
+>
 </amp-img>
 ```
+
 [/example]
 
 当视口为 650px 或以上时，`sizes` 属性会将元素的宽度定义为视口大小的 50%。例如，如果视口为 800px，则元素的宽度会被设为 400px。然后，浏览器会在假定设备的像素宽高比为 1 的前提下选择接近 400px 的 `srcset` 资源（在本例中为 `narrow.jpg` (320px)）。
@@ -74,14 +82,18 @@ contributors:
 示例：
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="AMP"
+<amp-img
+  alt="AMP"
   src="{{server_for_email}}/static/inline-examples/images/amp.jpg"
   width="320"
   height="256"
-  heights="(min-width:500px) 200px, 80%">
+  heights="(min-width:500px) 200px, 80%"
+>
 </amp-img>
 ```
+
 [/example]
 
 在此示例中，元素的高度默认是宽度的 80%，但对于宽度大于 `500px` 的视口而言，高度上限是 `200px`。

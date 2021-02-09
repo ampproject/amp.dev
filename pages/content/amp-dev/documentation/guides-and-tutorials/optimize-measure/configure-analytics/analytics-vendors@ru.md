@@ -1,10 +1,10 @@
 ---
-"$title": Поставщики аналитики
-order: '3'
+'$title': Поставщики аналитики
+$order: 3
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
   text: В этом документе перечислены поставщики аналитики, предоставляющие встроенные конфигурации для использования с компонентом amp-analytics.
 ---
@@ -114,13 +114,13 @@ limitations under the License.
 
 Значение атрибута типа: `comscore`
 
-Добавляет поддержку аналитики просмотров страниц comScore Unified Digital Measurement™. Требуется определить переменную *var* `c2` с указанием предоставленного comScore значения *c2 id*. Подробную информацию можно получить на сайте [comscore.com](http://www.comscore.com).
+Добавляет поддержку аналитики просмотров страниц comScore Unified Digital Measurement™. Требуется определить переменную _var_ `c2` с указанием предоставленного comScore значения _c2 id_. Подробную информацию можно получить на сайте [comscore.com](http://www.comscore.com).
 
 ### Cxense <a name="cxense"></a>
 
 Значение атрибута типа: `cxense`
 
-Добавляет поддержку аналитики Cxense Insight. Требуется определение *var* `siteId` с указанием предоставленного *Cxense* значения siteId. Более подробную информацию можно найти на сайте [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration).
+Добавляет поддержку аналитики Cxense Insight. Требуется определение _var_ `siteId` с указанием предоставленного _Cxense_ значения siteId. Более подробную информацию можно найти на сайте [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration).
 
 ### Deep.BI <a name="deepbi"></a>
 
@@ -130,7 +130,7 @@ limitations under the License.
 
 Значение атрибута типа: `dynatrace`
 
-Добавляет поддержку реального мониторинга пользователей в Dynatrace. Используя данные, полученные от Dynatrace, необходимо указать *var* `app` со значением *application id* и *var* `tenant` со значением *environment id*. Более подробную информацию о добавлении мониторинга реальных пользователей Dynatrace можно найти на сайте [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/).
+Добавляет поддержку реального мониторинга пользователей в Dynatrace. Используя данные, полученные от Dynatrace, необходимо указать _var_ `app` со значением _application id_ и _var_ `tenant` со значением _environment id_. Более подробную информацию о добавлении мониторинга реальных пользователей Dynatrace можно найти на сайте [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/).
 
 ### EPICA <a name="epica"></a>
 
@@ -142,7 +142,7 @@ limitations under the License.
 
 Значение атрибута типа: `euleriananalytics`
 
-Добавляет поддержку Eulerian Technologies Analytics. Требуется определить *var* `analyticsHost`, указав домен, делегированный Eulerian. Более подробную информацию можно найти на сайте [eulerian.wiki](https://eulerian.wiki).
+Добавляет поддержку Eulerian Technologies Analytics. Требуется определить _var_ `analyticsHost`, указав домен, делегированный Eulerian. Более подробную информацию можно найти на сайте [eulerian.wiki](https://eulerian.wiki).
 
 ### Пиксель Facebook <a name="facebook-pixel"></a>
 
@@ -270,7 +270,7 @@ limitations under the License.
 
 Значение атрибута типа: `mediametrie`
 
-Добавляет поддержку отслеживающих страниц Médiamétrie. Требуется указать *var* `serial`. Переменные с `level1` по `level4` могут быть указаны по желанию. Дополнительную информацию можно найти на сайте [mediametrie.com](http://www.mediametrie.com/).
+Добавляет поддержку отслеживающих страниц Médiamétrie. Требуется указать _var_ `serial`. Переменные с `level1` по `level4` могут быть указаны по желанию. Дополнительную информацию можно найти на сайте [mediametrie.com](http://www.mediametrie.com/).
 
 ### mediarithmics <a name="mediarithmics"></a>
 

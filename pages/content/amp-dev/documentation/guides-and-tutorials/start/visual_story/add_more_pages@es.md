@@ -1,11 +1,11 @@
 ---
-"$title": Agregar más páginas
-"$order": '5'
+'$title': Agregar más páginas
+$order: 5
 description: Ahora que está familiarizado con la incorporación de una página a una historia web, es muy similar agregar las siguientes páginas a nuestra historia “La alegría de las mascotas”.
 author: bpaduch
 ---
 
-Ahora que ya sabe cómo agregar una página a una historia web, verá que agregar las siguientes páginas a “La alegría de las mascotas” es muy parecido. Basándose en la información que se incluye a continuación, **cree el resto de las páginas** aplicando lo que aprendió.  Si se atasca, consulte el código completo (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>).
+Ahora que ya sabe cómo agregar una página a una historia web, verá que agregar las siguientes páginas a “La alegría de las mascotas” es muy parecido. Basándose en la información que se incluye a continuación, **cree el resto de las páginas** aplicando lo que aprendió. Si se atasca, consulte el código completo (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>).
 
 [tip type="tip"] **TIP -** Recuerde que cada página necesita un atributo “id” único (por ejemplo, `id="page1"`). [/tip]
 

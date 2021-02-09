@@ -1,8 +1,8 @@
 ---
-"$title": Format AMP untuk Email
-order: '1'
+'$title': Format AMP untuk Email
+$order: 1
 formats:
-- email
+  - email
 teaser:
   text: 'Penambahan yang diperlukan '
 toc: 'true'
@@ -40,6 +40,7 @@ Format AMP untuk Email menyediakan [bagian komponen AMP](https://github.com/ampp
 Kode berikut ini mewakili jumlah penambahan minimum yang menjadi bagian pesan email AMP yang valid:
 
 [sourcecode:html]
+
 <!DOCTYPE html>
 <html ⚡4email>
   <head>
@@ -72,21 +73,21 @@ Seluruh markup AMPHTML tidak boleh melebihi 200.000 byte.
 
 AMP untuk Email mengandalkan subjenis [MIME](https://en.wikipedia.org/wiki/MIME) `multipart/alternative`, sebagaimana ditentukan di dalam [RFC 1521, bagian 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
-*Untuk mendapatkan informasi selengkapnya, kunjungi [Struktur dan perenderan email AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md).*
+_Untuk mendapatkan informasi selengkapnya, kunjungi [Struktur dan perenderan email AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md)._
 
 ## Komponen AMP yang didukung <a name="supported-amp-components"></a>
 
-*Kunjungi [Komponen yang Didukung AMP untuk Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md).*
+_Kunjungi [Komponen yang Didukung AMP untuk Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)._
 
 ## Persyaratan HTML <a name="html-requirements"></a>
 
-*Kunjungi [HTML yang Didukung dalam AMP untuk Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md).*
+_Kunjungi [HTML yang Didukung dalam AMP untuk Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md)._
 
 ## Persyaratan CSS <a name="css-requirements"></a>
 
 ### Properti dan pemilih yang didukung <a name="supported-selectors-and-properties"></a>
 
-*Kunjungi [HTML yang Didukung dalam AMP untuk Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md).*
+_Kunjungi [HTML yang Didukung dalam AMP untuk Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md)._
 
 ### Menentukan CSS di dalam sebuah dokumen AMP <a name="specifying-css-in-an-amp-document"></a>
 
@@ -94,6 +95,7 @@ Semua CSS di dalam dokumen AMP apa pun harus disertakan dalam tag `<style amp-cu
 
 [sourcecode:html]
 ...
+
 <style amp-custom>
   /* any custom styles go here. */
   body {
@@ -106,7 +108,9 @@ Semua CSS di dalam dokumen AMP apa pun harus disertakan dalam tag `<style amp-cu
     background-color: grey;
   }
 </style>
+
 ...
+
 </head>
 [/sourcecode]
 

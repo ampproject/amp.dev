@@ -1,6 +1,6 @@
 ---
-"$title": Congratulations!
-"$order": '7'
+'$title': Congratulations!
+$order: 7
 description: '"고급 AMP 기능 추가" 튜토리얼을 완료하고 AMP의 주요 고급 컴포넌트를 성공적으로 학습했습니다!'
 ---
 

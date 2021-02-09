@@ -1,10 +1,10 @@
 ---
-"$title": Gỡ lỗi cho các vấn đề của Bộ nhớ đệm AMP
-order: '8'
+'$title': Gỡ lỗi cho các vấn đề của Bộ nhớ đệm AMP
+$order: 8
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
   text: Vì sao tài liệu của tôi lại bị vỡ trên một bộ nhớ đệm AMP?
 ---

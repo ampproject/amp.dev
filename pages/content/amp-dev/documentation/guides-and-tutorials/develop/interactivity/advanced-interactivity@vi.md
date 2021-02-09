@@ -1,6 +1,6 @@
 ---
-"$title": Cải thiện tính tương tác
-"$order": '2'
+'$title': Cải thiện tính tương tác
+$order: 2
 description: 'Đoạn code bắt đầu chỉ cung cấp một trải nghiệm người dùng rất cơ bản. Có một vài cách để cải thiện đoạn code này\: - Thêm một chỉ báo để hiển thị...'
 ---
 
@@ -18,8 +18,11 @@ Trước khi có thành phần [`amp-bind`](../../../../documentation/components
 Mở tập tin [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html) và thêm kịch bản sau vào danh sách các thành phần AMP trong phần `<head>` của trang:
 
 ```html
-<script async custom-element="amp-bind"
-    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script
+  async
+  custom-element="amp-bind"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+></script>
 ```
 
 ## Thêm một chỉ báo slide
@@ -43,7 +46,7 @@ Hãy kích hoạt một biến số trạng thái để theo dõi thứ tự c�
 Dữ liệu trong yếu tố [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) có thể được truy cập bằng ID liên kết của chúng. Ví dụ, chúng ta có thể tham chiếu biến số này theo đoạn biểu thức sau:
 
 ```javascript
-selected.slide // Evaluates to 0.
+selected.slide; // Evaluates to 0.
 ```
 
 ### Cập nhật trạng thái slide
@@ -51,8 +54,13 @@ selected.slide // Evaluates to 0.
 Tiếp theo, hãy cập nhật biến số này khi người dùng thay đổi slide trên băng chuyền bằng cách thêm hành động `"on"` sau đây vào yếu tố [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) sẵn có:
 
 ```html
-<amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
-    on="slideChange:AMP.setState({selected: {slide: event.index}})">
+<amp-carousel
+  type="slides"
+  layout="fixed-height"
+  height="250"
+  id="carousel"
+  on="slideChange:AMP.setState({selected: {slide: event.index}})"
+></amp-carousel>
 ```
 
 Bây giờ, mỗi khi slide hiển thị cho [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) được thay đổi, hành động `AMP.setState` sẽ được gọi với tham số sau:
@@ -60,7 +68,7 @@ Bây giờ, mỗi khi slide hiển thị cho [`amp-carousel`](../../../../docume
 ```javascript
 {
   selected: {
-    slide: event.index
+    slide: event.index;
   }
 }
 ```
@@ -177,8 +185,10 @@ Nếu chúng ta bổ sung một biến số trạng thái khác để theo dõi 
 Thêm một hành động "on" vào [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) để cập nhật biến số `selected.sku` mỗi khi một màu mới được chọn:
 
 ```html
-<amp-selector name="color"
-    on="select:AMP.setState({selected: {sku: event.targetOption}})">
+<amp-selector
+  name="color"
+  on="select:AMP.setState({selected: {sku: event.targetOption}})"
+></amp-selector>
 ```
 
 [tip type="tip"] **MẸO –** Việc này cũng có thể được thực hiện bằng cách thêm hành động `on="tap:AMP.setState(...)` vào mỗi [`amp-img`](../../../../documentation/components/reference/amp-img.md) con trong [`amp-selector`](../../../../documentation/components/reference/amp-selector.md). Một ưu điểm của [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) là nó sẽ đơn giản hóa cách đánh dấu như thế này. [/tip]
@@ -189,12 +199,24 @@ Sau đó, bổ sung ràng buộc cho [`amp-img`](../../../../documentation/compo
 
 ```html
 <!-- Update the `src` of each <amp-img> when the `selected.sku` variable changes. -->
-<amp-img width=200 height=250 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=300 height=375 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=400 height=500 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
+<amp-img
+  width="200"
+  height="250"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="300"
+  height="375"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="400"
+  height="500"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
 ```
 
 [tip type="note"] **LƯU Ý –** Trong thực tế, nhiều khả năng mỗi ảnh trong băng chuyền sẽ đều có một `src` khác nhau. Việc này có thể được thực hiện bằng cách thay ảnh đơn bằng một chuỗi ảnh. Để đơn giản, bài thực hành này chỉ sử dụng một ảnh đơn ở các cấp độ thu phóng khác nhau. [/tip]

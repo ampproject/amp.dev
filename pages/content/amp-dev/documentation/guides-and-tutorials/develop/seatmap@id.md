@@ -1,13 +1,13 @@
 ---
-"$title": Create a seatmap
-"$order": '104'
+'$title': Create a seatmap
+$order: 104
 description: Seatmaps are important parts of ticketers web apps, but the implementation in AMP can be difficult. Read on to learn how to implement a seatmap in AMP by
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: kul3r4
 contributors:
-- pbakaus
+  - pbakaus
 ---
 
 Seatmap merupakan bagian penting aplikasi web pengurus tiket (ticketer), namun penerapan di AMP bisa jadi sulit. Lanjutkan membaca untuk mempelajari cara menerapkan seatmap di AMP dengan menggunakan kombinasi komponen AMP yang tersedia.
@@ -42,7 +42,7 @@ rect[selected].seat {
 
 ## Persyaratan
 
-1. Untuk menggambar sebuah seatmap sebagai sebuah SVG di mana setiap seat diwakili oleh sebuah elemen  `rect`, Anda membutuhkan informasi tentang setiap seat: posisi `x` dan `y`, `width` dan `height` serta mungkin `rx` dan `ry` untuk membulatkan sudut-sudut persegi.
+1. Untuk menggambar sebuah seatmap sebagai sebuah SVG di mana setiap seat diwakili oleh sebuah elemen `rect`, Anda membutuhkan informasi tentang setiap seat: posisi `x` dan `y`, `width` dan `height` serta mungkin `rx` dan `ry` untuk membulatkan sudut-sudut persegi.
 2. Pengenal unik untuk setiap seat yang dapat digunakan untuk melakukan reservasi.
 3. Pengukuran seluruh lebar dan tinggi seatmap yang akan digunakan di atribut `viewbox`.
 
@@ -106,26 +106,27 @@ Sebagai referensi, berikut ini adalah HTML akhir untuk seatmap:
 
 [sourcecode:html]
 {% raw %}<div class="seatmap-container">
-  <amp-list layout="fill" src="/json/seats.json" binding="no" items="." single-item noloading>
-    <template type="amp-mustache">
-      <amp-pan-zoom layout="fill" class="seatmap">
-        <amp-selector multiple on="select:AMP.setState({
+<amp-list layout="fill" src="/json/seats.json" binding="no" items="." single-item noloading>
+<template type="amp-mustache">
+<amp-pan-zoom layout="fill" class="seatmap">
+<amp-selector multiple on="select:AMP.setState({
           selectedSeats: event.selectedOptions
         })" layout="fill">
-          <div class="svg-container">
-            <svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
-            {{#seats}}
-              <rect option="{{id}}" role="button"
+<div class="svg-container">
+<svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
+{{#seats}}
+<rect option="{{id}}" role="button"
                tabindex="0" class="seat {{unavailable}}"
               x="{{x}}" y="{{y}}"
               width="{{width}}" height="{{height}}"
               rx="{{rx}}" ry="{{ry}}"/>
-            {{/seats}}
-            </svg>
-          </div>
-        </amp-selector>
-      </amp-pan-zoom>
-    </template>
-  </amp-list>
+{{/seats}}
+</svg>
+</div>
+</amp-selector>
+</amp-pan-zoom>
+</template>
+</amp-list>
+
 </div>{% endraw %}
 [/sourcecode]

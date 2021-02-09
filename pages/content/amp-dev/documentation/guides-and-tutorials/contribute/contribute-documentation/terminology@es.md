@@ -1,12 +1,12 @@
 ---
-"$title": Terminología de AMP
-"$order": '2'
+'$title': Terminología de AMP
+$order: 2
 description: Recomendaciones sobre la terminología que debe seguirse en AMP
 formats:
-- sitios web
-- historias
-- anuncios
-- correo electrónico
+  - sitios web
+  - historias
+  - anuncios
+  - correo electrónico
 author: CrystalOnScript
 ---
 

@@ -1,6 +1,6 @@
 ---
-"$title": Validiere die AMPHTML Syntax
-"$order": '3'
+'$title': Validiere die AMPHTML Syntax
+$order: 3
 description: Um sicherzustellen, dass deine Ad korrekt gerendert wird, solltest du deine AMPHTML Syntax validieren. Öffne in deinem Browser den AMP Validator und stelle sicher, dass als HTML Format AMP4ADS ausgewählt ist.
 ---
 

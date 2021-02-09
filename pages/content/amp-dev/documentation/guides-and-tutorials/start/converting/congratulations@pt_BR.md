@@ -1,6 +1,6 @@
 ---
-"$title": Congratulations!
-"$order": '4'
+'$title': Congratulations!
+$order: 4
 description: 'Você terminou o tutorial e conseguiu converter um documento HTML em um documento AMP. Neste tutorial, você aprendeu a: - Reconhecer as diferenças entre AMP e ...'
 ---
 

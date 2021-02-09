@@ -1,10 +1,10 @@
 ---
-"$title": Bearbeite Präsentation und Layout
-"$order": '3'
+'$title': Bearbeite Präsentation und Layout
+$order: 3
 description: 'AMP Seiten sind Webseiten: Die Seite und ihre Elemente werden mit gewöhnlichen CSS Eigenschaften gestylt. Styleelemente verwenden Klassen oder …'
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## Bearbeite die Präsentation
@@ -12,6 +12,7 @@ contributors:
 AMP Seiten sind Webseiten: Die Seite und ihre Elemente werden mit gewöhnlichen CSS Eigenschaften gestylt. Styleelemente verwenden Klassen oder Elementselektoren in einem eingebetteten Stylesheet im `<head>`, das `<style amp-custom>` heißt:
 
 [sourcecode:html]
+
 <style amp-custom>
   /* any custom style goes here */
   body {
@@ -22,6 +23,7 @@ AMP Seiten sind Webseiten: Die Seite und ihre Elemente werden mit gewöhnlichen 
     border: 1px solid black;
   }
 </style>
+
 [/sourcecode]
 
 Jede AMP Seite kann nur ein einziges eingebettetes Stylesheet und Inline Styles enthalten. Es gibt aber bestimmte Selektoren, die du nicht verwenden darfst. [Erfahre alles über Styling](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).

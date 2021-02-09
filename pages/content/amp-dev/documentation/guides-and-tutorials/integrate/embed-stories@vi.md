@@ -1,10 +1,10 @@
 ---
-"$title": Nhúng các câu chuyện vào các trang web
-"$order": '3'
+'$title': Nhúng các câu chuyện vào các trang web
+$order: 3
 description: Trình phát AMP Story
 formats:
-- websites
-- stories
+  - websites
+  - stories
 ---
 
 Câu chuyện là một trải nghiệm đắm chìm toàn màn hình. Chúng được lưu trữ trên web mở với URL của riêng mình, cho phép chúng có thể dễ dàng được chia sẻ. Nhưng nếu bạn muốn tích hợp các câu chuyện vào website của mình, chẳng hạn như trong một blog, mô tả sản phẩm hoặc bài viết tin tức?
@@ -16,6 +16,7 @@ Trình phát AMP Story cho phép bạn nhúng các câu chuyện mà người d�
 Bạn có thể nhúng các câu chuyện AMP trong một trang không phải AMP, cho phép người dùng chạm hoặc nhấp qua một trải nghiệm mà không rời khỏi tài liệu gốc!
 
 [example preview="top-frame" playground="false"]
+
 ```html
 <!doctype html>
     <head>
@@ -67,6 +68,7 @@ Bạn có thể nhúng các câu chuyện AMP trong một trang không phải AM
     </body>
 </html>
 ```
+
 [/example]
 
 ## Nhúng trình phát AMP Story
@@ -79,7 +81,11 @@ Bao gồm 2 kịch bản bắt buộc trong phần head (đầu đề) của tà
 
 ```html
 <script async src="https://cdn.ampproject.org/amp-story-player-v0.js"></script>
-<link href="https://cdn.ampproject.org/amp-story-player-v0.css" rel="stylesheet" type="text/css">
+<link
+  href="https://cdn.ampproject.org/amp-story-player-v0.css"
+  rel="stylesheet"
+  type="text/css"
+/>
 ```
 
 Kịch bản đầu tiên nhập lôgic cho trình phát và kịch bản thứ hai thiết lập phong cách mặc định.
@@ -89,12 +95,13 @@ Kịch bản đầu tiên nhập lôgic cho trình phát và kịch bản thứ 
 Bao gồm yếu tố `<amp-story-player>` bên trong `body` (thân) tài liệu. Sau đó quy định câu chuyện mong muốn bằng cách đặt một thẻ `<a>` bên trong yếu tố `<amp-story-player>`. Chỉ `href` đến vị trí của câu chuyện. `href` có thể chỉ đến URL của một câu chuyện được lưu trữ hoặc một đường dẫn tương đối. Đặt tiêu đề của câu chuyện trong thẻ `<a>`.
 
 ```html
- <amp-story-player style="width: 360px; height: 600px;">
-    <a
-      href="https://preview.amp.dev/documentation/examples/introduction/stories_in_amp/">
-      Stories in AMP - Hello World
-    </a>
-  </amp-story-player>
+<amp-story-player style="width: 360px; height: 600px;">
+  <a
+    href="https://preview.amp.dev/documentation/examples/introduction/stories_in_amp/"
+  >
+    Stories in AMP - Hello World
+  </a>
+</amp-story-player>
 ```
 
 ### Đổi kích cỡ trình phát
@@ -103,11 +110,11 @@ Bạn có thể định nghĩa `width` (chiều rộng), `height` (chiều cao),
 
 ```html
 <body>
-...
+  ...
   <amp-story-player style="width: 360px; height: 600px;">
-...
+    ...
   </amp-story-player>
-...
+  ...
 </body>
 ```
 
@@ -118,9 +125,7 @@ We recommend maintaining a 3:5 aspect ratio for the best user experience, but yo
 Độ tương thích của trình phát câu chuyện hoạt động như mọi yếu tố khối khác. Sử dụng CSS để duy trì tỷ lệ chiều rộng và chiều cao, ví dụ như dưới đây:
 
 ```html
-<amp-story-player style="width: 50vw; height: 83.35vw;">
-  ...
-</amp-story-player>
+<amp-story-player style="width: 50vw; height: 83.35vw;"> ... </amp-story-player>
 ```
 
 ### Cung cấp một mã giữ chỗ
@@ -130,7 +135,13 @@ Bao gồm một ảnh đại diện bằng cách thêm một thẻ `<img>` làm 
 ```html
 <amp-story-player style="width: 50vw; height: 83.35vw;">
   <a href="https://www.example.com/story.html">
-    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover1.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes this story.
   </a>
 </amp-story-player>
@@ -145,11 +156,23 @@ You may add multiple stories in the same `<amp-story-player>` element by definin
 ```html
 <amp-story-player style="width: 360px; height: 600px;">
   <a href="https://www.example.com/story1.html">
-    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover1.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes story 1.
   </a>
   <a href="https://www.example.com/story2.html">
-    <img src="https://www.example.com/assets/cover2.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover2.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes story 2.
   </a>
 </amp-story-player>
@@ -160,13 +183,25 @@ Bạn có thể nhúng bao nhiêu trường hợp `<amp-story-player>` tùy thí
 ```html
 <amp-story-player style="width: 360px; height: 600px;">
   <a href="https://www.example.com/story1.html">
-    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover1.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes story 1.
   </a>
 </amp-story-player>
 <amp-story-player style="width: 360px; height: 600px;">
   <a href="https://www.example.com/story2.html">
-    <img src="https://www.example.com/assets/cover2.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover2.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes story 2.
   </a>
 </amp-story-player>

@@ -1,8 +1,8 @@
 ---
-"$title": Kurulum
-"$order": '0'
+'$title': Kurulum
+$order: 0
 description: Geliştirme ortamınızı ayarlama 1. Adım. Kodu indirin. Öğreticinin başlangıç kodunu ZIP dosyası olarak veya git aracılığıyla...
-"$parent": "/documentation/guides-and-tutorials/start/converting/setting-up.md"
+'$parent': '/documentation/guides-and-tutorials/start/converting/setting-up.md'
 ---
 
 ## Ön koşullar

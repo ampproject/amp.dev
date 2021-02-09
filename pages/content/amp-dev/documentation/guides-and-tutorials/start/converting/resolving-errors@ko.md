@@ -1,10 +1,10 @@
 ---
-"$title": 유효성 검사 오류 해결
-"$order": '2'
+'$title': 유효성 검사 오류 해결
+$order: 2
 description: 이 섹션에서는 AMP 페이지의 AMP 유효성 검사 오류 및 해결 방법을 살펴봅니다. 콘솔에 따라 오류가 아래와 다른 순서로 나타날 수 있습니다.
 ---
 
-이 섹션에서는 AMP 페이지에 있는 AMP 유효성 검사 오류 및 해결 방법을 살펴봅니다.  콘솔에 따라 오류가 아래와 다른 순서로 나타날 수 있습니다.
+이 섹션에서는 AMP 페이지에 있는 AMP 유효성 검사 오류 및 해결 방법을 살펴봅니다. 콘솔에 따라 오류가 아래와 다른 순서로 나타날 수 있습니다.
 
 ## 문자 집합 포함
 
@@ -32,20 +32,20 @@ AMP에서 텍스트를 올바르게 표시하려면 페이지의 문자 집합�
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-모든 AMP 문서에는 해당 문서의 '표준' 버전을 참조하는 링크가 있어야 합니다.  이 가이드에 포함되어 있는 [페이지를 검색할 수 있도록 설정](discoverable.md) 단계에서 표준 페이지란 무엇이며 표준 연결에 사용할 수 있는 접근방식으로는 어떤 것이 있는지 자세히 알아보겠습니다.
+모든 AMP 문서에는 해당 문서의 '표준' 버전을 참조하는 링크가 있어야 합니다. 이 가이드에 포함되어 있는 [페이지를 검색할 수 있도록 설정](discoverable.md) 단계에서 표준 페이지란 무엇이며 표준 연결에 사용할 수 있는 접근방식으로는 어떤 것이 있는지 자세히 알아보겠습니다.
 
 이 가이드에서는 변환 중인 원본 HTML 문서를 표준 페이지로 간주합니다.
 
 계속해서 `<meta charset="utf-8" />` 태그 아래에 다음 코드를 **추가**합니다.
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 [tip type="note"] 독립된 표준 AMP 페이지도 만들 수 있습니다. 여전히 표준 링크는 필요하며 AMP 문서 자체를 가리켜야 합니다.
 
 ```html
-<link rel="canonical" href="article.amp.html">
+<link rel="canonical" href="article.amp.html" />
 ```
 
 [/tip]
@@ -64,7 +64,7 @@ The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 위에 표시된 오류는 다음과 같이 `<html>` 태그에 `⚡` 속성을 추가하면 간단히 해결됩니다.
 
 ```html
-<html ⚡ lang="en">
+<html ⚡ lang="en"></html>
 ```
 
 이제 페이지를 새로고침하고 두 오류가 모두 사라졌는지 확인합니다.
@@ -72,7 +72,7 @@ The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 [tip type="note"] `⚡`을 지정하는 것이 권장되는 방법이지만 다음과 같이 `⚡` 속성 자리에 `amp` 속성을 사용할 수도 있습니다.
 
 ```html
-<html amp lang="en">
+<html amp lang="en"></html>
 ```
 
 [/tip]
@@ -90,7 +90,7 @@ AMP에서는 표시 영역의 `width` 및 `minimum-scale`을 정의해야 합니
 표시 영역 오류를 해결하려면 다음의 HTML 스니펫을 `<head>` 태그에 추가합니다.
 
 ```html
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width" />
 ```
 
 `width` 및 `minimum-scale`에 지정된 값은 AMP에서 요구되는 값입니다. `initial-scale` 정의는 필수 항목은 아니지만 모바일 웹 개발 과정에 일반적으로 포함되며 권장되는 사항입니다. [표시 영역 구성](https://developers.google.com/speed/docs/insights/ConfigureViewport)에서 표시 영역 및 반응형 디자인에 관해 자세히 알아볼 수 있습니다.
@@ -115,9 +115,7 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 
 ```html
 <style amp-custom>
-
-/* The content from base.css */
-
+  /* The content from base.css */
 </style>
 ```
 
@@ -150,7 +148,7 @@ The tag 'script' is disallowed except in specific forms.
 [tip type="note"] 사용자 생성/타사 스크립트 사용 제한의 유일한 예외는 다음과 같습니다.
 
 1. 스크립트가 페이지에 메타데이터를 추가하거나 AMP 구성요소를 구성합니다. 이러한 스크립트에는 `application/ld+json` 또는 `application/json` 유형 속성이 포함됩니다.
-2. 스크립트가 iframes에 포함되어 있습니다.  iframe에 자바스크립트를 포함하는 일은 최후의 수단으로 생각해야 합니다. 가능하다면 자바스크립트 기능은 [AMP 구성요소](../../../../documentation/components/index.html)를 사용하여 대체해야 합니다. 다음 섹션에서 첫 번째 AMP 구성요소를 살펴보겠습니다. [/tip]
+2. 스크립트가 iframes에 포함되어 있습니다. iframe에 자바스크립트를 포함하는 일은 최후의 수단으로 생각해야 합니다. 가능하다면 자바스크립트 기능은 [AMP 구성요소](../../../../documentation/components/index.html)를 사용하여 대체해야 합니다. 다음 섹션에서 첫 번째 AMP 구성요소를 살펴보겠습니다. [/tip]
 
 외부 [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) 파일을 열어 보세요. 무엇이 표시되나요? 이 파일에는 자바스크립트 코드가 없어야 하며 다음과 같은 정보의 주석만 포함되어 있어야 합니다.
 
@@ -188,7 +186,63 @@ The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.
 모든 AMP 문서에는 다음과 같은 AMP 상용구 코드가 필요합니다.
 
 ```html
-<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<style amp-boilerplate>
+  body {
+    -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+  }
+  @-webkit-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-moz-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-ms-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-o-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }</style
+><noscript
+  ><style amp-boilerplate>
+    body {
+      -webkit-animation: none;
+      -moz-animation: none;
+      -ms-animation: none;
+      animation: none;
+    }
+  </style></noscript
+>
 ```
 
 문서의 `<head>` 태그 하단에 위의 상용구 코드를 **추가**합니다.
@@ -224,7 +278,7 @@ The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 
 DOM 리플로우를 줄이기 위해 AMP에는 페이지를 다운로드하고 렌더링하는 주기 중 페이지의 레이아웃을 가능한 한 빠르게 파악하기 위한 레이아웃 시스템이 포함되어 있습니다.
 
-아래 이미지는 HTML 페이지가 어떻게 배치되는지를 AMP의 접근방식과 비교하여 보여줍니다.  왼쪽에서 광고 또는 이미지가 로드될 때마다 텍스트가 어떻게 리플로우되는지 유심히 살펴보세요.  반면 AMP의 레이아웃 접근방식에서는 이미지 및 광고가 로드되는 데 시간이 오래 걸리더라도 텍스트가 왔다갔다 움직이지 않습니다.
+아래 이미지는 HTML 페이지가 어떻게 배치되는지를 AMP의 접근방식과 비교하여 보여줍니다. 왼쪽에서 광고 또는 이미지가 로드될 때마다 텍스트가 어떻게 리플로우되는지 유심히 살펴보세요. 반면 AMP의 레이아웃 접근방식에서는 이미지 및 광고가 로드되는 데 시간이 오래 걸리더라도 텍스트가 왔다갔다 움직이지 않습니다.
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-layout-system.png', 837, 394, align='', caption='일반적인 콘텐츠 배치 방식과 AMP의 접근방식 비교') }}
 
@@ -242,16 +296,21 @@ AMP 레이아웃 시스템에서는 페이지에 있는 구성요소가 크기 �
 
 페이지를 새로고침하고 검사기를 확인합니다. 더 이상 오류가 표시되지 않아야 합니다.
 
-이제 AMP 문서가 유효해졌습니다. 하지만 페이지에서 이미지 위치가 어색하여 이미지가 멋져 보이지 않습니다.  [`amp-img`](../../../../documentation/components/reference/amp-img.md)의 높이와 너비를 지정하면 기본적으로 AMP가 사용자가 지정한 값으로 크기를 조정합니다. 하지만 AMP에서 어떤 화면이든 페이지 크기에 *반응하여* 이미지를 알맞게 늘려준다면 좋지 않을까요?
+이제 AMP 문서가 유효해졌습니다. 하지만 페이지에서 이미지 위치가 어색하여 이미지가 멋져 보이지 않습니다. [`amp-img`](../../../../documentation/components/reference/amp-img.md)의 높이와 너비를 지정하면 기본적으로 AMP가 사용자가 지정한 값으로 크기를 조정합니다. 하지만 AMP에서 어떤 화면이든 페이지 크기에 _반응하여_ 이미지를 알맞게 늘려준다면 좋지 않을까요?
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-not-responsive.png', 412, 660, align='center third', caption='이미지가 반응하지 않습니다') }}
 
-AMP는 사용자가 지정한 너비와 높이에 따라 해당 요소의 가로 세로 비율을 계산할 수 있습니다.  이를 통해 AMP 레이아웃 시스템에서는 다양한 방법으로 요소를 배치하고 크기를 조정합니다.  `layout` 속성은 AMP에 사용자가 요소를 어떻게 배치하고 늘리고 싶어 하는지 알려줍니다.
+AMP는 사용자가 지정한 너비와 높이에 따라 해당 요소의 가로 세로 비율을 계산할 수 있습니다. 이를 통해 AMP 레이아웃 시스템에서는 다양한 방법으로 요소를 배치하고 크기를 조정합니다. `layout` 속성은 AMP에 사용자가 요소를 어떻게 배치하고 늘리고 싶어 하는지 알려줍니다.
 
 이미지를 늘리고 크기를 조정할 수 있도록 레이아웃 속성을 `responsive`로 **설정**해 봅시다.
 
 ```html
-<amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+<amp-img
+  src="mountains.jpg"
+  layout="responsive"
+  width="266"
+  height="150"
+></amp-img>
 ```
 
 완료되었습니다. 이미지의 가로 세로 비율이 알맞게 변경되었으며 화면 너비에 맞춰 화면을 채우고 있습니다.
@@ -265,18 +324,75 @@ AMP는 사용자가 지정한 너비와 높이에 따라 해당 요소의 가로
 이제 AMP 문서가 다음과 같이 작성되어 있어야 합니다.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width" />
 
-    <link rel="canonical" href="/article.html">
-    <link rel="shortcut icon" href="amp_favicon.png">
+    <link rel="canonical" href="/article.html" />
+    <link rel="shortcut icon" href="amp_favicon.png" />
 
     <title>News Article</title>
 
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
     <style amp-custom>
       body {
         width: auto;
@@ -306,15 +422,21 @@ AMP는 사용자가 지정한 너비와 높이에 따라 해당 요소의 가로
     <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
-    <header>
-      News Site
-    </header>
+    <header>News Site</header>
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
 
-      <amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+      <amp-img
+        src="mountains.jpg"
+        layout="responsive"
+        width="266"
+        height="150"
+      ></amp-img>
     </article>
   </body>
 </html>

@@ -1,6 +1,6 @@
 ---
-"$title": Gratulation!
-"$order": '4'
+'$title': Gratulation!
+$order: 4
 description: Du hast erfolgreich eine AMPHTML Ad erstellt, die auf Seiten mit und ohne AMP bereitgestellt werden kann! In diesem Tutorial hast du gelernt, eine gültige AMPHTML Ad gemäß der Spezifikation …
 ---
 

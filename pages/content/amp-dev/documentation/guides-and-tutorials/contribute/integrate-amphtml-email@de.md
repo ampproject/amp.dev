@@ -1,9 +1,9 @@
 ---
-"$title": AMP für E-Mail – Integration von E-Mail Anbietern
-"$order": '5'
+'$title': AMP für E-Mail – Integration von E-Mail Anbietern
+$order: 5
 description: Informationen für E-Mail Clients und Anbieter zur Integration in AMP.
 formats:
-- email
+  - email
 ---
 
 Wir arbeiten derzeit an einem ausführlichen Leitfaden zur Integration von AMP für E-Mail.

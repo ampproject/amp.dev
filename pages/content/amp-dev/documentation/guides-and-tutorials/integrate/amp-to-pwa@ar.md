@@ -1,9 +1,9 @@
 ---
-"$title": التحميل المسبق لتطبيق الويب التقدمي (PWA) من صفحات AMP
-"$order": '1'
+'$title': التحميل المسبق لتطبيق الويب التقدمي (PWA) من صفحات AMP
+$order: 1
 description: من الاستراتيجيات الجيدة إنشاء نقطة دخول إلى موقعك باستخدام صفحة AMP، ثم تمهيد تطبيق الويب التقدمي (PWA) خلف المشهد والتبديل إلى ...
 formats:
-- websites
+  - websites
 author: pbakaus
 ---
 
@@ -23,7 +23,7 @@ author: pbakaus
 
 ### تطبيق الويب التقدمي (PWA) للتفاعل والانخراط الكامل
 
-من ناحية أخرى، تسمح تطبيقات الويب التقدمية بمزيد من التفاعل والانخراط، ولكنها لا تتضمن *خصائص التحميل الأول الفوري* مثل صفحة AMP. إنها تعتمد في الأساس على تكنولوجيا تسمى عامل الخدمة، وهو وكيل داخل عميل يسمح بالتخزين المؤقت لجميع أنواع الأصول لصفحاتك، ولكن خادم الخدمة المذكور ينشط فقط *بعد* أول تحميل.
+من ناحية أخرى، تسمح تطبيقات الويب التقدمية بمزيد من التفاعل والانخراط، ولكنها لا تتضمن _خصائص التحميل الأول الفوري_ مثل صفحة AMP. إنها تعتمد في الأساس على تكنولوجيا تسمى عامل الخدمة، وهو وكيل داخل عميل يسمح بالتخزين المؤقت لجميع أنواع الأصول لصفحاتك، ولكن خادم الخدمة المذكور ينشط فقط _بعد_ أول تحميل.
 
 {{ image('/static/img/docs/pwamp_comparison.png', 977, 549, align='', caption='مزايا وعيوب AMP مقارنة بـ PWA.') }}
 
@@ -36,8 +36,10 @@ author: pbakaus
 قم أولا بتثبيت عامل الخدمة على كافة صفحات AMP الخاصة بك باستخدام [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md)، من خلال تضمين المكون أولا عن طريق النص البرمجي الخاص به في `<head>` لصفحتك:
 
 [sourcecode:html]
+
 <script async custom-element="amp-install-serviceworker"
   src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+
 [/sourcecode]
 
 ثم أضف ما يلي في مكان ما داخل `<body>` الخاص بك (قم بالتعديل للإشارة إلى عامل الخدمة الفعلي لك):
@@ -54,20 +56,20 @@ author: pbakaus
 [sourcecode:javascript]
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
-  '/',
-  '/styles/main.css',
-  '/script/main.js'
+'/',
+'/styles/main.css',
+'/script/main.js'
 ];
 
 self.addEventListener('install', function(event) {
-  // Perform install steps
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(function(cache) {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-  );
+// Perform install steps
+event.waitUntil(
+caches.open(CACHE_NAME)
+.then(function(cache) {
+console.log('Opened cache');
+return cache.addAll(urlsToCache);
+})
+);
 });
 [/sourcecode]
 
@@ -83,14 +85,14 @@ self.addEventListener('install', function(event) {
 
 ### 2. إذا كان موقعك المتعارف عليه هو موقع AMP
 
-في هذه الحالة الصفحات المتعارف عليها *هي* صفحات AMP الخاص بك: أنت تبني موقعك بالكامل باستخدام AMP، وتستخدم ببساطة AMP كمكتبة (حقيقة مبهجة: الموقع الذي تقرأه مبني بهذه الطريقة). **في هذا السيناريو، معظم الارتباطات على صفحات AMP الخاصة بك سوف تؤدي إلى صفحات AMP الأخرى.**
+في هذه الحالة الصفحات المتعارف عليها _هي_ صفحات AMP الخاص بك: أنت تبني موقعك بالكامل باستخدام AMP، وتستخدم ببساطة AMP كمكتبة (حقيقة مبهجة: الموقع الذي تقرأه مبني بهذه الطريقة). **في هذا السيناريو، معظم الارتباطات على صفحات AMP الخاصة بك سوف تؤدي إلى صفحات AMP الأخرى.**
 
 يمكنك الآن نشر تطبيق الويب التقدمي ( PWA) الخاص بك على مسار منفصل مثل `your-domain.com/pwa` واستخدام عامل الخدمة الذي يعمل الفعل لـ **مقاطعة تنقل المتصفح عندما ينقر شخص ما على ارتباط على صفحة AMP**:
 
 [sourcecode:javascript]
 self.addEventListener('fetch', event => {
-    if (event.request.mode === 'navigate') {
-      event.respondWith(fetch('/pwa'));
+if (event.request.mode === 'navigate') {
+event.respondWith(fetch('/pwa'));
 
       // Immediately start downloading the actual resource.
       fetch(event.request.url);

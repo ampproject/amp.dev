@@ -1,8 +1,8 @@
 ---
-"$title": Configuración
-"$order": '0'
+'$title': Configuración
+$order: 0
 description: 'Antes de comenzar este tutorial, necesitará lo siguiente: - Conocimientos básico de HTML, CSS, y JavaScript - Comprensión básica de los conceptos fundamentales de AMP (consulte...'
-"$parent": "/content/docs/fundamentals/add_advanced.md"
+'$parent': '/content/docs/fundamentals/add_advanced.md'
 ---
 
 ## Requisitos Previos

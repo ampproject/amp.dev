@@ -1,13 +1,13 @@
 ---
-"$title": Integrate your technology with AMP
-"$order": '0'
-"$hidden": 'true'
+'$title': Integrate your technology with AMP
+$order: 0
+'$hidden': 'true'
 description: Wenn du als Provider Technologie für Publisher und Werbetreibende im Internet bereitstellst, laden wir dich ein, AMP zu unterstützen, damit deine Kunden weiterhin von deiner Technologie profitieren und …
 formats:
-- websites
-- ads
-- stories
-- email
+  - websites
+  - ads
+  - stories
+  - email
 ---
 
 Vielen Dank für dein Interesse, zu AMP beizutragen! Wir freuen uns über diene Teilnahme an unserem Projekt, bei dem wir das Web zu einer nutzerorientierten Plattform machen.

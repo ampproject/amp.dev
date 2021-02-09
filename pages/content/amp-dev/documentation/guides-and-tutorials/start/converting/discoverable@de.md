@@ -1,6 +1,6 @@
 ---
-"$title": Stelle die Auffindbarkeit deiner Seiten sicher
-"$order": '3'
+'$title': Stelle die Auffindbarkeit deiner Seiten sicher
+$order: 3
 description: Diese bidirektionale Verknüpfung ist erforderlich, damit Suchmaschinen die Beziehung zwischen unserem kanonischen Dokument in regulärem HTML und unserem AMP Dokument verstehen.
 ---
 
@@ -23,7 +23,7 @@ Wir gehen in diesem Tutorial davon aus, dass es eine AMP und eine nicht-AMP Vers
 Im ersten Schritt haben wir in unserem AMP Dokument im `<head>` ein Linktag zurück zur kanonischen Seite eingefügt:
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 Beim nächsten Schritt wird der kanonische Artikel mit der AMP Seite verknüpft. Dazu fügen wir das Tag `<link rel="amphtml">` im Abschnitt `<head>` des kanonischen Artikels ein.
@@ -31,7 +31,7 @@ Beim nächsten Schritt wird der kanonische Artikel mit der AMP Seite verknüpft.
 **Füge** in der Datei `article.html` im Abschnitt `<head>` den folgenden Code ein:
 
 ```html
-<link rel="amphtml" href="/article.amp.html">
+<link rel="amphtml" href="/article.amp.html" />
 ```
 
 Das folgende Diagramm zeigt die Richtungen der Linktags:
@@ -47,40 +47,39 @@ Für gültige AMP Seiten sind keine strukturierten Daten von [schema.org](http:/
 **Füge** für unseren Nachrichtenartikel die folgenden strukturierten Daten am Ende des Abschnitts `<head>` in dein AMP Dokument ein:
 
 ```html
-
 <script type="application/ld+json">
-{
- "@context": "http://schema.org",
- "@type": "NewsArticle",
- "mainEntityOfPage":{
-   "@type":"WebPage",
-   "@id":"https://example.com/my-article.html"
- },
- "headline": "My First AMP Article",
- "image": {
-   "@type": "ImageObject",
-   "url": "https://example.com/article_thumbnail1.jpg",
-   "height": 800,
-   "width": 800
- },
- "datePublished": "2015-02-05T08:00:00+08:00",
- "dateModified": "2015-02-05T09:20:00+08:00",
- "author": {
-   "@type": "Person",
-   "name": "John Doe"
- },
- "publisher": {
-   "@type": "Organization",
-   "name": "⚡ AMP Times",
-   "logo": {
-     "@type": "ImageObject",
-     "url": "https://example.com/amptimes_logo.jpg",
-     "width": 600,
-     "height": 60
-   }
- },
- "description": "My first experience in an AMPlified world"
-}
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://example.com/my-article.html"
+    },
+    "headline": "My First AMP Article",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://example.com/article_thumbnail1.jpg",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2015-02-05T08:00:00+08:00",
+    "dateModified": "2015-02-05T09:20:00+08:00",
+    "author": {
+      "@type": "Person",
+      "name": "John Doe"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "⚡ AMP Times",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://example.com/amptimes_logo.jpg",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "My first experience in an AMPlified world"
+  }
 </script>
 ```
 

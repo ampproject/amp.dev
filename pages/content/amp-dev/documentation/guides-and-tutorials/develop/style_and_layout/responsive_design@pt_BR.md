@@ -1,6 +1,6 @@
 ---
-"$title": Criar páginas AMP responsivas
-"$order": '5'
+'$title': Criar páginas AMP responsivas
+$order: 5
 description: O Web design responsivo é a criação de páginas web fáceis de usar e que atendam às necessidades dos usuários. Essas páginas se ajustam ao tamanho e à orientação da tela do dispositivo. Com AMP, é muito fácil conseguir ...
 formats:
   - websites
@@ -45,7 +45,7 @@ Essas são as configurações comuns da viewport que você usaria num site respo
 
 No design responsivo, você pode usar consultas de mídia CSS ([`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media)) para definir o estilo da sua página da Web para diferentes dimensões de tela. É possível fazer isto sem alterar o conteúdo da página. Numa página AMP, você pode continuar usando essas mesmas consultas de CSS `@media`. Além disso, para um controle mais preciso sobre o elemento da página AMP, especifique nele o atributo `media`. Isto será muito útil caso você precise mostrar ou ocultar um elemento com base numa consulta de mídia. Consulte a seção [Como alterar a direção artística de uma imagem](#changing-the-art-direction-of-an-image) para um exemplo que usa o atributo `media`.
 
-Redimensionar cada elemento para que ele se ajuste à tela pode ser uma tarefa complicada<sup><a href="#fn1" id="ref1">*</a></sup>. No entanto, é fácil criar um elemento responsivo usando AMP. Basta você especificar o atributo `"layout=responsive"` junto com os atributos `width` e `height` do elemento. Quando você aplicar o layout `responsive`, o elemento a que ele é aplicado será redimensionado automaticamente à largura do elemento que o contém. A altura será alterada com base na proporção especificada pelos atributos `width` e `height` do elemento. Quase todos os elementos da página AMP são compatíveis com o layout `responsive`. Consulte a documentação de referência do elemento para ver a compatibilidade dos layouts.
+Redimensionar cada elemento para que ele se ajuste à tela pode ser uma tarefa complicada<sup><a href="#fn1" id="ref1">\*</a></sup>. No entanto, é fácil criar um elemento responsivo usando AMP. Basta você especificar o atributo `"layout=responsive"` junto com os atributos `width` e `height` do elemento. Quando você aplicar o layout `responsive`, o elemento a que ele é aplicado será redimensionado automaticamente à largura do elemento que o contém. A altura será alterada com base na proporção especificada pelos atributos `width` e `height` do elemento. Quase todos os elementos da página AMP são compatíveis com o layout `responsive`. Consulte a documentação de referência do elemento para ver a compatibilidade dos layouts.
 
 É fácil criar elementos responsivos com `"layout=responsive"`. No entanto, é preciso considerar como seus elementos aparecerão em todos os tamanhos de tela, incluindo as dimensões para computador e tablet. Um erro comum é permitir que a imagem preencha toda a largura da tela. Como consequência disso, a imagem se expandirá para um tamanho maior que o pretendido, causando uma experiência ruim aos usuários de widescreen. Por padrão, os elementos com `layout=responsive` preencherão toda a largura do elemento de contêiner, que geralmente não tem limites para essa dimensão (como width=100%). Restrinja a largura do contêiner da imagem para aprimorar a maneira como ela é exibida. Por exemplo, ao configurar uma regra "max-width" em "body" ou "main", você pode limitar uma largura máxima específica para todas as imagens.
 
@@ -81,9 +81,9 @@ No entanto, queremos que a imagem não se expanda além do tamanho pretendido. P
 
 Leia mais: Para saber mais sobre os diferentes layouts em AMP, consulte o guia [Consultas de mídia e layout](control_layout.md#the-layout-attribute).
 
-<a id="fn1"></a>[tip type="note"] ***Por que é complicado redimensionar elementos para que eles se ajustem ao tamanho da tela quando posso fazer isso facilmente com o estilo  <code>width=100%</code>?**
+<a id="fn1"></a>[tip type="note"] **\*Por que é complicado redimensionar elementos para que eles se ajustem ao tamanho da tela quando posso fazer isso facilmente com o estilo <code>width=100%</code>?**
 
-A parte complicada é renderizar os elementos responsivos na página sem prejudicar as métricas de desempenho nem a experiência do usuário. Sim, é fácil ajustar imagens à tela com "width=100%", mas isto afetará o desempenho. Primeiro, o navegador precisa fazer download da imagem para identificar as dimensões dela. Depois, ele redimensionará a imagem para que ela se ajuste ao tamanho da tela. Por fim, fará o reflow e preencherá a página novamente. Ao usar AMP, o caminho de renderização é otimizado para que a página seja gerada primeiro com placeholders de imagens, com base nas dimensões fornecidas no  <a><code>amp-img</code></a>, a partir dos números usados para definir a proporção. Depois, os recursos são baixados e a página é desenhada. O reflow não é obrigatório. [/tip]
+A parte complicada é renderizar os elementos responsivos na página sem prejudicar as métricas de desempenho nem a experiência do usuário. Sim, é fácil ajustar imagens à tela com "width=100%", mas isto afetará o desempenho. Primeiro, o navegador precisa fazer download da imagem para identificar as dimensões dela. Depois, ele redimensionará a imagem para que ela se ajuste ao tamanho da tela. Por fim, fará o reflow e preencherá a página novamente. Ao usar AMP, o caminho de renderização é otimizado para que a página seja gerada primeiro com placeholders de imagens, com base nas dimensões fornecidas no <a><code>amp-img</code></a>, a partir dos números usados para definir a proporção. Depois, os recursos são baixados e a página é desenhada. O reflow não é obrigatório. [/tip]
 
 ## Como dimensionar mídias na página <a name="scaling-media-for-the-page"></a>
 
@@ -215,7 +215,7 @@ Em HTML, você pode veicular diferentes formatos de imagem usando a tag `picture
 
 Em AMP, há duas maneiras de conseguir servir imagens otimizadas:
 
-- Desenvolvedores que usam formatos de imagem que não são amplamente suportados, como WebP, podem configurar seu servidor para processar os cabeçalhos  <code>Accept</code> do navegador e responder com bytes de imagem e o cabeçalho <a><code>Content-Type</code></a>. Isto evita que o navegador baixe tipos de imagem incompatíveis. Leia mais sobre negociação de conteúdo.[sourcecode:html]  Accept: image/webp,image/apng,image/_,_/\*;q=0.8  [/sourcecode]
+- Desenvolvedores que usam formatos de imagem que não são amplamente suportados, como WebP, podem configurar seu servidor para processar os cabeçalhos <code>Accept</code> do navegador e responder com bytes de imagem e o cabeçalho <a><code>Content-Type</code></a>. Isto evita que o navegador baixe tipos de imagem incompatíveis. Leia mais sobre negociação de conteúdo.[sourcecode:html] Accept: image/webp,image/apng,image/_,_/\*;q=0.8 [/sourcecode]
 - Forneça fallbacks de imagem aninhados, como no exemplo abaixo.
 
 ##### Exemplo: como veicular diferentes formatos de imagem

@@ -1,6 +1,6 @@
 ---
-"$title": Comment ajouter un commentaire
-"$order": '2'
+'$title': Comment ajouter un commentaire
+$order: 2
 description: "À ce stade, l'utilisateur peut ajouter un commentaire à l'aide de la bibliothèque amp-form. Notez que la présence de amp-form conditionnée par l'état du composant amp-access ..."
 ---
 
@@ -9,6 +9,7 @@ description: "À ce stade, l'utilisateur peut ajouter un commentaire à l'aide d
 À ce stade, l'utilisateur peut ajouter un commentaire à l'aide de la bibliothèque [`amp-form`](../../../../documentation/components/reference/amp-form.md). Notez que la présence de amp-form est conditionnee par l'état du composant [`amp-access`](../../../../documentation/components/reference/amp-access.md):
 
 [sourcecode:html]
+
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
 [/sourcecode]
 
@@ -21,6 +22,7 @@ Voici un exemple de réponse JSON:
 Le composant amp-form affichera simplement ces valeurs dans la page à l'aide du modèle [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md):
 
 [sourcecode:html]
+
 <div submit-success>
   <template type="amp-mustache">
     <div class="comment-user">
@@ -37,6 +39,7 @@ Le composant amp-form affichera simplement ces valeurs dans la page à l'aide du
 Dans cet exemple, nous vérifions uniquement si la valeur du commentaire n'est pas vide; si la valeur est vide, nous retournons une erreur qui provoque l'exécution du code suivant
 
 [sourcecode:html]
+
 <div submit-error>
   <template type="amp-mustache">
     Error! Looks like something went wrong with your comment, please try to submit it again.

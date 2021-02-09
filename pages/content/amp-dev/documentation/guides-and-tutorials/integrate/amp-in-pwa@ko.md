@@ -1,9 +1,9 @@
 ---
-"$title": Use AMP as a data source for your PWA
-"$order": '1'
+'$title': Use AMP as a data source for your PWA
+$order: 1
 description: AMP에 시간과 노력을 투자했지만 아직 프로그레시브 웹 앱을 만들지 않으셨나요? AMP 페이지를 통해 프로그레시브 웹 앱의 개발 과정을 크게 간소화할 수 있습니다.
 formats:
-- websites
+  - websites
 author: pbakaus
 ---
 
@@ -22,8 +22,10 @@ AMP에 시간과 노력을 투자했지만 아직 프로그레시브 웹 앱을 
 페이지 헤드에 그림자 AMP를 포함하는 방법은 다음과 같습니다.
 
 [sourcecode:html]
+
 <!-- Asynchronously load the AMP-with-Shadow-DOM runtime library. -->
 <script async src="https://cdn.ampproject.org/shadow-v0.js"></script>
+
 [/sourcecode]
 
 ### 그림자 AMP API를 사용할 준비가 되었는지 어떻게 알 수 있나요?
@@ -34,7 +36,7 @@ AMP에 시간과 노력을 투자했지만 아직 프로그레시브 웹 앱을 
 
 [sourcecode:javascript]
 (window.AMP = window.AMP || []).push(function(AMP) {
-  // AMP is now available.
+// AMP is now available.
 });
 [/sourcecode]
 
@@ -62,20 +64,20 @@ AMP에 시간과 노력을 투자했지만 아직 프로그레시브 웹 앱을 
 [sourcecode:javascript]
 function fetchDocument(url) {
 
-  // unfortunately fetch() does not support retrieving documents,
-  // so we have to resort to good old XMLHttpRequest.
-  var xhr = new XMLHttpRequest();
+// unfortunately fetch() does not support retrieving documents,
+// so we have to resort to good old XMLHttpRequest.
+var xhr = new XMLHttpRequest();
 
-  return new Promise(function(resolve, reject) {
-    xhr.open('GET', url, true);
-    xhr.responseType = 'document';
-    xhr.setRequestHeader('Accept', 'text/html');
-    xhr.onload = function() {
-      // .responseXML contains a ready-to-use Document object
-      resolve(xhr.responseXML);
-    };
-    xhr.send();
-  });
+return new Promise(function(resolve, reject) {
+xhr.open('GET', url, true);
+xhr.responseType = 'document';
+xhr.setRequestHeader('Accept', 'text/html');
+xhr.onload = function() {
+// .responseXML contains a ready-to-use Document object
+resolve(xhr.responseXML);
+};
+xhr.send();
+});
 }
 [/sourcecode]
 
@@ -92,8 +94,8 @@ var url = "https://my-domain/amp/an-article.html";
 
 // Use our fetchDocument method to get the doc
 fetchDocument(url).then(function(doc) {
-  // Let AMP take over and render the page
-  var ampedDoc = AMP.attachShadowDoc(container, doc, url);
+// Let AMP take over and render the page
+var ampedDoc = AMP.attachShadowDoc(container, doc, url);
 });
 [/sourcecode]
 

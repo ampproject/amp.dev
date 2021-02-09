@@ -1,9 +1,9 @@
 ---
-"$title": Integración con AMP para publicar anuncios de display
-"$order": '5'
+'$title': Integración con AMP para publicar anuncios de display
+$order: 5
 description: En esta guía se muestran los pasos que se deben seguir para integrar AMP y publicar anuncios de display en páginas AMP.
 formats:
-- ads
+  - ads
 ---
 
 En esta guía se muestran los pasos que se deben seguir para integrar AMP y publicar anuncios de display en páginas AMP.
@@ -25,16 +25,19 @@ Como servidor de anuncios, puede integrar AMP para publicar anuncios HTML tradic
 
 Como servidor de anuncios, los editores admitidos incluyen una biblioteca JavaScript proporcionada por usted (el servidor) y colocan distintos "fragmentos de anuncios" que se basan en la biblioteca JavaScript para obtener anuncios y renderizarlos en el sitio web del editor. Dado que AMP no permite que los editores ejecuten JavaScript de forma arbitraria, debe aportar el código AMP (de código abierto) para permitir que la etiqueta [`amp-ad`](../../../documentation/components/reference/amp-ad.md) solicite anuncios de su servidor de anuncios.
 
-[tip type="tip"] <strong>NOTA:</strong> Puede utilizar esta implementación [`amp-ad`](../../../documentation/components/reference/amp-ad.md)  para mostrar anuncios HTML tradicionales **y** anuncios AMP HTML. [/tip]
+[tip type="tip"] <strong>NOTA:</strong> Puede utilizar esta implementación [`amp-ad`](../../../documentation/components/reference/amp-ad.md) para mostrar anuncios HTML tradicionales **y** anuncios AMP HTML. [/tip]
 
 Por ejemplo, puede invocar el servidor A9 de Amazon con esta sintaxis:
 
 ```html
-<amp-ad width="300" height="250"
-    type="a9"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  width="300"
+  height="250"
+  type="a9"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 

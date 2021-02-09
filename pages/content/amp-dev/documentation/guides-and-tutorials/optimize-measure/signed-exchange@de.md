@@ -1,8 +1,8 @@
 ---
-"$title": Stelle AMP via Signed Exchanges bereit
-"$order": '4'
+'$title': Stelle AMP via Signed Exchanges bereit
+$order: 4
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 ---
 
@@ -10,7 +10,7 @@ AMP bietet Geschwindigkeitsvorteile weit über das Format hinaus. Dazu werden Me
 
 Ein [Signed Exchange](https://developers.google.com/web/updates/2018/11/signed-exchanges) besteht aus einem gültigen AMP Dokument und der ursprünglichen URL des Contents. Diese Informationen sind durch digitale Signaturen geschützt, die das Dokument auf sichere Weise an die zugehörige URL binden. Auf diese Weise können Browser die ursprüngliche URL sicher in der URL Zeile anstelle des Hostnamens des Computers anzeigen, der die Bytes an den Browser übermittelt hat.
 
-Signierte AMP Inhalte werden *zusätzlich zu* (und nicht anstelle von) regulären AMP Inhalten bereitgestellt.
+Signierte AMP Inhalte werden _zusätzlich zu_ (und nicht anstelle von) regulären AMP Inhalten bereitgestellt.
 
 {{ image('/static/img/docs/guides/sxg/sxg.png', 411, 293, layout='responsive', alt='Bild einer URL mit Signed Exchange', caption=' ', align='' ) }}
 
@@ -20,14 +20,14 @@ Signierte AMP Inhalte werden *zusätzlich zu* (und nicht anstelle von) reguläre
 
 Um Signed Exchanges zu implementieren, musst du die folgenden Anforderungen erfüllen:
 
-- Es muss möglich sein, die von deinem Server generierten HTTP Header zu konfigurieren und zu steuern. (Die meisten rein webbasierten Hosting Lösungen wie Blogger sind *nicht* mit Signed Exchanges kompatibel.)
+- Es muss möglich sein, die von deinem Server generierten HTTP Header zu konfigurieren und zu steuern. (Die meisten rein webbasierten Hosting Lösungen wie Blogger sind _nicht_ mit Signed Exchanges kompatibel.)
 - Es muss möglich sein, AMP Signed Exchanges zu generieren, z. B. durch Ausführen von [`amppackager`](https://github.com/ampproject/amppackager/blob/master/README.md), als [Go Binärdatei](https://golang.org/doc/install) oder innerhalb einer [Docker VM](https://docs.docker.com/machine/get-started/).
-    - Der Packager muss alle sechs Wochen aktualisiert werden.
+  - Der Packager muss alle sechs Wochen aktualisiert werden.
 - Es muss möglich sein, [Vary](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary) in den Headern `Accept` und `AMP-Cache-Transform` auf Edge HTTP Servern zu verwenden und verschiedene Inhalte für die gleiche URL zurückzugeben.
 - Das System, auf dem `amppackager` ausgeführt wird, muss in der Lage sein, ausgehende Netzwerkanforderungen an die folgenden Empfänger zu stellen:
-    - die Zertifizierungsstelle, die dein Zertifikat ausstellt,
-    - den Publisher Server, auf dem die zu signierenden AMP Dokumente gehostet werden,
-    - `cdn.ampproject.org`, um die aktuelle Version von AMP abzurufen.
+  - die Zertifizierungsstelle, die dein Zertifikat ausstellt,
+  - den Publisher Server, auf dem die zu signierenden AMP Dokumente gehostet werden,
+  - `cdn.ampproject.org`, um die aktuelle Version von AMP abzurufen.
 - Ein permanentes Dateisystem mit gemeinsam genutztem Speicher zwischen allen Instanzen von `amppackager`, die im selben Rechenzentrum ausgeführt werden, muss vorhanden sein.
 
 # Implementierung von Signed Exchanges
@@ -143,7 +143,7 @@ format version: 1b3
 
 (Beachte, dass der Schalter `-verify` zu diesem Zeitpunkt nicht funktioniert, da sich die erforderlichen Zertifikate nicht auf dem Server `https://example.com/` befinden.)
 
-Stelle sicher, dass die Antwort *immer* den Header `Vary` mit dem Wert `Accept,AMP-Cache-Transform` enthält (unabhängig davon, ob der MIME Typ `text/html`, `application/signed-exchange` oder ein anderer ist):
+Stelle sicher, dass die Antwort _immer_ den Header `Vary` mit dem Wert `Accept,AMP-Cache-Transform` enthält (unabhängig davon, ob der MIME Typ `text/html`, `application/signed-exchange` oder ein anderer ist):
 
 ```sh
 $ curl -si https://staging.example.com/ | less

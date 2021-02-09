@@ -1,6 +1,6 @@
 ---
-"$title": Démarrons notre story
-"$order": '3'
+'$title': Démarrons notre story
+$order: 3
 description: "Une story Web entière est représentée par le composant amp-story, qui sert de conteneur pour toutes les pages d'une story. Le composant amp-story est également responsable de ..."
 author: bpaduch
 ---
@@ -13,8 +13,11 @@ Le composant [`amp-story`](../../../../documentation/components/reference/amp-st
 
 ```html
 <head>
-<script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+  <script
+    async
+    custom-element="amp-story"
+    src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+  ></script>
 </head>
 ```
 
@@ -22,8 +25,7 @@ Le composant [`amp-story`](../../../../documentation/components/reference/amp-st
 
 ```html
 <body>
-  <amp-story standalone>
-  </amp-story>
+  <amp-story standalone> </amp-story>
 </body>
 ```
 
@@ -35,17 +37,19 @@ Pour que les stories soient visibles sur le Web, certaines métadonnées sont n�
 
 - Le titre de la story, représenté par l'attribut `title` (par exemple, "Joie des animaux domestiques").
 - Le nom de l'éditeur, représenté par l'attribut `publisher` (par exemple, "Tutoriels AMP").
-- Le logo de l'éditeur, représenté par l'attribut `publisher-logo-src`.  Il s'agit d'une URL pour une image de logo, dans un format carré de rapport 1x1.
+- Le logo de l'éditeur, représenté par l'attribut `publisher-logo-src`. Il s'agit d'une URL pour une image de logo, dans un format carré de rapport 1x1.
 - Une image d'affiche de la story, représentée par l'attribut `poster-portrait-src`. Il s'agit d'une URL d'affiche et l'image doit être au format portrait avec des proportions de 3x4.
 
 Ajoutons ces attributs à notre balise [`amp-story`](../../../../documentation/components/reference/amp-story.md) :
 
 ```html
-<amp-story standalone
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-    poster-portrait-src="assets/cover.jpg">
+<amp-story
+  standalone
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+></amp-story>
 ```
 
 En plus de ces attributs obligatoires, vous pouvez appliquer d'autres attributs. Pour en savoir plus, consultez la section sur les [attributs](../../../../documentation/components/reference/amp-story.md#attributes) de la documentation de référence [`amp-story`](../../../../documentation/components/reference/amp-story.md).

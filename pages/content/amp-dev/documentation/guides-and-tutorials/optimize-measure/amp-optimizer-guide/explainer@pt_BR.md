@@ -1,10 +1,10 @@
 ---
-"$title": Como funciona um Otimizador AMP
-"$order": '1'
+'$title': Como funciona um Otimizador AMP
+$order: 1
 description: Um Otimizador AMP pega um documento AMPHTML válido como entrada e o transforma numa versão otimizada, aplicando otimizações adicionais que seriam trabalhosas de fazer "manualmente". Este guia explica em detalhes como o Otimizador AMP funciona.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

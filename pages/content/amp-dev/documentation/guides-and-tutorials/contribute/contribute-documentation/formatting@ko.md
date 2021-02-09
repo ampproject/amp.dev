@@ -1,12 +1,12 @@
 ---
-"$title": 서식 지정 가이드 & 튜토리얼
-"$order": '3'
+'$title': 서식 지정 가이드 & 튜토리얼
+$order: 3
 description: amp.dev 파일 서식 지정 요구 사항
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 
@@ -145,10 +145,10 @@ Read-on
 ```
 
 ```css
-  // code sample
+// code sample
 ```
 
-```js
+````js
   // code sample
 ```</pre></div>
 
@@ -177,8 +177,10 @@ Python 마크다운에는 일부 제한이 있습니다. 목록에 코드 조각
           template="<custom-template>"]
   ```html
     // code sample
-  ```
-  &lsqb;/example]</pre>
+````
+
+&lsqb;/example]</pre>
+
 </div>
 
 참고: 미리보기는 Playground에서 열었을 때 선택한 최근 형식으로 자동 변환됩니다🤯!
@@ -210,9 +212,11 @@ Python 마크다운에는 일부 제한이 있습니다. 목록에 코드 조각
 다음과 같이 표시되어야 합니다:
 
 [example preview="inline" playground="true"]
+
 ```html
 <div style="background: red; width: 200px; height: 200px;">Hello World</div>
 ```
+
 [/example]
 
 주의: 인라인 샘플은 페이지에 바로 임베드 되므로 컴포넌트가 해당 페이지에 이미 사용된 경우 충돌이 발생할 수 있습니다(예: `amp-consent`).
@@ -248,10 +252,15 @@ Python 마크다운에는 일부 제한이 있습니다. 목록에 코드 조각
 다음과 같이 표시되어야 합니다:
 
 [example preview="top-frame"
-         playground="true"]
+playground="true"]
+
 ```html
 <head>
-  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-youtube"
+    src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+  ></script>
   <style amp-custom>
     body {
       background: red;
@@ -260,13 +269,16 @@ Python 마크다운에는 일부 제한이 있습니다. 목록에 코드 조각
 </head>
 <body>
   <h1>Hello AMP</h1>
-  <amp-youtube width="480"
+  <amp-youtube
+    width="480"
     height="270"
     layout="responsive"
-    data-videoid="lBTCB7yLs8Y">
+    data-videoid="lBTCB7yLs8Y"
+  >
   </amp-youtube>
 </body>
 ```
+
 [/example]
 
 ### AMP 스토리
@@ -311,38 +323,43 @@ AMP 스토리 미리보기 시 `preview="top-frame"`과 `orientation="portrait"`
 다음과 같이 표시되어야 합니다:
 
 [example preview="top-frame"
-         orientation="portrait"
-         playground="true"]
+orientation="portrait"
+playground="true"]
+
 ```html
-  <head>
-    <script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-    <style amp-custom>
-      body {
-        font-family: 'Roboto', sans-serif;
-      }
-      amp-story-page {
-        background: white;
-      }
-    </style>
-  </head>
-  <body>
-    <amp-story standalone>
-      <amp-story-page id="cover">
-        <amp-story-grid-layer template="vertical">
-          <h1>Hello World</h1>
-          <p>This is the cover page of this story.</p>
-        </amp-story-grid-layer>
-      </amp-story-page>
-      <amp-story-page id="page-1">
-        <amp-story-grid-layer template="vertical">
-          <h1>First Page</h1>
-          <p>This is the first page of this story.</p>
-        </amp-story-grid-layer>
-      </amp-story-page>
-    </amp-story>
-  </body>
+<head>
+  <script
+    async
+    custom-element="amp-story"
+    src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+  ></script>
+  <style amp-custom>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    amp-story-page {
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <amp-story standalone>
+    <amp-story-page id="cover">
+      <amp-story-grid-layer template="vertical">
+        <h1>Hello World</h1>
+        <p>This is the cover page of this story.</p>
+      </amp-story-grid-layer>
+    </amp-story-page>
+    <amp-story-page id="page-1">
+      <amp-story-grid-layer template="vertical">
+        <h1>First Page</h1>
+        <p>This is the first page of this story.</p>
+      </amp-story-grid-layer>
+    </amp-story-page>
+  </amp-story>
+</body>
 ```
+
 [/example]
 
 ### AMP 이메일의 절대 URL
@@ -364,15 +381,19 @@ AMP 이메일에 엔드포인트 URL이 임베드 될 경우 <code>{{server_for_
 다음과 같이 표시되어야 합니다:
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <div class="resp-img">
-  <amp-img alt="flowers"
+  <amp-img
+    alt="flowers"
     src="{{server_for_email}}/static/inline-examples/images/flowers.jpg"
     layout="responsive"
     width="640"
-    height="427"></amp-img>
+    height="427"
+  ></amp-img>
 </div>
 ```
+
 [/example]
 
 ### 이스케이핑 mustache 템플릿
@@ -401,13 +422,19 @@ AMP 이메일에 엔드포인트 URL이 임베드 될 경우 <code>{{server_for_
 다음과 같이 표시되어야 합니다:
 
 [example preview="top-frame"
-         playground="true"
-         imports="amp-list:0.1"
-         template="amp-mustache:0.2"]
+playground="true"
+imports="amp-list:0.1"
+template="amp-mustache:0.2"]
+
 ```html
-<amp-list width="auto" height="100" layout="fixed-height"
-  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
-  <template type="amp-mustache">{% raw %}
+<amp-list
+  width="auto"
+  height="100"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json"
+>
+  <template type="amp-mustache"
+    >{% raw %}
     <div class="url-entry">
       <a href="{{url}}">{{title}}</a>
     </div>
@@ -415,6 +442,7 @@ AMP 이메일에 엔드포인트 URL이 임베드 될 경우 <code>{{server_for_
   </template>
 </amp-list>
 ```
+
 [/example]
 
 ## 링크
@@ -422,7 +450,7 @@ AMP 이메일에 엔드포인트 URL이 임베드 될 경우 <code>{{server_for_
 표준 마크다운 링크 구문으로 다른 페이지로 연결할 수 있습니다.
 
 ```md
- [link](../../../courses/beginning-course/index.md)
+[link](../../../courses/beginning-course/index.md)
 ```
 
 amp.dev에 다른 페이지를 연결할 경우 참조는 대상 파일에 상대 파일 경로가 됩니다.
@@ -452,7 +480,7 @@ amp.dev에 다른 페이지를 연결할 경우 참조는 대상 파일에 상�
 AMP 웹사이트나 AMP 스토리와 같은 AMP 형식으로 컴포넌트 문서, 가이드 및 튜토리얼, 예제를 필터링할 수 있습니다. 이러한 페이지를 링크로 연결할 경우, 링크에 형식 매개변수를 추가하여 대상에서 지원되는 형식을 명시적으로 지정해야 합니다.
 
 ```md
- [link](../../learn/amp-actions-and-events.md?format=websites)
+[link](../../learn/amp-actions-and-events.md?format=websites)
 ```
 
 페이지에 사용된 **모든** 형식이 대상에서 지원된다고 확신할 경우에만 매개변수를 생략할 수 있습니다.
@@ -462,8 +490,8 @@ AMP 웹사이트나 AMP 스토리와 같은 AMP 형식으로 컴포넌트 문서
 링크에서 버전 부분이 생략될 경우 컴포넌트 참조 문서 링크는 자동으로 최신 버전을 지정합니다. 버전을 명시적으로 지정하고 싶을 경우 전체 이름을 지정하세요.
 
 ```md
- [latest version](../../../components/reference/amp-carousel.md?format=websites)
- [explicit version](../../../components/reference/amp-carousel-v0.2.md?format=websites)
+[latest version](../../../components/reference/amp-carousel.md?format=websites)
+[explicit version](../../../components/reference/amp-carousel-v0.2.md?format=websites)
 ```
 
 ## 문서 구조

@@ -1,10 +1,10 @@
 ---
-"$title": Vertiefung von AMP Analytics
-"$order": '1'
+'$title': Vertiefung von AMP Analytics
+$order: 1
 description: Dieser Leitfaden befasst sich eingehend mit der Komponente "amp-analytics" und zerlegt eine Beispielkonfiguration für amp-analytics in die folgenden Schlüsselbausteine.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 ---
 
 Dieser Leitfaden befasst sich eingehend mit der Komponente [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) und zerlegt eine Beispielkonfiguration für [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) in die folgenden Schlüsselbausteine:
@@ -12,41 +12,44 @@ Dieser Leitfaden befasst sich eingehend mit der Komponente [`amp-analytics`](../
 In diesem Leitfaden verwenden wir das folgende Konfigurationsbeispiel, welches die Seitenaufrufe und Benutzerklicks auf Links verfolgt und Analysedaten an den Drittanbieter [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/) sendet:
 
 ```html
-<amp-analytics type="googleanalytics" config="https://example.com/analytics.account.config.json">
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
-    "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-  },
-  "vars": {
-    "account": "ABC123"
-  },
-  "extraUrlParams": {
-    "cd1": "AMP"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
-    },
-    "trackAnchorClicks": {
-      "on": "click",
-      "selector": "a",
-      "request": "event",
+<amp-analytics
+  type="googleanalytics"
+  config="https://example.com/analytics.account.config.json"
+>
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
+        "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
+      },
       "vars": {
-        "eventId": "42",
-        "eventLabel": "clicked on a link"
+        "account": "ABC123"
+      },
+      "extraUrlParams": {
+        "cd1": "AMP"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        },
+        "trackAnchorClicks": {
+          "on": "click",
+          "selector": "a",
+          "request": "event",
+          "vars": {
+            "eventId": "42",
+            "eventLabel": "clicked on a link"
+          }
+        }
+      },
+      "transport": {
+        "beacon": false,
+        "xhrpost": false,
+        "image": true
       }
     }
-  },
-  'transport': {
-    'beacon': false,
-    'xhrpost': false,
-    'image': true
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -76,7 +79,9 @@ This allows you to do things like vary the configuration based on a specific req
 The first step to loading remote configurations is to include the config attribute in the [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) tag:
 
 ```html
-<amp-analytics config="https://example.com/analytics.account.config.json">
+<amp-analytics
+  config="https://example.com/analytics.account.config.json"
+></amp-analytics>
 ```
 
 Als Nächstes muss der JSON Inhalt erstellt werden, der sich in der Remote URL befindet. In diesem einfachen Beispiel ist die im JSON Objekt enthaltene Konfiguration lediglich der Variablenwert für den Analytics Account.
@@ -257,26 +262,26 @@ In this example, there’s a remote configuration, variables defined at the top-
 
 ```html
 <amp-analytics config="http://example.com/config.json">
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(cid-scope)}",
-  },
-  "vars": {
-    "account": "ABC123",
-    "title": "Homepage"
-  },
-  "triggers": {
-    "some-event": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(cid-scope)}",
+      },
       "vars": {
-        "title": "My homepage",
-        "clientId": "my user"
+        "account": "ABC123",
+        "title": "Homepage"
+      },
+      "triggers": {
+        "some-event": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage",
+            "clientId": "my user"
+          }
       }
-  }
-}
-</script>
+    }
+  </script>
 </amp-analytics>
 ```
 

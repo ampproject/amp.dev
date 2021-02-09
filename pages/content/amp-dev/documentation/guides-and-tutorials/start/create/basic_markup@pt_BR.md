@@ -1,15 +1,16 @@
 ---
-"$title": Crie sua página AMPHTML
-"$order": '1'
+'$title': Crie sua página AMPHTML
+$order: 1
 description: Ao criar páginas e conteúdos AMP, é recomendado usar o protocolo HTTPS em vez de HTTP. O HTTPS não é obrigatório para documentos AMP ...
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 O código de marcação a seguir é um bom ponto de partida ou boilerplate. Copie e salve esse código num arquivo com extensão .html.
 
 [sourcecode:html]
+
 <!doctype html>
 <html amp lang="en">
   <head>
@@ -39,7 +40,7 @@ O código de marcação a seguir é um bom ponto de partida ou boilerplate. Copi
 
 Até agora, o conteúdo no corpo da página é bem simples. No entanto, talvez alguns códigos adicionais no cabeçalho da página não sejam tão óbvios. Vamos analisar em detalhes a marcação obrigatória.
 
-Use HTTPS: ao criar páginas e conteúdos AMP, é recomendado usar o protocolo HTTPS em vez de HTTP. O HTTPS não é obrigatório para documentos AMP, imagens nem fontes. No entanto, muitos recursos do AMP exigem HTTPS (por exemplo, vídeos, iframes e muito mais). Para garantir que suas páginas AMP aproveitem todos os recursos disponíveis, use o protocolo HTTPS.  Se quiser saber mais sobre o HTTPS, leia o artigo [Por que o HTTPS é importante?](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
+Use HTTPS: ao criar páginas e conteúdos AMP, é recomendado usar o protocolo HTTPS em vez de HTTP. O HTTPS não é obrigatório para documentos AMP, imagens nem fontes. No entanto, muitos recursos do AMP exigem HTTPS (por exemplo, vídeos, iframes e muito mais). Para garantir que suas páginas AMP aproveitem todos os recursos disponíveis, use o protocolo HTTPS. Se quiser saber mais sobre o HTTPS, leia o artigo [Por que o HTTPS é importante?](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
 
 [tip type="tip"] Use o [Gerador de AMP Boilerplate](/boilerplate) para começar a criar novas páginas AMP rapidamente. [/tip]
 
@@ -47,16 +48,16 @@ Use HTTPS: ao criar páginas e conteúdos AMP, é recomendado usar o protocolo H
 
 Documentos AMPHTML DEVEM obedecer as regras a seguir:
 
-Regra | Descrição
---- | ---
-Começar com o doctype ` <!doctype html>` | É o padrão para HTML.
-Conter uma tag ` <html ⚡>` de nível superior <br>(também pode-se usar a tag ` <html amp>`) | Identifica a página como conteúdo AMP.
-Conter as tags `<head>` e `<body>` | É opcional para HTML, mas obrigatório em páginas AMP.
-Conter uma tag ` <meta charset="utf-8">` que seja a primeira dentro da tag ` <head>` | Identifica a codificação da página.
-Conter uma tag ` <script async src="https://cdn.ampproject.org/v0.js"></script>` como segunda filha da tag `<head>` | Inclui e carrega a biblioteca JavaScript AMP.
-Conter uma tag ` <link rel="canonical" href="$ALGUM_URL">` dentro de ` <head>` | Direciona para a versão em HTML comum do documento AMPHTML. Caso essa versão não exista, essa tag redirecionará para o próprio documento. Saiba mais em [Torne sua página detectável](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md).
-Conter uma tag ` <meta name="viewport" content="width=device-width">o: incluir também `initial-scale=1`) | Especifica uma janela de visualização responsiva. Saiba mais em [Criar páginas AMP responsivas](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).
-Conter uma tag de [código de boilerplate AMP](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) em ` <head>` | O boilerplate CSS deve ocultar inicialmente o conteúdo até que a biblioteca de JavaScript AMP seja carregada.
+| Regra                                                                                                                                    | Descrição                                                                                                                                                                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Começar com o doctype ` <!doctype html>`                                                                                                 | É o padrão para HTML.                                                                                                                                                                                                                                                |
+| Conter uma tag ` <html ⚡>` de nível superior <br>(também pode-se usar a tag ` <html amp>`)                                              | Identifica a página como conteúdo AMP.                                                                                                                                                                                                                               |
+| Conter as tags `<head>` e `<body>`                                                                                                       | É opcional para HTML, mas obrigatório em páginas AMP.                                                                                                                                                                                                                |
+| Conter uma tag ` <meta charset="utf-8">` que seja a primeira dentro da tag ` <head>`                                                     | Identifica a codificação da página.                                                                                                                                                                                                                                  |
+| Conter uma tag ` <script async src="https://cdn.ampproject.org/v0.js"></script>` como segunda filha da tag `<head>`                      | Inclui e carrega a biblioteca JavaScript AMP.                                                                                                                                                                                                                        |
+| Conter uma tag ` <link rel="canonical" href="$ALGUM_URL">` dentro de ` <head>`                                                           | Direciona para a versão em HTML comum do documento AMPHTML. Caso essa versão não exista, essa tag redirecionará para o próprio documento. Saiba mais em [Torne sua página detectável](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md). |
+| Conter uma tag `<meta name="viewport" content="width=device-width">o: incluir também`initial-scale=1`)                                   | Especifica uma janela de visualização responsiva. Saiba mais em [Criar páginas AMP responsivas](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).                                                                       |
+| Conter uma tag de [código de boilerplate AMP](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) em ` <head>` | O boilerplate CSS deve ocultar inicialmente o conteúdo até que a biblioteca de JavaScript AMP seja carregada.                                                                                                                                                        |
 
 ## Metadados opcionais
 

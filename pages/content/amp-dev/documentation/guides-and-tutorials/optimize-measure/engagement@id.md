@@ -1,9 +1,9 @@
 ---
-"$title": Meningkatkan keterlibatan pengguna
-"$order": '6'
+'$title': Meningkatkan keterlibatan pengguna
+$order: 6
 description: Berikut ini adalah beberapa kiat singkat untuk meningkatkan keterlibatan pengguna dengan AMP. Bantu pembaca mengidentifikasi Anda dengan merek pengenal yang konsisten dan konten yang kaya di semua halaman AMP dan non-AMP
 formats:
-- websites
+  - websites
 ---
 
 Berikut ini adalah beberapa kiat singkat untuk meningkatkan keterlibatan pengguna dengan AMP.

@@ -1,6 +1,6 @@
 ---
-"$title": 查看入门代码
-"$order": '1'
+'$title': 查看入门代码
+$order: 1
 description: 在开始添加代码之前，我们先来看一下示例 article.amp.html 网页（如下所示）…
 ---
 

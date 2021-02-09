@@ -1,10 +1,10 @@
 ---
-"$title": Dostawcy usług analityki
-order: '3'
+'$title': Dostawcy usług analityki
+$order: 3
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
   text: Ten dokument zawiera listę dostawców usług analityki, mających wbudowane konfiguracje do użytku ze składnikiem amp-analytics.
 ---
@@ -114,13 +114,13 @@ Dodaje obsługę Clicky Web Analytics. Więcej szczegółów dotyczących dodawa
 
 Wartość atrybutu type: `comscore`
 
-Dodaje obsługę analityki odsłon comScore Unified Digital Measurement™. Wymaga określenia *zmiennej* `c2` przy użyciu podanego przez comScore *identyfikatora c2*. Więcej informacji można znaleźć na stronie [comscore.com](http://www.comscore.com).
+Dodaje obsługę analityki odsłon comScore Unified Digital Measurement™. Wymaga określenia _zmiennej_ `c2` przy użyciu podanego przez comScore _identyfikatora c2_. Więcej informacji można znaleźć na stronie [comscore.com](http://www.comscore.com).
 
 ### Cxense <a name="cxense"></a>
 
 Wartość atrybutu type: `cxense`
 
-Dodaje obsługę usług analityki Cxense Insight. Wymaga zdefiniowania *zmiennej* `siteId` przy użyciu podanego przez Cxense *siteId*. Więcej szczegółów można znaleźć na stronie [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration).
+Dodaje obsługę usług analityki Cxense Insight. Wymaga zdefiniowania _zmiennej_ `siteId` przy użyciu podanego przez Cxense _siteId_. Więcej szczegółów można znaleźć na stronie [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration).
 
 ### Deep.BI <a name="deepbi"></a>
 
@@ -130,7 +130,7 @@ Wartość atrybutu type: `deepbi`
 
 Wartość atrybutu type: `dynatrace`
 
-Dodaje obsługę monitorowania rzeczywistych użytkowników Dynatrace. Wymaga określenia *zmiennej* `app` przy użyciu podanego przez Dynatrace *identyfikatora aplikacji* i *zmiennej* `tenant` przy użyciu podanego przez Dynatrace *identyfikatora środowiska*. Więcej szczegółów na temat dodawania monitorowania rzeczywistych użytkowników Dynatrace można znaleźć na stronie [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/).
+Dodaje obsługę monitorowania rzeczywistych użytkowników Dynatrace. Wymaga określenia _zmiennej_ `app` przy użyciu podanego przez Dynatrace _identyfikatora aplikacji_ i _zmiennej_ `tenant` przy użyciu podanego przez Dynatrace _identyfikatora środowiska_. Więcej szczegółów na temat dodawania monitorowania rzeczywistych użytkowników Dynatrace można znaleźć na stronie [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/).
 
 ### EPICA <a name="epica"></a>
 
@@ -142,7 +142,7 @@ Dodaje obsługę odsłon i zdarzeń EPICA. Więcej szczegółów można znaleź�
 
 Wartość atrybutu type: `euleriananalytics`
 
-Dodaje obsługę Eulerian Technologies Analytics. Wymaga określenia *zmiennej* `analyticsHost` przy użyciu domeny delegowanej Eulerian. Więcej szczegółów można znaleźć na stronie [eulerian.wiki](https://eulerian.wiki).
+Dodaje obsługę Eulerian Technologies Analytics. Wymaga określenia _zmiennej_ `analyticsHost` przy użyciu domeny delegowanej Eulerian. Więcej szczegółów można znaleźć na stronie [eulerian.wiki](https://eulerian.wiki).
 
 ### Piksel Facebooka <a name="facebook-pixel"></a>
 
@@ -270,7 +270,7 @@ Wartość atrybutu type: `marinsoftware`
 
 Wartość atrybutu type: `mediametrie`
 
-Dodaje obsługę stron śledzenia Médiamétrie. Wymaga zdefiniowania *zmiennej* `serial`. Zmienne `level1` do `level4` są opcjonalne. Więcej informacji można znaleźć na stronie [mediametrie.com](http://www.mediametrie.com/).
+Dodaje obsługę stron śledzenia Médiamétrie. Wymaga zdefiniowania _zmiennej_ `serial`. Zmienne `level1` do `level4` są opcjonalne. Więcej informacji można znaleźć na stronie [mediametrie.com](http://www.mediametrie.com/).
 
 ### mediarithmics <a name="mediarithmics"></a>
 
@@ -334,7 +334,7 @@ Dodaje wsparcie Nielsen Marketing Cloud. Więcej szczegółów można znaleźć 
 
 Wartość atrybutu type: `oewa`
 
-Dodaje obsługę  `[OEWA](https://www.oewa.at)`. Wymaga kopii pliku [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) w innej subdomenie niż zawierająca plik AMP ([powód?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). Plik musi być serwowany przez HTTPS. Jeśli pliki AMP znajdują się na przykład w domenie `www.example.com`, plik `amp-analytics-oewa.html` musi znajdować się w innej subdomenie, takiej jak `oewa-amp.example.com`. Więcej szczegółów na temat dodawania obsługi OEWA można znaleźć [tutaj](http://www.oewa.at/Implementierung).
+Dodaje obsługę `[OEWA](https://www.oewa.at)`. Wymaga kopii pliku [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) w innej subdomenie niż zawierająca plik AMP ([powód?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). Plik musi być serwowany przez HTTPS. Jeśli pliki AMP znajdują się na przykład w domenie `www.example.com`, plik `amp-analytics-oewa.html` musi znajdować się w innej subdomenie, takiej jak `oewa-amp.example.com`. Więcej szczegółów na temat dodawania obsługi OEWA można znaleźć [tutaj](http://www.oewa.at/Implementierung).
 
 Dodatkowo należy zdefiniować następujące zmienne:
 

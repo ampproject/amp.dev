@@ -1,8 +1,8 @@
 ---
-"$title": 设置
-"$order": '0'
+'$title': 设置
+$order: 0
 description: 在开始学习本教程之前，您需要做好以下准备：- 掌握基本的 HTML、CSS 和 JavaScript 知识 - 对 AMP 核心概念有一个基本了解…
-"$parent": "/content/docs/fundamentals/add_advanced.md"
+'$parent': '/content/docs/fundamentals/add_advanced.md'
 ---
 
 ## 前提条件

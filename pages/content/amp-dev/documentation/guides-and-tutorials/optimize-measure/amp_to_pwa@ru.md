@@ -1,10 +1,10 @@
 ---
-"$title": Превращение вашего AMP-сайта в PWA
-"$order": '10'
+'$title': Превращение вашего AMP-сайта в PWA
+$order: 10
 description: Благодаря кешированию ресурсов в браузере, PWA может предоставлять данные, ассеты и страницы в режиме офлайн, чтобы не терять взаимодействия с пользователем.
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 ---
 

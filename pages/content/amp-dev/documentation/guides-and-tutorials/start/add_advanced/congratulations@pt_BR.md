@@ -1,6 +1,6 @@
 ---
-"$title": Congratulations!
-"$order": '7'
+'$title': Congratulations!
+$order: 7
 description: Você terminou o tutorial sobre como adicionar recursos AMP avançados e explorou com sucesso diversos dos mais importantes componentes avançados do AMP!
 ---
 

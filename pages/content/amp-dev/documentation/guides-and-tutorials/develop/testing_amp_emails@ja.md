@@ -1,10 +1,10 @@
 ---
-"$title": AMP メールのテスト
-"$order": '2'
-"$category": Develop
+'$title': AMP メールのテスト
+$order: 2
+'$category': Develop
 description: 大勢のオーディエンスに AMP メールを送信する前にテストすることで、優れたユーザーエクスペリエンスを確保できます。
 formats:
-- email
+  - email
 author: fstanis
 ---
 

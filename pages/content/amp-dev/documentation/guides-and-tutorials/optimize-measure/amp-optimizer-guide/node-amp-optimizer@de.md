@@ -1,10 +1,10 @@
 ---
-"$title": Leitfaden für Node.js AMP Optimizer
-"$order": '2'
+'$title': Leitfaden für Node.js AMP Optimizer
+$order: 2
 description: Dieser Leitfaden erläutert die Einrichtung und Verwendung der Node.js Version von AMP Optimizer.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

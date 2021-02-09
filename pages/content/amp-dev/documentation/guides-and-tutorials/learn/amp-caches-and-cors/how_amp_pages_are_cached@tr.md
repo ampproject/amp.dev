@@ -1,11 +1,11 @@
 ---
-"$title": AMP sayfaları nasıl önbelleğe alınır?
-"$order": '0'
+'$title': AMP sayfaları nasıl önbelleğe alınır?
+$order: 0
 description: Bu belgede, AMP önbelleğinin AMP ekosistemindeki rolü ve AMP sayfanızın nasıl önbelleğe alındığını öğreneceksiniz.
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 ---
 
 Bu belgede, AMP önbelleğinin AMP ekosistemindeki rolü ve AMP sayfanızın nasıl önbelleğe alındığını öğreneceksiniz.
@@ -35,7 +35,7 @@ AMP açık bir ekosistemdir ve AMP Projesi, daha fazla AMP Önbelleğinin geliş
 
 ## Bir AMP önbelleğini nasıl seçerim?
 
-Bir yayıncı olarak, bir AMP önbelleği seçmezsiniz, aslında kullanmak için amp önbelleğini (varsa) seçen *içeriğinize bağlanan platformdur*.
+Bir yayıncı olarak, bir AMP önbelleği seçmezsiniz, aslında kullanmak için amp önbelleğini (varsa) seçen _içeriğinize bağlanan platformdur_.
 
 Bu, içerik dağıtımının yayıncının sorumluluğunda olduğu tipik modelin tersine çevrilmesidir. Bununla birlikte, bu model, platformların kullanıcılarına öngörülebilir yük performansı sağlamasına izin verir ve diğer şeylerin yanı sıra, AMP'nin ön oluşturma aşamasında gerekli güvenlik ve gizlilik değişmezlerini sağlamalarına izin verir. AMP Önbellekleri oluşturmak için katı kurallar hakkında bilgi edinmek için bkz. [AMP Önbellek Kuralları](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
 
@@ -55,11 +55,11 @@ Belgenizin önbelleğe alınmasını istemiyorsanız, bir seçenek HTML etiketin
 
 AMP biçimini kullanarak, içeriğinizi AMP Önbellekleri tarafından önbelleğe alınmaya hazır hale getiriyorsunuz. AMP sayfanızın AMP önbelleğine girmesinin birkaç yolu vardır:
 
-- **Platform keşfi**:  Platformlar AMP içeriğinizi `<html ⚡>` veya `<html amp>` etiketi ile keşfedin ve içeriği önbelleğe alın. Örneğin, Google Arama içeriği tarar; tanımlanmış ve geçerli AMP sayfaları için içerik Google AMP önbelleğine eklenir.
+- **Platform keşfi**: Platformlar AMP içeriğinizi `<html ⚡>` veya `<html amp>` etiketi ile keşfedin ve içeriği önbelleğe alın. Örneğin, Google Arama içeriği tarar; tanımlanmış ve geçerli AMP sayfaları için içerik Google AMP önbelleğine eklenir.
 
 - **Önbellek URL isteği**: Platformlar, özellikle AMP Önbellek URL biçimini kullanarak bir AMP sayfası isteyebilir. AMP Önbelleği ters proxy görevi görür, bu nedenle platform sayfaya eriştiğinde sayfanın otomatik olarak önbelleğe alınmasına neden olur.
 
-    - Google AMP Önbellek URL örneği: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
+  - Google AMP Önbellek URL örneği: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
 [tip type="note"] **NOT –** AMP Önbellek URL'si kullanıcıya yönelik bir URL değildir, yani kullanıcılar genellikle bu URL'ler aracılığıyla içerik talep etmezler. [/tip]
 

@@ -1,10 +1,10 @@
 ---
-"$title": Kimliği doğrulanmamış kullanıcı durumunu AMP ile yönetme
-order: '2'
+'$title': Kimliği doğrulanmamış kullanıcı durumunu AMP ile yönetme
+$order: 2
 formats:
-- websites
+  - websites
 teaser:
-  text: "**İçindekiler**"
+  text: '**İçindekiler**'
 ---
 
 <!--
@@ -34,12 +34,12 @@ limitations under the License.
 
 - [Arka plan](#background)
 - [Uygulama kılavuzu](#implementation-guide)
-    - [Başlamadan önce](#before-getting-started)
-    - [1. Görev: Yayıncı kaynağındaki AMP olmayan sayfalar için bir tanımlayıcı belirleme ve analiz ping'leri gönderme](#task1)
-    - [2. Görev: AMP sayfaları için bir tanımlayıcı belirleme ve amp-analytics ping'lerine İstemci Kimliği değişimini ekleyerek analiz ping'leri gönderme](#task2)
-    - [3. Görev: Yayıncı kaynağındaki sayfalardan analiz ping'lerini işleme](#task3)
-    - [4. Görev: AMP önbelleğinden veya AMP görüntüleyici ekran bağlamlarından gelen analiz ping'lerini işleme ve tanımlayıcı eşleşmeleri oluşturma (gerekirse)](#task4)
-    - [5. Görev: Bağlantı vermede ve form gönderiminde İstemci Kimliği kullanma](#task5)
+  - [Başlamadan önce](#before-getting-started)
+  - [1. Görev: Yayıncı kaynağındaki AMP olmayan sayfalar için bir tanımlayıcı belirleme ve analiz ping'leri gönderme](#task1)
+  - [2. Görev: AMP sayfaları için bir tanımlayıcı belirleme ve amp-analytics ping'lerine İstemci Kimliği değişimini ekleyerek analiz ping'leri gönderme](#task2)
+  - [3. Görev: Yayıncı kaynağındaki sayfalardan analiz ping'lerini işleme](#task3)
+  - [4. Görev: AMP önbelleğinden veya AMP görüntüleyici ekran bağlamlarından gelen analiz ping'lerini işleme ve tanımlayıcı eşleşmeleri oluşturma (gerekirse)](#task4)
+  - [5. Görev: Bağlantı vermede ve form gönderiminde İstemci Kimliği kullanma](#task5)
 - [Kesinlikle önerilen uygulamalar](#strongly-recommended-practices)
 
 Kullanıcı durumu, günümüz web dünyasında önemli bir kavramdır. Kullanıcı durumu yönetilerek etkinleştirilen aşağıdaki kullanım durumlarını göz önünde bulundurun:
@@ -114,7 +114,7 @@ Yayıncılar, her erkan bağlamı için kullanıcı durumunu ayrı ayrı yönetm
 
 Bununla birlikte, AMP sayfalarının yayıncıları, birden çok bağlamı içeren kullanıcı gezintilerini kolayca (farkında olmadan) tasarlayabilir. Alışveriş sepeti kullanım senaryosuna önceki bakışımızı tekrar gözden geçirelim ve tam bir **kullanıcı hikayesi** oluşturmak için ona biraz daha ayrıntı ekleyelim:
 
-> *1. günde, kullanıcı Google Arama aracılığıyla Example Inc.'e ait bir AMP sayfası keşfeder. Google Arama, AMP sayfalarını bir AMP görüntüleyicide yükler. Sayfayı görüntülerken, kullanıcı alışveriş sepetine dört ürün ekler ancak satın alma işlemini tamamlamaz. İki hafta sonra, 15. günde, kullanıcı satın almayı düşündüğü dört ürünü hatırlar ve şimdi satın alma zamanının geldiğine karar verir. Example Inc.'in ana sayfasına `https://example.com` doğrudan erişir (bu, AMP olmayan bir ana sayfadır) ve dört ürünün hala alışveriş sepetinde kayıtlı olduğunu görür.*
+> _1. günde, kullanıcı Google Arama aracılığıyla Example Inc.'e ait bir AMP sayfası keşfeder. Google Arama, AMP sayfalarını bir AMP görüntüleyicide yükler. Sayfayı görüntülerken, kullanıcı alışveriş sepetine dört ürün ekler ancak satın alma işlemini tamamlamaz. İki hafta sonra, 15. günde, kullanıcı satın almayı düşündüğü dört ürünü hatırlar ve şimdi satın alma zamanının geldiğine karar verir. Example Inc.'in ana sayfasına `https://example.com` doğrudan erişir (bu, AMP olmayan bir ana sayfadır) ve dört ürünün hala alışveriş sepetinde kayıtlı olduğunu görür._
 
 Bu senaryoda, kullanıcı, AMP görüntüleyici bağlamından yayıncı kaynak bağlamına geçmesine ve bu etkinlikler arasında bir süre geçmesine rağmen tutarlı bir alışveriş sepeti deneyimi yaşar. Bu deneyim çok makuldür ve eğer bir alışveriş deneyimi tasarlıyorsanız, böyle bir deneyimi desteklemeniz gerekir, peki bunu nasıl gerçekleştirebilirsiniz?
 
@@ -178,23 +178,26 @@ Yani, yayıncı kaynağında AMP olmayan sayfaların durumuna ilişkin iki durum
 **Durum #1: İlk ziyaret.** AMP olmayan sayfaya ilk kez girildiğinde, çerez olmayacaktır. Çerezi içeriği ayarlanmadan önce kontrol ettiyseniz, içinde `uid` tanımlayıcısına karşılık gelen hiçbir değer ayarlanmadığını görürsünüz:
 
 [sourcecode:bash]
+
 > document.cookie
-  ""
-[/sourcecode]
+> ""
+> [/sourcecode]
 
 İlk yükleme içinde bir zamanda çerez ayarlanmalıdır; bunu, sayfa yüklendiği anda yaparsanız, bir değerin ayarlandığını göreceksiniz:
 
 [sourcecode:bash]
+
 > document.cookie
-  "uid=$publisher_origin_identifier"
-[/sourcecode]
+> "uid=$publisher_origin_identifier"
+> [/sourcecode]
 
 **Durum #2: İlk ziyaret değil.** Ayarlı bir çerez olacaktır. Dolayısıyla, sayfada geliştirici konsolunu açarsanız şunu görürsünüz:
 
 [sourcecode:bash]
+
 > document.cookie
-  "uid=$publisher_origin_identifier"
-[/sourcecode]
+> "uid=$publisher_origin_identifier"
+> [/sourcecode]
 
 ##### Analiz ping'leri gönderme <a name="send-analytics-pings"></a>
 
@@ -389,30 +392,33 @@ Yaklaşımımız iki tür [AMP değişken değiştirmesinden](https://github.com
 
 [sourcecode:html]
 <a
-  href="https://example.com/step2.html?ref_id=CLIENT_ID(uid)"
-  data-amp-replace="CLIENT_ID"
-></a>
-[/sourcecode]
+href="https://example.com/step2.html?ref_id=CLIENT_ID(uid)"
+data-amp-replace="CLIENT_ID"
 
-**İstemci Kimliğini dışarı giden bağlantılara geçirmek için alternatif çözüm:**  `data-amp-addparams` veri özniteliğinin bir parçası olarak `ref_id` yeni sorgu parametresini tanımlayın ve parametre değişikliğine ihtiyaç duyan sorgular için bu ayrıntıları `data-amp-replace` parçası olarak sunun. Bu yaklaşımla, URL temiz görünür ve `data-amp-addparams` üzerinde belirtilen parametreler dinamik olarak eklenir
+> </a>
+> [/sourcecode]
+
+**İstemci Kimliğini dışarı giden bağlantılara geçirmek için alternatif çözüm:** `data-amp-addparams` veri özniteliğinin bir parçası olarak `ref_id` yeni sorgu parametresini tanımlayın ve parametre değişikliğine ihtiyaç duyan sorgular için bu ayrıntıları `data-amp-replace` parçası olarak sunun. Bu yaklaşımla, URL temiz görünür ve `data-amp-addparams` üzerinde belirtilen parametreler dinamik olarak eklenir
 
 [sourcecode:html]
 <a
-  href="https://example.com/step2.html"
-  data-amp-addparams="ref_id=CLIENT_ID(uid)"
-  data-amp-replace="CLIENT_ID"
-></a>
-[/sourcecode]
+href="https://example.com/step2.html"
+data-amp-addparams="ref_id=CLIENT_ID(uid)"
+data-amp-replace="CLIENT_ID"
+
+> </a>
+> [/sourcecode]
 
 code0}data-amp-addparams yoluyla birden fazla sorgu parametresi geçirirken bunları şu şekilde `&` ile ayırın:
 
 [sourcecode:html]
 <a
-  href="https://example.com/step2.html"
-  data-amp-addparams="ref_id=CLIENT_ID(uid)&pageid=p123"
-  data-amp-replace="CLIENT_ID"
-></a>
-[/sourcecode]
+href="https://example.com/step2.html"
+data-amp-addparams="ref_id=CLIENT_ID(uid)&pageid=p123"
+data-amp-replace="CLIENT_ID"
+
+> </a>
+> [/sourcecode]
 
 **İstemci Kimliği değişikliği kullanmak adına form girişlerini güncellemek için:** Giriş alanı için `orig_user_id` gibi bir ad tanımlayın. Form alanının `default-value` değerini, AMP İstemci Kimliği değişikliğinin değeri olacak şekilde belirtin:
 
@@ -458,7 +464,7 @@ Açılış sayfasında işlemek için yaklaşım, söz konusu sayfanın bir AMP 
 <amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
   <noscript><img alt="URL aracılığıyla sağlanan önceki bağlamdan bir tanımlayıcı ve geçerli bağlamdan bir tanımlayıcı içeren bir analiz pinginin nasıl oluşturulacağına ilişkin örnek" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
 
-*AMP sayfasında yapılan güncellemeler:* URL içindeki `ref_id` tanımlayıcı değerini almak için amp-analytics yapılandırmanızdaki Sorgu Parametresi değiştirme özelliğini kullanın. Sorgu Parametresi özelliği, URL'de istenen anahtar/değer çiftinin "anahtarını" belirten bir parametre alır ve karşılık gelen değeri yanıt olarak döndürür. AMP sayfa bağlamı tanımlayıcısını almak için yaptığımız gibi İstemci Kimliği özelliğini kullanın.
+_AMP sayfasında yapılan güncellemeler:_ URL içindeki `ref_id` tanımlayıcı değerini almak için amp-analytics yapılandırmanızdaki Sorgu Parametresi değiştirme özelliğini kullanın. Sorgu Parametresi özelliği, URL'de istenen anahtar/değer çiftinin "anahtarını" belirten bir parametre alır ve karşılık gelen değeri yanıt olarak döndürür. AMP sayfa bağlamı tanımlayıcısını almak için yaptığımız gibi İstemci Kimliği özelliğini kullanın.
 
 [sourcecode:http]
 https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}
@@ -485,7 +491,7 @@ https://analytics.example.com/ping?type=pageview&orig_user_id=$amp_client_id&use
 
 Aşağıdaki [Parametre doğrulama](#parameter-validation) bölümünde açıklanan adımları kullanarak sorgu parametresi değerlerinin gerçekliğini doğrulamanızı öneririz.
 
-*AMP olmayan sayfada yapılan güncellemeler: * Benzer şekilde, yayıncınızın kaynağından sunulan AMP olmayan bir sayfada, URL'de bulunan `ref_id` değerini çıkarın ve iletin. Aşağıdaki [Parametre doğrulama](#parameter-validation) bölümünde belirtilen adımları izleyerek değerin gerçekliğini doğrulayın. Ardından, hem `ref_id`'den türetilen bir `orig_user_id` hem de birinci taraf çerez tanımlayıcısının değerine göre bir `user_id` içerecek analiz ping'leri oluşturun.
+_AMP olmayan sayfada yapılan güncellemeler: _ Benzer şekilde, yayıncınızın kaynağından sunulan AMP olmayan bir sayfada, URL'de bulunan `ref_id` değerini çıkarın ve iletin. Aşağıdaki [Parametre doğrulama](#parameter-validation) bölümünde belirtilen adımları izleyerek değerin gerçekliğini doğrulayın. Ardından, hem `ref_id`'den türetilen bir `orig_user_id` hem de birinci taraf çerez tanımlayıcısının değerine göre bir `user_id` içerecek analiz ping'leri oluşturun.
 
 <blockquote>
 <p><strong>ÖNEMLİ:</strong></p>

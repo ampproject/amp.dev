@@ -1,10 +1,10 @@
 ---
-"$title": 注册发件人分发
-"$order": '1'
+'$title': 注册发件人分发
+$order: 1
 description: 注册 AMP 电子邮件的发件人分发
-"$category": Start
+'$category': Start
 formats:
-- email
+  - email
 author: CrystalOnScript
 ---
 

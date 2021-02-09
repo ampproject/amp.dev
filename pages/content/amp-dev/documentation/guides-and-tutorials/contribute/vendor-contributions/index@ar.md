@@ -1,13 +1,13 @@
 ---
-"$title": Integrate your technology with AMP
-"$order": '0'
-"$hidden": صواب
+'$title': Integrate your technology with AMP
+$order: 0
+'$hidden': صواب
 description: إذا كنت موفر تكنولوجيا للناشرين أو المعلنين على الويب، فإننا ندعوك لإضافة دعم إلى AMP لكي يتمكن عملاؤك من مواصلة الاستفادة من التكنولوجيا الخاصة بك و...
 formats:
-- websites
-- ads
-- stories
-- email
+  - websites
+  - ads
+  - stories
+  - email
 ---
 
 نشكرك على الاهتمام بالمساهمة في AMP! نحن نقدر مشاركتك في جعل الويب منصة سهلة للمستخدم.

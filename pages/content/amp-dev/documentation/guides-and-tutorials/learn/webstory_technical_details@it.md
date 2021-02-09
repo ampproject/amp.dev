@@ -1,10 +1,10 @@
 ---
-"$title": Dettagli tecnici delle storie web
-"$order": '1'
+'$title': Dettagli tecnici delle storie web
+$order: 1
 description: Dettagli tecnici delle storie web
-"$category": Develop
+'$category': Develop
 formats:
-- stories
+  - stories
 author: CrystalOnScript
 ---
 
@@ -12,7 +12,7 @@ Questa guida spiega tutti i dettagli tecnici e le procedure consigliate per crea
 
 ## Validità AMP
 
-Una Storia web dal punto di vista tecnico è una singola pagina web realizzata tramite AMP e conforme alle specifiche AMP. Essa  deve:
+Una Storia web dal punto di vista tecnico è una singola pagina web realizzata tramite AMP e conforme alle specifiche AMP. Essa deve:
 
 - Iniziare con il doctype `<!doctype html>`.
 - Contenere un tag di primo livello `<html ⚡>` (`<html amp>` è ugualmente accettato).
@@ -23,38 +23,106 @@ Una Storia web dal punto di vista tecnico è una singola pagina web realizzata t
 - Contenere un tag `<meta name="viewport" content="width=device-width">` all'interno del tag `<head>`. Si consiglia inoltre di includere l'attributo initial-scale=1.
 - Contenere il codice [boilerplate AMP](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) nel tag `<head>`.
 
-La differenza tra una semplice pagina web AMP e una storia web realizzata con AMP è il componente [`amp-story`](https://amp.dev/documentation/components/amp-story/?format=stories)  È l'unico elemento figlio diretto della sezione `<body>` del documento e deve contenere l'attributo `standalone`. Tutte le pagine, i livelli e gli elementi della Storia web sono definiti all'interno dei tag `<amp-story>`.
+La differenza tra una semplice pagina web AMP e una storia web realizzata con AMP è il componente [`amp-story`](https://amp.dev/documentation/components/amp-story/?format=stories) È l'unico elemento figlio diretto della sezione `<body>` del documento e deve contenere l'attributo `standalone`. Tutte le pagine, i livelli e gli elementi della Storia web sono definiti all'interno dei tag `<amp-story>`.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Joy of Pets</title>
-    <link rel="canonical" href="pets.html">
-    <meta name="viewport" content="width=device-width">
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <link rel="canonical" href="pets.html" />
+    <meta name="viewport" content="width=device-width" />
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-video"
-        src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
-    <script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+    <script
+      async
+      custom-element="amp-video"
+      src="https://cdn.ampproject.org/v0/amp-video-0.1.js"
+    ></script>
+    <script
+      async
+      custom-element="amp-story"
+      src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+    ></script>
     <style amp-custom>
-    ...
+      ...;
     </style>
   </head>
   <body>
     <!-- Cover page -->
-    <amp-story standalone
-        title="Joy of Pets"
-        publisher="AMP tutorials"
-        publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-        poster-portrait-src="assets/cover.jpg">
+    <amp-story
+      standalone
+      title="Joy of Pets"
+      publisher="AMP tutorials"
+      publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+      poster-portrait-src="assets/cover.jpg"
+    >
       <amp-story-page id="cover">
         <amp-story-grid-layer template="fill">
-          <amp-img src="assets/cover.jpg"
-              width="720" height="1280"
-              layout="responsive">
+          <amp-img
+            src="assets/cover.jpg"
+            width="720"
+            height="1280"
+            layout="responsive"
+          >
           </amp-img>
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical">
@@ -67,11 +135,17 @@ La differenza tra una semplice pagina web AMP e una storia web realizzata con AM
       <amp-story-page id="page1">
         <amp-story-grid-layer template="vertical">
           <h1>Cats</h1>
-          <amp-img src="assets/cat.jpg"
-              width="720" height="1280"
-              layout="responsive">
+          <amp-img
+            src="assets/cat.jpg"
+            width="720"
+            height="1280"
+            layout="responsive"
+          >
           </amp-img>
-          <q>Dogs come when they're called. Cats take a message and get back to you. --Mary Bly</q>
+          <q
+            >Dogs come when they're called. Cats take a message and get back to
+            you. --Mary Bly</q
+          >
         </amp-story-grid-layer>
       </amp-story-page>
       ...
@@ -172,21 +246,27 @@ Se è possibile fornire un solo formato video, scegliere MP4. Se possibile, util
 Utilizzare più elementi figli `<source>` all'interno del componente `<amp-video>` per specificare la sorgente video sull'attributo `src`. L'utilizzo dell'elemento `<source>` consente di specificare il tipo di video e di aggiungere sorgenti video di backup. È necessario utilizzare l'attributo `type` per specificare il tipo MIME. Usare `application/x-mpegurl` o `application/vnd.apple.mpegurl` per i video HLS. Per tutti gli altri tipi di video, usare il prefisso MIME `video/` seguito dal formato video, ad esempio `”video/mp4”`.
 
 ```html
-<amp-video id="video-page1" autoplay loop
-  layout="fill" poster="https://example.com/media/poster.jpg">
-  <source src="https://amp-example.com/media/movie.m3u8"
-    type="application/vnd.apple.mpegurl" />
-  <source src="https://amp-example.com/media/movie.mp4"
-    type="video/mp4" />
+<amp-video
+  id="video-page1"
+  autoplay
+  loop
+  layout="fill"
+  poster="https://example.com/media/poster.jpg"
+>
+  <source
+    src="https://amp-example.com/media/movie.m3u8"
+    type="application/vnd.apple.mpegurl"
+  />
+  <source src="https://amp-example.com/media/movie.mp4" type="video/mp4" />
 </amp-video>
 ```
 
 ### Avanzamento automatico dopo i video
 
-L'attributo [`auto-advance-after`](https://amp.dev/documentation/components/amp-story-page/?format=stories#auto-advance-after-%5Boptional%5D) aggiunto al componente  amp-story-page indica se e quando inserire un avanzamento di pagina di una storia senza tocchi da parte dell'utente. Per l'avanzamento automatico dopo un video, far puntare l'attributo all'ID video.
+L'attributo [`auto-advance-after`](https://amp.dev/documentation/components/amp-story-page/?format=stories#auto-advance-after-%5Boptional%5D) aggiunto al componente amp-story-page indica se e quando inserire un avanzamento di pagina di una storia senza tocchi da parte dell'utente. Per l'avanzamento automatico dopo un video, far puntare l'attributo all'ID video.
 
 ```html
-<amp-story-page auto-advance-after="myvideo">
+<amp-story-page auto-advance-after="myvideo"></amp-story-page>
 ```
 
 ## Esperienza desktop
@@ -196,11 +276,13 @@ Il formato delle Storie web supporta un'[esperienza desktop opzionale](https://g
 Attivare il supporto del formato desktop aggiungendo l'attributo `supports-landscape` al componente `<amp-story>`.
 
 ```html
-<amp-story standalone
-    supports-landscape
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/icon.svg"
-    poster-portrait-src="assets/cover.jpg">
+<amp-story
+  standalone
+  supports-landscape
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+>
 </amp-story>
 ```

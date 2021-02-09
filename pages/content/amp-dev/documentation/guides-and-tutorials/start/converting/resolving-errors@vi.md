@@ -1,6 +1,6 @@
 ---
-"$title": Giải quyết các lỗi xác thực
-"$order": '2'
+'$title': Giải quyết các lỗi xác thực
+$order: 2
 description: Trong phần này, chúng ta sẽ xem và giải quyết các lỗi xác thực AMP trong trang AMP của mình. Lưu ý rằng các lỗi này có thể xuất hiện theo thứ tự khác trong bảng điều khiển của bạn.
 ---
 
@@ -35,13 +35,13 @@ Mỗi tài liệu AMP cần có một liên kết tham chiếu đến phiên b�
 Hãy **thêm** đoạn code sau bên dưới thẻ `<meta charset="utf-8" />`:
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 [tip type="note"] Bạn có thể tạo một trang AMP chính thức độc lập. Bạn vẫn cần liên kết chính thức, nhưng nó nên chỉ đến bài viết AMP:
 
 ```html
-<link rel="canonical" href="article.amp.html">
+<link rel="canonical" href="article.amp.html" />
 ```
 
 [/tip]
@@ -57,7 +57,7 @@ AMP yêu cầu một thuộc tính trên yếu tố `<html>` gốc của trang �
 Các lỗi ở trên có thể được giải quyết bằng cách thêm thuộc tính `⚡ ` vào thẻ `<html>` như sau:
 
 ```html
-<html ⚡ lang="en">
+<html ⚡ lang="en"></html>
 ```
 
 Bây giờ, hãy tải lại trang và kiểm tra rằng cả hai lỗi đều đã biến mất.
@@ -65,7 +65,7 @@ Bây giờ, hãy tải lại trang và kiểm tra rằng cả hai lỗi đều �
 [tip type="note"] Tuy việc nhập `⚡` là lối tiếp cận được khuyến nghị, nhưng bạn cũng có thể sử dụng thuộc tính `amp` thay cho thuộc tính `⚡`, ví dụ như:
 
 ```html
-<html amp lang="en">
+<html amp lang="en"></html>
 ```
 
 [/tip]
@@ -81,7 +81,7 @@ AMP yêu cầu định nghĩa `width` (chiều rộng) và `minimum-scale` (quy 
 Để giải quyết lỗi màn hiển thị, thêm đoạn code HTML sau vào thẻ `<head>`:
 
 ```html
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width" />
 ```
 
 Các giá trị được quy định cho `width` (chiều rộng) và `minimum-scale` (quy mô tối thiểu) là các giá trị cần thiết trong AMP. Bạn không cần định nghĩa `initial-scale` (quy mô ban đầu), nhưng thuộc tính này thường được bao gồm trong quá trình phát triển web di động và nên được sử dụng. Bạn có thể đọc thêm về màn hiển thị và thiết kế tương thích trong [Cấu hình Màn hiển thị](https://developers.google.com/speed/docs/insights/ConfigureViewport).
@@ -104,9 +104,7 @@ Vấn đề ở chỗ đây là một tham chiếu đến stylesheet bên ngoài
 
 ```html
 <style amp-custom>
-
-/* The content from base.css */
-
+  /* The content from base.css */
 </style>
 ```
 
@@ -136,7 +134,7 @@ Nhìn chung, các kịch bản trong AMP chỉ được cho phép nếu chúng t
 
 [tip type="note"] Ngoại lệ duy nhất cho hạn chế đối với các kịch bản của người dùng/bên thứ ba là:
 
-1. Các kịch bản bổ sung siêu dữ liệu vào trang hoặc cấu hình các thành phần AMP. Chúng sẽ có thuộc tính loại  `application/ld+json` hoặc  `application/json`.
+1. Các kịch bản bổ sung siêu dữ liệu vào trang hoặc cấu hình các thành phần AMP. Chúng sẽ có thuộc tính loại `application/ld+json` hoặc `application/json`.
 2. Các kịch bản được bao gồm trong các iframe. Việc bao gồm JavaScript trong một iframe chỉ nên được coi là một biện pháp cuối cùng. Bất cứ khi nào có thể, các chức năng JavaScript chỉ nên được thay bằng [các thành phần AMP](../../../../documentation/components/index.html). Chúng ta sẽ khám phá thành phần AMP đầu tiên của mình trong phần tiếp theo. [/tip]
 
 Hãy thử mở tập tin [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) bên ngoài. Bạn thấy gì? Tập tin này không nên chứa bất kỳ mã JavaScript nào và chỉ bao gồm một nhận xét mang tính thông tin như sau:
@@ -171,7 +169,63 @@ Các lỗi sau đây liên quan đến việc thiếu code soạn sẵn:
 Mọi tài liệu AMP đều cần các code soạn sẵn AMP sau:
 
 ```html
-<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<style amp-boilerplate>
+  body {
+    -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+  }
+  @-webkit-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-moz-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-ms-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-o-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }</style
+><noscript
+  ><style amp-boilerplate>
+    body {
+      -webkit-animation: none;
+      -moz-animation: none;
+      -ms-animation: none;
+      animation: none;
+    }
+  </style></noscript
+>
 ```
 
 **Thêm** code soạn sẵn vào cuối thẻ `<head>` của tài liệu của bạn.
@@ -220,7 +274,7 @@ Vì sao loại `container` (hộp chứa) lại được ngầm định? Bởi c
 
 Làm mới trang và kiểm tra bộ xác thực; bạn sẽ không thấy lỗi nào nữa!
 
-Bây giờ bạn đã có một tài liệu AMP hợp lệ, nhưng ảnh có chất lượng không tốt lắm bởi nó được đặt ở vị trí không hợp lý trên trang. Theo mặc định, khi bạn quy định chiều cao và chiều rộng cho một thẻ [`amp-img`](../../../../documentation/components/reference/amp-img.md), AMP sẽ chỉnh kích thước theo quy định của bạn--nhưng nếu AMP có thể thu phóng ảnh một cách *tương thích* và vừa với trang dù kích cỡ màn hình như thế nào thì sao?
+Bây giờ bạn đã có một tài liệu AMP hợp lệ, nhưng ảnh có chất lượng không tốt lắm bởi nó được đặt ở vị trí không hợp lý trên trang. Theo mặc định, khi bạn quy định chiều cao và chiều rộng cho một thẻ [`amp-img`](../../../../documentation/components/reference/amp-img.md), AMP sẽ chỉnh kích thước theo quy định của bạn--nhưng nếu AMP có thể thu phóng ảnh một cách _tương thích_ và vừa với trang dù kích cỡ màn hình như thế nào thì sao?
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-not-responsive.png', 412, 660, align='center third', caption="Our image isn't responsive.") }}
 
@@ -229,7 +283,12 @@ Rất may, AMP có thể suy diễn tỷ lệ khung hình của các yếu tố 
 Hãy **đặt** thuộc tính bố cục là `responsive` (tương thích) để ảnh của chúng ta thu phóng và đổi kích cỡ:
 
 ```html
-<amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+<amp-img
+  src="mountains.jpg"
+  layout="responsive"
+  width="266"
+  height="150"
+></amp-img>
 ```
 
 Hoan hô! Ảnh của chúng ta có tỷ lệ khung hình chính xác và lấp đầy một cách tương thích chiều rộng của màn hình.
@@ -243,18 +302,75 @@ Hoan hô! Ảnh của chúng ta có tỷ lệ khung hình chính xác và lấp 
 Bây giờ tài liệu AMP của bạn sẽ có dạng như sau:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width" />
 
-    <link rel="canonical" href="/article.html">
-    <link rel="shortcut icon" href="amp_favicon.png">
+    <link rel="canonical" href="/article.html" />
+    <link rel="shortcut icon" href="amp_favicon.png" />
 
     <title>News Article</title>
 
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
     <style amp-custom>
       body {
         width: auto;
@@ -284,15 +400,21 @@ Bây giờ tài liệu AMP của bạn sẽ có dạng như sau:
     <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
-    <header>
-      News Site
-    </header>
+    <header>News Site</header>
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
 
-      <amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+      <amp-img
+        src="mountains.jpg"
+        layout="responsive"
+        width="266"
+        height="150"
+      ></amp-img>
     </article>
   </body>
 </html>

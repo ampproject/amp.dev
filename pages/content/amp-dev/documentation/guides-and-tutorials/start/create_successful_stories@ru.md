@@ -1,10 +1,10 @@
 ---
-"$title": Лучшие практики по созданию успешной веб-истории
-"$order": '1'
+'$title': Лучшие практики по созданию успешной веб-истории
+$order: 1
 description: Лучшие практики по созданию успешной веб-истории
-"$category": Start
+'$category': Start
 formats:
-- stories
+  - stories
 author: CrystalOnScript
 ---
 

@@ -1,6 +1,6 @@
 ---
-"$title": Создание титульной страницы
-"$order": '4'
+'$title': Создание титульной страницы
+$order: 4
 description: 'Чтобы создать страницу, добавьте элемент <amp-story-page> в качестве дочернего элемента amp-story. Назначьте странице уникальный идентификатор. Для нашей первой страницы, которая является титульной страницей, давайте назначим уникальный идентификатор cover: ...'
 author: bpaduch
 ---
@@ -10,13 +10,14 @@ author: bpaduch
 Чтобы создать страницу, **добавьте** элемент `<amp-story-page>` в качестве дочернего элемента [`amp-story`](../../../../documentation/components/reference/amp-story.md). **Назначьте** странице уникальный идентификатор. Для нашей первой страницы, которая является титульной страницей, давайте назначим уникальный идентификатор `cover`:
 
 ```html
-<amp-story standalone
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-    poster-portrait-src="assets/cover.jpg">
-   <amp-story-page id="cover">
-   </amp-story-page>
+<amp-story
+  standalone
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+>
+  <amp-story-page id="cover"> </amp-story-page>
 </amp-story>
 ```
 
@@ -35,14 +36,17 @@ author: bpaduch
 
 Давайте добавим первый слой на нашу титульную страницу. Слой содержит изображение, заполняющее экран.
 
-Создайте слой, добавив элемент `<amp-story-grid-layer>` в виде дочернего элемента `<amp-story-page>`. Поскольку мы хотим, чтобы изображение заполняло экран, укажите для элемента `amp-story-grid-layer` атрибут `template="fill"`. Внутри слоя добавьте элемент [`amp-img`](../../../../documentation/components/reference/amp-img.md) для файла `cover.jpg` и убедитесь, что он является адаптивным (т. е. содержит `layout="responsive"`) и имеет размеры 720 x 1280 px.  Вот как будет выглядеть наш слой:
+Создайте слой, добавив элемент `<amp-story-grid-layer>` в виде дочернего элемента `<amp-story-page>`. Поскольку мы хотим, чтобы изображение заполняло экран, укажите для элемента `amp-story-grid-layer` атрибут `template="fill"`. Внутри слоя добавьте элемент [`amp-img`](../../../../documentation/components/reference/amp-img.md) для файла `cover.jpg` и убедитесь, что он является адаптивным (т. е. содержит `layout="responsive"`) и имеет размеры 720 x 1280 px. Вот как будет выглядеть наш слой:
 
 ```html
 <amp-story-page id="cover">
   <amp-story-grid-layer template="fill">
-    <amp-img src="assets/cover.jpg"
-        width="720" height="1280"
-        layout="responsive">
+    <amp-img
+      src="assets/cover.jpg"
+      width="720"
+      height="1280"
+      layout="responsive"
+    >
     </amp-img>
   </amp-story-grid-layer>
 </amp-story-page>
@@ -105,7 +109,7 @@ author: bpaduch
 
 ```html
 <amp-story-grid-layer>
- <!--our first layer -->
+  <!--our first layer -->
 </amp-story-grid-layer>
 <amp-story-grid-layer template="vertical">
   <h1>The Joy of Pets</h1>

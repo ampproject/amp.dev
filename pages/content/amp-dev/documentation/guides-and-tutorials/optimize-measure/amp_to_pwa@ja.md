@@ -1,10 +1,10 @@
 ---
-"$title": AMP サイトから PWA への変換
-"$order": '10'
+'$title': AMP サイトから PWA への変換
+$order: 10
 description: ブラウザ内にリソースをキャッシュすることで、PWA は、データ、アセット、およびオフラインページをユーザーに提供し、ユーザーの関心を維持し、情報を提供し続けることができます。
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: crystalonscript
 ---
 

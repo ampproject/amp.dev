@@ -1,8 +1,8 @@
 ---
-"$title": セットアップ
-"$order": '0'
+'$title': セットアップ
+$order: 0
 description: このチュートリアルを始める前に、次のものが必要となります。- HTML、CSS、JavaScript の基本的な知識 - AMP の中心的概念の基本的な知識 ...
-"$parent": "/content/docs/fundamentals/add_advanced.md"
+'$parent': '/content/docs/fundamentals/add_advanced.md'
 ---
 
 ## 前提条件

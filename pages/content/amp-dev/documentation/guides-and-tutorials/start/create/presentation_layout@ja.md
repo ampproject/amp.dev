@@ -1,10 +1,10 @@
 ---
-"$title": 体裁とレイアウトの変更
-"$order": '3'
+'$title': 体裁とレイアウトの変更
+$order: 3
 description: AMP ページはウェブページであるため、ページやその中に含まれる要素のスタイリングには、必ず共通する CSS プロパティを使用します。以下のように ...
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## 体裁の変更
@@ -12,6 +12,7 @@ contributors:
 AMP ページはウェブページであるため、ページやその中に含まれる要素のスタイリングには、必ず共通の CSS プロパティを使用します。要素は、`<head>` 内の `<style amp-custom>` という埋め込みスタイルシートに含まれるクラスまたは要素セレクタを使ってスタイリングしてください。
 
 [sourcecode:html]
+
 <style amp-custom>
   /* any custom style goes here */
   body {
@@ -22,6 +23,7 @@ AMP ページはウェブページであるため、ページやその中に含�
     border: 1px solid black;
   }
 </style>
+
 [/sourcecode]
 
 各 AMP ページで使える埋め込みスタイルシートとインラインスタイルは 1 つだけで、使用できないセレクタもいくつかあります。[スタイリングの詳細については、こちらをご確認ください](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md)。

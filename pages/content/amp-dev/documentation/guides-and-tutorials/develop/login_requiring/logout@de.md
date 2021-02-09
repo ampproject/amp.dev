@@ -1,6 +1,6 @@
 ---
-"$title": Abmeldung
-"$order": '3'
+'$title': Abmeldung
+$order: 3
 description: Ähnlich wie beim Login Button ist das Vorhandensein des Logout Buttons vom Status der Komponente amp-access abhängig …
 ---
 
@@ -15,9 +15,9 @@ Wenn du auf den Logout Button klickst, wirst du weitergeleitet zu der URL, die d
 [sourcecode:json]
 {
 "login": {
-  "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
-  "sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
-  }
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
+"sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
+}
 }
 [/sourcecode]
 

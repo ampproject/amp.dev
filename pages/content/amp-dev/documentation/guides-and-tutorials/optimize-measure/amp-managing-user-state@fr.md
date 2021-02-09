@@ -1,10 +1,10 @@
 ---
-"$title": "Gérer l'état des utilisateurs non authentifiés avec AMP"
-order: '2'
+'$title': "Gérer l'état des utilisateurs non authentifiés avec AMP"
+$order: 2
 formats:
-- websites
+  - websites
 teaser:
-  text: "**Table des matières**"
+  text: '**Table des matières**'
 ---
 
 <!--
@@ -34,12 +34,12 @@ limitations under the License.
 
 - [Contexte ](#background)
 - [Guide d'implémentation ](#implementation-guide)
-    - [Prérequis ](#before-getting-started)
-    - [Tâche 1: pour les pages non AMP sur l'origine de l'éditeur, configurer un identifiant et envoyer des pings d'analyse ](#task1)
-    - [Tâche 2: pour les pages AMP, configurer un identifiant et envoyer des pings d'analyse en incluant le remplacement de l'ID client dans les pings amp-analytics ](#task2)
-    - [Tâche 3: traiter les pings d'analyse à partir de pages sur l'origine de l'éditeur ](#task3)
-    - [Tâche 4: traiter les pings d'analyse à partir du cache AMP ou des contextes d'affichage de la visionneuse AMP et établir des mappages d'identificateurs (si nécessaire)](#task4)
-    - [Tâche 5: utiliser l'ID client pour lier et envoyer des formulaires](#task5)
+  - [Prérequis ](#before-getting-started)
+  - [Tâche 1: pour les pages non AMP sur l'origine de l'éditeur, configurer un identifiant et envoyer des pings d'analyse ](#task1)
+  - [Tâche 2: pour les pages AMP, configurer un identifiant et envoyer des pings d'analyse en incluant le remplacement de l'ID client dans les pings amp-analytics ](#task2)
+  - [Tâche 3: traiter les pings d'analyse à partir de pages sur l'origine de l'éditeur ](#task3)
+  - [Tâche 4: traiter les pings d'analyse à partir du cache AMP ou des contextes d'affichage de la visionneuse AMP et établir des mappages d'identificateurs (si nécessaire)](#task4)
+  - [Tâche 5: utiliser l'ID client pour lier et envoyer des formulaires](#task5)
 - [Pratiques fortement recommandées ](#strongly-recommended-practices)
 
 L'état de l'utilisateur est un concept important sur le Web d'aujourd'hui. Les cas d'utilisation suivants sont activés par la gestion de l'état de l'utilisateur:
@@ -114,7 +114,7 @@ Les éditeurs doivent être prêts à gérer séparément l'état de l'utilisate
 
 Cependant, les éditeurs de pages AMP peuvent facilement finir par concevoir (involontairement) des expériences utilisateurs impliquant plusieurs contextes. Revenons à notre cas précédent concernant le panier d'achat et ajoutons-y plus de détails pour créer **scénario utilisateur** complet:
 
-> *Le jour 1, l'utilisateur découvre une page AMP d'Example Inc. via la recherche Google. La recherche Google charge les pages AMP dans une visionneuse AMP. Lors de l'affichage de la page, l'utilisateur ajoute quatre articles à son panier mais ne passe pas commande. Deux semaines plus tard, au jour 15, l'utilisateur se souvient des quatre articles qu'il envisageait d'acheter et décide de passer commande. Il accède directement à la page d'accueil d'Example Inc. sur `https://example.com` (il s'agit d'une page d'accueil non AMP) et constate que les quatre articles sont toujours enregistrés dans le panier.*
+> _Le jour 1, l'utilisateur découvre une page AMP d'Example Inc. via la recherche Google. La recherche Google charge les pages AMP dans une visionneuse AMP. Lors de l'affichage de la page, l'utilisateur ajoute quatre articles à son panier mais ne passe pas commande. Deux semaines plus tard, au jour 15, l'utilisateur se souvient des quatre articles qu'il envisageait d'acheter et décide de passer commande. Il accède directement à la page d'accueil d'Example Inc. sur `https://example.com` (il s'agit d'une page d'accueil non AMP) et constate que les quatre articles sont toujours enregistrés dans le panier._
 
 Dans ce scénario, l'utilisatrice reçoit une expérience de panier d'achat cohérente même si elle est passée d'une visionneuse AMP à l'origine de l'éditeur, et avec un certain délai écoulé entre ces événements. Cette expérience est très raisonnable et, si vous concevez une expérience d'achat, vous devez prendre cela en charge. Alors, comment y parvenir?
 
@@ -140,7 +140,7 @@ Après avoir posé les bases, nous visitons ensuite un sujet avec une série plu
 
 ### Prérequis <a name="before-getting-started"></a>
 
-En parcourant le guide technique ci-dessous, supposons que vous liez  **l'état de l'utilisateur** à un **identificateur** stable qui représente l'utilisateur. Par exemple, l'identificateur pourrait ressembler à `n34ic982n2386n30`. Côté serveur, vous associez alors `n34ic982n2386n30` à tout ensemble d'informations sur l'état de l'utilisateur, comme le contenu du panier, une liste d'articles précédemment lus ou d'autres données selon le cas d'utilisation.
+En parcourant le guide technique ci-dessous, supposons que vous liez **l'état de l'utilisateur** à un **identificateur** stable qui représente l'utilisateur. Par exemple, l'identificateur pourrait ressembler à `n34ic982n2386n30`. Côté serveur, vous associez alors `n34ic982n2386n30` à tout ensemble d'informations sur l'état de l'utilisateur, comme le contenu du panier, une liste d'articles précédemment lus ou d'autres données selon le cas d'utilisation.
 
 <amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
   <noscript><img alt="Un identifiant unique pourrait être utilisé pour gérer l'état de l'utilisateur dans de nombreux cas d'utilisation" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png"></noscript></amp-img>
@@ -178,23 +178,26 @@ Cela signifie qu'il existe deux cas pour l'état des pages non AMP sur l'origine
 **Cas 1: visite initiale.** Lors du premier atterrissage sur la page non AMP, il n'y aura pas de cookie. Si vous avez vérifié le cookie avant d'en définir un, vous ne verrez aucune valeur définie dans le cookie correspondant à `uid`:
 
 [sourcecode:bash]
+
 > document.cookie
-  ""
-[/sourcecode]
+> ""
+> [/sourcecode]
 
 À un moment donné lors du chargement initial, le cookie doit être défini, de sorte que si vous le faites une fois la page chargée, vous verrez qu'une valeur a été définie:
 
 [sourcecode:bash]
+
 > document.cookie
-  "uid=$publisher_origin_identifier"
-[/sourcecode]
+> "uid=$publisher_origin_identifier"
+> [/sourcecode]
 
 **Cas 2: visite non initiale.** Il y aura un ensemble de défini. Ainsi, si vous ouvrez la console développeur sur la page, vous verrez:
 
 [sourcecode:bash]
+
 > document.cookie
-  "uid=$publisher_origin_identifier"
-[/sourcecode]
+> "uid=$publisher_origin_identifier"
+> [/sourcecode]
 
 ##### Envoyer des pings d'analyse <a name="send-analytics-pings"></a>
 
@@ -388,30 +391,33 @@ Notre approche tirera parti de deux types de [substitutions de variables AMP](ht
 
 [sourcecode:html]
 <a
-  href="https://example.com/step2.html?ref_id=CLIENT_ID(uid)"
-  data-amp-replace="CLIENT_ID"
-></a>
-[/sourcecode]
+href="https://example.com/step2.html?ref_id=CLIENT_ID(uid)"
+data-amp-replace="CLIENT_ID"
+
+> </a>
+> [/sourcecode]
 
 **Autre solution pour transmettre l'ID client aux liens sortants:** définissez le nouveau paramètre de requête `ref_id` dans l'attribut de données `data-amp-addparams` et pour les requêtes qui ont besoin d'une substitution de paramètres, fournissez ces détails dans `data-amp-replace`. Avec cette approche, l'URL sera parfaite et les paramètres spécifiés dans `data-amp-addparams` seront ajoutés de manière dynamique
 
 [sourcecode:html]
 <a
-  href="https://example.com/step2.html"
-  data-amp-addparams="ref_id=CLIENT_ID(uid)"
-  data-amp-replace="CLIENT_ID"
-></a>
-[/sourcecode]
+href="https://example.com/step2.html"
+data-amp-addparams="ref_id=CLIENT_ID(uid)"
+data-amp-replace="CLIENT_ID"
+
+> </a>
+> [/sourcecode]
 
 Pour transmettre plusieurs paramètres de requête par le biais de `data-amp-addparams`, séparez `&` comme suit
 
 [sourcecode:html]
 <a
-  href="https://example.com/step2.html"
-  data-amp-addparams="ref_id=CLIENT_ID(uid)&pageid=p123"
-  data-amp-replace="CLIENT_ID"
-></a>
-[/sourcecode]
+href="https://example.com/step2.html"
+data-amp-addparams="ref_id=CLIENT_ID(uid)&pageid=p123"
+data-amp-replace="CLIENT_ID"
+
+> </a>
+> [/sourcecode]
 
 **Pour mettre à jour les entrées de formulaire afin d'utiliser une substitution d'ID client:** définissez un nom pour le champ d'entrée, tel que `orig_user_id`. Spécifiez la `default-value` du champ de formulaire comme étant la valeur de la substitution d'ID client AMP:
 
@@ -457,7 +463,7 @@ Pour traiter les informations sur la page de destination, l'approche variera sel
 <amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
   <noscript><img alt="Exemple de construction d'un ping analytique contenant un identifiant du contexte précédent fourni via l'URL et un identifiant du contexte actuel" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
 
-*Mises à jour de la page AMP:* utilisez la fonctionnalité de substitution de paramètre de requête dans votre configuration amp-analytics pour obtenir la valeur de l'identifiant `ref_id` dans l'URL. La fonction de paramètre de requête prend un paramètre qui indique la « clé » de la paire clé-valeur souhaitée dans l'URL et renvoie la valeur correspondante. Utilisez la fonction d'ID client comme nous l'avons fait pour obtenir l'identifiant du contexte de la page AMP.
+_Mises à jour de la page AMP:_ utilisez la fonctionnalité de substitution de paramètre de requête dans votre configuration amp-analytics pour obtenir la valeur de l'identifiant `ref_id` dans l'URL. La fonction de paramètre de requête prend un paramètre qui indique la « clé » de la paire clé-valeur souhaitée dans l'URL et renvoie la valeur correspondante. Utilisez la fonction d'ID client comme nous l'avons fait pour obtenir l'identifiant du contexte de la page AMP.
 
 [sourcecode:http]
 https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}
@@ -481,7 +487,7 @@ https://analytics.example.com/ping?type=pageview&orig_user_id=$amp_client_id&use
 
 Nous vous recommandons de valider l'authenticité des valeurs des paramètres de requête à l'aide des étapes décrites dans la section [Validation des paramètres](#parameter-validation) ci-dessous.
 
-*Mises à jour d'une page non AMP:* de même, sur une page non AMP diffusée à partir de l'origine de votre éditeur, extrayez et transmettez la valeur `ref_id` contenue dans l'URL. Validez l'authenticité de la valeur en suivant les étapes décrites dans la section [Validation des paramètres](#parameter-validation) ci-dessous. Ensuite, créez des pings d'analyse qui comprendront à la fois un `orig_user_id` dérivé de `ref_id` et un `user_id` fonction de la valeur de l'identifiant de cookie propriétaire.
+_Mises à jour d'une page non AMP:_ de même, sur une page non AMP diffusée à partir de l'origine de votre éditeur, extrayez et transmettez la valeur `ref_id` contenue dans l'URL. Validez l'authenticité de la valeur en suivant les étapes décrites dans la section [Validation des paramètres](#parameter-validation) ci-dessous. Ensuite, créez des pings d'analyse qui comprendront à la fois un `orig_user_id` dérivé de `ref_id` et un `user_id` fonction de la valeur de l'identifiant de cookie propriétaire.
 
 <blockquote>
 <p><strong>IMPORTANT:</strong></p>

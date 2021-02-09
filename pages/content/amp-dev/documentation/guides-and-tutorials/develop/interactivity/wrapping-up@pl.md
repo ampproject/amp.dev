@@ -1,6 +1,6 @@
 ---
-"$title": Tworzenie otoki
-"$order": '4'
+'$title': Tworzenie otoki
+$order: 4
 description: Gratulacje! Właśnie udało Ci się utworzyć interaktywną stronę e-commerce szczegółów produktu ze zmiennymi rozmiarami i cenami poszczególnych jednostek SKU, pobieranymi na żądanie ze zdalnego punktu końcowego JSON.
 ---
 

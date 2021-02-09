@@ -1,8 +1,8 @@
 ---
-"$title": AMP HTML 사양
-order: '8'
+'$title': AMP HTML 사양
+$order: 8
 formats:
-- websites
+  - websites
 teaser:
   text: AMP HTML은 특정 기본 성능 특성을 보장하는 방식으로 뉴스 기사와 같은 콘텐츠 페이지를 작성하기위한 HTML의 하위 집합입니다.
 ---
@@ -61,6 +61,7 @@ AMP HTML은 기여되었지만 중앙에서 관리되고 호스팅되는 맞춤 
 ### 샘플 문서<a name="sample-document"></a>
 
 [sourcecode:html]
+
 <!DOCTYPE html>
 <html ⚡>
   <head>
@@ -396,6 +397,7 @@ AMP는 일반 브라우저에서 GPU 가속화가 지원되는 속성의 트랜�
 예:
 
 [sourcecode:html]
+
 <style amp-keyframes>
 @keyframes anim1 {}
 
@@ -413,6 +415,7 @@ AMP는 일반 브라우저에서 GPU 가속화가 지원되는 속성의 트랜�
 예:
 
 [sourcecode:html]
+
 <link
   rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Tangerine"
@@ -501,11 +504,13 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 확장 구성 요소는 다음과 같이 문서 헤드에 `<script>` 태그를 포함하여로드됩니다.
 
 [sourcecode:html]
+
 <script
   async
   custom-element="amp-carousel"
   src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
 ></script>
+
 [/sourcecode]
 
 `<script>` 태그에는 `async` 특성이 있어야하며 요소의 이름을 참조하는 `custom-element` 특성이 있어야합니다.
@@ -535,11 +540,13 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 템플릿은 AMP 런타임과 함께 제공되지 않으며 확장 요소와 마찬가지로 다운로드해야합니다. 확장 구성 요소는 다음과 같이 문서 헤드에 `<script>` 태그를 포함하여로드됩니다.
 
 [sourcecode:html]
+
 <script
   async
   custom-template="amp-mustache"
   src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
 ></script>
+
 [/sourcecode]
 
 The `<script>` tag must have an `async` attribute and must have a `custom-template` attribute referencing the type of the template. The script URL must start with `https://cdn.ampproject.org` and must follow a very strict pattern of `/v\d+/[a-z-]+-(latest|\d+|\d+\.\d+)\.js`.
@@ -548,7 +555,7 @@ The `<script>` tag must have an `async` attribute and must have a `custom-templa
 
 [sourcecode:html]
 <template type="amp-mustache" id="template1">
-  Hello {% raw %}{{you}}{% endraw %}!
+Hello {% raw %}{{you}}{% endraw %}!
 </template>
 [/sourcecode]
 
@@ -606,6 +613,7 @@ If an AMP document exists that is an alternative representation of a canonical d
 예:
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html" />
 [/sourcecode]
 
@@ -614,12 +622,13 @@ AMP 문서 자체는 "canonical"관계가있는 `link` 태그를 통해 표준 �
 예:
 
 [sourcecode:html]
+
 <link
   rel="canonical"
   href="https://www.example.com/url/to/canonical/document.html"
 />
 [/sourcecode]
 
-(단일 리소스가 동시에 AMP *와* 표준 문서 인 경우 표준 관계는 자신을 가리켜 야하며 "amphtml"관계가 필요하지 않습니다.)
+(단일 리소스가 동시에 AMP _와_ 표준 문서 인 경우 표준 관계는 자신을 가리켜 야하며 "amphtml"관계가 필요하지 않습니다.)
 
 AMP를 사용하는 시스템과의 광범위한 호환성을 위해 자바 스크립트를 실행하지 않고도 "amphtml"관계를 읽을 수 있어야합니다. (즉, 태그는 자바 스크립트를 통해 삽입되지 않고 원시 HTML에 있어야합니다.)

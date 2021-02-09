@@ -1,6 +1,6 @@
 ---
-"$title": Tworzenie strony tytułowej
-"$order": '4'
+'$title': Tworzenie strony tytułowej
+$order: 4
 description: Aby utworzyć stronę, dodaj element <amp-story-page> jako element podrzędny składnika amp-story. Przypisz stronie unikalny identyfikator. Do naszej pierwszej strony, która jest stroną tytułową, przypiszmy unikalny identyfikator cover...
 author: bpaduch
 ---
@@ -10,13 +10,14 @@ Strona w relacji internetowej jest reprezentowana przez składnik `<amp-story-pa
 Aby utworzyć stronę, **dodaj element** <code><amp-story-page></code> jako element podrzędny składnika <a><code>amp-story</code></a>. <strong>Przypisz</strong> stronie unikalny identyfikator. Do naszej pierwszej strony, która jest stroną tytułową, przypiszmy unikalny identyfikator <code>cover</code>:
 
 ```html
-<amp-story standalone
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-    poster-portrait-src="assets/cover.jpg">
-   <amp-story-page id="cover">
-   </amp-story-page>
+<amp-story
+  standalone
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+>
+  <amp-story-page id="cover"> </amp-story-page>
 </amp-story>
 ```
 
@@ -40,15 +41,18 @@ Utwórz warstwę, dodając element `<amp-story-grid-layer>` jako element podrzę
 ```html
 <amp-story-page id="cover">
   <amp-story-grid-layer template="fill">
-    <amp-img src="assets/cover.jpg"
-        width="720" height="1280"
-        layout="responsive">
+    <amp-img
+      src="assets/cover.jpg"
+      width="720"
+      height="1280"
+      layout="responsive"
+    >
     </amp-img>
   </amp-story-grid-layer>
 </amp-story-page>
 ```
 
-Zobaczmy, jak wygląda strona.  Otwórz w przeglądarce stronę: <a href="http://localhost:8000/pets.html">http://localhost:8000/pets.html</a>.
+Zobaczmy, jak wygląda strona. Otwórz w przeglądarce stronę: <a href="http://localhost:8000/pets.html">http://localhost:8000/pets.html</a>.
 
 Powinna wyglądać tak:
 
@@ -56,7 +60,7 @@ Powinna wyglądać tak:
 
 ### Tworzenie warstwy 2
 
-Mamy więc tło, ale teraz potrzebujemy drugiej warstwy, znajdującej się nad tłem i zawierającej nasz nagłówek i autora.  Aby dodać naszą drugą warstwę, wykonajmy te same zadania, które wykonaliśmy w przypadku warstwy 1, ale zamiast używać szablonu `fill`, użyjemy szablonu **`vertical`**. Zanim jednak przejdziemy dalej, dowiedzmy się nieco o szablonach i o tym jak możemy ułożyć elementy AMP i HTML w elemencie `<amp-story-grid-layer>`.
+Mamy więc tło, ale teraz potrzebujemy drugiej warstwy, znajdującej się nad tłem i zawierającej nasz nagłówek i autora. Aby dodać naszą drugą warstwę, wykonajmy te same zadania, które wykonaliśmy w przypadku warstwy 1, ale zamiast używać szablonu `fill`, użyjemy szablonu **`vertical`**. Zanim jednak przejdziemy dalej, dowiedzmy się nieco o szablonach i o tym jak możemy ułożyć elementy AMP i HTML w elemencie `<amp-story-grid-layer>`.
 
 #### Układanie elementów za pomocą szablonu
 
@@ -105,7 +109,7 @@ W warstwie 2 chcemy, aby nagłówek i dane autora znajdowały się u góry, a el
 
 ```html
 <amp-story-grid-layer>
- <!--our first layer -->
+  <!--our first layer -->
 </amp-story-grid-layer>
 <amp-story-grid-layer template="vertical">
   <h1>The Joy of Pets</h1>

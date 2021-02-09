@@ -1,6 +1,6 @@
 ---
-"$title": 通常の HTML ページの作成
-"$order": '1'
+'$title': 通常の HTML ページの作成
+$order: 1
 description: プロジェクトディレクトリには、article.html というファイルが保存されています。このファイルは、これから作成しようとしている AMP ページの元になるニュース記事です。...
 ---
 
@@ -9,15 +9,14 @@ description: プロジェクトディレクトリには、article.html という
 1. `article.html` ファイルに記述されているすべてのコードを**コピー**して、新しいファイルに貼り付けます。
 2. 新しいファイルを `article.amp.html` として**保存**します。
 
-[tip type="note"] <strong>注意:</strong>  AMP ファイルの名前は、必ずしも `.amp.html` とする必要はありません。実際、AMP ファイルには任意の拡張子を設定できます。AMP ページを正規バージョンと区別する方法としては、URL にパラメータを追加するのが一般的です。たとえば、`http://publisher.com/article.html?amp` のようにします。 [/tip]
+[tip type="note"] <strong>注意:</strong> AMP ファイルの名前は、必ずしも `.amp.html` とする必要はありません。実際、AMP ファイルには任意の拡張子を設定できます。AMP ページを正規バージョンと区別する方法としては、URL にパラメータを追加するのが一般的です。たとえば、`http://publisher.com/article.html?amp` のようにします。 [/tip]
 
 `article.amp.html` ファイルは、次のような内容になっているはずです。
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-
     <title>News Article</title>
 
     <link href="base.css" rel="stylesheet" />
@@ -25,15 +24,16 @@ description: プロジェクトディレクトリには、article.html という
     <script type="text/javascript" src="base.js"></script>
   </head>
   <body>
-    <header>
-      News Site
-    </header>
+    <header>News Site</header>
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
     </article>
-    <img src="mountains.jpg">
+    <img src="mountains.jpg" />
   </body>
 </html>
 ```

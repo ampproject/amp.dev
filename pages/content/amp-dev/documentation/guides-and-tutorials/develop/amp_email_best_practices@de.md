@@ -1,9 +1,9 @@
 ---
-"$title": Best Practices für AMP für E-Mail
-"$order": '1'
-"$category": Develop
+'$title': Best Practices für AMP für E-Mail
+$order: 1
+'$category': Develop
 formats:
-- email
+  - email
 ---
 
 AMP ermöglicht neue spannende Arten von beeindruckenden und attraktiven Inhalten in E-Mails. Wenn du E-Mails entwirfst, beachte die folgenden Best Practices. Dadurch stellst du sicher, dass die E-Mails performant sind und auf allen Plattformen zuverlässig und gemäß den Benutzererwartungen funktionieren.

@@ -1,17 +1,17 @@
 ---
-"$title": Ảnh tương thích với srcset, kích cỡ & chiều cao
-"$order": '4'
+'$title': Ảnh tương thích với srcset, kích cỡ & chiều cao
+$order: 4
 description: Sử dụng thuộc tính srcset để kiểm soát các tài sản của một yếu tố dựa trên các biểu thức đa phương tiện khác nhau. Cụ thể, sử dụng nó cho tất cả các thẻ amp-img để quy định...
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## srcset
@@ -21,16 +21,20 @@ Sử dụng thuộc tính `srcset` để kiểm soát các tài sản của mộ
 Trong ví dụ đơn giản này, `srcset` quy định các ảnh sẽ được sử dụng dựa trên chiều rộng màn hình. Ký hiệu `w` cho trình duyệt biết chiều rộng của mỗi ảnh trong danh sách:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   layout="responsive"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
-            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w">
+            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
+>
 </amp-img>
 ```
+
 [/example]
 
 [tip type="note"] **LƯU Ý –** AMP hỗ trợ srcset với ký hiệu `w` trong mọi trình duyệt. [/tip]
@@ -44,16 +48,20 @@ Bạn cũng có thể sử dụng thuộc tính `sizes` (kích cỡ) không bắ
 Cân nhắc ví dụ sau:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
             {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
-  sizes="(min-width: 650px) 50vw, 100vw">
+  sizes="(min-width: 650px) 50vw, 100vw"
+>
 </amp-img>
 ```
+
 [/example]
 
 Thuộc tính `sizes` (kích cỡ) định nghĩa chiều rộng của yếu tố là 50% kích cỡ của màn hiển thị khi màn hiển thị có chiều rộng 650px hoặc hơn. Ví dụ, nếu màn hiển thị là 800px, chiều rộng của yếu tố sẽ là 400px. Sau đó, trình duyệt sẽ chọn tài nguyên `srcset` tương đương với 400px, giả sử rằng tỷ lệ điểm ảnh của thiết bị là 1, trong trường hợp này là `hummingbird-narrow.jpg` (320px).
@@ -74,14 +82,18 @@ Khi thuộc tính `heights` (chiều cao) được quy định với `width` (ch
 Một ví dụ:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="AMP"
+<amp-img
+  alt="AMP"
   src="{{server_for_email}}/static/inline-examples/images/amp.jpg"
   width="320"
   height="256"
-  heights="(min-width:500px) 200px, 80%">
+  heights="(min-width:500px) 200px, 80%"
+>
 </amp-img>
 ```
+
 [/example]
 
 Trong ví dụ này, chiều cao của yếu tố theo mặc định sẽ là 80% chiều rộng, nhưng đối với màn hiển thị rộng hơn `500px`, nó sẽ được giới hạn ở `200px`.

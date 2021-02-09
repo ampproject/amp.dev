@@ -1,6 +1,6 @@
 ---
-"$title": Creating the bookend
-"$order": '7'
+'$title': Creating the bookend
+$order: 7
 description: 现在，所有网页均已添加完毕，下面我们来看看故事的最后一个屏幕，即“结束画面”。最后一个屏幕对故事进行收尾，您可以在该屏幕上提供社交分享按钮以及与故事相关的链接 ...
 author: bpaduch
 ---

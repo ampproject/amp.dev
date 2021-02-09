@@ -1,10 +1,10 @@
 ---
-"$title": Letzte Schritte vor der Veröffentlichung
-"$order": '6'
+'$title': Letzte Schritte vor der Veröffentlichung
+$order: 6
 description: Gratulation! Du hast deine Seite lokal getestet und alle Validierungsfehler behoben. Damit ist deine erste AMP Seite bereit zur Veröffentlichung.
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 Gratulation! Du hast deine Seite lokal getestet und alle Validierungsfehler behoben. Damit ist deine erste AMP Seite bereit zur Veröffentlichung.

@@ -1,10 +1,10 @@
 ---
-"$title": Die Grundlagen von Analytics
-"$order": '0'
+'$title': Die Grundlagen von Analytics
+$order: 0
 description: 'AMP bietet zwei Komponenten, die dich bei Analytics und Messungen unterstützen sollen: amp-pixel und amp-analytics. Beide Optionen senden Analysedaten an einen definierten Endpoint.'
 formats:
-- websites
-- stories
+  - websites
+  - stories
 ---
 
 Hier lernst du die Grundlagen von AMP Analytics kennen.
@@ -44,26 +44,30 @@ Da die Komponente [`amp-pixel`](../../../../documentation/components/reference/a
 Um eine einfache Konfiguration für [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) zu erstellen, musst du zunächst diese Deklaration von `custom-element` im Abschnitt `<head>` des AMP Dokuments einbinden (siehe auch [Deklaration zur Einbindung von Komponenten](../../../../documentation/components/index.html)):
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script
+  async
+  custom-element="amp-analytics"
+  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+></script>
 ```
 
 Das folgende Beispiel ähnelt dem [Beispiel zu `amp-pixel`](../../../../documentation/components/reference/amp-pixel.md). Jedes Mal, wenn eine Seite sichtbar wird, wird das Trigger Event ausgelöst und die Daten zu Seitenaufrufen werden zusammen mit einer zufälligen ID an die angegebene URL gesendet:
 
 ```html
 <amp-analytics>
-<script type="application/json">
-  {
-    "requests": {
-      "pageview": "https://foo.com/pixel?RANDOM"
-    },
-    "triggers": {
-      "trackPageview": {
-        "on": "visible",
-        "request": "pageview"
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://foo.com/pixel?RANDOM"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
       }
     }
-  }
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -87,43 +91,39 @@ AMP Analytics erleichtert die Implementierung der oben genannten Funktionen mit 
 
 ```html
 <amp-analytics type="gtag" data-credentials="include">
- <script type="application/json">
-  {
-    "vars": {
-      "gtag_id":"YOUR_GOOGLE_ANALYTICS_ID",
-      "config": {
-        "YOUR_GOOGLE_ANALYTICS_ID": {
-          "groups":"default"
-        }
-      }
-    },
-    "triggers": {
-      "storyProgress": {
-        "on":"story-page-visible",
-        "vars": {
-          "event_name":"custom",
-          "event_action":"story_progress",
-          "event_category":"${title}",
-          "event_label":"${storyPageId}",
-          "send_to": [
-            "YOUR_GOOGLE_ANALYTICS_ID"
-          ]
+  <script type="application/json">
+    {
+      "vars": {
+        "gtag_id": "YOUR_GOOGLE_ANALYTICS_ID",
+        "config": {
+          "YOUR_GOOGLE_ANALYTICS_ID": {
+            "groups": "default"
+          }
         }
       },
-      "storyEnd": {
-        "on":"story-last-page-visible",
-        "vars": {
-          "event_name":"custom",
-          "event_action":"story_complete",
-          "event_category":"${title}",
-          "send_to": [
-            "YOUR_GOOGLE_ANALYTICS_ID"
-          ]
+      "triggers": {
+        "storyProgress": {
+          "on": "story-page-visible",
+          "vars": {
+            "event_name": "custom",
+            "event_action": "story_progress",
+            "event_category": "${title}",
+            "event_label": "${storyPageId}",
+            "send_to": ["YOUR_GOOGLE_ANALYTICS_ID"]
+          }
+        },
+        "storyEnd": {
+          "on": "story-last-page-visible",
+          "vars": {
+            "event_name": "custom",
+            "event_action": "story_complete",
+            "event_category": "${title}",
+            "send_to": ["YOUR_GOOGLE_ANALYTICS_ID"]
+          }
         }
       }
     }
-  }
- </script>
+  </script>
 </amp-analytics>
 ```
 
@@ -138,7 +138,9 @@ Wenn du über die Möglichkeiten der Standardkonfiguration hinausgehen möchtest
 Sowohl die Komponente [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) als auch [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) ermöglicht alle standardmäßigen Variablensubstitutionen in URLs (siehe [AMP HTML Variablensubstitutionen](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)). Im folgenden Beispiel wird die Anforderung des Seitenaufrufs zusammen mit der kanonischen URL des aktuellen AMP Dokuments, seinem Titel und einer [Client ID](analytics_basics.md#user-identification) an die URL gesendet:
 
 ```html
-<amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
+<amp-pixel
+  src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"
+></amp-pixel>
 ```
 
 Aufgrund seiner einfachen Struktur kann das Tag [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) nur Variablen enthalten, die von der Plattform definiert wurden oder welche die AMP Runtime von der AMP Seite aus parsen kann. Im obigen Beispiel legt die Plattform sowohl die Werte für `canonicalURL` als auch für `clientId(site-user-id)` fest. Das Tag [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) kann die gleichen Variablen wie [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) sowie eindeutig definierte Variablen innerhalb der Tag Konfiguration enthalten.
@@ -152,10 +154,10 @@ Im folgenden Beispiel für [`amp-analytics`](../../../../documentation/component
   <script type="application/json">
     {
       "requests": {
-        "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
       },
       "vars": {
-        "account":"ABC123"
+        "account": "ABC123"
       },
       "triggers": {
         "someEvent": {
@@ -188,7 +190,9 @@ Wenn eine AMP Seite von einer Publisher Website bereitgestellt wird, kann das vo
 Zum Beispiel:
 
 ```html
-<amp-pixel src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"></amp-pixel>
+<amp-pixel
+  src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"
+></amp-pixel>
 ```
 
 Wenn AMP feststellt, dass dieses Cookie angelegt wurde, gibt die Client ID Substitution den Wert des Cookies zurück. Wenn AMP feststellt, dass dieses Cookie nicht angelegt wurde, generiert AMP einen Wert im Format `amp-` gefolgt von einer zufälligen, in base64 codierten Zeichenfolge.

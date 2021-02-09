@@ -1,11 +1,11 @@
 ---
-"$title": カスタムフォントの追加
-"$order": '6'
+'$title': カスタムフォントの追加
+$order: 6
 description: AMP ページでは外部のスタイルシートを使用できませんが、カスタムフォントは例外です。ページにカスタムフォントを埋め込む方法には ...
 formats:
-- websites
-- ads
-- stories
+  - websites
+  - ads
+  - stories
 author: pbakaus
 ---
 
@@ -19,6 +19,7 @@ AMP ページでは外部のスタイルシートを使用できませんが、�
 以下のように `<link>` タグを使用します（通常はページの head 内に指定します）。
 
 [sourcecode:html]
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 [/sourcecode]
 
@@ -35,6 +36,7 @@ AMP ページでは外部のスタイルシートを使用できませんが、�
 または、AMP スタイルシート内で [<code>@font-face</code>](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) を使用することもできます。
 
 [sourcecode:html]
+
 <style amp-custom>
   @font-face {
     font-family: "Bitstream Vera Serif Bold";
@@ -45,6 +47,7 @@ AMP ページでは外部のスタイルシートを使用できませんが、�
     font-family: "Bitstream Vera Serif Bold", serif;
   }
 </style>
+
 [/sourcecode]
 
-[tip type="note"] <strong>注意:</strong>   `@font-face` を介して追加されるフォントは、HTTP または HTTPS スキームで取得する必要があります。[/tip]
+[tip type="note"] <strong>注意:</strong> `@font-face` を介して追加されるフォントは、HTTP または HTTPS スキームで取得する必要があります。[/tip]

@@ -1,10 +1,10 @@
 ---
-"$title": Comment optimiser vos pages AMP hébergées
-"$order": '7'
+'$title': Comment optimiser vos pages AMP hébergées
+$order: 7
 description: Le runtime AMP est optimisé en vitesse et si vos pages AMP sont diffusées par un cache AMP, elles sont entièrement optimisées et offrent les meilleures performances de chargement ...
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 
@@ -73,6 +73,7 @@ Examinons cela étape par étape:
 3. Si votre page comprend des extensions de retard d'affichage (par exemple, amp-experiment, amp-dynamic-css-classes, amp-story), préchargez ces extensions car elles sont requises par le runtime AMP pour afficher la page.
 
 [sourcecode:html]
+
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-custom-css-0.1.js">
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/story-1.0.js">[/sourcecode]
@@ -150,7 +151,7 @@ En passant, la même approche est valable pour les images d'affiche [`amp-video`
 </amp-video>
 [/sourcecode]
 
-Assurez-vous juste de placer les déclarations de préchargement *après* la déclaration de fenêtre, car le navigateur a besoin des dimensions de la fenêtre pour déterminer la largeur de l'écran.
+Assurez-vous juste de placer les déclarations de préchargement _après_ la déclaration de fenêtre, car le navigateur a besoin des dimensions de la fenêtre pour déterminer la largeur de l'écran.
 
 [sourcecode:html]
 
@@ -203,11 +204,13 @@ Avec AMP, vous pouvez faire plusieurs choses pour optimiser le chargement de vos
 - Préchargez les polices personnalisées:
 
 [sourcecode:html]
+
 <link rel="preload" as="font" href="/bundles/app/fonts/helveticaneue-roman-webfont.woff2" >[/sourcecode]
 
 - Si vous utilisez Google Fonts ou tout autre fournisseur de polices avec des URL de polices inconnues, préconnectez le serveur de polices respectif:
 
 [sourcecode:html]
+
  <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
 [/sourcecode]
 

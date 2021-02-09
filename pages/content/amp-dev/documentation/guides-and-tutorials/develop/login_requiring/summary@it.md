@@ -1,6 +1,6 @@
 ---
-"$title": Riepilogo
-"$order": '4'
+'$title': Riepilogo
+$order: 4
 description: In questa esercitazione, abbiamo imparato a combinare i componenti amp-access e amp-form per creare una sezione commenti che richiede credenziali di accesso.
 ---
 

@@ -1,6 +1,6 @@
 ---
-"$title": Füge einen Kommentar hinzu
-"$order": '2'
+'$title': Füge einen Kommentar hinzu
+$order: 2
 description: An dieser Stelle können Benutzer mithilfe der Bibliothek amp-form einen Kommentar hinzufügen. Beachte, dass das Vorhandensein des Formulars bedingt ist und vom Status der Komponente amp-access abhängt …
 ---
 
@@ -9,6 +9,7 @@ description: An dieser Stelle können Benutzer mithilfe der Bibliothek amp-form 
 An dieser Stelle können Benutzer mithilfe der Bibliothek [`amp-form`](../../../../documentation/components/reference/amp-form.md) einen Kommentar hinzufügen. Beachte, dass das Vorhandensein des Formulars bedingt ist und vom Status der Komponente [`amp-access`](../../../../documentation/components/reference/amp-access.md) abhängt:
 
 [sourcecode:html]
+
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
 [/sourcecode]
 
@@ -26,6 +27,7 @@ Hier ist ein Beispiel für eine JSON Antwort:
 Die Formularkomponente zeigt diese Werte auf der Seite einfach mithilfe des Templates [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md) an:
 
 [sourcecode:html]
+
 <div submit-success>
   <template type="amp-mustache">
     <div class="comment-user">
@@ -42,6 +44,7 @@ Die Formularkomponente zeigt diese Werte auf der Seite einfach mithilfe des Temp
 In diesem Beispiel prüfen wir nur, ob der Wert des Kommentars nicht leer ist. Wenn der Wert leer ist, geben wir einen Fehler zurück, der die Ausführung des folgenden Codes auslöst:
 
 [sourcecode:html]
+
 <div submit-error>
   <template type="amp-mustache">
     Error! Looks like something went wrong with your comment, please try to submit it again.

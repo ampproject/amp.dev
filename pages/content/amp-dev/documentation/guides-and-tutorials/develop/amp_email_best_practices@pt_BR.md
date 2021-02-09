@@ -1,9 +1,9 @@
 ---
-"$title": 'AMP para E-mail: melhores práticas'
-"$order": '1'
-"$category": Develop
+'$title': 'AMP para E-mail: melhores práticas'
+$order: 1
+'$category': Develop
 formats:
-- email
+  - email
 ---
 
 O AMP possibilita o uso de novos tipos de conteúdo imersivo e envolvente no e-mail! Ao projetar e-mails, tenha em mente as seguintes práticas recomendadas para garantir que eles tenham bom desempenho, que sejam confiáveis em todas as plataformas e que funcionem da forma esperada por seus usuários.
@@ -16,12 +16,12 @@ Ao usar a [`amp-list`](../../../documentation/components/reference/amp-list.md?f
 
 - Quando usar [`amp-carousel`](../../components/reference/amp-carousel-v0.1.md?format=email), certifique-se de que o atributo `controls` esteja definido. Isto permite que usuários em dispositivos touchscreen, tais como smartphones, possam navegar pelo carrossel.
 - Ao usar [`amp-form`](../../../documentation/components/reference/amp-form.md?format=email), tenha em mente que nem todos os tipos de entrada são suportados no iOS. Consulte o documento [Supported Input Values](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/InputTypes.html) na Referência HTML do Safari para mais informações.
-- Nem todos os [valores de atributos `autocomplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete)  são suportados em diferentes aplicativos e navegadores. Assuma que o autocomplete não estará disponível para seus usuários e mantenha os formulários curtos.
+- Nem todos os [valores de atributos `autocomplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) são suportados em diferentes aplicativos e navegadores. Assuma que o autocomplete não estará disponível para seus usuários e mantenha os formulários curtos.
 
 #Estilo
 
 - Certifique-se de que o seu e-mail só esteja usando CSS listado em [AMP para E-mail: CSS Suportado](../learn/email-spec/amp-email-css.md?format=email)
-- Evite usar unidades viewport (`vw`, `vh`, `vmin` e `vmax`)  em qualquer lugar do seu CSS e HTML. Como os e-mails AMP são renderizados dentro de um iframe, a área de visualização do e-mail não corresponde à área de visualização do navegador.
+- Evite usar unidades viewport (`vw`, `vh`, `vmin` e `vmax`) em qualquer lugar do seu CSS e HTML. Como os e-mails AMP são renderizados dentro de um iframe, a área de visualização do e-mail não corresponde à área de visualização do navegador.
 - Diferentes navegadores possuem diferentes estilos de CSS padrão. Use uma biblioteca CSS que normaliza os estilos, se necessário. Para mais informações sobre estilos padrão, normalização de estilos e uma lista de bibliotecas disponíveis, veja [Reboot, Resets, and Reasoning](https://css-tricks.com/reboot-resets-reasoning/).
 - Tenha cuidado com margens transbordantes em CSS: elas não podem ser renderizadas devido a [uma limitação de layout do AMP](https://github.com/ampproject/amphtml/issues/13343#issuecomment-447380241).
 

@@ -1,8 +1,8 @@
 ---
-"$title": Setting up
-"$order": '0'
+'$title': Setting up
+$order: 0
 description: Como configurar seu ambiente de desenvolvimento Etapa 1. Baixe o código. Baixe o código de exemplo do tutorial como um arquivo ZIP ou via git ...
-"$parent": "/documentation/guides-and-tutorials/start/converting/setting-up.md"
+'$parent': '/documentation/guides-and-tutorials/start/converting/setting-up.md'
 ---
 
 ## Pré-requisitos

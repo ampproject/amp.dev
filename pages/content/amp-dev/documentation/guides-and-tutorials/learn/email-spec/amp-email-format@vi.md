@@ -1,8 +1,8 @@
 ---
-"$title": Định dạng AMP cho Email
-order: '1'
+'$title': Định dạng AMP cho Email
+$order: 1
 formats:
-- email
+  - email
 teaser:
   text: 'Đánh dấu bắt buộc '
 toc: 'true'
@@ -40,6 +40,7 @@ AMP là một công nghệ nổi tiếng để phát triển các trang web siê
 Đoạn code sau đây đại diện cho số đánh dấu tối thiểu tạo thành một email AMP hợp lệ:
 
 [sourcecode:html]
+
 <!DOCTYPE html>
 <html ⚡4email data-css-strict>
   <head>
@@ -72,21 +73,21 @@ Toàn bộ đánh dấu AMPHTML phải không vượt quá 200,000 byte.
 
 AMP cho Email phụ thuộc vào loại con [MIME](https://en.wikipedia.org/wiki/MIME) `multipart/alternative` như được định nghĩa trong [RFC 1521, phần 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
-*Để biết thêm thông tin, xem [Cấu trúc và render các email AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md).*
+_Để biết thêm thông tin, xem [Cấu trúc và render các email AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md)._
 
 ## Các thành phần AMP được hỗ trợ <a name="supported-amp-components"></a>
 
-*Xem [Các Thành phần được Hỗ trợ của AMP cho Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md).*
+_Xem [Các Thành phần được Hỗ trợ của AMP cho Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)._
 
 ## Yêu cầu với HTML <a name="html-requirements"></a>
 
-*Xem [HTML được Hỗ trợ trong AMP cho Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md).*
+_Xem [HTML được Hỗ trợ trong AMP cho Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md)._
 
 ## Yêu cầu với CSS <a name="css-requirements"></a>
 
 ### Các bộ chọn và thuộc tính được hỗ trợ <a name="supported-selectors-and-properties"></a>
 
-*Xem [CSS được Hỗ trợ trong AMP cho Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md).*
+_Xem [CSS được Hỗ trợ trong AMP cho Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md)._
 
 ### Quy định CSS trong một tài liệu AMP <a name="specifying-css-in-an-amp-document"></a>
 
@@ -94,6 +95,7 @@ Mọi CSS trong một tài liệu AMP bất kỳ đều phải được bao gồ
 
 [sourcecode:html]
 ...
+
 <style amp-custom>
   /* any custom styles go here. */
   body {
@@ -106,7 +108,9 @@ Mọi CSS trong một tài liệu AMP bất kỳ đều phải được bao gồ
     background-color: grey;
   }
 </style>
+
 ...
+
 </head>
 [/sourcecode]
 

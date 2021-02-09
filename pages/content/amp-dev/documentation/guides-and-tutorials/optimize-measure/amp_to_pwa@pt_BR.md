@@ -1,10 +1,10 @@
 ---
-"$title": Transforme seu site AMP em um PWA
-"$order": '10'
+'$title': Transforme seu site AMP em um PWA
+$order: 10
 description: Ao armazenar recursos em cache no navegador, um PWA é capaz de fornecer dados, ativos e páginas offline ao usuário para mantê-lo envolvido e informado.
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: crystalonscript
 ---
 
@@ -169,7 +169,7 @@ Vamos testar o Lyrical Lyghtning abrindo o painel DevTools usando `Ctrl + Shift 
 
 {{ image('/static/img/docs/tutorials/amp-sw-test.png', 1349, 954, alt='DevTools panel open on lyrical lyghtning PWA' ) }}
 
-Clique na caixa `offline` para mudar para o modo offline. Clique no link `see full lineup` e navegue para  `offline.html` para verificar se tudo foi corretamente armazenado em cache e carregado previamente.
+Clique na caixa `offline` para mudar para o modo offline. Clique no link `see full lineup` e navegue para `offline.html` para verificar se tudo foi corretamente armazenado em cache e carregado previamente.
 
 [tip type="default"] **Dica –** Para uma análise completa dos recursos de um Progressive Web App, rode a [ferramenta Google's Lighthouse](https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool) para gerar um relatório. [/tip]
 

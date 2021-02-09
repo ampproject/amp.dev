@@ -1,6 +1,6 @@
 ---
-"$title": Membuat halaman HTML reguler
-"$order": '1'
+'$title': Membuat halaman HTML reguler
+$order: 1
 description: Di direktori proyek, Anda akan menemukan berkas bernama article.html. Ini adalah artikel berita yang kita buatkan halaman setara AMP untuk ....
 ---
 
@@ -14,10 +14,9 @@ Di direktori project, Anda akan menemukan berkas bernama [`article.html`](https:
 Berkas `article.amp.html` Anda akan terlihat seperti yang berikut ini:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-
     <title>News Article</title>
 
     <link href="base.css" rel="stylesheet" />
@@ -25,15 +24,16 @@ Berkas `article.amp.html` Anda akan terlihat seperti yang berikut ini:
     <script type="text/javascript" src="base.js"></script>
   </head>
   <body>
-    <header>
-      News Site
-    </header>
+    <header>News Site</header>
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
     </article>
-    <img src="mountains.jpg">
+    <img src="mountains.jpg" />
   </body>
 </html>
 ```

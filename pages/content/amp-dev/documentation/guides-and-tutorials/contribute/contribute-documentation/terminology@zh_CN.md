@@ -1,12 +1,12 @@
 ---
-"$title": AMP 术语
-"$order": '2'
+'$title': AMP 术语
+$order: 2
 description: AMP 术语指南
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 

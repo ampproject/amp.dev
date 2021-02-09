@@ -1,9 +1,9 @@
 ---
-"$title": Integração com AMP para veicular ads
-"$order": '5'
+'$title': Integração com AMP para veicular ads
+$order: 5
 description: Este guia é voltado a redes de publicidade que pretendem fazer a integração com AMP para veicular anúncios de display em páginas AMP.
 formats:
-- ads
+  - ads
 ---
 
 Este guia é voltado a redes de publicidade que pretendem fazer a integração com AMP para veicular anúncios de display em páginas AMP.
@@ -25,20 +25,23 @@ Este guia é voltado a redes de publicidade que pretendem fazer a integração c
 
 Assim como um servidor de anúncios, os editores compatíveis incluem uma biblioteca JavaScript fornecida por você e adicionam vários "snippets de anúncios". Esses snippets usam a biblioteca para buscar anúncios e renderizá-los no site do editor. Como a AMP não permite que os editores executem JavaScript arbitrário, será preciso contribuir para o código aberto da AMP se você quiser que a tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md) solicite anúncios do seu servidor de anúncios.
 
-[tip type="note"] Use essa implementação [`amp-ad`](../../../documentation/components/reference/amp-ad.md)  para exibir anúncios HTML tradicionais **e** HTML para AMP. [/tip]
+[tip type="note"] Use essa implementação [`amp-ad`](../../../documentation/components/reference/amp-ad.md) para exibir anúncios HTML tradicionais **e** HTML para AMP. [/tip]
 
 Por exemplo, é possível chamar o servidor Amazon A9 usando esta sintaxe:
 
 ```html
-<amp-ad width="300" height="250"
-    type="a9"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  width="300"
+  height="250"
+  type="a9"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
-No código acima, o atributo `type` especifica a rede de publicidade, que neste caso é a A9. Os atributos `data-*` dependem dos parâmetros que o servidor A9 da Amazon espera ao exibir um anúncio. O arquivo [`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) mostra como os parâmetros são mapeados para fazer uma chamada JavaScript ao URL do servidor A9. Os parâmetros correspondentes transmitidos pela tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md)  são anexados ao URL para retornar um anúncio.
+No código acima, o atributo `type` especifica a rede de publicidade, que neste caso é a A9. Os atributos `data-*` dependem dos parâmetros que o servidor A9 da Amazon espera ao exibir um anúncio. O arquivo [`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) mostra como os parâmetros são mapeados para fazer uma chamada JavaScript ao URL do servidor A9. Os parâmetros correspondentes transmitidos pela tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md) são anexados ao URL para retornar um anúncio.
 
 Se quiser instruções para criar uma integração [`amp-ad`](../../../documentation/components/reference/amp-ad.md), confira como [integrar redes de publicidade à AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
 

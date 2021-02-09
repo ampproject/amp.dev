@@ -1,14 +1,14 @@
 ---
-"$title": Cara kerja Pengoptimal AMP
-"$order": '1'
+'$title': Cara kerja Pengoptimal AMP
+$order: 1
 description: Sebuah Pengoptimal AMP mengambil dokumen AMPHTML yang valid sebagai input dan mengubahnya menjadi versi yang dioptimalkan dengan menerapkan pengoptimalan tambahan yang akan terlalu repot jika dilakukan “secara manual”. Panduan ini menjelaskan secara terperinci cara kerja Pengoptimal AMP.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 
-Sebuah Pengoptimal AMP mengambil dokumen AMPHTML yang valid sebagai input dan mengubahnya menjadi versi yang dioptimalkan dengan menerapkan pengoptimalan tambahan yang akan terlalu repot jika dilakukan “secara manual”.  Anda dapat mengenali “**AMP transformasi**” yang dihasilkan di dalam elemen `html` melalui atribut `transformed`:
+Sebuah Pengoptimal AMP mengambil dokumen AMPHTML yang valid sebagai input dan mengubahnya menjadi versi yang dioptimalkan dengan menerapkan pengoptimalan tambahan yang akan terlalu repot jika dilakukan “secara manual”. Anda dapat mengenali “**AMP transformasi**” yang dihasilkan di dalam elemen `html` melalui atribut `transformed`:
 
 ```
 <html ⚡ i-amphtml-layout i-amphtml-no-boilerplate transformed="self;v=1">
