@@ -1,10 +1,10 @@
 ---
-"$title": Cómo administrar el estado del usuario cuando no se autenticó con AMP
-order: '2'
+'$title': Cómo administrar el estado del usuario cuando no se autenticó con AMP
+$order: 2
 formats:
-- websites
+  - websites
 teaser:
-  text: "**Contenido**"
+  text: '**Contenido**'
 ---
 
 <!--
@@ -34,12 +34,12 @@ limitations under the License.
 
 - [Antecedentes](#background)
 - [Guía de implementación](#implementation-guide)
-    - [Antes de comenzar](#before-getting-started)
-    - [Tarea 1: configure un identificador y envíe pings analíticos en las páginas sin AMP del editor de origen](#task1)
-    - [Tarea 2: configure un identificador y envíe pings analíticos, incluyendo el reemplazo de ID de cliente en los pings amp-analytics, para las páginas AMP](#task2)
-    - [Tarea 3: procesar pings analíticos en las páginas del origen del editor](#task3)
-    - [Tarea 4: procesar pings analíticos desde el caché de AMP o los contextos de visualización del visor AMP y establecer asignaciones en los identificadores (si es necesario)](#task4)
-    - [Tarea 5: utilizar el ID de cliente para vincular y enviar formularios](#task5)
+  - [Antes de comenzar](#before-getting-started)
+  - [Tarea 1: configure un identificador y envíe pings analíticos en las páginas sin AMP del editor de origen](#task1)
+  - [Tarea 2: configure un identificador y envíe pings analíticos, incluyendo el reemplazo de ID de cliente en los pings amp-analytics, para las páginas AMP](#task2)
+  - [Tarea 3: procesar pings analíticos en las páginas del origen del editor](#task3)
+  - [Tarea 4: procesar pings analíticos desde el caché de AMP o los contextos de visualización del visor AMP y establecer asignaciones en los identificadores (si es necesario)](#task4)
+  - [Tarea 5: utilizar el ID de cliente para vincular y enviar formularios](#task5)
 - [Las mejores prácticas recomendadas](#strongly-recommended-practices)
 
 El estado de usuario es un concepto importante en la web actual. Considere los siguientes casos de uso que se habilitan cuando se administra el estado de usuario:
@@ -114,7 +114,7 @@ Los editores deben estar preparados para administrar el estado de usuario para c
 
 Sin embargo, los editores de páginas AMP (de forma involuntaria) acabarían fácilmente diseñando la experiencia de usuario que involucra varios contextos. Revisemos nuestra observación previa del caso de uso para el carrito de compras y agreguemos más especificaciones para crear una **historia de usuario** completa:
 
-> *El día 1, el usuario encuentra una página AMP de Example Inc. a través de Google Search, ya que carga las páginas AMP en un visor AMP. Mientras observa la página, el usuario agrega cuatro artículos a su carrito de compras, pero no concuerdan. Dos semanas después, el día 15, el usuario recuerda los cuatro artículos que estaba considerando comprar y decide que ahora es el momento de comprar. Accede a la página de inicio de Example Inc. directamente en `https://example.com` (es una página de inicio sin AMP) y descubre que sus cuatro artículos todavía están guardados en el carrito de compras.*
+> _El día 1, el usuario encuentra una página AMP de Example Inc. a través de Google Search, ya que carga las páginas AMP en un visor AMP. Mientras observa la página, el usuario agrega cuatro artículos a su carrito de compras, pero no concuerdan. Dos semanas después, el día 15, el usuario recuerda los cuatro artículos que estaba considerando comprar y decide que ahora es el momento de comprar. Accede a la página de inicio de Example Inc. directamente en `https://example.com` (es una página de inicio sin AMP) y descubre que sus cuatro artículos todavía están guardados en el carrito de compras._
 
 En este escenario, el usuario recibe una experiencia uniforme en el carrito de compras a pesar de que pasó del contexto para un visor AMP a un contexto para editor de origen, y con el tiempo que transcurre entre estos eventos. Esta experiencia es muy razonable y, si está diseñando una experiencia de compra, debe esperar a que sea compatible, entonces, ¿cómo le hace para que ocurra?
 
@@ -178,23 +178,26 @@ Esto significa que hay dos casos para el estado de las páginas sin AMP en el or
 **Caso #1: visita inicial.** Al acceder por primera vez a la página sin AMP, no habrá ninguna cookie. Si marcó la cookie antes de que se estableciera una, no verá valores establecidos en la cookie que correspondan al `uid`:
 
 [sourcecode:bash]
+
 > document.cookie
-  ""
-[/sourcecode]
+> ""
+> [/sourcecode]
 
 En algún momento de la carga inicial, se debe configurar la cookie, de modo que si hace esto una vez que se cargue la página, verá que se estableció un valor:
 
 [sourcecode:bash]
+
 > document.cookie
-  "uid=$publisher_origin_identifier"
-[/sourcecode]
+> "uid=$publisher_origin_identifier"
+> [/sourcecode]
 
 **Caso # 2: Sin una visita inicial.** Habrá un conjunto de cookies. Por lo tanto, si abre la consola para desarrolladores en la página, verá:
 
 [sourcecode:bash]
+
 > document.cookie
-  "uid=$publisher_origin_identifier"
-[/sourcecode]
+> "uid=$publisher_origin_identifier"
+> [/sourcecode]
 
 ##### Cómo enviar pings analíticos <a name="send-analytics-pings"></a>
 
@@ -336,7 +339,7 @@ En seguida, examine la tabla de asignación para tratar de encontrar el mismo va
   </tr>
 </table>
 
-En el ejemplo anterior, encontramos un registro que ya existe. El valor que encontramos emparejado con el ID de cliente de AMP se convierte en el identificador del registro de análisis, en este caso es  `$existing_publisher_origin_identifier`. Con un identificador del registro de análisis establecido, podemos ir directo a la sección Almacenamiento de datos.
+En el ejemplo anterior, encontramos un registro que ya existe. El valor que encontramos emparejado con el ID de cliente de AMP se convierte en el identificador del registro de análisis, en este caso es `$existing_publisher_origin_identifier`. Con un identificador del registro de análisis establecido, podemos ir directo a la sección Almacenamiento de datos.
 
 De lo contrario, si el ID de cliente de AMP no se encuentra en una asignación necesitaremos crear una:
 
@@ -387,30 +390,33 @@ En nuestro enfoque se aprovecharán dos tipos de [sustituciones de variables AMP
 
 [sourcecode:html]
 <a
-  href="https://example.com/step2.html?ref_id=CLIENT_ID(uid)"
-  data-amp-replace="CLIENT_ID"
-></a>
-[/sourcecode]
+href="https://example.com/step2.html?ref_id=CLIENT_ID(uid)"
+data-amp-replace="CLIENT_ID"
+
+> </a>
+> [/sourcecode]
 
 **Solución alternativa para pasar del ID de cliente a los enlaces de salida:** defina el nuevo parámetro de consulta `ref_id` como parte de los atributos para datos `data-amp-addparams` y para las consultas que necesiten sustituciones de parámetros, proporcione esos detalles como parte de `data-amp-replace`. Con este enfoque, la URL se verá libre y los parámetros que se especificaron en `data-amp-addparams` se agregarán de forma dinámica.
 
 [sourcecode:html]
 <a
-  href="https://example.com/step2.html"
-  data-amp-addparams="ref_id=CLIENT_ID(uid)"
-  data-amp-replace="CLIENT_ID"
-></a>
-[/sourcecode]
+href="https://example.com/step2.html"
+data-amp-addparams="ref_id=CLIENT_ID(uid)"
+data-amp-replace="CLIENT_ID"
+
+> </a>
+> [/sourcecode]
 
 Para cambiar varios parámetros de consulta mediante los `data-amp-addparams` separe esos `&` como
 
 [sourcecode:html]
 <a
-  href="https://example.com/step2.html"
-  data-amp-addparams="ref_id=CLIENT_ID(uid)&pageid=p123"
-  data-amp-replace="CLIENT_ID"
-></a>
-[/sourcecode]
+href="https://example.com/step2.html"
+data-amp-addparams="ref_id=CLIENT_ID(uid)&pageid=p123"
+data-amp-replace="CLIENT_ID"
+
+> </a>
+> [/sourcecode]
 
 **Cómo actualizar las entradas del formulario para utilizar una sustitución ID de cliente:** defina un nombre para el campo de entrada, como `orig_user_id`. Especifique `default-value` en el campo de formulario para que sea el valor de sustitución ID de cliente de AMP:
 
@@ -456,7 +462,7 @@ Para procesar la página de destino, el enfoque variará dependiendo de si es un
 <amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
   <noscript><img alt="Ejemplo de cómo construir un ping analítico que contiene un identificador del contexto anterior proporcionado a través de una URL y un identificador del contexto actual" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
 
-*Actualizaciones de la página AMP:* Utilice la característica de sustitución de parámetros de consulta en su configuración amp-analytics para obtener el valor de identificación `ref_id` dentro de la URL. La característica parámetros de consulta toma un parámetro que indica la “clave” del par clave-valor deseado en la URL y devuelve el valor correspondiente. Utilice la característica del ID de cliente como lo hicimos para obtener el identificador en el contexto de la página AMP.
+_Actualizaciones de la página AMP:_ Utilice la característica de sustitución de parámetros de consulta en su configuración amp-analytics para obtener el valor de identificación `ref_id` dentro de la URL. La característica parámetros de consulta toma un parámetro que indica la “clave” del par clave-valor deseado en la URL y devuelve el valor correspondiente. Utilice la característica del ID de cliente como lo hicimos para obtener el identificador en el contexto de la página AMP.
 
 [sourcecode:http]
 https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}
@@ -480,7 +486,7 @@ https://analytics.example.com/ping?type=pageview&orig_user_id=$amp_client_id&use
 
 Recomendamos validar la autenticidad de los valores en los parámetros de la consulta siguiendo los pasos indicados en la sección de [validación de parámetros](#parameter-validation) que se muestra a continuación.
 
-*Actualizaciones de la página sin AMP:* Del mismo modo, en una página sin AMP alojada en el origen de su editor, extraiga y transmita el valor `ref_id` que se encuentra en la URL. Valide la autenticidad del valor siguiendo los pasos indicados en la sección [validación de parámetros](#parameter-validation) que se muestra a continuación. Después, genere pings analíticos que incluyan tanto un `orig_user_id` derivado de `ref_id` como un `user_id` basado en el valor del identificador de la cookie de la primera parte.
+_Actualizaciones de la página sin AMP:_ Del mismo modo, en una página sin AMP alojada en el origen de su editor, extraiga y transmita el valor `ref_id` que se encuentra en la URL. Valide la autenticidad del valor siguiendo los pasos indicados en la sección [validación de parámetros](#parameter-validation) que se muestra a continuación. Después, genere pings analíticos que incluyan tanto un `orig_user_id` derivado de `ref_id` como un `user_id` basado en el valor del identificador de la cookie de la primera parte.
 
 <blockquote>
 <p><strong>IMPORTANTE:</strong></p>

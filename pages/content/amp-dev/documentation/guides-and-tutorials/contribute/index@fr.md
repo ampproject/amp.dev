@@ -1,17 +1,17 @@
 ---
-"$title": Comment contribuer
-"$titles":
+'$title': Comment contribuer
+'$titles':
   navigation: Contribute
-"$path": "/documentation/guides-and-tutorials/contribute/index.html"
-"$localization":
-  path: "/{locale}/documentation/guides-and-tutorials/contribute/index.html"
-"$order": '0'
+'$path': '/documentation/guides-and-tutorials/contribute/index.html'
+'$localization':
+  path: '/{locale}/documentation/guides-and-tutorials/contribute/index.html'
+$order: 0
 description: "Le Projet AMP ne serait pas possible sans l'aide de tous les membres de la communauté, que vous soyez développeur, créateur de contenu ou fournisseur de services pertinents pour AMP."
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 ---
 
 Le Projet AMP ne serait pas possible sans l'aide de tous les membres de la communauté, que vous soyez développeur, créateur de contenu ou fournisseur de services pertinents pour AMP. Vous pouvez contribuer de plusieurs manières.

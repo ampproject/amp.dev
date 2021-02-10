@@ -1,6 +1,6 @@
 ---
-"$title": 开始创作故事
-"$order": '3'
+'$title': 开始创作故事
+$order: 3
 description: amp-story 组件可以呈现一个完整的网页故事，它用作故事中所有页面的容器。此外，amp-story 组件还负责 …
 author: bpaduch
 ---
@@ -13,8 +13,11 @@ author: bpaduch
 
 ```html
 <head>
-<script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+  <script
+    async
+    custom-element="amp-story"
+    src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+  ></script>
 </head>
 ```
 
@@ -22,8 +25,7 @@ author: bpaduch
 
 ```html
 <body>
-  <amp-story standalone>
-  </amp-story>
+  <amp-story standalone> </amp-story>
 </body>
 ```
 
@@ -41,11 +43,13 @@ author: bpaduch
 我们将上述属性添加到 [`amp-story`](../../../../documentation/components/reference/amp-story.md) 标记中：
 
 ```html
-<amp-story standalone
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-    poster-portrait-src="assets/cover.jpg">
+<amp-story
+  standalone
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+></amp-story>
 ```
 
 除了上述必需属性外，还可以应用其他属性。要了解详情，请参阅 [`amp-story`](../../../../documentation/components/reference/amp-story.md) 参考文档的[属性](../../../../documentation/components/reference/amp-story.md#attributes)部分。

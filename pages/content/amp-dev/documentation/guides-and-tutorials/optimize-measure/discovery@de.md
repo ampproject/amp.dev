@@ -1,10 +1,10 @@
 ---
 formats:
-- websites
-"$title": So werden deine Seiten gefunden
-"$titles":
+  - websites
+'$title': So werden deine Seiten gefunden
+'$titles':
   teaser: Make your pages discoverable
-"$order": '5'
+$order: 5
 description: In manchen Fällen ist es sinnvoll, sowohl eine AMP Version als auch eine Version ohne AMP derselben Seite zu haben, z. B. für einen Nachrichtenartikel. Aber woher weiß die Google Suche …
 teaser:
   icon: auffinden

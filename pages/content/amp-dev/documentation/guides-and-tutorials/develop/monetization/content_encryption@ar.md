@@ -1,10 +1,10 @@
 ---
 formats:
-- websites
-"$title": حماية محتوى الاشتراك لديك من خلال التشفير من جانب العميل
-"$titles":
+  - websites
+'$title': حماية محتوى الاشتراك لديك من خلال التشفير من جانب العميل
+'$titles':
   teaser: Protect your subscription content with client-side encryption.
-"$order": '10'
+$order: 10
 description: حل مشاكل تشفير المحتوى من خلال تنفيذ عملية التحقق من صحة المشترك المتميز وفك تشفير المحتوى من جانب العميل. إذ سيتمكن المستخدمون الذين يتمتعون بإمكانية الوصول المتميز مع هذا الحل من فك تشفير المحتوى دون الحاجة إلى تحميل صفحة جديدة أو انتظار استجابة خلفية!
 author: CrystalOnScript
 ---
@@ -23,7 +23,7 @@ author: CrystalOnScript
 
 لتنفيذ فك التشفير من جانب العميل، ستقوم بدمج كل من تشفير المفتاح المماثل والمفتاح العام على النحو التالي:
 
-1. قم بإنشاء مفتاح مماثل عشوائي لكل مستند، مع منح كل مستند مفتاحًا *فريدًا*. {{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='مفاتيح فريدة لكل مستند فريد.') }}
+1. قم بإنشاء مفتاح مماثل عشوائي لكل مستند، مع منح كل مستند مفتاحًا _فريدًا_. {{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='مفاتيح فريدة لكل مستند فريد.') }}
 2. قم بتشفير المحتوى المتميز باستخدام مفتاح مماثل للمستند. {{ image('/static/img/docs/guides/cse/cse3.jpg', 130, 243, align='', layout='intrinsic', alt='استخدم مفتاح المستند لتشفير المحتوى المتميز.') }} المفتاح مماثل للسماح لنفس المفتاح بتشفير وفك تشفير المحتوى. {{ image('/static/img/docs/guides/cse/cse4.jpg', 188, 141, align='', layout='intrinsic', alt='يقوم المفتاح نفسه الذي يشفر المستند بفك تشفيره أيضًا.') }}
 3. قم بتشفير مفتاح المستند بمفتاح عام باستخدام بروتوكول [تشفير هجين ](https://en.wikipedia.org/wiki/Hybrid_cryptosystem)لتشفير المفاتيح المماثلة. {{ image('/static/img/docs/guides/cse/cse5.jpg', 309, 114, align='', layout='intrinsic', alt='يقوم بروتوكول التشفير الهجين بتشفير المفتاح المماثل بمفتاح عام.') }}
 4. باستخدام المكون (المكونات) [`<amp-subscriptions>`](https://amp.dev/documentation/components/amp-subscriptions/) و/أو [`<amp-subscriptions-google>`](https://amp.dev/documentation/components/amp-subscriptions-google/?format=websites)، قم بتخزين مفتاح المستند المشفر داخل مستند AMP، إلى جانب المحتوى المتميز المشفر. {{ image('/static/img/docs/guides/cse/cse6.jpg', 264, 261, align='', layout='intrinsic', alt='يتم تخزين كلا المفتاحين داخل مستند AMP.') }}
@@ -43,7 +43,7 @@ author: CrystalOnScript
 
 ## الخطوة 1: إنشاء زوج مفاتيح عام/خاص
 
-لتشفير المفتاح المماثل للمستند، تحتاج إلى الحصول على زوج خاص بك من المفاتيح عام/خاص. حيث إن تشفير المفتاح العام عبارة عن بروتوكول [تشفير هجين](https://en.wikipedia.org/wiki/Hybrid_cryptosystem)، وخاصة طريقة التشفير غير المماثل [P-256 Elliptic Curve](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)) ECIES مع طريقة التشفير المماثل [AES-GCM](https://tools.ietf.org/html/rfc5288) (128-bit).
+لتشفير المفتاح المماثل للمستند، تحتاج إلى الحصول على زوج خاص بك من المفاتيح عام/خاص. حيث إن تشفير المفتاح العام عبارة عن بروتوكول [تشفير هجين](https://en.wikipedia.org/wiki/Hybrid_cryptosystem)، وخاصة طريقة التشفير غير المماثل [P-256 Elliptic Curve](<https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)>) ECIES مع طريقة التشفير المماثل [AES-GCM](https://tools.ietf.org/html/rfc5288) (128-bit).
 
 وإننا نطلب إتمام معالجة المفتاح العام عن طريق [Tink](https://github.com/google/tink) باستخدام [نوع المفتاح غير المماثل هذا](https://github.com/subscriptions-project/encryption/blob/617f0911c9870dae900a232e2dc8ee9196677a89/golang/vendor/github.com/google/tink/go/hybrid/hybrid_key_templates.go#L32). ولإنشاء زوج المفاتيح الخاص والعام، استخدم أيًا مما يلي:
 

@@ -1,9 +1,9 @@
 ---
-"$title": Integration von AMP zur Bereitstellung von Display Ads
-"$order": '5'
+'$title': Integration von AMP zur Bereitstellung von Display Ads
+$order: 5
 description: Dieser Leitfaden richtet sich an Werbenetzwerke, die AMP integrieren möchten, um Display Ads auf AMP Seiten bereitzustellen.
 formats:
-- ads
+  - ads
 ---
 
 Dieser Leitfaden richtet sich an Werbenetzwerke, die AMP integrieren möchten, um Display Ads auf AMP Seiten bereitzustellen.
@@ -30,11 +30,14 @@ Publisher, die du als Ad Server unterstützt, betten eine von dir bereitgestellt
 Der Amazon A9 Server kann beispielsweise mithilfe der folgenden Syntax aufgerufen werden:
 
 ```html
-<amp-ad width="300" height="250"
-    type="a9"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  width="300"
+  height="250"
+  type="a9"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 

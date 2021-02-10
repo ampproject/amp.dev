@@ -1,9 +1,9 @@
 ---
-"$title": Berintegrasi dengan AMP untuk menyajikan iklan spanduk
-"$order": '5'
+'$title': Berintegrasi dengan AMP untuk menyajikan iklan spanduk
+$order: 5
 description: Panduan ini diperuntukkan bagi jaringan iklan yang ingin berintegrasi dengan AMP untuk menyajikan tayangan iklan spanduk (display) ke halaman AMP.
 formats:
-- ads
+  - ads
 ---
 
 Panduan ini diperuntukkan bagi jaringan iklan yang ingin berintegrasi dengan AMP untuk menyajikan tayangan iklan spanduk (display) ke halaman AMP.
@@ -30,11 +30,14 @@ Sebagai penyaji iklan, penayang yang Anda dukung menyertakan perpustakaan JavaSc
 Sebagai contoh, server Amazon A9 dapat dijalankan dengan menggunakan sintaksis berikut ini:
 
 ```html
-<amp-ad width="300" height="250"
-    type="a9"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  width="300"
+  height="250"
+  type="a9"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 

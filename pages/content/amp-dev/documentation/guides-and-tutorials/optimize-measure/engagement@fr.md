@@ -1,9 +1,9 @@
 ---
-"$title": "Comment améliorer l'engagement des utilisateurs"
-"$order": '6'
+'$title': "Comment améliorer l'engagement des utilisateurs"
+$order: 6
 description: "Voici quelques conseils rapides pour améliorer l'engagement des utilisateurs avec AMP. Aidez les lecteurs à vous identifier grâce à une image de marque cohérente et un contenu riche sur les pages AMP et non AMP"
 formats:
-- websites
+  - websites
 ---
 
 Voici quelques conseils rapides pour améliorer l'engagement des utilisateurs avec AMP.

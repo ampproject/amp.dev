@@ -1,10 +1,10 @@
 ---
-"$title": Menambahkan fitur-fitur AMP lanjutan
-"$order": '0'
+'$title': Menambahkan fitur-fitur AMP lanjutan
+$order: 0
 description: Di dalam tutorial ini, Anda akan membangun pemahaman Anda tentang dasar-dasar AMP dan mempelajari cara AMP menangani periklanan, analitik, video yang disematkan, integrasi media sosial, korsel, dan lain-lain.
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='Artikel berita yang telah selesai') }}

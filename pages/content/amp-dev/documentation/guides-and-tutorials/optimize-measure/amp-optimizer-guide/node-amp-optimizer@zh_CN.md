@@ -1,10 +1,10 @@
 ---
-"$title": Node.js AMP Optimizer 指南
-"$order": '2'
+'$title': Node.js AMP Optimizer 指南
+$order: 2
 description: 本指南介绍如何设置和使用 Node.js 版本的 AMP Optimizer。
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

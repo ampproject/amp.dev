@@ -1,10 +1,10 @@
 ---
-"$title": Preview and validate
-"$order": '5'
+'$title': Preview and validate
+$order: 5
 description: 'AMP sayfasını diğer statik HTML sitelerinde olduğu gibi önizleyin. Derleme ya da önizleme gerekli değildir. Ya: ...'
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## Önizleme
@@ -12,7 +12,7 @@ contributors:
 AMP sayfasını diğer statik HTML sitelerinde olduğu gibi önizleyin. Derleme ya da önizleme gerekli değildir. Ya:
 
 - **Doğrudan dosya sistemindeki tarayıcıda açın** (XMLHttpRequests hatasından dolayı belli ögeler çalışmayabilir).
-- **Apache 2 veya Nginx gibi yerel bir web sunucusu kullanın**. *(İpucu: Hızlı bir web sunucusu için,`python -m SimpleHTTPServer` çalıştırın.)*
+- **Apache 2 veya Nginx gibi yerel bir web sunucusu kullanın**. _(İpucu: Hızlı bir web sunucusu için,`python -m SimpleHTTPServer` çalıştırın.)_
 
 ## Doğrulama
 

@@ -1,10 +1,10 @@
 ---
-"$title": Registrierung für Absenderverteilung
-"$order": '1'
+'$title': Registrierung für Absenderverteilung
+$order: 1
 description: Registrierung für Absenderverteilung von AMP E-Mails
-"$category": Start
+'$category': Start
 formats:
-- email
+  - email
 author: CrystalOnScript
 ---
 

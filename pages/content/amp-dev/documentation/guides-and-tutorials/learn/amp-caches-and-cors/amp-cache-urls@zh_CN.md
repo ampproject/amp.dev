@@ -1,14 +1,14 @@
 ---
-"$title": AMP 缓存的网址格式和请求处理
-"$order": '9'
+'$title': AMP 缓存的网址格式和请求处理
+$order: 9
 toc: 'false'
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 author: Gregable
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 本文档介绍 AMP 缓存的网址格式，并阐述 AMP 缓存如何处理请求。

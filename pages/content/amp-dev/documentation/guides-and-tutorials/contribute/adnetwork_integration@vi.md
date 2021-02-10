@@ -1,9 +1,9 @@
 ---
-"$title": Tích hợp với AMP để hiển thị quảng cáo
-"$order": '5'
+'$title': Tích hợp với AMP để hiển thị quảng cáo
+$order: 5
 description: Hướng dẫn này dành cho các mạng lưới quảng cáo muốn tích hợp với AMP để hiển thị quảng cáo cho các trang AMP.
 formats:
-- ads
+  - ads
 ---
 
 Hướng dẫn này dành cho các mạng lưới quảng cáo muốn tích hợp với AMP để hiển thị quảng cáo cho các trang AMP.
@@ -30,11 +30,14 @@ Là một máy chủ quảng cáo, các nhà phát hành mà bạn hỗ trợ s�
 Ví dụ, máy chủ Amazon A9 có thể được gọi bằng cách sử dụng cú pháp sau:
 
 ```html
-<amp-ad width="300" height="250"
-    type="a9"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  width="300"
+  height="250"
+  type="a9"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 

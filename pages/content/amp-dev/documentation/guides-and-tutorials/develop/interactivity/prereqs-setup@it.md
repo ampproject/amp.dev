@@ -1,8 +1,8 @@
 ---
-"$title": Configurazione
-"$order": '0'
+'$title': Configurazione
+$order: 0
 description: 'Prima di iniziare questa esercitazione, hai bisogno di quanto segue: una conoscenza di base di HTML, CSS e JavaScript, un browser a tua scelta, un editor di testo ...'
-"$parent": "/content/docs/interaction_dynamic/interactivity.md"
+'$parent': '/content/docs/interaction_dynamic/interactivity.md'
 ---
 
 ## Prerequisiti

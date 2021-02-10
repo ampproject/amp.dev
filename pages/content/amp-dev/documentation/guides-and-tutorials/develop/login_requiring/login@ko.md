@@ -1,6 +1,6 @@
 ---
-"$title": Login
-"$order": '1'
+'$title': Login
+$order: 1
 description: 페이지에 처음 방문하면, 댓글 2개와 로그인 버튼을 볼 수 있습니다. 코드에서 로그인 버튼을 찾으면...
 ---
 
@@ -12,6 +12,7 @@ description: 페이지에 처음 방문하면, 댓글 2개와 로그인 버튼�
 
 [sourcecode:html]
 <span amp-access="NOT loggedIn" role="button" tabindex="0" amp-access-hide>
+
   <h5>Please login to comment</h5>
   <button on="tap:amp-access.login-sign-in" class="button-primary comment-button">Login</button>
 </span>
@@ -20,6 +21,7 @@ description: 페이지에 처음 방문하면, 댓글 2개와 로그인 버튼�
 [`amp-access`](../../../../documentation/components/reference/amp-access.md) 관련 속성의 동작은 [`amp-access`](../../../../documentation/components/reference/amp-access.md)를 위한 페이지 전체 구성에 따라 다릅니다. 예제의 경우 다음과 같습니다:
 
 [sourcecode:html]
+
 <script id="amp-access" type="application/json">
   {
     "authorization": "https://ampbyexample.com/samples_templates/comment_section/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
@@ -34,6 +36,7 @@ description: 페이지에 처음 방문하면, 댓글 2개와 로그인 버튼�
     }
   }
 </script>
+
 [/sourcecode]
 
 인증 엔드포인트는 AMPByExample의 일부로서 배치됩니다. 이 엔드포인트를 제공하는 건 페이지 퍼블리셔의 책임입니다. 이 예제에서는 간단히 설명하기 위해 요청을 받으면 서버가 `ABE_LOGGED_IN`이라는 쿠키를 읽는 간단한 로직을 구현했습니다. 만약 쿠키가 없다면, `loggedIn = false`가 포함된 JSON 결과값이 반환됩니다. 결과적으로 사용자가 처음 페이지에 방문했을 때 이 요청은 `loggedIn = false`를 반환하고 로그인 버튼이 표시됩니다.
@@ -42,14 +45,14 @@ description: 페이지에 처음 방문하면, 댓글 2개와 로그인 버튼�
 
 [sourcecode:json]
 {
-	"login": {
-    "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
-  }
+"login": {
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
+}
 }
 
 [/sourcecode]
 
-[tip type="note"] <strong>참고 –</strong>  로그인 노드 내부에 다른 URL을 정의할 수 있습니다. 위 경우 `sign-in`을 정의하고 추후 `sign-out`을 지정하게 됩니다. [/tip]
+[tip type="note"] <strong>참고 –</strong> 로그인 노드 내부에 다른 URL을 정의할 수 있습니다. 위 경우 `sign-in`을 정의하고 추후 `sign-out`을 지정하게 됩니다. [/tip]
 
 로그인 페이지는 간소화를 위해 로그인 및 비밀번호 값을 입력받는 단순한 AMP가 아닙니다. 서버 측 템플릿을 통한 AMPByExample 서버로 채워지는 숨겨진 입력 유형인 `returnURL` 사용에 주의하세요. 서버는 AMP 라이브러리가 로그인 URL에 자동으로 추가한 `return` 매개변수에서 이 값을 판독합니다.
 

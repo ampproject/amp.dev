@@ -1,10 +1,10 @@
 ---
-"$title": Grundlagen zu AMP für E-Mail
-"$order": '1'
+'$title': Grundlagen zu AMP für E-Mail
+$order: 1
 description: Alles, was du wissen musst, um mit der Erstellung gültiger AMP E-Mails zu beginnen.
 author: CrystalOnScript
 formats:
-- email
+  - email
 ---
 
 Gute Neuigkeiten für alle, die schon mit AMP vertraut sind: AMP für E-Mails ist nur eine Untergruppe der AMP HTML Bibliothek. Gute Neuigkeiten für alle, die noch nicht mit AMP vertraut sind: In diesem Leitfaden findest du alles, was du brauchst, um mit der Erstellung gültiger AMP E-Mails beginnen zu können!
@@ -14,16 +14,20 @@ Gute Neuigkeiten für alle, die schon mit AMP vertraut sind: AMP für E-Mails is
 AMP E-Mails sehen aus wie klassische HTML E-Mails, weisen jedoch einige Unterschiede auf. Nachfolgend findest du das mindestens erforderliche Markup, der erforderlich ist, um eine normale E-Mail in eine gültige AMP E-Mail zu verwandeln.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email data-css-strict>
-<head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
-</head>
-<body>
-  Hello, AMP4EMAIL world.
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    Hello, AMP4EMAIL world.
+  </body>
 </html>
 ```
 
@@ -38,8 +42,12 @@ E-Mail Anbieter, die AMP E-Mails unterstützen, haben Sicherheitsüberprüfungen
 
 ```html
 <head>
-...
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  ...
+  <style amp4email-boilerplate>
+    body {
+      visibility: hidden;
+    }
+  </style>
 </head>
 ```
 
@@ -132,9 +140,7 @@ Dieses Beispiel demonstriert die Anzeige authentifizierter Daten mithilfe von `<
   src="https://example.com/endpoint?token=REPLACE_WITH_YOUR_ACCESS_TOKEN"
   height="300"
 >
-  <template type="amp-mustache">
-    ...
-  </template>
+  <template type="amp-mustache"> ... </template>
 </amp-list>
 ```
 

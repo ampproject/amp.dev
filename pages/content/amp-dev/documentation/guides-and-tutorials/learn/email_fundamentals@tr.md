@@ -1,10 +1,10 @@
 ---
-"$title": E-posta için AMP Temelleri
-"$order": '1'
+'$title': E-posta için AMP Temelleri
+$order: 1
 description: Geçerli AMP E-postaları yazmaya başlamak için bilmeniz gereken her şey.
 author: CrystalOnScript
 formats:
-- email
+  - email
 ---
 
 AMP'ye aşinaysanız, harika haberlerimiz var! E-postalar için AMP, AMP HTML kitaplığının yalnızca bir alt kümesidir. AMP'ye aşina değilseniz bile, yine de harika bir haberimiz var! Bu kılavuz size geçerli AMP E-postaları yazmaya başlamak için bilmeniz gereken her şeyi gösterecektir!
@@ -14,16 +14,20 @@ AMP'ye aşinaysanız, harika haberlerimiz var! E-postalar için AMP, AMP HTML ki
 AMP E-postaları klasik HTML e-postaları gibi görünür, ancak birkaç farklılık vardır. Bir e-postayı geçerli bir AMP e-postası yapmak için gereken minimum işaretleme (markup) miktarı aşağıda verilmiştir.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email data-css-strict>
-<head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
-</head>
-<body>
-  Hello, AMP4EMAIL world.
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    Hello, AMP4EMAIL world.
+  </body>
 </html>
 ```
 
@@ -32,14 +36,18 @@ AMP E-postalarını destekleyen e-posta sağlayıcıları, kullanıcıların key
 - `<!doctype html>` belge türü ile başlayın. Bu aynı zamanda HTML için de standarttır.
 - Üste seviye bir `<html amp4email>` etiketi ya da e-postanız ekstra havalıysa `<html ⚡4email>` etiketi koyun. Bu etiket, belgeyi AMP E-postası olarak tanımlar ve bu şekilde işlenmesini sağlar.
 - Hem `<head>` hem de `<body>` etiketlerini tanımlayın. Bu, HTML'de isteğe bağlıdır ancak AMP her şeyi saf halde tutar!
-- `<head>`  etiketinin bir alt öğesi olarak `<meta charset="utf-8>` etiketi ekleyin. Bu etiket, sayfanın kodlamasını tanımlar.
+- `<head>` etiketinin bir alt öğesi olarak `<meta charset="utf-8>` etiketi ekleyin. Bu etiket, sayfanın kodlamasını tanımlar.
 - AMP kitaplığı, `<head>` içine yerleştirilmiş bir `<script async src="https://cdn.ampproject.org/v0.js"</script>` etiketi aracılığıyla içe aktarılır. Bu olmadan, AMP ile kazanılan harika ve dinamik işlevlerin hiçbiri çalışmayacaktır! En iyi uygulama olarak, bu öğe mümkün olduğunca erken bir zamanda, `<head>` içinde doğrudan `<meta charset="utf-8">` etiketinin altına eklenmelidir.
 - E-posta için AMP standart metnini `<head>` bölümüne yerleştirerek AMP kitaplığı yüklenene kadar e-posta içeriğini başlangıçta gizleyin.
 
 ```html
 <head>
-...
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  ...
+  <style amp4email-boilerplate>
+    body {
+      visibility: hidden;
+    }
+  </style>
 </head>
 ```
 
@@ -132,9 +140,7 @@ Bu örnek, kimliği doğrulanmış verileri görüntülemek için `<amp-list>` k
   src="https://example.com/endpoint?token=REPLACE_WITH_YOUR_ACCESS_TOKEN"
   height="300"
 >
-  <template type="amp-mustache">
-    ...
-  </template>
+  <template type="amp-mustache"> ... </template>
 </amp-list>
 ```
 
@@ -175,7 +181,7 @@ Sınırlı Kullanımlı Erişim Belirteçleri, istek sahtekarlığı ve [yeniden
 
 Belirteç parametresi, yalnızca belirli bir eylem ve belirli bir kullanıcı için kullanılabilen bir anahtar olarak oluşturulmalıdır. İstenen eylem gerçekleştirilmeden önce, belirtecin geçerli olup olmadığını ve kullanıcı için oluşturduğunuzla eşleşip eşleşmediğini kontrol etmelisiniz. Belirteç eşleşirse, eylem gerçekleştirilebilir ve belirteç gelecekteki istekler için geçersiz hale gelir.
 
-Erişim belirteçleri, HttpActionHandler öğesinin url özelliğinin bir parçası olarak kullanıcıya gönderilmelidir. Örneğin, uygulamanız `http://www.example.com/approve?requestId=123` adresindeki onay isteklerini işliyorsa, buna ek bir `accessToken` parametresi eklemeyi ve ` http://www.example.com/approve?requestId=123&accessToken=xyz ` adresine gönderilen istekleri dinlemeyi hesaba katmalısınız.
+Erişim belirteçleri, HttpActionHandler öğesinin url özelliğinin bir parçası olarak kullanıcıya gönderilmelidir. Örneğin, uygulamanız `http://www.example.com/approve?requestId=123` adresindeki onay isteklerini işliyorsa, buna ek bir `accessToken` parametresi eklemeyi ve `http://www.example.com/approve?requestId=123&accessToken=xyz` adresine gönderilen istekleri dinlemeyi hesaba katmalısınız.
 
 <code>requestId=123</code> ve `accessToken=xyz` kombinasyonu, önceden oluşturmanız gereken kombinasyondur ve `accessToken` belirtecinin `requestId` kimliğinden çıkarılamayacağından emin olmalısınız. <code>requestId=123</code> içeren ve `accessToken` içermeyen veya `xyz` değerine eşit olmayan bir `accessToken` içeren tüm onay istekleri reddedilmelidir. Bu istek yerine getirildiğinde, aynı kimliğe ve erişim belirtecine sahip gelecekteki tüm istekler de reddedilmelidir.
 

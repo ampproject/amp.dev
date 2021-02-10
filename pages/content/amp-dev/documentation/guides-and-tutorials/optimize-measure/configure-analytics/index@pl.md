@@ -1,11 +1,11 @@
 ---
-"$title": Konfigurowanie analityki
-"$order": '5'
-"$hidden": 'true'
+'$title': Konfigurowanie analityki
+$order: 5
+'$hidden': 'true'
 description: Jeśli korzystasz z Google Analytics jako dostawcy usług analityki, dowiedz się jak skonfigurować podstawową usługę Google Analytics dla AMP i jak łączyć treści AMP z treściami bez AMP za pomocą identyfikatora klienta.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 ---
 
 [tip] **PORADA —** jeśli korzystasz z Google Analytics jako dostawcy usług analityki, dowiedz się [jak skonfigurować podstawową usługę Google Analytics dla AMP](https://developers.google.com/analytics/devguides/collection/amp-analytics/#basic_setup_to_measure_page_views) i [jak łączyć treści AMP z treściami bez AMP za pomocą identyfikatora klienta](https://support.google.com/analytics/answer/7486764). [/tip]

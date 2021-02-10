@@ -1,6 +1,6 @@
 ---
-"$title": 添加轮换展示内容
-"$order": '3'
+'$title': 添加轮换展示内容
+$order: 3
 description: 移动版网页中的另一项常见功能是轮换展示。使用 amp-carousel 组件，您可以轻松地向 AMP 网页添加轮换展示内容。
 ---
 
@@ -11,13 +11,17 @@ description: 移动版网页中的另一项常见功能是轮换展示。使用 
 请务必添加 [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) 组件库。为此，您需要将以下 JavaScript 请求**添加**到您文档的 `<head>` 标记中：
 
 ```html
-<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script
+  async
+  custom-element="amp-carousel"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+></script>
 ```
 
 接着，使用自适应布局和预定义的宽度与高度嵌入一组图片以进行简单的轮换展示。请将以下代码段**添加**到您的网页中：
 
 ```html
-<amp-carousel layout="fixed-height" height="168" type="carousel" >
+<amp-carousel layout="fixed-height" height="168" type="carousel">
   <amp-img src="mountains-1.jpg" width="300" height="168"></amp-img>
   <amp-img src="mountains-2.jpg" width="300" height="168"></amp-img>
   <amp-img src="mountains-3.jpg" width="300" height="168"></amp-img>
@@ -41,10 +45,33 @@ description: 移动版网页中的另一项常见功能是轮换展示。使用 
 最终的结果应该大致如下所示：
 
 ```html
-<amp-carousel layout="responsive" width="300" height="168" type="slides" autoplay delay="2000" loop>
-  <amp-img src="mountains-1.jpg" width="300" height="168" layout="responsive"></amp-img>
-  <amp-img src="mountains-2.jpg" width="300" height="168" layout="responsive"></amp-img>
-  <amp-img src="mountains-3.jpg" width="300" height="168" layout="responsive"></amp-img>
+<amp-carousel
+  layout="responsive"
+  width="300"
+  height="168"
+  type="slides"
+  autoplay
+  delay="2000"
+  loop
+>
+  <amp-img
+    src="mountains-1.jpg"
+    width="300"
+    height="168"
+    layout="responsive"
+  ></amp-img>
+  <amp-img
+    src="mountains-2.jpg"
+    width="300"
+    height="168"
+    layout="responsive"
+  ></amp-img>
+  <amp-img
+    src="mountains-3.jpg"
+    width="300"
+    height="168"
+    layout="responsive"
+  ></amp-img>
 </amp-carousel>
 ```
 
@@ -60,25 +87,28 @@ description: 移动版网页中的另一项常见功能是轮换展示。使用 
 
 ```css
 amp-fit-text {
-    white-space: normal;
+  white-space: normal;
 }
 ```
 
 现在，将您的简单轮换展示内容**替换**为以下内容：
 
 ```html
-<amp-carousel layout="fixed-height" height="250" type="carousel" >
-    <amp-img src="blocky-mountains-1.jpg" width="300" height="250"></amp-img>
+<amp-carousel layout="fixed-height" height="250" type="carousel">
+  <amp-img src="blocky-mountains-1.jpg" width="300" height="250"></amp-img>
 
-    <amp-ad width="300" height="250"
-      type="doubleclick"
-      data-slot="/35096353/amptesting/image/static">
-        <div placeholder>This ad is still loading.</div>
-    </amp-ad>
+  <amp-ad
+    width="300"
+    height="250"
+    type="doubleclick"
+    data-slot="/35096353/amptesting/image/static"
+  >
+    <div placeholder>This ad is still loading.</div>
+  </amp-ad>
 
-    <amp-fit-text width="300" height="250" layout="fixed">
-        Big, bold article quote goes here.
-    </amp-fit-text>
+  <amp-fit-text width="300" height="250" layout="fixed">
+    Big, bold article quote goes here.
+  </amp-fit-text>
 </amp-carousel>
 ```
 

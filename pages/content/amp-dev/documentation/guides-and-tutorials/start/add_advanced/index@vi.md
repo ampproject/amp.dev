@@ -1,10 +1,10 @@
 ---
-"$title": Bổ sung tính năng nâng cao của AMP
-"$order": '0'
+'$title': Bổ sung tính năng nâng cao của AMP
+$order: 0
 description: Trong bài thực hành này, bạn sẽ xây dựng trên hiểu biết về nền tảng AMP của mình và tìm hiểu cách AMP xử lý các tác vụ quảng cáo, phân tích, video nhúng, tích hợp với mạng xã hội, băng chuyền, v.v...
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='Completed news article') }}

@@ -1,8 +1,8 @@
 ---
-"$title": Setting up
-"$order": '0'
+'$title': Setting up
+$order: 0
 description: 이 튜토리얼을 시작하기 전 필요한 사항은 다음과 같습니다. - HTML, CSS, JavaScript 기본 지식...
-"$parent": "/content/docs/interaction_dynamic/interactivity.md"
+'$parent': '/content/docs/interaction_dynamic/interactivity.md'
 ---
 
 ## 기본 요건

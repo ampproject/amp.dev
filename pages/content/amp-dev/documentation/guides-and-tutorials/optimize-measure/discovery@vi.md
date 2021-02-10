@@ -1,10 +1,10 @@
 ---
 formats:
-- websites
-"$title": Quảng bá các trang của bạn
-"$titles":
+  - websites
+'$title': Quảng bá các trang của bạn
+'$titles':
   teaser: Make your pages discoverable
-"$order": '5'
+$order: 5
 description: 'Trong một số trường hợp, bạn có thể muốn cả phiên bản AMP lẫn không phải AMP cho cùng một trang, ví dụ như trang bài báo tin tức. Hãy xét đến điều này: nếu Google Tìm kiếm...'
 teaser:
   icon: khám phá

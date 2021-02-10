@@ -1,6 +1,6 @@
 ---
-"$title": Adding more pages
-"$order": '5'
+'$title': Adding more pages
+$order: 5
 description: 现在，您已熟悉如何为 Web 故事添加网页，为我们的故事“宠物的乐趣”添加后续网页的步骤与此非常相似。
 author: bpaduch
 ---

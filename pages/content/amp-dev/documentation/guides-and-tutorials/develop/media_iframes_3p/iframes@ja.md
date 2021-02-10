@@ -1,15 +1,15 @@
 ---
-"$title": iframe の追加
-"$order": '10'
+'$title': iframe の追加
+$order: 10
 description: ここでは、ページにインクルードメディアコンテンツを表示したり、iframe を使用して AMP の制限を受けずに高度なコンテンツを表示したりする方法について解説します。
 formats:
-- ウェブサイト
+  - ウェブサイト
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- Meggin
-- bpaduch
+  - Meggin
+  - bpaduch
 ---
 
 ここでは、ページにインクルードメディアコンテンツを表示したり、iframe を使用して AMP の制限を受けずに高度なコンテンツを表示したりする方法について解説します。
@@ -32,8 +32,10 @@ iframe は、メインページのコンテキストでサポートされてい�
 ページに [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) を含めるには、 まず `<head>` に以下のスクリプトを追加します。これにより、拡張コンポーネントの追加コードが読み込まれます。
 
 [sourcecode:html]
+
 <script async custom-element="amp-iframe"
   src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+
 [/sourcecode]
 
 ### Write the markup
@@ -41,10 +43,13 @@ iframe は、メインページのコンテキストでサポートされてい�
 以下の例では、レスポンシブ [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) を作成して、<a>Google Maps Embed API</a> を通じて Google マップを組み込んでいます。
 
 ```html
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    src="https://www.google.com/maps/embed/v1/place?key={YOUR API KEY}&q=europe">
+<amp-iframe
+  width="200"
+  height="100"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  src="https://www.google.com/maps/embed/v1/place?key={YOUR API KEY}&q=europe"
+>
 </amp-iframe>
 ```
 
@@ -57,12 +62,18 @@ iframe は、メインページのコンテキストでサポートされてい�
 プレースホルダを使用した例:
 
 ```html
-<amp-iframe width="400" height="225"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    src="https://giphy.com/embed/OWabwoEn7ezug">
-  <amp-img placeholder layout="fill"
-      src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"></amp-img>
+<amp-iframe
+  width="400"
+  height="225"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  src="https://giphy.com/embed/OWabwoEn7ezug"
+>
+  <amp-img
+    placeholder
+    layout="fill"
+    src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"
+  ></amp-img>
 </amp-iframe>
 ```
 

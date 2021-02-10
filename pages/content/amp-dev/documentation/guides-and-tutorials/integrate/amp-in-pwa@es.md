@@ -1,9 +1,9 @@
 ---
-"$title": Inserción y uso de AMP como fuente de datos
-"$order": '1'
+'$title': Inserción y uso de AMP como fuente de datos
+$order: 1
 description: Si ya utiliza AMP pero aún no ha creado una aplicación web progresiva, sus páginas AMP podrían simplificar radicalmente el desarrollo de dicha aplicación.
 formats:
-- websites
+  - websites
 author: pbakaus
 ---
 
@@ -22,8 +22,10 @@ En primer lugar, se debe incluir la versión especial de AMP "Shadow AMP" en la 
 Incluya Shadow AMP en la cabecera de su página de la siguiente manera:
 
 [sourcecode:html]
+
 <!-- Asynchronously load the AMP-with-Shadow-DOM runtime library. -->
 <script async src="https://cdn.ampproject.org/shadow-v0.js"></script>
+
 [/sourcecode]
 
 ### ¿Cómo saber si la API de Shadow AMP está lista para usarse?
@@ -34,7 +36,7 @@ La señal que debe observar es la disponibilidad de la variable global `AMP`, y 
 
 [sourcecode:javascript]
 (window.AMP = window.AMP || []).push(function(AMP) {
-  // AMP is now available.
+// AMP is now available.
 });
 [/sourcecode]
 
@@ -57,25 +59,25 @@ Por lo general, obtendrá una respuesta JSON que devolverá URL ordenadas con al
 
 ## Uso de la API Shadow AMP para renderizar la inserción de una página
 
-Por último, cuando desee mostrar contenido después de que el usuario inicie una acción, es  momento de obtener el documento AMP correspondiente y dejar que Shadow AMP haga todo a partir de ahora. En primer lugar, implemente una función similar a esta para obtener la página:
+Por último, cuando desee mostrar contenido después de que el usuario inicie una acción, es momento de obtener el documento AMP correspondiente y dejar que Shadow AMP haga todo a partir de ahora. En primer lugar, implemente una función similar a esta para obtener la página:
 
 [sourcecode:javascript]
 function fetchDocument(url) {
 
-  // unfortunately fetch() does not support retrieving documents,
-  // so we have to resort to good old XMLHttpRequest.
-  var xhr = new XMLHttpRequest();
+// unfortunately fetch() does not support retrieving documents,
+// so we have to resort to good old XMLHttpRequest.
+var xhr = new XMLHttpRequest();
 
-  return new Promise(function(resolve, reject) {
-    xhr.open('GET', url, true);
-    xhr.responseType = 'document';
-    xhr.setRequestHeader('Accept', 'text/html');
-    xhr.onload = function() {
-      // .responseXML contains a ready-to-use Document object
-      resolve(xhr.responseXML);
-    };
-    xhr.send();
-  });
+return new Promise(function(resolve, reject) {
+xhr.open('GET', url, true);
+xhr.responseType = 'document';
+xhr.setRequestHeader('Accept', 'text/html');
+xhr.onload = function() {
+// .responseXML contains a ready-to-use Document object
+resolve(xhr.responseXML);
+};
+xhr.send();
+});
 }
 [/sourcecode]
 
@@ -92,8 +94,8 @@ var url = "https://my-domain/amp/an-article.html";
 
 // Use our fetchDocument method to get the doc
 fetchDocument(url).then(function(doc) {
-  // Let AMP take over and render the page
-  var ampedDoc = AMP.attachShadowDoc(container, doc, url);
+// Let AMP take over and render the page
+var ampedDoc = AMP.attachShadowDoc(container, doc, url);
 });
 [/sourcecode]
 

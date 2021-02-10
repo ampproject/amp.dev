@@ -1,9 +1,9 @@
 ---
-"$title": Preload your PWA from your AMP pages
-"$order": '1'
+'$title': Preload your PWA from your AMP pages
+$order: 1
 description: Uma boa estratégia é fazer com que o ponto de entrada do seu site seja uma página AMP, carregar o PWA em segundo plano e mudar para ...
 formats:
-- websites
+  - websites
 author: pbakaus
 ---
 
@@ -23,7 +23,7 @@ As páginas AMP são a solução ideal para as chamadas **páginas de detalhes**
 
 ### PWA para mais interatividade e engajamento
 
-Por sua vez, os Progressive Web Apps possibilitam muito mais interatividade e engajamento, mas não têm as *características de primeiro carregamento instantâneo* das páginas AMP. A base deles é uma tecnologia chamada service worker, um proxy do cliente que permite armazenar em cache todos os tipos de recursos das páginas. No entanto, o service worker só é ativado *após* o primeiro carregamento.
+Por sua vez, os Progressive Web Apps possibilitam muito mais interatividade e engajamento, mas não têm as _características de primeiro carregamento instantâneo_ das páginas AMP. A base deles é uma tecnologia chamada service worker, um proxy do cliente que permite armazenar em cache todos os tipos de recursos das páginas. No entanto, o service worker só é ativado _após_ o primeiro carregamento.
 
 {{ image('/static/img/docs/pwamp_comparison.png', 977, 549, align='', caption='Aspectos positivos e negativos das AMP em comparação com PWA') }}
 
@@ -36,8 +36,10 @@ Por sua vez, os Progressive Web Apps possibilitam muito mais interatividade e en
 Primeiro, instale o service worker em todas as suas páginas AMP usando [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md). Para isso, inclua antes o componente por meio do script correspondente na seção `<head>` da página:
 
 [sourcecode:html]
+
 <script async custom-element="amp-install-serviceworker"
   src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+
 [/sourcecode]
 
 Depois, adicione o código a seguir na seção `<body>` (modifique-o para que ele leve ao seu service worker):
@@ -54,20 +56,20 @@ Por último, na etapa de instalação do service worker, armazene em cache os re
 [sourcecode:javascript]
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
-  '/',
-  '/styles/main.css',
-  '/script/main.js'
+'/',
+'/styles/main.css',
+'/script/main.js'
 ];
 
 self.addEventListener('install', function(event) {
-  // Perform install steps
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(function(cache) {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-  );
+// Perform install steps
+event.waitUntil(
+caches.open(CACHE_NAME)
+.then(function(cache) {
+console.log('Opened cache');
+return cache.addAll(urlsToCache);
+})
+);
 });
 [/sourcecode]
 
@@ -83,14 +85,14 @@ Nesse caso, você tem um site canônico (não-AMP) e gera páginas AMP vinculada
 
 ### 2. Caso seu site canônico seja AMP
 
-Nesse caso, suas páginas canônicas *são* páginas AMP: você cria o site inteiro com AMP e simplesmente o usa como uma biblioteca. Curiosidade: este mesmo site que você está lendo foi criado assim. **Neste cenário, a maioria dos links nas suas páginas AMP direcionará a outras páginas AMP.**
+Nesse caso, suas páginas canônicas _são_ páginas AMP: você cria o site inteiro com AMP e simplesmente o usa como uma biblioteca. Curiosidade: este mesmo site que você está lendo foi criado assim. **Neste cenário, a maioria dos links nas suas páginas AMP direcionará a outras páginas AMP.**
 
 Agora você pode implantar o PWA em um caminho separado, como `your-domain.com/pwa`, e usar o service worker já em funcionamento para **interceptar o navegador quando alguém clicar em um link na página AMP**:
 
 [sourcecode:javascript]
 self.addEventListener('fetch', event => {
-    if (event.request.mode === 'navigate') {
-      event.respondWith(fetch('/pwa'));
+if (event.request.mode === 'navigate') {
+event.respondWith(fetch('/pwa'));
 
       // Immediately start downloading the actual resource.
       fetch(event.request.url);

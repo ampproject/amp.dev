@@ -77,6 +77,6 @@ def _get_ssr_filter_tags(attributes):
   formats = attributes.get('formats', DEFAULT_FORMATS).replace(' ', '').split(',')
 
   return (
-    '[% if format in ' + json.dumps(formats) + ' and level in ' + json.dumps(levels) + ' %]',
+    '[% if format in ' + json.dumps(formats, ensure_ascii=False) + ' and level in ' + json.dumps(levels, ensure_ascii=False) + ' %]',
     '[% endif %]'
     )

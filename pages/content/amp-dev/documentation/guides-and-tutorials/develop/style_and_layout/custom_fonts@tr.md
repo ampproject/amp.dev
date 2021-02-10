@@ -1,11 +1,11 @@
 ---
-"$title": Özel yazı tipleri ekleme
-"$order": '6'
+'$title': Özel yazı tipleri ekleme
+$order: 6
 description: AMP sayfaları, özel yazı tipleri dışında harici stil sayfaları içeremez. Özel yazı tiplerini sayfanıza iki şekilde gömebilirsiniz...
 formats:
-- websites
-- ads
-- stories
+  - websites
+  - ads
+  - stories
 author: pbakaus
 ---
 
@@ -19,6 +19,7 @@ AMP sayfaları, özel yazı tipleri dışında harici stil sayfaları içeremez.
 Aşağıdaki gibi bir `<link>` etiketi (genellikle sayfanızın başında) kullanın:
 
 [sourcecode:html]
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 [/sourcecode]
 
@@ -35,6 +36,7 @@ Aşağıdaki kaynakların listesine izin verilir ve bağlantı etiketleri aracı
 Alternatif olarak, AMP stil sayfanızda [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) kullanabilirsiniz:
 
 [sourcecode:html]
+
 <style amp-custom>
   @font-face {
     font-family: "Bitstream Vera Serif Bold";
@@ -45,6 +47,7 @@ Alternatif olarak, AMP stil sayfanızda [`@font-face`](https://developer.mozilla
     font-family: "Bitstream Vera Serif Bold", serif;
   }
 </style>
+
 [/sourcecode]
 
-[tip type="note"] **NOT –**  `@font-face` yoluyla dahil edilen yazı tipleri HTTP veya HTTPS şeması yoluyla getirilmelidir. [/tip]
+[tip type="note"] **NOT –** `@font-face` yoluyla dahil edilen yazı tipleri HTTP veya HTTPS şeması yoluyla getirilmelidir. [/tip]

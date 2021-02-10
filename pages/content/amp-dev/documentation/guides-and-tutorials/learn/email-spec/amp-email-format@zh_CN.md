@@ -1,8 +1,8 @@
 ---
-"$title": AMP 电子邮件格式
-order: '1'
+'$title': AMP 电子邮件格式
+$order: 1
 formats:
-- email
+  - email
 teaser:
   text: '所需标记 '
 toc: 'true'
@@ -40,6 +40,7 @@ AMP 电子邮件格式提供了可在电子邮件中使用的[一部分 AMP 组�
 以下代码表示组成有效 AMP 电子邮件的最小标记量：
 
 [sourcecode:html]
+
 <!DOCTYPE html>
 <html ⚡4email>
   <head>
@@ -72,21 +73,21 @@ AMP 电子邮件必须
 
 AMP 电子邮件依赖于标准 `multipart/alternative` [MIME](https://en.wikipedia.org/wiki/MIME) 子类型，如 [RFC 1521 第 7.2.3 节](https://tools.ietf.org/html/rfc1521#section-7.2.3)所定义。
 
-*如需了解详细信息，请参阅 [AMP 电子邮件结构和渲染](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md)。*
+_如需了解详细信息，请参阅 [AMP 电子邮件结构和渲染](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md)。_
 
 ## 支持的 AMP 组件 <a name="supported-amp-components"></a>
 
-*请参阅 [AMP 电子邮件支持的组件](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)。*
+_请参阅 [AMP 电子邮件支持的组件](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)。_
 
 ## HTML 要求 <a name="html-requirements"></a>
 
-*请参阅 [AMP 电子邮件支持的 HTML](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md)。*
+_请参阅 [AMP 电子邮件支持的 HTML](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md)。_
 
 ## CSS 要求 <a name="css-requirements"></a>
 
 ### 支持的选择器和属性 <a name="supported-selectors-and-properties"></a>
 
-*请参阅 [AMP 电子邮件支持的 CSS](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md)。*
+_请参阅 [AMP 电子邮件支持的 CSS](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md)。_
 
 ### 在 AMP 文档中指定 CSS <a name="specifying-css-in-an-amp-document"></a>
 
@@ -94,6 +95,7 @@ AMP 电子邮件依赖于标准 `multipart/alternative` [MIME](https://en.wikipe
 
 [sourcecode:html]
 ...
+
 <style amp-custom>
   /* any custom styles go here. */
   body {
@@ -106,7 +108,9 @@ AMP 电子邮件依赖于标准 `multipart/alternative` [MIME](https://en.wikipe
     background-color: grey;
   }
 </style>
+
 ...
+
 </head>
 [/sourcecode]
 

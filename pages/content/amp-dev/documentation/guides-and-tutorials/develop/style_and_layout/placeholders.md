@@ -66,6 +66,7 @@ In the following example, we use the `fallback` attribute to communicate to the 
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
   height="360"
+  layout="responsive"
   src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.mp4"
   poster="{{server_for_email}}/static/inline-examples/images/kitten-playing.png">
   <div fallback>

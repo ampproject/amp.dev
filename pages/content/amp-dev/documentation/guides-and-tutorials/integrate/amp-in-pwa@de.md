@@ -1,9 +1,9 @@
 ---
-"$title": Verwende AMP als Datenquelle für deine PWA
-"$order": '1'
+'$title': Verwende AMP als Datenquelle für deine PWA
+$order: 1
 description: Wenn du AMP bereits verwendest, aber noch keine Progressive Web App erstellt hast, können deine AMP Seiten die Entwicklung deiner Progressive Web App erheblich vereinfachen.
 formats:
-- websites
+  - websites
 author: pbakaus
 ---
 
@@ -22,8 +22,10 @@ Der erste Schritt besteht darin, eine spezielle Version von AMP, die wir "Shadow
 Füge Shadow AMP wie folgt im Head deiner Seite ein:
 
 [sourcecode:html]
+
 <!-- Asynchronously load the AMP-with-Shadow-DOM runtime library. -->
 <script async src="https://cdn.ampproject.org/shadow-v0.js"></script>
+
 [/sourcecode]
 
 ### Woher weißt du, wann die Shadow AMP API einsatzbereit ist?
@@ -34,7 +36,7 @@ Das richtige Signal ist die Verfügbarkeit der globalen <code>AMP</code> Variabl
 
 [sourcecode:javascript]
 (window.AMP = window.AMP || []).push(function(AMP) {
-  // AMP is now available.
+// AMP is now available.
 });
 [/sourcecode]
 
@@ -62,20 +64,20 @@ Wenn du nach einer Benutzeraktion Inhalte anzeigen möchtest, musst du das entsp
 [sourcecode:javascript]
 function fetchDocument(url) {
 
-  // unfortunately fetch() does not support retrieving documents,
-  // so we have to resort to good old XMLHttpRequest.
-  var xhr = new XMLHttpRequest();
+// unfortunately fetch() does not support retrieving documents,
+// so we have to resort to good old XMLHttpRequest.
+var xhr = new XMLHttpRequest();
 
-  return new Promise(function(resolve, reject) {
-    xhr.open('GET', url, true);
-    xhr.responseType = 'document';
-    xhr.setRequestHeader('Accept', 'text/html');
-    xhr.onload = function() {
-      // .responseXML contains a ready-to-use Document object
-      resolve(xhr.responseXML);
-    };
-    xhr.send();
-  });
+return new Promise(function(resolve, reject) {
+xhr.open('GET', url, true);
+xhr.responseType = 'document';
+xhr.setRequestHeader('Accept', 'text/html');
+xhr.onload = function() {
+// .responseXML contains a ready-to-use Document object
+resolve(xhr.responseXML);
+};
+xhr.send();
+});
 }
 [/sourcecode]
 
@@ -92,8 +94,8 @@ var url = "https://my-domain/amp/an-article.html";
 
 // Use our fetchDocument method to get the doc
 fetchDocument(url).then(function(doc) {
-  // Let AMP take over and render the page
-  var ampedDoc = AMP.attachShadowDoc(container, doc, url);
+// Let AMP take over and render the page
+var ampedDoc = AMP.attachShadowDoc(container, doc, url);
 });
 [/sourcecode]
 

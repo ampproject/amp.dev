@@ -1,6 +1,6 @@
 ---
-"$title": Menambahkan font
-"$order": '6'
+'$title': Menambahkan font
+$order: 6
 description: 'Anda dapat menyematkan font khusus ke halaman AMP dengan dua cara: 1. Melalui tag <link>: hanya untuk penyedia font yang diizinkan. 2. Dengan menggunakan ....'
 ---
 
@@ -14,7 +14,11 @@ Anda dapat menyematkan font kustom ke halaman AMP Anda dengan dua cara:
 Di dalam tutorial ini, kita akan menggunakan tag `<link>` untuk menambahkan font ke halaman. **Tambahkan** tautan lembar gaya di `<head>` untuk meminta font Raleway:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://fonts.googleapis.com/css?family=Raleway"
+/>
 ```
 
 Sekarang, **perbarui** pemilih `body` CSS Anda untuk menyertakan referensi ke Raleway:
@@ -28,7 +32,7 @@ body {
 }
 ```
 
-**Segarkan** halaman Anda, lalu lihat tampilan serta nuansa barunya. Selain itu, periksa output validator AMP.  Seharusnya tidak ada eror untuk permintaan lembar gaya eksternal ini.
+**Segarkan** halaman Anda, lalu lihat tampilan serta nuansa barunya. Selain itu, periksa output validator AMP. Seharusnya tidak ada eror untuk permintaan lembar gaya eksternal ini.
 
 [tip type="note"] Font web dapat merusak kinerja situs web, bahkan pada situs AMP yang cepat. Gunakan properti CSS [`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display) untuk mengoptimalkan perilaku pemuatan font Anda. [/tip]
 

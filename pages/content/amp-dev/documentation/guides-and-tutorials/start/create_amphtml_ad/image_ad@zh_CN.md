@@ -1,6 +1,6 @@
 ---
-"$title": 创建图片广告
-"$order": '1'
+'$title': 创建图片广告
+$order: 1
 description: 我们的广告是一个简单的图片，其中带有指向宣传的网站的超链接。我们将使用 amp-img 标记显示图片。代码如下：…
 ---
 
@@ -11,9 +11,12 @@ description: 我们的广告是一个简单的图片，其中带有指向宣传�
 ```html
 <body>
   <a target="_blank" href="https://www.amp.dev">
-    <amp-img width="300" height="250"
-        alt="Learn amp"
-        src="/static/img/docs/ads/amp-300x250.png"></amp-img>
+    <amp-img
+      width="300"
+      height="250"
+      alt="Learn amp"
+      src="/static/img/docs/ads/amp-300x250.png"
+    ></amp-img>
   </a>
 </body>
 ```

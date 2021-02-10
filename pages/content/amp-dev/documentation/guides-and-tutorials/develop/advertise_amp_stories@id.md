@@ -1,9 +1,9 @@
 ---
-"$title": Beriklan di Cerita Web
-"$order": '3'
+'$title': Beriklan di Cerita Web
+$order: 3
 description: Cerita Web merupakan pengalaman layar penuh yang dapat diketuk dan membuat pembaca terhanyut di dalam kontennya. Beriklan dengan iklan Cerita AMP menghadirkan pengalaman yang mulus dan bebas gangguan ....
 formats:
-- stories
+  - stories
 author: CrystalOnScript
 ---
 
@@ -43,17 +43,17 @@ Cerita Web tidak dapat mendukung [`amp-ad`](../../../documentation/components/re
 
 [sourcecode:html]
 <amp-story>
-  <amp-story-auto-ads>
-    <script type="application/json">
-      {
-        "ad-attributes": {
-          // ad server configuration
-        }
-      }
-    </script>
-  </amp-story-auto-ads>
-  <amp-story-page>
-  ...
+<amp-story-auto-ads>
+<script type="application/json">
+{
+"ad-attributes": {
+// ad server configuration
+}
+}
+</script>
+</amp-story-auto-ads>
+<amp-story-page>
+...
 </amp-story>
 [/sourcecode]
 
@@ -66,8 +66,8 @@ Cara termudah untuk menyertakan iklan di dalam Cerita AMP Anda adalah dengan men
 Server iklan yang saat ini mendukung iklan Cerita AMP:
 
 - Google Ad Manager {a0}{/a0}
-    - [Iklan yang dijual langsung](https://support.google.com/admanager/answer/9038178)
-    - [Iklan terprogram](https://support.google.com/admanager/answer/9416436)
+  - [Iklan yang dijual langsung](https://support.google.com/admanager/answer/9038178)
+  - [Iklan terprogram](https://support.google.com/admanager/answer/9416436)
 - Google AdSense segera hadir
 - Platform iklan lain dapat berintegrasi (hubungi kami untuk [detail melalui Github](https://github.com/ampproject/amphtml/issues/30769))
 

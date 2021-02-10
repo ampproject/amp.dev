@@ -1,8 +1,8 @@
 ---
-"$title": セットアップ
-"$order": '0'
+'$title': セットアップ
+$order: 0
 description: 開発環境のセットアップ ステップ 1. コードをダウンロードする チュートリアル用のサンプルコードを、ZIP ファイルとして、または git コマンドを使ってダウンロードします。
-"$parent": "/documentation/guides-and-tutorials/start/converting/setting-up.md"
+'$parent': '/documentation/guides-and-tutorials/start/converting/setting-up.md'
 ---
 
 ## 前提条件

@@ -1,10 +1,10 @@
 ---
-"$title": Bonnes pratiques pour créer une story publicitaire Web
-"$order": '16'
+'$title': Bonnes pratiques pour créer une story publicitaire Web
+$order: 16
 description: "Les stories Web s'affichent en plein écran et plongent les lecteurs dans le contenu. Les annonces qui apparaissent dans les stories Web doivent avoir une conception constante et cohérente avec l'expérience utilisateur des stories Web."
 formats:
-- ads
-- stories
+  - ads
+  - stories
 ---
 
 Les stories Web s'affichent en plein écran et plongent les lecteurs dans le contenu. Les annonces qui apparaissent dans les stories Web doivent avoir une conception constante et cohérente avec l'expérience utilisateur des stories Web. Cela empêche une expérience utilisateur discordante ou interrompue. Ce guide explique comment créer une annonce pour les stories Web.

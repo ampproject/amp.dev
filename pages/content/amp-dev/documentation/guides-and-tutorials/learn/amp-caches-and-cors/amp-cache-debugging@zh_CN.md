@@ -1,10 +1,10 @@
 ---
-"$title": 调试 AMP 缓存问题
-order: '8'
+'$title': 调试 AMP 缓存问题
+$order: 8
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
   text: 我的文档为何在 AMP 缓存中被损坏？
 ---

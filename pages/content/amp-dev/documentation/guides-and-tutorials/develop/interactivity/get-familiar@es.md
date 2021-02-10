@@ -1,6 +1,6 @@
 ---
-"$title": Familiarización con el código de inicio
-"$order": '1'
+'$title': Familiarización con el código de inicio
+$order: 1
 description: Una página AMP es una página HTML con algunas restricciones para un rendimiento confiable. Las páginas de AMP tienen un poco de marcado especial que lo identifica como una página de AMP.
 ---
 

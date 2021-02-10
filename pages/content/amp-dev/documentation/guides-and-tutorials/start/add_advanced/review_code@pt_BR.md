@@ -1,6 +1,6 @@
 ---
-"$title": Revisão do código inicial
-"$order": '1'
+'$title': Revisão do código inicial
+$order: 1
 description: 'Antes de começar a adicionar código, revise a página de exemplo article.amp.html, que terá uma aparência semelhante a esta: ...'
 ---
 

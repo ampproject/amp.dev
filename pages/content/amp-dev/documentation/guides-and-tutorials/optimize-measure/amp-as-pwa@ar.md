@@ -1,12 +1,12 @@
 ---
-"$title": Easy offline access and improved performance
-"$order": '11'
+'$title': Easy offline access and improved performance
+$order: 11
 description: عامل الخدمة هو وكيل من جانب العميل يقع بين صفحتك وخادمك، ويتم استخدامه لخلق تجارب رائعة في وضع عدم الاتصال، وإجراء تحميل سريع ...
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 contributors:
-- pbakaus
+  - pbakaus
 ---
 
 يتيح [عمال الخدمة](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) تجارب ثرية في وضع عدم الاتصال وتجارب مستخدم متسقة عبر نقاط قوة مختلفة للشبكة. من خلال تخزين الموارد مؤقتًا داخل المستعرض، يصبح تطبيق الويب قادرًا على توفير البيانات والأصول والصفحات غير المتصلة بالإنترنت للمستخدم لإبقائهم مشاركين وعلى اطّلاع.
@@ -51,11 +51,11 @@ contributors:
 
 قم بتثبيت عامل خدمة AMP بأقل عدد من الخطوات:
 
-- [sourcecode:js]  importScripts('https://cdn.ampproject.org/sw/amp-sw.js');  [/sourcecode]
+- [sourcecode:js] importScripts('https://cdn.ampproject.org/sw/amp-sw.js'); [/sourcecode]
 
 - [sourcecode:js]
-      AMP_SW.init();
-      [/sourcecode]
+  AMP_SW.init();
+  [/sourcecode]
 
 - تم.
 

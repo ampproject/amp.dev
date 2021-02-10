@@ -1,6 +1,6 @@
 ---
-"$title": Schlusswort
-"$order": '4'
+'$title': Schlusswort
+$order: 4
 description: Gratulation! Du hast gerade eine interaktive E-Commerce Produktseite mit variablen Größen und Preisen für die einzelnen SKUs erstellt, die bei Bedarf von einem Remote JSON Endpoint abgerufen werden.
 ---
 

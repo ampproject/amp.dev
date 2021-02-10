@@ -1,6 +1,6 @@
 ---
-"$title": Congratulations!
-"$order": '9'
+'$title': Congratulations!
+$order: 9
 description: 以上で、最初の AMP ストーリーが完成しました。 このチュートリアルで学習した内容は次のとおりです。 amp-story コンポーネントを使用して、複数のページから構成されるストーリーを作成する
 author: bpaduch
 ---

@@ -1,7 +1,7 @@
 ---
-"$title": Ajouter plus de pages
-"$order": '5'
-description: "Maintenant que vous êtes familiarisé(e) avec l'ajout d'une page à une story Web, l'ajout des pages suivantes dans notre story \"La joie des animaux domestiques\" est très similaire."
+'$title': Ajouter plus de pages
+$order: 5
+description: 'Maintenant que vous êtes familiarisé(e) avec l''ajout d''une page à une story Web, l''ajout des pages suivantes dans notre story "La joie des animaux domestiques" est très similaire.'
 author: bpaduch
 ---
 

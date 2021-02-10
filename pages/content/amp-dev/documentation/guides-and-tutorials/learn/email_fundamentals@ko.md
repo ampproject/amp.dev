@@ -1,10 +1,10 @@
 ---
-"$title": 이메일용 AMP 기초
-"$order": '1'
+'$title': 이메일용 AMP 기초
+$order: 1
 description: 올바른 AMP 이메일 작성을 시작하기 위해 알아야 할 모든 것.
 author: CrystalOnScript
 formats:
-- email
+  - email
 ---
 
 AMP에 익숙하시다면 좋은 소식이 있습니다! 이메일용 AMP는 AMP HTML 라이브러리의 하위 집합에 불과하다는 것이죠! AMP를 잘 모르셔도 괜찮습니다! 이 가이드에서 올바른 AMP 이메일 작성을 시작하는 데 필요한 모든 것을 알려드릴 테니까요!
@@ -14,16 +14,20 @@ AMP에 익숙하시다면 좋은 소식이 있습니다! 이메일용 AMP는 AMP
 AMP 이메일은 전형적인 HTML 이메일과 유사하게 보이지만 몇 가지 차이점이 있습니다. 아래에서 올바른 AMP 이메일 작성에 필요한 최소한의 마크업을 확인해 보세요.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email data-css-strict>
-<head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
-</head>
-<body>
-  Hello, AMP4EMAIL world.
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    Hello, AMP4EMAIL world.
+  </body>
 </html>
 ```
 
@@ -38,8 +42,12 @@ AMP 이메일을 지원하는 이메일 제공 업체는 즐겁고 안전한 사
 
 ```html
 <head>
-...
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  ...
+  <style amp4email-boilerplate>
+    body {
+      visibility: hidden;
+    }
+  </style>
 </head>
 ```
 
@@ -174,7 +182,7 @@ AMP 이메일의 요청 인증에 액세스 토큰을 사용할 수도 있습니
 
 토큰 매개변수는 특정 액션이나 특정 사용자만이 사용할 수 있는 키로 생성되어야 합니다. 요청된 액션이 수행되기 전 토큰 유효성 및 토큰이 사용자를 위해 생성한 토큰과 일치하는지 여부를 확인해야 합니다. 토큰이 일치하면 액션이 수행될 수 있으며 차후 요청 시 해당 토큰은 유효하지 않습니다.
 
-액세스 토큰은 HttpActionHandler의 URL 속성의 일부로 사용자에게 전송되어야 합니다. 예를 들어 애플리케이션이 승인 요청을 `http://www.example.com/approve?requestId=123`에서 처리할 경우 추가 `accessToken` 매개변수 포함을 고려하고  `http://www.example.com/approve?requestId=123&accessToken=xyz`로 전송된 요청을 수신해야 합니다.
+액세스 토큰은 HttpActionHandler의 URL 속성의 일부로 사용자에게 전송되어야 합니다. 예를 들어 애플리케이션이 승인 요청을 `http://www.example.com/approve?requestId=123`에서 처리할 경우 추가 `accessToken` 매개변수 포함을 고려하고 `http://www.example.com/approve?requestId=123&accessToken=xyz`로 전송된 요청을 수신해야 합니다.
 
 `requestId=123` 및 `accessToken=xyz` 조합은 미리 생성되어야 하며 `accessToken`이 `requestId`에서 추론될 수 없도록 합니다. `requestId=123`이며 `accessToken`이 없거나 `accessToken`이 `xyz`와 일치하지 않는 모든 승인 요청은 거부되어야 합니다. 이 요청이 완료되면 동일한 ID 및 액세스 토큰이 포함된 미래의 요청도 거부되어야 합니다.
 

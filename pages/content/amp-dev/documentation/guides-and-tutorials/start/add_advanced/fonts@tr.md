@@ -1,6 +1,6 @@
 ---
-"$title": Yazı tipi ekleme
-"$order": '6'
+'$title': Yazı tipi ekleme
+$order: 6
 description: 'AMP sayfanıza özel yazı tiplerini iki şekilde yerleştirebilirsiniz: 1. Bir <link> etiketi aracılığıyla: yalnızca izin verilen yazı tipi sağlayıcıları için. ...'
 ---
 
@@ -14,7 +14,11 @@ AMP sayfanıza özel yazı tiplerini iki şekilde yerleştirebilirsiniz:
 Bu öğreticide, sayfamıza yazı tipleri eklemek için bir `<link>` etiketi kullanacağız. Raleway yazı tipini istemek için <code><head></code> dosyasına bir stil sayfası bağlantısı **ekleyin**:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://fonts.googleapis.com/css?family=Raleway"
+/>
 ```
 
 Şimdi, CSS `body` seçicinizi Raleway'e bir referans içerecek şekilde **güncelleyin**:

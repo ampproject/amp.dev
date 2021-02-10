@@ -1,10 +1,10 @@
 ---
-"$title": Déclencher des animations et des transitions CSS
-"$order": '1'
+'$title': Déclencher des animations et des transitions CSS
+$order: 1
 description: "Le déclenchement d'animations CSS sur les pages repose sur l'ajout et la suppression de classes, via JavaScript. Vous pouvez obtenir le même comportement sur les pages AMP en utilisant l'action toggleClass ..."
 formats:
-- websites
-- ads
+  - websites
+  - ads
 ---
 
 Les animations CSS permettent aux éléments Web de passer d'une configuration de style CSS à une autre. Le navigateur peut démarrer des animations définies lors du chargement, mais les animations CSS déclenchées par un événement [reposent sur l'ajout et la suppression de classes](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations). AMP prend en charge les deux types d'animation.
@@ -73,16 +73,25 @@ elementName.toggleClass(class="className")
 Vous pouvez changer une classe sur le même élément avec lequel vous souhaitez que les utilisateurs interagissent, comme un menu de hamburger animé.
 
 ```html
- <div id="hamburger" tabindex=1 role=button on="tap:hamburger.toggleClass(class='close')">
+<div
+  id="hamburger"
+  tabindex="1"
+  role="button"
+  on="tap:hamburger.toggleClass(class='close')"
+></div>
 ```
 
 L'action `toggleClass` peut également s'appliquer à d'autres éléments et basculer entre deux classes en ajoutant l'attribut `force`.
 
 ```html
-<button on="tap:magicBox.toggleClass(class='invisible', force=true),magicBox.toggleClass(class='visible', force=false)">
+<button
+  on="tap:magicBox.toggleClass(class='invisible', force=true),magicBox.toggleClass(class='visible', force=false)"
+>
   Disappear
 </button>
-<button on="tap:magicBox.toggleClass(class='visible', force=true),magicBox.toggleClass(class='invisible', force=false)">
+<button
+  on="tap:magicBox.toggleClass(class='visible', force=true),magicBox.toggleClass(class='invisible', force=false)"
+>
   Reappear
 </button>
 ```
@@ -94,9 +103,14 @@ Si vous devez supprimer une classe et interdire qu'elle applique de nouveau, ajo
 Vous pouvez ajouter et supprimer le nombre de classes CSS que vous souhaitez avec des états à l'aide de [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
-  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-bind"
+    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+  ></script>
   <style amp-custom>
     div {
       height: 100px;
@@ -113,13 +127,13 @@ Vous pouvez ajouter et supprimer le nombre de classes CSS que vous souhaitez ave
       opacity: 0;
     }
     .left {
-      transform: translatex(-50px)
+      transform: translatex(-50px);
     }
     .right {
-      transform: translatex(50px)
+      transform: translatex(50px);
     }
     button {
-      margin-top:  1rem;
+      margin-top: 1rem;
       margin-left: 1rem;
     }
   </style>
@@ -143,38 +157,31 @@ Vous pouvez ajouter et supprimer le nombre de classes CSS que vous souhaitez ave
       }
     </script>
   </amp-state>
-  <div [class]="magicBox[animateBox].className"> </div>
-  <button on="tap:AMP.setState({animateBox: 'invisibleBox'})">
-    Disappear
-  </button>
-  <button on="tap:AMP.setState({animateBox: 'visibleBox'})">
-    Reappear
-  </button>
-  <button on="tap:AMP.setState({animateBox: 'moveLeft'})">
-    Move Left
-  </button>
-  <button on="tap:AMP.setState({animateBox: 'moveRight'})">
-    Move Right
-  </button>
+  <div [class]="magicBox[animateBox].className"></div>
+  <button on="tap:AMP.setState({animateBox: 'invisibleBox'})">Disappear</button>
+  <button on="tap:AMP.setState({animateBox: 'visibleBox'})">Reappear</button>
+  <button on="tap:AMP.setState({animateBox: 'moveLeft'})">Move Left</button>
+  <button on="tap:AMP.setState({animateBox: 'moveRight'})">Move Right</button>
 </body>
 ```
+
 [/example]
 
 Définissez plusieurs animations de classe en ajoutant d'abord une liste de classes CSS dans la balise `<style amp-custom>` dans l'en- `head` du document:
 
 ```css
-    .visible {
-      opacity: 1;
-    }
-    .invisible {
-      opacity: 0;
-    }
-    .left {
-      transform: translatex(-50px)
-    }
-    .right {
-      transform: translatex(50px)
-    }
+.visible {
+  opacity: 1;
+}
+.invisible {
+  opacity: 0;
+}
+.left {
+  transform: translatex(-50px);
+}
+.right {
+  transform: translatex(50px);
+}
 ```
 
 Ensuite, associez chaque classe à un état:
@@ -203,24 +210,16 @@ Ensuite, associez chaque classe à un état:
 Et liez l'élément aux classes:
 
 ```html
-  <div [class]="magicBox[animateBox].className"> </div>
+<div [class]="magicBox[animateBox].className"></div>
 ```
 
 Les états changent à partir d'une action ou d'un événement AMP lié. L'exemple suivant modifie l'état à partir de l'interaction de l'utilisateur:
 
 ```html
-<button on="tap:AMP.setState({animateBox: 'invisibleBox'})">
-    Disappear
-</button>
-<button on="tap:AMP.setState({animateBox: 'visibleBox'})">
-    Reappear
-</button>
-<button on="tap:AMP.setState({animateBox: 'moveLeft'})">
-    Move Left
-</button>
-<button on="tap:AMP.setState({animateBox: 'moveRight'})">
-  Move Right
-</button>
+<button on="tap:AMP.setState({animateBox: 'invisibleBox'})">Disappear</button>
+<button on="tap:AMP.setState({animateBox: 'visibleBox'})">Reappear</button>
+<button on="tap:AMP.setState({animateBox: 'moveLeft'})">Move Left</button>
+<button on="tap:AMP.setState({animateBox: 'moveRight'})">Move Right</button>
 ```
 
 En utilisant [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) de cette manière, définissez explicitement la classe sur la classe définie. Vous n'aurez pas à lui dire de supprimer d'autres classes.

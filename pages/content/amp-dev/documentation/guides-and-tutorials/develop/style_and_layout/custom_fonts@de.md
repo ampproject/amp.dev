@@ -1,11 +1,11 @@
 ---
-"$title": Füge benutzerdefinierte Schriftarten hinzu
-"$order": '6'
+'$title': Füge benutzerdefinierte Schriftarten hinzu
+$order: 6
 description: AMP Seiten dürfen keine externen Stylesheets enthalten, mit Ausnahme von benutzerdefinierten Schriftarten. Es gibt zwei Möglichkeiten, …
 formats:
-- websites
-- ads
-- stories
+  - websites
+  - ads
+  - stories
 author: pbakaus
 ---
 
@@ -19,6 +19,7 @@ AMP Seiten dürfen keine externen Stylesheets enthalten, mit Ausnahme von benutz
 Verwende das Tag `<link>` (normalerweise im Head deiner Seite) wie folgt:
 
 [sourcecode:html]
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 [/sourcecode]
 
@@ -35,6 +36,7 @@ Die folgenden Quellen sind zulässig und für das Bereitstellen von Schriftarten
 Alternativ kannst du [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) in deinem AMP Stylesheet verwenden:
 
 [sourcecode:html]
+
 <style amp-custom>
   @font-face {
     font-family: "Bitstream Vera Serif Bold";
@@ -45,6 +47,7 @@ Alternativ kannst du [`@font-face`](https://developer.mozilla.org/en-US/docs/Web
     font-family: "Bitstream Vera Serif Bold", serif;
   }
 </style>
+
 [/sourcecode]
 
 [tip type="note"] **HINWEIS:** Schriftarten, die via `@font-face` eingebunden werden, müssen über das HTTP oder HTTPS Schema abgerufen werden. [/tip]

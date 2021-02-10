@@ -1,9 +1,9 @@
 ---
-"$title": Annunci nelle storie Web
-"$order": '3'
+'$title': Annunci nelle storie Web
+$order: 3
 description: "Le storie Web sono una coinvolgente esperienza a schermo intero, con contenuti abilitati per il tocco, che immerge gli utenti nella loro lettura. L'inclusione di inserzioni pubblicitarie in storie Web consente un'integrazione distribuzione continua e senza problemi..."
 formats:
-- stories
+  - stories
 author: CrystalOnScript
 ---
 
@@ -43,17 +43,17 @@ Le storie Web non possono supportare un elemento [`amp-ad`](../../../documentati
 
 [sourcecode:html]
 <amp-story>
-  <amp-story-auto-ads>
-    <script type="application/json">
-      {
-        "ad-attributes": {
-          // ad server configuration
-        }
-      }
-    </script>
-  </amp-story-auto-ads>
-  <amp-story-page>
-  ...
+<amp-story-auto-ads>
+<script type="application/json">
+{
+"ad-attributes": {
+// ad server configuration
+}
+}
+</script>
+</amp-story-auto-ads>
+<amp-story-page>
+...
 </amp-story>
 [/sourcecode]
 
@@ -66,8 +66,8 @@ Il modo più semplice per includere annunci nelle storie web è quello di gestir
 Server di annunci che attualmente supportano gli annunci nelle storie web:
 
 - Google Ad Manager <a name="google-ad-manager"></a>
-    - [Annunci a vendita diretta](https://support.google.com/admanager/answer/9038178)
-    - [Annunci programmati](https://support.google.com/admanager/answer/9416436)
+  - [Annunci a vendita diretta](https://support.google.com/admanager/answer/9038178)
+  - [Annunci programmati](https://support.google.com/admanager/answer/9416436)
 - Google AdSense (presto disponibile)
 - Si possono integrare anche altre piattaforme pubblicitarie (contattaci per i [dettagli tramite Github](https://github.com/ampproject/amphtml/issues/30769))
 

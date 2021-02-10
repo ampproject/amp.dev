@@ -1,12 +1,12 @@
 ---
-"$title": مصطلحات AMP
-"$order": '2'
+'$title': مصطلحات AMP
+$order: 2
 description: أدلة مصطلحات AMP
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 

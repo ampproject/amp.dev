@@ -1,10 +1,10 @@
 ---
 formats:
-- ウェブサイト
-"$title": ページを検出可能にする
-"$titles":
+  - ウェブサイト
+'$title': ページを検出可能にする
+'$titles':
   teaser: ページを検出可能にする
-"$order": '5'
+$order: 5
 description: ニュース記事のように、同じページに対して AMP バージョンと非 AMP バージョンの両方のページを用意する場合を考えましょう。たとえば、Google 検索 ...
 teaser:
   icon: 検出

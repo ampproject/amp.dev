@@ -1,6 +1,6 @@
 ---
-"$title": Ein Deckblatt erstellen
-"$order": '4'
+'$title': Ein Deckblatt erstellen
+$order: 4
 description: 'Füge das Element <amp-story-page> als untergeordnetes Element von amp-story hinzu, um eine Seite zu erstellen. Weise der Seite eine eindeutige ID zu. Weisen wir unserer ersten Seite – dem Deckblatt – die eindeutige ID "cover" zu: …'
 author: bpaduch
 ---
@@ -10,13 +10,14 @@ Eine Seite innerhalb einer Web Story wird durch die Komponente `<amp-story-page>
 **Füge** das Element `<amp-story-page>` als untergeordnetes Element von [`amp-story`](../../../../documentation/components/reference/amp-story.md) hinzu, um eine Seite zu erstellen. **Weise** der Seite eine eindeutige ID zu. Weisen wir unserer ersten Seite – dem Deckblatt – die eindeutige ID `cover` zu:
 
 ```html
-<amp-story standalone
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-    poster-portrait-src="assets/cover.jpg">
-   <amp-story-page id="cover">
-   </amp-story-page>
+<amp-story
+  standalone
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+>
+  <amp-story-page id="cover"> </amp-story-page>
 </amp-story>
 ```
 
@@ -40,9 +41,12 @@ Erstelle die Ebene, indem du das Element `<amp-story-grid-layer>` als untergeord
 ```html
 <amp-story-page id="cover">
   <amp-story-grid-layer template="fill">
-    <amp-img src="assets/cover.jpg"
-        width="720" height="1280"
-        layout="responsive">
+    <amp-img
+      src="assets/cover.jpg"
+      width="720"
+      height="1280"
+      layout="responsive"
+    >
     </amp-img>
   </amp-story-grid-layer>
 </amp-story-page>
@@ -105,7 +109,7 @@ Wir möchten, dass auf Ebene 2 die Überschrift und die Zusatzzeile oben stehen 
 
 ```html
 <amp-story-grid-layer>
- <!--our first layer -->
+  <!--our first layer -->
 </amp-story-grid-layer>
 <amp-story-grid-layer template="vertical">
   <h1>The Joy of Pets</h1>

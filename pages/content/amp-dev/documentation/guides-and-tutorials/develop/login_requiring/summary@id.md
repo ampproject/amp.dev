@@ -1,6 +1,6 @@
 ---
-"$title": Rangkuman
-"$order": '4'
+'$title': Rangkuman
+$order: 4
 description: Di dalam tutorial ini, kita telah mempelajari cara menggabungkan amp-access dan amp-form untuk membuat bagian komentar yang mengharuskan masuk (login).
 ---
 

@@ -1,6 +1,6 @@
 ---
-"$title": Schriftarten hinzufügen
-"$order": '6'
+'$title': Schriftarten hinzufügen
+$order: 6
 description: 'Benutzerdefinierte Schriftarten kannst du auf zwei Arten in deine AMP Seite einbetten: 1. Über das Tag <link>: nur für zugelassene Schriftartenanbieter. 2. Mithilfe …'
 ---
 
@@ -14,7 +14,11 @@ Benutzerdefinierte Schriftarten kannst du auf zwei Arten in deine AMP Seite einb
 In diesem Tutorial verwenden wir das Tag `<link>`, um Schriftarten zu unserer Seite hinzuzufügen. **Füge** im `<head>` einen Stylesheet Link hinzu, um die Schriftart "Raleway" anzufordern:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://fonts.googleapis.com/css?family=Raleway"
+/>
 ```
 
 **Aktualisiere** dann deinen CSS Selektor für `body`, um auf Raleway zu verweisen:

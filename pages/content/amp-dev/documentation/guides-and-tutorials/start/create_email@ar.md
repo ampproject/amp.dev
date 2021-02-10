@@ -1,10 +1,10 @@
 ---
-"$title": إنشاء بريدك الإلكتروني الأول في AMP
-"$order": '0'
+'$title': إنشاء بريدك الإلكتروني الأول في AMP
+$order: 0
 description: تعرّف على ما يميز بريد AMP الإلكتروني من خلال إنشاء بريدك الإلكتروني الأول.
 tutorial: 'true'
 formats:
-- email
+  - email
 author: CrystalOnScript
 ---
 
@@ -21,21 +21,25 @@ author: CrystalOnScript
 تدعم ساحة AMP تنسيق AMP للبريد الإلكتروني، الذي يسمح لك بتطوير رسائل AMP الإلكترونية الخاصة بك واختبارها والتحقق من صحتها. افتح [ساحة AMP](https://playground.amp.dev/?runtime=amp4email) وتأكد من أنه تم تعيين التنسيق على `AMP for Email` في الزاوية العلوية اليسرى. يجب أن تشاهد الرمز التالي:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email data-css-strict>
-<head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
-  <style amp-custom>
-    h1 {
-      margin: 1rem;
-    }
-  </style>
-</head>
-<body>
-  <h1>Hello, I am an AMP EMAIL!</h1>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+    <style amp-custom>
+      h1 {
+        margin: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello, I am an AMP EMAIL!</h1>
+  </body>
 </html>
 ```
 
@@ -58,10 +62,12 @@ author: CrystalOnScript
 تتطلب علامة `<amp-img>` تحديد العرض والارتفاع للصورة بخلاف علامة `<img>` و`<amp-img>` التي يجب إغلاقها صراحة عن طريق `</amp-img>`.
 
 ```html
-<amp-img src="https://link/to/img.jpg"
-         alt="photo description"
-         width="100"
-         height="100">
+<amp-img
+  src="https://link/to/img.jpg"
+  alt="photo description"
+  width="100"
+  height="100"
+>
 </amp-img>
 ```
 
@@ -75,10 +81,12 @@ author: CrystalOnScript
 
 ```html
 <body>
-  <amp-img src="https://placekitten.com/800/400"
-           alt="Welcome"
-           width="800"
-           height="400">
+  <amp-img
+    src="https://placekitten.com/800/400"
+    alt="Welcome"
+    width="800"
+    height="400"
+  >
   </amp-img>
 </body>
 ```
@@ -108,17 +116,24 @@ author: CrystalOnScript
 أضف النص البرمجي `amp-carousel` إلى رأس البريد الإلكتروني الخاص بك.
 
 ```html
-  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script
+  async
+  custom-element="amp-carousel"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+></script>
 ```
 
 ثم قم بطي الصور الأولى في علامة `<amp-carousel>`.
 
 ```html
-<amp-carousel layout="responsive"
-              width="800"
-              height="400"
-              type="slides">
-        <amp-img layout="fill" src="https://placekitten.com/800/400"  alt="Welcome" height="400" width="800"></amp-img>
+<amp-carousel layout="responsive" width="800" height="400" type="slides">
+  <amp-img
+    layout="fill"
+    src="https://placekitten.com/800/400"
+    alt="Welcome"
+    height="400"
+    width="800"
+  ></amp-img>
 </amp-carousel>
 ```
 
@@ -127,17 +142,35 @@ author: CrystalOnScript
 الآن، استبدل صورة القطة الصغيرة الموضوعة بصور قطط AMP الخاصة بنا الجاهزة للاستخدام داخل `<amp-carousel>`.
 
 ```html
-<amp-carousel id="carousel-with-preview"
-    width="800"
-    height="400"
-    layout="responsive"
-    type="slides"
-    on="slideChange:AMP.setState({currentCat: event.index})">
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_caleb_woods.jpg"  alt="photo courtesy of Unsplash"></amp-img>
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_craig_mclaclan.jpg"  alt="photo courtesy of Unsplash"></amp-img>
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_lightscape.jpg"  alt="photo courtesy of Unsplash"></amp-img>
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_nick_karvounis.jpg"  alt="photo courtesy of Unsplash"></amp-img>
- </amp-carousel>
+<amp-carousel
+  id="carousel-with-preview"
+  width="800"
+  height="400"
+  layout="responsive"
+  type="slides"
+  on="slideChange:AMP.setState({currentCat: event.index})"
+>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_caleb_woods.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_craig_mclaclan.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_lightscape.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_nick_karvounis.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+</amp-carousel>
 ```
 
 يجب أن يكون بإمكانك الآن تغيير الصور بالنقر فوق أسهم التنقل في الجانب الأيمن أو الأيسر للعرض الدور!
@@ -182,48 +215,55 @@ author: CrystalOnScript
 في هذا البرنامج التدريبي، سوف نستخدم [`<amp-bind>`](/content/amp-dev/documentation/components/reference/amp-bind.md) لعرض اسم القطة المستعمل لدينا عندما يكون المستخدم في شريحة القطة هذه. ابدأ بتضمين النص البرمجي `amp-bind` في رأس البريد الإلكتروني الخاص بك.
 
 ```html
- <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script
+  async
+  custom-element="amp-bind"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+></script>
 ```
 
 بعد ذلك، سوف نعلن متغير ربط AMP بالقيمة "myState" كسلسلة JSON داخل علامة [`<amp-state>`](/content/amp-dev/documentation/components/reference/amp-bind.md#state). ونظرًا لأن لدينا أربعة صور قطط، سوف نقوم بتضمين حالة للأربعة جميعًا.
 
 ```html
 <body>
-<amp-state id="myState">
-  <script type="application/json">
-    {
-      "cats": [
-         {
-          "name": "Aakash",
-          "description": "Very sweet gentleman that is quite shy in a shelter environment. He may hide under his blanket upon initial approach, but he is an affectionate lovebug."
-        },
-        {
-          "name": "Filip",
-          "description": "Friendly and enjoys pets and head rubs. Is known to sit on keyboards and refuses to touch anything with catnip on it."
-        },
-        {
-          "name": "Julian",
-          "description": "Both bold and extremely sweet. Wastes no time in investigating new smells, objects, and places, but enjoys lazing in the sun!"
-        },
-        {
-          "name": "John",
-          "description": "This playful and spirited cat would like to be outside his kennel and will be so happy when he gets to his forever home with more room to move."
-        }
-      ]
-    }
-  </script>
-</amp-state>
+  <amp-state id="myState">
+    <script type="application/json">
+      {
+        "cats": [
+          {
+            "name": "Aakash",
+            "description": "Very sweet gentleman that is quite shy in a shelter environment. He may hide under his blanket upon initial approach, but he is an affectionate lovebug."
+          },
+          {
+            "name": "Filip",
+            "description": "Friendly and enjoys pets and head rubs. Is known to sit on keyboards and refuses to touch anything with catnip on it."
+          },
+          {
+            "name": "Julian",
+            "description": "Both bold and extremely sweet. Wastes no time in investigating new smells, objects, and places, but enjoys lazing in the sun!"
+          },
+          {
+            "name": "John",
+            "description": "This playful and spirited cat would like to be outside his kennel and will be so happy when he gets to his forever home with more room to move."
+          }
+        ]
+      }
+    </script>
+  </amp-state>
+</body>
 ```
 
 تقوم [إجراءات وأحداث AMP](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md) بتشغيل حالات مختلفة. في حالتنا، نريد تحديث الحالة عندما ينقر المستخدم فوق أسهم التنقل الخاصة بالعرض الدوار. يشغلamp-carousel حدث [`slideChange`](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp-carouseltypeslides)، والذي سنقوم خلاله بتحديث متغير `currentCat` باستخدام `AMP.setState`.
 
 ```html
 <h1>Adorable Adoptable Animals</h1>
-<amp-carousel width="800"
-              height="400"
-              layout="responsive"
-              type="slides"
-              on="slideChange:AMP.setState({ currentCat: event.index} )">
+<amp-carousel
+  width="800"
+  height="400"
+  layout="responsive"
+  type="slides"
+  on="slideChange:AMP.setState({ currentCat: event.index} )"
+>
   ...
 </amp-carousel>
 ```

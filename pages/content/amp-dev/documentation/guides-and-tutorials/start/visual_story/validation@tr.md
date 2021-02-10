@@ -1,6 +1,6 @@
 ---
-"$title": "AMP HTML'nizi doğrulama"
-"$order": '8'
+'$title': "AMP HTML'nizi doğrulama"
+$order: 8
 description: "Web Hikayeleri AMP ile oluşturulduğundan, AMP HTML'nizin doğru olduğunu her zaman doğrulamalısınız. AMP sayfalarını doğrulamak için kullanabileceğiniz birkaç yöntem vardır."
 author: bpaduch
 ---

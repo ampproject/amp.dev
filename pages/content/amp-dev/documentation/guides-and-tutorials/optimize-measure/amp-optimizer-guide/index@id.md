@@ -1,11 +1,11 @@
 ---
-"$title": Menggunakan Pengoptimal AMP
-"$order": '2'
-"$hidden": 'true'
+'$title': Menggunakan Pengoptimal AMP
+$order: 2
+'$hidden': 'true'
 description: Pengoptimal AMP adalah alat yang memberikan pengoptimalan Cache AMP ke situs Anda sendiri. Menggunakan Pengoptimal AMP adalah kunci untuk menghasilkan pengalaman halaman yang memuaskan dan pemenuhan Core Web Vitals. Panduan ini menjelaskan cara terbaik menggunakan Pengoptimal AMP untuk mengoptimalkan halaman AMP Anda.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

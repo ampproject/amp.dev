@@ -1,8 +1,8 @@
 ---
-"$title": 'AMP für E-Mail: Unterstütztes HTML'
-order: '4'
+'$title': 'AMP für E-Mail: Unterstütztes HTML'
+$order: 4
 formats:
-- email
+  - email
 teaser:
   text: 'Hinweis: Diese Liste ist nicht normativ und dient nur zu Referenzzwecken. Die Regeln für AMP Validator sind maßgeblich'
 toc: 'true'

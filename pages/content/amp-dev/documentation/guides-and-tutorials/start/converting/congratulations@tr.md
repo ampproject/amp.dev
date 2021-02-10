@@ -1,6 +1,6 @@
 ---
-"$title": Tebrikler!
-"$order": '4'
+'$title': Tebrikler!
+$order: 4
 description: 'Öğreticiyi tamamladınız ve bir HTML belgesini başarıyla bir AMP belgesine dönüştürdünüz. Bu öğreticide şunları öğrendiniz: - AMP sayfaları ile geleneksel HTML sayfaları arasındaki farkları anlama...'
 ---
 

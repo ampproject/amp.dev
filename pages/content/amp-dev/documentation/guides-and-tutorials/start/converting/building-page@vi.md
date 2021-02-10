@@ -1,6 +1,6 @@
 ---
-"$title": Xây dựng một trang HTML thông thường
-"$order": '1'
+'$title': Xây dựng một trang HTML thông thường
+$order: 1
 description: Trong thư mục dự án, bạn sẽ thấy một tập tin tên là article.html. Đây là bài viết tin tức đang được chúng ta tạo một trang AMP tương đương...
 ---
 
@@ -14,10 +14,9 @@ Trong thư mục dự án, bạn sẽ thấy một tập tin tên là [`article.
 Tập tin `article.amp.html` của bạn nên có dạng như sau:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-
     <title>News Article</title>
 
     <link href="base.css" rel="stylesheet" />
@@ -25,15 +24,16 @@ Tập tin `article.amp.html` của bạn nên có dạng như sau:
     <script type="text/javascript" src="base.js"></script>
   </head>
   <body>
-    <header>
-      News Site
-    </header>
+    <header>News Site</header>
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
     </article>
-    <img src="mountains.jpg">
+    <img src="mountains.jpg" />
   </body>
 </html>
 ```

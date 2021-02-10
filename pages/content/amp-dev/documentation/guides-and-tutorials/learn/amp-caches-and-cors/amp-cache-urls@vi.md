@@ -1,14 +1,14 @@
 ---
-"$title": Định dạng URL của Bộ nhớ đệm AMP và Xử lý Yêu cầu
-"$order": '9'
+'$title': Định dạng URL của Bộ nhớ đệm AMP và Xử lý Yêu cầu
+$order: 9
 toc: 'false'
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 author: Gregable
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 Trong tài liệu này, bạn sẽ tìm hiểu về định dạng URL của Bộ nhớ đệm AMP và cách nó xử lý các yêu cầu.

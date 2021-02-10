@@ -1,6 +1,6 @@
 ---
-"$title": الإعداد
-"$order": '1'
+'$title': الإعداد
+$order: 1
 description: قم بإعداد بيئة التطوير الخاصة بك. الخطوة الأولى، قم بتنزيل الرمز. قم بتنزيل نموذج التعليمات البرمجية للبرنامج التعليمي إما كملف ZIP أو عبر git ...
 author: bpaduch
 ---
@@ -24,7 +24,7 @@ author: bpaduch
 
 #### الخطوة 2. قم بتشغيل صفحة المثال
 
-لاختبار نموذج قصة الويب، نحتاج إلى الوصول إلى الملفات من خادم ويب. ثمة عدة طرق لإنشاء خادم ويب محلي مؤقت لأغراض الاختبار.  فيما يلي بعض الخيارات، اختر الأنسب بالنسبة لك:
+لاختبار نموذج قصة الويب، نحتاج إلى الوصول إلى الملفات من خادم ويب. ثمة عدة طرق لإنشاء خادم ويب محلي مؤقت لأغراض الاختبار. فيما يلي بعض الخيارات، اختر الأنسب بالنسبة لك:
 
 - [“خادم الويب لـ Chrome” أحد تطبيقات Google Chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
 - [خادم HTTP Python محلي](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server#Running_a_simple_local_HTTP_server)

@@ -1,10 +1,10 @@
 ---
-"$title": Préparer votre page pour la détection et la distribution
-"$order": '4'
-description: 'Dans certains cas, vous pouvez avoir besoin de deux versions (AMP et non AMP) de la même page, par exemple un article d''actualités. Supposons ceci: si la recherche Google ...'
+'$title': Préparer votre page pour la détection et la distribution
+$order: 4
+description: "Dans certains cas, vous pouvez avoir besoin de deux versions (AMP et non AMP) de la même page, par exemple un article d'actualités. Supposons ceci: si la recherche Google ..."
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 Dans certains cas, vous pouvez avoir besoin de deux versions (non-AMP et AMP) de la même page. Par exemple, pour un article d'actualités. Supposons ceci : si la recherche Google trouve la version non-AMP de cette page, <em>comment sait-elle qu'il en existe également une version AMP</em>?
@@ -16,12 +16,14 @@ Pour établir qu'une page non-AMP et une page AMP doivent être traitées comme 
 Ajoutez ce qui suit sur la page non-AMP :
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
 Et ce qui suit sur la page AMP
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
@@ -30,6 +32,7 @@ Et ce qui suit sur la page AMP
 Si vous n'avez qu'une seule page, et que cette page est une page AMP, vous devez tout de même lui ajouter le lien canonique, qui dans ce cas pointe simplement vers elle-même :
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 

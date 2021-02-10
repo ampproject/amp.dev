@@ -1,6 +1,6 @@
 ---
-"$title": Mit Remotedaten arbeiten
-"$order": '3'
+'$title': Mit Remotedaten arbeiten
+$order: 3
 description: Was ist, wenn deine bindbaren Daten zu groß oder zu komplex sind, um sie beim Laden der Seite abzurufen? Oder wenn jede SKU einen Preis hat …
 toc: 'true'
 ---
@@ -19,15 +19,15 @@ Du kannst das Attribut `src` auch an das Element [`<amp-state>`](../../../../doc
 
 Nutzen wir die Funktion zum Abruf von Remotedaten, um die Preise für SKUs in unserem Beispiel nachzuschlagen. Unser Express.js Entwicklungsserver in `app.js` hat bereits den Endpoint `/shirts/sizesAndPrices?shirt=<sku>`, der für eine bestimmte SKU eines Hemdes die verfügbaren Größen und Preise pro Größe zurückgibt. Er sendet die Antwort mit einer künstlichen Verzögerung von einer Sekunde, um Netzwerklatenz zu simulieren.
 
-Anfrage | Antwort
---- | ---
-`GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}`
+| Anfrage                               | Antwort                                      |
+| ------------------------------------- | -------------------------------------------- |
+| `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
 Ähnlich wie bei den JSON Daten in [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) Elementen werden die von diesen Abrufen zurückgegebenen Remotedaten im Attribut `id` des Elements zusammengeführt und sind dort verfügbar. Der Zugriff auf die Daten, die von der obigen Beispielantwort zurückgegeben wurden, kann z. B. über den folgenden Ausdruck erfolgen:
 
-Ausdruck | Ergebnis
---- | ---
-`shirts['1001'].sizes['XS']` | `8.99`
+| Ausdruck                     | Ergebnis |
+| ---------------------------- | -------- |
+| `shirts['1001'].sizes['XS']` | `8.99`   |
 
 ### Binde die Daten
 
@@ -36,7 +36,10 @@ Dies wollen wir nun auf unser E-Commerce Beispiel anwenden. Rufen wir zunächst 
 ```html
 <!-- When `selected.sku` changes, update the `src` attribute and fetch
      JSON at the new URL. Then, merge that data under `id` ("shirts"). -->
-<amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
+<amp-state
+  id="shirts"
+  [src]="'/shirts/sizesAndPrices?sku=' + selected.sku"
+></amp-state>
 ```
 
 ### Gib nicht verfügbare Größen an
@@ -106,16 +109,22 @@ Außerdem müssen wir den Standardstatus der relevanten Elemente aktualisieren:
       </td>
       <!-- Add the 'unavailable' class to the next three <td> elements
            to be consistent with the available sizes of the default SKU. -->
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'"
+      >
         <div option="M">M</div>
       </td>
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'"
+      >
         <div option="L">L</div>
       </td>
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'"
+      >
         <div option="XL">XL</div>
       </td>
     </tr>
@@ -123,7 +132,7 @@ Außerdem müssen wir den Standardstatus der relevanten Elemente aktualisieren:
 </amp-selector>
 ```
 
-[tip type="note"] **HINWEIS:**  [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) wird nicht beim Laden der Seite ausgeführt, sondern nur als Reaktion auf explizite Benutzeraktionen. So wird sichergestellt, dass das erste Laden der Seite über alle Seiten hinweg konstant schnell ist, unabhängig von der Verwendung von [`amp-bind`](../../../../documentation/components/reference/amp-bind.md). [/tip]
+[tip type="note"] **HINWEIS:** [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) wird nicht beim Laden der Seite ausgeführt, sondern nur als Reaktion auf explizite Benutzeraktionen. So wird sichergestellt, dass das erste Laden der Seite über alle Seiten hinweg konstant schnell ist, unabhängig von der Verwendung von [`amp-bind`](../../../../documentation/components/reference/amp-bind.md). [/tip]
 
 ## Variable Hemdpreise
 
@@ -134,8 +143,10 @@ Unser AMPPAREL Shop hat eine Besonderheit: Der Hemdpreis ist von der Farbe UND v
 ```html
 <!-- When an element is selected, set the `selectedSize` variable to the
      value of the "option" attribute of the selected element.  -->
-<amp-selector name="size"
-    on="select:AMP.setState({selectedSize: event.targetOption})">
+<amp-selector
+  name="size"
+  on="select:AMP.setState({selectedSize: event.targetOption})"
+></amp-selector>
 ```
 
 Beachte, dass wir den Wert von `selectedSize` nicht über das Element `amp-state#selected` initialisieren. Das liegt daran, dass wir absichtlich keine vorgegebene Standardgröße angeben, sondern die Benutzer zwingen möchten, eine Größe auszuwählen.
@@ -145,7 +156,8 @@ Beachte, dass wir den Wert von `selectedSize` nicht über das Element `amp-state
 Füge ein neues `<span>` Element hinzu, das das Preisetikett umschließt, und ändere den Standardtext zu "---", da keine standardmäßige Größe ausgewählt ist.
 
 ```html
-<h6>PRICE :
+<h6>
+  PRICE :
   <!-- Display the price of the selected shirt in the selected size if available.
        Otherwise, display the placeholder text '---'. -->
   <span [text]="shirts[selected.sku].sizes[selectedSize] || '---'">---</span>
@@ -163,9 +175,13 @@ Wir sind fast fertig! Deaktiviere den Button "Add to cart", wenn die ausgewählt
      1. There is no selected size, OR
      2. The available sizes for the selected SKU haven't been fetched yet
 -->
-<input type="submit" value="ADD TO CART" disabled
-    class="mdl-button mdl-button--raised mdl-button--accent"
-    [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]">
+<input
+  type="submit"
+  value="ADD TO CART"
+  disabled
+  class="mdl-button mdl-button--raised mdl-button--accent"
+  [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]"
+/>
 ```
 
 **Probiere es aus**: Wenn du eine Größe auswählst, die nicht verfügbar ist, kannst du sie nicht in den Warenkorb legen.

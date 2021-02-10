@@ -2,8 +2,8 @@
 from grow import extensions
 from grow.documents import document, static_document
 from grow.extensions import hooks
-from amp_dependencies import AmpDependencies
-from auto_dependency_injector import AutoDependencyInjector
+from .amp_dependencies import AmpDependencies
+from .auto_dependency_injector import AutoDependencyInjector
 
 # Used to determine where to print the script tags
 PLACEHOLDER = '__AMP__DEPENDENCIES__'

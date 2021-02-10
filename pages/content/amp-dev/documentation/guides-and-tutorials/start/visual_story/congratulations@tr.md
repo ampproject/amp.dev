@@ -1,6 +1,6 @@
 ---
-"$title": Tebrikler!
-"$order": '9'
+'$title': Tebrikler!
+$order: 9
 description: 'AMP kullanarak ilk Web Hikayenizi başarıyla tamamladınız! Bu öğreticide şunları öğrendiniz: - amp-story bileşenini kullanarak çok sayfalı hikaye oluşturma...'
 author: bpaduch
 ---

@@ -1,10 +1,10 @@
 ---
 formats:
-- websites
-"$title": Abonelik içeriğinizi istemci tarafı şifrelemesiyle koruma
-"$titles":
+  - websites
+'$title': Abonelik içeriğinizi istemci tarafı şifrelemesiyle koruma
+'$titles':
   teaser: Protect your subscription content with client-side encryption.
-"$order": '10'
+$order: 10
 description: İstemci tarafında premium abone doğrulaması ve içerik şifre çözümlemesi uygulayarak içerik şifreleme sorunlarını çözün. Bu çözümle, premium erişime sahip kullanıcılar, yeni bir sayfa yüklemeye veya bir arka ucun yanıt vermesini beklemeye gerek kalmadan içeriğin şifresini çözebilecek!
 author: CrystalOnScript
 ---
@@ -23,7 +23,7 @@ Bunun yerine, kullanıcılara premium içerikten tamamen yoksun bir belge göste
 
 İstemci tarafında şifre çözmeyi uygulamak için hem simetrik anahtar hem de açık anahtar şifrelemesini aşağıdaki şekilde birleştireceksiniz:
 
-1. Her belgeye *eşsiz* bir anahtar vererek her belge için rastgele bir simetrik anahtar oluşturun. {{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='Unique keys for each unique document.') }}
+1. Her belgeye _eşsiz_ bir anahtar vererek her belge için rastgele bir simetrik anahtar oluşturun. {{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='Unique keys for each unique document.') }}
 2. Premium içeriği, belgenin simetrik anahtarıyla şifreleyin. {{ image('/static/img/docs/guides/cse/cse3.jpg', 130, 243, align='', layout='intrinsic', alt='Use the document key to encrypt premium content.') }} Anahtar, aynı anahtarın içeriği şifrelemesine ve şifresini çözmesine izin verecek şekilde simetriktir. {{ image('/static/img/docs/guides/cse/cse4.jpg', 188, 141, align='', layout='intrinsic', alt='The same key that encrypts the document also decrypts it.') }}
 3. Simetrik anahtarları şifrelemek için bir [karma şifreleme](https://en.wikipedia.org/wiki/Hybrid_cryptosystem) protokolü kullanarak belge anahtarını bir genel anahtarla şifreleyin. {{ image('/static/img/docs/guides/cse/cse5.jpg', 309, 114, align='', layout='intrinsic', alt='A hybrid encryption protocol encrypts the symmetric key with a public key.') }}
 4. [`<amp-subscriptions>`](https://amp.dev/documentation/components/amp-subscriptions/) ve/veya [` <amp-subscriptions-google>`](https://amp.dev/documentation/components/amp-subscriptions-google/?format=websites) bileşenlerini kullanarak, şifreli belge anahtarını, şifrelenmiş premium içerik ile birlikte AMP belgesinin içinde saklayın. {{ image('/static/img/docs/guides/cse/cse6.jpg', 264, 261, align='', layout='intrinsic', alt='Both keys are stored inside of the AMP document.') }}
@@ -43,7 +43,7 @@ AMP şifreleme işlemini dahili yetkilendirme sunucunuza entegre etmek için aş
 
 ## 1. Adım: Genel/özel anahtar çifti oluşturun
 
-Belgenin simetrik anahtarını şifrelemek için kendi genel/özel anahtar çiftinize sahip olmanız gerekir. Açık anahtar şifreleme, [karma bir şifreleme](https://en.wikipedia.org/wiki/Hybrid_cryptosystem) protokolüdür, özellikle de bir [AES-GCM](https://tools.ietf.org/html/rfc5288) (128-bit) simetrik şifreleme yöntemiyle bir [P-256 Elliptic Curve](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)) ECIES asimetrik şifreleme yöntemidir.
+Belgenin simetrik anahtarını şifrelemek için kendi genel/özel anahtar çiftinize sahip olmanız gerekir. Açık anahtar şifreleme, [karma bir şifreleme](https://en.wikipedia.org/wiki/Hybrid_cryptosystem) protokolüdür, özellikle de bir [AES-GCM](https://tools.ietf.org/html/rfc5288) (128-bit) simetrik şifreleme yöntemiyle bir [P-256 Elliptic Curve](<https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)>) ECIES asimetrik şifreleme yöntemidir.
 
 [Bu asimetrik anahtar türü](https://github.com/google/tink) kullanılarak [Tink](https://github.com/subscriptions-project/encryption/blob/617f0911c9870dae900a232e2dc8ee9196677a89/golang/vendor/github.com/google/tink/go/hybrid/hybrid_key_templates.go#L32) ile genel anahtar işlemeyi zorunlu kılıyoruz. Özel-genel anahtar çiftinizi oluşturmak için aşağıdakilerden birini kullanın:
 

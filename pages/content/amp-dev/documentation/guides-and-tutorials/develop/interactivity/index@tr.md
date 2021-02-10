@@ -1,11 +1,11 @@
 ---
-"$title": Etkileşimli AMP sayfaları oluşturma
-"$path": "/documentation/guides-and-tutorials/develop/interactivity/index.html"
-"$order": '0'
+'$title': Etkileşimli AMP sayfaları oluşturma
+'$path': '/documentation/guides-and-tutorials/develop/interactivity/index.html'
+$order: 0
 description: Bu eğitimde, amp-bind ile harika, etkileşimli AMP sayfaları oluşturmak için veri bağlama ve ifadelerin nasıl kullanılacağını öğreneceksiniz.
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/interactivity-final-page.jpg', 415, 738, align='right third', caption='Bu öğretici için tamamlanmış AMP sayfası') }}

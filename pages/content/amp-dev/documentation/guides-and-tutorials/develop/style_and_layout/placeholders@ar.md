@@ -1,17 +1,17 @@
 ---
-"$title": العناصر النائبة والاحتياطية
-"$order": '3'
+'$title': العناصر النائبة والاحتياطية
+$order: 3
 descriptions: "In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible."
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible.
@@ -23,22 +23,28 @@ In the spirit of perceived performance and progressive enhancement, it's best pr
 يعمل العنصر الموسوم بالسمة `placeholder` كعنصر نائب لعنصر AMP الأصلي. وإذا تم تحديده، فيجب أن يكون عنصر `placeholder` عنصرًا تابعًا مباشرًا لعنصر AMP. وسيقوم العنصر الذي تم وسمه على أنه `placeholder` بـ `fill` عنصر AMP الأصلي دائمًا.
 
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
+
 ```html
-<amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
+<amp-anim
+  src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
   layout="responsive"
   width="400"
-  height="300">
-  <amp-img placeholder
+  height="300"
+>
+  <amp-img
+    placeholder
     src="{{server_for_email}}/static/inline-examples/images/wavepool.png"
-    layout="fill">
+    layout="fill"
+  >
   </amp-img>
 </amp-anim>
 ```
+
 [/example]
 
 بشكل افتراضي، يتم عرض العنصر النائب على الفور لعنصر AMP، حتى إذا لم يتم تنزيل موارد عنصر AMP أو تهيئتها. وبمجرد أن يصبح عنصر AMP جاهزًا، عادةً ما يقوم بإخفاء العنصر النائب وعرض المحتوى.
 
-[tip type="note"] **ملحوظة –**  ليس من الضروري أن يكون العنصر النائب عنصر AMP؛ حيث يمكن لأي عنصر HTML أن يعمل كعنصر نائب. [/tip]
+[tip type="note"] **ملحوظة –** ليس من الضروري أن يكون العنصر النائب عنصر AMP؛ حيث يمكن لأي عنصر HTML أن يعمل كعنصر نائب. [/tip]
 
 ## الاحتياطيات <a name="fallbacks"></a>
 
@@ -48,13 +54,14 @@ In the spirit of perceived performance and progressive enhancement, it's best pr
 - إذا فشل تحميل المحتوى (على سبيل المثال، حذف التغريدة)
 - إذا كان نوع الصورة غير مدعوم (على سبيل المثال، WebP غير مدعوم في كل المتصفحات)
 
-يمكنك تعيين السمة `fallback` إلى *أي* عنصر HTML، وليس فقط عناصر AMP. وإذا تم تحديده، فيجب أن يكون العنصر `fallback` تابعًا مباشرًا لعنصر AMP.
+يمكنك تعيين السمة `fallback` إلى _أي_ عنصر HTML، وليس فقط عناصر AMP. وإذا تم تحديده، فيجب أن يكون العنصر `fallback` تابعًا مباشرًا لعنصر AMP.
 
 ##### مثال: ميزة غير مدعومة
 
 في المثال التالي، نستخدم السمة `fallback` لإبلاغ المستخدم بأن المتصفح لا يدعم ميزة معينة:
 
 [example preview="inline" playground="true" imports="amp-video:0.1"]
+
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -66,6 +73,7 @@ In the spirit of perceived performance and progressive enhancement, it's best pr
   </div>
 </amp-video>
 ```
+
 [/example]
 
 ##### مثال: عرض تنسيقات صور مختلفة
@@ -73,20 +81,26 @@ In the spirit of perceived performance and progressive enhancement, it's best pr
 في المثال التالي، نستخدم السمة `fallback` لإبلاغ المتصفح باستخدام ملف JPEG إذا كان تنسيق WebP غير مدعوم.
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="Mountains"
+<amp-img
+  alt="Mountains"
   width="550"
   height="368"
   layout="responsive"
-  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
-  <amp-img alt="Mountains"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp"
+>
+  <amp-img
+    alt="Mountains"
     fallback
     width="550"
     height="368"
     layout="responsive"
-    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"
+  ></amp-img>
 </amp-img>
 ```
+
 [/example]
 
 ## تفاعل العناصر النائبة والاحتياطية

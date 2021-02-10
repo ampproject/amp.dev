@@ -1,10 +1,10 @@
 ---
-"$title": Создание первого AMP-письма
-"$order": '0'
+'$title': Создание первого AMP-письма
+$order: 0
 description: Создайте свое первое письмо, чтобы узнать, что делает AMP-письма особенными.
 tutorial: 'true'
 formats:
-- email
+  - email
 author: CrystalOnScript
 ---
 
@@ -21,21 +21,25 @@ author: CrystalOnScript
 Песочница AMP поддерживает формат AMP для писем, что позволяет вам разрабатывать, тестировать и проверять свои AMP-письма. Откройте [Песочницу AMP](https://playground.amp.dev/?runtime=amp4email) и убедитесь, что в верхнем левом углу выбран формат `AMP for Email`. Вы должны увидеть следующий код:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email data-css-strict>
-<head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
-  <style amp-custom>
-    h1 {
-      margin: 1rem;
-    }
-  </style>
-</head>
-<body>
-  <h1>Hello, I am an AMP EMAIL!</h1>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+    <style amp-custom>
+      h1 {
+        margin: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello, I am an AMP EMAIL!</h1>
+  </body>
 </html>
 ```
 
@@ -58,10 +62,12 @@ author: CrystalOnScript
 Тег `<amp-img>` требует, чтобы ширина и высота изображения были определены, и, в отличие от `<img>`, `<amp-img>` требует наличия закрывающего тега `</amp-img>`.
 
 ```html
-<amp-img src="https://link/to/img.jpg"
-         alt="photo description"
-         width="100"
-         height="100">
+<amp-img
+  src="https://link/to/img.jpg"
+  alt="photo description"
+  width="100"
+  height="100"
+>
 </amp-img>
 ```
 
@@ -75,10 +81,12 @@ author: CrystalOnScript
 
 ```html
 <body>
-  <amp-img src="https://placekitten.com/800/400"
-           alt="Welcome"
-           width="800"
-           height="400">
+  <amp-img
+    src="https://placekitten.com/800/400"
+    alt="Welcome"
+    width="800"
+    height="400"
+  >
   </amp-img>
 </body>
 ```
@@ -108,17 +116,24 @@ author: CrystalOnScript
 Добавьте скрипт `amp-carousel` в элемент head сообщения электронной почты.
 
 ```html
-  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script
+  async
+  custom-element="amp-carousel"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+></script>
 ```
 
 Затем оберните наше первое изображение в теги `<amp-carousel>`.
 
 ```html
-<amp-carousel layout="responsive"
-              width="800"
-              height="400"
-              type="slides">
-        <amp-img layout="fill" src="https://placekitten.com/800/400"  alt="Welcome" height="400" width="800"></amp-img>
+<amp-carousel layout="responsive" width="800" height="400" type="slides">
+  <amp-img
+    layout="fill"
+    src="https://placekitten.com/800/400"
+    alt="Welcome"
+    height="400"
+    width="800"
+  ></amp-img>
 </amp-carousel>
 ```
 
@@ -127,17 +142,35 @@ author: CrystalOnScript
 Заменим изображение котенка внутри элемента `<amp-carousel>` на фотографии наших бездомных кошек.
 
 ```html
-<amp-carousel id="carousel-with-preview"
-    width="800"
-    height="400"
-    layout="responsive"
-    type="slides"
-    on="slideChange:AMP.setState({currentCat: event.index})">
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_caleb_woods.jpg"  alt="photo courtesy of Unsplash"></amp-img>
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_craig_mclaclan.jpg"  alt="photo courtesy of Unsplash"></amp-img>
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_lightscape.jpg"  alt="photo courtesy of Unsplash"></amp-img>
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_nick_karvounis.jpg"  alt="photo courtesy of Unsplash"></amp-img>
- </amp-carousel>
+<amp-carousel
+  id="carousel-with-preview"
+  width="800"
+  height="400"
+  layout="responsive"
+  type="slides"
+  on="slideChange:AMP.setState({currentCat: event.index})"
+>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_caleb_woods.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_craig_mclaclan.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_lightscape.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_nick_karvounis.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+</amp-carousel>
 ```
 
 Теперь у вас должна быть возможность менять фотографии, нажимая на стрелки навигации с левой и правой сторон кольцевой галереи.
@@ -182,48 +215,55 @@ AMP позволяет стилизовать заголовок докумен�
 В этом уроке мы будем использовать [`<amp-bind>`](/content/amp-dev/documentation/components/reference/amp-bind.md) для отображения имени кошки и информации о ней, когда пользователь просматривает слайд с этой кошкой. Начните с включения скрипта `amp-bind` в элемент head сообщения электронной почты.
 
 ```html
- <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script
+  async
+  custom-element="amp-bind"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+></script>
 ```
 
 Далее мы объявим переменную amp-bind «myState», представив ее в виде строки JSON внутри тега [`<amp-state>`](/content/amp-dev/documentation/components/reference/amp-bind.md#state). Поскольку у нас есть четыре фотографии кошек, мы укажем состояние для всех четырех.
 
 ```html
 <body>
-<amp-state id="myState">
-  <script type="application/json">
-    {
-      "cats": [
-         {
-          "name": "Aakash",
-          "description": "Very sweet gentleman that is quite shy in a shelter environment. He may hide under his blanket upon initial approach, but he is an affectionate lovebug."
-        },
-        {
-          "name": "Filip",
-          "description": "Friendly and enjoys pets and head rubs. Is known to sit on keyboards and refuses to touch anything with catnip on it."
-        },
-        {
-          "name": "Julian",
-          "description": "Both bold and extremely sweet. Wastes no time in investigating new smells, objects, and places, but enjoys lazing in the sun!"
-        },
-        {
-          "name": "John",
-          "description": "This playful and spirited cat would like to be outside his kennel and will be so happy when he gets to his forever home with more room to move."
-        }
-      ]
-    }
-  </script>
-</amp-state>
+  <amp-state id="myState">
+    <script type="application/json">
+      {
+        "cats": [
+          {
+            "name": "Aakash",
+            "description": "Very sweet gentleman that is quite shy in a shelter environment. He may hide under his blanket upon initial approach, but he is an affectionate lovebug."
+          },
+          {
+            "name": "Filip",
+            "description": "Friendly and enjoys pets and head rubs. Is known to sit on keyboards and refuses to touch anything with catnip on it."
+          },
+          {
+            "name": "Julian",
+            "description": "Both bold and extremely sweet. Wastes no time in investigating new smells, objects, and places, but enjoys lazing in the sun!"
+          },
+          {
+            "name": "John",
+            "description": "This playful and spirited cat would like to be outside his kennel and will be so happy when he gets to his forever home with more room to move."
+          }
+        ]
+      }
+    </script>
+  </amp-state>
+</body>
 ```
 
 [Предусмотренные в AMP действия и события](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md) используются для инициирования различных состояний. В нашем случае мы хотим обновлять состояние, когда пользователь нажимает на стрелки навигации по кольцевой галерее. Галерея инициирует событие [`slideChange`](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp-carouseltypeslides), при обнаружении которого мы обновим переменную `currentCat` с помощью `AMP.setState`.
 
 ```html
 <h1>Adorable Adoptable Animals</h1>
-<amp-carousel width="800"
-              height="400"
-              layout="responsive"
-              type="slides"
-              on="slideChange:AMP.setState({ currentCat: event.index} )">
+<amp-carousel
+  width="800"
+  height="400"
+  layout="responsive"
+  type="slides"
+  on="slideChange:AMP.setState({ currentCat: event.index} )"
+>
   ...
 </amp-carousel>
 ```

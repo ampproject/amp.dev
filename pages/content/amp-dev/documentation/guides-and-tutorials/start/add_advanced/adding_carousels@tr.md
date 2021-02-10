@@ -1,6 +1,6 @@
 ---
-"$title": Resim döngüsü ekleme
-"$order": '3'
+'$title': Resim döngüsü ekleme
+$order: 3
 description: Mobil sayfalardaki diğer bir yaygın özellik de resim döngüsüdür. amp-carousel bileşenini kullanarak AMP sayfalarına kolayca resim döngüleri ekleyebilirsiniz.
 ---
 
@@ -11,13 +11,17 @@ Mobil sayfalardaki diğer bir yaygın özellik de resim döngüsüdür. [`amp-ca
 Belgenizin `<head>` etiketine aşağıdaki JavaScript isteğini **ekleyerek** [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) bileşen kitaplığını eklemeyi unutmayın:
 
 ```html
-<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script
+  async
+  custom-element="amp-carousel"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+></script>
 ```
 
 Ardından, duyarlı bir yerleşim ve önceden tanımlanmış bir genişlik ve yükseklik ile basit bir resim döngüsü yerleştirelim. Sayfanıza aşağıdakileri **ekleyin**:
 
 ```html
-<amp-carousel layout="fixed-height" height="168" type="carousel" >
+<amp-carousel layout="fixed-height" height="168" type="carousel">
   <amp-img src="mountains-1.jpg" width="300" height="168"></amp-img>
   <amp-img src="mountains-2.jpg" width="300" height="168"></amp-img>
   <amp-img src="mountains-3.jpg" width="300" height="168"></amp-img>
@@ -41,10 +45,33 @@ Son olarak, bu atlı karıncayı 2 saniyede bir otomatik oynatalım. `autoplay` 
 Nihai sonucunuz böyle bir şeye benzemelidir:
 
 ```html
-<amp-carousel layout="responsive" width="300" height="168" type="slides" autoplay delay="2000" loop>
-  <amp-img src="mountains-1.jpg" width="300" height="168" layout="responsive"></amp-img>
-  <amp-img src="mountains-2.jpg" width="300" height="168" layout="responsive"></amp-img>
-  <amp-img src="mountains-3.jpg" width="300" height="168" layout="responsive"></amp-img>
+<amp-carousel
+  layout="responsive"
+  width="300"
+  height="168"
+  type="slides"
+  autoplay
+  delay="2000"
+  loop
+>
+  <amp-img
+    src="mountains-1.jpg"
+    width="300"
+    height="168"
+    layout="responsive"
+  ></amp-img>
+  <amp-img
+    src="mountains-2.jpg"
+    width="300"
+    height="168"
+    layout="responsive"
+  ></amp-img>
+  <amp-img
+    src="mountains-3.jpg"
+    width="300"
+    height="168"
+    layout="responsive"
+  ></amp-img>
 </amp-carousel>
 ```
 
@@ -60,25 +87,28 @@ Resim döngüsü harika, ama resim döngüsü içinde daha karmaşık içeriğin
 
 ```css
 amp-fit-text {
-    white-space: normal;
+  white-space: normal;
 }
 ```
 
 Şimdi basit resim döngünüzü bununla **değiştirin**:
 
 ```html
-<amp-carousel layout="fixed-height" height="250" type="carousel" >
-    <amp-img src="blocky-mountains-1.jpg" width="300" height="250"></amp-img>
+<amp-carousel layout="fixed-height" height="250" type="carousel">
+  <amp-img src="blocky-mountains-1.jpg" width="300" height="250"></amp-img>
 
-    <amp-ad width="300" height="250"
-      type="doubleclick"
-      data-slot="/35096353/amptesting/image/static">
-        <div placeholder>This ad is still loading.</div>
-    </amp-ad>
+  <amp-ad
+    width="300"
+    height="250"
+    type="doubleclick"
+    data-slot="/35096353/amptesting/image/static"
+  >
+    <div placeholder>This ad is still loading.</div>
+  </amp-ad>
 
-    <amp-fit-text width="300" height="250" layout="fixed">
-        Big, bold article quote goes here.
-    </amp-fit-text>
+  <amp-fit-text width="300" height="250" layout="fixed">
+    Big, bold article quote goes here.
+  </amp-fit-text>
 </amp-carousel>
 ```
 

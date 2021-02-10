@@ -1,6 +1,6 @@
 ---
-"$title": Wrapping up
-"$order": '4'
+'$title': Wrapping up
+$order: 4
 description: 축하합니다! 이제 주문 즉시 원격 JSON 엔드포인트에서 SKU별로 다르게 가져온 사이즈와 가격이 포함된 대화형 전자상거래 제품 세부정보 페이지를 만들었습니다.
 ---
 

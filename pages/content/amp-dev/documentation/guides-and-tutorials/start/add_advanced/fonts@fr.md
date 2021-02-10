@@ -1,6 +1,6 @@
 ---
-"$title": Ajout de polices
-"$order": '6'
+'$title': Ajout de polices
+$order: 6
 description: 'Vous pouvez intégrer des polices personnalisées dans votre page AMP de deux manières : 1. Via une balise <link>: pour les fournisseurs de polices autorisés uniquement. 2. En utilisant ...'
 ---
 
@@ -14,7 +14,11 @@ Vous pouvez intégrer des polices personnalisées dans votre page AMP de deux ma
 Dans ce didacticiel, nous utiliserons une balise `<link>` pour ajouter des polices à notre page. **Ajoutez** un lien de feuille de style dans la section `<head>` pour demander la police Raleway :
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://fonts.googleapis.com/css?family=Raleway"
+/>
 ```
 
 Maintenant, **mettez à jour** votre sélecteur de `body` CSS pour inclure une référence à Raleway :

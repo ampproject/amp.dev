@@ -1,6 +1,6 @@
 ---
-"$title": Setting up
-"$order": '1'
+'$title': Setting up
+$order: 1
 description: 设置开发环境 第 1 步：下载代码。以 ZIP 文件格式或通过 git 下载本教程的示例代码…
 author: bpaduch
 ---

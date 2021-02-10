@@ -1,6 +1,6 @@
 ---
-"$title": 使您的网页可被轻松发现
-"$order": '3'
+'$title': 使您的网页可被轻松发现
+$order: 3
 description: 需要设置这种双向关联，以使搜索引擎了解我们的常规 HTML 规范文档与 AMP 文档之间的关系。
 ---
 
@@ -23,7 +23,7 @@ description: 需要设置这种双向关联，以使搜索引擎了解我们的�
 为了实现此目的，我们已经在 AMP 文档中执行完第一步，即在 `<head>` 中添加链接标记以关联到原来的规范网页：
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 下一步是将规范报道关联到 AMP 网页。为此，请将 `<link rel="amphtml">` 标记添加到规范报道的 `<head>` 部分中。
@@ -31,7 +31,7 @@ description: 需要设置这种双向关联，以使搜索引擎了解我们的�
 在 `article.html` 文件中，将以下代码**添加**到 `<head>` 部分中：
 
 ```html
-<link rel="amphtml" href="/article.amp.html">
+<link rel="amphtml" href="/article.amp.html" />
 ```
 
 以下图表展示了链接标记的配对方向：
@@ -48,38 +48,38 @@ description: 需要设置这种双向关联，以使搜索引擎了解我们的�
 
 ```html
 <script type="application/ld+json">
-{
-"@context": "http://schema.org",
-"@type": "NewsArticle",
-"mainEntityOfPage":{
-   "@type":"WebPage",
-   "@id":"https://example.com/my-article.html"
-},
-"headline": "My First AMP Article",
-"image": {
-   "@type": "ImageObject",
-   "url": "https://example.com/article_thumbnail1.jpg",
-   "height": 800,
-   "width": 800
-},
-"datePublished": "2015-02-05T08:00:00+08:00",
-"dateModified": "2015-02-05T09:20:00+08:00",
-"author": {
-   "@type": "Person",
-   "name": "John Doe"
-},
-"publisher": {
-   "@type": "Organization",
-   "name": "⚡ AMP Times",
-   "logo": {
-     "@type": "ImageObject",
-     "url": "https://example.com/amptimes_logo.jpg",
-     "width": 600,
-     "height": 60
-   }
-},
-"description": "My first experience in an AMPlified world"
-}
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://example.com/my-article.html"
+    },
+    "headline": "My First AMP Article",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://example.com/article_thumbnail1.jpg",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2015-02-05T08:00:00+08:00",
+    "dateModified": "2015-02-05T09:20:00+08:00",
+    "author": {
+      "@type": "Person",
+      "name": "John Doe"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "⚡ AMP Times",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://example.com/amptimes_logo.jpg",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "My first experience in an AMPlified world"
+  }
 </script>
 ```
 

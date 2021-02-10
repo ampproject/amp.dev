@@ -10,7 +10,7 @@
   background: transparent;
   @include txt;
   @include txt-2;
-  font-family: Noto Sans;
+  font-family: 'Noto Sans', system;
   text-align: left;
   cursor: pointer;
 

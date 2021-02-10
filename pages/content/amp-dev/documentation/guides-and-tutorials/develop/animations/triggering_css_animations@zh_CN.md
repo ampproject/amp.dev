@@ -1,10 +1,10 @@
 ---
-"$title": 触发 CSS 动画和过渡
-"$order": '1'
+'$title': 触发 CSS 动画和过渡
+$order: 1
 description: 在网页上触发 CSS 动画取决于类的添加和移除，而类的添加和移除操作通过 JavaScript 来完成。使用 toggleClass 操作可以在 AMP 网页上实现相同的行为…
 formats:
-- websites
-- ads
+  - websites
+  - ads
 ---
 
 通过 CSS 动画，网络元素可以从一种 CSS 样式配置过渡到另一种。浏览器可以在加载时启动定义的动画，但事件触发的 CSS 动画则[取决于类的添加和移除](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)。AMP 同时支持这两种动画类型。
@@ -73,16 +73,25 @@ elementName.toggleClass(class="className")
 您可以在希望用户与之互动的同一元素（例如，添加动画效果的汉堡菜单）上切换类。
 
 ```html
- <div id="hamburger" tabindex=1 role=button on="tap:hamburger.toggleClass(class='close')">
+<div
+  id="hamburger"
+  tabindex="1"
+  role="button"
+  on="tap:hamburger.toggleClass(class='close')"
+></div>
 ```
 
 另外，`toggleClass` 操作也可以应用到其他元素，添加 `force` 属性后，该操作可以在两个类之间切换。
 
 ```html
-<button on="tap:magicBox.toggleClass(class='invisible', force=true),magicBox.toggleClass(class='visible', force=false)">
+<button
+  on="tap:magicBox.toggleClass(class='invisible', force=true),magicBox.toggleClass(class='visible', force=false)"
+>
   Disappear
 </button>
-<button on="tap:magicBox.toggleClass(class='visible', force=true),magicBox.toggleClass(class='invisible', force=false)">
+<button
+  on="tap:magicBox.toggleClass(class='visible', force=true),magicBox.toggleClass(class='invisible', force=false)"
+>
   Reappear
 </button>
 ```
@@ -94,9 +103,14 @@ elementName.toggleClass(class="className")
 使用 [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) 可以添加和移除任意数量的 CSS 类和状态。
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
-  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-bind"
+    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+  ></script>
   <style amp-custom>
     div {
       height: 100px;
@@ -113,13 +127,13 @@ elementName.toggleClass(class="className")
       opacity: 0;
     }
     .left {
-      transform: translatex(-50px)
+      transform: translatex(-50px);
     }
     .right {
-      transform: translatex(50px)
+      transform: translatex(50px);
     }
     button {
-      margin-top:  1rem;
+      margin-top: 1rem;
       margin-left: 1rem;
     }
   </style>
@@ -143,38 +157,31 @@ elementName.toggleClass(class="className")
       }
     </script>
   </amp-state>
-  <div [class]="magicBox[animateBox].className"> </div>
-  <button on="tap:AMP.setState({animateBox: 'invisibleBox'})">
-    Disappear
-  </button>
-  <button on="tap:AMP.setState({animateBox: 'visibleBox'})">
-    Reappear
-  </button>
-  <button on="tap:AMP.setState({animateBox: 'moveLeft'})">
-    Move Left
-  </button>
-  <button on="tap:AMP.setState({animateBox: 'moveRight'})">
-    Move Right
-  </button>
+  <div [class]="magicBox[animateBox].className"></div>
+  <button on="tap:AMP.setState({animateBox: 'invisibleBox'})">Disappear</button>
+  <button on="tap:AMP.setState({animateBox: 'visibleBox'})">Reappear</button>
+  <button on="tap:AMP.setState({animateBox: 'moveLeft'})">Move Left</button>
+  <button on="tap:AMP.setState({animateBox: 'moveRight'})">Move Right</button>
 </body>
 ```
+
 [/example]
 
 首先，在文档 `head` 的 `<style amp-custom>` 标记中添加一组 CSS 类，借此定义多个类动画：
 
 ```css
-    .visible {
-      opacity: 1;
-    }
-    .invisible {
-      opacity: 0;
-    }
-    .left {
-      transform: translatex(-50px)
-    }
-    .right {
-      transform: translatex(50px)
-    }
+.visible {
+  opacity: 1;
+}
+.invisible {
+  opacity: 0;
+}
+.left {
+  transform: translatex(-50px);
+}
+.right {
+  transform: translatex(50px);
+}
 ```
 
 然后，将每个类与一种状态配对：
@@ -203,24 +210,16 @@ elementName.toggleClass(class="className")
 接着，将元素与这些类相关联：
 
 ```html
-  <div [class]="magicBox[animateBox].className"> </div>
+<div [class]="magicBox[animateBox].className"></div>
 ```
 
 状态将根据关联的 AMP 操作或事件发生变化。以下示例根据用户互动来更改状态：
 
 ```html
-<button on="tap:AMP.setState({animateBox: 'invisibleBox'})">
-    Disappear
-</button>
-<button on="tap:AMP.setState({animateBox: 'visibleBox'})">
-    Reappear
-</button>
-<button on="tap:AMP.setState({animateBox: 'moveLeft'})">
-    Move Left
-</button>
-<button on="tap:AMP.setState({animateBox: 'moveRight'})">
-  Move Right
-</button>
+<button on="tap:AMP.setState({animateBox: 'invisibleBox'})">Disappear</button>
+<button on="tap:AMP.setState({animateBox: 'visibleBox'})">Reappear</button>
+<button on="tap:AMP.setState({animateBox: 'moveLeft'})">Move Left</button>
+<button on="tap:AMP.setState({animateBox: 'moveRight'})">Move Right</button>
 ```
 
 按上述方式使用 [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) 会将类明确设置为定义的类。您不必告知它移除其他类。

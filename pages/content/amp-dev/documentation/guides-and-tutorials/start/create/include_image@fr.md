@@ -1,10 +1,10 @@
 ---
-"$title": Include an image
-"$order": '2'
+'$title': Include an image
+$order: 2
 description: La plupart des balises HTML peuvent être utilisées directement dans HTML AMP, mais certaines balises, telles que la balise <img>, sont remplacées par des balises HTML AMP personnalisées équivalentes ou légèrement améliorées
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 La plupart des balises HTML peuvent être utilisées directement dans HTML AMP, mais certaines, comme la balise `<img>`, sont remplacées par des balises équivalentes ou des balises HTML AMP personnalisées légèrement améliorées (et quelques balises problématiques sont purement interdites, voir les [balises HTML dans la spécification](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)).

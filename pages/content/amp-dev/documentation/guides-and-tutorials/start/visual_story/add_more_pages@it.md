@@ -1,7 +1,7 @@
 ---
-"$title": Aggiunta di altre pagine
-"$order": '5'
-description: "Ora che abbiamo imparato come aggiungere una pagina a una storia web, possiamo procedere all'aggiunta di altre pagine alla nostra storia \"The Joy of Pets\" che è molto simile."
+'$title': Aggiunta di altre pagine
+$order: 5
+description: 'Ora che abbiamo imparato come aggiungere una pagina a una storia web, possiamo procedere all''aggiunta di altre pagine alla nostra storia "The Joy of Pets" che è molto simile.'
 author: bpaduch
 ---
 

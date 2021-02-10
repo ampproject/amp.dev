@@ -1,11 +1,11 @@
 ---
-"$title": 验证 AMP 网页
-"$order": '0'
+'$title': 验证 AMP 网页
+$order: 0
 description: 观看我们的视频，了解各种验证选项。AMP 的强大之处在于它不仅能提升网页加载速度，还能以可验证的方式…
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 ---
 
 [video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='观看我们的视频，了解各种验证选项。']
@@ -82,14 +82,15 @@ var fs = require('fs');
 amphtmlValidator.getInstance().then(function (validator) {
   var input = fs.readFileSync('index.html', 'utf8');
   var result = validator.validateString(input);
-  ((result.status === 'PASS') ? console.log : console.error)(result.status);
+  (result.status === 'PASS' ? console.log : console.error)(result.status);
   for (var ii = 0; ii < result.errors.length; ii++) {
     var error = result.errors[ii];
-    var msg = 'line ' + error.line + ', col ' + error.col + ': ' + error.message;
+    var msg =
+      'line ' + error.line + ', col ' + error.col + ': ' + error.message;
     if (error.specUrl !== null) {
       msg += ' (see ' + error.specUrl + ')';
     }
-    ((error.severity === 'ERROR') ? console.error : console.warn)(msg);
+    (error.severity === 'ERROR' ? console.error : console.warn)(msg);
   }
 });
 ```
@@ -103,18 +104,18 @@ const gulp = require('gulp');
 const gulpAmpValidator = require('gulp-amphtml-validator');
 
 const paths = {
-  src: 'src/*.html'
+  src: 'src/*.html',
 };
 
 gulp.task('amphtml:validate', () => {
-  return gulp.src(paths.src)
+  return gulp
+    .src(paths.src)
     .pipe(gulpAmpValidator.validate())
     .pipe(gulpAmpValidator.format())
     .pipe(gulpAmpValidator.failAfterError());
 });
 
-gulp.task('default', ['amphtml:validate'], function () {
-});
+gulp.task('default', ['amphtml:validate'], function () {});
 ```
 
 ### 命令行工具
@@ -158,12 +159,12 @@ minimum_valid_amp.html: PASS
 [sourcecode:console]
 $ amphtml-validator --help
 
-  Usage: index [options] <fileOrUrlOrMinus...>
+Usage: index [options] <fileOrUrlOrMinus...>
 
-  Validates the files or urls provided as arguments. If "-" is
-  specified, reads from stdin instead.
+Validates the files or urls provided as arguments. If "-" is
+specified, reads from stdin instead.
 
-  Options:
+Options:
 
     -h, --help                  output usage information
     -V, --version               output the version number
@@ -178,6 +179,7 @@ $ amphtml-validator --help
               supporting color).
       "json"  emits json corresponding to the ValidationResult
               message in validator.proto.
+
 [/sourcecode]
 
 ## 如果我的网页无效，会出现什么情况？
@@ -197,19 +199,13 @@ AMP 验证工具不仅能在开发过程中为您提供便利，还可供将您�
 该标记生成了相关的 AMP 验证错误（在 3 种不同的工具中分别如下所示）：
 
 - 浏览器开发者控制台
-    <amp-img src="/static/img/docs/validator_console_imgerror.png" width="696" height="30" layout="responsive" alt="AMP 错误：标记 'img' 只能是标记 'noscript' 的子级。您是不是要使用 'amp-img'？第 11 行第 2 列"></amp-img>
-
-
+  <amp-img src="/static/img/docs/validator_console_imgerror.png" width="696" height="30" layout="responsive" alt="AMP 错误：标记 'img' 只能是标记 'noscript' 的子级。您是不是要使用 'amp-img'？第 11 行第 2 列"></amp-img>
 
 - 网页界面
-    <amp-img src="/static/img/docs/validator_webui_imgerror.png" width="676" height="58" layout="responsive" alt="AMP 错误：标记 'img' 只能是标记 'noscript' 的子级。您是不是要使用 'amp-img'？第 11 行第 2 列"></amp-img>
-
-
+  <amp-img src="/static/img/docs/validator_webui_imgerror.png" width="676" height="58" layout="responsive" alt="AMP 错误：标记 'img' 只能是标记 'noscript' 的子级。您是不是要使用 'amp-img'？第 11 行第 2 列"></amp-img>
 
 - 浏览器扩展程序
-    <amp-img src="/static/img/docs/validator_extension_imgerror.png" width="724" height="108" layout="responsive" alt="AMP 错误：标记 'img' 只能是标记 'noscript' 的子级。您是不是要使用 'amp-img'？第 11 行第 2 列"></amp-img>
-
-
+  <amp-img src="/static/img/docs/validator_extension_imgerror.png" width="724" height="108" layout="responsive" alt="AMP 错误：标记 'img' 只能是标记 'noscript' 的子级。您是不是要使用 'amp-img'？第 11 行第 2 列"></amp-img>
 
 每种工具都提供了以下几个信息：
 

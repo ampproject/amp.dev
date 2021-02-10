@@ -1,6 +1,6 @@
 ---
-"$title": Meninjau kode starter
-"$order": '1'
+'$title': Meninjau kode starter
+$order: 1
 description: 'Sebelum mulai menambahkan kode, mari kita tinjau contoh halaman '
 ---
 

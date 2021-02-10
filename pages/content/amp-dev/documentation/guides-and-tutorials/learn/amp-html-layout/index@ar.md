@@ -1,11 +1,11 @@
 ---
-"$title": نظام تخطيط AMPHTML
-order: '1'
+'$title': نظام تخطيط AMPHTML
+$order: 1
 formats:
-- websites
-- email
-- stories
-- ads
+  - websites
+  - email
+  - stories
+  - ads
 teaser:
   text: 'نظرة عامة '
 ---
@@ -33,7 +33,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-##  نظرة عامة
+## نظرة عامة
 
 الهدف الرئيسي لنظام التخطيط هو ضمان أنه يمكن لعناصر AMP التعبير عن التخطيط الخاص بها لكي يتمكن وضع التشغيل من تخمين حجم العناصر قبل استكمال أي موارد بعيدة مثل JavaScript واستدعاءات البيانات. يعتبر هذا الأمر في غاية الأهمية نظرًا لأنه يقلل بدرجة كبيرة التعطل في العرض والتمرير.
 
@@ -68,13 +68,14 @@ limitations under the License.
 
 [sourcecode:html]
 <amp-img
-  src="/img/amp.jpg"
-  width="1080"
-  height="610"
-  layout="responsive"
-  alt="an image"
-></amp-img>
-[/sourcecode]
+src="/img/amp.jpg"
+width="1080"
+height="610"
+layout="responsive"
+alt="an image"
+
+> </amp-img>
+> [/sourcecode]
 
 القيم المدعومة لسمة `layout`:
 
@@ -139,14 +140,14 @@ limitations under the License.
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="400"
-  height="300"
-  layout="responsive"
-  sizes="(min-width: 320px) 320px, 100vw"
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="400"
+height="300"
+layout="responsive"
+sizes="(min-width: 320px) 320px, 100vw"
+
+> </amp-img>
+> [/sourcecode]
 
 ### `disable-inline-width` <a name="disable-inline-width"></a>
 
@@ -158,15 +159,15 @@ limitations under the License.
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="400"
-  height="300"
-  layout="responsive"
-  sizes="(min-width: 320px) 320px, 100vw"
-  disable-inline-width
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="400"
+height="300"
+layout="responsive"
+sizes="(min-width: 320px) 320px, 100vw"
+disable-inline-width
+
+> </amp-img>
+> [/sourcecode]
 
 ### `heights` <a name="heights"></a>
 
@@ -183,13 +184,13 @@ limitations under the License.
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="320"
-  height="256"
-  heights="(min-width:500px) 200px, 80%"
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="320"
+height="256"
+heights="(min-width:500px) 200px, 80%"
+
+> </amp-img>
+> [/sourcecode]
 
 ### `media` <a name="media"></a>
 
@@ -201,20 +202,21 @@ limitations under the License.
 
 [sourcecode:html]
 <amp-img
-  media="(min-width: 650px)"
-  src="wide.jpg"
-  width="466"
-  height="355"
-  layout="responsive"
-></amp-img>
-<amp-img
-  media="(max-width: 649px)"
-  src="narrow.jpg"
-  width="527"
-  height="193"
-  layout="responsive"
-></amp-img>
-[/sourcecode]
+media="(min-width: 650px)"
+src="wide.jpg"
+width="466"
+height="355"
+layout="responsive"
+
+> </amp-img>
+> <amp-img
+>   media="(max-width: 649px)"
+>   src="narrow.jpg"
+>   width="527"
+>   height="193"
+>   layout="responsive"
+> </amp-img>
+> [/sourcecode]
 
 ### `placeholder` <a name="placeholder"></a>
 
@@ -222,7 +224,7 @@ limitations under the License.
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
-  <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+<amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
 [/sourcecode]
 
@@ -232,13 +234,14 @@ limitations under the License.
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
+
   <div fallback>Cannot play animated images on this device.</div>
 </amp-anim>
 [/sourcecode]
 
 ### `noloading` <a name="noloading"></a>
 
-تشير سمة `noloading` إلى ما إذا تم إيقاف تشغيل "مؤشر التحميل" لهذا العنصر أم لا. معظم عناصر AMP مدرجة على أنها تسمح بإظهار "مؤشر تحميل"، وهو الرسم المتحرك الأساسي الذي  يعرض العنصر الذي لم يتم تحميله بالكامل. يمكن للعناصر التخلي عن هذا السلوك بإضافة هذه السمة.
+تشير سمة `noloading` إلى ما إذا تم إيقاف تشغيل "مؤشر التحميل" لهذا العنصر أم لا. معظم عناصر AMP مدرجة على أنها تسمح بإظهار "مؤشر تحميل"، وهو الرسم المتحرك الأساسي الذي يعرض العنصر الذي لم يتم تحميله بالكامل. يمكن للعناصر التخلي عن هذا السلوك بإضافة هذه السمة.
 
 ## (tl;dr) ملخص متطلبات التخطيطات والسلوكيات<a name="tldr-summary-of-layout-requirements--behaviors"></a>
 

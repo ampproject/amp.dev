@@ -1,6 +1,6 @@
 ---
-"$title": 验证您的 AMP HTML
-"$order": '8'
+'$title': 验证您的 AMP HTML
+$order: 8
 description: 无论何时创建 AMP 网页，您都应始终验证您的 AMP HTML 正确。[您可以通过多种方式验证您的 AMP 网页…
 author: bpaduch
 ---

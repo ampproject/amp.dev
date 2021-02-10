@@ -1,6 +1,6 @@
 ---
-"$title": جعل صفحتك قابلة للاكتشاف
-"$order": '3'
+'$title': جعل صفحتك قابلة للاكتشاف
+$order: 3
 description: من الضروري إعداد هذا الارتباط ثنائي الاتجاه بحيث تفهم محركات البحث العلاقة بين مستند HTML الأساسي ومستند AMP لدينا.
 ---
 
@@ -23,7 +23,7 @@ description: من الضروري إعداد هذا الارتباط ثنائي �
 لقد اتخذنا بالفعل الخطوة الأولى لتحقيق هذا الأمر في مستند AMP من خلال تضمين علامة رابط في `<head>` للعودة إلى الصفحة الأساسية:
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 وتكون الخطوة التالية عبارة عن ربط المقال الأساسي بصفحة AMP. ويتم تحقيق ذلك من خلال تضمين علامة `<link rel="amphtml">` في قسم `<head>` في المقال الأساسي.
@@ -31,7 +31,7 @@ description: من الضروري إعداد هذا الارتباط ثنائي �
 وفي الملف `article.html`، **أضف** الرمز التالي إلى قسم `<head>`:
 
 ```html
-<link rel="amphtml" href="/article.amp.html">
+<link rel="amphtml" href="/article.amp.html" />
 ```
 
 ويوضح الرسم البياني التالي اتجاهات علامات الارتباط:
@@ -47,44 +47,43 @@ description: من الضروري إعداد هذا الارتباط ثنائي �
 بالنسبة إلى مقالتنا الإخبارية، **أضف** البيانات المنظمة التالية إلى أسفل قسم `<head>` من مستند AMP:
 
 ```html
-
 <script type="application/ld+json">
-{
- "@context": "http://schema.org",
- "@type": "NewsArticle",
- "mainEntityOfPage":{
-   "@type":"WebPage",
-   "@id":"https://example.com/my-article.html"
- },
- "headline": "My First AMP Article",
- "image": {
-   "@type": "ImageObject",
-   "url": "https://example.com/article_thumbnail1.jpg",
-   "height": 800,
-   "width": 800
- },
- "datePublished": "2015-02-05T08:00:00+08:00",
- "dateModified": "2015-02-05T09:20:00+08:00",
- "author": {
-   "@type": "Person",
-   "name": "John Doe"
- },
- "publisher": {
-   "@type": "Organization",
-   "name": "⚡ AMP Times",
-   "logo": {
-     "@type": "ImageObject",
-     "url": "https://example.com/amptimes_logo.jpg",
-     "width": 600,
-     "height": 60
-   }
- },
- "description": "My first experience in an AMPlified world"
-}
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://example.com/my-article.html"
+    },
+    "headline": "My First AMP Article",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://example.com/article_thumbnail1.jpg",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2015-02-05T08:00:00+08:00",
+    "dateModified": "2015-02-05T09:20:00+08:00",
+    "author": {
+      "@type": "Person",
+      "name": "John Doe"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "⚡ AMP Times",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://example.com/amptimes_logo.jpg",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "My first experience in an AMPlified world"
+  }
 </script>
 ```
 
-[tip type="note"] **ملحوظة –**  يجب أن يكون المحتوى مماثلا دائمًا. بالنسبة إلى المقالات الإخبارية، حدد النوع "NewsArticle"، ويجب أن يتطابق العنوان مع عنوان مقالتك. إذ يشير كائن الصورة إلى الصورة الرئيسية للمقالة. [/tip]
+[tip type="note"] **ملحوظة –** يجب أن يكون المحتوى مماثلا دائمًا. بالنسبة إلى المقالات الإخبارية، حدد النوع "NewsArticle"، ويجب أن يتطابق العنوان مع عنوان مقالتك. إذ يشير كائن الصورة إلى الصورة الرئيسية للمقالة. [/tip]
 
 **أعد تحميل** الصفحة في متصفحك وتحقق من عدم ظهور أخطاء في التحقق من صحة صفحات AMP.
 

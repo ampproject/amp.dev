@@ -1,10 +1,10 @@
 ---
-"$title": Acciones y eventos
-order: '0'
+'$title': Acciones y eventos
+$order: 0
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
   text: '[tip type="note"]'
 ---
@@ -109,7 +109,7 @@ Por ejemplo, en AMP es posible hacer lo siguiente:
 
 ## Eventos con elementos específicos <a name="element-specific-events"></a>
 
-### * - todos los elementos <a name="---all-elements"></a>
+### \* - todos los elementos <a name="---all-elements"></a>
 
 <table>
   <tr>
@@ -355,7 +355,7 @@ event.valueAsNumber</pre>
 
 ## Acciones específicas para los elementos <a name="element-specific-actions"></a>
 
-### * (todos los elementos) <a name="-all-elements"></a>
+### \* (todos los elementos) <a name="-all-elements"></a>
 
 <table>
   <tr>

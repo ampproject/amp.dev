@@ -1,7 +1,7 @@
 ---
-"$title": Trabajo con datos remotos
-"$order": '3'
-description: "¿Qué sucede si los datos vinculables son demasiado grandes o complejos para recuperarse al cargar la página? ¿O qué pasa si cada SKU tiene un precio que tarda..."
+'$title': Trabajo con datos remotos
+$order: 3
+description: '¿Qué sucede si los datos vinculables son demasiado grandes o complejos para recuperarse al cargar la página? ¿O qué pasa si cada SKU tiene un precio que tarda...'
 toc: 'true'
 ---
 
@@ -19,15 +19,15 @@ También puede vincular el atributo `src` para el elemento [`<amp-state>`](../..
 
 Hagamos uso de la capacidad de obtener datos remotos para buscar precios de SKUs en nuestra muestra. Nuestro servidor de desarrollo Express.js en `app.js` ya cuenta con un endpoint `/shirts/sizesAndPrices?shirt=<sku>` que, dado el SKU de una camisa, devuelve los tamaños y el precio disponibles para cada tamaño. Envía la respuesta con un retraso artificial de un segundo para simular la latencia de la red.
 
-Solicitud | Respuesta
---- | ---
-`GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}`
+| Solicitud                             | Respuesta                                    |
+| ------------------------------------- | -------------------------------------------- |
+| `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
 De forma similar a los datos JSON que están dentro de los elementos [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state), los datos remotos devueltos por estas recuperaciones se combinan y se encuentran disponibles bajo el atributo <code>id</code> del elemento. Por ejemplo, los datos devueltos de la respuesta de ejemplo anterior se pueden acceder en una expresión:
 
-Expresión | Resultado
---- | ---
-`shirts['1001'].sizes['XS']` | `8.99`
+| Expresión                    | Resultado |
+| ---------------------------- | --------- |
+| `shirts['1001'].sizes['XS']` | `8.99`    |
 
 ### Vinculación de los datos
 
@@ -36,12 +36,15 @@ Ahora, apliquemos esto a nuestro ejemplo de comercio electrónico. Primero vamos
 ```html
 <!-- When `selected.sku` changes, update the `src` attribute and fetch
      JSON at the new URL. Then, merge that data under `id` ("shirts"). -->
-<amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
+<amp-state
+  id="shirts"
+  [src]="'/shirts/sizesAndPrices?sku=' + selected.sku"
+></amp-state>
 ```
 
 ### Indicación de los tamaños no disponibles
 
-A continuación, marque claramente los tamaños no disponibles para un SKU determinado. La clase CSS `"unavailable"` agrega una línea diagonal mediante un elemento -- que podemos agregar a los elementos que están dentro del selector [`amp-selector`](../../../../documentation/components/reference/amp-selector.md)  correspondientes a los tamaños no disponibles:
+A continuación, marque claramente los tamaños no disponibles para un SKU determinado. La clase CSS `"unavailable"` agrega una línea diagonal mediante un elemento -- que podemos agregar a los elementos que están dentro del selector [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) correspondientes a los tamaños no disponibles:
 
 ```html
 <amp-selector name="size">
@@ -106,16 +109,22 @@ Y debemos actualizar el estado predeterminado de los elementos relevantes:
       </td>
       <!-- Add the 'unavailable' class to the next three <td> elements
            to be consistent with the available sizes of the default SKU. -->
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'"
+      >
         <div option="M">M</div>
       </td>
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'"
+      >
         <div option="L">L</div>
       </td>
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'"
+      >
         <div option="XL">XL</div>
       </td>
     </tr>
@@ -134,18 +143,21 @@ Nuestra tienda AMPPAREL es peculiar, ya que el precio de la camisa es específic
 ```html
 <!-- When an element is selected, set the `selectedSize` variable to the
      value of the "option" attribute of the selected element.  -->
-<amp-selector name="size"
-    on="select:AMP.setState({selectedSize: event.targetOption})">
+<amp-selector
+  name="size"
+  on="select:AMP.setState({selectedSize: event.targetOption})"
+></amp-selector>
 ```
 
 Tenga en cuenta que no estamos inicializando el valor de `selectedSize` mediante el elemento `amp-state#selected`. Eso es porque intencionalmente no proporcionamos un tamaño seleccionado de manera predeterminada y, en vez de eso, queremos obligar al usuario a elegir un tamaño.
 
- [tip type="tip"] **CONSEJO:** `AMP.setState()` puede utilizarse para definir nuevas variables, además de modificar las existentes. Las expresiones evaluarán las variables indefinidas a `null`. [/tip]
+[tip type="tip"] **CONSEJO:** `AMP.setState()` puede utilizarse para definir nuevas variables, además de modificar las existentes. Las expresiones evaluarán las variables indefinidas a `null`. [/tip]
 
 Agregue un nuevo elemento `<span>` que enrolle la etiqueta del precio y cambie el texto predeterminado a "--" ya que no hay una selección de tamaño predeterminada.
 
 ```html
-<h6>PRICE :
+<h6>
+  PRICE :
   <!-- Display the price of the selected shirt in the selected size if available.
        Otherwise, display the placeholder text '---'. -->
   <span [text]="shirts[selected.sku].sizes[selectedSize] || '---'">---</span>
@@ -163,9 +175,13 @@ Agregue un nuevo elemento `<span>` que enrolle la etiqueta del precio y cambie e
      1. There is no selected size, OR
      2. The available sizes for the selected SKU haven't been fetched yet
 -->
-<input type="submit" value="ADD TO CART" disabled
-    class="mdl-button mdl-button--raised mdl-button--accent"
-    [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]">
+<input
+  type="submit"
+  value="ADD TO CART"
+  disabled
+  class="mdl-button mdl-button--raised mdl-button--accent"
+  [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]"
+/>
 ```
 
-**Pruébelo**:  Si selecciona un tamaño que no está disponible, no podrá agregarlo al carrito.
+**Pruébelo**: Si selecciona un tamaño que no está disponible, no podrá agregarlo al carrito.

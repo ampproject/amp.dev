@@ -1,10 +1,10 @@
 ---
-"$title": Depuração de problemas de cache do AMP
-order: '8'
+'$title': Depuração de problemas de cache do AMP
+$order: 8
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
   text: Por que meu documento está corrompido no cache AMP?
 ---

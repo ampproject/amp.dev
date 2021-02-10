@@ -1,8 +1,8 @@
 ---
-"$title": Phục vụ AMP bằng trao đổi nội dung đã kí danh
-"$order": '4'
+'$title': Phục vụ AMP bằng trao đổi nội dung đã kí danh
+$order: 4
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 ---
 
@@ -10,7 +10,7 @@ AMP mang đến những lợi ích về tốc độ vượt xa phần định d�
 
 Một [trao đổi nội dung đã kí danh](https://developers.google.com/web/updates/2018/11/signed-exchanges) bao gồm một tài liệu AMP hợp lệ và URL gốc của nội dung. Thông tin này được bảo vệ bởi những chữ kí kỹ thuật số, vốn liên kết bảo mật tài liệu này với URL của nó. Điều này giúp các trình duyệt hiển thị an toàn URL gốc trong thanh URL thay vì tên máy chủ phân phối các byte đến trình duyệt.
 
-Nội dung AMP đã kí danh được chuyển phát *thêm vào* (chứ không thay thế) nội dung AMP thông thường.
+Nội dung AMP đã kí danh được chuyển phát _thêm vào_ (chứ không thay thế) nội dung AMP thông thường.
 
 {{ image('/static/img/docs/guides/sxg/sxg.png', 411, 293, layout='responsive', alt='Image displaying URL from signed exchange', caption=' ', align='' ) }}
 
@@ -20,14 +20,14 @@ Nội dung AMP đã kí danh được chuyển phát *thêm vào* (chứ không 
 
 Để thực thi trao đổi nội dung đã kí danh, bạn phải đáp ứng những yêu cầu sau:
 
-- Khả năng cấu hình và kiểm soát các header HTTP được máy chủ tạo ra. (Phần lớn những giải pháp đặt máy chủ trên cơ sở web thuần tuý như Blogger đều *không* tương thích với trao đổi nội dung đã kí danh.)
+- Khả năng cấu hình và kiểm soát các header HTTP được máy chủ tạo ra. (Phần lớn những giải pháp đặt máy chủ trên cơ sở web thuần tuý như Blogger đều _không_ tương thích với trao đổi nội dung đã kí danh.)
 - Khả năng tạo trao đổi nội dung đã kí danh của AMP, chẳng hạn bằng cách chạy [`amppackager`](https://github.com/ampproject/amppackager/blob/master/README.md), như một [Go binary](https://golang.org/doc/install), hoặc bên trong một [Docker VM](https://docs.docker.com/machine/get-started/).
-    - Trình đóng gói cần được cập nhật sau mỗi sáu tuần.
+  - Trình đóng gói cần được cập nhật sau mỗi sáu tuần.
 - Khả năng thực hiện tác vụ [Vary](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary) lên header `Accept` và `AMP-Cache-Transform` trên các máy chủ HTTP rìa, trả về nội dung khác nhau cho cùng URL.
 - Hệ thống chạy `amppackager` cần phải thực hiện được những yêu cầu mạng gửi đi đến:
-    - Cơ quan chứng chỉ cung cấp chứng chỉ của bạn
-    - Máy chủ nhà phát hành lưu trữ những tài liệu AMP cần kí danh
-    - `cdn.ampproject.org` để có được phiên bản hiện tại của AMP
+  - Cơ quan chứng chỉ cung cấp chứng chỉ của bạn
+  - Máy chủ nhà phát hành lưu trữ những tài liệu AMP cần kí danh
+  - `cdn.ampproject.org` để có được phiên bản hiện tại của AMP
 - Một hệ thống file lưu trữ bền được chia sẻ cho tất cả các thể hiện của `amppackager` chạy trong cùng trung tâm dữ liệu.
 
 # Thực thi trao đổi nội dung đã kí danh
@@ -143,7 +143,7 @@ format version: 1b3
 
 (Lưu ý rằng chức năng chuyển `-verify` sẽ không hoạt động ở điểm này vì những chứng chỉ bắt buộc không nằm trên máy chủ `https://example.com/`.)
 
-Xác minh rằng phần đáp ứng *luôn* bao gồm header `Vary` với giá trị `Accept,AMP-Cache-Transform` (bất luận loại MIME là `text/html`, `application/signed-exchange`, hay gì đó khác):
+Xác minh rằng phần đáp ứng _luôn_ bao gồm header `Vary` với giá trị `Accept,AMP-Cache-Transform` (bất luận loại MIME là `text/html`, `application/signed-exchange`, hay gì đó khác):
 
 ```sh
 $ curl -si https://staging.example.com/ | less

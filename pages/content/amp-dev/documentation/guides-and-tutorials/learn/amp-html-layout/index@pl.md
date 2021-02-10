@@ -1,11 +1,11 @@
 ---
-"$title": System układu AMPHTML
-order: '1'
+'$title': System układu AMPHTML
+$order: 1
 formats:
-- websites
-- email
-- stories
-- ads
+  - websites
+  - email
+  - stories
+  - ads
 teaser:
   text: 'Omówienie '
 ---
@@ -33,7 +33,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-##  Omówienie
+## Omówienie
 
 Głównym celem systemu układu jest zapewnienie elementom AMP możliwości wyrażania swojego układu w sposób umożliwiający środowisku uruchomieniowemu wywnioskowanie rozmiaru elementów przed wykonaniem wywołań jakichkolwiek zasobów zdalnych, takich jak JavaScript i dane. Jest to o tyle istotne, że znacznie ogranicza to pauzy renderowania i przewijania.
 
@@ -68,13 +68,14 @@ AMP zapewnia zestaw układów, które określają sposób działania składnika 
 
 [sourcecode:html]
 <amp-img
-  src="/img/amp.jpg"
-  width="1080"
-  height="610"
-  layout="responsive"
-  alt="an image"
-></amp-img>
-[/sourcecode]
+src="/img/amp.jpg"
+width="1080"
+height="610"
+layout="responsive"
+alt="an image"
+
+> </amp-img>
+> [/sourcecode]
 
 Obsługiwane wartości atrybutu `layout`:
 
@@ -141,14 +142,14 @@ W poniższym przykładzie, jeśli okienko na ekranie jest szersze niż `320px`, 
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="400"
-  height="300"
-  layout="responsive"
-  sizes="(min-width: 320px) 320px, 100vw"
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="400"
+height="300"
+layout="responsive"
+sizes="(min-width: 320px) 320px, 100vw"
+
+> </amp-img>
+> [/sourcecode]
 
 ### `disable-inline-width` <a name="disable-inline-width"></a>
 
@@ -160,15 +161,15 @@ W poniższym przykładzie szerokość elementu `<amp-img>` nie jest zmieniana, a
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="400"
-  height="300"
-  layout="responsive"
-  sizes="(min-width: 320px) 320px, 100vw"
-  disable-inline-width
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="400"
+height="300"
+layout="responsive"
+sizes="(min-width: 320px) 320px, 100vw"
+disable-inline-width
+
+> </amp-img>
+> [/sourcecode]
 
 ### `heights` <a name="heights"></a>
 
@@ -185,13 +186,13 @@ W poniższym przykładzie wysokość obrazu będzie domyślnie wynosiła 80% sze
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="320"
-  height="256"
-  heights="(min-width:500px) 200px, 80%"
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="320"
+height="256"
+heights="(min-width:500px) 200px, 80%"
+
+> </amp-img>
+> [/sourcecode]
 
 ### `media` <a name="media"></a>
 
@@ -203,20 +204,21 @@ W poniższym przykładzie mamy 2 obrazy z wzajemnie wykluczającymi się zapytan
 
 [sourcecode:html]
 <amp-img
-  media="(min-width: 650px)"
-  src="wide.jpg"
-  width="466"
-  height="355"
-  layout="responsive"
-></amp-img>
-<amp-img
-  media="(max-width: 649px)"
-  src="narrow.jpg"
-  width="527"
-  height="193"
-  layout="responsive"
-></amp-img>
-[/sourcecode]
+media="(min-width: 650px)"
+src="wide.jpg"
+width="466"
+height="355"
+layout="responsive"
+
+> </amp-img>
+> <amp-img
+>   media="(max-width: 649px)"
+>   src="narrow.jpg"
+>   width="527"
+>   height="193"
+>   layout="responsive"
+> </amp-img>
+> [/sourcecode]
 
 ### `placeholder` <a name="placeholder"></a>
 
@@ -224,7 +226,7 @@ Atrybut `placeholder` można ustawić w dowolnym elemencie HTML, nie tylko eleme
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
-  <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+<amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
 [/sourcecode]
 
@@ -234,6 +236,7 @@ Atrybut `fallback` można ustawić w dowolnym elemencie HTML, nie tylko elementa
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
+
   <div fallback>Cannot play animated images on this device.</div>
 </amp-anim>
 [/sourcecode]

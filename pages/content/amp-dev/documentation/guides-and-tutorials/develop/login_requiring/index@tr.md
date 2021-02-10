@@ -1,11 +1,11 @@
 ---
-"$title": Giriş gerektiren bir AMP sayfası oluşturma
-"$order": '0'
+'$title': Giriş gerektiren bir AMP sayfası oluşturma
+$order: 0
 description: Kullanıcıların yorum bırakmak gibi bazı sayfa etkileşimleri, bir giriş akışıyla koşullandırılabilir. amp-form bileşeniyle birlikte amp-access bileşenini kullanarak...
 numbered: '1'
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 Kullanıcıların yorum bırakmak gibi bazı sayfa etkileşimleri, bir giriş akışıyla koşullandırılabilir. [`amp-form`](../../../../documentation/components/reference/amp-access.md) bileşeniyle birlikte [`amp-access`](../../../../documentation/components/reference/amp-form.md) bileşenini kullanarak AMP ile bir giriş akışı oluşturabilirsiniz.

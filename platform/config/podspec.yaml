@@ -1,3 +1,4 @@
+grow_version: '>=1.0.0'
 home: /content/amp-dev/index.html
 
 localization:
@@ -10,33 +11,33 @@ sitemap:
 
 markdown:
   extensions:
-  - kind: sourcecode
-    classes: True
-    class_name: ap-m-code-snippet
-  - kind: markdown.extensions.codehilite
-    classes: True
-    class_name: ap-m-code-snippet
-  - kind: markdown.extensions.extra
-  - kind: markdown.extensions.sane_lists
+    - kind: sourcecode
+      classes: True
+      class_name: ap-m-code-snippet
+    - kind: markdown.extensions.codehilite
+      classes: True
+      class_name: ap-m-code-snippet
+    - kind: markdown.extensions.extra
+    - kind: markdown.extensions.sane_lists
 
 ext:
-- extensions.inline_text_assets.InlineTextAssetsExtension:
-    bundles:
+  - extensions.inline_text_assets.InlineTextAssetsExtension:
+      bundles:
         - name: 'styles'
           method: 'addCssFile'
         - name: 'icons'
           method: 'useIcon'
-- extensions.log_beautifier.LogBeautifierExtension
-- extensions.amp_example_preview.AmpExamplePreviewExtension
-- extensions.amp_dependencies.AmpDependenciesExtension
-- extensions.amp_dev.AmpDevExtension
-- extensions.url_beautifier.UrlBeautifierExtension
-- extensions.internal_links.PodInternalLinkExtension:
-    component_path: '/content/amp-dev/documentation/components/reference/'
-- extensions.jinja2_optimized_codehilite.Jinja2OptimizedCodehiliteExtension
-- extensions.markdown_toc_patch.MarkdownTocPatchExtension
-- extensions.markdown_in_html.MarkdownInHtmlExtension:
-    prevent_markdown_extra_auto_loading_other: true
-- extensions.extract_highlights_info.ExtractHighlightsInfoExtension:
-    input_file: /platform/config/search-promoted-pages.json
-    output_folder: /dist/static/files/search-promoted-pages
+  - extensions.log_beautifier.LogBeautifierExtension
+  - extensions.amp_example_preview.AmpExamplePreviewExtension
+  - extensions.amp_dependencies.AmpDependenciesExtension
+  - extensions.amp_dev.AmpDevExtension
+  - extensions.url_beautifier.UrlBeautifierExtension
+  - extensions.internal_links.PodInternalLinkExtension:
+      component_path: '/content/amp-dev/documentation/components/reference/'
+  - extensions.jinja2_optimized_codehilite.Jinja2OptimizedCodehiliteExtension
+  - extensions.markdown_toc_patch.MarkdownTocPatchExtension
+  - extensions.markdown_in_html.MarkdownInHtmlExtension:
+      prevent_markdown_extra_auto_loading_other: true
+  - extensions.extract_highlights_info.ExtractHighlightsInfoExtension:
+      input_file: /platform/config/search-promoted-pages.json
+      output_folder: /dist/static/files/search-promoted-pages

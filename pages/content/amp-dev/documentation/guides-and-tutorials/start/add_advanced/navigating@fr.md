@@ -1,6 +1,6 @@
 ---
-"$title": Naviguer sur votre site
-"$order": '5'
+'$title': Naviguer sur votre site
+$order: 5
 description: La plupart des sites Internet mobiles incluent un menu de navigation sur le site. Ces menus peuvent prendre de nombreuses formes différentes. Dans ce tutoriel, nous allons essayer les exemples suivants pour ...
 ---
 
@@ -18,9 +18,14 @@ Essayez de **remplacer** votre section `<header>` par cette version qui inclut u
 ```html
 <header class="headerbar">
   <a href="homepage.html">
-    <amp-img class="home-button" src="icons/home.png" width="36" height="36"></amp-img>
+    <amp-img
+      class="home-button"
+      src="icons/home.png"
+      width="36"
+      height="36"
+    ></amp-img>
   </a>
- <div class="site-name">News Site</div>
+  <div class="site-name">News Site</div>
 </header>
 ```
 
@@ -62,14 +67,20 @@ Une technique de navigation courante consiste à ajouter une icône de menu qui,
 Tout d'abord, nous devons **ajouter** le JavaScript du composant [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) à la section `<head>` :
 
 ```html
-<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+<script
+  async
+  custom-element="amp-sidebar"
+  src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"
+></script>
 ```
 
 Ensuite, nous voulons afficher une icône de menu. Lorsque l'icône est activée, la barre latérale s'ouvre. **Remplacez** le `<header>` par le code suivant pour afficher une icône ["hamburger"](https://en.wikipedia.org/wiki/Hamburger_button) au lieu d'une icône d'accueil :
 
 ```html
 <header class="headerbar">
-  <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
+  <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">
+    ☰
+  </div>
   <div class="site-name">News Site</div>
 </header>
 ```
@@ -80,7 +91,15 @@ Dans le code ci-dessus, nous activons/désactivons (`toggle`) la barre latérale
 
 ```html
 <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
-  <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
+  <div
+    role="button"
+    aria-label="close sidebar"
+    on="tap:sidebar1.toggle"
+    tabindex="0"
+    class="close-sidebar"
+  >
+    ✕
+  </div>
   <ul class="sidebar">
     <li><a href="#">Example 1</a></li>
     <li><a href="#">Example 2</a></li>
@@ -103,7 +122,7 @@ Enfin, **ajoutez** ces règles de style à votre CSS intégré:
 }
 .sidebar > li {
   list-style: none;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 .sidebar a {
   text-decoration: none;

@@ -1,9 +1,9 @@
 ---
-"$title": Praktik-praktik terbaik AMP untuk Email
-"$order": '1'
-"$category": Develop
+'$title': Praktik-praktik terbaik AMP untuk Email
+$order: 1
+'$category': Develop
 formats:
-- email
+  - email
 ---
 
 AMP memungkinkan jenis-jenis baru yang menarik untuk konten yang lebih menghanyutkan dan menyenangkan di email! Saat mendesain email, ingatlah untuk mengikuti praktik-praktik terbaik untuk memastikan email tersebut efektif, dapat diandalkan di seluruh platform, dan bekerja sesuai harapan pengguna Anda.
@@ -16,7 +16,7 @@ Saat menggunakan [`amp-list`](../../../documentation/components/reference/amp-li
 
 - Saat menggunakan [`amp-carousel`](../../components/reference/amp-carousel-v0.1.md?format=email), pastikan bahwa atribut `controls` sudah ditetapkan. Ini memungkinkan pengguna perangkat layar sentuh, seperti ponsel cerdas, untuk bernavigasi di korsel (carousel).
 - Saat menggunakan [`amp-form`](../../../documentation/components/reference/amp-form.md?format=email), ingatlah bahwa tidak semua jenis input didukung di iOS. Kunjungi [Nilai-Nilai Input yang Didukung](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/InputTypes.html) di Referensi HTML Safari untuk mendapatkan informasi selengkapnya.
-- Tidak semua [ nilai-nilai atribut](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) `autocomplete`  didukung di semua aplikasi dan browser yang berbeda. Anggap bahwa pengisian otomatis tidak tersedia bagi pengguna Anda dan jaga agar formulir singkat.
+- Tidak semua [ nilai-nilai atribut](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) `autocomplete` didukung di semua aplikasi dan browser yang berbeda. Anggap bahwa pengisian otomatis tidak tersedia bagi pengguna Anda dan jaga agar formulir singkat.
 
 #Pengaturan gaya
 

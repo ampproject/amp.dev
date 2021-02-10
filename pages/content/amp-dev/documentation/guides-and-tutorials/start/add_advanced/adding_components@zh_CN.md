@@ -1,6 +1,6 @@
 ---
-"$title": 添加 AMP 扩展组件
-"$order": '2'
+'$title': 添加 AMP 扩展组件
+$order: 2
 description: 借助 AMP 的组件系统，您可以既轻松又快速地在报道中构建高效的自适应功能。AMP HTML 库提供的 AMP 组件分为以下 3 类…
 ---
 
@@ -25,7 +25,8 @@ AMP 网页中的广告是使用 [`amp-ad`](../../../../documentation/components/
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/image/static">
+  data-slot="/35096353/amptesting/image/static"
+>
 </amp-ad>
 ```
 
@@ -40,7 +41,8 @@ AMP 网页中的广告是使用 [`amp-ad`](../../../../documentation/components/
   type="a9"
   data-aax_size="300x250"
   data-aax_pubname="test123"
-  data-aax_src="302">
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -51,7 +53,11 @@ AMP 网页中的广告是使用 [`amp-ad`](../../../../documentation/components/
 将以下脚本**添加**到 `<head>` 标记中：
 
 ```html
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script
+  async
+  custom-element="amp-ad"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+></script>
 ```
 
 **刷新**网页后，您应该会看到两个测试广告：
@@ -67,7 +73,8 @@ AMP 网页中的广告是使用 [`amp-ad`](../../../../documentation/components/
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/uk">
+  data-slot="/35096353/amptesting/geo/uk"
+>
   <div fallback>No ad appeared because you're not browsing from the UK!</div>
 </amp-ad>
 
@@ -75,7 +82,8 @@ AMP 网页中的广告是使用 [`amp-ad`](../../../../documentation/components/
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/us">
+  data-slot="/35096353/amptesting/geo/us"
+>
   <div fallback>No ad appeared because you're not browsing from the US!</div>
 </amp-ad>
 ```
@@ -107,14 +115,15 @@ AMP 网页中的广告是使用 [`amp-ad`](../../../../documentation/components/
   data-videoid="npum8JsITQE"
   layout="responsive"
   width="480"
-  height="270">
+  height="270"
+>
   <div fallback>
     <p>The video could not be loaded.</p>
   </div>
 </amp-youtube>
 ```
 
-**刷新**网页。您看到的不会是视频，而是以下文字：*无法加载该视频。*
+**刷新**网页。您看到的不会是视频，而是以下文字：_无法加载该视频。_
 
 即使您的浏览器可以完全正常地显示 YouTube 视频，您仍会遇到此错误。这是为什么呢？事实上，并非是视频加载失败了，而是组件本身加载失败了。
 
@@ -125,7 +134,11 @@ AMP 网页中的广告是使用 [`amp-ad`](../../../../documentation/components/
 将以下脚本**添加**到 `<head>` 标记中：
 
 ```html
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script
+  async
+  custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+></script>
 ```
 
 **刷新**网页后，您应该会看到以下 YouTube 视频：
@@ -145,7 +158,11 @@ AMP 网页中的广告是使用 [`amp-ad`](../../../../documentation/components/
 首先，将以下 JavaScript 请求添加到文档的 `<head>` 标记中：
 
 ```html
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script
+  async
+  custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+></script>
 ```
 
 现在，在您的报道中**添加**下述代码以嵌入推文：
@@ -155,7 +172,8 @@ AMP 网页中的广告是使用 [`amp-ad`](../../../../documentation/components/
   width="486"
   height="657"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
 
@@ -180,7 +198,11 @@ AMP 提供了另一个组件来专门应对这种情况，即 [`amp-fit-text`](.
 我们来试一试。首先，将该组件的库**添加**到 `<head>` 标记中：
 
 ```html
-<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+<script
+  async
+  custom-element="amp-fit-text"
+  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+></script>
 ```
 
 将以下内容添加到网页中：
@@ -205,7 +227,11 @@ AMP 提供了另一个组件来专门应对这种情况，即 [`amp-fit-text`](.
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-   And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+  And the Raven, never flitting, still is sitting, still is sitting. On the
+  pallid bust of Pallas just above my chamber door; And his eyes have all the
+  seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming
+  throws his shadow on the floor; And my soul from out that shadow that lies
+  floating on the floor. Shall be lifted—nevermore!
 </amp-fit-text>
 ```
 

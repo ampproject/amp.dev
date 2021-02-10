@@ -1,6 +1,6 @@
 ---
-"$title": Sprawianie, by Twoje strony można było odnaleźć
-"$order": '3'
+'$title': Sprawianie, by Twoje strony można było odnaleźć
+$order: 3
 description: Skonfigurowanie tego dwukierunkowego powiązania jest konieczne, aby wyszukiwarki mogły zrozumieć związek między naszym zwykłym kanonicznym dokumentem HTML, a dokumentem AMP.
 ---
 
@@ -12,7 +12,7 @@ Witryna internetowa może składać się z samych stron AMP, niektórych stron A
 
 Linkowanie kanoniczne na zwykłych stronach HTML jest powszechną techniką deklarowania, która strona powinna być uznana za preferowaną, gdy wiele stron zawiera tę samą treść.
 
-Jednym z typowych podejść podczas dodawania AMP do witryny internetowej jest generowanie wersji AMP tradycyjnych stron HTML bez AMP. Obie wersje mają na ogół tę samą treść (np. tekst artykułu), ale mogą mieć różne prezentacje.  W tym scenariuszu należy traktować tradycyjne strony HTML jako strony „kanoniczne” i sparować strony AMP z tymi stronami HTML.
+Jednym z typowych podejść podczas dodawania AMP do witryny internetowej jest generowanie wersji AMP tradycyjnych stron HTML bez AMP. Obie wersje mają na ogół tę samą treść (np. tekst artykułu), ale mogą mieć różne prezentacje. W tym scenariuszu należy traktować tradycyjne strony HTML jako strony „kanoniczne” i sparować strony AMP z tymi stronami HTML.
 
 Jeśli możesz, użyj AMP do utworzenia witryny tak, jak każdej innej biblioteki JavaScript i zapomnij o linkowaniu kanonicznym. Użycie AMP do utworzenia całej witryny internetowej drastycznie zmniejsza obciążenie związane z jej utrzymaniem.
 
@@ -23,7 +23,7 @@ Do celów niniejszego samouczka skupimy się na przypadku, gdy masz stronę w we
 Zrobiliśmy już pierwszy krok, aby osiągnąć to w naszym dokumencie AMP, włączając w sekcji `<head>` znacznik linku do strony kanonicznej:
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 Następnym krokiem jest powiązanie artykułu kanonicznego ze stroną AMP. Osiąga się to poprzez dodanie znacznika `<link rel="amphtml">` do sekcji `<head>` artykułu kanonicznego.
@@ -31,7 +31,7 @@ Następnym krokiem jest powiązanie artykułu kanonicznego ze stroną AMP. Osią
 W pliku `article.html` **dodaj** następujący kod do sekcji `<head>`:
 
 ```html
-<link rel="amphtml" href="/article.amp.html">
+<link rel="amphtml" href="/article.amp.html" />
 ```
 
 Poniższy diagram ilustruje kierunki znaczników linków:
@@ -47,40 +47,39 @@ Prawidłowe strony AMP nie wymagają danych strukturalnych [schema.org](http://s
 W przypadku naszego artykułu informacyjnego **dodaj** następujące dane strukturalne na końcu sekcji `<head>` dokumentu AMP:
 
 ```html
-
 <script type="application/ld+json">
-{
- "@context": "http://schema.org",
- "@type": "NewsArticle",
- "mainEntityOfPage":{
-   "@type":"WebPage",
-   "@id":"https://example.com/my-article.html"
- },
- "headline": "My First AMP Article",
- "image": {
-   "@type": "ImageObject",
-   "url": "https://example.com/article_thumbnail1.jpg",
-   "height": 800,
-   "width": 800
- },
- "datePublished": "2015-02-05T08:00:00+08:00",
- "dateModified": "2015-02-05T09:20:00+08:00",
- "author": {
-   "@type": "Person",
-   "name": "John Doe"
- },
- "publisher": {
-   "@type": "Organization",
-   "name": "⚡ AMP Times",
-   "logo": {
-     "@type": "ImageObject",
-     "url": "https://example.com/amptimes_logo.jpg",
-     "width": 600,
-     "height": 60
-   }
- },
- "description": "My first experience in an AMPlified world"
-}
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://example.com/my-article.html"
+    },
+    "headline": "My First AMP Article",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://example.com/article_thumbnail1.jpg",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2015-02-05T08:00:00+08:00",
+    "dateModified": "2015-02-05T09:20:00+08:00",
+    "author": {
+      "@type": "Person",
+      "name": "John Doe"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "⚡ AMP Times",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://example.com/amptimes_logo.jpg",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "My first experience in an AMPlified world"
+  }
 </script>
 ```
 
@@ -106,4 +105,4 @@ Jeśli dane strukturalne są prawidłowe, wyświetlonych zostanie **0 błędów*
 
 [tip type="read-on"] **CZYTAJ DALEJ —** aby dowiedzieć się więcej na temat odnajdywania strony, zapoznaj się z przewodnikiem [Spraw, by Twoje strony można było odnaleźć](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md). [/tip]
 
-Niesamowita robota!  Artykuł informacyjny AMP został utworzony.
+Niesamowita robota! Artykuł informacyjny AMP został utworzony.

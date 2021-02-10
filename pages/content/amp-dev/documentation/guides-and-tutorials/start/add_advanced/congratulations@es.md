@@ -1,6 +1,6 @@
 ---
-"$title": "¡Felicidades!"
-"$order": '7'
+'$title': '¡Felicidades!'
+$order: 7
 description: Ya completó el tutorial "Cómo añadir características avanzadas de AMP" y analizó con éxito muchos de los componentes avanzados más importantes de AMP.
 ---
 

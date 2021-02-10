@@ -1,6 +1,6 @@
 ---
-"$title": AMPHTML sözdizimini doğrulama
-"$order": '3'
+'$title': AMPHTML sözdizimini doğrulama
+$order: 3
 description: "Reklamınızın doğru şekilde görüntülendiğinden emin olmak için AMPHTML sözdiziminizi doğrulamalısınız. Tarayıcınızda AMP Doğrulayıcıyı açın ve AMP4ADS'in seçili HTML Biçimi olduğundan emin olun."
 ---
 

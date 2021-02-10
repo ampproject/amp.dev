@@ -1,10 +1,10 @@
 ---
-"$title": 撰写您的第一封 AMP 电子邮件
-"$order": '0'
+'$title': 撰写您的第一封 AMP 电子邮件
+$order: 0
 description: 撰写您的第一封电子邮件，了解如何让 AMP 电子邮件与众不同。
 tutorial: 'true'
 formats:
-- email
+  - email
 author: CrystalOnScript
 ---
 
@@ -21,21 +21,25 @@ AMP 电子邮件与现有电子邮件兼容。除了 HTML 和明文外，AMP 版
 AMP Playground 支持 AMP 电子邮件格式，允许您撰写、测试和验证 AMP 电子邮件。打开 [AMP Playground](https://playground.amp.dev/?runtime=amp4email) 并确保在左上角将格式设为 `AMP for Email`。您应当会看到以下代码：
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email data-css-strict>
-<head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
-  <style amp-custom>
-    h1 {
-      margin: 1rem;
-    }
-  </style>
-</head>
-<body>
-  <h1>Hello, I am an AMP EMAIL!</h1>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+    <style amp-custom>
+      h1 {
+        margin: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello, I am an AMP EMAIL!</h1>
+  </body>
 </html>
 ```
 
@@ -58,10 +62,12 @@ AMP Playground 支持 AMP 电子邮件格式，允许您撰写、测试和验证
 `<amp-img>` 标记要求定义图片的宽度和高度，与 `<img>` 不同的是，`<amp-img>` 必须使用 `</amp-img>` 明确闭合。
 
 ```html
-<amp-img src="https://link/to/img.jpg"
-         alt="photo description"
-         width="100"
-         height="100">
+<amp-img
+  src="https://link/to/img.jpg"
+  alt="photo description"
+  width="100"
+  height="100"
+>
 </amp-img>
 ```
 
@@ -75,10 +81,12 @@ AMP Playground 支持 AMP 电子邮件格式，允许您撰写、测试和验证
 
 ```html
 <body>
-  <amp-img src="https://placekitten.com/800/400"
-           alt="Welcome"
-           width="800"
-           height="400">
+  <amp-img
+    src="https://placekitten.com/800/400"
+    alt="Welcome"
+    width="800"
+    height="400"
+  >
   </amp-img>
 </body>
 ```
@@ -108,17 +116,24 @@ AMP Playground 支持 AMP 电子邮件格式，允许您撰写、测试和验证
 在电子邮件的 head 中添加 `amp-carousel` 脚本。
 
 ```html
-  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script
+  async
+  custom-element="amp-carousel"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+></script>
 ```
 
 然后，将第一个图片封装在 `<amp-carousel>` 标记中。
 
 ```html
-<amp-carousel layout="responsive"
-              width="800"
-              height="400"
-              type="slides">
-        <amp-img layout="fill" src="https://placekitten.com/800/400"  alt="Welcome" height="400" width="800"></amp-img>
+<amp-carousel layout="responsive" width="800" height="400" type="slides">
+  <amp-img
+    layout="fill"
+    src="https://placekitten.com/800/400"
+    alt="Welcome"
+    height="400"
+    width="800"
+  ></amp-img>
 </amp-carousel>
 ```
 
@@ -127,17 +142,35 @@ AMP Playground 支持 AMP 电子邮件格式，允许您撰写、测试和验证
 接下来，在 `<amp-carousel>` 中将占位小猫图片替换为可以收养的 AMP 小猫。
 
 ```html
-<amp-carousel id="carousel-with-preview"
-    width="800"
-    height="400"
-    layout="responsive"
-    type="slides"
-    on="slideChange:AMP.setState({currentCat: event.index})">
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_caleb_woods.jpg"  alt="photo courtesy of Unsplash"></amp-img>
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_craig_mclaclan.jpg"  alt="photo courtesy of Unsplash"></amp-img>
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_lightscape.jpg"  alt="photo courtesy of Unsplash"></amp-img>
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_nick_karvounis.jpg"  alt="photo courtesy of Unsplash"></amp-img>
- </amp-carousel>
+<amp-carousel
+  id="carousel-with-preview"
+  width="800"
+  height="400"
+  layout="responsive"
+  type="slides"
+  on="slideChange:AMP.setState({currentCat: event.index})"
+>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_caleb_woods.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_craig_mclaclan.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_lightscape.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_nick_karvounis.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+</amp-carousel>
 ```
 
 现在，点击轮播左侧或右侧的浏览箭头，应该可以更改照片！
@@ -182,48 +215,55 @@ AMP 支持在文档 head 的 `<style amp-custom>` 标记中设置样式。此外
 在本教程中，我们将使用 [`<amp-bind>`](/content/amp-dev/documentation/components/reference/amp-bind.md) 来显示可被收养的小猫的名字和说明，这些信息会在用户将光标放在小猫的幻灯片上时显示。我们先在电子邮件的 head 中加入 `amp-bind` 脚本。
 
 ```html
- <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script
+  async
+  custom-element="amp-bind"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+></script>
 ```
 
 接下来，我们在 [`<amp-state>`](/content/amp-dev/documentation/components/reference/amp-bind.md#state) 标记中将 AMP 绑定变量“myState”声明为 JSON 字符串。由于我们有四张小猫照片，我们将添加所有这四张照片的状态。
 
 ```html
 <body>
-<amp-state id="myState">
-  <script type="application/json">
-    {
-      "cats": [
-         {
-          "name": "Aakash",
-          "description": "Very sweet gentleman that is quite shy in a shelter environment. He may hide under his blanket upon initial approach, but he is an affectionate lovebug."
-        },
-        {
-          "name": "Filip",
-          "description": "Friendly and enjoys pets and head rubs. Is known to sit on keyboards and refuses to touch anything with catnip on it."
-        },
-        {
-          "name": "Julian",
-          "description": "Both bold and extremely sweet. Wastes no time in investigating new smells, objects, and places, but enjoys lazing in the sun!"
-        },
-        {
-          "name": "John",
-          "description": "This playful and spirited cat would like to be outside his kennel and will be so happy when he gets to his forever home with more room to move."
-        }
-      ]
-    }
-  </script>
-</amp-state>
+  <amp-state id="myState">
+    <script type="application/json">
+      {
+        "cats": [
+          {
+            "name": "Aakash",
+            "description": "Very sweet gentleman that is quite shy in a shelter environment. He may hide under his blanket upon initial approach, but he is an affectionate lovebug."
+          },
+          {
+            "name": "Filip",
+            "description": "Friendly and enjoys pets and head rubs. Is known to sit on keyboards and refuses to touch anything with catnip on it."
+          },
+          {
+            "name": "Julian",
+            "description": "Both bold and extremely sweet. Wastes no time in investigating new smells, objects, and places, but enjoys lazing in the sun!"
+          },
+          {
+            "name": "John",
+            "description": "This playful and spirited cat would like to be outside his kennel and will be so happy when he gets to his forever home with more room to move."
+          }
+        ]
+      }
+    </script>
+  </amp-state>
+</body>
 ```
 
 [AMP 操作和事件](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md)会触发不同的状态。在本例中，我们希望在用户点击轮播浏览箭头时更新状态。amp-carousel 触发 [`slideChange`](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp-carouseltypeslides) 事件，在该事件中，我们将使用 `AMP.setState` 更新 `currentCat` 变量。
 
 ```html
 <h1>Adorable Adoptable Animals</h1>
-<amp-carousel width="800"
-              height="400"
-              layout="responsive"
-              type="slides"
-              on="slideChange:AMP.setState({ currentCat: event.index} )">
+<amp-carousel
+  width="800"
+  height="400"
+  layout="responsive"
+  type="slides"
+  on="slideChange:AMP.setState({ currentCat: event.index} )"
+>
   ...
 </amp-carousel>
 ```

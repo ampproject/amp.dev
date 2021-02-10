@@ -1,11 +1,11 @@
 ---
-"$title": Membuat halaman AMP interaktif
-"$path": "/documentation/guides-and-tutorials/develop/interactivity/index.html"
-"$order": '0'
+'$title': Membuat halaman AMP interaktif
+'$path': '/documentation/guides-and-tutorials/develop/interactivity/index.html'
+$order: 0
 description: Di dalam tutorial ini, Anda akan mempelajari cara menggunakan pengikatan data dan ekspresi untuk membuat halaman AMP interaktif yang mengagumkan dengan amp-bind ....
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/interactivity-final-page.jpg', 415, 738, align='right third', caption='Halaman AMP yang telah selesai untuk tutorial ini') }}

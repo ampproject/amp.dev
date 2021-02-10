@@ -1,12 +1,12 @@
 ---
-"$title": Checklist de publicação do AMP
-"$order": '0'
+'$title': Checklist de publicação do AMP
+$order: 0
 description: O Web design responsivo é sobre a construção de páginas fluidas que atendem às necessidades do seu usuário - páginas que se ajustam ao tamanho da tela e orientação do dispositivo. Você pode alcançar...
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 Siga esta checklist para dar ao seu site a experiência AMP mais completa!

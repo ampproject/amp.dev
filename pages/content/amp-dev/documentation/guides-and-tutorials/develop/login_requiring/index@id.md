@@ -1,11 +1,11 @@
 ---
-"$title": Membuat halaman AMP yang mengharuskan masuk (login)
-"$order": '0'
+'$title': Membuat halaman AMP yang mengharuskan masuk (login)
+$order: 0
 description: Beberapa interaksi pengguna dengan halaman, seperti memberikan komentar, dapat diatur dengan alur masuk (login). Anda dapat menerapkan alur masuk ....
 numbered: '1'
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 Beberapa interaksi pengguna dengan halaman, seperti memberikan komentar, dapat diatur dengan alur masuk (login). Anda dapat menerapkan alur masuk dengan menggunakan komponen [`amp-access`](../../../../documentation/components/reference/amp-access.md) yang digabungkan dengan komponen <a><code>amp-form</code></a>.

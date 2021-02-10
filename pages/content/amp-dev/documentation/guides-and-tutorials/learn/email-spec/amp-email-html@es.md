@@ -1,8 +1,8 @@
 ---
-"$title": AMP for Email es compatible con HTML
-order: '4'
+'$title': AMP for Email es compatible con HTML
+$order: 4
 formats:
-- email
+  - email
 teaser:
   text: 'Nota: Esta lista no se encarga de establecer normas y debe usarse solo con propósitos de referencia. Las reglas del Validador de AMP están autorizadas.'
 toc: 'true'

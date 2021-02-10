@@ -1,10 +1,10 @@
 ---
-"$title": 'Analytics: principes de base'
-"$order": '0'
-description: 'AMP fournit deux composants pour répondre à vos besoins d''analyse et de mesure: amp-pixel et amp-analytics. Les deux options envoient des données d''analyse à un point de terminaison défini.'
+'$title': 'Analytics: principes de base'
+$order: 0
+description: "AMP fournit deux composants pour répondre à vos besoins d'analyse et de mesure: amp-pixel et amp-analytics. Les deux options envoient des données d'analyse à un point de terminaison défini."
 formats:
-- websites
-- stories
+  - websites
+  - stories
 ---
 
 Commencez ici pour tout savoir sur les bases des analyses AMP.
@@ -44,26 +44,30 @@ Le composant [`amp-pixel`](../../../../documentation/components/reference/amp-an
 Pour créer une configuration simple de la balise [`amp-analytics`](../../../../documentation/components/reference/amp-pixel.md), vous devez d'abord inclure la déclaration <code>custom-element</code> après la balise <code><head></code> du document AMP (voir également <a>Déclaration d'inclusion de composant</a>) :
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script
+  async
+  custom-element="amp-analytics"
+  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+></script>
 ```
 
 L'exemple suivant est similaire à <a>l'exemple de <code data-md-type="codespan">amp-pixel</code></a>. À chaque fois qu'une page est visible, l'événement est déclenché et envoie les données sur les vues de page à une URL définie, accompagnées d'un identifiant aléatoire:
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://foo.com/pixel?RANDOM",
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://foo.com/pixel?RANDOM"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -87,43 +91,39 @@ AMP Analytics facilite la mise en œuvre de ce qui précède à l'aide de n'impo
 
 ```html
 <amp-analytics type="gtag" data-credentials="include">
- <script type="application/json">
-  {
-    "vars": {
-      "gtag_id":"YOUR_GOOGLE_ANALYTICS_ID",
-      "config": {
-        "YOUR_GOOGLE_ANALYTICS_ID": {
-          "groups":"default"
-        }
-      }
-    },
-    "triggers": {
-      "storyProgress": {
-        "on":"story-page-visible",
-        "vars": {
-          "event_name":"custom",
-          "event_action":"story_progress",
-          "event_category":"${title}",
-          "event_label":"${storyPageId}",
-          "send_to": [
-            "YOUR_GOOGLE_ANALYTICS_ID"
-          ]
+  <script type="application/json">
+    {
+      "vars": {
+        "gtag_id": "YOUR_GOOGLE_ANALYTICS_ID",
+        "config": {
+          "YOUR_GOOGLE_ANALYTICS_ID": {
+            "groups": "default"
+          }
         }
       },
-      "storyEnd": {
-        "on":"story-last-page-visible",
-        "vars": {
-          "event_name":"custom",
-          "event_action":"story_complete",
-          "event_category":"${title}",
-          "send_to": [
-            "YOUR_GOOGLE_ANALYTICS_ID"
-          ]
+      "triggers": {
+        "storyProgress": {
+          "on": "story-page-visible",
+          "vars": {
+            "event_name": "custom",
+            "event_action": "story_progress",
+            "event_category": "${title}",
+            "event_label": "${storyPageId}",
+            "send_to": ["YOUR_GOOGLE_ANALYTICS_ID"]
+          }
+        },
+        "storyEnd": {
+          "on": "story-last-page-visible",
+          "vars": {
+            "event_name": "custom",
+            "event_action": "story_complete",
+            "event_category": "${title}",
+            "send_to": ["YOUR_GOOGLE_ANALYTICS_ID"]
+          }
         }
       }
     }
-  }
- </script>
+  </script>
 </amp-analytics>
 ```
 
@@ -138,7 +138,9 @@ Si vous souhaitez aller au-delà de ce que la configuration par défaut peut vou
 Les composants [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) et [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) autorisent toutes les substitutions de variables d'URL standard (voir [Substitutions de variables HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)). Dans l'exemple suivant, la demande de vue de page est envoyée à l'URL, avec l'URL canonique du document AMP actuel, son titre et un [ID client](analytics_basics.md#user-identification):
 
 ```html
-<amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
+<amp-pixel
+  src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"
+></amp-pixel>
 ```
 
 En raison de sa simplicité, la balise [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) ne peut inclure que des variables définies par la plateforme ou que le runtime AMP peut analyser à partir de la page AMP. Dans l'exemple ci-dessus, la plateforme renseigne les valeurs pour `canonicalURL` et `clientId(site-user-id)`. La balise [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) peut inclure les mêmes variables que [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md), ainsi que des variables définies de manière unique dans la configuration de la balise.
@@ -152,10 +154,10 @@ Dans l'exemple suivant sur [`amp-analytics`](../../../../documentation/component
   <script type="application/json">
     {
       "requests": {
-        "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
       },
       "vars": {
-        "account":"ABC123"
+        "account": "ABC123"
       },
       "triggers": {
         "someEvent": {
@@ -188,7 +190,9 @@ Lorsqu'une page AMP est diffusée à partir du site d'un éditeur, le cadre d'ID
 Par exemple:
 
 ```html
-<amp-pixel src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"></amp-pixel>
+<amp-pixel
+  src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"
+></amp-pixel>
 ```
 
 Si AMP constate que ce cookie est défini, la substitution d'ID client renverra la valeur du cookie. Si l'AMP trouve que ce cookie n'est pas défini, alors AMP générera une valeur de la forme `amp-` suivie d'une chaîne aléatoire encodée en base64.

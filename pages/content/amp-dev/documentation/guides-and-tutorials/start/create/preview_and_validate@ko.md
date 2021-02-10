@@ -1,10 +1,10 @@
 ---
-"$title": Preview and validate
-"$order": '5'
+'$title': Preview and validate
+$order: 5
 description: 다른 정적 HTML 사이트를 프리뷰하는 것처럼 AMP 페이지도 비슷하게 프리뷰할 수 있습니다. 어떤 빌드 단계나 전처리 단계를 요구하지 않습니다. 다음 중 하나를 선택...
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## 프리뷰
@@ -12,7 +12,7 @@ contributors:
 다른 정적 HTML 사이트를 프리뷰하는 것처럼 AMP 페이지도 비슷하게 프리뷰할 수 있습니다. 어떤 빌드 단계나 전처리 단계를 요구하지 않습니다. 다음 중 하나를 선택하세요.
 
 - **파일 시스템을 통해 브라우저에서 페이지를 직접 엽니다** (어떤 요소는 XMLHttpRequests 실패로 인해 작동이 안될 수도 있습니다.)
-- **Apache 2 또는 Nginx 같은 로컬 웹 서버를 사용합니다.**. *(팁: 빠른 웹 서버 사용을 위해 `python -m SimpleHTTPServer`를 실행합니다.)*
+- **Apache 2 또는 Nginx 같은 로컬 웹 서버를 사용합니다.**. _(팁: 빠른 웹 서버 사용을 위해 `python -m SimpleHTTPServer`를 실행합니다.)_
 
 ## 유효성 검사
 

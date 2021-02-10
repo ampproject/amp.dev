@@ -1,10 +1,10 @@
 ---
-"$title": Praktik terbaik untuk membuat Cerita Web yang sukses
-"$order": '1'
+'$title': Praktik terbaik untuk membuat Cerita Web yang sukses
+$order: 1
 description: Praktik terbaik untuk membuat Cerita Web yang sukses
-"$category": Start
+'$category': Start
 formats:
-- stories
+  - stories
 author: CrystalOnScript
 ---
 

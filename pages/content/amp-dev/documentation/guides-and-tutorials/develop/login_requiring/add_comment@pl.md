@@ -1,6 +1,6 @@
 ---
-"$title": Dodawanie komentarza
-"$order": '2'
+'$title': Dodawanie komentarza
+$order: 2
 description: W tym momencie użytkownik może dodać komentarz za pomocą składnika amp-form, biblioteki. Zauważ, że obecność formularza jest warunkowa, w zależności od stanu składnika amp-access...
 ---
 
@@ -9,6 +9,7 @@ description: W tym momencie użytkownik może dodać komentarz za pomocą skład
 W tym momencie użytkownik może dodać komentarz za pomocą bilioteki składnika [`amp-form`](../../../../documentation/components/reference/amp-form.md). Zauważ, że obecność formularza jest warunkowa, w zależności od stanu składnika [`amp-access`](../../../../documentation/components/reference/amp-access.md):
 
 [sourcecode:html]
+
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
 [/sourcecode]
 
@@ -26,6 +27,7 @@ Oto przykład odpowiedzi JSON:
 Składnik formularza po prostu wyświetli te wartości wewnątrz strony za pomocą szablonu [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md):
 
 [sourcecode:html]
+
 <div submit-success>
   <template type="amp-mustache">
     <div class="comment-user">
@@ -42,6 +44,7 @@ Składnik formularza po prostu wyświetli te wartości wewnątrz strony za pomoc
 W tym przykładzie sprawdzamy tylko, czy wartość komentarza nie jest pusta; jeśli wartość jest pusta, zwracamy błąd, który powoduje wykonanie następującego kodu
 
 [sourcecode:html]
+
 <div submit-error>
   <template type="amp-mustache">
     Error! Looks like something went wrong with your comment, please try to submit it again.

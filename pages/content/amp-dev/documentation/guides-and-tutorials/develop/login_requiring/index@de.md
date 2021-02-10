@@ -1,11 +1,11 @@
 ---
-"$title": Erstelle eine AMP Seite mit obligatorischer Anmeldung
-"$order": '0'
+'$title': Erstelle eine AMP Seite mit obligatorischer Anmeldung
+$order: 0
 description: Einige Benutzerinteraktionen mit einer Seite, z. B. das Schreiben eines Kommentars, können mit einer Anmeldung verbunden sein. Du kannst einen Anmeldeprozess …
 numbered: '1'
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 Einige Benutzerinteraktionen mit einer Seite, z. B. das Schreiben eines Kommentars, können mit einer Anmeldung verbunden sein. Du kannst einen Anmeldeprozess mit AMP implementieren, indem du die Komponente [`amp-access`](../../../../documentation/components/reference/amp-access.md) mit der Komponente [`amp-form`](../../../../documentation/components/reference/amp-form.md) kombinierst.

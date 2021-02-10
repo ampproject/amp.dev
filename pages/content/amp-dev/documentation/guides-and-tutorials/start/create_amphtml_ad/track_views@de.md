@@ -1,6 +1,6 @@
 ---
-"$title": Verfolge die Ansichten von Ads
-"$order": '2'
+'$title': Verfolge die Ansichten von Ads
+$order: 2
 description: In AMPHTML Ads kannst du Metriken mithilfe der Komponenten amp-pixel und amp-analytics tracken. In unserem einfachen Beispiel machen wir es möglich, Seitenaufrufe zu verfolgen …
 ---
 
@@ -9,11 +9,14 @@ In AMPHTML Ads kannst du Metriken mithilfe der Komponenten [`amp-pixel`](../../.
 ```html
 <body>
   <a target="_blank" href="https://www.amp.dev">
-    <amp-img width="300" height="250"
-        alt="Learn amp"
-        src="/static/img/docs/ads/amp-300x250.png"></amp-img>
+    <amp-img
+      width="300"
+      height="250"
+      alt="Learn amp"
+      src="/static/img/docs/ads/amp-300x250.png"
+    ></amp-img>
   </a>
-<amp-pixel src="https://www.amp.dev/tracker/foo"></amp-pixel>
+  <amp-pixel src="https://www.amp.dev/tracker/foo"></amp-pixel>
 </body>
 ```
 

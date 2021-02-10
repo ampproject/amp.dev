@@ -1,10 +1,10 @@
 ---
-"$title": Technische Besonderheiten von Web Storys
-"$order": '1'
+'$title': Technische Besonderheiten von Web Storys
+$order: 1
 description: Technische Besonderheiten von Web Storys
-"$category": Develop
+'$category': Develop
 formats:
-- stories
+  - stories
 author: CrystalOnScript
 ---
 
@@ -26,35 +26,103 @@ Eine Web Story ist technisch gesehen eine einzelne Webseite, die mit AMP erstell
 Der Unterschied zwischen einer AMP Webseite und einer mit AMP erstellten Web Story liegt in der Komponente [`amp-story`](https://amp.dev/documentation/components/amp-story/?format=stories). Das ist das einzige direkt untergeordnete Element des Elements `<body>` des Dokuments und muss das Attribut `standalone` enthalten. Alle Seiten, Ebenen und Elemente der Web Story werden innerhalb der Tags `<amp-story>` definiert.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Joy of Pets</title>
-    <link rel="canonical" href="pets.html">
-    <meta name="viewport" content="width=device-width">
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <link rel="canonical" href="pets.html" />
+    <meta name="viewport" content="width=device-width" />
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-video"
-        src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
-    <script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+    <script
+      async
+      custom-element="amp-video"
+      src="https://cdn.ampproject.org/v0/amp-video-0.1.js"
+    ></script>
+    <script
+      async
+      custom-element="amp-story"
+      src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+    ></script>
     <style amp-custom>
-    ...
+      ...;
     </style>
   </head>
   <body>
     <!-- Cover page -->
-    <amp-story standalone
-        title="Joy of Pets"
-        publisher="AMP tutorials"
-        publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-        poster-portrait-src="assets/cover.jpg">
+    <amp-story
+      standalone
+      title="Joy of Pets"
+      publisher="AMP tutorials"
+      publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+      poster-portrait-src="assets/cover.jpg"
+    >
       <amp-story-page id="cover">
         <amp-story-grid-layer template="fill">
-          <amp-img src="assets/cover.jpg"
-              width="720" height="1280"
-              layout="responsive">
+          <amp-img
+            src="assets/cover.jpg"
+            width="720"
+            height="1280"
+            layout="responsive"
+          >
           </amp-img>
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical">
@@ -67,11 +135,17 @@ Der Unterschied zwischen einer AMP Webseite und einer mit AMP erstellten Web Sto
       <amp-story-page id="page1">
         <amp-story-grid-layer template="vertical">
           <h1>Cats</h1>
-          <amp-img src="assets/cat.jpg"
-              width="720" height="1280"
-              layout="responsive">
+          <amp-img
+            src="assets/cat.jpg"
+            width="720"
+            height="1280"
+            layout="responsive"
+          >
           </amp-img>
-          <q>Dogs come when they're called. Cats take a message and get back to you. --Mary Bly</q>
+          <q
+            >Dogs come when they're called. Cats take a message and get back to
+            you. --Mary Bly</q
+          >
         </amp-story-grid-layer>
       </amp-story-page>
       ...
@@ -172,12 +246,18 @@ Wenn du nur ein einziges Videoformat bereitstellen kannst, sollte es MP4 sein. V
 Verwende untergeordnete `<source>` Elemente in der Komponente `<amp-video>`, um die Videoquelle mit dem Attribut `src` anzugeben. Mit dem Element `<source>` kannst du den Videotyp angeben und Videoquellen als Backup hinzufügen. Du musst das Attribut `type` verwenden, um den MIME Typ anzugeben. Verwende `application/x-mpegurl` oder `application/vnd.apple.mpegurl` für HLS Videos. Verwende für alle anderen Videotypen das MIME Präfix `video/` gefolgt vom Videoformat, z. B. `”video/mp4”`.
 
 ```html
-<amp-video id="video-page1" autoplay loop
-  layout="fill" poster="https://example.com/media/poster.jpg">
-  <source src="https://amp-example.com/media/movie.m3u8"
-    type="application/vnd.apple.mpegurl" />
-  <source src="https://amp-example.com/media/movie.mp4"
-    type="video/mp4" />
+<amp-video
+  id="video-page1"
+  autoplay
+  loop
+  layout="fill"
+  poster="https://example.com/media/poster.jpg"
+>
+  <source
+    src="https://amp-example.com/media/movie.m3u8"
+    type="application/vnd.apple.mpegurl"
+  />
+  <source src="https://amp-example.com/media/movie.mp4" type="video/mp4" />
 </amp-video>
 ```
 
@@ -186,7 +266,7 @@ Verwende untergeordnete `<source>` Elemente in der Komponente `<amp-video>`, um 
 Das Attribut [`auto-advance-after`](https://amp.dev/documentation/components/amp-story-page/?format=stories#auto-advance-after-%5Boptional%5D), das amp-story-page verfügbar macht, gibt an, ob und wann eine Story Seite vorrücken soll, ohne dass Benutzer darauf tippen. Referenziere im Attribut die Video ID, um nach einem Video in der Story vorzurücken.
 
 ```html
-<amp-story-page auto-advance-after="myvideo">
+<amp-story-page auto-advance-after="myvideo"></amp-story-page>
 ```
 
 ## Desktopdarstellung
@@ -196,11 +276,13 @@ Das Web Story Format unterstützt eine [optionale Desktopdarstellung](https://gi
 Aktiviere die Unterstützung für das Desktopformat, indem du der Komponente `<amp-story>` das Attribut `supports-landscape` hinzufügst.
 
 ```html
-<amp-story standalone
-    supports-landscape
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/icon.svg"
-    poster-portrait-src="assets/cover.jpg">
+<amp-story
+  standalone
+  supports-landscape
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+>
 </amp-story>
 ```

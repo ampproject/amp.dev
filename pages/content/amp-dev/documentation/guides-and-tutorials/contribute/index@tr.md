@@ -1,17 +1,17 @@
 ---
-"$title": Katkıda Bulunma Yolları
-"$titles":
+'$title': Katkıda Bulunma Yolları
+'$titles':
   navigation: Contribute
-"$path": "/documentation/guides-and-tutorials/contribute/index.html"
-"$localization":
-  path: "/{locale}/documentation/guides-and-tutorials/contribute/index.html"
-"$order": '0'
+'$path': '/documentation/guides-and-tutorials/contribute/index.html'
+'$localization':
+  path: '/{locale}/documentation/guides-and-tutorials/contribute/index.html'
+$order: 0
 description: AMP ile ilgili bir geliştirici, içerik oluşturucu veya hizmet sağlayıcısı olun, topluluğun tüm üyelerinin yardımı olmadan AMP Projesi mümkün olmazdı.
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 ---
 
 AMP ile ilgili bir geliştirici, içerik oluşturucu veya hizmet sağlayıcısı olun, topluluğun tüm üyelerinin yardımı olmadan AMP Projesi mümkün olmazdı. Katkıda bulunmanın birçok yolu vardır.

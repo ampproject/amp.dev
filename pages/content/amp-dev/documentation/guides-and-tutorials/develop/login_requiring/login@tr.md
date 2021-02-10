@@ -1,6 +1,6 @@
 ---
-"$title": Giriş yapma
-"$order": '1'
+'$title': Giriş yapma
+$order: 1
 description: Sayfaya ilk kez geldiğinizde, 2 yorum ve bir giriş düğmesi görebilirsiniz. Kodda giriş yapma düğmesini ararsanız, şunları bulacaksınız...
 ---
 
@@ -12,6 +12,7 @@ Kodda giriş yapma düğmesini ararsanız, şunları bulacaksınız:
 
 [sourcecode:html]
 <span amp-access="NOT loggedIn" role="button" tabindex="0" amp-access-hide>
+
   <h5>Please login to comment</h5>
   <button on="tap:amp-access.login-sign-in" class="button-primary comment-button">Login</button>
 </span>
@@ -20,6 +21,7 @@ Kodda giriş yapma düğmesini ararsanız, şunları bulacaksınız:
 [`amp-access`](../../../../documentation/components/reference/amp-access.md) ilgili özniteliklerin davranışı, [`amp-access`](../../../../documentation/components/reference/amp-access.md) için sayfa genelindeki yapılandırmaya bağlıdır, bizim durumumuzda, şu şekildedir:
 
 [sourcecode:html]
+
 <script id="amp-access" type="application/json">
   {
     "authorization": "https://ampbyexample.com/samples_templates/comment_section/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
@@ -34,6 +36,7 @@ Kodda giriş yapma düğmesini ararsanız, şunları bulacaksınız:
     }
   }
 </script>
+
 [/sourcecode]
 
 Yetkilendirme uç noktası, AMPByExample'ın parçası olarak dağıtılır. Bu uç noktayı sağlamak sayfanın yayıncısının sorumluluğundadır. Bu örnek durumda, basit olması amacıyla, bu istek alındığında sunucunun `ABE_LOGGED_IN` adlı bir çerezin değerini okuyabilmesi için temel mantığı uyguladık. Çerez orada değilse, `loggedIn = false ` içeren bir JSON yanıtı döndürürüz. Sonuç olarak, bir kullanıcı sayfaya ilk kez geldiğinde, bu istek `loggedIn = false` yanıtı verir ve giriş düğmesi gösterilir.
@@ -42,9 +45,9 @@ Düğmenin HTML koduna tekrar baktığımızda, `on="tap: amp-access.login-sign-
 
 [sourcecode:json]
 {
-	"login": {
-    "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
-  }
+"login": {
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
+}
 }
 
 [/sourcecode]

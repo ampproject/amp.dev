@@ -1,6 +1,6 @@
 ---
-"$title": Création du serre-livre
-"$order": '7'
+'$title': Création du serre-livre
+$order: 7
 description: Maintenant que vous avez ajouté toutes vos pages, regardons le dernier écran de la story, le serre-livre. Ce dernier écran résume la story ...
 author: bpaduch
 ---
@@ -9,7 +9,7 @@ Maintenant que vous avez ajouté toutes vos pages, regardons le dernier écran d
 
 The information on the bookend screen comes from a JSON file that's specified in the `<amp-story-bookend>` tag. For our tutorial, we already have a JSON file ([bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json)) that contains the bookend data.
 
-La balise `<amp-story-bookend>` doit être la dernière balise dans [`<amp-story>`](../../../../documentation/components/reference/amp-story.md). Donc, **ajoutons** `<amp-story-bookend></amp-story-bookend>` juste avant la balise de fin [`</amp-story>`](../../../../documentation/components/reference/amp-story.md).  Dans la balise `amp-story-bookend`, pointez l'attribut `src` vers le fichier `bookend.json` et configurez `layout="nodisplay"` :
+La balise `<amp-story-bookend>` doit être la dernière balise dans [`<amp-story>`](../../../../documentation/components/reference/amp-story.md). Donc, **ajoutons** `<amp-story-bookend></amp-story-bookend>` juste avant la balise de fin [`</amp-story>`](../../../../documentation/components/reference/amp-story.md). Dans la balise `amp-story-bookend`, pointez l'attribut `src` vers le fichier `bookend.json` et configurez `layout="nodisplay"` :
 
 ```html
   </amp-story-page>
@@ -21,7 +21,7 @@ If you refresh your browser and go to the last screen, you'll see the following 
 
 {{ image('/static/img/docs/tutorials/amp_story/bookend_full.gif', 398, 709, align='center third', alt='Bookend' ) }}
 
-Let's look at the JSON file.  Open the [bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json) file in your text editor.
+Let's look at the JSON file. Open the [bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json) file in your text editor.
 
 Every bookend screen requires a `bookendVersion`, which is `v1.0` for this tutorial:
 
@@ -43,7 +43,7 @@ For this tutorial, we chose Facebook, Twitter, and email for our share providers
 
 {{ image('/static/img/docs/tutorials/amp_story/bookend_social_share.png', 720, 240, align='center half', alt='Bookend social share' ) }}
 
-The rest of the bookend screen is for related content.  All related content is contained in a `components` object.
+The rest of the bookend screen is for related content. All related content is contained in a `components` object.
 
 There are various components that you can use to display related content and links; each component is specified with a type attribute. Let's look at the available components:
 
@@ -130,4 +130,4 @@ There are various components that you can use to display related content and lin
 
 There's more to learn about the bookend component. For details, see the [`amp-story`](../../../../documentation/components/reference/amp-story.md) reference documentation.
 
-Our story is nearly complete.  Before we can publish our content, let's check that our AMP HTML is valid.
+Our story is nearly complete. Before we can publish our content, let's check that our AMP HTML is valid.

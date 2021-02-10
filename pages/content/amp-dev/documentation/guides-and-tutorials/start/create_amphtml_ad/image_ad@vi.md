@@ -1,6 +1,6 @@
 ---
-"$title": Tạo ảnh quảng cáo
-"$order": '1'
+'$title': Tạo ảnh quảng cáo
+$order: 1
 description: '"Quảng cáo của chúng ta chỉ là một ảnh đơn giản với siêu liên kết đến website được quảng cáo. Chúng ta sẽ hiển thị quảng cáo sử dụng thẻ amp-img. Đây là đoạn mã: ..."'
 ---
 
@@ -11,9 +11,12 @@ Quảng cáo của chúng ta chỉ là một ảnh đơn giản với siêu liê
 ```html
 <body>
   <a target="_blank" href="https://www.amp.dev">
-    <amp-img width="300" height="250"
-        alt="Learn amp"
-        src="/static/img/docs/ads/amp-300x250.png"></amp-img>
+    <amp-img
+      width="300"
+      height="250"
+      alt="Learn amp"
+      src="/static/img/docs/ads/amp-300x250.png"
+    ></amp-img>
   </a>
 </body>
 ```

@@ -1,10 +1,10 @@
 ---
-"$title": Structure et affichage des e-mails AMP
-order: '2'
+'$title': Structure et affichage des e-mails AMP
+$order: 2
 formats:
-- email
+  - email
 teaser:
-  text: 'L''e-mail est structuré comme une '
+  text: "L'e-mail est structuré comme une "
 toc: 'true'
 ---
 
@@ -45,7 +45,7 @@ La partie `text/x-amp-html` doit être imbriquée sous un nœud `multipart/alter
 
 `multipart/alternative` doit contenir au moins un nœud non AMP (`text/plain` ou `text/html`) en plus du nœud `text/x-amp-html`. Cela sera affiché aux utilisateurs dont les clients de messagerie ne prennent pas en charge AMP ou qui se sont désinscrits via les paramètres de leur fournisseur de messagerie.
 
-Remarque : certains clients de messagerie[[1]](https://openradar.appspot.com/radar?id=6054696888303616) ne renverront que la dernière partie MIME, nous vous recommandons donc de placer la partie MIME `text/x-amp-html` *avant* la partie MIME `text/html`.
+Remarque : certains clients de messagerie[[1]](https://openradar.appspot.com/radar?id=6054696888303616) ne renverront que la dernière partie MIME, nous vous recommandons donc de placer la partie MIME `text/x-amp-html` _avant_ la partie MIME `text/html`.
 
 ### Sémantique de réponse/transfert <a name="replyingforwarding-semantics"></a>
 

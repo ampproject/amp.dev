@@ -1,6 +1,6 @@
 ---
-"$title": Verbesserung der Interaktivität
-"$order": '2'
+'$title': Verbesserung der Interaktivität
+$order: 2
 description: 'Der Startercode bietet eine recht einfache Benutzererfahrung. Es gibt mehrere Möglichkeiten, ihn zu verbessern\: - Füge einen Indikator hinzu …'
 ---
 
@@ -18,8 +18,11 @@ Vor der Einführung der Komponente [`amp-bind`](../../../../documentation/compon
 Öffne die Datei [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html) und füge das folgende Skript zur Liste der AMP Komponenten im Abschnitt `<head>` der Seite hinzu:
 
 ```html
-<script async custom-element="amp-bind"
-    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script
+  async
+  custom-element="amp-bind"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+></script>
 ```
 
 ## Füge einen Folienindikator hinzu
@@ -43,7 +46,7 @@ Initialisieren wir eine Statusvariable, um den Index der momentan angezeigten Fo
 Der Zugriff auf die Daten innerhalb von [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) Elementen erfolgt über die zugehörige ID. Zum Beispiel können wir auf diese Variable durch das folgende Ausdrucksfragment verweisen:
 
 ```javascript
-selected.slide // Evaluates to 0.
+selected.slide; // Evaluates to 0.
 ```
 
 ### Aktualisiere den Folienstatus
@@ -51,8 +54,13 @@ selected.slide // Evaluates to 0.
 Dieses Variable soll nun aktualisiert werden, sobald Benutzer die Folien im Karussell wechseln. Dazu fügen wir die folgende Aktion `"on"` zu dem vorhandenen Element [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) hinzu:
 
 ```html
-<amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
-    on="slideChange:AMP.setState({selected: {slide: event.index}})">
+<amp-carousel
+  type="slides"
+  layout="fixed-height"
+  height="250"
+  id="carousel"
+  on="slideChange:AMP.setState({selected: {slide: event.index}})"
+></amp-carousel>
 ```
 
 Wenn sich nun die angezeigte Folie für das [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) ändert, wird die Aktion `AMP.setState` mit dem folgenden Argument aufgerufen:
@@ -60,7 +68,7 @@ Wenn sich nun die angezeigte Folie für das [`amp-carousel`](../../../../documen
 ```javascript
 {
   selected: {
-    slide: event.index
+    slide: event.index;
   }
 }
 ```
@@ -177,8 +185,10 @@ Wenn wir eine weitere Statusvariable hinzufügen, die die ausgewählte SKU verfo
 Füge dem [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) die Aktion "on" hinzu, die die Variable `selected.sku` aktualisiert, wenn eine neue Farbe ausgewählt wird:
 
 ```html
-<amp-selector name="color"
-    on="select:AMP.setState({selected: {sku: event.targetOption}})">
+<amp-selector
+  name="color"
+  on="select:AMP.setState({selected: {sku: event.targetOption}})"
+></amp-selector>
 ```
 
 [tip type="tip"] **TIPP:** Das ist auch möglich, indem du Aktionen vom Typ `on="tap:AMP.setState(...)` zu jedem untergeordneten [`amp-img`](../../../../documentation/components/reference/amp-img.md) Element innerhalb von [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) hinzufügst. Einer der großen Vorteile von [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) ist, dass es auf diese Weise das Markup vereinfacht. [/tip]
@@ -189,12 +199,24 @@ Füge dann Bindungen zu [`amp-img`](../../../../documentation/components/referen
 
 ```html
 <!-- Update the `src` of each <amp-img> when the `selected.sku` variable changes. -->
-<amp-img width=200 height=250 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=300 height=375 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=400 height=500 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
+<amp-img
+  width="200"
+  height="250"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="300"
+  height="375"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="400"
+  height="500"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
 ```
 
 [tip type="note"] **HINWEIS:** In der Praxis hätte wahrscheinlich jedes Bild im Karussell ein anderes `src`. Das kann erreicht werden, indem das einzelne Bild durch ein Array von Bildern ersetzt wird. Zur Vereinfachung verwenden wir in diesem Tutorial ein einzelnes Bild mit unterschiedlichen Vergrößerungen. [/tip]

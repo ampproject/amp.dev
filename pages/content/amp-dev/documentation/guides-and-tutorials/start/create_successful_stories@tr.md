@@ -1,10 +1,10 @@
 ---
-"$title": Başarılı bir Web Hikayesi oluşturmak için en iyi uygulamalar
-"$order": '1'
+'$title': Başarılı bir Web Hikayesi oluşturmak için en iyi uygulamalar
+$order: 1
 description: Başarılı bir Web hikayesi oluşturmak için en iyi uygulamalar
-"$category": Start
+'$category': Start
 formats:
-- stories
+  - stories
 author: CrystalOnScript
 ---
 

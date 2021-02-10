@@ -1,10 +1,10 @@
 ---
 formats:
-- websites
-"$title": 使您的页面可被轻松发现
-"$titles":
+  - websites
+'$title': 使您的页面可被轻松发现
+'$titles':
   teaser: 使您的页面可被轻松发现
-"$order": '5'
+$order: 5
 description: 在某些情况下，您可能希望同时拥有同一页面（例如，新闻文章）的非 AMP 版本和 AMP 版本。请考虑此情况：如果 Google 搜索…
 teaser:
   icon: discover

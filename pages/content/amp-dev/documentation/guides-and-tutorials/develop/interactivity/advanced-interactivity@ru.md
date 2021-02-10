@@ -1,6 +1,6 @@
 ---
-"$title": Улучшение интерактивности
-"$order": '2'
+'$title': Улучшение интерактивности
+$order: 2
 description: 'Стартовый код обеспечивает лишь минималистичный опыт взаимодействия. Есть несколько способов улучшить его: - Добавьте индикатор, который отображает...'
 ---
 
@@ -18,8 +18,11 @@ description: 'Стартовый код обеспечивает лишь мин
 Откройте файл [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html) и добавьте в список AMP-компонентов в разделе `<head>` страницы следующий скрипт:
 
 ```html
-<script async custom-element="amp-bind"
-    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script
+  async
+  custom-element="amp-bind"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+></script>
 ```
 
 ## Добавьте индикатор слайдов
@@ -43,7 +46,7 @@ description: 'Стартовый код обеспечивает лишь мин
 Доступ к данным, заключенным в элементы [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state), можно осуществлять с помощью назначенного им идентификатора. Например, мы можем ссылаться на эту переменную с помощью следующего фрагмента выражения:
 
 ```javascript
-selected.slide // Evaluates to 0.
+selected.slide; // Evaluates to 0.
 ```
 
 ### Обновите состояние слайда
@@ -51,8 +54,13 @@ selected.slide // Evaluates to 0.
 Далее давайте сделаем так, чтобы эта переменная обновлялась, когда пользователь меняет слайды на карусели. Добавьте в существующий элемент [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) следующее действие `"on"`:
 
 ```html
-<amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
-    on="slideChange:AMP.setState({selected: {slide: event.index}})">
+<amp-carousel
+  type="slides"
+  layout="fixed-height"
+  height="250"
+  id="carousel"
+  on="slideChange:AMP.setState({selected: {slide: event.index}})"
+></amp-carousel>
 ```
 
 Теперь, когда отображаемый слайд [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) изменится, действие `AMP.setState` будет вызвано со следующим аргументом:
@@ -60,7 +68,7 @@ selected.slide // Evaluates to 0.
 ```javascript
 {
   selected: {
-    slide: event.index
+    slide: event.index;
   }
 }
 ```
@@ -177,8 +185,10 @@ selected.slide // Evaluates to 0.
 Добавьте в элемент [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) действие «on», обновляющее переменную `selected.sku` при выборе нового цвета:
 
 ```html
-<amp-selector name="color"
-    on="select:AMP.setState({selected: {sku: event.targetOption}})">
+<amp-selector
+  name="color"
+  on="select:AMP.setState({selected: {sku: event.targetOption}})"
+></amp-selector>
 ```
 
 [tip type="tip"] **СОВЕТ.** Эту операцию можно также выполнить путем добавления действий `on="tap:AMP.setState(...)` в каждый дочерний элемент [`amp-img`](../../../../documentation/components/reference/amp-img.md) компонента [`amp-selector`](../../../../documentation/components/reference/amp-selector.md). Одним из важных преимуществ [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) является подобное упрощение разметки. [/tip]
@@ -189,12 +199,24 @@ selected.slide // Evaluates to 0.
 
 ```html
 <!-- Update the `src` of each <amp-img> when the `selected.sku` variable changes. -->
-<amp-img width=200 height=250 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=300 height=375 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=400 height=500 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
+<amp-img
+  width="200"
+  height="250"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="300"
+  height="375"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="400"
+  height="500"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
 ```
 
 [tip type="note"] **Примечание.** На практике, скорее всего, каждое изображение в карусели будет иметь собственный `src`. Это можно реализовать путем замены одного изображения массивом изображений. В данном уроке для упрощения процесса используется одно изображение с разной степенью увеличения. [/tip]

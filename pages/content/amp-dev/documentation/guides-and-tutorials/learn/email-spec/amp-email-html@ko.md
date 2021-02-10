@@ -1,8 +1,8 @@
 ---
-"$title": 이메일용 AMP 지원 HTML
-order: '4'
+'$title': 이메일용 AMP 지원 HTML
+$order: 4
 formats:
-- email
+  - email
 teaser:
   text: '참고: 이 목록은 기준이 아니며 참고용으로만 제공됩니다. 공식 기준은 AMP 검사기 규칙입니다.'
 toc: 'true'
@@ -31,7 +31,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-참고:  목록은 기준이 아니며 참고용으로만 제공됩니다. 공식 기준은 지원되는 HTML 태그 및 속성과 관련한 AMP 검사기 규칙입니다.
+참고: 목록은 기준이 아니며 참고용으로만 제공됩니다. 공식 기준은 지원되는 HTML 태그 및 속성과 관련한 AMP 검사기 규칙입니다.
 
 [지원 AMP 컴포넌트](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)에 추가로 AMP용 이메일에서 허용되는 태그는 다음과 같습니다.
 

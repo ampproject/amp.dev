@@ -1,15 +1,16 @@
 ---
-"$title": Tạo trang AMP HTML của bạn
-"$order": '1'
+'$title': Tạo trang AMP HTML của bạn
+$order: 1
 description: 'Sử dụng HTTPS: Khi tạo các trang và nội dung AMP, bạn nên cân nhắc sử dụng giao thức HTTPS (thay cho HTTP). Tuy bản thân tài liệu không bắt buộc sử dụng HTTPS...'
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 Các đánh dấu sau là một điểm bắt đầu hay code soạn sẵn tốt. Hãy sao chép và lưu chúng vào một tập tin với phần mở rộng .html.
 
 [sourcecode:html]
+
 <!doctype html>
 <html amp lang="en">
   <head>
@@ -47,16 +48,16 @@ Sử dụng HTTPS: Khi tạo các trang và nội dung AMP, bạn nên cân nh�
 
 Các tài liệu AMP HTML PHẢI:
 
-Quy tắc | Mô tả
---- | ---
-Bắt đầu với loại tài liệu `<!doctype html>`. | Tiêu chuẩn cho HTML.
-Chứa một thẻ `<html ⚡>` cấp cao nhất <br>(`<html amp>` cũng được chấp nhận). | Xác định trang này là có nội dung AMP.
-Chứa các thẻ `<head>` và `<body>`. | Chúng là tùy chọn trong HTML nhưng là bắt buộc trong AMP.
-Chứa một thẻ `<meta charset="utf-8">` như con đầu tiên của thẻ `<head>`. | Thẻ này xác định mã hóa cho trang.
-Chứa một thẻ `<script async src="https://cdn.ampproject.org/v0.js"></script>` trong thẻ `<head>`. Theo biện pháp thực hành tiên tiến nhất, bạn nên bao gồm kịch bản này càng sớm càng tốt trong `<head>` (đầu đề). | Bao gồm và tải thư viện AMP JS.
-Chứa một thẻ `<link rel="canonical" href="$SOME_URL">` trong phần `<head>`. | Chỉ đến phiên bản HTML thông thường của tài liệu AMP HTML này hoặc đến chính nó nếu phiên bản HTML đó không tồn tại. Tìm hiểu thêm trong phần [Quảng bá trang của bạn](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md).
-Chứa một thẻ `<meta name="viewport" content="width=device-width>`. Bạn cũng nên bao gồm initial-scale=1. | Quy định một màn hiển thị tương thích. Tìm hiểu thêm trong bài [Tạo các trang AMP tương thích](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).
-Chứa [code soạn sẵn AMP](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) trong thẻ <code><head></code>. | Một đoạn code soạn sẵn CSS để ẩn nội dung từ đầu cho đến khi AMP JS được tải.
+| Quy tắc                                                                                                                                                                                                            | Mô tả                                                                                                                                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Bắt đầu với loại tài liệu `<!doctype html>`.                                                                                                                                                                       | Tiêu chuẩn cho HTML.                                                                                                                                                                                                                                  |
+| Chứa một thẻ `<html ⚡>` cấp cao nhất <br>(`<html amp>` cũng được chấp nhận).                                                                                                                                      | Xác định trang này là có nội dung AMP.                                                                                                                                                                                                                |
+| Chứa các thẻ `<head>` và `<body>`.                                                                                                                                                                                 | Chúng là tùy chọn trong HTML nhưng là bắt buộc trong AMP.                                                                                                                                                                                             |
+| Chứa một thẻ `<meta charset="utf-8">` như con đầu tiên của thẻ `<head>`.                                                                                                                                           | Thẻ này xác định mã hóa cho trang.                                                                                                                                                                                                                    |
+| Chứa một thẻ `<script async src="https://cdn.ampproject.org/v0.js"></script>` trong thẻ `<head>`. Theo biện pháp thực hành tiên tiến nhất, bạn nên bao gồm kịch bản này càng sớm càng tốt trong `<head>` (đầu đề). | Bao gồm và tải thư viện AMP JS.                                                                                                                                                                                                                       |
+| Chứa một thẻ `<link rel="canonical" href="$SOME_URL">` trong phần `<head>`.                                                                                                                                        | Chỉ đến phiên bản HTML thông thường của tài liệu AMP HTML này hoặc đến chính nó nếu phiên bản HTML đó không tồn tại. Tìm hiểu thêm trong phần [Quảng bá trang của bạn](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md). |
+| Chứa một thẻ `<meta name="viewport" content="width=device-width>`. Bạn cũng nên bao gồm initial-scale=1.                                                                                                           | Quy định một màn hiển thị tương thích. Tìm hiểu thêm trong bài [Tạo các trang AMP tương thích](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).                                                         |
+| Chứa [code soạn sẵn AMP](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) trong thẻ <code><head></code>.                                                                              | Một đoạn code soạn sẵn CSS để ẩn nội dung từ đầu cho đến khi AMP JS được tải.                                                                                                                                                                         |
 
 ## Siêu dữ liệu tùy chọn
 

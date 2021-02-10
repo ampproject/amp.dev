@@ -1,6 +1,6 @@
 ---
-"$title": Doğrulama hatalarını çözme
-"$order": '2'
+'$title': Doğrulama hatalarını çözme
+$order: 2
 description: Bu bölümde, AMP sayfamızdaki AMP doğrulama hatalarını inceleyip çözeceğiz. Konsolunuzda hataların farklı bir sırada görünebileceğini unutmayın.
 ---
 
@@ -35,13 +35,13 @@ Bu öğretici için, standart sayfa olarak dönüştürdüğümüz orijinal HTML
 Devam edin ve aşağıdaki kodu <code><meta charset="utf-8" /></code> etiketinin altına <strong>ekleyin</strong>:
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 [tip type="note"] Bağımsız bir standart AMP sayfası oluşturabilirsiniz. Standart bağlantı yine de gereklidir, ancak AMP makalesinin kendisine referans vermelidir:
 
 ```html
-<link rel="canonical" href="article.amp.html">
+<link rel="canonical" href="article.amp.html" />
 ```
 
 [/tip]
@@ -57,7 +57,7 @@ AMP, sayfayı AMP belgesi olarak bildirmek için sayfanın kök `<html>` öğesi
 Yukarıdaki hatalar basitçe `⚡` özniteliğini `<html>` etiketine şu şekilde ekleyerek çözülebilir:
 
 ```html
-<html ⚡ lang="en">
+<html ⚡ lang="en"></html>
 ```
 
 Şimdi devam edin, sayfayı yeniden yükleyin ve her iki hatanın da giderilip giderilmediğini kontrol edin.
@@ -65,7 +65,7 @@ Yukarıdaki hatalar basitçe `⚡` özniteliğini `<html>` etiketine şu şekild
 [tip type="note"] `⚡` değerini belirtmek önerilen yaklaşım olsa da, aşağıdaki gibi `⚡` özniteliği yerine `amp` özniteliğini kullanmak da mümkündür:
 
 ```html
-<html amp lang="en">
+<html amp lang="en"></html>
 ```
 
 [/tip]
@@ -81,7 +81,7 @@ AMP, görüntü alanı için bir `width` ve `minimum-scale` tanımlanmasını ge
 Görüntü alanı hatasını çözmek için aşağıdaki HTML parçacığını `<head>` etiketine ekleyin:
 
 ```html
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width" />
 ```
 
 `width` ve `minimum-scale` için belirtilen değerler, AMP'de gerekli değerlerdir. `initial-scale` tanımlamak zorunlu değildir, ancak genellikle mobil web geliştirmeye dahil edilir ve önerilir. [Görüntü Alanı Yapılandırma bölümünde](https://developers.google.com/speed/docs/insights/ConfigureViewport) , görüntü alanı ve duyarlı tasarım hakkında daha fazla bilgi edinebilirsiniz.
@@ -104,9 +104,7 @@ Sorun, bunun harici bir stil sayfası referansı olmasıdır. AMP'de, belgelerin
 
 ```html
 <style amp-custom>
-
-/* The content from base.css */
-
+  /* The content from base.css */
 </style>
 ```
 
@@ -171,7 +169,63 @@ Aşağıdaki hatalar, eksik standart metin koduna işaret eder:
 Her AMP belgesi aşağıdaki AMP standart metin kodunu gerektirir:
 
 ```html
-<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<style amp-boilerplate>
+  body {
+    -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+  }
+  @-webkit-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-moz-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-ms-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-o-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }</style
+><noscript
+  ><style amp-boilerplate>
+    body {
+      -webkit-animation: none;
+      -moz-animation: none;
+      -ms-animation: none;
+      animation: none;
+    }
+  </style></noscript
+>
 ```
 
 Belgenizin `<head>` etiketinin altına standart metin kodunu **ekleyin**.
@@ -220,7 +274,7 @@ Neden `container` türü çıkarımı yapıldı? Çünkü <a><code>amp-img</code
 
 Sayfayı yenileyin ve doğrulayıcıyı kontrol edin; artık herhangi bir hata görmemelisiniz!
 
-Artık geçerli bir AMP belgeniz var, ancak sayfada garip bir şekilde konumlandırıldığı için resim o kadar harika görünmüyor. Varsayılan olarak, bir [`amp-img`](../../../../documentation/components/reference/amp-img.md) için yüksekliği ve genişliği belirttiğinizde AMP, boyutları belirttiğiniz şekilde sabitler; ancak AMP, ekran boyutu ne olursa olsun sayfayı *duyarlı bir şekilde* uzatsa ve sayfaya sığacak şekilde ölçeklendirse harika olmaz mıydı?
+Artık geçerli bir AMP belgeniz var, ancak sayfada garip bir şekilde konumlandırıldığı için resim o kadar harika görünmüyor. Varsayılan olarak, bir [`amp-img`](../../../../documentation/components/reference/amp-img.md) için yüksekliği ve genişliği belirttiğinizde AMP, boyutları belirttiğiniz şekilde sabitler; ancak AMP, ekran boyutu ne olursa olsun sayfayı _duyarlı bir şekilde_ uzatsa ve sayfaya sığacak şekilde ölçeklendirse harika olmaz mıydı?
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-not-responsive.png', 412, 660, align='center third', caption="Our image isn't responsive.") }}
 
@@ -229,7 +283,12 @@ Neyse ki AMP, belirlediğiniz genişlik ve yükseklikten öğelerin en boy oran�
 Görselimizin ölçeklenmesi ve yeniden boyutlandırılması için yerleşim özniteliğini <code>responsive</code> olarak <strong>ayarlayalım</strong>:
 
 ```html
-<amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+<amp-img
+  src="mountains.jpg"
+  layout="responsive"
+  width="266"
+  height="150"
+></amp-img>
 ```
 
 Voila! Resmimiz doğru en boy oranında ve ekran genişliğini duyarlı bir şekilde doldurur.
@@ -243,18 +302,75 @@ Voila! Resmimiz doğru en boy oranında ve ekran genişliğini duyarlı bir şek
 Artık AMP belgeniz şunun gibi görünmelidir:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width" />
 
-    <link rel="canonical" href="/article.html">
-    <link rel="shortcut icon" href="amp_favicon.png">
+    <link rel="canonical" href="/article.html" />
+    <link rel="shortcut icon" href="amp_favicon.png" />
 
     <title>News Article</title>
 
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
     <style amp-custom>
       body {
         width: auto;
@@ -284,15 +400,21 @@ Artık AMP belgeniz şunun gibi görünmelidir:
     <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
-    <header>
-      News Site
-    </header>
+    <header>News Site</header>
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
 
-      <amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+      <amp-img
+        src="mountains.jpg"
+        layout="responsive"
+        width="266"
+        height="150"
+      ></amp-img>
     </article>
   </body>
 </html>

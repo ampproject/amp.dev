@@ -1,10 +1,10 @@
 ---
-"$title": Add advanced AMP features
-"$order": '0'
+'$title': Add advanced AMP features
+$order: 0
 description: 이번 튜토리얼에서는 AMP 기초에 대한 이해를 바탕으로 AMP가 광고, 분석, 임베디드 동영상, 소셜 미디어 통합, 캐러셀 등을 처리하는 방식을 설명합니다.
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='완성된 뉴스 기사') }}

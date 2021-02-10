@@ -1,10 +1,10 @@
 ---
-"$title": Últimos pasos antes de la publicación
-"$order": '6'
-description: "¡Felicidades! Probó su página de forma local y solucionó los errores de validación. Esto significa que está listo para lanzar su primera página AMP."
+'$title': Últimos pasos antes de la publicación
+$order: 6
+description: '¡Felicidades! Probó su página de forma local y solucionó los errores de validación. Esto significa que está listo para lanzar su primera página AMP.'
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ¡Felicidades! Probó su página de forma local y solucionó los errores de validación. Esto significa que está listo para lanzar su primera página AMP.

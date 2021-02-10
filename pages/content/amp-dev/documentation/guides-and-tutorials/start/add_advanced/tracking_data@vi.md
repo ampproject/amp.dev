@@ -1,6 +1,6 @@
 ---
-"$title": Theo dõi tương tác bằng công cụ phân tích
-"$order": '4'
+'$title': Theo dõi tương tác bằng công cụ phân tích
+$order: 4
 description: Các nền tảng phân tích thường được tích hợp vào các website thông qua đoạn code JavaScript inline và lệnh gọi chức năng để kích hoạt các sự kiện được gửi trả về hệ thống phân tích.
 ---
 
@@ -10,13 +10,28 @@ Sau đây là một ví dụ về tính năng theo dõi Google Analytics dựa t
 
 ```html
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    (i[r] =
+      i[r] ||
+      function () {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    'script',
+    '//www.google-analytics.com/analytics.js',
+    'ga'
+  );
 
-ga('create', 'UA-XXXXX-Y', 'auto');
-ga('send', 'pageview');
+  ga('create', 'UA-XXXXX-Y', 'auto');
+  ga('send', 'pageview');
 </script>
 ```
 
@@ -25,29 +40,33 @@ JavaScript này rất đơn giản; nó gửi một thông báo để theo dõi 
 Để tái lập chức năng này trong AMP, trước tiên ta cần phải **bao gồm** thư viện thành phần [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) ở trong phần `<head>` của tài liệu:
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script
+  async
+  custom-element="amp-analytics"
+  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+></script>
 ```
 
 Sau đó ta hãy **thêm** thành phần [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) vào cuối `body` (thân) tài liệu:
 
 ```html
 <amp-analytics type="googleanalytics">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-YYYY-Y"
-  },
-  "triggers": {
-    "default pageview": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
       "vars": {
-        "title": "Name of the Article"
+        "account": "UA-YYYY-Y"
+      },
+      "triggers": {
+        "default pageview": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "Name of the Article"
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -61,31 +80,31 @@ Dựa vào ví dụ bên trên, ta có thể **thêm** mã kích hoạt khác ma
 
 ```html
 <amp-analytics type="googleanalytics">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-YYYY-Y"
-  },
-  "triggers": {
-    "default pageview": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
       "vars": {
-        "title": "Name of the Article"
-      }
-    },
-    "click on #header trigger": {
-      "on": "click",
-      "selector": "#header",
-      "request": "event",
-      "vars": {
-        "eventCategory": "examples",
-        "eventAction": "clicked-header"
+        "account": "UA-YYYY-Y"
+      },
+      "triggers": {
+        "default pageview": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "Name of the Article"
+          }
+        },
+        "click on #header trigger": {
+          "on": "click",
+          "selector": "#header",
+          "request": "event",
+          "vars": {
+            "eventCategory": "examples",
+            "eventAction": "clicked-header"
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -93,6 +112,6 @@ Như bạn có thể đoán từ tên của yếu tố kích hoạt mới này, 
 
 Nếu bạn có một nền tảng theo dõi tùy chỉnh mà bạn muốn tích hợp, bạn vẫn có thể sử dụng [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) và định nghĩa điểm cuối URL cá nhân của mình để gửi dữ liệu theo dõi đến đó. Tìm hiểu thêm trong tài liệu tham khảo cho thành phần [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
 
-[tip type="note"] **LƯU Ý –**  `“UA-YYYY-Y”` là một tài khoản Google Analytics mẫu; nó cần được thay bằng mã theo dõi Google Analytics cho website của bạn nếu bạn sử dụng ví dụ này trên website của mình. [/tip]
+[tip type="note"] **LƯU Ý –** `“UA-YYYY-Y”` là một tài khoản Google Analytics mẫu; nó cần được thay bằng mã theo dõi Google Analytics cho website của bạn nếu bạn sử dụng ví dụ này trên website của mình. [/tip]
 
 [tip type="tip"] **MẸO –** Nếu bạn quan tâm đến một hệ thống theo dõi đơn giản hơn, bạn có thể tìm hiểu về [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md). Nếu bạn chỉ cần theo dõi lượt xem trang, [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) là một giải pháp nhẹ cân hơn [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) bởi nó chỉ nhằm giải quyết các yêu cầu của việc theo dõi điểm ảnh truyền thống. Tìm hiểu thêm trong [Hướng dẫn cơ bản về Phân tích](../../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md). [/tip]

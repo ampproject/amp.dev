@@ -1,17 +1,17 @@
 ---
-"$title": So trägst du bei
-"$titles":
+'$title': So trägst du bei
+'$titles':
   navigation: Contribute
-"$path": "/documentation/guides-and-tutorials/contribute/index.html"
-"$localization":
-  path: "/{locale}/documentation/guides-and-tutorials/contribute/index.html"
-"$order": '0'
+'$path': '/documentation/guides-and-tutorials/contribute/index.html'
+'$localization':
+  path: '/{locale}/documentation/guides-and-tutorials/contribute/index.html'
+$order: 0
 description: Ob Entwickler, Content Autoren oder Anbieter von AMP relevanten Diensten – ohne die Mitarbeit der gesamten Community wäre das AMP Projekt nicht möglich.
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 ---
 
 Ob Entwickler, Content Autoren oder Anbieter von AMP relevanten Diensten – ohne die Mitarbeit der gesamten Community wäre das AMP Projekt nicht möglich. Du kannst dich auf viele verschiedene Arten einbringen.
