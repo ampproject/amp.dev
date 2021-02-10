@@ -17,7 +17,7 @@
   @include txt-strong;
   @include filter-bubble-shadow-regular;
   color: var(--color, safeColor('light-gray'));
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Noto Sans', system;
   transition: background-color .2s ease-in, color .2s ease-in, box-shadow .25s ease-in;
   cursor: pointer;
 
