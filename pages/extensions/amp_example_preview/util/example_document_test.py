@@ -21,11 +21,11 @@ class SourceCodeExporterTestCase(unittest.TestCase):
   def test_example_body_only(self):
     example_doc = self.get_example_document('<h1>headline</h1>')
     self.assertEqual('<h1>headline</h1>', example_doc.body)
-    self.assertEquals(None, example_doc.head)
-    self.assertEquals(None, example_doc.custom_style)
-    self.assertEquals(0, len(example_doc.imports))
-    self.assertEquals(None, example_doc.template)
-    self.assertEquals('none', example_doc.preview)
+    self.assertEqual(None, example_doc.head)
+    self.assertEqual(None, example_doc.custom_style)
+    self.assertEqual(0, len(example_doc.imports))
+    self.assertEqual(None, example_doc.template)
+    self.assertEqual('none', example_doc.preview)
 
   def test_attributes(self):
     example_doc = self.get_example_document('<h1>headline</h1>', {
@@ -33,14 +33,14 @@ class SourceCodeExporterTestCase(unittest.TestCase):
       'template': 'amp-mustache',
       'imports': 'amp-accordion:0.9,amp-date-display',
     })
-    self.assertEquals('inline', example_doc.preview)
-    self.assertEquals(2, len(example_doc.imports))
-    self.assertEquals('amp-accordion', example_doc.imports[0].name)
-    self.assertEquals('0.9', example_doc.imports[0].version)
-    self.assertEquals('amp-date-display', example_doc.imports[1].name)
-    self.assertEquals('1.2', example_doc.imports[1].version) # 0.1 is always the default
-    self.assertEquals('amp-mustache', example_doc.template.name)
-    self.assertEquals('0.2', example_doc.template.version)
+    self.assertEqual('inline', example_doc.preview)
+    self.assertEqual(2, len(example_doc.imports))
+    self.assertEqual('amp-accordion', example_doc.imports[0].name)
+    self.assertEqual('0.9', example_doc.imports[0].version)
+    self.assertEqual('amp-date-display', example_doc.imports[1].name)
+    self.assertEqual('1.2', example_doc.imports[1].version) # 0.1 is always the default
+    self.assertEqual('amp-mustache', example_doc.template.name)
+    self.assertEqual('0.2', example_doc.template.version)
 
   def test_different_attributes(self):
     example_doc = self.get_example_document('<h1>headline</h1>', {
@@ -48,12 +48,12 @@ class SourceCodeExporterTestCase(unittest.TestCase):
       'template': 'amp-mustache:0.9',
       'imports': 'amp-accordion',
     })
-    self.assertEquals('none', example_doc.preview)
-    self.assertEquals(1, len(example_doc.imports))
-    self.assertEquals('amp-accordion', example_doc.imports[0].name)
-    self.assertEquals('0.3', example_doc.imports[0].version)
-    self.assertEquals('amp-mustache', example_doc.template.name)
-    self.assertEquals('0.9', example_doc.template.version)
+    self.assertEqual('none', example_doc.preview)
+    self.assertEqual(1, len(example_doc.imports))
+    self.assertEqual('amp-accordion', example_doc.imports[0].name)
+    self.assertEqual('0.3', example_doc.imports[0].version)
+    self.assertEqual('amp-mustache', example_doc.template.name)
+    self.assertEqual('0.9', example_doc.template.version)
 
   def test_unknown_attributes(self):
     example_doc = self.get_example_document('<h1>headline</h1>', {
@@ -61,11 +61,11 @@ class SourceCodeExporterTestCase(unittest.TestCase):
       'template': 'amp-foo-bar',
       'imports': 'amp-foo-baz',
     })
-    self.assertEquals('none', example_doc.preview)
-    self.assertEquals('amp-foo-baz', example_doc.imports[0].name)
-    self.assertEquals('0.1', example_doc.imports[0].version)
-    self.assertEquals('amp-foo-bar', example_doc.template.name)
-    self.assertEquals('0.1', example_doc.template.version)
+    self.assertEqual('none', example_doc.preview)
+    self.assertEqual('amp-foo-baz', example_doc.imports[0].name)
+    self.assertEqual('0.1', example_doc.imports[0].version)
+    self.assertEqual('amp-foo-bar', example_doc.template.name)
+    self.assertEqual('0.1', example_doc.template.version)
 
   def test_has_head_tag_with_head_tags(self):
     example_doc = self.get_example_document(
@@ -99,8 +99,8 @@ class SourceCodeExporterTestCase(unittest.TestCase):
     self.assertFalse(example_doc.has_import_in_head('amp-accordion'))
     # the custom style should be removed from the head
     self.assertFalse(example_doc.has_tag_in_head('style', 'amp-custom'))
-    self.assertEquals('h1 {color:red;}', example_doc.custom_style.strip())
-    self.assertEquals('none', example_doc.preview)  # inline preview should be overwritten because of the head
+    self.assertEqual('h1 {color:red;}', example_doc.custom_style.strip())
+    self.assertEqual('none', example_doc.preview)  # inline preview should be overwritten because of the head
 
   def test_has_head_tag_without_head_tags(self):
     example_doc = self.get_example_document(
@@ -134,7 +134,7 @@ class SourceCodeExporterTestCase(unittest.TestCase):
         '<body>\n'
         '  <h1>Red Headline</h1>\n'
         '</body>\n')
-    self.assertEquals('h1 {color:red;}', example_doc.custom_style.strip())
+    self.assertEqual('h1 {color:red;}', example_doc.custom_style.strip())
     self.assertFalse('<style amp-custom>' in example_doc.head)
     self.assertTrue('<title>' in example_doc.head)
 
@@ -164,7 +164,7 @@ class SourceCodeExporterTestCase(unittest.TestCase):
       '    <h1>Welcome to the mobile web</h1>\n'
       '  </body>\n'
       '</html>\n')
-    self.assertEquals('<h1>Welcome to the mobile web</h1>', example_doc.body.strip())
+    self.assertEqual('<h1>Welcome to the mobile web</h1>', example_doc.body.strip())
     self.assertFalse(example_doc.has_boilerplate())
     self.assertTrue(example_doc.has_amp_script())
 

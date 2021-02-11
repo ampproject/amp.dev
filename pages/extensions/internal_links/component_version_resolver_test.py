@@ -22,11 +22,11 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
     pod = MockPod(docs)
     version_resolver = ComponentVersionResolver(pod, 'pages/documents/components/')
     doc = version_resolver.find_latest_for_component_with_no_version('pages/documents/components/amp-list.md')
-    self.assertEquals(doc, 'pages/documents/components/amp-list-v1.3.md')
+    self.assertEqual(doc, 'pages/documents/components/amp-list-v1.3.md')
     doc = version_resolver.find_latest_for_component_with_no_version('pages/documents/components/amp-img.md')
-    self.assertEquals(doc, 'pages/documents/components/amp-img-v11.2.md')
+    self.assertEqual(doc, 'pages/documents/components/amp-img-v11.2.md')
     doc = version_resolver.find_latest_for_component_with_no_version('pages/documents/components/amp-unknown.md')
-    self.assertEquals(doc, None)
+    self.assertEqual(doc, None)
 
 
 class MockPod:
