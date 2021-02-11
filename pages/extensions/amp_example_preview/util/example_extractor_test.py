@@ -6,8 +6,8 @@ import os
 
 sys.path.extend([os.path.join(os.path.dirname(__file__), '.')])
 
-from example_document import ExampleDocument
-from example_extractor import SourceCodeExtractor
+from .example_document import ExampleDocument
+from .example_extractor import SourceCodeExtractor
 
 
 class SourceCodeExtractorTestCase(unittest.TestCase):

@@ -6,7 +6,7 @@ import os
 
 sys.path.extend([os.path.join(os.path.dirname(__file__), '.')])
 
-from example_document import ExampleDocument
+from .example_document import ExampleDocument
 
 import amp_component_versions
 

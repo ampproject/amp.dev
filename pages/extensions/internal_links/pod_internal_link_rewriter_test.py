@@ -9,7 +9,7 @@ from collections import namedtuple
 
 sys.path.extend([os.path.join(os.path.dirname(__file__), '.')])
 
-from pod_internal_link_rewriter import PodInternalLinkRewriter
+from .pod_internal_link_rewriter import PodInternalLinkRewriter
 
 
 class PodInternalLinkRewriterTestCase(unittest.TestCase):
