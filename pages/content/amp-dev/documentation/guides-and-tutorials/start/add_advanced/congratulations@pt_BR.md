@@ -1,8 +1,10 @@
 ---
-$title: Parabéns!
+'$title': Congratulations!
+$order: 7
+description: Você terminou o tutorial sobre como adicionar recursos AMP avançados e explorou com sucesso diversos dos mais importantes componentes avançados do AMP!
 ---
 
-Você terminou o tutorial sobre como adicionar recursos AMP avançados e conheceu vários dos mais importantes componentes avançados de AMP.
+Você terminou o tutorial sobre como adicionar recursos AMP avançados e explorou com sucesso diversos dos mais importantes componentes avançados do AMP.
 
 Nesse tutorial, você aprendeu como:
 
@@ -17,10 +19,10 @@ Nesse tutorial, você aprendeu como:
 
 ## Próximas etapas
 
-Para ampliar seu conhecimento de AMP, veja estes recursos:
+Para ampliar seu conhecimento de AMP, dê uma olhada nestes recursos:
 
 - Tutorial sobre [como criar páginas AMP interativas](../../../../documentation/guides-and-tutorials/develop/interactivity/index.md): saiba como usar [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) para criar páginas AMP interativas.
-- [Combinar AMP com Progressive Web Apps](../../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md): saiba como Progressive Web Apps e páginas AMP se complementam.
+- [Combine AMP com Progressive Web Apps](../../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md): saiba como Progressive Web Apps e páginas AMP se complementam.
 - [AMP Templates](../../../../documentation/templates/index.html): crie páginas usando modelos e componentes com estilos predefinidos.
 - [Examples](../../../../documentation/examples/index.html): veja demonstrações e amostras ativas.
 - [The AMP Channel no YouTube](https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw): aprenda com vídeos específicos sobre AMP.

@@ -1,6 +1,9 @@
 $view: /layouts/blank.j2
 $sitemap:
   enabled: false
+$path: /shared/copy-pixi-url.html
+$localization:
+  $path: /{locale}/shared/copy-pixi-url.html
 ---
 <!doctype html>
 {% set pixi = g.doc('/content/pixi/index.md', locale=doc.locale) %}

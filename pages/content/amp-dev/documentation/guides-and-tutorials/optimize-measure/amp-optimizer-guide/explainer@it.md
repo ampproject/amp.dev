@@ -1,14 +1,17 @@
 ---
-$title: Come funziona un ottimizzatore AMP
+'$title': Come funziona un ottimizzatore AMP
 $order: 1
-description: Un ottimizzatore AMP prende in input un documento AMPHTML valido e lo trasforma in una versione migliorata, applicando ulteriori ottimizzazioni che sarebbero scomode da eseguire manualmente. Questa guida spiega in dettaglio il funzionamento dell'ottimizzatore AMP.
+description: "Un ottimizzatore AMP prende in input un documento AMPHTML valido e lo trasforma in una versione migliorata, applicando ulteriori ottimizzazioni che sarebbero scomode da eseguire manualmente. Questa guida spiega in dettaglio il funzionamento dell'ottimizzatore AMP."
+formats:
+  - websites
+  - stories
 author: sebastianbenz
 ---
 
 Un ottimizzatore AMP prende in input un documento AMPHTML valido e lo trasforma in una versione migliorata, applicando ulteriori ottimizzazioni che sarebbero scomode da eseguire manualmente. Il risultante codice “**AMP trasformato**” nell'elemento `html` può essere riconosciuto tramite l'attributo `transformed`:
 
 ```
-<html ⚡ i-amphtml-layout i-amphtml-no-boilerplate transformed="self">
+<html ⚡ i-amphtml-layout i-amphtml-no-boilerplate transformed="self;v=1">
 ```
 
 Nota: le cache AMP utilizzano un flag di trasformazione diverso, ad esempio, le cache AMP Google aggiungono l'attributo `transformed=google;v=1`.
@@ -29,7 +32,7 @@ I rendering lato server eseguono tre operazioni:
 
 ⁣ **1. Rimozione del boilerplate AMP: ** per ogni elemento che utilizza un layout AMP, il sistema inserisce il markup specifico del layout.
 
-⁣**2. Utilizzo di stili CSS interni o inline nel codice AMP: ** il codice AMP-boilerplate è sostituito dagli <a href="https://cdn.ampproject.org/v0.css" data-md-type="link">stili CSS del runtime AMP</a>: <style data-md-type="raw_html" amp-runtime="">...</style>. Per i documenti senza rendering lato server, il sistema AMP aggiunge gli stili AMP a runtime. Tuttavia, le pagine AMP con rendering lato server ne hanno bisogno perché i layout AMP possano funzionare prima del caricamento del sistema AMP. Per evitare possibili conflitti di versione, il sistema AMP controlla se la versione indicata in i-amphtml-version="011905222334000" differisce da quella corrente e, in caso di differenze, aggiorna il codice CSS all'ultima versione.
+⁣**2. Inline AMP-internal CSS styles: ** the AMP-boilerplate code is replaced by the <a href="https://cdn.ampproject.org/v0.css">AMP-runtime CSS styles</a>:`<style amp-runtime>...</style>`. For non-server-side rendered documents, AMP adds these styles at runtime. However, server-side-rendered AMP pages require these for the AMP layouts to work before AMP has been loaded. To avoid potential version conflicts, at runtime, AMP will check if the version specified in i-amphtml-version="011905222334000" differs from the current AMP version and will update the CSS with the latest version if not.
 
 ```
 <style amp-runtime i-amphtml-version="011905222334000">html{overflow-x:hidden!important}html.i-amphtml-...</style>
@@ -64,7 +67,7 @@ In caso di elementi `amp-img`, gli ottimizzatori AMP effettueranno il rendering 
 
 ### Ottimizzazione immagini
 
-Gli otttimizzatori AMP permettono di fornire immagini reattive ottimizzate, generando attributi  `srcset` specifici dei layout AMP in uso. Ad esempio, la seguente dichiarazione `amp-img`:
+Gli otttimizzatori AMP permettono di fornire immagini reattive ottimizzate, generando attributi `srcset` specifici dei layout AMP in uso. Ad esempio, la seguente dichiarazione `amp-img`:
 
 ```
 <amp-img src="image1.png" width="400" height="800" layout="responsive"></amp-img>

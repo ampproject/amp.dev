@@ -1,17 +1,20 @@
 ---
-$title: Introduzione agli annunci AMPHTML
+'$title': Introduzione agli annunci AMPHTML
+$order: 1
 description: Gli annunci AMPHTML offrono uno strumento più veloce, leggero e sicuro per fare pubblicità su web. Sebbene le pagine AMP supportino gli annunci HTML tradizionali, questi annunci possono essere lenti da caricare.
+formats:
+  - ads
 ---
 
 ## Cos'è un annuncio AMPHTML?
 
-Gli annunci AMPHTML offrono uno strumento più veloce, leggero e sicuro per fare pubblicità su web. Sebbene le pagine AMP supportino gli annunci HTML tradizionali, questi annunci possono essere lenti da caricare. Gli annunci AMPHTML possono essere riprodotti alla stessa velocità del resto della pagina AMP. Gli annunci AMPHTML sono pubblicati solo dopo essere stati convalidati, garantendone la sicurezza e la velocità. Inoltre, questi annunci possono essere pubblicati ovunque sul web, *non solo sulle pagine AMP*.
+Gli annunci AMPHTML offrono uno strumento più veloce, leggero e sicuro per fare pubblicità su web. Sebbene le pagine AMP supportino gli annunci HTML tradizionali, questi annunci possono essere lenti da caricare. Gli annunci AMPHTML possono essere riprodotti alla stessa velocità del resto della pagina AMP. Gli annunci AMPHTML sono pubblicati solo dopo essere stati convalidati, garantendone la sicurezza e la velocità. Inoltre, questi annunci possono essere pubblicati ovunque sul web, _non solo sulle pagine AMP_.
 
 Gli annunci AMPHTML sono scritti in formato AMP HTML in base alle [specifiche degli annunci AMPHTML](a4a_spec.md) (una variante di AMP HTML + CSS). Ciò significa che gli annunci non hanno più la capacità di eseguire codici JavaScript arbitrari, che tradizionalmente sono la causa principale delle loro scarse prestazioni. Pertanto, proprio come per l'AMP principale, i casi d'uso di JavaScript negli annunci sono integrati direttamente nel progetto AMP Open Source, il che garantisce buone prestazioni.
 
 ### Vantaggi
 
-Perché gli annunci AMPHTML sono migliori di quelli tradizionali?
+Why are AMPHTML ads better than traditional ads?
 
 1. **Più veloci**: gli annunci AMPHTML sono più veloci perché essi vengono richiesti nella fase iniziale del processo di rendering delle pagine e sono visualizzati subito prima che l'utente visualizzi l'annuncio. Anche la dimensione ridotta del file di annunci AMPHTML aumenta la velocità.
 2. **Più leggeri**: gli annunci AMPHTML combinano le funzionalità di uso comune, riducendo le dimensioni dei file di annunci. Una volta sulla pagina, inoltre gli annunci AMPHTML consumano meno risorse. Ad esempio, anziché prevedere 10 strumenti di tracciamento ognuno dei quali invia le proprie richieste di informazioni, gli annunci AMPHTML raccolgono tutti i dati una sola volta e li distribuiscono a tutti gli strumenti di tracciamento interessati.
@@ -70,11 +73,11 @@ I fornitori di contenuti creativi devono creare annunci che rispettino le [speci
 
 - [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*presto disponibile*)
+- Adobe Animate (_coming soon_)
 
 ### Reti/server di annunci
 
-Per pubblicare annunci AMPHTML nelle pagine AMP, occorre creare un'estensione [`amp-ad`](../../../documentation/components/reference/amp-ad.md) per la propria rete (a meno di non possederne già una) che utilizzi la modalità di [implementazione delle richieste di annunci Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md). Consultare la sezione [Integrazione con AMP per offrire annunci su display](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md) per altri dettagli. Non è invece necessaria alcuna integrazione speciale per pubblicare annunci AMPHTML su pagine prive di elementi AMP.
+To deliver AMPHTML ads to AMP pages, you need to create an [`amp-ad`](../../../documentation/components/reference/amp-ad.md) extension for your network (unless you already have one) which uses the [Fast Fetch ad request implementation](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md). Refer to [Integrating with AMP to serve display ads](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md) for details. Keep in mind that no special integration is needed to serve AMPHTML to non-AMP pages.
 
 ## Creazione di annunci AMPHTML
 
@@ -84,15 +87,15 @@ Per pubblicare annunci AMPHTML nelle pagine AMP, occorre creare un'estensione [`
 
 - [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*Presto disponibile*)
+- Adobe Animate (_coming soon_)
 
 ### Convalida della sintassi di annunci AMPHTML
 
 Dopo aver creato annunci AMPHTML, occorre verificare che utilizzino la sintassi AMPHTML corretta. A seconda dell'ambiente di sviluppo, ci sono varie opzioni per convalidare gli annunci AMPHTML:
 
 - Usare il modulo [AMP validator NPM](https://www.npmjs.com/package/amphtml-validator) per integrare la procedura di convalida nei propri build CI.
-- Utilizzare lo strumento [AMP validator](https://validator.ampproject.org/) per i test una-tantum.
-- Diventare partner di [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) e utilizzare il loro endpoint di convalida pubblico.
+- Use the [AMP validator](https://validator.ampproject.org/) for one-off testing.
+- Partner with [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) and use their public validator end point.
 
 [tip type="note"] **NOTA:** Per visualizzare rapidamente gli annunci AMPHTML nelle pagine AMP (ad esempio, utilizzando il rendering preferenziale offerto da Fast Fetch), la sintassi deve essere corretta. Se la sintassi non è valida, l'annuncio verrà comunque visualizzato, ma non altrettanto rapidamente. [/tip]
 
@@ -120,6 +123,6 @@ Sì. Consultare [`amp-animation`](../../../documentation/components/reference/am
 
 #### Non riesco a trovare quello che mi serve, dove posso fare domande?
 
-- [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) è lo strumento da noi consigliato per trovare risposte a domande su AMP; poiché i membri della comunità del progetto AMP monitorano regolarmente Stack Overflow, probabilmente lì riceverai la risposta più rapida alle tue domande.
-- Iscriviti al canale [Slack # a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) per trovare soluzioni e risposte.
-- Se riscontri bug in AMP o vuoi richiedere una funzionalità specifica per AMP, consulta la sezione [Segnalazione di problemi con AMP](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp) per informazioni sull'invio di segnalazioni.
+- [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) is our recommended way to find answers to questions about AMP; since members of the AMP Project community regularly monitor Stack Overflow you will probably receive the fastest response to your questions there.
+- Join the [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) channel for solutions and answers.
+- If you encounter a bug in AMP or have a feature request for AMP, see [Reporting issues with AMP](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp) for information on filing an issue.

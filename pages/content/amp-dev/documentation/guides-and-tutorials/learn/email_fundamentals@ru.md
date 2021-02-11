@@ -1,10 +1,10 @@
 ---
-"$title": Основы AMP для писем
-"$order": '1'
+'$title': Основы AMP для писем
+$order: 1
 description: Все, что нужно знать для правильного оформления AMP-писем.
 author: CrystalOnScript
 formats:
-- email
+  - email
 ---
 
 Если вы уже знакомы с AMP, это отличные новости, так как AMP-письма создаются с помощью специализированной версии библиотеки AMP HTML. Если вы не знакомы с AMP, ничего страшного: данный урок содержит всю необходимую информацию, которая позволит вам приступить к созданию правильно сформированных AMP-писем!
@@ -14,16 +14,20 @@ formats:
 AMP-письма выглядят как классические HTML-письма, но с некоторыми отличиями. Ниже приведена минимальная разметка, необходимая для того, чтобы письмо считалось правильно оформленным AMP-письмом.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email data-css-strict>
-<head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
-</head>
-<body>
-  Hello, AMP4EMAIL world.
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    Hello, AMP4EMAIL world.
+  </body>
 </html>
 ```
 
@@ -38,8 +42,12 @@ AMP-письма выглядят как классические HTML-пись�
 
 ```html
 <head>
-...
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  ...
+  <style amp4email-boilerplate>
+    body {
+      visibility: hidden;
+    }
+  </style>
 </head>
 ```
 
@@ -132,9 +140,7 @@ AMP-письма выглядят как классические HTML-пись�
   src="https://example.com/endpoint?token=REPLACE_WITH_YOUR_ACCESS_TOKEN"
   height="300"
 >
-  <template type="amp-mustache">
-    ...
-  </template>
+  <template type="amp-mustache"> ... </template>
 </amp-list>
 ```
 

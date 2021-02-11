@@ -1,7 +1,9 @@
 ---
-$title: 既存のメールへの AMP の追加
+'$title': 既存のメールへの AMP の追加
 $order: 1
 author: CrystalOnScript
+formats:
+  - email
 ---
 
 AMP for Email 形式は、新しい MIME パートとして組み込まれます。AMP for Email をサポートするプロバイダにメールが送信されれば表示されますが、そうでなくでも心配はいりません！プロバイダは HTML またはプレーンテキストのフォールバックを表示します。このガイドを使用して、メールに AMP を含めましょう。
@@ -13,35 +15,37 @@ AMP for Email 形式は、新しい MIME パートとして組み込まれます
 AMP MIME パートは、`multipart/alternative` ノードの配下にネストされている必要があり、既存の `text/html` または `text/plain` パートとともに存在する必要があります。こうすることで、メールのメッセージをすべてのクライアントでレンダリングさせることができます。
 
 ```html
-From:  Person A <persona@example.com>
-To: Person B <personb@example.com>
-Subject: An AMP email!
-Content-Type: multipart/alternative; boundary="001a114634ac3555ae05525685ae"
+From: Person A
+<persona@example.com>
+  To: Person B
+  <personb@example.com>
+    Subject: An AMP email! Content-Type: multipart/alternative;
+    boundary="001a114634ac3555ae05525685ae" --001a114634ac3555ae05525685ae
+    Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes Hello
+    World in plain text! --001a114634ac3555ae05525685ae Content-Type:
+    text/x-amp-html; charset="UTF-8"
 
---001a114634ac3555ae05525685ae
-Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+    <!DOCTYPE html>
+    <html ⚡4email data-css-strict>
+      <head>
+        <meta charset="utf-8" />
+        <style amp4email-boilerplate>
+          body {
+            visibility: hidden;
+          }
+        </style>
+        <script async src="https://cdn.ampproject.org/v0.js"></script>
+      </head>
+      <body>
+        Hello World in AMP!
+      </body>
+    </html>
+    --001a114634ac3555ae05525685ae-- Content-Type: text/html; charset="UTF-8"
 
-Hello World in plain text!
-
---001a114634ac3555ae05525685ae
-Content-Type: text/x-amp-html; charset="UTF-8"
-
-<!doctype html>
-<html ⚡4email data-css-strict>
-<head>
-  <meta charset="utf-8">
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-</head>
-<body>
-Hello World in AMP!
-</body>
-</html>
---001a114634ac3555ae05525685ae--
-Content-Type: text/html; charset="UTF-8"
-
-<span>Hello World in HTML!</span>
---001a114634ac3555ae05525685ae
+    <span>Hello World in HTML!</span>
+    --001a114634ac3555ae05525685ae</personb@example.com
+  ></persona@example.com
+>
 ```
 
 [tip type="important"] 一部のメールクライアントは最後の MIME パートのみをレンダリングします。メールを確実にレンダリングするには、`text/x-amp-html` MIME パートを `text/html` MIME パートの前に配置してください。[/tip]

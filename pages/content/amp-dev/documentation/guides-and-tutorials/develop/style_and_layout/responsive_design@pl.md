@@ -36,7 +36,7 @@ Są to typowe ustawienia okienka na stronie, których można użyć w przypadku 
 
 [filter formats="email"] Ta sekcja dotyczy jedynie witryn internetowych, reklam i relacji AMP. [/filter]
 
-## <a name="creating-a-responsive-layout">Tworzenie responsywnego układu</a>
+## <a id="creating-a-responsive-layout">Tworzenie responsywnego układu</a>
 
 W projekcie responsywnym można użyć zapytań CSS [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media), aby dostosować stylizację strony do różnych wymiarów ekranu bez konieczności zmiany jej zawartości. W AMP możesz nadal używać tych samych zapytań CSS `@media`. Dodatkowo, w celu uzyskania lepszej kontroli nad elementem AMP, możesz określić atrybut `media` w elemencie. Jest to szczególnie przydatne, gdy musisz pokazać lub ukryć element w zależności od zapytania o media. W sekcji [Kierowanie grafiką obrazu](#changing-the-art-direction-of-an-image) znajdziesz przykład użycia atrybutu `media`.
 
@@ -156,7 +156,7 @@ Mamy na przykład urządzenie, na którym szerokość okienka na stronie wynosi 
 
 [tip type="read-on"] **CZYTAJ DALEJ —** więcej informacji na temat korzystania z atrybutu srcset i rozmiarów w AMP, zapoznaj się z przewodnikiem [Responsywne obrazy z atrybutem srcset, rozmiary i wysokości](art_direction.md). [/tip]
 
-#### <a name="changing-the-art-direction-of-an-image">Kierowanie grafiką obrazu</a>
+#### <a id="changing-the-art-direction-of-an-image">Kierowanie grafiką obrazu</a>
 
 Kierowanie grafiką odnosi się do dostosowywania cech wizualnych obrazu do określonych punktów wstrzymania. Na przykład, zamiast po prostu przeskalować obraz do zwężającego się ekranu, można wyświetlić przyciętą, zwężoną wersję obrazu lub zupełnie inne obrazy w różnych punktach wstrzymania. W języku HTML można to osiągnąć za pomocą elementu `picture`. W AMP kierowanie grafiką można osiągnąć poprzez użycie atrybutu `media`.
 

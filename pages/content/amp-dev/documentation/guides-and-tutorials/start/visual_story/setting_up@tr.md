@@ -1,7 +1,7 @@
 ---
-"$title": Kurulum
-"$order": '1'
-description: 'Geliştirme ortamınızı ayarlama: 1. Adım. Kodu indirin. Aşağıdaki URL''den bir zip dosyası olarak sıkıştırılmış öğretici kodunu indirin...'
+'$title': Kurulum
+$order: 1
+description: "Geliştirme ortamınızı ayarlama: 1. Adım. Kodu indirin. Aşağıdaki URL'den bir zip dosyası olarak sıkıştırılmış öğretici kodunu indirin..."
 author: bpaduch
 ---
 

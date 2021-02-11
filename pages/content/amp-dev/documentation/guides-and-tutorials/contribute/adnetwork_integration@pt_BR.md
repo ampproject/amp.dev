@@ -1,5 +1,9 @@
 ---
-$title: Integração com AMP para veicular anúncios de display
+'$title': Integração com AMP para veicular ads
+$order: 5
+description: Este guia é voltado a redes de publicidade que pretendem fazer a integração com AMP para veicular anúncios de display em páginas AMP.
+formats:
+  - ads
 ---
 
 Este guia é voltado a redes de publicidade que pretendem fazer a integração com AMP para veicular anúncios de display em páginas AMP.
@@ -10,7 +14,7 @@ Este guia é voltado a redes de publicidade que pretendem fazer a integração c
 
 ##### Quer veicular anúncios HTML tradicionais?
 
-1.  [`amp-ad`](../../../documentation/components/reference/amp-ad.md).
+1. [`amp-ad`](../../../documentation/components/reference/amp-ad.md)
 
 ##### Quer veicular anúncios HTML para AMP?
 
@@ -21,22 +25,23 @@ Este guia é voltado a redes de publicidade que pretendem fazer a integração c
 
 Assim como um servidor de anúncios, os editores compatíveis incluem uma biblioteca JavaScript fornecida por você e adicionam vários "snippets de anúncios". Esses snippets usam a biblioteca para buscar anúncios e renderizá-los no site do editor. Como a AMP não permite que os editores executem JavaScript arbitrário, será preciso contribuir para o código aberto da AMP se você quiser que a tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md) solicite anúncios do seu servidor de anúncios.
 
-[tip type="note"]
-Use essa implementação [`amp-ad`](../../../documentation/components/reference/amp-ad.md)  para exibir anúncios HTML tradicionais **e** HTML para AMP.
-[/tip]
+[tip type="note"] Use essa implementação [`amp-ad`](../../../documentation/components/reference/amp-ad.md) para exibir anúncios HTML tradicionais **e** HTML para AMP. [/tip]
 
 Por exemplo, é possível chamar o servidor Amazon A9 usando esta sintaxe:
 
 ```html
-<amp-ad width="300" height="250"
-    type="a9"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  width="300"
+  height="250"
+  type="a9"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
-No código acima, o atributo `type` especifica a rede de publicidade, que neste caso é a A9. Os atributos `data-*` dependem dos parâmetros que o servidor A9 da Amazon espera ao exibir um anúncio. O arquivo [`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) mostra como os parâmetros são mapeados para fazer uma chamada JavaScript ao URL do servidor A9. Os parâmetros correspondentes transmitidos pela tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md)  são anexados ao URL para retornar um anúncio.
+No código acima, o atributo `type` especifica a rede de publicidade, que neste caso é a A9. Os atributos `data-*` dependem dos parâmetros que o servidor A9 da Amazon espera ao exibir um anúncio. O arquivo [`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) mostra como os parâmetros são mapeados para fazer uma chamada JavaScript ao URL do servidor A9. Os parâmetros correspondentes transmitidos pela tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md) são anexados ao URL para retornar um anúncio.
 
 Se quiser instruções para criar uma integração [`amp-ad`](../../../documentation/components/reference/amp-ad.md), confira como [integrar redes de publicidade à AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
 
@@ -48,14 +53,14 @@ O [Fast Fetch](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/) 
 
 Para veicular anúncios HTML para AMP no servidor de anúncios, é necessário fornecer uma integração Fast Fetch que inclua:
 
-1.  compatibilidade com comunicação de rede SSL
-1.  JavaScript para criar a solicitação de anúncio (exemplos de implementação: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) e [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
-1.  validação e assinatura do criativo por meio de um serviço de validação (O [Cloudflare](https://blog.cloudflare.com/firebolt/) oferece um serviço de verificação de anúncios AMP. Com ele, qualquer provedor de anúncios independente pode exibir anúncios mais rápidos, leves e interessantes.)
+1. compatibilidade com comunicação de rede SSL
+2. JavaScript para criar a solicitação de anúncio (exemplos de implementação: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) e [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
+3. validação e assinatura do criativo por meio de um serviço de validação (O [Cloudflare](https://blog.cloudflare.com/firebolt/) oferece um serviço de verificação de anúncios AMP. Com ele, qualquer provedor de anúncios independente pode exibir anúncios mais rápidos, leves e interessantes.)
 
 Para ver instruções sobre como criar uma integração com o Fast Fetch, confira o [guia de implementação de rede do Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) (em inglês).
 
 ## Recursos relacionados
 
-*   [`amp-ad`](../../../documentation/components/reference/amp-ad.md)
-*   [lista de fornecedores de anúncios compatíveis](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md)
-*   [postagem de blog sobre o lançamento do Fast Fetch](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/)
+- [`amp-ad`](../../../documentation/components/reference/amp-ad.md)
+- [lista de fornecedores de anúncios compatíveis](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md)
+- [postagem de blog sobre o lançamento do Fast Fetch](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/)

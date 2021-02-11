@@ -1,7 +1,7 @@
 ---
-$title: Comprensione delle parti di una storia AMP
+'$title': Comprensione delle parti di una storia AMP
 $order: 2
-description: Una storia web è un'esperienza di narrazione visiva a schermo intero che trasmette informazioni con immagini, video, grafica, audio e altro ancora. È perfetto per gli utenti ...
+description: "Una storia web è un'esperienza di narrazione visiva a schermo intero che trasmette informazioni con immagini, video, grafica, audio e altro ancora. È perfetto per gli utenti ..."
 author: bpaduch
 ---
 

@@ -1,8 +1,10 @@
 ---
-$title: AMP 사이트를 PWA로 전환하기
+'$title': AMP 사이트를 PWA로 전환하기
 $order: 10
 description: PWA는 브라우저 내의 리소스를 캐싱하여 사용자에게 데이터, 애셋 및 오프라인 페이지를 제공하며 참여를 유도하고 정보를 전달합니다.
-tutorial: true
+tutorial: 'true'
+formats:
+  - websites
 author: crystalonscript
 ---
 
@@ -30,7 +32,29 @@ author: crystalonscript
 
 다음 코드를 사용해 저장소에 이름이 `manifest.json`인 파일을 추가합니다.
 
-[sourcecode:JSON] { "short_name": "LyLy", "name": "Lyrical Lyghtning", "icons": [ { "src": "./images/amplogo192.png", "type": "image/png", "sizes": "192x192" }, { "src": "./images/amplogo512.png", "type": "image/png", "sizes": "512x512" } ], "start_url": "/index.html", "background_color": "#222325", "display": "standalone", "scope": "/", "theme_color": "#222325" } [/sourcecode]
+[sourcecode:JSON]
+{
+"short_name": "LyLy",
+"name": "Lyrical Lyghtning",
+"icons": [
+{
+"src": "./images/amplogo192.png",
+"type": "image/png",
+"sizes": "192x192"
+},
+{
+"src": "./images/amplogo512.png",
+"type": "image/png",
+"sizes": "512x512"
+}
+],
+"start_url": "/index.html",
+"background_color": "#222325",
+"display": "standalone",
+"scope": "/",
+"theme_color": "#222325"
+}
+[/sourcecode]
 
 # AMP 서비스 워커 추가
 
@@ -42,7 +66,10 @@ AMP 서비스 워커는 설치 후 사용자가 [AMP 스크립트](https://githu
 
 `sw.js`라는 이름의 파일을 생성하고 다음 코드를 추가합니다.
 
-[sourcecode:js] importScripts('https://cdn.ampproject.org/sw/amp-sw.js'); AMP_SW.init(); [/sourcecode]
+[sourcecode:js]
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+AMP_SW.init();
+[/sourcecode]
 
 단 2줄의 코드만으로 AMP 서비스 워커를 내 서비스 워커로 가져와 시작할 수 있습니다.
 
@@ -52,13 +79,20 @@ AMP 웹사이트는 [`<amp-install-serviceworker>`](../../../documentation/compo
 
 `index.html`의 헤드에 필수 스크립트 태그를 추가하고 `<body>` 내에 `<amp-install-serviceworker>` 요소를 배치합니다.
 
-[sourcecode:html] …
+[sourcecode:html]
+…
 
 <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 
-… ... <amp-install-serviceworker src="/sw.js" data-iframe-src="install-sw.html" layout="nodisplay"> </amp-install-serviceworker>
+…
+...
+<amp-install-serviceworker src="/sw.js"
+           data-iframe-src="install-sw.html"
+           layout="nodisplay">
+</amp-install-serviceworker>
 
-
+</body>
+[/sourcecode]
 
 [tip type="important"] **중요–** 사이트의 모든 콘텐츠를 캐싱하려면 서비스 워커가 루트 디렉토리(`/sw.js`)에서 제공되어야 합니다. [/tip]
 
@@ -67,8 +101,13 @@ AMP 웹사이트는 [`<amp-install-serviceworker>`](../../../documentation/compo
 [sourcecode:html]
 
 <!doctype html>
-
-<title>installing service worker</title> <script type='text/javascript'> if('serviceWorker' in navigator) { navigator.serviceWorker.register('./sw.js'); }; </script> [/sourcecode]
+<title>installing service worker</title>
+<script type='text/javascript'>
+ if('serviceWorker' in navigator) {
+   navigator.serviceWorker.register('./sw.js');
+ };
+</script>
+[/sourcecode]
 
 iframe이 브라우저에 AMP 서비스 워커 파일을 등록합니다.
 
@@ -82,7 +121,15 @@ AMP 서비스 워커는 기본 기능 및 앱의 니즈에 맞춰 최적화할 �
 
 AMP 서비스 워커에서 이미지, 동영상 글꼴과 같은 [애셋을 캐싱](https://github.com/ampproject/amp-sw/tree/master/src/modules/asset-caching)하도록 구성할 수 있습니다. 저희는 배경 이미지 및 AMP 로고를 캐싱하는 데 사용해보겠습니다. `sw.js` 파일을 열고 아래 코드에 업데이트하세요.
 
-[sourcecode:js] importScripts('https://cdn.ampproject.org/sw/amp-sw.js'); AMP_SW.init({ assetCachingOptions: [{ regexp: /.(png|jpg)/, cachingStrategy: 'CACHE_FIRST' }] }); [/sourcecode]
+[sourcecode:js]
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+AMP_SW.init({
+assetCachingOptions: [{
+regexp: /\.(png|jpg)/,
+cachingStrategy: 'CACHE_FIRST'
+}]
+});
+[/sourcecode]
 
 캐싱 전략을 [캐시 우선](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-falling-back-to-network)으로 지정했습니다. 따라서 앱은 네트워크의 항목을 요청하기 전 우선 캐시로부터 이미지를 제공할 것입니다. 배경 이미지나 AMP 로고를 업데이트하지 않으므로 이 앱에 특히 유용한 전략입니다.
 
@@ -90,13 +137,29 @@ AMP 서비스 워커에서 이미지, 동영상 글꼴과 같은 [애셋을 캐�
 
 AMP 서비스 워커는 `data-rel=prefetch` 속성이 포함된 링크를 미리 가져옵니다. 따라서 사용자는 방문한 적이 없는 페이지도 오프라인에서 볼 수 있습니다. 이 속성을 `lineup.html` 링크 태그에 포함하겠습니다.
 
-[sourcecode:html] ... <a href="/lineup.html" data-rel="prefetch">전체 라인업 표시</a> ... [/sourcecode]
+[sourcecode:html]
+...
+<a href="/lineup.html" data-rel="prefetch">See Full Lineup</a>
+...
+[/sourcecode]
 
 # 오프라인 페이지 표시
 
 예기치 못한 상황이나 미리 가져오지 않은 페이지 링크 클릭에 대처하여, 일반 브라우저 오프라인 페이지를 표시하는 대신 "브랜드" 일관성을 유지한 사용자 경험을 선사하는 오프라인 페이지를 추가하겠습니다. [여기에서 `offline.html`](/static/files/tutorials/offline.zip)을 다운로드하고 `sw.js`를 다음 코드로 업데이트합니다.
 
-[sourcecode:js] importScripts('https://cdn.ampproject.org/sw/amp-sw.js'); AMP_SW.init({ assetCachingOptions: [{ regexp: /.(png|jpg)/, cachingStrategy: 'CACHE_FIRST' }], offlinePageOptions: { url: '/offline.html', assets: [] } }); [/sourcecode]
+[sourcecode:js]
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+AMP_SW.init({
+assetCachingOptions: [{
+regexp: /\.(png|jpg)/,
+cachingStrategy: 'CACHE_FIRST'
+}],
+offlinePageOptions: {
+url: '/offline.html',
+assets: []
+}
+});
+[/sourcecode]
 
 # PWA 테스트
 

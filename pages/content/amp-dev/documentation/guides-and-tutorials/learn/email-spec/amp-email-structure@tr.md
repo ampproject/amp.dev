@@ -1,8 +1,8 @@
 ---
-"$title": AMP e-postalarının yapısı ve oluşturulması
-order: '2'
+'$title': AMP e-postalarının yapısı ve oluşturulması
+$order: 2
 formats:
-- email
+  - email
 teaser:
   text: 'E-posta bir '
 toc: 'true'
@@ -45,7 +45,7 @@ AMP'yi bir e-postaya yerleştirmek için, `multipart/alternative` alt öğesi ol
 
 `multipart/alternative`, `text/x-amp-html` düğümüne ek olarak en az bir AMP (`text/plain` veya `text/html`) düğümü içermelidir. Bu, e-posta istemcileri AMP'yi desteklemeyen veya e-posta sağlayıcısının ayarları aracılığıyla devre dışı bırakan kullanıcılara gösterilecektir.
 
-Not: Bazı e-posta istemcileri [[1]](https://openradar.appspot.com/radar?id=6054696888303616) yalnızca son MIME bölümünü oluşturacaktır, bu nedenle `text/x-amp-html` MIME bölümünü `text/html` MIME bölümünden *önce* yerleştirmenizi öneririz.
+Not: Bazı e-posta istemcileri [[1]](https://openradar.appspot.com/radar?id=6054696888303616) yalnızca son MIME bölümünü oluşturacaktır, bu nedenle `text/x-amp-html` MIME bölümünü `text/html` MIME bölümünden _önce_ yerleştirmenizi öneririz.
 
 ### Yanıtlama/yönlendirme semantiği <a name="replyingforwarding-semantics"></a>
 

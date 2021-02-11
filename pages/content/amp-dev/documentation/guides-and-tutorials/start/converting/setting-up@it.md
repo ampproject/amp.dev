@@ -1,6 +1,8 @@
 ---
-$title: Configurazione
-description: Configurazione dell'ambiente di sviluppo. Passo 1. Scaricare il codice. Scaricare il codice di esempio dell'esercitazione come file in formato ZIP o tramite git ...
+'$title': Configurazione
+$order: 0
+description: "Configurazione dell'ambiente di sviluppo. Passo 1. Scaricare il codice. Scaricare il codice di esempio dell'esercitazione come file in formato ZIP o tramite git ..."
+'$parent': '/documentation/guides-and-tutorials/start/converting/setting-up.md'
 ---
 
 ## Prerequisiti

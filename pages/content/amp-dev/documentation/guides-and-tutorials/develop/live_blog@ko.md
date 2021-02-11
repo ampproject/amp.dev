@@ -1,16 +1,20 @@
 ---
-$title: 라이브 블로그 만들기
+'$title': 라이브 블로그 만들기
+$order: 102
+description: '라이브 블로그는 스포츠 행사나 선거 같은 이벤트가 진행되는 동안 수시로 업데이트되는 웹페이지입니다. AMP에서는 '
+tutorial: 'true'
+formats:
+  - 웹사이트
+author: kul3r4
+contributors:
+  - bpaduch
 ---
 
 라이브 블로그는 스포츠 행사나 선거 같은 이벤트가 진행되는 동안 수시로 업데이트되는 웹페이지입니다. AMP에서는 [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 구성요소를 사용하여 라이브 블로그를 구현할 수 있습니다.
 
 이 가이드에서는 [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 구성요소를 간단히 설명하고 [페이지 매기기](#pagination) 및 [딥 링크](#deeplinking)와 같은 몇 가지 라이브 블로그용 구현 세부정보에 중점을 둡니다. AMP By Example의 [라이브 블로그 샘플](live_blog.md)을 사용하여 AMP에서 라이브 블로그를 구현하는 방법을 설명합니다.
 
-[tip type="success"]
-
 블로그가 제3자 플랫폼 기능과 통합될 수 있도록 [LiveBlogPosting](http://schema.org/LiveBlogPosting) 메타데이터 마크업을 사용하세요.
-
-[/tip]
 
 {{ image('/static/img/docs/tutorials/amp-live-list-ampbyexample.png', 700, 1441, align='right third') }}
 
@@ -21,9 +25,11 @@ $title: 라이브 블로그 만들기
 블로그의 초기 코드는 다음과 같습니다.
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">업데이트가 있습니다</button>
   <div items></div>
 </amp-live-list>
@@ -31,15 +37,15 @@ $title: 라이브 블로그 만들기
 
 초기 코드를 살펴보겠습니다.
 
-각 [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 구성요소는 한 페이지에 두 개 이상 있을 수 있기 때문에 고유 ID가 필요합니다.  이 예에서는 `my-live-list`를 고유 ID로 지정했습니다.
+각 [ `amp-live-list {/ code1} {/ a0} 구성 요소에는 한 페이지에 둘 이상의 ID가있을 수 있으므로 고유 한 ID가 필요합니다. 이 예에서는` my-live-list {/ code2}를 고유 ID로 지정했습니다.``](../../../documentation/components/reference/amp-live-list.md)
 
-`data-poll-interval` 속성은 폴링 빈도를 지정합니다. 호스트 문서가 업데이트되면 다음 시간 간격 이후 사용자가 업데이트할 수 있습니다.
+` data-poll-interval {/ code0} 속성은 폴링 빈도를 지정합니다. 호스트 문서가 업데이트되면 다음 시간 간격 후에 사용자가 업데이트를 사용할 수 있어야합니다.`
 
 호스트 문서에 새로운 항목이 추가될 때마다 `<button update on="tap:my-live-list.update">` 요소가 '업데이트가 있습니다' 버튼을 표시하고, 이 버튼을 클릭하면 최신 게시물이 표시되는 페이지가 실행됩니다.
 
 라이브 블로그가 성장해 감에 따라 페이지 길이가 너무 길어질 수 있습니다. `data-max-items-per-page` 속성을 사용하여 라이브 블로그에 추가될 수 있는 항목의 수를 지정하세요. 업데이트 이후 항목 수가 `data-max-items-per-page`를 초과하면 항목 수를 초과하는 가장 오래된 업데이트 순으로 삭제됩니다. 예를 들어 페이지에 있는 항목이 9개이고 `data-max-items-per-page`가 10으로 설정되어 있는데 새 항목 3개가 최신 업데이트에 추가되면 최신 업데이트가 있는 페이지에서 가장 오래된 항목 2개가 삭제됩니다.
 
-[`amp-live-list`](../../../documentation/components/reference/amp-live-list.md)  모든 블로그 게시물은 `<div items></div>`의 하위 항목이어야 합니다. 각 게시물을 항목으로 참조하면 모든 항목에는 고유 `id`와 `data-sort-time`이 있어야 합니다.
+[`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 모든 블로그 게시물은 `<div items></div>`의 하위 항목이어야 합니다. 각 게시물을 항목으로 참조하면 모든 항목에는 고유 `id`와 `data-sort-time`이 있어야 합니다.
 
 ## 구현 세부정보
 
@@ -52,9 +58,11 @@ $title: 라이브 블로그 만들기
 페이지 매기기를 사용하면 앞에서 사용했던 단순한 코드가 다음과 같이 변합니다.
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">업데이트가 있습니다</button>
   <div items></div>
   <div pagination>
@@ -63,8 +71,8 @@ $title: 라이브 블로그 만들기
         <li>1</li>
         <li>다음</li>
       </ul>
-     </nav>
-   </div>
+    </nav>
+  </div>
 </amp-live-list>
 ```
 
@@ -88,4 +96,4 @@ AMP By Example에서는 [라이브 블로그 샘플](https://www.ampbyexample.co
 
 - [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 참조 문서
 - [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md)
-- [AMP By Example의 라이브 블로그 샘플](live_blog.md)
+- [AMP BY Example's Live blog sample](live_blog.md)

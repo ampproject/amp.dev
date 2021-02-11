@@ -1,13 +1,13 @@
 ---
-"$title": "AMP'yi teknolojinize entegre etme"
-"$order": '0'
-"$hidden": 'true'
+'$title': "AMP'yi teknolojinize entegre etme"
+$order: 0
+'$hidden': 'true'
 description: "Web'te reklamcılar veya yayıncılar için teknoloji sağlayan bir şirketseniz, sizi AMP'ye destek koymaya davet ediyoruz! Müşterileriniz teknolojinizden yararlanmayı sürdürürken..."
 formats:
-- websites
-- ads
-- stories
-- email
+  - websites
+  - ads
+  - stories
+  - email
 ---
 
 AMP'ye katkıda bulunmak istediğiniz için teşekkür ederiz! Web'i kullanıcı öncelikli bir platforma dönüştürme sürecine katıldığınız için şükranlarımızı sunuyoruz.

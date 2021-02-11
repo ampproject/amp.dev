@@ -1,11 +1,11 @@
 ---
-"$title": Włączanie funkcji eksperymentalnych
-"$order": '3'
+'$title': Włączanie funkcji eksperymentalnych
+$order: 3
 description: Eksperymentalne składniki AMP to wydane funkcje, które nie są jeszcze gotowe do powszechnego stosowania, więc są chronione przez status eksperymentalny.
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 ---
 
 [Eksperymentalne składniki AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments) to wydane funkcje, które nie są jeszcze gotowe do powszechnego stosowania, więc są chronione przez status **eksperymentalny**.
@@ -48,7 +48,7 @@ Włączone eksperymenty są zapisywane w lokalizacji `localStorage` i umożliwia
 Eksperymenty dla treści serwowanych z domen innych niż CDN można przełączać w konsoli devtools za pomocą:
 
 ```js
-AMP.toggleExperiment('experiment')
+AMP.toggleExperiment('experiment');
 ```
 
 Żaden plik AMP zawierający funkcje eksperymentalne nie przejdzie [walidacji AMP](validation-workflow/validate_amp.md). Eksperymentalne składniki należy usunąć z gotowych produkcyjnych dokumentów AMP.
@@ -60,7 +60,7 @@ Dokument może włączać określone eksperymenty. W tym celu należy w nagłów
 ```html
 <head>
   ...
-  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b">
+  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b" />
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   ...
@@ -89,7 +89,7 @@ Próby źródła dają możliwość wdrożenia i skorzystania z nowej funkcji, z
 Dołącz następujący znacznik `<meta>` w sekcji `<head>` każdej strony używającej eksperymentu w ramach próby źródła:
 
 ```html
-<meta name="amp-experiment-token" content="{copy your token here}">
+<meta name="amp-experiment-token" content="{copy your token here}" />
 ```
 
 Uwaga: `"amp-experiment-token"` to ciąg literału, `"amp-experiment-token"`. Nie jest to sam token (podawany w atrybucie content) ani nazwa eksperymentu.

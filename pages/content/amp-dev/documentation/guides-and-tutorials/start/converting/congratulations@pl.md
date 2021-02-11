@@ -1,6 +1,6 @@
 ---
-"$title": Gratulacje!
-"$order": '4'
+'$title': Gratulacje!
+$order: 4
 description: '"Masz za sobą samouczek i przekonwertowanie dokumentu HTML na dokument AMP. Dzięki temu samouczkowi umiesz: - Rozpoznawać różnice pomiędzy AMP i ..."'
 ---
 

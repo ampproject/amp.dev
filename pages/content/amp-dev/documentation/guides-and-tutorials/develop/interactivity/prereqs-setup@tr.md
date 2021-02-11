@@ -1,8 +1,8 @@
 ---
-"$title": Kurulum
-"$order": '0'
+'$title': Kurulum
+$order: 0
 description: 'Bu öğreticiye başlamadan önce aşağıdakilere ihtiyacınız olacak: - HTML, CSS ve JavaScript hakkında temel bilgi - Seçtiğiniz bir tarayıcı; - Bir metin editörü...'
-"$parent": "/content/docs/interaction_dynamic/interactivity.md"
+'$parent': '/content/docs/interaction_dynamic/interactivity.md'
 ---
 
 ## Ön koşullar

@@ -1,29 +1,39 @@
 ---
-$title: Menyiapkan Halaman Anda untuk Pencarian dan Distribusi
+'$title': Menyiapkan halaman Anda untuk pencarian dan distribusi
+$order: 4
+description: 'Di dalam beberapa kasus, Anda mungkin ingin memiliki versi non-AMP dan AMP dari halaman yang sama, contohnya: artikel berita. Pertimbangkan ini: Jika Google Search ....'
+author: pbakaus
+contributors:
+  - bpaduch
 ---
 
-Dalam beberapa kasus, Anda mungkin menginginkan versi non-AMP dan AMP dari halaman yang sama, misalnya, artikel berita. Pertimbangkan ini: Jika Google Penelusuran menemukan versi non-AMP dari halaman itu, *bagaimana Google Penelusuran mengetahui bahwa ada versi AMP dari halaman itu*?
+Di dalam beberapa kasus, Anda mungkin ingin memiliki versi non-AMP dan AMP dari halaman yang sama, contohnya: artikel berita. Pertimbangkan ini: Jika Google Search menemukan versi non-AMP halaman itu, _bagaimana Google Search mengetahui bahwa ada versi AMP "sandingan" halaman tersebut_?
 
-## Menautkan halaman dengan &lt;link>
+## Menautkan halaman dengan `<link>`
 
-Untuk menyelesaikan masalah ini, kami menambahkan informasi tentang halaman AMP ke halaman non-AMP dan sebaliknya, dalam bentuk tag `<link>` dalam `<head>`.
+Untuk menegaskan bahwa halaman non-AMP dan halaman AMP harus diperlakukan sebagai "sandingan", kita menambahkan informasi tentang halaman AMP ke halaman non-AMP dan sebaliknya, dalam bentuk tag `<link>` di `<head>`.
 
 Tambahkan yang berikut ini ke halaman non-AMP:
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-Tambahkan ini ke halaman AMP
+Tambahkan ini ke halaman AMP:
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
-## Bagaimana jika saya memiliki satu halaman saja?
+## Bagaimana jika saya hanya memiliki satu halaman?
 
-Jika Anda hanya menautkan satu halaman, dan halaman itu adalah halaman AMP, Anda masih harus menambahkan tautan kanonis ke halaman itu, yang kemudian hanya akan menunjuk pada halaman itu sendiri:
+Jika Anda hanya memiliki satu halaman, dan itu adalah halaman AMP, Anda masih harus menambahkan tautan kanonis ke halaman itu, yang kemudian hanya akan mengarah ke halaman itu sendiri:
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
+
+[tip type="read-on"] **BACA –** Pelajari lebih lanjut tentang cara Google menemukan halaman AMP di [panduan Google Search untuk halaman AMP](https://support.google.com/webmasters/answer/6340290). [/tip]

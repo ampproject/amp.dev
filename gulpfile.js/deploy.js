@@ -302,9 +302,7 @@ function packagerInstanceTemplateCreate() {
 function packagerImageUpload() {
   if (
     !existsSync('./packager/certs/cert.pem') ||
-    !existsSync('./packager/certs/cert.pem.enc') ||
-    !existsSync('./packager/privkeys/privkey.pem') ||
-    !existsSync('./packager/privkeys/privkey.pem.enc')
+    !existsSync('./packager/certs/privkey.pem')
   ) {
     throw new Error(
       'You need to include cert.pem AND privkey.pem inside of packager/certs ' +
@@ -407,7 +405,7 @@ exports.gcloudSetup = gcloudSetup;
 exports.deploy = series(
   verifyTag,
   imageUpload,
-  instanceTemplatesClean,
+  //  instanceTemplatesClean,
   instanceTemplateCreate,
   updateStart
 );

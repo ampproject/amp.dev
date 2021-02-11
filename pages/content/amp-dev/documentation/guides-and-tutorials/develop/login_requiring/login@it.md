@@ -1,5 +1,6 @@
 ---
-$title: Accesso
+'$title': Accesso
+$order: 1
 description: La prima volta che si giunge alla pagina, si potranno vedere 2 commenti e un pulsante di accesso. Cercando il pulsante di accesso nel codice, sarà possibile trovare ...
 ---
 
@@ -9,15 +10,32 @@ La prima volta che si giunge alla [pagina](../../../../documentation/examples/pr
 
 Cercando il pulsante di accesso nel codice, sarà possibile trovare:
 
-[sourcecode:html] <span amp-access="NOT loggedIn" role="button" tabindex="0" amp-access-hide=""></span>
+[sourcecode:html]
+<span amp-access="NOT loggedIn" role="button" tabindex="0" amp-access-hide>
 
-  <h>Accedi per inserire commenti</h>   <button on="tap:amp-access.login-sign-in" class="button-primary comment-button">Accedi</button>  [/sourcecode]
+  <h5>Please login to comment</h5>
+  <button on="tap:amp-access.login-sign-in" class="button-primary comment-button">Login</button>
+</span>
+[/sourcecode]
 
 Il comportamento degli attributi relativi ad [`amp-access`](../../../../documentation/components/reference/amp-access.md) dipende da una configurazione a livello di pagina per [`amp-access`](../../../../documentation/components/reference/amp-access.md) , nel nostro caso, la seguente:
 
 [sourcecode:html]
 
-<script id="amp-access" type="application/json"><br>  {<br>    "authorization": "https://ampbyexample.com/samples_templates/comment_section/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",<br>    "noPingback": "true",<br>    "login": {<br>      "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",<br>      "sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"<br>    },<br>    "authorizationFallbackResponse": {<br>      "error": true,<br>      "loggedIn": false<br>    }<br>  }<br></script>
+<script id="amp-access" type="application/json">
+  {
+    "authorization": "https://ampbyexample.com/samples_templates/comment_section/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
+    "noPingback": "true",
+    "login": {
+      "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
+      "sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
+    },
+    "authorizationFallbackResponse": {
+      "error": true,
+      "loggedIn": false
+    }
+  }
+</script>
 
 [/sourcecode]
 
@@ -25,7 +43,12 @@ L'endpoint di autorizzazione è distribuito nell'ambito di AMPByExample. È comp
 
 Dando ancora un'occhiata al codice HTML del pulsante, si può notare che, utilizzando `on="tap:amp-access.login-sign-in"`, specifichiamo che una volta che l'utente tocca il pulsante, deve essere utilizzato l'URL indicato nella risposta JSON di cui sopra:
 
-[sourcecode:json] { "login": { "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL" } }
+[sourcecode:json]
+{
+"login": {
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
+}
+}
 
 [/sourcecode]
 
@@ -39,7 +62,7 @@ Nell'esempio seguente, il valore per il parametro `return` viene aggiunto alla r
 
 Dopo che il server AMPByExample ha ricevuto la richiesta POST dalla pagina di accesso, se il nome utente di accesso e la password sono corretti, esso reindirizza la richiesta al `returnURL` sopra menzionato e aggiunge il parametro `#success=true`. Il sistema di runtime AMP ora può autorizzare la pagina e infine consentire l'aggiunta di un commento.
 
-È importante che sia chiaro cosa fa il sistema runtime AMP e cosa fa il server, poiché l'implementazione del server spetta  all''editore della pagina.
+È importante che sia chiaro cosa fa il sistema runtime AMP e cosa fa il server, poiché l'implementazione del server spetta all''editore della pagina.
 
 Un breve riepilogo:
 

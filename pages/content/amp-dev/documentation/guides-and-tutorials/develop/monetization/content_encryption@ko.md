@@ -1,7 +1,9 @@
 ---
-$title: 클라이언트 측 암호화를 통해 구독 콘텐츠 보호하기
-$titles:
-  teaser: 클라이언트 측 암호화를 통해 구독 콘텐츠 보호하기
+formats:
+  - websites
+'$title': 클라이언트 측 암호화를 통해 구독 콘텐츠 보호하기
+'$titles':
+  teaser: Protect your subscription content with client-side encryption.
 $order: 10
 description: 프리미엄 구독자 검증 및 클라이언트 측 콘텐츠 복호화를 구현하여 콘텐츠 암호화 문제를 해결하세요. 이러한 솔루션을 활용하면 프리미엄 액세스 권한이 있는 사용자는 새 페이지를 로드하거나 백엔드 응답을 기다릴 필요 없이 콘텐츠 복호화를 실행할 수 있습니다.
 author: CrystalOnScript
@@ -21,7 +23,7 @@ author: CrystalOnScript
 
 클라이언트 측 복호화를 구현하려면 다음과 같이 대칭 키와 공개 키 암호화 방식을 결합합니다.
 
-1. 각 문서에 임의의 대칭 키를 생성하고 문서별로 *고유* 키를 부여합니다. {{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='고유한 문서별 고유 키.') }}
+1. 각 문서에 임의의 대칭 키를 생성하고 문서별로 _고유_ 키를 부여합니다. {{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='고유한 문서별 고유 키.') }}
 2. 문서의 대칭 키를 사용해 프리미엄 콘텐츠를 암호화합니다. {{ image('/static/img/docs/guides/cse/cse3.jpg', 130, 243, align='', layout='intrinsic', alt='문서 키를 사용해 프리미엄 콘텐츠 암호화.') }} 이러한 키는 대칭을 이루며 동일한 키로 콘텐츠 암호화 및 복호화를 수행할 수 있습니다. {{ image('/static/img/docs/guides/cse/cse4.jpg', 188, 141, align='', layout='intrinsic', alt='문서 암호화 및 복호화를 수행하는 동일한 키.') }}
 3. 대칭 키를 암호화하는 [하이브리드 암호화](https://en.wikipedia.org/wiki/Hybrid_cryptosystem) 프로토콜을 사용하여 문서 키를 공개 키로 암호화합니다. {{ image('/static/img/docs/guides/cse/cse5.jpg', 309, 114, align='', layout='intrinsic', alt='하이브리드 암호화 프로토콜은 대칭 키를 공개 키로 암호화.') }}
 4. [`<amp-subscriptions>`](https://amp.dev/documentation/components/amp-subscriptions/) 및/또는 [`<amp-subscriptions-google>`](https://amp.dev/documentation/components/amp-subscriptions-google/?format=websites) 컴포넌트를 사용해 암호화된 프리미엄 콘텐츠와 함께 암호화된 문서 키를 AMP 문서에 저장합니다.{{ image('/static/img/docs/guides/cse/cse6.jpg', 264, 261, align='', layout='intrinsic', alt='두 가지 키 모두 AMP 문서에 저장.') }}
@@ -41,7 +43,7 @@ AMP 문서는 암호화된 키를 자체적으로 저장하며 암호화된 문�
 
 ## 1단계: 공개/개인 키 쌍 생성
 
-문서의 대칭 키를 암호화하려면 고유한 공개/개인 키 쌍이 필요합니다. 공개 키 암호화는 [하이브리드 암호화](https://en.wikipedia.org/wiki/Hybrid_cryptosystem) 프로토콜, 구체적으로는 [AES-GCM](https://tools.ietf.org/html/rfc5288)(128 비트) 대칭 암호화 방식을 사용하는 [P-256 타원 곡선](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)) ECIES 비대칭 암호화 방식입니다.
+문서의 대칭 키를 암호화하려면 고유한 공개/개인 키 쌍이 필요합니다. 공개 키 암호화는 [하이브리드 암호화](https://en.wikipedia.org/wiki/Hybrid_cryptosystem) 프로토콜, 구체적으로는 [AES-GCM](https://tools.ietf.org/html/rfc5288)(128 비트) 대칭 암호화 방식을 사용하는 [P-256 타원 곡선](<https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)>) ECIES 비대칭 암호화 방식입니다.
 
 공개 키 처리는 [비대칭 키 유형](https://github.com/subscriptions-project/encryption/blob/617f0911c9870dae900a232e2dc8ee9196677a89/golang/vendor/github.com/google/tink/go/hybrid/hybrid_key_templates.go#L32)을 활용하여 [Tink](https://github.com/google/tink)를 통해 수행되어야 합니다. 고유한 개인-공개 키 쌍을 생성하려면 다음 방식 중 하나를 따릅니다.
 

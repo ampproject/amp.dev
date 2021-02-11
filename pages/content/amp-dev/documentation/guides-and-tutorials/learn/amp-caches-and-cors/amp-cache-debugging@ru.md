@@ -1,10 +1,10 @@
 ---
-"$title": Устранение проблем при работе с AMP-кешем
-order: '8'
+'$title': Устранение проблем при работе с AMP-кешем
+$order: 8
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
   text: 'Почему мой документ «ломается» в AMP-кеше? '
 ---

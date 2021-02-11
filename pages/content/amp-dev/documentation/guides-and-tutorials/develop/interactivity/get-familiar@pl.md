@@ -1,6 +1,6 @@
 ---
 '$title': Zapoznanie się z kodem startowym
-'$order': '1'
+$order: 1
 description: Strona AMP jest stroną HTML z pewnymi ograniczeniami, zapewniającymi jej niezawodne działanie. Strony AMP zawierają nieco specjalnych znaczników, które identyfikują je jako strony AMP.
 ---
 

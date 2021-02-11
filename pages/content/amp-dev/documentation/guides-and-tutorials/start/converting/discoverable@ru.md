@@ -1,6 +1,6 @@
 ---
-"$title": Обеспечение обнаружения страницы
-"$order": '3'
+'$title': Обеспечение обнаружения страницы
+$order: 3
 description: Данную двустороннюю связь необходимо установить для того, чтобы поисковые системы знали о взаимосвязи между каноническим HTML-документом и его AMP-версией.
 ---
 
@@ -23,7 +23,7 @@ description: Данную двустороннюю связь необходим
 Мы уже выполнили первый шаг, когда добавили в раздел `<head>` нашего AMP-документа тег link, указывающий на каноническую страницу:
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 Следующий шаг — добавить в каноническую версию статьи ссылку на AMP-страницу. Для этого необходимо включить тег `<link rel="amphtml">` в раздел `<head>` канонической статьи.
@@ -31,7 +31,7 @@ description: Данную двустороннюю связь необходим
 В файле `article.html` **добавьте** в раздел `<head>` следующий код:
 
 ```html
-<link rel="amphtml" href="/article.amp.html">
+<link rel="amphtml" href="/article.amp.html" />
 ```
 
 Направление переходов по тегам link проиллюстрировано на следующей диаграмме:
@@ -47,44 +47,43 @@ description: Данную двустороннюю связь необходим
 Чтобы включить в нашу новостную статью структурированные данные, **добавьте** в конец раздела `<head>` AMP-документа следующий код:
 
 ```html
-
 <script type="application/ld+json">
-{
- "@context": "http://schema.org",
- "@type": "NewsArticle",
- "mainEntityOfPage":{
-   "@type":"WebPage",
-   "@id":"https://example.com/my-article.html"
- },
- "headline": "My First AMP Article",
- "image": {
-   "@type": "ImageObject",
-   "url": "https://example.com/article_thumbnail1.jpg",
-   "height": 800,
-   "width": 800
- },
- "datePublished": "2015-02-05T08:00:00+08:00",
- "dateModified": "2015-02-05T09:20:00+08:00",
- "author": {
-   "@type": "Person",
-   "name": "John Doe"
- },
- "publisher": {
-   "@type": "Organization",
-   "name": "⚡ AMP Times",
-   "logo": {
-     "@type": "ImageObject",
-     "url": "https://example.com/amptimes_logo.jpg",
-     "width": 600,
-     "height": 60
-   }
- },
- "description": "My first experience in an AMPlified world"
-}
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://example.com/my-article.html"
+    },
+    "headline": "My First AMP Article",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://example.com/article_thumbnail1.jpg",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2015-02-05T08:00:00+08:00",
+    "dateModified": "2015-02-05T09:20:00+08:00",
+    "author": {
+      "@type": "Person",
+      "name": "John Doe"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "⚡ AMP Times",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://example.com/amptimes_logo.jpg",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "My first experience in an AMPlified world"
+  }
 </script>
 ```
 
-[tip type="note"] **ПРИМЕЧАНИЕ.**  Контент всегда должен быть идентичным. Для новостных статей укажите тип «NewsArticle». В поле «headline» должен быть указан заголовок статьи. Объект «image» указывает на главное изображение статьи. [/tip]
+[tip type="note"] **ПРИМЕЧАНИЕ.** Контент всегда должен быть идентичным. Для новостных статей укажите тип «NewsArticle». В поле «headline» должен быть указан заголовок статьи. Объект «image» указывает на главное изображение статьи. [/tip]
 
 **Перезагрузите** страницу в браузере и убедитесь, что изменения не привели к появлению новых ошибок валидации AMP.
 

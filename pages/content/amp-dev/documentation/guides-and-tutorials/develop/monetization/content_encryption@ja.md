@@ -1,7 +1,9 @@
 ---
-$title: クライアント側暗号化でサブスクリプションコンテンツを保護する
-$titles:
-  teaser: クライアント側暗号化でサブスクリプションコンテンツを保護する。
+formats:
+  - websites
+'$title': クライアント側暗号化でサブスクリプションコンテンツを保護する
+'$titles':
+  teaser: Protect your subscription content with client-side encryption.
 $order: 10
 description: プレミアムサブスクライバ認証とコンテンツ解読をクライアント側に実装することで、コンテンツ暗号化の問題を解決します。このソリューションでは、プレミアムアクセスを持つユーザーが、新しいページの読み込みやバックエンドの応答を待機することなく、コンテンツを解読できるようになります。
 author: CrystalOnScript
@@ -41,7 +43,7 @@ AMP ドキュメントは、暗号化された鍵をそのドキュメント内�
 
 ## 手順 1: 公開鍵/秘密鍵ペアを作成する
 
-ドキュメントの対称鍵を暗号化するには、独自の公開鍵/秘密鍵のペアが必要です。公開鍵暗号化は [ハイブリッド暗号化](https://en.wikipedia.org/wiki/Hybrid_cryptosystem)プロトコルで、具体的には、[AES-GCM](https://tools.ietf.org/html/rfc5288) （128ビット）対称暗号化方式を使用した [P-256楕円曲線](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)) <br> ECIES 非対称暗号化方式です。
+ドキュメントの対称鍵を暗号化するには、独自の公開鍵/秘密鍵のペアが必要です。公開鍵暗号化は [ハイブリッド暗号化](https://en.wikipedia.org/wiki/Hybrid_cryptosystem)プロトコルで、具体的には、[AES-GCM](https://tools.ietf.org/html/rfc5288) （128 ビット）対称暗号化方式を使用した [P-256 楕円曲線](<https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)>) <br> ECIES 非対称暗号化方式です。
 
 公開鍵の処理は、[この非対称鍵タイプ](https://github.com/subscriptions-project/encryption/blob/617f0911c9870dae900a232e2dc8ee9196677a89/golang/vendor/github.com/google/tink/go/hybrid/hybrid_key_templates.go#L32)を使って、[Tink](https://github.com/google/tink) で行う必要があります。秘密鍵/公開鍵ペアを作成するには、次のいずれかを使用します。
 
@@ -93,7 +95,7 @@ AMP ドキュメントは、暗号化された鍵をそのドキュメント内�
 </head>
 ```
 
-ローカル環境と [Google の公開鍵](https://news.google.com/swg/encryption/keys/prod/tink/public_key)でドキュメント鍵を暗号化する必要があります。 Google の公開鍵を含めると、Google AMP キャッシュでドキュメントを提供できます。[Tink 鍵セット](https://github.com/google/tink/blob/master/docs/KEY-MANAGEMENT.md)をインスタンス化して、そのURLから Google 公開鍵を受け入れる必要があります。
+ローカル環境と [Google の公開鍵](https://news.google.com/swg/encryption/keys/prod/tink/public_key)でドキュメント鍵を暗号化する必要があります。 Google の公開鍵を含めると、Google AMP キャッシュでドキュメントを提供できます。[Tink 鍵セット](https://github.com/google/tink/blob/master/docs/KEY-MANAGEMENT.md)をインスタンス化して、その URL から Google 公開鍵を受け入れる必要があります。
 
 `https://news.google.com/swg/encryption/keys/prod/tink/public\_key`
 

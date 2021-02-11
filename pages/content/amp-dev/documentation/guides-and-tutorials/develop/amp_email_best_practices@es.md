@@ -1,7 +1,9 @@
 ---
-$title: Prácticas recomendadas de AMP para correos electrónicos
+'$title': Prácticas recomendadas de AMP para correos electrónicos
 $order: 1
-$category: Develop
+'$category': Develop
+formats:
+  - email
 ---
 
 ¡AMP le permitirá crear nuevos y emocionantes tipos de contenidos que además sean inmersivos y atractivos en el correo electrónico! Cuando diseñe correos electrónicos, tenga en cuenta las siguientes prácticas recomendadas para garantizar que sean eficientes y confiables en todas las plataformas y funcionen como los usuarios esperan.

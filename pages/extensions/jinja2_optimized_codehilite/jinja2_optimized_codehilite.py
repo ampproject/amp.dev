@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from grow import extensions
-from custom_html_lexer import CustomHtmlLexer
-from custom_js_lexer import CustomJavascriptLexer
-from custom_html_formatter import CustomHtmlFormatter
+from .custom_html_lexer import CustomHtmlLexer
+from .custom_js_lexer import CustomJavascriptLexer
+from .custom_html_formatter import CustomHtmlFormatter
 
 
 class Jinja2OptimizedCodehiliteExtension(extensions.BaseExtension):

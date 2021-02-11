@@ -1,10 +1,12 @@
 ---
-$title: Elenco di controllo per la pubblicazione di pagine AMP
+'$title': Elenco di controllo per la pubblicazione di pagine AMP
 $order: 0
-description: Il segreto per la progettazione di siti web veloci sta nella creazione di pagine web fluide che rispondano alle esigenze degli utenti, ad esempio, pagine che si adattano alle dimensioni e all'orientamento dello schermo dei dispositivi in uso. Per ottenere ...
+description: "Il segreto per la progettazione di siti web veloci sta nella creazione di pagine web fluide che rispondano alle esigenze degli utenti, ad esempio, pagine che si adattano alle dimensioni e all'orientamento dello schermo dei dispositivi in uso. Per ottenere ..."
+formats:
+  - websites
 author: CrystalOnScript
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 Applicare il seguente elenco di controllo per realizzare siti che offrano la migliore esperienza AMP!

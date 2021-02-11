@@ -1,8 +1,10 @@
 ---
-$title: AMP for Email の基礎
+'$title': AMP for Email の基礎
 $order: 1
 description: 有効な AMP メールを記述し始めるために知っておく必要のあること。
 author: CrystalOnScript
+formats:
+  - email
 ---
 
 AMP を使用し慣れている方には朗報です！AMP for Email は AMP HTML ライブラリのサブセットにすぎません。AMP のことをよく知らない方にも朗報です！有効な AMP メールを記述し始めるために知っておく必要のあることすべてが、このガイドで説明されています！
@@ -12,16 +14,20 @@ AMP を使用し慣れている方には朗報です！AMP for Email は AMP HTM
 AMP メールは、外観的に従来の HTML メールに似ていますが、異なる点がいくつかあります。以下は、有効な AMP メールを作成するために必要な最小限のマークアップを示しています。
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email data-css-strict>
-<head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
-</head>
-<body>
-  Hello, AMP4EMAIL world.
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    Hello, AMP4EMAIL world.
+  </body>
 </html>
 ```
 
@@ -32,12 +38,16 @@ AMP メールをサポートするメールプロバイダーは、ユーザー�
 - `<head>` タグと `<body>` タグの両方を定義すること。これは HTML ではオプションですが、AMP では元の状態を保持する必要があります！
 - `<meta charset="utf-8>` タグを `<head>` タグの最初の子として含めること。これはページのエンコーディングを識別するタグです。
 - AMP ライブラリは、 `<head>` タグに配置された `<script async src="https://cdn.ampproject.org/v0.js"></script>` タグにインポートすること。これがない場合、AMP から得られる優れた動的機能が機能しません！これは、`<head>` の `<meta charset="utf-8">` の直下に、なるべく早い段階で含めることをベストプラクティスとしています。
-- `<head>` に AMP for Email ボイラープレートを配置し、最初にAMP ライブラリが読み込まれるまでメールコンテンツを非表示にすること。
+- `<head>` に AMP for Email ボイラープレートを配置し、最初に AMP ライブラリが読み込まれるまでメールコンテンツを非表示にすること。
 
 ```html
 <head>
-...
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  ...
+  <style amp4email-boilerplate>
+    body {
+      visibility: hidden;
+    }
+  </style>
 </head>
 ```
 
@@ -121,7 +131,7 @@ AMP メールから送信されたリクエストを認証するには、アク�
 
 ### アクセストークン
 
-アクセストークンを使用して、ユーザーを認証できます。アクセストークンはメール送信者によって提供・確認されます。送信者はトークンを使用して、AMPメールにアクセスできるユーザーのみがそのメールに含まれるリクエストを行えるようにします。アクセストークンは、暗号的に安全で、時間とスコープが制限されている必要があります。これらはリクエストの URL 内に含められます。
+アクセストークンを使用して、ユーザーを認証できます。アクセストークンはメール送信者によって提供・確認されます。送信者はトークンを使用して、AMP メールにアクセスできるユーザーのみがそのメールに含まれるリクエストを行えるようにします。アクセストークンは、暗号的に安全で、時間とスコープが制限されている必要があります。これらはリクエストの URL 内に含められます。
 
 以下の例は、`<amp-list>` を使用して認証データを表示します。
 
@@ -130,9 +140,7 @@ AMP メールから送信されたリクエストを認証するには、アク�
   src="https://example.com/endpoint?token=REPLACE_WITH_YOUR_ACCESS_TOKEN"
   height="300"
 >
-  <template type="amp-mustache">
-    ...
-  </template>
+  <template type="amp-mustache"> ... </template>
 </amp-list>
 ```
 
@@ -173,7 +181,7 @@ AMP メールから送信されたリクエストを認証するには、アク�
 
 トークンパラメータは、特定のアクションと特定のユーザーのみが使用できるキーとして生成されます。そのため、リクエストアクションが実行される前に、トークンが有効であり、そのユーザーに対して生成されたものと一致していることを確認しなければなりません。トークンが一致している場合は、アクションを実行することができ、そのトークンはそれ以降無効となります。
 
-アクセストークンは、HttpActionHandler のURL プロパティの一部としてユーザーに送信されます。たとえば、アプリケーションが `http://www.example.com/approve?requestId=123` で承認リクエストを処理する場合、それに `accessToken` を追加して、`http://www.example.com/approve?requestId=123&accessToken=xyz` に送信されたリクエストをリスンすることを検討してください。
+アクセストークンは、HttpActionHandler の URL プロパティの一部としてユーザーに送信されます。たとえば、アプリケーションが `http://www.example.com/approve?requestId=123` で承認リクエストを処理する場合、それに `accessToken` を追加して、`http://www.example.com/approve?requestId=123&accessToken=xyz` に送信されたリクエストをリスンすることを検討してください。
 
 `requestId=123` と `accessToken=xyz` の組み合わせは、前もって生成する必要のあるもので、`accessToken` が `requestId` から除去されないことを確実にする必要があります。`requestId=123` が伴っていても `accessToken` が不足している承認リクエストや、`accessToken` が `xyz` と同等でない承認リクエストは拒否されなければなりません。このリクエストは通ったら、同じ ID とアクセストークンを使用する以降のリクエストも、拒否される必要があります。
 

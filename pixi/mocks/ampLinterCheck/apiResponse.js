@@ -42,6 +42,9 @@ const apiResponsePassAll = {
     heroimageisdefined: {
       status: 'PASS',
     },
+    viewportdisablestapdelay: {
+      status: 'PASS',
+    },
   },
 };
 
@@ -89,6 +92,9 @@ const apiResponseFailAll = {
       status: 'WARN',
     },
     heroimageisdefined: {
+      status: 'WARN',
+    },
+    viewportdisablestapdelay: {
       status: 'WARN',
     },
   },

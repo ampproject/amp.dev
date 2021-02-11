@@ -3,7 +3,7 @@
 <div class="ap-o-case-band">
   {% for image in case_band_images %}
   <div class="ap-o-case-band-image">
-    <amp-img src="{{ image.src }}" alt="{{ _('A screenshot of a website using AMP.') }}" layout="responsive" width="{{ image.width }}" height="{{ image.height }}"></amp-img>
+    <amp-img src="{{ image.src }}" alt="{{ _('A screenshot of a website using AMP.') }}" layout="responsive" width="{{ image.width }}" height="{{ image.height }}" sizes="{{ image.sizes }}" data-hero></amp-img>
   </div>
   {% endfor %}
 </div>

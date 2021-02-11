@@ -1,14 +1,14 @@
 ---
-"$title": 'AMP-кеш: формат URL-адресов и обработка запросов'
-"$order": '9'
+'$title': 'AMP-кеш: формат URL-адресов и обработка запросов'
+$order: 9
 toc: 'false'
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 author: Gregable
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 В этом документе вы узнаете о формате URL-адресов кешированных AMP-документов и о том, как AMP-кеш обрабатывает запросы.

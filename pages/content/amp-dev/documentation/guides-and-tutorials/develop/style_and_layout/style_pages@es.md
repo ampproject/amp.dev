@@ -1,16 +1,30 @@
 ---
-$title: Formato CSS admitido
+"$title": Supported CSS
+description: Al igual que el resto de las páginas web, las páginas AMP extraen su estilo de un elemento CSS, pero en ellas no se puede hacer referencia a hojas de estilo externasб salvo en el caso de las fuentes personalizadas. Además, algunos estilos no están permitidos ...
+formats:
+- websites
+- email
+- ads
+- stories
+author: Meggin
+contributors:
+- pbakaus
+- CrystalOnScript
+- bpaduch
+- choumx
 ---
 
-Al igual que el resto de las páginas web, las páginas AMP extraen su estilo de un elemento CSS, pero en ellas no se puede hacer referencia a hojas de estilo externas (salvo en el caso de las [fuentes personalizadas](#the-custom-fonts-exception)). Además, algunos estilos no están permitidos porque afectan al rendimiento. Por ejemplo, los atributos de estilo insertados no se admiten.
+[filter format = "email"] Nota: AMP para correo electrónico especifica restricciones de CSS adicionales que se describen en <a class="" href="https://gitlocalize.com/repo/4863/es/pages/content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-css.md">AMP para CSS compatible con correo electrónico</a>. [/filter]
 
-Todos los estilos deben encontrarse en el encabezado del documento (consulta [Agregar estilos a una página](index.md#add-styles-to-a-page)). Pero puedes utilizar preprocesadores CSS y plantillas para crear páginas estáticas y así mejorar la gestión del contenido.
+Al igual que el resto de las páginas web, las páginas AMP extraen su estilo de un elemento CSS, pero en ellas no se puede hacer referencia a hojas de estilo externas (salvo en el caso de las fuentes personalizadas). Además, algunos estilos no están permitidos porque afectan al rendimiento. Por ejemplo, los atributos de estilo insertados no se admiten.
 
-Nota: Los componentes de AMP incluyen estilos predeterminados para facilitar en gran medida la creación de páginas adaptables. Estos estilos están definidos en el atributo [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
+Los estilos pueden estar en el encabezado del documento o como atributos de <code>style</code> línea (consulte <a>Agregar estilos a una página</a>). Pero puede usar preprocesadores CSS y plantillas para crear páginas estáticas para administrar mejor su contenido.
 
-## Estilos no permitidos
+[tip type="note"] **&nbsp;NOTA –** Los componentes de AMP incluyen estilos predeterminados para facilitar en gran medida la creación de páginas adaptables. Estos estilos están definidos en el atributo [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css). [/tip]
 
-Los siguientes estilos no están permitidos en las páginas AMP:
+## Disallowed styles
+
+The following styles aren’t allowed in AMP pages:
 
 <table>
   <thead>
@@ -21,15 +35,11 @@ Los siguientes estilos no están permitidos en las páginas AMP:
   </thead>
   <tbody>
     <tr>
-      <td data-th="Banned style">Atributos de estilo insertados</td>
-      <td data-th="Description"> Todos los estilos deben estar definidos en el campo <code>&lt;head&gt;</code> de la página, en una etiqueta <code>&lt;style amp-custom&gt;</code>.</td>
-    </tr>
-    <tr>
       <td data-th="Banned style">Calificador <code>!important</code>  &nbsp;</td>
       <td data-th="Description">Su uso no está permitido. Este es un requisito necesario para habilitar que AMP aplique sus normas relativas al tamaño de los elementos.</td>
     </tr>
     <tr>
-      <td data-th="Banned style"><code>&lt;link rel=”stylesheet”&gt;</code></td>
+      <td data-th="Banned style"><code><link rel=”stylesheet”></code></td>
       <td data-th="Description"> No está permitido, salvo en el caso de las <a href="#the-custom-fonts-exception">fuentes personalizadas</a>.</td>
     </tr>
     <tr>
@@ -39,9 +49,9 @@ Los siguientes estilos no están permitidos en las páginas AMP:
   </tbody>
 </table>
 
-## Estilos restringidos
+## Recomendaciones de desempeño
 
-Los siguientes estilos están permitidos, pero están restringidos en lo que respecta a los valores que admiten:
+These allowed styles should restrict values to the following for an optimal performance:
 
 <table>
   <thead>
@@ -64,28 +74,25 @@ Los siguientes estilos están permitidos, pero están restringidos en lo que res
 
 ## La excepción de las fuentes personalizadas <a name="the-custom-fonts-exception"></a>
 
-Las páginas AMP no pueden incluir hojas de estilo externas, salvo en el caso de las fuentes personalizadas.
+AMP pages can’t include external stylesheets, with the exception of custom fonts.
 
-Más artículos: Consulta más información [sobre las fuentes personalizadas en AMP](custom_fonts.md).
+[tip type="read-on"] **Más artículos –** Consulta más información [sobre las fuentes personalizadas en AMP](custom_fonts.md). [/tip]
 
 ## Usar preprocesadores CSS <a name="using-css-preprocessors"></a>
 
-El resultado generado de los preprocesadores funciona tan bien en AMP como en cualquier otra página web. Por ejemplo, el sitio web [amp.dev](https://amp.dev/)
-emplea [Sass](http://sass-lang.com/). Nosotros utilizamos [Grow](http://grow.io/) para crear las páginas AMP estáticas que conforman el sitio web [amp.dev](https://amp.dev/).
+El resultado generado de los preprocesadores funciona tan bien en AMP como en cualquier otra página web. Por ejemplo, el sitio web [amp.dev](https://amp.dev/) emplea [Sass](http://sass-lang.com/). Nosotros utilizamos [Grow](http://grow.io/) para crear las páginas AMP estáticas que conforman el sitio web [amp.dev](https://amp.dev/).
 
-Cuando utilices preprocesadores, presta especial atención a los elementos que incluyes. Debes cargar solo lo que utilicen tus páginas. Por ejemplo, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
-incluye todas las etiquetas AMP que se necesitan y el CSS insertado de los archivos de origen de `*.scss`. También incluye la secuencia de comandos personalizada de [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md), entre otras, para que muchas páginas del sitio web puedan incluir vídeos de YouTube insertados.
+Cuando utilices preprocesadores, presta especial atención a los elementos que incluyes. Debes cargar solo lo que utilicen tus páginas. Por ejemplo, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) incluye todas las etiquetas AMP que se necesitan y el CSS insertado de los archivos de origen de `*.scss`. También incluye la secuencia de comandos personalizada de [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md), entre otras, para que muchas páginas del sitio web puedan incluir vídeos de YouTube insertados.
 
 [sourcecode:html]{% raw %}
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
   <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 
-  <title>El proyecto AMP</title>
+  <title>AMP Project</title>
   <link rel="icon" href="/static/img/amp_favicon.png">
   <link rel="canonical" href="{{doc.url}}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet">

@@ -1,15 +1,18 @@
 ---
-$title: 了解 AMP 故事的各个组成部分
+'$title': 了解 AMP 故事的组成部分
+$order: 2
+description: 网页故事是一种全屏直观叙事体验，可以使用图片、视频、图形、音频等传递信息。非常适合…
+author: bpaduch
 ---
 
-AMP 故事借助图片、视频、图形、音频等多种方式来传递信息，可提供一种引人入胜的全屏叙事体验。如果您的用户需要的是短小且视觉效果丰富的内容，AMP 故事无疑是您的上乘之选。
+网页故事是一种全屏直观叙事体验，可以使用图片、视频、图形、音频等传递信息。非常适合希望获得零碎、具有丰富视觉效果的内容的用户。
 
-AMP 故事的基本构成要素是一个个的**页面**，而这些页面又是由一个个含有基本 HTML 和 AMP **元素**的**图层**构成。
+网页故事的基本要素是各个**网页**。这些网页又由各个**图层**组成，图层包含基本的 HTML 和 AMP **元素**。
 
 {{ image('/static/img/docs/tutorials/amp_story/story_parts.png', 1047, 452, align='center ninety') }}
 
-每个要素都会被转换成 AMP 组件，其中故事用 [`amp-story`](../../../../documentation/components/reference/amp-story.md) 表示，页面用 `amp-story-page` 表示，图层用 `amp-story-grid-layer` 表示。
+每个要素都会被转换成 AMP 组件，其中故事用 [`amp-story`](../../../../documentation/components/reference/amp-story.md) 表示，网页用 `amp-story-page` 表示，图层用 `amp-story-grid-layer` 表示。
 
 {{ image('/static/img/docs/amp-story-tag-hierarchy.png', 557, 355, align='center seventyfive' ) }}
 
-下面我们就开始使用 [`amp-story`](../../../../documentation/components/reference/amp-story.md) 容器来创作故事吧！
+我们开始使用 [`amp-story`](../../../../documentation/components/reference/amp-story.md) 容器创建网页故事吧。

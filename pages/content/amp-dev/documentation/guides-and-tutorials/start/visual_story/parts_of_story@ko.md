@@ -1,10 +1,13 @@
 ---
-$title: AMP 스토리의 구성요소 이해하기
+'$title': Understanding the parts of an AMP story
+$order: 2
+description: 웹 스토리는 전체 화면에서 이미지, 동영상, 그래픽, 오디오 등으로 정보를 전달하는 시각적 스토리텔링 도구로...
+author: bpaduch
 ---
 
-AMP 스토리는 전체 화면에서 이미지, 동영상, 그래픽, 오디오 등으로 정보를 전달하는 시각적 스토리텔링 도구로, 읽기 간편하고 시각적으로 풍부한 콘텐츠를 원하는 사용자에게 이상적입니다.  
+웹 스토리는 전체 화면에서 이미지, 동영상, 그래픽, 오디오 등으로 정보를 전달하는 시각적 스토리텔링 도구로, 읽기 간편하고 시각적으로 풍부한 콘텐츠를 원하는 사용자에게 이상적입니다.
 
-AMP 스토리의 기본 구성요소는 개별 **페이지**입니다. 이러한 페이지는 기본 HTML 및 AMP **요소**가 포함된 개별 **레이어**로 구성됩니다.
+웹 스토리의 기본 구성요소는 개별 **페이지**입니다. 이러한 페이지는 기본 HTML 및 AMP **요소**가 포함된 개별 **레이어**로 구성됩니다.
 
 {{ image('/static/img/docs/tutorials/amp_story/story_parts.png', 1047, 452, align='center ninety') }}
 
@@ -12,4 +15,4 @@ AMP 스토리의 기본 구성요소는 개별 **페이지**입니다. 이러한
 
 {{ image('/static/img/docs/amp-story-tag-hierarchy.png', 557, 355, align='center seventyfive' ) }}
 
-[`amp-story`](../../../../documentation/components/reference/amp-story.md) 컨테이너를 사용하여 스토리를 만들어 보겠습니다.
+그럼 [`amp-story`](../../../../documentation/components/reference/amp-story.md) 컨테이너를 사용하여 스토리 제작을 시작하겠습니다.

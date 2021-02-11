@@ -1,8 +1,10 @@
 ---
-$title: AMP 이메일 테스트
+'$title': AMP 이메일 테스트
 $order: 2
-$category: 개발
+'$category': Develop
 description: AMP 이메일을 대량 발송하기 전 테스트하여 우수한 사용자 경험을 확인합니다.
+formats:
+  - email
 author: fstanis
 ---
 
@@ -30,7 +32,3 @@ Gmail 사용자는 [Gmail의 이메일용 AMP Playground](https://amp.gmail.dev/
 [Mail.ru AMP 이메일](https://postmaster.mail.ru/amp)은 Mail.ru 계정에서 테스트를 활성화하는 방법을 제공합니다.
 
 Mail.ru 사용자는 [Mail.ru AMP Playground](https://postmaster.mail.ru/amp/playground.html)를 활용하여 자신에게 테스트 이메일을 발송할 수 있습니다.
-
-### Outlook.com
-
-Outlook.com 문서는 [이메일용 AMP 시작하기](https://docs.microsoft.com/en-us/outlook/amphtml/get-started) 가이드를 제공하여 AMP 이메일 작성 및 테스트 방법을 설명합니다.

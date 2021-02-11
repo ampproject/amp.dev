@@ -23,7 +23,8 @@ The tip molecule shows text alongside a contextual icon
   padding: 15px;
   margin-bottom: 20px;
   border-radius: 4px;
-  border: 2px solid color('iron');
+  background-color: color('athens-gray');
+  border: 1px solid color('iron');
 
   @media (min-width: 768px) {
     padding: 30px;
@@ -45,6 +46,7 @@ The tip molecule shows text alongside a contextual icon
   }
 
   &-content {
+    @include txt-2;
     h4 {
       @include txt-1;
       margin: 0 0 0.75em;

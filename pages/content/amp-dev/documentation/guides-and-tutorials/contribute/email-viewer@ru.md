@@ -1,9 +1,9 @@
 ---
-"$title": Использование AMP Viewer для отображения писем
-"$order": '5'
+'$title': Использование AMP Viewer для отображения писем
+$order: 5
 author: alabiaga
 formats:
-- email
+  - email
 ---
 
 Почтовые клиенты, которые стремятся реализовать поддержку AMP для писем, должны использовать [средство просмотра AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) в качестве «оболочки» AMP-писем отправителя. Средство просмотра, созданное с помощью [библиотеки AMP Viewer](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration), инкапсулирует документ AMP и обеспечивает [возможности](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/CAPABILITIES.md), позволяющие осуществлять двунаправленную связь с документом AMP через postMessage. В числе этих возможностей управление видимостью письма, ретрансляция пользовательских метрик и обеспечение безопасности запросов XHR, сделанных из письма.
@@ -24,9 +24,11 @@ formats:
 // The viewer iframe that will host the amp doc.
 viewerIframe = document.createElement('iframe');
 viewerIframe.contentWindow.onMessage = (xhrRequestIntercepted) => {
-   const blob = new Blob([JSON.stringify({body: 'hello'}, null, 2)], {type: 'application/json'});
-   const response = new Reponse(blob, {status: 200});
-   return response;
+  const blob = new Blob([JSON.stringify({body: 'hello'}, null, 2)], {
+    type: 'application/json',
+  });
+  const response = new Reponse(blob, {status: 200});
+  return response;
 };
 ```
 
@@ -35,7 +37,7 @@ viewerIframe.contentWindow.onMessage = (xhrRequestIntercepted) => {
 Чтобы задействовать перехват XHR, активируйте на этапе инициализации программы просмотра возможность xhrInterceptor — см. образец программы просмотра с перехватом XHR. Затем перехват XHR должен быть разрешен в документе AMP. Чтобы сделать это, добавьте атрибут `allow-xhr-interception` в тег `<html amp4email>`. Этот атрибут должен быть установлен почтовым клиентом непосредственно перед рендерингом документа, поскольку он намеренно является недопустимым атрибутом и будет отмечен соответствующим образом во время валидации документа AMP.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email allow-xhr-interception>
   ...
 </html>
@@ -43,23 +45,24 @@ viewerIframe.contentWindow.onMessage = (xhrRequestIntercepted) => {
 
 ## Средство просмотра и рендеринг шаблона на стороне сервера
 
-Возможность `viewerRenderTemplate` позволяет средству просмотра управлять рендерингом шаблонов [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email) и [`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=email). Когда она активирована, среда выполнения AMP проксирует в средство просмотра запрос, содержащий оригинальный XHR-вызов, данные шаблона и все прочие данные, необходимые для рендеринга содержимого компонента. Это позволяет средству просмотра анализировать контент конечной точки и управлять тем, как [mustache](https://mustache.github.io/) осуществляет рендеринг шаблонов, чтобы проверять и санитизировать данные. Обратите внимание при совместной активации вместе с xhrInterceptor в компонентах amp-form и amp-list: возможность `viewerRenderTemplate`также проксирует запросы в средство просмотра и будет обладать приоритетом над  xhrInterceptor.
+Возможность `viewerRenderTemplate` позволяет средству просмотра управлять рендерингом шаблонов [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email) и [`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=email). Когда она активирована, среда выполнения AMP проксирует в средство просмотра запрос, содержащий оригинальный XHR-вызов, данные шаблона и все прочие данные, необходимые для рендеринга содержимого компонента. Это позволяет средству просмотра анализировать контент конечной точки и управлять тем, как [mustache](https://mustache.github.io/) осуществляет рендеринг шаблонов, чтобы проверять и санитизировать данные. Обратите внимание при совместной активации вместе с xhrInterceptor в компонентах amp-form и amp-list: возможность `viewerRenderTemplate`также проксирует запросы в средство просмотра и будет обладать приоритетом над xhrInterceptor.
 
-В примере [viewer.html](https://github.com/ampproject/amphtml/blob/master/examples/viewer.html) показано, как можно обработать сообщение `viewerRenderTemplate`, отправленное из документа AMP. В рамках данного примера Viewer.prototype.processRequest_ перехватывает сообщение `viewerRenderTemplate` и, в зависимости от указанного в запросе типа AMP-компонента, возвращает предназначенный для отображения HTML в виде следующего JSON:
+В примере [viewer.html](https://github.com/ampproject/amphtml/blob/master/examples/viewer.html) показано, как можно обработать сообщение `viewerRenderTemplate`, отправленное из документа AMP. В рамках данного примера Viewer.prototype.processRequest\_ перехватывает сообщение `viewerRenderTemplate` и, в зависимости от указанного в запросе типа AMP-компонента, возвращает предназначенный для отображения HTML в виде следующего JSON:
 
 ```js
-Viewer.prototype.ssrRenderAmpListTemplate_ = (data) => Promise.resolve({
-  "html":
-    "<div role='list' class='i-amphtml-fill-content i-amphtml-replaced-content'>"
-      + "<div class='product' role='listitem'>Apple</div>"
-      + "</div>",
-  "body" : "",
-  "init" : {
-    "headers": {
-      "Content-Type": "application/json",
-    }
-  }
-});
+Viewer.prototype.ssrRenderAmpListTemplate_ = (data) =>
+  Promise.resolve({
+    'html':
+      "<div role='list' class='i-amphtml-fill-content i-amphtml-replaced-content'>" +
+      "<div class='product' role='listitem'>Apple</div>" +
+      '</div>',
+    'body': '',
+    'init': {
+      'headers': {
+        'Content-Type': 'application/json',
+      },
+    },
+  });
 ```
 
 Это простейший пример, в котором нет зависимости от библиотеки [mustache](https://mustache.github.io/) или санитизации контента.
@@ -74,9 +77,9 @@ Viewer.prototype.ssrRenderAmpListTemplate_ = (data) => Promise.resolve({
 {
   "html": "<div role='list' class='i-amphtml-fill-content i-amphtml-replaced-content'> <div class='product' role='listitem'>List item 1</div> <div class='product' role='listitem'>List item 2</div> </div>",
   "body": "",
-  "init" : {
+  "init": {
     "headers": {
-      "Content-Type": "application/json",
+      "Content-Type": "application/json"
     }
   }
 }

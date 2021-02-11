@@ -1,14 +1,17 @@
 ---
-$title: AMP オプティマイザの仕組み
+'$title': AMP オプティマイザの仕組み
 $order: 1
 description: AMP オプティマイザは、有効な AMPHTML ドキュメントを入力として取り、「手作業」では面倒な最適化をさらに適用することで最適化バージョンに変換します。このガイドでは、AMP オプティマイザがどのように動作するのかを詳しく説明します。
+formats:
+  - websites
+  - stories
 author: sebastianbenz
 ---
 
 AMP オプティマイザは、有効な AMPHTML ドキュメントを入力として取り、「手作業」では面倒な最適化をさらに適用することで最適化バージョンに変換します。最適化された「**変換済み AMP**」は、`html` 要素の `transformed` 属性で識別することができます。
 
 ```
-<html ⚡ i-amphtml-layout i-amphtml-no-boilerplate transformed="self">
+<html ⚡ i-amphtml-layout i-amphtml-no-boilerplate transformed="self;v=1">
 ```
 
 注意: AMP キャッシュでは別の変換済みフラグが使用されています。Google AMP キャッシュの場合は、`transformed=google;v=1` が追加されます。
@@ -29,7 +32,7 @@ AMP オプティマイザは、サーバー側のレンダリングレイアウ�
 
 ⁣**1. AMP ボイラープレートを削除する。** AMP レイアウトを使用する各要素に対し、レイアウト固有のマークアップがインジェクトされます。
 
-⁣**2. インライン AMP 内部 CSS スタイル。** AMP ボイラープレートコードは<a href="https://cdn.ampproject.org/v0.css" data-md-type="link">AMP ラインタイム CSS スタイル</a> の <style data-md-type="raw_html" amp-runtime="">...</style> に置き換えららえます。サーバー側でレンダリングされていないドキュメントに対し、AMP はランタイム時にスタイルを追加します。ただし、サーバー側でレンダリングされる AMP ページには、AMP が読み込まれる前に AMP レイアウトが機能するように、スタイルが必要です。バージョン競合が発生する可能性を回避するために、AMP はランタイム時に、i-amphtml-version="011905222334000" に指定されたバージョンが現在の AMP バージョンと異なっているかを確認し、異なっていない場合は、最新のバージョンで CSS を更新します。
+⁣**2. Inline AMP-internal CSS styles: ** the AMP-boilerplate code is replaced by the <a href="https://cdn.ampproject.org/v0.css">AMP-runtime CSS styles</a>:`<style amp-runtime>...</style>`. For non-server-side rendered documents, AMP adds these styles at runtime. However, server-side-rendered AMP pages require these for the AMP layouts to work before AMP has been loaded. To avoid potential version conflicts, at runtime, AMP will check if the version specified in i-amphtml-version="011905222334000" differs from the current AMP version and will update the CSS with the latest version if not.
 
 ```
 <style amp-runtime i-amphtml-version="011905222334000">html{overflow-x:hidden!important}html.i-amphtml-...</style>

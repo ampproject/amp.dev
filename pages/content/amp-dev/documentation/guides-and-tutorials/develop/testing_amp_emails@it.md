@@ -1,8 +1,10 @@
 ---
-$title: Test delle e-mail AMP
+'$title': Test delle e-mail AMP
 $order: 2
-$category: Sviluppo
+'$category': Develop
 description: Testando le e-mail AMP prima di inviarle a un vasto pubblico, è possibile garantire la migliore esperienza agli utenti.
+formats:
+  - email
 author: fstanis
 ---
 
@@ -30,7 +32,3 @@ Gli utenti di Gmail possono utilizzare [Gmail AMP per E-mail Playground](https:/
 Il documento [E-mail AMP di Mail.ru](https://postmaster.mail.ru/amp) fornisce informazioni su come abilitare i test negli account Mail.ru.
 
 Gli utenti di Mail.ru possono utilizzare [Mail.ru AMP E-mail Playground](https://postmaster.mail.ru/amp/playground.html) per inviarsi e-mail di test.
-
-### Outlook.com
-
-La documentazione di Outlook.com ha una [Guida introduttiva a AMP per e-mail](https://docs.microsoft.com/en-us/outlook/amphtml/get-started) che spiega come creare e testare le e-mail AMP.

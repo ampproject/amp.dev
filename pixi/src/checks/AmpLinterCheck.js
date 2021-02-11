@@ -26,6 +26,7 @@ const directMapping = {
   istransformedamp: 'isTransformedAmp',
   boilerplateisremoved: 'boilerplateIsRemoved',
   heroimageisdefined: 'heroImageIsDefined',
+  viewportdisablestapdelay: 'viewportDisablesTapDelay',
 };
 
 export default class AmpLinterCheck {
@@ -68,7 +69,7 @@ export default class AmpLinterCheck {
     const linterStatus = !apiResult.data
       ? {}
       : Object.entries(apiResult.data).reduce((mappedData, [key, checks]) => {
-          // most checks are mapped 1:1 ro the result
+          // most checks are mapped 1:1 to the result
           const resultKey = directMapping[key];
           if (resultKey) {
             if (Array.isArray(checks)) {

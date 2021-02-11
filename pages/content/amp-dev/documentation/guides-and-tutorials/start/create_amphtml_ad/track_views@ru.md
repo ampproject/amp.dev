@@ -1,6 +1,6 @@
 ---
-"$title": Отслеживание просмотров рекламы
-"$order": '2'
+'$title': Отслеживание просмотров рекламы
+$order: 2
 description: Из самой рекламы AMPHTML вы можете отслеживать ее показатели с помощью компонентов amp-pixel или amp-analytics. В нашем базовом примере мы добавим возможность отслеживать просмотры страниц ...
 ---
 
@@ -9,11 +9,14 @@ description: Из самой рекламы AMPHTML вы можете отсле
 ```html
 <body>
   <a target="_blank" href="https://www.amp.dev">
-    <amp-img width="300" height="250"
-        alt="Learn amp"
-        src="/static/img/docs/ads/amp-300x250.png"></amp-img>
+    <amp-img
+      width="300"
+      height="250"
+      alt="Learn amp"
+      src="/static/img/docs/ads/amp-300x250.png"
+    ></amp-img>
   </a>
-<amp-pixel src="https://www.amp.dev/tracker/foo"></amp-pixel>
+  <amp-pixel src="https://www.amp.dev/tracker/foo"></amp-pixel>
 </body>
 ```
 

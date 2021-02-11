@@ -1,10 +1,21 @@
 ---
-$title: Mengonversi HTML menjadi AMP
+'$title': Mengonversi HTML menjadi AMP
+formats:
+  - websites
+'$titles':
+  teaser: Convert HTML to AMP
+$order: 0
+description: Di dalam tutorial ini, Anda akan mempelajari konsep penting AMP dan perbedaan dokumen AMP dari dokumen HTML tradisional. Di akhir tutorial ini
+'$hidden': 'true'
+teaser:
+  icon: konversi
+  text: Pelajari cara mengonversi HTML menjadi AMP dalam tutorial ini, langkah demi langkah.
+  label: Pelajari lebih lanjut
 ---
 
-{{ image('/static/img/docs/tutorials/tut-convert-html-end-product.png', 452, 918, align='right third', caption='Artikel berita yang lengkap') }}
+{{ image('/static/img/docs/tutorials/tut-convert-html-end-product.png', 452, 918, align='right third', caption='Artikel berita yang telah selesai') }}
 
-Dalam tutorial ini, Anda akan mempelajari konsep utama AMP dan perbedaan antara dokumen AMP dan dokumen HTML tradisional.  Setelah mengikuti tutorial ini, Anda diharapkan mampu membuat halaman AMP dari halaman HTML yang sudah ada.
+Di dalam tutorial ini, Anda akan mempelajari konsep penting AMP dan perbedaan dokumen AMP dari dokumen HTML tradisional. Di akhir tutorial ini, Anda diharapkan mampu membuat halaman AMP dari halaman HTML yang sudah ada.
 
 ## Anda akan mempelajari cara:
 
@@ -16,4 +27,4 @@ Dalam tutorial ini, Anda akan mempelajari konsep utama AMP dan perbedaan antara 
 
 ## Anda akan membuat:
 
-Halaman artikel berita sederhana yang sesuai dengan spesifikasi AMP dan menyertakan fitur umum yang ditemukan di situs berita seluler.
+Halaman artikel berita sederhana yang sesuai dengan spesifikasi AMP dan menyertakan fitur-fitur umum yang ditemukan di situs berita seluler.

@@ -1,5 +1,10 @@
 ---
-$title: 配信前の最終ステップ
+'$title': Final steps before publishing
+$order: 6
+description: ローカルでページをテストをして、エラーの修正が完了したら、初めての AMP ページを配信する準備は完了です。
+author: pbakaus
+contributors:
+  - bpaduch
 ---
 
 ローカルでページをテストをして、エラーの修正が完了したら、初めての AMP ページを配信する準備は完了です。

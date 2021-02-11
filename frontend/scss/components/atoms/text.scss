@@ -32,6 +32,10 @@
     @include txt-mono-inline;
   }
 
+  p, code {
+    overflow-wrap: break-word;
+  }
+
   a {
     position: relative;
     z-index: 10;

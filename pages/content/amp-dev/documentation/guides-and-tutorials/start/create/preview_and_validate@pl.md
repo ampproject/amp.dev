@@ -1,10 +1,10 @@
 ---
-"$title": Podgląd i walidacja
-"$order": '5'
+'$title': Podgląd i walidacja
+$order: 5
 description: '"Podgląd strony AMP wyświetla się tak samo, jak podgląd każdej innej statycznej strony HTML. Nie jest wymagany żaden krok tworzenia ani przetwarzanie wstępne. Możesz: ..."'
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## Podgląd
@@ -12,7 +12,7 @@ contributors:
 Podgląd strony AMP wyświetla się tak samo, jak podgląd każdej innej statycznej strony HTML. Nie jest wymagany żaden krok tworzenia ani przetwarzanie wstępne. Możesz:
 
 - **Otworzyć stronę bezpośrednio w przeglądarce z systemu plików** (niektóre elementy mogą nie działać z powodu niepowodzenia obiektów XMLHttpRequest).
-- **Użyć lokalnego serwera WWW, takiego jak Apache 2 lub Nginx**. *(Porada: szybki serwer WWW można uruchomić poleceniem `python -m SimpleHTTPServer`.)*
+- **Użyć lokalnego serwera WWW, takiego jak Apache 2 lub Nginx**. _(Porada: szybki serwer WWW można uruchomić poleceniem `python -m SimpleHTTPServer`.)_
 
 ## Walidacja
 

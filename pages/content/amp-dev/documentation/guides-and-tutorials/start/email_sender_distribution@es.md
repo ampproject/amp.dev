@@ -1,8 +1,10 @@
 ---
-$title: Cómo generar el registro para la distribución de los remitentes
+'$title': Cómo generar el registro para la distribución de los remitentes
 $order: 1
 description: Cómo generar el registro para la distribución de los correos electrónicos de AMP
-$category: Comenzar
+'$category': Start
+formats:
+  - email
 author: CrystalOnScript
 ---
 
@@ -18,7 +20,7 @@ Debe demostrar que entiende y cumple con el formato establecido para los correos
 
 Envíe un correo electrónico de AMP listo para producción a las siguientes direcciones:
 
-- amphtmltest@outlook.com
+- ampverification@yahoo.com
 - postmaster_amp@corp.mail.ru
 - ampforemail.whitelisting@gmail.com
 
@@ -32,20 +34,16 @@ Debe cumplir la Política de privacidad con cada cliente.
 
 **Gmail**
 
-[Términos y Privacidad de Google](https://policies.google.com/privacy)
+[GooglePrivacy & Terms](https://policies.google.com/privacy)
 
 **Mail.Ru**
 
-- [Usuarios que no radican en Rusia](https://help.mail.ru/engmail-help/privacy)
-- [Usuarios que radican en Rusia](https://agent.mail.ru/legal/privacypolicy/en)
+- [Non-Russian based users](https://help.mail.ru/engmail-help/privacy)
+- [Russian based users](https://agent.mail.ru/legal/privacypolicy/en)
 
-**Microsoft**
+**Verizon Media (Yahoo Mail)**
 
-[Declaración de privacidad de Microsoft](https://privacy.microsoft.com/en-us/privacystatement)
-
-**Correo Yahoo! - Verizon Media**
-
-- [Política de Privacidad de Verizon Media - EE.UU](https://www.verizonmedia.com/policies/us/en/verizonmedia/privacy/index.html)
+- [Verizon Media Privacy Policy - US](https://www.verizonmedia.com/policies/us/en/verizonmedia/privacy/index.html)
 - Para otros países visite [esta página](https://www.verizonmedia.com/policies/).
 
 # Confirmación

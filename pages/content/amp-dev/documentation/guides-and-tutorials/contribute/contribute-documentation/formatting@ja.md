@@ -1,6 +1,13 @@
 ---
-$title: "書式設定ガイドとチュートリアル"
-description: "amp.dev のファイルの書式設定要件"
+'$title': 書式設定ガイドとチュートリアル
+$order: 3
+description: amp.dev のファイルの書式設定要件
+formats:
+  - websites
+  - stories
+  - ads
+  - email
+author: CrystalOnScript
 ---
 
 ガイドとチュートリアルは、追加の Frontmatter とショートコードの書式設定とともに [Markdown](https://www.markdownguide.org/) に提出します。
@@ -87,87 +94,96 @@ description: For web experiences requiring a high amount of customization AMP ha
 
 amp.dev は AMP で作られています！そのため、画像は [`amp-img`](../../../../documentation/components/reference/amp-img.md) 基準に一致していなければなりません。ビルドプロセスでは、以下の構文により、画像を適切な `amp-img` 形式に変換しています。
 
-<div class="ap-m-code-snippet">
-<pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}</pre>
-</div>
+<div class="ap-m-code-snippet"><pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}</pre></div>
 
 ## セクションのフィルタリング
 
 ドキュメントには、複数の AMP 形式に関連性のあるものもあれば、ほかの形式には関連性のない説明や情報がさらに必要なものもあります。こういったセクションについては、以下のショートコードで囲むことでフィルタリングすることができます。
 
-<div class="ap-m-code-snippet">
-<pre>&lsqb;filter formats="websites"]<br>This is only visible for [websites](?format=websites).<br>&lsqb;/filter]</pre>
-</div>
+<div class="ap-m-code-snippet"><pre>&amp;lsqb;filter formats="websites"]
+This is only visible for [websites](?format=websites).
+&amp;lsqb;/filter]
 
-[filter formats="websites"] これは[ウェブサイト](?format=websites)にしか表示されません。[/filter]
+&amp;lsqb;filter formats="websites"]
+This is only visible for [websites](?format=websites).
+&amp;lsqb;/filter]
 
-[filter formats="websites, email"] これは、[ウェブサイト](?format=websites)と[メール](?format=email)にしか表示されません。[/filter]
+&amp;lsqb;filter formats="websites, email"]
+This is visible for [websites](?format=websites) &amp; [email](?format=email).
+&amp;lsqb;/filter]
 
-[filter formats="stories"] これは[ストーリー](?format=stories)にしか表示されません。[/filter]
-
-
-
+&amp;lsqb;filter formats="stories"]
+This is visible for [stories](?format=stories).
+&amp;lsqb;/filter]</pre></div>
 
 ## ヒント
 
 以下のショートコードでテキストを囲むことで、ヒントとコールアウトを追加できます。
 
-<div class="ap-m-code-snippet">
-<pre>&lsqb;tip type="default"]<br>Default tip<br>&lsqb;/tip]</pre>
-</div>
+<div class="ap-m-code-snippet"><pre>&amp;lsqb;tip type="default"]
+Default tip
+[/tip]
 
-[tip type="important"] 重要 [/tip]
+&amp;lsqb;tip type="important"]
+Important
+[/tip]
 
-[tip type="note"] 注意 [/tip]
+&amp;lsqb;tip type="note"]
+Note
+[/tip]
 
-[tip type="read-on"] お読みください [/tip]
-
-
-
+&amp;lsqb;tip type="read-on"]
+Read-on
+[/tip]</pre></div>
 
 ## コードスニペット
 
 コードスニペットは、3 連バックティックの間に配置し、言語を最初の 3 連バックティックセットの最後に指定します。
 
-<div class="ap-m-code-snippet">
-<pre>```html<br>  // code sample<br>```</pre>
-</div>
+<div class="ap-m-code-snippet"><pre>```html
+  // code sample
+```
 
 ```css
-  // code sample
+// code sample
 ```
 
-```js
+````js
   // code sample
-```
-
-
-
-
+```</pre></div>
 
 コードに二重波かっこが含まれる場合、コードの部分が囲まれている必要があります。二重波かっこは、[`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md?format=websites) テンプレートを使用している場合に見られることがよくあります。
 
-<div class="ap-m-code-snippet">
-<pre>```html<br>{% raw	%}<br>  // code with double curly braces<br>{% endraw	%}<br>```</pre>
-</div>
+<div class="ap-m-code-snippet"><pre>```html<br>{% raw	%}<br>  // code with double curly braces<br>{% endraw	%}<br>```</pre></div>
 
 ### リスト内のコードスニペット
 
 Python-Markdown にはいくつかの制限があります。リストにコードスニペットを含める場合は、次の構文を使用してください。
 
-<div class="ap-m-code-snippet">
-<pre>1. First:<br>    &lsqb;sourcecode:html]<br>      <br>        <p>Indented content.</p><br>      <br>    &lsqb;/sourcecode]<br>  2. Second<br>  3. Third</pre>
-</div>
+<div class="ap-m-code-snippet"><pre>&lsqb;sourcecode:html]
+      <html>
+        <p>Indented content.</p>
+      </html>
+    &lsqb;/sourcecode]</pre></div>
 
 ## コードサンプルのプレビュー
 
 コードサンプルにはプレビューや [AMP Playground](https://playground.amp.dev/) バージョンへのリンクを使用できます。
 
 <div class="ap-m-code-snippet">
-  <pre>  &lsqb;example preview="default: none|inline|top-frame"<br>          playground="default: true|false"<br>          imports="<custom-element-1>,<custom-element-2>,..."           template="<custom-template>"]   ```html     // code sample   ```   &lsqb;/example]   </custom-template></custom-element-2></custom-element-1></pre>
+  <pre>&lsqb;example preview="default: none|inline|top-frame"
+          playground="default: true|false"
+          imports="<custom-element-1>,<custom-element-2>,..."
+          template="<custom-template>"]
+  ```html
+    // code sample
+````
+
+&lsqb;/example]</pre>
+
 </div>
 
-注意: プレビューは、Playground で開くと、現在選択されている形式に自動的に変換されます！
+注意: プレビューは、Playground で開くと、現在選択されている形式に自動的に変換されます 🤯！
 
 プレビューがどのように生成されるかを定義するには、`preview` 属性を使用します。
 
@@ -187,9 +203,11 @@ Python-Markdown にはいくつかの制限があります。リストにコー�
 
 以下は、単純な埋め込みのインラインサンプルです。インラインスタイルで CSS を定義できます。
 
-<div class="ap-m-code-snippet">
-<pre>  [example preview="inline" playground="true"]<br>    ```html<br>    <div style="background: red; width: 200px; height: 200px;">Hello World</div><br>    ```<br>  [/example]<br></pre>
-</div>
+<div class="ap-m-code-snippet"><pre>[example preview="inline" playground="true"]
+    ```html
+    <div style="background: red; width: 200px; height: 200px;">Hello World</div>
+    ```
+  [/example]</pre></div>
 
 これは次のように表示されます。
 
@@ -209,17 +227,40 @@ Python-Markdown にはいくつかの制限があります。リストにコー�
 
 重要: ヘッダーに AMP ボイラープレートコードを追加しないでください。AMP ボイラープレートは AMP 形式に基づいて自動的に追加されます。サンプルで必要とされる要素のみをヘッダーに追加してください！
 
-<div class="ap-m-code-snippet">
-<pre>  [example preview="top-frame"<br>         playground="true"]<br>    ```html<br>    <head><br>      <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script><br>      <style amp-custom><br>        body {<br>          background: red;<br>        }<br>      </style><br>    </head><br>    <body><br>      <h1>Hello AMP</h1><br>      <amp-youtube width="480"<br>        height="270"<br>        layout="responsive"<br>        data-videoid="lBTCB7yLs8Y"><br>      </amp-youtube><br>    </body><br>    ```<br>  [/example]</pre>
-</div>
+<div class="ap-m-code-snippet"><pre>[example preview="top-frame"
+         playground="true"]
+    ```html
+    <head>
+      <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+      <style amp-custom>
+        body {
+          background: red;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>Hello AMP</h1>
+      <amp-youtube width="480"
+        height="270"
+        layout="responsive"
+        data-videoid="lBTCB7yLs8Y">
+      </amp-youtube>
+    </body>
+    ```
+  [/example]</pre></div>
 
 これは次のように表示されます。
 
-[example preview="top-frame" playground="true"]
+[example preview="top-frame"
+playground="true"]
 
 ```html
 <head>
-  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-youtube"
+    src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+  ></script>
   <style amp-custom>
     body {
       background: red;
@@ -228,10 +269,12 @@ Python-Markdown にはいくつかの制限があります。リストにコー�
 </head>
 <body>
   <h1>Hello AMP</h1>
-  <amp-youtube width="480"
+  <amp-youtube
+    width="480"
     height="270"
     layout="responsive"
-    data-videoid="lBTCB7yLs8Y">
+    data-videoid="lBTCB7yLs8Y"
+  >
   </amp-youtube>
 </body>
 ```
@@ -242,43 +285,79 @@ Python-Markdown にはいくつかの制限があります。リストにコー�
 
 AMP ストーリーのプレビューには、`preview="top-frame"` と `orientation="portrait"` を合わせて使用します。
 
-<div class="ap-m-code-snippet">
-<pre>  [example preview="top-frame"<br>         orientation="portrait"<br>         playground="true"]<br>    ```html<br>    <head><br>      <script async custom-element="amp-story"<br>          src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script><br>      <style amp-custom><br>        body {<br>          font-family: 'Roboto', sans-serif;<br>        }<br>        amp-story-page {<br>          background: white;<br>        }<br>      </style><br>    </head><br>    <body><br>      <amp-story standalone><br>        <amp-story-page id="cover"><br>          <amp-story-grid-layer template="vertical"><br>            <h1>Hello World</h1><br>            <p>This is the cover page of this story.</p><br>          </amp-story-grid-layer><br>        </amp-story-page><br>        <amp-story-page id="page-1"><br>          <amp-story-grid-layer template="vertical"><br>            <h1>First Page</h1><br>            <p>This is the first page of this story.</p><br>          </amp-story-grid-layer><br>        </amp-story-page><br>      </amp-story><br>    </body><br>    ```<br>  [/example]</pre>
-</div>
+<div class="ap-m-code-snippet"><pre>[example preview="top-frame"
+         orientation="portrait"
+         playground="true"]
+    ```html
+    <head>
+      <script async custom-element="amp-story"
+          src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+      <style amp-custom>
+        body {
+          font-family: 'Roboto', sans-serif;
+        }
+        amp-story-page {
+          background: white;
+        }
+      </style>
+    </head>
+    <body>
+      <amp-story standalone>
+        <amp-story-page id="cover">
+          <amp-story-grid-layer template="vertical">
+            <h1>Hello World</h1>
+            <p>This is the cover page of this story.</p>
+          </amp-story-grid-layer>
+        </amp-story-page>
+        <amp-story-page id="page-1">
+          <amp-story-grid-layer template="vertical">
+            <h1>First Page</h1>
+            <p>This is the first page of this story.</p>
+          </amp-story-grid-layer>
+        </amp-story-page>
+      </amp-story>
+    </body>
+    ```
+  [/example]</pre></div>
 
 これは次のように表示されます。
 
-[example preview="top-frame" orientation="portrait" playground="true"]
+[example preview="top-frame"
+orientation="portrait"
+playground="true"]
 
 ```html
-  <head>
-    <script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-    <style amp-custom>
-      body {
-        font-family: 'Roboto', sans-serif;
-      }
-      amp-story-page {
-        background: white;
-      }
-    </style>
-  </head>
-  <body>
-    <amp-story standalone>
-      <amp-story-page id="cover">
-        <amp-story-grid-layer template="vertical">
-          <h1>Hello World</h1>
-          <p>This is the cover page of this story.</p>
-        </amp-story-grid-layer>
-      </amp-story-page>
-      <amp-story-page id="page-1">
-        <amp-story-grid-layer template="vertical">
-          <h1>First Page</h1>
-          <p>This is the first page of this story.</p>
-        </amp-story-grid-layer>
-      </amp-story-page>
-    </amp-story>
-  </body>
+<head>
+  <script
+    async
+    custom-element="amp-story"
+    src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+  ></script>
+  <style amp-custom>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    amp-story-page {
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <amp-story standalone>
+    <amp-story-page id="cover">
+      <amp-story-grid-layer template="vertical">
+        <h1>Hello World</h1>
+        <p>This is the cover page of this story.</p>
+      </amp-story-grid-layer>
+    </amp-story-page>
+    <amp-story-page id="page-1">
+      <amp-story-grid-layer template="vertical">
+        <h1>First Page</h1>
+        <p>This is the first page of this story.</p>
+      </amp-story-grid-layer>
+    </amp-story-page>
+  </amp-story>
+</body>
 ```
 
 [/example]
@@ -287,9 +366,17 @@ AMP ストーリーのプレビューには、`preview="top-frame"` と `orienta
 
 AMP メールに <code>{{server_for_email}}</code> を埋め込む場合に、それをどのように使用してエンドポイント URL を絶対 URL にしているか、注意してください。
 
-<div class="ap-m-code-snippet">
-<pre>  [example preview="top-frame" playground="true"]<br>    ```html<br>    <div class="resp-img">       <amp-img alt="flowers" src="%7B%7Bserver_for_email%7D%7D/static/inline-examples/images/flowers.jpg" layout="responsive" width="640" height="427"></amp-img>     </div><br>    ```<br>  [/example]</pre>
-</div>
+<div class="ap-m-code-snippet"><pre>[example preview="top-frame" playground="true"]
+    ```html
+    <div class="resp-img">
+      <amp-img alt="flowers"
+        src="{{server_for_email}}/static/inline-examples/images/flowers.jpg"
+        layout="responsive"
+        width="640"
+        height="427"></amp-img>
+    </div>
+    ```
+  [/example]</pre></div>
 
 これは次のように表示されます。
 
@@ -297,11 +384,13 @@ AMP メールに <code>{{server_for_email}}</code> を埋め込む場合に、�
 
 ```html
 <div class="resp-img">
-  <amp-img alt="flowers"
+  <amp-img
+    alt="flowers"
     src="{{server_for_email}}/static/inline-examples/images/flowers.jpg"
     layout="responsive"
     width="640"
-    height="427"></amp-img>
+    height="427"
+  ></amp-img>
 </div>
 ```
 
@@ -312,17 +401,40 @@ AMP メールに <code>{{server_for_email}}</code> を埋め込む場合に、�
 以下は、リモートエンドポイントを使用した `top-frame` サンプルです。Mustache テンプレートは、<code>{% raw %}</code> と <code>{% endraw %}</code> を使用して、サンプルでエスケープ処理する必要があります。
 
 <div class="ap-m-code-snippet">
-  <pre>[example preview="top-frame"<br>        playground="true"<br>        imports="amp-list:0.1"<br>        template="amp-mustache:0.2"]<br>    ```html<br>    <amp-list width="auto" height="100" layout="fixed-height"<br>      src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json"><br>      <template type="amp-mustache">{% raw %}<br>        <div class="url-entry"><br>          <a href="{{url}}">{{title}}</a><br>        </div><br>      {% endraw %}<br>      </template><br>    </amp-list><br>    ```<br>[/example]</pre>
+  <pre>[example preview="top-frame"
+        playground="true"
+        imports="amp-list:0.1"
+        template="amp-mustache:0.2"]
+    ```html
+    <amp-list width="auto" height="100" layout="fixed-height"
+      src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
+      <template type="amp-mustache">{% raw %}
+        <div class="url-entry">
+          <a href="{{url}}">{{title}}</a>
+        </div>
+      {% endraw %}
+      </template>
+    </amp-list>
+    ```
+[/example]</pre>
 </div>
 
 これは次のように表示されます。
 
-[example preview="top-frame" playground="true" imports="amp-list:0.1" template="amp-mustache:0.2"]
+[example preview="top-frame"
+playground="true"
+imports="amp-list:0.1"
+template="amp-mustache:0.2"]
 
 ```html
-<amp-list width="auto" height="100" layout="fixed-height"
-  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
-  <template type="amp-mustache">{% raw %}
+<amp-list
+  width="auto"
+  height="100"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json"
+>
+  <template type="amp-mustache"
+    >{% raw %}
     <div class="url-entry">
       <a href="{{url}}">{{title}}</a>
     </div>
@@ -338,7 +450,7 @@ AMP メールに <code>{{server_for_email}}</code> を埋め込む場合に、�
 標準的なマークダウンのリンク構文を使って、ほかのページにリンクすることができます。
 
 ```md
- [link](../../../courses/beginning-course/index.md)
+[link](../../../courses/beginning-course/index.md)
 ```
 
 amp.dev の別のページにリンクする場合、参照はそのターゲットファイルへの相対ファイルパスになります。
@@ -368,7 +480,7 @@ amp.dev の別のページにリンクする場合、参照はそのターゲッ
 コンポーネントドキュメント、ガイド、およびチュートリアルと例は、AMP ウェブサイトや AMP ストーリーなどの AMP 形式を使用してフィルタすることができます。そういったページにリンクする場合は、リンクに format パラメータを追加して、ターゲットにサポートされた形式を明示的に指定する必要があります。
 
 ```md
- [link](../../learn/amp-actions-and-events.md?format=websites)
+[link](../../learn/amp-actions-and-events.md?format=websites)
 ```
 
 このパラメータは、ページがサポートする**すべて**の形式をターゲットがサポートするとわかっている場合にのみ省略できます。
@@ -378,8 +490,8 @@ amp.dev の別のページにリンクする場合、参照はそのターゲッ
 コンポーネントリファレンスドキュメントへのリンクは、バージョン部分が省略されている場合、自動的に最新バージョンにポイントされます。あるバージョンに明示的にポイントする場合は、完全名を指定してください。
 
 ```md
- [latest version](../../../components/reference/amp-carousel.md?format=websites)
- [explicit version](../../../components/reference/amp-carousel-v0.2.md?format=websites)
+[latest version](../../../components/reference/amp-carousel.md?format=websites)
+[explicit version](../../../components/reference/amp-carousel-v0.2.md?format=websites)
 ```
 
 ## ドキュメント構造

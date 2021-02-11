@@ -1,10 +1,10 @@
 ---
-"$title": Final steps before publishing
-"$order": '6'
+'$title': Final steps before publishing
+$order: 6
 description: Tebrikler! Sayfanızı yerel olarak test ettiniz ve tüm doğrulama hatalarını düzelttiniz, ilk AMP sayfanız artık yayına hazır.
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 Tebrikler! Sayfanızı yerel olarak test ettiniz ve tüm doğrulama hatalarını düzelttiniz, ilk AMP sayfanız artık yayına hazır.

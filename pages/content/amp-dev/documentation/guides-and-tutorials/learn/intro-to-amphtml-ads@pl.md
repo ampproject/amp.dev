@@ -1,14 +1,14 @@
 ---
-"$title": Wprowadzenie do reklam AMPHTML
-"$order": '1'
+'$title': Wprowadzenie do reklam AMPHTML
+$order: 1
 description: Reklamy AMPHTML to szybszy, wymagający przesyłania mniejszej ilości danych i bezpieczniejszy sposób serwowania reklam w sieci. Chociaż strony AMP obsługują tradycyjne reklamy HTML, ładowanie tych reklam może być powolne.
 formats:
-- ads
+  - ads
 ---
 
 ## Co to jest reklama AMPHTML?
 
-Reklamy AMPHTML to szybszy, wymagający przesyłania mniejszej ilości danych i bezpieczniejszy sposób serwowania reklam w sieci. Chociaż strony AMP obsługują tradycyjne reklamy HTML, ładowanie tych reklam może być powolne. Aby reklamy były równie szybkie, jak reszta strony AMP, możesz tworzyć reklamy w AMPHTML. Reklamy AMPHTML są dostarczane dopiero po walidacji zapewniającej, że są bezpieczne i wydajne. Przede wszystkim reklamy te można dostarczać w dowolnym miejscu w sieci, a *nie tylko na stronach AMP*.
+Reklamy AMPHTML to szybszy, wymagający przesyłania mniejszej ilości danych i bezpieczniejszy sposób serwowania reklam w sieci. Chociaż strony AMP obsługują tradycyjne reklamy HTML, ładowanie tych reklam może być powolne. Aby reklamy były równie szybkie, jak reszta strony AMP, możesz tworzyć reklamy w AMPHTML. Reklamy AMPHTML są dostarczane dopiero po walidacji zapewniającej, że są bezpieczne i wydajne. Przede wszystkim reklamy te można dostarczać w dowolnym miejscu w sieci, a _nie tylko na stronach AMP_.
 
 Reklamy AMPHTML są napisane w AMP HTML zgodnie ze [specyfikacją reklam AMPHTML](a4a_spec.md) (odmianie AMP HTML + CSS). Oznacza to, że reklamy nie mają już możliwości uruchamiania dowolnego kodu JavaScript, co tradycyjnie jest główną przyczyną słabej wydajności reklam. Dlatego też, podobnie jak w przypadku podstawowego kodu AMP, podstawowy kod JavaScript reklam jest wbudowany bezpośrednio w projekt AMP Open Source, co gwarantuje prawidłowy sposób działania reklam.
 
@@ -57,7 +57,7 @@ Reklamy AMPHTML są elastyczne i dynamiczne, dzięki czemu umożliwiają stosowa
 
 ### Wydawcy
 
-Aby obsługiwać formaty reklam sprzedawanych bezpośrednio w AMPHTML, musisz tworzyć reklamy zgodnie ze [specyfikacją reklam AMPHTML](a4a_spec.md) i dostarczać je za pomocą serwera reklam, obsługującego serwowanie reklam AMPHTML.  Obecnie reklamy w formacie AMPHTML obsługują następujące serwery reklam:
+Aby obsługiwać formaty reklam sprzedawanych bezpośrednio w AMPHTML, musisz tworzyć reklamy zgodnie ze [specyfikacją reklam AMPHTML](a4a_spec.md) i dostarczać je za pomocą serwera reklam, obsługującego serwowanie reklam AMPHTML. Obecnie reklamy w formacie AMPHTML obsługują następujące serwery reklam:
 
 - DoubleClick for Publishers
 - TripleLift
@@ -73,11 +73,11 @@ Agencje kreatywne muszą tworzyć reklamy zgodnie ze [specyfikacją reklam AMPHT
 
 - [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*wkrótce*)
+- Adobe Animate (_wkrótce_)
 
 ### Sieci reklamowe / serwery reklam
 
-Aby dostarczać reklamy AMPHTML do stron AMP, musisz utworzyć rozszerzenie [`amp-ad`](../../../documentation/components/reference/amp-ad.md) swojej sieci (chyba że już je masz), stosującej implementację [żądania reklamy Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Szczegóły znajdują się w artykule [Integracja z AMP w celu serwowania wyświetlanych reklam ](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md). Należy pamiętać, że do serwowania AMPHTML na strony bez AMP nie jest potrzebna  żadna specjalna integracja.
+Aby dostarczać reklamy AMPHTML do stron AMP, musisz utworzyć rozszerzenie [`amp-ad`](../../../documentation/components/reference/amp-ad.md) swojej sieci (chyba że już je masz), stosującej implementację [żądania reklamy Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md). Szczegóły znajdują się w artykule [Integracja z AMP w celu serwowania wyświetlanych reklam ](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md). Należy pamiętać, że do serwowania AMPHTML na strony bez AMP nie jest potrzebna żadna specjalna integracja.
 
 ## Tworzenie reklam AMPHTML
 
@@ -87,7 +87,7 @@ Aby dostarczać reklamy AMPHTML do stron AMP, musisz utworzyć rozszerzenie [`am
 
 - [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*wkrótce*)
+- Adobe Animate (_wkrótce_)
 
 ### Walidacja składni reklamy AMPHTML
 
@@ -97,7 +97,7 @@ Po utworzeniu reklamy AMPHTML należy upewnić się, że stosowana jest w niej p
 - Użyj [walidatora AMP ](https://validator.ampproject.org/) do testów jednorazowych.
 - Nawiąż współpracę z [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) i użyj punktu końcowego ich publicznego walidatora.
 
-[tip type="note"] **UWAGA —** aby móc szybko renderować reklamy AMPHTML na stronach AMP (tzn. stosować rendering preferencyjny w Fast Fetch), składnia musi być prawidłowa.  Jeśli składnia nie jest prawidłowa, reklama nadal będzie renderowana, ale nie tak szybko. [/tip]
+[tip type="note"] **UWAGA —** aby móc szybko renderować reklamy AMPHTML na stronach AMP (tzn. stosować rendering preferencyjny w Fast Fetch), składnia musi być prawidłowa. Jeśli składnia nie jest prawidłowa, reklama nadal będzie renderowana, ale nie tak szybko. [/tip]
 
 ## Obsługa reklam AMPHTML w RTB
 

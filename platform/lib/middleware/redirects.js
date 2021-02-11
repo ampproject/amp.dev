@@ -31,7 +31,7 @@ const REDIRECT_LINKS_DEFINITION = join(
   __dirname,
   '../../config/amp-dev-redirects.yaml'
 );
-const redirectLinks = yaml.safeLoad(readFileSync(REDIRECT_LINKS_DEFINITION));
+const redirectLinks = yaml.load(readFileSync(REDIRECT_LINKS_DEFINITION));
 
 const AVAILABLE_LOCALES = config.getAvailableLocales();
 const LANGUAGE_PATH_PATTERN = /^\/([a-z]{2}(_[a-z]{2})?)\//;

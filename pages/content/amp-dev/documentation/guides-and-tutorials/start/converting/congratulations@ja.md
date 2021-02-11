@@ -1,6 +1,7 @@
 ---
-$title: お疲れ様でした
-
+'$title': お疲れ様でした！
+$order: 4
+description: チュートリアルを完了し、HTML ドキュメントが AMP ドキュメントに変換されました。このチュートリアルで学習した内容は次のとおりです。- AMP ページと従来の HTM ページの違い ...
 ---
 
 チュートリアルを完了し、HTML ドキュメントが AMP ドキュメントに変換されました。
@@ -9,11 +10,11 @@ $title: お疲れ様でした
 
 - AMP ページと従来の HTML ページの違い
 - AMP サイトの基本
-- 従来の HTML ページの AMP HTML への変換
+- 従来の HTML ページから AMP HTML への変換
 - AMP ページの検証
 - AMP コンテンツへのリンク
 - 検索エンジン用の構造化データの追加
 
 ## 次のステップ
 
-引き続き「[高度な AMP 機能を追加する](../../../../documentation/guides-and-tutorials/start/add_advanced/index.md)」チュートリアルを受講して、より高度な機能を AMP ページに組み込んでみましょう。
+引き続き「[高度な AMP 機能の追加](../../../../documentation/guides-and-tutorials/start/add_advanced/index.md)」チュートリアルに進み、より高度な機能を AMP ページに組み込んでみましょう。

@@ -1,5 +1,5 @@
 ---
-$title: Memvalidasi HTML AMP Anda
+'$title': Validating your AMP HTML
 $order: 8
 description: Kapan pun Anda membuat sebuah halaman AMP, Anda harus selalu memvalidasi bahwa HTML AMP Anda sudah benar. Ada [beberapa metode yang dapa Anda gunakan untuk memvalidasi halaman AMP Anda ....
 author: bpaduch

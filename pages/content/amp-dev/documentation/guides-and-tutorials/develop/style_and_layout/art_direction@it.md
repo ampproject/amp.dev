@@ -1,6 +1,17 @@
 ---
-$title: Immagini reattive con attributi srcset, sizes e heights
-description: Usando l'attributo srcset è possibile controllare le risorse di un elemento in base a diverse espressioni multimediali. In particolare, può essere usato per tutti i tag amp-img per indicare quali ...
+'$title': Immagini reattive con attributi srcset, sizes e heights
+$order: 4
+description: "Usando l'attributo srcset è possibile controllare le risorse di un elemento in base a diverse espressioni multimediali. In particolare, può essere usato per tutti i tag amp-img per indicare quali ..."
+formats:
+  - websites
+  - email
+  - ads
+  - stories
+components:
+  - iframe
+author: pbakaus
+contributors:
+  - bpaduch
 ---
 
 ## srcset
@@ -12,13 +23,15 @@ In questo semplice esempio, l'attributo `srcset` specifica quale immagine utiliz
 [example preview="top-frame" playground="true"]
 
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   layout="responsive"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
-            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w">
+            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
+>
 </amp-img>
 ```
 
@@ -37,19 +50,21 @@ Si consideri il seguente esempio:
 [example preview="top-frame" playground="true"]
 
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
             {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
-  sizes="(min-width: 650px) 50vw, 100vw">
+  sizes="(min-width: 650px) 50vw, 100vw"
+>
 </amp-img>
 ```
 
 [/example]
 
-L'attributo `sizes` definisce la larghezza dell'elemento pari al 50% della dimensione della finestra di visualizzazione, quando tale dimensione è maggiore di 650 pixel. Ad esempio, se la finestra di visualizzazione è di 800 pixel, la larghezza dell'elemento sarà di 400 pixel. Quindi il browser seleziona la risorsa `srcset` relativa a 400 pixel, assumendo che la proporzione pixel del dispositivo sia 1, che in questo caso è  `hummingbird-narrow.jpg` (320 pixel).
+L'attributo `sizes` definisce la larghezza dell'elemento pari al 50% della dimensione della finestra di visualizzazione, quando tale dimensione è maggiore di 650 pixel. Ad esempio, se la finestra di visualizzazione è di 800 pixel, la larghezza dell'elemento sarà di 400 pixel. Quindi il browser seleziona la risorsa `srcset` relativa a 400 pixel, assumendo che la proporzione pixel del dispositivo sia 1, che in questo caso è `hummingbird-narrow.jpg` (320 pixel).
 
 [tip type="important"] **IMPORTANTE:** Quando l'attributo sizes è specificato insieme a larghezza e altezza, il layout predefinito è `responsive`. [/tip]
 
@@ -69,11 +84,13 @@ Ad esempio:
 [example preview="top-frame" playground="true"]
 
 ```html
-<amp-img alt="AMP"
+<amp-img
+  alt="AMP"
   src="{{server_for_email}}/static/inline-examples/images/amp.jpg"
   width="320"
   height="256"
-  heights="(min-width:500px) 200px, 80%">
+  heights="(min-width:500px) 200px, 80%"
+>
 </amp-img>
 ```
 

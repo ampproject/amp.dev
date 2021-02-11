@@ -1,8 +1,12 @@
 ---
-$title: AMP 페이지에 대한 기본 분석을 구성하는 방법
+'$title': AMP 페이지에 대한 기본 분석을 구성하는 방법
 $order: 100
 description: 일반적으로 애널리틱스 플랫폼은 분석 시스템으로 다시 전송되는 이벤트를 트리거하는 인라인 자바스크립트 스니펫과 함수 호출을 통해 웹사이트에 통합됩니다.
-tutorial: true
+tutorial: 'true'
+formats:
+  - websites
+  - stories
+  - ads
 ---
 
 일반적으로 애널리틱스 플랫폼은 분석 시스템으로 다시 전송되는 이벤트를 트리거하는 인라인 자바스크립트 스니펫과 함수 호출을 통해 웹사이트에 통합됩니다. AMP는 여러 분석 파트너를 대상으로 이 프로세스를 복제할 수 있도록 유연한 JSON 구성 구문을 제공합니다.
@@ -15,13 +19,28 @@ tutorial: true
 
 ```html
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    (i[r] =
+      i[r] ||
+      function () {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    'script',
+    '//www.google-analytics.com/analytics.js',
+    'ga'
+  );
 
-ga('create', 'UA-XXXXX-Y', 'auto');
-ga('send', 'pageview');
+  ga('create', 'UA-XXXXX-Y', 'auto');
+  ga('send', 'pageview');
 </script>
 ```
 
@@ -32,7 +51,11 @@ ga('send', 'pageview');
 AMP에서 이 기능을 복제하려면 먼저 문서의 <code><head></code>에 [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) 컴포넌트 라이브러리를 <strong>포함</strong>해야 합니다.
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script
+  async
+  custom-element="amp-analytics"
+  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+></script>
 ```
 
 ## 2단계: 구성 코드 추가하기
@@ -41,22 +64,22 @@ AMP에서 이 기능을 복제하려면 먼저 문서의 <code><head></code>에 
 
 ```html
 <amp-analytics type="googleanalytics">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-YYYY-Y"
-  },
-  "triggers": {
-    "default pageview": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
       "vars": {
-        "title": "Name of the Article"
+        "account": "UA-YYYY-Y"
+      },
+      "triggers": {
+        "default pageview": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "Name of the Article"
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -72,35 +95,35 @@ AMP에서 이 기능을 복제하려면 먼저 문서의 <code><head></code>에 
 
 ```html
 <amp-analytics type="googleanalytics">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-YYYY-Y"
-  },
-  "triggers": {
-    "default pageview": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
       "vars": {
-        "title": "Name of the Article"
-      }
-    },
-    "click on #header trigger": {
-      "on": "click",
-      "selector": "#header",
-      "request": "event",
-      "vars": {
-        "eventCategory": "examples",
-        "eventAction": "clicked-header"
+        "account": "UA-YYYY-Y"
+      },
+      "triggers": {
+        "default pageview": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "Name of the Article"
+          }
+        },
+        "click on #header trigger": {
+          "on": "click",
+          "selector": "#header",
+          "request": "event",
+          "vars": {
+            "eventCategory": "examples",
+            "eventAction": "clicked-header"
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
-이 새로운 트리거의 이름에서 추측할 수 있듯이, ID가 `"header"`인 요소를 클릭하면 트리거가 실행됩니다(`"on": "click"` 및 `"selector": "#header"`로 지정됨).  트리거가 실행되면 요청에 포함할 몇 가지 변수를 지정하여 분석 제공업체에 `event` 요청을 전송합니다.
+이 새로운 트리거의 이름에서 추측할 수 있듯이, ID가 `"header"`인 요소를 클릭하면 트리거가 실행됩니다(`"on": "click"` 및 `"selector": "#header"`로 지정됨). 트리거가 실행되면 요청에 포함할 몇 가지 변수를 지정하여 분석 제공업체에 `event` 요청을 전송합니다.
 
 통합하려는 사용자 지정 추적 플랫폼이 있는 경우, [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md)를 사용하고 추적 데이터를 전송할 맞춤 설정된 URL 엔드포인트를 정의할 수 있습니다. [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) 컴포넌트 참조 문서에서 자세히 알아보세요.
 

@@ -1,22 +1,27 @@
 ---
-$title: Añadir funciones avanzadas de AMP
+'$title': Agregue funciones avanzadas de AMP
+$order: 0
+description: En este tutorial, se ampliarán sus conocimientos sobre los fundamentos de AMP y aprenderá cómo AMP maneja la publicidad, análisis, videos incrustados, integración con las redes sociales, carruseles y mucho más.
+'$hidden': 'true'
+formats:
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='Artículo terminado') }}
 
-En este tutorial, se basará en su comprensión de las fundaciones de AMP y aprenderá cómo AMP maneja publicidad, análisis, videos incrustados, integración de medios sociales, carruseles y más. Al final de este tutorial, habrás creado un artículo de noticias para móviles que incluye estas características.
+En este tutorial, se ampliarán sus conocimientos sobre los fundamentos de AMP y aprenderá cómo AMP maneja publicidad, análisis, videos incrustados, integración con las redes sociales, carruseles y mucho más. Al final de este tutorial, habrá creado un artículo de noticias para móviles que incluye estas características.
 
-## Aprenderás:
+## Aprenderá a:
 
-- Mostrar anuncios mediante el uso de [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)
-- Incorporar videos de YouTube, tarjetas de Twitter y elementos de texto de respuesta
+- Mostrar anuncios utilizando [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)
+- Insertar videos de YouTube, tarjetas de Twitter y elementos de texto responsivo
 - Construir carruseles con imágenes y combinaciones de contenido mediante el uso de [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)
-- Seguimiento de patrones simples con [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
-- Agregue la navegación del sitio a su página con [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md)
+- Seguir patrones simples con [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
+- Agregar la navegación del sitio a su página con [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md)
 - Utilizar fuentes personalizadas en AMP
 
-## Construirás:
+## Construirá:
 
-Una página de artículos de noticias que se ajusta a las especificaciones de AMP e incorpora publicidad, analítica, video incrustado, medios sociales incorporados, carruseles y un menú de navegación del sitio.
+Una página de artículos de noticias que se ajuste a las especificaciones de AMP e incorpore publicidad, análisis, video incrustado, redes sociales incorporadas, carruseles y un menú de navegación del sitio.
 
-Nota: Este tutorial es una continuación de los conceptos introducidos en el tutorial ["Convertir HTML en AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md).
+[tip type="note"] <strong>NOTA:</strong> Este tutorial es una continuación de los conceptos que se introdujeron en el tutorial ["Convierta su HTML en AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md). Si aún no tiene una comprensión básica de los conceptos fundamentales de AMP, revise el tutorial <a>"Convierta su HTML en AMP"</a>. [/tip]

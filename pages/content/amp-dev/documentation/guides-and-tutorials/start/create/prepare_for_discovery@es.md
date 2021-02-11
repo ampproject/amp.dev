@@ -1,32 +1,39 @@
 ---
-$title: Prepara tu página para la detección y la distribución
+'$title': Prepare su página para su publicación y distribución
 $order: 4
+description: 'En algunos casos, podría tener una versión AMP y una versión que no es de AMP de la misma página, por ejemplo, un artículo informativo. Considere lo siguiente: si Google Search...'
+author: pbakaus
+contributors:
+  - bpaduch
 ---
 
-En algunos casos, podrías tener una versión AMP y una versión no AMP de la misma página; por ejemplo, un artículo informativo. Considera lo siguiente: si la búsqueda de Google encuentra la versión no AMP de esa página, *¿cómo sabe que existe una versión AMP?*
+En algunos casos, podría tener una versión AMP y una versión que no es AMP de la misma página, por ejemplo, un artículo informativo. Considere lo siguiente: si Google Search encuentra una versión que no es AMP de esa página, _¿cómo sabe si existe una versión AMP "emparejada"_?
 
 ## Vinculación de páginas con `<link>`
 
-Para resolver este problema, agregamos información sobre la página AMP a la página no AMP y viceversa en forma de etiquetas `<link>` en el `<head>`.
+Para establecer que una página no AMP y una página AMP deben ser tratadas como si estuvieran "emparejadas" juntas, agregamos información sobre la página AMP a la página no AMP y viceversa en forma de las etiquetas `<link>` en el `<head>`.
 
-Agrega lo siguiente a la página no AMP:
+Agregue lo siguiente a la página no AMP:
 
 [sourcecode:html]
-<link rel="amphtml" href="https://www.ejemplo.com/url/al/documento/amp.html">
+
+<link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-Y esto a la página AMP
+Y agregue lo siguiente a la página AMP:
 
 [sourcecode:html]
-<link rel="canonical" href="https://www.ejemplo.com/url/al/documento/completo.html">
+
+<link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
 ## ¿Qué sucede si tengo una sola página?
 
-Si solo tienes una página y es AMP, debes agregarle el vínculo canónico. Este simplemente apuntará a sí mismo.
+Si solo tiene una página y es AMP, debe agregarle el vínculo canónico, el cual simplemente apuntará a sí mismo.
 
 [sourcecode:html]
-<link rel="canonical" href="https://www.ejemplo.com/url/al/documento/amp.html">
+
+<link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-Leer más: Aprende más sobre cómo Google encuentra las páginas AMP en las [Directrices de la Búsqueda de Google para las páginas de AMP](https://support.google.com/webmasters/answer/6340290).
+[tip type="read-on"] <strong>LEER MÁS:</strong> Obtenga más información sobre cómo Google encuentra las páginas AMP en el artículo <a class="" href="https://support.google.com/webmasters/answer/6340290">Lineamientos de Google Search para las páginas AMP</a>. [/tip]

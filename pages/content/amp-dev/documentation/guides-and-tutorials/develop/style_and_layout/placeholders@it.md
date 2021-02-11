@@ -1,15 +1,20 @@
 ---
-$title: Segnaposti e fallback
+'$title': Segnaposti e fallback
 $order: 3
-descriptions: Per garantire prestazioni adeguate e continui miglioramenti, AMP prevede nelle sue procedure consigliate l'utilizzo di segnaposti e fallback ove possibile.
+descriptions: "In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible."
+formats:
+  - websites
+  - email
+  - ads
+  - stories
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
-Per garantire prestazioni adeguate e continui miglioramenti, AMP prevede nelle sue procedure consigliate l'utilizzo di segnaposti e fallback ove possibile.
+In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible.
 
 Alcuni elementi incoraggiano anche il loro utilizzo riducendo le restrizioni: ad esempio, fornendo un segnaposto per [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder), esso può essere utilizzato nella parte superiore della pagina (che non funzionerà senza).
 
@@ -20,13 +25,17 @@ Gli elementi marcati con l'attributo `placeholder` agiscono come segnaposto per 
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
 
 ```html
-<amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
+<amp-anim
+  src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
   layout="responsive"
   width="400"
-  height="300">
-  <amp-img placeholder
+  height="300"
+>
+  <amp-img
+    placeholder
     src="{{server_for_email}}/static/inline-examples/images/wavepool.png"
-    layout="fill">
+    layout="fill"
+  >
   </amp-img>
 </amp-anim>
 ```
@@ -45,7 +54,7 @@ Per impostazione predefinita, il segnaposto viene immediatamente mostrato al pos
 - contenuti che non possono essere caricati (ad esempio, Tweet cancellati)
 - tipi di immagini non supportati (ad esempio, WebP non è supportato in tutti i browser)
 
-Si può impostare l'attributo di `fallback` su *qualsiasi* elemento HTML, non solo sugli elementi AMP. Se indicato, l'elemento di `fallback` deve essere un figlio diretto dell'elemento AMP.
+Si può impostare l'attributo di `fallback` su _qualsiasi_ elemento HTML, non solo sugli elementi AMP. Se indicato, l'elemento di `fallback` deve essere un figlio diretto dell'elemento AMP.
 
 ##### Esempio: funzionalità non supportata
 
@@ -60,7 +69,7 @@ Nell'esempio seguente, utilizziamo l'attributo `fallback` per comunicare all'ute
   src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.mp4"
   poster="{{server_for_email}}/static/inline-examples/images/kitten-playing.png">
   <div fallback>
-    <p>Questo browser non supporta l'elemento video.</p>
+    <p>This browser does not support the video element.</p>
   </div>
 </amp-video>
 ```
@@ -74,17 +83,21 @@ Nell'esempio seguente, utilizziamo l'attributo `fallback` per indicare al browse
 [example preview="inline" playground="true"]
 
 ```html
-<amp-img alt="Mountains"
+<amp-img
+  alt="Mountains"
   width="550"
   height="368"
   layout="responsive"
-  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
-  <amp-img alt="Mountains"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp"
+>
+  <amp-img
+    alt="Mountains"
     fallback
     width="550"
     height="368"
     layout="responsive"
-    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"
+  ></amp-img>
 </amp-img>
 ```
 

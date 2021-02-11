@@ -1,5 +1,5 @@
 ---
-$title: 이미지 광고 제작하기
+'$title': 이미지 광고 제작하기
 $order: 1
 description: AMP 광고는 광고 사이트로 연결되는 하이퍼링크가 추가된 간단한 이미지입니다. amp-img 태그를 사용하여 이미지를 표시합니다. 코드는 다음과 같습니다...
 ---
@@ -11,9 +11,12 @@ AMP 광고는 광고 사이트로 연결되는 하이퍼링크가 추가된 간�
 ```html
 <body>
   <a target="_blank" href="https://www.amp.dev">
-    <amp-img width="300" height="250"
-        alt="Learn amp"
-        src="/static/img/docs/ads/amp-300x250.png"></amp-img>
+    <amp-img
+      width="300"
+      height="250"
+      alt="Learn amp"
+      src="/static/img/docs/ads/amp-300x250.png"
+    ></amp-img>
   </a>
 </body>
 ```

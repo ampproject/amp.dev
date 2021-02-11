@@ -1,5 +1,5 @@
 ---
-$title: 広告ビューの追跡
+'$title': 広告ビューの追跡
 $order: 2
 description: AMPHTML 広告内で、amp-pixel または amp-analytics コンポーネントを使用してメトリクスを追跡できます。この基本的なサンプルでは、ページビューを追跡する機能を追加します
 ---
@@ -9,11 +9,14 @@ AMPHTML 広告内で、[`amp-pixel`](../../../../documentation/components/refere
 ```html
 <body>
   <a target="_blank" href="https://www.amp.dev">
-    <amp-img width="300" height="250"
-        alt="Learn amp"
-        src="/static/img/docs/ads/amp-300x250.png"></amp-img>
+    <amp-img
+      width="300"
+      height="250"
+      alt="Learn amp"
+      src="/static/img/docs/ads/amp-300x250.png"
+    ></amp-img>
   </a>
-<amp-pixel src="https://www.amp.dev/tracker/foo"></amp-pixel>
+  <amp-pixel src="https://www.amp.dev/tracker/foo"></amp-pixel>
 </body>
 ```
 

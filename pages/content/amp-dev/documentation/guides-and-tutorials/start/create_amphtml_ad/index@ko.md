@@ -1,6 +1,8 @@
 ---
-$title: AMPHTML 광고 제작하기
+"$title": AMPHTML 광고 제작하기
 description: 이번 튜토리얼에서는 AMP 및 비 AMP 페이지에서 지원되는 AMPHTML 광고를 처음부터 제작하는 방법을 알아봅니다.
+formats:
+- ads
 ---
 
 {{ image('/static/img/docs/ads/amp-ad-framed-final.png', 597, 1240, align='right third', caption='Completed AMPHTML image ad') }}

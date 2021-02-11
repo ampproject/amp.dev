@@ -1,8 +1,8 @@
 ---
-"$title": Спецификация AMP HTML
-order: '8'
+'$title': Спецификация AMP HTML
+$order: 8
 formats:
-- websites
+  - websites
 teaser:
   text: AMP HTML — это подмножество стандарта HTML для создания контентных страниц (например, новостных статей), позволяющее гарантировать определенные базовые характеристики производительности.
 ---
@@ -61,6 +61,7 @@ AMP HTML использует ряд специальных элементов (
 ### Образец документа <a name="sample-document"></a>
 
 [sourcecode:html]
+
 <!DOCTYPE html>
 <html ⚡>
   <head>
@@ -273,7 +274,7 @@ AMP HTML использует ряд специальных элементов (
     <td>Разрешен.</td>
   </tr>
   <tr>
-    <td width="30%"><code>style</code></td>
+    <td width="30%"><code><a id="cust"></a>style</code></td>
     <td>
 <a href="#boilerplate">Обязательный тег стиля для amp-boilerplate</a>. В теге head допускается еще один тег стиля для индивидуального оформления. Этот тег стиля должен иметь атрибут <code>amp-custom</code>. <a href="#cust">🔗</a>
 </td>
@@ -287,7 +288,7 @@ AMP HTML использует ряд специальных элементов (
     <td>Атрибут <code>http-equiv</code> может использоваться для указания определенных допустимых значений; подробности см. в <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">спецификации валидатора AMP</a>.</td>
   </tr>
   <tr>
-    <td width="30%"><code>a</code></td>
+    <td width="30%"><a id="ancr"></a><code>a</code></td>
     <td>Значение атрибута <code>href</code> не должно начинаться с <code>javascript:</code>. Если установлен атрибут <code>target</code>, значение должно быть <code>_blank</code>. В остальных случаях разрешен. <a href="#ancr">🔗</a>
 </td>
   </tr>
@@ -391,6 +392,7 @@ AMP HTML использует ряд специальных элементов (
 Пример:
 
 [sourcecode:html]
+
 <style amp-keyframes>
 @keyframes anim1 {}
 
@@ -408,6 +410,7 @@ AMP HTML использует ряд специальных элементов (
 Пример:
 
 [sourcecode:html]
+
 <link
   rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Tangerine"
@@ -496,11 +499,13 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 Расширенные компоненты загружаются путем включения тега `<script>` в раздел head документа следующим образом:
 
 [sourcecode:html]
+
 <script
   async
   custom-element="amp-carousel"
   src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
 ></script>
+
 [/sourcecode]
 
 Тег `<script>` должен иметь атрибут <code>async</code>, а также атрибут <code>custom-element</code>, ссылающийся на имя элемента.
@@ -530,11 +535,13 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 Шаблоны не поставляются со средой выполнения AMP и должны быть загружены так же, как и расширенные элементы. Расширенные компоненты загружаются путем добавления тега <code><script></code> в тег head документа:
 
 [sourcecode:html]
+
 <script
   async
   custom-template="amp-mustache"
   src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
 ></script>
+
 [/sourcecode]
 
 Тег `<script>` должен иметь атрибут `async` и атрибут <code>custom-template</code>, указывающий на тип шаблона. URL-адрес скрипта должен начинаться с <code>https://cdn.ampproject.org</code> и обязан соответствовать очень строгому паттерну <code>/v\d+/[az-]+-(latest|\d+|\d+\.\d+)\.js</code>.
@@ -543,7 +550,7 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 
 [sourcecode:html]
 <template type="amp-mustache" id="template1">
-  Hello {% raw %}{{you}}{% endraw %}!
+Hello {% raw %}{{you}}{% endraw %}!
 </template>
 [/sourcecode]
 
@@ -601,6 +608,7 @@ AMP HTML-документы не должны вызывать ошибок пр
 Пример:
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html" />
 [/sourcecode]
 
@@ -609,6 +617,7 @@ AMP HTML-документы не должны вызывать ошибок пр
 Пример:
 
 [sourcecode:html]
+
 <link
   rel="canonical"
   href="https://www.example.com/url/to/canonical/document.html"

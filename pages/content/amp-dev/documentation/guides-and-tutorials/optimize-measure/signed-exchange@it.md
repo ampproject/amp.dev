@@ -1,6 +1,8 @@
 ---
-$title: Offerta di contenuti AMP utilizzando scambi firmati
+'$title': Offerta di contenuti AMP utilizzando scambi firmati
 $order: 4
+formats:
+  - websites
 author: CrystalOnScript
 ---
 
@@ -8,7 +10,7 @@ AMP offre vantaggi in termini di velocità che vanno al di là del formato in us
 
 Uno [scambio firmato](https://developers.google.com/web/updates/2018/11/signed-exchanges) è costituito da un documento AMP valido e dall'URL originale dei contenuti ad esso associato. Queste informazioni sono protette da firme digitali che legano in modo sicuro i documenti al loro URL richiesto. Ciò consente ai browser di visualizzare in modo sicuro l'URL originale nella barra di navigazione al posto del nome della macchina host che ha trasmesso i dati al browser.
 
-I contenuti AMP firmati *si aggiungono a* (e non sostituiscono) i normali contenuti AMP.
+I contenuti AMP firmati _si aggiungono a_ (e non sostituiscono) i normali contenuti AMP.
 
 {{ image('/static/img/docs/guides/sxg/sxg.png', 411, 293, layout='responsive', alt='Image displaying URL from signed exchange', caption=' ', align='' ) }}
 
@@ -18,14 +20,14 @@ I contenuti AMP firmati *si aggiungono a* (e non sostituiscono) i normali conten
 
 Per implementare gli scambi firmati, occorre soddisfare i seguenti requisiti:
 
-- Capacità di configurare e controllare le intestazioni HTTP generate dal proprio server. (La maggior parte delle soluzioni di hosting basate solo su web, quali Blogger, *non* sono compatibili con gli scambi firmati).
+- Capacità di configurare e controllare le intestazioni HTTP generate dal proprio server. (La maggior parte delle soluzioni di hosting basate solo su web, quali Blogger, _non_ sono compatibili con gli scambi firmati).
 - La capacità di generare scambi firmati AMP, ad esempio eseguendo [`amppackager`](https://github.com/ampproject/amppackager/blob/master/README.md), come [Go binary](https://golang.org/doc/install) o all'interno di [macchine virtuali Docker](https://docs.docker.com/machine/get-started/).
-    - Il packager deve essere aggiornato ogni sei settimane.
+  - Il packager deve essere aggiornato ogni sei settimane.
 - La possibiltà di usare [Vary](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary) nelle intestazioni `Accept` e `AMP-Cache-Transform` sui server HTTP perimetrali, in grado di restituire contenuti diversi per lo stesso URL.
 - Il sistema su cui è in esecuzione `amppackager` deve essere in grado di effettuare richieste di rete in uscita per:
-    - L'autorità di certificazione che emette il certificato
-    - Il server dell'editore che ospita i documenti AMP da firmare
-    - `cdn.ampproject.org` per accedere alla versione attuale di AMP
+  - L'autorità di certificazione che emette il certificato
+  - Il server dell'editore che ospita i documenti AMP da firmare
+  - `cdn.ampproject.org` per accedere alla versione attuale di AMP
 - Un file system persistente per l'archiviazione condivisa tra tutte le istanze di `amppackager` in esecuzione nello stesso centro dati.
 
 # Implementazione di scambi firmati
@@ -40,8 +42,10 @@ Per generare il certificato, l'autorità di certificazione (CA) avrà bisogno di
 
 ```sh
 # generate private key (if necessary)
+
 $ openssl ecparam -out ampbyexample-packager.key -name prime256v1 -genkey
 # generate CSR (the file ampbyexample-packager.csr)
+
 $ openssl req -new -key ampbyexample-packager.key -nodes -out ampbyexample-packager.csr -subj "/C=US/ST=California/L=Mountain View/O=Google LLC/CN=ampbyexample.com"
 ```
 
@@ -55,7 +59,7 @@ Per garantire le migliori prestazioni, il packager dovrà ricevere in input solo
 
 È necessario innanzitutto configurare gli scambi firmati su un server di gestione temporaea per verificare che la configurazione sia corretta prima di passare alla produzione.
 
-Si consiglia di utilizzare [`amppackager`](https://github.com/ampproject/amppackager/blob/master/README.md) per produrre scambi firmati. Tuttavia, se questo strumento non è adatto al proprio ambiente di produzione, si possono utilizzare i client della riga di comando [`transform`](https://github.com/ampproject/amppackager/blob/master/transformer/README.md) e [`gen-signedexchange`](https://github.com/WICG/webpackage/tree/master/go/signedexchange) e gestire personalmente la negoziazione dei contenuti  e la gestione dei certificati.
+Si consiglia di utilizzare [`amppackager`](https://github.com/ampproject/amppackager/blob/master/README.md) per produrre scambi firmati. Tuttavia, se questo strumento non è adatto al proprio ambiente di produzione, si possono utilizzare i client della riga di comando [`transform`](https://github.com/ampproject/amppackager/blob/master/transformer/README.md) e [`gen-signedexchange`](https://github.com/WICG/webpackage/tree/master/go/signedexchange) e gestire personalmente la negoziazione dei contenuti e la gestione dei certificati.
 
 Le seguenti istruzioni si applicano alle distribuzioni che utilizzano `amppackager`.
 
@@ -139,7 +143,7 @@ format version: 1b3
 
 (Nota: il commutatore `-verify` non funzionerà a questo punto perché i certificati richiesti non si trovano sul server `https://example.com/`).
 
-Verificare che la risposta includa *sempre* l'intestazione `Vary` con il valore `Accept,AMP-Cache-Transform` (indipendentemente dal fatto che il tipo MIME sia `text/html`, `application/signed-exchange` o altro):
+Verificare che la risposta includa _sempre_ l'intestazione `Vary` con il valore `Accept,AMP-Cache-Transform` (indipendentemente dal fatto che il tipo MIME sia `text/html`, `application/signed-exchange` o altro):
 
 ```sh
 $ curl -si https://staging.example.com/ | less
@@ -197,4 +201,5 @@ Nella scheda `network` della console DevTools, sarà possibile vedere l'indicazi
 
 Segue un elenco di CDN e fornitori di servizi di hosting che già supportano scambi firmati. Il loro utilizzo è il modo più semplice per iniziare con gli scambi firmati:
 
+- [AMP Packager Google Cloud Click-to-Deploy Installer](https://console.cloud.google.com/marketplace/details/google/amp-packager?filter=solution-type:k8s) [AMP Packager](https://github.com/ampproject/amppackager#amp-packager) è uno strumento che permette di migliorare gli URL AMP, fornendo contenuti AMP tramite Scambi firmati. Ulteriori informazioni sono disponibili sul [Blog AMP](https://blog.amp.dev/2020/11/23/amp-packager-is-now-available-on-google-cloud-marketplace/).
 - [URL reali di Cloudflare AMP](https://www.cloudflare.com/website-optimization/amp-real-url/). [Cloudflare](https://www.cloudflare.com/) è una delle reti più grandi al mondo. Oggi, aziende, organizzazioni non-profit, blogger e chiunque abbia una presenza su Internet può contare su siti web e app più veloci e sicuri grazie a Cloudflare.

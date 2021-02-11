@@ -1,17 +1,23 @@
 ---
-$title: Créer votre page AMP HTML
+'$title': Créer votre page AMP HTML
+$order: 1
+description: "Utilisation de HTTPS: lors de la création de pages et de contenu AMP, il est fortement recommandé d'utiliser le protocole HTTPS (par rapport à HTTP). Bien que HTTPS ne soit pas requis pour le document AMP lui-même ou ..."
+author: pbakaus
+contributors:
+  - bpaduch
 ---
 
-Le balisage suivant est un bon point de départ, un modèle standard.
-Copiez et enregistrez ce qui suit dans un fichier .html.
+Le balisage suivant est un bon point de départ, un modèle standard. Copiez et enregistrez ce qui suit dans un fichier .html.
 
 [sourcecode:html]
+
 <!doctype html>
 <html amp lang="en">
   <head>
     <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>Hello, AMPs</title>
-    <link rel="canonical" href="https://amp.dev/">
+    <link rel="canonical" href="{{doc.url}}">
     <meta name="viewport" content="width=device-width">
     <script type="application/ld+json">
       {
@@ -25,7 +31,6 @@ Copiez et enregistrez ce qui suit dans un fichier .html.
       }
     </script>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
     <h1>Welcome to the mobile web</h1>
@@ -35,26 +40,34 @@ Copiez et enregistrez ce qui suit dans un fichier .html.
 
 Jusque là, le contenu dans le corps (body) est assez simple. Mais le code supplémentaire dans l'en-tête (head) de la page n'est peut-être pas aussi évident. Décomposons le balisage obligatoire.
 
+Utilisation de HTTPS: lors de la création de pages et de contenu AMP, il est fortement recommandé d'utiliser le protocole HTTPS (par rapport à HTTP). Bien que HTTPS ne soit pas requis pour le document AMP en soi ou pour les images et les polices, il existe de nombreuses fonctionnalités AMP qui nécessitent HTTPS (vidéos, iframes, etc.). Pour vous assurer que vos pages AMP tirent pleinement parti de toutes les fonctionnalités AMP, utilisez le protocole HTTPS. Vous pouvez en savoir plus sur HTTPS dans <a>«Pourquoi HTTPS est important»</a>.
+
+[tip type="tip"] Utilisez le [générateur de modèles AMP](https://g.co/ampdemo) pour commencer rapidement à créer de nouvelles pages AMP. [/tip]
+
 ## Balisage obligatoire
 
-Les documents AMP HTML DOIVENT :
+Les documents HTML AMP DOIVENT:
 
-  - Commencer par le type du document `<!doctype html>`.
-  - Contenir une balise `<html ⚡>` de niveau supérieur (`<html amp>` est également accepté).
-  - Contenir les balises `<head>` et `<body>` (facultatives dans HTML).
-  - Contenir une balise `<link rel="canonical" href="$SOME_URL">` dans l'en-tête qui pointe vers la version HTML standard du document AMP HTML ou vers le document lui-même si aucune version HTML n'existe.
-  - Contenir une balise `<meta charset="utf-8">` comme premier enfant de la balise head.
-  - Contenir une balise `<meta name="viewport" content="width=device-width">alement recommandé d'inclure initial-scale=1.
-  - Contenir une balise `<script async src="https://cdn.ampproject.org/v0.js"></script>` comme dernier élément de l'en-tête (inclut et charge la bibliothèque AMP JS).
-  - Contenir ce qui suit dans la balise `<head>` :
-    `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
+| Règle                                                                                                                                                                                                    | Description                                                                                                                                                                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Commencer par le type de document `<!doctype html>`.                                                                                                                                                     | Standard pour HTML.                                                                                                                                                                                                                                                        |
+| Contenir une balise `<html ⚡>` de niveau supérieur (`<html amp>` est également accepté).                                                                                                                | Identifie la page en tant que contenu AMP.                                                                                                                                                                                                                                 |
+| Contenir les balises `<head>` et `<body>` (facultatives dans HTML).                                                                                                                                      | Facultatif pour HTML mais pas pour AMP.                                                                                                                                                                                                                                    |
+| Contenir une balise `<meta charset="utf-8">` comme premier enfant de la balise head.                                                                                                                     | Identifie le codage de la page.                                                                                                                                                                                                                                            |
+| Contenir une balise `<script async src="https://cdn.ampproject.org/v0.js"></script>` comme dernier élément de l'en-tête (inclut et charge la bibliothèque AMP JS).                                       | Inclut et charge la bibliothèque AMP JS.                                                                                                                                                                                                                                   |
+| Contenir une balise `<link rel="canonical" href="$SOME_URL">` dans l'en-tête qui pointe vers la version HTML standard du document AMP HTML ou vers le document lui-même si aucune version HTML n'existe. | Pointe vers la version HTML standard du document HTML AMP ou vers lui-même si une telle version HTML n'existe pas. Pour en savoir plus, consultez la section [Rendre votre page détectable](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md). |
+| Contenir une balise `<meta name="viewport" content="width=device-width">alement recommandé d'inclure initial-scale=1.                                                                                    | Spécifie une fenêtre réactive. Pour en savoir plus, consultez la section [Créer des pages AMP réactives](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).                                                                    |
+| Contenir le [code du modèle AMP](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) dans la balise `<head>`.                                                                  | Modèle CSS pour masquer initialement le contenu jusqu'à ce que AMP JS soit chargé.                                                                                                                                                                                         |
 
 ## Métadonnées facultatives
 
-En plus des éléments de base, notre exemple inclut une définition Schema.org dans l'en-tête qui n'est pas une condition absolue pour AMP, mais une condition pour distribuer le contenu dans certains emplacements, par exemple, dans la [démonstration du carrousel d'actualités Google Search (essayez-la sur votre téléphone)](https://g.co/ampdemo).
+Bonne nouvelle ! C'est tout ce dont nous avons besoin pour créer la première page AMP. Bien évidemment, le corps ne contient pas encore grand chose. Dans la prochaine section, nous découvrirons comment ajouter des objets de base (images et éléments AMP personnalisés), comment créer un style pour la page et comment définir une disposition réactive.
 
-Pour en savoir plus sur toutes les métadonnées nécessaires pour les divers autres emplacements, par exemple Twitter, [consultez nos exemples](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples). Pour en savoir plus sur AMP dans Google Search, voir [Le meilleur de l'actualité avec AMP](https://developers.google.com/structured-data/carousels/top-stories).
+[tip type="read-on"]Consultez ces ressources pour en savoir plus:
+
+- Premiers pas avec AMP dans la recherche Google: comment préparer vos pages AMP pour la recherche Google.
+- [Exemples de métadonnées](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) - en savoir plus sur toutes les métadonnées dont vous aurez besoin dans divers autres endroits (par exemple, Twitter) [/tip]
 
 <hr>
 
-Bonne nouvelle ! C'est tout ce dont nous avons besoin pour créer la première page AMP. Bien évidemment, le corps ne contient pas encore grand chose. Dans la prochaine section, nous découvrirons comment ajouter des objets de base (images et éléments AMP personnalisés), comment créer un style pour la page et comment définir une disposition réactive.
+Bonnes nouvelles! C'est tout ce dont nous avons besoin pour créer notre première page AMP, mais bien sûr, il ne se passe pas encore grand chose dans le corps. Dans la section suivante, nous verrons comment ajouter des éléments de base tels que des images, des éléments AMP personnalisés, comment ajouter des styles à votre page et élaborer une mise en page réactive.

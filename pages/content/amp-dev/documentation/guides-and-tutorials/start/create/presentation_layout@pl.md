@@ -1,10 +1,10 @@
 ---
-"$title": Modyfikacja prezentacji i układu
-"$order": '3'
-description: "Strony AMP są stronami internetowymi; dowolna stylizacja strony i jej elementów odbywa się za pomocą wspólnych właściwości CSS. Do stylizowania elementów służą selektory klas lub elementów..."
+'$title': Modyfikacja prezentacji i układu
+$order: 3
+description: 'Strony AMP są stronami internetowymi; dowolna stylizacja strony i jej elementów odbywa się za pomocą wspólnych właściwości CSS. Do stylizowania elementów służą selektory klas lub elementów...'
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## Modyfikowanie prezentacji
@@ -12,6 +12,7 @@ contributors:
 Strony AMP są stronami internetowymi; dowolna stylizacja strony i jej elementów odbywa się za pomocą wspólnych właściwości CSS. Do stylizowania elementów służą selektory klas lub elementów w arkuszu stylów osadzonym w sekcji `<head>`, o nazwie `<style amp-custom>`:
 
 [sourcecode:html]
+
 <style amp-custom>
   /* any custom style goes here */
   body {
@@ -22,6 +23,7 @@ Strony AMP są stronami internetowymi; dowolna stylizacja strony i jej elementó
     border: 1px solid black;
   }
 </style>
+
 [/sourcecode]
 
 Każda strona AMP może mieć tylko jeden wbudowany arkusz stylów i style inline, ale niektórych selektorów nie wolno używać. [Dowiedz się wszystkiego o stylizacji](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).

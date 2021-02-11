@@ -1,8 +1,10 @@
 ---
-$title: Meninjau kode pembuka
+'$title': Meninjau kode starter
+$order: 1
+description: 'Sebelum mulai menambahkan kode, mari kita tinjau contoh halaman '
 ---
 
-Sebelum mulai menambahkan kode, mari kita tinjau contoh halaman [article.amp.html](https://github.com/googlecodelabs/accelerated-mobile-pages-advanced/blob/master/article.amp.html), yang terlihat seperti berikut:
+Sebelum mulai menambahkan kode, mari kita tinjau contoh halaman [article.amp.html](https://github.com/googlecodelabs/accelerated-mobile-pages-advanced/blob/master/article.amp.html), yang terlihat seperti berikut ini:
 
 ```html
 <!DOCTYPE html>
@@ -14,7 +16,7 @@ Sebelum mulai menambahkan kode, mari kita tinjau contoh halaman [article.amp.htm
     <link rel="canonical" href="/article.html" />
     <link rel="shortcut icon" href="amp_favicon.png" />
 
-    <title>Artikel Berita</title>
+    <title>News Article</title>
 
     <style amp-boilerplate>
       body {
@@ -137,9 +139,9 @@ Sebelum mulai menambahkan kode, mari kita tinjau contoh halaman [article.amp.htm
     </script>
   </head>
   <body>
-    <header>Situs Berita</header>
+    <header>News Site</header>
     <article>
-      <h1>Nama Artikel</h1>
+      <h1>Article Name</h1>
 
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
@@ -157,39 +159,38 @@ Sebelum mulai menambahkan kode, mari kita tinjau contoh halaman [article.amp.htm
 </html>
 ```
 
-Ini adalah halaman AMP sederhana yang lolos [validasi AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) dan validasi data terstruktur [schema.org](http://schema.org/). Jika halaman ini diterapkan di situs berita, pengguna dapat menemukan halaman melalui pengalaman yang kaya di Halaman Hasil Mesin Telusur (misalnya, Carousel cerita teratas di Google Penelusuran).
+Ini adalah halaman AMP sederhana yang lolos [validasi AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) dan validasi data terstruktur [schema.org](http://schema.org/). Jika halaman ini diterapkan di situs web berita, pengguna dapat menemukan halaman ini melalui pengalaman yang kaya di Halaman Hasil Mesin Pencarian (cth.: Korsel cerita unggulan di Google Search).
 
 ## Mengaktifkan Validator AMP
 
-Sebelum mengubah halaman, mari kita aktifkan [validator AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) sehingga kita tahu bahwa kita menggunakan HTML AMP yang valid. **Tambahkan** ID fragmen berikut ke URL Anda:
+Sebelum mengubah halaman, mari kita aktifkan [validator AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) agar kita tahu bahwa kita menggunakan HTML AMP yang valid. **Tambahkan** pengenal fragmen ini ke URL Anda:
 
 ```text
-#development=1
+# development=1
+
 ```
 
-Misalnya:
+Contohnya:
 
 ```text
 http://localhost:8000/article.amp.html#development=1
 ```
 
-Buka [Developer Console](https://developer.chrome.com/devtools/docs/console) di Chrome (atau browser pilihan Anda), dan verifikasi bahwa tidak ada error pada halaman AMP.
+Buka [Konsol Pengembang](https://developer.chrome.com/devtools/docs/console) (Developer Console) di Chrome (atau browser pilihan Anda), dan verifikasi bahwa tidak ada eror pada halaman AMP.
 
-[tip]
-Anda dapat menggunakan berbagai fitur lainnya untuk memvalidasi halaman AMP, seperti:
+[tip] Anda dapat menggunakan berbagai alat lainnya untuk memvalidasi halaman AMP Anda, seperti:
 
 - [Ekstensi Validator AMP untuk Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc)
 - [Ekstensi Validator AMP untuk Opera](https://addons.opera.com/en-gb/extensions/details/amp-validator/)
 - [Antarmuka Web Validator AMP](https://validator.ampproject.org/)
 - ... dan masih banyak lagi
 
-Pelajari lebih lanjut di panduan [Memvalidasi halaman AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md).
-[/tip]
+Pelajari lebih lanjut dalam panduan [Memvalidasi halaman AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md). [/tip]
 
-{{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='Simulated on a Nexus 5X device') }}
+{{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='Disimulasi pada perangkat Nexus 5X') }}
 
 ## Membuat simulasi pengalaman seluler
 
-Kami mendesain halaman ini untuk perangkat seluler, jadi mari kita **buat simulasi** pengalaman perangkat seluler di developer tools browser Anda. Misalnya, di DevTools Chrome, klik ikon ponsel, dan pilih perangkat seluler dari menu.
+Kita mendesain halaman ini untuk perangkat seluler, jadi mari kita **buat simulasi** pengalaman perangkat seluler di alat pengembang browser Anda. Misalnya, di DevTools Chrome, klik ikon ponsel, lalu pilih perangkat seluler dari menu.
 
-Sekarang, kita dapat mulai bekerja di halaman itu sendiri. Mari kita tambahkan beberapa komponen AMP di halaman.
+Sekarang, kita dapat mulai bekerja di halaman itu sendiri. Mari kita tambahkan beberapa komponen AMP ke halaman kita.

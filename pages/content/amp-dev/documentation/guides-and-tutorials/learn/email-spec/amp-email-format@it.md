@@ -1,9 +1,11 @@
 ---
-$title: Formato AMP per e-mail
-order: 1
+'$title': Formato AMP per e-mail
+$order: 1
+formats:
+  - email
 teaser:
-  text: Markup obbligatori
-toc: true
+  text: 'Markup obbligatori '
+toc: 'true'
 ---
 
 <!--
@@ -33,16 +35,28 @@ AMP è una popolare tecnologia per lo sviluppo di pagine web molto veloci su cli
 
 Il formato AMP per e-mail fornisce [un sottoinsieme di componenti AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md) che possono essere utilizzati nei messaggi e-mail. I destinatari delle e-mail AMP possono visualizzare e interagire con i componenti AMP direttamente nelle e-mail.
 
-## Markup obbligatori <a name="required-markup"></a>
+## Markup obbligatori
 
 Il codice seguente rappresenta la quantità minima di markup richiesti da un messaggio e-mail in formato AMP valido:
 
 [sourcecode:html]
 
-
-
-
-<meta charset="utf-8"> <style amp4email-boilerplate=""> body { visibility: hidden; } </style> <script async="" src="https://cdn.ampproject.org/v0.js"></script> Hello, world. [/sourcecode]
+<!DOCTYPE html>
+<html ⚡4email data-css-strict>
+  <head>
+    <meta charset="utf-8" />
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+    Hello, world.
+  </body>
+</html>
+[/sourcecode]
 
 Un messaggio e-mail AMP DEVE
 
@@ -59,33 +73,46 @@ L'intero markup AMPHTML non deve superare i 200.000 byte.
 
 Il formato AMP per E-mail si basa sul sottotipo <a>MIME</a> <code>multipart/alternative</code> standard, come definito nel documento [RFC 1521, sezione 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
-*Per ulteriori informazioni, consultare la sezione [Struttura e rendering delle e-mail AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md).*
+_Per ulteriori informazioni, consultare la sezione [Struttura e rendering delle e-mail AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md)._
 
 ## Componenti AMP supportati <a name="supported-amp-components"></a>
 
-*Consultare il documento [Componenti supportati da AMP per e-mail](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md).*
+_Consultare il documento [Componenti supportati da AMP per e-mail](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)._
 
 ## Requisiti HTML <a name="html-requirements"></a>
 
-*Consultare il documento [Elementi HTML supportati in AMP per E-mail](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md).*
+_Consultare il documento [Elementi HTML supportati in AMP per E-mail](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md)._
 
 ## Requisiti CSS <a name="css-requirements"></a>
 
 ### Selettori e proprietà supportati <a name="supported-selectors-and-properties"></a>
 
-*Consultare il documento [Elementi CSS supportati in AMP per E-mail](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md).*
+_Consultare il documento [Elementi CSS supportati in AMP per E-mail](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md)._
 
 ### Inserimento di elementi CSS in un documento AMP <a name="specifying-css-in-an-amp-document"></a>
 
 Tutti gli elementi CSS presenti in ogni documento AMP devono essere inclusi in un tag `<style amp-custom>` all'interno dell'intestazione o come attributi `style` inline.
 
-[sourcecode:html] ...
+[sourcecode:html]
+...
 
-<style amp-custom=""> /* any custom styles go here. */ body { background-color: white; } amp-img { border: 5px solid black; } amp-img.grey-placeholder { background-color: grey; } </style><br>[/sourcecode]
+<style amp-custom>
+  /* any custom styles go here. */
+  body {
+    background-color: white;
+  }
+  amp-img {
+    border: 5px solid black;
+  }
+  amp-img.grey-placeholder {
+    background-color: grey;
+  }
+</style>
 
 ...
 
- [/sourcecode]
+</head>
+[/sourcecode]
 
 Nota: l'intero tag `<style>` non può superare i 50.000 byte. Lo strumento di convalida verificherà anche le dimensioni.
 

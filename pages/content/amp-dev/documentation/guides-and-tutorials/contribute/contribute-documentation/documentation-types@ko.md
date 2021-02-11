@@ -1,9 +1,14 @@
 ---
-$title: 문서 유형
+'$title': 문서 유형
 $order: 1
 description: amp.dev에서 허용되는 문서 기여 유형
+formats:
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
-toc: false
+toc: 'false'
 ---
 
 아래 목록은 amp.dev에서 허용되는 문서 기여 유형의 간략한 개요입니다.

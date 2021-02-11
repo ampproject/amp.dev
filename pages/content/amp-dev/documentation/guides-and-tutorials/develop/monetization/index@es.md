@@ -1,146 +1,156 @@
 ---
-$title: Monetizar tu página AMP con anuncios
+'$title': Cómo monetizar su página AMP con anuncios
+$order: 0
+description: En esta guía se proporcionan instrucciones y prácticas recomendadas para mostrar anuncios en sus páginas AMP. Por ejemplo, para mostrar los anuncios en AMP, debe agregar el componente personalizado amp-ad...
+formats:
+  - sitios web
 ---
 
-En esta guía, se incluyen instrucciones y prácticas recomendadas para mostrar anuncios en tus páginas AMP.
+This guide provides instructions and best practices for displaying ads on your AMP pages.
 
-## Añadir anuncios a la página
+## Cómo agregar anuncios a su página
 
-En las páginas que no son AMP (HTML tradicional), si quieres mostrar anuncios, debes incluir un fragmento de JavaScript para servir anuncios de tu red publicitaria.  Por motivos de rendimiento y seguridad, no puedes incluir código JavaScript de terceros en las páginas AMP.  Por lo tanto, para mostrar anuncios en AMP, debes añadir el componente personalizado [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) a tu página AMP.
+En las páginas que no son AMP (HTML tradicional), si desea mostrar anuncios en su página, debe incluir un fragmento de código JavaScript para publicar anuncios de su red publicitaria. Por razones de rendimiento y seguridad, no puede incluir JavaScript de terceros en las páginas AMP. Por lo tanto, para mostrar anuncios en AMP, debe agregar el componente personalizado [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) a su página AMP.
 
-[tip type="success"]
+[tip type="tip"] **SUGERENCIA: ** Consulte [AMP por ejemplo para ver una demostración en vivo](../../../../documentation/components/reference/amp-ad.md) que demuestra cómo agregar una etiqueta amp-ad a una página de AMP. [/tip]
 
-Consulta la página [AMP By Example para ver una demostración en directo](../../../../documentation/components/reference/amp-ad.md) de cómo añadir una etiqueta "amp-ad" a una página AMP.
+Revisemos los pasos para agregar el componente que le permitirá mostrar anuncios en su página AMP.
 
-[/tip]
+### Step 1: Add the amp-ad script
 
-Veamos los pasos para añadir este componente, que te permitirá mostrar anuncios en tu página AMP.
-
-### Paso 1: Añade la secuencia de comandos "amp-ad"
-
-El componente `<amp-ad>` es una extensión de anuncio personalizada de la biblioteca AMP. Dentro de `<amp-ad>`, se incluye código JavaScript personalizado que se ha diseñado cuidadosamente para optimizar el rendimiento. Para ejecutar el componente `<amp-ad>`, debes añadir el código JavaScript necesario para este componente en la sección `head` de la página AMP:
+El componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) es una extensión publicitaria personalizada de la biblioteca de AMP. Escondido en [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) se encuentra JavaScript personalizado que está cuidadosamente diseñado para optimizar el rendimiento. Para ejecutar el componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), debe agregar el JavaScript necesario para este componente en la sección `head` de su página AMP:
 
 ```html
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script
+  async
+  custom-element="amp-ad"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+></script>
 ```
 
-### Paso 2: Añade la etiqueta "amp-ad" a la página AMP
+### Paso 2: agregue la etiqueta amp-ad a su página AMP
 
-Hay más de 100 [servidores de anuncios y redes publicitarias](ads_vendors.md) que ofrecen integraciones con AMP integradas.  Para añadir un anuncio de una red publicitaria concreta, utiliza la etiqueta `<amp-ad>` y especifica la red con el atributo `type`.
+Más de 100 [servidores y redes de publicidad](ads_vendors.md) ofrecen integraciones incorporadas con AMP. Para agregar un anuncio para una red publicitaria determinada, agregue la etiqueta [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) y especifique la red en el atributo `type`.
 
-En este ejemplo, vamos a añadir un espacio publicitario para servir anuncios de la red a9:
+En este ejemplo, estamos agregando un espacio publicitario para publicar anuncios de la red a9:
 
 ```html
-<amp-ad type="a9">
+<amp-ad type="a9"> </amp-ad>
+```
+
+### Paso 3: especifique el tamaño del bloque de anuncios
+
+Agregue los atributos `width` y `height` a la etiqueta [`amp-ad`](../../../../documentation/components/reference/amp-ad.md). En este se especifica el tamaño del anuncio en su página AMP:
+
+```html
+<amp-ad type="a9"> width="300" height="250" </amp-ad>
+```
+
+### Step 4: Set ad network parameters
+
+Cada red tiene atributos de datos específicos que necesita para emitir anuncios. Consulte la documentación de la red publicitaria de [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) y agregue los atributos necesarios. En el siguiente ejemplo, la red a9 requiere parámetros adicionales para especificar el tamaño de los anuncios y otros detalles:
+
+```html
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
-### Paso 3: Especifica el tamaño del bloque de anuncios
+### Step 5: (Optional) Specify a placeholder
 
-Añade los atributos `width` y `height` a la etiqueta `<amp-ad>`  para especificar el tamaño del anuncio en la página AMP:
+Dependiendo de la red publicitaria, puede elegir mostrar un marcador de posición hasta que el anuncio esté disponible para su visualización. Esto proporciona una mejor experiencia al usuario al evitar lagunas. Para especificar un marcador de posición, agregue un elemento secundario con el atributo `placeholder`. Obtenga más información en [Marcadores de posición y respaldos](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
-```html hl_lines="2"
-<amp-ad type="a9">
-   width="300" height="250"
+```html
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
+  <amp-img placeholder src="placeholder-image.jpg"></amp-img>
 </amp-ad>
 ```
 
-### Paso 4: Establece los parámetros de la red publicitaria
+### Step 6: (Optional) Specify a fallback
 
-Cada red utiliza atributos de datos específicos que requieren para servir anuncios.  Consulta la documentación de `<amp-ad>` sobre redes publicitarias y añade los atributos necesarios. En el siguiente ejemplo, la red a9 requiere parámetros adicionales para especificar el tamaño del anuncio, así como otros detalles:
+Dependiendo de la red publicitaria, puede elegir mostrar un elemento de respaldo si no hay ningún anuncio disponible para su publicación. Para especificar un respaldo, agregue un elemento secundario con el atributo `fallback`. Obtenga más información en [Marcadores de posición y respaldos](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
-```html hl_lines="3 4 5"
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+```html
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
+  <amp-img fallback src="fallback-image.jpg"></amp-img>
 </amp-ad>
 ```
 
-### Paso 5 (opcional): Utiliza un marcador de posición
+¡Felicidades! ¡Ahora está publicando anuncios en su página AMP!
 
-En función de la red publicitaria, puedes optar por mostrar un marcador de posición hasta que el anuncio esté disponible para publicarse. Este marcador evita que se muestren espacios en blanco, por lo que mejora la experiencia de usuario.  Para especificar un marcador de posición, añade un elemento secundario con el atributo `placeholder`. [Más información sobre marcadores de posición y respaldos](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
+## Cómo publicar anuncios AMPHTML de venta directa
 
-```html hl_lines="6"
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-   <amp-img placeholder src="placeholder-image.jpg"></amp-img>
-</amp-ad>
-```
+Con el componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) se publican anuncios de la red que usted especifique. Estos pueden ser anuncios HTML estándar o anuncios AMPHTML, siempre y cuando la red publicitaria sea compatible con anuncios AMPHTML. Para publicar sus anuncios de venta directa como anuncios AMPHTML, cree el anuncio en formato AMPHTML de acuerdo con los requisitos de las [especificaciones de los anuncios AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) y utilice un [servidor de anuncios que publique anuncios AMPHTML](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
 
-### Paso 6 (opcional): Utiliza un respaldo
+## Cómo aumentar los datos de los objetivos de las solicitudes de anuncios
 
-En función de la red publicitaria, puedes optar por mostrar un elemento de respaldo en caso de que no haya ningún anuncio disponible. Para especificar un respaldo, añade un elemento secundario con el atributo `fallback`. [Más información sobre marcadores de posición y respaldos](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
+Como parte del mecanismo de publicación Fast Fetch, la función de configuración en tiempo real (RTC) permite que los editores aumenten las solicitudes de anuncios con información de los objetivos propios y de terceros que se recupera en tiempo de ejecución. RTC permite hasta 5 llamadas a los servidores de objetivos para cada espacio publicitario individual, cuyos resultados se adjuntan en la solicitudes de anuncios. Para utilizar RTC en sus anuncios, la red publicitaria que utilice debe ser compatible con RTC y Fast Fetch.
 
-```html hl_lines="6"
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-   <amp-img fallback src="fallback-image.jpg"></amp-img>
-</amp-ad>
-```
+Puede obtener más información sobre RTC en este video de YouTube:
 
-¡Enhorabuena! Ya estás publicando anuncios en tu página AMP.
+[video src='https://www.youtube.com/watch?v=mvAmvKiWPfA' caption='Watch Effective AMP Monetization with Header Bidding.']
 
-## Servir anuncios AMP HTML de venta directa
+O consulte los siguientes recursos de RTC:
 
-El componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md).
-
-## Aumentar los datos de segmentación en las solicitudes de anuncio
-
-El mecanismo de servicio de anuncios Fast Fetch incluye la función Real‑Time Config (RTC), que permite a los editores añadir más información de segmentación propia y de terceros que se recupera en el tiempo de ejecución a las solicitudes de anuncio. RTC admite hasta cinco llamadas a servidores de segmentación para cada espacio publicitario concreto. Los resultados se añaden a la solicitud de anuncio.  Para utilizar RTC en tus anuncios, la red publicitaria que utilices debe ser compatible con RTC y Fast Fetch.
-
-Mira este vídeo de YouTube para obtener más información sobre RTC:
-
-[video src='https://www.youtube.com/watch?v=mvAmvKiWPfA' caption='Mira el vídeo sobre monetización eficaz con AMP mediante las pujas por encabezado.']
-
-También puedes utilizar estos recursos para consultar más información sobre RTC:
-
-*   [Guía de implementación de RTC de AMP para editores](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
-*   [Configuración en tiempo real de AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
+- [Guía de implementación para editores de AMP RTC](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
+- [Configuración de AMP en tiempo real](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
 
 ## Prácticas recomendadas
 
-A continuación, se incluyen algunos consejos para maximizar la eficacia de los anuncios en tus páginas AMP.
+Estos son algunos consejos para maximizar la eficacia de los anuncios en sus páginas AMP:
 
-### Emplazamiento y controles: optimiza la colocación de los anuncios
+### Ubicación y controles: optimizar la ubicación de sus anuncios
 
-*   **Coloca el mismo número de anuncios** en las páginas AMP que en el resto para generar el máximo número de ingresos por página.
-*   **Coloca el primer anuncio inmediatamente debajo de la primera ventana gráfica** ("mitad inferior de la página") para proporcionar una experiencia de usuario óptima.
-*   A menos que utilices archivos CSS avanzados o media queries, **asegúrate de que los bloques de anuncios estén centrados en la página** para ofrecer a los usuarios una experiencia Web móvil óptima.
-*   Habilita las [solicitudes de anuncio de varios tamaños](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests) en el inventario AMP para aumentar la presión en la subasta de anuncios y mejorar los ingresos.
+- **Coloque la misma cantidad de anuncios** en las páginas AMP con respecto en las páginas que no son de AMP para generar la máxima cantidad de ingresos por página.
+- **Coloque el primer anuncio justo debajo de la primera ventana de visualización** (“parte inferior de la página”) para proporcionar una experiencia de usuario óptima.
+- A menos que esté utilizando CSS avanzado o consultas de medios, **asegúrese de que sus bloques de anuncios estén centrados en la página** para proporcionar a sus usuarios una experiencia web móvil óptima.
+- Habilite las [solicitudes de anuncios de varios tamaños](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests) en su inventario de AMP para aumentar la presión de las subastas publicitarias y generar ingresos.
 
-### Demanda y precios: obtén el precio adecuado para tus anuncios
+### Demanda y fijación de precios: obtenga el precio adecuado para sus anuncios
 
-*   **Vende bloques de anuncios de tus páginas AMP en todos los canales de ventas**, incluidos los directos e indirectos, para maximizar la competencia por tu inventario de las páginas AMP.
-*   **Establece un precio para el inventario publicitario de las páginas AMP** que sea similar al del inventario de las páginas que no son AMP. Supervisa el rendimiento y ajusta los precios en consecuencia.
-*   **Asegúrate de que todos los canales de demanda de anuncios compitan** por el inventario publicitario de tus páginas AMP para maximizar la competencia.
+- **Venda bloques de anuncios en sus páginas AMP en todos los canales de venta**, incluyendo los canales directos e indirectos, para maximizar la competencia de su inventario en las páginas AMP.
+- **Establezca los precios de su inventario de anuncios en las páginas AMP** cómo lo hace en las páginas que no son de AMP. Vigile el rendimiento y ajuste los precios como corresponda.
+- **Asegúrese de que todos los canales de demanda publicitaria compitan** por el inventario de anuncios en sus páginas AMP para impulsar la competencia.
 
-### Tipos de anuncio: publica los mejores tipos de anuncios
+### Tipos de anuncios: publique los mejores tipos de anuncios
 
-*   **Evita las creatividades pesadas,** de acuerdo con las [directrices de IAB](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf).
-*   **Evita los intersticiales** u otros formatos de anuncio que provoquen que se reinicie el flujo del contenido al cargar los anuncios.
-*   **Optimiza la visibilidad** configurando la estrategia de carga de datos para que se priorice la visibilidad sobre las visualizaciones.
-*   **Incluye anuncios en el contenido de vídeo** a través de [reproductores compatibles](../../../../documentation/components/index.html) o [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) para poder obtener ingresos con todos los tipos de contenido.
-*   **Implementa anuncios nativos** para competir con los anuncios de display que utilizan solicitudes de anuncio de varios tamaños. De esta forma, aumentarás la demanda y, al mismo tiempo, proporcionarás a los lectores una experiencia de usuario óptima.
+- **Evite las creatividades pesadas** de acuerdo con las [reglas generales de la IAB](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf).
+- **Avoid interstitials** or other ad formats that cause the content to reflow on ad load.
+- **Optimice la visibilidad** al configurar la estrategia de carga de datos para preferir la visibilidad sobre las vistas.
+- **Place ads in your video content** via [supported players](../../../../documentation/components/index.html#media) or [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) to enable revenue on all types of content.
+- **Implemente anuncios nativos** para competir con los gráficos mediante solicitudes de anuncios de varios tamaños, lo que aumenta la presión de la demanda y proporciona a sus lectores una experiencia de usuario premium.
 
-### Innovación: ofrece los productos publicitarios que generan más interacción
+### Innovación: ofrecer los productos publicitarios más atractivos
 
-*   **Implementa anuncios en páginas AMP complementarias** para generar ingresos incrementales:
-    *   [Anuncios en un carrusel](../../../../documentation/examples/documentation/Carousel_Ad.html)
-    *   [Anuncios en un lightbox](../../../../documentation/examples/documentation/Lightbox_Ad.html)
-    *   [Anuncios avanzados](../../../../documentation/examples/index.html)
-*   **Utiliza formatos nuevos con los anuncios de venta directa** para proporcionar al equipo de ventas productos publicitarios innovadores y de elevado impacto:
-    *   [Anuncios fijos](../../../../documentation/examples/documentation/amp-sticky-ad.html)
-    *   [Alfombra voladora](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
+- **Implemente anuncios en páginas AMP auxiliares ** para generar ingresos adicionales:
+  - [Anuncios en carrusel](../../../../documentation/examples/documentation/Carousel_Ad.html)
+  - [Anuncios lightbox](../../../../documentation/examples/documentation/Lightbox_Ad.html)
+  - ... y [muchas otras cosas más](../../../../documentation/examples/index.html)
+- **Implemente nuevos formatos de anuncios de venta directa** para equipar a su equipo de ventas con productos publicitarios innovadores y de alto impacto:
+  - [Anuncios pegadizos](../../../../documentation/examples/documentation/amp-sticky-ad.html)
+  - [Alfombra voladora](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
 
 ## Recursos adicionales
 
-*   [Plantillas de anuncios AMP HTML](../../../../documentation/examples/index.html)
-*   [Demostración: cómo añadir el componente `amp-ad` a tu página AMP](../../../../documentation/components/reference/amp-ad.md)
+- [Plantillas de anuncios AMPHTML](../../../../documentation/examples/index.html)
+- [Demostración: muestra cómo agregar `amp-ad` a su página AMP](../../../../documentation/components/reference/amp-ad.md)

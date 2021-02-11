@@ -1,5 +1,5 @@
 ---
-$title: Memvalidasi sintaksis HTML AMP
+'$title': Memvalidasi sintaksis HTML AMP
 $order: 3
 description: Untuk memastikan bahwa iklan Anda merender dengan benar, Anda harus memvalidasi sintaksis HTML AMP Anda. Di browser Anda, buka Validator AMP, dan pastikan bahwa AMP4ADS adalah format HTML yang dipilih.
 ---

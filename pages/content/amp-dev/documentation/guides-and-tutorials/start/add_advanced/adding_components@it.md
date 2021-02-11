@@ -1,6 +1,7 @@
 ---
-$title: Aggiunta di componenti AMP estesi
-description: "Il sistema dei componenti AMP consente di creare rapidamente e con il minimo sforzo funzionalità efficienti e reattive per i propri articoli. La libreria AMP HTML ha tre classificazioni per i componenti AMP: ..."
+'$title': Aggiunta di componenti AMP estesi
+$order: 2
+description: 'Il sistema dei componenti AMP consente di creare rapidamente e con il minimo sforzo funzionalità efficienti e reattive per i propri articoli. La libreria AMP HTML ha tre classificazioni per i componenti AMP: ...'
 ---
 
 Il sistema dei componenti AMP consente di creare rapidamente e con il minimo sforzo funzionalità efficienti e reattive per i propri articoli. La libreria AMP HTML ha tre classificazioni per i componenti AMP:
@@ -24,7 +25,8 @@ Consideriamo questo esempio di annuncio **DoubleClick**:
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/image/static">
+  data-slot="/35096353/amptesting/image/static"
+>
 </amp-ad>
 ```
 
@@ -39,7 +41,8 @@ L'attributo `data-slot` è invece specifico della piattaforma. In [`amp-ad`](../
   type="a9"
   data-aax_size="300x250"
   data-aax_pubname="test123"
-  data-aax_src="302">
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -50,7 +53,11 @@ Ricordiamo che non tutti i componenti sono inclusi nel file JavaScript della lib
 **Aggiungere** il seguente script al tag `<head>`:
 
 ```html
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script
+  async
+  custom-element="amp-ad"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+></script>
 ```
 
 **Aggiornando** la pagina, si dovrebbero vedere due annunci di prova:
@@ -66,7 +73,8 @@ I due elementi [`amp-ad`](../../../../documentation/components/reference/amp-ad.
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/uk">
+  data-slot="/35096353/amptesting/geo/uk"
+>
   <div fallback>No ad appeared because you're not browsing from the UK!</div>
 </amp-ad>
 
@@ -74,7 +82,8 @@ I due elementi [`amp-ad`](../../../../documentation/components/reference/amp-ad.
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/us">
+  data-slot="/35096353/amptesting/geo/us"
+>
   <div fallback>No ad appeared because you're not browsing from the US!</div>
 </amp-ad>
 ```
@@ -83,7 +92,7 @@ I due elementi [`amp-ad`](../../../../documentation/components/reference/amp-ad.
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='Test ads') }}
 
-[tip type="note"] **NOTA:** All'interno di questi tag [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) sono presenti tag `div` aggiuntivi con un attributo denominato `fallback`. A cosa serve  l'attributo <code>fallback</code>? Esso indica al sistema di caricamento AMP di mostrare i contenuti di quell'elemento solo quando non è possibile caricare correttamente l'elemento padre. Ulteriori informazioni nella sezione [Segnaposto e fallback](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md). [/tip]
+[tip type="note"] **NOTA:** All'interno di questi tag [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) sono presenti tag `div` aggiuntivi con un attributo denominato `fallback`. A cosa serve l'attributo <code>fallback</code>? Esso indica al sistema di caricamento AMP di mostrare i contenuti di quell'elemento solo quando non è possibile caricare correttamente l'elemento padre. Ulteriori informazioni nella sezione [Segnaposto e fallback](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md). [/tip]
 
 [tip type="read-on"] **CONTINUA A LEGGERE:** Per informazioni sulle ultime reti di annunci supportate, consultare la documentazione di riferimento del componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md). [/tip]
 
@@ -106,16 +115,17 @@ Proviamo a incorporare un video YouTube nel documento. **Aggiungiamo** il seguen
   data-videoid="npum8JsITQE"
   layout="responsive"
   width="480"
-  height="270">
+  height="270"
+>
   <div fallback>
     <p>The video could not be loaded.</p>
   </div>
 </amp-youtube>
 ```
 
-**Aggiorniamo** la pagina. Invece del video, vedremo questo testo: *"Impossibile caricare il video".*
+**Aggiorniamo** la pagina. Invece del video, vedremo questo testo: _"Impossibile caricare il video"._
 
-Anche se il browser può mostrare i video  YouTube senza problemi, indicherà comunque questo errore. Perché? L'errore effettivo non è nel caricamento del video, ma nel componente in sé.
+Anche se il browser può mostrare i video YouTube senza problemi, indicherà comunque questo errore. Perché? L'errore effettivo non è nel caricamento del video, ma nel componente in sé.
 
 Ricordiamo che non tutti i componenti sono inclusi nel file JavaScript della libreria AMP principale. Dobbiamo includere una richiesta JavaScript aggiuntiva per il componente YouTube.
 
@@ -124,7 +134,11 @@ Ricordiamo che non tutti i componenti sono inclusi nel file JavaScript della lib
 **Aggiungere** il seguente script al tag `<head>`:
 
 ```html
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script
+  async
+  custom-element="amp-youtube"
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+></script>
 ```
 
 **Aggiornando** la pagina, il video YouTube dovrebbe essere visibile:
@@ -144,7 +158,11 @@ L'inclusione di tweet pre-formattati da Twitter è un'altra caratteristica comun
 Aggiungiamo la seguente richiesta JavaScript al tag `<head>` del documento:
 
 ```html
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script
+  async
+  custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+></script>
 ```
 
 Ora, **aggiungere** all'articolo questo codice per incorporare il Tweet:
@@ -154,7 +172,8 @@ Ora, **aggiungere** all'articolo questo codice per incorporare il Tweet:
   width="486"
   height="657"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
 
@@ -179,7 +198,11 @@ AMP fornisce un componente specifico per queste situazioni, [`amp-fit-text`](../
 Proviamolo. Innanzitutto, **aggiungiamo** la libreria del componente al tag `<head>`:
 
 ```html
-<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+<script
+  async
+  custom-element="amp-fit-text"
+  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+></script>
 ```
 
 Aggiungere quanto segue alla pagina:
@@ -204,7 +227,11 @@ Oppure, cosa succede se la citazione è più lunga?
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-   And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+  And the Raven, never flitting, still is sitting, still is sitting. On the
+  pallid bust of Pallas just above my chamber door; And his eyes have all the
+  seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming
+  throws his shadow on the floor; And my soul from out that shadow that lies
+  floating on the floor. Shall be lifted—nevermore!
 </amp-fit-text>
 ```
 

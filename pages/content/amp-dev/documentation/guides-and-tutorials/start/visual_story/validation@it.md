@@ -1,5 +1,5 @@
 ---
-$title: Convalida del codice AMP HTML
+'$title': Convalida del codice AMP HTML
 $order: 8
 description: Ogni volta che crei una pagina AMP, devi sempre verificare che il suo codice AMP HTML sia corretto. Esistono [diversi metodi che puoi utilizzare per convalidare le pagine AMP ...
 author: bpaduch

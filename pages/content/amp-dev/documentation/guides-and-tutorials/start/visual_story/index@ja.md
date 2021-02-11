@@ -1,5 +1,11 @@
 ---
-$title: ビジュアルに訴える AMP ストーリーを作成する
+'$title': Create your first Web Story
+$order: 0
+description: このチュートリアルでは、amp-story コンポーネントを紹介します。このコンポーネントを使用すると、AMP で視覚的な訴求力のあるストーリーを作成できます。このチュートリアルの終了時には ...
+'$hidden': 'true'
+formats:
+  - stories
+author: bpaduch
 ---
 
 [video src="/static/video/tut_pets-story-complete.mp4" caption="Completed AMP story." poster="/static/img/docs/tutorials/amp_story/story_poster.png"]
@@ -14,7 +20,3 @@ $title: ビジュアルに訴える AMP ストーリーを作成する
 - ページの閲覧中に再生される音声を追加する
 - ページ上の要素をアニメーション化する
 - ストーリーの最後に関連リンクを追加し、読者を別のコンテンツに誘導する
-
-[tip type="note"]
- [`amp-story`](../../../../documentation/components/reference/amp-story.md) は**試験運用コンポーネント**です。
-[/tip]
