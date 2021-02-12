@@ -24,7 +24,7 @@
     grid-column: 1 / -1;
     grid-row: 1 / -1;
     margin-right: auto;
-    animation: roll 8s cubic-bezier(0.25, 0.1, 0.25, 1) -1s infinite backwards;
+    /*animation: roll 8s cubic-bezier(0.25, 0.1, 0.25, 1) -1s infinite backwards; */
 
     @media (min-width: 768px) {
       margin-left: auto;
