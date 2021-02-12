@@ -243,13 +243,7 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
   try {
     const optimize = req.query.optimize !== 'false';
     if (optimize) {
-      const experimentEsm = !!req.query.esm || false;
-      const optimizeHeroImages =
-        req.query.hero === undefined ? true : !!req.query.hero;
-      const params = {
-        experimentEsm,
-        optimizeHeroImages,
-      };
+      const params = {};
       // Enable blurred placeholders and render all 5 stage images of the homepage
       if (req.path === '/') {
         // Disabled until we know why it fails after build
