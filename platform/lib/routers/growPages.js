@@ -183,12 +183,6 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
     res.redirect(301, url.toString());
     return;
   }
-  // Preload critical font(s)
-  res.header(
-    'Link',
-    `<${config.hosts.platform.base}/static/fonts/poppins-v5-latin-700.woff2>` +
-      ';rel=preload;as=font;type=font/woff2;crossorigin'
-  );
 
   // Check if the page has been cached
   const cachedPage = await pageCache.get(req.originalUrl);
