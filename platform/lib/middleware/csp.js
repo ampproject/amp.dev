@@ -37,6 +37,7 @@ module.exports = (req, res, next) => {
       'blob:',
       `'unsafe-inline'`,
       'https://cdn.ampproject.org/v0.js',
+      'https://cdn.ampproject.org/v0.mjs',
       'https://cdn.ampproject.org/v0/',
       'https://cdn.ampproject.org/sw/',
       'https://cdn.ampproject.org/viewer/',

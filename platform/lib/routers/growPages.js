@@ -183,12 +183,6 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
     res.redirect(301, url.toString());
     return;
   }
-  // Preload critical font(s)
-  res.header(
-    'Link',
-    `<${config.hosts.platform.base}/static/fonts/poppins-v5-latin-700.woff2>` +
-      ';rel=preload;as=font;type=font/woff2;crossorigin'
-  );
 
   // Check if the page has been cached
   const cachedPage = await pageCache.get(req.originalUrl);
@@ -243,13 +237,7 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
   try {
     const optimize = req.query.optimize !== 'false';
     if (optimize) {
-      const experimentEsm = !!req.query.esm || false;
-      const optimizeHeroImages =
-        req.query.hero === undefined ? true : !!req.query.hero;
-      const params = {
-        experimentEsm,
-        optimizeHeroImages,
-      };
+      const params = {};
       // Enable blurred placeholders and render all 5 stage images of the homepage
       if (req.path === '/') {
         // Disabled until we know why it fails after build
