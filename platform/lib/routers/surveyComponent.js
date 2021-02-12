@@ -100,15 +100,15 @@ async function getOrCreateSpreadsheet() {
   return Doc;
 }
 
-async function getOrCreateSheet(surveyName) {
+async function getOrCreateSheet(surveyResponse) {
   const doc = await getOrCreateSpreadsheet();
-  let sheet = doc.sheetsByTitle[surveyName];
+  let sheet = doc.sheetsByTitle[surveyResponse.survey];
 
   if (!sheet) {
     sheet = await doc.addSheet({
-      title: survey.survey,
+      title: surveyResponse.survey,
       headerValues: [
-        survey.questions.map((q) => q.originalText || q.text),
+        surveyResponse.questions.map((q) => q.originalText || q.text),
         'dismissed',
         'url',
         'shown at',
@@ -119,30 +119,29 @@ async function getOrCreateSheet(surveyName) {
   return sheet;
 }
 
-function addSurveyResponse(survey) {
+async function addSurveyResponse(surveyResponse, surveySheet) {
   const row = {
-    'dismissed': !!survey.dismissed,
-    'url': survey.url,
-    'shown at': survey.shownAt,
+    'dismissed': !!surveyResponse.dismissed,
+    'url': surveyResponse.url,
+    'shown at': surveyResponse.shownAt,
   };
 
-  survey.questions.forEach((q) => {
+  surveyResponse.questions.forEach((q) => {
     const text = q.originalText || q.text;
     const answer = Array.isArray(q.answer) ? q.answer.join('\n') : q.answer;
     row[text] = answer;
   });
 
-  return row;
+  await surveySheet.addRow(row);
+  await surveySheet.saveUpdatedCells();
 }
 
 async function uploadAnswer(req, res) {
   try {
     const surveyResponse = req.body;
-    const surveySheet = getOrCreateSheet(surveyResponse.survey);
-    const row = addSurveyResponse(surveyResponse);
+    const surveySheet = await getOrCreateSheet(surveyResponse);
+    await addSurveyResponse(surveyResponse, surveySheet);
 
-    await surveySheet.addRow(row);
-    await surveySheet.saveUpdatedCells();
     log.complete(`saved response for ${surveyResponse.survey}`);
 
     res.sendStatus(200);

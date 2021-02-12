@@ -3,7 +3,9 @@ const request = require('supertest');
 const bodyParser = require('body-parser');
 
 const app = express();
-const router = require('./surveyComponent.js');
+const surveyRouter = require('./surveyComponent.js');
+
+const SURVEY_ENDPOINT_URL = '/fez-survey-response';
 
 const VALID_RESPONSE = {
   'survey': 'string',
@@ -17,59 +19,69 @@ const VALID_RESPONSE = {
   'shownAt': '2021-01-13T00:42:48.077Z',
 };
 
-function _test() {
-  const env = process.env;
-  const notSetUp =
-    !env.GOOGLE_PRIVATE_KEY ||
-    !env.SURVEY_RESPONSE_SHEET_ID ||
-    !env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
+const mockedSheet = jest.fn().mockReturnValue({
+  addRow: () => {},
+  saveUpdatedCells: () => {},
+});
 
-  return notSetUp ? test : test.skip;
-}
+jest.mock('google-spreadsheet', () => {
+  return {
+    GoogleSpreadsheet: jest.fn().mockImplementation(() => {
+      return {
+        useServiceAccountAuth: () => {},
+        loadInfo: () => {},
+        sheetsByTitle: {},
+        addSheet: mockedSheet,
+      };
+    }),
+  };
+});
 
-app.use(router);
+jest.mock('@lib/utils/credentials', () => {
+  return {get: () => ''};
+});
+
+app.use(surveyRouter);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 test('Errors on a GET', (done) => {
-  request(app).get('/fez-survey-response').expect(405).end(done);
+  request(app).get(SURVEY_ENDPOINT_URL).expect(405).end(done);
 });
 
-_test('Validates the POSTed object', (done) => {
-  request(app)
-    .post('/fez-survey-response')
+test('Validates the POSTed object', async () => {
+  await request(app)
+    .post(SURVEY_ENDPOINT_URL)
     .set('Accept', 'application/json')
     .send({
       'bad': 'version',
     })
-    .expect(422)
-    .then(() => {
-      request(app)
-        .post('/fez-survey-response')
-        .set('Accept', 'application/json')
-        .send({
-          'bad': 'version',
-        })
-        .expect(422)
-        .then(() => {
-          // TODO: this needs to be mocked so that we aren't
-          // actually hitting the API
-          request(app)
-            .post('/fez-survey-response')
-            .set('Accept', 'application/json')
-            .send(VALID_RESPONSE)
-            .expect(200)
-            .end(done);
-        });
-    });
-});
+    .expect(422);
 
-// TODO make this actually function
-_test('Submits the data to a backend', (done) => {
-  request(app)
-    .post('/fez-survey-response')
+  await request(app)
+    .post(SURVEY_ENDPOINT_URL)
+    .set('Accept', 'application/json')
+    .send({
+      'bad': 'version',
+    })
+    .expect(422);
+
+  await request(app)
+    .post(SURVEY_ENDPOINT_URL)
     .set('Accept', 'application/json')
     .send(VALID_RESPONSE)
-    .then(/* do... something */)
-    .end(done);
+    .expect(200);
+});
+
+test('Submits the data to a backend', async () => {
+  jest.clearAllMocks();
+
+  expect(mockedSheet.mock.calls.length).toBe(0);
+
+  await request(app)
+    .post(SURVEY_ENDPOINT_URL)
+    .set('Accept', 'application/json')
+    .send(VALID_RESPONSE);
+
+  expect(mockedSheet.mock.calls.length).toBe(1);
 });
