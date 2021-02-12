@@ -22,7 +22,7 @@
 		"build:prod": "npx gulp build --env production",
 		"build:grow-tests": "npx gulp buildForGrowTests --env test",
 		"log:staging": "gcloud app logs tail -s default --project amp-dev-staging",
-		"postinstall": "gulp downloadTestResources",
+		"postinstall": "gulp downloadTestResources && husky install",
 		"posttest": "npm run lint",
 		"smoke-test": "APP_ENV=local jest smoke-tests --forceExit",
 		"start:local": "cd platform && NODE_ENV=local node serve.js",
@@ -36,11 +36,6 @@
 		"test:playground": "APP_ENV=test jest --runInBand --detectOpenHandles --forceExit --testPathPattern playground",
 		"test:pixi": "APP_ENV=test jest --runInBand --detectOpenHandles --forceExit --testPathPattern pixi",
 		"test:grow-extensions": "cd pages/extensions && if which grow; then python2 -m unittest discover -p \"*_test.py\"; else echo grow not installed with pip. skip tests; fi"
-	},
-	"husky": {
-		"hooks": {
-			"pre-push": "npm test"
-		}
 	},
 	"keywords": [
 		"amphtml",
@@ -149,7 +144,7 @@
 		"html-minifier": "4.0.0",
 		"html-webpack-inline-source-plugin": "1.0.0-beta.2",
 		"html-webpack-plugin": "4.5.1",
-		"husky": "4.3.8",
+		"husky": "5.0.9",
 		"jasmine": "3.6.4",
 		"jest": "26.6.3",
 		"js-base64": "3.6.0",
