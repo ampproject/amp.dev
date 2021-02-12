@@ -48,7 +48,7 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
 
   pre, code {
     @include txt-mono;
-    white-space: pre-wrap;
+    white-space: pre;
     font-size: 0.9rem;
 	  padding: unset;
 	  word-break: initial;
