@@ -36,7 +36,7 @@ staticText:
       scorePercentile: الدرجة عند النسب المئوية ضمن 75
       score: الدرجة
       opportunity: فرصة للتحسين
-      pagesPassing: Visits passing
+      pagesPassing: تمرير الزيارات
       action: اتخاذ إجراء
   additionalChecks:
     headline: عمليات فحص إضافية
