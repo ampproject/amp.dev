@@ -1,5 +1,5 @@
 ---
-$title: Guida all'esperienza d'uso delle pagine AMP
+"$title": "Guida all'esperienza d'uso delle pagine AMP"
 staticText:
   inputBar:
     headline: Analisi della pagina AMP
@@ -8,7 +8,7 @@ staticText:
   infoDialog:
     open: Per saperne di più
     close: Chiudi
-  scrollToTop: Scorri all'inizio
+  scrollToTop: "Scorri all'inizio"
   shareDialog:
     headline: Copia e incolla URL
     close: Termina navigazione
@@ -17,7 +17,7 @@ staticText:
   statusIntro:
     headline: Attendi un momento
     headline2: La tua pagina è attualmente in fase di analisi
-    loadingCopy: ${finishedChecks} controlli completati su ${totalChecks} controlli
+    loadingCopy: "${finishedChecks} controlli completati su ${totalChecks} controlli"
     buttonShare: Condividi
     buttonInvestigate: Analizza
   coreWebVitals:
@@ -26,7 +26,7 @@ staticText:
     fieldData: Dati sul campo
     labData: Dati di laboratorio
     fieldDataExplainer: Questi dati sono aggiornati quotidianamente per il periodo di 28 giorni in corso.
-    labDataExplainer: Questi dati provengono da test sintetici e non influiscono sull'esperienza della pagina.
+    labDataExplainer: "Questi dati provengono da test sintetici e non influiscono sull'esperienza della pagina."
     loadingSpeed: Velocità di caricamento
     interactivity: Interattività
     visualStability: Stabilità visiva
@@ -61,7 +61,7 @@ scriptText:
     passed: Superato
     passedAddition: superato
     none: Nessuno
-    nothingToDo: Nessuna azione richiesta! &#x1F389;
+    nothingToDo: "Nessuna azione richiesta! &#x1F389;"
     fileAnIssue: Segnalazione di problemi con AMP
     recommendation: suggerimento
     recommendations: suggerimenti
