@@ -59,8 +59,8 @@
 	"dependencies": {
 		"@ampproject/toolbox-cache-list": "2.7.4",
 		"@ampproject/toolbox-cors": "2.8.0-canary.0",
-		"@ampproject/toolbox-linter": "2.8.0-canary.2",
-		"@ampproject/toolbox-optimizer": "2.8.0-canary.2",
+		"@ampproject/toolbox-linter": "2.8.0-canary.1",
+		"@ampproject/toolbox-optimizer": "2.8.0-canary.1",
 		"@google-cloud/datastore": "6.3.1",
 		"acorn": "8.0.5",
 		"amphtml-validator": "1.0.34",
