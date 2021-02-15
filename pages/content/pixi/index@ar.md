@@ -1,5 +1,5 @@
 ---
-$title: دليل تجربة صفحة AMP
+"$title": دليل تجربة صفحة AMP
 staticText:
   inputBar:
     headline: تحليل صفحة AMP الخاصة بك
@@ -12,13 +12,13 @@ staticText:
   shareDialog:
     headline: نسخ عنوان URL ولصقه
     close: إغلاق التنقل
-    copyToClipboard: نسخ إلى الحافظة
-    success: نجاح
+    copyToClipboard: Copy to clipboard
+    success: Success
   statusIntro:
-    headline: يرجى الانتظار لحظة
-    headline2: إننا نحلل صفحتك
-    loadingCopy: تم اكتمال عملية التحقق من ${finishedChecks} من أصل ${totalChecks}
-    buttonShare: مشاركة
+    headline: Please wait a moment
+    headline2: We are currently analyzing your page
+    loadingCopy: "${finishedChecks} out of ${totalChecks} checks are completed"
+    buttonShare: Share
     buttonInvestigate: الاستقصاء
   coreWebVitals:
     headline: عناصر الويب الحيوية الأساسية
@@ -27,24 +27,24 @@ staticText:
     labData: البيانات المعملية
     fieldDataExplainer: يتم تحديث هذه البيانات يوميًا لفترة 28 يومًا.
     labDataExplainer: تأتي هذه البيانات من الاختبارات التركيبية ولا تؤثر على تجربة الصفحة.
-    loadingSpeed: سرعة التحميل
-    interactivity: التفاعلية
-    visualStability: الاستقرار المرئي
-    pageLoads: تحميلات الصفحة
-    thresholdMarker: النسب المئوية ضمن 75
+    loadingSpeed: Loading speed
+    interactivity: Interactivity
+    visualStability: Visual stability
+    pageLoads: Page loads
+    thresholdMarker: 75th percentile
     resultLabels:
       scorePercentile: الدرجة عند النسب المئوية ضمن 75
       score: الدرجة
-      opportunity: فرصة للتحسين
-      pagesPassing: نقل مؤشرات الصفحة
-      action: اتخاذ إجراء
+      opportunity: Opportunity to improve
+      pagesPassing: تمرير الزيارات
+      action: Take action
   additionalChecks:
     headline: عمليات فحص إضافية
-    safeBrowsing: تصفح آمن
+    safeBrowsing: Safe Browsing
     https: HTTPS
     mobileFriendliness: التوافق مع الهاتف المحمول
     intrusiveInterstitials: صفحات بينية متدخلة
-    checkManually: فحص يدوي
+    checkManually: Check manually
   recommendations:
     headline: اتخذ إجراءً، حسِّن من موقع AMP لديك
     nextAdvice: النصيحة التالية
@@ -61,7 +61,7 @@ scriptText:
     passed: نجاح
     passedAddition: نجاح
     none: لا يوجد
-    nothingToDo: لا يوجد إجراء مطلوب &#x1F389;
+    nothingToDo: "لا يوجد إجراء مطلوب &#x1F389;"
     fileAnIssue: الإبلاغ عن مشكلة في AMP
     recommendation: توصية
     recommendations: توصيات
