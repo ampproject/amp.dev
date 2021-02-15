@@ -89,7 +89,7 @@
 		"multer": "1.4.2",
 		"node-fetch": "2.6.1",
 		"node-zopfli-es": "1.0.7",
-		"nunjucks": "3.2.2",
+		"nunjucks": "3.2.3",
 		"p-queue": "6.6.2",
 		"postcss": "8.2.6",
 		"postcss-css-variables": "0.17.0",
