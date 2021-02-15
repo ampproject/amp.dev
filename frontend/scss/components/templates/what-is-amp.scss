@@ -36,10 +36,6 @@
 
   .#{utility('container-fluid')} {
     @include container-fluid;
-    
-    > div, section {
-      min-width: 0;
-    }
   }
 
 
