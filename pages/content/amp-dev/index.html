@@ -292,7 +292,7 @@ success_stories:
 
         <div class="ap-o-sampler-header">AMPHTML Playground</div>
 
-        {% set embed_url = playground_url + '/embed?mode=responsive&line=' + doc.sampler[0].line + '&url=' + doc.sampler[0].url %}
+        {% set embed_url = playground_url + '/embed?mode=responsive&line=' + doc.sampler[0].line + '&url=' + playground_url + doc.sampler[0].url %}
         {% set standalone_url = playground_url + '/?url=' + doc.sampler[0].url %}
         <div class="ap-o-sampler-iframe">
           <amp-iframe
