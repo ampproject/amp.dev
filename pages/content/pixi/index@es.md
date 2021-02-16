@@ -1,8 +1,8 @@
 ---
-$title: Guía sobre la experiencia en las páginas de AMP
+"$title": Guía sobre la experiencia en las páginas de AMP
 staticText:
   inputBar:
-    headline: Analice su página de AMP
+    headline: Analice su Página AMP
     fieldPlaceholder: Ingrese la URL
     button: Analizar
   infoDialog:
@@ -17,7 +17,7 @@ staticText:
   statusIntro:
     headline: Espere un momento
     headline2: Actualmente estamos analizando su página
-    loadingCopy: ${finishedChecks} revisiones que se completaron por ${totalChecks}
+    loadingCopy: "${finishedChecks} revisiones que se completaron por ${totalChecks}"
     buttonShare: Compartir
     buttonInvestigate: Investigar
   coreWebVitals:
@@ -36,7 +36,7 @@ staticText:
       scorePercentile: Puntuación en el percentil 75
       score: Puntuación
       opportunity: Posibilidad de mejorar
-      pagesPassing: Desplazamiento de las páginas
+      pagesPassing: visitas de una página web
       action: Tomar medidas
   additionalChecks:
     headline: Controles adicionales
@@ -61,7 +61,7 @@ scriptText:
     passed: Exitoso
     passedAddition: exitoso
     none: Ninguno
-    nothingToDo: ¡No se requiere ninguna acción!
+    nothingToDo: "¡No se necesita ninguna acción! & # x1F389;"
     fileAnIssue: Reportar un problema con AMP
     recommendation: recomendación
     recommendations: recomendaciones
@@ -84,4 +84,4 @@ scriptText:
     intrusiveInterstitials: Intersticiales intrusivos
 ---
 
-La Guía sobre la experiencia en las páginas de AMP es una herramienta que muestra a los desarrolladores de AMP cómo se comportan sus páginas de AMP respecto a la experiencia de la página con Google Search, y les proporciona comentarios prácticos sobre cómo pueden mejorarla. Si no podemos proporcionarle información práctica, utilice las indicaciones disponibles para [reportar un problema en GitHub](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue) para que nuestro equipo pueda ayudarle a comprender cómo mejorar sus páginas de AMP. Utilizamos API públicas como [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/), [Navegación segura](https://developers.google.com/safe-browsing/v4/lookup-api) y [ Pruebas de optimización para dispositivos móviles](https://search.google.com/test/mobile-friendly).
+La Guía sobre la experiencia en las Páginas AMP es una herramienta que muestra a los desarrolladores de AMP como se comportan sus Páginas AMP con respecto a la experiencia de la página con Google Search, y les proporciona comentarios prácticos sobre cómo pueden mejorarla. Si no podemos proporcionarle información práctica, utilice las indicaciones disponibles para [reportar un problema en GitHub](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue) para que nuestro equipo pueda ayudarle a comprender como mejorar sus Páginas AMP. Utilizamos API públicas como [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/), [Navegación segura](https://developers.google.com/safe-browsing/v4/lookup-api) y [Pruebas de optimización para móviles](https://search.google.com/test/mobile-friendly).

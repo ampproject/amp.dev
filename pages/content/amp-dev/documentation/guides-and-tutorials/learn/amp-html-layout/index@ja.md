@@ -1,11 +1,11 @@
 ---
-"$title": AMPHTML のレイアウトシステム
-order: '1'
+'$title': AMPHTML のレイアウトシステム
+$order: 1
 formats:
-- websites
-- email
-- stories
-- ads
+  - websites
+  - email
+  - stories
+  - ads
 teaser:
   text: '概要 '
 ---
@@ -45,7 +45,7 @@ AMP レイアウトシステムは、これに留意した上で、良好なパ�
 
 `placeholder` は、要素が構築されて最初のレイアウトが完成するとすぐに非表示になります。この時点で、要素のすべての子要素の構築と配置が適切に行われて、表示可能な状態になっており、ユーザーの入力を受け取れるようになっていることが期待されています。これがデフォルトの振る舞いです。`placeholder` をより素早く非表示にしたり、長く表示したりするなど、 各要素のデフォルトの動作をオーバーライドすることができます。
 
-要素のサイズと表示は、ランタイムによって `layout`、`width`、`height`、および `media` 属性に基づいて設定されます。レイアウトのルールはすべて、内部的に CSS wo介して実装されます。CSS スタイルを介して要素のサイズを推論できず、その子要素によってサイズ変更が不可能な場合は、すぐに利用できるサイズを定義するか、動的に挿入するかが要素に求められます。これは、この要素のサイズを変更できないということではなく、`responsive` 、`fixed-height`、`fill`、および `flex-item` レイアウトの場合には、レイアウトはそれに完全に応答するため、レンダリング中、スクロール中、ダウンロード後など、明示的なユーザーアクションがなければサイズを変更できないということです。
+要素のサイズと表示は、ランタイムによって `layout`、`width`、`height`、および `media` 属性に基づいて設定されます。レイアウトのルールはすべて、内部的に CSS wo 介して実装されます。CSS スタイルを介して要素のサイズを推論できず、その子要素によってサイズ変更が不可能な場合は、すぐに利用できるサイズを定義するか、動的に挿入するかが要素に求められます。これは、この要素のサイズを変更できないということではなく、`responsive` 、`fixed-height`、`fill`、および `flex-item` レイアウトの場合には、レイアウトはそれに完全に応答するため、レンダリング中、スクロール中、ダウンロード後など、明示的なユーザーアクションがなければサイズを変更できないということです。
 
 要素に誤った構成が適用されている場合、PROD ではまったくレンダリングされず、DEV モードではエラーの状態でランタイムによってレンダリングされます。このようなエラーには、`layout`、`width`、および `height` 属性の無効な、またはサポートされていない値などがあります。
 
@@ -68,13 +68,14 @@ AMP は、AMP コンポーネントがドキュメントレイアウト内でど
 
 [sourcecode:html]
 <amp-img
-  src="/img/amp.jpg"
-  width="1080"
-  height="610"
-  layout="responsive"
-  alt="an image"
-></amp-img>
-[/sourcecode]
+src="/img/amp.jpg"
+width="1080"
+height="610"
+layout="responsive"
+alt="an image"
+
+> </amp-img>
+> [/sourcecode]
 
 以下は、`layout` 属性でサポートされている値です。
 
@@ -137,14 +138,14 @@ AMP は、AMP コンポーネントがドキュメントレイアウト内でど
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="400"
-  height="300"
-  layout="responsive"
-  sizes="(min-width: 320px) 320px, 100vw"
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="400"
+height="300"
+layout="responsive"
+sizes="(min-width: 320px) 320px, 100vw"
+
+> </amp-img>
+> [/sourcecode]
 
 ### `disable-inline-width` <a name="disable-inline-width"></a>
 
@@ -156,15 +157,15 @@ AMP は、AMP コンポーネントがドキュメントレイアウト内でど
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="400"
-  height="300"
-  layout="responsive"
-  sizes="(min-width: 320px) 320px, 100vw"
-  disable-inline-width
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="400"
+height="300"
+layout="responsive"
+sizes="(min-width: 320px) 320px, 100vw"
+disable-inline-width
+
+> </amp-img>
+> [/sourcecode]
 
 ### `heights` <a name="heights"></a>
 
@@ -181,13 +182,13 @@ AMP は、AMP コンポーネントがドキュメントレイアウト内でど
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="320"
-  height="256"
-  heights="(min-width:500px) 200px, 80%"
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="320"
+height="256"
+heights="(min-width:500px) 200px, 80%"
+
+> </amp-img>
+> [/sourcecode]
 
 ### `media` <a name="media"></a>
 
@@ -199,20 +200,21 @@ AMP は、AMP コンポーネントがドキュメントレイアウト内でど
 
 [sourcecode:html]
 <amp-img
-  media="(min-width: 650px)"
-  src="wide.jpg"
-  width="466"
-  height="355"
-  layout="responsive"
-></amp-img>
-<amp-img
-  media="(max-width: 649px)"
-  src="narrow.jpg"
-  width="527"
-  height="193"
-  layout="responsive"
-></amp-img>
-[/sourcecode]
+media="(min-width: 650px)"
+src="wide.jpg"
+width="466"
+height="355"
+layout="responsive"
+
+> </amp-img>
+> <amp-img
+>   media="(max-width: 649px)"
+>   src="narrow.jpg"
+>   width="527"
+>   height="193"
+>   layout="responsive"
+> </amp-img>
+> [/sourcecode]
 
 ### `placeholder` <a name="placeholder"></a>
 
@@ -220,7 +222,7 @@ AMP は、AMP コンポーネントがドキュメントレイアウト内でど
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
-  <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+<amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
 [/sourcecode]
 
@@ -230,6 +232,7 @@ AMP は、AMP コンポーネントがドキュメントレイアウト内でど
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
+
   <div fallback>Cannot play animated images on this device.</div>
 </amp-anim>
 [/sourcecode]

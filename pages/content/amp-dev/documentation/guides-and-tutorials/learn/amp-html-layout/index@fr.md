@@ -1,11 +1,11 @@
 ---
-"$title": Système de mise en page AMPHTML
-order: '1'
+'$title': Système de mise en page AMPHTML
+$order: 1
 formats:
-- websites
-- email
-- stories
-- ads
+  - websites
+  - email
+  - stories
+  - ads
 teaser:
   text: 'Présentation '
 ---
@@ -33,7 +33,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-##  Présentation
+## Présentation
 
 L'objectif principal du système de mise en page est de garantir que les éléments AMP peuvent exprimer leur mise en page afin que le moteur d'exécution puisse déduire le dimensionnement des éléments avant que les ressources distantes, telles que JavaScript et les appels de données, ne soient terminées. Cela est important car cela réduit considérablement le rendu et améliore le défilement.
 
@@ -68,13 +68,14 @@ AMP fournit un ensemble de mises en page qui spécifient le comportement d'un co
 
 [sourcecode:html]
 <amp-img
-  src="/img/amp.jpg"
-  width="1080"
-  height="610"
-  layout="responsive"
-  alt="an image"
-></amp-img>
-[/sourcecode]
+src="/img/amp.jpg"
+width="1080"
+height="610"
+layout="responsive"
+alt="an image"
+
+> </amp-img>
+> [/sourcecode]
 
 Valeurs prises en charge pour l'attribut `layout` :
 
@@ -139,14 +140,14 @@ Dans l'exemple suivant, si la fenêtre est plus large que `320px`, l'image aura 
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="400"
-  height="300"
-  layout="responsive"
-  sizes="(min-width: 320px) 320px, 100vw"
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="400"
+height="300"
+layout="responsive"
+sizes="(min-width: 320px) 320px, 100vw"
+
+> </amp-img>
+> [/sourcecode]
 
 ### `disable-inline-width` <a name="disable-inline-width"></a>
 
@@ -158,15 +159,15 @@ Dans l'exemple suivant, la largeur de l'élément `<amp-img>` n'est pas affecté
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="400"
-  height="300"
-  layout="responsive"
-  sizes="(min-width: 320px) 320px, 100vw"
-  disable-inline-width
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="400"
+height="300"
+layout="responsive"
+sizes="(min-width: 320px) 320px, 100vw"
+disable-inline-width
+
+> </amp-img>
+> [/sourcecode]
 
 ### `heights` <a name="heights"></a>
 
@@ -183,13 +184,13 @@ Dans l'exemple suivant, la hauteur de l'image sera fixée par défaut à 80 % de
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="320"
-  height="256"
-  heights="(min-width:500px) 200px, 80%"
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="320"
+height="256"
+heights="(min-width:500px) 200px, 80%"
+
+> </amp-img>
+> [/sourcecode]
 
 ### `media` <a name="media"></a>
 
@@ -201,20 +202,21 @@ Dans l'exemple suivant, nous avons 2 images avec des requêtes médias mutuellem
 
 [sourcecode:html]
 <amp-img
-  media="(min-width: 650px)"
-  src="wide.jpg"
-  width="466"
-  height="355"
-  layout="responsive"
-></amp-img>
-<amp-img
-  media="(max-width: 649px)"
-  src="narrow.jpg"
-  width="527"
-  height="193"
-  layout="responsive"
-></amp-img>
-[/sourcecode]
+media="(min-width: 650px)"
+src="wide.jpg"
+width="466"
+height="355"
+layout="responsive"
+
+> </amp-img>
+> <amp-img
+>   media="(max-width: 649px)"
+>   src="narrow.jpg"
+>   width="527"
+>   height="193"
+>   layout="responsive"
+> </amp-img>
+> [/sourcecode]
 
 ### `placeholder` <a name="placeholder"></a>
 
@@ -222,7 +224,7 @@ L'attribut `placeholder` peut être défini sur n'importe quel élément HTML, p
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
-  <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+<amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
 [/sourcecode]
 
@@ -232,6 +234,7 @@ L'attribut `fallback` peut être défini sur n'importe quel élément HTML, pas 
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
+
   <div fallback>Cannot play animated images on this device.</div>
 </amp-anim>
 [/sourcecode]

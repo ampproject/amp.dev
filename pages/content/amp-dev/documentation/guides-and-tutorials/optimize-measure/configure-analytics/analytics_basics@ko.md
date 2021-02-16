@@ -1,10 +1,10 @@
 ---
-"$title": 'Analytics: the basics'
-"$order": '0'
+'$title': 'Analytics: the basics'
+$order: 0
 description: AMP는 분석 및 측정용으로 amp-pixel 및 amp-analytics라는 두 가지 컴포넌트를 제공합니다. 두 가지 옵션 모두 애널리틱스 데이터를 정의된 엔드포인트로 전송합니다.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 ---
 
 AMP 애널리틱스의 기초에 관해 알아보세요.
@@ -44,25 +44,28 @@ AMP 플랫폼 통합의 일환으로 공급업체는 사전 정의된 [`amp-anal
 단순한 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 구성을 생성하려면 우선 `custom-element` 선언을 AMP 문서의 `<head>`에 삽입해야 합니다([컴포넌트 삽입 선언](../../../../documentation/components/index.html) 참조).
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script
+  async
+  custom-element="amp-analytics"
+  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+></script>
 ```
 
 다음의 예는 [`amp-pixel` 예시](../../../../documentation/components/reference/amp-pixel.md)와 유사합니다. 페이지가 표시될 때마다 트리거 이벤트가 시작되며 페이지 조회수 데이터가 임의의 ID로 정의된 URL에 전송됩니다.
 
 ```html
 <amp-analytics>
+  <script type="application/json">
 
-<script type="application/json">
+      {"requests":
+        {"pageview": "https://foo.com/pixel?RANDOM
+      ", },"triggers":
+        {"trackPageview":
+          {"on": "visible",
+          "request": "pageview"
 
-  {"requests":
-    {"pageview": "https://foo.com/pixel?RANDOM
-  ", },"triggers":
-    {"trackPageview":
-      {"on": "visible",
-      "request": "pageview"
-
-} } }</script>
-
+    } } }
+  </script>
 </amp-analytics>
 ```
 
@@ -86,43 +89,39 @@ AMP 애널리틱스를 활용하면 어떤 애널리틱스 공급업체를 사�
 
 ```html
 <amp-analytics type="gtag" data-credentials="include">
- <script type="application/json">
-  {
-    "vars": {
-      "gtag_id":"YOUR_GOOGLE_ANALYTICS_ID",
-      "config": {
-        "YOUR_GOOGLE_ANALYTICS_ID": {
-          "groups":"default"
-        }
-      }
-    },
-    "triggers": {
-      "storyProgress": {
-        "on":"story-page-visible",
-        "vars": {
-          "event_name":"custom",
-          "event_action":"story_progress",
-          "event_category":"${title}",
-          "event_label":"${storyPageId}",
-          "send_to": [
-            "YOUR_GOOGLE_ANALYTICS_ID"
-          ]
+  <script type="application/json">
+    {
+      "vars": {
+        "gtag_id": "YOUR_GOOGLE_ANALYTICS_ID",
+        "config": {
+          "YOUR_GOOGLE_ANALYTICS_ID": {
+            "groups": "default"
+          }
         }
       },
-      "storyEnd": {
-        "on":"story-last-page-visible",
-        "vars": {
-          "event_name":"custom",
-          "event_action":"story_complete",
-          "event_category":"${title}",
-          "send_to": [
-            "YOUR_GOOGLE_ANALYTICS_ID"
-          ]
+      "triggers": {
+        "storyProgress": {
+          "on": "story-page-visible",
+          "vars": {
+            "event_name": "custom",
+            "event_action": "story_progress",
+            "event_category": "${title}",
+            "event_label": "${storyPageId}",
+            "send_to": ["YOUR_GOOGLE_ANALYTICS_ID"]
+          }
+        },
+        "storyEnd": {
+          "on": "story-last-page-visible",
+          "vars": {
+            "event_name": "custom",
+            "event_action": "story_complete",
+            "event_category": "${title}",
+            "send_to": ["YOUR_GOOGLE_ANALYTICS_ID"]
+          }
         }
       }
     }
-  }
- </script>
+  </script>
 </amp-analytics>
 ```
 
@@ -137,7 +136,9 @@ AMP 애널리틱스를 활용하면 어떤 애널리틱스 공급업체를 사�
 <a><code data-md-type="codespan">amp-pixel</code></a> 및 <a><code data-md-type="codespan">amp-analytics</code></a> 컴포넌트는 모든 표준 URL 변수 대체을 허용합니다(<a class="" href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">AMP HTML 변수 대체</a> 참조). 다음 예시에서는 페이지 조회수 요청이 URL로 전송되며, 현재 AMP 문서의 기본 URL, 제목, <a class="" href="https://gitlocalize.com/repo/4863/ko/pages/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md#user-identification">클라이언트 ID</a>도 함께 전송됩니다.
 
 ```html
-<amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
+<amp-pixel
+  src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"
+></amp-pixel>
 ```
 
 <a><code>amp-pixel</code></a> 태그는 간소하므로 플랫폼에서 정의된 변수나 AMP 런타임이 AMP 페이지에서 파싱할 수 있는 변수만 삽입될 수 있습니다. 상단 예시의 경우 플랫폼에서 <code>canonicalURL</code> 및 <code>clientId(site-user-id)</code> 값이 채워집니다. <a><code>amp-analytics</code></a> 태그에는 <a><code>amp-pixel</code></a>과 동일한 변수 및 태그 구성 내에 고유하게 정의된 변수를 삽입할 수 있습니다.
@@ -151,10 +152,10 @@ AMP 애널리틱스를 활용하면 어떤 애널리틱스 공급업체를 사�
   <script type="application/json">
     {
       "requests": {
-        "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
       },
       "vars": {
-        "account":"ABC123"
+        "account": "ABC123"
       },
       "triggers": {
         "someEvent": {
@@ -187,7 +188,9 @@ AMP 애널리틱스를 활용하면 어떤 애널리틱스 공급업체를 사�
 예시는 다음과 같습니다.
 
 ```html
-<amp-pixel src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"></amp-pixel>
+<amp-pixel
+  src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"
+></amp-pixel>
 ```
 
 이 쿠키가 설정된 것으로 AMP에서 확인되면 클라이언트 ID 대체를 통해 쿠키값이 반환됩니다. 이 쿠키가 설정되지 않은 것으로 AMP에서 확인된 경우 AMP는 `amp-` 및 base64로 인코딩된 임의의 문자열 형식을 갖춘 값을 생성합니다.

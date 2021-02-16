@@ -1,10 +1,10 @@
 ---
-"$title": Membuat Cerita Web pertama Anda
-"$order": '0'
+'$title': Membuat Cerita Web pertama Anda
+$order: 0
 description: Di dalam tutorial ini, kami akan memperkenalkan komponen amp-story, yang dapat Anda gunakan untuk membuat Cerita Web yang menarik secara visual dengan AMP. Pada akhir tutorial ini, Anda akan ....
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- stories
+  - stories
 author: bpaduch
 ---
 

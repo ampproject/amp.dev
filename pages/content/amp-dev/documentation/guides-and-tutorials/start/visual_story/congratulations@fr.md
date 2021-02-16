@@ -1,7 +1,7 @@
 ---
-"$title": Félicitations !
-"$order": '9'
-description: 'Vous avez terminé avec succès votre première story AMP ! Dans ce tutoriel, vous avez appris à : - Créer une story de plusieurs pages à l''aide du composant amp-story'
+'$title': Félicitations !
+$order: 9
+description: "Vous avez terminé avec succès votre première story AMP ! Dans ce tutoriel, vous avez appris à : - Créer une story de plusieurs pages à l'aide du composant amp-story"
 author: bpaduch
 ---
 

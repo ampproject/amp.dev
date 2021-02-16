@@ -1,11 +1,11 @@
 ---
-"$title": Sistema de diseño AMPHTML
-order: '1'
+'$title': Sistema de diseño AMPHTML
+$order: 1
 formats:
-- websites
-- email
-- stories
-- ads
+  - websites
+  - email
+  - stories
+  - ads
 teaser:
   text: 'Información general '
 ---
@@ -53,7 +53,7 @@ Si el elemento se configuró de forma incorrecta ni siquiera se renderizará con
 
 ### `width` y `height` <a name="width-and-height"></a>
 
-Dependiendo del valor en el atributo `layout`, los elementos asociados a un componente AMP deben tener uns atributos  `width` y `height` que contengan un valor de pixel como un número entero. El comportamiento real de un diseño se determina por el atributo `layout` como se describe a continuación.
+Dependiendo del valor en el atributo `layout`, los elementos asociados a un componente AMP deben tener uns atributos `width` y `height` que contengan un valor de pixel como un número entero. El comportamiento real de un diseño se determina por el atributo `layout` como se describe a continuación.
 
 En algunos casos, si no se especifica `width` o `height`, el tiempo de ejecución de AMP puede predeterminar estos valores de la siguiente manera:
 
@@ -68,13 +68,14 @@ AMP proporciona un conjunto de diseños en los que se especifica cómo se compor
 
 [sourcecode:html]
 <amp-img
-  src="/img/amp.jpg"
-  width="1080"
-  height="610"
-  layout="responsive"
-  alt="an image"
-></amp-img>
-[/sourcecode]
+src="/img/amp.jpg"
+width="1080"
+height="610"
+layout="responsive"
+alt="an image"
+
+> </amp-img>
+> [/sourcecode]
 
 Valores compatibles para el atributo `layout`:
 
@@ -131,7 +132,7 @@ Valores compatibles para el atributo `layout`:
 
 Todos los elementos de AMP compatibles con el diseño `responsive` también admiten el atributo `sizes`. El valor que toma este atributo se expresa en los tamaños como se describe en [img sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), no obstante se extiende a todos los elementos y no solo a las imágenes. En conclusión, en el atributo `sizes` se describe cómo se calcula el ancho de un elemento con base en las condiciones asociadas a los medios.
 
-En el momento que se realizan las especificaciones  en el atributo `sizes` junto con `width` y `height`, el `layout` se establece de forma predeterminada como `responsive`.
+En el momento que se realizan las especificaciones en el atributo `sizes` junto con `width` y `height`, el `layout` se establece de forma predeterminada como `responsive`.
 
 **Ejemplo**: Usando el atributo `sizes`
 
@@ -139,14 +140,14 @@ En el siguiente ejemplo, la imagen tendrá 320 px de ancho si la ventana de visu
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="400"
-  height="300"
-  layout="responsive"
-  sizes="(min-width: 320px) 320px, 100vw"
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="400"
+height="300"
+layout="responsive"
+sizes="(min-width: 320px) 320px, 100vw"
+
+> </amp-img>
+> [/sourcecode]
 
 ### `disable-inline-width` <a name="disable-inline-width"></a>
 
@@ -158,15 +159,15 @@ En el siguiente ejemplo, no se modifica el ancho en el elemento `<amp-img>` y `s
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="400"
-  height="300"
-  layout="responsive"
-  sizes="(min-width: 320px) 320px, 100vw"
-  disable-inline-width
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="400"
+height="300"
+layout="responsive"
+sizes="(min-width: 320px) 320px, 100vw"
+disable-inline-width
+
+> </amp-img>
+> [/sourcecode]
 
 ### `heights` <a name="heights"></a>
 
@@ -183,13 +184,13 @@ En el siguiente ejemplo, la altura de la imagen se predeterminará al 80% del an
 
 [sourcecode:html]
 <amp-img
-  src="https://acme.org/image1.png"
-  width="320"
-  height="256"
-  heights="(min-width:500px) 200px, 80%"
->
-</amp-img>
-[/sourcecode]
+src="https://acme.org/image1.png"
+width="320"
+height="256"
+heights="(min-width:500px) 200px, 80%"
+
+> </amp-img>
+> [/sourcecode]
 
 ### `media` <a name="media"></a>
 
@@ -201,20 +202,21 @@ En el siguiente ejemplo, se muestran 2 imágenes con consultas de medios mutuame
 
 [sourcecode:html]
 <amp-img
-  media="(min-width: 650px)"
-  src="wide.jpg"
-  width="466"
-  height="355"
-  layout="responsive"
-></amp-img>
-<amp-img
-  media="(max-width: 649px)"
-  src="narrow.jpg"
-  width="527"
-  height="193"
-  layout="responsive"
-></amp-img>
-[/sourcecode]
+media="(min-width: 650px)"
+src="wide.jpg"
+width="466"
+height="355"
+layout="responsive"
+
+> </amp-img>
+> <amp-img
+>   media="(max-width: 649px)"
+>   src="narrow.jpg"
+>   width="527"
+>   height="193"
+>   layout="responsive"
+> </amp-img>
+> [/sourcecode]
 
 ### `placeholder` <a name="placeholder"></a>
 
@@ -222,7 +224,7 @@ El atributo `placeholder` puede establecerse en cualquier elemento HTML, no solo
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
-  <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+<amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
 [/sourcecode]
 
@@ -232,6 +234,7 @@ El atributo `fallback` se puede configurar en cualquier elemento HTML, no solo e
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
+
   <div fallback>Cannot play animated images on this device.</div>
 </amp-anim>
 [/sourcecode]

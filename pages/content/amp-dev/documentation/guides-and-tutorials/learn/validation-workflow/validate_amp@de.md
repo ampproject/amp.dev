@@ -1,16 +1,16 @@
 ---
-"$title": Validierung von AMP Seiten
-"$order": '0'
+'$title': Validierung von AMP Seiten
+$order: 0
 description: 'Sieh dir dieses Video über die verfügbaren Validierungsmethoden an. AMP besitzt mehrere Hauptstärken: Deine Seiten sind nicht nur schnell, sondern deine …'
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 ---
 
 [video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='Sieh dir dieses Video über die verfügbaren Validierungsmethoden an.']
 
-AMP besitzt mehrere Hauptstärken: Deine Seiten sind nicht nur schnell, sondern deine schnellen Seiten können auch *validiert* werden. Dies bietet Dritten wie Twitter, Instagram oder der Google-Suche großartige Möglichkeiten, ihren Lesern AMP Seiten auf immer interessantere Arten bereitzustellen.
+AMP besitzt mehrere Hauptstärken: Deine Seiten sind nicht nur schnell, sondern deine schnellen Seiten können auch _validiert_ werden. Dies bietet Dritten wie Twitter, Instagram oder der Google-Suche großartige Möglichkeiten, ihren Lesern AMP Seiten auf immer interessantere Arten bereitzustellen.
 
 ## Wie überprüfe ich, ob meine Seite für AMP gültig ist?
 
@@ -82,14 +82,15 @@ var fs = require('fs');
 amphtmlValidator.getInstance().then(function (validator) {
   var input = fs.readFileSync('index.html', 'utf8');
   var result = validator.validateString(input);
-  ((result.status === 'PASS') ? console.log : console.error)(result.status);
+  (result.status === 'PASS' ? console.log : console.error)(result.status);
   for (var ii = 0; ii < result.errors.length; ii++) {
     var error = result.errors[ii];
-    var msg = 'line ' + error.line + ', col ' + error.col + ': ' + error.message;
+    var msg =
+      'line ' + error.line + ', col ' + error.col + ': ' + error.message;
     if (error.specUrl !== null) {
       msg += ' (see ' + error.specUrl + ')';
     }
-    ((error.severity === 'ERROR') ? console.error : console.warn)(msg);
+    (error.severity === 'ERROR' ? console.error : console.warn)(msg);
   }
 });
 ```
@@ -103,18 +104,18 @@ const gulp = require('gulp');
 const gulpAmpValidator = require('gulp-amphtml-validator');
 
 const paths = {
-  src: 'src/*.html'
+  src: 'src/*.html',
 };
 
 gulp.task('amphtml:validate', () => {
-  return gulp.src(paths.src)
+  return gulp
+    .src(paths.src)
     .pipe(gulpAmpValidator.validate())
     .pipe(gulpAmpValidator.format())
     .pipe(gulpAmpValidator.failAfterError());
 });
 
-gulp.task('default', ['amphtml:validate'], function () {
-});
+gulp.task('default', ['amphtml:validate'], function () {});
 ```
 
 ### Befehlszeilentool
@@ -158,12 +159,12 @@ Zu den zusätzlichen Funktionen des Befehlszeilentools gehören u. a.: Deaktivie
 [sourcecode:console]
 $ amphtml-validator --help
 
-  Usage: index [options] <fileOrUrlOrMinus...>
+Usage: index [options] <fileOrUrlOrMinus...>
 
-  Validates the files or urls provided as arguments. If "-" is
-  specified, reads from stdin instead.
+Validates the files or urls provided as arguments. If "-" is
+specified, reads from stdin instead.
 
-  Options:
+Options:
 
     -h, --help                  output usage information
     -V, --version               output the version number
@@ -178,6 +179,7 @@ $ amphtml-validator --help
               supporting color).
       "json"  emits json corresponding to the ValidationResult
               message in validator.proto.
+
 [/sourcecode]
 
 ## Was passiert, wenn meine Seite nicht gültig ist?
@@ -198,15 +200,9 @@ Es generiert diesen AMP Validierungsfehler, der in den folgenden Tools angezeigt
 
 - Entwicklerkonsole des Browsers <br><amp-img src="/static/img/docs/validator_console_imgerror.png"         width="696" height="30" layout="responsive"         alt="AMP error: The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'? line 11, column 2"></amp-img>
 
-
-
 - Webschnittstelle <br><amp-img src="/static/img/docs/validator_webui_imgerror.png"         width="676" height="58" layout="responsive"         alt="AMP error: The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'? line 11, column 2"></amp-img>
 
-
-
 - Browsererweiterung <br><amp-img src="/static/img/docs/validator_extension_imgerror.png"        width="724" height="108" layout="responsive"    alt="AMP error: The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'? line 11, column 2"></amp-img>
-
-
 
 Jedes Tool bietet mehrere Informationen:
 

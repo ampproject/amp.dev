@@ -1,11 +1,11 @@
 ---
-"$title": Dùng một Bộ tối ưu hoá AMP
-"$order": '2'
-"$hidden": 'true'
+'$title': Dùng một Bộ tối ưu hoá AMP
+$order: 2
+'$hidden': 'true'
 description: Bộ tối ưu hoá AMP là công cụ mang đến những tác vụ tối ưu hoá Bộ nhớ đệm AMP cho website của chính bạn. Dùng một Bộ tối ưu hoá AMP là chìa khoá để tạo một trải nghiệm trang web thật tuyệt và đáp ứng quy định Core Web Vitals (Chỉ số thiết yếu về web). Những hướng dẫn này sẽ giải thích cách vận dụng tốt nhất một Bộ tối ưu hoá AMP để tối ưu hoá những trang AMP của bạn.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

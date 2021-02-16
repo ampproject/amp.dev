@@ -1,12 +1,12 @@
 ---
-"$title": Jenis dokumentasi
-"$order": '1'
+'$title': Jenis dokumentasi
+$order: 1
 description: Jenis kontribusi dokumentasi yang diterima di amp.dev
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 toc: 'false'
 ---

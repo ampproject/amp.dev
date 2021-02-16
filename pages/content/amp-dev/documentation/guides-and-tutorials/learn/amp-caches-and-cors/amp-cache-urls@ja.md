@@ -1,14 +1,14 @@
 ---
-"$title": AMP キャッシュ URL 形式とリクエスト処理
-"$order": '9'
+'$title': AMP キャッシュ URL 形式とリクエスト処理
+$order: 9
 toc: 'false'
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 author: Gregable
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 このドキュメントでは、AMP キャッシュの URL 形式とリクエストの処理方法について学習します。
@@ -164,9 +164,9 @@ AMP キャッシュの URL の “path” は必ず、`/c` などの 1 つ以上
 - `/wp` - ウェブパッケージ（<strong>W</strong>eb <strong>P</strong>ackage）: ウェブパッケージ技術の [Signed Exchange](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/signed-exchange/) として AMP ドキュメントを配信します。これらの URL はサイト運営者の独自のオリジンへのリダイレクトとして動作します。
 - `/cert` - 証明書（<strong>Cert</strong>ificate）: [Signed Exchange](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/signed-exchange/) と使用する公開証明書です。
 - `/i` - 画像（<strong>I</strong>mage）: 通常、ドキュメントサブリソースとして AMP キャッシュが配信する画像です。
-- `/ii` - 画像（<strong>I</strong>mage）: これも AMP キャッシュが配信する画像ですが、通常、ドキュメントが要求している maximum-width を指定する `/ii/w800` などのcache-configuring パラメータと組み合わされることができます。キャッシュは、ブラウザの帯域幅を節約するために、異なるスケールの画像を生成できます。
+- `/ii` - 画像（<strong>I</strong>mage）: これも AMP キャッシュが配信する画像ですが、通常、ドキュメントが要求している maximum-width を指定する `/ii/w800` などの cache-configuring パラメータと組み合わされることができます。キャッシュは、ブラウザの帯域幅を節約するために、異なるスケールの画像を生成できます。
 
-さらに、AMP キャッシュは、サイト運営者のドキュメントクエリの一部ではない特別なクエリパラメータをドキュメント URL にアペンドすることがあります。たとえば、[`<amp-live-list>`](../../../components/reference/amp-live-list.md) は、パラメータ `amp_latest_update_time<` をしよしてドキュメントをフェッチすることで、リクエストを再読み込みします。これらのパラm-恵田は、ドキュメントがクロールされる際にオリジンに渡されませんが、AMP キャッシュへのリクエストを構成するためにのみ存在します。
+さらに、AMP キャッシュは、サイト運営者のドキュメントクエリの一部ではない特別なクエリパラメータをドキュメント URL にアペンドすることがあります。たとえば、[`<amp-live-list>`](../../../components/reference/amp-live-list.md) は、パラメータ `amp_latest_update_time<` をしよしてドキュメントをフェッチすることで、リクエストを再読み込みします。これらのパラ m-恵田は、ドキュメントがクロールされる際にオリジンに渡されませんが、AMP キャッシュへのリクエストを構成するためにのみ存在します。
 
 ## CORS オリジン
 

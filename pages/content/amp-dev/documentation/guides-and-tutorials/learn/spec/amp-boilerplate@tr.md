@@ -1,9 +1,9 @@
 ---
-"$title": AMP Standart Metin Kodu
-order: '9'
+'$title': AMP Standart Metin Kodu
+$order: 9
 formats:
-- websites
-- stories
+  - websites
+  - stories
 teaser:
   text: head > style[amp-boilerplate] ve noscript > style[amp-boilerplate]
 ---

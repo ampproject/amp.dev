@@ -1,11 +1,11 @@
 ---
-"$title": تكوين التحليلات
-"$order": '5'
-"$hidden": 'true'
+'$title': تكوين التحليلات
+$order: 5
+'$hidden': 'true'
 description: إذا كنت تستخدم Google Analytics كموفر للتحليلات، فتعرّف على كيفية إعداد Google Analytics الأساسية لـ AMP وكيفية ربط محتوى AMP والمحتوى الذي لا يدعم AMP باستخدام Client ID
 formats:
-- websites
-- stories
+  - websites
+  - stories
 ---
 
 [tip] <strong>تلميح –</strong> إذا كنت تستخدم Google Analytics كموفر التحليلات الخاص بك، فتعلم <a>كيفية إعداد تحليلات Google Analytics الأساسية لـ AMP</a>، و<a>كيفية ربط محتوى AMP والمحتوى غير المدعوم من AMP باستخدام معرف العميل</a>. [/tip]

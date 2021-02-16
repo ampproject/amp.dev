@@ -1,10 +1,10 @@
 ---
-"$title": Create your first Web Story
-"$order": '0'
+'$title': Create your first Web Story
+$order: 0
 description: Neste tutorial, veremos o componente amp-story. Use esse componente para criar histórias AMP com um visual que estimula o engajamento. Ao final deste tutorial, você ...
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- stories
+  - stories
 author: bpaduch
 ---
 

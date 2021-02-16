@@ -1,10 +1,10 @@
 ---
-"$title": سجل توزيع المرسل
-"$order": '1'
+'$title': سجل توزيع المرسل
+$order: 1
 description: سجل توزيع المرسل لرسائل AMP الإلكترونية
-"$category": Start
+'$category': Start
 formats:
-- email
+  - email
 author: CrystalOnScript
 ---
 

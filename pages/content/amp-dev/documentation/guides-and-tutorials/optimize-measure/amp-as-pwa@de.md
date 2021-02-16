@@ -1,12 +1,12 @@
 ---
-"$title": Einfacher Offlinezugriff und verbesserte Leistung
-"$order": '11'
+'$title': Einfacher Offlinezugriff und verbesserte Leistung
+$order: 11
 description: Ein Service Worker ist ein clientseitiger Proxy, der sich zwischen deiner Seite und deinem Server befindet. Er wird verwendet, um fantastische Offline Erlebnisse und …
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 contributors:
-- pbakaus
+  - pbakaus
 ---
 
 [Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) ermöglichen umfassende Offline Erlebnisse und eine konsistente Benutzererfahrung, unabhängig von der Netzwerkstärke. Da Ressourcen im Browser zwischengespeichert werden, kann eine Web App den Benutzer Daten, Assets und Offlineseiten bereitstellen, um sie zu unterhalten und zu informieren.
@@ -51,11 +51,11 @@ Wenn du das hier liest, erstellst du mit Sicherheit Seiten mit AMP. Das AMP Team
 
 Installiere mit wenigen Schritten den AMP Service Worker:
 
-- [sourcecode:js]  importScripts('https://cdn.ampproject.org/sw/amp-sw.js');  [/sourcecode]
+- [sourcecode:js] importScripts('https://cdn.ampproject.org/sw/amp-sw.js'); [/sourcecode]
 
 - [sourcecode:js]
-      AMP_SW.init();
-      [/sourcecode]
+  AMP_SW.init();
+  [/sourcecode]
 
 - Fertig.
 

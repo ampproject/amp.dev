@@ -1,8 +1,8 @@
 ---
-"$title": ميزات CSS المدعومة في AMP للبريد الإلكتروني
-order: '5'
+'$title': ميزات CSS المدعومة في AMP للبريد الإلكتروني
+$order: 5
 formats:
-- email
+  - email
 teaser:
   text: يوضح هذا المستند ميزات CSS المدعومة حاليًا داخل رسائل AMP الإلكترونية.
 toc: 'true'
@@ -327,13 +327,13 @@ limitations under the License.
 
 تتضمن خواص CSS التالية خواصًا إضافية:
 
-الخاصية | القيود
---- | ---
-[`cursor`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor) | القيم المسموح بها هي `pointer` و`initial` فقط.
-[`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) | غير مسموح بـ `url()`.
-[`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) | يمكن عمل رسوم متحركة لـ `opacity` و`transform` و`visibility` و`offset-distance` فقط.
-[`visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) | القيم المسموح بها هي `hidden` و`visible` و`initial` فقط.
-[`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index) | القيم فقط بين -100 و100 غير مسموح بها.
+| الخاصية                                                                     | القيود                                                                               |
+| --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| [`cursor`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor)         | القيم المسموح بها هي `pointer` و`initial` فقط.                                       |
+| [`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)         | غير مسموح بـ `url()`.                                                                |
+| [`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) | يمكن عمل رسوم متحركة لـ `opacity` و`transform` و`visibility` و`offset-distance` فقط. |
+| [`visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) | القيم المسموح بها هي `hidden` و`visible` و`initial` فقط.                             |
+| [`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)       | القيم فقط بين -100 و100 غير مسموح بها.                                               |
 
 ## قواعد At<a name="at-rules"></a>
 
@@ -348,14 +348,14 @@ limitations under the License.
 قائمة [ميزات الوسائط](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#Media_features) المدعومة لتطبيق القواعد المشروط عن طريق استعلامات `@media`.
 
 - [`device-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-width)
-    - `max-device-width`
-    - `min-device-width`
+  - `max-device-width`
+  - `min-device-width`
 - [`hover`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover)
 - [`orientation`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/orientation)
 - [`pointer`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer)
 - [`resolution`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/resolution)
-    - `max-resolution`
-    - `min-resolution`
+  - `max-resolution`
+  - `min-resolution`
 - [`width`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/width)
-    - `max-width`
-    - `min-width`
+  - `max-width`
+  - `min-width`

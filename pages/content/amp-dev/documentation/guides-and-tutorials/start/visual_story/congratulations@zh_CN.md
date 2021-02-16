@@ -1,6 +1,6 @@
 ---
-"$title": Congratulations!
-"$order": '9'
+'$title': Congratulations!
+$order: 9
 description: 您已成功完成了您的首个 AMP 故事！在本教程中，您学会了： - 使用 amp-story 组件创建一个多页故事
 author: bpaduch
 ---

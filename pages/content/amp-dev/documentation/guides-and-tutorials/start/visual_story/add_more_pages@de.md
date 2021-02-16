@@ -1,6 +1,6 @@
 ---
-"$title": Weitere Seiten hinzufügen
-"$order": '5'
+'$title': Weitere Seiten hinzufügen
+$order: 5
 description: Da du mit dem Hinzufügen einer Seite zu einer Web Story nun vertraut bist, sollte dir das Hinzufügen der nächsten Seiten in unserer Story "The Joy of Pets" nicht schwerfallen.
 author: bpaduch
 ---

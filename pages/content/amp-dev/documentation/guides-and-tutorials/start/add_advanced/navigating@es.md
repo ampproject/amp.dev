@@ -1,6 +1,6 @@
 ---
-"$title": Navegación por su sitio
-"$order": '5'
+'$title': Navegación por su sitio
+$order: 5
 description: La mayoría de los sitios web para móviles incluyen un menú de navegación del sitio. Estos menús pueden tener muchas formas diferentes. En este tutorial, veremos los siguientes ejemplos para...
 ---
 
@@ -18,9 +18,14 @@ Trate de **reemplazar** su etiqueta `<header>` con esta versión que incluye un 
 ```html
 <header class="headerbar">
   <a href="homepage.html">
-    <amp-img class="home-button" src="icons/home.png" width="36" height="36"></amp-img>
+    <amp-img
+      class="home-button"
+      src="icons/home.png"
+      width="36"
+      height="36"
+    ></amp-img>
   </a>
- <div class="site-name">News Site</div>
+  <div class="site-name">News Site</div>
 </header>
 ```
 
@@ -62,25 +67,39 @@ Una técnica de navegación común es agregar un icono de menú en el que al hac
 Primero, debemos **agregar** el componente [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) de JavaScript a la etiqueta `<head>`:
 
 ```html
-<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+<script
+  async
+  custom-element="amp-sidebar"
+  src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"
+></script>
 ```
 
 A continuación, queremos mostrar un icono de menú. Cuando se pulse el icono, se abrirá la barra lateral. **Reemplace** el `<header>` con el código siguiente para mostrar un icono de ["hamburguesa"](https://en.wikipedia.org/wiki/Hamburger_button) en vez de un icono de inicio:
 
 ```html
 <header class="headerbar">
-  <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
+  <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">
+    ☰
+  </div>
   <div class="site-name">News Site</div>
 </header>
 ```
 
-En el código anterior,  `toggle` la barra lateral mediante el atributo de acción [`on`](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) en el elemento <code>amp-sidebar</code>, que se identifica con el ID `sidebar1`. Agreguemos la barra lateral.
+En el código anterior, `toggle` la barra lateral mediante el atributo de acción [`on`](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) en el elemento <code>amp-sidebar</code>, que se identifica con el ID `sidebar1`. Agreguemos la barra lateral.
 
 **Agregue** el siguiente HTML justo después del `</header>`:
 
 ```html
 <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
-  <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
+  <div
+    role="button"
+    aria-label="close sidebar"
+    on="tap:sidebar1.toggle"
+    tabindex="0"
+    class="close-sidebar"
+  >
+    ✕
+  </div>
   <ul class="sidebar">
     <li><a href="#">Example 1</a></li>
     <li><a href="#">Example 2</a></li>
@@ -103,7 +122,7 @@ Por último, **agregue** estas reglas de estilo a su CSS:
 }
 .sidebar > li {
   list-style: none;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 .sidebar a {
   text-decoration: none;

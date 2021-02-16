@@ -1,10 +1,10 @@
 ---
-"$title": AMP 이메일 테스트
-"$order": '2'
-"$category": Develop
+'$title': AMP 이메일 테스트
+$order: 2
+'$category': Develop
 description: AMP 이메일을 대량 발송하기 전 테스트하여 우수한 사용자 경험을 확인합니다.
 formats:
-- email
+  - email
 author: fstanis
 ---
 

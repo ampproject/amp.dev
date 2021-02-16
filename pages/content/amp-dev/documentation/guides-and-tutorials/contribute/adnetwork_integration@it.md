@@ -1,9 +1,9 @@
 ---
-"$title": Integrazione con contenuti  AMP per pubblicare annunci
-"$order": '5'
+'$title': Integrazione con contenuti  AMP per pubblicare annunci
+$order: 5
 description: Questa guida si rivolge ai fornitori di reti per inserzionisti, che desiderano integrare contenuti AMP per la pubblicazione di annunci su pagine AMP.
 formats:
-- ads
+  - ads
 ---
 
 Questa guida si rivolge ai fornitori di reti per inserzionisti, che desiderano integrare contenuti AMP per la pubblicazione di annunci su pagine AMP.
@@ -30,11 +30,14 @@ In qualità di fornitore di server per annunci, gli editori da te supportati dis
 Ad esempio, il server Amazon A9 può essere richiamato con la seguente sintassi:
 
 ```html
-<amp-ad width="300" height="250"
-    type="a9"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  width="300"
+  height="250"
+  type="a9"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 

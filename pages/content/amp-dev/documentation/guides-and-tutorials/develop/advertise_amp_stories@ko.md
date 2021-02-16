@@ -1,9 +1,9 @@
 ---
-"$title": 웹 스토리 광고
-"$order": '3'
+'$title': 웹 스토리 광고
+$order: 3
 description: 웹 스토리는 독자가 콘텐츠에 몰입하도록 유도하는 탭 가능한 전면 경험입니다. AMP 스토리 광고를 활용한 광고는 원활하고 주의를 분산시키지 않는...
 formats:
-- stories
+  - stories
 author: CrystalOnScript
 ---
 
@@ -43,17 +43,17 @@ author: CrystalOnScript
 
 [sourcecode:html]
 <amp-story>
-  <amp-story-auto-ads>
-    <script type="application/json">
-      {
-        "ad-attributes": {
-          // ad server configuration
-        }
-      }
-    </script>
-  </amp-story-auto-ads>
-  <amp-story-page>
-  ...
+<amp-story-auto-ads>
+<script type="application/json">
+{
+"ad-attributes": {
+// ad server configuration
+}
+}
+</script>
+</amp-story-auto-ads>
+<amp-story-page>
+...
 </amp-story>
 [/sourcecode]
 
@@ -66,8 +66,8 @@ author: CrystalOnScript
 현재 웹 스토리 광고를 지원하는 광고 서버:
 
 - Google Ad Manager <a name="google-ad-manager"></a>
-    - [직접 판매된 광고](https://support.google.com/admanager/answer/9038178)
-    - [프로그래매틱 광고](https://support.google.com/admanager/answer/9416436)
+  - [직접 판매된 광고](https://support.google.com/admanager/answer/9038178)
+  - [프로그래매틱 광고](https://support.google.com/admanager/answer/9416436)
 - Google AdSense 지원 예정
 - 기타 광고 플랫폼 통합 가능([Github를 통해 자세한 내용](https://github.com/ampproject/amphtml/issues/30769)을 문의하세요)
 

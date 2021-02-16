@@ -1,11 +1,11 @@
 ---
-"$title": "Analytics'i Yapılandırma"
-"$order": '5'
-"$hidden": 'true'
+'$title': "Analytics'i Yapılandırma"
+$order: 5
+'$hidden': 'true'
 description: "Analitik sağlayıcınız olarak Google Analytics'i kullanıyorsanız, AMP için temel Google Analytics'i nasıl kuracağınızı ve İstemci Kimliği kullanarak AMP ve AMP olmayan içeriği nasıl bağlayacağınızı öğrenin..."
 formats:
-- websites
-- stories
+  - websites
+  - stories
 ---
 
 [tip] **İPUCU -** Analitik sağlayıcınız olarak Google Analytics'i kullanıyorsanız, [AMP için temel Google Analytics'i](https://developers.google.com/analytics/devguides/collection/amp-analytics/#basic_setup_to_measure_page_views) [nasıl kuracağınızı ve İstemci Kimliği kullanarak AMP ve AMP olmayan içeriği nasıl bağlayacağınızı öğrenin](https://support.google.com/analytics/answer/7486764). [/tip]

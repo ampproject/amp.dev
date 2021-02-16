@@ -1,14 +1,14 @@
 ---
-"$title": AMP 캐시 URL 형식 및 요청 처리
-"$order": '9'
+'$title': AMP 캐시 URL 형식 및 요청 처리
+$order: 9
 toc: 'false'
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 author: Gregable
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 이번 문서에서는 AMP 캐시 URL 형식 및 요청 처리 방법을 알아볼 예정입니다.
@@ -17,7 +17,7 @@ contributors:
 
 가능한 경우 Google AMP 캐시는 각 AMP 문서 도메인을 먼저 [IDN(퓨니코드)](https://en.wikipedia.org/wiki/Punycode)에서 UTF-8으로 변환하여 서브도메인을 생성합니다. 캐시는 모든 `-`(대시 1개)를 `--`(대시 2개)로 교체하며 모든 `.`(마침표)를 `-`(대시)로 교체합니다. 예를 들어 `pub.com`은 `pub-com.cdn.ampproject.org`로 매핑됩니다.
 
- URL 계산기를 활용하여 URL을 AMP 캐시 버전으로 변환할 수 있습니다.
+URL 계산기를 활용하여 URL을 AMP 캐시 버전으로 변환할 수 있습니다.
 
 <div><amp-iframe title="AMP Cache tool" height="104" layout="fixed-height" sandbox="allow-scripts" src="/static/samples/files/amp-url-converter.html?url=https://amp.dev/index.amp.html">
   <div placeholder></div></amp-iframe></div>
@@ -162,7 +162,7 @@ AMP 캐시의 URL 경로는 항상 하나 이상의 접두어(예: `/c`) 디렉�
 - `/c` - <strong>C</strong>ontent(콘텐츠): 일부 인터페이스에 직접 연결될 수 있는 스탠드얼론 페이지로 제공되는 AMP 문서입니다.
 - `/v` - <strong>V</strong>iewer(뷰어): 마찬가지로 AMP 문서이지만, 검색 결과 페이지 또는 기타 인터페이스에서 AMP 문서를 표시하는 프레임 환경인 [AMP 뷰어](https://amp.dev/documentation/guides-and-tutorials/integrate/integrate-with-apps/#implementing-an-amp-viewer)에서 제공됩니다.
 - `/wp` - <strong>W</strong>eb <strong>P</strong>ackage(웹 패키지): 웹 패키지 기술인 [Signed Exchange(서명된 교환)](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/signed-exchange/)으로 제공되는 AMP 문서입니다. 이러한 URL은 퍼블리셔 원본으로의 리디렉션 기능을 제공합니다.
-- `/cert` - <strong>Cert</strong>ificate(인증서):  [Signed Exchange(서명된 교환)](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/signed-exchange/)과 사용되는 공개 인증서입니다.
+- `/cert` - <strong>Cert</strong>ificate(인증서): [Signed Exchange(서명된 교환)](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/signed-exchange/)과 사용되는 공개 인증서입니다.
 - `/i` - <strong>I</strong>mage(이미지): 일반적으로 문서 하위 리소스로 AMP 캐시가 제공하는 이미지입니다.
 - `/ii` - <strong>I</strong>mage(이미지): AMP 캐시가 제공하는 이미지이지만 일반적으로 다른 캐시 구성 매개변수와 결합됩니다. 예를 들어 `/ii/w800`는 문서에서 요청하는 최대 너비를 표시합니다. 캐시는 브라우저 대역폭 절감을 위해 다양한 크기의 이미지를 생성할 수 있습니다.
 

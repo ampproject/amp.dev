@@ -1,11 +1,11 @@
 ---
-"$title": Использование экспериментальных возможностей
-"$order": '3'
+'$title': Использование экспериментальных возможностей
+$order: 3
 description: Экспериментальные компоненты AMP — это уже существующие функции, которые пока не готовы к массовому использованию.
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 ---
 
 [Экспериментальные компоненты AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments) – это существующие функции, которые пока не готовы к массовому использованию.
@@ -48,7 +48,7 @@ formats:
 Для контента, загружаемого с доменов, не принадлежащих CDN, эксперименты можно включать и выключать с помощью консоли разработчика, используя следующую команду:
 
 ```js
-AMP.toggleExperiment('experiment')
+AMP.toggleExperiment('experiment');
 ```
 
 Любой файл AMP, содержащий экспериментальные функции, не пройдет [валидацию AMP](validation-workflow/validate_amp.md). Чтобы получить готовые к рабочему развертыванию документы AMP, удалите экспериментальные компоненты.
@@ -60,7 +60,7 @@ AMP.toggleExperiment('experiment')
 ```html
 <head>
   ...
-  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b">
+  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b" />
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   ...
@@ -89,7 +89,7 @@ AMP.toggleExperiment('experiment')
 На каждой странице, где будет использоваться эксперимент на домене разработчика, разместите следующий тег `<meta>` внутри `<head>`:
 
 ```html
-<meta name="amp-experiment-token" content="{copy your token here}">
+<meta name="amp-experiment-token" content="{copy your token here}" />
 ```
 
 Примечание. `"amp-experiment-token"` — это буквальная строка `"amp-experiment-token"`, а не сам токен (который указывается в атрибуте content) и не имя эксперимента.

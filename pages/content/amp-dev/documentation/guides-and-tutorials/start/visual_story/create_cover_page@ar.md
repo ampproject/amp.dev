@@ -1,6 +1,6 @@
 ---
-"$title": إنشاء صفحة الغلاف
-"$order": '4'
+'$title': إنشاء صفحة الغلاف
+$order: 4
 description: 'لإنشاء صفحة، أضف عنصر <amp-story-page> بوصفه عنصرًا تابعًا لـ amp-story. وعيِّن معرِّفًا فريدًا للصفحة. وبالنسبة لصفحتنا الأولى، وهي صفحة الغلاف، فلنقم بتعيين معرِّف فريد للغلاف: ...'
 author: bpaduch
 ---
@@ -10,13 +10,14 @@ author: bpaduch
 لإنشاء صفحة، **أضف** عنصر `<amp-story-page>` بوصفه عنصرًا تابعًا لـ [`amp-story`](../../../../documentation/components/reference/amp-story.md). **وعيِّن** معرِّفًا فريدًا للصفحة. وبالنسبة لصفحتنا الأولى، وهي صفحة الغلاف، فلنقم بتعيين معرِّف فريد لـ `cover`
 
 ```html
-<amp-story standalone
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-    poster-portrait-src="assets/cover.jpg">
-   <amp-story-page id="cover">
-   </amp-story-page>
+<amp-story
+  standalone
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+>
+  <amp-story-page id="cover"> </amp-story-page>
 </amp-story>
 ```
 
@@ -28,21 +29,24 @@ author: bpaduch
 
 تتكون صفحة الغلاف الخاصة بنا بالفعل من طبقتين:
 
-- **الطبقة 1**:  صورة تعمل كخلفية خاصة بنا
+- **الطبقة 1**: صورة تعمل كخلفية خاصة بنا
 - **الصورة 2**: العنوان واسم الكاتب للقصة
 
 ### إنشاء الطبقة 1
 
 دعنا نضيف الطبقة الأولى إلى صفحة الغلاف الخاصة بنا. إذ تحتوي الطبقة على صورة بملء الشاشة.
 
-أنشئ الطبقة بإضافة العنصر `<amp-story-grid-layer>` بوصفه عنصرًا تابعًا لـ `<amp-story-page>`. ونظرًا لأننا نريد أن تكون الصورة بملء الشاشة، حدد السمة  `template="fill"` لـ `amp-story-grid-layer`. وداخل الطبقة، أضف عنصر [`amp-img`](../../../../documentation/components/reference/amp-img.md) إلى ملف `cover.jpg`، وتأكد من أنه سريع الاستجابة (على سبيل المثال، `layout="responsive"`) بأبعاد 720 × 1280 بكسل. وإليك ما ستبدو عليه طبقتنا:
+أنشئ الطبقة بإضافة العنصر `<amp-story-grid-layer>` بوصفه عنصرًا تابعًا لـ `<amp-story-page>`. ونظرًا لأننا نريد أن تكون الصورة بملء الشاشة، حدد السمة `template="fill"` لـ `amp-story-grid-layer`. وداخل الطبقة، أضف عنصر [`amp-img`](../../../../documentation/components/reference/amp-img.md) إلى ملف `cover.jpg`، وتأكد من أنه سريع الاستجابة (على سبيل المثال، `layout="responsive"`) بأبعاد 720 × 1280 بكسل. وإليك ما ستبدو عليه طبقتنا:
 
 ```html
 <amp-story-page id="cover">
   <amp-story-grid-layer template="fill">
-    <amp-img src="assets/cover.jpg"
-        width="720" height="1280"
-        layout="responsive">
+    <amp-img
+      src="assets/cover.jpg"
+      width="720"
+      height="1280"
+      layout="responsive"
+    >
     </amp-img>
   </amp-story-grid-layer>
 </amp-story-page>
@@ -105,7 +109,7 @@ author: bpaduch
 
 ```html
 <amp-story-grid-layer>
- <!--our first layer -->
+  <!--our first layer -->
 </amp-story-grid-layer>
 <amp-story-grid-layer template="vertical">
   <h1>The Joy of Pets</h1>

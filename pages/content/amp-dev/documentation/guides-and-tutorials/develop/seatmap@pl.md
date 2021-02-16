@@ -1,13 +1,13 @@
 ---
-"$title": Tworzenie mapy miejsc
-"$order": '104'
+'$title': Tworzenie mapy miejsc
+$order: 104
 description: Mapy miejsc są ważną częścią aplikacji internetowych automatów biletowych, ale ich implementacja w AMP może być trudna. Czytaj dalej, aby dowiedzieć się jak zaimplementować mapę miejsc w AMP
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: kul3r4
 contributors:
-- pbakaus
+  - pbakaus
 ---
 
 Mapy miejsc są ważną częścią aplikacji internetowych automatów biletowych, ale ich implementacja w AMP może być trudna. Czytaj dalej, aby dowiedzieć się jak zaimplementować mapę miejsc w AMP, wykorzystując kombinację dostępnych składników AMP.
@@ -106,26 +106,27 @@ Oto ostateczny poglądowy kod HTML mapy miejsc:
 
 [sourcecode:html]
 {% raw %}<div class="seatmap-container">
-  <amp-list layout="fill" src="/json/seats.json" binding="no" items="." single-item noloading>
-    <template type="amp-mustache">
-      <amp-pan-zoom layout="fill" class="seatmap">
-        <amp-selector multiple on="select:AMP.setState({
+<amp-list layout="fill" src="/json/seats.json" binding="no" items="." single-item noloading>
+<template type="amp-mustache">
+<amp-pan-zoom layout="fill" class="seatmap">
+<amp-selector multiple on="select:AMP.setState({
           selectedSeats: event.selectedOptions
         })" layout="fill">
-          <div class="svg-container">
-            <svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
-            {{#seats}}
-              <rect option="{{id}}" role="button"
+<div class="svg-container">
+<svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
+{{#seats}}
+<rect option="{{id}}" role="button"
                tabindex="0" class="seat {{unavailable}}"
               x="{{x}}" y="{{y}}"
               width="{{width}}" height="{{height}}"
               rx="{{rx}}" ry="{{ry}}"/>
-            {{/seats}}
-            </svg>
-          </div>
-        </amp-selector>
-      </amp-pan-zoom>
-    </template>
-  </amp-list>
+{{/seats}}
+</svg>
+</div>
+</amp-selector>
+</amp-pan-zoom>
+</template>
+</amp-list>
+
 </div>{% endraw %}
 [/sourcecode]

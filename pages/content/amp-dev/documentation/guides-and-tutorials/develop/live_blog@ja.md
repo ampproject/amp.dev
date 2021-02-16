@@ -1,13 +1,13 @@
 ---
-"$title": ライブブログの作成
-"$order": '102'
+'$title': ライブブログの作成
+$order: 102
 description: ライブブログは、スポーツイベントや選挙などのイベント開催中に頻繁に更新されるウェブページです。AMP では、 ...
 tutorial: 'true'
 formats:
-- ウェブサイト
+  - ウェブサイト
 author: kul3r4
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ライブブログは、スポーツイベントや選挙などのイベント開催中に頻繁に更新されるウェブページです。AMP では、[`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) コンポーネントを使用してライブブログを実装できます。
@@ -25,9 +25,11 @@ contributors:
 次は、ブログの初期コードの例です。
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">You have updates</button>
   <div items></div>
 </amp-live-list>
@@ -56,9 +58,11 @@ contributors:
 ページネーションを使用すると、前に使用した単純なコードは次のようになります。
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">更新があります</button>
   <div items></div>
   <div pagination>
@@ -67,8 +71,8 @@ contributors:
         <li>1</li>
         <li>次へ</li>
       </ul>
-     </nav>
-   </div>
+    </nav>
+  </div>
 </amp-live-list>
 ```
 

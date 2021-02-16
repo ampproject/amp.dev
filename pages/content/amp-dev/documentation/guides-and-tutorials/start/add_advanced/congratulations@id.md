@@ -1,6 +1,6 @@
 ---
-"$title": Selamat!
-"$order": '7'
+'$title': Selamat!
+$order: 7
 description: Anda telah menyelesaikan tutorial "Menambahkan fitur-fitur AMP lanjutan" dan berhasil mempelajari berbagai komponen lanjutan penting AMP!
 ---
 

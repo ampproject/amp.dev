@@ -1,6 +1,6 @@
 ---
-"$title": Understanding the parts of an AMP story
-"$order": '2'
+'$title': Understanding the parts of an AMP story
+$order: 2
 description: 웹 스토리는 전체 화면에서 이미지, 동영상, 그래픽, 오디오 등으로 정보를 전달하는 시각적 스토리텔링 도구로...
 author: bpaduch
 ---

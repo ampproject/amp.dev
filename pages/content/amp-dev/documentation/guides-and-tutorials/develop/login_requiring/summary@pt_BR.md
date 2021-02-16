@@ -1,6 +1,6 @@
 ---
-"$title": Summary
-"$order": '4'
+'$title': Summary
+$order: 4
 description: Neste tutorial, vamos ver como combinar amp-access e amp-form para criar uma seção de comentários que exige login.
 ---
 

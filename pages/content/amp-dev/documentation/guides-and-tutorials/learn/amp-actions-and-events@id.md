@@ -1,10 +1,10 @@
 ---
-"$title": Tindakan dan peristiwa
-order: '0'
+'$title': Tindakan dan peristiwa
+$order: 0
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
   text: '[tip type="note"]'
 ---
@@ -110,7 +110,7 @@ Contohnya, yang berikut ini mungkin dilakukan di AMP:
 
 ## Peristiwa yang khusus untuk elemen tertentu <a name="element-specific-events"></a>
 
-### * - semua elemen <a name="---all-elements"></a>
+### \* - semua elemen <a name="---all-elements"></a>
 
 <table>
   <tr>
@@ -352,7 +352,7 @@ Contohnya, yang berikut ini mungkin dilakukan di AMP:
 
 ## Tindakan yang khusus untuk elemen tertentu <a name="element-specific-actions"></a>
 
-### * (semua elemen) <a name="-all-elements"></a>
+### \* (semua elemen) <a name="-all-elements"></a>
 
 <table>
   <tr>

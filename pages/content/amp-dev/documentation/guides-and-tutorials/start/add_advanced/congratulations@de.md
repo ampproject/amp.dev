@@ -1,6 +1,6 @@
 ---
-"$title": Gratulation!
-"$order": '7'
+'$title': Gratulation!
+$order: 7
 description: Du hast das Tutorial "Füge erweiterte AMP Funktionen hinzu" abgeschlossen und viele wichtige erweiterte AMP Komponenten …
 ---
 

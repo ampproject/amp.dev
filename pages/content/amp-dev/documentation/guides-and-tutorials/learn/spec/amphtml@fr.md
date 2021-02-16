@@ -1,8 +1,8 @@
 ---
-"$title": Spécification AMP HTML
-order: '8'
+'$title': Spécification AMP HTML
+$order: 8
 formats:
-- websites
+  - websites
 teaser:
   text: "AMP HTML est un sous-ensemble de HTML permettant de créer des pages de contenu telles que des articles de presse d'une manière qui garantit certaines caractéristiques de performances de base."
 ---
@@ -61,6 +61,7 @@ Les performances prévisibles sont un objectif de conception clé pour AMP HTML.
 ### Exemple de document <a name="sample-document"></a>
 
 [sourcecode:html]
+
 <!DOCTYPE html>
 <html ⚡>
   <head>
@@ -390,6 +391,7 @@ La raison pour laquelle la balise `<style amp-keyframes>` existe est que les rè
 Exemple:
 
 [sourcecode:html]
+
 <style amp-keyframes>
 @keyframes anim1 {}
 
@@ -407,6 +409,7 @@ Les auteurs peuvent inclure des feuilles de style pour les polices personnalisé
 Exemple:
 
 [sourcecode:html]
+
 <link
   rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Tangerine"
@@ -495,11 +498,13 @@ Les composants étendus sont des composants qui ne sont pas nécessairement four
 Les composants étendus sont chargés en incluant une balise `<script>` dans l'en-tête du document comme suit:
 
 [sourcecode:html]
+
 <script
   async
   custom-element="amp-carousel"
   src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
 ></script>
+
 [/sourcecode]
 
 La balise `<script>` doit avoir un attribut `async` et un attribut `custom-element` qui renvoie au nom de l'élément.
@@ -529,11 +534,13 @@ Consultez les [spécifications du modèle AMP](https://github.com/ampproject/amp
 Les modèles ne sont pas fournis avec le runtime AMP et doivent être téléchargés comme avec les éléments étendus. Les composants étendus sont chargés en incluant une balise `<script>` dans l'en-tête du document comme suit:
 
 [sourcecode:html]
+
 <script
   async
   custom-template="amp-mustache"
   src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
 ></script>
+
 [/sourcecode]
 
 La balise `<script>` doit avoir un attribut `async` et un attribut `custom-template` qui renvoie au type de modèle. L'URL du script doit commencer par `https://cdn.ampproject.org` et doit suivre une séquence très stricte de `/v\d+/[a-z-]+-(latest|\d+|\d+\.\d+)\.js`.
@@ -542,7 +549,7 @@ Les modèles sont déclarés dans le document comme suit:
 
 [sourcecode:html]
 <template type="amp-mustache" id="template1">
-  Hello {% raw %}{{you}}{% endraw %}!
+Hello {% raw %}{{you}}{% endraw %}!
 </template>
 [/sourcecode]
 
@@ -600,6 +607,7 @@ S'il existe un document AMP qui est une représentation alternative d'un documen
 Exemple:
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html" />
 [/sourcecode]
 
@@ -608,12 +616,13 @@ Le document AMP en lui-même devrait pointer vers sa version canonique via une b
 Exemple:
 
 [sourcecode:html]
+
 <link
   rel="canonical"
   href="https://www.example.com/url/to/canonical/document.html"
 />
 [/sourcecode]
 
-(Si une même ressource est à la fois le document AMP *et* canonique, la relation canonique doit pointer vers elle-même: aucune relation "amphtml" n'est requise.)
+(Si une même ressource est à la fois le document AMP _et_ canonique, la relation canonique doit pointer vers elle-même: aucune relation "amphtml" n'est requise.)
 
 Notez que pour une compatibilité plus large avec les systèmes qui consomment AMP, il devrait être possible de lire la relation "amphtml" sans exécuter JavaScript. (Autrement dit, la balise doit être présente dans le code HTML brut et non injectée via JavaScript.)

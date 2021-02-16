@@ -1,6 +1,6 @@
 ---
-"$title": 恭喜！
-"$order": '4'
+'$title': 恭喜！
+$order: 4
 description: 您已顺利学完本教程，并已成功地将 HTML 文档转换成 AMP 文档。在本教程中，您学习了以下知识：辨识 AMP 网页与传统…
 ---
 

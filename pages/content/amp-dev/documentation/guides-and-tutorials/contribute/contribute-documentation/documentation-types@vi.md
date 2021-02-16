@@ -1,12 +1,12 @@
 ---
-"$title": Loại tài liệu
-"$order": '1'
+'$title': Loại tài liệu
+$order: 1
 description: Các loại tài liệu được chấp nhận trên amp.dev
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 toc: 'false'
 ---

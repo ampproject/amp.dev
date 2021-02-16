@@ -1,11 +1,11 @@
 ---
-"$title": استخدام أداة AMP Optimizer
-"$order": '2'
-"$hidden": 'true'
+'$title': استخدام أداة AMP Optimizer
+$order: 2
+'$hidden': 'true'
 description: أدوات AMP Optimizer هي أدوات توفر تحسينات في ذاكرة التخزين المؤقت لصفحات AMP لموقعك. يُعد استخدام أداة AMP Optimizer أمرًا أساسيًا لإنشاء تجربة رائعة للصفحة وتحقيق الامتثال "لأصول الويب الأساسية". يوضح هذا الدليل كيفية استخدام أداة AMP Optimizer على أفضل وجه لتحسين صفحات AMP.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

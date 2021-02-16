@@ -1,8 +1,8 @@
 ---
-"$title": AMP 广告规范
-order: '3'
+'$title': AMP 广告规范
+$order: 3
 formats:
-- 广告
+  - 广告
 teaser:
   text: _如果您想对标准提出更改建议，请在 [Intent
 toc: 'true'
@@ -31,7 +31,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-*如果您想对标准提出更改建议，请在 [Intent to Implement](https://github.com/ampproject/amphtml/issues/4264) 下添加评论*。
+_如果您想对标准提出更改建议，请在 [Intent to Implement](https://github.com/ampproject/amphtml/issues/4264) 下添加评论_。
 
 AMPHTML 广告是一种在 AMP 网页上快速高效渲染广告的机制。为了确保在浏览器中快速流畅地渲染 AMPHTML 广告文档（“AMP 广告素材”），并且不会降低用户体验，AMP 广告素材必须遵守一组验证规则。AMPHTML 广告在本质上与 [AMP 格式规则](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml)类似，只能访问一组有限的受支持的标记、功能和扩展项。
 
@@ -100,11 +100,13 @@ AMPHTML 广告是一种在 AMP 网页上快速高效渲染广告的机制。为�
 AMPHTML 广告素材需要与[常规 AMP 文档](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md)不同且更为简单的样板样式行。
 
 [sourcecode:html]
+
 <style amp4ads-boilerplate>
   body {
     visibility: hidden;
   }
 </style>
+
 [/sourcecode]
 
 <em>理由</em>：<code>amp-boilerplate</code> 样式会一直隐藏主体内容，直到 AMP 运行时准备就绪并且可以将其取消隐藏。如果 Javascript 已停用，或者 AMP 运行时无法加载，则无论如何默认样板都会确保内容完全显示。但是，在 AMPHTML 广告中，如果 Javascript 已完全停用，AMPHTML 广告将不会运行，并且不会显示任何广告，因此，不需要 <code><noscript></code> 版块。如果缺少 AMP 运行时，AMPHTML 广告所依赖的大部分机制（例如，用于跟踪可见度的分析，或者用于显示内容的 <code>amp-img</code>）将不可用，因此，与出现故障相比，不显示任何广告要更好。
@@ -154,14 +156,14 @@ AMPHTML 广告素材需要与[常规 AMP 文档](https://github.com/ampproject/a
 
 - 仅包含 `transition`、`animation`、`transform`、`visibility` 或 `opacity` 属性。
 
-    *理由*：这将支持 AMP 运行时从语境中移除此类，以便在必要时停用动画，从而提高页面性能。
+  _理由_：这将支持 AMP 运行时从语境中移除此类，以便在必要时停用动画，从而提高页面性能。
 
 **效果良好**
 
 [sourcecode:css]
 .box {
-  transform: rotate(180deg);
-  transition: transform 2s;
+transform: rotate(180deg);
+transition: transform 2s;
 }
 [/sourcecode]
 
@@ -171,9 +173,9 @@ AMPHTML 广告素材需要与[常规 AMP 文档](https://github.com/ampproject/a
 
 [sourcecode:css]
 .box {
-  color: red; // non-animation property not allowed in animation selector
-  transform: rotate(180deg);
-  transition: transform 2s;
+color: red; // non-animation property not allowed in animation selector
+transform: rotate(180deg);
+transition: transform 2s;
 }
 [/sourcecode]
 
@@ -197,13 +199,13 @@ transition: background-color 2s;
 
 [sourcecode:css]
 @keyframes turn {
-  from {
-    transform: rotate(180deg);
-  }
+from {
+transform: rotate(180deg);
+}
 
-  to {
-    transform: rotate(90deg);
-  }
+to {
+transform: rotate(90deg);
+}
 }
 [/sourcecode]
 
@@ -211,15 +213,15 @@ transition: background-color 2s;
 
 [sourcecode:css]
 @keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 300%;
-  }
+from {
+margin-left: 100%;
+width: 300%;
+}
 
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
+to {
+margin-left: 0%;
+width: 100%;
+}
 }
 [/sourcecode]
 
@@ -251,15 +253,15 @@ transition: background-color 2s;
 
 忽略的大部分标记是出于性能考虑或者是为了简化 AMPHTML 广告的分析。
 
-*示例*：上述列表中未列出 `<amp-ad>`。明确禁止的原因在于，如果允许在 `<amp-ad>` 内放入 `<amp-ad>`，可能会导致生成不受控制的广告加载瀑布流，从而无法满足 AMPHTML 广告的性能目标。
+_示例_：上述列表中未列出 `<amp-ad>`。明确禁止的原因在于，如果允许在 `<amp-ad>` 内放入 `<amp-ad>`，可能会导致生成不受控制的广告加载瀑布流，从而无法满足 AMPHTML 广告的性能目标。
 
-*示例*：上述列表中未列出 `<amp-iframe>`。禁止的原因在于，广告可以使用该标记执行任意 Javascript 并加载任意内容。如果广告想使用此类功能，它们应当在 [a4aRegistry](https://github.com/ampproject/amphtml/blob/master/ads/_a4a-config.js#L40) 条目中返回 <code>false</code>，并使用现有的“3p iframe”广告渲染机制。
+_示例_：上述列表中未列出 `<amp-iframe>`。禁止的原因在于，广告可以使用该标记执行任意 Javascript 并加载任意内容。如果广告想使用此类功能，它们应当在 [a4aRegistry](https://github.com/ampproject/amphtml/blob/master/ads/_a4a-config.js#L40) 条目中返回 <code>false</code>，并使用现有的“3p iframe”广告渲染机制。
 
-*示例*：上述列表中未列出 `<amp-facebook>`、`<amp-instagram>`、`<amp-twitter>` 和 `<amp-youtube>`，原因与 `<amp-iframe>` 相同：这些标记全部都会创建 iframe，并且可能会在 iframe 中占用无限多的资源。
+_示例_：上述列表中未列出 `<amp-facebook>`、`<amp-instagram>`、`<amp-twitter>` 和 `<amp-youtube>`，原因与 `<amp-iframe>` 相同：这些标记全部都会创建 iframe，并且可能会在 iframe 中占用无限多的资源。
 
-*示例*：上述列表中未列出 `<amp-ad-network-*-impl>`。`<amp-ad>` 标记会处理对这些实现标记的委托；广告素材不应当尝试直接包含这些实现标记。
+_示例_：上述列表中未列出 `<amp-ad-network-*-impl>`。`<amp-ad>` 标记会处理对这些实现标记的委托；广告素材不应当尝试直接包含这些实现标记。
 
-*示例*：尚未包括 `<amp-lightbox>` 的原因在于，有些 AMPHTML 广告素材甚至可能会在 iframe 中进行渲染，目前还没有机制可以支持广告扩展到 iframe 范围外。以后可能会增加这方面的支持，前提是存在相应的需求。
+_示例_：尚未包括 `<amp-lightbox>` 的原因在于，有些 AMPHTML 广告素材甚至可能会在 iframe 中进行渲染，目前还没有机制可以支持广告扩展到 iframe 范围外。以后可能会增加这方面的支持，前提是存在相应的需求。
 
 ### HTML 标记 <a name="html-tags"></a>
 
@@ -285,7 +287,7 @@ transition: background-color 2s;
 
 - **注**：与常规 AMP 不同的是，不允许使用 `<link rel="canonical">` 标记。
 
-    4.2.5 `<style>` 4.2.6 `<meta>`
+  4.2.5 `<style>` 4.2.6 `<meta>`
 
 #### 4.3 版块 <a name="43-sections"></a>
 
@@ -313,7 +315,7 @@ transition: background-color 2s;
 
 SVG 标记不属于 HTML5 命名空间。以下列出的 SVG 标记没有板块 ID。
 
-`<svg>``<g>``<path>``<glyph>``<glyphref>``<marker>``<view>``<circle>``<line>``<polygon>``<polyline>``<rect>``<text>``<textpath>``<tref>``<tspan>``<clippath>``<filter>``<lineargradient>``<radialgradient>``<mask>``<pattern>``<vkern>``<hkern>``<defs>``<use>``<symbol>``<desc>``<title>`
+` <svg>``<g>``<path>``<glyph>``<glyphref>``<marker>``<view>``<circle>``<line>``<polygon>``<polyline>``<rect>``<text>``<textpath>``<tref>``<tspan>``<clippath>``<filter>``<lineargradient>``<radialgradient>``<mask>``<pattern>``<vkern>``<hkern>``<defs>``<use>``<symbol>``<desc>``<title> `
 
 #### 4.9 表格数据 <a name="49-tabular-data"></a>
 
@@ -327,7 +329,7 @@ SVG 标记不属于 HTML5 命名空间。以下列出的 SVG 标记没有板块 
 
 - 与常规 AMP 文档一样，广告素材的 `<head>` 标记必须包含 `<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>` 标记。
 - 与常规 AMP 不同，不允许使用 `<noscript>`。
-    - *理由*：由于 AMPHTML 广告需要启用 Javascript 才能工作，`<noscript>` 块在 AMPHTML 广告中不起任何作用，只会占用网络带宽。
+  - _理由_：由于 AMPHTML 广告需要启用 Javascript 才能工作，`<noscript>` 块在 AMPHTML 广告中不起任何作用，只会占用网络带宽。
 - 与常规 AMP 不同，不允许使用 `<script type="application/ld+json">`。
-    - *理由*：JSON LD 用于托管页面上的结构化数据标记，但广告素材不是独立的文档，并且不包含结构化数据。JSON LD 块本身只会占用网络带宽。
+  - _理由_：JSON LD 用于托管页面上的结构化数据标记，但广告素材不是独立的文档，并且不包含结构化数据。JSON LD 块本身只会占用网络带宽。
 - 所有其他脚本规则和排除对象与常规 AMP 相同。

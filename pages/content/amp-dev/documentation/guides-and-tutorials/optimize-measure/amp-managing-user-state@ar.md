@@ -1,10 +1,10 @@
 ---
-"$title": إدارة حالة مستخدم غير مصادق عليه باستخدام AMP
-order: '2'
+'$title': إدارة حالة مستخدم غير مصادق عليه باستخدام AMP
+$order: 2
 formats:
-- websites
+  - websites
 teaser:
-  text: "**فهرس المحتويات**"
+  text: '**فهرس المحتويات**'
 ---
 
 <!--
@@ -34,12 +34,12 @@ limitations under the License.
 
 - [معلومات عامة ](#background)
 - [دليل التنفيذ ](#implementation-guide)
-    - [قبل البدء ](#before-getting-started)
-    - [المهمة 1: بالنسبة للصفحات التي لا تدعم AMP الموجودة في مصدر الناشر، عليك بإعداد معرّف وإرسال رسائل فحص التحليلات ](#task1)
-    - [المهمة 2: بالنسبة لصفحات AMP، إعداد معرّف وإرسال رسائل فحص التحليلات من خلال تضمين بديل لمعرّف العميل في رسائل فحص تحليلات AMP ](#task2)
-    - [المهمة 3: معالجة رسائل فحص التحليلات من الصفحات الموجودة في مصدر الناشر ](#task3)
-    - [المهمة 4: عرض معالجة رسائل اختبار التحليلات من ذاكرة AMP للتخزين المؤقت أو عارض AMP لسياقات وتخطيطات المعرّفات (إذا لزم الأمر)](#task4)
-    - [المهمة 5: استخدام معرّف العميل في الربط وتقديم النموذج ](#task5)
+  - [قبل البدء ](#before-getting-started)
+  - [المهمة 1: بالنسبة للصفحات التي لا تدعم AMP الموجودة في مصدر الناشر، عليك بإعداد معرّف وإرسال رسائل فحص التحليلات ](#task1)
+  - [المهمة 2: بالنسبة لصفحات AMP، إعداد معرّف وإرسال رسائل فحص التحليلات من خلال تضمين بديل لمعرّف العميل في رسائل فحص تحليلات AMP ](#task2)
+  - [المهمة 3: معالجة رسائل فحص التحليلات من الصفحات الموجودة في مصدر الناشر ](#task3)
+  - [المهمة 4: عرض معالجة رسائل اختبار التحليلات من ذاكرة AMP للتخزين المؤقت أو عارض AMP لسياقات وتخطيطات المعرّفات (إذا لزم الأمر)](#task4)
+  - [المهمة 5: استخدام معرّف العميل في الربط وتقديم النموذج ](#task5)
 - [الممارسات الموُصى بها بشدة ](#strongly-recommended-practices)
 
 حالة المستخدم هي مفهوم مهم على شبكة الإنترنت اليوم. ضع في اعتبارك حالات الاستخدام التالية التي يتم تمكينها من خلال إدارة حالة المستخدم:
@@ -114,7 +114,7 @@ limitations under the License.
 
 ومع ذلك، يمكن أن ينتهي الأمر بناشري صفحات AMP بسهولة (عن غير قصد) إلى تصميم رحلات مستخدمين تتضمن سياقات متعددة. دعنا نلقي نظرة مجددًا على نظرتنا السابقة الخاصة بحالة استخدام عربة التسوق ونضيف بعض التفاصيل إليها لنصنع **قصة مستخدم** كاملة:
 
-> *في اليوم الأول، تكتشف المستخدمة صفحة AMP من شركة Example Inc. عبر بحث Google. يُحمِّل بحث Google صفحات AMP في عارض AMP. أثناء عرض الصفحة، تضيف المستخدمة أربعة عناصر إلى عربة التسوق الخاصة بها ولكنها لا تقوم بإتمام الدفع. بعد أسبوعين، في اليوم الخامس عشر، تتذكر المستخدمة العناصر الأربعة التي كانت تفكر في شرائها وتقرر الآن أن الوقت قد حان لشرائها. يصلون إلى الصفحة الرئيسية لشركة Example Inc. على `https://example.com` مباشرةً (وهي صفحة رئيسية لا تدعم AMP) ويكتشفون أن عناصرهم الأربعة لا تزال محفوظة في عربة التسوق.*
+> _في اليوم الأول، تكتشف المستخدمة صفحة AMP من شركة Example Inc. عبر بحث Google. يُحمِّل بحث Google صفحات AMP في عارض AMP. أثناء عرض الصفحة، تضيف المستخدمة أربعة عناصر إلى عربة التسوق الخاصة بها ولكنها لا تقوم بإتمام الدفع. بعد أسبوعين، في اليوم الخامس عشر، تتذكر المستخدمة العناصر الأربعة التي كانت تفكر في شرائها وتقرر الآن أن الوقت قد حان لشرائها. يصلون إلى الصفحة الرئيسية لشركة Example Inc. على `https://example.com` مباشرةً (وهي صفحة رئيسية لا تدعم AMP) ويكتشفون أن عناصرهم الأربعة لا تزال محفوظة في عربة التسوق._
 
 في هذا السيناريو، تتلقى المستخدمة تجربة عربة تسوق متسقة على الرغم من انتقالها من سياق عارض AMP إلى سياق مصدر الناشر—ومع مرور بعض الوقت بين هذه الأحداث. هذه التجربة معقولة جدًا، وإذا كنت تصمم تجربة تسوق، فيجب أن تتوقع دعمها، فكيف تحقق ذلك؟
 
@@ -178,23 +178,26 @@ n34ic982n2386n30 ⇒ $sample_id
 **الحالة #1: الزيارة الأولية.** عند الوصول لأول مرة على الصفحة التي لا تدعم AMP، لن يكون هناك ملف تعريف ارتباط. إذا قمت بالتحقق من ملف تعريف الارتباط قبل تعيين أحدها، فسترى أنه لا يوجد قيم تم تعيينها في ملف تعريف الارتباط المقابل لـ `uid`:
 
 [sourcecode:bash]
+
 > document.cookie
-  ""
-[/sourcecode]
+> ""
+> [/sourcecode]
 
 في وقت ما من التحميل الأولي، يجب تعيين ملف تعريف الارتباط، بحيث إذا قمت بذلك بمجرد تحميل الصفحة، سترى أن هناك قيمة تم تعيينها:
 
 [sourcecode:bash]
+
 > document.cookie
-  "uid=$publisher_origin_identifier"
-[/sourcecode]
+> "uid=$publisher_origin_identifier"
+> [/sourcecode]
 
 **الحالة #2: زيارة غير أولية.** سيكون هناك مجموعة ملفات تعريف الارتباط. وبالتالي، إذا فتحت وحدة تحكم المطور على الصفحة، فسترى:
 
 [sourcecode:bash]
+
 > document.cookie
-  "uid=$publisher_origin_identifier"
-[/sourcecode]
+> "uid=$publisher_origin_identifier"
+> [/sourcecode]
 
 ##### إرسال رسائل فحص التحليلات <a name="send-analytics-pings"></a>
 
@@ -387,30 +390,33 @@ https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id
 
 [sourcecode:html]
 <a
-  href="https://example.com/step2.html?ref_id=CLIENT_ID(uid)"
-  data-amp-replace="CLIENT_ID"
-></a>
-[/sourcecode]
+href="https://example.com/step2.html?ref_id=CLIENT_ID(uid)"
+data-amp-replace="CLIENT_ID"
+
+> </a>
+> [/sourcecode]
 
 **حل بديل لتمرير معرّف العميل إلى الروابط الخارجية:** حدد معلمة البحث الجديدة `ref_id` كجزء من سمة بيانات `data-amp-addparams` وبالنسبة للاستعلامات التي تحتاج إلى توفير بديل للمعلمة، قم بتوفير هذه التفاصيل كجزء من `data-amp-replace`. باستخدام هذا المنهج، سيبدو عنوان URL نظيفًا وستتم إضافة المعلمات المحددة في `data-amp-addparams` ديناميكيًا
 
 [sourcecode:html]
 <a
-  href="https://example.com/step2.html"
-  data-amp-addparams="ref_id=CLIENT_ID(uid)"
-  data-amp-replace="CLIENT_ID"
-></a>
-[/sourcecode]
+href="https://example.com/step2.html"
+data-amp-addparams="ref_id=CLIENT_ID(uid)"
+data-amp-replace="CLIENT_ID"
+
+> </a>
+> [/sourcecode]
 
 لتمرير معلمات استعلام متعددة من خلال `data-amp-addparams` قم بفصل كل من `&` بهذا الشكل
 
 [sourcecode:html]
 <a
-  href="https://example.com/step2.html"
-  data-amp-addparams="ref_id=CLIENT_ID(uid)&pageid=p123"
-  data-amp-replace="CLIENT_ID"
-></a>
-[/sourcecode]
+href="https://example.com/step2.html"
+data-amp-addparams="ref_id=CLIENT_ID(uid)&pageid=p123"
+data-amp-replace="CLIENT_ID"
+
+> </a>
+> [/sourcecode]
 
 **لتحديث مدخلات النماذج لاستخدام بديل معرّف العميل:** حدد اسمًا لحقل الإدخال، مثل `orig_user_id`. ثم حدد `default-value` لحقل النموذج لتكون قيمة بديل معرّف عميل AMP:
 
@@ -456,7 +462,7 @@ https://example.com/step2.html?ref_id=$amp_client_id
 <amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
   <noscript><img alt="مثال على كيفية إنشاء تحليل ping يحتوي على معرف من السياق السابق المقدم عبر عنوان URL ومعرف من السياق الحالي" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
 
-*تحديثات صفحة AMP:* استخدم ميزة استبدال "معلمة الاستفسار" في تهيئة amp-analytics للحصول على قيمة المعرف `ref_id` داخل عنوان URL. تأخذ ميزة "معلمة الاستفسار" معلمة تشير إلى "مفتاح" زوج القيمة الرئيسية المطلوب في عنوان URL وتعيد القيمة المقابلة. استخدم ميزة معرّف العميل كما فعلنا للحصول على المعرّف لسياق صفحة AMP.
+_تحديثات صفحة AMP:_ استخدم ميزة استبدال "معلمة الاستفسار" في تهيئة amp-analytics للحصول على قيمة المعرف `ref_id` داخل عنوان URL. تأخذ ميزة "معلمة الاستفسار" معلمة تشير إلى "مفتاح" زوج القيمة الرئيسية المطلوب في عنوان URL وتعيد القيمة المقابلة. استخدم ميزة معرّف العميل كما فعلنا للحصول على المعرّف لسياق صفحة AMP.
 
 [sourcecode:http]
 https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}
@@ -483,7 +489,7 @@ https://analytics.example.com/ping?type=pageview&orig_user_id=$amp_client_id&use
 
 نوصي بالتحقق من صحة قيم معلمات الاستعلام باستخدام الخطوات الموضحة في قسم [التحقق من صحة المعلمة](#parameter-validation) أدناه.
 
-*تحديثات لصفحة ليست AMP:* بالمثل، على صفحة ليست AMP يتم عرضها من أصل الناشر، استخرج وأرسل قيمة `ref_id` المضمنة في عنوان URL. تحقق من صحة القيمة باتباع الخطوات الموضحة في قسم [التحقق من صحة المعلمة](#parameter-validation) أدناه. بعد ذلك، أنشئ اختبارات فحص البيانات التحليلية التي ستتضمن كلاً من `orig_user_id` مشتق من `ref_id{/ code4} و<code data-md-type="codespan">user_id` استنادًا إلى قيمة معرف ملف تعريف ارتباط الطرف الأول.
+_تحديثات لصفحة ليست AMP:_ بالمثل، على صفحة ليست AMP يتم عرضها من أصل الناشر، استخرج وأرسل قيمة `ref_id` المضمنة في عنوان URL. تحقق من صحة القيمة باتباع الخطوات الموضحة في قسم [التحقق من صحة المعلمة](#parameter-validation) أدناه. بعد ذلك، أنشئ اختبارات فحص البيانات التحليلية التي ستتضمن كلاً من `orig_user_id` مشتق من `ref_id{/ code4} و<code data-md-type="codespan">user_id` استنادًا إلى قيمة معرف ملف تعريف ارتباط الطرف الأول.
 
 <blockquote>
 <p><strong>هام:</strong></p>

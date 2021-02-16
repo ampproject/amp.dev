@@ -1,7 +1,7 @@
 ---
-"$title": "Créer l'annonce illustrée"
-"$order": '1'
-description: 'Notre annonce est une simple image avec un lien hypertexte vers le site en question. Nous afficherons l''image à l''aide de la balise amp-img. Voici le code: ...'
+'$title': "Créer l'annonce illustrée"
+$order: 1
+description: "Notre annonce est une simple image avec un lien hypertexte vers le site en question. Nous afficherons l'image à l'aide de la balise amp-img. Voici le code: ..."
 ---
 
 Dans la section `<body>` de votre document d'annonce AMPHTML, vous pouvez inclure des balises HTML et AMP; cependant, toutes les balises ne sont pas autorisées. Reportez-vous aux [spécifications d'annonce AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#allowed-amp-extensions-and-builtins) pour obtenir la liste des balises autorisées.
@@ -11,9 +11,12 @@ Notre annonce est une simple image avec un lien hypertexte vers le site en quest
 ```html
 <body>
   <a target="_blank" href="https://www.amp.dev">
-    <amp-img width="300" height="250"
-        alt="Learn amp"
-        src="/static/img/docs/ads/amp-300x250.png"></amp-img>
+    <amp-img
+      width="300"
+      height="250"
+      alt="Learn amp"
+      src="/static/img/docs/ads/amp-300x250.png"
+    ></amp-img>
   </a>
 </body>
 ```

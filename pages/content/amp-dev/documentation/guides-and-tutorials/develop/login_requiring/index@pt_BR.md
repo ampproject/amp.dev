@@ -1,11 +1,11 @@
 ---
-"$title": Create a login-requiring AMP page
-"$order": '0'
+'$title': Create a login-requiring AMP page
+$order: 0
 description: Algumas interações do usuário com a página, como a postagem de um comentário, podem ser condicionadas por um fluxo de login. Você pode implementar um fluxo de login ...
 numbered: '1'
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 Algumas interações do usuário com a página, como a postagem de um comentário, podem ser condicionadas por um fluxo de login. Você pode implementar um fluxo de login com AMP usando o componente [`amp-access`](../../../../documentation/components/reference/amp-access.md).

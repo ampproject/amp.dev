@@ -1,18 +1,18 @@
 ---
-"$title": Bao gồm ảnh & video
-"$order": '8'
+'$title': Bao gồm ảnh & video
+$order: 8
 description: Cũng như một trang HTML thông thường, AMP cho phép bạn nhúng các ảnh, video và nội dung âm thanh. Tìm hiểu điểm khác biệt của AMP và học cách để...
 formats:
-- websites
-- stories
-- email
-- ads
+  - websites
+  - stories
+  - email
+  - ads
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- Meggin
-- bpaduch
+  - Meggin
+  - bpaduch
 ---
 
 Cũng như một trang HTML thông thường, AMP cho phép bạn nhúng các **ảnh**, **video** và nội dung **âm thanh**. Tìm hiểu điểm khác biệt của AMP và học cách để bao gồm chúng trong các trang của bạn.
@@ -24,20 +24,24 @@ AMP không hỗ trợ việc sử dụng các thẻ HTML mặc định tương �
 - Chúng tôi cần hiểu bố cục của trang trước khi tải tài sản, vốn là thiết yếu để [hỗ trợ tải trước cho màn hiển thị đầu tiên](../../../../about/how-amp-works.html#size-all-resources-statically)
 - Chúng tôi cần kiểm soát các yêu cầu mạng để [tải lười và ưu tiên tài nguyên một cách hiệu quả](../../../../about/how-amp-works.html#prioritize-resource-loading)
 
-Thận trọng: Tuy không được hỗ trợ, nhưng chúng *vẫn sẽ được* render; tuy nhiên, AMP sẽ không [xác thực cho các trang của bạn](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) và bạn sẽ không nhận được tất cả lợi ích mà AMP mang lại.
+Thận trọng: Tuy không được hỗ trợ, nhưng chúng _vẫn sẽ được_ render; tuy nhiên, AMP sẽ không [xác thực cho các trang của bạn](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) và bạn sẽ không nhận được tất cả lợi ích mà AMP mang lại.
 
 ## Ảnh
 
 Bao gồm một ảnh trong trang của bạn sử dụng yếu tố [`amp-img`](../../../../documentation/components/reference/amp-img.md), ví dụ như:
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="A beautiful sunset"
+<amp-img
+  alt="A beautiful sunset"
   src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
   width="264"
-  height="195">
+  height="195"
+>
 </amp-img>
 ```
+
 [/example]
 
 Trong ví dụ cơ bản nhất này, ảnh sẽ hiển thị với chiều cao và chiều rộng cố định. Tối thiểu là một chiều rộng và chiều cao cụ thể phải được quy định.
@@ -47,15 +51,23 @@ Trong ví dụ cơ bản nhất này, ảnh sẽ hiển thị với chiều cao 
 Bởi [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) phụ thuộc vào JavaScript, nếu người dùng chọn vô hiệu kịch bản, các ảnh sẽ không được hiển thị. Trong trường hợp này, bạn cần cung cấp một phương án dự phòng cho ảnh sử dụng `<img>` và `<noscript>`, ví dụ như:
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
+<amp-img
+  src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
   width="264"
-  height="195">
+  height="195"
+>
   <noscript>
-    <img src="{{server_for_email}}/static/inline-examples/images/sunset.jpg" width="264" height="195" />
+    <img
+      src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
+      width="264"
+      height="195"
+    />
   </noscript>
 </amp-img>
 ```
+
 [/example]
 
 ### Bố cục nâng cao
@@ -63,14 +75,18 @@ Bởi [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) p
 AMP cho phép bạn tạo các trang tương thích hoàn toàn một cách dễ dàng hơn so với sử dụng CSS/HTML tiêu chuẩn. Ở dạng cơ bản nhất, tất cả những gì bạn cần làm là bổ sung `layout="responsive"`:
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="A view of the sea"
+<amp-img
+  alt="A view of the sea"
   src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
   width="900"
   height="675"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-img>
 ```
+
 [/example]
 
 [tip type="read-on"] **ĐỌC TIẾP –** Tìm hiểu thêm về các [kỹ thuật tạo bố cục nâng cao](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md). [/tip]
@@ -86,17 +102,23 @@ Thời gian chạy AMP HTML có thể quản lý hiệu quả các tài nguyên 
 Yếu tố [`amp-anim`](../../../../documentation/components/reference/amp-anim.md) rất giống với yếu tố [`amp-img`](../../../../documentation/components/reference/amp-img.md) và cung cấp các chức năng bổ sung để quản lý việc tải và phát các ảnh hoạt họa như ảnh GIF.
 
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
+
 ```html
-<amp-anim width="400"
+<amp-anim
+  width="400"
   height="300"
-  src="{{server_for_email}}/static/inline-examples/images/wavepool.gif">
-  <amp-img placeholder
+  src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
+>
+  <amp-img
+    placeholder
     width="400"
     height="300"
-    src="{{server_for_email}}/static/inline-examples/images/wavepool.png">
+    src="{{server_for_email}}/static/inline-examples/images/wavepool.png"
+  >
   </amp-img>
 </amp-anim>
 ```
+
 [/example]
 
 [tip type="note"] **LƯU Ý –** Bao gồm `<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` trong phần head (đầu đề) của trang để sử dụng thành phần này. [/tip]
@@ -110,6 +132,7 @@ Chỉ sử dụng yếu tố này để nhúng trực tiếp tập tin video HTM
 Bao gồm một mã giữ chỗ trước khi video bắt đầu, cùng một phương án dự phòng nếu trình duyệt không hỗ trợ video HTML5, ví dụ:
 
 [example preview="inline" playground="true" imports="amp-video:0.1"]
+
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -121,6 +144,7 @@ Bao gồm một mã giữ chỗ trước khi video bắt đầu, cùng một ph�
   </div>
 </amp-video>
 ```
+
 [/example]
 
 ## Âm thanh
@@ -132,6 +156,7 @@ Chỉ sử dụng yếu tố này để nhúng trực tiếp tập tin âm thanh
 Bao gồm dự phòng, nếu trình duyệt không hỗ trợ âm thanh HTML5, ví dụ:
 
 [example preview="inline" playground="true" imports="amp-audio:0.1"]
+
 ```html
 <amp-audio width="400"
   height="200"
@@ -147,6 +172,7 @@ Bao gồm dự phòng, nếu trình duyệt không hỗ trợ âm thanh HTML5, v
     src="{{server_for_email}}/static/inline-examples/audio/cat-meow.ogg">
 </amp-audio>
 ```
+
 [/example]
 
 [tip type="note"] **LƯU Ý –** Bao gồm `<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` trong phần head (đầu đề) của trang để sử dụng thành phần này. [/tip]

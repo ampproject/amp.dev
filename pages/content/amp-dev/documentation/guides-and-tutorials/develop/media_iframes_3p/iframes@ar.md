@@ -1,15 +1,15 @@
 ---
-"$title": تضمين iframes
-"$order": '10'
+'$title': تضمين iframes
+$order: 10
 description: تعرف على طريقة عرض تضمين محتوى الوسائط في صفحاتك، وطريقة استخدام iframe لعرض محتوى متقدم خارج حدود AMP.
 formats:
-- websites
+  - websites
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- Meggin
-- bpaduch
+  - Meggin
+  - bpaduch
 ---
 
 Learn how to display include media content in your pages, and how to use iframes to display advanced content outside of AMP's limitations.
@@ -32,8 +32,10 @@ Learn how to display include media content in your pages, and how to use iframes
 لتضمين [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) في صفحتك، قم أولًا بتضمين النص البرمجي التالي في `<head>`، الذي يقوم بتحميل الرمز الإضافي للمكون الممتد:
 
 [sourcecode:html]
+
 <script async custom-element="amp-iframe"
   src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+
 [/sourcecode]
 
 ### كتابة لغة الترميز
@@ -41,28 +43,37 @@ Learn how to display include media content in your pages, and how to use iframes
 في المثال التالي، قمنا بإنشاء [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) سريع الاستجابة لدمج خرائط جوجل عبر [واجهة برمجة التطبيقات لدمج خرائط جوجل](https://developers.google.com/maps/documentation/embed/guide):
 
 ```html
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    src="https://www.google.com/maps/embed/v1/place?key={YOUR API KEY}&q=europe">
+<amp-iframe
+  width="200"
+  height="100"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  src="https://www.google.com/maps/embed/v1/place?key={YOUR API KEY}&q=europe"
+>
 </amp-iframe>
 ```
 
 ## استخدام العناصر النائبة <a name="using-placeholders"></a>
 
-يمكنك عرض [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) في الجزء الأعلى من المستند، بشرط أن يحتوي [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) على عنصر بالسمة `placeholder`،  (على سبيل المثال، عنصر [`amp-img`](../../../../documentation/components/reference/amp-img.md)) والذي سيتم عرضه كعنصر نائب حتى يصبح إطار iframe جاهزًا للعرض.
+يمكنك عرض [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) في الجزء الأعلى من المستند، بشرط أن يحتوي [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) على عنصر بالسمة `placeholder`، (على سبيل المثال، عنصر [`amp-img`](../../../../documentation/components/reference/amp-img.md)) والذي سيتم عرضه كعنصر نائب حتى يصبح إطار iframe جاهزًا للعرض.
 
 [tip type="read-on"] **تابع القراءة –**: تعرف على المزيد حول العناصر النائبة في [Iframe بالعناصر النائبة](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder). [/tip]
 
 أمثلة مع العناصر النائبة:
 
 ```html
-<amp-iframe width="400" height="225"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    src="https://giphy.com/embed/OWabwoEn7ezug">
-  <amp-img placeholder layout="fill"
-      src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"></amp-img>
+<amp-iframe
+  width="400"
+  height="225"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  src="https://giphy.com/embed/OWabwoEn7ezug"
+>
+  <amp-img
+    placeholder
+    layout="fill"
+    src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"
+  ></amp-img>
 </amp-iframe>
 ```
 

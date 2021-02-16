@@ -1,15 +1,16 @@
 ---
-"$title": AMP HTML로 이루어진 페이지 만들기
-"$order": '1'
+'$title': AMP HTML로 이루어진 페이지 만들기
+$order: 1
 description: 'HTTPS 사용: AMP 페이지 및 콘텐츠 생성 시 HTTPS 프로토콜(vs. HTTP) 사용을 고려하는 것이 좋습니다. HTTPS는 AMP 문서 자체에서 필수는 아니지만...'
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 아래 마크업 코드는 AMP 페이지 생성을 위한 적절한 출발점이자 상용구 코드입니다. 이를 복사하여 확장자가 .html인 파일에 저장하세요.
 
 [sourcecode:html]
+
 <!doctype html>
 <html amp lang="en">
   <head>
@@ -47,16 +48,16 @@ HTTPS 사용: AMP 페이지 및 콘텐츠 생성 시 HTTPS 프로토콜(vs. HTTP
 
 AMP HTML 문서는 다음 규칙을 준수해야 합니다.
 
-규칙 | 설명
---- | ---
-`<!doctype html>` doctype으로 시작해야 합니다. | HTML 표준입니다.
-최상위 태그로 `<html ⚡>` 태그를 사용해야 합니다 (`<html amp>`도 사용 가능합니다). | 페이지를 AMP 콘텐츠로 식별합니다.
-`<head>` 및 `<body>` 태그를 작성해야 합니다. | HTML에서는 선택사항이지만 AMP에서는 아닙니다.
-`<meta charset="utf-8">` 태그를 `<head>` 태그의 첫 번째 자식 요소로 사용해야 합니다. | 페이지 인코딩을 식별합니다.
-`<head>` 태그에 `<script async src="https://cdn.ampproject.org/v0.js"></script>` 태그를 포함합니다. 모범 사례로서 <code><head></code>의 스크립트는 가능한 초기에 포함되어야 합니다. | AMP JS 라이브러리를 가져오고 로드합니다.
-`<head>` 내에 `<link rel="canonical" href="$SOME_URL">` 태그를 포함해야 합니다. | AMP HTML 문서의 일반 HTML 버전을 가리킵니다. HTML 버전이 존재하지 않으면 문서 자체를 가리킵니다. [검색 가능한 페이지로 설정](https://gitlocalize.com/repo/4863/ko/pages/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md)에서 자세히 알아보세요.
-`<meta name="viewport" content="width=device-width">`를 포함합니다. initial-scale=1`을 포함하는 것도 좋습니다. | 반응형 뷰포트를 지정합니다. [반응형 AMP 페이지 만들기](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md)에서 자세히 알아보세요.
-`<head>` 태그에 [AMP 상용구 코드](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md)를 포함해야 합니다. | CSS 상용구는 AMP JS가 로드되기 전까지 우선 콘텐츠를 숨깁니다.
+| 규칙                                                                                                                                                                                | 설명                                                                                                                                                                                                                                                                             |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `<!doctype html>` doctype으로 시작해야 합니다.                                                                                                                                      | HTML 표준입니다.                                                                                                                                                                                                                                                                 |
+| 최상위 태그로 `<html ⚡>` 태그를 사용해야 합니다 (`<html amp>`도 사용 가능합니다).                                                                                                  | 페이지를 AMP 콘텐츠로 식별합니다.                                                                                                                                                                                                                                                |
+| `<head>` 및 `<body>` 태그를 작성해야 합니다.                                                                                                                                        | HTML에서는 선택사항이지만 AMP에서는 아닙니다.                                                                                                                                                                                                                                    |
+| `<meta charset="utf-8">` 태그를 `<head>` 태그의 첫 번째 자식 요소로 사용해야 합니다.                                                                                                | 페이지 인코딩을 식별합니다.                                                                                                                                                                                                                                                      |
+| `<head>` 태그에 `<script async src="https://cdn.ampproject.org/v0.js"></script>` 태그를 포함합니다. 모범 사례로서 <code><head></code>의 스크립트는 가능한 초기에 포함되어야 합니다. | AMP JS 라이브러리를 가져오고 로드합니다.                                                                                                                                                                                                                                         |
+| `<head>` 내에 `<link rel="canonical" href="$SOME_URL">` 태그를 포함해야 합니다.                                                                                                     | AMP HTML 문서의 일반 HTML 버전을 가리킵니다. HTML 버전이 존재하지 않으면 문서 자체를 가리킵니다. [검색 가능한 페이지로 설정](https://gitlocalize.com/repo/4863/ko/pages/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md)에서 자세히 알아보세요. |
+| `<meta name="viewport" content="width=device-width">`를 포함합니다. initial-scale=1`을 포함하는 것도 좋습니다.                                                                      | 반응형 뷰포트를 지정합니다. [반응형 AMP 페이지 만들기](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md)에서 자세히 알아보세요.                                                                                                      |
+| `<head>` 태그에 [AMP 상용구 코드](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md)를 포함해야 합니다.                                                  | CSS 상용구는 AMP JS가 로드되기 전까지 우선 콘텐츠를 숨깁니다.                                                                                                                                                                                                                    |
 
 ## 선택적으로 사용 가능한 메타데이터
 

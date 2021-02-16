@@ -1,8 +1,8 @@
 ---
-"$title": AMP for Ads の仕様
-order: '3'
+'$title': AMP for Ads の仕様
+$order: 3
 formats:
-- ads
+  - ads
 teaser:
   text: 標準への変更を提案する場合は、Intent to Implement としてコメントを
 toc: 'true'
@@ -31,7 +31,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-*標準への変更を提案するには、[Intent to Implement](https://github.com/ampproject/amphtml/issues/4264)* としてコメントを残してください。
+_標準への変更を提案するには、[Intent to Implement](https://github.com/ampproject/amphtml/issues/4264)_ としてコメントを残してください。
 
 AMPHTML 広告は、高速で高性能の広告を AMP ページにレンダリングする仕組みを指します。AMPHTML 広告ドキュメント（「AMP クリエイティブ」）をブラウザに素早くスムーズにレンダリングする一方で、ユーザーエクスペリエンスを低下させないようにするには、一連の検証ルールに従った AMP クリエイティブを作成する必要があります。[AMP 書式設定ルール](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml) と同様に、AMPHTML 広告で許可されるタグ、機能、および拡張機能にも制限があります。
 
@@ -101,11 +101,13 @@ AMPHTML 広告は、高速で高性能の広告を AMP ページにレンダリ�
 AMPHTML 広告クリエイティブには、[一般的な AMP ドキュメントが必要とする](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md)ボイラープレートとは別の、非常にシンプルなボイラープレートスタイル行が必要です。
 
 [sourcecode:html]
+
 <style amp4ads-boilerplate>
   body {
     visibility: hidden;
   }
 </style>
+
 [/sourcecode]
 
 <em>根拠:</em> <code>amp-boilerplate</code> スタイルは、AMP ランタイムの準備が整うまで body コンテンツを非表示に、準備ができたらそれを表示します。Javascript が無効化されているか AMP ランタイムが読み込みに失敗すると、デフォルトのボイラープレートによって、準備の可否にかかわらず最終的にコンテンツが表示されます。ただし、AMPHTML 広告では Javascript が完全に無効化されているため、AMPHTML 広告は実行せず、広告が表示されることがありません。したがって、<code><noscript></code> セクションは不要と言えます。AMP ランタイムが存在しない場合、AMPHTML 広告が依存する機構のほとんど（可視性追跡またはコンテンツ表示用の <code>amp-img</code> の分析など）は利用できないため、正しく機能しない広告を表示するよりも、広告を何も表示しない方が賢明と言えます。
@@ -156,14 +158,14 @@ AMPHTML 広告クリエイティブには、[一般的な AMP ドキュメント
 
 - `transition`、`animation`, `transform`、`visibility`、または `opacity` プロパティのみを含むセレクタ。
 
-    *根拠:* ページのパフォーマンスを得るために、必要に応じてAMP ランタイムはコンテキストからこのクラスを削除して、アニメーションを無効化することができます。
+  _根拠:_ ページのパフォーマンスを得るために、必要に応じて AMP ランタイムはコンテキストからこのクラスを削除して、アニメーションを無効化することができます。
 
 **良い例**
 
 [sourcecode:css]
 .box {
-  transform: rotate(180deg);
-  transition: transform 2s;
+transform: rotate(180deg);
+transition: transform 2s;
 }
 [/sourcecode]
 
@@ -173,9 +175,9 @@ AMPHTML 広告クリエイティブには、[一般的な AMP ドキュメント
 
 [sourcecode:css]
 .box {
-  color: red; // non-animation property not allowed in animation selector
-  transform: rotate(180deg);
-  transition: transform 2s;
+color: red; // non-animation property not allowed in animation selector
+transform: rotate(180deg);
+transition: transform 2s;
 }
 [/sourcecode]
 
@@ -199,13 +201,13 @@ transition: background-color 2s;
 
 [sourcecode:css]
 @keyframes turn {
-  from {
-    transform: rotate(180deg);
-  }
+from {
+transform: rotate(180deg);
+}
 
-  to {
-    transform: rotate(90deg);
-  }
+to {
+transform: rotate(90deg);
+}
 }
 [/sourcecode]
 
@@ -213,15 +215,15 @@ transition: background-color 2s;
 
 [sourcecode:css]
 @keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 300%;
-  }
+from {
+margin-left: 100%;
+width: 300%;
+}
 
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
+to {
+margin-left: 0%;
+width: 100%;
+}
 }
 [/sourcecode]
 
@@ -253,15 +255,15 @@ transition: background-color 2s;
 
 上記に含まれていないもののほとんどは、パフォーマンスを維持するため、または AMPHTML 広告を分析しやすくするために含まれていません。
 
-*例:* `<amp-ad>` はこのリストに含まれていません。`<amp-ad>` で `<amp-ad>` を使用した場合、際限のないウォーターフォール式の広告読み込みが発生する可能性があり、AMPHTML 広告のパフォーマンスの目標にそぐわないため、これは明示的に許可されていません。
+_例:_ `<amp-ad>` はこのリストに含まれていません。`<amp-ad>` で `<amp-ad>` を使用した場合、際限のないウォーターフォール式の広告読み込みが発生する可能性があり、AMPHTML 広告のパフォーマンスの目標にそぐわないため、これは明示的に許可されていません。
 
-*例:* `<amp-iframe>` はこのリストに含まれていません。広告がこれを使用して任意の JavaScript を実行し、任意のコンテンツを読みこむ可能性があるためです。広告がこのような機能を使用しようとすると、<a>a4aRegistry</a> エントリから <code>false</code> が返され、既存の '3p iframe' 広告表示メカニズムが使用されます。
+_例:_ `<amp-iframe>` はこのリストに含まれていません。広告がこれを使用して任意の JavaScript を実行し、任意のコンテンツを読みこむ可能性があるためです。広告がこのような機能を使用しようとすると、<a>a4aRegistry</a> エントリから <code>false</code> が返され、既存の '3p iframe' 広告表示メカニズムが使用されます。
 
-*例:* `<amp-facebook>`、`<amp-instagram>`、`<amp-twitter>`、および `<amp-youtube>` は、`<amp-iframe>` と同じ理由でリストに含まれていません。これらは  iframe を作成して、リソースを際限なく消費する可能性があります。
+_例:_ `<amp-facebook>`、`<amp-instagram>`、`<amp-twitter>`、および `<amp-youtube>` は、`<amp-iframe>` と同じ理由でリストに含まれていません。これらは iframe を作成して、リソースを際限なく消費する可能性があります。
 
-*例:* `<amp-ad-network-*-impl>` はこのリストに含まれていません。`<amp-ad>` タグはこれらの実装タグへの移譲を処理します。クリエイティブはこれらのタグを直接含めてはいけません。
+_例:_ `<amp-ad-network-*-impl>` はこのリストに含まれていません。`<amp-ad>` タグはこれらの実装タグへの移譲を処理します。クリエイティブはこれらのタグを直接含めてはいけません。
 
-*例:* `<amp-lightbox>` は、このリストにまだ含まれていません。AMPHTML 広告クリエイティブが iframe 内に表示されても、iframe を超えて拡大する仕組みがまだ広告に備わっていないためです。この機能の要望が示されれば、そのサポートが将来的に追加される可能性はあります。
+_例:_ `<amp-lightbox>` は、このリストにまだ含まれていません。AMPHTML 広告クリエイティブが iframe 内に表示されても、iframe を超えて拡大する仕組みがまだ広告に備わっていないためです。この機能の要望が示されれば、そのサポートが将来的に追加される可能性はあります。
 
 ### HTML タグ <a name="html-tags"></a>
 
@@ -287,7 +289,7 @@ transition: background-color 2s;
 
 - **注意:** 一般的な AMP とは異なり、`<link rel="canonical">` タグは禁止されています。
 
-    4.2.5 `<style>` 4.2.6 `<meta>`
+  4.2.5 `<style>` 4.2.6 `<meta>`
 
 #### 4.3 セクション <a name="43-sections"></a>
 
@@ -315,7 +317,7 @@ transition: background-color 2s;
 
 SVG タグは HTML5 名前空間にありません。セクション ID 無しで記載されています。
 
-`<svg>``<g>``<path>``<glyph>``<glyphref>``<marker>``<view>``<circle>``<line>``<polygon>``<polyline>``<rect>``<text>``<textpath>``<tref>``<tspan>``<clippath>``<filter>``<lineargradient>``<radialgradient>``<mask>``<pattern>``<vkern>``<hkern>``<defs>``<use>``<symbol>``<desc>``<title>`
+` <svg>``<g>``<path>``<glyph>``<glyphref>``<marker>``<view>``<circle>``<line>``<polygon>``<polyline>``<rect>``<text>``<textpath>``<tref>``<tspan>``<clippath>``<filter>``<lineargradient>``<radialgradient>``<mask>``<pattern>``<vkern>``<hkern>``<defs>``<use>``<symbol>``<desc>``<title> `
 
 #### 4.9 表形式データ <a name="49-tabular-data"></a>
 
@@ -329,7 +331,7 @@ SVG タグは HTML5 名前空間にありません。セクション ID 無し�
 
 - 一般的な AMP ドキュメントと同様に、クリエイティブの `<head>` タグには、`<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>` タグが含まれている必要があります。
 - 一般的な AMP とは異なり、`<noscript>` は禁止されています。
-    - *根拠:* AMPHTML 広告が’機能するには、Javascript が必ず必要です。AMPHTML 広告の `<noscript>` ブロックには意味がないため、ネットワーク帯域幅を浪費してしまいます。
+  - _根拠:_ AMPHTML 広告が’機能するには、Javascript が必ず必要です。AMPHTML 広告の `<noscript>` ブロックには意味がないため、ネットワーク帯域幅を浪費してしまいます。
 - 一般的な AMP とは異なり、`<script type="application/ld+json">` は禁止されています。
-    - *根拠:* ホストページでは構造化データのマークアップに JSON LD が使用されていますが、広告クリエイティブはスタンドアロンドキュメントではなく、構造化データを持ちません。JSON LD ブロックは、ネットワーク帯域幅を浪費してしまいます。
+  - _根拠:_ ホストページでは構造化データのマークアップに JSON LD が使用されていますが、広告クリエイティブはスタンドアロンドキュメントではなく、構造化データを持ちません。JSON LD ブロックは、ネットワーク帯域幅を浪費してしまいます。
 - その他すべてのスクリプティングルールと除外については、一般的な AMP の内容が適用されます。

@@ -1,9 +1,9 @@
 ---
-"$title": الربح من صفحة AMP الخاصة بك مع الإعلانات
-"$order": '0'
+'$title': الربح من صفحة AMP الخاصة بك مع الإعلانات
+$order: 0
 description: يقدم هذا الدليل إرشادات وأفضل الممارسات لعرض الإعلانات على صفحات AMP الخاصة بك. لذا، من أجل عرض الإعلانات في AMP، يلزمك إضافة مكون amp-ad المخصص ...
 formats:
-- websites
+  - websites
 ---
 
 يقدم هذا الدليل إرشادات وأفضل الممارسات لعرض الإعلانات على صفحات AMP الخاصة بك.
@@ -21,7 +21,11 @@ formats:
 يُعد المكون [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) إضافة إعلان مخصصة لمكتبة AMP. ويوجد تحت غطاء [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) JavaScript مخصص تم تصميمه بعناية لتحسين الأداء. لتشغيل المكون [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)، عليك إضافة JavaScript المطلوبة لهذا المكوِّن في قسم `head` بصفحة AMP لديك:
 
 ```html
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script
+  async
+  custom-element="amp-ad"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+></script>
 ```
 
 ### الخطوة 2: إضافة علامة amp-ad إلى صفحة AMP لديك
@@ -31,18 +35,15 @@ formats:
 نضيف في هذا المثال شريحة إعلانية لعرض الإعلانات من شبكة a9:
 
 ```html
-<amp-ad type="a9">
-</amp-ad>
+<amp-ad type="a9"> </amp-ad>
 ```
 
 ### الخطوة 3: تحديد حجم وحدة الإعلان
 
-أضف سمتي `width` و`height` إلى العلامة [`amp-ad`](../../../../documentation/components/reference/amp-ad.md).  إذ يحدد هذا الأمر حجم الإعلان على صفحة AMP لديك:
+أضف سمتي `width` و`height` إلى العلامة [`amp-ad`](../../../../documentation/components/reference/amp-ad.md). إذ يحدد هذا الأمر حجم الإعلان على صفحة AMP لديك:
 
 ```html
-<amp-ad type="a9">
-   width="300" height="250"
-</amp-ad>
+<amp-ad type="a9"> width="300" height="250" </amp-ad>
 ```
 
 ### الخطوة 4: تعيين معلمات شبكة الإعلانات
@@ -50,11 +51,14 @@ formats:
 تحتوي كل شبكة على سمات بيانات محددة مطلوبة لعرض الإعلانات. راجع وثائق [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) لشبكة الإعلانات، وأضف السمات المطلوبة في المثال التالي، حيث تتطلب شبكة a9 معلمات إضافية لتحديد حجم الإعلان وتفاصيل أخرى:
 
 ```html
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -63,12 +67,15 @@ formats:
 اعتمادًا على شبكة الإعلانات، يمكنك اختيار عرض عنصر نائب حتى يصبح الإعلان متوفرًا للعرض. إذ يوفر هذا الأمر تجربة مستخدم أفضل من خلال تفادي المسافات الفارغة. لتحديد عنصر نائب، أضف عنصرًا تابعًا بالسمة `placeholder`. تعرف على المزيد في [العناصر النائبة والاحتياطية](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ```html
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-   <amp-img placeholder src="placeholder-image.jpg"></amp-img>
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
+  <amp-img placeholder src="placeholder-image.jpg"></amp-img>
 </amp-ad>
 ```
 
@@ -77,12 +84,15 @@ formats:
 اعتمادًا على شبكة الإعلانات، يمكنك اختيار عرض عنصر احتياطي إذا لم يكن هناك إعلانات متوفرة للعرض. لتحديد عنصر احتياطي، أضف عنصرًا تابعًا بالسمة `fallback`. تعرف على المزيد في [العناصر النائبة والاحتياطية](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ```html
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-   <amp-img fallback src="fallback-image.jpg"></amp-img>
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
+  <amp-img fallback src="fallback-image.jpg"></amp-img>
 </amp-ad>
 ```
 
@@ -114,7 +124,7 @@ formats:
 - ضع عدد الإعلانات نفسه في صفحات AMP مثل صفحاتك المبنية بغير AMP لتحقيق أقصى عائد لكل صفحة.
 - **ضع الإعلان الأول أسفل منفذ العرض الأول مباشرة** ("أسفل الطية") لتوفير تجربة مستخدم فائقة.
 - ما لم تكن تستخدم CSS أو استعلامات وسائط متقدمة **تأكد من أن وحداتك الإعلانية متمركزة في الصفحة** لتزويد المستخدمين بتجربة ويب مثالية للهاتف المحمول.
--  <a class="" href="https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests">قم بتمكين طلبات الإعلانات متعددة الأحجام في مخزون </a> AMP لزيادة لضغط على مزاد الإعلانات وزيادة الأرباح.
+- <a class="" href="https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests">قم بتمكين طلبات الإعلانات متعددة الأحجام في مخزون </a> AMP لزيادة لضغط على مزاد الإعلانات وزيادة الأرباح.
 
 ### الطلب والتسعير: احصل على السعر المناسب لإعلاناتك
 
@@ -133,12 +143,12 @@ formats:
 ### الابتكار: تقديم المنتجات الإعلانية الأكثر جاذبية
 
 - **قم بتنفيذ الإعلانات على صفحات AMP الملحقة** لتحقيق إيرادات إضافية:
-    - [الإعلانات في المكتبة](../../../../documentation/examples/documentation/Carousel_Ad.html)
-    - [الإعلانات في العرض المبسط](../../../../documentation/examples/documentation/Lightbox_Ad.html)
-    - ... و[المزيد](../../../../documentation/examples/index.html)
+  - [الإعلانات في المكتبة](../../../../documentation/examples/documentation/Carousel_Ad.html)
+  - [الإعلانات في العرض المبسط](../../../../documentation/examples/documentation/Lightbox_Ad.html)
+  - ... و[المزيد](../../../../documentation/examples/index.html)
 - **قم بتنفيذ تنسيقات جديدة لإعلانات البيع المباشر** لتزويد فريق المبيعات بمنتجات إعلانية مبتكرة وعالية التأثير:
-    - [إعلانات مثبتة](../../../../documentation/examples/documentation/amp-sticky-ad.html)
-    - [السجاد الطائر](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
+  - [إعلانات مثبتة](../../../../documentation/examples/documentation/amp-sticky-ad.html)
+  - [السجاد الطائر](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
 
 ## موارد إضافية
 

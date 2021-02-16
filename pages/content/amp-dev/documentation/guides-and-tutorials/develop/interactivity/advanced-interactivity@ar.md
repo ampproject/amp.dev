@@ -1,6 +1,6 @@
 ---
-"$title": تحسين التفاعلية
-"$order": '2'
+'$title': تحسين التفاعلية
+$order: 2
 description: 'يوفر رمز البداية تجربة مستخدم خاوية قليلًا. وهناك طريقتان لتحسينها\: - أضف مؤشرًا يعرض ...'
 ---
 
@@ -18,8 +18,11 @@ description: 'يوفر رمز البداية تجربة مستخدم خاوية 
 افتح الملف [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html)، وأضف النص البرمجي التالي لقائمة مكونات AMP في قسم `<head>` من الصفحة:
 
 ```html
-<script async custom-element="amp-bind"
-    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script
+  async
+  custom-element="amp-bind"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+></script>
 ```
 
 ## إضافة مؤشر شريحة
@@ -43,7 +46,7 @@ description: 'يوفر رمز البداية تجربة مستخدم خاوية 
 وتكون البيانات الموجودة ضمن العناصر [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) قابلة للوصول من خلال معرِّفاتها المقترنة. على سبيل المثال: يمكننا الإشارة إلى هذا المتغير من خلال جزء التعبير التالي:
 
 ```javascript
-selected.slide // Evaluates to 0.
+selected.slide; // Evaluates to 0.
 ```
 
 ### تحديث حالة الشريحة
@@ -51,8 +54,13 @@ selected.slide // Evaluates to 0.
 لنقم بعد ذلك بتحديث هذا المتغير عند تغيير المستخدم للشرائح في المكتبة من خلال إضافة إجراء `"on"` التالي للعنصر الموجود مسبقًا [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md):
 
 ```html
-<amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
-    on="slideChange:AMP.setState({selected: {slide: event.index}})">
+<amp-carousel
+  type="slides"
+  layout="fixed-height"
+  height="250"
+  id="carousel"
+  on="slideChange:AMP.setState({selected: {slide: event.index}})"
+></amp-carousel>
 ```
 
 والآن كلما تغيرت الشريحة المعروضة لتغييرات [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)، سيتم استدعاء الإجراء `AMP.setState` بالوسيطة التالية:
@@ -60,7 +68,7 @@ selected.slide // Evaluates to 0.
 ```javascript
 {
   selected: {
-    slide: event.index
+    slide: event.index;
   }
 }
 ```
@@ -177,8 +185,10 @@ selected.slide // Evaluates to 0.
 أضف إجراء "تشغيل" لـ [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) الذي يقوم بتحديث المتغير `selected.sku` كلما تم تحديد لون جديد:
 
 ```html
-<amp-selector name="color"
-    on="select:AMP.setState({selected: {sku: event.targetOption}})">
+<amp-selector
+  name="color"
+  on="select:AMP.setState({selected: {sku: event.targetOption}})"
+></amp-selector>
 ```
 
 [tip type="tip"] **تلميح –** يمكن إتمام هذا الأمر أيضًا من خلال إضافة الإجراءات `on="tap:AMP.setState(...)` لكل [`amp-img`](../../../../documentation/components/reference/amp-img.md) تابع داخل [`amp-selector`](../../../../documentation/components/reference/amp-selector.md). وتُعد إحدى الأمور الرائعة حيال [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) أنه يبسِّط لغة الترميز بطرق مثل هذه. [/tip]
@@ -189,14 +199,26 @@ selected.slide // Evaluates to 0.
 
 ```html
 <!-- Update the `src` of each <amp-img> when the `selected.sku` variable changes. -->
-<amp-img width=200 height=250 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=300 height=375 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=400 height=500 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
+<amp-img
+  width="200"
+  height="250"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="300"
+  height="375"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="400"
+  height="500"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
 ```
 
-[tip type="note"] **ملحوظة –**  من الناحية العملية، من المحتمل أن يكون لكل صورة في المكتبة `src` مختلف. ويمكن إتمام هذا الأمر من خلال استبدال الصورة الواحدة بصفيفة من الصور؛ ومن أجل التبسيط، يستخدم هذا البرنامج التعليمي صورة واحدة بتكبيرات مختلفة. [/tip]
+[tip type="note"] **ملحوظة –** من الناحية العملية، من المحتمل أن يكون لكل صورة في المكتبة `src` مختلف. ويمكن إتمام هذا الأمر من خلال استبدال الصورة الواحدة بصفيفة من الصور؛ ومن أجل التبسيط، يستخدم هذا البرنامج التعليمي صورة واحدة بتكبيرات مختلفة. [/tip]
 
 **جرِّبه**: حدِّث الصفحة وحدد لونًا مختلفًا لقميص ما، وعند القيام بهذا؛ يتم تحديث صور المكتبة لعرض القمصان باللون المحدد.

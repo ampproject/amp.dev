@@ -1,9 +1,9 @@
 ---
-"$title": AMP pour e-mails - Intégration du fournisseur de messagerie
-"$order": '5'
+'$title': AMP pour e-mails - Intégration du fournisseur de messagerie
+$order: 5
 description: "Informations destinées aux clients et fournisseurs de messagerie pour l'intégration d'AMP."
 formats:
-- email
+  - email
 ---
 
 Nous travaillons actuellement à la rédaction d'un guide complet sur l'intégration d'AMP pour e-mails.

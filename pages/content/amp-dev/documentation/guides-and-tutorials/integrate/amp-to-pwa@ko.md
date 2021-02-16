@@ -1,9 +1,9 @@
 ---
-"$title": Preload your PWA from your AMP pages
-"$order": '1'
+'$title': Preload your PWA from your AMP pages
+$order: 1
 description: AMP 페이지를 사이트의 진입점으로 만든 다음, 보이지 않는 곳에서 PWA를 준비한 후 전환하는 것이 좋습니다...
 formats:
-- websites
+  - websites
 author: pbakaus
 ---
 
@@ -36,8 +36,10 @@ AMP를 사용하면 AMP 캐시에서 AMP 페이지가 게시되는 경우에도 
 먼저 스크립트를 통해 페이지의 `<head>`에 컴포넌트를 추가하여 [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md)를 사용하는 방식으로 모든 AMP 페이지에 서비스 워커를 설치합니다.
 
 [sourcecode:html]
+
 <script async custom-element="amp-install-serviceworker"
   src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+
 [/sourcecode]
 
 그런 다음 `<body>` 안에 다음을 추가합니다. 실제 서비스 워커로 연결되도록 수정하세요.
@@ -54,20 +56,20 @@ AMP를 사용하면 AMP 캐시에서 AMP 페이지가 게시되는 경우에도 
 [sourcecode:javascript]
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
-  '/',
-  '/styles/main.css',
-  '/script/main.js'
+'/',
+'/styles/main.css',
+'/script/main.js'
 ];
 
 self.addEventListener('install', function(event) {
-  // Perform install steps
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(function(cache) {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-  );
+// Perform install steps
+event.waitUntil(
+caches.open(CACHE_NAME)
+.then(function(cache) {
+console.log('Opened cache');
+return cache.addAll(urlsToCache);
+})
+);
 });
 [/sourcecode]
 
@@ -89,8 +91,8 @@ AMP 페이지에 있는 링크는 대부분 더 많은 콘텐츠를 담은 페�
 
 [sourcecode:javascript]
 self.addEventListener('fetch', event => {
-    if (event.request.mode === 'navigate') {
-      event.respondWith(fetch('/pwa'));
+if (event.request.mode === 'navigate') {
+event.respondWith(fetch('/pwa'));
 
       // Immediately start downloading the actual resource.
       fetch(event.request.url);

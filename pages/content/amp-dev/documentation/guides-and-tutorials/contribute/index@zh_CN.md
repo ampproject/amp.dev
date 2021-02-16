@@ -1,17 +1,17 @@
 ---
-"$title": 如何贡献自己的力量
-"$titles":
+'$title': 如何贡献自己的力量
+'$titles':
   navigation: Contribute
-"$path": "/documentation/guides-and-tutorials/contribute/index.html"
-"$localization":
-  path: "/{locale}/documentation/guides-and-tutorials/contribute/index.html"
-"$order": '0'
+'$path': '/documentation/guides-and-tutorials/contribute/index.html'
+'$localization':
+  path: '/{locale}/documentation/guides-and-tutorials/contribute/index.html'
+$order: 0
 description: 如果没有社区所有成员（无论是开发者、内容创作者还是与 AMP 相关的服务提供商）的帮助，AMP 项目不可能顺利进行。
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 ---
 
 如果没有社区所有成员（无论是开发者、内容创作者还是与 AMP 相关的服务提供商）的帮助，AMP 项目不可能顺利进行。您可以通过如下几种方式贡献自己的力量。

@@ -1,12 +1,12 @@
 ---
-"$title": Hướng dẫn & thực hành định dạng
-"$order": '3'
+'$title': Hướng dẫn & thực hành định dạng
+$order: 3
 description: Yêu cầu định dạng tập tin cho amp.dev
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 
@@ -145,10 +145,10 @@ Read-on
 ```
 
 ```css
-  // code sample
+// code sample
 ```
 
-```js
+````js
   // code sample
 ```</pre></div>
 
@@ -177,8 +177,10 @@ Code mẫu có thể có một bản xem trước và/hoặc liên kết đến 
           template="<custom-template>"]
   ```html
     // code sample
-  ```
-  &lsqb;/example]</pre>
+````
+
+&lsqb;/example]</pre>
+
 </div>
 
 Lưu ý: Bản xem trước sẽ tự động được chuyển đổi thành định dạng hiện tại khi mở nó trong sân thực hành 🤯!
@@ -210,9 +212,11 @@ Nếu cần yếu tố tùy chỉnh, quy định chúng trong thuộc tính `imp
 Nó trông như thế này:
 
 [example preview="inline" playground="true"]
+
 ```html
 <div style="background: red; width: 200px; height: 200px;">Hello World</div>
 ```
+
 [/example]
 
 Cảnh báo: ví dụ inline được nhúng trực tiếp vào trang. Điều này có thể gây xung đột nếu các thành phần đã được sử dụng trên trang này rồi (ví dụ `amp-consent`).
@@ -248,10 +252,15 @@ Quan trọng: Không thêm bất kỳ đoạn code soạn sẵn AMP nào vào ph
 Nó trông như thế này:
 
 [example preview="top-frame"
-         playground="true"]
+playground="true"]
+
 ```html
 <head>
-  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-youtube"
+    src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+  ></script>
   <style amp-custom>
     body {
       background: red;
@@ -260,13 +269,16 @@ Nó trông như thế này:
 </head>
 <body>
   <h1>Hello AMP</h1>
-  <amp-youtube width="480"
+  <amp-youtube
+    width="480"
     height="270"
     layout="responsive"
-    data-videoid="lBTCB7yLs8Y">
+    data-videoid="lBTCB7yLs8Y"
+  >
   </amp-youtube>
 </body>
 ```
+
 [/example]
 
 ### Câu chuyện AMP
@@ -311,38 +323,43 @@ Sử dụng `preview="top-frame"` cùng với `orientation="portrait"` để xem
 Nó trông như thế này:
 
 [example preview="top-frame"
-         orientation="portrait"
-         playground="true"]
+orientation="portrait"
+playground="true"]
+
 ```html
-  <head>
-    <script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-    <style amp-custom>
-      body {
-        font-family: 'Roboto', sans-serif;
-      }
-      amp-story-page {
-        background: white;
-      }
-    </style>
-  </head>
-  <body>
-    <amp-story standalone>
-      <amp-story-page id="cover">
-        <amp-story-grid-layer template="vertical">
-          <h1>Hello World</h1>
-          <p>This is the cover page of this story.</p>
-        </amp-story-grid-layer>
-      </amp-story-page>
-      <amp-story-page id="page-1">
-        <amp-story-grid-layer template="vertical">
-          <h1>First Page</h1>
-          <p>This is the first page of this story.</p>
-        </amp-story-grid-layer>
-      </amp-story-page>
-    </amp-story>
-  </body>
+<head>
+  <script
+    async
+    custom-element="amp-story"
+    src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+  ></script>
+  <style amp-custom>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    amp-story-page {
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <amp-story standalone>
+    <amp-story-page id="cover">
+      <amp-story-grid-layer template="vertical">
+        <h1>Hello World</h1>
+        <p>This is the cover page of this story.</p>
+      </amp-story-grid-layer>
+    </amp-story-page>
+    <amp-story-page id="page-1">
+      <amp-story-grid-layer template="vertical">
+        <h1>First Page</h1>
+        <p>This is the first page of this story.</p>
+      </amp-story-grid-layer>
+    </amp-story-page>
+  </amp-story>
+</body>
 ```
+
 [/example]
 
 ### URL tuyệt đối cho Email AMP
@@ -364,15 +381,19 @@ Lưu ý cách chúng tôi sử dụng <code>{{server_for_email}}</code> để qu
 Nó trông như thế này:
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <div class="resp-img">
-  <amp-img alt="flowers"
+  <amp-img
+    alt="flowers"
     src="{{server_for_email}}/static/inline-examples/images/flowers.jpg"
     layout="responsive"
     width="640"
-    height="427"></amp-img>
+    height="427"
+  ></amp-img>
 </div>
 ```
+
 [/example]
 
 ### Thoát khuôn mẫu mustache
@@ -401,13 +422,19 @@ Nó trông như thế này:
 Nó trông như thế này:
 
 [example preview="top-frame"
-         playground="true"
-         imports="amp-list:0.1"
-         template="amp-mustache:0.2"]
+playground="true"
+imports="amp-list:0.1"
+template="amp-mustache:0.2"]
+
 ```html
-<amp-list width="auto" height="100" layout="fixed-height"
-  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
-  <template type="amp-mustache">{% raw %}
+<amp-list
+  width="auto"
+  height="100"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json"
+>
+  <template type="amp-mustache"
+    >{% raw %}
     <div class="url-entry">
       <a href="{{url}}">{{title}}</a>
     </div>
@@ -415,6 +442,7 @@ Nó trông như thế này:
   </template>
 </amp-list>
 ```
+
 [/example]
 
 ## Liên kết
@@ -422,7 +450,7 @@ Nó trông như thế này:
 Bạn có thể liên kết đến các trang khác với cú pháp liên kết markdown tiêu chuẩn:
 
 ```md
- [link](../../../courses/beginning-course/index.md)
+[link](../../../courses/beginning-course/index.md)
 ```
 
 Khi liên kết đến một trang khác trên amp.dev, tham chiếu sẽ là một đường dẫn tập tin tương đối đến tập tin mục tiêu.
@@ -452,7 +480,7 @@ Khi bạn tạo một anchor mà sẽ được sử dụng trong một liên k�
 Tài liệu thành phần, hướng dẫn và thực hành cùng các ví dụ có thể được lọc theo định dạng AMP, ví dụ như website AMP hoặc câu chuyện AMP. Khi liên kết đến một trang như vậy, bạn cần quy định rõ một định dạng được hỗ trợ bởi mục tiêu, bằng cách chèn tham số định dạng vào liên kết:
 
 ```md
- [link](../../learn/amp-actions-and-events.md?format=websites)
+[link](../../learn/amp-actions-and-events.md?format=websites)
 ```
 
 Chỉ khi bạn chắc chắn rằng mục tiêu hỗ trợ **tất cả** các định dạng mà trang của bạn hỗ trợ thì bạn mới có thể bỏ tham số này.
@@ -462,8 +490,8 @@ Chỉ khi bạn chắc chắn rằng mục tiêu hỗ trợ **tất cả** các 
 Một liên kết đến tài liệu tham khảo cho thành phần sẽ tự động chỉ đến phiên bản mới nhất nếu liên kết của bạn không chứa thông tin phiên bản. Khi bạn muốn chỉ đến một phiên bản cụ thể, hãy nhập tên đầy đủ:
 
 ```md
- [latest version](../../../components/reference/amp-carousel.md?format=websites)
- [explicit version](../../../components/reference/amp-carousel-v0.2.md?format=websites)
+[latest version](../../../components/reference/amp-carousel.md?format=websites)
+[explicit version](../../../components/reference/amp-carousel-v0.2.md?format=websites)
 ```
 
 ## Cấu trúc Tài liệu

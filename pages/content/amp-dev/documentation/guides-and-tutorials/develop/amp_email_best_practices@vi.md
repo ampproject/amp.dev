@@ -1,9 +1,9 @@
 ---
-"$title": Biện pháp thực hành tiên tiến nhất cho AMP cho Email
-"$order": '1'
-"$category": Develop
+'$title': Biện pháp thực hành tiên tiến nhất cho AMP cho Email
+$order: 1
+'$category': Develop
 formats:
-- email
+  - email
 ---
 
 AMP cho phép các loại nội dung mới và cuốn hút trong email! Khi thiết kế email, hãy chú ý đến các biện pháp thực hành tiên tiến nhất sau đây để đảm bảo email của bạn có hiệu năng tốt, ổn định trên các nền tảng khác nhau và hoạt động như kỳ vọng của người dùng.

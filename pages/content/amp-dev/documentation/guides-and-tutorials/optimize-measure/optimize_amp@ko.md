@@ -1,10 +1,10 @@
 ---
-"$title": 호스팅된 AMP 페이지 최적화
-"$order": '7'
+'$title': 호스팅된 AMP 페이지 최적화
+$order: 7
 description: AMP 런타임은 속도 향상을 위해 최적화됩니다. 또한 AMP 캐시가 AMP 페이지를 지원할 경우 해당 페이지는 전적으로 최적화되어 최상의 로딩 성능을 제공합니다...
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 
@@ -14,7 +14,7 @@ author: sebastianbenz
 
 AMP 런타임은 [속도 향상을 위해 최적화](../../../about/how-amp-works.html)됩니다. 또한 [AMP 캐시](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md)가 AMP 페이지를 지원할 경우 해당 페이지는 전적으로 최적화되어 최상의 로딩 성능을 제공합니다. 예를 들어 사용자가 모바일의 Google 검색을 통해 AMP 페이지로 유입될 경우 기본적으로 AMP 캐시가 페이지를 지원합니다.
 
-하지만 항상 AMP 캐시가 AMP 페이지를 지원하는 것은 아닙니다. 다른 트래픽 소스의 경우 웹사이트는 자체 서버에서 AMP 페이지를 표시하도록 결정할 수 있습니다. 가장 흔한 사용 사례는 사용자가 바로 사이트로 이동하는 [tasty.co](https://tasty.co)처럼 전적으로 AMP로 작성된 사이트입니다. 또 다른 트래픽 소스는 Twitter입니다. Twitter는 표준 모바일 버전을 제공하는 대신  [AMP 페이지 연결을 시작](https://searchengineland.com/twitter-ramps-amp-278300)했습니다. 즉, 사용자가 Twitter 모바일 앱의 링크를 클릭하면 해당 링크가 고유 원본 페이지의 AMP 버전으로 연결됩니다(제공될 경우).
+하지만 항상 AMP 캐시가 AMP 페이지를 지원하는 것은 아닙니다. 다른 트래픽 소스의 경우 웹사이트는 자체 서버에서 AMP 페이지를 표시하도록 결정할 수 있습니다. 가장 흔한 사용 사례는 사용자가 바로 사이트로 이동하는 [tasty.co](https://tasty.co)처럼 전적으로 AMP로 작성된 사이트입니다. 또 다른 트래픽 소스는 Twitter입니다. Twitter는 표준 모바일 버전을 제공하는 대신 [AMP 페이지 연결을 시작](https://searchengineland.com/twitter-ramps-amp-278300)했습니다. 즉, 사용자가 Twitter 모바일 앱의 링크를 클릭하면 해당 링크가 고유 원본 페이지의 AMP 버전으로 연결됩니다(제공될 경우).
 
 결과적으로 AMP 페이지가 항상 AMP 캐시를 통해서만 지원된다고 확신할 수 없습니다. 자체 서버에서 AMP 페이지를 지원할 경우 AMP 페이지에서 최적의 로딩 성능을 제공하는 것이 중요합니다.
 
@@ -68,11 +68,12 @@ AMP 페이지의 `<head>` 섹션에 권장되는 정렬은 다음과 같습니�
 
 1. 첫 번째 태그는 `meta charset` 태그여야 하며 그다음에는 남은 `meta` 태그를 배치해야 합니다.
 
-2. 다음으로 `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>`를 활용해 AMP 런타임 `v0.js` `<script>` 태그를 미리 로드합니다. AMP 런타임이 로드될 때까지 [AMP 상용구는](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) `body { visibility:hidden }`를 통해 문서를 숨김 처리하므로 AMP 런타임은 최대한 빨리 다운로드를 시작해야 합니다.  AMP 런타임을 미리 로드할 경우 브라우저에서 우선순위가 더 높은 스크립트를 다운로드하도록 지시할 수 있습니다. 이를 방지하는 방법을 알아보려면 [server-side-rendering](#server-side-rendering)을 참조하세요. {amp-img6} {/amp-img6}
+2. 다음으로 `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>`를 활용해 AMP 런타임 `v0.js` `<script>` 태그를 미리 로드합니다. AMP 런타임이 로드될 때까지 [AMP 상용구는](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) `body { visibility:hidden }`를 통해 문서를 숨김 처리하므로 AMP 런타임은 최대한 빨리 다운로드를 시작해야 합니다. AMP 런타임을 미리 로드할 경우 브라우저에서 우선순위가 더 높은 스크립트를 다운로드하도록 지시할 수 있습니다. 이를 방지하는 방법을 알아보려면 [server-side-rendering](#server-side-rendering)을 참조하세요. {amp-img6} {/amp-img6}
 
 3. 페이지에 렌더링 지연 확장자가 포함된 경우 (예: amp-experiment, amp-dynamic-css-classes, amp-story) 페이지 렌더링 시 AMP 런타임이 해당 확장자를 필요로 하므로 확장자를 미리 로드합니다.
 
 [sourcecode:html]
+
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-custom-css-0.1.js">
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/story-1.0.js">[/sourcecode]
@@ -150,7 +151,7 @@ AMP 페이지의 `<head>` 섹션에 권장되는 정렬은 다음과 같습니�
 </amp-video>
 [/sourcecode]
 
-브라우저에서 화면 너비를 확인하는 데 뷰포트 치수가 필요하므로 뷰포트 선언 *다음에* 사전 로드 구문을 배치해야 합니다.
+브라우저에서 화면 너비를 확인하는 데 뷰포트 치수가 필요하므로 뷰포트 선언 _다음에_ 사전 로드 구문을 배치해야 합니다.
 
 [sourcecode:html]
 
@@ -203,11 +204,13 @@ AMP를 사용하면 글꼴 로딩을 최적화하는 데 수행할 수 있는 �
 - 사용자 정의 글꼴 미리로드:
 
 [sourcecode:html]
+
 <link rel="preload" as="font" href="/bundles/app/fonts/helveticaneue-roman-webfont.woff2" >[/sourcecode]
 
 - Google Fonts를 사용하거나 알 수 없는 글꼴 URL을 지원하는 기타 글꼴 제공업체를 사용할 경우 각 폰트 서버를 사전 연결합니다:
 
 [sourcecode:html]
+
  <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
 [/sourcecode]
 

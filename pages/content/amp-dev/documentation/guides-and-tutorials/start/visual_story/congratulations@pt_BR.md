@@ -1,6 +1,6 @@
 ---
-"$title": Congratulations!
-"$order": '9'
+'$title': Congratulations!
+$order: 9
 description: 'Voce concluiu sua primeira historia AMP! Neste tutorial, voce aprendeu a: criar uma historia de varias paginas com o componente amp-story'
 author: bpaduch
 ---

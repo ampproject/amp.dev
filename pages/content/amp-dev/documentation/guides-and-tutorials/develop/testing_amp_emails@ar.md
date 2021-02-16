@@ -1,10 +1,10 @@
 ---
-"$title": اختبار رسائل AMP الإلكترونية
-"$order": '2'
-"$category": Develop
+'$title': اختبار رسائل AMP الإلكترونية
+$order: 2
+'$category': Develop
 description: يمكن ضمان تجربة مستخدم رائعة من خلال اختبار رسائل AMP الإلكترونية قبل الإرسال إلى عدد كبير من الجمهور.
 formats:
-- email
+  - email
 author: fstanis
 ---
 

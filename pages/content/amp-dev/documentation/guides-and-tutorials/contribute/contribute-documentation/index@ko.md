@@ -1,13 +1,13 @@
 ---
-"$title": 문서 기여
-"$order": '0'
-"$hidden": 'true'
+'$title': 문서 기여
+$order: 0
+'$hidden': 'true'
 description: amp.dev에 문서 기여를 시작하세요
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 

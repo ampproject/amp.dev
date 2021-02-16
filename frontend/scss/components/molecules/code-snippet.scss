@@ -46,10 +46,14 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
     margin-right: -30px;
   }
 
-  pre {
+  pre, code {
     @include txt-mono;
     white-space: pre;
     font-size: 0.9rem;
+	  padding: unset;
+	  word-break: initial;
+	  color: inherit;
+	  background: none;
   }
 
   .hll { background-color: #49483e }

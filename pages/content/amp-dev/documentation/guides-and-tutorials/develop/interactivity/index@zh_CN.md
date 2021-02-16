@@ -1,11 +1,11 @@
 ---
-"$title": 创建互动式 AMP 网页
-"$path": "/documentation/guides-and-tutorials/develop/interactivity/index.html"
-"$order": '0'
+'$title': 创建互动式 AMP 网页
+'$path': '/documentation/guides-and-tutorials/develop/interactivity/index.html'
+$order: 0
 description: 在本教程中，您将学习如何通过 amp-bind 使用数据绑定和表达式创建性能卓越的互动式 AMP 网页…
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/interactivity-final-page.jpg', 415, 738, align='right third', caption='本教程的完成版 AMP 网页') }}

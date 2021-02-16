@@ -1,9 +1,9 @@
 ---
-"$title": Mejore la participación del usuario
-"$order": '6'
+'$title': Mejore la participación del usuario
+$order: 6
 description: A continuación le proporcionamos algunos consejos rápidos para mejorar la participación del usuario con AMP. Ayude a los lectores a identificarle con una marca consistente y un contenido enriquecido, tanto en las páginas de AMP como en las que no lo son.
 formats:
-- websites
+  - websites
 ---
 
 A continuación le proporcionamos algunos consejos rápidos para mejorar la participación del usuario con AMP.

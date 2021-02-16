@@ -1,6 +1,6 @@
 ---
-"$title": Bir AMP hikayesinin bölümlerini anlama
-"$order": '2'
+'$title': Bir AMP hikayesinin bölümlerini anlama
+$order: 2
 description: Web Hikayesi, bilgileri görüntüler, videolar, grafikler, ses ve daha fazlasıyla aktaran tam ekran bir görsel hikaye anlatma deneyimidir. Küçük boyutlu, görsel açıdan zengin içerik isteyen...
 author: bpaduch
 ---

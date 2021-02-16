@@ -1,10 +1,10 @@
 ---
-"$title": Ações e eventos
-order: '0'
+'$title': Ações e eventos
+$order: 0
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
   text: '[tip type="note"]'
 ---
@@ -74,7 +74,7 @@ Veja a tabela abaixo para descrições de cada parte da sintaxe.
   </tr>
 </table>
 
-## Lidando com múltiplos eventos  <a name="handling-multiple-events"></a>
+## Lidando com múltiplos eventos <a name="handling-multiple-events"></a>
 
 Você pode escutar múltiplos eventos em um elemento separando os eventos com um ponto-e-vírgula `;`.
 
@@ -109,7 +109,7 @@ Por exemplo, o seguinte é possível em AMP:
 
 ## Eventos específicos por elemento <a name="element-specific-events"></a>
 
-### * - todos os elementos <a name="---all-elements"></a>
+### \* - todos os elementos <a name="---all-elements"></a>
 
 <table>
   <tr>
@@ -352,7 +352,7 @@ Por exemplo, o seguinte é possível em AMP:
 
 ## Ações específicas por elemento <a name="element-specific-actions"></a>
 
-### * (todos os elementos) <a name="-all-elements"></a>
+### \* (todos os elementos) <a name="-all-elements"></a>
 
 <table>
   <tr>
@@ -722,15 +722,15 @@ O alvo `AMP` é fornecido pelo runtime AMP e implementa ações top-level que se
   </tr>
 </table>
 
-<sup>1</sup>Quando usado com <a href="#multiple-actions-for-one-event">múltiplas ações</a>, ações subsequentes irão aguardar a conclusão de <code>setState()</code> ou <code>pushState()</code> antes da chamada. Apenas um único  <code>setState()</code> ou <code>pushState()</code> é permitido por evento.
+<sup>1</sup>Quando usado com <a href="#multiple-actions-for-one-event">múltiplas ações</a>, ações subsequentes irão aguardar a conclusão de <code>setState()</code> ou <code>pushState()</code> antes da chamada. Apenas um único <code>setState()</code> ou <code>pushState()</code> é permitido por evento.
 
 ### Alvo: amp-access <a name="target-amp-access"></a>
 
-O alvo `amp-access` é fornecido pelo componente  [amp-access](https://amp.dev/documentation/components/amp-access.html) component.
+O alvo `amp-access` é fornecido pelo componente [amp-access](https://amp.dev/documentation/components/amp-access.html) component.
 
 O alvo `amp-access` é especial pelas razões a seguir:
 
 1. Você não pode fornecer um ID arbitrário para este alvo. O alvo é sempre `amp-access`.
 2. As ações para `amp-access` são dinâmicas dependendo da estrutura da [Configuração de Acesso AMP](https://amp.dev/documentation/components/amp-access#configuration).
 
-Veja [detalhes](https://amp.dev/documentation/components/amp-access#login-link) sobre o uso do alvo  `amp-access` target.
+Veja [detalhes](https://amp.dev/documentation/components/amp-access#login-link) sobre o uso do alvo `amp-access` target.

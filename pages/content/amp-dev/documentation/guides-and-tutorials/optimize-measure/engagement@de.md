@@ -1,9 +1,9 @@
 ---
-"$title": Optimiere das User Engagement
-"$order": '6'
+'$title': Optimiere das User Engagement
+$order: 6
 description: Hier sind ein paar Tipps zur Verbesserung von User Engagement mit AMP. Hilf deinen Lesern, dein Produkt mit einheitlichem Branding und reichhaltigem Content auf AMP Seiten und traditionellen Seiten in Verbindung zu bringen.
 formats:
-- websites
+  - websites
 ---
 
 Hier sind ein paar Tipps zur Verbesserung von User Engagement mit AMP.

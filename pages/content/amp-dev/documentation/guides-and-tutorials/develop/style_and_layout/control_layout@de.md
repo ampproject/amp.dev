@@ -1,15 +1,15 @@
 ---
-"$title": Layout & Medienabfragen
-"$order": '1'
+'$title': Layout & Medienabfragen
+$order: 1
 description: AMP unterstützt sowohl Medienabfragen als auch Elementabfragen und verfügt über eine leistungsstarke, integrierte Methode zur Steuerung des Layouts einzelner Elemente. Das Attribut layout macht …
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 author: Meggin
 contributors:
-- pbakaus
+  - pbakaus
 ---
 
 AMP unterstützt sowohl **Medienabfragen** als auch **Elementabfragen** und verfügt über eine leistungsstarke, integrierte Methode zur Steuerung des **Layouts** einzelner Elemente. Im Vergleich zur ausschließlichen Verwendung von CSS macht das Attribut `layout` es erheblich einfacher, ein responsives Design zu erstellen und damit zu arbeiten.

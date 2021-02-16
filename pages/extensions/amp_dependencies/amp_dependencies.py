@@ -55,7 +55,7 @@ class AmpDependencies(object):
     self.injected = True
 
     dependencies = ''
-    for name, details in self._dependencies.iteritems():
+    for name, details in self._dependencies.items():
       version = details[0]
 
       if version is None:

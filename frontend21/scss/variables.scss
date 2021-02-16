@@ -48,15 +48,10 @@ $safeColors: (
 $breakpoints: (
   'pointer-coarse': (pointer: coarse),
   'pointer-fine': (pointer: fine),
-  'min': (min-width: 550px),
   'small': (min-width: 768px),
   'medium': (min-width: 1024px),
   'large': (min-width: 1280px),
   'max': (min-width: 1680px)
 ) !default;
 
-$fontFamilyHeadline: 'Poppins', 'Helvetica', 'Arial', sans-serif;
-$fontFamilyCode: Fira Mono, monospace;
-
-
-$maxWidth: 2020px;
+$fontFamilyRegular: 'Poppins', system;

@@ -1,6 +1,6 @@
 ---
-"$title": Summary
-"$order": '4'
+'$title': Summary
+$order: 4
 description: 이번 튜토리얼에서는 amp-access와 amp-form을 결합하여 로그인이 필요한 댓글 영역을 만드는 방법을 살펴보았습니다.
 ---
 

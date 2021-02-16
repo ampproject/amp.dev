@@ -1,8 +1,8 @@
 ---
-"$title": E-posta Destekli CSS için AMP
-order: '5'
+'$title': E-posta Destekli CSS için AMP
+$order: 5
 formats:
-- email
+  - email
 teaser:
   text: Bu belge, AMP e-postalarında şu anda desteklenen CSS özelliklerini özetlemektedir.
 toc: 'true'
@@ -41,7 +41,7 @@ Bir iç stil sayfası kullanırken, CSS, e-postanın `<head>` etiketinde bulunan
 
 ### Satır içi stiller <a name="inline-styles"></a>
 
-İç stil sayfasına ek olarak, satır içi stiller [`style`  özniteliğini](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-style) kullanan herhangi bir öğede belirtilebilir.
+İç stil sayfasına ek olarak, satır içi stiller [`style` özniteliğini](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-style) kullanan herhangi bir öğede belirtilebilir.
 
 ### Dış stil sayfası <a name="external-stylesheet"></a>
 
@@ -327,13 +327,13 @@ E-postanın hiçbir yerinde `<link rel="stylesheet" href="...">` kullanımına i
 
 Aşağıdaki CSS özelliklerinin ek kısıtlamaları vardır:
 
-Özellik | Kısıtlamalar
---- | ---
-[`cursor`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor) | İzin verilen tek değerler `pointer` ve `initial` değerleridir.
-[`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) | `url()` izin verilmez.
-[`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) | Yalnızca `opacity`, `transform`, `visibility` ve `offset-distance` canlandırılabilir.
-[`visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) | İzin verilen tek değerler `hidden`, `visible` ve `initial`.
-[`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index) | Sadece -100 ile 100 arasındaki değerlere izin verilir.
+| Özellik                                                                     | Kısıtlamalar                                                                          |
+| --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| [`cursor`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor)         | İzin verilen tek değerler `pointer` ve `initial` değerleridir.                        |
+| [`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)         | `url()` izin verilmez.                                                                |
+| [`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) | Yalnızca `opacity`, `transform`, `visibility` ve `offset-distance` canlandırılabilir. |
+| [`visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) | İzin verilen tek değerler `hidden`, `visible` ve `initial`.                           |
+| [`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)       | Sadece -100 ile 100 arasındaki değerlere izin verilir.                                |
 
 ## Kurallar <a name="at-rules"></a>
 
@@ -348,14 +348,14 @@ Aşağıdaki CSS özelliklerinin ek kısıtlamaları vardır:
 `@media` sorguları aracılığıyla kuralların koşullu olarak uygulanması için desteklenen [medya özelliklerinin](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#Media_features) listesi.
 
 - [`device-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-width)
-    - `max-device-width`
-    - `min-device-width`
+  - `max-device-width`
+  - `min-device-width`
 - [`hover`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover)
 - [`orientation`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/orientation)
 - [`pointer`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer)
 - [`resolution`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/resolution)
-    - `max-resolution`
-    - `min-resolution`
+  - `max-resolution`
+  - `min-resolution`
 - [`width`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/width)
-    - `max-width`
-    - `min-width`
+  - `max-width`
+  - `min-width`

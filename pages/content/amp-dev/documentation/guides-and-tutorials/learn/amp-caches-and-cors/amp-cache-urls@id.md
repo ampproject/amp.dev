@@ -1,14 +1,14 @@
 ---
-"$title": Penanganan Permintaan dan Format URL Cache AMP
-"$order": '9'
+'$title': Penanganan Permintaan dan Format URL Cache AMP
+$order: 9
 toc: 'false'
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 author: Gregable
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 Di dalam dokumen ini, Anda akan mempelajari tentang format URL Cache AMP dan caranya menangani permintaan.

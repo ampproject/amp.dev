@@ -1,10 +1,10 @@
 ---
-"$title": Otimize suas páginas AMP hospedadas
-"$order": '7'
+'$title': Otimize suas páginas AMP hospedadas
+$order: 7
 description: O runtime AMP foi otimizado tendo a velocidade como objetivo e se suas páginas AMP forem servidas por um cache AMP, elas serão plenamente otimizadas e garantirão o melhor desempenho de carregamento...
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 
@@ -73,6 +73,7 @@ Veja uma descrição passo a passo:
 3. Se sua página incluir extensões que provocam atraso na renderização (por exemplo, amp-experiment, amp-dynamic-css-classes, amp-story), faça o pré-carregamento dessas extensões conforme sejam requeridas pelo runtime AMP para renderizar a página.
 
 [sourcecode:html]
+
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-custom-css-0.1.js">
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/story-1.0.js">[/sourcecode]
@@ -150,7 +151,7 @@ A propósito, a mesma solução funciona para imagens de pôster [`amp-video`](.
 </amp-video>
 [/sourcecode]
 
-Apenas certifique-se de colocar as instruções de pré-carregamento *após* a declaração viewport, pois o navegador precisa das dimensões da viewport para determinar a largura da tela:
+Apenas certifique-se de colocar as instruções de pré-carregamento _após_ a declaração viewport, pois o navegador precisa das dimensões da viewport para determinar a largura da tela:
 
 [sourcecode:html]
 
@@ -203,11 +204,13 @@ Com o AMP, existem algumas coisas que você pode fazer para otimizar o carregame
 - Pré-carregar fontes personalizadas:
 
 [sourcecode:html]
+
 <link rel="preload" as="font" href="/bundles/app/fonts/helveticaneue-roman-webfont.woff2" >[/sourcecode]
 
 - Se você estiver usando fontes do Google ou qualquer outro provedor de fontes com URLs de fontes desconhecidas, conecte previamente o servidor de fontes correspondente:
 
 [sourcecode:html]
+
  <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
 [/sourcecode]
 
@@ -215,7 +218,7 @@ Por último, mas não menos importante, tente minimizar o número de fontes pers
 
 ### Layouts AMP renderizados no servidor <a name="server-side-rendering"></a>
 
-A renderização de layouts  AMP no servidor é uma técnica que caches AMP usam para acelerar ainda mais o tempo de carregamento. Com a renderização do lado do servidor, é possível remover o bolierplate AMP para que o documento AMP possa ser renderizado sem executar o JavaScript do runtime AMP. Por exemplo, a versão do AMP Boilerplate Generator renderizada no servidor [renderiza duas vezes mais rapidamente](https://www.webpagetest.org/video/compare.php?tests=180810_W7_f343aff20fe04fcf84598080fcb98716%2C180810_ZG_24f02134178d96ce8cfc9912f86c873c&thumbSize=200&ival=500&end=visual) que a versão AMP normal!
+A renderização de layouts AMP no servidor é uma técnica que caches AMP usam para acelerar ainda mais o tempo de carregamento. Com a renderização do lado do servidor, é possível remover o bolierplate AMP para que o documento AMP possa ser renderizado sem executar o JavaScript do runtime AMP. Por exemplo, a versão do AMP Boilerplate Generator renderizada no servidor [renderiza duas vezes mais rapidamente](https://www.webpagetest.org/video/compare.php?tests=180810_W7_f343aff20fe04fcf84598080fcb98716%2C180810_ZG_24f02134178d96ce8cfc9912f86c873c&thumbSize=200&ival=500&end=visual) que a versão AMP normal!
 
 Se você estiver publicando uma página AMP, com certeza deve considerar o uso do [AMP Optimizer](amp-optimizer-guide/index.md). O AMP Optimizer permite que você sirva páginas AMP otimizadas a partir do seu próprio back-end, que inclui a renderização de layouts AMP no servidor. O AMP Optimizer também executa automaticamente várias outras otimizações descritas neste documento.
 

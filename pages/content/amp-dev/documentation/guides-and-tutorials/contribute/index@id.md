@@ -1,17 +1,17 @@
 ---
-"$title": Cara Berkontribusi
-"$titles":
+'$title': Cara Berkontribusi
+'$titles':
   navigation: Contribute
-"$path": "/documentation/guides-and-tutorials/contribute/index.html"
-"$localization":
-  path: "/{locale}/documentation/guides-and-tutorials/contribute/index.html"
-"$order": '0'
+'$path': '/documentation/guides-and-tutorials/contribute/index.html'
+'$localization':
+  path: '/{locale}/documentation/guides-and-tutorials/contribute/index.html'
+$order: 0
 description: Proyek AMP tidak akan mungkin terwujud tanpa bantuan dari semua anggota komunitas, baik itu pengembang, pembuat konten, maupun penyedia layanan yang relevan dengan AMP.
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 ---
 
 Project AMP tidak akan dapat terwujud tanpa bantuan dari semua anggota komunitas, baik itu pengembang, pembuat konten, maupun penyedia layanan yang relevan dengan AMP. Ada banyak cara untuk berkontribusi.

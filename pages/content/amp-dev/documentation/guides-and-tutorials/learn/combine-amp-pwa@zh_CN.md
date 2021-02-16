@@ -1,11 +1,11 @@
 ---
-"$title": 将 AMP 与 PWA 相结合
-"$order": '7'
+'$title': 将 AMP 与 PWA 相结合
+$order: 7
 description: 渐进式 Web 应用和 AMP 网页可完美结合。事实上，在很多情况下，这两者都会以这样或那样的方式达到相得益彰的效果。了解如何…
 formats:
-- websites
+  - websites
 components:
-- youtube
+  - youtube
 author: pbakaus
 ---
 

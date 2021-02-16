@@ -1,6 +1,6 @@
 ---
-"$title": Menambahkan korsel
-"$order": '3'
+'$title': Menambahkan korsel
+$order: 3
 description: Fitur umum lainnya di halaman seluler adalah korsel (carousel). Anda dapat dengan mudah menambahkan korsel ke halaman AMP dengan menggunakan komponen amp-carousel.
 ---
 
@@ -11,13 +11,17 @@ Fitur umum lainnya di halaman seluler adalah korsel (carousel). Anda dapat denga
 Jangan lupa untuk menyertakan perpustakaan komponen [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) dengan **menambahkan** permintaan JavaScript berikut ini ke tag `<head>` pada dokumen Anda:
 
 ```html
-<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script
+  async
+  custom-element="amp-carousel"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+></script>
 ```
 
 Berikutnya, mari sematkan korsel gambar yang sederhana dengan tata letak responsif serta lebar dan tinggi yang sudah ditentukan sebelumnya. **Tambahkan** kode berikut ini ke halaman Anda:
 
 ```html
-<amp-carousel layout="fixed-height" height="168" type="carousel" >
+<amp-carousel layout="fixed-height" height="168" type="carousel">
   <amp-img src="mountains-1.jpg" width="300" height="168"></amp-img>
   <amp-img src="mountains-2.jpg" width="300" height="168"></amp-img>
   <amp-img src="mountains-3.jpg" width="300" height="168"></amp-img>
@@ -28,7 +32,7 @@ Berikutnya, mari sematkan korsel gambar yang sederhana dengan tata letak respons
 
 {{ image('/static/img/docs/tutorials/tut-advanced-carousel-simple.png', 412, 403, align='center half', caption='Korsel gambar sederhana') }}
 
-Komponen [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) dapat dikonfigurasikan dalam berbagai cara.  Mari kita ubah UI agar hanya menampilkan gambar satu per satu dan membuat tata letak korsel menjadi responsif.
+Komponen [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) dapat dikonfigurasikan dalam berbagai cara. Mari kita ubah UI agar hanya menampilkan gambar satu per satu dan membuat tata letak korsel menjadi responsif.
 
 Untuk melakukannya, pertama-tama, **ubah** `type` [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) dari `carousel` menjadi `slides`, **ubah** `layout` menjadi `responsive` dan **tetapkan** `width` ke 300 (pastikan `height` dan `width` sudah ditentukan). <strong>Tambahkan</strong> atribut <code>"layout=responsive"</code> ke <a><code>amp-img</code></a> anak <a><code>amp-carousel</code></a>.
 
@@ -41,10 +45,33 @@ Terakhir, mari buat korsel ini agar otomatis berputar setiap 2 detik. **Tambahka
 Hasil akhirnya akan terlihat seperti berikut ini:
 
 ```html
-<amp-carousel layout="responsive" width="300" height="168" type="slides" autoplay delay="2000" loop>
-  <amp-img src="mountains-1.jpg" width="300" height="168" layout="responsive"></amp-img>
-  <amp-img src="mountains-2.jpg" width="300" height="168" layout="responsive"></amp-img>
-  <amp-img src="mountains-3.jpg" width="300" height="168" layout="responsive"></amp-img>
+<amp-carousel
+  layout="responsive"
+  width="300"
+  height="168"
+  type="slides"
+  autoplay
+  delay="2000"
+  loop
+>
+  <amp-img
+    src="mountains-1.jpg"
+    width="300"
+    height="168"
+    layout="responsive"
+  ></amp-img>
+  <amp-img
+    src="mountains-2.jpg"
+    width="300"
+    height="168"
+    layout="responsive"
+  ></amp-img>
+  <amp-img
+    src="mountains-3.jpg"
+    width="300"
+    height="168"
+    layout="responsive"
+  ></amp-img>
 </amp-carousel>
 ```
 
@@ -60,25 +87,28 @@ Pertama, mari **tambahkan** gaya ini ke `<style amp-custom>` untuk memastikan ba
 
 ```css
 amp-fit-text {
-    white-space: normal;
+  white-space: normal;
 }
 ```
 
 Sekarang, **ganti** korsel sederhana Anda dengan ini:
 
 ```html
-<amp-carousel layout="fixed-height" height="250" type="carousel" >
-    <amp-img src="blocky-mountains-1.jpg" width="300" height="250"></amp-img>
+<amp-carousel layout="fixed-height" height="250" type="carousel">
+  <amp-img src="blocky-mountains-1.jpg" width="300" height="250"></amp-img>
 
-    <amp-ad width="300" height="250"
-      type="doubleclick"
-      data-slot="/35096353/amptesting/image/static">
-        <div placeholder>This ad is still loading.</div>
-    </amp-ad>
+  <amp-ad
+    width="300"
+    height="250"
+    type="doubleclick"
+    data-slot="/35096353/amptesting/image/static"
+  >
+    <div placeholder>This ad is still loading.</div>
+  </amp-ad>
 
-    <amp-fit-text width="300" height="250" layout="fixed">
-        Big, bold article quote goes here.
-    </amp-fit-text>
+  <amp-fit-text width="300" height="250" layout="fixed">
+    Big, bold article quote goes here.
+  </amp-fit-text>
 </amp-carousel>
 ```
 

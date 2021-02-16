@@ -1,10 +1,10 @@
 ---
-"$title": 웹 페이지에 스토리 삽입
-"$order": '3'
+'$title': 웹 페이지에 스토리 삽입
+$order: 3
 description: AMP Story Player
 formats:
-- websites
-- stories
+  - websites
+  - stories
 ---
 
 스토리는 몰입을 유도하는 전면 경험입니다. 고유 URL을 통해 오픈 웹에서 호스팅되므로 쉽게 공유할 수 있습니다. 하지만 스토리를 블로그, 제품 설명 또는 뉴스 기사와 같은 사이트에 통합하려는 경우에는 어떻게 해야 할까요?
@@ -16,6 +16,7 @@ AMP Story Player를 사용하면 웹 페이지에 사용자가 탭하거나 클�
 비 AMP 페이지에도 AMP 스토리를 삽입하면 사용자가 호스트 문서를 떠나지 않고도 해당 스토리를 탭하거나 클릭할 수 있습니다.
 
 [example preview="top-frame" playground="false"]
+
 ```html
 <!doctype html>
     <head>
@@ -67,6 +68,7 @@ AMP Story Player를 사용하면 웹 페이지에 사용자가 탭하거나 클�
     </body>
 </html>
 ```
+
 [/example]
 
 ## AMP 스토리 플레이어 삽입
@@ -79,7 +81,11 @@ AMP Story Player를 사용하면 웹 페이지에 사용자가 탭하거나 클�
 
 ```html
 <script async src="https://cdn.ampproject.org/amp-story-player-v0.js"></script>
-<link href="https://cdn.ampproject.org/amp-story-player-v0.css" rel="stylesheet" type="text/css">
+<link
+  href="https://cdn.ampproject.org/amp-story-player-v0.css"
+  rel="stylesheet"
+  type="text/css"
+/>
 ```
 
 첫 번째 스크립트는 플레이어 로직을 가져오며 두 번째 스크립트는 기본 스타일링을 설정합니다.
@@ -89,12 +95,13 @@ AMP Story Player를 사용하면 웹 페이지에 사용자가 탭하거나 클�
 문서 `body`에 `<amp-story-player>` 요소를 포함합니다. 다음으로 `<a>` 태그를 `<amp-story-player>` 요소에 배치하여 원하는 스토리를 지정합니다. `href`를 사용해 스토리의 위치를 지정합니다. `href` 태그는 호스팅된 스토리 또는 상대 경로의 URL을 지정할 수도 있습니다. 스토리 제목은 `<a>` 태그 안에 배치합니다.
 
 ```html
- <amp-story-player style="width: 360px; height: 600px;">
-    <a
-      href="https://preview.amp.dev/documentation/examples/introduction/stories_in_amp/">
-      Stories in AMP - Hello World
-    </a>
-  </amp-story-player>
+<amp-story-player style="width: 360px; height: 600px;">
+  <a
+    href="https://preview.amp.dev/documentation/examples/introduction/stories_in_amp/"
+  >
+    Stories in AMP - Hello World
+  </a>
+</amp-story-player>
 ```
 
 ### 플레이어 크기 조정
@@ -103,11 +110,11 @@ AMP Story Player를 사용하면 웹 페이지에 사용자가 탭하거나 클�
 
 ```html
 <body>
-...
+  ...
   <amp-story-player style="width: 360px; height: 600px;">
-...
+    ...
   </amp-story-player>
-...
+  ...
 </body>
 ```
 
@@ -118,9 +125,7 @@ We recommend maintaining a 3:5 aspect ratio for the best user experience, but yo
 스토리 플레이어의 반응성은 다른 블록 요소와 마찬가지로 작동합니다. 아래 예시와 같이 너비 및 높이 비율을 유지하려면 CSS를 사용하세요.
 
 ```html
-<amp-story-player style="width: 50vw; height: 83.35vw;">
-  ...
-</amp-story-player>
+<amp-story-player style="width: 50vw; height: 83.35vw;"> ... </amp-story-player>
 ```
 
 ### 플레이스홀더 제공
@@ -130,7 +135,13 @@ We recommend maintaining a 3:5 aspect ratio for the best user experience, but yo
 ```html
 <amp-story-player style="width: 50vw; height: 83.35vw;">
   <a href="https://www.example.com/story.html">
-    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover1.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes this story.
   </a>
 </amp-story-player>
@@ -145,11 +156,23 @@ You may add multiple stories in the same `<amp-story-player>` element by definin
 ```html
 <amp-story-player style="width: 360px; height: 600px;">
   <a href="https://www.example.com/story1.html">
-    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover1.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes story 1.
   </a>
   <a href="https://www.example.com/story2.html">
-    <img src="https://www.example.com/assets/cover2.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover2.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes story 2.
   </a>
 </amp-story-player>
@@ -160,13 +183,25 @@ You may add multiple stories in the same `<amp-story-player>` element by definin
 ```html
 <amp-story-player style="width: 360px; height: 600px;">
   <a href="https://www.example.com/story1.html">
-    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover1.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes story 1.
   </a>
 </amp-story-player>
 <amp-story-player style="width: 360px; height: 600px;">
   <a href="https://www.example.com/story2.html">
-    <img src="https://www.example.com/assets/cover2.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover2.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes story 2.
   </a>
 </amp-story-player>

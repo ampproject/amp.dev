@@ -1,11 +1,11 @@
 ---
-"$title": AMP와 PWA 통합하기
-"$order": '7'
+'$title': AMP와 PWA 통합하기
+$order: 7
 description: 프로그레시브 웹 앱과 AMP 페이지는 서로 원활하게 연동됩니다. 사실 이 둘은 여러 가지 방식으로 서로를 보완해 줄 때가 많습니다. 다음 도움말을...
 formats:
-- websites
+  - websites
 components:
-- youtube
+  - youtube
 author: pbakaus
 ---
 

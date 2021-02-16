@@ -1,10 +1,10 @@
 ---
-"$title": Füge ein Bild hinzu
-"$order": '2'
+'$title': Füge ein Bild hinzu
+$order: 2
 description: Die meisten HTML Tags können direkt in AMP HTML verwendet werden, aber bestimmte Tags wie z. B. <img> werden durch äquivalente oder leicht verbesserte …
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 Die meisten HTML Tags können direkt in AMP HTML verwendet werden, aber bestimmte Tags wie z. B. `<img>` werden durch äquivalente oder leicht verbesserte benutzerdefinierte AMP HTML Tags ersetzt (einige problematische Tags sind vollständig untersagt, siehe [HTML Tags in der Spezifikation](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#html-tags)).

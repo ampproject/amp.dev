@@ -1,9 +1,9 @@
 ---
-"$title": Wstępne ładowanie PWA ze stron AMP
-"$order": '1'
+'$title': Wstępne ładowanie PWA ze stron AMP
+$order: 1
 description: Dobrą strategią jest uczynienie strony AMP punktem wejścia do witryny, a następnie rozgrzanie PWA za kulisami i przełączenie na...
 formats:
-- websites
+  - websites
 author: pbakaus
 ---
 
@@ -23,7 +23,7 @@ AMP jest idealnym rozwiązaniem w przypadku tak zwanych **stron liści**, czyli 
 
 ### PWA dla bogatej interaktywności i zaangażowania
 
-Progresywne apllkacje webowe umożliwiają z kolei znacznie większą interaktywność i zaangażowanie, ale nie mają *cechy błyskawicznego pierwszego ładowania* jak strony AMP. U ich podstaw leży technologia o nazwie Service Worker, serwer proxy po stronie klienta, która pozwala na buforowanie wszystkich rodzajów zasobów stron, ale wspomniany proces Service Worker aktywowany jest dopiero *po* pierwszym załadowaniu.
+Progresywne apllkacje webowe umożliwiają z kolei znacznie większą interaktywność i zaangażowanie, ale nie mają _cechy błyskawicznego pierwszego ładowania_ jak strony AMP. U ich podstaw leży technologia o nazwie Service Worker, serwer proxy po stronie klienta, która pozwala na buforowanie wszystkich rodzajów zasobów stron, ale wspomniany proces Service Worker aktywowany jest dopiero _po_ pierwszym załadowaniu.
 
 {{ image('/static/img/docs/pwamp_comparison.png', 977, 549, align='', caption='Wady i zalety AMP w porównaniu do PWA.') }}
 
@@ -36,8 +36,10 @@ AMP ma możliwość zainstalowania składnika Service Worker progresywnej aplika
 Najpierw zainstaluj Service Worker na wszystkich stronach AMP, używając składnika [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) i najpierw włączając go poprzez jego skrypt w sekcji `<head>` swojej strony:
 
 [sourcecode:html]
+
 <script async custom-element="amp-install-serviceworker"
   src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+
 [/sourcecode]
 
 Następnie dodaj następujące elementy gdzieś w sekcji `<body>` (zmień tak, aby wskazywały na rzeczywisty skrypt Service Worker):
@@ -54,20 +56,20 @@ Ostatecznie, na etapie instalacji skryptu Service Worker, należy zadbać o zbuf
 [sourcecode:javascript]
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
-  '/',
-  '/styles/main.css',
-  '/script/main.js'
+'/',
+'/styles/main.css',
+'/script/main.js'
 ];
 
 self.addEventListener('install', function(event) {
-  // Perform install steps
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(function(cache) {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-  );
+// Perform install steps
+event.waitUntil(
+caches.open(CACHE_NAME)
+.then(function(cache) {
+console.log('Opened cache');
+return cache.addAll(urlsToCache);
+})
+);
 });
 [/sourcecode]
 
@@ -83,14 +85,14 @@ W tym przypadku masz kanoniczną witrynę internetową (bez AMP) i generujesz st
 
 ### 2. Jeśli Twoja witryna kanoniczna jest wykonana w technologii AMP
 
-W tym przypadku Twoje strony kanoniczne *są* stronami AMP: Tworzysz całą swoją witrynę internetową za pomocą AMP i używasz AMP po prostu jako biblioteki (zabawny fakt: witryna, w której to czytasz, jest zbudowana w ten sposób). **W tym scenariuszu większość linków na stronach AMP będzie prowadzić do innych stron AMP.**
+W tym przypadku Twoje strony kanoniczne _są_ stronami AMP: Tworzysz całą swoją witrynę internetową za pomocą AMP i używasz AMP po prostu jako biblioteki (zabawny fakt: witryna, w której to czytasz, jest zbudowana w ten sposób). **W tym scenariuszu większość linków na stronach AMP będzie prowadzić do innych stron AMP.**
 
 Teraz możesz wdrożyć swoją PWA na osobnej ścieżce, takiej jak `your-domain.com/pwa` i użyć już uruchomionego procesu Service Worker, aby <strong>przechwytywać nawigację przeglądarki, gdy ktoś kliknie link na stronie AMP</strong>:
 
 [sourcecode:javascript]
 self.addEventListener('fetch', event => {
-    if (event.request.mode === 'navigate') {
-      event.respondWith(fetch('/pwa'));
+if (event.request.mode === 'navigate') {
+event.respondWith(fetch('/pwa'));
 
       // Immediately start downloading the actual resource.
       fetch(event.request.url);

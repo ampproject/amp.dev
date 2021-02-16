@@ -29,6 +29,7 @@ const webSocketServer = require('@examples/socket-server/socket-server');
 const routers = {
   boilerplate: require('../../boilerplate/backend/'),
   cspReport: require('@lib/routers/cspReport.js'),
+  survey: require('@lib/routers/surveyComponent.js'),
   example: {
     api: require('@examples'),
     embeds: require('@lib/routers/example/embeds.js'),
@@ -50,7 +51,7 @@ const routers = {
   search: require('@lib/routers/search.js'),
   static: require('@lib/routers/static.js'),
   templates: require('@lib/routers/templates.js'),
-  thumbor: require('@lib/routers/thumbor.js'),
+  thumbor: require('@lib/routers/thumbor.js').thumborRouter,
   whoAmI: require('@lib/routers/whoAmI.js'),
 };
 
@@ -169,6 +170,7 @@ class Platform {
 
   _configureRouters() {
     this.server.use(routers.cspReport);
+    this.server.use(routers.survey);
     this.server.use(routers.packager);
     this.server.use(routers.thumbor);
     this.server.use(routers.whoAmI);

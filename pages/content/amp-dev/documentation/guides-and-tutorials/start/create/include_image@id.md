@@ -1,10 +1,10 @@
 ---
-"$title": Menyertakan gambar
-"$order": '2'
+'$title': Menyertakan gambar
+$order: 2
 description: Sebagian besar tag HTML dapat digunakan secara langsung di HTML AMP, tetapi tag tertentu, seperti tag <img>, diganti dengan tag HTML AMP kustom yang setara atau telah sedikit disempurnakan
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 Sebagian besar tag HTML dapat digunakan secara langsung di HTML AMP, tetapi tag tertentu, seperti tag `<img>`, diganti dengan tag HTML AMP kustom yang setara atau telah sedikit disempurnakan (dan beberapa tag bermasalah langsung dicekal, kunjungi [Tag HTML dalam spesifikasi](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)).

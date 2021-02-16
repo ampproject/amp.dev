@@ -1,10 +1,10 @@
 ---
 formats:
-- websites
-"$title": 利用客户端加密保护订阅内容
-"$titles":
+  - websites
+'$title': 利用客户端加密保护订阅内容
+'$titles':
   teaser: Protect your subscription content with client-side encryption.
-"$order": '10'
+$order: 10
 description: 要解决内容加密问题，可以在客户端实现付费订阅者验证和内容解密。借助此解决方案，具有付费内容访问权限的用户无需加载新页面或等待后端响应即可解密内容！
 author: CrystalOnScript
 ---
@@ -43,7 +43,7 @@ AMP 文档将加密密钥存储在文档内部。这样可以防止加密文档�
 
 ## 第 1 步：创建公钥/私钥对
 
-要加密文档的对称密钥，您需要具有自己的公钥/私钥对。公钥加密采用[混合加密](https://en.wikipedia.org/wiki/Hybrid_cryptosystem)协议，尤其是混合使用 [P-256 椭圆曲线](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)) ECIES 不对称加密方法与 [AES-GCM](https://tools.ietf.org/html/rfc5288)（128 位）对称加密方法。
+要加密文档的对称密钥，您需要具有自己的公钥/私钥对。公钥加密采用[混合加密](https://en.wikipedia.org/wiki/Hybrid_cryptosystem)协议，尤其是混合使用 [P-256 椭圆曲线](<https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)>) ECIES 不对称加密方法与 [AES-GCM](https://tools.ietf.org/html/rfc5288)（128 位）对称加密方法。
 
 我们要求使用 [Tink](https://github.com/google/tink) 和[此非对称密钥类型](https://github.com/subscriptions-project/encryption/blob/617f0911c9870dae900a232e2dc8ee9196677a89/golang/vendor/github.com/google/tink/go/hybrid/hybrid_key_templates.go#L32)来处理公钥。要创建您自己的公钥-私钥对，请使用以下任一项：
 

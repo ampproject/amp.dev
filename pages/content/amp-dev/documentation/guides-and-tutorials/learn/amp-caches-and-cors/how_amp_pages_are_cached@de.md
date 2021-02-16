@@ -1,11 +1,11 @@
 ---
-"$title": Caching von AMP Seiten
-"$order": '0'
+'$title': Caching von AMP Seiten
+$order: 0
 description: In diesem Dokument erfährst du, welche Rolle der AMP Cache im AMP Ökosystem spielt und wie deine AMP Seite zwischengespeichert wird.
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 ---
 
 In diesem Dokument erfährst du, welche Rolle der AMP Cache im AMP Ökosystem spielt und wie deine AMP Seite zwischengespeichert wird.
@@ -35,7 +35,7 @@ AMP ist ein offenes Ökosystem und das AMP Projekt fördert aktiv die Entwicklun
 
 ## Wie wähle ich einen AMP Cache?
 
-Als Publisher wählst du den AMP Cache nicht selbst. *Die Plattform*, die auf deine Inhalte verweist, wählt bei Bedarf den zu verwendenden AMP Cache.
+Als Publisher wählst du den AMP Cache nicht selbst. _Die Plattform_, die auf deine Inhalte verweist, wählt bei Bedarf den zu verwendenden AMP Cache.
 
 Das ist eine Umkehrung des typischen Modells, bei dem die Bereitstellung von Inhalten in der Verantwortung des Publishers liegt. Mit diesem Modell können Plattformen ihren Benutzern jedoch eine vorhersehbare Auslastung bieten und unter anderem die erforderlichen Invarianten für Sicherheit und Datenschutz während der Pre-Rendering Phase von AMP sicherstellen. Informationen zu den strengen Richtlinien zum Erstellen von AMP Caches findest du in den [Richtlinien zum AMP Cache](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
 
@@ -59,11 +59,11 @@ Wenn du das AMP Format verwendest, stellst du deine Inhalte AMP Caches zur Zwisc
 
 - **Cache URL Anfrage**: Plattformen können explizit eine AMP Seite mithilfe des AMP Cache URL Formats anfordern. Da der AMP Cache als Reverse Proxy fungiert, wird die Seite automatisch im Cache gespeichert, sobald die Plattform auf sie zugreift.
 
-    - Beispiel für eine Google AMP Cache URL: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
+  - Beispiel für eine Google AMP Cache URL: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
 [tip type="note"] **HINWEIS:** Die AMP Cache URL ist keine benutzerseitige URL, was bedeutet, dass Benutzer in der Regel keine Inhalte über solche URLs anfordern. [/tip]
 
-- **&nbsp;Zusatz  für Publisher**: Publisher können die AMP Seite explizit zum AMP Cache hinzufügen. Diese Option gilt nur für den Google AMP Cache (siehe [Google AMP Cache: AMP-Inhalte aktualisieren](https://developers.google.com/amp/cache/update-cache)).
+- **&nbsp;Zusatz für Publisher**: Publisher können die AMP Seite explizit zum AMP Cache hinzufügen. Diese Option gilt nur für den Google AMP Cache (siehe [Google AMP Cache: AMP-Inhalte aktualisieren](https://developers.google.com/amp/cache/update-cache)).
 
 ## Zusätzliche Ressourcen
 

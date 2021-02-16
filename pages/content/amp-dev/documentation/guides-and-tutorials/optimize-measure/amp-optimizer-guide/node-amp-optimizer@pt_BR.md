@@ -1,10 +1,10 @@
 ---
-"$title": Guia do Otimizador AMP do Node.js
-"$order": '2'
+'$title': Guia do Otimizador AMP do Node.js
+$order: 2
 description: Este guia explica como configurar e usar a versão Node.js do Otimizador AMP.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

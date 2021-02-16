@@ -1,14 +1,14 @@
 ---
-"$title": Introduzione agli annunci AMPHTML
-"$order": '1'
+'$title': Introduzione agli annunci AMPHTML
+$order: 1
 description: Gli annunci AMPHTML offrono uno strumento più veloce, leggero e sicuro per fare pubblicità su web. Sebbene le pagine AMP supportino gli annunci HTML tradizionali, questi annunci possono essere lenti da caricare.
 formats:
-- ads
+  - ads
 ---
 
 ## Cos'è un annuncio AMPHTML?
 
-Gli annunci AMPHTML offrono uno strumento più veloce, leggero e sicuro per fare pubblicità su web. Sebbene le pagine AMP supportino gli annunci HTML tradizionali, questi annunci possono essere lenti da caricare. Gli annunci AMPHTML possono essere riprodotti alla stessa velocità del resto della pagina AMP. Gli annunci AMPHTML sono pubblicati solo dopo essere stati convalidati, garantendone la sicurezza e la velocità. Inoltre, questi annunci possono essere pubblicati ovunque sul web, *non solo sulle pagine AMP*.
+Gli annunci AMPHTML offrono uno strumento più veloce, leggero e sicuro per fare pubblicità su web. Sebbene le pagine AMP supportino gli annunci HTML tradizionali, questi annunci possono essere lenti da caricare. Gli annunci AMPHTML possono essere riprodotti alla stessa velocità del resto della pagina AMP. Gli annunci AMPHTML sono pubblicati solo dopo essere stati convalidati, garantendone la sicurezza e la velocità. Inoltre, questi annunci possono essere pubblicati ovunque sul web, _non solo sulle pagine AMP_.
 
 Gli annunci AMPHTML sono scritti in formato AMP HTML in base alle [specifiche degli annunci AMPHTML](a4a_spec.md) (una variante di AMP HTML + CSS). Ciò significa che gli annunci non hanno più la capacità di eseguire codici JavaScript arbitrari, che tradizionalmente sono la causa principale delle loro scarse prestazioni. Pertanto, proprio come per l'AMP principale, i casi d'uso di JavaScript negli annunci sono integrati direttamente nel progetto AMP Open Source, il che garantisce buone prestazioni.
 
@@ -73,11 +73,11 @@ I fornitori di contenuti creativi devono creare annunci che rispettino le [speci
 
 - [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*coming soon*)
+- Adobe Animate (_coming soon_)
 
 ### Reti/server di annunci
 
-To deliver AMPHTML ads to AMP pages, you need to create an [`amp-ad`](../../../documentation/components/reference/amp-ad.md) extension for your network (unless you already have one) which uses the [Fast Fetch ad request implementation](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Refer to [Integrating with AMP to serve display ads](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md) for details.  Keep in mind that no special integration is needed to serve AMPHTML to non-AMP pages.
+To deliver AMPHTML ads to AMP pages, you need to create an [`amp-ad`](../../../documentation/components/reference/amp-ad.md) extension for your network (unless you already have one) which uses the [Fast Fetch ad request implementation](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md). Refer to [Integrating with AMP to serve display ads](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md) for details. Keep in mind that no special integration is needed to serve AMPHTML to non-AMP pages.
 
 ## Creazione di annunci AMPHTML
 
@@ -87,7 +87,7 @@ To deliver AMPHTML ads to AMP pages, you need to create an [`amp-ad`](../../../d
 
 - [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*coming soon*)
+- Adobe Animate (_coming soon_)
 
 ### Convalida della sintassi di annunci AMPHTML
 

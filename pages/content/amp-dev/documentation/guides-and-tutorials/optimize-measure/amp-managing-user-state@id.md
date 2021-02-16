@@ -1,10 +1,10 @@
 ---
-"$title": Mengelola status pengguna yang belum disahkan dengan AMP
-order: '2'
+'$title': Mengelola status pengguna yang belum disahkan dengan AMP
+$order: 2
 formats:
-- websites
+  - websites
 teaser:
-  text: "**Daftar isi**"
+  text: '**Daftar isi**'
 ---
 
 <!--
@@ -34,12 +34,12 @@ limitations under the License.
 
 - [Latar Belakang](#background)
 - [Panduan penerapan](#implementation-guide)
-    - [Sebelum memulai](#before-getting-started)
-    - [Tugas 1: Untuk halaman non-AMP di asal penayang, atur pengenal dan kirimkan ping analitis ](#task1)
-    - [Tugas 2: Untuk halaman AMP, atur pengenal dan kirimkan ping analitis dengan menyertakan pengganti ID Klien di dalam ping amp-analytics](#task2)
-    - [Tugas 3: Proses ping analitis dari halaman di asal penayang](#task3)
-    - [Tugas 4: Proses ping analitis dari konteks tampilan penampil AMP atau cache AMP dan buat pemetaan pengenal (jika diperlukan)](#task4)
-    - [Tugas 5: Menggunakan ID Klien dalam penautan dan pengiriman formulir](#task5)
+  - [Sebelum memulai](#before-getting-started)
+  - [Tugas 1: Untuk halaman non-AMP di asal penayang, atur pengenal dan kirimkan ping analitis ](#task1)
+  - [Tugas 2: Untuk halaman AMP, atur pengenal dan kirimkan ping analitis dengan menyertakan pengganti ID Klien di dalam ping amp-analytics](#task2)
+  - [Tugas 3: Proses ping analitis dari halaman di asal penayang](#task3)
+  - [Tugas 4: Proses ping analitis dari konteks tampilan penampil AMP atau cache AMP dan buat pemetaan pengenal (jika diperlukan)](#task4)
+  - [Tugas 5: Menggunakan ID Klien dalam penautan dan pengiriman formulir](#task5)
 - [Praktik-praktik yang sangat direkomendasikan](#strongly-recommended-practices)
 
 Status pengguna merupakan konsep yang penting pada web masa kini. Pertimbangkan kasus atau contoh penggunaan berikut ini yang diaktifkan dengan mengelola status pengguna:
@@ -114,7 +114,7 @@ Penayang harus disiapkan untuk mengelola status pengguna untuk setiap konteks ta
 
 Namun, penayang halaman AMP dapat dengan mudah akhirnya merancang (tanpa disengaja) perjalanan pengguna yang melibatkan banyak konteks. Mari kita kembali ke kajian tentang contoh penggunaan keranjang belanja dan tambahkan sejumlah informasi untuk membuat **cerita pengguna** lengkap:
 
-> *Pada hari ke-1, pengguna menemukan halaman AMP dari Example Inc. melalui Google Search. Google Search memuat halaman AMP di penampil AMP. Saat melihat halaman tersebut, pengguna menambahkan empat barang ke keranjang belanja, namun tidak menyelesaikan belanja (check-out). Dua minggu kemudian, pada hari ke-15, pengguna mengingat keempat barang yang dipertimbangkannya untuk dibeli dan memutuskan akan membelinya sekarang. Pengguna mengakses halaman awal Example Inc. di `https://example.com` secara langsung (ini adalah halaman awal non-AMP) dan menemukan empat barang tersebut masih tersimpan di keranjang belanja.*
+> _Pada hari ke-1, pengguna menemukan halaman AMP dari Example Inc. melalui Google Search. Google Search memuat halaman AMP di penampil AMP. Saat melihat halaman tersebut, pengguna menambahkan empat barang ke keranjang belanja, namun tidak menyelesaikan belanja (check-out). Dua minggu kemudian, pada hari ke-15, pengguna mengingat keempat barang yang dipertimbangkannya untuk dibeli dan memutuskan akan membelinya sekarang. Pengguna mengakses halaman awal Example Inc. di `https://example.com` secara langsung (ini adalah halaman awal non-AMP) dan menemukan empat barang tersebut masih tersimpan di keranjang belanja._
 
 Di dalam skenario ini, pengguna menerima pengalaman keranjang belanja yang konsisten, walaupun dia telah berpindah dari konteks penampil AMP ke konteks asal penayang—dan setelah beberapa waktu berlalu di antara peristiwa ini. Pengalaman ini sangat beralasan dan, jika Anda merancang pengalaman berbelanja, Anda seharusnya memperkirakan untuk mendukungnya. Jadi, bagaimana cara Anda mewujudkannya?
 
@@ -153,9 +153,9 @@ n34ic982n2386n30 ⇒ $sample_id
 
 **Contoh penggunaan kita:** Di seluruh panduan ini, kita akan mengerjakan sebuah contoh yang telah dirancang untuk mencapai pelacakan tampilan halaman sederhana (yaitu analitis) yang akan kita gunakan untuk menghasilkan penghitungan pengguna yang seakurat mungkin. Ini berarti bahwa bahkan jika pengguna mengakses konten penayang tertentu dari konteks yang berbeda (termasuk berpindah antara halaman AMP dan non-AMP), kita ingin agar kunjungan ini dihitung dengan satu pemahaman tentang pengguna seakan-akan pengguna tersebut hanya menelusuri halaman non-AMP tradisional penerbit tersebut
 
-**Asumsi tentang ketersediaan nilai cookie yang stabil:**  Kita juga menganggap bahwa pengguna menggunakan perangkat, browser, dan penelusuran non-pribadi/samaran yang sama, agar dapat memastikan bahwa nilai-nilai cookie tersebut terjaga dan tersedia di semua sesi pengguna seiring waktu. Jika tidak demikian halnya, teknik ini tidak bisa diharapkan berhasil. Jika ini diharuskan, usahakan untuk mengelola status pengguna berdasarkan identitas (yaitu, identitas masuk) pengguna yang telah disahkan.
+**Asumsi tentang ketersediaan nilai cookie yang stabil:** Kita juga menganggap bahwa pengguna menggunakan perangkat, browser, dan penelusuran non-pribadi/samaran yang sama, agar dapat memastikan bahwa nilai-nilai cookie tersebut terjaga dan tersedia di semua sesi pengguna seiring waktu. Jika tidak demikian halnya, teknik ini tidak bisa diharapkan berhasil. Jika ini diharuskan, usahakan untuk mengelola status pengguna berdasarkan identitas (yaitu, identitas masuk) pengguna yang telah disahkan.
 
-**Konsep yang disajikan di bawah ini dapat diperluas ke contoh penggunaan lain:**  Walaupun kita hanya berfokus pada contoh penggunaan analitis, konsep-konsep yang disampaikan di bawah ini dapat dimanfaatkan untuk contoh penggunaan lain yang memerlukan manajemen status pengguna.
+**Konsep yang disajikan di bawah ini dapat diperluas ke contoh penggunaan lain:** Walaupun kita hanya berfokus pada contoh penggunaan analitis, konsep-konsep yang disampaikan di bawah ini dapat dimanfaatkan untuk contoh penggunaan lain yang memerlukan manajemen status pengguna.
 
 <a id="task1"></a>
 
@@ -178,23 +178,26 @@ Ini berarti ada dua kasus atau contoh untuk status halaman non-AMP di asal penay
 **Kasus #1: Kunjungan awal.** Setelah tiba pertama kali di halaman non-AMP, tidak akan ada cookie. Jika Anda telah memeriksa adanya cookie sebelum ada, Anda akan melihat nilai yang disiapkan pada cookie tidak ada yang sesuai dengan `uid`:
 
 [sourcecode:bash]
+
 > document.cookie
-  ""
-[/sourcecode]
+> ""
+> [/sourcecode]
 
 Terkadang, pada pemuatan awal, cookie akan disiapkan, jadi jika Anda melakukan ini setelah halaman dimuat, Anda akan melihat sebuah nilai telah ditetapkan:
 
 [sourcecode:bash]
+
 > document.cookie
-  "uid=$publisher_origin_identifier"
-[/sourcecode]
+> "uid=$publisher_origin_identifier"
+> [/sourcecode]
 
 **Kasus: Bukan kunjungan awal.** Tidak akan ada cookie ditetapkan. Oleh karena itu, jika Anda membuka konsol pengembang pada halaman tersebut, Anda akan melihat:
 
 [sourcecode:bash]
+
 > document.cookie
-  "uid=$publisher_origin_identifier"
-[/sourcecode]
+> "uid=$publisher_origin_identifier"
+> [/sourcecode]
 
 ##### Mengirimkan ping analitis <a name="send-analytics-pings"></a>
 
@@ -386,30 +389,33 @@ Pendekatan kita akan menggunakan dua jenis dari [penggantian variabel AMP](https
 
 [sourcecode:html]
 <a
-  href="https://example.com/step2.html?ref_id=CLIENT_ID(uid)"
-  data-amp-replace="CLIENT_ID"
-></a>
-[/sourcecode]
+href="https://example.com/step2.html?ref_id=CLIENT_ID(uid)"
+data-amp-replace="CLIENT_ID"
+
+> </a>
+> [/sourcecode]
 
 **Solusi alternatif untuk meneruskan ID Klien ke tautan keluar:** Tentukan parameter kueri yang baru `ref_id` sebagai bagian dari atribut data `data-amp-addparams` dan untuk kueri yang membutuhkan penggantian parameter, berikan informasi tersebut sebagai bagian dari `data-amp-replace`. Dengan pendekatan ini, URL akan terlihat bersih dan parameter yang ditentukan pada `data-amp-addparams` akan ditambahkan secara dinamis
 
 [sourcecode:html]
 <a
-  href="https://example.com/step2.html"
-  data-amp-addparams="ref_id=CLIENT_ID(uid)"
-  data-amp-replace="CLIENT_ID"
-></a>
-[/sourcecode]
+href="https://example.com/step2.html"
+data-amp-addparams="ref_id=CLIENT_ID(uid)"
+data-amp-replace="CLIENT_ID"
+
+> </a>
+> [/sourcecode]
 
 Untuk meneruskan parameter beberapa kueri melalui `data-amp-addparams` buat `&` terpisah, seperti
 
 [sourcecode:html]
 <a
-  href="https://example.com/step2.html"
-  data-amp-addparams="ref_id=CLIENT_ID(uid)&pageid=p123"
-  data-amp-replace="CLIENT_ID"
-></a>
-[/sourcecode]
+href="https://example.com/step2.html"
+data-amp-addparams="ref_id=CLIENT_ID(uid)&pageid=p123"
+data-amp-replace="CLIENT_ID"
+
+> </a>
+> [/sourcecode]
 
 **Untuk memperbarui input formulir untuk menggunakan penggantian ID Klien:** Tentukan nama untuk bidang input, seperti `orig_user_id`. Tentukan `default-value` bidang formulir untuk menjadi nilai penggantian ID Klien AMP:
 
@@ -455,7 +461,7 @@ Untuk memproses pada halaman landing atau halaman tujuan, pendekatan akan berbed
 <amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
   <noscript><img alt="Contoh cara membuat ping analitik yang berisi pengenal dari konteks sebelumnya yang disediakan melalui URL dan pengenal dari konteks saat ini" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
 
-*Pembaruan pada halaman AMP:* Gunakan fitur penggantian Parameter Kueri di konfigurasi amp-analytics Anda untuk memperoleh nilai pengenal `ref_id` di dalam URL tersebut. Fitur Parameter Kueri mengambil sebuah parameter yang mengindikasikan “kunci” pasangan kunci-nilai yang diinginkan di dalam URL dan menghasilkan nilai yang sesuai. Gunakan fitur ID Klien seperti yang telah kita kerjakan untuk mendapatkan pengenal untuk konteks halaman AMP.
+_Pembaruan pada halaman AMP:_ Gunakan fitur penggantian Parameter Kueri di konfigurasi amp-analytics Anda untuk memperoleh nilai pengenal `ref_id` di dalam URL tersebut. Fitur Parameter Kueri mengambil sebuah parameter yang mengindikasikan “kunci” pasangan kunci-nilai yang diinginkan di dalam URL dan menghasilkan nilai yang sesuai. Gunakan fitur ID Klien seperti yang telah kita kerjakan untuk mendapatkan pengenal untuk konteks halaman AMP.
 
 [sourcecode:http]
 https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}
@@ -482,7 +488,7 @@ https://analytics.example.com/ping?type=pageview&orig_user_id=$amp_client_id&use
 
 Disarankan untuk mengesahkan keaslian nilai-nilai parameter kueri dengan menggunakan langkah-langkah yang diuraikan di dalam bagian [Validasi parameter](#parameter-validation) di bawah ini.
 
-*Pembaruan pada halaman non-AMP:* Sama halnya, pada halaman non-AMP yang disajikan dari asal penayang Anda, ekstrak dan kirimkan nilai `ref_id` yang ada di dalam URL. Sahkan keaslian nilai tersebut dengan mengikuti langkah-langkah yang diuraikan di dalam bagian [Validasi parameter](#parameter-validation) di bawah ini. Lalu, buat ping analitis yang akan menyertakan `orig_user_id` yang diambil dari `ref_id` dan `user_id` berdasarkan nilai pengenal cookie pihak pertama.
+_Pembaruan pada halaman non-AMP:_ Sama halnya, pada halaman non-AMP yang disajikan dari asal penayang Anda, ekstrak dan kirimkan nilai `ref_id` yang ada di dalam URL. Sahkan keaslian nilai tersebut dengan mengikuti langkah-langkah yang diuraikan di dalam bagian [Validasi parameter](#parameter-validation) di bawah ini. Lalu, buat ping analitis yang akan menyertakan `orig_user_id` yang diambil dari `ref_id` dan `user_id` berdasarkan nilai pengenal cookie pihak pertama.
 
 <blockquote>
 <p><strong>PENTING:</strong></p>

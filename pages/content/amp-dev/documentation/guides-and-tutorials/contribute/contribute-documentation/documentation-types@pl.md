@@ -1,12 +1,12 @@
 ---
-"$title": Typy dokumentacji
-"$order": '1'
+'$title': Typy dokumentacji
+$order: 1
 description: Typy dokumentacji akceptowane na amp.dev
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 toc: 'false'
 ---

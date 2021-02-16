@@ -1,8 +1,8 @@
 ---
-"$title": Spesifikasi AMP untuk Iklan
-order: '3'
+'$title': Spesifikasi AMP untuk Iklan
+$order: 3
 formats:
-- ads
+  - ads
 teaser:
   text: _Jika Anda ingin mengusulkan perubahan pada standar, silakan tuliskan komentar di [Intent
 toc: 'true'
@@ -31,7 +31,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-*Jika Anda ingin mengusulkan perubahan pada standar, silakan tuliskan komentar di [Rencana yang Ingin Diterapkan](https://github.com/ampproject/amphtml/issues/4264)*.
+_Jika Anda ingin mengusulkan perubahan pada standar, silakan tuliskan komentar di [Rencana yang Ingin Diterapkan](https://github.com/ampproject/amphtml/issues/4264)_.
 
 Iklan AMPHTML adalah sebuah mekanisme untuk merender iklan yang cepat dan efektif pada halaman AMP. Untuk memastikan bahwa dokumen iklan AMPHTML ("kreatif AMP") dapat dirender dengan cepat dan mulus di browser serta tidak menurunkan mutu pengalaman pengguna, kreatif AMP harus mematuhi seperangkat aturan validasi. Serupa dengan inti [Aturan format AMP](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml), iklan AMPHTML mempunyai akses ke seperangkat tag, kemampuan, dan ekstensi terbatas yang diizinkan.
 
@@ -99,14 +99,16 @@ Selain itu, kreatif harus mematuhi aturan-aturan berikut ini:
 Kreatif iklan AMPHTML membutuhkan baris gaya boilerplate yang jauh lebih sederhana dan berbeda dibanding [yang dilakukan dokumen AMP umum](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md):
 
 [sourcecode:html]
+
 <style amp4ads-boilerplate>
   body {
     visibility: hidden;
   }
 </style>
+
 [/sourcecode]
 
-*Alasan:* Gaya `amp-boilerplate` menyembunyikan konten isi hingga runtime AMP siap dan dapat menampilkannya. Jika Javascript dinonaktifkan atau runtime AMP gagal dimuat, boilerplate default memastikan bahwa konten pada akhirnya akan ditampilkan. Namun, dalam iklan AMPHTML, jika Javascript dinonaktifkan sepenuhnya, iklan AMPHTML tidak akan berjalan dan tidak ada iklan yang akan ditampilkan, jadi bagian `<noscript>` tidak diperlukan. Jika runtime AMP tidak ada, sebagian besar mesin yang diandalkan iklan AMPHTML (misalnya, analitik untuk pelacakan visibilitas atau `amp-img` untuk tampilan konten) tidak akan tersedia, jadi lebih baik tidak menampilkan iklan daripada menampilkan yang tidak berfungsi.
+_Alasan:_ Gaya `amp-boilerplate` menyembunyikan konten isi hingga runtime AMP siap dan dapat menampilkannya. Jika Javascript dinonaktifkan atau runtime AMP gagal dimuat, boilerplate default memastikan bahwa konten pada akhirnya akan ditampilkan. Namun, dalam iklan AMPHTML, jika Javascript dinonaktifkan sepenuhnya, iklan AMPHTML tidak akan berjalan dan tidak ada iklan yang akan ditampilkan, jadi bagian `<noscript>` tidak diperlukan. Jika runtime AMP tidak ada, sebagian besar mesin yang diandalkan iklan AMPHTML (misalnya, analitik untuk pelacakan visibilitas atau `amp-img` untuk tampilan konten) tidak akan tersedia, jadi lebih baik tidak menampilkan iklan daripada menampilkan yang tidak berfungsi.
 
 Terakhir, boilerplate iklan AMPHTML menggunakan `amp-a4a-boilerplate`, bukan `amp-boilerplate`, sehingga validator dapat dengan mudah mengidentifikasinya dan menghasilkan pesan kesalahan (eror) yang lebih akurat untuk membantu pengembang.
 
@@ -154,14 +156,14 @@ Properti `transition` dan `animation` hanya diperbolehkan pada pemilih yang:
 
 - Hanya berisi properti `transition`, `animation`, `transform`, `visibility`, atau `opacity`.
 
-    *Alasan:* : Ini memungkinkan runtime AMP untuk menghapus kelas ini dari konteks untuk menonaktifkan animasi, saat diperlukan untuk kinerja halaman.
+  _Alasan:_ : Ini memungkinkan runtime AMP untuk menghapus kelas ini dari konteks untuk menonaktifkan animasi, saat diperlukan untuk kinerja halaman.
 
 **Bagus**
 
 [sourcecode:css]
 .box {
-  transform: rotate(180deg);
-  transition: transform 2s;
+transform: rotate(180deg);
+transition: transform 2s;
 }
 [/sourcecode]
 
@@ -171,9 +173,9 @@ Properti yang tidak diizinkan di kelas CSS.
 
 [sourcecode:css]
 .box {
-  color: red; // non-animation property not allowed in animation selector
-  transform: rotate(180deg);
-  transition: transform 2s;
+color: red; // non-animation property not allowed in animation selector
+transform: rotate(180deg);
+transition: transform 2s;
 }
 [/sourcecode]
 
@@ -197,13 +199,13 @@ transition: background-color 2s;
 
 [sourcecode:css]
 @keyframes turn {
-  from {
-    transform: rotate(180deg);
-  }
+from {
+transform: rotate(180deg);
+}
 
-  to {
-    transform: rotate(90deg);
-  }
+to {
+transform: rotate(90deg);
+}
 }
 [/sourcecode]
 
@@ -211,21 +213,21 @@ transition: background-color 2s;
 
 [sourcecode:css]
 @keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 300%;
-  }
+from {
+margin-left: 100%;
+width: 300%;
+}
 
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
+to {
+margin-left: 0%;
+width: 100%;
+}
 }
 [/sourcecode]
 
 ### Bawaan dan ekstensi AMP yang diizinkan <a name="allowed-amp-extensions-and-builtins"></a>
 
-Yang berikut ini adalah tag bawaan AMP dan modul ekstensi AMP *yang diizinkan* di dalam sebuah kreatif iklan AMPHTML. Tag bawaan atau ekstensi yang tidak dicantumkan secara tegas berarti dilarang.
+Yang berikut ini adalah tag bawaan AMP dan modul ekstensi AMP _yang diizinkan_ di dalam sebuah kreatif iklan AMPHTML. Tag bawaan atau ekstensi yang tidak dicantumkan secara tegas berarti dilarang.
 
 - [amp-accordion](https://amp.dev/documentation/components/amp-accordion)
 - [amp-ad-exit](https://amp.dev/documentation/components/amp-ad-exit)
@@ -251,19 +253,19 @@ Yang berikut ini adalah tag bawaan AMP dan modul ekstensi AMP *yang diizinkan* d
 
 Sebagian besar yang ditiadakan adalah demi kinerja atau untuk membuat iklan AMPHTML lebih sederhana untuk dianalisis.
 
-*Contoh:* `<amp-ad>` ditiadakan dari daftar ini. Ini secara tegas tidak diizinkan karena mengizinkan sebuah `<amp-ad>` di dalam sebuah `<amp-ad>` dapat berpotensi menimbulkan aliran pemuatan iklan yang tidak dapat dikendalikan, dan ini tidak sesuai dengan tujuan kinerja iklan AMPHTML.
+_Contoh:_ `<amp-ad>` ditiadakan dari daftar ini. Ini secara tegas tidak diizinkan karena mengizinkan sebuah `<amp-ad>` di dalam sebuah `<amp-ad>` dapat berpotensi menimbulkan aliran pemuatan iklan yang tidak dapat dikendalikan, dan ini tidak sesuai dengan tujuan kinerja iklan AMPHTML.
 
-*Contoh:* `<amp-iframe>` ditiadakan dari daftar ini. Ini tidak diizinkan karena iklan dapat menggunakannya untuk mengeksekusi JavaScript sesuka hati dan memuat konten sesuka hati. Iklan yang ingin menggunakan kemampuan seperti ini harus menghasilkan `false` dari entri [a4aRegistry](https://github.com/ampproject/amphtml/blob/master/ads/_a4a-config.js#L40)-nya dan menggunakan mekanisme perenderan iklan '3p iframe' yang sudah ada.
+_Contoh:_ `<amp-iframe>` ditiadakan dari daftar ini. Ini tidak diizinkan karena iklan dapat menggunakannya untuk mengeksekusi JavaScript sesuka hati dan memuat konten sesuka hati. Iklan yang ingin menggunakan kemampuan seperti ini harus menghasilkan `false` dari entri [a4aRegistry](https://github.com/ampproject/amphtml/blob/master/ads/_a4a-config.js#L40)-nya dan menggunakan mekanisme perenderan iklan '3p iframe' yang sudah ada.
 
-*Contoh:* `<amp-facebook>`, `<amp-instagram>`, `<amp-twitter>`, dan `<amp-youtube>`, kesemuanya ditiadakan karena alasan yang sama dengan `<amp-iframe>`: Semua ini menciptakan iframe dan berpotensi menggunakan sumber daya yang tidak terbatas yang mereka miliki.
+_Contoh:_ `<amp-facebook>`, `<amp-instagram>`, `<amp-twitter>`, dan `<amp-youtube>`, kesemuanya ditiadakan karena alasan yang sama dengan `<amp-iframe>`: Semua ini menciptakan iframe dan berpotensi menggunakan sumber daya yang tidak terbatas yang mereka miliki.
 
-*Contoh:* `<amp-ad-network-*-impl>` ditiadakan dari daftar ini. Tag `<amp-ad>` menangani penugasan ke tag-tag penerapan ini; kreatif tidak boleh berupaya untuk menyertakan mereka secara langsung.
+_Contoh:_ `<amp-ad-network-*-impl>` ditiadakan dari daftar ini. Tag `<amp-ad>` menangani penugasan ke tag-tag penerapan ini; kreatif tidak boleh berupaya untuk menyertakan mereka secara langsung.
 
-*Contoh:* `<amp-lightbox>` masih belum disertakan karena bahkan beberapa kreatif iklan AMPHTML dapat dirender di dalam sebuah iframe dan saat ini belum ada mekanisme bagi sebuah iklan untuk keluar melampaui iframe. Dukungan mungkin ditambahkan untuk hal ini di masa mendatang jika dirasa perlu.
+_Contoh:_ `<amp-lightbox>` masih belum disertakan karena bahkan beberapa kreatif iklan AMPHTML dapat dirender di dalam sebuah iframe dan saat ini belum ada mekanisme bagi sebuah iklan untuk keluar melampaui iframe. Dukungan mungkin ditambahkan untuk hal ini di masa mendatang jika dirasa perlu.
 
 ### Tag HTML <a name="html-tags"></a>
 
-Yang berikut ini adalah tag-tag *yang diizinkan* di dalam kreatif iklan AMPHTML. Tag-tag yang tidak dicantumkan secara tegas berarti dilarang. Daftar ini adalah sebagian dari [Daftar tambahan tag AMP yang diizinkan](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md) yang umum. Seperti daftar tersebut, ini diurutkan sesuai dengan spesifikasi HTML5 di dalam bagian 4: [Elemen HTML](http://www.w3.org/TR/html5/single-page.html#html-elements).
+Yang berikut ini adalah tag-tag _yang diizinkan_ di dalam kreatif iklan AMPHTML. Tag-tag yang tidak dicantumkan secara tegas berarti dilarang. Daftar ini adalah sebagian dari [Daftar tambahan tag AMP yang diizinkan](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md) yang umum. Seperti daftar tersebut, ini diurutkan sesuai dengan spesifikasi HTML5 di dalam bagian 4: [Elemen HTML](http://www.w3.org/TR/html5/single-page.html#html-elements).
 
 Sebagian besar yang ditiadakan adalah demi kinerja atau karena tag-tag tersebut bukan standar HTML5. Contohnya, `<noscript>` ditiadakan karena iklan AMPHTML membutuhkan JavaScript, sehingga blok `<noscript>` tidak akan pernah mengeksekusi dan, oleh karena itu, hanya akan membengkakkan kreatif dan menguasai bandwidth serta mengakibatkan latensi. Demikian juga dengan `<acronym>`, `<big>`, dan yang semacamnya, mereka dilarang karena tidak kompatibel dengan HTML5.
 
@@ -285,7 +287,7 @@ Sebagian besar yang ditiadakan adalah demi kinerja atau karena tag-tag tersebut 
 
 - **Catatan:** Tidak seperti di AMP umum, tag-tag `<link rel="canonical">` dilarang.
 
-    4.2.5 `<style>` 4.2.6 `<meta>`
+  4.2.5 `<style>` 4.2.6 `<meta>`
 
 #### 4.3 Bagian <a name="43-sections"></a>
 
@@ -313,7 +315,7 @@ Sebagian besar yang ditiadakan adalah demi kinerja atau karena tag-tag tersebut 
 
 Tag-tag SVG tidak ada di dalam namespace HTML5. Mereka dicantumkan di bawah tanpa ID bagian.
 
-`<svg>``<g>``<path>``<glyph>``<glyphref>``<marker>``<view>``<circle>``<line>``<polygon>``<polyline>``<rect>``<text>``<textpath>``<tref>``<tspan>``<clippath>``<filter>``<lineargradient>``<radialgradient>``<mask>``<pattern>``<vkern>``<hkern>``<defs>``<use>``<symbol>``<desc>``<title>`
+` <svg>``<g>``<path>``<glyph>``<glyphref>``<marker>``<view>``<circle>``<line>``<polygon>``<polyline>``<rect>``<text>``<textpath>``<tref>``<tspan>``<clippath>``<filter>``<lineargradient>``<radialgradient>``<mask>``<pattern>``<vkern>``<hkern>``<defs>``<use>``<symbol>``<desc>``<title> `
 
 #### 4.9 Data tabel <a name="49-tabular-data"></a>
 
@@ -327,7 +329,7 @@ Tag-tag SVG tidak ada di dalam namespace HTML5. Mereka dicantumkan di bawah tanp
 
 - Seperti dokumen AMP umum, tag `<head>` kreatif harus berisi tag `<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>`.
 - Tidak seperti AMP umum, `<noscript>` dilarang.
-    - *Alasan:* Karena iklan AMPHTML memerlukan JavaScript agar dapat berfungsi, blok `<noscript>` tidak berguna di dalam iklan AMPHTML dan hanya menghabiskan bandwidth jaringan.
+  - _Alasan:_ Karena iklan AMPHTML memerlukan JavaScript agar dapat berfungsi, blok `<noscript>` tidak berguna di dalam iklan AMPHTML dan hanya menghabiskan bandwidth jaringan.
 - Tidak seperti AMP umum, `<script type="application/ld+json">` dilarang.
-    - *Alasan:* JSON LD digunakan untuk penandaan data berstruktur di halaman host, namun kreatif iklan bukan dokumen mandiri dan tidak berisi data berstruktur. Blok JSON LD pada kreatif iklan hanya akan menghabiskan bandwidth.
+  - _Alasan:_ JSON LD digunakan untuk penandaan data berstruktur di halaman host, namun kreatif iklan bukan dokumen mandiri dan tidak berisi data berstruktur. Blok JSON LD pada kreatif iklan hanya akan menghabiskan bandwidth.
 - Semua pengecualian dan aturan pembuatan skrip lainnya adalah bawaan dari AMP umum.

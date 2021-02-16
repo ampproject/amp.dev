@@ -68,13 +68,17 @@ class ComponentReferenceDocument extends MarkdownDocument {
 
     if (extension.script) {
       requiredExtensions.push(extension.script.extensionSpec.name);
-      scripts.push(
-        this._generateScript(
+      scripts.push({
+        js: this._generateScript(
           extension.script.extensionSpec.name,
           extension.version,
           extension.type
-        )
-      );
+        ),
+        css: this._generateCss(
+          extension.script.extensionSpec.name,
+          extension.version
+        ),
+      });
 
       if (extension.script.requiresExtension) {
         for (const requiredExtension of extension.script.requiresExtension) {
@@ -82,18 +86,26 @@ class ComponentReferenceDocument extends MarkdownDocument {
             continue;
           }
 
-          scripts.push(
-            this._generateScript(
-              requiredExtension,
+          scripts.push({
+            js: this._generateScript(
+              extension.script.extensionSpec.name,
               DEFAULT_VERSION,
               extension.type
-            )
-          );
+            ),
+            css: this._generateCss(
+              extension.script.extensionSpec.name,
+              DEFAULT_VERSION
+            ),
+          });
         }
       }
     }
 
     this.scripts = scripts;
+  }
+
+  _generateCss(extensionName, extensionVersion) {
+    return `<link rel="stylesheet" href="https://cdn.ampproject.org/v0/${extensionName}-${extensionVersion}.css">`;
   }
 
   _generateScript(
@@ -128,6 +140,14 @@ class ComponentReferenceDocument extends MarkdownDocument {
     this._frontmatter['layouts'] = layouts.map((layout) => {
       return layout.toLowerCase().replace('_', '-');
     });
+  }
+
+  get bento() {
+    return this._frontmatter['bento'] || false;
+  }
+
+  set bentoPath(hasBento) {
+    this._frontmatter['bentoPath'] = hasBento;
   }
 
   get version() {

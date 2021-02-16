@@ -1,10 +1,10 @@
 ---
-"$title": الإجراءات والأحداث
-order: '0'
+'$title': الإجراءات والأحداث
+$order: 0
 formats:
-- الموقع الإلكتروني
-- القصص
-- الإعلانات
+  - الموقع الإلكتروني
+  - القصص
+  - الإعلانات
 teaser:
   text: '[tip type="note"]'
 ---
@@ -110,7 +110,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
 
 ## الأحداث المحددة بالعنصر <a name="element-specific-events"></a>
 
-### * - كل العناصر <a name="---all-elements"></a>
+### \* - كل العناصر <a name="---all-elements"></a>
 
 <table>
   <tr>
@@ -352,7 +352,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
 
 ## الإجراءات المحددة بالعنصر <a name="element-specific-actions"></a>
 
-### * (كل العناصر) <a name="-all-elements"></a>
+### \* (كل العناصر) <a name="-all-elements"></a>
 
 <table>
   <tr>

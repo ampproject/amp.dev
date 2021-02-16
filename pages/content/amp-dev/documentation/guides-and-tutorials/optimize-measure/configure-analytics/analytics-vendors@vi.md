@@ -1,10 +1,10 @@
 ---
-"$title": Nhà cung cấp công cụ phân tích
-order: '3'
+'$title': Nhà cung cấp công cụ phân tích
+$order: 3
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
   text: Tài liệu này liệt kê những nhà cung cấp công cụ phân tích có cấu hình tích hợp để sử dụng với  thành phần amp-analytics.
 ---
@@ -32,7 +32,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Tài liệu này liệt kê những nhà cung cấp công cụ phân tích có cấu hình tích hợp để sử dụng với  thành phần [`amp-analytics`](https://amp.dev/documentation/components/amp-analytics/).
+Tài liệu này liệt kê những nhà cung cấp công cụ phân tích có cấu hình tích hợp để sử dụng với thành phần [`amp-analytics`](https://amp.dev/documentation/components/amp-analytics/).
 
 Những nhà cung cấp nào muốn tích hợp dịch vụ của họ với [`<amp-analytics>`](https://amp.dev/documentation/components/amp-analytics/) nên tham khảo những chi tiết trong [Tích hợp công cụ phân tích với AMP](https://amp.dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools).
 
@@ -118,13 +118,13 @@ Bổ sung hỗ trợ cho Clicky Web Analytics. Chi tiết khác cho việc thêm
 
 Giá trị thuộc tính type: `comscore`
 
-Bổ sung hỗ trợ cho công cụ phân tích lượt xem trang, do comScore Unified Digital Measurement™ thực hiện. Yêu cầu định nghĩa *var* `c2` với *id c2* do comScore cung cấp. Có thể xem thêm thông tin tại [comscore.com](http://www.comscore.com).
+Bổ sung hỗ trợ cho công cụ phân tích lượt xem trang, do comScore Unified Digital Measurement™ thực hiện. Yêu cầu định nghĩa _var_ `c2` với _id c2_ do comScore cung cấp. Có thể xem thêm thông tin tại [comscore.com](http://www.comscore.com).
 
 ### Cxense <a name="cxense"></a>
 
 Giá trị thuộc tính type: `cxense`
 
-Bổ sung hỗ trợ cho công cụ phân tích của Cxense Insight. Yêu cầu định nghĩa *var* `siteId` *siteId* do Cxense cung cấp. Có thể xem thêm chi tiết tại [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration).
+Bổ sung hỗ trợ cho công cụ phân tích của Cxense Insight. Yêu cầu định nghĩa _var_ `siteId` _siteId_ do Cxense cung cấp. Có thể xem thêm chi tiết tại [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration).
 
 ### Deep.BI <a name="deepbi"></a>
 
@@ -134,7 +134,7 @@ Giá trị thuộc tính type: `deepbi`
 
 Giá trị thuộc tính type: `dynatrace`
 
-Bổ sung hỗ trợ cho việc theo dõi người dùng thực, do Dynatrace thực hiện. Yêu cầu định nghĩa *var* `app` với *id ứng dụng* do Dynatrace cung cấp và *var* `tenant` với *bộ định danh môi trường* do Dynatrace cung cấp. Chi tiết khác về việc thêm tác vụ theo dõi người dùng thực do Dynatrace thực hiện, có thể được tìm thấy tại [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/).
+Bổ sung hỗ trợ cho việc theo dõi người dùng thực, do Dynatrace thực hiện. Yêu cầu định nghĩa _var_ `app` với _id ứng dụng_ do Dynatrace cung cấp và _var_ `tenant` với _bộ định danh môi trường_ do Dynatrace cung cấp. Chi tiết khác về việc thêm tác vụ theo dõi người dùng thực do Dynatrace thực hiện, có thể được tìm thấy tại [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/).
 
 ### EPICA <a name="epica"></a>
 
@@ -146,7 +146,7 @@ Bổ sung hỗ trợ cho lượt xem trang và sự kiện của EPICA. Có th�
 
 Giá trị thuộc tính type: `euleriananalytics`
 
-Bổ sung hỗ trợ cho Eulerian Technologies Analytics. Yêu cầu định nghĩa *var* `analyticsHost` với tên miền được uỷ thác của Eulerian. Có thể xem thêm chi tiết tại [eulerian.wiki](https://eulerian.wiki).
+Bổ sung hỗ trợ cho Eulerian Technologies Analytics. Yêu cầu định nghĩa _var_ `analyticsHost` với tên miền được uỷ thác của Eulerian. Có thể xem thêm chi tiết tại [eulerian.wiki](https://eulerian.wiki).
 
 ### Facebook Pixel <a name="facebook-pixel"></a>
 
@@ -278,7 +278,7 @@ Giá trị thuộc tính type: `marinsoftware`
 
 Giá trị thuộc tính type: `mediametrie`
 
-Bổ sung hỗ trợ cho những trang theo dõi của Médiamétrie. Cần phải định nghĩa *var* `serial`. Các biến số `level1` đến `level4` thuộc hàng tuỳ chọn. Thông tin thêm có thể được tìm thấy tại [mediametrie.com](http://www.mediametrie.com/).
+Bổ sung hỗ trợ cho những trang theo dõi của Médiamétrie. Cần phải định nghĩa _var_ `serial`. Các biến số `level1` đến `level4` thuộc hàng tuỳ chọn. Thông tin thêm có thể được tìm thấy tại [mediametrie.com](http://www.mediametrie.com/).
 
 ### mediarithmics <a name="mediarithmics"></a>
 

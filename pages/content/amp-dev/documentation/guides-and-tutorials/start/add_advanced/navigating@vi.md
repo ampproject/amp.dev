@@ -1,6 +1,6 @@
 ---
-"$title": Điều hướng trong website của bạn
-"$order": '5'
+'$title': Điều hướng trong website của bạn
+$order: 5
 description: Hầu hết các website di động đều bao gồm một menu điều hướng trong website. Các menu này có thể có nhiều dạng khác nhau. Trong bài thực hành này, chúng ta sẽ thử các ví dụ sau đây để...
 ---
 
@@ -18,9 +18,14 @@ Hãy thử **thay thế** thẻ `<header>` với phiên bản này, bao gồm m�
 ```html
 <header class="headerbar">
   <a href="homepage.html">
-    <amp-img class="home-button" src="icons/home.png" width="36" height="36"></amp-img>
+    <amp-img
+      class="home-button"
+      src="icons/home.png"
+      width="36"
+      height="36"
+    ></amp-img>
   </a>
- <div class="site-name">News Site</div>
+  <div class="site-name">News Site</div>
 </header>
 ```
 
@@ -62,25 +67,39 @@ Một kỹ thuật điều hướng thông dụng là thêm một biểu tượn
 Trước tiên, chúng ta phải **add** JavaScript của thành phần [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) vào thẻ `<head>`:
 
 ```html
-<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+<script
+  async
+  custom-element="amp-sidebar"
+  src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"
+></script>
 ```
 
 Tiếp theo, chúng ta sẽ muốn hiển thị một biểu tượng menu. Khi biểu tượng này được nhấn, nó sẽ mở ra thanh bên. **Thay** phần `<header>` bằng mã sau để hiển thị một biểu tượng ["hamburger"](https://en.wikipedia.org/wiki/Hamburger_button) thay cho biểu tượng trang chủ:
 
 ```html
 <header class="headerbar">
-  <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
+  <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">
+    ☰
+  </div>
   <div class="site-name">News Site</div>
 </header>
 ```
 
-Trong mã ở trên, chúng ta sẽ `toggle` (bật/tắt) thanh bên thông qua thuộc tính hành động [`on`](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) (bật) trên yếu tố  [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md), được xác định bởi ID `sidebar1`. Hãy thêm thanh bên.
+Trong mã ở trên, chúng ta sẽ `toggle` (bật/tắt) thanh bên thông qua thuộc tính hành động [`on`](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) (bật) trên yếu tố [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md), được xác định bởi ID `sidebar1`. Hãy thêm thanh bên.
 
 **Thêm** HTML sau ngay sau phần `</header>`:
 
 ```html
 <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
-  <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
+  <div
+    role="button"
+    aria-label="close sidebar"
+    on="tap:sidebar1.toggle"
+    tabindex="0"
+    class="close-sidebar"
+  >
+    ✕
+  </div>
   <ul class="sidebar">
     <li><a href="#">Example 1</a></li>
     <li><a href="#">Example 2</a></li>
@@ -103,7 +122,7 @@ Cuối cùng, **thêm** các quy tắc phong cách này vào CSS inline của b�
 }
 .sidebar > li {
   list-style: none;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 .sidebar a {
   text-decoration: none;

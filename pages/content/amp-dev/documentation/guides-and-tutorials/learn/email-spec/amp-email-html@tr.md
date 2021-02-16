@@ -1,8 +1,8 @@
 ---
-"$title": E-Posta Destekli HTML için AMP
-order: '4'
+'$title': E-Posta Destekli HTML için AMP
+$order: 4
 formats:
-- email
+  - email
 teaser:
   text: 'Not: Bu liste normatif değildir ve sadece referans amaçlıdır'
 toc: 'true'

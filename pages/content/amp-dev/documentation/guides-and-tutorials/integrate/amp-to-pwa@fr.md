@@ -1,9 +1,9 @@
 ---
-"$title": Préchargez votre PWA depuis vos pages AMP
-"$order": '1'
+'$title': Préchargez votre PWA depuis vos pages AMP
+$order: 1
 description: "Une bonne stratégie serait de définir une page AMP comme point d'entrée à votre site, de préparer la PWA en arrière-plan et de basculer ..."
 formats:
-- websites
+  - websites
 author: pbakaus
 ---
 
@@ -23,7 +23,7 @@ AMP est une solution idéale pour les **pages feuilles**, c'est-à-dire les page
 
 ### PWA pour une interactivité et un engagement riches
 
-Les applications Web progressives permettent une interactivité et un engagement beaucoup plus importants, mais ne présentent pas les *caractéristiques de chargement initial immédiat* d'une page AMP. Au cœur de ces applications se trouve une technologie appelée Service Worker, un proxy côté client qui vous permet de mettre en cache toutes sortes de ressources pour vos pages, mais Service Worker ne s'active *qu'après* le premier chargement.
+Les applications Web progressives permettent une interactivité et un engagement beaucoup plus importants, mais ne présentent pas les _caractéristiques de chargement initial immédiat_ d'une page AMP. Au cœur de ces applications se trouve une technologie appelée Service Worker, un proxy côté client qui vous permet de mettre en cache toutes sortes de ressources pour vos pages, mais Service Worker ne s'active _qu'après_ le premier chargement.
 
 {{ image('/static/img/docs/pwamp_comparison.png', 977, 549, align='', caption='The pros and cons of AMP vs. PWA.') }}
 
@@ -36,8 +36,10 @@ AMP a la possibilité d'installer le Service Worker de votre application Web pro
 Tout d'abord, installez le Service Worker sur toutes vos pages AMP à l'aide de [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md), en incluant d'abord le composant via son script dans l'attribut `<head>` de votre page:
 
 [sourcecode:html]
+
 <script async custom-element="amp-install-serviceworker"
   src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+
 [/sourcecode]
 
 Then add the following somewhere within your `<body>` (modify to point to your actual Service Worker):
@@ -54,20 +56,20 @@ En fin de compte, lors de l'étape d'installation du service worker, mettez en c
 [sourcecode:javascript]
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
-  '/',
-  '/styles/main.css',
-  '/script/main.js'
+'/',
+'/styles/main.css',
+'/script/main.js'
 ];
 
 self.addEventListener('install', function(event) {
-  // Perform install steps
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(function(cache) {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-  );
+// Perform install steps
+event.waitUntil(
+caches.open(CACHE_NAME)
+.then(function(cache) {
+console.log('Opened cache');
+return cache.addAll(urlsToCache);
+})
+);
 });
 [/sourcecode]
 
@@ -83,14 +85,14 @@ Dans ce cas, vous disposez d'un site Web canonique (non AMP) et générez des pa
 
 ### 2. Si votre site canonique est AMP
 
-In this case your canonical pages *are* your AMP pages: You're building your entire website with AMP, and simply use AMP as a library (fun fact: the very site you're reading this on is built this way). **In this scenario, most links on your AMP pages will lead to other AMP pages.**
+In this case your canonical pages _are_ your AMP pages: You're building your entire website with AMP, and simply use AMP as a library (fun fact: the very site you're reading this on is built this way). **In this scenario, most links on your AMP pages will lead to other AMP pages.**
 
 Vous pouvez maintenant déployer votre PWA sur un chemin distinct comme `your-domain.com/pwa` et utiliser le Service Worker qui est déjà en cours d'exécution pour **intercepter le navigateur lorsque quelqu'un clique sur un lien sur la page AMP**:
 
 [sourcecode:javascript]
 self.addEventListener('fetch', event => {
-    if (event.request.mode === 'navigate') {
-      event.respondWith(fetch('/pwa'));
+if (event.request.mode === 'navigate') {
+event.respondWith(fetch('/pwa'));
 
       // Immediately start downloading the actual resource.
       fetch(event.request.url);

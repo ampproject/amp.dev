@@ -1,20 +1,20 @@
 ---
-"$title": Intégrez votre technologie dans AMP
-"$order": '0'
-"$hidden": 'true'
+'$title': Intégrez votre technologie dans AMP
+$order: 0
+'$hidden': 'true'
 description: "Si vous êtes un fournisseur de technologie pour éditeurs ou annonceurs sur le Web, nous vous invitons à ajouter la prise en charge d'AMP afin que vos clients puissent continuer de tirer parti de votre technologie et ..."
 formats:
-- websites
-- ads
-- stories
-- email
+  - websites
+  - ads
+  - stories
+  - email
 ---
 
 Merci de vouloir contribuer à AMP! Nous apprécions votre participation à faire du Web une plateforme qui met l'utilisateur à l'avant.
 
 Les éditeurs ont créé plus de 1,4 milliard de documents AMP, hébergés sur plus de 750 000 domaines uniques. Une telle croissance n'est possible que grâce au soutien de plus de 100 entreprises technologiques tierces, qui ont déjà intégré AMP.
 
-Si vous êtes un fournisseur de technologie pour  éditeurs ou annonceurs sur le Web, nous vous invitons à ajouter la prise en charge d'AMP! Vos clients peuvent continuer à tirer parti de votre technologie tout en travaillant à réaliser notre vision qui est celle d'améliorer le Web.
+Si vous êtes un fournisseur de technologie pour éditeurs ou annonceurs sur le Web, nous vous invitons à ajouter la prise en charge d'AMP! Vos clients peuvent continuer à tirer parti de votre technologie tout en travaillant à réaliser notre vision qui est celle d'améliorer le Web.
 
 Ce document décrit les attentes AMP pour les tiers et définit les niveaux de contribution.
 

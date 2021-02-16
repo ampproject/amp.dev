@@ -1,8 +1,8 @@
 ---
-"$title": Подготовка
-"$order": '0'
+'$title': Подготовка
+$order: 0
 description: 'Чтобы завершить этот урок, вам понадобятся: - Базовые знания HTML, CSS и JavaScript - Базовое понимание основных концепций AMP, см...'
-"$parent": "/content/docs/fundamentals/add_advanced.md"
+'$parent': '/content/docs/fundamentals/add_advanced.md'
 ---
 
 ## Предварительные требования

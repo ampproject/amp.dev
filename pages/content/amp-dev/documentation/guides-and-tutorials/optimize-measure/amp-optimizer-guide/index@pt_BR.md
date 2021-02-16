@@ -1,11 +1,11 @@
 ---
-"$title": Usando um Otimizador AMP
-"$order": '2'
-"$hidden": 'true'
+'$title': Usando um Otimizador AMP
+$order: 2
+'$hidden': 'true'
 description: Os Otimizadores AMP são ferramentas que trazem as otimizações do cache AMP para seu próprio site. Usar um Otimizador AMP é a chave para criar uma ótima experiência de página e obter conformidade com o Core Web Vitals. Este guia explica como usar melhor um Otimizador AMP para otimizar suas páginas AMP.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

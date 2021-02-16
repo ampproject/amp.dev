@@ -1,9 +1,9 @@
 ---
-"$title": AMP cho Email - Tích hợp Nhà cung cấp Email
-"$order": '5'
+'$title': AMP cho Email - Tích hợp Nhà cung cấp Email
+$order: 5
 description: Thông tin cho trình khách và nhà cung cấp email để tích hợp với AMP.
 formats:
-- email
+  - email
 ---
 
 Chúng tôi đang viết một hướng dẫn toàn diện về việc tích hợp AMP cho Email.

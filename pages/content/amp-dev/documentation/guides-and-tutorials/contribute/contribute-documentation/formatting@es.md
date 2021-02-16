@@ -1,12 +1,12 @@
 ---
-"$title": Guías para formatos y tutoriales
-"$order": '3'
+'$title': Guías para formatos y tutoriales
+$order: 3
 description: Requisitos relacionados con el formato de los archivos para amp.dev
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 
@@ -145,10 +145,10 @@ Coloque los fragmentos de código dentro de los conjuntos con tres comillas simp
 ```
 
 ```css
-  // code sample
+// code sample
 ```
 
-```js
+````js
   // code sample
 ```</pre></div>
 
@@ -177,8 +177,10 @@ Los ejemplos del código pueden tener una previsualización y/o enlace hacia una
           template="<custom-template>"]
   ```html
     // code sample
-  ```
-  &lsqb;/example]</pre>
+````
+
+&lsqb;/example]</pre>
+
 </div>
 
 Nota: ¡La previsualización se transformará automáticamente al formato seleccionado actualmente cuando se abra en el Playground 🤯!
@@ -210,9 +212,11 @@ Aquí puede observar un ejemplo de una inserción simple inline. Puede definir l
 El código se ve de la siguiente manera:
 
 [example preview="inline" playground="true"]
+
 ```html
 <div style="background: red; width: 200px; height: 200px;">Hello World</div>
 ```
+
 [/example]
 
 Advertencia: los ejemplos inline están insertados directamente dentro de la página. Esto podría generar conflictos si los componentes ya se utilizan en la página (por ejemplo, `amp-consent`).
@@ -248,10 +252,15 @@ Importante: No agregue ningún código boilerplate AMP basado en el formato AMP 
 El código se ve de la siguiente manera:
 
 [example preview="top-frame"
-         playground="true"]
+playground="true"]
+
 ```html
 <head>
-  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-youtube"
+    src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+  ></script>
   <style amp-custom>
     body {
       background: red;
@@ -260,13 +269,16 @@ El código se ve de la siguiente manera:
 </head>
 <body>
   <h1>Hello AMP</h1>
-  <amp-youtube width="480"
+  <amp-youtube
+    width="480"
     height="270"
     layout="responsive"
-    data-videoid="lBTCB7yLs8Y">
+    data-videoid="lBTCB7yLs8Y"
+  >
   </amp-youtube>
 </body>
 ```
+
 [/example]
 
 ### Historias de AMP
@@ -311,38 +323,43 @@ Utilice `preview="top-frame"` junto con `orientation="portrait"` para previsuali
 El código se ve de la siguiente manera:
 
 [example preview="top-frame"
-         orientation="portrait"
-         playground="true"]
+orientation="portrait"
+playground="true"]
+
 ```html
-  <head>
-    <script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-    <style amp-custom>
-      body {
-        font-family: 'Roboto', sans-serif;
-      }
-      amp-story-page {
-        background: white;
-      }
-    </style>
-  </head>
-  <body>
-    <amp-story standalone>
-      <amp-story-page id="cover">
-        <amp-story-grid-layer template="vertical">
-          <h1>Hello World</h1>
-          <p>This is the cover page of this story.</p>
-        </amp-story-grid-layer>
-      </amp-story-page>
-      <amp-story-page id="page-1">
-        <amp-story-grid-layer template="vertical">
-          <h1>First Page</h1>
-          <p>This is the first page of this story.</p>
-        </amp-story-grid-layer>
-      </amp-story-page>
-    </amp-story>
-  </body>
+<head>
+  <script
+    async
+    custom-element="amp-story"
+    src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+  ></script>
+  <style amp-custom>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    amp-story-page {
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <amp-story standalone>
+    <amp-story-page id="cover">
+      <amp-story-grid-layer template="vertical">
+        <h1>Hello World</h1>
+        <p>This is the cover page of this story.</p>
+      </amp-story-grid-layer>
+    </amp-story-page>
+    <amp-story-page id="page-1">
+      <amp-story-grid-layer template="vertical">
+        <h1>First Page</h1>
+        <p>This is the first page of this story.</p>
+      </amp-story-grid-layer>
+    </amp-story-page>
+  </amp-story>
+</body>
 ```
+
 [/example]
 
 ### URL absolutas para el correo electrónico de AMP
@@ -364,15 +381,19 @@ Observe cómo utilizamos <code>{{server_for_email}}</code> para crear un endpoin
 El código se ve de la siguiente manera:
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <div class="resp-img">
-  <amp-img alt="flowers"
+  <amp-img
+    alt="flowers"
     src="{{server_for_email}}/static/inline-examples/images/flowers.jpg"
     layout="responsive"
     width="640"
-    height="427"></amp-img>
+    height="427"
+  ></amp-img>
 </div>
 ```
+
 [/example]
 
 ### Cómo escapar las plantillas mustache
@@ -401,13 +422,19 @@ Este es un ejemplo de `top-frame` donde se utiliza un endpoint con acceso remoto
 El código se ve de la siguiente manera:
 
 [example preview="top-frame"
-         playground="true"
-         imports="amp-list:0.1"
-         template="amp-mustache:0.2"]
+playground="true"
+imports="amp-list:0.1"
+template="amp-mustache:0.2"]
+
 ```html
-<amp-list width="auto" height="100" layout="fixed-height"
-  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
-  <template type="amp-mustache">{% raw %}
+<amp-list
+  width="auto"
+  height="100"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json"
+>
+  <template type="amp-mustache"
+    >{% raw %}
     <div class="url-entry">
       <a href="{{url}}">{{title}}</a>
     </div>
@@ -415,6 +442,7 @@ El código se ve de la siguiente manera:
   </template>
 </amp-list>
 ```
+
 [/example]
 
 ## Enlaces
@@ -422,7 +450,7 @@ El código se ve de la siguiente manera:
 Puede vincular otras páginas con la sintaxis para enlaces markdown estándar:
 
 ```md
- [link](../../../courses/beginning-course/index.md)
+[link](../../../courses/beginning-course/index.md)
 ```
 
 Cuando en amp.dev se realiza una vinculación hacia otra página, la referencia será una ruta del archivo que esté relacionada con el archivo de destino.
@@ -452,7 +480,7 @@ Cuando cree un anclaje que se utilizará un enlace desde otra página, también 
 Los componentes de los documentos, guías, tutoriales y ejemplos pueden filtrarse mediante el formato AMP, como los sitios web o las historias de AMP. Cuando los vincule con dicha página, debe especificar de manera explícita un formato, el cual sea compatible con el destino, para ello agregue el siguiente parámetro de formato al enlace:
 
 ```md
- [link](../../learn/amp-actions-and-events.md?format=websites)
+[link](../../learn/amp-actions-and-events.md?format=websites)
 ```
 
 Solo cuando esté seguro de que el destino es compatible con **todos** los formatos que se despliegan en su página puede omitir el parámetro.
@@ -462,8 +490,8 @@ Solo cuando esté seguro de que el destino es compatible con **todos** los forma
 Un enlace hacia los documentos de referencia de un componente automáticamente señalará la última versión si su enlace omite esa parte de la versión. Cuando desee señalar de manera explícita una versión especifique el nombre completo:
 
 ```md
- [latest version](../../../components/reference/amp-carousel.md?format=websites)
- [explicit version](../../../components/reference/amp-carousel-v0.2.md?format=websites)
+[latest version](../../../components/reference/amp-carousel.md?format=websites)
+[explicit version](../../../components/reference/amp-carousel-v0.2.md?format=websites)
 ```
 
 ## Estructura de los documentos

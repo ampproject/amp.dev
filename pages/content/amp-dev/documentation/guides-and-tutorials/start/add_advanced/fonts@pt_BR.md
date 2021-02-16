@@ -1,6 +1,6 @@
 ---
-"$title": Adding fonts
-"$order": '6'
+'$title': Adding fonts
+$order: 6
 description: 'Há duas formas de incorporar fontes personalizadas à página AMP: 1. Use uma tag <link> (somente para provedores de fontes da lista de permissões).'
 ---
 
@@ -14,7 +14,11 @@ Há duas formas de incorporar fontes personalizadas à página AMP:
 Neste tutorial, usaremos uma tag `<link>` para incluir fontes na página. **Adicione** um link de folha de estilo no `<head>` para solicitar a fonte Raleway:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://fonts.googleapis.com/css?family=Raleway"
+/>
 ```
 
 Agora **atualize** o seletor CSS `body` para incluir uma referência à Raleway:
@@ -28,7 +32,7 @@ body {
 }
 ```
 
-**Atualize** a página e confira a nova aparência. Além disso, inspecione a saída do validador AMP.  Esta solicitação da folha de estilo externa não pode ter erros.
+**Atualize** a página e confira a nova aparência. Além disso, inspecione a saída do validador AMP. Esta solicitação da folha de estilo externa não pode ter erros.
 
 [tip type="note"] As fontes da Web podem ser prejudiciais ao desempenho de um site, mesmo num site AMP rápido. Use a propriedade CSS [`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display) para otimizar o comportamento do carregamento de suas fontes. [/tip]
 

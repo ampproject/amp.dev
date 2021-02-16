@@ -1,13 +1,13 @@
 ---
-"$title": Đóng góp Tài liệu
-"$order": '0'
-"$hidden": 'true'
+'$title': Đóng góp Tài liệu
+$order: 0
+'$hidden': 'true'
 description: Bắt đầu đóng góp tài liệu cho amp.dev
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 

@@ -1,11 +1,11 @@
 ---
-"$title": Mengonfigurasi analitik
-"$order": '5'
-"$hidden": 'true'
+'$title': Mengonfigurasi analitik
+$order: 5
+'$hidden': 'true'
 description: Jika Anda menggunakan Google Analytics sebagai penyedia analitik, pelajari cara menyiapkan Google Analytics untuk AMP tingkat dasar dan cara menautkan konten AMP dan non-AMP dengan menggunakan ID Klien
 formats:
-- websites
-- stories
+  - websites
+  - stories
 ---
 
 [tip] **KIAT –** Jika Anda menggunakan Google Analytics sebagai penyedia analitik, pelajari [cara menyiapkan Google Analytics untuk AMP tingkat dasar](https://developers.google.com/analytics/devguides/collection/amp-analytics/#basic_setup_to_measure_page_views) dan [cara menautkan konten AMP dan non-AMP dengan menggunakan ID Klien](https://support.google.com/analytics/answer/7486764). [/tip]

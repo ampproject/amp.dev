@@ -1,10 +1,10 @@
 ---
-"$title": Biện pháp thực hành tiên tiến nhất để tạo một Câu chuyện Web thành công
-"$order": '1'
+'$title': Biện pháp thực hành tiên tiến nhất để tạo một Câu chuyện Web thành công
+$order: 1
 description: Biện pháp thực hành tiên tiến nhất để tạo một Câu chuyện Web thành công
-"$category": Start
+'$category': Start
 formats:
-- stories
+  - stories
 author: CrystalOnScript
 ---
 

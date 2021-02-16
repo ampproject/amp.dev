@@ -1,9 +1,9 @@
 ---
-"$title": Tải sẵn PWA của bạn từ các trang AMP
-"$order": '1'
+'$title': Tải sẵn PWA của bạn từ các trang AMP
+$order: 1
 description: Một chiến lược tốt là đặt một trang AMP làm trang đầu vào cho website của bạn, sau đó khởi động PWA đằng sau hậu trường và chuyển sang...
 formats:
-- websites
+  - websites
 author: pbakaus
 ---
 
@@ -36,8 +36,10 @@ AMP có khả năng cài đặt Service Worker cho Ứng dụng Web Lũy tiến 
 Đầu tiên, cài đặt service worker trên tất cả các Trang AMP của bạn bằng [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md), đầu tiên bằng cách bao gồm thành phần này thông qua kịch bản của nó trong phần `<head>` (đầu đề) của trang của bạn:
 
 [sourcecode:html]
+
 <script async custom-element="amp-install-serviceworker"
   src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+
 [/sourcecode]
 
 Sau đó thêm phần sau vào đâu đó trong phần `<body>` (thân) của bạn (sửa để chỉ đến Service Worker thực của bạn):
@@ -54,20 +56,20 @@ Cuối cùng, trong bước cài đặt của service worker, lưu bất kỳ t�
 [sourcecode:javascript]
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
-  '/',
-  '/styles/main.css',
-  '/script/main.js'
+'/',
+'/styles/main.css',
+'/script/main.js'
 ];
 
 self.addEventListener('install', function(event) {
-  // Perform install steps
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(function(cache) {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-  );
+// Perform install steps
+event.waitUntil(
+caches.open(CACHE_NAME)
+.then(function(cache) {
+console.log('Opened cache');
+return cache.addAll(urlsToCache);
+})
+);
 });
 [/sourcecode]
 
@@ -83,14 +85,14 @@ Trong trường hợp này, bạn sẽ có một website chính thức (không p
 
 ### 2. Nếu website chính thức của bạn là AMP
 
-Trong trường hợp này, các trang chính thức của bạn *là* các trang AMP của bạn: Bạn đang xây dựng toàn bộ website của mình bằng AMP, và chỉ sử dụng AMP như một thư viện (dữ kiện vui: website bạn đang đọc bài viết này cũng được xây dựng theo cách đó). **Trong trường hợp này, hầu hết các liên kết trên các trang AMP của bạn đều sẽ dẫn đến các trang AMP khác.**
+Trong trường hợp này, các trang chính thức của bạn _là_ các trang AMP của bạn: Bạn đang xây dựng toàn bộ website của mình bằng AMP, và chỉ sử dụng AMP như một thư viện (dữ kiện vui: website bạn đang đọc bài viết này cũng được xây dựng theo cách đó). **Trong trường hợp này, hầu hết các liên kết trên các trang AMP của bạn đều sẽ dẫn đến các trang AMP khác.**
 
 Bây giờ bạn có thể triển khai PWA của mình trên một đường dẫn riêng như `your-domain.com/pwa` và sử dụng Service Worker đã chạy để **tiếp quản điều hướng của trình duyệt khi một ai đó nhấn vào một liên kết trên Trang AMP**:
 
 [sourcecode:javascript]
 self.addEventListener('fetch', event => {
-    if (event.request.mode === 'navigate') {
-      event.respondWith(fetch('/pwa'));
+if (event.request.mode === 'navigate') {
+event.respondWith(fetch('/pwa'));
 
       // Immediately start downloading the actual resource.
       fetch(event.request.url);

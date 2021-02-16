@@ -1,6 +1,6 @@
 ---
-"$title": Navigation auf deiner Website
-"$order": '5'
+'$title': Navigation auf deiner Website
+$order: 5
 description: Die meisten mobilen Websites enthalten ein Navigationsmenü. Solche Menüs können ganz unterschiedlich aussehen. In diesem Tutorial testen wir …
 ---
 
@@ -18,9 +18,14 @@ Leite deine Benutzer einfach zurück auf deine Homepage, wenn du ihnen auf unkom
 ```html
 <header class="headerbar">
   <a href="homepage.html">
-    <amp-img class="home-button" src="icons/home.png" width="36" height="36"></amp-img>
+    <amp-img
+      class="home-button"
+      src="icons/home.png"
+      width="36"
+      height="36"
+    ></amp-img>
   </a>
- <div class="site-name">News Site</div>
+  <div class="site-name">News Site</div>
 </header>
 ```
 
@@ -62,14 +67,20 @@ Häufig wird zur Navigation ein Menüsymbol hinzugefügt: Ein Klick darauf blend
 Zuerst müssen wir das JavaScript der Komponente <a><code>amp-sidebar</code></a> zum Tag `<head>` <strong>hinzufügen</strong>:
 
 ```html
-<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+<script
+  async
+  custom-element="amp-sidebar"
+  src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"
+></script>
 ```
 
 Als Nächstes wollen wir ein Menüsymbol anzeigen. Wenn du auf das Symbol tippst, wird die Randleiste geöffnet. **Ersetze** den `<header>` durch den folgenden Code, um anstelle eines Home Symbols das Symbol ["Hamburger"](https://en.wikipedia.org/wiki/Hamburger_button) anzuzeigen:
 
 ```html
 <header class="headerbar">
-  <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
+  <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">
+    ☰
+  </div>
   <div class="site-name">News Site</div>
 </header>
 ```
@@ -80,7 +91,15 @@ Im oben gezeigten Code schalten wir die Randleiste mithilfe von `toggle` im Akti
 
 ```html
 <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
-  <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
+  <div
+    role="button"
+    aria-label="close sidebar"
+    on="tap:sidebar1.toggle"
+    tabindex="0"
+    class="close-sidebar"
+  >
+    ✕
+  </div>
   <ul class="sidebar">
     <li><a href="#">Example 1</a></li>
     <li><a href="#">Example 2</a></li>
@@ -103,7 +122,7 @@ Die Randleiste wird ausgeblendet, aber wenn Benutzer auf das Hamburgersymbol tip
 }
 .sidebar > li {
   list-style: none;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 .sidebar a {
   text-decoration: none;

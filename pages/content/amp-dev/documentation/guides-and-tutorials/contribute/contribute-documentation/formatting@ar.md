@@ -1,12 +1,12 @@
 ---
-"$title": أدلة التنسيق والبرامج التعليمية
-"$order": '3'
+'$title': أدلة التنسيق والبرامج التعليمية
+$order: 3
 description: متطلبات تنسيق الملفات لـ amp.dev
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 
@@ -145,10 +145,10 @@ Read-on
 ```
 
 ```css
-  // code sample
+// code sample
 ```
 
-```js
+````js
   // code sample
 ```</pre></div>
 
@@ -177,8 +177,10 @@ Read-on
           template="<custom-template>"]
   ```html
     // code sample
-  ```
-  &lsqb;/example]</pre>
+````
+
+&lsqb;/example]</pre>
+
 </div>
 
 ملاحظة: سيتم تحويل المعاينة تلقائيًا إلى التنسيق المحدد حاليًا عند فتحها في الساحة 🤯!
@@ -210,9 +212,11 @@ Read-on
 فيما يلي الصورة التي سيكون عليها:
 
 [example preview="inline" playground="true"]
+
 ```html
 <div style="background: red; width: 200px; height: 200px;">Hello World</div>
 ```
+
 [/example]
 
 تحذير: يتم إدراج الأمثلة المضمنة مباشرة في الصفحة. قد يؤدي ذلك إلى تعارضات إذا كانت المكونات مستعملة بالفعلة في الصفحة (على سبيل المثال `amp-consent`).
@@ -248,10 +252,15 @@ Read-on
 فيما يلي الصورة التي سيكون عليها:
 
 [example preview="top-frame"
-         playground="true"]
+playground="true"]
+
 ```html
 <head>
-  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-youtube"
+    src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+  ></script>
   <style amp-custom>
     body {
       background: red;
@@ -260,13 +269,16 @@ Read-on
 </head>
 <body>
   <h1>Hello AMP</h1>
-  <amp-youtube width="480"
+  <amp-youtube
+    width="480"
     height="270"
     layout="responsive"
-    data-videoid="lBTCB7yLs8Y">
+    data-videoid="lBTCB7yLs8Y"
+  >
   </amp-youtube>
 </body>
 ```
+
 [/example]
 
 ### قصص AMP
@@ -311,38 +323,43 @@ Read-on
 فيما يلي الصورة التي سيكون عليها:
 
 [example preview="top-frame"
-         orientation="portrait"
-         playground="true"]
+orientation="portrait"
+playground="true"]
+
 ```html
-  <head>
-    <script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-    <style amp-custom>
-      body {
-        font-family: 'Roboto', sans-serif;
-      }
-      amp-story-page {
-        background: white;
-      }
-    </style>
-  </head>
-  <body>
-    <amp-story standalone>
-      <amp-story-page id="cover">
-        <amp-story-grid-layer template="vertical">
-          <h1>Hello World</h1>
-          <p>This is the cover page of this story.</p>
-        </amp-story-grid-layer>
-      </amp-story-page>
-      <amp-story-page id="page-1">
-        <amp-story-grid-layer template="vertical">
-          <h1>First Page</h1>
-          <p>This is the first page of this story.</p>
-        </amp-story-grid-layer>
-      </amp-story-page>
-    </amp-story>
-  </body>
+<head>
+  <script
+    async
+    custom-element="amp-story"
+    src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+  ></script>
+  <style amp-custom>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    amp-story-page {
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <amp-story standalone>
+    <amp-story-page id="cover">
+      <amp-story-grid-layer template="vertical">
+        <h1>Hello World</h1>
+        <p>This is the cover page of this story.</p>
+      </amp-story-grid-layer>
+    </amp-story-page>
+    <amp-story-page id="page-1">
+      <amp-story-grid-layer template="vertical">
+        <h1>First Page</h1>
+        <p>This is the first page of this story.</p>
+      </amp-story-grid-layer>
+    </amp-story-page>
+  </amp-story>
+</body>
 ```
+
 [/example]
 
 ### عناوين URL المطلقة لرسائل AMP الإلكترونية
@@ -364,15 +381,19 @@ Read-on
 فيما يلي الصورة التي سيكون عليها:
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <div class="resp-img">
-  <amp-img alt="flowers"
+  <amp-img
+    alt="flowers"
     src="{{server_for_email}}/static/inline-examples/images/flowers.jpg"
     layout="responsive"
     width="640"
-    height="427"></amp-img>
+    height="427"
+  ></amp-img>
 </div>
 ```
+
 [/example]
 
 ### الخروج من قوالب الشارب
@@ -401,13 +422,19 @@ Read-on
 فيما يلي الصورة التي سيكون عليها:
 
 [example preview="top-frame"
-         playground="true"
-         imports="amp-list:0.1"
-         template="amp-mustache:0.2"]
+playground="true"
+imports="amp-list:0.1"
+template="amp-mustache:0.2"]
+
 ```html
-<amp-list width="auto" height="100" layout="fixed-height"
-  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
-  <template type="amp-mustache">{% raw %}
+<amp-list
+  width="auto"
+  height="100"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json"
+>
+  <template type="amp-mustache"
+    >{% raw %}
     <div class="url-entry">
       <a href="{{url}}">{{title}}</a>
     </div>
@@ -415,6 +442,7 @@ Read-on
   </template>
 </amp-list>
 ```
+
 [/example]
 
 ## الارتباطات
@@ -422,7 +450,7 @@ Read-on
 يمكنك عمل ارتباط بصفحات أخرى باستخدام بنية ارتباط برنامج الترميز القياسي:
 
 ```md
- [link](../../../courses/beginning-course/index.md)
+[link](../../../courses/beginning-course/index.md)
 ```
 
 عند الارتباط بصفحة أخرى على amp.dev سيكون المرجع هو مسار ملف نسبي إلى الملف الهدف.
@@ -452,7 +480,7 @@ Read-on
 تتميز المستندات والأدلة والبرامج التعليمية والأمثلة الخاصة بالمكون بأنها قابلة للتصفية حسب تنسيق AMP، مثل مواقع ويب AMP أو قصص AMP. وعند عمل ارتباط إلى مثل هذه الصفحات فيجب أن تحدد بوضوح التنسيق، المدعوم بالهدف، من خلال إلحاق معلمة التنسيق بالارتباط:
 
 ```md
- [link](../../learn/amp-actions-and-events.md?format=websites)
+[link](../../learn/amp-actions-and-events.md?format=websites)
 ```
 
 عندما تكون متأكدًا فقط من أن الهدف يدعم **كافة** التنسيقات التي تدعمها الصفحة الخاصة بك فإنه يمكنك حذف المعلمة.
@@ -462,8 +490,8 @@ Read-on
 سوف يشير ارتباط لمستند مرجع المكون تلقائيًا إلى أحدث إصدار إذا كان الارتباط الخاص بك يحذف جزء الإصدار. وعندما تريد صراحة الإشارة إلى إصدار ما فحدد الاسم الكامل:
 
 ```md
- [latest version](../../../components/reference/amp-carousel.md?format=websites)
- [explicit version](../../../components/reference/amp-carousel-v0.2.md?format=websites)
+[latest version](../../../components/reference/amp-carousel.md?format=websites)
+[explicit version](../../../components/reference/amp-carousel-v0.2.md?format=websites)
 ```
 
 ## بنية المستند

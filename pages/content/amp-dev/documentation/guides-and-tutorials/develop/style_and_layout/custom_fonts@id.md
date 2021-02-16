@@ -1,11 +1,11 @@
 ---
-"$title": Menambahkan font kustom
-"$order": '6'
+'$title': Menambahkan font kustom
+$order: 6
 description: Halaman AMP tidak dapat menyertakan lembar gaya (stylesheet) eksternal, kecuali font kustom. Anda dapat menyematkan font kustom ke halaman Anda dengan dua cara ...
 formats:
-- websites
-- ads
-- stories
+  - websites
+  - ads
+  - stories
 author: pbakaus
 ---
 
@@ -19,6 +19,7 @@ Halaman AMP tidak dapat menyertakan lembar gaya (stylesheet) eksternal, kecuali 
 Gunakan tag `<link>` (biasanya di bagian atas halaman), seperti berikut ini:
 
 [sourcecode:html]
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 [/sourcecode]
 
@@ -35,6 +36,7 @@ Asal-asal berikut ini masuk dalam daftar yang diizinkan dan diperbolehkan untuk 
 Atau, Anda dapat menggunakan [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) dalam lembar gaya AMP Anda:
 
 [sourcecode:html]
+
 <style amp-custom>
   @font-face {
     font-family: "Bitstream Vera Serif Bold";
@@ -45,6 +47,7 @@ Atau, Anda dapat menggunakan [`@font-face`](https://developer.mozilla.org/en-US/
     font-family: "Bitstream Vera Serif Bold", serif;
   }
 </style>
+
 [/sourcecode]
 
 [tip type="note"] **CATATAN –** Font yang disertakan melalui `@font-face` harus diambil melalui skema HTTP atau HTTPS. [/tip]

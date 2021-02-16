@@ -1,6 +1,6 @@
 ---
-"$title": Creating the bookend
-"$order": '7'
+'$title': Creating the bookend
+$order: 7
 description: 画面、「ブックエンド」を作成していきましょう。最後の画面はストーリーの締めくくりとなるものです。この画面に、ソーシャル共有ボタンやストーリーの関連リンクを表示することで ...
 author: bpaduch
 ---
