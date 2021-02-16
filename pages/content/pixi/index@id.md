@@ -1,5 +1,5 @@
 ---
-$title: Panduan Pengalaman Halaman AMP
+"$title": Panduan Pengalaman Halaman AMP
 staticText:
   inputBar:
     headline: Menganalisis halaman AMP Anda
@@ -17,7 +17,7 @@ staticText:
   statusIntro:
     headline: Harap tunggu sebentar
     headline2: Kami sedang menganalisis halaman Anda
-    loadingCopy: ${finishedChecks} dari ${totalChecks} pemeriksaan selesai
+    loadingCopy: "${finishedChecks} dari ${totalChecks} pemeriksaan selesai"
     buttonShare: Bagikan
     buttonInvestigate: Selidiki
   coreWebVitals:
@@ -36,7 +36,7 @@ staticText:
       scorePercentile: Skor pada persentil ke-75
       score: Skor
       opportunity: Peluang untuk meningkat
-      pagesPassing: Penerusan halaman
+      pagesPassing: Kunjungan lewat
       action: Ambil tindakan
   additionalChecks:
     headline: Pemeriksaan tambahan
@@ -61,7 +61,7 @@ scriptText:
     passed: Lulus
     passedAddition: lulus
     none: Tidak ada
-    nothingToDo: Tidak perlu tindakan apa pun! &#x1F389;
+    nothingToDo: "Tidak perlu tindakan apa pun! &#x1F389;"
     fileAnIssue: Ajukan masalah dengan AMP
     recommendation: rekomendasi
     recommendations: rekomendasi
