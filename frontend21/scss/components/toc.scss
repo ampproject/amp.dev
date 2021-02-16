@@ -13,7 +13,6 @@
     margin-left: 30px;
     margin-top: 35px;
 
-
     @include respond-to('medium') {
       display: block;
       max-height: calc(100vh - 200px);
@@ -29,6 +28,7 @@
   &-scroll-container {
     overflow-y: scroll;
     margin-top: 20px;
+    @include scrollbar;
 
     @include respond-to('medium') {
       max-height: calc(100vh - 300px);

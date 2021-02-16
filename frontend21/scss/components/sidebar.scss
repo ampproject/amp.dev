@@ -10,7 +10,7 @@
     margin-top: 35px;
     max-height: calc(100vh - 110px);
     transform: translateX(20px);
-    transition: transform .3s;
+    transition: transform 0.3s;
 
     &-container {
       grid-column: 2/4;
@@ -28,6 +28,7 @@
   &-scroll-container {
     overflow-y: scroll;
     max-height: calc(100vh - 74px);
+    @include scrollbar;
 
     @include respond-to('medium') {
       max-height: calc(100vh - 110px - 44px);
@@ -55,6 +56,7 @@
         top: 0;
         font-family: $fontFamilyHeadline;
         font-size: 28px;
+        text-transform: uppercase;
         line-height: 1;
         font-weight: bold;
         color: color('iron');
