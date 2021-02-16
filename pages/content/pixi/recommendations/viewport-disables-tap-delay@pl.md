@@ -1,8 +1,8 @@
 ---
-"$title": Wyłączanie opóźnienia dotknięcia
-"$order": '50'
+'$title': Wyłączanie opóźnienia dotknięcia
+$order: 50
 tags:
-- fid
+  - fid
 ---
 
 Ustaw szerokość okienka ekranu zgodną z szerokością urządzenia, aby wyłączyć opóźnienie dotknięcia, które może zwiększyć FID. Aby usunąć to opóźnienie dotknięcia o 300–350 ms, zmień deklarację viewport w sekcji `<head>` swojej strony w następujący sposób:

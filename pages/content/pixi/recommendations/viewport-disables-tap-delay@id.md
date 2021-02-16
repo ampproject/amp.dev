@@ -1,8 +1,8 @@
 ---
-"$title": Menonaktifkan penundaan ketuk
-"$order": '50'
+'$title': Menonaktifkan penundaan ketuk
+$order: 50
 tags:
-- fid
+  - fid
 ---
 
 Atur lebar viewport agar sesuai dengan lebar perangkat untuk menonaktifkan penundaan sentuh, yang dapat meningkatkan FID. Untuk menghapus penundaan ketuk 300-350 md ini, ubah pernyataan viewport di `<head>` halaman Anda menjadi:
