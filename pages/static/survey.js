@@ -95,6 +95,8 @@ Fez.prototype._attachListeners = function () {
   });
 
   dismiss.addEventListener('click', this.submit);
+
+  this.nextSlide();
 };
 
 Fez.prototype.nextSlide = async function () {
