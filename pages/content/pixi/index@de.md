@@ -1,33 +1,42 @@
 ---
-$title: AMP Page Experience Guide
+"$title": AMP Page Experience Guide
 staticText:
   inputBar:
     headline: Analysiere deine AMP Seite
     fieldPlaceholder: URL eingeben
     button: Analysieren
-  shareDialog:
-    headline: Kopiere und teile die URL
+  infoDialog:
+    open: Kopiere und teile die URL
     close: Dialog schließen
+  scrollToTop: Scroll to top
+  shareDialog:
+    headline: Core Web Vitals
+    close: Feld- und Labdaten Reiter
     copyToClipboard: URL kopieren
     success: Erfolgreich
   statusIntro:
     headline: Bitte warte einen Moment
     headline2: Wir analysieren grade deine Seite
-    loadingCopy: ${finishedChecks} von ${totalChecks} Checks sind fertig
+    loadingCopy: "${finishedChecks} von ${totalChecks} Checks sind fertig"
     buttonShare: Teilen
+    buttonInvestigate: Intrusive Interstitials
   coreWebVitals:
-    headline: Core Web Vitals
-    tabsAriaLabel: Feld- und Labdaten Reiter
+    headline: Jetzt handeln. Verbessere deine AMP Seite
+    tabsAriaLabel: Nächster Tipp
     fieldData: Felddaten
     labData: Labdaten
+    fieldDataExplainer: This data updated daily for the rolling 28-day period.
+    labDataExplainer: This data comes from synthetic tests and does not impact page experience.
     loadingSpeed: Ladezeit
     interactivity: Interaktivität
     visualStability: Visuelle Stabilität
     pageLoads: Seitenaufrufe
     thresholdMarker: 75 Prozent
     resultLabels:
-      score: Dein Wert
+      scorePercentile: Score at 75th percentile
+      score: Score
       opportunity: Verbesserungspotenzial
+      pagesPassing: Visits passing
       action: Jetzt handeln
   additionalChecks:
     headline: Weitere Checks
@@ -37,37 +46,37 @@ staticText:
     intrusiveInterstitials: Intrusive Interstitials
     checkManually: Bitte manuell prüfen
   recommendations:
-    headline: Jetzt handeln. Verbessere deine AMP Seite
-    nextAdvice: Nächster Tipp
+    headline: Take action. Improve your AMP site
+    nextAdvice: Next advice
   tags:
-    all: Alle
+    all: All
 scriptText:
   inputBar:
-    fieldError: Bitte gebe eine gültige URL ein
+    fieldError: Please enter a valid URL
   status:
-    analyzing: Analysiere
-    calculating: Berechne
-    error: Analyse fehlgeschlagen
-    failed: Nicht bestanden
-    passed: Bestanden
-    passedAddition: bestanden
-    none: Keins
-    nothingToDo: Nichts zu tun &#x1F389;
-    fileAnIssue: Melde ein Problem bei AMP
-    recommendation: Empfehlung
-    recommendations: Empfehlungen
-  buttonFixIt: Jetzt verbessern
-  buttonMakeImprovements: Jetzt verbessern
-  detailsHeadlineImages: In Frage kommende Bilder
-  detailsHeadlineOther: Betroffene Ressourcen
+    analyzing: Analyzing
+    calculating: Calculating
+    error: Analysis failed
+    failed: Failed
+    passed: Passed
+    passedAddition: passed
+    none: None
+    nothingToDo: "No action needed! &#x1F389;"
+    fileAnIssue: File an issue with AMP
+    recommendation: recommendation
+    recommendations: recommendations
+  buttonFixIt: Fix it now
+  buttonMakeImprovements: Make improvements
+  detailsHeadlineImages: Images to consider
+  detailsHeadlineOther: Affected resources
   thumbnail: Thumbnail
   categories:
-    fast: Schnell
-    average: Verbesserungswürdig
-    slow: Schlecht
+    fast: Good
+    average: Needs Improvement
+    slow: Poor
   tags:
     lcp: LCP
-    fid: FID und TBT
+    fid: FID and TBT
     cls: CLS
     https: HTTPS
     mobileFriendliness: Mobile-friendliness
@@ -75,17 +84,4 @@ scriptText:
     intrusiveInterstitials: Intrusive Interstitials
 ---
 
-Der AMP Page Experience Guide ist ein Werkzeug das Entwicklern zeigt
-wie ihre Seite beim Google Page Experience Ranking abschneidet und
-was sie tun können um das Ergebnis zu verbessern.
-
-Falls es uns nicht möglich ist verwertbare Erkenntnisse zu liefern,
-öffne bitte
-[ein Ticket auf GitHub](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue),
-damit unser Team dir helfen kann, deine AMP Seiten
-zu verbessern.
-
-Wir nutzen öffentlich verfügbare APIs wie
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?dl=de),
-[Safe Browsing](https://developers.google.com/safe-browsing/v4/lookup-api?hl=de),
-und [Mobile-friendliness Test](https://search.google.com/test/mobile-friendly?hl=de).
+Der AMP Page Experience Guide ist ein Werkzeug das Entwicklern zeigt wie ihre Seite beim Google Page Experience Ranking abschneidet und was sie tun können um das Ergebnis zu verbessern. Falls es uns nicht möglich ist verwertbare Erkenntnisse zu liefern, öffne bitte [ein Ticket auf GitHub](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue), damit unser Team dir helfen kann, deine AMP Seiten zu verbessern. Wir nutzen öffentlich verfügbare APIs wie [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/), [Safe Browsing](https://developers.google.com/safe-browsing/v4/lookup-api), und [Mobile-friendliness Test](https://search.google.com/test/mobile-friendly).
