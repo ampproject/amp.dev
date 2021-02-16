@@ -1,8 +1,8 @@
 ---
-"$title": Dokunma gecikmesini devre dışı bırakma
-"$order": '50'
+'$title': Dokunma gecikmesini devre dışı bırakma
+$order: 50
 tags:
-- fid
+  - fid
 ---
 
 FID'yi artırabilecek dokunma gecikmesini devre dışı bırakmak için görüntü alanı genişliğini cihaz genişliğiyle eşleşecek şekilde ayarlayın. Bu 300-350msn dokunma gecikmesini kaldırmak için, sayfanızın `<head>` kısmındaki görüntü alanı bildirimini şu şekilde değiştirin:

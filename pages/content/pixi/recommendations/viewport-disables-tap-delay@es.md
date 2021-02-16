@@ -1,8 +1,8 @@
 ---
-"$title": Desactivar el retraso táctil
-"$order": '50'
+'$title': Desactivar el retraso táctil
+$order: 50
 tags:
-- fid
+  - fid
 ---
 
 Configure el ancho de la ventana de visualización para que coincida con el ancho del dispositivo y se desactive el retraso táctil, lo que puede aumentar el FID. Para eliminar este retraso táctil de 300 a 350 ms, cambie la notificación de la ventana gráfica en el `<head>` de su página a:
