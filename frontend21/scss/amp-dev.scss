@@ -42,7 +42,6 @@ main {
   grid-template-columns: repeat(24, 1fr);
   grid-gap: 15px;
   width: 100%;
-  max-width: $maxWidth;
   margin: 0 auto;
   padding: 0;
   -webkit-font-smoothing: antialiased;
@@ -63,7 +62,12 @@ main {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0;
   margin-bottom: 0.3em;
 }
@@ -99,7 +103,8 @@ button {
   -webkit-appearance: none;
 }
 
-code, p code {
+code,
+p code {
   display: inline;
   padding: 2px 4px;
   font-family: $fontFamilyCode;
@@ -107,7 +112,7 @@ code, p code {
   word-break: normal;
   color: color('black');
   background: color('iron');
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 code {
