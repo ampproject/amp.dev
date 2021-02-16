@@ -35,7 +35,7 @@
 		"test:platform": "APP_ENV=test jest --runInBand --detectOpenHandles --forceExit --testPathPattern platform --testPathIgnorePatterns smoke-tests",
 		"test:playground": "APP_ENV=test jest --runInBand --detectOpenHandles --forceExit --testPathPattern playground",
 		"test:pixi": "APP_ENV=test jest --runInBand --detectOpenHandles --forceExit --testPathPattern pixi",
-		"test:grow-extensions": "cd pages/extensions && if which grow; then python2 -m unittest discover -p \"*_test.py\"; else echo grow not installed with pip. skip tests; fi"
+		"test:grow-extensions": "cd pages/extensions && if which grow; then python3 -m unittest discover -p \"*_test.py\"; else echo grow not installed with pip. skip tests; fi"
 	},
 	"keywords": [
 		"amphtml",
