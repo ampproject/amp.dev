@@ -8,7 +8,7 @@ formats:
 author: CrystalOnScript
 ---
 
-Web Stories are an immersive, tappable and easily shareable storytelling format. Web Stories are built using a subsect of the AMP framework. Web Stories are an opportunity for creators and publishers to structure content in a full-screen, visually rich, and engaging mobile-first experience for users.
+Web Stories are an immersive, tappable and easily shareable storytelling format. Web Stories are built using a subset of the AMP framework. Web Stories are an opportunity for creators and publishers to structure content in a full-screen, visually rich, and engaging mobile-first experience for users.
 
 Web Stories are snackable, and readers like quick bites in their micro moments. Waiting for the subway or grabbing coffee opens up opportunities for condensed content consumption. Ensure each bite engages and delights by following these best practices for creating a satisfying snackable Web Story.
 
