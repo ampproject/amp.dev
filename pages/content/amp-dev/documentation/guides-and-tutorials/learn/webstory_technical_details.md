@@ -89,7 +89,7 @@ Users may be viewing Web Stories in areas with low network connection or older d
 
 ### Background color
 
-Specify a background color for each Web Story page. Having a background color provides a good fallback if the user’s conditions prevent them from downloading images or video assets. Choose a color that is representative of the dominant color of the page’s intended background asset, or use a consistent color theme for all story pages. Ensure the background color is different from the text for readability. 
+Specify a background color for each Web Story page. Having a background color provides a good fallback if the user’s conditions prevent them from downloading images or video assets. Choose a color that is representative of the dominant color of the page’s intended background asset, or use a consistent color theme for all story pages. For readability, ensure the background color has sufficient color contrast with the foreground text. Ideally, aim for a color contrast ratio of 4.5:1. If this is not possible, consider adding an additional background behind the text itself instead that does result in a sufficient contrast.
 
 Define the background color for pages within the `<style amp-custom>` tags in the head of the Web Story document or inline on the [`<amp-story-page>`](https://amp.dev/documentation/components/amp-story-page/?format=stories) component. 
 
