@@ -23,10 +23,11 @@ The main takeaways to creating a satisfying, snackable Web Story:
 *   Maximize the impact of your cover page with high quality imagery and a catchy title.
 *   Make it visual with videos and images that fit and fill the user's screen.
 *   You can say a lot, with less, especially when using visual imagery. Aim to keep text below 10 words per page.
-*   When using videos, shorter ones are best so try to stick to less than 15 seconds. 
-*   Some people and some situations require viewing without sound. Keep content inclusive by adding captions to videos. 
+*   Make sure your visual content is accessible - provide appropriate alternative text for images.
+*   When using videos, shorter ones are best so try to stick to less than 15 seconds.
+*   Some people and some situations require viewing without sound. Keep content inclusive by adding captions to videos.
 *   Give readers something to tap through. An average length of 10 to 20 pages enables most authors to tell a good narrative.
-*   Don’t overuse animations or embed, and pay attention to transition timing. 
+*   Don’t overuse animations or embed, and pay attention to transition timing.
 
 ## Know your narrative
 
