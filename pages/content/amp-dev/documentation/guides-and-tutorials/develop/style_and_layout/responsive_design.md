@@ -232,14 +232,18 @@ In HTML, you can serve different image formats by using the `picture` tag. In AM
 **READ ON –** To learn more about fallbacks, see the [Placeholders & Fallbacks](placeholders.md) guide.
 [/tip]
 
-In AMP, there are two way to achieve serving optimized images:
+In AMP, there are two way to achieve serving optimized images: server-side and client-side.
 
-- Developers using image formats that are not widely supported, such as WebP, can configure their server to process browser `Accept` headers and respond with image bytes and the appropriate [`Content-Type` header](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/). This avoids the browser from downloading image types it does not support. Read more about [content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation).[sourcecode:html]
-  Accept: image/webp,image/apng,image/_,_/\*;q=0.8
-  [/sourcecode]
-- Provide nested image fallbacks, such as the example below.
+##### Configuring the server to send the most appropriate image format
 
-##### Example: Serve different image formats
+Developers using image formats that are not widely supported, such as WebP, can configure their server to process browser `Accept` headers and respond with image bytes and the appropriate [`Content-Type` header](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/). This prevents the browser from downloading image types it does not support. Read more about [content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation).
+
+[sourcecode:html]
+Accept: image/webp,image/apng,image/_,_/\*;q=0.8
+[/sourcecode]
+
+
+##### Using nested image fallbacks
 
 In the following example, if the browser supports WebP, serve mountains.webp, otherwise serve mountains.jpg.
 
