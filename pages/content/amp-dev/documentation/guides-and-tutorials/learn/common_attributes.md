@@ -9,15 +9,15 @@ AMP provides a set of common attributes that are extended to many AMP components
 
 ## fallback
 
-A fallback is a convention that allows the element to communicate to the reader that the browser does not support the element or that loading the underlying resource failed. The `fallback` attribute can be placed on any HTML element that is a direct child of an AMP element that supports fallbacks. The exact behavior with respect to the fallback is up to the element's implementation but typically the fallback element would be shown in place of the regular element.
+A fallback is displayed when the browser does not support the element or when loading the underlying resource failed. The `fallback` attribute can be placed on any HTML element that is a direct child of an AMP element that supports fallbacks. The exact behavior with respect to the fallback is up to the element's implementation but typically the fallback element would be shown in place of the regular element.
 
 Often used with: images, animations, audio, and videos
 
 Example:
 
 ```html
-<amp-anim src="animated.gif" width="466" height="355" layout="responsive" >
-  <div fallback>Cannot play animated images on this device.</div>
+<amp-anim src="animated.gif" width="466" height="355" layout="responsive" alt="...">
+  <div fallback>Fallback content that should convey the same purpose/information as the animation.</div>
 </amp-anim>
 ```
 
@@ -38,6 +38,7 @@ Example:
 ```html
 <amp-img src="amp.png"
     width="320" height="256"
+    alt="..."
     heights="(min-width:500px) 200px, 80%">
 </amp-img>
 ```
@@ -55,7 +56,7 @@ Example:
     width="1080"
     height="610"
     layout="responsive"
-    alt="an image">
+    alt="...">
 </amp-img>
 ```
 
@@ -72,12 +73,16 @@ Example:
     media="(min-width: 650px)"
     src="wide.jpg"
     width="466"
-    height="355" layout="responsive"></amp-img>
+    height="355"
+    layout="responsive"
+    alt="..."></amp-img>
 <amp-img
     media="(max-width: 649px)"
     src="narrow.jpg"
     width="527"
-    height="193" layout="responsive"></amp-img>
+    height="193"
+    layout="responsive"
+    alt="..."></amp-img>
 ```
 
 For more information, see [Layout & Media queries](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#element-media-queries).
@@ -95,7 +100,8 @@ Example:
     noloading
     height="190"
     width="297"
-    layout="responsive">
+    layout="responsive"
+    alt="...">
 </amp-img>
 ```
 
@@ -131,8 +137,8 @@ Often used with: images, animations, videos, and ads
 Example:
 
 ```html
-<amp-anim src="animated.gif" width="466" height="355" layout="responsive">
-  <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+<amp-anim src="animated.gif" width="466" height="355" layout="responsive" alt="...">
+  <amp-img placeholder src="preview.png" layout="fill" alt="..."></amp-img>
 </amp-anim>
 ```
 
@@ -148,6 +154,7 @@ Example:
 <amp-img src="amp.png"
     width="400" height="300"
     layout="responsive"
+    alt="..."
     sizes="(min-width: 320px) 320px, 100vw">
 </amp-img>
 ```
@@ -157,6 +164,7 @@ Will produce the following nested `img ` tag:
 ```html
 <img decoding="async"
     src="amp.png"
+    alt="..."
     sizes="(min-width: 320px) 320px, 100vw"
     class="i-amphtml-fill-content i-amphtml-replaced-content">
 ```
@@ -173,7 +181,7 @@ Example:
 <amp-anim width="245"
     height="300"
     src="/img/cat.gif"
-    alt="cat animation">
+    alt="...">
 </amp-anim>
 ```
 

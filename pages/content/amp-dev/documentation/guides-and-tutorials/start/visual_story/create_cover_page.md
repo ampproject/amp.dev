@@ -43,7 +43,8 @@ Create the layer by adding the `<amp-story-grid-layer>` element as a child of `<
   <amp-story-grid-layer template="fill">
     <amp-img src="assets/cover.jpg"
         width="720" height="1280"
-        layout="responsive">
+        layout="responsive"
+        alt="">
     </amp-img>
   </amp-story-grid-layer>
 </amp-story-page>
@@ -74,12 +75,13 @@ The `<amp-story-grid-layer>` element lays out its children elements in a grid (b
    <code class="nopad"><pre>&lt;amp-story-grid-layer template="fill">
   &lt;amp-img src="dog.png"
       width="720" height="1280"
-      layout="responsive">
+      layout="responsive"
+      alt="Dog">
   &lt;/amp-img>
 &lt;/amp-story-grid-layer></pre></code>
     </td>
     <td>
-    {{ image('/static/img/docs/tutorials/amp_story/layer-fill.png', 216, 341) }}
+    {{ image('/static/img/docs/tutorials/amp_story/layer-fill.png', 216, 341, alt='Illustration: the dog.png image fills the screen') }}
     </td>
 </tr>
 <tr>
@@ -96,7 +98,7 @@ The `<amp-story-grid-layer>` element lays out its children elements in a grid (b
   &lt;p>element 3&lt;/p>
 &lt;/amp-story-grid-layer></pre></code>
     </td>
-    <td>{{ image('/static/img/docs/tutorials/amp_story/layer-vertical.png', 216, 341) }}
+    <td>{{ image('/static/img/docs/tutorials/amp_story/layer-vertical.png', 216, 341, alt="Illustration: element1, element2 and element3, stacked vertically') }}
     </td>
 </tr>
 <tr>
@@ -114,7 +116,7 @@ The `<amp-story-grid-layer>` element lays out its children elements in a grid (b
 &lt;/amp-story-grid-layer></pre></code>
     </td>
     <td>
-    {{ image('/static/img/docs/tutorials/amp_story/layer-horizontal.png', 216, 341) }}
+    {{ image('/static/img/docs/tutorials/amp_story/layer-horizontal.png', 216, 341, alt="Illustration: element1, element2 and element3, stacked horizontally in columns') }}
     </td>
 </tr>
 <tr>
@@ -132,7 +134,7 @@ You can also specify a named <code>grid-area</code> to indicate which third you 
 &lt;/amp-story-grid-layer>
 </pre></code>
 </td>
-<td>{{ image('/static/img/docs/tutorials/amp_story/layer-thirds.png', 216, 341) }}</td>
+<td>{{ image('/static/img/docs/tutorials/amp_story/layer-thirds.png', 216, 341, alt='Illustration: the screen split into three vertical areas - upper-third, middle-third, lower-third; element1 is in the upper-third; element 2 is in the lower-third') }}</td>
 </tr>
 </table>
 

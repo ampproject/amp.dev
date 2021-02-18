@@ -35,7 +35,7 @@ Pengguna dapat berinteraksi dengan iklan lalu dengan cara yang sama seperti hala
 
 Pengguna berinteraksi secara langsung dengan iklan tersebut dengan mengetuk tombol [minta tindakan](story_ads_best_practices.md#call-to-action-button-text-enum) yang ditampilkan sistem yang muncul di sepertiga bagian bawah semua iklan Cerita Web. Tombol ini dapat dikonfigurasi untuk mengirimkan pengguna ke URL yang diinginkan (atau ke app store yang relevan).
 
-{{ image('/static/img/docs/stampads/sponsored_story.png', 1600, 597, layout='intrinsic', alt='Image showing that usersare redirected to an ad landing destination, but can return to the story.', caption='Pengguna dialihkan kembali ke destinasi landing iklan, namun dapat kembali ke cerita.', align='' ) }}
+{{ image('/static/img/docs/stampads/sponsored_story.png', 1600, 597, layout='intrinsic', alt='Image showing that users are redirected to an ad landing destination, but can return to the story.', caption='Pengguna dialihkan kembali ke destinasi landing iklan, namun dapat kembali ke cerita.', align='' ) }}
 
 ## Mengonfigurasi Cerita Web untuk iklan
 

@@ -28,7 +28,7 @@ which image asset to use based on varying screen sizes:
     width="1698"
     height="2911"
     layout="responsive"
-    alt="an image">
+    alt="...">
 </amp-img>
 [/sourcecode]
 
@@ -37,7 +37,7 @@ of its container element,
 and its height is automatically set to the aspect ratio
 determined by the given width and height. Try it out by resizing this browser window:
 
-<amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
+<amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive" alt="..."></amp-img>
 
 [tip type="tip"]
 **TIP –** See our side-by-side live demos of [`amp-img`](../../../../documentation/components/reference/amp-img.md): [Live Demos on AMP By Example](../../../../documentation/examples/documentation/amp-img.html?format=websites).
@@ -178,7 +178,8 @@ For example, here we have 2 images with mutually exclusive media queries.
     src="wide.jpg"
     width="527"
     height="355"
-    layout="responsive">
+    layout="responsive"
+    alt="...">
 </amp-img>
 [/sourcecode]
 
@@ -190,6 +191,7 @@ Depending on the screen width, one or the other will be fetched and rendered.
     src="narrow.jpg"
     width="466"
     height="193"
-    layout="responsive">
+    layout="responsive"
+    alt="...">
 </amp-img>
 [/sourcecode]

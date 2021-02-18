@@ -35,7 +35,7 @@ author: CrystalOnScript
 
 사용자는 시스템 렌더링된 [행동 유도](story_ads_best_practices.md#call-to-action-button-text-enum) 버튼을 탭하여 광고와 바로 상호작용할 수 있습니다. 해당 버튼은 모든 AMP 스토리 광고의 하단 1/3 지점에 표시됩니다. 사용자를 임의의 URL(혹은 관련 앱 스토어)로 보내도록 버튼을 구성할 수 있습니다.
 
-{{ image('/static/img/docs/stampads/sponsored_story.png', 1600, 597, layout='intrinsic', alt='Image showing that usersare redirected to an ad landing destination, but can return to the story.', caption='Users are redirected to an ad landing destination, but can return to the story.', align='' ) }}
+{{ image('/static/img/docs/stampads/sponsored_story.png', 1600, 597, layout='intrinsic', alt='Image showing that users are redirected to an ad landing destination, but can return to the story.', caption='Users are redirected to an ad landing destination, but can return to the story.', align='' ) }}
 
 ## 광고용 웹 스토리 구성
 

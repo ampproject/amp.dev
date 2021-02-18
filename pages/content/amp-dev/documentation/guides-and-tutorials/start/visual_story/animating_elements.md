@@ -156,19 +156,23 @@ Our last Web Story page is comprised of two layers: the first layer is a collage
     <div class="wrapper">
       <amp-img src="assets/cat.jpg"
           width="720" height="1280"
-          layout="responsive">
+          layout="responsive"
+          alt="...">
       </amp-img>
       <amp-img src="assets/dog.jpg"
           width="720" height="1280"
-          layout="responsive">
+          layout="responsive"
+          alt="...">
       </amp-img>
       <amp-img src="assets/bird.jpg"
           width="720" height="1280"
-          layout="responsive">
+          layout="responsive"
+          alt="...">
       </amp-img>
       <amp-img src="assets/rabbit.jpg"
           width="720" height="1280"
-          layout="responsive">
+          layout="responsive"
+          alt="...">
       </amp-img>
     </div>
   </amp-story-grid-layer>
@@ -199,21 +203,25 @@ Next, let's make all the images fade in. Add `animate-in="fade-in"` to each of t
 <amp-img src="assets/cat.jpg"
   width="720" height="1280"
   layout="responsive"
+  alt="..."
   animate-in="fade-in">
 </amp-img>
 <amp-img src="assets/dog.jpg"
   width="720" height="1280"
   layout="responsive"
+  alt="..."
   animate-in="fade-in">
 </amp-img>
 <amp-img src="assets/bird.jpg"
   width="720" height="1280"
   layout="responsive"
+  alt="..."
   animate-in="fade-in">
 </amp-img>
 <amp-img src="assets/rabbit.jpg"
   width="720" height="1280"
   layout="responsive"
+  alt="..."
   animate-in="fade-in">
 </amp-img>
 ```
@@ -226,24 +234,28 @@ Let's delay the entrance of the first image so that it comes in close to when th
 <amp-img src="assets/cat.jpg"
     width="720" height="1280"
     layout="responsive"
+    alt="..."
     animate-in="fade-in"
     animate-in-delay="0.4s">
 </amp-img>
 <amp-img src="assets/dog.jpg"
     width="720" height="1280"
     layout="responsive"
+    alt="..."
     animate-in="fade-in"
     animate-in-delay="0.6s">
 </amp-img>
 <amp-img src="assets/bird.jpg"
     width="720" height="1280"
     layout="responsive"
+    alt="..."
     animate-in="fade-in"
     animate-in-delay=".8s">
 </amp-img>
 <amp-img src="assets/rabbit.jpg"
     width="720" height="1280"
     layout="responsive"
+    alt="..."
     animate-in="fade-in"
     animate-in-delay="1s">
 </amp-img>

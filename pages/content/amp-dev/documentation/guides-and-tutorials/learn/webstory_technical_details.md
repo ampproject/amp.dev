@@ -54,7 +54,8 @@ The difference between an AMP webpage and a Web Story built with AMP is the [`am
         <amp-story-grid-layer template="fill">
           <amp-img src="assets/cover.jpg"
               width="720" height="1280"
-              layout="responsive">
+              layout="responsive"
+              alt="...">
           </amp-img>
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical">
@@ -69,7 +70,8 @@ The difference between an AMP webpage and a Web Story built with AMP is the [`am
           <h1>Cats</h1>
           <amp-img src="assets/cat.jpg"
               width="720" height="1280"
-              layout="responsive">
+              layout="responsive"
+              alt="...">
           </amp-img>
           <q>Dogs come when they're called. Cats take a message and get back to you. --Mary Bly</q>
         </amp-story-grid-layer>

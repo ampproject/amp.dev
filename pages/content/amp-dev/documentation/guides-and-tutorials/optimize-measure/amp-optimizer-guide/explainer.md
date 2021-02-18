@@ -11,14 +11,14 @@ author: sebastianbenz
 An AMP Optimizer takes a valid AMPHTML document as input and transforms it into an optimized version by applying additional optimizations that would be cumbersome to do “by hand”. You can recognize the resulting “**transformed AMP**” in the `html` element via the `transformed` attribute:
 
 ```
-<html ⚡ i-amphtml-layout i-amphtml-no-boilerplate transformed="self;v=1">
+<html ⚡ lang="en" i-amphtml-layout i-amphtml-no-boilerplate transformed="self;v=1">
 ```
 
 Note: AMP caches use a different transformed flag, for example, the Google AMP caches adds `transformed=google;v=1`.
 
 AMP Optimizers perform various optimizations on an AMP document ranging from server-side rendering layouts to image optimization. Here is an example showing the differences between an AMP page and its optimized version ([click for a large version](/static/img/docs/guides/optimized-amp-diff.png)).
 
-<a href="/static/img/docs/guides/optimized-amp-diff.png"><amp-img lightbox layout="responsive" width="2560" height="773" src="/static/img/docs/guides/optimized-amp-diff.png"></amp-img></a>
+<a href="/static/img/docs/guides/optimized-amp-diff.png"><amp-img lightbox layout="responsive" width="2560" height="773" src="/static/img/docs/guides/optimized-amp-diff.png" alt="Illustration showing the difference in markup between an AMP page and its optimized version"></amp-img></a>
 
 In the rest of this guide, we will introduce these optimizations in more details.
 
@@ -41,7 +41,7 @@ Server-side rendering does three things:
 &#8291;**3. Server-side rendered AMP layouts: ** for each element using an AMP layout, the layout-specific sizer elements gets injected.
 
 ```
-<amp-img src="image.jpg" width="1080" height="610" layout="responsive"
+<amp-img src="image.jpg" width="1080" height="610" layout="responsive" alt="..."
          class="i-amphtml-layout-responsive i-amphtml-layout-size-defined" i-amphtml-layout="responsive">
   <i-amphtml-sizer style="display:block;padding-top:56.4815%;"></i-amphtml-sizer>
 </amp-img>
@@ -56,7 +56,7 @@ An AMP Optimizer can significantly improve the time it takes to render images in
 In AMP, hero images can be explicitly declared by annotating an `amp-img` with the `data-hero` attribute:
 
 ```
-<amp-img data-hero src="/hero.jpg" layout="responsive" width="640" height="480"></amp-img>
+<amp-img data-hero src="/hero.jpg" layout="responsive" width="640" height="480" alt="..."></amp-img>
 ```
 
 AMP Optimizers support a maximum of two hero images on a page to avoid blocking bandwidth for other critical resources. If this limit does not work for you, [please let us know](https://github.com/ampproject/amp-toolbox/issues).
@@ -70,13 +70,13 @@ In case of `amp-img`, AMP Optimizers will also server-side render the `img` tag 
 AMP Optimizers can help you serve optimized responsive images by generating AMP Layout specific `srcset` attributes. For example, the following `amp-img` declaration:
 
 ```
-<amp-img src="image1.png" width="400" height="800" layout="responsive"></amp-img>
+<amp-img src="image1.png" width="400" height="800" layout="responsive" alt="..."></amp-img>
 ```
 
 is enhanced with the following `srcset` definition:
 
 ```
-<amp-img src="image1.png" width="400" height="800" layout="responsive" srcset="image1.470w.png 470w, image1.820w.png 820w, image1.1440w.png 1440w"></amp-img>
+<amp-img src="image1.png" width="400" height="800" layout="responsive" alt="..." srcset="image1.470w.png 470w, image1.820w.png 820w, image1.1440w.png 1440w"></amp-img>
 ```
 
 For this to work, your build/hosting environment needs to support resizing / optimizing images. Checkout the individual optimizer guides on how to best integrate image optimization.

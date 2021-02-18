@@ -130,7 +130,7 @@ Include a representative poster image by adding an `<img>` tag as a child of the
 ```html
 <amp-story-player style="width: 50vw; height: 83.35vw;">
   <a href="https://www.example.com/story.html">
-    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" alt="..." amp-story-player-poster-img>
     A title that describes this story.
   </a>
 </amp-story-player>
@@ -145,11 +145,11 @@ You may add multiple stories in the same `<amp-story-player>` element by definin
 ```html
 <amp-story-player style="width: 360px; height: 600px;">
   <a href="https://www.example.com/story1.html">
-    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" alt="..." amp-story-player-poster-img>
     A title that describes story 1.
   </a>
   <a href="https://www.example.com/story2.html">
-    <img src="https://www.example.com/assets/cover2.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img src="https://www.example.com/assets/cover2.html" loading="lazy" width="100%" height="100%" alt="..." amp-story-player-poster-img>
     A title that describes story 2.
   </a>
 </amp-story-player>
@@ -160,13 +160,13 @@ You can embed as many instances of `<amp-story-player>` as desired. They display
 ```html
 <amp-story-player style="width: 360px; height: 600px;">
   <a href="https://www.example.com/story1.html">
-    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" alt="..." amp-story-player-poster-img>
     A title that describes story 1.
   </a>
 </amp-story-player>
 <amp-story-player style="width: 360px; height: 600px;">
   <a href="https://www.example.com/story2.html">
-    <img src="https://www.example.com/assets/cover2.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img src="https://www.example.com/assets/cover2.html" loading="lazy" width="100%" height="100%" alt="..." amp-story-player-poster-img>
     A title that describes story 2.
   </a>
 </amp-story-player>
