@@ -71,9 +71,9 @@ Videos are highly engaging to readers, definitely include as many as possible in
 
 Web Stories are consumed in portrait mode, so keep in mind the following:
 
-*   Shot video in high-end mobile devices when possible.
-*   Shot at 720p rotated (1280h x 720w).
-*   Shot in at least 24 frames per second.
+*   Shoot video in high-end mobile devices when possible.
+*   Shoot at 720p rotated (1280h x 720w).
+*   Shoot in at least 24 frames per second.
 
 <table>
   <tr>
