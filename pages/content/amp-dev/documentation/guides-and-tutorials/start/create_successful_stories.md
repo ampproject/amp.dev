@@ -374,7 +374,7 @@ Embeds provide an added dimension where relevant and presented pleasantly. Inclu
 
 ### Attach additional content
 
-Keep your Web Story streamlined by putting related content in attachments. This way, readers cay dig deeper if they want to learn more about your story. Readers navigate a story easier when additional content is attached to relevant pages.
+Keep your Web Story streamlined by putting related content in attachments. This way, readers can dig deeper if they want to learn more about your story. Readers navigate a story easier when additional content is attached to relevant pages.
 
 <table>
   <tr>
