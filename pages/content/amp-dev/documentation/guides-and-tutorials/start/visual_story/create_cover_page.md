@@ -5,7 +5,7 @@ description: "To create a page, add the <amp-story-page> element as a child of a
 author: bpaduch
 ---
 
-A page within an Web Story is represented by the `<amp-story-page>` component. Within an [`amp-story`](../../../../documentation/components/reference/amp-story.md), you can have one or more `<amp-story-page>` components, containing each of the individual screens of a story. The first page you specify in the document order is the first page that displays in the Web Story.
+A page within a Web Story is represented by the `<amp-story-page>` component. Within an [`amp-story`](../../../../documentation/components/reference/amp-story.md), you can have one or more `<amp-story-page>` components, containing each of the individual screens of a story. The first page you specify in the document order is the first page that displays in the Web Story.
 
 To create a page, **add** the `<amp-story-page>` element as a child of [`amp-story`](../../../../documentation/components/reference/amp-story.md). **Assign** a unique id to the page. For our first page, which is the cover page, let's assign a unique id of `cover`:
 
