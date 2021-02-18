@@ -56,7 +56,7 @@ Keep the title clear and clean, ideally under 10 words in less than 40 character
 
 ### Brand and date
 
-Reader's need to know who published the Web Story and when. Include a brand attribution and a publication date on the cover page. This foster's trust and, if a user likes your content, loyalty. This [Web Story](https://edition-cnn-com.cdn.ampproject.org/c/s/edition.cnn.com/ampstories/travel/12-beautiful-reasons-to-visit-italy) from CNN about traveling in Italy makes it easy to see at-a-glance who published the story and how recent it is.
+Readers need to know who published the Web Story and when. Include a brand attribution and a publication date on the cover page. This fosters trust and, if a user likes your content, loyalty. This [Web Story](https://edition-cnn-com.cdn.ampproject.org/c/s/edition.cnn.com/ampstories/travel/12-beautiful-reasons-to-visit-italy) from CNN about traveling in Italy makes it easy to see at-a-glance who published the story and how recent it is.
 
 ## Visual treat
 
