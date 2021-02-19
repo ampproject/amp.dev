@@ -138,6 +138,10 @@ You can also specify a named <code>grid-area</code> to indicate which third you 
 </tr>
 </table>
 
+[tip type="note"]
+While these templates allow you to visually arrange content on the screen, the content will still be announced by screen readers / assistive technologies in the order in which it appears in the underlying markup. Make sure that the content order in your document's markup is logical, regardless of how it will be presented visually.
+[/tip]
+
 ### Completing our cover page
 
 Now that you understand layer templates, let's complete our second layer for the cover page.
