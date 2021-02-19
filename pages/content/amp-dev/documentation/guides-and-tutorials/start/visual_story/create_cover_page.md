@@ -134,7 +134,7 @@ You can also specify a named <code>grid-area</code> to indicate which third you 
 &lt;/amp-story-grid-layer>
 </pre></code>
 </td>
-<td>{{ image('/static/img/docs/tutorials/amp_story/layer-thirds.png', 216, 341, alt='Illustration: the screen split into three vertical areas - upper-third, middle-third, lower-third; element1 is in the upper-third; element 2 is in the lower-third') }}</td>
+<td>{{ image('/static/img/docs/tutorials/amp_story/layer-thirds.png', 216, 341, alt='Illustration: the screen split into three horizontal stacked areas - upper-third, middle-third, lower-third; element 1 is in the upper-third; element 2 is in the lower-third') }}</td>
 </tr>
 </table>
 
