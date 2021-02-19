@@ -81,7 +81,7 @@ Demonstrates how to arrange text, display a screen-filling image, and provide ba
           </ul>
         </li>
       </ul></li>
-      <li>Plays an audio file in the background while the page is displayed. You can play audio in the background for the whole story or for a single page.  To play audio for a page, add the <code>background-audio="assets/bird-singing.mp3"</code> attribute to the <code>&lt;amp-story-page></code> element.</li>
+      <li>Plays an audio file in the background while the page is displayed. You can play audio in the background for the whole story or for a single page.  To play audio for a page, add the <code>background-audio="assets/bird-singing.mp3"</code> attribute to the <code>&lt;amp-story-page></code> element. If your audio contains narration or important audio information, make sure that the same information is also conveyed as text, for users who may not be able to hear it or have their sound turned off.</li>
       </ul>
     </td>
     <td>{{ image('/static/img/docs/tutorials/amp_story/pg3-birds.png', 720, 1280, alt='Page 3 - Birds' ) }}</td>
