@@ -125,6 +125,10 @@ To apply an animation entrance to an element, you must specify the <code>animate
 Explore the different animation effects by adding the `animate-in="<animation preset>"` attribute to elements on your story pages.
 [/tip]
 
+[tip type="note"]
+Animations can help make your Web Story more visually exciting and engaging, but use them sparingly. Some users may find long, continuous animations distracting. Other users may have motion sensitivity and be adversely affected by excessive use of motion and parallax effects.
+[/tip]
+
 ## Animation timing
 
 Each animation preset has a built-in default time value for:
