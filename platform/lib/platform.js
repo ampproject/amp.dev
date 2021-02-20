@@ -49,6 +49,7 @@ const routers = {
   playground: require('../../playground/backend/'),
   search: require('@lib/routers/search.js'),
   static: require('@lib/routers/static.js'),
+  survey: require('@lib/routers/surveyComponent.js'),
   templates: require('@lib/routers/templates.js'),
   thumbor: require('@lib/routers/thumbor.js').thumborRouter,
   whoAmI: require('@lib/routers/whoAmI.js'),
