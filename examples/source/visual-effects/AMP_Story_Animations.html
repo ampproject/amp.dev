@@ -8,6 +8,8 @@ skipValidation: 'true'
   ## Introduction
 
   AMP Stories support animations out-of-the-box.  Every element inside an `amp-story-page` can define an entrance animation. You can find a list of all supported animations [here](/content/amp-dev/documentation/components/reference/amp-story.md#animations).
+
+  [tip type="note"]Animations can help make your Web Story more visually exciting and engaging, but use them sparingly. Some users may find long, continuous animations distracting. Other users may have motion sensitivity and be adversely affected by excessive use of motion and parallax effects.[/tip]
 -->
 <!-- -->
 <!DOCTYPE html>
@@ -88,7 +90,8 @@ skipValidation: 'true'
                   src="https://unsplash.it/720/320/?image=10"
                   width="720"
                   height="320"
-                  layout="responsive"></amp-img>
+                  layout="responsive"
+                  alt="..."></amp-img>
         <amp-img  id="image2"
                   animate-in="fade-in"
                   animate-in-duration="1s"
@@ -97,7 +100,8 @@ skipValidation: 'true'
                   src="https://unsplash.it/720/320/?image=11"
                   width="720"
                   height="320"
-                  layout="responsive"></amp-img>
+                  layout="responsive"
+                  alt="..."></amp-img>
         <amp-img  id="image3"
                   animate-in="fade-in"
                   animate-in-duration="1s"
@@ -106,7 +110,8 @@ skipValidation: 'true'
                   src="https://unsplash.it/720/320/?image=12"
                   width="720"
                   height="320"
-                  layout="responsive"></amp-img>
+                  layout="responsive"
+                  alt="..."></amp-img>
         <amp-img  id="image4"
                   animate-in="fade-in"
                   animate-in-duration="1s"
@@ -115,7 +120,8 @@ skipValidation: 'true'
                   src="https://unsplash.it/720/320/?image=13"
                   width="720"
                   height="320"
-                  layout="responsive"></amp-img>
+                  layout="responsive"
+                  alt="..."></amp-img>
       </amp-story-grid-layer>
     </amp-story-page>
 
@@ -259,7 +265,8 @@ skipValidation: 'true'
                  layout="responsive"
                  src="https://picsum.photos/720/320?image=1026"
                  width="720"
-                 height="320">
+                 height="320"
+                 alt="...">
         </amp-img>
       </amp-story-grid-layer>
       <amp-story-grid-layer template="fill">
@@ -276,7 +283,8 @@ skipValidation: 'true'
                  layout="responsive"
                  src="https://picsum.photos/720/320?image=1026"
                  width="720"
-                 height="320">
+                 height="320"
+                 alt="...">
         </amp-img>
       </amp-story-grid-layer>
       <amp-story-grid-layer template="fill">
@@ -289,7 +297,7 @@ skipValidation: 'true'
     <amp-story-page id="pan-left">
         <amp-story-grid-layer template="fill">
           <amp-img animate-in="pan-left" id="img-pan-left" animate-in-duration="4s" layout="fixed" src="https://picsum.photos/720/320?image=1026"
-            width="720" height="320">
+            width="720" height="320" alt="...">
           </amp-img>
         </amp-story-grid-layer>
         <amp-story-grid-layer template="fill">
@@ -302,7 +310,7 @@ skipValidation: 'true'
     <amp-story-page id="pan-right">
       <amp-story-grid-layer template="fill">
         <amp-img animate-in="pan-right" animate-in-duration="4s" layout="fixed" src="https://picsum.photos/720/320?image=1026" width="720"
-          height="320">
+          height="320" alt="...">
         </amp-img>
       </amp-story-grid-layer>
       <amp-story-grid-layer template="fill">
@@ -315,7 +323,7 @@ skipValidation: 'true'
     <amp-story-page id="pan-up">
       <amp-story-grid-layer template="fill">
         <amp-img animate-in="pan-up" animate-in-duration="4s" layout="fixed" src="https://picsum.photos/720/320?image=1026" width="720"
-          height="320">
+          height="320" alt="...">
         </amp-img>
       </amp-story-grid-layer>
       <amp-story-grid-layer template="fill">
@@ -328,7 +336,7 @@ skipValidation: 'true'
     <amp-story-page id="pan-down">
       <amp-story-grid-layer template="fill">
         <amp-img animate-in="pan-down" animate-in-duration="4s" layout="fixed" src="https://picsum.photos/720/320?image=1026" width="720"
-          height="320">
+          height="320" alt="...">
         </amp-img>
       </amp-story-grid-layer>
       <amp-story-grid-layer template="fill">
