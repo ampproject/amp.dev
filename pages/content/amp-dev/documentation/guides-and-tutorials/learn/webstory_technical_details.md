@@ -215,7 +215,7 @@ The Web Story format supports an optional [landscape orientation and full bleed 
 
 While this is currently opt-in and optional, we strongly recommend making sure that users on mobile devices are able to view stories in whatever orientation best suits their needs - otherwise, they will simply be presented with a "The page is best viewed in portrait mode" message.
 
-Opt-in to landscape orientation and full bleed desktop support by adding the `supports-landscape` attribute to the `<amp-story>` component. 
+Opt-in to landscape orientation and full bleed desktop support by adding the `supports-landscape` attribute to the `<amp-story>` component.
 
 ```html
 <amp-story standalone
