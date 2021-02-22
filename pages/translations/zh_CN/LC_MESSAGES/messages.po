@@ -939,7 +939,6 @@ msgstr "布局"
 #: /content/amp-dev/documentation/components/reference/amp-dailymotion-v0.1.md
 #: /content/amp-dev/documentation/components/reference/amp-delight-player-v0.1.md
 #: /content/amp-dev/documentation/components/reference/amp-embedly-card-v0.1.md
-#: /content/amp-dev/documentation/components/reference/amp-google-vrview-image-v0.1.md
 #: /content/amp-dev/documentation/components/reference/amp-hulu-v0.1.md
 #: /content/amp-dev/documentation/components/reference/amp-ima-video-v0.1.md
 #: /content/amp-dev/documentation/components/reference/amp-img-v0.1@ar.md
