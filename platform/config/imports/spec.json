@@ -33,6 +33,14 @@
 		"formats": ["websites", "email", "stories", "ads"]
 	},
 	{
+		"title": "AMP HTML Responsive Attributes",
+		"order": 9,
+		"repo": "ampproject/amphtml",
+		"from": "spec/amp-html-responsive-attributes.md",
+		"to": "documentation/guides-and-tutorials/learn/spec/amp-html-responsive-attributes.md",
+		"formats": ["websites"]
+	},
+	{
 		"title": "AMPHTML Layout System",
 		"order": 1,
 		"repo": "ampproject/amphtml",
