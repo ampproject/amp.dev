@@ -1,5 +1,5 @@
 ---
-$title: AMP Sayfa Deneyimi Kılavuzu
+"$title": AMP Sayfa Deneyimi Kılavuzu
 staticText:
   inputBar:
     headline: AMP sayfanızı analiz edin
@@ -10,14 +10,14 @@ staticText:
     close: Kapat
   scrollToTop: Yukarı kaydır
   shareDialog:
-    headline: URL'yi kopyala yapıştır
+    headline: "URL'yi kopyala yapıştır"
     close: Gezinmeyi kapat
     copyToClipboard: Panoya kopyala
     success: Başarılı
   statusIntro:
     headline: Lütfen bir süre bekleyin
     headline2: Şu anda sayfanızı analiz ediyoruz
-    loadingCopy: ${finishedChecks} / ${totalChecks} kontrol tamamlandı
+    loadingCopy: "${finishedChecks} / ${totalChecks} kontrol tamamlandı"
     buttonShare: Paylaş
     buttonInvestigate: İncele
   coreWebVitals:
@@ -36,7 +36,7 @@ staticText:
       scorePercentile: 75. yüzdebirlikte puan
       score: Puan
       opportunity: İyileştirme fırsatı
-      pagesPassing: Geçen sayfalar
+      pagesPassing: Geçen ziyaretler
       action: Harekete geç
   additionalChecks:
     headline: Ek kontroller
@@ -61,7 +61,7 @@ scriptText:
     passed: Başarılı
     passedAddition: başarılı
     none: Yok
-    nothingToDo: Gerekli eylem yok &#x1F389;
+    nothingToDo: "Gerekli eylem yok &#x1F389;"
     fileAnIssue: AMP ile sorun bildir
     recommendation: öneri
     recommendations: öneriler

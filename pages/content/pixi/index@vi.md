@@ -1,5 +1,5 @@
 ---
-$title: Hướng dẫn Trải nghiệm Trang AMP
+"$title": Hướng dẫn Trải nghiệm Trang AMP
 staticText:
   inputBar:
     headline: Phân tích trang AMP của bạn
@@ -36,7 +36,7 @@ staticText:
       scorePercentile: Ghi điểm ở phân vị thứ 75
       score: Điểm
       opportunity: Cơ hội cải thiện
-      pagesPassing: Trang đạt
+      pagesPassing: Chuyển lượt truy cập
       action: Hành động
   additionalChecks:
     headline: Kiểm tra bổ sung
@@ -61,7 +61,7 @@ scriptText:
     passed: Đã đạt
     passedAddition: đã đạt
     none: Không có
-    nothingToDo: Không cần hành động! &#x1F389;
+    nothingToDo: "Không cần hành động! &#x1F389;"
     fileAnIssue: Báo cáo vấn đề với AMP
     recommendation: khuyến nghị
     recommendations: khuyến nghị

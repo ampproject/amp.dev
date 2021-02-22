@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width">
   <style> 
 /* so button can go to edge */
 body {
@@ -37,7 +38,7 @@ button#copy:focus {
 </head>
 <body>
 <button id="copy">Copy</button>
-<input type="text" id="_i" hidden />
+<input type="text" id="_i" hidden readonly />
 <script>
 /*
   When the copy button is pressed, we:

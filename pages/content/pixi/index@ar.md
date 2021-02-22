@@ -1,5 +1,5 @@
 ---
-$title: دليل تجربة صفحة AMP
+"$title": دليل تجربة صفحة AMP
 staticText:
   inputBar:
     headline: تحليل صفحة AMP الخاصة بك
@@ -36,7 +36,7 @@ staticText:
       scorePercentile: الدرجة عند النسب المئوية ضمن 75
       score: الدرجة
       opportunity: فرصة للتحسين
-      pagesPassing: نقل مؤشرات الصفحة
+      pagesPassing: تمرير الزيارات
       action: اتخاذ إجراء
   additionalChecks:
     headline: عمليات فحص إضافية
@@ -61,7 +61,7 @@ scriptText:
     passed: نجاح
     passedAddition: نجاح
     none: لا يوجد
-    nothingToDo: لا يوجد إجراء مطلوب &#x1F389;
+    nothingToDo: "لا يوجد إجراء مطلوب &#x1F389;"
     fileAnIssue: الإبلاغ عن مشكلة في AMP
     recommendation: توصية
     recommendations: توصيات

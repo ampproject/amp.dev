@@ -1,5 +1,5 @@
 ---
-$title: AMP 网页体验指南
+"$title": AMP 网页体验指南
 staticText:
   inputBar:
     headline: 分析您的 AMP 网页
@@ -36,7 +36,7 @@ staticText:
       scorePercentile: 第 75 百分位的得分
       score: 得分
       opportunity: 改进机会
-      pagesPassing: 网页通过
+      pagesPassing: 访问通过
       action: 采取操作
   additionalChecks:
     headline: 其他检查
@@ -61,7 +61,7 @@ scriptText:
     passed: 通过
     passedAddition: 通过
     none: 无
-    nothingToDo: 无需任何操作！&#x1F389;
+    nothingToDo: "无需任何操作！&#x1F389;"
     fileAnIssue: 提交 AMP 问题
     recommendation: 建议
     recommendations: 建议

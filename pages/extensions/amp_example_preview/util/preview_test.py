@@ -35,7 +35,7 @@ class PreviewTestCase(unittest.TestCase):
     html_code = '<p>before</p>' + html_code + '<p>after</p>'
 
     extracted_previews = ExamplePreviewMatch.extract_previews(html_code)
-    self.assertEquals(1, len(extracted_previews))
+    self.assertEqual(1, len(extracted_previews))
 
     preview_extracted = extracted_previews[0].preview
 

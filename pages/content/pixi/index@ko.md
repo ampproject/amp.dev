@@ -1,5 +1,5 @@
 ---
-$title: AMP 페이지 환경 가이드
+"$title": AMP 페이지 환경 가이드
 staticText:
   inputBar:
     headline: AMP 페이지 분석
@@ -36,7 +36,7 @@ staticText:
       scorePercentile: 75번째 백분위수에 해당
       score: 점수
       opportunity: 개선 기회
-      pagesPassing: 페이지 전달
+      pagesPassing: 방문 횟수 전달
       action: 조치 취하기
   additionalChecks:
     headline: 추가 검사
@@ -61,7 +61,7 @@ scriptText:
     passed: 통과
     passedAddition: 통과
     none: 없음
-    nothingToDo: 필요한 조치가 없습니다! &#x1F389;
+    nothingToDo: "필요한 조치가 없습니다! &#x1F389;"
     fileAnIssue: AMP로 이슈 보고하기
     recommendation: 추천
     recommendations: 추천
