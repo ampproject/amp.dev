@@ -171,6 +171,11 @@
         "id": "jsonRecipe",
         "label": "<a href=\"https://developers.google.com/search/docs/data-types/recipe\">Recipe</a>",
         "default": false
+      },
+      {
+        "id": "jsonProduct",
+        "label": "<a href=\"https://developers.google.com/search/docs/data-types/product\">Product</a>",
+        "default": false
       }
     ]
   },
