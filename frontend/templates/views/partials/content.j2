@@ -2,6 +2,41 @@
 {% if doc.html %}
 {% include '/views/partials/toc.j2' with context %}
 
+  {% set survey_questions = [{
+    "survey": "THE_FIRST_ONE_HELPFULNESS",
+    "questions": [{
+      "text": "How helpful was the documentation today?",
+      "values": ["Extremely helpful", "Somewhat helpful", "Neither helpful or unhelpful", "Somewhat not helpful", "Did not help at all"],
+      "type": "likert"
+    }]
+  },
+  {
+    "survey": "THE_FIRST_ONE_COVERAGE",
+    "questions": [{
+      "text": "Did you find the documentation you were looking for?",
+      "type": "likert"
+    }]
+  },
+  {
+    "survey": "THE_FIRST_ONE_DISCOVERABILITY",
+    "questions": [{
+      "text": "How easy or difficult was it to find the documentation you were looking for?",
+      "values": ["Very easy", "Somewhat easy", "Neither easy nor difficult", "Somewhat difficult", "Very difficult"],
+      "type": "likert"
+    }]
+  }
+] | random %}
+
+
+{% do
+  survey_questions['questions'].append({
+    "text": "Would you like to leave any feedback on the documentation?",
+    "type": "open"
+  })
+%}
+
+{% include 'views/partials/survey.j2' %}
+
 <section class="ap--content">
   {% include '/views/partials/sidebar-toggle-button.j2' %}
   {% include '/views/partials/breadcrumbs.j2' %}
