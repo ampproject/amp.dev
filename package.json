@@ -118,7 +118,7 @@
 		"clean-css": "5.1.0",
 		"clean-webpack-plugin": "3.0.0",
 		"closure-webpack-plugin": "2.5.0",
-		"codemirror": "5.59.2",
+		"codemirror": "5.59.3",
 		"copy-webpack-plugin": "6.4.1",
 		"css-loader": "5.0.2",
 		"del": "6.0.0",
