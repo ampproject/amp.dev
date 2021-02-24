@@ -272,7 +272,7 @@ Include the desired number of `<a>` tags, with each `href` attribute pointed to 
 [/example]
 
 
-The Web Story Player displays the first embedded story. It automatically presents the user with the next story’s cover page after finishing the previous, or using the swiping motion to skip. The Web Story Player does not have any built-in UI functionality to inform the user there are multiple stories embedded in a single player. Instead, build [user entry points](#) to display available stories and allow user selection.  
+The Web Story Player displays the first embedded story. It automatically presents the user with the next story’s cover page after finishing the previous, or using the swiping motion to skip. The Web Story Player does not have any built-in UI functionality to inform the user there are multiple stories embedded in a single player. Instead, build [user entry points](#user-entry-points) to display available stories and allow user selection.  
 
 
 ### Circular story wrapping
