@@ -60,7 +60,7 @@ Web Stories are a full-screen immersive content experience that user’s tap or 
       <script type="application/json">
         {
           "behavior": {
-            "autoplay": false
+            "autoplay": true
           }
         }
       </script>
@@ -134,7 +134,7 @@ html
 
 ## Configure the Web Story Player behavior
 
-The Web Story Player allows you to specify behavior, such as autoplaying stories or circular wrapping. These are specified in the Web Story JSON behavior configuration. 
+Specify Web Story Player behavior in a JSON configuration:
 
 ```html
 <amp-story-player style="width: 370px; height: 622px;">
@@ -198,13 +198,16 @@ Link to a Web Story by including an `<a>` tag with the `href` attribute pointed 
 ```
 [/example]
 
+The Web Story Player displays the cover page of the embedded story. If you want the Player to display the Web Story the same as it would appear when sent as a direct link, set `autoplay` to be true. If you want to wait for the user to click on a UI element, such as a play icon, set `autoplay` to false and then call the `play()` action manually upon user interaction. 
 
-The Web Story Player displays the cover page of the embedded story. It autoplays the story when the viewer becomes visible in the user's viewport. You may opt out of autoplay by specifying `"autoplay": false` in the Web Story Player behavior configuration. 
+[tip type="note"]
+Setting `autoplay` to true in the Web Story Player does not auto-advance story pages in individual Web Stories. Auto page advancement is defined on each Web Story and cannot be overridden by the Web Story Player.
+[/tip]
 
 
 ## Provide a placeholder
 
-Include a representative poster image by adding an <img> tag as a child of the story's <a> tag with the following configuration. The AMP story player displays this image while loading the full story.
+Include a representative poster image by adding an `<img>` tag as a child of the story's `<a>` tag with the following configuration. The AMP story player displays this image while loading the full story.
 
 
 ```html
@@ -295,7 +298,7 @@ You can create a circular consumption of a set of stories by adding the `circula
 </amp-story-player>
 ``` 
 
-The JSON configuration must be a direct child of the `<amp-story-player>` element and include the `type="application/json" attribute. 
+The JSON configuration must be a direct child of the `<amp-story-player>` element and include the `type="application/json"` attribute. 
 
 
 ### Infinite stories
@@ -318,7 +321,7 @@ You can create an "infinite scroll" experience by fetching more stories as the u
   ...
 ```
 
-The JSON configuration must be a direct child of the `<amp-story-player>` element and include the `type="application/json" attribute. For pagination, use the optional `endpoint` url variable `${offset}`  to add a parameter.
+The JSON configuration must be a direct child of the `<amp-story-player>` element and include the `type="application/json"` attribute. For pagination, use the optional `endpoint` url variable `${offset}`  to add a parameter. The Web Story Player replaces `${offset}` with the actual offset. For example, if the publisher provides `https://example.com/my-endpoint.json?offset=${offset}` and the Web Story Player has 5 stories loaded, it sends `https://example.com/my-endpoint.json?offset=5`.
 
 #### Response
 
@@ -534,7 +537,7 @@ player.addEventListener('amp-story-back', () => {
 })
 ```
 
-# User entry points
+# User entry points <a name="user-entry-points"></a>
 
 Now that you have your Web Story Player displaying your stories, you must introduce them to your site users via entry points. The examples below display common patterns, but there are many ways you can create entry points on your website.
 
