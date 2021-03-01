@@ -1,7 +1,12 @@
 ---
-$title: مصطلحات AMP
+'$title': مصطلحات AMP
 $order: 2
 description: أدلة مصطلحات AMP
+formats:
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 
@@ -68,12 +73,12 @@ author: CrystalOnScript
    </td>
   </tr>
   <tr>
-   <td>قصة AMP / قصص AMP</td>
+   <td>قصة Web / قصص Web</td>
    <td>قصة تجربة ويب مبنية باستخدام AMP.</td>
    <td>
 <ul>
-      <li>يتميز تنسيق قصة AMP بأنه حر وجزء من الويب المفتوح.</li>
-<li>تغمر قصص AMP القراء في تجارب سريعة التحميل تُعرض ملء الشاشة.</li>
+      <li>يتميز تنسيق قصة Web بأنه حر وجزء من الويب المفتوح.</li>
+<li>تغمر قصص Web القراء في تجارب سريعة التحميل تُعرض ملء الشاشة.</li>
 </ul>
    </td>
   </tr>

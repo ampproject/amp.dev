@@ -1,9 +1,14 @@
 ---
-$title: Tipi di documentazione
+'$title': Tipi di documentazione
 $order: 1
 description: Tipi di contributi alla documentazione accettati su amp.dev
+formats:
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
-toc: false
+toc: 'false'
 ---
 
 Segue una breve descrizione dei tipi di contributi alla documentazione accettati su amp.dev:
@@ -167,7 +172,7 @@ La documentazione di riferimento elenca tutti gli elementi programmatici per i c
 
 I documenti di riferimento amp.dev sono disponibili nel [catalogo dei componenti AMP](../../../../documentation/components/index.html?format=websites).
 
-[tip type="important"] È possibile contribuire alla documentazione di riferimento AMP  nell'[archivio AMPHTML](https://github.com/ampproject/amphtml). [/tip]
+[tip type="important"] È possibile contribuire alla documentazione di riferimento AMP nell'[archivio AMPHTML](https://github.com/ampproject/amphtml). [/tip]
 
 <table>
   <tr>

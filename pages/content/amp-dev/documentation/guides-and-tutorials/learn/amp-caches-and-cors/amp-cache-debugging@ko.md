@@ -1,6 +1,10 @@
 ---
-$title: AMP 캐시 이슈 디버그
-order: 8
+'$title': AMP 캐시 이슈 디버그
+$order: 8
+formats:
+  - websites
+  - stories
+  - ads
 teaser:
   text: 문서의 AMP 캐시 오류 발생 원인은?
 ---
@@ -19,7 +23,7 @@ have a look and request a pull request there.
 특정 문서가 원본에서는 예상대로 표시되고 작동하지만 캐시를 통해 볼 때([원본 URL을 Google AMP 캐시로 매핑하는 방법](https://developers.google.com/amp/cache/overview#amp-cache-url-format)) 오류가 발생한 경우 다음과 같은 조치를 취해보세요.
 
 1. 브라우저의 개발자/오류 도구 콘솔을 열고 표시되는 모든 오류 및 경고를 해결합니다
-2. [AMPBench](https://ampbench.appspot.com/)를 사용해 문서를 실행하고 예기치 않은 모든 오류 또는 경고를 해결합니다.
+2. [AMPBench](https://search.google.com/test/amp)를 사용해 문서를 실행하고 예기치 않은 모든 오류 또는 경고를 해결합니다.
 
 이와 같은 조치를 취한 후에도 문제가 지속될 경우 아래 표를 확인해 주세요.
 
@@ -46,16 +50,14 @@ have a look and request a pull request there.
     <tr>
       <td rowspan="2">애셋(예: 폰트 및 이미지)가 표시되지 않음</td>
       <td>애셋이 잘못된 MIME 유형으로 지원됨.</td>
-      <td>
-<a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">허용 가능한 MIME 유형</a> 지정.</td>
+      <td> <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">허용 가능한 MIME 유형</a> 지정.</td>
     </tr>
     <tr>
       <td>AMP 캐시가 애셋에 액세스할 수 없음.</td>
       <td>AMP 캐시가 애셋에 액세스할 수 있으며 IP 주소 또는 사용자 에이전트가 캐시를 차단한 것은 아닌지 확인(<a href="https://support.google.com/webmasters/answer/1061943?hl=en">Google 크롤러에서 사용하는 사용자 에이전트 목록</a>).</td>
     </tr>
     <tr>
-      <td>
-<code><amp-form></amp-form></code>, <code><amp-list></amp-list></code> 등의 동적 요소가 예상대로 작동하지 않음.</td>
+      <td> <code><amp-form></amp-form></code>, <code><amp-list></amp-list></code> 등의 동적 요소가 예상대로 작동하지 않음.</td>
       <td>잘못되거나 누락된 CORS 헤더.</td>
       <td>이러한 컴포넌트는 AMP 캐시에서 원본으로 원본 간 요청을 전송. 기본적으로 브라우저는 이 요청을 차단하므로 요청을 허용하려면 <a href="https://amp.dev/documentation/guides-and-tutorials/amp-cors-requests.html">모든 캐시</a>를 허용 목록에 추가하는 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS 헤더</a>를 내보냄.</td>
     </tr>
@@ -66,4 +68,5 @@ have a look and request a pull request there.
     </tr>
 </tbody>
 </table>
+
 </table>

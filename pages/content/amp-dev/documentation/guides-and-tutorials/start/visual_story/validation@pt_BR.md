@@ -1,8 +1,11 @@
 ---
-$title: Validar o HTML para AMP
+'$title': Validando o seu AMP HTML
+$order: 8
+description: Sempre que você criar uma página AMP, você deve validar se o seu AMP HTML está correto. Existem vários métodos que você pode usar para validar páginas AMP ...
+author: bpaduch
 ---
 
-Sempre que você criar uma página AMP, será preciso confirmar que o HTML para AMP está correto. Há [vários métodos possíveis para validar suas páginas AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md).  Neste tutorial, ativaremos o validador de AMP usando o modo de desenvolvedor.  Para isso, adicione o seguinte identificador de fragmentos ao seu URL e atualize a página:
+Como as Histórias Web são criadas com AMP, você deve sempre validar se o seu AMP HTML está correto. Existem [vários métodos que você pode usar para validar páginas AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md). Neste tutorial, vamos ativar o Validador AMP mudando para o modo de desenvolvedor. Para ativar o modo de desenvolvedor, adicione o seguinte identificador de fragmento à sua URL e recarregue a página:
 
 ```text
 #development=1

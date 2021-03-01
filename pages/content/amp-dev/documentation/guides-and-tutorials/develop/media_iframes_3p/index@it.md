@@ -1,25 +1,30 @@
 ---
-$title: Inclusione di immagini e video
+'$title': Inclusione di immagini e video
 $order: 8
 description: Come in una normale pagina HTML, AMP ti consente di incorporare immagini, video e contenuti audio. Scopri le differenze negli equivalenti elementi AMP e scopri come ...
+formats:
+  - websites
+  - stories
+  - email
+  - ads
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- Meggin
-- bpaduch
+  - Meggin
+  - bpaduch
 ---
 
 Come in una normale pagina HTML, AMP ti consente di incorporare immagini, video e contenuti audio. Scopri le differenze negli equivalenti elementi AMP e scopri come includerli nelle tue pagine.
 
-## Perché non usare <img>, <video> e <audio>?</audio></video>
+## Perché non usare <code><img></code>, <code><video></code> e <code><audio></code>?
 
 AMP non supporta i componenti HTML predefiniti per la visualizzazione di contenuti multimediali, come `<img>`. Forniamo componenti equivalenti per i seguenti motivi:
 
 - Occorre comprendere il layout della pagina prima del caricamento delle risorse, cosa fondamentale per [supportare il pre-caricamento della prima finestra di visualizzazione](../../../../about/how-amp-works.html#size-all-resources-statically)
 - Occorre tenere sotto controllo le richieste di rete per il [caricamento lazy e assegnare la priorità alle risorse in modo efficace](../../../../about/how-amp-works.html#prioritize-resource-loading)
 
-Attenzione: finché non saranno supportati, essi *saranno* visualizzati, ma AMP non [convaliderà le pagine](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) e non si potranno sfruttare i vantaggi offerti da AMP.
+Attenzione: finché non saranno supportati, essi _saranno_ visualizzati, ma AMP non [convaliderà le pagine](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) e non si potranno sfruttare i vantaggi offerti da AMP.
 
 ## Immagini
 
@@ -28,10 +33,12 @@ Includere un'immagine nella pagina utilizzando l'elemento [`amp-img`](../../../.
 [example preview="inline" playground="true"]
 
 ```html
-<amp-img alt="A beautiful sunset"
+<amp-img
+  alt="A beautiful sunset"
   src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
   width="264"
-  height="195">
+  height="195"
+>
 </amp-img>
 ```
 
@@ -46,11 +53,17 @@ Poiché [`<amp-img>`](../../../../documentation/components/reference/amp-img.md)
 [example preview="inline" playground="true"]
 
 ```html
-<amp-img src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
+<amp-img
+  src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
   width="264"
-  height="195">
+  height="195"
+>
   <noscript>
-    <img src="{{server_for_email}}/static/inline-examples/images/sunset.jpg" width="264" height="195" />
+    <img
+      src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
+      width="264"
+      height="195"
+    />
   </noscript>
 </amp-img>
 ```
@@ -64,11 +77,13 @@ Con AMP è molto più semplice creare immagini completamente reattive rispetto a
 [example preview="inline" playground="true"]
 
 ```html
-<amp-img alt="A view of the sea"
+<amp-img
+  alt="A view of the sea"
   src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
   width="900"
   height="675"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-img>
 ```
 
@@ -89,20 +104,24 @@ L'elemento [`amp-anim`](../../../../documentation/components/reference/amp-anim.
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
 
 ```html
-<amp-anim width="400"
+<amp-anim
+  width="400"
   height="300"
-  src="{{server_for_email}}/static/inline-examples/images/wavepool.gif">
-  <amp-img placeholder
+  src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
+>
+  <amp-img
+    placeholder
     width="400"
     height="300"
-    src="{{server_for_email}}/static/inline-examples/images/wavepool.png">
+    src="{{server_for_email}}/static/inline-examples/images/wavepool.png"
+  >
   </amp-img>
 </amp-anim>
 ```
 
 [/example]
 
-[tip type="note"] **NOTA:** Includere l'elemento `<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` nell'intestazione della pagina per utilizzare questo componente. [/tip]
+[tip type="note"] <strong>NOTA:</strong> Includere l'elemento <code><script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script></code> nell'intestazione della pagina per utilizzare questo componente. [/tip]
 
 ## Video
 
@@ -121,7 +140,7 @@ Includere un segnaposto prima dell'inizio del video e un fallback, se il browser
   src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.mp4"
   poster="{{server_for_email}}/static/inline-examples/images/kitten-playing.png">
   <div fallback>
-    <p>Questo browser non supporta l'elemento video.</p>
+    <p>This browser does not support the video element.</p>
   </div>
 </amp-video>
 ```
@@ -134,7 +153,7 @@ Includere una risorsa audio nella pagina, utilizzando l'elemento [`amp-audio`](.
 
 Utilizzare questo elemento solo per l'integrazione diretta di file audio HTML5. Come per tutte le risorse esterne incorporate in una pagina AMP, l'elemento carica in modalità lazy la risorsa audio specificata dall'attributo `src`, in un momento stabilito da AMP.
 
-Includere un segnaposto prima dell'inizio dell'audio e un fallback, se il browser non supporta l'audio HTML5, ad esempio:
+Includi un fallback, se il browser non supporta l'audio HTML5, ad esempio:
 
 [example preview="inline" playground="true" imports="amp-audio:0.1"]
 
@@ -145,7 +164,7 @@ Includere un segnaposto prima dell'inizio dell'audio e un fallback, se il browse
   {% endif %}
   src="{{server_for_email}}/static/inline-examples/audio/cat-meow.mp3">
   <div fallback>
-    <p>Il tuo browser non supporta audio HTML5.</p>
+    <p>Your browser doesn’t support HTML5 audio.</p>
   </div>
   <source type="audio/mpeg"
     src="{{server_for_email}}/static/inline-examples/audio/cat-meow.mp3">
@@ -156,4 +175,4 @@ Includere un segnaposto prima dell'inizio dell'audio e un fallback, se il browse
 
 [/example]
 
-[tip type="note"] **NOTA:** Includere l'elemento `<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` nell'intestazione della pagina per utilizzare questo componente. [/tip]
+[tip type="note"] <strong>NOTA:</strong> Includere l'elemento <code><script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script></code> nell'intestazione della pagina per utilizzare questo componente. [/tip]

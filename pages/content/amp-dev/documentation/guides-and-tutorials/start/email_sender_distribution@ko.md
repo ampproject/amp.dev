@@ -1,8 +1,10 @@
 ---
-$title: 발신자 메일 등록
+'$title': 발신자 메일 등록
 $order: 1
 description: AMP 이메일의 발신자 메일 등록
-$category: 시작
+'$category': Start
+formats:
+  - email
 author: CrystalOnScript
 ---
 
@@ -18,7 +20,7 @@ AMP 이메일 형식에 대한 이해 및 컴플라이언스를 증명해야 합
 
 다음 주소로 프로덕션 준비 상태의 AMP 이메일을 전송합니다.
 
-- amphtmltest@outlook.com
+- ampverification@yahoo.com
 - postmaster_amp@corp.mail.ru
 - ampforemail.whitelisting@gmail.com
 
@@ -39,13 +41,9 @@ AMP 이메일 형식에 대한 이해 및 컴플라이언스를 증명해야 합
 - [러시아에 거주하지 않는 사용자](https://help.mail.ru/engmail-help/privacy)
 - [러시아 거주 사용자](https://agent.mail.ru/legal/privacypolicy/en)
 
-**Microsoft**
-
-[Microsoft 개인정보 처리방침](https://privacy.microsoft.com/en-us/privacystatement)
-
 **Verizon Media (Yahoo Mail)**
 
-- [Verizon Media 개인정보 처리방침 - 미국](https://www.verizonmedia.com/policies/us/en/verizonmedia/privacy/index.html)
+- [Verizon Media Privacy Policy - US](https://www.verizonmedia.com/policies/us/en/verizonmedia/privacy/index.html)
 - 기타 국가의 정책은 [이곳](https://www.verizonmedia.com/policies/)에서 확인하세요.
 
 # 확인

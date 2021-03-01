@@ -1,5 +1,5 @@
 ---
-$title: Помощник по созданию удобных AMP-страниц
+"$title": Помощник по созданию удобных AMP-страниц
 staticText:
   inputBar:
     headline: Проанализируйте свою AMP-страницу
@@ -17,7 +17,7 @@ staticText:
   statusIntro:
     headline: Пожалуйста, подождите...
     headline2: Идет анализ вашей страницы
-    loadingCopy: "Выполнено проверок: ${finishedChecks} из ${totalChecks}"
+    loadingCopy: 'Выполнено проверок: ${finishedChecks} из ${totalChecks}'
     buttonShare: Поделиться
     buttonInvestigate: Исследовать
   coreWebVitals:
@@ -26,7 +26,7 @@ staticText:
     fieldData: Наблюдаемые данные
     labData: Моделируемые данные
     fieldDataExplainer: Эти данные обновляются ежедневно в течение скользящего 28-дневного периода.
-    labDataExplainer: Это данные, полученные с помощью синтетических тестов; они не оказывают влияния на удобство страницы.
+    labDataExplainer: "Это данные, полученные с помощью синтетических тестов; они не оказывают влияния на удобство страницы."
     loadingSpeed: Скорость загрузки
     interactivity: Интерактивность
     visualStability: Визуальная стабильность
@@ -36,7 +36,7 @@ staticText:
       scorePercentile: Оценка на 75-м процентиле
       score: Оценка
       opportunity: Возможность улучшения
-      pagesPassing: Прошедшие проверку страницы
+      pagesPassing: Прошедшие проверку посещения
       action: Выполнить действие
   additionalChecks:
     headline: Дополнительные проверки
@@ -61,7 +61,7 @@ scriptText:
     passed: Проверка пройдена
     passedAddition: проверка пройдена
     none: Нет
-    nothingToDo: Действий не требуется
+    nothingToDo: "Действий не требуется! &#x1F389;"
     fileAnIssue: Сообщить о проблеме в AMP
     recommendation: рекомендация
     recommendations: рекомендации

@@ -1,54 +1,74 @@
 ---
-$title: srcset、sizes、heights を使ったレスポンシブな画像
+'$title': srcset、sizes、heights を使ったレスポンシブ画像
+$order: 4
+description: srcset 属性を使用すると、さまざまなメディア式に基づいて要素のアセットを制御できます。特に、すべての amp-img タグで使用して、さまざまな画面 ...
+formats:
+  - websites
+  - email
+  - ads
+  - stories
+components:
+  - iframe
+author: pbakaus
+contributors:
+  - bpaduch
 ---
 
 ## srcset
 
-`srcset` 属性を使用すると、さまざまなメディア式に基づいて要素のアセットを制御できます。特に、すべての [`amp-img`](../../../../documentation/components/reference/amp-img.md) タグで使用して、さまざまな画面サイズに基づいて画像アセットを指定できます。
+`srcset` 属性を使用すると、さまざまなメディア式に基づいて要素のアセットを制御できます。特に、すべての [`amp-img`](../../../../documentation/components/reference/amp-img.md) タグで使用して、さまざまな画面サイズに基づいて画像アセットを指定できます。AMP は、<code><amp-img></code> に <code>srcset</code> 属性が指定されていても <code>sizes</code> が存在しない場合、基礎となるすべての <code><amp-img></code> の <code><img></code> タグに対し、<a><code>sizes</code> の HTML5 定義を満たす</a><code>sizes</code> 属性を自動生成します。
 
 次の例では、`srcset` が画面の幅に基づいて使用される画像を指定しています。`w` 記述子は、リスト内の各画像の幅をブラウザに伝えます。
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   layout="responsive"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
-            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w">
+            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
+>
 </amp-img>
 ```
+
 [/example]
 
-注: AMP では、すべてのブラウザで srcset に `w` 記述子を使用できます。
+[tip type="note"] <strong>注意:</strong> AMP では、すべてのブラウザで srcset に `w` 記述子を使用できます。 [/tip]
 
-`srcset` を使ってレスポンシブな画像を作成する方法について詳しくは、[レスポンシブな画像の使用に関する記事](http://alistapart.com/article/using-responsive-images-now) をご覧ください。
+`srcset` を使ってレスポンシブ画像を作成する方法については、[レスポンシブ画像の使用](http://alistapart.com/article/using-responsive-images-now)をご覧ください。
 
 ## sizes
 
-`srcset` と一緒に `sizes` 属性も使用できます。`sizes` 属性では、メディア式に基づいた要素のサイズの計算方法を指定します。ユーザー エージェントは、計算された要素のサイズに基づいて、`srcset` 属性で指定されたソースのうち最も関連するソースを選択します。
+`srcset` と一緒にオプションの AMP `sizes` 属性も使用できます。AMP `sizes` 属性では、メディア式に基づいた要素のサイズの計算方法を指定します。<strong>任意の AMP 要素に <code>sizes</code> を定義すると、一致するメディアクエリに従って、その要素に幅のインラインスタイルが設定されます。</strong>ユーザーエージェントは、計算された要素のサイズに基づいて、<code>srcset</code> 属性で指定されたソースのうち最も関連するソースを選択します。
 
 次の例をご覧ください。
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
             {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
-  sizes="(min-width: 650px) 50vw, 100vw">
+  sizes="(min-width: 650px) 50vw, 100vw"
+>
 </amp-img>
 ```
+
 [/example]
 
-この `sizes` 属性では、ビューポートが 650 ピクセル以上の場合は、要素の幅をビューポートのサイズの 50% にすると定義しています。たとえば、ビューポートが 800 ピクセルの場合、要素の幅は 400 ピクセルに設定されます。ブラウザでは、デバイス ピクセル比を 1 と想定し、400 ピクセルと比較して `srcset` のリソースを選択します。この例では `narrow.jpg`（320 ピクセル）が選択されます。
+この `sizes` 属性では、ビューポートが 650 ピクセル以上の場合は、要素の幅をビューポートのサイズの 50% にすると定義しています。たとえば、ビューポートが 800 ピクセルの場合、要素の幅は 400 ピクセルに設定されます。ブラウザでは、デバイスピクセル比を 1 と想定し、400 ピクセルと比較して `srcset` のリソースを選択します。この例では `hummingbird-narrow.jpg`（320 ピクセル）が選択されます。
 
-重要: sizes 属性とともに width と height も指定されている場合、layout はデフォルトで `responsive` に設定されます。
+[tip type="important"] <strong>重要:</strong> sizes 属性とともに width と height も指定されている場合、layout はデフォルトで `responsive` に設定されます。[/tip]
 
-`sizes` および `srcset` 属性とメディアクエリの比較について詳しくは、[srcset と sizes](https://ericportis.com/posts/2014/srcset-sizes/) に関するブログ投稿をご覧ください。
+<a>AMP <code data-md-type="codespan">sizes</code> 属性については、こちら</a>をお読みください。
 
 ## heights
 
@@ -62,14 +82,18 @@ $title: srcset、sizes、heights を使ったレスポンシブな画像
 次の例をご覧ください。
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="AMP"
+<amp-img
+  alt="AMP"
   src="{{server_for_email}}/static/inline-examples/images/amp.jpg"
   width="320"
   height="256"
-  heights="(min-width:500px) 200px, 80%">
+  heights="(min-width:500px) 200px, 80%"
+>
 </amp-img>
 ```
+
 [/example]
 
 この例では、要素の高さはデフォルトで幅の 80% ですが、ビューポートが `500px` より広い場合、`200px` が上限となります。

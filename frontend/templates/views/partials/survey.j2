@@ -1,0 +1,52 @@
+{% if survey_questions %}
+  {% do doc.styles.addCssFile('css/components/organisms/survey.css') %}
+
+  <amp-state id="surveyQuestions">
+    <script type="application/json">
+
+      {% do survey_questions.update({"_url": request.url })%}
+      {{ survey_questions | tojson }}
+    </script>
+  </amp-state>
+
+  <amp-script src="/static/survey.js" width="450" height="1205"  id="fez-container" sandbox="allow-forms">
+    <form id="fez">
+      {% do doc.icons.useIcon('icons/close.svg') %}
+      <svg class="ap-a-ico icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
+      <div class="slides">
+        <div class="slide">
+          <p class="surveyQuestion thanks">{{ _('Thank you!') }}</p>
+        </div>
+      </div>
+    </form>
+  </amp-script>
+
+
+  <div class="ap--survey-position-observer">
+
+    <amp-position-observer on="enter:displaySurvey.start" once intersection-ratios="0" layout="nodisplay">
+    </amp-position-observer>
+
+    <amp-animation id="displaySurvey" layout="nodisplay">
+      <script type="application/json">
+        {
+          "duration": ".25s",
+          "fill": "both",
+          "once": true,
+          "direction": "alternate",
+          "animations": [{
+              "selector": "#fez-container",
+              "keyframes": [
+                { "opacity": 0, "transform": "translate3d(0,100vh,0)" },
+                { "opacity": 1, "transform": "translate3d(0,0,0)" }
+              ]
+            }
+          ]
+      }
+      </script>
+    </amp-animation>
+
+  </div>
+
+{% endif %}
+

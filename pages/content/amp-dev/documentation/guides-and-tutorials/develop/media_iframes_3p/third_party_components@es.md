@@ -1,185 +1,208 @@
 ---
-$title: Incluir contenido de terceros
+'$title': Inclusión de contenido de terceros
+$order: 9
+description: Obtenga información sobre cómo incluir componentes de terceros en sus páginas...
+formats:
+  - websites
+components:
+  - iframe
+  - facebook
+author: Meggin
+contributors:
+  - pbakaus
+  - bpaduch
 ---
 
-Obtén información sobre cómo incluir componentes de terceros en tus páginas.
+Obtenga información sobre cómo incluir componentes de terceros en sus páginas.
 
-## Insertar un tuit
+## Inserción de un tuit
 
-Inserta un tuit de Twitter en tu página
-con el elemento <a href="../../../../documentation/components/reference/amp-twitter.md"><code>amp-twitter</code></a>.
+Inserte un tuit de Twitter en su página con el elemento <a href="../../../../documentation/components/reference/amp-twitter.md"><code>amp-twitter</code></a>.
 
-Para incluir un tuit en tu página,
-incluye en primer lugar la siguiente secuencia de comandos en `<head>`:
+Para incluir un tuit en su página, incluya en primer lugar la siguiente secuencia de comandos en `<head>`:
 
 [sourcecode:html]
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+
+<script async custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+
 [/sourcecode]
 
-Actualmente, los tuits se adaptan de forma automática y proporcional a escala
-para encajar en el tamaño indicado, pero es posible que la apariencia resultante no sea la ideal.
-Ajusta la anchura y la altura de forma manual o usa el atributo de medios para seleccionar la relación de aspecto en función de la anchura de la pantalla.
+Actualmente, los tuits se adaptan de forma automática y a una escala proporcional para encajar en el tamaño indicado, pero es posible que la apariencia resultante no sea la ideal. Ajuste el ancho y la altura de forma manual o utilice el atributo de medios para seleccionar la relación de aspecto según el ancho de la pantalla.
 
 [example preview="inline" playground="true" imports="amp-twitter:0.1"]
+
 ```html
-<amp-twitter width="500"
+<amp-twitter
+  width="500"
   height="583"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
+
 [/example]
 
-[tip type="tip"]
-**TIP –** Puedes encontrar más ejemplos de [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) en [AMP By Example](../../../../documentation/examples/documentation/amp-twitter.html).
-[/tip]
+[tip type="tip"] **CONSEJO:** Puede encontrar más ejemplos de [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) en [Ejemplos de AMP](../../../../documentation/examples/documentation/amp-twitter.html). [/tip]
 
-## Insertar una foto de Instagram
+## Inserción en Instagram
 
-Inserta una foto de Instagram en tu página con el elemento [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md).
+Inserte un Instagram en su página mediante el elemento [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md).
 
-Para incluir una foto de Instagram, en primer lugar incluye la siguiente secuencia de comandos en `<head>`:
+Para incluir un Instagram, primero incluya la siguiente secuencia de comandos en el `<head>`:
 
 [sourcecode:html]
-<script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+
+<script async custom-element="amp-instagram"
+  src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+
 [/sourcecode]
 
-Incluye el código abreviado de datos de Instagram que se encuentra en la URL de la foto de Instagram.
-Por ejemplo, en `https://instagram.com/p/fBwFP`, el código abreviado de datos es `fBwFP`.
-Además, Instagram utiliza una relación de aspecto fija para los diseños adaptables, por lo que los valores de anchura y altura deben ser universales
+Incluya el código abreviado de datos de Instagram que se encuentra en la URL del Instagram. Por ejemplo, en `https://instagram.com/p/fBwFP`, el código abreviado de datos es `fBwFP`. Además, Instagram utiliza una relación de aspecto fija para los diseños adaptables, por lo que los valores de ancho y alto deben ser universales
 
 [example preview="inline" playground="true" imports="amp-instagram:0.1"]
+
 ```html
-<amp-instagram data-shortcode="fBwFP"
+<amp-instagram
+  data-shortcode="fBwFP"
   width="320"
   height="392"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-instagram>
 ```
+
 [/example]
 
-[tip type="tip"]
-**TIP –** Puedes encontrar más ejemplos de [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) en [AMP By Example](../../../../documentation/examples/documentation/amp-instagram.html).
-[/tip]
+[tip type="tip"] **CONSEJO:** Puede encontrar más ejemplos de [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) en [Ejemplos de AMP](../../../../documentation/examples/documentation/amp-instagram.html). [/tip]
 
-## Mostrar entradas o vídeos de Facebook
+## Cómo mostrar entradas o videos de Facebook
 
-Muestra una entrada o un vídeo de Facebook en tu página con el elemento [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md).
+Muestre una entrada o un video de Facebook en su página con el elemento [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md).
 
-Debes incluir la siguiente secuencia de comandos en `<head>`:
+Debe incluir la siguiente secuencia de comandos en el `<head>`:
 
 [sourcecode:html]
-<script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
+
+<script async custom-element="amp-facebook"
+  src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
+
 [/sourcecode]
 
-##### Ejemplo: insertar una entrada
+##### Ejemplo: Inserción de una entrada
 
 Fuente:
+
 ```html
-<amp-facebook width="486" height="657"
-    layout="responsive"
-    data-href="https://www.facebook.com/zuck/posts/10102593740125791">
+<amp-facebook
+  width="486"
+  height="657"
+  layout="responsive"
+  data-href="https://www.facebook.com/zuck/posts/10102593740125791"
+>
 </amp-facebook>
 ```
-Avance:
-<amp-facebook width="486" height="657"
-    layout="responsive"
-    data-href="https://www.facebook.com/zuck/posts/10102593740125791">
-</amp-facebook>
 
-##### Ejemplo: insertar un vídeo
+Vista previa: {amp-facebook0} {/amp-facebook0}
+
+##### Ejemplo: Inserción de un video
 
 Fuente:
+
 ```html
-<amp-facebook width="476" height="316"
-    layout="responsive"
-    data-embed-as="video"
-    data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
+<amp-facebook
+  width="476"
+  height="316"
+  layout="responsive"
+  data-embed-as="video"
+  data-href="https://www.facebook.com/nasaearth/videos/10155187938052139"
+>
 </amp-facebook>
 ```
-Avance:
-<amp-facebook width="476" height="316"
-    layout="responsive"
-    data-embed-as="video"
-    data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
-</amp-facebook>
 
-[tip type="tip"]
-**TIP –** Puedes encontrar más ejemplos de [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) en [AMP By Example](../../../../documentation/examples/documentation/amp-facebook.html).
-[/tip]
+Vista previa: {amp-facebook0} {/amp-facebook0}
 
-## Insertar un vídeo de YouTube
+[tip type="tip"] **CONSEJO:** Puede encontrar más ejemplos de [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) en [Ejemplos de AMP](../../../../documentation/examples/documentation/amp-facebook.html). [/tip]
 
-Inserta un vídeo de YouTube en tu página con el elemento [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md).
+## Cómo insertar un video de YouTube
 
-Debes incluir la siguiente secuencia de comandos en `<head>`:
+Inserte un video de YouTube en su página con el elemento [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md).
+
+Debe incluir la siguiente secuencia de comandos en el `<head>`:
 
 [sourcecode:html]
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+
+<script async custom-element="amp-youtube"
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+
 [/sourcecode]
 
-El atributo `data-videoid` de YouTube se puede encontrar en todas las URL de las páginas de vídeo de YouTube.
-Por ejemplo, en `https://www.youtube.com/watch?v=Z1q71gFeRqM`,
-el ID de vídeo es `Z1q71gFeRqM`.
+El atributo `data-videoid` de YouTube puede encontrarse en todas las URL de las páginas de videos de YouTube. Por ejemplo, en `https://www.youtube.com/watch?v=Z1q71gFeRqM`, el ID del video es `Z1q71gFeRqM`.
 
-Utiliza `layout="responsive"` para producir diseños correctos para los vídeos con una relación de aspecto de 16:9:
+Utilice `layout="responsive"` para producir diseños correctos para los videos con una relación de aspecto de 16:9:
 
 [example preview="inline" playground="true" imports="amp-youtube:0.1"]
+
 ```html
-<amp-youtube data-videoid="lBTCB7yLs8Y"
+<amp-youtube
+  data-videoid="lBTCB7yLs8Y"
   layout="responsive"
   width="560"
-  height="315">
+  height="315"
+>
 </amp-youtube>
 ```
+
 [/example]
 
-[tip type="tip"]
-**TIP –** Puedes encontrar más ejemplos de [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) en [AMP By Example](../../../../documentation/examples/documentation/amp-youtube.html).
-[/tip]
+[tip type="tip"] **CONSEJO:** Puede encontrar más ejemplos de [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) en [Ejemplos de AMP](../../../../documentation/examples/documentation/amp-youtube.html). [/tip]
 
 ## Mostrar un anuncio
 
-Muestra un anuncio en tu página utilizando el elemento [`amp-ad`](../../../../documentation/components/reference/amp-ad.md).
-Únicamente son compatibles los anuncios que se publiquen a través de HTTPS.
+Muestre un anuncio en su página utilizando el elemento [`amp-ad`](../../../../documentation/components/reference/amp-ad.md). Únicamente son compatibles los anuncios que se publiquen mediante HTTPS.
 
-No se puede ejecutar ningún JavaScript proporcionado por una red publicitaria en el documento de AMP.
-En cambio, en tiempo de ejecución de AMP se carga un iframe desde un
-origen diferente (a través de la zona de pruebas de iframe)
-y se ejecuta el JS de la red publicitaria dentro de esa zona.
+No se puede ejecutar ningún JavaScript proporcionado por una red publicitaria en el documento de AMP. En cambio, en tiempo de ejecución de AMP se carga un iframe desde un origen diferente (a través de la zona de pruebas de iframe) y se ejecuta el JS de la red publicitaria dentro de esa zona.
 
-Debes especificar la anchura y la altura del anuncio y el tipo de red publicitaria.
-El atributo `type` identifica la plantilla de la red publicitaria.
-Los diferentes tipos de anuncios requieren diferentes atributos `data-*`.
+Debe especificar el ancho y el alto del anuncio y el tipo de red publicitaria. El atributo `type` identifica la plantilla de la red publicitaria. Los diferentes tipos de anuncios requieren diferentes atributos `data-*`.
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
+
 ```html
-<amp-ad width="300"
+<amp-ad
+  width="300"
   height="250"
   type="a9"
   data-amzn_assoc_ad_mode="auto"
   data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
   data-recomtype="async"
-  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5"
+>
 </amp-ad>
 ```
+
 [/example]
-Si la red publicitaria lo admite, incluye un `placeholder` para que se muestre si no hay anuncios disponibles:
+
+Si la red publicitaria lo permite, incluya un <code>placeholder</code> para que se muestre si no hay anuncios disponibles:
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
+
 ```html
-<amp-ad width="300"
+<amp-ad
+  width="300"
   height="250"
   type="a9"
   data-amzn_assoc_ad_mode="auto"
   data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
   data-recomtype="async"
-  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5"
+>
   <div placeholder>Have a great day!</div>
 </amp-ad>
 ```
+
 [/example]
 
-AMP es compatible con una amplia gama de redes publicitarias. Consulta la [referencia para obtener una lista completa](../../../../documentation/components/reference/amp-ad.md#supported-ad-networks).
+AMP es compatible con una amplia variedad de redes publicitarias. Consulte [<code>amp-ad</code>](../../../../documentation/guides-and-tutorials/develop/monetization/index.md) para obtener una lista completa.
 
-Leer más: Obtén más información sobre los anuncios en la guía [Publicar anuncios en AMP](../../../../documentation/guides-and-tutorials/develop/monetization/index.md).
+[tip type="read-on"] **MÁS INFORMACIÓN: ** Obtenga más información sobre los anuncios en la guía <a>Cómo publicar anuncios en AMP</a>. [/tip]

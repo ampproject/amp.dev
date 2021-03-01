@@ -1,7 +1,9 @@
 ---
-$title: Migliorare il coinvolgimento degli utenti
+'$title': Migliorare il coinvolgimento degli utenti
 $order: 6
 description: Ecco alcuni suggerimenti rapidi per migliorare il coinvolgimento degli utenti con AMP. Questo permetterà ai lettori di identificare le tue pagine, con o senza contenuti AMP, grazie a una coerente presentazione del marchio e ricchi contenuti multimediali
+formats:
+  - websites
 ---
 
 Ecco alcuni suggerimenti rapidi per migliorare il coinvolgimento degli utenti con AMP.

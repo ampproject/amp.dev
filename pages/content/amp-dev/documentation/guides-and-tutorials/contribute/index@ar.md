@@ -1,17 +1,47 @@
 ---
-$title: كيفية المساهمة
+'$title': How to contribute
+'$titles':
+  navigation: مساهمة
+'$path': '/documentation/guides-and-tutorials/contribute/index.html'
+'$localization':
+  path: '/{locale}/documentation/guides-and-tutorials/contribute/index.html'
+$order: 0
+description: ما كان لمشروع AMP أن يخرج إلى النور لولا المساعدة من جميع أعضاء المجتمع سوء كانوا مطورين أم منشئي محتوى أم موفري خدمات تتعلق بـAMP.
+formats:
+  - websites
+  - stories
+  - ads
+  - email
 ---
 
-### مشكلات AMP
+ما كان لمشروع AMP أن يخرج إلى النور لولا المساعدة من جميع أعضاء المجتمع سوء كانوا مطورين أم منشئي محتوى أم موفري خدمات تتعلق بـAMP. ثمة طرق عديدة متاحة أمامك للمساهمة.
 
-الرجاء تقديم أي تعليقات لديكم بخصوص المشروع الفعلي على [أداة تتبع مشكلات amphtml](https://github.com/ampproject/amphtml/issues).
+### الإبلاغ عن مشكلات في AMP
 
-### مشكلات المستندات
+إذا كان لديك تعقيب أو تعاني من مشكلات تقنية في AMP، فيرجى الإبلاغ عنها باستخدام [أداة تتبع المشكلات](https://github.com/ampproject/docs/issues). وإذا كان لديك مشكلات في <a>amp.dev</a>/ فيرجى استخدام <a>أداة تتبع مشكلات المستندات</a> بدلا من ذلك.
 
-بالنسبة إلى الأخطاء والتناقضات الموجودة على هذا الموقع، يُرجى الإبلاغ عن الخطأ في [أداة تتبع مشكلات المستندات](https://github.com/ampproject/docs/issues) بدلاً من ذلك.
+### توفير مساهمات تقنية إلى AMP
 
-### المساهمة بشفرة مصدر
+يشجع AMP بشدة على تقديم مساهمات تقنية!
 
-هل تريد المساعدة في إصلاح الأخطاء أو جعل AMP أكثر سرعة؟ إننا سعداء بمساعدتك.
+نرجو أن تصبح أحد المشاركين المستمرين في مجتمعنا مفتوح المصدر، مع ذلك نرحب أيضًا بالمساهمات لمرة واحدة بشأن المشكلات التي لديك تخوف خاص منها.
 
-الرجاء مراجعة [ملف CONTRIBUTING](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md) للاطلاع على معلومات حول المساهمة في مشروع AMP و[ملف DEVELOPING](https://github.com/ampproject/amphtml/blob/master/contributing/DEVELOPING.md) للاطلاع على مستندات حول العناصر الداخلية لمكتبة AMP و[نصائح حول كيفية البدء](https://github.com/ampproject/amphtml/blob/master/contributing/DEVELOPING.md#starter-issues).
+#### المساعدة من خلال رمز
+
+للبدء في المساهمة برمز في مشروع AMP اقرأ [ملف المساهمة](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md)، الذي يتضمن تفاصيل العملية التي يجري من خلالها إصلاح ميزة أو خطأ بدء من وضع المفهوم حتى الإرسال وكيف يمكنك المشاركة في التصاميم التقنية والمناقشات. إذا كنت مستجدًا في التعامل مع المصدر المفتوح فلدينا بعض [النصائح للشروع في العمل](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-code).
+
+### تقديم مساهمات المحتوى إلى AMP
+
+يتعلق المحتوى على [amp.dev](https://amp.dev) بكيف يتعلم المطورون إنشاء تجارب ويب ناجحة باستخدام AMP. نحن نقدر اهتمامك بتحديث مستندات مفيدة وإنشائها وطلبها!
+
+#### المساعدة من خلال المستندات
+
+ماذا عن المستندات؟ لقد وضعنا كل الترتيبات -- أمثلة لاستخدام AMP، البرامج التعليمية لمساعدة المطورين على الشروع في العمل، والأدلة لاكتشاف ميزات AMP.
+
+[amp.dev](https://amp.dev) هو المكان الذي يتعرف فيه معظم الأشخاص على AMP. يمكنك المساهمة في المستندات في [مستندات ampproject ضمن مشروع GitHub](https://github.com/ampproject/docs). (ويمكنك حتى جعل [الصفحة التي تقرأها](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md) أفضل!
+
+ابدأ العمل بقراءة [دليل المساهمة بالمحتوى](contribute-documentation/index.md?format=websites) الخاص بنا.
+
+#### المساهمة بالترجمات
+
+يسعى AMP لجعل شبكة الويب العالمية تجربة أفضل للجميع. ولتمكين جميع الأشخاص في العالم من استخدام AMP، نحتاج إلى مساهمين في الترجمة لترجمة الأدلة والبرامج التعليمية والمدونات وجميع المحتويات التي كُتبت لصالح AMP. للمشاركة في تعريف مستندات AMP لمجتمع, راجع [مبادرة الترجمة منAMP](https://github.com/ampproject/docs/blob/master/TRANSLATIONS.md).

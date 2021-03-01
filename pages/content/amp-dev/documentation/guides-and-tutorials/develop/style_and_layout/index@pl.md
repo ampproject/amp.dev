@@ -1,19 +1,19 @@
 ---
 formats:
-- websites
-- email
-- ads
-- stories
-"$path": "/documentation/guides-and-tutorials/develop/style_and_layout/index.html"
-"$localization":
-  path: "/{locale}/documentation/guides-and-tutorials/develop/style_and_layout/index.html"
-"$title": Style & layout
-"$order": '0'
+  - websites
+  - email
+  - ads
+  - stories
+'$path': '/documentation/guides-and-tutorials/develop/style_and_layout/index.html'
+'$localization':
+  path: '/{locale}/documentation/guides-and-tutorials/develop/style_and_layout/index.html'
+'$title': Style & layout
+$order: 0
 description: Określanie stylów i układ na stronach AMP HTML jest bardzo podobne jak w przypadku zwykłych stron HTML — w obu przypadkach będziesz używać CSS.
-"$hidden": 'true'
+'$hidden': 'true'
 author: pbakaus
 contributors:
-- Meggin
+  - Meggin
 ---
 
 Styling and layout on AMP HTML pages is very similar to normal HTML pages – in both cases, you'll use CSS.
@@ -31,6 +31,7 @@ Każda strona AMP ma limit 75 000 bajtów kodu CSS. Style zdefiniowane w nagłó
 Define CSS within the `<style amp-custom>` tag inside the head of the document. There is only one `<style amp-custom>` tag allowed on each AMP page.
 
 [sourcecode:html]
+
 <!doctype html>
   <head>
     ...
@@ -48,12 +49,14 @@ Define CSS within the `<style amp-custom>` tag inside the head of the document. 
       }
     </style>
     ...
+
   </head>
 [/sourcecode]
 
 Style AMP components and HTML elements with class or selectors using common CSS properties:
 
 [sourcecode:html]
+
 <body>
   <p>Hello, Kitty.</p>
   <amp-img
@@ -73,6 +76,7 @@ Style AMP components and HTML elements with class or selectors using common CSS 
 W AMP można stosować style inline:
 
 [sourcecode:html]
+
 <body>
   <p style="color:pink;margin-left:30px;">Hello, Kitty.</p>
 </body>

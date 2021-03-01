@@ -1,8 +1,8 @@
 ---
-"$title": Действия и события в AMP-письмах
-order: '0'
+'$title': Действия и события в AMP-письмах
+$order: 0
 formats:
-- email
+  - email
 teaser:
   text: '[tip type="note"]'
 ---
@@ -114,7 +114,7 @@ AMP также определяет глобальные действия `hide`
 
 ## События конкретных элементов <a name="element-specific-events"></a>
 
-### * — все элементы <a name="---all-elements"></a>
+### \* — все элементы <a name="---all-elements"></a>
 
 <table>
   <tr>
@@ -333,7 +333,7 @@ event.value</pre>
 
 ## События конкретных элементов <a name="element-specific-actions"></a>
 
-### * — все элементы <a name="-all-elements"></a>
+### \* — все элементы <a name="-all-elements"></a>
 
 <table>
   <tr>

@@ -1,5 +1,7 @@
 ---
-$title: 検証エラーを解決する
+'$title': 検証エラーの解決
+$order: 2
+description: ここでは、AMP ページでの AMP 検証エラーを確認し、解決していきます。お使いのコンソールでは、異なる順序でエラーが表示される場合がありますので、ご了承ください。
 ---
 
 ここでは、AMP ページでの AMP 検証エラーを確認し、解決していきます。お使いのコンソールでは、異なる順序でエラーが表示される場合がありますので、ご了承ください。
@@ -12,7 +14,7 @@ $title: 検証エラーを解決する
 The mandatory tag 'meta charset=utf-8' is missing or incorrect.
 </pre>
 
-AMP でテキストを正しく表示するには、ページの文字セットを指定する必要があります。また、`<head>` タグの最初の子として、meta charset 情報を指定する必要があります。このタグを最初に指定する理由は、meta charset タグより前に追加されたコンテンツを再解釈するのを避けるためです。
+AMP でテキストを正しく表示するには、ページの文字セットを指定する必要があります。また、`<head>` タグの最初の子として、meta charset 情報を指定する必要があります。このタグを最初に指定する理由は、meta charset タグより前に追加されたコンテンツを再解釈しないようにするためです。
 
 `<head>` タグの最初の行として次のコードを**追加**します。
 
@@ -37,20 +39,20 @@ The mandatory tag 'link rel=canonical' is missing or incorrect.
 `<meta charset="utf-8" />` タグの下に次のコードを**追加**します。
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
-[tip type="note"]
-単独の正規の AMP ページを作成できます。その場合でも正規リンクは必要ですが、AMP 記事自体を指すようにしてください。
+[tip type="note"] 単独の正規の AMP ページを作成できます。その場合でも正規リンクは必要ですが、AMP 記事自体を指すようにしてください。
 
 ```html
-<link rel="canonical" href="article.amp.html">
+<link rel="canonical" href="article.amp.html" />
 ```
+
 [/tip]
 
 ここで、ページを**再読み込み**します。まだ修正すべき多数のエラーがありますが、正規リンクのエラーは表示されなくなりました。
 
-## AMP 属性を指定する
+## AMP 属性の指定
 
 AMP では、ページのルートの `<html>` 要素で属性を指定し、ページを AMP ドキュメントとして宣言する必要があります。
 
@@ -62,22 +64,22 @@ The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 上記のエラーを解決するには、次のように、`<html>` タグに `⚡` 属性を追加します。
 
 ```html
-<html ⚡ lang="en">
+<html ⚡ lang="en"></html>
 ```
 
 ページを再読み込みして、両方のエラーがなくなったことを確認しましょう。
 
-[tip type="note"]
-`⚡` を指定するのがおすすめの方法ですが、次のように、`⚡` 属性の代わりに `amp` 属性を使用することもできます。
+[tip type="note"] `⚡` を指定するのがおすすめの方法ですが、次のように、`⚡` 属性の代わりに `amp` 属性を使用することもできます。
 
 ```html
-<html amp lang="en">
+<html amp lang="en"></html>
 ```
+
 [/tip]
 
-## ビューポートを指定する
+## ビューポートの指定
 
-次は、以下のエラーに対応しましょう。
+次は、以下のエラーを対処しましょう。
 
 <pre class="error-text">
 The mandatory tag 'meta name=viewport' is missing or incorrect.
@@ -88,14 +90,14 @@ AMP にはビューポートの `width` と `minimum-scale` の定義が必要�
 ビューポートに関するエラーを解決するには、次の HTML スニペットを `<head>` タグに追加します。
 
 ```html
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width" />
 ```
 
-`width` と `minimum-scale` に指定する値は、AMP で必須の値です。`initial-scale` の定義は必須ではありませんが、モバイルウェブの開発では指定するのが一般的であり、おすすめします。ビューポートとレスポンシブ デザインについて詳しくは、[ビューポートを設定する](https://developers.google.com/speed/docs/insights/ConfigureViewport)をご覧ください。
+`width` と `minimum-scale` に指定する値は、AMP で必須の値です。`initial-scale` の定義は必須ではありませんが、モバイルウェブの開発では指定するのが一般的であり、おすすめします。ビューポートとレスポンシブデザインについて詳しくは、[ビューポートの設定](https://developers.google.com/speed/docs/insights/ConfigureViewport)をご覧ください。
 
 先ほどと同じように、ページを**再読み込み**して、エラーが消えたかどうか確認しましょう。
 
-## 外部スタイルシートを置き換える
+## 外部スタイルシートの置き換え
 
 次のエラーはスタイルシートの使用に関連しています。
 
@@ -109,13 +111,11 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 <link href="base.css" rel="stylesheet" />
 ```
 
-問題は、これが外部スタイルシートの参照であることです。AMP では、ドキュメントの読み込み時間をできるだけ高速にするために、外部スタイルシートを使用できないようになっています。代わりに、AMP ドキュメントでは、`<style amp-custom></style>` タグを使って、すべてのスタイルシートのルールをインラインで追加する必要があります。
+問題は、これが外部スタイルシートの参照であることです。AMP では、ドキュメントの読み込み時間をできるだけ高速にするために、外部スタイルシートを使用できないようになっています。代わりに、AMP ドキュメントでは、<code><style amp-custom></style></code> タグを使って、すべてのスタイルシートのルールをインラインで追加する必要があります。
 
 ```html
 <style amp-custom>
-
-/* The content from base.css */
-
+  /* The content from base.css */
 </style>
 ```
 
@@ -126,15 +126,11 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 
 ここで再び、ページを**再読み込み**して、スタイルシートに関するエラーが消えたことを確認しましょう。
 
-[tip type="note"]
-インラインのスタイル指定が必須なだけでなく、すべてのスタイル情報について 50 KB というファイルサイズの制限もあります。AMP ページで CSS をインライン化する前に、[SASS](http://sass-lang.com/) などの CSS プリプロセッサを使用して CSS を圧縮してください。
-[/tip]
+[tip type="note"] <strong>注意:</strong> インラインのスタイル指定が必須なだけでなく、すべてのスタイル情報について 50 KB というファイルサイズの制限もあります。AMP ページで CSS をインライン化する前に、[SASS](http://sass-lang.com/) などの CSS プリプロセッサを使用して CSS を圧縮してください。 [/tip]
 
-[tip type="important"]
-AMP ドキュメント全体で style タグは 1 つだけ指定できます。AMP ページで複数の外部スタイルシートを参照している場合は、これらのスタイルシートを 1 セットのルールにまとめる必要があります。AMP で有効な CSS ルールについて詳しくは、[サポートされる CSS](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md) をご覧ください。
-[/tip]
+[tip type="important"] <strong>重要:</strong> AMP ドキュメント全体で style タグは 1 つだけ指定できます。AMP ページで複数の外部スタイルシートを参照している場合は、これらのスタイルシートを 1 セットのルールにまとめる必要があります。AMP で有効な CSS ルールについて詳しくは、[サポートされる CSS](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md) をご覧ください。 [/tip]
 
-## サードパーティの JavaScript を除外する
+## サードパーティ JavaScript の除外
 
 CSS をインライン化することにより、スタイルシートは比較的簡単に AMP に合わせて修正できますが、JavaScript にはこれは当てはまりません。
 
@@ -149,12 +145,10 @@ The tag 'script' is disallowed except in specific forms.
 
 つまり、実際には、以下の場合を除いて、ユーザーが作成した JavaScript やサードパーティの JavaScript は AMP では使用できません。
 
-[tip type="note"]
-ユーザーが作成したスクリプトやサードパーティのスクリプトに対する制限には、次のような例外があります。
+[tip type="note"] ユーザーが作成したスクリプトやサードパーティのスクリプトに対する制限には、次のような例外があります。
 
 1. ページにメタデータを追加するスクリプトや、AMP コンポーネントを設定するスクリプト。これらには、type 属性 `application/ld+json` または `application/json` を指定します。
-2. iframe に含まれるスクリプト。iframe に JavaScript を含める方法は、最後の手段と考えてください。可能な限り、[AMP コンポーネント](../../../../documentation/components/index.html)を使用して JavaScript の機能を置き換えてください。次のセクションでは、最初の AMP コンポーネントについて検討します。
-[/tip]
+2. iframe に含まれるスクリプト。iframe に JavaScript を含める方法は、最終手段と考えてください。可能な限り、[AMP コンポーネント](../../../../documentation/components/index.html)を使用して JavaScript の機能を置き換えてください。次のセクションでは、最初の AMP コンポーネントについて検討します。 [/tip]
 
 外部の [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) ファイルを開いてみましょう。どのようになっていますか。このファイルでは JavaScript コードは空になっていて、次のような情報のコメントのみが含まれているはずです。
 
@@ -179,7 +173,7 @@ use of external JavaScript files.
 
 ここで、ページを**再読み込み**して、スクリプトに関するエラーが消えたことを確認しましょう。
 
-## AMP CSS ボイラープレートを指定する
+## AMP CSS ボイラープレートの指定
 
 以下のエラーでは、ボイラープレート コードがないことを指摘しています。
 
@@ -192,7 +186,63 @@ The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.
 すべての AMP ドキュメントには次のような AMP ボイラープレート コードが必要です。
 
 ```html
-<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<style amp-boilerplate>
+  body {
+    -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+  }
+  @-webkit-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-moz-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-ms-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-o-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }</style
+><noscript
+  ><style amp-boilerplate>
+    body {
+      -webkit-animation: none;
+      -moz-animation: none;
+      -ms-animation: none;
+      animation: none;
+    }
+  </style></noscript
+>
 ```
 
 ドキュメントの `<head>` タグの下部にボイラープレート コードを**追加**します。
@@ -207,13 +257,13 @@ AMP では、メディアの表示に対応するデフォルトの HTML をサ�
 The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
 </pre>
 
-AMP には、`<img>` タグを置き換えるための専用のウェブ コンポーネントとして、[`<amp-img>`](../../../../documentation/components/reference/amp-img.md) タグが用意されています。
+AMP には、`<img>` タグを置き換えるための専用のウェブコンポーネントとして、[`<amp-img>`](../../../../documentation/components/reference/amp-img.md) タグが用意されています。
 
 ```html
 <amp-img src="mountains.jpg"></amp-img>
 ```
 
-`<img>` タグを上記の [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) タグで**置き換えて**から、検証ツールを再度実行してください。新しいエラーがいくつか発生します。
+`<img>` タグを上記の [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) タグで**置き換えて**から、Validator を再度実行してください。新しいエラーがいくつか発生します。
 
 <pre class="error-text">
 Layout not supported: container
@@ -244,7 +294,7 @@ AMP のレイアウト システムでは、ページ上の要素をさまざま
 <amp-img src="mountains.jpg" width="266" height="150"></amp-img>
 ```
 
-ページを更新して、検証ツールで確認してみましょう。エラーが表示されなくなるはずです。
+ページを更新して、Validator で確認してみましょう。エラーが表示されなくなるはずです。
 
 これで有効な AMP ドキュメントになりましたが、ページ上の配置が不自然なため、画像の見栄えがよくありません。デフォルトでは、[`amp-img`](../../../../documentation/components/reference/amp-img.md) の高さと幅を指定した場合、AMP は指定に合わせてサイズを修正します。しかし、どのような画面サイズでも、AMP が画像を*レスポンシブ*に拡大縮小してページに合わせられたら、最適でしょう。
 
@@ -255,34 +305,94 @@ AMP では、指定された幅と高さから要素のアスペクト比を算�
 画像の拡大縮小とサイズ変更が行われるように、layout 属性を `responsive` に**設定**しましょう。
 
 ```html
-<amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+<amp-img
+  src="mountains.jpg"
+  layout="responsive"
+  width="266"
+  height="150"
+></amp-img>
 ```
 
 これで、画像が正しいアスペクト比になり、画面の幅にレスポンシブに収まりました。
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="画像がレスポンシブになった") }}
 
-[tip type="read-on"]
-AMP レイアウト システムについて詳しくは、[AMP レイアウト仕様](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md)をご覧ください。
-[/tip]
+[tip type="read-on"] <strong>参考情報:</strong> AMP レイアウトシステムについて詳しくは、[AMP レイアウトの仕様](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md)をご覧ください。 [/tip]
 
-## 完了
+## エラーをすべて解決！
 
 AMP ドキュメントは次のようになります。
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width" />
 
-    <link rel="canonical" href="/article.html">
-    <link rel="shortcut icon" href="amp_favicon.png">
+    <link rel="canonical" href="/article.html" />
+    <link rel="shortcut icon" href="amp_favicon.png" />
 
     <title>News Article</title>
 
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
     <style amp-custom>
       body {
         width: auto;
@@ -312,15 +422,21 @@ AMP ドキュメントは次のようになります。
     <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
-    <header>
-      News Site
-    </header>
+    <header>News Site</header>
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
 
-      <amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+      <amp-img
+        src="mountains.jpg"
+        layout="responsive"
+        width="266"
+        height="150"
+      ></amp-img>
     </article>
   </body>
 </html>

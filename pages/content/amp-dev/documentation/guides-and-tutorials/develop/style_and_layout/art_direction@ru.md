@@ -1,17 +1,17 @@
 ---
-"$title": Адаптивные изображения с набором параметров, размерами и высотой
-"$order": '4'
+'$title': Адаптивные изображения с набором параметров, размерами и высотой
+$order: 4
 description: Используйте атрибут srcset для управления ассетами элемента на основании различных медиа-выражений. В частности, используйте его для всех тегов amp-img, чтобы указывать, какие...
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## srcset
@@ -21,16 +21,20 @@ contributors:
 В этом простом примере `srcset` указывает, какое изображение использовать в зависимости от ширины экрана. Дескриптор `w` сообщает браузеру ширину каждого изображения в списке:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   layout="responsive"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
-            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w">
+            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
+>
 </amp-img>
 ```
+
 [/example]
 
 [tip type="note"] **ПРИМЕЧАНИЕ.** AMP поддерживает srcset с дескриптором `w` во всех браузерах. [/tip]
@@ -44,16 +48,20 @@ contributors:
 Рассмотрим следующий пример:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
             {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
-  sizes="(min-width: 650px) 50vw, 100vw">
+  sizes="(min-width: 650px) 50vw, 100vw"
+>
 </amp-img>
 ```
+
 [/example]
 
 Атрибут `sizes` указывает, что ширина элемента должна быть 50% от размера области просмотра, когда размер области просмотра составляет 650 пикселей или больше. Например, если размер области просмотра составляет 800 пикселей, ширина элемента становится равной 400 пикселям. Затем браузер выбирает из `srcset` ресурс, соответствующий 400 пикселям (предполагая, что DPR равно 1), которым в данном случае является `hummingbird-narrow.jpg` (320 пикселей).
@@ -74,14 +82,18 @@ contributors:
 Пример:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="AMP"
+<amp-img
+  alt="AMP"
   src="{{server_for_email}}/static/inline-examples/images/amp.jpg"
   width="320"
   height="256"
-  heights="(min-width:500px) 200px, 80%">
+  heights="(min-width:500px) 200px, 80%"
+>
 </amp-img>
 ```
+
 [/example]
 
 В данном примере высота элемента по умолчанию будет составлять 80% от ширины, но в областях просмотра шире `500px` она будет ограничена значением `200px`.

@@ -1,8 +1,8 @@
 ---
-"$title": Przygotowania
-"$order": '0'
+'$title': Przygotowania
+$order: 0
 description: '"Do rozpoczęcia tego samouczka potrzebne są: - Podstawowa wiedza o HTML, CSS i JavaScript - Wybrana przez Ciebie przeglądarka - Edytor tekstów..."'
-"$parent": "/content/docs/interaction_dynamic/interactivity.md"
+'$parent': '/content/docs/interaction_dynamic/interactivity.md'
 ---
 
 ## Wymagania wstępne

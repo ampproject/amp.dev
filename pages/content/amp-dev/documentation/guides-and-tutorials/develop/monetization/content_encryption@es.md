@@ -1,7 +1,9 @@
 ---
-$title: Proteja el contenido de su suscripción mediante el cifrado del lado del cliente
-$titles:
-  teaser: Proteja el contenido de su suscripción mediante el cifrado del lado del cliente.
+formats:
+  - websites
+'$title': Proteja el contenido de su suscripción mediante el cifrado del lado del cliente
+'$titles':
+  teaser: Protect your subscription content with client-side encryption.
 $order: 10
 description: Resuelva los problemas de cifrado de contenido implementando la validación de los suscriptores premium y la desencriptación de contenido en el lado del cliente. ¡Con esta solución, los usuarios con acceso premium podrán desencriptar contenido sin necesidad de cargar una nueva página o esperar a que responda un backend!
 author: CrystalOnScript
@@ -21,7 +23,7 @@ Resuelva los problemas implementando la validación de suscriptores premium y el
 
 Para implementar la desencriptación en el lado del cliente, se combinará la criptografía de clave simétrica y de clave pública de la siguiente manera:
 
-1. Cree una clave simétrica aleatoria para cada documento, permitiendo que cada documento tenga una clave *única*. {{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='Unique keys for each unique document.') }}
+1. Cree una clave simétrica aleatoria para cada documento, permitiendo que cada documento tenga una clave _única_. {{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='Unique keys for each unique document.') }}
 2. Cifre el contenido premium con la clave simétrica de su documento. {{ image('/static/img/docs/guides/cse/cse3.jpg', 130, 243, align='', layout='intrinsic', alt='Use the document key to encrypt premium content.') }} La clave es simétrica para permitir que la misma clave cifre y descifre el contenido. {{ image('/static/img/docs/guides/cse/cse4.jpg', 188, 141, align='', layout='intrinsic', alt='The same key that encrypts the document also decrypts it.') }}
 3. Cifre la clave del documento con una clave pública, utilizando un protocolo de [cifrado híbrido ](https://en.wikipedia.org/wiki/Hybrid_cryptosystem)para cifrar las claves simétricas. {{ image('/static/img/docs/guides/cse/cse5.jpg', 309, 114, align='', layout='intrinsic', alt='A hybrid encryption protocol encrypts the symmetric key with a public key.') }}
 4. Con los componentes [`<amp-subscriptions>`](https://amp.dev/documentation/components/amp-subscriptions/) y/o [`<amp-subscriptions-google>`](https://amp.dev/documentation/components/amp-subscriptions-google/?format=websites) almacene la clave del documento cifrado dentro del documento de AMP, junto con el contenido premium cifrado. {{ image('/static/img/docs/guides/cse/cse6.jpg', 264, 261, align='', layout='intrinsic', alt='Both keys are stored inside of the AMP document.') }}
@@ -41,7 +43,7 @@ Siga siguientes los pasos para integrar la administración del cifrado de AMP co
 
 ## Paso 1: crear un par de claves públicas o privadas
 
-Para cifrar la clave simétrica del documento, debe tener su propio par de claves públicas o privadas. El cifrado de claves públicas es un protocolo de [cifrado híbrido](https://en.wikipedia.org/wiki/Hybrid_cryptosystem), específicamente es un método de cifrado asimétrico ECIES de [curva elíptica P-256](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)) con un método de cifrado simétrico [AES-GCM](https://tools.ietf.org/html/rfc5288) (128-bits).
+Para cifrar la clave simétrica del documento, debe tener su propio par de claves públicas o privadas. El cifrado de claves públicas es un protocolo de [cifrado híbrido](https://en.wikipedia.org/wiki/Hybrid_cryptosystem), específicamente es un método de cifrado asimétrico ECIES de [curva elíptica P-256](<https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)>) con un método de cifrado simétrico [AES-GCM](https://tools.ietf.org/html/rfc5288) (128-bits).
 
 Además, es necesario que la administración de claves públicas se realice con [Tink](https://github.com/google/tink) utilizando [ este tipo de clave asimétrica](https://github.com/subscriptions-project/encryption/blob/617f0911c9870dae900a232e2dc8ee9196677a89/golang/vendor/github.com/google/tink/go/hybrid/hybrid_key_templates.go#L32). Para crear su par de claves públicas y privadas, utilice cualquiera de los siguientes:
 

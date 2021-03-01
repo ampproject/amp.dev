@@ -38,7 +38,7 @@ const ROADMAP_DIRECTORY_PATH = utils.project.absolute('pages/shared/data');
 const ALLOWED_ISSUE_TYPES = ['Type: Status Update', 'Status Update'];
 
 // RegEx to extract date from issue title
-const STATUS_UPDATE_REGEX = /(\d\d\d\d)-(\d*)-(\d*)/;
+const STATUS_UPDATE_REGEX = /(\d\d\d\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\d|3[01])/;
 // Match any amp-component tag. Eg. <amp-img>
 const AMP_COMPONENT_REGEX = /\s(<amp-\S*>)/g;
 // Group markdown text into text blocks starting with h1 - h3
@@ -133,7 +133,7 @@ async function getMetaForWorkigGroup(workingGroup) {
     log.warn(`.. ${workingGroup.name} - METADATA.yaml not found`);
   }
   try {
-    meta = yaml.safeLoad(meta);
+    meta = yaml.load(meta);
   } catch (e) {
     log.error(
       `.. ${workingGroup.name} - Failed loading ${DEFAULT_ORGANISATION}` +

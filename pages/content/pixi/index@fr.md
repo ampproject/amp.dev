@@ -1,23 +1,23 @@
 ---
-$title: Guide d'expérience de page AMP
+"$title": "Guide d'expérience de page AMP"
 staticText:
   inputBar:
     headline: Analyser votre page AMP
-    fieldPlaceholder: Saisir l'URL
+    fieldPlaceholder: "Saisir l'URL"
     button: Analyser
   infoDialog:
     open: En savoir plus
     close: Fermer
   scrollToTop: Défiler vers le haut
   shareDialog:
-    headline: Copier et coller l'URL
+    headline: "Copier et coller l'URL"
     close: Fermer la navigation
     copyToClipboard: Copier dans le presse-papier
     success: Réussi
   statusIntro:
     headline: Veuillez patienter
     headline2: Nous analysons actuellement votre page
-    loadingCopy: ${finishedChecks} vérifications terminées sur ${totalChecks}
+    loadingCopy: "${finishedChecks} vérifications terminées sur ${totalChecks}"
     buttonShare: Partager
     buttonInvestigate: Enquêter
   coreWebVitals:
@@ -26,7 +26,7 @@ staticText:
     fieldData: Données de terrain
     labData: Données de laboratoire
     fieldDataExplainer: Ces données sont mises à jour quotidiennement pour la période glissante de 28 jours.
-    labDataExplainer: Ces données proviennent de tests synthétiques et n'ont aucun impact sur la page.
+    labDataExplainer: "Ces données proviennent de tests synthétiques et n'ont aucun impact sur la page."
     loadingSpeed: Vitesse de chargement
     interactivity: Interactivité
     visualStability: Stabilité visuelle
@@ -35,9 +35,9 @@ staticText:
     resultLabels:
       scorePercentile: Score au 75e centile
       score: Score
-      opportunity: Possibilité d'amélioration
-      pagesPassing: Défilement de pages
-      action: Passer à l'action
+      opportunity: "Possibilité d'amélioration"
+      pagesPassing: Défilement des visites
+      action: "Passer à l'action"
   additionalChecks:
     headline: Contrôles supplémentaires
     safeBrowsing: Navigation sécurisée
@@ -46,7 +46,7 @@ staticText:
     intrusiveInterstitials: Interstitiels intrusifs
     checkManually: Vérifier manuellement
   recommendations:
-    headline: Passez à l'action. Améliorez votre site AMP
+    headline: "Passez à l'action. Améliorez votre site AMP"
     nextAdvice: Conseil suivant
   tags:
     all: Tout
@@ -56,12 +56,12 @@ scriptText:
   status:
     analyzing: Analyse en cours
     calculating: Calcul en cours
-    error: L'analyse a échoué
+    error: "L'analyse a échoué"
     failed: Échoué
     passed: Réussi
     passedAddition: réussi
     none: Aucune
-    nothingToDo: Pas d'action requise! &#x1F389;
+    nothingToDo: "Pas d'action requise! &#x1F389;"
     fileAnIssue: Signaler un problème avec AMP
     recommendation: recommandation
     recommendations: recommandations

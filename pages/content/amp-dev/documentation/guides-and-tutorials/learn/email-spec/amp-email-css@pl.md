@@ -1,8 +1,8 @@
 ---
-"$title": CSS obsługiwany przez AMP dla poczty e-mail
-order: '5'
+'$title': CSS obsługiwany przez AMP dla poczty e-mail
+$order: 5
 formats:
-- email
+  - email
 teaser:
   text: Ten dokument przedstawia w zarysie funkcje CSS obecnie obsługiwane w wiadomościach e-mail AMP.
 toc: 'true'
@@ -327,13 +327,13 @@ Stosowanie znaczników `<link rel="stylesheet" href="...">` w wiadomości e-mail
 
 Następujące właściwości CSS mają dodatkowe ograniczenia:
 
-Właściwość | Ograniczenia
---- | ---
-[`cursor`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor) | Jedyne dozwolone wartości to `pointer` i `initial`.
-[`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) | Konstruktor `url()` jest niedozwolony.
-[`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) | Animować można jedynie właściwości `opacity`, `transform`, `visibility` i `offset-distance`.
-[`visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) | Jedyne dozwolone wartości to `hidden`, `visible` i `initial`.
-[`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index) | Dozwolone są jedynie wartości z zakresu od -100 do 100.
+| Właściwość                                                                  | Ograniczenia                                                                                 |
+| --------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| [`cursor`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor)         | Jedyne dozwolone wartości to `pointer` i `initial`.                                          |
+| [`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)         | Konstruktor `url()` jest niedozwolony.                                                       |
+| [`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) | Animować można jedynie właściwości `opacity`, `transform`, `visibility` i `offset-distance`. |
+| [`visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) | Jedyne dozwolone wartości to `hidden`, `visible` i `initial`.                                |
+| [`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)       | Dozwolone są jedynie wartości z zakresu od -100 do 100.                                      |
 
 ## Reguły at-rules <a name="at-rules"></a>
 
@@ -348,14 +348,14 @@ Czcionki niestandardowe **nie** są obsługiwane w AMP dla poczty e-mail.
 Lista funkcji [media](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#Media_features) obsługiwanych w celu warunkowego stosowania reguł poprzez zapytania `@media`.
 
 - [`device-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-width)
-    - `max-device-width`
-    - `min-device-width`
+  - `max-device-width`
+  - `min-device-width`
 - [`hover`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover)
 - [`orientation`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/orientation)
 - [`pointer`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer)
 - [`resolution`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/resolution)
-    - `max-resolution`
-    - `min-resolution`
+  - `max-resolution`
+  - `min-resolution`
 - [`width`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/width)
-    - `max-width`
-    - `min-width`
+  - `max-width`
+  - `min-width`

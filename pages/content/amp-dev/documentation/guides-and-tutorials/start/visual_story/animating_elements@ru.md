@@ -1,9 +1,9 @@
 ---
-"$title": Анимация элементов
-"$order": '6'
+'$title': Анимация элементов
+$order: 6
 description: Вы можете сделать веб-историю еще лучше, снабдив элементы внутри страницы начальной анимацией. Например, вы можете заставить свой заголовок лететь из...
 components:
-- anim
+  - anim
 author: bpaduch
 ---
 
@@ -133,10 +133,12 @@ author: bpaduch
 ```html
 <amp-story-page id="my-page">
   ...
-  <p class="my-element"
-      animate-in="fly-in-left"
-      animate-in-delay="0.3s"
-      animate-in-duration="0.5s">
+  <p
+    class="my-element"
+    animate-in="fly-in-left"
+    animate-in-delay="0.3s"
+    animate-in-duration="0.5s"
+  >
     I'm going to fly into the page from the left!
   </p>
 </amp-story-page>
@@ -150,21 +152,33 @@ author: bpaduch
 <amp-story-page id="page5">
   <amp-story-grid-layer template="vertical" class="noedge">
     <div class="wrapper">
-      <amp-img src="assets/cat.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/cat.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/dog.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/dog.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/bird.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/bird.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/rabbit.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/rabbit.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
     </div>
   </amp-story-grid-layer>
@@ -183,9 +197,9 @@ author: bpaduch
 Начнем с входной анимации текста баннера, чтобы он «влетал» на страницу справа. Добавьте в элемент `<p>` атрибут `animate-in="whoosh-in-right"`следующим образом:
 
 ```html
-<p class="banner-text"
-  animate-in="whoosh-in-right">
-Pets can lower your stress levels!</p>
+<p class="banner-text" animate-in="whoosh-in-right">
+  Pets can lower your stress levels!
+</p>
 ```
 
 Перезагрузите страницу истории в браузере и убедитесь, что баннер «въезжает» на страницу.
@@ -193,25 +207,37 @@ Pets can lower your stress levels!</p>
 Затем давайте сделаем так, чтобы все изображения постепенно проявлялись. Добавьте во все элементы [`amp-img`](../../../../documentation/components/reference/amp-img.md) атрибут `animate-in="fade-in"`, чтобы код выглядел так:
 
 ```html
-<amp-img src="assets/cat.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/cat.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/dog.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/dog.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/bird.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/bird.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/rabbit.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/rabbit.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
 ```
 
@@ -220,29 +246,41 @@ Pets can lower your stress levels!</p>
 Давайте отложим появление первого изображения так, чтобы оно начиналось приблизительно к завершению «влета» текстового баннера — скажем, на отметке 0,4 с. Что касается остальных трех изображений, появление каждого из них мы будем начинать через 0,2 секунды после начала анимации появления предыдущего изображения. В каждый элемент [`amp-img`](../../../../documentation/components/reference/amp-img.md) добавьте атрибут `animate-in-delay=""` с соответствующим значением задержки. Ваш код должен выглядеть так:
 
 ```html
-<amp-img src="assets/cat.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="0.4s">
+<amp-img
+  src="assets/cat.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="0.4s"
+>
 </amp-img>
-<amp-img src="assets/dog.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="0.6s">
+<amp-img
+  src="assets/dog.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="0.6s"
+>
 </amp-img>
-<amp-img src="assets/bird.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay=".8s">
+<amp-img
+  src="assets/bird.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay=".8s"
+>
 </amp-img>
-<amp-img src="assets/rabbit.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="1s">
+<amp-img
+  src="assets/rabbit.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="1s"
+>
 </amp-img>
 ```
 

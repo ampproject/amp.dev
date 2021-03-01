@@ -1,17 +1,17 @@
 ---
-"$title": Заполнители и резервные элементы
-"$order": '3'
+'$title': Заполнители и резервные элементы
+$order: 3
 descriptions: "In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible."
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 Чтобы придерживаться стандартов ощущаемой производительности и концепции прогрессивного улучшения, при создании AMP-ресурсов рекомендуется указывать заполнители и резервные элементы везде, где это возможно.
@@ -23,17 +23,23 @@ contributors:
 Элемент, помеченный атрибутом `placeholder`, действует как заполнитель для своего родительского элемента AMP. Элемент `placeholder` должен всегда быть прямым потомком элемента AMP. Элемент, помеченный как `placeholder`, будет всегда заполнять (`fill`) родительский элемент AMP.
 
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
+
 ```html
-<amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
+<amp-anim
+  src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
   layout="responsive"
   width="400"
-  height="300">
-  <amp-img placeholder
+  height="300"
+>
+  <amp-img
+    placeholder
     src="{{server_for_email}}/static/inline-examples/images/wavepool.png"
-    layout="fill">
+    layout="fill"
+  >
   </amp-img>
 </amp-anim>
 ```
+
 [/example]
 
 По умолчанию заполнитель элемента AMP отображается немедленно, даже если ресурсы элемента AMP не были загружены или инициализированы. Когда элемент AMP будет готов, он, как правило, скрывает заполнитель и показывает свое содержимое.
@@ -48,13 +54,14 @@ contributors:
 - если контент не удалось загрузить (например, твит был удален)
 - если тип изображения не поддерживается (например, WebP поддерживается не во всех браузерах)
 
-Вы можете установить атрибут `fallback` для *любого* элемента HTML, а не только для элементов AMP. Элемент `fallback` должен быть прямым потомком элемента AMP.
+Вы можете установить атрибут `fallback` для _любого_ элемента HTML, а не только для элементов AMP. Элемент `fallback` должен быть прямым потомком элемента AMP.
 
 ##### Пример: неподдерживаемая функция
 
 В следующем примере мы используем атрибут `fallback`, чтобы сообщить пользователю, что браузер не поддерживает определенную функцию:
 
 [example preview="inline" playground="true" imports="amp-video:0.1"]
+
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -66,6 +73,7 @@ contributors:
   </div>
 </amp-video>
 ```
+
 [/example]
 
 ##### Пример: выдача изображений разных форматов
@@ -73,20 +81,26 @@ contributors:
 В следующем примере мы используем атрибут `fallback`, чтобы дать браузеру инструкцию использовать файл JPEG, если формат WebP не поддерживается.
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="Mountains"
+<amp-img
+  alt="Mountains"
   width="550"
   height="368"
   layout="responsive"
-  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
-  <amp-img alt="Mountains"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp"
+>
+  <amp-img
+    alt="Mountains"
     fallback
     width="550"
     height="368"
     layout="responsive"
-    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"
+  ></amp-img>
 </amp-img>
 ```
+
 [/example]
 
 ## Взаимодействие заполнителей и резервных элементов

@@ -1,10 +1,14 @@
 ---
-$title: Administración de las solicitudes y el formato URL para el caché de AMP
+'$title': Administración de las solicitudes y el formato URL para el caché de AMP
 $order: 9
-toc: false
+toc: 'false'
+formats:
+  - websites
+  - stories
+  - ads
 author: Gregable
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 En este documento aprenderá sobre el formato URL para el caché de AMP y cómo administrar las solicitudes.
@@ -15,13 +19,10 @@ Cuando sea posible, en el caché de AMP de Google se creará un subdominio para 
 
 Puede utilizar esta calculadora de URL para convertir una URL en una versión del caché de AMP:
 
-<div>
-<amp-iframe title="AMP Cache tool" height="104" layout="fixed-height" sandbox="allow-scripts" src="/static/samples/files/amp-url-converter.html?url=https://amp.dev/index.amp.html">
-  <div placeholder></div>
-</amp-iframe>
-</div>
+<div><amp-iframe title="AMP Cache tool" height="104" layout="fixed-height" sandbox="allow-scripts" src="/static/samples/files/amp-url-converter.html?url=https://amp.dev/index.amp.html">
+  <div placeholder></div></amp-iframe></div>
 
-[tip type="tip"] Utilice el módulo [Node.js](https://nodejs.org) de [AMP-Toolbox Cache URL](https://github.com/ampproject/amp-toolbox/tree/master/packages/cache-url)  para traducir una URL desde su origen al formato URL para el caché de AMP. [/tip]
+[tip type="tip"] Utilice el módulo [Node.js](https://nodejs.org) de [AMP-Toolbox Cache URL](https://github.com/ampproject/amp-toolbox/tree/master/packages/cache-url) para traducir una URL desde su origen al formato URL para el caché de AMP. [/tip]
 
 En este documento se describe:
 
@@ -48,15 +49,15 @@ Todos los cachés de AMP se registran en un archivo JSON, que se encuentra en l�
 },
 ```
 
-Un caché de AMP presenta los registros del dominio específicos hechos por `cacheDomain`. En este caso, el dominio es  `cdn.ampproject.org`.
+Un caché de AMP presenta los registros del dominio específicos hechos por `cacheDomain`. En este caso, el dominio es `cdn.ampproject.org`.
 
 Este documento utiliza como ejemplo la URL `cdn.ampproject.org` pero otros cachés normalmente utilizan una estructura URL similar.
 
 ## Prefijo del nombre de dominio
 
-Un caché de AMP presenta los documentos en una URL modificada, como `example-com.cdn.ampproject.org`. Por ejemplo, el primer componente con puntos en el nombre de dominio original,  `example.com`, se convierte en `example-com`. Este documento se refiere a esta cadena sin puntos, `example-com`, como el “prefijo de dominio”. A continuación, consulte el algoritmo que realiza esta transformación.
+Un caché de AMP presenta los documentos en una URL modificada, como `example-com.cdn.ampproject.org`. Por ejemplo, el primer componente con puntos en el nombre de dominio original, `example.com`, se convierte en `example-com`. Este documento se refiere a esta cadena sin puntos, `example-com`, como el “prefijo de dominio”. A continuación, consulte el algoritmo que realiza esta transformación.
 
-No se utilizan varios componentes con puntos en este prefijo, como  `example.com.cdn.ampproject.org`, debido a la restricción de los certificados https (TLS), [RFC 2818](https://tools.ietf.org/html/rfc2818#section-3.1):
+No se utilizan varios componentes con puntos en este prefijo, como `example.com.cdn.ampproject.org`, debido a la restricción de los certificados https (TLS), [RFC 2818](https://tools.ietf.org/html/rfc2818#section-3.1):
 
 ```
 Names may contain the wildcard character * which is considered to match any single domain name component or component fragment. E.g., *.a.com matches foo.a.com but not bar.foo.a.com.
@@ -78,7 +79,7 @@ El algoritmo básico para convertir un dominio del editor en un prefijo de domin
 2. Reemplace cualquier carácter "`-`" (guión) en la salida del paso 1 con "`--`" (dos guiones).
 3. Reemplace cualquier carácter "`.`" (punto) en la salida del paso 2 con "`-`" (guión).
 4. Si la salida del paso 3 tiene un "`-`" (guión) en las posiciones 3 y 4, entonces en la salida del paso 3 agregue un prefijo "`0-`" y agregue un sufijo "`-0`". Consulte el [#26205](https://github.com/ampproject/amphtml/issues/26205) para conocer los antecedentes.
-5. Punycode codifica la salida del paso 3. Consulte  [RFC 3492](https://tools.ietf.org/html/rfc3492).
+5. Punycode codifica la salida del paso 3. Consulte [RFC 3492](https://tools.ietf.org/html/rfc3492).
 
 Estos son algunos ejemplos del algoritmo básico:
 

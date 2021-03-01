@@ -62,6 +62,7 @@ const paths = {
   INLINE_EXAMPLES_DEST: absolute('dist/inline-examples'),
   PAGES_SRC: absolute('pages/content/amp-dev'),
   STATICS_DEST: absolute(`${DIST_DIR}/static`),
+  BENTO_COMPONENTS_LIST: absolute(`${DIST_DIR}/static/bento-components.json`),
   BUILD_INFO: absolute('platform/config/build-info.yaml'),
   GUIDES_PATH_RELATIVE: '/content/amp-dev/documentation/guides-and-tutorials/',
   RECENT_GUIDES_DEST: 'pages/shared/data/recent-guides.yaml',

@@ -1,13 +1,13 @@
 ---
-"$title": Katkı Sağlama Belgelemesi
-"$order": '0'
-"$hidden": 'true'
+'$title': Katkı Sağlama Belgelemesi
+$order: 0
+'$hidden': 'true'
 description: amp.dev katkı sağlama belgelemesine giriş
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 

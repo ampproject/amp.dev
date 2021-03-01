@@ -1,6 +1,6 @@
 ---
-"$title": С чего начать историю
-"$order": '3'
+'$title': С чего начать историю
+$order: 3
 description: Веб-история представлена в виде компонента amp-story, который служит контейнером для всех входящих в историю страниц. Компонент amp-story также отвечает за...
 author: bpaduch
 ---
@@ -13,8 +13,11 @@ author: bpaduch
 
 ```html
 <head>
-<script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+  <script
+    async
+    custom-element="amp-story"
+    src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+  ></script>
 </head>
 ```
 
@@ -22,8 +25,7 @@ author: bpaduch
 
 ```html
 <body>
-  <amp-story standalone>
-  </amp-story>
+  <amp-story standalone> </amp-story>
 </body>
 ```
 
@@ -41,11 +43,13 @@ author: bpaduch
 Давайте добавим эти атрибуты в наш тег [`amp-story`](../../../../documentation/components/reference/amp-story.md):
 
 ```html
-<amp-story standalone
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-    poster-portrait-src="assets/cover.jpg">
+<amp-story
+  standalone
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+></amp-story>
 ```
 
 Помимо этих обязательных атрибутов, вы можете применять другие атрибуты. Дополнительную информацию см. в разделе [атрибуты](../../../../documentation/components/reference/amp-story.md#attributes) в справочной документации [`amp-story`](../../../../documentation/components/reference/amp-story.md).

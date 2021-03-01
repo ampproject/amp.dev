@@ -16,11 +16,13 @@
 require('module-alias/register');
 
 const DEFAULT_VERSION = '0.1';
-const LATEST_VERSION = 'latest';
 const VERSION_PATTERN = /\d\.\d/;
+const LATEST_VERSION = 'latest';
 
 const {GitHubImporter, DEFAULT_REPOSITORY} = require('./gitHubImporter');
 const {BUILT_IN_COMPONENTS} = require('@lib/common/AmpConstants.js');
+const {BENTO_COMPONENTS_LIST} = require('@lib/utils/project.js').paths;
+const fs = require('fs').promises;
 const path = require('path');
 const del = require('del');
 const validatorRules = require('@ampproject/toolbox-validator-rules');
@@ -60,24 +62,63 @@ class ComponentReferenceImporter {
     this.extensions = await this._listExtensions();
 
     log.start('Beginning to import extension docs ...');
-    await this._importExtensions();
+    const importedExtensions = (await this._importExtensions()).flat();
+    const bentoComponents = new Map();
+    for (const growDoc of importedExtensions) {
+      if (growDoc && growDoc.bento) {
+        bentoComponents.set(growDoc.title, {
+          name: growDoc.title,
+          path:
+            growDoc.servingPath ||
+            `/documentation/components/${growDoc.title}-v${growDoc.version}/`,
+          version: growDoc.version,
+        });
+      }
+    }
+    for (const growDoc of importedExtensions) {
+      const bentoComponent = bentoComponents.get(growDoc.title);
+      if (bentoComponent) {
+        growDoc.bentoPath = bentoComponent.path;
+      }
+      try {
+        await growDoc.save(growDoc.path);
+      } catch (e) {
+        log.error(`Failed to write ${growDoc.path}`, e);
+      }
+    }
+    fs.writeFile(
+      BENTO_COMPONENTS_LIST,
+      JSON.stringify(Array.from(bentoComponents.values), null, 2),
+      'utf-8'
+    );
+
     log.complete('Finished importing extension docs!');
   }
 
   /**
    * Fetches the list of available extensions from GitHub
-   * @return {Promise} [description]
+   * @return {Promise}
    */
   async _listExtensions() {
     let extensions = await this.githubImporter_.fetchJson('extensions');
     // As inside /extensions each component has its own folder, filter
-    // down by directory
+    // down by directory. At the same time filter out directories which
+    // are safe to ignore as they are not holding a public-facing extension
+    // and check if only some components are configured to be imported
     extensions = extensions[0].filter((file) => {
-      if (!config.only.length) {
-        return file.type === 'dir';
+      if (file.type !== 'dir') {
+        return false;
       }
 
-      return file.type === 'dir' && config.only.includes(file.name);
+      if (config.only.length && !config.only.includes(file.name)) {
+        return false;
+      }
+
+      if (file.name.endsWith('-impl') || file.name.endsWith('-polyfill')) {
+        return false;
+      }
+
+      return true;
     });
 
     return extensions;
@@ -99,7 +140,7 @@ class ComponentReferenceImporter {
       imports.push(this._importBuiltIn(builtIn));
     }
 
-    await Promise.all(imports);
+    return Promise.all(imports);
   }
 
   async _importBuiltIn(name) {
@@ -110,6 +151,7 @@ class ComponentReferenceImporter {
       }),
       version: DEFAULT_VERSION,
       versions: [DEFAULT_VERSION],
+      latestVersion: DEFAULT_VERSION,
       githubPath: path.join(BUILT_IN_PATH, `${name}.md`),
     });
   }
@@ -169,10 +211,19 @@ class ComponentReferenceImporter {
    * @return {Promise}
    */
   async _listExtensionFiles(extension) {
-    const root = await this.githubImporter_.listDirectory(extension.path);
+    const fetchFromMaster = config.fetchFromMaster.includes(extension.name);
+    const root = await this.githubImporter_.listDirectory(
+      extension.path,
+      DEFAULT_REPOSITORY,
+      fetchFromMaster
+    );
     let tree = root.map((file) => {
       if (file.match(VERSION_PATTERN)) {
-        return this.githubImporter_.listDirectory(file);
+        return this.githubImporter_.listDirectory(
+          file,
+          DEFAULT_REPOSITORY,
+          fetchFromMaster
+        );
       }
 
       return Promise.resolve([file]);
@@ -224,16 +275,27 @@ class ComponentReferenceImporter {
     const tag = this._findExtensionTag(extension.name) || {};
     const script = this._findExtensionScript(extension.name) || {};
 
+    // Determine the latest version based on the validator rules
     spec.version = spec.version.filter((version) => version != LATEST_VERSION);
     spec.version = spec.version.sort((version1, version2) => {
       return parseFloat(version1) > parseFloat(version2);
     });
+    spec.latestVersion = spec.version[spec.version.length - 1];
 
-    const latestVersion = spec.version[spec.version.length - 1];
+    // Parse all available versions from the file system (even unreleased ones)
+    const versions = new Set();
+    for (const file of extension.files) {
+      const path = file.substring(`extensions/${spec.name}/`.length);
+      const match = path.match(/^(\d+\.\d+)\//);
+      if (match) {
+        versions.add(match[1]);
+      }
+    }
+    spec.version = Array.from(versions);
 
     // Skip versions for which there is no dedicated doc
     spec.version = spec.version.filter((version) => {
-      return !!this._getGitHubPath(extension, version, latestVersion);
+      return !!this._getGitHubPath(extension, version);
     });
 
     const extensionMetas = [];
@@ -245,7 +307,8 @@ class ComponentReferenceImporter {
         tag: tag,
         version: version,
         versions: spec.version,
-        githubPath: this._getGitHubPath(extension, version, latestVersion),
+        latestVersion: spec.latestVersion,
+        githubPath: this._getGitHubPath(extension, version),
       });
     }
 
@@ -259,29 +322,26 @@ class ComponentReferenceImporter {
    * @param  {String} latestVersion
    * @return {String|null}
    */
-  _getGitHubPath(extension, version, latestVersion) {
+  _getGitHubPath(extension, version) {
     let gitHubPath;
     const fileName = `${extension.name}.md`;
 
-    // Best guess: if the version equals the latest version the documentation
-    // is located in the root of the extension directory
-    if (version == latestVersion) {
-      gitHubPath = path.join(extension.path, fileName);
-      if (extension.files.includes(gitHubPath)) {
-        return gitHubPath;
-      }
-    }
-
-    // The documentation for other versions is most likely located in
-    // its version directory
+    // Check if there is a directory for the version of the component that
+    // holds the fitting documentation
     gitHubPath = path.join(extension.path, version, fileName);
     if (extension.files.includes(gitHubPath)) {
       return gitHubPath;
     }
 
+    // Otherwise assume the doc in the extension root is valid
+    // for all versions of this component (Full AMP and Bento)
+    gitHubPath = path.join(extension.path, fileName);
+    if (extension.files.includes(gitHubPath)) {
+      return gitHubPath;
+    }
+
     // If no file can be found at the first location it means the extension
-    // doesn't follow the pattern in which the latest version documented
-    // is in the root of the extension
+    // doesn't follow the above patterns and needs to be fixed manually
     log.warn(`No document found for ${extension.name} v${version}`);
     return null;
   }
@@ -324,17 +384,7 @@ class ComponentReferenceImporter {
     }
 
     const docPath = path.join(DESTINATION_BASE_PATH, fileName);
-
-    try {
-      const doc = new ComponentReferenceDocument(
-        docPath,
-        fileContents,
-        extension
-      );
-      await doc.save(docPath);
-    } catch (e) {
-      log.error('Could not create doc for: ', extension.name, e);
-    }
+    return new ComponentReferenceDocument(docPath, fileContents, extension);
   }
 }
 

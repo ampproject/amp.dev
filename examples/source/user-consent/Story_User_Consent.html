@@ -14,7 +14,7 @@ author: sebastianbenz
 -->
 <!-- -->
 <!doctype html>
-<html ⚡ lang="en"
+<html ⚡ lang="en">
 <head>
   <meta charset="utf-8">
   <link rel="canonical" href="<% canonical %>">
@@ -70,7 +70,7 @@ author: sebastianbenz
       text-align: center;
     }
     .icon {
-      background-image: url(/img/AMP-Brand-White-Icon.svg);
+      background-image: url(<% hosts.platform %>/static/samples/img/AMP-Brand-White-Icon.svg);
       background-repeat: no-repeat;
       background-size: 50px 50px;
       height: 50px;
@@ -93,7 +93,7 @@ author: sebastianbenz
                title="Story With User Consent"
                publisher="Google"
                poster-portrait-src="<% hosts.platform %>/img/story_video_dog_cover.jpg"
-               publisher-logo-src="<% hosts.platform %>/img/amp_logo_pink.svg">
+               publisher-logo-src="<% hosts.platform %>/static/samples/img/amp_logo_pink.svg">
 
       <!--
       The `amp-consent` component supports specifying a CORS endpoint via the `checkConsentHref` attribute, which the component queries via a POST request to determine if the consent UI specified for it needs to be shown. The response should look like this:
@@ -136,9 +136,9 @@ author: sebastianbenz
           <amp-video autoplay loop
             width="400"
             height="750"
-            poster="/img/poster0.png"
+            poster="<% hosts.platform %>/static/samples/img/poster0.png"
             layout="fill">
-            <source src="/video/p1.mp4" type="video/mp4">
+            <source src="<% hosts.platform %>/static/samples/video/p1.mp4" type="video/mp4">
           </amp-video>
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical" class="bottom">
@@ -150,7 +150,7 @@ author: sebastianbenz
 
       <amp-story-page id="page-2">
         <amp-story-grid-layer template="fill">
-          <amp-img width="400" height="750" layout="fill" src="/img/overview.jpg"></amp-img>
+          <amp-img width="400" height="750" layout="fill" src="<% hosts.platform %>/static/samples/img/overview.jpg"></amp-img>
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical" class="bottom">
           <h2 class="bold">Overview</h2>
@@ -171,7 +171,7 @@ author: sebastianbenz
     The consent dialog will be shown as an overlay when the story starts.
      <div class="abe-story-preview">
         <amp-iframe media="(min-width: 650px)"
-            src="https://amp-by-example-api.appspot.com/stories/user_consent/story_user_consent/index.html"
+          src="<% hosts.preview %>/documentation/examples/user-consent/story_user_consent/"
             width="440" height="732" sandbox="allow-scripts allow-popups allow-same-origin">
           <div placeholder></div>
         </amp-iframe>

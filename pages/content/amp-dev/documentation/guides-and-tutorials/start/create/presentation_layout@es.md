@@ -1,15 +1,20 @@
 ---
-$title: Modificar la presentación y el diseño
-$order: 2
+'$title': Modificación de la presentación y el diseño
+$order: 3
+description: Las AMP son páginas web. Cualquier estilo en la página y en sus elementos se aplica mediante propiedades CSS comunes. Esto le da estilo a los elementos con selectores...
+author: pbakaus
+contributors:
+  - bpaduch
 ---
 
-## Modificar la presentación
+## Modificación de la presentación
 
-Las AMP son páginas web; el diseño de estas y de sus elementos se realiza a través de propiedades CSS comunes. Da estilo a los elementos con selectores de clase o elemento en una hoja de estilo en línea en el `<head>` llamada `<style amp-custom>`:
+Las AMP son páginas web. Cualquier estilo en la página y en sus elementos se aplica mediante propiedades CSS comunes. Los elementos de estilo utilizan selectores de clase o de elemento en una hoja de estilo incrustada en `<head>`, llamada `<style amp-custom>`:
 
 [sourcecode:html]
+
 <style amp-custom>
-  /* Cualquier estilo personalizado va aquí */
+  /* any custom style goes here */
   body {
     background-color: white;
   }
@@ -18,12 +23,13 @@ Las AMP son páginas web; el diseño de estas y de sus elementos se realiza a tr
     border: 1px solid black;
   }
 </style>
+
 [/sourcecode]
 
-Las páginas AMP pueden tener solo una hoja de estilo integrada y hay ciertos selectores que no puedes usar. [Aprende todo acerca del estilo](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).
+Las páginas AMP solo pueden tener una hoja de estilo incrustada y estilos en línea, pero hay ciertos selectores que no se pueden utilizar. [Aprenda todo sobre el estilo](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).
 
-## Controla el diseño
+## Control del diseño
 
-AMP sigue reglas estrictas al distribuir elementos en la página. En una página HTML normal, CSS se usa casi exclusivamente para distribuir elementos. Sin embargo, por motivos de rendimiento, AMP requiere que todos los elementos tengan un tamaño explícito configurado desde el principio.
+AMP sigue reglas estrictas al distribuir los elementos en la página. En una página HTML normal, CSS se usa casi exclusivamente para distribuir elementos. Sin embargo, por motivos de rendimiento, AMP requiere que todos los elementos tengan un tamaño explícito establecido desde el principio.
 
-Leer más: Aprende todo acerca de cómo AMP representa y diseña una página y cómo puedes modificar el diseño en [Cómo controlar el diseño](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md).
+[tip type="read-on"] <strong>LEER MÁS:</strong> Obtenga más información sobre cómo AMP representa y diseña una página, y cómo puede modificar el diseño, en el artículo [Dudas sobre diseño y los medios](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md).[/tip]

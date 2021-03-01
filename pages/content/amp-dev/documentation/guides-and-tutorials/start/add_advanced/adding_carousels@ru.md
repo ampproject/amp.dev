@@ -1,6 +1,6 @@
 ---
-"$title": Добавление кольцевых галерей
-"$order": '3'
+'$title': Добавление кольцевых галерей
+$order: 3
 description: Кольцевая галерея — одна из распространенных функций мобильных страниц. Вы можете легко добавлять кольцевые галереи на AMP-страницы с помощью компонента amp-carousel.
 ---
 
@@ -11,13 +11,17 @@ description: Кольцевая галерея — одна из распрос�
 Не забудьте включить библиотеку компонента [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md), **добавив** следующий запрос JavaScript в `<head>` своего документа:
 
 ```html
-<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script
+  async
+  custom-element="amp-carousel"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+></script>
 ```
 
 Затем давайте встроим простую кольцевую галерею изображений с адаптивным макетом и заданными по умолчанию шириной и высотой. **Добавьте** на свою страницу следующий код:
 
 ```html
-<amp-carousel layout="fixed-height" height="168" type="carousel" >
+<amp-carousel layout="fixed-height" height="168" type="carousel">
   <amp-img src="mountains-1.jpg" width="300" height="168"></amp-img>
   <amp-img src="mountains-2.jpg" width="300" height="168"></amp-img>
   <amp-img src="mountains-3.jpg" width="300" height="168"></amp-img>
@@ -30,7 +34,7 @@ description: Кольцевая галерея — одна из распрос�
 
 Есть ряд способов настройки компонента [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md). Давайте изменим его так, чтобы отображалось только одно изображение за раз, и сделаем макет карусели адаптивным.
 
-Чтобы сделать это, сначала **измените** `type` компонента [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) с `carousel` на `slides`, **измените** атрибут `layout` на `responsive` и **установите** атрибуту `width` значение 300 (убедитесь, что установлены оба атрибута: `height` и `width`).  **Добавьте** атрибут `"layout=responsive"` в дочерние для [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) элементы [`amp-img`](../../../../documentation/components/reference/amp-img.md).
+Чтобы сделать это, сначала **измените** `type` компонента [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) с `carousel` на `slides`, **измените** атрибут `layout` на `responsive` и **установите** атрибуту `width` значение 300 (убедитесь, что установлены оба атрибута: `height` и `width`). **Добавьте** атрибут `"layout=responsive"` в дочерние для [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) элементы [`amp-img`](../../../../documentation/components/reference/amp-img.md).
 
 **Обновите** свою страницу. Теперь вместо прокручиваемого списка элементов вы будете видеть по одному элементу за раз. Попробуйте **проводить пальцем** по горизонтали, чтобы перемещаться между элементами. Дойдя до третьего элемента, вы не сможете прокручивать галерею дальше.
 
@@ -41,10 +45,33 @@ description: Кольцевая галерея — одна из распрос�
 Окончательный код должен выглядеть примерно так:
 
 ```html
-<amp-carousel layout="responsive" width="300" height="168" type="slides" autoplay delay="2000" loop>
-  <amp-img src="mountains-1.jpg" width="300" height="168" layout="responsive"></amp-img>
-  <amp-img src="mountains-2.jpg" width="300" height="168" layout="responsive"></amp-img>
-  <amp-img src="mountains-3.jpg" width="300" height="168" layout="responsive"></amp-img>
+<amp-carousel
+  layout="responsive"
+  width="300"
+  height="168"
+  type="slides"
+  autoplay
+  delay="2000"
+  loop
+>
+  <amp-img
+    src="mountains-1.jpg"
+    width="300"
+    height="168"
+    layout="responsive"
+  ></amp-img>
+  <amp-img
+    src="mountains-2.jpg"
+    width="300"
+    height="168"
+    layout="responsive"
+  ></amp-img>
+  <amp-img
+    src="mountains-3.jpg"
+    width="300"
+    height="168"
+    layout="responsive"
+  ></amp-img>
 </amp-carousel>
 ```
 
@@ -60,25 +87,28 @@ description: Кольцевая галерея — одна из распрос�
 
 ```css
 amp-fit-text {
-    white-space: normal;
+  white-space: normal;
 }
 ```
 
 Теперь **замените** простую кольцевую галерею следующим кодом:
 
 ```html
-<amp-carousel layout="fixed-height" height="250" type="carousel" >
-    <amp-img src="blocky-mountains-1.jpg" width="300" height="250"></amp-img>
+<amp-carousel layout="fixed-height" height="250" type="carousel">
+  <amp-img src="blocky-mountains-1.jpg" width="300" height="250"></amp-img>
 
-    <amp-ad width="300" height="250"
-      type="doubleclick"
-      data-slot="/35096353/amptesting/image/static">
-        <div placeholder>This ad is still loading.</div>
-    </amp-ad>
+  <amp-ad
+    width="300"
+    height="250"
+    type="doubleclick"
+    data-slot="/35096353/amptesting/image/static"
+  >
+    <div placeholder>This ad is still loading.</div>
+  </amp-ad>
 
-    <amp-fit-text width="300" height="250" layout="fixed">
-        Big, bold article quote goes here.
-    </amp-fit-text>
+  <amp-fit-text width="300" height="250" layout="fixed">
+    Big, bold article quote goes here.
+  </amp-fit-text>
 </amp-carousel>
 ```
 

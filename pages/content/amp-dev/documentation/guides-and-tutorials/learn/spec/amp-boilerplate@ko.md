@@ -1,8 +1,11 @@
 ---
-$title: AMP 상용구 코드
-order: 9
+'$title': AMP 상용구 코드
+$order: 9
+formats:
+  - websites
+  - stories
 teaser:
-  text:  head > style[amp-boilerplate] 및 noscript > style[amp-boilerplate]
+  text: ' head > style[amp-boilerplate] 및 noscript > style[amp-boilerplate]'
 ---
 
 <!--
@@ -28,7 +31,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-## `head > style[amp-boilerplate]` 및 `noscript > style[amp-boilerplate]` <a name="head--styleamp-boilerplate-and-noscript--styleamp-boilerplate"></a>
+## <code>head > style[amp-boilerplate]</code> 및 <code>noscript > style[amp-boilerplate]</code> <a></a>
 
 AMP HTML 문서는 `head` 태그에 다음 상용구를 포함해야 합니다. 현재 일반 표현식의 유효성 검증이 완료되었으니 변형은 최소한으로 유지해야 합니다. 현재 허용되는 변형은 다음과 같습니다.
 
@@ -38,9 +41,7 @@ AMP HTML 문서는 `head` 태그에 다음 상용구를 포함해야 합니다. 
 <!-- prettier-ignore-start -->
 
 [sourcecode:html]
-
-<style amp-boilerplate="">body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate="">body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 [/sourcecode]
 
 <!-- prettier-ignore-end -->

@@ -7,39 +7,6 @@
 {% if not doc.example.document.metadata.hidePreview %}
 {{ doc.example.document.head|safe }}
 {% endif %}
-
-{# Always include amp-bind for the header and TOC if the sample doesn't include it #}
-{% if 'amp-bind' not in doc.used_components or not inline_preview %}
-{% endif %}
-
-{# Include all components needed for sidebar #}
-{% if 'amp-sidebar' not in doc.used_components or not inline_preview %}
-{% endif %}
-{% if 'amp-animation' not in doc.used_components or not inline_preview %}
-{% endif %}
-{% if 'amp-position-observer' not in doc.used_components or not inline_preview %}
-{% endif %}
-
-{% if 'amp-consent' not in doc.used_components or not inline_preview %}
-{% if 'amp-geo' not in doc.used_components or not inline_preview %}
-{% endif %}
-{% endif %}
-{% if 'amp-analytics' not in doc.used_components or not inline_preview %}
-{% endif %}
-
-{# Include amp-install-serviceworker #}
-{% if 'amp-install-serviceworker' not in doc.used_components or not inline_preview %}
-{% endif %}
-
-{# Include amp-iframe for story previews #}
-{% if doc.example.document.isAmpStory %}
-{% endif %}
-
-{# Include other AMP dependencies if needed for preview #}
-{% if inline_preview %}
-{% for used_component in doc.used_components %}
-{% endfor %}
-{% endif %}
 {% endblock %}
 
 {% block styles %}

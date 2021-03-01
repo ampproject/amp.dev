@@ -1,8 +1,8 @@
 ---
-"$title": 'Struktura i renderowanie wiadomości e-mail AMP '
-order: '2'
+'$title': 'Struktura i renderowanie wiadomości e-mail AMP '
+$order: 2
 formats:
-- email
+  - email
 teaser:
   text: Wiadomości e-mail nadawana jest struktura drzewa MIME. To drzewo MIME zawiera treść wiadomości i wszelkie załączniki do wiadomości e-mail.
 toc: 'true'
@@ -45,7 +45,7 @@ Część `text/x-amp-html` musi być zagnieżdżona pod węzłem `multipart/alte
 
 Część `multipart/alternative` musi zawierać co najmniej jeden węzeł bez AMP (`text/plain` albo `text/html`) oprócz węzła `text/x-amp-html`. Będzie on wyświetlany użytkownikom, których programy pocztowe nie obsługują AMP lub którzy zrezygnowali z tego za pomocą ustawień swojego dostawcy poczty elektronicznej.
 
-Uwaga: niektóre programy pocztowe[[1]](https://openradar.appspot.com/radar?id=6054696888303616) będą renderować tylko ostatnią część MIME, więc zalecamy umieszczenie części MIME `text/x-amp-html` *przed* częścią MIME `text/html`.
+Uwaga: niektóre programy pocztowe[[1]](https://openradar.appspot.com/radar?id=6054696888303616) będą renderować tylko ostatnią część MIME, więc zalecamy umieszczenie części MIME `text/x-amp-html` _przed_ częścią MIME `text/html`.
 
 ### Semantyka odpowiadania / przesyłania dalej <a name="replyingforwarding-semantics"></a>
 

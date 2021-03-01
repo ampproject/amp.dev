@@ -1,10 +1,10 @@
 ---
-"$title": Тестирование AMP-писем
-"$order": '2'
-"$category": Develop
+'$title': Тестирование AMP-писем
+$order: 2
+'$category': Develop
 description: Тестирование AMP-писем перед их рассылкой большой аудитории позволяет обеспечить оптимальный опыт взаимодействия.
 formats:
-- email
+  - email
 author: fstanis
 ---
 

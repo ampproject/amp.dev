@@ -1,8 +1,13 @@
 ---
-$title: Sistem Tata Letak HTML AMP
-order: 1
+'$title': Sistem Tata Letak HTML AMP
+$order: 1
+formats:
+  - websites
+  - email
+  - stories
+  - ads
 teaser:
-  text: Gambaran Umum
+  text: 'Gambaran Umum '
 ---
 
 <!--
@@ -28,7 +33,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-## Gambaran Umum <a name="overview"></a>
+## Gambaran Umum
 
 Tujuan utama sistem tata letak adalah untuk memastikan bahwa elemen-elemen AMP dapat mengekspresikan tata letak mereka sehingga runtime mampu menduga pengaturan ukuran elemen sebelum sumber daya jarak jauh apa pun, seperti JavaScript dan pemanggilan data, telah diselesaikan. Hal ini penting karena ini sangat mengurangi perenderan dan jank pengguliran.
 
@@ -61,12 +66,16 @@ AMP menyediakan serangkaian tata letak yang menentukan cara komponen AMP berperi
 
 **Contoh**: Sebuah gambar responsif sederhana di mana lebar dan tinggi digunakan untuk menentukan rasio aspek.
 
-[sourcecode:html] <amp-img src="/img/amp.jpg" width="1080" height="610" layout="responsive" alt="an image"
+[sourcecode:html]
+<amp-img
+src="/img/amp.jpg"
+width="1080"
+height="610"
+layout="responsive"
+alt="an image"
 
->
->
-
-[/sourcecode]
+> </amp-img>
+> [/sourcecode]
 
 Nilai-nilai yang didukung untuk atribut `layout`:
 
@@ -80,8 +89,7 @@ Nilai-nilai yang didukung untuk atribut `layout`:
   <tbody>
     <tr>
       <td>Tidak ada</td>
-      <td>Jika tidak ada nilai yang ditentukan, tata letak untuk komponen disimpulkan sebagai berikut:         <ul>           <li>Jika <code>height</code> ada, tetapi <code>width</code> tidak ada atau ditetapkan sebagai <code>auto</code>, tata letak <code>fixed-height</code> diasumsikan.</li>           <li>Jika <code>width</code> dan <code>height</code> ada bersama atribut <code>sizes</code> atau atribut <code>heights</code>, tata letak <code>responsive</code> diasumsikan.</li>           <li>Jika <code>width</code> dan <code>height</code> ada, tata letak  <code>fixed</code> diasumsikan.</li>           <li> Jika <code>width</code> dan <code>height</code> tidak ada tata letak <code>container</code> diasumsikan.</li>         </ul>
-</td>
+      <td>Jika tidak ada nilai yang ditentukan, tata letak untuk komponen disimpulkan sebagai berikut:         <ul>           <li>Jika <code>height</code> ada, tetapi <code>width</code> tidak ada atau ditetapkan sebagai <code>auto</code>, tata letak <code>fixed-height</code> diasumsikan.</li>           <li>Jika <code>width</code> dan <code>height</code> ada bersama atribut <code>sizes</code> atau atribut <code>heights</code>, tata letak <code>responsive</code> diasumsikan.</li>           <li>Jika <code>width</code> dan <code>height</code> ada, tata letak  <code>fixed</code> diasumsikan.</li>           <li> Jika <code>width</code> dan <code>height</code> tidak ada tata letak <code>container</code> diasumsikan.</li>         </ul> </td>
     </tr>
     <tr>
       <td><code>container</code></td>
@@ -113,8 +121,7 @@ Nilai-nilai yang didukung untuk atribut `layout`:
     </tr>
     <tr>
       <td><code>responsive</code></td>
-      <td>Elemen ini mengambil ruang yang tersedia untuknya dan mengubah ukuran tingginya secara otomatis sesuai rasio aspek yang diberikan oleh atribut <code>width</code> dan <code>height</code>. Tata letak ini berfungsi dengan sangat baik untuk sebagian besar elemen AMP, termasuk <code>amp-img</code>, <code>amp-video</code>dll. Ruang yang tersedia bergantung pada elemen induk dan dapat juga disesuaikan dengan menggunakan CSS  <code>max-width</code>. Atribut <code>width</code> dan <code>height</code> harus ada.<p><strong>Catatan</strong>: Elemen-elemen dengan <code>"layout=responsive"</code> tidak mempunyai ukuran intrinsik. Ukuran elemen ditentukan dari elemen wadahnya. Untuk memastikan tampilan elemen AMP, Anda harus menentukan lebar dan tinggi untuk elemen pengisi. Jangan tentukan <code>"display:table"</code> pada elemen pengisi karena ini menimpa tampilan elemen AMP, sehingga menjadikan elemen AMP tidak terlihat.</p>
-</td>
+      <td>Elemen ini mengambil ruang yang tersedia untuknya dan mengubah ukuran tingginya secara otomatis sesuai rasio aspek yang diberikan oleh atribut <code>width</code> dan <code>height</code>. Tata letak ini berfungsi dengan sangat baik untuk sebagian besar elemen AMP, termasuk <code>amp-img</code>, <code>amp-video</code>dll. Ruang yang tersedia bergantung pada elemen induk dan dapat juga disesuaikan dengan menggunakan CSS  <code>max-width</code>. Atribut <code>width</code> dan <code>height</code> harus ada.<p><strong>Catatan</strong>: Elemen-elemen dengan <code>"layout=responsive"</code> tidak mempunyai ukuran intrinsik. Ukuran elemen ditentukan dari elemen wadahnya. Untuk memastikan tampilan elemen AMP, Anda harus menentukan lebar dan tinggi untuk elemen pengisi. Jangan tentukan <code>"display:table"</code> pada elemen pengisi karena ini menimpa tampilan elemen AMP, sehingga menjadikan elemen AMP tidak terlihat.</p> </td>
     </tr>
   </tbody>
 </table>
@@ -129,11 +136,16 @@ Jika atribut `sizes` ditentukan bersama `width` dan `height`, `layout` distandar
 
 Di dalam contoh berikut ini, jika viewport lebih lebar dari `320px`, gambar akan selebar 320px, jika tidak, akan selebar 100vw (100% lebar viewport).
 
-[sourcecode:html] <amp-img src="https://acme.org/image1.png" width="400" height="300" layout="responsive" sizes="(min-width: 320px) 320px, 100vw"
+[sourcecode:html]
+<amp-img
+src="https://acme.org/image1.png"
+width="400"
+height="300"
+layout="responsive"
+sizes="(min-width: 320px) 320px, 100vw"
 
->
-
- [/sourcecode]
+> </amp-img>
+> [/sourcecode]
 
 ### `disable-inline-width` <a name="disable-inline-width"></a>
 
@@ -143,11 +155,17 @@ Atribut `sizes` sendiri akan menetapkan gaya `width` inline pada elemen. Saat me
 
 Di dalam contoh berikut ini, lebar elemen `<amp-img>` tidak terpengaruh, dan `sizes` hanya digunakan untuk memilih salah satu sumber dari `srcset`.
 
-[sourcecode:html] <amp-img src="https://acme.org/image1.png" width="400" height="300" layout="responsive" sizes="(min-width: 320px) 320px, 100vw" disable-inline-width
+[sourcecode:html]
+<amp-img
+src="https://acme.org/image1.png"
+width="400"
+height="300"
+layout="responsive"
+sizes="(min-width: 320px) 320px, 100vw"
+disable-inline-width
 
->
-
- [/sourcecode]
+> </amp-img>
+> [/sourcecode]
 
 ### `heights` <a name="heights"></a>
 
@@ -162,11 +180,15 @@ Jika atribut `heights` ditentukan bersama `width` dan `height`, `layout` distand
 
 Di dalam contoh berikut ini, tinggi gambar akan distandarkan pada 80% dari lebarnya, namun jika viewport lebih lebar dari `500px`, tingginya dibatasi pada `200px`. Karena atribut `heights` ditentukan bersama `width` and `height`, tata letak distandarkan pada `responsive`.
 
-[sourcecode:html] <amp-img src="https://acme.org/image1.png" width="320" height="256" heights="(min-width:500px) 200px, 80%"
+[sourcecode:html]
+<amp-img
+src="https://acme.org/image1.png"
+width="320"
+height="256"
+heights="(min-width:500px) 200px, 80%"
 
->
-
- [/sourcecode]
+> </amp-img>
+> [/sourcecode]
 
 ### `media` <a name="media"></a>
 
@@ -176,31 +198,44 @@ Sebagian besar elemen AMP mendukung atribut `media`. Nilai `media` adalah kueri 
 
 Di dalam contoh berikut ini, ada 2 gambar dengan kueri media yang sama-sama eksklusif. Tergantung lebar layar, satu dari kedua gambar ini akan diambil dan dirender. Atribut `media` tersedia pada semua elemen AMP, jadi dapat digunakan dengan elemen non-gambar, seperti iklan.
 
-[sourcecode:html] <amp-img media="(min-width: 650px)" src="wide.jpg" width="466" height="355" layout="responsive"
+[sourcecode:html]
+<amp-img
+media="(min-width: 650px)"
+src="wide.jpg"
+width="466"
+height="355"
+layout="responsive"
 
->
->
-
-<amp-img media="(max-width: 649px)" src="narrow.jpg" width="527" height="193" layout="responsive"
-
->
->
-
-[/sourcecode]
+> </amp-img>
+> <amp-img
+>   media="(max-width: 649px)"
+>   src="narrow.jpg"
+>   width="527"
+>   height="193"
+>   layout="responsive"
+> </amp-img>
+> [/sourcecode]
 
 ### `placeholder` <a name="placeholder"></a>
 
 Atribut `placeholder` dapat ditetapkan pada elemen HTML apa pun, bukan hanya elemen AMP. Atribut `placeholder` mengindikasikan bahwa elemen yang ditandai dengan atribut ini bertindak sebagai bakal tempat untuk elemen AMP induk. Jika ditentukan, elemen bakal tempat harus berupa anak atau turunan langsung dari elemen AMP. Sebagai default, bakal tempat segera diperlihatkan untuk elemen AMP, bahkan jika sumber daya elemen AMP belum diunduh atau dimulai. Setelah siap, elemen AMP biasanya menyembunyikan bakal tempatnya dan memperlihatkan konten. Perilaku ini, yang terkait dengan bakal tempat, bergantung pada penerapan elemen.
 
-[sourcecode:html] <amp-anim src="animated.gif" width="466" height="355" layout="responsive"> <amp-img placeholder="" src="preview.png" layout="fill"></amp-img> </amp-anim> [/sourcecode]
+[sourcecode:html]
+<amp-anim src="animated.gif" width="466" height="355" layout="responsive">
+<amp-img placeholder src="preview.png" layout="fill"></amp-img>
+</amp-anim>
+[/sourcecode]
 
 ### `fallback` <a name="fallback"></a>
 
 Atribut `fallback` dapat ditetapkan pada elemen HTML apa pun, bukan hanya elemen AMP. Sebuah fallback adalah ketentuan yang memungkinkan elemen untuk menyampaikan kepada pembaca bahwa browser tidak mendukung elemen tersebut. Jika ditentukan, elemen fallback harus berupa anak atau turunan langsung dari elemen AMP. Perilaku ini, yang terkait dengan fallback, bergantung pada penerapan elemen.
 
-[sourcecode:html] <amp-anim src="animated.gif" width="466" height="355" layout="responsive"></amp-anim>
+[sourcecode:html]
+<amp-anim src="animated.gif" width="466" height="355" layout="responsive">
 
-  <div fallback="">Tidak dapat memutar gambar animasi di perangkat ini.</div>  [/sourcecode]
+  <div fallback>Cannot play animated images on this device.</div>
+</amp-anim>
+[/sourcecode]
 
 ### `noloading` <a name="noloading"></a>
 
@@ -210,7 +245,7 @@ Atribut `noloading` mengindikasikan apakah “indikator pemuatan” harus dinona
 
 Tabel berikut ini menjelaskan tentang parameter yang dapat diterima, kelas CSS, dan berbagai gaya yang digunakan untuk atribut `layout`. Perhatikan bahwa:
 
-1. Kelas CSS apa pun yang ditandai dengan prefiks  `-amp-` dan elemen yang diberikan prefiks `i-amp-` dianggap internal untuk AMP dan penggunaannya di dalam stylesheet pengguna tidak diizinkan. Mereka diperlihatkan hanya untuk keperluan informasi.
+1. Kelas CSS apa pun yang ditandai dengan prefiks `-amp-` dan elemen yang diberikan prefiks `i-amp-` dianggap internal untuk AMP dan penggunaannya di dalam stylesheet pengguna tidak diizinkan. Mereka diperlihatkan hanya untuk keperluan informasi.
 2. Walaupun `width` dan `height` ditentukan di dalam tabel sebagaimana diperlukan, aturan default dapat berlaku sebagaimana dengan `amp-pixel` dan `amp-audio`.
 
 <table>
@@ -247,8 +282,7 @@ Tabel berikut ini menjelaskan tentang parameter yang dapat diterima, kelas CSS, 
     </tr>
     <tr>
       <td><code>fixed-height</code></td>
-      <td> <code>height</code> saja; <code>width</code> dapat <code>auto</code>
-</td>
+      <td> <code>height</code> saja; <code>width</code> dapat <code>auto</code> </td>
       <td>Ya, ditentukan oleh wadah induk dan <code>height</code>.</td>
       <td>Tidak</td>
       <td><code>block</code></td>

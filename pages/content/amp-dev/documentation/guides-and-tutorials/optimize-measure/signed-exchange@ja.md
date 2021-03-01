@@ -1,6 +1,8 @@
 ---
-$title: Signed Exchange を使った AMP の配信
+'$title': Signed Exchange を使った AMP の配信
 $order: 4
+formats:
+  - websites
 author: CrystalOnScript
 ---
 
@@ -20,12 +22,12 @@ Signed Exchange を実装するには、以下の要件を満たす必要があ�
 
 - サーバーが生成する HTTP ヘッダーを構成して制御できること。（Blogger などの最も純粋なウェブベースのホスティングソリューションは、Signed Exchange との*互換性がありません*。）
 - [Go バイナリ](https://golang.org/doc/install)として、または [Docker VM](https://docs.docker.com/machine/get-started/) 内で [`amppackager`](https://github.com/ampproject/amppackager/blob/master/README.md) 実行するなどして AMP Signed Exchange を生成できること。
-    - packager は、6 週間ごとに更新する必要があります。
+  - packager は、6 週間ごとに更新する必要があります。
 - エッジ HTTP サーバーで、[Vary](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary) ヘッダーが `Accept` と `AMP-Cache-Transform` であり、同一の URL に対して異なるコンテンツを配信できること。
 - `amppackager` を実行しているシステムは、以下の項目にネットワークリクエスト送信できる必要があります。
-    - 証明書を発行する証明書発行機関
-    - 署名する AMP ドキュメントをホストするサイト運営者のサーバー
-    - AMP の現在のバージョンを取得する `cdn.ampproject.org`
+  - 証明書を発行する証明書発行機関
+  - 署名する AMP ドキュメントをホストするサイト運営者のサーバー
+  - AMP の現在のバージョンを取得する `cdn.ampproject.org`
 - 永続的なストレージファイルシステムが、同一のデータセンターで実行している `amppackager` のインスタンス間で共有されていること。
 
 # Signed Exchange の実装
@@ -40,8 +42,10 @@ Signed Exchange を生成するには、`CanSignHttpExchanges` 拡張子の付�
 
 ```sh
 # generate private key (if necessary)
+
 $ openssl ecparam -out ampbyexample-packager.key -name prime256v1 -genkey
 # generate CSR (the file ampbyexample-packager.csr)
+
 $ openssl req -new -key ampbyexample-packager.key -nodes -out ampbyexample-packager.csr -subj "/C=US/ST=California/L=Mountain View/O=Google LLC/CN=ampbyexample.com"
 ```
 
@@ -76,7 +80,7 @@ MHcCAQEEINDgf1gprbdD6hM1ttmRC9+tOqJ+lNRtHwZahJIXfLADoAoGCCqGSM49
 -----END EC PRIVATE KEY-----
 ```
 
-**CertFile** は公開証明書です。DigiCert が証明書を提供した場合は、DigiCert が提供したオリジン固有の証明書と `DigiCertCA.crt` ファイルを結合して、CertFile をさs九生することができます。
+**CertFile** は公開証明書です。DigiCert が証明書を提供した場合は、DigiCert が提供したオリジン固有の証明書と `DigiCertCA.crt` ファイルを結合して、CertFile をさ s 九生することができます。
 
 ```txt
 -----BEGIN CERTIFICATE-----
@@ -197,4 +201,5 @@ DevTools コンソールの `Network` タブで、`type` 列の下に `signed-ex
 
 以下は、すぐに使用できる Signed Exchange サポートを提供している CDN とホスティングプロバイダのリストです。いずれかを使用することで、Signed Exchange を簡単に使用することができます。
 
+- [AMP Packager Google Cloud Click-to-Deploy Installer](https://console.cloud.google.com/marketplace/details/google/amp-packager?filter=solution-type:k8s) [AMP Packager](https://github.com/ampproject/amppackager#amp-packager) は、Signed Exchange を使って AMP を配信することで、AMP URL を改善するツールです。詳細については、[AMP ブログ](https://blog.amp.dev/2020/11/23/amp-packager-is-now-available-on-google-cloud-marketplace/) をお読みください。
 - [Cloudflare AMP Real URL](https://www.cloudflare.com/website-optimization/amp-real-url/): [Cloudflare](https://www.cloudflare.com/) は、世界最大規模のネットワークです。今日、企業、非営利団体、ブロガー、およびインターネットプレゼンスのある誰もが、Cloudflare のおかげで、より高速で安全なウェブサイトとアプリの提供を実現しています。

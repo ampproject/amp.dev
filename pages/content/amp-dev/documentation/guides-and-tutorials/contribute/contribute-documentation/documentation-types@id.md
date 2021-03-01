@@ -1,9 +1,14 @@
 ---
-$title: Jenis dokumentasi
+'$title': Jenis dokumentasi
 $order: 1
 description: Jenis kontribusi dokumentasi yang diterima di amp.dev
+formats:
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
-toc: false
+toc: 'false'
 ---
 
 Di bawah ini adalah uraian singkat tentang jenis-jenis kontribusi dokumentasi yang diterima di amp.dev

@@ -1,1 +1,1 @@
-from log_beautifier import *
+from .log_beautifier import *

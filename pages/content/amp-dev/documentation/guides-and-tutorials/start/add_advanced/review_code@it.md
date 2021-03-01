@@ -1,5 +1,5 @@
 ---
-$title: Revisione del codice di avvio
+'$title': Revisione del codice di avvio
 $order: 1
 description: 'Prima di iniziare ad aggiungere codice, esaminiamo la pagina di esempio article.amp.html, che dovrebbe essere la seguente: ...'
 ---
@@ -166,7 +166,8 @@ Questa è una semplice pagina AMP che supera sia la [convalida AMP](../../../../
 Prima di modificare la pagina, abilitiamo lo strumento di [convalida AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) per sapere se stiamo lavorando con codice AMP HTML valido. **Aggiungere** questo identificatore di frammento al proprio URL:
 
 ```text
-#development=1
+# development=1
+
 ```
 
 Per esempio:

@@ -234,6 +234,20 @@ class MarkdownDocument {
   }
 
   /**
+   * Normalizes pluralized form of email in formats in
+   * frontmatter to its singular version
+   * @param  {Object}
+   * @return {Object}
+   */
+  static normalizeFrontmatterFormats(frontmatter) {
+    frontmatter.formats = frontmatter.formats.map((f) =>
+      f.replace(/emails/, 'email')
+    );
+
+    return frontmatter;
+  }
+
+  /**
    * Checks for a frontmatter block in a string of content and tries to
    * parse it to its JavaScript equivalent
    * @param  {String} contents
@@ -253,7 +267,9 @@ class MarkdownDocument {
         // Strip out limiters from frontmatter string to be able to parse it
         // and then use it as initial fill for the actual properties
         frontmatter = frontmatter.replace(/---/g, '');
-        return yaml.safeLoad(frontmatter);
+        frontmatter = yaml.load(frontmatter);
+
+        return MarkdownDocument.normalizeFrontmatterFormats(frontmatter);
       }
     } else {
       throw Error('contents does not contain a frontmatter block.');
@@ -418,7 +434,7 @@ class MarkdownDocument {
    */
   save(path) {
     let content = '';
-    const frontmatter = `---\n${yaml.safeDump(this._frontmatter, {
+    const frontmatter = `---\n${yaml.dump(this._frontmatter, {
       'skipInvalid': true,
     })}---\n\n`;
     content += frontmatter;

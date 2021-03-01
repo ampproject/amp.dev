@@ -1,8 +1,10 @@
 ---
-$title: Probando los correos electrónicos de AMP
+'$title': Probando los correos electrónicos de AMP
 $order: 2
-$category: Develop
+'$category': Develop
 description: Garantice que el usuario tenga una excelente experiencia probando los correos electrónicos de AMP antes de enviarlos al público en general.
+formats:
+  - email
 author: fstanis
 ---
 
@@ -30,7 +32,3 @@ Los usuarios de Gmail pueden utilizar el artículo [AMP de Gmail para Email Play
 En los [correos electrónicos de Mail.ru AMP](https://postmaster.mail.ru/amp) se proporciona información para que realice pruebas en su cuenta de Mail.ru.
 
 Los usuarios de Mail.ru pueden utilizar [Mail.ru AMP Playground](https://postmaster.mail.ru/amp/playground.html) para enviarse un correo electrónico a sí mismos y efectuar pruebas.
-
-### Outlook.com
-
-En la documentación de Outlook.com hay una guía llamada [“Cómo utilizar AMP para correos electrónicos”](https://docs.microsoft.com/en-us/outlook/amphtml/get-started), en la cual se explica cómo crear y probar los correos electrónicos de AMP.

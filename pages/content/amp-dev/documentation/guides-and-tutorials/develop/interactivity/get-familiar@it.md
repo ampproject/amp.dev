@@ -1,5 +1,5 @@
 ---
-$title: Acquisire dimestichezza con il codice di avvio
+'$title': Acquisire dimestichezza con il codice di avvio
 $order: 1
 description: Una pagina AMP è una pagina HTML con alcune limitazioni per garantire prestazioni affidabili. Le pagine AMP hanno elementi di markup speciali che le identificano come tali.
 ---

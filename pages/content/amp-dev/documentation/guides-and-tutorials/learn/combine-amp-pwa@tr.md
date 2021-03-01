@@ -1,11 +1,11 @@
 ---
-"$title": AMP ve PWA arasında nasıl bir ilişki vardır?
-"$order": '7'
+'$title': AMP ve PWA arasında nasıl bir ilişki vardır?
+$order: 7
 description: Aşamalı Web Uygulamaları ve AMP sayfaları birlikte harika çalışır. Aslında, çoğu durumda, birbirlerini şu ya da bu şekilde tamamlarlar. Aşağıdaki adımlarla şunları öğrenin...
 formats:
-- websites
+  - websites
 components:
-- youtube
+  - youtube
 author: pbakaus
 ---
 
@@ -31,7 +31,7 @@ AMP Sayfaları, AMP Önbelleği yerine kaynağınızdan (sitenizin alan adı) su
 
 ## PWA'nıza giriş noktası olarak AMP
 
-AMP'yi benzersiz kılan özelliği, **neredeyse anında yüklenmesidir**; bu, AMP'yi sitenizle ilk kullanıcı etkileşimi için mükemmel hale getiren bir özelliktir. *Aşamalı web uygulamaları* çok **daha fazla etkileşim ve katılım sağlayan özellik sunar** , ancak sitenin Hizmet Çalışanı'nın ve dolayısıyla varlıklarının ve uygulama kabuğunun yalnızca sonraki yüklemelerde teslimatı hızlandırması nedeniyle ilk yüklemeleri engellenir.
+AMP'yi benzersiz kılan özelliği, **neredeyse anında yüklenmesidir**; bu, AMP'yi sitenizle ilk kullanıcı etkileşimi için mükemmel hale getiren bir özelliktir. _Aşamalı web uygulamaları_ çok **daha fazla etkileşim ve katılım sağlayan özellik sunar** , ancak sitenin Hizmet Çalışanı'nın ve dolayısıyla varlıklarının ve uygulama kabuğunun yalnızca sonraki yüklemelerde teslimatı hızlandırması nedeniyle ilk yüklemeleri engellenir.
 
 Sitenize giriş noktasını bir AMP sayfası haline getirmek, ardından perde arkasında PWA'yı ısıtmak ve ileriye dönük yolculuk için ona geçmek iyi bir stratejidir.
 

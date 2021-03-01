@@ -1,12 +1,16 @@
 ---
-$title: Melhorar o engajamento dos usuários
+'$title': Improve user engagement
+$order: 6
+description: Veja algumas dicas rápidas para melhorar o engajamento dos usuários com as páginas AMP. Ajude os leitores a lhe reconhecer através de um branding consistente e um conteúdo avançado em páginas AMP e não-AMP
+formats:
+  - websites
 ---
 
-Veja algumas dicas rápidas para melhorar o engajamento dos usuários com as AMP.
+Veja algumas dicas rápidas para melhorar o engajamento dos usuários com as páginas AMP.
 
-### Ajude os leitores a reconhecer você por meio de branding consistente e um conteúdo avançado em páginas AMP e não AMP
+### Ajude os leitores a lhe reconhecer através de um branding consistente e um conteúdo avançado em páginas AMP e não-AMP
 
-- **Reflita sua marca nas páginas AMP.** Use o mesmo cabeçalho e esquema de design (por exemplo, cores, espaçamento, estilos de fonte) das páginas não AMP para que todo o conteúdo seja reconhecível e legítimo.
+- **Reflita sua marca nas páginas AMP.** Use o mesmo cabeçalho e esquema de design (por exemplo, cores, espaçamento, estilos de fonte) das páginas não-AMP para que todo o conteúdo seja reconhecível e legítimo.
 
 - **Mostre o melhor do seu conteúdo** ao converter suas páginas. Inclua elementos importantes da página, como imagens, vídeos, conteúdos incorporados, dados estruturados, comentários e mídias sociais. Saiba como [incluir conteúdo de terceiros](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/third_party_components.md).
 
@@ -30,15 +34,14 @@ Veja algumas dicas rápidas para melhorar o engajamento dos usuários com as AMP
 
 - **Dê preferência para tipos de anúncio que ofereçam uma boa experiência ao leitor.** Explore os formatos de anúncios AMP, como [`amp-sticky-ad`](../../../documentation/components/reference/amp-sticky-ad.md) e [`amp-fx-flying-carpet`](../../../documentation/components/reference/amp-fx-flying-carpet.md). Siga as [práticas recomendadas](../../../documentation/guides-and-tutorials/develop/monetization/index.md) para monetização de anúncios.
 
-- **Aumente os downloads de aplicativos.**
-Inclua um banner com um link para a instalação do aplicativo usando [`amp-app-banner`](../../../documentation/components/reference/amp-app-banner.md).
+- **Aumente os downloads de aplicativos.** Inclua um banner com um link para a instalação do aplicativo usando [`amp-app-banner`](../../../documentation/components/reference/amp-app-banner.md).
 
-- **Faça uma transição rápida** dos leitores para o site não AMP do aplicativo da Web progressivo (PWA, na sigla em inglês). Use [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) para preencher o cache.
+- **Faça uma transição rápida** dos leitores para seu site não-AMP com arquitetura Progressive Web App (PWA). Use [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) para preencher o cache.
 
 ### Participe do projeto AMP de código aberto e ajude no desenvolvimento
 
-- **Acompanhe o roteiro de AMP** para ver os recursos e as atualizações em [roadmap/](../../../community/roadmap.html).
+- **Acompanhe o roadmap do AMP** para conhecer novos recursos e atualizações em [roadmap/](../../../community/roadmap.html).
 
 - **Envolva-se.** Contribua com código-fonte, comunique bugs ou faça comentários no [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Compartilhe sua opinião sobre as AMP no [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
 
-- **Saiba** como usar os componentes de AMP com o [Examples](../../../documentation/examples/index.html).
+- **Saiba** como usar os componentes de AMP com [Exemplos](../../../documentation/examples/index.html).

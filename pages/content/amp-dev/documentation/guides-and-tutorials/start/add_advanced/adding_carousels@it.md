@@ -1,7 +1,7 @@
 ---
-$title: Aggiunta di sequenze
+'$title': Aggiunta di sequenze
 $order: 3
-description: Un'altra funzione comunemente utilizzata nelle pagine per dispositivi mobili sono le sequenze. Possono essere facilmente aggiunte alle pagine AMP utilizzando il componente amp-carousel.
+description: "Un'altra funzione comunemente utilizzata nelle pagine per dispositivi mobili sono le sequenze. Possono essere facilmente aggiunte alle pagine AMP utilizzando il componente amp-carousel."
 ---
 
 Un'altra funzione comunemente utilizzata nelle pagine per dispositivi mobili sono le sequenze. Possono essere facilmente aggiunte alle pagine AMP utilizzando il componente [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md). Cominciamo con un semplice esempio, come una sequenza di immagini.
@@ -11,13 +11,17 @@ Un'altra funzione comunemente utilizzata nelle pagine per dispositivi mobili son
 Occorre includere la libreria del componente [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md), **aggiungendo** la seguente richiesta JavaScript al tag `<head>` del documento:
 
 ```html
-<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script
+  async
+  custom-element="amp-carousel"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+></script>
 ```
 
 Successivamente, incorporiamo una semplice sequenza di immagini con un layout reattivo e una larghezza e un'altezza predefinite. **Aggiungiano** il seguente codice alla pagina:
 
 ```html
-<amp-carousel layout="fixed-height" height="168" type="carousel" >
+<amp-carousel layout="fixed-height" height="168" type="carousel">
   <amp-img src="mountains-1.jpg" width="300" height="168"></amp-img>
   <amp-img src="mountains-2.jpg" width="300" height="168"></amp-img>
   <amp-img src="mountains-3.jpg" width="300" height="168"></amp-img>
@@ -41,10 +45,33 @@ Infine, facciamo riprodurre la sequenza automaticamente a una frequenza di 2 sec
 Il risultato finale dovrebbe essere simile al seguente:
 
 ```html
-<amp-carousel layout="responsive" width="300" height="168" type="slides" autoplay delay="2000" loop>
-  <amp-img src="mountains-1.jpg" width="300" height="168" layout="responsive"></amp-img>
-  <amp-img src="mountains-2.jpg" width="300" height="168" layout="responsive"></amp-img>
-  <amp-img src="mountains-3.jpg" width="300" height="168" layout="responsive"></amp-img>
+<amp-carousel
+  layout="responsive"
+  width="300"
+  height="168"
+  type="slides"
+  autoplay
+  delay="2000"
+  loop
+>
+  <amp-img
+    src="mountains-1.jpg"
+    width="300"
+    height="168"
+    layout="responsive"
+  ></amp-img>
+  <amp-img
+    src="mountains-2.jpg"
+    width="300"
+    height="168"
+    layout="responsive"
+  ></amp-img>
+  <amp-img
+    src="mountains-3.jpg"
+    width="300"
+    height="168"
+    layout="responsive"
+  ></amp-img>
 </amp-carousel>
 ```
 
@@ -60,25 +87,28 @@ Dapprima, **aggiungiamo** questo stile all'elemento `<style amp-custom>` per ass
 
 ```css
 amp-fit-text {
-    white-space: normal;
+  white-space: normal;
 }
 ```
 
 Poi, **sostituiamo** la sequenza semplice con quella mixata:
 
 ```html
-<amp-carousel layout="fixed-height" height="250" type="carousel" >
-    <amp-img src="blocky-mountains-1.jpg" width="300" height="250"></amp-img>
+<amp-carousel layout="fixed-height" height="250" type="carousel">
+  <amp-img src="blocky-mountains-1.jpg" width="300" height="250"></amp-img>
 
-    <amp-ad width="300" height="250"
-      type="doubleclick"
-      data-slot="/35096353/amptesting/image/static">
-        <div placeholder>This ad is still loading.</div>
-    </amp-ad>
+  <amp-ad
+    width="300"
+    height="250"
+    type="doubleclick"
+    data-slot="/35096353/amptesting/image/static"
+  >
+    <div placeholder>This ad is still loading.</div>
+  </amp-ad>
 
-    <amp-fit-text width="300" height="250" layout="fixed">
-        Big, bold article quote goes here.
-    </amp-fit-text>
+  <amp-fit-text width="300" height="250" layout="fixed">
+    Big, bold article quote goes here.
+  </amp-fit-text>
 </amp-carousel>
 ```
 
@@ -88,4 +118,4 @@ Poi, **sostituiamo** la sequenza semplice con quella mixata:
 
 Per ulteriori informazioni, consultare la documentazione di riferimento del componente [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md).
 
-[tip type="note"] **NOTA:**  Nel nostro ultimo esempio, il componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) comprendeva un elemento figlio `div` con l'attributo `placeholder`. Prima, nell'esercitazione, abbiamo trovato uno scenario simile, con [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) che usava l'attributo `fallback`. Qual è la differenza tra segnaposto e fallback? Gli elementi `Fallback` appaiono quando il loro elemento padre non può essere caricato, ad esempio se non ci sono annunci disponibili. Gli elementi `placeholder` appaiono al posto dell'elemento padre durante il caricamento. In un certo senso, questi elementi gestiscono la fase di caricamento dell'elemento padre. Ulteriori informazioni sono disponibili nella guida [Segnaposto e fallback](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md). [/tip]
+[tip type="note"] **NOTA:** Nel nostro ultimo esempio, il componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) comprendeva un elemento figlio `div` con l'attributo `placeholder`. Prima, nell'esercitazione, abbiamo trovato uno scenario simile, con [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) che usava l'attributo `fallback`. Qual è la differenza tra segnaposto e fallback? Gli elementi `Fallback` appaiono quando il loro elemento padre non può essere caricato, ad esempio se non ci sono annunci disponibili. Gli elementi `placeholder` appaiono al posto dell'elemento padre durante il caricamento. In un certo senso, questi elementi gestiscono la fase di caricamento dell'elemento padre. Ulteriori informazioni sono disponibili nella guida [Segnaposto e fallback](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md). [/tip]

@@ -1,13 +1,13 @@
 ---
-"$title": Przygotowywanie strony do odnajdywania i dystrybucji
-"$order": '4'
+'$title': Przygotowywanie strony do odnajdywania i dystrybucji
+$order: 4
 description: 'W niektórych przypadkach można serwować zarówno wersję tej samej strony bez AMP jak i z AMP, na przykład artykuł informacyjny. Rozważ to: jeśli wyszukiwarka Google...'
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
-W niektórych przypadkach można serwować zarówno wersję tej samej strony bez AMP jak i z AMP, na przykład artykuł informacyjny. Rozważ to: jeśli wyszukiwarka Google znajdzie wersję tej strony bez AMP, *skąd ma wiedzieć, że istnieje wersja AMP*?
+W niektórych przypadkach można serwować zarówno wersję tej samej strony bez AMP jak i z AMP, na przykład artykuł informacyjny. Rozważ to: jeśli wyszukiwarka Google znajdzie wersję tej strony bez AMP, _skąd ma wiedzieć, że istnieje wersja AMP_?
 
 ## Powiązywanie stron znacznikami `<link>`
 
@@ -16,12 +16,14 @@ Aby wskazać, że strona bez AMP i strona AMP powinny być traktowane jako „sp
 Do strony bez AMP dodaj:
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
 Do strony AMP dodaj to:
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
@@ -30,6 +32,7 @@ Do strony AMP dodaj to:
 Jeśli masz tylko jedną stronę i jest to strona AMP, musisz dodać do niej link kanoniczny, wskazujący na nią samą:
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 

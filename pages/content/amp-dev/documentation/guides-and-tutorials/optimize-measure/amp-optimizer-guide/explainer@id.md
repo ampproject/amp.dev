@@ -1,14 +1,17 @@
 ---
-$title: Cara kerja Pengoptimal AMP
+'$title': Cara kerja Pengoptimal AMP
 $order: 1
 description: Sebuah Pengoptimal AMP mengambil dokumen AMPHTML yang valid sebagai input dan mengubahnya menjadi versi yang dioptimalkan dengan menerapkan pengoptimalan tambahan yang akan terlalu repot jika dilakukan “secara manual”. Panduan ini menjelaskan secara terperinci cara kerja Pengoptimal AMP.
+formats:
+  - websites
+  - stories
 author: sebastianbenz
 ---
 
-Sebuah Pengoptimal AMP mengambil dokumen AMPHTML yang valid sebagai input dan mengubahnya menjadi versi yang dioptimalkan dengan menerapkan pengoptimalan tambahan yang akan terlalu repot jika dilakukan “secara manual”.  Anda dapat mengenali “**AMP transformasi**” yang dihasilkan di dalam elemen `html` melalui atribut `transformed`:
+Sebuah Pengoptimal AMP mengambil dokumen AMPHTML yang valid sebagai input dan mengubahnya menjadi versi yang dioptimalkan dengan menerapkan pengoptimalan tambahan yang akan terlalu repot jika dilakukan “secara manual”. Anda dapat mengenali “**AMP transformasi**” yang dihasilkan di dalam elemen `html` melalui atribut `transformed`:
 
 ```
-<html ⚡ i-amphtml-layout i-amphtml-no-boilerplate transformed="self">
+<html ⚡ i-amphtml-layout i-amphtml-no-boilerplate transformed="self;v=1">
 ```
 
 Catatan: Cache AMP menggunakan bendera transformasi yang berbeda, contohnya: cache AMP Google menambahkan `transformed=google;v=1`.
@@ -29,7 +32,7 @@ Perenderan sisi server melakukan tiga hal:
 
 ⁣**1. Menghapus boilerplate AMP: ** untuk setiap elemen yang menggunakan tata letak AMP, markah yang spesifik untuk tata letak tersebut diinjeksi.
 
-⁣**2. Gaya CSS internal AMP inline: ** kode boilerplate AMP diganti dengan <a href="https://cdn.ampproject.org/v0.css" data-md-type="link">gaya CSS internal AMP</a>: <style data-md-type="raw_html" amp-runtime="">...</style>. Untuk dokumen yang dirender non-sisi server, AMP menambahkan gaya-gaya ini pada runtime. Namun, halaman AMP yang dirender sisi server memerlukan ini agar tata letak AMP berfungsi sebelum AMP dimuat. Untuk menghindari potensi konflik versi, pada runtime, AMP akan memeriksa apakah versi yang ditentukan di dalam i-amphtml-version="011905222334000" berbeda dari versi AMP saat ini dan akan memperbarui CSS dengan versi terbaru jika tidak.
+⁣**2. Inline AMP-internal CSS styles: ** the AMP-boilerplate code is replaced by the <a href="https://cdn.ampproject.org/v0.css">AMP-runtime CSS styles</a>: `<style amp-runtime>...</style>`. For non-server-side rendered documents, AMP adds these styles at runtime. However, server-side-rendered AMP pages require these for the AMP layouts to work before AMP has been loaded. To avoid potential version conflicts, at runtime, AMP will check if the version specified in i-amphtml-version="011905222334000" differs from the current AMP version and will update the CSS with the latest version if not.
 
 ```
 <style amp-runtime i-amphtml-version="011905222334000">html{overflow-x:hidden!important}html.i-amphtml-...</style>

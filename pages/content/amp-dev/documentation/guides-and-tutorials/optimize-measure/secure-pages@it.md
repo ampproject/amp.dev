@@ -1,6 +1,10 @@
 ---
-$title: Protezione contro attacchi di terzi
+'$title': Protezione contro attacchi di terzi
+$order: 7
 description: Adotta misure adeguate per proteggere le tue pagine AMP e gli utenti dalle vulnerabilità di sicurezza sul web
+formats:
+  - websites
+author: CrystalOnScript
 ---
 
 Adotta misure adeguate per proteggere le tue pagine AMP e gli utenti dalle vulnerabilità di sicurezza sul web. Uno dei peggiori attacchi è il [cross-site scripting](https://www.google.com/about/appsecurity/learning/xss/) (filtro XSS). Il bug XSS è una vulnerabilità della sicurezza che può consentire a un utente malintenzionato di inserire codice dannoso nelle pagine HTML visualizzate agli utenti.

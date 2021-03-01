@@ -1,22 +1,25 @@
 ---
-$title: Versión preliminar y validación
-$order: 3
+'$title': Versión preliminar y validación
+$order: 5
+description: Obtenga una vista previa de la página AMP tal como lo haría con cualquier otro sitio HTML estático. No se requiere ningún paso de construcción o de preprocesamiento. Puede elegir...
+author: pbakaus
+contributors:
+  - bpaduch
 ---
 
-## Preliminar
+## Vista previa
 
-Accede a la versión preliminar de la página AMP como lo harías con cualquier otro sitio HTML estático. No hay pasos de compilación ni procesamientos previos obligatorios. Tienes una de las siguientes opciones:
+Obtenga una vista previa de la página AMP tal como lo haría con cualquier otro sitio HTML estático. No se requiere ningún paso de construcción o de preprocesamiento. Puede elegir:
 
-  - **Abrirla directamente en el navegador desde el sistema de archivos** (ciertos elementos podrían no funcionar debido a errores en XMLHttpRequests).
-  - **Usar un servidor web local como Apache 2 o Nginx**.
-    *(Sugerencia: Para acceder a un servidor web rápido, ejecuta `python -m SimpleHTTPServer`)*.
+- **Abrir la página directamente en el navegador desde el sistema de archivos** (es posible que algunos elementos no funcionen debido a errores en XMLHttpRequests).
+- **Utilizar un servidor web local como Apache 2 o Nginx**. _(Sugerencia: Para acceder a un servidor web rápido, ejecute `python -m SimpleHTTPServer`)_.
 
 ## Validación
 
-A continuación, asegúrate de que tu página AMP **sea válida**; de lo contrario, no podrá detectarse ni distribuirse mediante plataformas de terceros como la Búsqueda de Google. Para la validación:
+A continuación, asegúrese de que su página AMP **sea válida**, de lo contrario, no podrá detectarse ni distribuirse mediante plataformas de terceros como Google Search. Para la validación:
 
-  1. Abre tu página en el navegador.
-  1. Agrega “`#development=1`” a la URL; por ejemplo, `http://localhost:8000/released.amp.html#development=1`.
-  1. Abre la [consola DevTools de Chrome](https://developers.google.com/web/tools/chrome-devtools/debug/console/) y busca errores de validación.
+1. Abra la página en su navegador.
+2. Agregue “`#development=1`” a la URL, por ejemplo, `http://localhost:8000/released.amp.html#development=1`.
+3. Abra la [consola DevTools de Chrome](https://developers.google.com/web/tools/chrome-devtools/debug/console/) y busque errores de validación.
 
-Leer más: [Obtén más información acerca de la validación](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) y de lo que debes hacer cuando encuentres errores.
+[tip type="read-on"] <strong>LEER MÁS:</strong> [Obtenga más información sobre la validación](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) y lo que debe hacer cuando encuentre errores.[/tip]

@@ -1,15 +1,15 @@
 ---
-"$title": Używanie optymalizatora AMP
-"$order": '2'
-"$hidden": 'true'
+'$title': Używanie optymalizatora AMP
+$order: 2
+'$hidden': 'true'
 description: Optymalizatory AMP to narzędzia, które wprowadzają optymalizacje serwerów buforujących AMP do Twojej własnej witryny. Używanie optymalizatora AMP jest kluczem do utworzenia świetnie działającej strony i osiągnięcia zgodności z wymogami dotyczącymi wskaźników Core Web Vitals. Ten przewodnik wyjaśnia, jak najlepiej wykorzystać optymalizator AMP do optymalizacji stron AMP.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 
-Optymalizatory AMP to narzędzia, które wprowadzają optymalizacje serwerów buforujących AMP do Twojej własnej witryny. Używanie optymalizatora AMP jest kluczem do utworzenia [świetnie działającej strony](https://developers.google.com/search/docs/guides/page-experience) i osiągnięcia zgodności z wymogami dotyczącymi wskaźników [Core Web Vitals](https://web.dev/vitals/).  Aby dowiedzieć się więcej o działaniu optymalizatora AMP, sprawdź nasz [szczegółowy przewodnik po optymalizacjach AMP](explainer.md).
+Optymalizatory AMP to narzędzia, które wprowadzają optymalizacje serwerów buforujących AMP do Twojej własnej witryny. Używanie optymalizatora AMP jest kluczem do utworzenia [świetnie działającej strony](https://developers.google.com/search/docs/guides/page-experience) i osiągnięcia zgodności z wymogami dotyczącymi wskaźników [Core Web Vitals](https://web.dev/vitals/). Aby dowiedzieć się więcej o działaniu optymalizatora AMP, sprawdź nasz [szczegółowy przewodnik po optymalizacjach AMP](explainer.md).
 
 ## Czy AMP nie jest już wystarczająco szybki?
 

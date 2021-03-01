@@ -1,7 +1,12 @@
 ---
-$title: Terminologia AMP
+'$title': Terminologia AMP
 $order: 2
 description: Linee guida sulla terminologia AMP
+formats:
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 
@@ -68,12 +73,12 @@ author: CrystalOnScript
    </td>
   </tr>
   <tr>
-   <td>Storia AMP/ storie AMP</td>
+   <td>Storia web / Storie web</td>
    <td>Il racconto su web di un'esperienza realizzato con AMP.</td>
    <td>
 <ul>
-      <li>Il formato delle storie AMP è libero e fa parte del web aperto.</li>
-<li>Le storie AMP permettono ai lettori di immergersi in coinvolgenti esperienze su pagine a schermo intero con caricamento veloce.</li>
+      <li>Il formato delle storie Web è libero e fa parte del web aperto.</li>
+<li>Le storie Web permettono ai lettori di immergersi in coinvolgenti esperienze su pagine a schermo intero con caricamento veloce.</li>
 </ul>
    </td>
   </tr>

@@ -11,9 +11,9 @@ const GO_LINKS_YAML = `
 
 jest.mock('js-yaml');
 const yaml = require('js-yaml');
-const {safeLoad} = jest.requireActual('js-yaml');
-const goLinks = safeLoad(GO_LINKS_YAML);
-yaml.safeLoad.mockReturnValue(goLinks);
+const {load} = jest.requireActual('js-yaml');
+const goLinks = load(GO_LINKS_YAML);
+yaml.load.mockReturnValue(goLinks);
 
 const app = express();
 const router = require('./go.js');

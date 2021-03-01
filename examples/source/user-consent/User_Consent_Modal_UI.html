@@ -1,0 +1,85 @@
+<!---
+
+teaserImage: '/static/samples/img/teaser/user_consent_modal_ui.png'
+author: micajuineho
+
+--->
+
+<!--
+  ## Introduction
+
+  Sometimes publishers want to display more disclosures in the initial consent prompt iframe. This sample demonstrates how you can use `amp-consent` together with a third-party iframe and style it to appear like a modal.
+-->
+<!-- -->
+<!doctype html>
+<html ⚡>
+<head>
+  <meta charset="utf-8">
+  <link rel="canonical" href="<% canonical %>">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <title>User Consent Modal UI</title>
+  <!-- ## Setup -->
+  <!--
+  We need to import the `amp-consent` component.
+  -->
+  <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
+
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <style amp-custom>
+    :root {
+      --space-3: 1.5rem; /* 24px */
+    }
+    #post-consent-ui {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: var(--space-3);
+    }
+  </style>
+</head>
+<body>
+  <!-- ## Defining the Consent Flow -->
+  <!--
+    We define a basic consent flow using the `promptUISrc` to load our custom consent iframe.
+  -->
+  <amp-consent id="myUserConsent" layout="nodisplay">
+    <script type="application/json">{
+      "consentInstanceId": "myConsent",
+      "consentRequired": true,
+      "promptUISrc": "/static/samples/files/diy-consent.html",
+      "postPromptUI": "post-consent-ui"
+    }</script>
+    <div id="post-consent-ui">
+      <button on="tap:myUserConsent.prompt()">Update Consent</button>
+    </div>
+  </amp-consent>
+
+  <!-- ## Consent Dialog Iframe -->
+  <!--
+    When the consent dialog iframe is ready, it can send the `amp-consent` component a postMessage with the style information.
+
+    ```js
+    window.parent.postMessage({
+      type: 'consent-ui',
+      action: 'ready',
+      initialHeight: '80vh',
+      enableBorder: true
+    }, '*');
+    ```
+
+    Here, the initialHeight is a string that represents the viewport height that the iframe should take.
+    A viewport height between 30 and 60, inclusive, will tell `amp-consent` to style the iframe in a bottom sheet.
+    A viewport height greater than 60 and less than or equal to 80 will tell `amp-consent` to style the iframe as a centered modal.
+  -->
+
+    <!--
+    Use `data-block-on-consent` attribute to block AMP components until consent is given.
+    Individual AMP components can override  blocking behavior and implement blocking logic themselves.
+
+    Here is an image which is blocked until consent is given:
+  -->
+  <amp-img data-block-on-consent src="/static/samples/img/landscape_lake_300x201.jpg" width="300" height="201">
+  </amp-img>
+</body>
+</html>

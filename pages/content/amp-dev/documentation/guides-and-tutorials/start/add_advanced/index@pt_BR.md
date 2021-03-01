@@ -1,10 +1,15 @@
 ---
-$title: Adicionar recursos de AMP avançados
+'$title': Add advanced AMP features
+$order: 0
+description: Neste tutorial, você desenvolverá seu conhecimento dos princípios básicos do AMP e verá como essa tecnologia lida com publicidade, análises, vídeos incorporados, integração de mídias sociais, carrosséis e muito mais.
+'$hidden': 'true'
+formats:
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='Artigo de notícias concluído') }}
 
-Neste tutorial, você desenvolverá seu conhecimento dos princípios básicos da AMP e verá como essa tecnologia lida com publicidade, análises, vídeos incorporados, integração de mídias sociais, carrosséis e muito mais. No final deste tutorial, você terá criado um artigo de notícias para dispositivos móveis que inclui esses recursos.
+Neste tutorial, você desenvolverá seu conhecimento dos princípios básicos do AMP e verá como essa tecnologia lida com publicidade, análises, vídeos incorporados, integração de mídias sociais, carrosséis e muito mais. No final deste tutorial, você terá criado um artigo de notícias para dispositivos móveis que inclui esses recursos.
 
 ## Você aprenderá a:
 
@@ -17,6 +22,6 @@ Neste tutorial, você desenvolverá seu conhecimento dos princípios básicos da
 
 ## Resultado:
 
-Você criará uma página de artigo de notícias em conformidade com as especificações de AMP, incluindo publicidade, análises, vídeos e mídia social incorporados, carrosséis e um menu de navegação do site.
+Você criará uma página de artigo de notícias em conformidade com as especificações do AMP, incluindo publicidade, análises, vídeos e mídia social incorporados, carrosséis e um menu de navegação do site.
 
-Observação: Este tutorial é uma continuação dos conceitos apresentados no tutorial ["Converter seu HTML para AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md). Se você ainda não tiver um conhecimento básico dos principais conceitos de AMP, acesse ["Converter seu HTML para AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md).
+[tip type="note"] <strong>OBSERVAÇÃO –</strong> Este tutorial é uma continuação dos conceitos apresentados no tutorial ["Converta seu HTML para AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md). Se você ainda não tiver um conhecimento básico dos principais conceitos de AMP, acesse ["Converta seu HTML para AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md).[/tip]

@@ -1,5 +1,5 @@
 ---
-$title: AMPHTML 構文の検証
+'$title': AMPHTML 構文の検証
 $order: 3
 description: 広告が正しくレンダリングするように、AMPHTML 構文を検証する必要があります。ブラウザで AMP Validator を開き、AMP4ADS が HTML 形式として選択されていることを確認してください。
 ---

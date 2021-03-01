@@ -1,6 +1,10 @@
 ---
-$title: Eseguire il debug dei problemi della cache AMP
-order: 8
+'$title': Eseguire il debug dei problemi della cache AMP
+$order: 8
+formats:
+  - websites
+  - stories
+  - ads
 teaser:
   text: Perché il mio documento su una cache AMP è danneggiato?
 ---
@@ -64,4 +68,5 @@ Se il problema persiste dopo aver seguito tale procedura, controllare la tabella
     </tr>
 </tbody>
 </table>
+
 </table>

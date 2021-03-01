@@ -1,6 +1,6 @@
 ---
-"$title": Özet
-"$order": '4'
+'$title': Özet
+$order: 4
 description: Tebrikler! Uzak bir JSON uç noktasından talep üzerine getirilen, her bir SKU için değişen boyut ve fiyatlara sahip etkileşimli bir e-ticaret ürün detay sayfası oluşturdunuz.
 ---
 

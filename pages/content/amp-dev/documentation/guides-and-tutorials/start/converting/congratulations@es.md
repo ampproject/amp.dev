@@ -1,8 +1,10 @@
 ---
-$title: ¡Felicitaciones!
+'$title': '¡Felicidades!'
+$order: 4
+description: 'Completó el tutorial y convirtió con éxito un documento HTML en un documento AMP. En este tutorial, aprendió a: - Reconocer las diferencias entre AMP y...'
 ---
 
-Ha terminado el tutorial y convertido correctamente un documento HTML en un documento de AMP.
+Completó el tutorial y convirtió con éxito un documento HTML en un documento AMP.
 
 En este tutorial, aprendió a:
 

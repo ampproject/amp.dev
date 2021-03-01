@@ -1,6 +1,6 @@
 ---
-"$title": Rozpoczynanie relacji
-"$order": '3'
+'$title': Rozpoczynanie relacji
+$order: 3
 description: Całą relację internetową reprezentuje element amp-story, który służy jako kontener na wszystkie strony relacji. Składnik amp-story odpowiada również za...
 author: bpaduch
 ---
@@ -13,8 +13,11 @@ Składnik [`amp-story`](../../../../documentation/components/reference/amp-story
 
 ```html
 <head>
-<script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+  <script
+    async
+    custom-element="amp-story"
+    src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+  ></script>
 </head>
 ```
 
@@ -22,8 +25,7 @@ Składnik [`amp-story`](../../../../documentation/components/reference/amp-story
 
 ```html
 <body>
-  <amp-story standalone>
-  </amp-story>
+  <amp-story standalone> </amp-story>
 </body>
 ```
 
@@ -41,11 +43,13 @@ Aby relację można było odnaleźć w sieci, wymagane są określone metadane, 
 Dodajmy te atrybuty do naszego znacznika [`amp-story`](../../../../documentation/components/reference/amp-story.md):
 
 ```html
-<amp-story standalone
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-    poster-portrait-src="assets/cover.jpg">
+<amp-story
+  standalone
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+></amp-story>
 ```
 
 Oprócz tych wymaganych atrybutów, są też inne atrybuty, które można zastosować. Aby dowiedzieć się więcej, zapoznaj się z sekcją dotyczącą [atrybutów ](../../../../documentation/components/reference/amp-story.md#attributes) w dokumentacji referencyjnej składnika [`amp-story`](../../../../documentation/components/reference/amp-story.md).

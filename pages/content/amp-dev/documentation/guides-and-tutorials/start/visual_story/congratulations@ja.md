@@ -1,5 +1,8 @@
 ---
-$title: お疲れ様でした
+'$title': Congratulations!
+$order: 9
+description: 以上で、最初の AMP ストーリーが完成しました。 このチュートリアルで学習した内容は次のとおりです。 amp-story コンポーネントを使用して、複数のページから構成されるストーリーを作成する
+author: bpaduch
 ---
 
 以上で、最初の AMP ストーリーが完成しました。
@@ -19,9 +22,3 @@ AMP ストーリーの詳細については、下記の関連資料をご覧く�
 
 - [`amp-story`](../../../../documentation/components/reference/amp-story.md)
 - [AMP ストーリーのおすすめの方法](../../../../documentation/guides-and-tutorials/start/create_successful_stories.md)
-
-[tip type="note"]
-
-[`amp-story`](../../../../documentation/components/reference/amp-story.md) は**試験運用コンポーネント**です。元のトライアルに登録して、このコンポーネントでページを公開するには、<a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a> をご覧ください。
-
-[/tip]

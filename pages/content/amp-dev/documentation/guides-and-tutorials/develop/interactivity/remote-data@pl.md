@@ -1,6 +1,6 @@
 ---
-"$title": Praca z danymi zdalnymi
-"$order": '3'
+'$title': Praca z danymi zdalnymi
+$order: 3
 description: Co zrobić, jeśli dane, które można powiązać, są zbyt duże lub złożone, aby pobrać je podczas ładowania strony? Albo co zrobić, jeśli każda jednostka SKU ma cenę, która wymaga...
 toc: 'true'
 ---
@@ -19,15 +19,15 @@ Możesz również powiązać atrybut `src` z elementem [`<amp-state>`](../../../
 
 Skorzystajmy z możliwości pobierania danych zdalnych, aby sprawdzić ceny jednostek SKU w naszym przykładzie. Nasz serwer programistyczny Express.js w `app.js` ma już punkt końcowy `/shirts/sizesAndPrices?shirt=<sku>`, który po podaniu SKU koszuli zwraca dostępne rozmiary i cenę poszczególnych rozmiarów. Wysyła on odpowiedź ze sztucznym opóźnieniem wynoszącym jedną sekundę, aby symulować latencję sieci.
 
-Żądanie | Odpowiedź
---- | ---
-`GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}`
+| Żądanie                               | Odpowiedź                                    |
+| ------------------------------------- | -------------------------------------------- |
+| `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
 Podobnie jak dane JSON w elementach [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state), dane zdalne zwracane z tych pobrań są scalane i dostępne pod atrybutem elementu `id`. Na przykład dostęp do danych zwróconych w powyższej przykładowej odpowiedzi można uzyskać w wyrażeniu:
 
-Wyrażenie | Wynik
---- | ---
-`shirts['1001'].sizes['XS']` | `8.99`
+| Wyrażenie                    | Wynik  |
+| ---------------------------- | ------ |
+| `shirts['1001'].sizes['XS']` | `8.99` |
 
 ### Wiązanie danych
 
@@ -36,7 +36,10 @@ Teraz zastosujmy to do naszego przykładu e-commerce. Najpierw pobierzmy te dane
 ```html
 <!-- When `selected.sku` changes, update the `src` attribute and fetch
      JSON at the new URL. Then, merge that data under `id` ("shirts"). -->
-<amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
+<amp-state
+  id="shirts"
+  [src]="'/shirts/sizesAndPrices?sku=' + selected.sku"
+></amp-state>
 ```
 
 ### Wskazywanie niedostępnych rozmiarów
@@ -73,7 +76,7 @@ Teraz załaduj ponownie stronę i wypróbuj jej działanie. Wybranie nowej SKU (
 
 ### Określenie stanów początkowych
 
-Jest jednak mały problem — co z czarną koszulą, kolorem wybranym domyślnie?  Będziemy musieli dodać rozmiar i cenę czarnej koszuli do elementu `amp-state#shirts`, ponieważ składnik [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) działa tylko w odpowiedzi na jawne działanie użytkownika:
+Jest jednak mały problem — co z czarną koszulą, kolorem wybranym domyślnie? Będziemy musieli dodać rozmiar i cenę czarnej koszuli do elementu `amp-state#shirts`, ponieważ składnik [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) działa tylko w odpowiedzi na jawne działanie użytkownika:
 
 ```html
 <amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
@@ -106,16 +109,22 @@ Musimy też zaktualizować stan domyślny odpowiednich elementów:
       </td>
       <!-- Add the 'unavailable' class to the next three <td> elements
            to be consistent with the available sizes of the default SKU. -->
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'"
+      >
         <div option="M">M</div>
       </td>
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'"
+      >
         <div option="L">L</div>
       </td>
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'"
+      >
         <div option="XL">XL</div>
       </td>
     </tr>
@@ -134,8 +143,10 @@ Nasz sklep AMPPAREL wyróżnia się tym, że cena koszuli zależy zarówno od ko
 ```html
 <!-- When an element is selected, set the `selectedSize` variable to the
      value of the "option" attribute of the selected element.  -->
-<amp-selector name="size"
-    on="select:AMP.setState({selectedSize: event.targetOption})">
+<amp-selector
+  name="size"
+  on="select:AMP.setState({selectedSize: event.targetOption})"
+></amp-selector>
 ```
 
 Zauważ, że nie inicjujemy wartości `selectedSize` poprzez element `amp-state#selected`. Dzieje się tak, ponieważ celowo nie podajemy domyślnego wybranego rozmiaru, a zamiast tego chcemy nakłonić użytkownika do wybrania rozmiaru.
@@ -145,7 +156,8 @@ Zauważ, że nie inicjujemy wartości `selectedSize` poprzez element `amp-state#
 Dodaj nowy element `<span>` otaczający etykietę ceny i zmień domyślny tekst na "---", ponieważ nie ma domyślnego wyboru rozmiaru.
 
 ```html
-<h6>PRICE :
+<h6>
+  PRICE :
   <!-- Display the price of the selected shirt in the selected size if available.
        Otherwise, display the placeholder text '---'. -->
   <span [text]="shirts[selected.sku].sizes[selectedSize] || '---'">---</span>
@@ -163,9 +175,13 @@ Prawie skończyliśmy! Wyłączmy przycisk „Add to cart”, gdy wybrany rozmia
      1. There is no selected size, OR
      2. The available sizes for the selected SKU haven't been fetched yet
 -->
-<input type="submit" value="ADD TO CART" disabled
-    class="mdl-button mdl-button--raised mdl-button--accent"
-    [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]">
+<input
+  type="submit"
+  value="ADD TO CART"
+  disabled
+  class="mdl-button mdl-button--raised mdl-button--accent"
+  [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]"
+/>
 ```
 
 **Wypróbuj to**: jeśli wybierzesz niedostępny rozmiar, nie można będzie dodać go do koszyka.

@@ -1,5 +1,7 @@
 ---
-$title: 시작 코드 검토
+'$title': 시작 코드 검토
+$order: 1
+description: 코드를 추가하기 전에 샘플 article.amp.html 페이지를 살펴보겠습니다. 샘플 페이지는 다음과 같이 작성되어 있습니다...
 ---
 
 코드를 추가하기 전에 샘플 [article.amp.html](https://github.com/googlecodelabs/accelerated-mobile-pages-advanced/blob/master/article.amp.html) 페이지를 살펴 보겠습니다. 샘플 페이지는 다음과 같이 작성되어 있습니다.
@@ -164,7 +166,8 @@ $title: 시작 코드 검토
 페이지를 변경해 보기 전에 유효한 AMP HTML을 사용하고 있는지 확인하기 위해 [AMP 유효성 검사 도구](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)를 사용하도록 설정해 보겠습니다. URL에 다음 프래그먼트 식별자를 **추가**하세요.
 
 ```text
-#development=1
+# development=1
+
 ```
 
 예:
@@ -175,16 +178,14 @@ http://localhost:8000/article.amp.html#development=1
 
 Chrome이나 선호하는 브라우저에서 [개발자 콘솔](https://developer.chrome.com/devtools/docs/console)을 열고 AMP 오류가 없는지 확인하세요.
 
-[tip]
-다음과 같은 다양한 도구를 사용하여 AMP 페이지의 유효성을 검사할 수 있습니다.
+[tip] 다음과 같은 다양한 도구를 사용하여 AMP 페이지의 유효성을 검사할 수 있습니다.
 
 - [Chrome용 AMP 유효성 검사 도구 확장 프로그램](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc)
 - [Opera용 AMP 유효성 검사 도구 확장 프로그램](https://addons.opera.com/ko/extensions/details/amp-validator/)
 - [AMP 유효성 검사 도구 웹 인터페이스](https://validator.ampproject.org/)
 - 그 외 다수
 
-[AMP 페이지 유효성 검사](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) 가이드에서 자세한 내용을 알아보세요.
-[/tip]
+[AMP 페이지 유효성 검사](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) 가이드에서 자세한 내용을 알아보세요. [/tip]
 
 {{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='Nexus 5X 기기 시뮬레이션') }}
 

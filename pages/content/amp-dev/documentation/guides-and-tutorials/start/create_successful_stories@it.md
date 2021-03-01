@@ -1,8 +1,10 @@
 ---
-$title: Procedure consigliate per la creazione di storie web di successo
+'$title': Procedure consigliate per la creazione di storie web di successo
 $order: 1
 description: Procedure consigliate per la creazione di storie web di successo
-$category: Inizio
+'$category': Start
+formats:
+  - stories
 author: CrystalOnScript
 ---
 
@@ -133,8 +135,7 @@ Utilizzare immagini a schermo intero con orientamento verticale e una buona riso
   <amp-video layout="responsive" poster="/static/img/docs/guides/storiesbp/do-background-still.jpg" width="1440" height="630" loop autoplay noaudio>
     <source src="/static/img/docs/guides/storiesbp/do-background.webm" type="video/webm"></source>
     <source src="/static/img/docs/guides/storiesbp/do-background.mp4" type="video/mp4"></source>
-  </amp-video>
-</figure>
+  </amp-video></figure>
 
 Evitare foto tagliate in orizzontale.
 

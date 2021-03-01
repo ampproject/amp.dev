@@ -11,13 +11,13 @@
   padding: 5px 10px;
   border: none;
   border-radius: 25px;
-  background: color('white');
+  background: var(--background-color, safeColor('white'));
   @include txt;
   @include txt-2;
   @include txt-strong;
   @include filter-bubble-shadow-regular;
-  color: safeColor('light-gray');
-  font-family: 'Noto Sans', sans-serif;
+  color: var(--color, safeColor('light-gray'));
+  font-family: 'Noto Sans', system;
   transition: background-color .2s ease-in, color .2s ease-in, box-shadow .25s ease-in;
   cursor: pointer;
 
@@ -55,5 +55,10 @@
     background-color: color('river-bed');
     color: safeColor('white');
     pointer-events: none;
+  }
+
+  &-bento {
+    background-color: color('chestnut-rose');
+    color: safeColor('white');
   }
 }

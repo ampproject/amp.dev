@@ -1,6 +1,6 @@
 ---
 '$title': Başlangıç kodunu gözden geçirme
-'$order': '1'
+$order: 1
 description: 'Kod eklemeye başlamadan önce, aşağıdaki gibi olması gereken örnek article.amp.html sayfasını inceleyelim: ...'
 ---
 

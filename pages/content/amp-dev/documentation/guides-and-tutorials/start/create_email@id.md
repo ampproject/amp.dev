@@ -1,8 +1,10 @@
 ---
-$title: Membuat Email AMP pertama Anda
+'$title': Membuat Email AMP pertama Anda
 $order: 0
 description: Pelajari apa yang membuat email AMP berbeda dengan membuat email pertama Anda.
-tutorial: true
+tutorial: 'true'
+formats:
+  - email
 author: CrystalOnScript
 ---
 
@@ -19,21 +21,25 @@ Ikuti tutorial ini untuk membuat dan mengirimkan email dinamis pertama Anda yang
 AMP Playground mendukung format AMP untuk Email, sehingga memungkinkan Anda untuk mengembangkan, menguji, dan memvalidasi Email AMP Anda. Buka [AMP Playground](https://playground.amp.dev/?runtime=amp4email) dan pastikan bahwa format sudah diatur ke `AMP for Email` pada sudut kiri atas. Anda akan melihat kode berikut ini:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email data-css-strict>
-<head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
-  <style amp-custom>
-    h1 {
-      margin: 1rem;
-    }
-  </style>
-</head>
-<body>
-  <h1>Hello, I am an AMP EMAIL!</h1>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+    <style amp-custom>
+      h1 {
+        margin: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello, I am an AMP EMAIL!</h1>
+  </body>
 </html>
 ```
 
@@ -56,10 +62,12 @@ Kebanyakan tag HTML yang digunakan di dalam email dapat digunakan di dalam email
 Tag `<amp-img>` mengharuskan lebar dan tinggi gambar ditentukan, dan tidak seperti `<img>`, `<amp-img>` harus secara jelas ditutup melalui `</amp-img>`.
 
 ```html
-<amp-img src="https://link/to/img.jpg"
-         alt="photo description"
-         width="100"
-         height="100">
+<amp-img
+  src="https://link/to/img.jpg"
+  alt="photo description"
+  width="100"
+  height="100"
+>
 </amp-img>
 ```
 
@@ -73,10 +81,12 @@ Kita dapat menyertakan gambar di dalam email pertama kita dengan menambahkan kod
 
 ```html
 <body>
-  <amp-img src="https://placekitten.com/800/400"
-           alt="Welcome"
-           width="800"
-           height="400">
+  <amp-img
+    src="https://placekitten.com/800/400"
+    alt="Welcome"
+    width="800"
+    height="400"
+  >
   </amp-img>
 </body>
 ```
@@ -106,17 +116,24 @@ Untuk tutorial ini, kita akan menggunakan [`<amp-carousel>`](/content/amp-dev/do
 Tambahkan skrip `amp-carousel` ke tajuk email Anda.
 
 ```html
-  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script
+  async
+  custom-element="amp-carousel"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+></script>
 ```
 
 Lalu, bungkus gambar pertama kita di dalam tag `<amp-carousel>`.
 
 ```html
-<amp-carousel layout="responsive"
-              width="800"
-              height="400"
-              type="slides">
-        <amp-img layout="fill" src="https://placekitten.com/800/400"  alt="Welcome" height="400" width="800"></amp-img>
+<amp-carousel layout="responsive" width="800" height="400" type="slides">
+  <amp-img
+    layout="fill"
+    src="https://placekitten.com/800/400"
+    alt="Welcome"
+    height="400"
+    width="800"
+  ></amp-img>
 </amp-carousel>
 ```
 
@@ -125,17 +142,35 @@ Anda mungkin tidak melihat ada yang berubah, dan itu adalah hal yang bagus! Kors
 Selanjutnya, ganti gambar anak kucing dengan kucing AMP kita yang siap untuk diadopsi di dalam `<amp-carousel>` Anda.
 
 ```html
-<amp-carousel id="carousel-with-preview"
-    width="800"
-    height="400"
-    layout="responsive"
-    type="slides"
-    on="slideChange:AMP.setState({currentCat: event.index})">
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_caleb_woods.jpg"  alt="photo courtesy of Unsplash"></amp-img>
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_craig_mclaclan.jpg"  alt="photo courtesy of Unsplash"></amp-img>
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_lightscape.jpg"  alt="photo courtesy of Unsplash"></amp-img>
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_nick_karvounis.jpg"  alt="photo courtesy of Unsplash"></amp-img>
- </amp-carousel>
+<amp-carousel
+  id="carousel-with-preview"
+  width="800"
+  height="400"
+  layout="responsive"
+  type="slides"
+  on="slideChange:AMP.setState({currentCat: event.index})"
+>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_caleb_woods.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_craig_mclaclan.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_lightscape.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_nick_karvounis.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+</amp-carousel>
 ```
 
 Kini, Anda akan bisa mengubah foto dengan mengeklik tanda panah navigasi pada sisi kiri atau kanan korsel!
@@ -180,48 +215,55 @@ Pada dasarnya, email hanya mengizinkan konten statis. Melalui AMP, email menjadi
 Di dalam tutorial ini, kita akan menggunakan [`<amp-bind>`](/content/amp-dev/documentation/components/reference/amp-bind.md) untuk menampilkan nama kucing kita yang bisa diadopsi dan deskripsi ketika pengguna berada pada slide kucing tersebut. Mulailah dengan menyertakan skrip `amp-bind` dalam tajuk email Anda.
 
 ```html
- <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script
+  async
+  custom-element="amp-bind"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+></script>
 ```
 
 Selanjutnya, kita akan menyatakan variabel pengikat AMP "myState" sebagai untai JSON di dalam tag [`<amp-state>`](/content/amp-dev/documentation/components/reference/amp-bind.md#state). Karena kita mempunyai empat foto kucing, kita akan menyertakan status untuk keempat kucing tersebut.
 
 ```html
 <body>
-<amp-state id="myState">
-  <script type="application/json">
-    {
-      "cats": [
-         {
-          "name": "Aakash",
-          "description": "Very sweet gentleman that is quite shy in a shelter environment. He may hide under his blanket upon initial approach, but he is an affectionate lovebug."
-        },
-        {
-          "name": "Filip",
-          "description": "Friendly and enjoys pets and head rubs. Is known to sit on keyboards and refuses to touch anything with catnip on it."
-        },
-        {
-          "name": "Julian",
-          "description": "Both bold and extremely sweet. Wastes no time in investigating new smells, objects, and places, but enjoys lazing in the sun!"
-        },
-        {
-          "name": "John",
-          "description": "This playful and spirited cat would like to be outside his kennel and will be so happy when he gets to his forever home with more room to move."
-        }
-      ]
-    }
-  </script>
-</amp-state>
+  <amp-state id="myState">
+    <script type="application/json">
+      {
+        "cats": [
+          {
+            "name": "Aakash",
+            "description": "Very sweet gentleman that is quite shy in a shelter environment. He may hide under his blanket upon initial approach, but he is an affectionate lovebug."
+          },
+          {
+            "name": "Filip",
+            "description": "Friendly and enjoys pets and head rubs. Is known to sit on keyboards and refuses to touch anything with catnip on it."
+          },
+          {
+            "name": "Julian",
+            "description": "Both bold and extremely sweet. Wastes no time in investigating new smells, objects, and places, but enjoys lazing in the sun!"
+          },
+          {
+            "name": "John",
+            "description": "This playful and spirited cat would like to be outside his kennel and will be so happy when he gets to his forever home with more room to move."
+          }
+        ]
+      }
+    </script>
+  </amp-state>
+</body>
 ```
 
 [Peristiwa dan tindakan AMP](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md) memicu status yang berbeda. Di dalam kasus ini, kita ingin memperbarui status ketika pengguna mengeklik tanda panah navigasi korsel. amp-carousel memicu sebuah peristiwa [`slideChange`](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp-carouseltypeslides) dengan itu kita akan memperbarui variabel `currentCat` dengan menggunakan `AMP.setState`.
 
 ```html
 <h1>Adorable Adoptable Animals</h1>
-<amp-carousel width="800"
-              height="400"
-              layout="responsive"
-              type="slides"
-              on="slideChange:AMP.setState({ currentCat: event.index} )">
+<amp-carousel
+  width="800"
+  height="400"
+  layout="responsive"
+  type="slides"
+  on="slideChange:AMP.setState({ currentCat: event.index} )"
+>
   ...
 </amp-carousel>
 ```

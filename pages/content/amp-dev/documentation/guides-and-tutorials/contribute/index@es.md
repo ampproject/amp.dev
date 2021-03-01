@@ -1,29 +1,47 @@
 ---
-$title: Contribuciones
+'$title': Cómo contribuir
+'$titles':
+  navigation: Contribute
+'$path': '/documentation/guides-and-tutorials/contribute/index.html'
+'$localization':
+  path: '/{locale}/documentation/guides-and-tutorials/contribute/index.html'
+$order: 0
+description: El proyecto AMP no sería posible sin la ayuda de todos los miembros de la comunidad, ya sean desarrolladores, creadores de contenido o proveedores de servicios relacionados con AMP.
+formats:
+  - websites
+  - stories
+  - ads
+  - email
 ---
 
-El proyecto AMP no sería posible sin la ayuda de todos los miembros de la comunidad, ya sean desarrolladores, creadores de contenido o proveedores de servicios relacionados con AMP. Puedes contribuir a este proyecto de diversas formas.
+El proyecto AMP no sería posible sin la ayuda de todos los miembros de la comunidad, ya sean desarrolladores, creadores de contenido o proveedores de servicios relacionados con AMP. Puede contribuir a este proyecto de diversas formas.
 
-### Informar de problemas con AMP
+### Informe problemas con AMP
 
- Si quieres enviar algún comentario o te has encontrado con problemas técnicos con AMP, infórmanos de ello a través del [sistema de seguimiento de problemas](https://github.com/ampproject/amphtml/issues). En el caso de que te hayas encontrado algún problema en [amp.dev](https://amp.dev), utiliza el [sistema de seguimiento de problemas con documentos](https://github.com/ampproject/docs/issues).
+Si desea enviar algún comentario o ha encontrado problemas técnicos en AMP, infórmenos mediante el [sistema de seguimiento de problemas](https://github.com/ampproject/amphtml/issues). En caso de que haya encontrado algún problema en [amp.dev](https://amp.dev), utilice el [sistema de seguimiento de problemas en los documentos](https://github.com/ampproject/docs/issues).
 
 ### Contribuciones técnicas a AMP
 
-Agradecemos cualquier contribución técnica que puedas hacer al proyecto AMP.
+Agradecemos cualquier contribución técnica que haga al proyecto AMP.
 
-Esperamos que participes de manera continuada en nuestra comunidad de software libre, pero también agradeceremos cualquier contribución puntual que puedas hacer en relación con temas que te interesen especialmente.
+Esperamos que participe de manera continua en nuestra comunidad de software libre, pero también agradeceremos cualquier contribución puntual que haga sobre temas que le interesen especialmente.
 
 #### Ayuda con los códigos
 
- Si quieres contribuir al proyecto AMP con código, lee [el archivo sobre las contribuciones](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md), que incluye información detallada sobre el proceso completo que siguen correcciones de errores o de funciones, desde el concepto hasta el envío, y el procedimiento para participar en los debates y diseños técnicos. Si estás descubriendo el tema del software libre [te daremos algunos consejos para que empieces con buen pie](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-code).
+Si desea contribuir al proyecto AMP con códigos, lea [el archivo sobre las CONTRIBUCIONES](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md), el cual incluye información detallada sobre el proceso completo que siguen las correcciones de errores o de funciones, desde su concepto hasta el envío, y el procedimiento para participar en los debates y diseños técnicos. Si es nuevo en el tema del software libre [le daremos algunos consejos para que inicie con el pie derecho](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-code).
 
-#### Contribuir a la documentación
+### Contribuciones de contenido a AMP
 
-La documentación es algo muy importante para toda la comunidad AMP, así que agradecemos cualquier aportación que permita mejorar las referencias de las que disponemos. Tenemos documentación de todo tipo, desde ejemplos para los usuarios de AMP hasta documentos de ayuda para los colaboradores del proyecto AMP, entre otros muchos tipos.
+El contenido de <a>amp.dev</a> consiste en cómo los desarrolladores aprenden a construir experiencias web exitosas con AMP. ¡Apreciamos su interés en actualizar, crear y solicitar documentación útil!
 
-[amp.dev](https://amp.dev) es una página con información para familiarizarse con AMP. Para aportar documentación, accede a la [sección de documentos de ampproject del proyecto GitHub](https://github.com/ampproject/docs). Incluso puedes [aportar mejoras a la página](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md) que estás leyendo.
+#### Ayuda con la documentación
 
-[ampbyexample.com](../../../documentation/examples/index.html)  incluye ejemplos sobre cómo utilizar AMP. Puedes aportar mejoras en la [sección amp-by-example del proyecto GitHub](https://github.com/ampproject/amp-by-example/).
+Tenemos documentación de todo tipo, desde ejemplos del uso de AMP hasta tutoriales para que los desarrolladores inicien y guías para explorar las características de AMP.
 
- Para ayudar a otros colaboradores del proyecto AMP, puedes mejorar nuestra documentación en la [sección amphtml del proyecto GitHub](https://github.com/ampproject/amphtml).
+[amp.dev](../../../documentation/examples/index.html) es donde la mayoría de las personas se familiarizan con AMP. Puede contribuir a la documentación en el [proyecto ampproject docs GitHub](https://github.com/ampproject/amp-by-example/). (¡Incluso puede hacer que <a>la página que está leyendo</a> sea mejor!
+
+Inicie leyendo nuestra [guía de contribución a los contenidos](https://github.com/ampproject/amphtml).
+
+#### Ayuda con las traducciones
+
+AMP se esfuerza por hacer de la web una mejor experiencia para todos. Para que todos puedan usar AMP, necesitamos colaboradores de traducción para las guías, tutoriales, blogs y toda la documentación escrita de AMP. Para participar en la localización de la documentación de AMP para su comunidad, revise la [Iniciativa de traducción de AMP](https://github.com/ampproject/docs/blob/master/TRANSLATIONS.md).

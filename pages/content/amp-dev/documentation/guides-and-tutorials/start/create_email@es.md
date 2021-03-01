@@ -1,8 +1,10 @@
 ---
-$title: Cómo crear su primer correo electrónico de AMP
+'$title': Cómo crear su primer correo electrónico de AMP
 $order: 0
 description: Descubra qué hace diferentes a los correos electrónicos de AMP al crear su primer correo electrónico.
-tutorial: true
+tutorial: 'true'
+formats:
+  - email
 author: CrystalOnScript
 ---
 
@@ -19,21 +21,25 @@ Siga este tutorial para crear y enviar su primer correo electrónico dinámico, 
 AMP playground es compatible con el formato de AMP for Email, lo que le permite desarrollar, probar y validar sus correos electrónicos de AMP. Abra [AMP Playground](https://playground.amp.dev/?runtime=amp4email) y asegúrese de que el formato esté configurado para `AMP for Email` en la esquina superior izquierda. Debería visualizar el siguiente código:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email data-css-strict>
-<head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
-  <style amp-custom>
-    h1 {
-      margin: 1rem;
-    }
-  </style>
-</head>
-<body>
-  <h1>Hello, I am an AMP EMAIL!</h1>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+    <style amp-custom>
+      h1 {
+        margin: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello, I am an AMP EMAIL!</h1>
+  </body>
 </html>
 ```
 
@@ -56,10 +62,12 @@ La mayoría de las etiquetas HTML que se utilizan en los correos electrónicos p
 La etiqueta `<amp-img>` requiere que se defina el ancho y el alto de una imagen y, a diferencia de `<img>`, `<amp-img>` debe cerrarse explícitamente con `</amp-img>`.
 
 ```html
-<amp-img src="https://link/to/img.jpg"
-         alt="photo description"
-         width="100"
-         height="100">
+<amp-img
+  src="https://link/to/img.jpg"
+  alt="photo description"
+  width="100"
+  height="100"
+>
 </amp-img>
 ```
 
@@ -73,10 +81,12 @@ Podemos incluir una imagen en nuestro primer mensaje de correo electrónico si a
 
 ```html
 <body>
-  <amp-img src="https://placekitten.com/800/400"
-           alt="Welcome"
-           width="800"
-           height="400">
+  <amp-img
+    src="https://placekitten.com/800/400"
+    alt="Welcome"
+    width="800"
+    height="400"
+  >
   </amp-img>
 </body>
 ```
@@ -106,17 +116,24 @@ En este tutorial utilizaremos [`<amp-carousel>`](/content/amp-dev/documentation/
 Agregue el script `amp-carousel` en el encabezado de su correo electrónico.
 
 ```html
-  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script
+  async
+  custom-element="amp-carousel"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+></script>
 ```
 
 Posteriormente, envuelva nuestra primera imagen entre las etiquetas `<amp-carousel>`.
 
 ```html
-<amp-carousel layout="responsive"
-              width="800"
-              height="400"
-              type="slides">
-        <amp-img layout="fill" src="https://placekitten.com/800/400"  alt="Welcome" height="400" width="800"></amp-img>
+<amp-carousel layout="responsive" width="800" height="400" type="slides">
+  <amp-img
+    layout="fill"
+    src="https://placekitten.com/800/400"
+    alt="Welcome"
+    height="400"
+    width="800"
+  ></amp-img>
 </amp-carousel>
 ```
 
@@ -125,17 +142,35 @@ Puede notar que nada ha cambiado, ¡y eso es algo bueno! A nuestro carrusel se l
 A continuación, reemplace la imagen del gatito con nuestros gatos en adopción dentro del `<amp-carousel>` de AMP.
 
 ```html
-<amp-carousel id="carousel-with-preview"
-    width="800"
-    height="400"
-    layout="responsive"
-    type="slides"
-    on="slideChange:AMP.setState({currentCat: event.index})">
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_caleb_woods.jpg"  alt="photo courtesy of Unsplash"></amp-img>
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_craig_mclaclan.jpg"  alt="photo courtesy of Unsplash"></amp-img>
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_lightscape.jpg"  alt="photo courtesy of Unsplash"></amp-img>
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_nick_karvounis.jpg"  alt="photo courtesy of Unsplash"></amp-img>
- </amp-carousel>
+<amp-carousel
+  id="carousel-with-preview"
+  width="800"
+  height="400"
+  layout="responsive"
+  type="slides"
+  on="slideChange:AMP.setState({currentCat: event.index})"
+>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_caleb_woods.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_craig_mclaclan.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_lightscape.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_nick_karvounis.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+</amp-carousel>
 ```
 
 ¡Ahora debería ser capaz de cambiar las fotos haciendo clic en las flechas de navegación que se encuentran a la izquierda o derecha del carrusel!
@@ -180,48 +215,55 @@ Tradicionalmente, los correos electrónicos solo permitían contenido estático.
 En este tutorial, usaremos [`<amp-bind>`](/content/amp-dev/documentation/components/reference/amp-bind.md) para mostrar el nombre de nuestro gato en adopción y una descripción que podrá visualizar el usuario cuando consulte la diapositiva de ese gato en particular. Comience por incluir el script `amp-bind` en el encabezado de su correo electrónico.
 
 ```html
- <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script
+  async
+  custom-element="amp-bind"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+></script>
 ```
 
 Enseguida, declararemos la variable bind de AMP “myState” como una cadena JSON dentro de una etiqueta [`<amp-state>`](/content/amp-dev/documentation/components/reference/amp-bind.md#state). Dado que tenemos cuatro fotos de gatos, incluiremos el estado para las cuatro.
 
 ```html
 <body>
-<amp-state id="myState">
-  <script type="application/json">
-    {
-      "cats": [
-         {
-          "name": "Aakash",
-          "description": "Very sweet gentleman that is quite shy in a shelter environment. He may hide under his blanket upon initial approach, but he is an affectionate lovebug."
-        },
-        {
-          "name": "Filip",
-          "description": "Friendly and enjoys pets and head rubs. Is known to sit on keyboards and refuses to touch anything with catnip on it."
-        },
-        {
-          "name": "Julian",
-          "description": "Both bold and extremely sweet. Wastes no time in investigating new smells, objects, and places, but enjoys lazing in the sun!"
-        },
-        {
-          "name": "John",
-          "description": "This playful and spirited cat would like to be outside his kennel and will be so happy when he gets to his forever home with more room to move."
-        }
-      ]
-    }
-  </script>
-</amp-state>
+  <amp-state id="myState">
+    <script type="application/json">
+      {
+        "cats": [
+          {
+            "name": "Aakash",
+            "description": "Very sweet gentleman that is quite shy in a shelter environment. He may hide under his blanket upon initial approach, but he is an affectionate lovebug."
+          },
+          {
+            "name": "Filip",
+            "description": "Friendly and enjoys pets and head rubs. Is known to sit on keyboards and refuses to touch anything with catnip on it."
+          },
+          {
+            "name": "Julian",
+            "description": "Both bold and extremely sweet. Wastes no time in investigating new smells, objects, and places, but enjoys lazing in the sun!"
+          },
+          {
+            "name": "John",
+            "description": "This playful and spirited cat would like to be outside his kennel and will be so happy when he gets to his forever home with more room to move."
+          }
+        ]
+      }
+    </script>
+  </amp-state>
+</body>
 ```
 
 [Las acciones y eventos de AMP](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md) desencadenan diferentes estados. En nuestro caso, lo que queremos es actualizar el estado cuando el usuario haga clic en las flechas de navegación del carrusel. amp-carousel activa un evento [`slideChange`](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp-carouseltypeslides), en el cual actualizaremos la variable `currentCat` mediante `AMP.setState`.
 
 ```html
 <h1>Adorable Adoptable Animals</h1>
-<amp-carousel width="800"
-              height="400"
-              layout="responsive"
-              type="slides"
-              on="slideChange:AMP.setState({ currentCat: event.index} )">
+<amp-carousel
+  width="800"
+  height="400"
+  layout="responsive"
+  type="slides"
+  on="slideChange:AMP.setState({ currentCat: event.index} )"
+>
   ...
 </amp-carousel>
 ```

@@ -1,30 +1,47 @@
 ---
-$title: Cara Berkontribusi
+'$title': Cara Berkontribusi
+'$titles':
+  navigation: Contribute
+'$path': '/documentation/guides-and-tutorials/contribute/index.html'
+'$localization':
+  path: '/{locale}/documentation/guides-and-tutorials/contribute/index.html'
+$order: 0
+description: Proyek AMP tidak akan mungkin terwujud tanpa bantuan dari semua anggota komunitas, baik itu pengembang, pembuat konten, maupun penyedia layanan yang relevan dengan AMP.
+formats:
+  - websites
+  - stories
+  - ads
+  - email
 ---
 
-Project AMP tidak akan dapat terealisasi tanpa bantuan dari semua anggota komunitas, baik itu developer, pembuat konten, maupun penyedia layanan yang terkait dengan AMP. Ada banyak cara untuk berkontribusi.
+Project AMP tidak akan dapat terwujud tanpa bantuan dari semua anggota komunitas, baik itu pengembang, pembuat konten, maupun penyedia layanan yang relevan dengan AMP. Ada banyak cara untuk berkontribusi.
 
 ### Melaporkan masalah terkait AMP
 
- Jika Anda memiliki masukan atau mengalami masalah teknis terkait AMP, harap ajukan menggunakan [pelacak masalah](https://github.com/ampproject/amphtml/issues). Jika Anda mengalami masalah dengan [amp.dev](https://amp.dev), harap gunakan [pelacak masalah dokumen](https://github.com/ampproject/docs/issues) sebagai gantinya.
+Jika Anda ingin memberikan umpan balik atau mengalami masalah teknis terkait AMP, harap ajukan dengan menggunakan [pelacak masalah](https://github.com/ampproject/amphtml/issues). Jika Anda mengalami masalah dengan [amp.dev](https://amp.dev), harap gunakan [pelacak masalah dokumen](https://github.com/ampproject/docs/issues) sebagai gantinya.
 
-### Memberikan kontribusi teknis ke AMP
+### Memberikan kontribusi teknis untuk AMP
 
-Project AMP sangat mendorong adanya kontribusi teknis.
+Proyek AMP sangat mendorong adanya kontribusi teknis!
 
-Kami berharap Anda akan terus menjadi peserta di komunitas open source kami, tapi kami juga menerima kontribusi sesekali untuk masalah yang sangat Anda minati.
+Kami berharap Anda akan terus menjadi peserta di komunitas sumber terbuka (open source) kami, tetapi kami juga menerima kontribusi tunggal untuk masalah tertentu yang Anda minati.
 
 #### Membantu terkait kode
 
- Untuk memulai kontribusi kode pada Project AMP, silakan baca [file untuk BERKONTRIBUSI](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md), yang mencakup detail proses terkait fitur atau perbaikan bug, mulai dari konsep hingga pengiriman, dan bagaimana cara Anda dapat berpartisipasi dalam diskusi dan desain teknis. Jika Anda baru mengenal open source, kami memiliki beberapa [tips untuk memulai](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-code).
+Untuk memulai kontribusi kode untuk Proyek AMP, silakan baca [berkas BERKONTRIBUSI](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md), yang mencakup detail proses terkait fitur atau perbaikan bug, mulai dari konsep hingga penyerahan, dan cara Anda dapat berpartisipasi dalam diskusi dan desain teknis. Jika Anda baru mengenal sumber terbuka, kami memiliki beberapa [kiat untuk memulai](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-code).
+
+### Memberikan kontribusi konten untuk AMP
+
+Konten di [amp.dev](https://amp.dev) adalah cara pengembang belajar membangun pengalaman web yang sukses dengan AMP. Kami menghargai minat Anda dalam memperbarui, membuat, dan meminta dokumentasi yang bermanfaat!
 
 #### Membantu terkait dokumentasi
 
-Dokumentasi merupakan proses yang penting untuk seluruh komunitas AMP, dan kami akan menghargai jika Anda ingin membantu untuk membuat dokumentasi kami jadi lebih baik. Kami memiliki berbagai macam dokumentasi--contoh untuk pengguna AMP, dokumen untuk membantu kontributor Project AMP, dsb.
+Dokumentasi? Kami memiliki berbagai macam - contoh-contoh penggunaan AMP, tutorial untuk memulai bagi pengembang, dan panduan untuk menjelajahi fitur-fitur AMP.
 
-[amp.dev](https://amp.dev)  merupakan tempat untuk sebagian besar orang yang telah mengetahui AMP. Anda bisa memberikan kontribusi dokumentasi dalam [dokumen project GitHub ampproject](https://github.com/ampproject/docs). (Anda bahkan bisa membuat [halaman yang sedang Anda baca ini](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md) jadi lebih baik.)
+[amp.dev](https://amp.dev) adalah tempat sebagian besar orang lebih mengenal AMP. Anda dapat berkontribusi untuk dokumentasi di [proyek GitHub dokumen ampproject](https://github.com/ampproject/docs). (Anda bahkan dapat membuat [halaman yang Anda baca](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md) lebih baik!
 
-[ampbyexample.com](../../../documentation/examples/index.html) memberikan contoh tentang cara menggunakan AMP. Anda dapat menyempurnakannya di [project GitHub amp-by-example](https://github.com/ampproject/amp-by-example/).
+Mulailah dengan membaca [panduan kontribusi konten](contribute-documentation/index.md?format=websites) kami.
 
- Anda juga dapat membantu kontributor lain pada Project AMP dengan menyempurnakan dokumentasi kami dalam [project GitHub amphtml](https://github.com/ampproject/amphtml).
+#### Membantu menerjemahkan
 
+AMP berusaha untuk membuat web di seluruh dunia menjadi pengalaman yang lebih baik bagi semua orang. Agar semua orang di dunia dapat menggunakan AMP, kami membutuhkan kontributor terjemahan untuk panduan, tutorial, blog, dan semua hal yang ditulis untuk AMP. Untuk terlibat dalam pelokalan dokumentasi AMP untuk komunitas Anda, kunjungi [Inisiatif Penerjemahan AMP](https://github.com/ampproject/docs/blob/master/TRANSLATIONS.md).

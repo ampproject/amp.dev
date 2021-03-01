@@ -1,19 +1,19 @@
 ---
 formats:
-- websites
-- email
-- ads
-- stories
-"$path": "/documentation/guides-and-tutorials/develop/style_and_layout/index.html"
-"$localization":
-  path: "/{locale}/documentation/guides-and-tutorials/develop/style_and_layout/index.html"
-"$title": Как создать адаптивные AMP-страницы
-"$order": '0'
+  - websites
+  - email
+  - ads
+  - stories
+'$path': '/documentation/guides-and-tutorials/develop/style_and_layout/index.html'
+'$localization':
+  path: '/{locale}/documentation/guides-and-tutorials/develop/style_and_layout/index.html'
+'$title': Как создать адаптивные AMP-страницы
+$order: 0
 description: 'По методам стилизации и компоновки страницы AMP HTML очень схожи с обычными HTML-страницами: в обоих случаях используется CSS.'
-"$hidden": 'true'
+'$hidden': 'true'
 author: pbakaus
 contributors:
-- Meggin
+  - Meggin
 ---
 
 По методам стилизации и компоновки страницы AMP HTML очень схожи с обычными HTML-страницами: в обоих случаях используется CSS.
@@ -28,9 +28,10 @@ contributors:
 
 ### Определение стилей в разделе head
 
-Для определения стилей CSS используйте тег `<style amp-custom>` в разделе head документа. В коде каждой  AMP-страницы может быть только один тег `<style amp-custom>`.
+Для определения стилей CSS используйте тег `<style amp-custom>` в разделе head документа. В коде каждой AMP-страницы может быть только один тег `<style amp-custom>`.
 
 [sourcecode:html]
+
 <!doctype html>
   <head>
     ...
@@ -48,12 +49,14 @@ contributors:
       }
     </style>
     ...
+
   </head>
 [/sourcecode]
 
 Для стилизации компонентов AMP и элементов HTML используйте классы и селекторы в сочетании с обычными CSS-свойствами:
 
 [sourcecode:html]
+
 <body>
   <p>Hello, Kitty.</p>
   <amp-img
@@ -73,6 +76,7 @@ contributors:
 AMP допускает использование встроенных стилей:
 
 [sourcecode:html]
+
 <body>
   <p style="color:pink;margin-left:30px;">Hello, Kitty.</p>
 </body>

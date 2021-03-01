@@ -1,9 +1,11 @@
 ---
-$title: Struktur dan perenderan email AMP
-order: 2
+'$title': Struktur dan perenderan email AMP
+$order: 2
+formats:
+  - email
 teaser:
-  text: Struktur email sama dengan pohon MIME. Pohon MIME ini berisi badan pesan dan lampiran apa pun pada email.
-toc: true
+  text: 'Struktur email sama dengan '
+toc: 'true'
 ---
 
 <!--
@@ -29,13 +31,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Struktur email sama dengan [pohon MIME](https://en.wikipedia.org/wiki/MIME). Pohon MIME ini berisi badan pesan dan lampiran apa pun pada email.
+Struktur email sama dengan pohon MIME. Pohon MIME ini berisi badan pesan dan lampiran apa pun pada email.
 
 Untuk menyematkan AMP di dalam sebuah email, tambahkan bagian MIME baru dengan jenis konten `text/x-amp-html` sebagai turunan `multipart/alternative`. Ini harus berada bersama bagian `text/html` atau `text/plain` yang sudah ada. Ini memastikan bahwa pesan email tersebut akan berfungsi pada semua klien.
 
-<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/master/spec/img/amp-email-mime-parts.png">
-<noscript data-md-type="raw_html" data-segment-id="8724406"> <img data-md-type="raw_html" alt="AMP for Email MIME Parts Diagram" src="../img/amp-email-mime-parts.png"> </noscript>
-</amp-img>
+<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/master/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"> <img data-md-type="raw_html" alt="AMP for Email MIME Parts Diagram" src="../img/amp-email-mime-parts.png"> </noscript></amp-img>
 
 Untuk mendapatkan informasi selengkapnya tentang subjenis `multipart/alternative`, rujuk [RFC 1521, bagian 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
@@ -45,7 +45,7 @@ Bagian `text/x-amp-html` harus ditempatkan di bawah sebuah nodus `multipart/alte
 
 `multipart/alternative` harus berisi minimal satu nodus (`text/plain` atau `text/html`) non-AMP, selain nodus `text/x-amp-html`. Ini akan ditampilkan kepada pengguna dengan klien email yang tidak mendukung AMP atau yang memilih menolaknya melalui pengaturan penyedia emailnya.
 
-Catatan: Beberapa klien email[[1]](https://openradar.appspot.com/radar?id=6054696888303616) hanya akan merender bagian MIME terakhir, jadi sebaiknya tempatkan bagian MIME `text/x-amp-html` *sebelum* bagian MIME `text/html`.
+Catatan: Beberapa klien email[[1]](https://openradar.appspot.com/radar?id=6054696888303616) hanya akan merender bagian MIME terakhir, jadi sebaiknya tempatkan bagian MIME `text/x-amp-html` _sebelum_ bagian MIME `text/html`.
 
 ### Membalas/meneruskan semantik <a name="replyingforwarding-semantics"></a>
 

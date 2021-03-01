@@ -1,10 +1,14 @@
 ---
-$title: Penanganan Permintaan dan Format URL Cache AMP
+'$title': Penanganan Permintaan dan Format URL Cache AMP
 $order: 9
-toc: false
+toc: 'false'
+formats:
+  - websites
+  - stories
+  - ads
 author: Gregable
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 Di dalam dokumen ini, Anda akan mempelajari tentang format URL Cache AMP dan caranya menangani permintaan.
@@ -15,11 +19,8 @@ Saat mungkin, Cache AMP Google akan membuat subdomain untuk setiap domain dokume
 
 Anda dapat menggunakan kalkulator URL ini untuk mengonversikan sebuah URL menjadi versi cache AMP:
 
-<div>
-<amp-iframe title="AMP Cache tool" height="104" layout="fixed-height" sandbox="allow-scripts" src="/static/samples/files/amp-url-converter.html?url=https://amp.dev/index.amp.html">
-  <div placeholder></div>
-</amp-iframe>
-</div>
+<div><amp-iframe title="AMP Cache tool" height="104" layout="fixed-height" sandbox="allow-scripts" src="/static/samples/files/amp-url-converter.html?url=https://amp.dev/index.amp.html">
+  <div placeholder></div></amp-iframe></div>
 
 [tip type="tip"] Gunakan modul [URL Cache Kotak Alat AMP](https://github.com/ampproject/amp-toolbox/tree/master/packages/cache-url) [Node.js](https://nodejs.org) untuk menerjemahkan URL dari asal ke format URL Cache AMP. [/tip]
 

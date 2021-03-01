@@ -1,22 +1,34 @@
 ---
-$title: 使您的网页可被轻松发现
+formats:
+  - websites
+'$title': 使您的页面可被轻松发现
+'$titles':
+  teaser: 使您的页面可被轻松发现
+$order: 5
+description: 在某些情况下，您可能希望同时拥有同一页面（例如，新闻文章）的非 AMP 版本和 AMP 版本。请考虑此情况：如果 Google 搜索…
+teaser:
+  icon: discover
+  text: 了解搜索引擎如何发现您的网站有 AMP 版本。
+  label: 了解详情
 ---
 
 在某些情况下，您可能需要让同一个网页（例如新闻报道网页）同时具有非 AMP 版本和 AMP 版本。试想一下，如果 Google 搜索找到该网页的非 AMP 版本，那么它如何知晓该网页还存在 AMP 版本呢？
 
-### 使用 &lt;link&gt; 关联网页
+### 使用 <link> 关联网页
 
 为了解决此问题，我们通过在 `<head>` 中添加 `<link>` 标记的形式，向非 AMP 网页添加 AMP 网页的相关信息，反之亦然。
 
 向非 AMP 网页添加以下标记：
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
 向 AMP 网页添加以下标记：
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
@@ -25,12 +37,11 @@ $title: 使您的网页可被轻松发现
 如果您只有一个版本的网页，并且该版本是 AMP 网页，则您仍要为其添加规范链接，该链接会指向其自身：
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-[tip type="read-on"]
-要详细了解 Google 如何发现 AMP 网页，请参阅[针对 AMP 网页的 Google 搜索指南](https://support.google.com/webmasters/answer/6340290)。
-[/tip]
+[tip type="read-on"] 要详细了解 Google 如何发现 AMP 网页，请参阅[针对 AMP 网页的 Google 搜索指南](https://support.google.com/webmasters/answer/6340290)。 [/tip]
 
 ## 通过额外的元数据与第三方平台集成 <a name="integrate-with-third-party-platforms-through-additional-metadata"></a>
 
@@ -45,6 +56,7 @@ $title: 使您的网页可被轻松发现
 示例：
 
 [sourcecode:html]
+
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -76,18 +88,16 @@ $title: 使您的网页可被轻松发现
     }
   }
 </script>
+
 [/sourcecode]
 
 要查看更多示例（包括备用 HTML 属性语法），请访问 [ampproject 示例文件夹](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples)。
 
 [tip type="read-on"] 要详细了解结构化数据，请访问以下资源。
 
-*了解如何[构建您的内容以使其显示在 Google 搜索富媒体搜索结果中](https://developers.google.com/search/docs/guides/mark-up-content)（例如“焦点新闻”轮换展示、食谱卡片等）。
-*使用 [Google 结构化数据测试工具](https://developers.google.com/structured-data/testing-tool/)测试您的结构化数据。
-[/tip]
+- Learn how to [Structure your content to appear in Google Search rich results](https://developers.google.com/search/docs/guides/mark-up-content) (e.g., top stories carousel, recipe cards, etc.).
+- 使用 [Google 结构化数据测试工具](https://developers.google.com/structured-data/testing-tool/)测试您的结构化数据。[/tip]
 
 ### 适用于更多平台的其他元数据
 
 请访问[网站开发基础中的社交发现指南](https://developers.google.com/web/fundamentals/discovery-and-monetization/social-discovery/)，了解让内容做好被发现和分发准备的其他各种不同方法。
- 
- 

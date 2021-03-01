@@ -1,5 +1,5 @@
 ---
-$title: Narzędzie AMP Page Experience Guide
+"$title": Narzędzie AMP Page Experience Guide
 staticText:
   inputBar:
     headline: Przeanalizuj swoją stronę AMP
@@ -36,7 +36,7 @@ staticText:
       scorePercentile: Wynik w 75. percentylu
       score: Wynik
       opportunity: Możliwość poprawy
-      pagesPassing: Strony zaliczające
+      pagesPassing: Odwiedziny zaliczające
       action: Podejmij działania
   additionalChecks:
     headline: Dodatkowe kontrole
@@ -61,7 +61,7 @@ scriptText:
     passed: Zaliczono
     passedAddition: zaliczono
     none: Brak
-    nothingToDo: Nie potrzeba żadnych działań! &#x1F389;
+    nothingToDo: "Nie potrzeba żadnych działań! &#x1F389;"
     fileAnIssue: Zgłoś problem z AMP
     recommendation: zalecenie
     recommendations: zalecenia

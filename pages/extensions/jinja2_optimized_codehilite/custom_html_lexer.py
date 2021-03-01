@@ -11,7 +11,7 @@ from pygments.token import Text, Comment, Operator, Keyword, Name, String, \
     Punctuation
 from pygments.util import looks_like_xml, html_doctype_matches
 
-from custom_js_lexer import CustomJavascriptLexer
+from .custom_js_lexer import CustomJavascriptLexer
 from pygments.lexers.css import CssLexer
 
 

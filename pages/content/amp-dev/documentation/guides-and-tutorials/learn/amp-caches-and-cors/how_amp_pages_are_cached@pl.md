@@ -1,11 +1,11 @@
 ---
-"$title": Jak są buforowane strony AMP
-"$order": '0'
+'$title': Jak są buforowane strony AMP
+$order: 0
 description: W tym dokumencie opisano rolę serwerów buforujących AMP w ekosystemie AMP oraz sposób buforowania strony AMP.
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 ---
 
 W tym dokumencie opisano rolę serwerów buforujących AMP w ekosystemie AMP oraz sposób buforowania strony AMP.
@@ -35,9 +35,9 @@ AMP jest otwartym ekosystemem, a AMP Project aktywnie zachęca do tworzenia wię
 
 ## Jak wybrać serwer buforujący AMP?
 
-Jako wydawca nie wybierasz serwera buforującego AMP, *w istocie to platforma* łącząca się z zawartością wybiera serwer buforujący AMP (jeśli istnieje) do użycia.
+Jako wydawca nie wybierasz serwera buforującego AMP, _w istocie to platforma_ łącząca się z zawartością wybiera serwer buforujący AMP (jeśli istnieje) do użycia.
 
-Jest to odwrócenie typowego modelu, w którym dostarczanie treści leży w gestii wydawcy.  Model ten pozwala jednak platformom na zapewnienie swoim użytkownikom przewidywalnej wydajności pod obciążeniem oraz, między innymi, na zapewnienie wymaganych niezmiennych funkcji zabezpieczeń i prywatności w fazzie wstępnego renderowania AMP. Więcej informacji na temat ścisłych wytycznych dotyczących tworzenia serwerów buforujących AMP zawierają [Wytyczne usługi buforowania AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
+Jest to odwrócenie typowego modelu, w którym dostarczanie treści leży w gestii wydawcy. Model ten pozwala jednak platformom na zapewnienie swoim użytkownikom przewidywalnej wydajności pod obciążeniem oraz, między innymi, na zapewnienie wymaganych niezmiennych funkcji zabezpieczeń i prywatności w fazzie wstępnego renderowania AMP. Więcej informacji na temat ścisłych wytycznych dotyczących tworzenia serwerów buforujących AMP zawierają [Wytyczne usługi buforowania AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
 
 ## Czy można zrezygnować z buforowania?
 
@@ -59,7 +59,7 @@ Używając formatu AMP, udostępniasz swoją zawartość do buforowania serwerom
 
 - **Żądanie buforowania adresu URL**: platformy mogą w szczególności żądać strony AMP, używając formatu adresu URL serwera buforującego AMP. Serwer buforujący AMP działa jako odwrotny serwer proxy, w związku z czym, gdy platforma uzyskuje dostęp do strony, skutkuje to automatycznym jej zbuforowaniem.
 
-    - Przykład adresu URL usługi Google AMP Cache: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
+  - Przykład adresu URL usługi Google AMP Cache: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
 [tip type="note"] **UWAGA —** adres URL serwera bufoirujacego AMP nie jest adresem URL zwracanym użytkownikowi, użytkownicy zazwyczaj nie żądają treści za pomocą tych adresów URL. [/tip]
 

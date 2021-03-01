@@ -1,133 +1,101 @@
 ---
-$title: Membuat halaman sampul
+'$title': Membuat halaman sampul
+$order: 4
+description: 'Untuk membuat sebuah halaman, tambahkan elemen <amp-story-page> sebagai anak (turunan pertama) amp-story. Berikan ID unik untuk halaman tersebut. Untuk halaman pertama kita, yang merupakan halaman sampul, kita berikan ID sampul yang unik: ....'
+author: bpaduch
 ---
 
-Halaman dalam artikel AMP diwakili oleh komponen `<amp-story-page>`. Dalam [`amp-story`](../../../../documentation/components/reference/amp-story.md), Anda bisa memiliki satu atau beberapa komponen `<amp-story-page>`, yang masing-masing berisi layar individual dari sebuah artikel. Halaman pertama yang Anda tetapkan dalam urutan dokumen akan menjadi halaman pertama yang ditampilkan dalam artikel tersebut.
+Sebuah halaman dalam Cerita Web diwakili oleh komponen `<amp-story-page>`. Dalam [`amp-story`](../../../../documentation/components/reference/amp-story.md), Anda dapat memiliki satu atau beberapa komponen `<amp-story-page>`, yang berisi setiap layar individual dari sebuah cerita. Halaman pertama yang Anda tentukan dalam urutan dokumen adalah halaman pertama yang ditampilkan dalam Cerita Web.
 
-Untuk membuat halaman, **tambahkan** elemen `<amp-story-page>` sebagai turunan dari [`amp-story`](../../../../documentation/components/reference/amp-story.md). **Tetapkan** ID unik untuk halaman itu. Untuk halaman pertama, yang merupakan halaman sampul, mari kita tetapkan ID unik yaitu `cover`:
+Untuk membuat sebuah halaman, **tambahkan** elemen `<amp-story-page>` sebagai anak (turunan pertama) [`amp-story`](../../../../documentation/components/reference/amp-story.md). **Berikan** ID unik untuk halaman tersebut. Untuk halaman pertama kita, yang merupakan halaman sampul, kita berikan ID `cover` yang unik:
 
-```html hl_lines="6 7"
-<amp-story standalone
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-    poster-portrait-src="assets/cover.jpg">
-   <amp-story-page id="cover">
-   </amp-story-page>
+```html
+<amp-story
+  standalone
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+>
+  <amp-story-page id="cover"> </amp-story-page>
 </amp-story>
 ```
 
-Sekarang kita sudah memiliki kerangka untuk halaman sampul. Namun artikel kita masih belum valid.  Dalam halaman ini, kita harus menetapkan minimal satu **lapisan**.
-{{ image('/static/img/docs/tutorials/amp_story/cover_layers.png', 416, 679, alt='halaman sampul memiliki dua lapisan', align='right third' ) }}
+Sekarang kita sudah memiliki cangkang (shell) untuk halaman sampul. Namun, artikel kita masih belum valid. Dalam halaman ini, kita harus menetapkan minimal satu **lapisan**. {{ image('/static/img/docs/tutorials/amp_story/cover_layers.png', 416, 679, alt='halaman sampul memiliki dua lapisan', align='right third' ) }}
 
-## Lapisan pada sebuah halaman
+## Lapisan-lapisan pada sebuah halaman
 
-Sebagaimana lapisan pada gambar, Anda dapat menggunakan lapisan pada halaman artikel AMP untuk membuat efek visual. Lapisan ditumpuk satu di atas yang lain, sehingga lapisan pertama menjadi lapisan terbawah, yang di atasnya terdapat lapisan berikutnya, begitu seterusnya.
+Sebagaimana lapisan pada grafis, Anda dapat menggunakan lapisan-lapisan pada halaman cerita AMP untuk menciptakan efek visual. Satu lapisan ditumpuk di atas lapisan lainnya, sehingga lapisan pertama menjadi lapisan terbawah, lapisan berikutnya ditumpuk di atas, begitu seterusnya.
 
 Halaman sampul kita ini terdiri dari dua lapisan:
 
-* **Lapisan 1**: Gambar yang berfungsi sebagai tampilan latar
-* **Lapisan 2**: Judul dan subjudul artikel
+- **Lapisan ke-1**: Gambar yang berfungsi sebagai latar belakang
+- **Lapisan ke-2**: Judul dan baris awal untuk cerita
 
-### Membuat lapisan 1
+### Membuat lapisan ke-1
 
 Mari kita tambahkan lapisan pertama ke halaman sampul. Lapisan ini berisi gambar yang akan mengisi layar.
 
-Buat lapisan ini dengan menambahkan elemen `<amp-story-grid-layer>` sebagai turunan dari `<amp-story-page>`. Karena kita ingin gambar mengisi layar, tetapkan atribut `template="fill"` untuk `amp-story-grid-layer`. Di dalam lapisan ini, tambahkan elemen [`amp-img`](../../../../documentation/components/reference/amp-img.md) untuk file `cover.jpg`, dan pastikan responsif (artinya, `layout="responsive"`) dengan gambar berukuran 720 x 1280 piksel.  Beginilah tampilan lapisan kita:
+Buat lapisan ini dengan menambahkan elemen `<amp-story-grid-layer>` sebagai anak dari `<amp-story-page>`. Karena kita ingin gambar mengisi layar, tetapkan atribut `template="fill"` untuk `amp-story-grid-layer`. Di dalam lapisan ini, tambahkan elemen [`amp-img`](../../../../documentation/components/reference/amp-img.md) untuk berkas `cover.jpg`, dan pastikan responsif (yaitu, `layout="responsive"`) dengan dimensi gambar 720 x 1280 piksel. Beginilah tampilan lapisan ini:
 
-```html hl_lines="2 3 4 5 6 7"
+```html
 <amp-story-page id="cover">
   <amp-story-grid-layer template="fill">
-    <amp-img src="assets/cover.jpg"
-        width="720" height="1280"
-        layout="responsive">
+    <amp-img
+      src="assets/cover.jpg"
+      width="720"
+      height="1280"
+      layout="responsive"
+    >
     </amp-img>
   </amp-story-grid-layer>
 </amp-story-page>
 ```
 
-Mari kita lihat bagaimana halaman ini ditampilkan.  Buka halaman ini di browser: <a href="http://localhost:8000/pets.html">http://localhost:8000/pets.html</a>.
+Mari kita lihat tampilan halaman ini. Buka halaman ini di browser: <a href="http://localhost:8000/pets.html">http://localhost:8000/pets.html</a>.
 
 Seperti inilah hasilnya:
 
 {{ image('/static/img/docs/tutorials/amp_story/pg0_layer1.jpg', 720, 1280, align='center third' ) }}
 
-### Membuat lapisan 2
+### Membuat lapisan ke-2
 
-Setelah membuat tampilan latar, sekarang kita ingin membuat lapisan kedua yang menindih tampilan latar dan berisi judul dan subjudul.  Untuk menambahkan lapisan kedua, kita akan melakukan langkah yang sama seperti saat membuat lapisan 1, namun sebagai pengganti template `fill`, sekarang kita akan menggunakan template **`vertical`**. Namun, sebelum melangkah lebih jauh, mari kita pelajari tentang template dan cara menyusun elemen AMP dan HTML di `<amp-story-grid-layer>`.
+Setelah membuat latar belakang, sekarang kita membuat lapisan kedua yang menindih latar belakang dan berisi judul dan baris awal. Untuk menambahkan lapisan kedua, kita akan melakukan langkah yang sama seperti saat membuat lapisan ke-1, namun sebagai pengganti templat `fill`, sekarang kita akan menggunakan templat **`vertical`**. Tetapi sebelum melangkah lebih jauh, mari kita pelajari tentang templat dan cara menyusun elemen AMP dan HTML dalam `<amp-story-grid-layer>`.
 
-#### Mengatur tata letak elemen dengan template
+#### Mengatur tata letak elemen dengan templat
 
-Elemen `<amp-story-grid-layer>` mengatur tata letak berbagai elemen turunannya dalam sebuah petak (didasarkan pada [petak CSS](https://www.w3.org/TR/css-grid-1/)).  Untuk menunjukkan cara pengaturan elemen turunan tersebut, tentukan salah satu template tata letak berikut:
+Elemen `<amp-story-grid-layer>` mengatur tata letak berbagai elemen anaknya dalam sebuah petak (didasarkan pada [petak atau kisi CSS](https://www.w3.org/TR/css-grid-1/)). Untuk mengarahkan pengaturan elemen anak tersebut, tentukan salah satu templat tata letak berikut ini:
 
 <table class="noborder">
 <tr>
-    <td colspan="2"><h5 id="fill">Template: Fill</h5></td>
+    <td colspan="2"><h5 id="fill">Templat: Fill</h5></td>
 </tr>
 <tr>
-    <td width="65%">Template <strong>fill</strong> akan mengisi layar dengan elemen turunan pertama pada lapisan ini. Elemen turunan lainnya tidak ditampilkan.
-
-    <p>Template fill berfungsi dengan baik untuk latar belakang, termasuk gambar dan video.</p>
-   <code class="nopad"><pre>&lt;amp-story-grid-layer template="fill">
-  &lt;amp-img src="dog.png"
-      width="720" height="1280"
-      layout="responsive">
-  &lt;/amp-img>
-&lt;/amp-story-grid-layer></pre></code>
-    </td>
-    <td>
-    {{ image('/static/img/docs/tutorials/amp_story/layer-fill.png', 216, 341) }}
-    </td>
+    <td width="65%">Templat <strong>fill</strong> akan mengisi layar dengan elemen anak pertama pada lapisan ini. Elemen anak lainnya pada lapisan ini tidak ditampilkan. Templat fill berfungsi dengan baik untuk latar belakang, termasuk gambar dan video. <code><pre><amp-story-grid-layer template="fill"> <amp-img src="https://github.com/ampproject/amp.dev/blob/future/pages/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/dog.png?raw=true" width="720" height="1280" layout="responsive"> </amp-img> </amp-story-grid-layer></pre></code>
+</td>
+    <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-fill.png', 216, 341) }}     </td>
 </tr>
 <tr>
-    <td colspan="2"><h5 id="vertical">Template: Vertical</h5></td>
+    <td colspan="2"><h5 id="vertical">Templat: Vertical</h5></td>
 </tr>
 <tr>
-    <td width="65%">Template <strong>vertical</strong> menata elemen turunan di sepanjang sumbu Y. Elemen ini sejajar dengan bagian atas layar, dan memenuhi seluruh layar di sepanjang sumbu X.
-
-    <p>Template vertical berfungsi dengan baik jika Anda ingin menumpuk elemen secara vertikal satu di atas yang lain.</p>
-
-   <code class="nopad"><pre>&lt;amp-story-grid-layer template="vertical">
-  &lt;p>element 1&lt;/p>
-  &lt;p>element 2&lt;/p>
-  &lt;p>element 3&lt;/p>
-&lt;/amp-story-grid-layer></pre></code>
-    </td>
-    <td>{{ image('/static/img/docs/tutorials/amp_story/layer-vertical.png', 216, 341) }}
-    </td>
+    <td width="65%">Templat <strong>vertikal</strong> menempatkan elemen anak di sepanjang sumbu y. Elemen-elemen ini sejajar dengan bagian atas layar, dan menguasai seluruh layar di sepanjang sumbu x. Templat vertikal bekerja dengan baik jika Anda menginginkan tumpukan elemen vertikal satu demi satu. <code><pre><amp-story-grid-layer template="vertical"> <p>element 1</p> <p>element 2</p> <p>element 3</p> </amp-story-grid-layer></pre></code>
+</td>
+    <td>{{ image('/static/img/docs/tutorials/amp_story/layer-vertical.png', 216, 341) }}     </td>
 </tr>
 <tr>
-    <td colspan="2"><h5 id="horizontal">Template: Horizontal</h5></td>
+    <td colspan="2"><h5 id="horizontal">Templat: Horizontal</h5></td>
 </tr>
 <tr>
-    <td width="65%">Template <strong>horizontal</strong> menata elemen turunan di sepanjang sumbu X.  Elemen ini sejajar dengan bagian awal layar, dan memenuhi seluruh layar di sepanjang sumbu Y.
-
-    <p>Template horizontal berfungsi dengan baik jika Anda ingin menumpuk elemen secara horizontal satu di sebelah yang lain.</p>
-
-    <code class="nopad"><pre>&lt;amp-story-grid-layer template="horizontal">
-  &lt;p>element 1&lt;/p>
-  &lt;p>element 2&lt;/p>
-  &lt;p>element 3&lt;/p>
-&lt;/amp-story-grid-layer></pre></code>
-    </td>
-    <td>
-    {{ image('/static/img/docs/tutorials/amp_story/layer-horizontal.png', 216, 341) }}
-    </td>
+    <td width="65%">Templat <strong>horizontal</strong> menata elemen anak di sepanjang sumbu x. Elemen-elemen ini sejajar dengan bagian awal layar, dan memenuhi seluruh layar di sepanjang sumbu Y. Templat horizontal berfungsi dengan baik jika Anda ingin menumpuk elemen secara horizontal satu setelah yang lain. <<code>pre><amp-story-grid-layer template="horizontal"> <p>element 1</p> <p>element 2</p> <p>element 3</p> </amp-story-grid-layer></pre></code>
+</td>
+    <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-horizontal.png', 216, 341) }}     </td>
 </tr>
 <tr>
-    <td colspan="2"><h5 id="thirds">Template: Thirds</h5></td>
+    <td colspan="2"><h5 id="thirds">Templat: Third</h5></td>
 </tr>
 <tr>
-<td width="65%">
-Template <strong>thirds</strong> membagi layar menjadi tiga area berjarak sama, yang masing-masing dapat Anda isi dengan konten.
-
-<p>Anda juga dapat menetapkan <code>grid-area</code> (area petak) bernama untuk menunjukkan area pertiga yang ingin Anda isi konten: <code>upper-third</code> (pertiga atas), <code>middle-third</code> (pertiga tengah), atau <code>lower-third</code> (pertiga bawah). Area petak bernama berguna untuk mengubah perilaku default dari tempat dimunculkannya elemen.  Sebagai contoh, jika memiliki dua elemen pada lapisan, Anda bisa menetapkan elemen pertama sebagai <code>grid-area="upper-third"</code> dan elemen kedua sebagai <code>grid-area="lower-third"</code>.</p>
-
-<code class="nopad"><pre>&lt;amp-story-grid-layer template="thirds">
-  &lt;h1 grid-area="upper-third">element 1&lt;/h1>
-  &lt;p grid-area="lower-third">element 2&lt;/p>
-&lt;/amp-story-grid-layer>
-</pre></code>
+<td width="65%">Templat <strong>sepertiga</strong> membagi layar menjadi tiga baris berukuran sama, dan memungkinkan Anda membagikan konten ke dalam masing-masing area. Anda juga dapat menentukan sebuah <code>grid-area</code> bernama untuk mengindikasikan bagian sepertiga mana yang ingin Anda jadikan tempat konten — <code>upper-third</code>, <code>middle-third</code>, atau <code>lower-third</code>. Area kisi yang memiliki nama berguna untuk mengubah perilaku standar terkait di mana elemen-elemen muncul. Contohnya: jika Anda mempunyai dua elemen pada lapisan tersebut, Anda dapat menentukan bahwa elemen pertama ditempatkan di dalam <code>grid-area="upper-third"</code> dan elemen kedua di dalam <code>grid-area="lower-third"</code>. <code><pre><amp-story-grid-layer template="thirds"> <h1 grid-area="upper-third">element 1</h1> <p grid-area="lower-third">element 2</p> </amp-story-grid-layer> </pre></code>
 </td>
 <td>{{ image('/static/img/docs/tutorials/amp_story/layer-thirds.png', 216, 341) }}</td>
 </tr>
@@ -135,13 +103,13 @@ Template <strong>thirds</strong> membagi layar menjadi tiga area berjarak sama, 
 
 ### Menyelesaikan halaman sampul kita
 
-Setelah memahami template lapisan, sekarang mari selesaikan lapisan kedua untuk halaman sampul kita.
+Setelah memahami templat lapisan, mari selesaikan lapisan kedua untuk halaman sampul kita.
 
-Untuk lapisan 2, kita ingin elemen judul dan subjudul terlihat di atas, serta muncul satu setelah yang lain. Untuk itu, kita akan menetapkan template `vertical`. Elemen `amp-story-grid-layer` kedua kita akan muncul setelah elemen pertama, seperti ini:
+Untuk lapisan ke-2, kita ingin elemen judul dan baris awal terlihat di atas, serta muncul satu setelah yang lain. Untuk itu, kita akan menetapkan templat `vertical`. Elemen `amp-story-grid-layer` kedua kita akan muncul setelah elemen pertama, seperti ini:
 
-```html hl_lines="4 5 6 7"
+```html
 <amp-story-grid-layer>
- <!--our first layer -->
+  <!--our first layer -->
 </amp-story-grid-layer>
 <amp-story-grid-layer template="vertical">
   <h1>The Joy of Pets</h1>
@@ -149,6 +117,6 @@ Untuk lapisan 2, kita ingin elemen judul dan subjudul terlihat di atas, serta mu
 </amp-story-grid-layer>
 ```
 
-Refresh browser dan lihat hasil kerja Anda.  Halaman sampul kita sudah jadi.
+Segarkan browser dan lihat hasil kerja Anda. Halaman sampul kita sudah jadi.
 
-{{ image('/static/img/docs/tutorials/amp_story/pg0_cover.png', 720, 1280, align='center third', alt='Halaman sampul jadi' ) }}
+{{ image('/static/img/docs/tutorials/amp_story/pg0_cover.png', 720, 1280, align='center third', alt='Halaman sampul yang telah selesai' ) }}

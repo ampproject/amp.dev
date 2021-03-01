@@ -1,12 +1,12 @@
 ---
-"$title": AMP yayınlama kontrol listesi
-"$order": '0'
+'$title': AMP yayınlama kontrol listesi
+$order: 0
 description: Duyarlı web tasarımı, cihazınızın ekran boyutuna ve yönüne uyan kullanıcılarınızın ihtiyaçlarına cevap veren akıcı web sayfaları oluşturmakla ilgilidir.
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 Web sitenize en iyi AMP deneyimini sunmak için bu kontrol listesini takip edin!
@@ -25,7 +25,7 @@ Bu araçları kullanarak geçersiz bir AMP sayfasını bir daha asla yayınlamay
 
 # Önbelleğe alınmış AMP sayfaları sunucusuna erişim izni verin
 
-Harika bir haber, geçerli AMP sayfaları otomatik olarak mevcut tüm AMP Önbelleklerini etkinleştirir! Bu, kullanıcılarınızın verimli ve güvenli bir şekilde yüklenen içeriği deneyimlediği anlamına gelir. Bu tür optimizasyonlar harikadır, ancak küçük bir sorunla gelir. Bazı kullanıcılara, sizinkiyle eşleşmeyen alan adlarından AMP sayfaları sunulacaktır. Bu,  [`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=websites) veya [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=websites) gibi dinamik AMP bileşenlerini kullanırken sayfaların site verilerine erişimini kaybetmesine neden olabilir. Bu tür hatalar, Kökler Arası Kaynak Paylaşımı veya CORS sorunlarıdır. Mevcut tüm [AMP önbelleklerinden](https://cdn.ampproject.org/caches.json) CORS isteklerini etkinleştirerek ona karşı değil, güven içinde çalışın! Arka ucunuzda Node.js kullanıyorsanız, [amp-cors ara yazılımını](https://github.com/ampproject/amp-toolbox/tree/master/packages/cors) kullanabilirsiniz.
+Harika bir haber, geçerli AMP sayfaları otomatik olarak mevcut tüm AMP Önbelleklerini etkinleştirir! Bu, kullanıcılarınızın verimli ve güvenli bir şekilde yüklenen içeriği deneyimlediği anlamına gelir. Bu tür optimizasyonlar harikadır, ancak küçük bir sorunla gelir. Bazı kullanıcılara, sizinkiyle eşleşmeyen alan adlarından AMP sayfaları sunulacaktır. Bu, [`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=websites) veya [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=websites) gibi dinamik AMP bileşenlerini kullanırken sayfaların site verilerine erişimini kaybetmesine neden olabilir. Bu tür hatalar, Kökler Arası Kaynak Paylaşımı veya CORS sorunlarıdır. Mevcut tüm [AMP önbelleklerinden](https://cdn.ampproject.org/caches.json) CORS isteklerini etkinleştirerek ona karşı değil, güven içinde çalışın! Arka ucunuzda Node.js kullanıyorsanız, [amp-cors ara yazılımını](https://github.com/ampproject/amp-toolbox/tree/master/packages/cors) kullanabilirsiniz.
 
 Sunucuya erişim verme hakkında daha fazla bilgi edinin:
 

@@ -1,11 +1,13 @@
 ---
-$title: Buat seatmap
+'$title': Create a seatmap
 $order: 104
-description: Seatmap merupakan bagian penting aplikasi web pengurus tiket (ticketer), namun penerapan di AMP bisa jadi sulit. Lanjutkan membaca untuk mempelajari cara menerapkan seatmap di AMP dengan
-tutorial: true
+description: Seatmaps are important parts of ticketers web apps, but the implementation in AMP can be difficult. Read on to learn how to implement a seatmap in AMP by
+tutorial: 'true'
+formats:
+  - websites
 author: kul3r4
 contributors:
-- pbakaus
+  - pbakaus
 ---
 
 Seatmap merupakan bagian penting aplikasi web pengurus tiket (ticketer), namun penerapan di AMP bisa jadi sulit. Lanjutkan membaca untuk mempelajari cara menerapkan seatmap di AMP dengan menggunakan kombinasi komponen AMP yang tersedia.
@@ -40,7 +42,7 @@ rect[selected].seat {
 
 ## Persyaratan
 
-1. Untuk menggambar sebuah seatmap sebagai sebuah SVG di mana setiap seat diwakili oleh sebuah elemen  `rect`, Anda membutuhkan informasi tentang setiap seat: posisi `x` dan `y`, `width` dan `height` serta mungkin `rx` dan `ry` untuk membulatkan sudut-sudut persegi.
+1. Untuk menggambar sebuah seatmap sebagai sebuah SVG di mana setiap seat diwakili oleh sebuah elemen `rect`, Anda membutuhkan informasi tentang setiap seat: posisi `x` dan `y`, `width` dan `height` serta mungkin `rx` dan `ry` untuk membulatkan sudut-sudut persegi.
 2. Pengenal unik untuk setiap seat yang dapat digunakan untuk melakukan reservasi.
 3. Pengukuran seluruh lebar dan tinggi seatmap yang akan digunakan di atribut `viewbox`.
 
@@ -48,7 +50,13 @@ rect[selected].seat {
 
 Seatmap dirender melalui [`amp-list`](../../../documentation/components/reference/amp-list.md) dan [`amp-mustache`](../../../documentation/components/reference/amp-mustache.md). Setelah menerima data dari panggilan [`amp-list`](../../../documentation/components/reference/amp-list.md) Anda dapat menggunakan data tersebut untuk mengiterasi seat-seat:
 
-[sourcecode:html] {% raw %}<svg preserveaspectratio="xMidYMin slice" viewbox="0 0 {{width}} {{height}}"> {{#seats}} <rect option="{{id}}" role="button" tabindex="0" class="seat {{unavailable}}" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"></rect> {{/seats}} </svg>{% endraw %} [/sourcecode]
+[sourcecode:html]
+{% raw %}<svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
+{{#seats}}
+<rect option="{{id}}" role="button" tabindex="0" class="seat {{unavailable}}" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"/>
+{{/seats}}
+</svg>{% endraw %}
+[/sourcecode]
 
 ## Mengatur gaya seat yang tidak tersedia
 
@@ -56,9 +64,12 @@ Di dalam contoh di atas, `{% raw %}{{unavailable}}{% endraw %}` adalah nilai bid
 
 Sebagai alternatif, pendekatan yang lebih berbelit adalah dengan mengulangi tag, sebagai berikut:
 
-[sourcecode:html] {% raw %}{{#available }}{% endraw %} <rect option="{{id}}" role="button" tabindex="0" class="seat" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"></rect>{% raw %}{{/available }}{% endraw %}
+[sourcecode:html]
+{% raw %}{{#available }}{% endraw %}
+<rect option="{{id}}" role="button" tabindex="0" class="seat" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"/>{% raw %}{{/available }}{% endraw %}
 
-{% raw %}{{^available}}{% endraw %}<rect role="button" tabindex="0" class="seat unavailable" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"></rect>{% raw %}{{/available }}{% endraw %} [/sourcecode]
+{% raw %}{{^available}}{% endraw %}<rect role="button" tabindex="0" class="seat unavailable" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"/>{% raw %}{{/available }}{% endraw %}
+[/sourcecode]
 
 ## Mengatur ukuran seatmap Anda
 
@@ -93,21 +104,29 @@ Pendekatan kedua juga memungkinkan Anda untuk mengurangi ekspresi [`amp-bind`](.
 
 Sebagai referensi, berikut ini adalah HTML akhir untuk seatmap:
 
-[sourcecode:html] {% raw %}
-
-<div class="seatmap-container">
+[sourcecode:html]
+{% raw %}<div class="seatmap-container">
 <amp-list layout="fill" src="/json/seats.json" binding="no" items="." single-item noloading>
 <template type="amp-mustache">
 <amp-pan-zoom layout="fill" class="seatmap">
 <amp-selector multiple on="select:AMP.setState({
-selectedSeats: event.selectedOptions
-})" layout="fill">
+          selectedSeats: event.selectedOptions
+        })" layout="fill">
 <div class="svg-container">
-<svg preserveaspectratio="xMidYMin slice" viewbox="0 0 {{width}} {{height}}">{{#tempat duduk}} <rect option="{{id}}" role="button" tabindex="0" class="seat {{unavailable}}" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"></rect> {{/tempat duduk}}</svg>
+<svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
+{{#seats}}
+<rect option="{{id}}" role="button"
+               tabindex="0" class="seat {{unavailable}}"
+              x="{{x}}" y="{{y}}"
+              width="{{width}}" height="{{height}}"
+              rx="{{rx}}" ry="{{ry}}"/>
+{{/seats}}
+</svg>
 </div>
 </amp-selector>
 </amp-pan-zoom>
 </template>
 </amp-list>
-<div>{% endraw %} [/sourcecode]</div>
-</div>
+
+</div>{% endraw %}
+[/sourcecode]

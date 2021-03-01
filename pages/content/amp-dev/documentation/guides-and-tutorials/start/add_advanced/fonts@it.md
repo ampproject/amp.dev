@@ -1,7 +1,7 @@
 ---
-$title: Aggiunta di caratteri
+'$title': Aggiunta di caratteri
 $order: 6
-description: "I caratteri personalizzati possono essere inclusi nelle pagine AMP in due modi: 1. Tramite un tag <link>: solo per i fornitori di caratteri autorizzati. 2. Utilizzando ..."
+description: 'I caratteri personalizzati possono essere inclusi nelle pagine AMP in due modi: 1. Tramite un tag <link>: solo per i fornitori di caratteri autorizzati. 2. Utilizzando ...'
 ---
 
 Per velocizzare il caricamento dei documenti, le pagine AMP non possono includere fogli di stile esterni. Tuttavia, c'è un'eccezione a questa regola: i **caratteri**.
@@ -14,7 +14,11 @@ I caratteri personalizzati possono essere inclusi nelle pagine AMP in due modi:
 In questa esercitazione, useremo un tag `<link>` per aggiungere caratteri alla nostra pagina. **Aggiungiamo** un link al foglio di stile nella sezione `<head>` per richiedere il carattere Raleway:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://fonts.googleapis.com/css?family=Raleway"
+/>
 ```
 
 Ora **aggiorniamo** il selettore CSS `body` per includere un riferimento a Raleway:

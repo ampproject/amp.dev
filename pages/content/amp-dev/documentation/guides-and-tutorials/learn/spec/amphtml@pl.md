@@ -1,8 +1,8 @@
 ---
-"$title": Specyfikacja AMP HTML
-order: '8'
+'$title': Specyfikacja AMP HTML
+$order: 8
 formats:
-- websites
+  - websites
 teaser:
   text: AMP HTML jest podzbiorem języka HTML, służącym do tworzenia stron z treścią, takich jak artykuły informacyjne, w sposób gwarantujący pewne podstawowe cechy wydajnościowe.
 ---
@@ -61,6 +61,7 @@ Przewidywalna wydajność jest kluczowym celem projektowania AMP HTML. Dążymy 
 ### Przykładowy dokument <a name="sample-document"></a>
 
 [sourcecode:html]
+
 <!DOCTYPE html>
 <html ⚡>
   <head>
@@ -285,7 +286,7 @@ Znaczników HTML można używać w AMP HTML bez żadnych zmian. Niektóre znaczn
     <td>Atrybutu <code>http-equiv</code> można użyć w przypadku określonych dozwolonych wartości; szczegółowe informacje zawiera <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">specyfikacja walidatora AMP</a>.</td>
   </tr>
   <tr>
-    <td width="30%"><code><a name="ancr"></a>a</code></td>
+    <td width="30%"><code><a id="ancr"></a>a</code></td>
     <td>Wartość atrybutu <code>href</code> nie może zaczynać się od <code>javascript:</code>. Jeśli jest ustawiony, atrybut <code>target</code> musi mieć wartość <code>_blank</code>. W przeciwnym razie dozwolony. <a href="#ancr">🔗</a>
 </td>
   </tr>
@@ -380,7 +381,7 @@ Oprócz znacznika `<style amp-custom>`, autorzy mogą również dodawać znaczni
 
 Do znacznika `<style amp-keyframes>` mają zastosowanie następujące ograniczenia:
 
-1. Można go umieszczać tylko jako ostatni element podrzędny elmentu `<body>`  dokumentu.
+1. Można go umieszczać tylko jako ostatni element podrzędny elmentu `<body>` dokumentu.
 2. Może zawierać tylko reguły `@keyframes`, `@media`, `@supports` i ich połączenia.
 3. Nie może być większy niż 500 000 bajtów.
 
@@ -389,6 +390,7 @@ Powodem istnienia tagu `<style amp-keyframes>` jest fakt, że reguły klatek klu
 Przykład:
 
 [sourcecode:html]
+
 <style amp-keyframes>
 @keyframes anim1 {}
 
@@ -406,6 +408,7 @@ Autorzy mogą dołączyć arkusze stylów czcionek niestandardowych. Dwie obsłu
 Przykład:
 
 [sourcecode:html]
+
 <link
   rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Tangerine"
@@ -494,11 +497,13 @@ Składniki rozszerzone nie muszą być dostarczane ze środowiskiem uruchomienio
 W jednym elemencie można nasłuchiwać wielu zdarzeń, rozdzielając zdarzenia średnikiem `;`.
 
 [sourcecode:html]
+
 <script
   async
   custom-element="amp-carousel"
   src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
 ></script>
+
 [/sourcecode]
 
 Znacznik `<script>` musi mieć atrybut `async` i atrybut `custom-element`, odwołujący się do nazwy elementu.
@@ -528,11 +533,13 @@ Szczegółowe informacje na temat obsługiwanych szablonów przedstawia [specyfi
 Szablony nie są dostarczane z środowiskiem uruchomieniowym AMP i muszą być pobierane tak samo jak elementy rozszerzone. Składniki rozszerzone ładuje się poprzez umieszczenie w sekcji head dokumentu znacznika `<script>` w następujący sposób:
 
 [sourcecode:html]
+
 <script
   async
   custom-template="amp-mustache"
   src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
 ></script>
+
 [/sourcecode]
 
 Znacznik `<script>` musi mieć atrybut `async` i atrybut `custom-template` odwołujący się do typu szablonu. Adres URL skryptu musi zaczynać się od `https://cdn.ampproject.org` i musi stosować się do bardzo ścisłego wzorca `/v\d+/[a-z-]+-(latest|\d+|\d+\.\d+)\.js`.
@@ -541,7 +548,7 @@ Szablony deklaruje się w dokumencie w następujący sposób:
 
 [sourcecode:html]
 <template type="amp-mustache" id="template1">
-  Hello {% raw %}{{you}}{% endraw %}!
+Hello {% raw %}{{you}}{% endraw %}!
 </template>
 [/sourcecode]
 
@@ -599,6 +606,7 @@ Jeśli istnieje dokument AMP, który jest alternatywną reprezentacją dokumentu
 Przykład:
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html" />
 [/sourcecode]
 
@@ -607,12 +615,13 @@ Sam dokument AMP ma wskazywać na swój dokument kanoniczny za pomocą znacznika
 Przykład:
 
 [sourcecode:html]
+
 <link
   rel="canonical"
   href="https://www.example.com/url/to/canonical/document.html"
 />
 [/sourcecode]
 
-(Jeśli jeden zasób jest jednocześnie dokumentem AMP *i* kanonicznym, relacja kanoniczna powinna wskazywać na siebie — nie jest wymagana relacja "amphtml").
+(Jeśli jeden zasób jest jednocześnie dokumentem AMP _i_ kanonicznym, relacja kanoniczna powinna wskazywać na siebie — nie jest wymagana relacja "amphtml").
 
 Należy pamiętać, że w celu zapewnienia jak największej kompatybilności z systemami wykorzystującymi AMP możliwe powinno być odczytanie relacji "amphtml" bez wykonywania kodu JavaScript. (To znaczy, że znacznik powinien być obecny w nieprzetworzonym kodzie HTML, a nie wstrzykiwany za pomocą kodu JavaScript).

@@ -1,28 +1,35 @@
 ---
-$title: Bernavigasi di situs Anda
+'$title': Bernavigasi di situs Anda
+$order: 5
+description: Sebagian besar situs web seluler menyertakan menu navigasi situs. Menu-menu ini bisa dalam berbagai bentuk. Di dalam tutorial ini, kita akan mencoba contoh berikut ini untuk ....
 ---
 
-Sebagian besar situs seluler menyertakan menu navigasi situs. Menu ini dapat berupa berbagai bentuk. Dalam tutorial ini, kita akan mencoba contoh berikut untuk menampilkan navigasi di halaman AMP:
+Sebagian besar situs web seluler menyertakan menu navigasi situs. Menu-menu ini bisa dalam berbagai bentuk. Di dalam tutorial ini, kita akan mencoba contoh berikut ini untuk menampilkan navigasi di halaman AMP:
 
-- Link kembali ke halaman beranda -- opsi paling sederhana.
-- Menu navigasi samping dengan menggunakan komponen [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md).
+- Tautan balik ke halaman beranda Anda - opsi paling sederhana.
+- Bilah navigasi samping dengan menggunakan komponen [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md).
 
-## Link kembali ke beranda
+## Tautan balik ke beranda
 
-Cara termudah untuk memberi pengguna Anda akses ke opsi navigasi reguler situs Anda adalah dengan menyalurkannya kembali ke halaman beranda!
+Cara termudah untuk memberi pengguna Anda akses ke opsi navigasi reguler situs web Anda adalah dengan menggiringnya kembali ke halaman beranda Anda!
 
-Coba **ganti** tag `<header>` Anda dengan versi yang menyertakan link:
+Coba **ganti** tag `<header>` Anda dengan versi yang menyertakan sebuah tautan:
 
 ```html
 <header class="headerbar">
   <a href="homepage.html">
-    <amp-img class="home-button" src="icons/home.png" width="36" height="36"></amp-img>
+    <amp-img
+      class="home-button"
+      src="icons/home.png"
+      width="36"
+      height="36"
+    ></amp-img>
   </a>
-<div class="site-name">News Site</div>
+  <div class="site-name">News Site</div>
 </header>
 ```
 
-Serta **tambahkan** gaya ini ke CSS inline:
+Serta **tambahkan** beragam aturan gaya ini ke CSS inline Anda:
 
 ```css
 .home-button {
@@ -45,40 +52,54 @@ article {
 }
 ```
 
-Sekarang **refresh** halaman. Anda akan melihat link di pojok kiri atas halaman yang mengarah ke `homepage.html`.  Jika mengklik ikon beranda, Anda akan segera mengetahui bahwa ikon tersebut tidak akan mengarahkan ke mana pun (karena kita tidak memiliki file `homepage.html`).
+Lalu, **segarkan** halaman. Anda akan melihat tautan di sudut kiri atas halaman yang mengarah ke `homepage.html`. Jika Anda mengeklik ikon beranda, Anda akan segera mengetahui bahwa ikon tersebut tidak akan mengarahkan Anda ke mana pun (karena kita tidak memiliki berkas `homepage.html`).
 
 {{ image('/static/img/docs/tutorials/tut-advanced-navigate-home.png', 412, 190, align='center half', caption='Navigasi ikon beranda') }}
 
-Link ini dapat diganti dengan URL halaman beranda situs Anda untuk memungkinkan pengguna Anda mengakses bagian lain situs Anda melalui bavigasi situ.
+Tautan ini dapat diganti dengan URL halaman beranda situs web Anda untuk memungkinkan pengguna Anda mengakses bagian lain situs Anda melalui navigasi situs web Anda yang sudah ada.
 
-Ini adalah pendekatan paling sederhana yang memanfaatkan navigasi situs yang sudah ada. Berikutnya, kita akan mempelajari opsi yang sering digunakan untuk navigasi situs.
+Ini adalah pendekatan paling sederhana yang memanfaatkan navigasi situs web yang sudah ada. Berikutnya, kita akan mempelajari opsi yang sering digunakan untuk navigasi situs.
 
-## Bernavigasi dengan sidebar
+## Bernavigasi dengan bilah samping (sidebar)
 
-Teknik navigasi umum adalah menambahkan ikon menu yang ketika diklik akan menampilkan kumpulan link navigasi (dari samping halaman). Di AMP,  kita dapat membuat navigasi tersebut dengan komponen [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md).
+Teknik navigasi umum adalah menambahkan ikon menu yang ketika diklik akan menampilkan kumpulan tautan navigasi (dari samping halaman). Di AMP, kita dapat membuat navigasi tersebut dengan komponen [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md).
 
 Pertama-tama, kita harus **menambahkan** JavaScript komponen [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) ke tag `<head>`:
 
 ```html
-<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+<script
+  async
+  custom-element="amp-sidebar"
+  src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"
+></script>
 ```
 
-Kemudian, kita ingin menampilkan ikon menu.  Ketika di-tap, ikon akan membuka sidebar. **Ganti** `<header>` dengan kode berikut untuk menampilkan ikon ["hamburger"](https://en.wikipedia.org/wiki/Hamburger_button), bukan ikon beranda:
+Kemudian, kita akan menampilkan ikon menu. Ketika diketuk, ikon akan membuka bilah samping. **Ganti** `<header>` dengan kode berikut ini untuk menampilkan ikon ["hamburger"](https://en.wikipedia.org/wiki/Hamburger_button), sebagai ganti ikon beranda:
 
 ```html
 <header class="headerbar">
-  <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
+  <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">
+    ☰
+  </div>
   <div class="site-name">News Site</div>
 </header>
 ```
 
-Dalam kode di atas, kita `toggle` (mengalihkan) sidebar ke atribut tindakan [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) di elemen [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md), yang ditunjukkan oleh ID `sidebar1`.  Mari kita tambahkan sidebar.
+Di dalam kode di atas, kita `toggle` (mengalihkan) bilah samping ke atribut tindakan [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) di elemen [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md), yang diidentifikasi dengan ID `sidebar1`. Mari kita tambahkan bilah samping.
 
-**Tambahkan** HTML berikut setelah `</header>`:
+**Tambahkan** HTML berikut ini setelah `</header>`:
 
 ```html
 <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
-  <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
+  <div
+    role="button"
+    aria-label="close sidebar"
+    on="tap:sidebar1.toggle"
+    tabindex="0"
+    class="close-sidebar"
+  >
+    ✕
+  </div>
   <ul class="sidebar">
     <li><a href="#">Example 1</a></li>
     <li><a href="#">Example 2</a></li>
@@ -87,9 +108,9 @@ Dalam kode di atas, kita `toggle` (mengalihkan) sidebar ke atribut tindakan [`on
 </amp-sidebar>
 ```
 
-Sidebar kami akan disembunyikan, tetapi ketika pengguna menge-tap ikon hamburger, menu akan muncul dari sisi kiri layar.  Untuk menutup menu, pengguna dapat menge-tap ikon X.
+Bilah kita akan disembunyikan, tetapi ketika pengguna mengetuk ikon hamburger, menu akan muncul dari sisi kiri layar. Untuk menutup menu tersebut, pengguna dapat mengetuk tanda X.
 
-Terakhir, **tambahkan** aturan gaya ini ke CSS inline Anda:
+Terakhir, **tambahkan** beragam aturan gaya ini ke CSS inline Anda:
 
 ```css
 .hamburger {
@@ -101,7 +122,7 @@ Terakhir, **tambahkan** aturan gaya ini ke CSS inline Anda:
 }
 .sidebar > li {
   list-style: none;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 .sidebar a {
   text-decoration: none;
@@ -112,8 +133,8 @@ Terakhir, **tambahkan** aturan gaya ini ke CSS inline Anda:
 }
 ```
 
-Oke, mari kita lihat sidebar kita. **Refresh** dan muat ulang halaman AMP Anda.  Anda akan melihat sesuatu seperti ini:
+Oke, mari kita lihat bilah samping kita. **Segarkan** dan muat ulang halaman AMP Anda. Anda akan melihat seperti yang berikut ini:
 
-{{ image('/static/img/docs/tutorials/tut-advanced-navigate-sidebar.gif', 412, 384, align='center half', caption='Navigasi menu sidebar') }}
+{{ image('/static/img/docs/tutorials/tut-advanced-navigate-sidebar.gif', 412, 384, align='center half', caption='Navigasi menu bilah samping') }}
 
-Halaman kita sudah selesai!  Mari tambahkan sentuhan terakhir&mdash;font custom.
+Halaman kita terlihat mantap! Mari tambahkan sentuhan terakhir — font kustom.

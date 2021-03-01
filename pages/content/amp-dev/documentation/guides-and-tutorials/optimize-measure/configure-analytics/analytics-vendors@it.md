@@ -1,6 +1,10 @@
 ---
-$title: Fornitori di strumenti di analisi
-order: 3
+'$title': Fornitori di strumenti di analisi
+$order: 3
+formats:
+  - websites
+  - stories
+  - ads
 teaser:
   text: Questo documento elenca i fornitori di strumenti di analisi che dispongono di configurazioni integrate da utilizzare con il componente amp-analytics.
 ---
@@ -30,7 +34,7 @@ limitations under the License.
 
 Questo documento elenca i fornitori di strumenti di analisi che dispongono di configurazioni integrate da utilizzare con il componente [`amp-analytics`](https://amp.dev/documentation/components/amp-analytics/).
 
-I fornitori che desiderano integrare il proprio servizio con [`<amp-analytics>`](https://amp.dev/documentation/components/amp-analytics/) possono consultare i dettagli riportati nel documento [Integrazione degli strumenti di analisi con AMP](https://amp.dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools).
+Vendors that wish to integrate their service with [`<amp-analytics>`](https://amp.dev/documentation/components/amp-analytics/) should refer to the details in [Integrate your analytics tools with AMP](https://amp.dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools).
 
 ### Acquia Lift <a name="acquia-lift"></a>
 
@@ -54,7 +58,11 @@ Fornisce il supporto per AFS Analytics. Inoltre, occorre indicare le variabili `
 
 Valore dell'attributo type:: `alexametrics`
 
-Fornisce supporto per Alexa Certified Site Metrics. Occorre indicare le variabili `atrk_acct` e `domain`. Maggiori informazioni sono disponibili nella sezione [Domande frequenti su Alexa Certified Metrics](https://support.alexa.com/hc/en-us/sections/200063374-Certified-Site-Metrics).
+<!-- markdown-link-check-disable -->
+
+Adds support for Alexa Certified Site Metrics. The `atrk_acct` and `domain` variables must be specified. More information can be found at [Alexa’s Certified Metrics FAQ](https://support.alexa.com/hc/en-us/sections/200063374-Certified-Site-Metrics).
+
+<!-- markdown-link-check-enable -->
 
 ### Amplitude <a name="amplitude"></a>
 
@@ -62,15 +70,15 @@ Valore dell'attributo type: `amplitude`
 
 ### AT Internet <a name="at-internet"></a>
 
-Valore dell'attributo type: `atinternet`
+Type attribute value: `atinternet`
 
-Fornisce supporto per AT Internet. Maggiori dettagli per l'aggiunta di AT Internet sono disponibili su [developers.atinternet-solutions.com](http://developers.atinternet-solutions.com/javascript-en/advanced-features-javascript-en/accelerated-mobile-pages-amp-javascript-en/).
+Adds support for AT Internet. More details for adding AT Internet support can be found at [developers.atinternet-solutions.com](http://developers.atinternet-solutions.com/javascript-en/advanced-features-javascript-en/accelerated-mobile-pages-amp-javascript-en/).
 
 ### Baidu Analytics <a name="baidu-analytics"></a>
 
-Valore dell'attributo type:: `baiduanalytics`
+Type attribute value: `baiduanalytics`
 
-Fornisce supporto per Baidu Analytics. Maggiori dettagli per l'aggiunta di Baidu Analytics sono disponibili su [tongji.baidu.com/](http://tongji.baidu.com/web/help/article?id=268&type=0).
+Adds support for Baidu Analytics. More details for adding Baidu Analytics support can be found at [tongji.baidu.com/](http://tongji.baidu.com/web/help/article?id=268&type=0).
 
 ### BlueConic <a name="blueconic"></a>
 
@@ -82,9 +90,9 @@ Valore dell'attributo type: `browsi`
 
 ### Burt <a name="burt"></a>
 
-Valore dell'attributo type: `burt`
+Type attribute value: `burt`
 
-Fornisce supporto per Burt. Inoltre, è necessario indicare la variabile `trackingKey`. È anche possibile indicare le variabili opzionali `category` e `subCategory`. Maggiori dettagli sono disponibili su [burtcorp.com](http://burtcorp.com).
+Adds support for Burt. Additionally, the `trackingKey` variable must be specified. It's also possible to specify the optional variables `category` and `subCategory`. More details can be found at [burtcorp.com](http://burtcorp.com).
 
 ### BySide <a name="byside"></a>
 
@@ -96,27 +104,27 @@ Valore dell'attributo type: `captainmetrics`
 
 ### Chartbeat <a name="chartbeat"></a>
 
-Valore dell'attributo type: `chartbeat`
+Type attribute value: `chartbeat`
 
-Fornisce supporto per Chartbeat. Maggiori informazioni per l'aggiunta di Chartbeat sono disponibili su [support.chartbeat.com](http://support.chartbeat.com/docs/integrations.html#amp).
+Adds support for Chartbeat. More details for adding Chartbeat support can be found at [support.chartbeat.com](http://support.chartbeat.com/docs/integrations.html#amp).
 
 ### Clicky Web Analytics <a name="clicky-web-analytics"></a>
 
-Valore dell'attributo type: `clicky`
+Type attribute value: `clicky`
 
-Fornisce supporto per Clicky Web Analytics. Maggiori dettagli per l'aggiunta di Clicky sono disponibili su [clicky.com](https://clicky.com/help/apps-plugins).
+Adds support for Clicky Web Analytics. More details for adding Clicky support can be found at [clicky.com](https://clicky.com/help/apps-plugins).
 
 ### comScore <a name="comscore"></a>
 
-Valore dell'attributo type: `comscore`
+Type attribute value: `comscore`
 
-Fornisce supporto per gli strumenti di analisi delle visualizzazioni di pagina di comScore Unified Digital Measurement™. Richiede la definizione di *var* `c2` con *c2 id* fornito da comScore. Ulteriori informazioni possono essere trovate su [comscore.com](http://www.comscore.com).
+Adds support for comScore Unified Digital Measurement™ pageview analytics. Requires defining _var_ `c2` with comScore-provided _c2 id_. More information can be found at [comscore.com](http://www.comscore.com).
 
 ### Cxense <a name="cxense"></a>
 
-Valore dell'attributo type:: `cxense`
+Type attribute value: `cxense`
 
-Fornisce supporto per gli strumenti di analisi di Cxense Insight. Richiede la definizione di *var* `siteId` con *siteId* fornito da Cxense. Maggiori dettagli sono disponibili su [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration).
+Adds support for Cxense Insight analytics. Requires defining _var_ `siteId` with Cxense-provided _siteId_. More details can be found at [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration).
 
 ### Deep.BI <a name="deepbi"></a>
 
@@ -124,9 +132,9 @@ Valore dell'attributo type: `deepbi`
 
 ### Dynatrace <a name="dynatrace"></a>
 
-Valore dell'attributo type: `dynatrace`
+Type attribute value: `dynatrace`
 
-Fornisce supporto per il monitoraggio utenti in tempo reale di Dynatrace. Richiede la definizione di <em>var</em> <code>app</code> con un *ID applicazione* fornito da Dynatrace e di <var>var</var> <code>tenant</code> con un *identificatore di ambiente* fornito da Dynatrace. Maggiori dettagli per l'aggiunta del monitoraggio utenti in tempo reale di Dynatrace sono disponibili su [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/).
+Fornisce supporto per il monitoraggio utenti in tempo reale di Dynatrace. Richiede la definizione di <em>var</em> <code>app</code> con un _ID applicazione_ fornito da Dynatrace e di <var>var</var> <code>tenant</code> con un _identificatore di ambiente_ fornito da Dynatrace. Maggiori dettagli per l'aggiunta del monitoraggio utenti in tempo reale di Dynatrace sono disponibili su [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/).
 
 ### EPICA <a name="epica"></a>
 
@@ -138,7 +146,7 @@ Fornisce supporto per le visualizzazioni di pagina e gli eventi EPICA. Maggiori 
 
 Valore dell'attributo type: `euleriananalytics`
 
-Fornisce supporto per Eulerian Technologies Analytics. Richiede la definizione di *var* `analyticsHost` con dominio delegato da Eulerian. Maggiori informazioni sono disponibili su [eulerian.wiki](https://eulerian.wiki).
+Fornisce supporto per Eulerian Technologies Analytics. Richiede la definizione di _var_ `analyticsHost` con dominio delegato da Eulerian. Maggiori informazioni sono disponibili su [eulerian.wiki](https://eulerian.wiki).
 
 ### Facebook Pixel <a name="facebook-pixel"></a>
 
@@ -190,9 +198,9 @@ Fornisce supporto per [INFOnline](https://www.infonline.de) / [IVW](http://www.i
 
 Inoltre, è necessario definire le seguenti variabili:
 
-- `st`: ID offerta
-- `co`: commento
-- `cp`: codice
+- `st`: offer ID
+- `co`: comment
+- `cp`: code
 - `url`: sito HTTPS di `amp-analytics-infonline.html`
 
 Maggiori dettagli per l'aggiunta di INFOnline / IVW sono disponibili su [www.infonline.de](https://www.infonline.de/).
@@ -238,7 +246,11 @@ Fornisce supporto per Kenshoo. Ulteriori informazioni e dettagli sulla configura
 
 Valore dell'attributo type: `krux`
 
+<!-- markdown-link-check-disable -->
+
 Fornisce supporto per Krux. I dettagli di configurazione possono essere trovati su [help.krux.com](https://konsole.zendesk.com/hc/en-us/articles/216596608).
+
+<!-- markdown-link-check-enable -->
 
 ### Linkpulse <a name="linkpulse"></a>
 
@@ -250,7 +262,7 @@ Fornisce supporto per Linkpulse. I dettagli di configurazione sono disponibili s
 
 Valore dell'attributo type: `lotame`
 
-Fornisce supporto per Lotame. Ulteriori informazioni e dettagli sulla configurazione sono disponibili su [mylotame.force.com](https://mylotame.force.com/s/article/Google-AMP).
+Adds support for Lotame. More information and configuration details can be found at [my.lotame.com](https://my.lotame.com/t/83h37h9/overview-1st-party-data-collection-in-google-amp).
 
 ### Mapp Intelligence <a name="mapp-intelligence"></a>
 
@@ -266,7 +278,7 @@ Valore dell'attributo type: `marinsoftware`
 
 Valore dell'attributo type: `mediametrie`
 
-Fornisce supporto per gli strumenti di tracciamento pagine di Médiamétrie. Richiede la definizione di *var* `serial`. Le variabili da `level1` a `level4` sono opzionali. Maggiori informazioni possono essere trovate su [mediametrie.com](http://www.mediametrie.com/).
+Fornisce supporto per gli strumenti di tracciamento pagine di Médiamétrie. Richiede la definizione di _var_ `serial`. Le variabili da `level1` a `level4` sono opzionali. Maggiori informazioni possono essere trovate su [mediametrie.com](http://www.mediametrie.com/).
 
 ### mediarithmics <a name="mediarithmics"></a>
 
@@ -351,9 +363,9 @@ Valore dell'attributo type: `oracleInfinityAnalytics`
 
 ### Parsely <a name="parsely"></a>
 
-Valore dell'attributo type: `parsely`
+Type attribute value: `parsely`
 
-Fornisce supporto per Parsely. I dettagli di configurazione possono essere trovati su [parsely.com/docs](http://parsely.com/docs/integration/tracking/google-amp.html).
+Adds support for Parsely. Configuration details can be found at [parsely.com/docs](http://parsely.com/docs/integration/tracking/google-amp.html).
 
 ### Permutive <a name="permutive"></a>
 
@@ -372,9 +384,9 @@ Valore dell'attributo type: `piStats`
 
 ### Piano <a name="piano"></a>
 
-Valore dell'attributo type: `piano`
+Type attribute value: `piano`
 
-Fornisce supporto per Piano. I dettagli di configurazione possono essere trovati su [vx.piano.io](http://vx.piano.io/javascript-tracking-amp).
+Adds support for Piano. Configuration details can be found at `http://vx.piano.io/javascript-tracking-amp`
 
 ### Pinpoll <a name="pinpoll"></a>
 
@@ -390,9 +402,13 @@ Fornisce supporto per Pressboard. I dettagli di configurazione possono essere tr
 
 ### Quantcast Measurement <a name="quantcast-measurement"></a>
 
-Valore dell'attributo type: `quantcast`
+Type attribute value: `quantcast`
 
-Fornisce supporto per Quantcast Measurement. Maggiori dettagli per l'aggiunta di Quantcast Measurement sono disponibili su [quantcast.com](https://www.quantcast.com/help/guides/)
+<!-- markdown-link-check-disable -->
+
+Adds support for Quantcast Measurement. More details for adding Quantcast Measurement can be found at [quantcast.com](https://www.quantcast.com/help/guides/)
+
+<!-- markdown-link-check-enable -->
 
 ### Rakam <a name="rakam"></a>
 
@@ -410,13 +426,13 @@ Valore dell'attributo type: `retargetly`
 
 Valore dell'attributo type: `rudderstack`
 
-Fornisce supporto per le visualizzazioni di pagina ed eventi RudderStack. per maggiori dettagli sull'implementazione consultare la nostra [documentazione](https://docs.rudderstack.com/sdk-integration-guide/getting-started-with-javascript-sdk/amp-analytics).
+Adds support for RudderStack page views and events. Find out more on the implementation check our documentation at `https://docs.rudderstack.com/sdk-integration-guide/getting-started-with-javascript-sdk/amp-analytics`.
 
 ### Segment <a name="segment"></a>
 
-Valore dell'attributo type: `segment`
+Type attribute value: `segment`
 
-Aggiunge il supporto per le visualizzazioni di pagina e gli eventi segment. Per consultare l'elenco completo dei campi che possono essere inviati, consultare le [Specifiche di Segment](https://segment.com/docs/spec/).
+Adds support for segment page views and events. To see the full list of fields that you can send, see [Segment Spec](https://segment.com/docs/spec/).
 
 ### ShinyStat <a name="shinystat"></a>
 
@@ -424,27 +440,33 @@ Valore dell'attributo type: `shinystat`
 
 ### SOASTA mPulse <a name="soasta-mpulse"></a>
 
-Valore dell'attributo type: `mpulse`
+Type attribute value: `mpulse`
 
-Fornisce supporto per [SOASTA mPulse](https://www.soasta.com/mPulse). I dettagli di configurazione sono disponibili su [docs.soasta.com](http://docs.soasta.com/).
+Adds support for [SOASTA mPulse](https://www.soasta.com/mPulse). Configuration details can be found at [docs.soasta.com](http://docs.soasta.com/).
 
 ### SimpleReach <a name="simplereach"></a>
 
-Valore dell'attributo type: `simplereach`
+Type attribute value: `simplereach`
 
-Fornisce supporto per SimpleReach. I dettagli di configurazione sono disponibili all'indirizzo `http://docs.simplereach.com/dev-guide/implementation/google-amp-implementation`.
+Adds support for SimpleReach. Configuration details can be found at `http://docs.simplereach.com/dev-guide/implementation/google-amp-implementation`.
 
 ### Snowplow Analytics <a name="snowplow-analytics"></a>
 
-Valore dell'attributo type: `snowplow`, `snowplow_v2`
+Type attribute value: `snowplow`, `snowplow_v2`
 
-Fornisce supporto per Snowplow Analytics. Maggiori dettagli per l'aggiunta di Snowplow Analytics sono disponibili su [github.com/snowplow/snowplow/wiki](https://github.com/snowplow/snowplow/wiki/Google-AMP-Tracker).
+Adds support for Snowplow Analytics. More details for adding Snowplow Analytics support can be found at [github.com/snowplow/snowplow/wiki](https://github.com/snowplow/snowplow/wiki/Google-AMP-Tracker).
+
+### Tail <a name="tail"></a>
+
+Type attribute value: `tail`
+
+Adds support for Tail. More details for adding Tail support can be found at [tail.digital](https://tail.digital).
 
 ### Rambler/TOP-100 <a name="ramblertop-100"></a>
 
-Valore dell'attributo type: `top100`
+Type attribute value: `top100`
 
-Fornisce supporto per Rambler/TOP-100. I dettagli di configurazione possono essere trovati su [top100.rambler.ru](https://top100.rambler.ru).
+Adds support for Rambler/TOP-100. Configuration details can be found at [top100.rambler.ru](https://top100.rambler.ru).
 
 ### TEA Analytics <a name="tea-analytics"></a>
 
@@ -460,21 +482,21 @@ Fornisce supporto per Tealium Collect. Maggiori dettagli per l'aggiunta di Teali
 
 ### Top.Mail.Ru <a name="topmailru"></a>
 
-Valore dell'attributo type: `topmailru`
+Type attribute value: `topmailru`
 
-Fornisce supporto per Top.Mail.Ru. I dettagli di configurazione sono disponibili nella [Guida di Top.Mail.Ru](https://help.mail.ru/top/amp-analytics).
+Adds support for Top.Mail.Ru. Configuration details can be found at [Top.Mail.Ru Help](https://help.mail.ru/top/amp-analytics).
 
 ### Treasure Data <a name="treasure-data"></a>
 
-Valore dell'attributo type: `treasuredata`
+Type attribute value: `treasuredata`
 
-Fornisce supporto per Treasure Data. I dettagli di configurazione possono essere trovati su [treasuredata.com](https://docs.treasuredata.com/articles/javascript-sdk-google-amp).
+Adds support for Treasure Data. Configuration details can be found at `https://docs.treasuredata.com/articles/javascript-sdk-google-amp`.
 
 ### Umeng+ Analytics <a name="umeng-analytics"></a>
 
-Valore dell'attributo type: `umenganalytics`
+Type attribute value: `umenganalytics`
 
-Fornisce supporto per Umeng + Analytics. Maggiori dettagli per l'aggiunta di Umeng + Analytics sono disponibili su [dev.umeng.com](http://dev.umeng.com/udplus/js-sdkdoc#5).
+Adds support for Umeng+ Analytics. More details for adding Umeng+ Analytics support can be found at [dev.umeng.com](http://dev.umeng.com/udplus/js-sdkdoc#5).
 
 ### Upscore <a name="upscore"></a>
 
@@ -492,12 +514,12 @@ Attributo type `webengage`
 
 ### Webtrekk <a name="webtrekk"></a>
 
-Il valore dell'attributo ~~`webtrekk`~~ è deprecato (verrà rimosso il 31/12/2018): utilizzare invece `webtrekk_v2`
+The attribute value ~~`webtrekk`~~ is deprecated (will remove on 31/12/2018) - use `webtrekk_v2` instead
 
-Fornisce supporto per Webtrekk. I dettagli di configurazione sono disponibili su [supportcenter.webtrekk.com](https://supportcenter.webtrekk.com/en/public/amp-analytics.html).
+Adds support for Webtrekk. Configuration details can be found at [supportcenter.webtrekk.com](https://supportcenter.webtrekk.com/en/public/amp-analytics.html).
 
 ### Yandex Metrica <a name="yandex-metrica"></a>
 
-Valore dell'attributo type: `metrika`
+Type attribute value: `metrika`
 
-Fornisce supporto per Yandex Metrica. I dettagli di configurazione sono disponibili presso il [supporto Yandex](https://yandex.com/support/metrica/code/install-counter-amp.xml).
+Adds support for Yandex Metrica. Configuration details can be found at [Yandex Support](https://yandex.com/support/metrica/code/install-counter-amp.xml).

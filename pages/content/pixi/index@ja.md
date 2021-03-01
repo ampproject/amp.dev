@@ -1,5 +1,5 @@
 ---
-$title: AMP ページのエクスペリエンスガイド
+"$title": AMP ページのエクスペリエンスガイド
 staticText:
   inputBar:
     headline: AMP ページの解析
@@ -17,7 +17,7 @@ staticText:
   statusIntro:
     headline: しばらくお待ちください
     headline2: ページを解析中です
-    loadingCopy: ${finishedChecks} / ${totalChecks} 個のチェックを完了
+    loadingCopy: "${finishedChecks} / ${totalChecks} 個のチェックを完了"
     buttonShare: シェア
     buttonInvestigate: 調査
   coreWebVitals:
@@ -36,7 +36,7 @@ staticText:
       scorePercentile: 75 パーセンタイルのスコア
       score: スコア
       opportunity: 改善できる項目
-      pagesPassing: 合格ページ数
+      pagesPassing: 通過訪問数
       action: 対応策
   additionalChecks:
     headline: その他のチェック
@@ -61,7 +61,7 @@ scriptText:
     passed: 合格
     passedAddition: 合格
     none: なし
-    nothingToDo: 対応は不要です！&#x1F389;
+    nothingToDo: "対応は不要です！&#x1F389;"
     fileAnIssue: AMP の課題を提出
     recommendation: 推奨事項
     recommendations: 推奨事項

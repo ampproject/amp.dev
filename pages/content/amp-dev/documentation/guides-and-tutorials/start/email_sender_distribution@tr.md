@@ -1,10 +1,10 @@
 ---
-"$title": Gönderen dağıtımı için kaydolun
-"$order": '1'
+'$title': Gönderen dağıtımı için kaydolun
+$order: 1
 description: AMP e-postalarına gönderen dağıtımı için kaydolun
-"$category": Start
+'$category': Start
 formats:
-- email
+  - email
 author: CrystalOnScript
 ---
 

@@ -1,11 +1,13 @@
 ---
-$title: 좌석 맵 제작하기
+'$title': 좌석 맵 제작하기
 $order: 104
 description: 티켓 발권 웹 앱에서 좌석 맵은 중요한 부분이지만 AMP 구현은 까다로울 수 있습니다. 이 글을 읽고 AMP에서 좌석 맵을 구현하는 방법을 알아보세요.
-tutorial: true
+tutorial: 'true'
+formats:
+  - websites
 author: kul3r4
 contributors:
-- pbakaus
+  - pbakaus
 ---
 
 티켓 발권 웹 앱에서 좌석 맵은 중요한 부분이지만 AMP 구현은 까다로울 수 있습니다. 이 글을 읽고 AMP에서 지원되는 AMP 컴포넌트를 조합하여 좌석 맵을 구현하는 방법을 알아보세요.
@@ -48,7 +50,13 @@ rect[selected].seat {
 
 좌석 맵은 [`amp-list`](../../../documentation/components/reference/amp-list.md) 및 [`amp-mustache`](../../../documentation/components/reference/amp-mustache.md)를 통해 렌더링됩니다. [`amp-list`](../../../documentation/components/reference/amp-list.md) 호출에서 데이터를 수신한 후 해당 데이터를 사용하여 좌석을 반복할 수 있습니다.
 
-[sourcecode:html] {% raw %}<svg preserveaspectratio="xMidYMin slice" viewbox="0 0 {{width}} {{height}}"> {{#seats}} <rect option="{{id}}" role="button" tabindex="0" class="seat {{unavailable}}" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"></rect> {{/seats}} </svg>{% endraw %} [/sourcecode]
+[sourcecode:html]
+{% raw %}<svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
+{{#seats}}
+<rect option="{{id}}" role="button" tabindex="0" class="seat {{unavailable}}" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"/>
+{{/seats}}
+</svg>{% endraw %}
+[/sourcecode]
 
 ## 예약 불가 좌석 스타일링
 
@@ -56,9 +64,12 @@ rect[selected].seat {
 
 이를 대체하는 한층 복잡한 접근 방식은 다음과 같이 태그를 반복하는 것입니다.
 
-[sourcecode:html] {% raw %}{{#available }}{% endraw %} <rect option="{{id}}" role="button" tabindex="0" class="seat" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"></rect>{% raw %}{{/available }}{% endraw %}
+[sourcecode:html]
+{% raw %}{{#available }}{% endraw %}
+<rect option="{{id}}" role="button" tabindex="0" class="seat" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"/>{% raw %}{{/available }}{% endraw %}
 
-{% raw %}{{^available}}{% endraw %}<rect role="button" tabindex="0" class="seat unavailable" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"></rect>{% raw %}{{/available }}{% endraw %} [/sourcecode]
+{% raw %}{{^available}}{% endraw %}<rect role="button" tabindex="0" class="seat unavailable" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"/>{% raw %}{{/available }}{% endraw %}
+[/sourcecode]
 
 ## 좌석 맵 크기 지정
 
@@ -93,21 +104,29 @@ rect[selected].seat {
 
 좌석 맵 최종 HTML 구조는 다음을 참조하세요.
 
-[sourcecode:html] {% raw %}
-
-<div class="seatmap-container">
+[sourcecode:html]
+{% raw %}<div class="seatmap-container">
 <amp-list layout="fill" src="/json/seats.json" binding="no" items="." single-item noloading>
 <template type="amp-mustache">
 <amp-pan-zoom layout="fill" class="seatmap">
 <amp-selector multiple on="select:AMP.setState({
-selectedSeats: event.selectedOptions
-})" layout="fill">
+          selectedSeats: event.selectedOptions
+        })" layout="fill">
 <div class="svg-container">
-<svg preserveaspectratio="xMidYMin slice" viewbox="0 0 {{width}} {{height}}">{{#seats}}<rect option="{{id}}" role="button" tabindex="0" class="seat {{unavailable}}" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"></rect> {{/ seats}}</svg>
+<svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
+{{#seats}}
+<rect option="{{id}}" role="button"
+               tabindex="0" class="seat {{unavailable}}"
+              x="{{x}}" y="{{y}}"
+              width="{{width}}" height="{{height}}"
+              rx="{{rx}}" ry="{{ry}}"/>
+{{/seats}}
+</svg>
 </div>
 </amp-selector>
 </amp-pan-zoom>
 </template>
 </amp-list>
-<div>{% endraw %} [/sourcecode]</div>
-</div>
+
+</div>{% endraw %}
+[/sourcecode]

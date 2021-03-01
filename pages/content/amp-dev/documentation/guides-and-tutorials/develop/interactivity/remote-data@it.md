@@ -1,6 +1,8 @@
 ---
-$title: Lavorare con dati remoti
+'$title': Lavorare con dati remoti
+$order: 3
 description: Cosa succede se i dati associabili sono troppo grandi o complessi per essere recuperati al caricamento della pagina? Oppure se ogni SKU avesse un prezzo che richiede ...
+toc: 'true'
 ---
 
 Cosa succede se i dati associabili sono troppo grandi o complessi per essere recuperati al caricamento della pagina? Oppure se ogni SKU avesse un prezzo che richiede troppo tempo per essere trovato? La ricerca dei prezzi per gli SKU di articoli non visualizzati è uno spreco di risorse.
@@ -17,15 +19,15 @@ Si può anche abbinare l'attributo `src` per l'elemento [`<amp-state>`](../../..
 
 Sfruttiamo la possibilità di recuperare dati remoti per cercare i prezzi degli SKU nel nostro esempio. Il nostro server di sviluppo Express.js in `app.js` ha già un endpoint `/shirts/sizesAndPrices?shirt=<sku>` che, dato lo SKU delle magliette, restituisce le taglie disponibili e il prezzo per ciascuna taglia. Invia la risposta con un ritardo artificiale di un secondo per simulare la latenza di rete.
 
-Richiesta | Risposta
---- | ---
-`GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}`
+| Richiesta                             | Risposta                                     |
+| ------------------------------------- | -------------------------------------------- |
+| `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
 Analogamente ai dati JSON all'interno degli elementi [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state), i dati remoti restituiti da queste operazioni sono raccolti e resi disponibili nell'attributo `id` dell'elemento. Ad esempio, è possibile accedere ai dati restituiti dalla risposta dell'esempio precedente in un'espressione:
 
-Espressione | Risultato
---- | ---
-`shirts['1001'].sizes['XS']` | `8.99`
+| Espressione                  | Risultato |
+| ---------------------------- | --------- |
+| `shirts['1001'].sizes['XS']` | `8.99`    |
 
 ### Abbinamento dei dati
 
@@ -34,7 +36,10 @@ Ora, applichiamo questo risultato al nostro esempio di commercio elettronico. Pe
 ```html
 <!-- Quando `selected.sku` cambia, aggiorna l'attributo `src` e recupera i dati
 JSON dal nuovo URL. Poi, raccoglie tali dati in `id` ("shirts"). -->
-<amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
+<amp-state
+  id="shirts"
+  [src]="'/shirts/sizesAndPrices?sku=' + selected.sku"
+></amp-state>
 ```
 
 ### Indicazione delle taglie non disponibili
@@ -104,16 +109,22 @@ Inoltre, dovremo aggiornare lo stato predefinito degli elementi coinvolti:
       </td>
       <!-- Aggiunge la classe 'unavailable' ai prossimi tre elementi <td>
        per coerenza con le taglie disponibili per lo SKU predefinito. -->
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'"
+      >
         <div option="M">M</div>
       </td>
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'"
+      >
         <div option="L">L</div>
       </td>
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'"
+      >
         <div option="XL">XL</div>
       </td>
     </tr>
@@ -132,8 +143,10 @@ Il nostro negozio AMPPAREL è particolare in quanto il prezzo delle magliette è
 ```html
 <!-- Quando un elemento è selezionato, imposta la variabile `selectedSize` al
      valore dell'attributo "option" dell'elemento selezionato.  -->
-<amp-selector name="size"
-    on="select:AMP.setState({selectedSize: event.targetOption})">
+<amp-selector
+  name="size"
+  on="select:AMP.setState({selectedSize: event.targetOption})"
+></amp-selector>
 ```
 
 Si noti che non stiamo inizializzando il valore di `selectedSize` tramite l'elemento `amp-state#selected`. Questo perché intenzionalmente non forniamo una taglia selezionata predefinita e vogliamo invece che sia l'utente a scegliere una taglia.
@@ -143,7 +156,8 @@ Si noti che non stiamo inizializzando il valore di `selectedSize` tramite l'elem
 Aggiungere un nuovo elemento `<span>` che racchiude l'etichetta del prezzo e modifica il testo predefinito in "---" poiché non esiste alcuna taglia selezionata predefinita.
 
 ```html
-<h6>PRICE :
+<h6>
+  PRICE :
   <!-- Mostra il prezzo della maglietta selezionata per la taglia selezionata se disponibile.
        Altrimenti, mostra il testo segnaposto '---'. -->
   <span [text]="shirts[selected.sku].sizes[selectedSize] || '---'">---</span>
@@ -161,9 +175,13 @@ Abbiamo quasi finito! Disattiviamo il pulsante "Aggiungi al carrello" quando la 
      1. Non ci sono taglie selezionate, O
      2. Le taglie disponibili per lo SKU selezionato non sono state ancora recuperate
 -->
-<input type="submit" value="ADD TO CART" disabled
-    class="mdl-button mdl-button--raised mdl-button--accent"
-    [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]">
+<input
+  type="submit"
+  value="ADD TO CART"
+  disabled
+  class="mdl-button mdl-button--raised mdl-button--accent"
+  [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]"
+/>
 ```
 
 **Fai una prova**: selezionando una taglia non disponibile, non sarà possibile aggiungerla al carrello.

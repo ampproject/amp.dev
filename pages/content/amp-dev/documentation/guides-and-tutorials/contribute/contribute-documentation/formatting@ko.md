@@ -1,7 +1,12 @@
 ---
-$title: 서식 지정 가이드 & 튜토리얼
+'$title': 서식 지정 가이드 & 튜토리얼
 $order: 3
 description: amp.dev 파일 서식 지정 요구 사항
+formats:
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 
@@ -89,84 +94,93 @@ description: For web experiences requiring a high amount of customization AMP ha
 
 amp.dev는 AMP로 작성되었습니다! 그렇기에 이미지는 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 기준에 부합합니다. 빌드 프로세스에서 이미지를 `amp-img` 형식으로 변환하는 데 다음 구문이 활용되었습니다.
 
-<div class="ap-m-code-snippet">
-<pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}</pre>
-</div>
+<div class="ap-m-code-snippet"><pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}</pre></div>
 
 ## 섹션 필터링
 
 일부 문서는 여러 AMP 형식과 연관되었을 수 있지만 이러한 형식에는 다른 것들과 연관성 없는 추가 설명 또는 정보가 필요할 수도 있습니다. 다음 숏코드로 섹션을 래핑하여 필터링할 수 있습니다.
 
-<div class="ap-m-code-snippet">
-<pre>&lsqb;filter formats="websites"]<br>This is only visible for [websites](?format=websites).<br>&lsqb;/filter]</pre>
-</div>
+<div class="ap-m-code-snippet"><pre>&amp;lsqb;filter formats="websites"]
+This is only visible for [websites](?format=websites).
+&amp;lsqb;/filter]
 
-[filter formats="websites"] [웹사이트](?format=websites)에만 표시됩니다. [/filter]
+&amp;lsqb;filter formats="websites"]
+This is only visible for [websites](?format=websites).
+&amp;lsqb;/filter]
 
-[filter formats="websites, email"] [웹사이트](?format=websites) & [이메일](?format=email)에만 표시됩니다. [/filter]
+&amp;lsqb;filter formats="websites, email"]
+This is visible for [websites](?format=websites) &amp; [email](?format=email).
+&amp;lsqb;/filter]
 
-[filter formats="stories"] [스토리](?format=stories)에만 표시됩니다. [/filter]
-
-
-
+&amp;lsqb;filter formats="stories"]
+This is visible for [stories](?format=stories).
+&amp;lsqb;/filter]</pre></div>
 
 ## 팁
 
 다음 숏코드에 텍스트를 래핑하여 팁과 콜아웃을 추가할 수 있습니다.
 
-<div class="ap-m-code-snippet">
-<pre>&lsqb;tip type="default"]<br>Default tip<br>&lsqb;/tip]</pre>
-</div>
+<div class="ap-m-code-snippet"><pre>&amp;lsqb;tip type="default"]
+Default tip
+[/tip]
 
-[tip type="important"] 중요 [/tip]
+&amp;lsqb;tip type="important"]
+Important
+[/tip]
 
-[tip type="note"] 참고 [/tip]
+&amp;lsqb;tip type="note"]
+Note
+[/tip]
 
-[tip type="read-on"] 읽을거리 [/tip]
-
-
-
+&amp;lsqb;tip type="read-on"]
+Read-on
+[/tip]</pre></div>
 
 ## 코드 조각
 
 백틱(`) 기호 3개 사이에 코드 조각을 배치하고 첫 번째 백틱 세트 끝부분에서 언어를 지정합니다.
 
-<div class="ap-m-code-snippet">
-<pre>```html<br>  // code sample<br>```</pre>
-</div>
+<div class="ap-m-code-snippet"><pre>```html
+  // code sample
+```
 
 ```css
-  // code sample
+// code sample
 ```
 
-```js
+````js
   // code sample
-```
-
-
-
-
+```</pre></div>
 
 [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md?format=websites) 템플릿을 활용하면 자주 그렇듯 코드에 중괄호가 두 개 포함된 경우 코드 부분을 래핑해야 합니다.
 
-<div class="ap-m-code-snippet">
-<pre>```html<br>{% raw	%}<br>  // code with double curly braces<br>{% endraw	%}<br>```</pre>
-</div>
+<div class="ap-m-code-snippet"><pre>```html<br>{% raw	%}<br>  // code with double curly braces<br>{% endraw	%}<br>```</pre></div>
 
 ### 목록의 코드 조각
 
 Python 마크다운에는 일부 제한이 있습니다. 목록에 코드 조각을 포함할 시 다음 구문을 활용하세요.
 
-<div class="ap-m-code-snippet">
-<pre>1. First:<br>    &lsqb;sourcecode:html]<br>      <br>        <p>Indented content.</p><br>      <br>    &lsqb;/sourcecode]<br>  2. Second<br>  3. Third</pre>
-</div>
+<div class="ap-m-code-snippet"><pre>&lsqb;sourcecode:html]
+      <html>
+        <p>Indented content.</p>
+      </html>
+    &lsqb;/sourcecode]</pre></div>
 
 ## 코드 샘플 미리보기
 
 코드 샘플에 미리보기 또는 [AMP Playground](https://playground.amp.dev/) 버전 링크를 포함할 수 있습니다.
 
 <div class="ap-m-code-snippet">
-  <pre>  &lsqb;example preview="default: none|inline|top-frame"<br>          playground="default: true|false"<br>          imports="{custom-element-10},{custom-element-21},..."           template="{custom-template2}"]   ```html     // code sample   ```   &lsqb;/example]   {/custom-template2}{/custom-element-21}{/custom-element-10}</pre>
+  <pre>&lsqb;example preview="default: none|inline|top-frame"
+          playground="default: true|false"
+          imports="<custom-element-1>,<custom-element-2>,..."
+          template="<custom-template>"]
+  ```html
+    // code sample
+````
+
+&lsqb;/example]</pre>
+
 </div>
 
 참고: 미리보기는 Playground에서 열었을 때 선택한 최근 형식으로 자동 변환됩니다🤯!
@@ -189,9 +203,11 @@ Python 마크다운에는 일부 제한이 있습니다. 목록에 코드 조각
 
 간단한 인라인 샘플 임베드입니다. 인라인 스타일로 CSS를 정의할 수 있습니다.
 
-<div class="ap-m-code-snippet">
-<pre>  [example preview="inline" playground="true"]<br>    ```html<br>    <div style="background: red; width: 200px; height: 200px;">Hello World</div><br>    ```<br>  [/example]<br>  [/example]</pre>
-</div>
+<div class="ap-m-code-snippet"><pre>[example preview="inline" playground="true"]
+    ```html
+    <div style="background: red; width: 200px; height: 200px;">Hello World</div>
+    ```
+  [/example]</pre></div>
 
 다음과 같이 표시되어야 합니다:
 
@@ -211,17 +227,40 @@ Python 마크다운에는 일부 제한이 있습니다. 목록에 코드 조각
 
 중요: AMP 보일러플레이트 코드는 AMP 형식에 따라 자동으로 추가되므로 헤더에 추가하지 않습니다. 헤더에는 샘플로 필요한 요소만을 추가합니다!
 
-<div class="ap-m-code-snippet">
-<pre>  [example preview="top-frame"<br>         playground="true"]<br>    ```html<br>    <head><br>      <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script><br>      <style amp-custom><br>        body {<br>          background: red;<br>        }<br>      </style><br>    </head><br>    <body><br>      <h1>Hello AMP</h1><br>      <amp-youtube width="480"<br>        height="270"<br>        layout="responsive"<br>        data-videoid="lBTCB7yLs8Y"><br>      </amp-youtube><br>    </body><br>    ```<br>  [/example]</pre>
-</div>
+<div class="ap-m-code-snippet"><pre>[example preview="top-frame"
+         playground="true"]
+    ```html
+    <head>
+      <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+      <style amp-custom>
+        body {
+          background: red;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>Hello AMP</h1>
+      <amp-youtube width="480"
+        height="270"
+        layout="responsive"
+        data-videoid="lBTCB7yLs8Y">
+      </amp-youtube>
+    </body>
+    ```
+  [/example]</pre></div>
 
 다음과 같이 표시되어야 합니다:
 
-[example preview="top-frame" playground="true"]
+[example preview="top-frame"
+playground="true"]
 
 ```html
 <head>
-  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-youtube"
+    src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+  ></script>
   <style amp-custom>
     body {
       background: red;
@@ -230,10 +269,12 @@ Python 마크다운에는 일부 제한이 있습니다. 목록에 코드 조각
 </head>
 <body>
   <h1>Hello AMP</h1>
-  <amp-youtube width="480"
+  <amp-youtube
+    width="480"
     height="270"
     layout="responsive"
-    data-videoid="lBTCB7yLs8Y">
+    data-videoid="lBTCB7yLs8Y"
+  >
   </amp-youtube>
 </body>
 ```
@@ -244,43 +285,79 @@ Python 마크다운에는 일부 제한이 있습니다. 목록에 코드 조각
 
 AMP 스토리 미리보기 시 `preview="top-frame"`과 `orientation="portrait"`을 함께 사용합니다.
 
-<div class="ap-m-code-snippet">
-<pre>  [example preview="top-frame"<br>         orientation="portrait"<br>         playground="true"]<br>    ```html<br>    <head><br>      <script async custom-element="amp-story"<br>          src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script><br>      <style amp-custom><br>        body {<br>          font-family: 'Roboto', sans-serif;<br>        }<br>        amp-story-page {<br>          background: white;<br>        }<br>      </style><br>    </head><br>    <body><br>      <amp-story standalone><br>        <amp-story-page id="cover"><br>          <amp-story-grid-layer template="vertical"><br>            <h1>Hello World</h1><br>            <p>This is the cover page of this story.</p><br>          </amp-story-grid-layer><br>        </amp-story-page><br>        <amp-story-page id="page-1"><br>          <amp-story-grid-layer template="vertical"><br>            <h1>First Page</h1><br>            <p>This is the first page of this story.</p><br>          </amp-story-grid-layer><br>        </amp-story-page><br>      </amp-story><br>    </body><br>    ```<br>  [/example]</pre>
-</div>
+<div class="ap-m-code-snippet"><pre>[example preview="top-frame"
+         orientation="portrait"
+         playground="true"]
+    ```html
+    <head>
+      <script async custom-element="amp-story"
+          src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+      <style amp-custom>
+        body {
+          font-family: 'Roboto', sans-serif;
+        }
+        amp-story-page {
+          background: white;
+        }
+      </style>
+    </head>
+    <body>
+      <amp-story standalone>
+        <amp-story-page id="cover">
+          <amp-story-grid-layer template="vertical">
+            <h1>Hello World</h1>
+            <p>This is the cover page of this story.</p>
+          </amp-story-grid-layer>
+        </amp-story-page>
+        <amp-story-page id="page-1">
+          <amp-story-grid-layer template="vertical">
+            <h1>First Page</h1>
+            <p>This is the first page of this story.</p>
+          </amp-story-grid-layer>
+        </amp-story-page>
+      </amp-story>
+    </body>
+    ```
+  [/example]</pre></div>
 
 다음과 같이 표시되어야 합니다:
 
-[example preview="top-frame" orientation="portrait" playground="true"]
+[example preview="top-frame"
+orientation="portrait"
+playground="true"]
 
 ```html
-  <head>
-    <script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-    <style amp-custom>
-      body {
-        font-family: 'Roboto', sans-serif;
-      }
-      amp-story-page {
-        background: white;
-      }
-    </style>
-  </head>
-  <body>
-    <amp-story standalone>
-      <amp-story-page id="cover">
-        <amp-story-grid-layer template="vertical">
-          <h1>Hello World</h1>
-          <p>This is the cover page of this story.</p>
-        </amp-story-grid-layer>
-      </amp-story-page>
-      <amp-story-page id="page-1">
-        <amp-story-grid-layer template="vertical">
-          <h1>First Page</h1>
-          <p>This is the first page of this story.</p>
-        </amp-story-grid-layer>
-      </amp-story-page>
-    </amp-story>
-  </body>
+<head>
+  <script
+    async
+    custom-element="amp-story"
+    src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+  ></script>
+  <style amp-custom>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    amp-story-page {
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <amp-story standalone>
+    <amp-story-page id="cover">
+      <amp-story-grid-layer template="vertical">
+        <h1>Hello World</h1>
+        <p>This is the cover page of this story.</p>
+      </amp-story-grid-layer>
+    </amp-story-page>
+    <amp-story-page id="page-1">
+      <amp-story-grid-layer template="vertical">
+        <h1>First Page</h1>
+        <p>This is the first page of this story.</p>
+      </amp-story-grid-layer>
+    </amp-story-page>
+  </amp-story>
+</body>
 ```
 
 [/example]
@@ -289,9 +366,17 @@ AMP 스토리 미리보기 시 `preview="top-frame"`과 `orientation="portrait"`
 
 AMP 이메일에 엔드포인트 URL이 임베드 될 경우 <code>{{server_for_email}}</code>를 활용하여 절대 경로로 지정하는 방법을 참조하세요.
 
-<div class="ap-m-code-snippet">
-<pre>  [example preview="top-frame" playground="true"]<br>    ```html<br>    <div class="resp-img">       <amp-img alt="flowers" src="%7B%7Bserver_for_email%7D%7D/static/inline-examples/images/flowers.jpg" layout="responsive" width="640" height="427"></amp-img>     </div><br>    ```<br>  [/example]</pre>
-</div>
+<div class="ap-m-code-snippet"><pre>[example preview="top-frame" playground="true"]
+    ```html
+    <div class="resp-img">
+      <amp-img alt="flowers"
+        src="{{server_for_email}}/static/inline-examples/images/flowers.jpg"
+        layout="responsive"
+        width="640"
+        height="427"></amp-img>
+    </div>
+    ```
+  [/example]</pre></div>
 
 다음과 같이 표시되어야 합니다:
 
@@ -299,11 +384,13 @@ AMP 이메일에 엔드포인트 URL이 임베드 될 경우 <code>{{server_for_
 
 ```html
 <div class="resp-img">
-  <amp-img alt="flowers"
+  <amp-img
+    alt="flowers"
     src="{{server_for_email}}/static/inline-examples/images/flowers.jpg"
     layout="responsive"
     width="640"
-    height="427"></amp-img>
+    height="427"
+  ></amp-img>
 </div>
 ```
 
@@ -314,17 +401,40 @@ AMP 이메일에 엔드포인트 URL이 임베드 될 경우 <code>{{server_for_
 원격 엔드포인트를 사용한 `top-frame` 샘플입니다. <code>{% raw %}</code> 및<code>{% endraw %}</code>을 활용하여 Mustache 템플릿을 이스케이핑 처리해야 합니다.
 
 <div class="ap-m-code-snippet">
-  <pre>[example preview="top-frame"<br>        playground="true"<br>        imports="amp-list:0.1"<br>        template="amp-mustache:0.2"]<br>    ```html<br>    <amp-list width="auto" height="100" layout="fixed-height"<br>      src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json"><br>      <template type="amp-mustache">{% raw %}<br>        <div class="url-entry"><br>          <a href="{{url}}">{{title}}</a><br>        </div><br>      {% endraw %}<br>      </template><br>    </amp-list><br>    ```<br>[/example]</pre>
+  <pre>[example preview="top-frame"
+        playground="true"
+        imports="amp-list:0.1"
+        template="amp-mustache:0.2"]
+    ```html
+    <amp-list width="auto" height="100" layout="fixed-height"
+      src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
+      <template type="amp-mustache">{% raw %}
+        <div class="url-entry">
+          <a href="{{url}}">{{title}}</a>
+        </div>
+      {% endraw %}
+      </template>
+    </amp-list>
+    ```
+[/example]</pre>
 </div>
 
 다음과 같이 표시되어야 합니다:
 
-[example preview="top-frame" playground="true" imports="amp-list:0.1" template="amp-mustache:0.2"]
+[example preview="top-frame"
+playground="true"
+imports="amp-list:0.1"
+template="amp-mustache:0.2"]
 
 ```html
-<amp-list width="auto" height="100" layout="fixed-height"
-  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
-  <template type="amp-mustache">{% raw %}
+<amp-list
+  width="auto"
+  height="100"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json"
+>
+  <template type="amp-mustache"
+    >{% raw %}
     <div class="url-entry">
       <a href="{{url}}">{{title}}</a>
     </div>
@@ -340,7 +450,7 @@ AMP 이메일에 엔드포인트 URL이 임베드 될 경우 <code>{{server_for_
 표준 마크다운 링크 구문으로 다른 페이지로 연결할 수 있습니다.
 
 ```md
- [link](../../../courses/beginning-course/index.md)
+[link](../../../courses/beginning-course/index.md)
 ```
 
 amp.dev에 다른 페이지를 연결할 경우 참조는 대상 파일에 상대 파일 경로가 됩니다.
@@ -370,7 +480,7 @@ amp.dev에 다른 페이지를 연결할 경우 참조는 대상 파일에 상�
 AMP 웹사이트나 AMP 스토리와 같은 AMP 형식으로 컴포넌트 문서, 가이드 및 튜토리얼, 예제를 필터링할 수 있습니다. 이러한 페이지를 링크로 연결할 경우, 링크에 형식 매개변수를 추가하여 대상에서 지원되는 형식을 명시적으로 지정해야 합니다.
 
 ```md
- [link](../../learn/amp-actions-and-events.md?format=websites)
+[link](../../learn/amp-actions-and-events.md?format=websites)
 ```
 
 페이지에 사용된 **모든** 형식이 대상에서 지원된다고 확신할 경우에만 매개변수를 생략할 수 있습니다.
@@ -380,8 +490,8 @@ AMP 웹사이트나 AMP 스토리와 같은 AMP 형식으로 컴포넌트 문서
 링크에서 버전 부분이 생략될 경우 컴포넌트 참조 문서 링크는 자동으로 최신 버전을 지정합니다. 버전을 명시적으로 지정하고 싶을 경우 전체 이름을 지정하세요.
 
 ```md
- [latest version](../../../components/reference/amp-carousel.md?format=websites)
- [explicit version](../../../components/reference/amp-carousel-v0.2.md?format=websites)
+[latest version](../../../components/reference/amp-carousel.md?format=websites)
+[explicit version](../../../components/reference/amp-carousel-v0.2.md?format=websites)
 ```
 
 ## 문서 구조

@@ -1,7 +1,9 @@
 ---
-$title: Melindungi konten langganan Anda dengan enkripsi pihak klien
-$titles:
-  teaser: Melindungi konten langganan Anda dengan enkripsi pihak klien.
+formats:
+  - websites
+'$title': Melindungi konten langganan Anda dengan enkripsi pihak klien
+'$titles':
+  teaser: Protect your subscription content with client-side encryption.
 $order: 10
 description: Selesaikan masalah enkripsi konten ini dengan menerapkan validasi pelanggan premium dan dekripsi konten pada pihak atau sisi klien. Dengan solusi ini, pengguna dengan akses premium akan dapat mendekripsi konten tanpa perlu memuat halaman baru atau menunggu backend untuk menanggapi!
 author: CrystalOnScript
@@ -21,7 +23,7 @@ Selesaikan kedua masalah ini dengan menerapkan validasi pelanggan premium dan de
 
 Untuk menerapkan dekripsi pihak klien, Anda akan menggabungkan kriptografi kunci publik dan kunci simetris dengan cara berikut ini:
 
-1. Buat kunci simetris acak untuk setiap dokumen, dan berikan setiap dokumen kunci yang *unik*. {{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='Unique keys for each unique document.') }}
+1. Buat kunci simetris acak untuk setiap dokumen, dan berikan setiap dokumen kunci yang _unik_. {{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='Unique keys for each unique document.') }}
 2. Enkripsi konten premium dengan kunci simetris dokumennya. {{ image('/static/img/docs/guides/cse/cse3.jpg', 130, 243, align='', layout='intrinsic', alt='Use the document key to encrypt premium content.') }} Kunci ini simetris untuk memungkinkan kunci yang sama mengenkripsi dan mendekripsi konten. {{ image('/static/img/docs/guides/cse/cse4.jpg', 188, 141, align='', layout='intrinsic', alt='The same key that encrypts the document also decrypts it.') }}
 3. Enkripsi kunci dokumen dengan kunci publik, dengan menggunakan protokol [enkripsi hibrida ](https://en.wikipedia.org/wiki/Hybrid_cryptosystem)untuk mengenkripsi kunci simetris. {{ image('/static/img/docs/guides/cse/cse5.jpg', 309, 114, align='', layout='intrinsic', alt='A hybrid encryption protocol encrypts the symmetric key with a public key.') }}
 4. Dengan menggunakan komponen [`<amp-subscriptions>`](https://amp.dev/documentation/components/amp-subscriptions/) dan/atau [`<amp-subscriptions-google>`](https://amp.dev/documentation/components/amp-subscriptions-google/?format=websites), simpan kunci dokumen yang dienkripsi di dalam dokumen AMP, bersama konten premium yang dienkripsi. {{ image('/static/img/docs/guides/cse/cse6.jpg', 264, 261, align='', layout='intrinsic', alt='Both keys are stored inside of the AMP document.') }}
@@ -41,7 +43,7 @@ Ikuti langkah-langkah di bawah ini untuk mengintegrasikan penanganan enkripsi AM
 
 ## Langkah ke-1: Membuat pasangan kunci publik/pribadi
 
-Untuk mengenkripsi kunci simetris dokumen, Anda perlu mempunyai pasangan kunci publik/pribadi sendiri. Enkripsi kunci publik adalah protokol [enkripsi hibrida](https://en.wikipedia.org/wiki/Hybrid_cryptosystem), terutama metode enkripsi asimetris ECIES [Kurva Eliptis P-256](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)) dengan metode enkripsi simetris [AES-GCM](https://tools.ietf.org/html/rfc5288) (128 bit).
+Untuk mengenkripsi kunci simetris dokumen, Anda perlu mempunyai pasangan kunci publik/pribadi sendiri. Enkripsi kunci publik adalah protokol [enkripsi hibrida](https://en.wikipedia.org/wiki/Hybrid_cryptosystem), terutama metode enkripsi asimetris ECIES [Kurva Eliptis P-256](<https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)>) dengan metode enkripsi simetris [AES-GCM](https://tools.ietf.org/html/rfc5288) (128 bit).
 
 Penanganan kunci publik harus dilakukan dengan [Tink](https://github.com/google/tink) menggunakan [menggunakan jenis kunci asimetris ini](https://github.com/subscriptions-project/encryption/blob/617f0911c9870dae900a232e2dc8ee9196677a89/golang/vendor/github.com/google/tink/go/hybrid/hybrid_key_templates.go#L32). Untuk membuat pasangan kunci pribadi-publik Anda, gunakan salah satu dari yang berikut ini:
 

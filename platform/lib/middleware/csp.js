@@ -37,6 +37,7 @@ module.exports = (req, res, next) => {
       'blob:',
       `'unsafe-inline'`,
       'https://cdn.ampproject.org/v0.js',
+      'https://cdn.ampproject.org/v0.mjs',
       'https://cdn.ampproject.org/v0/',
       'https://cdn.ampproject.org/sw/',
       'https://cdn.ampproject.org/viewer/',
@@ -50,7 +51,7 @@ module.exports = (req, res, next) => {
       'https://cdn.ampproject.org/rtv/',
       ...getDynamicHosts(),
     ],
-    reportUri: ['https://csp-collector.appspot.com/csp/amp'],
+    reportUri: ['/csp-report'],
   };
 
   // Allow unsafe-inline for examples
@@ -61,6 +62,6 @@ module.exports = (req, res, next) => {
   // Add security headers.
   contentSecurityPolicy({
     directives,
-    reportOnly: false,
+    reportOnly: true,
   })(req, res, next);
 };

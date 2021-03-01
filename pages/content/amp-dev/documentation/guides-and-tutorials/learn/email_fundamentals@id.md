@@ -1,8 +1,10 @@
 ---
-$title: Dasar-Dasar AMP untuk Email
+'$title': Dasar-Dasar AMP untuk Email
 $order: 1
 description: Semua yang perlu Anda ketahui untuk mulai menulis Email AMP yang valid.
 author: CrystalOnScript
+formats:
+  - email
 ---
 
 Jika Anda akrab dengan AMP, ada kabar baik! AMP untuk Email hanyalah sebagian kecil dari perpustakaan HTML AMP. Jika Anda tidak akrab dengan AMP, ada kabar baik juga! Panduan ini akan menyediakan semua yang Anda butuhkan untuk bisa memulai menulis Email AMP yang valid!
@@ -12,16 +14,20 @@ Jika Anda akrab dengan AMP, ada kabar baik! AMP untuk Email hanyalah sebagian ke
 Email AMP terlihat seperti email HTML klasik, tetapi dengan sedikit perbedaan. Di bawah ini adalah jumlah penambahan minimum yang diperlukan untuk membuat sebuah email menjadi email AMP yang valid.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email data-css-strict>
-<head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
-</head>
-<body>
-  Hello, AMP4EMAIL world.
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    Hello, AMP4EMAIL world.
+  </body>
 </html>
 ```
 
@@ -36,8 +42,12 @@ Penyedia email yang mendukung Email AMP telah mengatur pemeriksaan keamanan untu
 
 ```html
 <head>
-...
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  ...
+  <style amp4email-boilerplate>
+    body {
+      visibility: hidden;
+    }
+  </style>
 </head>
 ```
 
@@ -130,9 +140,7 @@ Contoh ini disampaikan dengan menggunakan `<amp-list>` untuk menampilkan data ya
   src="https://example.com/endpoint?token=REPLACE_WITH_YOUR_ACCESS_TOKEN"
   height="300"
 >
-  <template type="amp-mustache">
-    ...
-  </template>
+  <template type="amp-mustache"> ... </template>
 </amp-list>
 ```
 

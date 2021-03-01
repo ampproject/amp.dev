@@ -38,7 +38,7 @@ function lintYaml() {
             `Can not validate ${file.relative} as it contains custom constructors`
           );
         } else {
-          yaml.safeLoad(file.contents);
+          yaml.load(file.contents);
         }
 
         callback();

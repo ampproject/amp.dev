@@ -1,10 +1,10 @@
 import os
-import urlparse
+import urllib.parse
 import errno
 from grow.documents import document
-from constants import FORMAT_TYPE_IDS, DEFAULT_FORMAT
-from example_document import ExampleDocument
-from templates import load_template
+from .constants import FORMAT_TYPE_IDS, DEFAULT_FORMAT
+from .example_document import ExampleDocument
+from .templates import load_template
 
 
 TEMPLATE_PATH = 'layouts/example-pages/'
@@ -32,8 +32,8 @@ class ExampleExport(object):
     self.base_url = doc.pod.get_podspec().yaml.get('base_urls').get('preview')
 
     self.file_path = self.get_file_path(doc, example_document.index, type_id)
-    self.canonical = urlparse.urljoin(self.base_url, self.file_path)
-    self.url_without_format = urlparse.urljoin(self.base_url,
+    self.canonical = urllib.parse.urljoin(self.base_url, self.file_path)
+    self.url_without_format = urllib.parse.urljoin(self.base_url,
                                                self.get_file_path(doc, example_document.index, DEFAULT_FORMAT))
 
     self.language = doc.locale
@@ -112,5 +112,5 @@ class ExampleExporter(object):
         pass
       else:
         raise
-    with open(file_path, mode='w') as fp:
+    with open(file_path, mode='wb') as fp:
       fp.write(content)

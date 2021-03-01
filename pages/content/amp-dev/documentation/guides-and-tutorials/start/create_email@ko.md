@@ -1,8 +1,10 @@
 ---
-$title: 첫 AMP 이메일 작성
+'$title': 첫 AMP 이메일 작성
 $order: 0
 description: 첫 이메일을 작성하며 AMP 이메일의 차별점을 알아보세요.
-tutorial: true
+tutorial: 'true'
+formats:
+  - email
 author: CrystalOnScript
 ---
 
@@ -19,21 +21,25 @@ author: CrystalOnScript
 AMP 플레이그라운드는 이메일용 AMP 형식을 지원하여 AMP 이메일의 개발, 테스트 및 유효성 검사를 실행할 수 있습니다. [AMP Playground](https://playground.amp.dev/?runtime=amp4email)를 열고 왼쪽 상단의 형식이 `AMP for Email`로 설정되었는지 확인하세요. 이제 다음 코드가 표시될 것입니다.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email data-css-strict>
-<head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
-  <style amp-custom>
-    h1 {
-      margin: 1rem;
-    }
-  </style>
-</head>
-<body>
-  <h1>Hello, I am an AMP EMAIL!</h1>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+    <style amp-custom>
+      h1 {
+        margin: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello, I am an AMP EMAIL!</h1>
+  </body>
 </html>
 ```
 
@@ -56,10 +62,12 @@ AMP 플레이그라운드는 이메일용 AMP 형식을 지원하여 AMP 이메�
 `<amp-img>` 태그 사용 시에는 이미지의 너비와 높이가 정의되어야 하며, `<img>`와는 달리 `<amp-img>` 태그는 `</amp-img>`를 통해 명시적으로 닫아야 합니다.
 
 ```html
-<amp-img src="https://link/to/img.jpg"
-         alt="photo description"
-         width="100"
-         height="100">
+<amp-img
+  src="https://link/to/img.jpg"
+  alt="photo description"
+  width="100"
+  height="100"
+>
 </amp-img>
 ```
 
@@ -73,10 +81,12 @@ AMP 플레이그라운드는 이메일용 AMP 형식을 지원하여 AMP 이메�
 
 ```html
 <body>
-  <amp-img src="https://placekitten.com/800/400"
-           alt="Welcome"
-           width="800"
-           height="400">
+  <amp-img
+    src="https://placekitten.com/800/400"
+    alt="Welcome"
+    width="800"
+    height="400"
+  >
   </amp-img>
 </body>
 ```
@@ -106,17 +116,24 @@ AMP 플레이그라운드는 이메일용 AMP 형식을 지원하여 AMP 이메�
 이메일 헤드에 `amp-carousel` 스크립트를 추가합니다.
 
 ```html
-  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script
+  async
+  custom-element="amp-carousel"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+></script>
 ```
 
 다음으로 `<amp-carousel>` 태그로 첫 번째 이미지를 감싸줍니다.
 
 ```html
-<amp-carousel layout="responsive"
-              width="800"
-              height="400"
-              type="slides">
-        <amp-img layout="fill" src="https://placekitten.com/800/400"  alt="Welcome" height="400" width="800"></amp-img>
+<amp-carousel layout="responsive" width="800" height="400" type="slides">
+  <amp-img
+    layout="fill"
+    src="https://placekitten.com/800/400"
+    alt="Welcome"
+    height="400"
+    width="800"
+  ></amp-img>
 </amp-carousel>
 ```
 
@@ -125,17 +142,35 @@ AMP 플레이그라운드는 이메일용 AMP 형식을 지원하여 AMP 이메�
 다음으로 고양이 이미지 자리를 입양을 기다리는 `<amp-carousel>` 내부의 AMP 고양이 이미지로 바꿔보겠습니다.
 
 ```html
-<amp-carousel id="carousel-with-preview"
-    width="800"
-    height="400"
-    layout="responsive"
-    type="slides"
-    on="slideChange:AMP.setState({currentCat: event.index})">
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_caleb_woods.jpg"  alt="photo courtesy of Unsplash"></amp-img>
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_craig_mclaclan.jpg"  alt="photo courtesy of Unsplash"></amp-img>
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_lightscape.jpg"  alt="photo courtesy of Unsplash"></amp-img>
-  <amp-img layout="fill" src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_nick_karvounis.jpg"  alt="photo courtesy of Unsplash"></amp-img>
- </amp-carousel>
+<amp-carousel
+  id="carousel-with-preview"
+  width="800"
+  height="400"
+  layout="responsive"
+  type="slides"
+  on="slideChange:AMP.setState({currentCat: event.index})"
+>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_caleb_woods.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_craig_mclaclan.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_lightscape.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+  <amp-img
+    layout="fill"
+    src="https://amp.dev/static/img/docs/tutorials/firstemail/photo_by_nick_karvounis.jpg"
+    alt="photo courtesy of Unsplash"
+  ></amp-img>
+</amp-carousel>
 ```
 
 이제 캐러셀의 왼쪽 또는 오른쪽의 탐색 화살표를 클릭하여 사진을 바꿀 수 있습니다.
@@ -180,48 +215,55 @@ AMP는 `<style amp-custom>` 태그 내의 문서 헤드에서 스타일링을 �
 이번 튜토리얼에서는 [`<amp-bind>`](/content/amp-dev/documentation/components/reference/amp-bind.md)를 활용하여 사용자가 고양이 슬라이드를 보고 있을 경우 입양 가능한 고양이의 이름과 설명이 표시되도록 해보겠습니다. 먼저 이메일 헤드에 `amp-bind` 스크립트를 추가합니다.
 
 ```html
- <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script
+  async
+  custom-element="amp-bind"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+></script>
 ```
 
 다음으로 AMP 바인드 변수 "myState"를 [`<amp-state>`](/content/amp-dev/documentation/components/reference/amp-bind.md#state) 태그 내의 JSON 문자열로 선언합니다. 고양이 사진이 4장 있으므로, 4장 모두에 대한 상태를 추가합니다.
 
 ```html
 <body>
-<amp-state id="myState">
-  <script type="application/json">
-    {
-      "cats": [
-         {
-          "name": "Aakash",
-          "description": "Very sweet gentleman that is quite shy in a shelter environment. He may hide under his blanket upon initial approach, but he is an affectionate lovebug."
-        },
-        {
-          "name": "Filip",
-          "description": "Friendly and enjoys pets and head rubs. Is known to sit on keyboards and refuses to touch anything with catnip on it."
-        },
-        {
-          "name": "Julian",
-          "description": "Both bold and extremely sweet. Wastes no time in investigating new smells, objects, and places, but enjoys lazing in the sun!"
-        },
-        {
-          "name": "John",
-          "description": "This playful and spirited cat would like to be outside his kennel and will be so happy when he gets to his forever home with more room to move."
-        }
-      ]
-    }
-  </script>
-</amp-state>
+  <amp-state id="myState">
+    <script type="application/json">
+      {
+        "cats": [
+          {
+            "name": "Aakash",
+            "description": "Very sweet gentleman that is quite shy in a shelter environment. He may hide under his blanket upon initial approach, but he is an affectionate lovebug."
+          },
+          {
+            "name": "Filip",
+            "description": "Friendly and enjoys pets and head rubs. Is known to sit on keyboards and refuses to touch anything with catnip on it."
+          },
+          {
+            "name": "Julian",
+            "description": "Both bold and extremely sweet. Wastes no time in investigating new smells, objects, and places, but enjoys lazing in the sun!"
+          },
+          {
+            "name": "John",
+            "description": "This playful and spirited cat would like to be outside his kennel and will be so happy when he gets to his forever home with more room to move."
+          }
+        ]
+      }
+    </script>
+  </amp-state>
+</body>
 ```
 
 [AMP 액션 및 이벤트](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md)는 다양한 상태를 트리거합니다. 이번 예제에서는 사용자가 캐러셀 탐색 화살표를 클릭할 경우 상태가 업데이트되도록 설정할 것입니다. amp-carousel은 [`slideChange`](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp-carouseltypeslides) 이벤트를 호출합니다. 해당 이벤트에서 `AMP.setState`를 통해 `currentCat` 변수가 업데이트됩니다.
 
 ```html
 <h1>Adorable Adoptable Animals</h1>
-<amp-carousel width="800"
-              height="400"
-              layout="responsive"
-              type="slides"
-              on="slideChange:AMP.setState({ currentCat: event.index} )">
+<amp-carousel
+  width="800"
+  height="400"
+  layout="responsive"
+  type="slides"
+  on="slideChange:AMP.setState({ currentCat: event.index} )"
+>
   ...
 </amp-carousel>
 ```

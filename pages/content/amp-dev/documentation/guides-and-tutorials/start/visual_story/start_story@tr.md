@@ -1,6 +1,6 @@
 ---
-"$title": Hikayemize başlama
-"$order": '3'
+'$title': Hikayemize başlama
+$order: 3
 description: Tüm bir Web Hikayesi, bir hikayedeki tüm sayfalar için kapsayıcı görevi gören amp-story bileşeniyle temsil edilir. amp-story bileşeni ayrıca, hareketleri...
 author: bpaduch
 ---
@@ -13,8 +13,11 @@ Tüm bir Web Hikayesi, bir hikayedeki tüm sayfalar için kapsayıcı görevi g�
 
 ```html
 <head>
-<script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+  <script
+    async
+    custom-element="amp-story"
+    src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+  ></script>
 </head>
 ```
 
@@ -22,8 +25,7 @@ Belgenizin `<body>` bölümüne `<amp-story>` öğesini **ekleyin** ve zorunlu `
 
 ```html
 <body>
-  <amp-story standalone>
-  </amp-story>
+  <amp-story standalone> </amp-story>
 </body>
 ```
 
@@ -35,17 +37,19 @@ Hikayelerin web'de keşfedilmesi adına, hikayenin mini ayrıntılarını sunmak
 
 - `title` özniteliğiyle temsil edilen hikaye başlığı (mesela, "Joy of Pets").
 - `publisher` özniteliğiyle temsil edilen yayıncı adı (mesela, "AMP öğreticileri").
-- `publisher-logo-src` özniteliğiyle temsil edilen yayıncı logosu.  Bu logo, 1x1 en boy oranıyla kare biçimli bir logo resmi URL'sidir.
+- `publisher-logo-src` özniteliğiyle temsil edilen yayıncı logosu. Bu logo, 1x1 en boy oranıyla kare biçimli bir logo resmi URL'sidir.
 - `poster-portrait-src` özniteliğiyle temsil edilen, hikayenin poster görüntüsü. Bu bir poster URL'sidir ve resim, 3x4 en boy oranına sahip dikey biçimde olmalıdır.
 
 Bu öznitellikleri [`amp-story`](../../../../documentation/components/reference/amp-story.md) içine ekleyelim:
 
 ```html
-<amp-story standalone
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-    poster-portrait-src="assets/cover.jpg">
+<amp-story
+  standalone
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+></amp-story>
 ```
 
 Bu gerekli özniteliklere ek olarak, uygulayabileceğiniz başka öznitelikler de vardır. Daha fazla bilgi edinmek için [<code>amp-story</code>](../../../../documentation/components/reference/amp-story.md#attributes) referans belgelerinin <a>öznitelikler</a> bölümüne bakın.

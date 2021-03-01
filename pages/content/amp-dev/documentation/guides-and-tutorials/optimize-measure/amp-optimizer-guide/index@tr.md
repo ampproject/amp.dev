@@ -1,11 +1,11 @@
 ---
-"$title": AMP Optimizer kullanma
-"$order": '2'
-"$hidden": 'true'
+'$title': AMP Optimizer kullanma
+$order: 2
+'$hidden': 'true'
 description: "AMP Optimizer'lar, AMP Önbellek optimizasyonlarını sitenize taşıyan araçlardır. AMP Optimizer kullanmak, harika bir sayfa deneyimi oluşturmanın ve Hayati Ana Web değerleri uyumluluğunu sağlamanın anahtarıdır. Bu kılavuz, AMP sayfalarınızı optimize etmek için bir AMP Optimizer'ı en iyi şekilde nasıl kullanacağınızı açıklıyor."
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

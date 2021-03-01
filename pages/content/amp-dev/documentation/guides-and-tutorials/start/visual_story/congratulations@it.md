@@ -1,13 +1,13 @@
 ---
-$title: Congratulazioni!
+'$title': Congratulazioni!
 $order: 9
-description: "Hai completato con successo la tua prima storia AMP! In questa esercitazione, hai imparato a: Creare una storia multi-pagina utilizzando il componente amp-story"
+description: Hai completato con successo la tua prima storia AMP! In questa esercitazione, hai imparato a -Creare una storia multi-pagina utilizzando il componente amp-story
 author: bpaduch
 ---
 
 Hai completato con successo la tua prima storia web AMP!
 
- In questa esercitazione, hai imparato a:
+In questa esercitazione, hai imparato a:
 
 - Creare una storia web multi-pagina utilizzando il componente [`amp-story`](../../../../documentation/components/reference/amp-story.md)
 - Creare effetti visivi con più livelli in una pagina

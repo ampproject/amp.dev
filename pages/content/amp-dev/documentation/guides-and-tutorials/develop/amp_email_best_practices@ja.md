@@ -1,7 +1,9 @@
 ---
-$title: AMP for Email ベストプラクティス
+'$title': AMP for Email ベストプラクティス
 $order: 1
-$category: 開発
+'$category': Develop
+formats:
+  - email
 ---
 
 AMP を使用すると、没入感を与える魅力的で刺激的な新しい種類のコンテンツをメールで実現することができます！メールをデザインする際は、すべてのプラットフォームで性能と信頼性に優れたメールを提供し、ユーザーの期待に応えられるよう、以下のベストプラクティスを考慮してください。
@@ -33,5 +35,5 @@ AMP for Email で作業する場合は、以下のヒントとコツに留意し
 
 - AMP for Email playground は XHR をプロキシしませんが、一部のメールプロバイダーはプロキシします。
 - メールクライアント全体で最大限の互換性を得られるようにするには、AMP MIME パートがメール内の HTML MIME パートの前にある必要があります。
-- [`amp-list`](../../../documentation/components/reference/amp-list.md?format=email) の `src` 属性、[`amp-form`](../../../documentation/components/reference/amp-form.md?format=email) の [`action-xhr`](../../../documentation/components/reference/amp-form.md?format=email#action-xhr)、[`amp-img`](../../../documentation/examples/documentation/amp-img.html?format=email) の`src`、または  `<a>` タグの href 属性は、[`amp-bind`](../../../documentation/examples/documentation/amp-bind.html?format=email) で変化させることはできません。
+- [`amp-list`](../../../documentation/components/reference/amp-list.md?format=email) の `src` 属性、[`amp-form`](../../../documentation/components/reference/amp-form.md?format=email) の [`action-xhr`](../../../documentation/components/reference/amp-form.md?format=email#action-xhr)、[`amp-img`](../../../documentation/examples/documentation/amp-img.html?format=email) の`src`、または `<a>` タグの href 属性は、[`amp-bind`](../../../documentation/examples/documentation/amp-bind.html?format=email) で変化させることはできません。
 - ユーザーが HTML バージョンのメッセージにリダイレクトされたり、ユーザーがメッセージを転送したりする場合に備え、メッセージに静的 HTML バージョンを含める必要があります。

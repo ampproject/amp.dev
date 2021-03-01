@@ -79,21 +79,23 @@ module.exports = (env, argv) => {
           (isDevelopment ? '[id].css' : '[name].[contenthash].css'),
       }),
       new FileManagerPlugin({
-        onEnd: {
-          copy: [
-            {
-              source: './dist/base.html',
-              destination: '../pages/views/2021',
-            },
-            {
-              source: './dist/static/**/*',
-              destination: '../dist/static/frontend',
-            },
-            {
-              source: './static/img/**/*',
-              destination: '../dist/static/frontend/img',
-            },
-          ],
+        events: {
+          onEnd: {
+            copy: [
+              {
+                source: './dist/base.html',
+                destination: '../pages/views/2021/',
+              },
+              {
+                source: './dist/static/**/*',
+                destination: '../dist/static/frontend',
+              },
+              {
+                source: './static/img/**/*',
+                destination: '../dist/static/frontend/img',
+              },
+            ],
+          },
         },
       }),
       new webpack.HotModuleReplacementPlugin({}),

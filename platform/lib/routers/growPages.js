@@ -22,10 +22,8 @@ const LRU = require('lru-cache');
 const config = require('@lib/config');
 const {Templates, createRequestContext} = require('@lib/templates/index.js');
 const AmpOptimizer = require('@ampproject/toolbox-optimizer');
-const CssTransformer = require('@lib/utils/cssTransformer');
+const AMP_OPTIMIZER_CONFIG = require('@lib/utils/ampOptimizerConfig.js');
 const pageCache = require('@lib/utils/pageCache');
-const imageOptimizer = require('@lib/utils/imageOptimizer');
-const HeadDedupTransformer = require('@lib/utils/HeadDedupTransformer');
 const signale = require('signale');
 const {promisify} = require('util');
 
@@ -176,14 +174,7 @@ function rewriteLinks(canonical, html, format, level) {
 // eslint-disable-next-line new-cap
 const growPages = express.Router();
 
-const optimizer = AmpOptimizer.create({
-  imageOptimizer,
-  transformations: [
-    HeadDedupTransformer,
-    ...AmpOptimizer.TRANSFORMATIONS_AMP_FIRST,
-    CssTransformer,
-  ],
-});
+const optimizer = AmpOptimizer.create(AMP_OPTIMIZER_CONFIG);
 
 // Only match urls with slash at the end or html extension or no extension
 growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
@@ -246,13 +237,14 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
   try {
     const optimize = req.query.optimize !== 'false';
     if (optimize) {
-      const experimentEsm = !!req.query.esm || false;
-      const preloadHeroImage =
-        req.query.hero === undefined ? true : !!req.query.hero;
-      const params = {
-        experimentEsm,
-        preloadHeroImage,
-      };
+      const params = {};
+      // Enable blurred placeholders and render all 5 stage images of the homepage
+      if (req.path === '/') {
+        // Disabled until we know why it fails after build
+        // params.blurredPlaceholders = true;
+        // Disable hero image generation until https://github.com/ampproject/amphtml/issues/32644 is fixed
+        params.optimizeHeroImages = false;
+      }
       renderedTemplate = await optimizer.transformHtml(
         renderedTemplate,
         params

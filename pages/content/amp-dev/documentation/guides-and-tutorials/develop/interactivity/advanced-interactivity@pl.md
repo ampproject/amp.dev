@@ -1,6 +1,6 @@
 ---
-"$title": Zwiększanie interaktywności
-"$order": '2'
+'$title': Zwiększanie interaktywności
+$order: 2
 description: 'Kod startowy zapewnia użytkownikowi raczej niezauważalne wrażenia. Można go ulepszyć na kilka sposobów: - Dodać wskaźnik, który wyświetla ...'
 ---
 
@@ -18,8 +18,11 @@ Przed wprowadzeniem składnika [`amp-bind`](../../../../documentation/components
 Otwórz plik [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html) i dodaj następujący skrypt do listy składników AMP w sekcji `<head>` strony:
 
 ```html
-<script async custom-element="amp-bind"
-    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script
+  async
+  custom-element="amp-bind"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+></script>
 ```
 
 ## Dodanie wskaźnika slajdu
@@ -43,7 +46,7 @@ Zainicjujmy zmienną stanu, aby śledzić wskaźnik slajdu aktualnie wyświetlan
 Dane zawarte w elementach [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) są dostępne za pomocą powiązanych z nimi identyfikatorów. Możemy na przykład odwoływać się do tej zmiennej przy użyciu następującego fragmentu wyrażenia:
 
 ```javascript
-selected.slide // Evaluates to 0.
+selected.slide; // Evaluates to 0.
 ```
 
 ### Aktualizowanie stanu slajdu
@@ -51,8 +54,13 @@ selected.slide // Evaluates to 0.
 Następnie zaktualizujmy tę zmienną, gdy użytkownik zmieni slajdy na karuzeli, dodając następujące działanie `"on"` do istniejącego elementu [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md):
 
 ```html
-<amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
-    on="slideChange:AMP.setState({selected: {slide: event.index}})">
+<amp-carousel
+  type="slides"
+  layout="fixed-height"
+  height="250"
+  id="carousel"
+  on="slideChange:AMP.setState({selected: {slide: event.index}})"
+></amp-carousel>
 ```
 
 Teraz, gdy tylko zmieni się wyświetlany slajd składnika [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md), wywołane zostanie działanie `AMP.setState` z następującym argumentem:
@@ -60,7 +68,7 @@ Teraz, gdy tylko zmieni się wyświetlany slajd składnika [`amp-carousel`](../.
 ```javascript
 {
   selected: {
-    slide: event.index
+    slide: event.index;
   }
 }
 ```
@@ -177,8 +185,10 @@ Jeśli dodamy inną zmienną stanu, która śledzi wybraną SKU, możemy powiąz
 Dodaj działanie "on" do składnika [`amp-selector`](../../../../documentation/components/reference/amp-selector.md), aktualizującego zmienną `selected.sku` za każdym razem, gdy zostanie wybrany nowy kolor:
 
 ```html
-<amp-selector name="color"
-    on="select:AMP.setState({selected: {sku: event.targetOption}})">
+<amp-selector
+  name="color"
+  on="select:AMP.setState({selected: {sku: event.targetOption}})"
+></amp-selector>
 ```
 
 [tip type="tip"] **PORADA —** można to również zrobić, dodając działania `on="tap:AMP.setState(...)` do każdego elementu podrzędnego [`amp-img`](../../../../documentation/components/reference/amp-img.md) w składniku [`amp-selector`](../../../../documentation/components/reference/amp-selector.md). Jedną z największych zalet składnika [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) jest to, że upraszcza znaczniki w taki właśnie sposób. [/tip]
@@ -189,12 +199,24 @@ Następnie dodaj powiązania do elementów [`amp-img`](../../../../documentation
 
 ```html
 <!-- Update the `src` of each <amp-img> when the `selected.sku` variable changes. -->
-<amp-img width=200 height=250 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=300 height=375 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=400 height=500 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
+<amp-img
+  width="200"
+  height="250"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="300"
+  height="375"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="400"
+  height="500"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
 ```
 
 [tip type="note"] **UWAGA —** w praktyce każdy obraz w karuzeli miałby prawdopodobnie inny atrybut `src`. Można to zrobić poprzez zastąpienie pojedynczego obrazu tablicą obrazów. W niniejszym samouczku dla uproszczenia stosowany jest jeden obraz w różnych powiększeniach. [/tip]

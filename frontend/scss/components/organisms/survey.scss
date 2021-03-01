@@ -1,0 +1,191 @@
+/*
+
+#############################
+### ORGANISM: survey ########
+#############################
+
+*/
+
+@import '_variables.scss';
+@import '_functions.scss';
+
+$delay: 0.25s;
+
+
+#fez-container {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  #fez-container {
+    opacity: 0;
+    transform: translate3d(0,100vh,0);
+    display: block;
+    overflow: hidden;
+    min-height: 140px;
+    max-height: 90vh;
+    width: 400px;
+    max-width: 100%;
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+
+    @at-root {
+      html[dir="rtl"] #{&} {
+        left: 0;
+        right: auto;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 0;
+    }
+
+    button,
+    li,
+    label {
+      cursor: pointer;
+    }
+
+    label {
+      display: block;
+      &:hover,
+      &:focus,
+      &:active {
+        color: color('blue-ribbon');
+      }
+    }
+
+
+    input[type=radio] {
+      display: none;
+    }
+
+    .button-affirm[disabled] {
+      background: lightgrey;
+      cursor: not-allowed;
+      color: white;
+    }
+
+    textarea {
+      width: calc(100% - 2rem);
+      min-height: 150px;
+      margin: 1rem 1rem 3rem;;
+      padding: 0.25rem;
+    }
+
+    .ap-a-ico {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      fill: currentColor;
+      cursor: pointer;
+      z-index: 2;
+      &.hide {
+        display: none;
+      }
+    }
+
+  }
+
+  #fez {
+    --padding: 30px;
+    transition: all $delay ease 0s;
+    background: white;
+    font-family: Noto Sans, sans-serif;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 8px 12px 1px,
+                rgba(0, 0, 0, 0.12) 0px 3px 15px 3px,
+                rgba(0, 0, 0, 0.2) 0px 4px 5px -3px;
+    min-height: 0;
+    position: absolute;
+    width: calc(100% - (var(--padding)*2));
+    margin: auto;
+    height: 0;
+    bottom: 1rem;
+    right: 1rem;
+    pointer-events: all;
+    overflow: hidden;
+
+    .slide {
+      visibility: hidden;
+      position: absolute;
+      top: 0;
+
+      &.active {
+        visibility: visible;
+
+        label {
+          opacity: 1;
+        }
+      }
+
+      label {
+        transition-property: opacity;
+        transition-duration: $delay;
+        transition-timing-function: ease;
+        opacity: 0;
+      }
+
+    }
+
+    li {
+      line-height: 1rem;
+      padding: 1rem;
+    }
+  }
+
+  @for $i from 1 through 8 {
+    .active li:nth-child(#{$i}) label {
+      transition-delay: $delay + ($delay * ($i * 0.15));
+    }
+  }
+
+
+  .buttons {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .buttons button {
+    border: none;
+    padding: 0.5rem;
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 80%;
+    cursor: pointer;
+    color: color('blue-ribbon');
+    opacity: 1;
+    user-select: none;
+    margin-right: 0.5rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .buttons .button-affirm {
+    background: color('blue-ribbon');
+    color: white;
+  }
+
+  .surveyQuestion {
+    font-family: Poppins, sans-serif;
+    margin: 1.25rem 1rem 0;
+    &.thanks {
+      margin: 1rem;
+    }
+  }
+}
+
+.ap--survey-position-observer {
+  position: absolute;
+  top: 250vh;
+  height: 100%;
+}

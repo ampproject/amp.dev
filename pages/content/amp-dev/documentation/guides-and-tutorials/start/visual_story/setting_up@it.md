@@ -1,6 +1,8 @@
 ---
-$title: Configurazione
-description: Configurazione dell'ambiente di sviluppo. Passo 1. Scaricare il codice. Scaricare il codice di esempio dell'esercitazione come file ZIP o tramite git ...
+'$title': Configurazione
+$order: 1
+description: "Configurazione dell'ambiente di sviluppo. Passo 1. Scaricare il codice. Scaricare il codice di esempio dell'esercitazione come file ZIP o tramite git ..."
+author: bpaduch
 ---
 
 ## Prerequisiti

@@ -1,6 +1,6 @@
 ---
-"$title": Sayfanızı keşfedilebilir hale getirme
-"$order": '3'
+'$title': Sayfanızı keşfedilebilir hale getirme
+$order: 3
 description: Arama motorlarının normal HTML standart belgemiz ile AMP belgemiz arasındaki ilişkiyi anlaması için bu çift yönlü bağlantıyı kurmak gerekir.
 ---
 
@@ -23,7 +23,7 @@ Bu öğreticinin amaçları doğrultusunda, bir sayfanın AMP ve AMP olmayan sü
 AMP belgemizde bunu başarmak için ilk adımı, standart sayfaya geri dönmek için `<head>` bölümüne bir bağlantı etiketi ekleyerek atmıştık:
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 Sonraki adım, standart makaleyi AMP sayfasına bağlamaktır. Bu, standart makalenin `<head>` bölümüne bir `<link rel="amphtml">` etiketi eklenerek yapılır.
@@ -31,7 +31,7 @@ Sonraki adım, standart makaleyi AMP sayfasına bağlamaktır. Bu, standart maka
 `article.html` dosyasında, aşağıdaki kodu <code><head></code> bölümüne <strong>ekleyin</strong> :
 
 ```html
-<link rel="amphtml" href="/article.amp.html">
+<link rel="amphtml" href="/article.amp.html" />
 ```
 
 Aşağıdaki diyagram, bağlantı etiketlerinin yönlerini göstermektedir:
@@ -44,43 +44,42 @@ Arama motorlarının normal HTML standart belgemiz ile AMP belgemiz arasındaki 
 
 Geçerli AMP sayfaları, [schema.org](http://schema.org/) sitesine göre yapılandırılmış verileri gerektirmez, ancak Google Arama gibi bazı platformlar, En çok okunan haberler döngüsü gibi belirli deneyimler için bunu gerekli kılar. Yapılandırılmış verileri eklemek genellikle iyi bir fikirdir. Yapılandırılmış veriler, arama motorlarının web sayfanızı daha iyi anlamasına ve içeriğinizi Arama Motoru Sonuç Sayfalarında (örneğin, zengin kod parçacıklarında) daha iyi görüntülemesine yardımcı olur. Yapılandırılmış veriler, bir `application/ld+json` türü betik etiketi aracılığıyla AMP sayfanızın `<head>` etiketine dahil edilir.
 
-Haber makalemiz için  AMP belgesinin `<head>` bölümünün altına aşağıdaki yapılandırılmış verileri **ekleyin**:
+Haber makalemiz için AMP belgesinin `<head>` bölümünün altına aşağıdaki yapılandırılmış verileri **ekleyin**:
 
 ```html
-
 <script type="application/ld+json">
-{
- "@context": "http://schema.org",
- "@type": "NewsArticle",
- "mainEntityOfPage":{
-   "@type":"WebPage",
-   "@id":"https://example.com/my-article.html"
- },
- "headline": "My First AMP Article",
- "image": {
-   "@type": "ImageObject",
-   "url": "https://example.com/article_thumbnail1.jpg",
-   "height": 800,
-   "width": 800
- },
- "datePublished": "2015-02-05T08:00:00+08:00",
- "dateModified": "2015-02-05T09:20:00+08:00",
- "author": {
-   "@type": "Person",
-   "name": "John Doe"
- },
- "publisher": {
-   "@type": "Organization",
-   "name": "⚡ AMP Times",
-   "logo": {
-     "@type": "ImageObject",
-     "url": "https://example.com/amptimes_logo.jpg",
-     "width": 600,
-     "height": 60
-   }
- },
- "description": "My first experience in an AMPlified world"
-}
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://example.com/my-article.html"
+    },
+    "headline": "My First AMP Article",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://example.com/article_thumbnail1.jpg",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2015-02-05T08:00:00+08:00",
+    "dateModified": "2015-02-05T09:20:00+08:00",
+    "author": {
+      "@type": "Person",
+      "name": "John Doe"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "⚡ AMP Times",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://example.com/amptimes_logo.jpg",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "My first experience in an AMPlified world"
+  }
 </script>
 ```
 

@@ -1,8 +1,11 @@
 ---
-$title: Utilizzo di ottimizzatori AMP
+'$title': Utilizzo di ottimizzatori AMP
 $order: 2
-$hidden: true
-description: Gli ottimizzatori AMP sono strumenti che rendono possibili le ottimizzazioni delle cache AMP anche sul tuo sito. L'utilizzo di un ottimizzatore AMP permette di creare  pagine efficienti, che garantiscono risultati conformi ai requisiti Core Web Vitals. Questa guida spiega come utilizzare al meglio un ottimizzatore AMP per migliorare le proprie pagine AMP.
+'$hidden': 'true'
+description: "Gli ottimizzatori AMP sono strumenti che rendono possibili le ottimizzazioni delle cache AMP anche sul tuo sito. L'utilizzo di un ottimizzatore AMP permette di creare  pagine efficienti, che garantiscono risultati conformi ai requisiti Core Web Vitals. Questa guida spiega come utilizzare al meglio un ottimizzatore AMP per migliorare le proprie pagine AMP."
+formats:
+  - websites
+  - stories
 author: sebastianbenz
 ---
 
@@ -29,14 +32,14 @@ Il modo migliore per pubblicare pagine AMP ottimizzate è utilizzare CMS e gener
 - [WordPress](https://wordpress.org/) tramite [Plugin AMP WordPress](https://wordpress.org/plugins/amp/)
 - [Next.js](https://nextjs.org/docs/api-reference/next/amp)
 - [Eleventy](https://www.11ty.dev/) tramite [eleventy-amp-plugin](https://blog.amp.dev/2020/07/28/introducing-the-eleventy-amp-plugin/)
-- [Aggiungere i propri](https://github.com/ampproject/amp.dev/issues/new?assignees=&labels=Category%3A+Content%2C+Status%3A+Pending+Triage&template=content.md&title=)
+- [Add yours?](https://github.com/ampproject/amp.dev/issues/new?assignees=&labels=Category%3A+Content%2C+Status%3A+Pending+Triage&template=content.md&title=)
 
 ### Build personalizzati o integrazioni nei server
 
 Gli utenti possono anche integrare i propri ottimizzatori AMP. Sono disponibili più implementazioni open source dell'ottimizzatore AMP:
 
 - [AMP Optimizer (Node.js)](node-amp-optimizer.md): una libreria basata su Node.js per la produzione di AMP ottimizzato. Dai un'occhiata alla nostra guida introduttiva qui su amp.dev. L'implementazione è gestita dal team AMP.
-- [AMP Optimizer (PHP)](https://github.com/ampproject/amp-wp/tree/develop/lib/optimizer): una libreria basata su PHP per la produzione di AMP ottimizzato. L'implementazione è gestita dal team AMP.
+- [AMP Toolbox for PHP](https://github.com/ampproject/amp-toolbox-php): a PHP based library for producing optimized AMP. The implementation is maintained by the AMP team.
 - [amp-renderer (Python)](https://github.com/chasefinch/amp-renderer): una porta Python di Node AMP Optimizer.
 
 Esistono diverse integrazioni per le pagine con rendering dinamico eseguito dal server e dai siti statici:
@@ -51,4 +54,4 @@ Alcuni fornitori di servizi di hosting consentono di eseguire logica personalizz
 - [Netlify AMP Optimizer Plugin](https://github.com/martinbean/netlify-plugin-amp-server-side-rendering#amp-server-side-rendering-netlify-plugin)
 - [Cloudflare Workers](https://workers.cloudflare.com/) ([presto disponibile](https://github.com/ampproject/amp-toolbox/issues/878))
 - AMP Optimizer Docker Image ([presto disponibile](https://github.com/ampproject/amp-toolbox/issues/879))
-- [Aggiungere i propri](https://github.com/ampproject/amp.dev/issues/new?assignees=&labels=Category%3A+Content%2C+Status%3A+Pending+Triage&template=content.md&title=)
+- [Add yours?](https://github.com/ampproject/amp.dev/issues/new?assignees=&labels=Category%3A+Content%2C+Status%3A+Pending+Triage&template=content.md&title=)

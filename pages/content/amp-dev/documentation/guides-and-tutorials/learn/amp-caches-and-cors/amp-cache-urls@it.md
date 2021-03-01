@@ -1,10 +1,14 @@
 ---
-$title: Formato URL della cache AMP e gestione delle richieste
+'$title': Formato URL della cache AMP e gestione delle richieste
 $order: 9
-toc: false
+toc: 'false'
+formats:
+  - websites
+  - stories
+  - ads
 author: Gregable
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 In questo documento imparerai a conoscere il formato URL della cache AMP e come essa gestisce le richieste.
@@ -15,18 +19,15 @@ Se possibile, la cache AMP di Google creerà un sottodominio per il dominio di c
 
 Si può utilizzare questo calcolatore di URL per convertire un URL in una versione per la cache AMP:
 
-<div>
-<amp-iframe title="AMP Cache tool" height="104" layout="fixed-height" sandbox="allow-scripts" src="/static/samples/files/amp-url-converter.html?url=https://amp.dev/index.amp.html">
-  <div placeholder></div>
-</amp-iframe>
-</div>
+<div><amp-iframe title="AMP Cache tool" height="104" layout="fixed-height" sandbox="allow-scripts" src="/static/samples/files/amp-url-converter.html?url=https://amp.dev/index.amp.html">
+  <div placeholder></div></amp-iframe></div>
 
 [tip type="tip"] Utilizzare il modulo [AMP-Toolbox Cache URL](https://github.com/ampproject/amp-toolbox/tree/master/packages/cache-url) [Node.js](https://nodejs.org) per tradurre un URL dall'origine nel formato URL Cache AMP. [/tip]
 
 Questo documento descrive:
 
 - La struttura dell'URL su una cache AMP.
-- Come appariranno gli  URL su una cache AMP.
+- Come appariranno gli URL su una cache AMP.
 - Come riconvertire l'intestazione di un'origine AMP Cache per determinare il suo dominio di editore.
 
 ## Protocollo Nome Dominio

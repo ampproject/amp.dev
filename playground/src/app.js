@@ -133,7 +133,18 @@ const editorUpdateListener = () => {
   const source = editor.getSource();
 
   if (preview) {
-    preview.refresh(source);
+    let previewSource = source;
+
+    if (detectRuntime(source).id === 'amp4email') {
+      // the ability to support 'amp-autocomplete' in amp4email documents is determined by the rendering clients.
+      // due to its dynamic support, the `data-amp-autocomplete-opt-in` attribute has to be included to amp4email amp documents at runtime
+      previewSource = source.replace(
+        /<html/,
+        (str) => `${str} data-amp-autocomplete-opt-in`
+      );
+    }
+
+    preview.refresh(previewSource);
   }
 
   validator.validate(source);
