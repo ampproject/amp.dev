@@ -1,6 +1,6 @@
 ---
-"$title": التحقق من صحة AMP HTML لديك
-"$order": '8'
+'$title': التحقق من صحة AMP HTML لديك
+$order: 8
 description: متى أنشأت صفحة AMP، يجب عليك دائمًا التحقق من صحة AMP HTML. وهناك عدة طرق يمكنك استخدامها للتحقق من صحة صفحات AMP ...
 author: bpaduch
 ---

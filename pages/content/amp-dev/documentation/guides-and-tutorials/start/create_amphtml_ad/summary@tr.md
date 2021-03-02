@@ -1,6 +1,6 @@
 ---
-"$title": Tebrikler!
-"$order": '4'
+'$title': Tebrikler!
+$order: 4
 description: 'AMP ve AMP olmayan sayfalarda sunulabilen bir AMPHTML reklamını başarıyla oluşturdunuz! Bu öğreticide şunları öğrendiniz: AMPHTML reklam teknik özelliklerine göre geçerli bir AMPHTML...'
 ---
 

@@ -1,9 +1,9 @@
 ---
-"$title": Integracja AMP z aplikacją
-"$order": '2'
+'$title': Integracja AMP z aplikacją
+$order: 2
 description: Niniejszy przewodnik jest przeznaczony dla twórców aplikacji mobilnych i internetowych, którzy chcą zintegrować i powiązać je ze stronami AMP. Weźmy na przykład pod uwagę mobilną aplikację do czatu...
 formats:
-- websites
+  - websites
 ---
 
 Niniejszy przewodnik jest przeznaczony dla twórców aplikacji mobilnych i internetowych, którzy chcą zintegrować i powiązać je ze stronami AMP. Weźmy na przykład pod uwagę mobilną aplikację do czatu, ładującą wersję AMP współdzielonego adresu URL w celu szybszego wyświetlania zawartości użytkownikom.
@@ -47,10 +47,12 @@ Google udostępnia interfejs AMP URL API do pobierania pasujących adresów URL 
 Na przykład w przypadku danej listy adresów URL:
 
 ```json
-{"urls": [
-  "https://www.example.org/article-with-amp-version",
-  "http://www.example.com/no-amp-version.html"
-]}
+{
+  "urls": [
+    "https://www.example.org/article-with-amp-version",
+    "http://www.example.com/no-amp-version.html"
+  ]
+}
 ```
 
 Treść odpowiedzi zawiera mapowanie adresów URL AMP w formacie JSON:

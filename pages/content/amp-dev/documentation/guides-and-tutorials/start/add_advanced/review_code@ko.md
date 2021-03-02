@@ -1,6 +1,6 @@
 ---
-"$title": 시작 코드 검토
-"$order": '1'
+'$title': 시작 코드 검토
+$order: 1
 description: 코드를 추가하기 전에 샘플 article.amp.html 페이지를 살펴보겠습니다. 샘플 페이지는 다음과 같이 작성되어 있습니다...
 ---
 

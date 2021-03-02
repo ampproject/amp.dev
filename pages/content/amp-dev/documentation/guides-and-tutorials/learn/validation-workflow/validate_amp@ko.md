@@ -1,11 +1,11 @@
 ---
-"$title": Validate AMP pages
-"$order": '0'
+'$title': Validate AMP pages
+$order: 0
 description: 동영상을 시청하여 다양한 유효성 검사 옵션을 확인해 보세요. AMP의 주요 강점은 페이지 속도를 향상할 뿐만 아니라...
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 ---
 
 [video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='동영상을 시청하여 다양한 유효성 검사 옵션을 확인해 보세요.']
@@ -82,14 +82,15 @@ var fs = require('fs');
 amphtmlValidator.getInstance().then(function (validator) {
   var input = fs.readFileSync('index.html', 'utf8');
   var result = validator.validateString(input);
-  ((result.status === 'PASS') ? console.log : console.error)(result.status);
+  (result.status === 'PASS' ? console.log : console.error)(result.status);
   for (var ii = 0; ii < result.errors.length; ii++) {
     var error = result.errors[ii];
-    var msg = 'line ' + error.line + ', col ' + error.col + ': ' + error.message;
+    var msg =
+      'line ' + error.line + ', col ' + error.col + ': ' + error.message;
     if (error.specUrl !== null) {
       msg += ' (see ' + error.specUrl + ')';
     }
-    ((error.severity === 'ERROR') ? console.error : console.warn)(msg);
+    (error.severity === 'ERROR' ? console.error : console.warn)(msg);
   }
 });
 ```
@@ -103,18 +104,18 @@ const gulp = require('gulp');
 const gulpAmpValidator = require('gulp-amphtml-validator');
 
 const paths = {
-  src: 'src/*.html'
+  src: 'src/*.html',
 };
 
 gulp.task('amphtml:validate', () => {
-  return gulp.src(paths.src)
+  return gulp
+    .src(paths.src)
     .pipe(gulpAmpValidator.validate())
     .pipe(gulpAmpValidator.format())
     .pipe(gulpAmpValidator.failAfterError());
 });
 
-gulp.task('default', ['amphtml:validate'], function () {
-});
+gulp.task('default', ['amphtml:validate'], function () {});
 ```
 
 ### 명령줄 도구
@@ -158,12 +159,12 @@ minimum_valid_amp.html: PASS
 [sourcecode:console]
 $ amphtml-validator --help
 
-  Usage: index [options] <fileOrUrlOrMinus...>
+Usage: index [options] <fileOrUrlOrMinus...>
 
-  Validates the files or urls provided as arguments. If "-" is
-  specified, reads from stdin instead.
+Validates the files or urls provided as arguments. If "-" is
+specified, reads from stdin instead.
 
-  Options:
+Options:
 
     -h, --help                  output usage information
     -V, --version               output the version number
@@ -178,6 +179,7 @@ $ amphtml-validator --help
               supporting color).
       "json"  emits json corresponding to the ValidationResult
               message in validator.proto.
+
 [/sourcecode]
 
 ## 페이지가 유효하지 않으면 어떻게 되나요?
@@ -198,16 +200,10 @@ AMP 유효성 검사 서비스에서 페이지의 오류를 감지한 경우 타
 
 - 브라우저 개발자 콘솔 {amp-img0}{/amp-img0}
 
-
-
 - 웹 인터페이스
 
-
-
 - 브라우저 확장 프로그램
-    <amp-img src="/static/img/docs/validator_extension_imgerror.png" width="724" height="108" layout="responsive" alt="AMP 오류: 'img' 태그는 'noscript' 태그의 하위 요소만으로 표시될 수있습니다. 'amp-img'를 의미하셨나요? 행 11, 열 2"></amp-img>
-
-
+  <amp-img src="/static/img/docs/validator_extension_imgerror.png" width="724" height="108" layout="responsive" alt="AMP 오류: 'img' 태그는 'noscript' 태그의 하위 요소만으로 표시될 수있습니다. 'amp-img'를 의미하셨나요? 행 11, 열 2"></amp-img>
 
 각 도구는 여러 정보를 제공합니다.
 

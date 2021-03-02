@@ -1,11 +1,11 @@
 ---
-"$title": Configuración de Analytics
-"$order": '5'
-"$hidden": 'true'
+'$title': Configuración de Analytics
+$order: 5
+'$hidden': 'true'
 description: Si utiliza Google Analytics como proveedor de análisis, aprenda a configurar Google Analytics básico para AMP y a vincular el contenido que es AMP y el que no es AMP mediante el ID de cliente.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 ---
 
 [tip] <strong>TIP –</strong> Si utiliza Google Analytics como proveedor de análisis, aprenda a <a>configurar Google Analytics básico para AMP</a> y a <a>vincular el contenido que es AMP y el que no es AMP mediante el ID de cliente</a>. [/tip]

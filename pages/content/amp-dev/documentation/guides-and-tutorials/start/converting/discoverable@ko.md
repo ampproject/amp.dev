@@ -1,6 +1,6 @@
 ---
-"$title": 검색 가능한 페이지로 설정
-"$order": '3'
+'$title': 검색 가능한 페이지로 설정
+$order: 3
 description: 검색엔진에서 일반 HTML 표준 문서와 AMP 문서의 관계를 이해할 수 있도록 양방향 연결을 설정해야 합니다.
 ---
 
@@ -23,7 +23,7 @@ description: 검색엔진에서 일반 HTML 표준 문서와 AMP 문서의 관�
 이미 `<head>`의 링크 태그를 다시 표준 페이지에 포함함으로써 AMP 문서에서 이 목적을 달성하기 위한 첫 번째 단계를 완료했습니다.
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 다음 단계는 표준 기사를 AMP 페이지에 연결하는 것입니다. 이는 `<link rel="amphtml">` 태그를 표준 기사의 `<head>` 섹션에 추가하여 완료할 수 있습니다.
@@ -31,7 +31,7 @@ description: 검색엔진에서 일반 HTML 표준 문서와 AMP 문서의 관�
 `article.html` 파일에서 다음 코드를 `<head>` 섹션에 **추가**하세요.
 
 ```html
-<link rel="amphtml" href="/article.amp.html">
+<link rel="amphtml" href="/article.amp.html" />
 ```
 
 아래의 그림에는 링크 태그의 경로가 나와 있습니다.
@@ -48,38 +48,38 @@ description: 검색엔진에서 일반 HTML 표준 문서와 AMP 문서의 관�
 
 ```html
 <script type="application/ld+json">
-{
-"@context": "http://schema.org",
-"@type": "NewsArticle",
-"mainEntityOfPage":{
-   "@type":"WebPage",
-   "@id":"https://example.com/my-article.html"
-},
-"headline": "My First AMP Article",
-"image": {
-   "@type": "ImageObject",
-   "url": "https://example.com/article_thumbnail1.jpg",
-   "height": 800,
-   "width": 800
-},
-"datePublished": "2015-02-05T08:00:00+08:00",
-"dateModified": "2015-02-05T09:20:00+08:00",
-"author": {
-   "@type": "Person",
-   "name": "John Doe"
-},
-"publisher": {
-   "@type": "Organization",
-   "name": "⚡ AMP Times",
-   "logo": {
-     "@type": "ImageObject",
-     "url": "https://example.com/amptimes_logo.jpg",
-     "width": 600,
-     "height": 60
-   }
-},
-"description": "My first experience in an AMPlified world"
-}
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://example.com/my-article.html"
+    },
+    "headline": "My First AMP Article",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://example.com/article_thumbnail1.jpg",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2015-02-05T08:00:00+08:00",
+    "dateModified": "2015-02-05T09:20:00+08:00",
+    "author": {
+      "@type": "Person",
+      "name": "John Doe"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "⚡ AMP Times",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://example.com/amptimes_logo.jpg",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "My first experience in an AMPlified world"
+  }
 </script>
 ```
 

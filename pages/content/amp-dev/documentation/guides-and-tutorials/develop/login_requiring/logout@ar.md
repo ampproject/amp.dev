@@ -1,6 +1,6 @@
 ---
-"$title": تسجيل الخروج
-"$order": '3'
+'$title': تسجيل الخروج
+$order: 3
 description: على نحو مشابه لزر تسجيل الدخول، يعتمد وجود زر تسجيل الخروج بشكل مشروط على حالة المكون amp-access ...
 ---
 
@@ -15,9 +15,9 @@ description: على نحو مشابه لزر تسجيل الدخول، يعتم�
 [sourcecode:json]
 {
 "login": {
-  "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
-  "sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
-  }
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
+"sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
+}
 }
 [/sourcecode]
 

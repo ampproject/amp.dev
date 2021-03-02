@@ -1,7 +1,7 @@
 ---
-"$title": Révision du code de démarrage
-"$order": '1'
-description: 'Avant de commencer à ajouter du code, passons en revue l''exemple de page article.amp.html, qui devrait être comme suit : ...'
+'$title': Révision du code de démarrage
+$order: 1
+description: "Avant de commencer à ajouter du code, passons en revue l'exemple de page article.amp.html, qui devrait être comme suit : ..."
 ---
 
 Avant de commencer à ajouter du code, passons en revue l'exemple de page [article.amp.html](https://github.com/googlecodelabs/accelerated-mobile-pages-advanced/blob/master/article.amp.html), qui devrait être comme suit :

@@ -1,6 +1,6 @@
 ---
 '$title': Başlangıç kodunu tanıma
-'$order': '1'
+$order: 1
 description: AMP sayfası, güvenilir performans için bazı kısıtlamalara sahip bir HTML sayfasıdır. AMP sayfaları, onu bir AMP sayfası olarak tanımlayan biraz özel işaretlemelere sahiptir.
 ---
 

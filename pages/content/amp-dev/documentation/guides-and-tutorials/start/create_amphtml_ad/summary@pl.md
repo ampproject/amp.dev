@@ -1,6 +1,6 @@
 ---
-"$title": Gratulacje!
-"$order": '4'
+'$title': Gratulacje!
+$order: 4
 description: 'Utworzona przez Ciebie reklama AMPHTML może być serwowana na stronach AMP i bez AMP! Dzięki temu samouczkowi wiesz już jak: Utworzyć prawidłową reklamę AMPHTML zgodnie z ...'
 ---
 

@@ -237,13 +237,14 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
   try {
     const optimize = req.query.optimize !== 'false';
     if (optimize) {
-      const experimentEsm = !!req.query.esm || false;
-      const preloadHeroImage =
-        req.query.hero === undefined ? true : !!req.query.hero;
-      const params = {
-        experimentEsm,
-        preloadHeroImage,
-      };
+      const params = {};
+      // Enable blurred placeholders and render all 5 stage images of the homepage
+      if (req.path === '/') {
+        // Disabled until we know why it fails after build
+        // params.blurredPlaceholders = true;
+        // Disable hero image generation until https://github.com/ampproject/amphtml/issues/32644 is fixed
+        params.optimizeHeroImages = false;
+      }
       renderedTemplate = await optimizer.transformHtml(
         renderedTemplate,
         params

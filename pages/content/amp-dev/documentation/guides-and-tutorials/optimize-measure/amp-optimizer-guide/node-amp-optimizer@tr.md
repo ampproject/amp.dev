@@ -1,10 +1,10 @@
 ---
-"$title": Node.js AMP Optimizer Kılavuzu
-"$order": '2'
+'$title': Node.js AMP Optimizer Kılavuzu
+$order: 2
 description: "Bu kılavuz, AMP Optimizer'ın Node.js sürümünün nasıl kurulacağını ve kullanılacağını açıklıyor."
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

@@ -1,8 +1,8 @@
 ---
-"$title": تنسيق AMP للبريد الإلكتروني
-order: '1'
+'$title': تنسيق AMP للبريد الإلكتروني
+$order: 1
 formats:
-- email
+  - email
 teaser:
   text: 'لغة الترميز المطلوبة '
 toc: 'true'
@@ -40,6 +40,7 @@ limitations under the License.
 يمثل الرمز التالي أدنى مقدار من لغة الترميز التي تشكل رسالة AMP إلكترونية:
 
 [sourcecode:html]
+
 <!DOCTYPE html>
 <html ⚡4email>
   <head>
@@ -70,23 +71,23 @@ limitations under the License.
 
 ## الهيكل والعرض <a name="structure-and-rendering"></a>
 
-يعتمد AMP للبريد الإلكتروني على النوع الفرعي `multipart/alternative` من [MIME](https://en.wikipedia.org/wiki/MIME)، كما هو محدد في  [RFC 1521، القسم 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
+يعتمد AMP للبريد الإلكتروني على النوع الفرعي `multipart/alternative` من [MIME](https://en.wikipedia.org/wiki/MIME)، كما هو محدد في [RFC 1521، القسم 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
-*لمزيد من المعلومات، راجع [الهيكل والعرض لرسائل AMP الإلكترونية](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md).*
+_لمزيد من المعلومات، راجع [الهيكل والعرض لرسائل AMP الإلكترونية](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md)._
 
 ## مكونات AMP المدعومة<a name="supported-amp-components"></a>
 
-*راجع [المكونات المدعومة مع AMP للبريد الإلكتروني](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md).*
+_راجع [المكونات المدعومة مع AMP للبريد الإلكتروني](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)._
 
 ## متطلباتHTML <a name="html-requirements"></a>
 
-*راجع [HTML المدعوم في AMP للبريد الإلكتروني](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md).*
+_راجع [HTML المدعوم في AMP للبريد الإلكتروني](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md)._
 
 ## متطلبات CSS<a name="css-requirements"></a>
 
 ### المحددات والخواص المدعومة <a name="supported-selectors-and-properties"></a>
 
-*راجع [CSS المدعومة في AMP للبريد الإلكتروني](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md).*
+_راجع [CSS المدعومة في AMP للبريد الإلكتروني](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md)._
 
 ### تحديد CSS في مستند AMP<a name="specifying-css-in-an-amp-document"></a>
 
@@ -94,6 +95,7 @@ limitations under the License.
 
 [sourcecode:html]
 ...
+
 <style amp-custom>
   /* any custom styles go here. */
   body {
@@ -106,7 +108,9 @@ limitations under the License.
     background-color: grey;
   }
 </style>
+
 ...
+
 </head>
 [/sourcecode]
 

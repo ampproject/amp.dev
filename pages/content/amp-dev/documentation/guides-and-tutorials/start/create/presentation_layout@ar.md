@@ -1,10 +1,10 @@
 ---
-"$title": تعديل المظهر والتخطيط
-"$order": '3'
+'$title': تعديل المظهر والتخطيط
+$order: 3
 description: صفحات AMP هي صفحات ويب؛ حيث يتم أي تخطيط نمط للصفحة وعناصرها باستخدام خواص CSS الشائعة. يمكن ضبط نمط العناصر باستخدام محددات الفئة أو العناصر ...
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## تعديل المظهر
@@ -12,6 +12,7 @@ contributors:
 صفحات AMP هي صفحات ويب؛ صفحات AMP هي صفحات ويب؛ حيث يتم أي تخطيط نمط للصفحة وعناصرها باستخدام خواص CSS الشائعة. يمكن ضبط نمط العناصر باستخدام محددات الفئة أو العناصر في صفحة أنماط مضمة في `<head>`، والتي تُسمى <span dir="ltr" class="nowrap"><code><style amp-custom></code></span>:
 
 [sourcecode:html]
+
 <style amp-custom>
   /* any custom style goes here */
   body {
@@ -22,6 +23,7 @@ contributors:
     border: 1px solid black;
   }
 </style>
+
 [/sourcecode]
 
 يمكن لكل صفحة AMP أن تحتوي فقط على ورقة أنماط واحدة مضمّنة وأنماط مدمجة، وهناك محدّدات معينة ليس مسموح لك باستخدامها. [تعرّف على كل المعلومات بخصوص التحكم في الأنماط](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).

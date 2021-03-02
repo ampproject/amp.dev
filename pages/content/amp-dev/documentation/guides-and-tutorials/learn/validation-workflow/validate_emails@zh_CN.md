@@ -1,9 +1,9 @@
 ---
-"$title": 验证 AMP 电子邮件
-"$order": '1'
+'$title': 验证 AMP 电子邮件
+$order: 1
 author: CrystalOnScript
 formats:
-- email
+  - email
 ---
 
 AMP 电子邮件依赖 AMP JS 库为读者提供丰富的互动式和动态体验。因此，电子邮件服务提供商会要求验证您的邮件。有效的 AMP 标记可确保电子邮件安全并超越用户体验标准。

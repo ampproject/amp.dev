@@ -1,10 +1,10 @@
 ---
-"$title": 성공적인 웹 스토리 제작 모범 사례
-"$order": '1'
+'$title': 성공적인 웹 스토리 제작 모범 사례
+$order: 1
 description: 성공적인 웹 스토리 제작 모범 사례
-"$category": Start
+'$category': Start
 formats:
-- stories
+  - stories
 author: CrystalOnScript
 ---
 

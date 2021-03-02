@@ -1,10 +1,10 @@
 ---
-"$title": 'AMP pour e-mail: fondamentaux'
-"$order": '1'
+'$title': 'AMP pour e-mail: fondamentaux'
+$order: 1
 description: "Tout ce que vous devez savoir pour vous lancer dans la rédaction d'e-mails AMP valides."
 author: CrystalOnScript
 formats:
-- email
+  - email
 ---
 
 Bonne nouvelle pour les habitués d'AMP! AMP pour e-mail n'est qu'un sous-ensemble de la bibliothèque HTML AMP. Si vous n'êtes pas familier avec AMP, nous avons également une bonne nouvelle! Ce guide vous fournit l'essentiel pour commencer à rédiger des e-mails AMP valides!
@@ -14,16 +14,20 @@ Bonne nouvelle pour les habitués d'AMP! AMP pour e-mail n'est qu'un sous-ensemb
 Les e-mails AMP ressemblent aux e-mails HTML classiques, mais contiennent quelques différences. Vous trouverez ci-dessous le nombre minimum de balises requis pour transformer un e-mail en e-mail AMP valide.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email data-css-strict>
-<head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
-</head>
-<body>
-  Hello, AMP4EMAIL world.
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    Hello, AMP4EMAIL world.
+  </body>
 </html>
 ```
 
@@ -38,8 +42,12 @@ Les fournisseurs de messagerie qui prennent en charge les e-mails AMP ont mis en
 
 ```html
 <head>
-...
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  ...
+  <style amp4email-boilerplate>
+    body {
+      visibility: hidden;
+    }
+  </style>
 </head>
 ```
 
@@ -132,9 +140,7 @@ L'exemple suivant illustre l'utilisation de `<amp-list>` pour afficher des donn�
   src="https://example.com/endpoint?token=REPLACE_WITH_YOUR_ACCESS_TOKEN"
   height="300"
 >
-  <template type="amp-mustache">
-    ...
-  </template>
+  <template type="amp-mustache"> ... </template>
 </amp-list>
 ```
 

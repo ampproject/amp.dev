@@ -1,6 +1,6 @@
 ---
-"$title": Çıkış yapma
-"$order": '3'
+'$title': Çıkış yapma
+$order: 3
 description: '"Giriş düğmesine benzer şekilde, çıkış düğmesinin varlığı amp-access bileşeninin durumuna koşullu olarak bağlıdır:"'
 ---
 
@@ -15,9 +15,9 @@ Giriş düğmesine benzer şekilde, çıkış düğmesinin varlığı [`amp-acce
 [sourcecode:json]
 {
 "login": {
-  "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
-  "sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
-  }
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
+"sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
+}
 }
 [/sourcecode]
 

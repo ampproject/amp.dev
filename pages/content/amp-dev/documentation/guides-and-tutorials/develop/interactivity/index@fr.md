@@ -1,11 +1,11 @@
 ---
-"$title": Comment créer des pages AMP interactives
-"$path": "/documentation/guides-and-tutorials/develop/interactivity/index.html"
-"$order": '0'
+'$title': Comment créer des pages AMP interactives
+'$path': '/documentation/guides-and-tutorials/develop/interactivity/index.html'
+$order: 0
 description: Dans ce tutoriel, vous apprendrez à utiliser la liaison de données et les expressions pour créer de superbes pages AMP interactives avec amp-bind ...
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/interactivity-final-page.jpg', 415, 738, align='right third', caption='Completed AMP page for this tutorial') }}

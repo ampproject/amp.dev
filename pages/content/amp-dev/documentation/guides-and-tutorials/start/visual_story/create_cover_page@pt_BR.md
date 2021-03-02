@@ -1,6 +1,6 @@
 ---
-"$title": Creating the cover page
-"$order": '4'
+'$title': Creating the cover page
+$order: 4
 description: 'Para criar uma página, adicione o elemento <amp-story-page> como filho de um amp-story. Atribua um ID exclusivo à página. Para nossa primeira página, que será a de abertura, atribuiremos um ID exclusivo chamado cover: ...'
 author: bpaduch
 ---
@@ -10,17 +10,18 @@ Uma página dentro de uma História Web é representada pelo componente `<amp-st
 Para criar uma página, **adicione** o elemento `<amp-story-page>` como filho de um [`amp-story`](../../../../documentation/components/reference/amp-story.md). **Atribua** um ID exclusivo à página. Para nossa primeira página, que será a de abertura, atribuiremos um ID exclusivo chamado `cover`:
 
 ```html
-<amp-story standalone
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-    poster-portrait-src="assets/cover.jpg">
-   <amp-story-page id="cover">
-   </amp-story-page>
+<amp-story
+  standalone
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+>
+  <amp-story-page id="cover"> </amp-story-page>
 </amp-story>
 ```
 
-Agora temos o shell da nossa página de abertura. No entanto, a história ainda não é válida.  É preciso especificar pelo menos uma **camada** na página. {{ image('/static/img/docs/tutorials/amp_story/cover_layers.png', 416, 679, alt='página de capa tem duas camadas', align='right third' ) }}
+Agora temos o shell da nossa página de abertura. No entanto, a história ainda não é válida. É preciso especificar pelo menos uma **camada** na página. {{ image('/static/img/docs/tutorials/amp_story/cover_layers.png', 416, 679, alt='página de capa tem duas camadas', align='right third' ) }}
 
 ## Camadas em uma página
 
@@ -35,20 +36,23 @@ Nossa página de abertura é composta por duas camadas:
 
 Vamos adicionar a primeira camada à página de abertura. Essa camada contém uma imagem que preenche a tela.
 
-Crie essa camada adicionando o elemento `<amp-story-grid-layer>` como filho de `<amp-story-page>`. Como a ideia é que a imagem preencha a tela, especifique o atributo `template="fill"` para `amp-story-grid-layer`. Dentro da camada, adicione um elemento [`amp-img`](../../../../documentation/components/reference/amp-img.md) ao arquivo `cover.jpg` e certifique-se de que ele seja responsivo (ou seja, `layout="responsive"`) com as dimensões de 720 x 1280 px da imagem.  A camada terá esta aparência:
+Crie essa camada adicionando o elemento `<amp-story-grid-layer>` como filho de `<amp-story-page>`. Como a ideia é que a imagem preencha a tela, especifique o atributo `template="fill"` para `amp-story-grid-layer`. Dentro da camada, adicione um elemento [`amp-img`](../../../../documentation/components/reference/amp-img.md) ao arquivo `cover.jpg` e certifique-se de que ele seja responsivo (ou seja, `layout="responsive"`) com as dimensões de 720 x 1280 px da imagem. A camada terá esta aparência:
 
 ```html
 <amp-story-page id="cover">
   <amp-story-grid-layer template="fill">
-    <amp-img src="assets/cover.jpg"
-        width="720" height="1280"
-        layout="responsive">
+    <amp-img
+      src="assets/cover.jpg"
+      width="720"
+      height="1280"
+      layout="responsive"
+    >
     </amp-img>
   </amp-story-grid-layer>
 </amp-story-page>
 ```
 
-Vejamos como a página é exibida.  Abra a página no navegador: <a href="http://localhost:8000/pets.html">http://localhost:8000/pets.html</a>.
+Vejamos como a página é exibida. Abra a página no navegador: <a href="http://localhost:8000/pets.html">http://localhost:8000/pets.html</a>.
 
 Ela terá esta aparência:
 
@@ -56,7 +60,7 @@ Ela terá esta aparência:
 
 ### Criando a camada 2
 
-Já temos nosso pano de fundo. Agora, precisamos da segunda camada, que fica em cima do pano de fundo e contém o título e a autoria.  Para adicionar a segunda camada, realizaremos as mesmas tarefas da criação da camada 1, mas, em vez de usar o modelo `fill`, usaremos o modelo **`vertical`**. No entanto, antes de continuar, vamos conhecer os modelos e aprender como podemos organizar os elementos AMP e HTML em um `<amp-story-grid-layer>`.
+Já temos nosso pano de fundo. Agora, precisamos da segunda camada, que fica em cima do pano de fundo e contém o título e a autoria. Para adicionar a segunda camada, realizaremos as mesmas tarefas da criação da camada 1, mas, em vez de usar o modelo `fill`, usaremos o modelo **`vertical`**. No entanto, antes de continuar, vamos conhecer os modelos e aprender como podemos organizar os elementos AMP e HTML em um `<amp-story-grid-layer>`.
 
 #### Layout dos elementos com um modelo
 
@@ -104,7 +108,7 @@ Para a camada 2, vamos posicionar o título e a autoria na parte superior, e que
 
 ```html
 <amp-story-grid-layer>
-<!--nossa primeira camada -->
+  <!--nossa primeira camada -->
 </amp-story-grid-layer>
 <amp-story-grid-layer template="vertical">
   <h1>The Joy of Pets</h1>
@@ -112,6 +116,6 @@ Para a camada 2, vamos posicionar o título e a autoria na parte superior, e que
 </amp-story-grid-layer>
 ```
 
-Atualize o navegador e revise seu trabalho.  A página de abertura está pronta.
+Atualize o navegador e revise seu trabalho. A página de abertura está pronta.
 
 {{ image('/static/img/docs/tutorials/amp_story/pg0_cover.png', 720, 1280, align='center third', alt='Página de capa, pronta' ) }}

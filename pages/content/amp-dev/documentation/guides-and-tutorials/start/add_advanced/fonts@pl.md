@@ -1,6 +1,6 @@
 ---
-"$title": Dodawanie czcionek
-"$order": '6'
+'$title': Dodawanie czcionek
+$order: 6
 description: 'Niestandardowe czcionki można osadzić w stronie AMP na dwa sposoby: 1. Za pomocą znacznika <link>: tylko czcionki z listy dozwolonych dostawców czcionek. 2. Poprzez użycie ...'
 ---
 
@@ -14,7 +14,11 @@ Niestandardowe czcionki można osadzić w stronie AMP na dwa sposoby:
 W tym samouczku użyjemy znacznika `<link>`, aby dodać czcionki do naszej strony. **Dodaj ** link do arkusza stylów w sekcji `<head>`, aby zażądać czcionki Raleway:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://fonts.googleapis.com/css?family=Raleway"
+/>
 ```
 
 Teraz **zaktualizuj** selektor CSS `body`, aby dodać odnośnik do czcionki Raleway:

@@ -1,15 +1,15 @@
 ---
-"$title": Include iframes
-"$order": '10'
+'$title': Include iframes
+$order: 10
 description: 페이지에 미디어 콘텐츠를 표시하고 iframe을 사용하여 AMP의 제약을 넘어서는 고급 콘텐츠를 표시하는 방법을 자세히 알아보세요.
 formats:
-- websites
+  - websites
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- Meggin
-- bpaduch
+  - Meggin
+  - bpaduch
 ---
 
 Learn how to display include media content in your pages, and how to use iframes to display advanced content outside of AMP's limitations.
@@ -32,8 +32,10 @@ iframe은 사용자가 허용한 JavaScript를 필요로 하는 콘텐츠와 같
 페이지에 [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md)을 포함하려면 우선 다음 스크립트를 `<head>`에 추가합니다. 이 작업을 통해 확장 컴포넌트에 다음과 같은 추가 코드가 로드됩니다.
 
 [sourcecode:html]
+
 <script async custom-element="amp-iframe"
   src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+
 [/sourcecode]
 
 ### 마크업 작성
@@ -41,10 +43,13 @@ iframe은 사용자가 허용한 JavaScript를 필요로 하는 콘텐츠와 같
 다음 예시에서 <a class="" href="https://developers.google.com/maps/documentation/embed/get-started">Google Maps Embed API</a>를 통해 Google Map을 삽입하기 위한 반응형 [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md)이 생성되었습니다.
 
 ```html
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    src="https://www.google.com/maps/embed/v1/place?key={YOUR API KEY}&q=europe">
+<amp-iframe
+  width="200"
+  height="100"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  src="https://www.google.com/maps/embed/v1/place?key={YOUR API KEY}&q=europe"
+>
 </amp-iframe>
 ```
 
@@ -57,12 +62,18 @@ iframe은 사용자가 허용한 JavaScript를 필요로 하는 콘텐츠와 같
 플레이스홀더 사용 예시:
 
 ```html
-<amp-iframe width="400" height="225"
-sandbox="allow-scripts allow-same-origin"
-layout="responsive"
-src="https://giphy.com/embed/OWabwoEn7ezug">
-<amp-img placeholder layout="fill"
-src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"></amp-img>
+<amp-iframe
+  width="400"
+  height="225"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  src="https://giphy.com/embed/OWabwoEn7ezug"
+>
+  <amp-img
+    placeholder
+    layout="fill"
+    src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"
+  ></amp-img>
 </amp-iframe>
 ```
 

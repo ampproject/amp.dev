@@ -1,8 +1,8 @@
 ---
-"$title": Thiết lập
-"$order": '0'
+'$title': Thiết lập
+$order: 0
 description: Thiết lập môi trường phát triển của bạn. Bước 1. Tải về đoạn code. Tải đoạn code mẫu cho bài thực hành dưới dạng tập tin ZIP hoặc qua git...
-"$parent": "/documentation/guides-and-tutorials/start/converting/setting-up.md"
+'$parent': '/documentation/guides-and-tutorials/start/converting/setting-up.md'
 ---
 
 ## Yêu cầu trước khi tiến hành

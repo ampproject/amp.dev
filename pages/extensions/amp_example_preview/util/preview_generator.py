@@ -1,8 +1,8 @@
 import re
-from preview import ExamplePreviewMatch
-from constants import ATTRIBUTE_EXAMPLE_TEMPLATES, ATTRIBUTE_EXAMPLE_IMPORTS
-from templates import load_template
-from amp_component_versions import remove_component_from_set
+from .preview import ExamplePreviewMatch
+from .constants import ATTRIBUTE_EXAMPLE_TEMPLATES, ATTRIBUTE_EXAMPLE_IMPORTS
+from .templates import load_template
+from .amp_component_versions import remove_component_from_set
 
 # find existing imports
 IMPORT_PATTERN = re.compile(r'<script(?:\s[^>]*)?\scustom-(element|template)\s*=\s*"?([^"\s>/]+)',

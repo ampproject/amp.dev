@@ -1,11 +1,11 @@
 ---
-"$title": Activer les fonctionnalités expérimentales
-"$order": '3'
+'$title': Activer les fonctionnalités expérimentales
+$order: 3
 description: Les composants expérimentaux AMP sont des fonctionnalités publiées qui ne sont pas encore prêtes pour une large utilisation, et sont donc protégées par un statut expérimental.
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 ---
 
 [Les composants expérimentaux AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments) sont des fonctionnalités publiées qui ne sont pas encore prêtes pour une large utilisation, et sont donc protégées par un statut expérimental.
@@ -48,7 +48,7 @@ L'activation de composants expérimentaux est enregistrée sur `localStorage` et
 Pour le contenu diffusé à partir de domaines non CDN, les composants expérimentaux peuvent être activés dans la console devtools à l'aide de:
 
 ```js
-AMP.toggleExperiment('experiment')
+AMP.toggleExperiment('experiment');
 ```
 
 Tout fichier AMP qui comprend des fonctionnalités expérimentales échouera à la [validation AMP](validation-workflow/validate_amp.md). Supprimez ces composants expérimentaux pour les documents AMP prêts pour la production.
@@ -60,7 +60,7 @@ Un document peut choisir d'activer des contenus expérimentaux. Pour ce faire, p
 ```html
 <head>
   ...
-  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b">
+  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b" />
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   ...
@@ -89,7 +89,7 @@ Les essais d'origine offrent la possibilité de mettre en œuvre et de bénéfic
 Ajutez la balise `<meta>` suivante dans la section `<head>` de chaque page qui utilise l'expérience d'essai d'origine:
 
 ```html
-<meta name="amp-experiment-token" content="{copy your token here}">
+<meta name="amp-experiment-token" content="{copy your token here}" />
 ```
 
 Remarque: `"amp-experiment-token"` est la chaîne littérale, `"amp-experiment-token"`, et non le jeton lui-même (qui entre dans l'attribut du contenu), ni le nom du composant expérimental.

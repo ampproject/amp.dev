@@ -1,9 +1,9 @@
 ---
-"$title": Öğeleri canlandırma
-"$order": '6'
+'$title': Öğeleri canlandırma
+$order: 6
 description: Bir sayfadaki öğelere animasyon girişleri uygulayarak bir Web Hikayesini daha da geliştirebilirsiniz. Örneğin, başlığınızın...
 components:
-- anim
+  - anim
 author: bpaduch
 ---
 
@@ -133,10 +133,12 @@ Her animasyon ön ayarının aşağıdakiler için kurulu bir varsayılan zaman 
 ```html
 <amp-story-page id="my-page">
   ...
-  <p class="my-element"
-      animate-in="fly-in-left"
-      animate-in-delay="0.3s"
-      animate-in-duration="0.5s">
+  <p
+    class="my-element"
+    animate-in="fly-in-left"
+    animate-in-delay="0.3s"
+    animate-in-duration="0.5s"
+  >
     I'm going to fly into the page from the left!
   </p>
 </amp-story-page>
@@ -150,21 +152,33 @@ Son Web Hikayesi sayfamız iki katmandan oluşur: ilk katman, hayvan resimlerind
 <amp-story-page id="page5">
   <amp-story-grid-layer template="vertical" class="noedge">
     <div class="wrapper">
-      <amp-img src="assets/cat.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/cat.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/dog.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/dog.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/bird.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/bird.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/rabbit.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/rabbit.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
     </div>
   </amp-story-grid-layer>
@@ -183,9 +197,9 @@ Harika görünüyor ama her şey statik! Haydi canlandıralım!
 Banner metninin girişini canlandırarak başlayacağız ve sayfanın sağından "çığlık atacağız". `animate-in="whoosh-in-right"` öğesini `<p>` öğesine şu şekilde ekleyin:
 
 ```html
-<p class="banner-text"
-  animate-in="whoosh-in-right">
-Pets can lower your stress levels!</p>
+<p class="banner-text" animate-in="whoosh-in-right">
+  Pets can lower your stress levels!
+</p>
 ```
 
 Hikaye sayfanızı tarayıcınıza yeniden yükleyin ve başlığın hızla içeri girebildiğini doğrulayın.
@@ -193,25 +207,37 @@ Hikaye sayfanızı tarayıcınıza yeniden yükleyin ve başlığın hızla içe
 Şimdi tüm resimlerin belirmesini sağlayalım. Her bir [`amp-img`](../../../../documentation/components/reference/amp-img.md) öğesine `animate-in="fade-in"` özniteliği ekleyin ve kodun şöyle görünmesini sağlayın:
 
 ```html
-<amp-img src="assets/cat.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/cat.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/dog.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/dog.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/bird.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/bird.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/rabbit.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/rabbit.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
 ```
 
@@ -220,29 +246,41 @@ Sayfayı yeniler ve yeniden yüklerseniz, görsellerin her biri belirerek gelir.
 İlk resmin girişini geciktirelim, böylelikle metin başlığı girişini tamamladığında yaklaşsın, 0,4 saniye diyelim. Kalan üç görüntü, önceki görüntünün girişinden 0,2 saniye sonra gelebilir. [`amp-img`](../../../../documentation/components/reference/amp-img.md) öğelerinin her biri için, uygun süre gecikmesi değeriyle `animate-in-delay=""` özniteliğini ekleyin. Kodunuz şöyle görünmelidir:
 
 ```html
-<amp-img src="assets/cat.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="0.4s">
+<amp-img
+  src="assets/cat.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="0.4s"
+>
 </amp-img>
-<amp-img src="assets/dog.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="0.6s">
+<amp-img
+  src="assets/dog.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="0.6s"
+>
 </amp-img>
-<amp-img src="assets/bird.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay=".8s">
+<amp-img
+  src="assets/bird.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay=".8s"
+>
 </amp-img>
-<amp-img src="assets/rabbit.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="1s">
+<amp-img
+  src="assets/rabbit.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="1s"
+>
 </amp-img>
 ```
 

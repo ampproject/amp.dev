@@ -1,10 +1,10 @@
 ---
-"$title": 添加高级 AMP 功能
-"$order": '0'
+'$title': 添加高级 AMP 功能
+$order: 0
 description: 在本教程中，您将进一步扩充自己的 AMP 基础知识，并了解 AMP 如何处理广告、数据分析、嵌入式视频、社交媒体集成、轮换展示内容，等等。
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='完成后的新闻报道') }}

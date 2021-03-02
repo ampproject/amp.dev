@@ -1,10 +1,10 @@
 ---
-"$title": Transformer votre site AMP en PWA
-"$order": '10'
+'$title': Transformer votre site AMP en PWA
+$order: 10
 description: "En mettant en cache des ressources dans le navigateur, une PWA est en mesure de fournir des données, des ressources et des pages hors ligne à l'utilisateur pour le maintenir engagé et informé."
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: crystalonscript
 ---
 

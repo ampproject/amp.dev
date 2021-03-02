@@ -1,11 +1,11 @@
 ---
-"$title": AMP dan PWA saling berhubungan
-"$order": '7'
+'$title': AMP dan PWA saling berhubungan
+$order: 7
 description: Aplikasi Web Progresif (PWA) dan halaman AMP bekerja sama dengan sangat baik. Faktanya, dalam banyak kasus, mereka saling melengkapi dalam berbagai cara. Pelajari cara ....
 formats:
-- websites
+  - websites
 components:
-- youtube
+  - youtube
 author: pbakaus
 ---
 
@@ -31,7 +31,7 @@ Halaman AMP dapat menggunakan banyak fitur PWA dengan kemampuan sendiri, dengan 
 
 ## AMP sebagai pintu masuk ke PWA Anda
 
-Nilai jual AMP yang unik adalah **penayangan hampir instan**, keunggulan yang membuat AMP sangat sesuai untuk interaksi pengguna pertama dengan situs Anda. *Aplikasi web progresif* memungkinkan jauh lebih banyak **fitur yang mendukung interaktivitas dan keterlibatan**, namun pemuatan pertamanya terhambat karena Pekerja Layanan (Service Worker) situs hanya mempercepat penayangan pada pemuatan berikutnya, begitu pula aset dan shell (cangkang) aplikasi.
+Nilai jual AMP yang unik adalah **penayangan hampir instan**, keunggulan yang membuat AMP sangat sesuai untuk interaksi pengguna pertama dengan situs Anda. _Aplikasi web progresif_ memungkinkan jauh lebih banyak **fitur yang mendukung interaktivitas dan keterlibatan**, namun pemuatan pertamanya terhambat karena Pekerja Layanan (Service Worker) situs hanya mempercepat penayangan pada pemuatan berikutnya, begitu pula aset dan shell (cangkang) aplikasi.
 
 Strategi yang bagus adalah membuat pintu masuk ke situs sebagai halaman AMP, lalu menyiapkan PWA di belakang layar dan beralih menggunakannya dalam perjalanan selanjutnya.
 

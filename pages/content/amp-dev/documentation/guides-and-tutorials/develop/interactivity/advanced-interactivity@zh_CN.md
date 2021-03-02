@@ -1,6 +1,6 @@
 ---
-"$title": 提升互动
-"$order": '2'
+'$title': 提升互动
+$order: 2
 description: 入门代码提供的是一种极简的用户体验。我们可通过下述方式予以改进\：- 添加一个用于展示…
 ---
 
@@ -18,8 +18,11 @@ description: 入门代码提供的是一种极简的用户体验。我们可通�
 打开 [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html) 文件，然后将以下脚本添加到网页 `<head>` 部分中的 AMP 组件列表内：
 
 ```html
-<script async custom-element="amp-bind"
-    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script
+  async
+  custom-element="amp-bind"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+></script>
 ```
 
 ## 添加幻灯片指示器
@@ -43,7 +46,7 @@ description: 入门代码提供的是一种极简的用户体验。我们可通�
 可以通过关联 ID 访问 [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) 元素内的数据。例如，我们可以通过下面这段表达式来引用此变量：
 
 ```javascript
-selected.slide // Evaluates to 0.
+selected.slide; // Evaluates to 0.
 ```
 
 ### 更新幻灯片状态
@@ -51,8 +54,13 @@ selected.slide // Evaluates to 0.
 接下来，为了能够在用户更改轮播界面中的幻灯片时更新此变量，我们将为现有 [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) 元素添加以下 `"on"` 操作：
 
 ```html
-<amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
-    on="slideChange:AMP.setState({selected: {slide: event.index}})">
+<amp-carousel
+  type="slides"
+  layout="fixed-height"
+  height="250"
+  id="carousel"
+  on="slideChange:AMP.setState({selected: {slide: event.index}})"
+></amp-carousel>
 ```
 
 现在，每当 [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) 中展示的幻灯片更改时，系统便会使用以下参数调用 `AMP.setState` 操作：
@@ -60,7 +68,7 @@ selected.slide // Evaluates to 0.
 ```javascript
 {
   selected: {
-    slide: event.index
+    slide: event.index;
   }
 }
 ```
@@ -177,8 +185,10 @@ selected.slide // Evaluates to 0.
 为 [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) 添加“on”操作，以便每当用户选择新的颜色时，系统就会更新 `selected.sku` 变量：
 
 ```html
-<amp-selector name="color"
-    on="select:AMP.setState({selected: {sku: event.targetOption}})">
+<amp-selector
+  name="color"
+  on="select:AMP.setState({selected: {sku: event.targetOption}})"
+></amp-selector>
 ```
 
 [tip type="tip"] **提示**：您也可以通过为 [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) 内的每个 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 子级添加 `on="tap:AMP.setState(...)` 操作来实现这种效果。[`amp-selector`](../../../../documentation/components/reference/amp-selector.md) 的好处之一就是，它会以诸如此类的方式简化标记。[/tip]
@@ -189,12 +199,24 @@ selected.slide // Evaluates to 0.
 
 ```html
 <!-- Update the `src` of each <amp-img> when the `selected.sku` variable changes. -->
-<amp-img width=200 height=250 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=300 height=375 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=400 height=500 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
+<amp-img
+  width="200"
+  height="250"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="300"
+  height="375"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="400"
+  height="500"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
 ```
 
 [tip type="note"] <strong>注</strong>：在实践中，轮播界面中的每张图片都可能需要具有不同的 `src`。若想实现这一点，只需将单张图片替换为一组图片即可。为简单起见，本教程就以不同的放大程度使用了单张图片。[/tip]

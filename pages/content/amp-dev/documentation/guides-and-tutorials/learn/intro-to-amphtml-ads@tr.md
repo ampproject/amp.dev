@@ -1,14 +1,14 @@
 ---
-"$title": AMPHTML reklamlarına giriş
-"$order": '1'
+'$title': AMPHTML reklamlarına giriş
+$order: 1
 description: "AMPHTML reklamları, web'de reklam vermenin daha hızlı, daha hafif ve daha güvenli bir yoludur. AMP sayfaları geleneksel HTML reklamlarını desteklese de, bu reklamların yüklenmesi yavaş olabilir."
 formats:
-- ads
+  - ads
 ---
 
 ## AMPHTML reklamı nedir?
 
-AMPHTML reklamları, web'de reklam vermenin daha hızlı, daha hafif ve daha güvenli bir yoludur. AMP sayfaları geleneksel HTML reklamlarını desteklese de, bu reklamların yüklenmesi yavaş olabilir. Reklamları AMP sayfasının geri kalanı kadar hızlı hale getirmek için AMPHTML'de reklamlar oluşturabilirsiniz. AMPHTML reklamları, yalnızca doğrulandıktan sonra yayınlanır ve bu da reklamların güvenli ve iyi performanslı olmasını sağlar. Hepsinden önemlisi, bu reklamlar *yalnızca AMP sayfalarında değil*, web'de herhangi bir yerde sunulabilir.
+AMPHTML reklamları, web'de reklam vermenin daha hızlı, daha hafif ve daha güvenli bir yoludur. AMP sayfaları geleneksel HTML reklamlarını desteklese de, bu reklamların yüklenmesi yavaş olabilir. Reklamları AMP sayfasının geri kalanı kadar hızlı hale getirmek için AMPHTML'de reklamlar oluşturabilirsiniz. AMPHTML reklamları, yalnızca doğrulandıktan sonra yayınlanır ve bu da reklamların güvenli ve iyi performanslı olmasını sağlar. Hepsinden önemlisi, bu reklamlar _yalnızca AMP sayfalarında değil_, web'de herhangi bir yerde sunulabilir.
 
 AMPHTML reklamları, [AMPHTML reklamı teknik özelliklerine](a4a_spec.md) (AMPHTML + CSS'in bir çeşidi) göre AMP HTML'de yazılır. Bu durum, reklamların artık, geleneksel olarak düşük reklam performansının bir numaralı nedeni olan keyfi JavaScript çalıştırma özelliğinin ortadan kalkması anlamına gelir. Bu nedenle, tıpkı ana AMP gibi, temel reklam içi JavaScript kullanım durumları, reklamlarda iyi davranışı garanti eden AMP Açık Kaynak projesinin içine yerleştirilmiştir.
 
@@ -73,7 +73,7 @@ Bir reklam ajansıysanız, reklamları [AMPHTML reklam teknik özelliklerine](a4
 
 - [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*çok yakında*)
+- Adobe Animate (_çok yakında_)
 
 ### Reklam ağları/sunucuları
 
@@ -87,7 +87,7 @@ AMPHTML reklamlarını AMP sayfalarında yayınlamak için, ağınız için [Hı
 
 - [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 - [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-- Adobe Animate (*çok yakında*)
+- Adobe Animate (_çok yakında_)
 
 ### AMPHTML reklam sözdizimini doğrulama
 

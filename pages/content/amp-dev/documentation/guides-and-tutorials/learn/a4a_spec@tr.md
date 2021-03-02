@@ -1,8 +1,8 @@
 ---
-"$title": Reklamlar için AMP spesifikasyonları
-order: '3'
+'$title': Reklamlar için AMP spesifikasyonları
+$order: 3
 formats:
-- ads
+  - ads
 teaser:
   text: _Standard üzerinde herhangi bir değişiklik yapmayı teklif ederseniz, lütfen [Uygulama
 toc: 'true'
@@ -31,11 +31,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-*Standard üzerinde herhangi bir değişiklik yapmayı teklif ederseniz, lütfen [Uygulama Girişimi](https://github.com/ampproject/amphtml/issues/4264) üzerinde yorum yapın*.
+_Standard üzerinde herhangi bir değişiklik yapmayı teklif ederseniz, lütfen [Uygulama Girişimi](https://github.com/ampproject/amphtml/issues/4264) üzerinde yorum yapın_.
 
-AMPHTML reklamları, AMP sayfalarında hızlı ve iyi performanslı reklamlar oluşturma mekanizmasıdır. AMPHTML reklam belgelerinin ("AMP reklam öğeleri") tarayıcıda hızlı ve sorunsuz bir şekilde oluşturulmasını ve kullanıcı deneyimini düşürmemesini sağlamak için AMP reklam öğelerinin bir dizi doğrulama kuralına uyması gerekir. [AMP biçim kurallarına](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml) benzer şekilde, AMPHTML reklamları  izin verilen sınırlı sayıda etiket, özellik ve uzantıya erişebilir.
+AMPHTML reklamları, AMP sayfalarında hızlı ve iyi performanslı reklamlar oluşturma mekanizmasıdır. AMPHTML reklam belgelerinin ("AMP reklam öğeleri") tarayıcıda hızlı ve sorunsuz bir şekilde oluşturulmasını ve kullanıcı deneyimini düşürmemesini sağlamak için AMP reklam öğelerinin bir dizi doğrulama kuralına uyması gerekir. [AMP biçim kurallarına](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml) benzer şekilde, AMPHTML reklamları izin verilen sınırlı sayıda etiket, özellik ve uzantıya erişebilir.
 
-## AMPHTML reklamı biçim kuralları  <a name="amphtml-ad-format-rules"></a>
+## AMPHTML reklamı biçim kuralları <a name="amphtml-ad-format-rules"></a>
 
 Aşağıda aksi belirtilmedikçe, reklam öğesinin buraya referans olarak dahil edilen [AMP biçim kuralları](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml.html) tarafından koyulan tüm kurallara uyması gerekir. Örneğin, AMPHTML reklam [Ortak Metni](#boilerplate) AMP standart ortak metninden sapar.
 
@@ -101,14 +101,16 @@ Ayrıca, reklam öğelerinin aşağıdaki kurallara uyması gerekir:
 AMPHTML reklam öğeleri [genel AMP belgelerindekinden](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md) farklı ve çok daha basit bir ortak metin stil satırı gerektirir:
 
 [sourcecode:html]
+
 <style amp4ads-boilerplate>
   body {
     visibility: hidden;
   }
 </style>
+
 [/sourcecode]
 
-*Gerekçe:* `amp-boilerplate` stili, AMP çalışma zamanı hazır olana ve onu gösterene kadar gövde bölümü içeriğini gizler. Javascript devre dışı bırakılırsa veya AMP çalışma zamanı yüklenemezse, varsayılan ortak metin, içeriğin ne olursa olsun sonunda görüntülenmesini sağlar. Ancak AMPHTML reklamlarında, Javascript tamamen devre dışı bırakılırsa, AMPHTML reklamları çalışmaz ve hiçbir reklam gösterilmez, bu nedenle `<noscript>` bölümüne gerek yoktur. AMP çalışma zamanının yokluğunda, AMPHTML reklamlarının dayandığı mekanizmaların çoğu (ör. Görüntülenebilirlij izleme için analiz veya içerik görüntüleme için `amp-img` ) kullanılamayacağından, hatalı bir reklam yerine hiçbir reklam göstermemek daha iyidir.
+_Gerekçe:_ `amp-boilerplate` stili, AMP çalışma zamanı hazır olana ve onu gösterene kadar gövde bölümü içeriğini gizler. Javascript devre dışı bırakılırsa veya AMP çalışma zamanı yüklenemezse, varsayılan ortak metin, içeriğin ne olursa olsun sonunda görüntülenmesini sağlar. Ancak AMPHTML reklamlarında, Javascript tamamen devre dışı bırakılırsa, AMPHTML reklamları çalışmaz ve hiçbir reklam gösterilmez, bu nedenle `<noscript>` bölümüne gerek yoktur. AMP çalışma zamanının yokluğunda, AMPHTML reklamlarının dayandığı mekanizmaların çoğu (ör. Görüntülenebilirlij izleme için analiz veya içerik görüntüleme için `amp-img` ) kullanılamayacağından, hatalı bir reklam yerine hiçbir reklam göstermemek daha iyidir.
 
 Son olarak, AMPHTML reklam ortak metni, `amp-boilerplate` yerine `amp-a4a-boilerplate` kullanır böylece doğrulayıcılar onu kolayca tespit edebilir ve geliştiricilere yardım etmek için doğru hata mesajları üretebilir.
 
@@ -155,14 +157,14 @@ Son olarak, AMPHTML reklam ortak metni, `amp-boilerplate` yerine `amp-a4a-boiler
 
 - `transition`, `animation`, `transform`, `visibility` veya `opacity` özellikleri içermelidir.
 
-    *Gerekçe:* Bu, AMP çalışma zamanının sayfa performansı için gerektiğinde animasyonları devre dışı bırakmak üzere bu sınıfı bağlamdan kaldırmasına olanak tanır.
+  _Gerekçe:_ Bu, AMP çalışma zamanının sayfa performansı için gerektiğinde animasyonları devre dışı bırakmak üzere bu sınıfı bağlamdan kaldırmasına olanak tanır.
 
 **Doğru**
 
 [sourcecode:css]
 .box {
-  transform: rotate(180deg);
-  transition: transform 2s;
+transform: rotate(180deg);
+transition: transform 2s;
 }
 [/sourcecode]
 
@@ -172,9 +174,9 @@ Son olarak, AMPHTML reklam ortak metni, `amp-boilerplate` yerine `amp-a4a-boiler
 
 [sourcecode:css]
 .box {
-  color: red; // non-animation property not allowed in animation selector
-  transform: rotate(180deg);
-  transition: transform 2s;
+color: red; // non-animation property not allowed in animation selector
+transform: rotate(180deg);
+transition: transform 2s;
 }
 [/sourcecode]
 
@@ -198,13 +200,13 @@ transition: background-color 2s;
 
 [sourcecode:css]
 @keyframes turn {
-  from {
-    transform: rotate(180deg);
-  }
+from {
+transform: rotate(180deg);
+}
 
-  to {
-    transform: rotate(90deg);
-  }
+to {
+transform: rotate(90deg);
+}
 }
 [/sourcecode]
 
@@ -212,21 +214,21 @@ transition: background-color 2s;
 
 [sourcecode:css]
 @keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 300%;
-  }
+from {
+margin-left: 100%;
+width: 300%;
+}
 
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
+to {
+margin-left: 0%;
+width: 100%;
+}
 }
 [/sourcecode]
 
 ### İzin verilen AMP uzantıları ve yerleşik öğeler <a name="allowed-amp-extensions-and-builtins"></a>
 
-AMPHTML reklam öğesinde *izin verilen* AMP uzantı modülleri ve AMP yerleşik etiketleri aşağıda verilmiştir. Listede açıkça belirtilmeyen uzantılar veya yerleşik etiketler, yasaklanmıştır.
+AMPHTML reklam öğesinde _izin verilen_ AMP uzantı modülleri ve AMP yerleşik etiketleri aşağıda verilmiştir. Listede açıkça belirtilmeyen uzantılar veya yerleşik etiketler, yasaklanmıştır.
 
 - [amp-accordion](https://amp.dev/documentation/components/amp-accordion)
 - [amp-ad-exit](https://amp.dev/documentation/components/amp-ad-exit)
@@ -252,19 +254,19 @@ AMPHTML reklam öğesinde *izin verilen* AMP uzantı modülleri ve AMP yerleşik
 
 Çıkartmaların çoğu, performans için veya AMPHTML reklamlarının analizini kolaylaştırmak içindir.
 
-*Örnek:* `<amp-ad>` listeden çıkarılmıştır. Bu bileşene açıkça izin verilmemiştir çünkü bir `<amp-ad>` bileşenine `<amp-ad>` bileşeni içinde izin vermek, potansiyel olarak sınırsız reklam yükleme şelalelerine neden olabilir ki bu da AMPHTML reklam performans hedefleri için uygun değildir.
+_Örnek:_ `<amp-ad>` listeden çıkarılmıştır. Bu bileşene açıkça izin verilmemiştir çünkü bir `<amp-ad>` bileşenine `<amp-ad>` bileşeni içinde izin vermek, potansiyel olarak sınırsız reklam yükleme şelalelerine neden olabilir ki bu da AMPHTML reklam performans hedefleri için uygun değildir.
 
-*Örnek:* `<amp-iframe>` bu listeden çıkarılmıştır. Reklamlar rasgele Javascript yürütmek ve rastgele içerik yüklemek için kullanabileceğinden ona izin verilmez. Bu özellikleri kullanmak isteyen reklamlara <a>a4aRegistry</a> girişlerinden <code>false</code> yanıtını almalı ve mevcut '3p iframe' reklam oluşturma mekanizmasını kullanmalıdır.
+_Örnek:_ `<amp-iframe>` bu listeden çıkarılmıştır. Reklamlar rasgele Javascript yürütmek ve rastgele içerik yüklemek için kullanabileceğinden ona izin verilmez. Bu özellikleri kullanmak isteyen reklamlara <a>a4aRegistry</a> girişlerinden <code>false</code> yanıtını almalı ve mevcut '3p iframe' reklam oluşturma mekanizmasını kullanmalıdır.
 
-*Örnek:* `<amp-facebook>`, `<amp-instagram>`, `<amp-twitter>` ve `<amp-youtube>` etiketleri de `<amp-iframe>` ile aynı nedenden çıkarılmıştır: Hepsi iframe'ler oluşturur ve potansiyel olarak sınırsız kaynak tüketebilirler.
+_Örnek:_ `<amp-facebook>`, `<amp-instagram>`, `<amp-twitter>` ve `<amp-youtube>` etiketleri de `<amp-iframe>` ile aynı nedenden çıkarılmıştır: Hepsi iframe'ler oluşturur ve potansiyel olarak sınırsız kaynak tüketebilirler.
 
-*Örnek:* `<amp-ad-network-*-impl>` bu listeden çıkarılmıştır. `<amp-ad>` etiketi, bu uygulama etiketlerine atama işlemini gerçekleştirir; reklam öğeleri bunları doğrudan eklemeye çalışmamalıdır.
+_Örnek:_ `<amp-ad-network-*-impl>` bu listeden çıkarılmıştır. `<amp-ad>` etiketi, bu uygulama etiketlerine atama işlemini gerçekleştirir; reklam öğeleri bunları doğrudan eklemeye çalışmamalıdır.
 
-*Örnek:* `<amp-lightbox>` henüz dahil edilmemiştir çünkü bazı AMPHTML reklam öğeleri bile bir iframe'de oluşturulabilir ve şu anda bir reklamın iframe'in ötesine genişlemesi için bir mekanizma yoktur. Gelecekte bunun için ortaya koyulan bir istek varsa destek eklenebilir.
+_Örnek:_ `<amp-lightbox>` henüz dahil edilmemiştir çünkü bazı AMPHTML reklam öğeleri bile bir iframe'de oluşturulabilir ve şu anda bir reklamın iframe'in ötesine genişlemesi için bir mekanizma yoktur. Gelecekte bunun için ortaya koyulan bir istek varsa destek eklenebilir.
 
 ### HTML etiketleri <a name="html-tags"></a>
 
-Aşağıdakiler, bir AMPHTML reklam öğesinde *izin verilen* etiketlerdir. Açıkça izin verilmeyen etiketler yasaktır. Bu liste, genel [AMP etiketi ek izin](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md) listesinin bir alt kümesidir. Bu liste gibi, [HTML'nin Öğeleri](http://www.w3.org/TR/html5/single-page.html#html-elements) bölüm 4'te, HTML5 özellikleriyle tutarlı olarak sıralanmıştır.
+Aşağıdakiler, bir AMPHTML reklam öğesinde _izin verilen_ etiketlerdir. Açıkça izin verilmeyen etiketler yasaktır. Bu liste, genel [AMP etiketi ek izin](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md) listesinin bir alt kümesidir. Bu liste gibi, [HTML'nin Öğeleri](http://www.w3.org/TR/html5/single-page.html#html-elements) bölüm 4'te, HTML5 özellikleriyle tutarlı olarak sıralanmıştır.
 
 Çıkartmaların çoğu ya performans içindir ya da etiketler HTML5 standardına uygun olmadığı içindir. Örneğin, AMPHTML reklamları JavaScript'in etkinleştirilmesine bağlı olduğundan `<noscript>` çıkarılmıştır, bu nedenle `<noscript>` bloğu hiçbir zaman yürütülmez ve bu yüzden sadece reklam öğesini şişirir, bant genişliği maliyeti doğurur ve gecikmeye neden olur. Benzer şekilde, `<acronym>` , `<big>` vd. HTML5 uyumlu olmadıkları için yasaktır.
 
@@ -286,7 +288,7 @@ Aşağıdakiler, bir AMPHTML reklam öğesinde *izin verilen* etiketlerdir. Aç�
 
 - **Not:** Genel AMP'den farklı olarak, `<link rel="canonical">` etiketleri yasaklanmıştır.
 
-    4.2.5 `<style>` 4.2.6 `<meta>`
+  4.2.5 `<style>` 4.2.6 `<meta>`
 
 #### 4.3 Bölümler <a name="43-sections"></a>
 
@@ -314,7 +316,7 @@ Aşağıdakiler, bir AMPHTML reklam öğesinde *izin verilen* etiketlerdir. Aç�
 
 SVG etiketleri HTML5 ad alanında değildir. Aşağıda bölüm tanımlayıcıları olmadan listelenmişlerdir.
 
-`<svg>``<g>``<path>``<glyph>``<glyphref>``<marker>``<view>``<circle>``<line>``<polygon>``<polyline>``<rect>``<text>``<textpath>``<tref>``<tspan>``<clippath>``<filter>``<lineargradient>``<radialgradient>``<mask>``<pattern>``<vkern>``<hkern>``<defs>``<use>``<symbol>``<desc>``<title>`
+` <svg>``<g>``<path>``<glyph>``<glyphref>``<marker>``<view>``<circle>``<line>``<polygon>``<polyline>``<rect>``<text>``<textpath>``<tref>``<tspan>``<clippath>``<filter>``<lineargradient>``<radialgradient>``<mask>``<pattern>``<vkern>``<hkern>``<defs>``<use>``<symbol>``<desc>``<title> `
 
 #### 4.9 Tablo verileri <a name="49-tabular-data"></a>
 
@@ -328,7 +330,7 @@ SVG etiketleri HTML5 ad alanında değildir. Aşağıda bölüm tanımlayıcıla
 
 - Genel bir AMP belgesinde olduğu gibi reklam öğesinin `<head>` etiketi bir `<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>` etiketi içermelidir.
 - Genel AMP'den farklı olarak, `<noscript>` yasaklanmıştır.
-    - *Gerekçe:* AMPHTML reklamları, Javascript'in hep çalışabilmesini gerektirdiğinden, `<noscript>` blokları AMPHTML reklamlarında herhangi bir amaca hizmet etmez ve yalnızca ağ bant genişliği maliyeti yaratırlar.
+  - _Gerekçe:_ AMPHTML reklamları, Javascript'in hep çalışabilmesini gerektirdiğinden, `<noscript>` blokları AMPHTML reklamlarında herhangi bir amaca hizmet etmez ve yalnızca ağ bant genişliği maliyeti yaratırlar.
 - Genel AMP'den farklı olarak `<script type="application/ld+json">` yasaklanmıştır.
-    - *Gerekçe:* JSON LD, ana sayfalardaki yapılandırılmış veri işaretlemesi için kullanılır, ancak reklam öğeleri bağımsız belgeler değildir ve yapılandırılmış veriler içermezler. İçlerindeki JSON LD blokları sadece ağ bant genişliğine mal olur.
+  - _Gerekçe:_ JSON LD, ana sayfalardaki yapılandırılmış veri işaretlemesi için kullanılır, ancak reklam öğeleri bağımsız belgeler değildir ve yapılandırılmış veriler içermezler. İçlerindeki JSON LD blokları sadece ağ bant genişliğine mal olur.
 - Diğer tüm kodlama kuralları ve istisnalar genel AMP'den taşınmıştır.

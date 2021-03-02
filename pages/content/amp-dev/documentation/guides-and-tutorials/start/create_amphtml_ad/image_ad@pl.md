@@ -1,6 +1,6 @@
 ---
-"$title": Tworzenie reklamy graficznej
-"$order": '1'
+'$title': Tworzenie reklamy graficznej
+$order: 1
 description: Nasza reklama to prosty obraz z hiperlinkiem do reklamowanej witryny. Wyświetlamy go za pomocą znacznika amp-img. Oto kod...
 ---
 
@@ -11,9 +11,12 @@ Nasza reklama to prosty obraz z hiperlinkiem do reklamowanej witryny. Wyświetla
 ```html
 <body>
   <a target="_blank" href="https://www.amp.dev">
-    <amp-img width="300" height="250"
-        alt="Learn amp"
-        src="/static/img/docs/ads/amp-300x250.png"></amp-img>
+    <amp-img
+      width="300"
+      height="250"
+      alt="Learn amp"
+      src="/static/img/docs/ads/amp-300x250.png"
+    ></amp-img>
   </a>
 </body>
 ```

@@ -1,8 +1,8 @@
 ---
-"$title": Zintegruj swoje technologie reklamowe z AMP
-order: '3'
+'$title': Zintegruj swoje technologie reklamowe z AMP
+$order: 3
 formats:
-- ads
+  - ads
 teaser:
   text: Jeśli jesteś dostawcą technologii reklamowych i chcesz zintegrować je z AMP HTML, zapoznaj się z poniższymi wytycznymi.
 toc: 'true'
@@ -19,7 +19,7 @@ Jeśli jesteś dostawcą technologii reklamowych i chcesz zintegrować je z AMP 
 
 ## Serwer reklam <a name="ad-server"></a>
 
-*Przykłady: DFP, A9*
+_Przykłady: DFP, A9_
 
 Wydawcy, których obsługujesz jako serwer reklam dodają dostarczoną przez Ciebie bibliotekę JavaScript i umieszczają różne opate na bibliotece JavaScript „fragmenty kodu reklam” w celu pobierania reklam i renderowania ich na stronie internetowej wydawcy.
 
@@ -29,15 +29,15 @@ Przykład: serwer Amazon A9 można wywołać przy użyciu następującej składn
 
 [sourcecode:html]
 <amp-ad
-  width="300"
-  height="250"
-  type="a9"
-  data-aax_size="300x250"
-  data-aax_pubname="test123"
-  data-aax_src="302"
->
-</amp-ad>
-[/sourcecode]
+width="300"
+height="250"
+type="a9"
+data-aax_size="300x250"
+data-aax_pubname="test123"
+data-aax_src="302"
+
+> </amp-ad>
+> [/sourcecode]
 
 Zauważ, że każdy z atrybutów następujących po właściwości `type` jest zależny od parametrów, których oczekuje serwer Amazon A9 w celu dostarczenia reklamy. Plik [a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) pokazuje jak są mapowane parametry w celu wykonania wywołania skryptu JavaScript, który wywołuje serwer A9 poprzez adres URL `https://c.amazon-adsystem.com/aax2/assoc.js`. W celu zwrócenia reklamy do adresu URL są dołączane odpowiednie parametry przekazywane przez znacznik reklamy AMP.
 
@@ -45,7 +45,7 @@ Szczegółowe informacje na temat integrowania sieci reklamowej z AMP znajdziesz
 
 ## System Supply Side Platform (SSP) lub Ad Exchange <a name="supply-side-platform-ssp-or-an-ad-exchange"></a>
 
-*Przykłady: Rubicon, Criteo, AppNexus, Ad-Exchange*
+_Przykłady: Rubicon, Criteo, AppNexus, Ad-Exchange_
 
 Jeśli prowadzisz platformę sprzedaży, która ma być wywoływana bezpośrednio ze strony internetowej wydawcy, musisz postępować zgodnie z tymi samymi powyższymi wskazówkami integracji, dotyczącymi serwera reklam. Dodanie własnej wartości `type` do znacznika amp-ad pozwala na przesłanie Twojego znacznika bezpośrednio do wydawcy, dzięki czemu może on wstawić ten znacznik bezpośrednio do swoich stron AMP.
 
@@ -53,7 +53,7 @@ System SSP coraz częściej współpracuje z wydawcami w celu przesyłania znacz
 
 ## Agencja reklamowa <a name="ad-agency"></a>
 
-*Przykłady: Essence, Omnicom*
+_Przykłady: Essence, Omnicom_
 
 Współpracuj z wydawcą, aby upewnić się, że tworzone przez Ciebie kreacje są zgodne z AMP. Wszystkie kreacje są serwowane do ramek iframe, których rozmiar jest określany w chwili wywołania reklamy, upewnij się więc, że Twoja kreacja nie próbuje modyfikować rozmiaru ramki iframe.
 
@@ -61,7 +61,7 @@ Upewnij się, że wszystkie zasoby będące częścią kreacji są żądane za p
 
 ## Odtwarzacz wideo <a name="video-player"></a>
 
-*Przykłady: Brightcove, Ooyala*
+_Przykłady: Brightcove, Ooyala_
 
 Odtwarzacz wideo, który działa na zwykłych stronach HTML, nie będzie działać w AMP, dlatego też należy utworzyć specjalny znacznik, który pozwoli środowisku uruchomieniowemu AMP na załadowanie odtwarzacza. Firma Brightcove stworzyła niestandardowy znacznik [amp-brightcove](https://github.com/ampproject/amphtml/blob/master/extensions/amp-brightcove/amp-brightcove.md), umożliwiający odtwarzanie multimediów i reklam na stronach AMP.
 
@@ -69,21 +69,21 @@ Odtwarzacz Brightcove można wywołać w następujący sposób:
 
 [sourcecode:html]
 <amp-brightcove
-  data-account="1290862519001"
-  data-video-id="ref:amp-docs-sample"
-  data-player="S1Tt8cgaM"
-  layout="responsive"
-  width="480"
-  height="270"
->
-</amp-brightcove>
-[/sourcecode]
+data-account="1290862519001"
+data-video-id="ref:amp-docs-sample"
+data-player="S1Tt8cgaM"
+layout="responsive"
+width="480"
+height="270"
+
+> </amp-brightcove>
+> [/sourcecode]
 
 Instrukcje dotyczące opracowania znacznika AMP takiego jak znacznik Brightcove znajdują się w [tym żądaniu ściągnięcia ](https://github.com/ampproject/amphtml/pull/1052).
 
 ## Sieć reklam wideo <a name="video-ad-network"></a>
 
-*Przykłady: Tremor, Brightroll*
+_Przykłady: Tremor, Brightroll_
 
 Jeśli prowadzisz sieć reklam wideo, we współpracy z wydawcą musisz upewnić się, że:
 
@@ -92,7 +92,7 @@ Jeśli prowadzisz sieć reklam wideo, we współpracy z wydawcą musisz upewnić
 
 ## Data Management Platform (DMP) <a name="data-management-platform-dmp"></a>
 
-*Przykłady: KRUX, Bluekai*
+_Przykłady: KRUX, Bluekai_
 
 Zobacz [jak poprawić niestandardową konfigurację reklam](https://amp.dev/documentation/components/amp-ad#enhance-incoming-ad-configuration).
 
@@ -100,7 +100,7 @@ Podobne podejście można zastosować w celu wzbogacenia wywołania reklamy popr
 
 ## Dostawca widoczności <a name="viewability-provider"></a>
 
-*Przykłady: MOAT, Integral Ad Science*
+_Przykłady: MOAT, Integral Ad Science_
 
 Dostawcy widoczności integrują się zazwyczaj z wydawcami za pomocą otok kreacji serwera reklam. W takim przypadku należy upewnić się, że otoka kreacji ładuje wszystkie zasoby za pomocą protokołu HTTPS.
 
@@ -110,6 +110,6 @@ Sprawdź też podejście polegające na stosowaniu [wzorca IntersectionObserver]
 
 ## Platforma rekomendacji treści <a name="content-recommendation-platform"></a>
 
-*Przykłady: Taboola, Outbrain*
+_Przykłady: Taboola, Outbrain_
 
 Przydatne, jeśli musisz dzisiaj osadzić jakiś kod JavaScript w witrynie internetowej wydawcy, ale podejście to nie będzie działać na stronach AMP. Aby polecać treść na stronie AMP, sugerujemy użycie rozszerzenia [`amp-embed`](https://amp.dev/documentation/components/amp-ad) do żądania szczegółów treści. Sprawdź przykład [Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md).

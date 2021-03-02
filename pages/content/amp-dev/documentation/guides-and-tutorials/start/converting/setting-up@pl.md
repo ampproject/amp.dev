@@ -1,8 +1,8 @@
 ---
-"$title": Konfigurowanie
-"$order": '0'
+'$title': Konfigurowanie
+$order: 0
 description: Skonfiguruj swoje środowisko programistyczne Krok 1. Pobierz kod. Pobierz przykładowy kod samouczka w postaci pliku ZIP lub poprzez git...
-"$parent": "/documentation/guides-and-tutorials/start/converting/setting-up.md"
+'$parent': '/documentation/guides-and-tutorials/start/converting/setting-up.md'
 ---
 
 ## Wymagania wstępne
@@ -33,7 +33,7 @@ Katalog projektu zawiera kilka przykładowych plików zasobów oraz początkową
 
 ### Krok 2. Uruchom przykładową stronę
 
-Aby przetestować naszą przykładową stronę, musimy uzyskać dostęp do plików z serwera WWW. Tymczasowy lokalny serwer WWW do celów testowania można utworzyć na kilka sposobów.  Oto kilka opcji, wybierz najlepszą dla Ciebie:
+Aby przetestować naszą przykładową stronę, musimy uzyskać dostęp do plików z serwera WWW. Tymczasowy lokalny serwer WWW do celów testowania można utworzyć na kilka sposobów. Oto kilka opcji, wybierz najlepszą dla Ciebie:
 
 - [Aplikacja Google Chrome o nazwie Web Server for Chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
 - [Lokalny serwer HTTP w języku Python](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server#Running_a_simple_local_HTTP_server)

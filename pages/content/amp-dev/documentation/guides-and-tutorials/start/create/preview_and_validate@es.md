@@ -1,10 +1,10 @@
 ---
-"$title": Versión preliminar y validación
-"$order": '5'
+'$title': Versión preliminar y validación
+$order: 5
 description: Obtenga una vista previa de la página AMP tal como lo haría con cualquier otro sitio HTML estático. No se requiere ningún paso de construcción o de preprocesamiento. Puede elegir...
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## Vista previa
@@ -12,7 +12,7 @@ contributors:
 Obtenga una vista previa de la página AMP tal como lo haría con cualquier otro sitio HTML estático. No se requiere ningún paso de construcción o de preprocesamiento. Puede elegir:
 
 - **Abrir la página directamente en el navegador desde el sistema de archivos** (es posible que algunos elementos no funcionen debido a errores en XMLHttpRequests).
-- **Utilizar un servidor web local como Apache 2 o Nginx**. *(Sugerencia: Para acceder a un servidor web rápido, ejecute `python -m SimpleHTTPServer`)*.
+- **Utilizar un servidor web local como Apache 2 o Nginx**. _(Sugerencia: Para acceder a un servidor web rápido, ejecute `python -m SimpleHTTPServer`)_.
 
 ## Validación
 

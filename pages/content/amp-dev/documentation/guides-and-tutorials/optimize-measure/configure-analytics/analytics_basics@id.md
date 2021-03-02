@@ -1,10 +1,10 @@
 ---
-"$title": 'Analitik: Dasar-Dasar'
-"$order": '0'
+'$title': 'Analitik: Dasar-Dasar'
+$order: 0
 description: 'AMP menyediakan dua komponen untuk memenuhi kebutuhan analitik dan pengukuran Anda: amp-pixel dan amp-analytics. Kedua opsi ini mengirimkan data analitik ke titik akhir (endpoint) yang ditentukan.'
 formats:
-- websites
-- stories
+  - websites
+  - stories
 ---
 
 Mulailah dari sini untuk mempelajari dasar-dasar terkait analitik AMP.
@@ -44,27 +44,30 @@ Komponen [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.
 Untuk membuat konfigurasi [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) sederhana, Anda harus menyertakan deklarasi `custom-element` ini terlebih dahulu di `<head>` dokumen AMP (kunjungi juga [Deklarasi penyertaan komponen](../../../../documentation/components/index.html) ):
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script
+  async
+  custom-element="amp-analytics"
+  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+></script>
 ```
 
 Contoh berikut ini mirip dengan [ contoh `amp-pixel`](../../../../documentation/components/reference/amp-pixel.md). Setiap kali halaman terlihat, peristiwa pemicu akan diproses, dan mengirimkan data tampilan halaman (pageview) ke URL yang telah ditentukan bersama dengan sebuah ID acak:
 
 ```html
 <amp-analytics>
-
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://foo.com/pixel?RANDOM",
-    },
-    "triggers": {
-      "trackPageview": {
-        "on": "visible",
-        "request": "pageview"
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://foo.com/pixel?RANDOM"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -88,43 +91,39 @@ Analytics AMP memudahkan penerapan di atas dengan menggunakan vendor analitik ap
 
 ```html
 <amp-analytics type="gtag" data-credentials="include">
- <script type="application/json">
-  {
-    "vars": {
-      "gtag_id":"YOUR_GOOGLE_ANALYTICS_ID",
-      "config": {
-        "YOUR_GOOGLE_ANALYTICS_ID": {
-          "groups":"default"
-        }
-      }
-    },
-    "triggers": {
-      "storyProgress": {
-        "on":"story-page-visible",
-        "vars": {
-          "event_name":"custom",
-          "event_action":"story_progress",
-          "event_category":"${title}",
-          "event_label":"${storyPageId}",
-          "send_to": [
-            "YOUR_GOOGLE_ANALYTICS_ID"
-          ]
+  <script type="application/json">
+    {
+      "vars": {
+        "gtag_id": "YOUR_GOOGLE_ANALYTICS_ID",
+        "config": {
+          "YOUR_GOOGLE_ANALYTICS_ID": {
+            "groups": "default"
+          }
         }
       },
-      "storyEnd": {
-        "on":"story-last-page-visible",
-        "vars": {
-          "event_name":"custom",
-          "event_action":"story_complete",
-          "event_category":"${title}",
-          "send_to": [
-            "YOUR_GOOGLE_ANALYTICS_ID"
-          ]
+      "triggers": {
+        "storyProgress": {
+          "on": "story-page-visible",
+          "vars": {
+            "event_name": "custom",
+            "event_action": "story_progress",
+            "event_category": "${title}",
+            "event_label": "${storyPageId}",
+            "send_to": ["YOUR_GOOGLE_ANALYTICS_ID"]
+          }
+        },
+        "storyEnd": {
+          "on": "story-last-page-visible",
+          "vars": {
+            "event_name": "custom",
+            "event_action": "story_complete",
+            "event_category": "${title}",
+            "send_to": ["YOUR_GOOGLE_ANALYTICS_ID"]
+          }
         }
       }
     }
-  }
- </script>
+  </script>
 </amp-analytics>
 ```
 
@@ -139,7 +138,9 @@ Jika Anda tertarik untuk mengetahui lebih dari apa yang dapat diberikan konfigur
 Baik komponen [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) maupun [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) mengizinkan semua penggantian variabel URL standar (kunjungi [Penggantian Variabel HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) ). Di dalam contoh berikut ini, permintaan tampilan halaman dikirimkan ke URL, bersama dengan URL kanonis dokumen AMP saat ini, judulnya, dan sebuah [ID klien](analytics_basics.md#user-identification):
 
 ```html
-<amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
+<amp-pixel
+  src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"
+></amp-pixel>
 ```
 
 Karena kesederhanaannya, tag [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) hanya dapat menyertakan variabel yang ditentukan oleh platform atau yang dapat diuraikan runtime AMP dari halaman AMP. Dalam contoh di atas, platform mengisi nilai untuk `canonicalURL` dan `clientId(site-user-id)`. Tag [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) dapat menyertakan variabel yang sama seperti [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md), serta variabel yang ditentukan secara unik di dalam konfigurasi tag.
@@ -153,10 +154,10 @@ Di dalam contoh [`amp-analytics`](../../../../documentation/components/reference
   <script type="application/json">
     {
       "requests": {
-        "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
       },
       "vars": {
-        "account":"ABC123"
+        "account": "ABC123"
       },
       "triggers": {
         "someEvent": {
@@ -189,7 +190,9 @@ Saat halaman AMP disajikan dari situs penayang, kerangka kerja ID klien yang dig
 Contohnya:
 
 ```html
-<amp-pixel src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"></amp-pixel>
+<amp-pixel
+  src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"
+></amp-pixel>
 ```
 
 Jika AMP menemukan bahwa cookie ini telah ditempatkan, penggantian ID klien akan mengembalikan nilai cookie tersebut. Jika AMP menemukan bahwa cookie ini belum ditempatkan, AMP akan menghasilkan nilai dalam bentuk `amp-` yang diikuti oleh untai berkode base64 acak.

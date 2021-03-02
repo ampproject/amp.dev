@@ -1,6 +1,6 @@
 ---
-"$title": Yorum ekleme
-"$order": '2'
+'$title': Yorum ekleme
+$order: 2
 description: 'Bu noktada, kullanıcı amp-form kütüphanesini kullanarak bir yorum ekleyebilir. Formun varlığının, amp-access bileşeninin durumuna bağlı olarak nasıl koşullu olduğuna dikkat edin:'
 ---
 
@@ -9,6 +9,7 @@ description: 'Bu noktada, kullanıcı amp-form kütüphanesini kullanarak bir yo
 Bu noktada, kullanıcı [`amp-form`](../../../../documentation/components/reference/amp-form.md) kütüphanesini kullanarak bir yorum ekleyebilir. Formun varlığının, [`amp-access`](../../../../documentation/components/reference/amp-access.md) bileşeninin durumuna bağlı olarak nasıl koşullu olduğuna dikkat edin:
 
 [sourcecode:html]
+
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
 [/sourcecode]
 
@@ -26,6 +27,7 @@ JSON yanıtının bir örneğini burada bulabilirsiniz:
 Form bileşeni, [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md) şablonunu kullanarak bu değerleri sayfanın içinde görüntüleyecektir:
 
 [sourcecode:html]
+
 <div submit-success>
   <template type="amp-mustache">
     <div class="comment-user">
@@ -42,6 +44,7 @@ Form bileşeni, [`amp-mustache`](../../../../documentation/components/reference/
 Bu örnekte, sadece yorumun değerinin boş olup olmadığını kontrol ediyoruz; değer boşsa, aşağıdaki kodun yürütülmesine neden olan bir hata ile yanıt veriyoruz
 
 [sourcecode:html]
+
 <div submit-error>
   <template type="amp-mustache">
     Error! Looks like something went wrong with your comment, please try to submit it again.

@@ -1,10 +1,10 @@
 ---
-"$title": Preview and validate
-"$order": '5'
+'$title': Preview and validate
+$order: 5
 description: 'Visualize a página AMP exatamente como visualizaria qualquer outro site HTML estático. Não é necessário uma etapa de compilação ou de pré-processamento. Você pode: ...'
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## Visualize
@@ -12,7 +12,7 @@ contributors:
 Visualize a página AMP exatamente como visualizaria qualquer outro site HTML estático. Não é necessário uma etapa de compilação ou de pré-processamento. Você pode:
 
 - **Abrir a página diretamente no navegador a partir do sistema de arquivos** (certos elementos podem não funcionar devido a falha de XMLHttpRequests)
-- **Usar um servidor da Web local, como o Apache 2 ou Nginx**. *(Dica: Para um servidor da Web rápido, execute `python -m SimpleHTTPServer`.)*
+- **Usar um servidor da Web local, como o Apache 2 ou Nginx**. _(Dica: Para um servidor da Web rápido, execute `python -m SimpleHTTPServer`.)_
 
 ## Valide
 

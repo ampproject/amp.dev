@@ -1,9 +1,9 @@
 ---
-"$title": Tích hợp AMP với ứng dụng của bạn
-"$order": '2'
+'$title': Tích hợp AMP với ứng dụng của bạn
+$order: 2
 description: Hướng dẫn này dành cho các nhà phát triển ứng dụng di động và web muốn tích hợp và liên kết đến các trang AMP. Ví dụ, hãy cân nhắc một ứng dụng trò chuyện di động...
 formats:
-- websites
+  - websites
 ---
 
 Hướng dẫn này dành cho các nhà phát triển ứng dụng di động và web muốn tích hợp và liên kết đến các trang AMP. Ví dụ, hãy cân nhắc một ứng dụng trò chuyện di động tải phiên bản AMP của một URL được chia sẻ để đảm bảo một trải nghiệm nhanh hơn cho người dùng.
@@ -47,10 +47,12 @@ Google cung cấp API AMP URL để truy xuất URL AMP HTML liên quan cho mộ
 Ví dụ, đối với một danh sách URL cụ thể:
 
 ```json
-{"urls": [
-  "https://www.example.org/article-with-amp-version",
-  "http://www.example.com/no-amp-version.html"
-]}
+{
+  "urls": [
+    "https://www.example.org/article-with-amp-version",
+    "http://www.example.com/no-amp-version.html"
+  ]
+}
 ```
 
 Nội dung hồi đáp sẽ chứa ánh xạ AMP URL trong định dạng JSON:

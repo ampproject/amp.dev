@@ -1,10 +1,10 @@
 ---
-"$title": إنشاء أول قصة ويب خاصة بك
-"$order": '0'
+'$title': إنشاء أول قصة ويب خاصة بك
+$order: 0
 description: في هذا البرنامج التعليمي، سنقدم لك مكون amp-story، الذي يمكنك استخدامه لإنشاء قصص ويب جذابة بصريًا باستخدام AMP. وبنهاية هذا البرنامج التعليمي، سوف ...
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- stories
+  - stories
 author: bpaduch
 ---
 

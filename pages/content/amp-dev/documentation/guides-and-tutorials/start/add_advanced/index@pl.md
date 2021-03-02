@@ -1,10 +1,10 @@
 ---
-"$title": Dodawanie funkcji zaawansowanych AMP
-"$order": '0'
+'$title': Dodawanie funkcji zaawansowanych AMP
+$order: 0
 description: W tym samouczku będziesz opierać się na swoim zrozumieniu podstaw AMP i dowiesz się, jak AMP obsługuje reklamy, analitykę, filmy osadzone, integrację mediów społecznościowych, karuzele itd.
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='Completed news article') }}

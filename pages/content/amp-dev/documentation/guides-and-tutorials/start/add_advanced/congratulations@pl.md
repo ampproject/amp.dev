@@ -1,6 +1,6 @@
 ---
-"$title": Gratulacje!
-"$order": '7'
+'$title': Gratulacje!
+$order: 7
 description: Masz za sobą samouczek „Dodawanie funkcji zaawansowanych AMP” i zbadanie z powodzeniem wiele kluczowych składników zaawansowanych AMP!
 ---
 

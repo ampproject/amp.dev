@@ -1,6 +1,6 @@
 ---
-"$title": Comprender las partes de una historia de AMP
-"$order": '2'
+'$title': Comprender las partes de una historia de AMP
+$order: 2
 description: Una Web Story es una experiencia de narración visual en pantalla completa que transmite información mediante imágenes, videos, gráficas, audio y más. Es perfecta para los usuarios...
 author: bpaduch
 ---

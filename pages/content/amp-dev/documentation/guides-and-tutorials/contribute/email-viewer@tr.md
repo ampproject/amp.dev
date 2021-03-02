@@ -1,9 +1,9 @@
 ---
-"$title": E-postaları işlemek için AMP Görüntüleyiciyi kullanma
-"$order": '5'
+'$title': E-postaları işlemek için AMP Görüntüleyiciyi kullanma
+$order: 5
 author: alabiaga
 formats:
-- email
+  - email
 ---
 
 E-posta için AMP'yi desteklemek isteyen e-posta istemcileri, e-göndericilerinin AMP e-postalarını barındırmak için [AMP Görüntüleyiciyi](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) kullanmalıdır. [AMP Görüntüleyici kütüphanesiyle oluşturulmuş](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration) bir görüntüleyici, bir AMP belgesini sarmalar ve postMessage aracılığıyla AMP belgesiyle çift yönlü iletişime olanak tanıyan [özellikleri](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/CAPABILITIES.md) etkinleştirir. Bu özellikler arasında e-postanın görünürlüğünün kontrolünün verilmesi, kullanıcı ölçümlerinin aktarılması ve e-postadan yapılan XHR isteklerinin güvenliğinin sağlanması için araçlar sağlanması vardır.
@@ -24,9 +24,11 @@ Görüntüleyici ile AMP belgesi arasındaki iletişim için kullanılan protoko
 // The viewer iframe that will host the amp doc.
 viewerIframe = document.createElement('iframe');
 viewerIframe.contentWindow.onMessage = (xhrRequestIntercepted) => {
-   const blob = new Blob([JSON.stringify({body: 'hello'}, null, 2)], {type: 'application/json'});
-   const response = new Reponse(blob, {status: 200});
-   return response;
+  const blob = new Blob([JSON.stringify({body: 'hello'}, null, 2)], {
+    type: 'application/json',
+  });
+  const response = new Reponse(blob, {status: 200});
+  return response;
 };
 ```
 
@@ -35,7 +37,7 @@ viewerIframe.contentWindow.onMessage = (xhrRequestIntercepted) => {
 Görüntüleyiciyi başlatma sırasında xhrInterceptor özelliğine dahil ederek xhr müdahalesini etkinleştirin. Lütfen bunun nasıl yapıldığına dair görüntüleyici örneğine ve xhr müdahalesi örneğine bakın. AMP belgesi daha sonra XHR müdahalesine izin vermeyi seçmelidir. Belgeler, `allow-xhr-interception` özniteliğini `<html amp4email>` etiketine ekleyerek etkinleştirir. E-posta istemcisi, bu öznitelik kasıtlı olarak geçersiz bir öznitelik olduğundan ve AMP belgesi doğrulaması sırasında bu şekilde işaretleneceğinden, işlemeden önce AMP belgesinde bu özniteliği ayarlamalıdır.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email allow-xhr-interception>
   ...
 </html>
@@ -45,21 +47,22 @@ Görüntüleyiciyi başlatma sırasında xhrInterceptor özelliğine dahil edere
 
 `viewerRenderTemplate` özelliği görüntüleyicinin [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email) ve [`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=email) şablon işlemesini yönetmeye izin verir. Bu özellik etkinleştirildiğinde, AMP çalışma zamanı, orijinal XHR çağrısını, şablon verilerini ve bileşen içeriklerini görüntüleyicide işlemek için gereken diğer ayrıntıları içeren bir isteği ara sunucuya alır. Bu, izleyicinin uç nokta veri içeriğine iç gözlem yapmasına ve verileri doğrulamak ve sterilize etmek için şablonların [mustache](https://mustache.github.io/) oluşturmasını yönetmesine olanak tanır. Bu özellik xhrInterceptor ile birlikte amp-form ve amp-list bileşeninde etkinleştirilirse, görüntüleyiciye yönelik istekleri de ara sunucuya alan ` viewerRenderTemplate` özelliğinin xhrInterceptor'ınkinden daha üstün olacağını unutmayın.
 
-[viewer.html](https://github.com/ampproject/amphtml/blob/master/examples/viewer.html) örneği, AMP belgesinden gönderilen `viewerRenderTemplate` mesajının nasıl işlenebileceğini gösterir. Bu örnekte, Viewer.prototype.processRequest_, `viewerRenderTemplate ` mesajını yakalar ve istekte bulunan amp bileşen türünü temel alarak, aşağıdaki JSON biçiminde oluşturulacak html'yi geri gönderir.
+[viewer.html](https://github.com/ampproject/amphtml/blob/master/examples/viewer.html) örneği, AMP belgesinden gönderilen `viewerRenderTemplate` mesajının nasıl işlenebileceğini gösterir. Bu örnekte, Viewer.prototype.processRequest\_, `viewerRenderTemplate ` mesajını yakalar ve istekte bulunan amp bileşen türünü temel alarak, aşağıdaki JSON biçiminde oluşturulacak html'yi geri gönderir.
 
 ```js
-Viewer.prototype.ssrRenderAmpListTemplate_ = (data) => Promise.resolve({
-  "html":
-    "<div role='list' class='i-amphtml-fill-content i-amphtml-replaced-content'>"
-      + "<div class='product' role='listitem'>Apple</div>"
-      + "</div>",
-  "body" : "",
-  "init" : {
-    "headers": {
-      "Content-Type": "application/json",
-    }
-  }
-});
+Viewer.prototype.ssrRenderAmpListTemplate_ = (data) =>
+  Promise.resolve({
+    'html':
+      "<div role='list' class='i-amphtml-fill-content i-amphtml-replaced-content'>" +
+      "<div class='product' role='listitem'>Apple</div>" +
+      '</div>',
+    'body': '',
+    'init': {
+      'headers': {
+        'Content-Type': 'application/json',
+      },
+    },
+  });
 ```
 
 Bu, [mustache](https://mustache.github.io/) kütüphane bağımlılığının veya içerik temizliğinin olmadığı küçük bir örnektir.
@@ -74,9 +77,9 @@ AMP çalışma zamanı, [`<amp-list>`](../../../documentation/components/referen
 {
   "html": "<div role='list' class='i-amphtml-fill-content i-amphtml-replaced-content'> <div class='product' role='listitem'>List item 1</div> <div class='product' role='listitem'>List item 2</div> </div>",
   "body": "",
-  "init" : {
+  "init": {
     "headers": {
-      "Content-Type": "application/json",
+      "Content-Type": "application/json"
     }
   }
 }

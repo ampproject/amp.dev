@@ -1,6 +1,6 @@
 ---
-"$title": إنشاء غلاف للإعلان
-"$order": '0'
+'$title': إنشاء غلاف للإعلان
+$order: 0
 description: '"باستخدام محرر النصوص المفضل لديك، قم بإنشاء ملف HTML باسم my-amphtml-ad.html. وانسخ لغة ترميز HTML التالية إلى ذلك الملف: ..."'
 ---
 
@@ -9,15 +9,14 @@ description: '"باستخدام محرر النصوص المفضل لديك، ق
 باستخدام محرر النصوص المفضل لديك، قم بإنشاء ملف HTML باسم my-amphtml-ad.html. وانسخ لغة ترميز HTML التالية إلى ذلك الملف:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>My amphtml ad</title>
-  <meta name="viewport" content="width=device-width">
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>My amphtml ad</title>
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body></body>
 </html>
 ```
 
@@ -28,10 +27,12 @@ description: '"باستخدام محرر النصوص المفضل لديك، ق
 في العلامة `<html>`، أضف السمة `⚡4ads`، التي تحدد المستند كإعلان AMPHTML. بدلًا عن ذلك، يمكنك تحديد السمة `amp4ads`، التي تعد صالحة أيضًا.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4ads>
-<head>
-...
+  <head>
+    ...
+  </head>
+</html>
 ```
 
 [tip type="note"] **ملحوظة –** على عكس صفحات AMP، [لا تتطلب إعلانات AMPHTML علامة`<link rel="canonical">`](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#amphtml-ad-format-rules). [/tip]
@@ -45,27 +46,34 @@ description: '"باستخدام محرر النصوص المفضل لديك، ق
 تتطلب تصميمات إعلانات AMPHTML خط نمط [معياري](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#boilerplate) مختلفًا وبسيطًا إلى حد كبير عما تتطلبه صفحات AMP. أضف لرمز التالي إلى قسم `<head>`:
 
 ```html
-<style amp4ads-boilerplate>body{visibility:hidden}</style>
+<style amp4ads-boilerplate>
+  body {
+    visibility: hidden;
+  }
+</style>
 ```
 
 لتحديد نمط إعلان AMPHTML الخاص بك، يجب أن تكون CSS مضمنة في مستند AMPHTML باستخدام علامات <code><style amp-custom></style></code> في القسم <code><head></code>. ونظرًا لأننا نعرض إعلانًا مصورًا أساسيًا، فإننا لا نطلب أي CSS، لذلك لن نضيف هذه العلامات.
 
-[tip type="note"] **ملحوظة –** بالنسبة لإعلانات AMPHTML، يبلغ الحد الأقصى لحجم صفحة الأنماط المضمنة *20 كيلو بايت*. اعرف المزيد عن [متطلبات CSS في مواصفات إعلان AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#css). [/tip]
+[tip type="note"] **ملحوظة –** بالنسبة لإعلانات AMPHTML، يبلغ الحد الأقصى لحجم صفحة الأنماط المضمنة _20 كيلو بايت_. اعرف المزيد عن [متطلبات CSS في مواصفات إعلان AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#css). [/tip]
 
 إليك الكود الكامل لملف HTML الخاص بك:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4ads>
-<head>
-  <meta charset="utf-8">
-  <title>My amphtml ad</title>
-  <meta name="viewport" content="width=device-width">
-  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
-  <style amp4ads-boilerplate>body{visibility:hidden}</style>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>My amphtml ad</title>
+    <meta name="viewport" content="width=device-width" />
+    <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+    <style amp4ads-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body></body>
 </html>
 ```
 

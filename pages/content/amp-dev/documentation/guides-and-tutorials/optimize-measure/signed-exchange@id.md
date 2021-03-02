@@ -1,8 +1,8 @@
 ---
-"$title": Menyajikan AMP dengan menggunakan komunikasi bertanda tangan
-"$order": '4'
+'$title': Menyajikan AMP dengan menggunakan komunikasi bertanda tangan
+$order: 4
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 ---
 
@@ -10,7 +10,7 @@ AMP memberikan manfaat kecepatan di atas dan melampaui format melalui berbagai t
 
 Sebuah [komunikasi bertanda tangan](https://developers.google.com/web/updates/2018/11/signed-exchanges) terdiri atas dokumen AMP yang valid dan URL asli konten. Informasi ini dilindungi oleh tanda tangan digital yang dengan aman mengikatkan dokumen tersebut ke URL yang diklaimnya. Ini memungkinkan browser untuk dengan aman menampilkan URL asli di bilah URL, bukan hostname mesin yang mengirimkan byte ke browser tersebut.
 
-Konten AMP bertanda tangan dikirimkan *sebagai tambahan* (bukan pengganti), konten AMP yang biasa.
+Konten AMP bertanda tangan dikirimkan _sebagai tambahan_ (bukan pengganti), konten AMP yang biasa.
 
 {{ image('/static/img/docs/guides/sxg/sxg.png', 411, 293, layout='responsive', alt='Image displaying URL from signed exchange', caption=' ', align='' ) }}
 
@@ -20,14 +20,14 @@ Konten AMP bertanda tangan dikirimkan *sebagai tambahan* (bukan pengganti), kont
 
 Untuk menerapkan komunikasi bertanda tangan, Anda harus memenuhi persyaratan berikut ini:
 
-- Kemampuan untuk mengonfigurasi dan mengontrol tajuk HTTP dihasilkan oleh server Anda. (Kebanyakan solusi penyediaan web murni, seperti Blogger *tidak* kompatibel dengan komunikasi bertanda tangan.)
+- Kemampuan untuk mengonfigurasi dan mengontrol tajuk HTTP dihasilkan oleh server Anda. (Kebanyakan solusi penyediaan web murni, seperti Blogger _tidak_ kompatibel dengan komunikasi bertanda tangan.)
 - Kemampuan untuk menghasilkan komunikasi bertanda tangan AMP, seperti dengan menjalankan [`amppackager`](https://github.com/ampproject/amppackager/blob/master/README.md), sebagai sebuah [Go binary](https://golang.org/doc/install), atau di dalam sebuah [Docker VM](https://docs.docker.com/machine/get-started/).
-    - Pengemas harus diperbarui setiap enam minggu.
+  - Pengemas harus diperbarui setiap enam minggu.
 - Kemampuan untuk [Berbeda](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary) pada tajuk `Accept` dan `AMP-Cache-Transform` pada server HTTP edge, mengembalikan konten yang berbeda untuk URL yang sama.
 - Sistem yang menjalankan `amppackager` harus dapat membuat permintaan jaringan keluar ke:
-    - Otoritas sertifikat yang menerbitkan sertifikat Anda
-    - Server penayang yang mengelola dokumen AMP yang akan ditandatangani
-    - `cdn.ampproject.org` untuk memperoleh versi AMP saat ini
+  - Otoritas sertifikat yang menerbitkan sertifikat Anda
+  - Server penayang yang mengelola dokumen AMP yang akan ditandatangani
+  - `cdn.ampproject.org` untuk memperoleh versi AMP saat ini
 - Sistem berkas penyimpanan bersama yang persisten di antara semua contoh `amppackager` yang berjalan di pusat data yang sama.
 
 # Menerapkan komunikasi bertanda tangan
@@ -143,7 +143,7 @@ format version: 1b3
 
 (Perhatikan bahwa tombol `-verify` tidak akan berfungsi pada tahap ini karena sertifikat yang diperlukan tidak berada di server `https://example.com/`.)
 
-Verifikasi bahwa tanggapan *selalu * menyertakan tajuk `Vary` dengan nilai `Accept,AMP-Cache-Transform` (terlepas dari apakah jenis MIME-nya adalah `text/html`, `application/signed-exchange`, atau yang lain):
+Verifikasi bahwa tanggapan _selalu _ menyertakan tajuk `Vary` dengan nilai `Accept,AMP-Cache-Transform` (terlepas dari apakah jenis MIME-nya adalah `text/html`, `application/signed-exchange`, atau yang lain):
 
 ```sh
 $ curl -si https://staging.example.com/ | less

@@ -1,12 +1,12 @@
 ---
-"$title": Danh mục kiểm tra cho việc phát hành AMP
-"$order": '0'
+'$title': Danh mục kiểm tra cho việc phát hành AMP
+$order: 0
 description: Thiết kế web thích nghi xoay quanh việc lập những trang web linh động đáp ứng được các nhu cầu của người dùng - những trang hợp với kích cỡ và định hướng màn hình trên thiết bị người dùng. Bạn có thể đạt được...
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 Làm theo danh mục kiểm tra này để mang đến trải nghiệm AMP đầy đủ nhất cho website của bạn!
@@ -66,7 +66,7 @@ Tìm hiểu thêm về bộ nhớ đệm AMP:
 
 # Quảng bá những tập tin AMP của bạn cho các công cụ tìm kiếm
 
-Những trang chỉ dựng bằng AMP (AMP trước tiên) và những trang có một bản sao AMP (AMP kèm theo), tất thảy đều cần bảo đảm rằng chúng có thể được khám phá! Tất cả các trang AMP đều cần  `<link rel="canonical" href="$SOME_URL">` trong `<head>`. Những trang AMP trước tiên cần liên kết đến chính bản thân chúng và những trang AMP cặp đôi với một trang không phải AMP sẽ cần liên kết lẫn nhau.
+Những trang chỉ dựng bằng AMP (AMP trước tiên) và những trang có một bản sao AMP (AMP kèm theo), tất thảy đều cần bảo đảm rằng chúng có thể được khám phá! Tất cả các trang AMP đều cần `<link rel="canonical" href="$SOME_URL">` trong `<head>`. Những trang AMP trước tiên cần liên kết đến chính bản thân chúng và những trang AMP cặp đôi với một trang không phải AMP sẽ cần liên kết lẫn nhau.
 
 Hãy bảo đảm siêu dữ liệu [Schema.org](https://schema.org/) thêm vào những thông tin hữu dụng! Những website khác và những công cụ tìm kiếm có thể cần cái này để chia sẻ nội dung của bạn.
 

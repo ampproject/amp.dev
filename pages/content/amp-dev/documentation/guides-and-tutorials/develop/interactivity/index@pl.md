@@ -1,11 +1,11 @@
 ---
-"$title": Tworzenie interaktywnych stron AMP
-"$path": "/documentation/guides-and-tutorials/develop/interactivity/index.html"
-"$order": '0'
+'$title': Tworzenie interaktywnych stron AMP
+'$path': '/documentation/guides-and-tutorials/develop/interactivity/index.html'
+$order: 0
 description: Z tego samouczka nauczysz się używać wiązania danych i wyrażeń do budowania wspaniałych, interaktywnych stron AMP za pomocą składnika amp-bind...
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/interactivity-final-page.jpg', 415, 738, align='right third', caption='Ukończona strona AMP tego samouczka.') }}

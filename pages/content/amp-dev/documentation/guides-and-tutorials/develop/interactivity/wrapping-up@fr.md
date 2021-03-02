@@ -1,6 +1,6 @@
 ---
-"$title": Résumé
-"$order": '4'
+'$title': Résumé
+$order: 4
 description: "Félicitations! Vous venez de créer une page interactive et détaillée de produit de commerce en ligne avec des tailles et des prix variables pour chaque SKU, récupérés à la demande à partir d'un point de terminaison JSON distant."
 ---
 

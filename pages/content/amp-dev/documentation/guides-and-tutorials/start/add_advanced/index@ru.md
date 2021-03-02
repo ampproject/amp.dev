@@ -1,10 +1,10 @@
 ---
-"$title": Добавление расширенных функций AMP
-"$order": '0'
+'$title': Добавление расширенных функций AMP
+$order: 0
 description: В этом уроке вы приобретете понимание основ AMP и узнаете, как AMP обрабатывает рекламу, функции аналитики, встроенные видео, интеграцию с социальными сетями, кольцевые галереи и многое другое.
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='Completed news article') }}

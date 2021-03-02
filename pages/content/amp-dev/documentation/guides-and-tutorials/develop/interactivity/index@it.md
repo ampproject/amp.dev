@@ -1,11 +1,11 @@
 ---
-"$title": Creazione di pagine AMP interattive
-"$path": "/documentation/guides-and-tutorials/develop/interactivity/index.html"
-"$order": '0'
+'$title': Creazione di pagine AMP interattive
+'$path': '/documentation/guides-and-tutorials/develop/interactivity/index.html'
+$order: 0
 description: "In questa esercitazione impareremo come utilizzare l'abbinamento dati e le espressioni per creare fantastiche pagine AMP ricche di interazione con amp-bind ..."
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/interactivity-final-page.jpg', 415, 738, align='right third', caption='Pagina AMP completata per questa esercitazione') }}

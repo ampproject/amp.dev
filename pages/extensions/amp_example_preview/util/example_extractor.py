@@ -1,5 +1,5 @@
 import re
-from example_document import ExampleDocument
+from .example_document import ExampleDocument
 
 EXAMPLE_PATTERN = re.compile(
   r'\[\s*example(\s[^\]]*)?\](.*?(?:\n```html *\n(.*?)\n```' +

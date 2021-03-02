@@ -1,10 +1,10 @@
 ---
-"$title": Modificación de la presentación y el diseño
-"$order": '3'
+'$title': Modificación de la presentación y el diseño
+$order: 3
 description: Las AMP son páginas web. Cualquier estilo en la página y en sus elementos se aplica mediante propiedades CSS comunes. Esto le da estilo a los elementos con selectores...
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## Modificación de la presentación
@@ -12,6 +12,7 @@ contributors:
 Las AMP son páginas web. Cualquier estilo en la página y en sus elementos se aplica mediante propiedades CSS comunes. Los elementos de estilo utilizan selectores de clase o de elemento en una hoja de estilo incrustada en `<head>`, llamada `<style amp-custom>`:
 
 [sourcecode:html]
+
 <style amp-custom>
   /* any custom style goes here */
   body {
@@ -22,6 +23,7 @@ Las AMP son páginas web. Cualquier estilo en la página y en sus elementos se a
     border: 1px solid black;
   }
 </style>
+
 [/sourcecode]
 
 Las páginas AMP solo pueden tener una hoja de estilo incrustada y estilos en línea, pero hay ciertos selectores que no se pueden utilizar. [Aprenda todo sobre el estilo](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).

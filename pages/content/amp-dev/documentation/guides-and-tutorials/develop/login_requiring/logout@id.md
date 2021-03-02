@@ -1,6 +1,6 @@
 ---
-"$title": Keluar (Logout)
-"$order": '3'
+'$title': Keluar (Logout)
+$order: 3
 description: Serupa dengan tombol masuk (login), keberadaan tombol keluar (logout) bergantung secara kondisional pada status komponen amp-access ....
 ---
 
@@ -15,9 +15,9 @@ Saat mengeklik tombol Keluar, Anda akan diarahkan ke URL yang telah ditentukan d
 [sourcecode:json]
 {
 "login": {
-  "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
-  "sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
-  }
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
+"sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
+}
 }
 [/sourcecode]
 

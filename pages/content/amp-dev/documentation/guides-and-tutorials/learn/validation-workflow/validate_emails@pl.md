@@ -1,9 +1,9 @@
 ---
-"$title": Walidacja wiadomości e-mail AMP
-"$order": '1'
+'$title': Walidacja wiadomości e-mail AMP
+$order: 1
 author: CrystalOnScript
 formats:
-- email
+  - email
 ---
 
 Wiadomości e-mail AMP zależą od biblioteki JS AMP, która zapewnia czytelnikom bogate, interaktywne i dynamiczne wrażenia. Z tego powodu dostawcy poczty elektronicznej wymagają walidacji takich wiadomości. Prawidłowe znaczniki AMP gwarantują, że wiadomości e-mail są bezpieczne i przekraczają standardy doznań użytkownika.

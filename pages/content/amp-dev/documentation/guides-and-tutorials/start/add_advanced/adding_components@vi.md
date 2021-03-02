@@ -1,6 +1,6 @@
 ---
-"$title": Thêm các thành phần AMP mở rộng
-"$order": '2'
+'$title': Thêm các thành phần AMP mở rộng
+$order: 2
 description: 'Hệ thống thành phần AMP cho phép bạn nhanh chóng xây dựng các tính năng hiệu quả và tương thích vào bài viết của mình một cách dễ dàng. Thư viện AMP HTML có 3 phân loại cho các thành phần AMP: ...'
 ---
 
@@ -25,7 +25,8 @@ Hãy xem ví dụ này cho một quảng cáo **DoubleClick**:
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/image/static">
+  data-slot="/35096353/amptesting/image/static"
+>
 </amp-ad>
 ```
 
@@ -40,7 +41,8 @@ Thuộc tính `data-slot` độc đáo hơn. Trong [`amp-ad`](../../../../docume
   type="a9"
   data-aax_size="300x250"
   data-aax_pubname="test123"
-  data-aax_src="302">
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -51,7 +53,11 @@ Hãy nhớ, không phải thành phần nào cũng được bao gồm trong tậ
 **Thêm** kịch bản sau vào thẻ `<head>`:
 
 ```html
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script
+  async
+  custom-element="amp-ad"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+></script>
 ```
 
 **Làm mới** trang này và bạn sẽ thấy 2 quảng cáo thử nghiệm:
@@ -67,7 +73,8 @@ Hãy nhớ, không phải thành phần nào cũng được bao gồm trong tậ
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/uk">
+  data-slot="/35096353/amptesting/geo/uk"
+>
   <div fallback>No ad appeared because you're not browsing from the UK!</div>
 </amp-ad>
 
@@ -75,7 +82,8 @@ Hãy nhớ, không phải thành phần nào cũng được bao gồm trong tậ
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/us">
+  data-slot="/35096353/amptesting/geo/us"
+>
   <div fallback>No ad appeared because you're not browsing from the US!</div>
 </amp-ad>
 ```
@@ -107,14 +115,15 @@ Hãy thử nhúng một video YouTube vào tài liệu. **Thêm** đoạn code s
   data-videoid="npum8JsITQE"
   layout="responsive"
   width="480"
-  height="270">
+  height="270"
+>
   <div fallback>
     <p>The video could not be loaded.</p>
   </div>
 </amp-youtube>
 ```
 
-**Làm mới** trang. Thay vì video, bạn sẽ thấy văn bản này: *“The video could not be loaded”* (Video không thể được tải).
+**Làm mới** trang. Thay vì video, bạn sẽ thấy văn bản này: _“The video could not be loaded”_ (Video không thể được tải).
 
 Kể cả khi trình duyệt của bạn có thể hiển thị các video YouTube mà không gặp vấn đề gì, bạn vẫn sẽ nhận được lỗi này. Tại sao? Không phải là video không thể được tải, mà đây là lỗi của thành phần.
 
@@ -125,7 +134,11 @@ Hãy nhớ, không phải thành phần nào cũng được bao gồm trong tậ
 **Thêm** kịch bản sau vào thẻ `<head>`:
 
 ```html
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script
+  async
+  custom-element="amp-youtube"
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+></script>
 ```
 
 **Làm mới** trang này và bạn sẽ thấy video YouTube:
@@ -145,7 +158,11 @@ Việc nhúng các tweet đã được định dạng sẵn từ Twitter là m�
 Bắt đầu với việc thêm yêu cầu JavaScript sau vào thẻ `<head>` của tài liệu:
 
 ```html
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script
+  async
+  custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+></script>
 ```
 
 Bây giờ, trong bài viết của bạn, **thêm** đoạn code này để nhúng Tweet:
@@ -155,7 +172,8 @@ Bây giờ, trong bài viết của bạn, **thêm** đoạn code này để nh�
   width="486"
   height="657"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
 
@@ -180,7 +198,11 @@ AMP cung cấp một thành phần khác được thiết kế cụ thể cho t�
 Hãy cùng thử nó. Đầu tiên, **thêm** thư viện của thành phần vào thẻ `<head>`:
 
 ```html
-<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+<script
+  async
+  custom-element="amp-fit-text"
+  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+></script>
 ```
 
 Thêm phần sau vào trang của bạn:
@@ -205,7 +227,11 @@ Hoặc, điều gì xảy ra nếu trích dẫn dài hơn?
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-   And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+  And the Raven, never flitting, still is sitting, still is sitting. On the
+  pallid bust of Pallas just above my chamber door; And his eyes have all the
+  seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming
+  throws his shadow on the floor; And my soul from out that shadow that lies
+  floating on the floor. Shall be lifted—nevermore!
 </amp-fit-text>
 ```
 

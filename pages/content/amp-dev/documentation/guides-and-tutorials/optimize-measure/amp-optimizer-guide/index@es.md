@@ -1,11 +1,11 @@
 ---
-"$title": Cómo utilizar un optimizador de AMP
-"$order": '2'
-"$hidden": 'true'
+'$title': Cómo utilizar un optimizador de AMP
+$order: 2
+'$hidden': 'true'
 description: Los optimizadores de AMP son herramientas que le permitirán optimizar el caché de AMP para su propio sitio. Es fundamental utilizar un optimizador de AMP para crear una gran experiencia en la página y cumplir con los Elementos básicos de la web. En esta guía se explica cuál es la mejor manera de utilizar un optimizador de AMP para mejorar sus páginas de AMP.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

@@ -1,12 +1,12 @@
 ---
-"$title": Liste de contrôle de publication AMP
-"$order": '0'
+'$title': Liste de contrôle de publication AMP
+$order: 0
 description: "La conception Web interactive consiste à créer des pages Web fluides qui répondent aux besoins de vos utilisateurs, des pages adaptées à la taille et à l'orientation de l'écran de leur appareil. Vous pouvez y parvenir ..."
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 Suivez cette liste de contrôle pour offrir à votre site l'expérience AMP la plus complète!

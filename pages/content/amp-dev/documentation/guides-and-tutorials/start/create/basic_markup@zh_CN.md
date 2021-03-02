@@ -1,6 +1,6 @@
 ---
 '$title': 制作 AMP HTML 网页
-'$order': '1'
+$order: 1
 description: 使用 HTTPS：在制作 AMP 网页和内容时，强烈建议您使用 HTTPS 协议（而非 HTTP）。虽然 AMP 文档本身或者图片和字体并不需要…
 author: pbakaus
 contributors:

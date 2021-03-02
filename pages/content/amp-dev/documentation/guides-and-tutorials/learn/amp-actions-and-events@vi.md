@@ -1,10 +1,10 @@
 ---
-"$title": Hành động và sự kiện
-order: '0'
+'$title': Hành động và sự kiện
+$order: 0
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
   text: '[tip type="note"]'
 ---
@@ -109,7 +109,7 @@ Ví dụ, những việc sau có thể được thực hiện trong AMP:
 
 ## Các sự kiện cụ thể của yếu tố <a name="element-specific-events"></a>
 
-### * - tất cả yếu tố <a name="---all-elements"></a>
+### \* - tất cả yếu tố <a name="---all-elements"></a>
 
 <table>
   <tr>
@@ -351,7 +351,7 @@ Ví dụ, những việc sau có thể được thực hiện trong AMP:
 
 ## Các hành động dành riêng cho yếu tố <a name="element-specific-actions"></a>
 
-### * (tất cả yếu tố) <a name="-all-elements"></a>
+### \* (tất cả yếu tố) <a name="-all-elements"></a>
 
 <table>
   <tr>

@@ -1,10 +1,10 @@
 ---
-"$title": Mengoptimalkan halaman AMP Anda yang dikelola pihak lain (hosted)
-"$order": '7'
+'$title': Mengoptimalkan halaman AMP Anda yang dikelola pihak lain (hosted)
+$order: 7
 description: Runtime AMP dioptimalkan untuk kecepatan dan jika halaman AMP Anda disajikan oleh sebuah cache AMP, halaman tersebut dioptimalkan sepenuhnya dan menawarkan kinerja pemuatan tertinggi ....
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 
@@ -26,7 +26,7 @@ Contohnya, dengan menerapkan teknik-teknik pengoptimalan berikut ini:
 - [Gambar hero yang dimuat sebelumnya](#preload-hero-images) (ukuran/pengodean gambar itu sendiri belum berubah)
 - [Mengoptimalkan font kustom](#optimize-custom-fonts) (dalam hal ini, Google Font)
 
- [Templat "The Scenic"](../../../documentation/templates/index.html) memuat [dua detik lebih cepat pada koneksi 3G](https://www.webpagetest.org/video/compare.php?tests=180529_RY_9198dcdba1824c169887c6e40c221dae-r:1-c:0).
+[Templat "The Scenic"](../../../documentation/templates/index.html) memuat [dua detik lebih cepat pada koneksi 3G](https://www.webpagetest.org/video/compare.php?tests=180529_RY_9198dcdba1824c169887c6e40c221dae-r:1-c:0).
 
 Jika Anda ingin melewati detailnya, kunjungi [penghasil Boilerplate AMP](/boilerplate), yang dapat Anda gunakan untuk menghasilkan halaman AMP yang dioptimalkan secara kustom.
 
@@ -73,6 +73,7 @@ Mari kita bahas langkah demi langkah:
 3. Jika halaman Anda menyertakan ekstensi penunda perenderan (cth., amp-experiment, amp-dynamic-css-classes, amp-story), muat terlebih dahulu ekstensi tersebut karena mereka dibutuhkan oleh runtime AMP untuk merender halaman.
 
 [sourcecode:html]
+
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-custom-css-0.1.js">
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/story-1.0.js">[/sourcecode]
@@ -150,7 +151,7 @@ Omong-omong, pendekatan yang sama berhasil untuk gambar poster [`amp-video`](../
 </amp-video>
 [/sourcecode]
 
-Cukup pastikan untuk menempatkan pernyataan yang telah dimuat sebelumnya *setelah* pernyataan viewport karena browser memerlukan dimensi viewport untuk menentukan lebar layar:
+Cukup pastikan untuk menempatkan pernyataan yang telah dimuat sebelumnya _setelah_ pernyataan viewport karena browser memerlukan dimensi viewport untuk menentukan lebar layar:
 
 [sourcecode:html]
 
@@ -203,11 +204,13 @@ Dengan AMP, ada beberapa hal yang dapat Anda lakukan untuk mengoptimalkan pemuat
 - Muat font kustom terlebih dahulu:
 
 [sourcecode:html]
+
 <link rel="preload" as="font" href="/bundles/app/fonts/helveticaneue-roman-webfont.woff2" >[/sourcecode]
 
 - Jika Anda menggunakan Google Fonts, atau penyedia font lainnya dengan URL font yang tidak diketahui, sambungkan server font yang bersangkutan terlebih dahulu:
 
 [sourcecode:html]
+
  <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
 [/sourcecode]
 

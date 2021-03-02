@@ -1,10 +1,10 @@
 ---
-"$title": 优化托管的 AMP 网页
-"$order": '7'
+'$title': 优化托管的 AMP 网页
+$order: 7
 description: AMP 运行时的速度进行了优化，如果 AMP 网页由 AMP 缓存提供，它们将得到完全优化，并且具有最高的加载性能…
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 
@@ -73,6 +73,7 @@ AMP 运行时的[速度进行了优化](../../../about/how-amp-works.html)，如
 3. 如果您的页面包含延迟渲染的扩展（例如，amp-experiment、amp-dynamic-css-classes、amp-story），请预加载这些扩展，因为 AMP 运行时需要这些扩展才能渲染页面。
 
 [sourcecode:html]
+
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-custom-css-0.1.js">
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/story-1.0.js">[/sourcecode]
@@ -203,11 +204,13 @@ AMP 运行时的[速度进行了优化](../../../about/how-amp-works.html)，如
 - 预加载自定义字体：
 
 [sourcecode:html]
+
 <link rel="preload" as="font" href="/bundles/app/fonts/helveticaneue-roman-webfont.woff2" >[/sourcecode]
 
 - 如果使用的是 Google 字体，或者任何其他含有未知字体网址的字体提供者，请预连接相应的字体服务器：
 
 [sourcecode:html]
+
  <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
 [/sourcecode]
 

@@ -1,6 +1,6 @@
 ---
-"$title": Добавление расширенных компонентов AMP
-"$order": '2'
+'$title': Добавление расширенных компонентов AMP
+$order: 2
 description: '"Система компонентов AMP позволяет быстро и с минимальными усилиями встраивать в статьи эффективные и отзывчивые функции. Библиотека AMP HTML классифицирует компоненты AMP по трем видам: ..."'
 ---
 
@@ -25,7 +25,8 @@ AMP-реклама создается с помощью компонента [`a
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/image/static">
+  data-slot="/35096353/amptesting/image/static"
+>
 </amp-ad>
 ```
 
@@ -40,7 +41,8 @@ AMP-реклама создается с помощью компонента [`a
   type="a9"
   data-aax_size="300x250"
   data-aax_pubname="test123"
-  data-aax_src="302">
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -51,7 +53,11 @@ AMP-реклама создается с помощью компонента [`a
 **Добавьте** в тег `<head>` следующий скрипт:
 
 ```html
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script
+  async
+  custom-element="amp-ad"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+></script>
 ```
 
 **Обновите** страницу, и вы увидите два тестовых рекламных объявления:
@@ -67,7 +73,8 @@ AMP-реклама создается с помощью компонента [`a
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/uk">
+  data-slot="/35096353/amptesting/geo/uk"
+>
   <div fallback>No ad appeared because you're not browsing from the UK!</div>
 </amp-ad>
 
@@ -75,7 +82,8 @@ AMP-реклама создается с помощью компонента [`a
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/us">
+  data-slot="/35096353/amptesting/geo/us"
+>
   <div fallback>No ad appeared because you're not browsing from the US!</div>
 </amp-ad>
 ```
@@ -107,25 +115,30 @@ AMP-реклама создается с помощью компонента [`a
   data-videoid="npum8JsITQE"
   layout="responsive"
   width="480"
-  height="270">
+  height="270"
+>
   <div fallback>
     <p>The video could not be loaded.</p>
   </div>
 </amp-youtube>
 ```
 
-**Обновите** страницу. Вместо видео вы увидите текст *«The video could not be loaded».*
+**Обновите** страницу. Вместо видео вы увидите текст _«The video could not be loaded»._
 
 Даже если ваш браузер может без проблем показывать видео с YouTube, вы все равно будете получать эту ошибку. Почему это происходит? На самом деле проблема не в сбое загрузки видео — проблема в сбое самого компонента.
 
 Помните, что не все компоненты включены в JavaScript-файл главной библиотеки AMP. Нам нужно включить дополнительный JavaScript -запрос для подключения компонента YouTube.
 
-[tip type="note"] **ПРИМЕЧАНИЕ.**  Если ваша консоль разработчика все еще открыта и в вашем URL есть строка `#development=1`, на этом этапе вы увидите ошибку AMP-валидатора, которая предложит добавить JavaScript-код [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) и отобразит ссылку на документацию, где сообщается, какой тег `script` нужно добавить. [/tip]
+[tip type="note"] **ПРИМЕЧАНИЕ.** Если ваша консоль разработчика все еще открыта и в вашем URL есть строка `#development=1`, на этом этапе вы увидите ошибку AMP-валидатора, которая предложит добавить JavaScript-код [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) и отобразит ссылку на документацию, где сообщается, какой тег `script` нужно добавить. [/tip]
 
 **Добавьте** в тег `<head>` следующий скрипт:
 
 ```html
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script
+  async
+  custom-element="amp-youtube"
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+></script>
 ```
 
 **Обновите** страницу, и вы должны увидеть видео с YouTube:
@@ -145,7 +158,11 @@ AMP-реклама создается с помощью компонента [`a
 Начните с добавления следующего JavaScript-запроса в `<head>` вашего документа:
 
 ```html
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script
+  async
+  custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+></script>
 ```
 
 Теперь **добавьте** в свою статью следующий код для встраивания твита:
@@ -155,7 +172,8 @@ AMP-реклама создается с помощью компонента [`a
   width="486"
   height="657"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
 
@@ -180,7 +198,11 @@ AMP-реклама создается с помощью компонента [`a
 Давайте попробуем его в деле. Сначала **добавьте** библиотеку компонента в тег `<head>`:
 
 ```html
-<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+<script
+  async
+  custom-element="amp-fit-text"
+  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+></script>
 ```
 
 Добавьте в свою страницу следующий код:
@@ -205,7 +227,11 @@ AMP-реклама создается с помощью компонента [`a
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-   And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+  And the Raven, never flitting, still is sitting, still is sitting. On the
+  pallid bust of Pallas just above my chamber door; And his eyes have all the
+  seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming
+  throws his shadow on the floor; And my soul from out that shadow that lies
+  floating on the floor. Shall be lifted—nevermore!
 </amp-fit-text>
 ```
 

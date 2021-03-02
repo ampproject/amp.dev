@@ -1,12 +1,12 @@
-import StringIO
+import io
 from pygments.formatters import html
-from jinja2_expression_unescape import unescape_in_expressions
+from .jinja2_expression_unescape import unescape_in_expressions
 
 
 class CustomHtmlFormatter(html.HtmlFormatter):
 
   def format_unencoded(self, tokensource, outfile):
-    buffer = StringIO.StringIO()
+    buffer = io.StringIO()
     super(CustomHtmlFormatter, self).format_unencoded(tokensource, buffer)
     content = buffer.getvalue()
     content = unescape_in_expressions(content)

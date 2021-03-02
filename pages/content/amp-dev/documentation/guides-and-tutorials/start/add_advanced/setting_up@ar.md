@@ -1,8 +1,8 @@
 ---
-"$title": الإعداد
-"$order": '0'
+'$title': الإعداد
+$order: 0
 description: '"قبل بدء هذا البرنامج التعليمي، ستحتاج إلى ما يلي: - معرفة أساسية بـ HTML وCSS وJavaScript - فهم أساسي للمفاهيم الأساسية في AMP راجع ..."'
-"$parent": "/content/docs/fundamentals/add_advanced.md"
+'$parent': '/content/docs/fundamentals/add_advanced.md'
 ---
 
 ## المتطلبات الأساسية
@@ -34,7 +34,7 @@ cd accelerated-mobile-pages-advanced
 
 ### الخطوة 2. قم بتشغيل صفحة المثال
 
-لاختبار صفحة AMP المثال، نحتاج إلى الوصول إلى الملفات من خادم ويب. ثمة عدة طرق لإنشاء خادم ويب محلي مؤقت لأغراض الاختبار.  فيما يلي بعض الخيارات، اختر الأنسب بالنسبة لك:
+لاختبار صفحة AMP المثال، نحتاج إلى الوصول إلى الملفات من خادم ويب. ثمة عدة طرق لإنشاء خادم ويب محلي مؤقت لأغراض الاختبار. فيما يلي بعض الخيارات، اختر الأنسب بالنسبة لك:
 
 - [“خادم الويب لـ Chrome” أحد تطبيقات Google Chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
 - [خادم HTTP Python محلي](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server#Running_a_simple_local_HTTP_server)

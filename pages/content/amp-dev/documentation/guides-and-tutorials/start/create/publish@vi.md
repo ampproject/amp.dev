@@ -1,10 +1,10 @@
 ---
-"$title": Các bước hoàn thiện trước khi phát hành
-"$order": '6'
+'$title': Các bước hoàn thiện trước khi phát hành
+$order: 6
 description: Chúc mừng! Bạn đã kiểm tra trang của mình trên máy cục bộ và khắc phục mọi lỗi xác thực, điều này có nghĩa trang AMP đầu tiên của bạn đã sẵn sàng được vận chuyển.
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 Chúc mừng! Bạn đã kiểm tra trang của mình trên máy cục bộ và khắc phục mọi lỗi xác thực, điều này có nghĩa trang AMP đầu tiên của bạn đã sẵn sàng được vận chuyển.

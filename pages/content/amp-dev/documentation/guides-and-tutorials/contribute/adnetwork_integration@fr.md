@@ -1,9 +1,9 @@
 ---
-"$title": "Intégration d'AMP pour diffuser des annonces"
-"$order": '5'
+'$title': "Intégration d'AMP pour diffuser des annonces"
+$order: 5
 description: Ce guide est destiné aux réseaux publicitaires qui souhaitent intégrer AMP pour diffuser des annonces sur les pages AMP.
 formats:
-- ads
+  - ads
 ---
 
 Ce guide est destiné aux réseaux publicitaires qui souhaitent intégrer AMP pour diffuser des annonces sur les pages AMP.
@@ -30,11 +30,14 @@ En tant que serveur publicitaire, les éditeurs que vous prenez en charge inclue
 Par exemple, le serveur Amazon A9 peut être appelé à l'aide de la syntaxe suivante:
 
 ```html
-<amp-ad width="300" height="250"
-    type="a9"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  width="300"
+  height="250"
+  type="a9"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 

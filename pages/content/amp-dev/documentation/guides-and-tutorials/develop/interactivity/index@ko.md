@@ -1,11 +1,11 @@
 ---
-"$title": 대화형 AMP 페이지 만들기
-"$path": "/documentation/guides-and-tutorials/develop/interactivity/index.html"
-"$order": '0'
+'$title': 대화형 AMP 페이지 만들기
+'$path': '/documentation/guides-and-tutorials/develop/interactivity/index.html'
+$order: 0
 description: 이번 튜토리얼에서는 데이터 바인딩 및 표현식을 사용하여 amp-bind로 멋진 대화형 AMP 페이지를 만드는 방법을 알아봅니다...
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/interactivity-final-page.jpg', 415, 738, align='right third', caption='이 튜토리얼을 통해 완성된 AMP 페이지') }}

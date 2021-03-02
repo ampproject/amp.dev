@@ -1,10 +1,10 @@
 ---
-"$title": Eseguire il debug dei problemi della cache AMP
-order: '8'
+'$title': Eseguire il debug dei problemi della cache AMP
+$order: 8
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
   text: Perché il mio documento su una cache AMP è danneggiato?
 ---

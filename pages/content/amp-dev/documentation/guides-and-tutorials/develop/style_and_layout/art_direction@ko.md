@@ -1,17 +1,17 @@
 ---
-"$title": srcset, sizes & heights를 이용한 반응형 이미지 구성
-"$order": '4'
+'$title': srcset, sizes & heights를 이용한 반응형 이미지 구성
+$order: 4
 description: 여러 미디어 표현식을 기준으로 요소의 애셋을 제어하기 위해 srcset 속성을 사용합니다. 특히 모든 amp-img 태그에서 해당 속성을 사용하여...
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## srcset
@@ -21,16 +21,20 @@ contributors:
 다음의 간단한 예제에서 `srcset` 속성은 화면 너비를 기준으로 사용할 이미지를 지정합니다. `w` 디스크립터가 목록의 각 이미지 너비를 브라우저에 알려줍니다.
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   layout="responsive"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
-            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w">
+            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
+>
 </amp-img>
 ```
+
 [/example]
 
 [tip type="note"] <strong>참고 –</strong> AMP는 `w` 디스크립터가 포함된 srcset을 모든 브라우저에서 지원합니다. [/tip]
@@ -44,16 +48,20 @@ contributors:
 아래 예제를 참고하길 바랍니다:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
             {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
-  sizes="(min-width: 650px) 50vw, 100vw">
+  sizes="(min-width: 650px) 50vw, 100vw"
+>
 </amp-img>
 ```
+
 [/example]
 
 `sizes` 속성은 뷰포트가 650px 이상인 경우 요소의 너비를 뷰포트 사이즈의 50%로 정의합니다. 예를 들어 뷰포트가 800px인 경우 요소의 너비는 400px입니다. 다음으로 브라우저는 기기의 픽셀 해상도를 1로 가정하여 `srcset`의 리소스 중 400px에 가장 근접한 이미지인 `narrow.jpg`(320px)를 선택합니다.
@@ -74,14 +82,18 @@ contributors:
 예제:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="AMP"
+<amp-img
+  alt="AMP"
   src="{{server_for_email}}/static/inline-examples/images/amp.jpg"
   width="320"
   height="256"
-  heights="(min-width:500px) 200px, 80%">
+  heights="(min-width:500px) 200px, 80%"
+>
 </amp-img>
 ```
+
 [/example]
 
 이 예제에서 요소의 높이는 너비의 80%로 지정되었지만, 뷰포트가 `500px`보다 큰 경우 `200px`까지만 허용됩니다.

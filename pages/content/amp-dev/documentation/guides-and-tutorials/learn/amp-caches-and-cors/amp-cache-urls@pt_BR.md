@@ -1,14 +1,14 @@
 ---
-"$title": Formato da URL do Cache do AMP e tratamento de solicitações
-"$order": '9'
+'$title': Formato da URL do Cache do AMP e tratamento de solicitações
+$order: 9
 toc: 'false'
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 author: Gregable
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 Neste documento, você aprenderá sobre o formato da URL do Cache do AMP e como ele lida com solicitações.
@@ -78,7 +78,7 @@ O algoritmo básico para converter um domínio de editor em prefixo de domínio 
 1. Decodifique o domínio do editor com Punycode. Veja [RFC 3492](https://tools.ietf.org/html/rfc3492)
 2. Substitua qualquer "`-`" (hífen) na saída do primeiro passo por "`--`" (dois hífens).
 3. Substitua qualquer "`.`" (ponto) na saída do segundo passo por "`-`" (hífen).
-4. Se a saída do terceiro passo contiver "`-`" (hífen) nas posições 3 e 4, então acrescente um prefixo de "`0-`"  e um sufixo de "`-0`" para a saída do terceiro passo. Veja detalhes em [#26205](https://github.com/ampproject/amphtml/issues/26205).
+4. Se a saída do terceiro passo contiver "`-`" (hífen) nas posições 3 e 4, então acrescente um prefixo de "`0-`" e um sufixo de "`-0`" para a saída do terceiro passo. Veja detalhes em [#26205](https://github.com/ampproject/amphtml/issues/26205).
 5. Codifique a saída do terceiro passo com Punycode. Veja [RFC 3492](https://tools.ietf.org/html/rfc3492)
 
 Alguns exemplos do algoritmo básico:
@@ -215,7 +215,7 @@ Então o Cache do AMP devolverá o conteúdo do redirecionamento resolvido para 
 
 Exemplo: [https://amp-dev.cdn.ampproject.org/amp.dev/documentation/examples/api/redirect?url=https://amp.dev/index.amp.html](https://amp-dev.cdn.ampproject.org/amp.dev/documentation/examples/api/redirect?url=https://amp.dev/index.amp.html).
 
-Importante: Se você alterar a localização dos arquivos AMP no seu servidor, certifique-se de configurar um redirecionamento da localização  antiga para a nova.
+Importante: Se você alterar a localização dos arquivos AMP no seu servidor, certifique-se de configurar um redirecionamento da localização antiga para a nova.
 
 **Página não encontrada**
 

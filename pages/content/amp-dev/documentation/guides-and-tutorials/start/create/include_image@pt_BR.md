@@ -1,10 +1,10 @@
 ---
-"$title": Inclua uma imagem
-"$order": '2'
+'$title': Inclua uma imagem
+$order: 2
 description: A maioria das tags HTML podem ser usadas diretamente em AMP HTML, mas algumas, como a tag <img>, são substituídas por tags AMP HTML equivalentes ou ligeiramente melhoradas
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 A maioria das tags HTML podem ser usadas diretamente em AMP HTML, mas algumas, como a tag `<img>`, são substituídas por tags AMP HTML equivalentes ou ligeiramente melhoradas e personalizadas (e algumas poucas tags problemáticas são diretamente eliminadas, consulte [Tags HTML na especificação](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)).

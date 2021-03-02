@@ -1,11 +1,11 @@
 ---
-"$title": كيف يتم عمل تخزين مؤقت لصفحات AMP
-"$order": '0'
+'$title': كيف يتم عمل تخزين مؤقت لصفحات AMP
+$order: 0
 description: في هذا المستند، سوف تتعرف على دور ذاكرة AMP للتخزين المؤقت في منظومة AMP المتكاملة، وكيف يتم عمل تخزين مؤقت لصفحة AMP الخاصة بك.
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 ---
 
 في هذا المستند، سوف تتعرف على دور ذاكرة AMP للتخزين المؤقت في منظومة AMP المتكاملة، وكيف يتم عمل تخزين مؤقت لصفحة AMP الخاصة بك.
@@ -31,13 +31,13 @@ formats:
 - [Google AMP Cache](https://developers.google.com/amp/cache/)
 - [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
-يمثل AMP نظامًا متكاملا مفتوحًا فيما يشجع AMP بنشاط على تطوير المزيد من ذاكرات AMP للتخزين المؤقت. لتعلم الم[زيد حول  إنشاء](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c) ذاكرات AMP للتخزين المؤقت، راجع [إرشادات ذاكرة AMP للتخزين المؤقت](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).<br>ذاكرة Bing AMP
+يمثل AMP نظامًا متكاملا مفتوحًا فيما يشجع AMP بنشاط على تطوير المزيد من ذاكرات AMP للتخزين المؤقت. لتعلم الم[زيد حول إنشاء](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c) ذاكرات AMP للتخزين المؤقت، راجع [إرشادات ذاكرة AMP للتخزين المؤقت](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).<br>ذاكرة Bing AMP
 
 ## كيف أختار ذاكرة AMP للتخزين المؤقت؟
 
-كناشر، أنت لا تختار ذاكرة AMP للتخزين المؤقت، وإنما تقوم *المنصة فعليا* بالربط بالمحتوى الخاص بك والذي يختار ذاكرة AMP للتخزين المؤقت (إن وجدت) المطلوب استخدامها.
+كناشر، أنت لا تختار ذاكرة AMP للتخزين المؤقت، وإنما تقوم _المنصة فعليا_ بالربط بالمحتوى الخاص بك والذي يختار ذاكرة AMP للتخزين المؤقت (إن وجدت) المطلوب استخدامها.
 
-This is an inversion of the typical model where content delivery is the responsibility of the publisher.  However, this model allows platforms to provide their users with predictable load performance and among other things allows them to ensure required security and privacy invariants during AMP’s pre-rendering phase. To learn about the strict guidelines for creating AMP Caches, see the [AMP Cache Guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
+This is an inversion of the typical model where content delivery is the responsibility of the publisher. However, this model allows platforms to provide their users with predictable load performance and among other things allows them to ensure required security and privacy invariants during AMP’s pre-rendering phase. To learn about the strict guidelines for creating AMP Caches, see the [AMP Cache Guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
 
 ## هل يمكنني الانسحاب من ذاكرة التخزين المؤقت؟
 
@@ -55,15 +55,15 @@ Should you desire not to have your document cached, one option is to remove the 
 
 By using the AMP format, you are making your content available to be cached by AMP Caches. There are a few ways that your AMP page can end up in an AMP Cache:
 
-- **الاكتشاف من المنصة**:  تكتشف المنصات محتوى AMP الخاص بك عن طريق علامة `<html ⚡>` أو `<html amp>` وتقوم بعمل تخزين مؤقت للمحتوى. على سبيل المثال، يسجل Google Search المحتوى؛ ومع أي صحفة AMP صالحة ومحددة، تتم إضافة المحتوى إلى ذاكرة Google AMP للتخزين المؤقت.
+- **الاكتشاف من المنصة**: تكتشف المنصات محتوى AMP الخاص بك عن طريق علامة `<html ⚡>` أو `<html amp>` وتقوم بعمل تخزين مؤقت للمحتوى. على سبيل المثال، يسجل Google Search المحتوى؛ ومع أي صحفة AMP صالحة ومحددة، تتم إضافة المحتوى إلى ذاكرة Google AMP للتخزين المؤقت.
 
-- **Cache URL request**: Platforms can specifically request an AMP page by using the AMP Cache URL format.  The AMP Cache acts as a reverse proxy, therefore, when the platform accesses the page, it results in the page being cached automatically.
+- **Cache URL request**: Platforms can specifically request an AMP page by using the AMP Cache URL format. The AMP Cache acts as a reverse proxy, therefore, when the platform accesses the page, it results in the page being cached automatically.
 
-    - Google AMP Cache URL example: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
+  - Google AMP Cache URL example: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
 [tip type="note"] **ملاحظة –** عنوان URL لذاكرة AMP للتخزين المؤقت ليس عنوان URL للتعامل مع المستخدم، بمعنى، أن المستخدمين في العادة لا يطلب المحتوى عن طريق عناوين URL هذه. [/tip]
 
-- **Publisher addition**: Publishers can specifically add the AMP page to the AMP Cache.  This option is applicable only to the Google AMP Cache (see [Google AMP Cache: Update AMP Content](https://developers.google.com/amp/cache/update-cache)).
+- **Publisher addition**: Publishers can specifically add the AMP page to the AMP Cache. This option is applicable only to the Google AMP Cache (see [Google AMP Cache: Update AMP Content](https://developers.google.com/amp/cache/update-cache)).
 
 ## موارد إضافية
 

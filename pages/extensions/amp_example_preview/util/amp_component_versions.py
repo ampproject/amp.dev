@@ -47,7 +47,7 @@ def get_components(identifiers):
   result = []
 
   if identifiers:
-    if isinstance(identifiers, basestring):
+    if isinstance(identifiers, str):
       collection = identifiers.split(',')
     else:
       collection = identifiers

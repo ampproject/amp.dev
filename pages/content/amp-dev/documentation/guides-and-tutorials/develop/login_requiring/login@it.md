@@ -1,6 +1,6 @@
 ---
-"$title": Accesso
-"$order": '1'
+'$title': Accesso
+$order: 1
 description: La prima volta che si giunge alla pagina, si potranno vedere 2 commenti e un pulsante di accesso. Cercando il pulsante di accesso nel codice, sarà possibile trovare ...
 ---
 
@@ -12,6 +12,7 @@ Cercando il pulsante di accesso nel codice, sarà possibile trovare:
 
 [sourcecode:html]
 <span amp-access="NOT loggedIn" role="button" tabindex="0" amp-access-hide>
+
   <h5>Please login to comment</h5>
   <button on="tap:amp-access.login-sign-in" class="button-primary comment-button">Login</button>
 </span>
@@ -20,6 +21,7 @@ Cercando il pulsante di accesso nel codice, sarà possibile trovare:
 Il comportamento degli attributi relativi ad [`amp-access`](../../../../documentation/components/reference/amp-access.md) dipende da una configurazione a livello di pagina per [`amp-access`](../../../../documentation/components/reference/amp-access.md) , nel nostro caso, la seguente:
 
 [sourcecode:html]
+
 <script id="amp-access" type="application/json">
   {
     "authorization": "https://ampbyexample.com/samples_templates/comment_section/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
@@ -34,6 +36,7 @@ Il comportamento degli attributi relativi ad [`amp-access`](../../../../document
     }
   }
 </script>
+
 [/sourcecode]
 
 L'endpoint di autorizzazione è distribuito nell'ambito di AMPByExample. È compito dell'editore della pagina fornire tale endpoint. In questo esempio, per semplicità, abbiamo implementato una semplice logica per cui alla ricezione di tale richiesta, il server legge il valore di un cookie chiamato `ABE_LOGGED_IN`. Se il cookie non è presente, restituiamo una risposta JSON contenente `loggedIn = false`. Per cui, la prima volta che l'utente raggiunge questa pagina, la richiesta restituirà `loggedIn = false` e la pagina mostrerà il pulsante di accesso.
@@ -42,9 +45,9 @@ Dando ancora un'occhiata al codice HTML del pulsante, si può notare che, utiliz
 
 [sourcecode:json]
 {
-	"login": {
-    "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
-  }
+"login": {
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
+}
 }
 
 [/sourcecode]
@@ -59,7 +62,7 @@ Nell'esempio seguente, il valore per il parametro `return` viene aggiunto alla r
 
 Dopo che il server AMPByExample ha ricevuto la richiesta POST dalla pagina di accesso, se il nome utente di accesso e la password sono corretti, esso reindirizza la richiesta al `returnURL` sopra menzionato e aggiunge il parametro `#success=true`. Il sistema di runtime AMP ora può autorizzare la pagina e infine consentire l'aggiunta di un commento.
 
-È importante che sia chiaro cosa fa il sistema runtime AMP e cosa fa il server, poiché l'implementazione del server spetta  all''editore della pagina.
+È importante che sia chiaro cosa fa il sistema runtime AMP e cosa fa il server, poiché l'implementazione del server spetta all''editore della pagina.
 
 Un breve riepilogo:
 

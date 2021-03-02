@@ -1,9 +1,9 @@
 ---
-"$title": Üçüncü taraf saldırılarına karşı koruma
-"$order": '7'
+'$title': Üçüncü taraf saldırılarına karşı koruma
+$order: 7
 description: "AMP sayfalarınızı ve kullanıcılarınızı web'deki güvenlik açıklarından korumak için önlemler alın"
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 ---
 
@@ -24,4 +24,4 @@ Sayfalarınızın başına uygun meta etiketi ekleyerek bir CSP uygulayın. Aşa
 
 [Tam örneği buradan görebilirsiniz](https://github.com/ampproject/amphtml/blob/master/examples/csp.amp.html).
 
-[tip type="read-on"]  [Güvenlik açıkları ve CSP'lerden korunma hakkında buradan](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) daha fazla bilgiyi edinebilirsiniz. [/tip]
+[tip type="read-on"] [Güvenlik açıkları ve CSP'lerden korunma hakkında buradan](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) daha fazla bilgiyi edinebilirsiniz. [/tip]

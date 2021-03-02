@@ -1,6 +1,6 @@
 ---
-"$title": Xác thực cú pháp AMPHTML
-"$order": '3'
+'$title': Xác thực cú pháp AMPHTML
+$order: 3
 description: Để đảm bảo quảng cáo của bạn render đúng, bạn nên xác thực cú pháp AMPHTML của mình. Trong trình duyệt của bạn, mở Bộ xác thực AMP, và đảm bảo AMP4ADS là Định dạng HTML được chọn.
 ---
 

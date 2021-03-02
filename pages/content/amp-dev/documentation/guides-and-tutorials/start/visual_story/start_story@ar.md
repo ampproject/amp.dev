@@ -1,6 +1,6 @@
 ---
-"$title": بدء القصة الخاصة بنا
-"$order": '3'
+'$title': بدء القصة الخاصة بنا
+$order: 3
 description: يتم تمثيل قصة الويب بالكامل بواسطة مكون amp-story، والذي يعمل كحاوية لجميع الصفحات في القصة. ويكون عنصر amp-story مسؤولًا أيضًا عن ...
 author: bpaduch
 ---
@@ -13,8 +13,11 @@ author: bpaduch
 
 ```html
 <head>
-<script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+  <script
+    async
+    custom-element="amp-story"
+    src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+  ></script>
 </head>
 ```
 
@@ -22,8 +25,7 @@ author: bpaduch
 
 ```html
 <body>
-  <amp-story standalone>
-  </amp-story>
+  <amp-story standalone> </amp-story>
 </body>
 ```
 
@@ -35,17 +37,19 @@ author: bpaduch
 
 - عنوان القصة، ممثل عن طريق السمة `title` (مثل، "Joy of Pets").
 - اسم الناشر، ممثل عن طريق السمة `publisher` (مثل، "AMP tutorials").
-- شعار الناشر، ممثل عن طريق السمة `publisher-logo-src`.  وذلك عبارة عن عنوان URL لصورة شعار بتنسيق مربع بنسبة عرض إلى ارتفاع تبلغ 1 × 1.
+- شعار الناشر، ممثل عن طريق السمة `publisher-logo-src`. وذلك عبارة عن عنوان URL لصورة شعار بتنسيق مربع بنسبة عرض إلى ارتفاع تبلغ 1 × 1.
 - صورة ملصق للقصة، ممثلة بالسمة `poster-portrait-src`. وتلك عبارة عن عنوان URL للملصق، ويجب أن تكون الصورة بتنسيق عمودي مع نسبة عرض إلى ارتفاع 3 × 4.
 
 لنبدأ بإضافة هذه السمات إلى علامة [`amp-story`](../../../../documentation/components/reference/amp-story.md) الخاصة بنا:
 
 ```html
-<amp-story standalone
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-    poster-portrait-src="assets/cover.jpg">
+<amp-story
+  standalone
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+></amp-story>
 ```
 
 بالإضافة إلى هذه السمات المطلوبة، هناك سمات أخرى يمكنك تطبيقها. لمعرفة المزيد، راجع قسم [السمات](../../../../documentation/components/reference/amp-story.md#attributes) في المستندات المرجعية لـ [`amp-story`](../../../../documentation/components/reference/amp-story.md).

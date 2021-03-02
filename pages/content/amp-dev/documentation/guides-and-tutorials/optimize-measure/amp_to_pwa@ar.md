@@ -1,10 +1,10 @@
 ---
-"$title": تحويل موقع AMP الخاص بك إلى تطبيق ويب تقدمي (PWA)
-"$order": '10'
+'$title': تحويل موقع AMP الخاص بك إلى تطبيق ويب تقدمي (PWA)
+$order: 10
 description: من خلال تخزين الموارد مؤقتًا داخل المتصفح، يصبح تطبيق الويب التقدمي (PWA) قادرًا على توفير البيانات والأصول والصفحات غير المتصلة بالإنترنت للمستخدم لإبقائهم مشاركين وعلى اطّلاع.
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: crystalonscript
 ---
 
@@ -165,7 +165,7 @@ assets: []
 
 يمكنك اختبار أن عامل خدمة AMP الخاص بك يخزن الأصول الضرورية مؤقتًا ويقدّم حلاً مثاليًا دون اتصال بالإنترنت من خلال [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/progressive-web-apps).
 
-سنختبر Lyrical Lyghtning من خلال فتح لوحة DevTools بالضغط على `Ctrl + Shift + I` على نظام التشغيل Windows أو `Cmd + Opt + I` على نظام التشغيل Mac.  يمكنك أيضًا النقر بزر الماوس الأيمن على الصفحة وتحديد `فحص` من القائمة. ثم حدّد `التطبيق` لعرض تسجيل عامل الخدمة الخاص بك.
+سنختبر Lyrical Lyghtning من خلال فتح لوحة DevTools بالضغط على `Ctrl + Shift + I` على نظام التشغيل Windows أو `Cmd + Opt + I` على نظام التشغيل Mac. يمكنك أيضًا النقر بزر الماوس الأيمن على الصفحة وتحديد `فحص` من القائمة. ثم حدّد `التطبيق` لعرض تسجيل عامل الخدمة الخاص بك.
 
 {{ image('/static/img/docs/tutorials/amp-sw-test.png', 1349, 954, alt='DevTools panel open on lyrical lyghtning PWA' ) }}
 

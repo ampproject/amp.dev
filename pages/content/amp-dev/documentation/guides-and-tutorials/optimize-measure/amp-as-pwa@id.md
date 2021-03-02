@@ -1,12 +1,12 @@
 ---
-"$title": Kemudahan akses offline dan peningkatan kinerja
-"$order": '11'
+'$title': Kemudahan akses offline dan peningkatan kinerja
+$order: 11
 description: Pekerja Layanan (Service Worker) adalah proksi sisi klien yang berada di antara halaman Anda dan server, dan digunakan untuk membangun pengalaman offline yang fantastis, pemuatan cepat ....
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 contributors:
-- pbakaus
+  - pbakaus
 ---
 
 [Pekerja layanan](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) memungkinkan pengalaman offline yang kaya dan pengalaman pengguna yang konsisten di berbagai kekuatan jaringan. Dengan menyimpan sumber daya di dalam browser, aplikasi web dapat menyediakan data, aset, dan halaman offline kepada pengguna agar mereka tetap terlibat dan mendapatkan informasi.
@@ -51,11 +51,11 @@ Service Worker perlu didaftarkan pada halaman tertentu, karena jika tidak, brows
 
 Untuk melakukannya, sertakan komponen [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) terlebih dahulu melalui skripnya pada `<head>` halaman Anda:
 
-- [sourcecode:js]  importScripts('https://cdn.ampproject.org/sw/amp-sw.js');  [/sourcecode]
+- [sourcecode:js] importScripts('https://cdn.ampproject.org/sw/amp-sw.js'); [/sourcecode]
 
 - [sourcecode:js]
-      AMP_SW.init();
-      [/sourcecode]
+  AMP_SW.init();
+  [/sourcecode]
 
 - Selesai.
 
@@ -136,13 +136,13 @@ Anda dapat menggunakan teknik di atas untuk mengaktifkan akses offline ke situs 
 
 [sourcecode:js]
 self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    caches.open('mysite').then(function(cache) {
-      return cache.match(event.request).then(function(response) {
-        var fetchPromise = fetch(event.request).then(function(networkResponse) {
-          cache.put(event.request, networkResponse.clone());
-          return networkResponse;
-        })
+event.respondWith(
+caches.open('mysite').then(function(cache) {
+return cache.match(event.request).then(function(response) {
+var fetchPromise = fetch(event.request).then(function(networkResponse) {
+cache.put(event.request, networkResponse.clone());
+return networkResponse;
+})
 
         // Ubah respons di sini sebelum hilang..
         ...
@@ -150,7 +150,8 @@ self.addEventListener('fetch', function(event) {
         return response || fetchPromise;
       })
     })
-  );
+
+);
 });
 [/sourcecode]
 

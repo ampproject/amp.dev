@@ -1,9 +1,9 @@
 ---
-"$title": Proteja-se de ataques de terceiros
-"$order": '7'
+'$title': Proteja-se de ataques de terceiros
+$order: 7
 description: Aja para proteger suas páginas AMP e usuários contra vulnerabilidades de segurança na web
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 ---
 

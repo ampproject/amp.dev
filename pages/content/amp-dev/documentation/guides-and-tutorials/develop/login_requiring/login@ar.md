@@ -1,6 +1,6 @@
 ---
-"$title": تسجيل الدخول
-"$order": '1'
+'$title': تسجيل الدخول
+$order: 1
 description: في المرة الأولى التي تنتقل فيها إلى الصفحة، يمكنك مشاهدة تعليقين وزر تسجيل الدخول. إذا كنت تبحث عن زر تسجيل الدخول في الرمز، فستجد ...
 ---
 
@@ -12,6 +12,7 @@ description: في المرة الأولى التي تنتقل فيها إلى ا
 
 [sourcecode:html]
 <span amp-access="NOT loggedIn" role="button" tabindex="0" amp-access-hide>
+
   <h5>Please login to comment</h5>
   <button on="tap:amp-access.login-sign-in" class="button-primary comment-button">Login</button>
 </span>
@@ -20,6 +21,7 @@ description: في المرة الأولى التي تنتقل فيها إلى ا
 يعتمد سلوك السمات ذات الصلة بـ [`amp-access`](../../../../documentation/components/reference/amp-access.md) على التكوين على مستوى الصفحة لـ [`amp-access`](../../../../documentation/components/reference/amp-access.md)، وفي حالتنا، يكون:
 
 [sourcecode:html]
+
 <script id="amp-access" type="application/json">
   {
     "authorization": "https://ampbyexample.com/samples_templates/comment_section/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
@@ -34,6 +36,7 @@ description: في المرة الأولى التي تنتقل فيها إلى ا
     }
   }
 </script>
+
 [/sourcecode]
 
 يتم نشر نقطة نهاية التفويض كجزء من AMPByExample. إذ تقع مسؤولية توفير نقطة النهاية هذه على عاتق ناشر الصفحة. في نموذج الحالة هذا، ومن أجل التبسيط؛ قمنا بتنفيذ المنطق الأساسي بحيث يقرأ الخادم عند تلقي هذا الطلب قيمة ملف تعريف الارتباط المسمى `ABE_LOGGED_IN`. وإذا لم يكن ملف تعريف الارتباط موجودًا، فسنقوم بإرجاع استجابة JSON تتضمن `loggedIn = false`. وكنتيجة لذلك، في المرة الأولى التي يهبط فيها المستخدم إلى الصفحة، سيقوم هذا الطلب بإرجاع `loggedIn = false` وسيتم إظهار زر تسجيل الدخول.
@@ -42,14 +45,14 @@ description: في المرة الأولى التي تنتقل فيها إلى ا
 
 [sourcecode:json]
 {
-	"login": {
-    "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
-  }
+"login": {
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
+}
 }
 
 [/sourcecode]
 
-[tip type="note"] **ملحوظة–**  لاحظ أنه من الممكن تحديد عناوين URL مختلفة داخل عقدة تسجيل الدخول، ونقوم في هذه الحالة بتعريف `sign-in`، وفيما بعد نعرِّف `sign-out`. [/tip]
+[tip type="note"] **ملحوظة–** لاحظ أنه من الممكن تحديد عناوين URL مختلفة داخل عقدة تسجيل الدخول، ونقوم في هذه الحالة بتعريف `sign-in`، وفيما بعد نعرِّف `sign-out`. [/tip]
 
 إن صفحة تسجيل الدخول عبارة عن صفحة مطوَّرة بغير AMP نملأ فيها قيم تسجيل الدخول وكلمة المرور تبسيطًا للأمور. لاحظ استخدام نوع الإدخال المخفي `returnURL`، الذي يتم ملؤه عن طريق خادم AMPByExample عبر قوالب من جانب الخادم. ويقرأ الخادم هذه القيمة من معلمة تسمى `return`، فتتم إضافتها تلقائيًا بواسطة مكتبة AMP إلى عنوان URL لتسجيل الدخول.
 

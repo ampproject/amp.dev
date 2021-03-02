@@ -1,18 +1,18 @@
 ---
-"$title": Dodawanie obrazów i filmów
-"$order": '8'
+'$title': Dodawanie obrazów i filmów
+$order: 8
 description: Podobnie jak na zwykłej stronie HTML, AMP pozwala na osadzanie obrazów, filmów i treści audio. Dowiedz się, czym różnią się odpowiedniki AMP i dowiedz się, jak...
 formats:
-- websites
-- stories
-- email
-- ads
+  - websites
+  - stories
+  - email
+  - ads
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- Meggin
-- bpaduch
+  - Meggin
+  - bpaduch
 ---
 
 Podobnie jak na zwykłej stronie HTML, AMP pozwala na osadzanie **obrazów**, **filmów** i treści **audio**. Dowiedz się, czym różnią się odpowiedniki AMP i jak umieszczać je w swoich stronach.
@@ -24,20 +24,24 @@ AMP nie obsługuje w celu wyświetlania multimediów domyślnych odpowiedników 
 - Musimy zrozumieć układ strony przed załadowaniem zasobów, co jest kluczowe dla [obsługi wstępnego ładowania pierwszego okienka na stronie](../../../../about/how-amp-works.html#size-all-resources-statically).
 - Musimy kontrolować żądania sieci, aby [leniwie ładować zasoby i skutecznie nadawać im priorytety](../../../../about/how-amp-works.html#prioritize-resource-loading)
 
-Przestroga: chociaż nie są obsługiwane, *będą* one renderować, ale AMP nie będzie wykonywać [walidacji Twoich stron](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) i nie osiągniesz wszystkich korzyści, jakie zapewnia AMP.
+Przestroga: chociaż nie są obsługiwane, _będą_ one renderować, ale AMP nie będzie wykonywać [walidacji Twoich stron](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) i nie osiągniesz wszystkich korzyści, jakie zapewnia AMP.
 
 ## Obrazy
 
 Umieść obraz na swojej stronie, używając elementu [`amp-img`](../../../../documentation/components/reference/amp-img.md):
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="A beautiful sunset"
+<amp-img
+  alt="A beautiful sunset"
   src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
   width="264"
-  height="195">
+  height="195"
+>
 </amp-img>
 ```
+
 [/example]
 
 W tym najprostszym przykładzie obraz będzie wyświetlany z określoną stałą wysokością i szerokością. Należy jawnie ustawić co najmniej szerokość i wysokość.
@@ -47,15 +51,23 @@ W tym najprostszym przykładzie obraz będzie wyświetlany z określoną stałą
 Składnik [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) jest zależny od kodu JavaScript, więc jeśli użytkownik wyłączy skrypty, obrazy nie będą wyświetlane. W tym przypadku należy zapewnić zasoby rezerwowe obrazu za pomocą znaczników `<img>` i `<noscript>`:
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
+<amp-img
+  src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
   width="264"
-  height="195">
+  height="195"
+>
   <noscript>
-    <img src="{{server_for_email}}/static/inline-examples/images/sunset.jpg" width="264" height="195" />
+    <img
+      src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
+      width="264"
+      height="195"
+    />
   </noscript>
 </amp-img>
 ```
+
 [/example]
 
 ### Układy zaawansowane
@@ -63,14 +75,18 @@ Składnik [`<amp-img>`](../../../../documentation/components/reference/amp-img.m
 AMP znacznie ułatwia tworzenie w pełni responsywnych obrazów w porównaniu do standardowego CSS/HTML. W jego najbardziej podstawowej formie wszystko, co musisz zrobić, to dodać atrybut `layout="responsive"`:
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="A view of the sea"
+<amp-img
+  alt="A view of the sea"
   src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
   width="900"
   height="675"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-img>
 ```
+
 [/example]
 
 [tip type="read-on"] **CZYTAJ DALEJ —** dowiedz się więcej o [zaawansowanych technikach generowania układu](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md). [/tip]
@@ -86,17 +102,23 @@ AMP znacznie ułatwia tworzenie w pełni responsywnych obrazów w porównaniu do
 Element [`amp-anim`](../../../../documentation/components/reference/amp-anim.md) jest bardzo podobny do elementu [`amp-img`](../../../../documentation/components/reference/amp-img.md) i zapewnia dodatkowe funkcje zarządzania ładowaniem i odtwarzaniem obrazów animowanych, takich jak pliki GIF.
 
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
+
 ```html
-<amp-anim width="400"
+<amp-anim
+  width="400"
   height="300"
-  src="{{server_for_email}}/static/inline-examples/images/wavepool.gif">
-  <amp-img placeholder
+  src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
+>
+  <amp-img
+    placeholder
     width="400"
     height="300"
-    src="{{server_for_email}}/static/inline-examples/images/wavepool.png">
+    src="{{server_for_email}}/static/inline-examples/images/wavepool.png"
+  >
   </amp-img>
 </amp-anim>
 ```
+
 [/example]
 
 [tip type="note"] **UWAGA —** aby użyć tego składnika, dodaj kod `<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` w sekcji head strony. [/tip]
@@ -110,6 +132,7 @@ Użyj tego elementu tylko do bezpośredniego osadzania plików wideo HTML5. Elem
 Dodaj element zastępczy wyświetlany przed uruchomieniem wideo, a także zasoby rezerwowe na wypadek, gdy przeglądarka nie obsługuje wideo w formacie HTML5, na przykład:
 
 [example preview="inline" playground="true" imports="amp-video:0.1"]
+
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -121,6 +144,7 @@ Dodaj element zastępczy wyświetlany przed uruchomieniem wideo, a także zasoby
   </div>
 </amp-video>
 ```
+
 [/example]
 
 ## Audio
@@ -132,6 +156,7 @@ Użyj tego elementu tylko do bezpośredniego osadzania plików audio HTML5. Elem
 Dodaj element zastępczy wyświetlany przed uruchomieniem audio, a także zasoby rezerwowe na wypadek, gdy przeglądarka nie obsługuje audio w formacie HTML5, na przykład:
 
 [example preview="inline" playground="true" imports="amp-audio:0.1"]
+
 ```html
 <amp-audio width="400"
   height="200"
@@ -147,6 +172,7 @@ Dodaj element zastępczy wyświetlany przed uruchomieniem audio, a także zasoby
     src="{{server_for_email}}/static/inline-examples/audio/cat-meow.ogg">
 </amp-audio>
 ```
+
 [/example]
 
 [tip type="note"] **UWAGA —** aby użyć tego składnika, dodaj kod `<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` w sekcji head strony. [/tip]

@@ -1,9 +1,9 @@
 ---
-"$title": Protezione contro attacchi di terzi
-"$order": '7'
+'$title': Protezione contro attacchi di terzi
+$order: 7
 description: Adotta misure adeguate per proteggere le tue pagine AMP e gli utenti dalle vulnerabilità di sicurezza sul web
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 ---
 

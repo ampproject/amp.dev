@@ -1,8 +1,8 @@
 ---
-"$title": Ações e eventos no e-mail AMP
-order: '0'
+'$title': Ações e eventos no e-mail AMP
+$order: 0
 formats:
-- email
+  - email
 teaser:
   text: '[tip type="note"]'
 ---
@@ -72,7 +72,7 @@ Veja a tabela abaixo para descrições de cada parte da sintaxe.
   </tr>
 </table>
 
-## Lidando com múltiplos eventos  <a name="handling-multiple-events"></a>
+## Lidando com múltiplos eventos <a name="handling-multiple-events"></a>
 
 Você pode escutar múltiplos eventos em um elemento separando os eventos com um ponto-e-vírgula `;`.
 
@@ -107,7 +107,7 @@ Por exemplo, o seguinte é possível em AMP:
 
 ## Eventos específicos por elemento <a name="element-specific-events"></a>
 
-### * - todos os elementos <a name="---all-elements"></a>
+### \* - todos os elementos <a name="---all-elements"></a>
 
 <table>
   <tr>
@@ -322,7 +322,7 @@ Por exemplo, o seguinte é possível em AMP:
 
 ## Element-specific actions <a name="element-specific-actions"></a>
 
-### * (all elements) <a name="-all-elements"></a>
+### \* (all elements) <a name="-all-elements"></a>
 
 <table>
   <tr>
@@ -524,4 +524,4 @@ O alvo `AMP` é fornecido pelo runtime do AMP e implementa ações top-level que
   </tr>
 </table>
 
-<sup>1</sup>Quando usado com <a href="#multiple-actions-for-one-event">múltiplas ações</a>, ações subsequentes irão aguardar a conclusão de <code>setState()</code> antes da chamada. Apenas um único  <code>setState()</code> é permitido por evento.
+<sup>1</sup>Quando usado com <a href="#multiple-actions-for-one-event">múltiplas ações</a>, ações subsequentes irão aguardar a conclusão de <code>setState()</code> antes da chamada. Apenas um único <code>setState()</code> é permitido por evento.

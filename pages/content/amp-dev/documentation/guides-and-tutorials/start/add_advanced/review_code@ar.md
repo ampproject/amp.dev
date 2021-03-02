@@ -1,6 +1,6 @@
 ---
-"$title": مراجعة رمز البدء
-"$order": '1'
+'$title': مراجعة رمز البدء
+$order: 1
 description: '"قبل البدء في إضافة رمز، هيا نراجع مثال صفحة article.amp.html، والذي يجب أن يكون كالتالي: ..."'
 ---
 
@@ -163,7 +163,7 @@ description: '"قبل البدء في إضافة رمز، هيا نراجع مث
 
 ## تمكين أداة التحقق من صحة AMP
 
-قبل أن نبدل الصفحة، هيا نقوم بتمكين [أداة التحقق من صحة AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) لكي نعرف أننا نعمل على رمز AMP HTML صالح.  **أضف** معرف المقطع  هذا إلى عنوان URL الخاص بك:
+قبل أن نبدل الصفحة، هيا نقوم بتمكين [أداة التحقق من صحة AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) لكي نعرف أننا نعمل على رمز AMP HTML صالح. **أضف** معرف المقطع هذا إلى عنوان URL الخاص بك:
 
 ```text
 #development=1

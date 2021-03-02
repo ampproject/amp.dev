@@ -1,8 +1,8 @@
 ---
-"$title": Struktur dan perenderan email AMP
-order: '2'
+'$title': Struktur dan perenderan email AMP
+$order: 2
 formats:
-- email
+  - email
 teaser:
   text: 'Struktur email sama dengan '
 toc: 'true'
@@ -45,7 +45,7 @@ Bagian `text/x-amp-html` harus ditempatkan di bawah sebuah nodus `multipart/alte
 
 `multipart/alternative` harus berisi minimal satu nodus (`text/plain` atau `text/html`) non-AMP, selain nodus `text/x-amp-html`. Ini akan ditampilkan kepada pengguna dengan klien email yang tidak mendukung AMP atau yang memilih menolaknya melalui pengaturan penyedia emailnya.
 
-Catatan: Beberapa klien email[[1]](https://openradar.appspot.com/radar?id=6054696888303616) hanya akan merender bagian MIME terakhir, jadi sebaiknya tempatkan bagian MIME `text/x-amp-html` *sebelum* bagian MIME `text/html`.
+Catatan: Beberapa klien email[[1]](https://openradar.appspot.com/radar?id=6054696888303616) hanya akan merender bagian MIME terakhir, jadi sebaiknya tempatkan bagian MIME `text/x-amp-html` _sebelum_ bagian MIME `text/html`.
 
 ### Membalas/meneruskan semantik <a name="replyingforwarding-semantics"></a>
 

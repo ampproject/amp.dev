@@ -1,8 +1,8 @@
 ---
-"$title": AMP への広告テクノロジーの統合
-order: '3'
+'$title': AMP への広告テクノロジーの統合
+$order: 3
 formats:
-- ads
+  - ads
 teaser:
   text: AMP HTML の統合を検討中の広告テクノロジープロバイダーは、以下のガイドラインをお読みください。
 toc: 'true'
@@ -19,7 +19,7 @@ AMP HTML の統合を検討中の広告テクノロジープロバイダーは�
 
 ## アドサーバー <a name="ad-server"></a>
 
-*例 : DFP、A9*
+_例 : DFP、A9_
 
 サポートするサイト運営者は、アドサーバーとして、プロバイダーが提供する JavaScript ライブラリを含め、広告をフェッチしてサイト運営者のウェブサイトにレンダリングする上でその JavaScript ライブラリに依存するさまざまな「広告スニペット」を配置します。
 
@@ -29,15 +29,15 @@ AMP では、サイト運営者が任意の JavaScript を実行できないよ�
 
 [sourcecode:html]
 <amp-ad
-  width="300"
-  height="250"
-  type="a9"
-  data-aax_size="300x250"
-  data-aax_pubname="test123"
-  data-aax_src="302"
->
-</amp-ad>
-[/sourcecode]
+width="300"
+height="250"
+type="a9"
+data-aax_size="300x250"
+data-aax_pubname="test123"
+data-aax_src="302"
+
+> </amp-ad>
+> [/sourcecode]
 
 `type` の後に続く各属性は、広告を配信するために Amazon の A9 サーバーが期待するパラメーターに依存しています。[a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) ファイルには、`https://c.amazon-adsystem.com/aax2/assoc.js` URL を介して A9 サーバーを呼び出す JavaScript 呼び出しにパラメーターがどのようにマッピングされているかが示されています。AMP 広告タグによって渡される対応するパラメーターは、広告を返すための URL にアペンドされます。
 
@@ -45,7 +45,7 @@ AMP では、サイト運営者が任意の JavaScript を実行できないよ�
 
 ## サプライサイドプラットフォーム（SSP）または Ad Exchange <a name="supply-side-platform-ssp-or-an-ad-exchange"></a>
 
-*例 : Rubicon、Criteo OR Appnexus、Ad-Exchange*
+_例 : Rubicon、Criteo OR Appnexus、Ad-Exchange_
 
 サイト運営者のウェブサイトから直接呼び出されることを希望するセルサイドプラットフォームの場合は、アドサーバーとの統合について上述した指示に従う必要があります。amp-ad タグに独自の `type` 値を追加すると、サイト運営者にタグを直接配布できるため、サイト運営者自身が AMP ページにタグを直接挿入することができます。
 
@@ -53,7 +53,7 @@ AMP では、サイト運営者が任意の JavaScript を実行できないよ�
 
 ## 広告代理店 <a name="ad-agency"></a>
 
-*例 : Essence、Omnicom*
+_例 : Essence、Omnicom_
 
 サイト運営者と協力し、開発するクリエイティブが AMP 対応であることを確認してください。すべてのクリエイティブは iframe に配信され、そのサイズは広告が呼び出されたときにけってするため、クリエイティブによって iframe のサイズが変更されないように確認する必要があります。
 
@@ -61,7 +61,7 @@ AMP では、サイト運営者が任意の JavaScript を実行できないよ�
 
 ## 動画プレーヤー <a name="video-player"></a>
 
-*例 : Brightcove、Ooyala*
+_例 : Brightcove、Ooyala_
 
 通常の HTML ページで動作する動画プレーヤーは AMP では動作しないため、AMP ランタイムがプレーヤーを読み込めるようにする特殊タグを作成する必要があります。Brightcove は、メディアと広告を AMP ページで再生できるようにするカスタム [amp-brightcove](https://github.com/ampproject/amphtml/blob/master/extensions/amp-brightcove/amp-brightcove.md) タグを作成しました。
 
@@ -69,21 +69,21 @@ Brightcove プレーヤーは、以下のようにして呼び出すことがで
 
 [sourcecode:html]
 <amp-brightcove
-  data-account="1290862519001"
-  data-video-id="ref:amp-docs-sample"
-  data-player="S1Tt8cgaM"
-  layout="responsive"
-  width="480"
-  height="270"
->
-</amp-brightcove>
-[/sourcecode]
+data-account="1290862519001"
+data-video-id="ref:amp-docs-sample"
+data-player="S1Tt8cgaM"
+layout="responsive"
+width="480"
+height="270"
+
+> </amp-brightcove>
+> [/sourcecode]
 
 Brightcove のような amp タグを開発する手順については、[こちらのプルリクエスト](https://github.com/ampproject/amphtml/pull/1052)を参照してください。
 
 ## 動画広告ネットワーク <a name="video-ad-network"></a>
 
-*例 : Tremor、Brightroll*
+_例 : Tremor、Brightroll_
 
 動画広告ネットワークの場合は、サイト運営者と協力して、以下の点を確認してください。
 
@@ -92,7 +92,7 @@ Brightcove のような amp タグを開発する手順については、[こち
 
 ## データ管理プラットフォーム（DMP）<a name="data-management-platform-dmp"></a>
 
-*例 : KRUX、Bluekai*
+_例 : KRUX、Bluekai_
 
 「[カスタム広告構成の強化方法](https://amp.dev/documentation/components/amp-ad#enhance-incoming-ad-configuration)」を参照してください。
 
@@ -100,7 +100,7 @@ Brightcove のような amp タグを開発する手順については、[こち
 
 ## ビューアビリティプロバイダー <a name="viewability-provider"></a>
 
-*例 : MOAT、Integral Ad Science*
+_例 : MOAT、Integral Ad Science_
 
 ビューアビリティプロバイダーは、一般的にアドサーバーのクリエイティブラッパーを介してサイト運営者に統合します。この場合は、クリエイティブラッパーによってすべてのアセットが HTTPS 経由で読み込まれるようにしてください。
 
@@ -110,6 +110,6 @@ MOAT の例の場合は、`http://js.moatads.com` が `https://z.moatads.com` �
 
 ## コンテンツ推奨プラットフォーム <a name="content-recommendation-platform"></a>
 
-*例 : Taboola、Outbrain*
+_例 : Taboola、Outbrain_
 
 現時点でサイト運営者のウェブサイトに JavaScript が埋め込まれているが、AMP ページで動作しない場合に役立ちます。AMP ページでコンテンツを推奨する場合は、コンテンツの詳細をリクエストする [`amp-embed` 拡張機能](https://amp.dev/documentation/components/amp-ad)を使用しすることをお勧めします。[Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md) の例を参照してください。

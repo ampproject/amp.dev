@@ -1,6 +1,6 @@
 ---
-"$title": Podsumowanie
-"$order": '4'
+'$title': Podsumowanie
+$order: 4
 description: W tym samouczku omówiliśmy sposób łączenia składników amp-access i amp-form w celu utworzenia sekcji komentarzy, która wymaga logowania.
 ---
 

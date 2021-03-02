@@ -1,6 +1,6 @@
 ---
-"$title": Görüntü reklamı oluşturma
-"$order": '1'
+'$title': Görüntü reklamı oluşturma
+$order: 1
 description: 'Reklamımız, reklamı yapılan siteye bağlantı içeren basit bir görüntüdür. Görüntüyü amp-img etiketini kullanarak göstereceğiz. Kod aşağıdadır: ...'
 ---
 
@@ -11,9 +11,12 @@ Reklamımız, reklamı yapılan siteye bağlantı içeren basit bir görüntüd�
 ```html
 <body>
   <a target="_blank" href="https://www.amp.dev">
-    <amp-img width="300" height="250"
-        alt="Learn amp"
-        src="/static/img/docs/ads/amp-300x250.png"></amp-img>
+    <amp-img
+      width="300"
+      height="250"
+      alt="Learn amp"
+      src="/static/img/docs/ads/amp-300x250.png"
+    ></amp-img>
   </a>
 </body>
 ```

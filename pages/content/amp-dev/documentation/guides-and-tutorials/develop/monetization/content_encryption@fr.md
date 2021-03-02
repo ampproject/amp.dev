@@ -1,10 +1,10 @@
 ---
 formats:
-- websites
-"$title": Comment protéger le contenu de votre abonnement avec le chiffrement côté client
-"$titles":
+  - websites
+'$title': Comment protéger le contenu de votre abonnement avec le chiffrement côté client
+'$titles':
   teaser: Protect your subscription content with client-side encryption.
-"$order": '10'
+$order: 10
 description: "Résolvez les problèmes de chiffrement de contenu en implémentant la validation des abonnés premium et le déchiffrement du contenu côté client. Avec cette solution, les utilisateurs disposant d'un accès premium pourront déchiffrer du contenu sans avoir à charger une nouvelle page ou à attendre qu'un back-end réponde!"
 author: CrystalOnScript
 ---
@@ -23,7 +23,7 @@ Résolvez ces deux problèmes en implémentant la validation des abonnés premiu
 
 Pour implémenter le déchiffrage côté client, vous combinerez la cryptographie à clé symétrique et à clé publique de la manière suivante:
 
-1. Créez une clé symétrique aléatoire pour chaque document, en accordant à chaque document une clé *unique*. {{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='Unique keys for each unique document.') }}
+1. Créez une clé symétrique aléatoire pour chaque document, en accordant à chaque document une clé _unique_. {{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='Unique keys for each unique document.') }}
 2. Chiffrez le contenu premium avec la clé symétrique de son document. {{ image('/static/img/docs/guides/cse/cse3.jpg', 130, 243, align='', layout='intrinsic', alt='Use the document key to encrypt premium content.') }} La clé est symétrique pour permettre à la même clé de chiffrer et déchiffrer le contenu. {{ image('/static/img/docs/guides/cse/cse4.jpg', 188, 141, align='', layout='intrinsic', alt='The same key that encrypts the document also decrypts it.') }}
 3. Chiffrez la clé du document avec une clé publique, en utilisant un protocole de [cryptage hybride ](https://en.wikipedia.org/wiki/Hybrid_cryptosystem)pour chiffrer les clés symétriques. {{ image('/static/img/docs/guides/cse/cse5.jpg', 309, 114, align='', layout='intrinsic', alt='A hybrid encryption protocol encrypts the symmetric key with a public key.') }}
 4. À l'aide du ou des composants [`<amp-subscriptions>`](https://amp.dev/documentation/components/amp-subscriptions/) et/ou [`<amp-subscriptions-google>`](https://amp.dev/documentation/components/amp-subscriptions-google/?format=websites), enregistrez la clé du document chiffré dans le document AMP, avec le contenu chiffré. {{ image('/static/img/docs/guides/cse/cse6.jpg', 264, 261, align='', layout='intrinsic', alt='Both keys are stored inside of the AMP document.') }}
@@ -43,7 +43,7 @@ Suivez les étapes ci-dessous pour intégrer la gestion du chiffrement AMP à vo
 
 ## Étape 1: créer une paire de clés publique/privée
 
-Pour chiffrer la clé symétrique du document, vous devez disposer de votre propre paire de clés publique/privée. Le chiffrement à clé publique est un protocole de [chiffrage hybride](https://en.wikipedia.org/wiki/Hybrid_cryptosystem), en particulier pour chiffrer une méthode de cryptage asymétrique ECIES à [courbe elliptique P-256](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)) avec une méthode de cryptage symétrique [AES-GCM](https://tools.ietf.org/html/rfc5288) (128 bits).
+Pour chiffrer la clé symétrique du document, vous devez disposer de votre propre paire de clés publique/privée. Le chiffrement à clé publique est un protocole de [chiffrage hybride](https://en.wikipedia.org/wiki/Hybrid_cryptosystem), en particulier pour chiffrer une méthode de cryptage asymétrique ECIES à [courbe elliptique P-256](<https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)>) avec une méthode de cryptage symétrique [AES-GCM](https://tools.ietf.org/html/rfc5288) (128 bits).
 
 Nous exigeons que la gestion des clés publiques soit effectuée avec [Tink](https://github.com/google/tink) en utilisant [ce type de clé asymétrique](https://github.com/subscriptions-project/encryption/blob/617f0911c9870dae900a232e2dc8ee9196677a89/golang/vendor/github.com/google/tink/go/hybrid/hybrid_key_templates.go#L32). Pour créer votre paire de clés privée-publique, utilisez l'une des méthodes suivantes:
 

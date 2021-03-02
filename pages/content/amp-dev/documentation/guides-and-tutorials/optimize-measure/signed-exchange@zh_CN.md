@@ -1,8 +1,8 @@
 ---
-"$title": 使用 Signed Exchange 提供 AMP
-"$order": '4'
+'$title': 使用 Signed Exchange 提供 AMP
+$order: 4
 formats:
-- 网站
+  - 网站
 author: CrystalOnScript
 ---
 
@@ -10,7 +10,7 @@ AMP 采用缓存和预加载等技术，除了格式之外，在速度方面也�
 
 [Signed Exchange](https://developers.google.com/web/updates/2018/11/signed-exchanges) 包含有效的 AMP 文档以及该内容的原始网址。此信息受数字签名保护，数字签名将文档与其声明的网址密切关联。这使得浏览器可以在网址栏中安全地显示原始网址，而不显示向浏览器传送字节的计算机的主机名。
 
-*除了*（而不是取代）常规 AMP 内容外，还会传送签名的 AMP 内容。
+_除了_（而不是取代）常规 AMP 内容外，还会传送签名的 AMP 内容。
 
 {{ image('/static/img/docs/guides/sxg/sxg.png', 411, 293, layout='responsive', alt='显示 Signed Exchange 中的网址的图片', caption=' ', align='' ) }}
 
@@ -22,12 +22,12 @@ AMP 采用缓存和预加载等技术，除了格式之外，在速度方面也�
 
 - 可以配置和控制服务器生成的 HTTP 标头（大部分纯基于网络的托管解决方案（例如 Blogger）都与 Signed Exchange *不*兼容。）
 - 可以采用多种方式生成 AMP Signed Exchange，例如，通过运行 [`amppackager`](https://github.com/ampproject/amppackager/blob/master/README.md)、作为 [Go 二进制文件](https://golang.org/doc/install)或者在 [Docker 虚拟机](https://docs.docker.com/machine/get-started/)中生成。
-    - 该打包器需要每六个星期更新一次。
+  - 该打包器需要每六个星期更新一次。
 - 可以在 HTTP 边缘服务器上[改变](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary) `Accept` 和 `AMP-Cache-Transform` 标头，从而对同一个网址返回不同的内容。
 - 运行 `amppackager` 的系统必须能够向以下项发出出站网络请求：
-    - 颁发证书的证书授权机构
-    - 托管要签署的 AMP 文档的发布商服务器
-    - 用于获取当前 AMP 版本的 `cdn.ampproject.org`
+  - 颁发证书的证书授权机构
+  - 托管要签署的 AMP 文档的发布商服务器
+  - 用于获取当前 AMP 版本的 `cdn.ampproject.org`
 - 在同一数据中心运行的所有 `amppackager` 实例之间共享的永久存储文件系统。
 
 # 实现 Signed Exchange

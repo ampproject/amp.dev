@@ -1,8 +1,8 @@
 ---
-"$title": Configuration
-"$order": '0'
-description: 'Avant de commencer ce tutoriel, vous aurez besoin des éléments suivants : - Des bases en HTML, CSS et JavaScript - Une compréhension des concepts de base d''AMP, voir ...'
-"$parent": "/content/docs/fundamentals/add_advanced.md"
+'$title': Configuration
+$order: 0
+description: "Avant de commencer ce tutoriel, vous aurez besoin des éléments suivants : - Des bases en HTML, CSS et JavaScript - Une compréhension des concepts de base d'AMP, voir ..."
+'$parent': '/content/docs/fundamentals/add_advanced.md'
 ---
 
 ## Prérequis

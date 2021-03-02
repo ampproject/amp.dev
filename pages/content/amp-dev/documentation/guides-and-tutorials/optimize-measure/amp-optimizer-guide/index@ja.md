@@ -1,11 +1,11 @@
 ---
-"$title": AMP オプティマイザの使用
-"$order": '2'
-"$hidden": 'true'
+'$title': AMP オプティマイザの使用
+$order: 2
+'$hidden': 'true'
 description: AMP オプティマイザはサイトの AMP キャッシュ最適化を行うツールです。優れたページエクスペリエンスを作り出し、Core Web Vitals コンプライアンスを達成するには、AMP オプティマイザの使用が鍵となります。このガイドでは、AMP オプティマイザを活用して AMP ページを最適化する方法を説明します。
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

@@ -1,13 +1,13 @@
 ---
-"$title": AMP 发布时间表
-order: '10'
+'$title': AMP 发布时间表
+$order: 10
 formats:
-- websites
-- email
-- stories
-- ads
+  - websites
+  - email
+  - stories
+  - ads
 teaser:
-  text: "- 发布渠道"
+  text: '- 发布渠道'
 ---
 
 <!--
@@ -18,14 +18,14 @@ have a look and request a pull request there.
 -->
 
 - [发布渠道 ](#release-channels)
-    - [每夜 ](#nightly)
-    - [每周 ](#weekly)
-        - [Beta 和实验渠道 ](#experimental-and-beta-channels)
-    - [长期稳定 (lts) ](#long-term-stable-lts)
+  - [每夜 ](#nightly)
+  - [每周 ](#weekly)
+    - [Beta 和实验渠道 ](#experimental-and-beta-channels)
+  - [长期稳定 (lts) ](#long-term-stable-lts)
 - [确定您的变更是否包含在某一版本中 ](#determining-if-your-change-is-in-a-release)
 - [发布节奏 ](#release-cadence)
-    - [详细时间表 ](#detailed-schedule)
-    - [发布冻结 ](#release-freezes)
+  - [详细时间表 ](#detailed-schedule)
+  - [发布冻结 ](#release-freezes)
 
 新版 AMP 会于每周二推送到所有 AMP 页面。**在 AMP 中的变更合并到 amphtml 仓库的主分支后，变更通常需要 1-2 周时间才能对所有用户生效**。
 
@@ -33,7 +33,7 @@ have a look and request a pull request there.
 
 AMP 运行时和扩展项通过各种不同的*发布渠道*提供。每种渠道均服务于开发者和 AMP HTML 项目本身的需求。请参阅[发布节奏](#release-cadence)部分，查看 [`ampproject/amphtml`](https://github.com/ampproject/amphtml) 仓库内的代码如何以及何时应用到发布构建的详细明细表。
 
-要确定某个拉取请求是否已包含在以下任何发布渠道中，请查找 GitHub 标签 *PR Use: In Canary*、*PR Use: In Production* 或 *PR Use: In LTS*（有关更多详细信息，请参阅[确定您的变更是否包含在某一版本中](#Determining-if-your-change-is-in-a-release)部分）。
+要确定某个拉取请求是否已包含在以下任何发布渠道中，请查找 GitHub 标签 _PR Use: In Canary_、_PR Use: In Production_ 或 _PR Use: In LTS_（有关更多详细信息，请参阅[确定您的变更是否包含在某一版本中](#determining-if-your-change-is-in-a-release)部分）。
 
 ### 每夜 <a name="nightly"></a>
 
@@ -47,13 +47,13 @@ AMP 运行时和扩展项通过各种不同的*发布渠道*提供。每种渠�
 
 *每周*发布渠道被认为是主要的“长期有效”发布渠道。每周都会将上周的 **Beta** 版升级到**稳定**发布渠道，并将上周最后一个**每夜**版升级到**实验**和 **Beta** 发布渠道（请参阅[详细时间表](#detailed-schedule)部分）。
 
-使用两套构建配置创建发布构建：*Canary* 配置和*正式*配置。**实验**和 **Beta** 发布渠道源于同一提交。但是，**实验**渠道使用 *Canary* 配置，而 **Beta** 渠道则使用*正式*配置。*Canary* 配置支持在*正式*配置中可能会被关闭的实验性组件和功能。通过[实验页面](https://cdn.ampproject.org/experiments.html)，可以选择加入**实验**或 **Beta** 渠道。
+使用两套构建配置创建发布构建：_Canary_ 配置和*正式*配置。**实验**和 **Beta** 发布渠道源于同一提交。但是，**实验**渠道使用 _Canary_ 配置，而 **Beta** 渠道则使用*正式*配置。_Canary_ 配置支持在*正式*配置中可能会被关闭的实验性组件和功能。通过[实验页面](https://cdn.ampproject.org/experiments.html)，可以选择加入**实验**或 **Beta** 渠道。
 
 **稳定**发布渠道使用*正式*配置构建，将提供给大多数 AMP 页面。由于 **Beta** 发布渠道同样基于*正式*配置构建，因此它代表了将于下周升级到**稳定**渠道的确切构建（有可能通过挑选来解决最后时刻出现的问题；请参阅[贡献代码](https://github.com/ampproject/amphtml/blob/master/contributing/contributing-code.md#Cherry-picks)）。
 
 #### Beta 和实验渠道 <a name="beta-and-experimental-channels"></a>
 
-*Beta* 和*实验*渠道是下一个稳定版 AMP 的预发布候选。每周二（[发布冻结](#release-freezes)周除外）都会将上周的**每夜**版升级到开发者选择加入的 **Beta** 和**实验**渠道。我们将用一天的时间确认这些渠道中没有引入功能退化或性能下降问题，并于周三将此版本提供给一小部分页面。然后，在下周二将同一版本升级到**稳定**渠道。
+_Beta_ 和*实验*渠道是下一个稳定版 AMP 的预发布候选。每周二（[发布冻结](#release-freezes)周除外）都会将上周的**每夜**版升级到开发者选择加入的 **Beta** 和**实验**渠道。我们将用一天的时间确认这些渠道中没有引入功能退化或性能下降问题，并于周三将此版本提供给一小部分页面。然后，在下周二将同一版本升级到**稳定**渠道。
 
 可以选择加入这些渠道。有关详细信息，请参阅 [DEVELOPING.md] 中的[选择加入](https://github.com/ampproject/amphtml/blob/master/contributing/DEVELOPING.md#opting-in-to-pre-release-channels)部分。
 
@@ -67,7 +67,7 @@ AMP 运行时和扩展项通过各种不同的*发布渠道*提供。每种渠�
 - 测试并试用尚未提供给所有用户的新功能
 - 在质量保证 (QA) 中使用以确保您的网站与仍在开发的 AMP 功能兼容
 
-*实验渠道***可能稳定性稍差**，并且可能包含尚未提供给所有用户的新功能。
+\*实验渠道**\*可能稳定性稍差**，并且可能包含尚未提供给所有用户的新功能。
 
 ### 长期稳定 (lts) <a name="long-term-stable-lts"></a>
 
@@ -75,16 +75,16 @@ AMP 运行时和扩展项通过各种不同的*发布渠道*提供。每种渠�
 
 如果每个月的第二个周一为节假日，将在[发布冻结](#release-freezes)结束后执行升级。
 
-重要提示：使用 **lts** 发布渠道的发布商不应使用新引入的功能。由于周期较长，**lts** 版本可能落后于 [`ampproject/amphtml`](https://github.com/ampproject/amphtml) 的 `HEAD` 长达七周时间。请参阅[确定您的变更是否包含在某一版本中](#Determining-if-your-change-is-in-a-release)部分，验证变更能否在您选择的发布周期内实现。
+重要提示：使用 **lts** 发布渠道的发布商不应使用新引入的功能。由于周期较长，**lts** 版本可能落后于 [`ampproject/amphtml`](https://github.com/ampproject/amphtml) 的 `HEAD` 长达七周时间。请参阅[确定您的变更是否包含在某一版本中](#determining-if-your-change-is-in-a-release)部分，验证变更能否在您选择的发布周期内实现。
 
 ## 确定您的变更是否包含在某一版本中 <a name="determining-if-your-change-is-in-a-release"></a>
 
-[*Type: Release* GitHub 问题](https://github.com/ampproject/amphtml/labels/Type%3A%20Release)用于跟踪当前和过往版本的状态；从最初着手编写，到通过**实验**/**Beta** 渠道执行测试，再到通过**稳定**和 **lts** 渠道实现最终发布。将在 [AMP Slack #release 频道](https://amphtml.slack.com/messages/C4NVAR0H3/)（[注册 Slack](https://bit.ly/amp-slack-signup)）中提供有关版本的公告。
+[_Type: Release_ GitHub 问题](https://github.com/ampproject/amphtml/labels/Type%3A%20Release)用于跟踪当前和过往版本的状态；从最初着手编写，到通过**实验**/**Beta** 渠道执行测试，再到通过**稳定**和 **lts** 渠道实现最终发布。将在 [AMP Slack #release 频道](https://amphtml.slack.com/messages/C4NVAR0H3/)（[注册 Slack](https://bit.ly/amp-slack-signup)）中提供有关版本的公告。
 
 您可以使用以下任一方式确定给定构建中的变更：
 
-- 每个发布构建的 [*Type: Release* GitHub 问题](https://github.com/ampproject/amphtml/labels/Type%3A%20Release)都会包含指向特定[版本页面](https://github.com/ampproject/amphtml/releases)的链接，版本页面上列出了该版本中包含的变更。
-- 在拉取请求中的变更应用到*每周*或 **lts** 构建后，会对拉取请求添加 [*PR Use: In Beta / Experimental*](https://github.com/ampproject/amphtml/issues?q=label%3A%22PR+use%3A+In+Beta+%2F+Experimental%22)、[*PR Use: In Stable*](https://github.com/ampproject/amphtml/issues?utf8=%E2%9C%93&q=label%3A%22PR%20use%3A%20In%20Production%22) 和 [*PR Use: In LTS*](https://github.com/ampproject/amphtml/issues?utf8=%E2%9C%93&q=label%3A%22PR%20use%3A%20In%20LTS%22) 标签。创建构建和添加标签之间可能会存在延迟。
+- 每个发布构建的 [_Type: Release_ GitHub 问题](https://github.com/ampproject/amphtml/labels/Type%3A%20Release)都会包含指向特定[版本页面](https://github.com/ampproject/amphtml/releases)的链接，版本页面上列出了该版本中包含的变更。
+- 在拉取请求中的变更应用到*每周*或 **lts** 构建后，会对拉取请求添加 [_PR Use: In Beta / Experimental_](https://github.com/ampproject/amphtml/issues?q=label%3A%22PR+use%3A+In+Beta+%2F+Experimental%22)、[_PR Use: In Stable_](https://github.com/ampproject/amphtml/issues?utf8=%E2%9C%93&q=label%3A%22PR%20use%3A%20In%20Production%22) 和 [_PR Use: In LTS_](https://github.com/ampproject/amphtml/issues?utf8=%E2%9C%93&q=label%3A%22PR%20use%3A%20In%20LTS%22) 标签。创建构建和添加标签之间可能会存在延迟。
 
 ## 发布节奏 <a name="release-cadence"></a>
 
@@ -100,7 +100,7 @@ AMP 运行时和扩展项通过各种不同的*发布渠道*提供。每种渠�
 
 ### 详细时间表 <a name="detailed-schedule"></a>
 
-尽管复杂问题可能会导致延迟，但我们将尽力遵循这一时间表。您可以通过 [*Type: Release* GitHub 问题](https://github.com/ampproject/amphtml/labels/Type%3A%20Release)以及 [AMP Slack #release 频道](https://amphtml.slack.com/messages/C4NVAR0H3/)（[注册 Slack](https://bit.ly/amp-slack-signup)）跟踪有关任何版本的最新状态。
+尽管复杂问题可能会导致延迟，但我们将尽力遵循这一时间表。您可以通过 [_Type: Release_ GitHub 问题](https://github.com/ampproject/amphtml/labels/Type%3A%20Release)以及 [AMP Slack #release 频道](https://amphtml.slack.com/messages/C4NVAR0H3/)（[注册 Slack](https://bit.ly/amp-slack-signup)）跟踪有关任何版本的最新状态。
 
 - 周二（[太平洋时间上午 11 点](https://www.google.com/search?q=11am+pacific+in+current+time+zone)）：将基于<a>通过我们所有测试的最新主构建</a>创建新的**实验**和 <strong>Beta</strong> 发布构建，并分别推送给选择加入 [AMP 实验渠道](#amp-experimental-and-beta-channels)或 [AMP Beta 渠道](#amp-experimental-and-beta-channels)的 AMP 用户。
 - 周三：我们会检查*实验渠道*和 *Beta 渠道*用户的错误报告，如果一切正常，我们会将 **Beta** 版推送给 1% 的 AMP 页面

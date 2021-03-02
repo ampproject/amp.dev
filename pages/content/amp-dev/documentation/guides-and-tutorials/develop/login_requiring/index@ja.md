@@ -1,11 +1,11 @@
 ---
-"$title": ログインが必要な AMP ページの作成
-"$order": '0'
+'$title': ログインが必要な AMP ページの作成
+$order: 0
 description: ページ上でユーザーが行う操作（たとえば「コメントを投稿する」）は、ログインフローを使って条件付けできます。AMP ページにログインフローを実装するには、 ...
 numbered: '1'
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 ページ上でユーザーが行う操作（たとえば「コメントを投稿する」）は、ログインフローを使って条件付けできます。AMP ページにログインフローを実装するには、[`amp-access`](../../../../documentation/components/reference/amp-access.md) コンポーネントに <a><code>amp-form</code></a> コンポーネントを組み合わせて使用します。

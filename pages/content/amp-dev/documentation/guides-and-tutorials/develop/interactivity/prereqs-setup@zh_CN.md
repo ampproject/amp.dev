@@ -1,8 +1,8 @@
 ---
-"$title": 设置
-"$order": '0'
+'$title': 设置
+$order: 0
 description: 在开始学习本教程之前，您需要做好以下准备：- 掌握基本的 HTML、CSS 和 JavaScript 知识 - 安装一款浏览器 - 安装一款文本编辑器…
-"$parent": "/content/docs/interaction_dynamic/interactivity.md"
+'$parent': '/content/docs/interaction_dynamic/interactivity.md'
 ---
 
 ## 前提条件

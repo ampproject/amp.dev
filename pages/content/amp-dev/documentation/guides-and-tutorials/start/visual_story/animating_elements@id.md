@@ -1,9 +1,9 @@
 ---
-"$title": Animasi elemen
-"$order": '6'
+'$title': Animasi elemen
+$order: 6
 description: Anda dapat menyempurnakan Cerita Web lebih lanjut dengan menerapkan animasi pembukaan pada elemen di dalam halaman. Misalnya, Anda dapat membuat judul Anda terbang dari ....
 components:
-- anim
+  - anim
 author: bpaduch
 ---
 
@@ -125,7 +125,7 @@ Untuk menerapkan animasi pembukaan pada elemen, Anda harus menetapkan <code>anim
 
 Setiap preset animasi memiliki nilai waktu default bawaan untuk:
 
-- **penundaan**: Ini adalah jumlah waktu untuk menunda proses memulai animasi.  Misalnya, penundaan selama .3s berarti animasi akan dimulai di halaman setelah 0,3 detik. Penundaan selama 0s (0 detik) berarti animasi akan langsung mulai.
+- **penundaan**: Ini adalah jumlah waktu untuk menunda proses memulai animasi. Misalnya, penundaan selama .3s berarti animasi akan dimulai di halaman setelah 0,3 detik. Penundaan selama 0s (0 detik) berarti animasi akan langsung mulai.
 - **durasi**: Ini adalah lama waktu animasi ditampilkan. Misalnya, animasi fade-in dari awal hingga akhir membutuhkan waktu 500 milidetik.
 
 Anda dapat menyesuaikan waktu animasi dengan mengubah penundaan atau durasi melalui atribut `animate-in-delay` dan `animate-in-duration`. Dalam contoh berikut ini, `my-element` terbang masuk dari kiri halaman setelah 0,3 detik, dan sepenuhnya telah terbang masuk dalam waktu 0,5 detik:
@@ -150,21 +150,33 @@ Halaman Cerita Web terakhir kita terdiri dari dua lapisan: lapisan pertama adala
 <amp-story-page id="page5">
   <amp-story-grid-layer template="vertical" class="noedge">
     <div class="wrapper">
-      <amp-img src="assets/cat.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/cat.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/dog.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/dog.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/bird.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/bird.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/rabbit.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/rabbit.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
     </div>
   </amp-story-grid-layer>
@@ -183,9 +195,9 @@ Kelihatannya bagus, tapi semuanya tampak statis! Ayo, kita animasikan!
 Kita akan mulai dengan menganimasikan pembukaan teks spanduk dan mengaturnya agar melesat masuk dari kanan halaman. Tambahkan `animate-in="whoosh-in-right"` ke elemen `<p>` seperti yang berikut ini:
 
 ```html
-<p class="banner-text"
-  animate-in="whoosh-in-right">
-Pets can lower your stress levels!</p>
+<p class="banner-text" animate-in="whoosh-in-right">
+  Pets can lower your stress levels!
+</p>
 ```
 
 Muat ulang halaman cerita Anda di browser, dan pastikan spanduk masuk dengan cepat.
@@ -193,25 +205,37 @@ Muat ulang halaman cerita Anda di browser, dan pastikan spanduk masuk dengan cep
 Selanjutnya, mari kita buat semua gambar muncul perlahan (fade-in). Tambahkan `animate-in="fade-in"` ke setiap elemen [`amp-img`](../../../../documentation/components/reference/amp-img.md) agar kode tampak seperti ini:
 
 ```html
-<amp-img src="assets/cat.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/cat.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/dog.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/dog.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/bird.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/bird.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/rabbit.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/rabbit.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
 ```
 
@@ -220,34 +244,45 @@ Jika Anda memuat ulang halaman, masing-masing gambar akan muncul perlahan. Itu a
 Mari kita tunda masuknya gambar pertama agar gambar dimunculkan setelah spanduk teks masuk, misalnya .4s (0,4 detik). Tiga gambar yang tersisa dapat muncul pada .2s (0,2 detik) setelah gambar sebelumnya masuk. Untuk setiap elemen [`amp-img`](../../../../documentation/components/reference/amp-img.md) tambahkan `animate-in-delay=""` dengan nilai waktu tunda yang sesuai. Kode Anda akan terlihat seperti ini:
 
 ```html
-<amp-img src="assets/cat.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="0.4s">
+<amp-img
+  src="assets/cat.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="0.4s"
+>
 </amp-img>
-<amp-img src="assets/dog.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="0.6s">
+<amp-img
+  src="assets/dog.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="0.6s"
+>
 </amp-img>
-<amp-img src="assets/bird.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay=".8s">
+<amp-img
+  src="assets/bird.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay=".8s"
+>
 </amp-img>
-<amp-img src="assets/rabbit.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="1s">
+<amp-img
+  src="assets/rabbit.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="1s"
+>
 </amp-img>
-
 ```
 
-Muat ulang artikel Anda.  Halaman terakhir Anda akan terlihat seperti ini:
+Muat ulang artikel Anda. Halaman terakhir Anda akan terlihat seperti ini:
 
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Page 5 collage', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 

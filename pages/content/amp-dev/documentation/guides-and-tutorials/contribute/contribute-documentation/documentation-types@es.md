@@ -1,12 +1,12 @@
 ---
-"$title": Tipos de documentos
-"$order": '1'
+'$title': Tipos de documentos
+$order: 1
 description: Tipos de documentos y contribuciones que se aceptan en amp.dev
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 toc: 'false'
 ---

@@ -1,6 +1,6 @@
 ---
-"$title": Iniziamo la nostra storia
-"$order": '3'
+'$title': Iniziamo la nostra storia
+$order: 3
 description: Una storia web completa è rappresentata dal componente amp-story, che funge da contenitore per tutte le pagine della storia. Il componente amp-story è anche responsabile di ...
 author: bpaduch
 ---
@@ -13,8 +13,11 @@ Una storia web completa è rappresentata dal componente [`amp-story`](../../../.
 
 ```html
 <head>
-<script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+  <script
+    async
+    custom-element="amp-story"
+    src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+  ></script>
 </head>
 ```
 
@@ -22,8 +25,7 @@ Una storia web completa è rappresentata dal componente [`amp-story`](../../../.
 
 ```html
 <body>
-  <amp-story standalone>
-  </amp-story>
+  <amp-story standalone> </amp-story>
 </body>
 ```
 
@@ -41,11 +43,13 @@ Per rendere le storie individuabili su web, sono necessari alcuni metadati per f
 Aggiungiamo questi attributi al nostro tag [`amp-story`](../../../../documentation/components/reference/amp-story.md):
 
 ```html
-<amp-story standalone
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-    poster-portrait-src="assets/cover.jpg">
+<amp-story
+  standalone
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+></amp-story>
 ```
 
 Oltre a questi attributi obbligatori, ci sono altri attributi applicabili. Per saperne di più, consultare la sezione [attributi](../../../../documentation/components/reference/amp-story.md#attributes) della documentazione di riferimento di [`amp-story`](../../../../documentation/components/reference/amp-story.md).

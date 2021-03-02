@@ -1,10 +1,10 @@
 ---
 formats:
-- websites
-"$title": Membuat halaman Anda dapat ditemukan
-"$titles":
+  - websites
+'$title': Membuat halaman Anda dapat ditemukan
+'$titles':
   teaser: Make your pages discoverable
-"$order": '5'
+$order: 5
 description: 'Dalam beberapa kasus, Anda mungkin ingin memiliki versi non-AMP dan AMP dari halaman yang sama, contoh: artikel berita. Pertimbangkan ini: Jika Google Search ....'
 teaser:
   icon: temukan

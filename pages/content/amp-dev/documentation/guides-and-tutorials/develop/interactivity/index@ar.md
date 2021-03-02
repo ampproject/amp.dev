@@ -1,11 +1,11 @@
 ---
-"$title": إنشاء صفحات AMP تفاعلية
-"$path": "/documentation/guides-and-tutorials/develop/interactivity/index.html"
-"$order": '0'
+'$title': إنشاء صفحات AMP تفاعلية
+'$path': '/documentation/guides-and-tutorials/develop/interactivity/index.html'
+$order: 0
 description: ستتعلم في هذا البرنامج التعليمي طريقة استخدام ربط البيانات والتعبيرات لإنشاء صفحات AMP تفاعلية رائعة باستخدام amp-bid ...
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/interactivity-final-page.jpg', 415, 738, align='right third', caption='Completed AMP page for this tutorial') }}

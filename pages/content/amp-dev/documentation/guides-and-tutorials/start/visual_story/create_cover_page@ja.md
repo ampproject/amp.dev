@@ -1,6 +1,6 @@
 ---
-"$title": カバーページの作成
-"$order": '4'
+'$title': カバーページの作成
+$order: 4
 description: ページを作成するには、amp-story の子要素として <amp-story-page> 要素を追加します。ページには固有の ID を割り当てます。ここでは、最初のページ（カバーページ）に、固有の ...
 author: bpaduch
 ---
@@ -10,13 +10,14 @@ author: bpaduch
 ページを作成するには、[`amp-story`](../../../../documentation/components/reference/amp-story.md) の子要素として `<amp-story-page>` を**追加**します。ページには固有の ID を**割り当て**ます。ここでは、最初のページ（カバーページ）に、固有の ID `cover` を割り当てます。
 
 ```html
-<amp-story standalone
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-    poster-portrait-src="assets/cover.jpg">
-   <amp-story-page id="cover">
-   </amp-story-page>
+<amp-story
+  standalone
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+>
+  <amp-story-page id="cover"> </amp-story-page>
 </amp-story>
 ```
 
@@ -40,9 +41,12 @@ AMP ストーリーページのレイヤーも、グラフィックスのレイ�
 ```html
 <amp-story-page id="cover">
   <amp-story-grid-layer template="fill">
-    <amp-img src="assets/cover.jpg"
-        width="720" height="1280"
-        layout="responsive">
+    <amp-img
+      src="assets/cover.jpg"
+      width="720"
+      height="1280"
+      layout="responsive"
+    >
     </amp-img>
   </amp-story-grid-layer>
 </amp-story-page>
@@ -107,7 +111,7 @@ AMP ストーリーページのレイヤーも、グラフィックスのレイ�
 
 ```html
 <amp-story-grid-layer>
- <!--our first layer -->
+  <!--our first layer -->
 </amp-story-grid-layer>
 <amp-story-grid-layer template="vertical">
   <h1>The Joy of Pets</h1>

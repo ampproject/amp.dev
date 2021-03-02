@@ -1,10 +1,10 @@
 ---
-"$title": Registre-se para distribuição por remetente
-"$order": '1'
+'$title': Registre-se para distribuição por remetente
+$order: 1
 description: Registre-se para distribuição por remetente de e-mails AMP
-"$category": Start
+'$category': Start
 formats:
-- email
+  - email
 author: CrystalOnScript
 ---
 

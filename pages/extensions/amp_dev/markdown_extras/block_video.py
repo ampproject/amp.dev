@@ -28,8 +28,8 @@ def _transform(content):
                 r'v=(\w*)', attributes['src']).group(1) + '\' %}\n'
 
         # Add in other variables
-        for name, value in attributes.iteritems():
-            if isinstance(value, basestring):
+        for name, value in attributes.items():
+            if isinstance(value, str):
                 replacement += '{% set ' + name + ' = \'' + value + '\' %}\n'
             else:
                 value = str(value)

@@ -1,6 +1,6 @@
 ---
-"$title": Создание обычной HTML-страницы
-"$order": '1'
+'$title': Создание обычной HTML-страницы
+$order: 1
 description: В директории проекта есть файл article.html. Это новостная статья, на основе которой мы создадим эквивалентную AMP-страницу...
 ---
 
@@ -9,15 +9,14 @@ description: В директории проекта есть файл article.ht
 1. **Скопируйте** весь код из файла `article.html` и вставьте его в новый файл.
 2. **Сохраните** новый файл под именем `article.amp.html`.
 
-[tip type="note"] **ПРИМЕЧАНИЕ.**  Имя AMP-файлов не обязательно должно заканчиваться на `.amp.html` (может быть любым). Чтобы отделять AMP-страницы от канонических версий, многие издатели используют параметры в конце URL-адреса, например:  `http://publisher.com/article.html?amp`. [/tip]
+[tip type="note"] **ПРИМЕЧАНИЕ.** Имя AMP-файлов не обязательно должно заканчиваться на `.amp.html` (может быть любым). Чтобы отделять AMP-страницы от канонических версий, многие издатели используют параметры в конце URL-адреса, например: `http://publisher.com/article.html?amp`. [/tip]
 
 Содержимое вашего файла `article.amp.html` должно выглядеть следующим образом:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-
     <title>News Article</title>
 
     <link href="base.css" rel="stylesheet" />
@@ -25,15 +24,16 @@ description: В директории проекта есть файл article.ht
     <script type="text/javascript" src="base.js"></script>
   </head>
   <body>
-    <header>
-      News Site
-    </header>
+    <header>News Site</header>
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
     </article>
-    <img src="mountains.jpg">
+    <img src="mountains.jpg" />
   </body>
 </html>
 ```

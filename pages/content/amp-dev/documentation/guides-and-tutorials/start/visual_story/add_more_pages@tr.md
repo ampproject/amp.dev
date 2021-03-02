@@ -1,6 +1,6 @@
 ---
-"$title": Daha fazla sayfa ekleme
-"$order": '5'
+'$title': Daha fazla sayfa ekleme
+$order: 5
 description: Artık bir Web Hikayesine sayfa eklemeye aşina olduğunuza göre, "The Joy of Pets" hikayemize sonraki sayfaları benzer şekilde ekleyebilirsiniz.
 author: bpaduch
 ---

@@ -1,6 +1,6 @@
 ---
-"$title": 常见属性
-"$order": '1'
+'$title': 常见属性
+$order: 1
 description: AMP 提供了一系列可供很多 AMP 组件（和 HTML 元素）使用的常见属性。本文档将逐一介绍每种常见属性。
 toc: 'true'
 ---
@@ -16,7 +16,7 @@ fallback 是一种惯例，可让相应元素告知读者，浏览器不支持�
 示例：
 
 ```html
-<amp-anim src="animated.gif" width="466" height="355" layout="responsive" >
+<amp-anim src="animated.gif" width="466" height="355" layout="responsive">
   <div fallback>Cannot play animated images on this device.</div>
 </amp-anim>
 ```
@@ -35,9 +35,12 @@ fallback 是一种惯例，可让相应元素告知读者，浏览器不支持�
 示例：
 
 ```html
-<amp-img src="amp.png"
-    width="320" height="256"
-    heights="(min-width:500px) 200px, 80%">
+<amp-img
+  src="amp.png"
+  width="320"
+  height="256"
+  heights="(min-width:500px) 200px, 80%"
+>
 </amp-img>
 ```
 
@@ -50,11 +53,13 @@ AMP 提供了一系列[布局](../../../documentation/guides-and-tutorials/devel
 示例：
 
 ```html
-<amp-img src="/img/amp.jpg"
-    width="1080"
-    height="610"
-    layout="responsive"
-    alt="an image">
+<amp-img
+  src="/img/amp.jpg"
+  width="1080"
+  height="610"
+  layout="responsive"
+  alt="an image"
+>
 </amp-img>
 ```
 
@@ -68,15 +73,19 @@ AMP 提供了一系列[布局](../../../documentation/guides-and-tutorials/devel
 
 ```html
 <amp-img
-    media="(min-width: 650px)"
-    src="wide.jpg"
-    width="466"
-    height="355" layout="responsive"></amp-img>
+  media="(min-width: 650px)"
+  src="wide.jpg"
+  width="466"
+  height="355"
+  layout="responsive"
+></amp-img>
 <amp-img
-    media="(max-width: 649px)"
-    src="narrow.jpg"
-    width="527"
-    height="193" layout="responsive"></amp-img>
+  media="(max-width: 649px)"
+  src="narrow.jpg"
+  width="527"
+  height="193"
+  layout="responsive"
+></amp-img>
 ```
 
 有关详情，请参阅[布局和媒体查询](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#element-media-queries)。
@@ -90,11 +99,7 @@ AMP 提供了一系列[布局](../../../documentation/guides-and-tutorials/devel
 示例：
 
 ```html
-<amp-img src="card.jpg"
-    noloading
-    height="190"
-    width="297"
-    layout="responsive">
+<amp-img src="card.jpg" noloading height="190" width="297" layout="responsive">
 </amp-img>
 ```
 
@@ -114,9 +119,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 
 ```html
 <button on="tap:my-lightbox">Open lightbox</button>
-<amp-lightbox id="my-lightbox" layout="nodisplay">
-  ...
-</amp-lightbox>
+<amp-lightbox id="my-lightbox" layout="nodisplay"> ... </amp-lightbox>
 ```
 
 有关详情，请参阅 [AMP 中的操作和事件](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md)。
@@ -144,20 +147,25 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 示例：
 
 ```html
-<amp-img src="amp.png"
-    width="400" height="300"
-    layout="responsive"
-    sizes="(min-width: 320px) 320px, 100vw">
+<amp-img
+  src="amp.png"
+  width="400"
+  height="300"
+  layout="responsive"
+  sizes="(min-width: 320px) 320px, 100vw"
+>
 </amp-img>
 ```
 
-将产生以下嵌套的` img `标签：
+将产生以下嵌套的`img`标签：
 
 ```html
-<img decoding="async"
-    src="amp.png"
-    sizes="(min-width: 320px) 320px, 100vw"
-    class="i-amphtml-fill-content i-amphtml-replaced-content">
+<img
+  decoding="async"
+  src="amp.png"
+  sizes="(min-width: 320px) 320px, 100vw"
+  class="i-amphtml-fill-content i-amphtml-replaced-content"
+/>
 ```
 
 有关详情，请参阅[关于 srcset、sizes 和 heights 的艺术指导](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md)。
@@ -169,10 +177,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 示例：
 
 ```html
-<amp-anim width="245"
-    height="300"
-    src="/img/cat.gif"
-    alt="cat animation">
+<amp-anim width="245" height="300" src="/img/cat.gif" alt="cat animation">
 </amp-anim>
 ```
 

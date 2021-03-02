@@ -1,6 +1,6 @@
 ---
-"$title": Crie o anúncio de imagem
-"$order": '1'
+'$title': Crie o anúncio de imagem
+$order: 1
 description: 'Nosso anúncio é uma imagem simples com um link para o site anunciado. Mostraremos a imagem usando a tag amp-img. Eis o código:'
 ---
 
@@ -11,9 +11,12 @@ Nosso anúncio é uma imagem simples com um link para o site anunciado. Mostrare
 ```html
 <body>
   <a target="_blank" href="https://www.amp.dev">
-    <amp-img width="300" height="250"
-        alt="Learn amp"
-        src="/static/img/docs/ads/amp-300x250.png"></amp-img>
+    <amp-img
+      width="300"
+      height="250"
+      alt="Learn amp"
+      src="/static/img/docs/ads/amp-300x250.png"
+    ></amp-img>
   </a>
 </body>
 ```

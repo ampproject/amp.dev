@@ -1,6 +1,6 @@
 ---
 '$title': Najlepsze praktyki tworzenia reklam fabularnych Web
-'$order': '16'
+$order: 16
 description: Relacje Web to interaktywne, pełnoekranowe materiały, angażujące czytelników w treść. Reklamy wyświetlane w relacjach Web powinny być spójne z relacjami Web.
 formats:
   - ads

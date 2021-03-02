@@ -1,6 +1,6 @@
 ---
-"$title": Вход
-"$order": '1'
+'$title': Вход
+$order: 1
 description: При первом заходе на страницу вы увидите 2 комментария и кнопку входа. Если поискать кнопку входа в коде страницы, вот что вы обнаружите...
 ---
 
@@ -12,6 +12,7 @@ description: При первом заходе на страницу вы уви�
 
 [sourcecode:html]
 <span amp-access="NOT loggedIn" role="button" tabindex="0" amp-access-hide>
+
   <h5>Please login to comment</h5>
   <button on="tap:amp-access.login-sign-in" class="button-primary comment-button">Login</button>
 </span>
@@ -20,6 +21,7 @@ description: При первом заходе на страницу вы уви�
 Поведение атрибутов, связанных с компонентом [`amp-access`](../../../../documentation/components/reference/amp-access.md), определяется конфигурацией компонента [`amp-access`](../../../../documentation/components/reference/amp-access.md) в масштабе всей страницы; в нашем случае она такова:
 
 [sourcecode:html]
+
 <script id="amp-access" type="application/json">
   {
     "authorization": "https://ampbyexample.com/samples_templates/comment_section/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
@@ -34,6 +36,7 @@ description: При первом заходе на страницу вы уви�
     }
   }
 </script>
+
 [/sourcecode]
 
 Конечная точка авторизации разворачивается в рамках AMPByExample. Предоставлять эту конечную точку должен издатель страницы, однако в нашем примере с целью его упрощения мы реализовали базовую логику, чтобы при получении запроса сервер считывал содержимое cookie-файла под названием `ABE_LOGGED_IN`. Если cookie-файл отсутствует, мы возвращаем ответ в формате JSON с содержимым `loggedIn = false`. Поэтому, когда пользователь в первый раз заходит на страницу, запрос возвращает ответ `loggedIn = false`, в результате чего показывается кнопка входа.
@@ -42,9 +45,9 @@ description: При первом заходе на страницу вы уви�
 
 [sourcecode:json]
 {
-	"login": {
-    "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
-  }
+"login": {
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
+}
 }
 
 [/sourcecode]

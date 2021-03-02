@@ -1,9 +1,9 @@
 ---
-"$title": Монетизация AMP-страницы с помощью рекламы
-"$order": '0'
+'$title': Монетизация AMP-страницы с помощью рекламы
+$order: 0
 description: В этом руководстве представлены инструкции и передовые методы показа рекламы на ваших AMP-страницах. Итак, чтобы отображать рекламу в AMP-контексте, вам нужно добавить на свою AMP-страницу...
 formats:
-- websites
+  - websites
 ---
 
 В этом руководстве представлены инструкции и передовые методы показа рекламы на ваших AMP-страницах.
@@ -21,7 +21,11 @@ formats:
 Компонент [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) — это настраиваемое рекламное расширение для библиотеки AMP. В основе [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) лежит специальный код JavaScript, который тщательно спроектирован под оптимальную производительность. Для запуска компонента [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) необходимо добавить нужный этому компоненту код JavaScript в раздел `head` вашей AMP-страницы:
 
 ```html
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script
+  async
+  custom-element="amp-ad"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+></script>
 ```
 
 ### Шаг 2. Добавьте тег amp-ad на свою AMP-страницу
@@ -31,8 +35,7 @@ formats:
 В этом примере мы добавляем рекламное место для показа рекламы из сети a9:
 
 ```html
-<amp-ad type="a9">
-</amp-ad>
+<amp-ad type="a9"> </amp-ad>
 ```
 
 ### Шаг 3. Укажите размер рекламного блока
@@ -40,9 +43,7 @@ formats:
 Добавьте в тег <a><code data-md-type="codespan">amp-ad</code></a> атрибуты <code>width</code> и `height`. Это определит размер данной рекламы на вашей AMP-странице:
 
 ```html
-<amp-ad type="a9">
-   width="300" height="250"
-</amp-ad>
+<amp-ad type="a9"> width="300" height="250" </amp-ad>
 ```
 
 ### Шаг 4. Настройте параметры рекламной сети
@@ -50,11 +51,14 @@ formats:
 В каждой сети имеются определенные атрибуты данных, необходимые для показа рекламы. Ознакомьтесь с документацией рекламной сети по использованию [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) и добавьте необходимые атрибуты. В приведенном ниже примере для сети a9 требуются дополнительные параметры для указания размера рекламы и еще кое-какие сведения:
 
 ```html
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -63,12 +67,15 @@ formats:
 Некоторые рекламные сети позволяют использовать заполнитель, который будет отображен до тех пор, пока реклама не станет доступна для просмотра. Это улучшает визуальное восприятие страницы, предотвращая появление «прорех» при ее загрузке. Чтобы указать заполнитель, добавьте дочерний элемент с атрибутом `placeholder`. Дополнительные сведения см. в разделе [Заполнители и резервные элементы](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ```html
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-   <amp-img placeholder src="placeholder-image.jpg"></amp-img>
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
+  <amp-img placeholder src="placeholder-image.jpg"></amp-img>
 </amp-ad>
 ```
 
@@ -77,12 +84,15 @@ formats:
 Некоторые рекламные сети позволяют использовать резервный элемент, который будет показан, если реклама недоступна. Чтобы указать резервный элемент, добавьте дочерний элемент с атрибутом `fallback`. Дополнительные сведения см. в разделе [Заполнители и резервные элементы](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ```html
-<amp-ad type="a9"
-    width="300" height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-   <amp-img fallback src="fallback-image.jpg"></amp-img>
+<amp-ad
+  type="a9"
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
+  <amp-img fallback src="fallback-image.jpg"></amp-img>
 </amp-ad>
 ```
 
@@ -133,12 +143,12 @@ formats:
 ### Инновации: предлагайте наиболее привлекательные рекламные продукты
 
 - **Размещайте рекламу на дополнительных AMP-страницах,** чтобы получать дополнительный доход:
-    - [Реклама в карусели](../../../../documentation/examples/documentation/Carousel_Ad.html)
-    - [Реклама в лайтбоксе](../../../../documentation/examples/documentation/Lightbox_Ad.html)
-    - ... и [другое](../../../../documentation/examples/index.html)
+  - [Реклама в карусели](../../../../documentation/examples/documentation/Carousel_Ad.html)
+  - [Реклама в лайтбоксе](../../../../documentation/examples/documentation/Lightbox_Ad.html)
+  - ... и [другое](../../../../documentation/examples/index.html)
 - **Внедряйте новые форматы для напрямую продаваемой рекламы**, чтобы снабдить вашу команду продаж высокоэффективными инновационными рекламными продуктами:
-    - [Прикрепленная реклама](../../../../documentation/examples/documentation/amp-sticky-ad.html)
-    - [Ковер-самолет](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
+  - [Прикрепленная реклама](../../../../documentation/examples/documentation/amp-sticky-ad.html)
+  - [Ковер-самолет](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
 
 ## Дополнительные ресурсы
 

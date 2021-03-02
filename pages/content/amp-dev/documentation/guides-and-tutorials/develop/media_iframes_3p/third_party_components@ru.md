@@ -1,16 +1,16 @@
 ---
-"$title": Как добавлять сторонний контент
-"$order": '9'
+'$title': Как добавлять сторонний контент
+$order: 9
 description: Узнайте, как размещать сторонний контент на своих страницах ...
 formats:
-- websites
+  - websites
 components:
-- iframe
-- facebook
+  - iframe
+  - facebook
 author: Meggin
 contributors:
-- pbakaus
-- bpaduch
+  - pbakaus
+  - bpaduch
 ---
 
 Ознакомьтесь с рекомендациями по размещению стороннего контента на ваших страницах.
@@ -22,19 +22,25 @@ contributors:
 Для этого разместите между тегами `<head>` следующий скрипт:
 
 [sourcecode:html]
+
 <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+
 [/sourcecode]
 
 В результате пропорции твита будут изменены автоматически в соответствии с заданными вами размерами, однако его внешний вид может быть неоптимальным. В этом случае вручную укажите более подходящие значения ширины и высоты твита или используйте атрибут media, чтобы соотношение сторон менялось в зависимости от ширины экрана.
 
 [example preview="inline" playground="true" imports="amp-twitter:0.1"]
+
 ```html
-<amp-twitter width="500"
+<amp-twitter
+  width="500"
   height="583"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
+
 [/example]
 
 [tip type="tip"] **СОВЕТ.** Дополнительные примеры использования [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) можно увидеть в рамках курса [AMP By Example](../../../../documentation/examples/documentation/amp-twitter.html). [/tip]
@@ -46,19 +52,25 @@ contributors:
 Для этого разместите между тегами `<head>` следующий скрипт:
 
 [sourcecode:html]
+
 <script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+
 [/sourcecode]
 
 Затем вставьте код data-shortcode из URL изображения. Например, в URL `https://instagram.com/p/fBwFP` он выглядит так: `fBwFP`. В адаптивных макетах Instagram используется фиксированное соотношение сторон, поэтому значения ширины и высоты должны быть соответствующими:
 
 [example preview="inline" playground="true" imports="amp-instagram:0.1"]
+
 ```html
-<amp-instagram data-shortcode="fBwFP"
+<amp-instagram
+  data-shortcode="fBwFP"
   width="320"
   height="392"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-instagram>
 ```
+
 [/example]
 
 [tip type="tip"] **СОВЕТ.** Дополнительные примеры использования [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) можно найти на страницах курса [AMP By Example](../../../../documentation/examples/documentation/amp-instagram.html). [/tip]
@@ -70,7 +82,9 @@ contributors:
 Для этого разместите между тегами `<head>` следующий скрипт:
 
 [sourcecode:html]
+
 <script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
+
 [/sourcecode]
 
 ##### Пример кода для добавления записи Facebook
@@ -78,9 +92,12 @@ contributors:
 Source:
 
 ```html
-<amp-facebook width="486" height="657"
-    layout="responsive"
-    data-href="https://www.facebook.com/zuck/posts/10102593740125791">
+<amp-facebook
+  width="486"
+  height="657"
+  layout="responsive"
+  data-href="https://www.facebook.com/zuck/posts/10102593740125791"
+>
 </amp-facebook>
 ```
 
@@ -91,10 +108,13 @@ Preview: <amp-facebook width="486" height="657" layout="responsive" data-href="h
 Source:
 
 ```html
-<amp-facebook width="476" height="316"
-    layout="responsive"
-    data-embed-as="video"
-    data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
+<amp-facebook
+  width="476"
+  height="316"
+  layout="responsive"
+  data-embed-as="video"
+  data-href="https://www.facebook.com/nasaearth/videos/10155187938052139"
+>
 </amp-facebook>
 ```
 
@@ -109,7 +129,9 @@ Preview: <amp-facebook width="476" height="316" layout="responsive" data-embed-a
 Для этого разместите между тегами `<head>` следующий скрипт:
 
 [sourcecode:html]
+
 <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+
 [/sourcecode]
 
 Идентификатор `data-videoid` содержится в URL страницы видео YouTube. Например, в URL `https://www.youtube.com/watch?v=Z1q71gFeRqM` это `Z1q71gFeRqM`.
@@ -117,13 +139,17 @@ Preview: <amp-facebook width="476" height="316" layout="responsive" data-embed-a
 Используйте атрибут `layout="responsive"` для обеспечения корректной компоновки видео с соотношением сторон экрана 16:9:
 
 [example preview="inline" playground="true" imports="amp-youtube:0.1"]
+
 ```html
-<amp-youtube data-videoid="lBTCB7yLs8Y"
+<amp-youtube
+  data-videoid="lBTCB7yLs8Y"
   layout="responsive"
   width="560"
-  height="315">
+  height="315"
+>
 </amp-youtube>
 ```
+
 [/example]
 
 [tip type="tip"] **СОВЕТ.** Дополнительные примеры использования [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) можно увидеть в рамках курса [AMP By Example](../../../../documentation/examples/documentation/amp-youtube.html). [/tip]
@@ -137,32 +163,40 @@ Preview: <amp-facebook width="476" height="316" layout="responsive" data-embed-a
 Следует указать ширину и высоту рекламы, а также тип рекламной сети. Атрибут `type` используется для выбора шаблона рекламной сети. Атрибуты `data-*` зависят от конкретной рекламной сети.
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
+
 ```html
-<amp-ad width="300"
+<amp-ad
+  width="300"
   height="250"
   type="a9"
   data-amzn_assoc_ad_mode="auto"
   data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
   data-recomtype="async"
-  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5"
+>
 </amp-ad>
 ```
+
 [/example]
 
 Добавьте элемент `placeholder`, который будет отображен, если рекламу не удалось загрузить (если это поддерживается рекламной сетью):
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
+
 ```html
-<amp-ad width="300"
+<amp-ad
+  width="300"
   height="250"
   type="a9"
   data-amzn_assoc_ad_mode="auto"
   data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
   data-recomtype="async"
-  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5"
+>
   <div placeholder>Have a great day!</div>
 </amp-ad>
 ```
+
 [/example]
 
 В AMP реализована поддержка широкого ассортимента рекламных сетей. Полный список см. в описании компонента [`amp-ad`](../../../../documentation/components/reference/amp-ad.md).

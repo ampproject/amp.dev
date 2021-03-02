@@ -1,10 +1,10 @@
 ---
-"$title": AMP 电子邮件基础知识
-"$order": '1'
+'$title': AMP 电子邮件基础知识
+$order: 1
 description: 开始编写有效的 AMP 电子邮件所需的一切知识。
 author: CrystalOnScript
 formats:
-- email
+  - email
 ---
 
 如果您熟悉 AMP，这再好不过了！AMP 电子邮件只是 AMP HTML 库的一部分。如果您不熟悉 AMP，也是一件好事！本指南将向您介绍在开始编写有效的 AMP 电子邮件时需要知道的所有知识！
@@ -14,16 +14,20 @@ formats:
 AMP 电子邮件与传统 HTML 电子邮件看起来很像，但存在几点区别。以下列出了在让电子邮件成为有效的 AMP 电子邮件时所需的最少量标记。
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email data-css-strict>
-<head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
-</head>
-<body>
-  Hello, AMP4EMAIL world.
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    Hello, AMP4EMAIL world.
+  </body>
 </html>
 ```
 
@@ -38,8 +42,12 @@ AMP 电子邮件与传统 HTML 电子邮件看起来很像，但存在几点区�
 
 ```html
 <head>
-...
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  ...
+  <style amp4email-boilerplate>
+    body {
+      visibility: hidden;
+    }
+  </style>
 </head>
 ```
 
@@ -132,9 +140,7 @@ AMP 组件的动态性、生动性和互动性是 AMP 电子邮件对未来电�
   src="https://example.com/endpoint?token=REPLACE_WITH_YOUR_ACCESS_TOKEN"
   height="300"
 >
-  <template type="amp-mustache">
-    ...
-  </template>
+  <template type="amp-mustache"> ... </template>
 </amp-list>
 ```
 

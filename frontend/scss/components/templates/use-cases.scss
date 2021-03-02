@@ -51,6 +51,7 @@
   .#{organism('fragment-slider')} {
     grid-column: 1 / -1;
     margin-top: -76%;
+    overflow: hidden;
     @media (min-width: 768px) {
       margin-top: -56%;
     }

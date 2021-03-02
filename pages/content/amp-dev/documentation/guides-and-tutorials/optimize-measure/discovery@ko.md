@@ -1,10 +1,10 @@
 ---
 formats:
-- websites
-"$title": 검색 가능한 페이지로 설정
-"$titles":
+  - websites
+'$title': 검색 가능한 페이지로 설정
+'$titles':
   teaser: 검색 가능한 페이지로 설정
-"$order": '5'
+$order: 5
 description: 어떤 경우에는 비 AMP 버전과 AMP 버전을 모두 지원하는 페이지가 필요할 수 있습니다.  예를 들면 뉴스 기사 등이 이에 해당됩니다...
 teaser:
   icon: discover

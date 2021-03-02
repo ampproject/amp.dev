@@ -1,6 +1,6 @@
 ---
-"$title": Disconnessione
-"$order": '3'
+'$title': Disconnessione
+$order: 3
 description: Come nel caso del pulsante di accesso, la presenza del pulsante di disconnessione dipende dallo stato del componente amp-access ...
 ---
 
@@ -15,9 +15,9 @@ Facendo clic sul pulsante Disconnetti, l'utente viene reindirizzato all'URL spec
 [sourcecode:json]
 {
 "login": {
-  "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
-  "sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
-  }
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
+"sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
+}
 }
 [/sourcecode]
 

@@ -1,13 +1,13 @@
 ---
-"$title": 좌석 맵 제작하기
-"$order": '104'
+'$title': 좌석 맵 제작하기
+$order: 104
 description: 티켓 발권 웹 앱에서 좌석 맵은 중요한 부분이지만 AMP 구현은 까다로울 수 있습니다. 이 글을 읽고 AMP에서 좌석 맵을 구현하는 방법을 알아보세요.
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: kul3r4
 contributors:
-- pbakaus
+  - pbakaus
 ---
 
 티켓 발권 웹 앱에서 좌석 맵은 중요한 부분이지만 AMP 구현은 까다로울 수 있습니다. 이 글을 읽고 AMP에서 지원되는 AMP 컴포넌트를 조합하여 좌석 맵을 구현하는 방법을 알아보세요.
@@ -106,26 +106,27 @@ rect[selected].seat {
 
 [sourcecode:html]
 {% raw %}<div class="seatmap-container">
-  <amp-list layout="fill" src="/json/seats.json" binding="no" items="." single-item noloading>
-    <template type="amp-mustache">
-      <amp-pan-zoom layout="fill" class="seatmap">
-        <amp-selector multiple on="select:AMP.setState({
+<amp-list layout="fill" src="/json/seats.json" binding="no" items="." single-item noloading>
+<template type="amp-mustache">
+<amp-pan-zoom layout="fill" class="seatmap">
+<amp-selector multiple on="select:AMP.setState({
           selectedSeats: event.selectedOptions
         })" layout="fill">
-          <div class="svg-container">
-            <svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
-            {{#seats}}
-              <rect option="{{id}}" role="button"
+<div class="svg-container">
+<svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
+{{#seats}}
+<rect option="{{id}}" role="button"
                tabindex="0" class="seat {{unavailable}}"
               x="{{x}}" y="{{y}}"
               width="{{width}}" height="{{height}}"
               rx="{{rx}}" ry="{{ry}}"/>
-            {{/seats}}
-            </svg>
-          </div>
-        </amp-selector>
-      </amp-pan-zoom>
-    </template>
-  </amp-list>
+{{/seats}}
+</svg>
+</div>
+</amp-selector>
+</amp-pan-zoom>
+</template>
+</amp-list>
+
 </div>{% endraw %}
 [/sourcecode]

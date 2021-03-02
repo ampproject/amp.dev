@@ -1,8 +1,8 @@
 ---
-"$title": هيكلة وإظهار رسائل AMP الإلكترونية
-order: '2'
+'$title': هيكلة وإظهار رسائل AMP الإلكترونية
+$order: 2
 formats:
-- email
+  - email
 teaser:
   text: 'تجري هيكلة البريد الإلكتروني '
 toc: 'true'
@@ -45,7 +45,7 @@ limitations under the License.
 
 يجب أن يحتوي `multipart/alternative` على عقدة (`text/plain` أو `text/html`) واحدة على الأقل غير مدعومة من AMP بالإضافة إلى عقدة `text/x-amp-html`. سوف يتم عرض هذا الأمر للمستخدمين الذين لا يدعم عملاء البريد الإلكتروني لديهم AMP أو الذين ينسحبون عن طريق إعدادات موفر البريد الإلكتروني.
 
-ملاحظة: بعض عملاء البريد الإلكتروني[[1]](https://openradar.appspot.com/radar?id=6054696888303616) يُظهرون فقط جزء MIME الأخير، لذا نوصي بوضع جزء MIME بالقيمة `text/x-amp-html` *قبل* جزء MIME بالقيمة `text/html`.
+ملاحظة: بعض عملاء البريد الإلكتروني[[1]](https://openradar.appspot.com/radar?id=6054696888303616) يُظهرون فقط جزء MIME الأخير، لذا نوصي بوضع جزء MIME بالقيمة `text/x-amp-html` _قبل_ جزء MIME بالقيمة `text/html`.
 
 ### دلالات الرد/إعادة التوجيه <a name="replyingforwarding-semantics"></a>
 

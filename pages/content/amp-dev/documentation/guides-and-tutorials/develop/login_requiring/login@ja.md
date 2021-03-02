@@ -1,6 +1,6 @@
 ---
-"$title": Login
-"$order": '1'
+'$title': Login
+$order: 1
 description: このページを初めて開いたときは、2 つのコメントとログインボタンが表示されます。ログインボタンは、コードで次のように記述 ...
 ---
 
@@ -12,6 +12,7 @@ description: このページを初めて開いたときは、2 つのコメン�
 
 [sourcecode:html]
 <span amp-access="NOT loggedIn" role="button" tabindex="0" amp-access-hide>
+
   <h5>Please login to comment</h5>
   <button on="tap:amp-access.login-sign-in" class="button-primary comment-button">Login</button>
 </span>
@@ -20,6 +21,7 @@ description: このページを初めて開いたときは、2 つのコメン�
 [`amp-access`](../../../../documentation/components/reference/amp-access.md) に関連する属性の動作は、[`amp-access`](../../../../documentation/components/reference/amp-access.md) に対してページ全体で適用される設定に依存します。ここでは次のようになります。
 
 [sourcecode:html]
+
 <script id="amp-access" type="application/json">
   {
     "authorization": "https://ampbyexample.com/samples_templates/comment_section/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
@@ -34,6 +36,7 @@ description: このページを初めて開いたときは、2 つのコメン�
     }
   }
 </script>
+
 [/sourcecode]
 
 認証エンドポイントは AMPByExample の一部としてデプロイされています。ページのサイト運営者は、このエンドポイントを提供する責任があります。このケース例では、単純化するために基本ロジックが実装されており、サーバーはこのリクエストを受信すると、`ABE_LOGGED_IN` という名前の Cookie の値を読み取ります。Cookie がない場合は、`loggedIn = false` を含む JSON レスポンスを返します。その結果、ユーザーが初めてこのページを開くと、このリクエストによって `loggedIn = false` が返され、ログインボタンが表示されます。
@@ -42,14 +45,14 @@ description: このページを初めて開いたときは、2 つのコメン�
 
 [sourcecode:json]
 {
-	"login": {
-    "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
-  }
+"login": {
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
+}
 }
 
 [/sourcecode]
 
-[tip type="note"] <strong>注意:</strong>  ログインノード内には、異なる URL を定義することができます。この例では、まず `sign-in` の URL を定義し、後で `sign-out` を定義します。[/tip]
+[tip type="note"] <strong>注意:</strong> ログインノード内には、異なる URL を定義することができます。この例では、まず `sign-in` の URL を定義し、後で `sign-out` を定義します。[/tip]
 
 このログインページは非 AMP ページですが、ここではわかりやすいように、このページにログイン ID とパスワードの値を入力します。非表示の入力タイプである `returnURL` の使い方に注意してください。この値はサーバー側のテンプレート作成を通じて AMPByExample サーバーが設定します。サーバーは、AMP ライブラリによって sign-in URL に自動的に追加される `return` というパラメータからこの値を読み取ります。
 

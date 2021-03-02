@@ -125,7 +125,7 @@ Anda dapat memunculkan `amp-iframe` di bagian atas dokumen jika `amp-iframe` mem
 ```html
 <amp-iframe width=300 height=300
     layout="responsive"
-    sandbox="allow-scripts allow<-same-origin"
+    sandbox="allow-scripts allow-same-origin"
     src="https://foo.com/iframe"
     <amp-img layout="fill" src="https://foo.com/foo.png" placeholder></amp-img>
 </amp-iframe>

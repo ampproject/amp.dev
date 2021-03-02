@@ -1,6 +1,6 @@
 ---
-"$title": カルーセルの追加
-"$order": '3'
+'$title': カルーセルの追加
+$order: 3
 description: モバイルページでよく使われるもう 1 つの機能はカルーセルです。amp-carousel コンポーネントを使用すると、AMP ページにカルーセルを簡単に追加できます。
 ---
 
@@ -11,13 +11,17 @@ description: モバイルページでよく使われるもう 1 つの機能は�
 次の JavaScript リクエストをドキュメントの `<head>` タグに**追加**して、必ず [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) コンポーネントライブラリを含めてください。
 
 ```html
-<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script
+  async
+  custom-element="amp-carousel"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+></script>
 ```
 
 次に、幅と高さをあらかじめ定義して、シンプルな画像のカルーセルをレスポンシブレイアウトに埋め込んでみましょう。ページに以下を**追加**します。
 
 ```html
-<amp-carousel layout="fixed-height" height="168" type="carousel" >
+<amp-carousel layout="fixed-height" height="168" type="carousel">
   <amp-img src="mountains-1.jpg" width="300" height="168"></amp-img>
   <amp-img src="mountains-2.jpg" width="300" height="168"></amp-img>
   <amp-img src="mountains-3.jpg" width="300" height="168"></amp-img>
@@ -41,16 +45,39 @@ description: モバイルページでよく使われるもう 1 つの機能は�
 最終結果は次のようになります。
 
 ```html
-<amp-carousel layout="responsive" width="300" height="168" type="slides" autoplay delay="2000" loop>
-  <amp-img src="mountains-1.jpg" width="300" height="168" layout="responsive"></amp-img>
-  <amp-img src="mountains-2.jpg" width="300" height="168" layout="responsive"></amp-img>
-  <amp-img src="mountains-3.jpg" width="300" height="168" layout="responsive"></amp-img>
+<amp-carousel
+  layout="responsive"
+  width="300"
+  height="168"
+  type="slides"
+  autoplay
+  delay="2000"
+  loop
+>
+  <amp-img
+    src="mountains-1.jpg"
+    width="300"
+    height="168"
+    layout="responsive"
+  ></amp-img>
+  <amp-img
+    src="mountains-2.jpg"
+    width="300"
+    height="168"
+    layout="responsive"
+  ></amp-img>
+  <amp-img
+    src="mountains-3.jpg"
+    width="300"
+    height="168"
+    layout="responsive"
+  ></amp-img>
 </amp-carousel>
 ```
 
 ページを**更新**して回転してみましょう。
 
-[tip type="note"] <strong>注意:</strong>  [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) のタイプが `carousel` のときに使用したレイアウトタイプが `fixed-height` だったことにお気づきでしょうか。`carousel` タイプでサポートされるレイアウトタイプは限られています。たとえば、`carousel` タイプでは `responsive` レイアウトをサポートしていません。名前が示すように、fixed-height 要素は使用できるスペースを占有しますが、高さは変わりません。fixed-height 要素の場合、`height` 属性の定義は必須ですが、`width` 属性は `auto` に設定することも、未設定のままにすることもできます。[/tip]
+[tip type="note"] <strong>注意:</strong> [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) のタイプが `carousel` のときに使用したレイアウトタイプが `fixed-height` だったことにお気づきでしょうか。`carousel` タイプでサポートされるレイアウトタイプは限られています。たとえば、`carousel` タイプでは `responsive` レイアウトをサポートしていません。名前が示すように、fixed-height 要素は使用できるスペースを占有しますが、高さは変わりません。fixed-height 要素の場合、`height` 属性の定義は必須ですが、`width` 属性は `auto` に設定することも、未設定のままにすることもできます。[/tip]
 
 ## カルーセルコンテンツの混在
 
@@ -60,25 +87,28 @@ description: モバイルページでよく使われるもう 1 つの機能は�
 
 ```css
 amp-fit-text {
-    white-space: normal;
+  white-space: normal;
 }
 ```
 
 次に、シンプルなカルーセルを次のものと**置き換え**ます。
 
 ```html
-<amp-carousel layout="fixed-height" height="250" type="carousel" >
-    <amp-img src="blocky-mountains-1.jpg" width="300" height="250"></amp-img>
+<amp-carousel layout="fixed-height" height="250" type="carousel">
+  <amp-img src="blocky-mountains-1.jpg" width="300" height="250"></amp-img>
 
-    <amp-ad width="300" height="250"
-      type="doubleclick"
-      data-slot="/35096353/amptesting/image/static">
-        <div placeholder>This ad is still loading.</div>
-    </amp-ad>
+  <amp-ad
+    width="300"
+    height="250"
+    type="doubleclick"
+    data-slot="/35096353/amptesting/image/static"
+  >
+    <div placeholder>This ad is still loading.</div>
+  </amp-ad>
 
-    <amp-fit-text width="300" height="250" layout="fixed">
-        Big, bold article quote goes here.
-    </amp-fit-text>
+  <amp-fit-text width="300" height="250" layout="fixed">
+    Big, bold article quote goes here.
+  </amp-fit-text>
 </amp-carousel>
 ```
 
@@ -88,4 +118,4 @@ amp-fit-text {
 
 詳しくは、[`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) コンポーネントのリファレンスドキュメントをご覧ください。
 
-[tip type="note"] <strong>注意:</strong>  最後の例では、[`amp-ad`](../../../../documentation/components/reference/amp-ad.md) コンポーネントに `placeholder` 属性を持つ子要素 `div` が含まれていたことにお気づきですか。このチュートリアルの前半では、`fallback` 属性を持つ [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) の同様のシナリオがありました。プレースホルダとフォールバックの違いは何でしょうか。`fallback` 要素は、親要素が読み込まれなかった場合、つまり利用可能な広告がない場合に表示されます。一方 `placeholder` 要素は、読み込み中に親要素の代わりに表示されます。いわば、これらは親要素の読み込みプロセスの前後に表示される要素です。詳しくは、[プレースホルダとフォールバック](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)をご覧ください。[/tip]
+[tip type="note"] <strong>注意:</strong> 最後の例では、[`amp-ad`](../../../../documentation/components/reference/amp-ad.md) コンポーネントに `placeholder` 属性を持つ子要素 `div` が含まれていたことにお気づきですか。このチュートリアルの前半では、`fallback` 属性を持つ [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) の同様のシナリオがありました。プレースホルダとフォールバックの違いは何でしょうか。`fallback` 要素は、親要素が読み込まれなかった場合、つまり利用可能な広告がない場合に表示されます。一方 `placeholder` 要素は、読み込み中に親要素の代わりに表示されます。いわば、これらは親要素の読み込みプロセスの前後に表示される要素です。詳しくは、[プレースホルダとフォールバック](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)をご覧ください。[/tip]

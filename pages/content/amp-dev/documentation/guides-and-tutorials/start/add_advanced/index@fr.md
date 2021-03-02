@@ -1,10 +1,10 @@
 ---
-"$title": Ajout de fonctionnalités AMP avancées
-"$order": '0'
+'$title': Ajout de fonctionnalités AMP avancées
+$order: 0
 description: "Dans ce tutoriel, vous développerez votre compréhension des fondements AMP et apprendrez comment AMP gère la publicité, les analyses, les vidéos intégrées, l'intégration des médias sociaux, les carrousels, etc."
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='right third', caption='Completed news article') }}

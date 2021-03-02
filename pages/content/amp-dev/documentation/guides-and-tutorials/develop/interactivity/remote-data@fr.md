@@ -1,6 +1,6 @@
 ---
-"$title": Comment travailler avec des données distantes
-"$order": '3'
+'$title': Comment travailler avec des données distantes
+$order: 3
 description: Que faire si vos données pouvant être liées sont trop volumineuses ou complexes pour être récupérées au chargement de la page? Ou que faire si chaque SKU a un prix qui prend un ...
 toc: 'true'
 ---
@@ -19,15 +19,15 @@ Vous pouvez également lier l'attribut `src` pour l'élément [`<amp-state>`](..
 
 Utilisons la possibilité de récupérer des données distantes pour rechercher les prix des SKU dans notre échantillon. Notre serveur de développement Express.js dans `app.js` contient déjà un point de terminaison `/shirts/sizesAndPrices?shirt=<sku>` qui, en fonctions des SKU de chemise, renvoie les tailles disponibles et le prix pour chaque taille. Il envoie la réponse avec un retard artificiel d'une seconde pour simuler la latence du réseau.
 
-Requête | Réponse
---- | ---
-`GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}`
+| Requête                               | Réponse                                      |
+| ------------------------------------- | -------------------------------------------- |
+| `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
 Tout comme les données JSON dans les éléments [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state), les données distantes renvoyées par ces extractions sont fusionnées et disponibles sous l'attribut `id` de l'élément. Par exemple, les données renvoyées par l'exemple de réponse ci-dessus sont accessibles dans une expression:
 
-Expression | Résultat
---- | ---
-`shirts['1001'].sizes['XS']` | `8.99`
+| Expression                   | Résultat |
+| ---------------------------- | -------- |
+| `shirts['1001'].sizes['XS']` | `8.99`   |
 
 ### Comment lier les données
 
@@ -36,7 +36,10 @@ Appliquons à présent cela à notre exemple de commerce en ligne. Commençons p
 ```html
 <!-- When `selected.sku` changes, update the `src` attribute and fetch
      JSON at the new URL. Then, merge that data under `id` ("shirts"). -->
-<amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
+<amp-state
+  id="shirts"
+  [src]="'/shirts/sizesAndPrices?sku=' + selected.sku"
+></amp-state>
 ```
 
 ### Comment indiquer les tailles indisponibles
@@ -106,16 +109,22 @@ Et nous devrons mettre à jour l'état par défaut des éléments pertinents:
       </td>
       <!-- Add the 'unavailable' class to the next three <td> elements
            to be consistent with the available sizes of the default SKU. -->
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'"
+      >
         <div option="M">M</div>
       </td>
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'"
+      >
         <div option="L">L</div>
       </td>
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'"
+      >
         <div option="XL">XL</div>
       </td>
     </tr>
@@ -134,8 +143,10 @@ Notre boutique AMPPAREL est particulière en ce que le prix de la chemise est sp
 ```html
 <!-- When an element is selected, set the `selectedSize` variable to the
      value of the "option" attribute of the selected element.  -->
-<amp-selector name="size"
-    on="select:AMP.setState({selectedSize: event.targetOption})">
+<amp-selector
+  name="size"
+  on="select:AMP.setState({selectedSize: event.targetOption})"
+></amp-selector>
 ```
 
 Notez que nous n'initialisons pas la valeur de `selectedSize` via l'élément `amp-state#selected`. C'est parce que nous ne fournissons pas intentionnellement une taille sélectionnée par défaut et voulons plutôt obliger l'utilisateur à choisir une taille.
@@ -145,7 +156,8 @@ Notez que nous n'initialisons pas la valeur de `selectedSize` via l'élément `a
 Ajoutez un nouvel élément `<span>` enveloppant l'étiquette de prix et remplacez le texte par défaut par « --- » car il n'y a pas de taille sélectionnée par défaut.
 
 ```html
-<h6>PRICE :
+<h6>
+  PRICE :
   <!-- Display the price of the selected shirt in the selected size if available.
        Otherwise, display the placeholder text '---'. -->
   <span [text]="shirts[selected.sku].sizes[selectedSize] || '---'">---</span>
@@ -163,9 +175,13 @@ C'est bientôt fini! Désactivons le bouton « Ajouter au panier » lorsque la t
      1. There is no selected size, OR
      2. The available sizes for the selected SKU haven't been fetched yet
 -->
-<input type="submit" value="ADD TO CART" disabled
-    class="mdl-button mdl-button--raised mdl-button--accent"
-    [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]">
+<input
+  type="submit"
+  value="ADD TO CART"
+  disabled
+  class="mdl-button mdl-button--raised mdl-button--accent"
+  [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]"
+/>
 ```
 
-**Essayez**:  si vous sélectionnez une taille indisponible, vous ne pourrez pas l'ajouter au panier.
+**Essayez**: si vous sélectionnez une taille indisponible, vous ne pourrez pas l'ajouter au panier.

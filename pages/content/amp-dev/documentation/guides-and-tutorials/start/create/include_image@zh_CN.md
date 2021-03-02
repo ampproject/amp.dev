@@ -1,10 +1,10 @@
 ---
-"$title": 添加图片
-"$order": '2'
+'$title': 添加图片
+$order: 2
 description: 大多数 HTML 标记都可以直接在 AMP HTML 中使用，但某些标记（例如 <img> 标记）被替换为等效标记或略微增强的自定义 AMP HTML 标记
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 大多数 HTML 标记都可以直接在 AMP HTML 中使用，但某些标记（例如 `<img>` 标记）被替换为等效标记或略微增强的自定义 AMP HTML 标记（少数存在问题的标记会被完全禁止使用，请参阅[规范中的 HTML 标记](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)）。

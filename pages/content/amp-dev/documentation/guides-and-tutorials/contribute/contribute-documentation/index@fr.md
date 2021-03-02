@@ -1,13 +1,13 @@
 ---
-"$title": Contribuer à la documentation
-"$order": '0'
-"$hidden": 'true'
+'$title': Contribuer à la documentation
+$order: 0
+'$hidden': 'true'
 description: Commencez à contribuer à la documentation sur amp.dev
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 

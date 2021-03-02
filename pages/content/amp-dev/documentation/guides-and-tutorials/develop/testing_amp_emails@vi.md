@@ -1,10 +1,10 @@
 ---
-"$title": Kiểm tra các email AMP
-"$order": '2'
-"$category": Develop
+'$title': Kiểm tra các email AMP
+$order: 2
+'$category': Develop
 description: Đảm bảo người dùng có trải nghiệm tuyệt vời bằng cách kiểm tra email AMP của bạn trước khi gửi cho một lượng lớn độc giả.
 formats:
-- email
+  - email
 author: fstanis
 ---
 

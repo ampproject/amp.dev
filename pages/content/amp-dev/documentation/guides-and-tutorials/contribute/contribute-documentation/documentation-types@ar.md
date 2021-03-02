@@ -1,12 +1,12 @@
 ---
-"$title": أنواع المستندات
-"$order": '1'
+'$title': أنواع المستندات
+$order: 1
 description: أنواع مساهمات المستندات المقبولة على amp.dev
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 toc: 'false'
 ---

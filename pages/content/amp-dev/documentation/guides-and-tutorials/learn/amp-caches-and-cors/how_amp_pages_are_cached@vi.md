@@ -1,11 +1,11 @@
 ---
-"$title": Cách các trang AMP được lưu trong bộ nhớ đệm
-"$order": '0'
+'$title': Cách các trang AMP được lưu trong bộ nhớ đệm
+$order: 0
 description: Trong tài liệu này, bạn sẽ tìm hiểu về vai trò của Bộ nhớ đệm AMP trong hệ sinh thái AMP, và cách trang AMP của bạn được lưu trong bộ nhớ đệm.
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 ---
 
 Trong tài liệu này, bạn sẽ tìm hiểu về vai trò của Bộ nhớ đệm AMP trong hệ sinh thái AMP, và cách trang AMP của bạn được lưu trong bộ nhớ đệm.
@@ -35,7 +35,7 @@ AMP là một hệ sinh thái mở và Dự án AMP tích cực khuyến khích 
 
 ## Làm thế nào để chọn một Bộ nhớ đệm AMP?
 
-Là một nhà phát hành, bạn không cần chọn một Bộ nhớ đệm AMP, nó *chính là nền tảng* liên kết đến nội dung đã chọn Bộ nhớ đệm AMP (nếu có) của bạn.
+Là một nhà phát hành, bạn không cần chọn một Bộ nhớ đệm AMP, nó _chính là nền tảng_ liên kết đến nội dung đã chọn Bộ nhớ đệm AMP (nếu có) của bạn.
 
 Điều này ngược với một mô hình thông thường mà ở đó việc cung cấp nội dung là trách nhiệm của nhà phát hành. Tuy nhiên, mô hình này cho phép các nền tảng cung cấp cho người dùng của họ hiệu năng tải dự đoán được cùng những tính năng khác mang đến độ bảo mật và quyền riêng tư đảm bảo, thống nhất trong giai đoạn tiền render AMP. Để tìm hiểu thêm về các hướng dẫn nghiêm ngặt đối với việc tạo ra các Bộ nhớ đệm AMP, hãy xem [Hướng dẫn về Bộ nhớ đệm AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
 
@@ -59,7 +59,7 @@ Thông qua việc sử dụng định dạng AMP, bạn đang thiết lập nộ
 
 - **Yêu cầu URL trong Bộ nhớ đệm**: Các nền tảng có thể yêu cầu cụ thể một trang AMP bằng cách sử dụng định dạng URL Bộ nhớ đệm AMP. Bộ nhớ đệm AMP hoạt động như một proxy ngược, do đó, khi nền tảng truy cập trang này, nó sẽ khiến trang được lưu tự động trong bộ nhớ đệm.
 
-    - Ví dụ về URL trong Bộ nhớ đệm AMP của Google: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
+  - Ví dụ về URL trong Bộ nhớ đệm AMP của Google: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
 [tip type="note"] **LƯU Ý –** URL Bộ nhớ đệm AMP không phải là một URL cho người dùng, do đó, người dùng thường không yêu cầu nội dung qua các URL này. [/tip]
 

@@ -1,12 +1,12 @@
 ---
-"$title": AMP 发布核对清单
-"$order": '0'
+'$title': AMP 发布核对清单
+$order: 0
 description: 自适应网络设计旨在构建对用户需求做出响应的浮动网页，这些网页适合设备的屏幕大小和方向。您可以实现…
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 按照以下核对清单操作，可以让网站提供最全面的 AMP 体验！

@@ -1,10 +1,10 @@
 ---
-"$title": Incorporare storie nelle pagine web
-"$order": '3'
+'$title': Incorporare storie nelle pagine web
+$order: 3
 description: AMP Story Player
 formats:
-- websites
-- stories
+  - websites
+  - stories
 ---
 
 Le storie sono coinvolgenti esperienze a schermo intero in cui gli utenti possono immergersi. Sono ospitate sul web aperto con il loro URL, per cui sono facilmente condivisibili. Ma come fare se si desidera integrare le storie nel proprio sito, ad esempio all'interno di un blog, una descrizione di prodotto o in un articolo di notizie?
@@ -13,9 +13,10 @@ AMP Story Player permette di incorporare nelle pagine web delle storie che gli u
 
 # Visualizzazione di storie in pagine non AMP
 
-Le storie AMP possono essere incorporate  anche in pagine non AMP e gli utenti potranno sfogliare la storia toccando o cliccando su di essa, senza dover lasciare il documento che la ospita!
+Le storie AMP possono essere incorporate anche in pagine non AMP e gli utenti potranno sfogliare la storia toccando o cliccando su di essa, senza dover lasciare il documento che la ospita!
 
 [example preview="top-frame" playground="false"]
+
 ```html
 <!doctype html>
     <head>
@@ -67,6 +68,7 @@ Le storie AMP possono essere incorporate  anche in pagine non AMP e gli utenti p
     </body>
 </html>
 ```
+
 [/example]
 
 ## Incorporare AMP story player
@@ -79,7 +81,11 @@ Includere i due script richiesti nell'intestazione del documento:
 
 ```html
 <script async src="https://cdn.ampproject.org/amp-story-player-v0.js"></script>
-<link href="https://cdn.ampproject.org/amp-story-player-v0.css" rel="stylesheet" type="text/css">
+<link
+  href="https://cdn.ampproject.org/amp-story-player-v0.css"
+  rel="stylesheet"
+  type="text/css"
+/>
 ```
 
 Il primo script contiene la logica per il player e il secondo imposta lo stile predefinito.
@@ -89,12 +95,13 @@ Il primo script contiene la logica per il player e il secondo imposta lo stile p
 Includere l'elemento `<amp-story-player>` all'interno della struttura `body` del documento. Quindi specificare la storia desiderata inserendo un tag `<a>` all'interno dell'elemento `<amp-story-player>`. Inserire un elemento `href` che punta alla posizione della storia. L'elemento `href` può puntare all'URL di una storia ospitata o al suo percorso relativo. Inserire il titolo della storia tra i tag `<a>`.
 
 ```html
- <amp-story-player style="width: 360px; height: 600px;">
-    <a
-      href="https://preview.amp.dev/documentation/examples/introduction/stories_in_amp/">
-      Storie in AMP - Ciao mondo
-    </a>
-  </amp-story-player>
+<amp-story-player style="width: 360px; height: 600px;">
+  <a
+    href="https://preview.amp.dev/documentation/examples/introduction/stories_in_amp/"
+  >
+    Storie in AMP - Ciao mondo
+  </a>
+</amp-story-player>
 ```
 
 ### Dimensione del lettore
@@ -103,11 +110,11 @@ Si possono definire i componenti `width` o `height` e altri elementi di stile de
 
 ```html
 <body>
-...
+  ...
   <amp-story-player style="width: 360px; height: 600px;">
-...
+    ...
   </amp-story-player>
-...
+  ...
 </body>
 ```
 
@@ -118,19 +125,23 @@ We recommend maintaining a 3:5 aspect ratio for the best user experience, but yo
 La reattività del lettore di storie funziona come in qualsiasi altro elemento a blocchi. Utilizzare CSS per mantenere i rapporti di larghezza e altezza, come nell'esempio seguente:
 
 ```html
-<amp-story-player style="width: 50vw; height: 83.35vw;">
-  ...
-</amp-story-player>
+<amp-story-player style="width: 50vw; height: 83.35vw;"> ... </amp-story-player>
 ```
 
 ### Uso di segnaposti
 
-Includere un'immagine rappresentativa del poster aggiungendo un tag `<img>` come elemento figlio del tag `<a>` della storia con la seguente configurazione.  Il lettore di storie AMP visualizza questa immagine durante il caricamento dell'intera storia.
+Includere un'immagine rappresentativa del poster aggiungendo un tag `<img>` come elemento figlio del tag `<a>` della storia con la seguente configurazione. Il lettore di storie AMP visualizza questa immagine durante il caricamento dell'intera storia.
 
 ```html
 <amp-story-player style="width: 50vw; height: 83.35vw;">
   <a href="https://www.example.com/story.html">
-    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover1.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes this story.
   </a>
 </amp-story-player>
@@ -145,11 +156,23 @@ You may add multiple stories in the same `<amp-story-player>` element by definin
 ```html
 <amp-story-player style="width: 360px; height: 600px;">
   <a href="https://www.example.com/story1.html">
-    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover1.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes story 1.
   </a>
   <a href="https://www.example.com/story2.html">
-    <img src="https://www.example.com/assets/cover2.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover2.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes story 2.
   </a>
 </amp-story-player>
@@ -160,13 +183,25 @@ You may add multiple stories in the same `<amp-story-player>` element by definin
 ```html
 <amp-story-player style="width: 360px; height: 600px;">
   <a href="https://www.example.com/story1.html">
-    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover1.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes story 1.
   </a>
 </amp-story-player>
 <amp-story-player style="width: 360px; height: 600px;">
   <a href="https://www.example.com/story2.html">
-    <img src="https://www.example.com/assets/cover2.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img
+      src="https://www.example.com/assets/cover2.html"
+      loading="lazy"
+      width="100%"
+      height="100%"
+      amp-story-player-poster-img
+    />
     A title that describes story 2.
   </a>
 </amp-story-player>

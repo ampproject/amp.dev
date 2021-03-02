@@ -1,10 +1,10 @@
 ---
-"$title": Menguji email AMP
-"$order": '2'
-"$category": Develop
+'$title': Menguji email AMP
+$order: 2
+'$category': Develop
 description: Pastikan pengalaman pengguna yang sangat baik dengan menguji email AMP Anda sebelum mengirimkannya kepada audiens yang lebih banyak.
 formats:
-- email
+  - email
 author: fstanis
 ---
 
@@ -13,7 +13,7 @@ Pastikan pengalaman pengguna yang sangat baik dengan menguji email AMP Anda sebe
 ## Menguji daftar periksa
 
 1. Sertakan sebuah HTML dan/atau versi teks polos dari email AMP Anda. Klien email yang tidak mendukung AMP akan menampilkan ini sebagai standar (fallback).
-2. Pastikan AMP Anda valid dengan mengikuti langkah-langkah yang diuraikan di dalam  [Validasi Email AMP](/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_emails.md).
+2. Pastikan AMP Anda valid dengan mengikuti langkah-langkah yang diuraikan di dalam [Validasi Email AMP](/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_emails.md).
 3. Tinjau [CSS yang Didukung AMP untuk Email](/content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-css.md) untuk memastikan bahwa CSS yang Anda gunakan didukung di semua klien email.
 4. Cobalah email Anda di [AMP Playground](https://playground.amp.dev/?runtime=amp4email) dan pastikan bahwa semua fitur dinamis, seperti formulir, berfungsi dengan benar.
 

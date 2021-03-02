@@ -1,17 +1,17 @@
 ---
-"$title": Cách để đóng góp
-"$titles":
+'$title': Cách để đóng góp
+'$titles':
   navigation: Contribute
-"$path": "/documentation/guides-and-tutorials/contribute/index.html"
-"$localization":
-  path: "/{locale}/documentation/guides-and-tutorials/contribute/index.html"
-"$order": '0'
+'$path': '/documentation/guides-and-tutorials/contribute/index.html'
+'$localization':
+  path: '/{locale}/documentation/guides-and-tutorials/contribute/index.html'
+$order: 0
 description: Dự án AMP sẽ không thể trở thành hiện thực nếu thiếu sự ủng hộ của mọi thành viên trong cộng đồng, dù bạn là một nhà phát triển, nhà sáng tác nội dung hay nhà cung cấp các dịch vụ liên quan đến AMP.
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 ---
 
 Dự án AMP sẽ không thể trở thành hiện thực nếu thiếu sự ủng hộ của mọi thành viên trong cộng đồng, dù bạn là một nhà phát triển, nhà sáng tác nội dung hay nhà cung cấp các dịch vụ liên quan đến AMP. Có rất nhiều cách mà bạn có thể đóng góp.

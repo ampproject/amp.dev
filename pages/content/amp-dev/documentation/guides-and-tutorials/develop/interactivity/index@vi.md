@@ -1,11 +1,11 @@
 ---
-"$title": Tạo các trang AMP tương tác
-"$path": "/documentation/guides-and-tutorials/develop/interactivity/index.html"
-"$order": '0'
+'$title': Tạo các trang AMP tương tác
+'$path': '/documentation/guides-and-tutorials/develop/interactivity/index.html'
+$order: 0
 description: Trong bài hướng dẫn này, bạn sẽ học được cách sử dụng ràng buộc dữ liệu và các biểu thức để xây dựng các trang AMP đẹp mắt, tương tác với amp-bind...
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 {{ image('/static/img/docs/tutorials/interactivity-final-page.jpg', 415, 738, align='right third', caption='Completed AMP page for this tutorial') }}

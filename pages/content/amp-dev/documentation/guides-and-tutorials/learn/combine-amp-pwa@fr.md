@@ -1,11 +1,11 @@
 ---
-"$title": Lien entre AMP et PWA
-"$order": '7'
+'$title': Lien entre AMP et PWA
+$order: 7
 description: "Les applications Web progressives et les pages AMP fonctionnent très bien ensemble. En fait, dans de nombreux cas, ils se complètent d'une manière ou d'une autre. Découvrez comment ..."
 formats:
-- websites
+  - websites
 components:
-- youtube
+  - youtube
 author: pbakaus
 ---
 
@@ -31,7 +31,7 @@ Les pages AMP peuvent utiliser de nombreuses fonctionnalités PWA seules, à con
 
 ## AMP comme point d'entrée dans votre PWA
 
-L'argument de vente unique d'AMP est la **diffusion presque instantanée**, caractéristique qui fait d'AMP la solution idéale pour la première interaction de l'utilisateur avec votre site. *Les applications Web progressives* offrent beaucoup **plus d'interactivité et de fonctionnalités propices à l'engagement**, mais leur chargement initial est entravé par le fait que le worker de service du site, et donc ses ressources et son shell d'application, accélèrent lz diffusion uniquement lors des chargements suivants.
+L'argument de vente unique d'AMP est la **diffusion presque instantanée**, caractéristique qui fait d'AMP la solution idéale pour la première interaction de l'utilisateur avec votre site. _Les applications Web progressives_ offrent beaucoup **plus d'interactivité et de fonctionnalités propices à l'engagement**, mais leur chargement initial est entravé par le fait que le worker de service du site, et donc ses ressources et son shell d'application, accélèrent lz diffusion uniquement lors des chargements suivants.
 
 Une bonne stratégie serait de définir une page AMP comme point d'entrée à votre site, de préparer la PWA en arrière-plan et de basculer vers la PWA pour la suite.
 

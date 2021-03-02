@@ -1,8 +1,8 @@
 ---
-"$title": 이메일용 AMP 지원 CSS
-order: '5'
+'$title': 이메일용 AMP 지원 CSS
+$order: 5
 formats:
-- email
+  - email
 teaser:
   text: 이 문서는 현재 AMP 이메일에서 지원되는 CSS 기능을 간략하게 설명합니다.
 toc: 'true'
@@ -327,13 +327,13 @@ limitations under the License.
 
 다음 CSS 속성에는 추가 제한 사항이 있습니다.
 
-속성 | 제한 사항
---- | ---
-[`cursor`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor) | 허용되는 값은 `pointer` 및 `initial`뿐입니다.
-[`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) | `url()`은 허용되지 않습니다.
-[`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) | `opacity`, `transform`, `visibility` 및 `offset-distance`에만 애니메이션 적용이 가능합니다.
-[`visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) | 허용되는 값은 `hidden`, `visible` 및 `initial`뿐입니다.
-[`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index) | -100~100 사이의 값만 허용됩니다.
+| 속성                                                                        | 제한 사항                                                                                   |
+| --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| [`cursor`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor)         | 허용되는 값은 `pointer` 및 `initial`뿐입니다.                                               |
+| [`filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)         | `url()`은 허용되지 않습니다.                                                                |
+| [`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) | `opacity`, `transform`, `visibility` 및 `offset-distance`에만 애니메이션 적용이 가능합니다. |
+| [`visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) | 허용되는 값은 `hidden`, `visible` 및 `initial`뿐입니다.                                     |
+| [`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)       | -100~100 사이의 값만 허용됩니다.                                                            |
 
 ## @-규칙 <a name="at-rules"></a>
 
@@ -348,14 +348,14 @@ limitations under the License.
 `@media` 쿼리를 통한 조건부 적용 규칙에 지원되는 [미디어 기능](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#Media_features) 목록입니다.
 
 - [`device-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/device-width)
-    - `max-device-width`
-    - `min-device-width`
+  - `max-device-width`
+  - `min-device-width`
 - [`hover`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover)
 - [`orientation`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/orientation)
 - [`pointer`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer)
 - [`resolution`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/resolution)
-    - `max-resolution`
-    - `min-resolution`
+  - `max-resolution`
+  - `min-resolution`
 - [`width`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/width)
-    - `max-width`
-    - `min-width`
+  - `max-width`
+  - `min-width`

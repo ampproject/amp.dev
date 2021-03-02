@@ -39,9 +39,7 @@ examples.get('/subscription', upload.none(), (request, response) => {
     options: Array.from(COOKIE_VALUES, (value) => ({
       value,
       isSelected: value === currentSubscription,
-      text: `${value[0].toUpperCase()}${value
-        .substring(1)
-        .replaceAll('-', ' ')}`,
+      text: `${value[0].toUpperCase()}${value.substring(1).replace(/-/g, ' ')}`,
     })),
   });
 });
