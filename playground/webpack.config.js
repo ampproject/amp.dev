@@ -8,7 +8,7 @@ const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const config = require('../platform/config/shared.json');
 
 module.exports = (env, argv) => {
@@ -21,7 +21,7 @@ module.exports = (env, argv) => {
       chunkFilename: '[name].[chunkhash].bundle.js',
       sourceMapFilename: '[name].map',
       publicPath: '',
-      path: path.join(__dirname, 'dist')
+      path: path.join(__dirname, 'dist'),
     },
     node: {
       global: false,
@@ -33,7 +33,7 @@ module.exports = (env, argv) => {
         util: require.resolve('util/util.js'),
         stream: require.resolve('stream-browserify'),
         process: require.resolve('process/browser.js'),
-      }
+      },
     },
     optimization: {
       minimizer: [
@@ -43,8 +43,8 @@ module.exports = (env, argv) => {
             compress: {
               defaults: true,
               unsafe: true,
-            }
-          }
+            },
+          },
         }),
         new OptimizeCSSAssetsPlugin(),
       ],
@@ -74,7 +74,7 @@ module.exports = (env, argv) => {
         global: '(typeof globalThis ? globalThis : self)',
       }),
       new CopyWebpackPlugin({
-        patterns: [{ from: path.join(__dirname, 'static/') }],
+        patterns: [{from: path.join(__dirname, 'static/')}],
       }),
       new MiniCssExtractPlugin({
         filename: devMode ? '[name].css' : '[name].[contenthash].css',
@@ -121,7 +121,7 @@ module.exports = (env, argv) => {
           test: /\.s?css$/,
           use: [
             MiniCssExtractPlugin.loader,
-            { loader: 'css-loader', options: { sourceMap: true } },
+            {loader: 'css-loader', options: {sourceMap: true}},
             {
               loader: 'sass-loader',
               options: {
@@ -138,7 +138,7 @@ module.exports = (env, argv) => {
           use: [
             {
               loader: 'html-loader',
-              options: { minimize: false },
+              options: {minimize: false},
             },
           ],
         },

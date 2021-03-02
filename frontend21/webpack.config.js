@@ -6,7 +6,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const svgToMiniDataURI = require('mini-svg-data-uri');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 
@@ -108,10 +108,10 @@ module.exports = (env, argv) => {
       }),
       isDevelopment
         ? new WebpackBuildNotifierPlugin({
-          title: 'amp.dev Frontend',
-          logo: path.join(process.cwd(), '/static/img/favicon-128x128.png'),
-        })
-        : () => { },
+            title: 'amp.dev Frontend',
+            logo: path.join(process.cwd(), '/static/img/favicon-128x128.png'),
+          })
+        : () => {},
     ],
     module: {
       rules: [

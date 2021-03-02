@@ -5,7 +5,7 @@ const FileManagerPlugin = require('filemanager-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 const config = require('./config.js');
-const { calculateHash } = require('@ampproject/toolbox-script-csp');
+const {calculateHash} = require('@ampproject/toolbox-script-csp');
 
 module.exports = (env, argv) => {
   const mode = argv.mode || 'production';
@@ -26,8 +26,8 @@ module.exports = (env, argv) => {
             compress: {
               defaults: true,
               unsafe: true,
-            }
-          }
+            },
+          },
         }),
       ],
       concatenateModules: false,
@@ -111,7 +111,7 @@ module.exports = (env, argv) => {
           use: [
             {
               loader: 'html-loader',
-              options: { minimize: false },
+              options: {minimize: false},
             },
           ],
         },
