@@ -1,8 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
-const ClosurePlugin = require('closure-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const config = require('./config.js');
 const {calculateHash} = require('@ampproject/toolbox-script-csp');
@@ -13,13 +13,23 @@ module.exports = (env, argv) => {
   return {
     entry: path.join(__dirname, 'src/ui/PageExperience.js'),
     output: {
-      filename: 'pixi.[name].[hash].js',
+      filename: 'pixi.[name].[contenthash].js',
       chunkFilename: 'pixi.[name].[chunkhash].bundle.js',
       sourceMapFilename: 'pixi.[name].map',
       publicPath: '/static/page-experience/',
     },
     optimization: {
-      minimizer: [new ClosurePlugin({mode: 'AGGRESSIVE_BUNDLE'}, {})],
+      minimizer: [
+        new TerserPlugin({
+          terserOptions: {
+            ecma: '2015',
+            compress: {
+              defaults: true,
+              unsafe: true,
+            },
+          },
+        }),
+      ],
       concatenateModules: false,
     },
     devtool: mode == 'development' ? 'cheap-module-source-map' : false,
