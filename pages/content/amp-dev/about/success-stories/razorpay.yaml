@@ -1,0 +1,62 @@
+$title: Razorpay
+$category: finance
+$date: 2021-03-02
+description: 'Razorpay improves survey response rate by 257% by letting customers fill surveys inside the email'
+formats:
+  - email
+
+teaser:
+  image:
+    src: '/static/img/success-stories/razorpay/razorpay-teaser.jpg'
+    width: 1
+    height: 1
+    alt: Razorpay product image
+  logo:
+    src: '/static/img/success-stories/razorpay/razorpay-logo.png'
+    width: 254
+    height: 82
+    alt: Razorpay
+  text: 'Razorpay improves survey response rate by 257% by letting customers fill surveys inside the email'
+
+stage:
+  headline: 'Razorpay improves survey response rate by 257% by letting customers fill surveys inside the email'
+  subline: MAR 2, 2021
+  layout: mobile
+  logo:
+    image_src: '/static/img/success-stories/razorpay/razorpay-logo-white.png'
+    width: 402
+    height: 86
+    alt: Razorpay
+  devices:
+    - video_src: '/static/img/success-stories/razorpay/razorpay-screencast.mp4'
+      poster_src: '/static/img/success-stories/razorpay/razorpay-screencast-poster.jpg'
+      width: 596
+      height: 544
+      type: mobile
+
+kpis:
+  - value: '+257%'
+    text: Increase in Email Response Rate
+
+contents:
+  - layout: text
+    text: 'Razorpay is a full-stack financial solutions provider based out of India. Founded in 2014, their specialization lies in core financial products like payment methods, business banking solutions, vendor payouts, payroll, and fraud prevention software. Razorpay’s mission is to improve and simplify the money movement for enterprises and SME (Small and Medium Enterprises) businesses in India.'
+  - layout: text
+    headline: Objective
+    text: 'As Razorpay’s product suite grew steadily, it wanted to receive genuine feedback from its customers at different time intervals. Their survey-based email campaigns aimed to receive valuable feedback and understand the willingness of a customer to recommend Razorpay to others. Their growth marketing team was looking for a way to improve the email experience for its receivers, which would in turn result in higher responses and fill rates.'
+  - layout: text
+    headline: Solution
+    text: 'Normally, feedback from Razorpay’s customers would be collected during a customer service call, via a form on the Razorpay dashboard, or from the monthly feedback emails sent out by Razorpay. Among these, the marketing team was particularly interested in leveraging the power of emails as it was the most well-performing and scalable way to get feedback. However, due to the multiple steps and redirections in their current emails, customers would often drop off before completing the survey process. <br><br>Razorpay sought to improve the response rate of their survey emails, and the team decided that they wanted an interactive format that would allow them to design the entire survey flow inside the email itself.<br><br>For this purpose, Razorpay chose to implement AMP emails which enabled interactive surveys inside the mail body itself. This meant that a user could fill the form within the email, without going to a different window or clicking through multiple steps.'
+  - layout: quote
+    quote: 'Since the time I started researching it, AMP looked very promising to me and it just proved its worth after our first experiment ended. I am happy that we could leverage AMP to enhance our customers’ experience and improve our email performance. We plan to continue using AMP for our various email marketing campaigns and surveys.'
+    image_src: '/static/img/success-stories/razorpay/razorpay-logo.png'
+    width: 180
+    height: 40
+    alt: Razorpay
+    author: Subhash Dash, Growth Marketing, Razorpay
+  - layout: text
+    headline: Results
+    text: 'The growth marketing team at Razorpay realized that experimenting with a new format of emails would require a lot of tech bandwidth and resources. That is when they came across Mailmodo, a SaaS platform for creating and sending AMP emails seamlessly. After demoing Mailmodo’s platform, the team was convinced about the potential of AMP technology and decided to experiment with it.<br><br>The collaborative effort led to an AMP email that had the entire survey flow inside the mail body. On opening the email, users were greeted with a dynamic questionnaire. This enabled the company to receive feedback from its customers quickly, which was incredibly enriching - both for the product team and the marketing team. The power of AMP to reduce redirections and provide a built-in survey led to a 257% increase in email performance for Razorpay, strengthening their trust in the technology.'
+  - layout: text
+    headline: Other AMP email campaigns and their results
+    text: 'The AMP journey for Razorpay did not end here. They were simultaneously experimenting with two other AMP email campaigns for two different objectives.<ul><li><b>Lead Generation:</b> The existing lead-gen emails required customers to click on the form, go to a new window, and fill out the required details. The additional steps required in this process led customers to drop off without completing the full process. Razorpay, along with Mailmodo, designed an AMP framework for Razorpay Thirdwatch, an AI-driven solution that helps online sellers flag suspicious orders and prevent Return-To-Origin and Cash-On-Delivery fraud. The team needed a way to collect customers’ interest in the product directly from inside the email. With the new set of AMP emails in action, the Razorpay Thirdwatch team saw an 87% increase in lead generation which helped them convert more merchants to the platform.<br><br></li><li><b>Product Awareness:</b> Razorpay Capital is a product that deals with cash flow challenges for businesses by financing their business growth with instant settlements, line of credits, corporate credit cards, and quick business loans. Their team needed emails that could support interactive elements and help in educating and engaging their customers better. They chose AMP to design visually appealing emails that used carousels to explain the benefits of Razorpay Working Capital Loans. These AMP emails saw a 45% increase in the engagement rate for Razorpay Capital’s product awareness campaign.</li></ul>With the excellent results that AMP gave Razorpay, their team is now looking for more use cases where this technology could help drive their business objectives.'
