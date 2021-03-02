@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
@@ -22,6 +22,9 @@ module.exports = (env, argv) => {
       sourceMapFilename: '[name].map',
       publicPath: '',
       path: path.join(__dirname, 'dist')
+    },
+    node: {
+      global: false,
     },
     devtool: devMode ? 'inline-source-map' : false,
     resolve: {
@@ -43,7 +46,7 @@ module.exports = (env, argv) => {
             }
           }
         }),
-        new CssMinimizerWebpackPlugin(),
+        new OptimizeCSSAssetsPlugin(),
       ],
       splitChunks: {
         cacheGroups: {
@@ -68,6 +71,7 @@ module.exports = (env, argv) => {
         'process.env.NODE_DEBUG': JSON.stringify(process.env.NODE_DEBUG),
         'process.type': JSON.stringify(process.type),
         'process.version': JSON.stringify(process.version),
+        global: '(typeof globalThis ? globalThis : self)',
       }),
       new CopyWebpackPlugin({
         patterns: [{ from: path.join(__dirname, 'static/') }],
