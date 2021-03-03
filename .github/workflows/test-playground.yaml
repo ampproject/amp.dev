@@ -25,4 +25,4 @@ jobs:
       - name: Running Playground tests
         run: |
           gulp updateTestResources
-          npm run test:playground
+          npm run test:playground -- --use-colors

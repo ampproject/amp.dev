@@ -25,4 +25,4 @@ jobs:
       - name: Running Pixi tests
         run: |
           gulp updateTestResources
-          npm run test:pixi
+          npm run test:pixi -- --use-colors
