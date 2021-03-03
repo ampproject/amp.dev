@@ -12,8 +12,6 @@ jobs:
     steps:
       - name: Cloning repository
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
 
       - name: Setting up Node.js
         uses: actions/setup-node@v1
