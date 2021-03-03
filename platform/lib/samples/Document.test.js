@@ -21,6 +21,8 @@ describe('Document', () => {
   const CodeSection = require('./CodeSection');
   const Document = require('./Document');
 
+  let doc;
+
   beforeEach(() => {
     doc = new Document();
   });
