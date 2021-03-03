@@ -173,7 +173,7 @@ function imageRunLocal() {
  * Builds and uploads a docker image to Google Cloud Container Registry.
  */
 function imageUpload() {
-  return sh(`gcloud builds submit --tag ${config.image.current} .`);
+  return sh(`gcloud builds submit --tag ${config.image.current} --timeout=50m .`);
 }
 
 /**
