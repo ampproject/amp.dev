@@ -1,14 +1,15 @@
 ---
-name: 'Tests & Checks'
+name: 'Test: Pixi'
 
-on: ['push']
+on:
+  push:
+    paths:
+      - 'package.json'
+      - 'pixi/**'
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        test: ['platform', 'pixi', 'playground']
     steps:
       - name: Cloning repository
         uses: actions/checkout@v2
@@ -21,7 +22,7 @@ jobs:
       - name: Installing Node.js packages
         run: npm ci
 
-      - name: Testing ${{ matrix.test }}
+      - name: Running Pixi tests
         run: |
           gulp updateTestResources
-          npm run test:${{ matrix.test }}
+          npm run test:pixi
