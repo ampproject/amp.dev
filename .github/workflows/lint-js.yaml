@@ -1,0 +1,26 @@
+---
+name: 'Lint: JavaScript'
+
+on:
+  push:
+    paths:
+      - '**/*.js'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning repository
+        uses: actions/checkout@v2
+
+      - name: Setting up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Installing Node.js packages
+        run: npm ci
+
+      - name: Linting JavaScript files
+        run: |
+          gulp lintNode

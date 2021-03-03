@@ -1,0 +1,27 @@
+---
+name: 'Lint: YAML'
+
+on:
+  push:
+    paths:
+      - '**/*.yml'
+      - '**/*.yaml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning repository
+        uses: actions/checkout@v2
+
+      - name: Setting up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Installing Node.js packages
+        run: npm ci
+
+      - name: Linting YAML files
+        run: |
+          gulp lintYaml
