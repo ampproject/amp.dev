@@ -1,0 +1,29 @@
+---
+name: 'Tests & Checks'
+
+on: ['push']
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        test: ['platform', 'pixi', 'playground']
+    steps:
+      - name: Cloning repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setting up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Installing Node.js packages
+        run: npm ci
+
+      - name: Testing ${{ matrix.test }}
+        run: |
+          gulp updateTestResources
+          npm run test:${{ matrix.test }}
