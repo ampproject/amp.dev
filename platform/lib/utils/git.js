@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const { execSync } = require('child_process');
+const {execSync} = require('child_process');
 
 module.exports.version = execSync('git log -1 --pretty=format:%h ')
   .toString()
