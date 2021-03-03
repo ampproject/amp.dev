@@ -92,7 +92,7 @@ describe('Linter check', () => {
     fetchMock.mock(`begin:${apiEndpoint}`, apiResponseError);
 
     const report = await linterCheck.run('http://example.com');
-    expect(report.data.isLoaded).toBe(null);
+    expect(report.data.isLoaded).toBe(false);
     expect(report.data.isAmp).toBeUndefined();
     expect(report.data.isValid).toBeUndefined();
   });

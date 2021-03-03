@@ -26,13 +26,13 @@ describe('config', () => {
     const allLocales = podSpec.localization.locales;
     expect(allLocales.includes('en')).toBe(true);
     expect(allLocales.includes('es')).toBe(true);
-    expect(allLocales.includes('asd')).toBe(true);
+    expect(allLocales.includes('fr')).toBe(true);
 
     expect(podSpec.deployments.default.filters).toBeUndefined();
   });
 
   it('Should build a grow podspec with languages and filters', () => {
-    const podSpec = config.buildGrowPodSpec({ locales: 'en,es' });
+    const podSpec = config.buildGrowPodSpec({locales: 'en,es'});
 
     const allLocales = podSpec.localization.locales;
     expect(allLocales.includes('en')).toBe(true);
