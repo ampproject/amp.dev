@@ -1080,7 +1080,7 @@ msgid "You've read this document a dozen times but it doesn't really cover all o
 msgstr "Вы читали этот документ десятки раз, но так и не нашли ответов на все свои вопросы? Возможно, другие люди столкнулись с такой же проблемой — обратитесь к ним на Stack Overflow."
 
 #: frontend/templates/views/partials/experiments/experiments.j2:4
-msgid "Enable the experiment via the button below. Some components require the AMP Dev Channel to be enabled as well."
+msgid "Enable the experiment via the button below. Some components require the AMP Beta Channel to be enabled as well."
 msgstr "Запустите эксперимент, нажав на кнопку ниже. Некоторые компоненты требуют, чтобы был активирован канал разработчиков AMP."
 
 #: frontend/templates/views/partials/structured-data.j2:54
