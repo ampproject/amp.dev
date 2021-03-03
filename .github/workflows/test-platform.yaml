@@ -25,4 +25,5 @@ jobs:
       - name: Running Platform tests
         run: |
           gulp updateTestResources
+          gulp buildComponentVersions
           npm run test:platform -- --colors
