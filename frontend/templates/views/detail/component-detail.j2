@@ -10,10 +10,12 @@
   {% do doc.styles.addCssFile('css/components/atoms/fab.css') %}
   {% do doc.styles.addCssFile('css/components/organisms/code-preview.css') %}
   {% do doc.icons.useIcon('icons/reload.svg') %}
+  {% do doc.icons.useIcon('icons/experimental.svg') %}
   {% do doc.icons.useIcon('icons/orientation-toggle.svg') %}
 {% endif %}
 
 {% do doc.styles.addCssFile('css/components/templates/component-detail.css') %}
+{% do doc.styles.addCssFile('/css/components/molecules/experiments.css') %}
 {% endblock %}
 
 {% block main %}

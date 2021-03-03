@@ -21,6 +21,9 @@ It supports the following attributes:
    * **false** No playground link will be shown
  * **imports** The comma separated list of required amp custom elements (optional)
    You can add the version of a component separated by a colon after the component name
+ * **experimental**
+   * **true** The experimental toggle will be shown above the example preview
+   * **false** No experimental toggle will be shown (default)
  * **template** The template syntax to use. Specify the version separated by a colon after the template syntax name
 
 
@@ -30,6 +33,7 @@ It supports the following attributes:
 [example preview="inline"
          playground="true"
          imports="amp-list:0.2,amp-bind"
+         experimental="false"
          template="amp-mustache:0.2"]
 
 ```html

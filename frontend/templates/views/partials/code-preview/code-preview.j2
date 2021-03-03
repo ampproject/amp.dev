@@ -1,10 +1,91 @@
+{% if preview.experimental %}
+
+  {# Get list of components to pass to the experimental toggle #}
+  {% set component_list = [] %}
+  {% for component in preview.imports %}
+  {% do component_list.append(component.name) %}
+  {% endfor %}
+
+  <script>var experiments = {{ component_list|tojson }}</script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    (window.AMP = window.AMP || []).push(function(AMP) {
+      function areAllExperimentsEnabled() {
+        for (var i = 0; i < experiments.length; i++) {
+          if (!AMP.isExperimentOn(experiments[i])) {
+            return false;
+          }
+        }
+
+        return true;
+      }
+
+      var arr = document.querySelectorAll('.experiment-layer');
+      if (areAllExperimentsEnabled()) {
+        console.log('All experiments are on.');
+        for (var i = 0; i < arr.length; i++) {
+          arr[i].hidden = false;
+        }
+      } else {
+        console.log('NOT all experiments are on!');
+        for (var i = 0; i < arr.length; i++) {
+          arr[i].hidden = true;
+        }
+      }
+    });
+  });
+  </script>
+
+{% set experimental_toggle %}
+<div id="ap-m-experiments-preview-container-{{ preview.index }}" class="ap-m-experiments-preview-container experiment-layer">
+
+  {# Render widget to toggle experiments if there are any #}
+  {% if preview.experimental and preview.mode != 'inline' %}
+  {% do doc.amp_dependencies.add('amp-iframe', '0.1') %}
+  <h4>Experimental Example</h4>
+  <p>{{ _('This example uses the following experimental features:') }} {% for experiment in component_list %}<code>{{ experiment }}</code>{{ ', ' if not loop.last }}{% endfor %}. {{ _('Enable the experiment to make it work.') }} Learn more about <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path }}">experimental features</a>.</p>
+  <amp-iframe class="amp-iframe"
+              layout="fixed-height"
+              height="38"
+              sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-presentation allow-top-navigation"
+              allowfullscreen
+              allowpaymentrequest
+              frameborder="0"
+              src="{{ podspec.base_urls.preview }}/shared/experiments/?experiments={{ component_list|map('lower')|join(', ') }}&style=preview">
+    <div placeholder=""></div>
+  </amp-iframe>
+  {% elif preview.experimental and preview.mode == 'inline' %}
+  <script>const experiments = {{ component_list|tojson }}</script>
+  {% do doc.styles.addCssFile('/css/components/molecules/experiments.css', 100) %}
+  <div class="ap-m-experiments ap-m-experiments-preview">
+    <h4>Experimental Example</h4>
+    <p>{{ _('This example uses the following experimental features:') }} {% for experiment in component_list %}<code>{{ experiment }}</code>{{ ', ' if not loop.last }}{% endfor %}. {{ _('Enable the experiment to make it work.') }} Learn more about <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path }}">experimental features</a>.</p>
+    {% include '/views/partials/experiments/experiments-controls.j2' %}
+  </div>
+  {% include '/views/partials/experiments/experiments-script.j2' %}
+  {% endif %}
+</div>
+{% endset %}
+
+{% set experimental_hint %}
+<div class="ap-m-experiments-hint experiment-layer">
+  <div class="ap-a-ico">
+    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning"></use></svg>
+  </div>
+  <p>The example uses experimental features. <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path }}"><b>Learn more</b></a></p>
+</div>
+{% endset %}
+{% endif %}
+
 {% if preview.mode != 'none' %}
 <div class="ap-o-code-preview {{ preview.mode if preview.mode != 'none' }}">
 {% endif %}
 
   {% if preview.mode == 'inline' %}
+  {{ experimental_toggle }}
+  {{ experimental_hint }}
   <div class="ap-o-code-preview-preview">
-     {{preview.source|render|safe}}
+    {{preview.source|render|safe}}
   </div>
   {% endif %}
 
@@ -23,7 +104,6 @@
   </amp-state>
 
   <div class="ap-o-code-preview-top-preview ap-o-code-preview-top-preview-{{ preview.index }}">
-
     <div class="ap-o-code-preview-controls">
       <button {{ 'hidden' if not is_landscape }} [hidden]="!orientation{{ preview.index }}"
               class="ap-o-code-preview-controls-button"
@@ -57,6 +137,7 @@
     </div>
 
     <div id="iframeContainer{{ preview.index }}" class="ap-o-code-preview-preview-iframe ap-o-code-preview-preview-iframe-{{ initial_orientation }}">
+      {{ experimental_toggle }}
       <amp-iframe class="ap-o-code-preview-iframe"
                   src="{{ preview.url }}"
                   [src]="example{{ preview.index }}"
@@ -67,6 +148,7 @@
       </amp-iframe>
       <div id="bgContainer{{ preview.index }}" class="ap-o-code-preview-preview-iframe-background initial-{{ initial_orientation }}"></div>
     </div>
+    {{ experimental_hint }}
   </div>
   {% endif %}
 
@@ -100,7 +182,6 @@
       {% set orientations = ['portrait', 'landscape'] %}
 
       {% for orientation in orientations %}
-      {% do doc.icons.useIcon('/icons/orientation-' + orientation + '.svg') %}
       <button class="ap-m-orientation-toggle-button {% if orientation == 'portrait' %}active{% endif %}"
               [class]="orientation{{ preview.index }} == '{{ orientation }}' ? 'ap-m-orientation-toggle-button active' : 'ap-m-orientation-toggle-button'"
               on="tap:AMP.setState({orientation{{ preview.index }}: '{{ orientation }}'})">
@@ -120,6 +201,7 @@
     <div id="previewIframe{{ preview.index }}"
          class="ap-o-code-preview-side-preview-frame ap-o-code-preview-side-preview-frame-portrait"
          [class]="'ap-o-code-preview-side-preview-frame ap-o-code-preview-side-preview-frame-' + orientation{{ preview.index }}">
+      {{ experimental_toggle }}
       <div class="ap-o-code-preview-side-preview-sizer"></div>
       <amp-iframe layout="fill"
                   sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-presentation allow-top-navigation"
@@ -130,8 +212,8 @@
         <div placeholder></div>
       </amp-iframe>
     </div>
+    {{ experimental_hint }}
   </div>
-
   {% endif %}
 
 {% if preview.mode != 'none' %}

@@ -41,6 +41,11 @@
       fill: color('white');
       opacity: .6;
       transition: opacity .25s ease-out;
+
+      &-experimental {
+        width: 32px;
+        height: 32px;
+      }
     }
 
     &-button:hover &-icon,
@@ -106,7 +111,7 @@
     }
 
     &-landscape {
-      max-width: 100%;
+      max-width: calc(100% - 2em);
 
       amp-iframe {
         padding-top: 56.25%;
@@ -145,7 +150,6 @@
   /* top preview like playground embed mode */
   &-top-preview {
     position: relative;
-    padding: 0 1em;
     z-index: 1;
 
     @media (min-width: 1024px) {

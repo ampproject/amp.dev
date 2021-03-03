@@ -39,6 +39,8 @@ class ExampleDocument(object):
 
     self.playground = 'playground' not in export_attributes or export_attributes['playground'].lower() != 'false'
 
+    self.experimental = 'experimental' in export_attributes and export_attributes['experimental'].lower() == 'true'
+
   @property
   def has_iframe_preview(self):
     return self.preview in PREVIEW_MODES_IN_IFRAME

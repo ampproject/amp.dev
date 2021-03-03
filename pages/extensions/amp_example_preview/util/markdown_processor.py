@@ -37,9 +37,11 @@ def _transform(doc, content):
 
     preview = ExamplePreview(index=example_document.index,
                              mode=example_document.preview,
+                             imports=example_document.imports,
                              orientation=example_document.orientation,
                              url=extract_url,
                              playground=example_document.playground,
+                             experimental=example_document.experimental,
                              source=example_document.body)
 
     result = result + preview.get_start_tag()
