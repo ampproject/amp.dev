@@ -82,7 +82,11 @@ Adds support for AT Internet. More details for adding AT Internet support can be
 
 Type attribute value: `baiduanalytics`
 
+<!-- markdown-link-check-disable -->
+
 Adds support for Baidu Analytics. More details for adding Baidu Analytics support can be found at [tongji.baidu.com/](http://tongji.baidu.com/web/help/article?id=268&type=0).
+
+<!-- markdown-link-check-enable -->
 
 ### Black Crow AI <a name="black-crow-ai"></a>
 
@@ -450,6 +454,12 @@ Type attribute value: `segment`
 Adds support for segment page views and events.
 To see the full list of fields that you can send, see [Segment Spec](https://segment.com/docs/spec/).
 
+### SensorsData <a name="sensorsdata"></a>
+
+Type attribute value: `sensorsanalytics`
+
+Adds support for Sensors Data. More details for adding Sensors Data support can be found at [sensorsdata.com](https://manual.sensorsdata.cn/sa/latest/web-js-sdk-7548149.html).
+
 ### ShinyStat <a name="shinystat"></a>
 
 Type attribute value: `shinystat`
@@ -458,7 +468,11 @@ Type attribute value: `shinystat`
 
 Type attribute value: `mpulse`
 
+<!-- markdown-link-check-disable -->
+
 Adds support for [SOASTA mPulse](https://www.soasta.com/mPulse). Configuration details can be found at [docs.soasta.com](http://docs.soasta.com/).
+
+<!-- markdown-link-check-enable -->
 
 ### SimpleReach <a name="simplereach"></a>
 
@@ -470,7 +484,7 @@ Adds support for SimpleReach. Configuration details can be found at `http://docs
 
 Type attribute value: `snowplow`, `snowplow_v2`
 
-Adds support for Snowplow Analytics. More details for adding Snowplow Analytics support can be found at [github.com/snowplow/snowplow/wiki](https://github.com/snowplow/snowplow/wiki/Google-AMP-Tracker).
+Adds support for Snowplow Analytics. More details for adding Snowplow Analytics support can be found at [docs.snowplowanalytics.com](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/google-amp-tracker/).
 
 ### Tail <a name="tail"></a>
 

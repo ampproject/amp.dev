@@ -29,6 +29,31 @@ test('Test frontmatter extraction', async (done) => {
   done();
 });
 
+test('Test frontmatter formats normalization', async (done) => {
+  const doc = new MarkdownDocument(
+    '/docs/amp-test-v0.1.md',
+
+    '---\n' +
+      '$category: media\n' +
+      'formats:\n' +
+      '  - websites\n' +
+      '  - emails\n' +
+      '  - ads\n' +
+      '  - stories\n' +
+      'teaser:\n' +
+      '  text: Teaser text.\n' +
+      '---\n' +
+      '\n' +
+      '# amp-test\n'
+  );
+
+  expect(doc.formats).toEqual(
+    expect.arrayContaining(['websites', 'email', 'ads', 'stories'])
+  );
+
+  done();
+});
+
 test('Test teaser text extraction', async (done) => {
   const teaserText = MarkdownDocument.extractTeaserText(
     '<!--\n' +

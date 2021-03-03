@@ -144,6 +144,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/affiliateb.md
       - label: AMoAd
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/amoad.md
+      - label: AnyClip
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/anyclip.md
       - label: AppNexus
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/appnexus.md
       - label: AppVador

@@ -16,7 +16,7 @@ module.exports = (env, argv) => {
   return {
     entry: path.join(__dirname, 'amp-dev.js'),
     output: {
-      filename: 'static/[name].[hash].js',
+      filename: 'static/[name].[contenthash].js',
       chunkFilename: 'static/[name].[chunkhash].bundle.js',
       sourceMapFilename: 'static/[name].map',
       publicPath: isDevelopment ? 'http://localhost:8090/' : '/',

@@ -255,10 +255,6 @@ event.index</pre></td>
     <th width="40%">Data</th>
   </tr>
   <tr>
-    <td><code>changeToLayoutContainer</code></td>
-    <td>Update's <code>amp-list</code>'s layout to <code>layout="CONTAINTER"</code> to allow <a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">dynamic resizing</a>.</td>
-  </tr>
-  <tr>
     <td><code>fetch-error</code>(low-trust)</td>
     <td>Fired when fetching data fails.</td>
     <td>None</td>
@@ -559,6 +555,10 @@ event.response</pre></td>
   <tr>
     <th>Action</th>
     <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>changeToLayoutContainer</code></td>
+    <td>Update's <code>amp-list</code>'s layout to <code>layout="CONTAINTER"</code> to allow <a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">dynamic resizing</a>.</td>
   </tr>
   <tr>
     <td><code>refresh</code></td>
