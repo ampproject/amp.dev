@@ -40,7 +40,7 @@ Jeśli po wykonaniu tych czynności problem nie ustąpi, sprawdź poniższą tab
     <tr>
       <td>Czcionki internetowe nie są wyświetlane (stosowane są czcionki rezerwowe)</td>
       <td>Serwer buforujący AMP nie znajduje się na białej liście dostawcy czcionek.</td>
-      <td>Skontaktuj się z dostawcą czcionek i poproś go o umieszczenie na liście dozwolonych <a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">wszystkich serwerów buforujących</a>.</td>
+      <td>Skontaktuj się z dostawcą czcionek i poproś go o umieszczenie na liście dozwolonych <a href="amp-cors-requests.md#cors-security-in-amp">wszystkich serwerów buforujących</a>.</td>
     </tr>
     <tr>
       <td>Nie są wyświetlane zasoby (np. czcionki i obrazy, <strong>&nbsp;tylko źródło HTTP</strong>)</td>
@@ -60,7 +60,7 @@ Jeśli po wykonaniu tych czynności problem nie ustąpi, sprawdź poniższą tab
       <td>Elementy dynamiczne, takie jak <code><amp-form></amp-form></code>, <kod><amp-list></amp-list> nie działają zgodnie z oczekiwaniami.</kod>
 </td>
       <td>Uszkodzone lub brakujące nagłówki CORS.</td>
-      <td>Składniki te generują żądania danych z różnych źródeł, wysyłane z serwera buforującego AMP do Twojego źródła. Przeglądarki domyślnie blokują te żądania. Aby zezwolić na te żądania, należy emitować nagłówki <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS</a>, zezwalające na umieszczenie na liście dozwolonych <a href="https://amp.dev/documentation/guides-and-tutorials/amp-cors-requests.html">wszystkich serwerów buforujących</a>.</td>
+      <td>Składniki te generują żądania danych z różnych źródeł, wysyłane z serwera buforującego AMP do Twojego źródła. Przeglądarki domyślnie blokują te żądania. Aby zezwolić na te żądania, należy emitować nagłówki <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS</a>, zezwalające na umieszczenie na liście dozwolonych <a href="amp-cors-requests.md">wszystkich serwerów buforujących</a>.</td>
     </tr>
     <tr>
       <td>Dostarczane są treści, które muszą zostać usunięte w związku z prawnym zawiadomieniem o konieczności ich usunięcia.</td>
