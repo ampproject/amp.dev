@@ -191,7 +191,9 @@ Link to a Web Story by including an `<a>` tag with the `href` attribute pointed 
       Article Title
     </h1>
     <amp-story-player style="width: 370px; height: 622px;">
-      <a href="https://ampfest-story-player-demo.web.app/examples/amp-story/AMPFestPlayerDemo/s3"></a>
+      <a href="https://ampfest-story-player-demo.web.app/examples/amp-story/AMPFestPlayerDemo/s3">
+        <img src="https://ss.makestories.io/get?story=-MHy2RL_9ZnDFYTFB2PY&version=1600916568756" loading="lazy" data-amp-story-player-poster-img width="370" height="622"></img>
+      </a>
     </amp-story-player>
   </body>
 </html>
