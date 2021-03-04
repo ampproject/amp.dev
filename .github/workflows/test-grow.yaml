@@ -44,6 +44,5 @@ jobs:
           pip install grow --upgrade-strategy eager
 
       - name: Running Grow tests
-        run: |
-          cd pages/extensions
-          python3 -m unittest discover -p \"*_test.py\"
+        working-directory: ./pages/extensions
+        run: python3 -m unittest discover -p \"*_test.py\"
