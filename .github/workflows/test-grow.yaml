@@ -4,7 +4,8 @@ name: 'Test: Grow'
 on:
   push:
     paths:
-      - 'pages/extensions/**'
+      - '*'
+      # - 'pages/extensions/**'
 
 jobs:
   test:
@@ -21,8 +22,10 @@ jobs:
       - name: Installing Node.js packages
         run: npm ci
 
-      - name: Downloading test resources
-        run: gulp buildComponentVersions
+      - name: Preparing test resources
+        run: |
+          gulp buildComponentVersions
+          npx run build:grow-tests
 
       - name: Setting up Python
         uses: actions/setup-python@v2
