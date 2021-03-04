@@ -135,23 +135,6 @@ html
 </amp-story-player>
 ```
 
-## Configure the Web Story Player behavior
-
-Specify Web Story Player behavior in a JSON configuration:
-
-```html
-<amp-story-player style="width: 370px; height: 622px;">
-<script type="application/json">
-    {
-      "behavior": {
-        "autoplay": false
-      }
-    }
-  </script>
-...
-</amp-story-player>
-```
-
 # Display a Web Story 
 
 Link to a Web Story by including an `<a>` tag with the `href` attribute pointed to the desired Web Story URL within the `<amp-story-player>` element. The `href` endpoint may be the URL of a hosted Web Story or a relative path. Place the title of the story within the `<a>` tags.
@@ -202,6 +185,23 @@ Link to a Web Story by including an `<a>` tag with the `href` attribute pointed 
 </html>
 ```
 [/example]
+
+## Configure the Web Story Player behavior
+
+Specify Web Story Player behavior in a JSON configuration:
+
+```html
+<amp-story-player style="width: 370px; height: 622px;">
+<script type="application/json">
+    {
+      "behavior": {
+        "autoplay": false
+      }
+    }
+  </script>
+...
+</amp-story-player>
+```
 
 The Web Story Player displays the cover page of the embedded story. If you want the Player to display the Web Story the same as it would appear when sent as a direct link, set `autoplay` to be true. If you want to wait for the user to click on a UI element, such as a play icon, set `autoplay` to false and then call the `play()` action manually upon user interaction. 
 
@@ -498,7 +498,7 @@ You may further personalize custom controls with the following optional properti
     *   Toggles the control’s visibility. If omitted, the default is visible.
 
 
-# Customize Web Story Player behavior
+# Web Story Player interactivity
 
 You may call the [Web Story Player’s methods](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md#programmatic-control) to programmatically control the player. These methods include when to initialize the player, muting the audio, and pausing the story.
 
@@ -507,17 +507,21 @@ const playerEl = document.body.querySelector('amp-story-player');
 playerEl.play()
 ```
 
-Available methods are exposed on the HTML element, 
+Available methods are exposed on the HTML element: 
 
 ```html
 const playerEl = document.querySelector('amp-story-player')
 ```
 
-and on instances of the global class variable,
+When creating a player dynamically, such as `document.createElement('amp-story-player')`, you may use the global class variable `AmpStoryPlayer` to load the player manually. 
 
 ```html
 const player = new AmpStoryPlayer(window, playerEl)
 ```
+
+[tip type="note"]
+The element must be connected to the DOM before calling `load()`.
+[/tip]
 
 See the list of methods in the [Web Story Player spec](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md#programmatic-control).
 
