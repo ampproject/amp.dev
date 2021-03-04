@@ -504,8 +504,7 @@ You may call the [Web Story Player’s methods](https://github.com/ampproject/am
 
 ```
 const playerEl = document.body.querySelector('amp-story-player');
-const player = new AmpStoryPlayer(window, playerEl);
-player.load();
+playerEl.play()
 ```
 
 Available methods are exposed on the HTML element, 
