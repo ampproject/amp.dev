@@ -1,0 +1,26 @@
+---
+name: 'Test: Grow'
+
+on:
+  push:
+    paths:
+      - 'pages/extensions/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning repository
+        uses: actions/checkout@v2
+
+      - name: Setting up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Installing Grow
+        run: pip install grow
+
+      - name: Running Grow tests
+        run: |
+          cd pages/extensions && python3 -m unittest discover -p \"*_test.py\"
