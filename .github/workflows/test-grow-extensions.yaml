@@ -1,7 +1,10 @@
 ---
-name: 'Test: Grow'
+name: 'Test: Grow extensions'
 
-on: push
+on:
+  push:
+    paths:
+      - 'pages/extensions/**'
 
 jobs:
   test:
