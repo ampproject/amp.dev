@@ -13,6 +13,17 @@ jobs:
       - name: Cloning repository
         uses: actions/checkout@v2
 
+      - name: Setting up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Installing Node.js packages
+        run: npm ci
+
+      - name: Downloading test resources
+        run: gulp buildComponentVersions
+
       - name: Setting up Python
         uses: actions/setup-python@v2
         with:
@@ -23,4 +34,5 @@ jobs:
 
       - name: Running Grow tests
         run: |
-          cd pages/extensions && python3 -m unittest discover -p \"*_test.py\"
+          cd pages/extensions
+          python3 -m unittest discover -p \"*_test.py\"
