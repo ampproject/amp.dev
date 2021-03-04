@@ -71,6 +71,7 @@ const config = {
     ],
     template: `it-${PREFIX}-${TAG}`,
     count: 2,
+    diskSize: '20GB',
     machine: 'n1-standard-2',
   },
   gcloud: {
@@ -192,6 +193,7 @@ function instanceTemplateCreate() {
   return sh(`gcloud compute instance-templates create-with-container ${config.instance.template} \
                  --container-image ${config.image.current} \
                  --machine-type ${config.instance.machine} \
+                 --boot-disk-size ${config.instance.diskSize} \
                  --tags http-server,https-server \
                  --scopes default,datastore`);
 }
