@@ -18,7 +18,7 @@ class AmpDependenciesTestCase(unittest.TestCase):
 
   def test_add_new_component(self):
     amp_deps = AmpDependencies(test_pod)
-    amp_deps.add('amp-anim', '0.1')
+    amp_deps.add('amp-anim', '5.6')
     self.assertEqual(1, len(amp_deps._dependencies))
     version, dep_type = amp_deps._dependencies.get('amp-anim')
     self.assertEqual('0.1', version)
