@@ -1,11 +1,7 @@
 ---
 name: 'Test: Grow'
 
-on:
-  push:
-    paths:
-      - '*'
-      # - 'pages/extensions/**'
+on: push
 
 jobs:
   test:
