@@ -502,7 +502,7 @@ You may further personalize custom controls with the following optional properti
 
 You may call the [Web Story Player’s methods](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md#programmatic-control) to programmatically control the player. These methods include when to initialize the player, muting the audio, and pausing the story.
 
-```
+```js
 const playerEl = document.body.querySelector('amp-story-player');
 playerEl.play()
 ```
