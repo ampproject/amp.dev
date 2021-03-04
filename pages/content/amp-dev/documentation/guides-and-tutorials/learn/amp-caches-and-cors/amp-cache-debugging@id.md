@@ -40,7 +40,7 @@ Jika Anda masih mengalami masalah setelah mengikuti langkah-langkah ini, periksa
     <tr>
       <td>Font web tidak muncul (font fallback digunakan)</td>
       <td>Cache AMP tidak diberikan izin oleh penyedia font.</td>
-      <td>Hubungi penyedia font dan minta mereka untuk mengizinkan <a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">semua cache</a>.</td>
+      <td>Hubungi penyedia font dan minta mereka untuk mengizinkan <a href="amp-cors-requests.md#cors-security-in-amp">semua cache</a>.</td>
     </tr>
     <tr>
       <td>Aset (cth., font dan gambar) tidak muncul (<strong>hanya asal HTTP</strong>)</td>
@@ -59,7 +59,7 @@ Jika Anda masih mengalami masalah setelah mengikuti langkah-langkah ini, periksa
     <tr>
       <td>Elemen dinamis, seperti <code><amp-form></amp-form></code>, <code><amp-list></amp-list></code>, tidak berperilaku sebagaimana diharapkan.</td>
       <td>Tajuk CORS tidak ada atau rusak</td>
-      <td>Komponen-komponen ini membuat permintaan lintas asal dari Cache AMP ke asal Anda. Sebagai default, browser akan memblokir permintaan ini. Untuk mengizinkan permintaan ini, masukkan <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">tajuk CORS</a> yang mencantumkan daftar <a href="https://amp.dev/documentation/guides-and-tutorials/amp-cors-requests.html">semua cache</a> yang diizinkan.</td>
+      <td>Komponen-komponen ini membuat permintaan lintas asal dari Cache AMP ke asal Anda. Sebagai default, browser akan memblokir permintaan ini. Untuk mengizinkan permintaan ini, masukkan <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">tajuk CORS</a> yang mencantumkan daftar <a href="amp-cors-requests.md">semua cache</a> yang diizinkan.</td>
     </tr>
     <tr>
       <td>Konten yang sedang disajikan, namun harus dihapus karena adanya pemberitahuan penghapusan berdasarkan hukum.</td>
