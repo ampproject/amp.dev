@@ -15,6 +15,11 @@ jobs:
         with:
           node-version: 12
 
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: node_modules-${{ hashFiles('**/package-lock.json') }}
+
       - name: Installing Node.js packages
         run: npm ci
 
@@ -28,8 +33,15 @@ jobs:
         with:
           python-version: '3.x'
 
+      - uses: actions/cache@v2
+        with:
+          path: ${{ env.pythonLocation }}
+          key: ${{ env.pythonLocation }}
+
       - name: Installing Grow
-        run: pip install grow
+        run: |
+          sudo apt-get install libyaml-dev
+          pip install grow --upgrade-strategy eager
 
       - name: Running Grow tests
         run: |
