@@ -213,7 +213,7 @@ Include a representative poster image by adding an `<img>` tag as a child of the
 ```html
 <amp-story-player style="width: 50vw; height: 83.35vw;">
   <a href="https://www.example.com/story.html">
-    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" amp-story-player-poster-img>
+    <img src="https://www.example.com/assets/cover1.html" loading="lazy" width="100%" height="100%" data-amp-story-player-poster-img>
     A title that describes this story.
   </a>
 </amp-story-player>
