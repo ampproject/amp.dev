@@ -439,7 +439,7 @@ The “share” control supports the following customizable properties:
     *   Changes the icon image to the provided url or data string (for inline svgs).
 
 
-## Skip-next control
+## Skip to next control
 
 Add a control that skips to the next story inside the player by specifying a control object with the “skip-next” name. This feature is only available on desktop, as mobile users may use the “swipe” gesture to skip to the next story. 
 
