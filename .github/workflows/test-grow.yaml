@@ -15,11 +15,6 @@ jobs:
         with:
           node-version: 12
 
-      - uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: npm-${{ hashFiles('**/package-lock.json') }}
-
       - name: Installing Node.js packages
         run: npm ci
 
@@ -41,7 +36,6 @@ jobs:
       - name: Preparing test resources
         run: |
           gulp buildComponentVersions
-          npm run build:grow-tests
 
       - name: Running Grow tests
         working-directory: /home/runner/work/amp.dev/amp.dev/pages/extensions
