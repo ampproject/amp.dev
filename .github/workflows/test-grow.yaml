@@ -17,8 +17,8 @@ jobs:
 
       - uses: actions/cache@v2
         with:
-          path: '**/node_modules'
-          key: node_modules-${{ hashFiles('**/package-lock.json') }}
+          path: ~/.npm
+          key: npm-${{ hashFiles('**/package-lock.json') }}
 
       - name: Installing Node.js packages
         run: npm ci
@@ -44,5 +44,8 @@ jobs:
           pip install grow --upgrade-strategy eager
 
       - name: Running Grow tests
-        working-directory: ./pages/extensions
-        run: python3 -m unittest discover -p \"*_test.py\"
+        working-directory: /home/runner/work/amp.dev/amp.dev/pages/extensions
+        run: |
+          pwd
+          ls
+          python3 -m unittest discover -p \"*_test.py\"
