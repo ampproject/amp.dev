@@ -125,7 +125,7 @@ jobs:
           gulp buildPages --locales ${{ matrix.language }}
 
       - name: Storing build artifacts
-          uses: actions/upload-artifact@v2
-          with:
-            name: pages-${{ job.container.id }}
-            path: build
+        uses: actions/upload-artifact@v2
+        with:
+          name: pages-${{ job.container.id }}
+          path: build
