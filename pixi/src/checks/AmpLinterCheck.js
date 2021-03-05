@@ -27,6 +27,7 @@ const directMapping = {
   boilerplateisremoved: 'boilerplateIsRemoved',
   heroimageisdefined: 'heroImageIsDefined',
   viewportdisablestapdelay: 'viewportDisablesTapDelay',
+  noiconfontisused: 'noIconFontIsUsed',
 };
 
 export default class AmpLinterCheck {
