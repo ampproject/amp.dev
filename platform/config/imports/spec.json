@@ -82,6 +82,15 @@
 		"formats": ["websites","email","stories", "ads"]
 	},
 	{
+		"title": "Video in AMP",
+		"order": -1,
+		"description": "AMP pages may add video directly or through 3rd party vendors. This document explains broader video support in AMP and how 3rd parties may embed their players.",
+		"repo": "ampproject/amphtml",
+		"from": "spec/amp-video-interface.md",
+		"to": "documentation/guides-and-tutorials/learn/spec/amp-video-interface.md",
+		"formats": ["websites", "stories", "ads"]
+	},
+	{
 		"title": "Help",
 		"order": 1,
 		"repo": "ampproject/amphtml",
