@@ -57,6 +57,7 @@ jobs:
           AMP_DOC_TOKEN: ${{ secrets.AMP_DOC_TOKEN }}
         run: |
           gulp buildPrepare
+          echo "Done"
 
       - name: Storing build artifacts
         uses: actions/upload-artifact@v2
