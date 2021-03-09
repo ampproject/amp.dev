@@ -26,8 +26,8 @@ jobs:
       - name: Running tests
         run: |
           gulp updateTestResources
-          npm run lint:node
-          npm run lint:yaml
+          gulp lintNode
+          gulp lintYaml
           npm run test:platform
           npm run test:playground
           npm run test:pixi
