@@ -53,6 +53,8 @@ jobs:
         run: npm install
 
       - name: Preparing build
+        env:
+          AMP_DOC_TOKEN: ${{ secrets.AMP_DOC_TOKEN }}
         run: |
           gulp buildPrepare
 
