@@ -299,6 +299,8 @@ function buildPrepare(done) {
       await sh('mkdir -p build');
       await sh(`tar cfj ${SETUP_ARCHIVE} ${SETUP_STORED_PATHS.join(' ')}`);
       await sh('echo "Done from gulp"');
+
+      process.exit(0);
     }
   )(done);
 }
