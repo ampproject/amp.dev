@@ -26,6 +26,7 @@ jobs:
       - name: Running tests
         run: |
           gulp updateTestResources
+          gulp buildComponentVersions
           gulp lintNode
           gulp lintYaml
           npm run test:platform
