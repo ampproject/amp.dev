@@ -5,6 +5,7 @@
     <script type="application/json">
 
 
+      {% do survey_questions.update({"_url": request.url }) %}
       {{ survey_questions | tojson }}
     </script>
   </amp-state>
