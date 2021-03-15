@@ -110,7 +110,9 @@ After including each script, include an `<amp-story-player>` element inside the 
 
 ## Size the Web Story Player
 
-You may define the story player's width, height, and other styles inline or as you would any other element's style.
+We recommend making the Web Story Player full-screen when possible, especially on mobile devices. This keeps readers immersed in story content while adding the extra functionality the player provides. 
+
+In cases where full-screen is not possible, you can size the Web Story Player as you would any other HTML element. You may define the story player's width, height, and other styles inline or as you would any other element's style.
 
 ```html
 <body>
@@ -306,9 +308,9 @@ You can create a circular consumption of a set of stories by adding the `circula
 The JSON configuration must be a direct child of the `<amp-story-player>` element and include the `type="application/json"` attribute. 
 
 
-### Infinite stories
+### Personalized and infinite stories
 
-You can create an "infinite scroll" experience by fetching more stories as the user navigates through them in the Web Story Player. To do so, include the `fetch` action and specify an endpoint in the JSON configuration. The player automatically fetches more stories as the user gets closer to the last loaded story. 
+You can create an "infinite scroll" experience as the user navigates through them in the Web Story Player. To do so, include the [`fetch` action](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md#custom-events) and specify an endpoint in the JSON configuration. The player automatically fetches more stories as the user gets closer to the last loaded story. You can customize fetched stories for users by setting up backend personalization system and using the `fetch` action to serve them.
 
 ```html
 <amp-story-player>
@@ -378,7 +380,7 @@ You may customize the controls of the Web Story Player UI. You can add new contr
          "position": "start"
        },
        {
-         "name": "skip-next"
+         "name": "skip-to-next"
        }
      ]
    }
@@ -441,9 +443,9 @@ The “share” control supports the following customizable properties:
 
 ## Skip to next control
 
-Add a control that skips to the next story inside the player by specifying a control object with the “skip-next” name. This feature is only available on desktop, as mobile users may use the “swipe” gesture to skip to the next story. 
+Add a control that skips to the next story inside the player by specifying a control object with the “skip-to-next” name. This feature is only available on desktop, as mobile users may use the “swipe” gesture to skip to the next story. 
 
-The “skip-next” control supports the following customizable properties:
+The “skip-to-next” control supports the following customizable properties:
 
 *   `position`: “start” or “end”.
     *   Positions the icon either on the left (“start”) or right (“end”) on LTR languages.
