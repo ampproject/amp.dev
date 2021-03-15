@@ -43,7 +43,7 @@ const importWorkingGroups = require('./import/importWorkingGroups.js');
 const {thumborImageIndex} = require('./thumbor.js');
 const CleanCSS = require('clean-css');
 const validatorRules = require('@ampproject/toolbox-validator-rules');
-const {PIXI_ROOT} = require('@lib/utils/project').paths;
+const {PIXI_CLOUD_ROOT} = require('@lib/utils/project').paths;
 
 // The Google Cloud Storage bucket used to store build job artifacts
 const TRAVIS_GCS_PATH = 'gs://amp-dev-ci/travis/';
@@ -173,7 +173,7 @@ async function buildPixi() {
  */
 function buildPixiFunctions() {
   return sh('npm install', {
-    workingDir: PIXI_ROOT,
+    workingDir: PIXI_CLOUD_ROOT,
   });
 }
 
