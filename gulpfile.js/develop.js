@@ -29,6 +29,7 @@ function bootstrap(done) {
     build.buildComponentVersions,
     build.buildBoilerplate,
     build.buildPlayground,
+    build.buildPixiFunctions,
     build.importAll,
     samplesBuilder.build.bind(samplesBuilder)
   )(done);
