@@ -26,17 +26,22 @@ const pageExperienceGuide = new PageExperienceGuide();
  *                     More info: https://expressjs.com/en/api.html#res
  */
 exports.checkPageExperience = async (req, res) => {
-  const url = req.query.url;
-  if (!url) {
+  const urlString = req.query.url;
+  if (!urlString) {
     res.status(400).send('Missing url parameter');
     return;
   }
+  let url;
   try {
-    new URL(url);
+    url = new URL(urlString);
   } catch (e) {
-    res.status(400).send(`invalid URL "${url}"`);
+    res.status(400).send(`invalid URL "${urlString}"`);
     return;
   }
-  const result = await pageExperienceGuide.analyze(url);
+  if (!url.protocol || !url.protocol.startsWith('http') || !url.host) {
+    res.status(400).send(`invalid URL "${urlString}"`);
+    return;
+  }
+  const result = await pageExperienceGuide.analyze(urlString);
   res.json(result);
 };
