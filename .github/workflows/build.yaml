@@ -118,7 +118,7 @@ jobs:
       - name: Fetching build artifacts
         uses: actions/download-artifact@v2
         with:
-          name: build-setup
+          key: build-setup
 
       - name: Unpacking artifacts
         run: |
