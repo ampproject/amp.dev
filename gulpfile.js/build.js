@@ -306,8 +306,9 @@ function buildPrepare(done) {
       await sh(`tar cfj ${SETUP_ARCHIVE} ${SETUP_STORED_PATHS.join(' ')}`);
     },
     // eslint-disable-next-line prefer-arrow-callback
-    function exit() {
+    function exit(_done) {
       done();
+      _done();
       process.exit(0);
     }
   )(done);
