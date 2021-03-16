@@ -56,8 +56,6 @@ jobs:
         env:
           AMP_DOC_TOKEN: ${{ secrets.AMP_DOC_TOKEN }}
         run: |
-          gulp updateTestResources
-          gulp buildComponentVersions
           gulp buildPrepare
 
       - name: Storing build artifacts
@@ -125,6 +123,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: build-setup
+          path: build
 
       - name: Unpacking artifacts
         run: |
