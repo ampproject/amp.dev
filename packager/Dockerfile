@@ -22,10 +22,6 @@ ENV GO111MODULE=on
 # RUN go get -v github.com/ampproject/amppackager/cmd/amppkg@master
 RUN go get -v github.com/ampproject/amppackager/cmd/amppkg
 
-# Install git
-RUN apt-get update \
-    && apt-get install -y git
-
 # Clone amppackager files so we can use b3 directory
 WORKDIR /data
 # Run this if you clone from master branch.
