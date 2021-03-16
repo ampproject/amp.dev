@@ -29,13 +29,11 @@ const through = require('through2');
 const archiver = require('archiver');
 const yaml = require('js-yaml');
 const {samplesBuilder} = require('@lib/build/samplesBuilder');
-const {project, travis} = require('@lib/utils');
+const {project} = require('@lib/utils');
 const git = require('@lib/utils/git');
 const ComponentReferenceImporter = require('@lib/pipeline/componentReferenceImporter');
 const SpecImporter = require('@lib/pipeline/specImporter');
 const RecentGuides = require('@lib/pipeline/recentGuides');
-// TODO: Fails on Travis with HttpError: Requires authentication
-// const roadmapImporter = require('@lib/pipeline/roadmapImporter');
 const gulpSass = require('gulp-sass');
 const importRoadmap = require('./import/importRoadmap.js');
 const importWorkingGroups = require('./import/importWorkingGroups.js');
@@ -507,12 +505,12 @@ function collectStatics(done) {
  */
 function persistBuildInfo(done) {
   const buildInfo = {
-    'number': travis.build.number || null,
+    'number': process.env.GITHUB_RUN_ID || null,
     'at': new Date(),
-    'by': git.user(),
+    'by': process.env.GITHUB_ACTOR || git.user(),
     'environment': config.environment,
     'commit': {
-      'sha': git.version,
+      'sha': process.env.GITHUB_SHA || git.version,
       'message': git.message,
     },
   };
@@ -540,7 +538,6 @@ exports.unpackArtifacts = unpackArtifacts;
 exports.collectStatics = collectStatics;
 exports.buildPixiFunctions = buildPixiFunctions;
 exports.buildFinalize = gulp.series(
-  unpackArtifacts,
   gulp.parallel(collectStatics, persistBuildInfo),
   thumborImageIndex
 );

@@ -136,5 +136,51 @@ jobs:
       - name: Storing build artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: pages-${{ job.container.id }}
+          name: pages-${{ github.run_id }}-${{ matrix.language }}
           path: build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: Staging
+    steps:
+      - name: Cloning repository
+        uses: actions/checkout@v2
+
+      - name: Setting up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: node_modules-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Installing Node.js packages
+        run: npm install
+
+      - name: Setting up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@master
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
+
+      - name: Fetching build artifacts
+        uses: actions/download-artifact@v2
+        with:
+          path: build
+
+      - name: Unpacking artifacts
+        run: |
+          gulp unpackArtifacts
+
+      - name: Finalizing build
+        run: |
+          gulp buildFinalize
+          npm run smoke-test
+
+      - name: Deploying
+        run: |
+          gcloud app deploy --quiet --version=1

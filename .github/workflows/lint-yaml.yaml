@@ -6,6 +6,7 @@ on:
     paths:
       - '**/*.yml'
       - '**/*.yaml'
+      - '!.github/**/*.yaml'
 
 jobs:
   test:
