@@ -47,12 +47,12 @@
     },
     "packager": {
       "scheme": "http",
-      "host": "ig-amp-dev-packager-z0kf.c.amp-dev-230314.internal",
+      "host": "ig-amp-dev-packager-0g61.c.amp-dev-230314.internal",
       "port": "8080"
     },
     "thumbor": {
       "scheme": "http",
-      "host": "ig-amp-dev-thumbor-gzp8.c.amp-dev-230314.internal",
+      "host": "ig-amp-dev-thumbor-v5jq.c.amp-dev-230314.internal",
       "port": "8080"
     }
   },
