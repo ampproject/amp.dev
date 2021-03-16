@@ -15,8 +15,6 @@ module.exports = (env, argv) => {
   return {
     entry: path.join(__dirname, 'src/ui/PageExperience.js'),
     output: {
-      filename: 'pixi.[name].[contenthash].js',
-      chunkFilename: 'pixi.[name].[chunkhash].bundle.js',
       filename: isDevelopment
         ? 'pixi.[name].js'
         : 'pixi.[name].[contenthash].js',
