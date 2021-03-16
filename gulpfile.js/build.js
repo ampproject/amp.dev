@@ -318,6 +318,7 @@ function buildPrepare(done) {
  * @return {Promise}
  */
 async function unpackArtifacts() {
+  await sh('ls -la build');
   await sh('find build -type f -exec tar xf {} ;');
 }
 
