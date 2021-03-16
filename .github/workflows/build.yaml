@@ -115,10 +115,9 @@ jobs:
           sudo apt-get install libyaml-dev
           pip install grow --upgrade-strategy eager
 
-      - name: Fetching build artifacts
-        uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v2
         with:
-          key: build-setup
+          name: build-setup
 
       - name: Unpacking artifacts
         run: |
