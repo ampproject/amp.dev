@@ -21,7 +21,11 @@ const {join} = require('path');
 const {sh} = require('@lib/utils/sh.js');
 const mri = require('mri');
 const {existsSync} = require('fs');
-const {ROOT, THUMBOR_ROOT} = require('@lib/utils/project').paths;
+const {
+  ROOT,
+  THUMBOR_ROOT,
+  PIXI_CLOUD_ROOT,
+} = require('@lib/utils/project').paths;
 
 const PREFIX = 'amp-dev';
 const PACKAGER_PREFIX = PREFIX + '-packager';
@@ -404,6 +408,22 @@ async function thumborUpdateStart() {
   console.log('Rolling update started, this can take a few minutes...');
 }
 
+/**
+ * Deploy the pixi puppeteer cloud cuntion
+ */
+async function pixiDeploy() {
+  return sh(
+    `gcloud functions deploy runPageExperienceChecks  \
+              --runtime nodejs14 \
+              --trigger-http \
+              --allow-unauthenticated \
+              --project ${PROJECT_ID}`,
+    {
+      workingDir: PIXI_CLOUD_ROOT,
+    }
+  );
+}
+
 exports.verifyTag = verifyTag;
 exports.gcloudSetup = gcloudSetup;
 exports.deploy = series(
@@ -437,6 +457,7 @@ exports.thumborDeploy = series(
   thumborInstanceTemplateCreate,
   thumborUpdateStart
 );
+exports.pixiDeploy = pixiDeploy;
 
 exports.updateStop = updateStop;
 exports.updateStatus = updateStatus;

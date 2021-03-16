@@ -29,6 +29,7 @@ jobs:
       name: Check code, import documents, build samples, playground & boilerplate
       before_script:
         - scripts/unbuffer.sh gulp buildSamples
+        - scripts/unbuffer.sh gulp buildPixiFunctions
         - scripts/unbuffer.sh gulp buildComponentVersions
         - scripts/unbuffer.sh npm test
       script:
