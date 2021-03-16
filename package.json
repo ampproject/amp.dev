@@ -179,6 +179,7 @@
 		"webpack-build-notifier": "2.1.1",
 		"webpack-cli": "4.5.0",
 		"webpack-dev-server": "3.11.2",
+		"why-is-node-running": "2.2.0",
 		"write": "2.0.0"
 	},
 	"sideEffects": [
