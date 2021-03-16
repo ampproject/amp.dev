@@ -108,8 +108,8 @@ module.exports = (env, argv) => {
       }),
       isDevelopment
         ? new WebpackBuildNotifierPlugin({
-            title: 'amp.dev Frontend',
-            logo: path.join(process.cwd(), '/static/img/favicon-128x128.png'),
+            title: 'amp.dev: Frontend',
+            logo: path.join(process.cwd(), '../pages/static/img/favicon.png'),
           })
         : () => {},
     ],
