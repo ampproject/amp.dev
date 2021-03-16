@@ -281,17 +281,17 @@ function buildPrepare(done) {
       buildComponentVersions,
       buildPlayground,
       buildBoilerplate,
-      buildPixi,
-      buildSamples,
-      importAll
+      buildPixi
+      // buildSamples,
+      // importAll
     ),
     // eslint-disable-next-line prefer-arrow-callback
     async function packArtifacts() {
-      if (!process.env.CI) {
-        return;
-      }
+      // if (!process.env.CI) {
+      //   return;
+      // }
 
-      // If on Travis store everything built so far for later stages to pick up
+      // Store everything built so far for later stages to pick up
       // Local path to the archive containing artifacts of the first stage
       const SETUP_ARCHIVE = 'build/setup.tar.gz';
       // All paths that contain altered files at build setup time
@@ -308,9 +308,6 @@ function buildPrepare(done) {
 
       await sh('mkdir -p build');
       await sh(`tar cfj ${SETUP_ARCHIVE} ${SETUP_STORED_PATHS.join(' ')}`);
-      await sh('echo "Done from gulp"');
-
-      done();
     }
   )(done);
 }
@@ -345,13 +342,7 @@ function buildPages(done) {
       }
       config.configureGrow(options);
 
-      try {
-        await grow('deploy --noconfirm --threaded');
-      } catch (e) {
-        // If building the pages fails, force exit here to make sure
-        // especially Travis gets the correct exit code
-        process.exit(1);
-      }
+      await grow('deploy --noconfirm --threaded');
     },
     minifyPages,
     // eslint-disable-next-line prefer-arrow-callback

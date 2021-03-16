@@ -17,12 +17,7 @@
 'use strict';
 require('module-alias/register');
 
-const log = require('why-is-node-running'); // should be your first require
 const search = require('recursive-search');
-
-setTimeout(() => {
-  log(); // logs out active handles that are keeping node running
-}, 1000);
 
 // DON'T ADD GULP TASKS TO THIS FILE!
 // CREATE A NEW FILE IN THIS DIRECTORY INSTEAD
