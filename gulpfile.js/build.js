@@ -287,10 +287,6 @@ function buildPrepare(done) {
     ),
     // eslint-disable-next-line prefer-arrow-callback
     async function packArtifacts() {
-      // if (!process.env.CI) {
-      //   return;
-      // }
-
       // Store everything built so far for later stages to pick up
       // Local path to the archive containing artifacts of the first stage
       const SETUP_ARCHIVE = 'build/setup.tar.gz';
@@ -308,6 +304,8 @@ function buildPrepare(done) {
 
       await sh('mkdir -p build');
       await sh(`tar cfj ${SETUP_ARCHIVE} ${SETUP_STORED_PATHS.join(' ')}`);
+
+      process.exit(0);
     }
   )(done);
 }
