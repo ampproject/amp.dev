@@ -42,6 +42,7 @@ const importWorkingGroups = require('./import/importWorkingGroups.js');
 const {thumborImageIndex} = require('./thumbor.js');
 const CleanCSS = require('clean-css');
 const validatorRules = require('@ampproject/toolbox-validator-rules');
+const {PIXI_CLOUD_ROOT} = require('@lib/utils/project').paths;
 
 // Path of the grow test pages for filtering in the grow podspec.yaml
 const TEST_CONTENT_PATH_REGEX = '^/tests/';
@@ -161,6 +162,15 @@ async function buildPlayground() {
 async function buildPixi() {
   await sh('mkdir -p pixi/dist');
   return sh('npm run build:pixi');
+}
+
+/**
+ * Builds the pixi cloud functions project
+ */
+function buildPixiFunctions() {
+  return sh('npm install', {
+    workingDir: PIXI_CLOUD_ROOT,
+  });
 }
 
 /**
@@ -535,6 +545,7 @@ exports.buildPrepare = buildPrepare;
 exports.minifyPages = minifyPages;
 exports.unpackArtifacts = unpackArtifacts;
 exports.collectStatics = collectStatics;
+exports.buildPixiFunctions = buildPixiFunctions;
 exports.buildFinalize = gulp.series(
   unpackArtifacts,
   gulp.parallel(collectStatics, persistBuildInfo),

@@ -19,10 +19,17 @@ have a look and request a pull request there.
 
 
 
+<!--
+  (Do not remove or edit this comment.)
+
+  This table-of-contents is automatically generated. To generate it, run:
+    gulp markdown-toc --fix
+-->
+
 -   [Release Channels](#release-channels)
     -   [Nightly](#nightly)
     -   [Weekly](#weekly)
-        -   [Experimental and Beta channels](#experimental-and-beta-channels)
+        -   [Beta and Experimental channels](#beta-and-experimental-channels)
     -   [Long-Term Stable (lts)](#long-term-stable-lts)
 -   [Determining if your change is in a release](#determining-if-your-change-is-in-a-release)
 -   [Release Cadence](#release-cadence)
@@ -30,6 +37,8 @@ have a look and request a pull request there.
     -   [Release Freezes](#release-freezes)
 
 A new release of AMP is pushed to all AMP pages every week on Tuesday. **Once a change in AMP is merged into the master branch of the amphtml repository, it will typically take 1-2 weeks for the change to be live for all users.**
+
+The [AMPHTML Validator](https://github.com/ampproject/amphtml/tree/master/validator#amp-html--validator) has it's own [Release Schedule](https://github.com/ampproject/amphtml/blob/master/contributing/validator-release-schedule.md)
 
 ## Release Channels <a name="release-channels"></a>
 
