@@ -282,8 +282,8 @@ function buildPrepare(done) {
       buildPlayground,
       buildBoilerplate,
       buildPixi,
-      buildSamples
-      // importAll
+      buildSamples,
+      importAll
     ),
     // eslint-disable-next-line prefer-arrow-callback
     async function packArtifacts() {
