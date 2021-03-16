@@ -105,6 +105,11 @@ jobs:
       - name: Installing Node.js packages
         run: npm install
 
+      - name: Setting up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
       - uses: actions/cache@v2
         with:
           path: ${{ env.pythonLocation }}
@@ -115,7 +120,8 @@ jobs:
           sudo apt-get install libyaml-dev
           pip install grow --upgrade-strategy eager
 
-      - uses: actions/download-artifact@v2
+      - name: Fetching build artifacts
+        uses: actions/download-artifact@v2
         with:
           name: build-setup
 
