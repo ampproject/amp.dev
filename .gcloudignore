@@ -28,20 +28,10 @@ thumbor/
 
 # The complete frontend and pages folders aren't needed on App Engine
 /frontend/
+/frontend21/
 /pages
 # The transformed pages from dist/pages are used instead
 platform/pages*
-
-# playground: ignore everything except the dist folder
-/playground/*
-!/playground/backend
-!/playground/dist
-
-# boilerplate: ignore everything except the dist folder
-/boilerplate/*
-!/boilerplate/backend
-!/boilerplate/dist
-!/boilerplate/lib
 
 # Infrastructure
 contributing
@@ -51,3 +41,4 @@ renovate.json
 gulpfile.js
 scripts
 tests
+artifacts
