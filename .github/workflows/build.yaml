@@ -185,4 +185,7 @@ jobs:
 
       - name: Deploying
         run: |
+          ls -la .
+          ls -la boilerplate
+          ls -la boilerplate/backend
           gcloud app deploy --quiet --version=1
