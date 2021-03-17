@@ -61,6 +61,9 @@ module.exports = (env, argv) => {
       new webpack.DefinePlugin({
         IS_DEVELOPMENT: isDevelopment,
         API_ENDPOINT_LINTER: JSON.stringify(config[mode].API_ENDPOINT_LINTER),
+        API_ENDPOINT_LINTER_CANARY: JSON.stringify(
+          config[mode].API_ENDPOINT_LINTER_CANARY
+        ),
         API_ENDPOINT_SAFE_BROWSING: JSON.stringify(
           config[mode].API_ENDPOINT_SAFE_BROWSING
         ),
