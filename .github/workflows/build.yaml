@@ -123,7 +123,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: build-setup
-          path: build
+          path: artifacts
 
       - name: Unpacking artifacts
         run: |
@@ -170,7 +170,7 @@ jobs:
       - name: Fetching build artifacts
         uses: actions/download-artifact@v2
         with:
-          path: build
+          path: artifacts
 
       - name: Unpacking artifacts
         run: |
