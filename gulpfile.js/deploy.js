@@ -413,8 +413,8 @@ async function thumborUpdateStart() {
  */
 async function pixiDeploy() {
   return sh(
-    `gcloud functions deploy runPageExperienceChecks  \
-              --runtime nodejs14 \
+    `gcloud functions deploy checkPageExperience \
+              --runtime nodejs10 \
               --trigger-http \
               --allow-unauthenticated \
               --project ${PROJECT_ID}`,

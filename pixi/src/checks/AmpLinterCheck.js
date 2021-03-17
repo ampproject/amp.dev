@@ -14,8 +14,6 @@
 
 const FetchError = require('../../../platform/lib/utils/fetchError.js');
 
-const API_ENDPOINT = API_ENDPOINT_LINTER;
-
 const directMapping = {
   isvalid: 'isValid',
   runtimeispreloaded: 'runtimeIsPreloaded',
@@ -30,19 +28,24 @@ const directMapping = {
 };
 
 export default class AmpLinterCheck {
-  constructor() {
-    this.apiUrl = new URL(API_ENDPOINT);
-  }
-
   static getCheckCount() {
     return 15;
   }
 
   async run(pageUrl) {
-    this.apiUrl.searchParams.set('url', pageUrl);
+    const isCanary = await AMP.getState('pixiCanary');
+    let apiUrl;
+    if (isCanary) {
+      apiUrl = new URL(API_ENDPOINT_LINTER_CANARY);
+    } else {
+      apiUrl = new URL(API_ENDPOINT_LINTER);
+    }
+    apiUrl.searchParams.set('url', pageUrl);
+    console.log('pixi experiment', isCanary);
+    console.log('pixi api', apiUrl);
 
     try {
-      const apiResult = await this.fetchJson();
+      const apiResult = await this.fetchJson(apiUrl);
       return this.parseApiResult(apiResult);
     } catch (e) {
       return this.createError(e);
@@ -111,8 +114,8 @@ export default class AmpLinterCheck {
     };
   }
 
-  async fetchJson() {
-    const response = await fetch(this.apiUrl.href);
+  async fetchJson(url) {
+    const response = await fetch(url);
     return response.json();
   }
 }
