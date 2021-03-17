@@ -62,7 +62,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: build-setup
-          path: build/setup.tar.gz
+          path: artifacts/setup.tar.gz
 
   build:
     needs: prepare
@@ -137,7 +137,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: pages-${{ github.run_id }}-${{ matrix.language }}
-          path: build
+          path: artifacts
 
   deploy:
     needs: build
