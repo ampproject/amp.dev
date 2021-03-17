@@ -18,20 +18,20 @@ Les développeurs et les utilisateurs peuvent choisir d'utiliser ces fonctionnal
 
 <ul><br>{% for component in experimental_components %}<br>  <li><a href="{{ component.url.path }}">{{ component.title }}</a></li><br>{% endfor %}<br></ul><br>{% endif %}
 
-## Activation d'AMP Dev Channel
+## Activation d'AMP Beta Channel
 
-AMP Dev CHannel est un moyen d'activer l'utilisation sur un navigateur d'une version plus récente des bibliothèques AMP JS.
+AMP Beta Channel est un moyen d'activer l'utilisation sur un navigateur d'une version plus récente des bibliothèques AMP JS.
 
-La version AMP Dev Channel **peut être moins stable** et contenir des fonctionnalités non disponibles pour tous les utilisateurs. Activez cette option si vous souhaitez aider à tester de nouvelles versions d'AMP, signaler des bogues ou créer des documents qui nécessitent une nouvelle fonctionnalité qui n'est pas encore disponible pour tout le monde.
+La version AMP Beta Channel **peut être moins stable** et contenir des fonctionnalités non disponibles pour tous les utilisateurs. Activez cette option si vous souhaitez aider à tester de nouvelles versions d'AMP, signaler des bogues ou créer des documents qui nécessitent une nouvelle fonctionnalité qui n'est pas encore disponible pour tout le monde.
 
-L'activation de Dev Channel est idéale pour:
+L'activation de Beta Channel est idéale pour:
 
 - tester et jouer avec de nouvelles fonctionnalités qui ne sont pas encore disponibles pour tous les utilisateurs.
 - une utilisation dans l'assurance qualité (QA) pour vous assurer que votre site est compatible avec la prochaine version d'AMP.
 
-Si vous trouvez un problème qui ne semble se produire que dans la version Dev Channel d'AMP, [signalez un problème](https://github.com/ampproject/amphtml/issues/new) avec une description. Incluez toujours une URL vers une page qui reproduit le problème.
+Si vous trouvez un problème qui ne semble se produire que dans la version Beta Channel d'AMP, [signalez un problème](https://github.com/ampproject/amphtml/issues/new) avec une description. Incluez toujours une URL vers une page qui reproduit le problème.
 
-Pour activer AMP Dev Channel pour votre navigateur, accédez à [la page des tests AMP](https://cdn.ampproject.org/experiments.html) et activez le test "AMP Dev Channel". Pour être informé des changements importants/récents concernant AMP, abonnez-vous à la liste de diffusion [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
+Pour activer AMP Beta Channel pour votre navigateur, accédez à [la page des tests AMP](https://cdn.ampproject.org/experiments.html) et activez le test "AMP Beta Channel". Pour être informé des changements importants/récents concernant AMP, abonnez-vous à la liste de diffusion [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
 
 ## Activer un composant expérimental
 

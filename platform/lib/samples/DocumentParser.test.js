@@ -51,6 +51,26 @@ describe('DocumentParser', () => {
     component: amp-accordion
   }}--->`;
 
+  function newSection(comment, doc, preview, isFirstSection, isLastSection) {
+    const section = new CodeSection(comment, doc, preview);
+    section.isLastSection = isLastSection;
+    section.isFirstSection = isFirstSection;
+    section.id = sectionCounter++;
+    return section;
+  }
+
+  function parse(...args) {
+    let lines = [];
+    for (let i = 0; i < args.length; i++) {
+      lines = lines.concat(args[i].split('\n'));
+    }
+    const parser = new DocumentParser(lines);
+    parser.execute();
+    return parser.document;
+  }
+
+  let sectionCounter;
+
   beforeEach(() => {
     sectionCounter = 0;
   });
@@ -207,6 +227,7 @@ describe('DocumentParser', () => {
   });
 
   describe('xml tag parsing', () => {
+    let parser;
     beforeEach(() => {
       parser = new DocumentParser('');
     });
@@ -331,22 +352,4 @@ describe('DocumentParser', () => {
       expect(document.isAmpAds).toBe(false);
     });
   });
-
-  function newSection(comment, doc, preview, isFirstSection, isLastSection) {
-    const section = new CodeSection(comment, doc, preview);
-    section.isLastSection = isLastSection;
-    section.isFirstSection = isFirstSection;
-    section.id = sectionCounter++;
-    return section;
-  }
-
-  function parse(...args) {
-    let lines = [];
-    for (let i = 0; i < args.length; i++) {
-      lines = lines.concat(args[i].split('\n'));
-    }
-    const parser = new DocumentParser(lines);
-    parser.execute();
-    return parser.document;
-  }
 });

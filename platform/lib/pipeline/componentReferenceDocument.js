@@ -32,6 +32,13 @@ class ComponentReferenceDocument extends MarkdownDocument {
     this.version = extension.version;
     this.versions = extension.versions;
     this.latestVersion = extension.latestVersion;
+    if (!this._frontmatter['$category@']) {
+      this._frontmatter['$category@'] = 'dynamic-content';
+      log.warn(
+        `${this.title} doesn't specify '$category@' in its`,
+        `frontmatter and is defaulted to 'dynamic-content'.`
+      );
+    }
 
     // Force enable TOC for all component docs
     this.toc = true;

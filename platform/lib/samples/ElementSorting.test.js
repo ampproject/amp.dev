@@ -28,6 +28,7 @@ describe('ElementSorting', () => {
   const multiLineSidebar = '\n<amp-sidebar>\n<child>\n\n</child></amp-sidebar>';
   const sidebarWithAttribute =
     '<amp-sidebar id="menu"><child></child></amp-sidebar>';
+  let doc;
 
   beforeEach(() => {
     doc = new Document();
