@@ -110,7 +110,11 @@ After including each script, include an `<amp-story-player>` element inside the 
 
 ## Size the Web Story Player
 
-We recommend making the Web Story Player full-screen when possible, especially on mobile devices. This keeps readers immersed in story content while adding the extra functionality the player provides. 
+We recommend making the Web Story Player full-screen when possible. This keeps readers immersed in story content while adding the extra functionality the player provides. Add the [skip to next control](#skip-to-next-control) for the best desktop full-screen experience.
+
+[tip type="read-on"]
+  Check out the [lightbox Web Story Player codepen](https://codepen.io/maenrique/pen/vYyVjEB) for an example on how to create immersive Web Story experiences.
+[/tip]
 
 In cases where full-screen is not possible, you can size the Web Story Player as you would any other HTML element. You may define the story player's width, height, and other styles inline or as you would any other element's style.
 
@@ -188,30 +192,6 @@ Link to a Web Story by including an `<a>` tag with the `href` attribute pointed 
 ```
 [/example]
 
-## Configure the Web Story Player behavior
-
-Specify Web Story Player behavior in a JSON configuration:
-
-```html
-<amp-story-player style="width: 370px; height: 622px;">
-<script type="application/json">
-    {
-      "behavior": {
-        "autoplay": false
-      }
-    }
-  </script>
-...
-</amp-story-player>
-```
-
-The Web Story Player displays the cover page of the embedded story. If you want the Player to display the Web Story the same as it would appear when sent as a direct link, set `autoplay` to be true. If you want to wait for the user to click on a UI element, such as a play icon, set `autoplay` to false and then call the `play()` action manually upon user interaction. 
-
-[tip type="note"]
-Setting `autoplay` to true in the Web Story Player does not auto-advance story pages in individual Web Stories. Auto page advancement is defined on each Web Story and cannot be overridden by the Web Story Player.
-[/tip]
-
-
 ## Provide a placeholder
 
 Include a representative poster image by adding an `<img>` tag as a child of the story's `<a>` tag with the following configuration. The AMP story player displays this image while loading the full story.
@@ -229,6 +209,25 @@ Include a representative poster image by adding an `<img>` tag as a child of the
 
 For the best user experience, we strongly recommend including a poster image. If you do not include a poster image the story player will display a loader spinner with a grey background.
 
+## Autoplay stories
+
+By default, the first story in the player will automatically start playing when the player becomes visible in the user's viewport.
+
+You can opt-out of the default behavior by using the configuration below. This will prevent the first story in the player to start playing until you call [play()](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md#playpause) on the player.
+
+```html
+<amp-story-player>
+  <script type="application/json">
+  {
+    "behavior": {
+      "autoplay": false
+    }
+  }
+</script>
+ <a href="./story1.html"> ... </a>
+ <a href="./story2.html"> ... </a>
+  ...
+```
 
 ## Specify multiple Web Stories
 
