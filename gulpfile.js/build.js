@@ -317,10 +317,21 @@ function buildPrepare(done) {
  *
  * @return {Promise}
  */
-async function unpackArtifacts() {
-  await sh('ls -la artifacts');
-  await sh('find artifacts -type f -exec tar xf {} ;');
-  await sh('ls -la artifacts');
+function unpackArtifacts() {
+  let stream = gulp.src(['artifacts/**/*.tar.gz', 'artifacts/**/*.zip'], {
+    'read': false,
+  });
+
+  stream = stream.pipe(
+    through.obj(async (artifact, encoding, callback) => {
+      console.log('Unpacking', artifact.path, '...');
+      await sh(`tar xf ${artifact.path}`);
+      stream.push(artifact);
+      callback();
+    })
+  );
+
+  return stream;
 }
 
 /**
