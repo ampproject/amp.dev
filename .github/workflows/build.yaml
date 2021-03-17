@@ -179,7 +179,7 @@ jobs:
       - name: Finalizing build
         run: |
           gulp buildFinalize
-          npm run smoke-test
+          npm run smoke-test -- --colors
 
       - name: Deploying
         run: |
