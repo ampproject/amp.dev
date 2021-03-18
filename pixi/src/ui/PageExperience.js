@@ -91,14 +91,14 @@ export default class PageExperience {
       pageUrl,
       linterPromise
     );
-    // const safeBrowsingPromise = this.runSafeBrowsingCheck(pageUrl);
-    // const mobileFriendlinessPromise = this.runMobileFriendlinessCheck(pageUrl);
+    const safeBrowsingPromise = this.runSafeBrowsingCheck(pageUrl);
+    const mobileFriendlinessPromise = this.runMobileFriendlinessCheck(pageUrl);
 
     const recommendationsPromise = getRecommendations(
       pageExperiencePromise,
-      // safeBrowsingPromise,
-      linterPromise
-      // mobileFriendlinessPromise
+      safeBrowsingPromise,
+      linterPromise,
+      mobileFriendlinessPromise
     );
 
     this.runStatusBannerResult(
