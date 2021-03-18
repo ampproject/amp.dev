@@ -22,7 +22,7 @@ const {join, dirname, resolve} = require('path');
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 
-const {listFiles} = require('@boilerplate/lib/io.js');
+const {listFiles} = require('../boilerplate/lib/io.js');
 
 /* auto import all sample specific routers */
 loadRouters('api', '/api');
