@@ -18,8 +18,6 @@ const directMapping = {
   isvalid: 'isValid',
   runtimeispreloaded: 'runtimeIsPreloaded',
   blockingextensionspreloaded: 'blockingExtensionsPreloaded',
-  fontsarepreloaded: 'fontsArePreloaded',
-  fastgooglefontsdisplay: 'fastGoogleFontsDisplay',
   googlefontpreconnect: 'googleFontPreconnect',
   istransformedamp: 'isTransformedAmp',
   boilerplateisremoved: 'boilerplateIsRemoved',
@@ -28,24 +26,23 @@ const directMapping = {
 };
 
 export default class AmpLinterCheck {
+  constructor() {}
   static getCheckCount() {
     return 15;
   }
 
   async run(pageUrl) {
     const isCanary = await AMP.getState('pixiCanary');
-    let apiUrl;
+    let requestUrl;
     if (isCanary) {
-      apiUrl = new URL(API_ENDPOINT_LINTER_CANARY);
+      requestUrl = new URL(API_ENDPOINT_LINTER_CANARY);
     } else {
-      apiUrl = new URL(API_ENDPOINT_LINTER);
+      requestUrl = new URL(API_ENDPOINT_LINTER);
     }
-    apiUrl.searchParams.set('url', pageUrl);
-    console.log('pixi experiment', isCanary);
-    console.log('pixi api', apiUrl);
+    requestUrl.searchParams.set('url', pageUrl);
 
     try {
-      const apiResult = await this.fetchJson(apiUrl);
+      const apiResult = await this.fetchJson(requestUrl);
       return this.parseApiResult(apiResult);
     } catch (e) {
       return this.createError(e);
@@ -73,7 +70,7 @@ export default class AmpLinterCheck {
       ? {}
       : Object.entries(apiResult.data).reduce((mappedData, [key, checks]) => {
           // most checks are mapped 1:1 to the result
-          const resultKey = directMapping[key];
+          const resultKey = directMapping[key] || key;
           if (resultKey) {
             if (Array.isArray(checks)) {
               mappedData[resultKey] =

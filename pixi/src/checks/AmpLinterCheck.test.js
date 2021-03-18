@@ -17,6 +17,14 @@ import pixiConfig from '../../config.js';
 
 beforeEach(() => {
   fetchMock.reset();
+  global.AMP = {
+    getState: async (id) => {
+      if (id === 'pixiCanary') {
+        return true;
+      }
+      return '';
+    },
+  };
 });
 
 describe('Linter check', () => {
@@ -34,11 +42,8 @@ describe('Linter check', () => {
     expect(report.data.isValid).toBe(true);
     expect(report.data.runtimeIsPreloaded).toBe(true);
     expect(report.data.blockingExtensionsPreloaded).toBe(true);
-    expect(report.data.fontsArePreloaded).toBe(true);
-    expect(report.data.fastGoogleFontsDisplay).toBe(true);
     expect(report.data.googleFontPreconnect).toBe(true);
     expect(report.data.isTransformedAmp).toBe(true);
-    expect(report.data.heroImageIsDefined).toBe(true);
     expect(report.data.boilerplateIsRemoved).toBe(true);
     expect(report.data.updateOptimizerForBoilerplateRemoval).not.toBe(true);
     expect(report.data.noRenderBlockingExtension).toBe(true);
@@ -59,11 +64,7 @@ describe('Linter check', () => {
     expect(report.data.isValid).toBe(false);
     expect(report.data.runtimeIsPreloaded).toBe(false);
     expect(report.data.blockingExtensionsPreloaded).toBe(false);
-    expect(report.data.fontsArePreloaded).toBe(false);
-    expect(report.data.fastGoogleFontsDisplay).toBe(false);
-    expect(report.data.googleFontPreconnect).toBe(false);
     expect(report.data.isTransformedAmp).toBe(false);
-    expect(report.data.heroImageIsDefined).toBe(false);
     expect(report.data.boilerplateIsRemoved).toBe(false);
     expect(report.data.updateOptimizerForBoilerplateRemoval).toBe(true);
     expect(report.data.noRenderBlockingExtension).toBe(false);
