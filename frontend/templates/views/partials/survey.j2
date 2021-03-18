@@ -1,11 +1,14 @@
 {% if survey_questions %}
+  [% set surveys = {{ survey_questions|tojson }} %]
+  [% set fixedQuestions = {{fixed_questions|tojson }} %]
+  [% set url = "{{ doc.url }}" %]
+
   {% do doc.styles.addCssFile('css/components/organisms/survey.css') %}
 
   <amp-state id="surveyQuestions">
     <script type="application/json">
-
-      {% do survey_questions.update({"_url": request.url })%}
-      {{ survey_questions | tojson }}
+        [% set survey = surveys|random|survey(fixedQuestions, url) %]
+        [= survey|safe =]
     </script>
   </amp-state>
 
