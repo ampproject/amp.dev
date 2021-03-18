@@ -24,6 +24,7 @@ const fetch = require('node-fetch');
 const RateLimitedFetch = require('@lib/utils/rateLimitedFetch');
 const GA_TRACKING_ID = require('../../platform/config/shared.json')
   .gaTrackingId;
+const validatorRules = require('@ampproject/toolbox-validator-rules');
 
 const rateLimitedFetch = new RateLimitedFetch({
   requestHeaders: {
@@ -56,6 +57,28 @@ const isCacheUrl = (urlString, cachesList) => {
   return !!matchedCache;
 };
 
+const getComponentVersions = async () => {
+  const rules = await validatorRules.fetch();
+  const componentVersions = {};
+  rules.extensions.forEach((e) => {
+    const versions = e.version.filter((v) => v !== 'latest');
+    if (e.htmlFormat.some((h) => h === 'AMP')) {
+      componentVersions[e.name] = versions[versions.length - 1];
+    }
+  });
+  return componentVersions;
+};
+
+const isUsingLatestComponentVersions = async (components) => {
+  const componentVersions_ = await getComponentVersions();
+
+  return (
+    Object.entries(components).filter(([name, version]) => {
+      return componentVersions_[name] !== version;
+    }).length === 0
+  );
+};
+
 const execChecks = async (url) => {
   const ampCacheListPromise = AmpCaches.list();
   const res = await rateLimitedFetch.fetchHtmlResponse(url);
@@ -84,10 +107,15 @@ const execChecks = async (url) => {
   }
 
   const lintResults = await lint(context);
+  const components = findAmpComponents($);
+
   return {
-    components: findAmpComponents($),
+    components,
     data: lintResults,
     ...result,
+    isUsingLatestComponentVersions: await isUsingLatestComponentVersions(
+      components
+    ),
   };
 };
 

@@ -107,6 +107,8 @@ export default class AmpLinterCheck {
           components['amp-script']
         ),
         ...linterStatus,
+        isUsingLatestComponentVersions:
+          apiResult.isUsingLatestComponentVersions,
       },
     };
   }
