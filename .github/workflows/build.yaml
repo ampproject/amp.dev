@@ -70,8 +70,7 @@ jobs:
     needs: prepare
     strategy:
       matrix:
-        language:
-          [
+        language: [
             'en',
             'de',
             # 'fr',
@@ -186,6 +185,5 @@ jobs:
       - name: Deploying
         run: |
           ls -la .
-          ls -la boilerplate
-          ls -la boilerplate/backend
-          gcloud app deploy --quiet --version=1
+          ls -la boilerplate/backend/lib
+          gcloud app deploy --quiet --version=1 --verbosity=info
