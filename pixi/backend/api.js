@@ -80,7 +80,7 @@ const execChecks = async (url, canary = false) => {
     isCacheUrl: isCacheUrl(res.url, ampCacheList),
   };
 
-  if (!result.isAmp) {
+  if (!result.isAmp || result.isCacheUrl) {
     return result;
   }
 
