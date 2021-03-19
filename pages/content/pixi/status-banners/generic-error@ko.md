@@ -1,6 +1,6 @@
 ---
 $title: 죄송합니다! 오류가 발생했습니다.
-type: 오류
+type: error
 hide_share: true
 ---
 

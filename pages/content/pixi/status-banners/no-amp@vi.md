@@ -1,6 +1,6 @@
 ---
 $title: URL này không phải là một trang AMP.
-type: lỗi
+type: error
 hide_share: true
 ---
 

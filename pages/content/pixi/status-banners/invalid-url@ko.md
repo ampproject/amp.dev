@@ -1,6 +1,6 @@
 ---
 $title: 유효하지 않은 URL입니다.
-type: 오류
+type: error
 hide_share: true
 ---
 
