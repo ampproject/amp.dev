@@ -25,6 +25,8 @@ README.md
 CONTRIBUTING.md
 packager/
 thumbor/
+pixi/cloud-function/
+pixi/mocks/
 
 # The complete frontend and pages folders aren't needed on App Engine
 /frontend/

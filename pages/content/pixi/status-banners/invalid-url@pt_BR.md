@@ -1,6 +1,6 @@
 ---
 $title: Esta URL é inválida.
-type: erro
+type: error
 hide_share: true
 ---
 

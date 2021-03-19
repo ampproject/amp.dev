@@ -1,6 +1,6 @@
 ---
 "$title": Inválido ou nenhum content-type definido.
-type: erro
+type: error
 hide_share: 'true'
 ---
 

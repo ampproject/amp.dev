@@ -84,6 +84,7 @@ const execChecks = async (url) => {
   }
 
   const lintResults = await lint(context);
+
   return {
     components: findAmpComponents($),
     data: lintResults,

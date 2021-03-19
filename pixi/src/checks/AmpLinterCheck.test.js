@@ -44,6 +44,7 @@ describe('Linter check', () => {
     expect(report.data.noRenderBlockingExtension).toBe(true);
     expect(report.data.noDynamicLayoutExtensions).toBe(true);
     expect(report.data.viewportDisablesTapDelay).toBe(true);
+    expect(report.data.noIconFontIsUsed).toBe(true);
   });
 
   it('returns object with all checks failed', async () => {
@@ -69,6 +70,7 @@ describe('Linter check', () => {
     expect(report.data.noRenderBlockingExtension).toBe(false);
     expect(report.data.noDynamicLayoutExtensions).toBe(false);
     expect(report.data.viewportDisablesTapDelay).toBe(false);
+    expect(report.data.noIconFontIsUsed).toBe(false);
   });
 
   it('returns object with boilerplateIsRemoved=false, but extra optimizer info', async () => {

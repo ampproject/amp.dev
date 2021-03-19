@@ -45,6 +45,9 @@ const apiResponsePassAll = {
     viewportdisablestapdelay: {
       status: 'PASS',
     },
+    noiconfontisused: {
+      status: 'PASS',
+    },
   },
 };
 
@@ -95,6 +98,9 @@ const apiResponseFailAll = {
       status: 'WARN',
     },
     viewportdisablestapdelay: {
+      status: 'WARN',
+    },
+    noiconfontisused: {
       status: 'WARN',
     },
   },

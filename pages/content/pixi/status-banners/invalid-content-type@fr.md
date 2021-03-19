@@ -1,6 +1,6 @@
 ---
 "$title": Jeu de types de contenu non valide ou inexistant.
-type: erreur
+type: error
 hide_share: 'true'
 ---
 

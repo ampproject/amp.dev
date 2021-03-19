@@ -19,14 +19,14 @@ ENV GO111MODULE=on
 
 # Install AMP Packager
 # Run this if you want to go off master branch.
-# RUN go get -v github.com/ampproject/amppackager/cmd/amppkg@master
-RUN go get -v github.com/ampproject/amppackager/cmd/amppkg
+RUN go get -v github.com/ampproject/amppackager/cmd/amppkg@master
+# RUN go get -v github.com/ampproject/amppackager/cmd/amppkg
 
 # Clone amppackager files so we can use b3 directory
 WORKDIR /data
 # Run this if you clone from master branch.
-# RUN git clone -b master https://github.com/ampproject/amppackager.git /data/amppackager
-RUN git clone https://github.com/ampproject/amppackager.git /data/amppackager
+RUN git clone -b master https://github.com/ampproject/amppackager.git /data/amppackager
+# RUN git clone https://github.com/ampproject/amppackager.git /data/amppackager
 
 # Seed the ocsp cache
 WORKDIR /data/amppackager/testdata/b3
