@@ -31,6 +31,7 @@ const directLinterRecommendations = {
   isUsingLatestComponentVersion: 'use-latest-component-version',
   fontDisplay: 'font-display',
   fontPreloading: 'font-preloading',
+  earlyIframes: 'early-iframes',
 };
 
 const directPageExperienceRecommendations = {
