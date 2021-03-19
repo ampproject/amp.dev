@@ -15,9 +15,12 @@ import {
 
 import pixiConfig from '../../config.js';
 
+let linterCheck;
+let fetch;
+
 beforeEach(() => {
-  fetchMock.reset();
-  global.AMP = {
+  fetch = fetchMock.sandbox();
+  const AMP = {
     getState: async (id) => {
       if (id === 'pixiCanary') {
         return true;
@@ -25,14 +28,14 @@ beforeEach(() => {
       return '';
     },
   };
+  linterCheck = new AmpLinterCheck(AMP, fetch);
 });
 
 describe('Linter check', () => {
   const apiEndpoint = pixiConfig.development.API_ENDPOINT_LINTER;
-  const linterCheck = new AmpLinterCheck();
 
   it('returns object with all checks passed', async () => {
-    fetchMock.mock(`begin:${apiEndpoint}`, apiResponsePassAll);
+    fetch.mock(`begin:${apiEndpoint}`, apiResponsePassAll);
 
     const report = await linterCheck.run('http://example.com');
     expect(report.data.isLoaded).toBe(true);
@@ -53,7 +56,7 @@ describe('Linter check', () => {
   });
 
   it('returns object with all checks failed', async () => {
-    fetchMock.mock(`begin:${apiEndpoint}`, apiResponseFailAll);
+    fetch.mock(`begin:${apiEndpoint}`, apiResponseFailAll);
 
     const report = await linterCheck.run(
       'http://www-test.cdn.ampproject.org/c/s/www.test/'
@@ -79,7 +82,7 @@ describe('Linter check', () => {
   });
 
   it('returns object with boilerplateIsRemoved=false, but extra optimizer info', async () => {
-    fetchMock.mock(`begin:${apiEndpoint}`, apiResponseInfoBoilerplate);
+    fetch.mock(`begin:${apiEndpoint}`, apiResponseInfoBoilerplate);
 
     const report = await linterCheck.run('http://example.com');
     expect(report.data.boilerplateIsRemoved).toBe(false);
@@ -87,7 +90,7 @@ describe('Linter check', () => {
   });
 
   it('returns object with only the isAmp and isLoaded flag', async () => {
-    fetchMock.mock(`begin:${apiEndpoint}`, apiResponseNoAmp);
+    fetch.mock(`begin:${apiEndpoint}`, apiResponseNoAmp);
 
     const report = await linterCheck.run('http://example.com');
     expect(report.data.isLoaded).toBe(true);
@@ -96,7 +99,7 @@ describe('Linter check', () => {
   });
 
   it('returns object with only the isLoaded flag', async () => {
-    fetchMock.mock(`begin:${apiEndpoint}`, apiResponseError);
+    fetch.mock(`begin:${apiEndpoint}`, apiResponseError);
 
     const report = await linterCheck.run('http://example.com');
     expect(report.data.isLoaded).toBe(false);
@@ -105,7 +108,7 @@ describe('Linter check', () => {
   });
 
   it('throws for invalid API response', async () => {
-    fetchMock.mock(`begin:${apiEndpoint}`, 500);
+    fetch.mock(`begin:${apiEndpoint}`, 500);
 
     const report = await linterCheck.run('http://example.com');
     expect(report.error).toBeDefined();

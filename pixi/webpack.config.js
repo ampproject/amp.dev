@@ -13,7 +13,10 @@ module.exports = (env, argv) => {
   const isDevelopment = mode == 'development';
 
   return {
-    entry: path.join(__dirname, 'src/ui/PageExperience.js'),
+    entry: {
+      main: path.join(__dirname, 'src/ui/PageExperience.js'),
+      cli: path.join(__dirname, 'src/Cli.js'),
+    },
     output: {
       filename: isDevelopment
         ? 'pixi.[name].js'

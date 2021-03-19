@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-const FetchError = require('../../../platform/lib/utils/fetchError.js');
+import FetchError from '../../../platform/lib/utils/fetchError.js';
 
 const directMapping = {
   isvalid: 'isValid',
@@ -28,13 +28,16 @@ const directMapping = {
 };
 
 export default class AmpLinterCheck {
-  constructor() {}
+  constructor(amp, fetch) {
+    this.amp = amp;
+    this.fetch = fetch;
+  }
   static getCheckCount() {
     return 15;
   }
 
   async run(pageUrl) {
-    const isCanary = await AMP.getState('pixiCanary');
+    const isCanary = await this.amp.getState('pixiCanary');
     let requestUrl;
     if (isCanary) {
       requestUrl = new URL(API_ENDPOINT_LINTER_CANARY);
@@ -116,7 +119,7 @@ export default class AmpLinterCheck {
   }
 
   async fetchJson(url) {
-    const response = await fetch(url);
+    const response = await this.fetch(url);
     return response.json();
   }
 }
