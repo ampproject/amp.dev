@@ -15,10 +15,14 @@
  */
 
 const express = require('express');
+const config = require('@lib/config');
 // eslint-disable-next-line new-cap
 const pixi = express.Router();
 
 pixi.use('/page-experience/api', require('./api.js'));
-pixi.use('/page-experience/mock-api/', require('./mockApi.js'));
+
+if (config.isDevMode()) {
+  pixi.use('/page-experience/mock-api/', require('./mockApi.js'));
+}
 
 module.exports = pixi;
