@@ -40,7 +40,6 @@ const totalNumberOfChecks =
 
 export default class PageExperience {
   constructor() {
-    console.log('pixi location', self.location);
     i18n.init();
 
     this.reports = document.getElementById('reports');

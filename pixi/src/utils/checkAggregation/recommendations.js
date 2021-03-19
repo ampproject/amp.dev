@@ -52,7 +52,6 @@ const directMobileFriendlinessRecommendations = {
 };
 
 const addDirectRecommendations = (result, checks, mapping) => {
-  console.log('add recomm', checks);
   for (const [check, status] of Object.entries(checks)) {
     if (status === false && mapping[check]) {
       const recommendation = {id: mapping[check]};

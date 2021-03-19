@@ -92,7 +92,6 @@ export default class AmpLinterCheck {
 
     const components = apiResult.components || {};
 
-    console.log('apiresult', apiResult.data.details);
     return {
       data: {
         isLoaded: true,
@@ -110,7 +109,7 @@ export default class AmpLinterCheck {
           components['amp-script']
         ),
         ...linterStatus,
-        details: apiResult.data.details,
+        details: apiResult.data ? apiResult.data.details : {},
       },
     };
   }
