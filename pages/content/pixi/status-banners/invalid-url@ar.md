@@ -1,6 +1,6 @@
 ---
 $title: عنوان URL هذا غير صالح.
-type: خطأ
+type: error
 hide_share: صواب
 ---
 

@@ -1,6 +1,6 @@
 ---
 $title: Oops! Parece que algo deu errado.
-type: erro
+type: error
 investigate: #core-web-vitals-checks
 ---
 
