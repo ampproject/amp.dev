@@ -29,6 +29,7 @@ const directLinterRecommendations = {
   viewportDisablesTapDelay: 'viewport-disables-tap-delay',
   fontDisplay: 'font-display',
   fontPreloading: 'font-preloading',
+  usingModuleVersion: 'use-module-version',
 };
 
 const directPageExperienceRecommendations = {
