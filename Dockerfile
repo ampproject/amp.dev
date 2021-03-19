@@ -20,6 +20,4 @@ COPY . .
 EXPOSE 80 8080
 WORKDIR "platform"
 ENV NODE_ENV=production
-CMD ["sh", "-c", "find / -type f && touch /foo"]
-
-CMD ["node", "serve.js"]
+CMD ["sh", "-c", "find / -type f && node serve.js"]
