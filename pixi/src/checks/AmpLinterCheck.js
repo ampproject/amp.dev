@@ -14,14 +14,10 @@
 
 const FetchError = require('../../../platform/lib/utils/fetchError.js');
 
-const API_ENDPOINT = API_ENDPOINT_LINTER;
-
 const directMapping = {
   isvalid: 'isValid',
   runtimeispreloaded: 'runtimeIsPreloaded',
   blockingextensionspreloaded: 'blockingExtensionsPreloaded',
-  fontsarepreloaded: 'fontsArePreloaded',
-  fastgooglefontsdisplay: 'fastGoogleFontsDisplay',
   googlefontpreconnect: 'googleFontPreconnect',
   istransformedamp: 'isTransformedAmp',
   boilerplateisremoved: 'boilerplateIsRemoved',
@@ -32,19 +28,23 @@ const directMapping = {
 };
 
 export default class AmpLinterCheck {
-  constructor() {
-    this.apiUrl = new URL(API_ENDPOINT);
-  }
-
+  constructor() {}
   static getCheckCount() {
     return 15;
   }
 
   async run(pageUrl) {
-    this.apiUrl.searchParams.set('url', pageUrl);
+    const isCanary = await AMP.getState('pixiCanary');
+    let requestUrl;
+    if (isCanary) {
+      requestUrl = new URL(API_ENDPOINT_LINTER_CANARY);
+    } else {
+      requestUrl = new URL(API_ENDPOINT_LINTER);
+    }
+    requestUrl.searchParams.set('url', pageUrl);
 
     try {
-      const apiResult = await this.fetchJson();
+      const apiResult = await this.fetchJson(requestUrl);
       return this.parseApiResult(apiResult);
     } catch (e) {
       return this.createError(e);
@@ -72,7 +72,7 @@ export default class AmpLinterCheck {
       ? {}
       : Object.entries(apiResult.data).reduce((mappedData, [key, checks]) => {
           // most checks are mapped 1:1 to the result
-          const resultKey = directMapping[key];
+          const resultKey = directMapping[key] || key;
           if (resultKey) {
             if (Array.isArray(checks)) {
               mappedData[resultKey] =
@@ -109,12 +109,13 @@ export default class AmpLinterCheck {
           components['amp-script']
         ),
         ...linterStatus,
+        details: apiResult.data ? apiResult.data.details : {},
       },
     };
   }
 
-  async fetchJson() {
-    const response = await fetch(this.apiUrl.href);
+  async fetchJson(url) {
+    const response = await fetch(url);
     return response.json();
   }
 }

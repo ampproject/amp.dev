@@ -55,32 +55,6 @@ describe('getRecommendationIds', () => {
     expect(ids).toContainEqual({id: 'preload-render-blocking-extensions'});
   });
 
-  it('returns preload-web-fonts', async () => {
-    const ids = await getRecommendations(
-      Promise.resolve({}),
-      Promise.resolve({}),
-      Promise.resolve({
-        fontsArePreloaded: false,
-      }),
-      Promise.resolve({})
-    );
-    expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContainEqual({id: 'preload-web-fonts'});
-  });
-
-  it('returns fast-font-display', async () => {
-    const ids = await getRecommendations(
-      Promise.resolve({}),
-      Promise.resolve({}),
-      Promise.resolve({
-        fastGoogleFontsDisplay: false,
-      }),
-      Promise.resolve({})
-    );
-    expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContainEqual({id: 'fast-font-display'});
-  });
-
   it('returns preconnect-google-fonts', async () => {
     const ids = await getRecommendations(
       Promise.resolve({}),
@@ -105,19 +79,6 @@ describe('getRecommendationIds', () => {
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
     expect(ids).toContainEqual({id: 'use-amp-optimizer'});
-  });
-
-  it('returns hero-images', async () => {
-    const ids = await getRecommendations(
-      Promise.resolve({}),
-      Promise.resolve({}),
-      Promise.resolve({
-        heroImageIsDefined: false,
-      }),
-      Promise.resolve({})
-    );
-    expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContainEqual({id: 'hero-images'});
   });
 
   it('returns amp-boilerplate-removal', async () => {
@@ -291,19 +252,6 @@ describe('getRecommendationIds', () => {
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
     expect(ids).toContainEqual({id: 'next-gen-images'});
-  });
-
-  it('returns fast-font-display', async () => {
-    const ids = await getRecommendations(
-      Promise.resolve({
-        fastFontDisplay: false,
-      }),
-      Promise.resolve({}),
-      Promise.resolve({}),
-      Promise.resolve({})
-    );
-    expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContainEqual({id: 'fast-font-display'});
   });
 
   it('returns minify-css', async () => {

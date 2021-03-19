@@ -14,7 +14,7 @@ To work on this tool run the following commands from the repository root (the pa
 Start Grow's development server with this command and wait for it to be finished.
 
 ```
-npm run develop
+gulp develop
 ```
 
 Afterwards in a second terminal session start

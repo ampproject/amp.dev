@@ -24,6 +24,7 @@ const fetch = require('node-fetch');
 const RateLimitedFetch = require('@lib/utils/rateLimitedFetch');
 const GA_TRACKING_ID = require('../../platform/config/shared.json')
   .gaTrackingId;
+const {API_ENDPOINT_TOOLBOX_PAGE_EXPERIENCE} = require('../config').production;
 
 const rateLimitedFetch = new RateLimitedFetch({
   requestHeaders: {
@@ -56,7 +57,7 @@ const isCacheUrl = (urlString, cachesList) => {
   return !!matchedCache;
 };
 
-const execChecks = async (url) => {
+const execChecks = async (url, canary = false) => {
   const ampCacheListPromise = AmpCaches.list();
   const res = await rateLimitedFetch.fetchHtmlResponse(url);
   const body = await res.text();
@@ -83,8 +84,15 @@ const execChecks = async (url) => {
     return result;
   }
 
-  const lintResults = await lint(context);
-
+  let lintResults;
+  if (canary) {
+    const requestUrl = new URL(API_ENDPOINT_TOOLBOX_PAGE_EXPERIENCE);
+    requestUrl.searchParams.set('url', url);
+    const response = await fetch(requestUrl);
+    lintResults = await response.json();
+  } else {
+    lintResults = await lint(context);
+  }
   return {
     components: findAmpComponents($),
     data: lintResults,
@@ -131,6 +139,31 @@ api.get('/lint', async (request, response) => {
   try {
     logAnalytics(fetchUrl);
     const checkResult = await execChecks(fetchUrl);
+    const result = {
+      status: 'ok',
+      ...checkResult,
+    };
+    response.json(result);
+  } catch (e) {
+    log.error('Unable to lint', fetchUrl, e.stack);
+    const result = {status: 'error'};
+    if (e.errorId) {
+      // The messages for the special RemoteFetchError can be shown in the response
+      result.errorId = e.errorId;
+      result.message = e.message;
+    }
+    response.json(result);
+  }
+});
+
+api.get('/lint-canary', async (request, response) => {
+  log.info('lint canary endpoint called.');
+  response.setHeader('Content-Type', 'application/json');
+
+  const fetchUrl = request.query.url;
+  try {
+    logAnalytics(fetchUrl);
+    const checkResult = await execChecks(fetchUrl, true);
     const result = {
       status: 'ok',
       ...checkResult,
