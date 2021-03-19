@@ -151,7 +151,8 @@ export default class RecommendationItem {
           try {
             value = snarkdown(item[column.key]);
           } catch (e) {
-            console.log(`Invalid detail value ${item[column.key]}`);
+            console.error(`Could not render markdown '${item[column.key]}'`);
+            value = item[column.key];
           }
         }
 
@@ -160,7 +161,11 @@ export default class RecommendationItem {
       details += '</tr>';
     }
 
-    this.detailsTable.innerHTML = details;
+    try {
+      this.detailsTable.innerHTML = details;
+    } catch (e) {
+      console.error('Failed rendering details', details, e);
+    }
   }
 
   renderTags() {
