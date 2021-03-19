@@ -88,11 +88,9 @@ const execChecks = async (url, canary = false) => {
   if (canary) {
     const requestUrl = new URL(API_ENDPOINT_TOOLBOX_PAGE_EXPERIENCE);
     requestUrl.searchParams.set('url', url);
-    log.info('Calling AMP Toolbox Page Experience Checks', requestUrl);
     const response = await fetch(requestUrl);
     lintResults = await response.json();
   } else {
-    log.info('Calling AMP Toolbox Linter Checks');
     lintResults = await lint(context);
   }
   return {
