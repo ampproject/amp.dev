@@ -20,4 +20,6 @@ COPY . .
 EXPOSE 80 8080
 WORKDIR "platform"
 ENV NODE_ENV=production
+CMD ["find", "/"]
+
 CMD ["node", "serve.js"]
