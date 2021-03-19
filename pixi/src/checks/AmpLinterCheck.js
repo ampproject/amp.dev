@@ -28,6 +28,7 @@ const directMapping = {
   heroimageisdefined: 'heroImageIsDefined',
   viewportdisablestapdelay: 'viewportDisablesTapDelay',
   noiconfontisused: 'noIconFontIsUsed',
+  isusinglatestcomponentversion: 'isUsingLatestComponentVersion',
 };
 
 export default class AmpLinterCheck {
@@ -108,8 +109,6 @@ export default class AmpLinterCheck {
           components['amp-script']
         ),
         ...linterStatus,
-        isUsingLatestComponentVersions:
-          apiResult.isUsingLatestComponentVersions,
       },
     };
   }

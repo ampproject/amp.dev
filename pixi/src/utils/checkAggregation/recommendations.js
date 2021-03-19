@@ -29,7 +29,7 @@ const directLinterRecommendations = {
   noRenderBlockingExtension: 'prevent-render-blocking-extensions',
   viewportDisablesTapDelay: 'viewport-disables-tap-delay',
   noIconFontIsUsed: 'no-icon-fonts',
-  isUsingLatestComponentVersions: 'use-latest-component-versions',
+  isUsingLatestComponentVersion: 'use-latest-component-version',
 };
 
 const directPageExperienceRecommendations = {
