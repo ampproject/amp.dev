@@ -14,6 +14,7 @@
 
 import i18n from '../I18n.js';
 import {addTargetBlankToLinks, cleanCodeForInnerHtml} from '../../utils/texts';
+import snarkdown from 'snarkdown';
 
 const VALUE_TYPE_BYTES = 'bytes';
 const VALUE_TYPE_MS = 'ms';
@@ -129,7 +130,7 @@ export default class RecommendationItem {
     for (const item of this.content.details.items) {
       details += '<tr>';
       for (const column of columns) {
-        let value = null;
+        let value = '';
         if (column.type == VALUE_TYPE_THUMBNAIL) {
           value = `<amp-img alt="${i18n.getText('thumbnail')}" src="${
             item[column.key]
@@ -146,7 +147,12 @@ export default class RecommendationItem {
             item[column.key]
           }" target="_blank" rel="noopener">${item[column.key]}</a>`;
         } else {
-          value = item[column.key];
+          try {
+            value = snarkdown(item[column.key]);
+          } catch (e) {
+            console.error(`Could not render markdown '${item[column.key]}'`);
+            value = item[column.key];
+          }
         }
 
         details += `<td class="${column.type}">${value}</td>`;
@@ -154,7 +160,11 @@ export default class RecommendationItem {
       details += '</tr>';
     }
 
-    this.detailsTable.innerHTML = details;
+    try {
+      this.detailsTable.innerHTML = details;
+    } catch (e) {
+      console.error('Failed rendering details', details, e);
+    }
   }
 
   renderTags() {

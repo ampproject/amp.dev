@@ -75,16 +75,6 @@ export default class PageExperience {
 
     const linterPromise = this.runLintCheck(pageUrl);
 
-    // Early exit if the linter returned hard fails that make the other
-    // checks superfluous
-    const linter = await linterPromise;
-    if (!linter.isLoaded || !linter.isAmp || !linter.isOriginUrl) {
-      this.runStatusBannerResult(pageUrl, {linter: linterPromise});
-
-      this.running = false;
-      return;
-    }
-
     this.pageExperienceCheck.setLocale(i18n.getLanguage());
     const pageExperiencePromise = this.runPageExperienceCheck(
       pageUrl,

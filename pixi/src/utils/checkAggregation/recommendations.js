@@ -22,7 +22,6 @@ const directLinterRecommendations = {
   runtimeIsPreloaded: 'preload-amp-runtime',
   blockingExtensionsPreloaded: 'preload-render-blocking-extensions',
   fontsArePreloaded: 'preload-web-fonts',
-  fastGoogleFontsDisplay: 'fast-font-display',
   googleFontPreconnect: 'preconnect-google-fonts',
   isTransformedAmp: 'use-amp-optimizer',
   heroImageIsDefined: 'hero-images',
@@ -30,6 +29,8 @@ const directLinterRecommendations = {
   viewportDisablesTapDelay: 'viewport-disables-tap-delay',
   noIconFontIsUsed: 'no-icon-fonts',
   isUsingLatestComponentVersion: 'use-latest-component-version',
+  fontDisplay: 'font-display',
+  fontPreloading: 'font-preloading',
 };
 
 const directPageExperienceRecommendations = {
@@ -38,7 +39,6 @@ const directPageExperienceRecommendations = {
   fastServerResponse: 'server-response-time',
   usesOptimizedImages: 'optimized-images',
   usesWebpImages: 'next-gen-images',
-  fastFontDisplay: 'fast-font-display',
   minifiedCss: 'minify-css',
 };
 
