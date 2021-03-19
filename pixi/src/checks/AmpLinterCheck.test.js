@@ -72,6 +72,8 @@ describe('Linter check', () => {
     expect(report.data.noDynamicLayoutExtensions).toBe(false);
     expect(report.data.viewportDisablesTapDelay).toBe(false);
     expect(report.data.noIconFontIsUsed).toBe(false);
+    expect(report.data.fontDisplay).toBe(false);
+    expect(report.data.fontPreloading).toBe(false);
   });
 
   it('returns object with boilerplateIsRemoved=false, but extra optimizer info', async () => {

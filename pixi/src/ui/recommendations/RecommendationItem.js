@@ -116,7 +116,6 @@ export default class RecommendationItem {
 
     let details = '<thead>';
     const columns = [];
-    console.log('content', this.content);
     for (const heading of this.content.details.headings) {
       details += `<th class="${heading.key}">${
         heading.label || heading.text || ''
