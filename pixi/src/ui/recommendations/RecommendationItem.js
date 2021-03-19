@@ -14,6 +14,7 @@
 
 import i18n from '../I18n.js';
 import {addTargetBlankToLinks, cleanCodeForInnerHtml} from '../../utils/texts';
+import snarkdown from 'snarkdown';
 
 const VALUE_TYPE_BYTES = 'bytes';
 const VALUE_TYPE_MS = 'ms';
@@ -147,7 +148,7 @@ export default class RecommendationItem {
             item[column.key]
           }" target="_blank" rel="noopener">${item[column.key]}</a>`;
         } else {
-          value = item[column.key];
+          value = snarkdown(item[column.key]);
         }
 
         details += `<td class="${column.type}">${value}</td>`;
