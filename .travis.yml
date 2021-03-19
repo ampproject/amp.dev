@@ -130,4 +130,5 @@ jobs:
         - scripts/unbuffer.sh gulp buildFinalize
         - scripts/unbuffer.sh npm run smoke-test
       script:
-        - gcloud app deploy --project=amp-dev-staging --quiet --version=1 --timeout=50m
+        - gcloud config set app/cloud_build_timeout 1800
+        - gcloud app deploy --project=amp-dev-staging --quiet --version=1
