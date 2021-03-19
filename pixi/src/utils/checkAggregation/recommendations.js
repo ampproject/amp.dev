@@ -28,6 +28,7 @@ const directLinterRecommendations = {
   heroImageIsDefined: 'hero-images',
   noRenderBlockingExtension: 'prevent-render-blocking-extensions',
   viewportDisablesTapDelay: 'viewport-disables-tap-delay',
+  noIconFontIsUsed: 'no-icon-fonts',
   isUsingLatestComponentVersions: 'use-latest-component-versions',
 };
 

@@ -1,6 +1,6 @@
 ---
 $title: この URL は、AMP ページのキャッシュバージョンです。
-type: エラー
+type: error
 hide_share: true
 ---
 

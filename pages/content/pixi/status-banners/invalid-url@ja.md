@@ -1,6 +1,6 @@
 ---
 $title: この URL は無効です。
-type: エラー
+type: error
 hide_share: true
 ---
 

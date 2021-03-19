@@ -403,4 +403,17 @@ describe('getRecommendationIds', () => {
       expect(ids).toContainEqual({id: fixedRecommendations[i]});
     }
   });
+
+  it('returns no-icon-fonts', async () => {
+    const ids = await getRecommendations(
+      Promise.resolve({}),
+      Promise.resolve({}),
+      Promise.resolve({
+        noIconFontIsUsed: false,
+      }),
+      Promise.resolve({})
+    );
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContainEqual({id: 'no-icon-fonts'});
+  });
 });
