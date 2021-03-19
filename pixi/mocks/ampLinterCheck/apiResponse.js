@@ -109,6 +109,9 @@ const apiResponseFailAll = {
     'fontPreloading': {
       'status': 'WARN',
     },
+    'earlyIframes': {
+      'status': 'WARN',
+    },
     'details': {
       'fontDisplay': {
         'headings': [
