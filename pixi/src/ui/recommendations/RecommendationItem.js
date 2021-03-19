@@ -131,7 +131,7 @@ export default class RecommendationItem {
     for (const item of this.content.details.items) {
       details += '<tr>';
       for (const column of columns) {
-        let value = null;
+        let value = '';
         if (column.type == VALUE_TYPE_THUMBNAIL) {
           value = `<amp-img alt="${i18n.getText('thumbnail')}" src="${
             item[column.key]
@@ -148,7 +148,11 @@ export default class RecommendationItem {
             item[column.key]
           }" target="_blank" rel="noopener">${item[column.key]}</a>`;
         } else {
-          value = snarkdown(item[column.key]);
+          try {
+            value = snarkdown(item[column.key]);
+          } catch (e) {
+            console.log(`Invalid detail value ${item[column.key]}`);
+          }
         }
 
         details += `<td class="${column.type}">${value}</td>`;
