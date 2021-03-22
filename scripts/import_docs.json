@@ -79,7 +79,7 @@
     {
         "title": "AMPHTML email",
         "order": 2,
-        "from": "spec/amp-email-format.md",
+        "from": "spec/email/amp-email-format.md",
         "to": "docs/interaction_dynamic/amp-email-format.md",
         "toc": true
     }

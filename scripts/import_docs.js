@@ -38,7 +38,8 @@ function downloadPage(filePath, headingToStrip) {
     let process = function (err, data) {
 
       if (err || data && data.content !== undefined && !data.content.length) {
-        throw err || 'Skipping ' + filePath + ', file is empty..';
+        console.error('Skipping ' + filePath + ', file is empty..');
+        throw err
       }
 
       let encodedContent = new Buffer(data.content || data, 'base64');
