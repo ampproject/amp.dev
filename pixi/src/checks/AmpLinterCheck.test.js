@@ -75,6 +75,7 @@ describe('Linter check', () => {
     expect(report.data.fontDisplay).toBe(false);
     expect(report.data.fontPreloading).toBe(false);
     expect(report.data.earlyIframes).toBe(false);
+    expect(report.data.heroImages).toBe(false);
   });
 
   it('returns object with boilerplateIsRemoved=false, but extra optimizer info', async () => {
