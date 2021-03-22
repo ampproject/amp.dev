@@ -37,7 +37,7 @@ The `amp-analytics` component provides the following macros:
 * [Cumulative Layout Shift](https://web.dev/cls/): `${cumulativeLayoutShift}`
 * [First Input Delay](https://web.dev/fid/): `${firstInputDelay}`
 
-These macros can attach to any triggers and resolve asynchronously. 
+These macros can attach to any triggers and resolve asynchronously.
   -->
   <div>
     <amp-analytics>
@@ -99,3 +99,48 @@ These macros can attach to any triggers and resolve asynchronously.
       }
     </script>
   </amp-analytics>
+
+
+  <!--
+  ## Comparing performance on Cache vs Origin
+  -->
+  <!--
+    AMP Caches can improve your code with a number of optimizations, but it is important to not rely on a Cache for your site's performance. A good way to make sure you are delivering a great experience for all your users is to keep track of how your pages' Core Web Vitals are performing on and off of the Cache.
+
+We can build on our Google Analytics to do this. One of substitutions provided by amp-analytics is `ampdocHost` - this lets us track the URL of the page the user visited. We exand our earlier config using `extraUrlParams`. From there, we need to [set up](https://support.google.com/analytics/answer/2709829) a new Custom Dimension to track this. Make sure to take note of the number of the Custom Dimension - below we assume it was "1", in `cd1`..
+  -->
+  <div>
+    <amp-analytics>
+      <script type="application/json">
+        {
+          "vars": {
+             "gtag_id": "UA-XXXXXXXXX-X",
+             "config": {
+               "UA-XXXXXXXXX-X": {
+                  "groups": "default"
+               }
+             }
+          },
+          "extraUrlParams": {
+              "cd1": "${ampdocHost}"
+          },
+          "requests": {
+            "event": "<% base_path %>/ping?user=[= user =]&account=ampdev&event=${eventId}",
+            "pageview": "${event}&lcp=${lcp}&fid=${fid}&cls=${cls}"
+          },
+          "triggers": {
+            "trackPageview": {
+              "on": "visible",
+              "request": "pageview",
+              "vars": {
+                "eventId": "pageview",
+                "lcp": "${largestContentfulPaint}",
+                "cls": "${cumulativeLayoutShift}",
+                "fid": "${firstInputDelay}"
+              }
+            }
+          }
+        }
+      </script>
+    </amp-analytics>
+  </div>
