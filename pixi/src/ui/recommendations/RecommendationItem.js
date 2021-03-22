@@ -103,7 +103,6 @@ export default class RecommendationItem {
   }
 
   renderDetails() {
-    console.log('render details', this.content.details);
     if (!this.content.details) {
       this.body.removeChild(this.details);
       return;
