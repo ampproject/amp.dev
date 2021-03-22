@@ -112,6 +112,9 @@ const apiResponseFailAll = {
     'earlyIframes': {
       'status': 'WARN',
     },
+    'heroImages': {
+      'status': 'WARN',
+    },
     'details': {
       'fontDisplay': {
         'headings': [
