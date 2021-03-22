@@ -109,12 +109,11 @@ AMP Caches work to make sure your users have as great an expierence possible, bu
 
 We can build on our Google Analytics to do this. One of substitutions provided by amp-analytics is `ampdocHost` - this lets us track the URL of the page the user visited. We exand our earlier config using `extraUrlParams`. This lets us define a custom key and value for our analytics events. We need to [set up](https://support.google.com/analytics/answer/2709829) a new Custom Dimension, that will be used as the key. 
 
-![Screenshot of Google Analytics, showing the Custom Dimensions edit page](https://user-images.githubusercontent.com/465414/112056606-9638e680-8b2e-11eb-8d21-9f40faedc5f9.jpg)
+![Screenshot of Google Analytics, showing the Custom Dimensions edit page](/static/img/google-analytics-custom-dimensions-example.jpg)
 
 
 Once you have created the Custom Dimension to track the AMP Host, make sure you note the `Index` listed on the analytics page. This number is used in our configuration objects to connect `ampdocHost` to the Dimension you just created. Below  we assume your index was "1", (i.e. `cd1`). If your `Index` is 2, then use `cd2`, etc.
   -->
-  <div>
     <amp-analytics>
       <script type="application/json">
       {
@@ -126,9 +125,6 @@ Once you have created the Custom Dimension to track the AMP Host, make sure you 
              }
            }
         },
-        "extraUrlParams": {
-            "cd1": "${ampdocHost}"
-        },
         "triggers": {
           "default pageview": {
             "on": "visible",
@@ -139,11 +135,11 @@ Once you have created the Custom Dimension to track the AMP Host, make sure you 
             "extraUrlParams": {
               "lcp": "${largestContentfulPaint}",
               "cls": "${cumulativeLayoutShift}",
-              "fid": "${firstInputDelay}"
+              "fid": "${firstInputDelay}",
+              "cd1": "${ampdocHost}"
             }
           }
         }
       }
       </script>
     </amp-analytics>
-  </div>
