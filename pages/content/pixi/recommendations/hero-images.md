@@ -1,6 +1,6 @@
 ---
 $title: Markup hero images on your page
-$order: 80
+$order: 20
 tags:
 - lcp
 ---
