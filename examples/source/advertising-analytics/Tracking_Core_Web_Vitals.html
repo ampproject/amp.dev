@@ -102,12 +102,12 @@ These macros can attach to any triggers and resolve asynchronously.
 
 
   <!--
-  ## Comparing performance on Cache vs Origin
+    ## Comparing performance on Cache vs Origin
   -->
   <!--
     AMP Caches can improve your code with a number of optimizations, but it is important to not rely on a Cache for your site's performance. A good way to make sure you are delivering a great experience for all your users is to keep track of how your pages' Core Web Vitals are performing on and off of the Cache.
 
-We can build on our Google Analytics to do this. One of substitutions provided by amp-analytics is `ampdocHost` - this lets us track the URL of the page the user visited. We exand our earlier config using `extraUrlParams`. From there, we need to [set up](https://support.google.com/analytics/answer/2709829) a new Custom Dimension to track this. Make sure to take note of the number of the Custom Dimension - below we assume it was "1", in `cd1`..
+    We can build on the previous Google Analytics example to do this. One of substitutions provided by amp-analytics is `ampdocHost` - this lets us track the domain of the page the user visited. We exand our earlier config using `extraUrlParams`. From there, we need to [set up](https://support.google.com/analytics/answer/2709829) a new Custom Dimension to track this. Make sure to take note of the number of the Custom Dimension - below we assume it was "1", in `cd1`..
   -->
   <div>
     <amp-analytics>
