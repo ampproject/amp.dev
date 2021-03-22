@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import marked from 'marked';
+import snarkdown from 'snarkdown';
 
 const DEFAULT_LANGUAGE = 'en';
 
@@ -66,7 +66,7 @@ class I18n {
       if (recommendation) {
         result.push(
           Object.assign({}, item, recommendation, {
-            body: recommendation.body || marked(item.description),
+            body: recommendation.body || snarkdown(item.description),
           })
         );
       } else {

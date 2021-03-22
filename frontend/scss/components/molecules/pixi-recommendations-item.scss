@@ -10,6 +10,10 @@
   transition: transform 0.25s ease-in, background 0.25s ease-in,
     box-shadow 0.3s ease-in, border-color 0.3s ease-in;
 
+  code {
+    @include txt-mono-inline 
+  }
+
   &-box {
     padding: 30px 18px;
     border-radius: 8px;
@@ -151,9 +155,6 @@
       text-overflow: ellipsis;
     }
 
-    code {
-      @include txt-mono-inline 
-    }
   }
 
   &-next-advice {
