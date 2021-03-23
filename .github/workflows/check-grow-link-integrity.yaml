@@ -28,4 +28,6 @@ jobs:
 
       - name: Checking grow link integrity
         run: |
+          gulp buildSamples
+          gulp importAll
           gulp lintGrow
