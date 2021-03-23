@@ -78,6 +78,14 @@ const execChecks = async (url) => {
   return result;
 };
 
+async function runPageExperienceChecks(url) {
+  const requestUrl = new URL(API_ENDPOINT_TOOLBOX_PAGE_EXPERIENCE);
+  requestUrl.searchParams.set('url', url);
+  const response = await fetch(requestUrl);
+  const lintResults = await response.json();
+  return lintResults;
+}
+
 const logAnalytics = async (url) => {
   try {
     const data = {
@@ -95,7 +103,7 @@ const logAnalytics = async (url) => {
       // Event Action - required value
       ea: 'lint',
       // Event Label - where the URL is stored
-      el: new URL(url).host,
+      el: url,
     };
 
     return fetch(
@@ -134,10 +142,3 @@ api.get('/lint', async (request, response) => {
 });
 
 module.exports = api;
-async function runPageExperienceChecks(url) {
-  const requestUrl = new URL(API_ENDPOINT_TOOLBOX_PAGE_EXPERIENCE);
-  requestUrl.searchParams.set('url', url);
-  const response = await fetch(requestUrl);
-  const lintResults = await response.json();
-  return lintResults;
-}
