@@ -1,39 +1,42 @@
 ---
-name: 'Build'
+name: 'Release: Staging'
 
-on: push
+on:
+  push:
+    branches:
+      - future
 
 jobs:
-  # verify:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Cloning repository
-  #       uses: actions/checkout@v2
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning repository
+        uses: actions/checkout@v2
 
-  #     - name: Setting up Node.js
-  #       uses: actions/setup-node@v1
-  #       with:
-  #         node-version: 12
+      - name: Setting up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
 
-  #     - uses: actions/cache@v2
-  #       with:
-  #         path: '**/node_modules'
-  #         key: node_modules-${{ hashFiles('**/package-lock.json') }}
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: node_modules-${{ hashFiles('**/package-lock.json') }}
 
-  #     - name: Installing Node.js packages
-  #       run: npm install
+      - name: Installing Node.js packages
+        run: npm install
 
-  #     - name: Running tests
-  #       run: |
-  #         gulp updateTestResources
-  #         gulp buildComponentVersions
-  #         gulp lintNode
-  #         gulp lintYaml
-  #         npm run test:platform
-  #         npm run test:playground
-  #         npm run test:pixi
+      - name: Running tests
+        run: |
+          gulp updateTestResources
+          gulp buildComponentVersions
+          gulp lintNode
+          gulp lintYaml
+          npm run test:platform
+          npm run test:playground
+        # npm run test:pixi
   prepare:
-    # needs: verify
+    needs: verify
     runs-on: ubuntu-latest
     steps:
       - name: Cloning repository
@@ -74,19 +77,19 @@ jobs:
           [
             'en',
             'de',
-            # 'fr',
-            # 'ar',
-            # 'es',
-            # 'it',
-            # 'id',
-            # 'ja',
-            # 'ko',
-            # 'pt_BR',
-            # 'ru',
-            # 'tr',
-            # 'zh_CN',
-            # 'pl',
-            # 'vi',
+            'fr',
+            'ar',
+            'es',
+            'it',
+            'id',
+            'ja',
+            'ko',
+            'pt_BR',
+            'ru',
+            'tr',
+            'zh_CN',
+            'pl',
+            'vi',
           ]
     runs-on: ubuntu-latest
     steps:
