@@ -17,7 +17,6 @@
 const express = require('express');
 const url = require('url');
 const AmpCaches = require('@ampproject/toolbox-cache-list');
-const {lint, LintMode} = require('@ampproject/toolbox-linter');
 const cheerio = require('cheerio');
 const log = require('@lib/utils/log')('Pixi API');
 const fetch = require('node-fetch');
@@ -57,42 +56,29 @@ const isCacheUrl = (urlString, cachesList) => {
   return !!matchedCache;
 };
 
-const execChecks = async (url, canary = false) => {
+const execChecks = async (url) => {
   const ampCacheListPromise = AmpCaches.list();
   const res = await rateLimitedFetch.fetchHtmlResponse(url);
   const body = await res.text();
   const $ = cheerio.load(body);
   const ampCacheList = await ampCacheListPromise;
-  const context = {
-    $,
-    headers: {},
-    raw: {
-      headers: res.headers,
-      body,
-    },
-    url,
-    mode: LintMode.PageExperience,
-  };
   const result = {
     redirected: res.redirected,
     url: res.url,
     isAmp: isAmp($),
+    components: {},
     isCacheUrl: isCacheUrl(res.url, ampCacheList),
+    data: {},
   };
 
-  if (!result.isAmp) {
+  if (!result.isAmp || result.isCacheUrl) {
     return result;
   }
 
-  let lintResults;
-  if (canary) {
-    const requestUrl = new URL(API_ENDPOINT_TOOLBOX_PAGE_EXPERIENCE);
-    requestUrl.searchParams.set('url', url);
-    const response = await fetch(requestUrl);
-    lintResults = await response.json();
-  } else {
-    lintResults = await lint(context);
-  }
+  const requestUrl = new URL(API_ENDPOINT_TOOLBOX_PAGE_EXPERIENCE);
+  requestUrl.searchParams.set('url', url);
+  const response = await fetch(requestUrl);
+  const lintResults = await response.json();
   return {
     components: findAmpComponents($),
     data: lintResults,
@@ -132,38 +118,12 @@ const logAnalytics = async (url) => {
 const api = express.Router();
 
 api.get('/lint', async (request, response) => {
-  log.info('lint endpoint called.');
   response.setHeader('Content-Type', 'application/json');
 
   const fetchUrl = request.query.url;
   try {
     logAnalytics(fetchUrl);
     const checkResult = await execChecks(fetchUrl);
-    const result = {
-      status: 'ok',
-      ...checkResult,
-    };
-    response.json(result);
-  } catch (e) {
-    log.error('Unable to lint', fetchUrl, e.stack);
-    const result = {status: 'error'};
-    if (e.errorId) {
-      // The messages for the special RemoteFetchError can be shown in the response
-      result.errorId = e.errorId;
-      result.message = e.message;
-    }
-    response.json(result);
-  }
-});
-
-api.get('/lint-canary', async (request, response) => {
-  log.info('lint canary endpoint called.');
-  response.setHeader('Content-Type', 'application/json');
-
-  const fetchUrl = request.query.url;
-  try {
-    logAnalytics(fetchUrl);
-    const checkResult = await execChecks(fetchUrl, true);
     const result = {
       status: 'ok',
       ...checkResult,
