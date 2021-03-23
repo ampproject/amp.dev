@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import checkCache from '../utils/checkCache.js';
-
 const API_ENDPOINT = API_ENDPOINT_MOBILE_FRIENDLINESS;
 
 const API_URL = `${API_ENDPOINT}?key=${AMP_DEV_PIXI_APIS_KEY}`;
@@ -23,10 +21,15 @@ export default class MobileFriendlinessCheck {
     return 2;
   }
 
+  constructor(checkCache, fetch) {
+    this.checkCache = checkCache;
+    this.fetch = fetch;
+  }
+
   async run(pageUrl) {
     try {
       this.cacheKey = `${API_ENDPOINT}${pageUrl}`;
-      let apiResult = checkCache.getItem(this.cacheKey);
+      let apiResult = this.checkCache.getItem(this.cacheKey);
       if (!apiResult) {
         apiResult = await this.fetchJson(pageUrl);
       }
@@ -45,7 +48,7 @@ export default class MobileFriendlinessCheck {
       };
     }
 
-    checkCache.setItem(this.cacheKey, apiResult);
+    this.checkCache.setItem(this.cacheKey, apiResult);
     return {
       error,
       data: {
@@ -58,10 +61,11 @@ export default class MobileFriendlinessCheck {
   }
 
   async fetchJson(pageUrl) {
-    const response = await fetch(API_URL, {
+    const response = await this.fetch(API_URL, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
+        'Referer': 'https://amp.dev',
       },
       method: 'POST',
       body: JSON.stringify({

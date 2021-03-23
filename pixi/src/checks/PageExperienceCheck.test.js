@@ -20,17 +20,21 @@ import reportDescriptions from '../../mocks/pageExperienceCheck/reportDescriptio
 
 import pixiConfig from '../../config.js';
 
+let pageExperienceCheck;
+let fetch;
+
 beforeEach(() => {
   fetchMock.reset();
+  fetch = fetchMock.sandbox();
+  pageExperienceCheck = new PageExperienceCheck(fetch);
 });
 
 describe('Page experience check', () => {
   it('creates report data for url with no errors', async () => {
     const apiEndpoint =
       pixiConfig['development'].API_ENDPOINT_PAGE_SPEED_INSIGHTS;
-    fetchMock.mock(`begin:${apiEndpoint}`, apiResponseNoErrors);
+    fetch.mock(`begin:${apiEndpoint}`, apiResponseNoErrors);
 
-    const pageExperienceCheck = new PageExperienceCheck();
     const report = await pageExperienceCheck.run('http://example.com');
     expect(report.error).toBeUndefined();
     expect(report.data).toEqual(reportDataNoErrors);
@@ -40,9 +44,8 @@ describe('Page experience check', () => {
   it('creates report data for url with errors', async () => {
     const apiEndpoint =
       pixiConfig['development'].API_ENDPOINT_PAGE_SPEED_INSIGHTS;
-    fetchMock.mock(`begin:${apiEndpoint}`, apiResponseErrors);
+    fetch.mock(`begin:${apiEndpoint}`, apiResponseErrors);
 
-    const pageExperienceCheck = new PageExperienceCheck();
     const report = await pageExperienceCheck.run('http://example.com');
     expect(report.error).toBeUndefined();
     expect(report.data).toEqual(reportDataErrors);
@@ -52,9 +55,8 @@ describe('Page experience check', () => {
   it('creates report data for url with no field data', async () => {
     const apiEndpoint =
       pixiConfig['development'].API_ENDPOINT_PAGE_SPEED_INSIGHTS;
-    fetchMock.mock(`begin:${apiEndpoint}`, apiResponseNoFieldData);
+    fetch.mock(`begin:${apiEndpoint}`, apiResponseNoFieldData);
 
-    const pageExperienceCheck = new PageExperienceCheck();
     const report = await pageExperienceCheck.run('http://example.com');
     expect(report.error).toBeUndefined();
     expect(report.data).toEqual(reportDataNoFieldData);
@@ -64,9 +66,8 @@ describe('Page experience check', () => {
   it('creates report data for url with no loadingExperience', async () => {
     const apiEndpoint =
       pixiConfig['development'].API_ENDPOINT_PAGE_SPEED_INSIGHTS;
-    fetchMock.mock(`begin:${apiEndpoint}`, apiResponseNoLoadingExperience);
+    fetch.mock(`begin:${apiEndpoint}`, apiResponseNoLoadingExperience);
 
-    const pageExperienceCheck = new PageExperienceCheck();
     const report = await pageExperienceCheck.run('http://example.com');
     expect(report.error).toBeUndefined();
     expect(report.data).toEqual(reportDataNoLoadingExperience);
@@ -76,9 +77,8 @@ describe('Page experience check', () => {
   it('creates report data for url with origin field data', async () => {
     const apiEndpoint =
       pixiConfig['development'].API_ENDPOINT_PAGE_SPEED_INSIGHTS;
-    fetchMock.mock(`begin:${apiEndpoint}`, apiResponseOriginFieldData);
+    fetch.mock(`begin:${apiEndpoint}`, apiResponseOriginFieldData);
 
-    const pageExperienceCheck = new PageExperienceCheck();
     const report = await pageExperienceCheck.run('http://example.com');
     expect(report.error).toBeUndefined();
     expect(report.data).toEqual(reportDataOriginFieldData);

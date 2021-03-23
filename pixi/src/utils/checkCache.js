@@ -1,8 +1,25 @@
 const KEY_PREFIX = 'pixi';
 
-class CheckCache {
+class MemoryStorage {
   constructor() {
-    this.storage = window.sessionStorage;
+    this.store = new Map();
+  }
+  setItem(key, value) {
+    this.store.set(key, value);
+  }
+
+  getItem(key) {
+    return this.store.get(key) || null;
+  }
+}
+
+class CheckCache {
+  constructor(window) {
+    if (window) {
+      this.storage = window.sessionStorage;
+    } else {
+      this.storage = new MemoryStorage();
+    }
   }
 
   setItem(key, value) {
@@ -14,4 +31,4 @@ class CheckCache {
   }
 }
 
-export default new CheckCache();
+export default CheckCache;

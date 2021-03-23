@@ -1,18 +1,20 @@
-// Copyright 2020 The AMPHTML Authors
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//      http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+/**
+ * Copyright 2020 The AMPHTML Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
-const FetchError = require('../../../platform/lib/utils/fetchError.js');
+import FetchError from '../../../platform/lib/utils/fetchError.js';
 
 const directMapping = {
   isvalid: 'isValid',
@@ -28,13 +30,16 @@ const directMapping = {
 };
 
 export default class AmpLinterCheck {
-  constructor() {}
+  constructor(amp, fetch) {
+    this.amp = amp;
+    this.fetch = fetch;
+  }
   static getCheckCount() {
     return 15;
   }
 
   async run(pageUrl) {
-    const isCanary = await AMP.getState('pixiCanary');
+    const isCanary = await this.amp.getState('pixiCanary');
     let requestUrl;
     if (isCanary) {
       requestUrl = new URL(API_ENDPOINT_LINTER_CANARY);
@@ -116,7 +121,7 @@ export default class AmpLinterCheck {
   }
 
   async fetchJson(url) {
-    const response = await fetch(url);
+    const response = await this.fetch(url);
     return response.json();
   }
 }
