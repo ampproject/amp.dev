@@ -13,10 +13,10 @@ jobs:
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: 'Release: Staging'
-          token: ${{ secrets.GITHUB_NIGHTLY_TOKEN }}
+          token: ${{ secrets.NIGHTLY_WORKFLOW_GITHUB_PAT }}
 
       - name: Deploying to production
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: 'Release: Production'
-          token: ${{ secrets.GITHUB_NIGHTLY_TOKEN }}
+          token: ${{ secrets.NIGHTLY_WORKFLOW_GITHUB_PAT }}
