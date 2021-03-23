@@ -20,7 +20,7 @@ jobs:
       - name: Setting up Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 14
 
       - uses: actions/cache@v2
         with:
