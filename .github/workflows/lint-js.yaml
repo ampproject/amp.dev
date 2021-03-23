@@ -5,7 +5,9 @@ on:
   push:
     paths:
       - '**/*.js'
-
+  pull_request:
+    paths:
+      - '**/*.js'
 jobs:
   test:
     runs-on: ubuntu-latest

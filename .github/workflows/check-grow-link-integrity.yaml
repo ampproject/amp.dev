@@ -5,7 +5,9 @@ on:
   push:
     paths:
       - 'pages/content/**'
-
+  pull_request:
+    paths:
+      - 'pages/content/**'
 jobs:
   test:
     runs-on: ubuntu-latest
