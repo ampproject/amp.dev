@@ -45,6 +45,9 @@ const apiResponsePassAll = {
     viewportdisablestapdelay: {
       status: 'PASS',
     },
+    noiconfontisused: {
+      status: 'PASS',
+    },
   },
 };
 
@@ -96,6 +99,64 @@ const apiResponseFailAll = {
     },
     viewportdisablestapdelay: {
       status: 'WARN',
+    },
+    noiconfontisused: {
+      status: 'WARN',
+    },
+    fontDisplay: {
+      'status': 'WARN',
+    },
+    'fontPreloading': {
+      'status': 'WARN',
+    },
+    'earlyIframes': {
+      'status': 'WARN',
+    },
+    'heroImages': {
+      'status': 'WARN',
+    },
+    'details': {
+      'fontDisplay': {
+        'headings': [
+          {
+            'label': 'Font',
+            'valueType': 'text',
+            'key': 'font',
+          },
+          {
+            'key': 'fix',
+            'valueType': 'text',
+            'label': 'Suggestion',
+          },
+        ],
+        'items': [
+          {
+            'font': 'Open Sans',
+            'fix': 'Replace `font-display: swap` with `font-display: optional`',
+          },
+        ],
+      },
+      'fontPreloading': {
+        'headings': [
+          {
+            'label': 'Font',
+            'valueType': 'text',
+            'key': 'font',
+          },
+          {
+            'key': 'fix',
+            'valueType': 'text',
+            'label': 'Suggestion',
+          },
+        ],
+        'items': [
+          {
+            'font': 'Open Sans',
+            'fix':
+              'Add `<link rel="preload" href="https://pixi-tests.glitch.me/fonts/OpenSans-Regular-webfont.woff2" as="font" crossorigin>`.',
+          },
+        ],
+      },
     },
   },
 };

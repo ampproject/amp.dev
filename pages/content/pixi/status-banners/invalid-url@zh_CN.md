@@ -1,6 +1,6 @@
 ---
 $title: 此网址无效。
-type: 错误
+type: error
 hide_share: true
 ---
 

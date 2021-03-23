@@ -17,6 +17,14 @@ import pixiConfig from '../../config.js';
 
 beforeEach(() => {
   fetchMock.reset();
+  global.AMP = {
+    getState: async (id) => {
+      if (id === 'pixiCanary') {
+        return true;
+      }
+      return '';
+    },
+  };
 });
 
 describe('Linter check', () => {
@@ -34,16 +42,14 @@ describe('Linter check', () => {
     expect(report.data.isValid).toBe(true);
     expect(report.data.runtimeIsPreloaded).toBe(true);
     expect(report.data.blockingExtensionsPreloaded).toBe(true);
-    expect(report.data.fontsArePreloaded).toBe(true);
-    expect(report.data.fastGoogleFontsDisplay).toBe(true);
     expect(report.data.googleFontPreconnect).toBe(true);
     expect(report.data.isTransformedAmp).toBe(true);
-    expect(report.data.heroImageIsDefined).toBe(true);
     expect(report.data.boilerplateIsRemoved).toBe(true);
     expect(report.data.updateOptimizerForBoilerplateRemoval).not.toBe(true);
     expect(report.data.noRenderBlockingExtension).toBe(true);
     expect(report.data.noDynamicLayoutExtensions).toBe(true);
     expect(report.data.viewportDisablesTapDelay).toBe(true);
+    expect(report.data.noIconFontIsUsed).toBe(true);
   });
 
   it('returns object with all checks failed', async () => {
@@ -59,16 +65,17 @@ describe('Linter check', () => {
     expect(report.data.isValid).toBe(false);
     expect(report.data.runtimeIsPreloaded).toBe(false);
     expect(report.data.blockingExtensionsPreloaded).toBe(false);
-    expect(report.data.fontsArePreloaded).toBe(false);
-    expect(report.data.fastGoogleFontsDisplay).toBe(false);
-    expect(report.data.googleFontPreconnect).toBe(false);
     expect(report.data.isTransformedAmp).toBe(false);
-    expect(report.data.heroImageIsDefined).toBe(false);
     expect(report.data.boilerplateIsRemoved).toBe(false);
     expect(report.data.updateOptimizerForBoilerplateRemoval).toBe(true);
     expect(report.data.noRenderBlockingExtension).toBe(false);
     expect(report.data.noDynamicLayoutExtensions).toBe(false);
     expect(report.data.viewportDisablesTapDelay).toBe(false);
+    expect(report.data.noIconFontIsUsed).toBe(false);
+    expect(report.data.fontDisplay).toBe(false);
+    expect(report.data.fontPreloading).toBe(false);
+    expect(report.data.earlyIframes).toBe(false);
+    expect(report.data.heroImages).toBe(false);
   });
 
   it('returns object with boilerplateIsRemoved=false, but extra optimizer info', async () => {

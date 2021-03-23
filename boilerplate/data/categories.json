@@ -236,6 +236,11 @@
     		"default": false
     	},
     	{
+    		"id": "es",
+    		"label": "Spanish",
+    		"default": false
+    	},
+    	{
     		"id": "tr",
     		"label": "Turkish",
     		"default": false

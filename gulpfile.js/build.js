@@ -293,6 +293,7 @@ function buildPrepare(done) {
         './pages/content/',
         './pages/shared/',
         './dist/',
+        './boilerplate/lib/',
         './boilerplate/dist/',
         './playground/dist/',
         './frontend/templates/views/partials/pixi/webpack.j2',

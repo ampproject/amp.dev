@@ -3,18 +3,24 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 
 const config = require('./config.js');
 const {calculateHash} = require('@ampproject/toolbox-script-csp');
 
 module.exports = (env, argv) => {
   const mode = argv.mode || 'production';
+  const isDevelopment = mode == 'development';
 
   return {
     entry: path.join(__dirname, 'src/ui/PageExperience.js'),
     output: {
-      filename: 'pixi.[name].[contenthash].js',
-      chunkFilename: 'pixi.[name].[chunkhash].bundle.js',
+      filename: isDevelopment
+        ? 'pixi.[name].js'
+        : 'pixi.[name].[contenthash].js',
+      chunkFilename: isDevelopment
+        ? 'pixi.[name].js'
+        : 'pixi.[name].[chunkhash].bundle.js',
       sourceMapFilename: 'pixi.[name].map',
       publicPath: '/static/page-experience/',
     },
@@ -32,7 +38,7 @@ module.exports = (env, argv) => {
       ],
       concatenateModules: false,
     },
-    devtool: mode == 'development' ? 'cheap-module-source-map' : false,
+    devtool: isDevelopment ? 'cheap-module-source-map' : false,
     plugins: [
       new HtmlWebpackPlugin({
         template: path.join(__dirname, 'src/ui/page-experience.hbs'),
@@ -53,8 +59,11 @@ module.exports = (env, argv) => {
         },
       }),
       new webpack.DefinePlugin({
-        IS_DEVELOPMENT: mode == 'development',
+        IS_DEVELOPMENT: isDevelopment,
         API_ENDPOINT_LINTER: JSON.stringify(config[mode].API_ENDPOINT_LINTER),
+        API_ENDPOINT_LINTER_CANARY: JSON.stringify(
+          config[mode].API_ENDPOINT_LINTER_CANARY
+        ),
         API_ENDPOINT_SAFE_BROWSING: JSON.stringify(
           config[mode].API_ENDPOINT_SAFE_BROWSING
         ),
@@ -99,6 +108,12 @@ module.exports = (env, argv) => {
           },
         },
       }),
+      isDevelopment
+        ? new WebpackBuildNotifierPlugin({
+            title: 'amp.dev: Pixi',
+            logo: path.join(process.cwd(), '../pages/static/img/favicon.png'),
+          })
+        : () => {},
     ],
     module: {
       rules: [
@@ -116,6 +131,10 @@ module.exports = (env, argv) => {
           ],
         },
       ],
+    },
+
+    devServer: {
+      writeToDisk: true,
     },
   };
 };

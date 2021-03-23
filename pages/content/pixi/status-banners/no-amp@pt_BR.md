@@ -1,6 +1,6 @@
 ---
 $title: Esta URL não é uma página AMP.
-type: erro
+type: error
 hide_share: true
 ---
 

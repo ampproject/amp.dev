@@ -81,8 +81,12 @@ The following `amp-base-carousel` will show `3` slides at a time when width is g
 
 You may apply responsive attribute values to the following components:
 
--   [amp-base-carousel](https://github.com/ampproject/amphtml/blob/master/spec/./../extensions/amp-base-carousel/amp-base-carousel.md)
--   [amp-fit-text](https://github.com/ampproject/amphtml/blob/master/spec/./../extensions/amp-fit-text/amp-fit-text.md)
+-   [amp-accordion](https://github.com/ampproject/amphtml/blob/master/spec/./../extensions/amp-accordion/amp-accordion.md#animate)
+-   [amp-base-carousel](https://github.com/ampproject/amphtml/blob/master/spec/./../extensions/amp-base-carousel/amp-base-carousel.md#media-queries)
+-   [amp-fit-text](https://github.com/ampproject/amphtml/blob/master/spec/./../extensions/amp-fit-text/amp-fit-text.md#media-queries)
 -   [amp-inline-gallery-pagination](https://github.com/ampproject/amphtml/blob/master/spec/./../extensions/amp-inline-gallery/amp-inline-gallery.md#include-pagination-indicators)
 -   [amp-inline-gallery-thumbnails](https://github.com/ampproject/amphtml/blob/master/spec/./../extensions/amp-inline-gallery/amp-inline-gallery.md#include-pagination-thumbnails)
--   [amp-stream-gallery](https://github.com/ampproject/amphtml/blob/master/spec/./../extensions/amp-stream-gallery/amp-stream-gallery.md)
+-   [amp-lightbox](https://github.com/ampproject/amphtml/blob/master/spec/./../extensions/amp-lightbox/amp-lightbox.md#animation)
+-   [amp-selector](https://github.com/ampproject/amphtml/blob/master/spec/./../extensions/amp-selector/amp-selector.md#keyboard-select-mode)
+-   [amp-stream-gallery](https://github.com/ampproject/amphtml/blob/master/spec/./../extensions/amp-stream-gallery/amp-stream-gallery.md#media-queries)
+-   [amp-video](https://github.com/ampproject/amphtml/blob/master/spec/./../extensions/amp-video/amp-video.md#rotate-to-fullscreen)
