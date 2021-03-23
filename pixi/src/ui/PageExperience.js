@@ -31,6 +31,7 @@ import InputBar from './InputBar.js';
 import getRecommendations from '../utils/checkAggregation/recommendations.js';
 import getStatusId from '../utils/checkAggregation/statusBanner';
 import getIssueUrl from '../utils/issueUrl';
+import CheckCache from '../utils/checkCache';
 
 const totalNumberOfChecks =
   AmpLinterCheck.getCheckCount() +
@@ -45,11 +46,12 @@ export default class PageExperience {
     this.reports = document.getElementById('reports');
     this.reportViews = {};
 
-    this.pageExperienceCheck = new PageExperienceCheck();
-    this.pageExperienceCacheCheck = new PageExperienceCacheCheck();
-    this.safeBrowsingCheck = new SafeBrowsingCheck();
-    this.linterCheck = new AmpLinterCheck();
-    this.mobileFriendlinessCheck = new MobileFriendlinessCheck();
+    const cache = new CheckCache(window);
+    this.pageExperienceCheck = new PageExperienceCheck(fetch);
+    this.pageExperienceCacheCheck = new PageExperienceCacheCheck(fetch);
+    this.safeBrowsingCheck = new SafeBrowsingCheck(cache, fetch);
+    this.linterCheck = new AmpLinterCheck(AMP, fetch);
+    this.mobileFriendlinessCheck = new MobileFriendlinessCheck(cache, fetch);
 
     this.inputBar = new InputBar(document, this.onSubmitUrl.bind(this));
     this.recommendationsView = new RecommendationsView(document);
