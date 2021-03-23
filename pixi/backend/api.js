@@ -66,24 +66,16 @@ const execChecks = async (url) => {
     redirected: res.redirected,
     url: res.url,
     isAmp: isAmp($),
-    components: {},
+    components: findAmpComponents($),
     isCacheUrl: isCacheUrl(res.url, ampCacheList),
     data: {},
   };
-
   if (!result.isAmp || result.isCacheUrl) {
+    // don't run the expensive PX checks
     return result;
   }
-
-  const requestUrl = new URL(API_ENDPOINT_TOOLBOX_PAGE_EXPERIENCE);
-  requestUrl.searchParams.set('url', url);
-  const response = await fetch(requestUrl);
-  const lintResults = await response.json();
-  return {
-    components: findAmpComponents($),
-    data: lintResults,
-    ...result,
-  };
+  result.data = await runPageExperienceChecks(url);
+  return result;
 };
 
 const logAnalytics = async (url) => {
@@ -142,3 +134,10 @@ api.get('/lint', async (request, response) => {
 });
 
 module.exports = api;
+async function runPageExperienceChecks(url) {
+  const requestUrl = new URL(API_ENDPOINT_TOOLBOX_PAGE_EXPERIENCE);
+  requestUrl.searchParams.set('url', url);
+  const response = await fetch(requestUrl);
+  const lintResults = await response.json();
+  return lintResults;
+}
