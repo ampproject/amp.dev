@@ -66,25 +66,25 @@ const execChecks = async (url) => {
     redirected: res.redirected,
     url: res.url,
     isAmp: isAmp($),
-    components: {},
+    components: findAmpComponents($),
     isCacheUrl: isCacheUrl(res.url, ampCacheList),
     data: {},
   };
-
   if (!result.isAmp || result.isCacheUrl) {
+    // don't run the expensive PX checks
     return result;
   }
+  result.data = await runPageExperienceChecks(url);
+  return result;
+};
 
+async function runPageExperienceChecks(url) {
   const requestUrl = new URL(API_ENDPOINT_TOOLBOX_PAGE_EXPERIENCE);
   requestUrl.searchParams.set('url', url);
   const response = await fetch(requestUrl);
   const lintResults = await response.json();
-  return {
-    components: findAmpComponents($),
-    data: lintResults,
-    ...result,
-  };
-};
+  return lintResults;
+}
 
 const logAnalytics = async (url) => {
   try {
@@ -103,7 +103,7 @@ const logAnalytics = async (url) => {
       // Event Action - required value
       ea: 'lint',
       // Event Label - where the URL is stored
-      el: new URL(url).host,
+      el: url,
     };
 
     return fetch(
