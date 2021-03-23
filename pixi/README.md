@@ -40,7 +40,13 @@ cd pixi
 npx rollup -c
 ```
 
-Using the API:
+Before using the CLI you need to configure a GCloud API key that allows access to the PageSpeedServices and Safe Browsing APIs:
+
+```
+export AMP_DEV_PIXI_APIS_KEY=YOUR_GCLOUD_API_KEY
+```
+
+Then you can use the Pixi API:
 
 ```js
 const PageExperienceCli = require('./dist/Cli.js');
