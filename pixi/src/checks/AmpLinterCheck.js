@@ -105,6 +105,7 @@ export default class AmpLinterCheck {
         ),
         noDynamicLayoutExtensions: !(
           components['amp-access'] ||
+          components['amp-subscriptions'] ||
           components['amp-user-notification'] ||
           components['amp-script']
         ),

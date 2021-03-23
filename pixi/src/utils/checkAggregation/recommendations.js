@@ -32,6 +32,7 @@ const directLinterRecommendations = {
   fontDisplay: 'font-display',
   fontPreloading: 'font-preloading',
   earlyIframes: 'early-iframes',
+  heroImages: 'hero-images',
 };
 
 const directPageExperienceRecommendations = {
