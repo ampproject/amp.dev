@@ -109,8 +109,7 @@ AMP Caches work to make sure your users have as great an expierence possible, bu
 
 We can build on our Google Analytics to do this. One of substitutions provided by amp-analytics is `ampdocHost` - this lets us track the URL of the page the user visited. We exand our earlier config using `extraUrlParams`. This lets us define a custom key and value for our analytics events. We need to [set up](https://support.google.com/analytics/answer/2709829) a new Custom Dimension, that will be used as the key. 
 
-![Screenshot of Google Analytics, showing the Custom Dimensions edit page](/static/img/google-analytics-custom-dimensions-example.jpg)
-
+<amp-img src="/static/img/google-analytics-custom-dimensions-example.jpg" layout="intrinsic" width="1069" height="566" alt="Screenshot of Google Analytics, showing the Custom Dimensions edit page"></amp-img>
 
 Once you have created the Custom Dimension to track the AMP Host, make sure you note the `Index` listed on the analytics page. This number is used in our configuration objects to connect `ampdocHost` to the Dimension you just created. Below  we assume your index was "1", (i.e. `cd1`). If your `Index` is 2, then use `cd2`, etc.
   -->
