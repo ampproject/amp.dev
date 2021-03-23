@@ -35,7 +35,7 @@ jobs:
           gulp lintYaml
           npm run test:platform
           npm run test:playground
-        # npm run test:pixi
+          npm run test:pixi
   prepare:
     needs: verify
     runs-on: ubuntu-latest
