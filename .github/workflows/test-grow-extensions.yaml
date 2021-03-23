@@ -1,0 +1,53 @@
+---
+name: 'Test: Grow extensions'
+
+on:
+  push:
+    paths:
+      - 'pages/extensions/**'
+  pull_request:
+    paths:
+      - 'pages/extensions/**'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning repository
+        uses: actions/checkout@v2
+
+      - name: Setting up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: node_modules-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Installing Node.js packages
+        run: npm install
+
+      - name: Setting up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - uses: actions/cache@v2
+        with:
+          path: ${{ env.pythonLocation }}
+          key: ${{ env.pythonLocation }}
+
+      - name: Installing Grow
+        run: |
+          sudo apt-get install libyaml-dev
+          pip install grow --upgrade-strategy eager
+
+      - name: Preparing test resources
+        run: |
+          gulp buildComponentVersions
+
+      - name: Running Grow tests
+        working-directory: /home/runner/work/amp.dev/amp.dev/pages/extensions
+        run: |
+          python3 -m unittest discover -p "*_test.py"

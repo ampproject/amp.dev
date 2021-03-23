@@ -29,24 +29,18 @@ const through = require('through2');
 const archiver = require('archiver');
 const yaml = require('js-yaml');
 const {samplesBuilder} = require('@lib/build/samplesBuilder');
-const {project, travis} = require('@lib/utils');
+const {project} = require('@lib/utils');
 const git = require('@lib/utils/git');
 const ComponentReferenceImporter = require('@lib/pipeline/componentReferenceImporter');
 const SpecImporter = require('@lib/pipeline/specImporter');
 const RecentGuides = require('@lib/pipeline/recentGuides');
-// TODO: Fails on Travis with HttpError: Requires authentication
-// const roadmapImporter = require('@lib/pipeline/roadmapImporter');
 const gulpSass = require('gulp-sass');
-const lint = require('./lint.js');
 const importRoadmap = require('./import/importRoadmap.js');
 const importWorkingGroups = require('./import/importWorkingGroups.js');
 const {thumborImageIndex} = require('./thumbor.js');
 const CleanCSS = require('clean-css');
 const validatorRules = require('@ampproject/toolbox-validator-rules');
 const {PIXI_CLOUD_ROOT} = require('@lib/utils/project').paths;
-
-// The Google Cloud Storage bucket used to store build job artifacts
-const TRAVIS_GCS_PATH = 'gs://amp-dev-ci/travis/';
 
 // Path of the grow test pages for filtering in the grow podspec.yaml
 const TEST_CONTENT_PATH_REGEX = '^/tests/';
@@ -287,22 +281,13 @@ function buildPrepare(done) {
       buildBoilerplate,
       buildPixi,
       buildSamples,
-      importAll,
-      zipTemplates
+      importAll
     ),
-    // run reference checker after import
-    lint.lintAll,
-    // TODO: Fix working but malformatted references before reenabling
-    // test.lintGrow,
     // eslint-disable-next-line prefer-arrow-callback
-    async function storeArtifcats() {
-      if (!travis.onTravis()) {
-        return;
-      }
-
-      // If on Travis store everything built so far for later stages to pick up
+    async function packArtifacts() {
+      // Store everything built so far for later stages to pick up
       // Local path to the archive containing artifacts of the first stage
-      const SETUP_ARCHIVE = 'build/setup.tar.gz';
+      const SETUP_ARCHIVE = 'artifacts/setup.tar.gz';
       // All paths that contain altered files at build setup time
       const SETUP_STORED_PATHS = [
         './pages/content/',
@@ -316,12 +301,14 @@ function buildPrepare(done) {
         './examples/static/samples/samples.json',
       ];
 
-      await sh('mkdir -p build');
+      await sh('mkdir -p artifacts');
       await sh(`tar cfj ${SETUP_ARCHIVE} ${SETUP_STORED_PATHS.join(' ')}`);
-      await sh(
-        `gsutil cp ${SETUP_ARCHIVE} ` +
-          `${TRAVIS_GCS_PATH}${travis.build.number}/setup.tar.gz`
-      );
+    },
+    // eslint-disable-next-line prefer-arrow-callback
+    function exit(_done) {
+      done();
+      _done();
+      process.exit(0);
     }
   )(done);
 }
@@ -331,21 +318,21 @@ function buildPrepare(done) {
  *
  * @return {Promise}
  */
-async function fetchArtifacts() {
-  await sh('mkdir -p build');
-  if (travis.onTravis() || config.options['travis-build']) {
-    const buildNumber = config.options['travis-build'] || travis.build.number;
-    try {
-      await sh(
-        `gsutil cp -r ${TRAVIS_GCS_PATH}${buildNumber} ${project.paths.BUILD}`
-      );
-      await sh('find build -type f -exec tar xf {} ;');
-    } catch (e) {
-      // If fetching the pages fails, force exit here to make sure
-      // especially Travis gets the correct exit code
-      process.exit(1);
-    }
-  }
+function unpackArtifacts() {
+  let stream = gulp.src(['artifacts/**/*.tar.gz', 'artifacts/**/*.zip'], {
+    'read': false,
+  });
+
+  stream = stream.pipe(
+    through.obj(async (artifact, encoding, callback) => {
+      console.log('Unpacking', artifact.path, '...');
+      await sh(`tar xf ${artifact.path}`);
+      stream.push(artifact);
+      callback();
+    })
+  );
+
+  return stream;
 }
 
 /**
@@ -355,7 +342,7 @@ async function fetchArtifacts() {
  */
 function buildPages(done) {
   return gulp.series(
-    fetchArtifacts,
+    unpackArtifacts,
     buildFrontend,
     // eslint-disable-next-line prefer-arrow-callback
     async function buildGrow() {
@@ -369,13 +356,7 @@ function buildPages(done) {
       }
       config.configureGrow(options);
 
-      try {
-        await grow('deploy --noconfirm --threaded');
-      } catch (e) {
-        // If building the pages fails, force exit here to make sure
-        // especially Travis gets the correct exit code
-        process.exit(1);
-      }
+      await grow('deploy --noconfirm --threaded');
     },
     minifyPages,
     // eslint-disable-next-line prefer-arrow-callback
@@ -394,20 +375,17 @@ function buildPages(done) {
         .pipe(gulp.dest(`${project.paths.PAGES_DEST}`));
     },
     // eslint-disable-next-line prefer-arrow-callback
-    async function storeArtifacts() {
-      // ... and again if on Travis store all built files for a later stage to pick up
-      if (travis.onTravis()) {
-        const archive = `build/pages-${travis.build.job}.tar.gz`;
-        // we need to add all folders that contain files generated by the grow process...
-        await sh(
-          `tar cfj ${archive} ./dist/pages ./dist/inline-examples ` +
-            './dist/static/files/search-promoted-pages'
-        );
-        await sh(
-          `gsutil cp ${archive} ` +
-            `${TRAVIS_GCS_PATH}${travis.build.number}/pages-${travis.build.job}.tar.gz`
-        );
+    async function packArtifacts() {
+      if (!process.env.CI) {
+        return;
       }
+
+      const archive = `artifacts/pages-${process.env.GITHUB_RUN_ID}.tar.gz`;
+      // we need to add all folders that contain files generated by the grow process...
+      await sh(
+        `tar cfj ${archive} ./dist/pages ./dist/inline-examples ` +
+          './dist/static/files/search-promoted-pages'
+      );
     }
   )(done);
 }
@@ -541,12 +519,12 @@ function collectStatics(done) {
  */
 function persistBuildInfo(done) {
   const buildInfo = {
-    'number': travis.build.number || null,
+    'number': process.env.GITHUB_RUN_ID || null,
     'at': new Date(),
-    'by': git.user,
+    'by': process.env.GITHUB_ACTOR || git.user(),
     'environment': config.environment,
     'commit': {
-      'sha': git.version,
+      'sha': process.env.GITHUB_SHA || git.version,
       'message': git.message,
     },
   };
@@ -570,11 +548,10 @@ exports.buildPages = buildPages;
 exports.buildComponentVersions = buildComponentVersions;
 exports.buildPrepare = buildPrepare;
 exports.minifyPages = minifyPages;
-exports.fetchArtifacts = fetchArtifacts;
+exports.unpackArtifacts = unpackArtifacts;
 exports.collectStatics = collectStatics;
 exports.buildPixiFunctions = buildPixiFunctions;
 exports.buildFinalize = gulp.series(
-  fetchArtifacts,
   gulp.parallel(collectStatics, persistBuildInfo),
   thumborImageIndex
 );

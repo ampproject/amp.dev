@@ -1,0 +1,35 @@
+---
+name: 'Check: Grow link integrity'
+
+on:
+  push:
+    paths:
+      - 'pages/content/**'
+  pull_request:
+    paths:
+      - 'pages/content/**'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning repository
+        uses: actions/checkout@v2
+
+      - name: Setting up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: node_modules-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Installing Node.js packages
+        run: npm install
+
+      - name: Checking grow link integrity
+        run: |
+          gulp buildSamples
+          gulp importAll
+          gulp lintGrow
