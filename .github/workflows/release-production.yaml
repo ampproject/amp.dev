@@ -1,10 +1,10 @@
 ---
-name: 'Release: Staging'
+name: 'Release: Production'
 
 on:
   push:
     branches:
-      - future
+      - production-amp-dev
 
 jobs:
   verify:
@@ -70,7 +70,7 @@ jobs:
 
   build:
     env:
-      APP_ENV: staging
+      APP_ENV: production
     needs: prepare
     strategy:
       matrix:
@@ -148,7 +148,10 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment: Staging
+    environment: Production
+    env:
+      APP_ENV: production
+      CLOUDSDK_CORE_DISABLE_PROMPTS: 1
     steps:
       - name: Cloning repository
         uses: actions/checkout@v2
@@ -189,5 +192,6 @@ jobs:
 
       - name: Deploying
         run: |
-          gcloud config set app/cloud_build_timeout 1800
-          gcloud app deploy --quiet --version=1
+          gcloud components update --quiet
+          gcloud components install beta --quiet
+          npx gulp deploy
