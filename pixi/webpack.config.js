@@ -63,7 +63,17 @@ module.exports = (env, argv) => {
         filename: './pixi.html',
         inject: false,
         templateParameters: (compilation, assets, assetTags, options) => {
-          const js = Object.values(compilation.assets)[0].source();
+          const pixiMainSrc = Object.entries(compilation.assets).find(
+            ([name, _]) => {
+              if (name.startsWith('pixi.main')) {
+                return true;
+              }
+            }
+          )[1];
+          const pixiMainHash = calculateHash(pixiMainSrc.source());
+          const pixiMainPath = assets.js.find((path) => {
+            return path.includes('pixi.main');
+          });
 
           return {
             compilation,
@@ -72,7 +82,8 @@ module.exports = (env, argv) => {
               files: assets,
               options,
             },
-            cspHash: calculateHash(js),
+            pixiMainPath,
+            pixiMainHash,
           };
         },
       }),
