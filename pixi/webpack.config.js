@@ -30,7 +30,6 @@ module.exports = (env, argv) => {
   return {
     entry: {
       main: path.join(__dirname, 'src/ui/PageExperience.js'),
-      cli: path.join(__dirname, 'src/Cli.js'),
     },
     output: {
       filename: isDevelopment
