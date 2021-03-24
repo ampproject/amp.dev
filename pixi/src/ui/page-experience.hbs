@@ -1,5 +1,3 @@
 {# This file is consumed by Grow #}
-{{#htmlWebpackPlugin.files.js }}
-{% set src = '{{ . }}' %}
-{{/htmlWebpackPlugin.files.js }}
-{% set cspHash = '{{ cspHash }}' %}
+{% set src = '{{ pixiMainPath }}' %}
+{% set cspHash = '{{ pixiMainHash }}' %}
