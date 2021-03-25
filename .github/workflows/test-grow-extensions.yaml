@@ -5,9 +5,7 @@ on:
   push:
     paths:
       - 'pages/extensions/**'
-  pull_request:
-    paths:
-      - 'pages/extensions/**'
+
 jobs:
   test:
     runs-on: ubuntu-latest

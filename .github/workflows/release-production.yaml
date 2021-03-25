@@ -2,11 +2,25 @@
 name: 'Release: Production'
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - production-amp-dev
 
 jobs:
+  queue:
+    runs-on: ubuntu-latest
+    outputs:
+      should_skip: ${{ steps.skip_check.outputs.should_skip }}
+    steps:
+      - id: skip_check
+        uses: fkirc/skip-duplicate-actions@master
+        with:
+          concurrent_skipping: 'outdated_runs'
+          cancel_others: true
+          skip_after_successful_duplicate: true
+          paths_ignore: '["**/README.md", "**/docs/**"]'
+          do_not_skip: '["workflow_dispatch", "schedule"]'
   verify:
     runs-on: ubuntu-latest
     steps:

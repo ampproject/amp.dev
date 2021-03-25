@@ -6,10 +6,7 @@ on:
     paths:
       - 'package.json'
       - 'pixi/**'
-  pull_request:
-    paths:
-      - 'package.json'
-      - 'pixi/**'
+
 jobs:
   test:
     runs-on: ubuntu-latest
