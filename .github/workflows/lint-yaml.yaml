@@ -7,11 +7,6 @@ on:
       - '**/*.yml'
       - '**/*.yaml'
       - '!.github/**/*.yaml'
-  pull_request:
-    paths:
-      - '**/*.yml'
-      - '**/*.yaml'
-      - '!.github/**/*.yaml'
 jobs:
   test:
     runs-on: ubuntu-latest

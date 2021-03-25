@@ -6,10 +6,7 @@ on:
     paths:
       - 'package.json'
       - 'platform/lib/**'
-  pull_request:
-    paths:
-      - 'package.json'
-      - 'platform/lib/**'
+
 jobs:
   test:
     runs-on: ubuntu-latest

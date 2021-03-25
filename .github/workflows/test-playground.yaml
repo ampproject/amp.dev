@@ -6,10 +6,7 @@ on:
     paths:
       - 'package.json'
       - 'playground/**'
-  pull_request:
-    paths:
-      - 'package.json'
-      - 'playground/**'
+
 jobs:
   test:
     runs-on: ubuntu-latest
