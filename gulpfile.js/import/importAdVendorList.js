@@ -32,7 +32,7 @@ const readFileAsync = promisify(fs.readFile);
 
 const AD_VENDOR_DIRECTORY = '/ads/vendors';
 const AD_VENDOR_PATH = `https://github.com/${DEFAULT_REPOSITORY}/blob/master/extensions/amp-ad/../../`;
-const AD_VENDOR_DUMMIES = ['_fakedelayed_', '_ping_'];
+const AD_VENDOR_DUMMIES = ['_fakedelayed_.md', '_ping_.md', 'custom.md'];
 
 const FAQ_PATH = utils.project.absolute('pages/shared/data');
 

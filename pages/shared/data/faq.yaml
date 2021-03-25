@@ -214,8 +214,6 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/criteo.md
       - label: Custom Search Ads
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/csa.md
-      - label: Custom (experimental)
-        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/custom.md
       - label: Dable
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/dable.md
       - label: Directadvert
