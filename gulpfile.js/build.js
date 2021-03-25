@@ -37,6 +37,7 @@ const RecentGuides = require('@lib/pipeline/recentGuides');
 const gulpSass = require('gulp-sass');
 const importRoadmap = require('./import/importRoadmap.js');
 const importWorkingGroups = require('./import/importWorkingGroups.js');
+const importAdVendorList = require('./import/importAdVendorList.js');
 const {thumborImageIndex} = require('./thumbor.js');
 const CleanCSS = require('clean-css');
 const validatorRules = require('@ampproject/toolbox-validator-rules');
@@ -250,6 +251,7 @@ function importAll() {
     new RecentGuides().import(),
     importRoadmap.importRoadmap(),
     importWorkingGroups.importWorkingGroups(),
+    importAdVendorList.importAdVendorList(),
 
     // TODO: Fails on Travis with HttpError: Requires authentication
     // roadmapImporter.importRoadmap(),
