@@ -1,6 +1,6 @@
 ---
-"$title": "Comprendre les parties d'une story AMP"
-"$order": '2'
+'$title': "Comprendre les parties d'une story AMP"
+$order: 2
 description: "Une story Web est une expérience de narration visuelle plein écran qui transmet des informations avec des images, des vidéos, des graphiques, du son et plus encore. C'est parfait pour les utilisateurs ..."
 author: bpaduch
 ---

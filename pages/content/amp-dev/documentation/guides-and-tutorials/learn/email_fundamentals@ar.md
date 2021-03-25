@@ -1,10 +1,10 @@
 ---
-"$title": أسس AMP للبريد الإلكتروني
-"$order": '1'
+'$title': أسس AMP للبريد الإلكتروني
+$order: 1
 description: كل ما تحتاج معرفته للبدء في كتابة رسائل بريد إلكتروني بتنسيق AMP صالحة.
 author: CrystalOnScript
 formats:
-- email
+  - email
 ---
 
 إذا كان AMP مألوفًا لديك، فهذه أخبار رائعة! حيث إن AMP لرسائل البريد الإلكتروني مجرد مجموعة فرعية من مكتبة AMP HTML. وإذا لم تكن كذلك، فهذه أخبار رائعة أيضًا! حيث سيوفر لك هذا الدليل كل ما تحتاج معرفته للبدء في كتابة رسائل بريد إلكتروني بتنسيق AMP صالحة!
@@ -14,16 +14,20 @@ formats:
 تبدو رسائل البريد الإلكتروني بتنسيق AMP مثل رسائل البريد الإلكتروني بلغة HTML الكلاسيكية، لكن مع وجود بعض الاختلافات. يوجد أدناه الحد الأدنى من لغة الترميز المطلوبة لإنشاء بريد إلكتروني بتنسيق AMP صالح.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email data-css-strict>
-<head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
-</head>
-<body>
-  Hello, AMP4EMAIL world.
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    Hello, AMP4EMAIL world.
+  </body>
 </html>
 ```
 
@@ -38,8 +42,12 @@ formats:
 
 ```html
 <head>
-...
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  ...
+  <style amp4email-boilerplate>
+    body {
+      visibility: hidden;
+    }
+  </style>
 </head>
 ```
 
@@ -132,9 +140,7 @@ formats:
   src="https://example.com/endpoint?token=REPLACE_WITH_YOUR_ACCESS_TOKEN"
   height="300"
 >
-  <template type="amp-mustache">
-    ...
-  </template>
+  <template type="amp-mustache"> ... </template>
 </amp-list>
 ```
 

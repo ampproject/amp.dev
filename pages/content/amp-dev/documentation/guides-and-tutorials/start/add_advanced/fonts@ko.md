@@ -1,6 +1,6 @@
 ---
-"$title": Adding fonts
-"$order": '6'
+'$title': Adding fonts
+$order: 6
 description: 'AMP 페이지에 사용자 지정 글꼴을 삽입하는 방법은 다음과 같이 2가지가 있습니다. 1. <link> 태그를 통해 삽입: 허용된 제공업체의 글꼴만 사용 가능. 2...'
 ---
 
@@ -14,7 +14,11 @@ AMP 페이지에 사용자 지정 글꼴을 삽입하는 방법은 다음과 같
 이 가이드에서는 `<link>` 태그를 사용하여 페이지에 글꼴을 추가해 보겠습니다. 다음과 같이 `<head>`에 스타일시트 링크를 **추가**하여 Raleway 글꼴을 요청합니다.
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://fonts.googleapis.com/css?family=Raleway"
+/>
 ```
 
 이제 다음과 같이 CSS `body` 선택자를 **업데이트**하여 Raleway 글꼴을 참조합니다.

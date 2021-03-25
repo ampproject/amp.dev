@@ -1,6 +1,6 @@
 ---
-"$title": Congratulations!
-"$order": '9'
+'$title': Congratulations!
+$order: 9
 description: 첫 번째 AMP 스토리가 완료되었습니다. 이 가이드에서 배운 내용은 다음과 같습니다. amp-story 구성요소를 사용하여 여러 페이지로 된 스토리 작성
 author: bpaduch
 ---

@@ -1,6 +1,6 @@
 ---
-"$title": ストーリーを始める
-"$order": '3'
+'$title': ストーリーを始める
+$order: 3
 description: ウェブストーリー全体は amp-story コンポーネントで表現されています。このコンポーネントはストーリー内のすべてのページのコンテナとしての役割を果たします。amp-story コンポーネントには...
 author: bpaduch
 ---
@@ -13,8 +13,11 @@ author: bpaduch
 
 ```html
 <head>
-<script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+  <script
+    async
+    custom-element="amp-story"
+    src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+  ></script>
 </head>
 ```
 
@@ -22,8 +25,7 @@ author: bpaduch
 
 ```html
 <body>
-  <amp-story standalone>
-  </amp-story>
+  <amp-story standalone> </amp-story>
 </body>
 ```
 
@@ -41,11 +43,13 @@ author: bpaduch
 では、上記の属性を [`amp-story`](../../../../documentation/components/reference/amp-story.md) タグに追加しましょう。
 
 ```html
-<amp-story standalone
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-    poster-portrait-src="assets/cover.jpg">
+<amp-story
+  standalone
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+></amp-story>
 ```
 
 こういった必須属性のほかに適用できる属性があります。詳細は、[`amp-story`](../../../../documentation/components/reference/amp-story.md) リファレンスドキュメントの「[属性](../../../../documentation/components/reference/amp-story.md#attributes)」セクションを参照してください。

@@ -1,8 +1,8 @@
 ---
-"$title": الإعداد
-"$order": '0'
+'$title': الإعداد
+$order: 0
 description: 'قبل بدء هذا البرنامج التعليمي، ستحتاج إلى ما يلي: - معرفة أساسية بـ HTML وCSS وJavaScript - متصفح من اختيارك - محرر نصوص ...'
-"$parent": "/content/docs/interaction_dynamic/interactivity.md"
+'$parent': '/content/docs/interaction_dynamic/interactivity.md'
 ---
 
 ## المتطلبات الأساسية

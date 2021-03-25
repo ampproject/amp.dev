@@ -1,11 +1,11 @@
 ---
-"$title": Tạo một trang AMP cần đăng nhập
-"$order": '0'
+'$title': Tạo một trang AMP cần đăng nhập
+$order: 0
 description: Một số tương tác của người dùng với trang, ví dụ như để lại bình luận, có thể được đặt điều kiện theo một quy trình đăng nhập. Bạn có thể triển khai một quy trình đăng nhập...
 numbered: '1'
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- websites
+  - websites
 ---
 
 Một số tương tác của người dùng với trang, ví dụ như để lại bình luận, có thể được đặt điều kiện theo một quy trình đăng nhập. Bạn có thể triển khai một quy trình đăng nhập với AMP bằng cách sử dụng thành phần [`amp-access`](../../../../documentation/components/reference/amp-access.md) kết hợp với thành phần [`amp-form`](../../../../documentation/components/reference/amp-form.md).

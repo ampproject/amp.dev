@@ -1,8 +1,8 @@
 ---
-"$title": Первоначальная настройка
-"$order": '0'
+'$title': Первоначальная настройка
+$order: 0
 description: 'Чтобы завершить этот урок, вам понадобятся: - базовые знания HTML, CSS и JavaScript - браузер (на ваш выбор) - текстовый редактор ...'
-"$parent": "/content/docs/interaction_dynamic/interactivity.md"
+'$parent': '/content/docs/interaction_dynamic/interactivity.md'
 ---
 
 ## Предварительные требования

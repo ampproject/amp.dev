@@ -1,12 +1,12 @@
 ---
-"$title": Convertir HTML en AMP
+'$title': Convertir HTML en AMP
 formats:
-- websites
-"$titles":
+  - websites
+'$titles':
   teaser: Convert HTML to AMP
-"$order": '0'
+$order: 0
 description: "Dans ce tutoriel, vous apprendrez les concepts clés d'AMP et en quoi les documents AMP diffèrent des documents HTML traditionnels. À la fin de ce tutoriel"
-"$hidden": 'true'
+'$hidden': 'true'
 teaser:
   icon: convertir
   text: Apprenez à convertir du HTML en AMP dans ce tutoriel étape par étape.

@@ -1,16 +1,16 @@
 ---
-"$title": Memvalidasi halaman AMP
-"$order": '0'
+'$title': Memvalidasi halaman AMP
+$order: 0
 description: Tonton video kami tentang berbagai opsi validasi. Kekuatan utama AMP tidak hanya karena membuat halaman Anda cepat, tetapi juga membuat halaman Anda ....
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 ---
 
 [video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='Tonton video kami tentang berbagai opsi validasi.']
 
-Kekuatan utama AMP tidak hanya karena membuat halaman Anda cepat, tetapi juga membuat halaman Anda cepat dengan cara yang dapat *divalidasi*. Dengan begitu, pihak ketiga, seperti Twitter, Instagram, atau Google Search dapat merasa puas dengan penayangan halaman AMP kepada pembaca melalui cara yang semakin menarik.
+Kekuatan utama AMP tidak hanya karena membuat halaman Anda cepat, tetapi juga membuat halaman Anda cepat dengan cara yang dapat _divalidasi_. Dengan begitu, pihak ketiga, seperti Twitter, Instagram, atau Google Search dapat merasa puas dengan penayangan halaman AMP kepada pembaca melalui cara yang semakin menarik.
 
 ## Bagaimana cara memeriksa validitas halaman AMP saya?
 
@@ -68,7 +68,7 @@ Ekstensi Validator AMP untuk [Chrome](https://chrome.google.com/webstore/detail/
 
 ### Paket NPM untuk CI
 
-Sebagai bagian dari pipeline build dan pengujian, Anda dapat mengintegrasikan validasi AMP melalui paket NPM Validator AMP: [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) atau [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator) (plugin gulp).  Misalnya: Anda dapat menggunakan paket NPM Validator AMP untuk uji integrasi atau dalam tugas terjadwal untuk memverifikasi halaman AMP produksi.
+Sebagai bagian dari pipeline build dan pengujian, Anda dapat mengintegrasikan validasi AMP melalui paket NPM Validator AMP: [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) atau [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator) (plugin gulp). Misalnya: Anda dapat menggunakan paket NPM Validator AMP untuk uji integrasi atau dalam tugas terjadwal untuk memverifikasi halaman AMP produksi.
 
 ##### Example: Validating an AMP HTML file
 
@@ -82,14 +82,15 @@ var fs = require('fs');
 amphtmlValidator.getInstance().then(function (validator) {
   var input = fs.readFileSync('index.html', 'utf8');
   var result = validator.validateString(input);
-  ((result.status === 'PASS') ? console.log : console.error)(result.status);
+  (result.status === 'PASS' ? console.log : console.error)(result.status);
   for (var ii = 0; ii < result.errors.length; ii++) {
     var error = result.errors[ii];
-    var msg = 'line ' + error.line + ', col ' + error.col + ': ' + error.message;
+    var msg =
+      'line ' + error.line + ', col ' + error.col + ': ' + error.message;
     if (error.specUrl !== null) {
       msg += ' (see ' + error.specUrl + ')';
     }
-    ((error.severity === 'ERROR') ? console.error : console.warn)(msg);
+    (error.severity === 'ERROR' ? console.error : console.warn)(msg);
   }
 });
 ```
@@ -103,18 +104,18 @@ const gulp = require('gulp');
 const gulpAmpValidator = require('gulp-amphtml-validator');
 
 const paths = {
-  src: 'src/*.html'
+  src: 'src/*.html',
 };
 
 gulp.task('amphtml:validate', () => {
-  return gulp.src(paths.src)
+  return gulp
+    .src(paths.src)
     .pipe(gulpAmpValidator.validate())
     .pipe(gulpAmpValidator.format())
     .pipe(gulpAmpValidator.failAfterError());
 });
 
-gulp.task('default', ['amphtml:validate'], function () {
-});
+gulp.task('default', ['amphtml:validate'], function () {});
 ```
 
 ### Alat Baris Perintah
@@ -158,12 +159,12 @@ Alat baris perintah menawarkan fitur tambahan yang meliputi menonaktifkan warna,
 [sourcecode:console]
 $ amphtml-validator --help
 
-  Usage: index [options] <fileOrUrlOrMinus...>
+Usage: index [options] <fileOrUrlOrMinus...>
 
-  Validates the files or urls provided as arguments. If "-" is
-  specified, reads from stdin instead.
+Validates the files or urls provided as arguments. If "-" is
+specified, reads from stdin instead.
 
-  Options:
+Options:
 
     -h, --help                  output usage information
     -V, --version               output the version number
@@ -178,6 +179,7 @@ $ amphtml-validator --help
               supporting color).
       "json"  emits json corresponding to the ValidationResult
               message in validator.proto.
+
 [/sourcecode]
 
 ## Apa yang terjadi jika halaman saya tidak valid?
@@ -197,19 +199,13 @@ Kebanyakan eror validasi cukup mudah dideteksi dan diperbaiki. Perhatikan tag HT
 Yang menyebabkan eror validasi AMP, seperti ditunjukkan pada alat lain berikut ini:
 
 - Browser Developer Console
-    <amp-img src="/static/img/docs/validator_console_imgerror.png" width="696" height="30" layout="responsive" alt="AMP error: The tag 'img' may only appear as a descendant of tag'noscript'. Did you mean 'amp-img'? line 11, column 2"></amp-img>
-
-
+  <amp-img src="/static/img/docs/validator_console_imgerror.png" width="696" height="30" layout="responsive" alt="AMP error: The tag 'img' may only appear as a descendant of tag'noscript'. Did you mean 'amp-img'? line 11, column 2"></amp-img>
 
 - Web Interface
-    <amp-img src="/static/img/docs/validator_webui_imgerror.png" width="676" height="58" layout="responsive" alt="AMP error: The tag 'img' may only appear as a descendant of tag'noscript'. Did you mean 'amp-img'? line 11, column 2"></amp-img>
-
-
+  <amp-img src="/static/img/docs/validator_webui_imgerror.png" width="676" height="58" layout="responsive" alt="AMP error: The tag 'img' may only appear as a descendant of tag'noscript'. Did you mean 'amp-img'? line 11, column 2"></amp-img>
 
 - Browser Extension
-    <amp-img src="/static/img/docs/validator_extension_imgerror.png" width="724" height="108" layout="responsive" alt="AMP error: The tag 'img' may only appear as a descendant of tag'noscript'. Did you mean 'amp-img'? line 11, column 2"></amp-img>
-
-
+  <amp-img src="/static/img/docs/validator_extension_imgerror.png" width="724" height="108" layout="responsive" alt="AMP error: The tag 'img' may only appear as a descendant of tag'noscript'. Did you mean 'amp-img'? line 11, column 2"></amp-img>
 
 Setiap alat memberikan beberapa informasi:
 

@@ -1,10 +1,10 @@
 ---
-"$title": Panduan Pengoptimal AMP Node.js
-"$order": '2'
+'$title': Panduan Pengoptimal AMP Node.js
+$order: 2
 description: Panduan ini menjelaskan cara menyiapkan dan menggunakan versi Node.js Pengoptimal AMP.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

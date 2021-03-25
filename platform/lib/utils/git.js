@@ -21,7 +21,9 @@ module.exports.version = execSync('git log -1 --pretty=format:%h ')
 module.exports.message = execSync('git log -1 --pretty=%B --no-merges')
   .toString()
   .trim();
-module.exports.user = execSync('git config user.name').toString().trim();
+module.exports.user = () => {
+  return execSync('git config user.name').toString().trim();
+};
 module.exports.committerDate = (path) => {
   return execSync(`git log --format=%ai ${path} | tail -1`).toString().trim();
 };

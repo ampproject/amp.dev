@@ -17,12 +17,13 @@
 const express = require('express');
 const url = require('url');
 const AmpCaches = require('@ampproject/toolbox-cache-list');
-const {lint, LintMode} = require('@ampproject/toolbox-linter');
 const cheerio = require('cheerio');
 const log = require('@lib/utils/log')('Pixi API');
+const fetch = require('node-fetch');
 const RateLimitedFetch = require('@lib/utils/rateLimitedFetch');
 const GA_TRACKING_ID = require('../../platform/config/shared.json')
   .gaTrackingId;
+const {API_ENDPOINT_TOOLBOX_PAGE_EXPERIENCE} = require('../config').production;
 
 const rateLimitedFetch = new RateLimitedFetch({
   requestHeaders: {
@@ -61,34 +62,29 @@ const execChecks = async (url) => {
   const body = await res.text();
   const $ = cheerio.load(body);
   const ampCacheList = await ampCacheListPromise;
-  const context = {
-    $,
-    headers: {},
-    raw: {
-      headers: res.headers,
-      body,
-    },
-    url,
-    mode: LintMode.PageExperience,
-  };
   const result = {
     redirected: res.redirected,
     url: res.url,
     isAmp: isAmp($),
+    components: findAmpComponents($),
     isCacheUrl: isCacheUrl(res.url, ampCacheList),
+    data: {},
   };
-
-  if (!result.isAmp) {
+  if (!result.isAmp || result.isCacheUrl) {
+    // don't run the expensive PX checks
     return result;
   }
-
-  const lintResults = await lint(context);
-  return {
-    components: findAmpComponents($),
-    data: lintResults,
-    ...result,
-  };
+  result.data = await runPageExperienceChecks(url);
+  return result;
 };
+
+async function runPageExperienceChecks(url) {
+  const requestUrl = new URL(API_ENDPOINT_TOOLBOX_PAGE_EXPERIENCE);
+  requestUrl.searchParams.set('url', url);
+  const response = await fetch(requestUrl);
+  const lintResults = await response.json();
+  return lintResults;
+}
 
 const logAnalytics = async (url) => {
   try {
@@ -107,7 +103,7 @@ const logAnalytics = async (url) => {
       // Event Action - required value
       ea: 'lint',
       // Event Label - where the URL is stored
-      el: new URL(url).host,
+      el: url,
     };
 
     return fetch(
@@ -122,7 +118,6 @@ const logAnalytics = async (url) => {
 const api = express.Router();
 
 api.get('/lint', async (request, response) => {
-  log.info('lint endpoint called.');
   response.setHeader('Content-Type', 'application/json');
 
   const fetchUrl = request.query.url;

@@ -1,6 +1,6 @@
 ---
 $title: عذرًا، يبدو أن هناك خطأ ما.
-type: خطأ
+type: error
 hide_share: صواب
 ---
 

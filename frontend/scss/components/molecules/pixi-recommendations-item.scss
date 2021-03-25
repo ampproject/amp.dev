@@ -2,12 +2,17 @@
 @import '_functions.scss';
 @import '_mixins.scss';
 @import '_variables.scss';
+@import '../atoms/_text.scss';
 
 .#{molecule('pixi-recommendations-item')} {
   $recommendationsItem: &;
   margin-top: 30px;
   transition: transform 0.25s ease-in, background 0.25s ease-in,
     box-shadow 0.3s ease-in, border-color 0.3s ease-in;
+
+  code {
+    @include txt-mono-inline 
+  }
 
   &-box {
     padding: 30px 18px;
@@ -37,7 +42,7 @@
       width: 80%;
       max-width: 720px;
       margin: 0;
-      font-family: Poppins;
+      font-family: 'Poppins',  system;
       font-size: 22px;
       font-weight: bold;
       line-height: 1.3;
@@ -109,7 +114,7 @@
     overflow: auto;
 
     &-title {
-      font-family: Poppins;
+      font-family: 'Poppins',  system;
       font-size: 16px;
       font-weight: bold;
       color: color('black');
@@ -149,6 +154,7 @@
       direction: rtl;
       text-overflow: ellipsis;
     }
+
   }
 
   &-next-advice {

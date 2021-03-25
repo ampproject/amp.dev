@@ -1,10 +1,10 @@
 ---
-"$title": Melhores práticas para criar uma História Web de sucesso
-"$order": '1'
+'$title': Melhores práticas para criar uma História Web de sucesso
+$order: 1
 description: Melhores práticas para criar uma História Web de sucesso
-"$category": Start
+'$category': Start
 formats:
-- stories
+  - stories
 author: CrystalOnScript
 ---
 

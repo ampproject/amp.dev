@@ -1,8 +1,8 @@
 ---
-"$title": E-Posta Biçimi için AMP
-order: '1'
+'$title': E-Posta Biçimi için AMP
+$order: 1
 formats:
-- email
+  - email
 teaser:
   text: 'Gerekli işaretleme '
 toc: 'true'
@@ -40,6 +40,7 @@ E-posta için AMP biçimi, e-posta mesajlarında kullanabileceğiniz [AMP bileş
 Aşağıdaki kod, geçerli bir AMP e-posta mesajı oluşturan en az biçimlendirme miktarını temsil eder:
 
 [sourcecode:html]
+
 <!DOCTYPE html>
 <html ⚡4email data-css-strict>
   <head>
@@ -72,21 +73,21 @@ AMPHTML işaretlemesinin tamamı 200.000 baytı aşmamalıdır.
 
 E-posta için AMP, [RFC 1521, bölüm 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3)'te tanımlandığı gibi standart `multipart/alternative` [MIME](https://en.wikipedia.org/wiki/MIME) alt türüne dayanır.
 
-*Daha fazla bilgi için bkz. [AMP e-postalarının yapısı ve işlenmesi](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md).*
+_Daha fazla bilgi için bkz. [AMP e-postalarının yapısı ve işlenmesi](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md)._
 
 ## Desteklenen AMP bileşenleri <a name="supported-amp-components"></a>
 
-*[E-posta Desteklenen Bileşenler için AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md) bakın.*
+_[E-posta Desteklenen Bileşenler için AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md) bakın._
 
 ## HTML gereksinimleri <a name="html-requirements"></a>
 
-*[E-posta için AMP'de desteklenen HTML](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md) bakın.*
+_[E-posta için AMP'de desteklenen HTML](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md) bakın._
 
 ## CSS gereksinimleri <a name="css-requirements"></a>
 
 ### Desteklenen seçiciler ve özellikler <a name="supported-selectors-and-properties"></a>
 
-*[E-posta için AMP'de desteklenen CSS](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md) bakın.*
+_[E-posta için AMP'de desteklenen CSS](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md) bakın._
 
 ### AMP belgesinde CSS belirtme <a name="specifying-css-in-an-amp-document"></a>
 
@@ -94,6 +95,7 @@ Herhangi bir AMP belgesindeki tüm CSS, başlık içindeki `<style amp-custom>` 
 
 [sourcecode:html]
 ...
+
 <style amp-custom>
   /* any custom styles go here. */
   body {
@@ -106,7 +108,9 @@ Herhangi bir AMP belgesindeki tüm CSS, başlık içindeki `<style amp-custom>` 
     background-color: grey;
   }
 </style>
+
 ...
+
 </head>
 [/sourcecode]
 

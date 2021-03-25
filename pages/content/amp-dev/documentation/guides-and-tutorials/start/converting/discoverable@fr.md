@@ -1,6 +1,6 @@
 ---
-"$title": Rendre votre page visible
-"$order": '3'
+'$title': Rendre votre page visible
+$order: 3
 description: Il est nécessaire de configurer cette liaison bidirectionnelle afin que les moteurs de recherche comprennent la relation entre notre document canonique HTML standard et notre document AMP.
 ---
 
@@ -23,7 +23,7 @@ Pour les besoins de ce tutoriel, nous nous concentrerons sur le cas où vous ave
 Nous avons déjà franchi la première étape pour y parvenir dans notre document AMP en incluant une balise link dans la section `<head>` pour retourner à la page canonique:
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 L'étape suivante consiste à lier l'article canonique à la page AMP. Pour ce faire, il faut ajouter une balise `<link rel="amphtml">` dans la section `<head>` de l'article canonique.
@@ -31,7 +31,7 @@ L'étape suivante consiste à lier l'article canonique à la page AMP. Pour ce f
 Dans le fichier `article.html`, **ajoutez** le code suivant dans la section `<head>`:
 
 ```html
-<link rel="amphtml" href="/article.amp.html">
+<link rel="amphtml" href="/article.amp.html" />
 ```
 
 Le diagramme suivant illustre les directions des balises link:
@@ -47,44 +47,43 @@ Les pages AMP valides ne nécessitent pas de données structurées [schema.org](
 Pour notre article de presse, **ajoutez** les données structurées suivantes au bas de la section `<head>` de votre document AMP:
 
 ```html
-
 <script type="application/ld+json">
-{
- "@context": "http://schema.org",
- "@type": "NewsArticle",
- "mainEntityOfPage":{
-   "@type":"WebPage",
-   "@id":"https://example.com/my-article.html"
- },
- "headline": "My First AMP Article",
- "image": {
-   "@type": "ImageObject",
-   "url": "https://example.com/article_thumbnail1.jpg",
-   "height": 800,
-   "width": 800
- },
- "datePublished": "2015-02-05T08:00:00+08:00",
- "dateModified": "2015-02-05T09:20:00+08:00",
- "author": {
-   "@type": "Person",
-   "name": "John Doe"
- },
- "publisher": {
-   "@type": "Organization",
-   "name": "⚡ AMP Times",
-   "logo": {
-     "@type": "ImageObject",
-     "url": "https://example.com/amptimes_logo.jpg",
-     "width": 600,
-     "height": 60
-   }
- },
- "description": "My first experience in an AMPlified world"
-}
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://example.com/my-article.html"
+    },
+    "headline": "My First AMP Article",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://example.com/article_thumbnail1.jpg",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2015-02-05T08:00:00+08:00",
+    "dateModified": "2015-02-05T09:20:00+08:00",
+    "author": {
+      "@type": "Person",
+      "name": "John Doe"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "⚡ AMP Times",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://example.com/amptimes_logo.jpg",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "My first experience in an AMPlified world"
+  }
 </script>
 ```
 
-[tip type="note"] **REMARQUE –**  Le contenu doit toujours être le même. Pour les articles de presse, précisez le type « NewsArticle ». Le titre doit correspondre à celui de votre article. L'objet image fait référence à l'image d'affiche de l'article. [/tip]
+[tip type="note"] **REMARQUE –** Le contenu doit toujours être le même. Pour les articles de presse, précisez le type « NewsArticle ». Le titre doit correspondre à celui de votre article. L'objet image fait référence à l'image d'affiche de l'article. [/tip]
 
 **Rechargez** la page dans votre navigateur et vérifiez qu'aucune erreur de validation AMP n'a été introduite.
 

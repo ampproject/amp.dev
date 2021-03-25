@@ -1,12 +1,12 @@
 ---
-"$title": قائمة مهام نشر AMP
-"$order": '0'
+'$title': قائمة مهام نشر AMP
+$order: 0
 description: يدور تصميم الويب سريع الاستجابة حول إنشاء صفحات ويب مرنة تستجيب لاحتياجات المستخدم—صفحات تناسب حجم شاشة الجهاز واتجاهه. يمكنك تحقيق ...
 formats:
-- websites
+  - websites
 author: CrystalOnScript
 contributors:
-- sebastianbenz
+  - sebastianbenz
 ---
 
 اتبع قائمة المهام هذه لمنح موقعك تجربة AMP الكاملة!

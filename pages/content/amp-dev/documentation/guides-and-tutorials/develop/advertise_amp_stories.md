@@ -67,7 +67,8 @@ Ad platforms that currently support Web Story ads:
 * Google Ad Manager
     * [Direct sold ads](https://support.google.com/admanager/answer/9038178)
     * [Programmatic ads](https://support.google.com/admanager/answer/9416436)
-* Google AdSense coming soon
+* Google AdSense 
+    * [Programmatic ads](https://support.google.com/adsense/answer/10175505)
 * Other ad platforms can integrate (contact us for [details via Github](https://github.com/ampproject/amphtml/issues/30769))
 
 

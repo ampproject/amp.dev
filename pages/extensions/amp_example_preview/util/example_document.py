@@ -1,7 +1,7 @@
 import re
 
-from amp_component_versions import get_component, get_components
-from constants import PREVIEW_MODES, PREVIEW_MODES_IN_IFRAME, PREVIEW_NONE, PREVIEW_INLINE
+from .amp_component_versions import get_component, get_components
+from .constants import PREVIEW_MODES, PREVIEW_MODES_IN_IFRAME, PREVIEW_NONE, PREVIEW_INLINE
 
 
 class ExampleDocument(object):

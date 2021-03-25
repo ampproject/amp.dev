@@ -1,13 +1,13 @@
 ---
-"$title": Erstellen Sie ein Live-Blog
-"$order": '102'
+'$title': Erstellen Sie ein Live-Blog
+$order: 102
 description: Live Blogs sind Webseiten, die ein aktuelles Ereignis wie eine Sportveranstaltung oder eine Wahl verfolgen und häufig aktualisiert werden. Mit AMP kannst du ein Live Blog implementieren, indem du ...
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: kul3r4
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 Live-Blogs sind Webseiten, die während eines laufenden Ereignisses, z. B. eines Sportereignisses oder einer Wahl, regelmäßig aktualisiert werden. In AMP können Sie mithilfe der [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) Komponente ein Live-Blog implementieren.
@@ -25,9 +25,11 @@ Die [`amp-live-list`](../../../documentation/components/reference/amp-live-list.
 So könnte der ursprüngliche Code für das Blog aussehen:
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">You have updates</button>
   <div items></div>
 </amp-live-list>
@@ -56,9 +58,11 @@ Die Performance langer Blogs kann mithilfe von Paginierung verbessert werden. Da
 Mit Paginierung wird der einfache Code, den wir bereits verwendet haben, zu:
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">You have updates</button>
   <div items></div>
   <div pagination>
@@ -67,8 +71,8 @@ Mit Paginierung wird der einfache Code, den wir bereits verwendet haben, zu:
         <li>1</li>
         <li>Next</li>
       </ul>
-     </nav>
-   </div>
+    </nav>
+  </div>
 </amp-live-list>
 ```
 

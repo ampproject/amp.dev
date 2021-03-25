@@ -1,11 +1,11 @@
 ---
-"$title": Mối liên hệ giữa AMP và PWA
-"$order": '7'
+'$title': Mối liên hệ giữa AMP và PWA
+$order: 7
 description: Các Ứng dụng Web Lũy tiến và trang AMP hoạt động rất tốt với nhau. Trong thực tế, trong nhiều trường hợp, chúng đều bổ trợ cho nhau theo cách này hoặc cách khác. Tìm hiểu cách để...
 formats:
-- websites
+  - websites
 components:
-- youtube
+  - youtube
 author: pbakaus
 ---
 
@@ -31,7 +31,7 @@ Các Trang AMP có thể sử dụng nhiều tính năng PWA, chừng nào chún
 
 ## AMP như một điểm đầu vào PWA của bạn
 
-Ưu điểm đặc trưng của AMP là **khả năng cung cấp gần như tức thì**, một đặc tính khiến AMP rất phù hợp để tương tác người dùng lần đầu với website của bạn. *Các ứng dụng web lũy tiến* cho phép **tương tác tốt hơn và nhiều tính năng hỗ trợ gắn kết**, nhưng lần tải đầu tiên của chúng bị hạn chế bởi thực tế rằng Service Worker của website, cũng như các tài sản và dòng lệnh ứng dụng chỉ thực sự tăng tốc cung cấp trên các lần tải sau đó.
+Ưu điểm đặc trưng của AMP là **khả năng cung cấp gần như tức thì**, một đặc tính khiến AMP rất phù hợp để tương tác người dùng lần đầu với website của bạn. _Các ứng dụng web lũy tiến_ cho phép **tương tác tốt hơn và nhiều tính năng hỗ trợ gắn kết**, nhưng lần tải đầu tiên của chúng bị hạn chế bởi thực tế rằng Service Worker của website, cũng như các tài sản và dòng lệnh ứng dụng chỉ thực sự tăng tốc cung cấp trên các lần tải sau đó.
 
 Một chiến lược tốt là đặt một trang AMP làm trang đầu vào cho website của bạn, sau đó khởi động PWA đằng sau hậu trường và chuyển sang nó cho đoạn đường tiếp theo.
 

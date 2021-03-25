@@ -1,6 +1,6 @@
 ---
-"$title": 拡張 AMP コンポーネントの追加
-"$order": '2'
+'$title': 拡張 AMP コンポーネントの追加
+$order: 2
 description: コンポーネントシステムを採用する AMP では、効率的でレスポンシブな機能を簡単に記事に埋め込むことができます。AMP HTML ライブラリには、次の 3 種類の AMP コンポーネントが用意されています。 ...
 ---
 
@@ -25,7 +25,8 @@ AMP の広告は、[`amp-ad`](../../../../documentation/components/reference/amp
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/image/static">
+  data-slot="/35096353/amptesting/image/static"
+>
 </amp-ad>
 ```
 
@@ -40,7 +41,8 @@ AMP の広告は、[`amp-ad`](../../../../documentation/components/reference/amp
   type="a9"
   data-aax_size="300x250"
   data-aax_pubname="test123"
-  data-aax_src="302">
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -51,7 +53,11 @@ AMP の広告は、[`amp-ad`](../../../../documentation/components/reference/amp
 次のスクリプトを `<head>` タグに<strong>追加</strong>します。
 
 ```html
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script
+  async
+  custom-element="amp-ad"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+></script>
 ```
 
 ページを<strong>更新</strong>すると、2 つのテスト広告が表示されるはずです。
@@ -67,7 +73,8 @@ AMP の広告は、[`amp-ad`](../../../../documentation/components/reference/amp
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/uk">
+  data-slot="/35096353/amptesting/geo/uk"
+>
   <div fallback>No ad appeared because you're not browsing from the UK!</div>
 </amp-ad>
 
@@ -75,7 +82,8 @@ AMP の広告は、[`amp-ad`](../../../../documentation/components/reference/amp
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/us">
+  data-slot="/35096353/amptesting/geo/us"
+>
   <div fallback>No ad appeared because you're not browsing from the US!</div>
 </amp-ad>
 ```
@@ -84,11 +92,11 @@ AMP の広告は、[`amp-ad`](../../../../documentation/components/reference/amp
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='テスト広告') }}
 
-[tip type="note"] <strong>注意:</strong>  上記の <a><code>amp-ad</code></a> タグには <code>div</code> タグが追加されており、そこには <code>fallback</code> という属性が指定されています。この <code>fallback</code> 属性が何を意味しているかおわかりでしょうか。この属性は AMP の読み込みシステムに対し、親要素が読み込みに失敗した場合はその要素に記述された内容のみを表示するよう指定しています。詳しくは、<a>プレースホルダとフォールバック</a>をご覧ください。[/tip]
+[tip type="note"] <strong>注意:</strong> 上記の <a><code>amp-ad</code></a> タグには <code>div</code> タグが追加されており、そこには <code>fallback</code> という属性が指定されています。この <code>fallback</code> 属性が何を意味しているかおわかりでしょうか。この属性は AMP の読み込みシステムに対し、親要素が読み込みに失敗した場合はその要素に記述された内容のみを表示するよう指定しています。詳しくは、<a>プレースホルダとフォールバック</a>をご覧ください。[/tip]
 
 [tip type="read-on"] <strong>参考情報: </strong> サポートされる広告ネットワークの最新リストについては、<a><code>amp-ad</code></a> コンポーネントの関連ドキュメントをご覧ください。[/tip]
 
-[tip type="note"] <strong>注意:</strong>  広告ネットワークから提供される JavaScript を AMP ドキュメント内で実行することはできません。代わりに、AMP ランタイムは（iframe サンドボックス経由で）別の場所から iframe を AMP ドキュメントとして読み込み、広告ネットワークの JavaScript をその iframe サンドボックス内で実行します。[/tip]
+[tip type="note"] <strong>注意:</strong> 広告ネットワークから提供される JavaScript を AMP ドキュメント内で実行することはできません。代わりに、AMP ランタイムは（iframe サンドボックス経由で）別の場所から iframe を AMP ドキュメントとして読み込み、広告ネットワークの JavaScript をその iframe サンドボックス内で実行します。[/tip]
 
 ここまでで、ページに埋め込まれるテキスト、画像、広告を AMP ドキュメントに記述することができました。これらの要素はいずれも、ストーリーを発信し、コンテンツを収益化するためには欠かせない重要な要素です。しかし、現代のウェブサイトでは、単にテキストと画像を掲載するだけでは十分とはいえません。
 
@@ -107,7 +115,8 @@ AMP の広告は、[`amp-ad`](../../../../documentation/components/reference/amp
   data-videoid="npum8JsITQE"
   layout="responsive"
   width="480"
-  height="270">
+  height="270"
+>
   <div fallback>
     <p>The video could not be loaded.</p>
   </div>
@@ -120,12 +129,16 @@ AMP の広告は、[`amp-ad`](../../../../documentation/components/reference/amp
 
 すでに説明したように、AMP 基本ライブラリの JavaScript ファイルには、すべてのコンポーネントが含まれているわけではありません。YouTube コンポーネントのための JavaScript リクエストをファイルに追加する必要があります。
 
-[tip type="note"] <strong>注意:</strong>  デベロッパー コンソールがまだ開いていて、URL に <code>#development=1</code> と表示されている場合は、<a><code>amp-youtube</code></a> JavaScript の追加を促す AMP Validator エラーと、追加する必要のある <code>script</code> タグの説明を含むキュメントへのリンクが表示されます。[/tip]
+[tip type="note"] <strong>注意:</strong> デベロッパー コンソールがまだ開いていて、URL に <code>#development=1</code> と表示されている場合は、<a><code>amp-youtube</code></a> JavaScript の追加を促す AMP Validator エラーと、追加する必要のある <code>script</code> タグの説明を含むキュメントへのリンクが表示されます。[/tip]
 
 次のスクリプトを `<head>` タグに<strong>追加</strong>します。
 
 ```html
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script
+  async
+  custom-element="amp-youtube"
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+></script>
 ```
 
 ページを<strong>更新</strong>すると、YouTube 動画が表示されるはずです。
@@ -136,7 +149,7 @@ AMP の広告は、[`amp-ad`](../../../../documentation/components/reference/amp
 
 YouTube 動画の埋め込みについて詳しくは、<a><code>amp-youtube</code></a> コンポーネントのドキュメントをご覧ください。その他の動画とメディア関連コンポーネントについては、 <a>メディア AMP コンポーネントのリスト</a>をご覧ください。
 
-[tip type="tip"] **ヒント:**  コンポーネントの読み込みに失敗したことやコンポーネントがブラウザでサポートされていないことをユーザーに伝えるには、<a><code>fallback</code></a> 属性を使用します。[/tip]
+[tip type="tip"] **ヒント:** コンポーネントの読み込みに失敗したことやコンポーネントがブラウザでサポートされていないことをユーザーに伝えるには、<a><code>fallback</code></a> 属性を使用します。[/tip]
 
 ## ツイートの表示
 
@@ -145,7 +158,11 @@ Twitter に投稿されたツイートをそのまま埋め込む機能も、ニ
 次の JavaScript リクエストをドキュメントの <code><head></code> タグに追加しましょう。
 
 ```html
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script
+  async
+  custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+></script>
 ```
 
 続いて、ツイートの埋め込み先となる記事に次のコードを<strong>追加</strong>します。
@@ -155,7 +172,8 @@ Twitter に投稿されたツイートをそのまま埋め込む機能も、ニ
   width="486"
   height="657"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
 
@@ -180,7 +198,11 @@ AMP には、この問題を解決するための専用のコンポーネント�
 実際に試してみましょう。まず、次のようにコンポーネントのライブラリを <code><head></code> タグに<strong>追加</strong>します。
 
 ```html
-<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+<script
+  async
+  custom-element="amp-fit-text"
+  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+></script>
 ```
 
 次の内容をページに追加します。
@@ -205,7 +227,11 @@ AMP には、この問題を解決するための専用のコンポーネント�
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-   And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+  And the Raven, never flitting, still is sitting, still is sitting. On the
+  pallid bust of Pallas just above my chamber door; And his eyes have all the
+  seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming
+  throws his shadow on the floor; And my soul from out that shadow that lies
+  floating on the floor. Shall be lifted—nevermore!
 </amp-fit-text>
 ```
 

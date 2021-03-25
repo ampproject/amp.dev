@@ -1,11 +1,11 @@
 ---
-"$title": AMP と PWA の相互関係
-"$order": '7'
+'$title': AMP と PWA の相互関係
+$order: 7
 description: プログレッシブウェブアプリ（PWA）と AMP ページは効果的に連携します。多くの場合、さまざまな点で補完し合います。以下の...
 formats:
-- websites
+  - websites
 components:
-- youtube
+  - youtube
 author: pbakaus
 ---
 

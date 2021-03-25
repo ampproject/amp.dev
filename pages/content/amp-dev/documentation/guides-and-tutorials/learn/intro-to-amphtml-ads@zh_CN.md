@@ -1,9 +1,9 @@
 ---
-"$title": Intro to AMPHTML ads
-"$order": '1'
+'$title': Intro to AMPHTML ads
+$order: 1
 description: 告的方式。虽然 AMP 网页支持传统的 HTML 广告，但这些广告的加载速度可能很慢。要让广告本身与 AMP 网页的其余内容一样快速显示，您可以制作 AMPHTML 格式的广告。AMPHTML 广告仅在经过验证后才会投放，可确保广告的安全性和良好表现。
 formats:
-- ads
+  - ads
 ---
 
 ## 什么是 AMPHTML 广告？

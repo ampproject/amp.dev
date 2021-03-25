@@ -33,6 +33,14 @@
 		"formats": ["websites", "email", "stories", "ads"]
 	},
 	{
+		"title": "AMP HTML Responsive Attributes",
+		"order": 9,
+		"repo": "ampproject/amphtml",
+		"from": "spec/amp-html-responsive-attributes.md",
+		"to": "documentation/guides-and-tutorials/learn/spec/amp-html-responsive-attributes.md",
+		"formats": ["websites"]
+	},
+	{
 		"title": "AMPHTML Layout System",
 		"order": 1,
 		"repo": "ampproject/amphtml",
@@ -72,6 +80,15 @@
 		"to": "documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md",
 		"toc": true,
 		"formats": ["websites","email","stories", "ads"]
+	},
+	{
+		"title": "Video in AMP",
+		"order": -1,
+		"description": "AMP pages may add video directly or through 3rd party vendors. This document explains broader video support in AMP and how 3rd parties may embed their players.",
+		"repo": "ampproject/amphtml",
+		"from": "spec/amp-video-interface.md",
+		"to": "documentation/guides-and-tutorials/learn/spec/amp-video-interface.md",
+		"formats": ["websites", "stories", "ads"]
 	},
 	{
 		"title": "Help",

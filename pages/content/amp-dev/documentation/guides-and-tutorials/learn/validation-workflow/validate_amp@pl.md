@@ -1,16 +1,16 @@
 ---
-"$title": Walidacja stron AMP
-"$order": '0'
+'$title': Walidacja stron AMP
+$order: 0
 description: Obejrzyj nasz film o różnych opcjach walidacji. Kluczową zaletą AMP jest nie tylko to, że sprawia, że Twoje strony są szybkie, ale także to, że Twoje strony są....
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 ---
 
 [video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='Watch our video about the various validation options.']
 
-Kluczową zaletą AMP jest nie tylko to, że sprawia, że Twoje strony są szybkie, ale także to, że strony są szybkie w sposób, który można *zwalidować*. Dzięki temu strony trzecie, takie jak Twitter, Instagram czy wyszukiwarka Google mogą czuć się świetnie, serwując czytelnikom strony AMP w coraz bardziej interesujący sposób.
+Kluczową zaletą AMP jest nie tylko to, że sprawia, że Twoje strony są szybkie, ale także to, że strony są szybkie w sposób, który można _zwalidować_. Dzięki temu strony trzecie, takie jak Twitter, Instagram czy wyszukiwarka Google mogą czuć się świetnie, serwując czytelnikom strony AMP w coraz bardziej interesujący sposób.
 
 ## Jak sprawdzić, czy moja strona AMP jest prawidłowa?
 
@@ -82,39 +82,40 @@ var fs = require('fs');
 amphtmlValidator.getInstance().then(function (validator) {
   var input = fs.readFileSync('index.html', 'utf8');
   var result = validator.validateString(input);
-  ((result.status === 'PASS') ? console.log : console.error)(result.status);
+  (result.status === 'PASS' ? console.log : console.error)(result.status);
   for (var ii = 0; ii < result.errors.length; ii++) {
     var error = result.errors[ii];
-    var msg = 'line ' + error.line + ', col ' + error.col + ': ' + error.message;
+    var msg =
+      'line ' + error.line + ', col ' + error.col + ': ' + error.message;
     if (error.specUrl !== null) {
       msg += ' (see ' + error.specUrl + ')';
     }
-    ((error.severity === 'ERROR') ? console.error : console.warn)(msg);
+    (error.severity === 'ERROR' ? console.error : console.warn)(msg);
   }
 });
 ```
 
 ##### Przykład: użycie zadania gulp do walidacji AMP HTML
 
-W tym przykładzie mamy zadanie gulp, które sprawdza poprawność wszystkich plików AMP HTML.  W przypadku wystąpienia błędu walidacji AMP zadanie kończy się z kodem błędu (1).
+W tym przykładzie mamy zadanie gulp, które sprawdza poprawność wszystkich plików AMP HTML. W przypadku wystąpienia błędu walidacji AMP zadanie kończy się z kodem błędu (1).
 
 ```javascript
 const gulp = require('gulp');
 const gulpAmpValidator = require('gulp-amphtml-validator');
 
 const paths = {
-  src: 'src/*.html'
+  src: 'src/*.html',
 };
 
 gulp.task('amphtml:validate', () => {
-  return gulp.src(paths.src)
+  return gulp
+    .src(paths.src)
     .pipe(gulpAmpValidator.validate())
     .pipe(gulpAmpValidator.format())
     .pipe(gulpAmpValidator.failAfterError());
 });
 
-gulp.task('default', ['amphtml:validate'], function () {
-});
+gulp.task('default', ['amphtml:validate'], function () {});
 ```
 
 ### Narzędzie wiersza polecenia
@@ -158,12 +159,12 @@ Narzędzie wiersza polecenia oferuje dodatkowe funkcje, takie jak wyłączanie k
 [sourcecode:console]
 $ amphtml-validator --help
 
-  Usage: index [options] <fileOrUrlOrMinus...>
+Usage: index [options] <fileOrUrlOrMinus...>
 
-  Validates the files or urls provided as arguments. If "-" is
-  specified, reads from stdin instead.
+Validates the files or urls provided as arguments. If "-" is
+specified, reads from stdin instead.
 
-  Options:
+Options:
 
     -h, --help                  output usage information
     -V, --version               output the version number
@@ -178,6 +179,7 @@ $ amphtml-validator --help
               supporting color).
       "json"  emits json corresponding to the ValidationResult
               message in validator.proto.
+
 [/sourcecode]
 
 ## Co się dzieje, jeśli strona jest nieprawidłowa?
@@ -198,15 +200,9 @@ Generuje on ten błąd walidacji AMP, pokazywany w tych różnych narzędziach:
 
 - Konsola programistyczna przeglądarki {amp-img0}{/amp-img0}
 
-
-
 - Interfejs internetowy {amp-img0}{/amp-img0}
 
-
-
 - Rozszerzenie przeglądarki {amp-img0}{/amp-img0}
-
-
 
 Każde z narzędzi podaje kilka informacji:
 

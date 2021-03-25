@@ -1,11 +1,11 @@
 ---
-"$title": Activer les fonctionnalités expérimentales
-"$order": '3'
+'$title': Activer les fonctionnalités expérimentales
+$order: 3
 description: Les composants expérimentaux AMP sont des fonctionnalités publiées qui ne sont pas encore prêtes pour une large utilisation, et sont donc protégées par un statut expérimental.
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 ---
 
 [Les composants expérimentaux AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments) sont des fonctionnalités publiées qui ne sont pas encore prêtes pour une large utilisation, et sont donc protégées par un statut expérimental.
@@ -18,20 +18,20 @@ Les développeurs et les utilisateurs peuvent choisir d'utiliser ces fonctionnal
 
 <ul><br>{% for component in experimental_components %}<br>  <li><a href="{{ component.url.path }}">{{ component.title }}</a></li><br>{% endfor %}<br></ul><br>{% endif %}
 
-## Activation d'AMP Dev Channel
+## Activation d'AMP Beta Channel
 
-AMP Dev CHannel est un moyen d'activer l'utilisation sur un navigateur d'une version plus récente des bibliothèques AMP JS.
+AMP Beta Channel est un moyen d'activer l'utilisation sur un navigateur d'une version plus récente des bibliothèques AMP JS.
 
-La version AMP Dev Channel **peut être moins stable** et contenir des fonctionnalités non disponibles pour tous les utilisateurs. Activez cette option si vous souhaitez aider à tester de nouvelles versions d'AMP, signaler des bogues ou créer des documents qui nécessitent une nouvelle fonctionnalité qui n'est pas encore disponible pour tout le monde.
+La version AMP Beta Channel **peut être moins stable** et contenir des fonctionnalités non disponibles pour tous les utilisateurs. Activez cette option si vous souhaitez aider à tester de nouvelles versions d'AMP, signaler des bogues ou créer des documents qui nécessitent une nouvelle fonctionnalité qui n'est pas encore disponible pour tout le monde.
 
-L'activation de Dev Channel est idéale pour:
+L'activation de Beta Channel est idéale pour:
 
 - tester et jouer avec de nouvelles fonctionnalités qui ne sont pas encore disponibles pour tous les utilisateurs.
 - une utilisation dans l'assurance qualité (QA) pour vous assurer que votre site est compatible avec la prochaine version d'AMP.
 
-Si vous trouvez un problème qui ne semble se produire que dans la version Dev Channel d'AMP, [signalez un problème](https://github.com/ampproject/amphtml/issues/new) avec une description. Incluez toujours une URL vers une page qui reproduit le problème.
+Si vous trouvez un problème qui ne semble se produire que dans la version Beta Channel d'AMP, [signalez un problème](https://github.com/ampproject/amphtml/issues/new) avec une description. Incluez toujours une URL vers une page qui reproduit le problème.
 
-Pour activer AMP Dev Channel pour votre navigateur, accédez à [la page des tests AMP](https://cdn.ampproject.org/experiments.html) et activez le test "AMP Dev Channel". Pour être informé des changements importants/récents concernant AMP, abonnez-vous à la liste de diffusion [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
+Pour activer AMP Beta Channel pour votre navigateur, accédez à [la page des tests AMP](https://cdn.ampproject.org/experiments.html) et activez le test "AMP Beta Channel". Pour être informé des changements importants/récents concernant AMP, abonnez-vous à la liste de diffusion [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
 
 ## Activer un composant expérimental
 
@@ -48,7 +48,7 @@ L'activation de composants expérimentaux est enregistrée sur `localStorage` et
 Pour le contenu diffusé à partir de domaines non CDN, les composants expérimentaux peuvent être activés dans la console devtools à l'aide de:
 
 ```js
-AMP.toggleExperiment('experiment')
+AMP.toggleExperiment('experiment');
 ```
 
 Tout fichier AMP qui comprend des fonctionnalités expérimentales échouera à la [validation AMP](validation-workflow/validate_amp.md). Supprimez ces composants expérimentaux pour les documents AMP prêts pour la production.
@@ -60,7 +60,7 @@ Un document peut choisir d'activer des contenus expérimentaux. Pour ce faire, p
 ```html
 <head>
   ...
-  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b">
+  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b" />
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   ...
@@ -89,7 +89,7 @@ Les essais d'origine offrent la possibilité de mettre en œuvre et de bénéfic
 Ajutez la balise `<meta>` suivante dans la section `<head>` de chaque page qui utilise l'expérience d'essai d'origine:
 
 ```html
-<meta name="amp-experiment-token" content="{copy your token here}">
+<meta name="amp-experiment-token" content="{copy your token here}" />
 ```
 
 Remarque: `"amp-experiment-token"` est la chaîne littérale, `"amp-experiment-token"`, et non le jeton lui-même (qui entre dans l'attribut du contenu), ni le nom du composant expérimental.

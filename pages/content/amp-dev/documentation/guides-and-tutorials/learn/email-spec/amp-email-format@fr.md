@@ -1,8 +1,8 @@
 ---
-"$title": Format AMP for Email
-order: '1'
+'$title': Format AMP for Email
+$order: 1
 formats:
-- email
+  - email
 teaser:
   text: 'Balisage requis '
 toc: 'true'
@@ -35,11 +35,12 @@ AMP est une technologie connue pour développer des pages Web ultra rapides sur 
 
 Le format des e-mails AMP fournit [un sous-ensemble de composants AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md) que vous pouvez utiliser dans les e-mails. Les destinataires des e-mails AMP peuvent afficher et interagir avec les composants AMP directement dans l'e-mail.
 
-##  Balisage requis
+## Balisage requis
 
 Le code suivant représente le balisage minimal pour constituer un e-mail AMP valide :
 
 [sourcecode:html]
+
 <!DOCTYPE html>
 <html ⚡4email>
   <head>
@@ -72,21 +73,21 @@ Le balisage AMPHTML entier ne doit pas dépasser 200 000 octets.
 
 Les e-mails AMP reposent sur le sous-type <a>MIME</a> standard <code>multipart/alternative</code>, tel que défini dans le [RFC 1521, section 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
-*Pour plus d'informations, consultez [Structure et rendu des e-mails AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md).*
+_Pour plus d'informations, consultez [Structure et rendu des e-mails AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md)._
 
 ## Composants AMP pris en charge <a name="supported-amp-components"></a>
 
-*Voir [Composants pris en charge dans les e-mails AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md).*
+_Voir [Composants pris en charge dans les e-mails AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)._
 
 ## Exigences HTML <a name="html-requirements"></a>
 
-*Consultez [HTML pris en charge dans les e-mails AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md).*
+_Consultez [HTML pris en charge dans les e-mails AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md)._
 
 ## Exigences CSS <a name="css-requirements"></a>
 
 ### Sélecteurs et propriétés pris en charge <a name="supported-selectors-and-properties"></a>
 
-*Consultez [CSS pris en charge dans les e-mails AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md).*
+_Consultez [CSS pris en charge dans les e-mails AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md)._
 
 ### Spécification CSS dans un document AMP <a name="specifying-css-in-an-amp-document"></a>
 
@@ -94,6 +95,7 @@ Tous les CSS de tout document AMP doivent être inclus dans une balise `<style a
 
 [sourcecode:html]
 ...
+
 <style amp-custom>
   /* any custom styles go here. */
   body {
@@ -106,7 +108,9 @@ Tous les CSS de tout document AMP doivent être inclus dans une balise `<style a
     background-color: grey;
   }
 </style>
+
 ...
+
 </head>
 [/sourcecode]
 

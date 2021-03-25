@@ -1,6 +1,6 @@
 ---
-"$title": Adición de componentes AMP ampliados
-"$order": '2'
+'$title': Adición de componentes AMP ampliados
+$order: 2
 description: 'El sistema de componentes de AMP le permite crear rápidamente características eficientes y de respuesta en sus artículos con un mínimo esfuerzo. La biblioteca HTML de AMP tiene tres clasificaciones para los componentes de AMP: ...'
 ---
 
@@ -25,7 +25,8 @@ Dele un vistazo a este ejemplo de un anuncio de **DoubleClick**:
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/image/static">
+  data-slot="/35096353/amptesting/image/static"
+>
 </amp-ad>
 ```
 
@@ -40,7 +41,8 @@ El atributo `data-slot` es más único. En [`amp-ad`](../../../../documentation/
   type="a9"
   data-aax_size="300x250"
   data-aax_pubname="test123"
-  data-aax_src="302">
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -51,7 +53,11 @@ Recuerde que no todos los componentes están incluidos en el archivo JavaScript 
 <strong>Agregue</strong> la siguiente secuencia de comandos a la etiqueta `<head>`:
 
 ```html
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script
+  async
+  custom-element="amp-ad"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+></script>
 ```
 
 **Actualice** la página y debería ver 2 anuncios de prueba:
@@ -61,14 +67,15 @@ Recuerde que no todos los componentes están incluidos en el archivo JavaScript 
 [tip type="important"]
 Es posible que tenga algunos errores en la consola de desarrollador, como <code>Mixed Content</code> o <code>XMLHttpRequest cannot load</code>. El error anterior probablemente esté relacionado con el anuncio de A9 porque no todo el contenido que carga es seguro. Este es un requisito importante para todos los anuncios que se presentan en AMP. [/tip]
 
-Los dos <a><code>amp-ad</code></a>s que se muestran a continuación son un ejemplo de la flexibilidad que <a><code>amp-ad</code></a> ofrece para soportar las características de la plataforma publicitaria.  En este caso hemos configurado (utilizando el panel de control de DoubleClick) dos anuncios de prueba de DoubleClick para que solo se muestren en ciertos países. El primero se mostrará solo en el Reino Unido y el segundo se mostrará solo en los Estados Unidos. Intente <strong>agregar</strong> estas dos configuraciones de anuncios geográficos en el documento AMP, debajo de los anuncios que agregó anteriormente:
+Los dos <a><code>amp-ad</code></a>s que se muestran a continuación son un ejemplo de la flexibilidad que <a><code>amp-ad</code></a> ofrece para soportar las características de la plataforma publicitaria. En este caso hemos configurado (utilizando el panel de control de DoubleClick) dos anuncios de prueba de DoubleClick para que solo se muestren en ciertos países. El primero se mostrará solo en el Reino Unido y el segundo se mostrará solo en los Estados Unidos. Intente <strong>agregar</strong> estas dos configuraciones de anuncios geográficos en el documento AMP, debajo de los anuncios que agregó anteriormente:
 
 ```html
 <amp-ad
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/uk">
+  data-slot="/35096353/amptesting/geo/uk"
+>
   <div fallback>No ad appeared because you're not browsing from the UK!</div>
 </amp-ad>
 
@@ -76,7 +83,8 @@ Los dos <a><code>amp-ad</code></a>s que se muestran a continuación son un ejemp
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/us">
+  data-slot="/35096353/amptesting/geo/us"
+>
   <div fallback>No ad appeared because you're not browsing from the US!</div>
 </amp-ad>
 ```
@@ -108,7 +116,8 @@ Trataremos de insertar un video de YouTube en el documento. **Agregue** el sigui
   data-videoid="npum8JsITQE"
   layout="responsive"
   width="480"
-  height="270">
+  height="270"
+>
   <div fallback>
     <p>The video could not be loaded.</p>
   </div>
@@ -121,12 +130,16 @@ Incluso si su navegador puede mostrar videos de YouTube sin problemas, seguirá 
 
 Recuerde que no todos los componentes están incluidos en el archivo JavaScript de la biblioteca principal de AMP. Necesitamos incluir una solicitud JavaScript adicional para el componente de YouTube.
 
-[tip type="note"] **NOTA:**  Si aún tiene su consola de desarrollo abierta y <code>#development=1</code> en su URL, verá un error del validador AMP en este punto para recordarle que agregue el JavaScript <a><code>amp-youtube</code></a> y un enlace a la documentación que le dirá la etiqueta <code>script</code> que debe añadir. [/tip]
+[tip type="note"] **NOTA:** Si aún tiene su consola de desarrollo abierta y <code>#development=1</code> en su URL, verá un error del validador AMP en este punto para recordarle que agregue el JavaScript <a><code>amp-youtube</code></a> y un enlace a la documentación que le dirá la etiqueta <code>script</code> que debe añadir. [/tip]
 
 <strong>Agregue</strong> la siguiente secuencia de comandos a la etiqueta <code><head></code>:
 
 ```html
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script
+  async
+  custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+></script>
 ```
 
 <strong>Actualice</strong> la página y debería ver el anuncio de YouTube:
@@ -146,7 +159,11 @@ La incrustación de tweets preformateados de Twitter es una característica com�
 Comience agregando la siguiente solicitud de JavaScript a la etiqueta <code><head></code> de su documento:
 
 ```html
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script
+  async
+  custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+></script>
 ```
 
 Ahora, en su artículo, **agregue** este código para incrustar el Tweet:
@@ -156,7 +173,8 @@ Ahora, en su artículo, **agregue** este código para incrustar el Tweet:
   width="486"
   height="657"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
 
@@ -181,7 +199,11 @@ AMP proporciona otro componente específicamente diseñado para este tipo de sit
 Hagamos un intento. Primero, **agregue** a la etiqueta la biblioteca del componente <code><head></code>:
 
 ```html
-<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+<script
+  async
+  custom-element="amp-fit-text"
+  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+></script>
 ```
 
 Agregue lo siguiente a su página:
@@ -206,7 +228,11 @@ O, ¿qué pasa si la cita es más larga?
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-   And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+  And the Raven, never flitting, still is sitting, still is sitting. On the
+  pallid bust of Pallas just above my chamber door; And his eyes have all the
+  seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming
+  throws his shadow on the floor; And my soul from out that shadow that lies
+  floating on the floor. Shall be lifted—nevermore!
 </amp-fit-text>
 ```
 

@@ -1,5 +1,5 @@
 ---
-$title: Guia de Experiência da Página AMP
+"$title": Guia de Experiência da Página AMP
 staticText:
   inputBar:
     headline: Analise sua página AMP
@@ -17,7 +17,7 @@ staticText:
   statusIntro:
     headline: Por favor aguarde
     headline2: Estamos analisando sua página
-    loadingCopy: ${finishedChecks} de ${totalChecks} verificações foram concluídas
+    loadingCopy: "${finishedChecks} de ${totalChecks} verificações foram concluídas"
     buttonShare: Compartilhar
     buttonInvestigate: Investigar
   coreWebVitals:
@@ -36,7 +36,7 @@ staticText:
       scorePercentile: Pontuação no 75º percentil
       score: Pontuação
       opportunity: Oportunidade de melhorar
-      pagesPassing: Páginas que passaram
+      pagesPassing: Visitas passando
       action: Tomar atitude
   additionalChecks:
     headline: Verificações adicionais
@@ -61,7 +61,7 @@ scriptText:
     passed: Passou
     passedAddition: passou
     none: Nenhuma
-    nothingToDo: Nenhuma ação necessária! &#x1F389;
+    nothingToDo: "Nenhuma ação necessária! &#x1F389;"
     fileAnIssue: Registrar um issue com o AMP
     recommendation: recomendação
     recommendations: recomendações

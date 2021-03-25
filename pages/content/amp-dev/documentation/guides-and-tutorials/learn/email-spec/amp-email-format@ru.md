@@ -1,8 +1,8 @@
 ---
-"$title": Формат AMP для писем
-order: '1'
+'$title': Формат AMP для писем
+$order: 1
 formats:
-- email
+  - email
 teaser:
   text: Необходимая разметка
 toc: 'true'
@@ -40,6 +40,7 @@ AMP — это технология, используемая для разра�
 Ниже представлен минимальный объем разметки, который необходим для создания корректно сформированного AMP-письма:
 
 [sourcecode:html]
+
 <!DOCTYPE html>
 <html ⚡4email data-css-strict>
   <head>
@@ -72,21 +73,21 @@ AMP — это технология, используемая для разра�
 
 Формат «AMP для писем» использует стандартный подтип <a>MIME</a> <code>multipart/alternative</code>, определенный в [RFC 1521, раздел 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
-*Для получения дополнительной информации см. [Структура и рендеринг AMP-писем](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md).*
+_Для получения дополнительной информации см. [Структура и рендеринг AMP-писем](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md)._
 
 ## Совместимые компоненты AMP <a name="supported-amp-components"></a>
 
-*См. [AMP для писем: совместимые компоненты](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md).*
+_См. [AMP для писем: совместимые компоненты](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)._
 
 ## Требования к HTML <a name="html-requirements"></a>
 
-*См. статью [Поддержка HTML в AMP для писем](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md).*
+_См. статью [Поддержка HTML в AMP для писем](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md)._
 
 ## Требования к CSS <a name="css-requirements"></a>
 
 ### Поддерживаемые CSS-свойства <a name="supported-selectors-and-properties"></a>
 
-*См. статью [Поддержка CSS в AMP для писем](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md).*
+_См. статью [Поддержка CSS в AMP для писем](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md)._
 
 ### Использование CSS в документе AMP <a name="specifying-css-in-an-amp-document"></a>
 
@@ -94,6 +95,7 @@ AMP — это технология, используемая для разра�
 
 [sourcecode:html]
 ...
+
 <style amp-custom>
   /* any custom styles go here. */
   body {
@@ -106,7 +108,9 @@ AMP — это технология, используемая для разра�
     background-color: grey;
   }
 </style>
+
 ...
+
 </head>
 [/sourcecode]
 

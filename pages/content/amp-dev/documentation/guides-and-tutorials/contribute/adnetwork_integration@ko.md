@@ -1,9 +1,9 @@
 ---
-"$title": AMP와 통합하여 디스플레이 광고 제공
-"$order": '5'
+'$title': AMP와 통합하여 디스플레이 광고 제공
+$order: 5
 description: 이 가이드는 AMP와 통합하여 디스플레이 광고를 AMP 페이지에 게재하려는 광고 네트워크를 위한 것입니다.
 formats:
-- 광고
+  - 광고
 ---
 
 이 가이드는 AMP와 통합하여 디스플레이 광고를 AMP 페이지에 게재하려는 광고 네트워크를 위한 것입니다.
@@ -21,7 +21,7 @@ formats:
 1. [<code>amp-ad</code>](#creating-an-amp-ad)(예: 기본 HTML 광고를 게재용을 아직 만들지 않은 경우)
 2. [AMP HTML 광고 게재를 위한 빠른 가져오기 통합 만들기](#creating-a-fast-fetch-integration)
 
-##  <code>amp-ad</code> <a></a> 만들기
+## <code>amp-ad</code> <a></a> 만들기
 
 광고 서버로서 지원되는 퍼블리셔는 제공된 JavaScript 라이브러리를 포함하며, JavaScript 라이브러리를 사용하여 광고를 가져온 다음 퍼블리셔의 웹사이트에 렌더링하는 다양한 "광고 스니펫"을 배치합니다. 퍼블리셔는 AMP를 사용하여 임의의 JavaScript를 실행할 수 없으므로 AMP 오픈소스 코드를 작성하여 <a><code>amp-ad</code></a> 태그를 통해 광고 서버에서 광고를 요청하도록 허용해야 합니다.
 
@@ -30,11 +30,14 @@ formats:
 예를 들어, 다음 구문을 사용하여 Amazon A9 서버를 호출할 수 있습니다.
 
 ```html
-<amp-ad width="300" height="250"
-    type="a9"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  width="300"
+  height="250"
+  type="a9"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 

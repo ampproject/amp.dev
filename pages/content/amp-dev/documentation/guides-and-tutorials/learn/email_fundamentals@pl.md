@@ -1,10 +1,10 @@
 ---
-"$title": Podstawy poczty elektronicznej AMP
-"$order": '1'
+'$title': Podstawy poczty elektronicznej AMP
+$order: 1
 description: Wszystko, co musisz wiedzieć, aby rozpocząć pisanie prawidłowych wiadomości e-mail AMP.
 author: CrystalOnScript
 formats:
-- email
+  - email
 ---
 
 Jeśli znasz AMP, to świetna wiadomość! AMP dla poczty e-mail jest po prostu podzbiorem biblioteki AMP HTML. Jeśli nie znasz AMP, to też świetna wiadomość! Ten przewodnik da Ci wszystko, co musisz wiedzieć, aby rozpocząć pisanie prawidłowych wiadomości e-mail AMP!
@@ -14,16 +14,20 @@ Jeśli znasz AMP, to świetna wiadomość! AMP dla poczty e-mail jest po prostu 
 Wiadomości e-mail AMP wyglądają jak klasyczne wiadomości HTML, ale z kilkoma różnicami. Poniżej znajduje się minimalna ilość znaczników wymagana do tego, aby wiadomość e-mail była prawidłową wiadomością e-mail AMP.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡4email data-css-strict>
-<head>
-  <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
-</head>
-<body>
-  Hello, AMP4EMAIL world.
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp4email-boilerplate>
+      body {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    Hello, AMP4EMAIL world.
+  </body>
 </html>
 ```
 
@@ -38,8 +42,12 @@ Dostawcy usług poczty elektronicznej, którzy obsługują pocztę elektroniczn�
 
 ```html
 <head>
-...
-  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  ...
+  <style amp4email-boilerplate>
+    body {
+      visibility: hidden;
+    }
+  </style>
 </head>
 ```
 
@@ -132,9 +140,7 @@ Ten przykład pokazuje użycie znacznika `<amp-list>` do wyświetlania uwierzyte
   src="https://example.com/endpoint?token=REPLACE_WITH_YOUR_ACCESS_TOKEN"
   height="300"
 >
-  <template type="amp-mustache">
-    ...
-  </template>
+  <template type="amp-mustache"> ... </template>
 </amp-list>
 ```
 

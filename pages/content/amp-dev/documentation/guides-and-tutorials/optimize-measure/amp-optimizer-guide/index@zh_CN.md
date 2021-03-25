@@ -1,11 +1,11 @@
 ---
-"$title": 使用 AMP Optimizer
-"$order": '2'
-"$hidden": 'true'
+'$title': 使用 AMP Optimizer
+$order: 2
+'$hidden': 'true'
 description: AMP Optimizer 是将 AMP 缓存优化引入您自己的网站的工具。使用 AMP Optimizer 是打造出色的网页体验并符合核心网页指标的关键。本指南说明如何以最佳方式使用 AMP Optimizer 来优化 AMP 网页。
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

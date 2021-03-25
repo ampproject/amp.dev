@@ -1,11 +1,11 @@
 ---
-"$title": Attributi comuni degli elementi
-"$order": '1'
+'$title': Attributi comuni degli elementi
+$order: 1
 description: AMP fornisce una serie di attributi comuni applicabili a molti componenti AMP (ed elementi HTML). Questo documento descrive ciascuno degli attributi comuni.
 toc: 'true'
 ---
 
-AMP provides a set of common attributes that are extended to many AMP components (and HTML elements).  This document describes each of the common attributes.
+AMP provides a set of common attributes that are extended to many AMP components (and HTML elements). This document describes each of the common attributes.
 
 ## fallback
 
@@ -16,7 +16,7 @@ Often used with: images, animations, audio, and videos
 Example:
 
 ```html
-<amp-anim src="animated.gif" width="466" height="355" layout="responsive" >
+<amp-anim src="animated.gif" width="466" height="355" layout="responsive">
   <div fallback>Cannot play animated images on this device.</div>
 </amp-anim>
 ```
@@ -35,9 +35,12 @@ Note: When the `heights` attribute is specified along with `width` and `height`,
 Esempio:
 
 ```html
-<amp-img src="amp.png"
-    width="320" height="256"
-    heights="(min-width:500px) 200px, 80%">
+<amp-img
+  src="amp.png"
+  width="320"
+  height="256"
+  heights="(min-width:500px) 200px, 80%"
+>
 </amp-img>
 ```
 
@@ -50,11 +53,13 @@ AMP provides a set of [layouts](../../../documentation/guides-and-tutorials/deve
 Example:
 
 ```html
-<amp-img src="/img/amp.jpg"
-    width="1080"
-    height="610"
-    layout="responsive"
-    alt="an image">
+<amp-img
+  src="/img/amp.jpg"
+  width="1080"
+  height="610"
+  layout="responsive"
+  alt="an image"
+>
 </amp-img>
 ```
 
@@ -68,15 +73,19 @@ Example:
 
 ```html
 <amp-img
-    media="(min-width: 650px)"
-    src="wide.jpg"
-    width="466"
-    height="355" layout="responsive"></amp-img>
+  media="(min-width: 650px)"
+  src="wide.jpg"
+  width="466"
+  height="355"
+  layout="responsive"
+></amp-img>
 <amp-img
-    media="(max-width: 649px)"
-    src="narrow.jpg"
-    width="527"
-    height="193" layout="responsive"></amp-img>
+  media="(max-width: 649px)"
+  src="narrow.jpg"
+  width="527"
+  height="193"
+  layout="responsive"
+></amp-img>
 ```
 
 Per ulteriori informazioni, consultare il documento [Layout e media query](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#element-media-queries).
@@ -90,11 +99,7 @@ Often used with: images, animations, videos, and ads
 Example:
 
 ```html
-<amp-img src="card.jpg"
-    noloading
-    height="190"
-    width="297"
-    layout="responsive">
+<amp-img src="card.jpg" noloading height="190" width="297" layout="responsive">
 </amp-img>
 ```
 
@@ -114,12 +119,10 @@ Example:
 
 ```html
 <button on="tap:my-lightbox">Open lightbox</button>
-<amp-lightbox id="my-lightbox" layout="nodisplay">
-  ...
-</amp-lightbox>
+<amp-lightbox id="my-lightbox" layout="nodisplay"> ... </amp-lightbox>
 ```
 
-For more information, see  [Actions and Events in AMP](amp-actions-and-events.md).
+For more information, see [Actions and Events in AMP](amp-actions-and-events.md).
 
 ## placeholder
 
@@ -144,20 +147,25 @@ All AMP elements that support the `responsive` layout, also support the `sizes` 
 Example:
 
 ```html
-<amp-img src="amp.png"
-    width="400" height="300"
-    layout="responsive"
-    sizes="(min-width: 320px) 320px, 100vw">
+<amp-img
+  src="amp.png"
+  width="400"
+  height="300"
+  layout="responsive"
+  sizes="(min-width: 320px) 320px, 100vw"
+>
 </amp-img>
 ```
 
 Questo produrrà il seguente tag `img` nidificato:
 
 ```html
-<img decoding="async"
-    src="amp.png"
-    sizes="(min-width: 320px) 320px, 100vw"
-    class="i-amphtml-fill-content i-amphtml-replaced-content">
+<img
+  decoding="async"
+  src="amp.png"
+  sizes="(min-width: 320px) 320px, 100vw"
+  class="i-amphtml-fill-content i-amphtml-replaced-content"
+/>
 ```
 
 For more information, see [Art direction with srcset, sizes & heights](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md).
@@ -169,10 +177,7 @@ For some [layouts](../../../documentation/guides-and-tutorials/develop/style_and
 Example:
 
 ```html
-<amp-anim width="245"
-    height="300"
-    src="/img/cat.gif"
-    alt="cat animation">
+<amp-anim width="245" height="300" src="/img/cat.gif" alt="cat animation">
 </amp-anim>
 ```
 

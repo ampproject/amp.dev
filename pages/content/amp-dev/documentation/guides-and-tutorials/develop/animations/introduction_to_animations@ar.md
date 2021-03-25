@@ -1,10 +1,10 @@
 ---
-"$title": مقدمة إلى الرسوم المتحركة المركَّبة
-"$order": '2'
+'$title': مقدمة إلى الرسوم المتحركة المركَّبة
+$order: 2
 description: توفر AMP للرسوم المتحركة التي لا يمكن إدارتها من خلال إضافة فئات أو إزالتها، العديد من المكونات المحددة للرسوم المتحركة. إذ تطبق هذه المكونات مبادئ AMP على الرسوم المتحركة ...
 formats:
-- websites
-- ads
+  - websites
+  - ads
 author: CrystalOnScript
 ---
 
@@ -14,13 +14,13 @@ author: CrystalOnScript
 
 ## إنشاء رسوم AMP متحركة أساسية
 
-يمكِّن المكون [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) استخدام [واجهة برمجة تطبيقات الرسوم المتحركة للويب](https://www.w3.org/TR/web-animations/) في AMP.
+يمكِّن المكون [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) استخدام [واجهة برمجة تطبيقات الرسوم المتحركة للويب](https://www.w3.org/TR/web-animations/) في AMP.
 
-ويكون [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) الأساسي عبارة عن كائن JSON مكوَّن من الأجزاء الأساسية التالية:
+ويكون [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) الأساسي عبارة عن كائن JSON مكوَّن من الأجزاء الأساسية التالية:
 
 - العنصر الذي يحركه المكون، أو `selector`.
-- [خصائص التوقيت](../../../../documentation/components/reference/amp-animation.md#timing-properties)
-- [إطارات أساسية](../../../../documentation/components/reference/amp-animation.md#keyframes)
+- [خصائص التوقيت](/content/amp-dev/documentation/components/reference/amp-animation.md#timing-properties)
+- [إطارات أساسية](/content/amp-dev/documentation/components/reference/amp-animation.md#keyframes)
 - <a>المشغِّل</a>
 
 ```
@@ -41,23 +41,23 @@ author: CrystalOnScript
 
 ### المحدد
 
-مثل CSS، يربط المكون [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) خصائص الرسوم المتحركة بالعنصر من خلال الإعلان عن اسم علامة العنصر ومعرِّفه في حقل `"selector"`. ويقوم المكون بتحريك كل عنصر بنوع العلامة أو اسم الفئة المعلن. لذا استخدم معرَِفًا لضمان تحريك عنصر مفرد.
+مثل CSS، يربط المكون [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) خصائص الرسوم المتحركة بالعنصر من خلال الإعلان عن اسم علامة العنصر ومعرِّفه في حقل `"selector"`. ويقوم المكون بتحريك كل عنصر بنوع العلامة أو اسم الفئة المعلن. لذا استخدم معرَِفًا لضمان تحريك عنصر مفرد.
 
 ### {a0}Timing Properties{/a0}
 
-تتحكم [خصائص التوقيت](../../../../documentation/components/reference/amp-animation.md#timing-properties) في المدة التي تستغرقها الرسوم المتحركة، ومقدار وقت التشغيل، واتجاه تنفيذ الإطارات الأساسية.
+تتحكم [خصائص التوقيت](/content/amp-dev/documentation/components/reference/amp-animation.md#timing-properties) في المدة التي تستغرقها الرسوم المتحركة، ومقدار وقت التشغيل، واتجاه تنفيذ الإطارات الأساسية.
 
 ولا يتطلب وجود خصائص توقيت، لكن قد لا تعمل الرسوم المتحركة إذا كانت الخصائص المتعلقة بالوقت والعرض مفقودة، مثل `duration` و`fill`.
 
 ### {a0}Keyframes{/a0}
 
-بينما تتيح لك CSS بالتحويل من حالة لأخرى عبر الانتقالات، عليك الإعلان عن خصائص الرسوم المتحركة على أنها إطارات رئيسية لتنفيذ [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) (مشابهة [للرسوم المتحركة لـ CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)). ولضمان التشغيل السلس والتوافق عبر المتصفحات، [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) [يقيد أي خصائص إطارات رئيسية](../../../../documentation/components/reference/amp-animation.md#allow-listed-properties-for-keyframes) قابلة للاستخدام لخصائص وحدة معالجة الرسوميات المسرَّعة والتي لا تتسبب في إعادة التخطيط ويمكنها التحرك في [مؤشر ترابط مصفف](https://dev.chromium.org/developers/design-documents/compositor-thread-architecture). وهذا يمنع الرسوم المتحركة من التداخل مع AMP [وعملية عرض](https://developers.google.com/web/updates/2018/09/inside-browser-part3#javascript_can_block_the_parsing) المتصفح.
+بينما تتيح لك CSS بالتحويل من حالة لأخرى عبر الانتقالات، عليك الإعلان عن خصائص الرسوم المتحركة على أنها إطارات رئيسية لتنفيذ [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md#allow-listed-properties-for-keyframes) قابلة للاستخدام لخصائص وحدة معالجة الرسوميات المسرَّعة والتي لا تتسبب في إعادة التخطيط ويمكنها التحرك في [مؤشر ترابط مصفف](https://dev.chromium.org/developers/design-documents/compositor-thread-architecture). وهذا يمنع الرسوم المتحركة من التداخل مع AMP [وعملية عرض](https://developers.google.com/web/updates/2018/09/inside-browser-part3#javascript_can_block_the_parsing) المتصفح.
 
-[tip type="note"] يتم تحديد الإطارات الرئيسية إما مباشرة في [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) أو يشار إليها من [`<amp style-keyframe>`](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#keyframes-stylesheet) شريطة أنها تتبع قيود الخصائص، اقرأ المزيد [هنا عن الإطارات الرئيسية في `amp-animation`](../../../../documentation/components/reference/amp-animation.md#keyframes). [/tip]
+[tip type="note"] يتم تحديد الإطارات الرئيسية إما مباشرة في [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md#keyframes). [/tip]
 
 ### {a0}Trigger{/a0}
 
-يبدأ المشغِّل تسلسل الرسوم المتحركة، فيما يبدأ امتداد [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) عندما يصبح `<body>` مرئيًا على الصفحة أو من خلال توصيله [بإجراء أو حدث AMP](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)
+يبدأ المشغِّل تسلسل الرسوم المتحركة، فيما يبدأ امتداد [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) عندما يصبح `<body>` مرئيًا على الصفحة أو من خلال توصيله [بإجراء أو حدث AMP](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)
 
 ويُعد التشغيل عند عرض `<body>` أمرًا مفيدًا عند وجوب تشغيل الرسوم المتحركة بمجرد تحميل لأنها تظهر "أعلى الطية" أو "داخل نقطة الرؤية الأولى من الصفحة. فيما يتم تشغيل الرسوم المتحركة خلال العرض عن طريق إضافة `trigger="visibility"` على أنها سمة للمكون.
 
@@ -68,7 +68,7 @@ author: CrystalOnScript
 </amp-animation>
 ```
 
-وتتصل الرسوم المتحركة بإجراء أو حدث من خلال تعيين المكون [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) لـ `id` وربط هذا `id` بمشغِّل الحدث المرغوب مثل النقر فوق زر.
+وتتصل الرسوم المتحركة بإجراء أو حدث من خلال تعيين المكون [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) لـ `id` وربط هذا `id` بمشغِّل الحدث المرغوب مثل النقر فوق زر.
 
 ```
 <amp-animation layout="nodisplay" id="exampleAnimation">
@@ -80,13 +80,14 @@ author: CrystalOnScript
 
 ## بناء رسوم متحركة مركَّبة
 
-يتيح بناء رسوم متحركة في [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) بالتحكم الدقيق الذي يتخطى مجرد بدء الرسوم المتحركة وإيقافه؛ كما يمكن أيضًا إيقافه مؤقتًا وعكسه وتوجيهه إلى نقطة معينة. ويمكنك حتى تجميع العديد من الرسوم المتحركة معًا وتحريك العناصر في تسلسل.
+يتيح بناء رسوم متحركة في [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) بالتحكم الدقيق الذي يتخطى مجرد بدء الرسوم المتحركة وإيقافه؛ كما يمكن أيضًا إيقافه مؤقتًا وعكسه وتوجيهه إلى نقطة معينة. ويمكنك حتى تجميع العديد من الرسوم المتحركة معًا وتحريك العناصر في تسلسل.
 
 ### الأهداف الفرعية
 
 يمكن أن تتضمن عناصر العلامة أو الفئة نفسها خصائص توقيت محددة وتتجاوز قيم المتغيرات المحددة في الرسوم المتحركة ذات المستوى الأعلى.
 
 [example preview="top-frame" playground="true" imports="amp-animation"]
+
 ```html
 <body>
   <h1>Hello World!</h1>
@@ -99,7 +100,10 @@ author: CrystalOnScript
         "selector": "h1",
         "duration": "3s",
         "fill": "both",
-        "keyframes": [{"transform": "translateX(0px)"}, {"transform": "translateX(50%)"}],
+        "keyframes": [
+          {"transform": "translateX(0px)"},
+          {"transform": "translateX(50%)"}
+        ],
         "subtargets": [
           {
             "index": 1,
@@ -114,16 +118,15 @@ author: CrystalOnScript
       }
     </script>
   </amp-animation>
-  <button on="tap:animateThis.start">
-   start
-  </button>
+  <button on="tap:animateThis.start">start</button>
 </body>
 ```
+
 [/example]
 
 ### الرسوم المتحركة المتسلسلة
 
-يمكن أن تتصل رسوم متحركة متعددة معًا لتشكيل تسلسل كبير. إذ يمكنك إنشاء تأثيرات موقوتة مثل التراكبات في مقاطع الفيديو من خلال كتابة الرسوم المتحركة في صفيفة `animations` داخل المكون [`amp-animation`](../../../../documentation/components/reference/amp-animation.md).
+يمكن أن تتصل رسوم متحركة متعددة معًا لتشكيل تسلسل كبير. إذ يمكنك إنشاء تأثيرات موقوتة مثل التراكبات في مقاطع الفيديو من خلال كتابة الرسوم المتحركة في صفيفة `animations` داخل المكون [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md).
 
 ```
 <amp-animation id="overlaysAnim" layout="nodisplay">
@@ -159,7 +162,7 @@ author: CrystalOnScript
 
 حيث يقوم هذا الإعداد بتشغيل كل رسم متحرك لمدة 3 ثوانٍ بالتسلسل.
 
-وبالنسبة للرسوم المتحركة الأكبر، تكون الرسوم المتحركة الموجودة داخل صفيفة `animations` قادرة على الإشارة إلى مكونات [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) أخرى.
+وبالنسبة للرسوم المتحركة الأكبر، تكون الرسوم المتحركة الموجودة داخل صفيفة `animations` قادرة على الإشارة إلى مكونات [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md) أخرى.
 
 ```
 <amp-animation id="addEnergy" layout="nodisplay">
@@ -207,12 +210,17 @@ author: CrystalOnScript
 
 ### تحريك مقدار غير معروف من العناصر
 
-يمكنك من خلال استخدام [تعبيرات`var()` و`calc()`](../../../../documentation/components/reference/amp-animation.md) إلى جانب [تعبيرات CSS](../../../../documentation/components/reference/amp-animation.md#css-extensions) كتابة
+يمكنك من خلال استخدام [تعبيرات`var(/content/amp-dev/documentation/components/reference/amp-animation.md#css-extensions) كتابة
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
-  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-animation"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
+  ></script>
   <style amp-custom>
     .parent {
       perspective: 1000px;
@@ -241,43 +249,57 @@ author: CrystalOnScript
         "iterations": "1",
         "fill": "both",
         "keyframes": [
-            {"transform": "translate3d(0px, 0px, 0px)"},
-            {"transform": "translate3d(50%, 0px, 100px)"},
-            {"transform": "translate3d(110%, 0px, 0px) rotateY(-20deg)"},
-            {"transform": "translate3d(50%, 0px, -100px)"},
-            {"transform": "translate3d(0px, 0px, -1px)"}
+          {"transform": "translate3d(0px, 0px, 0px)"},
+          {"transform": "translate3d(50%, 0px, 100px)"},
+          {"transform": "translate3d(110%, 0px, 0px) rotateY(-20deg)"},
+          {"transform": "translate3d(50%, 0px, -100px)"},
+          {"transform": "translate3d(0px, 0px, -1px)"}
         ]
       }
     </script>
   </amp-animation>
-  <div class="parent" on="tap:cardAdmin.start" tabindex=none role="animation">
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/7/70/3C.svg" layout="fill"></amp-img>
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/3H.svg" layout="fill"></amp-img>
-    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/KC.svg" layout="fill"></amp-img>
+  <div class="parent" on="tap:cardAdmin.start" tabindex="none" role="animation">
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/7/70/3C.svg"
+      layout="fill"
+    ></amp-img>
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/3/3a/3H.svg"
+      layout="fill"
+    ></amp-img>
+    <amp-img
+      class="card"
+      src="https://upload.wikimedia.org/wikipedia/commons/e/e1/KC.svg"
+      layout="fill"
+    ></amp-img>
   </div>
 </body>
 ```
+
 [/example]
 
 - الإعلان عن متغير، `--duration`، حيث يوفر له قيمة ثانيتين.
 - تعيين `duration` لقيمة المتغير `--duration`.
 - حساب التأخير المطبق على كل عنصر مع ذلك الذي يستوفي `.card` المحدد.
-    1. يقوم [إمتداد `length()` ](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) بحساب عدد عناصر `.card` تم تحديدها
-    2. ثم يقوم الطول عندها بطرح كل `.card`'s [فهرس()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension)
-    3. يتم ضرب قيمة الناتج في المتغير `--duration`
-    4. يتم تطبيق الإجمالي النهائي في ثوانٍ على تأخير هذا العنصر
+  1. يقوم [إمتداد `length(/content/amp-dev/documentation/components/reference/amp-animation.md#css-length()-extension>) بحساب عدد عناصر `.card` تم تحديدها
+  2. ثم يقوم الطول عندها بطرح كل `.card`'s [فهرس(/content/amp-dev/documentation/components/reference/amp-animation.md#css-index()-extension>)
+  3. يتم ضرب قيمة الناتج في المتغير `--duration`
+  4. يتم تطبيق الإجمالي النهائي في ثوانٍ على تأخير هذا العنصر
 - يتم تطبيق الرسوم المتحركة على كل عنصر على حدة ليتسنى خلط البطاقات واحدة تلو الأخرى بدلًا عن الكل في الوقت نفسه.
 
 افتح الرسوم المتحركة في ساحة AMP وأضف المزيد من عناصر [`amp-img`](../../../../documentation/components/reference/amp-img) لاختبار سلوكها.
 
 ### اظهر بمظهر رائع، في كل مكان
 
-يمكن أن تتضمن الرسوم المتحركة [`conditions`](../../../../documentation/components/reference/amp-animation.md#conditions) تسمح بتخصيص التأثيرات. خصص الرسوم المتحركة لأي مقاس شاشة من خلال [حالة `media`](../../../../documentation/components/reference/amp-animation.md#media-query) وتدعم توافق المتصفح مع الإصدارات السابقة من خلال تمكين [حالات`supports`](../../../../documentation/components/reference/amp-animation.md#supports-condition) في [بيان `switch`](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement).
+يمكن أن تتضمن الرسوم المتحركة [`conditions`](/content/amp-dev/documentation/components/reference/amp-animation.md#animation-switch-statement).
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
- <style amp-custom>
+  <style amp-custom>
     .drop {
       width: 20px;
       height: 20px;
@@ -291,50 +313,54 @@ author: CrystalOnScript
       background: red;
     }
   </style>
-  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-animation"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
+  ></script>
 </head>
 <body>
-<amp-animation id="mediaAnimation" layout="nodisplay">
-  <script type="application/json">
-    {
-      "duration": "1s",
-      "iterations": "4",
-      "fill": "both",
-      "direction": "alternate",
-      "animations": [
-        {
-          "media": "(min-width: 300px)",
-          "selector": ".drop",
-          "keyframes": {
-            "transform": "translate(100vw)"
+  <amp-animation id="mediaAnimation" layout="nodisplay">
+    <script type="application/json">
+      {
+        "duration": "1s",
+        "iterations": "4",
+        "fill": "both",
+        "direction": "alternate",
+        "animations": [
+          {
+            "media": "(min-width: 300px)",
+            "selector": ".drop",
+            "keyframes": {
+              "transform": "translate(100vw)"
+            }
+          },
+          {
+            "media": "(max-width: 300px)",
+            "selector": ".drop",
+            "keyframes": {
+              "transform": "translate(50vw)"
+            }
+          },
+          {
+            "media": "(min-width: 300px)",
+            "selector": ".right",
+            "keyframes": {
+              "transform": "translate(-100vw)"
+            }
+          },
+          {
+            "media": "(max-width: 300px)",
+            "selector": ".right",
+            "keyframes": {
+              "transform": "translate(-50vw)"
+            }
           }
-        },
-        {
-          "media": "(max-width: 300px)",
-          "selector": ".drop",
-          "keyframes": {
-            "transform": "translate(50vw)"
-          }
-        },
-        {
-          "media": "(min-width: 300px)",
-          "selector": ".right",
-          "keyframes": {
-            "transform": "translate(-100vw)"
-          }
-        },
-        {
-          "media": "(max-width: 300px)",
-          "selector": ".right",
-          "keyframes": {
-            "transform": "translate(-50vw)"
-          }
-        }
-      ]
-    }
-  </script>
-</amp-animation>
-    
+        ]
+      }
+    </script>
+  </amp-animation>
+
   <div class="rain">
     <div class="drop"></div>
     <div class="drop right"></div>
@@ -348,4 +374,5 @@ author: CrystalOnScript
   <button on="tap:mediaAnimation.start">Start</button>
 </body>
 ```
+
 [/example]

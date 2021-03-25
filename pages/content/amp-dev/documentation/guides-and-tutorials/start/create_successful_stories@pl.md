@@ -1,10 +1,10 @@
 ---
-"$title": Najlepsze praktyki tworzenia udanych relacji internetowych
-"$order": '1'
+'$title': Najlepsze praktyki tworzenia udanych relacji internetowych
+$order: 1
 description: Najlepsze praktyki tworzenia udanych relacji internetowych
-"$category": Start
+'$category': Start
 formats:
-- stories
+  - stories
 author: CrystalOnScript
 ---
 

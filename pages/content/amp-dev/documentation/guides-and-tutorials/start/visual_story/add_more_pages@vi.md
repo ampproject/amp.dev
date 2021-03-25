@@ -1,6 +1,6 @@
 ---
-"$title": Thêm một số trang nữa
-"$order": '5'
+'$title': Thêm một số trang nữa
+$order: 5
 description: Giờ đây bạn đã quen thuộc với thao tác thêm một trang vào Câu chuyện web, thao tác thêm những trang tiếp theo trong câu chuyện "Niềm vui của thú cưng" cũng thực hiện tương tự vậy
 author: bpaduch
 ---

@@ -1,8 +1,8 @@
 ---
-"$title": Aktionen und Events in AMP E-Mails
-order: '0'
+'$title': Aktionen und Events in AMP E-Mails
+$order: 0
 formats:
-- email
+  - email
 teaser:
   text: '[tip type="note"]'
 ---
@@ -107,7 +107,7 @@ In AMP ist beispielsweise Folgendes möglich:
 
 ## Elementspezifische Events <a name="element-specific-events"></a>
 
-### * – alle Elemente <a name="---all-elements"></a>
+### \* – alle Elemente <a name="---all-elements"></a>
 
 <table>
   <tr>
@@ -322,7 +322,7 @@ In AMP ist beispielsweise Folgendes möglich:
 
 ## Elementspezifische Aktionen <a name="element-specific-actions"></a>
 
-### * (alle Elemente) <a name="-all-elements"></a>
+### \* (alle Elemente) <a name="-all-elements"></a>
 
 <table>
   <tr>

@@ -1,9 +1,9 @@
 ---
-"$title": Code du modèle AMP
-order: '9'
+'$title': Code du modèle AMP
+$order: 9
 formats:
-- websites
-- stories
+  - websites
+  - stories
 teaser:
   text: head > style[amp-boilerplate] et noscript > style[amp-boilerplate]
 ---
@@ -31,7 +31,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-##  <code>head > style[amp-boilerplate]</code> et  <code>noscript > style[amp-boilerplate] </code> <a></a>
+## <code>head > style[amp-boilerplate]</code> et <code>noscript > style[amp-boilerplate] </code> <a></a>
 
 Les documents HTM AMP doivent contenir le modèle suivant dans leur balise `head`. La validation est actuellement effectuée avec des expressions régulières, il est donc important de garder les mutations aussi minimes que possible. Actuellement, les mutations autorisées sont:
 

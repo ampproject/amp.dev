@@ -939,7 +939,6 @@ msgstr "layout"
 #: /content/amp-dev/documentation/components/reference/amp-dailymotion-v0.1.md
 #: /content/amp-dev/documentation/components/reference/amp-delight-player-v0.1.md
 #: /content/amp-dev/documentation/components/reference/amp-embedly-card-v0.1.md
-#: /content/amp-dev/documentation/components/reference/amp-google-vrview-image-v0.1.md
 #: /content/amp-dev/documentation/components/reference/amp-hulu-v0.1.md
 #: /content/amp-dev/documentation/components/reference/amp-ima-video-v0.1.md
 #: /content/amp-dev/documentation/components/reference/amp-img-v0.1@ar.md
@@ -1081,8 +1080,8 @@ msgid "You've read this document a dozen times but it doesn't really cover all o
 msgstr "Hai letto questo documento decine di volte ma non risponde a tutte le tue domande? Forse ci sono altre persone col tuo stesso problema: entra in contatto con loro su Stack Overflow."
 
 #: frontend/templates/views/partials/experiments/experiments.j2:4
-msgid "Enable the experiment via the button below. Some components require the AMP Dev Channel to be enabled as well."
-msgstr "Avvia l'esperimento con il pulsante in basso. Alcuni componenti richiedono che sia abilitato anche AMP Dev Channel."
+msgid "Enable the experiment via the button below. Some components require the AMP Beta Channel to be enabled as well."
+msgstr "Avvia l'esperimento con il pulsante in basso. Alcuni componenti richiedono che sia abilitato anche AMP Beta Channel."
 
 #: frontend/templates/views/partials/structured-data.j2:54
 msgid "Example  "

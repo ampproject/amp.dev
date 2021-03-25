@@ -1,10 +1,10 @@
 ---
-"$title": AMP Optimizer 的工作方式
-"$order": '1'
+'$title': AMP Optimizer 的工作方式
+$order: 1
 description: AMP Optimizer 将有效的 AMPHTML 文档作为输入，并通过应用手动操作会非常麻烦的其他优化将其转换为优化版本。本指南详细介绍 AMP Optimizer 的工作方式。
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 
@@ -30,7 +30,7 @@ AMP Optimizer 对 AMP 文档执行包括从服务器端呈现布局到图片优�
 
 服务器端呈现执行以下三个操作：
 
-⁣**1. 移除 AMP样板**：对于使用 AMP 布局的每个元素，将注入布局特定的标记。
+⁣**1. 移除 AMP 样板**：对于使用 AMP 布局的每个元素，将注入布局特定的标记。
 
 ⁣**2. Inline AMP-internal CSS styles: ** the AMP-boilerplate code is replaced by the <a href="https://cdn.ampproject.org/v0.css">AMP-runtime CSS styles</a>:`<style amp-runtime>...</style>`. For non-server-side rendered documents, AMP adds these styles at runtime. However, server-side-rendered AMP pages require these for the AMP layouts to work before AMP has been loaded. To avoid potential version conflicts, at runtime, AMP will check if the version specified in i-amphtml-version="011905222334000" differs from the current AMP version and will update the CSS with the latest version if not.
 

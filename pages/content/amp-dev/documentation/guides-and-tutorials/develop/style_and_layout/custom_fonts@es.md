@@ -1,11 +1,11 @@
 ---
-"$title": Adición de fuentes personalizadas
-"$order": '6'
+'$title': Adición de fuentes personalizadas
+$order: 6
 description: Las páginas AMP no pueden incluir plantillas externas, con la excepción de fuentes personalizadas. Puede incrustar en su página fuentes personalizadas de dos maneras...
 formats:
-- websites
-- ads
-- stories
+  - websites
+  - ads
+  - stories
 author: pbakaus
 ---
 
@@ -19,6 +19,7 @@ Las páginas AMP no pueden incluir plantillas externas, con la excepción de fue
 Utilice la etiqueta `<link>` (generalmente en el encabezado de su página), de la siguiente manera:
 
 [sourcecode:html]
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 [/sourcecode]
 
@@ -35,6 +36,7 @@ Los orígenes siguientes se incluyen en la lista blanca y se permite el uso de f
 Alternativamente, puede utilizar [`@font-face`](https://developer.mozilla.org/es/docs/Web/CSS/@font-face) dentro de su hoja de estilos AMP:
 
 [sourcecode:html]
+
 <style amp-custom>
   @font-face {
     font-family: "Bitstream Vera Serif Bold";
@@ -45,6 +47,7 @@ Alternativamente, puede utilizar [`@font-face`](https://developer.mozilla.org/es
     font-family: "Bitstream Vera Serif Bold", serif;
   }
 </style>
+
 [/sourcecode]
 
 Nota: Las fuentes que se incluyen con `@font-face` debe buscarse mediante ambos esquemas, ya sea HTTP o HTTPS.

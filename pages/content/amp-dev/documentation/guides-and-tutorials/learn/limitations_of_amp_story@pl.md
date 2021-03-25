@@ -1,8 +1,8 @@
 ---
-"$title": Ograniczenia relacji AMPHTML (do ustalenia)
-"$order": '2'
+'$title': Ograniczenia relacji AMPHTML (do ustalenia)
+$order: 2
 formats:
-- stories
+  - stories
 draft: 'true'
 ---
 

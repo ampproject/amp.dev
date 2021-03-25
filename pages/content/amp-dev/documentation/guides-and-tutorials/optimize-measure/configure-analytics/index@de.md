@@ -1,11 +1,11 @@
 ---
-"$title": Analytics konfigurieren
-"$order": '5'
-"$hidden": 'true'
+'$title': Analytics konfigurieren
+$order: 5
+'$hidden': 'true'
 description: Wenn du Google Analytics als Analytics Anbieter verwendest, erfährst du hier, wie du die grundlegenden Funktionen von Google Analytics für AMP einrichtest und Inhalte mit und ohne AMP mithilfe der Client ID verknüpfst.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 ---
 
 [tip] **TIPP:** Wenn du Google Analytics als Analytics Anbieter verwendest, erfährst du hier, [wie du die grundlegenden Funktionen von Google Analytics für AMP einrichtest](https://developers.google.com/analytics/devguides/collection/amp-analytics/#basic_setup_to_measure_page_views) und [Inhalte mit und ohne AMP mithilfe der Client ID verknüpfst](https://support.google.com/analytics/answer/7486764). [/tip]

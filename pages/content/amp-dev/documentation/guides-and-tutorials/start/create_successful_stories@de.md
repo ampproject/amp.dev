@@ -1,10 +1,10 @@
 ---
-"$title": Best Practices zum Erstellen erfolgreicher Web Storys
-"$order": '1'
+'$title': Best Practices zum Erstellen erfolgreicher Web Storys
+$order: 1
 description: Best Practices zum Erstellen erfolgreicher Web Storys
-"$category": Start
+'$category': Start
 formats:
-- stories
+  - stories
 author: CrystalOnScript
 ---
 

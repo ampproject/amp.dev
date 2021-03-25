@@ -1,12 +1,12 @@
 ---
-"$title": Como configurar análises básicas para suas páginas AMP
-"$order": '100'
+'$title': Como configurar análises básicas para suas páginas AMP
+$order: 100
 description: As plataformas de análise são frequentemente integradas a sites através de fragmentos de JavaScript inline e chamadas de função, que disparam eventos que são enviados de volta ao sistema de análise.
 tutorial: 'true'
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 ---
 
 As plataformas de análise são frequentemente integradas a sites através de fragmentos de JavaScript inline e chamadas de função, que disparam eventos que são enviados de volta ao sistema de análise. O AMP fornece uma sintaxe de configuração JSON flexível para replicar esse processo para diferentes parceiros de análise.
@@ -19,13 +19,28 @@ A seguir está um exemplo de rastreamento tradicional do Google Analytics usando
 
 ```html
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    (i[r] =
+      i[r] ||
+      function () {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    'script',
+    '//www.google-analytics.com/analytics.js',
+    'ga'
+  );
 
-ga('create', 'UA-XXXXX-Y', 'auto');
-ga('send', 'pageview');
+  ga('create', 'UA-XXXXX-Y', 'auto');
+  ga('send', 'pageview');
 </script>
 ```
 
@@ -36,7 +51,11 @@ Este JavaScript é bastante simples; ele envia uma notificação para rastrear o
 Para reproduzir essa funcionalidade no AMP, devemos primeiro **incluir** a biblioteca de componentes [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) no `<head>` do nosso documento:
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script
+  async
+  custom-element="amp-analytics"
+  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+></script>
 ```
 
 ## Passo 2: Adicione o código de configuração
@@ -45,22 +64,22 @@ Agora vamos **acrescentar** o componente [`amp-analytics`](../../../documentatio
 
 ```html
 <amp-analytics type="googleanalytics">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-YYYY-Y"
-  },
-  "triggers": {
-    "default pageview": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
       "vars": {
-        "title": "Name of the Article"
+        "account": "UA-YYYY-Y"
+      },
+      "triggers": {
+        "default pageview": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "Name of the Article"
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -76,31 +95,31 @@ A partir do exemplo acima, podemos **acrescentar** outro disparador chamado `"cl
 
 ```html
 <amp-analytics type="googleanalytics">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-YYYY-Y"
-  },
-  "triggers": {
-    "default pageview": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
       "vars": {
-        "title": "Name of the Article"
-      }
-    },
-    "click on #header trigger": {
-      "on": "click",
-      "selector": "#header",
-      "request": "event",
-      "vars": {
-        "eventCategory": "examples",
-        "eventAction": "clicked-header"
+        "account": "UA-YYYY-Y"
+      },
+      "triggers": {
+        "default pageview": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "Name of the Article"
+          }
+        },
+        "click on #header trigger": {
+          "on": "click",
+          "selector": "#header",
+          "request": "event",
+          "vars": {
+            "eventCategory": "examples",
+            "eventAction": "clicked-header"
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -108,6 +127,6 @@ Como você poderá adivinhar pelo nome deste novo disparador, ele será acionado
 
 Se você tem uma plataforma de rastreamento personalizada com a qual deseja se integrar, ainda pode usar [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) e definir seus próprios endpoints de URL personalizados para enviar dados de rastreamento. Saiba mais na documentação de referência do componente [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md).
 
-[tip type="note"] **OBSERVAÇÃO –**  `“UA-YYYY-Y”` é uma conta Google Analytics de exemplo; ela deve ser substituída pelo código de rastreamento do Google Analytics do seu próprio site, se você estiver usando este exemplo no seu site. [/tip]
+[tip type="note"] **OBSERVAÇÃO –** `“UA-YYYY-Y”` é uma conta Google Analytics de exemplo; ela deve ser substituída pelo código de rastreamento do Google Analytics do seu próprio site, se você estiver usando este exemplo no seu site. [/tip]
 
 [tip type="tip"] **DICA –** Se você estiver interessado em um sistema de rastreamento mais simples, dê uma olhada em [`amp-pixel`](../../../documentation/components/reference/amp-pixel.md). Se você só precisa rastrear pageviews, [`amp-pixel`](../../../documentation/components/reference/amp-pixel.md) é uma solução mais leve que [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) porque só pretende resolver os requisitos de um rastreamento de pixel tradicional. Saiba mais em [Analytics: the basics guide](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md). [/tip]

@@ -1,9 +1,9 @@
 ---
-"$title": Integracja z AMP w celu obsługi reklam wizualnych
-"$order": '5'
+'$title': Integracja z AMP w celu obsługi reklam wizualnych
+$order: 5
 description: Ten przewodnik jest przeznaczony dla sieci reklamowych, które chcą zintegrować się z AMP, aby serwować reklamy wizualne na stronach AMP.
 formats:
-- ads
+  - ads
 ---
 
 Ten przewodnik jest przeznaczony dla sieci reklamowych, które chcą zintegrować się z AMP, aby serwować reklamy wizualne na stronach AMP.
@@ -30,11 +30,14 @@ Wydawcy, których obsługuje Twój serwer reklam, dodają dostarczoną przez Cie
 Na przykład, serwer Amazon A9 można wywołać przy użyciu następującej składni:
 
 ```html
-<amp-ad width="300" height="250"
-    type="a9"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  width="300"
+  height="250"
+  type="a9"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 

@@ -1,6 +1,6 @@
 ---
-"$title": 恭喜！
-"$order": '4'
+'$title': 恭喜！
+$order: 4
 description: 您已经成功制作可以在 AMP 和非 AMP 网页上投放的 AMPHTML 广告！在本教程中，您学会了：根据 AMPHTML 广告规范制作有效的…
 ---
 

@@ -1,0 +1,22 @@
+---
+name: 'Nightly'
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploying to staging
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: 'Release: Staging'
+          token: ${{ secrets.NIGHTLY_WORKFLOW_GITHUB_PAT }}
+
+      - name: Deploying to production
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: 'Release: Production'
+          token: ${{ secrets.NIGHTLY_WORKFLOW_GITHUB_PAT }}

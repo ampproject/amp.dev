@@ -1,9 +1,9 @@
 ---
-"$title": رمز فقرة AMP
-order: '9'
+'$title': رمز فقرة AMP
+$order: 9
 formats:
-- websites
-- stories
+  - websites
+  - stories
 teaser:
   text: head > style[amp-boilerplate] }noscript > style[amp-boilerplate]
 ---

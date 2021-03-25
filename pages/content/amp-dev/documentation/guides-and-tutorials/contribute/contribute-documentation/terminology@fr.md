@@ -1,12 +1,12 @@
 ---
-"$title": Terminologie AMP
-"$order": '2'
+'$title': Terminologie AMP
+$order: 2
 description: Guide terminologique AMP
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 

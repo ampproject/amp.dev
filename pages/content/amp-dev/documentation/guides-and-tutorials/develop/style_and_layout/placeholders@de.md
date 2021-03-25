@@ -1,17 +1,17 @@
 ---
-"$title": Platzhalter & Fallbacks
-"$order": '3'
+'$title': Platzhalter & Fallbacks
+$order: 3
 descriptions: "In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible."
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 In the spirit of perceived performance and progressive enhancement, it's best practise in AMP to provide placeholders and fallbacks wherever possible.
@@ -23,17 +23,23 @@ Einige Elemente werden Sie sogar dafür belohnen, indem Sie Einschränkungen loc
 Das mit dem Attribut `placeholder` markierte Element agiert als Platzhalter für das übergeordnete AMP Element. Wenn ein Element `placeholder` angegeben ist, muss es dem AMP Element direkt untergeordnet sein. Ein als `placeholder` markiertes Element füllt das übergeordnete AMP Element dank `fill` immer aus.
 
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
+
 ```html
-<amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
+<amp-anim
+  src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
   layout="responsive"
   width="400"
-  height="300">
-  <amp-img placeholder
+  height="300"
+>
+  <amp-img
+    placeholder
     src="{{server_for_email}}/static/inline-examples/images/wavepool.png"
-    layout="fill">
+    layout="fill"
+  >
   </amp-img>
 </amp-anim>
 ```
+
 [/example]
 
 Standardmäßig wird der Platzhalter für das AMP-Element sofort angezeigt, auch wenn die Ressourcen des AMP-Elements nicht heruntergeladen oder initialisiert wurden. Sobald es fertig ist, versteckt das AMP-Element normalerweise seinen Platzhalter und zeigt den Inhalt an.
@@ -48,13 +54,14 @@ Du kannst das Attribut `fallback` für ein Element angeben, um das Fallback Verh
 - wenn der Inhalt nicht geladen werden kann (z. B. Tweet gelöscht)
 - Wenn der Bildtyp nicht unterstützt wird (z. B. wird WebP nicht in allen Browsern unterstützt).
 
-Du kannst das Attribut `fallback` für ein *beliebiges* HTML Element festlegen, nicht nur für AMP Elemente. Wenn das `fallback` Element angegeben wird, muss es dem AMP Element direkt untergeordnet sein.
+Du kannst das Attribut `fallback` für ein _beliebiges_ HTML Element festlegen, nicht nur für AMP Elemente. Wenn das `fallback` Element angegeben wird, muss es dem AMP Element direkt untergeordnet sein.
 
 ##### Beispiel: Nicht unterstützte Funktion
 
 Im folgenden Beispiel verwenden wir das `fallback` Attribut, um dem Benutzer mitzuteilen, dass der Browser eine bestimmte Funktion nicht unterstützt:
 
 [example preview="inline" playground="true" imports="amp-video:0.1"]
+
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -66,6 +73,7 @@ Im folgenden Beispiel verwenden wir das `fallback` Attribut, um dem Benutzer mit
   </div>
 </amp-video>
 ```
+
 [/example]
 
 ##### Beispiel: unterschiedliche Bildformate bereitstellen
@@ -73,20 +81,26 @@ Im folgenden Beispiel verwenden wir das `fallback` Attribut, um dem Benutzer mit
 Im folgenden Beispiel verwenden wir das `fallback` Attribut, um den Browser anzuweisen, die JPEG-Datei zu verwenden, wenn das WebP-Format nicht unterstützt wird.
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="Mountains"
+<amp-img
+  alt="Mountains"
   width="550"
   height="368"
   layout="responsive"
-  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
-  <amp-img alt="Mountains"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp"
+>
+  <amp-img
+    alt="Mountains"
     fallback
     width="550"
     height="368"
     layout="responsive"
-    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"
+  ></amp-img>
 </amp-img>
 ```
+
 [/example]
 
 ## Interaktion von Platzhaltern und Fallbacks

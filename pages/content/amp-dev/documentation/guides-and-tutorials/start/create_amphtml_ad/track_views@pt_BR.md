@@ -1,6 +1,6 @@
 ---
-"$title": Restreie visualizações dos anúncios
-"$order": '2'
+'$title': Restreie visualizações dos anúncios
+$order: 2
 description: Dentro de anúncios AMPHTML, você pode fazer rastreamento de métricas usando os componentes amp-pixel ou amp-analytics components. No nosso exemplo básico, adicionaremos a capacidade de rastrear pageviews  ...
 ---
 
@@ -9,11 +9,14 @@ Dentro de anúncios AMPHTML, você pode fazer rastreamento de métricas usando o
 ```html
 <body>
   <a target="_blank" href="https://www.amp.dev">
-    <amp-img width="300" height="250"
-        alt="Learn amp"
-        src="/static/img/docs/ads/amp-300x250.png"></amp-img>
+    <amp-img
+      width="300"
+      height="250"
+      alt="Learn amp"
+      src="/static/img/docs/ads/amp-300x250.png"
+    ></amp-img>
   </a>
-<amp-pixel src="https://www.amp.dev/tracker/foo"></amp-pixel>
+  <amp-pixel src="https://www.amp.dev/tracker/foo"></amp-pixel>
 </body>
 ```
 

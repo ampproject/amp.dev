@@ -1,10 +1,10 @@
 ---
-"$title": Mengubah situs AMP Anda menjadi PWA
-"$order": '10'
+'$title': Mengubah situs AMP Anda menjadi PWA
+$order: 10
 description: Dengan menyimpan sumber daya di cache di dalam browser, sebuah PWA mampu menyediakan data, aset, dan halaman offline kepada pengguna agar mereka tetap terlibat dan mendapatkan informasi.
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: crystalonscript
 ---
 

@@ -1,10 +1,10 @@
 ---
-"$title": Tối ưu hoá các trang AMP được lưu trữ của bạn
-"$order": '7'
+'$title': Tối ưu hoá các trang AMP được lưu trữ của bạn
+$order: 7
 description: Thời gian chạy AMP được tối ưu hoá cho tốc độ và nếu các trang AMP được một bộ nhớ đệm AMP phân phát, chúng sẽ được tối ưu hoá hoàn toàn và mang đến hiệu năng tải cao nhất...
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 
@@ -74,7 +74,7 @@ Ta hãy xét kĩ đoạn mã này theo từng bước:
 
 4. Sử dụng [preconnect](https://www.igvita.com/2015/08/17/eliminating-roundtrips-with-preconnect/) để tăng tốc kết nối đến nguồn gốc khác khi không biết trước URL tài nguyên đầy đủ, ví dụ, khi sử dụng Google Fonts:
 
-    [sourcecode:html]<link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>[/sourcecode]
+   [sourcecode:html]<link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>[/sourcecode]
 
 5. [sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
 
@@ -147,7 +147,7 @@ Nhân tiện, cùng phương cách đó cũng hiệu quả cho hình ảnh poste
 </amp-video>
 [/sourcecode]
 
-Hãy bảo đảm là bạn đặt lệnh tải sẵn *đằng sau* khai báo màn hiển thị bởi vì trình duyệt cần các kích thước màn hiển thị để xác định độ rộng màn hình:
+Hãy bảo đảm là bạn đặt lệnh tải sẵn _đằng sau_ khai báo màn hiển thị bởi vì trình duyệt cần các kích thước màn hiển thị để xác định độ rộng màn hình:
 
 [sourcecode:html]
 
@@ -199,6 +199,7 @@ Với AMP, có vài thứ bạn có thể làm để tối ưu hoá việc tải
 - Tối ưu hoá các phông chữ web của bạn (ví dụ như phục vụ các phông chữ tùy chỉnh bằng WOFF2).
 
 [sourcecode:html]
+
 <link rel="preload" as="font" href="/bundles/app/fonts/helveticaneue-roman-webfont.woff2" >[/sourcecode]
 
 - Nếu bạn đang sử dụng Google Fonts hoặc bất kỳ nhà cung cấp phông chữ nào khác có URL phông chữ không xác định, hãy kết nối sẵn với máy chủ phông chữ tương ứng: PLACEHOLDER_START10PLACEHOLDER_END

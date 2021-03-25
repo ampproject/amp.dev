@@ -1,10 +1,10 @@
 ---
-"$title": Tạo Câu chuyện Web đầu tiên của bạn
-"$order": '0'
+'$title': Tạo Câu chuyện Web đầu tiên của bạn
+$order: 0
 description: Trong bài thực hành này, chúng tôi sẽ giới thiệu bạn đến với thành phần amp-story, cái mà bạn có thể dùng để tạo Câu chuyện Web bằng AMP có hình ảnh cuốn hút. Khi hoàn thành bài thực hành này, bạn sẽ ...
-"$hidden": 'true'
+'$hidden': 'true'
 formats:
-- stories
+  - stories
 author: bpaduch
 ---
 

@@ -1,11 +1,11 @@
 ---
-"$title": Związek AMP z PWA
-"$order": '7'
+'$title': Związek AMP z PWA
+$order: 7
 description: Progresywne aplikacje webowe i strony AMP świetnie ze sobą współpracują. W rzeczywistości, w wielu przypadkach uzupełniają się one w ten czy inny sposób. Naucz się jak...
 formats:
-- websites
+  - websites
 components:
-- youtube
+  - youtube
 author: pbakaus
 ---
 
@@ -31,7 +31,7 @@ Strony AMP mogą korzystać z wielu funkcji PWA samodzielnie, pod warunkiem, że
 
 ## AMP jako punkt wejścia do PWA
 
-Unikalną zaletą AMP jest **niemal natychmiastowe pobieranie zawartości**, co sprawia, że AMP idealnie nadaje się do pierwszej interakcji użytkownika z witryną. *Progresywne aplikacje webowe* umożliwiają **znacznie większą interaktywność i zapewniają funkcje zwiększające zaangażowanie**, ale ich pierwsze ładowanie jest utrudnione ze względu na fakt, że Service Worker witryny, a zatem jej zasoby i powłoka aplikacji, przyspieszają pobieranie dopiero przy kolejnych załadowaniach.
+Unikalną zaletą AMP jest **niemal natychmiastowe pobieranie zawartości**, co sprawia, że AMP idealnie nadaje się do pierwszej interakcji użytkownika z witryną. _Progresywne aplikacje webowe_ umożliwiają **znacznie większą interaktywność i zapewniają funkcje zwiększające zaangażowanie**, ale ich pierwsze ładowanie jest utrudnione ze względu na fakt, że Service Worker witryny, a zatem jej zasoby i powłoka aplikacji, przyspieszają pobieranie dopiero przy kolejnych załadowaniach.
 
 Dobrą strategią jest uczynienie strony AMP punktem wejścia do witryny, a następnie przejście do PWA po jej przygotowaniu za kulisami.
 

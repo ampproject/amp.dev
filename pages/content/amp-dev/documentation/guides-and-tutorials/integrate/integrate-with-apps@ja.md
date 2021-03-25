@@ -1,9 +1,9 @@
 ---
-"$title": AMP とアプリの統合
-"$order": '2'
+'$title': AMP とアプリの統合
+$order: 2
 description: このガイドは、AMP ページの統合とリンクを希望するモバイルおよびウェブアプリ開発者を対象としています。たとえば、共有された URL の AMP バージョンを...
 formats:
-- websites
+  - websites
 ---
 
 このガイドは、AMP ページの統合とリンクを希望するモバイルおよびウェブアプリ開発者を対象としています。たとえば、共有された URL の AMP バージョンを読み込んで、ユーザーエクスペリエンスを高速化するモバイル チャットアプリについて考えてみましょう。
@@ -47,10 +47,12 @@ Google では、AMP URL API を提供して、リストに指定された URL �
 たとえば、URL のリストは次のようになります。
 
 ```json
-{"urls": [
-  "https://www.example.org/article-with-amp-version",
-  "http://www.example.com/no-amp-version.html"
-]}
+{
+  "urls": [
+    "https://www.example.org/article-with-amp-version",
+    "http://www.example.com/no-amp-version.html"
+  ]
+}
 ```
 
 レスポンスの本文には、JSON 形式の AMP URL マッピングが含まれています。
@@ -74,7 +76,7 @@ Google では、AMP URL API を提供して、リストに指定された URL �
 }
 ```
 
-[tip type="note"] <strong>注意:</strong>  Google 以外の AMP キャッシュ上にキャッシュされた AMP ページの URL は、 AMP URL API で取得できません。ただし、返された AMP URL（ampURL）からキャッシュされた URL を簡単に派生させることが できます。 [/tip]
+[tip type="note"] <strong>注意:</strong> Google 以外の AMP キャッシュ上にキャッシュされた AMP ページの URL は、 AMP URL API で取得できません。ただし、返された AMP URL（ampURL）からキャッシュされた URL を簡単に派生させることが できます。 [/tip]
 
 ## AMP キャッシュの使用
 

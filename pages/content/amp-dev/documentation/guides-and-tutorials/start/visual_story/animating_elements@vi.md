@@ -1,9 +1,9 @@
 ---
-"$title": Các phần tử hoạt họa
-"$order": '6'
+'$title': Các phần tử hoạt họa
+$order: 6
 description: Bạn có thể cải tiến thêm nữa Câu chuyện web bằng cách áp dụng chuyển động vào bằng hình hoạt họa cho các phần tử bên trong một trang. Ví dụ như bạn có thể làm tiêu đề bay vào từ...
 components:
-- anim
+  - anim
 author: bpaduch
 ---
 
@@ -133,10 +133,12 @@ Bạn có thể tùy chỉnh tác vụ định thời gian của một hình ho�
 ```html
 <amp-story-page id="my-page">
   ...
-  <p class="my-element"
-      animate-in="fly-in-left"
-      animate-in-delay="0.3s"
-      animate-in-duration="0.5s">
+  <p
+    class="my-element"
+    animate-in="fly-in-left"
+    animate-in-delay="0.3s"
+    animate-in-duration="0.5s"
+  >
     I'm going to fly into the page from the left!
   </p>
 </amp-story-page>
@@ -150,21 +152,33 @@ Trang cuối của Câu chuyện web gồm hai lớp: lớp đầu tiên là b�
 <amp-story-page id="page5">
   <amp-story-grid-layer template="vertical" class="noedge">
     <div class="wrapper">
-      <amp-img src="assets/cat.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/cat.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/dog.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/dog.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/bird.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/bird.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/rabbit.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/rabbit.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
     </div>
   </amp-story-grid-layer>
@@ -183,9 +197,9 @@ Trông tuyệt đó nhưng mọi thứ đang ở trạng thái tĩnh! Ta hãy l�
 Ta sẽ bắt đầu bằng cách tạo hình động cho chuyển động vào của dòng chữ băng rôn và để nó "bay vèo vào" từ bên phải của trang. Thêm `animate-in="whoosh-in-right"` vào phần tử `<p>` giống thế này:
 
 ```html
-<p class="banner-text"
-  animate-in="whoosh-in-right">
-Pets can lower your stress levels!</p>
+<p class="banner-text" animate-in="whoosh-in-right">
+  Pets can lower your stress levels!
+</p>
 ```
 
 Tải lại trang câu chuyện trong trình duyệt, và xác minh rằng băng rôn bay vèo vào.
@@ -193,25 +207,37 @@ Tải lại trang câu chuyện trong trình duyệt, và xác minh rằng băng
 Tiếp theo, hãy làm cho tất cả các hình ảnh mờ dần. Thêm `animate-in="fade-in"` vào từng phần tử [`amp-img`](../../../../documentation/components/reference/amp-img.md) để mã trông giống như sau:
 
 ```html
-<amp-img src="assets/cat.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/cat.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/dog.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/dog.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/bird.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/bird.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/rabbit.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/rabbit.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
 ```
 
@@ -220,29 +246,41 @@ Nếu bạn làm mới và tải lại trang, mỗi hình ảnh sẽ mờ đi. �
 Hãy tạo độ trễ cho chuyển động vào của hình ảnh đầu tiên để nó đến gần khi băng rôn chữ đi vào xong, chẳng hạn 0,4 giây. Ba hình ảnh còn lại có thể xuất hiện 0,2 giây sau chuyển động vào của hình ảnh trước. Đối với mỗi phần tử [`amp-img`](../../../../documentation/components/reference/amp-img.md), hãy thêm `animate-in-delay=""` với giá trị thời gian trễ thích hợp. Mã của bạn sẽ giống như sau:
 
 ```html
-<amp-img src="assets/cat.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="0.4s">
+<amp-img
+  src="assets/cat.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="0.4s"
+>
 </amp-img>
-<amp-img src="assets/dog.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="0.6s">
+<amp-img
+  src="assets/dog.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="0.6s"
+>
 </amp-img>
-<amp-img src="assets/bird.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay=".8s">
+<amp-img
+  src="assets/bird.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay=".8s"
+>
 </amp-img>
-<amp-img src="assets/rabbit.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="1s">
+<amp-img
+  src="assets/rabbit.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="1s"
+>
 </amp-img>
 ```
 

@@ -1,39 +1,43 @@
 ---
-"$title": Images interactives avec les attributs srcset, sizes et heights
-"$order": '4'
+'$title': Images interactives avec les attributs srcset, sizes et heights
+$order: 4
 description: Utilisez l’attribut srcset pour contrôler les ressources d’un élément en fonction de différentes expressions multimédias. En particulier, utilisez-le pour toutes les balises amp-img afin de spécifier ...
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 components:
-- iframe
+  - iframe
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## srcset
 
-Utilisez l'attribut `srcset` pour contrôler les ressources d'un élément en fonction de différentes expressions multimédias. En particulier, utilisez-le pour toutes les balises [`amp-img`](../../../../documentation/components/reference/amp-img.md) afin de spécifier les éléments d'image à utiliser en fonction des différentes tailles d'écran. AMP générera automatiquement un attribut `sizes`  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img" data-md-type="link">qui répond à la définition HTML5 de tailles `sizes`</a> , pour toutes les balises `<img>` sous-jacentes de `<amp-img>` si `<amp-img>` a un attribut `srcset` mais pas d'attribut `sizes`.
+Utilisez l'attribut `srcset` pour contrôler les ressources d'un élément en fonction de différentes expressions multimédias. En particulier, utilisez-le pour toutes les balises [`amp-img`](../../../../documentation/components/reference/amp-img.md) afin de spécifier les éléments d'image à utiliser en fonction des différentes tailles d'écran. AMP générera automatiquement un attribut `sizes` <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img" data-md-type="link">qui répond à la définition HTML5 de tailles `sizes`</a> , pour toutes les balises `<img>` sous-jacentes de `<amp-img>` si `<amp-img>` a un attribut `srcset` mais pas d'attribut `sizes`.
 
 Dans cet exemple simple, `srcset` spécifie l'image à utiliser en fonction de la largeur de l'écran. Le descripteur `w` indique au navigateur la largeur de chaque image de la liste:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   layout="responsive"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
-            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w">
+            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
+>
 </amp-img>
 ```
+
 [/example]
 
-[tip type="note"] **REMARQUE –**  AMP prend en charge srcset avec le descripteur `w`sur tous les navigateurs. [/tip]
+[tip type="note"] **REMARQUE –** AMP prend en charge srcset avec le descripteur `w`sur tous les navigateurs. [/tip]
 
 Plus détails sur la création d'images interactives à l'aide de `srcset` dans la section [Utilisation d'images interactives (maintenant)](http://alistapart.com/article/using-responsive-images-now).
 
@@ -44,16 +48,20 @@ Vous pouvez également utiliser l'attribut facultatif `sizes` d'AMP avec `srcset
 Prenons l'exemple suivant:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
             {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
-  sizes="(min-width: 650px) 50vw, 100vw">
+  sizes="(min-width: 650px) 50vw, 100vw"
+>
 </amp-img>
 ```
+
 [/example]
 
 L'attribut `sizes` définit la largeur de l'élément comme étant égale à 50% de la taille de la fenêtre lorsque la fenêtre fait 650 pixels ou plus. Par exemple, si la fenêtre est de 800 px, la largeur de l'élément est définie sur 400 px. Le navigateur sélectionne ensuite la ressource `srcset` liée à 400px, en supposant que le ratio de pixels du périphérique est de 1, ce qui correspond dans ce cas à `hummingbird-narrow.jpg` (320px).
@@ -74,14 +82,18 @@ Lorsque l'attribut `heights` est spécifié avec `width` et `height`, l'élémen
 Exemple:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="AMP"
+<amp-img
+  alt="AMP"
   src="{{server_for_email}}/static/inline-examples/images/amp.jpg"
   width="320"
   height="256"
-  heights="(min-width:500px) 200px, 80%">
+  heights="(min-width:500px) 200px, 80%"
+>
 </amp-img>
 ```
+
 [/example]
 
 Dans cet exemple, la hauteur de l'élément par défaut sera de 80% de la largeur, mais pour une fenêtre plus large que `500px`, elle sera limitée à `200px`.

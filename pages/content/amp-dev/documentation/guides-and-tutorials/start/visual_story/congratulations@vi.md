@@ -1,6 +1,6 @@
 ---
-"$title": Chúc mừng!
-"$order": '9'
+'$title': Chúc mừng!
+$order: 9
 description: 'Bạn đã hoàn thành tốt câu chuyện AMP đầu tiên của mình! Trong bài thực hành này, bạn đã học cách để: - Tạo một câu chuyện nhiều trang bằng cách dùng thành phần amp-story'
 author: bpaduch
 ---

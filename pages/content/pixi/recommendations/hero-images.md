@@ -1,15 +1,7 @@
 ---
-$title: Transform hero images on the page
-$order: 80
+$title: Markup hero images on your page
+$order: 20
 tags:
 - lcp
 ---
-Preloading lets you tell the
-browser about critical resources that you want to load as soon as possible.
-Even before they're discovered in HTML! This is especially useful for resources
-such as hero images that make up a large part of the initial render. 
-<br><br>
-Use [AMP Optimizer](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/)
-as it automatically detects and preloads hero images on the page.
-It also allows you to use the `data-hero` attribute to markup images on the
-page manually.
+Let AMP Caches and Optimizers optimize your hero images by adding the [`data-hero` attribute](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/explainer/?format=websites#hero-image-optimization) to images in your first viewport. This can improve image loading times by up to 50%.

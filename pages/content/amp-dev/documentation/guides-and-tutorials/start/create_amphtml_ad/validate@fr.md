@@ -1,6 +1,6 @@
 ---
-"$title": Valider la syntaxe AMPHTML
-"$order": '3'
+'$title': Valider la syntaxe AMPHTML
+$order: 3
 description: "Pour vous assurer que votre annonce s'affiche correctement, vous devez valider votre syntaxe AMPHTML. Dans votre navigateur, ouvrez le validateur AMP et assurez-vous que le format HTML sélectionné est AMP4ADS."
 ---
 

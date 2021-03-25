@@ -1,11 +1,11 @@
 ---
-"$title": CORS dalam AMP
-order: '12'
+'$title': CORS dalam AMP
+$order: 12
 formats:
-- websites
-- email
-- stories
-- ads
+  - websites
+  - email
+  - stories
+  - ads
 teaser:
   text: Banyak ekstensi dan komponen AMP memanfaatkan endpoint jarak jauh dengan menggunakan
 toc: 'true'
@@ -74,31 +74,33 @@ Mari kita gambarkan dengan contoh:
 
 Anggap bahwa Anda mempunyai halaman AMP yang mencantumkan produk beserta harganya. Untuk memperbarui harga pada halaman tersebut, pengguna mengeklik sebuah tombol, dan ini akan mengambil harga terbaru dari endpoint JSON (dilakukan melalui komponen amp-list). JSON itu di domain Anda.
 
-Baik, jadi halaman itu ada *di domain saya* dan JSON tersebut ada *di domain saya *. Saya tidak melihat ada masalah!
+Baik, jadi halaman itu ada _di domain saya_ dan JSON tersebut ada _di domain saya _. Saya tidak melihat ada masalah!
 
-Ah, tetapi bagaimana pengguna Anda sampai ke halaman AMP Anda? Apakah karena halaman di cache yang mereka akses? Kemungkinan besar bahwa pengguna Anda tidak mengakses halaman AMP secara langsung, tetapi menemukan halaman Anda melalui platform lain. Contohnya: Google Search menggunakan Cache AMP Google untuk merender halaman AMP dengan cepat; ini adalah halaman yang disimpan di cache yang disajikan dari Cache AMP Google, dan ini adalah domain yang *berbeda*. Saat pengguna Anda mengeklik tombol untuk memperbarui harga pada halaman Anda, halaman AMP di dalam cache mengirimkan permintaan ke domain asal Anda untuk mendapatkan harga, dan ini adalah ketidakcocokan antara asal (cache -> domain asal). Untuk memungkinkan permintaan lintas asal seperti ini, Anda harus menangani CORS, jika tidak, permintaan akan gagal.
+Ah, tetapi bagaimana pengguna Anda sampai ke halaman AMP Anda? Apakah karena halaman di cache yang mereka akses? Kemungkinan besar bahwa pengguna Anda tidak mengakses halaman AMP secara langsung, tetapi menemukan halaman Anda melalui platform lain. Contohnya: Google Search menggunakan Cache AMP Google untuk merender halaman AMP dengan cepat; ini adalah halaman yang disimpan di cache yang disajikan dari Cache AMP Google, dan ini adalah domain yang _berbeda_. Saat pengguna Anda mengeklik tombol untuk memperbarui harga pada halaman Anda, halaman AMP di dalam cache mengirimkan permintaan ke domain asal Anda untuk mendapatkan harga, dan ini adalah ketidakcocokan antara asal (cache -> domain asal). Untuk memungkinkan permintaan lintas asal seperti ini, Anda harus menangani CORS, jika tidak, permintaan akan gagal.
 
 <amp-img alt="CORS and Cache" layout="responsive" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png" width="809" height="391">
   <noscript><img alt="CORS dan Cache" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png"></noscript></amp-img>
 
 **Baik, jadi saya harus bagaimana?**
 
-1. Untuk halaman AMP yang mengambil data dinamis, pastikan Anda menguji versi cache halaman tersebut; *jangan cuma uji di domain Anda sendiri*. (Kunjungi bagian [Menguji CORS dalam AMP](#testing-cors-in-amp) di bawah ini)
+1. Untuk halaman AMP yang mengambil data dinamis, pastikan Anda menguji versi cache halaman tersebut; _jangan cuma uji di domain Anda sendiri_. (Kunjungi bagian [Menguji CORS dalam AMP](#testing-cors-in-amp) di bawah ini)
 2. Ikuti instruksi di dalam dokumen ini untuk menangani tanggapan dan permintaan CORS.
 
 ## Memanfaatkan cookie untuk permintaan CORS <a name="utilizing-cookies-for-cors-requests"></a>
 
 Kebanyakan komponen AMP yang menggunakan permintaan CORS akan secara otomatis menetapkan [mode kredensial](https://fetch.spec.whatwg.org/#concept-request-credentials-mode) atau mengizinkan penulis untuk memilih mengaktifkannya. Contohnya: komponen [`amp-list`](https://amp.dev/documentation/components/amp-list) mengambil konten dinamis dari endpoint JSON CORS, dan mengizinkan penulis untuk menetapkan mode kredensial melalui atribut `credentials`.
 
-*Contoh: Termasuk konten yang dipersonalisasi di dalam amp-list melalui cookie*
+_Contoh: Termasuk konten yang dipersonalisasi di dalam amp-list melalui cookie_
 
 [sourcecode:html]
 <amp-list
-  credentials="include"
-  src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)"
->
-  <template type="amp-mustache">
+credentials="include"
+src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)"
+
+>   <template type="amp-mustache">
+
     Your personal offer: ${% raw %}{{price}}{% endraw %}
+
   </template>
 </amp-list>
 [/sourcecode]
@@ -159,13 +161,13 @@ Setelah memverifikasi permintaan CORS, hasil tanggapan HTTP harus mengandung taj
 
 Tajuk ini adalah persyaratan <a href="https://www.w3.org/TR/cors/">Spek W3 CORS Spec</a>, di mana <code>origin</code> merujuk asal peminta yang diizinkan melalui tajuk permintaan CORS <code>Origin</code> (contohnya, <code>"https://<publisher's subdomain>.cdn.ampproject.org"</code>).
 
-Walaupun spek W3 CORS mengizinkan nilai <code>*</code> dihasilkan di dalam tanggapan, untuk keamanan yang lebih baik, Anda sebaiknya:
+Walaupun spek W3 CORS mengizinkan nilai <code>\*</code> dihasilkan di dalam tanggapan, untuk keamanan yang lebih baik, Anda sebaiknya:
 
 - Jika tajuk `Origin` ada, validasi dan cerminkan nilai tajuk <code>Origin</code>.
 
 ### Memproses permintaan perubahan status <a name="processing-state-changing-requests"></a>
 
-[tip type="important"] Lakukan pemeriksaan validasi ini *sebelum* Anda memproses permintaan. Validasi ini membantu menyediakan perlindungan dari serangan CSRF, dan menghindari pemrosesan permintaan sumber yang tidak dipercayai. [/tip]
+[tip type="important"] Lakukan pemeriksaan validasi ini _sebelum_ Anda memproses permintaan. Validasi ini membantu menyediakan perlindungan dari serangan CSRF, dan menghindari pemrosesan permintaan sumber yang tidak dipercayai. [/tip]
 
 Sebelum memproses permintaan yang dapat mengubah status sistem Anda (contohnya: pengguna yang berlangganan atau berhenti berlangganan dari daftar pengiriman surat), periksa yang berikut ini:
 
@@ -173,10 +175,10 @@ Sebelum memproses permintaan yang dapat mengubah status sistem Anda (contohnya: 
 
 1. Jika asal tidak sesuai dengan salah satu dari nilai-nilai berikut ini, hentikan dan buat tanggapan eror:
 
-    - `<publisher's domain>.cdn.ampproject.org`
-    - asal penayang (alias domain Anda)
+   - `<publisher's domain>.cdn.ampproject.org`
+   - asal penayang (alias domain Anda)
 
-    di mana `*` mewakili kecocokan karakter pengganti, dan bukan tanda bintang yang sesungguhnya ( * ).
+   di mana `*` mewakili kecocokan karakter pengganti, dan bukan tanda bintang yang sesungguhnya ( \* ).
 
 2. Jika tidak, proses permintaan tersebut.
 
@@ -227,15 +229,15 @@ Logika kita untuk menangani tanggapan dan permintaan CORS dapat disederhanakan m
 
 [sourcecode:text]
 IF CORS header present
-   IF origin IN allowed-origins
-      allow request & send response
-   ELSE
-      deny request
+IF origin IN allowed-origins
+allow request & send response
 ELSE
-   IF "AMP-Same-Origin: true"
-      allow request & send response
-   ELSE
-      deny request
+deny request
+ELSE
+IF "AMP-Same-Origin: true"
+allow request & send response
+ELSE
+deny request
 [/sourcecode]
 
 #### Kode sampel CORS <a name="cors-sample-code"></a>
@@ -244,31 +246,31 @@ Berikut ini adalah fungsi JavaScript sampel yang dapat kita gunakan untuk menang
 
 [sourcecode:javascript]
 function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
-  var unauthorized = 'Unauthorized Request';
-  var origin;
-  var allowedOrigins = [
-    'https://example.com',
-    'https://example-com.cdn.ampproject.org',
-    'https://cdn.ampproject.org',
-  ];
-  var allowedSourceOrigin = 'https://example.com'; //publisher's origin
-  // If same origin
-  if (req.headers['amp-same-origin'] == 'true') {
-    origin = sourceOrigin;
-    // If allowed CORS origin & allowed source origin
-  } else if (
-    allowedOrigins.indexOf(req.headers.origin) != -1 &&
-    sourceOrigin == allowedSourceOrigin
-  ) {
-    origin = req.headers.origin;
-  } else {
-    res.statusCode = 403;
-    res.end(JSON.stringify({message: unauthorized}));
-    throw unauthorized;
-  }
+var unauthorized = 'Unauthorized Request';
+var origin;
+var allowedOrigins = [
+'https://example.com',
+'https://example-com.cdn.ampproject.org',
+'https://cdn.ampproject.org',
+];
+var allowedSourceOrigin = 'https://example.com'; //publisher's origin
+// If same origin
+if (req.headers['amp-same-origin'] == 'true') {
+origin = sourceOrigin;
+// If allowed CORS origin & allowed source origin
+} else if (
+allowedOrigins.indexOf(req.headers.origin) != -1 &&
+sourceOrigin == allowedSourceOrigin
+) {
+origin = req.headers.origin;
+} else {
+res.statusCode = 403;
+res.end(JSON.stringify({message: unauthorized}));
+throw unauthorized;
+}
 
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.setHeader('Access-Control-Allow-Origin', origin);
+res.setHeader('Access-Control-Allow-Credentials', 'true');
+res.setHeader('Access-Control-Allow-Origin', origin);
 }
 [/sourcecode]
 
@@ -324,14 +326,14 @@ Access-Control-Allow-Origin: https://example-com.cdn.ampproject.org
 
 ## Bekerja dengan font di cache <a name="working-with-cached-fonts"></a>
 
-Cache AMP Google menyimpan, font, gambar, dan dokumen HTML untuk mengoptimalkan kecepatan halaman AMP.  Walaupun membuat halaman AMP menjadi cepat, kita juga perlu berhati-hati dalam mengamankan sumber daya yang disimpan di cache. Kita akan melakukan perubahan tentang cara cache AMP menanggapi sumber daya yang disimpan di cache, umumnya untuk font, dengan memperhatikan nilai `Access-Control-Allow-Origin` asal.
+Cache AMP Google menyimpan, font, gambar, dan dokumen HTML untuk mengoptimalkan kecepatan halaman AMP. Walaupun membuat halaman AMP menjadi cepat, kita juga perlu berhati-hati dalam mengamankan sumber daya yang disimpan di cache. Kita akan melakukan perubahan tentang cara cache AMP menanggapi sumber daya yang disimpan di cache, umumnya untuk font, dengan memperhatikan nilai `Access-Control-Allow-Origin` asal.
 
 ### Perilaku sebelumnya (sebelum Oktober 2019) <a name="past-behavior-before-october-2019"></a>
 
 Saat sebuah halaman AMP memuat atribut `https://example.com/some/font.ttf` dari `@font-face src`, Cache AMP akan menyimpan berkas font dan menyajikan sumber daya sebagaimana di bawah ini dengan memiliki karakter pengganti `Access-Control-Allow-Origin`.
 
 - URL `https://example-com.cdn.ampproject.org/r/s/example.com/some/font.tff`
-- Akses-Kontrol-Izinkan-Asal: *
+- Akses-Kontrol-Izinkan-Asal: \*
 
 ### Perilaku baru (Oktober 2019 dan setelahnya) <a name="new-behavior-october-2019-and-after"></a>
 
@@ -341,19 +343,19 @@ Penerapan sampel akan berupa:
 
 [sourcecode:javascript]
 function assertFontCors(req, res, opt_validMethods, opt_exposeHeaders) {
-  var unauthorized = 'Unauthorized Request';
-  var allowedOrigins = [
-    'https://example.com',
-    'https://example-com.cdn.ampproject.org',
-  ];
-  // If allowed CORS origin
-  if (allowedOrigins.indexOf(req.headers.origin) != -1) {
-    res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
-  } else {
-    res.statusCode = 403;
-    res.end(JSON.stringify({message: unauthorized}));
-    throw unauthorized;
-  }
+var unauthorized = 'Unauthorized Request';
+var allowedOrigins = [
+'https://example.com',
+'https://example-com.cdn.ampproject.org',
+];
+// If allowed CORS origin
+if (allowedOrigins.indexOf(req.headers.origin) != -1) {
+res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+} else {
+res.statusCode = 403;
+res.end(JSON.stringify({message: unauthorized}));
+throw unauthorized;
+}
 }
 [/sourcecode]
 
@@ -384,10 +386,10 @@ Untuk memastikan halaman AMP Anda di cache merender dan berfungsi dengan benar:
 
 1. Dari browser Anda, buka URL yang akan digunakan Cache AMP untuk mengakses halaman AMP Anda. Anda dapat menentukan format URL cache dari [alat ini di AMP berdasarkan Contoh.](https://amp.dev/documentation/examples/guides/using_the_google_amp_cache/).
 
-    Contohnya:
+   Contohnya:
 
-    - URL: `https://amp.dev/documentation/guides-and-tutorials/start/create/`
-    - Format URL Cache AMP: `https://www-ampproject-org.cdn.ampproject.org/c/s/www.ampproject.org/docs/tutorials/create.html`
+   - URL: `https://amp.dev/documentation/guides-and-tutorials/start/create/`
+   - Format URL Cache AMP: `https://www-ampproject-org.cdn.ampproject.org/c/s/www.ampproject.org/docs/tutorials/create.html`
 
 2. Buka alat pengembangan browser Anda dan pastikan bahwa tidak ada eror dan bahwa semua sumber daya telah dimuat dengan benar.
 

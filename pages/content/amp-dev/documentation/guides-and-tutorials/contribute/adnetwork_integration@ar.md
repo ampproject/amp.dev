@@ -1,9 +1,9 @@
 ---
-"$title": التكامل مع AMP لعرض الإعلانات المرئية
-"$order": '5'
+'$title': التكامل مع AMP لعرض الإعلانات المرئية
+$order: 5
 description: هذا الدليل مخصص لشبكات الإعلانات التي ترغب في التكامل مع AMP لعرض الإعلانات المرئية على صفحات AMP.
 formats:
-- ads
+  - ads
 ---
 
 هذا الدليل مخصص لشبكات الإعلانات التي ترغب في التكامل مع AMP لعرض الإعلانات المرئية على صفحات AMP.
@@ -30,11 +30,14 @@ formats:
 على سبيل المثال، يمكن استدعاء خادم Amazon A9 باستخدام التركيب التالي:
 
 ```html
-<amp-ad width="300" height="250"
-    type="a9"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  width="300"
+  height="250"
+  type="a9"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 

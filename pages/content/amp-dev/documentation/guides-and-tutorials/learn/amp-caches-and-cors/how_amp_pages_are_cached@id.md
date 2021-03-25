@@ -1,11 +1,11 @@
 ---
-"$title": Bagaimana halaman AMP disimpan di cache
-"$order": '0'
+'$title': Bagaimana halaman AMP disimpan di cache
+$order: 0
 description: Di dalam dokumen ini, Anda akan mempelajari tentang peran Cache AMP dalam ekosistem AMP, dan cara halaman AMP Anda disimpan di dalam cache.
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 ---
 
 Di dalam dokumen ini, Anda akan mempelajari tentang peran Cache AMP dalam ekosistem AMP, dan cara halaman AMP Anda disimpan di dalam cache.
@@ -35,7 +35,7 @@ AMP adalah ekosistem terbuka dan Proyek AMP secara aktif mendorong pengembangan 
 
 ## Bagaimana cara memilih Cache AMP?
 
-Sebagai penayang, Anda tidak memilih Cache AMP, *sebenarnya, platform* yang ditautkan ke konten Anda yang memilih Cache AMP (jika ada) untuk digunakan.
+Sebagai penayang, Anda tidak memilih Cache AMP, _sebenarnya, platform_ yang ditautkan ke konten Anda yang memilih Cache AMP (jika ada) untuk digunakan.
 
 Ini adalah kebalikan dari model pada umumnya yang mana penayangan konten adalah tanggung jawab dari penayang. Namun, model ini memungkinkan platform memberikan kinerja pemuatan yang dapat diprediksi kepada penggunanya. Selain itu, model ini juga memungkinkan platform memastikan invarian privasi dan keamanan yang diperlukan selama fase sebelum perenderan AMP. Untuk mempelajari tentang panduan ketat dalam membuat Cache AMP, kunjungi [Panduan Cache AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
 
@@ -55,15 +55,15 @@ Halaman AMP yang disimpan di dalam cache diakses oleh platform (seperti Google S
 
 Dengan menggunakan format AMP, Anda membuat konten Anda dapat disimpan di dalam cache oleh Cache AMP. Ada beberapa cara agar halaman AMP Anda dapat disimpan di dalam Cache AMP:
 
-- **Penemuan oleh platform**:  Platform menemukan konten AMP Anda melalui tag `<html ⚡>` atau `<html amp>` dan menyimpan konten tersebut di dalam cache. Misalnya, Google Search menggunakan crawl untuk mendapatkan konten; untuk semua halaman AMP yang valid dan dikenal, kontennya ditambahkan ke Cache AMP Google.
+- **Penemuan oleh platform**: Platform menemukan konten AMP Anda melalui tag `<html ⚡>` atau `<html amp>` dan menyimpan konten tersebut di dalam cache. Misalnya, Google Search menggunakan crawl untuk mendapatkan konten; untuk semua halaman AMP yang valid dan dikenal, kontennya ditambahkan ke Cache AMP Google.
 
-- **Cache URL request**: Platforms can specifically request an AMP page by using the AMP Cache URL format.  The AMP Cache acts as a reverse proxy, therefore, when the platform accesses the page, it results in the page being cached automatically.
+- **Cache URL request**: Platforms can specifically request an AMP page by using the AMP Cache URL format. The AMP Cache acts as a reverse proxy, therefore, when the platform accesses the page, it results in the page being cached automatically.
 
-    - Google AMP Cache URL example: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
+  - Google AMP Cache URL example: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
 [tip type="note"] **CATATAN –** URL Cache AMP bukanlah URL yang meghadap pengguna, artinya, pengguna biasanya tidak akan meminta konten melalui URL tersebut. [/tip]
 
-- **Penambahan oleh penayang**: Penayang dapat secara khusus menambahkan halaman AMP ke Cache AMP.  Opsi ini hanya berlaku untuk Cache AMP Google (kunjungi [Cache AMP Google: Memperbarui Konten AMP](https://developers.google.com/amp/cache/update-cache)).
+- **Penambahan oleh penayang**: Penayang dapat secara khusus menambahkan halaman AMP ke Cache AMP. Opsi ini hanya berlaku untuk Cache AMP Google (kunjungi [Cache AMP Google: Memperbarui Konten AMP](https://developers.google.com/amp/cache/update-cache)).
 
 ## Sumber daya tambahan
 

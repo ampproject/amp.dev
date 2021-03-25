@@ -1,10 +1,10 @@
 ---
-"$title": Procedure consigliate per la creazione di annunci in storie Web
-"$order": '16'
+'$title': Procedure consigliate per la creazione di annunci in storie Web
+$order: 16
 description: "Le storie Web sono una coinvolgente esperienza a schermo intero, con contenuti abilitati per il tocco, che immerge gli utenti nella lettura dei contenuti. Gli annunci che appaiono nelle storie Web devono avere una struttura coerente con l'interfaccia utente delle storie Web."
 formats:
-- ads
-- stories
+  - ads
+  - stories
 ---
 
 Le storie Web sono una coinvolgente esperienza a schermo intero, con contenuti abilitati per il tocco, che immerge gli utenti nella lettura dei contenuti. Gli annunci che appaiono nelle storie Web devono avere una struttura coerente con l'interfaccia utente delle storie Web. Questo garantisce un'esperienza di utilizzo affidabile e senza interruzioni. La presente guida indica come creare annunci per storie Web.

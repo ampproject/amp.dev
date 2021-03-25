@@ -1,10 +1,10 @@
 ---
-"$title": Modify presentation and layout
-"$order": '3'
-description: "Le pagine AMP sono pagine web; l’applicazione di stili alla pagina e ai suoi elementi viene effettuata tramite proprietà CSS comuni. Definisci gli stili degli elementi tramite selettori di classi o..."
+'$title': Modify presentation and layout
+$order: 3
+description: 'Le pagine AMP sono pagine web; l’applicazione di stili alla pagina e ai suoi elementi viene effettuata tramite proprietà CSS comuni. Definisci gli stili degli elementi tramite selettori di classi o...'
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## Modifica della presentazione
@@ -12,6 +12,7 @@ contributors:
 Le pagine AMP sono pagine web; l’applicazione di stili alla pagina e ai suoi elementi viene effettuata tramite proprietà CSS comuni. Definisci gli stili degli elementi tramite selettori di classi o elementi in un foglio di stile incorporato nel tag `<head>`, denominato `<style amp-custom>`:
 
 [sourcecode:html]
+
 <style amp-custom>
   /* any custom style goes here */
   body {
@@ -22,6 +23,7 @@ Le pagine AMP sono pagine web; l’applicazione di stili alla pagina e ai suoi e
     border: 1px solid black;
   }
 </style>
+
 [/sourcecode]
 
 Ciascuna pagina AMP può avere solamente un foglio di stile inline e l’uso di alcuni selettori non è consentito. [Scopri tutte le informazioni utili sullo stile](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).

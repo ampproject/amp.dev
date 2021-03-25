@@ -1,6 +1,6 @@
 ---
-"$title": "{code0}co{/code0}: تعليق"
-"$order": '2'
+'$title': '{code0}co{/code0}: تعليق'
+$order: 2
 description: يمكن للمستخدم في هذه المرحلة إضافة تعليق باستخدام amp-form، المكتبة. لاحظ كيف أن وجود النموذج مشروط، وذلك اعتمادًا على حالة المكون amp-access ...
 ---
 
@@ -9,6 +9,7 @@ description: يمكن للمستخدم في هذه المرحلة إضافة ت�
 يمكن للمستخدم في هذه المرحلة إضافة تعليق باستخدام المكتبة [`amp-form`](../../../../documentation/components/reference/amp-form.md). لاحظ كيف أن وجود النموذج مشروط، وذلك اعتمادًا على حالة المكون [`amp-access`](../../../../documentation/components/reference/amp-access.md):
 
 [sourcecode:html]
+
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
 [/sourcecode]
 
@@ -26,6 +27,7 @@ description: يمكن للمستخدم في هذه المرحلة إضافة ت�
 سيعرض مكون النموذج هذه القيم داخل الصفحة ببساطة باستخدام قالب [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md):
 
 [sourcecode:html]
+
 <div submit-success>
   <template type="amp-mustache">
     <div class="comment-user">
@@ -42,6 +44,7 @@ description: يمكن للمستخدم في هذه المرحلة إضافة ت�
 في هذا المثال، نتحقق فقط من أن قيمة التعليق ليست فارغة؛ وإذا كانت القيمة فارغة، فإننا نقوم بإرجاع خطأ من شأنه أن يؤدي إلى تنفيذ الرمز التالي
 
 [sourcecode:html]
+
 <div submit-error>
   <template type="amp-mustache">
     Error! Looks like something went wrong with your comment, please try to submit it again.

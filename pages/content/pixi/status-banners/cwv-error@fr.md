@@ -1,6 +1,6 @@
 ---
 $title: Oups! Il semble que quelque chose a mal tourné
-type: erreur
+type: error
 investigate: #core-web-vitals-checks
 ---
 

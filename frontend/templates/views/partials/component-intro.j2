@@ -1,30 +1,68 @@
 {% do doc.styles.addCssFile('css/components/organisms/component-intro.css') %}
 <div class="ap-o-component-intro">
+
+  {% if doc.bentoPath and not doc.bento %}
+  {% do doc.icons.useIcon('icons/speech-bubble.svg') %}
+  {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
+  <div class="ap-m-tip">
+    <div class="ap-a-ico ap-m-tip-icon">
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#speech-bubble"> </use></svg>
+    </div>
+    <div class="ap-m-tip-content">
+      You can now use this component outside valid AMP documents using the <a href="{{ doc.bentoPath }}">experimental Bento version of this component</a>. Learn more in our <a href="../../guides-and-tutorials/start/bento_guide.md">Bento guide</a>.
+    </div>
+  </div>
+  {% endif %}
   {% if doc.teaser %}
   <div class="ap-o-component-intro-row">
     <h4 class="ap-o-component-intro-headline">{{ _('Description') }}</h4>
     <p class="ap-o-component-intro-text">{{ doc.teaser.text }}</p>
   </div>
-  {% endif %}
+  {% endif %}
 
   {% if doc.scripts %}
-  <div class="ap-o-component-intro-row">
+  <div class="ap-o-component-intro-row ap-o-component-intro-row-inline">
     <h4 class="ap-o-component-intro-headline">{{ _('Required Scripts') }}</h4>
+    {% if doc.bento %}
+    <div class="ap-o-component-intro-filter">
+      <label>
+        <input type="radio" name="format-switch"
+          on="tap:bento-script.hide,amp-script.show" checked>AMP
+      </label>
+      <label>
+        <input type="radio" name="format-switch"
+          on="tap:amp-script.hide,bento-script.show">Bento (Standalone)
+      </label>
+    </div>
+    {% endif %}
 
     {% do doc.styles.addCssFile('css/components/atoms/copy-script.css') %}
     {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
     {% for script in doc.scripts %}
-    <div class="ap-a-copy-script">
-      <code>{{ script }}</code>
+    {% set bentoScript =  (script.js + '\n' + script.css) %}
+    <div id="amp-script" class="ap-a-copy-script">
+      <pre>{{ script.js|e }}</pre>
       <amp-iframe
-          width="24"
-          height="24"
-          layout="fixed"
-          sandbox="allow-scripts"
-          src="{{ podspec.base_urls.platform }}/shared/copy-script/#{{ script|urlencode }}">
+        width="24"
+        height="24"
+        layout="fixed"
+        sandbox="allow-scripts"
+        src="{{ podspec.base_urls.platform }}/shared/copy-script/#{{ script.js|urlencode }}">
         <div placeholder></div>
       </amp-iframe>
     </div>
+    {% if doc.bento %}
+    <div id="bento-script" class="ap-a-copy-script" hidden>
+      <pre>{{ bentoScript|e }}</pre>
+<amp-iframe width="24"
+    height="24"
+    layout="fixed"
+    sandbox="allow-scripts"
+    src="{{ podspec.base_urls.platform }}/shared/copy-script/#{{ bentoScript|safe|urlencode }}">
+        <div placeholder></div>
+      </amp-iframe>
+    </div>
+    {% endif %}
     {% endfor %}
   </div>
   {% endif %}

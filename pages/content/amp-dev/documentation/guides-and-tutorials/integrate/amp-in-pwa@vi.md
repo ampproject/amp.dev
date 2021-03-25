@@ -1,9 +1,9 @@
 ---
-"$title": Sử dụng AMP như một nguồn dữ liệu cho PWA của bạn
-"$order": '1'
+'$title': Sử dụng AMP như một nguồn dữ liệu cho PWA của bạn
+$order: 1
 description: Nếu bạn đã đầu tư vào AMP nhưng chưa xây dựng một Ứng dụng Web Lũy tiến (PWA), các Trang AMP của bạn có thể đơn giản hóa đáng kể việc phát triển Ứng dụng Web Lũy tiến.
 formats:
-- websites
+  - websites
 author: pbakaus
 ---
 
@@ -22,8 +22,10 @@ Bước đầu tiên là bao gồm một phiên bản đặc biệt của AMP m�
 Bao gồm Shadow AMP ở phần head của trang như thế này:
 
 [sourcecode:html]
+
 <!-- Asynchronously load the AMP-with-Shadow-DOM runtime library. -->
 <script async src="https://cdn.ampproject.org/shadow-v0.js"></script>
+
 [/sourcecode]
 
 ### Làm thế nào thì bạn biết API Shadow AMP đã sẵn sàng để sử dụng?
@@ -34,7 +36,7 @@ Tín hiệu cần quan sát là tình trạng sẵn có của biến số `AMP` 
 
 [sourcecode:javascript]
 (window.AMP = window.AMP || []).push(function(AMP) {
-  // AMP is now available.
+// AMP is now available.
 });
 [/sourcecode]
 
@@ -62,20 +64,20 @@ Cuối cùng, khi bạn muốn hiển thị nội dung sau một hành động c
 [sourcecode:javascript]
 function fetchDocument(url) {
 
-  // unfortunately fetch() does not support retrieving documents,
-  // so we have to resort to good old XMLHttpRequest.
-  var xhr = new XMLHttpRequest();
+// unfortunately fetch() does not support retrieving documents,
+// so we have to resort to good old XMLHttpRequest.
+var xhr = new XMLHttpRequest();
 
-  return new Promise(function(resolve, reject) {
-    xhr.open('GET', url, true);
-    xhr.responseType = 'document';
-    xhr.setRequestHeader('Accept', 'text/html');
-    xhr.onload = function() {
-      // .responseXML contains a ready-to-use Document object
-      resolve(xhr.responseXML);
-    };
-    xhr.send();
-  });
+return new Promise(function(resolve, reject) {
+xhr.open('GET', url, true);
+xhr.responseType = 'document';
+xhr.setRequestHeader('Accept', 'text/html');
+xhr.onload = function() {
+// .responseXML contains a ready-to-use Document object
+resolve(xhr.responseXML);
+};
+xhr.send();
+});
 }
 [/sourcecode]
 
@@ -92,8 +94,8 @@ var url = "https://my-domain/amp/an-article.html";
 
 // Use our fetchDocument method to get the doc
 fetchDocument(url).then(function(doc) {
-  // Let AMP take over and render the page
-  var ampedDoc = AMP.attachShadowDoc(container, doc, url);
+// Let AMP take over and render the page
+var ampedDoc = AMP.attachShadowDoc(container, doc, url);
 });
 [/sourcecode]
 

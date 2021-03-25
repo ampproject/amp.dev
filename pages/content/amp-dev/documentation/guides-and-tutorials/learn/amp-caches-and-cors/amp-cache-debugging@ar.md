@@ -1,12 +1,12 @@
 ---
-"$title": تصحيح أخطاء مشكلات ذاكرة AMP للتخزين المؤقت
-order: '8'
+'$title': تصحيح أخطاء مشكلات ذاكرة AMP للتخزين المؤقت
+$order: 8
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
-  text: " لماذا يتعطل مستندي في ذاكرة AMP للتخزين المؤقت؟"
+  text: ' لماذا يتعطل مستندي في ذاكرة AMP للتخزين المؤقت؟'
 ---
 
 <!--
@@ -40,7 +40,7 @@ have a look and request a pull request there.
     <tr>
       <td>عدم ظهور خطوط الويب (يتم استخدام الخطوط الاحتياطية)</td>
       <td>ذاكرة AMP للتخزين المؤقت ليست مدرجة ضمن القائمة البيضاء من جانب موفر الخطوط.</td>
-      <td>اتصل بموفر الخطوط واطلب منهم إدراج <a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">جميع ذاكرات التخزين المؤقت</a>.</td>
+      <td>اتصل بموفر الخطوط واطلب منهم إدراج <a href="amp-cors-requests.md#cors-security-in-amp">جميع ذاكرات التخزين المؤقت</a>.</td>
     </tr>
     <tr>
       <td>الأصول (مثل الخطوط والصور) لا تظهر (<strong>تظهر أصول HTTP فقط</strong>)</td>
@@ -59,7 +59,7 @@ have a look and request a pull request there.
     <tr>
       <td>العناصر الديناميكية مثل <code><amp-form></amp-form></code> و <code><amp-list></amp-list></code>، لا تتصرف بالسلوك المتوقع.</td>
       <td>رؤوس CORS مكسورة أو مفقودة.</td>
-      <td>تنشئ هذه المكونات طلبات عبر الأصول من ذاكرة AMP للتخزين المؤقت إلى الأصل الخاص بك. فيما تحظر المتصفحات هذه الطلبات بشكل افتراضي. للسماح بهذه الطلبات، قم بإصدار <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">رؤوس CORS</a> تسمح <a href="https://amp.dev/documentation/guides-and-tutorials/amp-cors-requests.html">بجميع ذاكرات التخزين المؤقت</a>.</td>
+      <td>تنشئ هذه المكونات طلبات عبر الأصول من ذاكرة AMP للتخزين المؤقت إلى الأصل الخاص بك. فيما تحظر المتصفحات هذه الطلبات بشكل افتراضي. للسماح بهذه الطلبات، قم بإصدار <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">رؤوس CORS</a> تسمح <a href="amp-cors-requests.md">بجميع ذاكرات التخزين المؤقت</a>.</td>
     </tr>
     <tr>
       <td>يجري تقديم محتوى ينبغي إزالته بسبب إشعار إنهاء قانوني.</td>

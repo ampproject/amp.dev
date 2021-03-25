@@ -1,11 +1,11 @@
 ---
-"$title": El código reutilizable en AMP
-order: '9'
+'$title': El código reutilizable en AMP
+$order: 9
 formats:
-- websites
-- stories
+  - websites
+  - stories
 teaser:
-  text: " head > style[amp-boilerplate] and noscript > style[amp-boilerplate]"
+  text: ' head > style[amp-boilerplate] and noscript > style[amp-boilerplate]'
 ---
 
 <!--
@@ -31,7 +31,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-##  <code>head > style[amp-boilerplate]</code> y <code>noscript > style[amp-boilerplate]</code>
+## <code>head > style[amp-boilerplate]</code> y <code>noscript > style[amp-boilerplate]</code>
 
 Los documentos AMP HTML deben incluir el siguiente código reutilizable en su etiqueta `head`. Actualmente, la validación se lleva a cabo con expresiones regulares, de modo que es importante mantener el menor número de mutaciones como sea posible. Actualmente, las mutaciones permitidas son:
 

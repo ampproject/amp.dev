@@ -1,10 +1,10 @@
 ---
-"$title": Depuração de problemas de cache do AMP
-order: '8'
+'$title': Depuração de problemas de cache do AMP
+$order: 8
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
   text: Por que meu documento está corrompido no cache AMP?
 ---
@@ -40,7 +40,7 @@ Se você ainda tiver problemas após seguir estas etapas, verifique a tabela aba
     <tr>
       <td>As fontes da Web não aparecem (são usadas fontes de reserva)</td>
       <td>O Cache AMP não aparece na lista de sites liberados (allowlist) pelo provedor de fontes.</td>
-      <td>Entre em contato com o provedor de fontes solicite que sejam liberados <a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">todos os caches</a>.</td>
+      <td>Entre em contato com o provedor de fontes solicite que sejam liberados <a href="amp-cors-requests.md#cors-security-in-amp">todos os caches</a>.</td>
     </tr>
     <tr>
       <td>Os ativos (por exemplo, fontes e imagens) não aparecem (<strong>apenas origens HTTP</strong>)</td>
@@ -59,7 +59,7 @@ Se você ainda tiver problemas após seguir estas etapas, verifique a tabela aba
     <tr>
       <td>Elementos dinâmicos tais como <code><amp-form></amp-form></code>, <code><amp-list></amp-list></code>, não se comportam como esperado.</td>
       <td>Cabeçalhos CORS com erro ou ausentes.</td>
-      <td>Esses componentes fazem solicitações cross-origin do AMP Cache até sua origem. Por default, os navegadores bloqueiam essas solicitações. Para permitir essas requisições, emita <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">cabeçalhos CORS</a> que liberem <a href="https://amp.dev/documentation/guides-and-tutorials/amp-cors-requests.html">todos os caches</a>.</td>
+      <td>Esses componentes fazem solicitações cross-origin do AMP Cache até sua origem. Por default, os navegadores bloqueiam essas solicitações. Para permitir essas requisições, emita <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">cabeçalhos CORS</a> que liberem <a href="amp-cors-requests.md">todos os caches</a>.</td>
     </tr>
     <tr>
       <td>Está sendo servido conteúdo que deve ser removido devido a um aviso legal de remoção.</td>

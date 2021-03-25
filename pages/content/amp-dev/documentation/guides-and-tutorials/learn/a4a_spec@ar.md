@@ -1,8 +1,8 @@
 ---
-"$title": AMP لمواصفات الإعلانات
-order: '3'
+'$title': AMP لمواصفات الإعلانات
+$order: 3
 formats:
-- ads
+  - ads
 teaser:
   text: "\n_إذا كنت ترغب في اقتراح إجراء تغييرات على المقياس، فيرجى التعليق على "
 toc: 'true'
@@ -31,7 +31,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-*إذا كنت ترغب في اقتراح إجراء تغييرات على المقياس، فيرجى التعليق على [اعتزام التنفيذ](https://github.com/ampproject/amphtml/issues/4264)*.
+_إذا كنت ترغب في اقتراح إجراء تغييرات على المقياس، فيرجى التعليق على [اعتزام التنفيذ](https://github.com/ampproject/amphtml/issues/4264)_.
 
 إن إعلانات AMPHTML عبارة عن آلية لعرض الإعلانات بسرعة وآداء عالٍ في صفحات AMP. ولضمان إمكانية عرض مستندات إعلان AMPHTML ("تصميمات AMP") على نحو سريع وسلسل في المتصفح ولا تعيق تجربة المستخدم، يجب على تصميمات AMP الاستجابة لمجموعة من قواعد التحقق من الصحة. وعلى نحو مماثل لروح [قواعد تنسيق AMP](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml)، تحتوي إعلانات AMPHTML على صلاحية وصول لمجموعة محدودة من العلامات والإمكانات والملحقات المسموح بها.
 
@@ -99,14 +99,16 @@ limitations under the License.
 تتطلب تصميمات إعلانات AMPHTML خط نمط نموذجيًا مختلفًا وأبسط كثيرًا مما تتطلبه [مستندات AMP العامة](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md):
 
 [sourcecode:html]
+
 <style amp4ads-boilerplate>
   body {
     visibility: hidden;
   }
 </style>
+
 [/sourcecode]
 
-*السبب:* يخفي نمط `amp-boilerplate` المحتوى الأساسي حتى يصبح وقت تشغيل AMP جاهزًا ويمكن إظهاره. ففي حالة تعطيل Javascript أو فشل تحميل وقت تشغيل AMP، يضمن النص النموذجي الافتراضي عرض المحتوى في نهاية المطاف بصرف النظر عن ذلك.في إعلانات AMPHTML، وعلى الرغم من ذلك، يتم تعطيل Javascript تمامًا، ولن تعمل إعلانات AMPHTML ولن يتم عرض أي إعلان، لذا لا حاجة لقسم`<noscript>`. وفي غياب وقت تشغيل AMP، لن تتوفر معظم الآليات التي تعتمد عليها إعلانات AMPHTML (على سبيل المثال، تحليلات تتبع الرؤية أو `amp-img` لعرض المحتوى)، لذا من الأفضل عدم عرض أي إعلان بدلًا عن عرض إعلان معطل.
+_السبب:_ يخفي نمط `amp-boilerplate` المحتوى الأساسي حتى يصبح وقت تشغيل AMP جاهزًا ويمكن إظهاره. ففي حالة تعطيل Javascript أو فشل تحميل وقت تشغيل AMP، يضمن النص النموذجي الافتراضي عرض المحتوى في نهاية المطاف بصرف النظر عن ذلك.في إعلانات AMPHTML، وعلى الرغم من ذلك، يتم تعطيل Javascript تمامًا، ولن تعمل إعلانات AMPHTML ولن يتم عرض أي إعلان، لذا لا حاجة لقسم`<noscript>`. وفي غياب وقت تشغيل AMP، لن تتوفر معظم الآليات التي تعتمد عليها إعلانات AMPHTML (على سبيل المثال، تحليلات تتبع الرؤية أو `amp-img` لعرض المحتوى)، لذا من الأفضل عدم عرض أي إعلان بدلًا عن عرض إعلان معطل.
 
 في النهاية، يستخدم النص النموذجي لإعلان AMPHTML `amp-a4a-boilerplate` بدلًا عن `amp-boilerplate`حتى يتمكن مسؤولو التحقق من الصحة من التعرف عليه بسهولة وإنتاج رسائل خطأ أكثر دقة لمساعدة المطورين.
 
@@ -152,14 +154,14 @@ limitations under the License.
 
 - تحتوي على الخصائص `transition`، أو `animation`، أو `transform`, `visibility`، أو `opacity` فقط.
 
-    *السبب:* يسمح هذا الأمر لوقت تشغيل AMP بإزالة هذه الفئة من السياق لإلغاء تنشيط الرسوم المتحركة، وذلك عندما يكون ضروريًا لأداء الصفحة.
+  _السبب:_ يسمح هذا الأمر لوقت تشغيل AMP بإزالة هذه الفئة من السياق لإلغاء تنشيط الرسوم المتحركة، وذلك عندما يكون ضروريًا لأداء الصفحة.
 
 **جيد**
 
 [sourcecode:css]
 .box {
-  transform: rotate(180deg);
-  transition: transform 2s;
+transform: rotate(180deg);
+transition: transform 2s;
 }
 [/sourcecode]
 
@@ -169,9 +171,9 @@ limitations under the License.
 
 [sourcecode:css]
 .box {
-  color: red; // non-animation property not allowed in animation selector
-  transform: rotate(180deg);
-  transition: transform 2s;
+color: red; // non-animation property not allowed in animation selector
+transform: rotate(180deg);
+transition: transform 2s;
 }
 [/sourcecode]
 
@@ -195,13 +197,13 @@ transition: background-color 2s;
 
 [sourcecode:css]
 @keyframes turn {
-  from {
-    transform: rotate(180deg);
-  }
+from {
+transform: rotate(180deg);
+}
 
-  to {
-    transform: rotate(90deg);
-  }
+to {
+transform: rotate(90deg);
+}
 }
 [/sourcecode]
 
@@ -209,21 +211,21 @@ transition: background-color 2s;
 
 [sourcecode:css]
 @keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 300%;
-  }
+from {
+margin-left: 100%;
+width: 300%;
+}
 
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
+to {
+margin-left: 0%;
+width: 100%;
+}
 }
 [/sourcecode]
 
 ### ملحقات AMP وعلاماتها المضمنة المسموح بها <a name="allowed-amp-extensions-and-builtins"></a>
 
-فميا يلي وحدات AMP وعلامات AMP المدمجة *المسموح بها* في تصميم إعلان AMPHTML. إذ إن الملحقات أو العلامات المضمنة غير المدرجة بشكل صريح محظورة.
+فميا يلي وحدات AMP وعلامات AMP المدمجة _المسموح بها_ في تصميم إعلان AMPHTML. إذ إن الملحقات أو العلامات المضمنة غير المدرجة بشكل صريح محظورة.
 
 - [amp-accordion](https://amp.dev/documentation/components/amp-accordion)
 - [amp-ad-exit](https://amp.dev/documentation/components/amp-ad-exit)
@@ -249,19 +251,19 @@ transition: background-color 2s;
 
 تكون معظم عمليات الحذف إما من أجل الأداء أو تسهيل تحليل إعلانات AMPHTML.
 
-*مثال:* `<amp-ad>` محذوف من القائمة. إذ إنه غير مسموح به صراحةً لأنه يسمح `<amp-ad>` داخل `<amp-ad>` من شأنه أن يؤدي إلى حدوث تطور شلالي غير محدودة لتحميل الإعلان، وهو ما لا يلبي أهداف أداء إعلانات AMPHTML.
+_مثال:_ `<amp-ad>` محذوف من القائمة. إذ إنه غير مسموح به صراحةً لأنه يسمح `<amp-ad>` داخل `<amp-ad>` من شأنه أن يؤدي إلى حدوث تطور شلالي غير محدودة لتحميل الإعلان، وهو ما لا يلبي أهداف أداء إعلانات AMPHTML.
 
-*مثال:* `<amp-iframe>` محذوف من القائمة. فهو غير مسموح به لأن الإعلانات يمكن أن تستخدمه لتنفيذ JavaScript عشوائي وتحميل محتوى غير محدد مسبقًا. ويجب أن تقوم الإعلانات التي ترغب في استخدام مثل هذه الإمكانيات `false` من إدخال [a4aRegistry](https://github.com/ampproject/amphtml/blob/master/ads/_a4a-config.js#L40) الخاص بها، واستخدم آلية عرض الإعلان "3p iframe" الحالية.
+_مثال:_ `<amp-iframe>` محذوف من القائمة. فهو غير مسموح به لأن الإعلانات يمكن أن تستخدمه لتنفيذ JavaScript عشوائي وتحميل محتوى غير محدد مسبقًا. ويجب أن تقوم الإعلانات التي ترغب في استخدام مثل هذه الإمكانيات `false` من إدخال [a4aRegistry](https://github.com/ampproject/amphtml/blob/master/ads/_a4a-config.js#L40) الخاص بها، واستخدم آلية عرض الإعلان "3p iframe" الحالية.
 
-*مثال:* `<amp-facebook>`، و`<amp-instagram>`، و`<amp-twitter>`، و`<amp-youtube>` محذوفة للسبب نفسه مثل `<amp-iframe>`: جميعها تنشئ iframes مضمنة ويمكن أن تستهلك موارد غير محدودة فيهم.
+_مثال:_ `<amp-facebook>`، و`<amp-instagram>`، و`<amp-twitter>`، و`<amp-youtube>` محذوفة للسبب نفسه مثل `<amp-iframe>`: جميعها تنشئ iframes مضمنة ويمكن أن تستهلك موارد غير محدودة فيهم.
 
-*مثال:* `<amp-ad-network-*-impl>` محذوفة من القائمة. إذ إن العلامة `<amp-ad>` تتعامل مع التفويض إلى علامات التنفيذ هذه؛ حيث يجب ألا تحاول التصميمات تضمينها مباشرةً.
+_مثال:_ `<amp-ad-network-*-impl>` محذوفة من القائمة. إذ إن العلامة `<amp-ad>` تتعامل مع التفويض إلى علامات التنفيذ هذه؛ حيث يجب ألا تحاول التصميمات تضمينها مباشرةً.
 
-*مثال:* لم يتم تضمين `<amp-lightbox>` إلى الأن لأنه حتى بعض تصميمات إعلانات AMPHTML قد يتم عرضها في iframes ولا توجد حاليًا آلية لتوسيع الإعلان خارج iframes. ويمكن إضافة الدعم لها في المستقبل، إذا كانت هناك رغبة واضحة في ذلك.
+_مثال:_ لم يتم تضمين `<amp-lightbox>` إلى الأن لأنه حتى بعض تصميمات إعلانات AMPHTML قد يتم عرضها في iframes ولا توجد حاليًا آلية لتوسيع الإعلان خارج iframes. ويمكن إضافة الدعم لها في المستقبل، إذا كانت هناك رغبة واضحة في ذلك.
 
 ### علامات HTML <a name="html-tags"></a>
 
-ما يلي عبارة عن علامات *allowed* في تصميم إعلانات AMPHTML. وهي علامات مسموح بها صراحةً وغير محظورة. وهذه القائمة عبارة عن مجموعة فرعية من [السماح العامة لملحق علامة AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md) العامة. ويتم ترتيب مثل هذه القائمة وفقًا لمواصفات HTML5 في القسم 4 [عناصر HTML](http://www.w3.org/TR/html5/single-page.html#html-elements).
+ما يلي عبارة عن علامات _allowed_ في تصميم إعلانات AMPHTML. وهي علامات مسموح بها صراحةً وغير محظورة. وهذه القائمة عبارة عن مجموعة فرعية من [السماح العامة لملحق علامة AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md) العامة. ويتم ترتيب مثل هذه القائمة وفقًا لمواصفات HTML5 في القسم 4 [عناصر HTML](http://www.w3.org/TR/html5/single-page.html#html-elements).
 
 وتكون معظم عمليات الحذف إما من أجل لأداء أو لأن العلامات ليست معيار HTML5. على سبيل المثال: `<noscript>` محذوفة لأن إعلانات AMPHTML تعتمد على تمكين JavaScript، لذا لن يتم تنفيذ كتلة `<noscript>` أبدًا، وبالتالي ستؤدي إلى تضخيم النطاق الترددي والتكلفة ووقت الاستجابة لتصميم الإعلان فقط.. وعلى نحو مشابه، `<acronym>`، `<big>` وأخرى غيرهما محظورة لأنها غير متوافقة مع HTML5.
 
@@ -283,7 +285,7 @@ transition: background-color 2s;
 
 - **ملحوظة:** على العكس في AMP العامة، فإن علامات `<link rel="canonical">` محظورة.
 
-    4.2.5 `<style>` 4.2.6 `<meta>`
+  4.2.5 `<style>` 4.2.6 `<meta>`
 
 #### 4.3 الأقسام<a name="43-sections"></a>
 
@@ -311,7 +313,7 @@ transition: background-color 2s;
 
 لا تقع علامات SVG في مساحة اسم HTML5. إذ تم إدراجها في أدناه من دون معرِّفات القسم.
 
-`<svg>``<g>``<path>``<glyph>``<glyphref>``<marker>``<view>``<circle>``<line>``<polygon>``<polyline>``<rect>``<text>``<textpath>``<tref>``<tspan>``<clippath>``<filter>``<lineargradient>``<radialgradient>``<mask>``<pattern>``<vkern>``<hkern>``<defs>``<use>``<symbol>``<desc>``<svg> <g> <path> <glyph> <glyphref> <marker> <view> <circle> <line> <polygon> <polyline> <rect> <text> <textpath> <tref> <tspan> <clippath> <filter> <lineargradient> <radialgradient> <mask> <pattern> <vkern> <hkern> <defs> <use> <symbol> <desc> <title>`
+` <svg>``<g>``<path>``<glyph>``<glyphref>``<marker>``<view>``<circle>``<line>``<polygon>``<polyline>``<rect>``<text>``<textpath>``<tref>``<tspan>``<clippath>``<filter>``<lineargradient>``<radialgradient>``<mask>``<pattern>``<vkern>``<hkern>``<defs>``<use>``<symbol>``<desc>``<svg> <g> <path> <glyph> <glyphref> <marker> <view> <circle> <line> <polygon> <polyline> <rect> <text> <textpath> <tref> <tspan> <clippath> <filter> <lineargradient> <radialgradient> <mask> <pattern> <vkern> <hkern> <defs> <use> <symbol> <desc> <title> `
 
 #### 4.9 البيانات المجدولة <a name="49-tabular-data"></a>
 
@@ -325,7 +327,7 @@ transition: background-color 2s;
 
 - مثل مستند AMP عام، يجب أن تحتوي علامة `<head>` الخاصة بالتصميم على علامة `<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>`.
 - على عكس AMP العام، `<noscript>` محظور.
-    - *السبب:* نظرًا لأن إعلانات AMPHTML تتطلب تمكين عمل Javascript مطلقًا، فإن كتل `<noscript>` لا تخدم أي غرض في إعلانات AMPHTML ولا تكلف سوى النطاق الترددي للشبكة.
+  - _السبب:_ نظرًا لأن إعلانات AMPHTML تتطلب تمكين عمل Javascript مطلقًا، فإن كتل `<noscript>` لا تخدم أي غرض في إعلانات AMPHTML ولا تكلف سوى النطاق الترددي للشبكة.
 - على عكس AMP العام، `<script type="application/ld+json">` محظور.
-    - *السبب:* يتم استخدام JSON LD للغة ترميز البيانات المهيكلة في صفحات المضيف،  لكن تصميمات الإعلانات ليست عبارة عن مستندات قائمة بذاتها ولا تحتوي على بيانات منظمة. فيما تكلف كتل JSON LD فيها عرض النطاق الترددي للشبكة.
+  - _السبب:_ يتم استخدام JSON LD للغة ترميز البيانات المهيكلة في صفحات المضيف، لكن تصميمات الإعلانات ليست عبارة عن مستندات قائمة بذاتها ولا تحتوي على بيانات منظمة. فيما تكلف كتل JSON LD فيها عرض النطاق الترددي للشبكة.
 - ويتم ترحيل كل قواعد البرمجة النصية والاستثناءات الأخرى من AMP العام.

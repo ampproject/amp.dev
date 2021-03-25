@@ -1,6 +1,6 @@
 ---
-"$title": 了解 AMP 故事的组成部分
-"$order": '2'
+'$title': 了解 AMP 故事的组成部分
+$order: 2
 description: 网页故事是一种全屏直观叙事体验，可以使用图片、视频、图形、音频等传递信息。非常适合…
 author: bpaduch
 ---

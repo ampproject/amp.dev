@@ -1,10 +1,10 @@
 ---
-"$title": Hata Ayıklama AMP Önbellek sorunları
-order: '8'
+'$title': Hata Ayıklama AMP Önbellek sorunları
+$order: 8
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
   text: Belgem neden AMP önbelleğinde bozuk?
 ---
@@ -40,7 +40,7 @@ Bu adımları izledikten sonra hala bir sorun varsa, aşağıdaki tabloya bakın
     <tr>
       <td>Web yazı tipleri görünmüyor (alternatif yazı tipleri kullanılmış)</td>
       <td>AMP önbelleği, yazı tipi sağlayıcısı tarafından beyaz listede değil.</td>
-      <td>Yazı tipi sağlayıcısına başvurun ve izin verilen listesindeki <a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">tüm önbellekleri</a> isteyin.</td>
+      <td>Yazı tipi sağlayıcısına başvurun ve izin verilen listesindeki <a href="amp-cors-requests.md#cors-security-in-amp">tüm önbellekleri</a> isteyin.</td>
     </tr>
     <tr>
       <td>Varlıklar (örneğin, yazı tipleri ve resimler) görünmüyor  (<strong>Yalnızca HTTP kökenliler</strong>)</td>
@@ -61,7 +61,7 @@ Bu adımları izledikten sonra hala bir sorun varsa, aşağıdaki tabloya bakın
       <td>
 <code><amp-form></amp-form></code>, <code><amp-list></amp-list></code> gibi dinamik öğeler beklendiği gibi davranmıyor.</td>
       <td>Kırık veya eksik CORS başlıkları.</td>
-      <td>Bu bileşenler, AMP Önbelleğinden kaynağınıza çapraz kaynak isteklerinde bulunur. Varsayılan olarak, tarayıcılar bu istekleri engeller. Bu isteklere izin vermek için, <a href="https://amp.dev/documentation/guides-and-tutorials/amp-cors-requests.html">tüm önbellekleri</a> listelemeye izin veren <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS başlıklarını</a> yayınlayın.</td>
+      <td>Bu bileşenler, AMP Önbelleğinden kaynağınıza çapraz kaynak isteklerinde bulunur. Varsayılan olarak, tarayıcılar bu istekleri engeller. Bu isteklere izin vermek için, <a href="amp-cors-requests.md">tüm önbellekleri</a> listelemeye izin veren <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS başlıklarını</a> yayınlayın.</td>
     </tr>
     <tr>
       <td>Yasal bir yayından kaldırma bildirimi nedeniyle kaldırılması gereken içerik sunuluyor.</td>

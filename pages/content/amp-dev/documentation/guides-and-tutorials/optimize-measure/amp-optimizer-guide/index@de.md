@@ -1,11 +1,11 @@
 ---
-"$title": AMP Optimizer verwenden
-"$order": '2'
-"$hidden": 'true'
+'$title': AMP Optimizer verwenden
+$order: 2
+'$hidden': 'true'
 description: AMP Optimizer sind Tools, mit denen du die für AMP Cache typischen Optimierungen auf deiner eigenen Website implementieren kannst. Die Verwendung eines AMP Optimizers ist der Schlüssel zu einer großartigen Benutzererfahrung auf deiner Seite und zur Einhaltung der Core Web Vitals. Dieser Leitfaden zeigt dir die besten Methoden auf, mit denen du deine AMP Seiten mithilfe eines AMP Optimizers optimieren kannst.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

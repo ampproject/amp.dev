@@ -1,10 +1,10 @@
 ---
 formats:
-- websites
-"$title": Ochrona subskrybowanych treści za pomocą szyfrowania po stronie klienta
-"$titles":
+  - websites
+'$title': Ochrona subskrybowanych treści za pomocą szyfrowania po stronie klienta
+'$titles':
   teaser: Protect your subscription content with client-side encryption.
-"$order": '10'
+$order: 10
 description: Rozwiązywanie problemów z szyfrowaniem treści poprzez wdrożenie walidacji subskrybentów premium i deszyfrowania treści po stronie klienta. Dzięki temu rozwiązaniu użytkownicy z dostępem premium będą mogli odszyfrować treść bez konieczności ładowania nowej strony ani czekania na odpowiedź zaplecza!
 author: CrystalOnScript
 ---
@@ -23,7 +23,7 @@ Rozwiąż oba te problemy poprzez wdrożenie walidacji subskrybentów premium i 
 
 W celu wdrożenia szyfrowania po stronie klienta należy połączyć szyfrowanie przy użyciu klucza symetrycznego z szyfrowaniem przy użyciu klucza publicznego w następujący sposób:
 
-1. Utwórz losowy klucz symetryczny dla każdego dokumentu, przydzielając każdemu dokumentowi *unikalny* klucz. {{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='Unikalne klucze dla każdego unikalnego dokumentu.') }}
+1. Utwórz losowy klucz symetryczny dla każdego dokumentu, przydzielając każdemu dokumentowi _unikalny_ klucz. {{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='Unikalne klucze dla każdego unikalnego dokumentu.') }}
 2. Zaszyfruj treść premium za pomocą klucza symetrycznego dokumentu. {{ image('/static/img/docs/guides/cse/cse3.jpg', 130, 243, align='', layout='intrinsic', alt='Użyj klucza dokumentu do szyfrowania treści premium.') }} Klucz jest symetryczny, aby umożliwić zaszyfrowanie i odszyfrowanie treści za pomocą tego samego klucza. {{ image('/static/img/docs/guides/cse/cse4.jpg', 188, 141, align='', layout='intrinsic', alt='Ten sam klucz, który szyfruje dokument, również go odszyfrowuje.') }}
 3. Zaszyfruj klucz dokumentu przy użyciu klucza publicznego, używając [hybrydowego protokołu szyfrowania](https://en.wikipedia.org/wiki/Hybrid_cryptosystem) do szyfrowania kluczy symetrycznych. {{ image('/static/img/docs/guides/cse/cse5.jpg', 309, 114, align='', layout='intrinsic', alt='Hybrydowy protokół szyfrowania szyfruje klucz symetryczny za pomocą klucza publicznego.') }}
 4. Za pomocą składników [`<amp-subscriptions>`](https://amp.dev/documentation/components/amp-subscriptions/) i/lub [`<amp-subscriptions-google>`](https://amp.dev/documentation/components/amp-subscriptions-google/?format=websites) zapisz zaszyfrowany klucz dokumentu w dokumencie AMP wraz z zaszyfrowaną treścią premium. {{ image('/static/img/docs/guides/cse/cse6.jpg', 264, 261, align='', layout='intrinsic', alt='Oba klucze są przechowywane wewnątrz dokumentu AMP.') }}
@@ -43,7 +43,7 @@ Wykonaj poniższe kroki, aby zintegrować obsługę szyfrowania AMP z wewnętrzn
 
 ## Krok 1: utwórz parę kluczy publiczny/prywatny
 
-Do zaszyfrowania klucza symetrycznego dokumentu niezbędna jest własna para kluczy publiczny/prywatny. Klucz publiczny jest szyfrowany za pomocą [hybrydowego protokołu szyfrowania](https://en.wikipedia.org/wiki/Hybrid_cryptosystem), a konkretnie metody szyfrowania asymetrycznego ECIES przy użyciu [krzywej eliptycznej P-256](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)) z metodą szyfrowania symetrycznego [AES-GCM](https://tools.ietf.org/html/rfc5288) (128-bitową).
+Do zaszyfrowania klucza symetrycznego dokumentu niezbędna jest własna para kluczy publiczny/prywatny. Klucz publiczny jest szyfrowany za pomocą [hybrydowego protokołu szyfrowania](https://en.wikipedia.org/wiki/Hybrid_cryptosystem), a konkretnie metody szyfrowania asymetrycznego ECIES przy użyciu [krzywej eliptycznej P-256](<https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)>) z metodą szyfrowania symetrycznego [AES-GCM](https://tools.ietf.org/html/rfc5288) (128-bitową).
 
 Wymagamy obsługi klucza publicznego za pomocą [Tink](https://github.com/google/tink) przy użyciu [tego typu klucza asymetrycznego](https://github.com/subscriptions-project/encryption/blob/617f0911c9870dae900a232e2dc8ee9196677a89/golang/vendor/github.com/google/tink/go/hybrid/hybrid_key_templates.go#L32). Aby utworzyć parę kluczy prywatny-publiczny, użyj jednego z poniższych sposobów:
 

@@ -1,9 +1,9 @@
 ---
-"$title": Kullanıcı etkileşimini geliştirme
-"$order": '6'
+'$title': Kullanıcı etkileşimini geliştirme
+$order: 6
 description: AMP ile kullanıcı etkileşimini geliştirmek için bazı hızlı ipuçları. Okuyucuların AMP ve AMP olmayan sayfalarda tutarlı markalaşma ve zengin içerikle sizi tanımlamasına yardımcı olun
 formats:
-- websites
+  - websites
 ---
 
 AMP ile kullanıcı etkileşimini geliştirmek için bazı hızlı ipuçları.

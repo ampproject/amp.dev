@@ -1,13 +1,13 @@
 ---
-"$title": Canlı blog oluşturma
-"$order": '102'
+'$title': Canlı blog oluşturma
+$order: 102
 description: Canlı bloglar, bir spor etkinliği veya seçim gibi devam eden bir etkinlik boyunca sık sık güncellenen web sayfalarıdır.
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: kul3r4
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 Canlı bloglar, bir spor etkinliği veya seçim gibi devam eden bir etkinlik boyunca sık sık güncellenen web sayfalarıdır. AMP'de, [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) bileşenini kullanarak canlı bir blog oluşturabilirsiniz.
@@ -25,9 +25,11 @@ The [`amp-live-list`](../../../documentation/components/reference/amp-live-list.
 Blog için görünebilir ilk kod budur:
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">You have updates</button>
   <div items></div>
 </amp-live-list>
@@ -41,7 +43,7 @@ Her [`amp-live-list`](../../../documentation/components/reference/amp-live-list.
 
 Ana belgeye her yeni öğe eklendiğinde, `<button update on="tap:my-live-list.update">` öğesi, tıklandığında sayfayı en son gönderileri göstermek için tetikleyen bir "güncellemeleriniz var" düğmesini gösterir.
 
-Canlı bloglar büyüyebilir ve sayfayı çok uzun yapabilir. Canlı bloga kaç öğe eklenebileceğini belirtmek için `data-max-items-per-page` özniteliğini kullanabilirsiniz.   Bir güncelleştirmeden sonraki öğe sayısı `data-max-items-per-page` değerini aşarsa, bu sayıyı aşan en eski güncelleştirmeler kaldırılır. Örneğin, sayfada şu anda 9 öğe varsa ve `data-max-items-per-page` özniteliği 10 olarak ayarlanmışsa ve en son güncellemede 3 yeni öğe varsa, en eski iki öğe son güncellemeyle sayfadan kaldırılır.
+Canlı bloglar büyüyebilir ve sayfayı çok uzun yapabilir. Canlı bloga kaç öğe eklenebileceğini belirtmek için `data-max-items-per-page` özniteliğini kullanabilirsiniz. Bir güncelleştirmeden sonraki öğe sayısı `data-max-items-per-page` değerini aşarsa, bu sayıyı aşan en eski güncelleştirmeler kaldırılır. Örneğin, sayfada şu anda 9 öğe varsa ve `data-max-items-per-page` özniteliği 10 olarak ayarlanmışsa ve en son güncellemede 3 yeni öğe varsa, en eski iki öğe son güncellemeyle sayfadan kaldırılır.
 
 [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) içindeki tüm blog gönderileri `<div items></div>` öğesinin çocukları olmalıdır. Her gönderiye bir öğe olarak atıfta bulunulduğunda, her öğenin benzersiz bir `id` ve bir `data-sort-time` olması gerekir.
 
@@ -56,9 +58,11 @@ Uzun bloglar, bir sayfada görüntülenecek blog öğelerinin sayısını sını
 Sayfalandırma ile daha önce kullandığımız basit kod şu hale gelir:
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">You have updates</button>
   <div items></div>
   <div pagination>
@@ -67,8 +71,8 @@ Sayfalandırma ile daha önce kullandığımız basit kod şu hale gelir:
         <li>1</li>
         <li>Next</li>
       </ul>
-     </nav>
-   </div>
+    </nav>
+  </div>
 </amp-live-list>
 ```
 

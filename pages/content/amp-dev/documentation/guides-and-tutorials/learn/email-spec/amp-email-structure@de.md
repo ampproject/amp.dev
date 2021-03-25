@@ -1,8 +1,8 @@
 ---
-"$title": Struktur und Rendering von AMP E-Mails
-order: '2'
+'$title': Struktur und Rendering von AMP E-Mails
+$order: 2
 formats:
-- email
+  - email
 teaser:
   text: 'Eine E-Mail besitzt die Struktur eines '
 toc: 'true'
@@ -45,7 +45,7 @@ Der Teil `text/x-amp-html` muss unter einem `multipart/alternative` Knoten versc
 
 Das `multipart/alternative` muss zusätzlich zum Knoten `text/x-amp-html` mindestens einen nicht-AMP Knoten (`text/plain` oder `text/html`) enthalten. Dies wird Benutzern angezeigt, deren E-Mail Clients AMP nicht unterstützen oder die AMP über die Einstellungen ihres E-Mail Anbieters deaktiviert haben.
 
-Hinweis: Einige E-Mail Clients[[1]](https://openradar.appspot.com/radar?id=6054696888303616) rendern nur den letzten MIME Teil. Deshalb empfehlen wir, den MIME Teil `text/x-amp-html` *vor* den MIME Teil `text/html` zu setzen.
+Hinweis: Einige E-Mail Clients[[1]](https://openradar.appspot.com/radar?id=6054696888303616) rendern nur den letzten MIME Teil. Deshalb empfehlen wir, den MIME Teil `text/x-amp-html` _vor_ den MIME Teil `text/html` zu setzen.
 
 ### Semantik für Antworten und Weiterleitung <a name="replyingforwarding-semantics"></a>
 

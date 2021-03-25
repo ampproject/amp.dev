@@ -1,6 +1,6 @@
 ---
-"$title": Membuat halaman sampul
-"$order": '4'
+'$title': Membuat halaman sampul
+$order: 4
 description: 'Untuk membuat sebuah halaman, tambahkan elemen <amp-story-page> sebagai anak (turunan pertama) amp-story. Berikan ID unik untuk halaman tersebut. Untuk halaman pertama kita, yang merupakan halaman sampul, kita berikan ID sampul yang unik: ....'
 author: bpaduch
 ---
@@ -10,13 +10,14 @@ Sebuah halaman dalam Cerita Web diwakili oleh komponen `<amp-story-page>`. Dalam
 Untuk membuat sebuah halaman, **tambahkan** elemen `<amp-story-page>` sebagai anak (turunan pertama) [`amp-story`](../../../../documentation/components/reference/amp-story.md). **Berikan** ID unik untuk halaman tersebut. Untuk halaman pertama kita, yang merupakan halaman sampul, kita berikan ID `cover` yang unik:
 
 ```html
-<amp-story standalone
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-    poster-portrait-src="assets/cover.jpg">
-   <amp-story-page id="cover">
-   </amp-story-page>
+<amp-story
+  standalone
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+>
+  <amp-story-page id="cover"> </amp-story-page>
 </amp-story>
 ```
 
@@ -40,9 +41,12 @@ Buat lapisan ini dengan menambahkan elemen `<amp-story-grid-layer>` sebagai anak
 ```html
 <amp-story-page id="cover">
   <amp-story-grid-layer template="fill">
-    <amp-img src="assets/cover.jpg"
-        width="720" height="1280"
-        layout="responsive">
+    <amp-img
+      src="assets/cover.jpg"
+      width="720"
+      height="1280"
+      layout="responsive"
+    >
     </amp-img>
   </amp-story-grid-layer>
 </amp-story-page>
@@ -105,7 +109,7 @@ Untuk lapisan ke-2, kita ingin elemen judul dan baris awal terlihat di atas, ser
 
 ```html
 <amp-story-grid-layer>
- <!--our first layer -->
+  <!--our first layer -->
 </amp-story-grid-layer>
 <amp-story-grid-layer template="vertical">
   <h1>The Joy of Pets</h1>

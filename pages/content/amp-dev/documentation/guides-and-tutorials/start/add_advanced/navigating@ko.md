@@ -1,6 +1,6 @@
 ---
-"$title": Navigating your site
-"$order": '5'
+'$title': Navigating your site
+$order: 5
 description: 대부분의 모바일 웹사이트에는 사이트 탐색 메뉴가 포함되어 있습니다. 탐색 메뉴는 형식이 매우 다양합니다. 이번 튜토리얼에서는 아래 예시를 통해...
 ---
 
@@ -18,8 +18,15 @@ description: 대부분의 모바일 웹사이트에는 사이트 탐색 메뉴�
 ```html
 <header class="headerbar">
   <a href="homepage.html">
-    <amp-img class="home-button" src="icons/home.png" width="36" height="36"></amp-img>
-  </a><div class="site-name">News Site</div></header>
+    <amp-img
+      class="home-button"
+      src="icons/home.png"
+      width="36"
+      height="36"
+    ></amp-img>
+  </a>
+  <div class="site-name">News Site</div>
+</header>
 ```
 
 다음으로 인라인 CSS에 다음 스타일 규칙을 **추가**합니다.
@@ -60,15 +67,22 @@ article {
 먼저 다음과 같이 [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) 컴포넌트의 JavaScript를 `<head>` 태그에 **추가**해야 합니다.
 
 ```html
-<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+<script
+  async
+  custom-element="amp-sidebar"
+  src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"
+></script>
 ```
 
 다음으로 메뉴 아이콘이 표시되도록 설정합니다. 아이콘을 탭하면 사이드바가 열립니다. `<header>`를 다음 코드로 **대체**하면 홈 아이콘 대신 ["햄버거"](https://en.wikipedia.org/wiki/Hamburger_button) 아이콘이 표시됩니다.
 
 ```html
 <header class="headerbar">
-  <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
-  <div class="site-name">News Site</div></header>
+  <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">
+    ☰
+  </div>
+  <div class="site-name">News Site</div>
+</header>
 ```
 
 상단 코드에서는 [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) 요소의 [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) 액션 속성으로 사이드바를 `toggle` 처리합니다. 이 요소는 `sidebar1` ID로 표시되어 있습니다. 그럼 이제 사이드바를 추가해 보겠습니다.
@@ -77,7 +91,15 @@ article {
 
 ```html
 <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
-  <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
+  <div
+    role="button"
+    aria-label="close sidebar"
+    on="tap:sidebar1.toggle"
+    tabindex="0"
+    class="close-sidebar"
+  >
+    ✕
+  </div>
   <ul class="sidebar">
     <li><a href="#">Example 1</a></li>
     <li><a href="#">Example 2</a></li>
@@ -100,7 +122,7 @@ article {
 }
 .sidebar > li {
   list-style: none;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 .sidebar a {
   text-decoration: none;

@@ -1,9 +1,9 @@
 ---
-"$title": Quảng cáo trong Câu chuyện Web
-"$order": '3'
+'$title': Quảng cáo trong Câu chuyện Web
+$order: 3
 description: Câu chuyện Web là một trải nghiệm tương tác toàn màn hình cho phép độc giả có thể đắm chìm vào nội dung. AMP Story Ad cho phép quảng cáo được tích hợp liền mạch và không gián đoạn...
 formats:
-- stories
+  - stories
 author: CrystalOnScript
 ---
 
@@ -43,17 +43,17 @@ Các Câu chuyện Web không thể hỗ trợ [`amp-ad`](../../../documentation
 
 [sourcecode:html]
 <amp-story>
-  <amp-story-auto-ads>
-    <script type="application/json">
-      {
-        "ad-attributes": {
-          // ad server configuration
-        }
-      }
-    </script>
-  </amp-story-auto-ads>
-  <amp-story-page>
-  ...
+<amp-story-auto-ads>
+<script type="application/json">
+{
+"ad-attributes": {
+// ad server configuration
+}
+}
+</script>
+</amp-story-auto-ads>
+<amp-story-page>
+...
 </amp-story>
 [/sourcecode]
 
@@ -66,8 +66,8 @@ Cách dễ nhất để bao gồm quảng cáo trong Câu chuyện Web của b�
 Các nền tảng quảng cáo hiện hỗ trợ quảng cáo Câu chuyện Web:
 
 - Google Ad Manager <a name="google-ad-manager"></a>
-    - [Quảng cáo được bán trực tiếp](https://support.google.com/admanager/answer/9038178)
-    - [Quảng cáo theo lập trình](https://support.google.com/admanager/answer/9416436)
+  - [Quảng cáo được bán trực tiếp](https://support.google.com/admanager/answer/9038178)
+  - [Quảng cáo theo lập trình](https://support.google.com/admanager/answer/9416436)
 - Sắp có quảng cáo Google AdSense
 - Các nền tảng quảng cáo khác có thể tích hợp (vui lòng liên hệ với chúng tôi để biết [chi tiết qua Github](https://github.com/ampproject/amphtml/issues/30769))
 

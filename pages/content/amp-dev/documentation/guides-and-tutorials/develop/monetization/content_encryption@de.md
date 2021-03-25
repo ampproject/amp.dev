@@ -1,10 +1,10 @@
 ---
 formats:
-- websites
-"$title": Schütze deine Abonnementinhalte mit clientseitiger Verschlüsselung
-"$titles":
+  - websites
+'$title': Schütze deine Abonnementinhalte mit clientseitiger Verschlüsselung
+'$titles':
   teaser: Protect your subscription content with client-side encryption.
-"$order": '10'
+$order: 10
 description: Probleme bei der Inhaltsverschlüsselung lassen sich lösen, indem du die Validierung von Premiumabonnenten sowie Inhaltsentschlüsselung auf der Clientseite implementierst. Mit dieser Lösung können Benutzer mit Premiumzugriff Inhalte entschlüsseln, ohne eine neue Seite zu laden oder auf die Antwort des Backends zu warten!
 author: CrystalOnScript
 ---
@@ -23,7 +23,7 @@ Beide Probleme lassen sich durch die Implementierung der Validierung von Premium
 
 Um die clientseitige Entschlüsselung zu implementieren, kombinierst du die Kryptografie mit symmetrischem Schlüssel und öffentlichem Schlüssel wie folgt:
 
-1. Erstelle für jedes Dokument einen zufälligen symmetrischen Schlüssel und gib jedem Dokument einen *eindeutigen* Schlüssel. {{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='Eindeutige Schlüssel für jedes individuelle Dokument.') }}
+1. Erstelle für jedes Dokument einen zufälligen symmetrischen Schlüssel und gib jedem Dokument einen _eindeutigen_ Schlüssel. {{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='Eindeutige Schlüssel für jedes individuelle Dokument.') }}
 2. Verschlüssle den Premiuminhalt mit dem symmetrischen Schlüssel des Dokuments. {{ image('/static/img/docs/guides/cse/cse3.jpg', 130, 243, align='', layout='intrinsic', alt='Verschlüssle den Premiuminhalt mit dem Dokumentschlüssel.') }} Der Schlüssel ist symmetrisch, damit der Inhalt mit demselben Schlüssel verschlüsselt und entschlüsselt werden kann. {{ image('/static/img/docs/guides/cse/cse4.jpg', 188, 141, align='', layout='intrinsic', alt='Das Dokument wird vom selben Schlüssel verschlüsselt und entschlüsselt.') }}
 3. Verschlüssle den Dokumentschlüssel mit einem öffentlichen Schlüssel und verwende ein Protokoll zur [hybriden Verschlüsselung](https://en.wikipedia.org/wiki/Hybrid_cryptosystem), um die symmetrischen Schlüssel zu verschlüsseln. {{ image('/static/img/docs/guides/cse/cse5.jpg', 309, 114, align='', layout='intrinsic', alt='Ein Protokoll zur hybriden Verschlüsselung verschlüsselt den symmetrischen Schlüssel mit einem öffentlichen Schlüssel.') }}
 4. Speichere den verschlüsselten Dokumentschlüssel neben dem verschlüsselten Premiuminhalt im AMP Dokument. Verwende dazu die Komponente(n) [`<amp-subscriptions>`](https://amp.dev/documentation/components/amp-subscriptions/) und/oder [`<amp-subscriptions-google>`](https://amp.dev/documentation/components/amp-subscriptions-google/?format=websites). {{ image('/static/img/docs/guides/cse/cse6.jpg', 264, 261, align='', layout='intrinsic', alt='Beide Schlüssel werden im AMP Dokument gespeichert.') }}
@@ -43,7 +43,7 @@ Führe die folgenden Schritte aus, um die Verarbeitung der AMP Verschlüsselung 
 
 ## Schritt 1: Erstelle ein Paar aus öffentlichem/privatem Schlüssel
 
-Um den symmetrischen Schlüssel des Dokuments zu verschlüsseln, benötigst du ein eigenes Paar aus öffentlichem/privatem Schlüssel. Die Verschlüsselung mit einem öffentlichen Schlüssel ist ein Protokoll zur [hybriden Verschlüsselung](https://en.wikipedia.org/wiki/Hybrid_cryptosystem), genauer gesagt eine asymmetrische ECIES Verschlüsselungsmethode vom Typ [P-256 Elliptic Curve](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)) mit einer symmetrischen [AES-GCM](https://tools.ietf.org/html/rfc5288) (128-Bit) Verschlüsselungsmethode.
+Um den symmetrischen Schlüssel des Dokuments zu verschlüsseln, benötigst du ein eigenes Paar aus öffentlichem/privatem Schlüssel. Die Verschlüsselung mit einem öffentlichen Schlüssel ist ein Protokoll zur [hybriden Verschlüsselung](https://en.wikipedia.org/wiki/Hybrid_cryptosystem), genauer gesagt eine asymmetrische ECIES Verschlüsselungsmethode vom Typ [P-256 Elliptic Curve](<https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)>) mit einer symmetrischen [AES-GCM](https://tools.ietf.org/html/rfc5288) (128-Bit) Verschlüsselungsmethode.
 
 Die Handhabung öffentlicher Schlüssel muss mit [Tink](https://github.com/google/tink) unter Verwendung [dieses asymmetrischen Schlüsseltyps](https://github.com/subscriptions-project/encryption/blob/617f0911c9870dae900a232e2dc8ee9196677a89/golang/vendor/github.com/google/tink/go/hybrid/hybrid_key_templates.go#L32) erfolgen. Verwende eine der folgenden Methoden, um dein Paar aus öffentlichem/privatem Schlüssel zu erstellen:
 

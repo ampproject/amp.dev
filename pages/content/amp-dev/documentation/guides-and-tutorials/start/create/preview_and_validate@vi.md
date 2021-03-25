@@ -1,10 +1,10 @@
 ---
-"$title": Xem trước và xác thực
-"$order": '5'
+'$title': Xem trước và xác thực
+$order: 5
 description: 'Xem trước trang AMP cũng như cách bạn xem trước mọi website HTML tĩnh khác. Không cần bước xây dựng hay tiền xử lý nào. Bạn có thể chọn: ...'
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## Xem trước
@@ -12,7 +12,7 @@ contributors:
 Xem trước trang AMP cũng như cách bạn xem trước mọi website HTML tĩnh khác. Không cần bước xây dựng hay tiền xử lý nào. Bạn có thể chọn:
 
 - **Mở trực tiếp trang này trong trình duyệt từ hệ thống tập tin** (một số yếu tố nhất định có thể không hoạt động do lỗi XMLHttpRequests).
-- **Sử dụng một máy chủ web cục bộ như Apache 2 hoặc Nginx**. *(Mẹo: Để thiết lập nhanh một máy chủ web, hãy chạy <code>python -m SimpleHTTPServer</code>.)*
+- **Sử dụng một máy chủ web cục bộ như Apache 2 hoặc Nginx**. _(Mẹo: Để thiết lập nhanh một máy chủ web, hãy chạy <code>python -m SimpleHTTPServer</code>.)_
 
 ## Xác thực
 

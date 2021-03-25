@@ -1,9 +1,9 @@
 ---
-"$title": Anuncie em histórias Web
-"$order": '3'
+'$title': Anuncie em histórias Web
+$order: 3
 description: As histórias Web são uma experiência orientada a toque em tela cheia que mergulha os leitores no seu conteúdo. A publicidade com anúncios de histórias AMP permite a criação de histórias sem descontinuidades nem interrupções ...
 formats:
-- stories
+  - stories
 author: CrystalOnScript
 ---
 
@@ -43,17 +43,17 @@ As histórias Web não suportam um [`amp-ad`](../../../documentation/components/
 
 [sourcecode:html]
 <amp-story>
-  <amp-story-auto-ads>
-    <script type="application/json">
-      {
-        "ad-attributes": {
-          // ad server configuration
-        }
-      }
-    </script>
-  </amp-story-auto-ads>
-  <amp-story-page>
-  ...
+<amp-story-auto-ads>
+<script type="application/json">
+{
+"ad-attributes": {
+// ad server configuration
+}
+}
+</script>
+</amp-story-auto-ads>
+<amp-story-page>
+...
 </amp-story>
 [/sourcecode]
 
@@ -66,8 +66,8 @@ A maneira mais fácil de incluir anúncios na sua História Web é servindo anú
 Servidores de anúncios que atualmente suportam anúncios de Histórias Web:
 
 - Google Ad Manager <a name="google-ad-manager"></a>
-    - [Anúncios de venda direta](https://support.google.com/admanager/answer/9038178)
-    - [Anúncios programados](https://support.google.com/admanager/answer/9416436)
+  - [Anúncios de venda direta](https://support.google.com/admanager/answer/9038178)
+  - [Anúncios programados](https://support.google.com/admanager/answer/9416436)
 - Google AdSense em breve
 - Outras plataformas de anúncios podem integrar (entre em contato para mais [detalhes via Github](https://github.com/ampproject/amphtml/issues/30769))
 

@@ -1,9 +1,9 @@
 ---
-"$title": Memuat PWA Anda sebelumnya dari halaman AMP Anda
-"$order": '1'
+'$title': Memuat PWA Anda sebelumnya dari halaman AMP Anda
+$order: 1
 description: Strategi yang bagus adalah membuat pintu masuk ke situs sebagai halaman AMP, lalu menyiapkan PWA di belakang layar dan beralih ....
 formats:
-- websites
+  - websites
 author: pbakaus
 ---
 
@@ -23,7 +23,7 @@ AMP adalah solusi yang ideal untuk sesuatu yang disebut **halaman perincian**, h
 
 ### PWA untuk keterlibatan dan interaktivitas yang kaya
 
-Di sisi lain, Aplikasi Web Progresif memungkinkan interaktivitas dan keterlibatan yang lebih besar, tetapi tidak memiliki *karakteristik pemuatan pertama yang seketika* untuk halaman AMP. Esensinya adalah teknologi yang disebut Pekerja Layanan (Service Worker), proksi sisi klien yang memungkinkan Anda menyimpan segala jenis aset halaman Anda dalam cache, tetapi Pekerja Layanan hanya aktif *setelah* pemuatan pertama.
+Di sisi lain, Aplikasi Web Progresif memungkinkan interaktivitas dan keterlibatan yang lebih besar, tetapi tidak memiliki _karakteristik pemuatan pertama yang seketika_ untuk halaman AMP. Esensinya adalah teknologi yang disebut Pekerja Layanan (Service Worker), proksi sisi klien yang memungkinkan Anda menyimpan segala jenis aset halaman Anda dalam cache, tetapi Pekerja Layanan hanya aktif _setelah_ pemuatan pertama.
 
 {{ image('/static/img/docs/pwamp_comparison.png', 977, 549, align='', caption='Pro dan kontra AMP vs. PWA.') }}
 
@@ -36,8 +36,10 @@ AMP memiliki kemampuan untuk menginstal Pekerja Layanan Aplikasi Web Progresif A
 Pertama-tama, instal Pekerja Layanan di semua Halaman AMP Anda dengan menggunakan [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md), dengan terlebih dahulu menyertakan komponen melalui skripnya di `<head>` halaman Anda:
 
 [sourcecode:html]
+
 <script async custom-element="amp-install-serviceworker"
   src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+
 [/sourcecode]
 
 Kemudian, tambahkan komponen berikut ini di tempat lain dalam `<body>` Anda (ubah agar mengarah ke Pekerja Layanan Anda yang sebenarnya):
@@ -54,20 +56,20 @@ Terakhir, pada langkah penginstalan Pekerja Layanan, simpan sumber daya yang aka
 [sourcecode:javascript]
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
-  '/',
-  '/styles/main.css',
-  '/script/main.js'
+'/',
+'/styles/main.css',
+'/script/main.js'
 ];
 
 self.addEventListener('install', function(event) {
-  // Perform install steps
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(function(cache) {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-  );
+// Perform install steps
+event.waitUntil(
+caches.open(CACHE_NAME)
+.then(function(cache) {
+console.log('Opened cache');
+return cache.addAll(urlsToCache);
+})
+);
 });
 [/sourcecode]
 
@@ -83,14 +85,14 @@ Pada kasus ini, Anda memiliki situs web kanonis (non-AMP) dan membuat halaman AM
 
 ### 2. Jika situs kanonis Anda adalah AMP
 
-Dalam hal ini, halaman kanonis Anda *memang* halaman AMP: Anda membuat seluruh situs web dengan AMP, dan hanya menggunakan AMP sebagai perpustakaan (fakta yang menarik: situs yang sedang Anda buka ini dibuat dengan cara ini). **Dalam skenario ini, sebagian besar tautan di halaman AMP Anda akan mengarah ke halaman AMP lain.**
+Dalam hal ini, halaman kanonis Anda _memang_ halaman AMP: Anda membuat seluruh situs web dengan AMP, dan hanya menggunakan AMP sebagai perpustakaan (fakta yang menarik: situs yang sedang Anda buka ini dibuat dengan cara ini). **Dalam skenario ini, sebagian besar tautan di halaman AMP Anda akan mengarah ke halaman AMP lain.**
 
 Kini Anda dapat menerapkan PWA di jalur terpisah, seperti `your-domain.com/pwa` dan menggunakan Pekerja Layanan yang telah berjalan untuk **mencegat navigasi browser saat seseorang mengeklik tautan di Halaman AMP**:
 
 [sourcecode:javascript]
 self.addEventListener('fetch', event => {
-    if (event.request.mode === 'navigate') {
-      event.respondWith(fetch('/pwa'));
+if (event.request.mode === 'navigate') {
+event.respondWith(fetch('/pwa'));
 
       // Immediately start downloading the actual resource.
       fetch(event.request.url);

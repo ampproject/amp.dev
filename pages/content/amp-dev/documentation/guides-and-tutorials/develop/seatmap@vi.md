@@ -1,13 +1,13 @@
 ---
-"$title": Tạo một sơ đồ chỗ ngồi
-"$order": '104'
+'$title': Tạo một sơ đồ chỗ ngồi
+$order: 104
 description: Sơ đồ chỗ ngồi là một phần quan trọng của các ứng dụng bán vé trên web, nhưng việc triển khai chúng trong AMP có thể khó khăn. Đọc tiếp để biết cách triển khai một sơ đồ chỗ ngồi trong AMP
 tutorial: 'true'
 formats:
-- websites
+  - websites
 author: kul3r4
 contributors:
-- pbakaus
+  - pbakaus
 ---
 
 Sơ đồ chỗ ngồi là một phần quan trọng của các ứng dụng bán vé trên web, nhưng việc triển khai chúng trong AMP có thể khó khăn. Đọc tiếp để biết cách triển khai một sơ đồ chỗ ngồi trong AMP bằng cách sử dụng một tổ hợp các thành phần AMP có sẵn.
@@ -60,7 +60,7 @@ Sơ đồ chỗ ngồi được render thông qua [`amp-list`](../../../document
 
 ## Tạo phong cách cho các chỗ ngồi không có sẵn
 
-Trong ví dụ ở trên, `{% raw %}{{unavailable}}{% endraw %}`  là giá trị của trường được điểm cuối JSON trả về và được sử dụng để tạo phong cách cho một chỗ ngồi không có sẵn. Lối tiếp cận này không cho phép bạn xóa các thuộc tính như `option="{{id}}"` trong trường hợp một chỗ ngồi không có sẵn, bởi khuôn mẫu này không thể bọc toàn bộ yếu tố `<html>` của cả trang.
+Trong ví dụ ở trên, `{% raw %}{{unavailable}}{% endraw %}` là giá trị của trường được điểm cuối JSON trả về và được sử dụng để tạo phong cách cho một chỗ ngồi không có sẵn. Lối tiếp cận này không cho phép bạn xóa các thuộc tính như `option="{{id}}"` trong trường hợp một chỗ ngồi không có sẵn, bởi khuôn mẫu này không thể bọc toàn bộ yếu tố `<html>` của cả trang.
 
 Một lối tiếp cận thay thế, chi tiết hơn là lặp lại các thẻ như sau:
 
@@ -94,7 +94,7 @@ Nếu bạn không có một div bọc mà lại thêm lề vào SVG, lề đó 
 Khi người dùng nhấn vào các chỗ ngồi khác nhau, bạn có thể theo dõi `id` của chỗ ngồi được chọn bằng cách sử dụng `amp-state`:
 
 - Thêm một biểu thức [`amp-bind`](../../../documentation/components/reference/amp-bind.md) cho mỗi chỗ ngồi để thêm chỗ ngồi được chọn vào danh sách
-- Hoặc sử dụng [`amp-selector`](../../../documentation/components/reference/amp-selector.md) với hành động  `on="select:AMP.setState({selectedSeats: event.selectedOptions})"` để tất cả các chỗ ngồi được chọn đều được thêm vào một danh sách
+- Hoặc sử dụng [`amp-selector`](../../../documentation/components/reference/amp-selector.md) với hành động `on="select:AMP.setState({selectedSeats: event.selectedOptions})"` để tất cả các chỗ ngồi được chọn đều được thêm vào một danh sách
 
 Tuy lối tiếp cận ban đầu không cần thành phần bổ sung [`amp-selector`](../../../documentation/components/reference/amp-selector.md), nó có thể khiến sơ đồ chỗ ngồi trở nên rất chậm bởi mỗi biểu thức [`amp-bind`](../../../documentation/components/reference/amp-bind.md) đều sẽ được đánh giá ở mỗi lần chọn/bỏ chọn chỗ ngồi.
 
@@ -106,26 +106,27 @@ Lối tiếp cận thứ hai cũng cho phép bạn giảm việc trùng lặp bi
 
 [sourcecode:html]
 {% raw %}<div class="seatmap-container">
-  <amp-list layout="fill" src="/json/seats.json" binding="no" items="." single-item noloading>
-    <template type="amp-mustache">
-      <amp-pan-zoom layout="fill" class="seatmap">
-        <amp-selector multiple on="select:AMP.setState({
+<amp-list layout="fill" src="/json/seats.json" binding="no" items="." single-item noloading>
+<template type="amp-mustache">
+<amp-pan-zoom layout="fill" class="seatmap">
+<amp-selector multiple on="select:AMP.setState({
           selectedSeats: event.selectedOptions
         })" layout="fill">
-          <div class="svg-container">
-            <svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
-            {{#seats}}
-              <rect option="{{id}}" role="button"
+<div class="svg-container">
+<svg preserveAspectRatio="xMidYMin slice" viewBox="0 0 {{width}} {{height}}">
+{{#seats}}
+<rect option="{{id}}" role="button"
                tabindex="0" class="seat {{unavailable}}"
               x="{{x}}" y="{{y}}"
               width="{{width}}" height="{{height}}"
               rx="{{rx}}" ry="{{ry}}"/>
-            {{/seats}}
-            </svg>
-          </div>
-        </amp-selector>
-      </amp-pan-zoom>
-    </template>
-  </amp-list>
+{{/seats}}
+</svg>
+</div>
+</amp-selector>
+</amp-pan-zoom>
+</template>
+</amp-list>
+
 </div>{% endraw %}
 [/sourcecode]

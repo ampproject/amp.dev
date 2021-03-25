@@ -1,10 +1,10 @@
 ---
-"$title": Preview and validate
-"$order": '5'
-description: "Visualizza l’anteprima della pagina AMP esattamente come faresti con qualsiasi altro sito HTML statico. Non sono necessarie fasi di build o di pre-elaborazione. Puoi scegliere tra:..."
+'$title': Preview and validate
+$order: 5
+description: 'Visualizza l’anteprima della pagina AMP esattamente come faresti con qualsiasi altro sito HTML statico. Non sono necessarie fasi di build o di pre-elaborazione. Puoi scegliere tra:...'
 author: pbakaus
 contributors:
-- bpaduch
+  - bpaduch
 ---
 
 ## Anteprima
@@ -12,7 +12,7 @@ contributors:
 Visualizza l’anteprima della pagina AMP esattamente come faresti con qualsiasi altro sito HTML statico. Non sono necessarie fasi di build o di pre-elaborazione. Puoi scegliere tra:
 
 - **Aprire la pagina direttamente nel browser dal file system** (è possibile che alcuni elementi non funzionino a causa di un errore XMLHttpRequests).
-- **Usare un server web locale come Apache 2 o Nginx**. *(Suggerimento. Per attivare rapidamente un server web esegui il comando `python -m SimpleHTTPServer`.)*
+- **Usare un server web locale come Apache 2 o Nginx**. _(Suggerimento. Per attivare rapidamente un server web esegui il comando `python -m SimpleHTTPServer`.)_
 
 ## Convalida
 

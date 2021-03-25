@@ -1,11 +1,11 @@
 ---
-"$title": Использование экспериментальных возможностей
-"$order": '3'
+'$title': Использование экспериментальных возможностей
+$order: 3
 description: Экспериментальные компоненты AMP — это уже существующие функции, которые пока не готовы к массовому использованию.
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 ---
 
 [Экспериментальные компоненты AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments) – это существующие функции, которые пока не готовы к массовому использованию.
@@ -20,7 +20,7 @@ formats:
 
 ## Подключитесь к каналу разработки AMP
 
-Канал AMP Dev Channel обеспечивает поддержку новейших JavaScript-библиотек AMP в браузере.
+Канал AMP Beta Channel обеспечивает поддержку новейших JavaScript-библиотек AMP в браузере.
 
 Версия с канала разработчиков AMP **может быть менее стабильной** и содержать функции, доступные не всем пользователям. Включите эту опцию, если хотите помочь в тестировании новых версий AMP, сообщать об ошибках или создавать документы, для которых требуется новая функция, которая пока недоступна для всех.
 
@@ -29,9 +29,9 @@ formats:
 - тестировать новые функции, которые еще не доступны для всех пользователей, и экспериментировать с ними.
 - проводить контроль качества (QA), чтобы обеспечить совместимость вашего сайта со следующей версией AMP.
 
-Если вы обнаружите проблему, которая возникает только в версии AMP для Dev Channel, создайте [задачу](https://github.com/ampproject/amphtml/issues/new) с описанием проблемы. Всегда указывайте URL-адрес страницы, на которой можно воспроизвести проблему.
+Если вы обнаружите проблему, которая возникает только в версии AMP для Beta Channel, создайте [задачу](https://github.com/ampproject/amphtml/issues/new) с описанием проблемы. Всегда указывайте URL-адрес страницы, на которой можно воспроизвести проблему.
 
-Чтобы подключить ваш браузер к AMP Dev Channel, перейдите на [страницу экспериментов AMP](https://cdn.ampproject.org/experiments.html) и активируйте эксперимент «AMP Dev Channel». Чтобы получать уведомления о важных или ломающих совместимость изменениях в AMP, подпишитесь на список рассылки [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
+Чтобы подключить ваш браузер к AMP Beta Channel, перейдите на [страницу экспериментов AMP](https://cdn.ampproject.org/experiments.html) и активируйте эксперимент «AMP Beta Channel». Чтобы получать уведомления о важных или ломающих совместимость изменениях в AMP, подпишитесь на список рассылки [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
 
 ## Как подключить экспериментальный компонент
 
@@ -48,7 +48,7 @@ formats:
 Для контента, загружаемого с доменов, не принадлежащих CDN, эксперименты можно включать и выключать с помощью консоли разработчика, используя следующую команду:
 
 ```js
-AMP.toggleExperiment('experiment')
+AMP.toggleExperiment('experiment');
 ```
 
 Любой файл AMP, содержащий экспериментальные функции, не пройдет [валидацию AMP](validation-workflow/validate_amp.md). Чтобы получить готовые к рабочему развертыванию документы AMP, удалите экспериментальные компоненты.
@@ -60,7 +60,7 @@ AMP.toggleExperiment('experiment')
 ```html
 <head>
   ...
-  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b">
+  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b" />
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   ...
@@ -89,7 +89,7 @@ AMP.toggleExperiment('experiment')
 На каждой странице, где будет использоваться эксперимент на домене разработчика, разместите следующий тег `<meta>` внутри `<head>`:
 
 ```html
-<meta name="amp-experiment-token" content="{copy your token here}">
+<meta name="amp-experiment-token" content="{copy your token here}" />
 ```
 
 Примечание. `"amp-experiment-token"` — это буквальная строка `"amp-experiment-token"`, а не сам токен (который указывается в атрибуте content) и не имя эксперимента.

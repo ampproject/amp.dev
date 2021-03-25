@@ -1,11 +1,11 @@
 ---
-"$title": Configure analytics
-"$order": '5'
-"$hidden": 'true'
+'$title': Configure analytics
+$order: 5
+'$hidden': 'true'
 description: 'Если в качестве поставщика функций аналитики вы используете Google Analytics, прочитайте, '
 formats:
-- websites
-- stories
+  - websites
+  - stories
 ---
 
 [tip] **СОВЕТ.** Если в качестве поставщика функций аналитики вы используете Google Analytics, прочитайте, [как настроить работу базовых функций Google Analytics в AMP](https://developers.google.com/analytics/devguides/collection/amp-analytics/#basic_setup_to_measure_page_views) и [как связать традиционный (не-AMP) контент с AMP-контентом при помощи Client ID](https://support.google.com/analytics/answer/7486764). [/tip]

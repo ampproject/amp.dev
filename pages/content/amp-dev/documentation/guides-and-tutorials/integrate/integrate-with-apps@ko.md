@@ -1,9 +1,9 @@
 ---
-"$title": Integrate AMP with your app
-"$order": '2'
+'$title': Integrate AMP with your app
+$order: 2
 description: 이 가이드는 AMP 페이지를 통합하고 연결하려는 모바일 및 웹 앱 개발자를 위해 작성되었습니다. AMP 버전의 공유 URL을 로드하여 더 빠른 사용자 환경을 제공하는 모바일 채팅 앱을 예시로...
 formats:
-- websites
+  - websites
 ---
 
 이 가이드는 AMP 페이지를 통합하고 연결하려는 모바일 및 웹 앱 개발자를 위해 작성되었습니다. AMP 버전의 공유 URL을 로드하여 더 빠른 사용자 환경을 제공하는 모바일 채팅 앱을 예시로 살펴보겠습니다.
@@ -47,10 +47,12 @@ Google에서 제공하는 AMP URL API를 사용하면 주어진 URL 목록([공�
 예를 들어, 아래와 같은 URL 목록이 주어질 경우:
 
 ```json
-{"urls": [
-  "https://www.example.org/article-with-amp-version",
-  "http://www.example.com/no-amp-version.html"
-]}
+{
+  "urls": [
+    "https://www.example.org/article-with-amp-version",
+    "http://www.example.com/no-amp-version.html"
+  ]
+}
 ```
 
 응답 본문에 JSON 형식의 AMP URL 매핑이 포함됩니다.

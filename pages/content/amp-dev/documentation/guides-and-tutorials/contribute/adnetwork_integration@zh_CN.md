@@ -1,9 +1,9 @@
 ---
-"$title": 与 AMP 集成以投放展示广告
-"$order": '5'
+'$title': 与 AMP 集成以投放展示广告
+$order: 5
 description: 本指南适用于想要与 AMP 集成以向 AMP 网页投放展示广告的广告联盟。
 formats:
-- ads
+  - ads
 ---
 
 本指南适用于想要与 AMP 集成以向 AMP 网页投放展示广告的广告联盟。
@@ -30,11 +30,14 @@ formats:
 例如，可使用以下语法调用 Amazon A9 服务器：
 
 ```html
-<amp-ad width="300" height="250"
-    type="a9"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  width="300"
+  height="250"
+  type="a9"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 

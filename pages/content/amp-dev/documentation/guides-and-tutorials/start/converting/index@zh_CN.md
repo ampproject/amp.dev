@@ -1,12 +1,12 @@
 ---
-"$title": 将 HTML 转换成 AMP
+'$title': 将 HTML 转换成 AMP
 formats:
-- websites
-"$titles":
+  - websites
+'$titles':
   teaser: Convert HTML to AMP
-"$order": '0'
+$order: 0
 description: 在本教程中，您将学习 AMP 的重要概念以及 AMP 文档与传统 HTML 文档的不同之处。待学完本教程时…
-"$hidden": 'true'
+'$hidden': 'true'
 teaser:
   icon: 转换
   text: 在这个分步教程中学习如何将 HTML 转换成 AMP。

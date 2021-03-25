@@ -1,13 +1,13 @@
 ---
-"$title": ドキュメントのコントリビューション
-"$order": '0'
-"$hidden": 'true'
+'$title': ドキュメントのコントリビューション
+$order: 0
+'$hidden': 'true'
 description: amp.dev へのドキュメントのコントリビューションを始めるには
 formats:
-- websites
-- stories
-- ads
-- email
+  - websites
+  - stories
+  - ads
+  - email
 author: CrystalOnScript
 ---
 
@@ -21,7 +21,7 @@ AMP プロジェクトへのコントリビューションにご興味いただ�
 
 [AMP プロジェクト Slack](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) [アウトリーチワーキンググループ](https://github.com/ampproject/wg-outreach)に参加し、どの作業を行っているか教えてください！
 
-amp.dev へのドキュメントのコントリビューションにはいくつかの方法があります。手始めに、いくつかを概説しています。ほかの方法hでのコントリビューションをご希望の方は、その方法が認められるか、お気軽に[ご相談ください](https://github.com/ampproject/wg-outreach)！
+amp.dev へのドキュメントのコントリビューションにはいくつかの方法があります。手始めに、いくつかを概説しています。ほかの方法 h でのコントリビューションをご希望の方は、その方法が認められるか、お気軽に[ご相談ください](https://github.com/ampproject/wg-outreach)！
 
 ## Good first issues
 

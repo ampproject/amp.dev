@@ -1,8 +1,8 @@
 ---
-"$title": AMPHTML Hikayelerinin Sınırlamaları (Yakında)
-"$order": '2'
+'$title': AMPHTML Hikayelerinin Sınırlamaları (Yakında)
+$order: 2
 formats:
-- stories
+  - stories
 draft: 'true'
 ---
 

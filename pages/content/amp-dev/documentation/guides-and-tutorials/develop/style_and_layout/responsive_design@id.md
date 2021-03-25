@@ -1,23 +1,23 @@
 ---
-"$title": Membuat halaman AMP responsif
-"$order": '5'
+'$title': Membuat halaman AMP responsif
+$order: 5
 description: Desain web yang responsif adalah tentang membangun halaman web yang luwes yang menanggapi kebutuhan pengguna Anda—halaman yang pas dengan ukuran dan orientasi layar pengguna. Anda dapat mencapai ....
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 components:
-- iframe
-- youtube
+  - iframe
+  - youtube
 author: bpaduch
 contributors:
-- pbakaus
+  - pbakaus
 ---
 
 ## Pendahuluan
 
-Desain web yang responsif adalah tentang membangun halaman web yang luwes yang menanggapi kebutuhan pengguna Anda—halaman yang pas dengan orientasi dan ukuran layar perangkat pengguna. Anda dapat membuatnya dengan mudah di AMP.  AMP mendukung semua kategori perangkat dan layar, serta menyediakan komponen bawaan yang responsif.
+Desain web yang responsif adalah tentang membangun halaman web yang luwes yang menanggapi kebutuhan pengguna Anda—halaman yang pas dengan orientasi dan ukuran layar perangkat pengguna. Anda dapat membuatnya dengan mudah di AMP. AMP mendukung semua kategori perangkat dan layar, serta menyediakan komponen bawaan yang responsif.
 
 Dalam panduan ini, kami akan menunjukkan cara menerapkan dasar-dasar komponen responsif tersebut di AMP dengan mudah:
 
@@ -45,9 +45,9 @@ Ini adalah pengaturan viewport umum yang digunakan untuk situs responsif. Meskip
 
 Meskipun Anda dapat membuat elemen responsif dengan mudah menggunakan `"layout=responsive"`, Anda tetap harus mempertimbangkan tampilan elemen di semua ukuran layar--termasuk desktop dan tablet. Kesalahan umum yang dilakukan adalah memungkinkan gambar memiliki lebar layar maksimum, sehingga ukuran gambar melebihi batas ukuran yang ditentukan, yang menyebabkan pengalaman buruk bagi pengguna perangkat berlayar lebar. Secara default, elemen dengan `layout=responsive` akan menyesuaikan lebar maksimum penampung elemennya, yang sering kali ukuran lebarnya tidak dibatasi (contohnya, width=100%). Anda dapat menyempurnakan tampilan gambar dengan hanya membatasi lebar penampungnya. Misalnya, dengan menetapkan aturan "max-width" pada "body" atau "main", Anda dapat membatasi ukuran semua gambar ke lebar maksimum tertentu.
 
-Mengubah ukuran setiap elemen agar sesuai dengan ukuran layar bisa jadi rumit<sup><a href="#fn1" id="ref1">*</a></sup>. Tapi di AMP, Anda dapat membuat elemen responsif hanya dengan menentukan atribut `"layout=responsive"` beserta atribut `width` dan `height` elemen. Saat Anda menerapkan tata letak `responsive` pada sebuah elemen, elemen tersebut otomatis akan berubah ukurannya sesuai dengan lebar elemen penampungnya, dan tinggi elemen akan berubah berdasarkan rasio aspek yang ditentukan oleh `width` dan `height` elemen. Hampir semua elemen AMP mendukung tata letak `responsive`; buka dokumentasi referensi elemen untuk mengetahui tata letak apa saja yang didukung.
+Mengubah ukuran setiap elemen agar sesuai dengan ukuran layar bisa jadi rumit<sup><a href="#fn1" id="ref1">\*</a></sup>. Tapi di AMP, Anda dapat membuat elemen responsif hanya dengan menentukan atribut `"layout=responsive"` beserta atribut `width` dan `height` elemen. Saat Anda menerapkan tata letak `responsive` pada sebuah elemen, elemen tersebut otomatis akan berubah ukurannya sesuai dengan lebar elemen penampungnya, dan tinggi elemen akan berubah berdasarkan rasio aspek yang ditentukan oleh `width` dan `height` elemen. Hampir semua elemen AMP mendukung tata letak `responsive`; buka dokumentasi referensi elemen untuk mengetahui tata letak apa saja yang didukung.
 
-Meskipun Anda dapat membuat elemen responsif dengan mudah menggunakan `"layout=responsive"`, Anda tetap harus mempertimbangkan tampilan elemen di semua ukuran layar--termasuk desktop dan tablet. Kesalahan umum yang dilakukan adalah memungkinkan gambar memiliki lebar layar maksimum, sehingga ukuran gambar melebihi batas ukuran yang ditentukan, yang menyebabkan pengalaman buruk bagi pengguna perangkat berlayar lebar.  Secara default, elemen dengan `layout=responsive` akan menyesuaikan lebar maksimum penampung elemennya, yang sering kali ukuran lebarnya tidak dibatasi (contohnya, width=100%).  Anda dapat menyempurnakan tampilan gambar dengan hanya membatasi lebar penampungnya. Misalnya, dengan menetapkan aturan "max-width" pada "body" atau "main", Anda dapat membatasi ukuran semua gambar ke lebar maksimum tertentu.
+Meskipun Anda dapat membuat elemen responsif dengan mudah menggunakan `"layout=responsive"`, Anda tetap harus mempertimbangkan tampilan elemen di semua ukuran layar--termasuk desktop dan tablet. Kesalahan umum yang dilakukan adalah memungkinkan gambar memiliki lebar layar maksimum, sehingga ukuran gambar melebihi batas ukuran yang ditentukan, yang menyebabkan pengalaman buruk bagi pengguna perangkat berlayar lebar. Secara default, elemen dengan `layout=responsive` akan menyesuaikan lebar maksimum penampung elemennya, yang sering kali ukuran lebarnya tidak dibatasi (contohnya, width=100%). Anda dapat menyempurnakan tampilan gambar dengan hanya membatasi lebar penampungnya. Misalnya, dengan menetapkan aturan "max-width" pada "body" atau "main", Anda dapat membatasi ukuran semua gambar ke lebar maksimum tertentu.
 
 ##### Misalnya: Membatasi lebar gambar responsif
 
@@ -83,7 +83,7 @@ However, we want the image to not stretch beyond its intended size, so we set th
 
 <a id="fn1"></a> [tip type="note"] **Mengapa rumit mengubah ukuran elemen agar sesuai dengan ukuran layar, padahal saya dapat melakukannya dengan mudah menggunakan gaya `width=100%` style?**
 
-Bagian rumitnya adalah merender elemen responsif di halaman tanpa memengaruhi metrik performa atau pengalaman pengguna. Ya, Anda dapat menyesuaikan ukuran gambar dan ukuran layar dengan mudah dengan menggunakan "width=100%", namun akan ada penurunan kinerja. Browser harus mengunduh gambar terlebih dahulu untuk mendapatkan dimensi gambar, lalu mengubah ukuran gambar agar sesuai dengan ukuran layar, dan pada akhirnya menyesuaikan tata letak (reflow) dan tampilan (repaint) halaman. Di AMP,  jalur perenderan akan dioptimalkan sehingga halaman ditampilkan, dengan menetapkan gambar di samping bakal tempat berdasarkan dimensi yang diberikan oleh [`amp-img`](../../../../documentation/components/reference/amp-img.md) (angka tersebut digunakan untuk menetapkan rasio aspek), kemudian sumber daya diunduh, dan halaman disesuaikan tampilannya (repaint). Tidak perlu menyesuaikan tata letak (reflow). [/tip]
+Bagian rumitnya adalah merender elemen responsif di halaman tanpa memengaruhi metrik performa atau pengalaman pengguna. Ya, Anda dapat menyesuaikan ukuran gambar dan ukuran layar dengan mudah dengan menggunakan "width=100%", namun akan ada penurunan kinerja. Browser harus mengunduh gambar terlebih dahulu untuk mendapatkan dimensi gambar, lalu mengubah ukuran gambar agar sesuai dengan ukuran layar, dan pada akhirnya menyesuaikan tata letak (reflow) dan tampilan (repaint) halaman. Di AMP, jalur perenderan akan dioptimalkan sehingga halaman ditampilkan, dengan menetapkan gambar di samping bakal tempat berdasarkan dimensi yang diberikan oleh [`amp-img`](../../../../documentation/components/reference/amp-img.md) (angka tersebut digunakan untuk menetapkan rasio aspek), kemudian sumber daya diunduh, dan halaman disesuaikan tampilannya (repaint). Tidak perlu menyesuaikan tata letak (reflow). [/tip]
 
 ## Mengubah skala media untuk halaman <a name="scaling-media-for-the-page"></a>
 
@@ -209,7 +209,7 @@ Pada contoh berikut ini, ada 3 gambar kucing yang dipangkas, yang ingin kita tam
 
 Menampilkan halaman yang dimuat dengan cepat memerlukan gambar yang dioptimalkan--baik dari segi ukuran, mutu, maupun format. Selalu kompresi ukuran berkas ke tingkat kualitas terendah yang dapat diterima. Ada berbagai fitur yang dapat Anda gunakan untuk "mengompresi" gambar (cth.: <a>ImageAlph</a> atau <a>TinyPNG</a>). Dari segi format gambar, beberapa format gambar menyediakan kemampuan kompresi yang lebih baik dibandingkan yang lainnya (ch.: WebP dan JPEG XR vs JPEG). Anda pasti ingin memberikan gambar yang paling dioptimalkan bagi pengguna, serta memastikan gambar tersebut didukung oleh browser pengguna (yaitu <a>tidak semua browser mendukung semua format gambar</a>).
 
-Di HTML, Anda dapat menampilkan format gambar yang berbeda menggunakan tag `picture`.  Di AMP, meskipun tag `picture` tidak didukung, Anda dapat menampilkan gambar yang berbeda menggunakan atribut `fallback`.
+Di HTML, Anda dapat menampilkan format gambar yang berbeda menggunakan tag `picture`. Di AMP, meskipun tag `picture` tidak didukung, Anda dapat menampilkan gambar yang berbeda menggunakan atribut `fallback`.
 
 [tip type="read-on"]Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang fallback, lihat panduan [Placeholder & Fallback](placeholders.md). [/tip]
 

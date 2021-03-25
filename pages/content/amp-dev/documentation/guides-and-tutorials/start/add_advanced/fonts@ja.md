@@ -1,6 +1,6 @@
 ---
-"$title": フォントの追加
-"$order": '6'
+'$title': フォントの追加
+$order: 6
 description: 'AMP ページにカスタムフォントを埋め込むには、次の 2 つの方法を利用できます。1. <link> タグを使用する: ホワイトリストに登録されているフォントプロバイダのフォントのみ ...'
 ---
 
@@ -14,7 +14,11 @@ AMP ページにカスタムフォントを埋め込むには、次の 2 つの�
 このチュートリアルでは、`<link>` タグを使用してページにフォントを追加します。次のように `<head>` にスタイルシートのリンクを**追加**して、Raleway フォントをリクエストします。
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://fonts.googleapis.com/css?family=Raleway"
+/>
 ```
 
 次に、CSS の `body` セレクタを次のように**更新**して、Raleway への参照を含めます。

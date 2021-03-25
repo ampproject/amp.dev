@@ -1,6 +1,6 @@
 ---
-"$title": Özet
-"$order": '4'
+'$title': Özet
+$order: 4
 description: Bu öğreticide, oturum açma gerektiren bir yorum bölümü oluşturmak için amp-access ve amp-form bileşenlerinin nasıl birleştirileceğini keşfettik.
 ---
 

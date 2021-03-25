@@ -1,10 +1,10 @@
 ---
-"$title": كيف يعمل AMP Optimizer
-"$order": '1'
+'$title': كيف يعمل AMP Optimizer
+$order: 1
 description: يتخذ AMP Optimizer مستند AMPHTML صالحًا كمدخلات ويحوله إلى نسخة محسّنة عن طريق تطبيق تحسينات إضافية من الصعب القيام بها "يدويًا". يوضح هذا الدليل بالتفصيل كيفية عمل مُحسِّن AMP.
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

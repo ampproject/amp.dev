@@ -939,7 +939,6 @@ msgstr "레이아웃"
 #: /content/amp-dev/documentation/components/reference/amp-dailymotion-v0.1.md
 #: /content/amp-dev/documentation/components/reference/amp-delight-player-v0.1.md
 #: /content/amp-dev/documentation/components/reference/amp-embedly-card-v0.1.md
-#: /content/amp-dev/documentation/components/reference/amp-google-vrview-image-v0.1.md
 #: /content/amp-dev/documentation/components/reference/amp-hulu-v0.1.md
 #: /content/amp-dev/documentation/components/reference/amp-ima-video-v0.1.md
 #: /content/amp-dev/documentation/components/reference/amp-img-v0.1@ar.md
@@ -1081,7 +1080,7 @@ msgid "You've read this document a dozen times but it doesn't really cover all o
 msgstr "이 문서를 수십 번 읽었음에도 여전히 궁금한 점이 남아 있나요? 다른 개발자들도 같은 심정일지 모릅니다. Stack Overflow에서 소통해 보세요."
 
 #: frontend/templates/views/partials/experiments/experiments.j2:4
-msgid "Enable the experiment via the button below. Some components require the AMP Dev Channel to be enabled as well."
+msgid "Enable the experiment via the button below. Some components require the AMP Beta Channel to be enabled as well."
 msgstr "아래 버튼으로 실험을 활성화할 수 있습니다. 일부 컴포넌트의 경우 AMP 개발자 채널도 함께 활성화되어야 합니다."
 
 #: frontend/templates/views/partials/structured-data.j2:54

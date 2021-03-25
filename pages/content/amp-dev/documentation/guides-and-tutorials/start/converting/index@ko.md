@@ -1,12 +1,12 @@
 ---
-"$title": Convert HTML to AMP
+'$title': Convert HTML to AMP
 formats:
-- websites
-"$titles":
+  - websites
+'$titles':
   teaser: Convert HTML to AMP
-"$order": '0'
+$order: 0
 description: 이번 튜토리얼에서는 AMP의 주요 개념 및 기존 HTML 문서와 AMP 문서의 차이점을 알아볼 것입니다. 이 튜토리얼의 마지막 부분에서
-"$hidden": 'true'
+'$hidden': 'true'
 teaser:
   icon: convert
   text: 단계별 튜토리얼에서 HTML을 AMP로 변환하는 방식을 학습합니다.

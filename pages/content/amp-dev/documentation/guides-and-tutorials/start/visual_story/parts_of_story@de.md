@@ -1,6 +1,6 @@
 ---
-"$title": Die Bestandteile einer AMP Story
-"$order": '2'
+'$title': Die Bestandteile einer AMP Story
+$order: 2
 description: Eine Web Story ist visuelles Storytelling im Vollbildmodus, bei dem Informationen zusammen mit Bildern, Videos, Grafiken, Ton und mehr vermittelt werden. Web Storys sind ideal für Benutzer …
 author: bpaduch
 ---

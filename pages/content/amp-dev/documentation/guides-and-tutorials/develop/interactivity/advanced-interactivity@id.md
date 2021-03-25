@@ -1,6 +1,6 @@
 ---
-"$title": Meningkatkan interaktivitas
-"$order": '2'
+'$title': Meningkatkan interaktivitas
+$order: 2
 description: 'Kode awal memberikan pengalaman pengguna yang cukup sederhana. Ada beberapa cara untuk memperbaikinya \: - Tambahkan indikator yang menampilkan ....'
 ---
 
@@ -18,8 +18,11 @@ Sebelum adanya komponen [`amp-bind`](../../../../documentation/components/refere
 Buka berkas [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html), dan tambahkan skrip berikut ini ke daftar komponen AMP di bagian `<head>` halaman:
 
 ```html
-<script async custom-element="amp-bind"
-    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script
+  async
+  custom-element="amp-bind"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+></script>
 ```
 
 ## Menambahkan indikator slide
@@ -43,7 +46,7 @@ Lakukan inisialiasi variabel status untuk melacak indeks dari slide yang ditampi
 Data dalam elemen `<amp-state>` dapat diakses berdasarkan ID-nya yang terkait. Contohnya: kita dapat merujuk ke variabel ini dengan menggunakan fragmen ekspresi berikut ini:
 
 ```javascript
-selected.slide // Evaluates to 0.
+selected.slide; // Evaluates to 0.
 ```
 
 ### Memperbarui status slide
@@ -51,8 +54,13 @@ selected.slide // Evaluates to 0.
 Berikutnya, perbarui variabel ini jika pengguna mengubah slide di korsel dengan menambahkan tindakan `"on"` berikut ini pada elemen [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) yang sudah ada:
 
 ```html
-<amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
-    on="slideChange:AMP.setState({selected: {slide: event.index}})">
+<amp-carousel
+  type="slides"
+  layout="fixed-height"
+  height="250"
+  id="carousel"
+  on="slideChange:AMP.setState({selected: {slide: event.index}})"
+></amp-carousel>
 ```
 
 Kapan pun slide yang ditampilkan untuk [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) berubah, tindakan `AMP.setState` akan dipanggil dengan argumen berikut ini:
@@ -60,7 +68,7 @@ Kapan pun slide yang ditampilkan untuk [`amp-carousel`](../../../../documentatio
 ```javascript
 {
   selected: {
-    slide: event.index
+    slide: event.index;
   }
 }
 ```
@@ -177,8 +185,10 @@ Jika menambahkan variabel status lain yang melacak SKU yang dipilih, kita dapat 
 Tambahkan tindakan "on" ke [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) yang akan memperbarui variabel `selected.sku` kapan pun warna baru dipilih:
 
 ```html
-<amp-selector name="color"
-    on="select:AMP.setState({selected: {sku: event.targetOption}})">
+<amp-selector
+  name="color"
+  on="select:AMP.setState({selected: {sku: event.targetOption}})"
+></amp-selector>
 ```
 
 [tip type="tip"] **KIAT –** Hal ini juga dapat dilakukan dengan menambahkan tindakan `on="tap:AMP.setState(...)` ke setiap elemen anak [`amp-img`](../../../../documentation/components/reference/amp-img.md) dalam [`amp-selector`](../../../../documentation/components/reference/amp-selector.md). Salah satu kelebihan komponen [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) adalah menyederhanakan markah dengan cara seperti ini. [/tip]
@@ -189,12 +199,24 @@ Kemudian, tambahkan pengikatan ke elemen [`amp-img`](../../../../documentation/c
 
 ```html
 <!-- Update `src` untuk setiap <amp-img> jika variabel `selected.sku` berubah. -->
-<amp-img width=200 height=250 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=300 height=375 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=400 height=500 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
+<amp-img
+  width="200"
+  height="250"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="300"
+  height="375"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="400"
+  height="500"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
 ```
 
 [tip type="note"] <strong>CATATAN –</strong> Dalam praktiknya, setiap gambar di korsel kemungkinan akan memiliki `src` yang berbeda. Hal ini dapat dilakukan dengan mengganti satu gambar dengan deretan gambar. Ringkasnya, tutorial ini menggunakan satu gambar dengan berbagai pembesaran. [/tip]

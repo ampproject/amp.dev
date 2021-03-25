@@ -1,6 +1,6 @@
 ---
-"$title": 验证 AMPHTML 语法
-"$order": '3'
+'$title': 验证 AMPHTML 语法
+$order: 3
 description: 为了确保您的广告正确呈现，您应当验证 AMPHTML 语法。在浏览器中，打开 AMP 验证工具，并确保 AMP4ADS 为所选 HTML 格式。
 ---
 

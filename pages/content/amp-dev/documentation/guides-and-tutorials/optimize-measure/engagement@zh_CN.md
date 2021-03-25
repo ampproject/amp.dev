@@ -1,9 +1,9 @@
 ---
-"$title": 提高用户互动度
-"$order": '6'
+'$title': 提高用户互动度
+$order: 6
 description: 下面是提高用户与 AMP 互动度的几条小提示。在 AMP 网页与非 AMP 网页上提供一致的品牌信息和丰富内容，以帮助读者识别出您
 formats:
-- websites
+  - websites
 ---
 
 下面是提高用户与 AMP 互动度的几条小提示。

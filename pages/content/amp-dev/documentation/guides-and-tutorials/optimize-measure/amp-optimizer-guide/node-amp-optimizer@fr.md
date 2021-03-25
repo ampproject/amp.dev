@@ -1,10 +1,10 @@
 ---
-"$title": "Guide de l'optimisation AMP Node.js"
-"$order": '2'
+'$title': "Guide de l'optimisation AMP Node.js"
+$order: 2
 description: "Ce guide explique comment configurer et utiliser la version Node.js de l'optimiseur AMP."
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 

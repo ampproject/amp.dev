@@ -16,6 +16,7 @@
 
 const config = require('@lib/config.js');
 const host = config.hosts.platform;
+const postcssCssVariables = require('postcss-css-variables');
 
 module.exports = {
   validatorRuntime: 'AMP4EMAIL',
@@ -40,6 +41,13 @@ module.exports = {
     },
     'amp-accordion[disable-session-states]': (el) => {
       el.removeAttr('disable-session-states');
+    },
+    'style[amp-custom]': (el) => {
+      const node = el[0].children[0];
+
+      if (node) {
+        node.data = postcssCssVariables.process(node.data).css;
+      }
     },
     'head > style[amp-boilerplate]':
       '<style amp4email-boilerplate>body{visibility:hidden}</style>',

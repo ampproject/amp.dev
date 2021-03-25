@@ -1,6 +1,6 @@
 ---
-"$title": 添加字体
-"$order": '6'
+'$title': 添加字体
+$order: 6
 description: 您可以通过以下两种方式将自定义字体嵌入到 AMP 网页中：1. 使用 <link> 标记：仅适用于已被列入许可名单的字体提供商。2. 使用…
 ---
 
@@ -14,7 +14,11 @@ description: 您可以通过以下两种方式将自定义字体嵌入到 AMP �
 在本教程中，我们将使用 `<link>` 标记向网页中添加字体。首先，向 `<head>` 中**添加**一个样式表链接，以请求 Raleway 字体：
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://fonts.googleapis.com/css?family=Raleway"
+/>
 ```
 
 现在，**更新**您的 CSS `body` 选择器，以添加对 Raleway 的引用：

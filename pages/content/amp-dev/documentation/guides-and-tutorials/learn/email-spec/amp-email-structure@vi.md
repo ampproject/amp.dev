@@ -1,8 +1,8 @@
 ---
-"$title": Cấu trúc và render cho các email AMP
-order: '2'
+'$title': Cấu trúc và render cho các email AMP
+$order: 2
 formats:
-- email
+  - email
 teaser:
   text: 'Email được cấu trúc là một '
 toc: 'true'
@@ -45,7 +45,7 @@ Phần `text/x-amp-html` phải được lồng trong một node `multipart/alte
 
 `Multipart/alternative` phải chứa ít nhất một node không phải AMP (`text/plain` hoặc `text/html`) ngoài node `text/x-amp-html`. Nó sẽ được hiển thị cho người dùng mà trình khách email không hỗ trợ AMP hoặc những người đã hủy đăng ký thông qua cài đặt của nhà cung cấp dịch vụ email.
 
-Lưu ý: Một số trình khách email[[1]](https://openradar.appspot.com/radar?id=6054696888303616) sẽ chỉ render phần MIME cuối cùng, vậy nên chúng tôi khuyên bạn nên đặt phần MIME `text/x-amp-html` *trước* phần MIME `text/html`.
+Lưu ý: Một số trình khách email[[1]](https://openradar.appspot.com/radar?id=6054696888303616) sẽ chỉ render phần MIME cuối cùng, vậy nên chúng tôi khuyên bạn nên đặt phần MIME `text/x-amp-html` _trước_ phần MIME `text/html`.
 
 ### Ngữ nghĩa trả lời/chuyển tiếp <a name="replyingforwarding-semantics"></a>
 

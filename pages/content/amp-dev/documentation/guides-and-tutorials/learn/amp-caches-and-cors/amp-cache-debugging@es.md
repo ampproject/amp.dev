@@ -1,12 +1,12 @@
 ---
-"$title": Depuración de problemas en el caché de AMP
-order: '8'
+'$title': Depuración de problemas en el caché de AMP
+$order: 8
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
-  text: " ¿Por qué mi documento se dañó en un caché de AMP?"
+  text: ' ¿Por qué mi documento se dañó en un caché de AMP?'
 ---
 
 <!--
@@ -40,7 +40,7 @@ Si continúa teniendo problemas después de seguir estos pasos, consulte la sigu
     <tr>
       <td>Las fuentes web no aparecen (se utilizan fuentes de reserva).</td>
       <td>El caché de AMP no se encuentra en la lista blanca elaborada por el proveedor de las fuentes.</td>
-      <td>Póngase en contacto con el proveedor de las fuentes y pídale que agregue <a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">todos los cachés</a> en la lista de fuentes permitidas.</td>
+      <td>Póngase en contacto con el proveedor de las fuentes y pídale que agregue <a href="amp-cors-requests.md#cors-security-in-amp">todos los cachés</a> en la lista de fuentes permitidas.</td>
     </tr>
     <tr>
       <td>Los recursos (por ejemplo, las fuentes e imágenes) no aparecen (<strong>solo aquellos cuyo origen es HTTP</strong>).</td>
@@ -59,7 +59,7 @@ Si continúa teniendo problemas después de seguir estos pasos, consulte la sigu
     <tr>
       <td>Los elementos dinámicos como  <code><amp-form></amp-form></code>, <code><amp-list></amp-list></code>, no se comportan como estaba previsto.</td>
       <td>Faltan encabezados CORS o están rotos.</td>
-      <td>Estos componentes realizan solicitudes de origen cruzado desde el caché de AMP hacia su origen. De forma predeterminada, los navegadores bloquean estas solicitudes. Para permitir estas solicitudes, emita <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">encabezados CORS</a> que agreguen <a href="https://amp.dev/documentation/guides-and-tutorials/amp-cors-requests.html">todos los cachés</a> en la lista permitida.</td>
+      <td>Estos componentes realizan solicitudes de origen cruzado desde el caché de AMP hacia su origen. De forma predeterminada, los navegadores bloquean estas solicitudes. Para permitir estas solicitudes, emita <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">encabezados CORS</a> que agreguen <a href="amp-cors-requests.md">todos los cachés</a> en la lista permitida.</td>
     </tr>
     <tr>
       <td>El contenido que se proporciona debe retirarse debido a una notificación de eliminación por incumplimiento legal.</td>

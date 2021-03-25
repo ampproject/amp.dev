@@ -1,10 +1,10 @@
 ---
-"$title": Praktik-praktik terbaik untuk membuat iklan Cerita Web
-"$order": '16'
+'$title': Praktik-praktik terbaik untuk membuat iklan Cerita Web
+$order: 16
 description: Cerita Web adalah pengalaman layar penuh yang dapat diketuk sehingga isinya dapat menghanyutkan para pembaca. Iklan yang muncul di Cerita Web harus mempunyai desain yang konsisten dan terpadu dengan UX Cerita Web.
 formats:
-- ads
-- stories
+  - ads
+  - stories
 ---
 
 Cerita Web adalah pengalaman layar penuh yang dapat diketuk sehingga isinya dapat menghanyutkan para pembaca. Iklan yang muncul di Cerita Web harus mempunyai desain yang konsisten dan terpadu dengan UX Cerita Web. Ini mencegah pengalaman pengguna terganggu atau tersela. Panduan ini menunjukkan cara membuat sebuah iklan untuk Cerita Web.
@@ -104,7 +104,7 @@ Jika dibutuhkan dukungan untuk enum teks tombol CTA, silakan buka [masalah GitHu
 
 Anda dapat menentukan satu dari tiga pilihan untuk halaman landing iklan Cerita Web.
 
-- `STORY`: Halaman landing adalah sebuah  [cerita bersponsor](story_ads_best_practices.md#sponsored-story).
+- `STORY`: Halaman landing adalah sebuah [cerita bersponsor](story_ads_best_practices.md#sponsored-story).
 - `AMP`: Halaman landing adalah sebuah Halaman AMP yang valid.
 - `NONAMP`: Jenis halaman web lain.
 

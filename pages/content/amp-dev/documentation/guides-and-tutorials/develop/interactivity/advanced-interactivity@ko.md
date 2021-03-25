@@ -1,6 +1,6 @@
 ---
-"$title": Improving the interactivity
-"$order": '2'
+'$title': Improving the interactivity
+$order: 2
 description: '시작 코드는 매우 기본적인 사용자 환경을 제공합니다. 몇 가지 방법을 통해 사용자 환경을 개선할 수 있습니다.\: 표시기를 추가하여...'
 ---
 
@@ -18,8 +18,11 @@ description: '시작 코드는 매우 기본적인 사용자 환경을 제공합
 [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html) 파일을 열고 다음 스크립트를 페이지 `<head>` 섹션의 AMP 컴포넌트 목록에 추가합니다.
 
 ```html
-<script async custom-element="amp-bind"
-    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script
+  async
+  custom-element="amp-bind"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+></script>
 ```
 
 ## 슬라이드 표시기 추가
@@ -43,7 +46,7 @@ description: '시작 코드는 매우 기본적인 사용자 환경을 제공합
 <a><code data-md-type="codespan"><amp-state></code></a> 요소 내의 데이터는 연결된 ID로 액세스할 수 있습니다. 예를 들어 다음 표현식 조각으로 해당 변수를 참조할 수 있습니다.
 
 ```javascript
-selected.slide // Evaluates to 0.
+selected.slide; // Evaluates to 0.
 ```
 
 ### 슬라이드 상태 업데이트
@@ -51,8 +54,13 @@ selected.slide // Evaluates to 0.
 다음으로 사용자가 캐러셀의 슬라이드를 변경하는 경우 기존 [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) 요소에 다음의 `"on"` 작업을 추가하여 이 변수를 업데이트해 보겠습니다.
 
 ```html
-<amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
-    on="slideChange:AMP.setState({selected: {slide: event.index}})">
+<amp-carousel
+  type="slides"
+  layout="fixed-height"
+  height="250"
+  id="carousel"
+  on="slideChange:AMP.setState({selected: {slide: event.index}})"
+></amp-carousel>
 ```
 
 이제 표시된 [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) 슬라이드가 변경될 때마다 `AMP.setState` 작업은 다음 인수를 사용하여 호출됩니다.
@@ -60,7 +68,7 @@ selected.slide // Evaluates to 0.
 ```javascript
 {
   selected: {
-    slide: event.index
+    slide: event.index;
   }
 }
 ```
@@ -177,8 +185,10 @@ selected.slide // Evaluates to 0.
 새 색상이 선택될 때마다 `selected.sku` 변수를 업데이트하는 [`amp-selector`](../../../../documentation/components/reference/amp-selector.md)에 "on" 작업을 추가합니다.
 
 ```html
-<amp-selector name="color"
-    on="select:AMP.setState({selected: {sku: event.targetOption}})">
+<amp-selector
+  name="color"
+  on="select:AMP.setState({selected: {sku: event.targetOption}})"
+></amp-selector>
 ```
 
 [tip type="tip"] <strong>도움말 –</strong> `on="tap:AMP.setState(...)` 작업을 [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) 내의 각 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 하위 요소에 추가함으로써 실행할 수도 있습니다. [`amp-selector`](../../../../documentation/components/reference/amp-selector.md)의 장점 중 하나는 이러한 방식으로 마크업을 단순화한다는 것입니다. [/tip]
@@ -189,12 +199,24 @@ selected.slide // Evaluates to 0.
 
 ```html
 <!-- Update the `src` of each <amp-img> when the `selected.sku` variable changes. -->
-<amp-img width=200 height=250 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=300 height=375 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=400 height=500 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
+<amp-img
+  width="200"
+  height="250"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="300"
+  height="375"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="400"
+  height="500"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
 ```
 
 [tip type="note"] <strong>참고 –</strong> 실제 상황에서는 캐러셀의 각 이미지에 다른 `src`가 있을 가능성이 높습니다. 이는 하나의 이미지를 이미지 배열로 대체함으로써 실행할 수 있습니다. 간단한 설명을 위해 이 튜토리얼에서는 하나의 이미지를 다양한 배율로 사용합니다. [/tip]

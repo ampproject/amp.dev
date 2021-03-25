@@ -19,24 +19,24 @@ class AmpDependenciesTestCase(unittest.TestCase):
   def test_add_new_component(self):
     amp_deps = AmpDependencies(test_pod)
     amp_deps.add('amp-anim', '0.1')
-    self.assertEquals(1, len(amp_deps._dependencies))
+    self.assertEqual(1, len(amp_deps._dependencies))
     version, dep_type = amp_deps._dependencies.get('amp-anim')
-    self.assertEquals('0.1', version)
-    self.assertEquals('element' , dep_type)
+    self.assertEqual('0.1', version)
+    self.assertEqual('element' , dep_type)
 
   def test_add_new_template(self):
     amp_deps = AmpDependencies(test_pod)
     amp_deps.add('amp-mustache', '0.2', 'template')
-    self.assertEquals(1, len(amp_deps._dependencies))
+    self.assertEqual(1, len(amp_deps._dependencies))
     version, dep_type = amp_deps._dependencies.get('amp-mustache')
-    self.assertEquals('0.2', version)
-    self.assertEquals('template' , dep_type)
+    self.assertEqual('0.2', version)
+    self.assertEqual('template' , dep_type)
 
   def test_add_same_twice(self):
     amp_deps = AmpDependencies(test_pod)
     amp_deps.add('amp-anim', '0.1')
     amp_deps.add('amp-anim', '0.1')
-    self.assertEquals(1, len(amp_deps._dependencies))
+    self.assertEqual(1, len(amp_deps._dependencies))
 
   def test_add_other_version(self):
     amp_deps = AmpDependencies(test_pod)
@@ -52,17 +52,17 @@ class AmpDependenciesTestCase(unittest.TestCase):
     amp_deps = AmpDependencies(test_pod)
     amp_deps.add('amp-anim', None)
     amp_deps.add('amp-anim', '99.9')
-    self.assertEquals(1, len(amp_deps._dependencies))
+    self.assertEqual(1, len(amp_deps._dependencies))
     _version, dep_type = amp_deps._dependencies.get('amp-anim')
-    self.assertEquals('99.9', _version)
+    self.assertEqual('99.9', _version)
 
   def test_add_none_second(self):
     amp_deps = AmpDependencies(test_pod)
     amp_deps.add('amp-anim', '99.9')
     amp_deps.add('amp-anim', None)
-    self.assertEquals(1, len(amp_deps._dependencies))
+    self.assertEqual(1, len(amp_deps._dependencies))
     _version, dep_type = amp_deps._dependencies.get('amp-anim')
-    self.assertEquals('99.9', _version)
+    self.assertEqual('99.9', _version)
 
   def test_emit_and_inject(self):
     amp_deps = AmpDependencies(test_pod)
@@ -71,7 +71,7 @@ class AmpDependenciesTestCase(unittest.TestCase):
 
     content = amp_deps.emit()
     content = amp_deps.inject(content)
-    self.assertEquals('<script custom-element="amp-anim" '
+    self.assertEqual('<script custom-element="amp-anim" '
                       'src="https://cdn.ampproject.org/v0/amp-anim-99.9.js" async></script>'
                       '<script custom-template="amp-mustache" '
                       'src="https://cdn.ampproject.org/v0/amp-mustache-77.7.js" async></script>',
@@ -83,7 +83,7 @@ class AmpDependenciesTestCase(unittest.TestCase):
 
     content = amp_deps.emit()
     content = amp_deps.inject(content)
-    self.assertEquals('<script custom-element="amp-anim" '
+    self.assertEqual('<script custom-element="amp-anim" '
                       'src="https://cdn.ampproject.org/v0/amp-anim-0.1.js" async></script>',
                       content)
 
@@ -93,5 +93,5 @@ class AmpDependenciesTestCase(unittest.TestCase):
     amp_deps.add('amp-mustache', '0.2', 'template')
 
     content = amp_deps.inject('')
-    self.assertEquals('', content)
+    self.assertEqual('', content)
 

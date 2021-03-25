@@ -1,10 +1,10 @@
 ---
-"$title": Устранение проблем при работе с AMP-кешем
-order: '8'
+'$title': Устранение проблем при работе с AMP-кешем
+$order: 8
 formats:
-- websites
-- stories
-- ads
+  - websites
+  - stories
+  - ads
 teaser:
   text: 'Почему мой документ «ломается» в AMP-кеше? '
 ---
@@ -40,7 +40,7 @@ have a look and request a pull request there.
     <tr>
       <td>Не отображаются веб-шрифты (используются резервные шрифты)</td>
       <td>AMP-кеш не включен в разрешенный список поставщика шрифтов.</td>
-      <td>Свяжитесь с поставщиком шрифтов и попросите добавить <a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">все кеши</a> в разрешенный список.</td>
+      <td>Свяжитесь с поставщиком шрифтов и попросите добавить <a href="amp-cors-requests.md#cors-security-in-amp">все кеши</a> в разрешенный список.</td>
     </tr>
     <tr>
       <td>
@@ -60,7 +60,7 @@ have a look and request a pull request there.
     <tr>
       <td>Динамические элементы, такие как <code><amp-form></amp-form></code>, <code><amp-list></amp-list></code>, демонстрируют некорректное поведение.</td>
       <td>Заголовки CORS повреждены или отсутствуют.</td>
-      <td>Эти компоненты отправляют кроссдоменные запросы из AMP-кеша в ваш источник. По умолчанию браузеры блокируют такие запросы. Чтобы разрешить их, передавайте <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">заголовки CORS</a>, которые вносят <a href="https://amp.dev/documentation/guides-and-tutorials/amp-cors-requests.html">все кеши</a> в список разрешенных.</td>
+      <td>Эти компоненты отправляют кроссдоменные запросы из AMP-кеша в ваш источник. По умолчанию браузеры блокируют такие запросы. Чтобы разрешить их, передавайте <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">заголовки CORS</a>, которые вносят <a href="amp-cors-requests.md">все кеши</a> в список разрешенных.</td>
     </tr>
     <tr>
       <td>Контент, который должен быть удален согласно правовому требованию, продолжает выдаваться.</td>

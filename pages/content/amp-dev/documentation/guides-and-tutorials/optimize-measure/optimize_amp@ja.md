@@ -1,10 +1,10 @@
 ---
-"$title": ホストされた AMP ページの最適化
-"$order": '7'
+'$title': ホストされた AMP ページの最適化
+$order: 7
 description: AMP ランタイムは高速化に最適化されているため、AMP ページが AMP キャッシュから配信される場合に、完全に最適化された上で、最高の読み込みパフォーマンスを発揮します...
 formats:
-- websites
-- stories
+  - websites
+  - stories
 author: sebastianbenz
 ---
 
@@ -73,6 +73,7 @@ AMP では、`<head>` セクションに許可されるマークアップを制�
 3. ページにレンダリングを遅延させる拡張機能（amp-experiment、amp-dynamic-css-classes、amp-story など）が含まれる場合、AMP ランタイムがページをレンダリングするにはその拡張機能が必要であるため、拡張機能をプリロードします。
 
 [sourcecode:html]
+
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-custom-css-0.1.js">
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/story-1.0.js">[/sourcecode]
@@ -203,11 +204,13 @@ AMP では、フォントの読み込みを最適化する方法がいくつか�
 - カスタムフォントを以下のようにプリロードします。
 
 [sourcecode:html]
+
 <link rel="preload" as="font" href="/bundles/app/fonts/helveticaneue-roman-webfont.woff2" >[/sourcecode]
 
 - Google フォントを使用している場合、またはフォント URL が不明なフォントプロバイダーを使用している場合は、各フォントサーバーに事前に接続（preconnect）します。
 
 [sourcecode:html]
+
  <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
 [/sourcecode]
 

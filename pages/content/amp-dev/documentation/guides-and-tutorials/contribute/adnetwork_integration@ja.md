@@ -1,9 +1,9 @@
 ---
-"$title": AMPと統合してディスプレイ広告を配信
-"$order": '5'
+'$title': AMPと統合してディスプレイ広告を配信
+$order: 5
 description: このガイドは、AMP との統合によって AMP ページにディスプレイ広告を配信したいと考えている広告ネットワークを対象としています。
 formats:
-- 広告
+  - 広告
 ---
 
 このガイドは、AMP との統合によって AMP ページにディスプレイ広告を配信したいと考えている広告ネットワークを対象としています。
@@ -30,11 +30,14 @@ formats:
 たとえば、Amazon A9 サーバーを呼び出すには、次の構文を使用します。
 
 ```html
-<amp-ad width="300" height="250"
-    type="a9"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  width="300"
+  height="250"
+  type="a9"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 

@@ -1,6 +1,7 @@
 # amp.dev
 
-[![Build Status](https://travis-ci.com/ampproject/amp.dev.svg?branch=future)](https://travis-ci.com/ampproject/amp.dev)
+![Staging](https://github.com//ampproject/amp.dev/workflows/Release%3A%20Staging/badge.svg)
+![Production](https://github.com//ampproject/amp.dev/workflows/Release%3A%20Production/badge.svg)
 
 The official homepage of the AMP Project.
 
@@ -8,9 +9,9 @@ The official homepage of the AMP Project.
 
 We welcome contributions to amp.dev.
 
-* **Bug reports and feature requests:** something missing or not working on [amp.dev](https://amp.dev)? Please file an issue [here](https://github.com/ampproject/docs/issues/new).
-* **Documentation & Guides:** see [this guide](./contributing/documentation.md) for more information on how to contribute documentation to amp.dev.
-* **Code samples & demos:** see [this guide](./contributing/samples.md) for more information on how to contribute sample code to amp.dev.
+- **Bug reports and feature requests:** something missing or not working on [amp.dev](https://amp.dev)? Please file an issue [here](https://github.com/ampproject/docs/issues/new).
+- **Documentation & Guides:** see [this guide](./contributing/documentation.md) for more information on how to contribute documentation to amp.dev.
+- **Code samples & demos:** see [this guide](./contributing/samples.md) for more information on how to contribute sample code to amp.dev.
 
 **Note:** fixing spelling mistakes and other small changes are often easiest by directly editing the file on Github.
 
@@ -24,56 +25,56 @@ We welcome contributions to amp.dev.
 
 1. Install the LTS version of [Node.js](https://nodejs.org). An easy way to do so is by using [nvm](https://github.com/nvm-sh/nvm).
 
-    ```sh
-    $ nvm install --lts
-    ```
+   ```sh
+   $ nvm install --lts
+   ```
 
-1. If it has not already been done, install Python 2.7 and ensure pip is properly set up by adding the _pip user base binary directory_ to `$PATH`.
+1. If it has not already been done, install Python 3 and ensure pip is properly set up by adding the _pip user base binary directory_ to `$PATH`.
 
-    **macOS**
+   **macOS**
 
-    1. Install [Homebrew](https://brew.sh/).
-    1. Run the following command to ensure everything is up to date. Xcode version 10.3 or the most recent stable version is required.
-        ```sh
-        $ brew doctor
-        ```
-    1. Run the following command to install Python. Version 2.7 is required.
-        ```sh
-        $ brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/86a44a0a552c673a05f11018459c9f5faae3becc/Formula/python@2.rb
-        ````
-    1. Run the following command to add the _pip user base binary directory_ to `$PATH`.
-        ```sh
-        $ echo "export PATH=\"$(python -m site --user-base)/bin\":\$PATH" >> ~/.bash_profile
-        ```
-    1. Run the following command for the changes to take effect.
-        ```sh
-        $ source ~/.bash_profile
-        ```
+   1. Install [Homebrew](https://brew.sh/).
+   1. Run the following command to ensure everything is up to date. Xcode version 10.3 or the most recent stable version is required.
+      ```sh
+      $ brew doctor
+      ```
+   1. Run the following command to install Python. Version 3.7 is required at latest.
+      ```sh
+      $ brew install python
+      ```
+   1. Run the following command to add the _pip user base binary directory_ to `$PATH`.
+      ```sh
+      $ echo "export PATH=\"$(python -m site --user-base)/bin\":\$PATH" >> ~/.bash_profile
+      ```
+   1. Run the following command for the changes to take effect.
+      ```sh
+      $ source ~/.bash_profile
+      ```
 
-    **Linux** (Debian-based)
+   **Linux** (Debian-based)
 
-    **Note**: If using Linux, refer to the section of pip's official documentation titled [Ensure you can run pip from the command line](https://packaging.python.org/tutorials/installing-packages/#ensure-you-can-run-pip-from-the-command-line) for pip installation troubleshooting.
+   **Note**: If using Linux, refer to the section of pip's official documentation titled [Ensure you can run pip from the command line](https://packaging.python.org/tutorials/installing-packages/#ensure-you-can-run-pip-from-the-command-line) for pip installation troubleshooting.
 
-    1. Run the following command to add the _pip user base binary directory_ to `$PATH`.
-        ```sh
-        $ echo "export PATH=\"$(python -m site --user-base)/bin\":\$PATH" >> ~/.bashrc
-        ```
-    1. Run the following command for the changes to take effect.
-        ```sh
-        $ source ~/.bashrc
-        ```
-    1. Run the following command to use a faster YAML parser.
-        ```sh
-        $ sudo apt install -y python-yaml
-        ```
+   1. Run the following command to add the _pip user base binary directory_ to `$PATH`.
+      ```sh
+      $ echo "export PATH=\"$(python -m site --user-base)/bin\":\$PATH" >> ~/.bashrc
+      ```
+   1. Run the following command for the changes to take effect.
+      ```sh
+      $ source ~/.bashrc
+      ```
+   1. Run the following command to use a faster YAML parser.
+      ```sh
+      $ sudo apt install -y python-yaml
+      ```
 
 1. Install [Grow](http://grow.io), the static site generator used to build amp.dev. Do so by using `pip` instead of its installer. Using `pip` will enable importing from the `grow` package in Python later on.
 
-     **Note**: Be sure to use the `pip` command associated with Python 2.7 as Grow depends on Python 2.7.
+   **Note**: Be sure to use the `pip` command associated with Python 3 as Grow 1 depends on Python 3.
 
-    ```sh
-    $ pip install --user grow
-    ```
+   ```sh
+   $ pip3 install --user grow
+   ```
 
 ### Fork & clone the repository
 
@@ -119,9 +120,11 @@ You can contribute your changes back to the main repository by [creating a pull 
 ### Maintenance
 
 #### Documents
+
 Made changes to a lot of Grow documents at once and not quite sure if all references are still valid? You can run `npm run lint:grow` to pick up broken ones.
 
 ### Run a test build
+
 To run a local test build that does all the minifying and vends the static pages instead of
 proxying them through to Grow you can run:
 
@@ -137,6 +140,7 @@ npm run build:local -- --locales <list of locales>
 ```
 
 ## Build
+
 **Caution**: starting a build will automatically clean all locations of possible remainings from previous builds. Make sure you don't have anything there that you want to keep - additionally check your working copy for eventual unintended local changes.
 
 ```sh
@@ -155,18 +159,18 @@ This command builds all parts of the project and might take a while. Usually, al
 $ npx gulp fetchArtifacts --travis-build <build_number>
 ```
 
-- - -
+---
 
- Copyright 2019 The AMP HTML Authors. All Rights Reserved.
+Copyright 2019 The AMP HTML Authors. All Rights Reserved.
 
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
       http://www.apache.org/licenses/LICENSE-2.0
 
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS-IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS-IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
