@@ -73,6 +73,7 @@ jobs:
 
       - name: Preparing build
         env:
+          APP_ENV: staging
           AMP_DOC_TOKEN: ${{ secrets.AMP_DOC_TOKEN }}
         run: |
           gulp buildPrepare
