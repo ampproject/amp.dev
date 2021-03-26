@@ -30,14 +30,17 @@ const GEONAMES_API_URL = 'http://api.geonames.org/findNearbyPostalCodesJSON';
 
 examples.get('/location-specific-results.json', async (request, response) => {
   const ipstackCredential = await credentials.get(IPSTACK_API_KEY);
-  let ip = request.headers['x-forwarded-for'] || request.connection.remoteAddress;
+  let ip =
+    request.headers['x-forwarded-for'] || request.connection.remoteAddress;
   ip = ip.split(',')[0];
 
   let ipstackResponse;
   let geonamesResponse;
 
   try {
-    ipstackResponse = await fetch(IPSTACK_API_URL + ip + '?access_key=' + ipstackCredential);
+    ipstackResponse = await fetch(
+      IPSTACK_API_URL + ip + '?access_key=' + ipstackCredential
+    );
     ipstackResponse = await ipstackResponse.json();
   } catch (err) {
     response.status(500).send('Error fetching ipstack data.');
@@ -52,7 +55,9 @@ examples.get('/location-specific-results.json', async (request, response) => {
   }).toString();
 
   try {
-    geonamesResponse = await fetch(GEONAMES_API_URL + '?' + geoNamesSearchParams);
+    geonamesResponse = await fetch(
+      GEONAMES_API_URL + '?' + geoNamesSearchParams
+    );
     geonamesResponse = await geonamesResponse.json();
   } catch (err) {
     response.status(500).send('Error fetching geonames data.');
@@ -60,7 +65,10 @@ examples.get('/location-specific-results.json', async (request, response) => {
 
   const existingPlaceNames = {};
   const places = geonamesResponse.postalCodes.filter((place) => {
-    if (!(place.placeName in existingPlaceNames) && Object.keys(existingPlaceNames).length < 5) {
+    if (
+      !(place.placeName in existingPlaceNames) &&
+      Object.keys(existingPlaceNames).length < 5
+    ) {
       existingPlaceNames[place.placeName] = true;
       return true;
     }
