@@ -20,3 +20,4 @@ jobs:
         with:
           workflow: 'Release: Production'
           token: ${{ secrets.NIGHTLY_WORKFLOW_GITHUB_PAT }}
+          ref: refs/heads/production-amp-dev
