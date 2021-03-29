@@ -110,7 +110,7 @@ This sample showcases how to build a product page in AMP HTML.
       background-color:var(--color-primary);
       background-position:center;
       background-repeat:no-repeat;
-      background-image:-webkit-image-set(url(<% hosts.platform %>/static/samples/img/ic_search_white_1x_web_24dp.png) 1x,url(<% hosts.platform %>/static/samples/img/ic_search_white_2x_web_24dp.png) 2x);
+      background-image:-webkit-image-set(url(/static/samples/img/ic_search_white_1x_web_24dp.png) 1x,url(/static/samples/img/ic_search_white_2x_web_24dp.png) 2x);
       border:0;
       height:var(--space-4);
       width:36px;
@@ -574,7 +574,7 @@ This sample showcases how to build a product page in AMP HTML.
                   width="24" height="24"
                   alt="navigation"></amp-img>
         </a>
-        <form method="GET" action="<% hosts.platform %>/documentation/examples/api/search" target="_top">
+        <form method="GET" action="/documentation/examples/api/search" target="_top">
           <input name="search" type="search" placeholder="Search">
           <a id="sample-logo" href="/">Product</a>
           <input type="submit" value="">
@@ -720,7 +720,7 @@ This sample showcases how to build a product page in AMP HTML.
             hidden
             class="fadeIn"
             [hidden]="product.selectedColor != 'golden'">
-        <amp-img src=" <% hosts.platform %>/static/samples/img/golden_apple1_1024x682.jpg"
+        <amp-img src="/static/samples/img/golden_apple1_1024x682.jpg"
                 width="1024" height="682"
                 layout="responsive" on="tap:gallery-lightbox"
                 role="button" tabindex="0">
