@@ -181,6 +181,13 @@ async function buildComponentVersions() {
   const componentVersions = {};
   rules.extensions.forEach((e) => {
     const versions = e.version.filter((v) => v !== 'latest');
+    if (
+      componentVersions[e.name] &&
+      parseFloat(componentVersions[e.name]) >=
+        parseFloat(versions[versions.length - 1])
+    ) {
+      return;
+    }
     componentVersions[e.name] = versions[versions.length - 1];
   });
   const content = JSON.stringify(componentVersions, null, 2);
