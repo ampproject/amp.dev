@@ -4,6 +4,7 @@
 .idea
 .podcache.yaml
 .vscode
+.eslintcache
 *.pyc
 *.log
 node_modules
