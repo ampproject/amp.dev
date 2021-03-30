@@ -1,7 +1,10 @@
 number: null
-at: 2020-02-18T16:01:49.916Z
+at: 2021-03-19T11:33:43.785Z
 by: Patrick Kettner
-environment: local
+environment: production
 commit:
-  sha: 2d8d5869e
-  message: "guidelines for creating a successful story narrative and technical resources  (#3479)\n\n* initial push\r\n\r\n* small fix\r\n\r\n* small fixes\r\n\r\n* fixed links and such\r\n\r\n* fixed link!"
+  sha: a1bb32aad3
+  message: |-
+    Revert "functional survey (#5533)" (#5545)
+
+    This reverts commit 656d8c2f528a369f93facaa4b6b28c7164bdbb47.
