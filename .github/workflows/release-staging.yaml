@@ -75,6 +75,7 @@ jobs:
         env:
           APP_ENV: staging
           AMP_DOC_TOKEN: ${{ secrets.AMP_DOC_TOKEN }}
+          AMP_DEV_PIXI_APIS_KEY: ${{ secrets.AMP_DEV_PIXI_APIS_KEY }}
         run: |
           gulp buildPrepare
 
