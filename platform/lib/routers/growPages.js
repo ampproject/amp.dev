@@ -242,8 +242,8 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
       if (req.path === '/') {
         // Disabled until we know why it fails after build
         // params.blurredPlaceholders = true;
-        // Disable hero image generation until https://github.com/ampproject/amphtml/issues/32644 is fixed
-        params.optimizeHeroImages = false;
+        // Increase hero image count for homepage stage
+        params.maxHeroImageCount = 5;
       }
       renderedTemplate = await optimizer.transformHtml(
         renderedTemplate,
