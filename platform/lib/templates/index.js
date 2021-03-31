@@ -26,6 +26,7 @@ const {
 } = require('../amp/formatHelper.js');
 const {SupportedFormatsExtension} = require('./SupportedFormatsExtension.js');
 const {importBlog} = require('./ImportBlogFilter.js');
+const {survey} = require('./SurveyFilter.js');
 const {importYouTubeChannel} = require('./ImportYouTubeChannel.js');
 
 const ALLOWED_LEVEL = ['beginner', 'advanced'];
@@ -106,6 +107,7 @@ class Templates {
       importYouTubeChannel,
       true
     );
+    this.nunjucksEnv_.addFilter('survey', survey, true);
 
     // One locale has ~860 pages with each weighing ~92KB. The cache therefore
     // maxes out at ~224MB to be safe
