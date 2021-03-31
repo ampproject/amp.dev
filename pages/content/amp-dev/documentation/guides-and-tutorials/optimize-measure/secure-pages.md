@@ -24,7 +24,7 @@ Implement a CSP by adding the appropriate meta tag to the head of your pages. Be
 
 [You can view the full example here](https://github.com/ampproject/amphtml/blob/master/examples/csp.amp.html).
 
-Please note that if you are using a service worker (via [`amp-install-serviceworker`](https://amp.dev/documentation/components/amp-install-serviceworker/)) then the above CSP will block the service worker script from being installed. In such case, you'll need to add the URL to the service worker script to the allowed list of `script-src` URLs.
+Please note that if you are using a service worker (via [`amp-install-serviceworker`](../../components/reference/amp-install-serviceworker.md)) then the above CSP will block the service worker script from being installed. In such case, you'll need to add the URL to the service worker script to the allowed list of `script-src` URLs.
 
 [tip type="read-on"]
 Learn more about [protecting about security vulnerabilities and CSPs here](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP).
