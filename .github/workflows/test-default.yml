@@ -1,0 +1,14 @@
+---
+name: 'Test: Default'
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: 'Default'
+        run: |
+          echo 'we require a job named "test", but not all pull requests trigger an action. So we created this small silly job named "test" that will always pass, just to make sure nothing hangs as a result of not triggering an actual job.'
