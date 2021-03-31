@@ -24,6 +24,8 @@ RUN go get -v github.com/ampproject/amppackager/cmd/amppkg@master
 
 # Clone amppackager files so we can use b3 directory
 WORKDIR /data
+# Get latet repo data to avoid caching the results of git clone. See https://stackoverflow.com/a/39278224/967
+ADD https://api.github.com/repos/ampproject/amppackager/git/refs/heads/master version.json
 # Run this if you clone from master branch.
 RUN git clone -b master https://github.com/ampproject/amppackager.git /data/amppackager
 # RUN git clone https://github.com/ampproject/amppackager.git /data/amppackager
