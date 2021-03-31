@@ -1,5 +1,5 @@
 ---
-name: 'Default test job'
+name: 'Test: Default'
 
 on:
   push:
@@ -12,4 +12,3 @@ jobs:
       - name: 'Default'
         run: |
           echo 'we require a job named "test", but not all pull requests trigger an action. So we created this small silly job named "test" that will always pass, just to make sure nothing hangs as a result of not triggering an actual job.'
-
