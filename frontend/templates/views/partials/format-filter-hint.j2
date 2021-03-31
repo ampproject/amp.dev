@@ -12,23 +12,11 @@
 <div class="ap-m-format-filter-hint-banner" aria-hidden="true">
   <div class="ap-m-format-filter-hint-banner-content">
     <div class="ap-m-format-filter-hint-banner-note">{{ _('Select your format for a more streamlined experience') }}</div>
-    <div class="ap-m-format-filter-hint-banner-formats">
-      {% set formats = ['websites', 'stories', 'ads', 'email'] %}
-      {% for format in formats %}
-      {% do doc.icons.useIcon('icons/amp-' + format + '.svg') %}
-      <button on="tap:format-filter-hint.dismiss,AMP.navigateTo(url='{{ doc.url.path }}?format={{ format }}')" class="ap-m-format-filter-hint-banner-format ap-m-format-toggle-link ap-m-format-toggle-link-{{ format }} ap-m-format-toggle-selected">
-        <span class="ap-a-ico">
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format }}"></use></svg>
-        </span>
-        <span>{{ _(format) }}</span>
-      </button>
-      {% endfor %}
-    </div>
-
     <button class="ap-m-format-filter-hint-banner-dismiss" on="tap:format-filter-hint.dismiss">
       {% do doc.icons.useIcon('/icons/close.svg') %}
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
     </button>
+    </div>
   </div>
 </div>
 
