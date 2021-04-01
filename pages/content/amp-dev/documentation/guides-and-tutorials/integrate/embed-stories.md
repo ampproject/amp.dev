@@ -17,7 +17,7 @@ Web Stories rely on the[ `amp-story-player` component ](https://github.com/amppr
 
 Then placing the `amp-story-player` element HTML in the desired location within your page’s `<body>`.
 
-[example preview="top-frame" playground="true"]
+[example preview="top-frame" playground="true" orientation="portrait"]
 ```html
 <head>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -46,7 +46,7 @@ Link to a Web Story by including an `<a>` tag with the `href` attribute pointed 
 
 Include the desired number of `<a>` tags, with each `href` attribute pointed to the desired Web Story URL, within the `<amp-story-player>` element.
 
-[example preview="top-frame" playground="true"]
+[example preview="top-frame" playground="true" orientation="portrait"]
 ```html
 <head>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
