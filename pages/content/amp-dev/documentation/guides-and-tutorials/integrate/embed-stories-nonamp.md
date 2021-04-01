@@ -9,7 +9,7 @@ formats:
 
 Web Stories are a full-screen immersive content experience that user’s tap or click through at their own pace. They live on the open web with their own URL, making them easily shareable. This guide teaches you how to embed Web Stories in a non-AMP page and surface them to readers. 
 
-[example preview="top-frame" playground="true"]
+[example preview="top-frame" playground="true" orientation="portrait"]
 ```html
 <!DOCTYPE html>
 <html>
@@ -145,7 +145,7 @@ html
 
 Link to a Web Story by including an `<a>` tag with the `href` attribute pointed to the desired Web Story URL within the `<amp-story-player>` element. The `href` endpoint may be the URL of a hosted Web Story or a relative path. Place the title of the story within the `<a>` tags.
 
-[example preview="top-frame" playground="true"]
+[example preview="top-frame" playground="true" orientation="portrait"]
 ```html
 <!DOCTYPE html>
 <html>
@@ -233,7 +233,7 @@ You can opt-out of the default behavior by using the configuration below. This w
 
 Include the desired number of `<a>` tags, with each `href` attribute pointed to the desired Web Story URL, within the `<amp-story-player>` element.
 
-[example preview="top-frame" playground="true"]
+[example preview="top-frame" playground="true" orientation="portrait"]
 ```html
 <!DOCTYPE html>
 <html>
