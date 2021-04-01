@@ -156,6 +156,7 @@ const surveyResponseRouter = express.Router();
 
 surveyResponseRouter.use(surveyEndpoint, express.json());
 
-surveyResponseRouter.all(surveyEndpoint, validateRequest, uploadAnswer);
+surveyResponseRouter.get(surveyEndpoint, validateRequest, uploadAnswer);
+surveyResponseRouter.post(surveyEndpoint, validateRequest, uploadAnswer);
 
 module.exports = surveyResponseRouter;
