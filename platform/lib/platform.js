@@ -176,6 +176,7 @@ class Platform {
     this.server.use(routers.healthCheck);
     this.server.use(routers.example.api);
     this.server.use(routers.pixi);
+    this.server.use(routers.survey);
     this.server.use(routers.search);
     this.server.use(routers.boilerplate);
     this.server.use(routers.static);
