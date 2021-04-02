@@ -20,7 +20,7 @@ const Handlebars = require('handlebars');
 const io = require('./io');
 const path = require('path');
 const hljs = require('highlight.js');
-const sass = require('node-sass');
+const sass = require('sass');
 
 const FRONTEND_DIR = '../../frontend/scss';
 const TEMPLATES_DIR = '../templates';

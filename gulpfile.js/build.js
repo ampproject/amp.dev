@@ -34,7 +34,7 @@ const git = require('@lib/utils/git');
 const ComponentReferenceImporter = require('@lib/pipeline/componentReferenceImporter');
 const SpecImporter = require('@lib/pipeline/specImporter');
 const RecentGuides = require('@lib/pipeline/recentGuides');
-const gulpSass = require('gulp-sass');
+const gulpSass = require('@mr-hope/gulp-sass');
 const importRoadmap = require('./import/importRoadmap.js');
 const importWorkingGroups = require('./import/importWorkingGroups.js');
 const importAdVendorList = require('./import/importAdVendorList.js');
@@ -97,12 +97,12 @@ function clean() {
 function sass() {
   const options = {
     'outputStyle': 'compressed',
-    'includePaths': project.paths.SCSS,
+    'includePaths': [project.paths.SCSS],
   };
 
   return gulp
     .src(`${project.paths.SCSS}/**/[^_]*.scss`)
-    .pipe(gulpSass(options))
+    .pipe(gulpSass.sassSync(options))
     .on('error', function (e) {
       console.error(e);
       // eslint-disable-next-line no-invalid-this
