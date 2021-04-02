@@ -1,7 +1,7 @@
 {% if survey_questions %}
   [% set surveys = {{ survey_questions|tojson }} %]
   [% set fixedQuestions = {{fixed_questions|tojson }} %]
-  [% set url = requestPath %]
+  [% set url = "{{ doc.url }}" %]
 
   {% do doc.styles.addCssFile('css/components/organisms/survey.css') %}
 
