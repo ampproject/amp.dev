@@ -94,7 +94,9 @@ Fez.prototype._attachListeners = function () {
     });
   });
 
-  dismiss.addEventListener('click', this.submit);
+  dismiss.addEventListener('click', (e) => {
+    this.submit(e);
+  });
 
   this.nextSlide();
 };
@@ -138,7 +140,7 @@ Fez.prototype.submit = async function (dismissed) {
         'questions': this.questions,
         'url': this.url,
         'shownAt': `${this.shownAt}`,
-        dismissed,
+        'dismissed': !!dismissed,
       }),
     });
   } catch (e) {
