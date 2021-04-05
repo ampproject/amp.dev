@@ -25,7 +25,7 @@
     "CWV_EVENT": "${base}?v=1&t=event&tid=${gtag_id}&cid=0&ec=cwv
   },
   'triggers': {
-    'default pageview': {
+    'defaultPageview': {
       'on': 'visible',
       'request': 'pageview',
       'vars': {
@@ -63,52 +63,52 @@
         'event_action': 'click'
       }
     },
-      'navigation': {
-        'selector': '.ap--header a, .ap-o-burger-menu-link',
-        'on': 'click',
-        'vars': {
-          'event_name': 'navigation',
-          'event_label': 'navigation',
-          'event_category': category or 'other',
-          'event_action': 'link'
-        }
-      },
-      'searchButton': {
-        'selector': '#searchTriggerOpen',
-        'on': 'click',
-        'vars': {
-          'event_name': 'search',
-          'event_label': 'search',
-          'event_category': 'search',
-          'event_action': 'open'
-        }
-      },
-      'scrolledHalf': {
-        'on': 'scroll',
-        'scrollSpec': {
-          'verticalBoundaries': [50]
-        },
-        'vars': {
-          'event_name': 'scroll',
-          'event_label': 'scroll',
-          'event_category': category or 'other',
-          'event_action': 'half'
-        }
-      },
-      'scrolledEnd': {
-        'on': 'scroll',
-        'scrollSpec': {
-          'verticalBoundaries': [90]
-        },
-        'vars': {
-          'event_name': 'scroll',
-          'event_label': 'scroll',
-          'event_category': category or 'other',
-          'event_action': 'end'
-        }
+    'navigation': {
+      'selector': '.ap--header a, .ap-o-burger-menu-link',
+      'on': 'click',
+      'vars': {
+        'event_name': 'navigation',
+        'event_label': 'navigation',
+        'event_category': category or 'other',
+        'event_action': 'link'
       }
+    },
+    'searchButton': {
+      'selector': '#searchTriggerOpen',
+      'on': 'click',
+      'vars': {
+        'event_name': 'search',
+        'event_label': 'search',
+        'event_category': 'search',
+        'event_action': 'open'
+      }
+    },
+    'scrolledHalf': {
+      'on': 'scroll',
+      'scrollSpec': {
+        'verticalBoundaries': [50]
+      },
+      'vars': {
+        'event_name': 'scroll',
+        'event_label': 'scroll',
+        'event_category': category or 'other',
+        'event_action': 'half'
+      }
+    },
+    'scrolledEnd': {
+      'on': 'scroll',
+      'scrollSpec': {
+        'verticalBoundaries': [90]
+      },
+      'vars': {
+        'event_name': 'scroll',
+        'event_label': 'scroll',
+        'event_category': category or 'other',
+        'event_action': 'end'
+      }
+    }
   }
-                } %}
+} %}
 
 {# On the courses page track how often the courses are downloaded #}
 {% if doc.pod_path == '/content/amp-dev/documentation/courses/teachers.md' %}
