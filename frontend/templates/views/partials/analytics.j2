@@ -20,7 +20,39 @@
   'extraUrlParams': {
     'cd2': '${ampdocHost}'
   },
+  'requests': {
+    "base": "https://google-analytics.com/collect/"
+    "CWV_EVENT": "${base}?v=1&t=event&tid=${gtag_id}&cid=0&ec=cwv
+  },
   'triggers': {
+    'defaultPageview': {
+      'on': 'visible',
+      'request': 'pageview',
+      'vars': {
+        'title': '{{title}}'
+      }
+    },
+    'cls': {
+      'on': 'visible',
+      'request': 'CWV_EVENT',
+      'extraUrlParams': {
+        'cls': '${cumulativeLayoutShift}'
+      }
+    },
+    'lcp': {
+      'on': 'visible',
+      'request': 'CWV_EVENT',
+      'extraUrlParams': {
+        'lcp': '${largestContentfulPaint}'
+      }
+    },
+    'fid': {
+      'on': 'visible',
+      'request': 'CWV_EVENT',
+      'extraUrlParams': {
+        'fid': '${firstInputDelay}'
+      }
+    }
     'banner': {
       'selector': '#top-banner',
       'on': 'click',
@@ -81,15 +113,15 @@
 {# On the courses page track how often the courses are downloaded #}
 {% if doc.pod_path == '/content/amp-dev/documentation/courses/teachers.md' %}
 {% do config['triggers'].update({'getCoursesButton': {
-  'selector': '#get-courses',
-  'on': 'click',
-  'vars': {
+    'selector': '#get-courses',
+    'on': 'click',
+    'vars': {
     'event_name': 'courses',
     'event_label': 'courses',
     'event_category': category,
     'event_action': 'download'
     }
-}}) %}
+    }}) %}
 {% endif %}
 
 {% if category %}
@@ -97,79 +129,79 @@
 {% if not (doc.format.toc == '<div class="toc">\n<ul></ul>\n</div>\n' or not doc.format.toc) and not (doc.toc == False or doc.collection.toc == False) %}
 {# Track click on links inside the TOC #}
 {% do config['triggers'].update({'tocLink': {
-  'selector': '.ap-o-toc a',
-  'on': 'click',
-  'vars': {
+    'selector': '.ap-o-toc a',
+    'on': 'click',
+    'vars': {
     'event_name': 'toc',
     'event_label': 'toc',
     'event_category': category,
     'event_action': 'link'
     }
-}}) %}
+    }}) %}
 
 {# Track when the TOC is toggled #}
 {% do config['triggers'].update({'tocToggle': {
-  'selector': '.ap-o-toc label',
-  'on': 'click',
-  'vars': {
+    'selector': '.ap-o-toc label',
+    'on': 'click',
+    'vars': {
     'event_name': 'toc',
     'event_label': 'toc',
     'event_category': category,
     'event_action': 'toggle'
     }
-}}) %}
+    }}) %}
 {% endif %}
 
 {# Sidebar #}
 {# Track clicks on links inside the sidebar #}
 {% do config['triggers'].update({'sidebarLink': {
-  'selector': '.ap-o-sidebar a',
-  'on': 'click',
-  'vars': {
+    'selector': '.ap-o-sidebar a',
+    'on': 'click',
+    'vars': {
     'event_name': 'sidebar',
     'event_label': 'sidebar',
     'event_category': category,
     'event_action': 'link'
     }
-}}) %}
+    }}) %}
 {# Track when the sidebar is toggled #}
 {% do config['triggers'].update({'sidebarToggle': {
-  'selector': 'label[for="sidebar-desktop"], label[for="sidebar"]',
-  'on': 'click',
-  'vars': {
+    'selector': 'label[for="sidebar-desktop"], label[for="sidebar"]',
+    'on': 'click',
+    'vars': {
     'event_name': 'sidebar',
     'event_label': 'sidebar',
     'event_category': category,
     'event_action': 'toggle'
     }
-}}) %}
+    }}) %}
 
 {# Breadcrubms #}
 {# Track when a breadcrumb is used #}
 {% do config['triggers'].update({'breadcrumbLink': {
-  'selector': '.ap-m-breadcrumbs-crumb',
-  'on': 'click',
-  'vars': {
+    'selector': '.ap-m-breadcrumbs-crumb',
+    'on': 'click',
+    'vars': {
     'event_name': 'breadcrumbs',
     'event_label': 'breadcrumbs',
     'event_category': category,
     'event_action': 'link'
     }
-}}) %}
+    }}) %}
 
 
 {# Format toggle #}
 {# Track when format is changed #}
 {% do config['triggers'].update({'formatToggle': {
-  'selector': '.ap-m-format-toggle-link',
-  'on': 'click',
-  'vars': {
+    'selector': '.ap-m-format-toggle-link',
+    'on': 'click',
+    'vars': {
     'event_name': 'format-toggle',
     'event_label': 'format-toggle',
     'event_category': category,
     'event_action': 'link'
-  }
-}}) %}
+    }
+    }}) %}
 {% endif %}
 
 {# Pixi #}
@@ -179,147 +211,147 @@
     'selector': '.ap-m-input-bar-submit',
     'on': 'click',
     'vars': {
-      'event_name': 'pixi-analyze-url',
-      'event_label': 'pixi-analyze-url',
-      'event_category': 'pixi',
-      'event_action': 'analyze'
+    'event_name': 'pixi-analyze-url',
+    'event_label': 'pixi-analyze-url',
+    'event_category': 'pixi',
+    'event_action': 'analyze'
     }
-}}) %}
+    }}) %}
 {# Track when "Investigate" button is clicked #}
 {% do config['triggers'].update({'investigateButton': 
     {
     'selector': '#investigate-button',
     'on': 'click',
     'vars': {
-      'event_name': 'pixi-investigate',
-      'event_label': 'pixi-investigate',
-      'event_category': 'pixi',
-      'event_action': 'api-failure'
+    'event_name': 'pixi-investigate',
+    'event_label': 'pixi-investigate',
+    'event_category': 'pixi',
+    'event_action': 'api-failure'
     }
-}}) %}
+    }}) %}
 {# Track when "Fix it now" button is clicked #}
 {% do config['triggers'].update({'fixItButton': 
     {
     'selector': '#fix-it-button',
     'on': 'click',
     'vars': {
-      'event_name': 'pixi-fix-it',
-      'event_label': 'pixi-fix-it',
-      'event_category': 'pixi',
-      'event_action': 'fix-it'
+    'event_name': 'pixi-fix-it',
+    'event_label': 'pixi-fix-it',
+    'event_category': 'pixi',
+    'event_action': 'fix-it'
     }
-}}) %}
+    }}) %}
 {# Track when "Share" button is pressed #}
 {% do config['triggers'].update({'shareButton': {
     'selector': '#share-button',
     'on': 'click',
     'vars': {
-      'event_name': 'pixi-share-url',
-      'event_label': 'pixi-share-url',
-      'event_category': 'pixi',
-      'event_action': 'share'
+    'event_name': 'pixi-share-url',
+    'event_label': 'pixi-share-url',
+    'event_category': 'pixi',
+    'event_action': 'share'
     }
-}}) %}
+    }}) %}
 {# Track when "# recommendations" link is clicked #}
 {% do config['triggers'].update({'recommendationsCta': 
     {
     'selector': 'a[href][target="_top"].ap-m-pixi-primary-metric-recommendations',
     'on': 'click',
     'vars': {
-      'event_name': 'pixi-recommendations-cta',
-      'event_label': 'pixi-recommendations-cta',
-      'event_category': 'pixi',
-      'event_action': 'link'
+    'event_name': 'pixi-recommendations-cta',
+    'event_label': 'pixi-recommendations-cta',
+    'event_category': 'pixi',
+    'event_action': 'link'
     }
-}}) %}
+    }}) %}
 {# Track when "File a GitHub issue" link is opened #}
 {% do config['triggers'].update({'fileIssue': 
     {
     'selector': 'a[href][target="_blank"].ap-m-pixi-primary-metric-recommendations',
     'on': 'click',
     'vars': {
-      'event_name': 'pixi-file-issue',
-      'event_label': 'pixi-file-issue',
-      'event_category': 'pixi',
-      'event_action': 'link'
+    'event_name': 'pixi-file-issue',
+    'event_label': 'pixi-file-issue',
+    'event_category': 'pixi',
+    'event_action': 'link'
     }
-}}) %}
+    }}) %}
 {# Track when tooltip is opened #}
 {% do config['triggers'].update({'openTooltip': 
     {
     'selector': '.ap-m-tooltip-toggle[aria-expanded="false"]',
     'on': 'click',
     'vars': {
-      'event_name': 'pixi-tooltip-open',
-      'event_label': 'pixi-tooltip-open',
-      'event_category': 'pixi',
-      'event_action': 'tooltip'
+    'event_name': 'pixi-tooltip-open',
+    'event_label': 'pixi-tooltip-open',
+    'event_category': 'pixi',
+    'event_action': 'tooltip'
     }
-}}) %}
+    }}) %}
 {# Track when field data tab is opened #}
 {% do config['triggers'].update({'openFieldData': 
     {
     'selector': '#field-data-tab',
     'on': 'click',
     'vars': {
-      'event_name': 'pixi-field-data-open',
-      'event_label': 'pixi-field-data-open',
-      'event_category': 'pixi',
-      'event_action': 'view-field-data'
+    'event_name': 'pixi-field-data-open',
+    'event_label': 'pixi-field-data-open',
+    'event_category': 'pixi',
+    'event_action': 'view-field-data'
     }
-}}) %}
+    }}) %}
 {# Track when lab data tab is opened #}
 {% do config['triggers'].update({'openLabData': 
     {
     'selector': '#lab-data-tab',
     'on': 'click',
     'vars': {
-      'event_name': 'pixi-lab-data-open',
-      'event_label': 'pixi-lab-data-open',
-      'event_category': 'pixi',
-      'event_action': 'view-lab-data'
+    'event_name': 'pixi-lab-data-open',
+    'event_label': 'pixi-lab-data-open',
+    'event_category': 'pixi',
+    'event_action': 'view-lab-data'
     }
-}}) %}
+    }}) %}
 {# Track when recommendations are filtered #}
 {% do config['triggers'].update({'filterRecommendations': 
     {
     'selector': 'button.ap-a-pill[aria-pressed="false"]',
     'on': 'click',
     'vars': {
-      'event_name': 'pixi-filter-recommendations',
-      'event_label': 'pixi-filter-recommendations',
-      'event_category': 'pixi',
-      'event_action': 'filter'
+    'event_name': 'pixi-filter-recommendations',
+    'event_label': 'pixi-filter-recommendations',
+    'event_category': 'pixi',
+    'event_action': 'filter'
     }
-}}) %}
+    }}) %}
 {# Track when recommendations are expanded #}
 {% do config['triggers'].update({'expandRecommendation': 
     {
     'selector': 'button.ap-m-pixi-recommendations-item-header[aria-expanded="false"]',
     'on': 'click',
     'vars': {
-      'event_name': 'pixi-expand-recommendation',
-      'event_label': 'pixi-expand-recommendation',
-      'event_category': 'pixi',
-      'event_action': 'expand'
+    'event_name': 'pixi-expand-recommendation',
+    'event_label': 'pixi-expand-recommendation',
+    'event_category': 'pixi',
+    'event_action': 'expand'
     }
-}}) %}
+    }}) %}
 {# Track when "Next advice" is clicked #}
 {% do config['triggers'].update({'nextRecommendation': 
     {
     'selector': 'a.ap-m-pixi-recommendations-item-next-advice',
     'on': 'click',
     'vars': {
-      'event_name': 'pixi-next-recommendation',
-      'event_label': 'pixi-next-recommendation',
-      'event_category': 'pixi',
-      'event_action': 'next-advice'
+    'event_name': 'pixi-next-recommendation',
+    'event_label': 'pixi-next-recommendation',
+    'event_category': 'pixi',
+    'event_action': 'next-advice'
     }
-}}) %}
+    }}) %}
 {% endif %}
 
 <amp-analytics type="gtag" data-credentials="include" data-block-on-consent>
-  <script type="application/json">
-    {{ config|tojson }}
-  </script>
+<script type="application/json">
+{{ config|tojson }}
+</script>
 </amp-analytics>
