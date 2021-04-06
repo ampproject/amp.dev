@@ -13,14 +13,9 @@
 # limitations under the License.
 
 # Use an official Go runtime as a parent image
-FROM golang:1.13
+FROM golang:1.16
 
 ENV GO111MODULE=on
-
-# Install AMP Packager
-# Run this if you want to go off master branch.
-RUN go get -v github.com/ampproject/amppackager/cmd/amppkg@master
-# RUN go get -v github.com/ampproject/amppackager/cmd/amppkg
 
 # Clone amppackager files so we can use b3 directory
 WORKDIR /data
@@ -29,6 +24,10 @@ ADD https://api.github.com/repos/ampproject/amppackager/git/refs/heads/master ve
 # Run this if you clone from master branch.
 RUN git clone -b master https://github.com/ampproject/amppackager.git /data/amppackager
 # RUN git clone https://github.com/ampproject/amppackager.git /data/amppackager
+
+# Install AMP Packager
+# Run this if you want to go off master branch.
+RUN  cd /data/amppackager/ && go install github.com/ampproject/amppackager/cmd/amppkg
 
 # Seed the ocsp cache
 WORKDIR /data/amppackager/testdata/b3
