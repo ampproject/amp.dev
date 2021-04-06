@@ -196,6 +196,16 @@ creation:
       height: 400
     formats:
       - stories
+  - name: Glia Story
+    description: GliaStory uses AI to generate Web Stories from news, e-commerce and even podcast content in minutes!
+    url: https://www.gliastory.com/
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/gliastory.jpg
+      width: 1000
+      height: 491
+    formats:
+      - stories    
   - name: Unbounce
     description: Unbounce is a platform to create landing pages, website popups, and sticky bars.
     url: https://unbounce.com
