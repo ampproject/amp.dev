@@ -58,9 +58,9 @@ echo -e 'travis_fold:end:install_gsutil\n'
 
 # Upload build output
 echo $(GREEN "Uploading build output...")
-if [ "${TRAVIS_BRANCH}" = "production" ]; then
+if [ "${TRAVIS_BRANCH}" = "legacy-production" ]; then
   gsutil -m cp -r ${build_file} gs://ampproject-b5f4c.appspot.com;
-elif [ "${TRAVIS_BRANCH}" = "master" ]; then
+elif [ "${TRAVIS_BRANCH}" = "legacy-master" ]; then
   gsutil -m cp -r ${build_file} gs://ampproject-staging.appspot.com;
 fi
 

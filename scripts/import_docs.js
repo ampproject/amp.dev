@@ -124,8 +124,10 @@ function downloadPage(filePath, headingToStrip) {
     let process = function (err, data) {
 
       if (err || data && data.content !== undefined && !data.content.length) {
-        console.error('Skipping ' + filePath + ', file is empty..');
-        throw err
+
+        console.error(`Error importing ${filePath}`);
+        throw err || 'Skipping ' + filePath + ', file is empty..';
+
       }
 
       let encodedContent = new Buffer(data.content || data, 'base64');
@@ -374,6 +376,3 @@ client.get('/repos/ampproject/amphtml/releases/latest', {}, function (err, statu
   downloadBuiltins();
   downloadExtensions();
 });
-
-
-

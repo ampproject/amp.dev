@@ -38,6 +38,5 @@ jobs:
         - ./build_scripts/deploy.sh
 branches:
   only:
-  - production
-  - master
-  - parallel
+  - legacy-production
+  - legacy-master
