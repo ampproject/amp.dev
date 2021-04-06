@@ -13,6 +13,92 @@ const localPath = process.env.AMP_DOC_LOCAL_PATH;
 const importData = require('./import_docs.json');
 const subfolderLookupTable = require('./component_categories.json');
 
+// Matches tags used for SSR
+const NUNJUCKS_PATTERN = /\[(?:%|=|#)|(?:%|=|#)\]/g;
+
+// Matches a block of frontmatter delimited by ---
+const FRONTMATTER_PATTERN = /^---\r?\n.*\r?\n---\r?\n/ms;
+
+const JINJA2_RAW_BLOCK = /\{%\s*raw\s*%\}(?:(?!\{%\s*endraw\s*%\})[\s\S])*\{%\s*endraw\s*%\}/;
+
+// This expression matches source code blocks. fenced blocks are converted to this syntax
+const SOURCECODE_BLOCK = /\[\s*sourcecode[^\]]*\][\s\S]*?\[\s*\/\s*sourcecode\s*\]/;
+
+// we search for ALL code blocks, and at the same time for raw blocks
+// to ensure we do not match something that belongs to different code blocks
+// or we add raw tags to existing raw blocks
+const MARKDOWN_BLOCK_PATTERN = new RegExp(
+  JINJA2_RAW_BLOCK.source +
+    '|' +
+    SOURCECODE_BLOCK.source +
+    '|' +
+    /`[^`]*`/.source,
+  'g'
+);
+
+// Inside code blocks we search for mustache expressions
+// The constant 'server_for_email' and expressions with a dot or a bracket are not considered mustache
+// TODO: Avoid the need to distinguish between mustache and jinja2
+const MUSTACHE_PATTERN = new RegExp(
+  '(' +
+    JINJA2_RAW_BLOCK.source +
+    '|' +
+    /\{\{(?!\s*server_for_email\s*\}\})(?:[\s\S]*?\}\})?/.source +
+    ')',
+  'g'
+);
+
+
+/**
+ * Rewrites code fences to python-markdown syntax.
+ * @param  {String} contents
+ * @return {String}          The rewritten content
+ */
+function rewriteCodeBlocks(contents) {
+  // Ensure valid quotation marks are used in code blocks
+  contents = contents.replace(/[“”„‟]/g, `"`);
+
+// Rewrite code blocks in fence syntax
+contents = contents.replace(
+/(```)(([A-z-]*)\n)(((?!```)[\s\S])+)(```[\t ]*\n)/gm,
+    (match, p1, p2, p3, p4) => {
+      return (
+        '[sourcecode' +
+        (p3 ? ':' + p3 : ':none') +
+        ']\n' +
+        p4 +
+        '[/sourcecode]\n'
+      );
+    }
+  );
+
+  return contents;
+}
+
+/**
+ * Escapes mustache style tags in code blocks to not interfer with Jinja2
+ * @param  {String} contents
+ * @return {String}          The rewritten input
+ */
+function escapeMustacheTags(contents) {
+  // the new content breaks the build, and we don't ever actually display it, we just use this site to forward to amp.dev. As a result, return nothing here to get the build functional
+  return contents.replace(MARKDOWN_BLOCK_PATTERN, (block) => '');
+}
+
+/**
+ * Escapes nunjucks tags to not interfer with SSR
+ * @param  {String} contents
+ * @return {String}          The rewritten input
+ */
+function escapeNunjucksTags(contents) {
+  return contents.replace(NUNJUCKS_PATTERN, (tag) => {
+    // TODO(matthiasrohmer): Raw tags for nunjucks do not match.
+    // See: github.com/ampproject/amp.dev#2865
+    return `{{'[% raw %]'}}${tag}{{'{% endraw %}'}}`;
+  });
+}
+
+
 if(!(clientToken || (clientSecret && clientId))) {
   console.error('This script reads the reference docs from GitHub which requires providing either a GitHub personal access token (AMP_DOC_TOKEN) or GitHub application id/secret (AMP_DOC_ID and AMP_DOC_SECRET).  See README.md for more information.');
   process.exit(1);
@@ -82,6 +168,16 @@ function getDependencies(content) {
 
 }
 
+/**
+ * Replaces --- (<hr>) with *** as former one collides with
+ * Grow's way of extracting the frontmatter
+ * @param  {String} contents
+ * @return {String}          The rewritten input
+ */
+function replaceDelimiters(contents) {
+  return contents.replace(/\n---\n/gm, '\n***\n');
+}
+
 /*
  *  Saves a markdown page to the file system
  */
@@ -105,6 +201,20 @@ ${optionalTOC}${optionalDependencies}---
 
 function convertMarkdown(content, relativePath, headingToStrip) {
 
+  // remove inline format filter, since they don't exist in this old version of the site and break the build
+  content = content.replace(/{%\s*if not format=='email'\s*%}([^{]+){%\s*endif\s*%}/g, '$1');
+  content = content.replace(/{%\s*if format=='stories'\s*%}[^{]+{%\s*endif\s*%}/g, '');
+
+  content = content.replace(FRONTMATTER_PATTERN, '');
+
+  content = replaceDelimiters(content);
+
+  content = rewriteCodeBlocks(content);
+
+  content = escapeMustacheTags(content);
+
+  content = escapeNunjucksTags(content);
+
   // strip out first heading
   content = content.replace(headingToStrip === 1 ? (/^#{1}\s.+/m) : (/^#{3}\s.+/m), '');
 
@@ -116,16 +226,6 @@ function convertMarkdown(content, relativePath, headingToStrip) {
   content = content.replace('<!---', '\n<!---');
 
   // replace code blocks
-  content = content.replace(/(```)(([A-z-]*)\n)(((?!```)[\s\S])+)(```\n)/gm, (match, p1, p2, p3, p4) => {
-    // work around for mustache-style curly braces to not mess with Grow
-    if (p4.indexOf('{{') > -1) {
-      p4 = '{% raw %}' + p4 + '{% endraw %}';
-    }
-    return '[sourcecode' + (p3 ? ':' + p3 : ':none') + ']\n' + p4 + '[/sourcecode]\n';
-  });
-
-  // replace mustache-style code elements
-  content = content.replace(/`([^{`]*)(\{\{[^`]*\}\})([^`]*)`/g, '{% raw %}`$1$2$3`{% endraw %}');
 
   // remove front matter (only relevant for this legacy importer)
   content = content.replace(/---[^!]+---/gm, '');
