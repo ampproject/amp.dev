@@ -212,42 +212,8 @@ ${optionalTOC}${optionalDependencies}---
 
 function convertMarkdown(content, relativePath, headingToStrip) {
 
-  // remove inline format filter, since they don't exist in this old version of the site and break the build
-  content = content.replace(/{%\s*if not format=='email'\s*%}([^{]+){%\s*endif\s*%}/g, '$1');
-  content = content.replace(/{%\s*if format=='stories'\s*%}[^{]+{%\s*endif\s*%}/g, '');
-
-  content = content.replace(FRONTMATTER_PATTERN, '');
-
-  content = replaceDelimiters(content);
-
-  content = rewriteCodeBlocks(content);
-
-  content = escapeMustacheTags(content);
-
-  content = escapeNunjucksTags(content);
-
-  // strip out first heading
-  content = content.replace(headingToStrip === 1 ? (/^#{1}\s.+/m) : (/^#{3}\s.+/m), '');
-
-  // this regular expression is crazy. Adds a newline before lists so they are parsed
-  // as proper lists by Jekyll.
-  content = content.replace(/(\n(?![^\S\n]*\*[^\S\n])(?![^\S\n]*-)[^\n]+\n)([^\S\n]*?(?!\*\*)((-\s)|(\*\s)|(1\.\s)))/gm, '$1\n$2');
-
-  // for comments to be parsed correctly as HTML, we need an extra line break
-  content = content.replace('<!---', '\n<!---');
-
-  // replace code blocks
-
-  // remove front matter (only relevant for this legacy importer)
-  content = content.replace(/---[^!]+---/gm, '');
-
-  // horizontal rules like --- will break front matter
-  content = content.replace(/\n---\n/gm, '\n- - -\n');
-
-  // create absolute urls from relative github urls
-  content = content.replace(/\[([^\]]+)\]\((?!http|#)([^\)]+)\)/g, '[$1](https://github.com/ampproject/amphtml/blob/master/' + relativePath + '/$2)');
-
-  return content;
+  // the new content breaks the build, and we don't ever actually display it, we just use this site to forward to amp.dev. As a result, return nothing here to get the build functional
+  return ''
 }
 
 
