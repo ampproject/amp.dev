@@ -39,9 +39,12 @@ const {FORMAT_WEBSITES} = require('../amp/formatHelper.js');
 // Where to import the samples from
 const SAMPLE_SRC = utils.project.absolute('examples/source');
 // The pod path for the documentation pages
-const DOCUMENTATION_POD_PATH = 'content/amp-dev/documentation/examples/documentation';
+const DOCUMENTATION_POD_PATH =
+  'content/amp-dev/documentation/examples/documentation';
 // Where to store the samples inside the Grow pod in
-const DOCUMENTATION_DEST = utils.project.absolute(`pages/${DOCUMENTATION_POD_PATH}`);
+const DOCUMENTATION_DEST = utils.project.absolute(
+  `pages/${DOCUMENTATION_POD_PATH}`
+);
 // What Grow template to use to render the sample's manual
 const DOCUMENTATION_TEMPLATE = '/views/examples/documentation.j2';
 // The pod path for the previews
@@ -51,9 +54,13 @@ const PREVIEW_DEST = utils.project.absolute(`pages/${PREVIEW_POD_PATH}`);
 // What template to use to render the preview
 const PREVIEW_TEMPLATE = '/views/examples/preview.j2';
 // Path to the story embed snippet
-const STORY_EMBED_SNIPPET = utils.project.absolute('frontend/js/story-progress.js');
+const STORY_EMBED_SNIPPET = utils.project.absolute(
+  'frontend/js/story-progress.js'
+);
 // Path to the ads embed template
-const ADS_EMBED_TEMPLATE = utils.project.absolute('frontend/templates/views/examples/embed-ads.j2');
+const ADS_EMBED_TEMPLATE = utils.project.absolute(
+  'frontend/templates/views/examples/embed-ads.j2'
+);
 // Where to store the embeds for Grow
 const EMBED_DEST = utils.project.absolute('dist/examples/embeds');
 // Base to define the request path for Grow
@@ -67,9 +74,13 @@ const API_HOST = 'https://amp-by-example-api.appspot.com';
 // The host used for samples depending on a backend
 const BACKEND_HOST = 'https://ampbyexample.com';
 // The path where the playground's example sitemap is written
-const SITEMAP_DEST = utils.project.absolute('examples/static/samples/samples.json');
+const SITEMAP_DEST = utils.project.absolute(
+  'examples/static/samples/samples.json'
+);
 // The path where the playground's example sitemap is written
-const COMPONENT_SAMPLES_DEST = utils.project.absolute('pages/shared/data/componentSamples.json');
+const COMPONENT_SAMPLES_DEST = utils.project.absolute(
+  'pages/shared/data/componentSamples.json'
+);
 
 class SamplesBuilder {
   constructor() {
@@ -109,28 +120,36 @@ class SamplesBuilder {
         this._log.success('Loaded ads embed template.');
       }),
 
-      formatTransform.getInstance().then((instance) => {
-        this._formatTransform = instance;
-        this._log.success('Created format transformer instance.');
-      }).catch((e) => {
-        this._log.warn('Could not create format transformer instance. Samples will only be build for their original format.');
-      }),
+      formatTransform
+        .getInstance()
+        .then((instance) => {
+          this._formatTransform = instance;
+          this._log.success('Created format transformer instance.');
+        })
+        .catch((e) => {
+          this._log.warn(
+            'Could not create format transformer instance. Samples will only be build for their original format.'
+          );
+        }),
 
-      del([
-        `${DOCUMENTATION_DEST}/**/*.html`,
-        `${DOCUMENTATION_DEST}/**/*.json`,
-        `${PREVIEW_DEST}/**/*.html`,
+      del(
+        [
+          `${DOCUMENTATION_DEST}/**/*.html`,
+          `${DOCUMENTATION_DEST}/**/*.json`,
+          `${PREVIEW_DEST}/**/*.html`,
 
-        SOURCE_DEST,
-        EMBED_DEST,
+          SOURCE_DEST,
+          EMBED_DEST,
 
-        SITEMAP_DEST,
-        COMPONENT_SAMPLES_DEST,
-      ], {
-        'force': true,
-      }).then(() => {
+          SITEMAP_DEST,
+          COMPONENT_SAMPLES_DEST,
+        ],
+        {
+          'force': true,
+        }
+      ).then(() => {
         this._log.success('Cleaned destination paths.');
-      })
+      }),
     ]);
 
     this._bootstrapped = true;
@@ -153,35 +172,45 @@ class SamplesBuilder {
     }
 
     return new Promise(async (resolve, reject) => {
-      let stream = gulp.src([
-        `${SAMPLE_SRC}/*/*.html`, `${SAMPLE_SRC}/*/*/*.html`, `!**/*embed.html`], {'read': true});
+      let stream = gulp.src(
+        [
+          `${SAMPLE_SRC}/*/*.html`,
+          `${SAMPLE_SRC}/*/*/*.html`,
+          `!**/*embed.html`,
+        ],
+        {'read': true}
+      );
 
       stream = stream.pipe(once({file: false}));
 
       const sampleBuilds = [];
 
-      stream = stream.pipe(through.obj((sample, encoding, callback) => {
-        sampleBuilds.push(this._buildSample(sample, callback, stream));
-      }));
+      stream = stream.pipe(
+        through.obj((sample, encoding, callback) => {
+          sampleBuilds.push(this._buildSample(sample, callback, stream));
+        })
+      );
 
       await Promise.all(sampleBuilds);
 
-      stream.pipe(gulp.dest((file) => {
-        file.dirname = `${SAMPLE_SRC}/${this._getCategory(file)}`;
-        if (file.isSourceFile) {
-          return SOURCE_DEST;
-        } else if (file.isPreview) {
-          // Remove double name from path to flatten structure for Grow
-          file.dirname = `${SAMPLE_SRC}`;
-          return PREVIEW_DEST;
-        } else if (file.isEmbed) {
-          return EMBED_DEST;
-        } else {
-          // Remove double name from path to flatten structure for Grow
-          file.dirname = `${SAMPLE_SRC}`;
-          return DOCUMENTATION_DEST;
-        }
-      }));
+      stream.pipe(
+        gulp.dest((file) => {
+          file.dirname = `${SAMPLE_SRC}/${this._getCategory(file)}`;
+          if (file.isSourceFile) {
+            return SOURCE_DEST;
+          } else if (file.isPreview) {
+            // Remove double name from path to flatten structure for Grow
+            file.dirname = `${SAMPLE_SRC}`;
+            return PREVIEW_DEST;
+          } else if (file.isEmbed) {
+            return EMBED_DEST;
+          } else {
+            // Remove double name from path to flatten structure for Grow
+            file.dirname = `${SAMPLE_SRC}`;
+            return DOCUMENTATION_DEST;
+          }
+        })
+      );
 
       stream.on('error', (error) => {
         this._log.fatal('There was an error building the samples', error);
@@ -206,16 +235,18 @@ class SamplesBuilder {
   async _buildSample(sample, callback, stream) {
     try {
       this._log.await(`Building sample ${sample.relative} ...`);
-      const { document } = await this._parseSample(sample);
+      const {document} = await this._parseSample(sample);
 
       const isWebSample = document.formats().includes(FORMAT_WEBSITES);
       // Only samples that have been originally written for AMP for websites
       // can be transformed and only if validator.json could be fetched
-      const shouldTransform = this._formatTransform && isWebSample
-          && !document.metadata.disableTransform
-          && !document.metadata.hideCode
-          && !document.metadata.disablePlayground
-          && !document.metadata.hidePreview;
+      const shouldTransform =
+        this._formatTransform &&
+        isWebSample &&
+        !document.metadata.disableTransform &&
+        !document.metadata.hideCode &&
+        !document.metadata.disablePlayground &&
+        !document.metadata.hidePreview;
 
       const samples = [];
       if (!shouldTransform) {
@@ -228,34 +259,41 @@ class SamplesBuilder {
           }
         }
       }
-      await Promise.all(samples.map(async (sample) => {
-        const parsedSample = await this._parseSample(sample);
+      await Promise.all(
+        samples.map(async (sample) => {
+          const parsedSample = await this._parseSample(sample);
 
-        // Skip samples that are drafts for all envs except development
-        if (parsedSample.document.metadata.draft && config.environment !== 'development') {
-          return;
-        }
+          // Skip samples that are drafts for all envs except development
+          if (
+            parsedSample.document.metadata.draft &&
+            config.environment !== 'development'
+          ) {
+            return;
+          }
 
-        if (!parsedSample.document.metadata.disablePlayground &&
-            !parsedSample.document.metadata.draft) {
-          this._addToSitemap(sample, parsedSample);
-        }
+          if (
+            !parsedSample.document.metadata.disablePlayground &&
+            !parsedSample.document.metadata.draft
+          ) {
+            this._addToSitemap(sample, parsedSample);
+          }
 
-        // Build various documents and sources that are needed for Grow
-        // to successfully render the example and for the playground
-        const files = [
-          ...this._createDocumentation(sample, parsedSample),
-          ...this._buildRawSources(sample, parsedSample),
-          ...this._createPreview(sample, parsedSample),
-          ...this._renderEmbed(sample, parsedSample),
-        ];
+          // Build various documents and sources that are needed for Grow
+          // to successfully render the example and for the playground
+          const files = [
+            ...this._createDocumentation(sample, parsedSample),
+            ...this._buildRawSources(sample, parsedSample),
+            ...this._createPreview(sample, parsedSample),
+            ...this._renderEmbed(sample, parsedSample),
+          ];
 
-        // Since stream.push doesn't allow to push multiple files at once
-        /* eslint-disable guard-for-in */
-        for (const file of files) {
-          stream.push(file);
-        }
-      }));
+          // Since stream.push doesn't allow to push multiple files at once
+          /* eslint-disable guard-for-in */
+          for (const file of files) {
+            stream.push(file);
+          }
+        })
+      );
     } catch (error) {
       this._log.error(error);
     }
@@ -284,29 +322,39 @@ class SamplesBuilder {
     const platformHost = config.getHost(config.hosts.platform);
     const websocketHost = config.getHost(config.hosts.websocket);
 
-    const parsedSample = await abe.parseSample(samplePath, {
-      'base_path': `${platformHost}${this._getBaseRoute(sample)}`,
-      'canonical': `${platformHost}${this._getDocumentationRoute(sample)}`,
-      'preview': `${platformHost}${this._getPreviewRoute(sample)}`,
-      'hosts': {
-        'platform': platformHost,
-        'api': API_HOST,
-        'websocket': websocketHost,
-        'backend': BACKEND_HOST,
-        'preview': config.hosts.preview.base,
+    const parsedSample = await abe.parseSample(
+      samplePath,
+      {
+        'base_path': `${platformHost}${this._getBaseRoute(sample)}`,
+        'canonical': `${platformHost}${this._getDocumentationRoute(sample)}`,
+        'preview': `${platformHost}${this._getPreviewRoute(sample)}`,
+        'hosts': {
+          'platform': platformHost,
+          'api': API_HOST,
+          'websocket': websocketHost,
+          'backend': BACKEND_HOST,
+          'preview': config.hosts.preview.base,
+        },
       },
-    }, sample.contents.toString());
+      sample.contents.toString()
+    );
 
     // Transformed sample files end with ".<format>", e.g. "amp-list.email".
     if (parsedSample.document.title.match(/\.[a-z]+$/)) {
       parsedSample.isTransformed = true;
       // Strip the ".<format>" suffix to have the same title as the original.
-      parsedSample.document.title = parsedSample.document.title.replace(/\.[a-z]+$/, '');
+      parsedSample.document.title = parsedSample.document.title.replace(
+        /\.[a-z]+$/,
+        ''
+      );
     }
 
     // parsedSample.filePath is absolute but needs to be relative in order
     // to use it to build a URL to GitHub
-    parsedSample.filePath = parsedSample.filePath.replace(path.join(__dirname, '../../../'), '');
+    parsedSample.filePath = parsedSample.filePath.replace(
+      path.join(__dirname, '../../../'),
+      ''
+    );
 
     // Add the delivery path of the manual for preview rendering
     parsedSample.route = this._getDocumentationRoute(sample);
@@ -368,7 +416,10 @@ class SamplesBuilder {
     if (format !== FORMAT_WEBSITES) {
       transformed.extname = `.${format}.html`;
     }
-    const {transformedContent, validationResult} = this._formatTransform.transform(transformed.contents, format);
+    const {
+      transformedContent,
+      validationResult,
+    } = this._formatTransform.transform(transformed.contents, format);
     if (validationResult && validationResult.status !== 'PASS') {
       return null;
     }
@@ -386,15 +437,20 @@ class SamplesBuilder {
     for (const format of parsedSample.document.formats()) {
       const formatCategories = this._sitemap[format] || {};
 
-      const category = require(path.join(SAMPLE_SRC, this._getCategory(sample, true), 'index.json'));
+      const category = require(path.join(
+        SAMPLE_SRC,
+        this._getCategory(sample, true),
+        'index.json'
+      ));
       const categorySamples = formatCategories[category.publicName] || {
         'name': category.publicName,
         'examples': [],
       };
       categorySamples.examples.push({
         'title': parsedSample.document.title,
-        'url': `${config.getHost(config.hosts.preview)}` +
-            this._getSourceRoute(sample),
+        'url':
+          `${config.getHost(config.hosts.preview)}` +
+          this._getSourceRoute(sample),
       });
 
       formatCategories[category.publicName] = categorySamples;
@@ -426,7 +482,9 @@ class SamplesBuilder {
     // Sort component samples to always have the specific component
     // sample at first
     for (const component of Object.keys(this._componentSamples)) {
-      this._componentSamples[component] = Object.values(this._componentSamples[component]);
+      this._componentSamples[component] = Object.values(
+        this._componentSamples[component]
+      );
 
       this._componentSamples[component].sort((sample1, sample2) => {
         return sample1.title.startsWith(component) ? 1 : 0;
@@ -441,11 +499,15 @@ class SamplesBuilder {
           this._log.success('Wrote sample sitemap.');
         }),
 
-        writeFileAsync(COMPONENT_SAMPLES_DEST, JSON.stringify(this._componentSamples), {
-          flag: 'w+',
-        }).then(() => {
+        writeFileAsync(
+          COMPONENT_SAMPLES_DEST,
+          JSON.stringify(this._componentSamples),
+          {
+            flag: 'w+',
+          }
+        ).then(() => {
           this._log.success('Wrote component samples map.');
-        })
+        }),
       ]);
     } catch (e) {
       this._log.error('Writing samples builder meta files failed', e);
@@ -484,7 +546,9 @@ class SamplesBuilder {
    * @return {string}       The route
    */
   _getBaseRoute(sample) {
-    return `${ROUTE_BASE}/${this._getCategory(sample)}/${sample.stem.toLowerCase()}`;
+    return `${ROUTE_BASE}/${this._getCategory(
+      sample
+    )}/${sample.stem.toLowerCase()}`;
   }
 
   /**
@@ -508,8 +572,7 @@ class SamplesBuilder {
    * @return {string}       The route
    */
   _getPreviewRoute(sample) {
-    return this._getBaseRoute(sample) +
-      '/preview/index.html';
+    return this._getBaseRoute(sample) + '/preview/index.html';
   }
 
   /**
@@ -545,11 +608,7 @@ class SamplesBuilder {
 
     // List of metadata properties to transfer from sample header to
     // markdown header.
-    const metadataToTransfer = [
-      'author',
-      'translator',
-      'contributors',
-    ];
+    const metadataToTransfer = ['author', 'translator', 'contributors'];
 
     const header = {
       '$$injectAmpDependencies': false,
@@ -566,20 +625,23 @@ class SamplesBuilder {
 
     for (const metadataProperty of metadataToTransfer) {
       if (parsedSample.document.metadata[metadataProperty]) {
-        header[metadataProperty] = parsedSample.document.metadata[metadataProperty];
+        header[metadataProperty] =
+          parsedSample.document.metadata[metadataProperty];
       }
     }
 
     // Build actual file needed for Grow to render the documentation
-    manual.contents = Buffer.from([
-      '---',
-      yaml.dump(header, {'lineWidth': 500}),
-      // Add example manually as constructors may not be quoted
-      `example: !g.json /${DOCUMENTATION_POD_PATH}/${manual.stem}.json`,
-      // ... and some additional information that is used by the example teaser
-      this._getTeaserData(sample, parsedSample),
-      '---',
-    ].join('\n'));
+    manual.contents = Buffer.from(
+      [
+        '---',
+        yaml.dump(header, {'lineWidth': 500}),
+        // Add example manually as constructors may not be quoted
+        `example: !g.json /${DOCUMENTATION_POD_PATH}/${manual.stem}.json`,
+        // ... and some additional information that is used by the example teaser
+        this._getTeaserData(sample, parsedSample),
+        '---',
+      ].join('\n')
+    );
     manual.extname = '.html';
 
     // ... and the parsed sample as data source to render the manual
@@ -607,9 +669,11 @@ class SamplesBuilder {
     teaserData.used_components = this._getUsedComponents(sample, parsedSample);
 
     if (parsedSample.document.metadata.teaserImage) {
-      teaserData.teaser = {'image': {
-        'src': parsedSample.document.metadata.teaserImage,
-      }};
+      teaserData.teaser = {
+        'image': {
+          'src': parsedSample.document.metadata.teaserImage,
+        },
+      };
     }
 
     return yaml.dump(teaserData, {'lineWidth': 500});
@@ -625,12 +689,15 @@ class SamplesBuilder {
     const COMPONENT_PATTERN = /<script[^>]*?custom-(?<type>[a-z]+)="(?<name>[^"]+)"[^>]*src="[^"]+-(?<version>\d+(\.\d+)*)\.js"[^>]*>\s*<\/script>/g;
 
     const usedComponents = {};
-    parsedSample.document.head.replace(COMPONENT_PATTERN, (script, type, name, version) => {
-      usedComponents[name] = {
-        version,
-        type,
+    parsedSample.document.head.replace(
+      COMPONENT_PATTERN,
+      (script, type, name, version) => {
+        usedComponents[name] = {
+          version,
+          type,
+        };
       }
-    });
+    );
 
     // Store the sample by it's used component to show all samples for a specific
     // component on its documentation page
@@ -645,8 +712,8 @@ class SamplesBuilder {
         this._componentSamples[name][title] = {
           title: title,
           url: this._getDocumentationRoute(sample),
-          formats: formats
-        }
+          formats: formats,
+        };
       } else {
         this._componentSamples[name][title].formats.concat(formats);
       }
@@ -734,19 +801,25 @@ class SamplesBuilder {
 
       if (parsedSample.document.isAmpStory) {
         embed.contents = Buffer.from(
-            parsedSample.source.replace('</body>',
-                `<script>${this._cache[STORY_EMBED_SNIPPET]}</script></body>`)
+          parsedSample.source.replace(
+            '</body>',
+            `<script>${this._cache[STORY_EMBED_SNIPPET]}</script></body>`
+          )
         );
       }
 
       if (parsedSample.document.isAmpAds) {
-        const adsEmbed = nunjucks.renderString(this._cache[ADS_EMBED_TEMPLATE], {
-          'metadata': parsedSample.document.metadata,
-          'canonical': `${config.getHost(config.hosts.platform)}` +
+        const adsEmbed = nunjucks.renderString(
+          this._cache[ADS_EMBED_TEMPLATE],
+          {
+            'metadata': parsedSample.document.metadata,
+            'canonical':
+              `${config.getHost(config.hosts.platform)}` +
               `${this._getDocumentationRoute(sample)}`,
-          'source': this._getSourceRoute(sample),
-          'title': parsedSample.document.metadata,
-        });
+            'source': this._getSourceRoute(sample),
+            'title': parsedSample.document.metadata,
+          }
+        );
         embed.contents = Buffer.from(adsEmbed);
       }
 
@@ -764,8 +837,12 @@ class SamplesBuilder {
    */
   _createPreview(sample, parsedSample) {
     // Check if the sample should have a preview at all
-    if (!(parsedSample.document.metadata.preview ||
-          parsedSample.document.isAmpStory)) {
+    if (
+      !(
+        parsedSample.document.metadata.preview ||
+        parsedSample.document.isAmpStory
+      )
+    ) {
       return [];
     }
 
@@ -773,26 +850,31 @@ class SamplesBuilder {
 
     // Set flag to determine correct output location
     preview.isPreview = true;
-    preview.contents = Buffer.from([
-      '---',
-      yaml.dump({
-        '$title': parsedSample.document.title,
-        '$view': PREVIEW_TEMPLATE,
-        '$category': this._getCategory(sample),
-        '$path': this._getPreviewRoute(sample),
-        '$localization': {
-          'path': `/{locale}${this._getPreviewRoute(sample)}`,
-        },
-        '$sitemap': {
-          'enabled': false
-        },
-        'formats': parsedSample.document.formats(),
-        'source': this._getSourceRoute(sample),
-        'embed': this._getEmbedRoute(sample),
-      }, {'lineWidth': 500}),
-      `example: !g.json /${DOCUMENTATION_POD_PATH}/${preview.stem}.json`,
-      '---',
-    ].join('\n'));
+    preview.contents = Buffer.from(
+      [
+        '---',
+        yaml.dump(
+          {
+            '$title': parsedSample.document.title,
+            '$view': PREVIEW_TEMPLATE,
+            '$category': this._getCategory(sample),
+            '$path': this._getPreviewRoute(sample),
+            '$localization': {
+              'path': `/{locale}${this._getPreviewRoute(sample)}`,
+            },
+            '$sitemap': {
+              'enabled': false,
+            },
+            'formats': parsedSample.document.formats(),
+            'source': this._getSourceRoute(sample),
+            'embed': this._getEmbedRoute(sample),
+          },
+          {'lineWidth': 500}
+        ),
+        `example: !g.json /${DOCUMENTATION_POD_PATH}/${preview.stem}.json`,
+        '---',
+      ].join('\n')
+    );
 
     return [preview];
   }
