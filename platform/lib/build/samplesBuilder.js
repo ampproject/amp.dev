@@ -173,13 +173,18 @@ class SamplesBuilder {
 
     return new Promise(async (resolve, reject) => {
       let stream = gulp.src(
-        [`${SAMPLE_SRC}/*/*.html`, `${SAMPLE_SRC}/*/*/*.html`],
+        [
+          `${SAMPLE_SRC}/*/*.html`,
+          `${SAMPLE_SRC}/*/*/*.html`,
+          `!**/*embed.html`,
+        ],
         {'read': true}
       );
 
       stream = stream.pipe(once({file: false}));
 
       const sampleBuilds = [];
+
       stream = stream.pipe(
         through.obj((sample, encoding, callback) => {
           sampleBuilds.push(this._buildSample(sample, callback, stream));
