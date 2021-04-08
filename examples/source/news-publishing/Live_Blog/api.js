@@ -93,12 +93,10 @@ SampleRenderer.use(router, async (request, response, template) => {
   // set max-age to 15 s - the minimum refresh time for an amp-live-list
   setMaxAge(response, 15);
   const newStatus = await updateStatus(request, response);
-  response.send(
-    template.render(
-      createRequestContext(
-        request,
-        await createLiveBlogSample(request, newStatus)
-      )
+  return template.render(
+    createRequestContext(
+      request,
+      await createLiveBlogSample(request, newStatus)
     )
   );
 });

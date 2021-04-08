@@ -29,4 +29,6 @@ const optimizerConfig = {
   ],
 };
 
-module.exports = optimizerConfig;
+const optimizer = AmpOptimizer.create(optimizerConfig);
+
+module.exports = optimizer;

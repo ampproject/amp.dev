@@ -64,18 +64,17 @@ const blogItems = [
 SampleRenderer.use(router, (request, response, template) => {
   // set max-age to 15 s - the minimum refresh time for an amp-live-list
   setMaxAge(response, 15);
-  response.send(
-    template.render(
-      createRequestContext(request, {
-        // render the current time
-        time: new Date().toLocaleTimeString(),
-        timestamp: Number(new Date()),
-        // send a random list of blog items to make it also work on the cache
-        blogItems: blogItems.filter(() =>
-          Math.floor(Math.random() * Math.floor(2))
-        ),
-      })
-    )
+
+  return template.render(
+    createRequestContext(request, {
+      // render the current time
+      time: new Date().toLocaleTimeString(),
+      timestamp: Number(new Date()),
+      // send a random list of blog items to make it also work on the cache
+      blogItems: blogItems.filter(() =>
+        Math.floor(Math.random() * Math.floor(2))
+      ),
+    })
   );
 });
 

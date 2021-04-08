@@ -59,7 +59,8 @@ SampleRenderer.use(examples, (request, response, template) => {
       httpOnly: true,
     });
   }
-  response.send(template.render(createRequestContext(request, {user})));
+
+  return template.render(createRequestContext(request, {user}));
 });
 
 examples.post('/ping', pingHandler);
