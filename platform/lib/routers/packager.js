@@ -76,8 +76,10 @@ const packager = (request, response, next) => {
   }
   // Hard-code amp.dev as it has to match the cert
   const urlToSign = new URL(`https://amp.dev${request.url}`);
+  /*
   // Serve unoptimized pages to packager
   urlToSign.searchParams.set('optimize', false);
+  */
   const searchParams = new URLSearchParams({
     sign: urlToSign.toString(),
   }).toString();
