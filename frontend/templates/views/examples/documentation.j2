@@ -9,8 +9,6 @@
 {% endif %}
 {% endblock %}
 
-{% include 'views/partials/first_survey.j2' %}
-
 {% block styles %}
 {{ super() }}
 
@@ -25,6 +23,7 @@
 {% endblock %}
 
 {% block body %}
+{% include 'views/partials/first_survey.j2' %}
 {% set body_tag = doc.example.document.body %}
 {% set available_formats = ' '.join(doc.formats or doc.collection.formats or ['websites', 'stories', 'ads', 'email']) %}
 {{ (body_tag.replace('>', ' data-available-formats="' + available_formats + '" class="[= \'ap--\' + format if format =]">'))|safe }}

@@ -79,7 +79,7 @@
   }
   &-icon svg {
     @include ico;
-    @include ico-blue-ribbon
+    @include ico-blue-ribbon;
     filter: drop-shadow(0 30px 30px -15px rgba(0,0,0,.25));
     height: 30px;
     margin-right: 6px;

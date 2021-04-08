@@ -36,6 +36,10 @@ To keep the user experience consistent, the Web Story runtime is responsible for
 **IMPORTANT –** Only the CTA button is clickable in an Web Story ad, so keep this in mind when developing your creative.
 [/tip]
 
+## Templates
+
+Please see our premade [templates](https://amp.dev/documentation/templates/) for inspiration, or as a starting point for building your creatives (make sure to select the `story ads` chip).
+
 ## Meta tag data
 
 Meta tag data specifies that the ad meets the Web Story format, sets the CTA button text enum, directs where the button will send the user and what type of page it is.
