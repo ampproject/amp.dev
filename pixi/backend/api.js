@@ -100,6 +100,8 @@ const logAnalytics = async (url) => {
       aip: 1,
       // Application Name - for easier searching in GA
       an: 'pixi',
+      // Event Category - required value
+      ec: 'pixi',
       // Event Action - required value
       ea: 'lint',
       // Event Label - where the URL is stored
