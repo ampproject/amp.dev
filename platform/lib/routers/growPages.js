@@ -20,11 +20,11 @@ const express = require('express');
 const URL = require('url').URL;
 const LRU = require('lru-cache');
 const config = require('@lib/config');
-const { Templates, createRequestContext } = require('@lib/templates/index.js');
-const { optimize } = require('@lib/utils/ampOptimizer.js');
+const {Templates, createRequestContext} = require('@lib/templates/index.js');
+const {optimize} = require('@lib/utils/ampOptimizer.js');
 const pageCache = require('@lib/utils/pageCache');
 const signale = require('signale');
-const { promisify } = require('util');
+const {promisify} = require('util');
 
 /* Potential path stubs that are used to find a matching file */
 const AVAILABLE_STUBS = ['.html', '/index.html', '', '/'];
@@ -207,10 +207,10 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
       res.set('content-type', 'text/plain');
       res.send(
         `SSR error: ${e}\n\n` +
-        template.tmplStr
-          .split('\n')
-          .map((line, index) => `${index + 1} ${line}`)
-          .join('\n')
+          template.tmplStr
+            .split('\n')
+            .map((line, index) => `${index + 1} ${line}`)
+            .join('\n')
       );
       signale.error(e);
       return;
