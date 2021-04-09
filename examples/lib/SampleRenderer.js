@@ -38,7 +38,7 @@ const DIR_DOCS = utils.project.paths.PAGES_DEST;
  */
 class SampleRenderer {
   /**
-   * Creates a new SampleRendered and registers the sample handler for
+   * Creates a new SampleRenderer and registers the sample handler for
    * the given router.
    * @param {Router} router - the express router serving the sample
    * @param {Function} handler - a callback rendering the sample
