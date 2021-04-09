@@ -28,7 +28,7 @@ const seats = require(utils.project.absolute(
 const router = express.Router();
 
 SampleRenderer.use(router, (request, response, template) => {
-  response.send(template.render(createRequestContext(request, seats)));
+  return template.render(createRequestContext(request, seats));
 });
 
 module.exports = router;
