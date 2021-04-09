@@ -71,7 +71,7 @@ class SampleRenderer {
     return async (request, response, next) => {
       try {
         const template = await this.getTemplate_(request);
-        const renderedTemplate = handler(request, response, template);
+        const renderedTemplate = await handler(request, response, template);
 
         response.send(await optimizer.transformHtml(renderedTemplate));
       } catch (err) {
