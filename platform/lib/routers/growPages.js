@@ -20,11 +20,11 @@ const express = require('express');
 const URL = require('url').URL;
 const LRU = require('lru-cache');
 const config = require('@lib/config');
-const {Templates, createRequestContext} = require('@lib/templates/index.js');
-const optimizer = require('@lib/utils/ampOptimizer.js');
+const { Templates, createRequestContext } = require('@lib/templates/index.js');
+const { optimize } = require('@lib/utils/ampOptimizer.js');
 const pageCache = require('@lib/utils/pageCache');
 const signale = require('signale');
-const {promisify} = require('util');
+const { promisify } = require('util');
 
 /* Potential path stubs that are used to find a matching file */
 const AVAILABLE_STUBS = ['.html', '/index.html', '', '/'];
@@ -207,10 +207,10 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
       res.set('content-type', 'text/plain');
       res.send(
         `SSR error: ${e}\n\n` +
-          template.tmplStr
-            .split('\n')
-            .map((line, index) => `${index + 1} ${line}`)
-            .join('\n')
+        template.tmplStr
+          .split('\n')
+          .map((line, index) => `${index + 1} ${line}`)
+          .join('\n')
       );
       signale.error(e);
       return;
@@ -231,26 +231,16 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
   );
 
   // Pipe the rendered template through the AMP optimizer
-  try {
-    const optimize = req.query.optimize !== 'false';
-    if (optimize) {
-      const params = {};
-      // Enable blurred placeholders and render all 5 stage images of the homepage
-      if (req.path === '/') {
-        // Disabled until we know why it fails after build
-        // params.blurredPlaceholders = true;
-        // Increase hero image count for homepage stage
-        params.maxHeroImageCount = 5;
-      }
-      renderedTemplate = await optimizer.transformHtml(
-        renderedTemplate,
-        params
-      );
-    }
-  } catch (e) {
-    signale.error('[OPTIMIZER]', e);
+  const optimizeParams = {};
+  // Enable blurred placeholders and render all 5 stage images of the homepage
+  if (req.path === '/') {
+    // Disabled until we know why it fails after build
+    // params.blurredPlaceholders = true;
+    // Increase hero image count for homepage stage
+    optimizeParams.maxHeroImageCount = 5;
   }
 
+  renderedTemplate = await optimize(req, renderedTemplate, optimizeParams);
   res.send(renderedTemplate);
 
   // Cache the optimized and rendered page

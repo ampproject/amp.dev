@@ -18,6 +18,7 @@ const imageOptimizer = require('@lib/utils/imageOptimizer');
 const HeadDedupTransformer = require('@lib/utils/HeadDedupTransformer');
 const AmpOptimizer = require('@ampproject/toolbox-optimizer');
 const CssTransformer = require('@lib/utils/cssTransformer');
+const signale = require('signale');
 
 const optimizerConfig = {
   imageBasePath: 'pages',
@@ -31,4 +32,29 @@ const optimizerConfig = {
 
 const optimizer = AmpOptimizer.create(optimizerConfig);
 
-module.exports = optimizer;
+/**
+ * Takes a arbitrary HTML string (a rendered template) in
+ * most cases together with a request. If the request does not
+ * come with a get paramter of `optimize=false` the
+ *
+ * @param {express.Request} request
+ * @param {String} html - HTML Markup
+ * @param {Object} params - Optional configuration for the optimizer
+ */
+async function optimize(request, html, params = {}) {
+  if (request.query.optimize == 'false') {
+    return html;
+  }
+
+  try {
+    return await optimizer.transformHtml(html, params);
+  } catch (e) {
+    signale.error('[OPTIMIZER]', e);
+    return html;
+  }
+}
+
+module.exports = {
+  optimizer,
+  optimize,
+};

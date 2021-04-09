@@ -23,7 +23,7 @@ const config = require('@lib/config.js');
 const log = require('@lib/utils/log')('Sample Renderer');
 const fetch = require('node-fetch');
 const {promisify} = require('util');
-const optimizer = require('@lib/utils/ampOptimizer.js');
+const {optimize} = require('@lib/utils/ampOptimizer.js');
 
 const fs = require('fs');
 const readFileAsync = promisify(fs.readFile);
@@ -73,7 +73,7 @@ class SampleRenderer {
         const template = await this.getTemplate_(request);
         const renderedTemplate = await handler(request, response, template);
 
-        response.send(await optimizer.transformHtml(renderedTemplate));
+        response.send(await optimize(request, renderedTemplate));
       } catch (err) {
         log.error(err);
         next(err);
