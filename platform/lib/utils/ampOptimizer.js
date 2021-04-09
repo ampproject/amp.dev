@@ -33,9 +33,11 @@ const optimizerConfig = {
 const optimizer = AmpOptimizer.create(optimizerConfig);
 
 /**
- * Takes a arbitrary HTML string (a rendered template) in
- * most cases together with a request. If the request does not
- * come with a get paramter of `optimize=false` the
+ * Takes a arbitrary HTML string (a rendered template in
+ * most cases) together with a request. If the request does not
+ * come with a get paramter of `optimize=false` the document
+ * gets optimized otherwise or in case of error
+ * the original HTML string is returned
  *
  * @param {express.Request} request
  * @param {String} html - HTML Markup
