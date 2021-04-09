@@ -1,17 +1,14 @@
-
-const { URL } = require('url');
+const {URL} = require('url');
 const config = require('./platform/lib/config.js');
 
 module.exports = {
   preset: 'jest-puppeteer',
   globals: {
     platformUrl: (path) => {
-      return new URL(path, config.hosts.platform.base).toString()
+      return new URL(path, config.hosts.platform.base).toString();
     },
   },
-  testMatch: [
-    '**/*.e2e-test.js'
-  ],
+  testMatch: ['**/*.e2e-test.js'],
   moduleNameMapper: {
     // TODO: improve: jest will not work with 'module-alias', so we have define the alias here again!
     // see https://github.com/ilearnio/module-alias/issues/46
@@ -23,5 +20,5 @@ module.exports = {
     '\\.(css|less|sass|scss)$': '<rootDir>/platform/lib/utils/noop.js',
     '\\.(html|hbs|j2|njk)$': '<rootDir>/platform/lib/utils/noop.js',
   },
-  verbose: true
-}
+  verbose: false,
+};

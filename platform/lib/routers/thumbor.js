@@ -17,7 +17,7 @@
 'use strict';
 
 const express = require('express');
-const { join } = require('path');
+const {join} = require('path');
 const config = require('@lib/config');
 const log = require('@lib/utils/log')('Thumbor');
 const fetch = require('node-fetch');

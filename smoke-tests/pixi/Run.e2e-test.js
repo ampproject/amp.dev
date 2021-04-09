@@ -20,10 +20,10 @@ const Platform = require('../../platform/lib/platform.js');
 const platform = new Platform();
 
 describe('Pixi', () => {
-
   beforeAll(async () => {
-    jest.setTimeout(10000);
+    jest.setTimeout(60 * 1000);
     await platform.start();
+    await page.goto(platformUrl('/page-experience/'));
   });
 
   afterAll(async () => {
@@ -31,17 +31,76 @@ describe('Pixi', () => {
   });
 
   it('is served', async () => {
-    console.log('Going to', platformUrl('/page-experience/'));
-    await page.goto(platformUrl('/page-experience/'));
     await expect(page).toMatch('Analyze your AMP page');
-  })
+  });
 
-  //  it('serves health check', async () => {
-  //    const response = await fetch(HEALTH_CHECK_PATH);
-  //    expect(response.status).toBe(200);
-  //  });
-  //  it('serves playground', async () => {
-  //    const response = await fetch(config.hosts.playground.base);
-  //    expect(response.status).toBe(200);
-  //  });
+  it('accepts URL input', async () => {
+    await expect(page).toFill('#input-field', 'http://amp.dev');
+  });
+
+  it('starts checks', async () => {
+    await expect(page).toClick('#input-submit');
+    await expect(page).toMatchElement('#status-intro-banner-loading', {
+      visible: true,
+    });
+  });
+
+  it('performs CWV check', async () => {
+    await expect(page).toMatchElement(
+      '#fieldData.lcp .ap-m-pixi-primary-metric-category',
+      {
+        text: new RegExp('Good|Needs Improvement|Poor', 'gm'),
+        timeout: 30 * 1000,
+      }
+    );
+
+    await expect(page).toMatchElement(
+      '#fieldData.fid .ap-m-pixi-primary-metric-category',
+      {
+        text: new RegExp('Good|Needs Improvement|Poor', 'gm'),
+        timeout: 30 * 1000,
+      }
+    );
+
+    await expect(page).toMatchElement(
+      '#fieldData.cls .ap-m-pixi-primary-metric-category',
+      {
+        text: new RegExp('Good|Needs Improvement|Poor', 'gm'),
+        timeout: 30 * 1000,
+      }
+    );
+  });
+
+  it('performs Safe Browsing check', async () => {
+    await expect(page).toMatchElement(
+      '#safe-browsing .ap-m-pixi-basic-metric-status',
+      {
+        text: new RegExp('Passed|Failed', 'gm'),
+        timeout: 30 * 1000,
+      }
+    );
+  });
+
+  it('performs HTTPS check', async () => {
+    await expect(page).toMatchElement('#https .ap-m-pixi-basic-metric-status', {
+      text: new RegExp('Passed|Failed', 'gm'),
+      timeout: 30 * 1000,
+    });
+  });
+
+  it('performs Mobile Friendliness check', async () => {
+    await expect(page).toMatchElement(
+      '#mobile-friendliness .ap-m-pixi-basic-metric-status',
+      {
+        text: new RegExp('Passed|Failed', 'gm'),
+        timeout: 30 * 1000,
+      }
+    );
+  });
+
+  it('shows recommendations', async () => {
+    await expect(page).toMatchElement('.ap-m-pixi-recommendations-item', {
+      timeout: 30 * 1000,
+    });
+  });
 });
