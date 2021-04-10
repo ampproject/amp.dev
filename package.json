@@ -131,7 +131,7 @@
 		"copy-webpack-plugin": "8.1.1",
 		"css-loader": "5.2.0",
 		"del": "6.0.0",
-		"eslint": "7.23.0",
+		"eslint": "7.24.0",
 		"eslint-config-google": "0.14.0",
 		"eslint-config-prettier": "8.1.0",
 		"eslint-plugin-prettier": "3.3.1",
