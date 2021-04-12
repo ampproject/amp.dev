@@ -1,0 +1,70 @@
+<div class="ap-component-intro">
+  {% if doc.teaser %}
+  <div class="ap-component-intro-row">
+    <h4 class="ap-component-intro-headline">{{ _('Description') }}</h4>
+    <p class="ap-component-intro-text">{{ doc.teaser.text }}</p>
+  </div>
+  {% endif %}
+
+  {% if doc.scripts %}
+  <div class="ap-component-intro-row">
+    <h4 class="ap-component-intro-headline">{{ _('Required Scripts') }}</h4>
+
+    {% for script in doc.scripts %}
+    <div class="ap-copy-script">
+      <code>{{ script }}</code>
+      <amp-iframe
+          width="24"
+          height="24"
+          layout="fixed"
+          sandbox="allow-scripts"
+          src="{{ podspec.base_urls.platform }}/shared/copy-script/#{{ script|urlencode }}">
+        <div placeholder></div>
+      </amp-iframe>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if doc.layouts %}
+  <div class="ap-component-intro-row ap-component-intro-row-inline">
+    <h4 class="ap-component-intro-headline">{{ _('Supported Layouts') }}</h4>
+
+    <div>
+      {% for item in doc.layouts %}
+      <a class="ap-a-pill ap-a-pill-flat ap-a-pill-small ap-a-pill-link" href="/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html#{{ item }}">{{ item }}</a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% set examples = g.json('/shared/data/componentSamples.json') %}
+  {# Check if there are examples for the current component #}
+  {% if examples[doc.title] %}
+  [% if format in {{ examples[doc.title]|map(attribute='formats')|sum(start=[])|unique|list|tojson }} %]
+  <div class="ap-component-intro-row">
+    <div id="examples" class="ap-clip">
+      <h4 class="ap-component-intro-headline">{{ _('Examples') }}</h4>
+      <div class="ap-component-intro-list">
+        [% set examples = {{ examples[doc.title]|tojson }} %]
+        [% set examplesCount = 0 %]
+
+        [% for example in examples %]
+        [% if example.formats.includes(format) %]
+        [% set examplesCount = examplesCount + 1 %]
+        <a class="ap-component-intro-list-item" href="[= example.url =]">[= example.title =]</a>
+        [% endif %]
+        [% endfor %]
+      </div>
+
+      [% if examplesCount > 6 %]
+      <button id="examples-expand" class="ap-clip-expand" on="tap:examples.toggleClass(class='expanded', force=true),examples-expand.hide()">
+        {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
+        <svg class="ap-clip-expand-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+      </button>
+      [% endif %]
+    </div>
+  </div>
+  [% endif %]
+  {% endif %}
+</div>

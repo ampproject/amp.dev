@@ -1,0 +1,17 @@
+{% set teaser = teaser_doc %}
+{% set navigation_url = teaser.url.path %}
+
+<a class="ap-teaser" href="{{ navigation_url }}">
+  {% if teaser.formats %}
+    <div class="ap-teaser-tags">
+      {% for format in teaser.formats %}
+      <div class="ap-tag --{{ format }}"></div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <code class="ap-teaser-title">{{ teaser.title }}</code>
+  <p class="ap-teaser-copy">
+    {{ teaser.teaser.text }}
+  </p>
+</a>

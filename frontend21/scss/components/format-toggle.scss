@@ -1,0 +1,95 @@
+.#{prefix(null, 'format-toggle')} {
+  display: none;
+  position: relative;
+  height: 44px;
+  z-index: 12;
+
+  &-link,
+  &-selected {
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 34px;
+    padding: 5px 8px;
+    overflow: hidden;
+    font-family: $fontFamilyHeadline;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    border-radius: 4px;
+    color: color('black');
+    transition: opacity 0.2s ease;
+    box-shadow: 0 5px 15px -5px transparentize(color('black'), 0.75);
+
+    .#{prefix(null, 'icon')} {
+      width: 14px;
+      height: 14px;
+      margin-right: 8px;
+    }
+  }
+
+  &-link {
+    margin-top: 2px;
+    color: color('black');
+    background: color('athens-gray');
+  }
+
+  &-angle {
+    width: 10px;
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  &-formats {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    transition-delay: 0.05s;
+  }
+
+  .--sidebaropen & {
+    display: block;
+  }
+
+  &-formats:hover,
+  &-formats:focus-within,
+  &-selected:hover + &-formats {
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &-link:hover,
+  &-selected {
+    &.--websites {
+      @include ci-websites;
+    }
+  }
+
+  &-link:hover,
+  &-selected {
+    &.--stories {
+      @include ci-stories;
+    }
+  }
+
+  &-link:hover,
+  &-selected {
+    &.--ads {
+      @include ci-ads;
+    }
+  }
+
+  &-link:hover,
+  &-selected {
+    &.--email {
+      @include ci-e-mails;
+    }
+  }
+
+}

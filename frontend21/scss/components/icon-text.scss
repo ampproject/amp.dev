@@ -1,0 +1,40 @@
+.#{prefix(null, 'icon-text')} {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+
+  @include respond-to('medium') {
+    flex-direction: row;
+  }
+
+  &-item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    margin: 20px 0;
+
+    @include respond-to('medium') {
+      width: 33%;
+
+      & + & {
+        margin-left: 40px;
+      }
+    }
+
+
+    &-icon {
+      flex: 1 0 auto;
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      fill: color('blue-ribbon');
+    }
+
+    &-text {
+      p {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+    }
+  }
+}
