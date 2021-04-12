@@ -1,6 +1,6 @@
 ---
 $title: Oops! Parece que algo deu errado.
-type: erro
+type: error
 hide_share: true
 ---
 

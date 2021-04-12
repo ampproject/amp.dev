@@ -1,6 +1,6 @@
 ---
 $title: Ối! Có vấn đề nào đó.
-type: lỗi
+type: error
 investigate: #core-web-vitals-checks
 ---
 

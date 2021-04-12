@@ -37,7 +37,7 @@ The `amp-analytics` component provides the following macros:
 * [Cumulative Layout Shift](https://web.dev/cls/): `${cumulativeLayoutShift}`
 * [First Input Delay](https://web.dev/fid/): `${firstInputDelay}`
 
-These macros can attach to any triggers and resolve asynchronously. 
+These macros can attach to any triggers and resolve asynchronously.
   -->
   <div>
     <amp-analytics>
@@ -99,3 +99,46 @@ These macros can attach to any triggers and resolve asynchronously.
       }
     </script>
   </amp-analytics>
+
+
+  <!--
+  ## Comparing performance on AMP Cache vs Origin
+  -->
+  <!--
+AMP Caches work to make sure your users have as great an expierence possible, but it is important to make sure that the Origin version of the page is just as performant. Your Core Web Vitals may be negativly impacted if your AMP page performs really great when served from an AMP Cache, but less well on the origin. A good way to make sure you are delivering a great experience for all your users is to keep track of how your pages' Core Web Vitals are performing on and off of the AMP Cache.
+
+We can build on our Google Analytics to do this. One of substitutions provided by amp-analytics is `ampdocHost` - this lets us track the URL of the page the user visited. We exand our earlier config using `extraUrlParams`. This lets us define a custom key and value for our analytics events. We need to [set up](https://support.google.com/analytics/answer/2709829) a new Custom Dimension, that will be used as the key. 
+
+<amp-img src="/static/img/google-analytics-custom-dimensions-example.jpg" layout="intrinsic" width="1069" height="566" alt="Screenshot of Google Analytics, showing the Custom Dimensions edit page"></amp-img>
+
+Once you have created the Custom Dimension to track the AMP Host, make sure you note the `Index` listed on the analytics page. This number is used in our configuration objects to connect `ampdocHost` to the Dimension you just created. Below  we assume your index was "1", (i.e. `cd1`). If your `Index` is 2, then use `cd2`, etc.
+  -->
+    <amp-analytics>
+      <script type="application/json">
+      {
+        "vars": {
+           "gtag_id": "UA-XXXXXXXXX-X",
+           "config": {
+             "UA-XXXXXXXXX-X": {
+                "groups": "default"
+             }
+           }
+        },
+        "triggers": {
+          "default pageview": {
+            "on": "visible",
+            "request": "pageview",
+            "vars": {
+              "title": "{{title}}"
+            },
+            "extraUrlParams": {
+              "lcp": "${largestContentfulPaint}",
+              "cls": "${cumulativeLayoutShift}",
+              "fid": "${firstInputDelay}",
+              "cd1": "${ampdocHost}"
+            }
+          }
+        }
+      }
+      </script>
+    </amp-analytics>

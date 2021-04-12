@@ -1,6 +1,6 @@
 ---
 $title: Esta URL é a versão em cache de uma página AMP.
-type: erro
+type: error
 hide_share: true
 ---
 

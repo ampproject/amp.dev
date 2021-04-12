@@ -1,8 +1,8 @@
 ---
-"$title": Tắt độ trễ khi chạm
-"$order": '50'
+'$title': Tắt độ trễ khi chạm
+$order: 50
 tags:
-- fid
+  - fid
 ---
 
 Thiết lập chiều rộng màn hiển thị khớp với chiều rộng của thiết bị để tắt độ trễ khi chạm, điều này có thể tăng FID. Để xóa độ trễ khi chạm 300-350ms này, thay đổi khai báo màn hiển thị trong `<head>` của trang thành:

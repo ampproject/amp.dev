@@ -1,8 +1,8 @@
 ---
-"$title": Desativar atraso de toque
-"$order": '50'
+'$title': Desativar atraso de toque
+$order: 50
 tags:
-- fid
+  - fid
 ---
 
 Para desativar o atraso de toque, defina a largura da viewport para corresponder à largura do dispositivo, o que pode aumentar o FID. Para remover esse atraso de toque de 300-350 ms, altere a declaração da viewport no `<head>` da sua página para:

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import {gaTrackingId} from '../../../platform/config/shared.json';
+import config from '../../../platform/config/shared.json';
 import modes from '../modes/';
 
 class Analytics {
@@ -27,7 +27,7 @@ class Analytics {
       dataLayer.push(arguments);
     }
     gtag('js', new Date());
-    gtag('config', gaTrackingId, {'use_amp_client_id': true});
+    gtag('config', config.gaTrackingId, {'use_amp_client_id': true});
   }
 }
 

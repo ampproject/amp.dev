@@ -21,7 +21,7 @@ El canal para desarrolladores es perfecto para:
 
 Si encuentras un problema que parece darse únicamente en la versión del canal para desarrolladores de AMP, [regístralo](https://github.com/ampproject/amphtml/issues/new) y descríbelo. Incluye siempre la URL de una página donde se pueda reproducir el problema.
 
-Para habilitar el canal para desarrolladores de AMP en tu navegador, ve a la [página AMP Experiments] (https://cdn.ampproject.org/experiments.html) y activa el experimento "AMP Dev Channel" (Canal para desarrolladores de AMP). Si quieres recibir notificaciones sobre cambios importantes o novedades de AMP, suscríbete a la lista de distribución [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
+Para habilitar el canal para desarrolladores de AMP en tu navegador, ve a la [página AMP Experiments] (https://cdn.ampproject.org/experiments.html) y activa el experimento "AMP Beta Channel" (Canal para desarrolladores de AMP). Si quieres recibir notificaciones sobre cambios importantes o novedades de AMP, suscríbete a la lista de distribución [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
 
 ## Habilitar componentes experimentales
 

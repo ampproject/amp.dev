@@ -396,7 +396,7 @@ author: aghassemi
           <a id="sample-menu" on="tap:drawermenu.toggle">
             <amp-img srcset="/static/samples/img/ic_menu_black_1x_web_24dp.png 1x, /static/samples/img/ic_menu_black_2x_web_24dp.png 2x" width="24" height="24" alt="navigation"></amp-img>
           </a>
-          <input name="search" type="text" placeholder="Search" on="change:AMP.setState({
+          <input name="search" type="search" placeholder="Search" on="change:AMP.setState({
             products: {
             listSrc: '/documentation/examples/api/products?searchProduct='+ event.value +'&sort='+ products.sortChoiceValue +'&searchColor='+ products.searchColor +'&_=RANDOM',
             searchProduct: event.value
@@ -420,7 +420,7 @@ author: aghassemi
             [value]="autosuggest.query || ''"
             value="">
           <!--~ Keep this just for creating the change event ~-->
-          <input type="submit" value="Search">
+          <input type="submit" value="">
         </div>
         <div class="suggest">
             <div

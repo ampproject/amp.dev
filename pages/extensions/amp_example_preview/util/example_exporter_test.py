@@ -6,8 +6,8 @@ import os
 
 sys.path.extend([os.path.join(os.path.dirname(__file__), '.')])
 
-from example_document import ExampleDocument
-from example_exporter import ExampleExporter
+from .example_document import ExampleDocument
+from .example_exporter import ExampleExporter
 from grow.documents import document
 from grow.collections import collection
 from grow.pods import pods

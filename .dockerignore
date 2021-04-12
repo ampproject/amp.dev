@@ -21,17 +21,6 @@ thumbor/
 # The transformed pages from dist/pages are used instead
 platform/pages*
 
-# playground: ignore everything except the dist folder
-/playground/*
-!/playground/backend
-!/playground/dist
-
-# boilerplate: ignore everything except the dist folder
-/boilerplate/*
-!/boilerplate/backend
-!/boilerplate/dist
-!/boilerplate/lib
-
 # Infrastructure
 contributing
 jest.config.js

@@ -20,7 +20,6 @@ export const Category = {
   AVERAGE: 'AVERAGE',
 };
 
-let locale;
 const API_ENDPOINT = API_ENDPOINT_PAGE_SPEED_INSIGHTS;
 const DEVICE_STRATEGY = 'MOBILE';
 const METRICS_SCALES = {
@@ -46,8 +45,13 @@ export default class PageExperienceCheck {
     return 10;
   }
 
+  constructor(fetch) {
+    this.fetch = fetch;
+    this.locale = 'en';
+  }
+
   setLocale(language) {
-    locale = language;
+    this.locale = language;
   }
 
   async run(originUrl) {
@@ -214,9 +218,15 @@ export default class PageExperienceCheck {
     apiUrl.searchParams.append('key', AMP_DEV_PIXI_APIS_KEY);
     apiUrl.searchParams.set('url', pageUrl);
     apiUrl.searchParams.set('strategy', DEVICE_STRATEGY);
-    apiUrl.searchParams.set('locale', locale);
+    apiUrl.searchParams.set('locale', this.locale);
 
-    const response = await fetch(apiUrl.href);
+    const response = await this.fetch(apiUrl.href, {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Referer': 'https://amp.dev',
+      },
+    });
     if (!response.ok) {
       throw new Error(`PageExperienceCheck failed for: ${apiUrl}`);
     }

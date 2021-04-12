@@ -1,8 +1,8 @@
 ---
-"$title": Disabilitare il touch delay
-"$order": '50'
+'$title': Disabilitare il touch delay
+$order: 50
 tags:
-- fid
+  - fid
 ---
 
 Impostare la larghezza della finestra di visualizzazione in modo che corrisponda alla larghezza del dispositivo per disabilitare il touch delay, che può aumentare il FID. Per rimuovere questo touch delay di 300-350 ms, modificare la dichiarazione della finestra di visualizzaione nella sezione `<head>` della pagina in questo modo:

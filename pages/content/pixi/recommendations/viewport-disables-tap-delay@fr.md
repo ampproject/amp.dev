@@ -1,8 +1,8 @@
 ---
-"$title": Désactiver le délai tactile
-"$order": '50'
+'$title': Désactiver le délai tactile
+$order: 50
 tags:
-- fid
+  - fid
 ---
 
 Définissez la largeur de la fenêtre pour qu'elle corresponde à la largeur de l'appareil pour désactiver le délai tactile, ce qui peut augmenter le FID. Pour supprimer ce délai de frappe de 300 à 350ms, modifiez la déclaration de la fenêtre d'affichage dans la section `<head>` de votre page comme suit:

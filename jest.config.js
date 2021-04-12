@@ -65,6 +65,8 @@ module.exports = {
     API_ENDPOINT_SAFE_BROWSING:
       pixiConfig.development.API_ENDPOINT_SAFE_BROWSING,
     API_ENDPOINT_LINTER: pixiConfig.development.API_ENDPOINT_LINTER,
+    API_ENDPOINT_LINTER_CANARY:
+      pixiConfig.development.API_ENDPOINT_LINTER_CANARY,
     API_ENDPOINT_MOBILE_FRIENDLINESS:
       pixiConfig.development.API_ENDPOINT_MOBILE_FRIENDLINESS,
     AMP_DEV_PIXI_APIS_KEY: '',
@@ -151,7 +153,7 @@ module.exports = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  testEnvironment: 'node',
+  testEnvironment: 'jest-environment-node',
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -189,7 +191,7 @@ module.exports = {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
-  // transform: null,
+  // transform: {},
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [

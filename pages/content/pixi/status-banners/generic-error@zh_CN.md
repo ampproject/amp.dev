@@ -1,6 +1,6 @@
 ---
 $title: 糟糕！好像出了点问题。
-type: 错误
+type: error
 hide_share: true
 ---
 

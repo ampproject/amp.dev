@@ -9,7 +9,7 @@ from collections import namedtuple
 
 sys.path.extend([os.path.join(os.path.dirname(__file__), '.')])
 
-from pod_internal_link_rewriter import PodInternalLinkRewriter
+from .pod_internal_link_rewriter import PodInternalLinkRewriter
 
 
 class PodInternalLinkRewriterTestCase(unittest.TestCase):
@@ -26,7 +26,7 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
     result = link_rewriter.rewrite_pod_internal_links(content)
 
     # Nothing should have been rewritten
-    self.assertEquals(content, result)
+    self.assertEqual(content, result)
 
   def test_a_href_relative(self):
     link_map = {
@@ -39,7 +39,7 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
     link_rewriter = PodInternalLinkRewriter(doc, ObjectCache(), None)
     result = link_rewriter.rewrite_pod_internal_links(content)
 
-    self.assertEquals('<a href="/test/folder_2/page2.html">test</a>', result)
+    self.assertEqual('<a href="/test/folder_2/page2.html">test</a>', result)
 
   def test_a_href_pod_path(self):
     link_map = {
@@ -52,7 +52,7 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
     link_rewriter = PodInternalLinkRewriter(doc, ObjectCache(), None)
     result = link_rewriter.rewrite_pod_internal_links(content)
 
-    self.assertEquals('<a href="/test/folder_2/page2.html">test</a>', result)
+    self.assertEqual('<a href="/test/folder_2/page2.html">test</a>', result)
 
 
   def test_a_href_none_existing(self):
@@ -65,7 +65,7 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
     link_rewriter = PodInternalLinkRewriter(doc, ObjectCache(), None)
     result = link_rewriter.rewrite_pod_internal_links(content)
 
-    self.assertEquals(content, result)
+    self.assertEqual(content, result)
 
   def test_multiple_href_none_existing_with_anchors(self):
     link_map = {
@@ -79,7 +79,7 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
     link_rewriter = PodInternalLinkRewriter(doc, ObjectCache(), None)
     result = link_rewriter.rewrite_pod_internal_links(content)
 
-    self.assertEquals(content, result)
+    self.assertEqual(content, result)
 
   def test_a_href_with_protocol(self):
     link_map = {
@@ -91,7 +91,7 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
     link_rewriter = PodInternalLinkRewriter(doc, ObjectCache(), None)
     result = link_rewriter.rewrite_pod_internal_links(content)
 
-    self.assertEquals(content, result)
+    self.assertEqual(content, result)
 
   def test_a_href_relative_with_anchor(self):
     link_map = {
@@ -106,7 +106,7 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
     link_rewriter = PodInternalLinkRewriter(doc, ObjectCache(), None)
     result = link_rewriter.rewrite_pod_internal_links(content)
 
-    self.assertEquals('<a href="/test/folder_2/page2.html#test">test</a><br>' \
+    self.assertEqual('<a href="/test/folder_2/page2.html#test">test</a><br>' \
                       '<a href="/test/folder_2/page2.html#other">test2</a>', result)
 
   def test_a_href_relative_with_params(self):
@@ -120,7 +120,7 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
     link_rewriter = PodInternalLinkRewriter(doc, ObjectCache(), None)
     result = link_rewriter.rewrite_pod_internal_links(content)
 
-    self.assertEquals('<a href="/test/folder_2/page2.html?format=ads">test</a>', result)
+    self.assertEqual('<a href="/test/folder_2/page2.html?format=ads">test</a>', result)
 
   def test_a_href_relative_with_params_and_anchor(self):
     link_map = {
@@ -133,7 +133,7 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
     link_rewriter = PodInternalLinkRewriter(doc, ObjectCache(), None)
     result = link_rewriter.rewrite_pod_internal_links(content)
 
-    self.assertEquals('<a href="/test/folder_2/page2.html?format=ads#test">test</a>', result)
+    self.assertEqual('<a href="/test/folder_2/page2.html?format=ads#test">test</a>', result)
 
   def test_multiple_relative_href(self):
     link_map = {
@@ -152,7 +152,7 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
     link_rewriter = PodInternalLinkRewriter(doc, ObjectCache(), None)
     result = link_rewriter.rewrite_pod_internal_links(content)
 
-    self.assertEquals('<p><a  class="link" href="/test/folder_2/page2.html">test</a><br>' \
+    self.assertEqual('<p><a  class="link" href="/test/folder_2/page2.html">test</a><br>' \
                       '<a href="/test/page3.html" class="link">page3</a><br>' \
                       '<a href="/page4.html">page4</a><br>' \
                       '<a href = "/test/folder_1/page1.html">page</a></p>', result)
@@ -168,7 +168,7 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
     doc = MockPod(link_map).get_doc('/content/test/test.md', 'en')
     link_rewriter = PodInternalLinkRewriter(doc, cache, None);
     result = link_rewriter.rewrite_pod_internal_links(content)
-    self.assertEquals('<a href="/en/test/page.html">page</a><br>', result)
+    self.assertEqual('<a href="/en/test/page.html">page</a><br>', result)
 
     link_map = {
       '/content/test/test.md': '/de/test/test.html',
@@ -177,7 +177,7 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
     doc = MockPod(link_map).get_doc('/content/test/test.md', 'de')
     link_rewriter = PodInternalLinkRewriter(doc, cache, None);
     result = link_rewriter.rewrite_pod_internal_links(content)
-    self.assertEquals('<a href="/de/test/page.html">page</a><br>', result)
+    self.assertEqual('<a href="/de/test/page.html">page</a><br>', result)
 
 Logger = namedtuple('Logger', ['error', 'warning'])
 

@@ -1,48 +1,55 @@
-// Copyright 2020 The AMPHTML Authors
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//      http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+/**
+ * Copyright 2020 The AMPHTML Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
-const FetchError = require('../../../platform/lib/utils/fetchError.js');
-
-const API_ENDPOINT = API_ENDPOINT_LINTER;
+import FetchError from '../../../platform/lib/utils/fetchError.js';
 
 const directMapping = {
   isvalid: 'isValid',
   runtimeispreloaded: 'runtimeIsPreloaded',
   blockingextensionspreloaded: 'blockingExtensionsPreloaded',
-  fontsarepreloaded: 'fontsArePreloaded',
-  fastgooglefontsdisplay: 'fastGoogleFontsDisplay',
   googlefontpreconnect: 'googleFontPreconnect',
   istransformedamp: 'isTransformedAmp',
   boilerplateisremoved: 'boilerplateIsRemoved',
   heroimageisdefined: 'heroImageIsDefined',
   viewportdisablestapdelay: 'viewportDisablesTapDelay',
+  noiconfontisused: 'noIconFontIsUsed',
+  isusinglatestcomponentversion: 'isUsingLatestComponentVersion',
 };
 
 export default class AmpLinterCheck {
-  constructor() {
-    this.apiUrl = new URL(API_ENDPOINT);
+  constructor(amp, fetch) {
+    this.amp = amp;
+    this.fetch = fetch;
   }
-
   static getCheckCount() {
     return 15;
   }
 
   async run(pageUrl) {
-    this.apiUrl.searchParams.set('url', pageUrl);
+    const isCanary = await this.amp.getState('pixiCanary');
+    let requestUrl;
+    if (isCanary) {
+      requestUrl = new URL(API_ENDPOINT_LINTER_CANARY);
+    } else {
+      requestUrl = new URL(API_ENDPOINT_LINTER);
+    }
+    requestUrl.searchParams.set('url', pageUrl);
 
     try {
-      const apiResult = await this.fetchJson();
+      const apiResult = await this.fetchJson(requestUrl);
       return this.parseApiResult(apiResult);
     } catch (e) {
       return this.createError(e);
@@ -70,7 +77,7 @@ export default class AmpLinterCheck {
       ? {}
       : Object.entries(apiResult.data).reduce((mappedData, [key, checks]) => {
           // most checks are mapped 1:1 to the result
-          const resultKey = directMapping[key];
+          const resultKey = directMapping[key] || key;
           if (resultKey) {
             if (Array.isArray(checks)) {
               mappedData[resultKey] =
@@ -103,16 +110,18 @@ export default class AmpLinterCheck {
         ),
         noDynamicLayoutExtensions: !(
           components['amp-access'] ||
+          components['amp-subscriptions'] ||
           components['amp-user-notification'] ||
           components['amp-script']
         ),
         ...linterStatus,
+        details: apiResult.data ? apiResult.data.details : {},
       },
     };
   }
 
-  async fetchJson() {
-    const response = await fetch(this.apiUrl.href);
+  async fetchJson(url) {
+    const response = await this.fetch(url);
     return response.json();
   }
 }

@@ -1,0 +1,34 @@
+---
+name: 'Test: Pixi'
+
+on:
+  push:
+    paths:
+      - 'package.json'
+      - 'pixi/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning repository
+        uses: actions/checkout@v2
+
+      - name: Setting up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: node_modules-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Installing Node.js packages
+        run: npm install
+
+      - name: Running Pixi tests
+        run: |
+          gulp updateTestResources
+          gulp buildPixiFunctions
+          npm run test:pixi -- --colors

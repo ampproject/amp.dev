@@ -939,7 +939,6 @@ msgstr "bố cục"
 #: /content/amp-dev/documentation/components/reference/amp-dailymotion-v0.1.md
 #: /content/amp-dev/documentation/components/reference/amp-delight-player-v0.1.md
 #: /content/amp-dev/documentation/components/reference/amp-embedly-card-v0.1.md
-#: /content/amp-dev/documentation/components/reference/amp-google-vrview-image-v0.1.md
 #: /content/amp-dev/documentation/components/reference/amp-hulu-v0.1.md
 #: /content/amp-dev/documentation/components/reference/amp-ima-video-v0.1.md
 #: /content/amp-dev/documentation/components/reference/amp-img-v0.1@ar.md
@@ -1081,8 +1080,8 @@ msgid "You've read this document a dozen times but it doesn't really cover all o
 msgstr "Bạn đã đọc tài liệu này hàng chục lần, nhưng nó không thật sự trả lời mọi thắc mắc của bạn? Có lẽ những người khác cũng cảm thấy như vậy: hãy liên hệ với họ trên Stack Overflow."
 
 #: frontend/templates/views/partials/experiments/experiments.j2:4
-msgid "Enable the experiment via the button below. Some components require the AMP Dev Channel to be enabled as well."
-msgstr "Kích hoạt thử nghiệm thông qua nút dưới đây. Một số thành phần cũng yêu cầu AMP Dev Channel được bật."
+msgid "Enable the experiment via the button below. Some components require the AMP Beta Channel to be enabled as well."
+msgstr "Kích hoạt thử nghiệm thông qua nút dưới đây. Một số thành phần cũng yêu cầu AMP Beta Channel được bật."
 
 #: frontend/templates/views/partials/structured-data.j2:54
 msgid "Example  "

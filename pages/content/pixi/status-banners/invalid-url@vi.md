@@ -1,6 +1,6 @@
 ---
 $title: URL này không hợp lệ.
-type: lỗi
+type: error
 hide_share: true
 ---
 
