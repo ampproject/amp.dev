@@ -38,7 +38,7 @@ const imagePaths = [
 const DISABLE_THUMBOR = false;
 
 thumborRouter.get(imagePaths, async (request, response, next) => {
-  if (DISABLE_THUMBOR || config.isDevMode()) {
+  if (DISABLE_THUMBOR || !(config.isProdMode() || config.isStageMode())) {
     next();
     return;
   }
