@@ -819,6 +819,8 @@ email:
           url: https://www.moonmail.io
         - label: Pepipost
           url: https://pepipost.com/
+        - label: Salesforce
+          url: https://www.salesforce.com/
         - label: SendPulse
           url: https://sendpulse.com/
         - label: SocketLabs
