@@ -25,7 +25,6 @@
 		"postinstall": "gulp downloadTestResources && husky install",
 		"posttest": "npm run lint",
 		"smoke-test": "APP_ENV=local jest smoke-tests --forceExit",
-		"test:e2e": "APP_ENV=local jest --forceExit -c e2e.jest.config.js",
 		"start:local": "cd platform && NODE_ENV=local node serve.js",
 		"start:playground": "cd playground && webpack serve --mode development",
 		"start:pixi": "cd pixi && webpack serve --mode development",
@@ -36,13 +35,10 @@
 		"test:platform": "APP_ENV=test jest --runInBand --detectOpenHandles --forceExit --testPathPattern platform --testPathIgnorePatterns smoke-tests",
 		"test:playground": "APP_ENV=test jest --runInBand --detectOpenHandles --forceExit --testPathPattern playground",
 		"test:pixi": "APP_ENV=test jest --runInBand --detectOpenHandles --forceExit --testPathPattern pixi",
+		"test:pixi:e2e": "APP_ENV=local jest --forceExit -c e2e.jest.config.js",
 		"test:grow-extensions": "cd pages/extensions && if which grow; then python3 -m unittest discover -p \"*_test.py\"; else echo grow not installed with pip. skip tests; fi"
 	},
-	"keywords": [
-		"amphtml",
-		"framework",
-		"documentation"
-	],
+	"keywords": ["amphtml", "framework", "documentation"],
 	"author": "The AMP HTML Authors",
 	"license": "Apache-2.0",
 	"signale": {
@@ -53,10 +49,7 @@
 		"@boilerplate": "boilerplate",
 		"@lib": "platform/lib"
 	},
-	"browserslist": [
-		"last 2 versions",
-		"not dead"
-	],
+	"browserslist": ["last 2 versions", "not dead"],
 	"dependencies": {
 		"@ampproject/toolbox-cache-list": "2.7.4",
 		"@ampproject/toolbox-cors": "2.8.0-canary.15",
