@@ -1,5 +1,4 @@
 $title@: Components
-$view: /views/2021/templates/documentation.j2
 $path: /documentation/components/{base}.html
 $localization:
   path: /{locale}/documentation/components/{base}.html

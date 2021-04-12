@@ -2,6 +2,7 @@
 $title: Components
 $titles:
   teaser: Components.
+$view: /views/custom.j2
 $path: /documentation/components/index.html
 $localization:
   path: /{locale}/documentation/components/index.html
@@ -31,110 +32,171 @@ highlighted_components:
 recent_components:
 
 ---
+{% do doc.styles.addCssFile('/css/components/templates/component-overview.css') %}
 
 {% block main %}
-<section>
-  {% include '/views/partials/breadcrumbs.j2' %}
+{% include 'views/partials/sidebar-toggle-observer.j2' %}
+<main class="ap--main ap-t-component-overview">
+  <div class="ap--container">
+    {% include 'views/partials/sidebar-toggle.j2' %}
+    <span id="ap--sidebar-content" class="ap--sidebar"></span>
+    <section class="ap--content">
+      {% include '/views/partials/sidebar-toggle-button.j2' %}
+      {% include '/views/partials/breadcrumbs.j2' %}
 
-  <h1>The AMP Component Catalogue</h1>
-  <p>The AMP HTML library consists of a basic runtime that brings the core functionalities of AMP to your page. If you want to add additional features you can do so by using one or more of the ready-to-use AMP components. They are classified as:</p>
-</section>
+      <h1>The AMP Component Catalogue</h1>
+      <p>The AMP HTML library consists of a basic runtime that brings the core functionalities of AMP to your page. If you want to add additional features you can do so by using one or more of the ready-to-use AMP components. They are classified as:</p>
 
-<section>
-  <div class="ap-icon-text">
-    <div class="ap-icon-text-item">
-      <div class="ap-icon-text-item-icon">
-        {% do doc.icons.useIcon('/icons/built-in.svg') %}
-        <svg class="ap-icon-text-item-icon">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#built-in"></use>
-        </svg>
+      {% do doc.styles.addCssFile('/css/components/organisms/benefits-overview.css') %}
+      <div class="ap--benefits--list">
+        {% do doc.styles.addCssFile('/css/components/molecules/benefit.css') %}
+        <div class="ap-m-benefit">
+          <div class="ap-m-benefit-icon">
+            {% do doc.icons.useIcon('/icons/built-in.svg') %}
+            <svg class="ap-m-benefit-icon">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#built-in"></use>
+            </svg>
+          </div>
+          <div class="ap-m-benefit-text">
+            <span class="ap-m-benefit-text-headline">Built-in</span>
+            <span class="ap-m-benefit-text-copy">Components that are included in the base library, such as <a href="reference/amp-img.md"><code>amp-img</code></a> and <a href="reference/amp-pixel.md"><code>amp-pixel</code></a>.</span>
+          </div>
+        </div>
+
+        <div class="ap-m-benefit">
+          <div class="ap-m-benefit-icon">
+            {% do doc.icons.useIcon('/icons/extended.svg') %}
+            <svg class="ap-m-benefit-icon">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#extended"></use>
+            </svg>
+          </div>
+          <div class="ap-m-benefit-text">
+            <span class="ap-m-benefit-text-headline">Extended</span>
+            <span class="ap-m-benefit-text-copy">Extensions to the base library that must be explicitly included in the document as custom elements.</span>
+          </div>
+        </div>
+
+        <div class="ap-m-benefit">
+          <div class="ap-m-benefit-icon">
+            {% do doc.icons.useIcon('icons/experimental.svg') %}
+            <svg class="ap-m-benefit-icon">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#experimental"></use>
+            </svg>
+          </div>
+          <div class="ap-m-benefit-text">
+            <span class="ap-m-benefit-text-headline">Experimental</span>
+            <span class="ap-m-benefit-text-copy">Components that are released but are not yet ready for wide use.</span>
+          </div>
+        </div>
       </div>
-      <div class="ap-icon-text-item-text">
-        <h4>Built-in</h4>
-        <p>Components that are included in the base library, such as <a href="reference/amp-img.md"><code>amp-img</code></a> and <a href="reference/amp-pixel.md"><code>amp-pixel</code></a>.</p>
-      </div>
-    </div>
-    <div class="ap-icon-text-item">
-      <div class="ap-icon-text-item-icon">
-        {% do doc.icons.useIcon('/icons/extended.svg') %}
-        <svg class="ap-icon-text-item-icon">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#extended"></use>
-        </svg>
-      </div>
-      <div class="ap-icon-text-item-text">
-        <h4>Extended</h4>
-        <p>Extensions to the base library that must be explicitly included in the document as custom elements.</p>
-      </div>
-    </div>
-    <div class="ap-icon-text-item">
-      <div class="ap-icon-text-item-icon">
-        {% do doc.icons.useIcon('icons/experimental.svg') %}
-        <svg class="ap-icon-text-item-icon">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#experimental"></use>
-        </svg>
-      </div>
-      <div class="ap-icon-text-item-text">
-        <h4>Experimental</h4>
-        <p>Components that are released but are not yet ready for wide use.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<hr>
+      <hr>
 
-<section>
-  <h2>{{ _('Highlighted Components') }}</h2>
-  <div class="ap-teaser-grid">
-    {% for teaser_doc in doc.highlighted_components %}
-    {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
-      [% if format in '{{ teaser_doc.formats }}' %]
-        {% with highlightedTeaser = True %}
-        {% include 'views/2021/partials/teaser.j2' %}
-        {% endwith %}
-      [% endif %]
-    {% endfor %}
-  </div>
-</section>
+      {% do doc.styles.addCssFile('css/components/molecules/teaser-component-code.css') %}
+      <section class="ap--section">
+        <h2>Highlighted Components</h2>
+        <div class="ap-m-teaser-component">
+          <div class="ap-m-teaser-container">
+            {% for teaser_doc in doc.highlighted_components %}
+            {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
+              [% if format in '{{ teaser_doc.formats }}'%]
+                {% with highlightedTeaser = True %}
+                {% include 'views/partials/teaser.j2' %}
+                {% endwith %}
+              [% endif %]
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+      {% if doc.recent_components %}
+      <section class="ap--section">
+        <h2>Recent Components</h2>
+        <div class="ap-m-teaser-component ap-m-teaser-component-recent">
+          <div class="ap-m-teaser-container">
+            {% for teaser_doc in doc.recent_components %}
+            {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
+              [% if format in '{{ teaser_doc.formats }}'%]
+                {% with highlightedTeaser = True %}
+                {% include 'views/partials/teaser.j2' %}
+                {% endwith %}
+              [% endif %]
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+      {% endif %}
 
-{# Add Recent Components? #}
+      <section id="filter" class="ap-m-table-component-container">
+        {% set categories = g.categories('/content/amp-dev/documentation/components/reference', locale=doc.locale) %}
+        {% do doc.styles.addCssFile('/css/components/molecules/table-component.css') %}
+        {% set filter_categories = categories|map(attribute=0)|list|tojson %}
 
-<section id="filter">
-  {% set categories = g.categories('/content/amp-dev/documentation/components/reference', locale=doc.locale) %}
-  {% set filter_categories = categories|map(attribute=0)|list|tojson %}
+        <h2>Filter by category</h2>
+        {% include 'views/partials/category-filter.j2'%}
 
-  <h2>{{ _('Filter by category') }}</h2>
-  {% include 'views/2021/partials/category-filter.j2'%}
+        {% for category, docs in categories %}
+        {% set scope = namespace(categoryFormats = []) %}
 
-  <ul class="ap-table-component">
-    {% for category, docs in categories %}
-    [% if not category or '{{ category|slug }}' == category or not '{{ filter_categories }}'.includes(category) %]
-    <li class="ap-table-component-section">
-      {% set category_name = category|replace('-', ' ') %}
-      <h3 class="ap-table-component-section-title">{{ category_name }}</h3>
-      <ul>
-        {% for component in docs if component.is_current %}
-        [% if '{{ component.formats }}'.includes(format) %]
-        <li>
-          <a class="ap-table-component-link" href="{{ component.url.path }}">
-            {% if component.formats %}
-              <div class="ap-table-component-link-formats">
-                {% for format in component.formats %}
-                <div class="ap-tag --{{ format }}"></div>
-                {% endfor %}
-              </div>
+        {% for doc in docs %}
+          {% set formats = doc.formats or ['websites'] %}
+          {% set scope.categoryFormats = scope.categoryFormats + formats %}
+        {% endfor %}
+
+        [% if not {{ filter_categories }}.includes(category) or {{ filter_categories }}.includes(category) and category == '{{ category|slug }}' %]
+        {% set category_name = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
+        <div id="{{ category }}" class="ap-m-table-component">
+            {% if category %}
+            <h4 id="{{ category }}">{{ _(category_name) }}</h4>
             {% endif %}
+            {% for component in docs if component.is_current %}
+            {# The latest document might not support a format, hence we have to check if any version supports a format #}
+            {% set formats = [component.formats] %}
+            {% if component.versions|count > 1 %}
+            {% for version in component.versions %}
+            {% set versionDoc = g.doc('/content/amp-dev/documentation/components/reference/' + component.title + '-v' + version + '.md') %}
+            {% do formats.append(versionDoc.formats) %}
+            {% endfor %}
+            {% endif %}
+            {% set formats = formats|sum(start=[])|unique|list %}
 
-            <div class="ap-table-component-link-title">{{ component.title }}</div>
-            <div class="ap-table-component-link-description">{{ component.teaser.text|truncate(70, false, '...') }}</div>
-          </a>
-        </li>
+            <a class="ap-m-table-component-link" href="{{ component.url.path }}" [% if format not in {{ formats|tojson }} and forcedFiltered != true %]hidden[% endif %]>
+              <div class="ap-m-table-component-row-components">
+                {% if formats %}
+                {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
+                <div class="ap-m-table-component-tags">
+                  {% if 'websites' in formats %}
+                  <div class="ap-m-tag ap-m-tag-websites ap-m-table-component-tag"></div>
+                  {% endif %}
+                  {% if 'stories' in formats %}
+                  <div class="ap-m-tag ap-m-tag-stories ap-m-table-component-tag"></div>
+                  {% endif %}
+                  {% if 'ads' in formats %}
+                  <div class="ap-m-tag ap-m-tag-ads ap-m-table-component-tag"></div>
+                  {% endif %}
+                  {% if 'email' in formats or 'emails' in formats %}
+                  <div class="ap-m-tag ap-m-tag-email ap-m-table-component-tag"></div>
+                  {% endif %}
+                </div>
+                {% else %}
+                <p></p>
+                {% endif %}
+                <div class="ap-m-table-component-name">
+                  <span class="ap-m-table-component-name-title">{{ component.title }}</span>
+                </div>
+                <div class="ap-m-table-component-info">
+                  <div class="ap-m-table-component-copy">{{ component.teaser.text|truncate(70, false, '...') }}</div>
+                </div>
+              </div>
+            </a>
+            {% endfor %}
+          </div>
         [% endif %]
         {% endfor %}
-      </ul>
-    </li>
-    [% endif %]
-    {% endfor %}
-  </ul>
-</section>
+      </section>
+    </section>
+  </div>
+</main>
+{% with type = 'component' %}
+{% include 'views/partials/sidebar.j2' %}
+{% endwith %}
 {% endblock %}

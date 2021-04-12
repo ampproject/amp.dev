@@ -2,4 +2,4 @@ $title@: Components
 $path: /documentation/components/{base}.html
 $localization:
   path: /{locale}/documentation/components/{base}.html
-$view: /views/2021/templates/documentation.j2
+$view: /views/detail/component-detail.j2
