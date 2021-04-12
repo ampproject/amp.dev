@@ -94,7 +94,7 @@ describe('Pixi', () => {
     await expect(page).toMatchElement(
       '#mobile-friendliness .ap-m-pixi-basic-metric-status',
       {
-        text: new RegExp('Passed|Failed', 'gm'),
+        text: new RegExp('Passed|Failed|Analysis failed', 'gm'),
         timeout: 30 * 1000,
       }
     );
