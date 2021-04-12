@@ -1,5 +1,5 @@
 /**
- * Copyright 2019 The AMP HTML Authors. All Rights Reserved.
+ * Copyright 2021 The AMP HTML Authors. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,29 +46,31 @@ describe('Pixi', () => {
   });
 
   it('performs CWV check', async () => {
-    await expect(page).toMatchElement(
-      '#fieldData.lcp .ap-m-pixi-primary-metric-category',
-      {
-        text: new RegExp('Good|Needs Improvement|Poor', 'gm'),
-        timeout: 30 * 1000,
-      }
-    );
+    await Promise.all([
+      expect(page).toMatchElement(
+        '.ap-m-pixi-primary-metric-header-title-full',
+        {
+          text: 'Loading speed',
+          timeout: 30 * 1000,
+        }
+      ),
 
-    await expect(page).toMatchElement(
-      '#fieldData.fid .ap-m-pixi-primary-metric-category',
-      {
-        text: new RegExp('Good|Needs Improvement|Poor', 'gm'),
-        timeout: 30 * 1000,
-      }
-    );
+      expect(page).toMatchElement(
+        '.ap-m-pixi-primary-metric-header-title-full',
+        {
+          text: 'Interactivity',
+          timeout: 30 * 1000,
+        }
+      ),
 
-    await expect(page).toMatchElement(
-      '#fieldData.cls .ap-m-pixi-primary-metric-category',
-      {
-        text: new RegExp('Good|Needs Improvement|Poor', 'gm'),
-        timeout: 30 * 1000,
-      }
-    );
+      expect(page).toMatchElement(
+        '.ap-m-pixi-primary-metric-header-title-full',
+        {
+          text: 'Visual stability',
+          timeout: 30 * 1000,
+        }
+      ),
+    ]);
   });
 
   it('performs Safe Browsing check', async () => {
