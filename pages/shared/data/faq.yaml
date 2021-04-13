@@ -216,6 +216,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/csa.md
       - label: Dable
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/dable.md
+      - label: Digiteka
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/digiteka.md
       - label: Directadvert
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/directadvert.md
       - label: DistroScale
