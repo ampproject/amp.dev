@@ -203,7 +203,7 @@ jobs:
         run: |
           gulp buildFinalize
           npm run smoke-test -- --colors
-          npm run test:pixi:e2e
+        # npm run test:pixi:e2e
 
       - name: Deploying
         run: |
