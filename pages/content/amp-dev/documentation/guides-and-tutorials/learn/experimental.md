@@ -24,7 +24,7 @@ The following is a list of components that are currently in experimental status 
 
 <ul>
 {% for component in experimental_components %}
-  <li><a href="{{ component.url.path }}">{{ component.title }}</a></li>
+  <li><a href="{{ component.url.path }}">{{ component.title }}-v{{ component.version }}</a></li>
 {% endfor %}
 </ul>
 {% endif %}
