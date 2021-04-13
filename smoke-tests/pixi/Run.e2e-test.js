@@ -42,6 +42,7 @@ describe('Pixi', () => {
     await expect(page).toClick('#input-submit');
     await expect(page).toMatchElement('#status-intro-banner-loading', {
       visible: true,
+      timeout: 60 * 1000,
     });
   });
 
@@ -51,7 +52,7 @@ describe('Pixi', () => {
         '.ap-m-pixi-primary-metric-header-title-full',
         {
           text: 'Loading speed',
-          timeout: 30 * 1000,
+          timeout: 60 * 1000,
         }
       ),
 
@@ -59,7 +60,7 @@ describe('Pixi', () => {
         '.ap-m-pixi-primary-metric-header-title-full',
         {
           text: 'Interactivity',
-          timeout: 30 * 1000,
+          timeout: 60 * 1000,
         }
       ),
 
@@ -67,7 +68,7 @@ describe('Pixi', () => {
         '.ap-m-pixi-primary-metric-header-title-full',
         {
           text: 'Visual stability',
-          timeout: 30 * 1000,
+          timeout: 60 * 1000,
         }
       ),
     ]);
@@ -78,7 +79,7 @@ describe('Pixi', () => {
       '#safe-browsing .ap-m-pixi-basic-metric-status',
       {
         text: new RegExp('Passed|Failed', 'gm'),
-        timeout: 30 * 1000,
+        timeout: 60 * 1000,
       }
     );
   });
@@ -86,7 +87,7 @@ describe('Pixi', () => {
   it('performs HTTPS check', async () => {
     await expect(page).toMatchElement('#https .ap-m-pixi-basic-metric-status', {
       text: new RegExp('Passed|Failed', 'gm'),
-      timeout: 30 * 1000,
+      timeout: 60 * 1000,
     });
   });
 
@@ -95,14 +96,14 @@ describe('Pixi', () => {
       '#mobile-friendliness .ap-m-pixi-basic-metric-status',
       {
         text: new RegExp('Passed|Failed|Analysis failed', 'gm'),
-        timeout: 30 * 1000,
+        timeout: 60 * 1000,
       }
     );
   });
 
   it('shows recommendations', async () => {
     await expect(page).toMatchElement('.ap-m-pixi-recommendations-item', {
-      timeout: 30 * 1000,
+      timeout: 60 * 1000,
     });
   });
 });
