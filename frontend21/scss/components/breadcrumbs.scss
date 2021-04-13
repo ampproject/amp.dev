@@ -1,0 +1,13 @@
+.#{prefix(null, 'breadcrumbs')} {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: bold;
+
+  &-angle {
+    width: 10px;
+    height: 10px;
+    margin: 0 6px;
+    transform: rotate(-90deg);
+  }
+}

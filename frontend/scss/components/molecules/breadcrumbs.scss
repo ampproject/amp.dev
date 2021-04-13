@@ -14,6 +14,7 @@
 @import 'components/atoms/_text.scss';
 @import 'components/atoms/_headline.scss';
 
+.#{prefix(null, 'breadcrumbs')},
 .#{molecule('breadcrumbs')} {
   display: flex;
   align-items: center;

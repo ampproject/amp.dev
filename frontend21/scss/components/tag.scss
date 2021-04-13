@@ -1,0 +1,26 @@
+.#{prefix(null, 'tag')} {
+  display: inline-block;
+  width: 26px;
+  padding: 4px 0;
+
+  &.--websites {
+    @include ci-websites;
+  }
+
+  &.--stories {
+    @include ci-stories;
+  }
+
+  &.--ads {
+    @include ci-ads;
+  }
+
+  &.--email {
+    @include ci-e-mails;
+  }
+
+  &.--general {
+    color: color('white');
+    background: color('blue-ribbon');
+  }
+}

@@ -1,0 +1,62 @@
+.#{prefix(null, 'component-intro')} {
+  $componentIntro: &;
+  margin-top: 20px;
+
+  &-row {
+    padding: 15px;
+    background-color: color('white');
+    border: 1px solid color('iron');
+
+    & + & {
+      margin-top: 10px;
+    }
+
+    &-inline {
+      @include respond-to('small') {
+        display: flex;
+        align-items: baseline;
+      }
+    }
+  }
+
+  &-headline {
+    font-size: 16px;
+    margin: 0 0 10px;
+
+    #{$componentIntro}-row-inline & {
+      white-space: nowrap;
+      margin-right: 10px;
+    }
+  }
+
+  &-text {
+    margin: 5px 0;
+  }
+
+  &-list {
+    max-height: 142px;
+    overflow: hidden;
+
+    @include respond-to('small') {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &-item {
+      display: block;
+      margin-bottom: 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      @include respond-to('small') {
+        width: 50%;
+        padding-right: 12px;
+      }
+    }
+
+    .expanded & {
+      max-height: none;
+    }
+  }
+}

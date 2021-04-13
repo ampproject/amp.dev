@@ -2,56 +2,66 @@
 of the project name amp.dev */
 $projectPrefix: 'ap';
 
-
-/* The smallest supported device width.
-It's used as `min-width` value for html and body
-and as @media query in burger-menu, language-selector and footer. */
-$minDeviceWidth: 240px;
+$maxWidth: 1440px;
 
 /* The following map contains every color that is used inside the project. The
 names are identified by using the http://chir.ag/projects/name-that-color to
 prevent double colors and/or hirarchy dicussions */
 $colors: (
-  'black':           #000000,
-  'charade':         #20202A,
-  'river-bed':       #48525C,
-  'oslo-gray':       #91979D,
-  'iron':            #E2E5E6,
-  'athens-gray':     #EBEBF0,
-  'whisper':         #FAFAFC,
-  'white':           #FFFFFF,
-  'blue-ribbon':     #005AF0,
-  'robins-egg':      #00DCC0,
-  'japan-laurel':    #09A600,
-  'pear':            #A6E22E,
-  'confetti':        #E1EB64,
-  'school-bus':      #FFDC00,
-  'clementine':      #EC6600,
-  'bittersweet':     #F56C64,
-  'guardsman-red':   #C80000,
-  'slack':           #45184B,
-  'lav-magenta':     #EB49E1,
-  'electric-violet': #5500D7,
+  'black': #000000,
+  'charade': #20202a,
+  'river-bed': #48525c,
+  'oslo-gray': #91979d,
+  'iron': #e2e5e6,
+  'athens-gray': #ebebf0,
+  'whisper': #fafafc,
+  'white': #ffffff,
+  'blue-ribbon': #005af0,
+  'robins-egg': #00dcc0,
+  'japan-laurel': #09a600,
+  'pear': #a6e22e,
+  'confetti': #e1eb64,
+  'school-bus': #ffdc00,
+  'clementine': #ec6600,
+  'bittersweet': #f56c64,
+  'guardsman-red': #c80000,
+  'slack': #45184b,
+  'lav-magenta': #eb49e1,
+  'electric-violet': #5500d7,
 );
 
 $safeColors: (
-  'white':           #fff,
-  'black':           #000,
-  'dark-gray':       #20202A,
-  'light-gray':      #8C8F94,
-  'blue':            #005AF0,
-  'green':           #09A600,
-  'orange':          #EC6600,
-  'dark-red':        #C80000,
+  'white': #fff,
+  'black': #000,
+  'dark-gray': #20202a,
+  'light-gray': #8c8f94,
+  'blue': #005af0,
+  'green': #09a600,
+  'orange': #ec6600,
+  'dark-red': #c80000,
 );
 
 $breakpoints: (
-  'pointer-coarse': (pointer: coarse),
-  'pointer-fine': (pointer: fine),
-  'small': (min-width: 768px),
-  'medium': (min-width: 1024px),
-  'large': (min-width: 1280px),
-  'max': (min-width: 1680px)
+  'pointer-coarse': (
+    pointer: coarse,
+  ),
+  'pointer-fine': (
+    pointer: fine,
+  ),
+  'small': (
+    min-width: 768px,
+  ),
+  'medium': (
+    min-width: 1024px,
+  ),
+  'large': (
+    min-width: 1280px,
+  ),
+  'max': (
+    min-width: 1680px,
+  ),
 ) !default;
 
-$fontFamilyRegular: 'Poppins', system;
+$fontFamilyRegular: 'Noto', system;
+$fontFamilyHeadline: 'Poppins', system;
+$fontFamilyCode: 'Fira Mono', monospace;

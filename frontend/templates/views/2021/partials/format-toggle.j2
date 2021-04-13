@@ -1,0 +1,32 @@
+{# Courses are not format togglable #}
+{% if not '/courses/' in doc.pod_path %}
+{% set formats = ['websites', 'stories', 'ads', 'email'] %}
+
+<div class="ap-format-toggle">
+  {# Use websites as default to have an element to dynamically set #}
+  <button class="ap-format-toggle-selected --[= format =]">
+    <span class="ap-icon">
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-[= format =]"></use></svg>
+    </span>
+    <span>[= format =]</span>
+    <span class="ap-icon ap-format-toggle-angle">
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+    </span>
+  </button>
+
+  <div class="ap-format-toggle-formats">
+    {% for format in formats %}
+    [% if format != '{{ format }}' %]
+    {% do doc.icons.useIcon('icons/amp-' + format + '.svg') %}
+    <a class="ap-format-toggle-link --{{ format }}"
+        href="{{ doc.url.path }}?format={{ format }}[% if category %]&category=[= category =][% endif %]">
+      <span class="ap-icon">
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format }}"></use></svg>
+      </span>
+      <span>{{ format }}</span>
+    </a>
+    [% endif %]
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

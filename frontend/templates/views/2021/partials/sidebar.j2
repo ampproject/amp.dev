@@ -1,0 +1,36 @@
+<div class="ap-sidebar-toolbar">
+  <span id="sidebar-toolbar" class="ap-sidebar-toolbar-container"></span>
+</div>
+
+<amp-sidebar id="sidebar" class="ap-sidebar" layout="nodisplay" side="left">
+  <nav toolbar="(min-width: 768px)" toolbar-target="sidebar-toolbar">
+    {% include '/views/2021/partials/format-toggle.j2' %}
+
+    {% set components = g.collection('/content/amp-dev/documentation/components/reference').list_docs(locale=doc.locale) %}
+    {% set scope = namespace(initial=components[0].title[4]) %}
+    <div class="ap-sidebar-scroll-container">
+      <ul class="ap-sidebar-nav-list">
+        {% for component in components %}
+
+        {% set initial = component.title[4] %}
+        {% if scope.initial != initial and loop.nextitem or loop.first %}
+        {% set scope.initial = initial %}
+        <li class="ap-sidebar-nav-list-section">
+          <ul>
+            <div class="ap-sidebar-nav-list-section-title">{{ initial }}</div>
+        {% endif %}
+
+            <li>
+              <a class="ap-sidebar-nav-list-link" href="{{ component.url.path }}">{{ component.title }}</a>
+            </li>
+
+        {% if loop.nextitem and scope.initial != loop.nextitem.title[4] or loop.last %}
+          </ul>
+        </li>
+        {% endif %}
+
+        {% endfor %}
+      </ul>
+    </div>
+  </nav>
+</amp-sidebar>
