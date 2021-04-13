@@ -19,9 +19,11 @@
 const Platform = require('../../platform/lib/platform.js');
 const platform = new Platform();
 
+const CHECK_TIMEOUT = 60 * 1000; // 60s
+
 describe('Pixi', () => {
   beforeAll(async () => {
-    jest.setTimeout(60 * 1000);
+    jest.setTimeout(CHECK_TIMEOUT);
     await platform.start();
     await page.goto(platformUrl('/page-experience/'));
   });
@@ -42,6 +44,7 @@ describe('Pixi', () => {
     await expect(page).toClick('#input-submit');
     await expect(page).toMatchElement('#status-intro-banner-loading', {
       visible: true,
+      timeout: CHECK_TIMEOUT,
     });
   });
 
@@ -51,7 +54,7 @@ describe('Pixi', () => {
         '.ap-m-pixi-primary-metric-header-title-full',
         {
           text: 'Loading speed',
-          timeout: 30 * 1000,
+          timeout: CHECK_TIMEOUT,
         }
       ),
 
@@ -59,7 +62,7 @@ describe('Pixi', () => {
         '.ap-m-pixi-primary-metric-header-title-full',
         {
           text: 'Interactivity',
-          timeout: 30 * 1000,
+          timeout: CHECK_TIMEOUT,
         }
       ),
 
@@ -67,7 +70,7 @@ describe('Pixi', () => {
         '.ap-m-pixi-primary-metric-header-title-full',
         {
           text: 'Visual stability',
-          timeout: 30 * 1000,
+          timeout: CHECK_TIMEOUT,
         }
       ),
     ]);
@@ -78,7 +81,7 @@ describe('Pixi', () => {
       '#safe-browsing .ap-m-pixi-basic-metric-status',
       {
         text: new RegExp('Passed|Failed', 'gm'),
-        timeout: 30 * 1000,
+        timeout: CHECK_TIMEOUT,
       }
     );
   });
@@ -86,7 +89,7 @@ describe('Pixi', () => {
   it('performs HTTPS check', async () => {
     await expect(page).toMatchElement('#https .ap-m-pixi-basic-metric-status', {
       text: new RegExp('Passed|Failed', 'gm'),
-      timeout: 30 * 1000,
+      timeout: CHECK_TIMEOUT,
     });
   });
 
@@ -95,14 +98,14 @@ describe('Pixi', () => {
       '#mobile-friendliness .ap-m-pixi-basic-metric-status',
       {
         text: new RegExp('Passed|Failed|Analysis failed', 'gm'),
-        timeout: 30 * 1000,
+        timeout: CHECK_TIMEOUT,
       }
     );
   });
 
   it('shows recommendations', async () => {
     await expect(page).toMatchElement('.ap-m-pixi-recommendations-item', {
-      timeout: 30 * 1000,
+      timeout: CHECK_TIMEOUT,
     });
   });
 });
