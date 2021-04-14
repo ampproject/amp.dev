@@ -52,6 +52,6 @@ There are different integrations for pages rendered dynamically by your server a
 Some hosting providers allow running custom logic when deploying or serving a webpage. This can be a great option to integrate AMP Optimizer. Example integrations are:
 
 - [Netlify AMP Optimizer Plugin](https://github.com/martinbean/netlify-plugin-amp-server-side-rendering#amp-server-side-rendering-netlify-plugin)
-- [Cloudflare Workers]((https://github.com/ampproject/cloudflare-amp-optimizer))
+- [Cloudflare Workers](https://github.com/ampproject/cloudflare-amp-optimizer)
 - [Docker Integration](https://github.com/ampproject/amp-toolbox/tree/main/packages/optimizer-docker)
 - [Add yours?](https://github.com/ampproject/amp.dev/issues/new?assignees=&labels=Category%3A+Content%2C+Status%3A+Pending+Triage&template=content.md&title=)
