@@ -32,6 +32,7 @@ The best way to publish optimized AMP is using a site generator or CMS with buil
 - [WordPress](https://wordpress.org/) via the [AMP WordPress Plugin](https://wordpress.org/plugins/amp/)
 - [Next.js](https://nextjs.org/docs/api-reference/next/amp)
 - [Eleventy](https://www.11ty.dev/) via the [eleventy-amp-plugin](https://blog.amp.dev/2020/07/28/introducing-the-eleventy-amp-plugin/)
+- [create-amp-page-starter](https://github.com/bemit/create-amp-page-starter) via [AMP Optimizer (Node.js)](node-amp-optimizer.md) with [netlifycms](https://www.netlifycms.org/)
 - [Add yours?](https://github.com/ampproject/amp.dev/issues/new?assignees=&labels=Category%3A+Content%2C+Status%3A+Pending+Triage&template=content.md&title=)
 
 ### Custom Build or Server Integrations
