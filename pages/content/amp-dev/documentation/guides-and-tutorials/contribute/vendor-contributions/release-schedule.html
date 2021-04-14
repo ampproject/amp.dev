@@ -349,22 +349,12 @@ $title: Release Schedule
     buttonOpen.id = `${tooltipChannel}-open`;
     buttonOpen.setAttribute('on', `tap:${tooltipChannel}.toggleClass(class=active),AMP.setState({tooltipExpanded: tooltipExpanded == 'true' ? 'false' : 'true'})`);
     buttonOpen.setAttribute('role', 'button');
-    const iconOpenSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    const iconOpenUse = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-    iconOpenUse.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#questionmark-outline');
-    iconOpenSvg.appendChild(iconOpenUse);
-    buttonOpen.appendChild(iconOpenSvg);
 
     const buttonClose = document.createElement('button');
     buttonClose.classList.add('ap-m-tooltip-close');
     buttonClose.id = `${tooltipChannel}-close`;
     buttonClose.setAttribute('on', `tap:${tooltipChannel}.toggleClass(class=active),AMP.setState({tooltipExpanded: 'false'}),${tooltipChannel}-open.focus`);
     buttonClose.setAttribute('role', 'button');
-    const iconCloseSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    const iconCloseUse = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-    iconCloseUse.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#close');
-    iconCloseSvg.appendChild(iconCloseUse);
-    buttonClose.appendChild(iconCloseSvg);
 
     const tooltipContent = document.createElement('div');
     tooltipContent.classList.add('ap-m-tooltip-description-wrapper');
