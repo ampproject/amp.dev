@@ -20,7 +20,7 @@ have a look and request a pull request there.
 
 
 
-Most video player components in AMP implement the [`VideoInterface`](https://github.com/ampproject/amphtml/blob/master/src/video-interface.js) API. This means
+Most video player components in AMP implement the [`VideoInterface`](https://github.com/ampproject/amphtml/blob/main/src/video-interface.js) API. This means
 that a set of features is available in all of these components, either completely
 or partially.
 
@@ -72,7 +72,7 @@ these players implement.
 
 ## Analytics <a name="analytics"></a>
 
-See [video analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md).
+See [video analytics](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/amp-video-analytics.md).
 
 <a id="autoplay"></a>
 
