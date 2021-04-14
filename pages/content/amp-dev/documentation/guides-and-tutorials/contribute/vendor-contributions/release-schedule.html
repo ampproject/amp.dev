@@ -22,7 +22,7 @@ $title: Release Schedule
 <h3>Select a day to see when the code merged on that day will be available on each release channel</h3>
 
 
-<amp-script id="calendar-container" layout="container" script="calendar-script">
+<amp-script id="calendar-container" layout="container" script="calendar-script" sandbox="allow-forms">
   <div class="calendar">
     <div class="calendar-header">
       {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
@@ -344,7 +344,7 @@ $title: Release Schedule
     const tooltipChannel = `tooltip-${channel}`;
     tooltip.id = tooltipChannel;
     
-    const buttonOpen = document.createElement('div');
+    const buttonOpen = document.createElement('button');
     buttonOpen.classList.add('ap-m-tooltip-toggle');
     buttonOpen.id = `${tooltipChannel}-open`;
     buttonOpen.setAttribute('on', `tap:${tooltipChannel}.toggleClass(class=active),AMP.setState({tooltipExpanded: tooltipExpanded == 'true' ? 'false' : 'true'})`);
@@ -355,7 +355,7 @@ $title: Release Schedule
     iconOpenSvg.appendChild(iconOpenUse);
     buttonOpen.appendChild(iconOpenSvg);
 
-    const buttonClose = document.createElement('div');
+    const buttonClose = document.createElement('button');
     buttonClose.classList.add('ap-m-tooltip-close');
     buttonClose.id = `${tooltipChannel}-close`;
     buttonClose.setAttribute('on', `tap:${tooltipChannel}.toggleClass(class=active),AMP.setState({tooltipExpanded: 'false'}),${tooltipChannel}-open.focus`);
