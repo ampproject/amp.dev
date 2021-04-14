@@ -1,223 +1,242 @@
-body .touch-only {
-  display: none;
-}
-body.amp-mode-touch .touch-only {
-  display: unset;
-}
-body.amp-mode-touch .no-touch-only {
-  display: none;
-}
-// The AMP optimizer doesn't support the media attribute, so we hide whichever
-// calendar is not is not displayed with a media query.
-#calendar-container-mobile {
-  display: none;
-}
+@import '_variables.scss';
+@import '_functions.scss';
+@import 'components/atoms/_button.scss';
+@import 'components/atoms/_text.scss';
+
 .calendar {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: 5em repeat(7, 7.5em);
-  grid-auto-flow: dense;
-  grid-template-rows: auto 150px auto auto 150px 150px 150px auto auto 150px;
-  transition: all .2s ease-in-out;
-}
-@keyframes background-flash {
-  0% {
-    background-color: inherit;
-  }
-  25% {
-    background-color: #ffff00;
-  }
-  75% {
-    background-color: #ffff00;
-  }
-  100% {
-    background-color: inherit;
-  }
-}
-[data-direction="top"] .top,
-[data-direction="bottom"] .bottom {
-  animation: background-flash .5s linear;
-}
-[data-direction="top"] .bottom,
-[data-direction="initialized"] .bottom,
-[data-direction="bottom"] .top {
-  display: none;
-}
-.box {
-  border-radius: .25em;
-  color: #000000;
-  padding: .5em;
-  text-align: center;
-}
-.instructions {
-  background-image: linear-gradient(225deg, #00dcc0 0%, #1db395 75%);
-  border-radius: .5em;
-  grid-column: 1 / 9;
-  padding: .5em;
-}
-.header {
-  grid-row: 1 / 2;
-}
-.week-1 {
-  grid-row: 2 / 3;
-}
-.week-1-instructions {
-  grid-row: 3 / 4;
-}
-.ellipsis-top {
-  grid-row: 4 / 5;
-}
-.week-2 {
-  grid-row: 5 / 6;
-}
-.week-3 {
-  grid-row: 6 / 7;
-}
-.week-4 {
-  grid-row: 7 / 8;
-}
-.ellipsis-bottom {
-  grid-row: 8 / 9;
-}
-.week-5-instructions {
-  grid-row: 9 / 10;
-}
-.week-5 {
-  grid-row: 10 / 11;
-}
-.sidebar {
-  font-size: small;
-  grid-column: 1 / 2;
-}
-.ellipsis {
-  font-size: x-small;
-  height: 2.5em;
-  overflow: hidden;
-  transition: all .4s ease-in-out;
-}
-[data-direction="initialized"] .ellipsis-top,
-[data-direction="top"] .ellipsis-top,
-[data-direction="bottom"] .ellipsis-bottom {
-  height: 0;
-  opacity: 0;
-  padding: 0;
-}
-.header,
-.sidebar,
-.ellipsis {
-  font-weight: bold;
-  color: #005af0;
-  font-family: 'Poppins',  system;
-}
-.content {
-  border: 1px dotted #cccccc;
-  font-size: small;
-}
-.content.week-1,
-.content.week-5 {
-  border-style: solid;
-}
-.content.week-1:hover,
-.content.week-5:hover {
-  background-image: linear-gradient(225deg, #ff52e1 0%, #eb49e1 75%);
-  cursor: pointer;
-}
-.nightly {
-  background-image: linear-gradient(225deg, #2980b9 0%, #298dc6 75%);
-}
-.opt-in {
-  background-image: linear-gradient(225deg, #298dc6 0%, #2899d3 75%);
-}
-.beta {
-  background-image: linear-gradient(225deg, #2899d3 0%, #27a6e0 75%);
-}
-.opt-in-beta {
-  background-image: linear-gradient(225deg, #298dc6 0%, #27a6e0 75%);
-}
-.stable {
-  background-image: linear-gradient(225deg, #27a6e0 0%, #25b4ed 75%);
-}
-.lts {
-  background-image: linear-gradient(225deg, #25b4ed 0%, #21c1fa 75%);
-}
-@media (max-width: 1465px) {
-  .calendar {
-    gap: 5px;
-    grid-template-columns: 4em repeat(7, 1fr);
-  }
-  .content span {
-    hyphens: auto;
-    word-break: break-word;
-  }
-}
-@media (max-width: 1101px) {
-  #calendar-container {
+  .desktop {
     display: none;
   }
-  #calendar-container-mobile {
-    display: block;
+
+  @media (min-width: 768px) {
+    .desktop {
+      display: initial;
+    }
+    
+    .mobile {
+      display: none;
+    }
   }
-  .calendar {
-    grid-template-rows: auto 75px auto auto 75px 75px 75px auto auto 75px;
+  &-header {
+    display: grid;
+    grid-gap: 19px;
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    
+    @media (min-width: 768px) {
+      grid-gap: 3px;
+      grid-template-columns: repeat(7, 1fr);
+      margin-bottom: 30px;
+    }
   }
-  .box {
-    padding: 4px;
+
+  &-button {
+    @include unset-button;
+    border-radius: 4px;
+    padding: 13px 0;
+    color: color('river-bed');
+
+    &:hover, &:focus, &:active {
+      color: color('white');
+      background-color: color('blue-ribbon');
+    }
+
+    & > .full {
+      display: none;
+    }
+
+    @media (min-width: 1280px) {
+      & > .compressed {
+        display: none;
+      }
+      & > .full {
+        display: initial;
+      }
+    }
   }
-  .header,
-  .sidebar {
-    font-size: x-small;
+
+  &-week {
+    display: contents;
+
+    &-label {
+      @include txt-4;
+      @include txt-strong;
+      line-height: 1.1;
+      grid-column: 1/-1;
+      width: 100%;
+      text-align: center;
+  
+      @media (min-width: 768px) {
+        display: none;
+      } 
+    }
   }
-  .instructions {
-    font-size: small;
+
+  &-day {
+    @include txt-strong;
+    flex: 1;
+    min-width: 0;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    color: color('river-bed');
+    background-color: color('athens-gray');
+    padding: 15px 0 10px;
+    margin: 10px 0;
+
+    @media (min-width: 768px) {
+      height: 60px;
+      padding: 5px 7px 5px 10px;
+      align-items: flex-start;
+    }
+
+    &.sunday, &.monday, &.tuesday, &.wednesday, &.thursday, &.friday, &.saturday {
+      &:after {
+        @include txt-3;
+        position: relative;
+        content: attr(data-label);
+      }
+    }
+
+    &.sunday {
+      &:before {
+        @include txt-4;
+        position: relative;
+        content: attr(data-week-label);
+        line-height: 1.1;
+        display: none;
+
+        @media (min-width: 768px) {
+          display: initial;
+          flex-grow: 2;
+        }
+      }
+    }
+
+    &-header {
+      display: flex;
+      flex-direction: column-reverse;
+      width: 100%;
+      flex-grow: 2;
+      justify-content: space-between;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+
+      & > .label {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex-grow: 2; 
+  
+        @media (max-width: 767px) {
+          writing-mode: vertical-rl;
+          text-orientation: sideways;
+          transform: rotate(180deg);
+          display: flex;
+          align-items: center;
+          padding-top: 1rem;
+        }
+      }
+    }
+
+    &.merge {
+      color: color('white');
+      background-color: color('blue-ribbon');
+    }
+
+    &.nightly {
+      color: color('white');
+      background-color: color('charade');
+    }
+
+    &.opt-in {
+      color: color('charade');
+      background-color: color('school-bus');
+    }
+
+    &.beta, &.opt-in-beta {
+      color: color('charade');
+      background-color: color('confetti');
+    }
+
+    &.stable {
+      color: color('charade');
+      background-color: color('pear');
+    }
+
+    &.lts {
+      color: color('white');
+      background-color: color('river-bed');
+    }
+
+    &.beta, &.opt-in, &.opt-in-beta, &.stable {
+      .ap-m-tooltip-toggle {
+        background-image: url("data:image/svg+xml,%3Csvg id='questionmark-outline' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024' fill='%2320202a'%3E%3Cpath d='M512 18.999c272.288 0 493.001 220.713 493.001 493.001S784.288 1005.001 512 1005.001 18.999 784.288 18.999 512 239.712 18.999 512 18.999zm0 89.651c-222.988 0-403.35 180.363-403.35 403.35S289.013 915.35 512 915.35c222.988 0 403.35-180.363 403.35-403.35S734.987 108.65 512 108.65zm-7.471 587.428c30.832 0 55.785 25.029 55.785 55.823s-24.953 55.747-55.747 55.747c-30.832 0-55.823-24.953-55.823-55.747 0-30.832 24.991-55.785 55.785-55.785zm8.988-456.973c47.025 0 85.062 12.59 113.77 37.923 28.898 25.56 43.422 59.54 43.422 101.293 0 22.754-4.627 43.915-13.842 63.483-9.101 19.417-22.943 37.506-41.412 54.382l-37.051 33.942-5.689 5.31-3.793 3.982-1.934 2.238-3.034 3.944a36.313 36.313 0 00-1.669 2.313l-3.793 5.689-7.395 12.022c-9.86 16.421-15.094 48.427-15.094 95.49v8.912l-26.319-.19-39.63.152-1.062-19.645c-2.541-55.292 1.024-92.722 11.035-112.86 9.48-21.161 21.047-37.051 41.071-56.126l27.494-26.546c13.501-12.704 23.057-25.105 28.708-36.975 5.499-11.566 8.267-24.726 8.267-39.554 0-20.365-6.637-36.254-20.1-48.465-13.69-12.325-31.78-18.545-54.723-18.545-28.632 0-49.527 8.115-63.559 24.271-11.946 13.652-19.531 33.752-22.45 60.374l-.417 4.399c-2.162 20.327-19.417 35.647-39.592 35.382-11.035.152-21.692-4.324-29.277-12.363s-11.415-18.924-10.618-28.329a24.804 24.804 0 01.038-4.437c5.385-44.977 19.872-85.403 43.688-108.422 29.922-28.784 71.713-43.043 124.957-43.043z'%3E%3C/path%3E%3C/svg%3E");
+      }
+    }
   }
-  .content span {
-    font-size: 0;
-    margin-top: 3px;
-    writing-mode: vertical-rl;
+
+  &-output {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-top: 20px;
+    margin-bottom: 80px;
+
+    .ellipsis {
+      grid-column: 1/-1;
+      width: 100%;
+      text-align: center;
+      margin: 9px 0;
+    }
   }
-  .content span code {
-    display: none;
-    font-size: small;
-  }
-  .content span code:first-of-type {
-    display: inherit;
-  }
-}
-@media (max-width: 1024px) {
-  .content.week-1:hover,
-  .content.week-5:hover {
-    font-size: x-small;
-  }
-}
-@media (max-width: 843px) {
-  .calendar {
-    gap: 2px;
-    grid-template-columns: 3em repeat(7, 1fr);
-  }
-  .header,
-  .sidebar {
-    font-size: xx-small;
-  }
-  .header {
-    font-size: 0;
-  }
-  .instructions,
-  .content span code,
-  .header::first-letter {
-    font-size: small;
-  }
-}
-@media (max-width: 768px) {
-  .content.week-1:hover,
-  .content.week-5:hover,
-  .instructions,
-  .content span code {
-    font-size: small;
-  }
-}
-@media (max-width: 656px) {
-  .content.week-1:hover,
-  .content.week-5:hover {
-    font-size: x-small;
+
+  .ap-m-tooltip {
+    color: color('river-bed');
+
+    @media (max-width: 767px) {
+      align-self: center;
+    }
+
+    &-description {
+      @include txt;
+      @include txt-2;
+
+      &-wrapper {
+        width: 100%;
+      }
+    }
+
+    &-tip {
+      margin-top: 20px;
+
+      @media (min-width: 575px) {
+        top: 20px;
+      }
+
+      &:after {
+        border-left-width: 10px;
+        border-right-width: 10px;
+        border-bottom-width: 10px;
+      }
+    }
+    
+    &-toggle, &-close {
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 20px;
+      height: 20px;
+    }
+
+    &-toggle {
+      background-image: url("data:image/svg+xml,%3Csvg id='questionmark-outline' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024' fill='%23fff'%3E%3Cpath d='M512 18.999c272.288 0 493.001 220.713 493.001 493.001S784.288 1005.001 512 1005.001 18.999 784.288 18.999 512 239.712 18.999 512 18.999zm0 89.651c-222.988 0-403.35 180.363-403.35 403.35S289.013 915.35 512 915.35c222.988 0 403.35-180.363 403.35-403.35S734.987 108.65 512 108.65zm-7.471 587.428c30.832 0 55.785 25.029 55.785 55.823s-24.953 55.747-55.747 55.747c-30.832 0-55.823-24.953-55.823-55.747 0-30.832 24.991-55.785 55.785-55.785zm8.988-456.973c47.025 0 85.062 12.59 113.77 37.923 28.898 25.56 43.422 59.54 43.422 101.293 0 22.754-4.627 43.915-13.842 63.483-9.101 19.417-22.943 37.506-41.412 54.382l-37.051 33.942-5.689 5.31-3.793 3.982-1.934 2.238-3.034 3.944a36.313 36.313 0 00-1.669 2.313l-3.793 5.689-7.395 12.022c-9.86 16.421-15.094 48.427-15.094 95.49v8.912l-26.319-.19-39.63.152-1.062-19.645c-2.541-55.292 1.024-92.722 11.035-112.86 9.48-21.161 21.047-37.051 41.071-56.126l27.494-26.546c13.501-12.704 23.057-25.105 28.708-36.975 5.499-11.566 8.267-24.726 8.267-39.554 0-20.365-6.637-36.254-20.1-48.465-13.69-12.325-31.78-18.545-54.723-18.545-28.632 0-49.527 8.115-63.559 24.271-11.946 13.652-19.531 33.752-22.45 60.374l-.417 4.399c-2.162 20.327-19.417 35.647-39.592 35.382-11.035.152-21.692-4.324-29.277-12.363s-11.415-18.924-10.618-28.329a24.804 24.804 0 01.038-4.437c5.385-44.977 19.872-85.403 43.688-108.422 29.922-28.784 71.713-43.043 124.957-43.043z'%3E%3C/path%3E%3C/svg%3E");
+    }
+
+    &-close {
+      background-image: url("data:image/svg+xml,%3Csvg id='close' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='%23005AF0'%3E%3Cpath d='M39.503 32l22.963-22.963c2.046-2.046 2.046-5.457 0-7.503s-5.456-2.046-7.503 0l-22.963 22.963-22.963-22.963c-2.046-2.046-5.457-2.046-7.503 0s-2.046 5.457 0 7.503l22.963 22.963-22.963 22.963c-2.046 2.046-2.046 5.456 0 7.503s5.457 2.046 7.503 0l22.963-22.963 22.963 22.963c2.046 2.046 5.456 2.046 7.503 0s2.046-5.456 0-7.503l-22.963-22.963z'%3E%3C/path%3E%3C/svg%3E");
+    }
   }
 }
