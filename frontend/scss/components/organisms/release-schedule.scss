@@ -3,6 +3,14 @@
 @import 'components/atoms/_button.scss';
 @import 'components/atoms/_text.scss';
 
+.ap-m-tip {
+  margin-bottom: 80px;
+}
+
+#calendar-container {
+  margin-top: 40px;
+}
+
 .calendar {
   .desktop {
     display: none;
