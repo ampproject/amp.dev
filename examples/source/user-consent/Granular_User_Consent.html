@@ -1,0 +1,294 @@
+<!---
+preview: true
+author:
+- morss
+--->
+
+<!--
+  ## Introduction
+
+  *Granular consent* allows users to make a set of consent choices on your page. *Global consent* allows them to make a single choice for the page. The `amp-consent` component allows you to set up granular consent, global consent, or both simultaneously. In this sample, we'll show you how to use granular consent.
+-->
+<!-- -->
+<!doctype html>
+<html ⚡ lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Granular User Consent</title>
+  <link rel="canonical" href="self.html">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <style amp-boilerplate="">body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate="">body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <!-- ## Setup -->
+  <!-- First, you need to import the script for the `amp-consent` extension. -->
+  <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
+  <!-- `amp-consent` allows you to block AMP components until the user gives their consent. We'll demonstrate this with `amp-fit-text` components, so let's import that script too. -->
+  <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+
+  <style amp-custom>
+    amp-fit-text {
+      margin-right: 15px;
+    }
+
+    .consentLabel {
+      display: block;
+    }
+
+    .consentLabel input {
+      margin-left: 12px;
+    }
+
+    .note {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    #consentDemoArea {
+      border: dotted 2px green;
+      padding: 2px 10px;
+    }
+
+    #consentPopup {
+      height: 100vh;
+      width: 100vw;
+      padding: 5% 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    #consentDialog {
+      position: relative;
+      margin: 0 auto;
+      padding: 12px 24px 24px;
+      border-radius: 8px;
+      max-width: 700px;
+      width: 95%;
+      background-color: #e0f0ffc0;
+    }
+
+    .choices {
+      padding-top: 10px;
+    }
+
+    .choiceButton {
+      margin-top: 36px;
+      margin-right: 10px;
+    }
+
+    .dismissButton {
+      position: absolute;
+      right: 24px;
+      top: 16px;
+      cursor: pointer;
+    }
+
+/* compensate for negative margin when we're in the AMP playground */
+    .i-amphtml-iframed .dismissButton {
+      top: 24px;
+      right: 38px;
+    }
+
+    #repromptDialog {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      padding: 5px;
+      background-color: blue;
+      color: #ddd;
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    #content {
+      padding: 24px;
+    }
+
+    #marketingContent {
+      color: blue;
+    }
+
+    #conversionContent {
+      color: green;
+    }
+
+    #analyticsContent {
+      color: orange;
+    }
+  </style>
+</head>
+<!-- You need to choose names for your consent purposes. Here, we'll call them `purpose-marketing`, `purpose-analytics`, and `purpose-marketing`. -->
+<!-- -->
+<body>
+
+<!-- Then, you'll create an `<amp-consent>` component containing the following:
+  - a JSON configuration object
+  - the consent UI, which lets the user make consent choices
+  - optionally, a reprompt UI, which allows the user to show the consent UI again
+-->
+<!--
+  ## Configuration object
+  [The documentation](https://amp.dev/documentation/components/amp-consent/#consent-configuration) lists all the keys that this object can contain. Here, we've used these:
+
+- [`consentInstanceId`](https://amp.dev/documentation/components/amp-consent/#consent-instance-id). This is required.
+- [`consentRequired`](https://amp.dev/documentation/components/amp-consent/#consentrequired). By setting this to `true`, we're saying consent will be required. To fetch this information from an endpoint, we'd use `remote`.
+- [`promptUI`](https://amp.dev/documentation/components/amp-consent/#promptui). Specifies the `id` of the dialog where the user can make consent choices.
+- [`postPromptUI`](https://amp.dev/documentation/components/amp-consent/#post-prompt-ui-(optional)). The `id` of the area that allows the user to see that dialog again.
+- [`uiConfig`](https://amp.dev/documentation/components/amp-consent/#uiconfig). Including `"overlay": true` here tells `amp-consent` to darken the area outside the consent dialog when the dialog's open.
+
+  ```json
+  {
+    "consentInstanceId": "consent1",
+    "consentRequired": true,
+    "promptUI": "consentDialog",
+    "postPromptUI": "repromptDialog",
+    "uiConfig": {
+      "overlay": true
+    },
+    "purposeConsentRequired": ["purpose-analytics", "purpose-marketing"]
+  }
+  ```
+
+  ## Consent dialog
+  This will typically contain a set of inputs, often checkboxes, that let the user make consent choices. It will likely also have buttons to let them save their choices, save or reject everything, or simply dismiss the dialog.
+  When the user makes a consent choice, use the `setPurpose()` action to temporarily store that information. This action takes the form `setPurpose({purpose type}={boolean value})`.
+
+  Here, for example, if the user clicks our checkbox for marketing cookies, we set our `purpose-marketing` purpose accordingly:
+
+  ```
+  setPurpose(purpose-marketing=event.checked)
+  ```
+
+  We set that purpose when AMP fires the `change` event on the corresponding checkbox. Here's how that looks:
+
+  ```html
+  <input
+    id="consent-purpose-analytics"
+    type="checkbox"
+    on="change:consent1.setPurpose(purpose-marketing=event.checked"
+  >
+  ```
+
+  To save the user's choices, use the `accept` action. To hide the consent UI without saving choices, use the `dismiss` action. Your user may make a selection for some consent purposes, but not all of them. You can set their choice for the remaining consent purposes by passing `accept` the argument `(purposeConsentDefault={false|true})`.
+
+  Here's how these buttons look in our sample:
+
+  ```html
+  <button class="choiceButton" on="tap:siteConsent.accept(purposeConsentDefault=false)">
+    Save
+  </button>
+  <button class="choiceButton" on="tap:siteConsent.dismiss">
+    Dismiss
+  </button>
+  ```
+
+  ## Post-prompt UI
+  Finally, you can create an area that the user can use to show the consent UI again. Use the `prompt` action to make this happen. Here's how that looks in this sample:
+
+  ```html
+  <div id="repromptDialog">
+    Do you want to make your consent choices again?
+    <button on="tap:siteConsent.prompt">I do!</button>
+  </div>
+  ```
+
+  Here's our entire &lt;amp-consent&gt; component.
+-->
+  <amp-consent layout="nodisplay" id="siteConsent">
+    <script type="application/json">
+      {
+        "consentInstanceId": "consent1",
+        "consentRequired": true,
+        "promptUI": "consentPopup",
+        "postPromptUI": "repromptDialog",
+        "uiConfig": {
+          "overlay": true
+        },
+        "purposeConsentRequired": ["purpose-analytics", "purpose-marketing"]
+      }
+    </script>
+    <div id="consentPopup">
+      <div id="consentDialog">
+        <div class="dismissButton" role="button" tabindex="0" on="tap:siteConsent.dismiss">𝗫</div>
+        <h3>Your privacy</h3>
+        <p>
+          You can control the ways in which we improve and personalize your experience.
+          Please choose whether you wish to allow the following:
+        </p>
+        <div class="choices">
+
+          <label class="consentLabel" for="consent-purpose-marketing">
+            <input
+              id="consent-purpose-marketing"
+              type="checkbox"
+              on="change:siteConsent.setPurpose(purpose-marketing=event.checked)"
+            >
+            Marketing cookies
+          </label>
+          <label class="consentLabel" for="consent-purpose-conversion">
+            <input
+              id="consent-purpose-conversion"
+              type="checkbox"
+              on="change:siteConsent.setPurpose(purpose-conversion=event.checked)"
+            >
+            Conversion tracking cookies
+          </label>
+          <label class="consentLabel" for="consent-purpose-analytics">
+            <input
+              id="consent-purpose-analytics"
+              type="checkbox"
+              on="change:siteConsent.setPurpose(purpose-analytics=event.checked)"
+            >
+            Analytics
+          </label>
+
+          <button class="choiceButton" on="tap:siteConsent.accept(purposeConsentDefault=false)">
+            Save
+          </button>
+          <button class="choiceButton" on="tap:siteConsent.dismiss">
+            Dismiss
+          </button>
+        </div>
+        <p>
+          Click "Save" to save your choices.
+          <br/>
+          Click "Dismiss" to get rid of this dialog box without saving your choices.
+        </p>
+      </div>
+    </div>
+    <div id="repromptDialog">
+      Do you want to make your consent choices again?
+      <button on="tap:siteConsent.prompt">I do!</button>
+    </div>
+  </amp-consent>
+
+<!--
+  ## Blocking components
+
+  You can label any AMP component to be blocked if the user hasn't accepted the right consent purposes. Specify these purposes in a comma-separated list in the `data-block-on-consent-purposes` attribute.
+-->
+
+  <div id="consentDemoArea">
+    <p class="note">(See the results of your consent choices here)</p>
+    <amp-fit-text id="marketingContent" width="200" height="50" layout="fixed"
+                  data-block-on-consent-purposes="purpose-marketing">
+      I'm shown if you allow marketing cookies.
+    </amp-fit-text>
+    <amp-fit-text id="conversionContent" width="200" height="50" layout="fixed"
+                  data-block-on-consent-purposes="purpose-marketing,purpose-analytics">
+      I'm shown if you allow marketing AND analytics cookies.
+    </amp-fit-text>
+    <amp-fit-text id="analyticsContent" width="200" height="50" layout="fixed"
+                  data-block-on-consent-purposes="purpose-analytics">
+      I'm shown if you allow analytics cookies.
+    </amp-fit-text>
+  </div>
+<!-- -->
+  <div id="content">
+    <p>Here's some content.</p>
+    <p>Here's even more content.</p>
+    <p>And, yes, here's still more amazing content!</p>
+  </div>
+</body>
+</html>
