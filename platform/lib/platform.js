@@ -170,7 +170,7 @@ class Platform {
 
   _configureRouters() {
     this.server.use(routers.cspReport);
-    // this.server.use(routers.packager);
+    this.server.use(routers.packager);
     this.server.use(routers.thumbor);
     this.server.use(routers.whoAmI);
     this.server.use(routers.healthCheck);
